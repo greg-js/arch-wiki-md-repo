@@ -91,7 +91,6 @@ Save the file and restart the xserver for changes to take effect.
 The following script will rotate the display 90 degrees clockwise every time it is executed. It will also rotate the wacom pointer so that the stylus will still work.
 
  `rotate.sh` 
-
 ```
 #!/bin/bash
 
@@ -227,7 +226,8 @@ fi
 # Try to obtain CellWriter's window id.
 # We can't use "xwininfo -name" b/c that might find the notification icon. 
 OLDIFS="$IFS"
-IFS=$'\n'
+IFS=$'
+'
 for line in $(xwininfo -root -tree | grep CellWriter); do
     line=0x${line#*0x}		# Just to get rid of white space before 0x.
     $verbose -en "Checking: $line\t"
@@ -373,7 +373,7 @@ $ gksu-properties
 
 ```
 
-Change the **Grab Mode** to _disable_.
+Change the **Grab Mode** to *disable*.
 
 ### Gnome-screensaver
 
@@ -384,7 +384,7 @@ $ gconf-editor
 
 ```
 
-Under `/apps/gnome-screensaver`, set **embedded_keyboard_command** to _cellwriter --xid --keyboard-only_, and check the **embedded_keyboard_enabled** checkbox.
+Under `/apps/gnome-screensaver`, set **embedded_keyboard_command** to *cellwriter --xid --keyboard-only*, and check the **embedded_keyboard_enabled** checkbox.
 
 Alternatively, instead of using the graphical registry editor, you can simply type these into your command line:
 

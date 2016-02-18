@@ -50,7 +50,7 @@ Optional dependencies are shown in the table below.
 | Wifi menus | [dialog](https://www.archlinux.org/packages/?name=dialog) |
 | PPPoE | [ppp](https://www.archlinux.org/packages/?name=ppp) |
 
-**Warning:** Do not enable concurrent, conflicting network service. Use `systemctl --type=service` to ensure that no other network service is running before enabling a _netctl_ profile/service.
+**Warning:** Do not enable concurrent, conflicting network service. Use `systemctl --type=service` to ensure that no other network service is running before enabling a *netctl* profile/service.
 
 ## Usage
 
@@ -62,11 +62,11 @@ It is advisable to read the following man pages before using netctl:
 
 ## Configuration
 
-_netctl_ uses profiles to manage network connections and different modes of operation to start profiles automatically or manually on demand.
+*netctl* uses profiles to manage network connections and different modes of operation to start profiles automatically or manually on demand.
 
 ### Profile configuration
 
-The _netctl_ profile files are stored in `/etc/netctl/` and example configuration files are available in `/etc/netctl/examples/`. Common configurations include:
+The *netctl* profile files are stored in `/etc/netctl/` and example configuration files are available in `/etc/netctl/examples/`. Common configurations include:
 
 *   ethernet-dhcp
 *   ethernet-static
@@ -83,11 +83,11 @@ To use an example profile, simply copy it from `/etc/netctl/examples/` to `/etc/
 Once you have created your profile, attempt to establish a connection (use only the profile name, not the full path):
 
 ```
-# netctl start _profile_
+# netctl start *profile*
 
 ```
 
-If the above command results in a failure, then use `journalctl -xn` and `netctl status _profile_` to obtain a more in depth explanation of the failure.
+If the above command results in a failure, then use `journalctl -xn` and `netctl status *profile*` to obtain a more in depth explanation of the failure.
 
 ### Automatic operation
 
@@ -100,21 +100,21 @@ If you need to switch multiple profiles frequently, use [Automatic switching of 
 With this method, you can statically start only one profile per interface. First manually check that the profile can be started successfully with:
 
 ```
-# netctl start _profile_ 
+# netctl start *profile* 
 
 ```
 
 then it can be enabled using:
 
 ```
-# netctl enable _profile_
+# netctl enable *profile*
 
 ```
 
 This will create and enable a [systemd](/index.php/Systemd "Systemd") service that will start when the computer boots. Changes to the profile file will not propagate to the service file automatically. After such changes, it is necessary to reenable the profile:
 
 ```
-# netctl reenable _profile_
+# netctl reenable *profile*
 
 ```
 
@@ -122,25 +122,25 @@ After enabling a profile, it will be started at next boot. Obviously this can on
 
 #### Automatic switching of profiles
 
-_netctl_ provides two special [systemd](/index.php/Systemd "Systemd") services for automatic switching of profiles:
+*netctl* provides two special [systemd](/index.php/Systemd "Systemd") services for automatic switching of profiles:
 
-*   Package [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) for wired interfaces: After [starting and enabling](/index.php/Start "Start") `netctl-ifplugd@_interface_.service` DHCP profiles are started/stopped when the network cable is plugged in and out. To include a static IP profile the option `ExcludeAuto=no` needs to be set in it.
-*   Package [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) for wireless interfaces: After [starting and enabling](/index.php/Start "Start") `netctl-auto@_interface_.service` profiles are started/stopped automatically as you move from the range of one network into the range of another network (roaming).
+*   Package [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) for wired interfaces: After [starting and enabling](/index.php/Start "Start") `netctl-ifplugd@*interface*.service` DHCP profiles are started/stopped when the network cable is plugged in and out. To include a static IP profile the option `ExcludeAuto=no` needs to be set in it.
+*   Package [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) for wireless interfaces: After [starting and enabling](/index.php/Start "Start") `netctl-auto@*interface*.service` profiles are started/stopped automatically as you move from the range of one network into the range of another network (roaming).
 
-Note that _interface_ is not literal, but to be substituted by the name of your device's interface, e.g. `netctl-auto@wlp4s0.service`.
+Note that *interface* is not literal, but to be substituted by the name of your device's interface, e.g. `netctl-auto@wlp4s0.service`.
 
 The following options can be used:
 
-*   If you want some wireless profile **not** to be started automatically by `netctl-auto@_interface_.service`, you have to explicitly add `ExcludeAuto=yes` to that profile.
-*   The `netctl-ifplugd@_interface_.service` will prefer profiles which use [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP"). To prefer a profile with a static IP, you can set `Priority=2`, which is higher than the default priority given to DHCP profiles of `Priority=1`. Do not forget to also set `ExcludeAuto=no` as mentioned above. See `netctl.profile(5)` for details.
-*   You can use `priority=` in the _WPAConfigSection_ (see `/etc/netctl/examples/wireless-wpa-configsection`) to set priority of a profile when multiple wireless access points are available. Note that automatic selection of a WPA profile by _netctl-auto_ is not possible with option `Security=wpa-config`, use `Security=wpa-configsection` instead.
+*   If you want some wireless profile **not** to be started automatically by `netctl-auto@*interface*.service`, you have to explicitly add `ExcludeAuto=yes` to that profile.
+*   The `netctl-ifplugd@*interface*.service` will prefer profiles which use [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP"). To prefer a profile with a static IP, you can set `Priority=2`, which is higher than the default priority given to DHCP profiles of `Priority=1`. Do not forget to also set `ExcludeAuto=no` as mentioned above. See `netctl.profile(5)` for details.
+*   You can use `priority=` in the *WPAConfigSection* (see `/etc/netctl/examples/wireless-wpa-configsection`) to set priority of a profile when multiple wireless access points are available. Note that automatic selection of a WPA profile by *netctl-auto* is not possible with option `Security=wpa-config`, use `Security=wpa-configsection` instead.
 
 **Warning:**
 
 *   If any of the profiles contain errors, such as an empty or misquoted `Key=` variable, the unit will fail to load with the message `"Failed to read or parse configuration '/run/network/wpa_supplicant_wlan0.conf'`, even when that profile is not being used.
-*   This method conflicts with the [Basic method](#Basic_method). If you have previously enabled a profile through _netctl_, run `netctl disable _profile_` to prevent the profile from starting twice at boot.
+*   This method conflicts with the [Basic method](#Basic_method). If you have previously enabled a profile through *netctl*, run `netctl disable *profile*` to prevent the profile from starting twice at boot.
 
-Since netctl 1.3 it is possible to manually control an interface otherwise managed by _netctl-auto_ without having to stop `netctl-auto.service`. This is done using the _netctl-auto_ command. For a list of available actions run:
+Since netctl 1.3 it is possible to manually control an interface otherwise managed by *netctl-auto* without having to stop `netctl-auto.service`. This is done using the *netctl-auto* command. For a list of available actions run:
 
 ```
  # netctl-auto --help
@@ -155,8 +155,7 @@ For a DHCP connection, only the `Interface` has to be configured after copying t
 
 For example:
 
- `/etc/netctl/_my_dhcp_profile_` 
-
+ `/etc/netctl/*my_dhcp_profile*` 
 ```
 Interface=enp1s0
 Connection=ethernet
@@ -168,8 +167,7 @@ For a static IP configuration copy the `/etc/netctl/examples/ethernet-static` ex
 
 For example:
 
- `/etc/netctl/_my_static_profile_` 
-
+ `/etc/netctl/*my_static_profile*` 
 ```
 Interface=enp1s0
 Connection=ethernet
@@ -186,7 +184,7 @@ Take care to include the subnet notation of `/24`. It equates to a netmask of `2
 
 The following applies for the standard wireless connections using a pre-shared key (WPA-PSK). See [WPA2 Enterprise#netctl](/index.php/WPA2_Enterprise#netctl "WPA2 Enterprise") for example profiles with other authentication methods.
 
-The standard _netctl_ tool to connect to a wireless network (WPA-PSK, WEP) interactively is _wifi-menu_; used with the `-o` option:
+The standard *netctl* tool to connect to a wireless network (WPA-PSK, WEP) interactively is *wifi-menu*; used with the `-o` option:
 
 ```
 wifi-menu -o 
@@ -215,33 +213,31 @@ netctl start wireless-wpa
 
 before configuring any [#Automatic operation](#Automatic_operation).
 
-Optionally you can also follow the following step to obfuscate the wireless passphrase (_wifi-menu_ does it automatically):
+Optionally you can also follow the following step to obfuscate the wireless passphrase (*wifi-menu* does it automatically):
 
-Users **not** wishing to have the passphrase to their wireless network stored in _plain text_ have the option of storing the corresponding 256-bit pre-shared key instead, which is calculated from the passphrase and the SSID using standard algorithms.
+Users **not** wishing to have the passphrase to their wireless network stored in *plain text* have the option of storing the corresponding 256-bit pre-shared key instead, which is calculated from the passphrase and the SSID using standard algorithms.
 
 Calculate your 256-bit PSK using [wpa_passphrase](/index.php/WPA_supplicant#Connecting_with_wpa_passphrase "WPA supplicant"):
 
- `$ wpa_passphrase _your_essid_ _passphrase_` 
-
+ `$ wpa_passphrase *your_essid* *passphrase*` 
 ```
 network={
-  ssid="_your_essid_"
-  #psk="_passphrase_"
+  ssid="*your_essid*"
+  #psk="*passphrase*"
   psk=64cf3ced850ecef39197bb7b7b301fc39437a6aa6c6a599d0534b16af578e04a
 }
 ```
 
-The _pre-shared key_ (psk) now needs to replace the plain text passphrase of the `Key` variable in the profile. Once completed your network profile `wireless-wpa` containing a 256-bit PSK should resemble:
+The *pre-shared key* (psk) now needs to replace the plain text passphrase of the `Key` variable in the profile. Once completed your network profile `wireless-wpa` containing a 256-bit PSK should resemble:
 
  `/etc/netctl/wireless-wpa` 
-
 ```
 Description='A simple WPA encrypted wireless connection using 256-bit PSK'
 Interface=wlp2s2
 Connection=wireless
 Security=wpa
 IP=dhcp
-ESSID=_your_essid_
+ESSID=*your_essid*
 Key=\"64cf3ced850ecef39197bb7b7b301fc39437a6aa6c6a599d0534b16af578e04a
 ```
 
@@ -255,7 +251,7 @@ Key=\"64cf3ced850ecef39197bb7b7b301fc39437a6aa6c6a599d0534b16af578e04a
 
 ### Using an Experimental GUI
 
-If you want a graphical user interface to manage _netctl_ and your connections and you are not afraid of highly experimental unofficial packages you can install [netgui](https://aur.archlinux.org/packages/netgui/) from [AUR](/index.php/AUR "AUR"). Note, however, that _netgui_ is still in beta status and you should be familiar with the general _netctl_ syntax to debug possible issues. Another GUI alternative is [netctl-gui](https://aur.archlinux.org/packages/netctl-gui/) which provides a Qt-based graphical interface, DBus daemon and KDE widget. A third alternative is [netmenu](https://aur.archlinux.org/packages/netmenu/), which uses [dmenu](https://www.archlinux.org/packages/?name=dmenu) as its graphical interface.
+If you want a graphical user interface to manage *netctl* and your connections and you are not afraid of highly experimental unofficial packages you can install [netgui](https://aur.archlinux.org/packages/netgui/) from [AUR](/index.php/AUR "AUR"). Note, however, that *netgui* is still in beta status and you should be familiar with the general *netctl* syntax to debug possible issues. Another GUI alternative is [netctl-gui](https://aur.archlinux.org/packages/netctl-gui/) which provides a Qt-based graphical interface, DBus daemon and KDE widget. A third alternative is [netmenu](https://aur.archlinux.org/packages/netmenu/), which uses [dmenu](https://www.archlinux.org/packages/?name=dmenu) as its graphical interface.
 
 ### Eduroam
 
@@ -265,7 +261,7 @@ See [WPA2 Enterprise#netctl](/index.php/WPA2_Enterprise#netctl "WPA2 Enterprise"
 
 From [kernel documentation](https://www.kernel.org/doc/Documentation/networking/bonding.txt):
 
-	_The Linux bonding driver provides a method for aggregating multiple network interfaces into a single logical "bonded" interface. The behavior of the bonded interfaces depends on the mode. Generally speaking, modes provide either hot standby or load balancing services. Additionally, link integrity monitoring may be performed._
+	*The Linux bonding driver provides a method for aggregating multiple network interfaces into a single logical "bonded" interface. The behavior of the bonded interfaces depends on the mode. Generally speaking, modes provide either hot standby or load balancing services. Additionally, link integrity monitoring may be performed.*
 
 #### Load balancing
 
@@ -274,7 +270,6 @@ To use bonding with netctl, additional package from official repositories is req
 Copy `/etc/netctl/examples/bonding` to `/etc/netctl/bonding` and edit it, for example:
 
  `/etc/netctl/bonding` 
-
 ```
 Description='Bond Interface'
 Interface='bond0'
@@ -284,7 +279,7 @@ IP=dhcp
 IP6=stateless
 ```
 
-Now you can disable your old configuration and set _bonding_ to be started automatically. Switch to the new profile, for example:
+Now you can disable your old configuration and set *bonding* to be started automatically. Switch to the new profile, for example:
 
 ```
 # netctl switch-to bonding
@@ -297,7 +292,7 @@ Now you can disable your old configuration and set _bonding_ to be started autom
 
 #### Wired to wireless failover
 
-This example describes how to use _bonding_ to fallback to wireless when the wired ethernet goes down. This is most useful when both the wired and wireless interface will be connected to the same network. Your wireless router/access point must be configured in _bridge_ mode.
+This example describes how to use *bonding* to fallback to wireless when the wired ethernet goes down. This is most useful when both the wired and wireless interface will be connected to the same network. Your wireless router/access point must be configured in *bridge* mode.
 
 You will need additional packages from the official repositories: [ifenslave](https://www.archlinux.org/packages/?name=ifenslave) and [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant).
 
@@ -314,7 +309,6 @@ The `miimon` option is needed, for the link failure detection. The `max_bonds` o
 Next, configure a netctl profile to enslave the two hardware interfaces. Use the name of all the devices you want to enslave. If you have more than two wired or wireless interfaces, you can enslave all of them on a bond interface. But, for most cases you will have only two devices, a wired and a wireless one:
 
  `/etc/netctl/failover` 
-
 ```
 Description='A wired connection with failover to wireless'
 Interface='bond0'
@@ -330,10 +324,9 @@ Disable any other profiles (specially a wired or wireless) you had enabled befor
 
 ```
 
-Now you need to configure _wpa_supplicant_ to connect to any know network you wish. You should create a file for each interface and enable it on systemd. Create the following file with this content:
+Now you need to configure *wpa_supplicant* to connect to any know network you wish. You should create a file for each interface and enable it on systemd. Create the following file with this content:
 
  `/etc/wpa_supplicant/wpa_supplicant-wlan0.conf` 
-
 ```
 ctrl_interface=/run/wpa_supplicant
 update_config=1
@@ -349,25 +342,23 @@ network={
 
 ```
 
-To generate the obfuscated PSK you can run _wpa_passphrase_ as on the [WPA supplicant#Connecting with wpa_passphrase](/index.php/WPA_supplicant#Connecting_with_wpa_passphrase "WPA supplicant") page.
+To generate the obfuscated PSK you can run *wpa_passphrase* as on the [WPA supplicant#Connecting with wpa_passphrase](/index.php/WPA_supplicant#Connecting_with_wpa_passphrase "WPA supplicant") page.
 
 Now, [enable](/index.php/Enable "Enable") the `wpa_supplicant@` template service on the network interface, for example `wpa_supplicant@wlan0`.
 
 You can try now to reboot your machine and see if your configuration worked.
 
 **Note:** If you get this error on boot bonding:
-
 ```
 wlan0 is up - this may be due to an out of date ifenslave
 
 ```
 
-Then this is happening because the _wpa_supplicant_ is being run before the `failover` netctl profile. This happens because [systemd](/index.php/Systemd "Systemd") runs everything in parallel, unless told otherwise. _ifenslave_ need all the interfaces to be down before bonding them to the `bond0` interface. And, since the _wpa_supplicant_ need to put the interface up to be able to scan for networks, this might cause the interface to not be enslaved and your bonding to only have the wired interface.
+Then this is happening because the *wpa_supplicant* is being run before the `failover` netctl profile. This happens because [systemd](/index.php/Systemd "Systemd") runs everything in parallel, unless told otherwise. *ifenslave* need all the interfaces to be down before bonding them to the `bond0` interface. And, since the *wpa_supplicant* need to put the interface up to be able to scan for networks, this might cause the interface to not be enslaved and your bonding to only have the wired interface.
 
-If this is your case, then you will need to setup a custom dependency on the `wpa_supplicant@wlan0` service in relation with the `netctl@failover` profile. More specifically, the _wpa_supplicant_ must be started **after** the netctl profile. To accomplish this, create a custom dependency file based on the instructions provided here: [systemd#Handling dependencies](/index.php/Systemd#Handling_dependencies "Systemd")
+If this is your case, then you will need to setup a custom dependency on the `wpa_supplicant@wlan0` service in relation with the `netctl@failover` profile. More specifically, the *wpa_supplicant* must be started **after** the netctl profile. To accomplish this, create a custom dependency file based on the instructions provided here: [systemd#Handling dependencies](/index.php/Systemd#Handling_dependencies "Systemd")
 
  `/etc/systemd/system/wpa_supplicant@wlan0.service.d/customdependency.conf` 
-
 ```
 [Unit]
 After=netctl@failover.service
@@ -403,7 +394,6 @@ In some cases it may be desirable to allow a profile to use any interface on the
 A quick and dirty solution is to make use of the `/etc/netctl/interfaces/` directory. Choose a name for your interface alias (`en-any` in this example), and write the following to a file with that name (making sure it is executable).
 
  `/etc/netctl/interfaces/en-any` 
-
 ```
 #!/bin/bash
 for interface in /sys/class/net/en*; do
@@ -417,7 +407,6 @@ echo "en-any: using interface $Interface";
 Then create a profile that uses the interface. Pay special attention to the `Interface` directive. The rest are only provided as examples.
 
  `/etc/netctl/wired` 
-
 ```
 Description='Wired'
 Interface=en-any
@@ -444,7 +433,6 @@ The variables `$INTERFACE`, `$SSID`, `$ACTION` and `$Profile` are available in h
 ##### Execute commands on established connection
 
  `/etc/netctl/hooks/myservices` 
-
 ```
 #!/bin/sh
 ExecUpPost="systemctl start crashplan.service; systemctl start dropbox@<username>.service"
@@ -455,7 +443,6 @@ ExecDownPre="systemctl stop crashplan.service; systemctl stop dropbox@<username>
 ##### Activate network-online.target
 
  `/etc/netctl/hooks/status` 
-
 ```
 #!/bin/sh
 ExecUpPost="systemctl start network-online.target"
@@ -470,7 +457,6 @@ Using this, systemd services requiring an active network connection can be [orde
 To set or change the DHCP client used for all profiles:
 
  `/etc/netctl/hooks/dhcp` 
-
 ```
 #!/bin/sh
 DHCPClient='dhclient'
@@ -488,10 +474,9 @@ DHCPClient='dhclient'
 
 ### Job for netctl@wlan(...).service failed
 
-Some people have an issue when they connect to a network with _netctl_, for example:
+Some people have an issue when they connect to a network with *netctl*, for example:
 
  `# netctl start wlan0-ssid` 
-
 ```
 Job for netctl@wlan0\x2ssid.service failed. See 'systemctl status netctl@wlan0\x2ssid.service' and 'journalctl -xn' for details.
 
@@ -527,10 +512,9 @@ dhcpcd[261]: wlan0: ipv4_sendrawpacket: Network is down
 
 ```
 
-One way to solve this is to use a different DHCP client, for example [dhclient](https://www.archlinux.org/packages/?name=dhclient). After installing the package configure _netctl_ to use it:
+One way to solve this is to use a different DHCP client, for example [dhclient](https://www.archlinux.org/packages/?name=dhclient). After installing the package configure *netctl* to use it:
 
  `/etc/netctl/wlan0-ssid` 
-
 ```
 ...
 DHCPClient='dhclient'
@@ -540,7 +524,6 @@ DHCPClient='dhclient'
 Adding the `ForceConnect` option may also be helpful:
 
  `/etc/netctl/wlan0-ssid` 
-
 ```
 
 ...
@@ -568,19 +551,17 @@ If you are having timeout issues when requesting leases via DHCP you can set the
 
 If you are having timeout issues that are unrelated to DHCP (on a static ethernet connection for example), and are experiencing errors similar to the following when starting your profile:
 
- `# journalctl _SYSTEMD_UNIT=netctl@_profile_.service` 
-
+ `# journalctl _SYSTEMD_UNIT=netctl@*profile*.service` 
 ```
-Starting network profile '_profile_'...
+Starting network profile '*profile*'...
 No connection found on interface 'eth0' (timeout)
-Failed to bring the network up for profile '_profile_'
+Failed to bring the network up for profile '*profile*'
 
 ```
 
 Then you should increase carrier and up timeouts by adding `TimeoutUp=` and `TimeoutCarrier=` to your profile file:
 
- `/etc/netctl/_profile_` 
-
+ `/etc/netctl/*profile*` 
 ```
 ...
 TimeoutUp=300
@@ -591,16 +572,15 @@ TimeoutCarrier=300
 Do not forget to reenable your profile:
 
 ```
-# netctl reenable _profile_
+# netctl reenable *profile*
 
 ```
 
 ### Problems with netctl-auto on resume
 
-Sometimes _netctl-auto_ fails to reconnect when the system resumes from suspend. An easy solution is to restart the service for _netctl-auto_. This can be automated with an additional service like the following:
+Sometimes *netctl-auto* fails to reconnect when the system resumes from suspend. An easy solution is to restart the service for *netctl-auto*. This can be automated with an additional service like the following:
 
  `/etc/systemd/system/netctl-auto-resume@.service` 
-
 ```
 [Unit]
 Description=restart netctl-auto on resume.
@@ -618,10 +598,9 @@ WantedBy=suspend.target
 
 To [enable](/index.php/Enable "Enable") this service for your wireless card, for example, enable `netctl-auto-resume@wlan0.service` as root. Change `wlan0` to the required network interface.
 
-If the device is not yet running on resume when the unit is started, this will fail. It can be fixed by adding the following dependency in the _After_ line:
+If the device is not yet running on resume when the unit is started, this will fail. It can be fixed by adding the following dependency in the *After* line:
 
  `/etc/systemd/system/netctl-auto-resume@.service` 
-
 ```
 ...
 After=suspend.target sys-subsystem-net-devices-%i.device
@@ -634,7 +613,6 @@ After=suspend.target sys-subsystem-net-devices-%i.device
 This problem seems to be related to a recent wpa_supplicant update (see [FS#44731](https://bugs.archlinux.org/task/44731)), but a work-around is quite trivial. Just create a file for your interface (e.g. wlp3s0) in /etc/netctl/interfaces with the following content and make it executable:
 
  `/etc/netctl/interfaces/wlp3s0` 
-
 ```
 WPAOptions="-m ''"
 
@@ -646,7 +624,7 @@ After that, try to restart your netctl-auto service and WiFi auto detection shou
 
 Many laptops have a hardware button (or switch) to turn off wireless card, however, the card can also be blocked by the kernel. This can be handled by [rfkill](/index.php/Wireless_network_configuration#Rfkill_caveat "Wireless network configuration").
 
-If you want _netctl-auto_ to automatically unblock your wireless card to connect to a particular network, set `RFKill=++auto++` option for the wireless connection of your choice, as specified in the [netctl.profile(5)](https://github.com/joukewitteveen/netctl/blob/master/docs/netctl.profile.5.txt) man page.
+If you want *netctl-auto* to automatically unblock your wireless card to connect to a particular network, set `RFKill=++auto++` option for the wireless connection of your choice, as specified in the [netctl.profile(5)](https://github.com/joukewitteveen/netctl/blob/master/docs/netctl.profile.5.txt) man page.
 
 ### RTNETLINK answers: File exists (with multiple NICs)
 
@@ -657,7 +635,6 @@ Remove it and everything works, except you no longer have a default route and so
 A possible solution is creating a new service:
 
  `/etc/system/system/defaultrouter.service` 
-
 ```
 [Unit]
 Description

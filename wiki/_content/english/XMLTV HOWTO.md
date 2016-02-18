@@ -26,7 +26,7 @@ One downside of the DVB-T EPG is that it only goes 7 days into the future, where
 
 ## Compilation
 
-If your grabber isn't available in the package in _community_, you have to try and compile xmltv yourself. You can choose between two ways of obtaining a self compiled xmltv installation. You can use [ABS](/index.php/ABS "ABS") and edit the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") to make a package or compile it by hand.
+If your grabber isn't available in the package in *community*, you have to try and compile xmltv yourself. You can choose between two ways of obtaining a self compiled xmltv installation. You can use [ABS](/index.php/ABS "ABS") and edit the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") to make a package or compile it by hand.
 
 ### Make a package
 

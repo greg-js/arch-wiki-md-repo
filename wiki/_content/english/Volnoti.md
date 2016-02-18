@@ -1,6 +1,6 @@
 [Volnoti](https://github.com/davidbrazdil/volnoti) is, according to its own GitHub page,
 
-	"_A lightweight volume notification daemon for GNU/Linux and other POSIX operating systems. It is based on GTK+ and D-Bus and should work with any sensible window manager. The original aim was to create a volume notification daemon for lightweight window managers like LXDE or XMonad. It is known to work with a wide range of WMs, including GNOME, KDE, Xfce, LXDE, XMonad, i3 and many others._"
+	"*A lightweight volume notification daemon for GNU/Linux and other POSIX operating systems. It is based on GTK+ and D-Bus and should work with any sensible window manager. The original aim was to create a volume notification daemon for lightweight window managers like LXDE or XMonad. It is known to work with a wide range of WMs, including GNOME, KDE, Xfce, LXDE, XMonad, i3 and many others.*"
 
 Volnoti can be useful to check volume changes if you are running a lightweight window manager like [Openbox](/index.php/Openbox "Openbox"), which doesn't usually come with a notification daemon, especially in combination with your laptop/keyboard's special keys.
 

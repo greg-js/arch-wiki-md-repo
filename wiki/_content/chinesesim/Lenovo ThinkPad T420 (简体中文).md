@@ -142,7 +142,6 @@ DAEMONS=(...@thinkfan...)
 触摸板和小红帽能直接工作，但触摸板实在太过灵敏而不便使用，因为它被当作是鼠标对待。为了修复这个问题，[安装](/index.php/Pacman "Pacman")[xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics)包并把以下两个文件加入你的`/etc/X11/xorg.conf.d/`目录中：
 
  `50-thinkpad-trackpoint.conf` 
-
 ```
  Section "InputClass"
         Identifier      "ThinkPad TrackPoint"
@@ -155,9 +154,7 @@ DAEMONS=(...@thinkfan...)
  EndSection
 
 ```
-
  `50-twofingerscroll.conf` 
-
 ```
  Section "InputClass"
         Identifier      "two finger scrolling"
@@ -178,7 +175,6 @@ DAEMONS=(...@thinkfan...)
 要调整小红帽的速度/灵敏度，请在`/etc/rc.local`中添加如下配置：
 
  `/etc/rc.local` 
-
 ```
 TPDEV=/sys/devices/platform/i8042/serio1
 echo -n 180 > $TPDEV/speed

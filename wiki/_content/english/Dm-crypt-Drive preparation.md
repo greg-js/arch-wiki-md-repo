@@ -46,7 +46,6 @@ First, create a temporary encrypted container on the partition (`sdXY`) or the f
 Second, check it exists
 
  `# fdisk -l` 
-
 ```
 Disk /dev/mapper/container: 1000 MB, 1000277504 bytes
 ...
@@ -58,8 +57,8 @@ Finally, wipe it with pseudorandom (because encrypted) data. A use of `if=/dev/u
  `# dd if=/dev/zero of=/dev/mapper/container status=progress`  `dd: writing to ‘/dev/mapper/container’: No space left on device` 
 **Tip:**
 
-*   Using _dd_ with the `bs=` option, e.g. `bs=1M`, is frequently used to increase disk throughput of the operation.
-*   If you want to perform a check of the operation, zero the partition before creating the wipe container. After the wipe command `blockdev --getsize64 _/dev/mapper/container_` can be used to get the exact container size as root. Now _od_ can be used to spotcheck whether the wipe overwrote the zeroed sectors, e.g. `od -j _containersize - blocksize_` to view the wipe completed to the end.
+*   Using *dd* with the `bs=` option, e.g. `bs=1M`, is frequently used to increase disk throughput of the operation.
+*   If you want to perform a check of the operation, zero the partition before creating the wipe container. After the wipe command `blockdev --getsize64 */dev/mapper/container*` can be used to get the exact container size as root. Now *od* can be used to spotcheck whether the wipe overwrote the zeroed sectors, e.g. `od -j *containersize - blocksize*` to view the wipe completed to the end.
 
 Now the next step is [#Partitioning](#Partitioning).
 
@@ -83,7 +82,7 @@ The above process has to be repeated for every partition blockdevice created and
 
 #### Wipe LUKS header
 
-The partitions formatted with dm-crypt/LUKS contain a header with the cipher and crypt-options used, which is referred to `dm-mod` when opening the blockdevice. After the header the actual random data partition starts. Hence, when re-installing on an already randomised drive, or de-commissioning one (e.g. sale of PC, switch of drives, etc.) it _may_ be just enough to wipe the header of the partition, rather than overwriting the whole drive - which can be a lengthy process.
+The partitions formatted with dm-crypt/LUKS contain a header with the cipher and crypt-options used, which is referred to `dm-mod` when opening the blockdevice. After the header the actual random data partition starts. Hence, when re-installing on an already randomised drive, or de-commissioning one (e.g. sale of PC, switch of drives, etc.) it *may* be just enough to wipe the header of the partition, rather than overwriting the whole drive - which can be a lengthy process.
 
 Wiping the LUKS header will delete the PBKDF2-encrypted (AES) master key, salts and so on.
 

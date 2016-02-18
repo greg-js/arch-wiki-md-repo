@@ -30,7 +30,7 @@ Evilwm è reperibile nei repository extra, così l'installazione da console sar�
 
 ### Avviare evilwm
 
-Per avviare evilwm (senza opzioni) via _startx_, assicurarsi che il file `~/.xinitrc` contenga:
+Per avviare evilwm (senza opzioni) via *startx*, assicurarsi che il file `~/.xinitrc` contenga:
 
 ```
 exec evilwm
@@ -45,20 +45,20 @@ xsetroot -cursor_name left_ptr
 
 ```
 
-Per maggiori dettagli sulle varie opzioni possibili consultare _man xsetroot_.
+Per maggiori dettagli sulle varie opzioni possibili consultare *man xsetroot*.
 
 ### Configurazioni d'avvio
 
 evilwm non utilizza un file di configurazione, ma delle opzioni di "interruttore" quando si avvia il window manager. Alcuni esempi di configurazione:
 
-*   <tt>-fg _color_</tt> (colore della finestra attiva)
-*   <tt>-bw _borderwidth_</tt> (larghezza dei bordi finestra in pixels)
-*   <tt>-term _termprog_</tt> (specifica un programma terminale. il default è xterm)
-*   <tt>-snap _number_</tt> (abilita supporto snap-to-border oltre che la vicinanza in pixels per lo snap)
-*   <tt>-mask1 _modifier_</tt> (sovrascrive il predefinito ctrl+alt da tastiera con altro)
+*   <tt>-fg *color*</tt> (colore della finestra attiva)
+*   <tt>-bw *borderwidth*</tt> (larghezza dei bordi finestra in pixels)
+*   <tt>-term *termprog*</tt> (specifica un programma terminale. il default è xterm)
+*   <tt>-snap *number*</tt> (abilita supporto snap-to-border oltre che la vicinanza in pixels per lo snap)
+*   <tt>-mask1 *modifier*</tt> (sovrascrive il predefinito ctrl+alt da tastiera con altro)
 *   <tt>-nosoliddrag</tt> (disegna un contorno alla finestra quando si ridimensiona o massimizza)
 
-Una lista completa di opzioni di configurazione per evilwm è consultabile con _man evilwm_.
+Una lista completa di opzioni di configurazione per evilwm è consultabile con *man evilwm*.
 
 In maniera predefinita, evilwm disegna un bordo d'ro di un pixel intorno alla finestra attiva. Un esempio di modifica può essere `~/.xinitrc`:
 
@@ -73,7 +73,7 @@ che abiliterà l'opzione snap-to-border a 10 pixel di distanza e cambierà la la
 
 ## Uso di evilwm
 
-Dop l'avvio di evilwm non si vedrà altro che il cursore del mouse e uno sfondo nero sul desktop (o un altro sfondo se diversamente specificato come descritto sopra). Per aprire un terminale, usare la combinazione tasti Ctrl+Alt+Return. I programmi possono venir eseguiti dal terminale dando _Nomedelprogramma&_.
+Dop l'avvio di evilwm non si vedrà altro che il cursore del mouse e uno sfondo nero sul desktop (o un altro sfondo se diversamente specificato come descritto sopra). Per aprire un terminale, usare la combinazione tasti Ctrl+Alt+Return. I programmi possono venir eseguiti dal terminale dando *Nomedelprogramma&*.
 
 ### Controlli della tastiera
 
@@ -115,7 +115,7 @@ La combinazione Ctrl+Alt+= massimizza le finestre verticalmente. Per massimizzar
 
 ### Uscire da evilwm chiudendo un programma
 
-In modo predefinito evilwm non ha un'opzione per uscire. Per farlo, semplicemente uccidere X (Ctrl+Alt+Backspace). Si può anche terminare evilwm chiudendo un determinato programma. Invece di usare _exec evilwm_ nel file `~/.xinitrc`, spostare exec ad un'altro programma. Chiudendo quest'altro programma si uscirà da evilwm. Per esempio:
+In modo predefinito evilwm non ha un'opzione per uscire. Per farlo, semplicemente uccidere X (Ctrl+Alt+Backspace). Si può anche terminare evilwm chiudendo un determinato programma. Invece di usare *exec evilwm* nel file `~/.xinitrc`, spostare exec ad un'altro programma. Chiudendo quest'altro programma si uscirà da evilwm. Per esempio:
 
 ```
 # start evilwm (snap-to-border within 10 pixels option, 2 pixel window border, active window border red)
@@ -132,9 +132,9 @@ exec xclock -digital
 
 ### Ridimensionamento finestre usando la tastiera
 
-Anche se non menzionato nella man-page, si possono ridimensionare le finestre con la tastiera efficacemente come con il mouse. Usando la stessa combinazione di tasti con cui si muovono le finestre, solo aggiungendo il tasto _Shift_.
+Anche se non menzionato nella man-page, si possono ridimensionare le finestre con la tastiera efficacemente come con il mouse. Usando la stessa combinazione di tasti con cui si muovono le finestre, solo aggiungendo il tasto *Shift*.
 
-Ctrl+Alt+_Shift_:
+Ctrl+Alt+*Shift*:
 
 ```
 H,J,K,L - Rimpicciolisce la finestra orizzontalmente, ingrandisce verticalmente, rimpicciolisce verticalmente, ingrandisce horizontalmente.

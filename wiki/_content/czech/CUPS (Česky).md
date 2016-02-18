@@ -1,4 +1,4 @@
-"_[cups](https://www.archlinux.org/packages/?name=cups) je open source program, který slouží ke správě tisku. Vyvíjí ho společnost Apple Inc. pro Mac OS® X další [UNIX-like](https://en.wikipedia.org/wiki/cs:UN*X "wikipedia:cs:UN*X") operační systémy._".
+"*[cups](https://www.archlinux.org/packages/?name=cups) je open source program, který slouží ke správě tisku. Vyvíjí ho společnost Apple Inc. pro Mac OS® X další [UNIX-like](https://en.wikipedia.org/wiki/cs:UN*X "wikipedia:cs:UN*X") operační systémy.*".
 
 Ačkoliv jsou zde jiné programy pro správu tisku a tiskáren jako například balíčky LPRNG, **C**ommon **U**nix **P**rinting **S**ystem je ze všech nejpoužívanější, protože je relativně jednoduchý na ovládání.
 
@@ -33,7 +33,7 @@ Ačkoliv jsou zde jiné programy pro správu tisku a tiskáren jako například 
         *   [3.3.2 HPLIP tiskárna vrací chybu "/usr/lib/cups/backend/hp failed"](#HPLIP_tisk.C3.A1rna_vrac.C3.AD_chybu_.22.2Fusr.2Flib.2Fcups.2Fbackend.2Fhp_failed.22)
         *   [3.3.3 hp-toolbox sends an error, "Unable to communicate with device"](#hp-toolbox_sends_an_error.2C_.22Unable_to_communicate_with_device.22)
         *   [3.3.4 CUPS returns '"foomatic-rip" not available/stopped with status 3' with a HP printer](#CUPS_returns_.27.22foomatic-rip.22_not_available.2Fstopped_with_status_3.27_with_a_HP_printer)
-        *   [3.3.5 Tisk selže s chybou _unauthorised_](#Tisk_sel.C5.BEe_s_chybou_unauthorised)
+        *   [3.3.5 Tisk selže s chybou *unauthorised*](#Tisk_sel.C5.BEe_s_chybou_unauthorised)
         *   [3.3.6 Tlačítko Tisk v GNOME v print dialogu zešedne](#Tla.C4.8D.C3.ADtko_Tisk_v_GNOME_v_print_dialogu_ze.C5.A1edne)
         *   [3.3.7 Unknown supported format: application/postscript](#Unknown_supported_format:_application.2Fpostscript)
         *   [3.3.8 Hledání URI tiskárny běžící pod Windows](#Hled.C3.A1n.C3.AD_URI_tisk.C3.A1rny_b.C4.9B.C5.BE.C3.ADc.C3.AD_pod_Windows)
@@ -82,13 +82,13 @@ Jestliže si nejste jistí, který ovladač nainstalovat nebo vám aktuální ov
 
 #### Stažení souboru PPD
 
-V závislosti na tiskárně, je tento krok volitelný a nemusí být vůbec potřeba, protože standardní instalace serveru CUPS už nějaké základní soubory PPD (Postscript Printer Description) obsahuje. Mimo to, balíčky _foomatic-filters_, _gimp-print_ a _hplip_ už obsahují základní soubory PPD, které CUPS detekuje automaticky.
+V závislosti na tiskárně, je tento krok volitelný a nemusí být vůbec potřeba, protože standardní instalace serveru CUPS už nějaké základní soubory PPD (Postscript Printer Description) obsahuje. Mimo to, balíčky *foomatic-filters*, *gimp-print* a *hplip* už obsahují základní soubory PPD, které CUPS detekuje automaticky.
 
 Zde je vysvětlení toho, co to PPD soubor vlastně je z webu Linux Printing:
 
-	"_Pro každou PostSkriptovou tiskárnu poskytuje její výrobce tzv. PPD soubor, který obsahuje všechny základní informace a daném modelu tiskárny. Například jestli tiskárna tiskne barevně nebo pouze černobíle, podporované fonty a hlavně uživatelská nastavení jako třeba velikost papíru, rozlišení apod._
+	"*Pro každou PostSkriptovou tiskárnu poskytuje její výrobce tzv. PPD soubor, který obsahuje všechny základní informace a daném modelu tiskárny. Například jestli tiskárna tiskne barevně nebo pouze černobíle, podporované fonty a hlavně uživatelská nastavení jako třeba velikost papíru, rozlišení apod.*
 
-Pokud soubor PPD pro vaši tiskárnu _není_ systémem CUPS nalezen, potom:
+Pokud soubor PPD pro vaši tiskárnu *není* systémem CUPS nalezen, potom:
 
 *   mrkněte do [AURu](/index.php/AUR_(%C4%8Cesky) "AUR (Česky)"), jestli zde nejsou balíčky se jménem vaší tiskárny nebo vašeho výrobce
 *   navštivte stránku [OpenPrinting databáze](http://www.linuxprinting.org/printer_list.cgi) a vyberte zde výrobce a model tiskárny
@@ -104,7 +104,7 @@ Pokud plánujete připojení k síťové tiskárně, místo přímého připojen
 
 ### Jaderné moduly
 
-Před použitím webového rozhraní programu CUPS, musí být nainstalovány vhodné jaderné moduly. Následující kroky pocházejí z návodu _Gentoo Printing_.
+Před použitím webového rozhraní programu CUPS, musí být nainstalovány vhodné jaderné moduly. Následující kroky pocházejí z návodu *Gentoo Printing*.
 
 Tato sekce není důležitá, ačkoliv závisí na jádru. Modul jádra může být automaticky načten při připojení tiskárny. Použijte příkaz `tail` (popsaný níže) pro kontrolu, jestli byla tiskárna jádrem správně detekována. Také můžete použít program `lsmod`, pro zjištění, které moduly jádra jsou právě načteny.
 
@@ -207,25 +207,25 @@ DAEMONS=(syslog-ng dbus network gdm @crond **@cupsd**)
 
 ### Webové rozhraní
 
-Pokud vám daemon běží, otevřete svůj webový prohlížeč a přejděte na: [http://localhost:631](http://localhost:631) (_Řetězec **localhost** budete možná muset nahradit tím, který najdete ve svém_ `/etc/hosts`).
+Pokud vám daemon běží, otevřete svůj webový prohlížeč a přejděte na: [http://localhost:631](http://localhost:631) (*Řetězec **localhost** budete možná muset nahradit tím, který najdete ve svém* `/etc/hosts`).
 
-Následně už pouze stačí proklikat průvodci a jednoduše přidat tiskárnu. Toto se provede kliknutím na _Přídávání tiskáren (Adding Printers)_ a následným kliknutím na _Přidat tiskárnu (Add printer)_. Pokud se vás prohlížeč zeptá na příhlašovací jméno a heslo, přihlašte se jako root. Na jménu, které se automaticky přiřadilo tiskárně nezáleží (to samé platí i pro 'umístění (location)' a 'popis (description)'. V dalším kroku vyberte zařízení, které chcete přidat. Nakonec vyberte odpovídající ovladače pro tiskárnu a konfigurace je hotova.
+Následně už pouze stačí proklikat průvodci a jednoduše přidat tiskárnu. Toto se provede kliknutím na *Přídávání tiskáren (Adding Printers)* a následným kliknutím na *Přidat tiskárnu (Add printer)*. Pokud se vás prohlížeč zeptá na příhlašovací jméno a heslo, přihlašte se jako root. Na jménu, které se automaticky přiřadilo tiskárně nezáleží (to samé platí i pro 'umístění (location)' a 'popis (description)'. V dalším kroku vyberte zařízení, které chcete přidat. Nakonec vyberte odpovídající ovladače pro tiskárnu a konfigurace je hotova.
 
-Teď už pouze stačí tiskárnu otestovat. Přejděte do záložky _Správa (Maintenance)_ a stiskněte _Vytisknout testovací stránku (Print Test Page)_. Pokud se stránka nevytiskla a jste přesvědčeni o správnosti konfigurace, pravděpodobně bude problém s chybějícím nebo špatně zvoleným ovladačem.
+Teď už pouze stačí tiskárnu otestovat. Přejděte do záložky *Správa (Maintenance)* a stiskněte *Vytisknout testovací stránku (Print Test Page)*. Pokud se stránka nevytiskla a jste přesvědčeni o správnosti konfigurace, pravděpodobně bude problém s chybějícím nebo špatně zvoleným ovladačem.
 
 **Tip:** [GNOME](/index.php/GNOME "GNOME") users may be inclined towards installing the GNOME CUPS manager GUI frontend. See: [#Alternative CUPS interfaces](#Alternative_CUPS_interfaces)
 
-**Note:** When setting up a USB printer, you should see your printer listed on _Add Printer_ page. If you can only see a "SCSI printer" option, it probably means that CUPS has failed to recognize your printer.
+**Note:** When setting up a USB printer, you should see your printer listed on *Add Printer* page. If you can only see a "SCSI printer" option, it probably means that CUPS has failed to recognize your printer.
 
 #### Administrace systému CUPS
 
-Při administraci tiskáren (přidávání a odebírání tiskáren, zastavování úloh apod.) ve webovém rozhranní po vás bude systém chtít zadat uživatelské jméno a heslo. Defaultní uživatelské jméno je přiřazené skupině _sys_ nebo root (toto můžete změnit v souboru `/etc/cups/cupsd.conf` na řádku _SystemGroup_).
+Při administraci tiskáren (přidávání a odebírání tiskáren, zastavování úloh apod.) ve webovém rozhranní po vás bude systém chtít zadat uživatelské jméno a heslo. Defaultní uživatelské jméno je přiřazené skupině *sys* nebo root (toto můžete změnit v souboru `/etc/cups/cupsd.conf` na řádku *SystemGroup*).
 
 Pokud je účet uživatele root uzamčen a není možné se přihlásit defaultním uživatelským jménem a heslem, bude pravděpodobně potřeba změnit SystemGroup v cupsd.conf a přečíst si [tento post](https://bbs.archlinux.org/viewtopic.php?id=35567).
 
 #### Vzdálený přístup do webového rozhraní
 
-Defaultně je webové rozhraní serveru CUPS přístupné pouze z _localhost_ (pouze z počítače, kde je CUPS nainstalován). Pro spřístupnění rozhraní musíte provést následující změny v souboru `/etc/cups/cupsd.conf`. Přepište proto řádku:
+Defaultně je webové rozhraní serveru CUPS přístupné pouze z *localhost* (pouze z počítače, kde je CUPS nainstalován). Pro spřístupnění rozhraní musíte provést následující změny v souboru `/etc/cups/cupsd.conf`. Přepište proto řádku:
 
 ```
 Listen localhost:631
@@ -340,7 +340,7 @@ Print a document and watch `error_log` to get a more detailed and correct image 
 
 ### Problémy po aktualizaci
 
-_Problémy, které se objevily po aktualizaci programu_
+*Problémy, které se objevily po aktualizaci programu*
 
 #### CUPS přestal pracovat
 
@@ -497,7 +497,7 @@ lp0
 
 Ujistěte se, že máte nainstalovaný a běžící dbus. Například spuštěním `ls /var/run/daemons`.
 
-Pokud máte dbus spuštěný a tato chyba dále přetrvává, možná budete muset spustit daemona _avahi_.
+Pokud máte dbus spuštěný a tato chyba dále přetrvává, možná budete muset spustit daemona *avahi*.
 
 #### hp-toolbox sends an error, "Unable to communicate with device"
 
@@ -539,9 +539,9 @@ make sure **hplip** has been installed, in addition to [the packages mentioned a
 
 ```
 
-#### Tisk selže s chybou _unauthorised_
+#### Tisk selže s chybou *unauthorised*
 
-Pokud byl uživatel přidán do skupiny _lp_ a byl mu umožněn tisk (vše se nastavuje v `cups.conf`), bude nejspíše problém v souboru `/etc/cups/printers.conf`. Za vše může pravděpodobně tato řádka:
+Pokud byl uživatel přidán do skupiny *lp* a byl mu umožněn tisk (vše se nastavuje v `cups.conf`), bude nejspíše problém v souboru `/etc/cups/printers.conf`. Za vše může pravděpodobně tato řádka:
 
 ```
 AuthInfoRequired negotiate
@@ -552,7 +552,7 @@ Zakomentujte ji a restartujte CUPS.
 
 #### Tlačítko Tisk v GNOME v print dialogu zešedne
 
-	_<small>Zdroj: [I can't print from gnome applications. - Arch Forums](https://bbs.archlinux.org/viewtopic.php?id=70418)</small>_
+	*<small>Zdroj: [I can't print from gnome applications. - Arch Forums](https://bbs.archlinux.org/viewtopic.php?id=70418)</small>*
 
 Ujistěte se, že je nainstalovaný balíček **libgnomeprint**.
 
@@ -593,7 +593,7 @@ v `/etc/cups/mime.types`.
 Občas jsou potíže s nalezením správné URI adresy zařízení. Pokud s tím máte problémy, spusťte následující příkaz, který vám vypíše všechny dostuné adresy URI podle zadaného uživatelského jména:
 
 ```
-$ smbtree -U _windows_uzivatelske_jmeno_
+$ smbtree -U *windows_uzivatelske_jmeno*
 
 ```
 
@@ -703,7 +703,7 @@ Driver:	Generic CUPS-PDF Printer
 
 ```
 
-Teď už stačí pro vytištění postskriptu, vytisknout vše jako obvykle, akorát v print dialogu vyberte tiskárnu "CUPS-PDF". Potom zatrhněte checkbox Print to file (Vytisknout do souboru), stiskněte _Tisk_ a vložtě jméno souboru, do kterého chcete vše vytisknout.
+Teď už stačí pro vytištění postskriptu, vytisknout vše jako obvykle, akorát v print dialogu vyberte tiskárnu "CUPS-PDF". Potom zatrhněte checkbox Print to file (Vytisknout do souboru), stiskněte *Tisk* a vložtě jméno souboru, do kterého chcete vše vytisknout.
 
 ### Další zdroj pro ovladač k tiskárnám
 
@@ -711,10 +711,10 @@ Teď už stačí pro vytištění postskriptu, vytisknout vše jako obvykle, ako
 
 ## Zdroje
 
-*   [Officiální dokumentace CUPSu](http://localhost:631/help/), _instalovaná lokálně_
+*   [Officiální dokumentace CUPSu](http://localhost:631/help/), *instalovaná lokálně*
 *   [Oficiální stránka programu CUPS](http://www.cups.org/)
-*   [Linux Printing](http://www.linuxprinting.org/), _[The Linux Foundation](http://www.linuxfoundation.org)_
-*   [Gentoo's Printing Guide](http://www.gentoo.org/doc/en/printing-howto.xml), _[Gentoo Documentation Resources](http://www.gentoo.org/doc/en)_
+*   [Linux Printing](http://www.linuxprinting.org/), *[The Linux Foundation](http://www.linuxfoundation.org)*
+*   [Gentoo's Printing Guide](http://www.gentoo.org/doc/en/printing-howto.xml), *[Gentoo Documentation Resources](http://www.gentoo.org/doc/en)*
 *   [Arch Linux fóra](https://bbs.archlinux.org/)
 
 *   [Common Unix Printing System na Wikipedii](https://en.wikipedia.org/wiki/CUPS "wikipedia:CUPS")

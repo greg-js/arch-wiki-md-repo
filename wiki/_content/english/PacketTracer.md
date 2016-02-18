@@ -62,7 +62,7 @@ Finally, please read the EULA at `/usr/share/licenses/packettracer/eula.txt` and
 
 ### Assessment environment check
 
-_This applies to both 32-bit and 64-bit systems._
+*This applies to both 32-bit and 64-bit systems.*
 
 The Cisco Packet Tracer-based Assessment Environment Check is used to confirm that students can start packet tracer activities for assessments such as practice and final exams. It is critical that you have a working version of [Java](/index.php/Java "Java") installed. Perform the check at [this page](http://skills.netacad.net/check/check.html) to confirm whether or not this ability is functional.
 

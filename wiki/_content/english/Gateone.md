@@ -1,6 +1,6 @@
 From [Gate One ✈ Web Terminal Emulator and SSH Client](http://liftoffsoftware.com/Products/GateOne):
 
-	_Gate One™ is a web-based Terminal Emulator and SSH client that brings the power of the command line to the web. It requires no browser plugins and is built on top of a powerful plugin system that allows every aspect of its appearance and functionality to be customized._
+	*Gate One™ is a web-based Terminal Emulator and SSH client that brings the power of the command line to the web. It requires no browser plugins and is built on top of a powerful plugin system that allows every aspect of its appearance and functionality to be customized.*
 
 Gate One enables users to access SSH servers over the web. alternatives exist, such as [Guacamole](http://guac-dev.org/). One of Gate One's distinguishing features is the ability to resume sessions from other browsers or to replay sessions.
 
@@ -56,7 +56,6 @@ Keep in mind that these options are split up in three configuration files: this 
 The main server settings are found in `/etc/gateone/conf.d/10server.conf`.
 
  `/etc/gateone/conf.d/10server.conf` 
-
 ```
 {
     // "gateone" server-wide settings fall under "*"
@@ -117,7 +116,6 @@ The main server settings are found in `/etc/gateone/conf.d/10server.conf`.
 The authentication settings are found in `/etc/gateone/conf.d/20authentication.conf`.
 
  `/etc/gateone/conf.d/20authentication.conf` 
-
 ```
 // This is Gate One's authentication settings file.
 {
@@ -149,7 +147,6 @@ None is no authentication and allows anonymous access. Sessions will be tied to 
 PAM authentication can be used to authenticate with local users, but PAM can do much more. For example, you can authenticate against htpasswd files. Requires [libpam_pwdfile](https://aur.archlinux.org/packages/libpam_pwdfile/).
 
  `/etc/gateone/conf.d/20authentication.conf` 
-
 ```
  "auth": "pam"
  "pam_service": "gateonepwd"
@@ -166,7 +163,6 @@ Gate One uses Crypt encryption so use switch `-d`.
 Create the PAM service file, please take care that all white spaces are `<TAB>` characters.
 
  `/etc/pam.d/gateonepwd` 
-
 ```
 #%PAM-1.0
 # Login using a htpasswd file
@@ -189,7 +185,6 @@ Here you can add terminals and options for them. For example using it to control
 Example to only allow `example@gmail.com` and `test@gmail.com` to access the SSH application:
 
  `/etc/gateone/conf.d/20authentication.conf` 
-
 ```
  // This is Gate One's Terminal application settings file.
 {
@@ -238,9 +233,7 @@ Make sure that the port that the Gate One server is running on is blocked from o
 Edit your nginx configuration file similar to this:
 
 **Note:** Listed below are only the server part of the nginx configuration
-
  `/etc/nginx/nginx.conf` 
-
 ```
 # HTTPS server
 server {
@@ -280,9 +273,7 @@ server {
 ```
 
 **Note:** The above configuration requires the following Gate One configuration
-
  `/etc/gateone/conf.d/10server.conf` 
-
 ```
 	"disable_ssl": true,
 	"https_redirect": false,

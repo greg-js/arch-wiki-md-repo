@@ -46,7 +46,7 @@ Consideraciones importantes a tener en cuenta:
 
 Por lo tanto, es aconsejable que los usuarios administradores, así como cualquier otro usuario que está autorizado a utilizar su (y se sugiere que sean pocos, si los hay) adquieran el hábito de utilizar la orden su con un espacio y un guión. El guión tiene dos efectos:
 
-1.  Cambiar desde el directorio en curso al directorio home del nuevo usuario (por ejemplo, a `/root` en el caso de que el usuario destinatario sea root) para _acceder_ como ese usuario.
+1.  Cambiar desde el directorio en curso al directorio home del nuevo usuario (por ejemplo, a `/root` en el caso de que el usuario destinatario sea root) para *acceder* como ese usuario.
 2.  Cambiar las variables del entorno a las del nuevo usuario según lo indicado en su propio archivo `~/.bashrc`. Es decir, si el primer argumento que se pasa a su es un guión, el directorio y el entorno en curso cambiarán a los que se obtendrían si el nuevo usuario hubiera iniciado su propia sesión en realidad (en lugar de hacerse cargo de la sesión ya existente).
 
 Por lo tanto, los administradores, generalmente, deben utilizar su de la siguiente manera :

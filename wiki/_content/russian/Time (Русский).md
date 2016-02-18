@@ -33,7 +33,7 @@ $ grep ^HARDWARECLOCK /etc/rc.conf
 
 ```
 
-Если вы используете также Windows, то лучшим выбором будет _localtime_. Чтобы изменить стандарт временного отсчета на локальное время, используйте:
+Если вы используете также Windows, то лучшим выбором будет *localtime*. Чтобы изменить стандарт временного отсчета на локальное время, используйте:
 
 ```
 # hwclock --localtime
@@ -170,7 +170,7 @@ $ timedatectl list-timezones
 [Протокол синхронизации времени](https://en.wikipedia.org/wiki/ru:NTP "wikipedia:ru:NTP") (NTP) - это протокол для синхронизации часов компьютера с помощью пакетов в сетях с переменными задержками доставки данных. Вот реализации этого протокола:
 
 *   [Network Time Protocol daemon (Русский)](/index.php/Network_Time_Protocol_daemon_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Network Time Protocol daemon (Русский)") - это [Wikipedia:ru:эталонная реализация](https://en.wikipedia.org/wiki/ru:%D1%8D%D1%82%D0%B0%D0%BB%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F "wikipedia:ru:эталонная реализация") протокола, особенно рекомендуется к использованию на серверах времени. Он также регулирует частоту прерываний и количество тактов в секунду, чтобы уменьшить дрейф системных часов, и будет снова синхронизировать аппаратные часы каждые 11 минут.
-*   **sntp** - это [wikipedia:ru:SNTP](https://en.wikipedia.org/wiki/ru:SNTP "wikipedia:ru:SNTP") клиент, который входит в пакет [ntp](https://www.archlinux.org/packages/?name=ntp). Он заменяет собой _ntpdate_ и рекомендуется к использованию на не серверах.
+*   **sntp** - это [wikipedia:ru:SNTP](https://en.wikipedia.org/wiki/ru:SNTP "wikipedia:ru:SNTP") клиент, который входит в пакет [ntp](https://www.archlinux.org/packages/?name=ntp). Он заменяет собой *ntpdate* и рекомендуется к использованию на не серверах.
 *   [systemd-timesyncd (Русский)](/index.php/Systemd-timesyncd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-timesyncd (Русский)") - это простой [wikipedia:ru:SNTP](https://en.wikipedia.org/wiki/ru:SNTP "wikipedia:ru:SNTP") демон, реализующий только клиентскую часть, ориентируется только на запрос времени с одного удалённого сервера. Этот вариант подходит большинству пользователей.
 *   [OpenNTPD](/index.php/OpenNTPD "OpenNTPD") - это часть проекта OpenBSD, реализует как клиентскую, так и серверную часть.
 *   [Chrony](/index.php/Chrony "Chrony") - это клиент и сервер, который дружественен к роумингу и специально разработан для систем, которые не всегда онлайн.

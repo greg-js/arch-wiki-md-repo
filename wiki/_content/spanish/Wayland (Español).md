@@ -51,14 +51,13 @@ Necesita instalar [weston](https://www.archlinux.org/packages/?name=weston) disp
 
 ### Utilización
 
-<caption>_**Atajos del teclado**_
+<caption>***Atajos del teclado***
 **Nota:**<small>
 
 *   super = tecla windows - se puede cambiar, ver weston.ini `Ctrl-b`
 *   LMB (left mouse buton)=botón secundario ratón; MMB (mid mouse buton)=botón central ratón; RMB (right mouse buton)=botón principal ratón
 
 </small>
-
 </caption>
 | Combinación | Acción |
 | Ctrl + Alt + Retroceso | Salir de Weston |
@@ -71,7 +70,7 @@ Necesita instalar [weston](https://www.archlinux.org/packages/?name=weston) disp
 | Super + K | Forzar el cierre de la ventana activa |
 | Super + KeyUp/KeyDown | Cambiar entre el anterior/siguiente espacio de trabajo |
 | Super + Mayús + KeyUp/KeyDown | Grab Current Window and Switch Workspace |
-| Super + F_**n**_ | Cambiar entre espacios de trabajo _**n**_ |
+| Super + F***n*** | Cambiar entre espacios de trabajo ***n*** |
 
 Ahora que Wayland se ha instalado con sus requisitos, se está listo para probarlo.
 
@@ -135,7 +134,6 @@ $ weston-view doc1.pdf doc2.pdf...
 He aquí un archivo de configuración de ejemplo para la distribución del teclado, la selección de módulos y modificaciones de la interfaz de usuario. Vea `man weston.ini` para obtener los detalles completos:
 
  `~/.config/weston.ini` 
-
 ```
 [core]
 ### Descomentar esta línea para dar soporte a «xwayland» ###
@@ -215,7 +213,6 @@ path=/usr/libexec/weston-keyboard
 Configuración mínima de `weston.ini` :
 
  `~/.config/weston.ini` 
-
 ```
 [core]
 modules=desktop-shell.so,xwayland.so
@@ -240,16 +237,15 @@ transform=90
 
 #### XWayland
 
-XWayland _es_ un servidor XOrg y se compila igual que al que sustituye. La única diferencia es que se obtiene de la rama Wayland del repositorio xorg-server y como tal tiene las extensiones de Wayland. Estas extensiones permiten que se ejecute como un cliente de Weston.
+XWayland *es* un servidor XOrg y se compila igual que al que sustituye. La única diferencia es que se obtiene de la rama Wayland del repositorio xorg-server y como tal tiene las extensiones de Wayland. Estas extensiones permiten que se ejecute como un cliente de Weston.
 
 Cuando se quiere ejecutar una aplicación X desde Weston, se gira hacia el servidor X modificado para atender la solicitud.
 
-**Advertencia:** Los pasos de esta sección se dirigen _a reemplazar su entramado de gráficos_. Una instalación incompleta puede dar lugar a un entorno gráfico roto.
+**Advertencia:** Los pasos de esta sección se dirigen *a reemplazar su entramado de gráficos*. Una instalación incompleta puede dar lugar a un entorno gráfico roto.
 
 Si piensa ejecutar aplicaciones nativas de X dentro de Wayland, entonce tiene que instalar [xorg-server-dev](https://aur.archlinux.org/packages/xorg-server-dev/). Después de eso, cree o modifique el siguiente archivo de configuración:
 
  `~/.config/weston.ini` 
-
 ```
 [core]
 modules=xwayland.so,desktop-shell.so
@@ -274,7 +270,7 @@ Cuando ambos backends, Wayland y X, están activados, GTK+ de forma predetermina
 
 ### Qt5
 
-Tiene que hacerse o bien ~~recompilando [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) con _-opengl es2_~~ (actualmente no funciona, véase [http://lists.qt-project.org/pipermail/development/2013-December/014789.html](http://lists.qt-project.org/pipermail/development/2013-December/014789.html) ) o bien utilizando [qtbase-git](https://aur.archlinux.org/packages/qtbase-git/). Después compile el complemento [qtwayland-git](https://aur.archlinux.org/packages/qtwayland-git/) de wayland.
+Tiene que hacerse o bien ~~recompilando [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) con *-opengl es2*~~ (actualmente no funciona, véase [http://lists.qt-project.org/pipermail/development/2013-December/014789.html](http://lists.qt-project.org/pipermail/development/2013-December/014789.html) ) o bien utilizando [qtbase-git](https://aur.archlinux.org/packages/qtbase-git/). Después compile el complemento [qtwayland-git](https://aur.archlinux.org/packages/qtwayland-git/) de wayland.
 
 Para ejecutar una aplicación Qt5 con el complemento de Wayland, establezca `QT_QPA_PLATFORM=wayland-egl`.
 
@@ -304,7 +300,7 @@ KDE 4.11 beta permite iniciar [KWin bajo el compositor del sistema Wayland](http
 
 ### GNOME
 
-Desde la versión 3.10, Gnome tiene soporte experimental Wayland, pero se debe instalar [xwayland-git](https://aur.archlinux.org/packages/xwayland-git/) y el parche equivalente del controlador de la tarjeta gráfica, por ejemplo [xf86-video-intel-xwayland-git](https://aur.archlinux.org/packages/xf86-video-intel-xwayland-git/) para hacer que _Mutter_ funcione. Para más detalles mire en [GNOME wiki](https://live.gnome.org/Initiatives/Wayland) .
+Desde la versión 3.10, Gnome tiene soporte experimental Wayland, pero se debe instalar [xwayland-git](https://aur.archlinux.org/packages/xwayland-git/) y el parche equivalente del controlador de la tarjeta gráfica, por ejemplo [xf86-video-intel-xwayland-git](https://aur.archlinux.org/packages/xf86-video-intel-xwayland-git/) para hacer que *Mutter* funcione. Para más detalles mire en [GNOME wiki](https://live.gnome.org/Initiatives/Wayland) .
 
  `gnome-session --session=gnome-wayland` 
 
@@ -355,7 +351,7 @@ $ sudo make install
 
 ```
 $ sudo pacman -S gegl mtdev
-_(selecciones mesa-gl en options para libgl)_
+*(selecciones mesa-gl en options para libgl)*
 $ git clone [git://anongit.freedesktop.org/wayland/weston](git://anongit.freedesktop.org/wayland/weston)
 $ cd weston/
 $ CFLAGS="-DMESA_EGL_NO_X11_HEADERS" ./autogen.sh --prefix=/usr/local/ --with-cairo-glesv2 --disable-xwayland --disable-x11-compositor --disable-xwayland-test

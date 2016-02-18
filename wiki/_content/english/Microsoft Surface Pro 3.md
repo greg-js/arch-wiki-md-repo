@@ -43,7 +43,7 @@ There are three types of boots in the Surface Pro 3 [explained here](http://www.
 
 **Note:** This will cause a red background before the logo when booting.
 
-Boot into the UEFI setup, and select _Secure Boot Control > Disable_. Now continue with the installation. See the [Microsoft steps](http://www.microsoft.com/surface/en-sg/support/warranty-service-and-recovery/how-to-use-the-bios-uefi) for more information.
+Boot into the UEFI setup, and select *Secure Boot Control > Disable*. Now continue with the installation. See the [Microsoft steps](http://www.microsoft.com/surface/en-sg/support/warranty-service-and-recovery/how-to-use-the-bios-uefi) for more information.
 
 ### Boot with Secure Boot
 

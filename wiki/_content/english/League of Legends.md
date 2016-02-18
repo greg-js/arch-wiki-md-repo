@@ -2,11 +2,11 @@ There is currently only a Mac OS and a Windows version of LoL. This page outline
 
 **This guide was last tested with:**
 
-_Arch Linux Kernel:_ **4.2.3-1-ARCH**
+*Arch Linux Kernel:* **4.2.3-1-ARCH**
 
-_Wine Version:_ **1.7.53**
+*Wine Version:* **1.7.53**
 
-_LoL Version:_ **5.20**
+*LoL Version:* **5.20**
 
 **Issues:**
 

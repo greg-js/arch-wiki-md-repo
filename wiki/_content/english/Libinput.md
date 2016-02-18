@@ -33,17 +33,17 @@ It will output the devices on the system and their respective features supported
 
 After a [restart](/index.php/Restart "Restart") of the graphical environment, the devices should be managed by libinput with default configuration, if no other drivers are configured to take precedence.
 
-See the libinput(4) manual page for general options to set. The _xinput_ tool is used to view or change options available for a particular device at runtime. For example:
+See the libinput(4) manual page for general options to set. The *xinput* tool is used to view or change options available for a particular device at runtime. For example:
 
 ```
-$ xinput list-props _device-number_ 
+$ xinput list-props *device-number* 
 
 ```
 
 to view and
 
 ```
-$ xinput set-prop _device-number_ _option-number_ _setting_ 
+$ xinput set-prop *device-number* *option-number* *setting* 
 
 ```
 
@@ -51,10 +51,9 @@ to change a setting.
 
 See [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg") for permanent option settings. [Logitech Marble Mouse#Using libinput](/index.php/Logitech_Marble_Mouse#Using_libinput "Logitech Marble Mouse") illustrates an example.
 
-Alternative drivers for [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg") can generally be installed in parallel. If you intend to switch driver for a device to use libinput, ensure no legacy configuration files `/etc/X11/xorg.conf.d/` for other drivers take precedence. One way to check which devices are managed by libinput is the _xorg_ logfile. For example, the following:
+Alternative drivers for [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg") can generally be installed in parallel. If you intend to switch driver for a device to use libinput, ensure no legacy configuration files `/etc/X11/xorg.conf.d/` for other drivers take precedence. One way to check which devices are managed by libinput is the *xorg* logfile. For example, the following:
 
  `$ grep -e "Using input driver 'libinput'" ~/.local/share/xorg/Xorg.0.log` 
-
 ```
 [    28.799] (II) Using input driver 'libinput' for 'Power Button'
 [    28.847] (II) Using input driver 'libinput' for 'Video Bus'
@@ -75,7 +74,6 @@ Of course you can elect to use an alternative driver for one device and libinput
 Tapping may be disabled by default. To enable it, add a configuration file:
 
  `/etc/X11/xorg.conf.d/30-touchpad.conf` 
-
 ```
 Section "InputClass"
         Identifier "MyTouchpad"

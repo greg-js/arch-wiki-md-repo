@@ -56,11 +56,11 @@
 
 	[http://cryptmount.sourceforge.net/](http://cryptmount.sourceforge.net/) || [cryptmount](https://aur.archlinux.org/packages/cryptmount/)
 
-*   **ldm** — Легковесный демон, автоматически монтирующий диски при помощи _udev_
+*   **ldm** — Легковесный демон, автоматически монтирующий диски при помощи *udev*
 
 	[https://github.com/LemonBoy/ldm](https://github.com/LemonBoy/ldm) || [ldm](https://aur.archlinux.org/packages/ldm/)
 
-*   **pmount** — Монтирует _источник_ от имени обычного пользователя в автоматически создаваемый каталог `/media/_имя_источника_`
+*   **pmount** — Монтирует *источник* от имени обычного пользователя в автоматически создаваемый каталог `/media/*имя_источника*`
 
 	[http://pmount.alioth.debian.org/](http://pmount.alioth.debian.org/) || [pmount](https://aur.archlinux.org/packages/pmount/)
 
@@ -68,7 +68,7 @@
 
 	[http://mywaytoarch.tumblr.com/post/13111098534/pmount-safe-removal-of-usb-device](http://mywaytoarch.tumblr.com/post/13111098534/pmount-safe-removal-of-usb-device) || [pmount-safe-removal](https://aur.archlinux.org/packages/pmount-safe-removal/)
 
-*   **udevil** — Монтирует съемные носители от имени обычного пользователя, показывает информацию об устройствах и отслеживает изменения на них. Зависит только от _udev_ и glib
+*   **udevil** — Монтирует съемные носители от имени обычного пользователя, показывает информацию об устройствах и отслеживает изменения на них. Зависит только от *udev* и glib
 
 	[http://ignorantguru.github.io/udevil](http://ignorantguru.github.io/udevil) || [udevil](https://www.archlinux.org/packages/?name=udevil)
 
@@ -82,15 +82,15 @@
 
 	[https://github.com/jamielinux/bashmount](https://github.com/jamielinux/bashmount) || [bashmount](https://aur.archlinux.org/packages/bashmount/)
 
-*   **udiskie** — Служба автоматического монтирования дисков при помощи _udisks_
+*   **udiskie** — Служба автоматического монтирования дисков при помощи *udisks*
 
 	[https://pypi.python.org/pypi/udiskie](https://pypi.python.org/pypi/udiskie) || [udiskie](https://www.archlinux.org/packages/?name=udiskie)
 
-*   **udisks_functions** — Функции и псевдонимы [bash](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)") для _udisks2_
+*   **udisks_functions** — Функции и псевдонимы [bash](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)") для *udisks2*
 
 	[https://bbs.archlinux.org/viewtopic.php?id=109307](https://bbs.archlinux.org/viewtopic.php?id=109307) || [udisks_functions](https://aur.archlinux.org/packages/udisks_functions/)
 
-*   **udisksvm** — Графическая оболочка _udisks_ для съемных носителей
+*   **udisksvm** — Графическая оболочка *udisks* для съемных носителей
 
 	[https://bbs.archlinux.org/viewtopic.php?id=112397](https://bbs.archlinux.org/viewtopic.php?id=112397) || [udisksvm](https://aur.archlinux.org/packages/udisksvm/)
 
@@ -212,7 +212,7 @@
 
 	[http://qt-project.org/downloads#qt-creator](http://qt-project.org/downloads#qt-creator) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
 
-*   **[Scratch](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D1%8F%D0%B7%D1%8B%D0%BA_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F) "wikipedia:ru:Скретч (язык программирования)")** — Мультимедийное средство разработки для образовательных и развлекательных целей, таких как создание интерактивных проектов и простых игр. Используется в первую очередь неопытными пользователями (например, детьми) в качестве первого шага в освоении [событийно-ориентированного программирования](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5 "wikipedia:ru:Событийно-ориентированное программирование"). _Scratch_ - это свободное программное обеспечение, распространяемое под лицензиями GPL v2 и [Scratch Source Code License](http://wiki.scratch.mit.edu/wiki/Scratch_Source_Code_License)
+*   **[Scratch](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D1%8F%D0%B7%D1%8B%D0%BA_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F) "wikipedia:ru:Скретч (язык программирования)")** — Мультимедийное средство разработки для образовательных и развлекательных целей, таких как создание интерактивных проектов и простых игр. Используется в первую очередь неопытными пользователями (например, детьми) в качестве первого шага в освоении [событийно-ориентированного программирования](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5 "wikipedia:ru:Событийно-ориентированное программирование"). *Scratch* - это свободное программное обеспечение, распространяемое под лицензиями GPL v2 и [Scratch Source Code License](http://wiki.scratch.mit.edu/wiki/Scratch_Source_Code_License)
 
 	[http://scratch.mit.edu](http://scratch.mit.edu) || [scratch](https://www.archlinux.org/packages/?name=scratch)
 
@@ -242,7 +242,7 @@
 
 	[http://kde.org/applications/system/konsole/](http://kde.org/applications/system/konsole/) || [kdebase-konsole](https://www.archlinux.org/packages/?name=kdebase-konsole)
 
-*   **[Mrxvt](https://en.wikipedia.org/wiki/mrxvt "wikipedia:mrxvt")** — Эмулятор терминала X с поддержкой вкладок, основанный на _rxvt_
+*   **[Mrxvt](https://en.wikipedia.org/wiki/mrxvt "wikipedia:mrxvt")** — Эмулятор терминала X с поддержкой вкладок, основанный на *rxvt*
 
 	[http://materm.sourceforge.net/wiki/pmwiki.php](http://materm.sourceforge.net/wiki/pmwiki.php) || [mrxvt](https://aur.archlinux.org/packages/mrxvt/)
 
@@ -302,7 +302,7 @@
 
 	[http://guake.org/](http://guake.org/) || [guake](https://www.archlinux.org/packages/?name=guake)
 
-*   **Terra** — эмулятор терминала, написанный на GTK+3.0, с удобным интерфейсом, поддержкой работы нескольких терминалов с разделением по горизонтали или вертикали (как в _guake_)
+*   **Terra** — эмулятор терминала, написанный на GTK+3.0, с удобным интерфейсом, поддержкой работы нескольких терминалов с разделением по горизонтали или вертикали (как в *guake*)
 
 	[https://github.com/ozcanesen/terra-terminal](https://github.com/ozcanesen/terra-terminal) || [terra](https://aur.archlinux.org/packages/terra/)
 
@@ -504,7 +504,7 @@
 
 	[http://gnome.org](http://gnome.org) || [gnome-search-tool](https://www.archlinux.org/packages/?name=gnome-search-tool)
 
-*   **Gnome Search Tool No Nautilus** — _gnome-search-tool_ для поиска файлов без помощи [GNOME Files](/index.php/GNOME_Files "GNOME Files") или _gnome-desktop_
+*   **Gnome Search Tool No Nautilus** — *gnome-search-tool* для поиска файлов без помощи [GNOME Files](/index.php/GNOME_Files "GNOME Files") или *gnome-desktop*
 
 	|| [gnome-search-tool-no-nautilus](https://aur.archlinux.org/packages/gnome-search-tool-no-nautilus/)
 
@@ -646,7 +646,7 @@
 
 	[http://bleachbit.sourceforge.net/](http://bleachbit.sourceforge.net/) Bleachbit || [bleachbit](https://www.archlinux.org/packages/?name=bleachbit)
 
-*   **gconf-cleaner** — Удаляет неизвестные/неправильные ключи _gconf_, по-прежнему существующие в вашей базе данных
+*   **gconf-cleaner** — Удаляет неизвестные/неправильные ключи *gconf*, по-прежнему существующие в вашей базе данных
 
 	[https://code.google.com/p/gconf-cleaner/](https://code.google.com/p/gconf-cleaner/) || [gconf-cleaner](https://aur.archlinux.org/packages/gconf-cleaner/)
 

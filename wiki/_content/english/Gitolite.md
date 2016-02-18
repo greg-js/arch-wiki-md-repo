@@ -18,51 +18,50 @@
 
 ## Configuration
 
-Installing gitolite automatically adds the _gitolite_ user to the system, with home directory `/var/lib/gitolite`.
+Installing gitolite automatically adds the *gitolite* user to the system, with home directory `/var/lib/gitolite`.
 
 ### Admin SSH access
 
-To give you admin access, copy your SSH public key to `/var/lib/gitolite/_username_.pub`, where `username` is your username.
+To give you admin access, copy your SSH public key to `/var/lib/gitolite/*username*.pub`, where `username` is your username.
 
 ```
-# install -o gitolite -g gitolite ~/.ssh/id_rsa.pub /var/lib/gitolite/_username_.pub
+# install -o gitolite -g gitolite ~/.ssh/id_rsa.pub /var/lib/gitolite/*username*.pub
 
 ```
 
-Then run the Gitolite setup script as the _gitolite_ user.
+Then run the Gitolite setup script as the *gitolite* user.
 
 ```
 # su - gitolite
-$ gitolite setup -pk _username_.pub
+$ gitolite setup -pk *username*.pub
 
 ```
 
 This puts your public key into the gitolite-admin keydir and gives your username RW+ access to the gitolite-admin repository
 
-You can now remove the SSH public key you copied and exit the _gitolite_ user shell
+You can now remove the SSH public key you copied and exit the *gitolite* user shell
 
 ```
-$ rm _username_.pub
+$ rm *username*.pub
 $ exit
 
 ```
 
 Now as your user you can check that everything went correctly
 
- `$ ssh gitolite@_hostname_ info` 
-
+ `$ ssh gitolite@*hostname* info` 
 ```
-hello _username_, this is gitolite@_hostname_ running gitolite3 v3.6.2 on git 2.3.3
+hello *username*, this is gitolite@*hostname* running gitolite3 v3.6.2 on git 2.3.3
 
  R W    gitolite-admin
  R W    testing
 
 ```
 
-Do NOT add repositories or users directly as _gitolite_ on the server! You MUST manage the server by cloning the special _gitolite-admin_ repository
+Do NOT add repositories or users directly as *gitolite* on the server! You MUST manage the server by cloning the special *gitolite-admin* repository
 
 ```
-$ git clone gitolite@_hostname_:gitolite-admin
+$ git clone gitolite@*hostname*:gitolite-admin
 
 ```
 
@@ -80,7 +79,6 @@ We need to create an suEXEC wrapper script. To satisfy suEXEC's security require
 Create an suEXEC wrapper for the gitolite shell with the contents below. For this example, we create it as `/srv/http/git/cgi-bin/gitolite-suexec-wrapper`.
 
  `/srv/http/git/cgi-bin/gitolite-suexec-wrapper` 
-
 ```
 #!/usr/bin/bash
 #
@@ -111,7 +109,7 @@ Create an empty password database file, owned by `gitolite:http`
 Apache's basic authentication mechanism is separate from ssh, and therefore requires a separate set of credentials. Create your web users using `htpasswd`.
 
 ```
-# htpasswd /srv/http/git/htpasswd _username_
+# htpasswd /srv/http/git/htpasswd *username*
 
 ```
 
@@ -174,7 +172,7 @@ $ git push
 User management for http(s) is more suitable for single-user setups. To add a new user or to change an existing user's password:
 
 ```
-# htpasswd /srv/http/git/htpasswd _username_
+# htpasswd /srv/http/git/htpasswd *username*
 
 ```
 
@@ -196,7 +194,7 @@ $user =~ s/\.pub$//;              # baz@home.pub -> baz@home
 
 ```
 
-*   update authorized_keys file (for example, by pushing into the _gitolite-admin_ repository)
+*   update authorized_keys file (for example, by pushing into the *gitolite-admin* repository)
 
 ## See also
 

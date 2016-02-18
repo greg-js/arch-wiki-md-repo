@@ -76,14 +76,14 @@ To view a list of contacts, press the `Shift+c` key. To e-mail one of the people
 Backing-up e-mail is very important. To ensure that you do not lose anything, first back up the sources, such as mbox files and maildir directories, then run:
 
 ```
-$ sup-dump > _filename_
+$ sup-dump > *filename*
 
 ```
 
 This will back-up all message states in a text file. To restore your message states from this text file, simply run:
 
 ```
-$ sup-sync [<source>+] --restored --restore _filename_
+$ sup-sync [<source>+] --restored --restore *filename*
 
 ```
 

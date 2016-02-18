@@ -94,7 +94,7 @@ $ qtconfig-qt4
 
 ### GNOME
 
-GNOME现在已经默认集成了IBus， 所以只要安装你需要的输入法引擎并在_Region & Language_ 添加输入源. 默认切换输入法的快捷键是 `Super+space`; 你可以在终端输入
+GNOME现在已经默认集成了IBus， 所以只要安装你需要的输入法引擎并在*Region & Language* 添加输入源. 默认切换输入法的快捷键是 `Super+space`; 你可以在终端输入
 
 ```
 $ ibus-setup

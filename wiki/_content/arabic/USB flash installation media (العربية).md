@@ -3,7 +3,7 @@
 | **مواضيع متصلة** |
 | [CD Burning](/index.php/CD_Burning "CD Burning") |
 
-هذه الصفحة تناقش الطرق المتعددة في كتابة نسخة آرتش لينوكس على قرص USB (كما تسمى أيضاً _قرص فلاش، ذاكرة USB، مفتاح USB_ ... إلخ)، والنتيجة ستكون نظام مشابه لـ LiveCD (يمكنك تسميته _"LiveUSB"_ إن أردت) والذي وبطبيعة [SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS") فإنه سيقوم بنبذ كل التغييرات بمجرد إيقاف تشغيل الحاسوب.
+هذه الصفحة تناقش الطرق المتعددة في كتابة نسخة آرتش لينوكس على قرص USB (كما تسمى أيضاً *قرص فلاش، ذاكرة USB، مفتاح USB* ... إلخ)، والنتيجة ستكون نظام مشابه لـ LiveCD (يمكنك تسميته *"LiveUSB"* إن أردت) والذي وبطبيعة [SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS") فإنه سيقوم بنبذ كل التغييرات بمجرد إيقاف تشغيل الحاسوب.
 
 إن كنت ترغب بالقيام بعملية تثبيت كاملة لآرتش لينوكس من قرص USB (أي مع الإعدادات المستمرة) قم بالاطلاع على [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key").
 
@@ -48,7 +48,7 @@
 
 صورة ISO هجينة أي أنه يمكن حرقها على قرص مضغوط أو كتابتها مباشرة إلى ذاكرة USB، ولهذا السبب فإنها لا تتضمن جدول تقسيم معياري.
 
-بعد الانتهاء من تثبيت آرتش لينوكس بوساطة ذاكرة USB يجب عليك أن تُصَفِّر أول 512 بايت فيها لكي تسترجع كامل المساحة المتوفرة عليها _(هذه الـ 512 بايت تمثل كود الإقلاع في MBR وجدول التقسيم الغير معياري)_، وذلك عن طريق الأمر:
+بعد الانتهاء من تثبيت آرتش لينوكس بوساطة ذاكرة USB يجب عليك أن تُصَفِّر أول 512 بايت فيها لكي تسترجع كامل المساحة المتوفرة عليها *(هذه الـ 512 بايت تمثل كود الإقلاع في MBR وجدول التقسيم الغير معياري)*، وذلك عن طريق الأمر:
 
 ```
 # dd count=1 bs=512 if=/dev/zero of=/dev/sd**x**
@@ -77,7 +77,7 @@
 
 ### بدون إعادة الكتابة على ذاكرة USB
 
-هذه الطريقة أكثر تعقيداً من طريقة كتابة صورة ISO مباشرة بواسطة الأمر `dd` لكنها تُبقي ذاكرة USB قابلة للاستخدام ولتخزين البيانات، قبل البدء تأكد من أن ذاكرة USB مُهيئة وفقاً لنظام الملفات FAT32 أو EXT2/3/4 أو Btrfs، من أجل الإقلاع عبر [UEFI](/index.php/UEFI "UEFI") أو للتشغيل على أنظمة التشغيل الأخرى يتوجب عليك اختيار FAT32، كما تأكد من أن حزمة _syslinux_ مثبتة لديك (نسخة 4.04 أو أحدث).
+هذه الطريقة أكثر تعقيداً من طريقة كتابة صورة ISO مباشرة بواسطة الأمر `dd` لكنها تُبقي ذاكرة USB قابلة للاستخدام ولتخزين البيانات، قبل البدء تأكد من أن ذاكرة USB مُهيئة وفقاً لنظام الملفات FAT32 أو EXT2/3/4 أو Btrfs، من أجل الإقلاع عبر [UEFI](/index.php/UEFI "UEFI") أو للتشغيل على أنظمة التشغيل الأخرى يتوجب عليك اختيار FAT32، كما تأكد من أن حزمة *syslinux* مثبتة لديك (نسخة 4.04 أو أحدث).
 
 **1.** قم باستخراج مجلد `arch` من ملف ISO وضعه في ذاكرة USB، ومن أجل لوحات الأم الداعمة لـ UEFI قم بالاطلاع على [هذا](/index.php/UEFI#Create_UEFI_bootable_USB_from_ISO "UEFI").
 
@@ -88,7 +88,7 @@
 **ملاحظة:** في بعض التوزيعات فإن ملف `mbr.bin` من الممكن أن يتواجد في `/usr/**share**/syslinux/mbr.bin`.
 
 ```
-$ cd /_path/to/folder_/arch/boot/syslinux #حيث أن _path/to/folder_ هو المجلد الذي تم ربط قرص USB فيه
+$ cd /*path/to/folder*/arch/boot/syslinux #حيث أن *path/to/folder* هو المجلد الذي تم ربط قرص USB فيه
 # extlinux --install .                       #اكتب هذا السطر كما تراه تماماً ولا تنسى النقطة (.)
 # dd bs=440 conv=notrunc count=1 if=/usr/lib/syslinux/mbr.bin of=/dev/sd**x**
 # parted /dev/sd**x** toggle 1 boot
@@ -108,7 +108,7 @@ $ sed -i "s|label=ARCH_.*|device=/dev/disk/by-uuid/$(blkid -o value -s UUID /dev
 
 ```
 
-إذا كانت حزمة _syslinux_ على توزيعتك أقدم من النسخة 4.06 يجب استبدال السطر `APPEND` في ملف `syslinux.cfg`وذلك كحل لأنظمة FAT32 (غير ضروري لأنظمة EXT4):
+إذا كانت حزمة *syslinux* على توزيعتك أقدم من النسخة 4.06 يجب استبدال السطر `APPEND` في ملف `syslinux.cfg`وذلك كحل لأنظمة FAT32 (غير ضروري لأنظمة EXT4):
 
 ```
 $ sed -i "s|../../|/arch|" syslinux.cfg
@@ -124,7 +124,6 @@ $ sed -i "s|../../|/arch|" syslinux.cfg
 قم بتعديل ملف `syslinux.cfg`:
 
  `sysconfig.cfg` 
-
 ```
 default menu.c32
 prompt 0
@@ -163,7 +162,6 @@ $ diskutil unmountDisk /dev/disk1
 الآن نكمل وفقاً للإرشادات أعلاه (لكن حدد القيمة `bs=8192` إذا كنت تستخدم OS X `dd`، الرقم السابق أتى من `1024*8`).
 
  `dd if=image.iso of=/dev/disk1 bs=8192` 
-
 ```
 20480+0 records in
 20480+0 records out
@@ -195,7 +193,6 @@ $ diskutil eject /dev/disk1
 من سطر الأوامر قم باستدعاء flashnul مع الخيار `-p` واعرف ما هو الرقم التسلسلي لقرص USB الخاص بك، على سبيل المثال:
 
  `C:\>flashnul -p` 
-
 ```
 Avaible physical drives:
 Avaible logical disks:
@@ -208,7 +205,7 @@ E:\
 بعد تحديدك للقرص الصحيح يمكنك كتابة الصورة على القرص عن طريق استدعاء flashnul مع الرقم التسلسلي (أي الحرف) للقرص إضافة إلى الخيار `-L` والمسار المتواجدة فيه الصورة المطلوب كتابتها، على سبيل المثال:
 
 ```
-C:\>flashnul **E:** -L _path\to\arch.iso_
+C:\>flashnul **E:** -L *path\to\arch.iso*
 
 ```
 
@@ -279,7 +276,6 @@ X:\Boot\Settings
 وبينما أنت في هذا المجلد قم بإنشاء ملف `syslinux.cfg`:
 
  `X:\Boot\Settings\syslinux.cfg` 
-
 ```
 DEFAULT arch_iso
 
@@ -295,7 +291,6 @@ LABEL arch_iso
 **3.** وأخيراً قم بإنشاء ملف `*.bat` في المجلد الموجود فيه ملف `syslinux.exe` ثم قم بتشغيله (كمدير نظام "Run as administrator" في حال استعمال Vista أو Windows 7):
 
  `C:\Documents and Settings\username\Desktop\install.bat` 
-
 ```
 @echo off
 syslinux.exe -m -a -d /Boot/Settings X:
@@ -305,7 +300,7 @@ syslinux.exe -m -a -d /Boot/Settings X:
 
 ## استكشاف الأخطاء وإصلاحها
 
-**ملاحظة:** في طريقة [MEMDISK Method](#Boot_the_entire_ISO_from_RAM) إذا صادفك الخطأ الشائع "30 seconds" في حال قيامك بالإقلاع من نسخة i686 فقم بالضغط على المفتاح `Tab`بعد الوقوف على الخيار `Boot Arch Linux (i686)` وأضف `vmalloc=448M` في النهاية، مرجع: _إذا كانت صورة ISO أكبر من 128 ميغابايت وكنت تملك نظام تشغيل 32 بت يتوجب عليك زيادة الحد الأقصى لاستعمال الذاكرة الخاص بـ vmalloc_ [(*)](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
+**ملاحظة:** في طريقة [MEMDISK Method](#Boot_the_entire_ISO_from_RAM) إذا صادفك الخطأ الشائع "30 seconds" في حال قيامك بالإقلاع من نسخة i686 فقم بالضغط على المفتاح `Tab`بعد الوقوف على الخيار `Boot Arch Linux (i686)` وأضف `vmalloc=448M` في النهاية، مرجع: *إذا كانت صورة ISO أكبر من 128 ميغابايت وكنت تملك نظام تشغيل 32 بت يتوجب عليك زيادة الحد الأقصى لاستعمال الذاكرة الخاص بـ vmalloc* [(*)](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
 
 **ملاحظة:** إذا ظهر لك خطأ "30 seconds" بسبب أن المجلد `/dev/disk/by-label/ARCH_XXXXXX` لا يمكن ربطه، قم بإعادة تسمية قرص USB إلى `ARCH_XXXXXX` (على سبيل المثال: `ARCH_201302`).
 

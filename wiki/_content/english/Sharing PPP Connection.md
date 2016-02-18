@@ -49,7 +49,6 @@ Depending on whether you want to share a wireless or wired connection, you also 
 *   Configure [dnsmasq](/index.php/Dnsmasq "Dnsmasq"). Make the following changes to `/etc/dnsmasq.conf` (uncomment if necessary):
 
  `/etc/dnsmasq.conf` 
-
 ```
 domain-needed
 bogus-priv
@@ -145,7 +144,6 @@ Now you should be able to connect to the internet using **eth1** or **eth2**.
 *   Configure **dnsmasq**. Make the following changes to `/etc/dnsmasq.conf` (uncomment if necessary):
 
  `etc/dnsmasq.conf` 
-
 ```
 domain-needed
 bogus-priv
@@ -173,7 +171,6 @@ dhcp-range=192.168.0.1,192.168.0.100,12h
 A quick script for sharing **eth0** over **wlan0** on an ad-hoc network.
 
  `ethoverwlan.sh` 
-
 ```
 #!/bin/bash
 

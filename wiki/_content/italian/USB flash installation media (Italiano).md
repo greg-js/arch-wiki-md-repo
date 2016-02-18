@@ -1,4 +1,4 @@
-Questa pagina illustra come posizionare un media d'installazione di Arch su un supporto USB: _chiavette USB_, HD esterni ecc. Il risultato sarà simile ad un LiveCD che perderà tutti i cambiamenti e le impostazioni una volta rimosso.
+Questa pagina illustra come posizionare un media d'installazione di Arch su un supporto USB: *chiavette USB*, HD esterni ecc. Il risultato sarà simile ad un LiveCD che perderà tutti i cambiamenti e le impostazioni una volta rimosso.
 
 Nel caso si sia interessati ad installare Arch Linux su un supporto USB si veda [questa pagina](/index.php/Installing_Arch_Linux_on_a_USB_key_(Italiano) "Installing Arch Linux on a USB key (Italiano)").
 
@@ -75,7 +75,7 @@ La procedura è leggermente più complessa del semplice `dd` ma permette di usar
 
 **1.** Estrarre la directory `arch` dalla iso e copiarla sul dispositivo USB. Per motherboard UEFI seguire [queste](/index.php/Unified_Extensible_Firmware_Interface_(Italiano)#Creare_un_dispositivo_USB_avviabile_con_UEFI_dalla_ISO "Unified Extensible Firmware Interface (Italiano)") istruzioni.
 
-**2.** Installare il bootloader _Syslinux_:
+**2.** Installare il bootloader *Syslinux*:
 
 **Attenzione:** Quando si usa il comando `dd` bisogna sempre specificare l'intero dispositivo e non la prima partizione. **Questo è un errore molto comune**
 
@@ -90,7 +90,7 @@ La procedura è leggermente più complessa del semplice `dd` ma permette di usar
 
 **3.** Sistemare i file di configurazione:
 
-**Nota:** È _possibile_ etichettare il disco USB con la _label_ "`ARCH_2013XX`" (con l'appropriata release mensile) ma l'approccio migliore potrebbe essere l'uso degli [UUID](/index.php/Persistent_block_device_naming_(Italiano)#By-uuid "Persistent block device naming (Italiano)"). Non usare gli UUID potrebbe portare al famoso errore: **30 seconds error**.
+**Nota:** È *possibile* etichettare il disco USB con la *label* "`ARCH_2013XX`" (con l'appropriata release mensile) ma l'approccio migliore potrebbe essere l'uso degli [UUID](/index.php/Persistent_block_device_naming_(Italiano)#By-uuid "Persistent block device naming (Italiano)"). Non usare gli UUID potrebbe portare al famoso errore: **30 seconds error**.
 
 Per modificare `archisolabel=ARCH_2013XX` nel equivalente `archiso**device**=/dev/disk/by-uuid/47FA-4071` in tutti i file di configurazione allo stesso tempo usando un solo comando.
 
@@ -101,7 +101,7 @@ $ sed -i "s|label=ARCH_.*|device=/dev/disk/by-uuid/$(blkid -o value -s UUID /dev
 
 ```
 
-Se si ha sul proprio sistema _syslinux<4.06_ un workaround per EXT2 (inutile per EXT4) è modificare la riga `APPEND` del file `syslinux.cfg` così:
+Se si ha sul proprio sistema *syslinux<4.06* un workaround per EXT2 (inutile per EXT4) è modificare la riga `APPEND` del file `syslinux.cfg` così:
 
 ```
 $ sed -i "s|../../|/arch|" syslinux.cfg
@@ -114,7 +114,7 @@ $ sed -i "s|../../|/arch|" syslinux.cfg
 
 [UNetbootin](http://unetbootin.sourceforge.net/) è un software multipiattaforma il cui scopo è facilitare la creazione di dispositivi USB avviabili; funziona con moltissime distribuzioni GNU/Linux.
 
-Se si sta usando UNetbootin e si ha il classico [_30 seconds error_](https://bbs.archlinux.org/viewtopic.php?id=127031), sarà necessario editare il file `syslinux.cfg` creato da UNetbootin sulla partizione _root_ del dispositivo USB. Aggiungere `archisolabel=_LABEL_` alla fine della riga `append`, dove `_LABEL_` dovrà essere il nome del dispositivo USB, impostato al momento della formattazione. Supponendo che il nome del dispositivo sia "USB_DRIVE", il proprio file `syslinux.cfg` dovrebbe essere così:
+Se si sta usando UNetbootin e si ha il classico [*30 seconds error*](https://bbs.archlinux.org/viewtopic.php?id=127031), sarà necessario editare il file `syslinux.cfg` creato da UNetbootin sulla partizione *root* del dispositivo USB. Aggiungere `archisolabel=*LABEL*` alla fine della riga `append`, dove `*LABEL*` dovrà essere il nome del dispositivo USB, impostato al momento della formattazione. Supponendo che il nome del dispositivo sia "USB_DRIVE", il proprio file `syslinux.cfg` dovrebbe essere così:
 
 ```
  default menu.c32
@@ -168,7 +168,7 @@ espellere il supporto prima di rimuoverlo fisicamente con:
 
 ### Image Writer per Windows
 
-Scaricare win32 disk imager da [http://sourceforge.net/projects/win32diskimager/](http://sourceforge.net/projects/win32diskimager/). Eseguire il programma. Selezionare il file immagine di Arch ed il dispositivo USB. Win32 Disk Imager individua i file immagine con estensione _.img_, perciò se si ha un'immagine _.iso_, occorrerà rinominarla manualmente; la modifica è solo "estetica", per cui la scrittura sarà eseguita regolarmente. Cliccare sul tasto "Scrivi". Ora si dovrebbe essere in grado di eseguire il boot dal dispositivo USB ed installare Arch.
+Scaricare win32 disk imager da [http://sourceforge.net/projects/win32diskimager/](http://sourceforge.net/projects/win32diskimager/). Eseguire il programma. Selezionare il file immagine di Arch ed il dispositivo USB. Win32 Disk Imager individua i file immagine con estensione *.img*, perciò se si ha un'immagine *.iso*, occorrerà rinominarla manualmente; la modifica è solo "estetica", per cui la scrittura sarà eseguita regolarmente. Cliccare sul tasto "Scrivi". Ora si dovrebbe essere in grado di eseguire il boot dal dispositivo USB ed installare Arch.
 
 ### USBWriter per Windows
 
@@ -248,7 +248,7 @@ dd if=image.iso of=/dev/sdb
 
 ### dd per Windows
 
-Una versione con licenza GPL di _dd_ per Windows è disponibile [qui](http://www.chrysocome.net/dd). Il vantaggio rispetto a Cygwin è semplicemente che il download risulta essere più leggero. È possibile usare le istruzioni di Cygwin del paragrafo precedente.
+Una versione con licenza GPL di *dd* per Windows è disponibile [qui](http://www.chrysocome.net/dd). Il vantaggio rispetto a Cygwin è semplicemente che il download risulta essere più leggero. È possibile usare le istruzioni di Cygwin del paragrafo precedente.
 
 ### Avviare l'intera ISO dalla memoria RAM
 
@@ -263,13 +263,12 @@ X:\Boot\Settings
 
 ```
 
-**2.** Copiare l'immagine ISO desiderata nella cartella ISOs (Ad esempio: _archlinux-2013.04.01-dual.iso_) e da **[qui](http://www.kernel.org/pub/linux/utils/boot/syslinux/)** la versione più recente si _syslinux_ e copiare:
+**2.** Copiare l'immagine ISO desiderata nella cartella ISOs (Ad esempio: *archlinux-2013.04.01-dual.iso*) e da **[qui](http://www.kernel.org/pub/linux/utils/boot/syslinux/)** la versione più recente si *syslinux* e copiare:
 
 *   `./win32/syslinux.exe` sul desktop, o dove si vuole.
 *   `./memdisk/memdisk` nella cartella "Settings" e, nel mentre, creare il file `syslinux.cfg` che contenga:
 
  `X:\Boot\Settings\syslinux.cfg` 
-
 ```
 DEFAULT arch_iso
 
@@ -280,12 +279,11 @@ DEFAULT arch_iso
     APPEND iso
 ```
 
-**Tip:** Se si vuole aggiungere un'altra distribuzione _(Debian e Parted Magic sono state testate)_ è possibile farlo editando il presente file. Vedere la pagina [Syslinux](/index.php/Syslinux_(Italiano) "Syslinux (Italiano)") per maggiori dettagli.
+**Tip:** Se si vuole aggiungere un'altra distribuzione *(Debian e Parted Magic sono state testate)* è possibile farlo editando il presente file. Vedere la pagina [Syslinux](/index.php/Syslinux_(Italiano) "Syslinux (Italiano)") per maggiori dettagli.
 
-**3.** Creare un file `*.bat` nella stessa directory di _syslinux.exe_ e lanciare:
+**3.** Creare un file `*.bat` nella stessa directory di *syslinux.exe* e lanciare:
 
  `C:\Documents and Settings\username\Desktop\install.bat` 
-
 ```
 @echo off
  syslinux.exe -m -a -d /Boot/Settings X:
@@ -295,7 +293,7 @@ Fatto!
 
 ## Risoluzione problemi
 
-**Nota:** Con il metodo MEMDISK, se si ottiene il classico errore **30 seconds error** (specialmente con la versione i686), premere `Tab` sulla voce `Boot Arch Linux (i686)` e aggiungere `vmalloc=256M` alla fine per immagini netinstall e `vmalloc=448M` per immagini core. Questo è da applicare solo al metodo MEMDISK. Per riferimento: _Se l'immagine è più grossa di 128MiB e si ha un OS a 32-bit, è necessario incrementare la memoria di vmalloc_. [(*)](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
+**Nota:** Con il metodo MEMDISK, se si ottiene il classico errore **30 seconds error** (specialmente con la versione i686), premere `Tab` sulla voce `Boot Arch Linux (i686)` e aggiungere `vmalloc=256M` alla fine per immagini netinstall e `vmalloc=448M` per immagini core. Questo è da applicare solo al metodo MEMDISK. Per riferimento: *Se l'immagine è più grossa di 128MiB e si ha un OS a 32-bit, è necessario incrementare la memoria di vmalloc*. [(*)](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
 
 **Nota:**
 

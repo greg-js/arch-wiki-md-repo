@@ -34,7 +34,7 @@
 
 ## Nastavení hostname
 
-Hostname (název hostitele/počítače) je jedinečné jméno vytvořené pro účel identifikace stroje na síti. V Arch Linuxu se hostname stroje dá nastavit buď v souboru `/etc/[rc.conf](/index.php/Rc.conf_(%C4%8Cesky) "Rc.conf (Česky)")` nebo dočasně až do restartu pomocí příkazu _hostname_. Hostname je omezen na alfanumerické znaky; je povoleno použít pomlčku (–), ale nesmí jí začínat ani končit. Délka je omezena na 63 znaků.
+Hostname (název hostitele/počítače) je jedinečné jméno vytvořené pro účel identifikace stroje na síti. V Arch Linuxu se hostname stroje dá nastavit buď v souboru `/etc/[rc.conf](/index.php/Rc.conf_(%C4%8Cesky) "Rc.conf (Česky)")` nebo dočasně až do restartu pomocí příkazu *hostname*. Hostname je omezen na alfanumerické znaky; je povoleno použít pomlčku (–), ale nesmí jí začínat ani končit. Délka je omezena na 63 znaků.
 
 Otevřete `/etc/rc.conf` a nastavte `HOSTNAME` na vámi požadované jméno počítače (v tomto případě "archlinux"):
 
@@ -54,7 +54,7 @@ Otevřete `/etc/hosts` a přidejte na konec řádku pro localhost stejný hostna
 
 Obdobně můžete přidávat i další záznamy.
 
-Pro dočasné nastavení hostname (do příštího startu systému) použijte jako root příkaz _hostname_:
+Pro dočasné nastavení hostname (do příštího startu systému) použijte jako root příkaz *hostname*:
 
 ```
 # hostname archlinux
@@ -436,7 +436,7 @@ K detekci problému můžete vyzkoušet program WireShark. Je to výborný nást
 
 #### Jak to opravit? (špatná cesta)
 
-Můžete změnit hodnotu _tcp_rmem_, na které je založen škálovací faktor. Přestože by to mohlo pomoci většine hostů, není zaručeno, že to bude funkční i na ty velmi vzdálené.
+Můžete změnit hodnotu *tcp_rmem*, na které je založen škálovací faktor. Přestože by to mohlo pomoci většine hostů, není zaručeno, že to bude funkční i na ty velmi vzdálené.
 
 ```
 echo "4096 87380 174760" > /proc/sys/net/ipv4/tcp_rmem

@@ -22,7 +22,6 @@ I try witch efibootmgr but have kernel panic
 lspci output:
 
  `lspci` 
-
 ```
 00:00.0 Host bridge: Intel Corporation Broadwell-U Host Bridge -OPI (rev 09)
 00:02.0 VGA compatible controller: Intel Corporation Broadwell-U Integrated Graphics (rev 09)
@@ -47,7 +46,6 @@ lspci output:
 Detected modules
 
  `hwdetect --show-modules` 
-
 ```
  AGP      : intel-gtt 
  ACPI     : ac acpi_pad battery button fan processor thermal video 

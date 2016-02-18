@@ -3,7 +3,7 @@
 | **مواضيع ذات صلة** |
 | [NFS Troubleshooting](/index.php/NFS_Troubleshooting "NFS Troubleshooting") - Dedicated article for common problems and solutions. |
 
-نقلا عن: [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Network File System"): نظام ملفات الشبكة:_(Network File System NFS) هو بروتوكول نظام الملفات الموزع وقد تم تطويره من شركة صن ميكروسيستمز عام 1984 ، حيث يتيح للمستخدم على الحاسب العميل أن يصل للملفات عبر الشبكة بطريقة مشابهة لكيفية الوصول إلى أقراص التخزين المحلية._
+نقلا عن: [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Network File System"): نظام ملفات الشبكة:*(Network File System NFS) هو بروتوكول نظام الملفات الموزع وقد تم تطويره من شركة صن ميكروسيستمز عام 1984 ، حيث يتيح للمستخدم على الحاسب العميل أن يصل للملفات عبر الشبكة بطريقة مشابهة لكيفية الوصول إلى أقراص التخزين المحلية.*
 
 ## Contents
 
@@ -37,7 +37,6 @@
 عدل الملف `/etc/idmapd.conf` واضبط حقل `Domain` حسب اسم النطاق لديك.
 
  `/etc/idmapd.conf` 
-
 ```
 [General]
 
@@ -67,7 +66,6 @@ Nobody-Group = nobody
 لجعل ذلك ثابتا عند إعادة تشغيل الخادم ، أضف خيار الربط الإلزامي bind لملف `fstab`:
 
  `/etc/fstab` 
-
 ```
 /mnt/music /srv/nfs4/music  none   bind   0   0
 
@@ -78,7 +76,6 @@ Nobody-Group = nobody
 أضف المجلدات التي تريد مشاركتها وأحد عناوين ip أو اسم المضيف hostname(s) لحاسب العميل ، الذي سيتاح له توصيل هذه المجلدات في `exports`:
 
  `/etc/exports` 
-
 ```
 /srv/nfs4/ 192.168.0.1/24(rw,fsid=root,no_subtree_check)
 /srv/nfs4/music 192.168.0.1/24(rw,no_subtree_check,nohide) # note the nohide option which is applied to mounted directories on the file system.
@@ -112,7 +109,6 @@ Nobody-Group = nobody
 استخدام الملف [fstab](/index.php/Fstab "Fstab") مفيد للخادم الذي يعمل دوما، وتكون مشاركات NFS متاحة حالما يشتغل العميل.قم بتحرير الملف `/etc/fstab` ، وأضف السطر المناسب الذي يعكس هذا الإعداد. مرة ثانية، جذر خادم NFS مهمل.
 
  `/etc/fstab` 
-
 ```
 servername:/music   /mountpoint/on/client   nfs4   rsize=8192,wsize=8192,timeo=14,intr,_netdev	0 0
 
@@ -159,4 +155,4 @@ servername:/music   /mountpoint/on/client   nfs4   rsize=8192,wsize=8192,timeo=1
 
 ## استكشاف الأخطاء وإصلاحها
 
-_اقرأ هذا المقال المخصص [NFS Troubleshooting](/index.php/NFS_Troubleshooting "NFS Troubleshooting")._
+*اقرأ هذا المقال المخصص [NFS Troubleshooting](/index.php/NFS_Troubleshooting "NFS Troubleshooting").*

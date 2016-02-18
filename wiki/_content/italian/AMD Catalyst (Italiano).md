@@ -1,10 +1,10 @@
 I possessori di schede video **ATI/AMD** possono scegliere tra i driver proprietari ATI ([Catalyst](https://aur.archlinux.org/packages/Catalyst/)) e i [driver opensource](/index.php/ATI_(Italiano) "ATI (Italiano)") ([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)). Questo articolo tratta i driver proprietari.
 
-Conosciuti precedentemente come _fglrx_(**F**ire**GL** and **R**adeon **X**), ATI ha ribattezzato i suoi driver proprietari Linux, che sono ora noti come _Catalyst_. Attualmente solo il nome dei pacchetti è cambiato, mentre il modulo del kernel mantiene il nome originale _fglrx.ko_, perciò ogni riferimento a fglrx da qui in poi sarà specificatamente riferito al modulo del kernel, **non al pacchetto**.
+Conosciuti precedentemente come *fglrx*(**F**ire**GL** and **R**adeon **X**), ATI ha ribattezzato i suoi driver proprietari Linux, che sono ora noti come *Catalyst*. Attualmente solo il nome dei pacchetti è cambiato, mentre il modulo del kernel mantiene il nome originale *fglrx.ko*, perciò ogni riferimento a fglrx da qui in poi sarà specificatamente riferito al modulo del kernel, **non al pacchetto**.
 
-Un tempo, catalyst era un pacchetto precompilato scaricabile dal repostory [extra] di Arch Linux, ma da Marzo 2009, il [supporto ufficiale è stato abbandonato](https://www.archlinux.org/news/ati-catalyst-support-dropped/) a causa della poco soddisfacente qualità e velocità in termini di sviluppo di questo driver proprietario. Da ottobre 2012, tali driver sono rientrati nei [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"), più precisamente in [community]. Ad aprile 2013, i _catalyst_ sono di nuovo usciti dai repositories ufficiale e, probabilmente, non ci rientreranno più.
+Un tempo, catalyst era un pacchetto precompilato scaricabile dal repostory [extra] di Arch Linux, ma da Marzo 2009, il [supporto ufficiale è stato abbandonato](https://www.archlinux.org/news/ati-catalyst-support-dropped/) a causa della poco soddisfacente qualità e velocità in termini di sviluppo di questo driver proprietario. Da ottobre 2012, tali driver sono rientrati nei [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"), più precisamente in [community]. Ad aprile 2013, i *catalyst* sono di nuovo usciti dai repositories ufficiale e, probabilmente, non ci rientreranno più.
 
-Comparando i Catalyst con i driver open source, si nota che i driver open source hanno performance 2D migliori. Le parti si invertono se si passa a considerare l'accelerazione 3D, dove i Catalyst hanno la meglio.Nella versione [Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon"), ATI ha rielaborato lo schema identificativo per collegare ogni prodotto ad un determinato segmento di mercato. Dalla versione **9.4**, i drivers proprietari ATI **supportano solo schede R600 o più recenti** (il che significa, **HD2xxx** o **più nuove**). Per schede video più datate è disponibile solo il driver open source[xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati). In questa guida, i lettori avranno modo di vedere sia i nomi del _product_ (es. HD 4850, X1900) sia i nomi _code_ o _core_ (es. RV770, R580). Per ulteriori informazioni sui prodotti ATI consultare [Wikipedia:Comparison of AMD graphics processing units](https://en.wikipedia.org/wiki/Comparison_of_AMD_graphics_processing_units "wikipedia:Comparison of AMD graphics processing units"). Vedere anche la [wiki di Xorg](http://www.x.org/wiki/RadeonFeature#Decoder_ring_for_engineering_vs_marketing_names).
+Comparando i Catalyst con i driver open source, si nota che i driver open source hanno performance 2D migliori. Le parti si invertono se si passa a considerare l'accelerazione 3D, dove i Catalyst hanno la meglio.Nella versione [Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon"), ATI ha rielaborato lo schema identificativo per collegare ogni prodotto ad un determinato segmento di mercato. Dalla versione **9.4**, i drivers proprietari ATI **supportano solo schede R600 o più recenti** (il che significa, **HD2xxx** o **più nuove**). Per schede video più datate è disponibile solo il driver open source[xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati). In questa guida, i lettori avranno modo di vedere sia i nomi del *product* (es. HD 4850, X1900) sia i nomi *code* o *core* (es. RV770, R580). Per ulteriori informazioni sui prodotti ATI consultare [Wikipedia:Comparison of AMD graphics processing units](https://en.wikipedia.org/wiki/Comparison_of_AMD_graphics_processing_units "wikipedia:Comparison of AMD graphics processing units"). Vedere anche la [wiki di Xorg](http://www.x.org/wiki/RadeonFeature#Decoder_ring_for_engineering_vs_marketing_names).
 
 ## Contents
 
@@ -61,7 +61,7 @@ Comparando i Catalyst con i driver open source, si nota che i driver open source
 
 Ci sono 2 modi per installare Catalyst sul proprio sistema. Il primo metodo è usare il repository non ufficiale di Vi0L0 (il maintainer di Catalyst su AUR) che contiene tutti i pacchetti possibili per Arch Linux. Il secondo metodo prevede la compilazione dei pacchetti da [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)").
 
-Prima di scegliere la modalità di installazione è necessario capire di quale driver si ha bisogno. Dalla release 12.4 di Catalyst, AMD ha deciso di prosdeguire in modo distinto lo sviluppo per le schede Radeon HD superiori alla serie 5xxx e per le schede Radeon HD 4xxx, 3xxx e 2xxx. Per queste ultime esiste il driver **legacy**, mentre per le Radeon HD 5xxx (e successive) usare il "normale" pacchetti _Catalyst_.
+Prima di scegliere la modalità di installazione è necessario capire di quale driver si ha bisogno. Dalla release 12.4 di Catalyst, AMD ha deciso di prosdeguire in modo distinto lo sviluppo per le schede Radeon HD superiori alla serie 5xxx e per le schede Radeon HD 4xxx, 3xxx e 2xxx. Per queste ultime esiste il driver **legacy**, mentre per le Radeon HD 5xxx (e successive) usare il "normale" pacchetti *Catalyst*.
 
 **Nota:** In seguito alle istruzioni per ogni tipo di installazione possibile, si troverà una sezione che tratta la configurazione che dovrà essere seguita a prescindere dal metodo scelto per l'installazione.
 
@@ -74,12 +74,12 @@ Se non si è molto convinti di voler compilare tutto, la via più semplice è l'
 I repositories sono tre:
 
 *   [catalyst](/index.php/Unofficial_user_repositories#catalyst "Unofficial user repositories") per schede Radeon HD >= 5xxx (contiene solo l'ultima release di Catalyst (stabile o beta));
-*   _catalyst-stable_; contiene l'ultima release stabile dei Catalyst per schede HD 5xxx.
+*   *catalyst-stable*; contiene l'ultima release stabile dei Catalyst per schede HD 5xxx.
 *   [catalyst-hd234k](/index.php/Unofficial_user_repositories#catalyst-hd234k "Unofficial user repositories"); per schede Radeon HD <= 4xxx.
 
 Per abilitare uno di questi, seguire le istruzioni di [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories"). Ricordarsi che ogni repository non ufficiale, va aggiunto DOPO i [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") nel file `/etc/pacman.conf`.
 
-**Nota:** I repositories _catalyst_ e _catalyst-stable_ condividono lo stesso link, quindi, per abilitare _catalyst-stable_, seguire le istruzioni per abilitare _catalyst_ e rimpiazzare `catalyst` con `[catalyst-stable]` in `pacman.conf`. Se si ha la necessità di usare un driver più vecchio, si può usare un repository con il numero di versione del driver necessario, con lo stesso URL, ad esempio: _catalyst-stable-13.4_.
+**Nota:** I repositories *catalyst* e *catalyst-stable* condividono lo stesso link, quindi, per abilitare *catalyst-stable*, seguire le istruzioni per abilitare *catalyst* e rimpiazzare `catalyst` con `[catalyst-stable]` in `pacman.conf`. Se si ha la necessità di usare un driver più vecchio, si può usare un repository con il numero di versione del driver necessario, con lo stesso URL, ad esempio: *catalyst-stable-13.4*.
 
 **Attenzione:**
 
@@ -90,15 +90,15 @@ Per abilitare uno di questi, seguire le istruzioni di [Unofficial user repositor
 
 Una volta aggiunti i repositories Catalyst necessari, aggiornare il database di pacman, quindi [installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") i seguenti pacchetti: (vedere [#Strumenti](#Strumenti) per maggiori informazioni):
 
-*   _catalyst-hook_
-*   _catalyst-utils_
-*   _lib32-catalyst-utils_ - opzionale, necessario per il supporto OpenGL 32-bit OpenGL su sistemi a 64-bit.
+*   *catalyst-hook*
+*   *catalyst-utils*
+*   *lib32-catalyst-utils* - opzionale, necessario per il supporto OpenGL 32-bit OpenGL su sistemi a 64-bit.
 
 Se si usa un notebook con una grafica ibrida Intel/AMD installare questi pacchetti
 
-*   _catalyst-hook_
-*   _catalyst-utils-pxp_
-*   _lib32-catalyst-utils-pxp_ - opzionale, necessario per il supporto OpenGL 32-bit OpenGL su sistemi a 64-bit.
+*   *catalyst-hook*
+*   *catalyst-utils-pxp*
+*   *lib32-catalyst-utils-pxp* - opzionale, necessario per il supporto OpenGL 32-bit OpenGL su sistemi a 64-bit.
 
 **Nota:** Se pacman dovesse chiedere di rimuovere il pacchetto **libgl** rispondere affermativamente.
 
@@ -171,7 +171,6 @@ La nuova versione di Xorg, rileva automaticamente molte delle opzioni specificat
 Qui è presente un file con delle note **per un confronto** veloce. Le voci dopo `#` potrebbero essere necessarie, quelle dopo `##` sono fondamentali:
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "ServerLayout"
         Identifier     "Arch"
@@ -213,7 +212,7 @@ EndSection
 
 **Nota:** Dopo **ogni** aggiornamento di Catalyst sarà necessario rimuovere `amdpcsdb` in questo modo: killare X, rimuovere `/etc/ati/amdpcsdb`, avviare X e lanciare `amdpcsdb`.
 
-_Se si desiderano maggiori informazioni visitare questo [link](https://bbs.archlinux.org/viewtopic.php?id=57084)._
+*Se si desiderano maggiori informazioni visitare questo [link](https://bbs.archlinux.org/viewtopic.php?id=57084).*
 
 #### Caricare moduli al boot
 
@@ -249,12 +248,10 @@ $ glxinfo | grep direct
 Se si riceve "direct rendering: yes" allora tutto è funzionante! Se il comando `glxinfo` non è trovato, si potrebbe aver bisogno di installare il pacchetto [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos).
 
 **Nota:** Come alternativa è possibile usare:
-
 ```
 $ fg_glxears
 
 ```
-
 per testare glxears
 
 **Attenzione:** In alcune versioni recenti di Xorg, i percorsi delle librerie sono cambiati. Quindi, a volte `libGL.so` non può essere caricato correttamente anche se installato. Non dimenticare di controllare ciò se qualcosa non funziona. Leggere la sezione [#Risoluzione problemi](#Risoluzione_problemi) per dettagli.
@@ -389,19 +386,19 @@ Server = http://catalyst.wirephire.com/repo/xorg112/$arch
 
 ### Catalyst-hook
 
-Con [catalyst-hook](https://aur.archlinux.org/packages/catalyst-hook/) la funzione di ricompilazione automatica è affidata all' HOOKS **fglrx** tramite [mkinitcpio](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)"). _Questo sostanzialmente è la stessa cosa che fa catalyst-dkms da [community]_. Prima di aggiornare il modulo fglrx, si aggiorni il pacchetto [linux-headers](https://www.archlinux.org/packages/?name=linux-headers).
+Con [catalyst-hook](https://aur.archlinux.org/packages/catalyst-hook/) la funzione di ricompilazione automatica è affidata all' HOOKS **fglrx** tramite [mkinitcpio](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)"). *Questo sostanzialmente è la stessa cosa che fa catalyst-dkms da [community]*. Prima di aggiornare il modulo fglrx, si aggiorni il pacchetto [linux-headers](https://www.archlinux.org/packages/?name=linux-headers).
 
-Questo hook richiamerà il comando **catalyst_build_module** per aggiornare il modulo fglrx alla versione del proprio nuovo kernel, ed in aggiunta lancerà il comando _catalyst_build_module remove_ per rimuovere i moduli fglrx non più necessari.
+Questo hook richiamerà il comando **catalyst_build_module** per aggiornare il modulo fglrx alla versione del proprio nuovo kernel, ed in aggiunta lancerà il comando *catalyst_build_module remove* per rimuovere i moduli fglrx non più necessari.
 
 **Nota:** Se si utilizza questa funzionalità è **importante** controllare il processo di installazione di **linux** (o qualsiasi altro kernel). fglrx-hook vi informerà dell'esito positivo.
 
-**Nota:** Se state utilizzando un **kernel personalizzato** e si utilizza un file di configurazione di mkinitcpio **non standard** (Es. il linux-zen utilizza `/etc/mkinitcpio-zen.conf`), bisogna aggiungere manualmente **fglrx** alla stringa _HOOKS_ nel file di configurazione per abilitare l'auto-ricompilazione all'aggiornamento del kernel.
+**Nota:** Se state utilizzando un **kernel personalizzato** e si utilizza un file di configurazione di mkinitcpio **non standard** (Es. il linux-zen utilizza `/etc/mkinitcpio-zen.conf`), bisogna aggiungere manualmente **fglrx** alla stringa *HOOKS* nel file di configurazione per abilitare l'auto-ricompilazione all'aggiornamento del kernel.
 
-**Nota:** Se si sta usando un kernel non stock, è necessario rimuovere _linux-header_ da `SyncFirst` in `/etc/pacman.conf` dopo aver eseguito 'catalyst_build_module auto'.
+**Nota:** Se si sta usando un kernel non stock, è necessario rimuovere *linux-header* da `SyncFirst` in `/etc/pacman.conf` dopo aver eseguito 'catalyst_build_module auto'.
 
 ### Catalyst-generator
 
-[catalyst-generator](https://aur.archlinux.org/packages/catalyst-generator/) è un pacchetto in grado di costruire e installare i moduli _fglrx_ generando un pacchetto fruibile da pacman. La differenza tra questo metodo e catalyst-hook è che questo è completamente manuale mentre catalyst-hook fa tutto in automatico.
+[catalyst-generator](https://aur.archlinux.org/packages/catalyst-generator/) è un pacchetto in grado di costruire e installare i moduli *fglrx* generando un pacchetto fruibile da pacman. La differenza tra questo metodo e catalyst-hook è che questo è completamente manuale mentre catalyst-hook fa tutto in automatico.
 
 Il suo scopo è generare il pacchetto **catalyst-{kernver}** utilizzando [makepkg](/index.php/Makepkg_(Italiano) "Makepkg (Italiano)") e installarlo con l'ausilio di [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)"); {kernver} è la versione del kernel con il quale è stato compilato il pacchetto, ad esempio : il pacchetto catalyst-2.6.35-ARCH è stato compilato sul kernel 2.6.35-ARCH .
 
@@ -410,15 +407,14 @@ Per compilare ed installare il pacchetto catalyst-{kernver} per il kernel avviat
 Ecco il sommario delle operazioni da svolgere:
 
 1.  Con i privilegi di root:`# catalyst_build_module remove`. Questo comando eliminerà i pacchetti `catalyst-{kernver}` non utilizzati
-2.  Poi come utente senza privilegi:`$ catalyst_build_module ''nuova-versione-kernel''` dove _nuova-versione-kernel''_è la versione del kernel che avete appena aggiornato/installato, Es:`catalyst_build_module 2.6.36-ARCH` oppure: `catalyst_build_module all` il quale compilerà il pacchetto catalyst-{kernver} per tutti i kernel presenti.
+2.  Poi come utente senza privilegi:`$ catalyst_build_module ''nuova-versione-kernel''` dove *nuova-versione-kernel''*è la versione del kernel che avete appena aggiornato/installato, Es:`catalyst_build_module 2.6.36-ARCH` oppure: `catalyst_build_module all` il quale compilerà il pacchetto catalyst-{kernver} per tutti i kernel presenti.
 3.  Se volete rimuovere `catalyst-generator` - si **consiglia** di eseguire da root questo comando: `catalyst_build_module remove_all`
 
-_prima di rimuovere catalyst-generator (con questo comando si_ elimineranno tutti i pacchetti catalyst-{kernver} presenti nel sistema)
+*prima di rimuovere catalyst-generator (con questo comando si* elimineranno tutti i pacchetti catalyst-{kernver} presenti nel sistema)
 
 catalyst-generator non è in grado di rimuovere tutti i pacchetti catalyst-{kernver} automaticamente mentre lo si rimuove perché non ci può essere ad esempio più di una istanza di pacman in esecuzione. Se si dimentica di dare il comando `catalyst_build_module remove_all` prima di digitare `pacman -R catalyst-generator` - catalyst-generator vi chiederà quale pacchetto catalyst-{kernver} si dovrà rimuovere dopo la rimozione di catalyst-generator.
 
 **Nota:** Se si visualizza un errore del tipo:
-
 ```
 **WARNING:** Package contains reference to $srcdir
 **WARNING:** '.pkg' is not a valid archive extension.
@@ -481,14 +477,12 @@ Opzioni -> Preferenze -> Generale -> togliere il segno di spunta da "abilita sch
 Opzioni -> Preferenze -> Performance -> decoding (inserire il **numero** dellaa CPU)
 
 **Nota:** Se l'opzione Desktop Senza Tearing è abilitata, è preferibile utilizzare
-
 ```
 Options -> Preferences -> General -> Video (tab) -> Output driver: vaapi 
 
 ```
 
 **Nota:** Se l'uscita video **vaapi:gl** non funziona - controllare
-
 ```
  **vaapi**, **vaapi:gl2** or simply **xv(0 - AMD Radeon [AVIVO Video](https://en.wikipedia.org/wiki/Avivo "wikipedia:Avivo"))**
 
@@ -551,9 +545,9 @@ amdcccle
 
 ```
 
-**Nota:** Funziona tranquillamente anche con _gksu_ se usate GNOME o altri DE/WM
+**Nota:** Funziona tranquillamente anche con *gksu* se usate GNOME o altri DE/WM
 
-**Attenzione:** Non lanciate `amdcccle` con il comando _sudo_ perchè sudo rende amministratori ma usa le informazioni dell'account utente. Con kdesu si diventa root in tutto e per tutto
+**Attenzione:** Non lanciate `amdcccle` con il comando *sudo* perchè sudo rende amministratori ma usa le informazioni dell'account utente. Con kdesu si diventa root in tutto e per tutto
 
 #### Installazione
 
@@ -616,7 +610,7 @@ Se si usano applicazioni 3D con Wine e si riscontrano problemi, provare a disabi
 
 ```
 
-O editando `/etc/X11/xorg.conf`; aggiungendo `Option "UseFastTLS" "off"` alla sezione _Device_.
+O editando `/etc/X11/xorg.conf`; aggiungendo `Option "UseFastTLS" "off"` alla sezione *Device*.
 
 Riavviare X.
 
@@ -747,7 +741,7 @@ Nel caso in cui non si dovessero ottenere errori che indichino la presenza di pr
 I driver proprietari ATI `catalyst` non riescono a riavviarsi dalla sospensione se il framebuffer è abilitato. Per disabilitare il framebuffer, si aggiunga **vga=0** all'opzione kernel in `/boot/grub/menu.lst`, ad esempio:
 
 ```
-kernel /vmlinuz-linux root=/dev/sda3 resume=/dev/sda2 ro _**vga=0**_
+kernel /vmlinuz-linux root=/dev/sda3 resume=/dev/sda2 ro ***vga=0***
 
 ```
 
@@ -847,7 +841,7 @@ EndSection
 
 ```
 
-dove _****_ va rimpiazzato con il modello della propria scheda, ad esempio 6870 per la HD 6870 e 6310 per la E-350.
+dove ****** va rimpiazzato con il modello della propria scheda, ad esempio 6870 per la HD 6870 e 6310 per la E-350.
 
 Xorg ora si avvierà ed sarà possibile utilizzare `amdcccle` invece di `aticonfig` anche se risulterà un avviso: "AMD Unsupported hardware".
 
@@ -871,7 +865,6 @@ Per qualche ragione Google ha messo in balcklist il driver Catalyst per Linux pe
 Per ovviare a ciò è possibile modificare il file `/usr/share/applications/chromium.desktop` ed aggiungere la flag `--ignore-gpu-blacklist` alla riga `Exec` in modo che appaia così:
 
  `/usr/share/applications/chromium.desktop` 
-
 ```
 ....
 Exec=chromium %U --ignore-gpu-blacklist

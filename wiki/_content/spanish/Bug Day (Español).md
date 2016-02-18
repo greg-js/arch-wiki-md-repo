@@ -9,7 +9,7 @@
 
 ## Descripción
 
-Bug Day es un día dedicado a aumentar la sensibilización hacia nuestro desbordado [_bug tracker_](https://bugs.archlinux.org/). El objetivo de este día es unir a la comunidad para intentar ayudarnos a eliminar tantos bugs como sea posible.
+Bug Day es un día dedicado a aumentar la sensibilización hacia nuestro desbordado [*bug tracker*](https://bugs.archlinux.org/). El objetivo de este día es unir a la comunidad para intentar ayudarnos a eliminar tantos bugs como sea posible.
 
 ### ¿Cuándo?
 

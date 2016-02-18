@@ -15,7 +15,7 @@ Sudo (su "do") dovoluje systémovému administrátorovi předat určitým uživa
 
 Sudo je bezpečná alternativa k tradičnímu příkazu [su](/index.php/Su "Su"). Uživatelé často používají su (**s**ubstitute **u**ser — nahradit uživatele) pro získání práv roota. Obecně je přihlašování pod rootem — superuživatelem — na delší dobu považováno za nerozumné. Uživatel root si užívá kompletní a absolutní kontroly nad celým systémem, což je riskantní. Malé přepsání snadno dovede uvést systém do nepoužitelného stavu a aplikace běžící pod tímto uživatelem mohou tento neomezený přístup šířit.
 
-Spíše než to nabízí sudo _dočasné_ navýšení práv pro jednotlivé příkazy (ať už jako root nebo jiný uživatel); navracejíc se po jejich dokončení do neprivilegovaného stavu, čímž chrání systém před nechtěnými důsledky. Navíc sudo zaznamenává všechny příkazy a neúspěšné pokusy o přístup pro kontrolu těchto událostí.
+Spíše než to nabízí sudo *dočasné* navýšení práv pro jednotlivé příkazy (ať už jako root nebo jiný uživatel); navracejíc se po jejich dokončení do neprivilegovaného stavu, čímž chrání systém před nechtěnými důsledky. Navíc sudo zaznamenává všechny příkazy a neúspěšné pokusy o přístup pro kontrolu těchto událostí.
 
 ## Instalace
 
@@ -41,14 +41,14 @@ Viz [manuálová stránka suda (anglicky)](http://www.gratisoft.us/sudo/man/sudo
 
 ## Konfigurace
 
-Konfigurační soubor pro sudo je `/etc/sudoers`. **Tento soubor nemá být upravován přímo!** Místo toho musí uživatelé zadat jako root příkaz `visudo`, jenž v programu specifikovaném proměnnou prostředí _$EDITOR_ otevře dočasnou kopii konfiguračního souboru.
+Konfigurační soubor pro sudo je `/etc/sudoers`. **Tento soubor nemá být upravován přímo!** Místo toho musí uživatelé zadat jako root příkaz `visudo`, jenž v programu specifikovaném proměnnou prostředí *$EDITOR* otevře dočasnou kopii konfiguračního souboru.
 
 ```
 # visudo
 
 ```
 
-Výchozí editor je _vi_. Pokud si s _vi_ nerozumíte, zadejte nejdříve tento příkaz:
+Výchozí editor je *vi*. Pokud si s *vi* nerozumíte, zadejte nejdříve tento příkaz:
 
 ```
 # export EDITOR=nano

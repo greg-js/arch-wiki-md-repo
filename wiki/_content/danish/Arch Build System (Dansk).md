@@ -34,18 +34,18 @@ Hvor Pacman er det specialiserede værktøj i Arch Linux til at håndtere binær
 
 ##### Hvad er et 'ports'-lignende system?
 
-'Ports' er et system, anvendt af FreeBSD, der lader **kilde**-pakker blive downloadet, udpakket, tilrettet, kompileret og installeret. _En 'port' er blot en lille mappe på brugerens computer med et navn, der svarer til det software der installeres. Denne mappe indeholder nogle få filer med instruktioner for download og installation af en pakke fra en kilde_, typisk ved at navigere til mappen - eller porten - og udføre kommandoerne _make_ og _make install_. Systemet vil så downloade, kompilere og installere det ønskede software.
+'Ports' er et system, anvendt af FreeBSD, der lader **kilde**-pakker blive downloadet, udpakket, tilrettet, kompileret og installeret. *En 'port' er blot en lille mappe på brugerens computer med et navn, der svarer til det software der installeres. Denne mappe indeholder nogle få filer med instruktioner for download og installation af en pakke fra en kilde*, typisk ved at navigere til mappen - eller porten - og udføre kommandoerne *make* og *make install*. Systemet vil så downloade, kompilere og installere det ønskede software.
 
 ##### **ABS** er et lignende koncept.
 
 **ABS** laves ud fra et mappetræ, (**ABS-træet**), der findes under /var/abs, som indeholder mange undermapper. Hver mappe i sin kategori og alle navngivet af deres respective byggebare pakke.
-Du kan kalde enhver undermappe - med navn efter pakken - for et ABS. Det samme som man vilde kalde en 'port'. Disse **ABS**-er - eller undermapper **indeholder hverken software-pakken eller kilden**, men nærmere en **PKGBUILD**-fil (og somme tider andre filer). En PKGBUILD er en simpel tekstfil, der indeholder instruktioner til kompilering og pakning, så vel som en URL til det tar-arkiv, som skal downloades. _Den vigtigste komponent i ABS er PKGBUILD._
+Du kan kalde enhver undermappe - med navn efter pakken - for et ABS. Det samme som man vilde kalde en 'port'. Disse **ABS**-er - eller undermapper **indeholder hverken software-pakken eller kilden**, men nærmere en **PKGBUILD**-fil (og somme tider andre filer). En PKGBUILD er en simpel tekstfil, der indeholder instruktioner til kompilering og pakning, så vel som en URL til det tar-arkiv, som skal downloades. *Den vigtigste komponent i ABS er PKGBUILD.*
 
 ##### Hurtig gennemgang
 
-Kør kommandoen _abs_ som 'root' for at oprette ABS-træet. Hvis du f.eks. vil bygge editoren Nano fra **kilden**, skal du kopiere filen /var/abs/core/base/nano til en byggemappe. Gå ind i byggemappen og kør en **makepkg**. Så enkelt er det.
+Kør kommandoen *abs* som 'root' for at oprette ABS-træet. Hvis du f.eks. vil bygge editoren Nano fra **kilden**, skal du kopiere filen /var/abs/core/base/nano til en byggemappe. Gå ind i byggemappen og kør en **makepkg**. Så enkelt er det.
 'Makepkg' vil forsøge at læse og eksekvere de instruktioner, der findes i PKGBUILD-filen. Tar-arkivet fra kilden downloades, udpakkes og kompileres i henhold til de 'CFLAGS', der angives i /etc/makepkg.conf og til sidst klemmes ind i en pakke med fil-endelsen .pkg.tar.gz, som det instrueres i filen PKGBUILD.
-Installation er så nemt, som at køre en _pacman -U nano.pkg.tar.gz_, eller lav pakken og installér den rent med Pacman. Alt med kun én kommando.
+Installation er så nemt, som at køre en *pacman -U nano.pkg.tar.gz*, eller lav pakken og installér den rent med Pacman. Alt med kun én kommando.
 Fjernelse af pakken håndteres også af Pacman.
 
 Filen PKGBUILD og andre filerkan selvfølgelig tilpasses som du ønsker, og du kan vælge at benytte 'makepkg'-funktionen i ABS til at lave egne brugertilpassede pakker fra kilder udenfor selve ABS-træet.(Se en prototype på en PKGBUILD og installationsfile under /var/abs/core/)
@@ -58,7 +58,7 @@ Med **ABS-træet** på plads har en Arch Linux-bruger, der vil kompilere fra kil
 
 Ikke helt endnu!
 
-*   Du kan også benytte ABS-værktøjet **[makepkg](/index.php/Makepkg "Makepkg")** til - sammen med dine egne tilpassede PKGBUILDs - til at oprette pakker til dig selv, eller til at dele med fællesskabet. Igen er resultatet - _foo_.pkg.tar.gz-pakkerne - rent installeres med Pacman.
+*   Du kan også benytte ABS-værktøjet **[makepkg](/index.php/Makepkg "Makepkg")** til - sammen med dine egne tilpassede PKGBUILDs - til at oprette pakker til dig selv, eller til at dele med fællesskabet. Igen er resultatet - *foo*.pkg.tar.gz-pakkerne - rent installeres med Pacman.
 *   ABS-værktøjerne lader dig benytte Arch Linux-brugernes software-kilde [AUR](/index.php/AUR_Brugervejledning "AUR Brugervejledning") (**A**rch **U**ser **R**epository), der er fyldt med allerede færdige PKGBUILDs til din bekvemmelighed.
 
 ##### ABS - Systemoversigt
@@ -86,7 +86,7 @@ Ikke helt endnu!
 ABS er ikke nødvendig for at bruge Arch Linux - men det er nyttigt til forskellige kompileringsopgaver.
 
 Denne vejledning forsøger at give dig et overblik over ABS og Arch Linux-pakker. Det er ikke en komplet reference-guide!
-Hvis du vil vide mere, skulle du prøve at kigge på _man_-siderne.
+Hvis du vil vide mere, skulle du prøve at kigge på *man*-siderne.
 
 #### Kom igang! Installér pakker
 
@@ -124,7 +124,7 @@ abs
 
 Dit ABS-træ er nu oprettet under /var/abs. Bemærk de passende grene på ABS-træet nu eksisterer og svarer til dem du specificerede i /etc/abs/abs.conf.
 
-_Kommandoen **abs** bør også benyttes til regelmæssigt at synkronisere og opdatere dit ABS-træ._
+*Kommandoen **abs** bør også benyttes til regelmæssigt at synkronisere og opdatere dit ABS-træ.*
 
 #### /etc/makepkg.conf
 
@@ -171,11 +171,11 @@ ABS-træet har altså nøjagtigt den samme struktur som pakkedatabasen:
 *   PKGBUILD-filerne indeholder alt nødvendig information omkring pakken.
 *   Endvidere kan en ABS-mappe indeholde rettelser og/eller andre filer, der er nødvendige for at bygge pakken.
 
-_Det er vigtigt at forstå, at selve pakkens kildekode ikke findes i ABS-mappen._ I stedet for indeholder **PKGBUILD**-filen en URL fra hvilken ABS automatisk vil downloade.
+*Det er vigtigt at forstå, at selve pakkens kildekode ikke findes i ABS-mappen.* I stedet for indeholder **PKGBUILD**-filen en URL fra hvilken ABS automatisk vil downloade.
 
 ##### Opret en mappe til bygning af pakker
 
-Du skal oprette en mappe til bygning af pakker, hvor den faktiske kompilering finder sted. I denne mappe kan du gøre alt, og du bør aldrig ændre ABS-træet ved at bygge inde i det. Det er god praksis at benytte din egen hjemmemappe, selv om mange Arch Linux-brugere foretrækker at oprette en _local_-mappe under /var/abs/ ejet af normal bruger. Kopiér en ABS fra træet (var/abs/branch/category/_pakkenavn_) til byggemappen _/søgesti/til/byggemappe/_.
+Du skal oprette en mappe til bygning af pakker, hvor den faktiske kompilering finder sted. I denne mappe kan du gøre alt, og du bør aldrig ændre ABS-træet ved at bygge inde i det. Det er god praksis at benytte din egen hjemmemappe, selv om mange Arch Linux-brugere foretrækker at oprette en *local*-mappe under /var/abs/ ejet af normal bruger. Kopiér en ABS fra træet (var/abs/branch/category/*pakkenavn*) til byggemappen */søgesti/til/byggemappe/*.
 
 Opret din byggemappe:
 
@@ -249,13 +249,13 @@ make uninstall
 
 Dog burde du altid læse filen `INSTALL`, for at se, hvordan pakken skal bygges og installeres! **Ikke alle pakker anvender systemet `configure; make; make install`!**
 
-_Den her beskrevne måde at kompilere kilde-tar-arkiver kan selvfølgelig stadig benyttes i Arch Linux, men ABS tilbyder et strømlinet, enkelt og elegant alternativ, som du vil se._
+*Den her beskrevne måde at kompilere kilde-tar-arkiver kan selvfølgelig stadig benyttes i Arch Linux, men ABS tilbyder et strømlinet, enkelt og elegant alternativ, som du vil se.*
 
 #### Byggefunktionen - ABS-måden
 
-ABS er et elegant værktøj, der yder en stærk assistance og tilpasningsmuligheder til byggeprocessen, samt opretter en pakkefil til installation. ABS-metoden involverer kopiering af en ABS fra træet til en byggemappe og køre en 'makepkg'. I vores eksempel vil vi bygge pakken _slim_ display-håndtering.
+ABS er et elegant værktøj, der yder en stærk assistance og tilpasningsmuligheder til byggeprocessen, samt opretter en pakkefil til installation. ABS-metoden involverer kopiering af en ABS fra træet til en byggemappe og køre en 'makepkg'. I vores eksempel vil vi bygge pakken *slim* display-håndtering.
 
-*   1\. Kopiér _slim_ ABS fra træet til en byggemappe:
+*   1\. Kopiér *slim* ABS fra træet til en byggemappe:
 
 ```
 cp -r /var/abs/extra/x11/slim /home/dit-brugernavn/abs/local
@@ -269,14 +269,14 @@ cd /home/dit-brugernavn/abs/local/slim
 
 ```
 
-*   3\. Kør kommandoen _makepkg_, der automatisk downloader tar-arkivet fra kilden, pakker ud, kompilerer og opretter filen slim.pkg.tar.gz Valgmuligheden -i kalder Pacman til automatisk at installere den resulterende pakkefil slim.pkg.tar.gz:
+*   3\. Kør kommandoen *makepkg*, der automatisk downloader tar-arkivet fra kilden, pakker ud, kompilerer og opretter filen slim.pkg.tar.gz Valgmuligheden -i kalder Pacman til automatisk at installere den resulterende pakkefil slim.pkg.tar.gz:
 
 ```
 makepkg -i
 
 ```
 
-Det var det! Du har lige bygget _slim_ fra kilde og installeret det rent på dit system med Pacman. At fjerne pakken håndteres også af Pacman:
+Det var det! Du har lige bygget *slim* fra kilde og installeret det rent på dit system med Pacman. At fjerne pakken håndteres også af Pacman:
 
 ```
 pacman -R slim
@@ -290,7 +290,7 @@ pacman -U slim.pkg.tar.gz
 
 ```
 
-*   _ABS-metoden tilføjer noget bekvemmelighed og automatisering, mens det stadig er fuldstændigt gennemskueligt og fastholder fuld kontrol over bygge- og installations-funktioner, ved at inkludere dem i PKGBUILDs._
+*   *ABS-metoden tilføjer noget bekvemmelighed og automatisering, mens det stadig er fuldstændigt gennemskueligt og fastholder fuld kontrol over bygge- og installations-funktioner, ved at inkludere dem i PKGBUILDs.*
 
 Se artiklen [Creating packages](/index.php/Creating_packages "Creating packages") (Engelsk) for en komplet oversigt over eksempler på PKGBUILDs.
 

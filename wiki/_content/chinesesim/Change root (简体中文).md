@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Change_Root](/index.php/Change_Root "Change Root") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-06-20，点击[这里](https://wiki.archlinux.org/index.php?title=Change_Root&diff=0&oldid=261088)可以查看翻译后英文页面的改动。
 
-[Chroot](https://en.wikipedia.org/wiki/Chroot "wikipedia:Chroot") 是将当前磁盘根路径(和当前进程和它们的子进程)更改到另一个根目录。当你更改根路径到另一个目录下时，你不能在那个目录外存取文件和使用命令。这个目录叫作 _chroot jail_。切换根目录通常为了系统维护，例如重装引导程序或者重置遗忘的密码。
+[Chroot](https://en.wikipedia.org/wiki/Chroot "wikipedia:Chroot") 是将当前磁盘根路径(和当前进程和它们的子进程)更改到另一个根目录。当你更改根路径到另一个目录下时，你不能在那个目录外存取文件和使用命令。这个目录叫作 *chroot jail*。切换根目录通常为了系统维护，例如重装引导程序或者重置遗忘的密码。
 
 ## Contents
 

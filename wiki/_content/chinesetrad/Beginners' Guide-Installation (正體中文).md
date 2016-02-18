@@ -78,7 +78,6 @@
 預設的語系為「英文(美國)」。若您想要更改安裝程序語系 (以下範例為德文)，在 `/etc/locale.gen` 移除您需要[語系](/index.php/Locale "Locale")前面的井字符號 `#`，也請保留「英文(美國)」以備不時之需。請選擇 `UTF-8` 項目。
 
  `# nano /etc/locale.gen` 
-
 ```
 en_US.UTF-8 UTF-8
 de_DE.UTF-8 UTF-8
@@ -99,7 +98,6 @@ de_DE.UTF-8 UTF-8
 開機過程中會自動啟動 `dhcpcd` 網路守護程序，並嘗試建立有線網路連線。試著 ping 向任何一個伺服器檢查連線是否已建立，下面例子使用 Google 的伺服器：
 
  `# ping -c 3 www.google.com` 
-
 ```
 PING www.l.google.com (74.125.132.105) 56(84) bytes of data.
 64 bytes from wb-in-f105.1e100.net (74.125.132.105): icmp_req=1 ttl=50 time=17.0 ms
@@ -127,7 +125,6 @@ rtt min/avg/max/mdev = 16.660/17.320/18.254/0.678 ms
 確認網路卡的介面名稱。
 
  `# ip link` 
-
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -187,7 +184,6 @@ rtt min/avg/max/mdev = 16.660/17.320/18.254/0.678 ms
 編輯 `resolv.conf`，改成您的名稱伺服器 IP 位置，以及本機域名：
 
  `# nano /etc/resolv.conf` 
-
 ```
 nameserver 61.23.173.5
 nameserver 61.95.849.8
@@ -205,7 +201,6 @@ search example.com
 首先，偵測無線網路介面的名稱。
 
  `# iw dev` 
-
 ```
 phy#0
         Interface wlp3s0
@@ -229,7 +224,6 @@ phy#0
 觀察以下指令輸出，驗證介面是否啟用：
 
  `# ip link show wlp3s0` 
-
 ```
 3: wlp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state DOWN mode DORMANT group default qlen 1000
     link/ether 00:11:22:33:44:55 brd ff:ff:ff:ff:ff:ff
@@ -260,11 +254,11 @@ phy#0
 您也可以使用 `iw dev wlp3s0 scan | grep SSID` 掃描可用網路並連接：
 
 ```
-# wpa_supplicant -B -i wlp3s0 -c <(wpa_passphrase "_ssid_" "_psk_")
+# wpa_supplicant -B -i wlp3s0 -c <(wpa_passphrase "*ssid*" "*psk*")
 
 ```
 
-您需要將 _ssid_ 改為您的網路名稱 (例如「Linksys etc...」)，_psk_ 改為您的無線網路密碼。**記得保留網路名稱與密碼兩旁的引號。**
+您需要將 *ssid* 改為您的網路名稱 (例如「Linksys etc...」)，*psk* 改為您的無線網路密碼。**記得保留網路名稱與密碼兩旁的引號。**
 
 最後您需要給介面一個 IP 位址。您可以手動設定或使用 DHCP：
 
@@ -308,7 +302,7 @@ xDSL、撥號和 ISDN 連線的使用者請參閱[以數據機直接連線](/ind
 
 #### 分割工具
 
-完完全全的新手可以先嘗試使用圖形化的分割工具。例如以 [「Live」 CD 提供](http://gparted.sourceforge.net/livecd.php)的 [GParted](http://gparted.sourceforge.net/download.php)。GParted 也包含在大多數 Linux 發行版本的 Live CD 內，例如 [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu_(operating_system) "wikipedia:Ubuntu (operating system)") 跟 [Linux Mint](https://en.wikipedia.org/wiki/Linux_Mint "wikipedia:Linux Mint")。硬碟必須先進行[分割](/index.php/Partitioning "Partitioning")，接著格式化為[檔案系統](/index.php/File_systems "File systems")。
+完完全全的新手可以先嘗試使用圖形化的分割工具。例如以 [「Live」 CD 提供](http://gparted.sourceforge.net/livecd.php)的 [GParted](http://gparted.sourceforge.net/download.php)。GParted 也包含在大多數 Linux 發行版本的 Live CD 內，例如 [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu_(operating_system) 跟 [Linux Mint](https://en.wikipedia.org/wiki/Linux_Mint "wikipedia:Linux Mint")。硬碟必須先進行[分割](/index.php/Partitioning "Partitioning")，接著格式化為[檔案系統](/index.php/File_systems "File systems")。
 
 **提示:** 當使用 Gparted，選擇建立新分割表的選項時，預設會採用「msdos」分割表。若您打算跟隨提議建立 GPT 分割表，您需要選擇「進階」並在下拉選單中選擇「gpt」。
 
@@ -360,12 +354,12 @@ Arch Linux 安裝媒介包含了以下的硬碟分割工具：`fdisk`, `gdisk`, 
 
 	根目錄：
 
-*   選擇 _New_ (或按 `N`) – `Enter` 默認第一個磁區 (2048) – 輸入 `15G` – `Enter` 默認預設十六進位代碼 (8300) – `Enter` 默認空白分割區名稱。
+*   選擇 *New* (或按 `N`) – `Enter` 默認第一個磁區 (2048) – 輸入 `15G` – `Enter` 默認預設十六進位代碼 (8300) – `Enter` 默認空白分割區名稱。
 
 	家目錄：
 
 *   按數次下鍵，將光標移動至較大的可用空間。
-*   選擇 _New_ (或按 `N`) – `Enter` 默認第一個磁區 – `Enter` 使用剩餘的硬碟空間 (或是輸入想要的大小：例如 `30G`) – `Enter` 默認預設十六進位代碼 (8300) – `Enter` 默認空白分割區名稱。
+*   選擇 *New* (或按 `N`) – `Enter` 默認第一個磁區 – `Enter` 使用剩餘的硬碟空間 (或是輸入想要的大小：例如 `30G`) – `Enter` 默認預設十六進位代碼 (8300) – `Enter` 默認空白分割區名稱。
 
 畫面應該長的像這樣：
 
@@ -380,15 +374,15 @@ Part. #     Size        Partition Type            Partition Name
 
 再三檢查，確認您對分割區的大小、分割表的配置滿意之後再繼續。
 
-若您要從頭開始，直接選擇 _Quit_ (或按 `Q`) 不儲存任何變更離開，接著重新啟動 _cgdisk_。
+若您要從頭開始，直接選擇 *Quit* (或按 `Q`) 不儲存任何變更離開，接著重新啟動 *cgdisk*。
 
-滿意的話就選擇 _Write_ (或按 `Shift+W`) 結束，將分割表寫入硬碟。輸入 `yes` 並選擇 _Quit_ (或按 `Q`) 離開，不做任何額外變更。
+滿意的話就選擇 *Write* (或按 `Shift+W`) 結束，將分割表寫入硬碟。輸入 `yes` 並選擇 *Quit* (或按 `Q`) 離開，不做任何額外變更。
 
 ##### 使用 fdisk 建立 MBR 分割區
 
-**註記:** 另外一種工具 _cfdisk_ 的操作介面與 _cgdisk_ 類似，但目前它無法正確自動對齊第一個分割區。因此我們在這裡使用經典的 _fdisk_ 工具。
+**註記:** 另外一種工具 *cfdisk* 的操作介面與 *cgdisk* 類似，但目前它無法正確自動對齊第一個分割區。因此我們在這裡使用經典的 *fdisk* 工具。
 
-啟動 _fdisk_：
+啟動 *fdisk*：
 
 ```
 # fdisk /dev/sda
@@ -446,7 +440,7 @@ Syncing disks.
 
 ```
 
-碰到 _fdisk_ 遭遇錯誤而無法工作的狀況時，您可以使用 `q` 指令離開。
+碰到 *fdisk* 遭遇錯誤而無法工作的狀況時，您可以使用 `q` 指令離開。
 
 #### 建立檔案系統
 
@@ -463,15 +457,15 @@ Syncing disks.
 若您有分割區要以 swap (代碼 82) 使用，別忘了將它格式化後啟用：
 
 ```
-# mkswap /dev/sda_X_
-# swapon /dev/sda_X_
+# mkswap /dev/sda*X*
+# swapon /dev/sda*X*
 
 ```
 
-UEFI 的使用者應該將 EFI 系統分割區格式化 (以下範例為 /dev/sd_XY_)：
+UEFI 的使用者應該將 EFI 系統分割區格式化 (以下範例為 /dev/sd*XY*)：
 
 ```
-# mkfs.fat -F32 /dev/sd_XY_
+# mkfs.fat -F32 /dev/sd*XY*
 
 ```
 
@@ -507,7 +501,7 @@ UEFI 主機版的使用者，請掛載 EFI 系統分割區至指定的掛載點 
 
 ```
 # mkdir -p /mnt/boot
-# mount /dev/sd_XY_ /mnt/boot
+# mount /dev/sd*XY* /mnt/boot
 
 ```
 
@@ -516,7 +510,6 @@ UEFI 主機版的使用者，請掛載 EFI 系統分割區至指定的掛載點 
 安裝之前先編輯 `mirrorlist`，把最想使用的鏡像站擺在最前面。這份 mirrorlist 文件，`pacstrap`會複製一份並安裝到新系統內，所以最好現在就設定完成。
 
  `# nano /etc/pacman.d/mirrorlist` 
-
 ```
 ##
 ## Arch Linux repository mirrorlist
@@ -543,7 +536,7 @@ Server = http://mirror.example.xyz/archlinux/$repo/os/$arch
 
 ### 安裝基礎系統
 
-我們將使用 _pacstrap_ 腳本安裝基礎系統。省略 `-i` 選項可跳過提示，直接安裝 [base](https://www.archlinux.org/groups/x86_64/base/) 群組內所有軟體包。
+我們將使用 *pacstrap* 腳本安裝基礎系統。省略 `-i` 選項可跳過提示，直接安裝 [base](https://www.archlinux.org/groups/x86_64/base/) 群組內所有軟體包。
 
 ```
 # pacstrap -i /mnt base
@@ -603,7 +596,6 @@ Server = http://mirror.example.xyz/archlinux/$repo/os/$arch
 將您需要用到的語系都取消註解，只要移除該行前面的 `#` 即可。非常建議只使用 `UTF-8` 項目：
 
  `# nano /etc/locale.gen` 
-
 ```
 ...
 en_US.UTF-8 UTF-8
@@ -649,7 +641,7 @@ zh_TW.UTF-8 UTF-8
 若您在安裝過程的[一開始](#.E6.9B.B4.E6.94.B9.E8.AA.9E.E8.A8.80)設定過鍵盤布局的話，由於我們已經換到新安裝的系統環境，請現在再載入一遍。例如：
 
 ```
-# loadkeys _us_
+# loadkeys *us*
 # setfont Lat2-Terminus16
 
 ```
@@ -657,7 +649,6 @@ zh_TW.UTF-8 UTF-8
 要使設定在重啟系統後依然生效，編輯 `vconsole.conf` (若檔案不存在則新建一個)：
 
  `# nano /etc/vconsole.conf` 
-
 ```
 KEYMAP=us
 FONT=Lat2-Terminus16
@@ -717,15 +708,15 @@ FONT=Lat2-Terminus16
 
 *   **localtime** (不建議；Windows 預設使用)
 
-**警告:** 使用 _localtime_ 可能引發數個已知且無法修復的臭蟲。但目前沒有放棄 _localtime_ 支援的計劃。
+**警告:** 使用 *localtime* 可能引發數個已知且無法修復的臭蟲。但目前沒有放棄 *localtime* 支援的計劃。
 
 	 `# hwclock --systohc --localtime` 
 
 **提示:** 若您有 (或打算建立) Linux 與 Windows 的雙重開機系統：
 
-*   建議：將 Arch Linux 和 Windows 設定為使用 UTC。Windows 需要加入一個[修正註冊碼](/index.php/Time#UTC_in_Windows "Time")。另外確保停用 Windows 的線上同步時間功能，否則硬體時鐘又會回復成 _localtime_ 的預設值。
+*   建議：將 Arch Linux 和 Windows 設定為使用 UTC。Windows 需要加入一個[修正註冊碼](/index.php/Time#UTC_in_Windows "Time")。另外確保停用 Windows 的線上同步時間功能，否則硬體時鐘又會回復成 *localtime* 的預設值。
 
-*   不建議：將 Arch Linux 設定為 _localtime_，並取消任何時間服務如 [NTPd](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon")。硬體時鐘將交由 Windows 處理，若您的所在地區有實施[日光節約時間](https://en.wikipedia.org/wiki/Daylight_saving_time "wikipedia:Daylight saving time")，要記得每年最少要啟動 Windows 兩次 (春季與秋季)。要是長久未打開 Windows，Arch 可能會出現比實際時間少/多一個小時的狀況，這已經成為 Arch 論壇的老問題了。
+*   不建議：將 Arch Linux 設定為 *localtime*，並取消任何時間服務如 [NTPd](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon")。硬體時鐘將交由 Windows 處理，若您的所在地區有實施[日光節約時間](https://en.wikipedia.org/wiki/Daylight_saving_time "wikipedia:Daylight saving time")，要記得每年最少要啟動 Windows 兩次 (春季與秋季)。要是長久未打開 Windows，Arch 可能會出現比實際時間少/多一個小時的狀況，這已經成為 Arch 論壇的老問題了。
 
 #### 核心模組
 
@@ -734,7 +725,6 @@ FONT=Lat2-Terminus16
 若要在開機時載入核心模組，在 `/etc/modules-load.d/` 底下放入 `*.conf` 檔案，檔名以模組名稱命名。
 
  `# nano /etc/modules-load.d/virtio-net.conf` 
-
 ```
 # 開機時載入 'virtio-net.ko'
 
@@ -747,10 +737,10 @@ virtio-net
 
 #### 主機名稱
 
-設定您喜歡的[主機名稱](https://en.wikipedia.org/wiki/hostname "wikipedia:hostname") (例如 _arch_)：
+設定您喜歡的[主機名稱](https://en.wikipedia.org/wiki/hostname "wikipedia:hostname") (例如 *arch*)：
 
 ```
-# echo _arch_ > /etc/hostname
+# echo *arch* > /etc/hostname
 
 ```
 
@@ -982,7 +972,7 @@ BIOS 系統有數種開機載入程式可以使用，完整清單請參閱[開�
 
 ```
 
-安裝 [syslinux](https://www.archlinux.org/packages/?name=syslinux) 軟體包，並使用 `syslinux-install_update` 腳本自動**安裝**檔案 (`-i`)、設定開機旗標以**啟用**分割區 (`-a`)，並安裝 _MBR_ 開機碼 (`-m`)：
+安裝 [syslinux](https://www.archlinux.org/packages/?name=syslinux) 軟體包，並使用 `syslinux-install_update` 腳本自動**安裝**檔案 (`-i`)、設定開機旗標以**啟用**分割區 (`-a`)，並安裝 *MBR* 開機碼 (`-m`)：
 
 ```
 # pacman -S syslinux
@@ -993,7 +983,6 @@ BIOS 系統有數種開機載入程式可以使用，完整清單請參閱[開�
 設定 `syslinux.cfg` 以指向正確的根目錄分割區。這個步驟相當重要。指向錯誤的分割區將無法啟動 Arch Linux。將下面的 `/dev/sda3` 改為您的根目錄分割區所在地 **(若您依照[這個範例](#.E6.BA.96.E5.82.99.E5.84.B2.E5.AD.98.E8.A3.9D.E7.BD.AE)分割硬碟，您的根目錄分割區是 `/dev/sda1`)**。fallback 項目也如法炮製。
 
  `# nano /boot/syslinux/syslinux.cfg` 
-
 ```
 ...
 LABEL arch
@@ -1016,7 +1005,7 @@ LABEL arch
 
 **註記:**
 
-*   將 `/dev/sda` 改成您安裝 Arch 的硬碟代號。不要加上分割區號碼 (不要使用 `sda_X_`)。
+*   將 `/dev/sda` 改成您安裝 Arch 的硬碟代號。不要加上分割區號碼 (不要使用 `sda*X*`)。
 *   使用 BIOS 主機板與 GPT 分割硬碟的使用者，還需要一個「BIOS 開機分割區」。請參閱 GRUB 頁面的 [GPT 特定步驟](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB")。
 *   grub 軟體包會連帶安裝一個 `/boot/grub/grub.cfg` 樣本，隨後的 `grub-*` 指令可能無法覆寫它。確認您是否有改變到 `grub.cfg`，而非將變更寫進 `grub.cfg.new` 或某些類似檔案。
 
@@ -1054,7 +1043,6 @@ UEFI 系統有數個開機載入程式可以使用。完整清單請參閱[開�
 您將必須手動建立設定檔案，將 Arch Linux 項目加入 gummiboot 管理員。建立 `/boot/loader/entries/arch.conf` 並新增以下內容，將 `/dev/sdaX` 改成您的根目錄分割區，通常為 `/dev/sda2`：
 
  `# nano /boot/loader/entries/arch.conf` 
-
 ```
 title          Arch Linux
 linux          /vmlinuz-linux

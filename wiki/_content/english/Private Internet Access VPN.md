@@ -40,19 +40,17 @@ Enabling auto-login allows a user to connect to the VPN service without having t
 *   Add your username and password in the file. Make sure LINE 1 is your username and LINE 2 is your password. Do not add any other text to the file or it will not work (this is a limitation of [OpenVPN](/index.php/OpenVPN "OpenVPN")):
 
  `/etc/private-internet-access/login.conf` 
-
 ```
 USERNAME
 PASSWORD
 ```
 
-*   Change permissions of the file to _0600_ and owner to _root:root_:
+*   Change permissions of the file to *0600* and owner to *root:root*:
 
 ```
 # chmod 0600 /etc/private-internet-access/login.conf
 # chown root:root /etc/private-internet-access/login.conf
 ```
-
 This secures the access to the file from non-root users. Read more on [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes"). It is **required** when activating auto-login.
 
 *   Run `pia -a` as root.

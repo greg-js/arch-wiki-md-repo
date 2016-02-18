@@ -102,7 +102,7 @@ Se l'installazione automatica dà errore allora è necessario o avviare il tool 
 
 ```
 
-Per cambiare l'ID del gruppo, invece, (raccomandato per utenti multipli), prima bisogna creare il gruppo, nell'esempio chiamato _android_, e aggiungere ad esso il proprio account:
+Per cambiare l'ID del gruppo, invece, (raccomandato per utenti multipli), prima bisogna creare il gruppo, nell'esempio chiamato *android*, e aggiungere ad esso il proprio account:
 
 ```
  groupadd android
@@ -119,7 +119,7 @@ Poi, cambiare i permessi della cartella:
 
 ```
 
-Il comando finale imposta il bit _setgid_ in tutte le sottocartelle, in modo che ogni nuovo file creato in esse riceva il giusto group ID.
+Il comando finale imposta il bit *setgid* in tutte le sottocartelle, in modo che ogni nuovo file creato in esse riceva il giusto group ID.
 
 Per un'installazione automatica passo-passo, si veda: [Installare componenti SDK (en)](http://developer.android.com/sdk/adding-components.html).
 
@@ -169,7 +169,6 @@ Bus 002 Device 006: ID 0bb4:0c8d High Tech Computer Corp.
 Usare le seguenti regole di udev come un template, e sostituire [VENDOR ID] e [PRODUCT ID]con i propri. Copiare queste regole in `/etc/udev/rules.d/51-android.rules`:
 
  `/etc/udev/rules.d/51-android.rules` 
-
 ```
 SUBSYSTEM=="usb", ATTR{idVendor}=="[VENDOR ID]", MODE="0666"
 SUBSYSTEM=="usb",ATTR{idVendor}=="[VENDOR ID]",ATTR{idProduct}=="[PRODUCT ID]",SYMLINK+="android_adb"
@@ -202,7 +201,7 @@ HT07VHL00676    device
 
 ```
 
-Se non si ha il programma "adb" (di solito avviabile in _/opt/android-sdk/platform-tools/_), significa che non sono stati installati i platform tools.
+Se non si ha il programma "adb" (di solito avviabile in */opt/android-sdk/platform-tools/*), significa che non sono stati installati i platform tools.
 
 Se si ottiene una lista vuota (non c'è il dispositivo richiesto), potrebbe essere perché non è stato abilitata la modalità USB debug sul dispositivo. Si può fare questo andando in Impostazioni => Applicazioni => Sviluppo e abilitando il debug USB.
 

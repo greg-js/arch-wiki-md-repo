@@ -80,7 +80,7 @@ Exaile requiere el paquete 'python-cddb' para poder tocar cd's de audio. El paqu
 
 ### Barra de progreso se detiene en 0:00
 
-First, make sure there are no problems with your sound architecture ([ALSA](/index.php/ALSA "ALSA"), [OSS](/index.php/OSS "OSS"), etc.). And your _playback sink_ in Exaile is set correctly. Try setting it to automatic first.
+First, make sure there are no problems with your sound architecture ([ALSA](/index.php/ALSA "ALSA"), [OSS](/index.php/OSS "OSS"), etc.). And your *playback sink* in Exaile is set correctly. Try setting it to automatic first.
 
 If you're trying to listen to an MP3 file, try playing an audio file encoded in a different format, such as .ogg or .flac. If these play correctly then try installing gstreamer-ugly.
 

@@ -135,7 +135,6 @@ The package grub2-915resolution in the AUR has the necessary patch to make intel
 Here is a sample file:
 
  `/etc/X11/xorg.conf` 
-
 ```
 
     Section "Module"

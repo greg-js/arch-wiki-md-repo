@@ -38,7 +38,6 @@ You'll recognise it because the convention for arch labels is: 'ARCH_<YEAR><MONT
 Create a custom grub.cfg file, replacing <FS-LABEL> with the correct label for your iso.
 
  `grub.cfg ` 
-
 ```
 insmod part_gpt
 insmod part_msdos
@@ -95,7 +94,7 @@ $ gdisk <DEV-TARGET>
 
 ```
 
-Delete any existing partitions (repeatedly use the _d_ command until they're all gone). Add a new partition (_n_) and set its type to "ef00" when prompted. Write the changes to disk (_w_).
+Delete any existing partitions (repeatedly use the *d* command until they're all gone). Add a new partition (*n*) and set its type to "ef00" when prompted. Write the changes to disk (*w*).
 
 Update the kernel's awareness of the new partition
 
@@ -167,7 +166,7 @@ $ umount <DEV-TARGET-N>
 
 Insert your new install medium into your x205ta.
 
-Enter the bios by holding _F2_ while pressing the power button to turn the x205ta on. Hammering on F2 while the boot process is starting may help too. There is an alternative method to enter the bios by booting into windows and selecting the appropriate menu options ([tutorial](https://www.asus.com/support/FAQ/1008329/)), but the F2 method allows you to avoid windows entirely.
+Enter the bios by holding *F2* while pressing the power button to turn the x205ta on. Hammering on F2 while the boot process is starting may help too. There is an alternative method to enter the bios by booting into windows and selecting the appropriate menu options ([tutorial](https://www.asus.com/support/FAQ/1008329/)), but the F2 method allows you to avoid windows entirely.
 
 Turn off secure boot. This procedure varies between different BIOS versions. Mine was achieved by going to 'Security', and switching 'Secure Boot Control' to 'Disabled'.
 
@@ -221,7 +220,6 @@ Explicitly assigning the 'synaptics' driver to 'Elan Touchpad' in xorg.conf prov
 Example:
 
  `/etc/X11/xorg.conf.d/elan_synaptics.conf ` 
-
 ```
 Section "InputClass"
     Identifier "Elan Touchpad"
@@ -241,7 +239,6 @@ EndSection
 The micro SD card reader will probably not work out of the box. [This page](https://wiki.debian.org/InstallingDebianOn/Asus/X205TA) contains a simple fix. First, create the file as follows:
 
  `/etc/modprobe.d/sdhci.conf ` 
-
 ```
 # Adjustment to make micro SD card reader work
 options sdhci debug_quirks=0x8000

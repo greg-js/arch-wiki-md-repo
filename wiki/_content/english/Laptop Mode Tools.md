@@ -57,7 +57,7 @@ Finally, [enable](/index.php/Enable "Enable") `laptop-mode.service`.
 
 ### Hard disks
 
-For this you need to have _hdparm_ and/or _sdparm_ installed. See [Hdparm](/index.php/Hdparm "Hdparm").
+For this you need to have *hdparm* and/or *sdparm* installed. See [Hdparm](/index.php/Hdparm "Hdparm").
 
 Spinning down the hard drive through `hdparm -S` values saves power and makes everything a lot more quiet. By using the readahead function you can allow the drives to spin down more often even though you are using the computer. LMT can also establish `hdparm -B` values. The maximum hard drive power saving is 1 and the minimum is 254\. For example, set this value to 254 when on AC and 20 when on battery. If you find that normal activity hangs often while waiting for the disk to spin up, it might be a good idea to set it to a higher value (e.g. 128) which will make it spin down less often. `hdparm -S` and `hdparm -B` values are configured in `/etc/laptop-mode/laptop-mode.conf`.
 
@@ -124,7 +124,7 @@ NOLM_AC_ACTIVATE_SATA_POWER=0
 
 #### USB autosuspend
 
-**Tip:** USB autosuspend functionality has been moved from the _usb-autosuspend_ module to the _runtime-pm_ module. Make sure to replace usb-autosuspend with runtime-pm on /lib/udev/rules.d/99-laptop-mode.rules.
+**Tip:** USB autosuspend functionality has been moved from the *usb-autosuspend* module to the *runtime-pm* module. Make sure to replace usb-autosuspend with runtime-pm on /lib/udev/rules.d/99-laptop-mode.rules.
 
 ```
 # runtime-pm.conf
@@ -334,7 +334,6 @@ $ lsusb
 Put this value into the `AUTOSUSPEND_DEVID_BLACKLIST` variable in `/etc/laptop-mode/conf.d/runtime-pm.conf`, for example:
 
  `/etc/laptop-mode/conf.d/runtime-pm.conf` 
-
 ```
 ...
 AUTOSUSPEND_DEVID_BLACKLIST="046d:c534"

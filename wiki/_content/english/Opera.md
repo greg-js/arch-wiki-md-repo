@@ -45,7 +45,7 @@ The 12.16 Presto version is also available from the [opera-legacy](https://aur.a
 
 ## Plugins
 
-For details about different plugins and installation instructions see [Browser plugins](/index.php/Browser_plugins "Browser plugins"). In Opera, the plugin path can be specified under _Settings > Preferences... > Advanced > Content > Plug-in Options_.
+For details about different plugins and installation instructions see [Browser plugins](/index.php/Browser_plugins "Browser plugins"). In Opera, the plugin path can be specified under *Settings > Preferences... > Advanced > Content > Plug-in Options*.
 
 ### Adobe Flash
 
@@ -67,11 +67,11 @@ One of the keys to maximizing application performance is to disable undesired fe
 
 Some commonly disabled features are:
 
-*   **Systray Icon**: uncheck _Show Tray Icon_ under opera:config#UserPrefs.
-*   **BitTorrent**: uncheck _Enable_ under opera:config#BitTorrent.
-*   **Geolocation**: uncheck _Enable geolocation_ under opera:config#Geolocation.
+*   **Systray Icon**: uncheck *Show Tray Icon* under opera:config#UserPrefs.
+*   **BitTorrent**: uncheck *Enable* under opera:config#BitTorrent.
+*   **Geolocation**: uncheck *Enable geolocation* under opera:config#Geolocation.
 *   **Multimedia**: unckeck desired options under opera:config#Multimedia.
-*   **Web Server**: uncheck _Enable_ under opera:config#Web Server.
+*   **Web Server**: uncheck *Enable* under opera:config#Web Server.
 
 To more easily find these options just write the respective path (without spaces) in the address bar, for example `opera:config#UserPrefs|ShowTrayIcon` or use the built-in search.
 
@@ -84,7 +84,7 @@ $ opera -nomail
 
 ```
 
-Alternatively, if you want to permanently disable the internal e-mail client you can uncheck the _Show E-mail Client_ option under opera:config#UserPrefs.
+Alternatively, if you want to permanently disable the internal e-mail client you can uncheck the *Show E-mail Client* option under opera:config#UserPrefs.
 
 #### Disable ARGB, LIRC and mailto links
 
@@ -117,7 +117,6 @@ See the blog article [Flash problems on Linux?](http://my.opera.com/ruario/blog/
 #### .xinitrc example
 
  `~/.xinitrc` 
-
 ```
 ...
 export OPERAPLUGINWRAPPER_PRIORITY=0
@@ -173,11 +172,11 @@ The title bar can be hidden by right-clicking on the tab bar, then unchecking "S
 
 ### Tab modes
 
-Opera has native support for tab cascading and tiling mode. Appropriate buttons can be found by activating the "Main" toolbar or by dragging and dropping the buttons anywhere desired, found in _Menu > Appearance > Buttons > Browser_.
+Opera has native support for tab cascading and tiling mode. Appropriate buttons can be found by activating the "Main" toolbar or by dragging and dropping the buttons anywhere desired, found in *Menu > Appearance > Buttons > Browser*.
 
 ### Fonts
 
-Fonts can be configured under _Settings > Preferences... > Advanced > Fonts_.
+Fonts can be configured under *Settings > Preferences... > Advanced > Fonts*.
 
 If the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) package has been installed before running Opera for the first time, Opera will use those fonts by default, regardless of what is specified by local GTK+ options, [GNOME](/index.php/GNOME "GNOME") or KDE font management. To force existing installations of Opera to use the options set by your system:
 
@@ -188,7 +187,7 @@ If the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) package 
 *   Restore bookmarks and desired filter files from `~/.opera.bak` to `~/.opera` except for the `operaprefs.ini` file.
 *   Re-install the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) package, if desired.
 
-**Note:** If no text except numbers is showing on some of the webpages that might be a problem with the fonts. A known issue that causes this problem is the _helvetica_ pfb postscript fonts.
+**Note:** If no text except numbers is showing on some of the webpages that might be a problem with the fonts. A known issue that causes this problem is the *helvetica* pfb postscript fonts.
 
 ## Private tabs
 
@@ -210,11 +209,11 @@ $ opera -newprivatetab
 
 To ensure only private tabs are used throughout the duration of the browsing session:
 
-*   Set _Settings > Preferences... > General > Startup > Start without open tabs_.
-*   Clear any entries in _Settings > Preferences... > General > Home page option_.
-*   Enable _Settings > Preferences... > Advanced > Tabs > Additional tab options... > Allow windows with no tabs_.
+*   Set *Settings > Preferences... > General > Startup > Start without open tabs*.
+*   Clear any entries in *Settings > Preferences... > General > Home page option*.
+*   Enable *Settings > Preferences... > Advanced > Tabs > Additional tab options... > Allow windows with no tabs*.
 
-To open a new window for private browsing when already running Opera you can just press `Ctrl+Shift+N` or look under _Menu > New Tabs and Windows > New Private Window_. All subsequent opened tabs with be private as well.
+To open a new window for private browsing when already running Opera you can just press `Ctrl+Shift+N` or look under *Menu > New Tabs and Windows > New Private Window*. All subsequent opened tabs with be private as well.
 
 ## Accessibility Tips
 
@@ -236,7 +235,7 @@ opera:config#UserPrefs|ScrollIsPan
 
 ```
 
-It is also possible to change this setting on the fly by dragging and dropping the appropriate Opera button into a toolbar. The button can be found in _Menu > Appearance > Buttons > Browser View_.
+It is also possible to change this setting on the fly by dragging and dropping the appropriate Opera button into a toolbar. The button can be found in *Menu > Appearance > Buttons > Browser View*.
 
 ### Long pressing a link opens it in a background tab (extension)
 
@@ -261,15 +260,15 @@ On some computers, [http://helion.pl](http://helion.pl) works extremely slow wit
 
 ### Horizontal mouse wheel scrolling
 
-Check _Settings > Preferences... > Advanced > Shortcuts > Mouse > Middle-Click Options... > Enable horizontal panning_.
+Check *Settings > Preferences... > Advanced > Shortcuts > Mouse > Middle-Click Options... > Enable horizontal panning*.
 
 or
 
-*   Highlight _Settings > Preferences... > Advanced > Shortcuts > Mouse > Opera Standard_.
-*   Duplicate _Settings > Preferences... > Advanced > Shortcuts > Mouse > Opera Standard_.
-*   Edit... _Settings > Preferences... > Advanced > Shortcuts > Mouse > Copy of Opera Standard_.
+*   Highlight *Settings > Preferences... > Advanced > Shortcuts > Mouse > Opera Standard*.
+*   Duplicate *Settings > Preferences... > Advanced > Shortcuts > Mouse > Opera Standard*.
+*   Edit... *Settings > Preferences... > Advanced > Shortcuts > Mouse > Copy of Opera Standard*.
 *   Search the `Forward` and `Back` input contexts and edit the appropriate button shortcuts to `scroll left` and `scroll right`.
-*   Rename _Settings > Preferences... > Advanced > Shortcuts > Mouse > Copy of Opera Standard_ as desired.
+*   Rename *Settings > Preferences... > Advanced > Shortcuts > Mouse > Copy of Opera Standard* as desired.
 
 ### Launching an external browser
 
@@ -300,7 +299,7 @@ Button0, "Chromium"="Execute program, "chromium --block-nonsandboxed-plugins --d
 
 ### Opera crashes when starting or closing with GTK+ 2.24.7+
 
-If this crash occurs, you can work around it by changing the _DialogToolkit_ option to 4:
+If this crash occurs, you can work around it by changing the *DialogToolkit* option to 4:
 
 ```
 opera:config#FileSelector|DialogToolkit

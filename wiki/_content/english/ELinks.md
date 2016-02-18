@@ -38,7 +38,7 @@ $ elinks foo.bar.org
 
 ### Navigation
 
-Navigating the web with a text browser is more or less the same as a graphical browser, just without the 'distractions'. Once you've started _elinks_, you can press **g** and type in the web page you would like to request. Then you can navigate the page using arrow keys to navigate by line, the space bar to navigate by page, or the **j**, **k** keys to navigate by link.
+Navigating the web with a text browser is more or less the same as a graphical browser, just without the 'distractions'. Once you've started *elinks*, you can press **g** and type in the web page you would like to request. Then you can navigate the page using arrow keys to navigate by line, the space bar to navigate by page, or the **j**, **k** keys to navigate by link.
 
 ## Configuration
 
@@ -67,7 +67,6 @@ This is one of the few cases where it might be easier just to edit the conf file
 For example, to get ELinks to automatically launch your image-viewer when you click on a jpeg file, you can add the following to your ~/.elinks/elinks.conf file,
 
  `~/.elinks/elinks.conf` 
-
 ```
 set mime.extension.jpg="image/jpeg"
 set mime.extension.jpeg="image/jpeg"
@@ -108,7 +107,7 @@ set protocol.https.proxy.host = "127.0.0.1:8118"
 
 ```
 
-**Note:** The above assumes that _Tor_ is using port **9050** and that _privoxy_ is listening on port **8118**
+**Note:** The above assumes that *Tor* is using port **9050** and that *privoxy* is listening on port **8118**
 
 ### Passing URL's to external commands
 

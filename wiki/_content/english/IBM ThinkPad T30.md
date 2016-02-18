@@ -26,7 +26,7 @@ MODULES=(!usbserial !acpi_cpufreq !p4-clockmod !powernow-k6 !powernow-k7
 
 #### cpufreq Drivers
 
-This blacklists most of the cpufreq drivers so that only speedstep-ich will be loaded. It's not clear to me that the speedstep-ich driver is actually doing anything on this laptop, but it does _appear_ to load and operate correctly.
+This blacklists most of the cpufreq drivers so that only speedstep-ich will be loaded. It's not clear to me that the speedstep-ich driver is actually doing anything on this laptop, but it does *appear* to load and operate correctly.
 
 #### Wireless Drivers
 

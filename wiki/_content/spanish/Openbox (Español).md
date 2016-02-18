@@ -318,8 +318,8 @@ Openbox proporciona la posibilidad de ejecutar diversos programas en el arranque
 
 Hay dos maneras de habilitar el auto-arranque:
 
-1.  Si utilizas startx para iniciar sesión , edita `~/.xinitrc` y cambi la línea de _**openbox**_ a **openbox-session**.
-2.  Si utilizas GDM/KDM, selecciona entonces la sesión _Openbox_ y se utilizará automáticamente el guión autostart.
+1.  Si utilizas startx para iniciar sesión , edita `~/.xinitrc` y cambi la línea de ***openbox*** a **openbox-session**.
+2.  Si utilizas GDM/KDM, selecciona entonces la sesión *Openbox* y se utilizará automáticamente el guión autostart.
 
 ### Script de inicio (autostart)
 

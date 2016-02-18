@@ -11,12 +11,12 @@
 
 Install [textadept](https://aur.archlinux.org/packages/textadept/) from the [AUR](/index.php/AUR "AUR"). It features 4 different executables:
 
-*   _textadept_
-*   _textadept-curses_
-*   _textadeptjit_
-*   _textadeptjit-curses_
+*   *textadept*
+*   *textadept-curses*
+*   *textadeptjit*
+*   *textadeptjit-curses*
 
-The _jit_ versions embed the Lua interpreter LuaJIT, which is notably faster than the official Lua interpreter but does not support Lua 5.2 as of January 2015.[[1]](http://luajit.org/extensions.html#lua52) The _curses_ versions run in a CLI environment.
+The *jit* versions embed the Lua interpreter LuaJIT, which is notably faster than the official Lua interpreter but does not support Lua 5.2 as of January 2015.[[1]](http://luajit.org/extensions.html#lua52) The *curses* versions run in a CLI environment.
 
 ## Configuration
 
@@ -35,7 +35,7 @@ You will need to enable these modules in your `init.lua` file as explained in th
 
 More contributed modules and functions are listed in the [wiki](http://foicica.com/wiki/textadept).
 
-Another convenient way to install modules is by cloning the repository in `~/.textadept/modules`. For instance you can fetch _textadept-vi_ from there:
+Another convenient way to install modules is by cloning the repository in `~/.textadept/modules`. For instance you can fetch *textadept-vi* from there:
 
 ```
 $ cd ~/.textadept/modules

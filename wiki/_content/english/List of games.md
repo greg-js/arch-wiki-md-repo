@@ -35,7 +35,7 @@
 
 	[http://sourceforge.net/projects/openastromenace/](http://sourceforge.net/projects/openastromenace/) || [astromenace](https://www.archlinux.org/packages/?name=astromenace).
 
-*   **Barrage** — Violent _point-and-click_ shooting game with nice effects
+*   **Barrage** — Violent *point-and-click* shooting game with nice effects
 
 	[http://lgames.sourceforge.net/index.php?project=Barrage](http://lgames.sourceforge.net/index.php?project=Barrage) || [barrage](https://www.archlinux.org/packages/?name=barrage)
 
@@ -433,7 +433,7 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 *   **[VVVVVV](https://en.wikipedia.org/wiki/VVVVVV "wikipedia:VVVVVV")** — Highly praised 2D puzzle platform indie game with a C64 retro theme, with a great chiptune soundtrack. You can buy the full version for £1.67, or play the [demo](http://www.kongregate.com/games/TerryCavanagh/vvvvvv-demo/) in a browser.
 
-**Tip:** You may want to backup your save file, which is found at `~/.macromedia/Flash_Player/#SharedObjects/_string_/localhost...`.
+**Tip:** You may want to backup your save file, which is found at `~/.macromedia/Flash_Player/#SharedObjects/*string*/localhost...`.
 
 	[http://thelettervsixtim.es/](http://thelettervsixtim.es/) || [vvvvvv](https://aur.archlinux.org/packages/vvvvvv/)
 
@@ -539,7 +539,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://crawl.develz.org/wordpress/](http://crawl.develz.org/wordpress/) || [stone-soup](https://www.archlinux.org/packages/?name=stone-soup)
 
-*   **[Tales of Maj'Eyal](https://en.wikipedia.org/wiki/Tales_of_Maj%27Eyal "wikipedia:Tales of Maj'Eyal") (previously _Troubles of Middle Earth_)** — A dungeon crawler similar to Angband, based on the works of Tolkien.
+*   **[Tales of Maj'Eyal](https://en.wikipedia.org/wiki/Tales_of_Maj%27Eyal "wikipedia:Tales of Maj'Eyal") (previously *Troubles of Middle Earth*)** — A dungeon crawler similar to Angband, based on the works of Tolkien.
 
 	[http://te4.org/](http://te4.org/) || [tome2](https://aur.archlinux.org/packages/tome2/) [tome3](https://aur.archlinux.org/packages/tome3/) [tome4](https://aur.archlinux.org/packages/tome4/)
 
@@ -718,7 +718,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://zerowing.idsoftware.com/linux/etqw/](http://zerowing.idsoftware.com/linux/etqw/) || [etqw](https://aur.archlinux.org/packages/etqw/)
 
-*   **[Half-Life](https://en.wikipedia.org/wiki/Half-Life_(video_game) "wikipedia:Half-Life (video game)")** — Science-fiction FPS. The two extensions, _Opposing Force_ and _Blue Shift_, are also available.
+*   **[Half-Life](https://en.wikipedia.org/wiki/Half-Life_(video_game) "wikipedia:Half-Life (video game)")** — Science-fiction FPS. The two extensions, *Opposing Force* and *Blue Shift*, are also available.
 
 	[http://store.steampowered.com/app/70/](http://store.steampowered.com/app/70/) || Steam
 
@@ -961,7 +961,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://dark-oberon.sourceforge.net/](http://dark-oberon.sourceforge.net/) || [dark-oberon](https://aur.archlinux.org/packages/dark-oberon/)
 
-*   **Dota 2** — The sequel to the famous _Defense of the Ancient_ map for WarCraft III, which itself was based on the popular _Aeon of Strife_ StarCraft map.
+*   **Dota 2** — The sequel to the famous *Defense of the Ancient* map for WarCraft III, which itself was based on the popular *Aeon of Strife* StarCraft map.
 
 	[http://store.steampowered.com/app/570/](http://store.steampowered.com/app/570/) || Steam
 

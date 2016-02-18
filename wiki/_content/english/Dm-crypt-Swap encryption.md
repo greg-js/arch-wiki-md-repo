@@ -18,7 +18,6 @@ In systems where suspend-to-disk is not a desired feature, it is possible to enc
 Default `/etc/crypttab` already contains a line for swap encryption so you can basically just uncomment it and change the `<device>` parameter to the [persistent name](/index.php/Persistent_block_device_naming "Persistent block device naming") of your swap device.
 
  `/etc/crypttab` 
-
 ```
 # <name>       <device>         <password>              <options>
 # swap         /dev/sdaX        /dev/urandom            swap,cipher=aes-cbc-essiv:sha256,size=256
@@ -47,7 +46,6 @@ Where:
 For example, `by-id` persistent device naming is first identified for the chosen device:
 
  `# ls -l /dev/disk/*/* | grep sdaX` 
-
 ```
 lrwxrwxrwx 1 root root 10 Oct 12 16:54 /dev/disk/by-id/ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470-partX -> ../../sdaX
 lrwxrwxrwx 1 root root 10 Oct 12 16:54 /dev/disk/by-id/wwn-0x60015ee0000b237f-partX -> ../../sdaX
@@ -57,7 +55,6 @@ lrwxrwxrwx 1 root root 10 Oct 12 16:54 /dev/disk/by-id/wwn-0x60015ee0000b237f-pa
 and then used as a persistent reference for the `/dev/sdaX` example partition (if two results are returned as above, choose either one of them):
 
  `/etc/crypttab` 
-
 ```
 # <name>                      <device>                                   <password>     <options>
   swap  /dev/disk/by-id/ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470-partX  /dev/urandom   swap,cipher=aes-cbc-essiv:sha256,size=256
@@ -87,7 +84,6 @@ The unusual parameter after the device name limits the filesystem size to 1 MiB.
 With this, `/dev/sdx4` now can easily be identified either by UUID or LABEL, regardless of how its device name or even partition number might change in the future. All that's left is the `/etc/crypttab` and `/etc/fstab` entries:
 
  `/etc/crypttab` 
-
 ```
 # <name>       <device>         <password>              <options>
 cryptswap      LABEL=cryptswap  /dev/urandom            swap,offset=2048,cipher=aes-xts-plain64,size=512
@@ -96,7 +92,6 @@ cryptswap      LABEL=cryptswap  /dev/urandom            swap,offset=2048,cipher=
 Note the offset: it's 2048 sectors of 512 bytes, thus 1 MiB. This way the filesystem LABEL/UUID remains intact, and data alignment works out as well.
 
  `/etc/fstab` 
-
 ```
 # <filesystem>         <dir>  <type>  <options>  <dump>  <pass>
 /dev/mapper/cryptswap  none   swap    defaults   0       0
@@ -158,7 +153,6 @@ Create a swap filesystem inside the mapped partition:
 Now you have to create a hook to open the swap at boot time. You can either [install](/index.php/Install "Install") and configure [mkinitcpio-openswap](https://aur.archlinux.org/packages/mkinitcpio-openswap/), or follow the following instructions. Create a hook file containing the open command:
 
  `/lib/initcpio/hooks/openswap` 
-
 ```
  run_hook ()
  {
@@ -170,7 +164,6 @@ Now you have to create a hook to open the swap at boot time. You can either [ins
 for opening the swap device by typing your password or
 
  `/lib/initcpio/hooks/openswap` 
-
 ```
  run_hook ()
  {
@@ -189,7 +182,6 @@ for opening the swap device by loading a keyfile from a crypted root device
 Then create and edit the hook setup file:
 
  `/lib/initcpio/install/openswap` 
-
 ```
 build ()
 {
@@ -246,7 +238,7 @@ To create it, first choose a mapped partition (e.g. `/dev/mapper/rootDevice`) wh
 
 Now [create the swap file](/index.php/Swap#Swap_file_creation "Swap") (e.g. `/swapfile`) inside the mounted filesystem of your chosen mapped partition. Be sure to activate it with `swapon` and also add it to your `/etc/fstab` file afterward. Note that the swapfile's previous contents remain transparent over reboots.
 
-Set up your system to resume from your chosen mapped partition. For example, if you use [GRUB](/index.php/GRUB "GRUB") with kernel hibernation support, add `resume=`_your chosen mapped partition_ and `resume_offset=`_see calculation command below_ to the kernel line in `/boot/grub/grub.cfg`. A line with encrypted root partition can look like this:
+Set up your system to resume from your chosen mapped partition. For example, if you use [GRUB](/index.php/GRUB "GRUB") with kernel hibernation support, add `resume=`*your chosen mapped partition* and `resume_offset=`*see calculation command below* to the kernel line in `/boot/grub/grub.cfg`. A line with encrypted root partition can look like this:
 
 ```
 kernel /vmlinuz-linux cryptdevice=/dev/sda2:rootDevice root=/dev/mapper/rootDevice resume=/dev/mapper/rootDevice resume_offset=123456789 ro

@@ -51,26 +51,25 @@ Use an active management script for maximal reliability and ease of use. Several
 Before potentially compromising Firefox's profile, be sure to make a backup for quick restoration. Replace `xyz.default` as appropriate and use `tar` to make a backup:
 
 ```
-$ tar zcvfp ~/firefox_profile_backup.tar.gz ~/.mozilla/firefox/_xyz.default_
+$ tar zcvfp ~/firefox_profile_backup.tar.gz ~/.mozilla/firefox/*xyz.default*
 
 ```
 
 ### The script
 
-<small>_Adapted from [verot.net's Speed up Firefox with tmpfs](http://www.verot.net/firefox_tmpfs.htm)_</small>
+<small>*Adapted from [verot.net's Speed up Firefox with tmpfs](http://www.verot.net/firefox_tmpfs.htm)*</small>
 
 The script will first move Firefox's profile to a new static location, make a sub-directory in `/dev/shm`, softlink to it and later populate it with the contents of the profile. As before, replace the bold sections to suit. The only value that absolutely needs to be altered is, again, `xyz.default`.
 
 Be sure that [rsync](/index.php/Rsync "Rsync") is installed and save the script to `~/bin/firefox-sync`, for example:
 
  `firefox-sync` 
-
 ```
 #!/bin/sh
 
-static=_main_
-link=_xyz.default_
-volatile=_/dev/shm/firefox-$USER_
+static=*main*
+link=*xyz.default*
+volatile=*/dev/shm/firefox-$USER*
 
 IFS=
 set -efu
@@ -122,14 +121,14 @@ $ crontab -e
 Add a line to start the script every 30 minutes,
 
 ```
-*/30 * * * * _~/bin/firefox-sync_
+*/30 * * * * *~/bin/firefox-sync*
 
 ```
 
 or add the following to do so every 2 hours:
 
 ```
-0 */2 * * * _~/bin/firefox-sync_
+0 */2 * * * *~/bin/firefox-sync*
 
 ```
 
@@ -138,7 +137,7 @@ or add the following to do so every 2 hours:
 Deeming [bash](/index.php/Bash "Bash") is being used, add the script to the login/logout files:
 
 ```
-$ echo '_~/bin/firefox-sync_' | tee -a ~/.bash_logout ~/.bash_login >/dev/null
+$ echo '*~/bin/firefox-sync*' | tee -a ~/.bash_logout ~/.bash_login >/dev/null
 
 ```
 

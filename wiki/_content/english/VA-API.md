@@ -86,7 +86,6 @@ export LIBVA_DRIVER_NAME=vdpau
 Verify the settings for VAAPI by running `vainfo`, which is provided by the [libva](https://www.archlinux.org/packages/?name=libva) package:
 
  `$ vainfo` 
-
 ```
 libva info: VA-API version 0.38.0
 libva info: va_getDriverName() returns 0
@@ -109,7 +108,7 @@ vainfo: Supported profile and entrypoints
       VAProfileVC1Advanced            : VAEntrypointVLD
 ```
 
-_VAEntrypointVLD_ means that your card is capable to decode this format, _VAEntrypointEncSlice_ means that you can encode to this format.
+*VAEntrypointVLD* means that your card is capable to decode this format, *VAEntrypointEncSlice* means that you can encode to this format.
 
 ## Supported software
 

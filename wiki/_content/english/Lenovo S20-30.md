@@ -31,7 +31,6 @@ This is one of the products from the [Lenovo S-series](http://shop.lenovo.com/de
 *   Webcam: Lenovo (Acer) EasyCamera
 
  `inxi -F -M` 
-
 ```
 System:    Host: XXX Kernel: 3.16.1-1-ARCH x86_64 (64 bit) Desktop: LXDE (Openbox 3.5.2) Distro: Arch Linux
 Machine:   System: LENOVO product: 20421 v: Lenovo S20-30
@@ -58,7 +57,6 @@ Info:      Processes: 105 Uptime: 2:08 Memory: 852.2/3843.1MB Client: Shell (zsh
 ### PCI devices
 
  `lspci -nn` 
-
 ```
 00:00.0 Host bridge [0600]: Intel Corporation Atom Processor Z36xxx/Z37xxx Series SoC Transaction Register [8086:0f00] (rev 0e)
 00:02.0 VGA compatible controller [0300]: Intel Corporation Atom Processor Z36xxx/Z37xxx Series Graphics & Display [8086:0f31] (rev 0e)
@@ -78,7 +76,6 @@ Info:      Processes: 105 Uptime: 2:08 Memory: 852.2/3843.1MB Client: Shell (zsh
 ### USB devices
 
  `lsusb` 
-
 ```
 Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 Bus 001 Device 005: ID 0bda:0129 Realtek Semiconductor Corp. RTS5129 Card Reader Controller
@@ -93,7 +90,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ### BIOS
 
-The BIOS and the boot menu can be accessed by using the _alternative_ power button, which is a small circular one on the left side near by the main power button.
+The BIOS and the boot menu can be accessed by using the *alternative* power button, which is a small circular one on the left side near by the main power button.
 
 ### Wireless
 

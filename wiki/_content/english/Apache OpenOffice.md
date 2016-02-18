@@ -2,7 +2,7 @@
 
 From [Why Apache OpenOffice](http://why.openoffice.org/):
 
-	_Apache OpenOffice is the leading open-source office software suite for word processing, spreadsheets, presentations, graphics, databases and more. It is available in many languages and works on all common computers. It stores all your data in an international open standard format and can also read and write files from other common office software packages. It can be downloaded and used completely free of charge for any purpose._
+	*Apache OpenOffice is the leading open-source office software suite for word processing, spreadsheets, presentations, graphics, databases and more. It is available in many languages and works on all common computers. It stores all your data in an international open standard format and can also read and write files from other common office software packages. It can be downloaded and used completely free of charge for any purpose.*
 
 ## Contents
 
@@ -38,7 +38,7 @@ Official Microsoft fonts are useful to prevent pagination problems. Check the [M
 
 ### Extension management and spell checking
 
-The Arch package is now shipped with some dictionaries. Check _Extension manager_ if your language is already there simply by loading up any OpenOffice program (Writer for example) and access the _Extension Manager_ from the Tools menu. From there enter the following location to install a spell check dictionary:
+The Arch package is now shipped with some dictionaries. Check *Extension manager* if your language is already there simply by loading up any OpenOffice program (Writer for example) and access the *Extension Manager* from the Tools menu. From there enter the following location to install a spell check dictionary:
 
 ```
 /usr/lib/openoffice/share/extension/install/
@@ -49,7 +49,7 @@ The Arch package is now shipped with some dictionaries. Check _Extension manager
 
 Alternatively, there are several ways to accomplish this:
 
-*   Use the _Extension manager_ from OpenOffice menu for download and installation - installs only for the user into his `~/.openoffice.org/3/user/uno_packages/cache`
+*   Use the *Extension manager* from OpenOffice menu for download and installation - installs only for the user into his `~/.openoffice.org/3/user/uno_packages/cache`
 *   Download the extension and install it using `/usr/lib/openoffice/program/unopkg add extension` for the user
 *   Download the extension and install it using `/usr/lib/openoffice/program/unopkg add --shared extension` for every user on the system (requires root permission)
 
@@ -80,7 +80,7 @@ The path for this directory in Arch Linux is:
 
 ```
 
-Macros are not guaranted to work in both OpenOffice and LibreOffice, but it is possible to choose a common directory for them. Choose the path in _Tools > Options > LibreOffice/OpenOffice > Paths_ The default path for LibreOffice macros in Arch Linux is:
+Macros are not guaranted to work in both OpenOffice and LibreOffice, but it is possible to choose a common directory for them. Choose the path in *Tools > Options > LibreOffice/OpenOffice > Paths* The default path for LibreOffice macros in Arch Linux is:
 
 ```
 ~/.config/libreoffice/4/user/Scripts/
@@ -95,7 +95,7 @@ To add fonts to those already available in OpenOffice, run `spadmin`.
 
 ## Theme
 
-OpenOffice supports to use several toolkits for drawing and integrates into different desktop environments in a clean way. To choose by hand, you need to set the `OOO_FORCE_DESKTOP` environment variable. Its possible values are _gnome_ and _kde4_.
+OpenOffice supports to use several toolkits for drawing and integrates into different desktop environments in a clean way. To choose by hand, you need to set the `OOO_FORCE_DESKTOP` environment variable. Its possible values are *gnome* and *kde4*.
 
 To configure the look for anytime OpenOffice gets started, you can export the `OOO_FORCE_DESKTOP` variable in `/etc/profile.d/openoffice.sh`, or in `/usr/bin/soffice`. Alternatively you can put the variable in any OpenOffice desktop file in `Exec` line between `Exec` and the command, then copy them to `$XDG_DATA_HOME/applications` in order to prevent overwriting on update.
 
@@ -107,11 +107,11 @@ Check [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_
 
 You may wish to set the Xorg server dots-per-inch in the [KDM](/index.php/KDM "KDM") configuration.
 
-Do **not** select _Use my KDE style in GTK applications_. Instead choose a native syle and font for GTK+ 2 applications.
+Do **not** select *Use my KDE style in GTK applications*. Instead choose a native syle and font for GTK+ 2 applications.
 
 Use a program like [gtk-chtheme](https://www.archlinux.org/packages/?name=gtk-chtheme) to select a style (in general different from KDE) and a font (may be the same as your KDE general system font). There are also other GTK+ engine packages available.
 
-There are two relevant parts of the OpenOffice options dialog, _View_ and _Fonts_:
+There are two relevant parts of the OpenOffice options dialog, *View* and *Fonts*:
 
 *   **View**
     *   Set scale to 100%
@@ -119,24 +119,24 @@ There are two relevant parts of the OpenOffice options dialog, _View_ and _Fonts
     *   Set antialiasing OFF
 
 *   **Fonts**
-    *   Select _Use replacement table_
-    *   Replace _Andale Sans UI_ (you **must** type this in -- it is not in the drop down list) with another font (your KDE system font or another if this looks bad)
+    *   Select *Use replacement table*
+    *   Replace *Andale Sans UI* (you **must** type this in -- it is not in the drop down list) with another font (your KDE system font or another if this looks bad)
     *   Press the tick symbol to update the list
-    *   Select _Always_ and _Screen only_
-    *   Press _OK_
+    *   Select *Always* and *Screen only*
+    *   Press *OK*
 
 When choosing fonts for OpenOffice note that the poor font rendering engine included in the package may not render a particular font in the same way as other apps on the desktop.
 
 ## Speed up OpenOffice
 
-Some settings may improve OpenOffice's loading time and responsiveness. However, some also increase RAM usage, so use them carefully. They can all be accessed under _Tools > Options_.
+Some settings may improve OpenOffice's loading time and responsiveness. However, some also increase RAM usage, so use them carefully. They can all be accessed under *Tools > Options*.
 
-*   Under _Memory_:
-    *   Reduce the number of _Undo > Number of steps_ to a figure lower than 100, to something like 40 or 50 steps
-    *   Under _Graphics cache_, set _Use for OpenOffice_ to 128 MB (up from the original 20MB).
-    *   Set _Memory per object_ to 20MB (up from the default 5MB)
-    *   If you use OpenOffice often, check _OpenOffice Quickstarter_
-*   Under _Java_, uncheck Use a Java runtime environment
+*   Under *Memory*:
+    *   Reduce the number of *Undo > Number of steps* to a figure lower than 100, to something like 40 or 50 steps
+    *   Under *Graphics cache*, set *Use for OpenOffice* to 128 MB (up from the original 20MB).
+    *   Set *Memory per object* to 20MB (up from the default 5MB)
+    *   If you use OpenOffice often, check *OpenOffice Quickstarter*
+*   Under *Java*, uncheck Use a Java runtime environment
 
 **Note:** For a list of functionality which depends on OpenOffice Java support, see this page: [http://wiki.services.openoffice.org/wiki/Java](http://wiki.services.openoffice.org/wiki/Java).
 
@@ -144,7 +144,7 @@ Some settings may improve OpenOffice's loading time and responsiveness. However,
 
 ### Font substitution
 
-These settings can be changed in the OpenOffice options. From the drop-down menu, select _Tools > Options > OpenOffice > Fonts_. Check the box that says _Apply Replacement Table_. Type `Andale Sans UI` in the font box and choose your desired font for the _Replace with_ option. When done, click the _checkmark_. Then choose the _Always_ and _Screen only_ options in the box below. Click OK. You will then need to go to _Tools > Options > OpenOffice > View_, and uncheck _Use system font for user interface_. If you use a non-antialised font, such as Arial, you will also need to uncheck _Screen font antialiasing_ before menu fonts render correctly.
+These settings can be changed in the OpenOffice options. From the drop-down menu, select *Tools > Options > OpenOffice > Fonts*. Check the box that says *Apply Replacement Table*. Type `Andale Sans UI` in the font box and choose your desired font for the *Replace with* option. When done, click the *checkmark*. Then choose the *Always* and *Screen only* options in the box below. Click OK. You will then need to go to *Tools > Options > OpenOffice > View*, and uncheck *Use system font for user interface*. If you use a non-antialised font, such as Arial, you will also need to uncheck *Screen font antialiasing* before menu fonts render correctly.
 
 ### Anti-aliasing
 
@@ -186,7 +186,7 @@ lang="en es"
 
 ```
 
-Extract the target languages' dictionary files and convert the erroneous encoding to _UTF-8_:
+Extract the target languages' dictionary files and convert the erroneous encoding to *UTF-8*:
 
 ```
 tmp="/tmp/dictfix-$USER-$$"
@@ -205,11 +205,11 @@ done
 rm -rf "$tmp"
 ```
 
-Finally, use the OpenOffice extension manager (available through the _Tools_ menu) to install the dictionary from the resulting `dict-_xx_.oxt` file(s).
+Finally, use the OpenOffice extension manager (available through the *Tools* menu) to install the dictionary from the resulting `dict-*xx*.oxt` file(s).
 
 ### Dark GTK+ themes, icons and GTK-Qt Engine
 
-Older OpenOffice/LibreOffice versions would start in _High Contrast Mode_ if you use dark [GTK+](/index.php/GTK%2B "GTK+") themes. This might prevent you from changing _High Contrast Icons_ or Calc cell background coloring is completely disabled.
+Older OpenOffice/LibreOffice versions would start in *High Contrast Mode* if you use dark [GTK+](/index.php/GTK%2B "GTK+") themes. This might prevent you from changing *High Contrast Icons* or Calc cell background coloring is completely disabled.
 
 #### Older OpenOffice versions (< 3.2.x)
 
@@ -220,10 +220,10 @@ Older OpenOffice/LibreOffice versions would start in _High Contrast Mode_ if you
 
 In newer version of OpenOffice / LibreOffice ( > 3.2.x), the fixes mentioned above do not seem to work. Possible solutions may be:
 
-*   You could manually configure UI colors via _Tools > Options > Appearance_, yet Impress and Calc may stay dark.
-*   Another solution is to disable _Automatically detect high-contrast mode of operation system_ in _LibreOffice > Accessibility_ (> LO 4.1.x).
+*   You could manually configure UI colors via *Tools > Options > Appearance*, yet Impress and Calc may stay dark.
+*   Another solution is to disable *Automatically detect high-contrast mode of operation system* in *LibreOffice > Accessibility* (> LO 4.1.x).
 
-Now the colors can be configured in _Options > Appearance_ and the selection of another iconset is possible again.
+Now the colors can be configured in *Options > Appearance* and the selection of another iconset is possible again.
 
 ### Hanging when using NFSv3 shares
 

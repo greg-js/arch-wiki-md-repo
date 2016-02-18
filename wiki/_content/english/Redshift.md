@@ -1,6 +1,6 @@
 From the [redshift project web page](http://jonls.dk/redshift/):
 
-	_Redshift adjusts the color temperature of your screen according to your surroundings. This may help your eyes hurt less if you are working in front of the screen at night. This program is inspired by [f.lux](http://justgetflux.com) [...]._
+	*Redshift adjusts the color temperature of your screen according to your surroundings. This may help your eyes hurt less if you are working in front of the screen at night. This program is inspired by [f.lux](http://justgetflux.com) [...].*
 
 The project is developed on [GitHub](https://github.com/jonls/redshift).
 
@@ -77,9 +77,7 @@ For more information, see [this](https://bbs.archlinux.org/viewtopic.php?pid=138
 Redshift reads the configuration file `~/.config/redshift.conf`, if it exists. However, Redshift does not create that configuration file, so you have to create it manually. Below is an example (copied from the [Redshift website](http://jonls.dk/redshift/)).
 
 **Note:** There seems to be a bug in Redshift that causes the transition option in the configuration file to not work as described: Instead of handling the transition between day and night it **only** changes the transition between application start-up and shutdown (and delay the latter as a consequence). See the [talk page](/index.php/Talk:Redshift#Day_and_night_transition "Talk:Redshift") and the [issue on the Redshift project page](https://github.com/jonls/redshift/issues/270) for more information.
-
  `~/.config/redshift.conf` 
-
 ```
 ; Global settings for redshift
 [redshift]
@@ -156,7 +154,6 @@ If this is the case, installing [python-gobject](https://www.archlinux.org/packa
 By default, the geoclue2 configuration files does not allow Redshift access. In order to allow access, add the following lines to `/etc/geoclue/geoclue.conf`
 
  `/etc/geoclue/geoclue.conf` 
-
 ```
 [redshift]
 allowed=true

@@ -54,7 +54,7 @@
 
 По умолчанию, клавишами перехода в режим управления является комбинация клавиш `Ctrl-b`. Например, для вертикального разделения окна `Ctrl-b+%`.
 
-После разделения окна на несколько панелей, панели могут быть изменены, используя следующее сочетание клавиш: `Ctrl-b`) и, продолжая удерживать Ctrl, нажмите клавишу вправо/влево/вверх/вниз. Менять панели местами можно таким же способом, только с нажатием _o_ вместо клавиш направления.
+После разделения окна на несколько панелей, панели могут быть изменены, используя следующее сочетание клавиш: `Ctrl-b`) и, продолжая удерживать Ctrl, нажмите клавишу вправо/влево/вверх/вниз. Менять панели местами можно таким же способом, только с нажатием *o* вместо клавиш направления.
 
 **Совет:** Для имитации управления аналогично [screen](/index.php/GNU_Screen_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNU Screen (Русский)") используйте содержимое файла `/usr/share/tmux/screen-keys.conf` в качестве рабочего конфигурационного.
 
@@ -260,10 +260,9 @@ set-window-option -g window-status-current-fg white
 
 Кроме того, ваш сеанс tmux будет сохранен вместе со всеми изменениями, даже если на текущий момент вход в систему не выполнен
 
-Следующий файл-юнит позволит запускать _tmux_ как службу для указанного пользователя (имея название вида `tmux@_имя пользователя_.service`):
+Следующий файл-юнит позволит запускать *tmux* как службу для указанного пользователя (имея название вида `tmux@*имя пользователя*.service`):
 
  `/etc/systemd/system/tmux@.service` 
-
 ```
 [Unit]
 Description=Start tmux in detached session
@@ -279,7 +278,7 @@ WantedBy=multi-user.target
 
 ```
 
-**Совет:** You may want to add `WorkingDirectory=_custom_path_` to customize working directory.
+**Совет:** You may want to add `WorkingDirectory=*custom_path*` to customize working directory.
 
 Кроме того, вы можете разместить этот файл в ваш [пользовательский](/index.php/Systemd/User "Systemd/User") каталог, например в `~/.config/systemd/user/tmux.service`. Таким образом, служба tmux запустится сразу после входа в систему.
 
@@ -450,7 +449,6 @@ mv osc-xterm-clipboard /usr/lib/urxvt/perl/
 You will also need to enable that perl script in your .Xdefaults:
 
  `~/.Xdefaults` 
-
 ```
 ...
 *URxvt.perl-ext-common:		osc-xterm-clipboard
@@ -461,7 +459,6 @@ You will also need to enable that perl script in your .Xdefaults:
 Next, you want to tell tmux about the new function and enable mouse support (if you haven't already). The third option is optional, to enable scrolling and selecting inside panes with your mouse:
 
  `~/.tmux.conf` 
-
 ```
 ...
 set-option -ga terminal-override ',rxvt-uni*:XT:Ms=\E]52;%p1%s;%p2%s\007'
@@ -510,7 +507,6 @@ The Interesting part you need to copy for later use begins after **[layout...** 
 Knowing this, you can exit the current tmux session. Following this, you create your default Tmux session layout by editing Tmuxinator's config file (Don't copy the example, get your layout values as described above)
 
  `~/.tmuxinator/default.yml` 
-
 ```
 name: default
 root: ~/
@@ -543,7 +539,6 @@ mux default
 If you like to start your terminal session with your default Tmux session layout edit
 
  `~/.bashrc` 
-
 ```
  if [ -z "$TMUX" ]; then
    mux default          
@@ -578,7 +573,6 @@ Use this command to start urxvt with a started tmux session. I use this with the
 Simply add the following line of bash code to your .bashrc before your aliases; the code for other shells is very similar:
 
  `~/.bashrc` 
-
 ```
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
@@ -635,7 +629,7 @@ fi
 
 Tmux starts a [login shell](http://unix.stackexchange.com/questions/38175) [by default](http://comments.gmane.org/gmane.comp.terminal-emulators.tmux.user/5997), which may result in multiple negative side effects:
 
-*   Users of [fortune](https://en.wikipedia.org/wiki/fortune_(Unix) "wikipedia:fortune (Unix)") may notice that quotes are printed when creating a new panel.
+*   Users of [fortune](https://en.wikipedia.org/wiki/fortune_(Unix) may notice that quotes are printed when creating a new panel.
 *   The configuration files for login shells such as `~/.profile` are interpreted each time a new panel is created, so commands intended to be run on session initialization (e.g. setting audio level) are executed.
 
 To disable this behaviour, add to `~/.tmux.conf`:
@@ -679,7 +673,6 @@ In [Practical Tmux](http://mutelight.org/articles/practical-tmux), Brandur Leach
 The script “`tmx`” below implements this — the version here is slightly modified to execute “`tmux new-window`” if “1” is its second parameter. Invoked as `tmx <base session name> [1]` it launches the base session if necessary. Otherwise a new “client” session linked to the base, optionally add a new window and attach, setting it to kill itself once it turns “zombie”.
 
  `tmx` 
-
 ```
 #!/bin/bash
 
@@ -743,7 +736,6 @@ added to `~/.tmux.conf`. It causes tmux to resize a window based on the smallest
 An alternative taken from [[3]](http://sourceforge.net/mailarchive/forum.php?thread_name=CAPBqLKEC0MAFR%2BWUYqCuyd%3DKB47HK8CFSuAf%3Dd%3DW2H3F4fpMZw%40mail.gmail.com&forum_name=tmux-users) is to put the following ~/.bashrc:
 
  `.bashrc` 
-
 ```
 function rsc() {
   CLIENTID=$1.`date +%S`
@@ -768,7 +760,6 @@ Citing the author:
 Instead of [setting a fixed TERM variable in tmux](#Setting_the_correct_term), it is possible to set the proper TERM (either `screen` or `screen-256color`) according to the type of your terminal emulator:
 
  `~/.tmux.conf` 
-
 ```
 ## set the default TERM
 set -g default-terminal screen
@@ -779,9 +770,7 @@ set -g update-environment 'DISPLAY SSH_ASKPASS SSH_AGENT_PID SSH_CONNECTION WIND
 if "[[ ${TERM} =~ 256color || ${TERM} == fbterm ]]" 'set -g default-terminal screen-256color'
 
 ```
-
  `~/.zshrc` 
-
 ```
 ## workaround for handling TERM variable in multiple tmux sessions properly from [http://sourceforge.net/p/tmux/mailman/message/32751663/](http://sourceforge.net/p/tmux/mailman/message/32751663/) by Nicholas Marriott
 if [[ -n ${TMUX} && -n ${commands[tmux]} ]];then
@@ -837,7 +826,7 @@ exit 0
 
 ```
 
-A derived version to run _irssi_ with the _nicklist_ plugin can be found on [its ArchWiki page](/index.php/Irssi#irssi_with_nicklist_in_tmux "Irssi").
+A derived version to run *irssi* with the *nicklist* plugin can be found on [its ArchWiki page](/index.php/Irssi#irssi_with_nicklist_in_tmux "Irssi").
 
 ### Terminal emulator window titles
 

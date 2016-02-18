@@ -204,7 +204,7 @@ $ lxdm -c USER_SWITCH
 
 [Xscreensaver](/index.php/Xscreensaver "Xscreensaver") 也支持此功能，参见 [Xscreensaver#LXDM](/index.php/Xscreensaver#LXDM "Xscreensaver").
 
-If you use the [Xfce](/index.php/Xfce "Xfce") desktop, the Switch User functionality of its Action Button panel item specifically looks for the _gdmflexiserver_ executable in order to enable itself. If you provide it with an executable shell script `/usr/bin/gdmflexiserver` consisting of
+If you use the [Xfce](/index.php/Xfce "Xfce") desktop, the Switch User functionality of its Action Button panel item specifically looks for the *gdmflexiserver* executable in order to enable itself. If you provide it with an executable shell script `/usr/bin/gdmflexiserver` consisting of
 
 ```
 #!/bin/sh

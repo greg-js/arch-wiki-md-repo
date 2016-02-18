@@ -56,7 +56,6 @@ Set up Apache to use php as outlined in the [LAMP](/index.php/LAMP#PHP "LAMP") a
 Create the Apache configuration file:
 
  `/etc/httpd/conf/extra/phpmyadmin.conf` 
-
 ```
 Alias /phpmyadmin "/usr/share/webapps/phpMyAdmin"
 <Directory "/usr/share/webapps/phpMyAdmin">
@@ -216,7 +215,7 @@ $cfg['Servers'][$i]['host'] = 'localhost';
 
 ```
 
-If you would like to use phpMyAdmin setup script by calling [http://localhost/phpmyadmin/setup](http://localhost/phpmyadmin/setup) you will need to create a config directory that's writeable by the _httpd_ user in `/usr/share/webapps/phpMyAdmin` as follows:
+If you would like to use phpMyAdmin setup script by calling [http://localhost/phpmyadmin/setup](http://localhost/phpmyadmin/setup) you will need to create a config directory that's writeable by the *httpd* user in `/usr/share/webapps/phpMyAdmin` as follows:
 
 ```
 # cd /usr/share/webapps/phpMyAdmin
@@ -243,9 +242,9 @@ The error should go away if you refresh the phpmyadmin page.
 
 ### Enabling Configuration Storage (optional)
 
-Now that the basic database server has been setup, it _is_ functional, however by default, extra options such as table linking, change tracking, PDF creation, and bookmarking queries are disabled. You will see a message at the bottom of the main phpMyAdmin page, "The phpMyAdmin configuration storage is not completely configured, some extended features have been deactivated. To find out why...", This section addresses how to to enable these extra features.
+Now that the basic database server has been setup, it *is* functional, however by default, extra options such as table linking, change tracking, PDF creation, and bookmarking queries are disabled. You will see a message at the bottom of the main phpMyAdmin page, "The phpMyAdmin configuration storage is not completely configured, some extended features have been deactivated. To find out why...", This section addresses how to to enable these extra features.
 
-**Note:** This example assumes you want to use the username **pma** as the controluser, and **pmapass** as the controlpass. These should be changed (the _very_ least, you should change the password!) to something more secure.
+**Note:** This example assumes you want to use the username **pma** as the controluser, and **pmapass** as the controlpass. These should be changed (the *very* least, you should change the password!) to something more secure.
 
 In `/etc/webapps/phpmyadmin/config.inc.php`, uncomment (remove the leading "//"s on) these two lines, and change them to your desired credentials:
 
@@ -313,7 +312,6 @@ GRANT SELECT (Host, Db, User, Table_name, Table_priv, Column_priv)
 In order to take advantage of the bookmark and relation features, you will also need to give **pma** some additional permissions:
 
 **Note:** as long as you did not change the value of **$cfg['Servers'][$i]['pmadb']** in `/etc/webapps/phpmyadmin/config.inc.php`, then **<pma_db>** should be **phpmyadmin**
-
  `GRANT SELECT, INSERT, UPDATE, DELETE ON <pma_db>.* TO 'pma'@'localhost';` 
 
 Log out, and back in to ensure the new features are activated. The message at the bottom of the main screen should now be gone.

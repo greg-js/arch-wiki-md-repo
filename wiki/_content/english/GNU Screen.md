@@ -62,15 +62,15 @@ Commands are entered pressing `ctrl+a` and then the key binding.
 To create a named session, run screen with the following command:
 
 ```
-$ screen -S _session_name_
+$ screen -S *session_name*
 
 ```
 
 To (re)name an existing a session, run the following command while screen is running:
 
-`ctrl+a` `:sessionname _session_name_`
+`ctrl+a` `:sessionname *session_name*`
 
-To print a list of _pid.tty.host_ strings identifying your screen sessions:
+To print a list of *pid.tty.host* strings identifying your screen sessions:
 
 ```
 $ screen -list
@@ -80,14 +80,14 @@ $ screen -list
 To attach to a named screen session, run this command:
 
 ```
-$ screen -x _session_name_
+$ screen -x *session_name*
 
 ```
 
 or
 
 ```
-$ screen -r _session_name_
+$ screen -r *session_name*
 
 ```
 
@@ -96,7 +96,6 @@ $ screen -r _session_name_
 This service autostarts screen for the specified user (e.g. `systemctl enable screen@florian`). Running this as a system unit is important, because [systemd --user](/index.php/Systemd/User "Systemd/User") instance is not guaranteed to be running and will be killed when the last session for given user is closed.
 
  `/etc/systemd/system/screen@.service` 
-
 ```
 [Unit]
 Description=screen
@@ -132,7 +131,6 @@ sets it to `ctrl+^`.
 By default, the first screen window is 0\. If you'd rather never have a window 0 and start instead with 1, add the following lines on your configuration:
 
  `~/.screenrc` 
-
 ```
 bind c screen 1
 bind ^c screen 1
@@ -155,7 +153,6 @@ By default, screen uses an 8-color terminal emulator. To enable more colors, you
 First try the generic value:
 
  `~/.screenrc` 
-
 ```
 term screen-256color
 
@@ -164,7 +161,6 @@ term screen-256color
 If that does not work, try setting it based on the used terminal. When using [xterm](/index.php/Xterm "Xterm")-based terminal:
 
  `~/.screenrc` 
-
 ```
 term xterm-256color
 
@@ -173,18 +169,16 @@ term xterm-256color
 When using [rxvt-unicode](/index.php/Rxvt-unicode "Rxvt-unicode"):
 
  `~/.screenrc` 
-
 ```
 term rxvt-unicode-256color
 
 ```
 
-**Note:** `/usr/share/terminfo/r/rxvt-unicode-256color` is provided by [rxvt-unicode-terminfo](https://www.archlinux.org/packages/?name=rxvt-unicode-terminfo), which is installed as a dependency of [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode). However, if you log into a server via [SSH](/index.php/SSH "SSH") and run _screen_ there, this terminfo file might not be available on the server. In this case it is recommended to copy `/usr/share/terminfo/r/rxvt-unicode-256color` on the server, it can be saved in `~/.terminfo`.
+**Note:** `/usr/share/terminfo/r/rxvt-unicode-256color` is provided by [rxvt-unicode-terminfo](https://www.archlinux.org/packages/?name=rxvt-unicode-terminfo), which is installed as a dependency of [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode). However, if you log into a server via [SSH](/index.php/SSH "SSH") and run *screen* there, this terminfo file might not be available on the server. In this case it is recommended to copy `/usr/share/terminfo/r/rxvt-unicode-256color` on the server, it can be saved in `~/.terminfo`.
 
 As a last resort, try setting [termcapinfo](http://aperiodic.net/screen/commands:termcapinfo) instead:
 
  `~/.screenrc` 
-
 ```
 attrcolor b ".I"    # allow bold colors - necessary for some reason
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'   # tell screen how to set colors. AB = background, AF=foreground
@@ -197,7 +191,6 @@ defbce on    # use current bg color for erased chars
 The default statusbar may be a little lacking. You may find this one more helpful:
 
  `~/.screenrc` 
-
 ```
 hardstatus off
 hardstatus alwayslastline
@@ -208,7 +201,6 @@ hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u
 Another possibility, taken from [frodfrog's blog](http://www.fordfrog.com/2012/09/02/71/) is:
 
  `~/.screenrc` 
-
 ```
 hardstatus alwayslastline '%{= G}[ %{G}%H %{g}][%= %{= w}%?%-Lw%?%{= R}%n*%f %t%?%{= R}(%u)%?%{= w}%+Lw%?%= %{= g}][ %{y}Load: %l %{g}][%{B}%Y-%m-%d %{W}%c:%s %{g}]'
 
@@ -217,7 +209,6 @@ hardstatus alwayslastline '%{= G}[ %{G}%H %{g}][%= %{= w}%?%-Lw%?%{= R}%n*%f %t%
 ### Turn welcome message off
 
  `~/.screenrc` 
-
 ```
 startup_message off
 
@@ -228,7 +219,6 @@ startup_message off
 This one is pretty simple; just switch your current `hardstatus` line into a `caption` line with notification, and edit accordingly:
 
  `~/.screenrc` 
-
 ```
 backtick 1 5 5 true
 termcapinfo rxvt* 'hs:ts=\E]2;:fs=\007:ds=\E]2;\007'
@@ -245,7 +235,6 @@ This will give you something like `screen (0 bash)` in the title of your termina
 The scroll buffer of GNU Screen can be accessed with `ctrl+a` `[`. However, this is very inconvenient. To use the scroll bar of e.g. xterm or konsole, add the following line:
 
  `~/.screenrc` 
-
 ```
 termcapinfo xterm* ti@:te@
 
@@ -259,7 +248,7 @@ If you started a program outside screen, but now you would like it to be inside,
 
 Get the PID of the process (you can use `ps ax` for that). Now just enter the PID as argument to reptyr inside a screen window.
 
- `$ reptyr _<pid>_` 
+ `$ reptyr *<pid>*` 
 
 ### Setting a different bash prompt while in screen
 
@@ -282,7 +271,6 @@ fi
 With this setting, screen will not make an ugly screen flash instead of a bell sound.
 
  `~/.screenrc` 
-
 ```
 vbell off
 
@@ -299,7 +287,6 @@ In some cases (need deeper inspection) [old gpm bug](https://bugzilla.redhat.com
 When you open a text editor like nano in screen and then close it, the text may stay visible in your terminal. To fix this, put the following:
 
  `~/.screenrc` 
-
 ```
 altscreen on
 

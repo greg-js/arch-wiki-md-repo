@@ -35,7 +35,7 @@ Hay varias maneras de instalar Arch en una memoria USB, la más sencilla es desd
 
 Siga la [Guía de Instalación](https://wiki.archlinux.org/index.php/Installation_Guide) como lo haría normalmente, con las siguientes excepciones:
 
-*   Si cfdisk falla devolviendo el error fatal _«Partition ends in the final partial cylinder»_, la única manera de proceder es cerrar a todas las particiones en el disco usb. Abra otra terminal presionando (`Alt+F2`), escriba `fdisk/dev/sdX` (donde `sdX` es el disco USB), imprima la tabla de particiones (p), compruebe que todo está bien, bórrelo (d) y escribir los cambios (w). Ahora regrese a cfdisk.
+*   Si cfdisk falla devolviendo el error fatal *«Partition ends in the final partial cylinder»*, la única manera de proceder es cerrar a todas las particiones en el disco usb. Abra otra terminal presionando (`Alt+F2`), escriba `fdisk/dev/sdX` (donde `sdX` es el disco USB), imprima la tabla de particiones (p), compruebe que todo está bien, bórrelo (d) y escribir los cambios (w). Ahora regrese a cfdisk.
 *   Se recomienda revisar el artículo sobre los [Consejos para minimizar la lectura/escritura del SSD](#Optimizar_la_vida_.C3.BAtil_de_la_memoria_flash) del artículo de la wiki [SSD](/index.php/SSD "SSD") antes de seleccionar un sistema de archivos. En resumen, ext4 con un sistema journal, puede ser adecuado. Recuerde que el flash usb tiene un número limitado de escrituras, y un sistema de archivos journaling utilizará una parte de ellos cada vez que actualice. Por esta misma razón, lo mejor es renunciar a una partición de intercambio. Tenga en cuenta que esto no afecta a la instalación en un disco duro USB.
 *   Antes de crear el disco RAM inicial con la orden `# mkinitcpio -p linux`, edite el archivo `/etc/mkinitcpio.conf` y agregue `block` en la matriz hooks despues de udev. Esto es necesario para cargar el módulo correspondiente en el primer espacio de usuario.
 *   Si quiere ser capaz de seguir utilizando el dispositivo UFD como una unidad extraíble multiplataforma, esto se puede lograr mediante la creación de una partición que aloje un sistema de archivos adecuado (lo más probable NTFS). Tenga en cuenta que la partición de datos puede tener que ser la primera partición en el dispositivo, dado que Windows asume que solo puede haber una partición en un dispositivo extraíble, y realizará el automount de una partición del sistema EFI en dicho lugar. Recuerde instalar [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) y [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g).
@@ -64,7 +64,7 @@ initrd /boot/initramfs-linux.img
 
 ```
 
-Cuando se utiliza la etiqueta (_«label»_), el archivo _menu.lst_ debería mostrar este aspecto:
+Cuando se utiliza la etiqueta (*«label»*), el archivo *menu.lst* debería mostrar este aspecto:
 
 ```
 root (hd0,0)

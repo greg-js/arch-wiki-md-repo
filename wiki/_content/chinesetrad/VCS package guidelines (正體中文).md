@@ -10,7 +10,7 @@
 
 ## 用 makepkg 打包 CVS, SVN & GIT 文件
 
-事實上，這個工作非常簡單，您不需要什麼特殊的知識。不管怎麼樣，您對CVS和SVN的知識懂得越多越好。很多人在 PKGBUILD 文件裏面引入了不必要（譯注：這個詞是譯者加的，在儘量不影響理解的前提下，譯者可能會不自覺的使用自己的語言，後面不再聲明）的自定義變數，這樣會使工作變得複雜。這些看起來很複雜的語句並不是_必須的_，但是對於使語法結構清洗，是很有幫助的。
+事實上，這個工作非常簡單，您不需要什麼特殊的知識。不管怎麼樣，您對CVS和SVN的知識懂得越多越好。很多人在 PKGBUILD 文件裏面引入了不必要（譯注：這個詞是譯者加的，在儘量不影響理解的前提下，譯者可能會不自覺的使用自己的語言，後面不再聲明）的自定義變數，這樣會使工作變得複雜。這些看起來很複雜的語句並不是*必須的*，但是對於使語法結構清洗，是很有幫助的。
 
 ### 一些小提示
 
@@ -31,7 +31,7 @@ provides=('fluxbox')
 
 	您最好不要使用(your should avoid using) <tt>replaces=</tt> ，它可能會產生不必要的麻煩
 
-*   When using/defining the cvsroot use anonymous**:**@ rather than anonymous@ to avoid having to press enter to give blank password _OR_ anonymous**:password**@ - if a password is required.
+*   When using/defining the cvsroot use anonymous**:**@ rather than anonymous@ to avoid having to press enter to give blank password *OR* anonymous**:password**@ - if a password is required.
 *   cvs and svn PKGBUILDs may not require a source or md5sum array but these fields **must** be included in the PKGBUILD if you wish to submit it to the AUR, otherwise the pkg will be rejected. They may be left blank though.
 
 ```
@@ -50,7 +50,7 @@ md5sums=()
   ../$_cvsmod/configure
 ```
 
-_萬一_ 這種方法失敗了，你可以嘗試：
+*萬一* 這種方法失敗了，你可以嘗試：
 
 ```
   cp -r src/$_cvsmod src/$_cvsmod-build
@@ -66,7 +66,7 @@ svn log $_svntrunk --limit 1 | grep -m 1 -o "r.*" | cut -d \| -f 1 | sed s@r@@g
 
 ```
 
-這條命令從 svn repo (譯注：就是 svn 的源)最近額記錄裏面取得修正號--修正號的前面帶有_r_字母。下面的來自於 fluxbox 的 svn 記錄，修正號就在左上角，r4084。
+這條命令從 svn repo (譯注：就是 svn 的源)最近額記錄裏面取得修正號--修正號的前面帶有*r*字母。下面的來自於 fluxbox 的 svn 記錄，修正號就在左上角，r4084。
 
 ```
 ------------------------------------------------------------------------

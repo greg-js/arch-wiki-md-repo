@@ -14,7 +14,7 @@
 
 **PKGBUILD** jest plikiem [Arch Linuksa](/index.php/Arch_Linux_(Polski) "Arch Linux (Polski)") opisującym proces budowania pakietu używany podczas [tworzenia pakietów](/index.php?title=Tworzenie_Pakiet%C3%B3w&action=edit&redlink=1 "Tworzenie Pakietów (page does not exist)").
 
-Pakiety w Arch Linuksie budowane są za pomocą narzędzia [makepkg](/index.php/Makepkg "Makepkg") i informacji zawartych w PKGBUILDach. Kiedy **makepkg** jest uruchamiany, szuka pliku `PKGBUILD` w aktualnym katalogu i postępuje zgodnie ze wskazówkami w nim zawartymi aby skompilować źródła lub w jakikolwiek inny sposób pobrać pliki potrzebne do zbudowania pliku pakietu (`_pkgname_.pkg.tar.xz`). Wynikowy pakiet zawiera pliki binarne i instrukcje instalacyjne, łatwo instalowane z [pacmanem](/index.php/Pacman "Pacman").
+Pakiety w Arch Linuksie budowane są za pomocą narzędzia [makepkg](/index.php/Makepkg "Makepkg") i informacji zawartych w PKGBUILDach. Kiedy **makepkg** jest uruchamiany, szuka pliku `PKGBUILD` w aktualnym katalogu i postępuje zgodnie ze wskazówkami w nim zawartymi aby skompilować źródła lub w jakikolwiek inny sposób pobrać pliki potrzebne do zbudowania pliku pakietu (`*pkgname*.pkg.tar.xz`). Wynikowy pakiet zawiera pliki binarne i instrukcje instalacyjne, łatwo instalowane z [pacmanem](/index.php/Pacman "Pacman").
 
 ## Contents
 
@@ -54,11 +54,11 @@ Powszechną praktyką jest zdefiniowanie zmiennych w PKGBUILD w tej samej kolejn
 
 ### pkgname
 
-Nazwa pakietu. Powina składać się z _alfanumerycznych i znaka myślnika ('-')_ i wszystkie litery muszą być _małe_. Dla zachowania spójności, `pkgname` powinien pasować do nazwy archiwum źródła które pakujesz. Na przykład, jeśli oprogramowanie jest w `foobar-2.5.tar.gz`, wartość `pkgname` powinna być `foobar`. Katalog roboczy pliku PKGBUILD powinien także pasować do `pkgname`.
+Nazwa pakietu. Powina składać się z *alfanumerycznych i znaka myślnika ('-')* i wszystkie litery muszą być *małe*. Dla zachowania spójności, `pkgname` powinien pasować do nazwy archiwum źródła które pakujesz. Na przykład, jeśli oprogramowanie jest w `foobar-2.5.tar.gz`, wartość `pkgname` powinna być `foobar`. Katalog roboczy pliku PKGBUILD powinien także pasować do `pkgname`.
 
 ### pkgver
 
-Wersja pakiet. Wartość powinna być taka sama jak wersja źródeł udostępnionych przez autora. Może zawierać litery, cyfry i kropki, ale nie może zawierać dwukropka. Jeśli autor pakietu używa tego łącznika w wersji systemu numeracji, zastąp go podkreśleniem. Na przykład, jeśli wersja jest _0.99-10_, powinna zostać zmieniona na _0.99_10_. Jeśli zmienna `pkgver` jest używana później w PKGBUILD wtedy podkreślenie można łatwo zastąpić kreską, na przykład:
+Wersja pakiet. Wartość powinna być taka sama jak wersja źródeł udostępnionych przez autora. Może zawierać litery, cyfry i kropki, ale nie może zawierać dwukropka. Jeśli autor pakietu używa tego łącznika w wersji systemu numeracji, zastąp go podkreśleniem. Na przykład, jeśli wersja jest *0.99-10*, powinna zostać zmieniona na *0.99_10*. Jeśli zmienna `pkgver` jest używana później w PKGBUILD wtedy podkreślenie można łatwo zastąpić kreską, na przykład:
 
 ```
 source=($pkgname-${pkgver//_/-}.tar.gz)
@@ -71,7 +71,7 @@ Ostateczna wersja pakietu specyficzna dla Arch Linuksa. Ta wartość umożliwia 
 
 ### epoch
 
-An integer value, specific to Arch Linux, representing what 'lifetime' to compare version numbers against. This value allows overrides of the normal version comparison rules for packages that have inconsistent version numbering, require a downgrade, change numbering schemes, etc. By default, packages are assumed to have an epoch value of _0_. Do not use this unless you know what you are doing.
+An integer value, specific to Arch Linux, representing what 'lifetime' to compare version numbers against. This value allows overrides of the normal version comparison rules for packages that have inconsistent version numbering, require a downgrade, change numbering schemes, etc. By default, packages are assumed to have an epoch value of *0*. Do not use this unless you know what you are doing.
 
 ### pkgdesc
 
@@ -101,11 +101,11 @@ The URL of the official site of the software being packaged.
 
 The license under which the software is distributed. A [licenses](https://www.archlinux.org/packages/?name=licenses) package has been created in `[core]` that stores common licenses in `/usr/share/licenses/common`, e.g. `/usr/share/licenses/common/GPL`. If a package is licensed under one of these licenses, the value should be set to the directory name, e.g. `license=('GPL')`. If the appropriate license is not included in the official [licenses](https://www.archlinux.org/packages/?name=licenses) package, several things must be done:
 
-1.  The license file(s) should be included in: `/usr/share/licenses/_pkgname_/`, e.g. `/usr/share/licenses/foobar/LICENSE`.
+1.  The license file(s) should be included in: `/usr/share/licenses/*pkgname*/`, e.g. `/usr/share/licenses/foobar/LICENSE`.
 2.  If the source tarball does NOT contain the license details and the license is only displayed elsewhere, e.g. a website, then you need to copy the license to a file and include it.
 3.  Add `custom` to the `license` array. Optionally, you can replace `custom` with `custom:name of license`. Once a license is used in two or more packages in an official repository (including `[community]`), it becomes a part of the [licenses](https://www.archlinux.org/packages/?name=licenses) package.
 
-*   The [BSD](https://en.wikipedia.org/wiki/BSD_License "wikipedia:BSD License"), [MIT](https://en.wikipedia.org/wiki/MIT_License "wikipedia:MIT License"), [zlib/png](https://en.wikipedia.org/wiki/ZLIB_license "wikipedia:ZLIB license") and [Python](https://en.wikipedia.org/wiki/Python_License "wikipedia:Python License") licenses are special cases and could not be included in the [licenses](https://www.archlinux.org/packages/?name=licenses) package. For the sake of the `license` array, it is treated as a common license (`license=('BSD')`, `license=('MIT')`, `license=('ZLIB')` and `license=('Python')`) but technically each one is a custom license because each one has its own copyright line. Any packages licensed under these four should have its own unique license stored in `/usr/share/licenses/_pkgname_`. Some packages may not be covered by a single license. In these cases, multiple entries may be made in the license array, e.g. `license=('GPL' 'custom:name of license')`.
+*   The [BSD](https://en.wikipedia.org/wiki/BSD_License "wikipedia:BSD License"), [MIT](https://en.wikipedia.org/wiki/MIT_License "wikipedia:MIT License"), [zlib/png](https://en.wikipedia.org/wiki/ZLIB_license "wikipedia:ZLIB license") and [Python](https://en.wikipedia.org/wiki/Python_License "wikipedia:Python License") licenses are special cases and could not be included in the [licenses](https://www.archlinux.org/packages/?name=licenses) package. For the sake of the `license` array, it is treated as a common license (`license=('BSD')`, `license=('MIT')`, `license=('ZLIB')` and `license=('Python')`) but technically each one is a custom license because each one has its own copyright line. Any packages licensed under these four should have its own unique license stored in `/usr/share/licenses/*pkgname*`. Some packages may not be covered by a single license. In these cases, multiple entries may be made in the license array, e.g. `license=('GPL' 'custom:name of license')`.
 *   Additionally, the (L)GPL has many versions and permutations of those versions. For (L)GPL software, the convention is:
     *   (L)GPL - (L)GPLv2 or any later version
     *   (L)GPL2 - (L)GPL2 only
@@ -151,7 +151,7 @@ optdepends=('cups: printing support'
 
 ### provides
 
-An array of package names that this package provides the features of (or a virtual package such as `cron` or `sh`). Packages that provide the same things can be installed at the same time unless conflict with each other (see below). If you use this variable, you should add the version (`pkgver` and perhaps the `pkgrel`) that this package will provide if dependencies may be affected by it. For instance, if you are providing a modified _qt_ package named _qt-foobar_ version 3.3.8 which provides _qt_ then the `provides` array should look like `provides=('qt=3.3.8')`. Putting `provides=('qt')` will cause to fail those dependencies that require a specific version of _qt_. Do not add `pkgname` to your provides array, this is done automatically.
+An array of package names that this package provides the features of (or a virtual package such as `cron` or `sh`). Packages that provide the same things can be installed at the same time unless conflict with each other (see below). If you use this variable, you should add the version (`pkgver` and perhaps the `pkgrel`) that this package will provide if dependencies may be affected by it. For instance, if you are providing a modified *qt* package named *qt-foobar* version 3.3.8 which provides *qt* then the `provides` array should look like `provides=('qt=3.3.8')`. Putting `provides=('qt')` will cause to fail those dependencies that require a specific version of *qt*. Do not add `pkgname` to your provides array, this is done automatically.
 
 ### conflicts
 
@@ -169,26 +169,26 @@ An array of files to be backed up as `file.pacsave` when the package is removed.
 
 This array allows you to override some of the default behavior of `makepkg`, defined in `/etc/makepkg.conf`. To set an option, include the option name in the array. To reverse the default behavior, place an **`!`** at the front of the option. The following options may be placed in the array:
 
-*   _**strip**_ - Strips symbols from binaries and libraries. If you frequently use a debugger on programs or libraries, it may be helpful to disable this option.
-*   _**docs**_ - Save `/doc` directories.
-*   _**libtool**_ - Leave _libtool_ (`.la`) files in packages.
-*   _**emptydirs**_ - Leave empty directories in packages.
-*   _**zipman**_ - Compress _man_ and _info_ pages with _gzip_.
-*   _**ccache**_ - Allow the use of `ccache` during build. More useful in its negative form `!ccache` with select packages that have problems building with `ccache`.
-*   _**distcc**_ - Allow the use of `distcc` during build. More useful in its negative form `!distcc` with select packages that have problems building with `distcc`.
-*   _**buildflags**_ - Allow the use of user-specific `buildflags` (CFLAGS, CXXFLAGS, LDFLAGS) during build. More useful in its negative form `!buildflags` with select packages that have problems building with custom `buildflags`.
-*   _**makeflags**_ - Allow the use of user-specific `makeflags` during build. More useful in its negative form `!makeflags` with select packages that have problems building with custom `makeflags`.
+*   ***strip*** - Strips symbols from binaries and libraries. If you frequently use a debugger on programs or libraries, it may be helpful to disable this option.
+*   ***docs*** - Save `/doc` directories.
+*   ***libtool*** - Leave *libtool* (`.la`) files in packages.
+*   ***emptydirs*** - Leave empty directories in packages.
+*   ***zipman*** - Compress *man* and *info* pages with *gzip*.
+*   ***ccache*** - Allow the use of `ccache` during build. More useful in its negative form `!ccache` with select packages that have problems building with `ccache`.
+*   ***distcc*** - Allow the use of `distcc` during build. More useful in its negative form `!distcc` with select packages that have problems building with `distcc`.
+*   ***buildflags*** - Allow the use of user-specific `buildflags` (CFLAGS, CXXFLAGS, LDFLAGS) during build. More useful in its negative form `!buildflags` with select packages that have problems building with custom `buildflags`.
+*   ***makeflags*** - Allow the use of user-specific `makeflags` during build. More useful in its negative form `!makeflags` with select packages that have problems building with custom `makeflags`.
 
 ### install
 
 The name of the `.install` script to be included in the package. pacman has the ability to store and execute a package-specific script when it installs, removes or upgrades a package. The script contains the following functions which run at different times:
 
-*   _**pre_install**_ - The script is run right before files are extracted. One argument is passed: new package version.
-*   _**post_install**_ - The script is run right after files are extracted. One argument is passed: new package version.
-*   _**pre_upgrade**_ - The script is run right before files are extracted. Two arguments are passed in the following order: new package version, old package version.
-*   _**post_upgrade**_ - The script is run after files are extracted. Two arguments are passed in the following order: new package version, old package version.
-*   _**pre_remove**_ - The script is run right before files are removed. One argument is passed: old package version.
-*   _**post_remove**_ - The script is run right after files are removed. One argument is passed: old package version.
+*   ***pre_install*** - The script is run right before files are extracted. One argument is passed: new package version.
+*   ***post_install*** - The script is run right after files are extracted. One argument is passed: new package version.
+*   ***pre_upgrade*** - The script is run right before files are extracted. Two arguments are passed in the following order: new package version, old package version.
+*   ***post_upgrade*** - The script is run after files are extracted. Two arguments are passed in the following order: new package version, old package version.
+*   ***pre_remove*** - The script is run right before files are removed. One argument is passed: old package version.
+*   ***post_remove*** - The script is run right after files are removed. One argument is passed: old package version.
 
 Each function is run chrooted inside the pacman install directory. See [this thread](https://bbs.archlinux.org/viewtopic.php?pid=913891).
 
@@ -199,7 +199,7 @@ Each function is run chrooted inside the pacman install directory. See [this thr
 The name of the package changelog. To view changelogs for installed packages (that have this file):
 
 ```
-pacman -Qc _pkgname_
+pacman -Qc *pkgname*
 
 ```
 
@@ -211,7 +211,7 @@ An array of files which are needed to build the package. It must contain the loc
 
 **Note:** If you need to supply files which are not downloadable on the fly, e.g. self-made patches, you simply put those into the same directory where your `PKGBUILD` file is in and add the filename to this array. Any paths you add here are resolved relative to the directory where the `PKGBUILD` lies. Before the actual build process is started, all of the files referenced in this array will be downloaded or checked for existence, and `makepkg` will not proceed if any are missing.
 
-**Tip:** You can specify a different name for the downloaded file - if the downloaded file has a different name for some reason like the URL had a GET parameter - using the following syntax: `_filename_::_fileuri_`, for example `$pkgname-$pkgver.zip::http://199.91.152.193/7pd0l2tpkidg/jg2e1cynwii/Warez_collection_16.4.exe`
+**Tip:** You can specify a different name for the downloaded file - if the downloaded file has a different name for some reason like the URL had a GET parameter - using the following syntax: `*filename*::*fileuri*`, for example `$pkgname-$pkgver.zip::http://199.91.152.193/7pd0l2tpkidg/jg2e1cynwii/Warez_collection_16.4.exe`
 
 ### noextract
 
@@ -231,7 +231,7 @@ noextract=("grub2_extras_lua_r20.tar.xz")
 
 ```
 
-To extract _nothing_, you can do something fancy like this (taken from [firefox-i18n](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/firefox-i18n&id=cb10a40aeda9b444285d1ae6959c344110b4c936)):
+To extract *nothing*, you can do something fancy like this (taken from [firefox-i18n](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/firefox-i18n&id=cb10a40aeda9b444285d1ae6959c344110b4c936)):
 
 ```
 noextract=(${source[@]##*/})

@@ -114,7 +114,6 @@ LVDS connected 1400x1050+0+0 (normal left inverted right x axis y axis) 286mm x 
 示例：
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "Monitor"
     Identifier      "External DVI"
@@ -186,7 +185,6 @@ ARandR为xrandr提供了一个简单易用的前端。
 修改xorg.conf
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "Screen"
         ...
@@ -210,7 +208,6 @@ EndSection
 控制第二显示器的开关状态，默认显示器保持开启：
 
  `~/bin/xdisplay` 
-
 ```
 #!/bin/bash
 #
@@ -250,7 +247,6 @@ xrandr --output $DEFAULT_OUTPUT --auto $EXECUTE
 在显示器之间切换，且只开启其中一个。
 
  `/usr/local/bin/toggle-display` 
-
 ```
 #!/bin/bash
 #
@@ -312,7 +308,8 @@ else
 	echo "Command: $execute"
 	`$execute`
 fi
-echo -e "\n$(xrandr)"
+echo -e "
+$(xrandr)"
 
 ```
 

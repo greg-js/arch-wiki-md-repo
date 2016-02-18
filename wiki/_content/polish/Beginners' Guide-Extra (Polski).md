@@ -59,7 +59,7 @@ Zainstaluj pakiety bazowe:
 
  `# pacman -S xorg-server xorg-xinit xorg-server-utils` 
 
-Zainstaluj [mesa](https://en.wikipedia.org/wiki/Mesa_3D_(OpenGL) "wikipedia:Mesa 3D (OpenGL)") dla wsparcia 3D:
+Zainstaluj [mesa](https://en.wikipedia.org/wiki/Mesa_3D_(OpenGL) dla wsparcia 3D:
 
  `# pacman -S mesa` 
 
@@ -74,7 +74,7 @@ Następnie, powinieneś(aś) zainstalować sterownik do twojej karty graficznej.
 Musisz wiedzieć, jaki układ graficzny posiadasz w komputerze. Jeśli nie wiesz, użyj programu `/usr/sbin/lspci`:
 
  `$ lspci | grep VGA` 
-**Note:** Sterownik **vesa** jest najbardziej podstawowy i powinien działać z prawie każdym układem graficznym. Jeśli posiadasz rzadko spotykaną kartę i nie możesz znaleźć do niej sterownika, vesa _powinna_ zadziałać, oferuje jednak wyłącznie nieakcelerowaną grafikę 2D.
+**Note:** Sterownik **vesa** jest najbardziej podstawowy i powinien działać z prawie każdym układem graficznym. Jeśli posiadasz rzadko spotykaną kartę i nie możesz znaleźć do niej sterownika, vesa *powinna* zadziałać, oferuje jednak wyłącznie nieakcelerowaną grafikę 2D.
 
 Aby znaleźć kompletną listę **otwartoźródłowych** sterowników wideo, przeszukaj bazę pakietów:
 
@@ -199,7 +199,7 @@ Jeśli Xorg został zainstalowany przed stworzeniem konta użytkownika, pozostan
 
 ##### Szyna wiadomości
 
-**Note:** _Możesz_ pominąć tę sekcję, dopóki nie zainstalujesz pakietu, który zależy od [dbus](/index.php?title=Dbus_(Polski)&action=edit&redlink=1 "Dbus (Polski) (page does not exist)"), musisz jednak pamiętać o ustawieniu demona kiedy to zrobisz.
+**Note:** *Możesz* pominąć tę sekcję, dopóki nie zainstalujesz pakietu, który zależy od [dbus](/index.php?title=Dbus_(Polski)&action=edit&redlink=1 "Dbus (Polski) (page does not exist)"), musisz jednak pamiętać o ustawieniu demona kiedy to zrobisz.
 
 Zainstaluj [dbus](/index.php?title=Dbus_(Polski)&action=edit&redlink=1 "Dbus (Polski) (page does not exist)"):
 
@@ -208,7 +208,7 @@ Zainstaluj [dbus](/index.php?title=Dbus_(Polski)&action=edit&redlink=1 "Dbus (Po
 Uruchom demon dbus:
 
  `# rc.d start dbus` 
-**Note:** `/usr/sbin/rc.d` to polecenie specyficzne dla Archa, które działa jako skrót do uruchamiania [demon](/index.php/Daemon_(Polski) "Daemon (Polski)")ów zamiast korzystania z pełnej ścieżki `/etc/rc.d/_demon_`.
+**Note:** `/usr/sbin/rc.d` to polecenie specyficzne dla Archa, które działa jako skrót do uruchamiania [demon](/index.php/Daemon_(Polski) "Daemon (Polski)")ów zamiast korzystania z pełnej ścieżki `/etc/rc.d/*demon*`.
 
 Dodaj dbus do linii `DAEMONS` w `/etc/rc.conf`, aby był uruchamiany razem z systemem:
 
@@ -281,13 +281,13 @@ W tym momencie, powinieneś(aś) zainstalować zbiór fontów TrueType fonts, po
 
 System X Window dostarcza podstawowego frameworku do tworzenia graficznego interfejsu użytkownika (GUI).
 
-**Note:** Wybór środowiska graficznego lub menedżera okien to bardzo subiektywna decyzja. Wybierz środowisko najlepsze dla _twoich_ potrzeb.
+**Note:** Wybór środowiska graficznego lub menedżera okien to bardzo subiektywna decyzja. Wybierz środowisko najlepsze dla *twoich* potrzeb.
 
-	Menedżer okien (_Window Manager_, WM) 
+	Menedżer okien (*Window Manager*, WM) 
 
 	Kontroluje położenie i wygląd okien aplikacji łącznie z X Window System. **Zobacz [Menedżery okien](/index.php?title=Window_Manager_(Polski)&action=edit&redlink=1 "Window Manager (Polski) (page does not exist)") po więcej informacji.**
 
-	Środowisko graficzne (_Desktop Environment_, DE)
+	Środowisko graficzne (*Desktop Environment*, DE)
 
 	Wykorzystuje serwer X, aby dostarczyć funkcjonalny i dynamiczny interfejs użytkownika. Zwykle zawiera menedżer okien, ikony, aplety, panele, tapety, zbiór towarzyszacych aplikacji i różne ułatwienia. **Zobacz [Środowiska graficzne](/index.php?title=Desktop_Environment_(Polski)&action=edit&redlink=1 "Desktop Environment (Polski) (page does not exist)") po więcej informacji.**
 

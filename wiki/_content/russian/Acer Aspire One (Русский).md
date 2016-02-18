@@ -504,8 +504,8 @@ TmpDirectory     = /home/cache/yaourt
 
 `**passwd masha**`
 
-Введите новый пароль UNIX: _mAsha_
-Повторите ввод нового пароля UNIX: _mAsha_
+Введите новый пароль UNIX: *mAsha*
+Повторите ввод нового пароля UNIX: *mAsha*
 passwd: пароль успешно обновлён
 
 ```
@@ -516,7 +516,7 @@ passwd: пароль успешно обновлён
 
 [Настройка беспроводного соединения в Archlinux](/index.php/Wireless_Setup_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wireless Setup (Русский)")
 
-_Примечание:_ для Atheros AR2425, возможно, вместо ath5k лучше использовать madwifi с новым HAL:
+*Примечание:* для Atheros AR2425, возможно, вместо ath5k лучше использовать madwifi с новым HAL:
 
 ```
 yaourt -S madwifi-newhal-svn

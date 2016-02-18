@@ -67,15 +67,15 @@ A [MySQL](/index.php/MySQL "MySQL") server needs to be installed and running. Cr
 Edit /opt/rt4/etc/RT_SiteConfig.pm (**not** RT_Config.pm) to make system-level changes to RT. RT_Config.pm is the "default" config file that can be used as a reference for what variables are legal in RT_SiteConfig.pm. It follows a perl syntax like so:
 
 ```
-Set($_variable_, '_**setting'**_);
+Set($*variable*, '***setting'***);
 
 ```
 
-**At the very least, make two important changes.** _WebPath_ depicts where on the DocumentRoot RT is served (in our case, http://_ip_address_/rt) and is necessary for the CSS and images to load properly. _DatabasePassword_ is the [MySQL](/index.php/MySQL "MySQL") database password RT will use when connecting with the internal user (defaults to _rt_user_). Append this to RT_SiteConfig.pm:
+**At the very least, make two important changes.** *WebPath* depicts where on the DocumentRoot RT is served (in our case, http://*ip_address*/rt) and is necessary for the CSS and images to load properly. *DatabasePassword* is the [MySQL](/index.php/MySQL "MySQL") database password RT will use when connecting with the internal user (defaults to *rt_user*). Append this to RT_SiteConfig.pm:
 
 ```
 Set($WebPath, '/rt');
-Set($DatabasePassword, '_**your_password'**_);
+Set($DatabasePassword, '***your_password'***);
 
 ```
 
@@ -83,12 +83,12 @@ After setting a database password, connect to the database ([like so](http://dev
 
 ```
 USE mysql;
-UPDATE user SET password=PASSWORD('_**your_password'**_) WHERE user='rt_user';
+UPDATE user SET password=PASSWORD('***your_password'***) WHERE user='rt_user';
 FLUSH PRIVILEGES;
 
 ```
 
-**Tip:** Since the internal user will barely, if ever, be used to manually log in to your [MySQL](/index.php/MySQL "MySQL") server, make the password nice and strong. There is a program in the mirrors called _pwgen_ for this. A good, random, 50-character password should work just fine for keeping the crackers out ;)
+**Tip:** Since the internal user will barely, if ever, be used to manually log in to your [MySQL](/index.php/MySQL "MySQL") server, make the password nice and strong. There is a program in the mirrors called *pwgen* for this. A good, random, 50-character password should work just fine for keeping the crackers out ;)
 
 ## Using RT
 

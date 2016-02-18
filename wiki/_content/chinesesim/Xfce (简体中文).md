@@ -64,7 +64,7 @@
 
 ## 启动Xfce
 
-从显示管理器（[display manager](/index.php/Display_manager "Display manager")）选择_Xfce Session_，或者添加 `exec startxfce4` 到 [Xinitrc](/index.php/Xinitrc "Xinitrc")中。
+从显示管理器（[display manager](/index.php/Display_manager "Display manager")）选择*Xfce Session*，或者添加 `exec startxfce4` 到 [Xinitrc](/index.php/Xinitrc "Xinitrc")中。
 
 **注意:** 不要直接启动 `xfce4-session`，因为它已经被 `startxfce4` 运行了。
 
@@ -226,7 +226,7 @@ sh -c "sleep 3 && command"
 
 **Tip:** The [light-locker](https://www.archlinux.org/packages/?name=light-locker) 对话锁定集成在 [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager) 包中。 如果安装了亮度控制, '安全’标签页会加入到电源管理设定中。已经有的'到系统休眠时锁定屏幕'的选项会集成到'安全'标签页中。
 
-锁定Xfce4对话（通过`xflock4`），如下包中至少需要安装一个：[xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver), [slock](https://www.archlinux.org/packages/?name=slock) 和 [xlockmore](https://www.archlinux.org/packages/?name=xlockmore)。You may also make a local copy of _xflock4_, for example `/usr/local/bin/xflock4`, which specifies another screen locker of choice.
+锁定Xfce4对话（通过`xflock4`），如下包中至少需要安装一个：[xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver), [slock](https://www.archlinux.org/packages/?name=slock) 和 [xlockmore](https://www.archlinux.org/packages/?name=xlockmore)。You may also make a local copy of *xflock4*, for example `/usr/local/bin/xflock4`, which specifies another screen locker of choice.
 
 为了改变屏保，或通过 Whisker Menu (**Properties > Behavior > Lock Screen**)这样的程序改变。可以在[List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") 看到其他的选项。
 
@@ -268,7 +268,6 @@ $ rm ~/.cache/sessions/* && chmod 500 ~/.cache/sessions
 $ cp /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
 
 ```
-
 这些文件中，窗口管理器的配置只有在 **Client0_Command**下面的才会起作用。此行必须把 `<value type="string" value="xfwm4"/>` 改为 `<value type="string" value="window_manager_executable"/>` 
 
 也可以运行命令 `window_manager --replace`， 用你的窗口管理器的名字来替代其中的 **window_manger**，比如 `metacity`。
@@ -277,11 +276,11 @@ $ cp /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml ~/.config/xfce4
 
 **注意:** 如果你使用了自启动列表来启动你的窗口管理器，那么建议你禁用保存会话。如果保存会话没有使能，窗口管理器可以会在登入时启动两次。
 
-如果你不想用保存会话，你也可以添加把需要的窗口管理器启动添加到Xfce的自启动列表。可以在主菜单中 _Settings Manager > Session and Startup > Application Autostart_然后点击 _Add_。在 _Command_ 输入正确的命令启动需要的窗口管理器，然后可以起添加名字和描述。点击 _Ok_ ，然后登出再登入，就能生效。（原谅这个翻译，我并不使用中文的Xfce界面，所以并不知道这些设置对应的翻译是怎么样的，请求别人翻译）
+如果你不想用保存会话，你也可以添加把需要的窗口管理器启动添加到Xfce的自启动列表。可以在主菜单中 *Settings Manager > Session and Startup > Application Autostart*然后点击 *Add*。在 *Command* 输入正确的命令启动需要的窗口管理器，然后可以起添加名字和描述。点击 *Ok* ，然后登出再登入，就能生效。（原谅这个翻译，我并不使用中文的Xfce界面，所以并不知道这些设置对应的翻译是怎么样的，请求别人翻译）
 
 ### 更换主题
 
-在 [xfce-look.org](http://www.xfce-look.org) 上有不少XFCE的主题。 _Xfwm_ 的主题保存在 `/usr/share/themes/xfce4`, 在 _Settings > Window Manager_中可以更改主题。 而[GTK+](/index.php/GTK%2B "GTK+") 主题在 _Settings > Appearance_。
+在 [xfce-look.org](http://www.xfce-look.org) 上有不少XFCE的主题。 *Xfwm* 的主题保存在 `/usr/share/themes/xfce4`, 在 *Settings > Window Manager*中可以更改主题。 而[GTK+](/index.php/GTK%2B "GTK+") 主题在 *Settings > Appearance*。
 
 如果想要使所有的应用能有一个统一的外观, 参见 [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications")获得更多的信息。
 
@@ -442,7 +441,7 @@ aplay /boot/startupsound.wav
 
 ### 键盘快捷键
 
-键盘快捷键在两个地方定义： _Settings > Window Manager > Keyboard_ 和 _Settings > Keyboard > Shortcuts_。
+键盘快捷键在两个地方定义： *Settings > Window Manager > Keyboard* 和 *Settings > Keyboard > Shortcuts*。
 
 ### Polkit 身法认证代理
 
@@ -460,7 +459,7 @@ Xfce可用的第三方的 Polkit 身法认证代理，参见 [xfce-polkit-git](h
 
 Xfce 有自己的截图工具, [xfce4-screenshooter](https://www.archlinux.org/packages/?name=xfce4-screenshooter).它是 [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/) 包组的一部分.
 
-到 _应用程序 > 设置 > 键盘_, _应用程序快捷方式_. 添加 `xfce4-screenshooter -f` (或 `-w` 为活动窗口)命令用 `Print` 打印键截屏. 其他可选参数参见 screenshooter 的 man 手册
+到 *应用程序 > 设置 > 键盘*, *应用程序快捷方式*. 添加 `xfce4-screenshooter -f` (或 `-w` 为活动窗口)命令用 `Print` 打印键截屏. 其他可选参数参见 screenshooter 的 man 手册
 
 此外，也可用其他独立的截图程式如 [scrot](/index.php/Taking_a_screenshot#scrot "Taking a screenshot")
 
@@ -469,7 +468,6 @@ Xfce 有自己的截图工具, [xfce4-screenshooter](https://www.archlinux.org/p
 The xfce terminal binds F1 and F11 to help and fullscreen, respectively, which can make using programs like htop difficult. To disable those shortcuts, create or edit its configuration file, then log out and log back in. F10 can disabled in the Preferences menu.
 
  `~/.config/xfce4/terminal/accels.scm` 
-
 ```
 (gtk_accel_path "<Actions>/terminal-window/fullscreen" "")
 (gtk_accel_path "<Actions>/terminal-window/contents" "")
@@ -550,7 +548,7 @@ Xfce has no native support for colour management. [[2]](https://bugzilla.xfce.or
 
 ### 多显示器
 
-As of [xfce4-settings](https://www.archlinux.org/packages/?name=xfce4-settings) version 4.11.4, Xfce has support for multiple monitors. Settings can be configured in the _Applications_ -> _Settings_ -> _Display_ dialog. For more information, see the [display](http://docs.xfce.org/xfce/xfce4-settings/display) article from the Xfce documentation.
+As of [xfce4-settings](https://www.archlinux.org/packages/?name=xfce4-settings) version 4.11.4, Xfce has support for multiple monitors. Settings can be configured in the *Applications* -> *Settings* -> *Display* dialog. For more information, see the [display](http://docs.xfce.org/xfce/xfce4-settings/display) article from the Xfce documentation.
 
 ### SSH 代理
 
@@ -568,17 +566,17 @@ xfconf-query -c xfce4-session -p /startup/ssh-agent/type -n -t string -s ssh-age
 
 ```
 
-To use [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), simply tick the checkbox _Launch GNOME services on startup_ in the _Advanced_ tab of _Session Manager_ in Xfce's settings. This will also disable gpg-agent and ssh-agent.
+To use [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), simply tick the checkbox *Launch GNOME services on startup* in the *Advanced* tab of *Session Manager* in Xfce's settings. This will also disable gpg-agent and ssh-agent.
 
 Source: [http://docs.xfce.org/xfce/xfce4-session/advanced](http://docs.xfce.org/xfce/xfce4-session/advanced)
 
 ### Scroll a background window without shifting focus on it
 
-Go to _Main Menu > Settings > Window Manager Tweaks > Accessibility_ tab. Uncheck _Raise windows when any mouse button is pressed_.
+Go to *Main Menu > Settings > Window Manager Tweaks > Accessibility* tab. Uncheck *Raise windows when any mouse button is pressed*.
 
 ### 修改鼠标按键
 
-By default, the mouse button modifier in Xfce is set to `Alt`. This can be changed with _xfconf-query_. For instance, the following command will set the `Super` key as the mouse button modifier:
+By default, the mouse button modifier in Xfce is set to `Alt`. This can be changed with *xfconf-query*. For instance, the following command will set the `Super` key as the mouse button modifier:
 
 ```
 $ xfconf-query -c xfwm4 -p /general/easy_click -n -t string -s "Super"
@@ -596,14 +594,14 @@ $ xfconf-query -c xfwm4 -p /general/easy_click -n -t string -s "Ctrl><Alt"
 
 ### Xfce4-xkb-plugin settings issue
 
-There is a bug in version _0.5.4.1-1_ which causes xkb-plugin to _lose keyboard, layout switching and compose key_ settings. As a workaround you may enable _Use system defaults_ option in keyboard settings. To do so run
+There is a bug in version *0.5.4.1-1* which causes xkb-plugin to *lose keyboard, layout switching and compose key* settings. As a workaround you may enable *Use system defaults* option in keyboard settings. To do so run
 
 ```
 xfce4-keyboard-settings
 
 ```
 
-Go to _Layout_ tab and set the _Use system defaults_ flag, then reconfigure xkb-plugin.
+Go to *Layout* tab and set the *Use system defaults* flag, then reconfigure xkb-plugin.
 
 ### Thunar 不显示缩略图
 
@@ -674,11 +672,11 @@ $ mv ~/.config/xfce4/ ~/.config/xfce4-bak
 
 这种情况导致类似windows布局的panel始终和通知区域来回移动，不能定位在右下方。 原因是新版的Window Buttons panel plugin不能自动适应面板长度。
 
-为了回到之前的效果，可以在Window Buttons之后添加一个分隔符，属性选中"_扩展_"。
+为了回到之前的效果，可以在Window Buttons之后添加一个分隔符，属性选中"*扩展*"。
 
 ### Preferred Applications preferences have no effect
 
-If you have set your preferred applications with _exo-preferred-applications_, but they do not seem to be taken into consideration, see [Xfce#xdg-open_integration_.28Preferred_Applications.29](/index.php/Xfce#xdg-open_integration_.28Preferred_Applications.29 "Xfce")
+If you have set your preferred applications with *exo-preferred-applications*, but they do not seem to be taken into consideration, see [Xfce#xdg-open_integration_.28Preferred_Applications.29](/index.php/Xfce#xdg-open_integration_.28Preferred_Applications.29 "Xfce")
 
 ### Action Buttons in the panel are missing icons
 
@@ -722,7 +720,7 @@ flush=true
 
 当你使用utf-8时，文件系统小心的探测文件中的内容。
 
-还有一个比较推荐添加的 **flush**参数 ，以免数据频繁更新导致拖慢thunar的复制进程。Adding _async_ instead will speed up write ops, but make sure to use _Eject_ option in Thunar to unmount the stick. Globally, mount options for storage devices present at boot can be set in [fstab](/index.php/Fstab "Fstab"), and for other devices in [udev](/index.php/Udev "Udev") rules.
+还有一个比较推荐添加的 **flush**参数 ，以免数据频繁更新导致拖慢thunar的复制进程。Adding *async* instead will speed up write ops, but make sure to use *Eject* option in Thunar to unmount the stick. Globally, mount options for storage devices present at boot can be set in [fstab](/index.php/Fstab "Fstab"), and for other devices in [udev](/index.php/Udev "Udev") rules.
 
 ## 相关文章
 

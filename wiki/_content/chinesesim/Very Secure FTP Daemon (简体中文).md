@@ -171,7 +171,7 @@ pam_service_name=ftp
 
 ```
 
-你需要在`/etc/rc.conf`的 MODULES= 一行添加_capability_
+你需要在`/etc/rc.conf`的 MODULES= 一行添加*capability*
 
 升级到2.1.0版本后, 连接服务器时可能会出现如下错误:
 

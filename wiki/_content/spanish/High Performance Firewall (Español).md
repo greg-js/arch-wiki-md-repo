@@ -37,7 +37,7 @@ iptables -t nat -A POSTROUTING -s 192.168.15.0/21  -j SNAT --to $Gr1 #ACCESS VLA
 
 ```
 
-Podemos repetir los grupos de acceso, subdividir las redes, etc. Iptables hace de forma automática _round robin_ sobre Gr1, Gr2 y Gr3 por defecto, sin que sea necesaria modificación ulterior.
+Podemos repetir los grupos de acceso, subdividir las redes, etc. Iptables hace de forma automática *round robin* sobre Gr1, Gr2 y Gr3 por defecto, sin que sea necesaria modificación ulterior.
 
 No es necesario crear tarjetas virtuales (alias) para cada IP en cada grupo.
 

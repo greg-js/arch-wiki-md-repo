@@ -55,7 +55,7 @@ This has been especially structured to group the relevant items.
 
 ## How the items work
 
-Each item is structured main_object.sub_object.item: value e.g. toolbar.clock.pixmap: value
+Each item is structured main*object.sub*object.item: value e.g. toolbar.clock.pixmap: value
 
 The values that are available only depend on the item part e.g. .pixmap: {filename}
 

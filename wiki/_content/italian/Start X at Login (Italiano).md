@@ -1,4 +1,4 @@
-Questo articolo spiega come avviare automaticamente il [Server X](/index.php/Xorg_(Italiano) "Xorg (Italiano)") dopo il login in un terminale virtuale attraverso l'utilizzo del comando _startx_, il cui comportamento può essere modificato come riportato nella pagina relativa a [xinitrc](/index.php/Xinitrc_(Italiano) "Xinitrc (Italiano)"), ad esempio per scegliere quale [window manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") avviare.
+Questo articolo spiega come avviare automaticamente il [Server X](/index.php/Xorg_(Italiano) "Xorg (Italiano)") dopo il login in un terminale virtuale attraverso l'utilizzo del comando *startx*, il cui comportamento può essere modificato come riportato nella pagina relativa a [xinitrc](/index.php/Xinitrc_(Italiano) "Xinitrc (Italiano)"), ad esempio per scegliere quale [window manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") avviare.
 
 In alternativa, è possibile utilizzare un [display manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)") per avviare automaticamente X e fornire un login grafico.
 
@@ -81,7 +81,7 @@ Si abiliti ed [attivi](/index.php/Systemd_(Italiano)#Usare_le_unit.C3.A0 "System
 
 	 `alias startx='startx & > ~/.xlog'` 
 
-**Nota:** la ridirezione dello _stderr_ (`startx &>`) crea problemi all'avvio di X da utente normale. Si veda a tal proposito [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg").
+**Nota:** la ridirezione dello *stderr* (`startx &>`) crea problemi all'avvio di X da utente normale. Si veda a tal proposito [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg").
 
 ## Riferimenti
 

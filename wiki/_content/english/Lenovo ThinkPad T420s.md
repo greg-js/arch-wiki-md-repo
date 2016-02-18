@@ -55,7 +55,6 @@ If Bumblebee is correctly configured, your NVIDIA-Card should wake-up when you s
 You can use your internal monitor (connected only to the intel card) and some external monitor (Connected to the NVIDIA card) together with Xinerama. The example configuration below shows how to use three screens with Xinerama, two external with the NVIDIA card and the internal with the intel card.
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "ServerLayout"
     Identifier     "X.org Configured"
@@ -166,7 +165,6 @@ Save this script to /etc/rc.d/dockscript or something and make it executable. Yo
 You can detect the correct dock_usb_id by using lsusb.
 
  `/etc/rc.d/dockscript` 
-
 ```
 #!/bin/bash
 dock_usb_id="17ef:100a Lenovo ThinkPad Mini Dock Plus Series 3"

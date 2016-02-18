@@ -30,11 +30,11 @@
 
 LIO target 包含在2.6.38及以后版本的内核中。但从3.1版才开始包含 iSCSI target fabric。
 
-关键的内核模块是 _target_core_mod_ 和 _iscsi_target_mod_，它们应该已内置并自动加载。
+关键的内核模块是 *target_core_mod* 和 *iscsi_target_mod*，它们应该已内置并自动加载。
 
-强烈建议使用 LIO 的免费分支版本：[targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/)，[python-rtslib-fb](https://aur.archlinux.org/packages/python-rtslib-fb/) 和 [python-configshell-fb](https://aur.archlinux.org/packages/python-configshell-fb/)。原生包 [targetcli](https://aur.archlinux.org/packages/targetcli/) 虽也有效，但其使用另外的方法保存配置，该方法使用不再推荐的 _lio-utils_ 及依赖 _epydoc_。
+强烈建议使用 LIO 的免费分支版本：[targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/)，[python-rtslib-fb](https://aur.archlinux.org/packages/python-rtslib-fb/) 和 [python-configshell-fb](https://aur.archlinux.org/packages/python-configshell-fb/)。原生包 [targetcli](https://aur.archlinux.org/packages/targetcli/) 虽也有效，但其使用另外的方法保存配置，该方法使用不再推荐的 *lio-utils* 及依赖 *epydoc*。
 
-如果使用免费分支版本，则 [python-rtslib-fb](https://aur.archlinux.org/packages/python-rtslib-fb/) 中包含一个 systemd `target.service` 文件。如果直接使用原生的 _targetcli_ 或 _lio-utils_，则在 [lio-utils](https://aur.archlinux.org/packages/lio-utils/) 中包含一个 `/etc/rc.d/target`文件。
+如果使用免费分支版本，则 [python-rtslib-fb](https://aur.archlinux.org/packages/python-rtslib-fb/) 中包含一个 systemd `target.service` 文件。如果直接使用原生的 *targetcli* 或 *lio-utils*，则在 [lio-utils](https://aur.archlinux.org/packages/lio-utils/) 中包含一个 `/etc/rc.d/target`文件。
 
 用下列命令启动 LIO target： `# systemctl start target` 
 
@@ -53,7 +53,6 @@ LIO target 包含在2.6.38及以后版本的内核中。但从3.1版才开始包
 **提示:** 配置工具命令行支持 TAB 键命令补全
 
 **提示:** 配置工具命令行支持 `cd` 命令查看和选择路径
-
 target 启动以后，用下列命令进入配置工具： `# targetcli` 
 
 在配置工具中，用下列命令启用一个块设备（此例为：`/dev/disk/by-id/md-name-nas:iscsi`）作为 target：
@@ -74,7 +73,7 @@ target 启动以后，用下列命令进入配置工具： `# targetcli`
 
 **注意:** With appending an iqn of your choice to create you can keep targetcli from automatically creating an iqn
 
-In order to tell LIO that your block device should get used as _backstore_ for the target you issue
+In order to tell LIO that your block device should get used as *backstore* for the target you issue
 
 **注意:** 别忘了可以用 `cd` 命令选择 <iqn>/tpg1 路径
 
@@ -83,7 +82,7 @@ In order to tell LIO that your block device should get used as _backstore_ for t
 .../tpg1/luns> create /backstores/block/md_block0
 ```
 
-接下来需要创建一个_入口(portal)_，以使守护进程监听传入连接：
+接下来需要创建一个*入口(portal)*，以使守护进程监听传入连接：
 
 ```
 .../luns/lun0> cd ../../portals
@@ -153,13 +152,13 @@ You have to install [lio-utils](https://aur.archlinux.org/packages/lio-utils/) f
 
 ### 提示与技巧
 
-*   使用 `targetcli sessions` 命令可以列出当前已打开的会话。这个命令包含在 [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/) 软件包中，但没有包含在 _lio-utils_ 或原生的 _targetcli_ 中。
+*   使用 `targetcli sessions` 命令可以列出当前已打开的会话。这个命令包含在 [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/) 软件包中，但没有包含在 *lio-utils* 或原生的 *targetcli* 中。
 
 ### 上游文档
 
 *   [targetcli](http://www.linux-iscsi.org/wiki/Targetcli)
 *   [LIO utils](http://www.linux-iscsi.org/wiki/Lio-utils_HOWTO)
-*   You can also use `man targetcli` when you installed the _free branch_ version [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/).
+*   You can also use `man targetcli` when you installed the *free branch* version [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/).
 
 ## 使用 SCSI Target Framework (STGT/TGT)
 

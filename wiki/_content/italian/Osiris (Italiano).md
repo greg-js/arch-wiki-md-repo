@@ -27,7 +27,7 @@ Per Lanciare il programma spostatevi nella cartella in cui l'avete estratto e la
 
 ### Installazione Tramite AUR
 
-Dal momento che il pachhetto risulta essere _orfano_ questo metodo non è consigliato, utilizzatelo solo se avete avuto dei problemi con l'istallazione tramite binari.
+Dal momento che il pachhetto risulta essere *orfano* questo metodo non è consigliato, utilizzatelo solo se avete avuto dei problemi con l'istallazione tramite binari.
 
 Scaricate il [PKGBUILD](https://aur.archlinux.org/packages.php?ID=25621) , compilatelo ed installatelo.
 

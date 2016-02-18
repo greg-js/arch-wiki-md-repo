@@ -41,19 +41,19 @@ Like other shells, fish lets you redirect input/output streams. This is useful w
 Any file descriptor can be directed to other files through a mechanism called redirection:
 
 ```
-_Redirecting standard input:_
+*Redirecting standard input:*
 $ command < source_file
 
-_Redirecting standard output:_
+*Redirecting standard output:*
 $ command > destination
 
-_Appending standard output to an existing file:_
+*Appending standard output to an existing file:*
 $ command >> destination
 
-_Redirecting standard error:_
+*Redirecting standard error:*
 $ command ^ destination
 
-_Appending standard error to an existing file:_
+*Appending standard error to an existing file:*
 $ command ^^ destination
 ```
 
@@ -66,13 +66,13 @@ You can use one of the following as `destination`:
 Examples:
 
 ```
-_Redirecting standard output to a file:_
+*Redirecting standard output to a file:*
 $ command > destination_file.txt
 
-_Redirecting both standard output and standard error to the same file:_
+*Redirecting both standard output and standard error to the same file:*
 $ command > destination_file.txt ^ &1
 
-_Silencing standard output:_
+*Silencing standard output:*
 $ command > &-
 ```
 
@@ -149,7 +149,7 @@ fish_update_completions
 
 You can also define your own completions in `~/.config/fish/completions/`. See `/usr/share/fish/completions/` for a few examples.
 
-Context-aware completions for Arch Linux-specific commands like _pacman_, _pacman-key_, _makepkg_, _cower_, _pbget_, _pacmatic_ are built into fish, since the policy of the fish development is to include all the existent completions in the upstream tarball. The memory management is clever enough to avoid any negative impact on resources.
+Context-aware completions for Arch Linux-specific commands like *pacman*, *pacman-key*, *makepkg*, *cower*, *pbget*, *pacmatic* are built into fish, since the policy of the fish development is to include all the existent completions in the upstream tarball. The memory management is clever enough to avoid any negative impact on resources.
 
 ### /etc/profile and ~/.profile compatibility
 
@@ -217,7 +217,7 @@ Note that you will need to manually add various other environment variables, suc
 
 ### su launching Bash
 
-If _su_ starts with Bash (because Bash is the default shell), define a function in fish:
+If *su* starts with Bash (because Bash is the default shell), define a function in fish:
 
 ```
 $ funced su

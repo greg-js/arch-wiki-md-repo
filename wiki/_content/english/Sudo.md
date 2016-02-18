@@ -51,7 +51,7 @@ See [man sudoers](http://www.sudo.ws/man/1.8.13/sudoers.man.html) for more infor
 
 ### View current settings
 
-Run `sudo -ll` to print out the current sudo configuration, or `sudo -lU _user_` for a specific user.
+Run `sudo -ll` to print out the current sudo configuration, or `sudo -lU *user*` for a specific user.
 
 ### Using visudo
 
@@ -60,7 +60,7 @@ The configuration file for sudo is `/etc/sudoers`. It should **always** be edite
 **Warning:**
 
 *   It is imperative that `sudoers` be free of syntax errors! Any error makes sudo unusable. **Always** edit it with `visudo` to prevent errors.
-*   From `man 8 visudo`: _Note that this can be a security hole since it allows the user to execute any program they wish simply by setting VISUAL or EDITOR._
+*   From `man 8 visudo`: *Note that this can be a security hole since it allows the user to execute any program they wish simply by setting VISUAL or EDITOR.*
 
 The default editor for visudo is `vi`. sudo from the core repository is compiled with `--with-env-editor` by default and honors the use of the `VISUAL` and `EDITOR` variables. `EDITOR` is not used when `VISUAL` is set.
 
@@ -164,7 +164,6 @@ $ sudo -E pacman -Syu
 The recommended way of preserving environment variables is to append them to `env_keep`:
 
  `/etc/sudoers` 
-
 ```
 Defaults env_keep += "ftp_proxy http_proxy https_proxy no_proxy"
 
@@ -202,7 +201,7 @@ Users may wish to disable the root login. Without root, attackers must first gue
 
 **Warning:**
 
-*   Be careful, you may lock yourself out by disabling root login. Sudo is not automatically installed and its default configuration allows neither passwordless root access nor root access with your own password. Ensure a user is properly configured as a sudoer _before_ disabling the root account!
+*   Be careful, you may lock yourself out by disabling root login. Sudo is not automatically installed and its default configuration allows neither passwordless root access nor root access with your own password. Ensure a user is properly configured as a sudoer *before* disabling the root account!
 *   If you have changed your sudoers -file to use rootpw as default, then do not disable root login with any of the following commands!
 *   If you are already locked out, see [Password recovery](/index.php/Password_recovery "Password recovery") for help.
 
@@ -236,7 +235,7 @@ $ sudo passwd root
 
 #### gksu
 
-To set _gksu_ to use sudo by default, run:
+To set *gksu* to use sudo by default, run:
 
 ```
 $ gconftool-2 --set --type boolean /apps/gksu/sudo-mode true
@@ -253,7 +252,7 @@ super-user-command=sudo
 
 ```
 
-or use the following command (use _kwriteconfig_ for the kde4 version of kdesu):
+or use the following command (use *kwriteconfig* for the kde4 version of kdesu):
 
 ```
 $ kwriteconfig5 --file kdesurc --group super-user-command --key super-user-command sudo
@@ -369,12 +368,12 @@ admin% screen
 
 ### Configure sudo using drop-in files in /etc/sudoers.d
 
-_sudo_ parses files contained in the directory `/etc/sudoers.d/`. This means that instead of editing `/etc/sudoers`, you can change settings in standalone files and drop them in that directory. This has two advantages:
+*sudo* parses files contained in the directory `/etc/sudoers.d/`. This means that instead of editing `/etc/sudoers`, you can change settings in standalone files and drop them in that directory. This has two advantages:
 
 *   There is no need to edit a `sudoers.pacnew` file;
 *   If there is a problem with a new entry, you can remove the offending file instead of editing `/etc/sudoers`.
 
-The format for entries in these drop-in files is the same as for `/etc/sudoers` itself. To edit them directly, use `visudo -f _/path/to/file_`. See the **Including other files from within sudoers** section from `man sudoers` for details.
+The format for entries in these drop-in files is the same as for `/etc/sudoers` itself. To edit them directly, use `visudo -f */path/to/file*`. See the **Including other files from within sudoers** section from `man sudoers` for details.
 
 ## Troubleshooting
 

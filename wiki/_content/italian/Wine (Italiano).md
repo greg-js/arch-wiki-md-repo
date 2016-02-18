@@ -114,7 +114,7 @@ Direct rendering is disabled, most likely your OpenGL drivers have not been inst
 
 ```
 
-For x86-64 systems, additional [multilib](/index.php/Multilib "Multilib") packages are required. Please install the one that is listed in the _Multilib Package_ column in the table in [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg").
+For x86-64 systems, additional [multilib](/index.php/Multilib "Multilib") packages are required. Please install the one that is listed in the *Multilib Package* column in the table in [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg").
 
 **Note:** You might need to restart X after having installed the correct library.
 
@@ -162,7 +162,7 @@ If the fonts look somehow smeared, import the following text file into the Wine 
 
 When installing Windows programs with Wine, should result in the appropriate menu/desktop icons being created. For example, if the installation program (e.g. `setup.exe`) would normally add an icon to your Desktop or "Start Menu" on Windows, then Wine should create corresponding freedesktop.org style `.desktop` files for launching your programs with Wine.
 
-**Tip:** If menu items were _not_ created while installing software or have been lost, [winemenubuilder](http://wiki.winehq.org/winemenubuilder) may be of some use.
+**Tip:** If menu items were *not* created while installing software or have been lost, [winemenubuilder](http://wiki.winehq.org/winemenubuilder) may be of some use.
 
 #### Creating menu entries for Wine utilities
 
@@ -171,7 +171,6 @@ By default, installation of Wine does not create desktop menus/icons for the sof
 First, install a Windows program using Wine to create the base menu. After the base menu is created, you can create the following files in `~/.local/share/applications/wine/`:
 
  `wine-browsedrive.desktop` 
-
 ```
 [Desktop Entry]
 Name=Browse C: Drive
@@ -182,9 +181,7 @@ Type=Application
 Icon=folder-wine
 Categories=Wine;
 ```
-
  `wine-uninstaller.desktop` 
-
 ```
 [Desktop Entry]
 Name=Uninstall Wine Software
@@ -195,9 +192,7 @@ Type=Application
 Icon=wine-uninstaller
 Categories=Wine;
 ```
-
  `wine-winecfg.desktop` 
-
 ```
 [Desktop Entry]
 Name=Configure Wine
@@ -212,7 +207,6 @@ Categories=Wine;
 And create the following file in `~/.config/menus/applications-merged/`:
 
  `wine.menu` 
-
 ```
 <!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
 "[http://www.freedesktop.org/standards/menu-spec/menu-1.0.dtd](http://www.freedesktop.org/standards/menu-spec/menu-1.0.dtd)">
@@ -289,7 +283,7 @@ $ msiexec installername.msi
 **Tip:** In addition to the links provided in the beginning of the article the following may be of interest:
 
 *   [The Wine Application Database (AppDB)](http://appdb.winehq.org/) - Information about running specific Windows applications (Known issues, ratings, guides, etc tailored to specific applications)
-*   [The WineHQ Forums](http://forum.winehq.org/) - A great place to ask questions _after_ you have looked through the FAQ and AppDB
+*   [The WineHQ Forums](http://forum.winehq.org/) - A great place to ask questions *after* you have looked through the FAQ and AppDB
 
 ### Changing the language
 
@@ -330,7 +324,7 @@ Once installation completes, open Word or Excel to activate over the Internet. O
 
 For additional info, see the [WineHQ](http://appdb.winehq.org/appview.php?iVersionId=4992) article.
 
-**Note:** If the activation over internet doesn't work and you want to activate by phone, be sure **riched20** is set to _(native,builtin)_ in order to see the drop-down list of countries.
+**Note:** If the activation over internet doesn't work and you want to activate by phone, be sure **riched20** is set to *(native,builtin)* in order to see the drop-down list of countries.
 
 **Note:** [playonlinux](https://www.archlinux.org/packages/?name=playonlinux) provides custom installer scripts that make the installation of Office 2003, 2007 and 2010 an ease. You just have to provide the setup.exe or ISO and the installer will guide you seamlessly through the installation procedure. You do not have to deal with the underlying Wine at all.
 
@@ -346,7 +340,7 @@ To burn CDs or DVDs, you will need to load the `sg` [kernel module](/index.php/K
 
 ### OpenGL modes
 
-Many games have an OpenGL mode which _may_ perform better than their default DirectX mode. While the steps to enable OpenGL rendering is _application specific_, many games accept the `-opengl` parameter.
+Many games have an OpenGL mode which *may* perform better than their default DirectX mode. While the steps to enable OpenGL rendering is *application specific*, many games accept the `-opengl` parameter.
 
 ```
 $ wine /path/to/3d_game.exe -opengl

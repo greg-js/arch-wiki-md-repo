@@ -94,7 +94,6 @@ $ stpm-keygen -o ~/.simple-tpm-pk11/my.key
 Point the config to the key:
 
  `~/.simple-tpm-pk11/config` 
-
 ```
 key my.key
 
@@ -103,7 +102,6 @@ key my.key
 Now configure SSH to use the right PKCS11 provider:
 
  `~/.ssh/config` 
-
 ```
 Host *
     PKCS11Provider /usr/lib/libsimple-tpm-pk11.so

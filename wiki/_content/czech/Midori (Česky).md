@@ -49,7 +49,7 @@ Samozřejmostí je možnost přidat zkratky pro různé webové stránky. Např�
 
 ### Uživatelské skripty
 
-Pro povolení uživatelských skriptů jděte do _Menu > Nastavení > Rozšíření_ a zaškrtněte volbu _User addons_. Uživatelské skripty prohlížeče Midori jsou kompatibilní se skripty v rozšíření [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) pro Mozillu Firefox. Obsáhlý přehled skriptů lze nalézt na stránce [userscripts.org](http://userscripts.org/).
+Pro povolení uživatelských skriptů jděte do *Menu > Nastavení > Rozšíření* a zaškrtněte volbu *User addons*. Uživatelské skripty prohlížeče Midori jsou kompatibilní se skripty v rozšíření [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) pro Mozillu Firefox. Obsáhlý přehled skriptů lze nalézt na stránce [userscripts.org](http://userscripts.org/).
 
 Pro ruční instalaci je zapotřebí vytvořit adresář `~/.local/share/midori/scripts` a zkopírivat do něj Vaše skripty. Midori při svém spuštění kontroluje obsah tohoto adresáře a načte dostupné skripty.
 
@@ -73,7 +73,6 @@ Postup:
 *   v tomto adresáři vytvořte nový soubor s obsahem, který chcete blokovat:
 
  `myadblockfilters.txt` 
-
 ```
 [Adblock]
 ! Nadpis: Personal AdBlocker v1
@@ -94,7 +93,7 @@ www.phoronix.com#DIV.phxcms_bar_align
 
 ```
 
-*   jděte do _Menu > Nastavení > Rozšíření_ a u rozšíření **Blokování reklamy** klikněte na ikonu nastavení a přidejte následující odkaz:
+*   jděte do *Menu > Nastavení > Rozšíření* a u rozšíření **Blokování reklamy** klikněte na ikonu nastavení a přidejte následující odkaz:
 
 ```
 file://.local/share/midori/filters/myadblockfilters.txt

@@ -67,14 +67,14 @@ $ pipelight-plugin --help
 Enable the plugin globally:
 
 ```
-# pipelight-plugin --enable _plugin_
+# pipelight-plugin --enable *plugin*
 
 ```
 
 or locally:
 
 ```
-$ pipelight-plugin --enable _plugin_
+$ pipelight-plugin --enable *plugin*
 
 ```
 
@@ -126,25 +126,17 @@ overwriteArg      = enableGPUAcceleration=true
 
 ### Disable graphics card verification
 
-Pipelight has been tested on graphics cards from several vendors. The known-to-work card are whitelisted and are the only cards that Pipelight enables hardware acceleration on by default. This behavior can be circumvented by disabling the hardware verification procedure. However, it is recommended to check the output of the verfication procedure first. Make sure you have [mesa-demos](https://www.archlinux.org/packages/?q=mesa-demos) installed and run:
+Change:
 
 ```
-/usr/share/pipelight/hw-accel-default
-echo $?
-
-```
-
-If this returns `0`, your card is identified as a whitelisted card, otherwise it is not. In that case, you might try to disable verification. First copy Pipelight's default Silverlight configuration file to your home directory (see above), then change:
-
-```
-silverlightGraphicDriverCheck  = /usr/share/pipelight/hw-accel-default
+silverlightGraphicDriverCheck  = true
 
 ```
 
-to:
+To:
 
 ```
-silverlightGraphicDriverCheck = /bin/true
+silverlightGraphicDriverCheck = false
 
 ```
 
@@ -207,7 +199,7 @@ WINEPREFIX=~/.wine-pipelight WINE=/opt/wine-compholio/bin/wine WINEARCH=win32 /o
 
 ```
 
-Open the _Audio_ tab and change the **Output device** to `Out: HDA Intel - ALC1200 Analog`
+Open the *Audio* tab and change the **Output device** to `Out: HDA Intel - ALC1200 Analog`
 
 **Note:** The actual device name may vary from system to system.
 
@@ -234,7 +226,6 @@ $ mkdir ~/.devilspie
 Next, create the following file:
 
  `~/.devilspie/pipelight-fullscreen-firefox.ds` 
-
 ```
 (if
     (and
@@ -253,7 +244,6 @@ Next, create the following file:
 Finally we need to make devilspie autostart. This can be accomplished by creating the following file:
 
  `~/.config/autostart/devilspie.desktop` 
-
 ```
 [Desktop Entry]
 Name=devilspie

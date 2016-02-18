@@ -72,20 +72,20 @@
 
 To run QEMU you will need a hard disk image, unless you are booting a live system from CD-ROM or the network (and not doing so to install an operating system to a hard disk image). A hard disk image is a file which stores the contents of the emulated hard disk.
 
-A hard disk image can be _raw_, so that it is literally byte-by-byte the same as what the guest sees, and will always use the full capacity of the guest hard drive on the host. This method provides the least I/O overhead, but can waste a lot of space, as not-used space on the guest cannot be used on the host.
+A hard disk image can be *raw*, so that it is literally byte-by-byte the same as what the guest sees, and will always use the full capacity of the guest hard drive on the host. This method provides the least I/O overhead, but can waste a lot of space, as not-used space on the guest cannot be used on the host.
 
-Alternatively, the hard disk image can be in a format such as _qcow2_ which only allocates space to the image file when the guest operating system actually writes to those sectors on its virtual hard disk. The image appears as the full size to the guest operating system, even though it may take up only a very small amount of space on the host system. Using this format instead of _raw_ will likely affect performance.
+Alternatively, the hard disk image can be in a format such as *qcow2* which only allocates space to the image file when the guest operating system actually writes to those sectors on its virtual hard disk. The image appears as the full size to the guest operating system, even though it may take up only a very small amount of space on the host system. Using this format instead of *raw* will likely affect performance.
 
-QEMU 提供 `qemu-img`命令创建硬盘镜像.例如创建一个 4 GB _raw_ 格式的镜像:
-
-```
-$ qemu-img create -f raw _image_file_ 4G
+QEMU 提供 `qemu-img`命令创建硬盘镜像.例如创建一个 4 GB *raw* 格式的镜像:
 
 ```
+$ qemu-img create -f raw *image_file* 4G
 
-您可以用 `-f qcow2` 改为创建一个 _qcow2_ 磁盘
+```
 
-**Note:** You can also simply create a _raw_ image by creating a file of the needed size using `dd` or `fallocate`.
+您可以用 `-f qcow2` 改为创建一个 *qcow2* 磁盘
+
+**Note:** You can also simply create a *raw* image by creating a file of the needed size using `dd` or `fallocate`.
 
 **Warning:** If you store the hard disk images on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs") for the directory before creating any images.
 
@@ -96,14 +96,14 @@ You can create a storage image once (the 'backing' image) and have QEMU keep mut
 To create an overlay image, issue a command like:
 
 ```
-$ qemu-img create -o backing_file=_img1.raw_,backing_fmt=_raw_ -f _qcow2_ _img1.cow_
+$ qemu-img create -o backing_file=*img1.raw*,backing_fmt=*raw* -f *qcow2* *img1.cow*
 
 ```
 
 After that you can run your QEMU VM as usual (see [#Running virtualized system](#Running_virtualized_system)):
 
 ```
-$ qemu-system-i386 _img1.cow_
+$ qemu-system-i386 *img1.cow*
 
 ```
 
@@ -116,14 +116,14 @@ When the path to the backing image changes, repair is required.
 Make sure that the original backing image's path still leads to this image. If necessary, make a symbolic link at the original path to the new path. Then issue a command like:
 
 ```
-$ qemu-img rebase -b _/new/img1.raw_ _/new/img1.cow_
+$ qemu-img rebase -b */new/img1.raw* */new/img1.cow*
 
 ```
 
 At your discretion, you may alternatively perform an 'unsafe' rebase where the old path to the backing image is not checked:
 
 ```
-$ qemu-img rebase -u -b _/new/img1.raw_ _/new/img1.cow_
+$ qemu-img rebase -u -b */new/img1.raw* */new/img1.cow*
 
 ```
 
@@ -131,10 +131,10 @@ $ qemu-img rebase -u -b _/new/img1.raw_ _/new/img1.cow_
 
 **警告:** 调整包含NTFS引导文件系统的镜像将无法启动已安装的操作系统. 完整的解释和解决办法参见 [[1]](http://tjworld.net/wiki/Howto/ResizeQemuDiskImages).
 
-执行 `qemu-img` 带 `resize` 选项调整硬盘驱动镜像的大小.它适用于 _raw_ 和 _qcow2_. 例如, 增加镜像 10 GB 大小, 运行:
+执行 `qemu-img` 带 `resize` 选项调整硬盘驱动镜像的大小.它适用于 *raw* 和 *qcow2*. 例如, 增加镜像 10 GB 大小, 运行:
 
 ```
-$ qemu-img resize _disk_image_ +10G
+$ qemu-img resize *disk_image* +10G
 
 ```
 
@@ -144,14 +144,14 @@ After enlarging the disk image, you must use file system and partitioning tools 
 
 要将操作系统安装到您的磁盘镜像, 你需要操作系统的安装介质 (例如 光盘, USB设备, 或 ISO 镜像). 安装介质不能被挂载因为 QEMU 直接访问媒体
 
-**Tip:** If using an optical disk, it is a good idea to first dump the media to a file because this both improves performance and does not require you to have direct access to the devices (that is, you can run QEMU as a regular user without having to change access permissions on the media's device file). For example, if the CD-ROM device node is named `/dev/cdrom`, you can dump it to a file with the command: `$ dd if=/dev/cdrom of=_cd_image.iso_` 
+**Tip:** If using an optical disk, it is a good idea to first dump the media to a file because this both improves performance and does not require you to have direct access to the devices (that is, you can run QEMU as a regular user without having to change access permissions on the media's device file). For example, if the CD-ROM device node is named `/dev/cdrom`, you can dump it to a file with the command: `$ dd if=/dev/cdrom of=*cd_image.iso*` 
 
 ## 运行虚拟化的系统
 
 `qemu-system-*` 程序 (例如 `qemu-system-i386` 或 `qemu-system-x86_64`, 取决于客户机架构)用来运行虚拟化的客户机. 用法是:
 
 ```
-$ qemu-system-i386 _options_ _disk_image_
+$ qemu-system-i386 *options* *disk_image*
 
 ```
 
@@ -170,7 +170,7 @@ KVM 必须要您处理器和内核支持, 和必要的 [kernel modules](/index.p
 **Note:**
 
 *   If you start your VM with a GUI tool and experience very bad performance, you should check for proper KVM support, as QEMU may be falling back to software emulation.
-*   KVM needs to be enabled in order to start Windows 7 and Windows 8 properly without a _blue screen_.
+*   KVM needs to be enabled in order to start Windows 7 and Windows 8 properly without a *blue screen*.
 
 ## 宿主机和虚拟机数据交互
 
@@ -361,7 +361,6 @@ Remember to name your bridge as `br0`, or change the scripts below to your bridg
 *   Create the script that QEMU uses to bring up the tap adapter with root:kvm 750 permissions:
 
  `/etc/qemu-ifup` 
-
 ```
 #!/bin/sh
 
@@ -377,7 +376,6 @@ sleep 2
 *   Create the script that QEMU uses to bring down the tap adapter in `/etc/qemu-ifdown` with root:kvm 750 permissions:
 
  `/etc/qemu-ifdown` 
-
 ```
 #!/bin/sh
 
@@ -401,7 +399,6 @@ Cmnd_Alias      QEMU=/sbin/ip,/sbin/modprobe,/usr/sbin/brctl,/usr/bin/tunctl
 *   You launch QEMU using the following `run-qemu` script:
 
  `run-qemu` 
-
 ```
 #!/bin/bash
 USERID=`whoami`
@@ -605,7 +602,6 @@ qemu -k [keymap] [disk_image]
 配置文件例子：
 
  `/etc/conf.d/qemu.conf` 
-
 ```
 # VMs that should be started on boot
 # use the ! prefix to disable starting/stopping a VM
@@ -639,7 +635,6 @@ qemu_vm2_haltcmd="echo 'system_powerdown' | nc.openbsd localhost 7101"
 rc-script:
 
  `/etc/rc.d/qemu` 
-
 ```
 #!/bin/bash
 . /etc/rc.conf

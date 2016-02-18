@@ -100,4 +100,4 @@ ML-2245 필터를 수동으로 설치합니다.
 
 ```
 
-이게 답니다. 이론상, 설치는 끝 - 당장 프린터를 쓸 수 있습니다 :) Гуд лак! (_러시아어_ [Udachi!](http://translate.google.ru/translate_t?hl=ru#ru%7Cen%7C%D0%A3%D0%B4%D0%B0%D1%87%D0%B8))
+이게 답니다. 이론상, 설치는 끝 - 당장 프린터를 쓸 수 있습니다 :) Гуд лак! (*러시아어* [Udachi!](http://translate.google.ru/translate_t?hl=ru#ru%7Cen%7C%D0%A3%D0%B4%D0%B0%D1%87%D0%B8))

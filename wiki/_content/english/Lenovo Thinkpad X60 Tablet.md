@@ -272,13 +272,11 @@ xbindkeys
 Now rotate button and when you swivel the screen down and up it should rotate.
 
 **Note:** You have to run:
-
 ```
 xmodmap ~/.Xmodmap
 xbindkeys
 
 ```
-
 Every time you start Xorg.
 
 You might also want to take a look at [this rotate script](http://luke.no-ip.org/x60tablet/examples/rotate) written by Luke

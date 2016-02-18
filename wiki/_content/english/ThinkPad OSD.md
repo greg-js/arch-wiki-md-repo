@@ -35,7 +35,6 @@ KERNEL=="nvram", GROUP="kmem", MODE="0660"
 ## Setting a more readable color and better placement
 
  `/etc/tpbrc` 
-
 ```
 OSDCOLOR    Green
 OSDVERTICAL 0
@@ -48,7 +47,6 @@ OSDALIGN    CENTER
 ## Starting with KDE
 
  `~/.kde/Autostart/tpb-startup.sh` 
-
 ```
 # Start Thinkpad OSD daemon
 if [ -x /usr/bin/tpb ] &&  [ -w /dev/nvram ] && [ -r /dev/nvram ]; then
@@ -60,7 +58,6 @@ fi
 ## Starting with Fluxbox
 
  `~/.fluxbox/startup` 
-
 ```
 # Start Thinkpad OSD daemon
 if [ -x /usr/bin/tpb ] &&  [ -w /dev/nvram ] && [ -r /dev/nvram ]; then
@@ -74,14 +71,11 @@ fi
 You can play a sound when using the volume buttons (mac like).
 
  `/etc/tpbrc` 
-
 ```
 CALLBACK /usr/local/bin/callback_volume.sh
 
 ```
-
  `/usr/local/bin/callback_volume.sh` 
-
 ```
 #!/bin/sh
 [ "$1" = "volume" ] && exec canberra-gtk-play --file=/usr/share/sounds/freedesktop/stereo/audio-volume-change.oga

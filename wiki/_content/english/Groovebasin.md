@@ -46,7 +46,6 @@ Open on your browser [https://localhost:16242/](https://localhost:16242/).
 NGINX can be used to redirect traffic from port 16242 to 80 with the following configuration.
 
  `/etc/nginx/nginx.conf` 
-
 ```
 location /groove/ {
         proxy_set_header    X-Real-IP  $remote_addr;

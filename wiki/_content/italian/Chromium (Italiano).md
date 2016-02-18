@@ -71,7 +71,6 @@ Ci sono molte soluzioni a questo problema, elencate qui sotto. È possibile:
 *   Usare parti di un ambiente desktop, e più specificatamente, la parte che include l'applicazione che apre il file; per GNOME bisognerebbe installare 'libgnome' (e le sue dipendenze), per xfce, 'exo'. La variabile d'ambiente $DE ha bisogno di essere esportata prima dell'avvio del gestore di finestre. Per esempio:
 
  `~/.xinitrc` 
-
 ```
 export DE=gnome
 exec  openbox
@@ -83,7 +82,6 @@ exec  openbox
 *   Usare le associazioni file pcmanfm (es. per gli utenti dell'ambiente desktop lxde). Cambiare:
 
  `/usr/bin/xdg-open` 
-
 ```
 generic)
 pcmanfm "$url"
@@ -130,7 +128,6 @@ $ mimetype -d file.extension
 Questo dovrebbe creare una voce nel proprio database mime locale:
 
  `~/.local/share/applications/defaults.list` 
-
 ```
 [Default Applications]
 text/html=chromium.desktop
@@ -172,7 +169,7 @@ fi
 
 ```
 
-Un altro modo è modificare lo script _xdg-open_.
+Un altro modo è modificare lo script *xdg-open*.
 
 ```
 $ sudo $YOUR_EDITOR /usr/bin/xdg-open
@@ -195,7 +192,7 @@ fi
 
 ```
 
-Bisogna aggiungere **chromium:** _(ricordarsi i due punti che separano le voci)_ prima di **firefox:mozilla:** ... e salvare. Per provare se questo funziona davvero, inserire in un terminale:
+Bisogna aggiungere **chromium:** *(ricordarsi i due punti che separano le voci)* prima di **firefox:mozilla:** ... e salvare. Per provare se questo funziona davvero, inserire in un terminale:
 
 ```
 $ xdg-open [http://google.com](http://google.com)
@@ -207,7 +204,6 @@ Se tutto ha funzionato a meraviglia, sarà aperta una nuova scheda o una nuova f
 Un'altra opzione, quando viene usato **mimeo**, è associare i link "http://" con chromium:
 
  `~/.config/mimeo.conf` 
-
 ```
 /usr/bin/chromium
   ^http://
@@ -270,7 +266,7 @@ $ tar -xJf <lzma-file>
 
 Spostare `libpdf.so` da `opt/google/chrome/` alla cartella appropriata come deciso sopra. Potrebbe essere necessario un cambiamento dei permessi dei file e di proprietà (i permessi di `libpdf.so` dovrebbero essere 755).
 
-Avviare Chromium e aprire _about:plugins_. Dovrebbe ora vedersi "Chrome PDF Viewer"; se necessario, attivarlo.
+Avviare Chromium e aprire *about:plugins*. Dovrebbe ora vedersi "Chrome PDF Viewer"; se necessario, attivarlo.
 
 **Nota:** Nel momento in cui una nuova versione di Chromium non venisse aggiornata, `libpdf.so` potrebbe diventare incompatibile. Perciò e con rispetto per i possibili fix di sicurezza è consigliabile aggiornare entrambi allo stesso tempo.
 
@@ -290,7 +286,7 @@ Chromium usa [NSS](/index.php/Nss "Nss") per la gestione dei certificati. I cert
 
 ### Controllare l'uso della memoria
 
-*   Chromium offre alcune opzioni a linea di comando per aiutare a controllare quanto è efficiente con la memoria del sistema, determinando quanto spesso dovrebbe rilasciare indietro la memoria al sistema operativo. Questo viene fatto con il flag _--memory-model=X_, dove X può essere _high_, _medium_, o _low_. Impostarlo in high può consentire a Chromium di non rilasciare mai memoria. Medium tende a ridurre lo spazio di lavoro della memoria quando si cambia scheda, e low riduce lo spazio di lavoro quando si cambia scheda e quando il browser non viene usato attivamente. Eseguire chromium con _--memory-model=low_ potrebbe veramente migliorare le prestazioni, sebbene questo possa variare.
+*   Chromium offre alcune opzioni a linea di comando per aiutare a controllare quanto è efficiente con la memoria del sistema, determinando quanto spesso dovrebbe rilasciare indietro la memoria al sistema operativo. Questo viene fatto con il flag *--memory-model=X*, dove X può essere *high*, *medium*, o *low*. Impostarlo in high può consentire a Chromium di non rilasciare mai memoria. Medium tende a ridurre lo spazio di lavoro della memoria quando si cambia scheda, e low riduce lo spazio di lavoro quando si cambia scheda e quando il browser non viene usato attivamente. Eseguire chromium con *--memory-model=low* potrebbe veramente migliorare le prestazioni, sebbene questo possa variare.
 
 ### Collegare il file manager alla funzione "Mostra cartella"
 
@@ -312,8 +308,7 @@ Si potrebbe verificare il caso in cui Chromium nella scheda di download mostra i
 Per chi usa un SSD è preferibile avere la cache di Chromium in un tmpfs, ma non è necessario avere l'interno profilo in un tmpfs. È stata postata [qui](https://bbs.archlinux.org/viewtopic.php?pid=967385#p967385) una soluzione per questo problema.
 
 **Attenzione:** Chiudere Chromium prima di iniziare!
-
-Rimpiazzare _your_user_ con il proprio username.
+Rimpiazzare *your_user* con il proprio username.
 
 Aggiungere la riga seguente a `/etc/fstab`:
 
@@ -408,14 +403,14 @@ $ crontab -e
 Aggiungere una riga per avviare lo script ogni 30 minuti,
 
 ```
-*/30 * * * * _~/bin/sync-chromium_
+*/30 * * * * *~/bin/sync-chromium*
 
 ```
 
 o aggiungere il seguente per farlo ogni 2 ore:
 
 ```
-0 */2 * * * _~/bin/sync-chromium_
+0 */2 * * * *~/bin/sync-chromium*
 
 ```
 

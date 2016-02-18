@@ -141,7 +141,7 @@ Anche in questo caso possiamo semplificare i nomi dei canali trovati. Ora possia
 
 ### Xine e mplayer
 
-Due programmi molto minimalisti che fanno tra le altre cose _anche_ questo sono mplayer e xine
+Due programmi molto minimalisti che fanno tra le altre cose *anche* questo sono mplayer e xine
 
 ```
 sudo pacman -S mplayer xine-ui
@@ -722,7 +722,7 @@ udi = '/org/freedesktop/Hal/devices/usb_device_2040_c000_4033519634_logicaldev_i
   input.xkb.layout = 'it'  (string)
   input.xkb.model = 'evdev'  (string)
   input.xkb.rules = 'base'  (string)
-  input.xkb.variant = _  (string)_
+  input.xkb.variant = *  (string)*
   linux.device_file = '/dev/input/event9'  (string)
   linux.hotplug_type = 2  (0x2)  (int)
   linux.subsystem = 'input'  (string)

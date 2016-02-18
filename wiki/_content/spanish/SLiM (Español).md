@@ -249,7 +249,7 @@ En la variable current_theme ponga todos los temas a elegir aleatoriamente separ
 Aqui hay una lista de todas las opciones para configurar SLiM:
 
 **Note:** welcome_msg allows 2 variables **%host** and **%domain**
-sessionstart_cmd allows **%user** _(execd right before login_cmd)_ and it is also allowed in sessionstop_cmd
+sessionstart_cmd allows **%user** *(execd right before login_cmd)* and it is also allowed in sessionstop_cmd
 login_cmd allows **%session** and **%theme**
 
 | Option Name | Default Value |

@@ -1,4 +1,4 @@
-[MTP](https://en.wikipedia.org/wiki/MTP "wikipedia:MTP"), or the _Media Transfer Protocol_, is a USB device class which is used by many mobile phones (e.g. Android 3+ devices) and media players (e.g. Creative Zen).
+[MTP](https://en.wikipedia.org/wiki/MTP "wikipedia:MTP"), or the *Media Transfer Protocol*, is a USB device class which is used by many mobile phones (e.g. Android 3+ devices) and media players (e.g. Creative Zen).
 
 ## Contents
 
@@ -271,7 +271,7 @@ Bus 001 Device 007: ID 0421:0661 Nokia Mobile Phones Lumia 920
 
 ```
 
-The two numbers after ID are _vendorId_ : _productID_
+The two numbers after ID are *vendorId* : *productID*
 
 Then make a udev rule, e.g.
 

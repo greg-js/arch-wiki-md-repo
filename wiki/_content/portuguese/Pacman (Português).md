@@ -86,7 +86,6 @@ NoExtract=usr/lib/systemd/system/*
 A seção define quais [repositórios](/index.php/Official_repositories "Official repositories") usar, como referido no `/etc/pacman.conf`. Podem ser mencionados aqui diretamente ou incluídos de outro arquivo (como `/etc/pacman.d/mirrorlist`), tornando-se assim necessário manter apenas uma lista. Veja [aqui](/index.php/Mirrors "Mirrors") para configuração de espelho.
 
  `/etc/pacman.conf` 
-
 ```
 #[testing]
 #SigLevel = PackageRequired
@@ -143,14 +142,14 @@ O que se segue é apenas uma pequena amostra das operações que o pacman pode e
 Para instalar um único pacote ou lista de pacotes (incluindo dependências), execute o seguinte comando:
 
 ```
-# pacman -S _package_name1_ _package_name2_ ...
+# pacman -S *package_name1* *package_name2* ...
 
 ```
 
 Às vezes, há várias versões de um pacote nos diferentes repositórios, por exemplo [extra] e [testing]. Para instalar a versão anterior, o repositṕorio deve ser definido na frente:
 
 ```
-# pacman -S extra/_package_name_
+# pacman -S extra/*package_name*
 
 ```
 
@@ -192,21 +191,21 @@ Também visite [https://www.archlinux.org/groups/](https://www.archlinux.org/gro
 
 **Nota:** Se um pacote na lista já está instalado no sistema, ele será reinstalado mesmo se já estiver atualizado. Este comportamento pode ser substituído com a opção `--needed`.
 
-**Dica:** Ao instalar os pacotes, _não_ atualiza a lista de pacotes sem [atualização](#Upgrading_packages) do sistema (ex. `pacman -Sy _package_name_`), isso pode ocasinar erros de dependêcias. Veja [#Partial upgrades are unsupported](#Partial_upgrades_are_unsupported) e [https://bbs.archlinux.org/viewtopic.php?id=89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
+**Dica:** Ao instalar os pacotes, *não* atualiza a lista de pacotes sem [atualização](#Upgrading_packages) do sistema (ex. `pacman -Sy *package_name*`), isso pode ocasinar erros de dependêcias. Veja [#Partial upgrades are unsupported](#Partial_upgrades_are_unsupported) e [https://bbs.archlinux.org/viewtopic.php?id=89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
 
 ### Removendo pacotes
 
 Para remover um único pacote, deixando todas as suas dependências instaladas:
 
 ```
-# pacman -R _package_name_
+# pacman -R *package_name*
 
 ```
 
 Para remover um pacote e suas dependências que não são exigidas por qualquer outro pacote instalado:
 
 ```
-# pacman -Rs _package_name_
+# pacman -Rs *package_name*
 
 ```
 
@@ -215,21 +214,21 @@ Para remover um pacote, suas dependências e todos os pacotes que dependem deste
 **Dica:** Esta operação é recursiva, e deve ser usada com cuidado, pois pode remover muitos pacotes potencialmente necessários.
 
 ```
-# pacman -Rsc _package_name_
+# pacman -Rsc *package_name*
 
 ```
 
 Para remover um pacote, o qual é exigido por outro pacote, sem remover o pacote dependente:
 
 ```
-# pacman -Rdd _package_name_
+# pacman -Rdd *package_name*
 
 ```
 
 O pacman salva arquivos de configuração importantes ao remover certos aplicativos e os nomes com a extensão: `.pacsave`. Para prevenir a criação desses arquivos de backup use a opção `-n`:
 
 ```
-# pacman -Rn _package_name_
+# pacman -Rn *package_name*
 
 ```
 
@@ -237,7 +236,7 @@ O pacman salva arquivos de configuração importantes ao remover certos aplicati
 
 ### Atualizando pacotes
 
-Pacman pode atualizar todos os pacotes no sistema com apenas um comando. Isso pode demorar um pouco dependendo de como anda a atualização do sistema. Este comando pode sincronizar as bases de dados do repositório _e_ atualizar os pacotes do sistema (excluindo pacotes "locais" que não estão nos repositórios configurados):
+Pacman pode atualizar todos os pacotes no sistema com apenas um comando. Isso pode demorar um pouco dependendo de como anda a atualização do sistema. Este comando pode sincronizar as bases de dados do repositório *e* atualizar os pacotes do sistema (excluindo pacotes "locais" que não estão nos repositórios configurados):
 
 ```
 # pacman -Syu
@@ -273,42 +272,42 @@ $ pacman -S --help
 Pacman pode pesquisar por pacotes no banco de dados, pesquisando nomes e descrições dos pacotes:
 
 ```
-$ pacman -Ss _string1_ _string2_ ...
+$ pacman -Ss *string1* *string2* ...
 
 ```
 
 Para procurar os pacotes já instalados:
 
 ```
-$ pacman -Qs _string1_ _string2_ ...
+$ pacman -Qs *string1* *string2* ...
 
 ```
 
 Para exibir informações detalhadas sobre um determinado pacote:
 
 ```
-$ pacman -Si _package_name_
+$ pacman -Si *package_name*
 
 ```
 
 Para os pacotes instalados localmente:
 
 ```
-$ pacman -Qi _package_name_
+$ pacman -Qi *package_name*
 
 ```
 
 Inserindo duas flags `-i` também exibirá a lista de arquivos de backup e seus estados de alterações:
 
 ```
-$ pacman -Qii _package_name_
+$ pacman -Qii *package_name*
 
 ```
 
 Para obter uma lista dos arquivos instalados por um pacote
 
 ```
-$ pacman -Ql _package_name_
+$ pacman -Ql *package_name*
 
 ```
 
@@ -317,7 +316,7 @@ Para pacotes não instalados, use [pkgfile](/index.php/Pkgfile "Pkgfile").
 Pode-se também consultar o banco de dados para saber qual pacote um arquivo no arquivo do sistema pertence:
 
 ```
-$ pacman -Qo _/path/to/file_name_
+$ pacman -Qo */path/to/file_name*
 
 ```
 
@@ -331,14 +330,14 @@ $ pacman -Qdt
 Para listar a árvore de dependência de um pacote:
 
 ```
-$ pactree _package_name_
+$ pactree *package_name*
 
 ```
 
-Para listar todos os pacotes dependentes de um pacote _instalado_, use `whoneeds` do pacote [pkgtools](/index.php/Pkgtools "Pkgtools"):
+Para listar todos os pacotes dependentes de um pacote *instalado*, use `whoneeds` do pacote [pkgtools](/index.php/Pkgtools "Pkgtools"):
 
 ```
-$ whoneeds _package_name_
+$ whoneeds *package_name*
 
 ```
 
@@ -347,14 +346,14 @@ $ whoneeds _package_name_
 Atualizar o sistema e instalar uma lista de pacotes:
 
 ```
-# pacman -Syu _package_name1_ _package_name2_ ...
+# pacman -Syu *package_name1* *package_name2* ...
 
 ```
 
 Baixe um pacote sem instalá-lo:
 
 ```
-# pacman -Sw _package_name_
+# pacman -Sw *package_name*
 
 ```
 
@@ -366,7 +365,6 @@ Instale um pacote 'local' que não é de um repositório remoto (ex., o pacote �
 ```
 
 **Dica:** Para manter uma cópia do pacote local no cache do pacman, use:
-
 ```
 # pacman -U file://path/to/package/package_name-version.pkg.tar.xz
 
@@ -401,7 +399,7 @@ Limpe o cache do pacote inteiro:
 
 ### Atualizações parciais não são suportadas
 
-Arch é um rolling release, e novas versões de [bibliotecas](https://en.wikipedia.org/wiki/Library_(computing) "wikipedia:Library (computing)") serão colocadas nos repositórios. Os desenvolvedores e usuários confiáveis reconstruirão todos os pacotes nos repositórios que precisam ser reconstruídos com as bibliotecas. Se o sistema tem pacotes instalados localmente (tal como pacotes [[Arch User Repository (Português)]), os usuários deverão recontruí-los quando suas dependências receberem uma colisão [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname").
+Arch é um rolling release, e novas versões de [bibliotecas](https://en.wikipedia.org/wiki/Library_(computing) serão colocadas nos repositórios. Os desenvolvedores e usuários confiáveis reconstruirão todos os pacotes nos repositórios que precisam ser reconstruídos com as bibliotecas. Se o sistema tem pacotes instalados localmente (tal como pacotes [[Arch User Repository (Português)]), os usuários deverão recontruí-los quando suas dependências receberem uma colisão [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname").
 
 Isso significa que as atualizações parciais são **não suportadas**. Não use `pacman -Sy package` ou equivalente como `pacman -Sy` e depois `pacman -S package`. Sempre atualize antes de instalar um pacote -- especialmente se o pacman atualizou as sincronização de repositórios. Tenha muito cuidado ao usar `IgnorePkg` e `IgnoreGroup`, pelo mesmo motivo.
 
@@ -425,7 +423,7 @@ Espelhos do Pacman não são sincronizados imediatamente. Pode demorar mais de 2
 
 ### Eu recebo um erro durante a atualização: "o arquivo já existe no sistema de arquivos"!
 
-ASIDE: _Tirado de [https://bbs.archlinux.org/viewtopic.php?id=56373](https://bbs.archlinux.org/viewtopic.php?id=56373) by Misfit138._
+ASIDE: *Tirado de [https://bbs.archlinux.org/viewtopic.php?id=56373](https://bbs.archlinux.org/viewtopic.php?id=56373) by Misfit138.*
 
 ```
 error: could not prepare transaction
@@ -452,7 +450,7 @@ Primeiramente, verifique se o pacote realmente existe (e fique atento para os er
 ### Eu recebo um erro ao instalar um pacote: "alvo não foi encontrado"
 
 Primeiramente, verifique se o pacote realmente existe (e fique atento para os erros de digitação!). Se o determinado pacote existe sua lista de pacotes pode estar desatualizada ou seus repositórios podem estar configurados incorretamente. Tente executar `pacman-Syy` para forçar uma atualização de todas as listas de pacotes.
-Pode ser também que o repositório que contém o pacote não está ativado em seu sistema, por exemplo, o pacote poderia estar no repositório _multilib_, mas _multilib_ não está habilitado em seu _pacman.conf_.
+Pode ser também que o repositório que contém o pacote não está ativado em seu sistema, por exemplo, o pacote poderia estar no repositório *multilib*, mas *multilib* não está habilitado em seu *pacman.conf*.
 
 ### Pacman está atualizando várias vezes o mesmo pacote!
 
@@ -473,7 +471,7 @@ No caso de colisão do pacman com um erro de "escrita de banco de dados" equanto
 
 ### Eu instalei programa usando "make install"; esses arquivos não pertencem a nenhum pacote!
 
-Se receber um erro "arquivos conflitantes", note que o pacman substituirá manualmente o programa instalado se adicionar com o `--force`, por exemplo,(`pacman -S --force`). Veja [Pacman tips#Identify files not owned by any package](/index.php/Pacman_tips#Identify_files_not_owned_by_any_package "Pacman tips") para um script que procura o arquivo de sistema por arquivos _rejeitados_.
+Se receber um erro "arquivos conflitantes", note que o pacman substituirá manualmente o programa instalado se adicionar com o `--force`, por exemplo,(`pacman -S --force`). Veja [Pacman tips#Identify files not owned by any package](/index.php/Pacman_tips#Identify_files_not_owned_by_any_package "Pacman tips") para um script que procura o arquivo de sistema por arquivos *rejeitados*.
 
 **Atenção:** Tome cuidado ao usar a opção `--force`, pois pode causar problemas graves se usada indevidamente. Recomenda-se usar esta opção apenas quando for requisitada em Arch notícias.
 
@@ -489,7 +487,7 @@ No caso de pacman está quebrado sem possibilidade de reparo, baixe manualmente 
 
 Muito provavelmente seus initramfs quebrou durante uma atualização do kernel (uso indevido da opção do pacman `--force` pode ser uma causa). Você tem duas opções:
 
-**1.** Tente a entrada _Fallback_.
+**1.** Tente a entrada *Fallback*.
 
 **Dica:** No caso de você ter removido esta entrada por alguma razão, você pode sempre pressionar a tecla `Tab` quando o gerenciador de boot aparecer (para Syslinux) ou `e` (para GRUB), renomear `initramfs-linux-fallback.img` e pressione `Enter` ou `b` (dependendo do seu gerenciador de boot) para inicializar com os novos parâmetros.
 
@@ -526,7 +524,6 @@ error: falha ao confirmar a transação (pacote inválido ou corrompido (PGP sig
 Erros ocorreram, nenhum pacote foi atualizado. 
 
 ```
-
 Isso acontece quando o relógio do sistema está errado. Ajuste a [hora](/index.php/Time "Time") e execute: `# hwclock -w` antes de tentar instalar/atualizar um pacote novamente.}}
 
 ### Recebo um erro "falha ao confirmar a transação (pacote inválido ou corrompido)"

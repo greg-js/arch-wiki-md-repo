@@ -91,7 +91,6 @@ color brightblack "#.*$"
 Questa è un'altra versione discussa [qui](https://bbs.archlinux.org/viewtopic.php?pid=565476).
 
  `/usr/share/nano/pkgbuild.nanorc` 
-
 ```
  ## Arch PKGBUILD files
  ##
@@ -163,7 +162,7 @@ La notazione per i tasti di scelta rapida è la seguente:
 
 *   Le sequenze identificate con il simbolo `^` sono introdotte usando il tasto Control (`Ctrl`), oppure premendo il tasto `Esc` due volte.
 
-*   Le sequenze identificate col simbolo Meta `M` possono essere inserite usato alternativamente il tasto `Esc`, `Alt` o `Meta`, a seconda della configurazione della tastiera. Inoltre, premendo `Esc` due volte e digitando i numeri da _000_ a _255_ si possono inserire i caratteri con il codice ASCII corrispondente.
+*   Le sequenze identificate col simbolo Meta `M` possono essere inserite usato alternativamente il tasto `Esc`, `Alt` o `Meta`, a seconda della configurazione della tastiera. Inoltre, premendo `Esc` due volte e digitando i numeri da *000* a *255* si possono inserire i caratteri con il codice ASCII corrispondente.
 
 #### Panoramica sui tasti di scelta rapida
 
@@ -213,7 +212,7 @@ La notazione per i tasti di scelta rapida è la seguente:
 
 *   `Ctrl`+`T` Ortografia (`F12`)
 
-	Esegue il correttore ortografico, se disponibile, utilizza _spell_
+	Esegue il correttore ortografico, se disponibile, utilizza *spell*
 
 **Tip:** Consultare l'aiuto in linea di nano tramite `Ctrl + g` all'interno dell'editor e il [manuale dei comandi di nano](http://www.nano-editor.org/dist/v2.1/nano.html) per una completa descrizione e supporto addizionale.
 
@@ -249,9 +248,9 @@ Molti utenti preferiscono utilizzare `nano` al posto di `vi` poiché risulta pi�
 
 #### Primo metodo
 
-**Attenzione:** Dal `man 8 visudo`: _Si noti che questo metodo potrebbe compromettere la sicurezza in quanto permette all'utente di eseguire qualsiasi programma che desiderano semplicemente impostando le variabili VISUAL o EDITOR._
+**Attenzione:** Dal `man 8 visudo`: *Si noti che questo metodo potrebbe compromettere la sicurezza in quanto permette all'utente di eseguire qualsiasi programma che desiderano semplicemente impostando le variabili VISUAL o EDITOR.*
 
-[sudo](/index.php/Sudo_(Italiano) "Sudo (Italiano)") reperibile nel repository _core_, è compilato in modo predefinito con l'opzione `--with-env-editor` e rispetta l'uso delle variabili `VISUAL` ed `EDITOR`. Per poter stabilire di utilizzare _nano_ come editor per il comando **visudo** per tutta la durata della sessione corrente della console, bisogna impostare ed esportare la variabile `EDITOR` prima di chiamare **visudo**.
+[sudo](/index.php/Sudo_(Italiano) "Sudo (Italiano)") reperibile nel repository *core*, è compilato in modo predefinito con l'opzione `--with-env-editor` e rispetta l'uso delle variabili `VISUAL` ed `EDITOR`. Per poter stabilire di utilizzare *nano* come editor per il comando **visudo** per tutta la durata della sessione corrente della console, bisogna impostare ed esportare la variabile `EDITOR` prima di chiamare **visudo**.
 
 ```
 export EDITOR=nano 
@@ -267,7 +266,7 @@ export EDITOR=nano
 
 #### Secondo metodo
 
-**Attenzione:** Dal `man 8 visudo`: _Si noti che questo metodo potrebbe compromettere la sicurezza in quanto permette all'utente di eseguire qualsiasi programma che desiderano semplicemente impostando le variabili VISUAL o EDITOR._
+**Attenzione:** Dal `man 8 visudo`: *Si noti che questo metodo potrebbe compromettere la sicurezza in quanto permette all'utente di eseguire qualsiasi programma che desiderano semplicemente impostando le variabili VISUAL o EDITOR.*
 
 La variabile **EDITOR** può anche essere impostata all'interno dei seguenti file per un uso persistente:
 
@@ -369,7 +368,7 @@ Utilizzare pacman per installare il pacchetto `vi` precedentemente disinstallato
 
 ## Fonti esterne
 
-*   [nano (text editor)](https://en.wikipedia.org/wiki/Nano_(text_editor) "wikipedia:Nano (text editor)") - Articolo Wikipedia inglese
+*   [nano (text editor)](https://en.wikipedia.org/wiki/Nano_(text_editor) - Articolo Wikipedia inglese
 *   [GNU nano Homepage](http://www.nano-editor.org/) - Sito Ufficiale
 *   [GNU nano Bugs](https://savannah.gnu.org/bugs/?group=nano) - Segnalazione Bug
 *   [Better syntax highlighting definitions](https://github.com/craigbarnes/nanorc)

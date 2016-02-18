@@ -148,7 +148,7 @@ Questo cancellerà solamente un singolo keyslot.
 
 #### Cancellare i LUKS header
 
-Le partizioni formattate con dm-crypt/LUKS contengono un header contenete la cifratura e le opzioni utilizzate da `dm-mod` quando viene aperta la periferica. Dopo l'header iniziano i dati criptati. Quindi, quando si dismette un disco (ad esempio se si vende il PC, sostituzione del disco, eccetera) _potrebbe_ essere sufficiente cancellare l'header della partizione, anziché sovrascrivere l'intero disco - che potrebbe essere un processo molto lungo.
+Le partizioni formattate con dm-crypt/LUKS contengono un header contenete la cifratura e le opzioni utilizzate da `dm-mod` quando viene aperta la periferica. Dopo l'header iniziano i dati criptati. Quindi, quando si dismette un disco (ad esempio se si vende il PC, sostituzione del disco, eccetera) *potrebbe* essere sufficiente cancellare l'header della partizione, anziché sovrascrivere l'intero disco - che potrebbe essere un processo molto lungo.
 
 Cancellando l'header LUKS verrà cancellata anche la chiave principale PBKDF2-criptata (AES), salts ed altre.
 
@@ -178,7 +178,7 @@ Quando si cancella l'header con dati casuali e l'header è seguito da dati cript
 
 #### Supporto per discard/TRIM per i dischi a stato solido (SSD)
 
-Gli utenti con dischi a stato solido dovrebbero essere consapevoli che per default, il meccanismo di cifratura del kernel Linux _non_ invierà i comandi TRIM dal filesystem al disco sottostante. Gli sviluppatori del device-mapper hanno chiarito che il supporto per TRIM non sarà mai abilitato per default sul device dm-crypt a causa di potenziali problemi di sicurezza.
+Gli utenti con dischi a stato solido dovrebbero essere consapevoli che per default, il meccanismo di cifratura del kernel Linux *non* invierà i comandi TRIM dal filesystem al disco sottostante. Gli sviluppatori del device-mapper hanno chiarito che il supporto per TRIM non sarà mai abilitato per default sul device dm-crypt a causa di potenziali problemi di sicurezza.
 
 Molti utenti vorranno comunque utilizzare TRIM sui propri dischi SSD criptati. Questo crea un minimo di dispersione di informazioni riguardo ai blocchi liberati, comunque sufficienti a determinare il filesystem utilizzato, in caso TRIM sia abilitato. Una immagine ed una discussione del problema derivante dall'attivazione di TRIM è disponibile nel [blog](http://asalor.blogspot.de/2011/08/trim-dm-crypt-problems.html) di uno sviluppatore di `cryptsetup`.
 
@@ -258,7 +258,7 @@ Ci sono due partizioni necessarie ad un sistema criptato:
 
 	Una partizione di boot per l'avvio
 
-	la partizione `**/boot**` _non_ sarà criptata; il bootloader necessita di accedere alla cartella `/boot` da cui caricherà il ramdisk iniziale i moduli per la crittografia e quelli necessari per l'avvio del sistema che _sarà_ criptato (consultare [mkinitcpio](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)") per maggiori informazioni). Per questa ragione, è necessario che `/boot` risieda su di una propria partizione non criptata.
+	la partizione `**/boot**` *non* sarà criptata; il bootloader necessita di accedere alla cartella `/boot` da cui caricherà il ramdisk iniziale i moduli per la crittografia e quelli necessari per l'avvio del sistema che *sarà* criptato (consultare [mkinitcpio](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)") per maggiori informazioni). Per questa ragione, è necessario che `/boot` risieda su di una propria partizione non criptata.
 
 **Nota:** La partizione di swap è opzionale; può essere criptata con dm-crypt/LUKS. Consultare [Criptare la partizione di swap](#Criptare_la_partizione_di_swap) per maggiori informazioni.
 
@@ -330,7 +330,6 @@ First of all make sure the device mapper kernel module is loaded by executing th
 In order to format a desired partition as an encrypted LUKS partition execute:
 
  `# cryptsetup -c <cipher> -y -s <key size> luksFormat /dev/<partition name>` 
-
 ```
 Enter passphrase: <password>
 Verify passphrase: <password>
@@ -345,7 +344,7 @@ Check results:
 
 This should be repeated for all partitions except for `/boot` and possibly swap.
 
-The example below will create an encrypted root partition using the AES cipher in XTS mode (generally referred to as _XTS-AES_).
+The example below will create an encrypted root partition using the AES cipher in XTS mode (generally referred to as *XTS-AES*).
 
  `# cryptsetup -c aes-xts-plain -y -s 512 luksFormat /dev/sda2` 
 **Note:** If hibernation usage is planned, swap must be encrypted in this fashion; otherwise, if hibernation is not a planned feature for the system, encrypting the swap file will be performed in a alternative manner.
@@ -361,7 +360,6 @@ The unlocking process will map the partitions to a new device name using the dev
 In order to open an encrypted LUKS partition execute:
 
  `# cryptsetup luksOpen /dev/<partition name> <device-mapper name>` 
-
 ```
 Enter any LUKS passphrase: <password>
 key slot 0 unlocked.
@@ -453,7 +451,6 @@ Adding new keyslots is accomplished using cryptsetup with the `luksAddKey` actio
 Don't forget wiping unused keyslots with `luksKillSlot` as described in [#Wipe LUKS keyslots](#Wipe_LUKS_keyslots).)
 
  `# cryptsetup luksAddKey /dev/mapper/<device> (/path/to/<additionalkeyfile>)` 
-
 ```
 Enter any passphrase:
 Enter new passphrase for key slot:
@@ -488,7 +485,6 @@ A quick method (as opposed to setting up a [udev](/index.php/Udev "Udev") rule) 
 Plug the device in and print every file name under /dev/disk:
 
  `#ls -lR /dev/disk/` 
-
 ```
 /dev/disk/:
 total 0
@@ -532,9 +528,7 @@ In the following example a FAT partition is labeled as "Keys" and will always ge
 #mkdosfs -n >volume-name< /dev/sdb1
 
 ```
-
  `#blkid -o list` 
-
 ```
 device     fs_type label    mount point    UUID
 -------------------------------------------------------
@@ -612,7 +606,6 @@ to securely overwrite it. For overaged filesystems like FAT or ext2 this will su
 Add a keyslot for the temporary keyfile to the LUKS header:
 
  `# cryptsetup luksAddKey /dev/sda2 secretkey` 
-
 ```
 Enter any LUKS passphrase:
 key slot 0 unlocked.
@@ -674,7 +667,7 @@ We will write the key directly between the Master Boot Record (MBR) and the firs
 
 If you have a bootloader installed on your drive you have to adjust the values. E.g. [GRUB](/index.php/GRUB "GRUB") needs the first 16 sectors (actually, it depends on the type of the file system, so do not rely on this too much), so you would have to replace `seek=4` with `seek=16`; otherwise you would overwrite parts of your GRUB installation. When in doubt, take a look at the first 64 sectors of your drive and decide on your own where to place your key.
 
-_Optional_ If you do not know if you have enough free space before the first partition, you can do
+*Optional* If you do not know if you have enough free space before the first partition, you can do
 
 ```
 dd if=/dev/usbstick of=64sectors bs=512 count=64   # gives you copy of your first 64 sectors
@@ -724,7 +717,6 @@ In systems where suspend to disk is not a desired feature, it is possible to cre
 The `/etc/crypttab` is well commented and you can basically just uncomment the swap line and change <device> to a persistent symlink.
 
  `/etc/crypttab` 
-
 ```
 # <name>       <device>         <password>              <options>
 # swap         /dev/hdx4        /dev/urandom            swap,cipher=aes-cbc-essiv:sha256,size=256
@@ -757,7 +749,6 @@ Persistent block device naming is implemented with simple symlinks. Using UUID's
 Example line for the `/dev/sda2` symlink from above:
 
  `/etc/crypttab` 
-
 ```
 # <name>                      <device>                                   <password>     <options>
   swap  /dev/disk/by-id/ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470-part2  /dev/urandom   swap,cipher=aes-cbc-essiv:sha256,size=256
@@ -807,7 +798,6 @@ Now you have to create a hook to open the swap at boot time.
 *   Create a hook file containing the open command:
 
  `/lib/initcpio/hooks/openswap` 
-
 ```
  # vim: set ft=sh:
  run_hook ()
@@ -822,7 +812,6 @@ Now you have to create a hook to open the swap at boot time.
 *   Then create and edit the hook setup file:
 
  `/lib/initcpio/install/openswap` 
-
 ```
  # vim: set ft=sh:
  build ()
@@ -874,7 +863,7 @@ At boot time, the `openswap` hook will open the swap partition so the kernel res
 
 *   [Create the swap file](/index.php/HOW_TO:_Create_swap_file#Swap_file_creation "HOW TO: Create swap file") (e.g. `/swapfile`) inside the mounted filesystem of your chosen mapped partition. Be sure to activate it with `swapon` and also add it to your `/etc/fstab` file afterward.
 
-*   Set up your system to resume from your chosen mapped partition. For example, if you use [GRUB](/index.php/GRUB "GRUB") with kernel hibernation support, add `resume=`_your chosen mapped partition_ and `resume_offset=`_see calculation command below_ to the kernel line in `/boot/grub/menu.lst`. A line with encrypted root partition can look like this:
+*   Set up your system to resume from your chosen mapped partition. For example, if you use [GRUB](/index.php/GRUB "GRUB") with kernel hibernation support, add `resume=`*your chosen mapped partition* and `resume_offset=`*see calculation command below* to the kernel line in `/boot/grub/menu.lst`. A line with encrypted root partition can look like this:
 
 ```
 kernel /vmlinuz-linux cryptdevice=/dev/sda2:rootDevice root=/dev/mapper/rootDevice resume=/dev/mapper/rootDevice resume_offset=123456789 ro
@@ -980,11 +969,11 @@ That is basically what is necessary at this point before installing the base sys
 
 ### Configure initramfs
 
-One important point is to add the hooks relevant for your particular install in the correct order to `/etc/mkinitcpio.conf`. The one you _have_ to add when encrypting the root filesystem is `encrypt`. A recommended hook for LUKS encrypted blockdevices is `shutdown` to ensure controlled unmounting during system shutdown. Others needed, e.g. `keymap`, should be clear from other manual steps you follow during the installation and further details in the following. For detailed information about initramfs configuration and available Hooks refer to [Mkinitcpio#HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio").
+One important point is to add the hooks relevant for your particular install in the correct order to `/etc/mkinitcpio.conf`. The one you *have* to add when encrypting the root filesystem is `encrypt`. A recommended hook for LUKS encrypted blockdevices is `shutdown` to ensure controlled unmounting during system shutdown. Others needed, e.g. `keymap`, should be clear from other manual steps you follow during the installation and further details in the following. For detailed information about initramfs configuration and available Hooks refer to [Mkinitcpio#HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio").
 
-**Note:** The `encrypt` hook is only needed if your **root** partition is a _LUKS_ partition (or a LUKS partition that needs to be mounted _before_ root). The `encrypt` hook is not needed for any other encrypted partitions (swap, for example). System initialization scripts (`/etc/rc.sysinit` and `/etc/crypttab` among others) take care of those.
+**Note:** The `encrypt` hook is only needed if your **root** partition is a *LUKS* partition (or a LUKS partition that needs to be mounted *before* root). The `encrypt` hook is not needed for any other encrypted partitions (swap, for example). System initialization scripts (`/etc/rc.sysinit` and `/etc/crypttab` among others) take care of those.
 
-It is important that the `encrypt` hook comes _before_ the `filesystems` hook (in case you are using **LVM on LUKS**, the order should be: `encrypt lvm2 filesystems`), so make sure that your `HOOKS` array looks something like this:
+It is important that the `encrypt` hook comes *before* the `filesystems` hook (in case you are using **LVM on LUKS**, the order should be: `encrypt lvm2 filesystems`), so make sure that your `HOOKS` array looks something like this:
 
  `etc/mkinitcpio.conf`  `HOOKS="(base udev) ... **encrypt** ... filesystems ..."` 
 
@@ -1219,7 +1208,7 @@ dd if=./backup.img of=/dev/sdX bs=512 count=4040
 
 ## Encrypting a loopback filesystem
 
-_[This paragraph has been merged from another page; its consistency with the other paragraphs should be improved]_
+*[This paragraph has been merged from another page; its consistency with the other paragraphs should be improved]*
 
 ### Preparation and mapping
 
@@ -1342,7 +1331,7 @@ dd if=/dev/urandom bs=1M count=1024 | cat - >> /bigsecret
 
 Be careful to really use TWO `>`, or you will override your current container!
 
-You could use `/dev/zero` instead of `/dev/urandom` to significantly speed up the process, but with `/dev/zero` your encrypted filesystems will _not be as secure_. (A better option to create random data quicker than `/dev/urandom` is `frandom` [[1]](https://aur.archlinux.org/packages.php?ID=9869), available from the [AUR](/index.php/AUR "AUR")). A faster (almost instant) method than dd is `truncate` , but its use has the same security implications as using /dev/zero. The size passed to truncate is the final size to make the file, so don't use a value less than that of the current file or you will lose data. e.g. to increase a 20G file by 10G: truncate -s 30G filename.
+You could use `/dev/zero` instead of `/dev/urandom` to significantly speed up the process, but with `/dev/zero` your encrypted filesystems will *not be as secure*. (A better option to create random data quicker than `/dev/urandom` is `frandom` [[1]](https://aur.archlinux.org/packages.php?ID=9869), available from the [AUR](/index.php/AUR "AUR")). A faster (almost instant) method than dd is `truncate` , but its use has the same security implications as using /dev/zero. The size passed to truncate is the final size to make the file, so don't use a value less than that of the current file or you will lose data. e.g. to increase a 20G file by 10G: truncate -s 30G filename.
 
 Now we have to map the container to the loop device:
 

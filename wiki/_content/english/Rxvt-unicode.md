@@ -1,4 +1,4 @@
-[rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html) is a highly customizable [terminal emulator](https://en.wikipedia.org/wiki/Terminal_emulator "wikipedia:Terminal emulator") forked from [rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt"). Commonly known as `urxvt`, rxvt-unicode can be [daemonized](/index.php/Daemon "Daemon") to run clients within a single [process](https://en.wikipedia.org/wiki/Process_(computing) "wikipedia:Process (computing)") in order to minimize the use of system resources. Developed by Marc Lehmann, some of the more outstanding features of rxvt-unicode include international language support through [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode"), the ability to display multiple font types and support for [Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl") extensions.
+[rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html) is a highly customizable [terminal emulator](https://en.wikipedia.org/wiki/Terminal_emulator in order to minimize the use of system resources. Developed by Marc Lehmann, some of the more outstanding features of rxvt-unicode include international language support through [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode"), the ability to display multiple font types and support for [Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl") extensions.
 
 ## Contents
 
@@ -65,9 +65,9 @@ See the [rxvt-unicode reference page](http://pod.tst.eu/http://cvs.schmorp.de/rx
 
 ### Creating ~/.Xresources
 
-The look, feel, and function of rxvt-unicode is controlled by command-line arguments and/or [X resources](/index.php/X_resources "X resources"). X resources can be set using `~/.Xresources` and _xrdb_ ([xorg-xrdb](https://www.archlinux.org/packages/?name=xorg-xrdb)), see the [X resources](/index.php/X_resources "X resources") article for details.
+The look, feel, and function of rxvt-unicode is controlled by command-line arguments and/or [X resources](/index.php/X_resources "X resources"). X resources can be set using `~/.Xresources` and *xrdb* ([xorg-xrdb](https://www.archlinux.org/packages/?name=xorg-xrdb)), see the [X resources](/index.php/X_resources "X resources") article for details.
 
-Append commented list of all _rxvt_ resources to your `~/.Xresources` file:
+Append commented list of all *rxvt* resources to your `~/.Xresources` file:
 
 ```
  urxvt --help 2>&1| sed -n '/:  /s/^ */! URxvt*/gp' >> ~/.Xresources
@@ -76,7 +76,12 @@ Append commented list of all _rxvt_ resources to your `~/.Xresources` file:
 
 Or for a commented list + helpful descriptions:
 
- `TERM=rxvt-unicode-256color command man -Pcat urxvt | sed -n '/depth: b/,/^BA/p'|sed '$d'|sed '/^       [a-z]/s/^ */^/g'|sed -e :a -e 'N;s/\n/@@/g;ta;P;D'|sed 's,\^\([^@]\+\)@*[\t ]*\([^\^]\+\),! \2\n! URxvt*\1\n\n,g'|sed 's,@@\(  \+\),\n\1,g'|sed 's,@*$,,g'|sed '/^[^!]/d'|tr -d "'\`" >> ~/.Xresources` 
+ `TERM=rxvt-unicode-256color command man -Pcat urxvt | sed -n '/depth: b/,/^BA/p'|sed '$d'|sed '/^       [a-z]/s/^ */^/g'|sed -e :a -e 'N;s/
+/@@/g;ta;P;D'|sed 's,\^\([^@]\+\)@*[\t ]*\([^\^]\+\),! \2
+! URxvt*\1
+
+,g'|sed 's,@@\(  \+\),
+\1,g'|sed 's,@*$,,g'|sed '/^[^!]/d'|tr -d "'\`" >> ~/.Xresources` 
 **Note:** Command-line arguments override, and take precedence over resource settings
 
 ### True transparency
@@ -93,7 +98,6 @@ $ urxvt -depth 32 -bg rgba:3f00/3f00/3f00/dddd
 Using the configuration file:
 
  `~/.Xresources` 
-
 ```
 URxvt.depth: 32
 URxvt.background: rgba:1111/1111/1111/dddd
@@ -103,7 +107,6 @@ URxvt.background: rgba:1111/1111/1111/dddd
 or
 
  `~/.Xresources` 
-
 ```
 URxvt.depth: 32
 URxvt.background: [95]#000000
@@ -121,7 +124,6 @@ To use a color i.e. #302351 with the rgba:rrrr/gggg/bbbb/aaaa syntax it would be
 If there is no need for true transparency, or if compositing uses too many resources on your system, you can get transparency working in the following way:
 
  `~/.Xresources` 
-
 ```
 ! Xresources file
 
@@ -171,7 +173,7 @@ URxvt*scrollTtyKeypress: true
 
 ### Scrollback buffer in secondary screen
 
-When you scroll a pager in a _secondary screen_(e.g. `less` without the `**-X**` option), it may be a good idea to disable the scrollback buffer to be able to scroll in the pager _itself_, instead of the terminal's buffer: this is default and unchangeable behaviour in konsole and vte-based terminals. In urxvt, to disable the scrollback buffer for the _secondary screen_:
+When you scroll a pager in a *secondary screen*(e.g. `less` without the `**-X**` option), it may be a good idea to disable the scrollback buffer to be able to scroll in the pager *itself*, instead of the terminal's buffer: this is default and unchangeable behaviour in konsole and vte-based terminals. In urxvt, to disable the scrollback buffer for the *secondary screen*:
 
 ```
 URxvt.secondaryScreen: 1
@@ -179,7 +181,7 @@ URxvt.secondaryScroll: 0
 
 ```
 
-The above configuration works as expected except when scrolling with a mouse wheel. When you scroll a pager in the _secondary screen_ with the mouse wheel - and there has been something in the scrollback buffer, instead of the pager itself - the scrollback buffer will be scrolled by the mouse wheel. To solve this issue, it is necessary to introduce a new option into rxvt-unicode[[1]](https://bbs.archlinux.org/viewtopic.php?id=132150). A patched rxvt-unicode is available in AUR as [rxvt-unicode-better-wheel-scrolling](https://aur.archlinux.org/packages/rxvt-unicode-better-wheel-scrolling/). After installing it, add the following to the configuration file:
+The above configuration works as expected except when scrolling with a mouse wheel. When you scroll a pager in the *secondary screen* with the mouse wheel - and there has been something in the scrollback buffer, instead of the pager itself - the scrollback buffer will be scrolled by the mouse wheel. To solve this issue, it is necessary to introduce a new option into rxvt-unicode[[1]](https://bbs.archlinux.org/viewtopic.php?id=132150). A patched rxvt-unicode is available in AUR as [rxvt-unicode-better-wheel-scrolling](https://aur.archlinux.org/packages/rxvt-unicode-better-wheel-scrolling/). After installing it, add the following to the configuration file:
 
 ```
 URxvt.secondaryWheel: 1
@@ -278,7 +280,6 @@ $ urxvt -geometry 80x3 -name 'bashrun' -e sh -c "/bin/bash -i -t"
 By default the distance between characters can feel too wide. It's controlled by this entry:
 
  `~/.Xresources` 
-
 ```
 URxvt.letterSpace: -1
 
@@ -437,7 +438,6 @@ URxvt.keysym.Control-Shift-R: perl:tabbedex:rename_tab
 ```
 
 **Note:** Redefining the keys used for the user commands will not disable the default mappings, you have to set the X resource `no-tabbedex-keys` for that. However, currently it is not included in [urxvt-tabbedex](https://aur.archlinux.org/packages/urxvt-tabbedex/) package. Consider using [urxvt-tabbedex-git](https://aur.archlinux.org/packages/urxvt-tabbedex-git/) package instead:
-
 ```
 URxvt.tabbed.no-tabbedex-keys: true
 
@@ -448,7 +448,6 @@ URxvt.tabbed.no-tabbedex-keys: true
 You can install the [AUR](/index.php/AUR "AUR") package [urxvt-fullscreen](https://aur.archlinux.org/packages/urxvt-fullscreen/), and then set a key binding to put urxvt fullscreen.
 
  `~/.Xresources` 
-
 ```
 ...
 URxvt.perl-ext-common: ...,fullscreen,...
@@ -510,7 +509,6 @@ By default, rxvt-unicode is compiled with color support. In addition to the defa
 A sample `~/.Xresources` for an urxvt terminal with default colors but white fonts on a black background would be written as follow:
 
  `~/.Xresources` 
-
 ```
 ! Background color
 URxvt*background: black
@@ -544,7 +542,6 @@ It is also possible to specify the color values of foreground, background, curso
 By default `urxvt` uses the same colors as `xterm` use except one. Add the following line at the end of your `~/.Xresources` for xterm-like colors:
 
  `~/.Xresources` 
-
 ```
 ...
 URxvt*color12: rgb:5c/5c/ff
@@ -572,7 +569,7 @@ and finally restart `urxvt`.
 
 #### Xinitrc
 
-See the _Examples_ section in `man urxvtd`. This is the preferred option.
+See the *Examples* section in `man urxvtd`. This is the preferred option.
 
 #### systemd
 
@@ -581,7 +578,6 @@ See the _Examples_ section in `man urxvtd`. This is the preferred option.
 System service:
 
  `/etc/systemd/system/urxvtd@.service` 
-
 ```
 [Unit]
 Description=RXVT-Unicode Daemon
@@ -598,14 +594,13 @@ WantedBy=multi-user.target
 Pass the username when [starting the service](/index.php/Systemd#Using_units "Systemd"):
 
 ```
-urxvtd@_username_.service
+urxvtd@*username*.service
 
 ```
 
 For a [systemd/User](/index.php/Systemd/User "Systemd/User") service, place the following unit files in `~/.config/systemd/user`:
 
  `urxvtd.service` 
-
 ```
 [Unit]
 Description=Urxvt Terminal Daemon
@@ -616,12 +611,10 @@ ExecStart=/usr/bin/urxvtd -o -q
 Environment=RXVT_SOCKET=%t/urxvtd-%H
 
 [Install]
-WantedBy=_MyTarget_.target
+WantedBy=*MyTarget*.target
 
 ```
-
  `urxvtd.socket` 
-
 ```
 [Unit]
 Description=urxvt daemon (socket activation)
@@ -694,7 +687,9 @@ Skottish[[6]](https://bbs.archlinux.org/viewtopic.php?pid=506845#p506845) create
 
 sub on_sel_grab {
     my $query=quotemeta $_[0]->selection;
-    $query=~ s/\n/\\n/g;
+    $query=~ s/
+/\
+/g;
     $query=~ s/\r/\\r/g;
     system( "echo -en " . $query . " | xsel -i -b -p" );
 }
@@ -844,7 +839,7 @@ URxvt.perl-ext-common: default,matcher,tabbed
 | Shift+Right | Switch to the tab right of the current one |
 | Shift+Down | Create a new tab |
 
-You can also use your mouse to switch the tabs by clicking the wished one and create a new tab by clicking on _[NEW].\\_
+You can also use your mouse to switch the tabs by clicking the wished one and create a new tab by clicking on *[NEW].\\*
 
 To close a tab just enter `exit` like you would to normally close a terminal.
 
@@ -899,7 +894,7 @@ The [Openbox per-app settings](http://openbox.org/wiki/Help:Applications) can be
 
 ### ~/.Xresources is not being sourced
 
-In some cases where _urxvt_ does not acknowledge `~/.Xresources`, you may need to add `xrdb -merge ~/.Xresources` to your `~/.xinitrc` file. See [X resources](/index.php/X_resources "X resources") for more information.
+In some cases where *urxvt* does not acknowledge `~/.Xresources`, you may need to add `xrdb -merge ~/.Xresources` to your `~/.xinitrc` file. See [X resources](/index.php/X_resources "X resources") for more information.
 
 ### Transparency not working after upgrade to v9.09
 
@@ -938,12 +933,12 @@ TermExec = ${Terminal} -e
 
 Some Debian GNU/Linux users seem to have this problem, although no specific details were reported so far. It is possible that this is caused by the wrong TERM setting, although the details of whether and how this can happen are unknown, as TERM=rxvt should offer a compatible keymap. See the answer to the previous question, and please report if that helped.
 
-However, using the _xmodmap_ program ([xorg-xmodmap](https://www.archlinux.org/packages/?name=xorg-xmodmap)), you can re-map your number pad keys back.
+However, using the *xmodmap* program ([xorg-xmodmap](https://www.archlinux.org/packages/?name=xorg-xmodmap)), you can re-map your number pad keys back.
 
 1\. Check the keycode that your numerical keypad (numpad) generates using `xev` program.
 
 *   Start the `xev` program
-*   Press your number pad keys and look for _... keycode xxx ..._ in `xev`'s output. For example, numpad 1 in my keyboard is also "End" key, that have a '**keycode 87'**.
+*   Press your number pad keys and look for *... keycode xxx ...* in `xev`'s output. For example, numpad 1 in my keyboard is also "End" key, that have a '**keycode 87'**.
 
 2\. Create or modify your xmodmap file, usually `~/.Xmodmap`, with the content representing your keycode.
 

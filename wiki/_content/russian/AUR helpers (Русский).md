@@ -193,7 +193,7 @@ Spinach is a tiny Bash AUR helper with few dependencies.
 
 ### srcman
 
-srcman is a pacman/makepkg wrapper written in Bash, which transparently handles pacman operations on 'source packages'. This means, for example, that packages can be specified for installation either explicitly (pacman's -U operation) or can be installed from a (source) repository (-S operation). The address of an AUR pacman database can be found in the corresponding Форум thread, by the way. The primary goal of this project is to provide a complete pacman wrapper and therefore, srcman supports all current pacman operations for binary _and_ source packages.
+srcman is a pacman/makepkg wrapper written in Bash, which transparently handles pacman operations on 'source packages'. This means, for example, that packages can be specified for installation either explicitly (pacman's -U operation) or can be installed from a (source) repository (-S operation). The address of an AUR pacman database can be found in the corresponding Форум thread, by the way. The primary goal of this project is to provide a complete pacman wrapper and therefore, srcman supports all current pacman operations for binary *and* source packages.
 
 *   Сайт: [https://bbs.archlinux.org/viewtopic.php?id=65501](https://bbs.archlinux.org/viewtopic.php?id=65501)
 *   Пакет: [https://aur.archlinux.org/packages.php?ID=23945](https://aur.archlinux.org/packages.php?ID=23945)

@@ -39,7 +39,7 @@
 
 [Instala](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [gnupg](https://www.archlinux.org/packages/?name=gnupg), disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
 
-Esto instalará también [pinentry](https://www.archlinux.org/packages/?name=pinentry), una colección de diálogos sencillos para introducción de PINs o contraseñas que GnuPG utiliza para la introducción de frases de acceso. _pinenetry_ está señalado por el enlace simbólico `/usr/bin/pinentry`, que por defecto apunta a `/usr/bin/pinentry-gtk-2`.
+Esto instalará también [pinentry](https://www.archlinux.org/packages/?name=pinentry), una colección de diálogos sencillos para introducción de PINs o contraseñas que GnuPG utiliza para la introducción de frases de acceso. *pinenetry* está señalado por el enlace simbólico `/usr/bin/pinentry`, que por defecto apunta a `/usr/bin/pinentry-gtk-2`.
 
 ## Variables de Entorno
 
@@ -48,15 +48,15 @@ Esto instalará también [pinentry](https://www.archlinux.org/packages/?name=pin
 GnuPG usa `$GNUPGHOME` para localizar el directorio donde se almacenan todos los archivos de configuración. Por defecto `$GNUPGHOME` no está establecida y en su lugar se usa tu `$HOME`, por lo que encontrarás un directorio `~/.gnupg` inmediatamente después de la instalación de GnuPG. Puedes cambiar esta configuración por defecto añadiendo esta línea a uno de tus [archivos de inicio](/index.php/Autostarting_(Espa%C3%B1ol) "Autostarting (Español)"):
 
 ```
-export GNUPGHOME="_/path/to/directory_"
+export GNUPGHOME="*/path/to/directory*"
 
 ```
 
-**Nota:** Por defecto, el directorio gnupg tiene sus permisos establecidos en _700_ y los archivos que contiene tienen sus permisos establecidos en _600_. Solo el propietario del directorio tiene permiso para leer, escribir y acceder a los archivos (_r_,_w_,_x_). Esto es así por razones de seguridad y no debería cambiarse. En el caso de que este directorio o cualquiera de los archivos en su interior no siga esta medida de seguridad, recibirás advertencias sobre un archivo inseguro y sobre los permisos del directorio de inicio.
+**Nota:** Por defecto, el directorio gnupg tiene sus permisos establecidos en *700* y los archivos que contiene tienen sus permisos establecidos en *600*. Solo el propietario del directorio tiene permiso para leer, escribir y acceder a los archivos (*r*,*w*,*x*). Esto es así por razones de seguridad y no debería cambiarse. En el caso de que este directorio o cualquiera de los archivos en su interior no siga esta medida de seguridad, recibirás advertencias sobre un archivo inseguro y sobre los permisos del directorio de inicio.
 
 ### GPG_AGENT_INFO
 
-Se usa `GPG_AGENT_INFO` para localizar el _agente gpg_. Está compuesto de tres campos delimitados por dos puntos:
+Se usa `GPG_AGENT_INFO` para localizar el *agente gpg*. Está compuesto de tres campos delimitados por dos puntos:
 
 1.  ruta al Socket de Dominio Unix
 2.  PID de gpg-agent
@@ -68,27 +68,26 @@ Ejemplo: `GPG_AGENT_INFO=/tmp/gpg-eFqmSC/S.gpg-agent:7795:1`. Cuando se inicia g
 
 ## Archivo de configuración
 
-Por defecto es `~/.gnupg/gpg.conf`. Si deseas cambiar la ubicación por defecto, ejecuta gpg mediante `$ gpg --homedir _ruta/al/archivo_` o usa la variable `$GNUPGHOME`.
+Por defecto es `~/.gnupg/gpg.conf`. Si deseas cambiar la ubicación por defecto, ejecuta gpg mediante `$ gpg --homedir *ruta/al/archivo*` o usa la variable `$GNUPGHOME`.
 
 Añade a este archivo todas las opciones que quieras. Encontrarás un archivo de muestra en `usr/share/gnupg/gpg-conf.skel`.
 
 El siguiente es un archivo de configuración básico:
 
  `~/.gnupg/gpg.conf` 
-
 ```
-default-key _nombre_      # útil en caso de que gestiones varias claves y quieras usar una por defecto
-keyring _archivo_         # añadirá _archivo_ a la lista actual de anillos de claves
-trustdb-name _archivo_    # usa _archivo_ en lugar de la base de datos de confianza por defecto
-homedir _dir_             # establece el nombre del directorio de inicio de gnupg en _dir_ en lugar de ~/.gnupg
+default-key *nombre*      # útil en caso de que gestiones varias claves y quieras usar una por defecto
+keyring *archivo*         # añadirá *archivo* a la lista actual de anillos de claves
+trustdb-name *archivo*    # usa *archivo* en lugar de la base de datos de confianza por defecto
+homedir *dir*             # establece el nombre del directorio de inicio de gnupg en *dir* en lugar de ~/.gnupg
 display-charset utf-8       # ignora las traducciones y supone que el SO usa una codificación nativa UTF-8
-keyserver _nombre_        # usa _nombre_ como tu servidor de claves
+keyserver *nombre*        # usa *nombre* como tu servidor de claves
 no-greeting                 # suprime el mensaje inicial de copyright
 armor                       # crea una salida ASCII blindada. Por defecto se usa el formato binario OpenPGP
 
 ```
 
-Si deseas configurar algunas opciones por defecto para usuarios nuevos, coloca los archivos de configuración en `/etc/skel/.gnupg/`. Cuando se añada un nuevo usuario al sistema, los archivos de este directorio se copiarán a su directorio de inicio de GnuPG. También hay un sencillo _script_ llamado _addgnupghome_ que puedes usar para crear nuevos directorios de inicio de GnuPG para los usuarios ya existentes:
+Si deseas configurar algunas opciones por defecto para usuarios nuevos, coloca los archivos de configuración en `/etc/skel/.gnupg/`. Cuando se añada un nuevo usuario al sistema, los archivos de este directorio se copiarán a su directorio de inicio de GnuPG. También hay un sencillo *script* llamado *addgnupghome* que puedes usar para crear nuevos directorios de inicio de GnuPG para los usuarios ya existentes:
 
 ```
 # addgnupghome usuario1 usuario2
@@ -99,14 +98,13 @@ Esto añadirá los respectivos `/home/user1/.gnupg` y `/home/user2/.gnupg` y cop
 
 ## Gestión básica de claves
 
-**Nota:** Siempre que se requiera un _`<user-id>`_ en un comando, este se puede especificar mediante el ID de la clave, la huella, una parte del nombre o del correo electrónico, etc. GnuPG es flexible con esto.
+**Nota:** Siempre que se requiera un *`<user-id>`* en un comando, este se puede especificar mediante el ID de la clave, la huella, una parte del nombre o del correo electrónico, etc. GnuPG es flexible con esto.
 
 ### Crear una clave
 
 Configura GnuPG para que use en primer lugar los algoritmos más fuertes:
 
  `~/.gnupg/gpg.conf` 
-
 ```
 personal-digest-preferences SHA512
 cert-digest-algo SHA512
@@ -130,12 +128,12 @@ Aunque tener una fecha de caducidad para las subclaves no es necesario técnicam
 
 ### Gestionar una clave
 
-*   La ejecución del comando `gpg --edit-key _<user-id>_` te mostrará un menú que te permite hacer la mayoría de las tareas relacionadas con la gestión de una clave. El siguiente es un ejemplo de como establecer una fecha de caducidad:
+*   La ejecución del comando `gpg --edit-key *<user-id>*` te mostrará un menú que te permite hacer la mayoría de las tareas relacionadas con la gestión de una clave. El siguiente es un ejemplo de como establecer una fecha de caducidad:
 
 ```
-$ gpg --edit-key _<user-id>_
-> key _number_
-> expire _yyyy-mm-dd_
+$ gpg --edit-key *<user-id>*
+> key *number*
+> expire *yyyy-mm-dd*
 > save
 > quit
 
@@ -155,28 +153,28 @@ Algunos comandos útiles:
 *   Generar una versión ASCII de tu clave pública (p.ej. para distribuirla por e-mail):
 
 ```
-$ gpg --armor --output public.key --export _<user-id>_
+$ gpg --armor --output public.key --export *<user-id>*
 
 ```
 
 *   Registrar tu clave en un servidor de claves PGP público, para que otros puedan obtener tu clave sin tener que contactarte directamente:
 
 ```
-$ gpg  --keyserver pgp.mit.edu --send-keys _<user-id>_
+$ gpg  --keyserver pgp.mit.edu --send-keys *<user-id>*
 
 ```
 
 *   Firmar y cifrar para el usuario Bob.
 
 ```
-$ gpg -se -r Bob _file_
+$ gpg -se -r Bob *file*
 
 ```
 
 *   hacer una firma de texto plano.
 
 ```
-$ gpg --clearsign _file_
+$ gpg --clearsign *file*
 
 ```
 
@@ -191,7 +189,7 @@ Si has configurado tus subclaves para que caduquen después de un tiempo, puedes
 *   Crear una nueva subclave (repetir tanto para la clave de firma como para la de cifrado).
 
 ```
-$ gpg --edit-key _<user-id>_
+$ gpg --edit-key *<user-id>*
 > addkey
 
 ```
@@ -208,7 +206,7 @@ Y responde a las preguntas que te haga a continuación (ver la sección anterior
 *   Subir la clave a un servidor de claves.
 
 ```
-$ gpg  --keyserver pgp.mit.edu --send-keys _<user-id>_
+$ gpg  --keyserver pgp.mit.edu --send-keys *<user-id>*
 
 ```
 
@@ -255,7 +253,7 @@ $ gpg --list-secret-keys
 
 ## Cifrar y descifrar
 
-Cuando se cifra y se descifra es posible tener en uso más de una clave privada. Si esto ocurre necesitas seleccionar la clave activa. Esto se puede hacer usando la opción `-u _<user-id>_` o la opción `--local-user _<user-id>_`. Esto hace que se use la clave especificada en lugar de la clave por defecto.
+Cuando se cifra y se descifra es posible tener en uso más de una clave privada. Si esto ocurre necesitas seleccionar la clave activa. Esto se puede hacer usando la opción `-u *<user-id>*` o la opción `--local-user *<user-id>*`. Esto hace que se use la clave especificada en lugar de la clave por defecto.
 
 Para cifrar un archivo:
 
@@ -264,7 +262,7 @@ $ gpg --encrypt -o secret.tar.gpg secret.tar
 
 ```
 
-*   Si quieres cambiar el destinatario, lo puedes hacer con la opción `-r _<user-id>_` (o `--recipient _<user-id>_`).
+*   Si quieres cambiar el destinatario, lo puedes hacer con la opción `-r *<user-id>*` (o `--recipient *<user-id>*`).
 *   Puedes usar GnuPG para cifrar tus documentos privados, perso solo un archivo a la vez. Si quieres cifrar directorios o un sistema de archivos completo, deberías considerar la utilización de [TrueCrypt](/index.php?title=TrueCrypt_(Espa%C3%B1ol)&action=edit&redlink=1 "TrueCrypt (Español) (page does not exist)") o [EncFS](/index.php?title=EncFS_(Espa%C3%B1ol)&action=edit&redlink=1 "EncFS (Español) (page does not exist)"), aunque siempre puedes empaquetar varios archivos juntos y después cifrar el paquete.
 
 Para descifrar un archivo, usa:
@@ -285,24 +283,23 @@ Primero crea un archivo con tu contraseña. **Necesitas** dejar **una** línea e
 Después ejecuta:
 
 ```
-$ gpg -e -a -r _<user-id>_ _tu_archivo_de_contraseña_
+$ gpg -e -a -r *<user-id>* *tu_archivo_de_contraseña*
 
 ```
 
 `-e` es para cifrar, `-a` para una salida blindada (salida ASCII), `-r` para el ID de usuario del destinatario.
 
-Tras hacer esto tendrás un nuevo archivo `_tu_archivo_de_contraseña_.asc`.
+Tras hacer esto tendrás un nuevo archivo `*tu_archivo_de_contraseña*.asc`.
 
 ## gpg-agent
 
-_gpg-agent_ se usa principalmente como demonio para solicitar y almacenar en caché la contraseña de la clave. Esto es útil si se usa GnuPG desde un programa externo como un cliente de correo. Se puede activar añadiendo la siguiente línea a `gpg.conf`:
+*gpg-agent* se usa principalmente como demonio para solicitar y almacenar en caché la contraseña de la clave. Esto es útil si se usa GnuPG desde un programa externo como un cliente de correo. Se puede activar añadiendo la siguiente línea a `gpg.conf`:
 
  `~/.gnupg/gpg.conf`  `use-agent` 
 
-Esto le indica a GnuPG que debe usar el agente siempre que se necesite la contraseña. Sin embargo, el agente necesita estar ya en ejecución. Para arrancarlo automáticamente, añade la siguiente entrada a tu `.xinitrc` o `.bash_profile`. Recuerda cambiar la ruta de _envfile_ si cambiaste tu `$GNUPGHOME`.
+Esto le indica a GnuPG que debe usar el agente siempre que se necesite la contraseña. Sin embargo, el agente necesita estar ya en ejecución. Para arrancarlo automáticamente, añade la siguiente entrada a tu `.xinitrc` o `.bash_profile`. Recuerda cambiar la ruta de *envfile* si cambiaste tu `$GNUPGHOME`.
 
  `~/.bash_profile` 
-
 ```
 envfile="$HOME/.gnupg/gpg-agent.env"
 if [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2>/dev/null; then
@@ -315,7 +312,7 @@ export SSH_AUTH_SOCK   # habilita gpg-agent para ssh
 
 ```
 
-Cierra tu sesión y vuelve a iniciarla. Comprueba si _gpg-agent_ ha sido activado:
+Cierra tu sesión y vuelve a iniciarla. Comprueba si *gpg-agent* ha sido activado:
 
 ```
 $ pgrep gpg-agent
@@ -327,7 +324,6 @@ $ pgrep gpg-agent
 Se puede configurar **gpg-agent** mediante el archivo `~/.gnupg/gpg-agent.conf`. Las opciones de configuración están listadas en `man gpg-agent`. Por ejemplo puedes cambiar el tiempo de vida de la caché para las claves no usadas:
 
  `~/.gnupg/gpg-agent.conf` 
-
 ```
 default-cache-ttl 3600
 
@@ -351,7 +347,6 @@ Finalmente, el agente necesita saber cómo solicitar la contraseña al usuario. 
 Por defecto se usa un diálogo gtk. Hay otras opciones (ver `info pinentry`). Para cambiar la implementación del diálogo, usa la opción de configuración `pinentry-program`:
 
  `~/.gnupg/gpg-agent.conf` 
-
 ```
 
 # PIN entry program
@@ -374,7 +369,6 @@ Es posible usar el [Systemd/User](/index.php/Systemd/User_(Espa%C3%B1ol) "System
 Crea un archivo de unidad de systemd:
 
  `~/.config/systemd/user/gpg-agent.service` 
-
 ```
 [Unit]
 Description=GnuPG private key agent
@@ -387,7 +381,7 @@ ExecStop=/usr/bin/pkill gpg-agent
 Restart=on-abort
 
 [Install]
-WantedBy=_MyTarget_.target
+WantedBy=*MyTarget*.target
 ```
 
 **Nota:**
@@ -398,19 +392,19 @@ WantedBy=_MyTarget_.target
 
 **Sugerencia:**
 
-Para asegurarte de que gpg-agent está ejecutándose y esperando una conexión, simplemente ejecuta este comando: `$ gpg-connect-agent`. Si tu configuración es válida, aparecerá un _prompt_ (escribe _bye_ y _quit_ para cerrar la conexión y salir)
+Para asegurarte de que gpg-agent está ejecutándose y esperando una conexión, simplemente ejecuta este comando: `$ gpg-connect-agent`. Si tu configuración es válida, aparecerá un *prompt* (escribe *bye* y *quit* para cerrar la conexión y salir)
 
 ### Frase de acceso desatendida
 
 A partir de GnuPG 2.1.0 se requiere el uso de gpg-agent y pinentry; esto puede romper la compatibilidad hacia atrás para frases de acceso redirigidas desde STDIN usando la opción `--passphrase-fd 0`. Para tener la misma funcionalidad que en versiones anteriores, se deben hacer dos cosas:
 
-Primero, editar la configuración de gpg-agent para permitir el modo _loopback_ de pinentry:
+Primero, editar la configuración de gpg-agent para permitir el modo *loopback* de pinentry:
 
  `~/.gnupg/gpg-agent.conf`  `allow-loopback-pinentry` 
 
 Reinicia el proceso gpg-agent si está en ejecución para que el cambio tenga efecto.
 
-Segundo, la aplicación debe ser actualizada para incluir un parámetro para usar el modo _loopback_, como este:
+Segundo, la aplicación debe ser actualizada para incluir un parámetro para usar el modo *loopback*, como este:
 
 ```
 $ gpg --pinentry-mode loopback ...
@@ -420,7 +414,7 @@ $ gpg --pinentry-mode loopback ...
 ...o, si esto no es posible, añadir la opción en la configuración:
 
  `~/.gnupg/gpg.conf`  `pinentry-mode loopback` 
-**Nota:** Es posible que establecer la configuración **pinentry-mode loopback** en _gpg.conf_ pueda afectar a otras funcionalidades. Por ello se recomienda usar la opción de la línea de comandos siempre que sea posible. [[1]](https://bugs.g10code.com/gnupg/issue1772)
+**Nota:** Es posible que establecer la configuración **pinentry-mode loopback** en *gpg.conf* pueda afectar a otras funcionalidades. Por ello se recomienda usar la opción de la línea de comandos siempre que sea posible. [[1]](https://bugs.g10code.com/gnupg/issue1772)
 
 ## Fiestas de firmado de claves
 
@@ -430,7 +424,7 @@ El protocolo de firmado de claves [Zimmermann-Sassaman](https://en.wikipedia.org
 
 ### caff
 
-Para un proceso más fácil de firmado de claves y envío de firmas a los propietarios después de una fiesta de firmado de claves, puedes usar la herramienta _caff_. Se puede instalar desde el AUR mediante el paquete [caff-svn](https://aur.archlinux.org/packages/caff-svn/) o puede estar incluída con otras herramientas útiles en el paquete [signing-party-svn](https://aur.archlinux.org/packages/signing-party-svn/). En cualquier caso, habrá un montón de dependencias al instalarla desde el AUR. En su lugar, puedes instalarla desde CPAN con
+Para un proceso más fácil de firmado de claves y envío de firmas a los propietarios después de una fiesta de firmado de claves, puedes usar la herramienta *caff*. Se puede instalar desde el AUR mediante el paquete [caff-svn](https://aur.archlinux.org/packages/caff-svn/) o puede estar incluída con otras herramientas útiles en el paquete [signing-party-svn](https://aur.archlinux.org/packages/signing-party-svn/). En cualquier caso, habrá un montón de dependencias al instalarla desde el AUR. En su lugar, puedes instalarla desde CPAN con
 
 ```
 cpanm Any::Moose
@@ -444,7 +438,7 @@ Para enviar las firmas a sus propietarios necesitas un [MTA](https://en.wikipedi
 
 **Nota:** [pcsclite](https://www.archlinux.org/packages/?name=pcsclite) y [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat) tienen que estar instalados, y el servicio [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") incluído `pcscd.service` tiene que estar arrancado.
 
-GnuPG usa _scdaemon_ como interfaz para tu lector de _smartcard_. Por favor, consulta la página del manual para más detalles.
+GnuPG usa *scdaemon* como interfaz para tu lector de *smartcard*. Por favor, consulta la página del manual para más detalles.
 
 ### Instalaciones solo con GnuPG
 
@@ -462,7 +456,6 @@ gpg: selecting openpgp failed: ec=6.108
 Por defecto, scdaemon intentará contectar directamente con el dispositivo. Esta conexión fallará si el lector está siendo usado por otro proceso. Por ejemplo: el demonio pcscd usado por OpenSC. Para hacer frente a esta situación deberíamos usar le mismo driver subyacente que opensc de forma que puedan trabajar bien juntos. Para indicarle a scdaemon que use pcscd deberías quitar `reader-port` de `~/.gnupg/scdaemon.conf`, especificar la ubicación de la librería `libpcsclite.so` y desactivar ccid para asegurarnos de que se usa pcscd:
 
  `~/.gnupg/scdaemon.conf` 
-
 ```
 pcsc-driver /usr/lib/libpcsclite.so
 card-timeout 5
@@ -476,7 +469,7 @@ Por favor, comprueba `man scdaemon` si no usas OpenSC.
 
 ### su
 
-Cuando usas `pinentry`, debes tener los permisos adecuados en el dispositivo terminal que uses (p.ej. `/dev/tty1`). Sin embargo, con _su_ (o _sudo_), la propiedad sigue siendo del usuario original, y no del nuevo. Esto significa que pinentry fallará, incluso como root. La solución es cambiar los permisos del dispositivo en algún momento antes del uso de pinentry (es decir, usar gpg con un agente). Si usas gpg como root, simplemente cambia la propiedad a root justo antes de usar gpg:
+Cuando usas `pinentry`, debes tener los permisos adecuados en el dispositivo terminal que uses (p.ej. `/dev/tty1`). Sin embargo, con *su* (o *sudo*), la propiedad sigue siendo del usuario original, y no del nuevo. Esto significa que pinentry fallará, incluso como root. La solución es cambiar los permisos del dispositivo en algún momento antes del uso de pinentry (es decir, usar gpg con un agente). Si usas gpg como root, simplemente cambia la propiedad a root justo antes de usar gpg:
 
 ```
 chown root /dev/ttyN  # donde N es el tty actual
@@ -485,7 +478,7 @@ chown root /dev/ttyN  # donde N es el tty actual
 
 y después cámbialo de nuevo tras usar gpg la primera vez. Es probable que haya que hacer lo mismo con `/dev/pts/`.
 
-**Nota:** El propietario de tty _debe_ corresponderse con el usuario para el cual se ejecuta pinentry. Ser parte del grupo `tty` **no es** suficiente.
+**Nota:** El propietario de tty *debe* corresponderse con el usuario para el cual se ejecuta pinentry. Ser parte del grupo `tty` **no es** suficiente.
 
 ### El agente se queja del final del archivo
 
@@ -497,7 +490,7 @@ En su lugar, puedes usar `pinentry-qt`. Ver [#Pinentry](#Pinentry).
 
 Ha habido problemas para que [kdeutils-kgpg](https://www.archlinux.org/packages/?name=kdeutils-kgpg) sea capaz de acceder a las opciones de `~/.gnupg/`. Un problema puede estar originado por un archivo de opciones obsoleto. Ver este [informe de error](https://bugs.kde.org/show_bug.cgi?id=290221).
 
-Otro usuario informó de que _KGpg_ no conseguía arrancar hasta que se cambiaron los permisos de `~/.gnupg` a `drwxr-xr-x`. Si necesitas esta solución provisional, asegúrate de que los contenidos del directorio mantienen los permisos `-rw-------`. Mejor aún, envía un informe de error a los [desarrolladores](https://bugs.kde.org/buglist.cgi?quicksearch=kgpg).
+Otro usuario informó de que *KGpg* no conseguía arrancar hasta que se cambiaron los permisos de `~/.gnupg` a `drwxr-xr-x`. Si necesitas esta solución provisional, asegúrate de que los contenidos del directorio mantienen los permisos `-rw-------`. Mejor aún, envía un informe de error a los [desarrolladores](https://bugs.kde.org/buglist.cgi?quicksearch=kgpg).
 
 ### Conflictos entre gnome-keyring y gpg-agent
 

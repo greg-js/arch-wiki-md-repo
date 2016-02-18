@@ -1,4 +1,4 @@
-_xrandr_ is an official configuration utility to the [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR") [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") extension. It can be used to set the size, orientation or reflection of the outputs for a screen. For configuring multiple monitors see the [Multihead](/index.php/Multihead "Multihead") page.
+*xrandr* is an official configuration utility to the [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR") [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") extension. It can be used to set the size, orientation or reflection of the outputs for a screen. For configuring multiple monitors see the [Multihead](/index.php/Multihead "Multihead") page.
 
 ## Contents
 
@@ -24,10 +24,9 @@ _xrandr_ is an official configuration utility to the [RandR](https://en.wikipedi
 
 ## Testing configuration
 
-When run without any option, _xrandr_ shows the names of different outputs available on the system (`LVDS`, `VGA-0`, etc.) and resolutions available on each:
+When run without any option, *xrandr* shows the names of different outputs available on the system (`LVDS`, `VGA-0`, etc.) and resolutions available on each:
 
  `xrandr` 
-
 ```
 Screen 0: minimum 320 x 200, current 1440 x 900, maximum 8192 x 8192
 VGA disconnected (normal left inverted right x axis y axis)
@@ -39,7 +38,7 @@ LVDS connected (normal left inverted right x axis y axis)
 
 ```
 
-You can use _xrandr_ to set different resolution (must be present in the above list) on some output:
+You can use *xrandr* to set different resolution (must be present in the above list) on some output:
 
 ```
 $ xrandr --output LVDS --mode 1280x800
@@ -69,16 +68,16 @@ $ xrandr --output LVDS --off --output HDMI-0 --auto
 
 **Note:**
 
-*   Changes you make using _xrandr_ will only last through the current session.
-*   _xrandr_ has a lot more capabilities - see `man xrandr` for details.
+*   Changes you make using *xrandr* will only last through the current session.
+*   *xrandr* has a lot more capabilities - see `man xrandr` for details.
 
 ## Configuration
 
-_xrandr_ is just a simple interface to the RandR extension and has no configuration file. However, there are multiple ways of achieving persistent configuration:
+*xrandr* is just a simple interface to the RandR extension and has no configuration file. However, there are multiple ways of achieving persistent configuration:
 
 1.  The RandR extension can be configured via [X configuration files](/index.php/Xorg#Configuration "Xorg"), see [Multihead#RandR](/index.php/Multihead#RandR "Multihead") for details. This method provides only static configuration.
-2.  If you need dynamic configuration, you need to execute _xrandr_ commands each time X server starts. See [Autostarting#Graphical](/index.php/Autostarting#Graphical "Autostarting") for details. This method has the disadvantage of occurring fairly late in the startup process, thus it will not alter the resolution of the [display manager](/index.php/Display_manager "Display manager") if you use one.
-3.  Custom scripts calling _xrandr_ can be bound to events (for example when external monitor is plugged in), see [acpid](/index.php/Acpid "Acpid") for details. The [#Scripts](#Scripts) section provides you with some example scripts that might be useful for this purpose.
+2.  If you need dynamic configuration, you need to execute *xrandr* commands each time X server starts. See [Autostarting#Graphical](/index.php/Autostarting#Graphical "Autostarting") for details. This method has the disadvantage of occurring fairly late in the startup process, thus it will not alter the resolution of the [display manager](/index.php/Display_manager "Display manager") if you use one.
+3.  Custom scripts calling *xrandr* can be bound to events (for example when external monitor is plugged in), see [acpid](/index.php/Acpid "Acpid") for details. The [#Scripts](#Scripts) section provides you with some example scripts that might be useful for this purpose.
 
 **Tip:** Both KDM and GDM have startup scripts that are executed when X is initiated. For GDM, these are in `/etc/gdm/`, while for KDM this is done at `/usr/share/config/kdm/Xsetup` and for SDDM at `/usr/share/sddm/scripts/Xsetup`. This method requires root access and mucking around in system config files, but will take effect earlier in the startup process than using xprofile.
 
@@ -177,7 +176,8 @@ else
 	echo "Command: $execute"
 	`$execute`
 fi
-echo -e "\n$(xrandr)"
+echo -e "
+$(xrandr)"
 
 ```
 
@@ -188,7 +188,6 @@ This script iterates over all xrandr outputs. If anything is connected it tries 
 I am using it with [srandrd](https://aur.archlinux.org/packages/srandrd/) in my [i3-wm](https://www.archlinux.org/packages/?name=i3-wm) like so ([#Example 3](#Example_3) didn't work for me for some reason or other):
 
  `~/.xprofile` 
-
 ```
 srandrd ~/.i3/detect_displays.sh
 
@@ -209,7 +208,8 @@ declare -A POS
 POS=([X]=0 [Y]=0)
 
 find_mode() {
-  echo $(${XRANDR} |grep ${1} -A1|awk '{FS="[ x]"} /^\s/{printf("WIDTH=%s\nHEIGHT=%s", $4,$5)}')
+  echo $(${XRANDR} |grep ${1} -A1|awk '{FS="[ x]"} /^\s/{printf("WIDTH=%s
+HEIGHT=%s", $4,$5)}')
 }
 
 xrandr_params_for() {
@@ -259,9 +259,9 @@ $ xrasengan --force -on DisplayPort-0 -off HDMI-0
 
 ```
 
-With the `--force` option, _xrasengan_ will update status of all outputs before HDMI-0 is turned off, avoiding an X crash if they were the only connected/active outputs.
+With the `--force` option, *xrasengan* will update status of all outputs before HDMI-0 is turned off, avoiding an X crash if they were the only connected/active outputs.
 
-To force reload current settings, _xrasengan_ provides a `--try-reload-active-layout` option, which uses `--force` and _unxrandr_ from the [arandr](https://www.archlinux.org/packages/?name=arandr) package to assemble the command line:
+To force reload current settings, *xrasengan* provides a `--try-reload-active-layout` option, which uses `--force` and *unxrandr* from the [arandr](https://www.archlinux.org/packages/?name=arandr) package to assemble the command line:
 
 ```
 $ xrasengan --try-reload-active-layout
@@ -281,7 +281,6 @@ First we run `gtf` or `cvt` to get the **Modeline** for the resolution we want:
 For some LCD screens (samsung 2343NW), the command "cvt -r" (= with reduced blanking) is to be used.
 
  `$ cvt 1280 1024` 
-
 ```
 # 1280x1024 59.89 Hz (CVT 1.31M4) hsync: 63.67 kHz; pclk: 109.00 MHz
 Modeline "1280x1024_60.00"  109.00  1280 1368 1496 1712  1024 1027 1034 1063 -hsync +vsync
@@ -289,7 +288,6 @@ Modeline "1280x1024_60.00"  109.00  1280 1368 1496 1712  1024 1027 1034 1063 -hs
 ```
 
 **Note:** If the Intel video driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) is used, it may report the desired resolution along with its properties in `/var/log/Xorg.0.log` — use that first if it is different from the output of `gtf` or `cvt`. For instance, the log and its use with xrandr:
-
 ```
 [    45.063] (II) intel(0): clock: 241.5 MHz   Image Size:  597 x 336 mm
 [    45.063] (II) intel(0): h_active: 2560  h_sync: 2600  h_sync_end 2632 h_blank_end 2720 h_border: 0
@@ -343,7 +341,6 @@ If the previous method results in an `*ERROR* EDID checksum is invalid` error du
 Once a suitable resolution is found using `xrandr`, the mode can be permanently added by creating an entry in `/etc/X11/xorg.conf.d/`:
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
-
 ```
 Section "Monitor"
     Identifier "VGA1"
@@ -379,7 +376,6 @@ Background: ATI X1550 based video card and two LCD monitors DELL 2408(up to 1920
 Change xorg.conf
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "Screen"
         ...

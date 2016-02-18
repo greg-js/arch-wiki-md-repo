@@ -94,7 +94,6 @@ Internal Wi-Fi driver (r8723au) is working with a huge troubles with current ker
 ### PCI devices
 
  `lspci` 
-
 ```
 00:00.0 Host bridge: Intel Corporation 3rd Gen Core processor DRAM Controller (rev 09)
 00:02.0 VGA compatible controller: Intel Corporation 3rd Gen Core processor Graphics Controller (rev 09)

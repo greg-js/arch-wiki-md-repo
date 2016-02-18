@@ -35,7 +35,7 @@ First unmount the XFS filesystem.
 
 ```
 
-Once unmounted, run the _xfs_repair_ tool.
+Once unmounted, run the *xfs_repair* tool.
 
 ```
 # xfs_repair -v /dev/sda3
@@ -44,10 +44,10 @@ Once unmounted, run the _xfs_repair_ tool.
 
 ## Integrity
 
-xfsprogs 3.2.0 has introduced a new on-disk format (v5) that includes a metadata checksum scheme called [Self-Describing Metadata](https://www.kernel.org/doc/Documentation/filesystems/xfs-self-describing-metadata.txt). Based upon CRC32 it provides for example additional protection against metadata corruption during unexpected power losses. Checksum is enabled by default when using xfsprogs 3.2.3 or later. If you need read-write mountable xfs for older kernel, It can be easily disable using the `-m crc=0` switch when calling _mkfs.xfs_.
+xfsprogs 3.2.0 has introduced a new on-disk format (v5) that includes a metadata checksum scheme called [Self-Describing Metadata](https://www.kernel.org/doc/Documentation/filesystems/xfs-self-describing-metadata.txt). Based upon CRC32 it provides for example additional protection against metadata corruption during unexpected power losses. Checksum is enabled by default when using xfsprogs 3.2.3 or later. If you need read-write mountable xfs for older kernel, It can be easily disable using the `-m crc=0` switch when calling *mkfs.xfs*.
 
 ```
-# mkfs.xfs -m crc=0 /dev/_target_partition_
+# mkfs.xfs -m crc=0 /dev/*target_partition*
 
 ```
 
@@ -60,7 +60,7 @@ The XFS v5 on-disk format is considered stable for production workloads starting
 For optimal speed, just create an XFS file system with:
 
 ```
-# mkfs.xfs /dev/_target_partition_
+# mkfs.xfs /dev/*target_partition*
 
 ```
 
@@ -78,7 +78,7 @@ See [How to calculate the correct sunit,swidth values for optimal performance](h
 
 ### Disable barrier
 
-You can increase performance by disabling barrier usage for the filesystem by adding the _nobarrier_ mount option to the `/etc/fstab` file.
+You can increase performance by disabling barrier usage for the filesystem by adding the *nobarrier* mount option to the `/etc/fstab` file.
 
 ### Access time
 
@@ -103,7 +103,7 @@ To see how much fragmentation your file system currently has:
 
 #### Perform defragmentation
 
-To begin defragmentation, use the `xfs_fsr` command which is included with the _xfsprogs_ package.
+To begin defragmentation, use the `xfs_fsr` command which is included with the *xfsprogs* package.
 
 ```
 # xfs_fsr /dev/sda3
@@ -119,14 +119,14 @@ This feature relies on the new v5 on-disk format that has been considered stable
 The feature enabled by default when using xfsprogs 3.2.3 or later. If you need writable filesystem for older kernel, it cab be disable with `finobt=0` switch when formatting a XFS partition. You will need `crc=0` together.
 
 ```
- # mkfs.xfs -m crc=0,finobt=0 /dev/_target_partition_
+ # mkfs.xfs -m crc=0,finobt=0 /dev/*target_partition*
 
 ```
 
 or shortly (`finobt` depends `crc`)
 
 ```
- # mkfs.xfs -m crc=0 /dev/_target_partition_
+ # mkfs.xfs -m crc=0 /dev/*target_partition*
 
 ```
 

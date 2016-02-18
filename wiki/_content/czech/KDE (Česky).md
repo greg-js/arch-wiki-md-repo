@@ -122,7 +122,7 @@ Kdesdk bylo sestaveno s podporou pro Subversion. Pokud ho chcete používat prov
 
 Změna nastavení DPI pro KDE může být trochu skličující ale podíváme se, jak to udělat. Hned po bootu musíme otevřít soubor /opt/kde/share/config/kdm/kdmrc a přidat ServerArgsLocal=-dpi 96 do [X-:*-Core] sekce (nebo jaké DPI chcete). Poté ukončíme editaci a restartujeme X (CTRL+ALT+BACKSPACE).
 
-_Pozn.: Pokud nepoužíváte KDE, pak musíte editovat /usr/X11/bin/startx. Najděte řádku pro defaultserverargs. Přidejte "-dpi 96" (nebo jaké chcete) a restartujte X._
+*Pozn.: Pokud nepoužíváte KDE, pak musíte editovat /usr/X11/bin/startx. Najděte řádku pro defaultserverargs. Přidejte "-dpi 96" (nebo jaké chcete) a restartujte X.*
 
 ## Chyby
 

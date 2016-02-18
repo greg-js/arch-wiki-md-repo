@@ -67,7 +67,6 @@ xfce4-notifyd-config
 Вы можете легко отображать сообщения **libnotify** из программы на **python** или любом другом языке.
 
 **Обратите внимание:** Вам понадобится обвязка **libnotify** для **python**:
-
 ```
 pacman -S python-notify
 
@@ -90,7 +89,8 @@ import commands
 # версия ядра
 uname = commands.getoutput('uname -r')
 head = "All the info about your system:"
-msg = "Your kernel version: "+ uname +"\n"       
+msg = "Your kernel version: "+ uname +"
+"       
 # отображение уведомления
 subprocess.call(['notify-send', head, msg])
 

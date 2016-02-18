@@ -151,10 +151,9 @@ mount ELROND:music /mnt/point
 
 ```
 
-altrimenti si otterrà _mount.nfs: access denied by server while mounting_
+altrimenti si otterrà *mount.nfs: access denied by server while mounting*
 
 **Nota:** Se si ottengono i seguenti messaggi allora, probabilmente, non si sono avviati i demoni della [sezione precedente](/index.php/NFS_(Italiano)#Demoni_2 "NFS (Italiano)") o durante il loro avvio qualcosa è andato storto.
-
 ```
 mount: wrong fs type, bad option, bad superblock on 192.168.1.99:/media/raid5-4tb,
        missing codepage or helper program, or other error
@@ -245,7 +244,7 @@ La dimensione utilizzata di defualt da NFS4 è 32786\. Il massimo è 65536\. Aum
 
 ### Il demone Portmap non si avvia correttamente durante il boot
 
-Assicurarsi di aver inserito il demone portmap _prima_ di netfs nell'array DAEMONS in /etc/rc.conf.
+Assicurarsi di aver inserito il demone portmap *prima* di netfs nell'array DAEMONS in /etc/rc.conf.
 
 ### Nfsd non si avvia, restituendo "nfssvc: No such device"
 
@@ -299,7 +298,6 @@ NEED_IDMAPD="yes"
 Se si ha un firewall port-based, si potrebbero voler impostare delle porte. Per rpc.statd e rpc.mountd si dovrebbero impostare i seguenti settaggi in `/etc/conf.d/nfs-common` e `/etc/conf.d/nfs-server` (le porte possono essere differenti):
 
  `/etc/conf.d/nfs-common`  `STATD_OPTS="-p 4000 -o 4003"`  `/etc/conf.d/nfs-server`  `MOUNTD_OPTS="--no-nfs-version 2 -p 4002"`  `/etc/modprobe.d/lockd.conf` 
-
 ```
 # Static ports for NFS lockd
 options lockd nlm_udpport=4001 nlm_tcpport=4001
@@ -316,7 +314,6 @@ Quindi è necessario riavviare i demoni nfs e ricaricare il modulo lockd:
 Dopo aver riavviato i demoni nfs e ricaricato il modulo, è possibile controllare le porte utilizzando il comando:
 
  `$ rpcinfo -p` 
-
 ```
 rpcinfo -p
    program vers proto   port  service

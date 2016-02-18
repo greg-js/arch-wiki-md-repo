@@ -2,7 +2,7 @@
 
 来自 [project GitHub page](https://github.com/dvdhrm/kmscon) 的介绍：
 
-	_Kmscon 是基于 KMS 的简单终端模拟软件。它试图为 VT 终端的内核实现提供一种用户空间终端实现。_
+	*Kmscon 是基于 KMS 的简单终端模拟软件。它试图为 VT 终端的内核实现提供一种用户空间终端实现。*
 
 ## Contents
 
@@ -48,7 +48,6 @@ Kmscon can function as a drop-in replacement for the in-kernel linux-console. Fe
 Kmscon 通过默认的字体引擎 [pango](https://www.archlinux.org/packages/?name=pango) 支持渲染中日韩文字。但是， 必须为 [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) 设置全局配置，来将等款字帖映射到合适的中日韩字体上。我们为中文用户提供如下配置模板。此模板可以满足中文字体渲染要求：
 
  `/etc/fonts/conf.d/99-kmscon.conf` 
-
 ```
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">

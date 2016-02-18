@@ -1,6 +1,6 @@
-_rescached_ is a daemon that caching internet name and address on local memory when running and in local disk when not running.
+*rescached* is a daemon that caching internet name and address on local memory when running and in local disk when not running.
 
-_rescached_ is not a reimplementation of DNS server like BIND. _rescached_ primary goal is only to caching DNS queries and answers, used by personal or small group of users, to minimize unneeded traffic to outside network.
+*rescached* is not a reimplementation of DNS server like BIND. *rescached* primary goal is only to caching DNS queries and answers, used by personal or small group of users, to minimize unneeded traffic to outside network.
 
 ## Contents
 
@@ -35,7 +35,7 @@ Each of query and answer data in cache have a number of accessed field, which de
 
 ```
 
-The number of cache that rescached can hold in memory is depend on the value of _cache.max_ in configuration file. When the number of cache in memory reached it _cache.max_ value, it will remove all cache data that has the number of frequently accessed less than _cache.threshold_.
+The number of cache that rescached can hold in memory is depend on the value of *cache.max* in configuration file. When the number of cache in memory reached it *cache.max* value, it will remove all cache data that has the number of frequently accessed less than *cache.threshold*.
 
 ## Installation
 

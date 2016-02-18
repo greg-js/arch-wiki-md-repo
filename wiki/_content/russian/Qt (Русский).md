@@ -1,4 +1,4 @@
-[Qt](http://qt-project.org/) — кроссплатформенный набор инструментов для создания приложений и виджетов, который использует стандартный язык программирования C++, а также специальный генератор кода ([Meta Object Compiler](http://qt-project.org/doc/qt-4.8/moc.html), или _moc_) вместе с набором макросов, расширяющих возможности языка. Набор предоставляет широкие возможности по разработке приложений; среди наиболее важных:
+[Qt](http://qt-project.org/) — кроссплатформенный набор инструментов для создания приложений и виджетов, который использует стандартный язык программирования C++, а также специальный генератор кода ([Meta Object Compiler](http://qt-project.org/doc/qt-4.8/moc.html), или *moc*) вместе с набором макросов, расширяющих возможности языка. Набор предоставляет широкие возможности по разработке приложений; среди наиболее важных:
 
 *   Работа на основных компьютерных платформах и операционных системах, а также на некоторых мобильных платформах.
 *   Обширная поддержка возможностей интернационализации.
@@ -43,11 +43,11 @@
 *   **Qt 4.x** предоставляется пакетом [qt4](https://www.archlinux.org/packages/?name=qt4), документация — [qt4-doc](https://aur.archlinux.org/packages/qt4-doc/).
 *   **Qt 3.x** можно установить из [AUR](/index.php/AUR "AUR") с пакетом [qt3](https://aur.archlinux.org/packages/qt3/), документация — [qt3-doc](https://aur.archlinux.org/packages/qt3-doc/).
 
-**Важно:** Пакеты Qt больше не помещают исполняемые файлы утилит вроде _qmake_ в `/usr/bin`. Вместо этого создаются символические ссылки с суффиксом версии, например `qmake-qt5`, `qmake-qt4`, `qmake-qt3`. Это может вызвать проблемы со сборкой проектов для Qt версий 3 и 4\. Как установить исполняемые файлы в `/usr/bin` показано в разделе [#Выбор набора Qt по умолчанию](#.D0.92.D1.8B.D0.B1.D0.BE.D1.80_.D0.BD.D0.B0.D0.B1.D0.BE.D1.80.D0.B0_Qt_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E).
+**Важно:** Пакеты Qt больше не помещают исполняемые файлы утилит вроде *qmake* в `/usr/bin`. Вместо этого создаются символические ссылки с суффиксом версии, например `qmake-qt5`, `qmake-qt4`, `qmake-qt3`. Это может вызвать проблемы со сборкой проектов для Qt версий 3 и 4\. Как установить исполняемые файлы в `/usr/bin` показано в разделе [#Выбор набора Qt по умолчанию](#.D0.92.D1.8B.D0.B1.D0.BE.D1.80_.D0.BD.D0.B0.D0.B1.D0.BE.D1.80.D0.B0_Qt_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E).
 
 ## Выбор набора Qt по умолчанию
 
-Установив [qtchooser](https://www.archlinux.org/packages/?name=qtchooser), вы сможете выбрать, для какого набора Qt из установленных необходимо перенести исполняемые файлы (например, _qmake_) в `/usr/bin`. По умолчанию используется Qt5.
+Установив [qtchooser](https://www.archlinux.org/packages/?name=qtchooser), вы сможете выбрать, для какого набора Qt из установленных необходимо перенести исполняемые файлы (например, *qmake*) в `/usr/bin`. По умолчанию используется Qt5.
 
 ### Используя переменные окружения
 
@@ -55,7 +55,7 @@
 
 ### Используя файл конфигурации
 
-Вы можете выбрать версию набора Qt по умолчанию, создав символическую ссылку `~/.config/qtchooser/default.conf` на один из файлов _.conf_ в каталоге `/etc/xdg/qtchooser`. Например, чтобы выбрать Qt4, создайте ссылку на `/etc/xdg/qtchooser/4.conf`:
+Вы можете выбрать версию набора Qt по умолчанию, создав символическую ссылку `~/.config/qtchooser/default.conf` на один из файлов *.conf* в каталоге `/etc/xdg/qtchooser`. Например, чтобы выбрать Qt4, создайте ссылку на `/etc/xdg/qtchooser/4.conf`:
 
 ```
 $ ln -s `/etc/xdg/qtchooser/4.conf` `~/.config/qtchooser/default.conf`
@@ -66,7 +66,7 @@ $ ln -s `/etc/xdg/qtchooser/4.conf` `~/.config/qtchooser/default.conf`
 
 ### Настройка
 
-Приложения Qt, по возможности, пытаются подражать внешнему вид и поведению других приложений в той среде рабочего стола, где они запускаются. Если вы хотите поменять внешний вид и поведение интерфейса приложения Qt, вы можете использовать утилиту Qt Configuration (_qtconfig-qt4_ или _qt3config_). Она позволяет легко и просто настроить внешний вид приложений: стиль, цвета, шрифты и многие другие параметры.
+Приложения Qt, по возможности, пытаются подражать внешнему вид и поведению других приложений в той среде рабочего стола, где они запускаются. Если вы хотите поменять внешний вид и поведение интерфейса приложения Qt, вы можете использовать утилиту Qt Configuration (*qtconfig-qt4* или *qt3config*). Она позволяет легко и просто настроить внешний вид приложений: стиль, цвета, шрифты и многие другие параметры.
 
 Обратите внимание, что утилита была исключена в версии Qt5\. Если вы хотите принудительно установить внешний вид и поведение интерфейса приложений Qt5, установите переменную окружения `QT_STYLE_OVERRIDE` с названием желаемого стиля (например, `gtk`).
 
@@ -113,7 +113,6 @@ Qt хранит все настройки в файле `~/.config/Trolltech.con
 Например, чтобы изменить тему на QtCurve, добавьте:
 
  `~/.config/Trolltech.conf` 
-
 ```
 ...
 [Qt]
@@ -128,7 +127,7 @@ style=QtCurve
 Чтобы запустить приложение, используя указанную таблицу стилей просто передайте путь к файлу в опции `--stylesheet`:
 
 ```
-$ qt_application --stylesheet _style.qss_
+$ qt_application --stylesheet *style.qss*
 
 ```
 
@@ -176,11 +175,11 @@ Qt поддерживает большинство доступных сегод
 
 	[https://qt-project.org/doc/qt-4.8/qmake-manual.html](https://qt-project.org/doc/qt-4.8/qmake-manual.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
 
-*   **uic** — Генератор кода C++ на основе _.ui_-файлов.
+*   **uic** — Генератор кода C++ на основе *.ui*-файлов.
 
 	[http://qt-project.org/doc/qt-4.8/uic.html](http://qt-project.org/doc/qt-4.8/uic.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
 
-*   **rcc** — Инструмент для упаковки ресурсов (например, изображений) в приложение при сборке. По сути генерирует код на C++, содержащий данные, указанные в файле ресурсов (_.qrc_).
+*   **rcc** — Инструмент для упаковки ресурсов (например, изображений) в приложение при сборке. По сути генерирует код на C++, содержащий данные, указанные в файле ресурсов (*.qrc*).
 
 	[http://qt-project.org/doc/qt-4.8/rcc.html](http://qt-project.org/doc/qt-4.8/rcc.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
 
@@ -206,7 +205,6 @@ Qt имеет привязки ко многим популярным языка
 *   Команда запуска: `./hello`
 
  `hello.cpp` 
-
 ```
 #include <QApplication>
 #include <QLabel>
@@ -229,7 +227,6 @@ int main(int argc, char **argv)
 *   Команда запуска: `qmlviewer-qt4 hello.qml`
 
  `hello.qml` 
-
 ```
 import QtQuick 1.0
 
@@ -262,7 +259,6 @@ Rectangle {
 *   Команда запуска: `python hello-pyqt.py` или `python2 hello-pyqt.py`.
 
  `hello-pyqt.py` 
-
 ```
 import sys
 from PyQt4 import QtGui
@@ -278,7 +274,6 @@ sys.exit(app.exec_())
 The Qt 5.x version is slighly different:
 
  `hello-pyqt.py` 
-
 ```
 import sys
 from PyQt5 import QtWidgets
@@ -300,7 +295,6 @@ sys.exit(app.exec_())
 *   Команда запуска: `python hello-pyside.py` или `python2 hello-pyside.py`
 
  `hello-pyside.py` 
-
 ```
 import sys
 from PySide.QtCore import *
@@ -322,7 +316,6 @@ sys.exit(app.exec_())
 *   Команда запуска: `mono hello.exe`
 
  `hello.cs` 
-
 ```
 using System;
 using Qyoto;
@@ -345,7 +338,6 @@ public class Hello {
 *   Команда запуска: `ruby hello.rb`
 
  `hello.rb` 
-
 ```
 require 'Qt4'
 
@@ -365,7 +357,6 @@ app.exec
 *   Команда запуска: `java -cp /opt/qtjambi-beta/qtjambi-linux64-community-4.7.0/qtjambi-4.7.0.jar:. Hello`.
 
  `Hello.java` 
-
 ```
 import com.trolltech.qt.gui.*;
 
@@ -392,7 +383,6 @@ public class Hello
 *   Команда запуска: `perl hello.pl`
 
  `hello.pl` 
-
 ```
 use QtGui4;
 
@@ -411,7 +401,6 @@ exit $a->exec;
 *   Команда запуска: `qtlua hello.lua`
 
  `hello.lua` 
-
 ```
 label = qt.new_widget("QLabel")
 

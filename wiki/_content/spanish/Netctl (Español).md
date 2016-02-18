@@ -1,4 +1,4 @@
-_netctl_ es una herramienta basada en CLI (_«intérprete de línea de órdenes»_, esto es, a través de consola)) utilizada para configurar y gestionar las conexiones de red mediante perfiles. Es la apuesta de Arch Linux para sustituir a _netcfg_. _netctl_ supone el futuro (y el presente) de la gestión de conexiones de red.
+*netctl* es una herramienta basada en CLI (*«intérprete de línea de órdenes»*, esto es, a través de consola)) utilizada para configurar y gestionar las conexiones de red mediante perfiles. Es la apuesta de Arch Linux para sustituir a *netcfg*. *netctl* supone el futuro (y el presente) de la gestión de conexiones de red.
 
 ## Contents
 
@@ -78,14 +78,14 @@ Si se necesita cambiar entre varios perfiles con frecuencia, utilice el método 
 Con este método, se puede comenzar un solo perfil con dirección estática por interfaz. Primero compruebe manualmente que el perfil se puede iniciar con éxito, y después actívelo usando la orden:
 
 ```
-# netctl enable _nombre del perfil de la conexión de red_
+# netctl enable *nombre del perfil de la conexión de red*
 
 ```
 
 Esto creará y activará un servicio de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), servicio que se iniciará cuando arranque el equipo. Los cambios en el fichero de este perfil no se transmitirán automáticamente a dicho fichero de servicio. Si se realizan cambios, es necesario volver a activar el perfil con la orden:
 
 ```
-# netctl reenable _nombre del perfil de la conexión de red_
+# netctl reenable *nombre del perfil de la conexión de red*
 
 ```
 
@@ -95,36 +95,36 @@ Esto creará y activará un servicio de [systemd](/index.php/Systemd_(Espa%C3%B1
 
 #### Cambio automático de perfiles
 
-_netctl_ ofrece dos servicos especiales de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") para la conmutación automática de perfiles:
+*netctl* ofrece dos servicos especiales de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") para la conmutación automática de perfiles:
 
-*   Para las interfaces cableadas: `netctl-ifplugd@_interfaz_.service`. El uso de estos perfiles de netctl se intercambian cuando se enchufa/desenchufa el cable de red.
-*   Para las interfaces inalámbricas: `netctl-auto@_interfaz_.service`. El uso de estos perfiles de netctl se intercambian al pasar del rango de una red dentro del alcance de rango de otra red.
+*   Para las interfaces cableadas: `netctl-ifplugd@*interfaz*.service`. El uso de estos perfiles de netctl se intercambian cuando se enchufa/desenchufa el cable de red.
+*   Para las interfaces inalámbricas: `netctl-auto@*interfaz*.service`. El uso de estos perfiles de netctl se intercambian al pasar del rango de una red dentro del alcance de rango de otra red.
 
-**Nota:** _netcfg_ utiliza `net-auto-wireless.service` y `net-auto-wired.service` para estos fines.
+**Nota:** *netcfg* utiliza `net-auto-wireless.service` y `net-auto-wired.service` para estos fines.
 
 Primero [instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") los paquetes necesarios:
 
-*   El paquete [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) es necesario para usar `netctl-auto@_interfaz_.service`.
-*   El paquete [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) es necesario para usar `netctl-ifplugd@_interfaz_.service`.
+*   El paquete [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) es necesario para usar `netctl-auto@*interfaz*.service`.
+*   El paquete [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) es necesario para usar `netctl-ifplugd@*interfaz*.service`.
 
-Ahora configure todos los perfiles que `netctl-auto@_interfaz_.service` o `netctl-ifplugd@_interfaz_.service` desea que inicien.
+Ahora configure todos los perfiles que `netctl-auto@*interfaz*.service` o `netctl-ifplugd@*interfaz*.service` desea que inicien.
 
-Si algún perfil inalámbrico **no** se inicia automáticamente por `netctl-auto@_interfaz_.service`, tiene que agregar explícitamente la variable `ExcludeAuto=yes` para ese perfil. Puede utilizar la variable `Priority=` para establecer la prioridad de algún perfil cuando existen varios perfiles disponibles. `netctl-ifplugd@_interfaz_.service` preferirá perfiles que utilicen [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP"). Para preferir un perfil con una dirección IP estática, puede utilizar la variable `AutoWired=yes`. Consulte `netctl.profile(5)` para obtener más detalles.
+Si algún perfil inalámbrico **no** se inicia automáticamente por `netctl-auto@*interfaz*.service`, tiene que agregar explícitamente la variable `ExcludeAuto=yes` para ese perfil. Puede utilizar la variable `Priority=` para establecer la prioridad de algún perfil cuando existen varios perfiles disponibles. `netctl-ifplugd@*interfaz*.service` preferirá perfiles que utilicen [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP"). Para preferir un perfil con una dirección IP estática, puede utilizar la variable `AutoWired=yes`. Consulte `netctl.profile(5)` para obtener más detalles.
 
-**Advertencia:** La selección automática de un perfil compatible con WPA por _netctl-auto_ no es posible con la opción `Security=wpa-config`, sino que hay que usar, en su lugar, la opción `Security=wpa-configsection`.
+**Advertencia:** La selección automática de un perfil compatible con WPA por *netctl-auto* no es posible con la opción `Security=wpa-config`, sino que hay que usar, en su lugar, la opción `Security=wpa-configsection`.
 
-Una vez que ha establecido y comprobrado que sus perfiles funcionan correctamente, solo tiene que activar estos servicios utilizando _systemctl_:
+Una vez que ha establecido y comprobrado que sus perfiles funcionan correctamente, solo tiene que activar estos servicios utilizando *systemctl*:
 
 ```
-# systemctl enable netctl-auto@_interfaz_.service 
-# systemctl enable netctl-ifplugd@_interfaz_.service  
+# systemctl enable netctl-auto@*interfaz*.service 
+# systemctl enable netctl-ifplugd@*interfaz*.service  
 
 ```
 
 **Advertencia:**
 
 *   Si alguno de los perfiles contienen errores, como por ejemplo, una variable `Key=` vacía, la unidad no se cargará durante el arranque.
-*   Este método entra en conflicto con el [Método básico](#M.C3.A9todo_b.C3.A1sico). Si ha activado previamente un perfil a través de _netctl_, ejecute `netctl disable _profile_` para evitar que el perfil se cargue dos veces en el arranque.
+*   Este método entra en conflicto con el [Método básico](#M.C3.A9todo_b.C3.A1sico). Si ha activado previamente un perfil a través de *netctl*, ejecute `netctl disable *profile*` para evitar que el perfil se cargue dos veces en el arranque.
 
 Desde netctl 1.3, es posible controlar manualmente una interfaz gestionada de otra manera por netctl-auto sin tener que detener el servicio netctl-auto. Esto se hace usando la orden netctl-auto. Para obtener una lista de acciones disponibles basta con ejecutar:
 
@@ -135,26 +135,26 @@ Desde netctl 1.3, es posible controlar manualmente una interfaz gestionada de ot
 
 ### Migración de netcfg a netctl
 
-_netctl_ se vale del directorio `/etc/netctl` para almacenar los distintos perfiles de las conexiones de red **en lugar de** `/etc/network.d`, (el cual era el directorio en el cual _netcfg_ almacenaba los perfiles de las conexiones de red).
+*netctl* se vale del directorio `/etc/netctl` para almacenar los distintos perfiles de las conexiones de red **en lugar de** `/etc/network.d`, (el cual era el directorio en el cual *netcfg* almacenaba los perfiles de las conexiones de red).
 
-Para migrar de netcfg a _netcfg_ es necesario, al menos, lo siguiente:
+Para migrar de netcfg a *netcfg* es necesario, al menos, lo siguiente:
 
 *   Desactivar el servicio netcfg: `systemctl disable netcfg.service`.
-*   Desinstalar _netcfg_ e instalar _netctl_.
+*   Desinstalar *netcfg* e instalar *netctl*.
 *   Mover los perfiles de las conexiones de red al nuevo directorio.
 *   Renombrar las variables de dichos ficheros perfil de conexiones de red de acuerdo con las instrucciones en `netctl.profile(5)`. La gran mayoría tan solo han pasado de tener todo en letras mayúsculas a tener solo la primera letra. Un ejemplo: `CONNECTION` pasa a ser `Connection`.
 *   Para la configuración de la IP estática asegúrese de que las variables `Address` tienen una máscara de red después de la IP (por ejemplo, `Address=('192.168.1.23**/24'** '192.168.1.87**/24'**)` en el perfil de ejemplo).
 *   Si configura un perfil para una red inalámbrica siguiendo el ejemplo de `wireless-wpa-configsection`, tenga en cuenta que ello sobrescribe las opciones de `wpa_supplicant` definidas antes de los corchetes. Para una conexión a una red inalámbrica oculta, agregue `scan_ssid=1` a las opciones en `wireless-wpa-configsection`; `Hidden=yes` si no funciona allí.
 *   Quitar las comillas de las variables de las distintas interfaces y otras variables que no necesitan de forma estricta las comillas. Esto no es más que una cuestión de estilo.
-*   Ejecutar `netctl enable _nombre del perfil de la conexión de red_` para cada uno de los perfiles de conexión de red en la antigua línea `NETWORKS`. _«last»_ ya no tiene la función que tenía. Para más infomación leer `netctl.special(7)`.
-*   Usar `netctl list` y/o `netctl start <nombre del perfil de la conexión de red>`, en lugar de _netcfg-menu_. No obstante, _wifi-menu_ seguirá disponible.
-*   A diferencia de `netcfg`, `netctl`, por defecto, no levanta un [NIC](https://en.wikipedia.org/wiki/Network_interface_controller "wikipedia:Network interface controller") cuando este no está conectado a otro NIC potencialmente abierto. Para resolver este problema, añada `SkipNoCarrier=yes` al final del fichero de perfil `/etc/netctl/_fichero-de-perfil_`.
+*   Ejecutar `netctl enable *nombre del perfil de la conexión de red*` para cada uno de los perfiles de conexión de red en la antigua línea `NETWORKS`. *«last»* ya no tiene la función que tenía. Para más infomación leer `netctl.special(7)`.
+*   Usar `netctl list` y/o `netctl start <nombre del perfil de la conexión de red>`, en lugar de *netcfg-menu*. No obstante, *wifi-menu* seguirá disponible.
+*   A diferencia de `netcfg`, `netctl`, por defecto, no levanta un [NIC](https://en.wikipedia.org/wiki/Network_interface_controller "wikipedia:Network interface controller") cuando este no está conectado a otro NIC potencialmente abierto. Para resolver este problema, añada `SkipNoCarrier=yes` al final del fichero de perfil `/etc/netctl/*fichero-de-perfil*`.
 
 ### Contraseñas encriptadas (PSK de 256-bits)
 
 **Nota:** Aunque «cifrada», la clave que se pone en la configuración del perfil es suficiente para conectarse a una red WPA-PSK, lo que significa que este procedimiento solo sirve para ocultar la versión legible de la frase de contraseña o passphrase, pero no evita que cualquier usuario con permisos de lectura acceda a este fichero para conectarse a la red. Debemos preguntarnos si hay alguna utilidad en este procedimiento, ya que usar la misma contraseña para todo suele ser una medida de seguridad muy pobre.
 
-Los usuarios que **no** quieran tener sus contraseñas guardadas en _texto plano_ tienen la posibilidad de generar una clave precompartida o PSK —del inglés, _Pre-Shared Key_— con encriptación de 256-bits, que se calcula a partir de la frase de contraseña («passphrase») y el nombre de la red («SSID») utilizando algoritmos estándar.
+Los usuarios que **no** quieran tener sus contraseñas guardadas en *texto plano* tienen la posibilidad de generar una clave precompartida o PSK —del inglés, *Pre-Shared Key*— con encriptación de 256-bits, que se calcula a partir de la frase de contraseña («passphrase») y el nombre de la red («SSID») utilizando algoritmos estándar.
 
 *   Método 1: Utilice `wifi-menu -o` para crear un fichero de configuración en la carpeta `/etc/netctl`.
 *   Método 2: Configuración manual como sigue.
@@ -163,12 +163,11 @@ Para ambos métodos es recomendable el uso de la orden `chmod 600 /etc/netctl/<c
 
 A continuación, se generará la PSK con encriptación de 256-bits usando [wpa_passphrase](/index.php/WPA_supplicant#Configuration_file "WPA supplicant"):
 
- `$ wpa_passphrase _your_essid_ _passphrase_` 
-
+ `$ wpa_passphrase *your_essid* *passphrase*` 
 ```
 network={
-  ssid="_your_essid_"
-  #psk="_passphrase_"
+  ssid="*your_essid*"
+  #psk="*passphrase*"
   psk=64cf3ced850ecef39197bb7b7b301fc39437a6aa6c6a599d0534b16af578e04a
 }
 ```
@@ -182,19 +181,18 @@ En otra consola, copiar el fichero ejemplo de perfil de conexión de red `wirele
 
 ```
 
-Será necesario editar el fichero `/etc/netctl/wireless-wpa` con el editor de texto que prefiera el usuario y añadir la clave precompartida encriptada o _Encrypted Pre-shared Key_ que se ha generado previamente con wpa_passphrase a la variable `Key` del perfil de conexión de red.
+Será necesario editar el fichero `/etc/netctl/wireless-wpa` con el editor de texto que prefiera el usuario y añadir la clave precompartida encriptada o *Encrypted Pre-shared Key* que se ha generado previamente con wpa_passphrase a la variable `Key` del perfil de conexión de red.
 
 Una vez terminada la edición del perfil de conexión de red `wireless-wpa` que contiene la PSK con encriptación de 256-bits, debería quedar algo así:
 
  `/etc/netctl/wireless-wpa` 
-
 ```
 Description='A simple WPA encrypted wireless connection using 256-bit PSK'
 Interface=wlp2s2
 Connection=wireless
 Security=wpa
 IP=dhcp
-ESSID=_your_essid_
+ESSID=*your_essid*
 Key=\"64cf3ced850ecef39197bb7b7b301fc39437a6aa6c6a599d0534b16af578e04a
 ```
 
@@ -221,7 +219,6 @@ Para analizar manualmente las conexiones, también se puede utilizar:
 Algunas universidades utilizan un sistema llamado «Eduroam» para la gestión de sus redes inalámbricas. Para este sistema, un perfil de WPA config-section con el siguiente formato suele ser útil:
 
  `/etc/netctl/wlan0-eduroam` 
-
 ```
 Description='Eduroam-profile for <user>'
 Interface=wlan0
@@ -246,7 +243,6 @@ WPAConfigSection=(
 Para perfiles TTLS y universidades certificadas esta configuración funciona:
 
  `/etc/netctl/wlan0-eduroam` 
-
 ```
 Description='Eduroam university'
 Interface=wlan0 
@@ -272,7 +268,7 @@ WPAConfigSection=(
 
 De [kernel documentation](https://www.kernel.org/doc/Documentation/networking/bonding.txt):
 
-	_El controlador bonding de Linux proporciona un método para agregar múltiples interfaces de red en una sola interfaz lógica «vinculada». El comportamiento de la interfaz_ bonded _depende de la modalidad. En términos generales, las modalidades proporcionan tanto una espera activa como servicios de equilibrio de carga. Además, permite llevar a cabo un monitoreo integral del enlace'._
+	*El controlador bonding de Linux proporciona un método para agregar múltiples interfaces de red en una sola interfaz lógica «vinculada». El comportamiento de la interfaz* bonded *depende de la modalidad. En términos generales, las modalidades proporcionan tanto una espera activa como servicios de equilibrio de carga. Además, permite llevar a cabo un monitoreo integral del enlace'.*
 
 #### Equilibrar la carga
 
@@ -281,7 +277,6 @@ Para utilizar bonding con netctl, se necesita un paquete adicional disponible en
 Copie el fichero `/etc/netctl/examples/bonding` a la carpeta `/etc/netctl/bonding`, y modifíquelo, por ejemplo, como se indica a continuación:
 
  `/etc/netctl/bonding` 
-
 ```
 Description='Bond Interface'
 Interface='bond0'
@@ -291,7 +286,7 @@ IP=dhcp
 IP6=stateless
 ```
 
-Ahora se puede desactivar y detener su configuración antigua y establecer _bonding_ para que se inicie automáticamente. Para cambiar al nuevo perfil, por ejemplo bonding, ejecute:
+Ahora se puede desactivar y detener su configuración antigua y establecer *bonding* para que se inicie automáticamente. Para cambiar al nuevo perfil, por ejemplo bonding, ejecute:
 
 ```
 # netctl switch-to bonding
@@ -304,14 +299,13 @@ Ahora se puede desactivar y detener su configuración antigua y establecer _bond
 
 #### Pasar a la conexión inalámbrica cuando la conexión cableada falla
 
-Este ejemplo describe cómo usar _bonding_ como respaldo de la red inalámbrica para cuando la red cableada se cae, sirve también para detectar la presencia de cualquier conexión de red e iniciar dhcpcd cuando una o ambas redes se conecten.
+Este ejemplo describe cómo usar *bonding* como respaldo de la red inalámbrica para cuando la red cableada se cae, sirve también para detectar la presencia de cualquier conexión de red e iniciar dhcpcd cuando una o ambas redes se conecten.
 
 Necesitaremos los paquetes ~~[ifplugd](https://www.archlinux.org/packages/?name=ifplugd)~~, [ifenslave](https://www.archlinux.org/packages/?name=ifenslave), y [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) disponibles en los repositorios oficiales.
 
 Primero, configuraremos el controlador `bonding` para usar `active-backup`:
 
  `/etc/modprobe.d/bonding.conf` 
-
 ```
 options bonding mode=active-backup
 options bonding miimon=100
@@ -324,7 +318,6 @@ La opción `max_bonds` evita obtener el error `Interface bond0 already exists`. 
 Luego, configuraremos un perfil de netctl para subordinar las dos interfaces del hardware:
 
  `/etc/netctl/failover` 
-
 ```
 Description='A wired connection with failover to wireless'
 Interface='bond0'
@@ -341,14 +334,14 @@ Activamos el perfil en el arranque:
 
 ```
 
-Configuraremos _wpa_supplicant_ para asociarla con redes conocidas. Esto se puede hacer con un perfil netcfg (recuerde usar `IP='no'`), con un servicio _wpa_supplicant_ funcionando constantemente, o bajo demanda con _wpa_cli_. Las maneras para hacer esto están tratadas en la página de [wpa_supplicant](/index.php/WPA_supplicant_(Espa%C3%B1ol) "WPA supplicant (Español)"). Para mantener _wpa_supplicant_ ejecutándose constántemente, cree el fichero de configuración de _wpa_supplicant_ `/etc/wpa_supplicant/wpa_supplicant-wlan0.conf` y después ejecute:
+Configuraremos *wpa_supplicant* para asociarla con redes conocidas. Esto se puede hacer con un perfil netcfg (recuerde usar `IP='no'`), con un servicio *wpa_supplicant* funcionando constantemente, o bajo demanda con *wpa_cli*. Las maneras para hacer esto están tratadas en la página de [wpa_supplicant](/index.php/WPA_supplicant_(Espa%C3%B1ol) "WPA supplicant (Español)"). Para mantener *wpa_supplicant* ejecutándose constántemente, cree el fichero de configuración de *wpa_supplicant* `/etc/wpa_supplicant/wpa_supplicant-wlan0.conf` y después ejecute:
 
 ```
 # systemctl enable wpa_supplicant@wlan0
 
 ```
 
-Ajuste `IP='no'` en el perfil de la conexión de red cableada. La dirección IP debe asignarse únicamente a la interfaz _bond0_.
+Ajuste `IP='no'` en el perfil de la conexión de red cableada. La dirección IP debe asignarse únicamente a la interfaz *bond0*.
 
 A partir de ahora, si tenemos una conexión por cable e inalámbrica conectadas a la misma red, es probable que podamos desconectar y reconectar la conexión por cable sin perder la conectividad. ¡En la mayoría de los casos, incluso la transmisión de música se realizará sin saltos!
 

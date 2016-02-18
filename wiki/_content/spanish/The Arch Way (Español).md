@@ -1,4 +1,4 @@
-Los siguientes cinco principios constituyen lo que se conoce comúnmente como _«Arch Way»_ o la Filosofía de Arch, mejor resumido por el acrónimo KISS cuyas siglas hacen referencia a _«Keep It Simple, Stupid»_ («mantenlo simple, estúpido»).
+Los siguientes cinco principios constituyen lo que se conoce comúnmente como *«Arch Way»* o la Filosofía de Arch, mejor resumido por el acrónimo KISS cuyas siglas hacen referencia a *«Keep It Simple, Stupid»* («mantenlo simple, estúpido»).
 
 ## Contents
 
@@ -10,7 +10,7 @@ Los siguientes cinco principios constituyen lo que se conoce comúnmente como _�
 
 ## Simplicidad
 
-_La simplicidad es la sofisticación última_. — Leonardo Da Vinci
+*La simplicidad es la sofisticación última*. — Leonardo Da Vinci
 
 La simplicidad es fundamentalmente el objetivo principal de los desarrolladores de Arch. Muchas distribuciones GNU/Linux se definen a sí mismas como «simples». Sin embargo, la simplicidad en sí tiene muchas definiciones.
 
@@ -24,11 +24,11 @@ Por otro lado, Arch Linux mantiene intacta la complejidad inherente a un sistema
 
 ## Precisión del código por encima de la comodidad
 
-_La corrección es claramente la principal cualidad. Si un sistema no hace lo que se supone que debe hacer, entonces todo lo demás importa poco._ — Bertrand Meyer
+*La corrección es claramente la principal cualidad. Si un sistema no hace lo que se supone que debe hacer, entonces todo lo demás importa poco.* — Bertrand Meyer
 
 El sistema Arch Linux da prioridad a la elegancia del diseño, en lugar de parches innecesarios, automatización, mejoras visuales o «amigable para el principiante». Los parches de software, por lo tanto, se mantienen a un mínimo absoluto y sólo se proporcionan para evitar un fallo grave, idealmente, nunca. Una implementación simple siempre será mejor que una interfaz de usuario simple.
 
-**La simplicidad de la _implementación_, la elegancia de código y el minimalismo deberán permanecer siempre en la máxima prioridad del desarrollo de Arch.**
+**La simplicidad de la *implementación*, la elegancia de código y el minimalismo deberán permanecer siempre en la máxima prioridad del desarrollo de Arch.**
 
 Los conceptos, diseños y características están generados e implementados usando como guía los principios de la Filosofía de Arch sin ceder a las influencias externas. El equipo de desarrollo está determinado por su compromiso y dedicación hacia la Filosofía de Arch. Si comparte su visión, le damos la bienvenida y le invitamos a que use Arch.
 
@@ -62,6 +62,6 @@ Otro de los principios rectores del desarrollo de Arch Linux es la libertad. Los
 
 Un sistema Arch Linux recién instalado contiene sólo los componentes básicos sin ninguna configuración automática. Los usuarios pueden configurar el sistema como lo deseen, mediante la línea de comandos. Desde el inicio del procedimiento de instalación, cada uno de los componentes del sistema es 100% transparente y accesible para una inmediata eliminación o sustitución por otros componentes.
 
-El gran número de paquetes y scripts de compilación presentes en los diferentes repositorios de Arch Linux también permiten la libertad de elección, ofreciendo software libre y de código abierto para aquellos que lo prefieran, así como paquetes de software propietario, para aquellos que abracen _la funcionalidad sobre la ideología_. Es el usuario quien elige.
+El gran número de paquetes y scripts de compilación presentes en los diferentes repositorios de Arch Linux también permiten la libertad de elección, ofreciendo software libre y de código abierto para aquellos que lo prefieran, así como paquetes de software propietario, para aquellos que abracen *la funcionalidad sobre la ideología*. Es el usuario quien elige.
 
-Como Judd Vinet, fundador del proyecto Arch Linux dice: «[Arch Linux] es lo que _tú_ haces de él».
+Como Judd Vinet, fundador del proyecto Arch Linux dice: «[Arch Linux] es lo que *tú* haces de él».

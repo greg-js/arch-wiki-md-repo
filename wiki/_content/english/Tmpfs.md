@@ -40,7 +40,6 @@ Reboot for the changes to take effect. Note that although it may be tempting to 
 After applying changes, you may want to verify that they took effect by looking at `/proc/mounts` and using `findmnt`:
 
  `$ findmnt --target /tmp` 
-
 ```
 TARGET SOURCE FSTYPE OPTIONS
 /tmp   tmpfs  tmpfs  rw,nosuid,nodev,relatime
@@ -67,7 +66,6 @@ To disable the automatic mount, run:
 Files will no longer be stored in a tmpfs, but your block device instead. The `/tmp` contents will now be preserved between reboots, which you might not want. To regain the previous behavior and clean the `/tmp` folder automatically when restarting your machine, consider using `tmpfiles.d(5)`:
 
  `/etc/tmpfiles.d/tmp.conf` 
-
 ```
 # see tmpfiles.d(5)
 # always enable /tmp folder cleaning

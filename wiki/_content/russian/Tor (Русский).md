@@ -39,7 +39,7 @@ Tor предоставляет SOCKS интерфейс, через которы
 
 **Важно:** Учтите, что недобросовестные владельцы конечных серверов (нод в цепочке) могут перехватывать ваш трафик, так что озаботьесь дополнительным шифрованием, для предотвращения перехвата личной информации и паролей.
 
-**Важно:** Tor сам по себе не обеспечивает анонимности: он не дает определить _откуда_ произошла передача данных, но все ещё остается возможность идентификации личности по их содержимому (см. [Want Tor to really work?](https://www.torproject.org/download/download.html.en#warning)).
+**Важно:** Tor сам по себе не обеспечивает анонимности: он не дает определить *откуда* произошла передача данных, но все ещё остается возможность идентификации личности по их содержимому (см. [Want Tor to really work?](https://www.torproject.org/download/download.html.en#warning)).
 
 Кроме описанных, есть и другие ограничения. Будет лучше, если вы ознакомитесь с ними на сайте проекта **до** использования.
 
@@ -80,7 +80,6 @@ Tor предоставляет SOCKS интерфейс, через которы
 По соображениям безопасности, желательно запускать Tor в [chroot](/index.php/Chroot "Chroot"). Следующие скрипты создадут подходящий chroot в /opt/torchroot:
 
  `~/torchroot-setup.sh` 
-
 ```
 #!/bin/bash
 export TORCHROOT=/opt/torchroot
@@ -133,7 +132,6 @@ fi
 или если вы используете systemd [отредактируйте](https://wiki.archlinux.org/index.php/Systemd_(Русский)#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.B0.D0.BC.D0.B8_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2) `tor.service`:
 
  `/etc/systemd/system/tor.service.d/chroot.conf` 
-
 ```
 [Service]
 User=root
@@ -189,9 +187,7 @@ KillSignal=SIGINT
 # mkdir /etc/systemd/system/systemd-nspawn@tor-exit.service.d
 
 ```
-
  `/etc/systemd/system/systemd-nspawn@tor-exit.service.d/tor-exit.conf` 
-
 ```
 [Service]
 ExecStart=
@@ -242,7 +238,7 @@ LimitNOFILE=32768
 
 ### Firefox
 
-Вы можете просто добавить Tor в качестве SOCKS прокси ("localhost", порт "9050"), открыв браузер и перейдя в **Настройки** > **Дополнительные** > **Вкладка "Сеть"** > **Настроить**. Чтобы перенаправить все DNS-запросы Firefox через прокси (иначе они пойдут не через Tor и будут доступны, например, провайдеру), откройте новую вкладку и введите `about:config`. Измените переменную _network.proxy.socks_remote_dns_ на _yes_.
+Вы можете просто добавить Tor в качестве SOCKS прокси ("localhost", порт "9050"), открыв браузер и перейдя в **Настройки** > **Дополнительные** > **Вкладка "Сеть"** > **Настроить**. Чтобы перенаправить все DNS-запросы Firefox через прокси (иначе они пойдут не через Tor и будут доступны, например, провайдеру), откройте новую вкладку и введите `about:config`. Измените переменную *network.proxy.socks_remote_dns* на *yes*.
 
 Можно также использовать дополнения, позволяющие переключаться между множественными прокси (например, вы можете использовать Tor в связке с "ssh -D"). В качестве примера можно привести "[FoxyProxy](https://addons.mozilla.org/en-us/firefox/addon/foxyproxy-standard/)".
 
@@ -373,7 +369,6 @@ ExitPolicy reject *:*
 Tor версий 0.2.x имеет встроенный механизм перенаправления DNS-запросов. Чтобы включить его, добавьте следующую строку в конфигурационный файл:
 
  `/etc/tor/torrc` 
-
 ```
  DNSPort 9053
  AutomapHostsOnResolve 1
@@ -456,7 +451,7 @@ May 23 00:27:24.624 [err] Reading config failed--see warnings above.
 
 ```
 
-Если права `/var/lib/tor` такие же как указанные ниже, то это значит, что директория является собственностью пользователя _tor_ группы _tor_.
+Если права `/var/lib/tor` такие же как указанные ниже, то это значит, что директория является собственностью пользователя *tor* группы *tor*.
 
 ```
 drwx------ 2 tor    tor    4096 May 12 21:03 tor
@@ -488,7 +483,7 @@ Group tor
 
 ```
 
-Закомментируйте строки _User tor_ и _Group tor_:
+Закомментируйте строки *User tor* и *Group tor*:
 
 ```
 ## Uncomment this to start the process in the background... or use
@@ -511,7 +506,7 @@ RunAsDaemon 1
 *   [Official Website](https://www.torproject.org/)
 *   [Unix-based Tor Articles](https://trac.torproject.org/projects/tor/wiki#Unixish)
 *   [Software commonly integrated with Tor](https://trac.torproject.org/projects/tor/wiki/doc/SupportPrograms)
-*   [How to set up a Tor _Hidden Service_](https://www.torproject.org/docs/tor-hidden-service.html.en)
+*   [How to set up a Tor *Hidden Service*](https://www.torproject.org/docs/tor-hidden-service.html.en)
 
 * * *
 

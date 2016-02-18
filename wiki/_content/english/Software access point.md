@@ -25,7 +25,6 @@ A software access point is used when you want your computer to act as a Wi-Fi ac
 You need a [nl80211](http://wireless.kernel.org/en/developers/Documentation/nl80211) compatible wireless device, which supports the AP [operating mode](http://wireless.kernel.org/en/users/Documentation/modes). This can be verified by running `iw list` command, under the `Supported interface modes` block there should be `AP` listed:
 
  `$ iw list` 
-
 ```
 Wiphy phy1
 ...
@@ -43,10 +42,9 @@ Wiphy phy1
 
 ### Wireless client and software AP with a single Wi-Fi device
 
-Creating a software AP is independent from your own network connection (Ethernet, wireless, ...). Many wireless devices even support _simultaneous_ operation both as AP and as wireless "client" at the same time. Using that capability you can create a software AP acting as a "wireless repeater" for an existing network, using a single wireless device. The capability is listed in the following section in the output of `iw list`:
+Creating a software AP is independent from your own network connection (Ethernet, wireless, ...). Many wireless devices even support *simultaneous* operation both as AP and as wireless "client" at the same time. Using that capability you can create a software AP acting as a "wireless repeater" for an existing network, using a single wireless device. The capability is listed in the following section in the output of `iw list`:
 
  `$ iw list` 
-
 ```
 Wiphy phy1
 ...
@@ -58,7 +56,7 @@ Wiphy phy1
 
 The constraint `#channels <= 1` means that your software AP must operate on the same channel as your Wi-Fi client connection; see the `channel` setting in `hostapd.conf` below.
 
-If you want to use the capability/feature, perhaps because an Ethernet connection is not available, you need to create two separate _virtual interfaces_ for using it. Virtual interfaces for a physical device `wlan0` can be created as follows: First, the _virtual interfaces_ are created for the network connection (`wlan0_sta`) itself and for the software AP/hostapd "wireless repeater":
+If you want to use the capability/feature, perhaps because an Ethernet connection is not available, you need to create two separate *virtual interfaces* for using it. Virtual interfaces for a physical device `wlan0` can be created as follows: First, the *virtual interfaces* are created for the network connection (`wlan0_sta`) itself and for the software AP/hostapd "wireless repeater":
 
 ```
 # iw dev wlan0 interface add wlan0_sta type station  
@@ -85,10 +83,9 @@ Setting up an access point comprises two main parts:
 
 The actual Wi-Fi link is established via the [hostapd](https://www.archlinux.org/packages/?name=hostapd) package, which has WPA2 support.
 
-Adjust the options in _hostapd_ configuration file if necessary. Especially, change the `ssid` and the `wpa_passphrase`. See [hostapd Linux documentation page](http://wireless.kernel.org/en/users/Documentation/hostapd) for more information.
+Adjust the options in *hostapd* configuration file if necessary. Especially, change the `ssid` and the `wpa_passphrase`. See [hostapd Linux documentation page](http://wireless.kernel.org/en/users/Documentation/hostapd) for more information.
 
  `/etc/hostapd/hostapd.conf` 
-
 ```
 ssid=YourWiFiName
 wpa_passphrase=Somepassphrase
@@ -129,18 +126,18 @@ For automatically starting hostapd, [enable](/index.php/Daemon "Daemon") the `ho
 
 There are two basic ways for implementing this:
 
-1.  **bridge**: create a network _bridge_ on your computer (wireless clients will appear to access the same network interface and the same subnet that's used by your computer)
+1.  **bridge**: create a network *bridge* on your computer (wireless clients will appear to access the same network interface and the same subnet that's used by your computer)
 2.  **NAT**: with IP forwarding/masquerading and DHCP service (wireless clients will use a dedicated subnet, data from/to that subnet is NAT-ted -- similar to a normal Wi-Fi router that's connected to your DSL or cable modem)
 
 The bridge approach is simpler, but it requires that any service that's needed by your wireless clients (like, DHCP) is available on your computers external interface. That means it will not work if you have a dial-up connection (e.g., via PPPoE or a 3G modem) or if you're using a cable modem that will supply exactly one IP address to you via DHCP.
 
 The NAT approach is more versatile, as it clearly separates Wi-Fi clients from your computer and it's completely transparent to the outside world. It will work with any kind of network connection, and (if needed) you can introduce traffic policies using the usual iptables approach.
 
-Of course, it is possible to _combine both things_. For that, studying both articles would be necessary. Example: Like having a bridge that contains both an ethernet device and the wireless device with an static ip, offering DHCP and setting NAT configured to relay the traffic to an additional network device - that can be ppp or eth.
+Of course, it is possible to *combine both things*. For that, studying both articles would be necessary. Example: Like having a bridge that contains both an ethernet device and the wireless device with an static ip, offering DHCP and setting NAT configured to relay the traffic to an additional network device - that can be ppp or eth.
 
 ### Bridge Setup
 
-You need to create a network _bridge_ and add your network interface (e.g. `eth0`) to it. You **should not** add the wireless device (e.g. `wlan0`) to the bridge; hostapd will add it on its own.
+You need to create a network *bridge* and add your network interface (e.g. `eth0`) to it. You **should not** add the wireless device (e.g. `wlan0`) to the bridge; hostapd will add it on its own.
 
 See [Network bridge](/index.php/Network_bridge "Network bridge").
 
@@ -173,7 +170,6 @@ This could be caused by low entropy. Consider installing [haveged](/index.php/Ha
 hostapd may not work, if the device is managed by NetworkManager. You can mask the device:
 
  `/etc/NetworkManager/NetworkManager.conf` 
-
 ```
 [keyfile]
 unmanaged-devices=mac:<hwaddr>

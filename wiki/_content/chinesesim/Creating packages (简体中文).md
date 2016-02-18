@@ -45,7 +45,7 @@ Arch Linux 中的软件包是通过 [makepkg](/index.php/Makepkg_(%E7%AE%80%E4%B
 
 软件包组是一组软件包，由打包者定义。按组安装/删除时， 通过组名可以替代组中的所有软件包。安装方法参考[Pacman#Installing package groups](/index.php/Pacman#Installing_package_groups "Pacman")和[PKGBUILD#groups](/index.php/PKGBUILD#groups "PKGBUILD").
 
-元软件包，通常以 _-meta_ 结尾，可软件包组提供的功能类似，可以同时安装一系列软件，安装方法和其它软件包一样，参考[Pacman#Installing specific packages](/index.php/Pacman#Installing_specific_packages "Pacman"). 元软件包和正常软件包的唯一区别，是元软件包是空的，仅记录其它软件间的依赖关系。
+元软件包，通常以 *-meta* 结尾，可软件包组提供的功能类似，可以同时安装一系列软件，安装方法和其它软件包一样，参考[Pacman#Installing specific packages](/index.php/Pacman#Installing_specific_packages "Pacman"). 元软件包和正常软件包的唯一区别，是元软件包是空的，仅记录其它软件间的依赖关系。
 
 和软件包组相比，元软件包的优点是所有后续加入的软件包都会在更新时被自动安装。而如果有新软件包加入一个组，这个软件吧不会在更新时自动被安装。元软件包的缺点是不如软件包组灵活。使用软件包组时，可以只删除组中的某几个软件，其它软件保持不变。而使用元软件包时，只有删除元软件包之后，才能自由删除其中的单个包。
 
@@ -73,7 +73,7 @@ Arch Linux 中的软件包是通过 [makepkg](/index.php/Makepkg_(%E7%AE%80%E4%B
 
 ### 下载并测试安装
 
-下载你想打包的软件的源代码压缩包，解压，按照作者所说的步骤安装它。记录下在编译和安装软件过程中需要的所有命令或步骤。你将要在_PKGBUILD_文件中重复这些命令和步骤。
+下载你想打包的软件的源代码压缩包，解压，按照作者所说的步骤安装它。记录下在编译和安装软件过程中需要的所有命令或步骤。你将要在*PKGBUILD*文件中重复这些命令和步骤。
 
 大多数软件作者遵循三步走的安装惯例：
 
@@ -88,7 +88,7 @@ make install
 
 ## 创建PKGBUILD
 
-当你运行`makepkg`时，它会在当前工作目录寻找一个`PKGBUILD`文件。如果找到`PKGBUILD`文件，它会下载该软件的源代码，根据`PKGBUILD`文件中的指令编译它。PKGBUILD中的指令必须能完全被[Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) "wikipedia:Bash (Unix shell)")解释。成功完成后，最后的二进制文件和包的元信息（即包的版本、依赖）被一起打包在`pkgname.pkg.tar.xz`文件包中，这个文件包可以使用`pacman -U _<package file>_`来安装。
+当你运行`makepkg`时，它会在当前工作目录寻找一个`PKGBUILD`文件。如果找到`PKGBUILD`文件，它会下载该软件的源代码，根据`PKGBUILD`文件中的指令编译它。PKGBUILD中的指令必须能完全被[Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) "wikipedia:Bash (Unix shell)")解释。成功完成后，最后的二进制文件和包的元信息（即包的版本、依赖）被一起打包在`pkgname.pkg.tar.xz`文件包中，这个文件包可以使用`pacman -U *<package file>*`来安装。
 
 要开始制作一个包，你应该先创建一个空工作目录，（建议`~/abs/**pkgname**`），进入该目录，创建一个`PKGBUILD`文件。你可以复制PKGBUILD模板（位于/usr/share/pacman/PKGBUILD.proto）到工作目录，或者复制一个类似包的PKGBUILD也可以。如果你只想在别人的基础上更改一些选项的话，后一种方法比较方便。
 
@@ -96,7 +96,7 @@ make install
 
 PKGBUILD文件的编写例子可以在`/usr/share/pacman/`处找到。PKGBUILD文件中可能用到的一些变量意义的解释可以在[PKGBUILD](/index.php/PKGBUILD "PKGBUILD")中找到。
 
-_makepkg_ 定义了三个变量，你应该在编译和安装的过程中使用它们：
+*makepkg* 定义了三个变量，你应该在编译和安装的过程中使用它们：
 
 	`startdir`
 
@@ -104,15 +104,15 @@ _makepkg_ 定义了三个变量，你应该在编译和安装的过程中使用�
 
 	`srcdir`
 
-	_makepkg_将会把源文件解压到此文件夹或在此文件夹中生成指向 PKGBUILD 里 source 数组中文件的软连接。
+	*makepkg*将会把源文件解压到此文件夹或在此文件夹中生成指向 PKGBUILD 里 source 数组中文件的软连接。
 
 	`pkgdir`
 
-	_makepkg_会把该文件夹当成系统根目录，并将软件安装在此文件夹下。
+	*makepkg*会把该文件夹当成系统根目录，并将软件安装在此文件夹下。
 
-这些变量都是_绝对路径_, 即意味着, 如果你合适地使用这些变量, 就不用担心当前工作目录的影响.
+这些变量都是*绝对路径*, 即意味着, 如果你合适地使用这些变量, 就不用担心当前工作目录的影响.
 
-**注意:** `build()`和`package()`函数在运行过程中都应当是非交互的。在这些函数中调用交互工具或脚本可能会中断_makepkg_的运行。（参考[FS#13214](https://bugs.archlinux.org/task/13214)）
+**注意:** `build()`和`package()`函数在运行过程中都应当是非交互的。在这些函数中调用交互工具或脚本可能会中断*makepkg*的运行。（参考[FS#13214](https://bugs.archlinux.org/task/13214)）
 
 **注意:** 如果你是接手别人的包，除了把你的名字列为包维护者（Maintainers）外，你还应当把之前的维护者列为贡献者（Contributors）。
 
@@ -138,9 +138,9 @@ Pacman 4.1 引入了 `prepare()` 函数. 在这一函数中, 那些用于预处�
 
 #### build()
 
-现在你需要编写`PKGBUILD`文件中的`build()`函数。这个函数使用通用的shell命令来自动编译软件并创建软件的安装目录。这允许_makepkg_无需详查你的文件系统就可以打包你的软件。
+现在你需要编写`PKGBUILD`文件中的`build()`函数。这个函数使用通用的shell命令来自动编译软件并创建软件的安装目录。这允许*makepkg*无需详查你的文件系统就可以打包你的软件。
 
-在`build()`函数中第一步就是进入由解压源码包所生成的目录。 _makepkg_ 会在执行 `build()` 函数之前更改当前目录为 `$srcdir`; 因此, 大多数情况下第一条命令是这样的：
+在`build()`函数中第一步就是进入由解压源码包所生成的目录。 *makepkg* 会在执行 `build()` 函数之前更改当前目录为 `$srcdir`; 因此, 大多数情况下第一条命令是这样的：
 
 ```
 cd "$srcdir/$pkgname-$pkgver"
@@ -170,13 +170,13 @@ make DESTDIR="$pkgdir/" install
 
 ```
 
-**Note:** 有时候在`Makefile`里没有使用`DESTDIR`；你可能需要使用`prefix`来替代。如果软件包是用_autoconf_/_automake_来创建的，那就使用`DESTDIR`；如果`DESTDIR`不起作用，试试`make prefix="$pkgdir/usr/" install`。如果这还不起作用的话，你就需要深入检查软件的安装命令了。
+**Note:** 有时候在`Makefile`里没有使用`DESTDIR`；你可能需要使用`prefix`来替代。如果软件包是用*autoconf*/*automake*来创建的，那就使用`DESTDIR`；如果`DESTDIR`不起作用，试试`make prefix="$pkgdir/usr/" install`。如果这还不起作用的话，你就需要深入检查软件的安装命令了。
 
 在一些很罕见的情况下，软件只有安装在单一目录下时才能运行。在这种情况下你还是老老实实把它安装到`$pkgdir/opt`下吧。
 
-通常，软件在安装过程中会在`pkg`目录下先创建一系列子目录。如果没有的话，_makepkg_会报错，你需要在`build()`函数中提前手动创建这些目录。
+通常，软件在安装过程中会在`pkg`目录下先创建一系列子目录。如果没有的话，*makepkg*会报错，你需要在`build()`函数中提前手动创建这些目录。
 
-在过去，没有`package()`函数。所以，把文件复制到 "pkg" 目录下的工作放在`build()`函数的最后。如果`package()`函数不存在的话，`build()`以伪root权限运行。对于新的软件包, `package()` 函数是必需的且通过 _fakeroot_ 运行, 而 `build()` 函数没有任何特别的权限.
+在过去，没有`package()`函数。所以，把文件复制到 "pkg" 目录下的工作放在`build()`函数的最后。如果`package()`函数不存在的话，`build()`以伪root权限运行。对于新的软件包, `package()` 函数是必需的且通过 *fakeroot* 运行, 而 `build()` 函数没有任何特别的权限.
 
 `makepkg --repackage` 命令只运行`package()`函数,它只是将文件打包成`*.pkg.*`，并不运行编译过程。如果你只是更改了PKGBUILD中的依赖，用这个命令来打包可以节省很多时间。
 
@@ -198,7 +198,7 @@ make DESTDIR="$pkgdir/" install
 
 ```
 $ namcap PKGBUILD
-$ namcap _<package file name>_.pkg.tar.xz
+$ namcap *<package file name>*.pkg.tar.xz
 
 ```
 

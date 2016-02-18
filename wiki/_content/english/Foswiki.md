@@ -61,7 +61,7 @@ $ exit
 
 *   At this point, you want to ensure that all the files have the correct permissions. (See the Foswiki guide on [Setting File Access Permissions](http://foswiki.org/Support.SettingFileAccessRightsLinuxUnix) for details.)
 
-	If you would like to determine whether the files already have the correct permissions, you can make use of `find` to test permissions against the example commands listed in the above Foswiki guide. For instance, this will find any directories that do _not_ have their access mode set to 755:
+	If you would like to determine whether the files already have the correct permissions, you can make use of `find` to test permissions against the example commands listed in the above Foswiki guide. For instance, this will find any directories that do *not* have their access mode set to 755:
 
 ```
 # find . -type d \! -perm 755
@@ -195,7 +195,8 @@ upstream fcgiwrap {
 ```
 # mkdir -p /etc/nginx/htpasswd
 # cd /etc/nginx/htpasswd
-# printf "admin:$(openssl passwd -crypt <YOURPASSWORD>)\n" >> foswiki-configure
+# printf "admin:$(openssl passwd -crypt <YOURPASSWORD>)
+" >> foswiki-configure
 # chgrp http foswiki-configure
 # chmod 640 foswiki-configure
 

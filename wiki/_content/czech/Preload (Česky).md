@@ -1,4 +1,4 @@
-**preload** je program, který beží v pozadí jako démon a monitoruje používání programů pomocí _Markov chains_(Markovovo algoritmu ?). Často používané programy jsou načítány do paměti během nízkého vytížení počítače. To vede k rychlejšímu spouštěcímu času a menší velioksti dat, která jsou získávána z disku. preload je často používán s [prelink](/index.php/Prelink "Prelink"). Autorem preloadu je Behdade Esfahbod.
+**preload** je program, který beží v pozadí jako démon a monitoruje používání programů pomocí *Markov chains*(Markovovo algoritmu ?). Často používané programy jsou načítány do paměti během nízkého vytížení počítače. To vede k rychlejšímu spouštěcímu času a menší velioksti dat, která jsou získávána z disku. preload je často používán s [prelink](/index.php/Prelink "Prelink"). Autorem preloadu je Behdade Esfahbod.
 
 ## Instalace
 

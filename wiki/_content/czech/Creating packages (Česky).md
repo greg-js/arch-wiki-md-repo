@@ -26,7 +26,7 @@ Balíček Archu není nic než tar archív komprimovaný xz nebo 'tarball', kter
 
 ### Potřebný software
 
-Nejprve se ujistěte, že potřebné nástroje jsou nainstalované. Skupina balíčků s názvem "base-devel" by měla stačit; obsahuje _make_ a další nástroje potřebné ke kompilaci ze zdrojového kódu.
+Nejprve se ujistěte, že potřebné nástroje jsou nainstalované. Skupina balíčků s názvem "base-devel" by měla stačit; obsahuje *make* a další nástroje potřebné ke kompilaci ze zdrojového kódu.
 
 ```
 # pacman -S base-devel
@@ -46,7 +46,7 @@ Jeden z klíčů pro sestavení balíčků je [makepkg](/index.php/Makepkg "Make
 
 ### Stažení a test instalace
 
-Stáhněte zdrojový tarball softwaru, kterého chcete mít balíček, rozbalte jej a řiďte se kroky autora programu. Zapište každý příkaz a/nebo krok potřebný pro kompilaci a instalaci. Stejné kroky budete opakovat v _PKGBUILD_ souboru.
+Stáhněte zdrojový tarball softwaru, kterého chcete mít balíček, rozbalte jej a řiďte se kroky autora programu. Zapište každý příkaz a/nebo krok potřebný pro kompilaci a instalaci. Stejné kroky budete opakovat v *PKGBUILD* souboru.
 
 Většina autorů softwaru se zůstávají u tří kroků:
 

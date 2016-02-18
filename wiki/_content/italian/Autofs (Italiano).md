@@ -31,7 +31,6 @@ AutoFS usa dei file template per la configurazione, questi file posso essere tro
 *   Aprire il file `/etc/autofs/auto.master` con il proprio editor di testo preferito, conterrà qualcosa di simile a questo:
 
  `/etc/autofs/auto.master` 
-
 ```
 /var/autofs/misc	/etc/autofs/auto.misc
 /var/autofs/net  	/etc/autofs/auto.net
@@ -40,7 +39,6 @@ AutoFS usa dei file template per la configurazione, questi file posso essere tro
 La prima parte di ogni riga determina la cartella dove verranno effettuati i mount delle periferiche, il secondo parametro indica il template da utilizzare. Il valore di default è `/var/autofs`, ma può essere cambiato con una qualsiasi cartella a piacimento. Per esempio:
 
  `/etc/autofs/auto.master` 
-
 ```
 /media/misc     /etc/autofs/auto.misc     --timeout=5 --ghost
 /media/net      /etc/autofs/auto.net      --timeout=60 --ghost
@@ -48,7 +46,7 @@ La prima parte di ogni riga determina la cartella dove verranno effettuati i mou
 
 I parametri opzionali `timeout` impostano dopo quanti secondi verrà effettuato l'umount delle cartelle. Il parametro `ghost` imposta la visualizzazione permanente dei mount delle periferiche configurati, invece di essere mostrati solo se inseriti o accessibili. Può essere utile se non è possibile ricordare i nomi delle periferiche rimovibili o delle condivisioni di rete.
 
-Le cartelle indicate nel file devono esistere nel sistema e devono essere vuote, dato che il loro contenuto sarà cambiato dinamicamente al caricamento delle periferiche. Questa procedure comunque non sovrascrive di dati contenuti nelle cartelle, quindi se si effettua l'automount di una periferica su di una cartella _attiva_ sarà possibile cambiarne il punto di mount nel file `auto.master` e riavviare AutoFS per poter accedere nuovamente al suo contenuto originale.
+Le cartelle indicate nel file devono esistere nel sistema e devono essere vuote, dato che il loro contenuto sarà cambiato dinamicamente al caricamento delle periferiche. Questa procedure comunque non sovrascrive di dati contenuti nelle cartelle, quindi se si effettua l'automount di una periferica su di una cartella *attiva* sarà possibile cambiarne il punto di mount nel file `auto.master` e riavviare AutoFS per poter accedere nuovamente al suo contenuto originale.
 
 **Nota:** Assicurarsi di lasciare una riga vuota alla fine dei ogni file template (premendo `Invio` dopo l'ultima parola del file). Se AutoFS non trova un EndOfFile(EOF) corretto, non sarà caricato correttamente.
 
@@ -70,7 +68,6 @@ Le periferiche verranno ora montate automaticamente quando accessibili, rimarran
 *   Aprire il file `/etc/autofs/auto.misc` ed aggiungere, rimuovere o modificare le varie periferiche. Ad esempio:
 
  `/etc/autofs/auto.misc` 
-
 ```
 #kernel   -ro                                        ftp.kernel.org:/pub/linux
 #boot     -fstype=ext2                               :/dev/hda1
@@ -92,7 +89,7 @@ AutoFS fornisce un metodo aggiuntivo di localizzare e montare le condivisioni [N
 
 Tutti i nomi host devono essere risolvibili, es. aggiungendo l'indirizzo IP ed il nome host nel file `/etc/hosts` oppure tramite [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") quindi assicurarsi di aver installato ed avviato [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils).
 
-Ad esempio, nel caso in cui un server remoto _fileserver_ avente una condivisione [NFS](/index.php/NFS_(Italiano) "NFS (Italiano)") chiamata _/home/share_, sarà possibile accedere alla condivisione semplicemente digitando:
+Ad esempio, nel caso in cui un server remoto *fileserver* avente una condivisione [NFS](/index.php/NFS_(Italiano) "NFS (Italiano)") chiamata */home/share*, sarà possibile accedere alla condivisione semplicemente digitando:
 
 ```
 # cd /net/fileserver/home/share
@@ -108,7 +105,7 @@ L'opzione `-host` usa un meccanismo simile al comando `showmount`, per identific
 
 ```
 
-Sostituendo _<nomeserver>_ con il nome del proprio server.
+Sostituendo *<nomeserver>* con il nome del proprio server.
 
 ### Samba
 
@@ -184,7 +181,6 @@ servername -fstype=curl,allow_other    :ftp\://remoteserver
 Creare il file `/sbin/mount.curl` inserendo questo codice:
 
  `/sbin/mount.curl` 
-
 ```
 #! /bin/sh
 curlftpfs $1 $2 -o $4,disable_eprt
@@ -193,7 +189,6 @@ curlftpfs $1 $2 -o $4,disable_eprt
 Creare il file `/sbin/umount.curl` inserendo questo codice:
 
  `/sbin/umount.curl` 
-
 ```
 #! /bin/sh
 fusermount -u $1

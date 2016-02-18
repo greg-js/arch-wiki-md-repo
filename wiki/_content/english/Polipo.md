@@ -1,6 +1,6 @@
 From [Polipo's site](http://www.pps.jussieu.fr/~jch/software/polipo/):
 
-	"_Polipo is a small and fast caching web proxy (a web cache, an HTTP proxy, a proxy server). While Polipo was designed to be used by one person or a small group of people, there is nothing that prevents it from being used by a larger group._"
+	"*Polipo is a small and fast caching web proxy (a web cache, an HTTP proxy, a proxy server). While Polipo was designed to be used by one person or a small group of people, there is nothing that prevents it from being used by a larger group.*"
 
 Unlike [Squid](/index.php/Squid "Squid"), Polipo is very light on resources and simple to configure. This makes it ideal for single user systems and other uncomplicated setups. Do keep in mind, however, that this versatility comes at a cost: Polipo will increase its space usage without restriction as it is not aware of how big its disk cache grows. This perceived fault is by design, since omitting these sanity checks drastically reduces Polipo's memory usage and overall toll on the system. A practical way of restricting disk usage is by making Polipo run as its own user and employing [disk quota](/index.php/Disk_quota "Disk quota").
 
@@ -84,7 +84,7 @@ Management is mostly performed in `/etc/polipo/config`. Most users can opt for u
 
 ```
 
-One element of configuration that warrants mentioning is polipo's default behavior of blocking outbound connections by port. There are two variables in polipo's config file that control allowed outbound ports. `allowedPorts` specifies ports for outbound HTTP connections. It defaults to 80-100 and 1024-65535\. `tunnelAllowedPorts` specifies ports polipo will allow tunnel traffic to as well as HTTPS traffic. By default it is much more restricted: "_It defaults to allowing ssh, HTTP, https, rsync, IMAP, imaps, POP, pops, Jabber, CVS and Git traffic._"
+One element of configuration that warrants mentioning is polipo's default behavior of blocking outbound connections by port. There are two variables in polipo's config file that control allowed outbound ports. `allowedPorts` specifies ports for outbound HTTP connections. It defaults to 80-100 and 1024-65535\. `tunnelAllowedPorts` specifies ports polipo will allow tunnel traffic to as well as HTTPS traffic. By default it is much more restricted: "*It defaults to allowing ssh, HTTP, https, rsync, IMAP, imaps, POP, pops, Jabber, CVS and Git traffic.*"
 
 If you see a "403 Forbidden Port" error message from polipo when attempting to browse to a host:port, you need to configure polipo to accept traffic to more ports for either HTTP or HTTPS. To set them wide open, add the following to `/etc/polipo/config`:
 
@@ -115,8 +115,8 @@ After installing iptables, add the appropiate rules to `/etc/iptables/iptables.r
 :PREROUTING ACCEPT [0:0]
 :POSTROUTING ACCEPT [0:0]
 :OUTPUT ACCEPT [0:0]
-_-A OUTPUT -p tcp --dport 80 -m owner ! --uid-owner polipo -j ACCEPT_
-_-A OUTPUT -p tcp --dport 80 -j REDIRECT --to-ports 8123_
+*-A OUTPUT -p tcp --dport 80 -m owner ! --uid-owner polipo -j ACCEPT*
+*-A OUTPUT -p tcp --dport 80 -j REDIRECT --to-ports 8123*
 COMMIT
 
 ```

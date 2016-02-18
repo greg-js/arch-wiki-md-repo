@@ -1,16 +1,16 @@
-A [daemon](https://en.wikipedia.org/wiki/Daemon_(computing) "wikipedia:Daemon (computing)") is a program that runs as a "background" process (without a terminal or user interface), commonly waiting for events to occur and offering services. A good example is a web server that waits for a request to deliver a page, or a ssh server waiting for someone trying to log in. While these are full featured applications, there are daemons whose work is not that visible. Daemons are for tasks like writing messages into a log file (e.g. `syslog`, `metalog`) or keeping your system time accurate (e.g. [ntpd](/index.php/Ntpd "Ntpd")). For more information see `man 7 daemon`.
+A [daemon](https://en.wikipedia.org/wiki/Daemon_(computing) is a program that runs as a "background" process (without a terminal or user interface), commonly waiting for events to occur and offering services. A good example is a web server that waits for a request to deliver a page, or a ssh server waiting for someone trying to log in. While these are full featured applications, there are daemons whose work is not that visible. Daemons are for tasks like writing messages into a log file (e.g. `syslog`, `metalog`) or keeping your system time accurate (e.g. [ntpd](/index.php/Ntpd "Ntpd")). For more information see `man 7 daemon`.
 
-In Arch Linux, daemons are managed by [systemd](/index.php/Systemd "Systemd"). The [systemctl](/index.php/Systemd#Basic_systemctl_usage "Systemd") command is the user interface used to manage them. It reads `_name_.service` files that contain information about how and when to start the associated daemon. Service files are stored in `/{etc,usr/lib,run}/systemd/system`. See [systemd#Using units](/index.php/Systemd#Using_units "Systemd") for details.
+In Arch Linux, daemons are managed by [systemd](/index.php/Systemd "Systemd"). The [systemctl](/index.php/Systemd#Basic_systemctl_usage "Systemd") command is the user interface used to manage them. It reads `*name*.service` files that contain information about how and when to start the associated daemon. Service files are stored in `/{etc,usr/lib,run}/systemd/system`. See [systemd#Using units](/index.php/Systemd#Using_units "Systemd") for details.
 
 ## List of daemons
 
 Here is a list of daemons. Note that any package can provide a daemon, so this list will never be complete. Please feel free to add any missing daemons here, in alphabetical order. You may have packages that include other daemons from the [AUR](/index.php/AUR "AUR"). These files will likely be located in `/usr/lib/systemd/system/`.
 
-The _Package_ column contains a link to ArchWiki page for each daemon (or link to the package if no such page exists). The _initscripts_ column contains the name of the legacy _rc.d_ script and the _systemd_ column contains the name of the [systemd](/index.php/Systemd "Systemd") service file. Note that there may be daemons specific to either initscripts or systemd, with the respective column empty. The _Description_ column provides short description, preferably of _the daemon_ (not of the package).
+The *Package* column contains a link to ArchWiki page for each daemon (or link to the package if no such page exists). The *initscripts* column contains the name of the legacy *rc.d* script and the *systemd* column contains the name of the [systemd](/index.php/Systemd "Systemd") service file. Note that there may be daemons specific to either initscripts or systemd, with the respective column empty. The *Description* column provides short description, preferably of *the daemon* (not of the package).
 
 | Package | initscripts | systemd | Description |
 | [acpid](/index.php/Acpid "Acpid") | acpid | acpid.service | A daemon for delivering ACPI power management events with netlink support. |
-| [alsa](/index.php/Alsa "Alsa") | alsa | _always on_ – alsa-store.service, alsa-restore.service | Saves the state of a sound card (e.g. volume) on shutdown and restores it on startup. |
+| [alsa](/index.php/Alsa "Alsa") | alsa | *always on* – alsa-store.service, alsa-restore.service | Saves the state of a sound card (e.g. volume) on shutdown and restores it on startup. |
 | [at](https://www.archlinux.org/packages/?name=at) | atd | atd.service | Runs jobs queued for later execution. |
 | [Autofs](/index.php/Autofs "Autofs") | autofs | autofs.service | Automounting of removable media or network shares when they are inserted or accessed. |
 | [Avahi](/index.php/Avahi "Avahi") | avahi-daemon | avahi-daemon.service | Allows programs to automatically find local network services. |
@@ -24,9 +24,9 @@ freshclamd.service | Anti-virus toolkit for Unix. |
 | [Connman](/index.php/Connman "Connman") | connmand | connman.service | Wireless LAN network manager. |
 | [Cpupower](/index.php/Cpupower "Cpupower") | cpupower | cpupower.service | Sets [cpufreq](/index.php/Cpufreq "Cpufreq") governor and other parameters on startup. |
  craftbukkit | craftbukkit.service | CraftBukkit Minecraft server. |
-| [Cron](/index.php/Cron "Cron") | crond | cronie.service (if using [cronie](https://www.archlinux.org/packages/?name=cronie)) or dcron.service (if using [dcron](https://aur.archlinux.org/packages/dcron/)) | Daemon to schedule and time events. The daemon name _crond_ is used by at least two packages, [cronie](https://www.archlinux.org/packages/?name=cronie) and [dcron](https://aur.archlinux.org/packages/dcron/). |
+| [Cron](/index.php/Cron "Cron") | crond | cronie.service (if using [cronie](https://www.archlinux.org/packages/?name=cronie)) or dcron.service (if using [dcron](https://aur.archlinux.org/packages/dcron/)) | Daemon to schedule and time events. The daemon name *crond* is used by at least two packages, [cronie](https://www.archlinux.org/packages/?name=cronie) and [dcron](https://aur.archlinux.org/packages/dcron/). |
 | [CUPS](/index.php/CUPS "CUPS") | cupsd | org.cups.cupsd.service | The CUPS Printing System daemon. |
-| [D-Bus](/index.php/D-Bus "D-Bus") | dbus | _always on_ – dbus.service | Freedesktop.org message bus system. |
+| [D-Bus](/index.php/D-Bus "D-Bus") | dbus | *always on* – dbus.service | Freedesktop.org message bus system. |
 | [dante](https://www.archlinux.org/packages/?name=dante) | sockd | sockd.service | A circuit-level SOCKS client/server. |
 | [Deluge](/index.php/Deluge "Deluge") | deluged | deluged.service | Cross-platform and full-featured BitTorrent client - main daemon. |
 | deluge-web | deluge-web.service | Cross-platform and full-featured BitTorrent client - web interface daemon. |
@@ -35,7 +35,7 @@ freshclamd.service | Anti-virus toolkit for Unix. |
 | [Dropbox](/index.php/Dropbox "Dropbox") | dropboxd | dropbox@.service | Cross-platform file synchronisation with version control. |
 | [fail2ban](/index.php/Fail2ban "Fail2ban") | fail2ban | fail2ban.service | Fail2ban scans log files and bans IP addresses that show malicious activity. |
 | [Fan speed control](/index.php/Fan_speed_control "Fan speed control") | fancontrol | fancontrol.service | Fan control daemon (part of lm_sensors) |
-| [Fbsplash](/index.php/Fbsplash "Fbsplash") | fbsplash | _not yet implemented_ | Graphical boot splash screen for the user. |
+| [Fbsplash](/index.php/Fbsplash "Fbsplash") | fbsplash | *not yet implemented* | Graphical boot splash screen for the user. |
 | [FluidSynth](/index.php/FluidSynth "FluidSynth") | fluidsynth | fluidsynth.service | Software synthesizer. |
  ftpd | ftpd.service | inetutils FTP daemon. |
 | [GDM](/index.php/GDM "GDM") | gdm | gdm.service | GNOME Display Manager. |
@@ -76,7 +76,7 @@ NetworkManager-wait-online.service | NetworkManager daemon, provides configurati
 | [Ntop](/index.php/Ntop "Ntop") | ntop | ntop.service | Ntop is a network traffic probe based on libcap. |
 | [OpenNTPD](/index.php/OpenNTPD "OpenNTPD") | openntpd | openntpd.service | Alternative Network Time Protocol daemon (client and server). |
  osspd | osspd.service | OSS Userspace Bridge. |
-| [OpenVPN](/index.php/OpenVPN "OpenVPN") | openvpn | openvpn@.service | One for each VPN configuration file saved like `/etc/openvpn/_<profile-name>_.conf` |
+| [OpenVPN](/index.php/OpenVPN "OpenVPN") | openvpn | openvpn@.service | One for each VPN configuration file saved like `/etc/openvpn/*<profile-name>*.conf` |
 | [OSS](/index.php/OSS "OSS") | oss | oss.service | Open Sound System. Alternative to [ALSA](/index.php/ALSA "ALSA"). |
 | [Pdnsd](/index.php/Pdnsd "Pdnsd") | pdnsd | pdnsd.service | Proxy DNS server with permanent caching. |
 | [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) | php-fpm | php-fpm.service | FastCGI Process Manager for PHP. |
@@ -111,7 +111,7 @@ winbindd.service | File and print services for Microsoft Windows clients. |
  svnserve | svnserve.service | Subversion server. |
 | [syslog-ng](/index.php/Syslog-ng "Syslog-ng") | syslog-ng | syslog-ng.service | System logger next generation. |
 | [Timidity](/index.php/Timidity "Timidity") | timidity++ | timidity.service | Software synthesizer for MIDI. |
-| [Tinc](/index.php/Tinc "Tinc") |  ? | tincd@.service | One for each configuration directory like /etc/tinc/_<vpnname>_/ |
+| [Tinc](/index.php/Tinc "Tinc") |  ? | tincd@.service | One for each configuration directory like /etc/tinc/*<vpnname>*/ |
 | [Tor](/index.php/Tor "Tor") | tor | tor.service | Onion routing for anonymous communication. |
 | [Transmission](/index.php/Transmission "Transmission") | transmissiond | transmission.service | BitTorrent Daemon. |
 | [Ufw](/index.php/Ufw "Ufw") | ufw | ufw.service | Uncomplicated FireWall. |

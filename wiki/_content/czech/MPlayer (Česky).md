@@ -71,7 +71,6 @@ Systémová konfigurace je uložena v souboru `/etc/mplayer/mplayer.conf`, uživ
 Příklad konfigurace:
 
  `/etc/mplayer/example.conf` 
-
 ```
 #profil pro mixování dvou-kanálového audia na šest kanálů
 # aktivace parametrem -profile 2chto6ch
@@ -163,7 +162,7 @@ ao=jack
 
 ### Klávesové zkratky
 
-	_Toto je seznam nejzákladnějších kláves programu MPlayer._
+	*Toto je seznam nejzákladnějších kláves programu MPlayer.*
 
 | Key | Description |
 | p | Pauza/přehrát. |
@@ -196,7 +195,7 @@ mplayer -subcp enca:cs:cp1250
 
 ```
 
-Nebo můžeme přidat subcp do _/etc/mplayer/mplayer.conf_
+Nebo můžeme přidat subcp do */etc/mplayer/mplayer.conf*
 
 ```
 subcp=enca:cs:cp1250

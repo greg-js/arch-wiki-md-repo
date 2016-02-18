@@ -40,7 +40,7 @@
 
 ### 快捷键前缀
 
-<caption>_前缀为_ `Ctrl-b`</caption>
+<caption>*前缀为* `Ctrl-b`</caption>
 | 按键 | 动作 |
 | c | 创建一个新窗口 |
 | n | 切换至下一窗口 |
@@ -171,10 +171,9 @@ There are some notable advantages to starting a tmux server at startup. Notably,
 
 Furthermore, any customization attached to your tmux session will be retained and your tmux session can be made to persist even if you have never logged in, if you have some reason to do that (like a heavily scripted tmux configuration or shared user tmux sessions).
 
-The service below starts tmux for the specified user (i.e. start with `tmux@_username_.service`):
+The service below starts tmux for the specified user (i.e. start with `tmux@*username*.service`):
 
  `/etc/systemd/system/tmux@.service` 
-
 ```
 [Unit]
 Description=Start tmux in detached session
@@ -190,7 +189,7 @@ WantedBy=multi-user.target
 
 ```
 
-**Tip:** You may want to add `WorkingDirectory=_custom_path_` to customize working directory.
+**Tip:** You may want to add `WorkingDirectory=*custom_path*` to customize working directory.
 
 Alternatively, you can place this file within your [systemd/User](/index.php/Systemd/User "Systemd/User") directory, for example `~/.config/systemd/user/tmux.service`. This way the tmux service will start when you log in.
 
@@ -263,7 +262,6 @@ Then compile the file with `tic`. The keys should be working now.
 It is possible to copy a tmux paste buffer to an ICCCM selection, and vice-versa, by defining a shell command which interfaces tmux with an X11 selection interface. The following tmux config file snippet effectively integrates `CLIPBOARD` with the current tmux paste buffer using xclip:
 
  `~/.tmux.conf` 
-
 ```
 ...
 ##CLIPBOARD selection integration
@@ -278,7 +276,6 @@ bind C-v run "tmux set-buffer -- \"$(xclip -o -selection clipboard)\"; tmux past
 As alternative you can use `xsel`:
 
  `~/.tmux.conf` 
-
 ```
 ...
 ##CLIPBOARD selection integration
@@ -308,7 +305,6 @@ mv osc-xterm-clipboard /usr/lib/urxvt/perl/
 You will also need to enable that perl script in your .Xdefaults:
 
  `~/.Xdefaults` 
-
 ```
 ...
 *URxvt.perl-ext-common:		osc-xterm-clipboard
@@ -319,7 +315,6 @@ You will also need to enable that perl script in your .Xdefaults:
 Next, you want to tell tmux about the new function and enable mouse support (if you haven't already). The third option is optional, to enable scrolling and selecting inside panes with your mouse:
 
  `~/.tmux.conf` 
-
 ```
 ...
 set-option -ga terminal-override ',rxvt-uni*:XT:Ms=\E]52;%p1%s;%p2%s\007'
@@ -348,7 +343,6 @@ Use this command to start urxvt with a started tmux session. I use this with the
 Simply add the following line of bash code to your .bashrc before your aliases; the code for other shells is very similar:
 
  `[[ -z "$TMUX" ]] && exec tmux`  `~/.bashrc` 
-
 ```
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
@@ -435,7 +429,6 @@ In [Practical Tmux](http://mutelight.org/articles/practical-tmux), Brandur Leach
 The script “`tmx`” below implements this — the version here is slightly modified to execute “`tmux new-window`” if “1” is its second parameter. Invoked as `tmx <base session name> [1]` it launches the base session if necessary. Otherwise a new “client” session linked to the base, optionally add a new window and attach, setting it to kill itself once it turns “zombie”.
 
  `tmx` 
-
 ```
 #!/bin/bash
 
@@ -499,7 +492,6 @@ added to `~/.tmux.conf`. It causes tmux to resize a window based on the smallest
 An alternative taken from [[1]](http://sourceforge.net/mailarchive/forum.php?thread_name=CAPBqLKEC0MAFR%2BWUYqCuyd%3DKB47HK8CFSuAf%3Dd%3DW2H3F4fpMZw%40mail.gmail.com&forum_name=tmux-users) is to put the following ~/.bashrc:
 
  `.bashrc` 
-
 ```
 function rsc() {
   CLIENTID=$1.`date +%S`
@@ -561,7 +553,7 @@ exit 0
 
 ```
 
-A derived version to run _irssi_ with the _nicklist_ plugin can be found on [its ArchWiki page](/index.php/Irssi#irssi_with_nicklist_in_tmux "Irssi").
+A derived version to run *irssi* with the *nicklist* plugin can be found on [its ArchWiki page](/index.php/Irssi#irssi_with_nicklist_in_tmux "Irssi").
 
 ### Terminal emulator window titles
 

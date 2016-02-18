@@ -1,10 +1,10 @@
 From [Wikipedia's DjVu Page](http://en.wikipedia.org/wiki/DjVu):
 
-	_DjVu is a computer file format designed primarily to store scanned documents, especially those containing a combination of text, line drawings, indexed color images, and photographs. It uses technologies such as image layer separation of text and background/images, progressive loading, arithmetic coding, and lossy compression for bitonal (monochrome) images. This allows for high-quality, readable images to be stored in a minimum of space, so that they can be made available on the web._
+	*DjVu is a computer file format designed primarily to store scanned documents, especially those containing a combination of text, line drawings, indexed color images, and photographs. It uses technologies such as image layer separation of text and background/images, progressive loading, arithmetic coding, and lossy compression for bitonal (monochrome) images. This allows for high-quality, readable images to be stored in a minimum of space, so that they can be made available on the web.*
 
-	_DjVu has been promoted as an alternative to PDF, promising smaller files than PDF for most scanned documents. The DjVu developers report that color magazine pages compress to 40–70 kB, black and white technical papers compress to 15–40 kB, and ancient manuscripts compress to around 100 kB; a satisfactory JPEG image typically requires 500 kB. Like PDF, DjVu can contain an OCR text layer, making it easy to perform copy and paste and text search operations._
+	*DjVu has been promoted as an alternative to PDF, promising smaller files than PDF for most scanned documents. The DjVu developers report that color magazine pages compress to 40–70 kB, black and white technical papers compress to 15–40 kB, and ancient manuscripts compress to around 100 kB; a satisfactory JPEG image typically requires 500 kB. Like PDF, DjVu can contain an OCR text layer, making it easy to perform copy and paste and text search operations.*
 
-	_Free browser plug-ins and desktop viewers from different developers are available from the djvu.org website. DjVu is supported by a number of multi-format document viewers and e-book reader software on Linux (Okular, Evince), Android (VuDroid), Windows (SumatraPDF), iPhone/iPad (Stanza), and BlackBerry OS (DjVuBB)._
+	*Free browser plug-ins and desktop viewers from different developers are available from the djvu.org website. DjVu is supported by a number of multi-format document viewers and e-book reader software on Linux (Okular, Evince), Android (VuDroid), Windows (SumatraPDF), iPhone/iPad (Stanza), and BlackBerry OS (DjVuBB).*
 
 ## Contents
 
@@ -74,7 +74,7 @@ Convert Djvu pages into PDF:
 
 ```
 
-You can also use _--page_ to export specific pages:
+You can also use *--page* to export specific pages:
 
 ```
  ddjvu --format=tiff --page=1-10 input.djvu output.tiff

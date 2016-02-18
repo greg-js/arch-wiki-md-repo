@@ -206,7 +206,7 @@ Wireless needs [linux](https://www.archlinux.org/packages/?name=linux) >= 4.3 an
 
 When you install an SSD in the place of the plate HDD drive and you want to have your HDD still inside the laptop, it is possible to install it in the place of the optical drive in a special "HDD caddy". The optical drive is of 9 mm height, but a 9,5 mm caddy (ultra slim) fits in the slot. A caddy with a SATA interface is needed. It is difficult to separate the front bezel from the original optical drive (and opening its case does not help, but brings a danger of making a mess in the opening mechanism; the only option is just to pull the bezel using a bit of force, but you risk breaking the latches).
 
-While the HDD installed instead of the optical drive operates flawlessly in Windows, it wasn't going to work out of the box in Linux, at least in one case. The kernel tries to establish a connection with the disk, but fails to do it (_SATA link down_ entry in /var/log/messages). The solution is to force a 1.5 Gbps transfer speed (instead of 6 Gbps) by adding a _libata.force=_ kernel parameter. See [[1]](https://www.kernel.org/doc/Documentation/kernel-parameters.txt) for details.
+While the HDD installed instead of the optical drive operates flawlessly in Windows, it wasn't going to work out of the box in Linux, at least in one case. The kernel tries to establish a connection with the disk, but fails to do it (*SATA link down* entry in /var/log/messages). The solution is to force a 1.5 Gbps transfer speed (instead of 6 Gbps) by adding a *libata.force=* kernel parameter. See [[1]](https://www.kernel.org/doc/Documentation/kernel-parameters.txt) for details.
 
 ### Lenovo K450e
 
@@ -231,7 +231,7 @@ After installing Arch Linux and booting, a single beep may be heard. To disable 
 ### IBM ThinkPad R52
 
 *   USB network tethering
-    *   Inbound networking via interface _usb0_ works.
+    *   Inbound networking via interface *usb0* works.
 
 ### Lenovo ThinkPad T430
 
@@ -258,7 +258,7 @@ After installing Arch Linux and booting, a single beep may be heard. To disable 
     *   [VA-API](/index.php/VA-API "VA-API") is highly recommended as it performs significantly better than CPU decoding of large media files.
     *   **The BIOS should not be upgraded past version 1.14, as newer BIOSes cause memory corruption when used with Bumblebee.** See [Bumblebee GitHub](https://github.com/Bumblebee-Project/bbswitch/issues/78#issuecomment-42741698)
 *   Connectivity:
-    *   Bluetooth is _extremely_ fragile. The controller works fine most of the time, but can cause the system to wedge totally on sleep/wake cycles, especially if a connection was active at sleep. Disable the controller using `bluetoothctl` before sleeping.
+    *   Bluetooth is *extremely* fragile. The controller works fine most of the time, but can cause the system to wedge totally on sleep/wake cycles, especially if a connection was active at sleep. Disable the controller using `bluetoothctl` before sleeping.
 
 ### Lenovo S21e-20
 

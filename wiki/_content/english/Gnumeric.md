@@ -12,9 +12,9 @@ Gnumeric is depending on your locale and use it for exporting as csv file too. F
 
 Display 1/2:
 
-With german locale "de", Gnumeric shows 0,5 _(comma)_
+With german locale "de", Gnumeric shows 0,5 *(comma)*
 
-With englisch locale "en", Gnumeric shows 0.5 _(dot)_
+With englisch locale "en", Gnumeric shows 0.5 *(dot)*
 
 To start Gnumeric with a different locale, just run
 

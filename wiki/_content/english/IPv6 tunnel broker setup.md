@@ -45,7 +45,6 @@ Test the configuration now with:
 If it works you can add a dispatcher script for the NetworkManager, so it will start whenever your network is ready. Note that enabling the service via systemd will not work, as the network will not be ready on boot. Please see [FS#38221](https://bugs.archlinux.org/task/38221) for more details.
 
  `/etc/NetworkManager/dispatcher.d/99-aiccu` 
-
 ```
 #!/bin/bash
 # -*- coding: utf-8 -*-
@@ -68,10 +67,8 @@ Configuring radvd and LAN side IP of the router: See [Router](/index.php/Router#
 
 Create the following systemd unit, replacing bold text with the IP addresses you got from HE:
 
-**Note:** If you are behind a NAT (typical home router setup), use your _local_ IPv4 address for `**Client_IPv4_Address**`, e.g. `192.168.0.2`.
-
+**Note:** If you are behind a NAT (typical home router setup), use your *local* IPv4 address for `**Client_IPv4_Address**`, e.g. `192.168.0.2`.
  `/etc/systemd/system/he-ipv6.service` 
-
 ```
 [Unit]
 Description=he.net IPv6 tunnel
@@ -99,7 +96,6 @@ Then start/enable `he-ipv6.service`.
 If [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") handles your network connections, it's probably a better idea to let it handle tunnel broker too (instead of using a `.service` file).
 
  `/etc/systemd/network/he-tunnel.netdev` 
-
 ```
 [Match]
 
@@ -114,9 +110,7 @@ Remote=<tunnel endpoint>
 TTL=255
 
 ```
-
  `/etc/systemd/network/he-tunnel.network` 
-
 ```
 [Match]
 Name=he-ipv6

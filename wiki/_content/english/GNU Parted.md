@@ -32,7 +32,7 @@ Parted has two modes: command line and interactive. Parted should always be star
 
 ```
 
-where `_device_` is the hard disk device to edit (for example `/dev/sda`). If you omit the `_device_` argument, _parted_ will attempt to guess which device you want.
+where `*device*` is the hard disk device to edit (for example `/dev/sda`). If you omit the `*device*` argument, *parted* will attempt to guess which device you want.
 
 ### Command line mode
 
@@ -52,7 +52,7 @@ Interactive mode simplifies the partitioning process and reduces unnecessary rep
 In order to start operating on a device, execute:
 
 ```
-# parted /dev/sd_x_
+# parted /dev/sd*x*
 
 ```
 
@@ -97,7 +97,7 @@ You need to (re)create the partition table of a device when it has never been pa
 Open each device whose partition table must be (re)created with:
 
 ```
-# parted /dev/sd_x_
+# parted /dev/sd*x*
 
 ```
 
@@ -117,55 +117,53 @@ To create a new GPT partition table for UEFI systems instead, use:
 
 ### Partition schemes
 
-You can decide the number and size of the partitions the devices should be split into, and which directories will be used to mount the partitions in the installed system (also known as _mount points_). The mapping from partitions to directories is the [partition scheme](/index.php/Partitioning#Partition_scheme "Partitioning"), which must comply with the following requirements:
+You can decide the number and size of the partitions the devices should be split into, and which directories will be used to mount the partitions in the installed system (also known as *mount points*). The mapping from partitions to directories is the [partition scheme](/index.php/Partitioning#Partition_scheme "Partitioning"), which must comply with the following requirements:
 
-*   At least a partition for the `/` (_root_) directory **must** be created.
+*   At least a partition for the `/` (*root*) directory **must** be created.
 *   When using a UEFI motherboard, one [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") **must** be created
 
 In the examples below it is assumed that a new and contiguous partitioning scheme is applied to a single device. Some optional partitions will also be created for the `/boot` and `/home` directories: see also [Arch filesystem hierarchy](/index.php/Arch_filesystem_hierarchy "Arch filesystem hierarchy") for an explanation of the purpose of the various directories; if separate partitions for directories like `/boot` or `/home` are not created, these will simply be contained in the `/` partition. Also the creation of an optional partiton for [swap space](/index.php/Swap_space "Swap space") will be illustrated.
 
-If not already open in a _parted_ interactive session, open each device to be partitioned with:
+If not already open in a *parted* interactive session, open each device to be partitioned with:
 
 ```
-# parted /dev/sd_x_
+# parted /dev/sd*x*
 
 ```
 
 The following command will be used to create partitions:
 
 ```
-(parted) mkpart _part-type_ _fs-type_ _start_ _end_
+(parted) mkpart *part-type* *fs-type* *start* *end*
 
 ```
 
-*   `_part-type_` is one of `primary`, `extended` or `logical`, and is meaningful only for MBR partition tables.
-*   `_fs-type_` is an identifier chosen among those listed by entering `help mkpart` as the closest match to the file system that you will use in [#Create filesystems](#Create_filesystems). The _mkpart_ command does not actually create the file system: the `_fs-type_` parameter will simply be used by _parted_ to set a 1-byte code that is used by boot loaders to "preview" what kind of data is found in the partition, and act accordingly if necessary. See also [Wikipedia:Disk partitioning#PC partition types](https://en.wikipedia.org/wiki/Disk_partitioning#PC_partition_types "wikipedia:Disk partitioning").
+*   `*part-type*` is one of `primary`, `extended` or `logical`, and is meaningful only for MBR partition tables.
+*   `*fs-type*` is an identifier chosen among those listed by entering `help mkpart` as the closest match to the file system that you will use in [#Create filesystems](#Create_filesystems). The *mkpart* command does not actually create the file system: the `*fs-type*` parameter will simply be used by *parted* to set a 1-byte code that is used by boot loaders to "preview" what kind of data is found in the partition, and act accordingly if necessary. See also [Wikipedia:Disk partitioning#PC partition types](https://en.wikipedia.org/wiki/Disk_partitioning#PC_partition_types "wikipedia:Disk partitioning").
 
-**Tip:** Most [Linux native file systems](https://en.wikipedia.org/wiki/File_system#Linux "wikipedia:File system") map to the same partition code ([0x83](https://en.wikipedia.org/wiki/Partition_type#PID_83h "wikipedia:Partition type")), so it is perfectly safe to e.g. use `ext2` for an _ext4_-formatted partition.
+**Tip:** Most [Linux native file systems](https://en.wikipedia.org/wiki/File_system#Linux "wikipedia:File system") map to the same partition code ([0x83](https://en.wikipedia.org/wiki/Partition_type#PID_83h "wikipedia:Partition type")), so it is perfectly safe to e.g. use `ext2` for an *ext4*-formatted partition.
 
-*   `_start_` is the beginning of the partition from the start of the device. It consists of a number followed by a [unit](http://www.gnu.org/software/parted/manual/parted.html#unit), for example `1M` means start at 1MiB.
-*   `_end_` is the end of the partition from the start of the device (_not_ from the `_start_` value). It has the same syntax as `_start_`, for example `100%` means end at the end of the device (use all the remaining space).
+*   `*start*` is the beginning of the partition from the start of the device. It consists of a number followed by a [unit](http://www.gnu.org/software/parted/manual/parted.html#unit), for example `1M` means start at 1MiB.
+*   `*end*` is the end of the partition from the start of the device (*not* from the `*start*` value). It has the same syntax as `*start*`, for example `100%` means end at the end of the device (use all the remaining space).
 
 **Warning:** It is important that the partitions do not overlap each other: if you do not want to leave unused space in the device, make sure that each partition starts where the previous one ends.
 
-**Note:** _parted_ may issue a warning like:
-
+**Note:** *parted* may issue a warning like:
 ```
 Warning: The resulting partition is not properly aligned for best performance.
 Ignore/Cancel?
 
 ```
-
 In this case, read [Partitioning#Partition alignment](/index.php/Partitioning#Partition_alignment "Partitioning") and follow [#Alignment](#Alignment) to fix it.
 
 The following command will be used to flag the partition that contains the `/boot` directory as bootable:
 
 ```
-(parted) set _partition_ boot on
+(parted) set *partition* boot on
 
 ```
 
-*   `_partition_` is the number of the partition to be flagged (see the output of the `print` command).
+*   `*partition*` is the number of the partition to be flagged (see the output of the `print` command).
 
 #### UEFI/GPT examples
 
@@ -240,7 +238,7 @@ In the final example below, separate `/boot` (100MiB), `/` (20GiB), swap (4GiB),
 **Note:**
 
 *   You can only move the end of the partition with `parted`.
-*   As of parted v4.2 _resizepart_ may need the use of [#Interactive mode](#Interactive_mode).[[1]](https://bugs.launchpad.net/ubuntu/+source/parted/+bug/1270203)
+*   As of parted v4.2 *resizepart* may need the use of [#Interactive mode](#Interactive_mode).[[1]](https://bugs.launchpad.net/ubuntu/+source/parted/+bug/1270203)
 *   These instructions apply to partitions that have ext2, ext3 or ext4 filesystems.
 
 If you are growing a partition, you have to first resize the partition and then resize the filesystem on it, while for shrinking the filesystem must be resized before the partition to avoid data loss.
@@ -250,49 +248,49 @@ If you are growing a partition, you have to first resize the partition and then 
 To grow a partition (in parted interactive mode):
 
 ```
-(parted) resizepart _number_ _end_
+(parted) resizepart *number* *end*
 
 ```
 
-Where `_number_` is the number of the partition you are growing, and `_end_` is the new end of the partition (which needs to be larger than the old end).
+Where `*number*` is the number of the partition you are growing, and `*end*` is the new end of the partition (which needs to be larger than the old end).
 
 Then, to grow the filesystem on the partition:
 
 ```
-# resize2fs /dev/_sdaX_ _size_
+# resize2fs /dev/*sdaX* *size*
 
 ```
 
-Where `_sdaX_` stands for the partition you are growing, and `_size_` is the new size of the partition.
+Where `*sdaX*` stands for the partition you are growing, and `*size*` is the new size of the partition.
 
 #### Shrinking partitions
 
 To shrink the filesystem on the partition:
 
 ```
-# resize2fs /dev/_sdaX_ _size_
+# resize2fs /dev/*sdaX* *size*
 
 ```
 
-Where `_sdaX_` stands for the partition you are growing, and `_size_` is the new size of the partition.
+Where `*sdaX*` stands for the partition you are growing, and `*size*` is the new size of the partition.
 
 Then shrink the partition (in parted interactive mode):
 
 ```
-(parted) resizepart _number_ _end_
+(parted) resizepart *number* *end*
 
 ```
 
-Where `_number_` is the number of the partition you are shrinking, and `_end_` is the new end of the partition (which needs to be smaller than the old end).
+Where `*number*` is the number of the partition you are shrinking, and `*end*` is the new end of the partition (which needs to be smaller than the old end).
 
-When done, use the _resizepart_ command from [util-linux](https://www.archlinux.org/packages/?name=util-linux) to tell the kernel about the new size:
-
-```
-# resizepart _device_ _number_ _size_
+When done, use the *resizepart* command from [util-linux](https://www.archlinux.org/packages/?name=util-linux) to tell the kernel about the new size:
 
 ```
+# resizepart *device* *number* *size*
 
-Where `_device_` is the device that holds the partition, `_number_` is the number of the partition and `_size_` is the new size of the partition.
+```
+
+Where `*device*` is the device that holds the partition, `*number*` is the number of the partition and `*size*` is the new size of the partition.
 
 ## Warnings
 
@@ -300,7 +298,7 @@ Parted will always warn you before doing something that is potentially dangerous
 
 ### Alignment
 
-When creating a partition, _parted_ might warn about improper partition alignment but does not hint about proper alignment. For example:
+When creating a partition, *parted* might warn about improper partition alignment but does not hint about proper alignment. For example:
 
 ```
 (parted) mkpart primary fat16 0 32M

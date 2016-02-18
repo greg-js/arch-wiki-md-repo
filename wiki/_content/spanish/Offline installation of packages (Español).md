@@ -1,4 +1,4 @@
-_Un pequeño tutorial para la instalación de paquetes sin conexión a internet. Esta basado en la publicación del usuario [Byte](/index.php/User:Byte "User:Byte") de [este](https://bbs.archlinux.org/viewtopic.php?id=30431) hilo del foro, y usa KDE como ejemplo._
+*Un pequeño tutorial para la instalación de paquetes sin conexión a internet. Esta basado en la publicación del usuario [Byte](/index.php/User:Byte "User:Byte") de [este](https://bbs.archlinux.org/viewtopic.php?id=30431) hilo del foro, y usa KDE como ejemplo.*
 
 ## Contents
 

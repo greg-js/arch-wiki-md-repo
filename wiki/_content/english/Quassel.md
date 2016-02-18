@@ -50,7 +50,6 @@ Once it all works, you can set it up to start automatically through on system bo
 
  `# systemctl enable quassel` 
 **Note:** This has been fixed as of quassel 0.12.0-1.
-
 ```
 This is supposed to work but does not because of a bug [FS#38950](https://bugs.archlinux.org/task/38950) but it is easy to work around:
 

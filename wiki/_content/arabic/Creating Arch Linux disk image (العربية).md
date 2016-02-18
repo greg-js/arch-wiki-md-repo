@@ -190,7 +190,6 @@ so that it will be possible to boot your Arch Linux guest using a paravirtualize
 *   إنشاء ملف إعدادات لمُحمل الإقلاع Extlinux , قم باستبدال $UUID بقيمة UUID الخاصة بنظام ملفات الذي يستخدمه النظام الضيف.
 
  `$TMPDIR/boot/extlinux.conf` 
-
 ```
 DEFAULT archlinux
 LABEL   archlinux
@@ -219,7 +218,6 @@ INITRD  /boot/initramfs-linux.img
 *   الآن قم بكتابة ملف `grub.cfg` مُستبدلاً $UUID, بقيمة UUID الخاصة بنظام ملفات الذي يستخدمه النظام الضيف.
 
  `$TMPDIR/boot/grub/grub.cfg` 
-
 ```
 set default="0"
 set timeout="3"
@@ -255,7 +253,6 @@ menuentry "Arch Linux" {
 ```
 
 **تلميحة:** If you have built the virtio block drivers into your guest's initramfs, then you can boot it using a paravirtualized block device. Combine it with [KVM](/index.php/KVM "KVM") and a minimal Arch Linux guest will boot to a login prompt in as little as 3 seconds after starting QEMU.
-
 ```
 # qemu-system-x86_64 -enable-kvm -drive file=archlinux.raw,media=disk,if=virtio
 

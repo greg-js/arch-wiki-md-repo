@@ -51,7 +51,7 @@ Using host libthread_db library "/lib/libthread_db.so.1".
 
 ```
 # pacman -Qo /lib/libthread_db.so.1
-/lib/libthread_db.so.1 is owned by _glibc_ 2.5-8
+/lib/libthread_db.so.1 is owned by *glibc* 2.5-8
 
 ```
 
@@ -202,7 +202,6 @@ KDE 程序使用 cmake 进行编译，要编译进调试信息，请将`-DCMAKE_
 ```
 
 **Tip:** 调试python写成的应用时：(你得更改python的PKGBUILD重新编译python)
-
 ```
 # gdb /usr/bin/python
 (gdb) run <python application>

@@ -12,7 +12,7 @@
 
 ## Hardware
 
-**Processor:** Intel Core 2 Duo T5800 _This can vary based on exact model_
+**Processor:** Intel Core 2 Duo T5800 *This can vary based on exact model*
 
 **Video:** Intel Corporation GM45 Chipset
 

@@ -101,7 +101,6 @@ Funcionando, 3 botões. Canto superior direito (middle-button), inferior direito
 Configurações do arquivo /etc/X11/xorg.conf.d/10-synaptics.conf:
 
  `/etc/X11/xorg.conf.d/10-synaptics.conf` 
-
 ```
 Section "InputClass"
     Identifier "touchpad catchall"
@@ -155,7 +154,7 @@ Desbloquear wireless
 
 Agora poderá usar novamente wireless/bluetooh.
 
-*   f4 alterna modos entre tela do notebook e saída vga. _Não funciona._
+*   f4 alterna modos entre tela do notebook e saída vga. *Não funciona.*
 
 ### Bluetooth
 
@@ -163,4 +162,4 @@ Funcionando com o driver broadcom-wl ([AUR](/index.php/AUR "AUR")). Ver [Bluetoo
 
 ### Leitor de Cartão
 
-_Não testado._
+*Não testado.*

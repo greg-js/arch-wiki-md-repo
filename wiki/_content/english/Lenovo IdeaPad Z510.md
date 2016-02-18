@@ -26,7 +26,7 @@
 *   Integrated Graphics: Intel Corporation 4th Gen Core Processor Integrated Graphics Controller
 *   Accelerated Graphics: NVIDIA GeForce GT 740M 1GB (optional)
 *   Sound: Intel HDA
-*   Screen: 15.6 _1366x768 (or higher) "AntiGlare" (Matte)_
+*   Screen: 15.6 *1366x768 (or higher) "AntiGlare" (Matte)*
 *   SD Card Reader
 *   Ethernet: Fast-Ethernet
 

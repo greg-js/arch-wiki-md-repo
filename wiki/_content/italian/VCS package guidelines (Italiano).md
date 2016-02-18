@@ -18,13 +18,13 @@ Il pacchetto [abs](https://www.archlinux.org/packages/?name=abs) fornisce protot
 
 *   Quando [makepkg](/index.php/Makepkg "Makepkg") viene eseguito, di default controllerà la presenza di nuove revisioni ed aggiornerà il valore di `pkgver` all'interno del PKGBUILD. Consultare `--holdver` in [man makepkg](https://www.archlinux.org/pacman/makepkg.8.html) se si vuole imporre un comportamento differente. `--holdver` funziona solo per repository CVS ed SVN, che consentono l'utilizzo di sorgenti di revisioni precedenti.
 
-*   Verificare i conflitti del pacchetto. Per esempio _fluxbox-svn_ andrà in conflitto con _fluxbox_. In questo caso sarà necessario utilizzare `conflicts=('fluxbox')`.
+*   Verificare i conflitti del pacchetto. Per esempio *fluxbox-svn* andrà in conflitto con *fluxbox*. In questo caso sarà necessario utilizzare `conflicts=('fluxbox')`.
 
 *   Utilizzare il campo `provides` in modo che le dipendenze dei pacchetti che richiedono la presenza della versione non-CVS del pacchetto da generare risultino soddisfatte (`provides=('fluxbox')`).
 
 *   Bisognerebbe cercare di evitare, ove possibile, l'utilizzo di `replaces=...`, in quanto genera facilmente problemi che sarebbe meglio evitare.
 
-*   Quando si definisce la root CVS, utilizzare `anonymous:@` piuttosto che `anonymous@` per evitare la richiesta di password e l'obbligo di inserire una password vuota, _O_ utilizzare `anonymous:password@` nel caso una password sia necessaria.
+*   Quando si definisce la root CVS, utilizzare `anonymous:@` piuttosto che `anonymous@` per evitare la richiesta di password e l'obbligo di inserire una password vuota, *O* utilizzare `anonymous:password@` nel caso una password sia necessaria.
 
 *   Nonostante non sarebbe necessario utilizzare il campo `pkgrel` quando si compila da repo CVS/SVN/GIT (in quanto i cambiamenti ai sorgenti sono frequenti, e saranno automaticamente notificati nel campo `pkgver`), makepkg lo richiede obbligatoriamente.
 

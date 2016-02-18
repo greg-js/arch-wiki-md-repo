@@ -34,7 +34,6 @@ extension=mysqli.so
 You need to create a dotclear database for the blog to write stuff to. One can choose **dotclear2** for the db name, **dotclear** for the username, and **dotclearpass** for the password. Assuming you've already accessed your mysql install and set a root password:
 
  `$ mysql -u root -p` 
-
 ```
 mysql> CREATE DATABASE dotclear2;
 mysql> GRANT ALL PRIVILEGES ON dotclear2.* TO "dotclear2"@"localhost" IDENTIFIED BY "dotclearpass";

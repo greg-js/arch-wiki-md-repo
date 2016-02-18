@@ -67,7 +67,7 @@ Este artículo contiene un listado general de aplicaciones, ordenadas por catego
         *   [2.3.2 Screencast](#Screencast)
     *   [2.4 Sistemas de audio](#Sistemas_de_audio)
     *   [2.5 Reproductores de audio](#Reproductores_de_audio)
-        *   [2.5.1 Demonio y cliente de _«music player»_](#Demonio_y_cliente_de_.C2.ABmusic_player.C2.BB)
+        *   [2.5.1 Demonio y cliente de *«music player»*](#Demonio_y_cliente_de_.C2.ABmusic_player.C2.BB)
         *   [2.5.2 Consola](#Consola_9)
         *   [2.5.3 Interfez gráfica](#Interfez_gr.C3.A1fica_2)
     *   [2.6 Ripear CD](#Ripear_CD)
@@ -172,7 +172,7 @@ Este artículo contiene un listado general de aplicaciones, ordenadas por catego
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:BitTorrent "wikipedia:es:BitTorrent")
 
-	_«BitTorrent es un protocolo diseñado para el intercambio de archivos peer-to-peer en Internet. (...) El protocolo BitTorrent puede ser usado para reducir el impacto que tiene la distribución de archivos grandes en los servidores. En lugar de descargar el archivo desde un único servidor, el protocolo BitTorrent permite a los usuarios unirse entre ellos en un "enjambre" (swarm) para descargar y subir el archivo de forma simultánea.»_
+	*«BitTorrent es un protocolo diseñado para el intercambio de archivos peer-to-peer en Internet. (...) El protocolo BitTorrent puede ser usado para reducir el impacto que tiene la distribución de archivos grandes en los servidores. En lugar de descargar el archivo desde un único servidor, el protocolo BitTorrent permite a los usuarios unirse entre ellos en un "enjambre" (swarm) para descargar y subir el archivo de forma simultánea.»*
 
 [Comparativa de clientes BitTorrent](https://en.wikipedia.org/wiki/es:Anexo:Comparativa_de_clientes_BitTorrent "wikipedia:es:Anexo:Comparativa de clientes BitTorrent")
 
@@ -232,7 +232,7 @@ Este artículo contiene un listado general de aplicaciones, ordenadas por catego
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:EDonkey "wikipedia:es:EDonkey")
 
-	_«eDonkey es el nombre de una red de intercambio de archivos P2P, su nombre deriva del programa original creado para la misma. (...) El sistema de intercambio de archivos eDonkey se puede clasificar como una red semicentralizada. Si bien existen servidores que manejan la información que transita por dicha red, no existe ninguno que sea principal. De esta forma, si un servidor deja de funcionar, otro puede emerger de la nada para suplantarlo. Incluso los usuarios puede levantar sus propios servidores.»_
+	*«eDonkey es el nombre de una red de intercambio de archivos P2P, su nombre deriva del programa original creado para la misma. (...) El sistema de intercambio de archivos eDonkey se puede clasificar como una red semicentralizada. Si bien existen servidores que manejan la información que transita por dicha red, no existe ninguno que sea principal. De esta forma, si un servidor deja de funcionar, otro puede emerger de la nada para suplantarlo. Incluso los usuarios puede levantar sus propios servidores.»*
 
 eDonkey es la segunda red p2p más grande (véase [Internet Study 2008/2009](http://ipoque.com/en/resources/internet-studies)).
 
@@ -252,7 +252,7 @@ eDonkey es la segunda red p2p más grande (véase [Internet Study 2008/2009](htt
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Bitcoin "wikipedia:es:Bitcoin")
 
-	_«Bitcoin es una moneda electrónica descentralizada concebida en 2009 por Satoshi Nakamoto. El nombre se aplica también al protocolo diseñado por el mismo autor y a la red P2P que lo sustenta.»_
+	*«Bitcoin es una moneda electrónica descentralizada concebida en 2009 por Satoshi Nakamoto. El nombre se aplica también al protocolo diseñado por el mismo autor y a la red P2P que lo sustenta.»*
 
 [Bitcoin](/index.php/Bitcoin "Bitcoin")
 
@@ -358,7 +358,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Extensible_Messaging_and_Presence_Protocol "wikipedia:es:Extensible Messaging and Presence Protocol")
 
-	_«(...) es un protocolo abierto y extensible basado en XML, originalmente ideado para mensajería instantánea. Con el protocolo XMPP queda establecida una plataforma para el intercambio de datos XML que puede ser usada en aplicaciones de mensajería instantánea.»_
+	*«(...) es un protocolo abierto y extensible basado en XML, originalmente ideado para mensajería instantánea. Con el protocolo XMPP queda establecida una plataforma para el intercambio de datos XML que puede ser usada en aplicaciones de mensajería instantánea.»*
 
 [Protocolo extensible de mensajería y comunicación de presencia](https://en.wikipedia.org/wiki/es:Extensible_Messaging_and_Presence_Protocol "wikipedia:es:Extensible Messaging and Presence Protocol")
 
@@ -426,7 +426,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:IRC "wikipedia:es:IRC")
 
-	_«IRC (Internet Relay Chat) es un protocolo de comunicación en tiempo real basado en texto, que permite debates entre dos o más personas. Se diferencia de la mensajería instantánea en que los usuarios no deben acceder a establecer la comunicación de antemano, de tal forma que todos los usuarios que se encuentran en un canal pueden comunicarse entre sí, aunque no hayan tenido ningún contacto anterior.»_
+	*«IRC (Internet Relay Chat) es un protocolo de comunicación en tiempo real basado en texto, que permite debates entre dos o más personas. Se diferencia de la mensajería instantánea en que los usuarios no deben acceder a establecer la comunicación de antemano, de tal forma que todos los usuarios que se encuentran en un canal pueden comunicarse entre sí, aunque no hayan tenido ningún contacto anterior.»*
 
 [IRC](https://en.wikipedia.org/wiki/es:Irc "wikipedia:es:Irc") y [Comparison of Internet Relay Chat clients](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients "wikipedia:Comparison of Internet Relay Chat clients")
 
@@ -666,7 +666,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 	[http://gnus.org/](http://gnus.org/) || [emacs-gnus-git](https://aur.archlinux.org/packages/emacs-gnus-git/)
 
-*   **S-nail** — Un sistema de procesamiento de correo electrónico con una sintaxis de órdenes _ed_ con líneas reemplazadas por mensajes. Proporciona la funcionalidad de [mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx") y mucho más.
+*   **S-nail** — Un sistema de procesamiento de correo electrónico con una sintaxis de órdenes *ed* con líneas reemplazadas por mensajes. Proporciona la funcionalidad de [mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx") y mucho más.
 
 	[http://sourceforge.net/projects/s-nail/](http://sourceforge.net/projects/s-nail/) || [s-nail](https://www.archlinux.org/packages/?name=s-nail)
 
@@ -678,7 +678,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 	[http://www.mutt.org/](http://www.mutt.org/) || [mutt](https://www.archlinux.org/packages/?name=mutt)
 
-*   **[Sup](/index.php/Sup "Sup")** — Cliente de email CLI (_«intérprete de línea de órdenes»_) con rápido buscador, marcador, enhebrador y operaciones similares a GMail.
+*   **[Sup](/index.php/Sup "Sup")** — Cliente de email CLI (*«intérprete de línea de órdenes»*) con rápido buscador, marcador, enhebrador y operaciones similares a GMail.
 
 	[http://sup.rubyforge.org/](http://sup.rubyforge.org/) || [sup](https://aur.archlinux.org/packages/sup/)
 
@@ -746,7 +746,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Agregador "wikipedia:es:Agregador")
 
-	_«Un lector o recopilador de contenidos (también conocido como agregador, agregador de noticias o lector de RSS) es un tipo de software para suscribirse a fuentes de noticias en formatos RSS, Atom y otros derivados de XML como RDF/XML. El agregador reúne las noticias o historias publicadas en los sitios con redifusión web elegidos, y muestra las novedades o modificaciones que se han producido en esas fuentes web.»_
+	*«Un lector o recopilador de contenidos (también conocido como agregador, agregador de noticias o lector de RSS) es un tipo de software para suscribirse a fuentes de noticias en formatos RSS, Atom y otros derivados de XML como RDF/XML. El agregador reúne las noticias o historias publicadas en los sitios con redifusión web elegidos, y muestra las novedades o modificaciones que se han producido en esas fuentes web.»*
 
 [Comparison of feed aggregators](https://en.wikipedia.org/wiki/Comparison_of_feed_aggregators "wikipedia:Comparison of feed aggregators")
 
@@ -764,7 +764,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 	[http://newsbeuter.org](http://newsbeuter.org) || [newsbeuter](https://www.archlinux.org/packages/?name=newsbeuter)
 
-*   **Rawdog** — «RSS Aggregator Without Delusions Of Grandeur» (_Agregador RSS sin delirios de grandeza_) que pasa RSS/CDF/Atom a una página HTML estática de artículos ordenados cronológicamente.
+*   **Rawdog** — «RSS Aggregator Without Delusions Of Grandeur» (*Agregador RSS sin delirios de grandeza*) que pasa RSS/CDF/Atom a una página HTML estática de artículos ordenados cronológicamente.
 
 	[http://offog.org/code/rawdog.html](http://offog.org/code/rawdog.html) || [rawdog](https://www.archlinux.org/packages/?name=rawdog)
 
@@ -1054,7 +1054,7 @@ Algunos gestores de archivos como Dolphin, [Nautilus](/index.php/Nautilus_(Espa%
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Visor_de_im%C3%A1genes "wikipedia:es:Visor de imágenes")
 
-	_«Un visor de imágenes es una aplicación informática que permite mostrar imágenes digitales guardadas es un disco local o -también- remotamente, asimismo puede manejar varios formatos de imagénes. Este tipo de software dibuja la imagen de acuerdo a las propiedades disponibles de la pantalla tales como profundidad de color y resolución de pantalla. Además, se pueden usar editores de gráficos rasterizados (tales como GIMP, Krita o Adobe Photoshop) para ver imagénes.»_
+	*«Un visor de imágenes es una aplicación informática que permite mostrar imágenes digitales guardadas es un disco local o -también- remotamente, asimismo puede manejar varios formatos de imagénes. Este tipo de software dibuja la imagen de acuerdo a las propiedades disponibles de la pantalla tales como profundidad de color y resolución de pantalla. Además, se pueden usar editores de gráficos rasterizados (tales como GIMP, Krita o Adobe Photoshop) para ver imagénes.»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of image viewers](https://en.wikipedia.org/wiki/Comparison_of_image_viewers "wikipedia:Comparison of image viewers").
 
@@ -1160,7 +1160,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Raster "wikipedia:es:Raster")
 
-	_Una imagen en mapa de bits, también conocida como **imagen matricial**, bitmap, raster image o extensión .bmp (estos dos tomados del inglés), o **imagen ráster** (un calco del inglés), es una estructura o fichero de datos que representa una rejilla rectangular de píxeles o puntos de color, denominada matriz, que se puede visualizar en un monitor, papel u otro dispositivo de representación.»_
+	*Una imagen en mapa de bits, también conocida como **imagen matricial**, bitmap, raster image o extensión .bmp (estos dos tomados del inglés), o **imagen ráster** (un calco del inglés), es una estructura o fichero de datos que representa una rejilla rectangular de píxeles o puntos de color, denominada matriz, que se puede visualizar en un monitor, papel u otro dispositivo de representación.»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of raster graphics editors](https://en.wikipedia.org/wiki/Comparison_of_raster_graphics_editors "wikipedia:Comparison of raster graphics editors").
 
@@ -1216,7 +1216,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://mypaint.intilinux.com](http://mypaint.intilinux.com) || [mypaint](https://www.archlinux.org/packages/?name=mypaint)
 
-*   **Nathive** — _«Usable image editor»_, basada en las bibliotecas de GNOME enfocada a la usabilidad y con una curva de aprendizaje suave.
+*   **Nathive** — *«Usable image editor»*, basada en las bibliotecas de GNOME enfocada a la usabilidad y con una curva de aprendizaje suave.
 
 	[http://www.nathive.org/](http://www.nathive.org/) || [nathive](https://aur.archlinux.org/packages/nathive/)
 
@@ -1236,7 +1236,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Gr%C3%A1fico_vectorial "wikipedia:es:Gráfico vectorial")
 
-	_«Una imagen vectorial es una imagen digital formada por objetos geométricos independientes (segmentos, polígonos, arcos, etc.), cada uno de ellos definido por distintos atributos matemáticos de forma, de posición, de color, etc. (...) Este formato de imagen es completamente distinto al formato de las imágenes de mapa de bits, también llamados imágenes matriciales, que están formados por píxeles. El interés principal de los gráficos vectoriales es poder ampliar el tamaño de una imagen a voluntad sin sufrir la pérdida de calidad que sufren los mapas de bits.»_
+	*«Una imagen vectorial es una imagen digital formada por objetos geométricos independientes (segmentos, polígonos, arcos, etc.), cada uno de ellos definido por distintos atributos matemáticos de forma, de posición, de color, etc. (...) Este formato de imagen es completamente distinto al formato de las imágenes de mapa de bits, también llamados imágenes matriciales, que están formados por píxeles. El interés principal de los gráficos vectoriales es poder ampliar el tamaño de una imagen a voluntad sin sufrir la pérdida de calidad que sufren los mapas de bits.»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of vector graphics editors](https://en.wikipedia.org/wiki/Comparison_of_vector_graphics_editors "wikipedia:Comparison of vector graphics editors").
 
@@ -1244,7 +1244,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://live.gnome.org/Dia](http://live.gnome.org/Dia) || [dia](https://www.archlinux.org/packages/?name=dia)
 
-*   **[Inkscape](https://en.wikipedia.org/wiki/Inkscape "wikipedia:Inkscape")** — Editor de gráficos vectoriales, con capacidades similares a [Illustrator](https://en.wikipedia.org/wiki/Adobe_Illustrator "wikipedia:Adobe Illustrator"), [CorelDraw](https://en.wikipedia.org/wiki/CorelDRAW "wikipedia:CorelDRAW"), o [Xara X](https://en.wikipedia.org/wiki/Xara_X "wikipedia:Xara X"), que utiliza el formato de archivo SVG (_Scalable Vector Graphics_). Inkscape soporta muchas características avanzadas de SVG (marcadores, clones, mezcla alfa, etc.) y tiene mucho cuidado en el diseño de una interfaz intuitiva. Hace fácil editar nodos, realizar operaciones complejas, trazar mapas de bits y mucho más. Sus desarrolladores también tienen como objetivo mantener una próspera comunidad de usuarios y desarrolladores para que siga siendo software abierto, en beneficio de la comunidad.
+*   **[Inkscape](https://en.wikipedia.org/wiki/Inkscape "wikipedia:Inkscape")** — Editor de gráficos vectoriales, con capacidades similares a [Illustrator](https://en.wikipedia.org/wiki/Adobe_Illustrator "wikipedia:Adobe Illustrator"), [CorelDraw](https://en.wikipedia.org/wiki/CorelDRAW "wikipedia:CorelDRAW"), o [Xara X](https://en.wikipedia.org/wiki/Xara_X "wikipedia:Xara X"), que utiliza el formato de archivo SVG (*Scalable Vector Graphics*). Inkscape soporta muchas características avanzadas de SVG (marcadores, clones, mezcla alfa, etc.) y tiene mucho cuidado en el diseño de una interfaz intuitiva. Hace fácil editar nodos, realizar operaciones complejas, trazar mapas de bits y mucho más. Sus desarrolladores también tienen como objetivo mantener una próspera comunidad de usuarios y desarrolladores para que siga siendo software abierto, en beneficio de la comunidad.
 
 	[http://inkscape.org/](http://inkscape.org/) || [inkscape](https://www.archlinux.org/packages/?name=inkscape)
 
@@ -1264,7 +1264,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Dise%C3%B1o_asistido_por_computadora "wikipedia:es:Diseño asistido por computadora")
 
-	_«El diseño asistido por computadora, más conocido por sus siglas inglesas CAD (computer-aided design), es el uso de un amplio rango de herramientas computacionales que asisten a ingenieros, arquitectos y diseñadores. (...) Estas herramientas se pueden dividir básicamente en programas de dibujo 2D y de modelado 3D. Las herramientas de dibujo en 2D se basan en entidades geométricas vectoriales como puntos, líneas, arcos y polígonos, con las que se puede operar a través de una interfaz gráfica. Los modeladores en 3D añaden superficies y sólidos.»_
+	*«El diseño asistido por computadora, más conocido por sus siglas inglesas CAD (computer-aided design), es el uso de un amplio rango de herramientas computacionales que asisten a ingenieros, arquitectos y diseñadores. (...) Estas herramientas se pueden dividir básicamente en programas de dibujo 2D y de modelado 3D. Las herramientas de dibujo en 2D se basan en entidades geométricas vectoriales como puntos, líneas, arcos y polígonos, con las que se puede operar a través de una interfaz gráfica. Los modeladores en 3D añaden superficies y sólidos.»*
 
 Véanse los artículos de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [CAD](https://en.wikipedia.org/wiki/es:Dise%C3%B1o_asistido_por_computadora "wikipedia:es:Diseño asistido por computadora") y [List of computer-aided design editors](https://en.wikipedia.org/wiki/List_of_computer-aided_design_editors "wikipedia:List of computer-aided design editors").
 
@@ -1296,9 +1296,9 @@ Véanse los artículos de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page"), la creación de gráficos 3D tiene, entre otras fases, la de:
 
-*   [Modelado](https://en.wikipedia.org/wiki/es:Gr%C3%A1ficos_3D_por_computadora#Modelado "wikipedia:es:Gráficos 3D por computadora"): _«que consiste en ir dando forma a objetos individuales que luego serán usados en la escena. Existen diversos tipos de geometría para modelador con NURBS y modelado poligonal o subdivisión de superficies»_, y
+*   [Modelado](https://en.wikipedia.org/wiki/es:Gr%C3%A1ficos_3D_por_computadora#Modelado "wikipedia:es:Gráficos 3D por computadora"): *«que consiste en ir dando forma a objetos individuales que luego serán usados en la escena. Existen diversos tipos de geometría para modelador con NURBS y modelado poligonal o subdivisión de superficies»*, y
 
-*   [Renderizado](https://en.wikipedia.org/wiki/es:Gr%C3%A1ficos_3D_por_computadora#Renderizado "wikipedia:es:Gráficos 3D por computadora"): _«se llama renderización al proceso final de generar la imagen 2D o animación a partir de la escena creada.»_
+*   [Renderizado](https://en.wikipedia.org/wiki/es:Gr%C3%A1ficos_3D_por_computadora#Renderizado "wikipedia:es:Gráficos 3D por computadora"): *«se llama renderización al proceso final de generar la imagen 2D o animación a partir de la escena creada.»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of 3D computer graphics software](https://en.wikipedia.org/wiki/Comparison_of_3D_computer_graphics_software "wikipedia:Comparison of 3D computer graphics software").
 
@@ -1328,7 +1328,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Captura_de_pantalla "wikipedia:es:Captura de pantalla")
 
-	_«Una captura de pantalla (también llamada **screenshot** del inglés) es una imagen tomada por una computadora o un teléfono inteligente para capturar los elementos vistos en el monitor u otro dispositivo de salida visual.»_
+	*«Una captura de pantalla (también llamada **screenshot** del inglés) es una imagen tomada por una computadora o un teléfono inteligente para capturar los elementos vistos en el monitor u otro dispositivo de salida visual.»*
 
 Véase el artículo de [ArchWiki](/index.php/Main_page "Main page") sobre este asunto para obtener más información: [Taking a screenshot](/index.php/Taking_a_screenshot "Taking a screenshot").
 
@@ -1336,11 +1336,11 @@ Véase el artículo de [ArchWiki](/index.php/Main_page "Main page") sobre este a
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Screencast "wikipedia:es:Screencast")
 
-	_«Un screencast es una grabación digital de la salida por pantalla de la computadora, a veces conteniendo narración de audio. (...) Un **screenshot** es una imagen de la pantalla de usuario, y un **screencast** es esencialmente una película de lo que el usuario observa en su monitor.»_
+	*«Un screencast es una grabación digital de la salida por pantalla de la computadora, a veces conteniendo narración de audio. (...) Un **screenshot** es una imagen de la pantalla de usuario, y un **screencast** es esencialmente una película de lo que el usuario observa en su monitor.»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of screencasting software](https://en.wikipedia.org/wiki/Comparison_of_screencasting_software "wikipedia:Comparison of screencasting software").
 
-Las utilidades _screencast_ le permiten crear un vídeo del escritorio de su ordenador o de ventanas individuales.
+Las utilidades *screencast* le permiten crear un vídeo del escritorio de su ordenador o de ventanas individuales.
 
 *   **byzanz** — Herramienta de screencast simple que produce animaciones GIF.
 
@@ -1384,7 +1384,7 @@ Véase el artículo de [ArchWiki](/index.php/Main_page "Main page") sobre este a
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of audio player software](https://en.wikipedia.org/wiki/Comparison_of_audio_player_software "wikipedia:Comparison of audio player software").
 
-#### Demonio y cliente de _«music player»_
+#### Demonio y cliente de *«music player»*
 
 *   **[Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daemon")** — Demonio ligero y versátil para gestionar música.
 
@@ -1491,7 +1491,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://offog.org/code/potamus.html](http://offog.org/code/potamus.html) || [potamus](https://aur.archlinux.org/packages/potamus/)
 
-*   **Pragha** — Álbum de música basado en GTK+ (fork de _Consonance Music Manager_)
+*   **Pragha** — Álbum de música basado en GTK+ (fork de *Consonance Music Manager*)
 
 	[http://pragha.wikispaces.com/](http://pragha.wikispaces.com/) || [pragha](https://www.archlinux.org/packages/?name=pragha)
 
@@ -1527,7 +1527,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Ripear "wikipedia:es:Ripear")
 
-	_«Ripear (Ripping) es el proceso de copiar los datos de audio y vídeo de un dispositivo multimedia, (como un CD, DVD, o HD DVD), a otro soporte de datos digital como un Disco Duro, CD, DVD, etc.»_
+	*«Ripear (Ripping) es el proceso de copiar los datos de audio y vídeo de un dispositivo multimedia, (como un CD, DVD, o HD DVD), a otro soporte de datos digital como un Disco Duro, CD, DVD, etc.»*
 
 *   **[Abcde](https://en.wikipedia.org/wiki/ABCDE "wikipedia:ABCDE")** — Herramienta de línea de órdenes completa para ripear CD de audio.
 
@@ -1537,7 +1537,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://littlesvr.ca/asunder/](http://littlesvr.ca/asunder/) || [asunder](https://www.archlinux.org/packages/?name=asunder)
 
-*   **[cdparanoia](https://en.wikipedia.org/wiki/cdparanoia "wikipedia:cdparanoia")** — Herramienta para CD de Audio Digital (_Compact Disc Digital Audio - CDDA_) y Extracción de Audio Digital (_Digital Audio Extraction - DAE_).
+*   **[cdparanoia](https://en.wikipedia.org/wiki/cdparanoia "wikipedia:cdparanoia")** — Herramienta para CD de Audio Digital (*Compact Disc Digital Audio - CDDA*) y Extracción de Audio Digital (*Digital Audio Extraction - DAE*).
 
 	[http://xiph.org/paranoia/index.html](http://xiph.org/paranoia/index.html) || [cdparanoia](https://www.archlinux.org/packages/?name=cdparanoia)
 
@@ -1577,7 +1577,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/Music_visualization "wikipedia:Music visualization")
 
-	_«La visualización de música es una característica que se encuentra en visualizadores de música electrónica y software reproductores multimedia que genera imágenes de animación basadas en una pieza musical.»_
+	*«La visualización de música es una característica que se encuentra en visualizadores de música electrónica y software reproductores multimedia que genera imágenes de animación basadas en una pieza musical.»*
 
 *   **[ProjectM](https://en.wikipedia.org/wiki/MilkDrop "wikipedia:MilkDrop")** — Visualizador de música que utiliza aceleración 3D interactiva basada en renderización de imágenes.
 
@@ -1629,7 +1629,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Editor_de_audio "wikipedia:es:Editor de audio")
 
-	_«Es una aplicación informática usada para editar audio, es decir, manipular audio digital. Los editores de audio son la pieza de software principal en las estaciones de trabajo de audio digital.»_
+	*«Es una aplicación informática usada para editar audio, es decir, manipular audio digital. Los editores de audio son la pieza de software principal en las estaciones de trabajo de audio digital.»*
 
 *   **[Ardour](https://en.wikipedia.org/wiki/Ardour_(software) "wikipedia:Ardour (software)")** — Grabador multicanal de disco duro y estación de trabajo de audio digital.
 
@@ -1667,7 +1667,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Libro_electr%C3%B3nico "wikipedia:es:Libro electrónico")
 
-	_«Un libro electrónico, libro digital, ciberlibro, también conocido como e-book, eBook, o ecolibro, es una versión electrónica o digital de un libro o un texto. También suele denominarse así al dispositivo usado para leer estos libros, que es conocido también como e-reader o lector de libros electrónicos.»_
+	*«Un libro electrónico, libro digital, ciberlibro, también conocido como e-book, eBook, o ecolibro, es una versión electrónica o digital de un libro o un texto. También suele denominarse así al dispositivo usado para leer estos libros, que es conocido también como e-reader o lector de libros electrónicos.»*
 
 *   **[Calibre](https://en.wikipedia.org/wiki/Calibre_(software) "wikipedia:Calibre (software)")** — Aplicación de gestión de biblioteca de libros electrónicos, que también puede convertir diferentes formatos y sincronizarse con una gran variedad de lectores de libros electrónicos. Los formatos soportados incluyen CBZ, CBR, CBC, CHM, DJVU, EPUB, FictionBook, HTML, HTMLZ, LIT, LRF, Mobipocket, ODT, PDF, PRC, PDB, PML, RB, RTF, SNB, TCR, TXT y TXTZ.
 
@@ -1769,7 +1769,7 @@ Véanse los artículos de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main P
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Edici%C3%B3n_de_v%C3%ADdeo "wikipedia:es:Edición de vídeo")
 
-	_«Consiste en manipular a través de un programa de edición de video, los distintos medios como archivos de video, fotos, gráficos o animaciones, y donde también es posible manipular audio aunque generalmente de forma muy simple.»_
+	*«Consiste en manipular a través de un programa de edición de video, los distintos medios como archivos de video, fotos, gráficos o animaciones, y donde también es posible manipular audio aunque generalmente de forma muy simple.»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of video editing software](https://en.wikipedia.org/wiki/Comparison_of_video_editing_software "wikipedia:Comparison of video editing software").
 
@@ -1835,7 +1835,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://www.archlinux.org/packages/?name=gcstar)
 
-*   **[Koha](https://en.wikipedia.org/wiki/Koha_(software) "wikipedia:Koha (software)")** — Sistema de biblioteca integrado -_integrated Library System (ILS)_- de código abierto, que se utiliza en todo el mundo por el público en general, escuelas y bibliotecas especializadas.
+*   **[Koha](https://en.wikipedia.org/wiki/Koha_(software) "wikipedia:Koha (software)")** — Sistema de biblioteca integrado -*integrated Library System (ILS)*- de código abierto, que se utiliza en todo el mundo por el público en general, escuelas y bibliotecas especializadas.
 
 	[http://koha-community.org/](http://koha-community.org/) || [koha](https://aur.archlinux.org/packages/koha/)
 
@@ -1933,7 +1933,7 @@ Véase el artículo de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page
 
 ### Herramientas de compresión
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [Comparison of file archivers](https://en.wikipedia.org/wiki/Comparison_of_file_archivers "wikipedia:Comparison of file archivers").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [Comparison of file archivers](https://en.wikipedia.org/wiki/Comparison_of_file_archivers "wikipedia:Comparison of file archivers").
 
 #### Consola
 
@@ -1977,7 +1977,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 ### Gestores de archivos
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [Comparison of file managers](https://en.wikipedia.org/wiki/Comparison_of_file_managers "wikipedia:Comparison of file managers").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [Comparison of file managers](https://en.wikipedia.org/wiki/Comparison_of_file_managers "wikipedia:Comparison of file managers").
 
 #### Consola
 
@@ -2085,7 +2085,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 ### Herramientas de integración y comparación de archivos
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [Comparison of file comparison tools](https://en.wikipedia.org/wiki/Comparison_of_file_comparison_tools "wikipedia:Comparison of file comparison tools").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [Comparison of file comparison tools](https://en.wikipedia.org/wiki/Comparison_of_file_comparison_tools "wikipedia:Comparison of file comparison tools").
 
 *   **Diffuse** — Herramienta de integración de texto pequeña y simple para el escritorio KDE.
 
@@ -2271,7 +2271,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Microsoft_Compiled_HTML_Help "wikipedia:es:Microsoft Compiled HTML Help")
 
-	_«Archivo de Ayuda de HTML Compilado (Microsoft Compiled HTML Help en inglés) es un formato privativo de ayuda en línea desarrollado por Microsoft.»_
+	*«Archivo de Ayuda de HTML Compilado (Microsoft Compiled HTML Help en inglés) es un formato privativo de ayuda en línea desarrollado por Microsoft.»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [CHM](https://en.wikipedia.org/wiki/Microsoft_Compiled_HTML_Help "wikipedia:Microsoft Compiled HTML Help").
 
@@ -2319,7 +2319,7 @@ Véanse los artículos de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Indexaci%C3%B3n "wikipedia:es:Indexación")
 
-	_«Indexar (o Indizar) se refiere a la acción de registrar ordenadamente información para elaborar su índice.»_
+	*«Indexar (o Indizar) se refiere a la acción de registrar ordenadamente información para elaborar su índice.»*
 
 Véanse los artículos de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Indexación](https://en.wikipedia.org/wiki/es:Indexaci%C3%B3n "wikipedia:es:Indexación") y [List of search engines#Desktop search engines](https://en.wikipedia.org/wiki/List_of_search_engines#Desktop_search_engines "wikipedia:List of search engines").
 
@@ -2571,7 +2571,7 @@ Véase el artículo de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page
 
 #### Calculadoras
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [Comparison of software calculators](https://en.wikipedia.org/wiki/Comparison_of_software_calculators "wikipedia:Comparison of software calculators").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [Comparison of software calculators](https://en.wikipedia.org/wiki/Comparison_of_software_calculators "wikipedia:Comparison of software calculators").
 
 *   **[bc](https://en.wikipedia.org/wiki/bc_programming_language "wikipedia:bc programming language")** — Lenguaje de programación de cálculo numérico con [precisión arbitraria](https://en.wikipedia.org/wiki/es:Precisi%C3%B3n_arbitraria "wikipedia:es:Precisión arbitraria").
 
@@ -2613,9 +2613,9 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Sistema_algebraico_computacional "wikipedia:es:Sistema algebraico computacional")
 
-	_«Un sistema algebraico computacional o sistema de álgebra computacional SAC (CAS, del inglés computer algebra system) es un programa de ordenador o calculadora avanzada que facilita el cálculo simbólico. La principal diferencia entre un CAS y una calculadora tradicional es la habilidad del primero para trabajar con ecuaciones y fórmulas simbólicamente, en lugar de numéricamente.»_
+	*«Un sistema algebraico computacional o sistema de álgebra computacional SAC (CAS, del inglés computer algebra system) es un programa de ordenador o calculadora avanzada que facilita el cálculo simbólico. La principal diferencia entre un CAS y una calculadora tradicional es la habilidad del primero para trabajar con ecuaciones y fórmulas simbólicamente, en lugar de numéricamente.»*
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [Comparison of computer algebra systems](https://en.wikipedia.org/wiki/Comparison_of_computer_algebra_systems "wikipedia:Comparison of computer algebra systems").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [Comparison of computer algebra systems](https://en.wikipedia.org/wiki/Comparison_of_computer_algebra_systems "wikipedia:Comparison of computer algebra systems").
 
 *   **[Fermat](https://en.wikipedia.org/wiki/Fermat_(computer_algebra_system) "wikipedia:Fermat (computer algebra system)")** — Sistema algebraico por ordenador que hace aritmética de enteros arbitrariamente largos y fracciones, polinomios multivariados, cálculos simbólicos, matrices sobre anillos de polinomios, gráficos, y otros cálculos numéricos.
 
@@ -2645,10 +2645,10 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 	Según Wikipedia
 
-*   [Ciencias de la computación](https://en.wikipedia.org/wiki/es:Ciencias_de_la_computaci%C3%B3n "wikipedia:es:Ciencias de la computación"): _«Las ciencias de la computación o ciencias computacionales son aquellas que abarcan las bases teóricas de la información y la computación, así como su aplicación en sistemas computacionales.»_
-*   [Técnicas de la computación](https://en.wikipedia.org/wiki/Technical_computing "wikipedia:Technical computing"):_«Técnica computacional es la aplicación de los principios matemáticos e informáticos de la ciencia computacional para resolver problemas prácticos de interés industrial.»_
+*   [Ciencias de la computación](https://en.wikipedia.org/wiki/es:Ciencias_de_la_computaci%C3%B3n "wikipedia:es:Ciencias de la computación"): *«Las ciencias de la computación o ciencias computacionales son aquellas que abarcan las bases teóricas de la información y la computación, así como su aplicación en sistemas computacionales.»*
+*   [Técnicas de la computación](https://en.wikipedia.org/wiki/Technical_computing "wikipedia:Technical computing"):*«Técnica computacional es la aplicación de los principios matemáticos e informáticos de la ciencia computacional para resolver problemas prácticos de interés industrial.»*
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [Comparison of numerical analysis software](https://en.wikipedia.org/wiki/Comparison_of_numerical_analysis_software "wikipedia:Comparison of numerical analysis software").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [Comparison of numerical analysis software](https://en.wikipedia.org/wiki/Comparison_of_numerical_analysis_software "wikipedia:Comparison of numerical analysis software").
 
 *   **EngLab** — Plataforma para matemáticas dotada de un lenguaje propio con una sintaxis similar a C.
 
@@ -2680,7 +2680,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 #### Estadística
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [Comparison of statistical packages](https://en.wikipedia.org/wiki/Comparison_of_statistical_packages "wikipedia:Comparison of statistical packages").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [Comparison of statistical packages](https://en.wikipedia.org/wiki/Comparison_of_statistical_packages "wikipedia:Comparison of statistical packages").
 
 *   **[JAGS](https://en.wikipedia.org/wiki/Just_another_Gibbs_sampler "wikipedia:Just another Gibbs sampler") (Just another Gibbs sampler)** — Programa multiplataforma para el análisis de los modelos jerárquicos bayesianos utilizando el método Markov Chain Monte Carlo (MCMC).
 
@@ -2700,7 +2700,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 #### Evaluación de datos
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [List of information graphics software](https://en.wikipedia.org/wiki/List_of_information_graphics_software "wikipedia:List of information graphics software").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [List of information graphics software](https://en.wikipedia.org/wiki/List_of_information_graphics_software "wikipedia:List of information graphics software").
 
 *   **Extrema** — Herramienta de análisis y visualización de datos.
 
@@ -2722,7 +2722,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 	[http://labplot.sourceforge.net/](http://labplot.sourceforge.net/) || [labplot2](https://aur.archlinux.org/packages/labplot2/)
 
-*   **[QtiPlot](https://en.wikipedia.org/wiki/QtiPlot "wikipedia:QtiPlot")** — Aplicación independiente utilizada para la representación gráfica científica interactiva y el análisis de datos, similar a la privativa [Origin](https://en.wikipedia.org/wiki/Origin_(software) "wikipedia:Origin (software)") o [SigmaPlot](https://en.wikipedia.org/wiki/SigmaPlot "wikipedia:SigmaPlot").
+*   **[QtiPlot](https://en.wikipedia.org/wiki/QtiPlot o [SigmaPlot](https://en.wikipedia.org/wiki/SigmaPlot "wikipedia:SigmaPlot").
 
 	[http://soft.proindependent.com/qtiplot.html](http://soft.proindependent.com/qtiplot.html) || [qtiplot](https://www.archlinux.org/packages/?name=qtiplot)
 
@@ -2740,11 +2740,11 @@ Véase también el apartado: [Hojas de cálculo](/index.php/List_of_Applications
 
 #### Biología computacional y bioinformática
 
-	[Biología computacional](https://en.wikipedia.org/wiki/es:Biolog%C3%ADa_computacional "wikipedia:es:Biología computacional"): _«La biología computacional es el uso de algoritmos y ordenadores para facilitar el entendimiento de problemas biológicos. Algunos de los campos de estudio relacionados a la biología computacional son: bioinformática, modelado molecular, bioquímica...»_
+	[Biología computacional](https://en.wikipedia.org/wiki/es:Biolog%C3%ADa_computacional "wikipedia:es:Biología computacional"): *«La biología computacional es el uso de algoritmos y ordenadores para facilitar el entendimiento de problemas biológicos. Algunos de los campos de estudio relacionados a la biología computacional son: bioinformática, modelado molecular, bioquímica...»*
 
-	[Bioinformática](https://en.wikipedia.org/wiki/es:Bioinform%C3%A1tica "wikipedia:es:Bioinformática"): _«La bioinformática, según una de sus definiciones más sencillas, es la aplicación de tecnología de computadores a la gestión y análisis de datos biológicos.»_
+	[Bioinformática](https://en.wikipedia.org/wiki/es:Bioinform%C3%A1tica "wikipedia:es:Bioinformática"): *«La bioinformática, según una de sus definiciones más sencillas, es la aplicación de tecnología de computadores a la gestión y análisis de datos biológicos.»*
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [List of open source bioinformatics software](https://en.wikipedia.org/wiki/List_of_open_source_bioinformatics_software "wikipedia:List of open source bioinformatics software").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [List of open source bioinformatics software](https://en.wikipedia.org/wiki/List_of_open_source_bioinformatics_software "wikipedia:List of open source bioinformatics software").
 
 *   **[BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL") (Biochemical Algorithms Library)** — Marco de aplicaciones en C++ que proporciona un amplio conjunto de estructuras de datos, como clases para mecánicas moleculares, métodos avanzados de solvatación, comparación y análisis de estructuras de proteínas, importación/exportación de archivos, y visualización.
 
@@ -2776,7 +2776,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 #### Visores moleculares
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [List of molecular graphics systems](https://en.wikipedia.org/wiki/List_of_molecular_graphics_systems "wikipedia:List of molecular graphics systems").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [List of molecular graphics systems](https://en.wikipedia.org/wiki/List_of_molecular_graphics_systems "wikipedia:List of molecular graphics systems").
 
 *   **[Avogadro](https://en.wikipedia.org/wiki/Avogadro_(software) "wikipedia:Avogadro (software)")** — Editor, visor y simulador de estructuras moleculares en 3D (también admite la descarga de archivos desde el [Protein Data Bank](https://en.wikipedia.org/wiki/Protein_Data_Bank "wikipedia:Protein Data Bank")).
 
@@ -2834,7 +2834,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Bioqu%C3%ADmica "wikipedia:es:Bioquímica")
 
-	_«Es la ciencia que estudia la base química de las moléculas que componen las células y los tejidos, que catalizan las reacciones químicas del metabolismo celular como la digestión, la fotosíntesis y la inmunidad, entre otras muchas cosas.»_
+	*«Es la ciencia que estudia la base química de las moléculas que componen las células y los tejidos, que catalizan las reacciones químicas del metabolismo celular como la digestión, la fotosíntesis y la inmunidad, entre otras muchas cosas.»*
 
 *   **[Bioclipse](https://en.wikipedia.org/wiki/Bioclipse "wikipedia:Bioclipse")** — Plataforma visual basada en Java para bioquímica, que utiliza el cliente Eclipse Rich Client Platform (RCP).
 
@@ -2844,7 +2844,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Modelado_molecular "wikipedia:es:Modelado molecular")
 
-	_«El modelado molecular o simulación molecular es un término general que engloba métodos teóricos y técnicas computacionales para modelar, imitar y predecir el comportamiento de moléculas.»_
+	*«El modelado molecular o simulación molecular es un término general que engloba métodos teóricos y técnicas computacionales para modelar, imitar y predecir el comportamiento de moléculas.»*
 
 *   **[GROMACS](https://en.wikipedia.org/wiki/GROMACS "wikipedia:GROMACS") (GROningen MAchine for Chemical Simulations)** — Paquete versátil para representar dinámicas moleculares, es decir, simular ecuaciones newtonianas del movimiento para sistemas con cientos de millones de partículas.
 
@@ -2910,7 +2910,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 #### Electrónica
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [Comparison of EDA software](https://en.wikipedia.org/wiki/Comparison_of_EDA_software "wikipedia:Comparison of EDA software").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [Comparison of EDA software](https://en.wikipedia.org/wiki/Comparison_of_EDA_software "wikipedia:Comparison of EDA software").
 
 *   **[gEDA](/index.php/GEDA "GEDA")** — Suite completa y conjunto de herramientas de Electronic Design Automation (automatización de diseño electrónico) que se utilizan para el diseño de circuitos eléctricos, captura esquemática, simulación, prototipos y producción.
 
@@ -3218,15 +3218,15 @@ Véase también [Wikipedia:Comparison of desktop application launchers](https://
 
 	[http://tools.suckless.org/dmenu/](http://tools.suckless.org/dmenu/) || [dmenu](https://www.archlinux.org/packages/?name=dmenu)
 
-*   **dmenu-extended** — Extensión de _dmenu_ para abrir rápidamente ficheros y carpetas.
+*   **dmenu-extended** — Extensión de *dmenu* para abrir rápidamente ficheros y carpetas.
 
 	[https://github.com/markjones112358/dmenu-extended](https://github.com/markjones112358/dmenu-extended) || [dmenu-extended](https://aur.archlinux.org/packages/dmenu-extended/)
 
-*   **dmenu-launch** — Simple lanzador de aplicaciones basado en _dmenu_. Lanza binarios y accesos directos XDG.
+*   **dmenu-launch** — Simple lanzador de aplicaciones basado en *dmenu*. Lanza binarios y accesos directos XDG.
 
 	[https://github.com/Wintervenom/Scripts/blob/master/file/launch/dmenu-launch](https://github.com/Wintervenom/Scripts/blob/master/file/launch/dmenu-launch) || [dmenu-launch](https://aur.archlinux.org/packages/dmenu-launch/)
 
-*   **dswitcher** — Conmutador de ventanas basado en _dmenu_ que trabaja sin importar el espacio de trabajo o la minimización.
+*   **dswitcher** — Conmutador de ventanas basado en *dmenu* que trabaja sin importar el espacio de trabajo o la minimización.
 
 	[https://github.com/Antithesisx/dswitcher](https://github.com/Antithesisx/dswitcher) || [dswitcher-git](https://aur.archlinux.org/packages/dswitcher-git/)
 
@@ -3238,7 +3238,7 @@ Véase también [Wikipedia:Comparison of desktop application launchers](https://
 
 	[http://sourceforge.net/projects/gmrun/](http://sourceforge.net/projects/gmrun/) || [gmrun](https://www.archlinux.org/packages/?name=gmrun)
 
-*   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do "wikipedia:GNOME Do")** — Lanzador de aplicaciones inspirado en [Quicksilver](https://en.wikipedia.org/wiki/Quicksilver_(software) "wikipedia:Quicksilver (software)") con muchos plugins, originalmente desarrollado para el escritorio GNOME.
+*   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do con muchos plugins, originalmente desarrollado para el escritorio GNOME.
 
 	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://www.archlinux.org/packages/?name=gnome-do)
 
@@ -3270,7 +3270,7 @@ Véase también [Wikipedia:Comparison of desktop application launchers](https://
 
 	[http://mcfadzean.org.uk/appstogo/linux.html#whippet](http://mcfadzean.org.uk/appstogo/linux.html#whippet) || [whippet](https://aur.archlinux.org/packages/whippet/)
 
-*   **xboomx** — Wrapper de _dmenu_ ligero que reordena los comandos basándose en su popularidad, escrito en python.
+*   **xboomx** — Wrapper de *dmenu* ligero que reordena los comandos basándose en su popularidad, escrito en python.
 
 	[https://bitbucket.org/dehun/xboomx](https://bitbucket.org/dehun/xboomx) || [xboomx](https://aur.archlinux.org/packages/xboomx/)
 
@@ -3278,7 +3278,7 @@ Véase también [Wikipedia:Comparison of desktop application launchers](https://
 
 	[http://docs.xfce.org/xfce/xfce4-appfinder/start](http://docs.xfce.org/xfce/xfce4-appfinder/start) || [xfce4-appfinder](https://www.archlinux.org/packages/?name=xfce4-appfinder)
 
-*   **Yeganesh** — Wrapper de _dmenu_ ligero que reordena los comandos basándose en su popularidad, escrito en Haskell.
+*   **Yeganesh** — Wrapper de *dmenu* ligero que reordena los comandos basándose en su popularidad, escrito en Haskell.
 
 	[http://dmwit.com/yeganesh](http://dmwit.com/yeganesh) || [yeganesh](https://aur.archlinux.org/packages/yeganesh/)
 
@@ -3334,7 +3334,7 @@ Vea también [Wikipedia:Comparison of accounting software](https://en.wikipedia.
 
 	[http://ledger-cli.org/](http://ledger-cli.org/) || [ledger](https://aur.archlinux.org/packages/ledger/)
 
-*   **Moneychanger** — Un intuitivo cliente de la bandeja del sistema escrito en Qt/C++ para _Open-Transactions_
+*   **Moneychanger** — Un intuitivo cliente de la bandeja del sistema escrito en Qt/C++ para *Open-Transactions*
 
 	[https://github.com/Open-Transactions/Moneychanger](https://github.com/Open-Transactions/Moneychanger) || [moneychanger-git](https://aur.archlinux.org/packages/moneychanger-git/)
 

@@ -38,11 +38,11 @@ $ regedit
 
 ```
 
-Go to _HKEY_CURRENT_USER/Software/Wine/Direct3D_, right-click on _Direct3D_ (if such a key doesn't exist, right-click on _Wine_, New -> Key, _Direct3D_, OK), select New -> String Value, _VideoMemorySize_, which you should set to the amount of VRAM your GPU has, in MB (for example, "1024" or "2048"). If you're using an integrated GPU, try to preallocate a fair amount of RAM for your GPU in BIOS/UEFI Setup and use the same value here (512 is good enough for low-medium settings).
+Go to *HKEY_CURRENT_USER/Software/Wine/Direct3D*, right-click on *Direct3D* (if such a key doesn't exist, right-click on *Wine*, New -> Key, *Direct3D*, OK), select New -> String Value, *VideoMemorySize*, which you should set to the amount of VRAM your GPU has, in MB (for example, "1024" or "2048"). If you're using an integrated GPU, try to preallocate a fair amount of RAM for your GPU in BIOS/UEFI Setup and use the same value here (512 is good enough for low-medium settings).
 
 *   If the Battle.net App doesn't work, use a new Wine prefix.
 *   **If you are asked to install Gecko, then click Install to do so.**
-*   If the Battle.net App window is white, open _winecfg_, go to _Applications_ and set _Windows Version_ to "Windows XP". You may do so for Battle.net.exe only, as SC2 itself works fine with this being set to anything newer.
+*   If the Battle.net App window is white, open *winecfg*, go to *Applications* and set *Windows Version* to "Windows XP". You may do so for Battle.net.exe only, as SC2 itself works fine with this being set to anything newer.
 
 #### Installing with the Battle.net App
 
@@ -56,7 +56,7 @@ Recent SC2 versions require the [Battle.net App](http://eu.battle.net/en/app/) t
 
 ```
 $ mount -o ro,unhide,uid=1000 /dev/dvd /media/dvd (for the DVD)
-$ mount -o loop,ro,unhide,uid=_your_id_ _starcraft.iso_ /media/dvd (for an image) 
+$ mount -o loop,ro,unhide,uid=*your_id* *starcraft.iso* /media/dvd (for an image) 
 
 ```
 
@@ -106,7 +106,7 @@ You can now restart the Battle.net App. The updater should proceed smoothly.
 
 #### Unit Preloader
 
-SC2 never fully loads the game initially, but rather streams and loads required files on demand. Unit Preloader is a special map which forces SC2 to load **all** units, animations and effects, **causing high RAM usage**, but prevents loading the data (and massive framerate drops) during multiplayer matches. Open _Arcade_ and search for _Unit Preloader_. There are 3 versions - start the one which corresponds to the game edition you'll want to play in multiplayer and wait for the Victory screen. All data will be preloaded until you exit the game to desktop.
+SC2 never fully loads the game initially, but rather streams and loads required files on demand. Unit Preloader is a special map which forces SC2 to load **all** units, animations and effects, **causing high RAM usage**, but prevents loading the data (and massive framerate drops) during multiplayer matches. Open *Arcade* and search for *Unit Preloader*. There are 3 versions - start the one which corresponds to the game edition you'll want to play in multiplayer and wait for the Victory screen. All data will be preloaded until you exit the game to desktop.
 
 ## Hints for advanced hotkeys settings
 

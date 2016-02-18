@@ -31,7 +31,7 @@ These updates must be enabled by adding `/boot/intel-ucode.img` as the **first i
 
 ### Grub
 
-_grub-mkconfig_ will automatically detect the microcode update and configure grub appropriately. After installing the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package, users are directed to regenerate the grub config to activate loading the microcode update by running:
+*grub-mkconfig* will automatically detect the microcode update and configure grub appropriately. After installing the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package, users are directed to regenerate the grub config to activate loading the microcode update by running:
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
@@ -167,7 +167,7 @@ It is possible to find out if the `intel-ucode.img` contains a microcode image f
 
 	(extract microcode image and search it for your cpuid)
 
-*   If an update is available, it should show up below _selected microcodes_
+*   If an update is available, it should show up below *selected microcodes*
 *   The microcode might already be in your vendor bios and not show up loading in dmesg. Compare to the current microcode running `grep microcode /proc/cpuinfo`
 
 ## Enabling Intel early microcode loading in custom kernels

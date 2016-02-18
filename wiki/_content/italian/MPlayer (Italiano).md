@@ -104,9 +104,8 @@ Il file di configurazione generale (valido per tutti gli utenti) si trova in `/u
 Un esempio di configuratione:
 
  `/etc/mplayer/example.conf` 
-
 ```
-# _[default]_ viene applicata a ogni file
+# *[default]* viene applicata a ogni file
 [default]
 # usa il server grafico X come video output
 vo=xv
@@ -127,12 +126,12 @@ vf-add=expand=::::1:16/9:16
 # per non wide screen traditional monitors
 #vf-add=expand=::::1:4/3:16
 
-#profilo di _up-mixing_ da due canali audio a sei canali
+#profilo di *up-mixing* da due canali audio a sei canali
 # use -profile 2chto6ch to activate
 [2chto6ch]
 af-add=pan=6:1:0:.4:0:.6:2:0:1:0:.4:.6:2
 
-#profilo di _down-mixing_ da sei canali audio a due canali
+#profilo di *down-mixing* da sei canali audio a due canali
 # use -profile 6chto2ch to activate
 [6chto2ch]
 af-add=pan=2:0.7:0:0:0.7:0.5:0:0:0.5:0.6:0.6:0:0
@@ -144,7 +143,7 @@ stop-xscreensaver="yes" # stop gnome-screensaver
 
 ### Scorciatoie da tastiera
 
-Le scorciatoie da tastiera di MPlayer sono configurate in `/etc/mplayer/input.conf`. Per personalizzare la scorciatoie da tastiera editare il file `~/.mplayer/input.conf` Ecco una lista dei più basilari tasti di default per controllare MPlayer. Per la lista completa si cerchi nelle pagine _man_: `man mplayer`.
+Le scorciatoie da tastiera di MPlayer sono configurate in `/etc/mplayer/input.conf`. Per personalizzare la scorciatoie da tastiera editare il file `~/.mplayer/input.conf` Ecco una lista dei più basilari tasti di default per controllare MPlayer. Per la lista completa si cerchi nelle pagine *man*: `man mplayer`.
 
 | Tasto | Descrizione |
 | `p` | Mette in pausa/esegue. |
@@ -171,7 +170,7 @@ Le scorciatoie da tastiera di MPlayer sono configurate in `/etc/mplayer/input.co
 
 Su [AUR](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)") si trova un elegante script in perl che permette questa utile funzionalità: [mplayer-resumer](https://aur.archlinux.org/packages/mplayer-resumer/).
 
-L'utilizzo è semplice: è sufficiente lanciare il video usando _mplayer-resumer_ al posto di _mplayer'. Esempio:_
+L'utilizzo è semplice: è sufficiente lanciare il video usando *mplayer-resumer* al posto di *mplayer'. Esempio:*
 
 ```
 $ mplayer-resumer [options] [path/]filename
@@ -180,7 +179,7 @@ $ mplayer-resumer [options] [path/]filename
 
 Se lo script è riavviato con meno di 5 secondi di ritardo dalla chiusura di MPlayer, tale script potrebbe non funzionare e la visione ripartirà dall'inizio.
 
-Se si sta guardando un video da una directory che per qualunque motivo non possa essere scritta (sia per motivi di permessi magari settati su read-only o spazio insufficiente) è probabile che non la ripresa da una pausa fallisca. Ciò è dato dal fatto che mplayer usa di default lo stesso percorso per scrivere un file parallelo di _conteggio_ del tempo.
+Se si sta guardando un video da una directory che per qualunque motivo non possa essere scritta (sia per motivi di permessi magari settati su read-only o spazio insufficiente) è probabile che non la ripresa da una pausa fallisca. Ciò è dato dal fatto che mplayer usa di default lo stesso percorso per scrivere un file parallelo di *conteggio* del tempo.
 
 ### Abilitare VDPAU (solo per schede grafiche nVidia moderne)
 
@@ -202,9 +201,9 @@ vc=ffh264vdpau,ffmpeg12vdpau,ffodivxvdpau,ffwmv3vdpau,ffvc1vdpau,
 
 #### Usare uno script
 
-Su [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)") esiste un semplice script in bash ([mplayer-vdpau-auto](https://aur.archlinux.org/packages/mplayer-vdpau-auto/)) che rileva automaticamente come settare _vc_ quando _vo=vdpau_.
+Su [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)") esiste un semplice script in bash ([mplayer-vdpau-auto](https://aur.archlinux.org/packages/mplayer-vdpau-auto/)) che rileva automaticamente come settare *vc* quando *vo=vdpau*.
 
-Un altro semplice wrapper è [mplayer-vdpau-shell-git](https://aur.archlinux.org/packages/mplayer-vdpau-shell-git/) in grado di evitare l'errore "VDPAU FATAL". Tale wrapper usa l'opzione _-include_ per includere il supporto a VDPAU, quindi sarebbe meglio evitare di inserire la configurazione di VDPAU in `~/.mplayer/config`.
+Un altro semplice wrapper è [mplayer-vdpau-shell-git](https://aur.archlinux.org/packages/mplayer-vdpau-shell-git/) in grado di evitare l'errore "VDPAU FATAL". Tale wrapper usa l'opzione *-include* per includere il supporto a VDPAU, quindi sarebbe meglio evitare di inserire la configurazione di VDPAU in `~/.mplayer/config`.
 
 ### Video traslucente con Radeon e Composite abilitato
 
@@ -222,7 +221,7 @@ vo=xv:adaptor=1
 
 ```
 
-Si può usare _xvinfo_ per vedere quali modalità video sono supportate dalla propria scheda video.
+Si può usare *xvinfo* per vedere quali modalità video sono supportate dalla propria scheda video.
 
 ### Problemi video Smplayer
 
@@ -243,7 +242,7 @@ Se il problema persiste eliminare il file di configurazione di smplayer:
 
 ### (S)mplayer fallisce la ripresa dopo una pausa
 
-Questo succede se l' _audio output_ è settato male nel file di configurazione di mplayer. Se si usa [PulseAudio](/index.php/PulseAudio_(Italiano) "PulseAudio (Italiano)") lanciare mplayer con l'opzione "-ao pulse" o editare `~/.mplayer/config` e aggiungere:
+Questo succede se l' *audio output* è settato male nel file di configurazione di mplayer. Se si usa [PulseAudio](/index.php/PulseAudio_(Italiano) "PulseAudio (Italiano)") lanciare mplayer con l'opzione "-ao pulse" o editare `~/.mplayer/config` e aggiungere:
 
 ```
 ao=pulse
@@ -257,7 +256,6 @@ Per Smplayer invece cambiare "Driver in uscita" in "Opzioni"-"Preferenze"-"Gener
 È ridicolo che usando smplayer con Compiz attivo non si riesca nè a vedere nè a sentire nulla. Per fixare questo problema editare il file:
 
  `/usr/bin/smplayer.helper` 
-
 ```
 export XLIB_SKIP_ARGB_VISUALS=1
 exec smplayer.real "$@"
@@ -322,7 +320,7 @@ idx=yes
 
 ### Incrementare il volume totale
 
-Se il volume generale non è abbastanza elevato, è possibile incrementare il volume di mplayer così: attivare _softvol_ e settare _softvol-max_ in un range tra 10 a 10000.
+Se il volume generale non è abbastanza elevato, è possibile incrementare il volume di mplayer così: attivare *softvol* e settare *softvol-max* in un range tra 10 a 10000.
 
 ```
 softvol=1

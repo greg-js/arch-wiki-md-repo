@@ -2,7 +2,7 @@
 
 Sendmail 是来自 UNIX 世界的经典 SMTP 服务器。编写于很久很久以前，那时的互联网还是一个相对安全的地方，安全问题并不像现在这样突出。因此它曾经拥有一些安全漏洞并因此得到了坏名声。但是这些漏洞早已修复，新版本的 sendmail 和其它 SMTP 服务器一样安全。然而，如果安全性是您的最优先事项，您或许应当考虑使用其它软件。
 
-本文的目的是为本地用户账户设置 Sendmail，**不使用 mysql 或者其它数据库**，同时允许建立所谓 _mail-only 账户_。
+本文的目的是为本地用户账户设置 Sendmail，**不使用 mysql 或者其它数据库**，同时允许建立所谓 *mail-only 账户*。
 
 本文仅描述了配置 Sendmail 的必需步骤；要添加 IMAP 与 POP3 服务，您可以考虑阅读 [Dovecot](/index.php/Dovecot "Dovecot") 的内容。
 
@@ -34,7 +34,7 @@ Sendmail 是来自 UNIX 世界的经典 SMTP 服务器。编写于很久很久�
 
 ## 添加用户
 
-*   默认情况下，所有本地用户都可以拥有一个类似 username@your-domain.com 的电子邮件地址。但是如果你想要添加 _mail-only 账户_，即仅能处理电子邮件，但不能使用 shell 或 X 进行登录的账户，您可以按如下步骤添加该类账户：
+*   默认情况下，所有本地用户都可以拥有一个类似 username@your-domain.com 的电子邮件地址。但是如果你想要添加 *mail-only 账户*，即仅能处理电子邮件，但不能使用 shell 或 X 进行登录的账户，您可以按如下步骤添加该类账户：
 
  `useradd -m -s /sbin/nologin joenobody` 
 
@@ -67,7 +67,6 @@ Sendmail 是来自 UNIX 世界的经典 SMTP 服务器。编写于很久很久�
 下面是在 [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security "wikipedia:Transport Layer Security") 之上进行身份验证的配置文件示例。例子包含了解释工作原理的注释，这些注释以 `dnl` 这个单词起始。
 
  `/etc/mail/sendmail.mc` 
-
 ```
 include(`/usr/share/sendmail-cf/m4/cf.m4')
 define(`confDOMAIN_NAME', `your-domain.com')dnl
@@ -111,7 +110,6 @@ MAILER(smtp)dnl
 *   请将您的域名写入 `local-host-names` 文件:
 
  `/etc/mail/local-host-names` 
-
 ```
 localhost
 your-domain.com
@@ -127,7 +125,6 @@ localhost.localdomain
 *   创建文件 `/etc/mail/access` 然后写入规则以配置邮件转发、允许收信与拒信。假设你在 `10.5.0.0/24` 有一个 VPN，而且你希望转发来自该 IP 段的所有邮件：
 
  `/etc/mail/access` 
-
 ```
 10.5.0 RELAY
 127.0.0 RELAY
@@ -164,7 +161,6 @@ somedude:     your-username
 *   创建你的 `virtusertable` 文件并在其中写入含有域名的别名：（这项功能在您的服务器绑定多域名时十分有用）
 
  `/etc/mail/virtusertable` 
-
 ```
 your-username@your-domain.com         your-username
 joe@my-other.tk                       joenobody

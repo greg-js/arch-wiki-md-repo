@@ -31,7 +31,7 @@
 
 2\. You will need a reiser4 patched kernel. Patches can be found here [http://sourceforge.net/projects/reiser4/files/reiser4-for-linux-3.x/](http://sourceforge.net/projects/reiser4/files/reiser4-for-linux-3.x/)
 
-3\. Bootloader _(Optional, only needed if you want to format your `/` (root) as **reiser4**)_
+3\. Bootloader *(Optional, only needed if you want to format your `/` (root) as **reiser4**)*
 
 **Note:** Backing up your bootloader configuration file should be considered.
 

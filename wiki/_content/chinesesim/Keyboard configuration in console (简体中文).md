@@ -2,7 +2,7 @@
 
 **Note:** 此文仅介绍简单设置，修改布局、按键映射等高级功能请查看 [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")。
 
-[虚拟控制台](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console")键盘映射(keymaps), 控制台字体和控制台映射由软件包 [kbd](https://www.archlinux.org/packages/?name=kbd) 提供([systemd](/index.php/Systemd "Systemd")依赖次软件包)。这个包还提供了很多管理虚拟控制台的底层工具。此外，_systemd_ 还提供了 _localectl_ 工具，可以同时控制系统 [locale](/index.php/Locale "Locale") 和控制台、Xorg 的键盘布局设置.
+[虚拟控制台](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console")键盘映射(keymaps), 控制台字体和控制台映射由软件包 [kbd](https://www.archlinux.org/packages/?name=kbd) 提供([systemd](/index.php/Systemd "Systemd")依赖次软件包)。这个包还提供了很多管理虚拟控制台的底层工具。此外，*systemd* 还提供了 *localectl* 工具，可以同时控制系统 [locale](/index.php/Locale "Locale") 和控制台、Xorg 的键盘布局设置.
 
 ## Contents
 
@@ -19,7 +19,6 @@
 用下面命令查看键盘和本地化设置:
 
  `$ localectl status` 
-
 ```
    System Locale: LANG=en_GB.utf8
                   LC_COLLATE=C
@@ -50,7 +49,7 @@ $ localectl list-keymaps
 查找键盘布局：
 
 ```
-$ localectl list-keymaps | grep -i _search_term_
+$ localectl list-keymaps | grep -i *search_term*
 
 ```
 
@@ -59,17 +58,16 @@ $ localectl list-keymaps | grep -i _search_term_
 可以把键盘设置到 `/etc/vconsole.conf`，[systemd](/index.php/Systemd "Systemd") 在启动时会读取此文件. `KEYMAP` 变量指定键盘映射，如果未设置或为空，则使用默认的 `us` 键盘映射，选项信息可以参考 `man 5 vconsole.conf`。
 
  `/etc/vconsole.conf` 
-
 ```
 KEYMAP=uk
 ...
 
 ```
 
-以用 _localectl_ 修改键盘映射，例如下面命令同时修改了`/etc/vconsole.conf` 和当前会话中的 `KEYMAP`:
+以用 *localectl* 修改键盘映射，例如下面命令同时修改了`/etc/vconsole.conf` 和当前会话中的 `KEYMAP`:
 
 ```
-$ localectl set-keymap --no-convert _keymap_
+$ localectl set-keymap --no-convert *keymap*
 
 ```
 
@@ -77,19 +75,19 @@ $ localectl set-keymap --no-convert _keymap_
 
 ### 临时设置
 
-也可以使用 _loadkeys_ 工具临时修改键盘布局，参阅 `man 1 loadkeys`
+也可以使用 *loadkeys* 工具临时修改键盘布局，参阅 `man 1 loadkeys`
 
 ```
-# loadkeys _keymap_
+# loadkeys *keymap*
 
 ```
 
 ## 修改按键延时和频率
 
-**按键延时**是只长按一个按键多少时间才会开始重复这个按键。开始重复过程后，字符会以一定频率出现(Hz)，也就是**重复频率**. 终端中，这些值可以通过 _kbdrate_ 设置。X 中的设置参考[这里](/index.php/Keyboard_configuration_in_Xorg#Adjusting_typematic_delay_and_rate "Keyboard configuration in Xorg").
+**按键延时**是只长按一个按键多少时间才会开始重复这个按键。开始重复过程后，字符会以一定频率出现(Hz)，也就是**重复频率**. 终端中，这些值可以通过 *kbdrate* 设置。X 中的设置参考[这里](/index.php/Keyboard_configuration_in_Xorg#Adjusting_typematic_delay_and_rate "Keyboard configuration in Xorg").
 
 ```
-# kbdrate [-d _delay_] [-r _rate_]
+# kbdrate [-d *delay*] [-r *rate*]
 
 ```
 
@@ -112,7 +110,6 @@ $ localectl set-keymap --no-convert _keymap_
 可以用下面 systemd service 修改按键频率：
 
  `/etc/systemd/system/kbdrate.service` 
-
 ```
 
 [Unit]

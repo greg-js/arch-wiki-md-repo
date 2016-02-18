@@ -51,7 +51,7 @@ ALSA включена в стандартную сборку ядра Arch Linux
 
 Пользователи вошедшие в систему (в виртуальном терминале или менеджере рабочего стола) имеют права на проигрывание звука и изменение уровней микшера. Для разрешения таких прав удалённому пользователю, оный должен быть [заключён](/index.php/Users_and_groups#Group_management "Users and groups") в группу `audio`. Членство в группе `audio` также дает непосредственный доступ к устройствам и позволяет исключительный захват устройства вывода. Это может вывести из строя програмное микширование или быстрое переключение пользователей на многопользовательских системах. Поэтому добавление пользователя в группу `audio` строго **не** рекомендуется, если на то нет особых причин [[1]](https://wiki.ubuntu.com/Audio/TheAudioGroup).
 
-Никогда не используйте _alsaconf_, если у вас PCI или ISAPNP звуковая карта: строчки, добавленные в `modprobe.conf`, могут сломать автоопределение [udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)").
+Никогда не используйте *alsaconf*, если у вас PCI или ISAPNP звуковая карта: строчки, добавленные в `modprobe.conf`, могут сломать автоопределение [udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)").
 
 ### Пользовательские утилиты
 
@@ -62,7 +62,7 @@ ALSA включена в стандартную сборку ядра Arch Linux
 
 ```
 
-_alsamixer_ предлагает основанный на [ncurses](https://en.wikipedia.org/wiki/Ncurses "wikipedia:Ncurses") интерфейс для консольной настройки звуковых устройств. Так же установите пакет [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) если желаете [высокое качество передискретизации](#.D0.92.D1.8B.D1.81.D0.BE.D0.BA.D0.BE.D0.B5_.D0.BA.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.BE_.D0.BF.D0.B5.D1.80.D0.B5.D0.B4.D0.B8.D1.81.D0.BA.D1.80.D0.B5.D1.82.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8), возможность [разложения/сведения каналов](#.D0.A0.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5.2F.D1.81.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.B0.D0.BD.D0.B0.D0.BB.D0.BE.D0.B2) и другие возможности.
+*alsamixer* предлагает основанный на [ncurses](https://en.wikipedia.org/wiki/Ncurses "wikipedia:Ncurses") интерфейс для консольной настройки звуковых устройств. Так же установите пакет [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) если желаете [высокое качество передискретизации](#.D0.92.D1.8B.D1.81.D0.BE.D0.BA.D0.BE.D0.B5_.D0.BA.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.BE_.D0.BF.D0.B5.D1.80.D0.B5.D0.B4.D0.B8.D1.81.D0.BA.D1.80.D0.B5.D1.82.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8), возможность [разложения/сведения каналов](#.D0.A0.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5.2F.D1.81.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.B0.D0.BD.D0.B0.D0.BB.D0.BE.D0.B2) и другие возможности.
 
 Если вы желаете что бы приложения [OSS](/index.php/OSS "OSS") работали с [dmix](#Dmix) установите так же пакет [alsa-oss](https://www.archlinux.org/packages/?name=alsa-oss).
 
@@ -79,31 +79,31 @@ _alsamixer_ предлагает основанный на [ncurses](https://en.
 
 ## Включить звук каналов
 
-В ALSA по умолчанию отключены все каналы, и они все должны быть включены вручную. Этого можно добиться при помощи _amixer_:
+В ALSA по умолчанию отключены все каналы, и они все должны быть включены вручную. Этого можно добиться при помощи *amixer*:
 
 ```
 $ amixer sset Master unmute
 
 ```
 
-Так же есть возможность сделать то же самое с _alsamixer_:
+Так же есть возможность сделать то же самое с *alsamixer*:
 
 ```
 $ alsamixer
 
 ```
 
-Знак `MM` снизу канала показывает что канал отключён (_muted_), а `00` показывает что открыт (_open_).
+Знак `MM` снизу канала показывает что канал отключён (*muted*), а `00` показывает что открыт (*open*).
 
 Пролистайте до каналов `Master` и `PCM`при помощи клавиш `←` и `→` и включите звук на них, нажав клавишу `m`. Используйте клавишу `↑` для увеличения звука и достижения уровня в `0` dB (Децибел). Уровень может быть найден в верхнем левом поле, следующим за `Item:`.
 
 **Обратите внимание:** Если уровень выставить более 0 dB может быть слышен хрип из колонок.
 
-Что бы получить полноценный 5.1 или 7.1 _surround sound_ вам скорее всего понадобится включить каналы `Front`, `Surround`, `Center`, `LFE` (сабвуфер) и `Side` (это названия каналов, характерные для Intel HD Audio, они могут отличатся на различных устройствах). Стоит отметить, что это не даёт автоматического разложения на каналы стерео звука (каким является большинство музыки). Что бы задействовать такие возможности, смотрите [Разложение/сведение каналов](#.D0.A0.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5.2F.D1.81.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.B0.D0.BD.D0.B0.D0.BB.D0.BE.D0.B2).
+Что бы получить полноценный 5.1 или 7.1 *surround sound* вам скорее всего понадобится включить каналы `Front`, `Surround`, `Center`, `LFE` (сабвуфер) и `Side` (это названия каналов, характерные для Intel HD Audio, они могут отличатся на различных устройствах). Стоит отметить, что это не даёт автоматического разложения на каналы стерео звука (каким является большинство музыки). Что бы задействовать такие возможности, смотрите [Разложение/сведение каналов](#.D0.A0.D0.B0.D0.B7.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5.2F.D1.81.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.B0.D0.BD.D0.B0.D0.BB.D0.BE.D0.B2).
 
 Для включения микрофона, переключитесь на вкладку Capture (Устройства захвата) нажав `F4` и включите канал, нажав `Пробел`.
 
-Для выхода из _alsamixer_, нажмите `Esc`.
+Для выхода из *alsamixer*, нажмите `Esc`.
 
 **Обратите внимание:**
 
@@ -136,7 +136,6 @@ $ speaker-test -D default -c 8
 `-D` принимает названия каналов PCM, которые могут быть получены при запуске:
 
  `$ aplay -L | grep :CARD` 
-
 ```
 default:CARD=PCH  # 'default' это название канала PCM
 sysdefault:CARD=PCH
@@ -164,7 +163,6 @@ surround71:CARD=PCH,DEV=0
 Назначения определяют значение данного ключа. Достуаны различные стили и типы назначений.
 
  `Simple assignment` 
-
 ```
 # Это комментарий. Всё после символа '#' до конца строки игнорируется ALSA.
 key = value # Знак равно, как правило, опускают, поскольку пробел также может быть использован в качестве разделителя.
@@ -175,7 +173,6 @@ key value # Эквивалентно примеру выше.
 Разделители используются для определения начала и конца назначений, использование запятых и пробелов также возможно.
 
  `Seperators` 
-
 ```
 # Следующие три назначения одинаковы.
 key value0; key valueN;
@@ -191,7 +188,6 @@ valueN
 Сложные назначения используют фигурные скобки в качестве разделителя.
 
  `Compound assignment` 
-
 ```
 key {	subkey0 value0;
 	subkeyN valueN;	}
@@ -205,7 +201,6 @@ key.subkeyN valueN;
 Массив определений использует квадратные скобки в качестве разделителя.
 
  `Single array` 
-
 ```
 key [	"value0";
 	"valueN";	]
@@ -232,7 +227,6 @@ ALSA использует различные типы данных для зна
 *   "!" -- заместить
 
  `Operation modes` 
-
 ```
 # Соединить/создать - Если узел не существует, он будет создан. Если он создан и типы совпадают,
 # subkeyN присоединится в ключ.
@@ -260,7 +254,6 @@ key.!subkeyN valueN;
 Подразумевая что узел "defaults" прописан в /usr/share/alsa/alsa.conf, где defaults.pcm.card и его ctl дубликат имеет прописанные значения "0" (тип integer), пользователь желает прописать основным pcm и управляющим устройством карту "2" или "SB" на звуковой карте Azalia.
 
  `Defaults node` 
-
 ```
 defaults.ctl.card 2; # Установит основное устройство и отдаст контроль третьей карте (счёт начинается с 0).
 defaults.pcm.card 2; # Это не меняет тип данных.
@@ -287,7 +280,6 @@ defaults.ctl.!card "SB"; # различные типы значений.
 Иногда полезно и даже легче прочитать об использовании гнездования в настройках.
 
  `Гнездование плагинов PCM` 
-
 ```
 pcm.azalia {	type hw; card 0	}
 pcm.!default {	type plug; slave.pcm "azalia"	}
@@ -306,7 +298,6 @@ pcm.default.slave.pcm.card 0;
 #### Including configuration files
 
  `Include other configuration files` 
-
 ```
 </path/to/configuration-file> # Include a configuration file
 <confdir:/path/to/configuration-file> # Reference to a global configuration directory
@@ -317,7 +308,6 @@ pcm.default.slave.pcm.card 0;
 Если ваша звуковая карта меняет порядок при загрузке, вы можете указать их порядок в любом файле, который заканчивается на `.conf` в `/etc/modprobe.d` (`/etc/modprobe.d/alsa-base.conf` предложенный). Например, если вы хотите, чтобы ваша звуковая карта Mia была #0:
 
  `/etc/modprobe.d/alsa-base.conf` 
-
 ```
 options snd_mia index=0
 options snd_hda_intel index=1
@@ -328,7 +318,6 @@ options snd_hda_intel index=1
 Вы также можете задать индекс `-2`, чтобы заставить ALSA никогда не использовать звуковую карту, как первичную. Дистрибутивы, такие как Linux Mint и Ubuntu используют следующие настройки, чтобы USB и другие "неправильные" драйвера не получили индекс `0`:
 
  `/etc/modprobe.d/alsa-base.conf` 
-
 ```
 options bt87x index=-2
 options cx88_alsa index=-2
@@ -371,7 +360,6 @@ pcm.!default {
 Вместо использования новых переменных, вы можете установить одну из упомянутых в общей конфигурации по умолчанию.
 
  `/usr/share/alsa/alsa.conf` 
-
 ```
 Variable name # Definition
 ALSA_CARD # pcm.default pcm.hw pcm.plughw ctl.sysdefault ctl.hw rawmidi.default rawmidi.hw hwdep.hw
@@ -393,7 +381,6 @@ ALSA_RAWMIDI_DEVICE # rawmidi.default rawmidi.hw
 Сперва Вам нужно найти карту и id устройства, которое Вы хотите установить по-умолчанию:
 
  `$ aplay -l` 
-
 ```
 **** List of PLAYBACK Hardware Devices ****
 card 0: Intel [HDA Intel], device 0: CONEXANT Analog [CONEXANT Analog]
@@ -444,19 +431,17 @@ ctl.!default {
 
 ```
 
-To get valid ALSA card names, use _aplay_:
+To get valid ALSA card names, use *aplay*:
 
  `$ aplay -l | awk -F \: '/,/{print $2}' | awk '{print $1}' | uniq` 
-
 ```
 PCH
 
 ```
 
-Alternatively use _cat_, which might return unused devices:
+Alternatively use *cat*, which might return unused devices:
 
  `$ cat /proc/asound/card*/id` 
-
 ```
 PCH
 ThinkPadEC
@@ -467,10 +452,10 @@ ThinkPadEC
 
 The 'pcm' options affect which card and device will be used for audio playback while the 'ctl' option affects which card is used by control utilities like alsamixer .
 
-The changes should take effect as soon as you (re-)start an application (MPlayer etc.). You can also test with a command like _aplay_.
+The changes should take effect as soon as you (re-)start an application (MPlayer etc.). You can also test with a command like *aplay*.
 
 ```
-$ aplay -D default _your_favourite_sound.wav_
+$ aplay -D default *your_favourite_sound.wav*
 
 ```
 
@@ -481,7 +466,6 @@ If you receive an error regarding your asound configuration, check the [upstream
 Вы можете предполагать, что udev правильно определил ваш звук правильно. Проверить это можно, используя командную строку.
 
  `$ lsmod | grep '^snd' | column -t` 
-
 ```
 snd_hda_codec_hdmi     22378   4
 snd_hda_codec_realtek  294191  1
@@ -501,7 +485,6 @@ snd_page_alloc         7017    2  snd_hda_intel,snd_pcm
 Вы также можете проверить директорию `/dev/snd/` на правильность файлов устройств:
 
  `$ ls -l /dev/snd` 
-
 ```
 total 0
 crw-rw----  1 root audio 116,  0 Apr  8 14:17 controlC0
@@ -557,7 +540,6 @@ Install the [alsaequal](https://aur.archlinux.org/packages/alsaequal/) package f
 After installing the package, add the following to your ALSA configuration file:
 
  `/etc/asound.conf` 
-
 ```
 ctl.equal {
     type equal;
@@ -638,7 +620,6 @@ Install the [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins
 If you have not already created either an `~/.asoundrc` or a `/etc/asound.conf` file, then create either one and insert the following:
 
  `/etc/asound.conf` 
-
 ```
 pcm.eq {
     type ladspa
@@ -747,7 +728,7 @@ crw-rw----  1 root audio 116, 33 Apr  8 14:17 timer
 
 ### Выставление звука на каналах и проверка звуковой карты
 
-В этом разделе мы подразумеваем, что вы выполняете команды от суперпользователя. Если вы хотите выполнять эти шаги от пользователя, то перейдите сначала к следующей секции, _Настройка прав доступа_.
+В этом разделе мы подразумеваем, что вы выполняете команды от суперпользователя. Если вы хотите выполнять эти шаги от пользователя, то перейдите сначала к следующей секции, *Настройка прав доступа*.
 
 *   Включение звука
 
@@ -795,7 +776,7 @@ alsactl store
 
 ### Настройка вывода через SPDIF
 
-(от **gralves** с форумов _Gentoo_)
+(от **gralves** с форумов *Gentoo*)
 
 *   В GNOME Volume Control, во вкладке Options, измените IEC958 на PCM. Эта опция может быть включена в настройках.
 *   Если у вас не установлен GNOME Volume Control:
@@ -845,18 +826,17 @@ $ alsamixer
 
 ## Высокое качество передискретизации
 
-Когда включено програмное микширование, ALSA вынуждена предесритезировать всё на единой частоте (48 kHz по умолчанию, если поддерживается). По умолчанию, она попытается использовать для этого конвертер _speexrate_, и откатится к низкому качеству линейной интерполяции, если не получится[[3]](http://git.alsa-project.org/?p=alsa-lib.git;a=blob;f=src/pcm/pcm_rate.c;h=2eb4b1b33933dec878d0f25ad118869adac95767;hb=HEAD#l1278). Таким образом, если вы получили некачественный звук из-за плохой передискретизации, проблема может быть решена путем простой установки [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins). Для еще более высокого качества передискретизации, вы можете изменить преобразователь частот по умолчанию на `speexrate_medium` или `speexrate_best`. Оба работают достаточно хорошо, что не имеет практического значения, какой вы выберите, и использование лучшего конвертера не стоит тех циклов процессора, которые он тратит.
+Когда включено програмное микширование, ALSA вынуждена предесритезировать всё на единой частоте (48 kHz по умолчанию, если поддерживается). По умолчанию, она попытается использовать для этого конвертер *speexrate*, и откатится к низкому качеству линейной интерполяции, если не получится[[3]](http://git.alsa-project.org/?p=alsa-lib.git;a=blob;f=src/pcm/pcm_rate.c;h=2eb4b1b33933dec878d0f25ad118869adac95767;hb=HEAD#l1278). Таким образом, если вы получили некачественный звук из-за плохой передискретизации, проблема может быть решена путем простой установки [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins). Для еще более высокого качества передискретизации, вы можете изменить преобразователь частот по умолчанию на `speexrate_medium` или `speexrate_best`. Оба работают достаточно хорошо, что не имеет практического значения, какой вы выберите, и использование лучшего конвертера не стоит тех циклов процессора, которые он тратит.
 
 Для смены преобразователя частот по умолчанию введите следующие строки в ваши `~/.asoundrc` или `/etc/asound.conf`:
 
  `/etc/asound.conf` 
-
 ```
 defaults.pcm.rate_converter "speexrate_medium"
 
 ```
 
-**Обратите внимание:** Так же возможно использовать конвертер [libsamplerate](https://www.archlinux.org/packages/?name=libsamplerate), который в два раза медленее конвертеров _speexrate_, но даёт небольшой прирост в качестве. Смотрите [обсуждение](/index.php/Talk:Advanced_Linux_Sound_Architecture#On_high_quality_resampling "Talk:Advanced Linux Sound Architecture").
+**Обратите внимание:** Так же возможно использовать конвертер [libsamplerate](https://www.archlinux.org/packages/?name=libsamplerate), который в два раза медленее конвертеров *speexrate*, но даёт небольшой прирост в качестве. Смотрите [обсуждение](/index.php/Talk:Advanced_Linux_Sound_Architecture#On_high_quality_resampling "Talk:Advanced Linux Sound Architecture").
 
 **Обратите внимание:** Некоторые приложения (как MPlayer и его ответвления) настроены по умолчанию на собственную передискретизацию. Поскольку некоторые драйвера ALSA неправильно сообщают задержки, когда передискретизация включена (что ведет к рассинхронизации AV), изменение данных настроек не возымеет эффекта, пока вы не настроете их использовать передискретизацию от ALSA.
 
@@ -1029,7 +1009,6 @@ options snd-NAME-OF-MODULE ac97_quirk=0
 Посмотрите доступные модули и их порядок:
 
  `$ cat /proc/asound/modules` 
-
 ```
  0 snd_hda_intel
  1 snd_ca0106
@@ -1039,7 +1018,6 @@ options snd-NAME-OF-MODULE ac97_quirk=0
 Отключите нежелательный аудиокодек видеокарты в `/etc/modprobe.d/modprobe.conf`:
 
  `/etc/modprobe.d/modprobe.conf` 
-
 ```
 install snd_hda_intel /bin/false
 
@@ -1052,4 +1030,4 @@ options snd_hda_intel enable=1,0
 
 ```
 
-Будьте внимательны к названию вашего устройства _snd**_**hda**_**intel_ (подчеркивание) или _snd**-**hda**-**intel_ (тире).
+Будьте внимательны к названию вашего устройства *snd**_**hda**_**intel* (подчеркивание) или *snd**-**hda**-**intel* (тире).

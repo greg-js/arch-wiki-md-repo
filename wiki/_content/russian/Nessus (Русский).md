@@ -32,14 +32,14 @@
 Зарегистрируйте ваш почтовый ящик на [http://www.tenable.com/products/nessus/nessus-plugins/obtain-an-activation-code](http://www.tenable.com/products/nessus/nessus-plugins/obtain-an-activation-code) и дождитесь, пока вам пришлют ключ. После этого скачайте все плагины при помощи команды:
 
 ```
-# /opt/nessus/bin/nessuscli fetch --register _ваш_ключ_
+# /opt/nessus/bin/nessuscli fetch --register *ваш_ключ*
 
 ```
 
 Создайте администратора Nessus (пользователи Nessus не имеют никакого отношения к пользователям Unix):
 
 ```
-# /opt/nessus/sbin/nessuscli adduser _имя_пользователя_
+# /opt/nessus/sbin/nessuscli adduser *имя_пользователя*
 
 ```
 

@@ -12,7 +12,7 @@
 
 Syncthing can be [installed](/index.php/Install "Install") with the [syncthing](https://www.archlinux.org/packages/?name=syncthing) or the [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) package. This latter includes additional features such as synchronization by inotify, desktop notifications and integration with Nautilus, Nemo and Caja.
 
-After installing, you can either run the _syncthing_ binary manually from a terminal, or start it as a [systemd/User](/index.php/Systemd/User "Systemd/User") instance using the provided `syncthing.service`. Alternatively, you can [utilize](/index.php/Systemctl#Using_units "Systemctl") the `syncthing@.service` if you require it to run without an active user session.
+After installing, you can either run the *syncthing* binary manually from a terminal, or start it as a [systemd/User](/index.php/Systemd/User "Systemd/User") instance using the provided `syncthing.service`. Alternatively, you can [utilize](/index.php/Systemctl#Using_units "Systemctl") the `syncthing@.service` if you require it to run without an active user session.
 
 The systemd services need to be started for a specific user in any case. To do this run `systemctl --user start syncthing.service` to start the service or `systemctl --user enable syncthing.service` to activate the service. See [Autostart-syncthing with systemd](http://docs.syncthing.net/users/autostart.html#using-systemd) for detailed information on the services.
 
@@ -47,7 +47,6 @@ More information about the [syncthing-relaysrv-git](https://aur.archlinux.org/pa
 Per default the relay joins the [Syncthing relay pool](https://relays.syncthing.net/) and is publicy available. Rate limiting and other options can be configured via command line flags (check `syncthing-relaysrv -help`). To edit the command line flags just create a [drop-in snippet](/index.php/Systemd#Drop-in_snippets "Systemd") for `syncthing-relaysrv.service` and replace the `ExecStart` directive:
 
  `/etc/systemd/system/syncthing-relaysrv.service.d/override.conf` 
-
 ```
 [Service]
 ExecStart=

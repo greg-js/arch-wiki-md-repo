@@ -1,6 +1,6 @@
 From the [project home page](http://www.sqlite.org/):
 
-	_SQLite is a software library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine. SQLite is the most widely deployed SQL database engine in the world. The source code for SQLite is in the public domain._
+	*SQLite is a software library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine. SQLite is the most widely deployed SQL database engine in the world. The source code for SQLite is in the public domain.*
 
 ## Contents
 
@@ -53,7 +53,7 @@ The SQLite library includes a simple command-line utility named sqlite3 that all
 #### Create a database
 
 ```
-$ sqlite3 _databasename_
+$ sqlite3 *databasename*
 
 ```
 

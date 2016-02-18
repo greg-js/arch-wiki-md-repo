@@ -1,6 +1,6 @@
 From [lightscribe.com](http://www.lightscribe.com/):
 
-	_LightScribe is an innovative technology that uses a special disc drive, special media, and label-making software to burn labels directly onto CDs and DVDs._
+	*LightScribe is an innovative technology that uses a special disc drive, special media, and label-making software to burn labels directly onto CDs and DVDs.*
 
 Labels burnt using LightScribe are monochromatic, as it works by making a chemical in the media react with the laser beam and change color.
 

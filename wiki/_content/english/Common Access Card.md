@@ -42,7 +42,7 @@ The primary root certificate used has a CN of "DoD Root CA 2": this certificate 
 
 ## Testing
 
-Visit your favorite CAC secured web page and you should be asked for the _Master Password_ for your certificate. Enter it and if you get in, you know it's working.
+Visit your favorite CAC secured web page and you should be asked for the *Master Password* for your certificate. Enter it and if you get in, you know it's working.
 
 ## Debugging
 

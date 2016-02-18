@@ -76,7 +76,8 @@ I moduli possono cambiare la propria versione a piacimento, ed essere indipenden
 
 ```
 use Foo::Module;
-print $Foo::Module::VERSION, "\n";
+print $Foo::Module::VERSION, "
+";
 
 ```
 
@@ -84,9 +85,9 @@ print $Foo::Module::VERSION, "\n";
 
 CPAN è l'acronimo di "Centralized Network for Perl Authors". Ogni mirror CPAN, contiene gli indici delle distribuzioni disponibili su CPAN, i moduli in esse contenuti e il nome dell'autore che le ha caricate, il tutto contenuto in semplici files di testo. L'indice più utile risiede in `/modules/02packages.details.txt.gz`, disponibile in ogni mirror CPAN. Il termine "packages" si riferisce alla keyword `package` propria del linguaggio perl, e non ad un entità simile ai pacchetti pacman. La shell CPAN, scritta in minuscolo è semplicemente uno script Perl che naviga tali indici alla ricerca dei moduli che si desidera installare.
 
-I moduli sono elencati nel file `02packages.details.txt.gz`. Sulla stessa linea del nome del modulo/pacchetto, c'è il percorso al tarball della distribuzione contenente il modulo. Quando si richiede l'installazione di un modulo tramite _cpan_, quest'ultimo verrà cercato nell'elenco e sarà installata la relativa distribuzione. Durante l'installazione, verrà generata una lista di dipendenze. _Cpan_ proverà quindi a caricare ogni dipendenza nell'interprete perl: se un modulo della versione specificata non può essere caricato, il processo si ripete.
+I moduli sono elencati nel file `02packages.details.txt.gz`. Sulla stessa linea del nome del modulo/pacchetto, c'è il percorso al tarball della distribuzione contenente il modulo. Quando si richiede l'installazione di un modulo tramite *cpan*, quest'ultimo verrà cercato nell'elenco e sarà installata la relativa distribuzione. Durante l'installazione, verrà generata una lista di dipendenze. *Cpan* proverà quindi a caricare ogni dipendenza nell'interprete perl: se un modulo della versione specificata non può essere caricato, il processo si ripete.
 
-La shell _cpan_ non deve preoccuparsi di quale versione del modulo richiesto stia installando, poichè l'ultima versione del modulo soddisferà sicuramente la richiesta del modulo di cui era stata inizialmente richiesta l'installazione. Solamente l'ultima versione di ogni modulo viene elencata nel file `02packages.details.txt.gz` ma, sfortunatamente per l'autore di un pacchetto perl, non è sempre possibile fare affidamento sul fatto che i nostri pacchetti offrano l'ultima versione di una distribuzione perl e dei relativi moduli, poichè il controllo sulle dipendenze operato da Pacman, è molto più statico e rigido.
+La shell *cpan* non deve preoccuparsi di quale versione del modulo richiesto stia installando, poichè l'ultima versione del modulo soddisferà sicuramente la richiesta del modulo di cui era stata inizialmente richiesta l'installazione. Solamente l'ultima versione di ogni modulo viene elencata nel file `02packages.details.txt.gz` ma, sfortunatamente per l'autore di un pacchetto perl, non è sempre possibile fare affidamento sul fatto che i nostri pacchetti offrano l'ultima versione di una distribuzione perl e dei relativi moduli, poichè il controllo sulle dipendenze operato da Pacman, è molto più statico e rigido.
 
 ### Definizione delle dipendenze
 
@@ -150,7 +151,7 @@ In Perl, moduli sono dichiarati con la parola chiave `package`. Essi sono conten
 
 #### Core Module
 
-I Core Modules sono quelli inclusi in un'installazione di Perl, ed alcuni di essi sono disponibili _solamente_ con Perl stesso. Altri moduli possono invece essere scaricati tramite CPAN.
+I Core Modules sono quelli inclusi in un'installazione di Perl, ed alcuni di essi sono disponibili *solamente* con Perl stesso. Altri moduli possono invece essere scaricati tramite CPAN.
 
 #### Dist Packages
 
@@ -212,7 +213,7 @@ Di recente introduzione, `Module::Install` richiede che `make` sia installato pe
 
 Una caratteristica molto interessante di questo modulo, è che ne viene fornita una copia all'interno del dist package, cosicchè, a differenza dei moduli sopra menzionati, non sia necessario installarlo nel sistema.
 
-Un'altra caratteristica di rilievo è l'auto-install. _Anche se l'uso di questa feature non è raccomandato, questa viene usata molto spesso_. Quando l'autore del modulo ne abilita l'uso, `Module::Install` procederà alla ricerca e all'installazione di tutti i moduli richiesti che non siano presenti al momento dell'esecuzione di `Makefile.PL`. Benchè questa funzione venga disabilitata quando `Module::Install` viene eseguito da `CPAN` o `CPANPLUS`, ciò non accade se viene utilizzato all'interno di un **PKGBUILD**! Si veda [PERL_AUTOINSTALL](#PERL_AUTOINSTALL) per risolvere il problema.
+Un'altra caratteristica di rilievo è l'auto-install. *Anche se l'uso di questa feature non è raccomandato, questa viene usata molto spesso*. Quando l'autore del modulo ne abilita l'uso, `Module::Install` procederà alla ricerca e all'installazione di tutti i moduli richiesti che non siano presenti al momento dell'esecuzione di `Makefile.PL`. Benchè questa funzione venga disabilitata quando `Module::Install` viene eseguito da `CPAN` o `CPANPLUS`, ciò non accade se viene utilizzato all'interno di un **PKGBUILD**! Si veda [PERL_AUTOINSTALL](#PERL_AUTOINSTALL) per risolvere il problema.
 
 ### Variabili d'ambiente
 
@@ -224,7 +225,7 @@ Quando questa variabile ha valore "true", i sistemi di installazione dei moduli 
 
 #### PERL_AUTOINSTALL
 
-È possibile passare degli argomenti a linea di comando aggiuntivi a `Module::Install` attraverso questa variabile. Per disattivare l'auto-install (_altamente consigliato_), si assegni il valore `--skipdeps` a questa variabile.
+È possibile passare degli argomenti a linea di comando aggiuntivi a `Module::Install` attraverso questa variabile. Per disattivare l'auto-install (*altamente consigliato*), si assegni il valore `--skipdeps` a questa variabile.
 
 ```
 export PERL_AUTOINSTALL="--skipdeps"
@@ -266,7 +267,6 @@ Se l'utente usa `Local::Lib`, la variabile `PERL_LOCAL_LIB_ROOT` sarà automatic
 Usando le nozioni appena acquisite, è possibile creare un PKGBUILD che resisterà a qualunque tentativo di sabotaggio da parte delle variabili d'ambiente:
 
  `PKGBUILD` 
-
 ```
 # Contributor: Your Name <youremail@domain.com>
 pkgname=perl-foo-bar

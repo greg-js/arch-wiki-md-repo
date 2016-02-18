@@ -242,7 +242,7 @@
 
 	[https://wiki.gnome.org/Projects/NetworkManager](https://wiki.gnome.org/Projects/NetworkManager) || [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)
 
-*   **[systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)")** — Нативный демон [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), который управляет конфигурацией сети. Включает поддержку базовой настройки через [udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)"). Доступен в _systemd_, начиная с версии 210
+*   **[systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)")** — Нативный демон [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), который управляет конфигурацией сети. Включает поддержку базовой настройки через [udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)"). Доступен в *systemd*, начиная с версии 210
 
 	[http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html](http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) || [systemd](https://www.archlinux.org/packages/?name=systemd)
 
@@ -330,7 +330,7 @@
 
 	[https://code.google.com/p/arora/](https://code.google.com/p/arora/) || [arora](https://aur.archlinux.org/packages/arora/)
 
-*   **[dwb](/index.php/Dwb "Dwb")** — Легковесный, сильнонастраиваемый веб-браузер, основанный на движке WebKit, с горячими клавишами в стиле _vi_ и тайлингом. По состоянию на октябрь 2014 г. _dwb_ [не разрабатывается](https://bitbucket.org/portix/dwb/pull-request/22/several-cleanups-to-increase-portability/diff#comment-3217936)
+*   **[dwb](/index.php/Dwb "Dwb")** — Легковесный, сильнонастраиваемый веб-браузер, основанный на движке WebKit, с горячими клавишами в стиле *vi* и тайлингом. По состоянию на октябрь 2014 г. *dwb* [не разрабатывается](https://bitbucket.org/portix/dwb/pull-request/22/several-cleanups-to-increase-portability/diff#comment-3217936)
 
 	[http://portix.bitbucket.org/dwb/](http://portix.bitbucket.org/dwb/) || [dwb](https://www.archlinux.org/packages/?name=dwb)
 
@@ -394,7 +394,7 @@
 
 	[http://sourceforge.net/apps/trac/vimprobable/](http://sourceforge.net/apps/trac/vimprobable/) || [vimprobable-git](https://aur.archlinux.org/packages/vimprobable-git/)
 
-*   **[Xombrero](https://en.wikipedia.org/wiki/Xombrero "wikipedia:Xombrero") (ранее известный под именем _xxxterm_)** — Минималистичный веб-браузер Webkit с современными функциями безопасности, в стиле BSD
+*   **[Xombrero](https://en.wikipedia.org/wiki/Xombrero "wikipedia:Xombrero") (ранее известный под именем *xxxterm*)** — Минималистичный веб-браузер Webkit с современными функциями безопасности, в стиле BSD
 
 	[https://opensource.conformal.com/wiki/xombrero](https://opensource.conformal.com/wiki/xombrero) || [xombrero-git](https://aur.archlinux.org/packages/xombrero-git/)
 
@@ -408,7 +408,7 @@
 
 	[http://dillo.org/](http://dillo.org/) || [dillo](https://www.archlinux.org/packages/?name=dillo)
 
-*   **[Konqueror](https://en.wikipedia.org/wiki/ru:Konqueror "wikipedia:ru:Konqueror")** — Веб-браузер, основанный на [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)") и KHTML, часть группы пакетов [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/)
+*   **[Konqueror](https://en.wikipedia.org/wiki/ru:Konqueror и KHTML, часть группы пакетов [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/)
 
 	[http://konqueror.org/](http://konqueror.org/) || [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)
 
@@ -424,7 +424,7 @@
 
 Дополнительную информацию смотрите в [Википедии](https://en.wikipedia.org/wiki/ru:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0 "wikipedia:ru:Заглавная страница"): [Сравнение FTP-клиентов](https://en.wikipedia.org/wiki/ru:%D0%A1%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_FTP-%D0%BA%D0%BB%D0%B8%D0%B5%D0%BD%D1%82%D0%BE%D0%B2 "wikipedia:ru:Сравнение FTP-клиентов").
 
-*   **CurlFtpFS** — Файловая система для доступа к хостам FTP, основанная на FUSE и _libcurl_
+*   **CurlFtpFS** — Файловая система для доступа к хостам FTP, основанная на FUSE и *libcurl*
 
 	[http://curlftpfs.sourceforge.net/](http://curlftpfs.sourceforge.net/) || [curlftpfs](https://www.archlinux.org/packages/?name=curlftpfs)
 
@@ -592,7 +592,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[https://github.com/pazz/alot](https://github.com/pazz/alot) || [alot](https://aur.archlinux.org/packages/alot/) [alot-git](https://aur.archlinux.org/packages/alot-git/)
 
-*   **[Alpine](/index.php/Alpine "Alpine")** — Быстрый и легкий в использовании почтовый клиент, основанный на [Pine](https://en.wikipedia.org/wiki/Pine_(email_client) "wikipedia:Pine (email client)") и распространяемый под лицензией Apache
+*   **[Alpine](/index.php/Alpine "Alpine")** — Быстрый и легкий в использовании почтовый клиент, основанный на [Pine](https://en.wikipedia.org/wiki/Pine_(email_client) и распространяемый под лицензией Apache
 
 	[https://washington.edu/alpine](https://washington.edu/alpine) || [re-alpine](https://aur.archlinux.org/packages/re-alpine/) [alpine](https://aur.archlinux.org/packages/alpine/)
 
@@ -600,7 +600,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://gnus.org/](http://gnus.org/) || [emacs-gnus-git](https://aur.archlinux.org/packages/emacs-gnus-git/)
 
-*   **S-nail** — Система обработки почты с синтаксисом команд, напоминающим _ed_. Предоставляет функциональность [mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx") и многое другое
+*   **S-nail** — Система обработки почты с синтаксисом команд, напоминающим *ed*. Предоставляет функциональность [mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx") и многое другое
 
 	[http://sourceforge.net/projects/s-nail/](http://sourceforge.net/projects/s-nail/) || [s-nail](https://www.archlinux.org/packages/?name=s-nail)
 
@@ -616,7 +616,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://www.nongnu.org/nmh/](http://www.nongnu.org/nmh/) || [nmh](https://aur.archlinux.org/packages/nmh/) [nmh-git](https://aur.archlinux.org/packages/nmh-git/)
 
-*   **[notmuch](/index.php/Notmuch "Notmuch")** — Быстрый индексатор почты, работающий поверх _xapian_
+*   **[notmuch](/index.php/Notmuch "Notmuch")** — Быстрый индексатор почты, работающий поверх *xapian*
 
 	[http://notmuchmail.org/](http://notmuchmail.org/) || [notmuch](https://www.archlinux.org/packages/?name=notmuch) [notmuch-vim](https://www.archlinux.org/packages/?name=notmuch-vim) [notmuch-mutt](https://www.archlinux.org/packages/?name=notmuch-mutt)
 
@@ -788,7 +788,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://www.jabbim.com/](http://www.jabbim.com/) || [jabbim-svn](https://aur.archlinux.org/packages/jabbim-svn/)
 
-*   **[Psi](https://en.wikipedia.org/wiki/ru:Psi "wikipedia:ru:Psi")** — Основанный на [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)") клиент Jabber
+*   **[Psi](https://en.wikipedia.org/wiki/ru:Psi клиент Jabber
 
 	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi)
 
@@ -1090,7 +1090,7 @@ eDonkey по-прежнему является второй по величин�
 
 Смотрите также: [Список программ для чтения новостей Usenet](https://en.wikipedia.org/wiki/List_of_Usenet_newsreaders "wikipedia:List of Usenet newsreaders"), [Сравнение программ для чтения новостей Usenet](https://en.wikipedia.org/wiki/Comparison_of_Usenet_newsreaders "wikipedia:Comparison of Usenet newsreaders").
 
-*   **lottanzb** — Графическая оболочка для _SABnzbd+_ (программы для скачивания двоичных файлов Usenet), написанная на PyGTK
+*   **lottanzb** — Графическая оболочка для *SABnzbd+* (программы для скачивания двоичных файлов Usenet), написанная на PyGTK
 
 	[http://www.lottanzb.org/](http://www.lottanzb.org/) || [lottanzb](https://aur.archlinux.org/packages/lottanzb/)
 
@@ -1209,13 +1209,11 @@ eDonkey по-прежнему является второй по величин�
 Сервисы pastebin часто используются для вставки информации в [каналы IRC](/index.php/IRC_Channel "IRC Channel"), для получения помощи в решении проблем. Существуют сервисы как для текста (например, [bpaste.net](http://bpaste.net/), [pastie.org](http://pastie.org/), [codepad.org](http://codepad.org/)), так и для изображений (например, [imgur.com](http://imgur.com/), [picpaste.com](http://picpaste.com/)). Клиенты pastebin позволяют вам извлекать необходимую информацию прямо из командной строки, без необходимости запуска веб-браузера.
 
 **Tip:** Доступ к sprunge и ix pastebins можно получить напрямую, при помощи curl, который вернет ссылку для вставки:
-
 ```
 <command> | curl -F 'sprunge=<-' http://sprunge.us
 
 <command> 2>&1 | curl -F 'f:1=<-' ix.io
 ```
-
 Существует также [плагин sprunge](https://github.com/robbyrussell/oh-my-zsh/wiki/Usage-of-the-%22sprunge%22-command) для [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/wiki) (инструмент настройки интерпретатора команд [Zsh](/index.php/Zsh_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Zsh (Русский)"))
 
 **Важно:** Не используйте [pastebin.com](http://pastebin.com/). Судя по всему, это наиболее популярный в данной категории сайт, но он является медленным, содержит большое количество рекламы и плохо отображает форматирование текста (это испортит ваш код). Многие люди не могут даже открыть этот сайт из-за агрессивных фильтров спама
@@ -1224,7 +1222,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://www.codepad.org](http://www.codepad.org) || [codepad-git](https://aur.archlinux.org/packages/codepad-git/)
 
-*   **Elmer** — Клиент pastebin, похожий на _wgetpaste_ и _curlpaste_, написанный на Perl и пригодный для работы с _wget_ или _curl_. Серверы: [codepad.org](http://codepad.org/), [rafb.me](http://rafb.me/), [sprunge.us](http://sprunge.us/)
+*   **Elmer** — Клиент pastebin, похожий на *wgetpaste* и *curlpaste*, написанный на Perl и пригодный для работы с *wget* или *curl*. Серверы: [codepad.org](http://codepad.org/), [rafb.me](http://rafb.me/), [sprunge.us](http://sprunge.us/)
 
 	[https://github.com/sudokode/elmer](https://github.com/sudokode/elmer) || [elmer](https://aur.archlinux.org/packages/elmer/)
 
@@ -1268,7 +1266,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://www.vim.org/scripts/script.php?script_id=2423](http://www.vim.org/scripts/script.php?script_id=2423) || [vim-gist](https://aur.archlinux.org/packages/vim-gist/)
 
-*   **Vim-paster** — Плагин [Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") для вставки информации на любые сервисы pastebin с использованием _curl_
+*   **Vim-paster** — Плагин [Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") для вставки информации на любые сервисы pastebin с использованием *curl*
 
 	[http://eugeneciurana.com/site.php?page=tools](http://eugeneciurana.com/site.php?page=tools) || [vim-paster](https://aur.archlinux.org/packages/vim-paster/)
 
@@ -1318,7 +1316,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://www.archlinux.org/packages/?name=fbv)
 
-*   **fim** — Сильно настраиваемая framebuffer-программа просмотра изображений с поддержкой сценариев, основанная на _fbi_
+*   **fim** — Сильно настраиваемая framebuffer-программа просмотра изображений с поддержкой сценариев, основанная на *fbi*
 
 	[http://www.autistici.org/dezperado/fim/](http://www.autistici.org/dezperado/fim/) || [fim-svn](https://aur.archlinux.org/packages/fim-svn/)
 
@@ -1598,7 +1596,7 @@ eDonkey по-прежнему является второй по величин�
 
 Дополнительную информацию смотрите в [Википедии](https://en.wikipedia.org/wiki/ru:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0 "wikipedia:ru:Заглавная страница"): [Звуковой сервер](https://en.wikipedia.org/wiki/Sound_server "wikipedia:Sound server").
 
-*   **wineasio** — Предоставляет для _wine_ драйвер ASIO-JACK. ASIO - это наиболее общий низкоуровневый драйвер в Windows, чаще всего он используется в программах для работы с аудио
+*   **wineasio** — Предоставляет для *wine* драйвер ASIO-JACK. ASIO - это наиболее общий низкоуровневый драйвер в Windows, чаще всего он используется в программах для работы с аудио
 
 	[http://sourceforge.net/projects/wineasio/](http://sourceforge.net/projects/wineasio/) || [wineasio](https://aur.archlinux.org/packages/wineasio/)
 
@@ -1778,7 +1776,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[https://github.com/fernandotcl/pa-applet](https://github.com/fernandotcl/pa-applet) || [pa-applet-git](https://aur.archlinux.org/packages/pa-applet-git/)
 
-*   **PNMixer** — Форк _obmixer_. Имеет множество новых возможностей, таких как выбор канала ALSA, обнаружение присоединения/отсоединения, ярлыки и т.д.
+*   **PNMixer** — Форк *obmixer*. Имеет множество новых возможностей, таких как выбор канала ALSA, обнаружение присоединения/отсоединения, ярлыки и т.д.
 
 	[https://github.com/nicklan/pnmixer/wiki](https://github.com/nicklan/pnmixer/wiki) || [pnmixer](https://aur.archlinux.org/packages/pnmixer/)
 
@@ -1868,7 +1866,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[https://git.gnome.org/browse/gnome-sound-recorder](https://git.gnome.org/browse/gnome-sound-recorder) || [gnome-sound-recorder](https://www.archlinux.org/packages/?name=gnome-sound-recorder)
 
-*   **[Jokosher](https://en.wikipedia.org/wiki/Jokosher "wikipedia:Jokosher")** — Нелинейный цифровой редактор аудио с поддержкой нескольких дорожек, написанный на [python](/index.php/Python_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Python (Русский)") с использованием интерфейса [GTK+](/index.php/GTK%2B "GTK+") и [GStreamer](/index.php/GStreamer "GStreamer") в качестве бэкенда
+*   **[Jokosher](https://en.wikipedia.org/wiki/Jokosher с использованием интерфейса [GTK+](/index.php/GTK%2B "GTK+") и [GStreamer](/index.php/GStreamer "GStreamer") в качестве бэкенда
 
 	[https://launchpad.net/jokosher/](https://launchpad.net/jokosher/) || [jokosher](https://aur.archlinux.org/packages/jokosher/)
 
@@ -1922,7 +1920,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://www.mplayerhq.hu/design7/news-ru.html](http://www.mplayerhq.hu/design7/news-ru.html) || [mplayer](https://www.archlinux.org/packages/?name=mplayer) (Смотрите также очень похожий форк: [mplayer2](https://aur.archlinux.org/packages/mplayer2/))
 
-*   **[mpv](/index.php/Mpv_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mpv (Русский)")** — Проигрыватель, основанный на _mplayer_ и _mplayer2_
+*   **[mpv](/index.php/Mpv_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mpv (Русский)")** — Проигрыватель, основанный на *mplayer* и *mplayer2*
 
 	[http://mpv.io](http://mpv.io) || [mpv](https://www.archlinux.org/packages/?name=mpv) [mpv-git](https://aur.archlinux.org/packages/mpv-git/)
 
@@ -1942,7 +1940,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://www.kde.org/applications/multimedia/dragonplayer/](http://www.kde.org/applications/multimedia/dragonplayer/) || [kdemultimedia-dragonplayer](https://www.archlinux.org/packages/?name=kdemultimedia-dragonplayer)
 
-*   **GMP Video** — Графический фронтенд к _mpv_. Написан на Vala/GTK3
+*   **GMP Video** — Графический фронтенд к *mpv*. Написан на Vala/GTK3
 
 	[https://bitbucket.org/simargl/alphaos](https://bitbucket.org/simargl/alphaos) || [gmp-video](https://aur.archlinux.org/packages/gmp-video/)
 
@@ -2052,7 +2050,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[https://github.com/nullkey/glc](https://github.com/nullkey/glc) || [glc](https://aur.archlinux.org/packages/glc/)
 
-*   **Istanbul** — Простая программа записи сессии рабочего стола, создающая видео в формате _.ogg_
+*   **Istanbul** — Простая программа записи сессии рабочего стола, создающая видео в формате *.ogg*
 
 	[https://live.gnome.org/Istanbul](https://live.gnome.org/Istanbul) || [istanbul](https://aur.archlinux.org/packages/istanbul/)
 
@@ -2060,7 +2058,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[https://launchpad.net/kazam](https://launchpad.net/kazam) || [kazam-bzr](https://aur.archlinux.org/packages/kazam-bzr/)
 
-*   **[RecordMyDesktop](https://en.wikipedia.org/wiki/ru:RecordMyDesktop "wikipedia:ru:RecordMyDesktop")** — Простая в использовании утилита, производящая запись вашего рабочего стола в файлы формата _.ogg_, с интерфейсами CLI, Qt или GTK+
+*   **[RecordMyDesktop](https://en.wikipedia.org/wiki/ru:RecordMyDesktop "wikipedia:ru:RecordMyDesktop")** — Простая в использовании утилита, производящая запись вашего рабочего стола в файлы формата *.ogg*, с интерфейсами CLI, Qt или GTK+
 
 	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop) [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop) [qt-recordmydesktop](https://www.archlinux.org/packages/?name=qt-recordmydesktop)
 
@@ -2118,11 +2116,11 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://cryptmount.sourceforge.net/](http://cryptmount.sourceforge.net/) || [cryptmount](https://aur.archlinux.org/packages/cryptmount/)
 
-*   **ldm** — Легковесный демон, автоматически монтирующий диски при помощи _udev_
+*   **ldm** — Легковесный демон, автоматически монтирующий диски при помощи *udev*
 
 	[https://github.com/LemonBoy/ldm](https://github.com/LemonBoy/ldm) || [ldm](https://aur.archlinux.org/packages/ldm/)
 
-*   **pmount** — Монтирует _источник_ от имени обычного пользователя в автоматически создаваемый каталог `/media/_имя_источника_`
+*   **pmount** — Монтирует *источник* от имени обычного пользователя в автоматически создаваемый каталог `/media/*имя_источника*`
 
 	[http://pmount.alioth.debian.org/](http://pmount.alioth.debian.org/) || [pmount](https://aur.archlinux.org/packages/pmount/)
 
@@ -2130,7 +2128,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://mywaytoarch.tumblr.com/post/13111098534/pmount-safe-removal-of-usb-device](http://mywaytoarch.tumblr.com/post/13111098534/pmount-safe-removal-of-usb-device) || [pmount-safe-removal](https://aur.archlinux.org/packages/pmount-safe-removal/)
 
-*   **udevil** — Монтирует съемные носители от имени обычного пользователя, показывает информацию об устройствах и отслеживает изменения на них. Зависит только от _udev_ и glib
+*   **udevil** — Монтирует съемные носители от имени обычного пользователя, показывает информацию об устройствах и отслеживает изменения на них. Зависит только от *udev* и glib
 
 	[http://ignorantguru.github.io/udevil](http://ignorantguru.github.io/udevil) || [udevil](https://www.archlinux.org/packages/?name=udevil)
 
@@ -2144,15 +2142,15 @@ eDonkey по-прежнему является второй по величин�
 
 	[https://github.com/jamielinux/bashmount](https://github.com/jamielinux/bashmount) || [bashmount](https://aur.archlinux.org/packages/bashmount/)
 
-*   **udiskie** — Служба автоматического монтирования дисков при помощи _udisks_
+*   **udiskie** — Служба автоматического монтирования дисков при помощи *udisks*
 
 	[https://pypi.python.org/pypi/udiskie](https://pypi.python.org/pypi/udiskie) || [udiskie](https://www.archlinux.org/packages/?name=udiskie)
 
-*   **udisks_functions** — Функции и псевдонимы [bash](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)") для _udisks2_
+*   **udisks_functions** — Функции и псевдонимы [bash](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)") для *udisks2*
 
 	[https://bbs.archlinux.org/viewtopic.php?id=109307](https://bbs.archlinux.org/viewtopic.php?id=109307) || [udisks_functions](https://aur.archlinux.org/packages/udisks_functions/)
 
-*   **udisksvm** — Графическая оболочка _udisks_ для съемных носителей
+*   **udisksvm** — Графическая оболочка *udisks* для съемных носителей
 
 	[https://bbs.archlinux.org/viewtopic.php?id=112397](https://bbs.archlinux.org/viewtopic.php?id=112397) || [udisksvm](https://aur.archlinux.org/packages/udisksvm/)
 
@@ -2274,7 +2272,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://qt-project.org/downloads#qt-creator](http://qt-project.org/downloads#qt-creator) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
 
-*   **[Scratch](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D1%8F%D0%B7%D1%8B%D0%BA_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F) "wikipedia:ru:Скретч (язык программирования)")** — Мультимедийное средство разработки для образовательных и развлекательных целей, таких как создание интерактивных проектов и простых игр. Используется в первую очередь неопытными пользователями (например, детьми) в качестве первого шага в освоении [событийно-ориентированного программирования](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5 "wikipedia:ru:Событийно-ориентированное программирование"). _Scratch_ - это свободное программное обеспечение, распространяемое под лицензиями GPL v2 и [Scratch Source Code License](http://wiki.scratch.mit.edu/wiki/Scratch_Source_Code_License)
+*   **[Scratch](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D1%8F%D0%B7%D1%8B%D0%BA_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F) "wikipedia:ru:Скретч (язык программирования)")** — Мультимедийное средство разработки для образовательных и развлекательных целей, таких как создание интерактивных проектов и простых игр. Используется в первую очередь неопытными пользователями (например, детьми) в качестве первого шага в освоении [событийно-ориентированного программирования](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5 "wikipedia:ru:Событийно-ориентированное программирование"). *Scratch* - это свободное программное обеспечение, распространяемое под лицензиями GPL v2 и [Scratch Source Code License](http://wiki.scratch.mit.edu/wiki/Scratch_Source_Code_License)
 
 	[http://scratch.mit.edu](http://scratch.mit.edu) || [scratch](https://www.archlinux.org/packages/?name=scratch)
 
@@ -2304,7 +2302,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://kde.org/applications/system/konsole/](http://kde.org/applications/system/konsole/) || [kdebase-konsole](https://www.archlinux.org/packages/?name=kdebase-konsole)
 
-*   **[Mrxvt](https://en.wikipedia.org/wiki/mrxvt "wikipedia:mrxvt")** — Эмулятор терминала X с поддержкой вкладок, основанный на _rxvt_
+*   **[Mrxvt](https://en.wikipedia.org/wiki/mrxvt "wikipedia:mrxvt")** — Эмулятор терминала X с поддержкой вкладок, основанный на *rxvt*
 
 	[http://materm.sourceforge.net/wiki/pmwiki.php](http://materm.sourceforge.net/wiki/pmwiki.php) || [mrxvt](https://aur.archlinux.org/packages/mrxvt/)
 
@@ -2364,7 +2362,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://guake.org/](http://guake.org/) || [guake](https://www.archlinux.org/packages/?name=guake)
 
-*   **Terra** — эмулятор терминала, написанный на GTK+3.0, с удобным интерфейсом, поддержкой работы нескольких терминалов с разделением по горизонтали или вертикали (как в _guake_)
+*   **Terra** — эмулятор терминала, написанный на GTK+3.0, с удобным интерфейсом, поддержкой работы нескольких терминалов с разделением по горизонтали или вертикали (как в *guake*)
 
 	[https://github.com/ozcanesen/terra-terminal](https://github.com/ozcanesen/terra-terminal) || [terra](https://aur.archlinux.org/packages/terra/)
 
@@ -2566,7 +2564,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://gnome.org](http://gnome.org) || [gnome-search-tool](https://www.archlinux.org/packages/?name=gnome-search-tool)
 
-*   **Gnome Search Tool No Nautilus** — _gnome-search-tool_ для поиска файлов без помощи [GNOME Files](/index.php/GNOME_Files "GNOME Files") или _gnome-desktop_
+*   **Gnome Search Tool No Nautilus** — *gnome-search-tool* для поиска файлов без помощи [GNOME Files](/index.php/GNOME_Files "GNOME Files") или *gnome-desktop*
 
 	|| [gnome-search-tool-no-nautilus](https://aur.archlinux.org/packages/gnome-search-tool-no-nautilus/)
 
@@ -2708,7 +2706,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://bleachbit.sourceforge.net/](http://bleachbit.sourceforge.net/) Bleachbit || [bleachbit](https://www.archlinux.org/packages/?name=bleachbit)
 
-*   **gconf-cleaner** — Удаляет неизвестные/неправильные ключи _gconf_, по-прежнему существующие в вашей базе данных
+*   **gconf-cleaner** — Удаляет неизвестные/неправильные ключи *gconf*, по-прежнему существующие в вашей базе данных
 
 	[https://code.google.com/p/gconf-cleaner/](https://code.google.com/p/gconf-cleaner/) || [gconf-cleaner](https://aur.archlinux.org/packages/gconf-cleaner/)
 
@@ -3020,7 +3018,7 @@ eDonkey по-прежнему является второй по величин�
 
 Дополнительную информацию смотрите в [Википедии](https://en.wikipedia.org/wiki/ru:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0 "wikipedia:ru:Заглавная страница"): [Сравнение языков разметки документов](https://en.wikipedia.org/wiki/ru:%D0%A1%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%8F%D0%B7%D1%8B%D0%BA%D0%BE%D0%B2_%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B8_%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2 "wikipedia:ru:Сравнение языков разметки документов").
 
-*   **[asciidoc](https://en.wikipedia.org/wiki/AsciiDoc "wikipedia:AsciiDoc")** — Удобный для чтения человеком формат текстовых документов. Используется в Arch для генерации страниц справочного руководства (man) _pacman_ [[2]](https://www.archlinux.org/pacman/pacman.8.html)
+*   **[asciidoc](https://en.wikipedia.org/wiki/AsciiDoc "wikipedia:AsciiDoc")** — Удобный для чтения человеком формат текстовых документов. Используется в Arch для генерации страниц справочного руководства (man) *pacman* [[2]](https://www.archlinux.org/pacman/pacman.8.html)
 
 	[http://asciidoc.org/](http://asciidoc.org/) || [asciidoc](https://www.archlinux.org/packages/?name=asciidoc)
 
@@ -3032,7 +3030,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://johnmacfarlane.net/pandoc](http://johnmacfarlane.net/pandoc) || [haskell-pandoc](https://www.archlinux.org/packages/?name=haskell-pandoc) [pandoc-static](https://aur.archlinux.org/packages/pandoc-static/)
 
-**Совет:** Зависимости обоих пакетов _pandoc_ собираются довольно долго, и это, в свою очередь, требует много места на жестком диске. В качестве альтернативы вы можете скачать двоичный файл _pandoc-static_ напрямую из репозитория Parabola GNU Linux ([64-bit](https://repo.parabolagnulinux.org/pcr/os/x86_64/) или [32-bit](https://repo.parabolagnulinux.org/pcr/os/i686/)), который, тем не менее, также имеет внушительный объем зависимостей. В качестве главного источника для установки пакетов Haskell [рекомендуется](/index.php/Haskell#cabal-install "Haskell") использовать пакет [cabal-install](https://www.archlinux.org/packages/?name=cabal-install)
+**Совет:** Зависимости обоих пакетов *pandoc* собираются довольно долго, и это, в свою очередь, требует много места на жестком диске. В качестве альтернативы вы можете скачать двоичный файл *pandoc-static* напрямую из репозитория Parabola GNU Linux ([64-bit](https://repo.parabolagnulinux.org/pcr/os/x86_64/) или [32-bit](https://repo.parabolagnulinux.org/pcr/os/i686/)), который, тем не менее, также имеет внушительный объем зависимостей. В качестве главного источника для установки пакетов Haskell [рекомендуется](/index.php/Haskell#cabal-install "Haskell") использовать пакет [cabal-install](https://www.archlinux.org/packages/?name=cabal-install)
 
 *   **[Sphinx](https://en.wikipedia.org/wiki/ru:Sphinx_(%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80_%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8) "wikipedia:ru:Sphinx (генератор документации)")** — Система генерирования документации, использующая [reStructuredText](https://en.wikipedia.org/wiki/ru:ReStructuredText "wikipedia:ru:ReStructuredText") для генерации в нескольких форматах (основная система документации в проекте Python)
 
@@ -3108,11 +3106,11 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://apertium.org/](http://apertium.org/) || [apertium](https://aur.archlinux.org/packages/apertium/)
 
-*   **[Gtranslator](https://en.wikipedia.org/wiki/Gtranslator "wikipedia:Gtranslator")** — Расширенный редактор файлов gettext _.po_ для [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)"). Он обрабатывает все формы файлов gettext _.po_ и включает в себя очень полезные возможности
+*   **[Gtranslator](https://en.wikipedia.org/wiki/Gtranslator "wikipedia:Gtranslator")** — Расширенный редактор файлов gettext *.po* для [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)"). Он обрабатывает все формы файлов gettext *.po* и включает в себя очень полезные возможности
 
 	[https://projects.gnome.org/gtranslator/](https://projects.gnome.org/gtranslator/) || [gtranslator](https://www.archlinux.org/packages/?name=gtranslator)
 
-*   **[Lokalize](https://en.wikipedia.org/wiki/Lokalize "wikipedia:Lokalize")** — Стандартный инструмент в [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)") для перевода. Включает в себя базовое редактирование файлов _.po_, поддержку словарей, память переводов, управление проектами и т.д. Входит в группу [kdesdk](https://www.archlinux.org/groups/x86_64/kdesdk/)
+*   **[Lokalize](https://en.wikipedia.org/wiki/Lokalize для перевода. Включает в себя базовое редактирование файлов *.po*, поддержку словарей, память переводов, управление проектами и т.д. Входит в группу [kdesdk](https://www.archlinux.org/groups/x86_64/kdesdk/)
 
 	[http://userbase.kde.org/Lokalize/ru](http://userbase.kde.org/Lokalize/ru) || [kdesdk-lokalize](https://www.archlinux.org/packages/?name=kdesdk-lokalize)
 
@@ -3132,7 +3130,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://techbase.kde.org/Localization/Tools/Pology](http://techbase.kde.org/Localization/Tools/Pology) || [pology](https://aur.archlinux.org/packages/pology/)
 
-*   **[Virtaal](https://en.wikipedia.org/wiki/Virtaal "wikipedia:Virtaal")** — Редактор для перевода программ и другого текста, основанный на [Translate Toolkit](https://en.wikipedia.org/wiki/Translate_Toolkit "wikipedia:Translate Toolkit"). Поддерживает следующие форматы: [gettext](https://en.wikipedia.org/wiki/ru:gettext "wikipedia:ru:gettext"), [XLIFF](https://en.wikipedia.org/wiki/ru:XLIFF "wikipedia:ru:XLIFF") , TMX, TBX, [Wordfast](https://en.wikipedia.org/wiki/ru:Wordfast "wikipedia:ru:Wordfast"), Qt Linguist , Qt Phrase Book, [OmegaT glossary](https://en.wikipedia.org/wiki/ru:OmegaT "wikipedia:ru:OmegaT") и др. Он также может давать подсказки из [Apertium](https://en.wikipedia.org/wiki/ru:Apertium "wikipedia:ru:Apertium"), [Google Translate](https://en.wikipedia.org/wiki/ru:Google_%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA "wikipedia:ru:Google Переводчик"), [Bing Translator](https://en.wikipedia.org/wiki/Bing_Translator "wikipedia:Bing Translator"), [Moses](https://en.wikipedia.org/wiki/Moses_(machine_translation) "wikipedia:Moses (machine translation)") и др.
+*   **[Virtaal](https://en.wikipedia.org/wiki/Virtaal и др.
 
 	[http://translate.sourceforge.net/wiki/virtaal](http://translate.sourceforge.net/wiki/virtaal) || [virtaal](https://aur.archlinux.org/packages/virtaal/)
 
@@ -3184,7 +3182,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://ne.di.unimi.it/](http://ne.di.unimi.it/) || [ne](https://aur.archlinux.org/packages/ne/)
 
-*   **[vile](https://en.wikipedia.org/wiki/Vile_(editor) "wikipedia:Vile (editor)")** — Легковесный клон Emacs c горячими клавишами в стиле _vi_
+*   **[vile](https://en.wikipedia.org/wiki/Vile_(editor) "wikipedia:Vile (editor)")** — Легковесный клон Emacs c горячими клавишами в стиле *vi*
 
 	[http://invisible-island.net/vile/vile.html](http://invisible-island.net/vile/vile.html) || [vile](https://www.archlinux.org/packages/?name=vile)
 
@@ -3194,7 +3192,7 @@ eDonkey по-прежнему является второй по величин�
 
 ##### Текстовые редакторы Vi
 
-*   **Neovim** — Возрожденный в XXI веке _Vim_
+*   **Neovim** — Возрожденный в XXI веке *Vim*
 
 	[http://neovim.org/](http://neovim.org/) || [neovim-git](https://aur.archlinux.org/packages/neovim-git/)
 
@@ -3202,7 +3200,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://ex-vi.sourceforge.net/](http://ex-vi.sourceforge.net/) || [vi](https://www.archlinux.org/packages/?name=vi)
 
-*   **[Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") (Vi IMproved)** — Продвинутый текстовый редактор, который стремится предоставить силу редактора _vi_ с более полным списком возможностей
+*   **[Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") (Vi IMproved)** — Продвинутый текстовый редактор, который стремится предоставить силу редактора *vi* с более полным списком возможностей
 
 	[http://www.vim.org/](http://www.vim.org/) || [vim](https://www.archlinux.org/packages/?name=vim)
 
@@ -3376,7 +3374,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://repo.or.cz/w/fbpdf.git](http://repo.or.cz/w/fbpdf.git) || [fbpdf-git](https://aur.archlinux.org/packages/fbpdf-git/)
 
-*   **jfbview** — Framebuffer-программа просмотра PDF и изображений. Среди ее возможностей: управление в стиле Vim, масштабирование под размер окна, вид TOC (контур), быстрый многопоточный рендеринг и асинхронное предварительное кэширование. Изначально форк _fbpdf_ был назван _jfbpdf_, теперь он полностью переписан
+*   **jfbview** — Framebuffer-программа просмотра PDF и изображений. Среди ее возможностей: управление в стиле Vim, масштабирование под размер окна, вид TOC (контур), быстрый многопоточный рендеринг и асинхронное предварительное кэширование. Изначально форк *fbpdf* был назван *jfbpdf*, теперь он полностью переписан
 
 	[http://seasonofcode.com/pages/jfbview.html](http://seasonofcode.com/pages/jfbview.html) || [jfbview](https://aur.archlinux.org/packages/jfbview/)
 
@@ -3449,7 +3447,7 @@ eDonkey по-прежнему является второй по величин�
 Дополнительную информацию смотрите в [Википедии](https://en.wikipedia.org/wiki/ru:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0 "wikipedia:ru:Заглавная страница"): [Консольные утилиты постраничного просмотра](https://en.wikipedia.org/wiki/Terminal_pager "wikipedia:Terminal pager").
 
 *   [more](https://en.wikipedia.org/wiki/ru:more "wikipedia:ru:more") — Простая утилита постраничного просмотра. Является частью пакета [util-linux](https://www.archlinux.org/packages/?name=util-linux)
-*   **[less](https://en.wikipedia.org/wiki/ru:less "wikipedia:ru:less")** — Программа, похожая на _more_, но с поддержкой прокрутки как вперед, так и назад, а также частичной загрузки файлов
+*   **[less](https://en.wikipedia.org/wiki/ru:less "wikipedia:ru:less")** — Программа, похожая на *more*, но с поддержкой прокрутки как вперед, так и назад, а также частичной загрузки файлов
 
 	[http://www.gnu.org/software/less](http://www.gnu.org/software/less) || [less](https://www.archlinux.org/packages/?name=less)
 
@@ -3536,7 +3534,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://wiki.gnome.org/OCRFeeder](http://wiki.gnome.org/OCRFeeder) || [ocrfeeder](https://www.archlinux.org/packages/?name=ocrfeeder)
 
-*   **OCRopus** — _Платформа_ OCR, существуют модули для анализа используемого в документе языка, движков OCR (можно использовать Tesseract или ее собственный движок), естественного моделирования языка и т.д.
+*   **OCRopus** — *Платформа* OCR, существуют модули для анализа используемого в документе языка, движков OCR (можно использовать Tesseract или ее собственный движок), естественного моделирования языка и т.д.
 
 	[http://code.google.com/p/ocropus/](http://code.google.com/p/ocropus/) || [ocropus](https://aur.archlinux.org/packages/ocropus/)
 
@@ -3642,7 +3640,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://nmap.org/](http://nmap.org/) || [nmap](https://www.archlinux.org/packages/?name=nmap)
 
-*   **[Ntop](/index.php/Ntop "Ntop")** — Сетевой "зонд", показывающий информацию об использовании сети в виде, похожем на то, как это делает утилита _top_ с процессами
+*   **[Ntop](/index.php/Ntop "Ntop")** — Сетевой "зонд", показывающий информацию об использовании сети в виде, похожем на то, как это делает утилита *top* с процессами
 
 	[http://www.ntop.org/](http://www.ntop.org/) || [ntop](https://www.archlinux.org/packages/?name=ntop)
 
@@ -3706,13 +3704,13 @@ eDonkey по-прежнему является второй по величин�
 
 #### Блокировка экрана
 
-**Важно:** Доступ к виртуальной консоли (tty) способны блокировать лишь _sflock_ и _physlock_
+**Важно:** Доступ к виртуальной консоли (tty) способны блокировать лишь *sflock* и *physlock*
 
 *   **i3lock** — Простая программа блокировки экрана. Предоставляет аутентификацию PAM, поддерживает DPMS. В качестве фона может быть установлено изображение или цвет
 
 	[http://i3wm.org/i3lock/](http://i3wm.org/i3lock/) || [i3lock](https://www.archlinux.org/packages/?name=i3lock)
 
-*   **i3lock-blur** — Форк _i3lock_, использующий в качестве фона размытое изображение вашего рабочего стола
+*   **i3lock-blur** — Форк *i3lock*, использующий в качестве фона размытое изображение вашего рабочего стола
 
 	[http://github.com/karulont/i3lock-blur](http://github.com/karulont/i3lock-blur) || [i3lock-blur](https://aur.archlinux.org/packages/i3lock-blur/)
 
@@ -3720,7 +3718,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[https://github.com/ashinkarov/i3-extras](https://github.com/ashinkarov/i3-extras) || [i3lock-wrapper](https://aur.archlinux.org/packages/i3lock-wrapper/)
 
-*   **Light-locker** — Простой блокировщик экрана (форк _gnome-screensaver_), стремящийся "из-коробки" предоставить простую, разумную и безопасную конфигурацию, а также хорошо интегрироваться в любое окружение, не требуя установки дополнительных зависимостей. Использует [LightDM](/index.php/LightDM "LightDM") для блокировки и разблокировки сеанса через ConsoleKit/UPower или logind/systemd
+*   **Light-locker** — Простой блокировщик экрана (форк *gnome-screensaver*), стремящийся "из-коробки" предоставить простую, разумную и безопасную конфигурацию, а также хорошо интегрироваться в любое окружение, не требуя установки дополнительных зависимостей. Использует [LightDM](/index.php/LightDM "LightDM") для блокировки и разблокировки сеанса через ConsoleKit/UPower или logind/systemd
 
 	[https://github.com/the-cavalry/light-locker](https://github.com/the-cavalry/light-locker) || [light-locker](https://www.archlinux.org/packages/?name=light-locker)
 
@@ -3728,7 +3726,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[https://github.com/muennich/physlock](https://github.com/muennich/physlock) || [physlock-git](https://aur.archlinux.org/packages/physlock-git/)
 
-*   **sflock** — Простая утилита блокировки экрана для X, основанная на _slock_. Предоставляет лишь базовую обратную связь с пользователем (приглашение на ввод пароля не отображается: вы можете ориентироваться только на цвет заливки экрана/звук бипера)
+*   **sflock** — Простая утилита блокировки экрана для X, основанная на *slock*. Предоставляет лишь базовую обратную связь с пользователем (приглашение на ввод пароля не отображается: вы можете ориентироваться только на цвет заливки экрана/звук бипера)
 
 	[https://github.com/benruijl/sflock](https://github.com/benruijl/sflock) || [sflock-git](https://aur.archlinux.org/packages/sflock-git/)
 
@@ -3750,7 +3748,7 @@ eDonkey по-прежнему является второй по величин�
 
 #### Проверка хэша (hash-сумм)
 
-*   **cfv** — Крошечная утилита как для проверки, так и для создания файлов контрольных сумм. Поддерживает файлы _.sfv_, _.csv_, _.crc_, _.md5_, _md5sum_, _sha1sum_, _.torrent_, _par_ и _.par2_
+*   **cfv** — Крошечная утилита как для проверки, так и для создания файлов контрольных сумм. Поддерживает файлы *.sfv*, *.csv*, *.crc*, *.md5*, *md5sum*, *sha1sum*, *.torrent*, *par* и *.par2*
 
 	[http://cfv.sourceforge.net/](http://cfv.sourceforge.net/) || [cfv](https://www.archlinux.org/packages/?name=cfv)
 
@@ -3850,7 +3848,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://sourceforge.net/projects/mypasswords7/](http://sourceforge.net/projects/mypasswords7/) || <small>Пакет не существует? [искать в AUR](https://aur.archlinux.org/packages/?K=mypasswords)</small>
 
-*   **MyPasswordSafe** — Легкий в использовании менеджер паролей, основанный на QT и совместимый с файлами Password Safe (и, следовательно, _pwsafe_)
+*   **MyPasswordSafe** — Легкий в использовании менеджер паролей, основанный на QT и совместимый с файлами Password Safe (и, следовательно, *pwsafe*)
 
 	[http://www.semanticgap.com/myps/](http://www.semanticgap.com/myps/) || [mypasswordsafe](https://aur.archlinux.org/packages/mypasswordsafe/)
 
@@ -4068,7 +4066,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://labplot.sourceforge.net/](http://labplot.sourceforge.net/) || [labplot2](https://aur.archlinux.org/packages/labplot2/)
 
-*   **[QtiPlot](https://en.wikipedia.org/wiki/ru:QtiPlot "wikipedia:ru:QtiPlot")** — Не зависящее от платформы приложение для построения интерактивных научных графиков и анализа данных, похожее на проприетарные [Origin](https://en.wikipedia.org/wiki/ru:Origin_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0) "wikipedia:ru:Origin (программа)") и [SigmaPlot](https://en.wikipedia.org/wiki/ru:SigmaPlot "wikipedia:ru:SigmaPlot")
+*   **[QtiPlot](https://en.wikipedia.org/wiki/ru:QtiPlot и [SigmaPlot](https://en.wikipedia.org/wiki/ru:SigmaPlot "wikipedia:ru:SigmaPlot")
 
 	[http://www.qtiplot.com/](http://www.qtiplot.com/) || [qtiplot](https://www.archlinux.org/packages/?name=qtiplot)
 
@@ -4156,7 +4154,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://easychem.sourceforge.net/](http://easychem.sourceforge.net/) || <small>Пакет не существует? [искать в AUR](https://aur.archlinux.org/packages/?K=easychem)</small>
 
-*   **[Gabedit](https://en.wikipedia.org/wiki/Gabedit "wikipedia:Gabedit")** — Графический пользовательский интерфейс для таких пакетов вычислительной химии, как [GAMESS](https://en.wikipedia.org/wiki/ru:GAMESS_(US) "wikipedia:ru:GAMESS (US)"), [Gaussian](https://en.wikipedia.org/wiki/ru:Gaussian "wikipedia:ru:Gaussian"), [MOLCAS](https://en.wikipedia.org/wiki/MOLCAS "wikipedia:MOLCAS"), [MOLPRO](https://en.wikipedia.org/wiki/MOLPRO "wikipedia:MOLPRO"), [MPQC](https://en.wikipedia.org/wiki/MPQC "wikipedia:MPQC"), [OpenMopac](https://en.wikipedia.org/wiki/MOPAC "wikipedia:MOPAC"), [Firefly](https://en.wikipedia.org/wiki/ru:Firefly_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0) "wikipedia:ru:Firefly (программа)") (прежнее название - PC GAMESS) и [Q-Chem](https://en.wikipedia.org/wiki/Q-Chem "wikipedia:Q-Chem")
+*   **[Gabedit](https://en.wikipedia.org/wiki/Gabedit (прежнее название - PC GAMESS) и [Q-Chem](https://en.wikipedia.org/wiki/Q-Chem "wikipedia:Q-Chem")
 
 	[http://gabedit.sourceforge.net/](http://gabedit.sourceforge.net/) || [gabedit](https://aur.archlinux.org/packages/gabedit/)
 
@@ -4516,11 +4514,11 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://adeskbar.tuxfamily.org/](http://adeskbar.tuxfamily.org/) || [adeskbar](https://aur.archlinux.org/packages/adeskbar/)
 
-*   **ayr** — Открывает файлы и URI при помощи кнопок запуска, файлов рабочего стола или приложений, связанных именем или MIME-type. Для управления меню использует _dmenu_
+*   **ayr** — Открывает файлы и URI при помощи кнопок запуска, файлов рабочего стола или приложений, связанных именем или MIME-type. Для управления меню использует *dmenu*
 
 	[http://appstogo.mcfadzean.org.uk/linux.html#ayr](http://appstogo.mcfadzean.org.uk/linux.html#ayr) || [ayr](https://aur.archlinux.org/packages/ayr/)
 
-*   **Bashrun2** — Предоставляет другой, "скелетный" (barebones) подход к диалогу запуска, используя специальную сессию [bash](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)") с небольшим окошком _xterm_
+*   **Bashrun2** — Предоставляет другой, "скелетный" (barebones) подход к диалогу запуска, используя специальную сессию [bash](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)") с небольшим окошком *xterm*
 
 	[https://code.google.com/p/bashrun2/](https://code.google.com/p/bashrun2/) || [bashrun2](https://aur.archlinux.org/packages/bashrun2/)
 
@@ -4528,15 +4526,15 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://tools.suckless.org/dmenu/](http://tools.suckless.org/dmenu/) || [dmenu](https://www.archlinux.org/packages/?name=dmenu)
 
-*   **dmenu-extended** — Расширение для _dmenu_, позволяющее быстро открывать файлы и каталоги
+*   **dmenu-extended** — Расширение для *dmenu*, позволяющее быстро открывать файлы и каталоги
 
 	[https://github.com/markjones112358/dmenu-extended](https://github.com/markjones112358/dmenu-extended) || [dmenu-extended](https://aur.archlinux.org/packages/dmenu-extended/)
 
-*   **dmenu-launch** — Простая утилита запуска приложений, основанная на _dmenu_. Способна запускать двоичные файлы и ярлыки XDG
+*   **dmenu-launch** — Простая утилита запуска приложений, основанная на *dmenu*. Способна запускать двоичные файлы и ярлыки XDG
 
 	[https://github.com/Wintervenom/Scripts/blob/master/file/launch/dmenu-launch](https://github.com/Wintervenom/Scripts/blob/master/file/launch/dmenu-launch) || [dmenu-launch](https://aur.archlinux.org/packages/dmenu-launch/)
 
-*   **dswitcher** — Утилита переключения окон, основанная на _dmenu_ и не зависящая от имеющегося пространства и минимизации
+*   **dswitcher** — Утилита переключения окон, основанная на *dmenu* и не зависящая от имеющегося пространства и минимизации
 
 	[https://github.com/Antithesisx/dswitcher](https://github.com/Antithesisx/dswitcher) || [dswitcher-git](https://aur.archlinux.org/packages/dswitcher-git/)
 
@@ -4552,7 +4550,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://www.archlinux.org/packages/?name=gnome-do)
 
-*   **j4-dmenu-desktop** — Очень быстрая утилита запуска приложений _dmenu_
+*   **j4-dmenu-desktop** — Очень быстрая утилита запуска приложений *dmenu*
 
 	[https://github.com/enkore/j4-dmenu-desktop](https://github.com/enkore/j4-dmenu-desktop) || [j4-dmenu-desktop](https://aur.archlinux.org/packages/j4-dmenu-desktop/)
 
@@ -4572,11 +4570,11 @@ eDonkey по-прежнему является второй по величин�
 
 	[https://launchpad.net/synapse-project](https://launchpad.net/synapse-project) || [synapse](https://www.archlinux.org/packages/?name=synapse)
 
-*   **xboomx** — Легкая обертка для _dmenu_, которая сортирует команды по популярности, написанная на Python
+*   **xboomx** — Легкая обертка для *dmenu*, которая сортирует команды по популярности, написанная на Python
 
 	[https://bitbucket.org/dehun/xboomx](https://bitbucket.org/dehun/xboomx) || [xboomx](https://aur.archlinux.org/packages/xboomx/)
 
-*   **Yeganesh** — Легкая обертка для _dmenu_, которая сортирует команды по популярности, написанная на Haskell
+*   **Yeganesh** — Легкая обертка для *dmenu*, которая сортирует команды по популярности, написанная на Haskell
 
 	[http://dmwit.com/yeganesh](http://dmwit.com/yeganesh) || [yeganesh](https://aur.archlinux.org/packages/yeganesh/)
 
@@ -4632,7 +4630,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://ledger-cli.org/](http://ledger-cli.org/) || [ledger](https://aur.archlinux.org/packages/ledger/)
 
-*   **Moneychanger** — Интуитивно понятный клиент в системном трее для _Open-Transactions_, написанный на QT/C++
+*   **Moneychanger** — Интуитивно понятный клиент в системном трее для *Open-Transactions*, написанный на QT/C++
 
 	[https://github.com/Open-Transactions/Moneychanger](https://github.com/Open-Transactions/Moneychanger) || [moneychanger-git](https://aur.archlinux.org/packages/moneychanger-git/)
 

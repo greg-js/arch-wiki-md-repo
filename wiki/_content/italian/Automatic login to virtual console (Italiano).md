@@ -14,12 +14,11 @@ Creare un nuovo servizio tipo `getty@.service` e copiarlo in `/etc/systemd/syste
 Cambiare la linea`ExecStart` per includere il parametro `-a "USERNAME"`:
 
  `/etc/systemd/system/autologin@.service` 
-
 ```
 [Service]
-_[...]_
-ExecStart=-/sbin/agetty --noclear -a _USERNAME_ %I 38400
-_[...]_
+*[...]*
+ExecStart=-/sbin/agetty --noclear -a *USERNAME* %I 38400
+*[...]*
 [Install]
 WantedBy=getty.target
 ```
@@ -28,20 +27,19 @@ WantedBy=getty.target
 **Nota:** `Type=simple` può provocare messaggi di debug da parte di systemd che vanno a "sovrascrivere" le tty.
 
 **Nota:** Se si usa mingetty, cambiare /sbin/agetty con /sbin/mingetty
-
 .
 
-Infine, disabilitare il vecchio `getty@tty_X_.service` per la TTY specifica e abilitare il relativo `autologin@tty_X_.service` per la stessa TTY:
+Infine, disabilitare il vecchio `getty@tty*X*.service` per la TTY specifica e abilitare il relativo `autologin@tty*X*.service` per la stessa TTY:
 
 ```
 # systemctl daemon-reload
-# systemctl disable getty@_tty1_
-# systemctl enable autologin@_tty1_
-# systemctl start autologin@_tty1_
+# systemctl disable getty@*tty1*
+# systemctl enable autologin@*tty1*
+# systemctl start autologin@*tty1*
 
 ```
 
-**Attenzione:** Se si è in una sessione di X sulla stessa tty configurata nel file .service, avviare `autologin@tty_X_.service` farà crashare il server X.
+**Attenzione:** Se si è in una sessione di X sulla stessa tty configurata nel file .service, avviare `autologin@tty*X*.service` farà crashare il server X.
 
 Per evitare errori relativi a display-manager.service in dsmeg, è possibile settare come default il target "multi-user":
 

@@ -1,6 +1,6 @@
 From the project [home page](http://folding.stanford.edu/):
 
-	_Help Stanford University scientists studying Alzheimer's, Huntington's, Parkinson's, and many cancers by simply running a piece of software on your computer. The problems we are trying to solve require so many calculations, we ask people to donate their unused computer power to crunch some of the numbers. In just 5 minutes... Add your computer to over 333,684 others around the world to form the world's largest distributed supercomputer._
+	*Help Stanford University scientists studying Alzheimer's, Huntington's, Parkinson's, and many cancers by simply running a piece of software on your computer. The problems we are trying to solve require so many calculations, we ask people to donate their unused computer power to crunch some of the numbers. In just 5 minutes... Add your computer to over 333,684 others around the world to form the world's largest distributed supercomputer.*
 
 ## Contents
 
@@ -78,14 +78,14 @@ The FAHControl software distributed by folding at home provides you with efficie
 
 In AUR there is [fahmon](https://aur.archlinux.org/packages/fahmon/), which provides a GUI with the ability to watch multiple clients and get info on the work-unit itself. Fahmon has a dedicated site at [http://www.fahmon.net/](http://www.fahmon.net/)
 
-On the CLI, you can add a command to your shell configuration file (e.g: _.bashrc_ or _.zshrc_). Replace _fah_user_ with the actual user first.
+On the CLI, you can add a command to your shell configuration file (e.g: *.bashrc* or *.zshrc*). Replace *fah_user* with the actual user first.
 
 ```
 fahstat() {
         echo
         echo $(date)
         echo
-        cat /opt/fah/_fah_user_/unitinfo.txt
+        cat /opt/fah/*fah_user*/unitinfo.txt
 }
 
 ```
@@ -97,16 +97,16 @@ Or for multiple clients :
          echo
          echo $(date)
          echo
-         echo "Core 1:";cat /opt/fah/_fah_user_/unitinfo.txt
+         echo "Core 1:";cat /opt/fah/*fah_user*/unitinfo.txt
          echo
-         echo "Core 2:";cat /opt/fah2/_fah_user_/unitinfo.txt
+         echo "Core 2:";cat /opt/fah2/*fah_user*/unitinfo.txt
  }
 
 ```
 
 Also, replacing `cat` with `tail -n1` will give just the percentage of work unit complete.
 
-On foldingathome-smp 6.43, the _unitinfo.txt_ file is not placed inside the user folder. The correct directory would be `/opt/fah-smp/unitinfo.txt`.
+On foldingathome-smp 6.43, the *unitinfo.txt* file is not placed inside the user folder. The correct directory would be `/opt/fah-smp/unitinfo.txt`.
 
 ## See also
 

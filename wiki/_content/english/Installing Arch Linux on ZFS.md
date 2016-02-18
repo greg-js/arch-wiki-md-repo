@@ -79,7 +79,7 @@ First, make sure the ZFS modules are loaded,
 ### Create the root zpool
 
 ```
-# zpool create zroot /dev/disk/by-id/_id-to-partition_
+# zpool create zroot /dev/disk/by-id/*id-to-partition*
 
 ```
 
@@ -132,7 +132,6 @@ and if you have separate datasets for system directories (ie `/var` or `/usr`)
 and put them in `/etc/fstab`
 
  `/etc/fstab` 
-
 ```
 # <file system>        <dir>         <type>    <options>              <dump> <pass>
 zroot/usr              /usr          zfs       defaults,noatime       0      0
@@ -165,7 +164,7 @@ Export the pool,
 
 **Warning:** Do not skip this, otherwise you will be required to use `-f` when importing your pools. This unloads the imported pool.
 
-**Note:** This might fail if you added a swap partition above. Need to turn it off with the _swapoff_ command.
+**Note:** This might fail if you added a swap partition above. Need to turn it off with the *swapoff* command.
 
 Finally, re-import the pool,
 
@@ -239,7 +238,6 @@ HOOKS="base udev autodetect modconf block keyboard zfs filesystems"
 Follow [GRUB#BIOS systems](/index.php/GRUB#BIOS_systems "GRUB") to install GRUB onto your disk. `grub-mkconfig` does not properly detect the ZFS filesystem, so it is necessary to edit `grub.cfg` manually:
 
  `/boot/grub/grub.cfg` 
-
 ```
 set timeout=2
 set default=0
@@ -329,16 +327,20 @@ int main() {
         switch (errno) {
             case EACCES:
             fprintf(stderr, "Error! No permission to write the"
-                         " file used to store the host ID.\n"
-                         "Are you root?\n");
+                         " file used to store the host ID.
+"
+                         "Are you root?
+");
             break;
             case EPERM:
             fprintf(stderr, "Error! The calling process's effective"
                             " user or group ID is not the same as"
-                            " its corresponding real ID.\n");
+                            " its corresponding real ID.
+");
             break;
             default:
-            fprintf(stderr, "Unknown error.\n");
+            fprintf(stderr, "Unknown error.
+");
         }
         return 1;
     }

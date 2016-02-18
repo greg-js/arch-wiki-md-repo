@@ -13,16 +13,13 @@ Para verificar se a imagem foi gravada com sucesso no dispositivo flash, tome no
 O retorno do md5sum deve coincidir com o [md5sum do arquivo de imagem archlinux baixado (2010.05)](ftp://ftp.archlinux.org/iso/2010.05/md5sums.txt); ambas devem combinar o md5sum da imagem conforme listado no arquivo md5sums no espelho do site de distribuição. Um processo normal será parecido com este:
 
  `$ [sudo] dd if=archlinux-2010.05-core-i686.iso of=/dev/sdc #Grava o .iso no drive` 
-
 ```
  744973+0 records in
  744973+0 records out
  381426176 bytes (381 MB) copied, 106.611 s, 3.6 MB/s
 
 ```
-
  `$ [sudo] dd if=/dev/sdc count=744973 status=noxfer | md5sum #Verifica a integridade` 
-
 ```
  4850d533ddd343b80507543536258229  -
  744973+0 records in

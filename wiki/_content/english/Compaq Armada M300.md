@@ -23,7 +23,6 @@ This laptop is very old but with Arch Linux and the following setup it is still 
 After installing Arch Linux i686, please check that:
 
  `# lscpu` 
-
 ```
 Architecture:          i686
 CPU(s):                1
@@ -41,7 +40,6 @@ CPU MHz:               600.000
 and
 
  `# lspci` 
-
 ```
 00:00.0 Host bridge: Intel Corporation 440BX/ZX/DX - 82443BX/ZX/DX Host bridge (AGP disabled) (rev 03)
 00:04.0 CardBus bridge: Texas Instruments PCI1211
@@ -89,7 +87,7 @@ Even though the M300 has no default wireless support, you might have a PCMCIA ca
 
 ```
 
-**Note:** Your card may be given a name other than `wlp2s0`. Check by issueing the command _iwconfig_
+**Note:** Your card may be given a name other than `wlp2s0`. Check by issueing the command *iwconfig*
 
 and watch the neighborhood:
 
@@ -137,7 +135,6 @@ fi
 Add the following to `/usr/local/bin/backlight_control`:
 
  `/usr/local/bin/backlight_control` 
-
 ```
 dec}"
 esac

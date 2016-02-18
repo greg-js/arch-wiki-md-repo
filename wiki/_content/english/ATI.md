@@ -1,6 +1,6 @@
 Owners of **AMD** (previously **ATI**) video cards have a choice between [proprietary driver](/index.php/AMD_Catalyst "AMD Catalyst") ([catalyst](https://aur.archlinux.org/packages/catalyst/)) and the open source drivers (**ATI** for older or [AMDGPU](/index.php/AMDGPU "AMDGPU") for newer cards). This article covers the **ATI**/[Radeon](https://wiki.freedesktop.org/xorg/radeon/) open source driver for older cards.
 
-The open source driver is _on par_ performance-wise with the proprietary driver for many cards. (See this [benchmark](http://www.phoronix.com/scan.php?page=article&item=radeonsi-cat-wow&num=1).) It also has good dual-head support but worse TV-out support. Newer cards support might be lagging behind Catalyst.
+The open source driver is *on par* performance-wise with the proprietary driver for many cards. (See this [benchmark](http://www.phoronix.com/scan.php?page=article&item=radeonsi-cat-wow&num=1).) It also has good dual-head support but worse TV-out support. Newer cards support might be lagging behind Catalyst.
 
 If unsure, try the open source driver first, it will suit most needs and is generally less problematic. (See the [feature matrix](http://www.x.org/wiki/RadeonFeature) to know what is supported for the GPU.)
 
@@ -52,7 +52,7 @@ If unsure, try the open source driver first, it will suit most needs and is gene
 
 ## Naming conventions
 
-The [Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") brand follows a naming scheme that relates each product to a market segment. Within this article, readers will see both _product_ names (e.g. HD 4850, X1900) and _code_ or _core_ names (e.g. RV770, R580). Traditionally, a _product series_ will correspond to a _core series_ (e.g. the "X1000" product series includes the X1300, X1600, X1800, and X1900 products which utilize the "R500" core series – including the RV515, RV530, R520, and R580 cores).
+The [Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") brand follows a naming scheme that relates each product to a market segment. Within this article, readers will see both *product* names (e.g. HD 4850, X1900) and *code* or *core* names (e.g. RV770, R580). Traditionally, a *product series* will correspond to a *core series* (e.g. the "X1000" product series includes the X1300, X1600, X1800, and X1900 products which utilize the "R500" core series – including the RV515, RV530, R520, and R580 cores).
 
 For a table of core and product series, see [Wikipedia:Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") and [Wikipedia:List of AMD graphics processing units](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units").
 
@@ -68,7 +68,7 @@ Check the [feature matrix](http://www.x.org/wiki/RadeonFeature) for more details
 
 Generally, **xf86-video-ati** should be your first choice, no matter which AMD/ATI card you own. In case you need to use a driver for newer AMD cards, you should consider the proprietary **catalyst** driver.
 
-**Note:** **xf86-video-ati** is specified as _**radeon**_ for the kernel and in `xorg.conf`.
+**Note:** **xf86-video-ati** is specified as ***radeon*** for the kernel and in `xorg.conf`.
 
 ## Installation
 
@@ -206,7 +206,6 @@ Useful [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") may
 Defining the **gartsize**, if not autodetected, can be done by adding `radeon.gartsize=32` into [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 **Note:** Setting this parameter should not be needed anymore with modern AMD videocards:
-
 ```
 [drm] Detected VRAM RAM=2048M, BAR=256M
 [drm] radeon: 2048M of VRAM memory ready
@@ -339,7 +338,6 @@ As an example, we will activate the `low` profile (replace `low` with any of the
 The activation described above is not persistent, it will not last when the computer is rebooted. To make it persistent, you can use [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd") (example for [#Dynamic frequency switching](#Dynamic_frequency_switching)):
 
  `/etc/tmpfiles.d/radeon-pm.conf` 
-
 ```
 w /sys/class/drm/card0/device/power_method - - - - dynpm
 
@@ -348,7 +346,6 @@ w /sys/class/drm/card0/device/power_method - - - - dynpm
 Alternatively, you may use this [udev](/index.php/Udev "Udev") rule instead (example for [#Profile-based frequency switching](#Profile-based_frequency_switching)):
 
  `/etc/udev/rules.d/30-radeon-pm.rules` 
-
 ```
 KERNEL=="dri/card0", SUBSYSTEM=="drm", DRIVERS=="radeon", ATTR{device/power_method}="profile", ATTR{device/power_profile}="low"
 
@@ -375,7 +372,6 @@ KERNEL=="dri/card0", SUBSYSTEM=="drm", DRIVERS=="radeon", ATTR{device/power_meth
 To view the speed that the GPU is running at, perform the following command and you will get something like this output:
 
  `# cat /sys/kernel/debug/dri/0/radeon_pm_info` 
-
 ```
   state: PM_STATE_ENABLED
   default engine clock: 300000 kHz
@@ -426,7 +422,7 @@ S-video disconnected (normal left inverted right x axis y axis)
 
 ```
 
-Now we should tell Xorg that it is actually connected (it _is_, right?)
+Now we should tell Xorg that it is actually connected (it *is*, right?)
 
 ```
 xrandr --output S-video --set "load detection" 1
@@ -546,7 +542,6 @@ See [Multihead#RandR](/index.php/Multihead#RandR "Multihead") how to setup multi
 Independent dual-headed setups can be configured the usual way. However you might want to know that the radeon driver has a `"ZaphodHeads"` option which allows you to bind a specific device section to an output of your choice:
 
  `/etc/X11/xorg.conf.d/20-radeon.conf` 
-
 ```
 Section "Device"
   Identifier "Device0"
@@ -566,7 +561,6 @@ This can be a life-saver, when using videocards that have more than two outputs.
 The radeon driver will enable vsync by default, which is perfectly fine except for benchmarking. To turn it off, create `~/.drirc` (or edit it if it already exists) and add the following section:
 
  `~/.drirc` 
-
 ```
 <driconf>
     <device screen="0" driver="dri2">
@@ -584,7 +578,6 @@ Make sure the driver is **dri2**, not your video card code (like r600).
 If vsync is still enabled, you can try to disable it by editing the xf86-video-ati configuration :
 
  `/etc/X11/xorg.conf.d/20-radeon.con` 
-
 ```
 Section "Device"
 	Identifier  "My Graphics Card"

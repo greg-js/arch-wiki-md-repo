@@ -31,7 +31,6 @@ This netbook uses the Broadcom BCM4312 wireless modem. This modem is not support
 After installing the driver, you need to have it loaded during boot, usually achieved by making the following edits to [/etc/rc.conf](/index.php//etc/rc.conf "/etc/rc.conf"):
 
  `rc.conf` 
-
 ```
 ...
 
@@ -44,7 +43,6 @@ MODULES=(lib80211 wl !b43 !ssb)
 Any other modules listed to be loaded should remain as is and the above mentioned modules added to the list. The following may also work, but if not, use the above:
 
  `rc.conf` 
-
 ```
 ...
 
@@ -72,16 +70,15 @@ Works (uvcvideo module)
 
 ### Sound
 
-This netbook uses an Intel High Definition Audio AD1984A sound card. For general information on setting up sound see [Sound](/index.php/Sound "Sound") and [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture"). To activate the sound card, follow the steps detailed on the ALSA page. Before running "_speaker-test -c 2_" as instructed, create a file `/etc/modprobe.d/alsa.conf` and enter the following into it:
+This netbook uses an Intel High Definition Audio AD1984A sound card. For general information on setting up sound see [Sound](/index.php/Sound "Sound") and [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture"). To activate the sound card, follow the steps detailed on the ALSA page. Before running "*speaker-test -c 2*" as instructed, create a file `/etc/modprobe.d/alsa.conf` and enter the following into it:
 
  `alsa.conf` 
-
 ```
 options snd-hda-intel model=laptop
 
 ```
 
-Now reboot and you should hear sound when running "_speaker-test -c 2_". As per the ALSA page, save your mixer settings so that they are loaded with each boot.
+Now reboot and you should hear sound when running "*speaker-test -c 2*". As per the ALSA page, save your mixer settings so that they are loaded with each boot.
 
 ### Suspend
 

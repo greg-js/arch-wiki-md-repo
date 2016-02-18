@@ -1,13 +1,13 @@
 [Pianobar](http://6xq.net/projects/pianobar/) is a free/open-source, console-based client for the personalized online radio [Pandora](http://www.pandora.com/).
 
-_**Features**_
+***Features***
 
-*   _play and manage (create, add more music, delete, rename, ...) stations_
-*   _rate songs and explain why they have been selected_
-*   _upcoming songs/song history_
-*   _customize keybindings and text output_
-*   _remote control and eventcmd interface (send tracks to last.fm, for example)_
-*   _proxy support for listeners outside the USA_
+*   *play and manage (create, add more music, delete, rename, ...) stations*
+*   *rate songs and explain why they have been selected*
+*   *upcoming songs/song history*
+*   *customize keybindings and text output*
+*   *remote control and eventcmd interface (send tracks to last.fm, for example)*
+*   *proxy support for listeners outside the USA*
 
 **Tip:** Since Pianobar is a command line interface based program it can be placed in a different vterm than your desktop and be left to run.
 
@@ -29,11 +29,11 @@ Pianobar can be installed from the [Official repositories](/index.php/Official_r
 First, you need to create a configuration file for Pianobar. This should be located at `$XDG_CONFIG_HOME/pianobar/config` or `~/.config/pianobar/config`
 
  `$ man pianobar` 
-
 ```
 CONFIGURATION
        The  configuration file consists of simple key = value lines, each ter‐
-       minated with a newline (\n) character. Note that keys  and  values  are
+       minated with a newline (
+) character. Note that keys  and  values  are
        both  case  sensitive, and there must be exactly one space on each side
        of the equals sign.
 
@@ -44,7 +44,6 @@ CONFIGURATION
 Here is an example configuration file. See `man pianobar` for more configuration options.
 
  `$ ~/.config/pianobar/config` 
-
 ```
 audio_quality = {high, medium, low}
 autostart_station = stationid

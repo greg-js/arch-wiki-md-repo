@@ -1,4 +1,4 @@
-The freedesktop project provides the [Icon Theme Specification](http://standards.freedesktop.org/icon-theme-spec/latest/), which applies to most linux desktop environments and tries to unify the look of a whole bunch of icons in an _icon-theme_. Freedesktop also provides the [Icon Naming Specification](http://standards.freedesktop.org/icon-naming-spec/latest/), which defines a standard naming scheme for icons believed to be installed on any system. The default theme _hicolor_ should include them all.
+The freedesktop project provides the [Icon Theme Specification](http://standards.freedesktop.org/icon-theme-spec/latest/), which applies to most linux desktop environments and tries to unify the look of a whole bunch of icons in an *icon-theme*. Freedesktop also provides the [Icon Naming Specification](http://standards.freedesktop.org/icon-naming-spec/latest/), which defines a standard naming scheme for icons believed to be installed on any system. The default theme *hicolor* should include them all.
 
 ## Contents
 
@@ -28,7 +28,6 @@ $ xdg-icon-resource install --size 128 archuser-example.png # add as normal icon
 Todays file managers do not rely on the traditional mime type which `file --mime` outputs. Instead definitions from `/usr/share/mime/` are used. Calling an icon according to the definition found there and copying it to `~/.local/share/icons` will cause the file manager to display the custom mime type icon. This command illustrates the method:
 
  `Creates a custom icon for keepass database files (*.kdb)` 
-
 ```
 # grep kdb /usr/share/mime/globs | egrep -o '.+\/[^:]+' | tr '/' '-'
 application-x-keepass ;# rename your icon according to this output
@@ -64,7 +63,6 @@ If you cannot find a package for the icon theme you are looking for, you will ne
 According to this [document](https://github.com/GNOME/gvfs/blob/master/monitor/udisks2/what-is-shown.txt) file managers using [GVFS](/index.php/GVFS "GVFS") (like nautilus or thunar) can display icons for custom locations, like NFS shares. All you need are some extended mount options inside `/etc/fstab` with icon names supported by your selected icon theme:
 
  `/etc/fstab` 
-
 ```
 hostname:/ /mnt/ nfs4 defaults,_netdev,user,rw,exec,comment=x-gvfs-show,x-gvfs-name=Network%20Attached%20Storage,x-gvfs-icon=network-server,x-gvfs-symbolic-icon=network-server,timeo=14,noatime 0 0
 

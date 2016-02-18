@@ -1,4 +1,4 @@
-_bspwm_ is a tiling window manager that represents windows as the leaves of a full binary tree. It has support for [EWMH](http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html) and multiple monitors, and is configured and controlled through messages.
+*bspwm* is a tiling window manager that represents windows as the leaves of a full binary tree. It has support for [EWMH](http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html) and multiple monitors, and is configured and controlled through messages.
 
 ## Contents
 
@@ -222,7 +222,7 @@ Alternatively, the ^ character may be escaped with a backslash in your sxhkdrc f
 
 ## See also
 
-*   Mailing List: bspwm _at_ librelist.com.
+*   Mailing List: bspwm *at* librelist.com.
 *   `#bspwm` - IRC channel at irc.freenode.net
 *   [https://bbs.archlinux.org/viewtopic.php?id=149444](https://bbs.archlinux.org/viewtopic.php?id=149444) - Arch BBS thread
 *   [https://github.com/baskerville/bspwm](https://github.com/baskerville/bspwm) - GitHub project

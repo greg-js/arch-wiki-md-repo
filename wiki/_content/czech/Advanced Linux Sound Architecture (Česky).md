@@ -44,7 +44,7 @@ Zapamatujte si, že balíček 'alsa-driver' zahrnuje potřebné moduly založen�
 
 ## Konfigurace
 
-_**Poznámka:** Pokud hotplug detekuje vaši zvukovou kartu správně, nemusíte nahrávat moduly manuálně. Pokud je toto váš případ, potřebujete udělat pouze krok 3 (a 4). Jestli si nejste jistí zda vaše zvuková karta byla detekovaná správně, jako root napište "lsmod". Měli by jste vidět několik nahraných modulů začínajícich na "snd-"._
+***Poznámka:** Pokud hotplug detekuje vaši zvukovou kartu správně, nemusíte nahrávat moduly manuálně. Pokud je toto váš případ, potřebujete udělat pouze krok 3 (a 4). Jestli si nejste jistí zda vaše zvuková karta byla detekovaná správně, jako root napište "lsmod". Měli by jste vidět několik nahraných modulů začínajícich na "snd-".*
 
 *   Najděte modul pro svoji zvukovou kartu: [http://www.alsa-project.org/alsa-doc/](http://www.alsa-project.org/alsa-doc/) Modul bude s prefixem 'snd-' (Například: 'snd-via82xx'). Také můžete spustit 'alsaconf' jako root.
 
@@ -66,7 +66,7 @@ _**Poznámka:** Pokud hotplug detekuje vaši zvukovou kartu správně, nemusíte
 
 Nebo to můžete udělat graficky použitím příkazu 'alsamixer'
 
-_**Poznámka:** Pokud používáte 'alsamixer', ujistěte se, že zapnete zvuk (**unmute**) (Stiskněte klávesu M) také přidejte úroveň hlasitosti._
+***Poznámka:** Pokud používáte 'alsamixer', ujistěte se, že zapnete zvuk (**unmute**) (Stiskněte klávesu M) také přidejte úroveň hlasitosti.*
 
 *   Test vašeho systému na soubory wav:
 

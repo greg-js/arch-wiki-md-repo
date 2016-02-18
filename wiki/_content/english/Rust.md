@@ -23,7 +23,6 @@ An alternative is to use [multirust](https://aur.archlinux.org/packages/multirus
 Check that Rust is installed correctly by building a simple program, as follows:
 
  `~/hello.rs` 
-
 ```
  fn main() {
      println!("Hello, World!");
@@ -34,7 +33,6 @@ Check that Rust is installed correctly by building a simple program, as follows:
 You can compile it with `rustc`, then run it:
 
  `$ rustc hello.rs && ./hello` 
-
 ```
 Hello, World!
 
@@ -52,7 +50,6 @@ In this section, `$ARCH` is the target architecture (either `x86_64` or `i686`).
 4.  Finally, tell cargo where to find the MinGW-w64 gcc/ar by adding the following to your `~/.cargo/config`:
 
  `~/.cargo/config` 
-
 ```
 [target.$ARCH-pc-windows-gnu]
 linker = "/usr/bin/$ARCH-w64-mingw32-gcc"
@@ -85,7 +82,6 @@ To create a new project using Cargo:
 This creates a directory with a default `Cargo.toml` file, set to build an executable (because we included `--bin`, otherwise it would build a library).
 
 **Note:** Cargo uses this `Cargo.toml` as a manifest containing all of the metadata required to compile your project. `Cargo.toml` 
-
 ```
 [package]
 name = "hello_world"

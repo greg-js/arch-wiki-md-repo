@@ -228,7 +228,6 @@ Server=[http://arm.konnichi.com/rok/miesiąc/dzień/repozytorium/os/architektura
 Kiedy już przygotujesz odpowiedni wpis, umieść go w odpowiedniej sekcji pliku `/etc/pacman.conf`, na przykład:
 
  `/etc/pacman.conf` 
-
 ```
 [core]
 Server=[http://arm.konnichi.com/2010/04/28/core/os/x86_64](http://arm.konnichi.com/2010/04/28/core/os/x86_64)
@@ -255,7 +254,6 @@ Plik konfiguracyjny pacmana to `/etc/pacman.conf`. Są tam dwie główne sekcje:
 Podstawowe opcje Pacmana są w sekcji [options].
 
  `/etc/pacman.conf` 
-
 ```
 [options]
 #RootDir     = /

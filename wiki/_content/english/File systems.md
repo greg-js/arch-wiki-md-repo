@@ -1,6 +1,6 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/File_system "wikipedia:File system"):
 
-	_A file system (or filesystem) is a means to organize data expected to be retained after a program terminates by providing procedures to store, retrieve and update data, as well as manage the available space on the device(s) which contain it. A file system organizes data in an efficient manner and is tuned to the specific characteristics of the device._
+	*A file system (or filesystem) is a means to organize data expected to be retained after a program terminates by providing procedures to store, retrieve and update data, as well as manage the available space on the device(s) which contain it. A file system organizes data in an efficient manner and is tuned to the specific characteristics of the device.*
 
 Individual drive partitions can be setup using one of the many different available filesystems. Each has its own advantages, disadvantages, and unique idiosyncrasies. A brief overview of supported filesystems follows; the links are to Wikipedia pages that provide much more information.
 
@@ -37,7 +37,7 @@ Before being formatted, a drive should be [partitioned](/index.php/Partitioning 
 
 All the above filesystems with the exception of ext2, FAT16/32, use [journaling](https://en.wikipedia.org/wiki/Journaling_file_system "wikipedia:Journaling file system"). Journaling provides fault-resilience by logging changes before they are committed to the filesystem. In the event of a system crash or power failure, such file systems are faster to bring back online and less likely to become corrupted. The logging takes place in a dedicated area of the filesystem.
 
-Not all journaling techniques are the same. Ext3 and ext4 offer data-mode journaling, which logs both data and meta-data, as well as possibility to journal only meta-data changes. Data-mode journaling comes with a speed penalty and is not enabled by default. In the same vein, [Reiser4](/index.php/Reiser4 "Reiser4") offers so-called ["transaction models"](https://reiser4.wiki.kernel.org/index.php/Reiser4_transaction_models), which include pure journaling (equivalent to ext4's data-mode journaling), pure Copy-on-Write approach (equivalent to btrfs' default) and a combined approach which heuristically alternates between the two former. _It should be noted that reiser4 does not provide an equivalent to ext4's default journaling behavior (meta-data only)._
+Not all journaling techniques are the same. Ext3 and ext4 offer data-mode journaling, which logs both data and meta-data, as well as possibility to journal only meta-data changes. Data-mode journaling comes with a speed penalty and is not enabled by default. In the same vein, [Reiser4](/index.php/Reiser4 "Reiser4") offers so-called ["transaction models"](https://reiser4.wiki.kernel.org/index.php/Reiser4_transaction_models), which include pure journaling (equivalent to ext4's data-mode journaling), pure Copy-on-Write approach (equivalent to btrfs' default) and a combined approach which heuristically alternates between the two former. *It should be noted that reiser4 does not provide an equivalent to ext4's default journaling behavior (meta-data only).*
 
 The other filesystems provide ordered-mode journaling, which only logs meta-data. While all journaling will return a filesystem to a valid state after a crash, data-mode journaling offers the greatest protection against corruption and data loss. There is a compromise in system performance, however, because data-mode journaling does two write operations: first to the journal and then to the disk. The trade-off between system speed and data safety should be considered when choosing the filesystem type.
 
@@ -97,7 +97,7 @@ The other filesystems provide ordered-mode journaling, which only logs meta-data
 
 ### FUSE-based file systems
 
-[Filesystem in Userspace](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace") (FUSE) is a mechanism for Unix-like operating systems that lets non-privileged users create their own file systems without editing kernel code. This is achieved by running file system code in _user space_, while the FUSE kernel module provides only a "bridge" to the actual kernel interfaces.
+[Filesystem in Userspace](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace") (FUSE) is a mechanism for Unix-like operating systems that lets non-privileged users create their own file systems without editing kernel code. This is achieved by running file system code in *user space*, while the FUSE kernel module provides only a "bridge" to the actual kernel interfaces.
 
 Some FUSE-based file systems:
 
@@ -150,20 +150,20 @@ See [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wi
 *   If you want to change the partition layout, see [Partitioning](/index.php/Partitioning "Partitioning").
 *   If you want to create a swap partition, see [Swap](/index.php/Swap "Swap").
 
-Before starting, you need to know which name Linux gave to your device. Hard drives and USB sticks show up as `/dev/sd_x_`, where _x_ is a lowercase letter, while partitions show up as `/dev/sd_xY_`, where _Y_ is a number.
+Before starting, you need to know which name Linux gave to your device. Hard drives and USB sticks show up as `/dev/sd*x*`, where *x* is a lowercase letter, while partitions show up as `/dev/sd*xY*`, where *Y* is a number.
 
 Usually filesystems are created on a partition, but they can also be created inside of logical containers like [LVM](/index.php/LVM "LVM"), [RAID](/index.php/RAID "RAID"), or [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
 
 To create a new filesystem on a partition, the existing filesystem located on the partition must not be mounted.
 
-If the partition you want to format contains a mounted filesystem, it will show up in the _MOUNTPOINT_ column of lsblk.
+If the partition you want to format contains a mounted filesystem, it will show up in the *MOUNTPOINT* column of lsblk.
 
 ```
 $ lsblk
 
 ```
 
-To unmount it, you can use _umount_ on the directory where the filesystem was mounted to:
+To unmount it, you can use *umount* on the directory where the filesystem was mounted to:
 
 ```
 # umount /mountpoint
@@ -175,14 +175,14 @@ To create a new file system of type ext4 on a partition do:
 **Warning:** After creating a new filesystem, data previously stored on this partition can likely not be recovered. Make a backup of any data you want to keep.
 
 ```
-# mkfs.ext4 /dev/_partition_
+# mkfs.ext4 /dev/*partition*
 
 ```
 
-Alternatively, you can use `mkfs` which is just a unified front-end for the different `mkfs._fstype_` tools.
+Alternatively, you can use `mkfs` which is just a unified front-end for the different `mkfs.*fstype*` tools.
 
 ```
-# mkfs -t ext4 /dev/_partition_
+# mkfs -t ext4 /dev/*partition*
 
 ```
 

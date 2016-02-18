@@ -9,9 +9,9 @@
 
 ## Desbloquear KDE Wallet automáticamente al iniciar la sesión
 
-**Advertencia:** Esta funcionalidad no es compatible con el uso de claves [GnuPG](/index.php/GnuPG_(Espa%C3%B1ol) "GnuPG (Español)") para el cifrado de la cartera de KDE Wallet. Es necesario que el método de cifrado sea _blowfish_.
+**Advertencia:** Esta funcionalidad no es compatible con el uso de claves [GnuPG](/index.php/GnuPG_(Espa%C3%B1ol) "GnuPG (Español)") para el cifrado de la cartera de KDE Wallet. Es necesario que el método de cifrado sea *blowfish*.
 
-**Advertencia:** Para que este sistema funcione, es necesario que el nombre de la _cartera_ que se desea desbloquear al iniciar sesión sea "kdewallet". Si por alguna razón necesitas cambiar de cartera, tendrás que renombrarla para que esto funcione.
+**Advertencia:** Para que este sistema funcione, es necesario que el nombre de la *cartera* que se desea desbloquear al iniciar sesión sea "kdewallet". Si por alguna razón necesitas cambiar de cartera, tendrás que renombrarla para que esto funcione.
 
 Si tu contraseña de KDE Wallet es la misma que tu contraseña de usuario, puedes desbloquear automáticamente tu cartera al iniciar la sesión.
 
@@ -23,9 +23,7 @@ Después, edita `/etc/pam.d/kde` y añade estas dos líneas bajo las secciones c
 auth            optional        pam_kwallet.so kdehome=.kde4
 session         optional        pam_kwallet.so
 ```
-
  `Ejemplo /etc/pam.d/kde` 
-
 ```
 #%PAM-1.0
 auth            include         system-login
@@ -63,7 +61,7 @@ $ ~/.kde4/Autostart/ssh-add.sh
 
 **Nota:** Es necesario que un [agente SSH](/index.php/SSH_keys_(Espa%C3%B1ol)#Agente_SSH "SSH keys (Español)") esté en ejecución.
 
-También puedes necesitar ejecutar mediante `source` el _script_ que establece la variable de entorno `SSH_ASKPASS`:
+También puedes necesitar ejecutar mediante `source` el *script* que establece la variable de entorno `SSH_ASKPASS`:
 
 ```
 . /etc/profile.d/ksshaskpass.sh

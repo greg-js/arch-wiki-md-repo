@@ -32,12 +32,11 @@
 *   CONFIG_MODULES=y
 *   CONFIG_MODULE_UNLOAD=y
 
-默认只有_CONFIG_DEBUG_INFO_ 和_CONFIG_DEBUG_INFO_REDUCED_没被打开，修改这两个即可.
+默认只有*CONFIG_DEBUG_INFO* 和*CONFIG_DEBUG_INFO_REDUCED*没被打开，修改这两个即可.
 
 对于当前的 core/linux (3.7.10)，只要这样做就可以了:
 
  `x86_64` 
-
 ```
 echo '
 CONFIG_KPROBES=y

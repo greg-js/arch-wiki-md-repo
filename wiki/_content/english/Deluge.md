@@ -59,7 +59,6 @@ In that case, create a user called **torrent**.
 A user service will allow `deluged` to run when `systemd --user` is started. This is accomplished by creating a user service file:
 
  `/etc/systemd/user/deluged.service` 
-
 ```
 [Unit]
 Description=Deluge Daemon
@@ -134,7 +133,7 @@ Enter the `help` command for a list of available commands.
 
 ### GTK+
 
-**Note:** It is wise to disable Classic Mode in _Edit -> Preferences -> Interface_ for daemon (server) setups.
+**Note:** It is wise to disable Classic Mode in *Edit -> Preferences -> Interface* for daemon (server) setups.
 
 The GTK+ client can be run with:
 
@@ -155,7 +154,7 @@ The GTK+ client has a number of useful plugins:
 *   AutoAdd - Monitors directories for .torrent files
 *   Blocklist - Downloads and imports an IP blocklist
 *   Execute - Event-based command execution
-*   Extractor - Extracts archived files upon completion _**(beware of random high disk I/O usage)**_
+*   Extractor - Extracts archived files upon completion ***(beware of random high disk I/O usage)***
 *   Label - Allows labels to be assigned to torrents, as well as state, tracker, and keyword filters
 *   Notifications - Provides notifications (email, pop-up, blink, sound) for events as well as other plugins
 *   Scheduler - Limits active torrents and their speed on a per-hour, per-day basis
@@ -181,7 +180,6 @@ Deluge comes with a system service file called `deluge-web.service`. The process
 A user service will allow `deluge-web` to run when `systemd --user` is started. This is accomplished by creating a user service file:
 
  `/etc/systemd/user/deluge-web.service` 
-
 ```
 [Unit]
 Description=Deluge Web UI
@@ -265,16 +263,15 @@ connect <host>[:<port>] <user> <password>
 
 ```
 
-In the GTK+ client, _Edit > Connection Manager > Add_.
+In the GTK+ client, *Edit > Connection Manager > Add*.
 
-In the Web client, _Connection Manager > Add_.
+In the Web client, *Connection Manager > Add*.
 
 #### SSH Tunnel
 
 An SSH tunnel can be created to use an encrypted connection on any client. This requires an extra loopback address to be added, but this can be automated at boot. Without this step, the connection would be considered local. The actual command to establish an SSH tunnel cannot be automated as it requires user input. There are a few possible ways to go about doing that.
 
  `/etc/systemd/system/extra_lo_addr.service` 
-
 ```
 [Unit]
 Description=extra loopback address

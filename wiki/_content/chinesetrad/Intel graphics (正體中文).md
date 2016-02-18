@@ -1,4 +1,4 @@
-Intel顯示卡及晶片資訊. _在終端機下使用(不使用X視窗)，請參閱[Uvesafb](/index.php/Uvesafb "Uvesafb")._
+Intel顯示卡及晶片資訊. *在終端機下使用(不使用X視窗)，請參閱[Uvesafb](/index.php/Uvesafb "Uvesafb").*
 
 ## Contents
 
@@ -65,7 +65,7 @@ Intel顯示卡及晶片資訊. _在終端機下使用(不使用X視窗)，請參
 但請記得把你的使用者加入對應的群組：
 
 ```
-# gpasswd -a _username_ video
+# gpasswd -a *username* video
 
 ```
 
@@ -73,7 +73,7 @@ Intel顯示卡及晶片資訊. _在終端機下使用(不使用X視窗)，請參
 
 [KMS](/index.php/KMS "KMS")以藉由 i915 DRM 驅動程式來支援Intel的晶片，同時核心版本2.6.32預設為啟用。自xf86-video-intel 2.10版本開始[強制啟用 KMS](https://www.archlinux.org/news/484/)。KMS通常是在核心被啟動(bootstrapped)後才被初始化。但也可以在核心啟動時就啟用 KMS，讓整個開機流程運作在原生(native)解析度之下。
 
-**注意**：在啟動KMS的狀況下，你_必須_從/boot/grub/menu.lst的核心命令列中移除任何 "vga=" or "video=" 參數值。
+**注意**：在啟動KMS的狀況下，你*必須*從/boot/grub/menu.lst的核心命令列中移除任何 "vga=" or "video=" 參數值。
 
 把 /etc/mkinitcpio.conf 的 MODULES="[...]" 中加入 `intel_agp` 和 `i915` 模組：
 

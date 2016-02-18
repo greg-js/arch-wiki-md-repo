@@ -38,11 +38,11 @@ All'avvio di una istanza utente di systemd, viene caricato il target `default.ta
 
 ## Configurazione di base
 
-Tutti i servizi utente devono essere inseriti in `~/.config/systemd/user`. Se si vuole avviare une servizio automaticamente al login, si esegua `systemctl --user enable _servizio_` per ogni servizio.
+Tutti i servizi utente devono essere inseriti in `~/.config/systemd/user`. Se si vuole avviare une servizio automaticamente al login, si esegua `systemctl --user enable *servizio*` per ogni servizio.
 
 ### D-Bus
 
-Alcune applicazioni necessitano di un messagebus [D-Bus](/index.php/D-Bus "D-Bus"), tradizionalmente avviato quando si esegue un desktop environment tramite `dbus-launch`. A partire dalla versione 226, systemd è divenuto il gestore del messagebus utente. [[3]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) Il demone _dbus-daemon_ viene avviato una volta per ogni sessione utente utilizzando le unità utente `dbus.socket` e `dbus.service`.
+Alcune applicazioni necessitano di un messagebus [D-Bus](/index.php/D-Bus "D-Bus"), tradizionalmente avviato quando si esegue un desktop environment tramite `dbus-launch`. A partire dalla versione 226, systemd è divenuto il gestore del messagebus utente. [[3]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) Il demone *dbus-daemon* viene avviato una volta per ogni sessione utente utilizzando le unità utente `dbus.socket` e `dbus.service`.
 
 **Nota:** Se precedentemente si sono creati tali file manualmente nella cartella `/etc/systemd/user/` o `~/.config/systemd/user/`, è ora possibile rimuoverli.
 
@@ -55,7 +55,7 @@ L'istanza utente di systemd non eredita le [variabili d'ambiente](/index.php/Env
 3.  Creare un file di configurazione in `/etc/systemd/system/user@.service.d/`. Viene applicata a tutti i servizi utente.
 4.  In qualsiasi momento, tramite i comandi `systemctl --user set-environment` o `systemctl --user import-environment`. Applicata a tutti i servizi avviati dopo l'esecuzione dei comandi di cui sopra, ma non a quelli già avviati.
 
-**Suggerimento:** Per definire più variabili contemporaneamente, si crei un file di configurazione contentente una lista di coppie _chiave=valore_, separate da uno spazio, e si aggiunga `xargs systemctl --user set-environment < /path/to/file.conf` al file di configurazione utente della shell in uso.
+**Suggerimento:** Per definire più variabili contemporaneamente, si crei un file di configurazione contentente una lista di coppie *chiave=valore*, separate da uno spazio, e si aggiunga `xargs systemctl --user set-environment < /path/to/file.conf` al file di configurazione utente della shell in uso.
 
 Una variabile che si potrebbe voler definire è `PATH`.
 
@@ -68,7 +68,6 @@ La variabile `DISPLAY` viene utilizzata da qualsiasi applicazione X per individu
 Come tutte le variabili d'ambiente definite tramite `.bashrc` o `.bash_profile`, anche `PATH` non è visibile a systemd. Se si modifica il valore di tale variabile e si intende avviare applicazioni che se ne avvalgano come servizi di systemd, sarà necessario notificare systemd della sua modifica. È consigliabile farlo aggiungendo la seguente riga al proprio `.bash_profile`, dopo aver definito la variabile `PATH`:
 
  `~/.bash_profile` 
-
 ```
 systemctl --user import-environment PATH
 
@@ -79,11 +78,11 @@ systemctl --user import-environment PATH
 L'istanza utente di systemd viene avviata dopo il primo login di un utente, e fermata alla chiusura dell'ultima sessione di quell'utente. Potrebbe essere talvolta necesario avviarla subito dopo il boot, e mantenerla attiva alla chiusura dell'ultima sessione utente relativa, ad esempio per avere processi utente attivi senza alcuna sesione utente in corso. Si esegua a tal proposito il seguente comando per abilitare tale comportamento per un singolo utente:
 
 ```
-# loginctl enable-linger _nomeutente_
+# loginctl enable-linger *nomeutente*
 
 ```
 
-**Attenzione:** I servizi systemd **non** sono sessioni, dal momento che vengono eseguiti al di fuori di _logind_. Non si utilizzi la funzionalità di lingering per abilitare il login autometico, dal momento che questo [renderà inutilizzabile la sessione](/index.php/General_troubleshooting#Session_permissions "General troubleshooting").
+**Attenzione:** I servizi systemd **non** sono sessioni, dal momento che vengono eseguiti al di fuori di *logind*. Non si utilizzi la funzionalità di lingering per abilitare il login autometico, dal momento che questo [renderà inutilizzabile la sessione](/index.php/General_troubleshooting#Session_permissions "General troubleshooting").
 
 ## Xorg e systemd
 
@@ -99,10 +98,10 @@ Si crei il proprio file [xinitrc](/index.php/Xinitrc_(Italiano) "Xinitrc (Italia
 
 Questa sessione utilizzerà il proprio demone D-Bus, ma varie utility di systemd si connetteranno automaticamente all'istanza avviata dal servizio `dbus.service`
 
-Si abiliti infine (**come root**) il servizio _xlogin_ per ottenere il login automatico al boot:
+Si abiliti infine (**come root**) il servizio *xlogin* per ottenere il login automatico al boot:
 
 ```
-# systemctl enable xlogin@_username_
+# systemctl enable xlogin@*username*
 
 ```
 
@@ -126,7 +125,6 @@ Di seguito le istruzioni per avviare Xorg come servizio utente
 1\. Assicurarsi che Xorg possa venire avviato con privilegi da amministratore da qualsiasi utente, modificando `/etc/X11/Xwrapper.config`:
 
  `/etc/X11/Xwrapper.config` 
-
 ```
 allowed_users=anybody
 needs_root_rights=yes
@@ -136,7 +134,6 @@ needs_root_rights=yes
 2\. Creare le seguenti unità in `~/.config/systemd/user`:
 
  `~/.config/systemd/user/xorg@.socket` 
-
 ```
 [Unit]
 Description=Socket for xorg at display %i
@@ -145,9 +142,7 @@ Description=Socket for xorg at display %i
 ListenStream=/tmp/.X11-unix/X%i
 
 ```
-
  `~/.config/systemd/user/xorg@.service` 
-
 ```
 [Unit]
 Description=Xorg server at display %i
@@ -195,7 +190,6 @@ La variabile d'ambiente `XDG_VTNR` può essere definita nell'ambiente di systemd
 Di seguito un esempio per l'avvio di mpd come servizio utente:
 
  `~/.config/systemd/user/mpd.service` 
-
 ```
 [Unit]
 Description=Music Player Daemon
@@ -213,7 +207,6 @@ WantedBy=default.target
 Esempio di avvio di `sickbeard` come servizio utente, con definizione di una variabile utente per la directory home dove Sickbeard reperisce alcuni file di configurazione:
 
  `~/.config/systemd/user/sickbeard.service` 
-
 ```
 [Unit]
 Description=SickBeard Daemon
@@ -280,7 +273,6 @@ Once this is done, `systemctl --user enable` `tmux.service`, `multiplexer.target
 Per eseguire un window manager come servizio di systemd, sarà necessario [avviare Xorg come servizio utente](#Avvio_di_Xorg_come_servizio_utente). Di seguito, un esempio utilizzando awesome:
 
  `~/.config/systemd/user/awesome.service` 
-
 ```
 [Unit]
 Description=Awesome window manager
@@ -297,7 +289,7 @@ WantedBy=wm.target
 
 ```
 
-**Nota:** La sezione `[Install]` include una direttiva `WantedBy`. All'utilizzo di `systemctl --user enable`, verrà creato il link `~/.config/systemd/user/wm.target.wants/_window_manager_.service`, consentendo l'avvio al login. Si raccomanda l'abilitazione di questo servizio, e non la creazione manuale del link simbolico.
+**Nota:** La sezione `[Install]` include una direttiva `WantedBy`. All'utilizzo di `systemctl --user enable`, verrà creato il link `~/.config/systemd/user/wm.target.wants/*window_manager*.service`, consentendo l'avvio al login. Si raccomanda l'abilitazione di questo servizio, e non la creazione manuale del link simbolico.
 
 ## Riferimenti
 

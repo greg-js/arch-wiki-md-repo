@@ -96,7 +96,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Microsoft_Compiled_HTML_Help "wikipedia:es:Microsoft Compiled HTML Help")
 
-	_«Archivo de Ayuda de HTML Compilado (Microsoft Compiled HTML Help en inglés) es un formato privativo de ayuda en línea desarrollado por Microsoft.»_
+	*«Archivo de Ayuda de HTML Compilado (Microsoft Compiled HTML Help en inglés) es un formato privativo de ayuda en línea desarrollado por Microsoft.»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [CHM](https://en.wikipedia.org/wiki/Microsoft_Compiled_HTML_Help "wikipedia:Microsoft Compiled HTML Help").
 
@@ -144,7 +144,7 @@ Véanse los artículos de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Indexaci%C3%B3n "wikipedia:es:Indexación")
 
-	_«Indexar (o Indizar) se refiere a la acción de registrar ordenadamente información para elaborar su índice.»_
+	*«Indexar (o Indizar) se refiere a la acción de registrar ordenadamente información para elaborar su índice.»*
 
 Véanse los artículos de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Indexación](https://en.wikipedia.org/wiki/es:Indexaci%C3%B3n "wikipedia:es:Indexación") y [List of search engines#Desktop search engines](https://en.wikipedia.org/wiki/List_of_search_engines#Desktop_search_engines "wikipedia:List of search engines").
 

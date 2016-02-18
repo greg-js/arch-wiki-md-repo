@@ -5,7 +5,6 @@
 [Install](/index.php/Install "Install") the [postgrey](https://www.archlinux.org/packages/?name=postgrey) package. To get it running quickly edit the Postfix configuration file and add these lines:
 
  `/etc/postfix/main.cf` 
-
 ```
 smtpd_recipient_restrictions =
   check_policy_service inet:127.0.0.1:10030

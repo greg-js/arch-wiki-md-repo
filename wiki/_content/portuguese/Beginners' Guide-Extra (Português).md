@@ -53,7 +53,7 @@ Para instalar os pacotes do [Xorg](/index.php/Xorg "Xorg"):
 
 ```
 
-Instale o [mesa](https://en.wikipedia.org/wiki/Mesa_(computer_graphics) "wikipedia:Mesa (computer graphics)") para suporte a gráficos 3D:
+Instale o [mesa](https://en.wikipedia.org/wiki/Mesa_(computer_graphics) para suporte a gráficos 3D:
 
 ```
 # pacman -S mesa
@@ -125,7 +125,6 @@ As funcionalidades do Xorg de auto detecção podem funcionar sem um arquivo `xo
 Para que seu teclado **br-abnt2** funcione no ambiente **X** é preciso editar o arquivo `/etc/X11/xorg.conf.d/10-evdev.conf` e acrescentar a seguinte linha:
 
  `# nano /etc/X11/xorg.conf.d/10-evdev.conf` 
-
 ```
 Section "InputClass"
         Identifier "evdev keyboard catchall"
@@ -140,7 +139,6 @@ EndSection
 Caso o arquivo `/etc/X11/xorg.conf.d/10-evdev.conf` não exista, crie um arquivo chamado **01-keyboard-layout.conf** em `/etc/X11/xorg.conf.d/`:
 
  `# nano /etc/X11/xorg.conf.d/01-keyboard-layout.conf` 
-
 ```
 Section "InputClass"
    Identifier       "Keyboard Defaults"
@@ -164,12 +162,10 @@ Feito isso, reinicie o X.
 **Dica:** Estes passos são opcionais. Teste apenas se você estiver instalando o Arch Linux pela primeira vez, ou caso esteja instalando o Arch em um hardware que não é familiar a você.
 
 **Nota:** Caso seus dispositivos de entrada não funcionem durante este teste, instale o driver necessário que está no grupo [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/) e tente novamente. Para uma lista completa dos drivers de dispositivos disponíveis, executuma busca no pacman (pressione `Q` para sair):
-
 ```
 $ pacman -Ss xf86-input | less
 
 ```
-
 Você apenas precisara dos pacotes [xf86-input-keyboard](https://www.archlinux.org/packages/?name=xf86-input-keyboard) ou [xf86-input-mouse](https://www.archlinux.org/packages/?name=xf86-input-mouse) se você planeja desabilitar o hot-plugging, senão, mantenha o `evdev` que atuará como dispositivo de entrada(recomendado).
 
 Instale o ambiente padrão:
@@ -179,7 +175,7 @@ Instale o ambiente padrão:
 
 ```
 
-Se o Xorg for instalado antes da criação do usuário não-root, haverá um arquivo de template `.xinitrc` no diretório home do usuário que deverá ser deletado ou comentado por completo. Apenas deletando forçará o _X_ a executar no ambiente padrão instalado acima.
+Se o Xorg for instalado antes da criação do usuário não-root, haverá um arquivo de template `.xinitrc` no diretório home do usuário que deverá ser deletado ou comentado por completo. Apenas deletando forçará o *X* a executar no ambiente padrão instalado acima.
 
 ```
 $ rm ~/.xinitrc
@@ -254,7 +250,7 @@ Veja mais em [configuração de fontes](/index.php/Font_configuration "Font conf
 
 O sistema X(X Window System) prove um framework básico para a construção de interfaces gráficas de usuário(GUI).
 
-**Nota:** A escolha de um gerenciador de janelas é muito subjetiva/pessoal. Escolha o ambiente que melhor se encaixe as _suas_ necessidaes. Você pode até mesmo construir o seu ambiente de desktop com apenas um gerenciador de janelas, e aplicativos selecionados "a dedo" por você.
+**Nota:** A escolha de um gerenciador de janelas é muito subjetiva/pessoal. Escolha o ambiente que melhor se encaixe as *suas* necessidaes. Você pode até mesmo construir o seu ambiente de desktop com apenas um gerenciador de janelas, e aplicativos selecionados "a dedo" por você.
 
 *   [Gerenciadores de Janelas](/index.php/Window_manager "Window manager") (WM) controlam a localização e aparencia das janelas de aplicativos, juntamente com o X.
 

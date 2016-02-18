@@ -73,14 +73,13 @@
 
 ## Installation
 
-Emacs comes in several variants (sometimes referred to as _emacsen_). The most common of these is [GNU Emacs](http://www.gnu.org/software/emacs/).
+Emacs comes in several variants (sometimes referred to as *emacsen*). The most common of these is [GNU Emacs](http://www.gnu.org/software/emacs/).
 
 [Install](/index.php/Install "Install") [emacs](https://www.archlinux.org/packages/?name=emacs), available in the [official repositories](/index.php/Official_repositories "Official repositories"). If you usually work in a terminal, you may prefer the [emacs-nox](https://www.archlinux.org/packages/?name=emacs-nox) variant without GTK+ (nor sound and other fancy stuff). Be aware that the text version comes with some drawbacks: it supports less colors and less features for font handling (size change in live, various sizes in one document, and so on). Besides, emacs-nox has some limitation with advanced features like the Speedbar or GUD (the debugging environment), and is somewhat slower when handling complex faces (a "face" is the visual appearance of text in Emacs).
 
 If you want to fully enjoy all the extended features of Emacs without installing a daunting amount of dependencies, you can use the PKGBUILD to customize your needs. Using anything else than `gtk3` you can get rid of gconf. Image and sound support can be disabled as well. Run `./configure --help` in Emacs source folder to list all available options.
 
  `PKGBUILD` 
-
 ```
 # ...
   ./configure --prefix=/usr --sysconfdir=/etc --libexecdir=/usr/lib \
@@ -148,7 +147,7 @@ $ emacs --daemon
 
 ```
 
-You are likely to start the daemon at startup time and to connect a window to the daemon. Besides, it is possible to connect _both_ graphical and console clients to the daemon at the same time and make the GUI to start quickly.
+You are likely to start the daemon at startup time and to connect a window to the daemon. Besides, it is possible to connect *both* graphical and console clients to the daemon at the same time and make the GUI to start quickly.
 
 If you want to connect to the daemon simply use the following command (note that it will start a graphical client if called in a graphical environment or a console client if called in a console like a tty):
 
@@ -173,7 +172,7 @@ $ emacsclient -nc
 
 ```
 
-Note that some programs such as Mutt or Git (for commit messages) wait for the editor to finish, so you cannot use the `-n` parameter. If your default editor is set to use it, you will have to specify an alternate editor (_e.g._ `emacsclient -a "" -t`) for those programs.
+Note that some programs such as Mutt or Git (for commit messages) wait for the editor to finish, so you cannot use the `-n` parameter. If your default editor is set to use it, you will have to specify an alternate editor (*e.g.* `emacsclient -a "" -t`) for those programs.
 
 You could use the following shell configuration:
 
@@ -188,7 +187,6 @@ but it has some caveats: many program will fail to load the external editor beca
 A more convenient and reliable solution is to write your own script:
 
  `/usr/local/bin/emc` 
-
 ```
 #!/bin/sh
 if [ -z "$DISPLAY" ]; then
@@ -216,12 +214,11 @@ Now 'emc' will work just as expected. Setting the `EDITOR` environment variable 
 
 ### As a systemd unit
 
-The old system unit method had some caveats. It gave a limited shell environment which restricted shell calls, so we'll be using a user unit, which tends to work a lot better than naively calling _emacs --daemon_.
+The old system unit method had some caveats. It gave a limited shell environment which restricted shell calls, so we'll be using a user unit, which tends to work a lot better than naively calling *emacs --daemon*.
 
 Create a systemd unit for emacs:
 
  `~/.config/systemd/user/emacs.service` 
-
 ```
 [Unit]
 Description=Emacs: the extensible, self-documenting text editor
@@ -237,7 +234,7 @@ WantedBy=default.target
 
 ```
 
-You need to enable the unit so that it gets started on every boot (note - DO _NOT_ run these commands as root - we want them for our user, not for the root user):
+You need to enable the unit so that it gets started on every boot (note - DO *NOT* run these commands as root - we want them for our user, not for the root user):
 
 ```
 $ systemctl --user enable emacs
@@ -255,7 +252,7 @@ $ systemctl --user start emacs
 
 Although Emacs is complex, it will not take long to begin to understand the benefits which the level of customization and extensibility bring. Furthermore, the comprehensive variety of extensions already available allows it to be transformed into a powerful environment for almost any form of text-editing.
 
-Emacs has an excellent built-in tutorial which can be accessed by clicking the first link on the splash screen; by selecting _Help->Emacs Tutorial_ from the menu or by pressing 'F1' followed by 't'. This page is designed to be an additional resource for getting started with Emacs.
+Emacs has an excellent built-in tutorial which can be accessed by clicking the first link on the splash screen; by selecting *Help->Emacs Tutorial* from the menu or by pressing 'F1' followed by 't'. This page is designed to be an additional resource for getting started with Emacs.
 
 Emacs also includes a set of reference cards, useful for beginners and experts alike, see `/usr/share/emacs/<version>/etc/refcards/` (substitute <version> for your version of emacs).
 
@@ -263,7 +260,7 @@ Emacs also includes a set of reference cards, useful for beginners and experts a
 
 Emacs uses some terminology and conventions which may seem unusual at first and will be introduced where appropriate. However, there is some terminology which should be introduced before-hand, as it is fundamental to working with Emacs.
 
-The one piece of terminology which must be introduced early is the concept of _buffers_. A buffer is a representation of data within Emacs. For example, when a file is opened in Emacs, that file is read from disk and its contents stored in a buffer, which allows it to be edited and saved back to disk later. Buffers are not limited to text, and can also contain images and widgets. Work is in progress to allow buffers to even display applications! Another way to think of it: data available on disk is referred to as a 'file', whereas data available in Emacs is referred to as a 'buffer'.
+The one piece of terminology which must be introduced early is the concept of *buffers*. A buffer is a representation of data within Emacs. For example, when a file is opened in Emacs, that file is read from disk and its contents stored in a buffer, which allows it to be edited and saved back to disk later. Buffers are not limited to text, and can also contain images and widgets. Work is in progress to allow buffers to even display applications! Another way to think of it: data available on disk is referred to as a 'file', whereas data available in Emacs is referred to as a 'buffer'.
 
 The convention for key sequences in Emacs may be unfamiliar. Namely:
 
@@ -277,13 +274,13 @@ For example, to exit Emacs use the following key sequence: **C-x C-c**. This can
 
 ### Movement
 
-Cursor movement is very similar to other graphical editors. The mouse and arrow keys can be used to change the position of the cursor (referred to as _point_ in Emacs). The standard movement commands performed by the arrow keys also have more accessible bindings in Emacs. To move forward one character, use **C-f** and to move one character backward, **C-b**. **C-n** and **C-p** can be used to move to the next and previous lines, respectively. Again, it is generally recommended to use these key-sequences in preference to the mouse and/or arrow keys.
+Cursor movement is very similar to other graphical editors. The mouse and arrow keys can be used to change the position of the cursor (referred to as *point* in Emacs). The standard movement commands performed by the arrow keys also have more accessible bindings in Emacs. To move forward one character, use **C-f** and to move one character backward, **C-b**. **C-n** and **C-p** can be used to move to the next and previous lines, respectively. Again, it is generally recommended to use these key-sequences in preference to the mouse and/or arrow keys.
 
 As might be expected, Emacs provides more advanced movement commands, including moving by word and sentence. **M-f** moves forward one word and **M-b** will move point one word backward. Similarly, **M-e** moves point one sentence forward and **M-a** one sentence backward.
 
 Until now, all of the movement commands introduced have been relative to point. **M-<** can be used to move point to the beginning of the buffer, with its counterpart, **M->**, moving to the end of the buffer. To move point to a specific line number, use **M-g g**. **M-g g** will prompt for the desired line number. Also, to move to the start or end of the current line, use **C-a** or **C-e**, respectively.
 
-**Note:** Keybindings for these commands, or indeed any command, may differ _slightly_ depending on which modes are currently active. However, it is unusual for the replacement command not to provide equivalent functionality. See [Modes](/index.php/Emacs#Modes "Emacs") for more information.
+**Note:** Keybindings for these commands, or indeed any command, may differ *slightly* depending on which modes are currently active. However, it is unusual for the replacement command not to provide equivalent functionality. See [Modes](/index.php/Emacs#Modes "Emacs") for more information.
 
 ### Files and buffers
 
@@ -291,7 +288,7 @@ Emacs provides a series of commands to act upon files, the most common of which 
 
 **Note:** **C-x C-f** does not read the file from disk again if a buffer corresponding to the file is still opened. To re-read the file from disk, (1) kill the buffer (**C-x k**) first, then open the file (**C-x C-f**); or (2) use **M-x revert-buffer** to revert to data on disk; or (3) use **C-x C-v** to load that file to the current buffer; or (4) use **C-x RET r RET** to reload the file with the same coding.
 
-Many interactive commands such as "find-file" or "write-file" prompt for input in the bottom-most line of the Emacs window. This line is referred to as the _minibuffer_. The minibuffer supports many basic editing commands as well as tab-completion similar to that which is available in many *nix shells. **<TAB>** can be pressed twice in succession to display a list of completions, and if desired, the mouse can be also be used to select a completion from that list. Completion in the minibuffer is available for many forms of input including commands and filenames.
+Many interactive commands such as "find-file" or "write-file" prompt for input in the bottom-most line of the Emacs window. This line is referred to as the *minibuffer*. The minibuffer supports many basic editing commands as well as tab-completion similar to that which is available in many *nix shells. **<TAB>** can be pressed twice in succession to display a list of completions, and if desired, the mouse can be also be used to select a completion from that list. Completion in the minibuffer is available for many forms of input including commands and filenames.
 
 The minibuffer also provides a history feature. The previous items entered for a command can be recalled using the **Up Arrow** or **M-p**.
 
@@ -307,7 +304,7 @@ A list of all open buffers can be displayed using **C-x C-b**. Should a buffer n
 
 Many editing commands exist within Emacs. Perhaps the most important command which has not yet been introduced is 'undo', which can be performed via **C-_** or **C-/**. Movement commands generally also have a corresponding delete command. For example, **M-<backspace>** can be used to delete a word backwards, and `M-d` to delete a word forwards. To delete to the end of the line, or the end of the sentence, use `C-k` or `M-k`, respectively.
 
-It is a rule-of-thumb that no line be allowed to exceed 80 characters. This aids readability, especially in cases where the line wraps at the edge of a window. Automatically inserting (or removing) line separator(s) is known as _filling_ in Emacs. A paragraph can be filled using `M-q`.
+It is a rule-of-thumb that no line be allowed to exceed 80 characters. This aids readability, especially in cases where the line wraps at the edge of a window. Automatically inserting (or removing) line separator(s) is known as *filling* in Emacs. A paragraph can be filled using `M-q`.
 
 Characters and words can be transposed using `C-t` and `M-t`, respectively. For example: `Hello World!` to `World! Hello`.
 
@@ -315,9 +312,9 @@ The case of words is also readily adjustable. `M-l` downcases a word from point 
 
 ### Killing, yanking and regions
 
-A region is a section of text between two positions. One of those positions is referred to as _mark_, and the other is point. **C-<SPC>** is used to set the position of mark, after which point can be moved to create a region. Within GNU Emacs 23.1 onwards, this region is visible by default. There are a number of commands which act upon regions, among the most commonly used are _killing_ commands.
+A region is a section of text between two positions. One of those positions is referred to as *mark*, and the other is point. **C-<SPC>** is used to set the position of mark, after which point can be moved to create a region. Within GNU Emacs 23.1 onwards, this region is visible by default. There are a number of commands which act upon regions, among the most commonly used are *killing* commands.
 
-In Emacs, cut and paste are referred to as _kill_ and _yank_, respectively. Many commands which delete more than one character (including many of those in the above section, such as **C-k** and **M-d**) actually cut the text and append it to what is known as the _kill-ring_. The kill-ring is simply a list of killed text. The kill-ring stores up to the last 60 kills by default. Successive kills are concatenated and stored at the head of the list.
+In Emacs, cut and paste are referred to as *kill* and *yank*, respectively. Many commands which delete more than one character (including many of those in the above section, such as **C-k** and **M-d**) actually cut the text and append it to what is known as the *kill-ring*. The kill-ring is simply a list of killed text. The kill-ring stores up to the last 60 kills by default. Successive kills are concatenated and stored at the head of the list.
 
 **C-w** and **M-w** can be used to kill and copy a region, respectively.
 
@@ -362,9 +359,9 @@ M-80 %
 
 ### Indentation
 
-Indentation is usually performed with either **<TAB>**, to indent a single line, or with **C-M-\**, to indent a region. If the region is active (_i.e._ highlighted), then **<TAB>** will also indent region.
+Indentation is usually performed with either **<TAB>**, to indent a single line, or with **C-M-\**, to indent a region. If the region is active (*i.e.* highlighted), then **<TAB>** will also indent region.
 
-Exactly how text is indented usually depends on the _major-mode_ which is active. Major-modes often define indentation styles specialising in indenting a certain type of text. (See [Modes](/index.php/Emacs#Modes "Emacs") for more information.)
+Exactly how text is indented usually depends on the *major-mode* which is active. Major-modes often define indentation styles specialising in indenting a certain type of text. (See [Modes](/index.php/Emacs#Modes "Emacs") for more information.)
 
 In some cases, a suitable major-mode may not exist for a file type, in which case, manual indentation may be necessary. Create a region (see [Killing, yanking and regions](/index.php/Emacs#Killing.2C_yanking_and_regions "Emacs")) then perform indentation with **C-u <n> C-x <TAB>** (where '<n>' is the number of columns which the text within the region should be indented). For example:
 
@@ -384,11 +381,11 @@ C-u -2 C-x <TAB>
 
 ### Windows and frames
 
-Emacs is designed for convenient editing of many files at a time. This is achieved by dividing the Emacs interface into three levels. Namely, buffers, which have already been introduced, as well as _windows_ and _frames_.
+Emacs is designed for convenient editing of many files at a time. This is achieved by dividing the Emacs interface into three levels. Namely, buffers, which have already been introduced, as well as *windows* and *frames*.
 
-A _window_ is a viewport used for displaying a buffer. A window can display only one buffer at a time, however one buffer can be displayed in many windows. Beneath each window exists a _mode-line_, which displays information for that buffer.
+A *window* is a viewport used for displaying a buffer. A window can display only one buffer at a time, however one buffer can be displayed in many windows. Beneath each window exists a *mode-line*, which displays information for that buffer.
 
-A _frame_ is an Emacs "window" (in standard terminology. i.e., 'window' in the sense of the modern desktop paradigm) which contains a title bar, menu bar and one or more 'windows' (in Emacs terminology. i.e., the above definition of 'window').
+A *frame* is an Emacs "window" (in standard terminology. i.e., 'window' in the sense of the modern desktop paradigm) which contains a title bar, menu bar and one or more 'windows' (in Emacs terminology. i.e., the above definition of 'window').
 
 From now on the definition of these terms as they exist in Emacs will be used.
 
@@ -414,7 +411,7 @@ line-number-mode is enabled by default, though, it can be toggled on/off by issu
 
 **M-x line-number-mode <RET>**
 
-sh-mode is a _major-mode_. Major-modes adjust Emacs, and often also provide a specialised set of commands, for editing a particular type of text. Only one major-mode can be active in each buffer. In addition to syntax highlighting, and indentation support, sh-mode defines several commands to help write shell scripts. The following shows a few of those commands:
+sh-mode is a *major-mode*. Major-modes adjust Emacs, and often also provide a specialised set of commands, for editing a particular type of text. Only one major-mode can be active in each buffer. In addition to syntax highlighting, and indentation support, sh-mode defines several commands to help write shell scripts. The following shows a few of those commands:
 
 ```
 **C-c (**	 Insert a function definition
@@ -429,13 +426,13 @@ sh-mode is a _major-mode_. Major-modes adjust Emacs, and often also provide a sp
 
 ```
 
-'line-number-mode' and 'column-number-mode', are _minor-modes_. Minor-modes can be used to extend a major-mode and any number of minor-modes can be enabled at once.
+'line-number-mode' and 'column-number-mode', are *minor-modes*. Minor-modes can be used to extend a major-mode and any number of minor-modes can be enabled at once.
 
 ## Tips and tricks
 
 While the previous sections has given an overview of the basic editing commands available, it has not given an indication of the possibilities of Emacs. This section will cover some more advanced techniques and functionality.
 
-We cannot cover everything as it would be too long. So this section will only serve as a _demo_ for some dazzling features of Emacs.
+We cannot cover everything as it would be too long. So this section will only serve as a *demo* for some dazzling features of Emacs.
 
 See [Documentation](#Documentation) to get access to more in-depth detail about all features.
 
@@ -463,13 +460,13 @@ The path for TRAMP is typically of the form '/[protocol]:[[user@]host]:<file>'. 
 
 ### Keyboard macros and registers
 
-This section will provide a practical demonstration of the use of a couple of more powerful editing features. Namely, _keyboard macros_ and _registers_.
+This section will provide a practical demonstration of the use of a couple of more powerful editing features. Namely, *keyboard macros* and *registers*.
 
 The aim will be to produce a listing of a series of characters and their corresponding position in this list. While it is possible to format each of them by hand, this would be slow and error-prone. Alternatively, some of Emacs' more powerful editing functionality could be leveraged. Before describing a solution, some details behind the techniques which will be used follow.
 
-The first feature which will be introduced is _registers_. Registers are used to store and retrieve a variety of data types ranging from numbers to window configurations. Each register is given a name of a single character: this character is used to access the register.
+The first feature which will be introduced is *registers*. Registers are used to store and retrieve a variety of data types ranging from numbers to window configurations. Each register is given a name of a single character: this character is used to access the register.
 
-The other which will be demonstrated is _keyboard macros_. A keyboard macro stores a sequence of commands so they can be easily repeated later. These changes will now be performed step-by-step.
+The other which will be demonstrated is *keyboard macros*. A keyboard macro stores a sequence of commands so they can be easily repeated later. These changes will now be performed step-by-step.
 
 Starting with a buffer containing our set of characters:
 
@@ -550,7 +547,7 @@ You can list used registers with the **list-registers** command.
 
 ### Regular expressions
 
-From the Emacs Manual: "A regular expression, or _regexp_ for short, is a pattern that denotes a (possibly infinite) set of strings." This section will not go into any detail regarding regular expressions themselves (as there is simply too much to cover). It will however provide a quick demonstration of their power. See [Regular Expressions](http://www.gnu.org/software/emacs/manual/html_node/elisp/Regular-Expressions.html#Regular-Expressions) section in the Emacs Manual for further reading.
+From the Emacs Manual: "A regular expression, or *regexp* for short, is a pattern that denotes a (possibly infinite) set of strings." This section will not go into any detail regarding regular expressions themselves (as there is simply too much to cover). It will however provide a quick demonstration of their power. See [Regular Expressions](http://www.gnu.org/software/emacs/manual/html_node/elisp/Regular-Expressions.html#Regular-Expressions) section in the Emacs Manual for further reading.
 
 Given the same scenario presented above: A list of characters which are to be formatted to represent their respective position in the list. (see [Keyboard macros and registers](/index.php/Emacs#Keyboard_macros_and_registers "Emacs")). Again, starting with a buffer containing.
 
@@ -619,7 +616,6 @@ The traditional window switch with **C-x o** can be cumbersome to use in the lon
 To activate the windmove keys, use the following in your configuration file:
 
  `~/.emacs` 
-
 ```
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
@@ -650,7 +646,6 @@ Emacs features a very powerful shell entirely written in Emacs Lisp, the **eshel
 You can use the **show-paren** mode. By default, there’s a small delay before showing a matching parenthesis. Set the **show-paren-delay** to 0 to deactivate it.
 
  `~/.emacs` 
-
 ```
 (setq show-paren-delay 0)
 (show-paren-mode 1)
@@ -673,7 +668,7 @@ To check a single work use **M-$**. You can start checking the whole buffer with
 
 ```
 
-You can enable on-the-fly spell checking by enabling the **flyspell-mode**. For source code files you can restrict the mode to comments by using the **flyspell-prog-mode** instead. You will also need the _aspell_ package for spelling in Emacs. There are corresponding packages for each language, so for English, you'd also want _aspell-en_ (as well as _aspell_).
+You can enable on-the-fly spell checking by enabling the **flyspell-mode**. For source code files you can restrict the mode to comments by using the **flyspell-prog-mode** instead. You will also need the *aspell* package for spelling in Emacs. There are corresponding packages for each language, so for English, you'd also want *aspell-en* (as well as *aspell*).
 
 ### Tables
 
@@ -713,9 +708,9 @@ table-release
 
 ```
 
-There is a lot of handy _table-*_ functions, like _table-insert-row_, _table-span-cell_, _table-widen-cell_, etc.
+There is a lot of handy *table-** functions, like *table-insert-row*, *table-span-cell*, *table-widen-cell*, etc.
 
-Finally, the ultimate purpose of the _table_ functions is to convert it to the desired markup language. Use the _table-generate-source_ for that. For LaTeX, the previous table would result in
+Finally, the ultimate purpose of the *table* functions is to convert it to the desired markup language. Use the *table-generate-source* for that. For LaTeX, the previous table would result in
 
 ```
 % This LaTeX table template is generated by emacs 24.2.1
@@ -742,7 +737,6 @@ Org mode is originally a powerful TODO and Agenda agent, but has quickly evolved
 Open a new file TODO.org file, Org mode should be loaded. If not, switch to it with **M-x org-mode**.
 
  `TODO.org` 
-
 ```
 * First entry
 ** Subentry
@@ -870,7 +864,6 @@ You can access the info manual directly from Emacs: **C-h i m Semantic RET**.
 By default, Git provides support for using Emacs' Emerge mode as a merge tool. However you may prefer the Ediff mode. Unfortunately this mode is not supported by git for technical reasons. There is still a way to use it by evaluating some elisp code upon emacs call.
 
  `.gitconfig` 
-
 ```
 [mergetool.ediff]
     cmd = emacs --eval \" (progn (defun ediff-write-merge-buffer () (let ((file ediff-merge-store-file)) (set-buffer ediff-buffer-C) (write-region (point-min) (point-max) file) (message \\\"Merge buffer saved in: %s\\\" file) (set-buffer-modified-p nil) (sit-for 1))) (setq ediff-quit-hook 'kill-emacs ediff-quit-merge-hook 'ediff-write-merge-buffer) (ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\"))\" 
@@ -977,7 +970,7 @@ The variable, 'auto-mode-alist', can be modified to change the major-mode used b
 
 ```
 
-Settings can also be applied on a per-mode basis. A common method for this is to add a function to a _hook_. For example, to force indentation to use spaces instead of tabs, but only in text-mode:
+Settings can also be applied on a per-mode basis. A common method for this is to add a function to a *hook*. For example, to force indentation to use spaces instead of tabs, but only in text-mode:
 
 ```
 (add-hook 'text-mode-hook (lambda () (setq indent-tabs-mode nil)))
@@ -1016,7 +1009,6 @@ To open the new file in the same `emacs-session` its use needs use to use `emacs
 To start session you need to `start-server`. This snippet will create server in first session of emacs. Add this to your `emacs` configuration file.
 
  `.emacs or .emacs.d/init.el` 
-
 ```
 (require 'server)
 (unless (server-running-p)
@@ -1055,7 +1047,6 @@ You can use several configurations and tell Emacs to load one or the other.
 For example, let's define two configuration files.
 
  `.emacs` 
-
 ```
 (load "~/.emacs.d/main" nil t)
 (load "~/.emacs.d/functions" nil t)
@@ -1065,10 +1056,9 @@ For example, let's define two configuration files.
 
 ```
 
-This is the full configuration we load for the daemon. But the _plugins_ file is huge and slow to load. If we want to spaqn a new Emacs instance that does not need the _plutings_ features, it can be cumbersome to load it everytime in the long time.
+This is the full configuration we load for the daemon. But the *plugins* file is huge and slow to load. If we want to spaqn a new Emacs instance that does not need the *plutings* features, it can be cumbersome to load it everytime in the long time.
 
  `.emacs-light` 
-
 ```
 (load "~/.emacs.d/main" nil t)
 (load "~/.emacs.d/functions" nil t)
@@ -1088,7 +1078,7 @@ You can create an alias to ease the call.
 
 ### Loading extensions
 
-You can load extensions using the _require_ function. For instance
+You can load extensions using the *require* function. For instance
 
 ```
 (require 'mediawiki)
@@ -1097,7 +1087,7 @@ You can load extensions using the _require_ function. For instance
 
 If you try using the same configuration file on a machine where mediawiki is not installed, Emacs will primpt for an error. Besides, all extension-specific code would be parsed for nothing.
 
-The trick is to test the return value of _require_:
+The trick is to test the return value of *require*:
 
 ```
 (if (require 'mediawiki nil t)
@@ -1150,7 +1140,7 @@ Note that the beginning characters need to be comments for the current language,
 
 ```
 
-There is two functions that may help you in defining the variables: _add-file-local-variable_ and _add-file-local-variable-prop-line_.
+There is two functions that may help you in defining the variables: *add-file-local-variable* and *add-file-local-variable-prop-line*.
 
 Finally, custom variable are considered insecure by default. If you try to open a file that contains local variable redefining insecure custom variables, Emacs will ask you for confirmation.
 
@@ -1165,7 +1155,7 @@ In the previous example, if you attempt to set anything else than a string, Emac
 
 ### Custom colors and theme
 
-Colors can be easily customized using the _face_ facility.
+Colors can be easily customized using the *face* facility.
 
 ```
 (set-face-background  'region                 "color-17")
@@ -1174,15 +1164,15 @@ Colors can be easily customized using the _face_ facility.
 
 ```
 
-You can have let Emacs tell you the name of the face where the point is. Use the _customize-face_ function for that. The facility will show you how to set colors, bold, underline, etc.
+You can have let Emacs tell you the name of the face where the point is. Use the *customize-face* function for that. The facility will show you how to set colors, bold, underline, etc.
 
-Emacs in console can handle 256 colors, but you will have to use an appropriate terminal for that. For instance URxvt has support for 256 colors. You can use the _list-colors-display_ for a comprehensive list of supported colors. This is highly terminal-dependent.
+Emacs in console can handle 256 colors, but you will have to use an appropriate terminal for that. For instance URxvt has support for 256 colors. You can use the *list-colors-display* for a comprehensive list of supported colors. This is highly terminal-dependent.
 
 ### SyncTeX support
 
 Emacs is a powerful LaTeX editor. This is mostly due to the fact you can adapt or create a LaTeX mode to fit your needs best.
 
-Still, there might be some challenges, like SyncTeX support. First you need to make sure your TeX distribution has it. If you installed TeX Live manually, you may need to install the _synctex_ package.
+Still, there might be some challenges, like SyncTeX support. First you need to make sure your TeX distribution has it. If you installed TeX Live manually, you may need to install the *synctex* package.
 
 ```
 # umask 022 && tlmgr install synctex
@@ -1258,13 +1248,11 @@ To use the [Xorg](/index.php/Xorg "Xorg") clipboard in emacs-nox, [install](/ind
 ```
 
 **Tip:** You may also enable terminal mouse support by adding:
-
 ```
 ;; xterm mouse support
 (require 'mouse)
 (xterm-mouse-mode t)
 ```
-
 See also [mwheel.el](http://www.opensource.apple.com/source/emacs/emacs-51/emacs/lisp/mwheel.el).
 
 ## Documentation
@@ -1436,7 +1424,7 @@ A way to solve it is just put the line above on your startup file, `~/.emacs`:
 
 And no, it isn't a bug, but a feature of new Emacs versions. Reading the subsequent messages about it on the mail list, we found it ([http://lists.gnu.org/archive/html/help-gnu-emacs/2009-05/msg00179.html](http://lists.gnu.org/archive/html/help-gnu-emacs/2009-05/msg00179.html)):
 
-	_It seems that nothing is loaded automatically because there is a choice betwee iso-transl and iso-acc. Both seem to provide an input method with C-x 8 or Alt-<accent> prefix, but what you and I are doing is just pressing a dead key (^, ´, `, ~, ¨) for the accent and then another key to "compose" the accented character. And there is no Alt key used in this! And according to documentation it seems be appropriate for 8-bit encodings, so it should be pretty useless in UTF-8\. I reported this bug when it was introduced, but the bug seems to be classified as a feature ... Maybe it's just because the file is auto-loaded though pretty useless._
+	*It seems that nothing is loaded automatically because there is a choice betwee iso-transl and iso-acc. Both seem to provide an input method with C-x 8 or Alt-<accent> prefix, but what you and I are doing is just pressing a dead key (^, ´, `, ~, ¨) for the accent and then another key to "compose" the accented character. And there is no Alt key used in this! And according to documentation it seems be appropriate for 8-bit encodings, so it should be pretty useless in UTF-8\. I reported this bug when it was introduced, but the bug seems to be classified as a feature ... Maybe it's just because the file is auto-loaded though pretty useless.*
 
 ### C-M-% and some other bindings do not work in emacs nox
 
@@ -1448,7 +1436,6 @@ This is because terminals are more limited than Xorg. Some terminals may handle 
 Example:
 
  `.emacs` 
-
 ```
 (global-set-key (kbd "C-M-y") 'query-replace-regexp)
 
@@ -1469,7 +1456,6 @@ Graphical Emacs does not suffer from this issue.
 First you must enable xterm-keys in your [tmux](/index.php/Tmux "Tmux") config.
 
  `.tmux.conf` 
-
 ```
 setw -g xterm-keys on
 
@@ -1478,7 +1464,6 @@ setw -g xterm-keys on
 But, this will break other key combinations. To fix them, put the following in your emacs config.
 
  `.emacs` 
-
 ```
 ;; handle tmux's xterm-keys
 ;; put the following line in your ~/.tmux.conf:

@@ -1,10 +1,13 @@
 [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) (shortened as YCM) is a code-completion engine for [Vim](/index.php/Vim "Vim"). It supports the following languages:
 
-*   C/C++
+*   C/C++/Objective-C/Objective-C++
 *   Python
-*   Java
-*   Ruby
 *   C#
+*   Go
+*   Rust
+*   JavaScript
+*   TypeScript
+*   Other languages (Java, Ruby, PHP etc.) through the use of omnicompletion system
 
 ## Contents
 
@@ -70,10 +73,9 @@ For Java completion, a project file should be present and Eclim headless server 
 2.  Put this in your [.vimrc](/index.php/Vim/.vimrc "Vim/.vimrc"): `~/.vimrc`  `let g:EclimCompletionMethod = 'omnifunc'` 
 3.  Start `eclimd` script in a separate terminal: `$ /usr/share/eclipse/eclimd` 
 4.  Create a file named `.project` in the same directory as your Java files: `.project` 
-
     ```
     <projectDescription>
-        <name>_PROJECTNAME_</name>
+        <name>*PROJECTNAME*</name>
     </projectDescription>
 
     ```
@@ -109,15 +111,14 @@ A list of available commands may be found [here](http://eclim.org/cheatsheet.htm
 
 The easiest way to create a project is to use [monodevelop](https://www.archlinux.org/packages/?name=monodevelop). The rest of this section explains how to manually create a C# project which can also be built from command line with `xbuild`.
 
-First create a solution file. Replace _**bold-italic**_ names appropriately.
+First create a solution file. Replace ***bold-italic*** names appropriately.
 
- `_**SOLUTION**_.sln` 
-
+ `***SOLUTION***.sln` 
 ```
 
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{00000000-0000-0000-0000-000000000000}") = "_**PROJECT**_", "_**PROJECT**_\_**PROJECT**_.csproj", "{11111111-1111-1111-1111-111111111111}"
+Project("{00000000-0000-0000-0000-000000000000}") = "***PROJECT***", "***PROJECT***\***PROJECT***.csproj", "{11111111-1111-1111-1111-111111111111}"
 EndProject
 EndProject
 Global
@@ -136,8 +137,7 @@ EndGlobal
 
 Then create a directory named `PROJECT` and in it a file named `PROJECT.csproj`:
 
- `_**PROJECT**_/_**PROJECT**_.csproj` 
-
+ `***PROJECT***/***PROJECT***.csproj` 
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -148,8 +148,8 @@ Then create a directory named `PROJECT` and in it a file named `PROJECT.csproj`:
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{11111111-1111-1111-1111-111111111111}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_**PROJECT**_</RootNamespace>
-    <AssemblyName>_**PROJECT**_</AssemblyName>
+    <RootNamespace>***PROJECT***</RootNamespace>
+    <AssemblyName>***PROJECT***</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -173,9 +173,9 @@ Then create a directory named `PROJECT` and in it a file named `PROJECT.csproj`:
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="_**HelloWorld.cs**_" />
-    <Compile Include="_**CSharpFile1.cs**_" />
-    <Compile Include="_**CSharpFile2.cs**_" />
+    <Compile Include="***HelloWorld.cs***" />
+    <Compile Include="***CSharpFile1.cs***" />
+    <Compile Include="***CSharpFile2.cs***" />
   </ItemGroup>
 </Project>
 ```
@@ -201,7 +201,7 @@ The following commands are available for diagnostics:
 
 ### E764: Option 'omnifunc' is not set
 
-If this happens for Java files, you forgot to put this in your _.vimrc_:
+If this happens for Java files, you forgot to put this in your *.vimrc*:
 
  `~/.vimrc`  `let g:EclimCompletionMethod = 'omnifunc'` 
 

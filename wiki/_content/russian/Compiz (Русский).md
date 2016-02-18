@@ -216,7 +216,7 @@ X-GnomeWMSettingsLibrary=compiz
 
 }}
 
-*   Если вы дополнительно хотите использовать приложение `fusion-icon` - запустите _fusion-icon_. Если при запущеном _fusion-icon_ вы выйдите из системы, KDE при следующем входе в систему восстановит сессию и, при включенном параметре, снова запустит _fusion-icon_. Если _fusion-icon_ не отображается, убедитесь, что в файле`~/.kde/share/config/ksmserverrc` имеется следующая строка:
+*   Если вы дополнительно хотите использовать приложение `fusion-icon` - запустите *fusion-icon*. Если при запущеном *fusion-icon* вы выйдите из системы, KDE при следующем входе в систему восстановит сессию и, при включенном параметре, снова запустит *fusion-icon*. Если *fusion-icon* не отображается, убедитесь, что в файле`~/.kde/share/config/ksmserverrc` имеется следующая строка:
 
 ```
 loginMode=restorePreviousLogout
@@ -237,12 +237,10 @@ $ echo "compiz --replace ccp --sm-disable &" > /usr/bin/compiz-fusion
 ```
 
 **Обратите внимание:** Если строка не сработает - убедитесь, что пакет "fusion-icon" установлен и далее, в качестве замены, выполните следующий код:
-
 ```
 $ echo "fusion-icon &" > /usr/bin/compiz-fusion
 
 ```
-
 Прежде чем использовать эту строку - убедитесь в правильности выполнения всех предыдущих действий.
 
 Убедитесь, что файл `/usr/bin/compiz-fusion` является исполняемым (+x).
@@ -284,7 +282,7 @@ $ chmod a+x /usr/bin/compiz-fusion
 
 ### GNOME
 
-Если установлен [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)"), понадобится либо включить Fallback Mode, либо удалить _gnome-shell_.
+Если установлен [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)"), понадобится либо включить Fallback Mode, либо удалить *gnome-shell*.
 
 **Обратите внимание:** Если выбрать сессию Compiz/Cairo-Dock как описано ниже, режим Fallback Mode, возможно, и не понадобится
 
@@ -371,9 +369,9 @@ gconftool-2 --set -t string /desktop/gnome/applications/window_manager/default /
 
 Отредактируйте файл `/usr/share/gnome-session/sessions/gnome-fallback.session`:
 
-В строке **RequiredComponents** замените свой менеджер окон (gnome-shell,metacity...) на _compiz_.
+В строке **RequiredComponents** замените свой менеджер окон (gnome-shell,metacity...) на *compiz*.
 
-Замените строку _DefaultProvider-windowmanager_ на _DefaultProvider-windowmanager=compiz_
+Замените строку *DefaultProvider-windowmanager* на *DefaultProvider-windowmanager=compiz*
 
 Вот часть моего `gnome-fallback.session`:
 
@@ -768,11 +766,11 @@ compiz-manager
 
 ### Использование gtk-window-decorator
 
-Для того, чтобы использовать gtk-window-decorator нужно установить пакет _compiz-decorator-gtk_ и, в качестве декоратора окон, вместо "Emerald" выбрать "GTK Window Decorator", сам выбор можно осуществить с помощью fusion-icon или любой другой программы, которая используется вами для настройки compiz.
+Для того, чтобы использовать gtk-window-decorator нужно установить пакет *compiz-decorator-gtk* и, в качестве декоратора окон, вместо "Emerald" выбрать "GTK Window Decorator", сам выбор можно осуществить с помощью fusion-icon или любой другой программы, которая используется вами для настройки compiz.
 
 ### gconf: Дополнительные Настройки Compiz
 
-Для получения от Compiz дополнительных результатов можно воспользоваться _gconf-editor_:
+Для получения от Compiz дополнительных результатов можно воспользоваться *gconf-editor*:
 
 ```
 $ gconf-editor

@@ -92,7 +92,7 @@
 
 $ alsamixer-c 0
 
-**Обратите внимание:** alsamixer не скажет Вам, какое устройство вывода установлено как значение по умолчанию. Одна из возможных причин отсутствия звука после установки состоит в том, что PulseAudio обнаруживает неправильное устройство вывода как значение по умолчанию. Установите [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) и проверьте, существует ли какой-нибудь вывод на панели pavucontrol, например, при проигрывании файла _.wav_.
+**Обратите внимание:** alsamixer не скажет Вам, какое устройство вывода установлено как значение по умолчанию. Одна из возможных причин отсутствия звука после установки состоит в том, что PulseAudio обнаруживает неправильное устройство вывода как значение по умолчанию. Установите [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) и проверьте, существует ли какой-нибудь вывод на панели pavucontrol, например, при проигрывании файла *.wav*.
 
 ### Приложение с отключенным звуком
 
@@ -130,7 +130,6 @@ $ pacmd set-sink-input-volume <index> 0x10000
 Это вызвано тем, что PulseAudio использует "плоскую регулировку громкости" (flat-volumes) по умолчанию, вместо относительной регулировки громкости, по сравнению с абсолютной общей регулировкой громкостью. Если это поведение вызывает неудобства, относительная громкость может быть включена путем отключения плоской громкости в файле настроек демона PulseAudio:
 
  `/etc/pulse/daemon.conf or ~/.config/pulse/daemon.conf` 
-
 ```
 flat-volumes = no
 
@@ -157,7 +156,6 @@ $ pulseaudio --start
 Добавьте следующее:
 
  `/etc/pulseaudio/default.pa` 
-
 ```
 load-module module-alsa-sink sink_name=delta_out device=hw:M2496 format=s24le channels=10 channel_map=left,right,aux0,aux1,aux2,aux3,aux4,aux5,aux6,aux7
 load-module module-alsa-source source_name=delta_in device=hw:M2496 format=s24le channels=12 channel_map=left,right,aux0,aux1,aux2,aux3,aux4,aux5,aux6,aux7,aux8,aux9
@@ -173,7 +171,6 @@ set-default-source delta_in
 Если звук не играет, когда громкость PulseAudio регулируется ниже определенного уровня, попробуйте установить `ignore_dB=1` в `/etc/pulse/default.pa`:
 
  `/etc/pulse/default.pa` 
-
 ```
 load-module module-udev-detect ignore_dB=1
 
@@ -186,7 +183,6 @@ load-module module-udev-detect ignore_dB=1
 Если у вас низкая громкость звука, на внутреннем микрофоне ноутбука, попытайтесь установить:
 
  `/etc/pulse/default.pa` 
-
 ```
 set-source-volume 1 300000
 
@@ -194,10 +190,9 @@ set-source-volume 1 300000
 
 ### Клиенты изменяют основной выход звука (т. е. переход громкости к 100% после запущенного приложения)
 
-Если изменение громкости в конкретных приложениях или просто запуск приложения изменяет громкость воспроизведения, это происходит скорее всего из-за режима "плоская громкость" в PulseAudio. Перед отключением, пользователи KDE должны попытаться снизить громкость их системы уведомлений в _System Settings -> Application and System Notifications -> Manage Notifications_ ( _Системные настройки -> приложения и уведомлений системы -> Управление Уведомлениями_ на вкладке _Настройки воспроизведения_), на что-то разумное. Тут не поможет изменение _звуков событий_, громкости в KMix или другом приложении громкости микшера. Это должно заставить режим "плоской громкости" работать как задумано, если он не работает, некоторые другие приложения, скорее всего, запрашивают громкость 100%, когда что-то воспроизводят. Если все остальное не помогает, вы можете попробовать отключить "плоскую громкость":
+Если изменение громкости в конкретных приложениях или просто запуск приложения изменяет громкость воспроизведения, это происходит скорее всего из-за режима "плоская громкость" в PulseAudio. Перед отключением, пользователи KDE должны попытаться снизить громкость их системы уведомлений в *System Settings -> Application and System Notifications -> Manage Notifications* ( *Системные настройки -> приложения и уведомлений системы -> Управление Уведомлениями* на вкладке *Настройки воспроизведения*), на что-то разумное. Тут не поможет изменение *звуков событий*, громкости в KMix или другом приложении громкости микшера. Это должно заставить режим "плоской громкости" работать как задумано, если он не работает, некоторые другие приложения, скорее всего, запрашивают громкость 100%, когда что-то воспроизводят. Если все остальное не помогает, вы можете попробовать отключить "плоскую громкость":
 
  `/etc/pulse/daemon.conf` 
-
 ```
 flat-volumes = no
 
@@ -331,7 +326,7 @@ arecord -l
 
 ```
 
-Вам возможно нужно скорректировать настройки. Микрофон и аудиоразъем являются дуплексными. Установите настройки внутреннего аудио pavucontrol в _Analog Stereo Duplex_ (_Аналоговому Дуплексу Стерео_).
+Вам возможно нужно скорректировать настройки. Микрофон и аудиоразъем являются дуплексными. Установите настройки внутреннего аудио pavucontrol в *Analog Stereo Duplex* (*Аналоговому Дуплексу Стерео*).
 
 ### Нет микрофона на Acer Aspire One
 
@@ -346,7 +341,6 @@ arecord -l
 Для этого потребуются установленые и необходимые пакеты [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils):
 
  `$ arecord —list-devices` 
-
 ```
 
 **** List of CAPTURE Hardware Devices ****
@@ -364,7 +358,6 @@ card 0: Intel [HDA Intel], device 2: ALC888 Analog [ALC888 Analog]
 #### Определить частоту дискретизации звуковой карты (2/5)
 
  `arecord -f dat -r 60000 -D hw:0,0 -d 5 test.wav` 
-
 ```
 "Recording WAVE 'test.wav' : Signed 16 bit Little Endian, Rate 60000 Hz, Stereo
 Warning: rate is not accurate (requested = 60000Hz, **got = 96000Hz**)
@@ -438,7 +431,6 @@ $ aplay test-mic.wav
 2\. Добавить правило переназначения в `/etc/pulse/default.pa`, используйте имя, которое Вы нашли предыдущей командой, здесь мы будем использовать **alsa_input.pci-0000_00_14.2.analog-stereo** в качестве примера:
 
  `/etc/pulse/default.pa` 
-
 ```
 ### Remap microphone to mono
 load-module module-remap-source master=alsa_input.pci-0000_00_14.2.analog-stereo master_channel_map=front-left,front-right channels=2 channel_map=mono,mono
@@ -466,7 +458,6 @@ load-module module-remap-source master=alsa_input.pci-0000_00_14.2.analog-stereo
 Arch не загружает по умолчанию модуль аннулирования эха Pulseaudio, поэтому, мы должны включить его `/etc/pulse/default.pa`. Сначала Вы можете проверить, пресутствует ли модуль с помощью `pacmd` и вводом `list-modules`. Если Вы не можете найти строку {`list-modules` Вы должны добавить
 
  `/etc/pulse/default.pa ` 
-
 ```
 ###  Включить отмену Эха/Шума
 load-module module-echo-cancel
@@ -562,7 +553,6 @@ device.buffering.fragment_size = "384000" => 384000/1411200 = 0.272108843537s = 
 #### Редактирование конфигурационного файла PulseAudio (3/4)
 
  `/etc/pulse/daemon.conf` 
-
 ```
 ; default-fragments = X
 ; default-fragment-size-msec = Y
@@ -572,7 +562,6 @@ device.buffering.fragment_size = "384000" => 384000/1411200 = 0.272108843537s = 
 В предыдущем шаге мы рассчитали размер фрагмента. Узнать количество фрагментов также просто: buffer_size/fragment_size. Ответ в нашем случае будет равен (`544/272`) `2`:
 
  `/etc/pulse/daemon.conf` 
-
 ```
 ; default-fragments = **2**
 ; default-fragment-size-msec = **272**
@@ -593,7 +582,6 @@ $ pulseaudio --start
 Канал низкочастотных эфектов (НЭ) не ремикширован по-умолчанию. Чтобы включить его, нужно изменить следующее в `/etc/pulse/daemon.conf`:
 
  `/etc/pulse/daemon.conf` 
-
 ```
 enable-lfe-remixing = yes
 
@@ -604,7 +592,6 @@ enable-lfe-remixing = yes
 Эта проблема возникает из-за неправильного размера буфера. Сначала убедитесь, что переменные {ic|default-fragments}} и `default-fragment-size-msec` не установлены на нестандартные значения в файле `/etc/pulse/daemon.conf`. Если это не помогло, попробуйте установить эти переменные на следующие значения:
 
  `/etc/pulse/daemon.conf` 
-
 ```
 default-fragments = 5
 default-fragment-size-msec = 2
@@ -635,7 +622,6 @@ default-fragment-size-msec = 2
 The monitor is connected via HDMI/DisplayPort, and the audio jack is plugged in the headphone jack of the monitor, but PulseAudio insists that it is unplugged:
 
  `pactl list sinks` 
-
 ```
 ...
 hdmi-output-0: HDMI / DisplayPort (priority: 5900, not available)
@@ -662,7 +648,6 @@ Make sure any applications using the pcm or dsp files are shut down before resta
 If you have trouble with some applications (eg. Teamspeak, Mumble) interrupting sound output of already running applications (eg. Deadbeaf), you can solve this by commenting out the line `load-module module-role-cork` in `/etc/pulse/default.pa` like shown below:
 
  `/etc/pulse/default.pa` 
-
 ```
 ### Cork music/video streams when a phone stream is active
 # load-module module-role-cork
@@ -682,16 +667,14 @@ pulseaudio --start
 This may be caused by settings in `~/.asoundrc` overriding the system wide settings in `/etc/asound.conf`. This can be prevented by commenting out the last line of `~/.asoundrc` like so:
 
  `~/.asoundrc` 
-
 ```
-# </home/_yourusername_/.asoundrc.asoundconf>
+# </home/*yourusername*/.asoundrc.asoundconf>
 
 ```
 
 Maybe some program is monopolizing the audio device:
 
  `# fuser -v /dev/snd/*` 
-
 ```
                      USER       PID  ACCESS COMMAND
 /dev/snd/controlC0:  root        931 F....  timidity
@@ -710,10 +693,9 @@ If it doesn't help or you see nothing in the output, deleting the [timidity++](h
 
 Another reason is [FluidSynth](/index.php/FluidSynth "FluidSynth") conflicting with PulseAudio as discussed in [this thread](https://bbs.archlinux.org/viewtopic.php?id=154002). One solution is to remove the package [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth).
 
-Alternatively you could modify the _fluidsynth_ configuration file `/etc/conf.d/fluidsynth` and change the driver to PulseAudio, then restart _fluidsynth_ and PulseAudio:
+Alternatively you could modify the *fluidsynth* configuration file `/etc/conf.d/fluidsynth` and change the driver to PulseAudio, then restart *fluidsynth* and PulseAudio:
 
  `/etc/conf.d/fluidsynth` 
-
 ```
 AUDIO_DRIVER=pulseaudio
 OTHER_OPTS='-m alsa_seq-r 48000'
@@ -768,9 +750,7 @@ Create a pulseadio udev rule.
 **Note:** This is only an example for Asus Xonar Essence STX. Read [udev](/index.php/Udev "Udev") to find out the correct values.
 
 **Note:** Your configuration file should have lower number than the original PulseAudio rule to take effect.
-
  `/usr/lib/udev/rules.d/90-pulseaudio-Xonar-STX.rules` 
-
 ```
 ACTION=="change", SUBSYSTEM=="sound", KERNEL=="card*", \
 ATTRS{subsystem_vendor}=="0x1043", ATTRS{subsystem_device}=="0x835c", ENV{PULSE_PROFILE_SET}="asus-xonar-essence-stx.conf" 
@@ -782,9 +762,7 @@ Now, create a configuration file. If you bother, you can start from scratch and 
 To enable multiple sinks for Asus Xonar Essence STX you need only to add this in.
 
 **Note:** `asus-xonar-essence-stx.conf` also includes all code/mappings from `default.conf`.
-
  `/usr/share/pulseaudio/alsa-mixer/profile-sets/asus-xonar-essence-stx.conf` 
-
 ```
 [Profile analog-stereo+iec958-stereo]
 description = Analog Stereo Duplex + Digital Stereo Output
@@ -812,7 +790,6 @@ $ pacmd list-cards
 Then edit the config to add the profile
 
  `~/.config/pulse/default.pa` 
-
 ```
 ## Replace with your card name and the profile you want to activate
 set-card-profile alsa_card.pci-0000_00_1b.0 output:iec958-stereo+input:analog-stereo
@@ -835,7 +812,6 @@ bluez5-util.c: GetManagedObjects() failed: org.freedesktop.DBus.Error.ServiceUnk
 Чтобы отключить поддержку Bluetooth в PulseAudio, убедитесь, что следующие строчки закомментированы в используемом файле конфигурации (`~/.config/pulse/default.pa` или `/etc/pulse/default.pa`):
 
  `~/.config/pulse/default.pa` 
-
 ```
 ### Automatically load driver modules for Bluetooth hardware
 #.ifexists module-bluetooth-policy.so
@@ -855,7 +831,6 @@ bluez5-util.c: GetManagedObjects() failed: org.freedesktop.DBus.Error.ServiceUnk
 Для отключения загрузки модуля `module-suspend-on-idle` закомментируйте следующую строчку в используемом файле конфигурации (`~/.config/pulse/default.pa` или `/etc/pulse/default.pa`):
 
  `~/.config/pulse/default.pa` 
-
 ```
 ### Automatically suspend sinks/sources that become idle for too long
 #load-module module-suspend-on-idle
@@ -869,7 +844,6 @@ bluez5-util.c: GetManagedObjects() failed: org.freedesktop.DBus.Error.ServiceUnk
 Добавьте следующие строчки в файл конфигурации:
 
  `/etc/pulse/default.pa` 
-
 ```
 # automatically switch to newly-connected devices
 load-module module-switch-on-connect
@@ -883,7 +857,6 @@ load-module module-switch-on-connect
 Начиная с PulseAudio 2.99 и bluez 4.101, вы должны **избегать** использования интерфейса Socket. НЕ используйте:
 
  `/etc/bluetooth/audio.conf` 
-
 ```
 [General]
 Enable=Socket
@@ -903,18 +876,17 @@ If Flash audio is lagging, you may try to have Flash access ALSA directly. See [
 ### Ошибка с правами доступа
 
  `pulseaudio --start` 
-
 ```
 E: [autospawn] core-util.c: Failed to create secure directory (/run/user/1000/pulse): Operation not permitted
 W: [autospawn] lock-autospawn.c: Cannot access autospawn lock.
 E: [pulseaudio] main.c: Failed to acquire autospawn lock
 ```
 
-Известные програмы меняют права доступа для `/run/user_user id_/pulse` когда используется [Polkit](/index.php/Polkit "Polkit"):
+Известные програмы меняют права доступа для `/run/user*user id*/pulse` когда используется [Polkit](/index.php/Polkit "Polkit"):
 
 *   [sakis3g](https://aur.archlinux.org/packages/sakis3g/)
 
-В качестве обходного пути можно использовать [gksu](https://www.archlinux.org/packages/?name=gksu) или [kdesu](https://www.archlinux.org/packages/?name=kdesu) в [desktop entry](/index.php/Desktop_entry "Desktop entry") или добавить `_username_ ALL=NOPASSWD: /usr/bin/_program_name_` в [sudoers](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0 "Sudo (Русский)") для запуска [sudo](https://www.archlinux.org/packages/?name=sudo) или `gksudo` без запроса пароля. Другой способ лежит через раскомментирование и установки `daemonize = yes` в `/etc/pulse/daemon.conf`.
+В качестве обходного пути можно использовать [gksu](https://www.archlinux.org/packages/?name=gksu) или [kdesu](https://www.archlinux.org/packages/?name=kdesu) в [desktop entry](/index.php/Desktop_entry "Desktop entry") или добавить `*username* ALL=NOPASSWD: /usr/bin/*program_name*` в [sudoers](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0 "Sudo (Русский)") для запуска [sudo](https://www.archlinux.org/packages/?name=sudo) или `gksudo` без запроса пароля. Другой способ лежит через раскомментирование и установки `daemonize = yes` в `/etc/pulse/daemon.conf`.
 Также стоит посмотреть [эту ветку форума (англ)](https://bbs.archlinux.org/viewtopic.php?id=135955).
 
 ### Audacity
@@ -982,7 +954,6 @@ restore_alsa &
 Sometimes you may wish to temporarily disable Pulse. In order to do so you will have to prevent Pulse from restarting after being killed.
 
  `~/.config/pulse/client.conf` 
-
 ```
 # Disable autospawning the PulseAudio daemon
 autospawn = no
@@ -1036,10 +1007,9 @@ $ echo 100000 > /proc/sys/fs/inotify/max_user_watches
 
 ```
 
-For permanent use save settings in the _99-sysctl.conf_ file:
+For permanent use save settings in the *99-sysctl.conf* file:
 
  `/etc/sysctl.d/99-sysctl.conf` 
-
 ```
 # Increase inotify max watchs per user
 fs.inotify.max_user_watches = 100000
@@ -1049,7 +1019,7 @@ fs.inotify.max_user_watches = 100000
 
 **See also**
 
-*   [proc_sys_fs_inotify](http://www.linuxinsight.com/proc_sys_fs_inotify.html) and [dnotify, inotify](http://lwn.net/Articles/604686/)- more details about _inotify/max_user_watches_
+*   [proc_sys_fs_inotify](http://www.linuxinsight.com/proc_sys_fs_inotify.html) and [dnotify, inotify](http://lwn.net/Articles/604686/)- more details about *inotify/max_user_watches*
 *   [reasonable amount of inotify watches with Linux](http://stackoverflow.com/questions/535768/what-is-a-reasonable-amount-of-inotify-watches-with-linux?answertab=votes#tab-top)
 *   [inotify](http://linux.die.net/man/7/inotify) - man page
 
@@ -1077,7 +1047,6 @@ Known issue: [https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/494099](
 To fix this, must edit: `/etc/pulse/daemon.conf` and enable `enable-lfe-remixing` :
 
  `/etc/pulse/daemon.conf` 
-
 ```
 enable-lfe-remixing = yes
 
@@ -1106,7 +1075,7 @@ Afterwards, you need to add your user to the `pulse-rt` group:
 
 ### pactl "invalid option" error with negative percentage arguments
 
-`pactl` commands that take negative percentage arguments will fail with an 'invalid option' error. Use the standard shell '--' pseudo argument to disable argument parsing before the negative argument. _e.g._ `pactl set-sink-volume 1 -- -5%`.
+`pactl` commands that take negative percentage arguments will fail with an 'invalid option' error. Use the standard shell '--' pseudo argument to disable argument parsing before the negative argument. *e.g.* `pactl set-sink-volume 1 -- -5%`.
 
 ### Fallback device is not respected
 
@@ -1121,7 +1090,6 @@ PulseAudio does not have a true default device. Instead it uses a ["fallback"](h
 3\. Disable stream device reading. This may be not wanted when using different soundcards with different applications.
 
  `/etc/pulse/default.pa` 
-
 ```
 load-module module-stream-restore restore_device=false
 

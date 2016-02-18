@@ -24,7 +24,7 @@ You can start your scripts or applications as daemons, see [Daemon](/index.php/D
 
 ### Systemd
 
-_systemd_ is the default init framework, replacing initscripts. The services which are started by _systemd_ can be found in the subfolders of `/etc/systemd/system/`. Services can be enabled using the `systemctl` command. For more information about _systemd_ and how to write autostart scripts for it, see at [systemd](/index.php/Systemd "Systemd"). To autostart scripts for specific users, see [systemd/User](/index.php/Systemd/User "Systemd/User").
+*systemd* is the default init framework, replacing initscripts. The services which are started by *systemd* can be found in the subfolders of `/etc/systemd/system/`. Services can be enabled using the `systemctl` command. For more information about *systemd* and how to write autostart scripts for it, see at [systemd](/index.php/Systemd "Systemd"). To autostart scripts for specific users, see [systemd/User](/index.php/Systemd/User "Systemd/User").
 
 ## Cron
 

@@ -65,7 +65,7 @@
     *   [4.32 IMAP message cache](#IMAP_message_cache)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Backspace does not work in Mutt](#Backspace_does_not_work_in_Mutt)
-    *   [5.2 The _change-folder_ function always prompt for the same mailbox](#The_change-folder_function_always_prompt_for_the_same_mailbox)
+    *   [5.2 The *change-folder* function always prompt for the same mailbox](#The_change-folder_function_always_prompt_for_the_same_mailbox)
     *   [5.3 I cannot change folder when using Mutt read-only (Mutt -R)](#I_cannot_change_folder_when_using_Mutt_read-only_.28Mutt_-R.29)
     *   [5.4 Error sending message, child exited 127 (Exec error.).](#Error_sending_message.2C_child_exited_127_.28Exec_error..29.)
     *   [5.5 Character encoding problems](#Character_encoding_problems)
@@ -161,18 +161,18 @@ set folder=imaps://imap.gmail.com/
 
 ```
 
-It should be noted that for several accounts, it is best practice to use different folders -- e.g. for _account-hook_. If you have several Gmail account, use
+It should be noted that for several accounts, it is best practice to use different folders -- e.g. for *account-hook*. If you have several Gmail account, use
 
 ```
 set folder=imaps://username@imap.gmail.com/
 
 ```
 
-instead, where your account is _username@gmail.com_. This way it will be possible to distinguish the different folders. Otherwise it would lead to authentication errors.
+instead, where your account is *username@gmail.com*. This way it will be possible to distinguish the different folders. Otherwise it would lead to authentication errors.
 
 ##### spoolfile
 
-The spoolfile is the folder where your (unfiltered) e-mail arrives. Most e-mail services conventionally names it _INBOX_. You can now use '=' or '+' as a substitution for the full `folder` path that was configured above. For example:
+The spoolfile is the folder where your (unfiltered) e-mail arrives. Most e-mail services conventionally names it *INBOX*. You can now use '=' or '+' as a substitution for the full `folder` path that was configured above. For example:
 
 ```
 set spoolfile=+INBOX
@@ -198,7 +198,7 @@ set imap_check_subscribed
 
 These two versions are equivalent if you want to subscribe to all folders. So the second method is much more convenient, but the first one gives you more flexibility. Also, newer Mutt versions are configured by default to include a macro bound to the 'y' key which will allow you to change to any of the folders listed under mailboxes.
 
-If you do not set this variable, the _spoolfile_ will be used by default. This variable is also important for the [sidebar](#Mutt-Sidebar).
+If you do not set this variable, the *spoolfile* will be used by default. This variable is also important for the [sidebar](#Mutt-Sidebar).
 
 ##### Summary
 
@@ -319,7 +319,6 @@ The `sendmail` variable in your `muttrc` determines the program and arguments us
 For example, if using [msmtp](/index.php/Msmtp "Msmtp"):
 
  `muttrc` 
-
 ```
 set realname='Disgruntled Kangaroo'
 
@@ -364,7 +363,7 @@ Well all you need is to write account-specific parameters to their respective fi
 
 **Warning:** When one account is setting a variable that is not specified for other accounts, you **must unset** it for them, otherwise configuration will overlap and you will most certainly experience unexpected behaviour.
 
-Mutt can handle this thanks to one of its most powerful features: hooks. Basically a hook is a command that gets executed before a specific action. There are several hooks available. For multiple accounts, you must use account-hooks _and_ folder-hooks.
+Mutt can handle this thanks to one of its most powerful features: hooks. Basically a hook is a command that gets executed before a specific action. There are several hooks available. For multiple accounts, you must use account-hooks *and* folder-hooks.
 
 *   Folder-hooks will run a command before switching folders. This is mostly useful to set the appropriate SMTP parameters when you are in a specific folder. For instance when you are in your work mailbox and you send a e-mail, it will automatically use your work account as sender.
 *   Account-hooks will run a command everytime Mutt calls a function related to an account, like IMAP syncing. It does not require you to switch to any folder.
@@ -382,7 +381,6 @@ The regex is the folder to be matched (or not if preceded by the !). The comman
 Let us give a full example:
 
  `.muttrc` 
-
 ```
 ## General options
 set header_cache = "~/.cache/mutt"
@@ -404,9 +402,7 @@ folder-hook *user@gmail.com/ 'source ~/.mutt/personal'
 folder-hook *user@gmail.com/Family 'set realname="Bob"'
 
 ```
-
  `.mutt/work` 
-
 ```
 ## Receive options.
 set imap_user=user@gmail.com
@@ -444,7 +440,7 @@ macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/work<enter><
 
 ```
 
-With the above shortcuts (or with the sidebar) you will find that changing folders (with `c` by default) is not contextual, _i.e._ it will not list the folders of the current mailbox, but of the one used the last time you changed folders. To make the behaviour more contextual, the trick is to press _=_ or _+_ for current mailbox. You can automate this with the following macro:
+With the above shortcuts (or with the sidebar) you will find that changing folders (with `c` by default) is not contextual, *i.e.* it will not list the folders of the current mailbox, but of the one used the last time you changed folders. To make the behaviour more contextual, the trick is to press *=* or *+* for current mailbox. You can automate this with the following macro:
 
 ```
 macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
@@ -469,10 +465,9 @@ If you do not understand this process have a look at [Wikipedia:Asymmetric crypt
 Create a file **in a secure environment** since it will contain your passwords for a couple of seconds:
 
  `~/.my-pwds` 
-
 ```
-set my_pw_personal = "_first password_"
-set my_pw_work = "_second password_"
+set my_pw_personal = "*first password*"
+set my_pw_work = "*second password*"
 ```
 
 **Note:** Remember that user defined variables **must** start with `my_`.
@@ -519,7 +514,6 @@ If you use external tools like OfflineIMAP and msmtp, you need to set up an agen
 If `enter-command` is available from the UI, it is possible to see the password unencrypted, which my be undesired if anybody else than you has access to your session while Mutt is running. You may want to disable it for this reason. As a consequence, every command that the user intends to use must be bound to a key in advance, otherwise it will never be accessible.
 
  `.muttrc` 
-
 ```
  bind generic,alias,attach,browser,editor,index,compose,pager,pgp,postpone ':' noop
 
@@ -538,10 +532,9 @@ If you have any Mutt specific questions, feel free to ask in [the irc channel](/
 
 ### Key bindings
 
-The default key bindings are quite far from the more common Emacs-like or Vi-like bindings. You can customize them to your preference. Mutt has a different set of bindings for the pager, the index, the attachment view, etc. Thus you need to specify which _map_ you want to modify when you bind a key. You can review the list of commands and key bindings from Mutt's help page (default key: `?`). Example of Vi-like bindings:
+The default key bindings are quite far from the more common Emacs-like or Vi-like bindings. You can customize them to your preference. Mutt has a different set of bindings for the pager, the index, the attachment view, etc. Thus you need to specify which *map* you want to modify when you bind a key. You can review the list of commands and key bindings from Mutt's help page (default key: `?`). Example of Vi-like bindings:
 
  `muttrc` 
-
 ```
 bind pager j next-line
 bind pager k previous-line
@@ -603,7 +596,7 @@ set edit_headers=yes
 
 Mutt also features a special function `my_hdr` for customizing your header. Yes, it is named just like a variable, but in fact it is a function.
 
-You can clear it completely, which you _should_ do when switching accounts with different headers, otherwise they will overlap:
+You can clear it completely, which you *should* do when switching accounts with different headers, otherwise they will overlap:
 
 ```
 unmy_hdr *
@@ -656,7 +649,7 @@ set signature="path/to/sig/file"
 
 #### Random signature
 
-You can use _fortune_ (package [fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod)) to add a random signature to Mutt.
+You can use *fortune* (package [fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod)) to add a random signature to Mutt.
 
 Create a fortune file and then add the following line to your .muttrc:
 
@@ -804,10 +797,9 @@ Also, in muttrc file, you can specify the line to start editing so that you will
 
 ### Mutt and Emacs
 
-Emacs has a _mail_ and a _message_ major mode. To switch to mail-mode automatically when Emacs is called from Mutt, you can add the following to your `.emacs`:
+Emacs has a *mail* and a *message* major mode. To switch to mail-mode automatically when Emacs is called from Mutt, you can add the following to your `.emacs`:
 
  `.emacs` 
-
 ```
 ;; Mutt support.
 (setq auto-mode-alist (append '(("/tmp/mutt.*" . mail-mode)) auto-mode-alist))
@@ -817,7 +809,6 @@ Emacs has a _mail_ and a _message_ major mode. To switch to mail-mode automatica
 If you usually run Emacs daemon, you may want Mutt to connect to it. Add this to your `.muttrc`:
 
  `.muttrc` 
-
 ```
 set editor="emacsclient -a \"\" -t"
 
@@ -861,9 +852,11 @@ mono index bold ~D
 ## Highlights inside the body of a message.
 
 ## URLs
-color body brightgreen black "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
+color body brightgreen black "(http|ftp|news|telnet|finger)://[^ \"\t\r
+]*"
 color body brightgreen black "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
-mono body bold "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
+mono body bold "(http|ftp|news|telnet|finger)://[^ \"\t\r
+]*"
 mono body bold "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
 
 ## Email addresses.
@@ -955,19 +948,17 @@ The "columns" of the index can be configured through the `index_format` variable
 To change the columns according to the current folder, we need to use a hook:
 
  `muttrc` 
-
 ```
 folder-hook   *[sS]ent* 'set index_format="%2C | %Z [%d] %-30.30t (%-4.4c) %?M?<%M> ?%s"'
 folder-hook ! *[sS]ent* 'set index_format="%2C | %Z [%d] %-30.30F (%-4.4c) %?M?<%M> ?%s"'
 
 ```
 
-The exclamation mark means _everything that does not match the following regex_. Of course you can change the index_format following your taste, and the regular expression if the folder does not have _Sent_ not _sent_ in its name.
+The exclamation mark means *everything that does not match the following regex*. Of course you can change the index_format following your taste, and the regular expression if the folder does not have *Sent* not *sent* in its name.
 
 Let's centralize the settings, it will simplify future tweaking.
 
  `muttrc` 
-
 ```
 set my_index_format_pre='set index_format="%2C | %Z [%d] %-30.30'
 set my_index_format_post=' (%-4.4c) %?M?<%M> ?%s"'
@@ -984,7 +975,6 @@ If you resize the window, the subject might get truncated while there is still u
 Example using the above folder-hook and a sidebar width of 24:
 
  `muttrc` 
-
 ```
 ## From field gets 30% of remaining space, Subject gets 70%.
 ## Remaining space is the total width minus the other fields (35), minus the sidebar (24)
@@ -996,12 +986,11 @@ folder-hook ! .*[sS]ent.* "$my_index_format_pre"F"$my_index_format_post"
 
 ```
 
-We _must_ set the variables `my_col_from` and `my_col_from` from within the hooks. Otherwise, the column values will not get re-computed.
+We *must* set the variables `my_col_from` and `my_col_from` from within the hooks. Otherwise, the column values will not get re-computed.
 
 We can add a binding to force re-computing the index format without changing folder:
 
  `muttrc` 
-
 ```
 macro index,pager \CL "<enter-command>$my_index_format_pre"F"$my_index_format_post<enter><redraw-screen>"
 
@@ -1011,7 +1000,7 @@ macro index,pager \CL "<enter-command>$my_index_format_pre"F"$my_index_format_po
 
 #### Address aliases
 
-_Aliases_ is the way Mutt manages contacts. An alias is **nickname [longname] <address>**.
+*Aliases* is the way Mutt manages contacts. An alias is **nickname [longname] <address>**.
 
 *   The **nickname** is what you will type in Mutt to get your contact address. One word only, and should be easy to remember.
 *   The **longname** is optional. It may be several words.
@@ -1052,7 +1041,6 @@ alias nickname Long Name <my-friend@domain.tld>
 Abook is specifically designed to be interfaced with Mutt, so that it can serve as a full, more featured replacement of Mutt internal aliases. If you want to use Abook instead of aliases, remove the aliases configuration in `.muttrc` and add this:
 
  `muttrc` 
-
 ```
 ## Abook
 set query_command= "abook --mutt-query '%s'"
@@ -1081,7 +1069,6 @@ See `~/.goobookrc` for configuration options. At a minimum, you will need to ent
 If you want to use Goobook instead of aliases, remove any alias configuration in `.muttrc` and add:
 
  `muttrc` 
-
 ```
 ## GooBook
 set query_command="goobook query '%s'"
@@ -1171,12 +1158,10 @@ This starts Mutt in read-only mode, and you can browse other emails at your conv
 **Note:** When changing folders (with `c` or `y`) the read-only mode is not preserved. Instead `Esc c` has to be used.
 
 **Tip:** This solution calls for a bit of typing, so it is suitable to bind the following command to a keyboard shortcut (see [Extra Keyboard Keys](/index.php/Extra_Keyboard_Keys "Extra Keyboard Keys") for details):
-
 ```
 $TERMINAL -e mutt -R
 
 ```
-
 where `$TERMINAL` is your terminal.
 
 ### Archive treated e-mails
@@ -1216,7 +1201,7 @@ bind index,pager \CO sidebar-open
 
 ```
 
-**Note:** You _must_ set the `mailboxes` variables or the `imap_check_subscribed` to tell the sidebar which folder should be displayed. See the [mailboxes](#mailboxes) section.
+**Note:** You *must* set the `mailboxes` variables or the `imap_check_subscribed` to tell the sidebar which folder should be displayed. See the [mailboxes](#mailboxes) section.
 
 If you use the `imap_check_subscribed` option to list all your folders, they will appear in an uncontrollable order in the sidebar. Fix it with
 
@@ -1299,7 +1284,6 @@ alias mutt='cd ~/attachments && mutt'
 The official Mutt package is compiled with GPGME support. If you have a pair of keys in your [GnuPG](/index.php/GnuPG "GnuPG") keyring, then it suffices to add this:
 
  `.muttrc` 
-
 ```
 set crypt_use_gpgme=yes
 
@@ -1308,7 +1292,6 @@ set crypt_use_gpgme=yes
 For convenience, you can set further PGP settings:
 
  `.muttrc` 
-
 ```
 set crypt_replysign=yes
 set crypt_replysignencrypted=yes
@@ -1341,7 +1324,6 @@ set pager_stop=yes
 By default Mutt will ask to confirm the recipient and the subject when you reply to an e-mail. It will also ask if you want to include the original mail in your answer. If you assume you will always stick to the default values, you can set up Mutt to skip these questions:
 
  `muttrc` 
-
 ```
 set fast_reply=yes
 set include=yes
@@ -1366,7 +1348,6 @@ The default sort order is by date. Use the `sort-mailbox` command (default key: 
 In the following example, threads are sorted according to the date of their last e-mail.
 
  `muttrc` 
-
 ```
 set sort=threads
 set sort_aux=last-date-received
@@ -1380,7 +1361,6 @@ When using the built-in IMAP support, e-mails are fetched in memory by default. 
 Alternatively, you can ask Mutt to store all fetched messages on disk:
 
  `muttrc` 
-
 ```
 set message_cachedir=~/.cache/mutt/messages
 
@@ -1391,7 +1371,6 @@ set message_cachedir=~/.cache/mutt/messages
 If you want to purge the cache from its oldest e-mails exceeding a limit of, say, 50MB, you can use a script like the following:
 
  `~/.mutt/purgecache.sh` 
-
 ```
 #!/bin/sh
 
@@ -1414,7 +1393,6 @@ EOF
 and call it on startup:
 
  `muttrc` 
-
 ```
 set message_cachedir=~/.cache/mutt/messages
 source "~/.mutt/purgecache.sh '$message_cachedir'|"
@@ -1450,7 +1428,7 @@ $ tic -x termbs.src
 
 ```
 
-### The _change-folder_ function always prompt for the same mailbox
+### The *change-folder* function always prompt for the same mailbox
 
 This is not a bug, this is actually an intended behaviour. See the [multiple accounts section](#Multiple_accounts) for a workaround.
 

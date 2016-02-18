@@ -1,6 +1,6 @@
 From the [project web page](http://support.google.com/earth/bin/answer.py?hl=en&answer=176145):
 
-_"Google Earth allows you to travel the world through a virtual globe and view satellite imagery, maps, terrain, 3D buildings, and much more. With Google Earth's rich, geographical content, you are able to experience a more realistic view of the world. You can fly to your favorite place, search for businesses and even navigate through directions."_
+*"Google Earth allows you to travel the world through a virtual globe and view satellite imagery, maps, terrain, 3D buildings, and much more. With Google Earth's rich, geographical content, you are able to experience a more realistic view of the world. You can fly to your favorite place, search for businesses and even navigate through directions."*
 
 ## Contents
 
@@ -43,7 +43,7 @@ enableTips=false
 
 #### No new line at the end of `~/.drirc`
 
-This can cause a crash with _-dri_ drivers:
+This can cause a crash with *-dri* drivers:
 
 ```
 $ echo >> ~/.drirc
@@ -83,7 +83,7 @@ If setting the `_attempt_fix` variable on top of the [google-earth](https://aur.
 
 ### Graphical corruption
 
-Either refer to the [#Corrupt cache](#Corrupt_cache) section above or disable texture compression in _Tools > Options... > 3D View > Compress_.
+Either refer to the [#Corrupt cache](#Corrupt_cache) section above or disable texture compression in *Tools > Options... > 3D View > Compress*.
 
 ### Earth shows nothing but yellow borders
 
@@ -98,4 +98,4 @@ The solution is to use the legacy [google-earth6](https://aur.archlinux.org/pack
 
 ### Excessive memory use
 
-Memory use can be controlled by limiting the maximum cache size in _Tools > Options... > Cache_, or by lowering the graphics settings in the _3D View_ tab.
+Memory use can be controlled by limiting the maximum cache size in *Tools > Options... > Cache*, or by lowering the graphics settings in the *3D View* tab.

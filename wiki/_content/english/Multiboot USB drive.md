@@ -101,10 +101,9 @@ For UEFI, the partition has to be the first one in an MBR partition table and fo
 
 For the purpose of multiboot USB drive it is easier to edit `grub.cfg` by hand instead of generating it. Alternatively, make the following changes in `/etc/grub.d/40_custom` or `/mnt/boot/grub/custom.cfg` and generate `/mnt/boot/grub/grub.cfg` using [grub-mkconfig](/index.php/GRUB#Generate_the_main_configuration_file "GRUB").
 
-As it is recommend to use a [persistent name](/index.php/Persistent_block_device_naming "Persistent block device naming") instead of `/dev/sd_xY_` to identify the partition on the USB drive where the image files are located, define a variable for convenience to hold the value. If the ISO images are on the same partition as grub, use the following to read the UUID at boot time:
+As it is recommend to use a [persistent name](/index.php/Persistent_block_device_naming "Persistent block device naming") instead of `/dev/sd*xY*` to identify the partition on the USB drive where the image files are located, define a variable for convenience to hold the value. If the ISO images are on the same partition as grub, use the following to read the UUID at boot time:
 
  `/mnt/boot/grub/grub.cfg` 
-
 ```
 # path to the partition holding ISO images (using UUID)
 probe -u $root --set=rootuuid
@@ -114,19 +113,17 @@ set imgdevpath="/dev/disk/by-uuid/$rootuuid"
 Or specify the UUID explicitly:
 
  `/mnt/boot/grub/grub.cfg` 
-
 ```
 # path to the partition holding ISO images (using UUID)
-set imgdevpath="/dev/disk/by-uuid/_UUID_value_"
+set imgdevpath="/dev/disk/by-uuid/*UUID_value*"
 ```
 
 Alternatively, use the device label instead of UUID:
 
  `/mnt/boot/grub/grub.cfg` 
-
 ```
 # path to the partition holding ISO images (using labels)
-set imgdevpath="/dev/disk/by-label/_label_value_"
+set imgdevpath="/dev/disk/by-label/*label_value*"
 ```
 
 The necessary UUID or label can be found using `lsblk -f`. Do not use the same label as the Arch ISO for the USB device, otherwise the boot process will fail.
@@ -195,7 +192,7 @@ menuentry '[loopback]archlinux-2014.12.01-dual.iso' {
 ##### archboot
 
 *   Initramfs framework: [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") (cmdline: [[4]](https://projects.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.8.txt#n212))
-*   Live framework: [archboot](/index.php/Archboot "Archboot") (cmdline: none? _RFD_)
+*   Live framework: [archboot](/index.php/Archboot "Archboot") (cmdline: none? *RFD*)
 *   Init system: [systemd](/index.php/Systemd "Systemd") (cmdline: [[5]](http://www.freedesktop.org/software/systemd/man/kernel-command-line.html))
 
 ```
@@ -226,7 +223,7 @@ menuentry "[loopback]CentOS-7.0-1406-x86_64-**DVD**" {
 
 **Tip:** The boot parameter of second stage install image location `/dev/sdb2` which is used by Anaconda, is similar to [fstab](/index.php/Fstab "Fstab")'s first field (fs_spec), could be replaced with one of:
 
-*   `/dev/sd_**xY**_`
+*   `/dev/sd***xY***`
 *   `LABEL=MYUSBSTICK`
 *   `UUID=00000000-0000-0000-0000-0000deadbeef`
 
@@ -253,9 +250,9 @@ menuentry '[loopback]CentOS-7.0-1406-x86_64-GnomeLive' {
 
 **Tip:** Since 2014.01.05[[11]](https://projects.archlinux.org/archiso.git/commit/?id=5cd02c704046cdb6974f6b10f0cac366eeebec0e), the Arch Linux monthly release contains clonezilla.
 
-*   Initramfs framework: [initramfs-tools](https://anonscm.debian.org/cgit/kernel/initramfs-tools.git/) (cmdline: _RFD_)
+*   Initramfs framework: [initramfs-tools](https://anonscm.debian.org/cgit/kernel/initramfs-tools.git/) (cmdline: *RFD*)
 *   Live framework: [Debian Live](http://live.debian.net/) (cmdline: [[12]](http://manpages.debian.org/cgi-bin/man.cgi?query=live-boot&apropos=0&sektion=7&manpath=Debian+unstable+sid&format=html&locale=en))
-*   Init system: [sysvinit](https://savannah.nongnu.org/projects/sysvinit) (cmdline: _RFD_)
+*   Init system: [sysvinit](https://savannah.nongnu.org/projects/sysvinit) (cmdline: *RFD*)
 
 ```
 menuentry "[loopback]clonezilla-live-2.2.3-25-amd64" {
@@ -270,9 +267,9 @@ menuentry "[loopback]clonezilla-live-2.2.3-25-amd64" {
 
 ##### Stock install medium
 
-*   Initramfs framework: [initramfs-tools](https://anonscm.debian.org/cgit/kernel/initramfs-tools.git/) (cmdline: _RFD_)
-*   Installation program: [debian-installer](https://wiki.debian.org/DebianInstaller#Development) (cmdline: _exists but missing online documentation_)
-*   Init system: [sysvinit](https://savannah.nongnu.org/projects/sysvinit) (cmdline: _RFD_)
+*   Initramfs framework: [initramfs-tools](https://anonscm.debian.org/cgit/kernel/initramfs-tools.git/) (cmdline: *RFD*)
+*   Installation program: [debian-installer](https://wiki.debian.org/DebianInstaller#Development) (cmdline: *exists but missing online documentation*)
+*   Init system: [sysvinit](https://savannah.nongnu.org/projects/sysvinit) (cmdline: *RFD*)
 
 **Tip:** To install debian from any stock install medium on a non-optical medium (e.g. usb stick, HDD), it's necessary to use a different initramfs instead of the default one on the installation medium which is located at `(loop)/install.amd/initrd.gz`. If you boot with the default one, the installer will unable to find or mount the proper iso image for installation. Please download the initramfs for hard disk installation from [an official mirror site](https://mirrors.kernel.org/debian/dists/stable/main/installer-amd64/current/images/hd-media/initrd.gz), put it in the same directory with the image file and give it a suitable name (`debian-7.8.0-amd64-DVD-1.hdd.initrd.gz` in this example).
 
@@ -288,9 +285,9 @@ menuentry '[loopback]debian-7.8.0-amd64-DVD-1' {
 
 ##### Live install medium
 
-*   Initramfs framework: [initramfs-tools](https://anonscm.debian.org/cgit/kernel/initramfs-tools.git/) (cmdline: _RFD_)
+*   Initramfs framework: [initramfs-tools](https://anonscm.debian.org/cgit/kernel/initramfs-tools.git/) (cmdline: *RFD*)
 *   Live framework: [Debian Live](http://live.debian.net/) (cmdline: [[13]](http://manpages.debian.org/cgi-bin/man.cgi?query=live-boot&apropos=0&sektion=7&manpath=Debian+unstable+sid&format=html&locale=en))
-*   Init system: [sysvinit](https://savannah.nongnu.org/projects/sysvinit) (cmdline: _RFD_)
+*   Init system: [sysvinit](https://savannah.nongnu.org/projects/sysvinit) (cmdline: *RFD*)
 
 ```
 menuentry '[loopback]debian-live-7.8.0-amd64-xfce-desktop' {
@@ -305,9 +302,9 @@ menuentry '[loopback]debian-live-7.8.0-amd64-xfce-desktop' {
 
 #### Elementary OS
 
-*   Initramfs framework: _RFD_
-*   Live framework or installation program: _RFD_
-*   Init system: upstart (cmdline: _RFD_)
+*   Initramfs framework: *RFD*
+*   Live framework or installation program: *RFD*
+*   Init system: upstart (cmdline: *RFD*)
 
 ```
 menuentry '[loopback]elementaryos-freya-amd64.20150411' {
@@ -355,8 +352,8 @@ menuentry '[loopback]Fedora-Live-Workstation-x86_64-21-5' {
 ##### Desktop LiveDVD
 
 *   Initramfs framework: [genkernel](https://wiki.gentoo.org/wiki/Genkernel) (cmdline: [[19]](https://gitweb.gentoo.org/proj/genkernel.git/tree/doc/genkernel.8.txt#n393))
-*   Live framework: [livecd-tools](https://gitweb.gentoo.org/proj/livecd-tools.git/) (cmdline: _RFD_)
-*   Init system: [OpenRC](https://wiki.gentoo.org/wiki/Project:OpenRC) (cmdline: _RFD_)
+*   Live framework: [livecd-tools](https://gitweb.gentoo.org/proj/livecd-tools.git/) (cmdline: *RFD*)
+*   Init system: [OpenRC](https://wiki.gentoo.org/wiki/Project:OpenRC) (cmdline: *RFD*)
 
 ```
 menuentry "[loopback]livedvd-amd64-multilib-20140826" {
@@ -371,9 +368,9 @@ menuentry "[loopback]livedvd-amd64-multilib-20140826" {
 
 #### GParted Live
 
-*   Initramfs framework: [initramfs-tools](https://anonscm.debian.org/cgit/kernel/initramfs-tools.git/) (cmdline: _RFD_)
+*   Initramfs framework: [initramfs-tools](https://anonscm.debian.org/cgit/kernel/initramfs-tools.git/) (cmdline: *RFD*)
 *   Live framework: [Debian Live](http://live.debian.net/) (cmdline: [[20]](http://manpages.debian.org/cgi-bin/man.cgi?query=live-boot&apropos=0&sektion=7&manpath=Debian+unstable+sid&format=html&locale=en))
-*   Init system: [sysvinit](https://savannah.nongnu.org/projects/sysvinit) (cmdline: _RFD_)
+*   Init system: [sysvinit](https://savannah.nongnu.org/projects/sysvinit) (cmdline: *RFD*)
 
 ```
 menuentry "[loopback]gparted-live-0.22.0-2-**amd64**" {
@@ -386,9 +383,9 @@ menuentry "[loopback]gparted-live-0.22.0-2-**amd64**" {
 
 #### Kali Linux
 
-*   Initramfs framework: [initramfs-tools](https://anonscm.debian.org/cgit/kernel/initramfs-tools.git/) (cmdline: _RFD_)
+*   Initramfs framework: [initramfs-tools](https://anonscm.debian.org/cgit/kernel/initramfs-tools.git/) (cmdline: *RFD*)
 *   Live framework: [Debian Live](http://live.debian.net/) (cmdline: [[21]](http://manpages.debian.org/cgi-bin/man.cgi?query=live-boot&apropos=0&sektion=7&manpath=Debian+unstable+sid&format=html&locale=en))
-*   Init system: [sysvinit](https://savannah.nongnu.org/projects/sysvinit) (cmdline: _RFD_)
+*   Init system: [sysvinit](https://savannah.nongnu.org/projects/sysvinit) (cmdline: *RFD*)
 
 ```
 menuentry "[loopback]kali-linux-1.0.7-**amd64**" {
@@ -401,9 +398,9 @@ menuentry "[loopback]kali-linux-1.0.7-**amd64**" {
 
 #### Knoppix
 
-*   Initramfs framework: _Unknown_
-*   Live framework: _Unknown_
-*   Init system: _Unknown_
+*   Initramfs framework: *Unknown*
+*   Live framework: *Unknown*
+*   Init system: *Unknown*
 
 ```
 menuentry "[loopback]KNOPPIX_V7.4.2DVD-2014-09-28-EN" {
@@ -416,9 +413,9 @@ menuentry "[loopback]KNOPPIX_V7.4.2DVD-2014-09-28-EN" {
 
 #### Linux Mint
 
-*   Initramfs framework: _RFD_
-*   Live framework or installation program: _RFD_
-*   Init system: _RFD_
+*   Initramfs framework: *RFD*
+*   Live framework or installation program: *RFD*
+*   Init system: *RFD*
 
 ```
 menuentry "[loopback]linuxmint-201403-cinnamon-dvd-**32**bit" {
@@ -444,9 +441,9 @@ menuentry "Linux Mint 17.2 Cinnamon LTS RC (x64)" {
 
 ##### Stock installation medium
 
-*   Initramfs framework: _RFD_
-*   Live framework or installation program: Kiwi? _RFD_
-*   Init system: _RFD_
+*   Initramfs framework: *RFD*
+*   Live framework or installation program: Kiwi? *RFD*
+*   Init system: *RFD*
 
 ```
 menuentry '[loopback]openSUSE-13.1-DVD-x86_64' {
@@ -459,9 +456,9 @@ menuentry '[loopback]openSUSE-13.1-DVD-x86_64' {
 
 ##### Desktop Live medium
 
-*   Initramfs framework: _RFD_
-*   Live framework or installation program: Kiwi? _RFD_
-*   Init system: _RFD_
+*   Initramfs framework: *RFD*
+*   Live framework or installation program: Kiwi? *RFD*
+*   Init system: *RFD*
 
 ```
 menuentry '[loopback]openSUSE-13.1-KDE-Live-x86_64' {
@@ -489,9 +486,9 @@ menuentry '[loopback]parabola-2015.07.01-dual.iso' {
 
 #### Sabayon
 
-*   Initramfs framework: genkernel? _RFD_
-*   Live framework or installation program: _RFD_
-*   Init system: openrc? _RFD_
+*   Initramfs framework: genkernel? *RFD*
+*   Live framework or installation program: *RFD*
+*   Init system: openrc? *RFD*
 
 ```
 menuentry '[loopback]Sabayon_Linux_14.05_amd64_KDE' {
@@ -504,9 +501,9 @@ menuentry '[loopback]Sabayon_Linux_14.05_amd64_KDE' {
 
 #### Slackware Linux
 
-*   Initramfs framework: _RFD_
-*   Live framework or installation program: _RFD_
-*   Init system: _RFD_
+*   Initramfs framework: *RFD*
+*   Live framework or installation program: *RFD*
+*   Init system: *RFD*
 
 ```
 menuentry '[loopback]slackware64-14.1-install-dvd' {
@@ -519,9 +516,9 @@ menuentry '[loopback]slackware64-14.1-install-dvd' {
 
 #### SystemRescueCD
 
-*   Initramfs framework: _RFD_
-*   Live framework or installation program: _RFD_
-*   Init system: _RFD_
+*   Initramfs framework: *RFD*
+*   Live framework or installation program: *RFD*
+*   Init system: *RFD*
 
 **Note:** Replace `64` with `32` if you want to boot into a 32-bit system.
 
@@ -536,9 +533,9 @@ menuentry '[loopback]systemrescuecd-x86-4.5.2' {
 
 #### Ubuntu
 
-*   Initramfs framework: _RFD_
-*   Live framework or installation program: _RFD_
-*   Init system: upstart (cmdline: _RFD_)
+*   Initramfs framework: *RFD*
+*   Live framework or installation program: *RFD*
+*   Init system: upstart (cmdline: *RFD*)
 
 ```
 menuentry '[loopback]ubuntu-14.04.1-desktop-amd64' {
@@ -551,9 +548,9 @@ menuentry '[loopback]ubuntu-14.04.1-desktop-amd64' {
 
 #### Slitaz
 
-*   Initramfs framework: _RFD_
-*   Live framework: _RFD_
-*   Init system: _RFD_
+*   Initramfs framework: *RFD*
+*   Live framework: *RFD*
+*   Init system: *RFD*
 
 First, download slitaz iso, then extract somewhere (in this case, /live/slitaz-4.0 on /dev/sda3)
 
@@ -570,9 +567,9 @@ menuentry 'slitaz-4.0 core' {
 
 #### Slax
 
-*   Initramfs framework: _RFD_
-*   Live framework: _RFD_
-*   Init system: _RFD_
+*   Initramfs framework: *RFD*
+*   Live framework: *RFD*
+*   Init system: *RFD*
 
 First, download Slax zip (for USB), then extract somewhere (in this case, /live/slax on /dev/sda3)
 
@@ -587,9 +584,9 @@ menuentry 'slax' {
 
 #### Tails
 
-*   Initramfs framework: _Unknown_
-*   Live framework: _Unknown_
-*   Init system: _Unknown_
+*   Initramfs framework: *Unknown*
+*   Live framework: *Unknown*
+*   Init system: *Unknown*
 
 Simply download and verify integrity of the Tails iso.
 
@@ -610,9 +607,9 @@ Remove the `live-media=removable` option if the iso file is not on removable med
 
 It can be very difficult to loopback a Windows install disc. One simple solution that allows you to install a variety of platforms from a USB drive with a single, unified partition is to start with a working, bootable Windows USB drive, and to replace its bootloader with GRUB.
 
-Before installing GRUB, rename or move the Windows bootloader. It should be the default _.efi_ executable - located at `_(USB)_/efi/boot/bootx64.efi` for a 64-bit system. Install GRUB in its place, and ensure that it is now the default executable.
+Before installing GRUB, rename or move the Windows bootloader. It should be the default *.efi* executable - located at `*(USB)*/efi/boot/bootx64.efi` for a 64-bit system. Install GRUB in its place, and ensure that it is now the default executable.
 
-You can then chainload the renamed Windows bootloader from GRUB, and also configure GRUB to loopback _.iso_ files as described above.
+You can then chainload the renamed Windows bootloader from GRUB, and also configure GRUB to loopback *.iso* files as described above.
 
 ```
 menuentry '[chain]en_windows_8.1_professional_x64' {
@@ -643,11 +640,10 @@ The memdisk module was not installed during Syslinux installation, it has to be 
 After copying the ISO files on the USB drive, edit the [Syslinux configuration file](/index.php/Syslinux#Configuration "Syslinux") and create menu entries for the ISO images. The basic entry looks like this:
 
  `boot/syslinux/syslinux.cfg` 
-
 ```
-LABEL _some_label_
+LABEL *some_label*
     LINUX memdisk
-    INITRD _/path/to/image.iso_
+    INITRD */path/to/image.iso*
     APPEND iso
 
 ```
@@ -656,7 +652,7 @@ See [memdisk on Syslinux wiki](http://www.syslinux.org/wiki/index.php/MEMDISK) f
 
 ### Caveat for 32-bit systems
 
-When booting a 32-bit system from an image larger than 128MiB, it is necessary to increase the maximum memory usage of vmalloc. This is done by adding `vmalloc=_value_M` to the kernel parameters, where `_value_` is larger than the size of the ISO image in MiB.[[22]](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
+When booting a 32-bit system from an image larger than 128MiB, it is necessary to increase the maximum memory usage of vmalloc. This is done by adding `vmalloc=*value*M` to the kernel parameters, where `*value*` is larger than the size of the ISO image in MiB.[[22]](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
 
 For example when booting the 32-bit system from the [Arch installation ISO](https://www.archlinux.org/download/), press the `Tab` key over the `Boot Arch Linux (i686)` entry and add `vmalloc=768M` at the end. Skipping this step will result in the following error during boot:
 

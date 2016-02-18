@@ -49,7 +49,7 @@ This page explains how to set up a **wired** connection to a network. If you nee
         *   [7.3.2 Rollback/change Windows driver](#Rollback.2Fchange_Windows_driver)
         *   [7.3.3 Enable WOL in Windows driver](#Enable_WOL_in_Windows_driver)
         *   [7.3.4 Newer Realtek Linux driver](#Newer_Realtek_Linux_driver)
-        *   [7.3.5 Enable _LAN Boot ROM_ in BIOS/CMOS](#Enable_LAN_Boot_ROM_in_BIOS.2FCMOS)
+        *   [7.3.5 Enable *LAN Boot ROM* in BIOS/CMOS](#Enable_LAN_Boot_ROM_in_BIOS.2FCMOS)
     *   [7.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
     *   [7.5 Broadcom BCM57780](#Broadcom_BCM57780)
     *   [7.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
@@ -57,10 +57,9 @@ This page explains how to set up a **wired** connection to a network. If you nee
 
 ## Check the connection
 
-The basic installation procedure typically has a functional network configuration. Use _ping_ to check the connection:
+The basic installation procedure typically has a functional network configuration. Use *ping* to check the connection:
 
  `$ ping www.google.com` 
-
 ```
 PING www.l.google.com (74.125.132.105) 56(84) bytes of data.
 64 bytes from wb-in-f105.1e100.net (74.125.132.105): icmp_req=1 ttl=50 time=17.0 ms
@@ -69,10 +68,9 @@ PING www.l.google.com (74.125.132.105) 56(84) bytes of data.
 
 If the ping is successful (you see 64 bytes messages as above), then the network is configured. Press `Control-C` to stop the ping.
 
-If the ping failed with an _Unknown hosts_ error, it means that your machine was unable to resolve this domain name. It may be related to your service provider or your router/gateway. Try pinging a static IP address to prove that your machine has access to the Internet:
+If the ping failed with an *Unknown hosts* error, it means that your machine was unable to resolve this domain name. It may be related to your service provider or your router/gateway. Try pinging a static IP address to prove that your machine has access to the Internet:
 
  `$ ping 8.8.8.8` 
-
 ```
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 64 bytes from 8.8.8.8: icmp_req=1 ttl=53 time=52.9 ms
@@ -86,8 +84,8 @@ If not, check for cable issues before diagnosing further.
 
 **Note:**
 
-*   If you receive an error like `ping: icmp open socket: Operation not permitted` when executing _ping_, try to re-install the [iputils](https://www.archlinux.org/packages/?name=iputils) package.
-*   The `-c _num_` option can be used to make exactly `_num_` pings, otherwise it pings infinitely and has to be terminated manually. See `man ping` for more information.
+*   If you receive an error like `ping: icmp open socket: Operation not permitted` when executing *ping*, try to re-install the [iputils](https://www.archlinux.org/packages/?name=iputils) package.
+*   The `-c *num*` option can be used to make exactly `*num*` pings, otherwise it pings infinitely and has to be terminated manually. See `man ping` for more information.
 *   `8.8.8.8` is a static address that is easy to remember. It is the address of Google's primary DNS server, therefore it can be considered reliable, and is generally not blocked by content filtering systems and proxies.
 
 ## Set the hostname
@@ -95,32 +93,31 @@ If not, check for cable issues before diagnosing further.
 A [hostname](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname") is a unique name created to identify a machine on a network: it is configured in `/etc/hostname`. The file can contain the system's domain name, if any. To set the hostname, do:
 
 ```
-# hostnamectl set-hostname _myhostname_
+# hostnamectl set-hostname *myhostname*
 
 ```
 
-This will put `_myhostname_` into `/etc/hostname`. See `man 5 hostname` and `man 1 hostnamectl` for details.
+This will put `*myhostname*` into `/etc/hostname`. See `man 5 hostname` and `man 1 hostnamectl` for details.
 
 It is recommended to also set the hostname in `/etc/hosts`:
 
  `/etc/hosts` 
-
 ```
 #
 # /etc/hosts: static lookup table for host names
 #
 
 #<ip-address>	<hostname.domain.org>	<hostname>
-127.0.0.1	localhost.localdomain	localhost	 _myhostname_
-::1		localhost.localdomain	localhost	 _myhostname_
+127.0.0.1	localhost.localdomain	localhost	 *myhostname*
+::1		localhost.localdomain	localhost	 *myhostname*
 ```
 
 **Note:** [systemd](https://www.archlinux.org/packages/?name=systemd) provides hostname resolution via the `myhostname` nss module (enabled by default in `/etc/nsswitch.conf`), which means that changing hostnames in `/etc/hosts` is normally not necessary. However several users have reported bugs such as delays in network-based applications when the hostname was not set correctly in `/etc/hosts`. See [#Local network hostname resolution](#Local_network_hostname_resolution) for details.
 
-To temporarily set the hostname (until reboot), use _hostname_ from [inetutils](https://www.archlinux.org/packages/?name=inetutils):
+To temporarily set the hostname (until reboot), use *hostname* from [inetutils](https://www.archlinux.org/packages/?name=inetutils):
 
 ```
-# hostname _myhostname_
+# hostname *myhostname*
 
 ```
 
@@ -131,7 +128,6 @@ To temporarily set the hostname (until reboot), use _hostname_ from [inetutils](
 [udev](/index.php/Udev "Udev") should detect your network interface card (see [Wikipedia:Network interface controller](https://en.wikipedia.org/wiki/Network_interface_controller "wikipedia:Network interface controller")) and automatically load the necessary module at start up. Check the "Ethernet controller" entry (or similar) from the `lspci -v` output. It should tell you which kernel module contains the driver for your network device. For example:
 
  `$ lspci -v` 
-
 ```
 02:00.0 Ethernet controller: Attansic Technology Corp. L1 Gigabit Ethernet Adapter (rev b0)
  	...
@@ -140,7 +136,7 @@ To temporarily set the hostname (until reboot), use _hostname_ from [inetutils](
 
 ```
 
-Next, check that the driver was loaded via `dmesg | grep _module_name_`. For example:
+Next, check that the driver was loaded via `dmesg | grep *module_name*`. For example:
 
 ```
 $ dmesg | grep atl1
@@ -165,21 +161,18 @@ For computers with multiple NICs, it is important to have fixed device names. Ma
 
 [udev](/index.php/Udev "Udev") is responsible for which device gets which name. Systemd v197 introduced [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames), which automatically assigns static names to network devices. Interfaces are now prefixed with `en` (ethernet), `wl` (WLAN), or `ww` (WWAN) followed by an automatically generated identifier, creating an entry such as `enp0s25`. This behavior may be disabled by adding `net.ifnames=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
-**Note:** When changing the interface naming scheme, do not forget to update all network-related configuration files and custom systemd unit files to reflect the change. Specifically, if you have [netctl static profiles](/index.php/Netctl#Basic_method "Netctl") enabled, run `netctl reenable _profile_` to update the generated service file.
+**Note:** When changing the interface naming scheme, do not forget to update all network-related configuration files and custom systemd unit files to reflect the change. Specifically, if you have [netctl static profiles](/index.php/Netctl#Basic_method "Netctl") enabled, run `netctl reenable *profile*` to update the generated service file.
 
 #### Get current device names
 
 Current NIC names can be found via `sysfs` or `ip link`. For example:
 
  `$ ls /sys/class/net` 
-
 ```
 lo enp0s3
 
 ```
-
  `$ ip link` 
-
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default 
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -195,7 +188,6 @@ Wireless device names can also be retrieved using `iw dev`. See [Wireless networ
 You can change the device name by defining the name manually with an udev-rule. For example:
 
  `/etc/udev/rules.d/10-network.rules` 
-
 ```
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="aa:bb:cc:dd:ee:ff", NAME="net1"
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="ff:ee:dd:cc:bb:aa", NAME="net0"
@@ -206,13 +198,12 @@ These rules will be applied automatically at boot.
 
 A couple of things to note:
 
-*   To get the MAC address of each card, use this command: `cat /sys/class/net/_device_name_/address`
+*   To get the MAC address of each card, use this command: `cat /sys/class/net/*device_name*/address`
 *   Make sure to use the lower-case hex values in your udev rules. It doesn't like upper-case.
 
 If the network card has a dynamic MAC, you can use `DEVPATH`, for example:
 
  `/etc/udev/rules.d/10-network.rules` 
-
 ```
 SUBSYSTEM=="net", DEVPATH=="/devices/platform/wemac.*", NAME="int"
 SUBSYSTEM=="net", DEVPATH=="/devices/pci*/*1c.0/*/net/*", NAME="en"
@@ -221,9 +212,9 @@ SUBSYSTEM=="net", DEVPATH=="/devices/pci*/*1c.0/*/net/*", NAME="en"
 
 The device path should match both the new and old device name, since the rule may be executed more than once on bootup. For example, in the second rule, `"/devices/pci*/*1c.0/*/net/enp*"` would be wrong since it will stop matching once the name is changed to `en`. Only the system-default rule will fire the second time around, causing the name to be changed back to e.g. `enp1s0`.
 
-To [test](/index.php/Udev#Testing_rules_before_loading "Udev") your rules, they can be triggered directly from userspace, e.g. with `udevadm --debug test /sys/_DEVPATH_`. Remember to first take down the interface you are trying to rename (e.g. `ip link set down enp1s0`).
+To [test](/index.php/Udev#Testing_rules_before_loading "Udev") your rules, they can be triggered directly from userspace, e.g. with `udevadm --debug test /sys/*DEVPATH*`. Remember to first take down the interface you are trying to rename (e.g. `ip link set down enp1s0`).
 
-**Note:** When choosing the static names **it should be avoided to use names in the format of "eth_X_" and "wlan_X_"**, because this may lead to race conditions between the kernel and udev during boot. Instead, it is better to use interface names that are not used by the kernel as default, e.g.: `net0`, `net1`, `wifi0`, `wifi1`. For further details please see the [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) documentation.
+**Note:** When choosing the static names **it should be avoided to use names in the format of "eth*X*" and "wlan*X*"**, because this may lead to race conditions between the kernel and udev during boot. Instead, it is better to use interface names that are not used by the kernel as default, e.g.: `net0`, `net1`, `wifi0`, `wifi1`. For further details please see the [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) documentation.
 
 #### Reverting to traditional device names
 
@@ -239,7 +230,6 @@ If you would prefer to retain traditional interface names such as eth0, [Predict
 You can change the device MTU and queue length by defining manually with an udev-rule. For example:
 
  `/etc/udev/rules.d/10-network.rules` 
-
 ```
 ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_len}="2000"
 
@@ -258,7 +248,6 @@ You can activate or deactivate network interfaces using:
 To check the result:
 
  `$ ip link show dev eth0` 
-
 ```
 2: eth0: <BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master br0 state UP mode DEFAULT qlen 1000
 ...
@@ -319,21 +308,21 @@ See [dhcpcd#Static profile](/index.php/Dhcpcd#Static_profile "Dhcpcd").
 It is possible to manually set up a static IP using only the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package. This is a good way to test connection settings since the connection will not persist across reboots. First enable the [network interface](#Network_Interfaces):
 
 ```
-# ip link set _interface_ up
+# ip link set *interface* up
 
 ```
 
 Assign a static IP address in the console:
 
 ```
-# ip addr add _IP_address_/_subnet_mask_ broadcast _broadcast_address_ dev _interface_
+# ip addr add *IP_address*/*subnet_mask* broadcast *broadcast_address* dev *interface*
 
 ```
 
 Then add your gateway IP address:
 
 ```
-# ip route add default via _default_gateway_
+# ip route add default via *default_gateway*
 
 ```
 
@@ -349,21 +338,21 @@ For example:
 To undo these steps (e.g. before switching to a dynamic IP), first remove any assigned IP address:
 
 ```
-# ip addr flush dev _interface_
+# ip addr flush dev *interface*
 
 ```
 
 Then remove any assigned gateway:
 
 ```
-# ip route flush dev _interface_
+# ip route flush dev *interface*
 
 ```
 
 And finally disable the interface:
 
 ```
-# ip link set dev _interface_ down
+# ip link set dev *interface* down
 
 ```
 
@@ -376,7 +365,6 @@ You can use `ipcalc` provided by the [ipcalc](https://www.archlinux.org/packages
 Finding out the respective netmask and broadcast addresses is done with `ipcalc`, by specifying the IP of the Linux NIC `10.66.66.1` and the number of hosts (here two):
 
  `$ ipcalc -nb 10.66.66.1 -s 1` 
-
 ```
 Address:   10.66.66.1
 
@@ -443,8 +431,7 @@ See [Router](/index.php/Router "Router").
 
 The pre-requisite is to [#Set the hostname](#Set_the_hostname) after which hostname resolution works on the local system itself:
 
- `$ ping _myhostname_` 
-
+ `$ ping *myhostname*` 
 ```
 PING myhostname (192.168.1.2) 56(84) bytes of data.
 64 bytes from myhostname (192.168.1.2): icmp_seq=1 ttl=64 time=0.043 ms
@@ -455,7 +442,7 @@ To enable other machines to address the host by name, either a manual configurat
 A first work-around that can be tried is to add the following line to `/etc/hosts`:
 
 ```
-127.0.1.1	_myhostname_.localdomain	_myhostname_	
+127.0.1.1	*myhostname*.localdomain	*myhostname*	
 
 ```
 
@@ -481,7 +468,6 @@ Another possibility is to set up a full DNS server such as [BIND](/index.php/BIN
 Toggling [promiscuous mode](https://en.wikipedia.org/wiki/Promiscuous_mode "wikipedia:Promiscuous mode") will make a (wireless) NIC forward all traffic it receives to the OS for further processing. This is opposite to "normal mode" where a NIC will drop frames it is not intended to receive. It is most often used for advanced network troubleshooting and [packet sniffing](https://en.wikipedia.org/wiki/Packet_sniffing "wikipedia:Packet sniffing").
 
  `/etc/systemd/system/promiscuous@.service` 
-
 ```
 [Unit]
 Description=Set %i interface in promiscuous mode
@@ -587,15 +573,15 @@ Right click my computer and choose "Properties"
 
 ```
 
-**Note:** Newer Realtek Windows drivers (tested with _Realtek 8111/8169 LAN Driver v5.708.1030.2008_, dated 2009/01/22, available from GIGABYTE) may refer to this option slightly differently, like _Shutdown Wake-On-LAN --> Enable_. It seems that switching it to `Disable` has no effect (you will notice the Link light still turns off upon Windows shutdown). One rather dirty workaround is to boot to Windows and just reset the system (perform an ungraceful restart/shutdown) thus not giving the Windows driver a chance to disable LAN. The Link light will remain on and the LAN adapter will remain accessible after POST - that is until you boot back to Windows and shut it down properly again.
+**Note:** Newer Realtek Windows drivers (tested with *Realtek 8111/8169 LAN Driver v5.708.1030.2008*, dated 2009/01/22, available from GIGABYTE) may refer to this option slightly differently, like *Shutdown Wake-On-LAN --> Enable*. It seems that switching it to `Disable` has no effect (you will notice the Link light still turns off upon Windows shutdown). One rather dirty workaround is to boot to Windows and just reset the system (perform an ungraceful restart/shutdown) thus not giving the Windows driver a chance to disable LAN. The Link light will remain on and the LAN adapter will remain accessible after POST - that is until you boot back to Windows and shut it down properly again.
 
 #### Newer Realtek Linux driver
 
 Any newer driver for these Realtek cards can be found for Linux on the realtek site (untested but believed to also solve the problem).
 
-#### Enable _LAN Boot ROM_ in BIOS/CMOS
+#### Enable *LAN Boot ROM* in BIOS/CMOS
 
-It appears that setting _Integrated Peripherals --> Onboard LAN Boot ROM --> Enabled_ in BIOS/CMOS reactivates the Realtek LAN chip on system boot-up, despite the Windows driver disabling it on OS shutdown.
+It appears that setting *Integrated Peripherals --> Onboard LAN Boot ROM --> Enabled* in BIOS/CMOS reactivates the Realtek LAN chip on system boot-up, despite the Windows driver disabling it on OS shutdown.
 
 **Note:** This was tested several times on a GIGABYTE GA-G31M-ES2L motherboard, BIOS version F8 released on 2009/02/05.
 
@@ -609,7 +595,7 @@ This Broadcom chipset sometimes does not behave well unless you specify the orde
 
 These steps should help if your computer has this chipset:
 
-*   Find your NIC in _lspci_ output:
+*   Find your NIC in *lspci* output:
 
 ```
 $ lspci | grep Ethernet
@@ -652,7 +638,6 @@ softdep tg3 pre: broadcom
 ### Realtek RTL8111/8168B
 
  `# lspci | grep Ethernet` 
-
 ```
 03:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168B PCI Express Gigabit Ethernet controller (rev 02)
 

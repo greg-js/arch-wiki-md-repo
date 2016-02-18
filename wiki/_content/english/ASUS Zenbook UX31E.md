@@ -1,4 +1,4 @@
-This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the ASUS Zenbook UX31E Ultrabook. _(There is probably little/no difference with his 11" little brother, the UX21E)_
+This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the ASUS Zenbook UX31E Ultrabook. *(There is probably little/no difference with his 11" little brother, the UX21E)*
 
 ## Contents
 
@@ -95,7 +95,6 @@ Works out of the box
 There seems to be a problem whereby having an HDMI device plugged in at boot results in the screens being switched and also the laptop screen not coming on. To make this more bearable you can automate switching HDMI on with the following udev rule and script:
 
  `ACTION=="change", SUBSYSTEM=="drm", RUN+="/usr/sbin/hdmi-plugged"` 
-
 ```
 #!/bin/bash
 

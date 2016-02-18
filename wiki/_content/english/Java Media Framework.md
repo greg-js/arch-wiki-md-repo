@@ -26,7 +26,7 @@ jmfinit
 
 ```
 
-_(An active X11 session is needed)_
+*(An active X11 session is needed)*
 
 ### JMFRegistry
 

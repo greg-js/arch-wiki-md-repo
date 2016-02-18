@@ -16,7 +16,7 @@
 
 ## Úvod
 
-_"udev je správce zařízení pro linuxová jádra ze série 2.6\. Jeho primární úkol je správa souborů zařízení v `/dev`. Je to následník devfs a hotplugu, což znamená, že se kromě adresáře `/dev` stará i o veškeré akce v uživatelském prostoru během přidávání a odebírání zařízení, včetně nahrávání firmware."_ Zdroj: [Wikipedia](http://en.wikipedia.org/wiki/Udev)
+*"udev je správce zařízení pro linuxová jádra ze série 2.6\. Jeho primární úkol je správa souborů zařízení v `/dev`. Je to následník devfs a hotplugu, což znamená, že se kromě adresáře `/dev` stará i o veškeré akce v uživatelském prostoru během přidávání a odebírání zařízení, včetně nahrávání firmware."* Zdroj: [Wikipedia](http://en.wikipedia.org/wiki/Udev)
 
 udev nahrazuje funkcionalitu balíčků `hotplug` a `hwdetect`.
 
@@ -24,7 +24,7 @@ udev nahrává jaderné moduly souběžně, čímž může urychlit boot systém
 
 ## O automatickém nahrávání modulů
 
-udev nebude nahrávat _žádné_ moduly, pokud není v souboru `/etc/rc.conf` povoleno `MOD_AUTOLOAD`. V případě, že automatické nahrávání povolené nemáte, musíte moduly nahrávat manuálně jejich vložením do seznamu `MODULES` v souboru `[rc.conf](/index.php/Rc.conf "Rc.conf")`. Výčet potřebných modulů si můžete nechat generovat příkazem `hwdetect --modules`.
+udev nebude nahrávat *žádné* moduly, pokud není v souboru `/etc/rc.conf` povoleno `MOD_AUTOLOAD`. V případě, že automatické nahrávání povolené nemáte, musíte moduly nahrávat manuálně jejich vložením do seznamu `MODULES` v souboru `[rc.conf](/index.php/Rc.conf "Rc.conf")`. Výčet potřebných modulů si můžete nechat generovat příkazem `hwdetect --modules`.
 
 ## O pravidlech pro udev
 

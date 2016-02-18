@@ -1,4 +1,4 @@
-**NFSv4**, _n_etwork _f_ile _s_ystem _v_ersione 4, è la nuova versione di NFS (per configurare un vecchio NFSv3, guarda su [Nfs (Italiano)](/index.php/Nfs_(Italiano) "Nfs (Italiano)") con nuove funzionalità come autenticazione sicura e integrità via Kerberos e SPKM-3, prestazioni migliorate, file caching sicuro, lock migration, UTF-8, ACLs e un miglior supporto per la semantica di condivisione file di Windows.
+**NFSv4**, *n*etwork *f*ile *s*ystem *v*ersione 4, è la nuova versione di NFS (per configurare un vecchio NFSv3, guarda su [Nfs (Italiano)](/index.php/Nfs_(Italiano) "Nfs (Italiano)") con nuove funzionalità come autenticazione sicura e integrità via Kerberos e SPKM-3, prestazioni migliorate, file caching sicuro, lock migration, UTF-8, ACLs e un miglior supporto per la semantica di condivisione file di Windows.
 
 Questo articolo si occupa dell'installazione e della configurazione di NFSv4.
 
@@ -35,7 +35,7 @@ La configurazione del server è molto fine.
 
 #### Export
 
-Prima di tutto dobbiamo modificare i nostri export _(_esportazione_, ma preferisco il termine inglese)_ in `/etc/exports`.
+Prima di tutto dobbiamo modificare i nostri export *(*esportazione*, ma preferisco il termine inglese)* in `/etc/exports`.
 
 Un tipico export di NFSv4 dovrebbe sembrare come questo:
 
@@ -47,7 +47,7 @@ Un tipico export di NFSv4 dovrebbe sembrare come questo:
 
 **Note:** `fsid=0` è richiesto dal filesystem di root per essere esportato.
 
-**Note:** Per ammettere un intervallo di indirizzi, lo schema vecchio stile 192.168.0.* _non è più_ supportato con NFSv4\. Usa 192.168.0.0/24 o simili per specificare tali export. (Ciò funzionava con export non NFSv4, ma non funziona più. _L'errore riportato è "no such file or directory"_ nel montaggio, cosa che rende problematico la risoluzione dei problemi.)
+**Note:** Per ammettere un intervallo di indirizzi, lo schema vecchio stile 192.168.0.* *non è più* supportato con NFSv4\. Usa 192.168.0.0/24 o simili per specificare tali export. (Ciò funzionava con export non NFSv4, ma non funziona più. *L'errore riportato è "no such file or directory"* nel montaggio, cosa che rende problematico la risoluzione dei problemi.)
 
 `/export` nel nostro caso è la radice NFS (grazie all'opzione `fsid=0`). Qualunque altra cosa si voglia condividere tramite NFS deve essere accessibile sotto `/export`.
 
@@ -59,7 +59,7 @@ Per esportare cartelle al di fuori della radice NFS guarda più sotto.
 
 ##### Exporting directories outside your NFS root
 
-Per fare questo si dovranno usare i montaggi _legati (bind)_. Per esempio, per legare `/home/john` a `/export/john`:
+Per fare questo si dovranno usare i montaggi *legati (bind)*. Per esempio, per legare `/home/john` a `/export/john`:
 
 ```
 # mount --bind /home/john /export/john

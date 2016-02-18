@@ -60,7 +60,7 @@ $  xdg_menu --format xfce4 --root-menu /etc/xdg/menus/arch-applications.menu | x
 
 ```
 
-Now you have a script `~/.sawfish/lisp/arch-menu.jl` that defines a variable _arch-menu_ with a list of your applications. You need to link to it from the root menu. You need to write the code for that to happen in `~/.sawfishrc`. So, start your favorite editor, create `~/.sawfishrc`, and type:
+Now you have a script `~/.sawfish/lisp/arch-menu.jl` that defines a variable *arch-menu* with a list of your applications. You need to link to it from the root menu. You need to write the code for that to happen in `~/.sawfishrc`. So, start your favorite editor, create `~/.sawfishrc`, and type:
 
 ```
 ;;; sawfish configuration file
@@ -78,7 +78,6 @@ Restart Sawfish to effect the changes.
 #### Menu example
 
  `xfce4-menu-to-sawfish.xslt` 
-
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
 <xsl:stylesheet version="1.0"

@@ -7,11 +7,11 @@
 Создание раздела:
 
 ```
-# mkfs.f2fs -l mylabel _/dev/sdxY_
+# mkfs.f2fs -l mylabel */dev/sdxY*
 
 ```
 
-где `_/dev/sdxY_` — раздел для форматирования в F2FS.
+где `*/dev/sdxY*` — раздел для форматирования в F2FS.
 
 ## Монтирование раздела F2FS
 
@@ -25,7 +25,7 @@
 После этого можно смонтировать раздел:
 
 ```
-# mount -t f2fs _/dev/sdxY_ /mnt
+# mount -t f2fs */dev/sdxY* /mnt
 
 ```
 

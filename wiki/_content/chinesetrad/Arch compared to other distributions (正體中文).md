@@ -52,8 +52,8 @@
 ### LFS
 
 *   LFS (Linux From Scratch；從頭打造 Linux) 單純就是一份文件。這份文件指導使用者如何用一些基本軟體組建一個能運作的 GNU/Linux 系統：從獲取原始碼、手動編譯、修補和設定軟體，使用者都必須一手包辦。在組建與自訂基本系統這方面，LFS 相當迷你，且給使用者一個很棒的學習經驗。
-*   LFS 不提供線上軟體庫；原始碼必須手動取得，並用 _make_ 編譯安裝。(LFS Hints 有提到數種手動管理軟體包的方式)。
-*   Arch 不僅提供 LFS 提到的基本軟體，還添加 [systemd](/index.php/Systemd "Systemd") 這套附帶工具，和強大的 [Pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") 軟體包管理員當作本身的基本系統，並且所有的軟體皆預先編譯為適用 i686/x86_64 架構。除了這套小型 Arch 基本系統，Arch 社群與開發人員也提供、維護數千種二進位軟體包，可透過 pacman 以及 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 組建腳本 (由 [Arch 組建系統](/index.php/Arch_Build_System_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Build System (正體中文)")處理) 安裝。Arch 還提供 [makepkg](/index.php/Makepkg "Makepkg") 工具，方便組建或自訂 _.pkg.tar.xz_ 軟體包，也易於用 pacman 安裝。
+*   LFS 不提供線上軟體庫；原始碼必須手動取得，並用 *make* 編譯安裝。(LFS Hints 有提到數種手動管理軟體包的方式)。
+*   Arch 不僅提供 LFS 提到的基本軟體，還添加 [systemd](/index.php/Systemd "Systemd") 這套附帶工具，和強大的 [Pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") 軟體包管理員當作本身的基本系統，並且所有的軟體皆預先編譯為適用 i686/x86_64 架構。除了這套小型 Arch 基本系統，Arch 社群與開發人員也提供、維護數千種二進位軟體包，可透過 pacman 以及 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 組建腳本 (由 [Arch 組建系統](/index.php/Arch_Build_System_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Build System (正體中文)")處理) 安裝。Arch 還提供 [makepkg](/index.php/Makepkg "Makepkg") 工具，方便組建或自訂 *.pkg.tar.xz* 軟體包，也易於用 pacman 安裝。
 *   Judd Vinet 從頭打造了 Arch，並以 C 語言撰寫 pacman。曾經有段期間 Arch 有一個幽默的稱呼：「附帶良好軟體包管理的 Linux」。
 
 ### CRUX
@@ -103,7 +103,7 @@
 
 *   Arch 安裝系統只提供一個小型基本系統，系統設定必須原汁原味的進行；Debian 的安裝提供更自動化的設定，以及數種替代安裝方式。
 
-*   Debian 預設採用 _SysVinit_，不過也可以使用 systemd 與 upstart 設定系統；Arch 則預設使用 [systemd](/index.php/Systemd "Systemd") 以獲得較佳的整體效能。
+*   Debian 預設採用 *SysVinit*，不過也可以使用 systemd 與 upstart 設定系統；Arch 則預設使用 [systemd](/index.php/Systemd "Systemd") 以獲得較佳的整體效能。
 
 *   Arch 盡可能的不採用修補程式，以避免任何上游無法檢查的問題；Debian 的使用者群比較廣泛，因此對採用修補程式這件事開放許多。
 
@@ -171,7 +171,7 @@ openSUSE 以 RPM 軟體包格式為主，它有備受推崇的 YaST2 圖形介�
 
 *   PCLinuxOS 是以 Mandriva 為基礎的熱門發行版，它提供一個完整的桌面環境，其設計相當貼近使用者，使用上相當「簡單」。不過它的「簡單」和 Arch 定義的「簡單」大不相同。Arch 的設計是可從頭開始自訂的簡單基本系統，主要客群為進階使用者。
 
-*   PCLOS 使用 apt 軟體包管理員來處理 RPM 軟體包。Arch 使用自己獨立開發的 [pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") 軟體包管理員，軟體包格式為 _.pkg.tar.xz_。
+*   PCLOS 使用 apt 軟體包管理員來處理 RPM 軟體包。Arch 使用自己獨立開發的 [pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") 軟體包管理員，軟體包格式為 *.pkg.tar.xz*。
 
 *   PCLOS 的圖形化相當徹底，提供了圖形化硬體設定工具，以及 Synaptic 軟體包管理前端程式，並號稱所有工作都不需經由 shell。Arch 主要依靠命令列來達到更方便的系統設定、管理維護。
 
@@ -179,7 +179,7 @@ openSUSE 以 RPM 軟體包格式為主，它有備受推崇的 YaST2 圖形介�
 
 ## BSD 系列
 
-各家 BSD 始於加州大學柏克萊分校 (UC Berkeley) 的成果，它們都提供了可自由散布並且免費的 UNIX 系統。它們並非 GNU/Linux 發行版，而是類 UNIX 作業系統。因此，雖然 Arch 和各家 BSD 都把基礎與移植系統緊密整合奉為圭臬，但以原始碼的角度來看兩者是毫無任何關係的。_vi_ 可能是個例外，Arch 的 _vi_ 就是採用原版的 BSD _vi_ (多數 BSD 已經不再使用原版的 BSD _vi_ 了)。各家 BSD 皆源自原本 AT&T 的 UNIX 程式碼，可算是真正的 UNIX 繼承者。若要了解各種 BSD 版本的更多資訊，可以拜訪它們的官方網站。
+各家 BSD 始於加州大學柏克萊分校 (UC Berkeley) 的成果，它們都提供了可自由散布並且免費的 UNIX 系統。它們並非 GNU/Linux 發行版，而是類 UNIX 作業系統。因此，雖然 Arch 和各家 BSD 都把基礎與移植系統緊密整合奉為圭臬，但以原始碼的角度來看兩者是毫無任何關係的。*vi* 可能是個例外，Arch 的 *vi* 就是採用原版的 BSD *vi* (多數 BSD 已經不再使用原版的 BSD *vi* 了)。各家 BSD 皆源自原本 AT&T 的 UNIX 程式碼，可算是真正的 UNIX 繼承者。若要了解各種 BSD 版本的更多資訊，可以拜訪它們的官方網站。
 
 ### FreeBSD
 
@@ -199,7 +199,7 @@ openSUSE 以 RPM 軟體包格式為主，它有備受推崇的 YaST2 圖形介�
 
 *   Arch 的平台支援度遠不及 NetBSD，但在 i686 系統上 Arch 可以提供較多的應用程式。
 
-*   NetBSD 的 pkgsrc 提供基於原始碼的安裝方式，和 Arch 的 ABS 類似；它也可以使用 _pkg_tools_ 獲取二進位軟體包。
+*   NetBSD 的 pkgsrc 提供基於原始碼的安裝方式，和 Arch 的 ABS 類似；它也可以使用 *pkg_tools* 獲取二進位軟體包。
 
 *   Arch 和 NetBSD 有一些共通點：需要手動設定、極簡化並輕量、都提供移植系統與二進位包、都擁有活躍並正經的開發者與社群。
 
@@ -213,7 +213,7 @@ OpenBSD 專案提供自由、跨平台且基於 4.4BSD 的類 UNIX 作業系統�
 
 *   兩者皆提供移植與打包系統，可簡單安裝與管理基本作業系統以外的程式。
 
-*   OpenBSD 核心，以及 shell 和共通工具 (如 _ls_, _cp_, _cat_, _ps_) 這些與使用者相關的程式，都在同一個來源軟體庫下開發。這在諸如 Arch 的 GNU/Linux 系統下相當罕見，但在 BSD 類作業系統中，這是相當稀鬆平常的事。
+*   OpenBSD 核心，以及 shell 和共通工具 (如 *ls*, *cp*, *cat*, *ps*) 這些與使用者相關的程式，都在同一個來源軟體庫下開發。這在諸如 Arch 的 GNU/Linux 系統下相當罕見，但在 BSD 類作業系統中，這是相當稀鬆平常的事。
 
 ## 另請參閱
 

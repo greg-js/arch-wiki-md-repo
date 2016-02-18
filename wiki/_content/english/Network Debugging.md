@@ -173,7 +173,7 @@ gudrun.archlinux.org.   18966   IN      A       66.211.214.131
 
 ```
 
-As an alternative to _drill_, there are also the `dig`, `host`, and `nslookup` tools from the [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) package.
+As an alternative to *drill*, there are also the `dig`, `host`, and `nslookup` tools from the [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) package.
 
 ## Ping & Tracepath/Traceroute
 

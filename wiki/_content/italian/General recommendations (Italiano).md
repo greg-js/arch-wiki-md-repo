@@ -16,10 +16,10 @@ Si assume che i lettori abbiano letto e seguito la [Guida per Principianti](/ind
 *   [2 Audio/video](#Audio.2Fvideo)
     *   [2.1 Browser plugins](#Browser_plugins)
     *   [2.2 Codecs](#Codecs)
-*   [3 Fase di _boot_](#Fase_di_boot)
-    *   [3.1 Avviare i _daemons_ in background](#Avviare_i_daemons_in_background)
+*   [3 Fase di *boot*](#Fase_di_boot)
+    *   [3.1 Avviare i *daemons* in background](#Avviare_i_daemons_in_background)
     *   [3.2 Riconoscimento automatico dell'hardware](#Riconoscimento_automatico_dell.27hardware)
-    *   [3.3 Attivare _Num Lock_ all'avvio](#Attivare_Num_Lock_all.27avvio)
+    *   [3.3 Attivare *Num Lock* all'avvio](#Attivare_Num_Lock_all.27avvio)
     *   [3.4 Mantenere i messaggi di boot](#Mantenere_i_messaggi_di_boot)
     *   [3.5 Lanciare X all'avvio](#Lanciare_X_all.27avvio)
 *   [4 Migliorie per la console](#Migliorie_per_la_console)
@@ -65,7 +65,7 @@ Si assume che i lettori abbiano letto e seguito la [Guida per Principianti](/ind
 
 ## Aspetto
 
-_Questa sezione contiene modifiche viste di frequente per migliorare l'esperienza estetica su Arch. Per ulteriori informazioni si veda [Category:Eye candy (Italiano)](/index.php/Category:Eye_candy_(Italiano) "Category:Eye candy (Italiano)")._
+*Questa sezione contiene modifiche viste di frequente per migliorare l'esperienza estetica su Arch. Per ulteriori informazioni si veda [Category:Eye candy (Italiano)](/index.php/Category:Eye_candy_(Italiano) "Category:Eye candy (Italiano)").*
 
 ### Output a colori
 
@@ -101,31 +101,31 @@ Le librerie che gestiscono i font possono essere compilate con patch per miglior
 
 ## Audio/video
 
-_[Category:Audio/Video (Italiano)](/index.php/Category:Audio/Video_(Italiano) "Category:Audio/Video (Italiano)") include ulteriori risorse sulle componenti multimediali._
+*[Category:Audio/Video (Italiano)](/index.php/Category:Audio/Video_(Italiano) "Category:Audio/Video (Italiano)") include ulteriori risorse sulle componenti multimediali.*
 
 ### Browser plugins
 
-Per usufruire dei contenuti web multimediali e per un'esperienza web _completa_, si possono installare dei [plugin per il browser](/index.php/Browser_plugins "Browser plugins") come Adobe Acrobat Reader, Adobe Flash Player e Java.
+Per usufruire dei contenuti web multimediali e per un'esperienza web *completa*, si possono installare dei [plugin per il browser](/index.php/Browser_plugins "Browser plugins") come Adobe Acrobat Reader, Adobe Flash Player e Java.
 
 ### Codecs
 
 I [codecs](/index.php/Codecs_(Italiano) "Codecs (Italiano)") vengono utilizzati dalle applicazioni multimediali per decodificare flussi audio e video. Per riprodurre questo tipo di file gli utenti devono curarsi di aver installato un codec appropriato.
 
-## Fase di _boot_
+## Fase di *boot*
 
-_Questa sezione contiene informazioni riguardanti il processo di boot (avvio). Una spiegazione del processo di boot di Arch si può trovare alla pagina [Arch Boot Process (Italiano)](/index.php/Arch_Boot_Process_(Italiano) "Arch Boot Process (Italiano)"). Per altro, si guardi [Category:Boot process (Italiano)](/index.php/Category:Boot_process_(Italiano) "Category:Boot process (Italiano)")._
+*Questa sezione contiene informazioni riguardanti il processo di boot (avvio). Una spiegazione del processo di boot di Arch si può trovare alla pagina [Arch Boot Process (Italiano)](/index.php/Arch_Boot_Process_(Italiano) "Arch Boot Process (Italiano)"). Per altro, si guardi [Category:Boot process (Italiano)](/index.php/Category:Boot_process_(Italiano) "Category:Boot process (Italiano)").*
 
-### Avviare i _daemons_ in background
+### Avviare i *daemons* in background
 
-I _daemons_ (demoni) sono programmi che girano in background, e normalmente vengono avviati durante la fase di boot. In modo da velocizzare le fasi di avvio alcuni daemons possono essere avviati in background, permettendo così al processo di boot di continuare mentre il daemon viene caricato. Si veda [Daemon (Italiano)](/index.php/Daemon_(Italiano) "Daemon (Italiano)") per una spiegazione esaustiva.
+I *daemons* (demoni) sono programmi che girano in background, e normalmente vengono avviati durante la fase di boot. In modo da velocizzare le fasi di avvio alcuni daemons possono essere avviati in background, permettendo così al processo di boot di continuare mentre il daemon viene caricato. Si veda [Daemon (Italiano)](/index.php/Daemon_(Italiano) "Daemon (Italiano)") per una spiegazione esaustiva.
 
 ### Riconoscimento automatico dell'hardware
 
 Durante il processo di boot, l'hardware dovrebbe essere riconosciuto automaticamente da [Udev](/index.php/Udev_(Italiano) "Udev (Italiano)"). Una potenziale riduzione del tempo di avvio può essere ottenuta disabilitando il caricamento automatico dei moduli a specificando i moduli richiesti manualmente, come spiegato in [rc.conf (Italiano)#Hardware](/index.php/Rc.conf_(Italiano)#Hardware "Rc.conf (Italiano)"). Anche [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)") dovrebbe essere in grado di determinare automaticamente i driver richiesti grazie a udev, ma l'utente ha comunque la possibilità di configurare il server X manualmente.
 
-### Attivare _Num Lock_ all'avvio
+### Attivare *Num Lock* all'avvio
 
-Per attivare la funzione _Num Lock_ all'avvio del sistema, si segua [Activating Numlock on Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup").
+Per attivare la funzione *Num Lock* all'avvio del sistema, si segua [Activating Numlock on Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup").
 
 ### Mantenere i messaggi di boot
 
@@ -137,7 +137,7 @@ Se si utilizza un server [X](/index.php/X "X") per avere un interfaccia grafica,
 
 ## Migliorie per la console
 
-_Questa sezione è dedicata a piccole modifiche per migliorare l'usabilità dei programmi per la riga di comando. Per ulteriori approfondimenti si guardi [Category:Command shells (Italiano)](/index.php/Category:Command_shells_(Italiano) "Category:Command shells (Italiano)") and [Category:Utilities (Italiano)](/index.php?title=Category:Utilities_(Italiano)&action=edit&redlink=1 "Category:Utilities (Italiano) (page does not exist)")._
+*Questa sezione è dedicata a piccole modifiche per migliorare l'usabilità dei programmi per la riga di comando. Per ulteriori approfondimenti si guardi [Category:Command shells (Italiano)](/index.php/Category:Command_shells_(Italiano) "Category:Command shells (Italiano)") and [Category:Utilities (Italiano)](/index.php?title=Category:Utilities_(Italiano)&action=edit&redlink=1 "Category:Utilities (Italiano) (page does not exist)").*
 
 ### Alias
 
@@ -165,7 +165,7 @@ Usando terminali in multiplexing come reso possibile da [tmux](/index.php/Tmux "
 
 ## Input
 
-_Questa sezione illustra alcune configurazioni comuni per i vari dispositivi di input. Per altro si segua [Category:Input devices (Italiano)](/index.php/Category:Input_devices_(Italiano) "Category:Input devices (Italiano)")._
+*Questa sezione illustra alcune configurazioni comuni per i vari dispositivi di input. Per altro si segua [Category:Input devices (Italiano)](/index.php/Category:Input_devices_(Italiano) "Category:Input devices (Italiano)").*
 
 ### Configurare tutti i pulsanti del mouse
 
@@ -181,7 +181,7 @@ Gran parte dei pc portatili usa dispositivi di puntamento "touchpad" [Synaptics]
 
 ## Networking
 
-_Questa sezione si limita a illustrare semplici procedure per migliorare la connettività di rete. Si segua [Network](/index.php/Network "Network") per una guida completa. Per altro, si veda [Category:Networking (Italiano)](/index.php/Category:Networking_(Italiano) "Category:Networking (Italiano)")._
+*Questa sezione si limita a illustrare semplici procedure per migliorare la connettività di rete. Si segua [Network](/index.php/Network "Network") per una guida completa. Per altro, si veda [Category:Networking (Italiano)](/index.php/Category:Networking_(Italiano) "Category:Networking (Italiano)").*
 
 ### Sincronizzazione dell'orologio
 
@@ -193,7 +193,7 @@ Il modulo IPv6 non solo occupa circa 250kb di memoria, ma si riscontra che disab
 
 ### Aumentare la velocità dei DNS
 
-Per migliorare il tempo di caricamento tenendo la cache per le _query_, si usi [pdnsd](/index.php/Pdnsd "Pdnsd"), Un server DNS senza l'ambizione di soddisfare ogni necessità. Oppure si installi [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), Una scelta di più ampio utilizzo che permette anche di rendere il sistema un server DHCP.
+Per migliorare il tempo di caricamento tenendo la cache per le *query*, si usi [pdnsd](/index.php/Pdnsd "Pdnsd"), Un server DNS senza l'ambizione di soddisfare ogni necessità. Oppure si installi [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), Una scelta di più ampio utilizzo che permette anche di rendere il sistema un server DHCP.
 
 ### Convalida DNSSEC
 
@@ -201,7 +201,7 @@ Per una migliore sicurezza durante la navigazione nel web, i pagamenti online, l
 
 ## Ottimizzazione
 
-_Questa sezione raccoglie trucchi e strumenti utili per migliorare le performance del sistema e delle applicazioni._
+*Questa sezione raccoglie trucchi e strumenti utili per migliorare le performance del sistema e delle applicazioni.*
 
 ### Benchmarking
 
@@ -213,7 +213,7 @@ L'articolo [Maximizing performance](/index.php/Maximizing_performance "Maximizin
 
 ## Gestione pacchetti
 
-_Questa sezione contiene utili informazioni sulla gestione dei pacchetti. Tutti gli utenti dovrebbero essere a loro agio con il gestore di pacchetti [pacman](/index.php/Pacman "Pacman"). Si veda anche [Category:Package management (Italiano)](/index.php/Category:Package_management_(Italiano) "Category:Package management (Italiano)")._
+*Questa sezione contiene utili informazioni sulla gestione dei pacchetti. Tutti gli utenti dovrebbero essere a loro agio con il gestore di pacchetti [pacman](/index.php/Pacman "Pacman"). Si veda anche [Category:Package management (Italiano)](/index.php/Category:Package_management_(Italiano) "Category:Package management (Italiano)").*
 
 ### Alias per pacman
 
@@ -221,7 +221,7 @@ Creare un alias per un comando è un modo per risparmiare tempo quando si usa la
 
 ### Arch Build System
 
-Le distribuzioni BSD furono le prime ad introdurre il sistema di _port_ che consiste nella raccolta, organizzata in una struttura di cartelle residente sul disco, di script per la compilazione. In parole semplici, un port non è nient'altro che uno script che permette di installare un applicazione; questo script, per essere facilmente rintracciabile, si trova all'interno di una cartella il cui nome indica l'applicazione.
+Le distribuzioni BSD furono le prime ad introdurre il sistema di *port* che consiste nella raccolta, organizzata in una struttura di cartelle residente sul disco, di script per la compilazione. In parole semplici, un port non è nient'altro che uno script che permette di installare un applicazione; questo script, per essere facilmente rintracciabile, si trova all'interno di una cartella il cui nome indica l'applicazione.
 
 [ABS](/index.php/ABS "ABS") offre la stessa funzionalità attraverso script per la compilazione detti [PKGBUILD](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)") che contengono le informazioni necessarie per un certo software: controlli di integrità, indirizzo del progetto, versione, licenza e i comandi di compilazione. I PKGBUILD devono essere processati da [makepkg](/index.php/Makepkg_(Italiano) "Makepkg (Italiano)"), il programma che genera pacchetti gestibili da pacman.
 
@@ -239,7 +239,7 @@ Si visiti [Mirrors (Italiano)](/index.php/Mirrors_(Italiano) "Mirrors (Italiano)
 
 ## Gestione dell'alimentazione
 
-_Questa sezione può essere utile per i possessori di computer laptop o comunque a chi è interessato al controllo del consumo di energia. Per approfondimenti si veda [Category:Power management (Italiano)](/index.php/Category:Power_management_(Italiano) "Category:Power management (Italiano)")._
+*Questa sezione può essere utile per i possessori di computer laptop o comunque a chi è interessato al controllo del consumo di energia. Per approfondimenti si veda [Category:Power management (Italiano)](/index.php/Category:Power_management_(Italiano) "Category:Power management (Italiano)").*
 
 ### acpid
 
@@ -259,7 +259,7 @@ Diverse opzioni sono disponibili per gli utenti che desiderano sospendere in RAM
 
 ## Amministrazione del sistema
 
-_Questa sezione tratta le attività di amministrazione e di gestione del sistema. Si veda anche [Category:System administration (Italiano)](/index.php/Category:System_administration_(Italiano) "Category:System administration (Italiano)")._
+*Questa sezione tratta le attività di amministrazione e di gestione del sistema. Si veda anche [Category:System administration (Italiano)](/index.php/Category:System_administration_(Italiano) "Category:System administration (Italiano)").*
 
 ### Mantenimento dei log
 
@@ -269,7 +269,7 @@ Gli utenti che utilizzano [syslog-ng](https://www.archlinux.org/packages/?name=s
 
 ### Privilege escalation
 
-Un'installazione nuova lascia gli utenti con il solo account di super utente, meglio conosciuto come root. Autenticarsi come root per periodi prolungati è ampiamente riconosciuto come pericoloso se non folle. Gli utenti dovrebbero invece [creare](/index.php/User_Management_(Italiano) "User Management (Italiano)") ed usare account utente non privilegiati per la maggior parte delle attività, usando l'account di root solo per l'amministrazione del sistema. Il comando [su](/index.php/Su "Su") (_substitute user_) permette di assumere l'identità di un altro utente sul sistema (normalmete root) nella propria shell, mentre il comando [sudo](/index.php/Sudo "Sudo") (_super user do_) garantisce privilegi per uno specifico comando.
+Un'installazione nuova lascia gli utenti con il solo account di super utente, meglio conosciuto come root. Autenticarsi come root per periodi prolungati è ampiamente riconosciuto come pericoloso se non folle. Gli utenti dovrebbero invece [creare](/index.php/User_Management_(Italiano) "User Management (Italiano)") ed usare account utente non privilegiati per la maggior parte delle attività, usando l'account di root solo per l'amministrazione del sistema. Il comando [su](/index.php/Su "Su") (*substitute user*) permette di assumere l'identità di un altro utente sul sistema (normalmete root) nella propria shell, mentre il comando [sudo](/index.php/Sudo "Sudo") (*super user do*) garantisce privilegi per uno specifico comando.
 
 ### Utenti e gruppi
 
@@ -281,7 +281,7 @@ Per abilitare la comunicazione tra macchine Windows e Linux attraverso una rete,
 
 ## Servizi di sistema
 
-_Questa sezione è collegata a [daemons](/index.php/Daemons "Daemons"). Per approfondire si veda [Category:Daemons and system services (Italiano)](/index.php/Category:Daemons_and_system_services_(Italiano) "Category:Daemons and system services (Italiano)")._
+*Questa sezione è collegata a [daemons](/index.php/Daemons "Daemons"). Per approfondire si veda [Category:Daemons and system services (Italiano)](/index.php/Category:Daemons_and_system_services_(Italiano) "Category:Daemons and system services (Italiano)").*
 
 ### Distribuzione di posta elettronica in locale
 
@@ -289,7 +289,7 @@ Un'installazione di base non offre alcun mezzo per la sincronizzazione della pos
 
 ## Sistema grafico X
 
-_[Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)") è l'implementazione open source della versione 11 di X Window System. Se si deisdera un'interfaccia grafica, la maggior parte degli utenti useranno Xorg. Si veda [Category:X Server (Italiano)](/index.php?title=Category:X_Server_(Italiano)&action=edit&redlink=1 "Category:X Server (Italiano) (page does not exist)") per ulteriori risorse._
+*[Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)") è l'implementazione open source della versione 11 di X Window System. Se si deisdera un'interfaccia grafica, la maggior parte degli utenti useranno Xorg. Si veda [Category:X Server (Italiano)](/index.php?title=Category:X_Server_(Italiano)&action=edit&redlink=1 "Category:X Server (Italiano) (page does not exist)") per ulteriori risorse.*
 
 ### Ambienti desktop
 
@@ -297,7 +297,7 @@ Mentre [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)") costituisce le fonda
 
 ### Driver video
 
-Il driver video _vesa_ predisosto di default funziona con la maggior parte delle schede grafiche, ma le performance possono essere migliorate visibilmente installando il driver più appropriato per prodotti [ATI](/index.php/ATI_(Italiano) "ATI (Italiano)"), [Intel](/index.php/Intel_(Italiano) "Intel (Italiano)"), or [NVIDIA](/index.php/NVIDIA_(Italiano) "NVIDIA (Italiano)") products.
+Il driver video *vesa* predisosto di default funziona con la maggior parte delle schede grafiche, ma le performance possono essere migliorate visibilmente installando il driver più appropriato per prodotti [ATI](/index.php/ATI_(Italiano) "ATI (Italiano)"), [Intel](/index.php/Intel_(Italiano) "Intel (Italiano)"), or [NVIDIA](/index.php/NVIDIA_(Italiano) "NVIDIA (Italiano)") products.
 
 ### Window manager
 

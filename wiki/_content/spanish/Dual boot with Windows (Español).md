@@ -130,7 +130,7 @@ dd if=$my_boot_part of=/media/win/linux.bin bs=512 count=1
 
 ```
 
-*   Arranque en Windows y debiera poder ver la partición FAT32\. Copie el archivo linux.bin a `C:\`. Ejecute **cmd** con privilegios de administrador (navegue a _Inicio > Todos los Programas > Accesorios_, click derecho en _Terminal de Comando_ y seleccione _Ejecutar como administrador_):
+*   Arranque en Windows y debiera poder ver la partición FAT32\. Copie el archivo linux.bin a `C:\`. Ejecute **cmd** con privilegios de administrador (navegue a *Inicio > Todos los Programas > Accesorios*, click derecho en *Terminal de Comando* y seleccione *Ejecutar como administrador*):
 
 ```
 bcdedit /create /d “Linux” /application BOOTSECTOR
@@ -171,9 +171,9 @@ La llave USB utilizada para instalar Windows 8.1 necesita una tabla de partició
 
 ## Estandares de Tiempo
 
-*   Recomendado: Configurar tanto Arch como Windows para utilizar UTC, siguiendo [Time#UTC in Windows](/index.php/Time#UTC_in_Windows "Time"). Además, prevenir que Windows sincronice la fecha y hora online, ya que de otra forma el reloj de hardware se configurará con _localtime_.
+*   Recomendado: Configurar tanto Arch como Windows para utilizar UTC, siguiendo [Time#UTC in Windows](/index.php/Time#UTC_in_Windows "Time"). Además, prevenir que Windows sincronice la fecha y hora online, ya que de otra forma el reloj de hardware se configurará con *localtime*.
 
-*   No recomendado: Configurar Arch para utilizar _localtime_ y deshabilitar cualquier servicio relacionado con la hora, como [NTPd](/index.php/NTPd "NTPd"). Esto hará que sólo Windows pueda configurar la hora, por lo que deberá recordar arrancar Windows al menos dos veces por año (Primavera y Otoño) en caso de que se utilice [horario de verano](https://en.wikipedia.org/wiki/Daylight_saving_time_(Espa%C3%B1ol) "wikipedia:Daylight saving time (Español)"). POr favor no utilice los foros para preguntar porque su reloj esta adelantado o atrasado en 1 hora si es que pasa dias o semanas sin arrancar Windows.
+*   No recomendado: Configurar Arch para utilizar *localtime* y deshabilitar cualquier servicio relacionado con la hora, como [NTPd](/index.php/NTPd "NTPd"). Esto hará que sólo Windows pueda configurar la hora, por lo que deberá recordar arrancar Windows al menos dos veces por año (Primavera y Otoño) en caso de que se utilice [horario de verano](https://en.wikipedia.org/wiki/Daylight_saving_time_(Espa%C3%B1ol) "wikipedia:Daylight saving time (Español)"). POr favor no utilice los foros para preguntar porque su reloj esta adelantado o atrasado en 1 hora si es que pasa dias o semanas sin arrancar Windows.
 
 ## Ver también
 

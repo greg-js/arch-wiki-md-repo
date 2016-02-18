@@ -19,7 +19,6 @@ You need to set your HDD in `/etc/conf.d/hpfall`.
 If your HDD is `/dev/sda`, your config file should look like this:
 
  `/etc/conf.d/hpfall` 
-
 ```
 #
 # Parameters to be passed to hpfall

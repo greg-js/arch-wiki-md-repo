@@ -4,7 +4,7 @@ Tento dokument predpokladá, že už máte <tt>wvdial</tt> správne nakonfigurov
 
 ## Použitie <tt>suid</tt>
 
-Toto je nepochybne najľahšie nastavenie, ale má obrovský dopad na bezpečnosť systému, keďže znamená, že _každý používateľ vie spúšťať wvdial ako root_. Zvážte prosím, či namiesto toho nepoužiť radšej jedno z ostatných riešení.
+Toto je nepochybne najľahšie nastavenie, ale má obrovský dopad na bezpečnosť systému, keďže znamená, že *každý používateľ vie spúšťať wvdial ako root*. Zvážte prosím, či namiesto toho nepoužiť radšej jedno z ostatných riešení.
 
 Nakoľko normálni pužívatelia nemôžu defaultne používať wvdial na vytáčanie ppp pripojenia, potrebujete zmeniť povolenia:
 

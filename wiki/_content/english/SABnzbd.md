@@ -1,6 +1,6 @@
 SABnzbd is an Open Source Binary Newsreader written in Python.
 
-_It's totally free, incredibly easy to use, and works practically everywhere. SABnzbd makes Usenet as simple and streamlined as possible by automating everything we can. All you have to do is add an .nzb. SABnzbd takes over from there, where it will be automatically downloaded, verified, repaired, extracted and filed away with zero human interaction._
+*It's totally free, incredibly easy to use, and works practically everywhere. SABnzbd makes Usenet as simple and streamlined as possible by automating everything we can. All you have to do is add an .nzb. SABnzbd takes over from there, where it will be automatically downloaded, verified, repaired, extracted and filed away with zero human interaction.*
 
 ## Contents
 
@@ -27,7 +27,7 @@ SABnzbd is able to run globally (settings apply to all users) and locally (per u
 
 ### Global configuration
 
-SABnzbd is controlled by the _sabnzbd_ [daemon](/index.php/Daemon "Daemon").
+SABnzbd is controlled by the *sabnzbd* [daemon](/index.php/Daemon "Daemon").
 
 ### Local configuration
 
@@ -49,7 +49,6 @@ If you used to start SABnzbd inside your `~/.xinitrc`, comment or delete the lin
 Then, edit a new file /etc/systemd/user/sabnzbd.service
 
  `/etc/systemd/user/sabnzbd.service` 
-
 ```
 [Unit]
 Description = SABnzbd binary newsreader
@@ -69,7 +68,6 @@ WantedBy = default.target
 Then, change this line in /etc/conf.d/sabnzbd_systemd
 
  `/etc/conf.d/sabnzbd_systemd` 
-
 ```
 SABNZBD_ARGS=-f ${HOME}/.sabnzbd.ini -s ${SABNZBD_IP}:${SABNZBD_PORT} -d
 
@@ -78,7 +76,6 @@ SABNZBD_ARGS=-f ${HOME}/.sabnzbd.ini -s ${SABNZBD_IP}:${SABNZBD_PORT} -d
 Then, add this line if not already to [.xinitrc](/index.php/.xinitrc ".xinitrc")
 
  `~/.xinitrc` 
-
 ```
 #run systemd as user intsance
 systemd --user &
@@ -109,7 +106,6 @@ $ cp /usr/lib/systemd/system/sabnzbd.service /etc/systemd/system/sabnzbd.service
 Then edit :
 
  `/etc/systemd/system/sabnzbd.service` 
-
 ```
 [Unit]
 Description = SABnzbd binary newsreader
@@ -162,7 +158,7 @@ For global configuration:
 
 *   edit `/opt/sabnzbd/sabnzbd.ini` and set **port** in **[misc]** section to the port you wish to use.
 
-*   copy `/usr/lib/systemd/system/sabnzbd.service` to `/etc/systemd/system/` then edit it and set **PIDFile** to `/run/sabnzbd/sabnzbd-_yourport_.pid` where _yourport_ is the same as set in the first step.
+*   copy `/usr/lib/systemd/system/sabnzbd.service` to `/etc/systemd/system/` then edit it and set **PIDFile** to `/run/sabnzbd/sabnzbd-*yourport*.pid` where *yourport* is the same as set in the first step.
 
 *   edit `/etc/conf.d/sabnzbd_systemd` and set **SABNZBD_PORT** to the port set in the first step.
 
@@ -172,7 +168,7 @@ For local configuration:
 
 *   edit `/opt/sabnzbd/sabnzbd.ini` and set **port** in **[misc]** section to the port you wish to use.
 
-*   then edit `/etc/systemd/user/sabnzbd.service` and set **PIDFile** to `/tmp/sabnzbd-_yourport_.pid` where _yourport_ is the same as set in the first step.
+*   then edit `/etc/systemd/user/sabnzbd.service` and set **PIDFile** to `/tmp/sabnzbd-*yourport*.pid` where *yourport* is the same as set in the first step.
 
 *   edit `/etc/conf.d/sabnzbd_systemd` and set **SABNZBD_PORT** to the port set in the first step.
 

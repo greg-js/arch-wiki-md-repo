@@ -19,7 +19,7 @@ When an application tries to acces $HOME/.foobar, the call is redirected to XDG_
 
 ## Configuration
 
-_I use bash, but this should work for other shells too._
+*I use bash, but this should work for other shells too.*
 
 Open ~/.bashrc and add :
 

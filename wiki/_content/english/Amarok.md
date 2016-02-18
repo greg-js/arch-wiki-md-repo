@@ -32,7 +32,7 @@ See [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_an
 
 ### Scripts and applets
 
-New scripts and applets can be found either directly from within Amarok (_Tools > Script Manager > Get More Scripts_) or at [kde-apps.org](http://kde-apps.org/content/search.php).
+New scripts and applets can be found either directly from within Amarok (*Tools > Script Manager > Get More Scripts*) or at [kde-apps.org](http://kde-apps.org/content/search.php).
 
 ### Moodbar
 
@@ -40,15 +40,15 @@ The moodbar is a feature which turn your standard progress slider bar into a pro
 
 Install [moodbar](https://aur.archlinux.org/packages/moodbar/) from the [AUR](/index.php/AUR "AUR").
 
-Then go to _Settings > Configure Amarok_ and check "Show moodbar in progress slider".
+Then go to *Settings > Configure Amarok* and check "Show moodbar in progress slider".
 
-**Note:** As of February 19th Amarok 2 does **not** generate moodfiles, you can either try to follow this tutorial [[2]](http://amarok.kde.org/wiki/Moodbar) to create them yourself or get Amarok1 from AUR and let it generate all the .mood files for you. For the Amarok1 solution go to _Settings > Configure Amarok_, and in the general tab check the "use moods" and "store moods data files with music" boxes.
+**Note:** As of February 19th Amarok 2 does **not** generate moodfiles, you can either try to follow this tutorial [[2]](http://amarok.kde.org/wiki/Moodbar) to create them yourself or get Amarok1 from AUR and let it generate all the .mood files for you. For the Amarok1 solution go to *Settings > Configure Amarok*, and in the general tab check the "use moods" and "store moods data files with music" boxes.
 
 ## SHOUTcast
 
 For reasons which have not been adequately explained Amarok developers have removed the SHOUTcast Internet radio features from version 2.1.90 onwards. See the [discussion page](https://wiki.archlinux.org/index.php/Talk:Amarok_2#Shoutcast), the forum [here](http://forum.kde.org/viewtopic.php?f=116&t=83718) and the thread starting [here](http://mail.kde.org/pipermail/amarok/2009-November/009696.html).
 
-You can get back SHOUTcast by using the "SHOUTcast service" script. Start Amarok, go _Tools > Script Manager > Get More Scripts_, search for _SHOUTcast_ install _Shoutcast Service_, restart Amarok. Then you have it in "Internet" context.
+You can get back SHOUTcast by using the "SHOUTcast service" script. Start Amarok, go *Tools > Script Manager > Get More Scripts*, search for *SHOUTcast* install *Shoutcast Service*, restart Amarok. Then you have it in "Internet" context.
 
 [Amarok 1.4](/index.php/Amarok_1.4 "Amarok 1.4") and [VLC](/index.php/VLC "VLC") continue to support the SHOUTcast Internet radio station index and streaming as before.
 
@@ -56,7 +56,7 @@ See also: [How can I use Amarok to stream to my own radio station?](http://amaro
 
 ## Ampache/MP3 Streaming
 
-If you are streaming MP3s directly or with the Ampache plugin, you are not able to seek in tracks if you are not using the [GStreamer](/index.php/GStreamer "GStreamer") backend. Install the needed packages: [phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer) [phonon-qt5-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt5-gstreamer) [gstreamer0.10](https://www.archlinux.org/packages/?name=gstreamer0.10) [gstreamer0.10-plugins](https://www.archlinux.org/groups/x86_64/gstreamer0.10-plugins/). Then go inside Amarok to _Settings > Configure Amarok > Playback > Configure Phonon >_ _tab_ _Backend. Here make GStreamer the prefered backend_
+If you are streaming MP3s directly or with the Ampache plugin, you are not able to seek in tracks if you are not using the [GStreamer](/index.php/GStreamer "GStreamer") backend. Install the needed packages: [phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer) [phonon-qt5-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt5-gstreamer) [gstreamer0.10](https://www.archlinux.org/packages/?name=gstreamer0.10) [gstreamer0.10-plugins](https://www.archlinux.org/groups/x86_64/gstreamer0.10-plugins/). Then go inside Amarok to *Settings > Configure Amarok > Playback > Configure Phonon >* *tab* *Backend. Here make GStreamer the prefered backend*
 
 ## Collection database
 

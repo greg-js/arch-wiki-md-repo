@@ -89,8 +89,8 @@
 
 下一步就是将硬盘重新分区。如果Mac OS X按照一般流程安装，那么您的硬盘将是GPT格式分区表，会有以下两个分区：
 
-*   **EFI分区**：一个大小有200MB的分区，在磁盘开始部分。有些分区工具会将其读作FAT分区，通常标为_#1_
-*   **Mac OS X分区**：这个分区_(HFS+)_一般是占用了硬盘的所有其他空间。通常标为_#2_
+*   **EFI分区**：一个大小有200MB的分区，在磁盘开始部分。有些分区工具会将其读作FAT分区，通常标为*#1*
+*   **Mac OS X分区**：这个分区*(HFS+)*一般是占用了硬盘的所有其他空间。通常标为*#2*
 
 分区策略依据您想安装多少操作系统而定，有如下两个选项：
 
@@ -246,7 +246,7 @@ boot: arch noapic irqpoll acpi=force
     *   在 [准备磁盘](/index.php/Installation_guide#Prepare_Hard_Drive "Installation guide")部分，只要做设置磁盘挂在这步，注意要设对磁盘挂载点。
     *   在 [安装启动器](/index.php/Installation_guide#Install_Bootloader "Installation guide")部分，编辑menu.lst文件，添加**reboot=pci**到**kernel**行的末尾，例如下面这行： `kernel /vmlinuz-linux root=/dev/sda5 ro reboot=pci` 这样你的MacBook才能从Arch Linux正常重启
     *   还是在 [安装启动器](/index.php/Installation_guide#Install_Bootloader "Installation guide")部分，将GRUB安装至`/boot`所在的分区。
-        **Warning:** 别把GRUB安装到_/dev/sda_这样的地方！！！这样做会造成系统不稳定。
+        **Warning:** 别把GRUB安装到*/dev/sda*这样的地方！！！这样做会造成系统不稳定。
 
     *   在 [配置系统](/index.php/Installation_guide#Configure_System "Installation guide")部分，编辑 /etc/mkinitcpio.conf，添加**usbinput**到**HOOKS**行的**autodetect**之后。这样才能在Arch Linux启动之前加载键盘驱动
 
@@ -375,7 +375,6 @@ Option "RegistryDwords" "EnableBrightnessControl=1"
 *   MacBook 8.1 使用 BCM4331，即不被Linux支持 (3.0 和 3.1) ，Broadcom 也没有提供闭源驱动，直到在 Linux 3.2 中才被初步支持。如果你需要在旧的内核上使用，你需要安装这里的驱动[compat-drivers](https://backports.wiki.kernel.org/index.php/Documentation/compat-drivers)
 
 **注意:** 如果你经常丢失连接，你需要关闭无线电源管理。 如果你在运行 [pm-utils](/index.php/Pm-utils "Pm-utils")，你需要创建一个执行文件文件 `/etc/pm/wireless` 替代无线电源管理：
-
 ```
 #!/bin/sh
 iwconfig wlp2s0 power off

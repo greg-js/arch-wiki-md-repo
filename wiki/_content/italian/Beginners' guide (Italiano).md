@@ -2,7 +2,7 @@
 
 Questa pagina servirà da guida nel processo di installazione di [Arch Linux](/index.php/Arch_Linux_(Italiano) "Arch Linux (Italiano)") utilizzando gli [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Prima di procedere, si consiglia di leggere velocemente le [FAQ](/index.php/FAQ_(Italiano) "FAQ (Italiano)").
 
-Il [wiki di Arch](/index.php/Main_Page_(Italiano) "Main Page (Italiano)"), mantenuto dalla comunità, è la risorsa primaria che deve essere consultato in caso di problemi. Sono disponibili anche dei canali [IRC Channel](/index.php/IRC_Channel "IRC Channel") (per la comunità italiana: [irc://irc.azzurra.org/archlinux](irc://irc.azzurra.org/archlinux) o [irc://irc.freenode.net/#archlinux.it](irc://irc.freenode.net/#archlinux.it), mentre per il supporto internazionale: [irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), ed il [forum italiano](http://www.archlinux.it/forum/) o [internazionale](https://bbs.archlinux.org/), che sono eccellenti risorse, nel caso la risposta non possa essere trovata altrove. Seguendo il [metodo Arch](/index.php/The_Arch_Way_(Italiano) "The Arch Way (Italiano)"), si consiglia di digitare `man _comando_` per leggere la pagina `man` pagina di un qualsiasi comando che non si conosce.
+Il [wiki di Arch](/index.php/Main_Page_(Italiano) "Main Page (Italiano)"), mantenuto dalla comunità, è la risorsa primaria che deve essere consultato in caso di problemi. Sono disponibili anche dei canali [IRC Channel](/index.php/IRC_Channel "IRC Channel") (per la comunità italiana: [irc://irc.azzurra.org/archlinux](irc://irc.azzurra.org/archlinux) o [irc://irc.freenode.net/#archlinux.it](irc://irc.freenode.net/#archlinux.it), mentre per il supporto internazionale: [irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), ed il [forum italiano](http://www.archlinux.it/forum/) o [internazionale](https://bbs.archlinux.org/), che sono eccellenti risorse, nel caso la risposta non possa essere trovata altrove. Seguendo il [metodo Arch](/index.php/The_Arch_Way_(Italiano) "The Arch Way (Italiano)"), si consiglia di digitare `man *comando*` per leggere la pagina `man` pagina di un qualsiasi comando che non si conosce.
 
 ## Contents
 
@@ -83,13 +83,13 @@ Il [wiki di Arch](/index.php/Main_Page_(Italiano) "Main Page (Italiano)"), mante
 
 ### Requisiti di Sistema
 
-Arch Linux dovrebbe funzionare su qualsiasi macchina [i686](https://en.wikipedia.org/wiki/it:P6_(microarchitecture) "wikipedia:it:P6 (microarchitecture)") compatibile e con un minimo di 64 MB di RAM. Una installazione di base con tutti i pacchetti dal gruppo _base_ dovrebbe prendere circa 500 MB di spazio su disco. Se si lavora con spazio limitato, questo può essere tagliato in modo considerevole, ma dovrete sapere cosa si sta facendo.
+Arch Linux dovrebbe funzionare su qualsiasi macchina [i686](https://en.wikipedia.org/wiki/it:P6_(microarchitecture) compatibile e con un minimo di 64 MB di RAM. Una installazione di base con tutti i pacchetti dal gruppo *base* dovrebbe prendere circa 500 MB di spazio su disco. Se si lavora con spazio limitato, questo può essere tagliato in modo considerevole, ma dovrete sapere cosa si sta facendo.
 
 #### Preparare il supporto di installazione più recente
 
 L'ultima versione del supporto di installazione può essere ottenuta dalla pagina di [download](https://www.archlinux.org/download/). Si noti che la singola immagine ISO supporta entrambe le architetture a 32 e 64 bit. É altamente raccomandato di utilizzare sempre l'ultima immagine ISO rilasciata.
 
-*   Le immagini da installare sono firmate, e si consiglia vivamente di verificare la loro firma prima dell'uso. Scaricare il file di firma _.sig_ dalla pagina di download (o uno dei mirror elencati qui ) per la stessa directory del file _.iso_. Su Arch Linux , usare `pacman-key -v _iso-file_.sig` da root; in altri ambienti usufruire , sempre come root , di gpg2 direttamente con `gpg2 --verify _iso-file.sig_`. Sono inoltre riportate le integrità checksum del file MD5 e SHA1.
+*   Le immagini da installare sono firmate, e si consiglia vivamente di verificare la loro firma prima dell'uso. Scaricare il file di firma *.sig* dalla pagina di download (o uno dei mirror elencati qui ) per la stessa directory del file *.iso*. Su Arch Linux , usare `pacman-key -v *iso-file*.sig` da root; in altri ambienti usufruire , sempre come root , di gpg2 direttamente con `gpg2 --verify *iso-file.sig*`. Sono inoltre riportate le integrità checksum del file MD5 e SHA1.
 
 **Nota:** La verifica gpg2 fallirà se non avete scaricato la corrispondente chiave pubblica per l'ID della chiave RSA. Vedere [http://sparewotw.wordpress.com/2012/10/31/how-to-verify-signature-using-sig-file/](http://sparewotw.wordpress.com/2012/10/31/how-to-verify-signature-using-sig-file/) per i dettagli.
 
@@ -159,28 +159,27 @@ Vi verrà visualizzato un prompt in una shell e sarete loggati automaticamente c
 
 ### Cambiare la mappatura della tastiera
 
-**Tip:** Questo passaggio è facoltativo per la maggioranza degli utenti.. Utile solo se si ha intenzione di scrivere nella propria lingua in uno dei file di configurazione, se si utilizzano segni diacritici per la password wifi, o se si desidera ricevere i messaggi di sistema (ad esempio, i possibili errori) nella propria lingua. Le modifiche qui impostate hanno effetto _solo_ per il processo di installazione.
+**Tip:** Questo passaggio è facoltativo per la maggioranza degli utenti.. Utile solo se si ha intenzione di scrivere nella propria lingua in uno dei file di configurazione, se si utilizzano segni diacritici per la password wifi, o se si desidera ricevere i messaggi di sistema (ad esempio, i possibili errori) nella propria lingua. Le modifiche qui impostate hanno effetto *solo* per il processo di installazione.
 
 Per impostazione predefinita, il layout della tastiera è impostato su `us`. Se non avete una tastiera americana [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg") è possibile cambiare il layout eseguendo:
 
 ```
-# loadkeys _layout_
+# loadkeys *layout*
 
 ```
 
-Dove _layout_ corrisponde al vostro tipo di tastiera, come `it`, `uk`, `dvorak`, `be-latin1`, etc. Si veda [|qui](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements "wikipedia:ISO 3166-1 alpha-2") per un elenco completo dei codici internazionali a due lettere. Utilizzare il comando `localectl list-keymaps` per una lista delle mappature disponibili.
+Dove *layout* corrisponde al vostro tipo di tastiera, come `it`, `uk`, `dvorak`, `be-latin1`, etc. Si veda [|qui](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements "wikipedia:ISO 3166-1 alpha-2") per un elenco completo dei codici internazionali a due lettere. Utilizzare il comando `localectl list-keymaps` per una lista delle mappature disponibili.
 
-Il tipo di carattere deve essere cambiato, perché la maggior parte delle lingue usa più glifi rispetto alle 26 lettere dell'[alfabeto inglese](https://en.wikipedia.org/wiki/English_alphabet "wikipedia:English alphabet"). In caso contrario, alcuni caratteri stranieri possono apparire come quadrati bianchi o altri simboli . Si noti che il nome è case-sensitive, quindi digitarlo _esattamente_ come lo vedete:
+Il tipo di carattere deve essere cambiato, perché la maggior parte delle lingue usa più glifi rispetto alle 26 lettere dell'[alfabeto inglese](https://en.wikipedia.org/wiki/English_alphabet "wikipedia:English alphabet"). In caso contrario, alcuni caratteri stranieri possono apparire come quadrati bianchi o altri simboli . Si noti che il nome è case-sensitive, quindi digitarlo *esattamente* come lo vedete:
 
 ```
 # setfont Lat2-Terminus16
 
 ```
 
-Per impostazione predefinita, la lingua è impostata su Inglese (US). Se si desidera cambiare la lingua per il processo di installazione _(Italiano, in questo esempio)_, rimuovere il simbolo `#` davanti al [locale](/index.php/Locale "Locale") che si desidera nel file `/etc/locale.gen`, insieme con l'inglese (US). Si prega di scegliere la voce `UTF-8`.
+Per impostazione predefinita, la lingua è impostata su Inglese (US). Se si desidera cambiare la lingua per il processo di installazione *(Italiano, in questo esempio)*, rimuovere il simbolo `#` davanti al [locale](/index.php/Locale "Locale") che si desidera nel file `/etc/locale.gen`, insieme con l'inglese (US). Si prega di scegliere la voce `UTF-8`.
 
  `# nano /etc/locale.gen` 
-
 ```
 en_US.UTF-8 UTF-8
 it_IT.UTF-8 UTF-8
@@ -199,7 +198,6 @@ it_IT.UTF-8 UTF-8
 Il demone `dhcpcd` della rete viene avviato automaticamente durante la fase boot e tenterà di avviare una connessione cablata, se disponibile. Provare a eseguire il ping di un sito web per vedere se ha avuto successo. E dal momento che Google è sempre attivo ...
 
  `# ping -c 3 www.google.com` 
-
 ```
 PING www.l.google.com (74.125.132.105) 56(84) bytes of data.
 64 bytes from wb-in-f105.1e100.net (74.125.132.105): icmp_req=1 ttl=50 time=17.0 ms
@@ -226,7 +224,6 @@ Per prima cosa disattivare il servizio dhcpcd che è stato avviato automaticamen
 Poi si identifichi il nome della propria interfaccia ethernet.
 
  `# ip link` 
-
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT 
      link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -256,7 +253,7 @@ Attivare la connessione all'interfaccia Ethernet (es. `enp2s0f0`):
 Aggiungere l'indirizzo:
 
 ```
-# ip addr add _Indirizzo IP_/_mask_bits_ dev _nome_interfaccia_
+# ip addr add *Indirizzo IP*/*mask_bits* dev *nome_interfaccia*
 
 ```
 
@@ -272,7 +269,7 @@ Per maggiori opzioni, eseguire `man ip`
 Allo stesso modo aggiungere il vostro gateway, sostituendo <Indirizzo IP> col l'indirizzo IP del vostro gateway.:
 
 ```
-# ip route add default via _Indirizzo IP_
+# ip route add default via *Indirizzo IP*
 
 ```
 
@@ -286,7 +283,6 @@ Ad esempio:
 Modificare il file `/etc/resolv.conf` immettendo il vostro nome di indirizzi IP del server (DNS) e il vostro nome di dominio:
 
  `# nano /etc/resolv.conf` 
-
 ```
  nameserver 61.23.173.5
  nameserver 61.95.849.8
@@ -305,7 +301,6 @@ Seguire la seguente procedura si necessita di una connessione wireless (WiFi) du
 Per prima cosa bisogna identificare la propria interfaccia wireless:
 
  `# iw dev` 
-
 ```
 phy#0
         Interface wlp3s0
@@ -329,7 +324,6 @@ Accendere l'interfaccia con:
 Per verificare che l'interfaccia è attiva , controllare l'output del seguente comando :
 
  `# ip link show wlp3s0` 
-
 ```
 3: wlp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state DOWN mode DORMANT group default qlen 1000
     link/ether 00:11:22:33:44:55 brd ff:ff:ff:ff:ff:ff
@@ -344,7 +338,7 @@ Molti chipset wireless richiedono un firmware oltre al corrispondente driver. Il
 
 Se non vi è output, si può concludere che il chipset wireless del sistema non richiede firmware..
 
-**Attenzione:** I pacchetti dei firmware dei chipset per il wireless (per le schede che lo necessitano) sono preinstallati in `/lib/firmware` nell'ambiente live, (su CD o supporto USB) _ma dovranno essere esplicitamente installati sul sistema definitivo per fornire funzionalità wireless all'avvio!_ La selezione e installazione dei pacchetti è spiegata in seguito. Accertarsi di aver spuntato sia il modulo sia il firmware durante la selezione dei pacchetti! Consultare [Wireless Setup](/index.php/Wireless_Setup_(Italiano) "Wireless Setup (Italiano)") se non si è sicuri riguardo l'installazione del particolare firmware per la propria scheda.
+**Attenzione:** I pacchetti dei firmware dei chipset per il wireless (per le schede che lo necessitano) sono preinstallati in `/lib/firmware` nell'ambiente live, (su CD o supporto USB) *ma dovranno essere esplicitamente installati sul sistema definitivo per fornire funzionalità wireless all'avvio!* La selezione e installazione dei pacchetti è spiegata in seguito. Accertarsi di aver spuntato sia il modulo sia il firmware durante la selezione dei pacchetti! Consultare [Wireless Setup](/index.php/Wireless_Setup_(Italiano) "Wireless Setup (Italiano)") se non si è sicuri riguardo l'installazione del particolare firmware per la propria scheda.
 
 Successivamente utilizzare `wifi-menu` fornito da [netctl](/index.php/Netctl "Netctl") per connettersi ad una rete:
 
@@ -360,11 +354,11 @@ Ora si dovrebbe avere una connessione di rete funzionante. In caso contrario con
 In alternativa utilizzare `iw dev wlp3s0 scan | grep SSID` per eseguire la scansione delle reti disponibili, e successivamente utilizzare connettersi ad una rete con:
 
 ```
-# wpa_supplicant -B -i wlp3s0 -c <(wpa_passphrase "_ssid_" "_psk_")
+# wpa_supplicant -B -i wlp3s0 -c <(wpa_passphrase "*ssid*" "*psk*")
 
 ```
 
-È necessario sostituire l' _ESSID_ con il nome della connessione di rete (ad esempio, "Linksys ecc .."), e _"psk"_ con la propria password. **Lasciare le virgolette attorno al nome di rete e la password.**
+È necessario sostituire l' *ESSID* con il nome della connessione di rete (ad esempio, "Linksys ecc .."), e *"psk"* con la propria password. **Lasciare le virgolette attorno al nome di rete e la password.**
 
 Infine,si deve dare alla vostra interfaccia un indirizzo IP. Questo può essere impostato manualmente o mediante DHCP:
 
@@ -408,7 +402,7 @@ Si può scegliere tra [GUID Partition Table](/index.php/GUID_Partition_Table "GU
 
 #### Strumenti di partizionamento
 
-Coloro che non hanno dimestichezza con tool a riga di comando, e i novizi, sono incoraggiati ad utilizzare uno strumento grafico di partizionamento. [GParted](http://gparted.sourceforge.net/download.php) è un buon esempio ed è [disponibile con un CD "Live"](http://gparted.sourceforge.net/livecd.php). Inoltre è anche incluso nei CD live della maggior parte dei distributioni Linux, come [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu_(operating_system) "wikipedia:Ubuntu (operating system)") e [Linux Mint](https://en.wikipedia.org/wiki/Linux_Mint "wikipedia:Linux Mint"). Un dispositivo deve prima di tutto essere [partizionato](/index.php/Partitioning_(Italiano) "Partitioning (Italiano)"), e successivamente le partizioni devono essere formattate con un [file system](/index.php/File_Systems_(Italiano) "File Systems (Italiano)").
+Coloro che non hanno dimestichezza con tool a riga di comando, e i novizi, sono incoraggiati ad utilizzare uno strumento grafico di partizionamento. [GParted](http://gparted.sourceforge.net/download.php) è un buon esempio ed è [disponibile con un CD "Live"](http://gparted.sourceforge.net/livecd.php). Inoltre è anche incluso nei CD live della maggior parte dei distributioni Linux, come [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu_(operating_system) e [Linux Mint](https://en.wikipedia.org/wiki/Linux_Mint "wikipedia:Linux Mint"). Un dispositivo deve prima di tutto essere [partizionato](/index.php/Partitioning_(Italiano) "Partitioning (Italiano)"), e successivamente le partizioni devono essere formattate con un [file system](/index.php/File_Systems_(Italiano) "File Systems (Italiano)").
 
 **Suggerimento:** Quando si usa Gparted, selezionando l' opzione per creare una nuova tabella delle partizioni essa creerà per impostazione predefinita una tabella delle partizioni "msdos". Se avete intenzione di seguire il consiglio di creare una tabella di partizione GPT, allora avete bisogno di scegliere "Avanzate" (Advanced) e quindi selezionare "gpt" dal menu a discesa.
 
@@ -460,7 +454,7 @@ Si sottolinea ancora una volta che il partizionamento è una scelta personale e 
 
 	Root
 
-*   Scegliere _New_ (o premere `N`) - premere `Enter` per il primo settore (2048) - Digitare la grandezza in `15G` - premere `Enter` per il codice esadecimale di default (8300) - premere `Enter` per lasciare vuoto il nome della partizione.
+*   Scegliere *New* (o premere `N`) - premere `Enter` per il primo settore (2048) - Digitare la grandezza in `15G` - premere `Enter` per il codice esadecimale di default (8300) - premere `Enter` per lasciare vuoto il nome della partizione.
 
 	Home
 
@@ -480,17 +474,17 @@ Part. #     Size        Partition Type            Partition Name
 
 Ricontrollate tutto il lavoro e assicuratevi che le dimensioni delle partizioni, così come la tabella delle partizioni, siano quelle volute, prima di continuare.
 
-Se volete ricominciare da capo, si può semplicemente selezionare _Quit_ (o premere `Q`) per uscire senza salvare le modifiche e quindi riavviare _cgdisk_.
+Se volete ricominciare da capo, si può semplicemente selezionare *Quit* (o premere `Q`) per uscire senza salvare le modifiche e quindi riavviare *cgdisk*.
 
-Se si è soddisfatti, selezionare _Write_ (o premere `Shift+W`) per finalizzare e scrivere la tabella delle partizioni sul disco. Premere `yes` e scegliere _Quit_ ( o premere `Q`) per uscire da cfdisk, senza apportare più modifiche.
+Se si è soddisfatti, selezionare *Write* (o premere `Shift+W`) per finalizzare e scrivere la tabella delle partizioni sul disco. Premere `yes` e scegliere *Quit* ( o premere `Q`) per uscire da cfdisk, senza apportare più modifiche.
 
 **Nota:** In fase di installazione in modelità UEFI, è consigliato l'uso di **gdisk** per la creazione della partizione di /boot con codice **ef00** e **Last sector** +512M
 
 ##### Usare fdisk per creare le partizioni MBR
 
-**Nota:** C'è anche _cfdisk_, che è simile nell'uso a _cgdisk_. Tuttavia, ma al momento non si allinea correttamente la prima partizione in modo automatico. Per questo motivo useremo il classico strumento _fdisk_.
+**Nota:** C'è anche *cfdisk*, che è simile nell'uso a *cgdisk*. Tuttavia, ma al momento non si allinea correttamente la prima partizione in modo automatico. Per questo motivo useremo il classico strumento *fdisk*.
 
-Eseguire _fdisk_ con:
+Eseguire *fdisk* con:
 
 ```
 # fdisk /dev/sda
@@ -548,7 +542,7 @@ Syncing disks.
 
 ```
 
-Nel caso in cui non funzioni, vuol dire che _fdisk_ ha rilevato un errore, è possibile utilizzare il comando `q` per uscire.
+Nel caso in cui non funzioni, vuol dire che *fdisk* ha rilevato un errore, è possibile utilizzare il comando `q` per uscire.
 
 #### Creare filesystem
 
@@ -565,15 +559,15 @@ Il semplice partizionamento non è sufficiente, utilizzare l'utility `mkfs` per 
 Se si è creata una partizione dedicata per swap (code 82), non si dimentichi di formattarla e attivarla con:
 
 ```
-# mkswap /dev/sda_X_
-# swapon /dev/sda_X_
+# mkswap /dev/sda*X*
+# swapon /dev/sda*X*
 
 ```
 
-Per UEFI , è necessario formattare la partizione di sistema EFI (ad esempio /dev/sd_XY_) con :
+Per UEFI , è necessario formattare la partizione di sistema EFI (ad esempio /dev/sd*XY*) con :
 
 ```
-# mkfs.fat -F32 /dev/sd_XY_
+# mkfs.fat -F32 /dev/sd*XY*
 
 ```
 
@@ -607,7 +601,7 @@ Nel caso si abbia una scheda madre UEFI, montare la partizione di sistema EFI su
 
 ```
  # mkdir /mnt/boot
- # mount /dev/sd_XY_ /mnt/boot
+ # mount /dev/sd*XY* /mnt/boot
 
 ```
 
@@ -616,7 +610,6 @@ Nel caso si abbia una scheda madre UEFI, montare la partizione di sistema EFI su
 Prima di procedere è necessario modificare il file `mirrorlist` e inserire il vostro mirror preferito in cima alla lista . una copia di questo file sarà pure installato sul vostro nuovo sistema da `pacstrap`, quindi conviene impostarlo come si deve.
 
  `# nano /etc/pacman.d/mirrorlist` 
-
 ```
 ##
 ## Arch Linux repository mirrorlist
@@ -628,11 +621,11 @@ Server = http://mirror.example.xyz/archlinux/$repo/os/$arch
 ...
 ```
 
-Se si desidera, è possibile rendere il mirror copiato _l'unico_ disponibile e cancellare tutte le altre linee, ma di solito è una buona idea averne qualcuno in più, nel caso in cui il primo risulti offline.
+Se si desidera, è possibile rendere il mirror copiato *l'unico* disponibile e cancellare tutte le altre linee, ma di solito è una buona idea averne qualcuno in più, nel caso in cui il primo risulti offline.
 
 **Suggerimento:**
 
-*   Potete utilizzare [Mirrorlist Generator](https://www.archlinux.org/mirrorlist/) per ottenere un elenco aggiornato per il vostro paese. I mirror HTTP sono più veloci dei FTP, a causa di qualcosa di una procedura chiamata [keepalive](https://en.wikipedia.org/wiki/Keepalive "wikipedia:Keepalive"). Con FTP, pacman deve inviare un segnale ogni volta che si scarica un pacchetto, con conseguenza che si genera una breve pausa. Per conoscere altri modi per generare un elenco dei mirror, vedere [Scelta e selezione dei mirrors](/index.php/Mirrors_(Italiano)#Scelta_e_selezione_dei_mirrors "Mirrors (Italiano)") e [Reflector](/index.php/Reflector "Reflector").
+*   Potete utilizzare [Mirrorlist Generator](https://www.archlinux.org/mirrorlist/) per ottenere un elenco aggiornato per il vostro paese. I mirror HTTP sono più veloci dei FTP, a causa di qualcosa di una procedura chiamata [keepalive](https://en.wikipedia.org/wiki/Keepalive e [Reflector](/index.php/Reflector "Reflector").
 *   [Arch Linux MirrorStatus](https://archlinux.org/mirrors/status/) rapporta diversi informazioni sui mirror, come problemi di rete con un server, problemi di raccolta dei dati, l'ultima volta che un mirror è stato sincronizzato, ecc.
 
 **Nota:** * Ogni volta che in futuro si modifica la lista di mirror (mirrorlist), ricordate di aggiornare tutti gli elenchi dei pacchetti con `pacman -Syy`, per garantire che le liste dei pacchetti vengono aggiornati costantemente. Si veda [Mirrors](/index.php/Mirrors_(Italiano) "Mirrors (Italiano)") per ulteriori informazioni.
@@ -642,7 +635,7 @@ Se si desidera, è possibile rendere il mirror copiato _l'unico_ disponibile e c
 
 ### Installare il sistema base
 
-Il sistema base viene installato tramite l'ausilio dello script _pacstrap_. L'opzione `-i` può essere omessa se ​​si desidera installare tutti i pacchetti del gruppo [base](https://www.archlinux.org/groups/x86_64/base/) senza chiedere conferma. Si consiglia inoltre di includere [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), avrete bisogno di questi pacchetti se ci vogliono compilare da AUR .
+Il sistema base viene installato tramite l'ausilio dello script *pacstrap*. L'opzione `-i` può essere omessa se ​​si desidera installare tutti i pacchetti del gruppo [base](https://www.archlinux.org/groups/x86_64/base/) senza chiedere conferma. Si consiglia inoltre di includere [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), avrete bisogno di questi pacchetti se ci vogliono compilare da AUR .
 
 ```
  # pacstrap -i /mnt base
@@ -676,7 +669,7 @@ Generare un file [fstab](/index.php/Fstab_(Italiano) "Fstab (Italiano)") con il 
 Alcune considerazioni :
 
 *   L'ultimo campo determina l'ordine in cui le partizioni vengono controllati all'avvio: utilizzare `1` per la partizione di root (non-`btrfs`), che verranno controllati per prima; `2` per tutte le altre partizioni che verranno controllare all'avvio; e `0` per non effettuare nessun controllo (si veda [Definizione dei campi](/index.php/Fstab_(Italiano)#Definizione_dei_campi "Fstab (Italiano)")).
-*   Tutte le partizioni con filesystem [btrfs](/index.php/Btrfs "Btrfs") devono avere valore `0` in questo campo. Solitamente anche la partizione di _swap_ viene impostata con valore `0`.
+*   Tutte le partizioni con filesystem [btrfs](/index.php/Btrfs "Btrfs") devono avere valore `0` in questo campo. Solitamente anche la partizione di *swap* viene impostata con valore `0`.
 
 ### Effettuare Chroot e configurare il sistema di base
 
@@ -702,7 +695,6 @@ Ci sono due file che hanno bisogno di essere modificati: `locale.gen` e `locale.
 Decommentate le righe necessarie. Rimuovere il simbolo `#` davanti alle stringhe che si intende attivare. Utilizzare la codifica `UTF-8` è molto più raccomandato rispetto alla codifica `ISO-8859`:
 
  `# nano /etc/locale.gen` 
-
 ```
 #is_IS ISO-8859-1
 #it_CH.UTF-8 UTF-8
@@ -750,7 +742,7 @@ Creare il file `/etc/locale.conf` sostituendo la localizzazione scelta:
 Se avete impostato una mappatura della tastiera all'[inizio](#Cambiare_la_mappatura_della_tastiera) del processo di installazione, caricarlo ora, poiché l'ambiente è cambiato. Per esempio :
 
 ```
-# loadkeys _it_
+# loadkeys *it*
 # setfont Lat2-Terminus16
 
 ```
@@ -758,7 +750,6 @@ Se avete impostato una mappatura della tastiera all'[inizio](#Cambiare_la_mappat
 Per rendere disponibili le modifiche dopo il riavvio, editare il file `/etc/vconsole.conf` (crearlo se non esiste).
 
  `# nano /etc/vconsole.conf` 
-
 ```
 KEYMAP=it
 FONT=Lat2-Terminus16
@@ -776,14 +767,14 @@ Si veda [Font per Console](/index.php/Fonts_(Italiano)#Font_per_console "Fonts (
 
 I fusi orari disponibili e le regioni possono essere trovati nelle directory `/usr/share/zoneinfo/<Zone>/<SubZone>`.
 
-Per poter visualizzare le _zone_ disponibili, controllando la directory `/usr/share/zoneinfo/` :
+Per poter visualizzare le *zone* disponibili, controllando la directory `/usr/share/zoneinfo/` :
 
 ```
 # ls /usr/share/zoneinfo/
 
 ```
 
-Allo stesso modo potete controllare il contenuto della directory appartenente ad una _SubZone_:
+Allo stesso modo potete controllare il contenuto della directory appartenente ad una *SubZone*:
 
 ```
 # ls /usr/share/zoneinfo/Europe
@@ -818,14 +809,14 @@ Potete generare il file `/etc/adjtime` automaticamente utilizzando uno dei segue
 
 *   **localtime** (Altamente Sconsigliato) - utilizzato di default in Windows.
 
-**Attenzione:** Utilizzare _localtime_ può portare a diversi e irreparabili bug. Tuttavia, non ci sono piani per l'abbandono del supporto di _localtime_.
+**Attenzione:** Utilizzare *localtime* può portare a diversi e irreparabili bug. Tuttavia, non ci sono piani per l'abbandono del supporto di *localtime*.
 
 	 `# hwclock --systohc --localtime` 
 
 **Suggerimento:** Se avete un sistema dual-boot con Windows (o avete in previsione di averlo):
 
-*   **Raccomandato**. Impostare sia Arch Linux che Windows in modo che utilizzino UTC. Si necessita una [correzione del registro](/index.php/Time#UTC_in_Windows "Time") di Windows. Inoltre, assicurarsi di impedire a Windows di sincronizzare l'orologio da internet, in modo che l'orologio hardware utilizzi nuovamente _localtime_.
-*   **Sconsigliato**. Impostare Arch Linux su _localtime_ e disabilitare ogni servizio relativo all'impostazione dell'orologio, come [NTPd](/index.php/Network_Time_Protocol_daemon_(Italiano) "Network Time Protocol daemon (Italiano)"). Questo permetterà a Windows di prendersi cura della correzione dell'ora hardware e sarà necessario ricordarsi di avviare Windows almeno due volte l'anno (in primavera e autunno), quando [DTS](https://en.wikipedia.org/wiki/Daylight_savings_time "wikipedia:Daylight savings time") elabora l'ora legale. Quindi, per favore non chiedere sul forum perchè l'orologio è un'ora indietro o in avanti se utilizzate questo sistema e siete soliti passare molto tempo senza avviare Windows.
+*   **Raccomandato**. Impostare sia Arch Linux che Windows in modo che utilizzino UTC. Si necessita una [correzione del registro](/index.php/Time#UTC_in_Windows "Time") di Windows. Inoltre, assicurarsi di impedire a Windows di sincronizzare l'orologio da internet, in modo che l'orologio hardware utilizzi nuovamente *localtime*.
+*   **Sconsigliato**. Impostare Arch Linux su *localtime* e disabilitare ogni servizio relativo all'impostazione dell'orologio, come [NTPd](/index.php/Network_Time_Protocol_daemon_(Italiano) "Network Time Protocol daemon (Italiano)"). Questo permetterà a Windows di prendersi cura della correzione dell'ora hardware e sarà necessario ricordarsi di avviare Windows almeno due volte l'anno (in primavera e autunno), quando [DTS](https://en.wikipedia.org/wiki/Daylight_savings_time "wikipedia:Daylight savings time") elabora l'ora legale. Quindi, per favore non chiedere sul forum perchè l'orologio è un'ora indietro o in avanti se utilizzate questo sistema e siete soliti passare molto tempo senza avviare Windows.
 
 #### Moduli del Kernel
 
@@ -834,7 +825,6 @@ Potete generare il file `/etc/adjtime` automaticamente utilizzando uno dei segue
 Per aggiungere i moduli del kernel da caricare durante l'avvio, creare un file `*.Conf` in `/etc/modules-load.d/`, con un nome in base al programma che li utilizza .
 
  `# nano /etc/modules-load.d/virtio-net.conf` 
-
 ```
 # Carica il modulo 'virtio-net.ko' al boot.
 virtio-net
@@ -849,7 +839,7 @@ Le righe vuote e linee il cui primo carattere è `#` o `;`, vengono ignorate.
 Impostare l'[hostname](https://en.wikipedia.org/wiki/it:hostname "wikipedia:it:hostname") a vostro piacimento (ad esempio "arch"):
 
 ```
-# echo _myhostname_ > /etc/hostname
+# echo *myhostname* > /etc/hostname
 
 ```
 
@@ -877,7 +867,7 @@ Se si utilizza solo un singolo collegamento di rete fissa cablata, non avete bis
 
 ```
 
-**Nota:** Se non dovesse funzionare: usare `# systemctl enable dhcpcd@_nome_interfaccia_.service`
+**Nota:** Se non dovesse funzionare: usare `# systemctl enable dhcpcd@*nome_interfaccia*.service`
 
 	Utilizzando netctl
 
@@ -981,10 +971,10 @@ Installare [dialog](https://www.archlinux.org/packages/?name=dialog), che è ric
 
 ```
 
-Dopo aver terminato il resto di questa installazione e riavviato il sistema, è possibile collegarsi alla rete con `wifi-menu _nome_interfaccia_` (dove `_nome_interfaccia_` è l'interfaccia del vostro chipset wireless).
+Dopo aver terminato il resto di questa installazione e riavviato il sistema, è possibile collegarsi alla rete con `wifi-menu *nome_interfaccia*` (dove `*nome_interfaccia*` è l'interfaccia del vostro chipset wireless).
 
 ```
-# wifi-menu _nome_interfaccia_
+# wifi-menu *nome_interfaccia*
 
 ```
 
@@ -1032,7 +1022,7 @@ Installare [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond), 
 Abilitare il servizio `netctl-auto`, che si collegherà alle reti conosciute, e gestirà ordinatamente il roaming e la disconnessione:
 
 ```
-# systemctl enable netctl-auto@_nome_interfaccia_.service
+# systemctl enable netctl-auto@*nome_interfaccia*.service
 
 ```
 
@@ -1085,7 +1075,7 @@ Se avete optato per una tabella di partizione GUID (GPT) per il disco rigido in 
 
 ```
 
-Installare il pacchetto [syslinux](https://www.archlinux.org/packages/?name=syslinux) e successivamente utilizzare lo script `syslinux-install_update` per _installare_ automaticamente il bootloader (`-i`), marcare la partizione come _active_ impostandola con il flag di _boot_ (`-a`), e installarlo sul codice di avvio _MBR_ (`-m`):
+Installare il pacchetto [syslinux](https://www.archlinux.org/packages/?name=syslinux) e successivamente utilizzare lo script `syslinux-install_update` per *installare* automaticamente il bootloader (`-i`), marcare la partizione come *active* impostandola con il flag di *boot* (`-a`), e installarlo sul codice di avvio *MBR* (`-m`):
 
 ```
  # pacman -S syslinux 
@@ -1096,7 +1086,6 @@ Installare il pacchetto [syslinux](https://www.archlinux.org/packages/?name=sysl
 Configurare il file `syslinux.cfg` per puntare alla giusta partizione di `/root`. Questo passaggio è fondamentale. Se dovesse puntare alla partizione sbagliata, Arch Linux non si avvierà. Cambiare `/dev/sda3` in modo che coincida con la vostra partizione root designata (se avete partizionato il disco come abbiamo fatto nell'[esempio](#Preparare_l.27unit.C3.A0_di_archiviazione), la vostra partizione di root sarà `/dev/sda1`). Fare lo stesso per la voce fallback.
 
  `# nano /boot/syslinux/syslinux.cfg` 
-
 ```
 ...
 LABEL arch
@@ -1119,7 +1108,7 @@ Installare il pacchetto [grub](https://www.archlinux.org/packages/?name=grub) e 
 
 **Nota:**
 
-*   Cambiare `/dev/sda` in modo che rifletta il dispositivo su cui è stato installato Arch. Non aggiungere un numero alla partizione (non utilizzare `sda_X_`).
+*   Cambiare `/dev/sda` in modo che rifletta il dispositivo su cui è stato installato Arch. Non aggiungere un numero alla partizione (non utilizzare `sda*X*`).
 *   Per dispositivi partizionati in GPT su schede madri con BIOS, GRUB necessità di una partizione "BIOS Boot Partition". Si veda [Istruzioni specifiche per GPT](/index.php/GRUB2_(Italiano)#Istruzioni_specifiche_per_GPT "GRUB2 (Italiano)") e [Installazione nella partizione di boot BIOS con schema di partizionamento GPT](/index.php/GRUB2_(Italiano)#Installazione_nella_partizione_di_boot_BIOS_con_schema_di_partizionamento_GPT "GRUB2 (Italiano)") nella pagina di GRUB.
 
 Mentre è possibile utilizzare un file `grub.cfg` creato manualmente, si raccomanda per i principianti di generarne uno automaticamente:
@@ -1157,7 +1146,6 @@ Recentemente systemd, ha integrato al proprio interno gummiboot, per cui non è 
 Sarà necessario creare manualmente un file di configurazione per aggiungere una voce per Arch Linux per il manager gummiboot. Creare `/boot/loader/entries/arch.conf` e aggiungere i seguenti contenuti, sostituendo `/dev/sdaX` con la vostra partizione di root, di solito `/dev/sda2`:
 
  `# nano /boot/loader/entries/arch.conf` 
-
 ```
 title          Arch Linux
 linux          /vmlinuz-linux
@@ -1222,7 +1210,7 @@ Il nuovo sistema di base Arch Linux è ora un funzionale sistema operativo GNU/L
 
 Aggiungere gli account utente che si desiderano, oltre a root, come descritto in [Gestione degli utenti](/index.php/Users_and_Groups_(Italiano)#Gestione_degli_utenti "Users and Groups (Italiano)"). Non è consigliabile utilizzare l'account di root per un uso regolare, o esporlo tramite [SSH](/index.php/Secure_Shell_(Italiano) "Secure Shell (Italiano)") su un server. L'account di root deve essere utilizzato solo per le attività amministrative.
 
-In un tipico sistema desktop per aggiungere un nuovo utente denominato _archie_ specificando [bash](/index.php/Bash_(Italiano) "Bash (Italiano)") come shell di login
+In un tipico sistema desktop per aggiungere un nuovo utente denominato *archie* specificando [bash](/index.php/Bash_(Italiano) "Bash (Italiano)") come shell di login
 
 ```
 # useradd -m -s /bin/bash archie
@@ -1266,7 +1254,7 @@ Per installare i pacchetti base di [Xorg](/index.php/Xorg "Xorg"):
 
 ```
 
-Installare [mesa](https://en.wikipedia.org/wiki/it:Mesa_(computer_graphics) "wikipedia:it:Mesa (computer graphics)") per il supporto 3D:
+Installare [mesa](https://en.wikipedia.org/wiki/it:Mesa_(computer_graphics) per il supporto 3D:
 
 ```
 # pacman -S mesa
@@ -1275,7 +1263,7 @@ Installare [mesa](https://en.wikipedia.org/wiki/it:Mesa_(computer_graphics) "wik
 
 #### Installare un driver video
 
-**Nota:** Se si sta installando Arch Linux come _guest_ su _virtualbox_, non è necessario installare un driver video. Consultare la pagina [Arch Linux guests](/index.php/VirtualBox#Arch_Linux_guests "VirtualBox") per installare ed impostare le Guest Additions, e saltare alla parte [Impostare il layout della tastiera](#Configurare_X) descritto di seguito.
+**Nota:** Se si sta installando Arch Linux come *guest* su *virtualbox*, non è necessario installare un driver video. Consultare la pagina [Arch Linux guests](/index.php/VirtualBox#Arch_Linux_guests "VirtualBox") per installare ed impostare le Guest Additions, e saltare alla parte [Impostare il layout della tastiera](#Configurare_X) descritto di seguito.
 
 Il kernel Linux include driver video open-source e il supporto per il framebuffer hardware accelerato. Tuttavia, il supporto in spazio utente è necessario per OpenGL e l'accelerazione 2D in X11 .
 
@@ -1330,12 +1318,10 @@ Potrebbe essere necessario impostare un Qui è possibile impostare un [[[layout 
 **Suggerimento:** Questi passaggi sono opzionali . Utile solo se si sta installando Arch Linux per la prima volta o per l'hardware più recente.
 
 **Nota:** Se i dispositivi di input non funzionano durante il test, installare il driver necessario dal gruppo [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/), e riprovare. Per un elenco completo di driver di input disponibili, richiamare una ricerca con pacman (premere `Q` per uscire ):
-
 ```
 $ pacman -Ss xf86-input | less
 
 ```
-
 Se avete intenzione di disattivare l'[hot-plugging](https://en.wikipedia.org/wiki/Hot-plugging "wikipedia:Hot-plugging"), avete bisogno solamente dei pacchetti [xf86-input-keyboard](https://www.archlinux.org/packages/?name=xf86-input-keyboard) o [xf86-input-mouse](https://www.archlinux.org/packages/?name=xf86-input-mouse), altrimenti `evdev` agirà come driver di ingresso principale (consigliato).
 
 Installare un Ambiente di test predefinito.
@@ -1418,9 +1404,9 @@ Fare riferimento a [Font Configuration](/index.php/Font_Configuration_(Italiano)
 
 #### Scegliere ed installare una interfaccia grafica
 
-Mentre il sistema **X** Window fornisce il quadro di base per la costruzione di una _Graphicals User Interface_ (GUI).
+Mentre il sistema **X** Window fornisce il quadro di base per la costruzione di una *Graphicals User Interface* (GUI).
 
-**Nota:** La scelta di un DE o WM è una decisione molto soggettiva e personale. Si scelga l'ambiente migliore in base alle _proprie_ esigenze. É possibile costruire il proprio ambiente desktop (DE) utilizzando un Window Manager (WM) e le applicazioni di propria scelta.
+**Nota:** La scelta di un DE o WM è una decisione molto soggettiva e personale. Si scelga l'ambiente migliore in base alle *proprie* esigenze. É possibile costruire il proprio ambiente desktop (DE) utilizzando un Window Manager (WM) e le applicazioni di propria scelta.
 
 *   Un [Window Manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") (Gestore delle finestre) controlla il posizionamento e l'aspetto delle finestre dell'applicazione in combinazione con il sistema X Window.
 

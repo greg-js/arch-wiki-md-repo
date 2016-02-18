@@ -142,7 +142,6 @@ Si no se usa un gestor de inicio gráfico o no se quiere usar uno, es posible qu
 El ejemplo siguiente de `~/.xinitrc` muestra cómo iniciar un ED/WM concreto con un argumento:
 
  `~/.xinitrc` 
-
 ```
 #!/bin/sh
 #

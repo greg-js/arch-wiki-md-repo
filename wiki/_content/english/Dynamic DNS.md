@@ -41,7 +41,6 @@ Some of the compatible services are listed below, but you can also check the [ex
 If you find that ddclient is unable to update your IP properly, it may be that the ddclient process is starting before networking is up. To fix it, you can edit the unit file to depend on `network-online.target` (added lines in bold):
 
  `# systemctl edit --full ddclient.service` 
-
 ```
 [Unit]
 Description=Dynamic DNS Update Client

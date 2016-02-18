@@ -73,14 +73,14 @@
 创建一个新列表并添加初始用户：
 
 ```
- htdigest -c /mnt/rpo/conf/scm-user scm _FIRST_USER_
+ htdigest -c /mnt/rpo/conf/scm-user scm *FIRST_USER*
 
 ```
 
 添加其他用户：
 
 ```
- htdigest /mnt/rpo/conf/scm-user scm _OTHER_USER_
+ htdigest /mnt/rpo/conf/scm-user scm *OTHER_USER*
 
 ```
 
@@ -114,19 +114,19 @@
    Require valid-user
    AuthType Digest
    AuthName "svnrepos"
-   AuthDigestDomain _[http://scm.example.com/](http://scm.example.com/)_
+   AuthDigestDomain *[http://scm.example.com/](http://scm.example.com/)*
    AuthDigestProvider file
-   AuthUserFile _/mnt/rpo/conf/scm-user_
+   AuthUserFile */mnt/rpo/conf/scm-user*
  </Location>
  <Location /svn>
    DAV svn
-   SVNParentPath _/mnt/rpo/svn_
+   SVNParentPath */mnt/rpo/svn*
    SVNPathAuthz off
  </Location>
  <Location /trac>
    SetHandler mod_python
    PythonHandler trac.web.modpython_frontend
-   PythonOption TracEnvParentDir _/mnt/rpo/trac_
+   PythonOption TracEnvParentDir */mnt/rpo/trac*
    PythonOption TracUriRoot /trac
  </Location>
 
@@ -168,6 +168,7 @@
 允许 web admin ([http://scm.example.com/trac/MY_PROJECT/admin)：](http://scm.example.com/trac/MY_PROJECT/admin)：)
 
 ```
-echo -e "[components]\nwebadmin.* = enabled" >> /mnt/rpo/trac/MY_PROJECT/conf/trac.ini
+echo -e "[components]
+webadmin.* = enabled" >> /mnt/rpo/trac/MY_PROJECT/conf/trac.ini
 
 ```

@@ -17,10 +17,9 @@ makepkg is provided by the [pacman](https://www.archlinux.org/packages/?name=pac
 
 ### Architecture, compile flags
 
-The MAKEFLAGS, CFLAGS and CXXFLAGS options are used by _make_, _gcc_, and _g++_ whilst compiling software with makepkg. By default, these options generate generic packages that can be installed on a wide range of machines. A performance improvement can be achieved by tuning compilation for the host machine. The downside is that packages compiled specifically for the host's processor may not run on others.
+The MAKEFLAGS, CFLAGS and CXXFLAGS options are used by *make*, *gcc*, and *g++* whilst compiling software with makepkg. By default, these options generate generic packages that can be installed on a wide range of machines. A performance improvement can be achieved by tuning compilation for the host machine. The downside is that packages compiled specifically for the host's processor may not run on others.
 
  `/etc/makepkg.conf` 
-
 ```
 ...
 
@@ -118,7 +117,6 @@ See the make man page for a complete list of available options.
 Next, one can configure where source files and packages should be placed and identify themselves as the packager. This step is optional; packages will be created in the working directory where makepkg is run by default.
 
  `/etc/makepkg.conf` 
-
 ```
 ...
 
@@ -150,10 +148,9 @@ $ mkdir /home/$USER/packages
 
 Then modify the PKGDEST variable in `/etc/makepkg.conf` accordingly.
 
-The PACKAGER variable will set the _packager_ value within compiled packages' `.PKGINFO` metadata file. By default, user-compiled packages will display:
+The PACKAGER variable will set the *packager* value within compiled packages' `.PKGINFO` metadata file. By default, user-compiled packages will display:
 
  `$ pacman -Qi package` 
-
 ```
 ...
 Packager       : Unknown Packager
@@ -164,7 +161,6 @@ Packager       : Unknown Packager
 Afterwards:
 
  `$ pacman -Qi package` 
-
 ```
 ...
 Packager       : John Doe <john@doe.com>

@@ -29,7 +29,6 @@ Remove any closed-source graphic drivers and replace them with the open source e
 Reboot and check the list of attached graphic drivers:
 
  `$ xrandr --listproviders` 
-
 ```
 Providers: number : 2
 Provider 0: id: 0x7d cap: 0xb, Source Output, Sink Output, Sink Offload crtcs: 3 outputs: 4 associated providers: 1 name:Intel
@@ -42,7 +41,6 @@ We can see that there are two graphic cards: Intel, the integrated card (id 0x7d
 By default the Intel card is always used:
 
  `$ glxinfo | grep "OpenGL renderer"` 
-
 ```
 OpenGL renderer string: Mesa DRI Intel(R) Ivybridge Mobile
 
@@ -64,7 +62,6 @@ $ xrandr --setprovideroffloadsink radeon Intel
 Now, you can use your discrete card for the applications who need it the most (for example games, 3D modellers...) by prepending the `DRI_PRIME=1` environment variable:
 
  `$ DRI_PRIME=1 glxinfo | grep "OpenGL renderer"` 
-
 ```
 OpenGL renderer string: Gallium 0.4 on AMD TURKS
 
@@ -97,7 +94,6 @@ Imagine following scenario: The LVDS1 (internal laptop screen) and VGA outputs a
 Create the following Xorg configuration:
 
  `/etc/X11/xorg.conf.d/10-gpu.conf` 
-
 ```
 # Discrete Card as Primary GPU
 

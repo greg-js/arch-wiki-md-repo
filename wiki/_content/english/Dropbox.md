@@ -38,7 +38,7 @@
 [dropbox](https://aur.archlinux.org/packages/dropbox/) can be [installed](/index.php/Install "Install"). Alternatively, [dropbox-experimental](https://aur.archlinux.org/packages/dropbox-experimental/) is also available. As a last resort, the Dropbox website has instructions for a [headless install via command line](https://www.dropbox.com/install?os=lnx).
 
 1.  After installing the package, you can start Dropbox from your application menu or run `dropbox` from the command-line. The client icon will appear in the system tray.
-2.  A pop-up will notify you that Dropbox is running from an unsupported location. Click on _Don't ask again_ since you know that you have installed it from AUR rather than from the official homepage.
+2.  A pop-up will notify you that Dropbox is running from an unsupported location. Click on *Don't ask again* since you know that you have installed it from AUR rather than from the official homepage.
 3.  Eventually a pop-up will ask you to log in to your Dropbox account or create a new account. Enter your credentials.
 4.  After some time you will see a "Welcome to Dropbox" pop-up, which will give you the opportunity to view a short tour of Dropbox.
 5.  Press the "Finish and go to My Dropbox".
@@ -68,14 +68,13 @@ If that does not work, you can start the Dropbox sync client along with your win
 
 ### Starting on boot with systemd
 
-**Note:** _systemd_ can start Dropbox, but will not be correctly aware of its status. You can follow this issue on the [Dropbox forum](https://www.dropboxforum.com/hc/en-us/community/posts/202917115-dropbox-will-not-start-under-systemd-on-linux).
+**Note:** *systemd* can start Dropbox, but will not be correctly aware of its status. You can follow this issue on the [Dropbox forum](https://www.dropboxforum.com/hc/en-us/community/posts/202917115-dropbox-will-not-start-under-systemd-on-linux).
 
-To have Dropbox automatically start when your system boots, simply [enable](/index.php/Enable "Enable") the systemd service, passing your username as the instance identifier. The service unit to be enabled takes the format `dropbox@_username_`.
+To have Dropbox automatically start when your system boots, simply [enable](/index.php/Enable "Enable") the systemd service, passing your username as the instance identifier. The service unit to be enabled takes the format `dropbox@*username*`.
 
 By default, running the service does not give you an icon in the system tray because it does not know which X display to use. If you want to have tray support, you must [edit](/index.php/Systemd#Editing_provided_units "Systemd") the provided service:
 
- `# systemctl edit dropbox@_username_` 
-
+ `# systemctl edit dropbox@*username*` 
 ```
 [Service]
 Environment=DISPLAY=:0
@@ -89,7 +88,6 @@ To have Dropbox automatically start when you log in, simply [enable](/index.php/
 If you want Dropbox to appear in your system tray, you will need to [edit](/index.php/Systemd#Editing_provided_units "Systemd") the service unit so that it knows which X display the system tray is in:
 
  `$ systemctl --user edit dropbox` 
-
 ```
 [Service]
 Environment=DISPLAY=:0
@@ -164,19 +162,19 @@ Pay attention to use different `.../.dropbox-dist/dropboxd` binaries. Even when 
 
 Dropbox itself is pretty good at dealing with connectivity problems. If you have a laptop and roam between different network environments, Dropbox will have problems reconnecting if you do not restart it. **Try one of the methods described below first,** if for some reason the problem remains, you may try one of these hackish solutions: [[1]](https://bbs.archlinux.org/viewtopic.php?pid=790905), [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1012343#p1012343).
 
-**Note:** When using any of these methods, you need to prevent Dropbox from doing a standard autostart by unchecking _Dropbox - Preferences - General - Start Dropbox on system startup_. This prevents Dropbox from creating the `~/.config/autostart/dropbox.desktop` file and thus from starting twice.
+**Note:** When using any of these methods, you need to prevent Dropbox from doing a standard autostart by unchecking *Dropbox - Preferences - General - Start Dropbox on system startup*. This prevents Dropbox from creating the `~/.config/autostart/dropbox.desktop` file and thus from starting twice.
 
 ### Using netctl
 
 For [netctl](/index.php/Netctl "Netctl"), use `ExecUpPost` and `ExecDownPre` respectively in every network profile you use, or for example in `/etc/netctl/interfaces/wlan0` to start Dropbox automatically whenever profile on `wlan0` is active. Add '|| true' to your command to make sure [netctl](/index.php/Netctl "Netctl") will bring up your profile, although Dropbox fails to start.
 
 ```
-ExecUpPost="_any other code_; su -c 'DISPLAY=:0 /usr/bin/dropbox &' _your_user_ || true"
-ExecDownPre="_any other code_; killall dropbox"
+ExecUpPost="*any other code*; su -c 'DISPLAY=:0 /usr/bin/dropbox &' *your_user* || true"
+ExecDownPre="*any other code*; killall dropbox"
 
 ```
 
-Obviously, `_your_user_` has to be edited and `_any other code_;` can be omitted if you do not have any. The above will make sure that Dropbox is running only if there is a network profile active.
+Obviously, `*your_user*` has to be edited and `*any other code*;` can be omitted if you do not have any. The above will make sure that Dropbox is running only if there is a network profile active.
 
 ### Using NetworkManager
 
@@ -233,7 +231,7 @@ UUID=01CD2ABB65E17DE0 /run/media/username/Windows ntfs-3g uid=username,gid=users
 
 ### Change the Dropbox location from the installation wizard
 
-Some users experience the problem during setting-up Dropbox that they cannot select a Dropbox folder other than `/home/username/Dropbox`. In this case when the window for changing the path is shown , hit `Ctrl+l`, enter the location (e.g. /mnt/data/Dropbox) and click on the _Choose_ or _Open_ button.
+Some users experience the problem during setting-up Dropbox that they cannot select a Dropbox folder other than `/home/username/Dropbox`. In this case when the window for changing the path is shown , hit `Ctrl+l`, enter the location (e.g. /mnt/data/Dropbox) and click on the *Choose* or *Open* button.
 
 ### Context menu entries in file manager do not work
 
@@ -247,7 +245,7 @@ An alternative solution, for those not using netctl or NetworkManager, is to del
 
 *   `cp ~/.config/autostart/dropbox.desktop ~/.config/autostart/dropbox-delayed.desktop`
 *   Prevent dropbox from doing a standard autostart by unchecking Dropbox - Preferences - General - Start Dropbox on system startup. This removes `~/.config/autostart/dropbox.desktop`.
-*   Edit `~/.config/autostart/dropbox-delayed.desktop` and replace `Exec=dropbox` with `Exec=bash -c "sleep _timeout_ && dropbox"`. Tweak the _timeout_ parameter, the value of `3` is a good start.
+*   Edit `~/.config/autostart/dropbox-delayed.desktop` and replace `Exec=dropbox` with `Exec=bash -c "sleep *timeout* && dropbox"`. Tweak the *timeout* parameter, the value of `3` is a good start.
 
 ### Dropbox does not start - "This is usually because of a permission error"
 

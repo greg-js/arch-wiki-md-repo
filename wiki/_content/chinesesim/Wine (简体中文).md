@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Wine](/index.php/Wine "Wine") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-08-5，点击[这里](https://wiki.archlinux.org/index.php?title=Wine&diff=0&oldid=389504)可以查看翻译后英文页面的改动。
 
-[Wine](https://en.wikipedia.org/wiki/Wine_(software) "wikipedia:Wine (software)") 是类UNIX系统下运行微软Windows程序的"兼容层"。在Wine中运行的Windows程序，就如同运行原生Linux程序一样，不会有模拟器那样的性能问题。
+[Wine](https://en.wikipedia.org/wiki/Wine_(software) 是类UNIX系统下运行微软Windows程序的"兼容层"。在Wine中运行的Windows程序，就如同运行原生Linux程序一样，不会有模拟器那样的性能问题。
 
 获取更详细的介绍请浏览[项目官方网站](http://www.winehq.org/)和[wiki](http://wiki.winehq.org/)页面。
 
@@ -194,7 +194,7 @@ x86_64平台下使用[Alsa](/index.php/Alsa_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%8
 
 Wine不会为内置程序（如`winecfg`、`winebrowser`）创建桌面启动器和菜单项。但手动安装的Windows程序通常会自动创建启动器和菜单项。在Windows下，安装程序（如`setup.exe`）通常会在桌面和开始菜单建立快捷方式，而Wine下会创建遵循freedesktop.org规范的.desktop文件（即启动器，相当于快捷方式）。
 
-**小贴士:** 如果启动器_没有_自动创建，或者这些文件丢失了，可以尝试使用[winemenubuilder](http://wiki.winehq.org/winemenubuilder)修复。
+**小贴士:** 如果启动器*没有*自动创建，或者这些文件丢失了，可以尝试使用[winemenubuilder](http://wiki.winehq.org/winemenubuilder)修复。
 
 Ubuntu下，Wine项目以子菜单形式出现在系统菜单。以下步骤将实现这个效果：
 
@@ -258,7 +258,6 @@ Icon=wine-winefile
 诶？图标还没出现在菜单中！还剩下最后一步，创建下列文本文件：
 
  `~/.config/menus/applications-merged/wine-utilities.menu` 
-
 ```
  <!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
  "http://www.freedesktop.org/standards/menu-spec/menu-1.0.dtd">
@@ -335,7 +334,7 @@ $ wine <exe文件>
 内置的msiexec程序可以运行MSI安装包：
 
 ```
-$ msiexec /i _path_to_msi_
+$ msiexec /i *path_to_msi*
 
 ```
 
@@ -390,9 +389,9 @@ This is a small piece of UI code meant to be installed with (or even before) Win
 
 Currently [wine developers](http://www.winehq.org/pipermail/wine-devel/2013-September/101106.html) experiment with stream/worker thread optimizations for Wine. You may experience an enormous performance improvement by using this experimental patched Wine versions. Many games may run as fast as on Windows or even faster. This Wine patch is is known as CSMT patch and works with NVidia and AMD graphics cards.
 
-**Note:** This is _still experimental code_, therefore, it may not work as expected. Please, report your experiences to the developers for helping with development of those patches.
+**Note:** This is *still experimental code*, therefore, it may not work as expected. Please, report your experiences to the developers for helping with development of those patches.
 
-The easy way is to install [playonlinux](https://www.archlinux.org/packages/?name=playonlinux). Then install your game and activate the Wine version _1.7.4-CSMT_ from the `Tools` → `Manage Wine Versions` menu in PlayOnLinux. For now it is recommended to use the patched Wine version _1.7.4-CSMT_.
+The easy way is to install [playonlinux](https://www.archlinux.org/packages/?name=playonlinux). Then install your game and activate the Wine version *1.7.4-CSMT* from the `Tools` → `Manage Wine Versions` menu in PlayOnLinux. For now it is recommended to use the patched Wine version *1.7.4-CSMT*.
 
 Open your game's configuration settings and copy the following settings to the `Miscellaneous`/`Command to exec before running the program` section of your game configuration settings:
 
@@ -427,14 +426,14 @@ CSMT support needs to be enabled before it can be used, instructions can be foun
 Some programs may not offer a language selection, they will guess the desired language upon the sytem locales. Wine will transfer the current environment (including the locales) to the application, so it should work out of the box. If you want to force a program to run in a specific locale (which is fully [generated](/index.php/Locale "Locale") on your system), you can call Wine with the following setting:
 
 ```
-LC_ALL=_xx_XX.encoding_ wine _/path/to/program_
+LC_ALL=*xx_XX.encoding* wine */path/to/program*
 
 ```
 
 For instance
 
 ```
-LC_ALL=it_IT.UTF-8 wine _/path/to/program_
+LC_ALL=it_IT.UTF-8 wine */path/to/program*
 
 ```
 
@@ -470,7 +469,7 @@ $ wine /path/to/office_cd/setup.exe
 
 ### Proper mounting of optical media images
 
-Some applications will check for the optical media to be in drive. They may check for data only, in which case it might be enough to configure the corresponding path as being a CD-ROM drive in _winecfg_. However, other applications will look for a media name and/or a serial number, in which case the image has to be mounted with these special properties.
+Some applications will check for the optical media to be in drive. They may check for data only, in which case it might be enough to configure the corresponding path as being a CD-ROM drive in *winecfg*. However, other applications will look for a media name and/or a serial number, in which case the image has to be mounted with these special properties.
 
 Some virtual drive tools do not handle these metadata, like fuse-based virtual drives (Acetoneiso for instance). CDEmu will handle it correctly.
 
@@ -480,7 +479,7 @@ To burn CDs or DVDs, you will need to load the `sg` [kernel module](/index.php/K
 
 ### OpenGL 模式
 
-很多游戏（比如魔兽争霸啦）都支持OpenGL模式，在Wine下_可能_比默认DirectX模式性能更好。一般添加`-opengl`启动程序即可，但_不同程序可能有所不同_：
+很多游戏（比如魔兽争霸啦）都支持OpenGL模式，在Wine下*可能*比默认DirectX模式性能更好。一般添加`-opengl`启动程序即可，但*不同程序可能有所不同*：
 
 ```
 $ wine /path/to/3d_game.exe -opengl

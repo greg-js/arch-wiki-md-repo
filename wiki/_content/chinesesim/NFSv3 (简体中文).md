@@ -111,7 +111,7 @@ exports 文件的详细信息请参考 exports 的man page。
 
 #### /etc/conf.d/nfs-common.conf
 
-编辑这个文件以传递合适（appropriate）的运行选项给 statd - 剩下的选项都是仅仅供服务器使用的。_不要_在客户端使用 --no-notify 选项，除非你完全意识到这样做的后果。
+编辑这个文件以传递合适（appropriate）的运行选项给 statd - 剩下的选项都是仅仅供服务器使用的。*不要*在客户端使用 --no-notify 选项，除非你完全意识到这样做的后果。
 
 请参考 statd man page 获取详细信息。
 
@@ -151,10 +151,9 @@ mount ELROND:music /mnt/point
 
 ```
 
-or you will get _mount.nfs: access denied by server while mounting_
+or you will get *mount.nfs: access denied by server while mounting*
 
 **Note:** If you see the following message then you probably did not start the daemons from the [previous section](#Daemons) or something went wrong while starting them.
-
 ```
 mount: wrong fs type, bad option, bad superblock on 192.168.1.99:/media/raid5-4tb,
        missing codepage or helper program, or other error
@@ -243,7 +242,6 @@ Make sure you place portmap BEFORE netfs in the daemons array in /etc/rc.conf .
 如果你有一个基于端口的防火墙，你也许想设置一个固定的端口。对于 rpc.statd 和 rpc.mountd 你应该在 `/etc/conf.d/nfs-common` 中 `/etc/conf.d/nfs-server` 按照如下设置 (端口可以与下面不同)：
 
  `/etc/conf.d/nfs-common`  `STATD_OPTS="-p 4000 -o 4003"`  `/etc/conf.d/nfs-server`  `MOUNTD_OPTS="--no-nfs-version 2 -p 4002"`  `/etc/modprobe.d/lockd.conf` 
-
 ```
 # Static ports for NFS lockd
 options lockd nlm_udpport=4001 nlm_tcpport=4001
@@ -260,7 +258,6 @@ options lockd nlm_udpport=4001 nlm_tcpport=4001
 重启 nfs 守护进程和重新载入 lockd 模块之后，你可以使用以下命令检查使用的端口：
 
  `$ rpcinfo -p` 
-
 ```
 rpcinfo -p
    program vers proto   port  service

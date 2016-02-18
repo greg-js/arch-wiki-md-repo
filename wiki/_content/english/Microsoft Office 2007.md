@@ -143,7 +143,7 @@ See [MS Fonts](/index.php/MS_Fonts "MS Fonts") for more details
 
 The Droid, Lucida and Tahoma fonts will fail to download due to broken URLs or IP addresses. To fix these perform the following steps:
 
-**Note:** _Both_ steps must be performed _prior_ to installing the allfonts package using winetricks
+**Note:** *Both* steps must be performed *prior* to installing the allfonts package using winetricks
 
 #### Droid fonts
 

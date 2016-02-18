@@ -90,7 +90,7 @@ zone:
 
 Before starting up nsd you can check the zone files using the nsd-checkconf command with the zone file name as a parameter.
 
-In version 3 in order to build the zone database that makes nsd run exceptionally quickly the database file must be rebuilt each time a zone or config file is changed, and the following command is executed as the **nsd** user (the daemon runs as _nsd_ and that user must be able to read `/var/db/nsd/nsd.db`):
+In version 3 in order to build the zone database that makes nsd run exceptionally quickly the database file must be rebuilt each time a zone or config file is changed, and the following command is executed as the **nsd** user (the daemon runs as *nsd* and that user must be able to read `/var/db/nsd/nsd.db`):
 
 ```
 nsdc rebuild

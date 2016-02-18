@@ -1,6 +1,6 @@
 **I have written the following in the hope that it may help those investigating the installation of Arch on their iMac. Parts of this guide are specifically written for the Alu' 20" & 24" iMac.**
 
-I have an aluminium 24" iMac, on which I have just (at the time of writing) installed Arch 64bit, twice! I had a serious problem logging into Gnome & anything that required the root password failed. I worked around these problems but was never happy with the setup. I think that the iMac aluminium keyboard _**may**_ have caused the problem, due to it not having a num-lock key, or an LED to indicate num-lock on/off; my passwords were numerical. Of course I may be wrong. My second install was done with an MS Digital Media keyboard & I do not have the above problem, also my ctrl-alt-Fkeys work now.
+I have an aluminium 24" iMac, on which I have just (at the time of writing) installed Arch 64bit, twice! I had a serious problem logging into Gnome & anything that required the root password failed. I worked around these problems but was never happy with the setup. I think that the iMac aluminium keyboard ***may*** have caused the problem, due to it not having a num-lock key, or an LED to indicate num-lock on/off; my passwords were numerical. Of course I may be wrong. My second install was done with an MS Digital Media keyboard & I do not have the above problem, also my ctrl-alt-Fkeys work now.
 
 ## Contents
 
@@ -28,22 +28,22 @@ Some people seriously consider dropping OS X altogether. I personally think that
 
 Apple computers have a built-in bootloader that can be accessed by holding down the 'ALT' key when switched on. This allows you to boot from CD, HDD and via WiFi. If your iMac has a separate EFI partition, this menu will also allow you to boot Archlinux directly (follow these instructions: [GRUB#Create GRUB2 Standalone UEFI Application](/index.php/GRUB#Create_GRUB2_Standalone_UEFI_Application "GRUB")). This built-in bootloader sometimes has problems booting from USB, so it might be a good idea to install **rEFIt** [[1]](http://refit.sourceforge.net/) on your OS X partition. You will probably want to lower the timeout and make linux the default option, for that you must edit the **refit.conf** file [[2]](http://refit.sourceforge.net/doc/c3s3_config.html).
 
-_After_ succesfully installing Arch and Grub you may remove rEFIt (first make sure your stand-alone UEFI app shows up in the Apple bootloader). To change the default boot-option to Archlinux, you need to 'bless' the earlier created stand-alone UEFI app. It is best to rename the created 'EFI/arch_grub/grubx64_standalone.efi' to 'EFI/BOOT/BOOTX64.EFI', then run the following command from MacOSx, after mounting the EFI partition:
+*After* succesfully installing Arch and Grub you may remove rEFIt (first make sure your stand-alone UEFI app shows up in the Apple bootloader). To change the default boot-option to Archlinux, you need to 'bless' the earlier created stand-alone UEFI app. It is best to rename the created 'EFI/arch_grub/grubx64_standalone.efi' to 'EFI/BOOT/BOOTX64.EFI', then run the following command from MacOSx, after mounting the EFI partition:
 
 ```
 sudo bless --folder=/Volumes/EFI --file=/Volumes/EFI/efi/BOOT/BOOTX64.EFI --setBoot
 
 ```
 
-When booting through the Apple bootloader (instead of rEFIt) you will be booting in full EFI mode, instead of BIOS compatibility. This means you will probably need to boot your _archlinux-fallback_ image the first time; and update your mkinitcpio to succesfully switch from BIOS > EFI.
+When booting through the Apple bootloader (instead of rEFIt) you will be booting in full EFI mode, instead of BIOS compatibility. This means you will probably need to boot your *archlinux-fallback* image the first time; and update your mkinitcpio to succesfully switch from BIOS > EFI.
 
 ## Partitioning & Filesystems
 
 There are multiple ways to repartition the iMac drive, my favourite (probably because it is the easiest & being graphical it is most likely the safest) is to boot the Ubuntu 7.10 (or later) LiveCD & run GParted from the desktop menu. I have shrunk the OS X, HFS+ partition, created Ext3, JFS & Linux Swap partition, deleted & moved partitions on the iMac using GParted & the Ubuntu LiveCD. Great stuff! The only present limitation that GParted has with the HFS+ file system, is that it can only shrink the HFS+ file system & can not enlarge it. I'm sure it won't be too long & this limitation won't exist either.
 
-_Just a note on using GParted, or any other GUI type of partition management tool, it is generally accepted to be good safe practice to only **Apply ONE process at a time**. What that means for those unfamiliar with GParted (& the other applications of it's ilk) is you can give it multiple instructions which it stores up until you hit the "Apply" button, after which it goes through the instructions one after the other. If this doesn't make sense now, it very quickly will on using GParted._
+*Just a note on using GParted, or any other GUI type of partition management tool, it is generally accepted to be good safe practice to only **Apply ONE process at a time**. What that means for those unfamiliar with GParted (& the other applications of it's ilk) is you can give it multiple instructions which it stores up until you hit the "Apply" button, after which it goes through the instructions one after the other. If this doesn't make sense now, it very quickly will on using GParted.*
 
-_My iMac partition scheme is as follows:_
+*My iMac partition scheme is as follows:*
 
 **Partition**...**Filesystem**......**Size**.........**Mountpoint**
 
@@ -51,7 +51,7 @@ _My iMac partition scheme is as follows:_
 
 **sda2** ......... **HFS+** ........... **50Gb** ..... **OS X** - After thinning out OS X some & keeping tools I use plus iWork, CrossOver Games & Guild Wars, I have about 25Gb of free space to play with here, & for the odd game that may arrive in the future (Guild Wars 2). :D
 
-**sda3** ......... **Ext3** ............ **15Gb** ...... **/** _- Arch -_ there is currently 12Gb free, it is a new install though.
+**sda3** ......... **Ext3** ............ **15Gb** ...... **/** *- Arch -* there is currently 12Gb free, it is a new install though.
 
 **sda4** ......... **JFS** .............. **30Gb** ...... **/home** - that should be more than enough space for me there, & I can always resize with GParted.
 
@@ -87,7 +87,7 @@ So just to sum up, if you are using a machine with out of date firmware: & you h
 
 ## rEFIt Re-sync
 
-When partitioning is finished you must restart the iMac & re-sync your partitions with rEFIt, which is quick & easy: You choose to **start the partitioning tool** in the _rEFIt boot-menu_ & follow the very simple instructions there. _rEFIt may prefer to have partitions in numerical order on the drive, i.e. sda1, sda2, sda3, sda4, sda5, sda6 ... & not shuffled. This is unconfirmed, any feedback on the subject will be appreciated._
+When partitioning is finished you must restart the iMac & re-sync your partitions with rEFIt, which is quick & easy: You choose to **start the partitioning tool** in the *rEFIt boot-menu* & follow the very simple instructions there. *rEFIt may prefer to have partitions in numerical order on the drive, i.e. sda1, sda2, sda3, sda4, sda5, sda6 ... & not shuffled. This is unconfirmed, any feedback on the subject will be appreciated.*
 
 Then reboot & hold down the **C** key, or wait as I do for the rEFIt boot-menu to appear & choose to boot the Arch install CD.
 
@@ -101,7 +101,7 @@ The CD install & network setup went perfectly for me. The Beginners Guide has al
 
 ## Installing & Configuring X
 
-When installing the Xserver, [Xorg](/index.php/Xorg "Xorg") I installed as though I was not going to use the proprietary ATi drivers (now called _Catalyst_), this allowed me to use both the _vesa_ & the _xf86-video-ati_ open source drivers. I only did this out of what turned out (at that time) to be a false sense of fear of the approaching fight to get ATi's Catalyst drivers to work.
+When installing the Xserver, [Xorg](/index.php/Xorg "Xorg") I installed as though I was not going to use the proprietary ATi drivers (now called *Catalyst*), this allowed me to use both the *vesa* & the *xf86-video-ati* open source drivers. I only did this out of what turned out (at that time) to be a false sense of fear of the approaching fight to get ATi's Catalyst drivers to work.
 
 Having now had a couple of years experience with Arch since I wrote the above, I have learned that Catalyst can be a real can of worms on Arch in particular. This is due to the way that Arch uses cutting edge versions of packages & the rolling release upgrade system. Which can cause there to be occasional incompatibilities between Catalyst & the version of packages that Arch uses.
 
@@ -149,7 +149,7 @@ Now test the program by typing:
 
 in the terminal.
 
-_You can give it values from 1 to 15_. Find a value you like.
+*You can give it values from 1 to 15*. Find a value you like.
 
 Now enter the following in the Terminal:
 
@@ -231,9 +231,12 @@ int main(int argc, char** argv)
 {
     if (argc > 2)
     {
-        printf("Usage:\n");
-        printf("%s : read current value\n", argv[0]);
-        printf("%s value : write value [0-15]\n", argv[0]);
+        printf("Usage:
+");
+        printf("%s : read current value
+", argv[0]);
+        printf("%s value : write value [0-15]
+", argv[0]);
         exit(1);
     }
 
@@ -241,7 +244,8 @@ int main(int argc, char** argv)
 
     if (argc < 2)
     {
-        printf("Current value : %d\n", get_current_value());
+        printf("Current value : %d
+", get_current_value());
         exit(0);
     }
 
@@ -250,7 +254,8 @@ int main(int argc, char** argv)
         int value = calculate_new_value(argv[1]);
         outb(0x04 | (value << 4), 0xB3);
         outb(0xBF, 0xB2);
-        printf("new value: %d\n", value);
+        printf("new value: %d
+", value);
     }
 
     return 0;
@@ -268,17 +273,17 @@ An ok workaround until this is fixed is the [Backlight#redshift](/index.php/Back
 
 ## Getting sound to work right
 
-Sound does not always work nice out of the box using Linux on an iMac. For instance, the sound can appear "thin" or tinny with too much treble and too little base due to the built in subwoofer being muted by default or the OS may not detect that the headphones have been plugged in. The fixes are generally to load sound drivers with extra model flags specifying relevent iMac model by manipulating _/etc/modprobe.d/sound.conf_ or _/etc/modprobe.d/modprobe.conf_, restart the computer or the sound system and use alsamixer to make sure all desired channels are not muted.
+Sound does not always work nice out of the box using Linux on an iMac. For instance, the sound can appear "thin" or tinny with too much treble and too little base due to the built in subwoofer being muted by default or the OS may not detect that the headphones have been plugged in. The fixes are generally to load sound drivers with extra model flags specifying relevent iMac model by manipulating */etc/modprobe.d/sound.conf* or */etc/modprobe.d/modprobe.conf*, restart the computer or the sound system and use alsamixer to make sure all desired channels are not muted.
 
 ### The iMac 20" & 24" models
 
-Add the following to _/etc/modprobe.d/sound.conf_
+Add the following to */etc/modprobe.d/sound.conf*
 
  `options snd-hda-intel model=imac24` 
 
 ### The imac7,1 model:
 
-The option above may produces tiny sound on imac7,1\. To have OSX like rich sound on imac 7,1, add following to _/etc/modprobe.d/modprobe.conf_
+The option above may produces tiny sound on imac7,1\. To have OSX like rich sound on imac 7,1, add following to */etc/modprobe.d/modprobe.conf*
 
  `options snd-hda-intel model=mb31` 
 
@@ -286,7 +291,7 @@ Using the above gives a workable alsamixer. I've found that using VLC & its mixe
 
 ### The imac12,2 27" 2011 model
 
-Starting with the Linux kernel version 3.3 (at its release candidates) the following setting should be used in _/etc/modprobe.d/sound.conf_ to handle headphone detection correcly:
+Starting with the Linux kernel version 3.3 (at its release candidates) the following setting should be used in */etc/modprobe.d/sound.conf* to handle headphone detection correcly:
 
  `options snd-hda-intel model=imac27_122` 
 

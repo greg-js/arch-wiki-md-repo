@@ -34,7 +34,7 @@ Use the command below to start the miner on all OpenCL devices. If you receive t
 **Tip:** Be sure to have your pool login and password available. You can obtain this if you register with [https://mining.bitcoin.cz](https://mining.bitcoin.cz)
 
 ```
-$ poclbm _username:password@server:port_
+$ poclbm *username:password@server:port*
 
 ```
 
@@ -45,17 +45,16 @@ The miner has started and will display a hash rate (x MH/s). To exit use the `Ct
 Create the service file:
 
  `/etc/systemd/system/poclbm.service` 
-
 ```
 [Unit]
 Description=Python OpenCL Bitcoin miner
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/poclbm --verbose _<user-specific arguments>_
+ExecStart=/usr/bin/poclbm --verbose *<user-specific arguments>*
 
 [Install]
 WantedBy=multi-user.target
 ```
 
-The user-specific arguments need to be adapted as described in [#Execute the miner](#Execute_the_miner). Then [start](/index.php/Start "Start") the service using _systemctl_.
+The user-specific arguments need to be adapted as described in [#Execute the miner](#Execute_the_miner). Then [start](/index.php/Start "Start") the service using *systemctl*.

@@ -33,7 +33,7 @@ You can choose various approaches:
 
 ## Theme engines
 
-A _theme engine_ can be thought of as a thin layer API which translates themes (excluding icons) between one or more toolkits. These engines add some extra code in the process and it is arguable that this kind of a solution is not as elegant and optimal as using native styles.
+A *theme engine* can be thought of as a thin layer API which translates themes (excluding icons) between one or more toolkits. These engines add some extra code in the process and it is arguable that this kind of a solution is not as elegant and optimal as using native styles.
 
 ### QGtkStyle
 
@@ -43,10 +43,9 @@ This Qt style uses GTK+ 2 to render all components to blend in with [GNOME](/ind
 
 This is the default Qt4 style in Cinnamon, GNOME and Xfce, and the default Qt5 style in Cinnamon, GNOME, MATE, LXDE and Xfce. In other environments:
 
-*   For Qt4, it can be enabled with _Qt Configuration_ (`qtconfig-qt4`), choose _GTK+_ under _Appearance > GUI Style_. Alternatively, edit the `/etc/xdg/Trolltech.conf` (system-wide) or `~/.config/Trolltech.conf` (user-specific) file:
+*   For Qt4, it can be enabled with *Qt Configuration* (`qtconfig-qt4`), choose *GTK+* under *Appearance > GUI Style*. Alternatively, edit the `/etc/xdg/Trolltech.conf` (system-wide) or `~/.config/Trolltech.conf` (user-specific) file:
 
  `~/.config/Trolltech.conf` 
-
 ```
 ...
 [Qt]
@@ -96,9 +95,9 @@ To set a style as default, you can use [qt5ct](https://www.archlinux.org/package
 
 ### Using a GTK+ icon theme in Qt apps
 
-If running [KDE](/index.php/KDE "KDE"), install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and select the icon-theme under _System Settings > Application Style > GTK_.
+If running [KDE](/index.php/KDE "KDE"), install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and select the icon-theme under *System Settings > Application Style > GTK*.
 
-If you are not using [GNOME](/index.php/GNOME "GNOME"), run `gconf-editor`, look under _desktop > gnome > interface_ for the `icon_theme` key and change it to your preference. As you are not using GNOME, it is possible that you will have to set `export DESKTOP_SESSION=gnome` somewhere in your `~/.xinitrc` or, if you are using [LightDM](/index.php/LightDM "LightDM"), in `/etc/environment`.
+If you are not using [GNOME](/index.php/GNOME "GNOME"), run `gconf-editor`, look under *desktop > gnome > interface* for the `icon_theme` key and change it to your preference. As you are not using GNOME, it is possible that you will have to set `export DESKTOP_SESSION=gnome` somewhere in your `~/.xinitrc` or, if you are using [LightDM](/index.php/LightDM "LightDM"), in `/etc/environment`.
 
 ### Improve subpixel rendering of GTK apps under KDE Plasma
 
@@ -108,7 +107,7 @@ See [Font configuration#LCD filter](/index.php/Font_configuration#LCD_filter "Fo
 
 ### Qt applications do not use QGtkStyle
 
-Qt will not apply QGtkStyle correctly if GTK+ is using the [GTK+-Qt Engine](#GTK.2B-Qt_Engine). Qt determines whether the GTK+-Qt Engine is in use by reading the GTK+ configuration files listed in the environmental variable `GTK2_RC_FILES`. If the environmental variable is not set properly, Qt assumes you are using the engine, sets QGtkStyle to use the style GTK+ style _Clearlooks_, and outputs an error message:
+Qt will not apply QGtkStyle correctly if GTK+ is using the [GTK+-Qt Engine](#GTK.2B-Qt_Engine). Qt determines whether the GTK+-Qt Engine is in use by reading the GTK+ configuration files listed in the environmental variable `GTK2_RC_FILES`. If the environmental variable is not set properly, Qt assumes you are using the engine, sets QGtkStyle to use the style GTK+ style *Clearlooks*, and outputs an error message:
 
 ```
 QGtkStyle cannot be used together with the GTK_Qt engine.
@@ -127,7 +126,6 @@ According to [this thread](https://bbs.archlinux.org/viewtopic.php?id=99175&p=1)
 Users of [Openbox](/index.php/Openbox "Openbox") and other non-GNOME environments may encounter this problem. To solve this, first add the following to your `.xinitrc` file:
 
  `.xinitrc` 
-
 ```
 ...
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
@@ -144,7 +142,6 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 Then specify the theme you want in the `~/.gtkrc-2.0` file using a [dedicated application](#GTK2_styles) or manually, by adding:
 
  `.gtkrc-2.0` 
-
 ```
 ...
 gtk-theme-name="[name of theme]"
@@ -155,7 +152,6 @@ gtk-theme-name="[name of theme]"
 Some tools only insert the following include directive in `~/.gtkrc-2.0`:
 
  `.gtkrc-2.0` 
-
 ```
 ...
 include "/usr/share/themes/SomeTheme/gtk-2.0/gtkrc"

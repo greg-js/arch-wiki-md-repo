@@ -98,7 +98,6 @@ Java Swing GUI applications assume tiling window managers, and don't go to fulls
 First, install the <tt>wmname</tt> package. Then add this line to your <tt>.ratpoisonrc</tt>:
 
  `~/.ratpoisonrc` 
-
 ```
 exec wmname LG3D
 
@@ -113,7 +112,6 @@ By default, ratpoison only has one workspace, but using a script called rpws (in
 Just edit your .ratpoisonrc, and add:
 
  `~/.ratpoisonrc` 
-
 ```
 exec /usr/bin/rpws init 6 -k
 
@@ -147,14 +145,11 @@ We can use the xterm/urxvt option internalBorder and set the border of ratpoison
 A trial and error process must be done to find the exact number of internalBorder for each combination of resolution and font size. (the border of ratpoison must be set to 0 before doing the tests) The term command line option -b can be used to test for the correct number and then can be saved on the following files.
 
  `~/.Xresources` 
-
 ```
 urxvt*internalBorder: 8 #change urxvt to xterm if necessary. Using the font terminus in urxvt at 14px size, 8 is the correct number here.
 
 ```
-
  `~/.ratpoisonrc` 
-
 ```
 set border 0
 
@@ -167,14 +162,11 @@ If a combination cannot be found, you could try changing the font size and the f
 Examples for launching programs when ratpoison starts. File `~/.ratpoisonrc` is executed by ratpoison on startup.
 
  `Launch urxvt with a tmux session` 
-
 ```
 exec urxvt -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
 
 ```
-
  `Launch optimized chromium` 
-
 ```
 exec bash -c 'pidof chromium &>/dev/null || exec /usr/bin/chromium --disk-cache-dir=~/tmp/cache'
 
@@ -185,7 +177,6 @@ exec bash -c 'pidof chromium &>/dev/null || exec /usr/bin/chromium --disk-cache-
 Example for setting transparency using [xcompmgr](/index.php/Xcompmgr "Xcompmgr") and nitrogen. First start nitrogen and set the desired wallpaper. Then use this in your .ratpoisonrc
 
  `Wallpaper and transparency` 
-
 ```
 exec xcompmgr -c -f -D 5 &
 exec nitrogen --restore
@@ -194,7 +185,7 @@ exec nitrogen --restore
 
 ## Useful keybindings
 
-| `Ctrl+t` `!` <_Program Name_> Start any program |
+| `Ctrl+t` `!` <*Program Name*> Start any program |
 | `Ctrl+t` `?` Show key bindings |
 | `Ctrl+t` `c` Start an X terminal |
 | `Ctrl+t` `n` Switch to next window |

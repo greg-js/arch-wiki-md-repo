@@ -107,7 +107,7 @@ BIOS/[GPT](/index.php/GPT "GPT")配置中，一个 [BIOS启动分区](http://www
 *   This additional partition is only needed on a GRUB, BIOS/GPT partitioning scheme. Previously, for a GRUB, BIOS/MBR partitioning scheme, GRUB used the Post-MBR gap for the embedding the `core.img`). GRUB for GPT, however, does not use the Post-GPT gap to conform to GPT specifications that require 1_megabyte/2048_sector disk boundaries.
 *   For [UEFI](/index.php/UEFI "UEFI") systems this extra partition is not required as no embedding of boot sectors takes place in that case.
 
-Create a mebibyte partition (`+1M` with `fdisk` or `gdisk`) on the disk with no file system and type BIOS boot (_BIOS boot_ in fdisk, `ef02` in gdisk, `bios_grub` in `parted`). This partition can be in any position order but has to be on the first 2 TiB of the disk. This partition needs to be created before GRUB installation. When the partition is ready, install the bootloader as per the instructions below. The post-GPT gap can also be used as the BIOS boot partition though it will be out of GPT alignment specification. Since the partition will not be regularly accessed performance issues can be disregarded (though some disk utilities will display a warning about it). In `fdisk` or `gdisk` create a new partition starting at sector 34 and spanning to 2047 and set the type. To have the viewable partitions begin at the base consider adding this partition last.
+Create a mebibyte partition (`+1M` with `fdisk` or `gdisk`) on the disk with no file system and type BIOS boot (*BIOS boot* in fdisk, `ef02` in gdisk, `bios_grub` in `parted`). This partition can be in any position order but has to be on the first 2 TiB of the disk. This partition needs to be created before GRUB installation. When the partition is ready, install the bootloader as per the instructions below. The post-GPT gap can also be used as the BIOS boot partition though it will be out of GPT alignment specification. Since the partition will not be regularly accessed performance issues can be disregarded (though some disk utilities will display a warning about it). In `fdisk` or `gdisk` create a new partition starting at sector 34 and spanning to 2047 and set the type. To have the viewable partitions begin at the base consider adding this partition last.
 
 ### 主引导记录(MBR)具体说明
 
@@ -258,7 +258,6 @@ Installation finished. No error reported.
 示例如下:
 
  `/boot/grub/menu.lst` 
-
 ```
 default=0
 timeout=5
@@ -274,9 +273,7 @@ kernel /vmlinuz-linux root=/dev/sda2 ro
 initrd /initramfs-linux-fallback.img
 
 ```
-
  `/boot/grub/grub.cfg` 
-
 ```
 set default='0'; if [ x"$default" = xsaved ]; then load_env; set default="$saved_entry"; fi
 set timeout=5
@@ -369,7 +366,6 @@ fi
 ```
 
 **Note:** 在某些情况下,可能在安装Windows 8之前就已经安装了GRUB.启动Windows时可能会`\boot\bcd`报错(错误代码为`0xc000000f`).可以通过Wondows Recovery Console来修复这个错误:
-
 ```
 x:\> "bootrec.exe /fixboot" 
 x:\> "bootrec.exe /RebuildBcd".
@@ -415,7 +411,7 @@ x:\> "bootrec.exe /RebuildBcd".
 
 ```
 
-安装[grub](https://www.archlinux.org/packages/?name=grub) [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr)包。"GRUB"是引导程序， _efibootmgr_ creates bootable `.efi` stub entries used by the GRUB installation script. 接下来的步骤将安装GRUB UEFI 程序到 `**$esp**/EFI/grub`中, 安装其模块到`/boot/grub/x86_64-efi`, and place the bootable `grubx64.efi` stub in `**$esp**/EFI/grub`.
+安装[grub](https://www.archlinux.org/packages/?name=grub) [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr)包。"GRUB"是引导程序， *efibootmgr* creates bootable `.efi` stub entries used by the GRUB installation script. 接下来的步骤将安装GRUB UEFI 程序到 `**$esp**/EFI/grub`中, 安装其模块到`/boot/grub/x86_64-efi`, and place the bootable `grubx64.efi` stub in `**$esp**/EFI/grub`.
 
 首先，告诉GRUB使用UEFI，设置引导目录，并设置引导程序ID，将`$esp` 修改为你的 efi 分区 (通常为 `/boot`)
 
@@ -512,7 +508,7 @@ The `--bootloader-id` is what appears in the boot options to identity the GRUB E
 
 #### 额外的参数
 
-在`/etc/default/grub`中设置`GRUB_CMDLINE_LINUX`和`GRUB_CMDLINE_LINUX_DEFAULT`变量可以实现将向Linux镜像传递额外的参数.生成`grub.cfg`时,如果遇到普通启动项,这两个参数会一起使用,遇到_recovery_启动项,就只使用`GRUB_CMDLINE_LINUX`参数.
+在`/etc/default/grub`中设置`GRUB_CMDLINE_LINUX`和`GRUB_CMDLINE_LINUX_DEFAULT`变量可以实现将向Linux镜像传递额外的参数.生成`grub.cfg`时,如果遇到普通启动项,这两个参数会一起使用,遇到*recovery*启动项,就只使用`GRUB_CMDLINE_LINUX`参数.
 
 没有必要两者一起使用.这两个参数很有用.比如,如果要系统支持休眠后恢复,需要使用`GRUB_CMDLINE_LINUX_DEFAULT="resume=/dev/sdaX quiet"` (`sda**X**`是交换分区).这个选项会生成一个recovery启动项,这个启动项没有resume和quiet参数.其他的普通启动项也可能使用它们.(GRUB会为每个内核生成两个启动项,一个默认的一个recovery的,GRUB_CMDLINE_LINUX指定的参数会传递给这两个启动项.GRUB_CMDLINE_LINUX_DEFAULT指定的参数只会传递给默认启动项)
 
@@ -524,20 +520,19 @@ The `--bootloader-id` is what appears in the boot options to identity the GRUB E
 
 ### 手动创建 grub.cfg
 
-**Warning:** _不推荐_编辑这个文件.这个文件由`grub-mkconfig`生成,最好编辑`/etc/default/grub`和`/etc/grub.d`文件夹下的脚本以实现修改.
+**Warning:** *不推荐*编辑这个文件.这个文件由`grub-mkconfig`生成,最好编辑`/etc/default/grub`和`/etc/grub.d`文件夹下的脚本以实现修改.
 
 基本的GRUB配置文件使用如下选项:
 
-*   `(hd_X_,_Y_)` 是_X_磁盘的_Y_分区,分区从1开始计数,磁盘从0开始计数.
-*   `set default=_N_`设定用户选择超时时间过后的默认启动项
-*   `set timeout=_M_`设定用户选择超时时间(秒).
+*   `(hd*X*,*Y*)` 是*X*磁盘的*Y*分区,分区从1开始计数,磁盘从0开始计数.
+*   `set default=*N*`设定用户选择超时时间过后的默认启动项
+*   `set timeout=*M*`设定用户选择超时时间(秒).
 *   `menuentry "title" {entry options}`设置一个名为`title`的启动项
-*   `set root=(hd_X_,_Y_)`设定启动分区(kernel和GRUB模组所在磁盘),/boot没被要求独占一个分区,有可能就是root分区下的一个文件夹
+*   `set root=(hd*X*,*Y*)`设定启动分区(kernel和GRUB模组所在磁盘),/boot没被要求独占一个分区,有可能就是root分区下的一个文件夹
 
 示例配置如下:
 
  `/boot/grub/grub.cfg` 
-
 ```
 # Config file for GRUB - The GNU GRand Unified Bootloader
 # /boot/grub/grub.cfg
@@ -779,7 +774,6 @@ GRUB_GFXPAYLOAD_LINUX=keep
 首先,找一个你想要替代的视频模式.例如在GRUB命令行模式下运行:
 
  `sh:grub> 915resolution -l` 
-
 ```
 Intel 800/900 Series VBIOS Hack : version 0.5.3
 [...]
@@ -791,7 +785,6 @@ Intel 800/900 Series VBIOS Hack : version 0.5.3
 然后,使用`1440x900` 分辨率覆盖`Mode 30`
 
  `/etc/grub.d/00_header` 
-
 ```
 [...]
 **915resolution 30 1440 900  # Inserted line**
@@ -943,7 +936,7 @@ insmod lvm
 然后在启动项里指定root:
 
 ```
-set root=lvm/_lvm_group_name_-_lvm_logical_boot_partition_name_
+set root=lvm/*lvm_group_name*-*lvm_logical_boot_partition_name*
 
 ```
 
@@ -1015,7 +1008,7 @@ GRUB支持以卷标识别文件系统(通过`search`命令的`--label参数`).
 首先,给文件系统设置一个卷标:
 
 ```
-# tune2fs -L _LABEL_ _PARTITION_
+# tune2fs -L *LABEL* *PARTITION*
 
 ```
 
@@ -1075,7 +1068,6 @@ GRUB_DEFAULT='Arch Linux, with Linux core repo kernel'
 如果你想禁止其他人改变启动参数或者使用GRUB命令行,可以给GRUB配置添加用户名/密码. 运行 `grub-mkpasswd-pbkdf2`,输入密码:
 
  `grub-mkpasswd-pbkdf2` 
-
 ```
 [...]
 Your PBKDF2 is grub.pbkdf2.sha512.10000.C8ABD3E93C4DFC83138B0C7A3D719BC650E6234310DA069E6FDB0DD4156313DA3D0D9BFFC2846C21D5A2DDA515114CF6378F8A064C94198D0618E70D23717E82.509BFA8A4217EAD0B33C87432524C0B6B64B34FBAD22D3E6E6874D9B101996C5F98AB1746FE7C7199147ECF4ABD8661C222EEEDB7D14A843261FFF2C07B1269A
@@ -1085,7 +1077,6 @@ Your PBKDF2 is grub.pbkdf2.sha512.10000.C8ABD3E93C4DFC83138B0C7A3D719BC650E62343
 然后将下面的内容添加到`/etc/grub.d/00_header`:
 
  `/etc/grub.d/00_header` 
-
 ```
 cat << EOF
 
@@ -1146,7 +1137,6 @@ Regenerate the configuration.
 然后创建如下文件:
 
  `/etc/grub.d/31_hold_shift` 
-
 ```
 #! /bin/sh
 set -e
@@ -1361,7 +1351,7 @@ grub>
 
 可以使用GRUB命令行引导操作系统,一个典型的应用场景是通过**chainloading**来引导另一个Windows或Linux
 
-_ChainLoading_的意思是用当前的bootloader去载入另一个bootloader,所以叫做**链式**加载.这个bootloader可能位于MBR,也可能在另一个分区的引导扇区上.
+*ChainLoading*的意思是用当前的bootloader去载入另一个bootloader,所以叫做**链式**加载.这个bootloader可能位于MBR,也可能在另一个分区的引导扇区上.
 
 #### 链式加载一个分区
 
@@ -1620,7 +1610,6 @@ grub-setup: error: If you really want blocklists, use --force.
 下面是一个EFI启动项信息示例:
 
  `# efibootmgr -v` 
-
 ```
 BootCurrent: 0000
 Timeout: 3 seconds

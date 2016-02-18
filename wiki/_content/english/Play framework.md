@@ -51,7 +51,7 @@ The idea is to create a standalone daemon foreach of your play application. See 
 
 ### Instructions
 
-**Note:** Choose a **unique daemon name _{appname}_** of your application. You could use the domain you use to run the application but replacing **_** by **.** ( example: blog_greweb_fr )
+**Note:** Choose a **unique daemon name *{appname}*** of your application. You could use the domain you use to run the application but replacing **_** by **.** ( example: blog_greweb_fr )
 
 1.  Create a symlink of `/etc/rc.d/skeleton_playapp` in `/etc/rc.d/{appname}`
 2.  Copy this `/etc/conf.d/playapp_sample` file in `/etc/conf.d/{appname}`
@@ -71,7 +71,6 @@ The idea is to create a standalone daemon foreach of your play application. See 
 The configuration file contains variables defining your play application instance.
 
  `/etc/conf.d/{appname}` 
-
 ```
 PLAY_APP=  # (required) Path of your play application
 PLAY_USER= # (optional) The Linux user to use to run the play server. Using root if not setted
@@ -82,7 +81,6 @@ PLAY_ARGS= # (optional) The play args to run the play server with.
 **Example:**
 
  `/etc/conf.d/blog_greweb_fr` 
-
 ```
 PLAY_APP=/home/gre/sites/blog.greweb.fr
 PLAY_USER=gre
@@ -112,7 +110,6 @@ You can manually stop, start or restart your application **in root**.
 **Example:**
 
  `# rc.d start blog_greweb_fr` 
-
 ```
  :: Starting Play framework /home/gre/sites/blog.greweb.fr app       [BUSY] 
  ~        _            _ 

@@ -80,7 +80,7 @@
 
 	[https://wiki.gnome.org/Projects/NetworkManager](https://wiki.gnome.org/Projects/NetworkManager) || [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)
 
-*   **[systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)")** — Нативный демон [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), который управляет конфигурацией сети. Включает поддержку базовой настройки через [udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)"). Доступен в _systemd_, начиная с версии 210
+*   **[systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)")** — Нативный демон [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), который управляет конфигурацией сети. Включает поддержку базовой настройки через [udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)"). Доступен в *systemd*, начиная с версии 210
 
 	[http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html](http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) || [systemd](https://www.archlinux.org/packages/?name=systemd)
 
@@ -168,7 +168,7 @@
 
 	[https://code.google.com/p/arora/](https://code.google.com/p/arora/) || [arora](https://aur.archlinux.org/packages/arora/)
 
-*   **[dwb](/index.php/Dwb "Dwb")** — Легковесный, сильнонастраиваемый веб-браузер, основанный на движке WebKit, с горячими клавишами в стиле _vi_ и тайлингом. По состоянию на октябрь 2014 г. _dwb_ [не разрабатывается](https://bitbucket.org/portix/dwb/pull-request/22/several-cleanups-to-increase-portability/diff#comment-3217936)
+*   **[dwb](/index.php/Dwb "Dwb")** — Легковесный, сильнонастраиваемый веб-браузер, основанный на движке WebKit, с горячими клавишами в стиле *vi* и тайлингом. По состоянию на октябрь 2014 г. *dwb* [не разрабатывается](https://bitbucket.org/portix/dwb/pull-request/22/several-cleanups-to-increase-portability/diff#comment-3217936)
 
 	[http://portix.bitbucket.org/dwb/](http://portix.bitbucket.org/dwb/) || [dwb](https://www.archlinux.org/packages/?name=dwb)
 
@@ -232,7 +232,7 @@
 
 	[http://sourceforge.net/apps/trac/vimprobable/](http://sourceforge.net/apps/trac/vimprobable/) || [vimprobable-git](https://aur.archlinux.org/packages/vimprobable-git/)
 
-*   **[Xombrero](https://en.wikipedia.org/wiki/Xombrero "wikipedia:Xombrero") (ранее известный под именем _xxxterm_)** — Минималистичный веб-браузер Webkit с современными функциями безопасности, в стиле BSD
+*   **[Xombrero](https://en.wikipedia.org/wiki/Xombrero "wikipedia:Xombrero") (ранее известный под именем *xxxterm*)** — Минималистичный веб-браузер Webkit с современными функциями безопасности, в стиле BSD
 
 	[https://opensource.conformal.com/wiki/xombrero](https://opensource.conformal.com/wiki/xombrero) || [xombrero-git](https://aur.archlinux.org/packages/xombrero-git/)
 
@@ -246,7 +246,7 @@
 
 	[http://dillo.org/](http://dillo.org/) || [dillo](https://www.archlinux.org/packages/?name=dillo)
 
-*   **[Konqueror](https://en.wikipedia.org/wiki/ru:Konqueror "wikipedia:ru:Konqueror")** — Веб-браузер, основанный на [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)") и KHTML, часть группы пакетов [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/)
+*   **[Konqueror](https://en.wikipedia.org/wiki/ru:Konqueror и KHTML, часть группы пакетов [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/)
 
 	[http://konqueror.org/](http://konqueror.org/) || [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)
 
@@ -262,7 +262,7 @@
 
 Дополнительную информацию смотрите в [Википедии](https://en.wikipedia.org/wiki/ru:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0 "wikipedia:ru:Заглавная страница"): [Сравнение FTP-клиентов](https://en.wikipedia.org/wiki/ru:%D0%A1%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_FTP-%D0%BA%D0%BB%D0%B8%D0%B5%D0%BD%D1%82%D0%BE%D0%B2 "wikipedia:ru:Сравнение FTP-клиентов").
 
-*   **CurlFtpFS** — Файловая система для доступа к хостам FTP, основанная на FUSE и _libcurl_
+*   **CurlFtpFS** — Файловая система для доступа к хостам FTP, основанная на FUSE и *libcurl*
 
 	[http://curlftpfs.sourceforge.net/](http://curlftpfs.sourceforge.net/) || [curlftpfs](https://www.archlinux.org/packages/?name=curlftpfs)
 
@@ -430,7 +430,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[https://github.com/pazz/alot](https://github.com/pazz/alot) || [alot](https://aur.archlinux.org/packages/alot/) [alot-git](https://aur.archlinux.org/packages/alot-git/)
 
-*   **[Alpine](/index.php/Alpine "Alpine")** — Быстрый и легкий в использовании почтовый клиент, основанный на [Pine](https://en.wikipedia.org/wiki/Pine_(email_client) "wikipedia:Pine (email client)") и распространяемый под лицензией Apache
+*   **[Alpine](/index.php/Alpine "Alpine")** — Быстрый и легкий в использовании почтовый клиент, основанный на [Pine](https://en.wikipedia.org/wiki/Pine_(email_client) и распространяемый под лицензией Apache
 
 	[https://washington.edu/alpine](https://washington.edu/alpine) || [re-alpine](https://aur.archlinux.org/packages/re-alpine/) [alpine](https://aur.archlinux.org/packages/alpine/)
 
@@ -438,7 +438,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://gnus.org/](http://gnus.org/) || [emacs-gnus-git](https://aur.archlinux.org/packages/emacs-gnus-git/)
 
-*   **S-nail** — Система обработки почты с синтаксисом команд, напоминающим _ed_. Предоставляет функциональность [mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx") и многое другое
+*   **S-nail** — Система обработки почты с синтаксисом команд, напоминающим *ed*. Предоставляет функциональность [mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx") и многое другое
 
 	[http://sourceforge.net/projects/s-nail/](http://sourceforge.net/projects/s-nail/) || [s-nail](https://www.archlinux.org/packages/?name=s-nail)
 
@@ -454,7 +454,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://www.nongnu.org/nmh/](http://www.nongnu.org/nmh/) || [nmh](https://aur.archlinux.org/packages/nmh/) [nmh-git](https://aur.archlinux.org/packages/nmh-git/)
 
-*   **[notmuch](/index.php/Notmuch "Notmuch")** — Быстрый индексатор почты, работающий поверх _xapian_
+*   **[notmuch](/index.php/Notmuch "Notmuch")** — Быстрый индексатор почты, работающий поверх *xapian*
 
 	[http://notmuchmail.org/](http://notmuchmail.org/) || [notmuch](https://www.archlinux.org/packages/?name=notmuch) [notmuch-vim](https://www.archlinux.org/packages/?name=notmuch-vim) [notmuch-mutt](https://www.archlinux.org/packages/?name=notmuch-mutt)
 
@@ -626,7 +626,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://www.jabbim.com/](http://www.jabbim.com/) || [jabbim-svn](https://aur.archlinux.org/packages/jabbim-svn/)
 
-*   **[Psi](https://en.wikipedia.org/wiki/ru:Psi "wikipedia:ru:Psi")** — Основанный на [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)") клиент Jabber
+*   **[Psi](https://en.wikipedia.org/wiki/ru:Psi клиент Jabber
 
 	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi)
 
@@ -928,7 +928,7 @@ eDonkey по-прежнему является второй по величин�
 
 Смотрите также: [Список программ для чтения новостей Usenet](https://en.wikipedia.org/wiki/List_of_Usenet_newsreaders "wikipedia:List of Usenet newsreaders"), [Сравнение программ для чтения новостей Usenet](https://en.wikipedia.org/wiki/Comparison_of_Usenet_newsreaders "wikipedia:Comparison of Usenet newsreaders").
 
-*   **lottanzb** — Графическая оболочка для _SABnzbd+_ (программы для скачивания двоичных файлов Usenet), написанная на PyGTK
+*   **lottanzb** — Графическая оболочка для *SABnzbd+* (программы для скачивания двоичных файлов Usenet), написанная на PyGTK
 
 	[http://www.lottanzb.org/](http://www.lottanzb.org/) || [lottanzb](https://aur.archlinux.org/packages/lottanzb/)
 
@@ -1047,13 +1047,11 @@ eDonkey по-прежнему является второй по величин�
 Сервисы pastebin часто используются для вставки информации в [каналы IRC](/index.php/IRC_Channel "IRC Channel"), для получения помощи в решении проблем. Существуют сервисы как для текста (например, [bpaste.net](http://bpaste.net/), [pastie.org](http://pastie.org/), [codepad.org](http://codepad.org/)), так и для изображений (например, [imgur.com](http://imgur.com/), [picpaste.com](http://picpaste.com/)). Клиенты pastebin позволяют вам извлекать необходимую информацию прямо из командной строки, без необходимости запуска веб-браузера.
 
 **Tip:** Доступ к sprunge и ix pastebins можно получить напрямую, при помощи curl, который вернет ссылку для вставки:
-
 ```
 <command> | curl -F 'sprunge=<-' http://sprunge.us
 
 <command> 2>&1 | curl -F 'f:1=<-' ix.io
 ```
-
 Существует также [плагин sprunge](https://github.com/robbyrussell/oh-my-zsh/wiki/Usage-of-the-%22sprunge%22-command) для [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/wiki) (инструмент настройки интерпретатора команд [Zsh](/index.php/Zsh_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Zsh (Русский)"))
 
 **Важно:** Не используйте [pastebin.com](http://pastebin.com/). Судя по всему, это наиболее популярный в данной категории сайт, но он является медленным, содержит большое количество рекламы и плохо отображает форматирование текста (это испортит ваш код). Многие люди не могут даже открыть этот сайт из-за агрессивных фильтров спама
@@ -1062,7 +1060,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://www.codepad.org](http://www.codepad.org) || [codepad-git](https://aur.archlinux.org/packages/codepad-git/)
 
-*   **Elmer** — Клиент pastebin, похожий на _wgetpaste_ и _curlpaste_, написанный на Perl и пригодный для работы с _wget_ или _curl_. Серверы: [codepad.org](http://codepad.org/), [rafb.me](http://rafb.me/), [sprunge.us](http://sprunge.us/)
+*   **Elmer** — Клиент pastebin, похожий на *wgetpaste* и *curlpaste*, написанный на Perl и пригодный для работы с *wget* или *curl*. Серверы: [codepad.org](http://codepad.org/), [rafb.me](http://rafb.me/), [sprunge.us](http://sprunge.us/)
 
 	[https://github.com/sudokode/elmer](https://github.com/sudokode/elmer) || [elmer](https://aur.archlinux.org/packages/elmer/)
 
@@ -1106,7 +1104,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://www.vim.org/scripts/script.php?script_id=2423](http://www.vim.org/scripts/script.php?script_id=2423) || [vim-gist](https://aur.archlinux.org/packages/vim-gist/)
 
-*   **Vim-paster** — Плагин [Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") для вставки информации на любые сервисы pastebin с использованием _curl_
+*   **Vim-paster** — Плагин [Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") для вставки информации на любые сервисы pastebin с использованием *curl*
 
 	[http://eugeneciurana.com/site.php?page=tools](http://eugeneciurana.com/site.php?page=tools) || [vim-paster](https://aur.archlinux.org/packages/vim-paster/)
 

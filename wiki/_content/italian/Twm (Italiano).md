@@ -13,7 +13,7 @@ TWM è un window manager per X11\. Si tratta di un piccolo programma, in fase di
 
 Twm è stato scritto da Tom LaStrange, uno sviluppatore che era frustrato dalle limitazioni di [uwm (Ultrix Window Manager)](http://en.wikipedia.org/wiki/UWM_(computing)), il primo gestore di finestre che girava su X11 al momento del suo rilascio. TWM ha soppiantato UWM come window manager predefinito fornito con X11 dal rilascio in X11R4 nel 1989 .
 
-Twm è sinonimo di_Tom's Window Manager_, _Tab Window Manager_ e più recentemente di _Timeless Window Manager_.
+Twm è sinonimo di*Tom's Window Manager*, *Tab Window Manager* e più recentemente di *Timeless Window Manager*.
 
 ## Installazione
 
@@ -63,12 +63,12 @@ xcompmgr -o 0.3  -c -r 8 -t -10 -l -12 &
 
 ## Referenze
 
-1.  Proffitt, Brian. "[From the Desktop: Tom LaStrange Speaks!](http://www.linuxplanet.com/linuxplanet/reports/3000/2/)", _LinuxPlanet_, February 6, 2001\. Retrieved October 22, 2009.
-2.  "[UWM (computing)](http://en.wikipedia.org/wiki/UWM_(computing))", _Wikipedia_. Retrieved October 22, 2009.
-3.  "[Twm](http://en.wikipedia.org/wiki/Twm)", _Wikipedia_. Retrieved October 22, 2009.
-4.  "[Pkg: xorg-twm - Arch Linux Package Details](https://www.archlinux.org/packages/extra/i686/xorg-twm/)", _Arch Linux package search_. Retrieved October 22, 2009.
-5.  "[Twm man page](http://linux.die.net/man/1/twm)", _linux.die.net_. Retrieved October 22, 2009.
-6.  "[Sample twmrc](http://www.custompc.plus.com/twm/configs/twmrc09)", _custompc.plus.com_. Retrieved August 12, 2013.
-7.  "[Window Managers for X: TWM/VTWM](http://xwinman.org/vtwm.php)", _xwinman.org_. Retrieved October 22, 2009.
-8.  "[Google search for twmrc](http://www.google.com/search?q=twmrc)", _google.com_. Retrieved October 22, 2009.
-9.  Kask, Eeri. "[TWM -- Revised Edition -- Again](http://lists.x.org/archives/xorg/2010-January/048401.html)", _lists.x.org_, January 3, 2010.
+1.  Proffitt, Brian. "[From the Desktop: Tom LaStrange Speaks!](http://www.linuxplanet.com/linuxplanet/reports/3000/2/)", *LinuxPlanet*, February 6, 2001\. Retrieved October 22, 2009.
+2.  "[UWM (computing)](http://en.wikipedia.org/wiki/UWM_(computing))", *Wikipedia*. Retrieved October 22, 2009.
+3.  "[Twm](http://en.wikipedia.org/wiki/Twm)", *Wikipedia*. Retrieved October 22, 2009.
+4.  "[Pkg: xorg-twm - Arch Linux Package Details](https://www.archlinux.org/packages/extra/i686/xorg-twm/)", *Arch Linux package search*. Retrieved October 22, 2009.
+5.  "[Twm man page](http://linux.die.net/man/1/twm)", *linux.die.net*. Retrieved October 22, 2009.
+6.  "[Sample twmrc](http://www.custompc.plus.com/twm/configs/twmrc09)", *custompc.plus.com*. Retrieved August 12, 2013.
+7.  "[Window Managers for X: TWM/VTWM](http://xwinman.org/vtwm.php)", *xwinman.org*. Retrieved October 22, 2009.
+8.  "[Google search for twmrc](http://www.google.com/search?q=twmrc)", *google.com*. Retrieved October 22, 2009.
+9.  Kask, Eeri. "[TWM -- Revised Edition -- Again](http://lists.x.org/archives/xorg/2010-January/048401.html)", *lists.x.org*, January 3, 2010.

@@ -25,7 +25,7 @@ Będą uruchamiane w kolejności jakiej są na liście. Możesz któryś wyłąc
 Możesz zobaczyć jaka usługa ma swój skrypt startowy przeglądając katalog /etc/rc.d/. Możesz także ręcznie uruchomić, zatrzymać, albo zrestartować każdy demon poleceniem
 
 ```
-/etc/rc.d/_nazwa_daemona_ {start|stop|restart}
+/etc/rc.d/*nazwa_daemona* {start|stop|restart}
 
 ```
 
@@ -46,7 +46,7 @@ DAEMONS=(syslog-ng gensplash network netfs dbus hal @avahi-daemon @samba @crond 
 
 ```
 
-Odpalając _openntpd_ w tle może prowadzić do błędów w synchronizacji między aktualnym czasem a zapisanym na komputerze. Jeśli zauważyłeś sporą różnicę czasów, spróbuj uruchomić _openntpd_ w trybie normalnym (nie w tle).
+Odpalając *openntpd* w tle może prowadzić do błędów w synchronizacji między aktualnym czasem a zapisanym na komputerze. Jeśli zauważyłeś sporą różnicę czasów, spróbuj uruchomić *openntpd* w trybie normalnym (nie w tle).
 
 ## GUI dla menadżera daemonów w ArchLinux
 

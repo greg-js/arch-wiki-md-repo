@@ -13,7 +13,7 @@ This guide will show you how to install and run Dungeons & Dragons Online using 
 
 ## About
 
-[Dungeons & Dragons Online](http://www.ddo.com/) is a [MMORPG](http://en.wikipedia.org/wiki/Mmorpg) similar to World of Warcraft. DDO usually appeals to more mature RPG fans and focuses more on exploring and completing quests in dungeons rather than on terrain. DDO is _free to play_ and doesn't require month subscription fees like WoW but unlike WoW players will often find that leveling will require buying additional _modules_ that grant access to certain quests and areas.
+[Dungeons & Dragons Online](http://www.ddo.com/) is a [MMORPG](http://en.wikipedia.org/wiki/Mmorpg) similar to World of Warcraft. DDO usually appeals to more mature RPG fans and focuses more on exploring and completing quests in dungeons rather than on terrain. DDO is *free to play* and doesn't require month subscription fees like WoW but unlike WoW players will often find that leveling will require buying additional *modules* that grant access to certain quests and areas.
 
 ## What Doesn't Work
 

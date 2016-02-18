@@ -39,7 +39,7 @@ Install all required and optional modules using:
 
 ### Missing Modules
 
-**Warning:** BugZilla _may_ have missing dependencies that can effect normal usage and prevent the final configuration from completing successfully.
+**Warning:** BugZilla *may* have missing dependencies that can effect normal usage and prevent the final configuration from completing successfully.
 
 Because of a missing dependency, the following perl module needs to be installed for user creation and bug filing to work properly:
 
@@ -51,7 +51,6 @@ Because of a missing dependency, the following perl module needs to be installed
 Absence of **Email-Abstract** will generate an error on the final module check and configuration for BugZilla 5.0rc2 (in the next step). To fix this, issue the command:
 
  `BugZilla v5.0rc2` 
-
 ```
  # perl install-module.pl Email::Abstract
 

@@ -124,7 +124,7 @@ The default mapping maps the Wii Remote keys to the the key-constants which rese
 
 ### BlueZ does not include the wiimote plugin
 
-Upstream BlueZ includes the _optional_ wiimote plugin since version 4.96\. However, it must be enabled explicitely with `--enable-wiimote` during compilation. The archlinux package includes the wiimote plugin since `bluez-4.96-3`. If you are unsure whether your package includes the wiimote plugin, use:
+Upstream BlueZ includes the *optional* wiimote plugin since version 4.96\. However, it must be enabled explicitely with `--enable-wiimote` during compilation. The archlinux package includes the wiimote plugin since `bluez-4.96-3`. If you are unsure whether your package includes the wiimote plugin, use:
 
 ```
 grep wiimote $(which bluetoothd)

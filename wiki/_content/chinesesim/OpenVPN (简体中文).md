@@ -38,7 +38,6 @@ OpenVPN 需要 TUN/TAP 的支持，默认内核已经进行了正确的配置。
 自定义的内核需要启用 `tun` 模块，详情参阅 [Kernel modules](/index.php/Kernel_modules "Kernel modules")
 
  `Kernel config file` 
-
 ```
  Device Drivers
   --> Network device support
@@ -346,7 +345,7 @@ down /usr/share/openvpn/update-resolv-conf
 
 ### systemd 服务配置
 
-若需在系统启动时自动启动 OpenVPN，对服务器端与客户端，都可以采用在对应机器上 [启用](/index.php/Enable "Enable") `openvpn@_<configuration>_.service` 的方式配置。
+若需在系统启动时自动启动 OpenVPN，对服务器端与客户端，都可以采用在对应机器上 [启用](/index.php/Enable "Enable") `openvpn@*<configuration>*.service` 的方式配置。
 
 例如，如果客户端配置文件是 `/etc/openvpn/client.conf`，则服务名称应为 `openvpn@client.service`。或者，如果服务器端配置文件是 `/etc/openvpn/server.conf`，则服务名称应为 `openvpn@server.service`。
 
@@ -355,7 +354,6 @@ down /usr/share/openvpn/update-resolv-conf
 在客户端，您可能并不需要一直运行 VPN 隧道，或者您仅仅想要为特定的 NetworkManager 连接建立隧道。要实现这一点，您可以向 `/etc/NetworkManager/dispatcher.d/` 添加脚本。在下列示例中，"Provider" 是 NetworkManager 连接的名称：
 
  `/etc/NetworkManager/dispatcher.d/10-openvpn` 
-
 ```
 #!/bin/bash
 

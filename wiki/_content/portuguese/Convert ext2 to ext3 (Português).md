@@ -1,4 +1,4 @@
-_Se você instalar o Arch com o sistema de arquivos ext2, é uma boa ideia para habilitar o journal e transferir para o sistema de arquivos ext3\. O Journal possui ótimos benefícios_
+*Se você instalar o Arch com o sistema de arquivos ext2, é uma boa ideia para habilitar o journal e transferir para o sistema de arquivos ext3\. O Journal possui ótimos benefícios*
 
 Precisa executar o comando:
 

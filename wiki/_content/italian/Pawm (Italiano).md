@@ -26,7 +26,7 @@ Questo wiki descrive nei dettagli l'installazione e la configurazione del gestor
 
 PAWM è stato scritto da David Gómez e Raúl Núñez de Arenas Coronado. PAWM è stato creato con l'obbiettivo di avere un piccolo gestore di finestre per eseguire tutte le applicazioni di X, ma che mantenesse al tempo stesso un metodo semplice ed intuitivo di utilizzo.
 
-Il nomePAWM significa _Puto Amo Window Manager_.
+Il nomePAWM significa *Puto Amo Window Manager*.
 
 ## Installazione
 
@@ -121,10 +121,10 @@ Così come PAWM è un gestore di finestre minimale, allo stesso modo anche i var
 *   Doppio clic su una barra del titolo della finestra scorre, rispettivamente, verso l'alto o verso il basso.
 *   Vi sono i pulsanti Minimizza Ripristina/Massimizza e Chiudi.
 *   Vi è la possibilità di trascinare le finestre.
-*   Vi è la possibilità di trascinare le icone per il _launcher_ delle applicazioni.
+*   Vi è la possibilità di trascinare le icone per il *launcher* delle applicazioni.
 *   Cliccando su una applicazione aperta direttamente sulla PABar, la minimizza o la rispristina.
 *   Alt+Tab scorre tra le finestre.
-*   Cliccando su un'icona _Launcher_ avvia il programma.
+*   Cliccando su un'icona *Launcher* avvia il programma.
 *   Facendo clic sul pulsante di accensione si attiva una finestra di dialogo per uscire da PAWM.
 *   Per rendere effettive le modifiche effettuate bisogna ricaricare PAWM.
 

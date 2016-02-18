@@ -6,14 +6,14 @@ Install [tcc](https://www.archlinux.org/packages/?name=tcc) from the [Official r
 
 ## Usage
 
-Tcc is similar to _gcc_, but because of the increased speed of _tcc_ it can be useful to compile the code and run it immediately:
+Tcc is similar to *gcc*, but because of the increased speed of *tcc* it can be useful to compile the code and run it immediately:
 
 ```
  $ tcc -run foo.c
 
 ```
 
-You can make a C source file executed by _tcc_ by adding a shebang:
+You can make a C source file executed by *tcc* by adding a shebang:
 
 ```
  #!/usr/bin/tcc -run

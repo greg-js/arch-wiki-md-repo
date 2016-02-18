@@ -50,7 +50,6 @@ First determine the IP addresses and [host names](/index.php/Network_configurati
 *   OS X - [How to Add Hosts to Local Hosts File](http://support.apple.com/kb/TA27291).
 
  `/etc/hosts` 
-
 ```
 10.10.66.1        archserver.localdomain       archserver
 10.10.66.100      archleft.localdomain         archleft
@@ -120,7 +119,6 @@ To activate the SSL plugin, add the `--enable-crypto` option.
 *   Starting with systemd:
 
  ` /usr/lib/systemd/system/synergys@.service` 
-
 ```
 [Unit]
 Description=Synergy Server Daemon
@@ -145,15 +143,15 @@ To start the service for your user:
 ### Windows
 
 1.  Open the Synergy program
-2.  Select the option _Server (share this computer's mouse and keyboard)_
-3.  Select _Configure interactively_
-4.  Click the _Configure Server..._ button
+2.  Select the option *Server (share this computer's mouse and keyboard)*
+3.  Select *Configure interactively*
+4.  Click the *Configure Server...* button
 5.  This opens a window in which you can add screens depending on how many computers/screens you have: just drag the screen icon in the top-right corner to the screens area, and double-click it to edit its settings
-6.  Click _OK_ to close the screens window when you are ready, then click on _Start_ to start the server
+6.  Click *OK* to close the screens window when you are ready, then click on *Start* to start the server
 
 On Windows, configuration is saved by default in a `synergy.sgc` file, but its name and location can of course be changed at pleasure.
 
-If you want to start the Synergy server everytime Windows starts, you have to launch the program **as administrator**, then go to _Edit -> Services_ and select _Install_ in the _Server_ section; note that at the following reboot Synergy will indeed automatically start, but the tray icon will not display automatically (at least for version 1.4.2 beta on Windows 7). To uninstall the service, do the same thing but obviously select _Uninstall_.
+If you want to start the Synergy server everytime Windows starts, you have to launch the program **as administrator**, then go to *Edit -> Services* and select *Install* in the *Server* section; note that at the following reboot Synergy will indeed automatically start, but the tray icon will not display automatically (at least for version 1.4.2 beta on Windows 7). To uninstall the service, do the same thing but obviously select *Uninstall*.
 
 If you want to start the server from the command-line, here is a Windows command you can place in a `.bat` file or just run from `cmd.exe`:
 
@@ -171,7 +169,6 @@ OS X has a similar configuration as Unix: check [the official documentation](htt
 This is an example for a basic 3-computers setup:
 
  `/etc/synergy.conf` 
-
 ```
 section: screens
 	server-fire:
@@ -194,7 +191,6 @@ end
 This should be the example bundled with the Arch Linux package:
 
  `/etc/synergy.conf` 
-
 ```
 section: screens
         # three hosts named:  moe, larry, and curly
@@ -233,7 +229,6 @@ end
 The following is a more customized example:
 
  `synergy.sgc` 
-
 ```
 section: screens
 	leftpc:
@@ -318,7 +313,6 @@ There exist several ways to automatically start the Synergy client, and they are
 *   You can add the next line to your [`~/.xinitrc`](/index.php/Xinitrc "Xinitrc"):
 
  `~/.xinitrc` 
-
 ```
 ...
 
@@ -330,7 +324,6 @@ synergyc server-host-name
 The following is an alternative:
 
  `~/.xinitrc` 
-
 ```
 XINIT_CMD='/usr/bin/synergyc -d FATAL -n galileo-fire 10.66.66.2:24800'
 /usr/bin/pgrep -lxf "$XINIT_CMD" || ( ( $XINIT_CMD ) & )
@@ -344,12 +337,11 @@ synergyc server-host-name
 
 ```
 
-For example, using _kdm_ you should edit `/usr/share/config/kdm/Xsetup`.
+For example, using *kdm* you should edit `/usr/share/config/kdm/Xsetup`.
 
 *   To start the Synergy client with systemd, create a service file, **/etc/systemd/system/synergyc@.service** and optionally a config file, **/etc/conf.d/synergyc.conf**
 
  ` /etc/systemd/system/synergyc@.service` 
-
 ```
 [Unit]
 Description=Synergy Client Daemon
@@ -363,9 +355,7 @@ User=%i
 [Install]
 WantedBy=multi-user.target
 ```
-
  `/etc/conf.d/synergyc.conf` 
-
 ```
 DEBUGLEVEL=WARNING
 SERVERALIAS=server-name
@@ -382,11 +372,11 @@ Automatically starting Synergy is also documented in its [official reference pag
 
 ### Windows
 
-After installation, open the Synergy program, select the option _Client (use another computer's keyboard and mouse)_ and type the host name of the server computer in the text box, then click _Start_ to start the client.
+After installation, open the Synergy program, select the option *Client (use another computer's keyboard and mouse)* and type the host name of the server computer in the text box, then click *Start* to start the client.
 
 **Note:** You can use the tray icon to stop the client.
 
-If you want to start the Synergy client every time Windows starts, you have to launch the program **as an administrator**, then go to _Edit -> Services_ and select _Install_ in the _Client_ section.
+If you want to start the Synergy client every time Windows starts, you have to launch the program **as an administrator**, then go to *Edit -> Services* and select *Install* in the *Client* section.
 
 If you want to start the client from the command-line, here is a Windows command you can place in a `.bat` file or just run from `cmd.exe`. This points to a configuration file in `C:\synergy.sgc` and runs in the background like a service.
 

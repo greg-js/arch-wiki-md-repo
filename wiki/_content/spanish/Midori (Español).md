@@ -38,24 +38,24 @@ Versiones de desarrollo están disponibles en [AUR](/index.php/AUR_(Espa%C3%B1ol
 
 ### AdBlock
 
-Para habilitar la extensión AdBlock vaya a _Menú > Preferencias > Extensiones_ y marque la casilla _Bloqueador de publicidad_ .
+Para habilitar la extensión AdBlock vaya a *Menú > Preferencias > Extensiones* y marque la casilla *Bloqueador de publicidad* .
 
-La extensión AdBlock de Midori usa las mismas listas que la extensión AdBlock Plus de Firefox por lo que puede obtener más listas en [Sitio de AdBlock Plus (en Inglés)](http://easylist.adblockplus.org/en/). Puede también bloquear imágenes de forma específica en varios sitios haciendo clic derecho en ellas y seleccionando _Bloquear imagen_.
+La extensión AdBlock de Midori usa las mismas listas que la extensión AdBlock Plus de Firefox por lo que puede obtener más listas en [Sitio de AdBlock Plus (en Inglés)](http://easylist.adblockplus.org/en/). Puede también bloquear imágenes de forma específica en varios sitios haciendo clic derecho en ellas y seleccionando *Bloquear imagen*.
 
 ### Motores de búsqueda
 
-Midori también soporta motores de búsqueda, prácticamente de la misma manera que otros navegadores. Varios motores de búsqueda tienen accesos directos de manera que se puedan usar fácilmente desde la barra de direcciones. Para gestionar sus motores de búsqueda haga clic en el icono en la caja del motor de búsqueda y seleccione _Gestionar motores de búsqueda_.
+Midori también soporta motores de búsqueda, prácticamente de la misma manera que otros navegadores. Varios motores de búsqueda tienen accesos directos de manera que se puedan usar fácilmente desde la barra de direcciones. Para gestionar sus motores de búsqueda haga clic en el icono en la caja del motor de búsqueda y seleccione *Gestionar motores de búsqueda*.
 
-Por su puesto puede aprovechar de forma inteligente estas características, como proveer varios accesso directos para varios sitios web (no solo para búsquedas). Por ejemplo puede añadir una entrada en el diálogo de los _Motores de búsqueda_ con la clave _arch_ y la información necesaria para acceder a la página principal de Arch Linux. Ahora puede acceder al sitio web de Arch Linux únicamente escrbiendo _arch_.
+Por su puesto puede aprovechar de forma inteligente estas características, como proveer varios accesso directos para varios sitios web (no solo para búsquedas). Por ejemplo puede añadir una entrada en el diálogo de los *Motores de búsqueda* con la clave *arch* y la información necesaria para acceder a la página principal de Arch Linux. Ahora puede acceder al sitio web de Arch Linux únicamente escrbiendo *arch*.
 
 Otro ejemplo puede ser el añadir un acceso directo a un acortador de URLs:
 
 *   Simplemente añade un nuevo motor de búsqueda con la URL `[http://is.gd/create.php?longurl=](http://is.gd/create.php?longurl=)` (u otro acortador con funcionalidad parecida).
-*   Asígnele una clave (_sh_ en este caso).
+*   Asígnele una clave (*sh* en este caso).
 *   Obtenga una URL corta para cualquier enlace escribiendo:
 
 ```
-sh _enlace_
+sh *enlace*
 
 ```
 
@@ -63,7 +63,7 @@ en la barra de direcciones.
 
 ### Scripts de usuarios
 
-Para habilitar la extensión de scripts de usuarios vaya a _Menú > Preferencias > Extensiones_ y marque la casilla _Complementos de usuario_ . Los scripts de usuario de Midori son compatibles con los scripts de [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/). Puede encontrar una extensa lista de script en [http://userscripts-mirror.org/](http://userscripts-mirror.org/).
+Para habilitar la extensión de scripts de usuarios vaya a *Menú > Preferencias > Extensiones* y marque la casilla *Complementos de usuario* . Los scripts de usuario de Midori son compatibles con los scripts de [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/). Puede encontrar una extensa lista de script en [http://userscripts-mirror.org/](http://userscripts-mirror.org/).
 
 Para una instalación manual, tiene que crear la carpeta `~/.local/share/midori/scripts` y copiar ahí los scripts. Midori cargará de forma automática todos los scripts compatibles dentro de esa carpeta.
 
@@ -87,7 +87,6 @@ Para ello:
 *   En esa carpeta cree un fichero con el contenido que desee bloquear:
 
  `myadblockfilters.txt` 
-
 ```
 [Adblock]
 ! Title: Personal AdBlocker v1
@@ -108,7 +107,7 @@ www.phoronix.com#DIV.phxcms_bar_align
 
 ```
 
-*   Vaya a _Menú > Preferencias > Extensiones_ y haga clic en el icono de configuración de Adblock y añada:
+*   Vaya a *Menú > Preferencias > Extensiones* y haga clic en el icono de configuración de Adblock y añada:
 
 ```
 file://.local/share/midori/filters/myadblockfilters.txt

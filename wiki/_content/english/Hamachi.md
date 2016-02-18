@@ -1,4 +1,4 @@
-[Hamachi](https://en.wikipedia.org/wiki/Hamachi_(software) "wikipedia:Hamachi (software)") is a proprietary (closed source) commercial VPN software. With Hamachi you can organize two or more computers with an Internet connection into their own virtual network for direct secure communication.
+[Hamachi](https://en.wikipedia.org/wiki/Hamachi_(software) is a proprietary (closed source) commercial VPN software. With Hamachi you can organize two or more computers with an Internet connection into their own virtual network for direct secure communication.
 
 ## Contents
 

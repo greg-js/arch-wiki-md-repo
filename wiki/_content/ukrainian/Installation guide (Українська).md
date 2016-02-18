@@ -1,4 +1,4 @@
-Ця стаття описує процес встановлення і налаштування [Arch Linux](/index.php/Arch_Linux "Arch Linux") за допомогою [Arch Install Scripts](https://github.com/falconindy/arch-install-scripts). Перед встановленням, рекомендується переглянути [FAQ](/index.php/FAQ "FAQ"). Команда підтримки [Arch Wiki](/index.php/Main_page "Main page") є відмінним ресурсом і шукайте допомогу з усіх питань першочергово тут. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC")-канал ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), та [форум](https://bbs.archlinux.org/) також доступні, якщо відповідь не може бути знайдена в іншому місці. Крім того, переконайтеся, що немає відповіді на ваше питання на `man`-сторінках для будь-якої команди; які можна викликати `man _command_`.
+Ця стаття описує процес встановлення і налаштування [Arch Linux](/index.php/Arch_Linux "Arch Linux") за допомогою [Arch Install Scripts](https://github.com/falconindy/arch-install-scripts). Перед встановленням, рекомендується переглянути [FAQ](/index.php/FAQ "FAQ"). Команда підтримки [Arch Wiki](/index.php/Main_page "Main page") є відмінним ресурсом і шукайте допомогу з усіх питань першочергово тут. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC")-канал ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), та [форум](https://bbs.archlinux.org/) також доступні, якщо відповідь не може бути знайдена в іншому місці. Крім того, переконайтеся, що немає відповіді на ваше питання на `man`-сторінках для будь-якої команди; які можна викликати `man *command*`.
 
 ## Contents
 
@@ -93,7 +93,7 @@
 
 Копія файлу буде також встановлена в вашу систему за допомогою `pacstrap`.
 
-Скрипт [pacstrap](https://github.com/falconindy/arch-install-scripts/blob/master/pacstrap.in) встановить базову систему. Група пакунків _base-devel_ також повинна бути встановлена, якщо ви плануєте компілювати програми з [AUR](/index.php/AUR "AUR") або [ABS](/index.php/ABS "ABS").
+Скрипт [pacstrap](https://github.com/falconindy/arch-install-scripts/blob/master/pacstrap.in) встановить базову систему. Група пакунків *base-devel* також повинна бути встановлена, якщо ви плануєте компілювати програми з [AUR](/index.php/AUR "AUR") або [ABS](/index.php/ABS "ABS").
 
 ```
 # pacstrap /mnt base base-devel

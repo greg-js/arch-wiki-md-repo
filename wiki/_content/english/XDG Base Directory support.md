@@ -211,7 +211,6 @@ Lastly, and this goes without saying, please verify that your solution is correc
  |
 | [MPlayer](/index.php/MPlayer "MPlayer") | `~/.mplayer` | `$ export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer` |
 | [mutt](/index.php/Mutt "Mutt") | `~/.mutt` | [[41]](http://dev.mutt.org/trac/ticket/3207) | `$ mutt -F "$XDG_CONFIG_HOME"/mutt/muttrc` `muttrc` 
-
 ```
 set header_cache = $XDG_CACHE_HOME/mutt/headers
 set message_cachedir = $XDG_DATA_HOME/mutt/messages
@@ -219,7 +218,6 @@ set mailcap_path = $XDG_CONFIG_HOME/mutt/mailcap
 set record = $XDG_DATA_HOME/mutt/record/sent
 
 ```
-
  |
 | [ncmpcpp](/index.php/Ncmpcpp "Ncmpcpp") | `~/.ncmpcpp` | `$ ncmpcpp -c "$XDG_CONFIG_HOME"/ncmpcpp/config` |
 | [notmuch](/index.php/Notmuch "Notmuch") | `~/.notmuch-config` | [[42]](http://notmuchmail.org/pipermail/notmuch/2011/007007.html) | `$ export NOTMUCH_CONFIG="$XDG_CONFIG_HOME"/notmuch/notmuchrc`
@@ -289,7 +287,6 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 | [python](/index.php/Python "Python") | `~/.python_history` | All history from interactive sessions is saved to `~/.python_history` by default since [version 3.4](https://bugs.python.org/issue5845), custom path can still be set the same way as in older versions (see [this example](https://docs.python.org/3/library/readline.html?highlight=readline#example)). |
 | [procps-ng](https://www.archlinux.org/packages/?name=procps-ng) | `~/.toprc` | [[60]](https://bugzilla.redhat.com/show_bug.cgi?id=1155265) |
 | [vim](/index.php/Vim "Vim") | `~/.vim` `~/.vimrc` `~/.viminfo` | Since [7.3.1178](https://github.com/vim/vim/commit/6a459902592e2a4ba68) vim will search for `~/.vim/vimrc` if `~/.vimrc` is not found. `~/.vim/vimrc` 
-
 ```
 set undodir=~/.cache/vim/undo " vim will not create this directory.
 set directory=~/.cache/vim/swap " vim will not create this directory.

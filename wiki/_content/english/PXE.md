@@ -1,6 +1,6 @@
 From [Wikipedia:Preboot Execution Environment](https://en.wikipedia.org/wiki/Preboot_Execution_Environment "wikipedia:Preboot Execution Environment"):
 
-	_The Preboot eXecution Environment (PXE, also known as Pre-Execution Environment; sometimes pronounced "pixie") is an environment to boot computers using a network interface independently of data storage devices (like hard disks) or installed operating systems._
+	*The Preboot eXecution Environment (PXE, also known as Pre-Execution Environment; sometimes pronounced "pixie") is an environment to boot computers using a network interface independently of data storage devices (like hard disks) or installed operating systems.*
 
 In this guide, PXE is used to boot the installation media with an appropriate option-rom that supports PXE on the target. This works well when you already have a server set up.
 
@@ -53,7 +53,6 @@ You will need both a DHCP and TFTP server to configure networking on the install
 Configure dnsmasq:
 
  `# /etc/dnsmasq.conf` 
-
 ```
 port=0
 interface=eth0
@@ -78,7 +77,6 @@ First, [install](/index.php/Install "Install") [darkhttpd](https://www.archlinux
 Then start [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd) using our `/mnt/archiso` as the document root:
 
  `# darkhttpd /mnt/archiso` 
-
 ```
 darkhttpd/1.8, copyright (c) 2003-2011 Emil Mikulic.
 listening on: http://0.0.0.0:80/
@@ -86,14 +84,13 @@ listening on: http://0.0.0.0:80/
 
 ## Installation
 
-For this portion you will need to figure out how to tell the client to attempt a PXE boot; in the corner of the screen along with the normal post messages, usually there will be some hint on which key to press to try PXE booting first. On an IBM x3650 _F12_ brings up a boot menu, the first option of which is _Network_; on a Dell PE 1950/2950 pressing _F12_ initiates PXE booting directly.
+For this portion you will need to figure out how to tell the client to attempt a PXE boot; in the corner of the screen along with the normal post messages, usually there will be some hint on which key to press to try PXE booting first. On an IBM x3650 *F12* brings up a boot menu, the first option of which is *Network*; on a Dell PE 1950/2950 pressing *F12* initiates PXE booting directly.
 
 ### Boot
 
 Looking at [journald](/index.php/Systemd#Journal "Systemd") on the PXE server will provide some additional insight to what exactly is going on during the early stages of the PXE boot process:
 
  `# journalctl -u dnsmasq -f` 
-
 ```
 dnsmasq-dhcp[2544]: DHCPDISCOVER(eth1) 00:1a:64:6a:a2:4d 
 dnsmasq-dhcp[2544]: DHCPOFFER(eth1) 192.168.0.110 00:1a:64:6a:a2:4d 
@@ -115,7 +112,7 @@ dnsmasq-tftp[2544]: sent /mnt/archiso/arch/boot/syslinux/splash.png to 192.168.0
 
 After you load `pxelinux.0` and `archiso.cfg` via TFTP, you will (hopefully) be presented with a [syslinux](/index.php/Syslinux "Syslinux") boot menu with several options, two of which are of potential usefulness to us.
 
-Select either _Boot Arch Linux (x86_64) (HTTP)_ or _Boot Arch Linux (i686) (HTTP)_ depending on your CPU architecture.
+Select either *Boot Arch Linux (x86_64) (HTTP)* or *Boot Arch Linux (i686) (HTTP)* depending on your CPU architecture.
 
 Next the kernel and initramfs (appropriate for the architecture you selected) will be transferred, again via TFTP:
 
@@ -172,7 +169,6 @@ After the kernel loads, the Arch bootstrap image will copy the root filesystem v
 Install [nbd](https://www.archlinux.org/packages/?name=nbd) and configure it:
 
  `# vim /etc/nbd-server/config` 
-
 ```
 [generic]
 [archiso]

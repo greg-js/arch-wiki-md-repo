@@ -15,9 +15,9 @@ A bootolás több szakaszból áll. A legtöbb PC a hardver alkotóelemeit a [BI
 
 ## Történet
 
-Az MBR egy rövidke assembly kódból (az eredeti rendszerbetöltő – 446 bájt), a 4 elsődleges partíció táblájából (darabja 16 bájt) és _sentinel_-ből (0xAA55) áll.
+Az MBR egy rövidke assembly kódból (az eredeti rendszerbetöltő – 446 bájt), a 4 elsődleges partíció táblájából (darabja 16 bájt) és *sentinel*-ből (0xAA55) áll.
 
-A "Hagyományos" Windows/DOS MBR rendszerbetöltő kód csak egyetlen _aktív_ partíciót keres, beolvas X szektort erről a partícióról, majd átadja az ellenőrzést az operációs rendszernek. A Windows/DOS betöltő _nem tud_ Arch Linux partícióról indítani, mert nem arra készült, hogy betölthesse a Linux rendszermagot, valamint csak és kizárólag _aktív_, _elsődleges_ partíciót kezel csak (ezt a GRUB biztonságosan megkerüli).
+A "Hagyományos" Windows/DOS MBR rendszerbetöltő kód csak egyetlen *aktív* partíciót keres, beolvas X szektort erről a partícióról, majd átadja az ellenőrzést az operációs rendszernek. A Windows/DOS betöltő *nem tud* Arch Linux partícióról indítani, mert nem arra készült, hogy betölthesse a Linux rendszermagot, valamint csak és kizárólag *aktív*, *elsődleges* partíciót kezel csak (ezt a GRUB biztonságosan megkerüli).
 
 A [GRand Unified Bootloader (GRUB)](/index.php/GRUB "GRUB") afféle norma a GNU/Linux rendszerbetöltők közt, és erősen ajánlott, hogy telepítsük az MBR-re, hogy bármiféle partícióról indíthassunk, legyen az elsődleges vagy logikai.
 

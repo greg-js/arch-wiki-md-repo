@@ -2,7 +2,7 @@
 
 From the project [home page](http://www.ffmpeg.org/):
 
-	_FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. It includes libavcodec - the leading audio/video codec library._
+	*FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. It includes libavcodec - the leading audio/video codec library.*
 
 ## Contents
 
@@ -81,21 +81,21 @@ You may want to adjust the parameters (left-to-right): input **f**ormat, [input]
 FFmpeg supports grabbing input from Video4Linux2 devices. The following command will record a video from the webcam, assuming that the webcam is correctly recognized under `/dev/video0`:
 
 ```
-$ ffmpeg -f v4l2 -s 640x480 -i /dev/video0 _output_.mpg
+$ ffmpeg -f v4l2 -s 640x480 -i /dev/video0 *output*.mpg
 
 ```
 
 The above produces a silent video. It is also possible to include audio sources from a microphone. The following command will include a stream from the default [ALSA](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") recording device into the video:
 
 ```
-$ ffmpeg -f alsa -i default -f v4l2 -s 640x480 -i /dev/video0 _output_.mpg
+$ ffmpeg -f alsa -i default -f v4l2 -s 640x480 -i /dev/video0 *output*.mpg
 
 ```
 
 To use [PulseAudio](/index.php/PulseAudio "PulseAudio") with an ALSA backend:
 
 ```
-$ ffmpeg -f alsa -i pulse -f v4l2 -s 640x480 -i /dev/video0 _output_.mpg
+$ ffmpeg -f alsa -i pulse -f v4l2 -s 640x480 -i /dev/video0 *output*.mpg
 
 ```
 
@@ -103,7 +103,7 @@ For a higher quality capture, try encoding the output using higher quality codec
 
 ```
 $ ffmpeg -f alsa -i default -f v4l2 -s 640x480 -i /dev/video0 -acodec flac \
--vcodec libx264 _output_.mkv
+-vcodec libx264 *output*.mkv
 
 ```
 
@@ -118,14 +118,14 @@ $ cat f0.VOB f1.VOB f2.VOB | ffmpeg -i - out.mp2
 
 ### x264 lossless
 
-The _ultrafast_ preset will provide the fastest encoding and is useful for quick capturing (such as screencasting):
+The *ultrafast* preset will provide the fastest encoding and is useful for quick capturing (such as screencasting):
 
 ```
 $ ffmpeg -i input -c:v libx264 -preset ultrafast -qp 0 -c:a copy output
 
 ```
 
-On the opposite end of the preset spectrum is _veryslow_ and will encode slower than _ultrafast_ but provide a smaller output file size:
+On the opposite end of the preset spectrum is *veryslow* and will encode slower than *ultrafast* but provide a smaller output file size:
 
 ```
 $ ffmpeg -i input -c:v libx264 -preset veryslow -qp 0 -c:a copy output
@@ -145,14 +145,14 @@ In encoding x265 files, you may need to specify the aspect ratio of the file via
 Allow FFmpeg to automatically set DVD standardized parameters. Encode to DVD [MPEG-2](https://en.wikipedia.org/wiki/MPEG-2 "wikipedia:MPEG-2") at ~30 FPS:
 
 ```
-$ ffmpeg -i _video_.VOB -target ntsc-dvd _output_.mpg
+$ ffmpeg -i *video*.VOB -target ntsc-dvd *output*.mpg
 
 ```
 
 Encode to DVD MPEG-2 at ~24 FPS:
 
 ```
-$ ffmpeg -i _video_.VOB -target film-dvd _output_.mpg
+$ ffmpeg -i *video*.VOB -target film-dvd *output*.mpg
 
 ```
 
@@ -161,7 +161,7 @@ $ ffmpeg -i _video_.VOB -target film-dvd _output_.mpg
 Used when you want a specific quality output. General usage is to use the highest `-crf` value that still provides an acceptable quality. Lower values are higher quality; 0 is lossless, 18 is visually lossless, and 23 is the default value. A sane range is between 18 and 28\. Use the slowest `-preset` you have patience for. See the [x264 Encoding Guide](https://ffmpeg.org/trac/ffmpeg/wiki/x264EncodingGuide) for more information.
 
 ```
-$ ffmpeg -i _video_ -c:v libx264 -tune film -preset slow -crf 22 -x264opts fast_pskip=0 -c:a libmp3lame -aq 4 _output_.mkv
+$ ffmpeg -i *video* -c:v libx264 -tune film -preset slow -crf 22 -x264opts fast_pskip=0 -c:a libmp3lame -aq 4 *output*.mkv
 
 ```
 
@@ -172,7 +172,7 @@ $ ffmpeg -i _video_ -c:v libx264 -tune film -preset slow -crf 22 -x264opts fast_
 FFmpeg is very useful to encode videos and strip their size before you upload them on YouTube. The following single line of code takes an input file and outputs a mkv container.
 
 ```
-$ ffmpeg -i _video_ -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -c:a copy _output_.mkv
+$ ffmpeg -i *video* -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -c:a copy *output*.mkv
 
 ```
 
@@ -192,7 +192,7 @@ See also [Arch Linux forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1
 Audio deactivated as only video statistics are recorded during the first of multiple pass runs:
 
 ```
-$ ffmpeg -i _video_.VOB -an -vcodec libx264 -pass 1  -preset veryslow \
+$ ffmpeg -i *video*.VOB -an -vcodec libx264 -pass 1  -preset veryslow \
 -threads 0 -b 3000k -x264opts frameref=15:fast_pskip=0 -f rawvideo -y /dev/null
 
 ```
@@ -200,8 +200,8 @@ $ ffmpeg -i _video_.VOB -an -vcodec libx264 -pass 1  -preset veryslow \
 Container format is automatically detected and muxed into from the output file extenstion (`.mkv`):
 
 ```
-$ ffmpeg -i _video_.VOB -acodec libvo-aacenc -ab 256k -ar 96000 -vcodec libx264 \
--pass 2 -preset veryslow -threads 0 -b 3000k -x264opts frameref=15:fast_pskip=0 _video_.mkv
+$ ffmpeg -i *video*.VOB -acodec libvo-aacenc -ab 256k -ar 96000 -vcodec libx264 \
+-pass 2 -preset veryslow -threads 0 -b 3000k -x264opts frameref=15:fast_pskip=0 *video*.mkv
 
 ```
 
@@ -212,7 +212,7 @@ $ ffmpeg -i _video_.VOB -acodec libvo-aacenc -ab 256k -ar 96000 -vcodec libx264 
 Audio deactivated as only video statistics are logged during the first of multiple pass runs:
 
 ```
-$ ffmpeg -i _video_.VOB -an -vcodec mpeg4 -pass 1 -mbd 2 -trellis 2 -flags +cbp+mv0 \
+$ ffmpeg -i *video*.VOB -an -vcodec mpeg4 -pass 1 -mbd 2 -trellis 2 -flags +cbp+mv0 \
 -pre_dia_size 4 -dia_size 4 -precmp 4 -cmp 4 -subcmp 4 -preme 2 -qns 2 -b 3000k \
 -f rawvideo -y /dev/null
 
@@ -221,9 +221,9 @@ $ ffmpeg -i _video_.VOB -an -vcodec mpeg4 -pass 1 -mbd 2 -trellis 2 -flags +cbp+
 Container format is automatically detected and muxed into from the output file extenstion (`.avi`):
 
 ```
-$ ffmpeg -i _video_.VOB -acodec copy -vcodec mpeg4 -vtag DX50 -pass 2 -mbd 2 -trellis 2 \
+$ ffmpeg -i *video*.VOB -acodec copy -vcodec mpeg4 -vtag DX50 -pass 2 -mbd 2 -trellis 2 \
 -flags +cbp+mv0 -pre_dia_size 4 -dia_size 4 -precmp 4 -cmp 4 -subcmp 4 -preme 2 -qns 2 \
--b 3000k _video_.avi
+-b 3000k *video*.avi
 
 ```
 
@@ -264,10 +264,8 @@ The second pass parses the stabilization parameters generated from the first pas
 
 *   `unsharp` is recommended by the author of vid.stab. Here we are simply using the defaults of 5:5:1.0:5:5:1.0
 *   **Tip:** fade=t=in:st=0:d=4
-
     fade in from black starting from the beginning of the file for four seconds
 *   **Tip:** fade=t=out:st=60:d=4
-
     fade out to black starting from sixty seconds into the video for four seconds
 *   `-c:a pcm_s16le` XAVC-S codec records in pcm_s16be which is losslessly transcoded to pcm_s16le
 
@@ -285,7 +283,6 @@ Subtitles embedded in container files, such as MPEG-2 and Matroska, can be extra
 *   Inspect a file to determine if it contains a subtitle stream:
 
  `$ ffprobe foo.mkv` 
-
 ```
 ...
 Stream #0:0(und): Video: h264 (High), yuv420p, 1920x800 [SAR 1:1 DAR 12:5], 23.98 fps, 23.98 tbr, 1k tbn, 47.95 tbc (default)
@@ -336,14 +333,14 @@ Change the audio volume in multiples of 256 where **256 = 100%** (normal) volume
 To double the volume **(512 = 200%)** of an [MP3](https://en.wikipedia.org/wiki/Mp3 "wikipedia:Mp3") file:
 
 ```
-$ ffmpeg -i _file_.mp3 -vol 512 _louder_file_.mp3
+$ ffmpeg -i *file*.mp3 -vol 512 *louder_file*.mp3
 
 ```
 
 To quadruple the volume **(1024 = 400%)** of an [Ogg](https://en.wikipedia.org/wiki/Ogg "wikipedia:Ogg") file:
 
 ```
-$ ffmpeg -i _file_.ogg -vol 1024 _louder_file_.ogg
+$ ffmpeg -i *file*.ogg -vol 1024 *louder_file*.ogg
 
 ```
 
@@ -351,11 +348,10 @@ Note that gain metadata is only written to the output file. Unlike mp3gain or og
 
 ### Extracting audio
 
- `$ ffmpeg -i _video_.mpg` 
-
+ `$ ffmpeg -i *video*.mpg` 
 ```
 ...
-Input #0, avi, from '_video_.mpg':
+Input #0, avi, from '*video*.mpg':
   Duration: 01:58:28.96, start: 0.000000, bitrate: 3000 kb/s
     Stream #0.0: Video: mpeg4, yuv420p, 720x480 [PAR 1:1 DAR 16:9], 29.97 tbr, 29.97 tbn, 29.97 tbc
     Stream #0.1: Audio: ac3, 48000 Hz, stereo, s16, 384 kb/s
@@ -368,14 +364,14 @@ Input #0, avi, from '_video_.mpg':
 Extract the first (`-map 0:1`) [AC-3](https://en.wikipedia.org/wiki/Dolby_Digital "wikipedia:Dolby Digital") encoded audio stream exactly as it was multiplexed into the file:
 
 ```
-$ ffmpeg -i _video_.mpg -map 0:1 -acodec copy -vn _video_.ac3
+$ ffmpeg -i *video*.mpg -map 0:1 -acodec copy -vn *video*.ac3
 
 ```
 
-Convert the third (`-map 0:3`) [DTS](https://en.wikipedia.org/wiki/DTS_(sound_system) "wikipedia:DTS (sound system)") audio stream to an [AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:Advanced Audio Coding") file with a bitrate of 192 kb/s and a [sampling rate](https://en.wikipedia.org/wiki/Sampling_rate "wikipedia:Sampling rate") of 96000 Hz:
+Convert the third (`-map 0:3`) [DTS](https://en.wikipedia.org/wiki/DTS_(sound_system) audio stream to an [AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:Advanced Audio Coding") file with a bitrate of 192 kb/s and a [sampling rate](https://en.wikipedia.org/wiki/Sampling_rate "wikipedia:Sampling rate") of 96000 Hz:
 
 ```
-$ ffmpeg -i _video_.mpg -map 0:3 -acodec libvo-aacenc -ab 192k -ar 96000 -vn _output_.aac
+$ ffmpeg -i *video*.mpg -map 0:3 -acodec libvo-aacenc -ab 192k -ar 96000 -vn *output*.aac
 
 ```
 
@@ -384,7 +380,7 @@ $ ffmpeg -i _video_.mpg -map 0:3 -acodec libvo-aacenc -ab 192k -ar 96000 -vn _ou
 Extract audio stream with certain time interval:
 
 ```
-$ ffmpeg -ss 00:01:25 -t 00:00:05 -i _video_.mpg -map 0:1 -acodec copy -vn _output_.ac3
+$ ffmpeg -ss 00:01:25 -t 00:00:05 -i *video*.mpg -map 0:1 -acodec copy -vn *output*.ac3
 
 ```
 
@@ -396,16 +392,14 @@ $ ffmpeg -ss 00:01:25 -t 00:00:05 -i _video_.mpg -map 0:1 -acodec copy -vn _outp
 2.  Convert the AC-3 audio stream to two-channel MP3 with a bitrate of 128 kb/s and a sampling rate of 48000 Hz.
 
 ```
-$ ffmpeg -i _video_.mpg -map 0:0 -map 0:2 -vcodec copy -acodec libmp3lame \
--ab 128k -ar 48000 -ac 2 _video_.mkv
+$ ffmpeg -i *video*.mpg -map 0:0 -map 0:2 -vcodec copy -acodec libmp3lame \
+-ab 128k -ar 48000 -ac 2 *video*.mkv
 
 ```
-
- `$ ffmpeg -i _video_.mkv` 
-
+ `$ ffmpeg -i *video*.mkv` 
 ```
 ...
-Input #0, avi, from '_video_.mpg':
+Input #0, avi, from '*video*.mpg':
   Duration: 01:58:28.96, start: 0.000000, bitrate: 3000 kb/s
     Stream #0.0: Video: mpeg4, yuv420p, 720x480 [PAR 1:1 DAR 16:9], 29.97 tbr, 29.97 tbn, 29.97 tbc
     Stream #0.1: Audio: mp3, 48000 Hz, stereo, s16, 128 kb/s
@@ -435,7 +429,6 @@ $ cp -iR /usr/share/ffmpeg ~/.ffmpeg
 Create new and/or modify the default preset files:
 
  `~/.ffmpeg/libavcodec-vhq.ffpreset` 
-
 ```
 vtag=DX50
 mbd=2
@@ -465,15 +458,15 @@ Enable the `-vpre` option after declaring the desired `-vcodec`
 First pass of a multipass (bitrate) ratecontrol transcode:
 
 ```
-$ ffmpeg -i _video_.mpg -an -vcodec mpeg4 -pass 1 -vpre vhq -f rawvideo -y /dev/null
+$ ffmpeg -i *video*.mpg -an -vcodec mpeg4 -pass 1 -vpre vhq -f rawvideo -y /dev/null
 
 ```
 
 Ratecontrol based on the video statistics logged from the first pass:
 
 ```
-$ ffmpeg -i _video_.mpg -acodec libvorbis -aq 8 -ar 48000 -vcodec mpeg4 \
--pass 2 -vpre vhq -b 3000k _output_.mp4
+$ ffmpeg -i *video*.mpg -acodec libvorbis -aq 8 -ar 48000 -vcodec mpeg4 \
+-pass 2 -vpre vhq -b 3000k *output*.mp4
 
 ```
 

@@ -61,11 +61,11 @@ Aunque su uso práctico es limitado, debido a su lento rendimiento, la utilidad 
 Para controlar la transparencia de una ventana, asegurate que el programa deseado esta corriendo, entonces ejecuta:
 
 ```
-transset _n_
+transset *n*
 
 ```
 
-.. donde _n_ es un número de 0 a 1, cero es transparente y 1 es opaco.
+.. donde *n* es un número de 0 a 1, cero es transparente y 1 es opaco.
 
 Una vez ejecutado, el cursor del mouse se transformará en una cruz. Simplemente haz click en la ventana deseada y la transparencia cambiará al valor especificado. Por ejemplo, `transset .25` colocará la ventana a un 75% de transpariencia.
 
@@ -77,7 +77,7 @@ Esto es arreglado en fluxbox CVS después de 0.9.10\. Mira [[1]](http://freedesk
 
 ## Mozilla Firefox se tranca al entrar a un sitio con Flash
 
-Puedes hacerlo bien sea creando un ejecutable en /etc/profile.d llamado _flash.sh_ que contenga esta línea:
+Puedes hacerlo bien sea creando un ejecutable en /etc/profile.d llamado *flash.sh* que contenga esta línea:
 
 ```
 export XLIB_SKIP_ARGB_VISUALS=1

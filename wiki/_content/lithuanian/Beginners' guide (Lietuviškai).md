@@ -88,11 +88,11 @@
 
 ##### DON'T PANIC! (be panikos!)
 
-_Arch Linux_ instaliacija gerokai skiriasi nuo kitų bandytų Linux GNU/Linux distribucijų. Čia nėra jokios grafinio instaliavimo programėlės, kuri padarytų viską automatiškai (ką nori ir ko nenori), kol 20 minučių veiksite ką kita. Bet čia viskas yra jūsų rankose, ką ir kaip instaliuoti. Instaliacija susideda vien tik iš komandinės eilutės sąsajos (CLI) ir jos įrankių. Grafinę aplinką, jei norėsite, galėsite instaliuoti tik pabaigoje, bet net ir po to nebus jokių "control panel" ar panašių derinimo įrankių. Iš komandinės eilutės kuri nieko daugiau neturi, išskyrus tai kas būtina OS veikimui, jūs patys redaguosite nustatymų bylas su _nano_ ir instaliuosite programas su _pacman_ kol gausis tai ko norite, kas atitinka jūsų poreikius ir būsimą kompiuterio paskirtį. Tai užtikrina maksimalų lankstumą, valdymą ir patogumą vėliau. Ne paslaptis, kad tai kas tinka viskam, dažniausiai normaliai netinka niekam, būtent todėl Arch Linux tiek daug dėmesio skiria **specializacijai**. OS bus nuo pamatų pastatyta taip, kad atliktų tik tai ko jūs asmeniškai norite ir ko jums reikia.
+*Arch Linux* instaliacija gerokai skiriasi nuo kitų bandytų Linux GNU/Linux distribucijų. Čia nėra jokios grafinio instaliavimo programėlės, kuri padarytų viską automatiškai (ką nori ir ko nenori), kol 20 minučių veiksite ką kita. Bet čia viskas yra jūsų rankose, ką ir kaip instaliuoti. Instaliacija susideda vien tik iš komandinės eilutės sąsajos (CLI) ir jos įrankių. Grafinę aplinką, jei norėsite, galėsite instaliuoti tik pabaigoje, bet net ir po to nebus jokių "control panel" ar panašių derinimo įrankių. Iš komandinės eilutės kuri nieko daugiau neturi, išskyrus tai kas būtina OS veikimui, jūs patys redaguosite nustatymų bylas su *nano* ir instaliuosite programas su *pacman* kol gausis tai ko norite, kas atitinka jūsų poreikius ir būsimą kompiuterio paskirtį. Tai užtikrina maksimalų lankstumą, valdymą ir patogumą vėliau. Ne paslaptis, kad tai kas tinka viskam, dažniausiai normaliai netinka niekam, būtent todėl Arch Linux tiek daug dėmesio skiria **specializacijai**. OS bus nuo pamatų pastatyta taip, kad atliktų tik tai ko jūs asmeniškai norite ir ko jums reikia.
 
 Be to, patys viską pastatę, labai gerai žinosite, kaip pas jus viskas veikia. O žinojimas irgi ne mažiau gerai.
 
-Arch principas yra _keep it simple_ (~ laikyk tai paprastai), kur _simple_ nereiškia nei lengva, nei daug visokių šokinėjančių lentelių kur tik _yes/no/cancel_ spaudyti reikia, o tai, kad nėra nieko nereikalingo. Arch tai elegantiškas ir minimalistinis požiūris. Arch tai jokiu būdu nėra keli DVD diskai pagal nutylėjimą suinstaliuojamų programų, kurių daugumos tu net pavadinimų niekad nesužinosi.
+Arch principas yra *keep it simple* (~ laikyk tai paprastai), kur *simple* nereiškia nei lengva, nei daug visokių šokinėjančių lentelių kur tik *yes/no/cancel* spaudyti reikia, o tai, kad nėra nieko nereikalingo. Arch tai elegantiškas ir minimalistinis požiūris. Arch tai jokiu būdu nėra keli DVD diskai pagal nutylėjimą suinstaliuojamų programų, kurių daugumos tu net pavadinimų niekad nesužinosi.
 
 **Jei neseksite šiuo tekstu ar jo versijos kitomis kalbomis ir ypač jei dar neesate patyręs Linux naudotojas, tai vargu ar jums išvis kas nors gausis**
 
@@ -223,19 +223,19 @@ Kad paleistume mūsų ArchLinux iš hdd, mums prireiks pradinio įkėliklio (boo
 
 #### Windows nustatymai skirti GRUB
 
-Jei dar su tuo pačiu _GRUB_ norėsite leisti ir _Windows_ sistemą, tai _menu.lst_ byloje nutrinkite "#" visus ženklus pastraipoje apie _Windows_. Tada su
+Jei dar su tuo pačiu *GRUB* norėsite leisti ir *Windows* sistemą, tai *menu.lst* byloje nutrinkite "#" visus ženklus pastraipoje apie *Windows*. Tada su
 
 ```
 fdisk -l
 
 ```
 
-Pažiūrėkite, kuriame skirsnyje yra _Windows_. Tarkim, tai /dev/sd**a1**. Tada žiūrime į eilutę:
+Pažiūrėkite, kuriame skirsnyje yra *Windows*. Tarkim, tai /dev/sd**a1**. Tada žiūrime į eilutę:
 rootnoverify (hd**0,0**)
 Jei raidė a, tai toje eilutėje pirmas skaičius turi būti 0, jei b tai 1\.
 Jei po to eina skaičius 1, tai toje eilutėje turi būti 0, jei 2 tai toje eilutėje 1 ir t.t.
 Dažniausiai pasitaiko standartinis variantas "0,0", bet jei daug kaitaliojote, gali būti ir kitaip.
-Jei nesigauna, galite paeksperimentuoti su kitais skaičiais, jei skaičiai blogi _GRUB_ tiesiog nesugebės rasti kur tie _Windows_.
+Jei nesigauna, galite paeksperimentuoti su kitais skaičiais, jei skaičiai blogi *GRUB* tiesiog nesugebės rasti kur tie *Windows*.
 
 ## Bazinės sistemos konfigūravimas
 
@@ -250,7 +250,7 @@ nano -w /etc/pacman.conf
 
 ```
 
-Ir pašalink # (komentaro simbolį kuris reiškia, kad ta eilutė nėra naudojama ji tik komentaras arba priminimas) iš eilutės "Include = /etc/pacman.d/community"-ir tada galėsi naudoti bendruomenės paketus. Dabar su tekstiniu redaktoriumi atverk failą /etc/pacman.d/mirrorlist ir atkomentuok(nuimk # nuo eilutės pradžios) veidrodžius kurie netoli Lietuvos(arba tos šalies kurioje gyveni). Lietuva oficialaus veidrodžio neturi, bet yra neoficialus. Jei nori naudoti neoficialų, failo pradžioj įrašyk _Server = [http://edacval.homelinux.org/mirrors/archlinux/$repo/os/$arch](http://edacval.homelinux.org/mirrors/archlinux/$repo/os/$arch)_. Nuo 4 pacman versijos, visi paketai yra pasirašyti pgp raktu, tai dėl saugumo neverta sukt galvos, nes jei parašas tinkamas nesvarbu iš kur tu paėmei tą paketą. Jei naudoji _nano_ tai Alt+A pradeda žymėti tekstą, rodyklė žemyn pažymi eilutes, Ctrl+K atkerpa pažymėtą vietą, o Ctrl+U atkuria pažymėtą vietą.
+Ir pašalink # (komentaro simbolį kuris reiškia, kad ta eilutė nėra naudojama ji tik komentaras arba priminimas) iš eilutės "Include = /etc/pacman.d/community"-ir tada galėsi naudoti bendruomenės paketus. Dabar su tekstiniu redaktoriumi atverk failą /etc/pacman.d/mirrorlist ir atkomentuok(nuimk # nuo eilutės pradžios) veidrodžius kurie netoli Lietuvos(arba tos šalies kurioje gyveni). Lietuva oficialaus veidrodžio neturi, bet yra neoficialus. Jei nori naudoti neoficialų, failo pradžioj įrašyk *Server = [http://edacval.homelinux.org/mirrors/archlinux/$repo/os/$arch](http://edacval.homelinux.org/mirrors/archlinux/$repo/os/$arch)*. Nuo 4 pacman versijos, visi paketai yra pasirašyti pgp raktu, tai dėl saugumo neverta sukt galvos, nes jei parašas tinkamas nesvarbu iš kur tu paėmei tą paketą. Jei naudoji *nano* tai Alt+A pradeda žymėti tekstą, rodyklė žemyn pažymi eilutes, Ctrl+K atkerpa pažymėtą vietą, o Ctrl+U atkuria pažymėtą vietą.
 
 ### Tinklo konfigūravimas
 
@@ -258,17 +258,17 @@ Išsamesnes instrukcijas anglų kalba rasi [čia](/index.php/Network "Network")
 
 #### LAN
 
-Paprastai tai nieko tokiu atveju nereikia turėtų viskas veikti. Bandyk komandą _ping www.google.lt_ tam, kad tai patikrintum. Jei gauni "unknown host" klaidą, tavo tinklas tada dėja neveikia. Pažiūrėk su komanda:
+Paprastai tai nieko tokiu atveju nereikia turėtų viskas veikti. Bandyk komandą *ping www.google.lt* tam, kad tai patikrintum. Jei gauni "unknown host" klaidą, tavo tinklas tada dėja neveikia. Pažiūrėk su komanda:
 
 ```
-_ifconfig_
+*ifconfig*
 
 ```
 
-tu turėtum matyti pastraipą skirtą _eth0_. Tu gali priskirti IP su komanda:
+tu turėtum matyti pastraipą skirtą *eth0*. Tu gali priskirti IP su komanda:
 
 ```
-_ifconfig eth0 <ip address> netmask <netmask> up_
+*ifconfig eth0 <ip address> netmask <netmask> up*
 
 ```
 
@@ -288,10 +288,10 @@ ping www.google.lt
 
 #### DHCP suderinimas
 
-Jei tu turi _dhcp_ serverį/maršrutizatorių savo tinkle mėgink
+Jei tu turi *dhcp* serverį/maršrutizatorių savo tinkle mėgink
 
 ```
-_dhcpcd eth0_
+*dhcpcd eth0*
 
 ```
 
@@ -302,7 +302,7 @@ Jei tai padeda ir internetas pradėjo veikti, suderink /etc/rc.conf
 
 ```
 
-Ir žemiau _lo="lo 127.0.0.1"_ pridėk dar vieną naują eilutę _eth0="dhcp"_. Jei jau _eth0=kažkam_ yra tai pašalink tau netinkamą vertę. Tada daugiau anksčiau minėtos komandos vesti nereiks tam, kad įjungtum internetą.
+Ir žemiau *lo="lo 127.0.0.1"* pridėk dar vieną naują eilutę *eth0="dhcp"*. Jei jau *eth0=kažkam* yra tai pašalink tau netinkamą vertę. Tada daugiau anksčiau minėtos komandos vesti nereiks tam, kad įjungtum internetą.
 
 #### WLAN
 
@@ -314,7 +314,7 @@ Kas nors tokį turi Lietuvoje!? Tikriausiai ne.
 
 #### DSL (PPPoE)
 
-Labai gerai jei turite modemą-maršrutizatorių kuris pilnai valdomas per interneto naršyklę (net neduota jokių tvarkyklių diskų su juo). Tokiu atveju internetas tikriausiai jau veikia. Jei ne žiūrėkit skiltį apie _dhcp_. Jei jums dar reikia suderinti tą maršrutizatorių tai galite pasinaudoti naršykle _links_
+Labai gerai jei turite modemą-maršrutizatorių kuris pilnai valdomas per interneto naršyklę (net neduota jokių tvarkyklių diskų su juo). Tokiu atveju internetas tikriausiai jau veikia. Jei ne žiūrėkit skiltį apie *dhcp*. Jei jums dar reikia suderinti tą maršrutizatorių tai galite pasinaudoti naršykle *links*
 
 ```
 links
@@ -330,7 +330,7 @@ nano /etc/rc.conf
 
 ```
 
-Instaliuokite _rp-pppoe_ ir paleiskite pppoe-setup scenarijų
+Instaliuokite *rp-pppoe* ir paleiskite pppoe-setup scenarijų
 
 ```
 rp-pppoe
@@ -360,21 +360,21 @@ nano /etc/rc.conf
 
 ### Atnaujinimas
 
-dabar mes atsinaujinsim su _pacman_. Tai _Arch Linux_ paketų valdymo programa. Ji skirta instaliuoti ar ištrinti paketus (paketai ~= programos). Pirmiausia geriau įsitikinti ar tikrai internetas jau veikia, tai galima padaryti įvedus komandą:
+dabar mes atsinaujinsim su *pacman*. Tai *Arch Linux* paketų valdymo programa. Ji skirta instaliuoti ar ištrinti paketus (paketai ~= programos). Pirmiausia geriau įsitikinti ar tikrai internetas jau veikia, tai galima padaryti įvedus komandą:
 
 ```
 ping google.lt
 
 ```
 
-Jei gaunate atsakymą "64 bytes from..." vadinasi jūsų internetas veikia gerai ir tada galite naudotis _pacman_ paketų tvarkykle. Paspauskite ctrl+c tam kad išjungtumėte _ping_. Veskite:
+Jei gaunate atsakymą "64 bytes from..." vadinasi jūsų internetas veikia gerai ir tada galite naudotis *pacman* paketų tvarkykle. Paspauskite ctrl+c tam kad išjungtumėte *ping*. Veskite:
 
 ```
 pacman -Syu
 
 ```
 
-_Pacman_ dabar iš interneto surinks informaciją apie naujausius paketus. Kai matysite mirksintį ženkliuką "_" tai spauskite _y_ ir enter. Jei _Pacman_ atnaujino tik pats save tai dar kartą pakartokite:
+*Pacman* dabar iš interneto surinks informaciją apie naujausius paketus. Kai matysite mirksintį ženkliuką "_" tai spauskite *y* ir enter. Jei *Pacman* atnaujino tik pats save tai dar kartą pakartokite:
 
 ```
 pacman -Syu 
@@ -439,7 +439,7 @@ pacman -S alsa-utils alsa-lib alsa-oss
 
 ```
 
-ir naudok alsamixer (įvesdamas komandą _alsamixer_) tam, kad suderintum kanalus. Įjunk bent jau "master" ir "pcm" kanalus (spausk M) ir padidink garsą su rodykle į viršų. Išeik su ESC ir įvesk komandą _alsactl store_ tam, kad išsaugotum nustatymus. Pridėk _alsa_ prie savo demonų /etc/rc.conf byloje ( DAEMONS=(syslog-ng network ... alsa ) ) ir tada vos tik kompiuteriui įsijungus garsas bus valdomas ir nereiks daugiau vesti komandų.
+ir naudok alsamixer (įvesdamas komandą *alsamixer*) tam, kad suderintum kanalus. Įjunk bent jau "master" ir "pcm" kanalus (spausk M) ir padidink garsą su rodykle į viršų. Išeik su ESC ir įvesk komandą *alsactl store* tam, kad išsaugotum nustatymus. Pridėk *alsa* prie savo demonų /etc/rc.conf byloje ( DAEMONS=(syslog-ng network ... alsa ) ) ir tada vos tik kompiuteriui įsijungus garsas bus valdomas ir nereiks daugiau vesti komandų.
 
 ### CPU dažnio mažinimas
 
@@ -450,7 +450,7 @@ pacman -S cpufrequtils
 
 ```
 
-ir pridedam _cpufreq_ prie demonų /etc/rc.conf. Redaguojam nustatymų bylą /etc/conf.d/cpufreq ir keičiam:
+ir pridedam *cpufreq* prie demonų /etc/rc.conf. Redaguojam nustatymų bylą /etc/conf.d/cpufreq ir keičiam:
 
 ```
 governor="conservative"
@@ -464,7 +464,7 @@ modprobe <modulname>
 
 ```
 
-Ir paleidžiam _cpufreq_ su:
+Ir paleidžiam *cpufreq* su:
 
 ```
 /etc/rc.d/cpufreq start
@@ -487,7 +487,7 @@ ir pridedam jį prie demonų /etc/rc.conf (acpid). Paleidžiam su:
 
 ```
 
-Dar gera mintis yra instaliuoti _powersave_ ir priedėti prie demonų byloje /etc/rc.conf (powersaved). Paleidžiam jį su:
+Dar gera mintis yra instaliuoti *powersave* ir priedėti prie demonų byloje /etc/rc.conf (powersaved). Paleidžiam jį su:
 
 ```
 /etc/rc.d/powersaved start
@@ -519,7 +519,7 @@ lspci | grep VGA
 
 ```
 
-Dabar vesk Xorg -configure ir sukursi savo pradinę X konfigūraciją. jei nori ją išmėginti instaliuok _xterm_ ir _twm_ su:
+Dabar vesk Xorg -configure ir sukursi savo pradinę X konfigūraciją. jei nori ją išmėginti instaliuok *xterm* ir *twm* su:
 
 ```
 pacman -S xterm xorg-twm
@@ -534,7 +534,7 @@ Išsamiais instrukcijas anglų kalba gali rasti [čia](/index.php/Xorg "Xorg")
 
 ### Klaviatūros išdėstymo keitimas
 
-Tu tikriausiai norėsi pakeisti klaviatūros išdėstymą. Jei nori tai padaryti redaguok savo /etc/X11/xorg.conf ir pridėk tokias eilutes į _Section "InputDevice"_. Pirma nurodo, kad naudosim JAV ir Lietuvišką raidžių išdėstymą, o antra, kad išdėstymus keisim paspaudimu _alt+shift_ mygtukų.
+Tu tikriausiai norėsi pakeisti klaviatūros išdėstymą. Jei nori tai padaryti redaguok savo /etc/X11/xorg.conf ir pridėk tokias eilutes į *Section "InputDevice"*. Pirma nurodo, kad naudosim JAV ir Lietuvišką raidžių išdėstymą, o antra, kad išdėstymus keisim paspaudimu *alt+shift* mygtukų.
 
 ```
        Option          "XkbLayout"     "us,lt"
@@ -600,7 +600,7 @@ Load "glx"
 
 ```
 
-Įvesk '_modprobe nvidia_ tam, kad įjungtum draiverius ir išmėgink savo darbo rezultatą su _startx_.
+Įvesk '*modprobe nvidia* tam, kad įjungtum draiverius ir išmėgink savo darbo rezultatą su *startx*.
 
 Išsamios intrukcijos anglų kalba [čia](/index.php/How_to_install_NVIDIA_driver "How to install NVIDIA driver")
 
@@ -656,7 +656,7 @@ pacman -S gnome-extra
 
 ```
 
-Geriausia rinktis viską. Dar galbūt norėsite vos tik įjungę kompiuterį neatsidurti konsolėje tokiu atvėju jums reik _gdm_. instaliuojam jį:
+Geriausia rinktis viską. Dar galbūt norėsite vos tik įjungę kompiuterį neatsidurti konsolėje tokiu atvėju jums reik *gdm*. instaliuojam jį:
 
 ```
 pacman -S gdm
@@ -729,7 +729,7 @@ pacman -S xfce4 xfce4-goodies
 
 ```
 
-Dar gali praversti _gdm_ (žr. GNOME ir jį reik instaliuoti pirmiau) tada xfce atsiras kaip nauja sesija. Arba tiesiog komanda paleidimui iš konsolės:
+Dar gali praversti *gdm* (žr. GNOME ir jį reik instaliuoti pirmiau) tada xfce atsiras kaip nauja sesija. Arba tiesiog komanda paleidimui iš konsolės:
 
 ```
 startxfce4
@@ -971,7 +971,7 @@ Brasero, k3b, cdrecord, graveman ir kitos programos gali būti tam panaudotos.
 
 ### Skaitmeninės kameros, naujausi telefonai grotuvai
 
-Dauguma tokių įrenginių gali veikti USB rato principu. Jei taip yra tai nieko daryti nereikia tiesiog prijungiam įrenginį ir atliekam reikiamas operacijas su bylomis. Kai kurios senos kameros naudoja _ptp_ (Picture Transfer Protocol) kuriam reikia specialios programinės įrangos Gphoto2 leidžia turėti tokią įrangą konsolėje. Digikam tai suteikia KDE aplinkai. Gthumb ir gtkam leidžia naudoti tokią įrangą be to turi patogią grafinę sąsają. Į Creative kurtus grotuvus (Zen, zen micro, zen photo, jukebox...) galima įkelti dainas su Gnomad įrankiu.
+Dauguma tokių įrenginių gali veikti USB rato principu. Jei taip yra tai nieko daryti nereikia tiesiog prijungiam įrenginį ir atliekam reikiamas operacijas su bylomis. Kai kurios senos kameros naudoja *ptp* (Picture Transfer Protocol) kuriam reikia specialios programinės įrangos Gphoto2 leidžia turėti tokią įrangą konsolėje. Digikam tai suteikia KDE aplinkai. Gthumb ir gtkam leidžia naudoti tokią įrangą be to turi patogią grafinę sąsają. Į Creative kurtus grotuvus (Zen, zen micro, zen photo, jukebox...) galima įkelti dainas su Gnomad įrankiu.
 
 ### USB raktai
 

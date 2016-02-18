@@ -2,7 +2,7 @@
 
 Questa pagina servirà da guida nel processo di installazione di [Arch Linux](/index.php/Arch_Linux_(Italiano) "Arch Linux (Italiano)") utilizzando gli [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Prima di procedere, si consiglia di leggere velocemente le [FAQ](/index.php/FAQ_(Italiano) "FAQ (Italiano)").
 
-Il [wiki di Arch](/index.php/Main_Page_(Italiano) "Main Page (Italiano)"), mantenuto dalla comunità, è la risorsa primaria che deve essere consultato in caso di problemi. Sono disponibili anche dei canali [IRC Channel](/index.php/IRC_Channel "IRC Channel") (per la comunità italiana: [irc://irc.azzurra.org/archlinux](irc://irc.azzurra.org/archlinux) o [irc://irc.freenode.net/#archlinux.it](irc://irc.freenode.net/#archlinux.it), mentre per il supporto internazionale: [irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), ed il [forum italiano](http://www.archlinux.it/forum/) o [internazionale](https://bbs.archlinux.org/), che sono eccellenti risorse, nel caso la risposta non possa essere trovata altrove. Seguendo il [metodo Arch](/index.php/The_Arch_Way_(Italiano) "The Arch Way (Italiano)"), si consiglia di digitare `man _comando_` per leggere la pagina `man` pagina di un qualsiasi comando che non si conosce.
+Il [wiki di Arch](/index.php/Main_Page_(Italiano) "Main Page (Italiano)"), mantenuto dalla comunità, è la risorsa primaria che deve essere consultato in caso di problemi. Sono disponibili anche dei canali [IRC Channel](/index.php/IRC_Channel "IRC Channel") (per la comunità italiana: [irc://irc.azzurra.org/archlinux](irc://irc.azzurra.org/archlinux) o [irc://irc.freenode.net/#archlinux.it](irc://irc.freenode.net/#archlinux.it), mentre per il supporto internazionale: [irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), ed il [forum italiano](http://www.archlinux.it/forum/) o [internazionale](https://bbs.archlinux.org/), che sono eccellenti risorse, nel caso la risposta non possa essere trovata altrove. Seguendo il [metodo Arch](/index.php/The_Arch_Way_(Italiano) "The Arch Way (Italiano)"), si consiglia di digitare `man *comando*` per leggere la pagina `man` pagina di un qualsiasi comando che non si conosce.
 
 ## Contents
 
@@ -22,13 +22,13 @@ Il [wiki di Arch](/index.php/Main_Page_(Italiano) "Main Page (Italiano)"), mante
 
 ### Requisiti di Sistema
 
-Arch Linux dovrebbe funzionare su qualsiasi macchina [i686](https://en.wikipedia.org/wiki/it:P6_(microarchitecture) "wikipedia:it:P6 (microarchitecture)") compatibile e con un minimo di 64 MB di RAM. Una installazione di base con tutti i pacchetti dal gruppo _base_ dovrebbe prendere circa 500 MB di spazio su disco. Se si lavora con spazio limitato, questo può essere tagliato in modo considerevole, ma dovrete sapere cosa si sta facendo.
+Arch Linux dovrebbe funzionare su qualsiasi macchina [i686](https://en.wikipedia.org/wiki/it:P6_(microarchitecture) compatibile e con un minimo di 64 MB di RAM. Una installazione di base con tutti i pacchetti dal gruppo *base* dovrebbe prendere circa 500 MB di spazio su disco. Se si lavora con spazio limitato, questo può essere tagliato in modo considerevole, ma dovrete sapere cosa si sta facendo.
 
 #### Preparare il supporto di installazione più recente
 
 L'ultima versione del supporto di installazione può essere ottenuta dalla pagina di [download](https://www.archlinux.org/download/). Si noti che la singola immagine ISO supporta entrambe le architetture a 32 e 64 bit. É altamente raccomandato di utilizzare sempre l'ultima immagine ISO rilasciata.
 
-*   Le immagini da installare sono firmate, e si consiglia vivamente di verificare la loro firma prima dell'uso. Scaricare il file di firma _.sig_ dalla pagina di download (o uno dei mirror elencati qui ) per la stessa directory del file _.iso_. Su Arch Linux , usare `pacman-key -v _iso-file_.sig` da root; in altri ambienti usufruire , sempre come root , di gpg2 direttamente con `gpg2 --verify _iso-file.sig_`. Sono inoltre riportate le integrità checksum del file MD5 e SHA1.
+*   Le immagini da installare sono firmate, e si consiglia vivamente di verificare la loro firma prima dell'uso. Scaricare il file di firma *.sig* dalla pagina di download (o uno dei mirror elencati qui ) per la stessa directory del file *.iso*. Su Arch Linux , usare `pacman-key -v *iso-file*.sig` da root; in altri ambienti usufruire , sempre come root , di gpg2 direttamente con `gpg2 --verify *iso-file.sig*`. Sono inoltre riportate le integrità checksum del file MD5 e SHA1.
 
 **Nota:** La verifica gpg2 fallirà se non avete scaricato la corrispondente chiave pubblica per l'ID della chiave RSA. Vedere [http://sparewotw.wordpress.com/2012/10/31/how-to-verify-signature-using-sig-file/](http://sparewotw.wordpress.com/2012/10/31/how-to-verify-signature-using-sig-file/) per i dettagli.
 

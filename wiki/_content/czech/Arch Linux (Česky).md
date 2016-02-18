@@ -16,7 +16,7 @@ Arch Linux začal vyvíjet kanadský programátor Judd Vinet. První verze, Arch
 
 ## Jednoduchost
 
-Arch se drží své filozofie [The Arch Way](/index.php/The_Arch_Way_(%C4%8Cesky) "The Arch Way (Česky)"), jedná se o odlehčenou, flexibilní a jednoduchou distribuci. Při instalaci je poskytováno minimální prostředí (bez grafického rozhraní) kompilované pro architektury i686/x86-64: namísto odstraňování nepotřebných a nežádoucích balíčků má uživatel možnost stavět svůj systém na minimálním základu bez jakýchkoli preventivně zvolených výchozích nastavení. Díky filozofii návrhu a implementace Archu je jednoduché rozšiřovat a vytvářet libovolný typ systému, od minimalistického konzolového stroje až po mohutná funkcemi nabitá desktopová prostředí -- je to právě _uživatel_ kdo rozhoduje o tom, jak jeho Arch systém bude vypadat.
+Arch se drží své filozofie [The Arch Way](/index.php/The_Arch_Way_(%C4%8Cesky) "The Arch Way (Česky)"), jedná se o odlehčenou, flexibilní a jednoduchou distribuci. Při instalaci je poskytováno minimální prostředí (bez grafického rozhraní) kompilované pro architektury i686/x86-64: namísto odstraňování nepotřebných a nežádoucích balíčků má uživatel možnost stavět svůj systém na minimálním základu bez jakýchkoli preventivně zvolených výchozích nastavení. Díky filozofii návrhu a implementace Archu je jednoduché rozšiřovat a vytvářet libovolný typ systému, od minimalistického konzolového stroje až po mohutná funkcemi nabitá desktopová prostředí -- je to právě *uživatel* kdo rozhoduje o tom, jak jeho Arch systém bude vypadat.
 
 ## Modernost
 
@@ -32,7 +32,7 @@ Arch podporuje architektury i686 a x86-64 v [oficiálních repozitářích](/ind
 
 ## Integrita balíčků
 
-Arch poskytuje vanilla software bez záplat; balíčky jsou sestavovány přímo z [upstream](https://en.wikipedia.org/wiki/upstream_(software_development) "wikipedia:upstream (software development)") zdrojových kódů, jak autor původně zamýšlel, aby byly distribuovány. Záplatování probíhá pouze v extrémních případech, aby se zabránilo závažnému rozbití balíčků v důsledku neshodujících se verzí, což se za použití rolling-release modelu může stát.
+Arch poskytuje vanilla software bez záplat; balíčky jsou sestavovány přímo z [upstream](https://en.wikipedia.org/wiki/upstream_(software_development) zdrojových kódů, jak autor původně zamýšlel, aby byly distribuovány. Záplatování probíhá pouze v extrémních případech, aby se zabránilo závažnému rozbití balíčků v důsledku neshodujících se verzí, což se za použití rolling-release modelu může stát.
 
 ## Komunita
 

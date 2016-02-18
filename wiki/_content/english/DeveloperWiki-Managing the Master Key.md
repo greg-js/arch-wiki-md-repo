@@ -82,7 +82,7 @@ libusb couldn't open USB device /dev/bus/usb/001/006: Permission denied.
 libusb requires write access to USB device nodes.
 ```
 
-Cause: gnupg has an internal _ccid_ driver. This driver accesses the USB device node directly, without going through pcscd. However, gnupg's internal driver does not support the Gemalto USB reader anyway, so this message can be ignored.
+Cause: gnupg has an internal *ccid* driver. This driver accesses the USB device node directly, without going through pcscd. However, gnupg's internal driver does not support the Gemalto USB reader anyway, so this message can be ignored.
 
 *   udev/packaging issue:
 
@@ -105,7 +105,7 @@ A string pointing to a URL that stores your pubkey.
 
 *   What is the impact of setting `forcesig`?
 
-If you enable _forcesig_, you must enter the PIN for each single signature. This is recommended.
+If you enable *forcesig*, you must enter the PIN for each single signature. This is recommended.
 
 ## External documentation
 

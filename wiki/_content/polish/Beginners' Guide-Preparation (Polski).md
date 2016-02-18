@@ -23,7 +23,7 @@ Oficjalne obrazy instalacyjne Archa możesz znaleźć [tutaj](https://archlinux.
 
 *   Nagraj obraz .iso na CD lub DVD używając wybranego oprogramowania.
 
-**Note:** Jakość napędów optycznych i samych płyt może być bardzo różna. Generalnie, polecane jest nagrywanie z niską prędkością. Niektórzy użytkownicy polecają prędkości _**tak niskie jak 4x lub 2x.**_ Jeśli doświadczasz nieprzewidzianych zachowań w trakcie instalacji, spróbuj nagrać obraz z najniższą możliwą prędkością.
+**Note:** Jakość napędów optycznych i samych płyt może być bardzo różna. Generalnie, polecane jest nagrywanie z niską prędkością. Niektórzy użytkownicy polecają prędkości ***tak niskie jak 4x lub 2x.*** Jeśli doświadczasz nieprzewidzianych zachowań w trakcie instalacji, spróbuj nagrać obraz z najniższą możliwą prędkością.
 
 *   Możesz także nagrać obraz .iso na pendrive. Dokładne instrukcje znajdziesz na stronie [USB Installation Media_(Polski)](/index.php?title=USB_Installation_Media_(Polski)&action=edit&redlink=1 "USB Installation Media (Polski) (page does not exist)").
 
@@ -79,4 +79,4 @@ Jeżeli posiadasz płytę główną z [UEFI](/index.php/UEFI "UEFI"), a tryb UEF
 
 *   Jeśli posiadasz chipset graficzny Intela, a obraz staje się pusty podczas uruchamiania, problemem jest prawdopodobnie Kernel Mode Setting ([KMS](/index.php?title=KMS_(Polski)&action=edit&redlink=1 "KMS (Polski) (page does not exist)")). Możliwym obejściem jest ponowne uruchomienie i naciśnięcie `Tab` nad pozycją, którą chcesz uruchomić (i686 lub x86_64). Na końcu linijki dopisz `nomodeset` i naciśnij `Enter`. Alternatywnie, dopisz `video=SVIDEO-1:d`, jednak ten parametr (jeśli zadziała), nie wyłączy Kernel Mode Setting. Zobacz artykuł [Intel](/index.php/Intel_(Polski) "Intel (Polski)") po więcej informacji.
 
-*   Jeśli obraz _nie_ staje się pusty, a uruchamianie zatrzymuje się podczas próby ładowania jądra, naciśnij `Tab` nad odpowiednią pozycją menu, dopisz `acpi=off` na końcu linijki i naciśnij `Enter`.
+*   Jeśli obraz *nie* staje się pusty, a uruchamianie zatrzymuje się podczas próby ładowania jądra, naciśnij `Tab` nad odpowiednią pozycją menu, dopisz `acpi=off` na końcu linijki i naciśnij `Enter`.

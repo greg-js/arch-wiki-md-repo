@@ -29,7 +29,7 @@ Contrario a su ámbito, las páginas del manual están diseñadas para ser docum
 Para leer una página de manual, introduzca:
 
 ```
-$ man _nombre_de_página_
+$ man *nombre_de_página*
 
 ```
 
@@ -56,7 +56,6 @@ para leer la página del manual sobre `/etc/passwd`, en vez de la página sobre 
 Descripciones de una línea de las páginas del manual pueden mostrarse usando el comando `whatis`. Por ejemplo, para una breve descripción de las páginas de secciones del manual sobre `ls`, escriba:
 
  `$ whatis ls` 
-
 ```
 ls (1p)              - lista el contenido de directorios
 ls (1)               - lista el contenido de directorios
@@ -83,7 +82,7 @@ Todas las páginas del manual siguen un formato prácticamente estándar, lo que
 
 Aunque el comando `man` permite a los usuarios mostrar las páginas del manual, surge un problema que es cuando uno no se sabe en primera instancia el nombre exacto de la página del manual. Afortunadamente, los parámetros `-k` o `--apropos` pueden usarse para buscar en las descripciones de las páginas del manual por apariciones de una palabra clave dada.
 
-La característica de búsqueda es proporcionada por una caché dedicada. Por defecto puede no tener ninguna cache creada y todas sus búsquedas generarán el resultado _nada apropiado_. Puede generar o actualizar la cache ejecutando
+La característica de búsqueda es proporcionada por una caché dedicada. Por defecto puede no tener ninguna cache creada y todas sus búsquedas generarán el resultado *nada apropiado*. Puede generar o actualizar la cache ejecutando
 
 ```
 # mandb
@@ -128,14 +127,13 @@ Las páginas del manual a color permiten una presentación más clara y una lect
 
 ### Usando less (Recomendado)
 
-	<small>_Fuente: [Colores de less para páginas del manual | Linux Tidbits](http://linuxtidbits.wordpress.com/2009/03/23/less-colors-for-man-pages/)_</small>
+	<small>*Fuente: [Colores de less para páginas del manual | Linux Tidbits](http://linuxtidbits.wordpress.com/2009/03/23/less-colors-for-man-pages/)*</small>
 
 Este método tiene la ventaja que `less` tiene un conjunto de características mas grande que `most`, y es el usado por defecto para visualizar las páginas del manual.
 
 Añada lo siguiente a su archivo de configuración del intérprete de órdenes. Para [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") sería:
 
  `~/.bashrc` 
-
 ```
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
@@ -160,7 +158,6 @@ Para ver los cambios en las páginas del manual (sin reiniciar bash o linux), pu
 Para [Fish](/index.php?title=Fish_(Espa%C3%B1ol)&action=edit&redlink=1 "Fish (Español) (page does not exist)") un fichero de configuración sería:
 
  `~/.config/fish/config.fish` 
-
 ```
 set -xU LESS_TERMCAP_mb (printf "\e[01;31m")      # iniciar parpadeo
 set -xU LESS_TERMCAP_md (printf "\e[01;31m")      # iniciar negrita
@@ -259,7 +256,7 @@ setkey edit "v"
 
 ### Páginas del manual a color en xterm o rxvt-unicode
 
-	<small>_Fuente: [Fichero de recursos XFree para el programa XTerm](http://pub.ligatura.org/fs/xfree86/xresources/xterm)_</small>
+	<small>*Fuente: [Fichero de recursos XFree para el programa XTerm](http://pub.ligatura.org/fs/xfree86/xresources/xterm)*</small>
 
 Una manera rápida de añadir color a páginas del manual en [xterm](https://www.archlinux.org/packages/?name=xterm)/`uxterm` o [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode) es modificar el fichero `~/.Xresources`.
 
@@ -273,14 +270,14 @@ Una manera rápida de añadir color a páginas del manual en [xterm](https://www
 
 ```
 
-que _reemplaza_ las decoraciones con colores. Añada también:
+que *reemplaza* las decoraciones con colores. Añada también:
 
 ```
 *VT100.veryBoldColors: 6
 
 ```
 
-Si quiere colores y decoraciones (negrita o subrayado) _al mismo tiempo_. Vea `man xterm` para una descripción del recurso `veryBoldColors`.
+Si quiere colores y decoraciones (negrita o subrayado) *al mismo tiempo*. Vea `man xterm` para una descripción del recurso `veryBoldColors`.
 
 #### rxvt-unicode
 
@@ -298,7 +295,7 @@ $ xrdb -load ~/.Xresources
 
 ```
 
-Lance una nueva instancia de `xterm/uxterm` o `rxvt-unicode` y debería poder ver las páginas del manual a color. Esta combinación pone colores a palabras en **negrita** y <u>subrayadas</u> en `xterm/uxterm` o texto en **negrita**, <u>subrayado</u>, y en _cursiva_ en `rxvt-unicode`. Puede jugar con las diferentes variaciones de estos atributos (vea las [fuentes](http://pub.ligatura.org/fs/xfree86/xresources/xterm) de este item).
+Lance una nueva instancia de `xterm/uxterm` o `rxvt-unicode` y debería poder ver las páginas del manual a color. Esta combinación pone colores a palabras en **negrita** y <u>subrayadas</u> en `xterm/uxterm` o texto en **negrita**, <u>subrayado</u>, y en *cursiva* en `rxvt-unicode`. Puede jugar con las diferentes variaciones de estos atributos (vea las [fuentes](http://pub.ligatura.org/fs/xfree86/xresources/xterm) de este item).
 
 ## Leyendo páginas del manual locales
 
@@ -379,7 +376,6 @@ Advertencia: Las fuentes están generalmente limitadas a Times a tamaños prefij
 El siguiente script en perl convierte las páginas del manual a PDFs, cachea los PDFs en el directorio `$HOME/.manpdf/`, y llama a un visor de PDFs, concretamente [mupdf](https://www.archlinux.org/packages/?name=mupdf).
 
  `Uso: manpdf [<section>] <manpage>` 
-
 ```
 #!/usr/bin/perl
 use File::stat;
@@ -416,22 +412,22 @@ if (!fork) {
 Existen numerosas bases de datos de páginas de manual online, incluyendo:
 
 *   [Man7.org.](http://man7.org/linux/man-pages/index.html) Versión original para Arch Linux's [man-pages](https://www.archlinux.org/packages/?name=man-pages).
-*   [_Debian GNU/Linux man pages_](http://manpages.debian.net/)
-*   [_DragonFlyBSD manual pages_](http://leaf.dragonflybsd.org/cgi/web-man)
-*   [_FreeBSD Hypertext Man Pages_](http://www.freebsd.org/cgi/man.cgi)
-*   [_Linux and Solaris 10 Man Pages_](http://www.manpages.spotlynx.com/)
-*   [_Linux/FreeBSD Man Pages_](http://manpagehelp.net) with user comments
-*   [_Linux man pages at die.net_](http://linux.die.net/man/)
+*   [*Debian GNU/Linux man pages*](http://manpages.debian.net/)
+*   [*DragonFlyBSD manual pages*](http://leaf.dragonflybsd.org/cgi/web-man)
+*   [*FreeBSD Hypertext Man Pages*](http://www.freebsd.org/cgi/man.cgi)
+*   [*Linux and Solaris 10 Man Pages*](http://www.manpages.spotlynx.com/)
+*   [*Linux/FreeBSD Man Pages*](http://manpagehelp.net) with user comments
+*   [*Linux man pages at die.net*](http://linux.die.net/man/)
 *   [The Linux man-pages project at kernel.org](http://www.kernel.org/doc/man-pages/)
-*   [_NetBSD manual pages_](http://netbsd.gw.com/cgi-bin/man-cgi)
-*   [_Mac OS X Manual Pages_](http://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
-*   [_On-line UNIX manual pages_](http://unixhelp.ed.ac.uk/alphabetical/index.html)
-*   [_OpenBSD manual pages_](http://www.openbsd.org/cgi-bin/man.cgi)
-*   [_Plan 9 Manual — Volume 1_](http://man.cat-v.org/plan_9/)
-*   [_Inferno Manual — Volume 1_](http://man.cat-v.org/inferno/)
-*   [_Storage Foundation Man Pages_](http://sfdoccentral.symantec.com/sf/5.0MP3/linux/manpages/index.html)
-*   [_The UNIX and Linux Forums Man Page Repository_](http://www.unix.com/man-page/OpenSolaris/1/man/)
-*   [_Ubuntu Manpage Repository_](http://manpages.ubuntu.com/)
+*   [*NetBSD manual pages*](http://netbsd.gw.com/cgi-bin/man-cgi)
+*   [*Mac OS X Manual Pages*](http://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
+*   [*On-line UNIX manual pages*](http://unixhelp.ed.ac.uk/alphabetical/index.html)
+*   [*OpenBSD manual pages*](http://www.openbsd.org/cgi-bin/man.cgi)
+*   [*Plan 9 Manual — Volume 1*](http://man.cat-v.org/plan_9/)
+*   [*Inferno Manual — Volume 1*](http://man.cat-v.org/inferno/)
+*   [*Storage Foundation Man Pages*](http://sfdoccentral.symantec.com/sf/5.0MP3/linux/manpages/index.html)
+*   [*The UNIX and Linux Forums Man Page Repository*](http://www.unix.com/man-page/OpenSolaris/1/man/)
+*   [*Ubuntu Manpage Repository*](http://manpages.ubuntu.com/)
 
 **Advertencia:** Algunas distribuciones proporcionan páginas de manual parcheadas u obsoletas que difieren de aquellas proporcionadas por Arch. Sea cauto al usar páginas de manual online.
 

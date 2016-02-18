@@ -62,7 +62,7 @@ There are many different [levels of RAID](https://en.wikipedia.org/wiki/Standard
 
 	[RAID 0](https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_0 "wikipedia:Standard RAID levels")
 
-	Uses striping to combine disks. Even though it _does not provide redundancy_, it is still considered RAID. It does, however, _provide a big speed benefit_. If the speed increase is worth the possibility of data loss (for [swap](/index.php/Swap "Swap") partition for example), choose this RAID level. On a server, RAID 1 and RAID 5 arrays are more appropriate. The size of a RAID 0 array block device is the size of the smallest component partition times the number of component partitions.
+	Uses striping to combine disks. Even though it *does not provide redundancy*, it is still considered RAID. It does, however, *provide a big speed benefit*. If the speed increase is worth the possibility of data loss (for [swap](/index.php/Swap "Swap") partition for example), choose this RAID level. On a server, RAID 1 and RAID 5 arrays are more appropriate. The size of a RAID 0 array block device is the size of the smallest component partition times the number of component partitions.
 
 	[RAID 1](https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_1 "wikipedia:Standard RAID levels")
 
@@ -70,7 +70,7 @@ There are many different [levels of RAID](https://en.wikipedia.org/wiki/Standard
 
 	[RAID 5](https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_5 "wikipedia:Standard RAID levels")
 
-	Requires 3 or more physical drives, and provides the redundancy of RAID 1 combined with the speed and size benefits of RAID 0\. RAID 5 uses striping, like RAID 0, but also stores parity blocks _distributed across each member disk_. In the event of a failed disk, these parity blocks are used to reconstruct the data on a replacement disk. RAID 5 can withstand the loss of one member disk.
+	Requires 3 or more physical drives, and provides the redundancy of RAID 1 combined with the speed and size benefits of RAID 0\. RAID 5 uses striping, like RAID 0, but also stores parity blocks *distributed across each member disk*. In the event of a failed disk, these parity blocks are used to reconstruct the data on a replacement disk. RAID 5 can withstand the loss of one member disk.
 
 **Note:** RAID 5 is a common choice due to its combination of speed and data redundancy. The caveat is that if one drive were to fail and another drive failed before that drive was replaced, all data will be lost.
 
@@ -78,7 +78,7 @@ There are many different [levels of RAID](https://en.wikipedia.org/wiki/Standard
 
 	[RAID 1+0](https://en.wikipedia.org/wiki/Nested_RAID_levels#RAID_1_.2B_0 "wikipedia:Nested RAID levels")
 
-	Commonly referred to as _RAID 10_, is a nested RAID that combines two of the standard levels of RAID to gain performance and additional redundancy. It is the best alternative to RAID 5 when redundancy is crucial.
+	Commonly referred to as *RAID 10*, is a nested RAID that combines two of the standard levels of RAID to gain performance and additional redundancy. It is the best alternative to RAID 5 when redundancy is crucial.
 
 ### RAID level comparison
 
@@ -109,7 +109,7 @@ There are many different [levels of RAID](https://en.wikipedia.org/wiki/Standard
 | **6** | Yes | 50% - 88% | (n−2)X | (n−2)X | 4 |
 | **10** | Yes | 50% | nX (theoretically) | (n/2)X | 4 |
 
-* Where _n_ is standing for the number of dedicated disks.
+* Where *n* is standing for the number of dedicated disks.
 
 ## Implementation
 
@@ -131,7 +131,7 @@ The RAID devices can be managed in different ways:
 
 	[FakeRAID](/index.php/Fakeraid "Fakeraid")
 
-	This type of RAID is properly called BIOS or Onboard RAID, but is falsely advertised as hardware RAID. The array is managed by pseudo-RAID controllers where the RAID logic is implemented in an option rom or in the firmware itself [with a EFI SataDriver](http://www.win-raid.com/t19f13-Intel-EFI-RAID-quot-SataDriver-quot-BIOS-Modules.html) (in case of [UEFI](/index.php/UEFI "UEFI")), but are not full hardware RAID controllers with _all_ RAID features implemented. Therefore, this type of RAID is sometimes called FakeRAID. [dmraid](https://www.archlinux.org/packages/?name=dmraid) from the [official repositories](/index.php/Official_repositories "Official repositories"), will be used to deal with these controllers. Here are some examples of FakeRAID controllers: [Intel Rapid Storage](https://en.wikipedia.org/wiki/Intel_Rapid_Storage_Technology "wikipedia:Intel Rapid Storage Technology"), JMicron JMB36x RAID ROM, AMD RAID, ASMedia 106x, and NVIDIA MediaShield.
+	This type of RAID is properly called BIOS or Onboard RAID, but is falsely advertised as hardware RAID. The array is managed by pseudo-RAID controllers where the RAID logic is implemented in an option rom or in the firmware itself [with a EFI SataDriver](http://www.win-raid.com/t19f13-Intel-EFI-RAID-quot-SataDriver-quot-BIOS-Modules.html) (in case of [UEFI](/index.php/UEFI "UEFI")), but are not full hardware RAID controllers with *all* RAID features implemented. Therefore, this type of RAID is sometimes called FakeRAID. [dmraid](https://www.archlinux.org/packages/?name=dmraid) from the [official repositories](/index.php/Official_repositories "Official repositories"), will be used to deal with these controllers. Here are some examples of FakeRAID controllers: [Intel Rapid Storage](https://en.wikipedia.org/wiki/Intel_Rapid_Storage_Technology "wikipedia:Intel Rapid Storage Technology"), JMicron JMB36x RAID ROM, AMD RAID, ASMedia 106x, and NVIDIA MediaShield.
 
 ### Which type of RAID do I have?
 
@@ -141,7 +141,7 @@ However, discerning between FakeRAID and true hardware RAID can be more difficul
 
 ## Setup
 
-Install [mdadm](https://www.archlinux.org/packages/?name=mdadm) from the [official repositories](/index.php/Official_repositories "Official repositories"). _mdadm_ is used for administering pure software RAID using plain block devices: the underlying hardware does not provides any RAID logic, just a supply of disks. _mdadm_ will work with any collection of block devices. Even if unusual. For example, one can thus make a RAID array from a collection of thumb drives.
+Install [mdadm](https://www.archlinux.org/packages/?name=mdadm) from the [official repositories](/index.php/Official_repositories "Official repositories"). *mdadm* is used for administering pure software RAID using plain block devices: the underlying hardware does not provides any RAID logic, just a supply of disks. *mdadm* will work with any collection of block devices. Even if unusual. For example, one can thus make a RAID array from a collection of thumb drives.
 
 ### Prepare the Devices
 
@@ -233,7 +233,6 @@ This directive tells mdadm to examine the devices referenced by `/proc/partition
 This results in something like the following:
 
  `/etc/mdadm.conf` 
-
 ```
 DEVICE partitions
 ARRAY /dev/md/0 metadata=1.2 name=pine:0 UUID=27664f0d:111e493d:4d810213:9f291abe
@@ -387,7 +386,6 @@ As with many tasks/items relating to mdadm, the status of the scrub can be queri
 Example:
 
  `$ cat /proc/mdstat` 
-
 ```
 Personalities : [raid6] [raid5] [raid4] [raid1] 
 md0 : active raid1 sdb1[0] sdc1[1]
@@ -508,7 +506,6 @@ It may be because you're using RAID0\. The command above will add the new disk a
 Syncing can take a while. If the machine is not needed for other tasks the speed limit can be increased.
 
  `# cat /proc/mdstat` 
-
 ```
  Personalities : [raid1] 
  md0 : active raid1 sda3[2] sdb3[1]
@@ -522,14 +519,11 @@ Syncing can take a while. If the machine is not needed for other tasks the speed
 Check the current speed limit.
 
  `# cat /proc/sys/dev/raid/speed_limit_min` 
-
 ```
 1000
 
 ```
-
  `# cat /proc/sys/dev/raid/speed_limit_max` 
-
 ```
 200000
 
@@ -546,7 +540,6 @@ Increase the limits.
 Then check out the syncing speed and estimated finish time.
 
  `# cat /proc/mdstat` 
-
 ```
  Personalities : [raid1] 
  md0 : active raid1 sda3[2] sdb3[1]
@@ -590,7 +583,7 @@ The [iotop](https://www.archlinux.org/packages/?name=iotop) package displays the
 
 ### Track IO with iostat
 
-The _iostat_ utility from [sysstat](https://www.archlinux.org/packages/?name=sysstat) package displays the input/output statistics for devices and partitions.
+The *iostat* utility from [sysstat](https://www.archlinux.org/packages/?name=sysstat) package displays the input/output statistics for devices and partitions.
 
 ```
  iostat -dmy 1 /dev/md0
@@ -720,7 +713,7 @@ There are several tools for benchmarking a RAID. The most notable improvement is
 *   [Chapter 15: Redundant Array of Independent Disks (RAID)](http://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_Linux/6/html/Storage_Administration_Guide/ch-raid.html) of Red Hat Enterprise Linux 6 Documentation
 *   [Linux-RAID FAQ](http://tldp.org/FAQ/Linux-RAID-FAQ/x37.html) on the Linux Documentation Project
 *   [Dell.com Raid Tutorial](http://support.dell.com/support/topics/global.aspx/support/entvideos/raid?c=us&l=en&s=gen) - Interactive Walkthrough of Raid
-*   [BAARF](http://www.miracleas.com/BAARF/) including _[Why should I not use RAID 5?](http://www.miracleas.com/BAARF/RAID5_versus_RAID10.txt)_ by Art S. Kagel
+*   [BAARF](http://www.miracleas.com/BAARF/) including *[Why should I not use RAID 5?](http://www.miracleas.com/BAARF/RAID5_versus_RAID10.txt)* by Art S. Kagel
 *   [Introduction to RAID](http://www.linux-mag.com/id/7924/), [Nested-RAID: RAID-5 and RAID-6 Based Configurations](http://www.linux-mag.com/id/7931/), [Intro to Nested-RAID: RAID-01 and RAID-10](http://www.linux-mag.com/id/7928/), and [Nested-RAID: The Triple Lindy](http://www.linux-mag.com/id/7932/) in Linux Magazine
 *   [HowTo: Speed Up Linux Software Raid Building And Re-syncing](http://www.cyberciti.biz/tips/linux-raid-increase-resync-rebuild-speed.html)
 *   [RAID5-Server to hold all your data](http://fomori.org/blog/?p=94)

@@ -37,7 +37,7 @@ OpenLDAP 软件包同时包含了服务器和客户端。可以从 [官方源](/
 
 服务器的配置文件位于 `/etc/openldap/slapd.conf`。
 
-Edit the suffix and rootdn. The suffix typically is your domain name but it does not have to be. It depends on how you use your directory. We will use _example_ for the domain name, and _com_ for the tld. The rootdn is your LDAP administrator's name (we will use _root_ here).
+Edit the suffix and rootdn. The suffix typically is your domain name but it does not have to be. It depends on how you use your directory. We will use *example* for the domain name, and *com* for the tld. The rootdn is your LDAP administrator's name (we will use *root* here).
 
 ```
 suffix     "dc=example,dc=com"
@@ -109,7 +109,6 @@ Change ownership recursively on the new files and directory in /etc/openldap/sla
 ```
 
 **Note:** Index the directory after you populate it. You should stop slapd before doing this.
-
 ```
 # slapindex
 # chown ldap:ldap /var/lib/openldap/openldap-data/*
@@ -125,7 +124,6 @@ The client config file is located at `/etc/openldap/ldap.conf`.
 It is quite simple: you'll only have to alter `BASE` to reflect the suffix of the server, and `URI` to reflect the address of the server, like:
 
  `/etc/openldap/ldap.conf` 
-
 ```
 BASE            dc=example,dc=com
 URI             ldap://localhost
@@ -160,13 +158,13 @@ Now you should see some information about your database.
 
 If you access the OpenLDAP server over the network and especially if you have sensitive data stored on the server you run the risk of someone sniffing your data which is sent clear-text. The next part will guide you on how to setup an SSL connection between the LDAP server and the client so the data will be sent encrypted.
 
-In order to use TLS, you must have a certificate. For testing purposes, a _self-signed_ certificate will suffice. To learn more about certificates, see [OpenSSL](/index.php/OpenSSL "OpenSSL").
+In order to use TLS, you must have a certificate. For testing purposes, a *self-signed* certificate will suffice. To learn more about certificates, see [OpenSSL](/index.php/OpenSSL "OpenSSL").
 
 **Warning:** OpenLDAP cannot use a certificate that has a password associated to it.
 
 #### 创建一个自签署的证书
 
-To create a _self-signed_ certificate, type the following:
+To create a *self-signed* certificate, type the following:
 
 ```
 $ openssl req -new -x509 -nodes -out slapdcert.pem -keyout slapdkey.pem -days 365

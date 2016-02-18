@@ -18,7 +18,7 @@
 
 #### /boot/grub/grub.cfg
 
-Добавьте **ro logo.nologo quiet nomodeset vga=792 console=tty1 splash=silent,fadein,fadeout,theme:arch-black** в файл _/boot/grub/grub.cfg_. напр.:
+Добавьте **ro logo.nologo quiet nomodeset vga=792 console=tty1 splash=silent,fadein,fadeout,theme:arch-black** в файл */boot/grub/grub.cfg*. напр.:
 
 ```
 kernel (hd0,6)/vmlinuz26 root=/dev/sda6 ro logo.nologo quiet nomodeset vga=792 console=tty1 splash=silent,fadein,fadeout,theme:arch-black
@@ -53,12 +53,12 @@ SPLASH_THEMES="
 
 *   **Не забудьте пересобрать initramfs image после изменения конфигурации fbsplash.** (например, тема fbsplash изменилась)
 
-1.  Добавьте **fbsplash** в **конец** HOOKS в _/etc/mkinitcpio.conf_. напр.: `HOOKS="base udev autodetect ide sata filesystems ... fbsplash"` 
+1.  Добавьте **fbsplash** в **конец** HOOKS в */etc/mkinitcpio.conf*. напр.: `HOOKS="base udev autodetect ide sata filesystems ... fbsplash"` 
 2.  Пересоберите образ ядра `# mkinitcpio -p <kernel name>` e.g. `# mkinitcpio -p linux` 
 
 #### Декорация консоли
 
-Для поддержки фона в консоли нужно установить патченное ядро. Просто [найдите fbcondecor в AUR](https://aur.archlinux.org/packages.php?O=0&K=fbcondecor&do_Search=Go). Соберите и установите. Затем добавьте _fbcondecor_ в список Ваших демонов в rc.conf:
+Для поддержки фона в консоли нужно установить патченное ядро. Просто [найдите fbcondecor в AUR](https://aur.archlinux.org/packages.php?O=0&K=fbcondecor&do_Search=Go). Соберите и установите. Затем добавьте *fbcondecor* в список Ваших демонов в rc.conf:
 
 ```
 DAEMONS=(... fbcondecor ...)

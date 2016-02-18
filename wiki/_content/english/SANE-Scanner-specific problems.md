@@ -139,7 +139,7 @@ usb 0x04b8 0x0120
 
 ```
 
-You can get such code information (`usb 0x04b8 0x0120`) by _sane-find-scanner_ command.
+You can get such code information (`usb 0x04b8 0x0120`) by *sane-find-scanner* command.
 
 Also add such information lines to `/etc/hotplug/usb/libsane.usermap` to setup your privilege, like:
 

@@ -52,7 +52,7 @@ MPD можно запускать локально (используя конф�
 
 **Важно:** Пользователи PulseAudio с глобальными настройками mpd должны использовать [обходной путь](/index.php/Music_Player_Daemon/Tips_and_tricks#Local_.28with_separate_mpd_user.29 "Music Player Daemon/Tips and tricks") для запуска демона!
 
-По умолчанию `/etc/mpd.conf` использует `/var/lib/mpd` и запускается от пользователя _mpd_. Но, т.к. `/var/lib/mpd` по умолчанию принадлежит пользователю _root_, вы должны изменить владельца папки, иначе _mpd_ не сможет писать в нее:
+По умолчанию `/etc/mpd.conf` использует `/var/lib/mpd` и запускается от пользователя *mpd*. Но, т.к. `/var/lib/mpd` по умолчанию принадлежит пользователю *root*, вы должны изменить владельца папки, иначе *mpd* не сможет писать в нее:
 
 ```
 # chown -R mpd /var/lib/mpd
@@ -68,7 +68,7 @@ music_directory /путь/к/музыке
 
 #### Директория с музыкой
 
-MPD должен иметь разрешение на выполнение (`+x`) для _всех_ директорий музыкальной коллекции, а также доступ на чтение во все директории, содержащие музыкальные файлы. Как правило, это противоречит со стандартной конфигурацией, в которой пользователи хранят свою музыку в своём домашнем каталоге.
+MPD должен иметь разрешение на выполнение (`+x`) для *всех* директорий музыкальной коллекции, а также доступ на чтение во все директории, содержащие музыкальные файлы. Как правило, это противоречит со стандартной конфигурацией, в которой пользователи хранят свою музыку в своём домашнем каталоге.
 
 Для решения данной проблемы существует несколько способов, которые могут помочь:
 
@@ -121,7 +121,6 @@ If you prefer to listen on different UNIX sockets or network ports (even multipl
 If you use different (even multiple) network or local sockets, or prefer not to use network sockets at all, simply add, change, or remove lines beginning with `"ListenStream="` in the `[Socket]` section.
 
  `/etc/systemd/system/mpd.socket` 
-
 ```
 [Unit]
 Description=Music Player Daemon Sockets
@@ -140,7 +139,6 @@ WantedBy=sockets.target
 To change the volume for mpd independent from other programs, uncomment or add this switch in mpd.conf:
 
  `/etc/mpd.conf` 
-
 ```
 mixer_type			"software"
 
@@ -149,7 +147,6 @@ mixer_type			"software"
 Users of [ALSA](/index.php/ALSA "ALSA") will want to have the following device definition, which allows software volume control in the MPD client to control the volume separately from other applications.
 
  `/etc/mpd.conf` 
-
 ```
 audio_output {
         type            "alsa"
@@ -161,7 +158,6 @@ audio_output {
 Users of [PulseAudio](/index.php/PulseAudio "PulseAudio") will need to make the following modification:
 
  `/etc/mpd.conf` 
-
 ```
 audio_output {
         type            "pulse"
@@ -175,7 +171,7 @@ PulseAudio supports multiple advanced operations, e.g. transferring the audio to
 
 Changing the group that MPD runs as may result in errors like `output: Failed to open "My ALSA Device"`, `[alsa]: Failed to open ALSA device "default": No such file or directory` or `player_thread: problems opening audio device while playing "Song Name.mp3"`.
 
-This is because the MPD users need to be part of the _audio_ group to access sound devices under `/dev/snd/`. To fix it add user make the MPD user part of the _audio_ group:
+This is because the MPD users need to be part of the *audio* group to access sound devices under `/dev/snd/`. To fix it add user make the MPD user part of the *audio* group:
 
 ```
 # gpasswd -a **mpd** audio
@@ -213,7 +209,6 @@ $ cp /usr/share/doc/mpd/mpdconf.example ~/.config/mpd/mpd.conf
 Edit `~/.config/mpd/mpd.conf` and specify the required files:
 
  `~/.config/mpd/mpd.conf` 
-
 ```
 # Required files
 db_file            "~/.config/mpd/database"
@@ -239,7 +234,7 @@ $ touch ~/.config/mpd/{database,log,pid,state,sticker.sql}
 When the paths of required files are configured, MPD can be started. To specify custom location of the configuration file:
 
 ```
-$ mpd _config_file_
+$ mpd *config_file*
 
 ```
 
@@ -258,7 +253,6 @@ $ mpd _config_file_
 If you use a [desktop environment](/index.php/Desktop_environment "Desktop environment"), place the following file in `~/.config/autostart/`:
 
  `~/.config/autostart/mpd.desktop` 
-
 ```
 [Desktop Entry]
 Encoding=UTF-8
@@ -308,11 +302,11 @@ For a second MPD (e.g., with icecast output to share music over the network) usi
 
 	[http://www.musicpd.org/clients/mpc/](http://www.musicpd.org/clients/mpc/) || [mpc](https://www.archlinux.org/packages/?name=mpc)
 
-*   **ncmpc** — Ncurses клиент для _mpd_
+*   **ncmpc** — Ncurses клиент для *mpd*
 
 	[http://www.musicpd.org/clients/ncmpc/](http://www.musicpd.org/clients/ncmpc/) || [ncmpc](https://www.archlinux.org/packages/?name=ncmpc)
 
-*   **[ncmpcpp](/index.php/Ncmpcpp "Ncmpcpp")** — Копия _ncmpc_ с новыми возможностями, написанная на C++ (редактор тегов, поисковый движок)
+*   **[ncmpcpp](/index.php/Ncmpcpp "Ncmpcpp")** — Копия *ncmpc* с новыми возможностями, написанная на C++ (редактор тегов, поисковый движок)
 
 	[http://ncmpcpp.rybczak.net/](http://ncmpcpp.rybczak.net/) || [ncmpcpp](https://www.archlinux.org/packages/?name=ncmpcpp)
 

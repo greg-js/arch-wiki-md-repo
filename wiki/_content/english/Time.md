@@ -68,11 +68,11 @@ Standard behavior of most operating systems is:
 
 **Note:** [Systemd](/index.php/Systemd "Systemd") will use UTC for the hardware clock by default.
 
-There are two time standards: **localtime** and [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time "wikipedia:Coordinated Universal Time") (**UTC**). The localtime standard is dependent on the current _time zone_, while UTC is the _global_ time standard and is independent of time zone values. Though conceptually different, UTC is also known as GMT (Greenwich Mean Time).
+There are two time standards: **localtime** and [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time "wikipedia:Coordinated Universal Time") (**UTC**). The localtime standard is dependent on the current *time zone*, while UTC is the *global* time standard and is independent of time zone values. Though conceptually different, UTC is also known as GMT (Greenwich Mean Time).
 
 The standard used by hardware clock (CMOS clock, the time that appears in BIOS) is defined by the operating system. By default, Windows uses localtime, Mac OS uses UTC, and UNIX-like operating systems vary. An OS that uses the UTC standard, generally, will consider CMOS (hardware clock) time a UTC time (GMT, Greenwich time) and make an adjustment to it while setting the System time on boot according to your time zone.
 
-If you have multiple operating systems installed in the same machine, they will all derive the current time from the same hardware clock: for this reason you must make sure that all of them see the hardware clock as providing time in the same chosen standard, or some of them will perform the time zone adjustement for the system clock, while others will not. In particular, it is strongly recommended to set the hardware clock to UTC, in order to avoid conflicts between the installed operating systems. For example, if the hardware clock was set to _localtime_, more than one operating system may adjust it after a [DST](https://en.wikipedia.org/wiki/Daylight_saving_time "wikipedia:Daylight saving time") change, thus resulting in an overcorrection; more problems may arise when travelling between different time zones and using one of the operating systems to reset the system/hardware clock.
+If you have multiple operating systems installed in the same machine, they will all derive the current time from the same hardware clock: for this reason you must make sure that all of them see the hardware clock as providing time in the same chosen standard, or some of them will perform the time zone adjustement for the system clock, while others will not. In particular, it is strongly recommended to set the hardware clock to UTC, in order to avoid conflicts between the installed operating systems. For example, if the hardware clock was set to *localtime*, more than one operating system may adjust it after a [DST](https://en.wikipedia.org/wiki/Daylight_saving_time "wikipedia:Daylight saving time") change, thus resulting in an overcorrection; more problems may arise when travelling between different time zones and using one of the operating systems to reset the system/hardware clock.
 
 You can set the hardware clock time standard through the command line. You can check what you have set your Arch Linux install to use by:
 
@@ -105,7 +105,7 @@ Later, the system clock is set again from the hardware clock by systemd, depende
 
 ### UTC in Windows
 
-**Warning:** This method uses functionality that is buggy in old Windows versions (pre-7) and Microsoft recommends not to use it. See [[1]](https://support.microsoft.com/en-us/kb/2687252) for details. Another bug exists on Windows before Vista SP2 that resets the clock to _localtime_ after resuming from the suspend/hibernation state. For _even older_ versions of Windows, you might want to read [http://www.cl.cam.ac.uk/~mgk25/mswish/ut-rtc.html](http://www.cl.cam.ac.uk/~mgk25/mswish/ut-rtc.html) - the functionality was not even documented nor officially supported then. For these operating systems, it is recommended to use _localtime_. If you are using newer versions of Windows, you may safely disregard this warning.
+**Warning:** This method uses functionality that is buggy in old Windows versions (pre-7) and Microsoft recommends not to use it. See [[1]](https://support.microsoft.com/en-us/kb/2687252) for details. Another bug exists on Windows before Vista SP2 that resets the clock to *localtime* after resuming from the suspend/hibernation state. For *even older* versions of Windows, you might want to read [http://www.cl.cam.ac.uk/~mgk25/mswish/ut-rtc.html](http://www.cl.cam.ac.uk/~mgk25/mswish/ut-rtc.html) - the functionality was not even documented nor officially supported then. For these operating systems, it is recommended to use *localtime*. If you are using newer versions of Windows, you may safely disregard this warning.
 
 One reason users often set the RTC in localtime is to [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") ([which uses localtime](http://blogs.msdn.com/b/oldnewthing/archive/2004/09/02/224672.aspx)). However, Windows is able to deal with the RTC being in UTC with a simple registry fix. It is recommended to configure Windows to use UTC, rather than Linux to use localtime.
 
@@ -173,7 +173,7 @@ $ timedatectl list-timezones
 To change your time zone:
 
 ```
-# timedatectl set-timezone _Zone_/_SubZone_
+# timedatectl set-timezone *Zone*/*SubZone*
 
 ```
 
@@ -187,7 +187,7 @@ Example:
 This will create an `/etc/localtime` symlink that points to a zoneinfo file under `/usr/share/zoneinfo/`. In case you choose to create the link manually, keep in mind that it must be a symbolic link, as specified in archlinux(7):
 
 ```
-# ln -sf /usr/share/zoneinfo/_Zone_/_SubZone_ /etc/localtime
+# ln -sf /usr/share/zoneinfo/*Zone*/*SubZone* /etc/localtime
 
 ```
 
@@ -197,7 +197,7 @@ See `man 1 timedatectl`, `man 5 localtime`, and `man 7 archlinux` for more detai
 
 ## Time skew
 
-Every clock has a value that differs from _real time_ (the best representation of which being [International Atomic Time](https://en.wikipedia.org/wiki/International_Atomic_Time "wikipedia:International Atomic Time")); no clock is perfect. A quartz-based electronic clock keeps imperfect time, but maintains a consistent inaccuracy. This base 'inaccuracy' is known as 'time skew' or 'time drift'.
+Every clock has a value that differs from *real time* (the best representation of which being [International Atomic Time](https://en.wikipedia.org/wiki/International_Atomic_Time "wikipedia:International Atomic Time")); no clock is perfect. A quartz-based electronic clock keeps imperfect time, but maintains a consistent inaccuracy. This base 'inaccuracy' is known as 'time skew' or 'time drift'.
 
 When the hardware clock is set with `hwclock`, a new drift value is calculated in seconds per day. The drift value is calculated by using the difference between the new value set and the hardware clock value just before the set, taking into account the value of the previous drift value and the last time the hardware clock was set. The new drift value and the time when the clock was set is written to the file `/etc/adjtime` overwriting the previous values. The hardware clock can therefore be adjusted for drift when the command `hwclock --adjust` is run; this also occurs on shutdown but only if the `hwclock` daemon is enabled (hence for systems using systemd, this does not happen).
 
@@ -217,7 +217,7 @@ The software clock is very accurate but like most clocks is not perfectly accura
 The [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") (NTP) is a protocol for synchronizing the clocks of computer systems over packet-switched, variable-latency data networks. The following are implementations of such protocol:
 
 *   [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon") is the [reference implementation](https://en.wikipedia.org/wiki/reference_implementation "wikipedia:reference implementation") of the protocol, especially recommended to be used on time servers. It can also adjust the interrupt frequency and the number of ticks per second to decrease system clock drift, and will cause the hardware clock to be re-synchronised every 11 minutes.
-*   **sntp** is an [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") client that comes with the [ntp](https://www.archlinux.org/packages/?name=ntp) package. It supersedes _ntpdate_ and is recommended in non-server environments.
+*   **sntp** is an [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") client that comes with the [ntp](https://www.archlinux.org/packages/?name=ntp) package. It supersedes *ntpdate* and is recommended in non-server environments.
 *   [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd") is a simple [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") daemon that only implements a client side, focusing only on querying time from one remote server. It should be more than appropriate for most installations.
 *   [OpenNTPD](/index.php/OpenNTPD "OpenNTPD") is part of the OpenBSD project and implements both a client and a server.
 *   [Chrony](/index.php/Chrony "Chrony") is a client and server that is roaming friendly and designed specifically for systems that are not online all the time.
@@ -226,12 +226,11 @@ The [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol 
 
 For some use cases it may be useful to change the time settings without touching the global system values. For example to test applications relying on the time during development or adjusting the system time zone when logging into a server remotely from another zone.
 
-To make an application "see" a different date/time than the system one, you can use the _faketime_ (from [libfaketime](https://www.archlinux.org/packages/?name=libfaketime)) or the [datefudge](https://www.archlinux.org/packages/?name=datefudge) utilities.
+To make an application "see" a different date/time than the system one, you can use the *faketime* (from [libfaketime](https://www.archlinux.org/packages/?name=libfaketime)) or the [datefudge](https://www.archlinux.org/packages/?name=datefudge) utilities.
 
 If instead you want an application to "see" a different time zone than the system one, set the `TZ` [environment variable](/index.php/Environment_variable "Environment variable"), for example:
 
  `$ date && export TZ="/usr/share/zoneinfo/Pacific/Fiji" && date` 
-
 ```
 Sa 24\. Mai 12:38:26 CEST 2014
 Sa 24\. Mai 22:38:26 FJT 2014

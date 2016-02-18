@@ -1,6 +1,6 @@
 From the project's [git repository](http://cgit.freedesktop.org/~dvdhrm/kmscon/tree/README):
 
-	_Kmscon is a simple terminal emulator based on linux [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). It is an attempt to replace the in-kernel VT implementation with a userspace console._
+	*Kmscon is a simple terminal emulator based on linux [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). It is an attempt to replace the in-kernel VT implementation with a userspace console.*
 
 ## Contents
 
@@ -45,18 +45,17 @@ To enable kmscon on all virtual terminals, run:
 
 ```
 
-This will make [systemd](https://www.archlinux.org/packages/?name=systemd) start kmscon instead of agetty on each VT. More precisely, this will make _systemd-logind_ use `kmsconvt@.service` instead of `getty@.service` for new VTs. Additionally, all other systemd units that use `getty@.service` will not be affected by this change.
+This will make [systemd](https://www.archlinux.org/packages/?name=systemd) start kmscon instead of agetty on each VT. More precisely, this will make *systemd-logind* use `kmsconvt@.service` instead of `getty@.service` for new VTs. Additionally, all other systemd units that use `getty@.service` will not be affected by this change.
 
-If _kmscon_ cannot start for whatever reason, this unit will cause `getty@.service` to be started instead. Furthermore, if no VTs are available, this unit will not start anything.
+If *kmscon* cannot start for whatever reason, this unit will cause `getty@.service` to be started instead. Furthermore, if no VTs are available, this unit will not start anything.
 
-**Warning:** If you've replaced agetty on all terminals, take care to ensure _kmscon_ presents you with a prompt before rebooting your machine, otherwise you may have to recover through a live CD.
+**Warning:** If you've replaced agetty on all terminals, take care to ensure *kmscon* presents you with a prompt before rebooting your machine, otherwise you may have to recover through a live CD.
 
 ## CJK support
 
 Kmscon supports rendering CJK characters through the default font engine [pango](https://www.archlinux.org/packages/?name=pango). However, [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) has to be globally configured to map the monospace font alias to proper CJK fonts. For Chinese users, the following template is provided and proved to result in satisfactory Chinese characters rendering:
 
  `/etc/fonts/conf.d/99-kmscon.conf` 
-
 ```
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">

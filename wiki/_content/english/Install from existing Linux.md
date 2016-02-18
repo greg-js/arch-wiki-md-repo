@@ -61,7 +61,7 @@ Follow [Installation guide#Mount the partitions](/index.php/Installation_guide#M
 
 Then follow [Installation guide#Installation](/index.php/Installation_guide#Installation "Installation guide"). You can skip [Installation guide#Select the mirrors](/index.php/Installation_guide#Select_the_mirrors "Installation guide"), since the host should already have a correct mirrorlist.
 
-**Tip:** In order to avoid redownloading all the packages, consider following [Pacman/Tips and tricks#Network shared pacman cache](/index.php/Pacman/Tips_and_tricks#Network_shared_pacman_cache "Pacman/Tips and tricks") or using _pacstrap'_s `-c` option.
+**Tip:** In order to avoid redownloading all the packages, consider following [Pacman/Tips and tricks#Network shared pacman cache](/index.php/Pacman/Tips_and_tricks#Network_shared_pacman_cache "Pacman/Tips and tricks") or using *pacstrap'*s `-c` option.
 
 **Note:** If you only want to create an exact copy of an existing Arch installation, it is also possible to just copy the filesystem to the new partition. With this method, you will still need to
 
@@ -173,7 +173,7 @@ Before starting the installation, pacman keys need to be setup. Before running t
 
 ```
 
-**Tip:** Installing and running [haveged](https://www.archlinux.org/packages/?name=haveged) must be done on the host system, since it is not possible to install packages before initializing pacman keyring and because _systemd_ will detect it is running in a chroot and [ignore activation request](https://superuser.com/questions/688733/start-a-systemd-service-inside-chroot). If you go with doing `ls -Ra /` in another console (TTY, terminal, SSH session...), do not be afraid of running it in a loop a few times: five or six runs from the host proved sufficient to generate enough entropy on a remote headless server.
+**Tip:** Installing and running [haveged](https://www.archlinux.org/packages/?name=haveged) must be done on the host system, since it is not possible to install packages before initializing pacman keyring and because *systemd* will detect it is running in a chroot and [ignore activation request](https://superuser.com/questions/688733/start-a-systemd-service-inside-chroot). If you go with doing `ls -Ra /` in another console (TTY, terminal, SSH session...), do not be afraid of running it in a loop a few times: five or six runs from the host proved sufficient to generate enough entropy on a remote headless server.
 
 #### Selecting a mirror and downloading basic tools
 
@@ -192,7 +192,6 @@ Some host systems or configurations may require certain extra steps. See the sec
 On some Debian-based host systems, `pacstrap` may produce the following error:
 
  `# pacstrap /mnt base` 
-
 ```
 ==> Creating install root at /mnt
 mount: mount point /mnt/dev/shm is a symbolic link to nowhere
@@ -212,7 +211,6 @@ This is because in some versions of Debian, `/dev/shm` points to `/run/shm` whil
 While installing `archlinux-2015.07.01-x86_64` from a Debian 7 host, the following error prevented both [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) and [arch-chroot](/index.php/Change_root#Using_arch-chroot "Change root") from working:
 
  `# pacstrap -i /mnt` 
-
 ```
 mount: mount point /mnt/dev/pts does not exist
 ==> ERROR: failed to setup chroot /mnt
@@ -221,7 +219,7 @@ mount: mount point /mnt/dev/pts does not exist
 
 Apparently, this is because these two scripts use a common function. `chroot_setup()`[[1]](https://projects.archlinux.org/arch-install-scripts.git/tree/common#n76) relies on newer features of [util-linux](https://www.archlinux.org/packages/?name=util-linux), which are incompatible with Debian 7 userland (see [FS#45737](https://bugs.archlinux.org/task/45737)).
 
-The solution for _pacstrap_ is to manually execute its [various tasks](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in#n77), but use the [regular procedure](/index.php/Change_root#Using_chroot "Change root") to mount the kernel filesystems on the target directory (`"$newroot"`):
+The solution for *pacstrap* is to manually execute its [various tasks](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in#n77), but use the [regular procedure](/index.php/Change_root#Using_chroot "Change root") to mount the kernel filesystems on the target directory (`"$newroot"`):
 
 ```
 # newroot=/mnt
@@ -245,7 +243,6 @@ Instead of using `arch-chroot` for [configuring the base system](/index.php/Begi
 Trying to create [LVM](/index.php/LVM "LVM") [logical volumes](/index.php/LVM#Logical_volumes "LVM") from an `archlinux-bootstrap-2015.07.01-x86_64` environment on a Debian 7 host resulted in the following error:
 
  `# lvcreate -L 20G lvm -n root` 
-
 ```
   /run/lvm/lvmetad.socket: connect failed: No such file or directory
   WARNING: Failed to connect to lvmetad. Falling back to internal scanning.
@@ -260,7 +257,6 @@ This could be easily worked around by creating the logical volumes outside the c
 Also, if the system you are using has lvm, you might have the following output:
 
  `# grub-install --target=i386-pc --recheck /dev/mapper/main-archroot` 
-
 ```
 Installing for i386-pc platform.
   /run/lvm/lvmetad.socket: connect failed: No such file or directory

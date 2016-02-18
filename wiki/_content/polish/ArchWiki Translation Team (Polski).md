@@ -6,15 +6,15 @@
 4.  Wybierz stronę do przetłumaczenia. Możesz użyć [funkcji losującej stronę](/index.php/Special:Random "Special:Random") lub przetłumaczyć niektóre strony z [listy stron o największym priorytecie](/index.php/ArchWiki_Translation_Day#List_of_priority_pages "ArchWiki Translation Day"). Dla przykładu wybierzmy [Moja Strona](/index.php?title=Moja_Strona&action=edit&redlink=1 "Moja Strona (page does not exist)").
 5.  Idź do wybranej strony i z poziomego meny u góry wybierz przycisk **edytuj** .
 6.  Skopiuj cały tekst źródłowy strony.
-7.  Potem odwiedź stronę [Moja Strona (język)](/index.php?title=Moja_Strona_(j%C4%99zyk)&action=edit&redlink=1 "Moja Strona (język) (page does not exist)") poprzez wpisanie następującego linku w Twojej przeglądarce: `https://wiki.archlinux.org/index.php/Moja_Strona_(_język_)`, gdzie _język_ jest [nazwą języka](/index.php/Help:I18n#Languages "Help:I18n").
+7.  Potem odwiedź stronę [Moja Strona (język)](/index.php?title=Moja_Strona_(j%C4%99zyk)&action=edit&redlink=1 "Moja Strona (język) (page does not exist)") poprzez wpisanie następującego linku w Twojej przeglądarce: `https://wiki.archlinux.org/index.php/Moja_Strona_(*język*)`, gdzie *język* jest [nazwą języka](/index.php/Help:I18n#Languages "Help:I18n").
 8.  W przypadki języka polskiego, wpisujemy Polski.
 9.  Ponieważ strona nie istnieje, utwórz nowa stronę wybierając **utwórz** w poziomym menu u góry ekranu.
 10.  Ukaże się Wam prosty editor WYSWIG. Tutaj możesz wkleić skopiowane wcześniej tekst źródłowy.
 11.  Następnie przetłumacz stronę, sprawdź dokładnie i zapisz.
-12.  Jeśli chcemy stworzyć stronę ArchWiki ale ze zlokalizowaną nazwą odwiedź `https://wiki.archlinux.org/index.php/_Zlokalizowana nazwa przetłumaczonej strony_`.
+12.  Jeśli chcemy stworzyć stronę ArchWiki ale ze zlokalizowaną nazwą odwiedź `https://wiki.archlinux.org/index.php/*Zlokalizowana nazwa przetłumaczonej strony*`.
 13.  Stwórz nową stronę i wrzuć tam ten kod: `#REDIRECT [[Moja_Strona_(język)]]` 
 
-Na przykład: Stworzyłem tą **ArchWiki Translation Team (Polski)** stronę, wrzuciłem do niej tłumaczenie tej strony [ArchWiki_Translation_Team](/index.php/ArchWiki_Translation_Team "ArchWiki Translation Team") i dodałem stronę [Zespół_tłumaczy_ArchWiki](/index.php/Zesp%C3%B3%C5%82_t%C5%82umaczy_ArchWiki "Zespół tłumaczy ArchWiki") z przetłumaczonym tytułem, która _tylko_ przekierowuje.
+Na przykład: Stworzyłem tą **ArchWiki Translation Team (Polski)** stronę, wrzuciłem do niej tłumaczenie tej strony [ArchWiki_Translation_Team](/index.php/ArchWiki_Translation_Team "ArchWiki Translation Team") i dodałem stronę [Zespół_tłumaczy_ArchWiki](/index.php/Zesp%C3%B3%C5%82_t%C5%82umaczy_ArchWiki "Zespół tłumaczy ArchWiki") z przetłumaczonym tytułem, która *tylko* przekierowuje.
 
 ## Lista stron
 

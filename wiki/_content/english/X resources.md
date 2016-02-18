@@ -1,4 +1,4 @@
-**Xresources** is a user-level configuration _dotfile_, typically located at `~/.Xresources`. It can be used to set [X resources](https://en.wikipedia.org/wiki/X_resources "wikipedia:X resources"), which are configuration parameters for X client applications.
+**Xresources** is a user-level configuration *dotfile*, typically located at `~/.Xresources`. It can be used to set [X resources](https://en.wikipedia.org/wiki/X_resources "wikipedia:X resources"), which are configuration parameters for X client applications.
 
 They can do many operations, including:
 
@@ -82,7 +82,7 @@ xrdb -merge ~/.Xresources
 
 **Tip:** `~/.Xresources` is just a naming convention; xrdb can load any file. If you use xrdb manually, you can put such a file anywhere you want (for example, `~/.config/Xresources`).
 
-**Note:** Resources loaded with xrdb are also accessible to _remote_ X11 clients (such as those forwarded over SSH).
+**Note:** Resources loaded with xrdb are also accessible to *remote* X11 clients (such as those forwarded over SSH).
 
 **Warning:** The older and deprecated `~/.Xdefaults` file is read every time you start an X11 program such as `xterm`, but **only** if `xrdb` has not **ever** been used in the current X session. [[1]](https://groups.google.com/forum/#!msg/comp.windows.x/hQBEdql8l-Q/hF3DETcIHGwJ)
 
@@ -187,7 +187,6 @@ To add a comment to your Xresources file, simply prefix it with an exclamation m
 To use different files for each application, use `#include` in the main file. For example:
 
  `~/.Xresources` 
-
 ```
 #include ".Xresources.d/xterm"
 #include ".Xresources.d/rxvt-unicode"
@@ -196,12 +195,11 @@ To use different files for each application, use `#include` in the main file. Fo
 
 ```
 
-If files fail to load, specify the directory to _xrdb_ with the `-I` parameter. For example:
+If files fail to load, specify the directory to *xrdb* with the `-I` parameter. For example:
 
  `~/.xinitrc` 
-
 ```
-xrdb -I_$HOME_ ~/.Xresources
+xrdb -I*$HOME* ~/.Xresources
 
 ```
 
@@ -305,7 +303,7 @@ xterm*toolBar:            false
 
 ### rxvt-unicode (urxvt) resources
 
-[rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode) features an extensive list of options which can be configured via `~/.Xresources`. Refer to the _urxvt_ man page or [rxvt-unicode#Creating ~/.Xresources](/index.php/Rxvt-unicode#Creating_.7E.2F.Xresources "Rxvt-unicode") article for details.
+[rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode) features an extensive list of options which can be configured via `~/.Xresources`. Refer to the *urxvt* man page or [rxvt-unicode#Creating ~/.Xresources](/index.php/Rxvt-unicode#Creating_.7E.2F.Xresources "Rxvt-unicode") article for details.
 
 ### Aterm preferences
 
@@ -580,7 +578,8 @@ Any of the following scripts will display a chart of your current terminal color
 
 T='gYw'   # The test text
 
-echo -e "\n                 40m     41m     42m     43m\
+echo -e "
+                 40m     41m     42m     43m\
      44m     45m     46m     47m";
 
 for FGs in '    m' '   1m' '  30m' '1;30m' '  31m' '1;31m' '  32m' \
@@ -618,7 +617,8 @@ for b in {0..8}; do
   done
 
   echo -en "\033[0m │"
-  echo -en "\033[0m\n\033[0m     │ "
+  echo -en "\033[0m
+\033[0m     │ "
 
   for f in {0..7}; do
     echo -en "\033[${bg}m\033[1;$((f+30))m ${FGNAMES[f]} "
@@ -656,7 +656,8 @@ for b in $(seq 0 8); do
     done
     echo -en "\033[0m :"
 
-    echo -en "\033[0m\n\033[0m     : "
+    echo -en "\033[0m
+\033[0m     : "
     for f in $(seq 0 7); do
       echo -en "\033[${bg}m\033[1;$(($f+30))m ${FGNAMES[$f]} "
     done
@@ -689,9 +690,12 @@ end
 for bg = 40,47 do
 	io.write(cl(0), ' ', bg, ' ')
 	print_fg(bg, ' ')
-	io.write('\n    ')
+	io.write('
+    ')
 	print_fg(bg, '1;')
-	io.write('\n\n')
+	io.write('
+
+')
 end
 
 -- Andres P
@@ -843,7 +847,7 @@ Check out these links for some real world examples of X resource files, contribu
 
 ### Parsing errors
 
-[Display managers](/index.php/Display_manager "Display manager") such as [GDM](/index.php/GDM "GDM") and [LightDM](/index.php/LightDM "LightDM") may use the `--nocpp` argument for _xrdb_. See [LightDM#Xresources not being parsed correctly](/index.php/LightDM#Xresources_not_being_parsed_correctly "LightDM").
+[Display managers](/index.php/Display_manager "Display manager") such as [GDM](/index.php/GDM "GDM") and [LightDM](/index.php/LightDM "LightDM") may use the `--nocpp` argument for *xrdb*. See [LightDM#Xresources not being parsed correctly](/index.php/LightDM#Xresources_not_being_parsed_correctly "LightDM").
 
 ## See also
 

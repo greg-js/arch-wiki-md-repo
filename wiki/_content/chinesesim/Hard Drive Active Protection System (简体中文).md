@@ -67,7 +67,6 @@ hdapsd可以接收HDAPS传感器的信息并判断是否受到冲击,如果是�
 你可以在hdaps的unit file里调整参数(详见[systemd的文章](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BF.AE.E6.94.B9.E7.8E.B0.E5.AD.98.E5.8D.95.E5.85.83.E6.96.87.E4.BB.B6 "Systemd (简体中文)")). 比如以下面的文件覆盖默认的service文件将调整hdaps的灵敏度与记录:
 
  `/etc/systemd/system/hdapsd.service.d/sensitivity.conf` 
-
 ```
 [Service]
 ExecStart=

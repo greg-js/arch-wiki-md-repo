@@ -155,7 +155,7 @@ INTERFACES=(!eth0 !wlan0)
 
 ### Úprava démonů
 
-Musíte _odstranit_ základního **network** démona a přidat **networkmanager** démona, za dbus démona:
+Musíte *odstranit* základního **network** démona a přidat **networkmanager** démona, za dbus démona:
 
 ```
 DAEMONS=( ...**dbus networkmanager**... )
@@ -172,7 +172,7 @@ Pro použítí těchto pruvku může být přidán skript do adresáře `/etc/Ne
 
 **Warning:** Z bezpečnostních důvodů byste měli vypnout právo zápisu pro skupiny a ostatní. Například použít masku 755. Jinak Dispatcher může odmítnout vykonat skrip s chybovou zprávou "nm-dispatcher.action: Script could not be executed: writable by group or other, or set-UID." in /var/log/messages.log
 
-Skripty budou spouštěny v abecedním pořadí v čase připojení (s argumenty _interface up_), a v obráceném abecedním pořadí v čase odpojení (_interface down_). Pro zajištění správného pořadí, je běžné použití číslic před jménem skriptu (například `10_portmap` nebo `30_netfs` (který zajišťuje že portmapper je spuštěn před pokusem o přimountování NFS).
+Skripty budou spouštěny v abecedním pořadí v čase připojení (s argumenty *interface up*), a v obráceném abecedním pořadí v čase odpojení (*interface down*). Pro zajištění správného pořadí, je běžné použití číslic před jménem skriptu (například `10_portmap` nebo `30_netfs` (který zajišťuje že portmapper je spuštěn před pokusem o přimountování NFS).
 
 Následují skript nastartuje démona openntpd když je rozhraní spouštěno. Uložte soubor jako `/etc/NetworkManager/dispatcher.d/20_openntpd` a udělte mu práva ke spuštění.
 
@@ -349,7 +349,7 @@ Nyní jako root spusťte nm-connection-editor a nastavte připojení:
 
 Označte zatržítko vedle "Available to all users" a použijte nastavení.
 
-Od teď nebudete vyrušováni Gnome keyringem! _(citation needed)_ Také, případně zapnete-li "connect automatically", vaše připojení bude dostupné a připojené dokonce předtím než se nalogujete k vašemu desktopu a dělá tím celý startovací proces ještě rychlejší!
+Od teď nebudete vyrušováni Gnome keyringem! *(citation needed)* Také, případně zapnete-li "connect automatically", vaše připojení bude dostupné a připojené dokonce předtím než se nalogujete k vašemu desktopu a dělá tím celý startovací proces ještě rychlejší!
 
 ### Chybějící default route
 
@@ -430,7 +430,7 @@ K dokončení se odhlašte a znovu přihlašte.
 
 **Note:** Následující metoda je zastaralá a je známo, že nepracuje na úplně každém stroji!
 
-_*V `/etc/pam.d/gdm` (nebo vašem odpovídajícím démonu v /etc/pam.d), přidejte tyto řádky na konec bloku "auth" a "session" za předpokladu, že ještě neexistují:_
+**V `/etc/pam.d/gdm` (nebo vašem odpovídajícím démonu v /etc/pam.d), přidejte tyto řádky na konec bloku "auth" a "session" za předpokladu, že ještě neexistují:*
 
 ```
  auth            optional        pam_gnome_keyring.so
@@ -557,6 +557,7 @@ this script was used to ignore all ethernet devices at boot time of a archiso bu
           echo -n ";$i" >> $TARGET_FILE
       fi
   done
-  printf "\n" >> $TARGET_FILE
+  printf "
+" >> $TARGET_FILE
 
 ```

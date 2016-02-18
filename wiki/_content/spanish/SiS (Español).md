@@ -30,13 +30,13 @@ Hay algunos módulos relacionados con las tarjesas de vídeo SiS:
 ```
 $ lsmod | grep sis | sed -re 's#^([a-zA-Z0-9_-]*) *.*#\1#g' | xargs modinfo | grep 'filename:'
 ...
-filename:       /usr/lib/modules/_{kernel-version}_/kernel/drivers/char/agp/sis-agp.ko.gz
-filename:       /usr/lib/modules/_{kernel-version}_/kernel/drivers/char/agp/agpgart.ko.gz
+filename:       /usr/lib/modules/*{kernel-version}*/kernel/drivers/char/agp/sis-agp.ko.gz
+filename:       /usr/lib/modules/*{kernel-version}*/kernel/drivers/char/agp/agpgart.ko.gz
 ...
 
 ```
 
-_donde **{kernel-version}** es la versión del kernel instalado actualmente en el sistema. Por ejemplo kernel 3.7.1.1_.
+*donde **{kernel-version}** es la versión del kernel instalado actualmente en el sistema. Por ejemplo kernel 3.7.1.1*.
 
 Probablemente solo necesitará cargar **sis-agp** (este cargará los otros posibles módulos SIS que sean requeridos por tu hardware) colóquelo antes que los otros módulos, de modo que el orden del apartado MODULES en `/etc/rc.conf` debería lucir algo así:
 
@@ -80,7 +80,7 @@ Section "Device"
   Option "EnableSisCtrl"         "yes"
   Option "ForceCRT1Type"         "LCD"
   Option "ForceCRT2Type"         "NONE"
-  #Option "CRT2Detection"        "true" #Si utiliza esta opción, comente las dos líneas _Force_ de arriba.
+  #Option "CRT2Detection"        "true" #Si utiliza esta opción, comente las dos líneas *Force* de arriba.
   Option "CRT1Gamma"             "on"
   Option "CRT2Gamma"             "on"
   Option "Brightness"            "0.000 0.000 0.000"

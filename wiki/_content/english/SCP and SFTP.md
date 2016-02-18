@@ -20,24 +20,24 @@ Subsystem sftp /usr/lib/ssh/sftp-server
 
 [Restart](/index.php/Restart "Restart") the `sshd.service` daemon and it should work.
 
-You can access your files with the _sftp_ program or [sshfs](/index.php/Sshfs "Sshfs"). Many standard FTP programs should work as well.
+You can access your files with the *sftp* program or [sshfs](/index.php/Sshfs "Sshfs"). Many standard FTP programs should work as well.
 
 ## Secure copy protocol (SCP)
 
-[Install](/index.php/Install "Install"), configure and [start](/index.php/Start "Start") [openssh](https://www.archlinux.org/packages/?name=openssh). It contains a _scp_ command to transfer files. See [Secure Shell](/index.php/Secure_Shell "Secure Shell") for more information.
+[Install](/index.php/Install "Install"), configure and [start](/index.php/Start "Start") [openssh](https://www.archlinux.org/packages/?name=openssh). It contains a *scp* command to transfer files. See [Secure Shell](/index.php/Secure_Shell "Secure Shell") for more information.
 
 More features are available by installing additional packages, for example [rssh](https://aur.archlinux.org/packages/rssh/) or [scponly](https://www.archlinux.org/packages/?name=scponly) described below.
 
 ### Scponly
 
-[Scponly](https://github.com/scponly/scponly/wiki) is a limited shell for allowing users scp/sftp access and only scp/sftp access to your box. Additionally, you can setup _scponly_ to chroot the user into a particular directory increasing the level of security.
+[Scponly](https://github.com/scponly/scponly/wiki) is a limited shell for allowing users scp/sftp access and only scp/sftp access to your box. Additionally, you can setup *scponly* to chroot the user into a particular directory increasing the level of security.
 
 [install](/index.php/Install "Install") [scponly](https://www.archlinux.org/packages/?name=scponly).
 
 If you have a user already created, simply set the user's shell to scponly:
 
 ```
-# usermod -s /usr/bin/scponly _username_
+# usermod -s /usr/bin/scponly *username*
 
 ```
 

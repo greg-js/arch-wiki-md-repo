@@ -62,7 +62,7 @@ Exaile richiede 'python-cddb' per riprodurre CD audio. Il pacchetto da installar
 
 ### La barra temporale si blocca a 0:00
 
-Prima di tutto, assicurarsi che non ci siano problemi con l'architettura audio utilizzata ([ALSA](/index.php/ALSA "ALSA"), [OSS](/index.php/OSS "OSS"), ecc...) e che l'opzione _playback sink_ in Exaile sia impostata correttamente. Provare ad impostarla su Automatica.
+Prima di tutto, assicurarsi che non ci siano problemi con l'architettura audio utilizzata ([ALSA](/index.php/ALSA "ALSA"), [OSS](/index.php/OSS "OSS"), ecc...) e che l'opzione *playback sink* in Exaile sia impostata correttamente. Provare ad impostarla su Automatica.
 
 Se si sta ascoltando un file MP3, provare a riprodurre un formato differente, come un file .ogg o .flac. Se questi vengono riprodotti correttamente, è necessario installare gstreamer-ugly.
 

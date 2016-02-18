@@ -39,7 +39,7 @@ There are two packages in the Arch package repository related with floppy disks:
 
 ## Common tasks
 
-Here are the commands needed to perform the most common tasks. In all examples is assumed that `/dev/fd0` is linux device for the floppy drive. By default, all these tasks need to be performed as _root_.
+Here are the commands needed to perform the most common tasks. In all examples is assumed that `/dev/fd0` is linux device for the floppy drive. By default, all these tasks need to be performed as *root*.
 
 ### Format
 

@@ -1,6 +1,6 @@
 From the [official website](http://www.gnu.org/software/octave/):
 
-	_GNU Octave is a high-level interpreted language, primarily intended for numerical computations. It provides capabilities for the numerical solution of linear and nonlinear problems, and for performing other numerical experiments. It also provides extensive graphics capabilities for data visualization and manipulation. Octave is normally used through its interactive command line interface, but it can also be used to write non-interactive programs. The Octave language is quite similar to Matlab so that most programs are easily portable._
+	*GNU Octave is a high-level interpreted language, primarily intended for numerical computations. It provides capabilities for the numerical solution of linear and nonlinear problems, and for performing other numerical experiments. It also provides extensive graphics capabilities for data visualization and manipulation. Octave is normally used through its interactive command line interface, but it can also be used to write non-interactive programs. The Octave language is quite similar to Matlab so that most programs are easily portable.*
 
 ## Contents
 
@@ -67,7 +67,6 @@ To see which packages have been loaded use `pkg list`, the packages with an aste
 A way to make sure that all packages gets loaded at Octave startup:
 
  `/usr/share/octave/site/m/startup/octaverc` 
-
 ```
 ## System-wide startup file for Octave.
 ##
@@ -172,12 +171,10 @@ The steps necessary to make it work are:
 	1\. [Install](/index.php/Install "Install") [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk), available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 **Note:** A common problem is that Octave cannot find the JDK path. To fix this execute the following commands in your shell:
-
 ```
 $ export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
 
 ```
-
 You may also want to add this to your `~/.bashrc` and append it to your `PATH`.
 
 	2\. Install a Java XLS library for `xlsread`. There are more such libraries available, a comparison can be found at [here](http://octave.org/wiki/index.php?title=IO_package#Comparison_of_interfaces_.26_usage). The recommended library is [apache-poi](https://aur.archlinux.org/packages/apache-poi/), available in the [AUR](/index.php/AUR "AUR").

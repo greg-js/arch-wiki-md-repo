@@ -31,25 +31,25 @@
 
 ## Hardware
 
-_CPU_ Intel Core i5-2467M (1.60 GHz Dual-core, 3 MB Cache). i3 Model available too.
+*CPU* Intel Core i5-2467M (1.60 GHz Dual-core, 3 MB Cache). i3 Model available too.
 
-_Mainboard_ Intel HM65
+*Mainboard* Intel HM65
 
-_RAM_ 4GB 1333MHz DDR3 (single DIMM slot, no spare slots)
+*RAM* 4GB 1333MHz DDR3 (single DIMM slot, no spare slots)
 
-_Display_ 13.3" HD LED (1366x768)
+*Display* 13.3" HD LED (1366x768)
 
-_Graphics adapter_ Intel HD3000
+*Graphics adapter* Intel HD3000
 
-_Soundcard_ Intel HD Audio
+*Soundcard* Intel HD Audio
 
-_Network_ Realtek Semiconductor Co., Ltd. RTL8111/8168B, Broadcom Corporation BCM4313 802.11b/g/n
+*Network* Realtek Semiconductor Co., Ltd. RTL8111/8168B, Broadcom Corporation BCM4313 802.11b/g/n
 
-_Hard disk_ 128GB SSD
+*Hard disk* 128GB SSD
 
-_Webcam_ HP Truevision HD
+*Webcam* HP Truevision HD
 
-_Touchpad_ Synaptics touchpad with multi-touch gestures.
+*Touchpad* Synaptics touchpad with multi-touch gestures.
 
 ## Configuration
 
@@ -97,7 +97,7 @@ You can also enable two-finger tap gesture as right-click functionality, but thi
 
 Finally, there is currently no functionality to enable/disable the trackpad by double-tapping the top left corner of the pad (a function provided for by the windows drivers). The LED light of the clickpad also doesn't work (even using the synaptics-led package [[3]](https://aur.archlinux.org/packages.php?ID=49284) from AUR).
 
-_UPDATE:_ As of 21/5/12, the default xf86-input-synaptics does have 1-button click (either left or right) + drag functionality restored. This means, for example, that you can left-click and drag to select text and right-click and drag to perform mouse gestures (assuming you have enabled the right button as above).
+*UPDATE:* As of 21/5/12, the default xf86-input-synaptics does have 1-button click (either left or right) + drag functionality restored. This means, for example, that you can left-click and drag to select text and right-click and drag to perform mouse gestures (assuming you have enabled the right button as above).
 
 ### Suspend to RAM
 

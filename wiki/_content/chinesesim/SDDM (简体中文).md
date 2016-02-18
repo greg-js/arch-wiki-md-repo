@@ -1,8 +1,8 @@
 **翻译状态：** 本文是英文页面 [SDDM](/index.php/SDDM "SDDM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-12-19，点击[这里](https://wiki.archlinux.org/index.php?title=SDDM&diff=0&oldid=349882)可以查看翻译后英文页面的改动。
 
-[Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Desktop_Display_Manager "wikipedia:Simple Desktop Display Manager") (SDDM) 是 [KDE](/index.php/KDE "KDE") Plasma桌面环境首选的 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)") 。 维基百科介绍：
+[Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Desktop_Display_Manager 。 维基百科介绍：
 
-	_Simple Desktop Display Manager (SDDM) 是用于X11和wayland视窗系统的显示管理器（图形登录界面）。 SDDM 使用C++11重写并且支持通过 QML改变主题。它是KDM的接替者并且与KDE Frameworks 5, KDE Plasma 5 和 KDE Applications 5协同使用。_
+	*Simple Desktop Display Manager (SDDM) 是用于X11和wayland视窗系统的显示管理器（图形登录界面）。 SDDM 使用C++11重写并且支持通过 QML改变主题。它是KDM的接替者并且与KDE Frameworks 5, KDE Plasma 5 和 KDE Applications 5协同使用。*
 
 ## Contents
 
@@ -41,7 +41,6 @@ SDDM的配置文件为 `/etc/sddm.conf` 。运行 `man sddm.conf` 可以了解�
 与 KDM相似 , SDDM 支持修改配置文件实现自动登录, 例如:
 
  `/etc/sddm.conf` 
-
 ```
 [Autologin]
 User=john
@@ -78,7 +77,7 @@ SDDM的默认主题目录是`/usr/share/sddm/themes/`。可以将您定制的主
 
 ### 登陆后挂起
 
-尝试删除_~/.Xauthority_。
+尝试删除*~/.Xauthority*。
 
 ### KDE Plasma 中无桌面特效
 
@@ -89,7 +88,6 @@ SDDM的默认主题目录是`/usr/share/sddm/themes/`。可以将您定制的主
 由于 [systemd 的原因](http://0pointer.de/blog/projects/serial-console.html) ，SDDM默认在tty1开启第一个图形会话。如果你喜欢以前 tty1 到 tty6 作为文本终端的习惯, 将下面内容加入 `sddm.conf`:
 
  `/etc/sddm.conf` 
-
 ```
 [XDisplay]
 MinimumVT=7

@@ -1,4 +1,4 @@
-_xrandr_ - это официальная программа настройки [оконной системы X](https://en.wikipedia.org/wiki/ru:X_Window_System "wikipedia:ru:X Window System"). С ее помощью можно изменить параметры вывода изображения [RandR](https://en.wikipedia.org/wiki/ru:RandR "wikipedia:ru:RandR"). Для получения информации о настройке вывода изображения сразу на несколько мониторов смотрите статью [Multihead](/index.php/Multihead "Multihead").
+*xrandr* - это официальная программа настройки [оконной системы X](https://en.wikipedia.org/wiki/ru:X_Window_System "wikipedia:ru:X Window System"). С ее помощью можно изменить параметры вывода изображения [RandR](https://en.wikipedia.org/wiki/ru:RandR "wikipedia:ru:RandR"). Для получения информации о настройке вывода изображения сразу на несколько мониторов смотрите статью [Multihead](/index.php/Multihead "Multihead").
 
 ## Contents
 
@@ -19,10 +19,9 @@ _xrandr_ - это официальная программа настройки [
 
 ## Тест режимов вывода изображения
 
-Если запустить _xrandr_ без дополнительных параметров, то она проверит все доступные интерфейсы (`LVDS`, `VGA-0`, и.т.д.) выведет их состояние и возможные режимы работы для них.
+Если запустить *xrandr* без дополнительных параметров, то она проверит все доступные интерфейсы (`LVDS`, `VGA-0`, и.т.д.) выведет их состояние и возможные режимы работы для них.
 
  ` $ xrandr` 
-
 ```
 Screen 0: minimum 320 x 200, current 1440 x 900, maximum 8192 x 8192
 VGA disconnected (normal left inverted right x axis y axis)
@@ -34,7 +33,7 @@ LVDS connected (normal left inverted right x axis y axis)
 
 ```
 
-Вы можете использовать _xrandr_ для установки разрешения на нужном интерфейсе (режим работы с этим разрешением должен быть в списке выше):
+Вы можете использовать *xrandr* для установки разрешения на нужном интерфейсе (режим работы с этим разрешением должен быть в списке выше):
 
 ```
 $ xrandr --output LVDS --mode 1280x800
@@ -64,16 +63,16 @@ $ xrandr --output LVDS --off --output HDMI-0 --auto
 
 **Обратите внимание:**
 
-*   Изменения внесённые _xrandr_ **не запоминаются** после окончания X сессии.
-*   _xrandr_ имеет большое количество параметров - читайте `man xrandr`.
+*   Изменения внесённые *xrandr* **не запоминаются** после окончания X сессии.
+*   *xrandr* имеет большое количество параметров - читайте `man xrandr`.
 
 ## Настройка
 
-_xrandr_ сам по себе является простым интерфейсом для конфигурации RandR и не имеет собственных файлов конфигурации. Тем не менее существует множество способов задать нужные параметры:
+*xrandr* сам по себе является простым интерфейсом для конфигурации RandR и не имеет собственных файлов конфигурации. Тем не менее существует множество способов задать нужные параметры:
 
-1.  Сконфигурировать RandR можно без помощи _xrandr_ через файлы конфигурации [X configuration files](/index.php/Xorg#Configuration "Xorg"), смотрите так же [Multihead#RandR](/index.php/Multihead#RandR "Multihead"). Это метод позволяет создать только статическую конфигурацию.
-2.  Также можно использовать _xrandr_ непосредственно в время запуска X сервера. Смотрите [Autostarting#Graphical](/index.php/Autostarting#Graphical "Autostarting").
-3.  Динамические конфигурации можно получить используя различные скрипты вызова _xrandr_ которые в свою очередь можно запускать по определённым события ( подключение, отключение интерфейсов и.т.п. ), смотрите [udev](/index.php/Udev "Udev") и [acpid](/index.php/Acpid "Acpid"). В секции [#Примеры](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B) приведено несколько скриптов.
+1.  Сконфигурировать RandR можно без помощи *xrandr* через файлы конфигурации [X configuration files](/index.php/Xorg#Configuration "Xorg"), смотрите так же [Multihead#RandR](/index.php/Multihead#RandR "Multihead"). Это метод позволяет создать только статическую конфигурацию.
+2.  Также можно использовать *xrandr* непосредственно в время запуска X сервера. Смотрите [Autostarting#Graphical](/index.php/Autostarting#Graphical "Autostarting").
+3.  Динамические конфигурации можно получить используя различные скрипты вызова *xrandr* которые в свою очередь можно запускать по определённым события ( подключение, отключение интерфейсов и.т.п. ), смотрите [udev](/index.php/Udev "Udev") и [acpid](/index.php/Acpid "Acpid"). В секции [#Примеры](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B) приведено несколько скриптов.
 
 **Обратите внимание:** В KDM и GDM есть сценарии запуска которые выполняются до запуска X сервера. Для GDM, это `/etc/gdm/`, а для KDM `/usr/share/config/kdm/Xsetup` и для SDDM это `/usr/share/sddm/scripts/Xsetup`. Этот метод требует прав на доступ к корневым каталогам и изменения файлов системных конфигураций, однако позволяет внести изменения до запуска xprofile.
 
@@ -166,7 +165,8 @@ else
 	echo "Command: $execute"
 	`$execute`
 fi
-echo -e "\n$(xrandr)"
+echo -e "
+$(xrandr)"
 
 ```
 
@@ -177,7 +177,6 @@ echo -e "\n$(xrandr)"
 *   I am using it with [srandrd](https://aur.archlinux.org/packages/srandrd/) in my [i3-wm](https://www.archlinux.org/packages/?name=i3-wm) like so ([#Example 3](#Example_3) didn't work for me for some reason or other):.
 
  `~/.xprofile` 
-
 ```
 srandrd ~/.i3/detect_displays.sh
 
@@ -198,7 +197,8 @@ declare -A POS
 POS=([X]=0 [Y]=0)
 
 find_mode() {
-  echo $(${XRANDR} |grep ${1} -A1|awk '{FS="[ x]"} /^\s/{printf("WIDTH=%s\nHEIGHT=%s", $4,$5)}')
+  echo $(${XRANDR} |grep ${1} -A1|awk '{FS="[ x]"} /^\s/{printf("WIDTH=%s
+HEIGHT=%s", $4,$5)}')
 }
 
 xrandr_params_for() {
@@ -243,14 +243,13 @@ done
 
 ### Поиск отсутствующих режимов
 
-Из за различных факторов _xrandr_ не всегда может корректно определить режимы работы устройств. Это можно исправить добавив нужный режим в ручную. Для начала запускаем `gtf` или `cvt` чтобы получить **Modeline** с нужными нам параметрами:
+Из за различных факторов *xrandr* не всегда может корректно определить режимы работы устройств. Это можно исправить добавив нужный режим в ручную. Для начала запускаем `gtf` или `cvt` чтобы получить **Modeline** с нужными нам параметрами:
 
 **Обратите внимание:**
 
 *   для некоторых LCD мониторов (например samsung 2343NW), необходимо использовать "cvt -r".
 
  `$ cvt 1280 1024` 
-
 ```
 # 1280x1024 59.89 Hz (CVT 1.31M4) hsync: 63.67 kHz; pclk: 109.00 MHz
 Modeline "1280x1024_60.00"  109.00  1280 1368 1496 1712  1024 1027 1034 1063 -hsync +vsync
@@ -258,7 +257,6 @@ Modeline "1280x1024_60.00"  109.00  1280 1368 1496 1712  1024 1027 1034 1063 -hs
 ```
 
 **Обратите внимание:** Если используется драйвер intel [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), то необходимый режим вместе с другими параметрами можно увидеть в `/var/log/Xorg.0.log` — он может отличатся от выданного `gtf` или `cvt`:
-
 ```
 [    45.063] (II) intel(0): clock: 241.5 MHz   Image Size:  597 x 336 mm
 [    45.063] (II) intel(0): h_active: 2560  h_sync: 2600  h_sync_end 2632 h_blank_end 2720 h_border: 0
@@ -296,7 +294,7 @@ $ xrandr --output VGA1 --mode 1280x1024_60.00
 
 ```
 
-**Обратите внимание:** Изменения внесённые _xrandr_ **не запоминаются** после окончания X сессии.
+**Обратите внимание:** Изменения внесённые *xrandr* **не запоминаются** после окончания X сессии.
 
 Для тестирования режимов лучше всего использовать конструкции типа (которые после таймаута восстанавливают прежний режим):
 
@@ -314,7 +312,6 @@ $ xrandr --output VGA1 --mode 1280x1024_60.00 && sleep 5 && xrandr --newmode "10
 После того как нашли нужный режим с помощью `xrandr`, его можно добавить в `/etc/X11/xorg.conf.d/*`:
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
-
 ```
 Section "Monitor"
     Identifier "VGA1"
@@ -348,7 +345,6 @@ Background: ATI X1550 based video card and two LCD monitors DELL 2408(up to 1920
 change /etc/X11/xorg.conf.d/*
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
-
 ```
 Section "Screen"
         ...

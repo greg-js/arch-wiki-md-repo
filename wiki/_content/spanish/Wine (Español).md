@@ -159,7 +159,7 @@ Después de la instalación, probablemente no habrá un menú en tu Entorno Grá
 
 ### Crear entrada en el menú
 
-Primero, instala una aplicación Windows usando Wine para crear un menú base. Después de que el menú base se haya creado, puedes empezar a agregar las entradas al menú. En GNOME, da boton secundario en el escritorio y selecciona "_Crear Lanzador..._" . Los pasos pueden ser diferentes para KDE/Xfce. Haz tres lanzadores usando estos parametros.
+Primero, instala una aplicación Windows usando Wine para crear un menú base. Después de que el menú base se haya creado, puedes empezar a agregar las entradas al menú. En GNOME, da boton secundario en el escritorio y selecciona "*Crear Lanzador...*" . Los pasos pueden ser diferentes para KDE/Xfce. Haz tres lanzadores usando estos parametros.
 
 ```
 **Type**: Application
@@ -187,7 +187,7 @@ Primero, instala una aplicación Windows usando Wine para crear un menú base. D
 
 Ahora ya tienes estos tres lanzadores en tu escritorio, es momento de ponerlos en el menú. Pero primero debes cambiar los lanzadores para que cambien los iconos de manera automática al cambiar de tema. Para hacer esto, abre los lanzadores que acabas de crear y teclea esto en tu editor de texto favorito. Cambia los siguientes parámetros a estos valores:
 
-Lanzador _Configuración_:
+Lanzador *Configuración*:
 
 ```
 Icon[en_US]=wine-winecfg
@@ -195,7 +195,7 @@ Icon=wine-winecfg
 
 ```
 
-Lanzador _Desinstalar Programas_:
+Lanzador *Desinstalar Programas*:
 
 ```
 Icon[en_US]=wine-uninstaller
@@ -203,7 +203,7 @@ Icon=wine-uninstaller
 
 ```
 
-Lanzador _Navegar en la unidad C:\_:
+Lanzador *Navegar en la unidad C:\*:
 
 ```
 Icon[en_US]=wine-winefile
@@ -213,9 +213,9 @@ Icon=wine-winefile
 
 Si esta configuración produce un icono feo/inexistente, quiere decir que no hay iconos para estos lanzadores en el tema de iconos que estas usando. Debes reemplazar el icono con la localización exacta del icono que quieres usar. Dar click en las propiedades del lanzador tendrá el mismo efecto. Un gran tema de iconos que contiene los iconos para estos lanzadores es [GNOME-colors](http://www.gnome-look.org/content/show.php/GNOME-colors?content=82562).
 
-Ahora que los lanzadores están completamente configurados, es el momento de ponerlos en el menú. Colocalos en "_~/.local/share/applications/wine/_" usando una terminal o un navegador de archivos.
+Ahora que los lanzadores están completamente configurados, es el momento de ponerlos en el menú. Colocalos en "*~/.local/share/applications/wine/*" usando una terminal o un navegador de archivos.
 
-Espera un momento, ¡aun no esta en el menú! Hay un último paso. Copia el siguiente texto en un archivo llamado "_wine-utilities.menu_".
+Espera un momento, ¡aun no esta en el menú! Hay un último paso. Copia el siguiente texto en un archivo llamado "*wine-utilities.menu*".
 
 ```
 <!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
@@ -239,7 +239,7 @@ Espera un momento, ¡aun no esta en el menú! Hay un último paso. Copia el sigu
 
 ```
 
-Ahora, solo mueve el nuevo archivo en la carpeta "_~/.config/menus/applications-merged/_". Ahora solo revisa el menú y las opciones deberán estar ahí, listas para ser usadas.
+Ahora, solo mueve el nuevo archivo en la carpeta "*~/.config/menus/applications-merged/*". Ahora solo revisa el menú y las opciones deberán estar ahí, listas para ser usadas.
 
 ### Arreglar el menú en KDE 4
 

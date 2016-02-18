@@ -30,21 +30,21 @@ Arch Linux, pacman, dokumentácia, a skripty sú chránené copyrightom ©2002-2
 
 ### The Arch Way
 
-**_Dizajnové princípy za Arch Linux-om sú zacielené na [jednoduchosť](/index.php/The_Arch_Way "The Arch Way")._**
+***Dizajnové princípy za Arch Linux-om sú zacielené na [jednoduchosť](/index.php/The_Arch_Way "The Arch Way").***
 
 'Jednoduchý', v tomto kontexte, znamená 'bez zbytočných prídavkov, modifikácií, alebo komplikácií. V skratke: elegantný, minimalistický prístup.
 
 **Zopár myšlienok keď uvažujeme o jednoduchosti:**
 
-*   _" 'Jednoduchý' je definované z technického pohľadu, nie pohľadu používania. Je lepšie byť technicky elegantný s náročnejším procesom učenia sa, ako byť jednoduchý na používanie a technicky [na horšej úrovni]." -Aaron Griffin_
-*   _Entia non sunt multiplicanda praeter necessitatem_ alebo "Entity by nemali byť zbytočne viacnásobné." -Occamova britva. Termín _britva_ referuje na zbavenie sa zbytočných komplikácií, aby sa dospelo k tomu najjednoduchšiemu vysvetleniu, metóde alebo teórii.
-*   _"Tá výnimočná súčasť [mojej metódy] je jej jednoduchosť."_ - Bruce Lee
+*   *" 'Jednoduchý' je definované z technického pohľadu, nie pohľadu používania. Je lepšie byť technicky elegantný s náročnejším procesom učenia sa, ako byť jednoduchý na používanie a technicky [na horšej úrovni]." -Aaron Griffin*
+*   *Entia non sunt multiplicanda praeter necessitatem* alebo "Entity by nemali byť zbytočne viacnásobné." -Occamova britva. Termín *britva* referuje na zbavenie sa zbytočných komplikácií, aby sa dospelo k tomu najjednoduchšiemu vysvetleniu, metóde alebo teórii.
+*   *"Tá výnimočná súčasť [mojej metódy] je jej jednoduchosť."* - Bruce Lee
 
 ### O tomto sprievodcovi
 
-Komunitou spravovaná [Arch Wiki](/index.php/Main_Page_(Slovensk%C3%BD) "Main Page (Slovenský)") je vynikajúci zdroj informácií a mala by byť prvým miestom kde hľadať odpovede. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), a [[1]](https://bbs.archlinux.org/forums) sú taktiež dostupné ak riešenie problému nie je dostupné inde. Taktiež určite používajte `man` stránky pre akýkoľvek príkaz, ktorý dobre nepoznáte; tieto obvykle zobrazí príkaz `man _príkaz_`.
+Komunitou spravovaná [Arch Wiki](/index.php/Main_Page_(Slovensk%C3%BD) "Main Page (Slovenský)") je vynikajúci zdroj informácií a mala by byť prvým miestom kde hľadať odpovede. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), a [[1]](https://bbs.archlinux.org/forums) sú taktiež dostupné ak riešenie problému nie je dostupné inde. Taktiež určite používajte `man` stránky pre akýkoľvek príkaz, ktorý dobre nepoznáte; tieto obvykle zobrazí príkaz `man *príkaz*`.
 
-**Note:** Presné nasledovanie tohto sprievodcu je potrebné pre úspešnú inštaláciu Arch Linux-u, takže _prosím_ prečítajte si ho poriadne. Je odporúčané kompletne prečítať celú sekciu <u>predtým</u> ako vykonáte obsiahnuté inštrukcie.
+**Note:** Presné nasledovanie tohto sprievodcu je potrebné pre úspešnú inštaláciu Arch Linux-u, takže *prosím* prečítajte si ho poriadne. Je odporúčané kompletne prečítať celú sekciu <u>predtým</u> ako vykonáte obsiahnuté inštrukcie.
 
 Tento sprievodca je rozdelený do 3 hlavných častí:
 

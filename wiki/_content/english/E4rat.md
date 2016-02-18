@@ -83,14 +83,14 @@ Do not forget to remove the e4rat-collect command from your [boot loader configu
 
 ### e4rat-realloc
 
-Once _e4rat-collect_ has finished to run, log in as root and run:
+Once *e4rat-collect* has finished to run, log in as root and run:
 
 ```
 e4rat-realloc /var/lib/e4rat/startup.log
 
 ```
 
-This can take a while depending on how many files you have in your startup.log file. Switching to rescue mode with `systemctl isolate rescue` ([Systemd#Targets table](/index.php/Systemd#Targets_table "Systemd")) may allow for more inodes/blocks to be reallocated as some may not be free while in _multiuser.target_
+This can take a while depending on how many files you have in your startup.log file. Switching to rescue mode with `systemctl isolate rescue` ([Systemd#Targets table](/index.php/Systemd#Targets_table "Systemd")) may allow for more inodes/blocks to be reallocated as some may not be free while in *multiuser.target*
 
 **Note:** It may be worthwhile to repeat the reallocation step multiple times before exiting or rebooting in order to further reduce the fragmentation count. Simply re-run the command a few times to see if this is possible on the your setup. If so you'll see the count number reduced after a few runs. This is perfectly safe and shouldn't cause any issues with booting.
 

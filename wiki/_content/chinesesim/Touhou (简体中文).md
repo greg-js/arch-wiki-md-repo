@@ -66,7 +66,6 @@ PC-98上的游戏可以使用 Linux-native X Neko Project II emulator ([xnp2](ht
 然后把一下几行加入Timidity++ 的配置文件
 
  `/etc/timidity++/timidity.cfg` 
-
 ```
 dir /usr/share/timidity/freepats
 source /etc/timidity++/freepats/freepats.cfg

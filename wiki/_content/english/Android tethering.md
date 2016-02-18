@@ -45,7 +45,6 @@ Using an Android phone as a Wi-Fi access point (using 3G) has been accessible by
 	You should be able to see a `usb0` or `enp?s??u?` device listed like this (notice the enp0s20u3 device).
 
  `# ip link` 
-
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default 
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -71,14 +70,13 @@ Using an Android phone as a Wi-Fi access point (using 3G) has been accessible by
 Using [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") you can automatically adjust the networking to use the phone as the gateway when plugged in.
 
  `/etc/udev/rules.d/90-android-tethering.rules` 
-
 ```
 # Execute pairing program when appropriate
 ACTION=="add|remove", SUBSYSTEM=="net", ATTR{idVendor}=="18d1" ENV{ID_USB_DRIVER}=="rndis_host", SYMLINK+="android", RUN+="/usr/bin/systemctl restart systemd-networkd.service"
 
 ```
 
-You may have to adjust the `idVendor` attribute depending on your phone. You can check using _udevadm_:
+You may have to adjust the `idVendor` attribute depending on your phone. You can check using *udevadm*:
 
 ```
 $ udevadm info /sys/class/net/enp0s26u1u2
@@ -88,7 +86,6 @@ $ udevadm info /sys/class/net/enp0s26u1u2
 Then create the corresponding systemd-networkd file:
 
  `/etc/systemd/network/enp0s26u1u2.network` 
-
 ```
 [Match]
 Name=enp0s26u1u2
@@ -117,10 +114,9 @@ Bus 001 Device 006: ID **0502**:3202 Acer, Inc.
 
 ```
 
-Then, create the following file, replacing _ciri_ by your own Linux user name, and **0502** by the vendor ID of your own phone:
+Then, create the following file, replacing *ciri* by your own Linux user name, and **0502** by the vendor ID of your own phone:
 
  `/etc/udev/rules.d/51-android.rules` 
-
 ```
 SUBSYSTEM=="usb", ATTR(idVendor)=="0502", MODE="0666" OWNER="ciri"
 
@@ -128,7 +124,7 @@ SUBSYSTEM=="usb", ATTR(idVendor)=="0502", MODE="0666" OWNER="ciri"
 
 As root run the `udevadm control restart` command (or reboot your computer) to make the change effective.
 
-Now run in your linux PC the `adb shell` command from the Android SDK as plain (non root) user: you should get a unix prompt _in your phone_.
+Now run in your linux PC the `adb shell` command from the Android SDK as plain (non root) user: you should get a unix prompt *in your phone*.
 
 ### Procedure
 
@@ -144,7 +140,6 @@ Run the AziLink application in the phone and select "About" at the bottom to rec
 	 `# openvpn AziLink.ovpn` 
 
  `AziLink.ovpn` 
-
 ```
 dev tun
 remote 127.0.0.1 41927 tcp-client
@@ -164,7 +159,6 @@ dhcp-option DNS 192.168.56.1
 You may need to manually update the contents of [resolv.conf](/index.php/Resolv.conf "Resolv.conf") to
 
  `/etc/resolv.conf` 
-
 ```
 nameserver 192.168.56.1
 
@@ -212,6 +206,6 @@ Clockworkmod Tether is a tethering app for android, but also requires software i
 
 *   Create a temporary symlink in `/usr/local/bin/python` to `/usr/bin/python2`, as multiple files refer to python2\. Then follow the instructions in the README file.
 
-*   The included _adb_ binary requires [Multilib](/index.php/Multilib "Multilib") and [installation](/index.php/Install "Install") of the [lib32-stdc++5](https://www.archlinux.org/packages/?name=lib32-stdc%2B%2B5) and [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/) packages. Use _ldd_ to find any other missing libraries.
+*   The included *adb* binary requires [Multilib](/index.php/Multilib "Multilib") and [installation](/index.php/Install "Install") of the [lib32-stdc++5](https://www.archlinux.org/packages/?name=lib32-stdc%2B%2B5) and [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/) packages. Use *ldd* to find any other missing libraries.
 
-When _adb_ is working, the command line will repeated say "Checking phone status...". Make sure you launch the android app as well.
+When *adb* is working, the command line will repeated say "Checking phone status...". Make sure you launch the android app as well.

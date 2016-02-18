@@ -42,10 +42,9 @@ Speaker output works as expected after this.
 
 Using [systemd](/index.php/Systemd "Systemd"), it is possible to set up a script to run these commands automatically at boot.
 
-First, create the relevant script and save it somewhere (e.g., in _/usr/local/bin_):
+First, create the relevant script and save it somewhere (e.g., in */usr/local/bin*):
 
  `/usr/local/bin/M2010-sound` 
-
 ```
 #!/bin/sh
 hda-verb /dev/snd/hwC0D0 0x1 set_gpio_data 5
@@ -61,10 +60,9 @@ chmod 755 /usr/local/bin/M2010-sound
 
 ```
 
-Create a new systemd unit (e.g., in _/etc/systemd/system_) that calls your script:
+Create a new systemd unit (e.g., in */etc/systemd/system*) that calls your script:
 
  `/etc/systemd/system/M2010-sound.service` 
-
 ```
 [Unit]
 Description=M2010 Speaker Configuration
@@ -95,7 +93,6 @@ The `i8k` module appears to work for temperature monitoring and fan control, but
 First, create a new .conf file in `/etc/modules-load.d` specifying `i8k` as a module to load:
 
  `/etc/modules-load.d/i8k.conf` 
-
 ```
 i8k
 
@@ -104,7 +101,6 @@ i8k
 Next, specify the module load options in a .conf file in `/etc/modprobe.d`. The fan RPM values shown by default appear to be erroneous, so we change the `fan_mult` option here (see [https://bugs.launchpad.net/ubuntu/+source/sensors-applet/+bug/200449](https://bugs.launchpad.net/ubuntu/+source/sensors-applet/+bug/200449)):
 
  `/etc/modprobe.d/i8k.conf` 
-
 ```
 options i8k force=1 fan_mult=1
 

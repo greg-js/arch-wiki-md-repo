@@ -34,7 +34,7 @@ Las aplicaciones KDE pueden utilizar temas y ser coloreadas para que coincidan p
 
 ##### GTK2/GTK+
 
-Los temas GTK+ pueden ser fácilmente gestionados con las utilidades _gtk-chtheme_ o _switch2_. Para instalarlas, ejecute:
+Los temas GTK+ pueden ser fácilmente gestionados con las utilidades *gtk-chtheme* o *switch2*. Para instalarlas, ejecute:
 
 ```
 # pacman -S gtk-chtheme
@@ -59,7 +59,7 @@ Para los temas GTK1 antiguos, instale el paquete **gtk-theme-switch**:
 
 ```
 
-Ejecute entonces _**switch**_ para seleccionar el tema deseado.
+Ejecute entonces ***switch*** para seleccionar el tema deseado.
 
 ### Tipos GTK
 

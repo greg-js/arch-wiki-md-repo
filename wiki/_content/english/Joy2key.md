@@ -105,6 +105,6 @@ x:5:respawn:/bin/su xbmc -l -c "/bin/bash --login -c /usr/bin/startx >/dev/null 
 
 References to the sources where I learned about this:
 
-*   [[1]](http://hans.fugal.net/blog/2007/06/02/joystick-hat-in-x-plane-in-linux/) blog entry: _Joystick Hat in X-Plane in Linux_
-*   [[2]](http://ubuntuforums.org/showthread.php?t=646564) Ubuntu forum post: _How to use joy2key for SIXAXIS joypad (or any really!)_
-*   [[3]](http://wiki.xbmc.org/index.php?title=Installing_XBMC_for_Linux#Autostarting_XBMC) XBMC wiki: _Installing XBMC for Linux > Autostarting XBMC_
+*   [[1]](http://hans.fugal.net/blog/2007/06/02/joystick-hat-in-x-plane-in-linux/) blog entry: *Joystick Hat in X-Plane in Linux*
+*   [[2]](http://ubuntuforums.org/showthread.php?t=646564) Ubuntu forum post: *How to use joy2key for SIXAXIS joypad (or any really!)*
+*   [[3]](http://wiki.xbmc.org/index.php?title=Installing_XBMC_for_Linux#Autostarting_XBMC) XBMC wiki: *Installing XBMC for Linux > Autostarting XBMC*

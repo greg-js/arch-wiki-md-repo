@@ -25,7 +25,6 @@ This is the minimum configuration to get squid cache arch packages.
 Before defining these rules, remove/comment (if you do not need them) all the default refresh_patterns
 
  `/etc/squid/squid.conf ` 
-
 ```
 refresh_pattern \.pkg\.tar\.   0       20%     4320      reload-into-ims
 refresh_pattern .              0       0%      0

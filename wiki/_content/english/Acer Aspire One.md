@@ -859,7 +859,7 @@ The bios upgrades on the acer aspire site for the AOD150 line all want you to ru
     *   Download the latest BIOS from the Acer webpage, for the AOD150 (latest is 1.09). Note that this is the correct BIOS, but requires windows to use, so you are only going to use the BIOS image from this file.
     *   Unzip the AOA150 zip file to a scratch directory. You may, for instance, get four files: a .bat file, a .fd file, flashit.exe, and a readme.txt. Copy everything but the .fd file onto your usb drive.
     *   Unzip the AOD150 zip file to a scratch directory. It should result in an exe file (KAV10109.exe) and a readme.txt. Now you have to get the .fd file from the .exe.
-    *   Run the exe file using wine. It will extract some files, and then show an error from InsydeFlash complaining that it cannot load the drivers. _Do not_ click 'Okay' yet.
+    *   Run the exe file using wine. It will extract some files, and then show an error from InsydeFlash complaining that it cannot load the drivers. *Do not* click 'Okay' yet.
     *   Alt-tab to a terminal, and cd into your wine installation's windows temp directory. Mine is $HOME/.wine/drive_c/windows/temp
     *   There should be directory there with the contents of what the exe file extracted. Mine is 7zSe6a.tmp/. If you cannot find it, you can run 'find . -iname InsydeFlash.exe', and whatever directory that file is in is what you want.
     *   Inside that directory should be a file with a .fd extension. Copy this file to your usb drive, alongside the .bat and .exe file you copied before.

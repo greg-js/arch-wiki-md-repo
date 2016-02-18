@@ -17,13 +17,13 @@ Cualquier método funcionará incluso con el sistema en ejecución. Dado que sue
 Este comando depende de que la expansión de llaves este disponible en los intérpretes de órdenes [bash](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html) y [zsh](http://zsh.sourceforge.net/Doc/Release/Expansion.html#Brace-Expansion). Cuando use otro [intérprete de órdenes](/index.php/Shell "Shell"), los patrones `--exclude` deben repetirse manualmente.
 
 ```
-# rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} /* _/ruta/a/la/carpeta/de/respaldo_
+# rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} /* */ruta/a/la/carpeta/de/respaldo*
 
 ```
 
 Usando el conjunto de opciones `-aAX`, los ficheros son transferidos en modo archivo, asegurándose que los enlaces simbólicos, dispositivos, permisos y atributos de propiedad,tiempos de modificación, [ACLs](/index.php/ACL "ACL") y atributos extendidos son preservados.
 
-La opción `--exclude` hará que aquellos ficheros que coincidan con los patrones dados sean excluidos. Los contenidos de `/dev`, `/proc`, `/sys`, `/tmp` y `/run` se excluyeron porque son inicializados al cargar el sistema (mientras que las carpetas en si mismas _no_ son creadas), `/lost+found` es específico del sistema de archivos. Entrecomillar los patrones de exclusión evitará su expansión por parte del [intérprete de ordenes](/index.php/Shell "Shell"), lo que es necesario cuando, por ejemplo, se hacen copias de seguridad por [SSH (Español)](/index.php/SSH_(Espa%C3%B1ol) "SSH (Español)").
+La opción `--exclude` hará que aquellos ficheros que coincidan con los patrones dados sean excluidos. Los contenidos de `/dev`, `/proc`, `/sys`, `/tmp` y `/run` se excluyeron porque son inicializados al cargar el sistema (mientras que las carpetas en si mismas *no* son creadas), `/lost+found` es específico del sistema de archivos. Entrecomillar los patrones de exclusión evitará su expansión por parte del [intérprete de ordenes](/index.php/Shell "Shell"), lo que es necesario cuando, por ejemplo, se hacen copias de seguridad por [SSH (Español)](/index.php/SSH_(Espa%C3%B1ol) "SSH (Español)").
 
 **Nota:**
 
@@ -52,20 +52,18 @@ Tener un respaldo arrancable puede ser útil en caso de que el sistema de ficher
 Sin reiniciar, edite el fichero [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)") del respaldo para reflejar los cambios:
 
  `/ruta/al/respaldo/etc/fstab` 
-
 ```
 tmpfs        /tmp          tmpfs     nodev,nosuid             0   0
 
-<font color="#888888">_/dev/sda1    /boot         ext2      defaults                 0   2
+<font color="#888888">*/dev/sda1    /boot         ext2      defaults                 0   2
 /dev/sda5    none          swap      defaults                 0   0
 /dev/sda6    /             ext4      defaults                 0   1
-/dev/sda7    /home         ext4      defaults                 0   2_</font>
+/dev/sda7    /home         ext4      defaults                 0   2*</font>
 ```
 
-Como rsync ha hecho una copia recursiva del sistema de ficheros raíz _entera_, todos los puntos de montaje `sda` son problemáticos y arrancar el respaldo fallará. En este ejemplo, todas las entradas conflictivas son reemplazadas por una sola:
+Como rsync ha hecho una copia recursiva del sistema de ficheros raíz *entera*, todos los puntos de montaje `sda` son problemáticos y arrancar el respaldo fallará. En este ejemplo, todas las entradas conflictivas son reemplazadas por una sola:
 
  `/ruta/al/respaldo/etc/fstab` 
-
 ```
 tmpfs        /tmp          tmpfs     nodev,nosuid             0   0
 

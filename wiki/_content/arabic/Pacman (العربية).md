@@ -84,7 +84,6 @@ NoExtract=usr/lib/systemd/system/*
 هذا القسم يحدد [المخازن](/index.php/Official_repositories "Official repositories") التي يتم إستعمالها , حسب ما هو مشار إليه في `/etc/pacman.conf`. يمكن إدراجها بشكل مباشر هنا أو ضمها من ملف أخر (مثلاً `/etc/pacman.d/mirrorlist`), مما يجعل من الضروري الحفاظ على لائحة واحدة فقط. انظر [هنا](/index.php/Mirrors "Mirrors") للإطلاع على طريقة إعداد المرايا.
 
  `/etc/pacman.conf` 
-
 ```
 #[testing]
 #SigLevel = PackageRequired
@@ -141,14 +140,14 @@ Include = /etc/pacman.d/mirrorlist
 للتثبيت حزمة أو عدة حزم (بما في ذلك الإعتماديات) نفذ الإمر التالي :
 
 ```
-# pacman -S _package_name1_ _package_name2_ ...
+# pacman -S *package_name1* *package_name2* ...
 
 ```
 
 أحياناً هناك إصدارات مختلفة لحزمة على مخازن مختلفة , على سبيل المثال , [extra] و [testing]. للتثبيت الإصدار السابق , يجب ذكر المخزن أولاً :
 
 ```
-# pacman -S extra/_package_name_
+# pacman -S extra/*package_name*
 
 ```
 
@@ -189,7 +188,7 @@ Enter a selection (default=all): ^5-8 ^2
 **تحذير :** عند تنصيب الحزم **لا تقم** بعمل تحديث لقائمة الحزم بدون [تحديث](#.D8.AA.D8.AD.D8.AF.D9.8A.D8.AB_.D8.A7.D9.84.D8.AD.D8.B2.D9.85) النظام مثلا استخدم الأمر
 
 ```
-pacman -Sy _package_name_
+pacman -Sy *package_name*
 
 ```
 
@@ -200,35 +199,35 @@ pacman -Sy _package_name_
 لحذف حزمة مفردة، مع إبقاء جميع تبعياتها المثبتة:
 
 ```
-# pacman -R _package_name_
+# pacman -R *package_name*
 
 ```
 
 لحذف حزمة وجميع تبعياتها غير المطلوبة لتثبيت أية حزمة أخرى :
 
 ```
-# pacman -Rs _package_name_
+# pacman -Rs *package_name*
 
 ```
 
 **تحذير:** هذه العملية تكرارية ويجب استخدامها بحرص بالغ حيث إنها قد تحذف العديد من الحزم المحتمل الاحتياج إليها. من المحتمل
 
 ```
-# pacman -Rsc _package_name_
+# pacman -Rsc *package_name*
 
 ```
 
 لحذف حزمة مطلوبة لحزمة أخرى دون حذف للحزمة التابعة:
 
 ```
-# pacman -Rdd _package_name_
+# pacman -Rdd *package_name*
 
 ```
 
 يقوم بكمان بحفظ ملفات الإعداد المهمة عند حذف تطبيقات معينة ويقوم إعطائهاتسمية مذيلة بالامتداد `.pacsave`. لتجنب إنشاء نسخة احتياطية لهذه الملفات استخدم الخيار `-n`:
 
 ```
-# pacman -Rn _package_name_
+# pacman -Rn *package_name*
 
 ```
 
@@ -272,42 +271,42 @@ $ pacman -S --help
 بمقدور pacman البحث عن الحزم بقاعدة البيانات , بحثاً عن الإسم ووصف الحزمة:
 
 ```
-$ pacman -Ss _string1_ _string2_ ...
+$ pacman -Ss *string1* *string2* ...
 
 ```
 
 للبحث عن الحزم التي سبق تثبيتها:
 
 ```
-$ pacman -Qs _string1_ _string2_ ...
+$ pacman -Qs *string1* *string2* ...
 
 ```
 
 لعرض معلومات حول حزمة ما:
 
 ```
-$ pacman -Si _package_name_
+$ pacman -Si *package_name*
 
 ```
 
 بالنسبة للحزم المثبتة محلياً:
 
 ```
-$ pacman -Qi _package_name_
+$ pacman -Qi *package_name*
 
 ```
 
 تمرير إثنان من `-i` flags سيظهر قائمة بإسماء ملفات النسخ الإحتياطية وحالة التعديل خاصتها:
 
 ```
-$ pacman -Qii _package_name_
+$ pacman -Qii *package_name*
 
 ```
 
 لسرد قائمة الملفات المثبة من قبل الحزمة:
 
 ```
-$ pacman -Ql _package_name_
+$ pacman -Ql *package_name*
 
 ```
 
@@ -316,7 +315,7 @@ $ pacman -Ql _package_name_
 One can also query the database to know which package a file in the file system belongs to:
 
 ```
-$ pacman -Qo _/path/to/file_name_
+$ pacman -Qo */path/to/file_name*
 
 ```
 
@@ -330,14 +329,14 @@ $ pacman -Qdt
 لسرد شجرة إعتمادبات الحزمة:
 
 ```
-$ pactree _package_name_
+$ pactree *package_name*
 
 ```
 
-لسرد كل الحزم التي تعتمد على حزمة _متبثة_, إستعمل `whoneeds` من [pkgtools](/index.php/Pkgtools "Pkgtools"):
+لسرد كل الحزم التي تعتمد على حزمة *متبثة*, إستعمل `whoneeds` من [pkgtools](/index.php/Pkgtools "Pkgtools"):
 
 ```
-$ whoneeds _package_name_
+$ whoneeds *package_name*
 
 ```
 
@@ -346,14 +345,14 @@ $ whoneeds _package_name_
 لتحديث النضام وتثبيت قائمة الحزم (سطر واحد):
 
 ```
-# pacman -Syu _package_name1_ _package_name2_ ...
+# pacman -Syu *package_name1* *package_name2* ...
 
 ```
 
 تحميل الحزمة بدون تنصيبها:
 
 ```
-# pacman -Sw _package_name_
+# pacman -Sw *package_name*
 
 ```
 
@@ -365,7 +364,6 @@ $ whoneeds _package_name_
 ```
 
 **تلميحة:** لإبقاء نسخة من الحزم المحلية في cache الخاص بـ pacman, إستعمل:
-
 ```
 # pacman -U file://path/to/package/package_name-version.pkg.tar.xz
 
@@ -400,7 +398,7 @@ Clean the entire package cache:
 
 ### الترقيات الجزئية غير معتمدة
 
-Arch Linux is a rolling release, and new [library](https://en.wikipedia.org/wiki/Library_(computing) "wikipedia:Library (computing)") versions will be pushed to the repositories. The developers and Trusted Users will rebuild all the packages in the repositories that need to be rebuilt against the libraries. If the system has locally installed packages (such as [AUR](/index.php/Arch_User_Repository "Arch User Repository") packages), users will need to rebuild them when their dependencies receive a [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname") bump.
+Arch Linux is a rolling release, and new [library](https://en.wikipedia.org/wiki/Library_(computing) versions will be pushed to the repositories. The developers and Trusted Users will rebuild all the packages in the repositories that need to be rebuilt against the libraries. If the system has locally installed packages (such as [AUR](/index.php/Arch_User_Repository "Arch User Repository") packages), users will need to rebuild them when their dependencies receive a [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname") bump.
 
 This means that partial upgrades are **not supported**. Do not use `pacman -Sy package` or any equivalent such as `pacman -Sy` and then `pacman -S package`. Always upgrade before installing a package -- particularly if pacman has refreshed the sync repositories. Be very careful when using `IgnorePkg` and `IgnoreGroup` for the same reason.
 
@@ -424,7 +422,7 @@ Pacman mirrors are not synced immediately. It may take over 24 hours before an u
 
 ### I get an error when updating: "file exists in filesystem"!
 
-ASIDE: _Taken from [https://bbs.archlinux.org/viewtopic.php?id=56373](https://bbs.archlinux.org/viewtopic.php?id=56373) by Misfit138._
+ASIDE: *Taken from [https://bbs.archlinux.org/viewtopic.php?id=56373](https://bbs.archlinux.org/viewtopic.php?id=56373) by Misfit138.*
 
 ```
 error: could not prepare transaction
@@ -467,7 +465,7 @@ In the case that pacman crashes with a "database write" error whilst removing pa
 
 ### I installed software using "make install"; these files do not belong to any package!
 
-If receiving a "conflicting files" error, note that pacman will overwrite manually-installed software if supplied with the `--force` switch (`pacman -S --force`). See [Pacman tips#Identify files not owned by any package](/index.php/Pacman_tips#Identify_files_not_owned_by_any_package "Pacman tips") for a script that searches the file system for _disowned_ files.
+If receiving a "conflicting files" error, note that pacman will overwrite manually-installed software if supplied with the `--force` switch (`pacman -S --force`). See [Pacman tips#Identify files not owned by any package](/index.php/Pacman_tips#Identify_files_not_owned_by_any_package "Pacman tips") for a script that searches the file system for *disowned* files.
 
 **تحذير:** Take care when using the `--force` switch because it can cause major problems if used improperly.
 
@@ -483,7 +481,7 @@ In the case that pacman is broken beyond repair, manually download the necessary
 
 Most likely your initramfs got broken during a kernel update (improper use of pacman's `--force` option can be a cause). You have two options:
 
-**1.** Try the _Fallback_ entry.
+**1.** Try the *Fallback* entry.
 
 **Tip:** In case you removed this entry for whatever reason, you can always press the `Tab` key when the bootloader menu shows up (for Syslinux) or `e` (for GRUB), rename it `initramfs-linux-fallback.img` and press `Enter` or `b` (depending on your bootloader) to boot with the new parameters.
 
@@ -520,7 +518,6 @@ error: failed to commit transaction (invalid or corrupted package (PGP signature
 Errors occured, no packages were upgraded. 
 
 ```
-
 It happens when the system clock is wrong. Set the [time](/index.php/Time "Time") and run: `# hwclock -w` before to try to install/upgrade a package again.
 
 ### I keep getting a "failed to commit transaction (invalid or corrupted package)" error

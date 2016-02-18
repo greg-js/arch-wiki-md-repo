@@ -1,4 +1,4 @@
-_Particionar_ un disco duro significa dividir lógicamente el espacio disponible en secciones a las que se puede acceder de forma independiente una de otra.
+*Particionar* un disco duro significa dividir lógicamente el espacio disponible en secciones a las que se puede acceder de forma independiente una de otra.
 
 Un disco duro completo se puede o bien asignar a una sola partición, o bien se puede dividir el espacio de almacenamiento disponible en varias particiones. La existencia de una variedad de escenarios requieren la creación de múltiples particiones: dual o multi-arranque, por ejemplo, o el mantenimiento de un partición [swap](/index.php/Swap "Swap"). En otros casos, la partición se utiliza como un medio para guardar datos separados lógicamente, como crear particiones para guardar los archivos de audio y vídeo. Los esquemas de particionado más comunes se tratan con más detalle a continuación.
 
@@ -49,7 +49,7 @@ Existen tres tipos de particiones de disco:
 
 La particiones **primarias** pueden ser todas configuradas como booteables (de arranque) y están limitadas a cuatro por disco o volumen RAID. Si un esquema de particionado necesita más de cuatro particiones, se utilizará una partición **extendida** para contener particiones **lógicas**. Las particiones extendidas están pensadas para contener particiones lógicas. Un disco duro no puede contener más de una partición extendida. La partición extendida también se cuenta como una partición primaria, por lo que si el disco tiene una partición extendida, solo son posibles tres particiones primarias adicionales (es decir, tres particiones primarias y una partición extendida). El número de particiones lógicas que pueden residir en una partición extendida es ilimitado. Un sistema de arranque dual con Windows requiere que Windows resida en una partición primaria.
 
-El esquema de numeración habitual es crear particiones primarias _sda1_ a _sda3_, seguido de una partición extendida _sda4_. Las particiones lógicas en _sda4_ son numeradas como _sda5_, _sda6_, etc.
+El esquema de numeración habitual es crear particiones primarias *sda1* a *sda3*, seguido de una partición extendida *sda4*. Las particiones lógicas en *sda4* son numeradas como *sda5*, *sda6*, etc.
 
 Véase también [Wikipedia:es:Master boot record](https://en.wikipedia.org/wiki/es:Master_boot_record "wikipedia:es:Master boot record").
 
@@ -67,7 +67,7 @@ Véase también [Wikipedia:es:Btrfs](https://en.wikipedia.org/wiki/es:Btrfs "wik
 
 ### Elegir entre GPT y MBR
 
-[GUID Partition Table (Español)](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)") (GPT) es una alternativa, el estilo de partición actual. Tiene la intención de sustituir el viejo sistema [Master Boot Record (Español)](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)") (MBR). GPT tiene varias ventajas sobre el MBR, que tiene peculiaridades que datan de tiempos de MS-DOS. Con los desarrollos recientes en el formato de las herramientas _fdisk_ (MBR) y _gdisk_ (GPT), es igual de fácil usar GPT o MBR y obtener el máximo rendimiento.
+[GUID Partition Table (Español)](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)") (GPT) es una alternativa, el estilo de partición actual. Tiene la intención de sustituir el viejo sistema [Master Boot Record (Español)](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)") (MBR). GPT tiene varias ventajas sobre el MBR, que tiene peculiaridades que datan de tiempos de MS-DOS. Con los desarrollos recientes en el formato de las herramientas *fdisk* (MBR) y *gdisk* (GPT), es igual de fácil usar GPT o MBR y obtener el máximo rendimiento.
 
 La elección básicamente se reduce a esto:
 
@@ -97,7 +97,7 @@ Los puntos de montaje siguientes son opciones posibles para particiones separada
 
 #### Partición root
 
-El directorio raíz está en la parte superior de la jerarquía, el punto en el que está montado el sistema de archivos principal y de la que se derivan todos los demás sistemas de archivos. Todos los archivos y directorios aparecen debajo del directorio raíz _`/`_, incluso si están almacenados en diferentes dispositivos físicos. El contenido del sistema de archivos raíz debe ser adecuado para arrancar, restaurar, recuperar y/o reparar el sistema. Por lo tanto, ciertos directorios de _`/`_ no son candidatos para particiones separadas.
+El directorio raíz está en la parte superior de la jerarquía, el punto en el que está montado el sistema de archivos principal y de la que se derivan todos los demás sistemas de archivos. Todos los archivos y directorios aparecen debajo del directorio raíz *`/`*, incluso si están almacenados en diferentes dispositivos físicos. El contenido del sistema de archivos raíz debe ser adecuado para arrancar, restaurar, recuperar y/o reparar el sistema. Por lo tanto, ciertos directorios de *`/`* no son candidatos para particiones separadas.
 
 La partición `/` o la partición raíz es necesaria y es la más importante. Las otras particiones pueden ser reemplazadas por ella.
 
@@ -121,17 +121,17 @@ No es buena práctica compartir directorios entre usuarios de diferentes distrib
 
 El directorio `/var` guarda datos de variables como archivos y directorios spool, datos administrativos y de registro, caché de [pacman](/index.php/Pacman "Pacman"), el árbol [ABS](/index.php/Arch_Build_System "Arch Build System"), etc. Es utilizada, por ejemplo, para el almacenamiento de la caché y del registro, y, por lo tanto, leído o escrito con frecuencia. El que todo quede en una partición separada evita quedarse sin espacio en el disco debido a los registros flunky, etc.
 
-Si existe, es posible montar _`/usr`_ como solo lectura. Todo lo que históricamente fue a _`/usr`_ escrito durante las operaciones del sistema (en oposición a la instalación y mantenimiento del software) deben residir en _`/var`_.
+Si existe, es posible montar *`/usr`* como solo lectura. Todo lo que históricamente fue a *`/usr`* escrito durante las operaciones del sistema (en oposición a la instalación y mantenimiento del software) deben residir en *`/var`*.
 
 **Nota:** `/var` contiene muchos archivos pequeños. La elección del tipo de sistema de archivos (véase más abajo) debe tener esto en cuenta si se crea como partición separada.
 
 #### /tmp
 
-De hecho es una partición separada por defecto, en virtud de ser montado como _tmpfs_ por systemd.
+De hecho es una partición separada por defecto, en virtud de ser montado como *tmpfs* por systemd.
 
 #### Swap
 
-El partición [swap](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)") proporciona una memoria que se puede utilizar como RAM virtual. También puede ser considerado el uso de un [archivo swap](/index.php/Swapfile "Swapfile") ya que no tienen casi ninguna diferencia de rendimiento en comparación con una partición, pero son mucho más fáciles de redimensionar según sea necesario. Una partición swap puede ser _potencialmente_ compartida entre distintos sistemas operativos, pero no si se utiliza la hibernación.
+El partición [swap](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)") proporciona una memoria que se puede utilizar como RAM virtual. También puede ser considerado el uso de un [archivo swap](/index.php/Swapfile "Swapfile") ya que no tienen casi ninguna diferencia de rendimiento en comparación con una partición, pero son mucho más fáciles de redimensionar según sea necesario. Una partición swap puede ser *potencialmente* compartida entre distintos sistemas operativos, pero no si se utiliza la hibernación.
 
 #### ¿Qué tamaño deben tener las particiones?
 
@@ -178,7 +178,7 @@ El tamaño de las particiones es una cuestión de preferencia personal, pero la 
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
-**Advertencia:** La primera partición creada por _cfdisk_ comienza en el sector 63, en lugar de los habituales 2048\. Esto puede conducir a una reducción del rendimiento en el SSD y en las unidades (sector 4k) de formato avanzado. También causará problemas con [GRUB](/index.php/GRUB_(Espa%C3%B1ol)#Mensaje_de_error_msdos-style "GRUB (Español)"). En cambio, grub-legacy y syslinux deberían funcionar bien.
+**Advertencia:** La primera partición creada por *cfdisk* comienza en el sector 63, en lugar de los habituales 2048\. Esto puede conducir a una reducción del rendimiento en el SSD y en las unidades (sector 4k) de formato avanzado. También causará problemas con [GRUB](/index.php/GRUB_(Espa%C3%B1ol)#Mensaje_de_error_msdos-style "GRUB (Español)"). En cambio, grub-legacy y syslinux deberían funcionar bien.
 
 *   **gdisk** — Versión de fdisk para [GPT](/index.php/GPT "GPT").
 
@@ -210,15 +210,15 @@ El tamaño de las particiones es una cuestión de preferencia personal, pero la 
 
 ## Alineamiento de las particiones
 
-La alineación adecuada de la partición es esencial para obtener un rendimiento óptimo y duradero. Esta es definida por la naturaleza del [bloque](https://en.wikipedia.org/wiki/Block_(data_storage) "wikipedia:Block (data storage)") de cada operación de E/S a nivel del hardware en combinación con el sistema de archivos. La clave para el alineamiento es particionar según (al menos) el _tamaño del bloque_ dado, que va a depender del hardware utilizado. Si las particiones no están alineadas para comenzar con múltiplos del _tamaño del bloque_, el alineamiento del sistema de archivos será un ejercicio estéril, porque todo estará sesgado por el desplazamiento inicial de la partición.
+La alineación adecuada de la partición es esencial para obtener un rendimiento óptimo y duradero. Esta es definida por la naturaleza del [bloque](https://en.wikipedia.org/wiki/Block_(data_storage) de cada operación de E/S a nivel del hardware en combinación con el sistema de archivos. La clave para el alineamiento es particionar según (al menos) el *tamaño del bloque* dado, que va a depender del hardware utilizado. Si las particiones no están alineadas para comenzar con múltiplos del *tamaño del bloque*, el alineamiento del sistema de archivos será un ejercicio estéril, porque todo estará sesgado por el desplazamiento inicial de la partición.
 
 ### Unidades de disco duro
 
-Tradicionalmente, los discos duros se trataron mediante la indicación del _cilindro_, el _cabezal_ y el _sector_ en el que los datos se iban a leer o escribir (también conocido como [CHS addressing](https://en.wikipedia.org/wiki/es:Cylinder-head-sector "wikipedia:es:Cylinder-head-sector")). Estos representaban la posición radial, la cabeza de la unidad (disco y laterales) y la posición axial de los datos, respectivamente. Hoy en día, con el [direccionamiento de bloque lógico](https://en.wikipedia.org/wiki/es:Logical_block_addressing "wikipedia:es:Logical block addressing"), todo el disco duro es tratado como un flujo continuo de datos y el término [sector](https://en.wikipedia.org/wiki/Disk_sector "wikipedia:Disk sector") designa la unidad más pequeña identificable.
+Tradicionalmente, los discos duros se trataron mediante la indicación del *cilindro*, el *cabezal* y el *sector* en el que los datos se iban a leer o escribir (también conocido como [CHS addressing](https://en.wikipedia.org/wiki/es:Cylinder-head-sector "wikipedia:es:Cylinder-head-sector")). Estos representaban la posición radial, la cabeza de la unidad (disco y laterales) y la posición axial de los datos, respectivamente. Hoy en día, con el [direccionamiento de bloque lógico](https://en.wikipedia.org/wiki/es:Logical_block_addressing "wikipedia:es:Logical block addressing"), todo el disco duro es tratado como un flujo continuo de datos y el término [sector](https://en.wikipedia.org/wiki/Disk_sector "wikipedia:Disk sector") designa la unidad más pequeña identificable.
 
 ### Unidades de estado sólido
 
-Las unidades de estado sólido se basan en [memorias flash](https://en.wikipedia.org/wiki/es:Flash_memory "wikipedia:es:Flash memory"), y, por lo tanto, difieren significativamente de los discos duros. Mientras que la lectura sigue siendo posible en forma de acceso aleatorio, el borrado (de ahí la reescritura y la escritura aleatoria) es solo posible por [bloques enteros](https://en.wikipedia.org/wiki/Flash_memory#Block_erasure "wikipedia:Flash memory"). Además, el _tamaño del bloque de borrado_ (EBS) es significativamente mayor que el _tamaño del bloque_ tradicional, por ejemplo 128KiB vs. 4KiB, por lo que la alineación ha de hacerse a múltiplos de EBS.
+Las unidades de estado sólido se basan en [memorias flash](https://en.wikipedia.org/wiki/es:Flash_memory "wikipedia:es:Flash memory"), y, por lo tanto, difieren significativamente de los discos duros. Mientras que la lectura sigue siendo posible en forma de acceso aleatorio, el borrado (de ahí la reescritura y la escritura aleatoria) es solo posible por [bloques enteros](https://en.wikipedia.org/wiki/Flash_memory#Block_erasure "wikipedia:Flash memory"). Además, el *tamaño del bloque de borrado* (EBS) es significativamente mayor que el *tamaño del bloque* tradicional, por ejemplo 128KiB vs. 4KiB, por lo que la alineación ha de hacerse a múltiplos de EBS.
 
 ### Herramientas de particionado
 
@@ -241,17 +241,17 @@ Para verificar que una partición está alineada, se puede consultar con `/usr/b
 
 ### Resumen del uso de gdisk
 
-Usando GPT, la utilidad para editar la tabla de particiones se llama `fdisk`. Esta realiza la alineación de la partición de forma automática al sector 2048 (o 1024KiB), base del tamaño del bloque, que tendría que ser compatible con la gran mayoría de los SSD, si no todos. GNU Parted también soporta GPT, pero es [menos fácil de usar](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) para alinear las particiones. El entorno proporcionado por la ISO de instalación de Arch Linux incluye la orden _gdisk_. Si la necesita más adelante, una vez instalado el sistema, puede obtener _gdisk_ a través del paquete [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk).
+Usando GPT, la utilidad para editar la tabla de particiones se llama `fdisk`. Esta realiza la alineación de la partición de forma automática al sector 2048 (o 1024KiB), base del tamaño del bloque, que tendría que ser compatible con la gran mayoría de los SSD, si no todos. GNU Parted también soporta GPT, pero es [menos fácil de usar](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) para alinear las particiones. El entorno proporcionado por la ISO de instalación de Arch Linux incluye la orden *gdisk*. Si la necesita más adelante, una vez instalado el sistema, puede obtener *gdisk* a través del paquete [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk).
 
 He aquí un resumen del uso típico de `gdisk`:
 
-*   Inicie `gdisk` sobre la unidad en cuestión como root (el _dispositivo-disco_ puede ser, por ejemplo, `/dev/sda`).
+*   Inicie `gdisk` sobre la unidad en cuestión como root (el *dispositivo-disco* puede ser, por ejemplo, `/dev/sda`).
 
-	 `# gdisk _dispositivo-disco_` 
+	 `# gdisk *dispositivo-disco*` 
 
 *   Si el disco es nuevo o si quiere volver a empezar, cree una nueva tabla de particiones GUID vacía (esto es, GPT) con la orden `o`.
 *   Cree una nueva partición con la orden `n` (primary type/1st partition).
-*   Suponiendo que la partición es nueva, _gdisk_ elegirá la alineación más alta posible. De lo contrario, tomará la mayor posible después de obtener la media compensando todas las particiones.
+*   Suponiendo que la partición es nueva, *gdisk* elegirá la alineación más alta posible. De lo contrario, tomará la mayor posible después de obtener la media compensando todas las particiones.
 *   Si elige iniciar en un sector antes del 2048, gdisk cambiará automáticamente el inicio de la partición para el sector 2048 del disco. Esto es para asegurar una alineación de 2048 sectores (como un sector es de 512B, esto supone una alineación a 1024KiB, que debería ajustarse a cualquier bloque de borrado NAND de SSD).
 *   Use el formato `+x{M,G}` para extender la partición `x` megabytes o gigabytes. Si la elección del tamaño no es un múltiplo de 1024 (tamaño de la alineación -1024kiB-), gdisk reducirá la partición al múltiplo más cercano inferior. Por ejemplo, si desea crear una partición de 15GiB, debe escribir `+15G`.
 *   Seleccione el identificador del tipo de la partición, el valor predeterminado, `Linux/Windows data` (código `0700`), debería estar bien para la mayoría de los casos. Pulse `L` para mostrar la lista de códigos. Si planea utilizar LVM, seleccione `Linux LVM` (`8e00`).
@@ -263,13 +263,13 @@ He aquí un resumen del uso típico de `gdisk`:
 
 Usando MBR, la utilidad para la edición de la tabla de particiones se llama `fdisk`. Las versiones recientes de fdisk han abandonado el sistema obsoleto del uso de cilindros como unidad de referencia por defecto, así como la compatibilidad con MS-DOS de forma predeterminada. La última versión de fdisk alinea automáticamente todas las particiones al sector 2048, o 1024 Kb, que debe funcionar para todos los tamaños de EBS conocidos, por ser los utilizados por los fabricantes de SSD. Esto significa que la configuración por defecto le dará una alineación correcta.
 
-Tenga en cuenta que antes, _fdisk_ utilizaba los cilindros como la unidad de referencia por defecto, y mantuvo sin sentido la compatibilidad con MS-DOS que introdujo para la alineación de SSD. Por lo tanto, encontrará muchas guías en Internet de 2008-2009, que siguen esta tendencia haciendole entender que todo está correcto. Con la última versión de fdisk, las cosas son mucho más simples, como se refleja en esta guía.
+Tenga en cuenta que antes, *fdisk* utilizaba los cilindros como la unidad de referencia por defecto, y mantuvo sin sentido la compatibilidad con MS-DOS que introdujo para la alineación de SSD. Por lo tanto, encontrará muchas guías en Internet de 2008-2009, que siguen esta tendencia haciendole entender que todo está correcto. Con la última versión de fdisk, las cosas son mucho más simples, como se refleja en esta guía.
 
 ### Resumen del uso de fdisk
 
-*   Inicie `fdisk` sobre la unidad como root (el _dispositivo-disco_ puede ser, por ejemplo, `/dev/sda`):
+*   Inicie `fdisk` sobre la unidad como root (el *dispositivo-disco* puede ser, por ejemplo, `/dev/sda`):
 
-	 `# fdisk _dispositivo-disco_` 
+	 `# fdisk *dispositivo-disco*` 
 
 *   Si el disco es nuevo o desea empezar de cero, cree una nueva tabla de partición DOS vacía con la orden `o`.
 *   Cree una nueva partición con la orden `n` (primary type/1st partition).

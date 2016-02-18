@@ -65,7 +65,6 @@ $ grub-mkconfig -o /boot/efi/grub/grub.cfg
 4\. Make certain appropriate changes have been made to grub.cfg. My working example, which could use cleaning:
 
  `/etc/grub.d/10_linux` 
-
 ```
 ### BEGIN /etc/grub.d/10_linux ###
 menuentry 'Arch Linux test'  {
@@ -174,7 +173,6 @@ If external screen is connected after bootup everything works fine.
 I had to manually add a modeline and set the preferred resolution with this script.
 
  `/usr/local/bin/dp-output` 
-
 ```
 # Monitor setup
 EXTERNAL_OUTPUT="DP1"
@@ -197,7 +195,6 @@ And add the script to startup at X-session start. Since I use [SLiM](/index.php/
 Get [KMS](/index.php/KMS "KMS") working by adding i915 to the modules line
 
  `/etc/mkinitcpio.conf`  `MODULES="i915"` 
-
 ```
 $ mkinitcpio -p linux
 
@@ -224,7 +221,7 @@ See [fingerprint-gui](/index.php/Fingerprint-gui "Fingerprint-gui") for more inf
 
 * * *
 
-`lsusb` _output: 147e:2020 Upek TouchChip Fingerprint Coprocessor (WBF advanced mode)_
+`lsusb` *output: 147e:2020 Upek TouchChip Fingerprint Coprocessor (WBF advanced mode)*
 
 ### WWAN (Mobile broadband)
 
@@ -240,14 +237,13 @@ Tested OK with [NetworkManager](/index.php/NetworkManager "NetworkManager") with
 
 * * *
 
-`lsusb` _output: 0bdb:1926 Ericsson Business Mobile Networks BV_
+`lsusb` *output: 0bdb:1926 Ericsson Business Mobile Networks BV*
 
 ### GPS
 
 Install gpsd from extra and mbm-gpsd-git from AUR. Add this to the following file
 
  `/etc/udev/rules.d/99-mbm.rules` 
-
 ```
 ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="1926", ENV{ID_USB_INTERFACE_NUM}=="09", ENV{MBM_CAPABILITY}="gps_nmea"
 ATTRS{idVendor}=="0bdb", ATTRS{idProduct}=="1926", ENV{ID_USB_INTERFACE_NUM}=="03", ENV{MBM_CAPABILITY}="gps_ctrl"
@@ -270,7 +266,7 @@ See [this link](http://www.thinkwiki.org/wiki/Ericsson_H5321_gw_Mobile_Broadband
 
 * * *
 
-`lsusb` _output: 0bdb:1926 Ericsson Business Mobile Networks BV_
+`lsusb` *output: 0bdb:1926 Ericsson Business Mobile Networks BV*
 
 ### Keyboard backlight
 

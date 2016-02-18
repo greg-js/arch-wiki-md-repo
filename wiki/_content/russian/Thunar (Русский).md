@@ -115,8 +115,8 @@ Multimedia - Audio CDs: `amarok --cdplay %d`
 This marks the named objects for automatic export to the environment of subsequently executed commands:
 
 ```
-export USERSHARES_DIR="/var/lib/samba/_usershares_"
-export USERSHARES_GROUP="_sambashare_"
+export USERSHARES_DIR="/var/lib/samba/*usershares*"
+export USERSHARES_GROUP="*sambashare*"
 
 ```
 
@@ -141,7 +141,7 @@ chown root:${USERSHARES_GROUP} ${USERSHARES_DIR}
 
 ```
 
-Измените разрешения папки с общими файлами так, чтобы пользователи в группе _sambashare_ могли читать, писать и выполнять файлы:
+Измените разрешения папки с общими файлами так, чтобы пользователи в группе *sambashare* могли читать, писать и выполнять файлы:
 
 ```
 chmod 01770 ${USERSHARES_DIR}
@@ -201,10 +201,10 @@ chmod 01770 ${USERSHARES_DIR}
 
 ```
 
-Сохраните файл. Затем добавьте вашего пользователя в группу _sambashares_:
+Сохраните файл. Затем добавьте вашего пользователя в группу *sambashares*:
 
 ```
-gpasswd -a _имя пользователя_ ${USERSHARES_GROUP}
+gpasswd -a *имя пользователя* ${USERSHARES_GROUP}
 
 ```
 
@@ -217,7 +217,7 @@ gpasswd -a _имя пользователя_ ${USERSHARES_GROUP}
 
 Выйдите из системы и войдите снова. Теперь у вас есть возможность щёлкнуть правой кнопкой на любой папке и открыть к ней доступ из сети.
 
-Для того, чтобы samba запускалась во время загрузки компьютера, добавьте _samba_ в список демонов в файл `/etc/rc.conf`.
+Для того, чтобы samba запускалась во время загрузки компьютера, добавьте *samba* в список демонов в файл `/etc/rc.conf`.
 
 Если вы хотите узнать больше, загляните на страницу [Samba](/index.php/Samba_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Samba (Русский)")
 
@@ -238,7 +238,7 @@ thunar --daemon &
 
 ### Исправление отображения русских букв
 
-В общесистемном `/etc/xdg/xfce4/mount.rc` или в пользовательском файле `~/.config/xfce4/mount.rc` добавьте _utf8=true_ в секции файловых систем, с которыми имеет место проблема. Например:
+В общесистемном `/etc/xdg/xfce4/mount.rc` или в пользовательском файле `~/.config/xfce4/mount.rc` добавьте *utf8=true* в секции файловых систем, с которыми имеет место проблема. Например:
 
 ```
 [vfat]

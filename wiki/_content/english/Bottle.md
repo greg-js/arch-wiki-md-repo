@@ -1,6 +1,6 @@
 From [Bottle: Python Web Framework](http://bottlepy.org/docs/dev/):
 
-	_Bottle is a fast, simple and lightweight WSGI micro web-framework for Python. It is distributed as a single file module and has no dependencies other than the Python Standard Library._
+	*Bottle is a fast, simple and lightweight WSGI micro web-framework for Python. It is distributed as a single file module and has no dependencies other than the Python Standard Library.*
 
 ## Contents
 

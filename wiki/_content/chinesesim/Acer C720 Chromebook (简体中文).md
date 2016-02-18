@@ -94,7 +94,6 @@ Gnome 用户可以在 Gnome 控制中心的鼠标与触摸板部分进行设置�
 您也可以手动编辑配置文件进行设置
 
  `/etc/X11/xorg.conf.d/50-cros-touchpad.conf` 
-
 ```
 Section "InputClass" 
     Identifier      "touchpad peppy cyapa" 
@@ -129,7 +128,6 @@ Chromebook 将 F1 到 F10 绑定到了各种方便的快捷键，您也可以使
 也可以创建一个 .asoundrc 文件，
 
  `~/.asoundrc` 
-
 ```
 # Standard
 pcm.!default {
@@ -173,7 +171,6 @@ pcm.plugj {
 因为由于 Chromebook 的电源键就在键盘右上角，很容易误触。可以忽略按下电源键以及关闭屏幕时的关机或休眠，编辑`logind.conf`：
 
  `/etc/systemd/logind.conf` 
-
 ```
 HandlePowerKey=ignore
 HandleLidSwitch=ignore

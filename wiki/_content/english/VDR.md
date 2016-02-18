@@ -156,7 +156,7 @@ $ makepkg
 
 ```
 
-The VDR package's install script will create a special user called _vdr_, especially for running VDR. The vdr user will be added to the video group so that it can access DVB cards and should own VDR's configuration files in /etc/vdr and the recordings and Electronic Programme Guide (EPG) directories /var/spool/video and /var/spool/epg.
+The VDR package's install script will create a special user called *vdr*, especially for running VDR. The vdr user will be added to the video group so that it can access DVB cards and should own VDR's configuration files in /etc/vdr and the recordings and Electronic Programme Guide (EPG) directories /var/spool/video and /var/spool/epg.
 
 ### DVB Card Kernel Modules and Firmware
 

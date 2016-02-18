@@ -1,6 +1,6 @@
 From [Postfix's site](http://www.postfix.org/):
 
-	_Postfix attempts to be fast, easy to administer, and secure, while at the same time being sendmail compatible enough to not upset existing users. Thus, the outside has a sendmail-ish flavor, but the inside is completely different._
+	*Postfix attempts to be fast, easy to administer, and secure, while at the same time being sendmail compatible enough to not upset existing users. Thus, the outside has a sendmail-ish flavor, but the inside is completely different.*
 
 The goal of this article is to setup Postfix and explain what the basic configuration files do. There are instructions for setting up local system user-only delivery and a link to a guide for virtual user delivery.
 
@@ -99,7 +99,6 @@ See [this page](http://www.postfix.org/TLS_README.html) for more information abo
 	 `home_mailbox = Maildir/` 
 
 **Warning:** If you plan on implementing SSL/TLS, please respond safely to [POODLE](http://disablessl3.com/) and [FREAK/Logjam](https://weakdh.org/sysadmin.html) by adding the following to your configuration:
-
 ```
 smtpd_tls_mandatory_protocols=!SSLv2,!SSLv3
 smtp_tls_mandatory_protocols=!SSLv2,!SSLv3
@@ -128,7 +127,7 @@ message_size_limit = 10240000
 
 You can specify aliases (also known as forwarders) in `/etc/postfix/aliases`.
 
-You need to map all mail addressed to _root_ to another account since it is not a good idea to read mail as root.
+You need to map all mail addressed to *root* to another account since it is not a good idea to read mail as root.
 
 Uncomment the following line, and change `you` to a real account.
 
@@ -151,8 +150,7 @@ newaliases
 
 ```
 
-**Tip:** Alternatively you can create the file `~/.forward`, e.g. `/root/.forward` for root. Specify the user to whom root mail should be forwarded, e.g. _user@localhost_. `/root/.forward` 
-
+**Tip:** Alternatively you can create the file `~/.forward`, e.g. `/root/.forward` for root. Specify the user to whom root mail should be forwarded, e.g. *user@localhost*. `/root/.forward` 
 ```
 user@localhost
 
@@ -247,7 +245,6 @@ Next, [install](/index.php/Install "Install") [postfixadmin](https://www.archlin
 Edit the PostfixAdmin configuration file:
 
  `/etc/webapps/postfixadmin/config.inc.php` 
-
 ```
 $CONF['configured'] = true;
 // correspond to dovecot maildir path /home/vmail/%d/%u 
@@ -267,7 +264,6 @@ $CONF['database_name'] = 'postfix_db';
 If installing dovecot and you changed the password scheme in dovecot (to SHA512-CRYPT for example), reflect that with postfix
 
  `/etc/webapps/postfixadmin/config.inc.php` 
-
 ```
 $CONF['encrypt'] = 'dovecot:SHA512-CRYPT';
 
@@ -276,7 +272,6 @@ $CONF['encrypt'] = 'dovecot:SHA512-CRYPT';
 As of dovecot 2, dovecotpw has been deprecated. You will also want to ensure that your config reflects the new binary name.
 
  `/etc/webapps/postfixadmin/config.inc.php` 
-
 ```
 $CONF['dovecotpw'] = "/usr/sbin/doveadm pw";
 
@@ -285,7 +280,6 @@ $CONF['dovecotpw'] = "/usr/sbin/doveadm pw";
 Create the Apache configuration file:
 
  `/etc/httpd/conf/extra/httpd-postfixadmin.conf` 
-
 ```
 Alias /postfixadmin "/usr/share/webapps/postfixAdmin"
 <Directory "/usr/share/webapps/postfixAdmin">
@@ -327,7 +321,6 @@ For more information, see [Postfix TLS Support](http://www.postfix.org/TLS_READM
 To enable STARTTLS over SMTP (port 587, the proper way of securing SMTP), add the following lines to `main.cf`
 
  `/etc/postfix/main.cf` 
-
 ```
 smtpd_tls_security_level = may
 smtpd_tls_cert_file = **/path/to/cert.pem**
@@ -343,7 +336,6 @@ The deprecated method of securing SMTP is using the **wrapper mode** which uses 
 To enable it uncomment the following lines in
 
  `/etc/postfix/master.cf` 
-
 ```
 smtps     inet  n       -       n       -       -       smtpd
   -o smtpd_tls_wrappermode=yes
@@ -362,7 +354,7 @@ smtps 465/udp # Secure SMTP
 If they are not there, go ahead and add them (replace the other listing for port 465). Otherwise Postfix will not start and you will get the following error:
 
 ```
-_postfix/master[5309]: fatal: 0.0.0.0:smtps: Servname not supported for ai_socktype_
+*postfix/master[5309]: fatal: 0.0.0.0:smtps: Servname not supported for ai_socktype*
 
 ```
 

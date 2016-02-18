@@ -1,6 +1,6 @@
 Dal [sito](http://wiki.lxde.org/en/PCManFM) del progetto:
 
-	_PCMan File Manager (PCManFM) è un'applicazione di file manager sviluppata da Hong Jen Yee da Taiwan che è destinata ad essere un sostituto di Nautilus, Konqueror e Thunar. Rilasciato sotto la GNU General Public License , PCManFM è un software libero . PCManFM è il file manager standard di [LXDE](/index.php/LXDE_(Italiano) "LXDE (Italiano)") , che è sviluppato sempre dallo stesso autore in collaborazione con altri sviluppatori._
+	*PCMan File Manager (PCManFM) è un'applicazione di file manager sviluppata da Hong Jen Yee da Taiwan che è destinata ad essere un sostituto di Nautilus, Konqueror e Thunar. Rilasciato sotto la GNU General Public License , PCManFM è un software libero . PCManFM è il file manager standard di [LXDE](/index.php/LXDE_(Italiano) "LXDE (Italiano)") , che è sviluppato sempre dallo stesso autore in collaborazione con altri sviluppatori.*
 
 ## Contents
 
@@ -104,13 +104,13 @@ Gli utenti meno esperti dovrebbero essere consapevoli che un file manager da sol
 
 ### Un clic per aprire cartelle e files
 
-Aprire PCManFM in modalità File Explorer, andare in _Modifica> Preferenze>Generali>Comportamento_, e selezionare _Apri i file con un solo click_. Questa opzione funziona anche con le icone del desktop.
+Aprire PCManFM in modalità File Explorer, andare in *Modifica> Preferenze>Generali>Comportamento*, e selezionare *Apri i file con un solo click*. Questa opzione funziona anche con le icone del desktop.
 
 ### Aprire ed estrarre archivi con PCManFM
 
 Installare [file-roller](https://www.archlinux.org/packages/?name=file-roller) o [xarchiver](https://www.archlinux.org/packages/?name=xarchiver) dagli official repositories.
 
-Aprire PCManFM in modalità File Explorer, andare in _Modifica> Preferenze>Avanzate_, selezionare _Integrazione Archivi_ e selezionare l'archiviatore installato.
+Aprire PCManFM in modalità File Explorer, andare in *Modifica> Preferenze>Avanzate*, selezionare *Integrazione Archivi* e selezionare l'archiviatore installato.
 
 ## Risoluzione dei problemi
 
@@ -128,7 +128,7 @@ export XDG_CURRENT_DESKTOP=LXDE
 
 Si può provare questo metodo: Eliminare tutti i file presenti nella cartella `$HOME/.cache/menu` ed eseguire nuovamente PCManFM.
 
-PCManFM richiede la variabile di ambiente _XDG_MENU_PREFIX_ da impostare. Il valore della variabile deve essere contenuta all'inizio di un file presente nella cartella `/etc/xdg/menus/`. Ad esempio è possibile impostare il valore nel file `xinitrc` con la riga:
+PCManFM richiede la variabile di ambiente *XDG_MENU_PREFIX* da impostare. Il valore della variabile deve essere contenuta all'inizio di un file presente nella cartella `/etc/xdg/menus/`. Ad esempio è possibile impostare il valore nel file `xinitrc` con la riga:
 
 ```
 export XDG_MENU_PREFIX="lxde-"
@@ -150,7 +150,7 @@ gtk-icon-theme-name = "oxygen"
 
 **Note:** Tutte le istanze di PCManFM devono essere riavviate per applicare le modifiche!
 
-Altrimenti, utilizzare un diverso tema (_gnome_, _hicolor_, e _locolor_ non funzionano). Per elencare tutti i temi di icone installati, digitare il seguente comando:
+Altrimenti, utilizzare un diverso tema (*gnome*, *hicolor*, e *locolor* non funzionano). Per elencare tutti i temi di icone installati, digitare il seguente comando:
 
 ```
 $ ls ~/.icons/ /usr/share/icons/
@@ -210,7 +210,7 @@ $ chmod 777 ~/.config/libfm/libfm.conf
 
 ### Memorizzare impostazioni Ordine files preferite
 
-È possibile utilizzare _Visualizza>Ordina file_ per cambiare l' ordine in cui PCManFM elenca i file, ma le impostazioni saranno cancellate al successivo avvio di PCManFM. Per memorizzarle, andare su _Modifica> Preferenze_ e _Chiudi_. Questo scriverà i valori sort_type e sort_by correnti in `~/.config/pcmanfm/LXDE/pcmanfm.conf`.
+È possibile utilizzare *Visualizza>Ordina file* per cambiare l' ordine in cui PCManFM elenca i file, ma le impostazioni saranno cancellate al successivo avvio di PCManFM. Per memorizzarle, andare su *Modifica> Preferenze* e *Chiudi*. Questo scriverà i valori sort_type e sort_by correnti in `~/.config/pcmanfm/LXDE/pcmanfm.conf`.
 
 ### Errore "Non autorizzato" all'accesso/montaggio di unità USB
 

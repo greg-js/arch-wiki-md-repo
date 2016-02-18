@@ -1,6 +1,6 @@
 Tomado de la [pagina de MATE](http://mate-desktop.org/):
 
-	_MATE Desktop Environment es la continuación de GNOME 2\. Proporciona un entorno de escritorio atractivo e intuitivo utilizando metáforas tradicionales para Linux y otros sistemas operativos Unix. MATE está [bajo desarrollo activo](https://github.com/mate-desktop) de añadir soporte para nuevas tecnologías, preservando una experiencia de escritorio tradicional._
+	*MATE Desktop Environment es la continuación de GNOME 2\. Proporciona un entorno de escritorio atractivo e intuitivo utilizando metáforas tradicionales para Linux y otros sistemas operativos Unix. MATE está [bajo desarrollo activo](https://github.com/mate-desktop) de añadir soporte para nuevas tecnologías, preservando una experiencia de escritorio tradicional.*
 
 ## Contents
 
@@ -86,7 +86,7 @@ MATE puede iniciarse mediante un gestor de pantalla o manualmente.
 
 ### Acceso grafico
 
-Seleccione _MATE_ en el menú del [gestor de pantalla](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)") que ha elegido. El equipo de MATE recomienda [LightDM](/index.php/LightDM "LightDM") con el greeter GTK como el gestor de pantalla, que puede ser instalado con el paquete [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter).
+Seleccione *MATE* en el menú del [gestor de pantalla](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)") que ha elegido. El equipo de MATE recomienda [LightDM](/index.php/LightDM "LightDM") con el greeter GTK como el gestor de pantalla, que puede ser instalado con el paquete [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter).
 
 ### Manualmente
 
@@ -156,10 +156,9 @@ $ dconf write /org/mate/marco/general/center-new-windows true
 
 Debido a una condición de carrera, la sombra del panel no aparece luego de iniciar sesión en el escritorio MATE, incluso con la composición habilitada. [[1]](https://github.com/mate-desktop/mate-panel/issues/193)
 
-Agregue un retraso a _marco_:
+Agregue un retraso a *marco*:
 
  `/usr/share/applications/marco.desktop` 
-
 ```
 X-MATE-Autostart-Phase=**Applications**
 **X-MATE-Autostart-Delay=2**
@@ -175,5 +174,5 @@ Si esto no tiene efecto, aumentar la duración de retraso.
 
 *   [Página oficial de MATE](http://mate-desktop.org)
 *   [Wiki de MATE para Arch Linux](http://wiki.mate-desktop.org/archlinux_custom_repo)
-*   [_Imágenes del escritorio MATE_](http://mate-desktop.org/gallery/1.8/)
-*   [_The MATE Desktop Environment_](https://bbs.archlinux.org/viewtopic.php?pid=1018647) - Hilo del foro de Arch Linux acerca de MATE
+*   [*Imágenes del escritorio MATE*](http://mate-desktop.org/gallery/1.8/)
+*   [*The MATE Desktop Environment*](https://bbs.archlinux.org/viewtopic.php?pid=1018647) - Hilo del foro de Arch Linux acerca de MATE

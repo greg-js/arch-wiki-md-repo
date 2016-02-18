@@ -45,14 +45,14 @@ Create a script file `corkscrewtunnel.sh`
 ```
 #! /bin/bash
 
-corkscrew _proxyhost_ _proxyport_ $*
+corkscrew *proxyhost* *proxyport* $*
 
 ```
 
 Set `GIT_PROXY_COMMAND`
 
 ```
-export GIT_PROXY_COMMAND=_path-to-corkscrewtunnel.sh_
+export GIT_PROXY_COMMAND=*path-to-corkscrewtunnel.sh*
 
 ```
 

@@ -175,7 +175,7 @@ En el siguiente inicio de KDE, este iniciará fusion-icon automáticamente.
 
 #### Método 1 – Link para inicio automático
 
-*   Puede asegurarse de que Compiz Fusion siempre iniciará al iniciar sesión añadiendo un archivo .desktop al directorio de inicio automático de KDE. Cree el archivo _~/.kde/Autostart/compiz.desktop_ con el siguiente contenidos:
+*   Puede asegurarse de que Compiz Fusion siempre iniciará al iniciar sesión añadiendo un archivo .desktop al directorio de inicio automático de KDE. Cree el archivo *~/.kde/Autostart/compiz.desktop* con el siguiente contenidos:
 
 ```
 [Desktop Entry] 
@@ -188,7 +188,7 @@ X-KDE-autostart-after=kdesktop
 
 ```
 
-*   Si quiere usar la aplicación opcional `fusion-icon`, solo ejecute _fusion-icon_. Si termina la sesión de manera normal con “fusion-icon” corriendo, KDE debería restaurar su sesión y lanzar _fusion-icon_ la próxima ves que inicie sesión si la opción esta activada . Si no parece estar funcionando, asegúrese de tener la siguiente linea en _~/.kde/share/config/ksmserverrc_:
+*   Si quiere usar la aplicación opcional `fusion-icon`, solo ejecute *fusion-icon*. Si termina la sesión de manera normal con “fusion-icon” corriendo, KDE debería restaurar su sesión y lanzar *fusion-icon* la próxima ves que inicie sesión si la opción esta activada . Si no parece estar funcionando, asegúrese de tener la siguiente linea en *~/.kde/share/config/ksmserverrc*:
 
 ```
 loginMode=restorePreviousLogout 
@@ -523,7 +523,6 @@ LXDE intentará usar gestor de ventanas desde el archivo de configuración de us
 Reemplace el comando openbox-lxde con el gestor de ventanas de su elección:
 
  `~/.config/lxsession/LXDE/desktop.conf` 
-
 ```
 [Session]
 window_manager=openbox-lxde
@@ -532,7 +531,6 @@ window_manager=openbox-lxde
 Por compiz:
 
  `~/.config/lxsession/LXDE/desktop.conf` 
-
 ```
 [Session]
 window_manager=compiz ccp --indirect-rendering
@@ -598,7 +596,7 @@ y ver que devuelve la consola. Lo puede usar en todos los scripts que inician co
 
 ## Usando gtk-window-decorator
 
-Para utilizar gtk-window-decorator, instale el paquete _compiz-decorator-gtk_ y seleccione "GTK Window Decorator" en lugar de "Emerald" como su window decorator en fusion-icon o cualquier otro programa que este usando para configurar compiz.
+Para utilizar gtk-window-decorator, instale el paquete *compiz-decorator-gtk* y seleccione "GTK Window Decorator" en lugar de "Emerald" como su window decorator en fusion-icon o cualquier otro programa que este usando para configurar compiz.
 
 ## gconf: Configuraciones adicionales para Compiz
 

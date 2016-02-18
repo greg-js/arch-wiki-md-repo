@@ -165,7 +165,6 @@ The audit framework has an plugin system which provides the possibility to send 
 To send your logfiles to an remote host you need the `audisp-remote` plugin which comes automatically with the [audit](https://www.archlinux.org/packages/?name=audit) package. Activate the plugin:
 
  `/etc/audisp/plugins.d/au-remote.conf` 
-
 ```
 active = yes
 direction = out
@@ -177,7 +176,6 @@ format = string
 and set the remote host where the logs should be send to:
 
  `/etc/audisp/audisp-remote.conf` 
-
 ```
 remote_server = domain.name.or.ip
 port = 60
@@ -190,7 +188,6 @@ transport = tcp
 To make audit listen for remote audispds you just need to set the tcp options:
 
  `/etc/audit/auditd.conf` 
-
 ```
 tcp_listen_port = 60
 tcp_listen_queue = 5

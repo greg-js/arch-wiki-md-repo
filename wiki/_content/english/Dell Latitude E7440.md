@@ -81,7 +81,7 @@ This is actually a "feature" called Intel SpeedStep, that reduces performance in
 
 *   The O2 Micro SD-card reader may only work with linux>=3.14.
 
-*   ~~It seems that bluetooth on Intel 7260 is not working out of the box, but I don't know how to test it further. _Tested and seems to be working. Bluetooth is usable with "gnome-control-center bluetooth"._~~
+*   ~~It seems that bluetooth on Intel 7260 is not working out of the box, but I don't know how to test it further. *Tested and seems to be working. Bluetooth is usable with "gnome-control-center bluetooth".*~~
 
 *   Webcam does not work with Virtualbox (as of community/virtualbox 4.3.6-1), but it works with native programs such as skype.
 

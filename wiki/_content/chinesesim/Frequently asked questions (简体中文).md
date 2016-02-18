@@ -137,7 +137,6 @@ Arch使用滚动升级模式，只需执行一条命令，便可升级系统到�
 造成这种困惑的罪魁祸首，恐怕是`free`命令：
 
  `$ free -m` 
-
 ```
              total       used       free     shared    buffers     cached
 Mem:          1009        741        267          0        104        359
@@ -166,13 +165,13 @@ Swap:         1537          0       1537
 例如，要查看`glxinfo`在哪个包里面：
 
 ```
-$ pkgfile _file_name_
+$ pkgfile *file_name*
 
 ```
 
 ### Q) 我发现了某个软件包的错误，该怎么办？
 
-**A)** 首先你需要搞清楚Arch队伍是否能够解决这个错误。有时并非如此（Firefox崩溃也许是Mozilla开发团队的错误）——这便是所谓的_上游错误_。如果确实是Arch的问题，你可以采取以下步骤：
+**A)** 首先你需要搞清楚Arch队伍是否能够解决这个错误。有时并非如此（Firefox崩溃也许是Mozilla开发团队的错误）——这便是所谓的*上游错误*。如果确实是Arch的问题，你可以采取以下步骤：
 
 1.  在论坛中搜索有关信息。看是否有人已经注意到过。
 2.  根据 [Bugtracker](https://bugs.archlinux.org) 指导，提交[Bug报告](/index.php/Reporting_bug_guidelines "Reporting bug guidelines")。
@@ -207,7 +206,7 @@ $ pkgfile _file_name_
 **A)** 如果正在使用像[KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")和[GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")这样的软件包，程序一般会自动出现在菜单中。如果是命令行程序，则可使用如下命令查看可执行文件名称和位置：
 
 ```
-$ pacman -Qlq _package_name_ | grep /usr/bin/
+$ pacman -Qlq *package_name* | grep /usr/bin/
 
 ```
 
@@ -244,7 +243,7 @@ libbaz=1.5
 
 ### 我知道某个包已经更新,但是 pacman 并没有发现更新
 
-可能是 _pacman_ 镜像还没有同步,最好等等或是换个镜像服务器. [MirrorStatus](https://www.archlinux.org/mirrors/status/) 可以帮助你区分那些镜像服务器是最新的.
+可能是 *pacman* 镜像还没有同步,最好等等或是换个镜像服务器. [MirrorStatus](https://www.archlinux.org/mirrors/status/) 可以帮助你区分那些镜像服务器是最新的.
 
 ## 安装
 
@@ -265,10 +264,10 @@ libbaz=1.5
 **A)** 某些发行版和Arch相似，提供最小化安装。但必须指出几点：
 
 1.  Arch的基础被设计为一个轻量、小型的基本环境。
-2.  不论使用网络安装或是安装光盘，安装Arch的_唯一_方法是从最基本系统构建。
+2.  不论使用网络安装或是安装光盘，安装Arch的*唯一*方法是从最基本系统构建。
 3.  安装程序、基本系统、以及整个发行版，都遵从K.I.S.S.设计理念，这种理念使得Arch独一无二，适合其目标用户群。
 4.  服务和软件包的安装需要用户交互配置。和其它发行版自动配置服务和启动服务不同，Arch 中将这些任务交给用户自己完成。
-5.  Arch软件包都力求精简，对任何_可选_依赖，用户会得到提示，而不会被自动安装。这使得Arch颇为轻量。
+5.  Arch软件包都力求精简，对任何*可选*依赖，用户会得到提示，而不会被自动安装。这使得Arch颇为轻量。
 6.  Arch提供完善的文档，帮助用户搭建系统。
 
 ## 其他
@@ -288,7 +287,6 @@ libbaz=1.5
 如果安装字典也没用，可能是`enchant`出问题了。查看aspell识别到的词典文件：
 
  `$ aspell dicts` 
-
 ```
 en
 en_GB

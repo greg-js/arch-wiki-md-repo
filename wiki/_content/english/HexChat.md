@@ -46,7 +46,7 @@ For English this is [hunspell-en](https://www.archlinux.org/packages/?name=hunsp
 
 ### Missing tray icon
 
-If XChat was loaded _before_ the panel containing its icon, for example when the panel is forcibly reloaded, the icon may be invisible. [[1]](https://bugs.launchpad.net/ubuntu/+source/xchat/+bug/410525) To restore the icon, run:
+If XChat was loaded *before* the panel containing its icon, for example when the panel is forcibly reloaded, the icon may be invisible. [[1]](https://bugs.launchpad.net/ubuntu/+source/xchat/+bug/410525) To restore the icon, run:
 
 ```
 $ xchat --existing --command="set gui_tray 0"

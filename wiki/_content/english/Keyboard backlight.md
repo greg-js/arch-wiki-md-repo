@@ -5,7 +5,6 @@ You can control your computer keyboard backlight via the [D-Bus](/index.php/D-Bu
 Here is an example implementation in [Python](/index.php/Python "Python") 3. Place the following script in `/usr/local/bin/` and make it executable. You can then map your keyboard shortcuts to run `/usr/local/bin/kb-light.py +` and `/usr/local/bin/kb-light.py -` to increase and decrease your keyboard backlight level.
 
  `/usr/local/bin/kb-light.py` 
-
 ```
 #!/usr/bin/env python3
 
@@ -46,7 +45,6 @@ else:
 The keyboard backlight file is usually locked out from editing. To unlock this file at bootup, you will need to create a [systemd](/index.php/Systemd "Systemd") service.
 
  `/usr/lib/systemd/system/asus-kbd-backlight.service` 
-
 ```
 [Unit]
 Description=Asus Keyboard Backlight

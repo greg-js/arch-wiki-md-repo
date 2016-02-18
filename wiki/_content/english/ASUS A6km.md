@@ -61,7 +61,7 @@ See the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") for
 
 ## Wireless
 
-For wireless, can use the b43-fwcutter package to install the firmware, (run _lsmod_ command to check if the b43 module is running):
+For wireless, can use the b43-fwcutter package to install the firmware, (run *lsmod* command to check if the b43 module is running):
 
 ```
 # b43-fwcutter -w /lib/firmware /path_to_driver

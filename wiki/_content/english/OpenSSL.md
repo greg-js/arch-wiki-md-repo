@@ -71,9 +71,9 @@ CRLs are also signed with the CA key, but they only dictate information regardin
 
 ## Configuring
 
-The OpenSSL configuration file, conventionally placed in `/etc/ssl/openssl.cnf`, may appear complicated at first. This isn't remedied by the fact that there's no _include_ directive to split configuration into a modal setup. Nevertheless, this section covers the essential settings.
+The OpenSSL configuration file, conventionally placed in `/etc/ssl/openssl.cnf`, may appear complicated at first. This isn't remedied by the fact that there's no *include* directive to split configuration into a modal setup. Nevertheless, this section covers the essential settings.
 
-Remember that variables may be expanded in assignments, much like how shell scripts work. For a more thorough explanation of the configuration file format, see _config(5)_. In some operating systems, this [man](/index.php/Man "Man") page is named _openssl-config_ or _config(5ssl)_. Sometimes, it may not even be available through the man hierarchy at all, for example, it may be placed in the following location `/usr/share/openssl`.
+Remember that variables may be expanded in assignments, much like how shell scripts work. For a more thorough explanation of the configuration file format, see *config(5)*. In some operating systems, this [man](/index.php/Man "Man") page is named *openssl-config* or *config(5ssl)*. Sometimes, it may not even be available through the man hierarchy at all, for example, it may be placed in the following location `/usr/share/openssl`.
 
 ### Global variables
 
@@ -147,7 +147,7 @@ authorityKeyIdentifier=keyid:always,issuer:always
 
 Settings related to generating keys, requests and self-signed certificates.
 
-The req section is responsible for the DN prompts. A general misconception is the _Common Name_ (CN) prompt, which suggests that it should have the user's proper name as a value. End-user certificates need to have the **machine hostname** as CN, whereas CA should _not_ have a valid TLD, so that there's no chance that, between the possible combinations of certified end-users' CN and the CA certificate's, there's a match that could be misinterpreted by some software as meaning that the end-user certificate is self-signed. Some CA certificates do not even have a CN, such as [Equifax](http://www.equifax.com):
+The req section is responsible for the DN prompts. A general misconception is the *Common Name* (CN) prompt, which suggests that it should have the user's proper name as a value. End-user certificates need to have the **machine hostname** as CN, whereas CA should *not* have a valid TLD, so that there's no chance that, between the possible combinations of certified end-users' CN and the CA certificate's, there's a match that could be misinterpreted by some software as meaning that the end-user certificate is self-signed. Some CA certificates do not even have a CN, such as [Equifax](http://www.equifax.com):
 
 ```
 # subject= /C=US/O=Equifax/OU=Equifax Secure Certificate Authority

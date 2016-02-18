@@ -143,7 +143,7 @@ For at bruge denne prøvekonfiguration, skal du manuelt omdøbe den:
 
 ```
 
-_Tilføjelse_: Erfaringsvis opretter 'hwd' filen XF86Config-4, og Xorg bruger denne automatisk, hvis filen xorg.conf ikke eksisterer.
+*Tilføjelse*: Erfaringsvis opretter 'hwd' filen XF86Config-4, og Xorg bruger denne automatisk, hvis filen xorg.conf ikke eksisterer.
 
 ### xorgconfig
 
@@ -348,11 +348,11 @@ X-miljøet som standard er noget bart, og du vil sikkert installere noget vindue
 For at teste konfigurationsfilen, som du oprettede:
 
 ```
-$ X -config _<din konfigurationsfil>_
+$ X -config *<din konfigurationsfil>*
 
 ```
 
-Hvis der opstår et problem, kan du se loggen <tt>/var/log/Xorg.0.log</tt>. Kig efter linjer, der begynder med _(EE)_, der repræsenterer fejl, og også _(WW)_ som er advarsler, der kan indikere andre problemer.
+Hvis der opstår et problem, kan du se loggen <tt>/var/log/Xorg.0.log</tt>. Kig efter linjer, der begynder med *(EE)*, der repræsenterer fejl, og også *(WW)* som er advarsler, der kan indikere andre problemer.
 
 **Note:** For at benytte 'startx' skal du have en [~/.xinitrc](/index.php/Xinitrc "Xinitrc")-fil, så X ved, hvad den skal køre, når den starter.
 
@@ -421,12 +421,12 @@ Disse er inkluderet i mesa-pakken.
 
 Modulær X.Org 7 installerer alt i `/usr`, hvor ældre versioner installerede i `/usr/X11R6`. Adskillige konfigurationsfiler kræver opdatering:
 
-*   _/etc/X11/xorg.conf_
+*   */etc/X11/xorg.conf*
     *   Font-søgestier er nu i /usr/share/fonts
     *   RGB-databasen er i /usr/share/X11/rgb
     *   modulsøgestien er /usr/lib/xorg/modules
 
-Bemærk også, at nogle konfigurationsværktøjer for X måske ikke virker længere. Den nemmeste måde at konfigurere Xorg er ved at installere den rigtige driver-pakke og køre kommandoen _Xorg -configure_, hvilket giver `/root/xorg.conf.new`, som kun kræver ændringer i opløsninger, musekonfiguration og tastatur-layout.
+Bemærk også, at nogle konfigurationsværktøjer for X måske ikke virker længere. Den nemmeste måde at konfigurere Xorg er ved at installere den rigtige driver-pakke og køre kommandoen *Xorg -configure*, hvilket giver `/root/xorg.conf.new`, som kun kræver ændringer i opløsninger, musekonfiguration og tastatur-layout.
 
 Nogle pakker har fastkodede henvisninger til `/usr/X11R6`. Disse pakker har brug for at blive rettet. I mellemtiden, se hvilke pakker, der installerer filer i `/usr/X11R6`. Afinstallér disse og lav et symbolsk link fra `/usr` til `/usr/X11R6` og geninstallér de berørte pakker. En anden mulighed er at flytte indholdet af `/usr/X11R6` til `/usr` og lave det symbolske link.
 
@@ -455,7 +455,7 @@ Option "XkbOptions" "grp:alt_shift_toggle,grp_led:scroll"
 
 ### Et hurtigt fiks for konflikten Bitstream-Vera
 
-Hvis du får en fejlmeldingen _ttf-bitstream-vera conflicts with xorg_:
+Hvis du får en fejlmeldingen *ttf-bitstream-vera conflicts with xorg*:
 
 1.  Forlad pacman-sessionen ved at svare nej.
 2.  Kør `pacman -Rd xorg`
@@ -532,7 +532,7 @@ Nogle tastatur-layouts er ændrede. Jeg undrede mig over flg:
 *   Jeg kunne ikke skifte til konsol med Ctrl+Alt+Fx
 *   Jeg kunne ikke benytte layout
 
-Problemet var at layoutet _dk_qwerty_ ikke længere eksisterer. Jeg skulle skifte
+Problemet var at layoutet *dk_qwerty* ikke længere eksisterer. Jeg skulle skifte
 
 ```
 Option         "XkbLayout" "dk_qwerty"

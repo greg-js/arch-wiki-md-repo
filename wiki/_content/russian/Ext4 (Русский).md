@@ -112,9 +112,9 @@ To experience the benefits of ext4, an irreversible conversion process must be c
 
 **Важно:** Do **NOT** use the following method with Mercurial repository that have been cloned locally, as doing so will corrupt the repository. It might also corrupt other hard link in the filesystem.
 
-Even though the filesystem is now converted to ext4, all files that have been written before the conversion do not yet take advantage of the new _extents_ of ext4, which will improve large file performance and reduce fragmentation and filesystem check time. In order to fully take advantage of ext4, all files would have to be rewritten on disk. A utility called _e4defrag_ is being developed and will take care of this task ; however, it is not yet ready for production.
+Even though the filesystem is now converted to ext4, all files that have been written before the conversion do not yet take advantage of the new *extents* of ext4, which will improve large file performance and reduce fragmentation and filesystem check time. In order to fully take advantage of ext4, all files would have to be rewritten on disk. A utility called *e4defrag* is being developed and will take care of this task ; however, it is not yet ready for production.
 
-Fortunately, it is possible to use the _chattr_ program, which will cause the kernel to rewrite the file using extents. It is possible to run this command on all files and directories of one partition (e.g. if /home is on a dedicated partition): (Must be run as root)
+Fortunately, it is possible to use the *chattr* program, which will cause the kernel to rewrite the file using extents. It is possible to run this command on all files and directories of one partition (e.g. if /home is on a dedicated partition): (Must be run as root)
 
 ```
 find /home -xdev -type f -print0 | xargs -0 chattr +e
@@ -124,7 +124,7 @@ find /home -xdev -type d -print0 | xargs -0 chattr +e
 
 It is recommended to test this command on a small number of files first, and check if everything is going all right. It may also be useful to check the filesystem after conversion.
 
-Using the _lsattr_ command, it is possible to check that files are now using _extents_. The letter 'e' should appear in the attribute list of the listed files.
+Using the *lsattr* command, it is possible to check that files are now using *extents*. The letter 'e' should appear in the attribute list of the listed files.
 
 ## Советы и рекомендации
 

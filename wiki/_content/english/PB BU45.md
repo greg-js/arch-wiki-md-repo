@@ -226,7 +226,7 @@ This section was written by Raul Silva. Any question/remarks, contact raul_nds i
 
 ## Wifi configuration
 
-The wireless card included in this laptop is an _Intel® Pro WLAN 3945 Internal Wireless (802.11a/b/g 54 Mbps)_. I think you can use the ipw drivers, but they will be deprecated in favour of new iwl drivers, so we will be using the last ones. You will need `iwlwifi` and `iwlwifi-3945-ucode` packages.
+The wireless card included in this laptop is an *Intel® Pro WLAN 3945 Internal Wireless (802.11a/b/g 54 Mbps)*. I think you can use the ipw drivers, but they will be deprecated in favour of new iwl drivers, so we will be using the last ones. You will need `iwlwifi` and `iwlwifi-3945-ucode` packages.
 
 The configuration is standard, as with any other wlan (I will try to document it more extensively in the future, but you can find good general instructions in the wiki) except that the drivers gives some problems if you do not pass the `disable_hw_scan=1` option to the module when you load it into the kernel. To not have to do it manually each time, add this to your `/etc/modprobe.d/modprobe.conf`:
 

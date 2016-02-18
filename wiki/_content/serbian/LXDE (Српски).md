@@ -146,7 +146,7 @@ $ touch ~/.config/lxsession/LXDE/autostart
 
 ```
 
-Dodajte program koji bi ste želeli da startuje u novu liniju sa _@_ prefiksom (i bez _&_ na kraju):
+Dodajte program koji bi ste želeli da startuje u novu liniju sa *@* prefiksom (i bez *&* na kraju):
 
 ```
 @lxterminal
@@ -447,7 +447,7 @@ Takođe možete da koristite lxappearance iz community riznice da popravite ovo.
 
 ### LXsession full
 
-Još postoje bagovi u punom lxsession managementu. Zato se preporučuje da se koristi _**lxsession-lite**_ dok se problemi u lxsession reše.
+Još postoje bagovi u punom lxsession managementu. Zato se preporučuje da se koristi ***lxsession-lite*** dok se problemi u lxsession reše.
 
 ### Korišćenje KDEmod3 aplikacije sa LXDE
 

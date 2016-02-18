@@ -1,6 +1,6 @@
 De [GDM - GNOME Display Manager](http://projects.gnome.org/gdm/about.html):
 
-	_GDM, el gestor de pantallas de GNOME, es un pequeño programa que se ejecuta en segundo plano, dirige las sesiones de X, le presenta una pantalla de inicio de sesión y, luego, le impide el acceso hasta tanto le sea suministrada la contraseña. Hace casi prácticamente todo lo que desearía hacer con xdm, pero sin los problemas de este último. GDM no utiliza ningún código de xdm. Es compatible con XDMCP, y, de hecho, extiende XDMCP a aspectos a los que no llegaba xdm (pero sigue siendo compatible con XDMCP de xdm)._
+	*GDM, el gestor de pantallas de GNOME, es un pequeño programa que se ejecuta en segundo plano, dirige las sesiones de X, le presenta una pantalla de inicio de sesión y, luego, le impide el acceso hasta tanto le sea suministrada la contraseña. Hace casi prácticamente todo lo que desearía hacer con xdm, pero sin los problemas de este último. GDM no utiliza ningún código de xdm. Es compatible con XDMCP, y, de hecho, extiende XDMCP a aspectos a los que no llegaba xdm (pero sigue siendo compatible con XDMCP de xdm).*
 
 Los [gestores de pantallas](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)") proporcionan a los usuarios de [X Window System](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") un inicio de sesión gráfico.
 
@@ -44,7 +44,6 @@ Para que el método gráfico predeterminado de acceso al sistema sea GDM, utilic
 Los argumentos que se pasan al servidor X por `~/.xinitrc` (como los de `xmodmap` y `xsetroot`) también pueden ser añadidos a través de [xprofile](/index.php/Xprofile_(Espa%C3%B1ol) "Xprofile (Español)"):
 
  `~/.xprofile` 
-
 ```
 #!/bin/sh
 
@@ -76,7 +75,6 @@ Sin embargo, no tiene la opción de cambiar el idioma.
 Para cambiar el idioma de GDM, edite el archivo `/var/lib/AccountsService/users/gdm` y cambie la línea «Language». Debería mostrar algo como lo que sigue:
 
  `/var/lib/AccountsService/users/gdm` 
-
 ```
 [User]
 Language=es_ES.UTF-8
@@ -90,7 +88,7 @@ Una vez que hayamos reiniciado, si nos fijamos en el archivo `/var/lib/AccountsS
 
 ### Configuración antigua
 
-Ya no se puede utilizar la orden _«gdmsetup»_ para configurar GDM a partir de la versión 2.28\. La orden se ha eliminado, y se ha estandarizado GDM e integrado con el resto de GNOME.
+Ya no se puede utilizar la orden *«gdmsetup»* para configurar GDM a partir de la versión 2.28\. La orden se ha eliminado, y se ha estandarizado GDM e integrado con el resto de GNOME.
 
 Puede utilizar las siguientes instrucciones:
 
@@ -101,7 +99,6 @@ Puede utilizar las siguientes instrucciones:
 *   Para obtener más opciones de configuración: `$ sudo -u gdm gconf-editor` 
 
 	y modifique las jerarquías siguientes:
-
 ```
 /apps/gdm/simple-greeter
 /desktop/gnome/interface
@@ -121,26 +118,24 @@ Para obtener más información y ajustes avanzados lea [esto](http://library.gno
 
 ### Iniciar sesión automáticamente
 
-Para activar el ingreso automático con GDM, añada lo siguiente al archivo `/etc/gdm/custom.conf` (sustituya el _nombredeusuario_ por el suyo):
+Para activar el ingreso automático con GDM, añada lo siguiente al archivo `/etc/gdm/custom.conf` (sustituya el *nombredeusuario* por el suyo):
 
  `/etc/gdm/custom.conf` 
-
 ```
 [daemon]
 # activar acceso automático para el usuario
-AutomaticLogin=_nombredeusuario_
+AutomaticLogin=*nombredeusuario*
 AutomaticLoginEnable=True
 ```
 
 o, para demorar el ingreso automático:
 
  `/etc/gdm/custom.conf` 
-
 ```
 [daemon]
 # para acceder automáticamente con retardo
 TimedLoginEnable=true
-TimedLogin=_nombredeusuario_
+TimedLogin=*nombredeusuario*
 TimedLoginDelay=1
 ```
 
@@ -169,7 +164,6 @@ Ahora, agregue el usuario al grupo `nopasswdlogin` y entonces bastará hacer cli
 GDM usa polkit y logind para obtener los permisos para cerrar. Ello se puede hacer sin solicitar primero una contraseña configurando:
 
  `/etc/polkit-1/localauthority.conf.d/org.freedesktop.logind.policy` 
-
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE policyconfig PUBLIC
@@ -201,7 +195,6 @@ Si desea cambiar la sesión de GDM por defecto, tiene que crear (o modificar) el
 He aquí un ejemplo para establecer la sesión predeterminada para [Cinnamon](/index.php/Cinnamon "Cinnamon"):
 
  `~/.dmrc` 
-
 ```
 [Desktop]
 Session=cinnamon
@@ -271,7 +264,6 @@ Problema: La distribución del teclado siempre cambia al de Estados Unidos; la d
 Solución: modifique el archivo `~/.dmrc`
 
  `~/.dmrc` 
-
 ```
 [Desktop]
 Language=es_ES.UTF-8   # cambiar a su lengua predeterminada
@@ -283,7 +275,6 @@ Layout=es   nodeadkeys # cambiar a su distribución de teclado
 Solución: añada la siguiente línea a `/etc/X11/xorg.conf.d/10-evdev.conf`, para establecer la distribución del teclado español.
 
  `/etc/X11/xorg.conf.d/10-evdev.conf` 
-
 ```
 Section "InputClass"
         Identifier      "evdev keyboard catchall"

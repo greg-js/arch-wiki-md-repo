@@ -1,6 +1,6 @@
 Definizione dello swap tratta da quest'articolo [All about Linux swap space](http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space):
 
-	_Linux suddivide la memoria fisica RAM (Memoria ad accesso casuale) in blocchi chiamate pagine. Lo swapping è il processo durante il quale una pagina di memoria viene copiata su uno spazio di disco, chiamata area di swap, per liberare memoria RAM. Le dimensioni combinate della memoria fisica e dell'area di swap è la quantità di memoria virtuale disponibile._
+	*Linux suddivide la memoria fisica RAM (Memoria ad accesso casuale) in blocchi chiamate pagine. Lo swapping è il processo durante il quale una pagina di memoria viene copiata su uno spazio di disco, chiamata area di swap, per liberare memoria RAM. Le dimensioni combinate della memoria fisica e dell'area di swap è la quantità di memoria virtuale disponibile.*
 
 ## Contents
 
@@ -196,7 +196,7 @@ I parametri dello swap possono essere regolati per aumentare le prestazioni.
 
 ### Swappiness
 
-Il parametro dello _swappiness_ [sysctl](/index.php/Sysctl "Sysctl") rappresenta la preferenza (o l'inibizione) del kernel di utilizzare lo spazio di swap. Swappiness può avere un valore compreso tra 0 e 100\. L'impostazione di questo parametro ad un valore basso riduce lo scambio di RAM, ed è noto per migliorare la risposta su molti sistemi.
+Il parametro dello *swappiness* [sysctl](/index.php/Sysctl "Sysctl") rappresenta la preferenza (o l'inibizione) del kernel di utilizzare lo spazio di swap. Swappiness può avere un valore compreso tra 0 e 100\. L'impostazione di questo parametro ad un valore basso riduce lo scambio di RAM, ed è noto per migliorare la risposta su molti sistemi.
 
 ```
 /etc/sysctl.d/90-swappiness.conf

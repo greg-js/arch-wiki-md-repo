@@ -7,7 +7,7 @@
 Install CD Version
  | Hardware Support | Remark |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power Management | Modem | Other |
-| TravelMate 2413NLC | Gimmick 0.7.2 | Intel GMA 915 driver: _i810_ | Intel 82801FB with internal microphone | OK | -- | -- | Suspend to RAM: Yes
+| TravelMate 2413NLC | Gimmick 0.7.2 | Intel GMA 915 driver: *i810* | Intel 82801FB with internal microphone | OK | -- | -- | Suspend to RAM: Yes
 Disk: Yes
 Battery: Yes
 CPU frequency scaling: Yes | untested | Hot keys: untested |
@@ -24,13 +24,13 @@ CPU frequency scaling: Yes | untested | Hot keys: untested
 FireWire (Texas Instruments) TSB43AB23: OK(?) | FireWire detects well but I haven't tested it yet |
 | Aspire 5024 | 0.7.2 | ATI Radeon X700
 Runs Compiz on both fglrx ([catalyst](https://aur.archlinux.org/packages/catalyst/)) >= 8.02 and radeon driver | AC97: OK | Realtek: OK | Broadcom 4318
-Needs _acer_apci_ + firmware or ndiswrapper driver | N/A | Battery: Yes
+Needs *acer_apci* + firmware or ndiswrapper driver | N/A | Battery: Yes
 Suspend: Video and Wi-Fi problems
 CPU frequency scaling: powernow-k8 driver | untested | KeyTouch works for hot keys
 Volume control, etc. |
 | [Aspire 7720](/index.php/Acer_Aspire_7720 "Acer Aspire 7720") | 2009.02 | Intel i965 | ALC268: working OK | Broadcom BCM5787M (tg3): OK | Intel 3945: Needs microcode | Detected, works | Battery: Yes
 Suspend: Seems to work ok
-Hibernation: still flaky (often hangs in the middle of restoring) | With linuxant drivers, might work | Web cam driver: _uvcvideo_; card reader: only SD cards seem to work; special keys (Acer Arcade, direct access to browser/mail) seem to not work; volume knob at the side is seen as a multimedia key. | FireWire seems to be recognized, untested. For 64-bit, update BIOS to fix ACPI and wireless problems. |
+Hibernation: still flaky (often hangs in the middle of restoring) | With linuxant drivers, might work | Web cam driver: *uvcvideo*; card reader: only SD cards seem to work; special keys (Acer Arcade, direct access to browser/mail) seem to not work; volume knob at the side is seen as a multimedia key. | FireWire seems to be recognized, untested. For 64-bit, update BIOS to fix ACPI and wireless problems. |
 | [Aspire E5-573](/index.php/Acer_Aspire_E5-573 "Acer Aspire E5-573") | 2015.12 | Intel i965 | OK | OK | OK | not detected | OK | not present | ... | ... |
 | Aspire 7730 | 2009.08 i686 & x86_64 | Intel Mobile 4 Series
 i810
@@ -44,7 +44,7 @@ Web cam: OK
 HDMI: untested
 Card reader: untested | Problem booting install CD
 Solved with `ln -sf /dev/sr0 /dev/archiso` at ramfs |
-| TravelMate 8371G (TM8371G-944G32n) | 2010.05 x86_64 | Intel GM45, works with _i915_. Radeon HD 4330 listed but cannot switch to it. | OK | OK, works with _r8169_ | OK, works with _iwlagn_ | OK, works with _btusb_ | s2ram works (see remarks), s2disk works, CPU scaling works, no fan control | No modem | Web cam works with _uvcvideo_.
+| TravelMate 8371G (TM8371G-944G32n) | 2010.05 x86_64 | Intel GM45, works with *i915*. Radeon HD 4330 listed but cannot switch to it. | OK | OK, works with *r8169* | OK, works with *iwlagn* | OK, works with *btusb* | s2ram works (see remarks), s2disk works, CPU scaling works, no fan control | No modem | Web cam works with *uvcvideo*.
 Card reader works.
 Fingerprint reader does not seem to have a driver! | Suspend to RAM only works with the `i8042.reset=1` kernel parameter. Otherwise, it fails to wake up, and ends up rebooting itself uncleanly!
 Generally, this Acer seems to work quite well with Arch Linux :-) |
@@ -59,7 +59,7 @@ HDMI: OK | By "audio touch panel" I mean the illuminated plastic hot key touch p
 Synaptic Touchpad: OK |
 | Aspire 2920Z | 2009.2 | Intel Mobile GM965/GL960 Integrated Graphics Controller | OK, Intel 82801H | OK, Broadcom NetLink BCM5787M Gigabit Ethernet PCI Express | OK, Broadcom BCM4311 802.11b/g WLAN | n/a | Suspend to RAM: OK.
 Suspend to disk: OK.
-CPU frequency scaling: untested | Untested | Hot keys: web, mail, and wireless work. Blue _e_ on the left: not working
+CPU frequency scaling: untested | Untested | Hot keys: web, mail, and wireless work. Blue *e* on the left: not working
 Synaptic touchpad: OK
  | Not everything worked fine on fresh installation. Requires some work. |
 | Aspire 5735z [[1]](http://panam.acer.com/acerpanam/notebook/0000/Acer/Aspire5735Z/Aspire5735Zsp3.shtml) | archlinux-2014.09.03-dual | Intel GMA 4500M | OK | OK | OK | Untested | Suspend to RAM: OK.

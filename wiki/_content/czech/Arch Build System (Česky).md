@@ -36,7 +36,7 @@ pacman -U  cvsup-*.pkg.tar.gz  wget-*.pkg.tar.gz
 
 #### Co je to balíček ?
 
-Typický soubor balíčku má tvar _balíček_.pkg.tar.gz
+Typický soubor balíčku má tvar *balíček*.pkg.tar.gz
 
 Ve skutečnosti to neni víc než gzipovaný tar archiv který obsahuje:
 
@@ -98,8 +98,8 @@ Zde si vysvětleme jednotlivé pojmy :
 *   **provides** : pokud balíček poskytuje jiný balíček, pro příklad kernel-scsi poskytuje kernel
 *   **depends** : seznam závislostí balíčku (co potřebuje k běhu)
 *   **makedepends** : závislosti potřebné k tvorbě balíčku ale nepotřebné k samotnému spuštění
-*   **conflicts** : balíčky které jsou v konfliktu. Např, _foo_ má konflikt s _yafoo (yet another foo)_. Nemohou proto být nainstalovány společně.
-*   **replaces** : nový balíček přepíše starý. Pokud _mffoo (my first foo)_ je podporován, přepíše _foo_
+*   **conflicts** : balíčky které jsou v konfliktu. Např, *foo* má konflikt s *yafoo (yet another foo)*. Nemohou proto být nainstalovány společně.
+*   **replaces** : nový balíček přepíše starý. Pokud *mffoo (my first foo)* je podporován, přepíše *foo*
 *   **backup** : soubory pro zálohu (jako soubor.pacsave) pokud je balíček odstraněn
 *   **install** : specifikuje speciální instalační script který může být obsažen v balíčku (ve stejném adresáři jako PKGBUILD)
 *   **source** : specifikuje cestu odkud stáhnout zdrojový kód balíčku. Může to být např. "http" nebo "ftp".
@@ -137,7 +137,7 @@ Zde je vysvětlení funkcí :
 
 *   post_install : tento script se spustí když jsou soubory nainstalovány, předává jeden argument :
     *   the package version
-*   post_upgrade : tento script se spustí jsou-li soubory upgradovány _předává dva argumenty_  :
+*   post_upgrade : tento script se spustí jsou-li soubory upgradovány *předává dva argumenty*  :
     *   the new package version
     *   the old package version
 *   pre_remove : spustí se jsou-li soubory odstraněny (například zastaví daemona) a předá jeden argument :
@@ -271,7 +271,7 @@ ABS strom má strukturu abs databáze :
 *   první úroveň adresářů reprezentuje balíčky
 *   PKGBUILD obsahují všechny informace vztahující se k balíčku
 
-Existuje speciální adresář : **local**. Tento adresář je _váš_, Tohle je to pravé místo kam budete vše dávat : Nikdy nemodifikujte položky stromu !.
+Existuje speciální adresář : **local**. Tento adresář je *váš*, Tohle je to pravé místo kam budete vše dávat : Nikdy nemodifikujte položky stromu !.
 
 Takže nyní již víme co je ABS strom. Jak ho ale používat ?
 
@@ -279,9 +279,9 @@ Takže nyní již víme co je ABS strom. Jak ho ale používat ?
 
 Tato situace nastane jistě víckrát než se domníváte : oficiální balíčky jsou kompilované s centrálním kódováním `--enable` nebo `--disable`.
 
-Pro ilustraci uvedu příklad : _foo_ Balíček _foo_ je sestaven bez **arts** podpory. Představme si že chceme povolit **arts**. Zde je návod jak to udělat :
+Pro ilustraci uvedu příklad : *foo* Balíček *foo* je sestaven bez **arts** podpory. Představme si že chceme povolit **arts**. Zde je návod jak to udělat :
 
-*   najděte kde je _foo_ balíček umístěn. Můžete to udělat pomocí :
+*   najděte kde je *foo* balíček umístěn. Můžete to udělat pomocí :
 
  `  find /var/abs -name "foo"` 
 
@@ -291,7 +291,7 @@ nebo použijte příkaz slocate :
 
 Zjistili jsme že foo patří do `extra` a `multimedia` (pro příklad)
 
-*   kopírujte _foo_ `PKGBUILD` do `/var/abs/local/foo`
+*   kopírujte *foo* `PKGBUILD` do `/var/abs/local/foo`
 
 ```
   mkdir /var/abs/local/foo
@@ -374,4 +374,4 @@ Upozornění: Uživatel by si měl být jistý že změny `CFLAGS`, `CXXFLAGS` a
 References for gcc and make flags
 
 *   [[1]](http://gcc.gnu.org/onlinedocs/gcc-3.4.3/gcc/Option-Summary.html#Option-Summary)
-*   [_chapter/make_9.html#SEC102](http://www.gnu.org/software/make/manual/html)
+*   [*chapter/make*9.html#SEC102](http://www.gnu.org/software/make/manual/html)

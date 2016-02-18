@@ -13,7 +13,7 @@ Arch Linux (atau Arch) adalah sebuah distro i686/x86-64 yang dikembangkan secara
 
 ## Kelebihan
 
-Arch menyajikan lingkungan instalasi yang sederhana (tanpa GUI), dikompilasi untuk arsitektur i686/x86-64\. Arch itu ringan, fleksibel, dan simpel. Filosofi desain dan implementasinya membuatnya mudah untuk dikembangkan dan dibentuk menjadi sistem apapun yang Anda buat--dari konsol minimalis hingga desktop mewah yang kaya fitur. Daripada nantinya harus membuang paket-paket yang tidak diinginkan. Arch menyediakan _power user_ kemampuan untuk membangun sistem dari dasar tanpa konfigurasi apapun.
+Arch menyajikan lingkungan instalasi yang sederhana (tanpa GUI), dikompilasi untuk arsitektur i686/x86-64\. Arch itu ringan, fleksibel, dan simpel. Filosofi desain dan implementasinya membuatnya mudah untuk dikembangkan dan dibentuk menjadi sistem apapun yang Anda buat--dari konsol minimalis hingga desktop mewah yang kaya fitur. Daripada nantinya harus membuang paket-paket yang tidak diinginkan. Arch menyediakan *power user* kemampuan untuk membangun sistem dari dasar tanpa konfigurasi apapun.
 
 ## Manajemen Paket yang Unik
 
@@ -21,15 +21,15 @@ Arch menggunakan sistem paket binary yang mudah digunakan ([pacman](/index.php/P
 
 ## Modernitas
 
-Arch Linux berusaha untuk menyediakan versi stabil terbaru dari perangkat lunak berdasarkan sistem rolling-release. Saat ini kami mendukung set paket _core_ untuk sistem dasar i686 dan x86-64, ribuan tambahan, paket binary berkualitas tinggi dari pengembang dan repositori pengguna, serta ribuan _script_ PKGBUILD untuk membangun dan memaketkan dari kode sumber. Arch menyediakan software vanilla, _non-patched_; paket-paket yang ditawarkan adalah murni dari _upstream_, sebagaimana awalnya itu ditujukan untuk didistribusikan. _Patch_ hanya terjadi dalam beberapa kasus, untuk mencegah kerusakan parah. Contohnya ketidakcocokan versi yang mungkin terjadi dalam model rolling release. Arch juga menyediakan fitur-fitur baru yang tersedia untuk pengguna GNU/Linux, termasuk _filesystem_ modern (Ext2/3/4, Reiser, XFS, JFS), LVM2/EVMS, software RAID, dukungan udev dan initcpio, serta kernel terbaru.
+Arch Linux berusaha untuk menyediakan versi stabil terbaru dari perangkat lunak berdasarkan sistem rolling-release. Saat ini kami mendukung set paket *core* untuk sistem dasar i686 dan x86-64, ribuan tambahan, paket binary berkualitas tinggi dari pengembang dan repositori pengguna, serta ribuan *script* PKGBUILD untuk membangun dan memaketkan dari kode sumber. Arch menyediakan software vanilla, *non-patched*; paket-paket yang ditawarkan adalah murni dari *upstream*, sebagaimana awalnya itu ditujukan untuk didistribusikan. *Patch* hanya terjadi dalam beberapa kasus, untuk mencegah kerusakan parah. Contohnya ketidakcocokan versi yang mungkin terjadi dalam model rolling release. Arch juga menyediakan fitur-fitur baru yang tersedia untuk pengguna GNU/Linux, termasuk *filesystem* modern (Ext2/3/4, Reiser, XFS, JFS), LVM2/EVMS, software RAID, dukungan udev dan initcpio, serta kernel terbaru.
 
 ## Simple
 
-[The Arch Way](/index.php/The_Arch_Way "The Arch Way") adalah filosofi yang bertujuan untuk tetap _simple_. Sistem dasar Arch Linux sangatlah minimal, lingkungan GNU/Linux yang fungsional; kernel Linux, GNU _toolchain_, dan berberapa _utility_ seperti **links** dan **Vi**. Titik awal yang bersih dan _simple_ ini adalah dasar yang baik untuk selanjutnya dikembangkan sesuai kemauan pengguna.
+[The Arch Way](/index.php/The_Arch_Way "The Arch Way") adalah filosofi yang bertujuan untuk tetap *simple*. Sistem dasar Arch Linux sangatlah minimal, lingkungan GNU/Linux yang fungsional; kernel Linux, GNU *toolchain*, dan berberapa *utility* seperti **links** dan **Vi**. Titik awal yang bersih dan *simple* ini adalah dasar yang baik untuk selanjutnya dikembangkan sesuai kemauan pengguna.
 
-Sistem _init_ milik Arch terinspirasi dari BSD yang mengatur _init_ dari sebuah berkas/file, (`/etc/rc.conf`), dibandingkan struktur direktori rumit yang berisi banyak _symlink_ untuk setiap _runlevel_.
+Sistem *init* milik Arch terinspirasi dari BSD yang mengatur *init* dari sebuah berkas/file, (`/etc/rc.conf`), dibandingkan struktur direktori rumit yang berisi banyak *symlink* untuk setiap *runlevel*.
 
-Konfigurasi sistem dapat dilakukan dengan mengubah _file-file_ teks sederhana.
+Konfigurasi sistem dapat dilakukan dengan mengubah *file-file* teks sederhana.
 
 ## Lebih Jauh
 

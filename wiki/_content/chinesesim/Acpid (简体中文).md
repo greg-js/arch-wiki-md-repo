@@ -26,7 +26,7 @@
 
 [acpid](https://www.archlinux.org/packages/?name=acpid)在[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")中，你可以使用[Pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")来安装它。
 
-To have _acpid_ started on boot, [enable](/index.php/Systemd#Using_units "Systemd") `acpid.service`.
+To have *acpid* started on boot, [enable](/index.php/Systemd#Using_units "Systemd") `acpid.service`.
 
 ## 配置
 
@@ -44,7 +44,7 @@ button/sleep)
 
 ```
 
-不幸的是计算机上的这些电源事件标识并不统一，比如，在一些计算机上睡眠按钮可能被标识为_SLPB_，而在另一些计算机上为_SBTN_。
+不幸的是计算机上的这些电源事件标识并不统一，比如，在一些计算机上睡眠按钮可能被标识为*SLPB*，而在另一些计算机上为*SBTN*。
 
 要想确定各种按钮或`Fn`快捷键在你的计算机上是如何定义的，以root身份在终端运行：
 
@@ -92,7 +92,7 @@ $4 00000b31
 
 ```
 
-像你看到的那样，在这个例子中睡眠按钮被识别为_SBTN_，而不是_SLPB_（这是`/etc/acpi/handler.sh`中默认定义的标识符）。所以，要想让你的睡眠按钮正常工作的话，你需要编辑`/etc/acpi/handler.sh`把_SLPB)_替换为_SBTN)_。
+像你看到的那样，在这个例子中睡眠按钮被识别为*SBTN*，而不是*SLPB*（这是`/etc/acpi/handler.sh`中默认定义的标识符）。所以，要想让你的睡眠按钮正常工作的话，你需要编辑`/etc/acpi/handler.sh`把*SLPB)*替换为*SBTN)*。
 
 参照上面的例子，你应该可以很容易的通过定制`/etc/acpi/handler.sh`来根据侦测到的电源时间来执行不同的命令。更多例子可参考下面的 [小技巧](/index.php/Acpid_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.B0.8F.E6.8A.80.E5.B7.A7 "Acpid (简体中文)")部分。
 
@@ -112,7 +112,6 @@ action=/etc/acpi/handler.sh %e
 作为root，创建以下文件：
 
  `/etc/acpi/events/sleep-button` 
-
 ```
 event=button sleep.*
 action=/etc/acpi/actions/sleep-button.sh %e
@@ -121,7 +120,6 @@ action=/etc/acpi/actions/sleep-button.sh %e
 然后建立以下文件：
 
  `/etc/acpi/actions/sleep-button.sh` 
-
 ```
 #!/bin/sh
 case "$3" in
@@ -197,15 +195,12 @@ ac_adapter)
 下面的一系列脚本是用来控制音量的（假设你用的是[ALSA](/index.php/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Advanced Linux Sound Architecture (简体中文)")）。用上面讲到的方法找到音量键的标识符，然后替换掉下面文件中的事件标识就可以用在自己电脑上了：
 
  `/etc/acpi/actions/volume_up.sh` 
-
 ```
   #!/bin/bash
   /usr/bin/amixer set Master 5%+
 
 ```
-
  `/etc/acpi/actions/volume_down.sh` 
-
 ```
   #!/bin/bash
   /usr/bin/amixer set Master 5%-
@@ -215,15 +210,12 @@ ac_adapter)
 定义事件的文件：
 
  `/etc/acpi/events/volume_up` 
-
 ```
   event=button[ /]volumeup
   action=/etc/acpi/actions/volume_up.sh
 
 ```
-
  `/etc/acpi/events/volume_down` 
-
 ```
   event=button[ /]volumedown
   action=/etc/acpi/actions/volume_down.sh
@@ -233,7 +225,6 @@ ac_adapter)
 用于切换静音的配置文件：
 
  `/etc/acpi/events/volume_mute` 
-
 ```
   event=button[ /]volumemute
   action=/usr/bin/amixer set Master toggle
@@ -242,7 +233,7 @@ ac_adapter)
 
 ### 关闭笔记本显示器
 
-下面这个小技巧修改自[Gentoo Wiki](http://en.gentoo-wiki.com/wiki/ACPI/Configuration)。把下面的内容添加到`/etc/acpi/actions/lm_lid.sh`最后，或者添加到`/etc/acpi/handler.sh`的_button/lid_部分。这个配置会实现当合上笔记本盖子时自动切断LCD背光，揭开盖子时自动打开LCD背光。
+下面这个小技巧修改自[Gentoo Wiki](http://en.gentoo-wiki.com/wiki/ACPI/Configuration)。把下面的内容添加到`/etc/acpi/actions/lm_lid.sh`最后，或者添加到`/etc/acpi/handler.sh`的*button/lid*部分。这个配置会实现当合上笔记本盖子时自动切断LCD背光，揭开盖子时自动打开LCD背光。
 
 ```
 case $(cat /proc/acpi/button/lid/LID0/state | awk '{print $2}') in
@@ -274,7 +265,7 @@ esac
 
 ```
 
-如果显示器只是快速的关闭然后又打开，很可能是xscreensaver自带的电源管理跟_dpms_的设置冲突了。
+如果显示器只是快速的关闭然后又打开，很可能是xscreensaver自带的电源管理跟*dpms*的设置冲突了。
 
 ### 获取当前登陆的用户名
 

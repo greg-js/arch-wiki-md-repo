@@ -85,7 +85,7 @@ Když ještě nebyl AUR a [community], TUs měli vlastní repozitáře s aplikac
 
 ## bbs
 
-_B_ulletin _b_oard _s_ystem, ale v případě Arch Liuxu se jedná pouze o podpůrné fórum umístěné na adrese [https://bbs.archlinux.org](https://bbs.archlinux.org).
+*B*ulletin *b*oard *s*ystem, ale v případě Arch Liuxu se jedná pouze o podpůrné fórum umístěné na adrese [https://bbs.archlinux.org](https://bbs.archlinux.org).
 
 ## community/[community]
 
@@ -109,7 +109,7 @@ Viz [Custom local repository](/index.php/Custom_local_repository "Custom local r
 
 ## devfs
 
-_dev_ice _f_ile _s_ystem. DevFS dynamicky spravuje, vytváří, odstraňuje a pracuje s právy souborů zařízení v /dev adresáři. Byl to výchozí správce zařízení v Arch Linuxu až do vydání 0.7\. Nyní je DevFS zavrhovaný a je odstraňován z Linuxu (jádra). DevFS je nahrazen [udev](/index.php/Udev "Udev").
+*dev*ice *f*ile *s*ystem. DevFS dynamicky spravuje, vytváří, odstraňuje a pracuje s právy souborů zařízení v /dev adresáři. Byl to výchozí správce zařízení v Arch Linuxu až do vydání 0.7\. Nyní je DevFS zavrhovaný a je odstraňován z Linuxu (jádra). DevFS je nahrazen [udev](/index.php/Udev "Udev").
 
 Poznámka: instalační CD Arch Linuxu před 0.7.1 používá scháma pojmenování devfs, když se vytváří /etc/fstab položky.
 

@@ -12,7 +12,7 @@ Why change GNU (and other base components) to Heirloom? In contrast to the [base
 
 The heirloom project mantains several different traditional UNIX variants. To read more about the different profiles, follow this [link](http://heirloom.sourceforge.net/man/intro.1.html). Current base2Heirloom packages utilizes Busybox to compensate for missing utilities. Any alternative sources to fill up with missing utilities are however of interest, especially those that fit with the spirit of the Heirloom project.
 
-_**profile SysV**_
+***profile SysV***
 
 This is the most traditional variant. Binaries in base2heirloom packages with this profile are taken from /usr/heirloom in the following order:
 
@@ -21,7 +21,7 @@ This is the most traditional variant. Binaries in base2heirloom packages with th
 
 ```
 
-_**profile posix2001**_
+***profile posix2001***
 
 Binaries in base2heirloom packages with this profile are taken from /usr/heirloom in the following order:
 
@@ -30,7 +30,7 @@ Binaries in base2heirloom packages with this profile are taken from /usr/heirloo
 
 ```
 
-_**profile ucb**_
+***profile ucb***
 
 In contrast to the other profiles of Heirloom, ucb only represent some added-value from the traditional BSD on another profile. The ucb profile represents the most modern configuration.
 

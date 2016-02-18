@@ -83,7 +83,8 @@ import commands
 #KERNEL VERSION
 uname = commands.getoutput('uname -r')
 head = "Toda la informacion de su sistema:"
-msg = "Su version del kernel (núcleo): "+ uname +"\n"       
+msg = "Su version del kernel (núcleo): "+ uname +"
+"       
 # print message
 subprocess.call(['notify-send', head, msg])
 

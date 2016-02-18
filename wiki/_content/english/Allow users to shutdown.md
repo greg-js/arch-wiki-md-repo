@@ -8,7 +8,7 @@
 
 ## Button and Lid events
 
-The suspend, poweroff and hibernate button presses and lid close events are handled by _logind_ as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management") page.
+The suspend, poweroff and hibernate button presses and lid close events are handled by *logind* as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management") page.
 
 ## Using systemd-logind
 
@@ -21,7 +21,7 @@ $ loginctl show-session $XDG_SESSION_ID --property=Active
 
 ```
 
-The user can then use _systemctl_ commands in the command line, or add them to menus:
+The user can then use *systemctl* commands in the command line, or add them to menus:
 
 ```
 $ systemctl poweroff
@@ -29,11 +29,11 @@ $ systemctl reboot
 
 ```
 
-Other commands can be used as well, including `systemctl suspend` and `systemctl hibernate`. See the _System Commands_ section in `man systemctl`
+Other commands can be used as well, including `systemctl suspend` and `systemctl hibernate`. See the *System Commands* section in `man systemctl`
 
 ## Using sudo
 
-[Install](/index.php/Install "Install") [sudo](https://www.archlinux.org/packages/?name=sudo), and give the user [sudo privileges](/index.php/Sudo "Sudo"). The user will then be able to use _sudo systemctl_ commands in the command line or in menus:
+[Install](/index.php/Install "Install") [sudo](https://www.archlinux.org/packages/?name=sudo), and give the user [sudo privileges](/index.php/Sudo "Sudo"). The user will then be able to use *sudo systemctl* commands in the command line or in menus:
 
 ```
 $ sudo systemctl poweroff
@@ -41,14 +41,14 @@ $ sudo systemctl reboot
 
 ```
 
-Other commands can be used as well, including `sudo systemctl suspend` and `sudo systemctl hibernate`. See the _System Commands_ section in `man systemctl`
+Other commands can be used as well, including `sudo systemctl suspend` and `sudo systemctl hibernate`. See the *System Commands* section in `man systemctl`
 
 ### Users without sudo privileges
 
-If users should only be allowed to use shutdown commands, but not have other sudo privileges, then, as root, add the following to the end of `/etc/sudoers` using the `visudo` command. Substitute _user_ for your username and _hostname_ for the machine's hostname.
+If users should only be allowed to use shutdown commands, but not have other sudo privileges, then, as root, add the following to the end of `/etc/sudoers` using the `visudo` command. Substitute *user* for your username and *hostname* for the machine's hostname.
 
 ```
-_user_ _hostname_ =NOPASSWD: /usr/bin/systemctl poweroff,/usr/bin/systemctl halt,/usr/bin/systemctl reboot
+*user* *hostname* =NOPASSWD: /usr/bin/systemctl poweroff,/usr/bin/systemctl halt,/usr/bin/systemctl reboot
 
 ```
 

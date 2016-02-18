@@ -19,7 +19,6 @@ This page describes the steps necessary to get all of the features of the ASUS A
 Many ION boards exhibit problems when trying to play sound through HDMI. They usually require a custom ALSA configuration via `/etc/asound.conf` (or, alternatively, on a per-user basis via `~/.asound.conf`).
 
  `/etc/asound.conf` 
-
 ```
 # Needed in order to get sound over HDMI to function
 
@@ -89,14 +88,13 @@ As a result, this section will focus on getting the included remote working with
 
 	If you know more about the nitty gritty aspects of kernel driver development and IR remotes, please take a look at [this thread](http://ubuntuforums.org/showthread.php?t=1458300&page=4) to see if functionality can be added to this driver, especially for basic MCE remotes.
 
-Download the source and then extract with `tar -xvf hid-philips-asus.tar`. The resulting directory will include the source files, along with a Linux-to-X11 input key map. Before you build the source, you must edit `mappings.h`. This file maps the button presses to Linux input keys. Be aware that Linux input _**does not equal**_ X11 input. Graphical programs, such as media players, XBMC, and the like, are only aware of X11 inputs, and so you must match a X11 input with a Linux input to. That's what the `map_linux_to_x11.txt` file is for.
+Download the source and then extract with `tar -xvf hid-philips-asus.tar`. The resulting directory will include the source files, along with a Linux-to-X11 input key map. Before you build the source, you must edit `mappings.h`. This file maps the button presses to Linux input keys. Be aware that Linux input ***does not equal*** X11 input. Graphical programs, such as media players, XBMC, and the like, are only aware of X11 inputs, and so you must match a X11 input with a Linux input to. That's what the `map_linux_to_x11.txt` file is for.
 
 For example, if you wish to define the "Next Track" button as "XF86AudioNext" (which most programs will look for to play the next item in the playlist), you will need to define `BUTTON_NEXT` in `mappings.h` as `KEY_NEXTSONG` rather than `KEY_NEXT`. This is because `KEY_NEXTSONG` maps to "XF86AudioNext" (KEY_NEXT doesn't register as anything).
 
 Once you've finished mapping the buttons, run `make`:
 
  `$ make` 
-
 ```
 make -C /lib/modules/2.6.36-ARCH/build M=/home/user/hid-philips-asus modules
 make[1]: Entering directory `/usr/src/linux-2.6.36-ARCH'

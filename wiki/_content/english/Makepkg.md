@@ -1,6 +1,6 @@
 [makepkg](https://projects.archlinux.org/pacman.git/tree/scripts/makepkg.sh.in) is a script to automate the building of packages. The requirements for using the script are a build-capable Unix platform and a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
 
-_makepkg_ is provided by the [pacman](https://www.archlinux.org/packages/?name=pacman) package.
+*makepkg* is provided by the [pacman](https://www.archlinux.org/packages/?name=pacman) package.
 
 ## Contents
 
@@ -34,12 +34,11 @@ The system configuration is available in `/etc/makepkg.conf`, but user-specific 
 
 ### Packager information
 
-Each package is tagged with metadata identifying amongst others also the _packager_. By default, user-compiled packages are marked with `Unknown Packager`. If multiple users will be compiling packages on a system, or you are otherwise distributing your packages to other users, it is convenient to provide real contact. This can be done by setting the `PACKAGER` variable in `makepkg.conf`.
+Each package is tagged with metadata identifying amongst others also the *packager*. By default, user-compiled packages are marked with `Unknown Packager`. If multiple users will be compiling packages on a system, or you are otherwise distributing your packages to other users, it is convenient to provide real contact. This can be done by setting the `PACKAGER` variable in `makepkg.conf`.
 
 To check this on an installed package:
 
- `$ pacman -Qi _package_` 
-
+ `$ pacman -Qi *package*` 
 ```
 [...]
 Packager       : John Doe <john@doe.com>
@@ -51,7 +50,7 @@ To automatically produce signed packages, also set the `GPGKEY` variable in `mak
 
 ### Package output
 
-By default, _makepkg_ creates the package tarballs in the working directory and downloads source data directly to the `src/` directory. Custom paths can be configured, for example to keep all built packages in `~/build/packages/` and all sources in `~/build/sources/`.
+By default, *makepkg* creates the package tarballs in the working directory and downloads source data directly to the `src/` directory. Custom paths can be configured, for example to keep all built packages in `~/build/packages/` and all sources in `~/build/sources/`.
 
 Configure the following `makepkg.conf` variables if needed:
 
@@ -61,13 +60,13 @@ Configure the following `makepkg.conf` variables if needed:
 
 ### Signature checking
 
-If a signature file in the form of `.sig` or `.asc` is part of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") source array, _makepkg_ validates the authenticity of source files. For example, the signature `_pkgname_-_pkgver_.tar.gz.sig` is used to check the integrity of the file `_pkgname_-_pkgver_.tar.gz` with the _gpg_ program.
+If a signature file in the form of `.sig` or `.asc` is part of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") source array, *makepkg* validates the authenticity of source files. For example, the signature `*pkgname*-*pkgver*.tar.gz.sig` is used to check the integrity of the file `*pkgname*-*pkgver*.tar.gz` with the *gpg* program.
 
-If desired, signatures by other developers can be manually added to the GPG keyring. See [GnuPG](/index.php/GnuPG "GnuPG") article for details. To temporarily disable signature checking, call the _makepkg_ command with the `--skippgpcheck` option.
+If desired, signatures by other developers can be manually added to the GPG keyring. See [GnuPG](/index.php/GnuPG "GnuPG") article for details. To temporarily disable signature checking, call the *makepkg* command with the `--skippgpcheck` option.
 
-**Note:** The signature checking implemented in _makepkg_ does not use pacman's keyring, relying on the user's keyring and the `validpgpkeys()` array instead. [[1]](http://allanmcrae.com/2015/01/two-pgp-keyrings-for-package-management-in-arch-linux/)
+**Note:** The signature checking implemented in *makepkg* does not use pacman's keyring, relying on the user's keyring and the `validpgpkeys()` array instead. [[1]](http://allanmcrae.com/2015/01/two-pgp-keyrings-for-package-management-in-arch-linux/)
 
-To show the current list of GPG keys, use the _gpg_ command:
+To show the current list of GPG keys, use the *gpg* command:
 
 ```
 $ gpg --list-keys
@@ -76,21 +75,19 @@ $ gpg --list-keys
 
 If the `pubring.gpg` file does not exist, it will be created for you immediately.
 
-The GPG keys are expected to be stored in the user's `~/.gnupg/pubring.gpg` file. In case it does not contain the given signature, _makepkg_ will abort the installation:
+The GPG keys are expected to be stored in the user's `~/.gnupg/pubring.gpg` file. In case it does not contain the given signature, *makepkg* will abort the installation:
 
  `$ makepkg` 
-
 ```
 [...]
 ==> Verifying source file signatures with gpg...
-pkgname-pkgver.tar.gz ... FAILED (unknown public key _1234567890_)
+pkgname-pkgver.tar.gz ... FAILED (unknown public key *1234567890*)
 ==> ERROR: One or more PGP signatures could not be verified!
 ```
 
 Make sure that a keyserver is configured in `dirmngr.conf`, for example:
 
  `~/.gnupg/dirmngr.conf` 
-
 ```
 keyserver hkp://keys.gnupg.net
 
@@ -101,21 +98,20 @@ If `hkp://keys.gnupg.net` does not work, try `hkp://pool.sks-keyservers.net`.
 Now you can inspect the missing key using:
 
 ```
-$ gpg --search-keys _1234567890_
+$ gpg --search-keys *1234567890*
 
 ```
 
 If the key seems to be trustworthy, you can import it from the server using:
 
 ```
-$ gpg --recv-keys _1234567890_
+$ gpg --recv-keys *1234567890*
 
 ```
 
 To automate the process, duplicate the keyserver line from `dirmngr.conf`, and add the following option. Once this [gpg bug](https://bugs.gnupg.org/gnupg/issue2147) is fixed, you should move the keyserver-options line to `dirmngr.conf`, and remove the keyserver line.
 
  `~/.gnupg/gpg.conf` 
-
 ```
 keyserver hkp://keys.gnupg.net
 keyserver-options auto-key-retrieve
@@ -124,12 +120,12 @@ keyserver-options auto-key-retrieve
 
 ## Usage
 
-Before continuing, [install](/index.php/Install "Install") the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group. Packages belonging to this group are **not** required to be listed as build-time dependencies (_makedepends_) in [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") files. In addition, the [base](https://www.archlinux.org/groups/x86_64/base/) group is assumed to be installed on **all** Arch systems.
+Before continuing, [install](/index.php/Install "Install") the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group. Packages belonging to this group are **not** required to be listed as build-time dependencies (*makedepends*) in [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") files. In addition, the [base](https://www.archlinux.org/groups/x86_64/base/) group is assumed to be installed on **all** Arch systems.
 
 **Note:**
 
 *   Make sure [sudo](/index.php/Sudo "Sudo") is configured properly for commands passed to [pacman](/index.php/Pacman "Pacman").
-*   Running _makepkg_ itself as root is [disallowed](https://lists.archlinux.org/pipermail/pacman-dev/2014-March/018911.html) as of v4.2.[[2]](https://projects.archlinux.org/pacman.git/tree/NEWS) Besides how a `PKGBUILD` may contain arbitrary commands, building as root is generally considered unsafe.[[3]](https://bbs.archlinux.org/viewtopic.php?id=67561) Users who have no access to a regular user account should run makepkg as the [nobody user](http://allanmcrae.com/2015/01/replacing-makepkg-asroot/).
+*   Running *makepkg* itself as root is [disallowed](https://lists.archlinux.org/pipermail/pacman-dev/2014-March/018911.html) as of v4.2.[[2]](https://projects.archlinux.org/pacman.git/tree/NEWS) Besides how a `PKGBUILD` may contain arbitrary commands, building as root is generally considered unsafe.[[3]](https://bbs.archlinux.org/viewtopic.php?id=67561) Users who have no access to a regular user account should run makepkg as the [nobody user](http://allanmcrae.com/2015/01/replacing-makepkg-asroot/).
 
 To build a package, one must first create a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), or build script, as described in [Creating packages](/index.php/Creating_packages "Creating packages"). Existing scripts are available from the [ABS tree](/index.php/Arch_Build_System "Arch Build System") or the [AUR](/index.php/AUR "AUR"). Once in possession of a `PKGBUILD`, change to the directory where it is saved and issue the following command to build the package described by said `PKGBUILD`:
 
@@ -138,21 +134,21 @@ $ makepkg
 
 ```
 
-If required dependencies are missing, _makepkg_ will issue a warning before failing. To build the package and install needed dependencies, add the flag `-s`/`--syncdeps`:
+If required dependencies are missing, *makepkg* will issue a warning before failing. To build the package and install needed dependencies, add the flag `-s`/`--syncdeps`:
 
 ```
 $ makepkg -s
 
 ```
 
-Adding the `-r`/`--rmdeps` flag causes _makepkg_ to remove the make dependencies later, which are no longer needed. If constantly building packages, consider using [Pacman tips#Removing unused packages](/index.php/Pacman_tips#Removing_unused_packages "Pacman tips") once in a while instead.
+Adding the `-r`/`--rmdeps` flag causes *makepkg* to remove the make dependencies later, which are no longer needed. If constantly building packages, consider using [Pacman tips#Removing unused packages](/index.php/Pacman_tips#Removing_unused_packages "Pacman tips") once in a while instead.
 
 **Note:**
 
-*   These dependencies must be available in the configured repositories; see [pacman#Repositories](/index.php/Pacman#Repositories "Pacman") for details. Alternatively, one can manually install dependencies prior to building (`pacman -S --asdeps _dep1_ _dep2_`).
+*   These dependencies must be available in the configured repositories; see [pacman#Repositories](/index.php/Pacman#Repositories "Pacman") for details. Alternatively, one can manually install dependencies prior to building (`pacman -S --asdeps *dep1* *dep2*`).
 *   Only global values are used when installing dependencies, i.e any override done in a split package's packaging function will not be used. [[4]](https://patchwork.archlinux.org/patch/2271/)
 
-Once all dependencies are satisfied and the package builds successfully, a package file (`_pkgname_-_pkgver_.pkg.tar.xz`) will be created in the working directory. To install, use `-i`/`--install` (same as `pacman -U _pkgname_-_pkgver_.pkg.tar.xz`):
+Once all dependencies are satisfied and the package builds successfully, a package file (`*pkgname*-*pkgver*.pkg.tar.xz`) will be created in the working directory. To install, use `-i`/`--install` (same as `pacman -U *pkgname*-*pkgver*.pkg.tar.xz`):
 
 ```
 $ makepkg -i
@@ -174,9 +170,9 @@ For more, see [makepkg(8)](https://www.archlinux.org/pacman/makepkg.8.html).
 
 A performance improvement of the packaged software can be achieved by enabling compiler optimizations for the host machine. The downside is that packages compiled for a specific processor architecture will not run correctly on other machines. On x86_64 machines, there are rarely significant enough real world performance gains that would warrant investing the time to rebuild official packages.
 
-The options passed to a C/C++ compiler (e.g. [gcc](https://www.archlinux.org/packages/?name=gcc) or [clang](https://www.archlinux.org/packages/?name=clang)) are controlled by the `CFLAGS`, `CXXFLAGS`, and `CPPFLAGS` environment variables. Similarly, the [make](https://www.archlinux.org/packages/?name=make) build system uses `MAKEFLAGS`. For use in the Arch build system, _makepkg_ exposes these environment variables as configuration options in `makepkg.conf`. The default values are configured to produce generic packages that can be installed on a wide range of machines.
+The options passed to a C/C++ compiler (e.g. [gcc](https://www.archlinux.org/packages/?name=gcc) or [clang](https://www.archlinux.org/packages/?name=clang)) are controlled by the `CFLAGS`, `CXXFLAGS`, and `CPPFLAGS` environment variables. Similarly, the [make](https://www.archlinux.org/packages/?name=make) build system uses `MAKEFLAGS`. For use in the Arch build system, *makepkg* exposes these environment variables as configuration options in `makepkg.conf`. The default values are configured to produce generic packages that can be installed on a wide range of machines.
 
-**Note:** Keep in mind that not all build systems use the variables configured in `makepkg.conf`. For example, _cmake_ disregards the preprocessor options environment variable, `CPPFLAGS`. Consequently, many [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") contain workarounds with options specific to the build system used by the packaged software.
+**Note:** Keep in mind that not all build systems use the variables configured in `makepkg.conf`. For example, *cmake* disregards the preprocessor options environment variable, `CPPFLAGS`. Consequently, many [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") contain workarounds with options specific to the build system used by the packaged software.
 
 However, it is very easy to reduce performance by using "nonstandard" compiler flags. Many compiler optimizations are only useful in certain situations and should not be indiscriminately applied to every package. Unless you can verify/benchmark that something is faster, there is a very good chance it is not! The Gentoo [Compilation Optimization Guide](http://www.gentoo.org/doc/en/gcc-optimization.xml) and [Safe CFLAGS](http://wiki.gentoo.org/wiki/Safe_CFLAGS) wiki article provide more in-depth information about compiler optimization.
 
@@ -201,7 +197,7 @@ Optimizing for CPU type may enhance performance because `-march=native` enables 
 
 #### MAKEFLAGS
 
-The `MAKEFLAGS` option can be used to specify additional options for make. Users with multi-core/multi-processor systems can specify the number of jobs to run simultaneously. This can be accomplished with the use of _nproc_ to determine the number of available processors, e.g. `MAKEFLAGS="-j$(nproc)"`. Some [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") specifically override this with `-j1`, because of race conditions in certain versions or simply because it is not supported in the first place. Packages that fail to build because of this should be [reported](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") on the bug tracker (or in the case of [AUR](/index.php/AUR "AUR") packages, to the package maintainer) after making sure that the error is indeed being caused by your `MAKEFLAGS`.
+The `MAKEFLAGS` option can be used to specify additional options for make. Users with multi-core/multi-processor systems can specify the number of jobs to run simultaneously. This can be accomplished with the use of *nproc* to determine the number of available processors, e.g. `MAKEFLAGS="-j$(nproc)"`. Some [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") specifically override this with `-j1`, because of race conditions in certain versions or simply because it is not supported in the first place. Packages that fail to build because of this should be [reported](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") on the bug tracker (or in the case of [AUR](/index.php/AUR "AUR") packages, to the package maintainer) after making sure that the error is indeed being caused by your `MAKEFLAGS`.
 
 See `man make` for a complete list of available options.
 
@@ -211,7 +207,7 @@ See `man make` for a complete list of available options.
 
 As compiling requires many I/O operations and handling of small files, moving the working directory to a [tmpfs](/index.php/Tmpfs "Tmpfs") may bring improvements in build times.
 
-The `BUILDDIR` variable can be temporarily exported to _makepkg_ to set the build directory to an existing tmpfs. For example:
+The `BUILDDIR` variable can be temporarily exported to *makepkg* to set the build directory to an existing tmpfs. For example:
 
 ```
 $ BUILDDIR=/tmp/makepkg makepkg
@@ -262,7 +258,6 @@ First, enable the [multilib](/index.php/Multilib "Multilib") repository and [ins
 Then create a 32-bit configuration file
 
  `~/.makepkg.i686.conf` 
-
 ```
 CARCH="i686"
 CHOST="i686-unknown-linux-gnu"
@@ -293,7 +288,6 @@ See [GnuPG#gpg-agent](/index.php/GnuPG#gpg-agent "GnuPG") for ways to do this.
 Qmake automatically sets the variable `CFLAGS` and `CXXFLAGS` according to what it thinks should be the right configuration. In order to let qmake use the variables defined in the makepkg configuration file, you must edit the PKGBUILD and pass the variables [QMAKE_CFLAGS_RELEASE](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cflags-release) and [QMAKE_CXXFLAGS_RELEASE](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cxxflags-release) to qmake. For example:
 
  `PKGBUILD` 
-
 ```
 ...
 
@@ -320,7 +314,6 @@ Alternatively, for a system wide configuration, you can create your own `qmake.c
 The makefile generated by qmake uses the environment variable INSTALL_ROOT to specify where the program should be installed. Thus this package function should work:
 
  `PKGBUILD` 
-
 ```
 ...
 
@@ -336,7 +329,6 @@ package() {
 Note, that qmake also has to be configured appropriately. For example put this in your .pro file:
 
  `YourProject.pro` 
-
 ```
 ...
 
@@ -351,7 +343,7 @@ INSTALLS += target
 
 Somehow, the literal strings `$srcdir` or `$pkgdir` ended up in one of the installed files in your package.
 
-To identify which files, run the following from the _makepkg_ build directory:
+To identify which files, run the following from the *makepkg* build directory:
 
 ```
 $ grep -R "$(pwd)/src" pkg/

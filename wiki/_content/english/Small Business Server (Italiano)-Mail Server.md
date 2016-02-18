@@ -1,4 +1,4 @@
-Ad un _SBS_ che si rispetti non può certo mancare un servizio di posta elettronica, anche considerando il fatto che ancor oggi è il servizio internet più usato. E noi da bravi andiamo a configurarne uno semplice ma abbastanza completo. Questa parte è abbastanza articolata, facciamo una piccola premessa ed installiamo il software necessario.
+Ad un *SBS* che si rispetti non può certo mancare un servizio di posta elettronica, anche considerando il fatto che ancor oggi è il servizio internet più usato. E noi da bravi andiamo a configurarne uno semplice ma abbastanza completo. Questa parte è abbastanza articolata, facciamo una piccola premessa ed installiamo il software necessario.
 
 ## Contents
 
@@ -58,26 +58,26 @@ Ad un _SBS_ che si rispetti non può certo mancare un servizio di posta elettron
 
 # Premessa
 
-Il _mail server_ che andremo ad implementare è un mail server _ufficiale_. Questo significa che :
+Il *mail server* che andremo ad implementare è un mail server *ufficiale*. Questo significa che :
 
-1.  Il nostro ipotetico dominio _mede.it_ deve essere pubblicamente registrato
-2.  L'interfaccia eth0 che si collega al mondo esterno deve avere un indirizzo ip _fisso_
-3.  Il _maintainer_ del nostro dominio, se gestisce anche il DNS "pubblico" di _mede.t_, deve avere un record MX che punta al nostro server per informare il mondo che il server di posta "ufficiale" di _mede.it_ siamo noi.
+1.  Il nostro ipotetico dominio *mede.it* deve essere pubblicamente registrato
+2.  L'interfaccia eth0 che si collega al mondo esterno deve avere un indirizzo ip *fisso*
+3.  Il *maintainer* del nostro dominio, se gestisce anche il DNS "pubblico" di *mede.t*, deve avere un record MX che punta al nostro server per informare il mondo che il server di posta "ufficiale" di *mede.it* siamo noi.
 
-Se non disponiamo di un indirizzo ip fisso esiste anche una seconda possibilità. Possiamo configurare il server in modalità _relay_. Senza perderci in troppe ciance diciamo che in questa modalità il nostro server non contatta direttamente i server SMTP destinatari, ma "passa" la posta al nostro server "ufficiale" (che presumibilmente stà dal nostro provider) che si occuperà del resto. I messaggi di posta interna all'azienda (ad esempio antonio@mede.it che scrive a lucia@mede.it) non usciranno all'esterno ma verranno trattati completamente dal nostro server. Il problema qui è che poi dobbiamo _andarci a prendere la posta in arrivo dal server del provider_ se vogliamo distribuirla ai nostri utenti. Magari faremo un articoletto anche su questo.
+Se non disponiamo di un indirizzo ip fisso esiste anche una seconda possibilità. Possiamo configurare il server in modalità *relay*. Senza perderci in troppe ciance diciamo che in questa modalità il nostro server non contatta direttamente i server SMTP destinatari, ma "passa" la posta al nostro server "ufficiale" (che presumibilmente stà dal nostro provider) che si occuperà del resto. I messaggi di posta interna all'azienda (ad esempio antonio@mede.it che scrive a lucia@mede.it) non usciranno all'esterno ma verranno trattati completamente dal nostro server. Il problema qui è che poi dobbiamo *andarci a prendere la posta in arrivo dal server del provider* se vogliamo distribuirla ai nostri utenti. Magari faremo un articoletto anche su questo.
 
 ## Un lavoro di squadra
 
-La complessità di questa parte non è tanto il server SMTP/POP3 in sè da implementare (cosa relativamente banale) ma il _ping pong_ dei diversi servizi coinvolti in un moderno Mail Server. Purtroppo dobbiamo cercare di difenderci da _virus_ e _spam_ se vogliamo dare un servizio decente e far sopravvivere il nostro server per più di _qualche giorno_ prima di venire _bannati_ dagli altri. Il nostro MTA non fà tutto da solo, bisogna mettere in scena un coretto a _6 voci_, dove 5 si passano la patata bollente l'un l'altro per convalidare una mail in arrivo. La 6° (dovecot) recapita la mail all'utente finale quando ne fà richiesta. Vediamo quali sono i nostri interpreti:
+La complessità di questa parte non è tanto il server SMTP/POP3 in sè da implementare (cosa relativamente banale) ma il *ping pong* dei diversi servizi coinvolti in un moderno Mail Server. Purtroppo dobbiamo cercare di difenderci da *virus* e *spam* se vogliamo dare un servizio decente e far sopravvivere il nostro server per più di *qualche giorno* prima di venire *bannati* dagli altri. Il nostro MTA non fà tutto da solo, bisogna mettere in scena un coretto a *6 voci*, dove 5 si passano la patata bollente l'un l'altro per convalidare una mail in arrivo. La 6° (dovecot) recapita la mail all'utente finale quando ne fà richiesta. Vediamo quali sono i nostri interpreti:
 
 1.  **Postfix** : Il nostro MTA che implementa il server SMTP della nostra azienda
-2.  **Postgrey** : Servizio che implementa il _greylisting_
+2.  **Postgrey** : Servizio che implementa il *greylisting*
 3.  **Clamav** : L'antivirus usato da amavis-new per scanarizzare le mail
 4.  **Spamassassin** : Usato da amavis-new per individuare lo spam
-5.  **Amavis-new** : Il _content filter_ che analizza le mail con _Clamav_ e _SpamAssassin_
+5.  **Amavis-new** : Il *content filter* che analizza le mail con *Clamav* e *SpamAssassin*
 6.  **Dovecot** : IMAP e POP3 server per permettere ai nostri utenti di scaricare le mail dal server
 
-Un bel _coretto_ non c'è che dire ...
+Un bel *coretto* non c'è che dire ...
 
 # Installazione
 
@@ -139,14 +139,14 @@ Nemmeno Amavis è nei repo. Per fortuna, ancora una volta, ci aiuta AUR. Assicur
 
 E procediamo ad installare Amavis con il pacchetto [amavisd-new](https://aur.archlinux.org/packages/amavisd-new/), operazione lunga perché richiede numerose librerie perl da installare.
 
-Alla fine rientra in gioco il mio repository _radioattivo_.
+Alla fine rientra in gioco il mio repository *radioattivo*.
 
 ```
 # pacman -S --force stenoweb/perl-file-temp
 
 ```
 
-Amavis vuole "espressamente" la versione 0.19 di _perl-file-temp_. Noi siamo gentili e gliela forniamo.
+Amavis vuole "espressamente" la versione 0.19 di *perl-file-temp*. Noi siamo gentili e gliela forniamo.
 
 ## Dovecot
 
@@ -172,13 +172,13 @@ Uff, un bel giro in giostra fà la nostra mail ! Tutto questo ha un costo in pe
 
 ## Postfix
 
-Iniziamo la configurazione del nostro Mail Server. Il primo tassello è senza dubbio _Postfix_ il nostro (mio?) MTA preferito. Forse il fatto che ci sia IBM all'origine ha per me il suo peso ? Bando alle ciance e via con i lavori ...
+Iniziamo la configurazione del nostro Mail Server. Il primo tassello è senza dubbio *Postfix* il nostro (mio?) MTA preferito. Forse il fatto che ci sia IBM all'origine ha per me il suo peso ? Bando alle ciance e via con i lavori ...
 
 [Postfix](http://www.postfix.org) è un popolare, scalabile e sicuro MTA scritto da Witse Venema mentre lavorava in IBM. Postfix era originariamente noto come VMailer ed è stato anche commercializzato da IBM come Secure Mailer. Nel 1999, il suo nome è diventato Postfix, e il resto è storia. In questa guida l'ho scelto perchè è affidabile, veloce e (relativamente) facile da gestire. Il suo file di configurazione è facile da leggere e modificare, anche se ovviamente è utile conoscere le diverse opzioni che è possibile impostare e tutti i loro valori possibili (o almeno i principali vista la mole degli stessi...). Sono stati scritti libri interi su Postfix, quindi inutile sottolineare che questo è solo un buon punto di partenza.
 
 ### Parametri di configurazione
 
-Abbiamo già installato Postfix, ora procediamo con la configurazione base che si ottiene modificando il file _/etc/postfix/main.cf_ , iniziamo da qui :
+Abbiamo già installato Postfix, ora procediamo con la configurazione base che si ottiene modificando il file */etc/postfix/main.cf* , iniziamo da qui :
 
 ```
 sudo nano /etc/postfix/main.cf
@@ -197,7 +197,7 @@ mail_owner = postfix
 
 #### myhostname e mydomain
 
-Definiamo il nome host internet del nostro server, di default il primo è il valore ritornato da _gethostbyname()_ , il secondo il nome del dominio :
+Definiamo il nome host internet del nostro server, di default il primo è il valore ritornato da *gethostbyname()* , il secondo il nome del dominio :
 
 ```
 myhostname = archi.mede.it
@@ -225,7 +225,7 @@ mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
 
 #### mynetworks
 
-Questo identifica le reti (o gli specifici host), che invieranno posta da questo server. Di default Postfix riceve le mail da tutte le interfacce di rete installate, ma permette di inviare solo dalla interfaccia di loopback (127.0.0.1) che, nel nostro caso, non và ovviamente bene. Il valore del parametro mynetworks può essere un singolo host, un indirizzo IP e la maschera di rete per indicare un range di host o di una sottorete, o qualsiasi numero di host separati da virgola o indirizzo IP e associati netmasks. Questo parametro è molto importante, deve essere presente e deve contenere SOLO la rete o gli host autorizzati, altrimenti il vostro server si trasforma in un [open relay](http://en.wikipedia.org/wiki/Open_relay), ovvero un server attraverso cui _chiunque_ può inviare mail. Gli open relay sono il bersaglio preferito dagli spammers, e sono, per fortuna, una razza quasi estinta (gli OpenRelay, non gli Spammers ...). Nel nostro caso il mail server permetterà alla rete interna 192.168.20.* di inviare mail attraverso di esso:
+Questo identifica le reti (o gli specifici host), che invieranno posta da questo server. Di default Postfix riceve le mail da tutte le interfacce di rete installate, ma permette di inviare solo dalla interfaccia di loopback (127.0.0.1) che, nel nostro caso, non và ovviamente bene. Il valore del parametro mynetworks può essere un singolo host, un indirizzo IP e la maschera di rete per indicare un range di host o di una sottorete, o qualsiasi numero di host separati da virgola o indirizzo IP e associati netmasks. Questo parametro è molto importante, deve essere presente e deve contenere SOLO la rete o gli host autorizzati, altrimenti il vostro server si trasforma in un [open relay](http://en.wikipedia.org/wiki/Open_relay), ovvero un server attraverso cui *chiunque* può inviare mail. Gli open relay sono il bersaglio preferito dagli spammers, e sono, per fortuna, una razza quasi estinta (gli OpenRelay, non gli Spammers ...). Nel nostro caso il mail server permetterà alla rete interna 192.168.20.* di inviare mail attraverso di esso:
 
 ```
 mynetworks = 127.0.0.0/8, 192.168.20.0/24
@@ -234,14 +234,14 @@ mynetworks = 127.0.0.0/8, 192.168.20.0/24
 
 #### masquerade_domains
 
-Ora i nostri utenti di rete invieranno mail ma molti client di posta inviano la mail usando il [fully qualified domain name](http://en.wikipedia.org/wiki/Fully_qualified_domain_name) dell'host da cui inviano la mail. Per capirci meglio: se il mio host si chiama _mybox_ e il mio utente _steno_ chi riceve le mail che spedisco vede il mittente nella forma _steno@mybox.mede.it_ che non è esattamente quello che voglio. Probabilmente non ho nemmeno un utente in quell'host e non riusciranno a rispondere alle mie mail. Risolviamo questo problema con il parametro _masquerade_domains_. Postfix sostitusce la parte domain con quanto specificato qui.
+Ora i nostri utenti di rete invieranno mail ma molti client di posta inviano la mail usando il [fully qualified domain name](http://en.wikipedia.org/wiki/Fully_qualified_domain_name) dell'host da cui inviano la mail. Per capirci meglio: se il mio host si chiama *mybox* e il mio utente *steno* chi riceve le mail che spedisco vede il mittente nella forma *steno@mybox.mede.it* che non è esattamente quello che voglio. Probabilmente non ho nemmeno un utente in quell'host e non riusciranno a rispondere alle mie mail. Risolviamo questo problema con il parametro *masquerade_domains*. Postfix sostitusce la parte domain con quanto specificato qui.
 
 ```
 masquerade_domains = mede.it
 
 ```
 
-Ora tutti gli host della mia rete possono inviare mail attraverso Posfix senza che venga identificato il nome dello specifico host che ha originato la mail. Le mail inviate dal mio host di esempio avranno come mittente _steno@mede.it_.
+Ora tutti gli host della mia rete possono inviare mail attraverso Posfix senza che venga identificato il nome dello specifico host che ha originato la mail. Le mail inviate dal mio host di esempio avranno come mittente *steno@mede.it*.
 
 #### alias_maps e alias_database
 
@@ -264,7 +264,7 @@ mailbox_size_limit = 0
 
 #### home_mailbox
 
-Specifica dove verrà salvata la posta dell'utente relativamente alla propria home. Se non specifico nulla viene usato il formato _mbox_ e salvato un file con il nome utente in _/var/spool/mail_. Io preferisco il formato Maildir, e specificando il seguente parametro ogni mail ricevuta crea un file in _/home/nomeutente/Maildir_
+Specifica dove verrà salvata la posta dell'utente relativamente alla propria home. Se non specifico nulla viene usato il formato *mbox* e salvato un file con il nome utente in */var/spool/mail*. Io preferisco il formato Maildir, e specificando il seguente parametro ogni mail ricevuta crea un file in */home/nomeutente/Maildir*
 
 ```
 home_mailbox = Maildir/
@@ -282,7 +282,7 @@ sudo /etc/rc.d/postfix start
 
 ```
 
-Installiamo _telnet_ e colleghiamoci con sulla porta 25
+Installiamo *telnet* e colleghiamoci con sulla porta 25
 
 ```
 sudo pacman -S netkit-telnet
@@ -333,14 +333,14 @@ Dopo il "." Postfix dovrebbe rispondermi con qualcosa di simile:
 
 ```
 
-Il numerone _13BF410D898D_ è un numero random che cambia ogni volta. Ora digitando:
+Il numerone *13BF410D898D* è un numero random che cambia ogni volta. Ora digitando:
 
 ```
 quit
 
 ```
 
-Si esce. Se non avete ricevuto errori siete a posto. Magari guardiamo se _admin_ ha ricevuto la mail, per ora ci accontentiamo di guardare il file con il nostro editor. Andiamo in /home/admin/Maildir/new e dovrei vedere un file di testo che posso editare e/o visualizzare. Ad esempio :
+Si esce. Se non avete ricevuto errori siete a posto. Magari guardiamo se *admin* ha ricevuto la mail, per ora ci accontentiamo di guardare il file con il nostro editor. Andiamo in /home/admin/Maildir/new e dovrei vedere un file di testo che posso editare e/o visualizzare. Ad esempio :
 
 ```
 sudo nano /home/admin/Maildir/new/1198938050.V803I22110bM48209.archi
@@ -351,7 +351,7 @@ E' la mail che avete appena inviato ? :)
 
 ### Aliases
 
-Abbiamo configurato postfix perchè usi il file /etc/postfix/aliases per gli alias, facciamo una piccola modifica al file perchè mandi le mail di sistema al nostro utente _admin_ anzichè al predefinito (che abbiamo disabilitato) _root_.
+Abbiamo configurato postfix perchè usi il file /etc/postfix/aliases per gli alias, facciamo una piccola modifica al file perchè mandi le mail di sistema al nostro utente *admin* anzichè al predefinito (che abbiamo disabilitato) *root*.
 
 ```
 sudo nano /etc/postfix/aliases
@@ -366,7 +366,7 @@ All'inizio del file dovrei vedere una cosa del genere (se non c'e' basta aggiung
 
 ```
 
-Togliamo il commento dalla seconda riga a mettiamo _admin_:
+Togliamo il commento dalla seconda riga a mettiamo *admin*:
 
 ```
 root:          admin
@@ -380,7 +380,7 @@ newaliases
 
 ```
 
-Ora le mail dirette a _root_ verranno girate al nostro utente _admin_.
+Ora le mail dirette a *root* verranno girate al nostro utente *admin*.
 
 ### Avvio del servizio
 
@@ -393,7 +393,7 @@ DAEMONS=(... ... ... ... ... postfix ... ... ...)
 
 ## Dovecot
 
-_Dovecot_ è un _Mail Delivery Agent_ progettato per garantire la sicurezza. Supporta la maggior parte dei formati di caselle di posta: a noi interessa particolarmente il formato _Maildir_ dal momento che lo abbiamo adottato. Questa sezione espone come configurarlo come server **imap** e **pop3**.
+*Dovecot* è un *Mail Delivery Agent* progettato per garantire la sicurezza. Supporta la maggior parte dei formati di caselle di posta: a noi interessa particolarmente il formato *Maildir* dal momento che lo abbiamo adottato. Questa sezione espone come configurarlo come server **imap** e **pop3**.
 
 ### Configurazione
 
@@ -412,7 +412,7 @@ protocols = imap pop3
 
 ```
 
-e proseguiamo con il disabilitare l'autenticazione _ssl_ e abilitare le _passwords_ in chiaro. Ok, non è il massimo della vita, ma la messa in sicurezza del server ve lo lascio come compito a casa:
+e proseguiamo con il disabilitare l'autenticazione *ssl* e abilitare le *passwords* in chiaro. Ok, non è il massimo della vita, ma la messa in sicurezza del server ve lo lascio come compito a casa:
 
 ```
 ssl_disable = yes
@@ -429,7 +429,7 @@ pop3_uidl_format = %08Xu%08Xv
 
 ### Autenticazione
 
-Al fine di ottenere il nostro agognato _Single Signon_ vogliamo far sì che Dovecot autentichi gli utenti utilizzando la stessa coppia utente/password utilizzata da Samba. I nostri utenti utilizzeranno sempre lo stesso account sia per il File Server che per la posta. Questo si può fare in modi diversi, qui utilizzeremo [PAM](http://it.wikipedia.org/wiki/Pluggable_authentication_modules) che di "riflesso" utilizzerà LDAP per l'autenticazione. Apriamo (se lo abbiamo chiuso) il file di configurazione /etc/dovecot/dovecot.conf e aggiungiamo (o cerchiamo e modifichiamo, meglio) il seguente parametro :
+Al fine di ottenere il nostro agognato *Single Signon* vogliamo far sì che Dovecot autentichi gli utenti utilizzando la stessa coppia utente/password utilizzata da Samba. I nostri utenti utilizzeranno sempre lo stesso account sia per il File Server che per la posta. Questo si può fare in modi diversi, qui utilizzeremo [PAM](http://it.wikipedia.org/wiki/Pluggable_authentication_modules) che di "riflesso" utilizzerà LDAP per l'autenticazione. Apriamo (se lo abbiamo chiuso) il file di configurazione /etc/dovecot/dovecot.conf e aggiungiamo (o cerchiamo e modifichiamo, meglio) il seguente parametro :
 
 ```
 passdb pam {
@@ -438,7 +438,7 @@ passdb pam {
 
 ```
 
-In questo modo abbiamo detto a _Dovecot_ di utilizzare _PAM_ con le "regole" impostate nel file /etc/pam.d/dovecot che andiamo immediatamente a creare:
+In questo modo abbiamo detto a *Dovecot* di utilizzare *PAM* con le "regole" impostate nel file /etc/pam.d/dovecot che andiamo immediatamente a creare:
 
 ```
 sudo nano /etc/pam.d/dovecot
@@ -476,7 +476,7 @@ DAEMONS=(... ... ... ... ... dovecot ... ... ...)
 
 ## Shorewall
 
-Mai dimenticarsi del Firewall ! Dobbiamo permettere il traffico sulle porte utilizzate da Dovecot e anche _costringere_ gli utenti della nostra rete ad utilizzare il nostro server per spedire, altrimenti ...
+Mai dimenticarsi del Firewall ! Dobbiamo permettere il traffico sulle porte utilizzate da Dovecot e anche *costringere* gli utenti della nostra rete ad utilizzare il nostro server per spedire, altrimenti ...
 
 ### Configurazione
 
@@ -505,7 +505,7 @@ IMAP/ACCEPT      net             $FW
 
 ### La regola più importante
 
-Stiamo filtrando tutta la posta per proteggere i nostri utenti da SPAM e Virus, ma anche per evitare di essere _bannati_ dagli altri server di posta perchè _non "virtuosi"_, nel senso che ok, respingiamo le mail che arrivano, ma dobbiamo anche evitare di spedirla la spazzatura. Se gli utenti della nostra rete utilizzano il nostro server per spedire siamo a posto, Amavis (come vedremo dopo) farà già il suo lavoro, ma se un nostro utente _buontempone_ (o un utente "esterno" nostro ospite) ha il suo bel account su GMail o su Yahoo o qualunque altro, e usa l'SMTP di questo Provider per spedire la posta ? Magari aggiungiamo che si è beccato un virus con il Notebook mentre navigava da casa che lo ha trasformato in un _zombie_ alla mercè degli Spammers e abbiamo fatto la frittata: appena accende il computer collegato alla nostra rete aziendale, ZAC! inizia a spedire tonnellate di SPAM _attraverso_ il suo provider il quale cosa vedrà come mittente della montagna di spazzatura che stà arrivando ? MA NATURALMENTE IL NOSTRO INCOLPEVOLE SERVER che stà "nattando" la rete con un unico indirizzo IP. Risultato ? 10 minuti e siamo bannati. Garantito.
+Stiamo filtrando tutta la posta per proteggere i nostri utenti da SPAM e Virus, ma anche per evitare di essere *bannati* dagli altri server di posta perchè *non "virtuosi"*, nel senso che ok, respingiamo le mail che arrivano, ma dobbiamo anche evitare di spedirla la spazzatura. Se gli utenti della nostra rete utilizzano il nostro server per spedire siamo a posto, Amavis (come vedremo dopo) farà già il suo lavoro, ma se un nostro utente *buontempone* (o un utente "esterno" nostro ospite) ha il suo bel account su GMail o su Yahoo o qualunque altro, e usa l'SMTP di questo Provider per spedire la posta ? Magari aggiungiamo che si è beccato un virus con il Notebook mentre navigava da casa che lo ha trasformato in un *zombie* alla mercè degli Spammers e abbiamo fatto la frittata: appena accende il computer collegato alla nostra rete aziendale, ZAC! inizia a spedire tonnellate di SPAM *attraverso* il suo provider il quale cosa vedrà come mittente della montagna di spazzatura che stà arrivando ? MA NATURALMENTE IL NOSTRO INCOLPEVOLE SERVER che stà "nattando" la rete con un unico indirizzo IP. Risultato ? 10 minuti e siamo bannati. Garantito.
 
 Come evitare questo disastro ? Con questa regola da applicare sempre su /etc/shorewall/rules :
 
@@ -514,7 +514,7 @@ REDIRECT        loc             smtp            tcp     smtp    - !85.85.85.85,
 
 ```
 
-Dove "85.85.85.85" è l'indirizzo IP inventato (voi mettete quello vero!) pubblico del nostro server. In questo modo chiunque cerchi di "passare" attraverso il nostro server (ad eccezione di chi ci punta correttamente) utilizzando il protocollo SMTP della posta viene "girato" localmente sul server. Il nostro server _filtra_ così il messaggio e, se passa i nostri canonici controlli, viene spedito da lui stesso. Non facciamoci scavalcare ! :D
+Dove "85.85.85.85" è l'indirizzo IP inventato (voi mettete quello vero!) pubblico del nostro server. In questo modo chiunque cerchi di "passare" attraverso il nostro server (ad eccezione di chi ci punta correttamente) utilizzando il protocollo SMTP della posta viene "girato" localmente sul server. Il nostro server *filtra* così il messaggio e, se passa i nostri canonici controlli, viene spedito da lui stesso. Non facciamoci scavalcare ! :D
 
 Bene. Ora non ci resta che riavviare il firewall:
 
@@ -531,9 +531,9 @@ Meglio rimboccarci le maniche e vedere come possiamo almeno rendere loro la vita
 
 # Filtraggio della posta
 
-Siamo felici perchè abbiamo un mail server funzionante e stiamo ricevendo mail dal mondo. Putroppo in breve tempo una quantità incredibile della posta che riceviamo sarà inevitabilmente spazzatura non richiesta: _Spam_. Qualche mail conterrà pure _virus_ e _malware_, e magari come mittente c'e' pure un vostro ignaro amico. Lo Spam e la posta infetta da virus sono una _autentica epidemia_. **Un server di posta non protetto ha breve vita**, presto saremo _bannati_ come “cattivi” dalle liste pubbliche e non riusciremo più nemmeno ad inviare posta perchè respinti dagli altri server. Insomma, un disastro. Avendo un server personale per la posta è _nostro compito_, dunque, proteggerlo e vedremo qui come farlo.
+Siamo felici perchè abbiamo un mail server funzionante e stiamo ricevendo mail dal mondo. Putroppo in breve tempo una quantità incredibile della posta che riceviamo sarà inevitabilmente spazzatura non richiesta: *Spam*. Qualche mail conterrà pure *virus* e *malware*, e magari come mittente c'e' pure un vostro ignaro amico. Lo Spam e la posta infetta da virus sono una *autentica epidemia*. **Un server di posta non protetto ha breve vita**, presto saremo *bannati* come “cattivi” dalle liste pubbliche e non riusciremo più nemmeno ad inviare posta perchè respinti dagli altri server. Insomma, un disastro. Avendo un server personale per la posta è *nostro compito*, dunque, proteggerlo e vedremo qui come farlo.
 
-Fortunatamente gli strumenti per combattere e limitare (non sconfiggere, badate bene) questo problema non mancano, come già detto prima configureremo Postfix per un primo livello di controllo della posta, installeremo _Postgrey_ che implementa il _graylisting_, _Amavis-new_ che esplora le vostre mail e invoca altri pacchetti quali _Spamassassin_ per proteggere il vostro server dallo spam e _ClamAV_ per la scansione antivirus. Abbiamo visto come addirittura il nostro _Shorewall_ ci dà una mano con una importante regola. Quello che dobbiamo fare è integrarli insieme.
+Fortunatamente gli strumenti per combattere e limitare (non sconfiggere, badate bene) questo problema non mancano, come già detto prima configureremo Postfix per un primo livello di controllo della posta, installeremo *Postgrey* che implementa il *graylisting*, *Amavis-new* che esplora le vostre mail e invoca altri pacchetti quali *Spamassassin* per proteggere il vostro server dallo spam e *ClamAV* per la scansione antivirus. Abbiamo visto come addirittura il nostro *Shorewall* ci dà una mano con una importante regola. Quello che dobbiamo fare è integrarli insieme.
 
 Piccola nota: forse qualcuno si domanderà perché mai debba proteggere Linux dai virus. Il motivo è semplice: nella nostra rete interna la maggior parte dei computer avrà sicuramente una qualche versione di Windows a bordo che è il bersaglio preferito dei virus e malware. Quindi meglio prevenire che curare cercando di far arrivare meno spazzatura possibile a questi umili e indifesi client :).
 
@@ -548,7 +548,7 @@ sudo nano /etc/postfix/main.cf
 
 ```
 
-Postfix generalmente scrive nel log il motivo di rifiuto di una mail, e settando _smtpd_delay_reject = yes_, mostra il mittente e la stringa HELO che ha causato il rifiuto. Andiamo in fondo al file e aggiungiamo :
+Postfix generalmente scrive nel log il motivo di rifiuto di una mail, e settando *smtpd_delay_reject = yes*, mostra il mittente e la stringa HELO che ha causato il rifiuto. Andiamo in fondo al file e aggiungiamo :
 
 ```
 smtpd_delay_reject = yes
@@ -562,15 +562,15 @@ smtpd_helo_required = yes
 
 ```
 
-Ora impostiamo una serie di _restrizioni_ da applicare. A chi non supera queste... _"bye bye"_ prima ancora di entrare.
+Ora impostiamo una serie di *restrizioni* da applicare. A chi non supera queste... *"bye bye"* prima ancora di entrare.
 
 ### Restrizioni nei comandi HELO o EHLO
 
 Sono usati dal mail server remoto per identificare se stesso. Le restrizioni sono analizzate in cascata una alla volta.
 
-*   _permit_mynetworks_: accetta le connessioni da qualsiasi mail server listato nel parametro _mynetworks_ di main.cf
-*   _reject_invalid_hostname_: rifiuta connessioni da tutti i server che non identificano se stessi usando un nome host corretto (fully qualified hostname)
-*   _permit_: alla fine accetta le connessioni dai server che hanno passato i controlli precedenti.
+*   *permit_mynetworks*: accetta le connessioni da qualsiasi mail server listato nel parametro *mynetworks* di main.cf
+*   *reject_invalid_hostname*: rifiuta connessioni da tutti i server che non identificano se stessi usando un nome host corretto (fully qualified hostname)
+*   *permit*: alla fine accetta le connessioni dai server che hanno passato i controlli precedenti.
 
 ```
 smtpd_helo_restrictions =
@@ -583,8 +583,8 @@ smtpd_helo_restrictions =
 
 ### Restrizioni a cui sono soggetti i server remoti per i comandi inviati
 
-*   _reject_unauth_pipelining_ : impone al nostro server di rifiutare le connessioni dai server che inviano troppo velocemente i comandi. Molti spammers fanno questo per tentare di velocizzare la fase di invio mail spazzatura.
-*   _permit_ : come sopra, accetta le connessioni se le precedenti restrizioni sono ok.
+*   *reject_unauth_pipelining* : impone al nostro server di rifiutare le connessioni dai server che inviano troppo velocemente i comandi. Molti spammers fanno questo per tentare di velocizzare la fase di invio mail spazzatura.
+*   *permit* : come sopra, accetta le connessioni se le precedenti restrizioni sono ok.
 
 ```
 smtpd_data_restrictions =
@@ -595,12 +595,12 @@ smtpd_data_restrictions =
 
 ### Restrizioni sui mittenti delle mail che il server riceve
 
-Viene usato il comando _SMTP MAIL FROM_ per identificarli :
+Viene usato il comando *SMTP MAIL FROM* per identificarli :
 
-*   _permit_mynetworks_ : vedi sopra
-*   _reject_non_fqdn_sender_ : rifiuta le mail da tutti i mittenti il cui nome non è specificato in modo esteso (sempre secondo quanto stabilisce il famoso "fully qualified host name"). Nota che gli host della nostra rete avranno probabilmente un nome host corto ma in questo caso sono già garantiti dalla regola precedente.
-*   _reject_unknown_sender_domain_ : rifiuta le mail che provengono da domini sconosciuti
-*   _permit_ : vedi sopra
+*   *permit_mynetworks* : vedi sopra
+*   *reject_non_fqdn_sender* : rifiuta le mail da tutti i mittenti il cui nome non è specificato in modo esteso (sempre secondo quanto stabilisce il famoso "fully qualified host name"). Nota che gli host della nostra rete avranno probabilmente un nome host corto ma in questo caso sono già garantiti dalla regola precedente.
+*   *reject_unknown_sender_domain* : rifiuta le mail che provengono da domini sconosciuti
+*   *permit* : vedi sopra
 
 ```
 smtpd_sender_restrictions =
@@ -613,14 +613,14 @@ smtpd_sender_restrictions =
 
 ### Restrizioni nei destinatari finali delle mail che il nostro server riceve
 
-Sono identificati usando il comando _SMTP RCPT TO_ :
+Sono identificati usando il comando *SMTP RCPT TO* :
 
-*   _reject_unverified_recipient_ : rifiuta a priori una mail verso un utente sconosciuto. Tuttavia ho notato che se il server destinatario implementa Postgrey questo parametro, di fatto, ci impedisce di mandargli mail a causa del rifiuto di validare l'utente imposto dal funzionamento stesso di Postgrey. Occhio ai log, ed eventualmente disabilitare la restrizione.
-*   _permit_mynetworks_ : vedi sopra
-*   _reject_unknown_recipient_domain_ : rifiuta le mail quando il nostro mail server non è la destinazione finale e la destinazione non è un dominio valido
-*   _reject_unauth_destination_ : rifiuta le mail quando il dominio destinazione non è fra quelli serviti dal nostro server (definiti dal parametro mynetworks) oppure non è fra i domini definiti in relayhost. Questo impedisce che il nostro server venga utilizzato come open relay.
-*   _check_policy_service_ : fa in modo che postfix usi un servizio esterno per controlli aggiuntivi. Nel nostro caso **inet:127.0.0.1:10030** passa la palla a _Postgrey_ per implementare le gray list. Lo vedremo più avanti.
-*   _permit_ : vedi sopra.
+*   *reject_unverified_recipient* : rifiuta a priori una mail verso un utente sconosciuto. Tuttavia ho notato che se il server destinatario implementa Postgrey questo parametro, di fatto, ci impedisce di mandargli mail a causa del rifiuto di validare l'utente imposto dal funzionamento stesso di Postgrey. Occhio ai log, ed eventualmente disabilitare la restrizione.
+*   *permit_mynetworks* : vedi sopra
+*   *reject_unknown_recipient_domain* : rifiuta le mail quando il nostro mail server non è la destinazione finale e la destinazione non è un dominio valido
+*   *reject_unauth_destination* : rifiuta le mail quando il dominio destinazione non è fra quelli serviti dal nostro server (definiti dal parametro mynetworks) oppure non è fra i domini definiti in relayhost. Questo impedisce che il nostro server venga utilizzato come open relay.
+*   *check_policy_service* : fa in modo che postfix usi un servizio esterno per controlli aggiuntivi. Nel nostro caso **inet:127.0.0.1:10030** passa la palla a *Postgrey* per implementare le gray list. Lo vedremo più avanti.
+*   *permit* : vedi sopra.
 
 ```
 smtpd_recipient_restrictions =
@@ -637,7 +637,7 @@ Bene, a questo punto il nostro server Postfix già respingerà autonomamente una
 
 ### Test delle restrizioni
 
-Postfix fornisce _vagonate_ di parametri, a volte è utile testare una restrizione prima di buttare alle ortiche delle mail. Vi segnalo un paio di parametri utili allo scopo.
+Postfix fornisce *vagonate* di parametri, a volte è utile testare una restrizione prima di buttare alle ortiche delle mail. Vi segnalo un paio di parametri utili allo scopo.
 
 #### soft_bounce
 
@@ -649,9 +649,9 @@ sudo /etc/rc.d/postfix restart
 
 ```
 
-_N.B.: In alternativa al "restart" del servizio posso usare il comando postfix per rileggere la configurazione senza killare il processo, basta digitare : **sudo postfix reload** e le nuove impostazioni saranno operative._
+*N.B.: In alternativa al "restart" del servizio posso usare il comando postfix per rileggere la configurazione senza killare il processo, basta digitare : **sudo postfix reload** e le nuove impostazioni saranno operative.*
 
-Quando impostato a **yes**, le _hard reject responses_ (5xx) sono convertite in _soft reject responses_ (4xx). In questo modo il server mittente, dopo un intervallo di tempo, opera un nuovo tentativo. Impostare questo parametro significa, in pratica, poter controllare il file di log e vedere cosa il vostro server rifiuta dandovi il tempo, se necessario, di aggiustare la configurazione in attesa del nuovo tentativo. Una volta trovata la configurazione ottimale disabilitare soft_bounce e ricaricare postfix.
+Quando impostato a **yes**, le *hard reject responses* (5xx) sono convertite in *soft reject responses* (4xx). In questo modo il server mittente, dopo un intervallo di tempo, opera un nuovo tentativo. Impostare questo parametro significa, in pratica, poter controllare il file di log e vedere cosa il vostro server rifiuta dandovi il tempo, se necessario, di aggiustare la configurazione in attesa del nuovo tentativo. Una volta trovata la configurazione ottimale disabilitare soft_bounce e ricaricare postfix.
 
 #### warn_if_reject
 
@@ -671,7 +671,7 @@ smtpd_recipient_restrictions =
 
 ```
 
-Notate il _warn_if_reject_ che precede la mia regola _reject_invalid_hostname_: se un client, dunque, usa un nome host HELO invalido quando ci invia un messaggio, rientra nella mia restrizione, ma con questo parametro impostato Postfix scrive nel log un **warning** e accetta la mail lo stesso.
+Notate il *warn_if_reject* che precede la mia regola *reject_invalid_hostname*: se un client, dunque, usa un nome host HELO invalido quando ci invia un messaggio, rientra nella mia restrizione, ma con questo parametro impostato Postfix scrive nel log un **warning** e accetta la mail lo stesso.
 
 Riavviamo Postfix e controlliamo non ci siano errori:
 
@@ -680,21 +680,21 @@ sudo /etc/rc.d/postfix restart
 
 ```
 
-Ottimo! Il primo passo è stato compiuto, solo server _apparentemente_ ufficiali ci possono inviare mail.
+Ottimo! Il primo passo è stato compiuto, solo server *apparentemente* ufficiali ci possono inviare mail.
 
 ## Postgrey
 
-Precedentemente in Postfix abbiamo impostato la direttiva _check_policy_service_ per utilizzare un anche un servizio esterno per le restrizioni. In questo caso vogliamo usare _Postgrey_ che implementa il graylisting. Cos'e' il graylisting ? Molti avranno sicuramente sentito parlare di _whitelist_ (la lista dei buoni) e _blacklist_ (la lista dei cattivi). Con Postgrey si implementa un livello intermedio tra i due, detto appunto _greylist_ (che fantasia :)).
+Precedentemente in Postfix abbiamo impostato la direttiva *check_policy_service* per utilizzare un anche un servizio esterno per le restrizioni. In questo caso vogliamo usare *Postgrey* che implementa il graylisting. Cos'e' il graylisting ? Molti avranno sicuramente sentito parlare di *whitelist* (la lista dei buoni) e *blacklist* (la lista dei cattivi). Con Postgrey si implementa un livello intermedio tra i due, detto appunto *greylist* (che fantasia :)).
 
 Questo sistema sfrutta un concetto molto semplice: visto l'elevato numero di mail che gli spammers inviano, raramente tentano più di una volta l'invio della posta ad un destinatario. Con Postgrey il vostro server sfrutta questo fatto respingendo temporaneamente tutte le email provenienti da mittenti sconosciuti segnalando loro che la casella di posta del destinatario non è momentaneamente disponibile e mettendosi in ascolto per il secondo tentativo che un server "ufficiale" fà sempre.
 
-Semplice, efficace ed ingegnoso, non servono filtri bayesiani o altre diavolerie e, ve lo garantisco, per il momento questo sistema _spazza via da solo oltre il 95% dello spam !_.
+Semplice, efficace ed ingegnoso, non servono filtri bayesiani o altre diavolerie e, ve lo garantisco, per il momento questo sistema *spazza via da solo oltre il 95% dello spam !*.
 
 Più sotto vedremo in dettaglio il funzionamento.
 
 ### Configurazione
 
-La configurazione base di Postgrey è molto semplice. Anzi, praticamente nulla. Nelle _smtpd_recipient_restrictions_ di Postfix abbiamo già impostato:
+La configurazione base di Postgrey è molto semplice. Anzi, praticamente nulla. Nelle *smtpd_recipient_restrictions* di Postfix abbiamo già impostato:
 
 ```
 check_policy_service inet:127.0.0.1:10030
@@ -708,7 +708,7 @@ sudo /etc/rc.d/postgrey start
 
 ```
 
-e inserirlo nell'array di avvio in _/etc/rc.conf_ prima (anche se forse non è importante l'ordine) di postfix :
+e inserirlo nell'array di avvio in */etc/rc.conf* prima (anche se forse non è importante l'ordine) di postfix :
 
 ```
 DAEMONS=(... ... ... ... ... postgrey postfix ... ... ...)
@@ -724,10 +724,10 @@ sudo nano /etc/conf.d/postgrey
 
 di particolare interesse possono essere i due parametri :
 
-*   _--delay_ : definisce per quanti secondi in messaggio viene messo in graylist. Di default 300 secondi.
-*   _--max-age_ : definisce per quanti giorni un mittente che ha già in passato superato la verifica rimane nella whitelist generata da postgrey. Finchè sono qui verranno in futuro accettati senza verifica. Di default 30 giorni.
+*   *--delay* : definisce per quanti secondi in messaggio viene messo in graylist. Di default 300 secondi.
+*   *--max-age* : definisce per quanti giorni un mittente che ha già in passato superato la verifica rimane nella whitelist generata da postgrey. Finchè sono qui verranno in futuro accettati senza verifica. Di default 30 giorni.
 
-Per variare questi parametri bisogna metterli nella variabile POSTGREY_OPTS, e riavviare il servizio. Ad esempio, per portare il _delay_ a 180 secondi e il _max age_ a 60 giorni :
+Per variare questi parametri bisogna metterli nella variabile POSTGREY_OPTS, e riavviare il servizio. Ad esempio, per portare il *delay* a 180 secondi e il *max age* a 60 giorni :
 
 ```
 POSTGREY_OPTS="--delay=180 --max-age=60"
@@ -763,30 +763,30 @@ Con la configurazione di default vediamo a grandi linee cosa succede quando a Po
 
 1.  Postgrey rifiuta la mail e Postfix comunica che la mailbox dell'utente non è al momento disponibile
 2.  Postgrey memorizza la terna indirizzo IP dell'host sorgente, email del mittente, email del destinatario nella greylist
-3.  Al successivo tentativo del server mittente se non è trascorso il tempo di _delay_ (300 secondi), postgrey continua a rifiutare la mail. Questo per evitare i rinvii troppo veloci operati dagli spammers.
-4.  Se al successivo reinvio il tempo di _delay_ è trascorso postgrey accetta la mail e memorizza la terna indirizzo IP dell'host sorgente, email del mittente, email del destinatario nella sua _whitelist_ per _max age_ tempo (30 giorni)
+3.  Al successivo tentativo del server mittente se non è trascorso il tempo di *delay* (300 secondi), postgrey continua a rifiutare la mail. Questo per evitare i rinvii troppo veloci operati dagli spammers.
+4.  Se al successivo reinvio il tempo di *delay* è trascorso postgrey accetta la mail e memorizza la terna indirizzo IP dell'host sorgente, email del mittente, email del destinatario nella sua *whitelist* per *max age* tempo (30 giorni)
 
-Come vediamo la _"terna"_ rimane nella white list di default per 30 giorni, in questo modo chi ci invia regolarmente email non viene più " ritardato" da postgrey ma accettato subito.
+Come vediamo la *"terna"* rimane nella white list di default per 30 giorni, in questo modo chi ci invia regolarmente email non viene più " ritardato" da postgrey ma accettato subito.
 
 ### Controindicazioni ?
 
 Bhe, a parte un ritardo di 5 minuti la prima volta che qualcuno ci scrive sinceramente non ne vedo. Ok, il sistema si appesantisce perchè ogni nuovo messaggio deve essere inviato due volte, ma credetemi che i benefici sono enormi. Ho un semplice caso in cui con Postgrey i messaggi di spam sono passati da circa 8.000 al giorno a qualche decina.
 
-Godiamoci il _greylisting_ finchè funziona, temo che se verrà implementato su larga scala (credo che i grossi provider con alto volume di traffico difficilmente lo faranno) gli spammers cominceranno ad uscire con delle contromisure...
+Godiamoci il *greylisting* finchè funziona, temo che se verrà implementato su larga scala (credo che i grossi provider con alto volume di traffico difficilmente lo faranno) gli spammers cominceranno ad uscire con delle contromisure...
 
 Una guerra infinita.
 
 ## Amavis-new
 
-Abbiamo finito con le protezioni ? Neanche per sogno! Dobbiamo ancora gestire/segare il 5% dello spam che sfugge a PostFix+Postgrey, ma sopratutto dobbiamo aiutare i nostri poveri client windows nella loro titanica lotta a spyware e virus... Configuriamo il sistema per utilizzare _amavis-new_, occhio al file di configurazione dello stesso: **UN VERO INCUBO**, quindi non addormentatevi sulla tastiera e magari salvate l'originale che se sbagliate qualche virgoletta o altro non funziona più un tubo ... O_o. Iniziermo con la parte _Postfix_ e con qualla _Spamassassin_, per conludere, poi, con quella relativa a _Clamav_
+Abbiamo finito con le protezioni ? Neanche per sogno! Dobbiamo ancora gestire/segare il 5% dello spam che sfugge a PostFix+Postgrey, ma sopratutto dobbiamo aiutare i nostri poveri client windows nella loro titanica lotta a spyware e virus... Configuriamo il sistema per utilizzare *amavis-new*, occhio al file di configurazione dello stesso: **UN VERO INCUBO**, quindi non addormentatevi sulla tastiera e magari salvate l'originale che se sbagliate qualche virgoletta o altro non funziona più un tubo ... O_o. Iniziermo con la parte *Postfix* e con qualla *Spamassassin*, per conludere, poi, con quella relativa a *Clamav*
 
 ### Content Filter con Amavis-new
 
-Per questa configurazione sono state scelte delle applicazioni note per il buon livello di sicurezza che offrono e per la facilità con la quale possono essere modificati i propri file di configurazione. Come oramai abbiamo capito, per impostazione predefinita Postfix si mette in ascolto sulla porta 25 per la posta in ingresso. Quando arriva un nuovo messaggio di posta, dopo i suoi canonici controlli restrittivi (compreso Postgrey) il server lo inoltra' ad _amavisd-new_ sulla porta 10024\. Amavisd-new, successivamente, controlla il messaggio attraverso vari filtri e lo restituisce a Postfix sulla porta 10025; infine, il messaggio viene inviato alla mailbox del destinatario. Complicato vero ? Più da scrivere che da fare :)
+Per questa configurazione sono state scelte delle applicazioni note per il buon livello di sicurezza che offrono e per la facilità con la quale possono essere modificati i propri file di configurazione. Come oramai abbiamo capito, per impostazione predefinita Postfix si mette in ascolto sulla porta 25 per la posta in ingresso. Quando arriva un nuovo messaggio di posta, dopo i suoi canonici controlli restrittivi (compreso Postgrey) il server lo inoltra' ad *amavisd-new* sulla porta 10024\. Amavisd-new, successivamente, controlla il messaggio attraverso vari filtri e lo restituisce a Postfix sulla porta 10025; infine, il messaggio viene inviato alla mailbox del destinatario. Complicato vero ? Più da scrivere che da fare :)
 
 ### Un caporale con due soldati
 
-Cos'e' _Amavis-new_ ? **Amavisd-new** è un framework per il filtraggio di contenuti che utilizza applicazioni di supporto per il riconoscimento di virus e spam. Il nostro _caporale filtratore_ utilizzerà due _soldati_ per la sua campagna d'armi: [ClamAV](http://www.clamav.net/) per il filtraggio dei virus e [Spamassassin](http://spamassassin.apache.org/) per quello dello spam. Spamassassin, a sua volta, può poggiarsi su applicazioni di livello inferiore, come ad esempio [Vipul's Razor](http://razor.sourceforge.net/) e [DCC](http://www.rhyolite.com/anti-spam/dcc/) (non trattati in questa guida). Rispetto ad altre tecnologie di controllo dello spam (come gli _RBL_, dall'inglese _Real-time Blackhole List_, termine con il quale si indicano impropriamente le tecnologie _DNSBL_, o di _DNS blacklist_, che consistono nella pubblicazione, da parte di un sito Internet, di una lista di indirizzi IP che, per varie ragioni, ma principalmente spam, dovrebbero essere bloccati), Spamassassin non valida un dato messaggio email in base ad un singolo test. Questo programma, invece, esegue una lista di controlli, sia interni, sia usando delle applicazioni esterne, per calcolare un punteggio da assegnare ad ogni messaggio di posta. Questo punteggio è determinato in base a:
+Cos'e' *Amavis-new* ? **Amavisd-new** è un framework per il filtraggio di contenuti che utilizza applicazioni di supporto per il riconoscimento di virus e spam. Il nostro *caporale filtratore* utilizzerà due *soldati* per la sua campagna d'armi: [ClamAV](http://www.clamav.net/) per il filtraggio dei virus e [Spamassassin](http://spamassassin.apache.org/) per quello dello spam. Spamassassin, a sua volta, può poggiarsi su applicazioni di livello inferiore, come ad esempio [Vipul's Razor](http://razor.sourceforge.net/) e [DCC](http://www.rhyolite.com/anti-spam/dcc/) (non trattati in questa guida). Rispetto ad altre tecnologie di controllo dello spam (come gli *RBL*, dall'inglese *Real-time Blackhole List*, termine con il quale si indicano impropriamente le tecnologie *DNSBL*, o di *DNS blacklist*, che consistono nella pubblicazione, da parte di un sito Internet, di una lista di indirizzi IP che, per varie ragioni, ma principalmente spam, dovrebbero essere bloccati), Spamassassin non valida un dato messaggio email in base ad un singolo test. Questo programma, invece, esegue una lista di controlli, sia interni, sia usando delle applicazioni esterne, per calcolare un punteggio da assegnare ad ogni messaggio di posta. Questo punteggio è determinato in base a:
 
 *   [Filtro Bayesiano](http://it.wikipedia.org/wiki/Filtro_bayesiano)
 *   Regole statiche basate su espressioni regolari
@@ -816,7 +816,7 @@ Ancora qualche appunto sulla quarantena. Amavis può porre le mail in quarantena
 
 ### Postfix
 
-Sì, cavolo, ancora Postfix. Dobbiamo modificare il file dove vengono definiti i suoi _servizi_ aggiungendone uno per _amavis_ e configurarlo affinché ne faccia uso. Modifichiamo il file **master.cf** (occhio, non _main.cf_), dove, appunto, sono specificate le impostazioni dei servizi di postfix:
+Sì, cavolo, ancora Postfix. Dobbiamo modificare il file dove vengono definiti i suoi *servizi* aggiungendone uno per *amavis* e configurarlo affinché ne faccia uso. Modifichiamo il file **master.cf** (occhio, non *main.cf*), dove, appunto, sono specificate le impostazioni dei servizi di postfix:
 
 ```
 sudo nano /etc/postfix/master.cf
@@ -856,7 +856,7 @@ amavis    unix    -    -    -    -    2    smtp
 
 ```
 
-I parametri sono _una marea_ prendeteli per buoni, oppure (meglio) googolate alla ricerca di una spiegazione. Due cose però le scrivo. Cosa diavolo abbiamo fatto ? Semplice (si fà per dire) abbiamo definito due "servizi": _amavis_ per il delivery via _smtp_ della posta al content filter, e la porta di _reiniezione_ (reinjection sulla 10025) dove ci aspettiamo la risposta. Facile no ? :D Lo sò, lo sò vi viene voglia di installare _Exchange_ ...
+I parametri sono *una marea* prendeteli per buoni, oppure (meglio) googolate alla ricerca di una spiegazione. Due cose però le scrivo. Cosa diavolo abbiamo fatto ? Semplice (si fà per dire) abbiamo definito due "servizi": *amavis* per il delivery via *smtp* della posta al content filter, e la porta di *reiniezione* (reinjection sulla 10025) dove ci aspettiamo la risposta. Facile no ? :D Lo sò, lo sò vi viene voglia di installare *Exchange* ...
 
 Non abbiamo finito, ricercate la riga più sù dove stà scritto "pickup" e fatela diventare così:
 
@@ -883,7 +883,7 @@ content_filter = amavis:[127.0.0.1]:10024
 
 ```
 
-Ok ? Utilizziamo il servizio _amavis_ che stà sulla interfaccia di loopback (127.0.0.1) sulla porta 10024\. Questo vi dovrebbe far intuire che potremmo usare anche un altro server per il content filter, ma non perdiamoci, nella nostra _Small Buisiness_ abbiamo un unico server ;)
+Ok ? Utilizziamo il servizio *amavis* che stà sulla interfaccia di loopback (127.0.0.1) sulla porta 10024\. Questo vi dovrebbe far intuire che potremmo usare anche un altro server per il content filter, ma non perdiamoci, nella nostra *Small Buisiness* abbiamo un unico server ;)
 
 ### Amavis
 
@@ -1008,7 +1008,7 @@ Noiosa questa parte vero ? Almeno per me lo è stata, forse sono particolarment
 
 ### Clamav
 
-Amavis può utilizzare un ampio ventaglio di antivirus che comprende tutti i big commerciali del settore, noi abbiamo deciso per _clamav_ dal momento che è open. Lo abbiamo già installato, ora configuriamo, avviamolo e impostiamo amavis-new affinché lo utilizzi.
+Amavis può utilizzare un ampio ventaglio di antivirus che comprende tutti i big commerciali del settore, noi abbiamo deciso per *clamav* dal momento che è open. Lo abbiamo già installato, ora configuriamo, avviamolo e impostiamo amavis-new affinché lo utilizzi.
 
 Clamav ha due demoni, uno per la scansione (clamd) e uno per l'aggiornamento del database dei virus conosciuti (freshclam), facciamo in modo che entrambi siano attivi :
 
@@ -1032,14 +1032,14 @@ sudo nano /etc/clamav/clamd.conf
 
 ```
 
-rimuoviamo (o commentiamo) la riga che inizia con "Example" e impostamo il parametro _AllowSupplementaryGroups_ che abilita clamd ad accedere ai file usando qualsiasi privilegio di gruppo abbia. Senza questo clamd non accede ai file usando i permessi di gruppo, limitando la scansione ai soli file leggibili da tutti.
+rimuoviamo (o commentiamo) la riga che inizia con "Example" e impostamo il parametro *AllowSupplementaryGroups* che abilita clamd ad accedere ai file usando qualsiasi privilegio di gruppo abbia. Senza questo clamd non accede ai file usando i permessi di gruppo, limitando la scansione ai soli file leggibili da tutti.
 
 ```
 AllowSupplementaryGroups yes
 
 ```
 
-Ora dedichiamoci a _freshclam_ :
+Ora dedichiamoci a *freshclam* :
 
 ```
 sudo nano /etc/clamav/freshclam.conf
@@ -1053,7 +1053,7 @@ sudo /etc/rc.d/clamav start
 
 ```
 
-in questo modo dovrebbero partire sia _ClamD_ che _FreshClam_. Se questo è successo siete in gamba e avete dimostrato si saper usare bene il copia/incolla :D Proviamo ad aggiornare le definizioni dei virus :
+in questo modo dovrebbero partire sia *ClamD* che *FreshClam*. Se questo è successo siete in gamba e avete dimostrato si saper usare bene il copia/incolla :D Proviamo ad aggiornare le definizioni dei virus :
 
 ```
 sudo freshclam
@@ -1071,7 +1071,7 @@ daily.cvd is up to date (version: 5550, sigs: 25581, f-level: 21, builder: ccord
 
 Ok ? Ora non preoccupatevi, ogni 12 ore Freshclam si avvierà da solo.
 
-L'ultimo tassello di questa interminabile fase è la configurazione di amavis perché usi clamav. Per far questo ritorniamo al nostro _incubo_ :
+L'ultimo tassello di questa interminabile fase è la configurazione di amavis perché usi clamav. Per far questo ritorniamo al nostro *incubo* :
 
 ```
 sudo nano /etc/amavisd/amavisd.conf
@@ -1082,13 +1082,14 @@ andiamo a decommentare la parte relativa a clamav (occhio al percorso del file c
 
 ```
 ['ClamAV-clamd',
-  \&ask_daemon, ["CONTSCAN {}\n", "/var/lib/clamav/clamd.sock"],
+  \&ask_daemon, ["CONTSCAN {}
+", "/var/lib/clamav/clamd.sock"],
   qr/\bOK$/, qr/\bFOUND$/,
   qr/^.*?: (?!Infected Archive)(.*) FOUND$/ ],
 
 ```
 
-e aggiungiamo l'utente _clamav_ al gruppo _amavis_:
+e aggiungiamo l'utente *clamav* al gruppo *amavis*:
 
 ```
 sudo gpasswd -a clamav amavis
@@ -1118,12 +1119,12 @@ sendmail -f test@gmail.com admin@mede.it < eicar.com
 
 ```
 
-L'utente _admin@mede.it_ (ricordiamo che _virus@mede.it_ è un alias) dovrebbe ricevere una mail con la segnalazione del virus. Per il momento ci accontentiamo di controllare visualizzando il file contenuto /home/admin/MailDir/cur corrispondente alla mail.
+L'utente *admin@mede.it* (ricordiamo che *virus@mede.it* è un alias) dovrebbe ricevere una mail con la segnalazione del virus. Per il momento ci accontentiamo di controllare visualizzando il file contenuto /home/admin/MailDir/cur corrispondente alla mail.
 
 # Conclusioni
 
-Abbiamo (anzi, _ho_) penato un po' per questa parte _Mail Server_, ma alla fine il risultato è ottimo. Certo, sarebbe auspicabile semplificare un pochino magari accorpando qualche funzionalità (specie il content filter) direttamente su Postfix dal momento che oramai praticamente tutti i server di posta fitrano i messaggi. Chissà magari un giorno qualcuno ci pensa, nel frattempo sorbiamoci stò mattone.
+Abbiamo (anzi, *ho*) penato un po' per questa parte *Mail Server*, ma alla fine il risultato è ottimo. Certo, sarebbe auspicabile semplificare un pochino magari accorpando qualche funzionalità (specie il content filter) direttamente su Postfix dal momento che oramai praticamente tutti i server di posta fitrano i messaggi. Chissà magari un giorno qualcuno ci pensa, nel frattempo sorbiamoci stò mattone.
 
-Per la verità qualcosa esiste, e sono sicuramente il futuro in questo campo. Mi riferisco alle soluzioni di _groupware_ che sempre più spesso vengono richieste, le quali permettono una reale collaborazione tra persone magari condividendo le cose più semplici come PIM e posta elettronica.
+Per la verità qualcosa esiste, e sono sicuramente il futuro in questo campo. Mi riferisco alle soluzioni di *groupware* che sempre più spesso vengono richieste, le quali permettono una reale collaborazione tra persone magari condividendo le cose più semplici come PIM e posta elettronica.
 
 Magari daremo un occhio a [Zimbra](http://www.zimbra.com/), ma questa è un altra storia ...

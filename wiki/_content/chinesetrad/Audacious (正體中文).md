@@ -85,7 +85,7 @@ audacious2 -i skinned
 
 ## 加入Winamp面板
 
-加入 Winamp 面板到 Audacious 很簡單，只要複製你的面板(.zip, .wsz, .tgz, .tar.gz, 和 .tar.bz2 檔)到 **`/usr/share/audacious/Skins`**。 之後你就能在 主選單 > _Preferences_ > _Skinned Interface_ 選擇面板使用。
+加入 Winamp 面板到 Audacious 很簡單，只要複製你的面板(.zip, .wsz, .tgz, .tar.gz, 和 .tar.bz2 檔)到 **`/usr/share/audacious/Skins`**。 之後你就能在 主選單 > *Preferences* > *Skinned Interface* 選擇面板使用。
 
 這些地方可以找到面板：
 
@@ -110,4 +110,4 @@ pacman -S libcdio
 
 當你使用的是 Open Sound System 而不是 ALSA，請確定 Audacious 設定有被設罝過。
 
-只要在主選單中選擇：_Preferences_-->_Audio_-->_Current output plugin_-->_**OSS Output Plugin**_。
+只要在主選單中選擇：*Preferences*-->*Audio*-->*Current output plugin*-->***OSS Output Plugin***。

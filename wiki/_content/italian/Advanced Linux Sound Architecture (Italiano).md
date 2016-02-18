@@ -114,7 +114,6 @@ Il pacchetto [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) i
 Se si riscontrassero problemi audio in VirtualBox, il seguente comando potrebbe essere d'aiuto.
 
  `$ alsactl init` 
-
 ```
 
 Found hardware: "ICH" "SigmaTel STAC9700,83,84" "AC97a:83847600" "0x8086" "0x0000"
@@ -131,7 +130,6 @@ Se l'ordine delle schede audio del sistema cambia ad ogni avvio, è possibile re
 Ad esempio, se si desidera che la scheda audio mia sia la #0
 
  `/etc/modprobe.d/alsa-base.conf` 
-
 ```
 options snd slots=snd_mia,snd_hda_intel
 options snd_mia index=0
@@ -144,7 +142,6 @@ Utilizzare `$ lsmod | grep snd` per ottenere la lista dei dispositivi. Questa co
 Si può anche istruire ALSA ad utilizzare un indice di `-2` per non far utilizzare mai una determinata scheda come primaria. Distribuzioni come Ubuntu e Mint utilizzano questo sistema per evitare che schede audio USB ed altri dispositivi "particolari" ottengano l'indice `0`
 
  `/etc/modprobe.d/alsa-base.conf` 
-
 ```
 options bt87x index=-2
 options cx88_alsa index=-2
@@ -188,7 +185,6 @@ Nel proprio file di configurazione, preferibilmente quello globale, aggiungere
 Bisogna innanzitutto rilevare gli id della scheda e del dispositivo che si vogliono impostare come predefiniti eseguendo `aplay -l`.
 
  `$ aplay -l` 
-
 ```
 **** List of PLAYBACK Hardware Devices ****
 card 0: Intel [HDA Intel], device 0: CONEXANT Analog [CONEXANT Analog]
@@ -222,7 +218,6 @@ L'opzione `pcm` specifica quale scheda e dispositivo verranno utilizzati per la 
 Verificare che udev abbia rilevato automaticamente l'audio,con il comando:
 
  `$ lsmod|grep '^snd'| column -t ` 
-
 ```
 snd_hda_codec_hdmi     22378   4
 snd_hda_codec_realtek  294191  1
@@ -243,7 +238,6 @@ Se l'output è simile, i driver audio sono stati autorilevati con successo. Si p
 Si potrebbe anche controllare la directory `/dev/snd/` per conoscere i nomi di dispositivo corretti:
 
  `$ ls -l /dev/snd/` 
-
 ```
 total 0
 crw-rw----  1 root audio 116,  0 Apr  8 14:17 controlC0
@@ -285,7 +279,6 @@ Un metodo alternativo per abilitare un output SPDIF automaticamente al login (te
 *   aggiungere le seguenti righe in `/etc/rc.local`:
 
  `/etc/rc.local` 
-
 ```
 # Use COAX-digital output
 amixer set 'IEC958 Optical' 100 unmute
@@ -308,7 +301,6 @@ Installare [alsaequal](https://aur.archlinux.org/packages/alsaequal/) da [AUR](/
 Dopo aver installato il pacchetto, inserire nel file di configurazione ALSA (`~/.asoundrc` o `/etc/asound.conf`) quanto segue:
 
  `~/.asoundrc` 
-
 ```
 ctl.equal {
  type equal;
@@ -377,7 +369,6 @@ Installare [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins)
 ed inserirvi le seguenti righe:
 
  `/etc/asound.conf` 
-
 ```
 pcm.eq {
   type ladspa
@@ -449,7 +440,6 @@ Per fare in modo che una sorgente audio stereo saturi tutte le uscite di un sist
 Dopodichè aggiungere il seguente codice al file di configurazione di ALSA a propria scelta (`/etc/asound.conf` oppure `~/.asoundrc`):
 
  `~/.asoundrc` 
-
 ```
 pcm.upmix71 {
      type upmix
@@ -465,7 +455,6 @@ pcm.upmix71 {
 Questo metodo aggiunge un nuovo pcm che è possibile utilizzare per l'upmixing. Se si vuole che tutte le sorgenti audio vengano redirette verso questo pcm, aggiungerlo come default successivamente al codice appena scritto, in questo modo
 
  `~/.asoundrc` 
-
 ```
 ....
 pcm.!default "plug:upmix71"
@@ -476,7 +465,6 @@ pcm.!default "plug:upmix71"
 Il plugin consente automaticamente alle sorgenti di essere riprodotte attraverso di esso, quindi impostarlo come predefinito è una scelta sicura. Se ciò non dovesse funzionare, si può provare a impostare dmix affinchè effettui l'upmixing del canale PCM in questo modo
 
  `~/.asoundrc` 
-
 ```
 pcm.dmix6 {
     type asym
@@ -501,7 +489,6 @@ Se si vuole effettuare il downmixing, ad esempio per ascoltare su un'uscita ster
 Nel file di configurazione aggiungere quanto segue
 
  `~/.asoundrc` 
-
 ```
 pcm.!surround51 {
      type vdownmix
@@ -525,7 +512,6 @@ Sistema di mixaggio software di ALSA
 Se comunque non dovesse funzionare automaticamente è sufficiente creare il (o modificare l'esistente) file `~/.asoundrc` con questo contenuto:
 
  `~/.asoundrc` 
-
 ```
 pcm.dsp {
     type plug
@@ -572,7 +558,6 @@ Alcune combinazioni di determinati driver ALSA e chipset, possono causare dei "s
 Può capitare di rilevare che solo un utente per volta può utilizzare dmix. Questa situazione può andar bene per la maggior parte degli utenti, ma coloro i quali utilizzano [mpd](/index.php/Mpd "Mpd") come utente differente, ciò diviene un problema. Quando mpd è in esecuzione un utente non può eseguire suoni tramite dmix. Nonostante sia sufficiente eseguire mpd tramite l'account utente di login, è stata trovata anche un'altra soluzione. L'aggiunta della riga `ipc_key_add_uid 0` al blocco `pcm.dmixer` disabilita questa limitazione. Quello seguente è un estratto del codice di `/etc/asound.conf`, il resto è identico a quello mostrato in precedenza.
 
  `/etc/asound.conf` 
-
 ```
 ...
 pcm.dmixer {
@@ -675,7 +660,7 @@ options snd-hda-intel model=MODEL
 
 ```
 
-Ci sono anche altri modelli da impostare. Nella maggior parte dei casi Alsa lo farà in automatico. Se si vogliono vedere nel dettaglio le impostazioni della propria scheda audio si veda [Alsa Soundcard List](http://bugtrack.alsa-project.org/main/index.php/Matrix:Main), si individui il proprio modello, si clicchi su “_Details_” e si osservi la sezione "_Setting up modprobe..._". Inserire i valori trovati in `/etc/modprobe.d/modprobe.conf`. Ad esempio, per una scheda AC97 Intel:
+Ci sono anche altri modelli da impostare. Nella maggior parte dei casi Alsa lo farà in automatico. Se si vogliono vedere nel dettaglio le impostazioni della propria scheda audio si veda [Alsa Soundcard List](http://bugtrack.alsa-project.org/main/index.php/Matrix:Main), si individui il proprio modello, si clicchi su “*Details*” e si osservi la sezione "*Setting up modprobe...*". Inserire i valori trovati in `/etc/modprobe.d/modprobe.conf`. Ad esempio, per una scheda AC97 Intel:
 
 ```
 # ALSA portion
@@ -725,7 +710,7 @@ Per testare il microfono, eseguire questi comandi:
 
 ```
 
-Si consiglia di leggere la pagina _man_ di _arecord_. Comunque, nel caso in cui non si sentisse alcun suono, il microfono potrebbe essere guasto oppure collegato nell’ingresso sbagliato.
+Si consiglia di leggere la pagina *man* di *arecord*. Comunque, nel caso in cui non si sentisse alcun suono, il microfono potrebbe essere guasto oppure collegato nell’ingresso sbagliato.
 
 Alcuni portatili Dell richiedono che il suffisso "-dmic" sia aggiunto al nome del modello all'interno di `/etc/modprobe.d/modprobe.conf`: `options snd-hda-intel model=dell-m6-dmic`
 
@@ -784,7 +769,7 @@ Ci potrebbe essere un conflitto tra due moduli caricati, chiamati `snd_intel8x0`
 
  `/etc/modprobe.d/modprobe.conf`  `blacklist snd_intel8x0m` 
 
-_Disabilitare_ i canali "External Amplifier" in `alsamixer` o in `amixer` potrebbe essere d'aiuto. Consultare anche [il wiki ALSA](http://alsa.opensrc.org/index.php/Intel8x0#Dell_Inspiron_8600_.28and_probably_others.29).
+*Disabilitare* i canali "External Amplifier" in `alsamixer` o in `amixer` potrebbe essere d'aiuto. Consultare anche [il wiki ALSA](http://alsa.opensrc.org/index.php/Intel8x0#Dell_Inspiron_8600_.28and_probably_others.29).
 
 Anche togliere il muto al canale Mix del mixer potrebbe risolvere il problema.
 
@@ -825,7 +810,6 @@ options snd-hda-intel model=$model enable=1 index=0
 Individuare i moduli disponibili ed il loro ordine:
 
  `$ cat /proc/asound/modules` 
-
 ```
 0 snd_hda_intel
 1 snd_ca0106
@@ -955,7 +939,6 @@ $ xrandr --output DVI-D_1 --mode 1024x768 --right-of PANEL # enable output
 Interrogare i dispositivi di riproduzione:
 
  `$ aplay -l` 
-
 ```
 **** List of PLAYBACK Hardware Devices ****
 card 0: NVidia [HDA NVidia], device 0: ALC1200 Analog [ALC1200 Analog]
@@ -979,7 +962,6 @@ Se aplay non restituisce alcun errore, ma ancora non si sente alcun suono, "riav
 Se la verifica ha esito positivo, modificare/creare `~/.asoundrc` per impostare HDMI come dispositivo audio predefinito e riavviare; ora l'audio dovrebbe funzionare.
 
  `~/.asoundrc` 
-
 ```
 pcm.!default {
   type hw
@@ -992,7 +974,6 @@ pcm.!default {
 Se la configurazione precedente non dovesse funzionare, provare con:
 
  `~/.asoundrc` 
-
 ```
 defaults.pcm.card 0
 defaults.pcm.device 3

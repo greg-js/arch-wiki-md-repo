@@ -15,7 +15,8 @@ todo() {
    elif test $1 = -r
    then
            cat -n $HOME/.todo
-           echo -ne "----------------------------\nType a number to remove: "
+           echo -ne "----------------------------
+Type a number to remove: "
            read NUMBER
            sed -ie ${NUMBER}d $HOME/.todo
    else

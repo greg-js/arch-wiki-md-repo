@@ -1,4 +1,4 @@
-_tcplay_ is a free, fully featured and stable TrueCrypt implementation including multiple keyfiles and cipher cascades.
+*tcplay* is a free, fully featured and stable TrueCrypt implementation including multiple keyfiles and cipher cascades.
 
 Source: [github project home](https://github.com/bwalex/tc-play)
 

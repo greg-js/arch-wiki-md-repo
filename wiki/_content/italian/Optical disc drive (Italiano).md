@@ -1,6 +1,6 @@
 Da [wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Optical disc drive")
 
-	_In informatica, una unità di disco ottico (ODD), è un disco che utilizza la luce laser o onde elettromagnetiche all'interno, o vicino lo spettro della luce visibile come parte del processo di lettura o scrittura di dati su o da dischi ottici. Alcune unità possono leggere solo i dischi, ma le recenti unità sono comunemente lettori e registratori, chiamati anche masterizzatori. Compact disc, DVD e dischi Blu-ray sono comuni tipi di supporti ottici che possono essere letti e registrati da tali unità. Unità ottica è il nome generico; le unità sono solitamente descritte come "CD", "DVD " o "Blu-ray ", seguito da "Lettore", "Masterizzatore", ecc._
+	*In informatica, una unità di disco ottico (ODD), è un disco che utilizza la luce laser o onde elettromagnetiche all'interno, o vicino lo spettro della luce visibile come parte del processo di lettura o scrittura di dati su o da dischi ottici. Alcune unità possono leggere solo i dischi, ma le recenti unità sono comunemente lettori e registratori, chiamati anche masterizzatori. Compact disc, DVD e dischi Blu-ray sono comuni tipi di supporti ottici che possono essere letti e registrati da tali unità. Unità ottica è il nome generico; le unità sono solitamente descritte come "CD", "DVD " o "Blu-ray ", seguito da "Lettore", "Masterizzatore", ecc.*
 
 ## Contents
 
@@ -97,7 +97,7 @@ I programmi `cdrecord`, `cdrskin` e `wodim` supportano tutti e tre le opzioni di
 
 ### Creare un immagine ISO da un file esistente sul disco rigido
 
-Il modo più semplice per creare una immagine ISO, facendosi aiutare da _genisoimage_, è quello di copiare i file necessari in una cartella `./for_iso` e da successivamente:
+Il modo più semplice per creare una immagine ISO, facendosi aiutare da *genisoimage*, è quello di copiare i file necessari in una cartella `./for_iso` e da successivamente:
 
 ```
 $ genisoimage -V "ARCHIVE_2013_07_27" -J -r -o isoimage.iso ./for_iso
@@ -139,7 +139,7 @@ Si piò lasciare che genisoimage raccolga i file e le directory da vari percorsi
 
 	-graft-points
 
-	Abilita il riconoscimento dei _pathspecs_ che consistono di un indirizzo di destinazione nel filesystem ISO (ad esempio _/photos_) e un indirizzo di origine sul disco rigido (ad esempio _/home/utente/foto_). Entrambi sono separati da un carattere `=`.
+	Abilita il riconoscimento dei *pathspecs* che consistono di un indirizzo di destinazione nel filesystem ISO (ad esempio */photos*) e un indirizzo di origine sul disco rigido (ad esempio */home/utente/foto*). Entrambi sono separati da un carattere `=`.
 
 Quindi questo esempio mette le directory presenti sul disco `/home/utente/foto`, `/home/utente/mail` e `/home/utente/vacanze/foto` rispettivamente nell'immagine ISO come directory `/photos`, `/mail` e `/photos/holidays/`.
 
@@ -217,7 +217,6 @@ Utilizzare il programma `isosize` dal pacchetto [util-linux](https://www.archlin
 Controllare se il numero ottenuto di blocchi è plausibile.
 
  `$ echo "That would be $(expr $blocks / 512) MB"` 
-
 ```
 Sarebbe 589 MB
 
@@ -323,7 +322,6 @@ I programmi `cdrecord`, `cdrskin` e `xorrecord` possono essere utilizzati su tut
 In primo luogo calcolare l'md5sum dell'immagine ISO originale :
 
  `$ md5sum isoimage.iso` 
-
 ```
  e5643e18e05f5646046bb2e4236986d8 isoimage.iso
 
@@ -335,9 +333,7 @@ Successivamente calcolare il checksum MD5 del file system ISO sul media. Anche s
  $ blocks=$(expr $(du -b isoimage.iso | awk '{print $1}') / 2048)
 
 ```
-
  `$ dd if=/dev/cdrw bs=2048 count=$blocks | md5sum` 
-
 ```
   43992+0 records in
   43992+0 records out
@@ -417,7 +413,7 @@ La maggior parte dei tipi di supporti riutilizzabili non registrano una cronolog
 
 #### Multisessione con growisofs
 
-`growisofs` è un programma molto avanzato e la maggior parte dei suoi argomenti è compatibile con `mkisofs`. Vedi sopra gli esempi di `genisoimage`. Esso vieta l'opzione `-o` e disapprova l'opzione `-C`. Per impostazione predefinita, viene utilizzato il programma installato denominato _mkisofs_. Si può lasciarlo o sceglierne un altro impostando variabile ambientale `mkisofs`.
+`growisofs` è un programma molto avanzato e la maggior parte dei suoi argomenti è compatibile con `mkisofs`. Vedi sopra gli esempi di `genisoimage`. Esso vieta l'opzione `-o` e disapprova l'opzione `-C`. Per impostazione predefinita, viene utilizzato il programma installato denominato *mkisofs*. Si può lasciarlo o sceglierne un altro impostando variabile ambientale `mkisofs`.
 
 ```
 $ export MKISOFS="genisoimage"
@@ -467,13 +463,13 @@ Per maggiori dettagli vedere il [manuale](http://www.gnu.org/software/xorriso/ma
 
 ### Gestione dei difetti nei Blu-ray disk
 
-BD-RE e supporti BD-R formattati sono normalmente scritti con la gestione dei difetti abilitata. Questa funzione legge i blocchi scritti mentre sono ancora memorizzati nel buffer dell'unità. In caso di scarsa qualità di lettura dei blocchi vengono scritti di nuovo, o reindirizzati alla _Spare Area_ in cui i dati vengono memorizzati in blocchi di sostituzione.
+BD-RE e supporti BD-R formattati sono normalmente scritti con la gestione dei difetti abilitata. Questa funzione legge i blocchi scritti mentre sono ancora memorizzati nel buffer dell'unità. In caso di scarsa qualità di lettura dei blocchi vengono scritti di nuovo, o reindirizzati alla *Spare Area* in cui i dati vengono memorizzati in blocchi di sostituzione.
 
-Questo controllo di lettura riduce la velocità di scrittura al massimo alla metà della velocità nominale del masterizzatore e del supporto BD. A volte anche in modo peggiore. L'uso continuo della _Spare Area_ provoca lunghi ritardi durante le operazioni di lettura. Quindi l'opzione _Defect Management_ non è sempre auspicabile.
+Questo controllo di lettura riduce la velocità di scrittura al massimo alla metà della velocità nominale del masterizzatore e del supporto BD. A volte anche in modo peggiore. L'uso continuo della *Spare Area* provoca lunghi ritardi durante le operazioni di lettura. Quindi l'opzione *Defect Management* non è sempre auspicabile.
 
-`cdrecord` non formatta BD-R. Però Non ha alcun mezzo per prevenire il _Defect Management_ sui media BD-RE.
+`cdrecord` non formatta BD-R. Però Non ha alcun mezzo per prevenire il *Defect Management* sui media BD-RE.
 
-`growisofs` formatta i BD-R di default. Questo può essere prevenuta con l'opzione `-use-the-force-luke=spare:none`. Anch'esso non ha alcun mezzo per prevenire il _Defect Management_ sui media BD-RE.
+`growisofs` formatta i BD-R di default. Questo può essere prevenuta con l'opzione `-use-the-force-luke=spare:none`. Anch'esso non ha alcun mezzo per prevenire il *Defect Management* sui media BD-RE.
 
 `cdrskin`, `xorriso` e `xorrecord` non formattano BD-R per impostazione predefinita. Sono in grado di farlo rispettivamente con `cdrskin blank=format_if_needed`, `xorriso -format as_needed` e `xorrecord blank=format_overwrite`.
 
@@ -511,7 +507,7 @@ Track 01: audio    0 MB (00:00.00) no preemp pad
 
 Provare un altro decoder (ad es mpg123) o provare a utilizzare cdrecord dal pacchetto [cdrtools](https://www.archlinux.org/packages/?name=cdrtools).
 
-Si noti che [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) contiene anche un comando cdrecord, ma è solo un link simbolico a _wodim_.
+Si noti che [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) contiene anche un comando cdrecord, ma è solo un link simbolico a *wodim*.
 
 Se avete avuto esito positivo allora si può togliere il flag `-dummy` e masterizzare realmente il CD.
 
@@ -617,12 +613,10 @@ Nero Linux offre alcune caratteristiche, come :
 *   Supporta la masterizzazione di CD audio (CD-DA), ISO 9660 (supporto Joliet), CD-Text, ISOLINUX avviabile, dischi multi-sessione, DVD-Video e miniDVD, supporto a DVD Double Layer.
 
 **Nota:** Per Nero Linux è necessario caricare il modulo `sg` al momento del boot. Mettere un file omonimo in `/etc/modules-load.d`: `/etc/modules-load.d/sg.config` 
-
 ```
 sg
 
 ```
-
 Dopo gli utlimi aggiornamenti il modulo sg non era più automaticamente caricato e Nero ne ha bisogno.
 
 ## Riproduzione di DVD
@@ -640,12 +634,10 @@ Se si desidera riprodurre i DVD criptati , è necessario installare i pacchetti 
 Inoltre, è necessario installare un software per il lettore. I più diffusi lettori DVD sono [MPlayer](/index.php/MPlayer "MPlayer"), [xine](https://en.wikipedia.org/wiki/it:Xine "wikipedia:it:Xine") e [VLC](https://en.wikipedia.org/wiki/VLC "wikipedia:VLC").
 
 **Suggerimento:** Gli utenti possono avere bisogno di appartenere al [gruppo](/index.php/Users_and_Groups_(Italiano) "Users and Groups (Italiano)") `optical` per essere in grado di accedere all'unità DVD. Per aggiungere un `UTENTE` al gruppo `optical`, eseguire le seguenti operazioni:
-
 ```
 # gpasswd -a UTENTE optical
 
 ```
-
 Non dimenticare di uscire dalal sessione corente e rientrare affinché le modifiche abbiano effetto. È possibile visualizzare i gruppi attuali del vostro utente con il comando `groups`.
 
 ### Lettori DVD
@@ -737,7 +729,7 @@ Alcune utilità di svolgono entrambi i compiti, mentre altri si concentrano su u
 
 ### dvdbackup
 
-[dvdbackup](/index.php/Dvdbackup "Dvdbackup") è usato semplicemente per l'estrazione di dati, e non per transcodificare. Questo strumento è utile per creare _esatte_ copie di DVD criptati in collaborazione con il pacchetto [libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss), o per decifrare video per altre utility in grado di leggere i DVD criptati.
+[dvdbackup](/index.php/Dvdbackup "Dvdbackup") è usato semplicemente per l'estrazione di dati, e non per transcodificare. Questo strumento è utile per creare *esatte* copie di DVD criptati in collaborazione con il pacchetto [libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss), o per decifrare video per altre utility in grado di leggere i DVD criptati.
 
 ### dvd::rip
 
@@ -778,7 +770,7 @@ Per informazioni dettagliate visitare il [sito](http://www.selur.de/project).
 
 Da [Wikipedia - DVD-VR](https://en.wikipedia.org/wiki/DVD-VR "wikipedia:DVD-VR"):
 
-	_Lo standard DVD-VR definisce un formato logico per la registrazione video su DVD-R, DVD-RW e DVD-RAM, tra cui le versioni a doppio strato di questi mezzi di comunicazione. Al contrario dei supporti registrati con lo standard di registrazione DVD+VR, i media che ne derivano non sono DVD-Video compatibili, e non vengono riprodotti in alcuni lettori DVD-Video. La maggior parte dei videoregistratori DVD del mercato che supportano DVD-R, DVD-RW o DVD-RAM consentirà la registrazione di questi mezzi di comunicazione in modo DVD-VR, così come in una modalità compatibile DVD-Video. E 'possibile utilizzare il formato DVD-VR con DVD+R e DVD+RW, ma non esistono esempi noti da parte di alcuni programmi di utilità di registrazione basati su PC._
+	*Lo standard DVD-VR definisce un formato logico per la registrazione video su DVD-R, DVD-RW e DVD-RAM, tra cui le versioni a doppio strato di questi mezzi di comunicazione. Al contrario dei supporti registrati con lo standard di registrazione DVD+VR, i media che ne derivano non sono DVD-Video compatibili, e non vengono riprodotti in alcuni lettori DVD-Video. La maggior parte dei videoregistratori DVD del mercato che supportano DVD-R, DVD-RW o DVD-RAM consentirà la registrazione di questi mezzi di comunicazione in modo DVD-VR, così come in una modalità compatibile DVD-Video. E 'possibile utilizzare il formato DVD-VR con DVD+R e DVD+RW, ma non esistono esempi noti da parte di alcuni programmi di utilità di registrazione basati su PC.*
 
 File .VRO estratti da un DVD-VR possono essere facilmente convertiti e suddivisi in regulari file .VOB utilizzando il programma [DVD-VR](http://www.pixelbeat.org/programs/dvd-vr/).
 
@@ -820,7 +812,6 @@ it_IT.ISO-8859-1
 *   Ri-generare i profili con `locale-gen`:
 
  `# locale-gen` 
-
 ```
  Generating locales...
  en_US.UTF-8... done
@@ -839,7 +830,7 @@ Brasero utilizza [gvfs](https://www.archlinux.org/packages/?name=gvfs) per gesti
 
 ### Brasero non riesce a normalizzare CD audio
 
-Se si tenta di masterizzare, si può fermare alla prima fase denominata Normalizzazione. Come soluzione alternativa è possibile disattivare il plugin di normalizzazione con la funzione del menu _Modifica > Plugin_.
+Se si tenta di masterizzare, si può fermare alla prima fase denominata Normalizzazione. Come soluzione alternativa è possibile disattivare il plugin di normalizzazione con la funzione del menu *Modifica > Plugin*.
 
 ### VLC: Error "... could not open the disc /dev/dvd"
 
@@ -889,7 +880,7 @@ Se si riesce a riprodurli o meno, si possono segnalere le linee di errore, il co
 
 #### Caso particolare : Medium error / Write error
 
-Ecco alcuni messaggi tipici dove l'unità prende in _antipatia_ il dispositivo ottico utilizzato. Questo può essere risolto solo utilizzando una diversa unità o un supporto diverso. Un programma diverso difficilmente aiuterà.
+Ecco alcuni messaggi tipici dove l'unità prende in *antipatia* il dispositivo ottico utilizzato. Questo può essere risolto solo utilizzando una diversa unità o un supporto diverso. Un programma diverso difficilmente aiuterà.
 
 K3b con backend wodim:
 

@@ -22,7 +22,7 @@ mkdir /opt/arch32
 
 ```
 
-V libovolném editoru (třeba _nano_) upravte soubor _/etc/pacman.d/core_, případně (u pacmana>=3.1) _/etc/pacman.d/mirrorlist_:
+V libovolném editoru (třeba *nano*) upravte soubor */etc/pacman.d/core*, případně (u pacmana>=3.1) */etc/pacman.d/mirrorlist*:
 
 ```
 nano /etc/pacman.d/core
@@ -30,7 +30,7 @@ nano /etc/pacman.d/mirrorlist
 
 ```
 
-V těchto souborech nahraďte _x86_64_ za _i686_ (raději u více serverů, ale teoreticky stačí i jen jeden)
+V těchto souborech nahraďte *x86_64* za *i686* (raději u více serverů, ale teoreticky stačí i jen jeden)
 
 **Nezapomeňte nakonec vrátit tyto soubory do původního stavu!!!**
 
@@ -41,7 +41,7 @@ nano /etc/pacman.conf
 
 ```
 
-Upravte položku 'LogFile' podle potřeby (například _/var/log/pacman_32.log_).
+Upravte položku 'LogFile' podle potřeby (například */var/log/pacman_32.log*).
 
 Aktuální verze pacmana vyžaduje vytvořit adresářovou strukturu pro databázi:
 
@@ -57,7 +57,7 @@ pacman --root /opt/arch32 -Sy
 
 ```
 
-A teď už můžeme nainstalovat základní balíčky (pokud nehodláte v chrootu kompilovat balíčky, můžete skupinu _base-devel_ vynechat):
+A teď už můžeme nainstalovat základní balíčky (pokud nehodláte v chrootu kompilovat balíčky, můžete skupinu *base-devel* vynechat):
 
 ```
 pacman --root /opt/arch32 -S base base-devel
@@ -68,7 +68,7 @@ pacman --root /opt/arch32 -S base base-devel
 
 ## /etc/rc.d/arch32 rc skript
 
-Pro spuštění 32bitového prostředí při bootování vytvořte v /etc/rc.d skript a nazvěte ho _arch32_:
+Pro spuštění 32bitového prostředí při bootování vytvořte v /etc/rc.d skript a nazvěte ho *arch32*:
 
 ```
 nano /etc/rc.d/arch32
@@ -127,7 +127,7 @@ chmod +x /etc/rc.d/arch32
 
 ```
 
-A přidejte daemona do _/etc/rc.conf_:
+A přidejte daemona do */etc/rc.conf*:
 
 ```
 DAEMONS=(syslog-ng network netfs crond arch32 gdm)
@@ -224,7 +224,7 @@ pacman -Rd mkinitcpio
 
 ### Stáhněte a nainstalujte schroot
 
-Nainstalujte _schroot_ z repozitáře _community_:
+Nainstalujte *schroot* z repozitáře *community*:
 
 ```
 pacman -S schroot
@@ -255,7 +255,7 @@ chroot /opt/arch32
 
 ```
 
-Odtud nainstalujte _alsa-oss_:
+Odtud nainstalujte *alsa-oss*:
 
 ```
 pacman -S alsa-oss

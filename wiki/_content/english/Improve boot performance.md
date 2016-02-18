@@ -28,7 +28,7 @@ $ systemd-analyze
 
 ```
 
-**Tip:** If you boot via [UEFI](/index.php/UEFI "UEFI") and use a boot loader which implements systemd's [Boot Loader Interface](http://www.freedesktop.org/wiki/Software/systemd/BootLoaderInterface) (which currently [Gummiboot](/index.php/Gummiboot "Gummiboot") and [GRUB](/index.php/GRUB "GRUB") do), _systemd-analyze_ can additionally show you how much time was spent in the EFI firmware and the boot loader itself.
+**Tip:** If you boot via [UEFI](/index.php/UEFI "UEFI") and use a boot loader which implements systemd's [Boot Loader Interface](http://www.freedesktop.org/wiki/Software/systemd/BootLoaderInterface) (which currently [Gummiboot](/index.php/Gummiboot "Gummiboot") and [GRUB](/index.php/GRUB "GRUB") do), *systemd-analyze* can additionally show you how much time was spent in the EFI firmware and the boot loader itself.
 
 To list the started unit files, sorted by the time each of them took to start up:
 
@@ -77,7 +77,7 @@ You could also use a version of bootchart to visualize the boot sequence. Since 
 
 ```
 
-You can visualize the results by opening _/var/log/bootchart.png_, or if you would like more features by launching
+You can visualize the results by opening */var/log/bootchart.png*, or if you would like more features by launching
 
 ```
 $ pybootchartgui -i

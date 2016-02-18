@@ -18,7 +18,7 @@ This article is about **Dolphin**, the default [file manager](/index.php/Categor
 
 [Install](/index.php/Install "Install") the [dolphin](https://www.archlinux.org/packages/?name=dolphin) package, or [dolphinpart4](https://www.archlinux.org/packages/?name=dolphinpart4) for the legacy KDE4 version.
 
-For version control and [Dropbox](/index.php/Dropbox "Dropbox") support, install [dolphin-plugins](https://www.archlinux.org/packages/?name=dolphin-plugins). The _Compare files_ dialog depends on [kompare](https://www.archlinux.org/packages/?name=kompare).
+For version control and [Dropbox](/index.php/Dropbox "Dropbox") support, install [dolphin-plugins](https://www.archlinux.org/packages/?name=dolphin-plugins). The *Compare files* dialog depends on [kompare](https://www.archlinux.org/packages/?name=kompare).
 
 ### File previews
 
@@ -35,21 +35,21 @@ For version control and [Dropbox](/index.php/Dropbox "Dropbox") support, install
 
 ### Open Terminal
 
-Dolphin and other KDE applications use [konsole](https://www.archlinux.org/packages/?name=konsole) by default. To change the default terminal emulator, run `kcmshell4 componentchooser` and select _Terminal Emulator > Use a different terminal program_.
+Dolphin and other KDE applications use [konsole](https://www.archlinux.org/packages/?name=konsole) by default. To change the default terminal emulator, run `kcmshell4 componentchooser` and select *Terminal Emulator > Use a different terminal program*.
 
 ### KIO Slaves
 
-Dolphin uses _KIO slaves_ for network access, trash and other functionality, unlike [GTK+](/index.php/GTK%2B "GTK+") file managers which use [GVFS](/index.php/GVFS "GVFS"). Available protocols are shown in the location bar (editable mode) [[1]](https://docs.kde.org/stable/en/applications/dolphin/location-bar.html#location-bar-editable). To quickly bookmark them, right-click in the workspace, and select "Add to Places".
+Dolphin uses *KIO slaves* for network access, trash and other functionality, unlike [GTK+](/index.php/GTK%2B "GTK+") file managers which use [GVFS](/index.php/GVFS "GVFS"). Available protocols are shown in the location bar (editable mode) [[1]](https://docs.kde.org/stable/en/applications/dolphin/location-bar.html#location-bar-editable). To quickly bookmark them, right-click in the workspace, and select "Add to Places".
 
 ## Troubleshooting
 
 ### No search results
 
-If _Baloo_ is enabled, Dolphin attempts to use it for file searches even if no file index is present. Either create a Baloo file index, or disable file indexing through `kcmshell4 kcm_baloofile`.
+If *Baloo* is enabled, Dolphin attempts to use it for file searches even if no file index is present. Either create a Baloo file index, or disable file indexing through `kcmshell4 kcm_baloofile`.
 
 ### Transparent fonts
 
-Fonts in selection frames may become transparent when using the [GTK+ Qt style](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications"). Native Qt styles such as _Cleanlooks_ and _Oxygen_ are unaffected.
+Fonts in selection frames may become transparent when using the [GTK+ Qt style](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications"). Native Qt styles such as *Cleanlooks* and *Oxygen* are unaffected.
 
 ### Unicode characters are not shown
 

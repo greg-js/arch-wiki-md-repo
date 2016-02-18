@@ -86,7 +86,6 @@ Outros protótipos podem ser encontrados em `/usr/share/pacman` dos pacotes `pac
 *   O campo `packager` do meta arquivo do pacote pode ser **personalizado** para compilador do pacote, modificando a opção apropriada no arquivo `/etc/makepkg.conf` ou, alternativamente, sobrescrevendo-o com a criação de um ~/.makepkg.conf
 *   Todas as mensagenjs importantes deveriam ser exibidas durante a isntalação usando um arquivo **.install**. Por exemplo, se um pacote precisa de configurações extras para funcionar, as direções devem ser incluídas neste arquivo.
 *   Qualquer **dependência opcional** que não é necessária para executar o pacote ou que faça-o funcionar, não deveria ser incluída; Ao invés disso, a informação deveria ser adicionada ao vetor **optdepends**:
-
     ```
     optdepends=('cups: printing support'
                 'sane: scanners support'
@@ -205,9 +204,8 @@ Note o seguinte antes de enviar qualquer pacote para o AUR:
 
 4.  Verifique as **dependências** do pacote (p.ex.: execute `ldd` nos executáveis dinâmicos, verifique as ferramentas necessárias por scripts, etc). A equipe de TUs recomenda **fortemente** o uso do utilitário `namcap`, escrito por [Jason Chu](https://www.archlinux.org/fellows/#jason), para analisar a sanidade dos pacotes. O `namcap` vai avisar você sobre permissões incorretas, dependências faltando, dependências desnecessárias, e outros erros comuns. Você pode instalar o pacote `namcap` com o `pacman`. Lembre-se de que o `namcap` pode ser usado para verificar tanto os arquivos pkg.tar.gz quanto os PKGBUILDs
 5.  As **dependências** são a maioria dos erros de empacotamento. Namcap pode ajudar a detectar tais erros, mas nem sempre está correto. Verifique as dependências consultando na documentação do código fonte e no site do programa.
-6.  **Não use o `replaces`** em um PKGBUILD a não ser que o pacote tenha sido renomeado, como, por exemplo, quando _Ethereal_ se tornou _Wireshark_. Se o pacote é uma versão alternativa de um pacote já existente, use `conflicts` (e `provides`, se aquele pacote é necessário por outros). A diferença principal é: depois de sincronizar (-Sy), o pacman vai imediatamente querer substituir um pacote instalado, sobrescrevendo-o pelo pacote encontrado com o correspondente `replaces` onde quer que esteja nos repositórios; O `conflicts`, por outro lado, será somente avaliado quando se estiver instalado o pacote, que é o comportamento desejado porque é menos invasivo.
+6.  **Não use o `replaces`** em um PKGBUILD a não ser que o pacote tenha sido renomeado, como, por exemplo, quando *Ethereal* se tornou *Wireshark*. Se o pacote é uma versão alternativa de um pacote já existente, use `conflicts` (e `provides`, se aquele pacote é necessário por outros). A diferença principal é: depois de sincronizar (-Sy), o pacman vai imediatamente querer substituir um pacote instalado, sobrescrevendo-o pelo pacote encontrado com o correspondente `replaces` onde quer que esteja nos repositórios; O `conflicts`, por outro lado, será somente avaliado quando se estiver instalado o pacote, que é o comportamento desejado porque é menos invasivo.
 7.  Todos os arquivos enviados para o AUR devem conter um **arquivo tar compactado** contendo um diretório com o **`PKGBUILD`** e **arquivos de compilação adicionais** (patches, install etc.).
-
     ```
     foo/PKGBUILD
     foo/foo.install

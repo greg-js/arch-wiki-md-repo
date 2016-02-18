@@ -34,12 +34,11 @@ The source can be found on [the project's Google Code page](https://code.google.
 
 ## Starting wmii
 
-Select _wmii_ from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
+Select *wmii* from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
 
-Alternatively, to start wmii with _startx_, edit your `~/.xinitrc` file, adding the following:
+Alternatively, to start wmii with *startx*, edit your `~/.xinitrc` file, adding the following:
 
  `~/.xinitrc` 
-
 ```
  exec wmii
 
@@ -48,7 +47,6 @@ Alternatively, to start wmii with _startx_, edit your `~/.xinitrc` file, adding 
 To allow for starting wmii without logging off or killing the X session, add the following to `~/.xinitrc`:
 
  `~/.xinitrc` 
-
 ```
  until wmii; do
    true
@@ -132,7 +130,7 @@ If you are not familiar with tiling WMs, it's not really easy to begin with it. 
 
 ```
 
-N.B. For commonly used programs you can make use of _history.progs_, Mod+p and up/down arrow keys to select previous entries.
+N.B. For commonly used programs you can make use of *history.progs*, Mod+p and up/down arrow keys to select previous entries.
 
 By default, only one column is used by the desktop (i.e. the entire screen). It's possible to use several columns with h and l :
 
@@ -199,7 +197,7 @@ It's the same thing for all numbers, from 0 to 9\. But you can also use names :
    * Mod+Shift+t : this retags the currently selected window with whatever you type into 
      the menu.
 
-   * N.B If using plan9port a _history.tags_ file is generated in .wmii-*/. You can use 
+   * N.B If using plan9port a *history.tags* file is generated in .wmii-*/. You can use 
      up/down arrow keys to recall previous entries for simple re-tagging/window viewing.
 
 ```
@@ -212,7 +210,7 @@ You can tag windows with multiple views by using a '+' between the tag names :
 
 ```
 
-You can remove a single tag from multi-tagged windows by selecting the one you wish to remove and using Mod+Shift+t, -tag _name/number_ ie Urxvt is multi-tagged on views 1 2 3 and 4, if you jumped to 3 and typed exit, all instances of urxvt will be terminated, using Mod+Shift+t, -3 will only remove that single view.
+You can remove a single tag from multi-tagged windows by selecting the one you wish to remove and using Mod+Shift+t, -tag *name/number* ie Urxvt is multi-tagged on views 1 2 3 and 4, if you jumped to 3 and typed exit, all instances of urxvt will be terminated, using Mod+Shift+t, -3 will only remove that single view.
 
 Tags can be set for specific applications in the wmiirc configuration file.
 
@@ -229,7 +227,7 @@ wmiir write /tagrules <<!
 
 With the above tag rules, firefox starts in floating mode (~) on view "2". Gimp starts in floating mode on view "3".
 
-**Note:** Applications need to spawn an X-window in order to be automatically assigned tags. Therefore, in order to launch your terminal based programs you will need to prepend something like _urxvt -e <program>_ if want to make use of this feature.
+**Note:** Applications need to spawn an X-window in order to be automatically assigned tags. Therefore, in order to launch your terminal based programs you will need to prepend something like *urxvt -e <program>* if want to make use of this feature.
 
 ## WMII filesystem
 
@@ -237,7 +235,7 @@ WMII's filesystem is based on the [9P protocol](http://9p.cat-v.org). Every elem
 
 **Note:** This filesystem is not permanent and you have to set up everything again after reboot. To make your changes "permanent" simply write the right commands into your wmiirc.
 
-You can access the filesystem with the _wmiir_ command. For instance, you can list the root directory with _wmiir ls /_
+You can access the filesystem with the *wmiir* command. For instance, you can list the root directory with *wmiir ls /*
 
 ```
 client/
@@ -252,7 +250,7 @@ tagrules
 
 ```
 
-You can use _wmiir read_ to look into files: _wmiir read /tag/sel/index_
+You can use *wmiir read* to look into files: *wmiir read /tag/sel/index*
 
 ```
 # ~ 1280 785
@@ -264,7 +262,7 @@ You can use _wmiir read_ to look into files: _wmiir read /tag/sel/index_
 
 So this is the info for the **sel**ected (current) tag. As you can see, I've got one floating xterm and Opera running on this tag. The first number in this output indicates the column of the window. ~ is the floating column and 1 ist (obviously) the first column. The second column is the XServer-ID for the client. The next columns are the coordinates and the size of the window. The last column ist the titlebar of the window.
 
-You can create new files with _wmiir create_:
+You can create new files with *wmiir create*:
 
 ```
 echo Arch is best | wmiir create /rbar/arch
@@ -315,7 +313,8 @@ Similar to the above status() function any user can essentially replace the func
 ```
 # Status Bar Info
 status() {
-    echo -n 'CPUTemp:' `expr $(sensors | grep temp1 | awk '{print $2}' | cut -c2-3) + 15` '|' 'GPUTemp:' $(nvidia-settings -q=GPUCoreTemp | grep eagle | awk '{print $4}' | cut -c1-2 ) '|' 'CPUMHz:' $(cat /proc/cpuinfo | grep MHz | awk '{printf "%.0f\n", $4}') '|' '/home:' $(df -h | grep sda5 | awk '{print $3}') '|' '/:' $(df -h | grep sda1 | awk '{print $3}') '|' 'RAM:' $(free -m | grep -i /cache | awk '{print $3}') 'MB |' $(uptime | sed 's/.*://; s/,//g') '|' $(date +"%a %b %d %H:%M")
+    echo -n 'CPUTemp:' `expr $(sensors | grep temp1 | awk '{print $2}' | cut -c2-3) + 15` '|' 'GPUTemp:' $(nvidia-settings -q=GPUCoreTemp | grep eagle | awk '{print $4}' | cut -c1-2 ) '|' 'CPUMHz:' $(cat /proc/cpuinfo | grep MHz | awk '{printf "%.0f
+", $4}') '|' '/home:' $(df -h | grep sda5 | awk '{print $3}') '|' '/:' $(df -h | grep sda1 | awk '{print $3}') '|' 'RAM:' $(free -m | grep -i /cache | awk '{print $3}') 'MB |' $(uptime | sed 's/.*://; s/,//g') '|' $(date +"%a %b %d %H:%M")
 }
 
 ```
@@ -338,7 +337,7 @@ With this you can shorten you shell prompt and have more horizontal space to typ
 
 ### Weechat Highlight Notification
 
-If you use weechat and want to know when you have been messaged without always having to look at the weechat window, you can use the _launcher.pl_ script to send a notice to the bar. To get this working, you will need to create a script that sends your desired notice. Here is very simple example:
+If you use weechat and want to know when you have been messaged without always having to look at the weechat window, you can use the *launcher.pl* script to send a notice to the bar. To get this working, you will need to create a script that sends your desired notice. Here is very simple example:
 
 ```
 #!/bin/bash
@@ -369,11 +368,11 @@ If you are experiencing the "/rbar/alert File not Found" error inside the weecha
 
 ```
 
-Now, :: NEW MESSAGE :: will appear in the left corner of your bar whenever you have a message highlight. Make sure to place _launcher.pl_ the perl/autoload directory so that it starts when weechat starts.
+Now, :: NEW MESSAGE :: will appear in the left corner of your bar whenever you have a message highlight. Make sure to place *launcher.pl* the perl/autoload directory so that it starts when weechat starts.
 
 ### Mod4 on an old Thinkpad
 
-Although Wmii defaults to Mod1, using Mod4 reduces conflicts in keybindings with many terminal applications. There is a snag for old Thinkpad users, however. They do not have a Mod4 key. To get one, another key has to be assigned to it using xmodmap. To do it, make an _.Xmodmap_ file in your home directory and add this to it:
+Although Wmii defaults to Mod1, using Mod4 reduces conflicts in keybindings with many terminal applications. There is a snag for old Thinkpad users, however. They do not have a Mod4 key. To get one, another key has to be assigned to it using xmodmap. To do it, make an *.Xmodmap* file in your home directory and add this to it:
 
 ```
 keycode 64 = Super_L
@@ -382,7 +381,7 @@ remove Mod1 = Super_L
 
 ```
 
-You will need to replace 64 with whatever _xev_ tells you is the keycode of the key you want to replace. In the above example, I replace left Alt (and use right alt for applications).
+You will need to replace 64 with whatever *xev* tells you is the keycode of the key you want to replace. In the above example, I replace left Alt (and use right alt for applications).
 
 ### Nice fonts
 

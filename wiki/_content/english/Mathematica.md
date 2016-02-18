@@ -20,10 +20,10 @@ Mathematica is a commercial program used in scientific, engineering and mathemat
 
 #### Mounting iso
 
-One way to mount the Mathematica .iso is to create _/media/iso_ and add the following line to the fstab:
+One way to mount the Mathematica .iso is to create */media/iso* and add the following line to the fstab:
 
 ```
-/_location/of/mathematica.iso_ /media/iso iso9660 exec,ro,user,noauto,loop=/dev/loop0   0 0
+/*location/of/mathematica.iso* /media/iso iso9660 exec,ro,user,noauto,loop=/dev/loop0   0 0
 
 ```
 
@@ -43,7 +43,7 @@ You can start the installer by navigating to:
 
 ```
 
-Run _MathInstaller_ with:
+Run *MathInstaller* with:
 
 ```
 sh ./MathInstaller
@@ -77,7 +77,7 @@ cd Unix/Installer
 
 Follow instructions.
 
-For KDE users, the Mathematica icon may appear in the _Lost & Found_ category. To solve this, execute the following as root:
+For KDE users, the Mathematica icon may appear in the *Lost & Found* category. To solve this, execute the following as root:
 
 ```
 # ln -s /etc/xdg/menus/applications-merged /etc/xdg/menus/kde-applications-merged
@@ -106,20 +106,20 @@ export CUDA_LIBRARY_PATH=/usr/lib/libcuda.so
 
 This second method, however, still will not permit Mathematica to find the OpenCL libraries in `/usr/local` as Mathematica seems hardwired to find them in `/usr/lib64`.
 
-The second issue with Mathematica 8 in 64-bit archlinux (may also affect 32-bit environments; but not tested) is a reproducible crash when performing WolframAlpha[] functions. By default, Mathematica is configured to detect the system's proxy settings when configuring how to connect to the internet to fetch data. A "bug" exists that will eventually crash Mathematica when the calling library is used. A workaround is to avoid this library call altogether by configuring Mathematica to "directly connect" to the internet. (_Edit > Preferences > Internet Connectivity > Proxy Settings_). This bug has been reported to Wolfram.
+The second issue with Mathematica 8 in 64-bit archlinux (may also affect 32-bit environments; but not tested) is a reproducible crash when performing WolframAlpha[] functions. By default, Mathematica is configured to detect the system's proxy settings when configuring how to connect to the internet to fetch data. A "bug" exists that will eventually crash Mathematica when the calling library is used. A workaround is to avoid this library call altogether by configuring Mathematica to "directly connect" to the internet. (*Edit > Preferences > Internet Connectivity > Proxy Settings*). This bug has been reported to Wolfram.
 
 ### Mathematica 10
 
-[Install](/index.php/Install "Install") [mathematica](https://aur.archlinux.org/packages/mathematica/) from the [AUR](/index.php/AUR "AUR"). The _Mathematica_10.XX.YY_LINUX.sh_ installation script is required; you will need to download this separately from Wolfram.com, your university, etc. You will also need an activation key.
+[Install](/index.php/Install "Install") [mathematica](https://aur.archlinux.org/packages/mathematica/) from the [AUR](/index.php/AUR "AUR"). The *Mathematica_10.XX.YY_LINUX.sh* installation script is required; you will need to download this separately from Wolfram.com, your university, etc. You will also need an activation key.
 
 #### HiDPI / Retina Screens
 
 If you have a [HiDPI](/index.php/HiDPI "HiDPI") screen, such as an Apple Retina display, and the main text in Mathematica looks small when you open it, this can be fixed:
 
-*   Go to _Edit → Preferences_
-*   From the _Advanced_ tab, click _Open Option Inspector_
-*   In the tree on the right, go to _Formatting Options → Font Options → Font Properties_
-*   Change the value for _"ScreenResolution"_ to double its current setting, e.g. 72 → 144\. You can also use `xdpyinfo | grep resolution` to get a more precise number (which will need to be doubled).
+*   Go to *Edit → Preferences*
+*   From the *Advanced* tab, click *Open Option Inspector*
+*   In the tree on the right, go to *Formatting Options → Font Options → Font Properties*
+*   Change the value for *"ScreenResolution"* to double its current setting, e.g. 72 → 144\. You can also use `xdpyinfo | grep resolution` to get a more precise number (which will need to be doubled).
 
 ## See also
 

@@ -48,7 +48,7 @@ En este artículo se explica qué es RAID y cómo crear/administrar una matriz R
 
 Véase también [Wikipedia:RAID](https://en.wikipedia.org/wiki/RAID "wikipedia:RAID").
 
-_Redundant Array of Independent Disks_ (Matriz Redundante de Discos Independientes, siglas en inglés RAID) es una tecnología de almacenamiento que combina varios componentes de unidades de disco —normalmente unidades de disco o particiones de los mismos— en una unidad lógica. Dependiendo de la implementación de RAID, la unidad lógica puede ser un sistema de archivos o una capa transparente adicional que puede contener varias particiones. Los datos se distribuyen a través de las unidades de una las muchas maneras que hay, llamadas «niveles de RAID», dependiendo del nivel de redundancia y del rendimiento requeridos. El nivel RAID elegido, por lo tanto, va a depender de si lo que se quiere es prevenir la pérdida de datos en caso de un fallo del disco duro, aumentar el rendimiento o una combinación de ambos.
+*Redundant Array of Independent Disks* (Matriz Redundante de Discos Independientes, siglas en inglés RAID) es una tecnología de almacenamiento que combina varios componentes de unidades de disco —normalmente unidades de disco o particiones de los mismos— en una unidad lógica. Dependiendo de la implementación de RAID, la unidad lógica puede ser un sistema de archivos o una capa transparente adicional que puede contener varias particiones. Los datos se distribuyen a través de las unidades de una las muchas maneras que hay, llamadas «niveles de RAID», dependiendo del nivel de redundancia y del rendimiento requeridos. El nivel RAID elegido, por lo tanto, va a depender de si lo que se quiere es prevenir la pérdida de datos en caso de un fallo del disco duro, aumentar el rendimiento o una combinación de ambos.
 
 A pesar de la redundancia implícita en la mayoría de los niveles de RAID, RAID no garantiza que los datos estén asegurados. Un RAID no protege los datos si se produce un incendio, el equipo es robado o varios discos duros fallan a la vez. Por otra parte, la instalación de un sistema con RAID es un proceso complejo que puede destruir los datos.
 **Advertencia:** Por tanto, asegúrese de [hacer copia de respaldo](/index.php/Backup_programs "Backup programs") de todos los datos antes de proceder.
@@ -61,7 +61,7 @@ Hay muchos [niveles de RAID](https://en.wikipedia.org/wiki/Standard_RAID_levels 
 
 	[RAID 0](https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_0 "wikipedia:Standard RAID levels")
 
-	Utiliza [striping](https://en.wikipedia.org/wiki/es:Striping "wikipedia:es:Striping") para combinar discos. A pesar de que _no proporciona redundancia_ (es decir, la posibilidad de recuperar o reconstruir los datos almacenados), todavía se considera RAID. Lo que si hace, sin embargo, es _proporcionar un gran beneficio velocidad_ . Si el aumento de la velocidad vale la pena ante la posibilidad de pérdida de datos (para la partición [swap](/index.php/Swap "Swap"), por ejemplo), elija este nivel de RAID. En un servidor, las matrices RAID 1 y RAID 5 son las más apropiadas. El tamaño de un dispositivo de bloques de una matriz RAID 0 equivale al tamaño de la partición más pequeña que la compone de entre el número de particiones integrantes.
+	Utiliza [striping](https://en.wikipedia.org/wiki/es:Striping "wikipedia:es:Striping") para combinar discos. A pesar de que *no proporciona redundancia* (es decir, la posibilidad de recuperar o reconstruir los datos almacenados), todavía se considera RAID. Lo que si hace, sin embargo, es *proporcionar un gran beneficio velocidad* . Si el aumento de la velocidad vale la pena ante la posibilidad de pérdida de datos (para la partición [swap](/index.php/Swap "Swap"), por ejemplo), elija este nivel de RAID. En un servidor, las matrices RAID 1 y RAID 5 son las más apropiadas. El tamaño de un dispositivo de bloques de una matriz RAID 0 equivale al tamaño de la partición más pequeña que la compone de entre el número de particiones integrantes.
 
 	[RAID 1](https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_1 "wikipedia:Standard RAID levels")
 
@@ -69,7 +69,7 @@ Hay muchos [niveles de RAID](https://en.wikipedia.org/wiki/Standard_RAID_levels 
 
 	[RAID 5](https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_5 "wikipedia:Standard RAID levels")
 
-	Requiere 3 o más unidades físicas, y proporciona la redundancia de RAID 1 en combinación con la velocidad y los beneficios del tamaño de RAID 0\. RAID 5 utiliza _striping_, como RAID 0, pero también bloques de paridad de almacenaje _distribuidos entre cada disco miembro_. En el caso de que un disco falle, esta bloques de paridad se utilizan para reconstruir los datos en un disco de reemplazo. RAID 5 puede soportar la pérdida de uno de los discos miembros.
+	Requiere 3 o más unidades físicas, y proporciona la redundancia de RAID 1 en combinación con la velocidad y los beneficios del tamaño de RAID 0\. RAID 5 utiliza *striping*, como RAID 0, pero también bloques de paridad de almacenaje *distribuidos entre cada disco miembro*. En el caso de que un disco falle, esta bloques de paridad se utilizan para reconstruir los datos en un disco de reemplazo. RAID 5 puede soportar la pérdida de uno de los discos miembros.
 
 **Nota:** RAID 5 es una opción común debido a su combinación de velocidad y redundancia de datos. La advertencia es que si una unidad falla y, antes de que fuera reemplazada, la otra unidad fallara, se perderían todos los datos.
 
@@ -77,7 +77,7 @@ Hay muchos [niveles de RAID](https://en.wikipedia.org/wiki/Standard_RAID_levels 
 
 	[RAID 1+0](https://en.wikipedia.org/wiki/Nested_RAID_levels#RAID_1_.2B_0 "wikipedia:Nested RAID levels")
 
-	Comúnmente conocido como _RAID 10_ , es un RAID anidado que combina dos de los niveles estándar de RAID para obtener un rendimiento y redundancia adicional. Es la mejor alternativa a RAID 5 cuando la redundancia es crucial.
+	Comúnmente conocido como *RAID 10* , es un RAID anidado que combina dos de los niveles estándar de RAID para obtener un rendimiento y redundancia adicional. Es la mejor alternativa a RAID 5 cuando la redundancia es crucial.
 
 ### Comparación de niveles RAID
 
@@ -108,7 +108,7 @@ Hay muchos [niveles de RAID](https://en.wikipedia.org/wiki/Standard_RAID_levels 
 | **6** | Sí | 50% - 88% | (n−2)X | (n−2)X | 4 |
 | **10** | Sí | 50% | nX (teóricamente) | (n/2)X | 4 |
 
-* Donde _n_ es el _standing_ multiplicado por el número de discos dedicados.
+* Donde *n* es el *standing* multiplicado por el número de discos dedicados.
 
 ## Implementación
 
@@ -130,7 +130,7 @@ Los dispositivos RAID pueden gestionarse de diferentes maneras:
 
 	[FakeRAID](/index.php/Fakeraid "Fakeraid")
 
-	Este tipo de RAID es llamado propiamente BIOS o RAID integrado en la placa base, pero es falsamente anunciado como RAID por hardware. La matriz está gestionada por controladoras pseudoRAID donde la lógica RAID se implementa en una opción de rom o en el propio firmware [con un EFI SataDriver](http://www.win-raid.com/t19f13-Intel-EFI-RAID-quot-SataDriver-quot-BIOS-Modules.html) (en el caso de [UEFI](/index.php/UEFI "UEFI")), pero no son completas controladoras de RAID hardware con _todas_ las funciones RAID implementadas. Por lo tanto, este tipo de RAID a veces se llama fakeRAID. [dmraid](https://www.archlinux.org/packages/?name=dmraid) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"), se utilizará para suplir a estas controladoras. Algunos ejemplos de controladoras FakeRAID son: [Intel Rapid Storage](https://en.wikipedia.org/wiki/Intel_Rapid_Storage_Technology "wikipedia:Intel Rapid Storage Technology"), JMicron JMB36x RAID ROM, AMD RAID, ASMedia 106x,...
+	Este tipo de RAID es llamado propiamente BIOS o RAID integrado en la placa base, pero es falsamente anunciado como RAID por hardware. La matriz está gestionada por controladoras pseudoRAID donde la lógica RAID se implementa en una opción de rom o en el propio firmware [con un EFI SataDriver](http://www.win-raid.com/t19f13-Intel-EFI-RAID-quot-SataDriver-quot-BIOS-Modules.html) (en el caso de [UEFI](/index.php/UEFI "UEFI")), pero no son completas controladoras de RAID hardware con *todas* las funciones RAID implementadas. Por lo tanto, este tipo de RAID a veces se llama fakeRAID. [dmraid](https://www.archlinux.org/packages/?name=dmraid) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"), se utilizará para suplir a estas controladoras. Algunos ejemplos de controladoras FakeRAID son: [Intel Rapid Storage](https://en.wikipedia.org/wiki/Intel_Rapid_Storage_Technology "wikipedia:Intel Rapid Storage Technology"), JMicron JMB36x RAID ROM, AMD RAID, ASMedia 106x,...
 
 ### ¿Qué tipo de RAID tengo?
 
@@ -140,7 +140,7 @@ Sin embargo, discernir entre fakeRAID y RAID de hardware verdadero puede ser má
 
 ## Configuración
 
-Instale [mdadm](https://www.archlinux.org/packages/?name=mdadm) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). _mdadm_ se utiliza para la administración de RAID por software puro usando dispositivos de bloque plano: el hardware subyacente no ofrece ninguna lógica RAID, solo un suministro de discos. _mdadm_ funcionará con cualquier colección de dispositivos de bloques. Incluso si son inusuales. Por ejemplo, se puede, pues, hacer un matriz RAID de una colección de memorias USB.
+Instale [mdadm](https://www.archlinux.org/packages/?name=mdadm) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). *mdadm* se utiliza para la administración de RAID por software puro usando dispositivos de bloque plano: el hardware subyacente no ofrece ninguna lógica RAID, solo un suministro de discos. *mdadm* funcionará con cualquier colección de dispositivos de bloques. Incluso si son inusuales. Por ejemplo, se puede, pues, hacer un matriz RAID de una colección de memorias USB.
 
 ### Preparar los dispositivos
 
@@ -189,7 +189,7 @@ El siguiente ejemplo muestra la compilación de una matriz RAID 1 en el disposit
 
 ```
 
-**Nota:** En un RAID1 en realidad no se necesita el conmutador _chunk_.
+**Nota:** En un RAID1 en realidad no se necesita el conmutador *chunk*.
 
 El siguiente ejemplo muestra la compilación de una matriz RAID 5 en dispositivo 4:
 
@@ -361,7 +361,6 @@ Como con muchas tareas/artículos relativos a mdadm, el estado de la limpieza se
 Ejemplo:
 
  `$ cat /proc/mdstat` 
-
 ```
 Personalities : [raid6] [raid5] [raid4] [raid1] 
 md0 : active raid1 sdb1[0] sdc1[1]
@@ -508,7 +507,7 @@ El paquete [iotop](https://www.archlinux.org/packages/?name=iotop) muestra las e
 
 ### Seguimiento E/S con iostat
 
-La utilidad _iostat_ del paquete [sysstat](https://www.archlinux.org/packages/?name=sysstat) muestra las estadísticas de entrada/salida para los dispositivos y las particiones.
+La utilidad *iostat* del paquete [sysstat](https://www.archlinux.org/packages/?name=sysstat) muestra las estadísticas de entrada/salida para los dispositivos y las particiones.
 
 ```
  iostat -dmy 1 /dev/md0
@@ -574,7 +573,7 @@ Feb  9 08:15:46 hostserver kernel: ata8.00: revalidation failed (errno=-5)
 
 ```
 
-no significa necesariamente que una unidad esté rota. A menudo se encuentran enlaces de pánico en la web que indican lo peor. En una palabra, _No Panic_ (que no cunda el pánico). Tal vez acaba de cambiar la configuración de APIC o ACPI en la BIOS o los parámetros del kernel de algún modo. Cámbielos de nuevo y debería funcionar bien. Generalmente, cambiar ACPI y/o apagar ACPI debe ayudar.
+no significa necesariamente que una unidad esté rota. A menudo se encuentran enlaces de pánico en la web que indican lo peor. En una palabra, *No Panic* (que no cunda el pánico). Tal vez acaba de cambiar la configuración de APIC o ACPI en la BIOS o los parámetros del kernel de algún modo. Cámbielos de nuevo y debería funcionar bien. Generalmente, cambiar ACPI y/o apagar ACPI debe ayudar.
 
 ### Iniciar matrices en solo lectura
 
@@ -643,7 +642,7 @@ Hay varias herramientas para la evaluación comparativa de un RAID. La mejora m�
 *   [Chapter 15: Redundant Array of Independent Disks (RAID)](http://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_Linux/6/html/Storage_Administration_Guide/ch-raid.html) of Red Hat Enterprise Linux 6 Documentation
 *   [Linux-RAID FAQ](http://tldp.org/FAQ/Linux-RAID-FAQ/x37.html) on the Linux Documentation Project
 *   [Dell.com Raid Tutorial](http://support.dell.com/support/topics/global.aspx/support/entvideos/raid?c=us&l=en&s=gen) - Interactive Walkthrough of Raid
-*   [BAARF](http://www.miracleas.com/BAARF/) including _[Why should I not use RAID 5?](http://www.miracleas.com/BAARF/RAID5_versus_RAID10.txt)_ by Art S. Kagel
+*   [BAARF](http://www.miracleas.com/BAARF/) including *[Why should I not use RAID 5?](http://www.miracleas.com/BAARF/RAID5_versus_RAID10.txt)* by Art S. Kagel
 *   [Introduction to RAID](http://www.linux-mag.com/id/7924/), [Nested-RAID: RAID-5 and RAID-6 Based Configurations](http://www.linux-mag.com/id/7931/), [Intro to Nested-RAID: RAID-01 and RAID-10](http://www.linux-mag.com/id/7928/), and [Nested-RAID: The Triple Lindy](http://www.linux-mag.com/id/7932/) in Linux Magazine
 *   [HowTo: Speed Up Linux Software Raid Building And Re-syncing](http://www.cyberciti.biz/tips/linux-raid-increase-resync-rebuild-speed.html)
 *   [RAID5-Server to hold all your data](http://fomori.org/blog/?p=94)

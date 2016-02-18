@@ -1,4 +1,4 @@
-[Reflector](http://xyne.archlinux.ca/projects/reflector/) es un _script_ que es capaz de obtener la lista más reciente de _[mirrors](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)")_ desde la página [MirrorStatus](https://www.archlinux.org/mirrors/status/), filtrar los _mirrors_ más actualizados, ordenarlos en base a su velocidad, y sobrescribir el archivo `/etc/pacman.d/mirrorlist`.
+[Reflector](http://xyne.archlinux.ca/projects/reflector/) es un *script* que es capaz de obtener la lista más reciente de *[mirrors](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)")* desde la página [MirrorStatus](https://www.archlinux.org/mirrors/status/), filtrar los *mirrors* más actualizados, ordenarlos en base a su velocidad, y sobrescribir el archivo `/etc/pacman.d/mirrorlist`.
 
 ## Instalación
 
@@ -15,7 +15,7 @@ Primero, respalda tu archivo `/etc/pacman.d/mirrorlist`:
 
 ```
 
-El siguiente comando filtrará los primeros cinco _mirrors,_ los ordenará en base a su velocidad, y sobrescribirá el archivo `/etc/pacman.d/mirrorlist`:
+El siguiente comando filtrará los primeros cinco *mirrors,* los ordenará en base a su velocidad, y sobrescribirá el archivo `/etc/pacman.d/mirrorlist`:
 
 ```
 # reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist
@@ -36,7 +36,7 @@ Para ver todos las opciones disponibles, utiliza:
 
 ```
 
-**Advertencia:** Asegúrate de que la lista de _mirrors_ no contiene entradas extrañas antes de sincronizar o actualizar con pacman.
+**Advertencia:** Asegúrate de que la lista de *mirrors* no contiene entradas extrañas antes de sincronizar o actualizar con pacman.
 
 ### Actualizar la lista de paquetes
 

@@ -36,15 +36,14 @@ Plymouth пока недоступен в [официальных репозит
 
 ### Включение Plymouth в Initcpio
 
-Добавьте Plymouth в HOOKS в [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"). Он обязательно **должен** быть добавлен _после_ **base**, **udev** и **autodetect**:
+Добавьте Plymouth в HOOKS в [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"). Он обязательно **должен** быть добавлен *после* **base**, **udev** и **autodetect**:
 
  `/etc/mkinitcpio.conf`  `HOOKS="base udev autodetect [...] plymouth"` 
-**Важно:** Если используется [шифрование жестких дисков](/index.php/System_Encryption_with_LUKS_for_dm-crypt "System Encryption with LUKS for dm-crypt") с **encrypt** hook, _необходимо_ заменить его на **plymouth-encrypt** чтобы получить доступ к запросу пароля TTY.
+**Важно:** Если используется [шифрование жестких дисков](/index.php/System_Encryption_with_LUKS_for_dm-crypt "System Encryption with LUKS for dm-crypt") с **encrypt** hook, *необходимо* заменить его на **plymouth-encrypt** чтобы получить доступ к запросу пароля TTY.
 
 Для более раннего запуска KMS надо добавить модуль [radeon](/index.php/Radeon "Radeon") (для видеокарт radeon), [i915](/index.php/Intel "Intel") (для видеокарт Intel) или [nouveau](/index.php/Nouveau "Nouveau") (для видеокарт nvidia) в строку MODULES в `/etc/mkinitcpio.conf`:
 
  `/etc/mkinitcpio.conf` 
-
 ```
 MODULES="i915"
 **или**
@@ -66,7 +65,7 @@ linux /boot/vmlinuz-linux root=/dev/... ro quiet splash
 
 ```
 
-Можно заставить KMS принудительно запускаться раньше добавив "_radeon.modeset=1_" (для видеокарт radeon) or "_i915.modeset=1_" (для видеокарт Intel) в опции ядра:
+Можно заставить KMS принудительно запускаться раньше добавив "*radeon.modeset=1*" (для видеокарт radeon) or "*i915.modeset=1*" (для видеокарт Intel) в опции ядра:
 
 ```
 linux /boot/vmlinuz-linux root=/dev/... radeon.modeset=1
@@ -78,7 +77,7 @@ linux /boot/vmlinuz-linux root=/dev/... i915.modeset=1
 
 ```
 
-Так же можно отредактировать файл `/etc/default/grub` и добавить опции ядра в строке _GRUB_CMDLINE_LINUX_DEFAULT=""_. Чтобы сгенерировать `grub.cfg` выполните:
+Так же можно отредактировать файл `/etc/default/grub` и добавить опции ядра в строке *GRUB_CMDLINE_LINUX_DEFAULT=""*. Чтобы сгенерировать `grub.cfg` выполните:
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
@@ -94,8 +93,8 @@ Plymouth имеет на выбор темы:
 3.  Script: "Пример скрипта" (Несмотря на описание выглядит очень симпатичной темой Arch)
 4.  Solar: "Космическая тема, голубая звезда с протуберанцами" and
 5.  Spinfinity: "Простая тема показывающая вращающийся знак бесконечности в центре экрана"
-6.  _(Text: "Текстовый режим с трехцветной полосой прогресса")_
-7.  _(Details: "Резервная тема с подробностями загрузки")_
+6.  *(Text: "Текстовый режим с трехцветной полосой прогресса")*
+7.  *(Details: "Резервная тема с подробностями загрузки")*
 
 Список установленных тем можно вызвать командой:
 
@@ -139,7 +138,7 @@ plymouth --quit
 
 ### Маленькие черные квадраты
 
-По каким-то причинам после выполнения команды выйти, Plymouth может оставить черные квадраты вверху экрана видимые поверх всех окон. Два подтвержденных случая, это ноутбук с видеокартой ATI при использовании KMS, и десктоп с видеокартой nVidia использующий framebuffer. Источником проблемы является опция `--retain-splash` , которая требуется для максимально плавного отображения в процессе загрузки. Обходным путем является принудительное закрытие Plymouth _после_ логина, когда опция `--retain-splash`более не требуется.
+По каким-то причинам после выполнения команды выйти, Plymouth может оставить черные квадраты вверху экрана видимые поверх всех окон. Два подтвержденных случая, это ноутбук с видеокартой ATI при использовании KMS, и десктоп с видеокартой nVidia использующий framebuffer. Источником проблемы является опция `--retain-splash` , которая требуется для максимально плавного отображения в процессе загрузки. Обходным путем является принудительное закрытие Plymouth *после* логина, когда опция `--retain-splash`более не требуется.
 
 Нужно отредактировать `~/.xinitrc` и добавить следующую линию **перед** линией запускающей менеджер окружения рабочего стола (подобной "exec openbox-session") чтобы выключить Plymouth:
 
@@ -163,7 +162,7 @@ $ su
 и добавить:
 
 ```
-_Ваш_Логин_      ALL=(ALL) NOPASSWD: /bin/plymouth
+*Ваш_Логин*      ALL=(ALL) NOPASSWD: /bin/plymouth
 
 ```
 

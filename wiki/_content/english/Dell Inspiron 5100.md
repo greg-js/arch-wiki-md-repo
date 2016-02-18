@@ -96,14 +96,14 @@ The modem is believed to be a Broadcom BCM v.92 56k WinModem. The FCC sticker on
 This laptop seems to have the same acpi issues that plague most dell laptops running linux. The i8k driver works for this laptop as it does for most dell laptops. Add i8k to your modules array in rc.conf to enable it.
 
 ```
-MODULES=(!usbserial !ide-scsi p4_clockmod _**i8k**_ evdev)
+MODULES=(!usbserial !ide-scsi p4_clockmod ***i8k*** evdev)
 
 ```
 
 You'll probably also want to run the i8kmon daemon since the bios doesn't turn the cooling fan on until the cpu is about 70°C. [Install](/index.php/Install "Install") the [i8kmon](https://www.archlinux.org/packages/?name=i8kmon) package. Then add i8kmon to your daemons array to start it at boot.
 
 ```
-DAEMONS=(syslog-ng network portmap !netfs crond alsa acpid cupsd cpufreq _**i8kmon**_)
+DAEMONS=(syslog-ng network portmap !netfs crond alsa acpid cupsd cpufreq ***i8kmon***)
 
 ```
 
@@ -125,7 +125,7 @@ i8kmon sees the fan as the right fan. The - in the left fan position means it wi
 These laptops use a standard desktop p4 processor, no wonder they get so hot. The processor supports throttling by way of the p4_clockmod module. Add p4_clockmod to your modules array to enable it.
 
 ```
-MODULES=(!usbserial !ide-scsi _**p4_clockmod**_ i8k evdev)
+MODULES=(!usbserial !ide-scsi ***p4_clockmod*** i8k evdev)
 
 ```
 

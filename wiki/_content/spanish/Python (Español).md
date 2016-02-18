@@ -1,8 +1,8 @@
 De la [Wikipedia](https://es.wikipedia.org/wiki/Python):
 
-	_Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis que favorezca un código legible._
+	*Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis que favorezca un código legible.*
 
-	_Se trata de un lenguaje de programación multiparadigma, ya que soporta orientación a objetos, programación imperativa y, en menor medida, programación funcional. Es un lenguaje interpretado, usa tipado dinámico y es multiplataforma._
+	*Se trata de un lenguaje de programación multiparadigma, ya que soporta orientación a objetos, programación imperativa y, en menor medida, programación funcional. Es un lenguaje interpretado, usa tipado dinámico y es multiplataforma.*
 
 ## Contents
 
@@ -10,9 +10,9 @@ De la [Wikipedia](https://es.wikipedia.org/wiki/Python):
     *   [1.1 Python 3](#Python_3)
         *   [1.1.1 VirtualEnv](#VirtualEnv)
     *   [1.2 Python 2](#Python_2)
-*   [2 Tratar los problemas de versión en los _scripts_ de compilación](#Tratar_los_problemas_de_versi.C3.B3n_en_los_scripts_de_compilaci.C3.B3n)
+*   [2 Tratar los problemas de versión en los *scripts* de compilación](#Tratar_los_problemas_de_versi.C3.B3n_en_los_scripts_de_compilaci.C3.B3n)
 *   [3 Completado de sintaxis en el shell de Python](#Completado_de_sintaxis_en_el_shell_de_Python)
-*   [4 _Widget bindings_](#Widget_bindings)
+*   [4 *Widget bindings*](#Widget_bindings)
 *   [5 Versiones antiguas](#Versiones_antiguas)
 *   [6 Sugerencias y trucos](#Sugerencias_y_trucos)
 
@@ -65,18 +65,18 @@ o
 
 En ambos casos, simplemente cambia `python` por `python2` y el programa usará Python 2 en lugar de Python 3.
 
-Otra forma de forzar el uso de python2 sin alterar los _scripts_ es llamarlo explícitamente, por ejemplo:
+Otra forma de forzar el uso de python2 sin alterar los *scripts* es llamarlo explícitamente, por ejemplo:
 
  `python2 miScript.py` 
 
-Para terminar, es posible que no puedas controlar la ejecución de los _scripts_, pero hay una forma de trucar el entorno. Solo funciona si los _scripts_ usan `#!/usr/bin/env python`, y no funcionará con `#!/usr/bin/python`. Este sistema depende de que `env` busque la entrada correcta en la variable PATH. Primero, crea un directorio de trabajo:
+Para terminar, es posible que no puedas controlar la ejecución de los *scripts*, pero hay una forma de trucar el entorno. Solo funciona si los *scripts* usan `#!/usr/bin/env python`, y no funcionará con `#!/usr/bin/python`. Este sistema depende de que `env` busque la entrada correcta en la variable PATH. Primero, crea un directorio de trabajo:
 
 ```
 $ mkdir ~/bin
 
 ```
 
-Después, añade enlaces simbólicos a python2 y a sus _scripts_ de configuración:
+Después, añade enlaces simbólicos a python2 y a sus *scripts* de configuración:
 
 ```
 $ ln -s /usr/bin/python2 ~/bin/python
@@ -84,7 +84,7 @@ $ ln -s /usr/bin/python2-config ~/bin/python-config
 
 ```
 
-Para terminar, añade el nuevo directorio _al principio_ de tu variable PATH:
+Para terminar, añade el nuevo directorio *al principio* de tu variable PATH:
 
 ```
 $ export PATH=~/bin:$PATH
@@ -98,7 +98,7 @@ $ which python
 
 ```
 
-Una solución similar para cambiar el entorno, que también depende de que el _script_ en cuestión ejecute `#!/usr/bin/env python` es usar un entorno virtual [Virtualenv](/index.php/Virtualenv "Virtualenv"). Cuando se activa un Virtualenv, el ejecutable de Python al que se apunta desde `$PATH` será el que se ha instalado con el Virtualenv. Así, si el Virtualenv se instaló con Python 2, `python` ejecutará Python 2\. Para hacer esto, [instala](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv).
+Una solución similar para cambiar el entorno, que también depende de que el *script* en cuestión ejecute `#!/usr/bin/env python` es usar un entorno virtual [Virtualenv](/index.php/Virtualenv "Virtualenv"). Cuando se activa un Virtualenv, el ejecutable de Python al que se apunta desde `$PATH` será el que se ha instalado con el Virtualenv. Así, si el Virtualenv se instaló con Python 2, `python` ejecutará Python 2\. Para hacer esto, [instala](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv).
 
 Después crea el Virtualenv.
 
@@ -114,14 +114,13 @@ $ source venv/bin/activate
 
 ```
 
-A partir de este momento, el _script_ debería ejecutarse usando Python 2.
+A partir de este momento, el *script* debería ejecutarse usando Python 2.
 
-## Tratar los problemas de versión en los _scripts_ de compilación
+## Tratar los problemas de versión en los *scripts* de compilación
 
-Muchos _scripts_ de compilación de proyectos dan por hecho que `python` será Python 2, y esto podría provocar un error (normalmente indicando que `print 'foo'` es una sintaxis inválida. Afortunadamente, muchos de ellos llaman al `python` del `$PATH` en lugar de llamar a `#!/usr/bin/python` en la primera línea, y los _scripts_ de Python suelen estar incluídos en el árbol del proyecto. Así que en lugar de modificar los _scripts_ a mano, hay una solución fácil. Simplemente crea `/usr/local/bin/python` con el siguiente contenido:
+Muchos *scripts* de compilación de proyectos dan por hecho que `python` será Python 2, y esto podría provocar un error (normalmente indicando que `print 'foo'` es una sintaxis inválida. Afortunadamente, muchos de ellos llaman al `python` del `$PATH` en lugar de llamar a `#!/usr/bin/python` en la primera línea, y los *scripts* de Python suelen estar incluídos en el árbol del proyecto. Así que en lugar de modificar los *scripts* a mano, hay una solución fácil. Simplemente crea `/usr/local/bin/python` con el siguiente contenido:
 
  `/usr/local/bin/python` 
-
 ```
 #!/bin/bash
 script=$(readlink -f -- "$1")
@@ -143,14 +142,13 @@ No olvides hacerlo ejecutable.:
 
 ```
 
-Después de esto, los _scripts_ en los árboles de proyecto especificados se ejecutarán con Python 2.
+Después de esto, los *scripts* en los árboles de proyecto especificados se ejecutarán con Python 2.
 
 ## Completado de sintaxis en el shell de Python
 
 Copia esto en la consola interactiva de Python:
 
  `/usr/bin/python` 
-
 ```
 import rlcompleter
 import readline
@@ -159,9 +157,9 @@ readline.parse_and_bind("tab: complete")
 
 [Fuente](http://algorithmicallyrandom.blogspot.com.es/2009/09/tab-completion-in-python-shell-how-to.html)
 
-## _Widget bindings_
+## *Widget bindings*
 
-Los siguientes _[widget toolkit](https://en.wikipedia.org/wiki/widget_toolkit "wikipedia:widget toolkit") bindings_ están disponibles:
+Los siguientes *[widget toolkit](https://en.wikipedia.org/wiki/widget_toolkit "wikipedia:widget toolkit") bindings* están disponibles:
 
 *   **TkInter** — Bindings Tk
 
@@ -187,7 +185,7 @@ Los siguientes _[widget toolkit](https://en.wikipedia.org/wiki/widget_toolkit "w
 
 	[http://wxpython.org/](http://wxpython.org/) || [wxpython](https://www.archlinux.org/packages/?name=wxpython)
 
-Para usar estos con Python, puedes necesitar instalar los _kits_ de _widgets_ asociados.
+Para usar estos con Python, puedes necesitar instalar los *kits* de *widgets* asociados.
 
 ## Versiones antiguas
 

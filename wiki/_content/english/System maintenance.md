@@ -104,13 +104,13 @@ Avoid using the `-d` option with pacman. `pacman -Rdd package` skips dependency 
 
 ### Partial upgrades are unsupported
 
-Arch Linux is a [rolling release](https://en.wikipedia.org/wiki/rolling_release "wikipedia:rolling release") distribution. That means when new [library](https://en.wikipedia.org/wiki/Library_(computing) "wikipedia:Library (computing)") versions are pushed to the repositories, the developers and Trusted Users rebuild all the packages in the repositories that need to be rebuilt against the libraries. For example, if two packages depend on the same library, upgrading only one package might also upgrade the library (as a dependency), which might then break the other package which depends on an older version of the library.
+Arch Linux is a [rolling release](https://en.wikipedia.org/wiki/rolling_release versions are pushed to the repositories, the developers and Trusted Users rebuild all the packages in the repositories that need to be rebuilt against the libraries. For example, if two packages depend on the same library, upgrading only one package might also upgrade the library (as a dependency), which might then break the other package which depends on an older version of the library.
 
 That is why partial upgrades are **not supported**. Do not use `pacman -Sy package` or any equivalent such as `pacman -Sy` followed by `pacman -S package`, **always** upgrade (with `pacman -Syu`) before installing a package. Be very careful when using `IgnorePkg` and `IgnoreGroup` for the same reason. If the system has locally installed packages (such as [AUR](/index.php/AUR "AUR") packages), users will need to rebuild them when their dependencies receive a [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname") bump.
 
-If a partial upgrade scenario has been created, and binaries are broken because they cannot find the libraries they are linked against, **do not "fix" the problem simply by symlinking**. Libraries receive [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname") bumps when they are **not backwards compatible**. A simple `pacman -Syu` to a properly synced mirror will fix the problem as long as _pacman_ is not broken.
+If a partial upgrade scenario has been created, and binaries are broken because they cannot find the libraries they are linked against, **do not "fix" the problem simply by symlinking**. Libraries receive [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname") bumps when they are **not backwards compatible**. A simple `pacman -Syu` to a properly synced mirror will fix the problem as long as *pacman* is not broken.
 
-The bash script _checkupdates_, included with the pacman package, provides a safe way to check for upgrades to installed packages without running a system update at the same time. See also [BBS##1563725](https://bbs.archlinux.org/viewtopic.php?pid=1563725#p1563725).
+The bash script *checkupdates*, included with the pacman package, provides a safe way to check for upgrades to installed packages without running a system update at the same time. See also [BBS##1563725](https://bbs.archlinux.org/viewtopic.php?pid=1563725#p1563725).
 
 ### Read before upgrading the system
 
@@ -134,7 +134,7 @@ At this point, only after ensuring there is no information available through pac
 
 ## Use the package manager to install software
 
-[Pacman](/index.php/Pacman "Pacman") does a much better job than you at keeping track of files. If you install things manually you _will_, sooner or later, forget what you did, forget where you installed to, install conflicting software, install to the wrong locations, etc. Instead, learn how to [create a package](/index.php/Creating_packages "Creating packages").
+[Pacman](/index.php/Pacman "Pacman") does a much better job than you at keeping track of files. If you install things manually you *will*, sooner or later, forget what you did, forget where you installed to, install conflicting software, install to the wrong locations, etc. Instead, learn how to [create a package](/index.php/Creating_packages "Creating packages").
 
 To clean up improperly installed files, see [Pacman/Tips and tricks#Identify files not owned by any package](/index.php/Pacman/Tips_and_tricks#Identify_files_not_owned_by_any_package "Pacman/Tips and tricks").
 

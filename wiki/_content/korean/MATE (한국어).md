@@ -161,5 +161,5 @@ MDM (Mate Display Manager)을 사용하지 않으면 사용자 전환을 할 수
 
 **아치 리눅스 포럼**
 
-*   [_마테 데스크톱 환경 일반_](https://bbs.archlinux.org/viewtopic.php?pid=1018647) - 마테에 관한 전반적인 토론
-*   [_마테 데스크톱 스크린샷_](https://bbs.archlinux.org/viewtopic.php?id=139877)
+*   [*마테 데스크톱 환경 일반*](https://bbs.archlinux.org/viewtopic.php?pid=1018647) - 마테에 관한 전반적인 토론
+*   [*마테 데스크톱 스크린샷*](https://bbs.archlinux.org/viewtopic.php?id=139877)

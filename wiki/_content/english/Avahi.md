@@ -1,6 +1,6 @@
 From [Wikipedia:Avahi (software)](https://en.wikipedia.org/wiki/Avahi_(software) "wikipedia:Avahi (software)"):
 
-	_"[Avahi](http://avahi.org/) is a free [Zero-configuration networking](https://en.wikipedia.org/wiki/Zero-configuration_networking "wikipedia:Zero-configuration networking") (zeroconf) implementation, including a system for multicast DNS/DNS-SD service discovery. It allows programs to publish and discover services and hosts running on a local network with no specific configuration. For example you can plug into a network and instantly find printers to print to, files to look at and people to talk to. It is licensed under the GNU Lesser General Public License (LGPL)."_
+	*"[Avahi](http://avahi.org/) is a free [Zero-configuration networking](https://en.wikipedia.org/wiki/Zero-configuration_networking "wikipedia:Zero-configuration networking") (zeroconf) implementation, including a system for multicast DNS/DNS-SD service discovery. It allows programs to publish and discover services and hosts running on a local network with no specific configuration. For example you can plug into a network and instantly find printers to print to, files to look at and people to talk to. It is licensed under the GNU Lesser General Public License (LGPL)."*
 
 ## Contents
 
@@ -35,7 +35,7 @@ You can manage the Avahi daemon with `avahi-daemon.service` [using systemd](/ind
 
 ### Hostname resolution
 
-Avahi provides local hostname resolution using a "_hostname_.local" naming scheme. To enable it, install the [nss-mdns](https://www.archlinux.org/packages/?name=nss-mdns) package and start `avahi-daemon.service`.
+Avahi provides local hostname resolution using a "*hostname*.local" naming scheme. To enable it, install the [nss-mdns](https://www.archlinux.org/packages/?name=nss-mdns) package and start `avahi-daemon.service`.
 
 Then, edit the file `/etc/nsswitch.conf` and change the line:
 
@@ -81,7 +81,6 @@ If you have an [NFS](/index.php/NFS "NFS") share set up, you can use Avahi to be
 Create a `.service` file in `/etc/avahi/services` with the following contents:
 
  `/etc/avahi/services/nfs_Zephyrus_Music.service` 
-
 ```
 <?xml version="1.0" standalone='no'?>
 <!DOCTYPE service-group SYSTEM "avahi-service.dtd">
@@ -95,7 +94,7 @@ Create a `.service` file in `/etc/avahi/services` with the following contents:
 </service-group>
 ```
 
-The port is correct if you have _insecure_ as an option in your `/etc/exports`; otherwise, it needs to be changed (note that _insecure_ is needed for OS X clients). The path is the path to your export, or a subdirectory of it. For some reason the automount functionality has been removed from Leopard, however [a script is available](http://www.macosxhints.com/article.php?story=20071116042238744). This was based upon [this post](http://ubuntuforums.org/showthread.php?p=4387032#post4387032).
+The port is correct if you have *insecure* as an option in your `/etc/exports`; otherwise, it needs to be changed (note that *insecure* is needed for OS X clients). The path is the path to your export, or a subdirectory of it. For some reason the automount functionality has been removed from Leopard, however [a script is available](http://www.macosxhints.com/article.php?story=20071116042238744). This was based upon [this post](http://ubuntuforums.org/showthread.php?p=4387032#post4387032).
 
 #### Samba
 
@@ -108,7 +107,6 @@ You can also auto-discover regular FTP servers, such as vsftpd. Install the [vsf
 Create a `.service` file in `/etc/avahi/services` with the following contents:
 
  `/etc/avahi/services/ftp.service` 
-
 ```
 <?xml version="1.0" standalone='no'?>
 <!DOCTYPE service-group SYSTEM "avahi-service.dtd">
@@ -135,7 +133,6 @@ Avahi can be used for bonjour protocol support under linux. Check [Wikipedia:Com
 Avahi along with CUPS also provides the capability to print to just about any printer from airprint compatible mobile devices. In order to enable print capability from your device, simply create an avahi service file for your printer in /etc/avahi/services and restart avahi. An example of a generic services file for an HP-Laserjet printer would be similar to the following with the `name`, `rp`, `ty`, `adminurl` and `note` fields changed.
 
  `/etc/avahi/services/youFileName.service` 
-
 ```
 <?xml version="1.0" standalone='no'?><!--*-nxml-*-->
 <!DOCTYPE service-group SYSTEM "avahi-service.dtd">
@@ -204,7 +201,6 @@ If you're following the more-than-useful [Simple stateful firewall](/index.php/S
 By default, if you are getting IP using DHCP, you are using the [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) package. It can attempt to obtain an IPv4LL address if it failed to get one via DHCP. By default this option is disabled. To enable it, comment noipv4ll string:
 
  `/etc/dhcpcd.conf` 
-
 ```
 ...
 #noipv4ll

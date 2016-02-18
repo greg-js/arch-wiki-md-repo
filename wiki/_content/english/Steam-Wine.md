@@ -83,7 +83,7 @@ $ wine reg add "HKLM\\System\\CurrentControlSet\\Control\\Session Manager\\Memor
 
 ### Source engine launch options
 
-Go to _Properties > Set Launch Options_, e.g.:
+Go to *Properties > Set Launch Options*, e.g.:
 
 ```
 -console -dxlevel 90 -width 1280 -height 1024
@@ -106,7 +106,7 @@ Please refer to [https://developer.valvesoftware.com/wiki/Command_Line_Options](
 
 ### Using a pre-existing Steam installation
 
-If you have a shared drive with Windows, or already have a Steam installation somewhere else, you can simply symlink the Steam directory to `~/.wine/drive_c/Program Files/Steam/` . However, be sure to do **all** the previous steps in this wiki. Confirm Steam launches and logs into your account, _then_ do this:
+If you have a shared drive with Windows, or already have a Steam installation somewhere else, you can simply symlink the Steam directory to `~/.wine/drive_c/Program Files/Steam/` . However, be sure to do **all** the previous steps in this wiki. Confirm Steam launches and logs into your account, *then* do this:
 
 ```
 $ cd ~/.wine/drive_c/Program\ Files/ 
@@ -185,7 +185,7 @@ If there is no text/font rendered when starting steam you should try to start st
  `wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe -no-dwrite` 
 **Note:** Although this method does currently work, It is not persistent if Steam relaunches automatically (i.e. update), or if you follow a URL link.
 
-*   This can be achieved by going through _**winecfg > Libraries**_ and setting the **"dwrite"** override to _"disable"_
+*   This can be achieved by going through ***winecfg > Libraries*** and setting the **"dwrite"** override to *"disable"*
 
 **Or**
 

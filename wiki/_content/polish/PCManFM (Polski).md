@@ -60,7 +60,7 @@ Jeżeli przeferujesz Gnome Virtual FileSystem, procedura jest taka sama, ale wym
 
 Aby umożliwić montowanie urządzeń takich jak dyski USB, pendrive'y czy dyski DVD jako normalny użytkownik wymagany jest poprawnie skonfigurowany zestaw [PolicyKit](/index.php/PolicyKit "PolicyKit"). Pliki konfiguracyjne można znaleźć w podfolderach `/etc/polkit-1`. Dalej pokazane jest jak skonfigurować PolicyKit aby zezwolić użytkownikom z grupy "storage" montowanie urządzeń wymiennych.
 
-**Note:** Obecnie PolicyKit skonfigurowany jest aby domyślnie zezwalać użytkownikom z grupy _storage_ na (od)montowanie. Dlatego ten krok nie jest niezbędny.
+**Note:** Obecnie PolicyKit skonfigurowany jest aby domyślnie zezwalać użytkownikom z grupy *storage* na (od)montowanie. Dlatego ten krok nie jest niezbędny.
 
 Jako root utwórz plik `/etc/polkit-1/localauthority/50-local.d/55-myconf.pkla` (lub inny kończący się .pkla) zawierający:
 
@@ -74,7 +74,7 @@ Jako root utwórz plik `/etc/polkit-1/localauthority/50-local.d/55-myconf.pkla` 
 
 ```
 
-PolicyKit zauważy zmiany i wprowadzi je bez potrzeby żadnej akcji z twojej strony. Następnie należy każdego użytkownika któremu umożliwamy montowanie dodać do grupy _storage_:
+PolicyKit zauważy zmiany i wprowadzi je bez potrzeby żadnej akcji z twojej strony. Następnie należy każdego użytkownika któremu umożliwamy montowanie dodać do grupy *storage*:
 
 ```
 # usermod -a -G storage 'nazwa użytkownika'

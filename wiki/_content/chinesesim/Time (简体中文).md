@@ -204,7 +204,7 @@ See `man 1 timedatectl`, `man 5 localtime`, and `man 7 archlinux` for more detai
 [网络时间协议](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") (NTP) 是一个通过包交换和可变延迟网络来同步计算机系统时间的协议。下列为这个协议的实现：
 
 *   [NTP 守护进程](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon")是这个协议的[参考实现](https://en.wikipedia.org/wiki/reference_implementation "wikipedia:reference implementation")，推荐用于时间服务器。它也可以调节中断频率和每秒滴答次数以减少系统时钟误差，使得硬件时钟每隔11秒重新同步一次。
-*   **sntp** 是 [ntp](https://www.archlinux.org/packages/?name=ntp) 包里附带的一个 [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") 客户端。它取代了 _ntpdate_ ，并被推荐用于非服务器环境。
+*   **sntp** 是 [ntp](https://www.archlinux.org/packages/?name=ntp) 包里附带的一个 [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") 客户端。它取代了 *ntpdate* ，并被推荐用于非服务器环境。
 *   [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd") 是一个简单的 [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") 守护进程。它只实现了客户端，专用于从远程服务器查询时间，更适用于绝大部分安装的情形。
 *   [OpenNTPD](/index.php/OpenNTPD "OpenNTPD") 是 OpenBSD 项目的一部分，同时实现了客户端和服务器。
 *   [Chrony](/index.php/Chrony "Chrony") 是一个客户端和服务器，更适合漫游，是为不能始终保持在线的系统而特别设计。
@@ -213,12 +213,11 @@ See `man 1 timedatectl`, `man 5 localtime`, and `man 7 archlinux` for more detai
 
 For some use cases it may be useful to change the time settings without touching the global system values. For example to test applications relying on the time during development or adjusting the system time zone when logging into a server remotely from another zone.
 
-To make an application "see" a different date/time than the system one, you can use the _faketime_ (from [libfaketime](https://www.archlinux.org/packages/?name=libfaketime)) or the [datefudge](https://www.archlinux.org/packages/?name=datefudge) utilities.
+To make an application "see" a different date/time than the system one, you can use the *faketime* (from [libfaketime](https://www.archlinux.org/packages/?name=libfaketime)) or the [datefudge](https://www.archlinux.org/packages/?name=datefudge) utilities.
 
 If instead you want an application to "see" a different time zone than the system one, set the `TZ` [environment variable](/index.php/Environment_variable "Environment variable"), for example:
 
  `$ date && export TZ="/usr/share/zoneinfo/Pacific/Fiji" && date` 
-
 ```
 Sa 24\. Mai 12:38:26 CEST 2014
 Sa 24\. Mai 22:38:26 FJT 2014

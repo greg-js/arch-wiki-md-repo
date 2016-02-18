@@ -1,6 +1,6 @@
 From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
 
-"_Bumblebee is an effort to make NVIDIA Optimus enabled laptops work in GNU/Linux systems. Such feature involves two graphics cards with two different power consumption profiles plugged in a layered way sharing a single framebuffer._"
+"*Bumblebee is an effort to make NVIDIA Optimus enabled laptops work in GNU/Linux systems. Such feature involves two graphics cards with two different power consumption profiles plugged in a layered way sharing a single framebuffer.*"
 
 ## Contents
 
@@ -46,7 +46,7 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
 
 ## Bumblebee: Optimus for Linux
 
-[Optimus Technology](http://www.nvidia.com/object/optimus_technology.html) is an _[hybrid graphics](http://hybrid-graphics-linux.tuxfamily.org/index.php?title=Hybrid_graphics)_ implementation without a hardware multiplexer. The integrated GPU manages the display while the dedicated GPU manages the most demanding rendering and ships the work to the integrated GPU to be displayed. When the laptop is running on battery supply, the dedicated GPU is turned off to save power and prolong the battery life. It has also been tested successfully with desktop machines with Intel integrated graphics and an nVidia dedicated graphics card.
+[Optimus Technology](http://www.nvidia.com/object/optimus_technology.html) is an *[hybrid graphics](http://hybrid-graphics-linux.tuxfamily.org/index.php?title=Hybrid_graphics)* implementation without a hardware multiplexer. The integrated GPU manages the display while the dedicated GPU manages the most demanding rendering and ships the work to the integrated GPU to be displayed. When the laptop is running on battery supply, the dedicated GPU is turned off to save power and prolong the battery life. It has also been tested successfully with desktop machines with Intel integrated graphics and an nVidia dedicated graphics card.
 
 Bumblebee is a software implementation comprising of two parts:
 
@@ -77,10 +77,10 @@ For 32-bit ([Multilib](/index.php/Multilib "Multilib") must be enabled) applicat
 *   [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) or [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) or [lib32-nvidia-304xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-utils) - match the version of the 64 bit package.
 *   [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) and make sure that [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) is **not** installed
 
-In order to use Bumblebee, it is necessary to add your regular _user_ to the `bumblebee` group:
+In order to use Bumblebee, it is necessary to add your regular *user* to the `bumblebee` group:
 
 ```
-# gpasswd -a _user_ bumblebee
+# gpasswd -a *user* bumblebee
 
 ```
 
@@ -96,7 +96,6 @@ Install:
 *   [mesa](https://www.archlinux.org/packages/?name=mesa) - Mesa classic DRI with Gallium3D drivers and 3D graphics libraries.
 
 **Note:** If, when using `primusrun` on a system with the nouveau driver, you are getting:
-
 ```
 primus: fatal: failed to load any of the libraries: /usr/$LIB/nvidia/libGL.so.1 
 /usr/$LIB/nvidia/libGL.so.1: Cannot open shared object file: No such file or directory
@@ -109,8 +108,7 @@ You should add the following in `/usr/bin/primus` after `PRIMUS_libGL`:
 export PRIMUS_libGLa='/usr/$LIB/libGL.so.1'
 
 ```
-
-If you want, create a new script (for example _primusnouveau_).
+If you want, create a new script (for example *primusnouveau*).
 
 ## Usage
 
@@ -141,12 +139,12 @@ $ optirun glxspheres32
 
 If the window with animation shows up - Optimus with Bumblebee is working.
 
-**Note:** If `glxgears` failed, but `glxspheres_XX_` worked, always replace "`glxgears`" with "`glxspheres_XX_`" in all cases.
+**Note:** If `glxgears` failed, but `glxspheres*XX*` worked, always replace "`glxgears`" with "`glxspheres*XX*`" in all cases.
 
 ### General usage
 
 ```
-$ optirun [options] _application_ [application-parameters]
+$ optirun [options] *application* [application-parameters]
 
 ```
 
@@ -184,7 +182,7 @@ Bumblebee renders frames for your Optimus NVIDIA card in an invisible X Server w
 To use another compression method for a single application:
 
 ```
-$ optirun -c _compress-method_ application
+$ optirun -c *compress-method* application
 
 ```
 
@@ -213,10 +211,9 @@ Here is a performance table tested with [ASUS N550JV](/index.php/ASUS_N550JV "AS
 
 **Note:** Lag spikes occurred when `jpeg` compression method was used.
 
-To use a standard compression for all applications, set the `VGLTransport` to `_compress-method_` in `/etc/bumblebee/bumblebee.conf`:
+To use a standard compression for all applications, set the `VGLTransport` to `*compress-method*` in `/etc/bumblebee/bumblebee.conf`:
 
  `/etc/bumblebee/bumblebee.conf` 
-
 ```
 [...]
 [optirun]
@@ -281,7 +278,6 @@ Set `load_state` and `unload_state` module options according to your needs (see 
 The NVIDIA card may not correctly initialize during boot if the card was powered off when the system was last shutdown. One option is to set `TurnCardOffAtExit=false` in `/etc/bumblebee/bumblebee.conf`, however this will enable the card everytime you stop the Bumblebee daemon, even if done manually. To ensure that the NVIDIA card is always powered on during shutdown, add the following [systemd](/index.php/Systemd "Systemd") service (if using [bbswitch](https://www.archlinux.org/packages/?name=bbswitch)):
 
  `/etc/systemd/system/nvidia-enable.service` 
-
 ```
 [Unit]
 Description=Enable NVIDIA card
@@ -304,7 +300,6 @@ Then enable the service by running `systemctl enable nvidia-enable.service` at t
 If the port (DisplayPort/HDMI/VGA) is wired to the Intel chip, you can set up multiple monitors with xorg.conf. Set them to use the Intel card, but Bumblebee can still use the NVIDIA card. One example configuration is below for two identical screens with 1080p resolution and using the HDMI out.
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "Screen"
     Identifier     "Screen0"
@@ -368,7 +363,6 @@ EndSection
 You need to probably change the BusID for both the Intel and the NVIDIA card.
 
  `$ lspci | grep VGA` 
-
 ```
 00:02.0 VGA compatible controller: Intel Corporation 2nd Generation Core Processor Family Integrated Graphics Controller (rev 09)
 
@@ -384,7 +378,7 @@ There are currently several instructions on the web how such a setup can be made
 
 ##### Using intel-virtual-output
 
-This method should obsolete the use of _xf86-video-intel-virtual-crtc_ and _hybrid-screenclone_. _intel-virtual-output_ is a tool provided in the _xf86-video-intel driver_ set, as of v2.99\. When run in a terminal, it will daemonize itself unless the `-f` switch is used. Once the tool is running, it activates Bumblebee (Bumblebee can be left as default install), and any displays attached will be automatically detected, and manageable via any desktop display manager such as xrandr or KDE Display.
+This method should obsolete the use of *xf86-video-intel-virtual-crtc* and *hybrid-screenclone*. *intel-virtual-output* is a tool provided in the *xf86-video-intel driver* set, as of v2.99\. When run in a terminal, it will daemonize itself unless the `-f` switch is used. Once the tool is running, it activates Bumblebee (Bumblebee can be left as default install), and any displays attached will be automatically detected, and manageable via any desktop display manager such as xrandr or KDE Display.
 
 **Note:** In `/etc/bumblebee/xorg.conf.nvidia` change the lines `UseEDID` and `Option "AutoAddDevices" "false"` to `"true"`, if you are having trouble with device resolution detection.
 
@@ -403,9 +397,9 @@ intel-virtual-output [OPTION]... [TARGET_DISPLAY]...
 
 ```
 
-If no target displays are parsed on the commandline, _intel-virtual-output_ will attempt to connect to any local display and then start bumblebee.[[1]](http://cgit.freedesktop.org/xorg/driver/xf86-video-intel/tree/tools/)
+If no target displays are parsed on the commandline, *intel-virtual-output* will attempt to connect to any local display and then start bumblebee.[[1]](http://cgit.freedesktop.org/xorg/driver/xf86-video-intel/tree/tools/)
 
-The advantage of using _intel-virtual-output_ in foreground mode is that once the external display is disconected, _intel-virtual-output_ can then be killed and bumblebee will disable the nvidia chip. Games can be run on the external screen by first exporting the display `export DISPLAY=:8`, and then running the game with `optirun _game_bin_`, however, cursor and keyboard are not fully captured. Use `export DISPLAY=:0` to revert back to standard operation.
+The advantage of using *intel-virtual-output* in foreground mode is that once the external display is disconected, *intel-virtual-output* can then be killed and bumblebee will disable the nvidia chip. Games can be run on the external screen by first exporting the display `export DISPLAY=:8`, and then running the game with `optirun *game_bin*`, however, cursor and keyboard are not fully captured. Use `export DISPLAY=:0` to revert back to standard operation.
 
 ##### xf86-video-intel-virtual-crtc and hybrid-screenclone
 
@@ -421,7 +415,6 @@ For simplicity, DP is used below to refer to the Digital Output (DisplayPort). T
 *   Change these bumblebee.conf settings:
 
  `/etc/bumblebee/bumblebee.conf` 
-
 ```
 KeepUnusedXServer=true
 Driver=nvidia
@@ -467,7 +460,6 @@ EndSection  # Samsung 2494
 Change your `xorg.nvidia.conf` to include this Monitor section. You can also trim down your file so that it only contains ServerLayout, Monitor, Device and Screen sections. For reference, here is mine:
 
  `/etc/X11/xorg.nvidia.conf` 
-
 ```
 Section "ServerLayout"
         Identifier     "X.org Nvidia DP"
@@ -509,7 +501,6 @@ EndSection
 *   If the listed Modelines for your VIRTUAL display doesn't have your Monitors native resolution, make note of the exact output name. For me that is `VIRTUAL1`. Then have a look again in the Xorg.0.log file. You should see a message: "Output VIRTUAL1 has no monitor section" there. We will change this by putting a file with the needed Monitor section into `/etc/X11/xorg.conf.d`. Exit and Restart X afterward.
 
  `/etc/X11/xorg.conf.d/20-monitor_samsung.conf` 
-
 ```
 Section "Monitor"
     Identifier     "VIRTUAL1"
@@ -541,7 +532,6 @@ In Windows, the way that Optimus works is NVIDIA has a whitelist of applications
 To mimic this behavior in Linux, you can use [libgl-switcheroo-git](https://aur.archlinux.org/packages/libgl-switcheroo-git/). After installing, you can add the below in your .xprofile.
 
  `~/.xprofile` 
-
 ```
 mkdir -p /tmp/libgl-switcheroo-$USER/fs
 gtkglswitch &
@@ -590,7 +580,7 @@ There is a known problem with some wine applications that fork and kill the pare
 This is a known problem with VirtualGL. As of bumblebee 3.1, so long as you have it installed, you can use Primus as your render bridge:
 
 ```
-$ optirun -b primus wine _windows program_.exe
+$ optirun -b primus wine *windows program*.exe
 
 ```
 
@@ -598,7 +588,7 @@ If this does not work, an alternative walkaround for this problem is:
 
 ```
 $ optirun bash
-$ optirun wine _windows program_.exe
+$ optirun wine *windows program*.exe
 
 ```
 
@@ -751,7 +741,6 @@ $ optirun glxspheres64
 or (for 32 bit):
 
  `$ optirun glxspheres32` 
-
 ```
 [ 1648.179533] [ERROR]You've no permission to communicate with the Bumblebee daemon. Try adding yourself to the 'bumblebee' group
 [ 1648.179628] [ERROR]Could not connect to bumblebee daemon - is it running?
@@ -780,7 +769,6 @@ $ vblank_mode=0 primusrun glxgears
 If you want to use it instead of `primusrun`, create new file:
 
  `/usr/bin/optiprime` 
-
 ```
 #!/bin/sh
 vblank_mode=0 primusrun "$@"
@@ -807,7 +795,7 @@ In conclusion, it doesn't make significant performance improvement, but as menti
 | optiprime unigine-heaven | 31.5 | 793 | 22.3 | 54.8 |
 | primusrun unigine-heaven | 31.4 | 792 | 18.7 | 54.2 |
 
-_Tested with [ASUS N550JV](/index.php/ASUS_N550JV "ASUS N550JV") laptop and benchmark app [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/)._
+*Tested with [ASUS N550JV](/index.php/ASUS_N550JV "ASUS N550JV") laptop and benchmark app [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/).*
 
 **Note:** To disable vertical synchronization system-wide, see [Intel graphics#Disable Vertical Synchronization (VSYNC)](/index.php/Intel_graphics#Disable_Vertical_Synchronization_.28VSYNC.29 "Intel graphics").
 

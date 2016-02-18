@@ -55,7 +55,6 @@ Install and run a [MySQL](/index.php/MySQL "MySQL") server. Create a new user, a
 Then, configure Powerdns to use MySQL:
 
  `/etc/powerdns/pdns.conf` 
-
 ```
 launch=gmysql
 gmysql-host=127.0.0.1

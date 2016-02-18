@@ -52,7 +52,6 @@ splashimage /boot/grub/arch.xpm.gz
 In caso l'ultima riga manchi, basta aggiungerla al file `menu.lst`. Questa linea punta al percorso del file che vorrete usare come sfondo alla schermata di selezione dei sistemi avviabili.
 
 **Note:** Questa linea è relativa alla partizione di root di GRUB, il che significa che se avete la partizione indipendente `/boot`, l'istruzione precedente deve essere modificata in:
-
 ```
 splashimage /grub/arch.xpm.gz
 

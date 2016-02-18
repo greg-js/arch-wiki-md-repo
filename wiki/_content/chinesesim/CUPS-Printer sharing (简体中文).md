@@ -35,9 +35,9 @@
 
 用浏览器访问CUPS管理页面：[http://localhost:631](http://localhost:631)
 
-点击页面上方的_Administration_按钮, 在Printer下选择“add printer”，将会自动检测已连接的打印机。如果打印机无法被检测，请尝试将打印机重启后重新检测。
+点击页面上方的*Administration*按钮, 在Printer下选择“add printer”，将会自动检测已连接的打印机。如果打印机无法被检测，请尝试将打印机重启后重新检测。
 
-打印机设置好之后，将_Server_下的"Share printers connected to this system"改为选中状态，然后点击下方的_change settings_保存修改。这时打印服务器将自动重启。
+打印机设置好之后，将*Server*下的"Share printers connected to this system"改为选中状态，然后点击下方的*change settings*保存修改。这时打印服务器将自动重启。
 
 选择"Edit Configuration File"即可直接修改配置文件`cups.conf`。通过修改文件您可以选择仅将打印机共享到特定用户或IP地址，下文中有详细说明。
 
@@ -107,14 +107,13 @@ To configure the server side proceed as described in the section above to enable
 On the Windows computer, go to the printer control panel and choose to 'Add a New Printer'. Next, choose to give a URL. For the URL, type in the location of the printer:
 
 ```
-http://_host_ip_address_:631/printers/_printer_name_
+http://*host_ip_address*:631/printers/*printer_name*
 
 ```
 
-(where _host_ip_address_ is the GNU/Linux server's IP address and _printer_name_ is the name of the printer being connected to, you can also use the server's fully qualified domain name, if it has one, but you may need to set `ServerAlias my_fully_qualified_domain_name` in _cupsd.conf_ for this to work).
+(where *host_ip_address* is the GNU/Linux server's IP address and *printer_name* is the name of the printer being connected to, you can also use the server's fully qualified domain name, if it has one, but you may need to set `ServerAlias my_fully_qualified_domain_name` in *cupsd.conf* for this to work).
 
 **Note:** The add printer dialog in windows is quite sensitive to the path to the printer, the dialogue box itself suggests:
-
 ```
 http://servername:631/printers/printer_name/.printer
 
@@ -126,7 +125,6 @@ which will work in a web-browser but **not** in the add printer dialogue. (At le
 http://host_ip_address:631/printers/printer_name
 
 ```
-
 **will** work.
 
 After this, install the native printer drivers for your printer on the Windows computer. If the CUPS server is set up to use its own printer drivers, then you can just select a generic postscript printer for the Windows client(e.g. 'HP Color LaserJet 8500 PS' or 'Xerox DocuTech 135 PS2'). Then test the print setup by printing a test page.
@@ -138,7 +136,6 @@ If your client's Windows version is below Windows 2000 or if you experienced tro
 To configure Samba on the Linux server, edit `/etc/samba/smb.conf` file to allow access to printers. File `smb.conf` can look something like this:
 
  `/etc/samba/smb.conf` 
-
 ```
 [global]
 workgroup=Heroes
@@ -160,7 +157,6 @@ security=user
 That should be enough to share the printer, yet adding an individual printer entry may be desirable:
 
  `/etc/samba/smb.conf` 
-
 ```
 [ML1250]
     comment=Samsung ML-1250 Laser Printer
@@ -177,7 +173,7 @@ That should be enough to share the printer, yet adding an individual printer ent
     valid users=@adm root yourusername
 ```
 
-Please note that this assumes configuration was made so that users must have a valid account to access the printer. To have a public printer, set _guest ok_ to _yes_, and remove the _valid users_ line. To add accounts, set up a regular GNU/Linux account and then set up a Samba password on the server. For instance:
+Please note that this assumes configuration was made so that users must have a valid account to access the printer. To have a public printer, set *guest ok* to *yes*, and remove the *valid users* line. To add accounts, set up a regular GNU/Linux account and then set up a Samba password on the server. For instance:
 
 ```
 # useradd yourusername
@@ -195,7 +191,7 @@ Obviously, there are a lot of tweaks and customizations that can be done with se
 
 #### Sharing via LPD
 
-Windows 7 has a built-in LPD server - using it will probably be the easiest approach as it does neither require an installation of _Samba_ on the client nor heavy configuration on the server. It can be activated in the _Control Panel_ under _Programs_ -> _Activate Windows functions_ in the section _Print services_. The printer must have _shared_ activated in its properties. Use a share name without any special characters like spaces, commas, etc.
+Windows 7 has a built-in LPD server - using it will probably be the easiest approach as it does neither require an installation of *Samba* on the client nor heavy configuration on the server. It can be activated in the *Control Panel* under *Programs* -> *Activate Windows functions* in the section *Print services*. The printer must have *shared* activated in its properties. Use a share name without any special characters like spaces, commas, etc.
 
 Then the printer can be added in CUPS, choosing LPD protocol. The printer address will look like this:
 
@@ -259,7 +255,6 @@ If the network contains many printers you might want to set a preferred printer.
 For manual configuration stop the CUPS daemon and add your printer to `/etc/cups/printers.conf`, which might for example look like this
 
  `/etc/cups/printers.conf` 
-
 ```
 <DefaultPrinter MyPrinter>
 AuthInfoRequired username,password

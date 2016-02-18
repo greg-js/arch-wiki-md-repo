@@ -32,7 +32,6 @@ Installed using archlinux-2009.08 x86_64\. Few other tips can be seen on Arch's 
 ## hwd output
 
  `# hwd -s` 
-
 ```
 HARDWARE DETECT ver 5.5.2 (simple mode)
  Kernel     : 2.6.32-ARCH
@@ -240,15 +239,15 @@ not tested
 
 **Ethernet** : RTL8111/8168B PCI Express Gigabit Ethernet controller
 
-	module: _r8169_ in kernel
+	module: *r8169* in kernel
 
 **Wifi** : Broadcom Corporation BCM4322 802.11a/b/g/n
 
 	Followed setup on [Broadcom BCM4312](/index.php/Broadcom_BCM4312 "Broadcom BCM4312")
 
-	module(s): _!b43 !ssb !lib80211 lib80211_crypt_tkip wl_
+	module(s): *!b43 !ssb !lib80211 lib80211_crypt_tkip wl*
 
-	_the module must be reinstalled after each kernel update in order for wifi to work._
+	*the module must be reinstalled after each kernel update in order for wifi to work.*
 
 ### Audio
 
@@ -286,11 +285,11 @@ almost all Fn keys work out of the box.
 
 ```
 $ xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'
-146 Help         _<- Fn+F1_
-33 p             _<- Fn+F2_*
-37 Control_L     _<- Fn+F2_* (Fn+F2 performs both functions simultaneously)
-180 XF86HomePage _<- Fn+F3_
-33 p             _<- Fn+F4_
+146 Help         *<- Fn+F1*
+33 p             *<- Fn+F2**
+37 Control_L     *<- Fn+F2** (Fn+F2 performs both functions simultaneously)
+180 XF86HomePage *<- Fn+F3*
+33 p             *<- Fn+F4*
 
 ```
 

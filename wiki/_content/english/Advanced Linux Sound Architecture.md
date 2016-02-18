@@ -60,7 +60,7 @@ To allow remote users to use ALSA, you need to [add](/index.php/Users_and_groups
 
 ### ALSA Utilities
 
-[Install](/index.php/Install "Install") the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package. This contains (among other utilities) the `alsamixer` and `amixer` utilities. _amixer_ is a shell command to change audio settings. while _alsamixer_ provides a more intuitive [ncurses](https://en.wikipedia.org/wiki/Ncurses "wikipedia:Ncurses") based interface for audio device configuration.
+[Install](/index.php/Install "Install") the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package. This contains (among other utilities) the `alsamixer` and `amixer` utilities. *amixer* is a shell command to change audio settings. while *alsamixer* provides a more intuitive [ncurses](https://en.wikipedia.org/wiki/Ncurses "wikipedia:Ncurses") based interface for audio device configuration.
 
 If you need [high quality resampling](#High_quality_resampling) install the [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) package to enable [upmixing/downmixing](#Upmixing.2Fdownmixing) and other advanced features.
 
@@ -86,7 +86,7 @@ By default ALSA has all channels muted. Those have to be unmuted manually.
 
 ### Unmute with amixer
 
-Unmuting the sound card's master volume can be done by using _amixer_:
+Unmuting the sound card's master volume can be done by using *amixer*:
 
 ```
 $ amixer sset Master unmute
@@ -95,7 +95,7 @@ $ amixer sset Master unmute
 
 ### Unmute with alsamixer
 
-Unmuting the sound card can be done using _alsamixer_:
+Unmuting the sound card can be done using *alsamixer*:
 
 ```
 $ alsamixer
@@ -146,7 +146,6 @@ $ speaker-test -D default -c 8
 `-D` accepts PCM channel names as values, which can be retrieved by running the following:
 
  `$ aplay -L | grep :CARD` 
-
 ```
 default:CARD=PCH  # 'default' is the PCM channel name
 sysdefault:CARD=PCH
@@ -184,7 +183,6 @@ ALSA configuration files follow a simple syntax consisting of hierarchical value
 Assignments define a value of a given key. There are different assignment types and styles available.
 
  `Simple assignment` 
-
 ```
 # This is a comment. Everything after the '#' symbol to the end of the line will be ignored by ALSA.
 key = value # Equal signs are usually left out, since space can also be used as an separator.
@@ -195,7 +193,6 @@ key value # Equivalent to the example above.
 Separators are used to indicate the start and end of an assignment, but using commas or whitespace is also possible.
 
  `Separators` 
-
 ```
 # The following three assignments are equivalent.
 key value0; key valueN;
@@ -211,7 +208,6 @@ valueN
 Compound assignments use braces as separators.
 
  `Compound assignment` 
-
 ```
 key {	subkey0 value0;
 	subkeyN valueN;	}
@@ -225,7 +221,6 @@ For easier reading, it is recommended to use first style for definitions includi
 Array definitions use brackets as separators.
 
  `Single array` 
-
 ```
 key [	"value0";
 	"valueN";	]
@@ -252,7 +247,6 @@ Prefixes of operation modes:
 *   "!" -- override
 
  `Operation modes` 
-
 ```
 # Merge/create - If a node does not exist, it is created. If it does exist and types match,
 # subkeyN is merged into key.
@@ -280,7 +274,6 @@ Using override operation mode, when done correctly, is usually safe, however one
 Assuming that "defaults" node is set in `/usr/share/alsa/alsa.conf`, where "defaults.pcm.card" and its "ctl" counterpart have assignment values "0" (type integer), user wants to set default pcm and control device to (third) sound card "2" or "SB" for an Azalia sound card.
 
  `Defaults node` 
-
 ```
 defaults.ctl.card 2; # Sets default device and control to third card (counting begins with 0).
 defaults.pcm.card 2; # This does not change the data type.
@@ -307,7 +300,6 @@ Using double quotes here automatically sets values data type to string, so in th
 Sometimes it may be useful and even easier to read using nesting in configuration.
 
  `Nesting PCM plugins` 
-
 ```
 pcm.azalia {	type hw; card 0	}
 pcm.!default {	type plug; slave.pcm "azalia"	}
@@ -326,7 +318,6 @@ pcm.default.slave.pcm.card 0;
 #### Including configuration files
 
  `Include other configuration files` 
-
 ```
 </path/to/configuration-file> # Include a configuration file
 <confdir:/path/to/configuration-file> # Reference to a global configuration directory
@@ -337,7 +328,6 @@ pcm.default.slave.pcm.card 0;
 If your sound card order changes on boot, you can specify their order in any file ending with `.conf` in `/etc/modprobe.d` (`/etc/modprobe.d/alsa-base.conf` is suggested). For example, if you want your mia sound card to be #0:
 
  `/etc/modprobe.d/alsa-base.conf` 
-
 ```
 options snd_mia index=0
 options snd_hda_intel index=1
@@ -348,7 +338,6 @@ Use `$ cat /proc/asound/modules` to get the loaded sound modules and their order
 You can also provide an index of `-2` to instruct ALSA to never use a card as the primary one. Distributions such as Linux Mint and Ubuntu use the following settings to avoid USB and other "abnormal" drivers from getting index `0`:
 
  `/etc/modprobe.d/alsa-base.conf` 
-
 ```
 options bt87x index=-2
 options cx88_alsa index=-2
@@ -381,7 +370,6 @@ then set ALSA_CARD=HDMI.
 Other variables are also checked in the default global configuration:
 
  `/usr/share/alsa/alsa.conf` 
-
 ```
 Variable name # Definition
 ALSA_CARD # pcm.default pcm.hw pcm.plughw ctl.sysdefault ctl.hw rawmidi.default rawmidi.hw hwdep.hw
@@ -420,7 +408,6 @@ Now you can select the sound card when starting programs by just changing the en
 First you will have to find out the card and device id that you want to set as the default:
 
  `$ aplay -l` 
-
 ```
 **** List of PLAYBACK Hardware Devices ****
 card 0: Intel [HDA Intel], device 0: CONEXANT Analog [CONEXANT Analog]
@@ -471,19 +458,17 @@ ctl.!default {
 
 ```
 
-To get valid ALSA card names, use _aplay_:
+To get valid ALSA card names, use *aplay*:
 
  `$ aplay -l | awk -F \: '/,/{print $2}' | awk '{print $1}' | uniq` 
-
 ```
 PCH
 
 ```
 
-Alternatively use _cat_, which might return unused devices:
+Alternatively use *cat*, which might return unused devices:
 
  `$ cat /proc/asound/card*/id` 
-
 ```
 PCH
 ThinkPadEC
@@ -494,10 +479,10 @@ ThinkPadEC
 
 The 'pcm' options affect which card and device will be used for audio playback while the 'ctl' option affects which card is used by control utilities like alsamixer .
 
-The changes should take effect as soon as you (re-)start an application (MPlayer etc.). You can also test with a command like _aplay_.
+The changes should take effect as soon as you (re-)start an application (MPlayer etc.). You can also test with a command like *aplay*.
 
 ```
-$ aplay -D default _your_favourite_sound.wav_
+$ aplay -D default *your_favourite_sound.wav*
 
 ```
 
@@ -508,7 +493,6 @@ If you receive an error regarding your asound configuration, check the [upstream
 You can assume that udev will autodetect your sound properly. You can check this with the command:
 
  `$ lsmod | grep '^snd' | column -t` 
-
 ```
 snd_hda_codec_hdmi     22378   4
 snd_hda_codec_realtek  294191  1
@@ -528,7 +512,6 @@ If the output looks similar, your sound drivers have been successfully autodetec
 You might also want to check the directory `/dev/snd/` for the right device files:
 
  `$ ls -l /dev/snd` 
-
 ```
 total 0
 crw-rw----  1 root audio 116,  0 Apr  8 14:17 controlC0
@@ -584,7 +567,6 @@ Install the [alsaequal](https://aur.archlinux.org/packages/alsaequal/) package.
 After installing the package, add the following to your ALSA configuration file:
 
  `/etc/asound.conf` 
-
 ```
 ctl.equal {
     type equal;
@@ -665,7 +647,6 @@ Install the [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins
 If you have not already created either an `~/.asoundrc` or a `/etc/asound.conf` file, then create either one and insert the following:
 
  `/etc/asound.conf` 
-
 ```
 pcm.eq {
     type ladspa
@@ -713,20 +694,19 @@ pcm.dsp0 {
 
 ## High quality resampling
 
-When software mixing is enabled, ALSA is forced to resample everything to the same frequency (48 kHz by default when supported). By default, it will try to use the _speexrate_ converter to do so, and fallback to low-quality linear interpolation if it is not available[[3]](http://git.alsa-project.org/?p=alsa-lib.git;a=blob;f=src/pcm/pcm_rate.c;h=2eb4b1b33933dec878d0f25ad118869adac95767;hb=HEAD#l1278). Thus, if you are getting poor sound quality due to bad resampling, the problem can be solved by simply installing the [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) package.
+When software mixing is enabled, ALSA is forced to resample everything to the same frequency (48 kHz by default when supported). By default, it will try to use the *speexrate* converter to do so, and fallback to low-quality linear interpolation if it is not available[[3]](http://git.alsa-project.org/?p=alsa-lib.git;a=blob;f=src/pcm/pcm_rate.c;h=2eb4b1b33933dec878d0f25ad118869adac95767;hb=HEAD#l1278). Thus, if you are getting poor sound quality due to bad resampling, the problem can be solved by simply installing the [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) package.
 
 For even higher quality resampling, you can change the default rate converter to `speexrate_medium` or `speexrate_best`. Both perform well enough that in practice it does not matter which one you choose, so using the best converter is usually not worth the extra CPU cycles it requires.
 
 To change the default converter place the following contents in your `~/.asoundrc` or `/etc/asound.conf`:
 
  `/etc/asound.conf` 
-
 ```
 defaults.pcm.rate_converter "speexrate_medium"
 
 ```
 
-**Note:** It is also possible to use [libsamplerate](https://www.archlinux.org/packages/?name=libsamplerate) converters, which are only about half as fast as the _speexrate_ converters but do not achieve much higher quality. See [discussion](/index.php/Talk:Advanced_Linux_Sound_Architecture#On_high_quality_resampling "Talk:Advanced Linux Sound Architecture").
+**Note:** It is also possible to use [libsamplerate](https://www.archlinux.org/packages/?name=libsamplerate) converters, which are only about half as fast as the *speexrate* converters but do not achieve much higher quality. See [discussion](/index.php/Talk:Advanced_Linux_Sound_Architecture#On_high_quality_resampling "Talk:Advanced Linux Sound Architecture").
 
 **Note:** It is also possible to use lavcrate resamplers that use [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) With filter sizes of lavcrate_faster:4 lavcrate_fast:8 lavcrate:16 lavcrate_high:32 lavcrate_higher:64 With the last 2 options being equal to Kodi low and medium quality resamplers respectively
 
@@ -805,7 +785,6 @@ Mixing enables multiple applications to output sound at the same time. Most disc
 To manually enable dmix, add the following to your ALSA configuration file:
 
  `/etc/asound.conf` 
-
 ```
 pcm.dsp {
     type plug

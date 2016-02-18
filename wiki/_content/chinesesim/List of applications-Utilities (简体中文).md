@@ -59,11 +59,11 @@
 
 	[http://cryptmount.sourceforge.net/](http://cryptmount.sourceforge.net/) || [cryptmount](https://aur.archlinux.org/packages/cryptmount/)
 
-*   **ldm** — A lightweight daemon that mounts drives automagically using _udev_
+*   **ldm** — A lightweight daemon that mounts drives automagically using *udev*
 
 	[https://github.com/LemonBoy/ldm](https://github.com/LemonBoy/ldm) || [ldm](https://aur.archlinux.org/packages/ldm/)
 
-*   **pmount** — Mount _source_ as a regular user to an automatically created destination `/media/_source_name_`.
+*   **pmount** — Mount *source* as a regular user to an automatically created destination `/media/*source_name*`.
 
 	[http://pmount.alioth.debian.org/](http://pmount.alioth.debian.org/) || [pmount](https://aur.archlinux.org/packages/pmount/)
 
@@ -71,7 +71,7 @@
 
 	[http://mywaytoarch.tumblr.com/post/13111098534/pmount-safe-removal-of-usb-device](http://mywaytoarch.tumblr.com/post/13111098534/pmount-safe-removal-of-usb-device) || [pmount-safe-removal](https://aur.archlinux.org/packages/pmount-safe-removal/)
 
-*   **udevil** — Mounts removable devices as a regular user, show device info, and monitor device changes. Only depends on _udev_ and glib.
+*   **udevil** — Mounts removable devices as a regular user, show device info, and monitor device changes. Only depends on *udev* and glib.
 
 	[http://ignorantguru.github.io/udevil](http://ignorantguru.github.io/udevil) || [udevil](https://www.archlinux.org/packages/?name=udevil)
 
@@ -85,15 +85,15 @@
 
 	[https://github.com/jamielinux/bashmount](https://github.com/jamielinux/bashmount) || [bashmount](https://aur.archlinux.org/packages/bashmount/)
 
-*   **udiskie** — Automatic disk mounting service using _udisks_
+*   **udiskie** — Automatic disk mounting service using *udisks*
 
 	[https://pypi.python.org/pypi/udiskie](https://pypi.python.org/pypi/udiskie) || [udiskie](https://www.archlinux.org/packages/?name=udiskie)
 
-*   **udisks_functions** — Bash functions and aliases for _udisks2_
+*   **udisks_functions** — Bash functions and aliases for *udisks2*
 
 	[https://bbs.archlinux.org/viewtopic.php?id=109307](https://bbs.archlinux.org/viewtopic.php?id=109307) || [udisks_functions](https://aur.archlinux.org/packages/udisks_functions/)
 
-*   **udisksvm** — GUI _udisks_ wrapper for removable media
+*   **udisksvm** — GUI *udisks* wrapper for removable media
 
 	[https://bbs.archlinux.org/viewtopic.php?id=112397](https://bbs.archlinux.org/viewtopic.php?id=112397) || [udisksvm](https://aur.archlinux.org/packages/udisksvm/)
 
@@ -219,7 +219,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[http://qt-project.org/downloads#qt-creator](http://qt-project.org/downloads#qt-creator) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
 
-*   **[Scratch](https://en.wikipedia.org/wiki/Scratch "wikipedia:Scratch")** — A multimedia authoring tool for educational and entertainment purposes, such as creating interactive projects and simple sprite-based games. It is used primarly by unskilled users (such as children) as an entry to [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming "wikipedia:Event-driven programming"). _Scratch_ is free software under GPL v2 and [Scratch Source Code License](http://wiki.scratch.mit.edu/wiki/Scratch_Source_Code_License).
+*   **[Scratch](https://en.wikipedia.org/wiki/Scratch "wikipedia:Scratch")** — A multimedia authoring tool for educational and entertainment purposes, such as creating interactive projects and simple sprite-based games. It is used primarly by unskilled users (such as children) as an entry to [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming "wikipedia:Event-driven programming"). *Scratch* is free software under GPL v2 and [Scratch Source Code License](http://wiki.scratch.mit.edu/wiki/Scratch_Source_Code_License).
 
 	[http://scratch.mit.edu](http://scratch.mit.edu) || [scratch](https://www.archlinux.org/packages/?name=scratch)
 
@@ -455,7 +455,7 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 
 	[http://gnome.org](http://gnome.org) || [gnome-search-tool](https://www.archlinux.org/packages/?name=gnome-search-tool)
 
-*   **Gnome Search Tool No Nautilus** — 去除了 [GNOME Files](/index.php/GNOME_Files "GNOME Files") 和 _gnome-desktop_ 的 _gnome-search-tool_
+*   **Gnome Search Tool No Nautilus** — 去除了 [GNOME Files](/index.php/GNOME_Files "GNOME Files") 和 *gnome-desktop* 的 *gnome-search-tool*
 
 	|| [gnome-search-tool-no-nautilus](https://aur.archlinux.org/packages/gnome-search-tool-no-nautilus/)
 
@@ -607,7 +607,7 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 	[http://htop.sourceforge.net/](http://htop.sourceforge.net/) || [htop](https://www.archlinux.org/packages/?name=htop)
 
-*   **[KSysGuard](https://en.wikipedia.org/wiki/KDE_System_Guard "wikipedia:KDE System Guard")** — 又名 KSysguard，是 [KDE (简体中文)](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)") 专用的任务管理器、性能监视器。
+*   **[KSysGuard](https://en.wikipedia.org/wiki/KDE_System_Guard 专用的任务管理器、性能监视器。
 
 	[http://userbase.kde.org/KSysGuard/](http://userbase.kde.org/KSysGuard/) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)
 

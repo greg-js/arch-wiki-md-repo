@@ -240,7 +240,6 @@ As of xmonad(-contrib) 0.9, there is a new [statusBar](http://xmonad.org/xmonad-
 The following is an example of how to use it:
 
  `~/.xmonad/xmonad.hs` 
-
 ```
 -- Imports.
 import XMonad
@@ -270,7 +269,6 @@ The template and default xmobarrc contains this.
 At last, open up `~/.xmobarrc` and make sure you have `StdinReader` in the template and run the plugin. E.g.
 
  `~/.xmobarrc` 
-
 ```
 Config { ...
        , commands = [ Run StdinReader .... ]
@@ -300,7 +298,6 @@ xdotool key Super+n
 If you are using [xmonad-darcs](https://aur.archlinux.org/packages/xmonad-darcs/), as of January of 2011, you can restart to another window manager from within xmonad. You just need to write a small script, and add stuff to your `~/.xmonad/xmonad.hs`. Here is the script.
 
  `~/bin/obtoxmd` 
-
 ```
 #!/bin/sh
 openbox
@@ -311,7 +308,6 @@ xmonad
 And here are the modifications you need to add to your `~/.xmonad/xmonad.hs`:
 
  `~/.xmonad/xmonad.hs` 
-
 ```
 import XMonad
 --You need to add this import
@@ -330,7 +326,6 @@ main do
 You also need to add the following key binding:
 
  `~/xmonad/xmonad.hs` 
-
 ```
 --Add a keybinding as follows:
 ((modm .|. shiftMask, xK_o     ), restart "/home/abijr/bin/obtoxmd" True)

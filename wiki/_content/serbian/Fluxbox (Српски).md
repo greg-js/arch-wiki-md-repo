@@ -124,7 +124,7 @@ $ xdg_menu --help
 
 ```
 
-_Takođe pogledajte: [XdgMenu](/index.php/XdgMenu "XdgMenu")_
+*Takođe pogledajte: [XdgMenu](/index.php/XdgMenu "XdgMenu")*
 
 ### Kreiranje prilagođenog menija sa fluxconf-om
 
@@ -328,7 +328,7 @@ Linkovi ka nekim sajtovima sa temama su obezbeđeni ispod.
 
 ## GTK2 Themes
 
-_Pogledajte: [GTK+](/index.php/GTK%2B "GTK+")_
+*Pogledajte: [GTK+](/index.php/GTK%2B "GTK+")*
 
 ## Automatsko startovanje aplikacija
 

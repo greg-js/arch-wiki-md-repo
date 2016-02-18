@@ -36,7 +36,7 @@ Un pacchetto di Arch non è altro che un archivio tar compresso utilizzando "xz"
 
 ### Prerequisiti software
 
-Prima di tutto assicurarsi che gli strumenti necessari siano installati. I pacchetti del gruppo "base-devel" dovrebbero essere sufficienti, in quanto includono _make_ e gli strumenti aggiuntivi necessari per la compilazione da sorgenti.
+Prima di tutto assicurarsi che gli strumenti necessari siano installati. I pacchetti del gruppo "base-devel" dovrebbero essere sufficienti, in quanto includono *make* e gli strumenti aggiuntivi necessari per la compilazione da sorgenti.
 
 ```
 # pacman -S base-devel
@@ -56,7 +56,7 @@ Uno degli strumenti chiave per la creazione dei pacchetti è [makepkg](/index.ph
 
 ### Scaricamento e test dell'installazione
 
-Scaricare il tarball sorgente del software desiderato, estrarlo, e seguire la procedura dell'autore per installare il programma. Prendere nota di tutti i comandi e/o passaggi necessari per la compilazione e l'installazione. Quegli stessi comandi verranno ripetuti nel file _PKGBUILD_.
+Scaricare il tarball sorgente del software desiderato, estrarlo, e seguire la procedura dell'autore per installare il programma. Prendere nota di tutti i comandi e/o passaggi necessari per la compilazione e l'installazione. Quegli stessi comandi verranno ripetuti nel file *PKGBUILD*.
 
 La maggior parte degli autori di software aderisce al ciclo dei 3 passi di compilazione:
 
@@ -80,7 +80,6 @@ Per iniziare con un nuovo pacchetto, si deve prima creare una directory di lavor
 Il file `PKGBUILD` contiene i metadati relativi a un pacchetto. Si tratta di un file di testo. Il seguente è un prototipo di `PKGBUILD`. È possibile trovarlo in `/usr/share/pacman` insieme ad altri modelli.
 
  `/usr/share/pacman/PKGBUILD.proto` 
-
 ```
 # Questo è un esempio di file PKGBUILD. Utilizzare questo come un inizio di creare i propri,
 #  rimuovere questi commenti. Per ulteriori informazioni, consultare 'man PKGBUILD'.
@@ -130,7 +129,7 @@ package() {
 
 ```
 
-_makepkg_ definisce tre variabili che si dovrebbe usare come parte del processo di installazione e di compilazione:
+*makepkg* definisce tre variabili che si dovrebbe usare come parte del processo di installazione e di compilazione:
 
 	`startdir`
 
@@ -138,13 +137,13 @@ _makepkg_ definisce tre variabili che si dovrebbe usare come parte del processo 
 
 	`srcdir`
 
-	Questo punta alla directory in cui _makepkg_ estrae o copia tutti i file sorgente.
+	Questo punta alla directory in cui *makepkg* estrae o copia tutti i file sorgente.
 
 	`pkgdir`
 
-	Questo punta alla directory in cui _makepkg_ sistema il pacchetto installato, che diventa la directory radice del pacchetto compilato.
+	Questo punta alla directory in cui *makepkg* sistema il pacchetto installato, che diventa la directory radice del pacchetto compilato.
 
-**Note:** _makepkg_, e quindi le funzioni `build()` e `package()`, sono destinate ad essere non-interattive. Le utilità interattive o gli script richiamati in tali funzioni possono danneggiare _makepkg_, soprattutto se richiamate con il build-logging attivo (`-l`). (Consultare [Arch Linux Bug #13214](https://bugs.archlinux.org/task/13214))
+**Note:** *makepkg*, e quindi le funzioni `build()` e `package()`, sono destinate ad essere non-interattive. Le utilità interattive o gli script richiamati in tali funzioni possono danneggiare *makepkg*, soprattutto se richiamate con il build-logging attivo (`-l`). (Consultare [Arch Linux Bug #13214](https://bugs.archlinux.org/task/13214))
 
 Note: a parte il pacchetto maintainer attuale, vi possono essere precedenti manutentori sopra elencati come contributori.
 
@@ -152,7 +151,7 @@ Una spiegazione delle variabili `PKGBUILD` possibili può essere trovata nell'ar
 
 ### La funzione `build()`
 
-Ora è necessario implementare la funzione `build()` nel file `PKGBUILD`. Questa funzione utilizza i comandi di shell comuni nella sintassi [Bash](http://en.wikipedia.org/wiki/Bash_%28Unix_shell%29) per compilare automaticamente il software e creare una directory `pkg` per installare il software. Questo permette a _makepkg_ di impacchettare i file senza dover passare al setaccio il filesystem.
+Ora è necessario implementare la funzione `build()` nel file `PKGBUILD`. Questa funzione utilizza i comandi di shell comuni nella sintassi [Bash](http://en.wikipedia.org/wiki/Bash_%28Unix_shell%29) per compilare automaticamente il software e creare una directory `pkg` per installare il software. Questo permette a *makepkg* di impacchettare i file senza dover passare al setaccio il filesystem.
 
 Il primo passo della funzione `build()` è quello di spostarsi nella directory creata durante la decompressione dei sorgenti. Nella maggior parte dei casi il primo comando sarà simile a questo:
 
@@ -161,7 +160,7 @@ cd $srcdir/$pkgname-$pkgver
 
 ```
 
-Ora sarà necessario elencare gli stessi comandi usati durante la compilazione manuale del software. La funzione `build()` in sostanza, consente di automatizzare tutto ciò che si è fatto a mano e compila il software nell'ambiente fakeroot di compilazione. Se il software che si è impacchettato usa uno script di configurazione, è buona norma usare `--prefix=/usr` quando si compilano i pacchetti per _pacman_. Moltissimi software installano i file relativi alla directory `/usr/local`, cosa che dovrebbe essere fatta solo avendo compilato manualmente dai sorgenti. Tutti i pacchetti Arch Linux dovrebbe usare la directory `/usr`. Come si vede nel file `/usr/share/pacman/PKGBUILD.proto`, le successive due righe sono spesso simili a questa:
+Ora sarà necessario elencare gli stessi comandi usati durante la compilazione manuale del software. La funzione `build()` in sostanza, consente di automatizzare tutto ciò che si è fatto a mano e compila il software nell'ambiente fakeroot di compilazione. Se il software che si è impacchettato usa uno script di configurazione, è buona norma usare `--prefix=/usr` quando si compilano i pacchetti per *pacman*. Moltissimi software installano i file relativi alla directory `/usr/local`, cosa che dovrebbe essere fatta solo avendo compilato manualmente dai sorgenti. Tutti i pacchetti Arch Linux dovrebbe usare la directory `/usr`. Come si vede nel file `/usr/share/pacman/PKGBUILD.proto`, le successive due righe sono spesso simili a questa:
 
 ```
 ./configure --prefix=/usr
@@ -171,20 +170,20 @@ make
 
 ### La funzione `package()`
 
-Il passo finale è quello di mettere i file compilati in una directory in cui _makepkg_ sia in grado di recuperarli per creare un pacchetto. Questa, per impostazione predefinita è la directory `pkg`, un semplice ambiente fakeroot. La directory `pkg` replica la gerarchia del file system root nel percorso del software installato. Dovendo spostare manualmente i file sotto la root del filesystem, si dovrebbe installarli nella directory `pkg` sotto la stessa struttura della directory. Ad esempio, se si desidera installare un file in `/usr/bin`, dovrebbe invece essere messo in `$pkgdir/usr/bin`. Solo alcune procedure d'installazione richiedono all'utente di copiare decine di file manualmente. Al contrario, per la maggior parte del software, invocando `make install` verrà eseguito così. L'ultima riga dovrebbe essere simile alla seguente per installare correttamente il software nella directory `pkg`:
+Il passo finale è quello di mettere i file compilati in una directory in cui *makepkg* sia in grado di recuperarli per creare un pacchetto. Questa, per impostazione predefinita è la directory `pkg`, un semplice ambiente fakeroot. La directory `pkg` replica la gerarchia del file system root nel percorso del software installato. Dovendo spostare manualmente i file sotto la root del filesystem, si dovrebbe installarli nella directory `pkg` sotto la stessa struttura della directory. Ad esempio, se si desidera installare un file in `/usr/bin`, dovrebbe invece essere messo in `$pkgdir/usr/bin`. Solo alcune procedure d'installazione richiedono all'utente di copiare decine di file manualmente. Al contrario, per la maggior parte del software, invocando `make install` verrà eseguito così. L'ultima riga dovrebbe essere simile alla seguente per installare correttamente il software nella directory `pkg`:
 
 ```
 make DESTDIR=$pkgdir install
 
 ```
 
-**Note:** A volte capita che `DESTDIR` non è utilizzato nel `Makefile`; potrebbe invece essere necessario utilizzare il `prefix`. Se il pacchetto è compilato con _autoconf_/_automake_, utilizzare `DESTDIR`; questo è ciò che è [documentato](http://sources.redhat.com/automake/automake.html#Install) nei manuali. Se `DESTDIR` non funziona, provare a compilare con `make prefix="$pkgdir/usr/" install`. Se questo non funziona, si dovranno fare degli approfondimenti per i comandi di installazione che vengono eseguiti da "`make <...> install`".
+**Note:** A volte capita che `DESTDIR` non è utilizzato nel `Makefile`; potrebbe invece essere necessario utilizzare il `prefix`. Se il pacchetto è compilato con *autoconf*/*automake*, utilizzare `DESTDIR`; questo è ciò che è [documentato](http://sources.redhat.com/automake/automake.html#Install) nei manuali. Se `DESTDIR` non funziona, provare a compilare con `make prefix="$pkgdir/usr/" install`. Se questo non funziona, si dovranno fare degli approfondimenti per i comandi di installazione che vengono eseguiti da "`make <...> install`".
 
 In alcuni rari casi, il software si aspetta di essere eseguito da una singola directory. In tali casi, è bene copiare semplicemente questi in `$pkgdir/opt`.
 
-Molto spesso, il processo di installazione del software creerà una sottodirectory in `pkg`. Se così non fosse però, _makepkg_ genererà un sacco di errori e sarà necessario creare manualmente le sottodirectory aggiungendo gli appropriati comandi `mkdir -p` nella funzione `build()` prima che venga eseguita la procedura di installazione.
+Molto spesso, il processo di installazione del software creerà una sottodirectory in `pkg`. Se così non fosse però, *makepkg* genererà un sacco di errori e sarà necessario creare manualmente le sottodirectory aggiungendo gli appropriati comandi `mkdir -p` nella funzione `build()` prima che venga eseguita la procedura di installazione.
 
-Nei pacchetti datati, non vi era alcuna funzione `package()`, e così, sistemare i file compilati veniva fatto alla fine della funzione `build()`. Se `package()` non è presente, eseguire `build()` tramite _fakeroot_. Se invece `package()` è presente, eseguire `build()` da utente con _makepkg_, `package()` tramite _fakeroot_.
+Nei pacchetti datati, non vi era alcuna funzione `package()`, e così, sistemare i file compilati veniva fatto alla fine della funzione `build()`. Se `package()` non è presente, eseguire `build()` tramite *fakeroot*. Se invece `package()` è presente, eseguire `build()` da utente con *makepkg*, `package()` tramite *fakeroot*.
 
 `makepkg --repackage` esegue solo la funzione `package()`, così crea un file `*.pkg.*` senza compilare il pacchetto. Questo può risparmiare tempo, ad esempio avendo appena cambiato la variabile `depends` del pacchetto.
 
@@ -200,11 +199,11 @@ Se il processo di makepkg è finito correttamente, creerà un nuovo file chiamat
 
 Se il pacchetto sembra essere valido, è tutto. Comunque, se si pensa di rilasciare il `PKGBUILD`, è obbligatorio controllare e ricontrollare e ricontrollare ancora i contenuti dell'array `depends`.
 
-Assicurarsi inoltre che i pacchetti binari _funzionino_ effettivamente senza problemi È fastidioso rilasciare un pacchetto che contiene tutti i file necessari, ma si blocca a causa di qualche opzione di configurazione che non funziona bene con il resto del sistema. Se si sta compilando dei pacchetti per il proprio sistema, però, non c'è bisogno di preoccuparsi troppo di questo passaggio di controllo della qualità, essendo in questo caso, il creatore, l'unico a riportare tali errori.
+Assicurarsi inoltre che i pacchetti binari *funzionino* effettivamente senza problemi È fastidioso rilasciare un pacchetto che contiene tutti i file necessari, ma si blocca a causa di qualche opzione di configurazione che non funziona bene con il resto del sistema. Se si sta compilando dei pacchetti per il proprio sistema, però, non c'è bisogno di preoccuparsi troppo di questo passaggio di controllo della qualità, essendo in questo caso, il creatore, l'unico a riportare tali errori.
 
 ### `ldd` e `namcap`
 
-Le dipendenze sono l'errore più comune riguardo l'impacchettamento. Ci sono due ottimi strumenti che è possibile utilizzare per controllare le dipendenze. Il primo è _ldd_, che mostrerà le dipendenze delle librerie condivise dei file dinamici eseguibili:
+Le dipendenze sono l'errore più comune riguardo l'impacchettamento. Ci sono due ottimi strumenti che è possibile utilizzare per controllare le dipendenze. Il primo è *ldd*, che mostrerà le dipendenze delle librerie condivise dei file dinamici eseguibili:
 
 ```
 $ ldd gcc
@@ -231,7 +230,7 @@ Si prega di leggere [AUR User Guidelines#SCondividere i PKGBUILD su UNSUPPORTED]
 
 ### Avvertenze
 
-*   Prima di poter automatizzare il processo di compilazione di un pacchetto, bisognerebbe averlo fatto manualmente almeno una volta a meno di non conoscere _esattamente_ cosa si sta facendo _a priori_, nel qual caso non si starebbe leggendo questo articolo come primo passo. Sfortunatamente, nonostante un buon gruppo di programmatori si attengano al ciclo di compilazione in tre passi di "`./configure`; `make`; `make install`", questo non accade sempre, e le cose possono diventare davvero pessime se bisogna applicare patch per far funzionare tutto. Regola empirica: se non si riesce a compilare il programma dal tarball sorgente e farlo installare da sè in una sottodirectory temporanea definita, non bisogna neanche provare a impacchettarlo. Non c'è nessuna polvere magica in `makepkg` che risolva i problemi dei sorgenti.
+*   Prima di poter automatizzare il processo di compilazione di un pacchetto, bisognerebbe averlo fatto manualmente almeno una volta a meno di non conoscere *esattamente* cosa si sta facendo *a priori*, nel qual caso non si starebbe leggendo questo articolo come primo passo. Sfortunatamente, nonostante un buon gruppo di programmatori si attengano al ciclo di compilazione in tre passi di "`./configure`; `make`; `make install`", questo non accade sempre, e le cose possono diventare davvero pessime se bisogna applicare patch per far funzionare tutto. Regola empirica: se non si riesce a compilare il programma dal tarball sorgente e farlo installare da sè in una sottodirectory temporanea definita, non bisogna neanche provare a impacchettarlo. Non c'è nessuna polvere magica in `makepkg` che risolva i problemi dei sorgenti.
 *   In qualche caso, i pacchetti non sono nemmeno disponibili come sorgenti e bisogna usare qualcosa come `sh installer.run` per farli funzionare. Si dovrà fare un po' di lavoro di ricerca (leggere i README, le istruzioni di INSTALL, pagine man, magari ebuild da Gentoo o altri gestori di pacchetti, eventualmente persino i MAKEFILE o il codice sorgente) per metterli a posto. In certi casi, davvero spiacevoli, bisogna modificare i file sorgenti per far funzionare tutto bene. Comunque, `makepkg` deve essere completamente autonomo, senza alcun input da utente. Perciò se si devono modificare i Makefile, si potrebbe dover creare una patch personalizzata con il `PKGBUILD` ed installarla da dentro la funzione `build()`, o si potrebbe dover inserire alcuni comandi `sed` da dentro la stessa funzione.
 
 ## Consultare inoltre

@@ -32,7 +32,7 @@ LCD monitors require a different approach to monitor profiling. They are not cov
 
 ### When to calibrate monitors
 
-Some people may say any time is a good time. But to do it correctly, weather is the primary concern. Yes, the weather. 6500K daylight color temperature (standard in DTP and pre-press) is not some arbitrary temperature (you do not really have to know what that means, really). It is the temperature of white on a sunny day at noon. What that means is that we need a _sunny day_, and around _noon_ to profile our monitor properly. This advice comes from seasoned image editing technicians, so take it and you will be happy. :)
+Some people may say any time is a good time. But to do it correctly, weather is the primary concern. Yes, the weather. 6500K daylight color temperature (standard in DTP and pre-press) is not some arbitrary temperature (you do not really have to know what that means, really). It is the temperature of white on a sunny day at noon. What that means is that we need a *sunny day*, and around *noon* to profile our monitor properly. This advice comes from seasoned image editing technicians, so take it and you will be happy. :)
 
 ## About monitor calibration
 
@@ -46,11 +46,11 @@ But before you do that, we will discuss some terms that will be used in this art
 
 ### Black point
 
-Black point of the monitor is the _black_ that is displayed when the device gets no input from the graphic card. If you display an image that has RGB values of 0, 0, 0, then you will be able to 'see' the monitor's black point.
+Black point of the monitor is the *black* that is displayed when the device gets no input from the graphic card. If you display an image that has RGB values of 0, 0, 0, then you will be able to 'see' the monitor's black point.
 
 ### Color (white) temperature
 
-Also referred to as the _white point_, this is the color temperature of the white. The higher the temperature, the cooler the white (which runs contrary to our notion of hot and cold), and vice versa. For DTP and pre-press, the standard white point is 6500K.
+Also referred to as the *white point*, this is the color temperature of the white. The higher the temperature, the cooler the white (which runs contrary to our notion of hot and cold), and vice versa. For DTP and pre-press, the standard white point is 6500K.
 
 The factory default of most monitors sets the white point at 9300K. This is too cool for DTP. On some monitor makes and models, there are advanced controls for fine-tuning the white point.
 
@@ -64,7 +64,7 @@ Contrast control adjusts the distance of white (RGB = 255, 255, 255) to black (R
 
 ### Phosphors
 
-The phosphors, or _primaries_ as they are often called, are three sets of values (two numbers each). Some manufacturers publish data on phosphor values in user manuals, but this is not true in most cases. Using specialized software, or web search engines is the most common method of getting this information.
+The phosphors, or *primaries* as they are often called, are three sets of values (two numbers each). Some manufacturers publish data on phosphor values in user manuals, but this is not true in most cases. Using specialized software, or web search engines is the most common method of getting this information.
 
 ## Building lprof
 
@@ -80,14 +80,14 @@ Adjust the lighting in the room to what you will be using when working. Even if 
 
 1.  Set contrast (usually a control with half-black-half-white circle) to maximum. If you find you cannot tolerate the bright highlights, you may lower contrast a little. The higher the better.
 2.  Next, display a pure black over entire screen. You can do this by creating a small black PNG image (all pixels have RGB = 0, 0, 0). Open it up in [Gwenview](http://gwenview.sourceforge.net/) (you can install it along with KDE) or any other picture viewer that is capable of displaying an image in full-screen mode without any controls.
-3.  Reduce the vertical size of the picture (not the PNG image displayed by a picture viewer but the whole of what's displayed on the screen) to something around 60% or 70% of the full height. What is revealed above and below the picture is called a _non-scanned area_, and since that are is not receiving any voltage, it is the blackest of black your monitor is capable of displaying.
-4.  Locate the brightness control (usually a sun, circle with rays projecting from it's edges) and lower the value until the black _image_ matches the non-scanned area.
+3.  Reduce the vertical size of the picture (not the PNG image displayed by a picture viewer but the whole of what's displayed on the screen) to something around 60% or 70% of the full height. What is revealed above and below the picture is called a *non-scanned area*, and since that are is not receiving any voltage, it is the blackest of black your monitor is capable of displaying.
+4.  Locate the brightness control (usually a sun, circle with rays projecting from it's edges) and lower the value until the black *image* matches the non-scanned area.
 
 ### Setting the color temperature
 
 As we said in the introduction, setting color temperature must occur at noon. If you only have fixed factory default color temperature, you do not really need to wait for the sunny day to come. Just set it to 6500K.
 
-Place your monitor so that you can see outside the window _and_ your screen at the same time. For this step, you also need to create a white square image (RGB = 255, 255, 255), roughly 10 by 10 centimeters (4 by 3 inches). Using the same Gwenview technique as with brightness/contrast, display the white square on a pure black background.
+Place your monitor so that you can see outside the window *and* your screen at the same time. For this step, you also need to create a white square image (RGB = 255, 255, 255), roughly 10 by 10 centimeters (4 by 3 inches). Using the same Gwenview technique as with brightness/contrast, display the white square on a pure black background.
 
 1.  First, prepare your eyes by staring at the outside world for a while. Let them adjust to the daylight viewing condition for a few minutes.
 2.  Glance at the monitor, and the white square for a few second (it has to be short, because eyes will readjust quickly).
@@ -100,21 +100,21 @@ Take your time with the steps described above. It is essential to get it right.
 
 Start lprof. You will be presented by a fairly large window with multiple tabs on the right.
 
-1.  Click on the _Monitor Profiler_ tab. Then click on the large _Enter monitor values >>_ button.
-2.  White point should be set to _6500K (daylight)_.
-3.  Primaries should be set to either _SMPTE RP145-1994_, or _EBU Tech.3213-E_ or _P22_, or whatever appropriate values for your monitor. If you come across correct values for your monitor, enter those by selecting _User Defined_ from the drop-down. If in doubt, you may use _P22_ for all monitors with Trinitron CRTs (in this case, _Trinitron_ is not related to Sony Trinitron mointors and TVs), and _SMPTE RP145-1994_ for other CRTs.
-4.  Click the _Set Gamma and Black Point_ button.
+1.  Click on the *Monitor Profiler* tab. Then click on the large *Enter monitor values >>* button.
+2.  White point should be set to *6500K (daylight)*.
+3.  Primaries should be set to either *SMPTE RP145-1994*, or *EBU Tech.3213-E* or *P22*, or whatever appropriate values for your monitor. If you come across correct values for your monitor, enter those by selecting *User Defined* from the drop-down. If in doubt, you may use *P22* for all monitors with Trinitron CRTs (in this case, *Trinitron* is not related to Sony Trinitron mointors and TVs), and *SMPTE RP145-1994* for other CRTs.
+4.  Click the *Set Gamma and Black Point* button.
 5.  You will now see a full-screen view of two charts with some controls at the bottom.
-6.  Uncheck the _Link channels_ check-box and adjust individual Red, Green, and Blue gamma by either moving the slider left or right, or by entering and changing values in the three boxes to the left. The goal is to make the chart on the left (the smaller square one) flat. When you are satisfied with how it looks, check the _Link channels_ check-box and adjust the gamma again.
-7.  When you are done, click _OK_. Click _OK_ again.
+6.  Uncheck the *Link channels* check-box and adjust individual Red, Green, and Blue gamma by either moving the slider left or right, or by entering and changing values in the three boxes to the left. The goal is to make the chart on the left (the smaller square one) flat. When you are satisfied with how it looks, check the *Link channels* check-box and adjust the gamma again.
+7.  When you are done, click *OK*. Click *OK* again.
 
 When you are finished entering monitor values, you might want to enter some information about the monitor. This is not mandatory, but it is always nice to know what profile is for what.
 
-1.  Click _Profile identification_ button.
+1.  Click *Profile identification* button.
 2.  Fill in the data.
-3.  Click _OK_ to finish.
+3.  Click *OK* to finish.
 
-After you are all done, click on the '...' button next to _Output Profile File_ box. Enter the name of your profile: _somemonitor.icc_. Click _Create Profile_ button, and you are done.
+After you are all done, click on the '...' button next to *Output Profile File* box. Enter the name of your profile: *somemonitor.icc*. Click *Create Profile* button, and you are done.
 
 ## Where to save profiles
 

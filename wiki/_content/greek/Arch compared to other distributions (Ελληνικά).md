@@ -43,7 +43,7 @@ Sorcerer/Lunar-Linux/Sourcemage (SLS) είναι όλες διανομές βα�
 
 ### Rock
 
-_Από την εισαγωγή_ [http://www.rocklinux.org/wiki/About](http://www.rocklinux.org/wiki/About)
+*Από την εισαγωγή* [http://www.rocklinux.org/wiki/About](http://www.rocklinux.org/wiki/About)
 
 Το Rock Linux είναι ένα ευέλικτο πακέτο δημιουργίας διανομών Linux δηλαδή είναι μια εργαλειοθήκη/πλαίσιο για να φτιάχνετε τις δικές διανομές Linux. Δείτε επίσης την ανακοίνωση του σκοπού μας. Αν δεν επιθυμείτε να χτίσετε την δικιά σας διανομή αλλά απλά ενδιαφέρεστε για μία γενικής χρήσης διανομή Linux, θα σας ενδιαφέρει να ρίξετε μια ματιά στο Crystal Rock. [http://www.rocklinux.org/wiki/Crystal_ROCK](http://www.rocklinux.org/wiki/Crystal_ROCK)
 

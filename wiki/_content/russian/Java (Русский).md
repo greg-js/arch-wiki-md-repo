@@ -1,6 +1,6 @@
 Из [Википедии](https://en.wikipedia.org/wiki/ru:Java "wikipedia:ru:Java"):
 
-"_Java — объектно-ориентированный язык программирования, разработанный компанией Sun Microsystems (в последующем приобретенной компанией Oracle). Приложения Java обычно транслируются в специальный байт-код, поэтому они могут работать на любой виртуальной Java-машине вне зависимости от компьютерной архитектуры. Дата официального выпуска — 23 мая 1995 года._"
+"*Java — объектно-ориентированный язык программирования, разработанный компанией Sun Microsystems (в последующем приобретенной компанией Oracle). Приложения Java обычно транслируются в специальный байт-код, поэтому они могут работать на любой виртуальной Java-машине вне зависимости от компьютерной архитектуры. Дата официального выпуска — 23 мая 1995 года.*"
 
 Arch Linux официально поддерживает открытую реализацию [OpenJDK](http://openjdk.java.net/) версий 7 и 8\. Эти версии могут быть без проблем установлены одновременно, при этом переключение между ними производится с помощью специального скрипта `archlinux-java`. Несколько других реализаций доступны в [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)"), но они не поддерживаются официально.
 
@@ -39,18 +39,18 @@ Arch Linux официально поддерживает открытую реа
 *   OpenJDK 7:
 
 | Пакет | Примечание |
-| [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) | Исполняющая среда (_JRE_) без графических инструментов – версия 7 |
-| [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) | Полная версия исполняющей среды (_JRE_) – версия 7 |
-| [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) | Пакет разработки (_JDK_) – версия 7 |
+| [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) | Исполняющая среда (*JRE*) без графических инструментов – версия 7 |
+| [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) | Полная версия исполняющей среды (*JRE*) – версия 7 |
+| [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) | Пакет разработки (*JDK*) – версия 7 |
 | [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) | Документация OpenJDK (javadoc) – версия 7 |
 | [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src) | Исходные коды OpenJDK – версия 7 |
 
 *   OpenJDK 8:
 
 | Пакет | Примечание |
-| [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | Исполняющая среда (_JRE_) без графических инструментов – версия 8 |
-| [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | Полная версия исполняющей среды (_JRE_) – версия 8 |
-| [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | Пакет разработки (_JDK_) – версия 8 |
+| [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | Исполняющая среда (*JRE*) без графических инструментов – версия 8 |
+| [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | Полная версия исполняющей среды (*JRE*) – версия 8 |
+| [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | Пакет разработки (*JDK*) – версия 8 |
 | [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) | Документация OpenJDK (javadoc) – версия 8 |
 | [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src) | Исходные коды OpenJDK – версия 8 |
 
@@ -58,7 +58,7 @@ Arch Linux официально поддерживает открытую реа
 
 **Обратите внимание:** После установки вам может понадобиться обновить переменную окружения `$PATH`. Для этого отредактируйте файл `/etc/profile` или перезайдите в среду рабочего стола.
 
-Общие для всех Java-пакетов пакеты [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) и [java-environment-common](https://www.archlinux.org/packages/?name=java-environment-common) автоматически устанавливаются как зависимости и предоставляют файл настройки окружения `/etc/profile.d/jre.sh`. Этот файл содержит все переменные окружения, необходимые для работы Java-среды. Пакет [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) также предоставляет скрипт `archlinux-java`, который служит для установки Java-среды по умолчанию. Этот скрипт создает символические ссылки `/usr/lib/jvm/default` и `/usr/lib/jvm/default-runtime`, которые определяют текущую версию Java и текущую исполняемую среду (JVM) в `/usr/lib/jvm/java-${_мажорная_версия_}-${_имя_поставщика_`}. Для большинства исполняемых файлов среды Java создаются прямые ссылки в `/usr/bin`, остальные файлы доступны в `$PATH`.
+Общие для всех Java-пакетов пакеты [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) и [java-environment-common](https://www.archlinux.org/packages/?name=java-environment-common) автоматически устанавливаются как зависимости и предоставляют файл настройки окружения `/etc/profile.d/jre.sh`. Этот файл содержит все переменные окружения, необходимые для работы Java-среды. Пакет [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) также предоставляет скрипт `archlinux-java`, который служит для установки Java-среды по умолчанию. Этот скрипт создает символические ссылки `/usr/lib/jvm/default` и `/usr/lib/jvm/default-runtime`, которые определяют текущую версию Java и текущую исполняемую среду (JVM) в `/usr/lib/jvm/java-${*мажорная_версия*}-${*имя_поставщика*`}. Для большинства исполняемых файлов среды Java создаются прямые ссылки в `/usr/bin`, остальные файлы доступны в `$PATH`.
 
 **Важно:** Файл `/etc/profile.d/jdk.sh` больше не предоставляется ни одним из пакетов.
 
@@ -66,20 +66,20 @@ Arch Linux официально поддерживает открытую реа
 
 Хотя пакеты в Arch Linux могут иметь проприетарные версии пакетов в качестве зависимостей, открытая реализация имеет свою систему версий:
 
-*   Пакеты [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk), [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) и [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) должны помечаться как устаревшие в зависимости от [версии _IcedTea_](http://icedtea.wildebeest.org/download/source) (например, `2.4.3`), а не их версии реализации от Oracle (например `u45` в выпуске `7.u45_2.4.3-1`).
-*   Пакет [icedtea-web](https://www.archlinux.org/packages/?name=icedtea-web) должен помечаться как устаревший в зависимости от [версии _IcedTea Web_](http://icedtea.wildebeest.org/download/source) (например, `1.4.1`), и независимо от версии _IcedTea_.
+*   Пакеты [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk), [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) и [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) должны помечаться как устаревшие в зависимости от [версии *IcedTea*](http://icedtea.wildebeest.org/download/source) (например, `2.4.3`), а не их версии реализации от Oracle (например `u45` в выпуске `7.u45_2.4.3-1`).
+*   Пакет [icedtea-web](https://www.archlinux.org/packages/?name=icedtea-web) должен помечаться как устаревший в зависимости от [версии *IcedTea Web*](http://icedtea.wildebeest.org/download/source) (например, `1.4.1`), и независимо от версии *IcedTea*.
 
 ## Переключение между средами
 
 Для переключения между средами Java используется скрипт `archlinux-java`, который предоставляет следующие возможности:
 
 ```
-archlinux-java _<COMMAND>_
+archlinux-java *<COMMAND>*
 
 COMMAND:
    status              Вывести список установленных сред Java
    get                 Вывести короткое имя среды Java, установленной по умолчанию
-   set _имя_среды_   Установить среду _имя_среды_ в качестве среды по умолчанию
+   set *имя_среды*   Установить среду *имя_среды* в качестве среды по умолчанию
    unset               Сбросить текущую установку среды Java по умолчанию
    fix                 Исправить нарушенную конфигурацию среды Java по умолчанию
 
@@ -102,12 +102,12 @@ Available Java environments:
 
 ```
 
-Обратите внимание на слово _(default)_, которым помечается текущая выбранная среда Java, в данном примере — `java-7-openjdk`. Запуск конкретного файла `java` и других исполняемых файлов среды зависит от этой настройки. Также обратите внимание, что в приведенном примере установлена только исполняющая среда (_JRE_) из состава OpenJDK 8.
+Обратите внимание на слово *(default)*, которым помечается текущая выбранная среда Java, в данном примере — `java-7-openjdk`. Запуск конкретного файла `java` и других исполняемых файлов среды зависит от этой настройки. Также обратите внимание, что в приведенном примере установлена только исполняющая среда (*JRE*) из состава OpenJDK 8.
 
 ### Установка среды Java по умолчанию
 
 ```
-# archlinux-java set _имя_среды_
+# archlinux-java set *имя_среды*
 
 ```
 
@@ -154,7 +154,7 @@ Available Java environments:
 #!/bin/sh
 
 export PATH=/usr/lib/jvm/java-8-openjdk/jre/bin/:$PATH
-exec _/path/to/application_
+exec */path/to/application*
 
 ```
 
@@ -162,10 +162,10 @@ exec _/path/to/application_
 
 Этот раздел предназначается для тех, кто осуществляет сборку пакетов с альтернативными выпусками JVM для [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)"). Чтобы пакет соответствовал принятой в Arch Linux схеме с использованием скрипта `archlinux-java`, он должен:
 
-*   Помещать все файлы в `/usr/lib/jvm/java-${_номер_мажорной_версии_}-${_имя_поставщика_}` .
+*   Помещать все файлы в `/usr/lib/jvm/java-${*номер_мажорной_версии*}-${*имя_поставщика*}` .
 *   Убедиться, что все исполняемые файлы для которых пакетами [java-runtime-common](https://www.archlinux.org/packages/extra/any/java-runtime-common/files/) и [java-environment-common](https://www.archlinux.org/packages/extra/any/java-environment-common/files/) создаются ссылки присутствуют собираемом пакете.
 *   Предоставлять ссылки из `/usr/bin` к исполняемым файлам только если файлы ссылок не принадлежат пакетам [java-runtime-common](https://www.archlinux.org/packages/extra/any/java-runtime-common/files/) и [java-environment-common](https://www.archlinux.org/packages/extra/any/java-environment-common/files/).
-*   Имена man-страниц должны оканчиваться на `-${_номер мажорной версии_}-${_имя поставщика_`} для избежания конфликтов (пример смотрите в [списке файлов jre8-openjdk](https://www.archlinux.org/packages/extra/x86_64/jre8-openjdk/files/), где имена man-страниц оканчиваются на `-openjdk8`).
+*   Имена man-страниц должны оканчиваться на `-${*номер мажорной версии*}-${*имя поставщика*`} для избежания конфликтов (пример смотрите в [списке файлов jre8-openjdk](https://www.archlinux.org/packages/extra/x86_64/jre8-openjdk/files/), где имена man-страниц оканчиваются на `-openjdk8`).
 *   Не объявлять пакеты других сред Java, `java-runtime`, `java-runtime-headless` или `java-environment` как [конфликтующие](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#conflicts "PKGBUILD (Русский)"), а также в качестве [замещаемых](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#replaces "PKGBUILD (Русский)").
 *   Использовать `archlinux-java` в целях установки, чтобы установить среду Java по умолчанию **если в данный момент уже не установлена подходящая среда** (то есть, пакеты не должны принудительно устанавливать какую-либо среду Java по умолчанию). Используйте [исходные коды официально поддерживаемого пакета исполняемой среды Java](https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/java7-openjdk) в качестве примера.
 

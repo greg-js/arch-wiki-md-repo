@@ -9,7 +9,6 @@ A partir da versão 0.8.50 do Telegram, foram consertados os problemas com méto
 Você pode diretamente adicionar o repositóro chinês [archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") para instalar a versão chinesa：
 
  `# vim /etc/pacman.conf ` 
-
 ```
 [archlinuxcn]
 SigLevel = Optional TrustedOnly

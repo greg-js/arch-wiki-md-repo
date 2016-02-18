@@ -1,4 +1,4 @@
-Openbox is a lightweight, powerful, and highly configurable _stacking_ [window manager](/index.php/Window_manager "Window manager") with extensive standards support. It may be built upon and run independently as the basis of a unique [desktop environment](/index.php/Desktop_environment "Desktop environment"), or within other integrated desktop environments such as [KDE](/index.php/KDE "KDE") and [Xfce](/index.php/Xfce "Xfce"), as an alternative to the window managers they provide. The [LXDE](/index.php/LXDE "LXDE") desktop environment is itself built around Openbox.
+Openbox is a lightweight, powerful, and highly configurable *stacking* [window manager](/index.php/Window_manager "Window manager") with extensive standards support. It may be built upon and run independently as the basis of a unique [desktop environment](/index.php/Desktop_environment "Desktop environment"), or within other integrated desktop environments such as [KDE](/index.php/KDE "KDE") and [Xfce](/index.php/Xfce "Xfce"), as an alternative to the window managers they provide. The [LXDE](/index.php/LXDE "LXDE") desktop environment is itself built around Openbox.
 
 A comprehensive list of features are documented at the [official Openbox website](http://openbox.org/). This article pertains to specifically installing Openbox under Arch Linux.
 
@@ -395,7 +395,7 @@ The `xbacklight` program is used to control screen brightness, which is part of 
 
 ### Window snapping
 
-Many desktop environments and window managers support _window snapping_ (e.g. Windows 7 Aero snap), whereby they will automatically snap into place when moved to the edge of the screen. This effect can also be simulated in Openbox through the use of keybinds on focused windows.
+Many desktop environments and window managers support *window snapping* (e.g. Windows 7 Aero snap), whereby they will automatically snap into place when moved to the edge of the screen. This effect can also be simulated in Openbox through the use of keybinds on focused windows.
 
 As illustrated in the example below, percentages must be used to determine window sizes (see [openbox.org](http://openbox.org/wiki/Help:Actions) for further information). In this instance, The `super` key is used in conjunction with the `navigation` keys:
 
@@ -636,7 +636,7 @@ xdotool key control+m
 How this command may be used as a panel launcher / icon is largely dependent on the features of panel used. While some panels will allow the above command to be executed directly in the process of creating a new launcher, others may require the use of an executable script. As an example, a custom executable script called `obpanelmenu.sh` will be created in the `~/.config` folder:
 
 ```
-$ _text editor_ ~/.config/obpanelmenu.sh
+$ *text editor* ~/.config/obpanelmenu.sh
 
 ```
 
@@ -660,7 +660,7 @@ Executing it will bring up the Openbox desktop menu. Consequently, where using a
 
 **Tip:** It is **strongly advised** to install the [obconf](https://www.archlinux.org/packages/?name=obconf) and [lxappearance-obconf](https://www.archlinux.org/packages/?name=lxappearance-obconf) GUI applications to configure visual settings and theming. The latter is particularly important as it is responsible for generating the `~/.gtkrc-2.0` file (see [GTK+#GTK+ 2.x](/index.php/GTK%2B#GTK.2B_2.x "GTK+")).
 
-It is important to note that a substantial range of both **Openbox-specific** and generalised, **Openbox-compatible** [GTK](/index.php/GTK "GTK") themes are available to change the look of window decorations and the desktop menu. _Generalised_ themes are designed to be simultaneously compatible with a range of popular desktop environments and/or window managers, commonly including Openbox. See these [package descriptions](https://aur.archlinux.org/packages/?O=0&C=0&SeB=n&K=gtk-theme-&outdated=&SB=n&SO=a&PP=50&do_Search=Go) for examples.
+It is important to note that a substantial range of both **Openbox-specific** and generalised, **Openbox-compatible** [GTK](/index.php/GTK "GTK") themes are available to change the look of window decorations and the desktop menu. *Generalised* themes are designed to be simultaneously compatible with a range of popular desktop environments and/or window managers, commonly including Openbox. See these [package descriptions](https://aur.archlinux.org/packages/?O=0&C=0&SeB=n&K=gtk-theme-&outdated=&SB=n&SO=a&PP=50&do_Search=Go) for examples.
 
 ### Configuration
 
@@ -772,7 +772,7 @@ A downside to using Openbox Multihead is that it breaks the EWMH assumption that
 
 Finally, [pytyle3-git](https://aur.archlinux.org/packages/pytyle3-git/) is a new version of [PyTyle](/index.php/PyTyle "PyTyle") that will work with Openbox Multihead.
 
-Both _pytyle3_ and _pager-multihead-git_ will work without Openbox Multihead if only one monitor is active.
+Both *pytyle3* and *pager-multihead-git* will work without Openbox Multihead if only one monitor is active.
 
 ## Tips and tricks
 
@@ -1017,7 +1017,7 @@ WM_CLASS(STRING) = "NAME", "CLASS"
 
 #### Firefox
 
-For whatever reason, Firefox and like-minded equivalents ignore application rules (e.g. _<desktop>_) unless `class="Firefox*"` is used. This applies irrespective of whatever values **xprop** may report for the program's `WM_CLASS`.
+For whatever reason, Firefox and like-minded equivalents ignore application rules (e.g. *<desktop>*) unless `class="Firefox*"` is used. This applies irrespective of whatever values **xprop** may report for the program's `WM_CLASS`.
 
 ### Switching between keyboard layouts
 

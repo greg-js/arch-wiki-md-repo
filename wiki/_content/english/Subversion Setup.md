@@ -1,6 +1,6 @@
-_"[Apache Subversion](http://subversion.apache.org/features.html) is a full-featured version control system originally designed to be a better [CVS](/index.php/CVS "CVS"). Subversion has since expanded beyond its original goal of replacing CVS, but its basic model, design, and interface remain heavily influenced by that goal."_
+*"[Apache Subversion](http://subversion.apache.org/features.html) is a full-featured version control system originally designed to be a better [CVS](/index.php/CVS "CVS"). Subversion has since expanded beyond its original goal of replacing CVS, but its basic model, design, and interface remain heavily influenced by that goal."*
 
-This article deals with setting up an svn-server on your machine. There are two popular svn-servers, the built in _svnserve_ and the more advanced option, [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") with svn plugins.
+This article deals with setting up an svn-server on your machine. There are two popular svn-servers, the built in *svnserve* and the more advanced option, [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") with svn plugins.
 
 ## Contents
 
@@ -253,13 +253,12 @@ Optionally add a `--listen-port` if you want a different port, or other options.
 By default, the service runs as root. If you want to change that, add a drop-in:
 
  `/etc/systemd/system/svnserve.service.d/50-custom.conf` 
-
 ```
 [Service]
 User=svn
 ```
 
-Now start the _svnserve.service_ [daemon](/index.php/Daemon "Daemon").
+Now start the *svnserve.service* [daemon](/index.php/Daemon "Daemon").
 
 ### svn+ssh
 

@@ -29,7 +29,7 @@ puede ser instalado con su gestor de paquetes de AUR preferido, ejemplo:
 
 ### Greeter
 
-Después de instalar Ligthdm necesitarás instar un greeter (una interfaz de usuario para LightDM). el greeter recomendado es _lightdm-gtk-greeter_, que es instaldo con [lightdm-gtk2-greeter](https://aur.archlinux.org/packages/lightdm-gtk2-greeter/) o [lightdm-gtk3-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk3-greeter). Los usuarios de KDE pueden instalar [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter), un greeter basado en Qt.
+Después de instalar Ligthdm necesitarás instar un greeter (una interfaz de usuario para LightDM). el greeter recomendado es *lightdm-gtk-greeter*, que es instaldo con [lightdm-gtk2-greeter](https://aur.archlinux.org/packages/lightdm-gtk2-greeter/) o [lightdm-gtk3-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk3-greeter). Los usuarios de KDE pueden instalar [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter), un greeter basado en Qt.
 
 Otros greeters que se pueden instalar mediante [AUR](/index.php/AUR "AUR") son:
 
@@ -43,7 +43,6 @@ Otros greeters que se pueden instalar mediante [AUR](/index.php/AUR "AUR") son:
 Puedes cambiar el greeter por defecto cambiando la configuracion del archivo:
 
  `/etc/lightdm/lightdm.conf` 
-
 ```
 greeter-session=lightdm-yourgreeter-greeter
 
@@ -110,7 +109,7 @@ De acuerdo con [this](https://bbs.archlinux.org/viewtopic.php?id=149945).
 
 #### KDE Greeter
 
-Solo es necesario entrar a _System Settings > Login Screen (LightDM)_ y cambiar la imagen de fondo para tu theme.
+Solo es necesario entrar a *System Settings > Login Screen (LightDM)* y cambiar la imagen de fondo para tu theme.
 
 ## cambiando íconos
 

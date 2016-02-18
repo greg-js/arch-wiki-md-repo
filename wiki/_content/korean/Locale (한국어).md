@@ -72,13 +72,11 @@ ko_KR.UTF-8 UTF-8
 **참고:** `/etc/locale.conf`는 기본적으로 생성되지 않기 때문에 수동으로 만들어야 한다.
 
 **도움말:** 아치를 설치하는 과정에서 `locale`의 출력이 자신의 기호에 맞다면 가상 루트에 있는 동안 `# locale > /etc/locale.conf`를 실행해 설정 시간을 줄일 수 있다.
-
  `/etc/locale.conf`  `LANG="ko_KR.UTF-8"` 
 
 고급 설정 예시:
 
  `/etc/locale.conf` 
-
 ```
 # 한국어 UTF-8 설정
 LANG="ko_KR.UTF-8"
@@ -103,7 +101,6 @@ LC_TIME="ko_KR.UTF-8"
 gettext를 사용해 번역하는 프로그램은 일반 변수 외에 `LANGUAGE` 변수를 사용한다. 이 변수는 다음 순서로 사용될 로캘 변수 [목록](http://www.gnu.org/software/gettext/manual/gettext.html#The-LANGUAGE-variable)을 지정한다. 선호하는 로캘 번역이 없다면 유사한 로캘 번역이 기본 로캘 대신 사용될 것이다. 예를 들면, 한국어 사용자가 그 대안으로 다음과 같이 미국 영어와 영국 영어를 지정할 수도 있다.
 
  `/etc/locale.conf` 
-
 ```
 LANG="ko_KR.UTF-8"
 export LANGUAGE="en_US:en_GB:en"
@@ -190,4 +187,4 @@ UTF-8 로캘에서 이 프로그램을 실행해야 한다. 그렇지 않으면 
 *   [젠투 위키 보관 자료: 로캘](http://www.gentoo-wiki.info/Locales)
 *   [ICU 사용자 입력 정렬 시험](http://demo.icu-project.org/icu-bin/locexp?_=en_US&x=col)
 *   [Free Standards Group Open 지역화 방안](http://www.openi18n.org/)
-*   [_The Single UNIX Specification_ 로캘 정의](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) (Open Group)
+*   [*The Single UNIX Specification* 로캘 정의](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) (Open Group)

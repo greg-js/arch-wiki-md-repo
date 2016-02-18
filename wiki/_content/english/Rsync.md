@@ -19,7 +19,7 @@
 
 [Install](/index.php/Install "Install") the [rsync](https://www.archlinux.org/packages/?name=rsync) package.
 
-**Note:** _rsync_ must be installed on both the source and the destination machine.
+**Note:** *rsync* must be installed on both the source and the destination machine.
 
 ## Usage
 
@@ -107,7 +107,6 @@ For the sake of this example, the script is created in the `/etc/cron.daily` dir
 First, create a script containing the appropriate command options:
 
  `/etc/cron.daily/backup` 
-
 ```
 #!/bin/bash
 rsync -a --delete /folder/to/backup /location/of/backup &> /dev/null
@@ -135,7 +134,6 @@ Finally, the script must be executable:
 If backing-up to a remote host using [SSH](/index.php/SSH "SSH"), use this script instead:
 
  `/etc/cron.daily/backup` 
-
 ```
 #!/bin/bash
 rsync -a --delete -e ssh /folder/to/backup remoteuser@remotehost:/location/to/backup &> /dev/null
@@ -160,7 +158,6 @@ This script starts a backup when you plugin your wire.
 First, create a script containing the appropriate command options:
 
  `/etc/NetworkManager/dispatcher.d/backup` 
-
 ```
 #!/bin/bash
 
@@ -175,7 +172,7 @@ fi
 
 	`--files-from` 
 
-	read the relative path of _/folder/to/backup_ from this file
+	read the relative path of */folder/to/backup* from this file
 
 	`--bwlimit` 
 
@@ -195,7 +192,6 @@ Instead of running time interval backups with time based schedules, such as thos
 First, create the `systemd.path` file that will monitor the files you are backing up:
 
  `~/.config/systemd/user/backup.path` 
-
 ```
 [Unit]
 Description=Checks if paths that are currently being backed up have changed
@@ -211,9 +207,7 @@ WantedBy=default.target
 Then create a `systemd.service` file that will be activated when it detects a change. By default a service file of the same name as the path unit (in this case `backup.path`) will be activated, except with the `.service` extension instead of `.path` (in this case `backup.service`).
 
 **Note:** If you need to run multiple rsync commands, use `Type=oneshot`. This allows you to specify multiple `ExecStart=` parameters, one for each **rsync** command, that will be executed. Alternatively, you can simply write a script to perform all of your backups, just like [cron](/index.php/Cron "Cron") scripts.
-
  `~/.config/systemd/user/backup.service` 
-
 ```
 [Unit]
 Description=Backs up files
@@ -231,7 +225,6 @@ This is a useful option of rsync, creating a full backup and a differential back
 First, create a script containing the appropriate command options:
 
  `/etc/cron.daily/backup` 
-
 ```
 #!/bin/bash
 
@@ -255,7 +248,6 @@ The same idea can be used to maintain a tree of snapshots of your files. In othe
 This basic script is easy to implement and creates quick incremental snapshots using the `--link-dest` option to hardlink unchanged files:
 
  `/usr/local/bin/snapbackup.sh` 
-
 ```
 #!/bin/bash
 
@@ -285,7 +277,6 @@ There must be a symlink to a full backup already in existence as a target for `-
 A more sophisticated version checks to see if a certain number of changes have been made before making the backup and utilizes `cp -al` to hardlink unchanged files:
 
  `/usr/local/bin/rsnapshot.sh` 
-
 ```
 #!/bin/bash
 

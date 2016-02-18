@@ -1,11 +1,11 @@
-Este artículo proporciona una visión general de Arch Build System, junto con una guía para principiantes. No es una guía de referencia completa. Si necesita más información, consulte las páginas _man_.
+Este artículo proporciona una visión general de Arch Build System, junto con una guía para principiantes. No es una guía de referencia completa. Si necesita más información, consulte las páginas *man*.
 
 **Nota:** ABS se sincroniza una vez al día, por lo que puede quedarse desfasado respecto a los paquetes que ya están disponibles en los repositorios.
 
 ## Contents
 
 *   [1 ¿Qué es Arch Build System?](#.C2.BFQu.C3.A9_es_Arch_Build_System.3F)
-    *   [1.1 ¿Qué es un sistema tipo _ports_?](#.C2.BFQu.C3.A9_es_un_sistema_tipo_ports.3F)
+    *   [1.1 ¿Qué es un sistema tipo *ports*?](#.C2.BFQu.C3.A9_es_un_sistema_tipo_ports.3F)
     *   [1.2 **ABS** es un concepto similar](#ABS_es_un_concepto_similar)
     *   [1.3 Descripción general de ABS](#Descripci.C3.B3n_general_de_ABS)
 *   [2 ¿Por qué utilizar ABS?](#.C2.BFPor_qu.C3.A9_utilizar_ABS.3F)
@@ -24,15 +24,15 @@ Este artículo proporciona una visión general de Arch Build System, junto con u
 
 ## ¿Qué es Arch Build System?
 
-Arch Build System (_«Sistema de Compilación de Arch»_), **ABS** para abreviar, es un sistema tipo _ports_ para la construcción y empaquetado de software desde el código fuente. Mientras [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") es la herramienta especializada de Arch para la gestión de los paquetes binarios (incluyendo los paquetes creados con ABS), el sistema ABS es una colección de herramientas para compilar el código fuente y crear paquetes `.pkg.tar.xz` instalables.
+Arch Build System (*«Sistema de Compilación de Arch»*), **ABS** para abreviar, es un sistema tipo *ports* para la construcción y empaquetado de software desde el código fuente. Mientras [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") es la herramienta especializada de Arch para la gestión de los paquetes binarios (incluyendo los paquetes creados con ABS), el sistema ABS es una colección de herramientas para compilar el código fuente y crear paquetes `.pkg.tar.xz` instalables.
 
-### ¿Qué es un sistema tipo _ports_?
+### ¿Qué es un sistema tipo *ports*?
 
-_Ports_ es un sistema utilizado por los sistemas basados en *BSD para automatizar el proceso de compilación del software desde el código fuente. El sistema utiliza un _puerto_ para descargar, descomprimir, parchear, compilar e instalar el software especificado. Un _puerto_ no es más que una carpeta pequeña creada en el ordenador del usuario, con el nombre del software correspondiente para ser instalado, que contiene algunos archivos con las instrucciones para construir e instalar el software desde el código fuente. Esto hace que la instalación del software sea tan simple como escribir `make` o `make install clean` desde la carpeta que sirve de puerto.
+*Ports* es un sistema utilizado por los sistemas basados en *BSD para automatizar el proceso de compilación del software desde el código fuente. El sistema utiliza un *puerto* para descargar, descomprimir, parchear, compilar e instalar el software especificado. Un *puerto* no es más que una carpeta pequeña creada en el ordenador del usuario, con el nombre del software correspondiente para ser instalado, que contiene algunos archivos con las instrucciones para construir e instalar el software desde el código fuente. Esto hace que la instalación del software sea tan simple como escribir `make` o `make install clean` desde la carpeta que sirve de puerto.
 
 ### **ABS** es un concepto similar
 
-ABS es un componente de un árbol de directorios (el árbol ABS) que reside en `/var/abs`. Este árbol tiene muchos subdirectorios, cada uno dentro de una categoría y nombrado por el nombre de su respectivo paquete. Este árbol representa (pero no contiene) todo el _sotfware oficial de Arch_, recuperable a través del sistema SVN. Se hace referencia a cada subdirectorio, nominado por el nombre del paquete, como un «ABS», de igual manera a como si se refiriese a un «puerto». Estos ABS (o subdirectorios) no contienen el paquete de software ni el código fuente, sino más bien un archivo [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") (y a veces otros archivos). Un PKGBUILD es un sencillo script de compilación de Bash -un archivo de texto que contiene las instrucciones de compilación y de empaquetado, así como la dirección URL del archivo **tarball fuente** adecuado para ser descargado-. (El componente más importante de ABS son los propios PKGBUILD). Mediante la ejecución de la orden [makepkg](/index.php/Makepkg "Makepkg") de ABS, el sistema primero compila y luego _empaqueta_ el software, dentro del directorio de compilación, antes de ser instalado. A continuación, se puede utilizar [pacman](/index.php/Pacman "Pacman"), el gestor de paquetes de Arch Linux, para instalar, actualizar y eliminar el nuevo paquete.
+ABS es un componente de un árbol de directorios (el árbol ABS) que reside en `/var/abs`. Este árbol tiene muchos subdirectorios, cada uno dentro de una categoría y nombrado por el nombre de su respectivo paquete. Este árbol representa (pero no contiene) todo el *sotfware oficial de Arch*, recuperable a través del sistema SVN. Se hace referencia a cada subdirectorio, nominado por el nombre del paquete, como un «ABS», de igual manera a como si se refiriese a un «puerto». Estos ABS (o subdirectorios) no contienen el paquete de software ni el código fuente, sino más bien un archivo [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") (y a veces otros archivos). Un PKGBUILD es un sencillo script de compilación de Bash -un archivo de texto que contiene las instrucciones de compilación y de empaquetado, así como la dirección URL del archivo **tarball fuente** adecuado para ser descargado-. (El componente más importante de ABS son los propios PKGBUILD). Mediante la ejecución de la orden [makepkg](/index.php/Makepkg "Makepkg") de ABS, el sistema primero compila y luego *empaqueta* el software, dentro del directorio de compilación, antes de ser instalado. A continuación, se puede utilizar [pacman](/index.php/Pacman "Pacman"), el gestor de paquetes de Arch Linux, para instalar, actualizar y eliminar el nuevo paquete.
 
 ### Descripción general de ABS
 
@@ -162,7 +162,7 @@ El archivo `/etc/makepkg.conf` especifica las variables globales del entorno y l
 
 #### Establecer la variable PACKAGER en /etc/makepkg.conf
 
-Establecer la variable PACKAGER en `/etc/makepkg.conf` es una operación opcional, pero _muy recomendable_. Esta opción permite establecer un "flag" para identificar rápidamente los paquetes que se han construido y/o instalado por el usuario, en lugar del mantenedor oficial. Esto se logra fácilmente utilizando **expac** disponible desde el repositorio community:
+Establecer la variable PACKAGER en `/etc/makepkg.conf` es una operación opcional, pero *muy recomendable*. Esta opción permite establecer un "flag" para identificar rápidamente los paquetes que se han construido y/o instalado por el usuario, en lugar del mantenedor oficial. Esto se logra fácilmente utilizando **expac** disponible desde el repositorio community:
 
 ##### Mostrar todos los paquetes (incluidos los de AUR)
 
@@ -212,7 +212,7 @@ Copie el ABS desde el árbol (`/var/abs/<repository>/<pkgname>`) al directorio d
 
 ### Compilar el paquete
 
-En nuestro ejemplo, vamos a construir el paquete del gestor de pantalla _slim_.
+En nuestro ejemplo, vamos a construir el paquete del gestor de pantalla *slim*.
 
 Copie el ABS slim desde el árbol ABS a un directorio de compilación:
 
@@ -257,4 +257,4 @@ El método ABS agrega un nivel de comodidad y automatización, mientras que toda
 
 #### fakeroot
 
-En esencia, se siguen los mismos pasos que se realizan en el método tradicional (que generalmente incluyen `./configure, make, make install`) pero el software se instala en un entorno _fake root_. (Un entorno _fake root_ es simplemente un subdirectorio dentro del directorio de compilación que funciona y se comporta como el directorio root del sistema. Conjuntamente con el programa **fakeroot**, makepkg crea un directorio root falso, e instala los binarios compilados y los archivos asociados a él, con **root** como propietario). El _fake root_, o árbol de subdirectorios que contiene el software compilado, se comprime en un archivo con la extensión `.pkg.tar.xz`, o un _paquete_. Cuando se invoca, pacman extrae el paquete (lo instala) en el directorio root real del sistema (`/`).
+En esencia, se siguen los mismos pasos que se realizan en el método tradicional (que generalmente incluyen `./configure, make, make install`) pero el software se instala en un entorno *fake root*. (Un entorno *fake root* es simplemente un subdirectorio dentro del directorio de compilación que funciona y se comporta como el directorio root del sistema. Conjuntamente con el programa **fakeroot**, makepkg crea un directorio root falso, e instala los binarios compilados y los archivos asociados a él, con **root** como propietario). El *fake root*, o árbol de subdirectorios que contiene el software compilado, se comprime en un archivo con la extensión `.pkg.tar.xz`, o un *paquete*. Cuando se invoca, pacman extrae el paquete (lo instala) en el directorio root real del sistema (`/`).

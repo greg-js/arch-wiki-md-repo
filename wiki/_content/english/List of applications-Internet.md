@@ -8,64 +8,66 @@
 
 *   [1 Internet](#Internet)
     *   [1.1 Network managers](#Network_managers)
-    *   [1.2 Web browsers](#Web_browsers)
-        *   [1.2.1 Console](#Console)
-        *   [1.2.2 Graphical](#Graphical)
-            *   [1.2.2.1 Gecko-based](#Gecko-based)
-                *   [1.2.2.1.1 Firefox forks](#Firefox_forks)
-            *   [1.2.2.2 Blink-based](#Blink-based)
-            *   [1.2.2.3 Webkit-based](#Webkit-based)
-            *   [1.2.2.4 Other](#Other)
-    *   [1.3 File sharing](#File_sharing)
-        *   [1.3.1 FTP](#FTP)
-            *   [1.3.1.1 FTP clients](#FTP_clients)
-            *   [1.3.1.2 FTP servers](#FTP_servers)
-        *   [1.3.2 BitTorrent clients](#BitTorrent_clients)
-            *   [1.3.2.1 Console](#Console_2)
-                *   [1.3.2.1.1 Command line / backend](#Command_line_.2F_backend)
-                *   [1.3.2.1.2 Console Interface](#Console_Interface)
-            *   [1.3.2.2 Graphical Interface](#Graphical_Interface)
-                *   [1.3.2.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
-                *   [1.3.2.2.2 libktorrent backend](#libktorrent_backend)
-                *   [1.3.2.2.3 others](#others)
-        *   [1.3.3 Other P2P networks](#Other_P2P_networks)
-        *   [1.3.4 Video downloaders](#Video_downloaders)
-    *   [1.4 Communication](#Communication)
-        *   [1.4.1 Email clients](#Email_clients)
-            *   [1.4.1.1 Console](#Console_3)
-            *   [1.4.1.2 Graphical](#Graphical_2)
-        *   [1.4.2 Instant messaging](#Instant_messaging)
-            *   [1.4.2.1 IRC clients](#IRC_clients)
-                *   [1.4.2.1.1 Console](#Console_4)
-                *   [1.4.2.1.2 Graphical](#Graphical_3)
-            *   [1.4.2.2 XMPP (Jabber)](#XMPP_.28Jabber.29)
-                *   [1.4.2.2.1 Console clients](#Console_clients)
-                *   [1.4.2.2.2 Graphical clients](#Graphical_clients)
-                *   [1.4.2.2.3 Servers](#Servers)
-            *   [1.4.2.3 Multi-protocol clients](#Multi-protocol_clients)
-                *   [1.4.2.3.1 Console](#Console_5)
-                *   [1.4.2.3.2 Graphical](#Graphical_4)
-            *   [1.4.2.4 Lan messengers](#Lan_messengers)
-        *   [1.4.3 VoIP / Softphone](#VoIP_.2F_Softphone)
-            *   [1.4.3.1 Clients](#Clients)
-                *   [1.4.3.1.1 SIP](#SIP)
-                *   [1.4.3.1.2 IAX2](#IAX2)
-                *   [1.4.3.1.3 Skype](#Skype)
-                *   [1.4.3.1.4 Other](#Other_2)
-                *   [1.4.3.1.5 Multi-protocol](#Multi-protocol)
-            *   [1.4.3.2 Utilities](#Utilities)
-        *   [1.4.4 Speech recognition](#Speech_recognition)
-    *   [1.5 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
-        *   [1.5.1 News aggregators](#News_aggregators)
-            *   [1.5.1.1 Console](#Console_6)
-            *   [1.5.1.2 Graphical](#Graphical_5)
-        *   [1.5.2 Podcast clients](#Podcast_clients)
-        *   [1.5.3 Usenet newsreaders & newsgrabbers](#Usenet_newsreaders_.26_newsgrabbers)
-        *   [1.5.4 Blog software](#Blog_software)
-        *   [1.5.5 Microblogging clients](#Microblogging_clients)
-    *   [1.6 Pastebin clients](#Pastebin_clients)
-    *   [1.7 Bitcoin](#Bitcoin)
-    *   [1.8 Surveying](#Surveying)
+    *   [1.2 VPN clients](#VPN_clients)
+    *   [1.3 Web browsers](#Web_browsers)
+        *   [1.3.1 Console](#Console)
+        *   [1.3.2 Graphical](#Graphical)
+            *   [1.3.2.1 Gecko-based](#Gecko-based)
+                *   [1.3.2.1.1 Firefox forks](#Firefox_forks)
+            *   [1.3.2.2 Blink-based](#Blink-based)
+            *   [1.3.2.3 Webkit-based](#Webkit-based)
+                *   [1.3.2.3.1 Browsers based on webkitgtk/webkitgtk2/qtwebkit](#Browsers_based_on_webkitgtk.2Fwebkitgtk2.2Fqtwebkit)
+            *   [1.3.2.4 Other](#Other)
+    *   [1.4 File sharing](#File_sharing)
+        *   [1.4.1 FTP](#FTP)
+            *   [1.4.1.1 FTP clients](#FTP_clients)
+            *   [1.4.1.2 FTP servers](#FTP_servers)
+        *   [1.4.2 BitTorrent clients](#BitTorrent_clients)
+            *   [1.4.2.1 Console](#Console_2)
+                *   [1.4.2.1.1 Command line / backend](#Command_line_.2F_backend)
+                *   [1.4.2.1.2 Console Interface](#Console_Interface)
+            *   [1.4.2.2 Graphical Interface](#Graphical_Interface)
+                *   [1.4.2.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
+                *   [1.4.2.2.2 libktorrent backend](#libktorrent_backend)
+                *   [1.4.2.2.3 others](#others)
+        *   [1.4.3 Other P2P networks](#Other_P2P_networks)
+        *   [1.4.4 Video downloaders](#Video_downloaders)
+    *   [1.5 Communication](#Communication)
+        *   [1.5.1 Email clients](#Email_clients)
+            *   [1.5.1.1 Console](#Console_3)
+            *   [1.5.1.2 Graphical](#Graphical_2)
+        *   [1.5.2 Instant messaging](#Instant_messaging)
+            *   [1.5.2.1 IRC clients](#IRC_clients)
+                *   [1.5.2.1.1 Console](#Console_4)
+                *   [1.5.2.1.2 Graphical](#Graphical_3)
+            *   [1.5.2.2 XMPP (Jabber)](#XMPP_.28Jabber.29)
+                *   [1.5.2.2.1 Console clients](#Console_clients)
+                *   [1.5.2.2.2 Graphical clients](#Graphical_clients)
+                *   [1.5.2.2.3 Servers](#Servers)
+            *   [1.5.2.3 Multi-protocol clients](#Multi-protocol_clients)
+                *   [1.5.2.3.1 Console](#Console_5)
+                *   [1.5.2.3.2 Graphical](#Graphical_4)
+            *   [1.5.2.4 Lan messengers](#Lan_messengers)
+        *   [1.5.3 VoIP / Softphone](#VoIP_.2F_Softphone)
+            *   [1.5.3.1 Clients](#Clients)
+                *   [1.5.3.1.1 SIP](#SIP)
+                *   [1.5.3.1.2 IAX2](#IAX2)
+                *   [1.5.3.1.3 Skype](#Skype)
+                *   [1.5.3.1.4 Other](#Other_2)
+                *   [1.5.3.1.5 Multi-protocol](#Multi-protocol)
+            *   [1.5.3.2 Utilities](#Utilities)
+        *   [1.5.4 Speech recognition](#Speech_recognition)
+    *   [1.6 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
+        *   [1.6.1 News aggregators](#News_aggregators)
+            *   [1.6.1.1 Console](#Console_6)
+            *   [1.6.1.2 Graphical](#Graphical_5)
+        *   [1.6.2 Podcast clients](#Podcast_clients)
+        *   [1.6.3 Usenet newsreaders & newsgrabbers](#Usenet_newsreaders_.26_newsgrabbers)
+        *   [1.6.4 Blog software](#Blog_software)
+        *   [1.6.5 Microblogging clients](#Microblogging_clients)
+    *   [1.7 Pastebin clients](#Pastebin_clients)
+    *   [1.8 Bitcoin](#Bitcoin)
+    *   [1.9 Surveying](#Surveying)
 
 ## Internet
 
@@ -85,13 +87,23 @@
 
 	[https://wiki.gnome.org/Projects/NetworkManager](https://wiki.gnome.org/Projects/NetworkManager) || [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)
 
-*   **[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")** — Native [systemd](/index.php/Systemd "Systemd") daemon that manages network configuration. It includes support for basic network configuration through [udev](/index.php/Udev "Udev"). The service is available with _systemd_ > 210.
+*   **[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")** — Native [systemd](/index.php/Systemd "Systemd") daemon that manages network configuration. It includes support for basic network configuration through [udev](/index.php/Udev "Udev"). The service is available with *systemd* > 210.
 
 	[http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html](http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) || [systemd](https://www.archlinux.org/packages/?name=systemd)
 
 *   **[Wicd](/index.php/Wicd "Wicd")** — Wireless and wired connection manager with few dependencies. Comes with an ncurses interface, and a GTK interface [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk) is available.
 
 	[https://launchpad.net/wicd](https://launchpad.net/wicd) || [wicd](https://www.archlinux.org/packages/?name=wicd)
+
+### VPN clients
+
+*   **[OpenConnect](/index.php/OpenConnect "OpenConnect")** — Supports Cisco and Juniper VPNs.
+
+	[http://www.infradead.org/openconnect/](http://www.infradead.org/openconnect/) || [openconnect](https://www.archlinux.org/packages/?name=openconnect)
+
+*   **[PPTPClient](/index.php?title=PPTPClient&action=edit&redlink=1 "PPTPClient (page does not exist)")** — To connect to PPTP VPNs, like Microsoft VPNs (MPPE).
+
+	[http://pptpclient.sourceforge.net/](http://pptpclient.sourceforge.net/) || [pptpclient](https://www.archlinux.org/packages/?name=pptpclient)
 
 ### Web browsers
 
@@ -157,33 +169,73 @@ See also [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(softw
 
 See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(layout_engine) "wikipedia:Blink (layout engine)").
 
+*   **Brave** — Web browser that blocks ads and trackers by default.
+
+	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/)
+
 *   **[Chromium](/index.php/Chromium "Chromium")** — Web browser developed by Google, the open source project behind Google Chrome.
 
 	[http://www.chromium.org/](http://www.chromium.org/) || [chromium](https://www.archlinux.org/packages/?name=chromium)
+
+*   **Liri** — A minimalistic material design web browser written for Papyros.
+
+	[http://liriproject.me/browser](http://liriproject.me/browser) || [liri-browser](https://aur.archlinux.org/packages/liri-browser/)
 
 *   **[Opera](/index.php/Opera "Opera")** — Highly customizable browser with focuses on an adherence to web rendering standards.
 
 	[http://opera.com](http://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
 
+*   **Quill** — A simple web browser that hopefully won't leave you asking "Why is the RAM gone?".
+
+	[https://bitbucket.org/xiannox/quill](https://bitbucket.org/xiannox/quill) || [quill-git](https://aur.archlinux.org/packages/quill-git/)
+
+*   **Vivaldi** — An advanced browser made with the power user in mind.
+
+	[https://vivaldi.com/](https://vivaldi.com/) || [vivaldi](https://aur.archlinux.org/packages/vivaldi/)
+
+*   **Yandex.Browser** — Combines a minimal design with sophisticated technology to make the web faster, safer, and easier.
+
+	[http://browser.yandex.ru/beta/](http://browser.yandex.ru/beta/) || [yandex-browser](https://aur.archlinux.org/packages/yandex-browser/)
+
 ##### Webkit-based
 
 See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webkit").
+
+*   **[GNOME Web](/index.php/GNOME_Web "GNOME Web")** — Browser which uses the WebKitGTK+ rendering engine, part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
+
+	[https://wiki.gnome.org/Apps/Web/](https://wiki.gnome.org/Apps/Web/) || [epiphany](https://www.archlinux.org/packages/?name=epiphany)
+
+*   **Lariza** — A simple web browser using GTK+ 3, GLib and WebKit2GTK+.
+
+	[https://github.com/vain/lariza/](https://github.com/vain/lariza/) || [lariza-git](https://aur.archlinux.org/packages/lariza-git/)
+
+*   **Maxthon** — A browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier. The linux version of Maxthon has not been updated since September 2014.
+
+	[http://www.maxthon.cn/](http://www.maxthon.cn/) || [maxthon-browser](https://aur.archlinux.org/packages/maxthon-browser/)
+
+*   **Rainbow Lollipop** — The visual history browser.
+
+	[http://rainbow-lollipop.de/](http://rainbow-lollipop.de/) || [rainbow-lollipop-git](https://aur.archlinux.org/packages/rainbow-lollipop-git/)
+
+*   **Surf 2** — A simple web browser based on WebKit2GTK+.
+
+	[http://surf.suckless.org](http://surf.suckless.org) || [surf2](https://aur.archlinux.org/packages/surf2/)
+
+*   **Webby** — Allows to use web apps as regular desktop apps, integrated with the OS, without tabs and using the default system launcher.
+
+	[https://launchpad.net/webby-browser](https://launchpad.net/webby-browser) || [webby-browser-bzr](https://aur.archlinux.org/packages/webby-browser-bzr/)
+
+###### Browsers based on webkitgtk/webkitgtk2/qtwebkit
+
+**Warning:** The following browsers are based on one of three webkit ports that are today considered insecure and outdated. GTK+ browsers should be switching to webkit2gtk and Qt browsers to qt5-webengine (Blink). More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
 
 *   **[Arora](https://en.wikipedia.org/wiki/Arora_(browser) "wikipedia:Arora (browser)")** — Cross-platform web browser built using QtWebKit. Development stopped in January 2012.
 
 	[https://github.com/arora/arora](https://github.com/arora/arora) || [arora-git](https://aur.archlinux.org/packages/arora-git/)
 
-*   **Brave** — Web browser that blocks ads and trackers by default.
-
-	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/)
-
-*   **[dwb](/index.php/Dwb "Dwb")** — Lightweight, highly customizable web browser based on the WebKit engine with _vi_-like shortcuts and tiling layouts. As of October 2014 _dwb_ is [unmaintained](https://bitbucket.org/portix/dwb/pull-request/22/several-cleanups-to-increase-portability/diff#comment-3217936).
+*   **[dwb](/index.php/Dwb "Dwb")** — Lightweight, highly customizable web browser based on the WebKit engine with *vi*-like shortcuts and tiling layouts. As of October 2014 *dwb* is [unmaintained](https://bitbucket.org/portix/dwb/pull-request/22/several-cleanups-to-increase-portability/diff#comment-3217936).
 
 	[http://portix.bitbucket.org/dwb/](http://portix.bitbucket.org/dwb/) || [dwb](https://www.archlinux.org/packages/?name=dwb)
-
-*   **[GNOME Web](/index.php/GNOME_Web "GNOME Web")** — Browser which uses the WebKitGTK+ rendering engine, part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
-
-	[https://wiki.gnome.org/Apps/Web/](https://wiki.gnome.org/Apps/Web/) || [epiphany](https://www.archlinux.org/packages/?name=epiphany)
 
 *   **[Jumanji](/index.php/Jumanji "Jumanji")** — Highly customizable and functional web browser.
 
@@ -192,10 +244,6 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 *   **[Luakit](/index.php/Luakit "Luakit")** — Highly configurable, micro-browser framework based on the WebKit engine and the GTK+ toolkit. It is very fast, extensible by Lua and licensed under the GNU GPLv3 license.
 
 	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://www.archlinux.org/packages/?name=luakit)
-
-*   **Maxthon** — A browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier.
-
-	[http://www.maxthon.cn/](http://www.maxthon.cn/) || [maxthon-browser](https://aur.archlinux.org/packages/maxthon-browser/)
 
 *   **[Midori](https://en.wikipedia.org/wiki/Midori_(web_browser) "wikipedia:Midori (web browser)")** — Lightweight web browser based on GTK+ and WebKit.
 
@@ -213,17 +261,9 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 	[https://github.com/The-Compiler/qutebrowser](https://github.com/The-Compiler/qutebrowser) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
 
-*   **[Rekonq](https://en.wikipedia.org/wiki/Rekonq "wikipedia:Rekonq")** — WebKit-based web browser for KDE.
+*   **[Rekonq](https://en.wikipedia.org/wiki/Rekonq) "wikipedia:Rekonq)")** — WebKit-based web browser for KDE.
 
 	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://www.archlinux.org/packages/?name=rekonq)
-
-*   **Sb** — Very lightweight WebKit-based browser that uses keybindings to perform most things the URL bar would usually do.
-
-	[https://github.com/mutantturkey/sb/](https://github.com/mutantturkey/sb/) || [sb-git](https://aur.archlinux.org/packages/sb-git/)
-
-*   **SlimBoat** — Fast, free secure and powerful web browser based on QtWebkit.
-
-	[http://www.slimboat.com/](http://www.slimboat.com/) || [slimboat](https://aur.archlinux.org/packages/slimboat/)
 
 *   **Surf** — Lightweight WebKit-based browser, which follows the [suckless ideology](http://suckless.org/philosophy) (basically, the browser itself is a single C source file).
 
@@ -241,7 +281,7 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 	[http://sourceforge.net/apps/trac/vimprobable/](http://sourceforge.net/apps/trac/vimprobable/) || [vimprobable-git](https://aur.archlinux.org/packages/vimprobable-git/)
 
-*   **[Xombrero](https://en.wikipedia.org/wiki/Xombrero "wikipedia:Xombrero") (formerly known as _xxxterm_)** — Webkit minimalist web browser with sophisticated security features designed-in, BSD style.
+*   **[Xombrero](https://en.wikipedia.org/wiki/Xombrero "wikipedia:Xombrero") (formerly known as *xxxterm*)** — Webkit minimalist web browser with sophisticated security features designed-in, BSD style.
 
 	[https://opensource.conformal.com/wiki/xombrero](https://opensource.conformal.com/wiki/xombrero) || [xombrero-git](https://aur.archlinux.org/packages/xombrero-git/)
 
@@ -465,7 +505,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 	[http://gnus.org/](http://gnus.org/) || [emacs-gnus-git](https://aur.archlinux.org/packages/emacs-gnus-git/)
 
-*   **[S-nail](/index.php/S-nail "S-nail")** — a mail processing system with a command syntax reminiscent of _ed_ with lines replaced by messages. Provides the functionality of [mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx").
+*   **[S-nail](/index.php/S-nail "S-nail")** — a mail processing system with a command syntax reminiscent of *ed* with lines replaced by messages. Provides the functionality of [mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx").
 
 	[http://sourceforge.net/projects/s-nail/](http://sourceforge.net/projects/s-nail/) || [s-nail](https://www.archlinux.org/packages/?name=s-nail)
 
@@ -481,7 +521,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 	[http://www.nongnu.org/nmh/](http://www.nongnu.org/nmh/) || [nmh](https://aur.archlinux.org/packages/nmh/) [nmh-git](https://aur.archlinux.org/packages/nmh-git/)
 
-*   **[notmuch](/index.php/Notmuch "Notmuch")** — A fast mail indexer built on top of _xapian_.
+*   **[notmuch](/index.php/Notmuch "Notmuch")** — A fast mail indexer built on top of *xapian*.
 
 	[http://notmuchmail.org/](http://notmuchmail.org/) || [notmuch](https://www.archlinux.org/packages/?name=notmuch) [notmuch-vim](https://www.archlinux.org/packages/?name=notmuch-vim) [notmuch-mutt](https://www.archlinux.org/packages/?name=notmuch-mutt)
 
@@ -751,7 +791,7 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 	[http://emesene.org/](http://emesene.org/) || [emesene](https://aur.archlinux.org/packages/emesene/)
 
-*   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) "wikipedia:Empathy (software)")** — GNOME instant messaging client using the [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)") framework.
+*   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) framework.
 
 	[https://wiki.gnome.org/Apps/Empathy](https://wiki.gnome.org/Apps/Empathy) || [empathy](https://www.archlinux.org/packages/?name=empathy)
 
@@ -767,7 +807,7 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
 
-*   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — KDE instant messaging client using the [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)") framework. Meant as a replacement for Kopete.
+*   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — KDE instant messaging client using the [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) framework. Meant as a replacement for Kopete.
 
 	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [telepathy-kde-meta](https://www.archlinux.org/packages/?name=telepathy-kde-meta)
 
@@ -993,7 +1033,7 @@ Some [email clients](#Email_clients) also support NNTP. This section mainly list
 
 See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/List_of_Usenet_newsreaders "wikipedia:List of Usenet newsreaders"), [Wikipedia:Comparison of Usenet newsreaders](https://en.wikipedia.org/wiki/Comparison_of_Usenet_newsreaders "wikipedia:Comparison of Usenet newsreaders").
 
-*   **lottanzb** — A _SABnzbd+_ (Usenet binary downloader) GUI front-end written in PyGTK
+*   **lottanzb** — A *SABnzbd+* (Usenet binary downloader) GUI front-end written in PyGTK
 
 	[http://www.lottanzb.org/](http://www.lottanzb.org/) || [lottanzb](https://aur.archlinux.org/packages/lottanzb/)
 
@@ -1123,7 +1163,7 @@ See also [Wikipedia:Pastebin](https://en.wikipedia.org/wiki/Pastebin "wikipedia:
 
 Pastebin services are often used to quote text or images while collaborating and troubleshooting. Pastebin clients provide a convenient way to post from the command line.
 
-**Tip:** You can access the [ptpb.pw](https://ptpb.pw), [sprunge.us](http://sprunge.us/) and [ix.io](http://ix.io/) pastebins using curl. For example pipe the output of a command to ptpb: `_command_ | curl -F c=@- https://ptpb.pw ` or upload a file (including images): `curl -F c=@- https://ptpb.pw < _file_` 
+**Tip:** You can access the [ptpb.pw](https://ptpb.pw), [sprunge.us](http://sprunge.us/) and [ix.io](http://ix.io/) pastebins using curl. For example pipe the output of a command to ptpb: `*command* | curl -F c=@- https://ptpb.pw ` or upload a file (including images): `curl -F c=@- https://ptpb.pw < *file*` 
 
 **Note:** [pastebin.com](http://pastebin.com/) is blocked for some people and has a history of annoying issues (javascript, adverts, poor formatting, etc).
 

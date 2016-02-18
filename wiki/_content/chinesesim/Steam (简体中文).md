@@ -1,6 +1,6 @@
 引自 [维基百科](https://wiki.archlinux.org/index.php/Wikipedia:Steam_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "zh-cn:Wikipedia:Steam"):
 
-	_Steam是美国维尔福于2003年9月12日推出的电子软件分发、数字版权管理及社交系统，它用于数字软件及游戏的发布销售与后续更新，支持Windows、Mac OS和Linux等操作系统，目前是全球最大的数字游戏平台。_
+	*Steam是美国维尔福于2003年9月12日推出的电子软件分发、数字版权管理及社交系统，它用于数字软件及游戏的发布销售与后续更新，支持Windows、Mac OS和Linux等操作系统，目前是全球最大的数字游戏平台。*
 
 [Steam](http://store.steampowered.com/about/) is best known as the platform needed to play Source Engine games (e.g. Half-Life 2, Counter-Strike). Today it offers many games from many other developers.
 
@@ -58,7 +58,6 @@ Steam启动时会覆盖掉 [鼠标主题](/index.php/Cursor_themes_(%E7%AE%80%E4
 为了解决问题，首先获得root权限，然后按照下面提示创建文件 `/usr/share/icons/default/index.theme` (如果没有目录 `/usr/share/icons/default` 请自行创建):
 
  `/usr/share/icons/default/index.theme` 
-
 ```
 [Icon Theme]
 Inherits=Adwaita
@@ -123,7 +122,7 @@ Uncomment `en_US.UTF-8 UTF-8` in `/etc/locale.gen` and then run `locale-gen` as 
 
 ### The game crashes immediately after start
 
-If your game crashes immediately, try disabling: _"Enable the Steam Overlay while in-game"_ in game _Properties_.
+If your game crashes immediately, try disabling: *"Enable the Steam Overlay while in-game"* in game *Properties*.
 
 ### OpenGL not using direct rendering
 
@@ -188,7 +187,7 @@ primusrun %command% -w 1920 -h 1080
 If you are running the [Linux-ck](/index.php/Linux-ck "Linux-ck") kernel, you may have some success in reducing overall latencies and improving performance by launching the game in SCHED_ISO (low latency, avoid choking CPU) via [schedtool](https://www.archlinux.org/packages/?name=schedtool)
 
 ```
-# schedtool -I -e %command% _other arguments_
+# schedtool -I -e %command% *other arguments*
 
 ```
 

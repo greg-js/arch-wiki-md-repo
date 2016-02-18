@@ -50,7 +50,7 @@ exclude = lost\+found/, /proc/, /dev/, /sys/
 
 The rest of the comments about the config file can be skipped on the first reading. They describe various other options you can use if the hdup.conf file:
 
-*   You can have more than one _profile_ (the one used above is named **my-comp**). This means that you can have a couple of independent backup schemes. For instance, you might want to have another one for your webpages:
+*   You can have more than one *profile* (the one used above is named **my-comp**). This means that you can have a couple of independent backup schemes. For instance, you might want to have another one for your webpages:
 
 ```
 [my-webpages]
@@ -212,7 +212,7 @@ hdup monthly my-comp @username@myserver.com
 
 ## Troubleshooting
 
-On Debian Etch, I had to add the _-P_ option when running _hdup_. This solved the following error:
+On Debian Etch, I had to add the *-P* option when running *hdup*. This solved the following error:
 
 ```
 /bin/tar: /opt/backup/debian/etc/filelist: file name read contains null

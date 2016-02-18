@@ -28,14 +28,14 @@
     *   DNS(SEC) library **libldns**
     *   drill tool (like dig with DNSSEC support)
         *   can be used for basic DNSSEC validation. eg.:
-            *   Should success _(return 0)_:
-                *   **drill -TD nic.cz** _#valid DNSSEC key_
-                *   **drill -TD google.com** _#not signed domain_
-            *   Should fail _(simulating fraudent DNS records)_:
+            *   Should success *(return 0)*:
+                *   **drill -TD nic.cz** *#valid DNSSEC key*
+                *   **drill -TD google.com** *#not signed domain*
+            *   Should fail *(simulating fraudent DNS records)*:
                 *   **drill -TD rhybar.cz**
                 *   **drill -TD badsign-a.test.dnssec-tools.org**
             *   to use root-zone trust anchor add option **-k /usr/share/dnssec-trust-anchors/root-anchor.key**
-*   [dnssec-tools](https://www.archlinux.org/packages/?name=dnssec-tools) _(package is very experimental and volatile right now)_
+*   [dnssec-tools](https://www.archlinux.org/packages/?name=dnssec-tools) *(package is very experimental and volatile right now)*
     *   [https://www.dnssec-tools.org/](https://www.dnssec-tools.org/)
     *   another good library **libval** which can add DNSSEC support to lots of programs
         *   [https://www.dnssec-tools.org/wiki/index.php/DNSSEC_Applications](https://www.dnssec-tools.org/wiki/index.php/DNSSEC_Applications)

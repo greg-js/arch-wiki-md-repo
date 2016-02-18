@@ -118,7 +118,6 @@ $ source ~/.zshrc
 Tady je základní `.zshrc`, který by měl být pro začátek dostačující:
 
  `~/.zshrc` 
-
 ```
 autoload -U compinit promptinit
 compinit
@@ -137,7 +136,6 @@ Obecně řečeno, můžes skopírovat `/etc/profile` do `/etc/zprofile`.
 Ukázková konfigurace:
 
  `/etc/zprofile` 
-
 ```
 ###############
 # Zsh profil #
@@ -154,14 +152,13 @@ export LESS="-R"
 if [ `ls -A1 /etc/profile.d/
 ```
 
-**Note:** PKGBUILD Zshellu definuje že profil se nachází v _/etc/profile_, takže odkazování se na _/etc/zprofile_ může být poněkud zavádějící...
+**Note:** PKGBUILD Zshellu definuje že profil se nachází v */etc/profile*, takže odkazování se na */etc/zprofile* může být poněkud zavádějící...
 
 ### Doplňování příkazů
 
 Asi nejpůsobivější funkcí Zshellu jsou jeho rozšířené schopnosti doplňování. Přinejmenším budeš chtít povolit automatické doplňování ve tvém `.zshrc`. Pro povolení automatického doplňování, přidej následující:
 
  `~/.zshrc` 
-
 ```
 autoload -U compinit
 compinit
@@ -176,7 +173,6 @@ Pro automatické doplňování obohacené o možnost výběru kurzorovými šipk
 Zsh nečte obsah souboru `/etc/inputrc`, který říká co který příkaz zaslaný emulátorem terminálu znamená. Pro povolení standardních kláves, přidej něco jako toto:
 
  `~/.zshrc` 
-
 ```
 # Nastavení kláves
 bindkey "\e[1~" beginning-of-line
@@ -210,7 +206,6 @@ bindkey '^i' expand-or-complete-prefix
 Tady je rychlý a jednoduchý způsob jak nastavit barevnou výzvu příkazového řádku. Ujisti se že výzva je nastavena na autoload ve tvém `.zshrc`. Toho může být dosáhnuto přídáním:
 
  `~/.zshrc` 
-
 ```
 autoload -U promptinit
 promptinit
@@ -235,7 +230,6 @@ $ prompt walters
 Tohle je ukázka rozšířeného `.zshrc`:
 
  `~/.zshrc` 
-
 ```
 ###########################################################        
 # Vlastnosti Zsh
@@ -365,10 +359,9 @@ Zde je seznam `.zshrc` souborů. Klidně přidej svůj vlastní:
 
 The latest versions of Zsh support unicode characters. To enable it, just rebuild the package with the [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). Poslední verze Zsh podporují unicode znaky. Pro jejich povolení znovu sestvat balík s pomocí [Arch Build System](/index.php/Arch_Build_System "Arch Build System").
 
-A přidej volbu _--enable-multibyte_ do:
+A přidej volbu *--enable-multibyte* do:
 
  `PKGBUILD` 
-
 ```
 build() {
 cd $startdir/src/$pkgname-$pkgver

@@ -35,7 +35,7 @@ Debería usted condiderar también el uso de SuExec si pretende tener varias cue
 
 #### Añadiéndo el módulo SuExec a Apache
 
-*   cargue el módulo SuExec en _/etc/httpd/conf/httpd.conf_ así
+*   cargue el módulo SuExec en */etc/httpd/conf/httpd.conf* así
 
 ```
 LoadModule suexec_module        lib/apache/mod_suexec.so
@@ -52,7 +52,7 @@ LoadModule suexec_module        lib/apache/mod_suexec.so
 
 #### Establecer un servidor virtual que utilice SuExec
 
-Una manera de hacerlo es directamnete en el archivo _/etc/httpd/conf/httpd.conf_ pero le sugiero que use un archivo diferente si pretende crear más de una pareja de servidores virtuales. De cualquier manera, un servidor virtual que se supone que utiliza SuExec puede ser algo así:
+Una manera de hacerlo es directamnete en el archivo */etc/httpd/conf/httpd.conf* pero le sugiero que use un archivo diferente si pretende crear más de una pareja de servidores virtuales. De cualquier manera, un servidor virtual que se supone que utiliza SuExec puede ser algo así:
 
 ```
 <VirtualHost 192.168.0.1:80>
@@ -80,7 +80,7 @@ Una manera de hacerlo es directamnete en el archivo _/etc/httpd/conf/httpd.conf_
 
 #### Deshabilitando el directorio "DocumentRoot" por defecto
 
-Para hacer más segura aún su configuración puede deshabilitar el directorio _DocumentRoot_ por defecto para que Apache no ejecute nada como lo hace el mismo superuser. Este procedimiento no lo deshabilita realmente, si no que apunta a un lugar donde ya no es accesible remotamente. Se puede lograr esto fácilemente reemplazando su _ServerName_ por defecto con lo siguiente:
+Para hacer más segura aún su configuración puede deshabilitar el directorio *DocumentRoot* por defecto para que Apache no ejecute nada como lo hace el mismo superuser. Este procedimiento no lo deshabilita realmente, si no que apunta a un lugar donde ya no es accesible remotamente. Se puede lograr esto fácilemente reemplazando su *ServerName* por defecto con lo siguiente:
 
 ```
  ServerName localhost:80

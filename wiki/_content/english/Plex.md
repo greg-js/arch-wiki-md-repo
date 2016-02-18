@@ -100,12 +100,12 @@ If you share your libraries with some friends, but want the data to go through y
 
 #### How to
 
-1.  Go to your vpn provider settings and ask for a port. _(We're going to assume ours gave us the port 11652)_
-2.  Then add the following command to your boot sequence _(rc.local for example)_
+1.  Go to your vpn provider settings and ask for a port. *(We're going to assume ours gave us the port 11652)*
+2.  Then add the following command to your boot sequence *(rc.local for example)*
 
     	`# iptables -t nat -A PREROUTING -i tun0 -p tcp --dport 11652 -j REDIRECT --to-ports 32400`
 
-    	_(We're going to assume you're using the tun0 interface for openvpn)_
+    	*(We're going to assume you're using the tun0 interface for openvpn)*
 
 3.  Finally, go to your plex server settings, enable advanced settings and define the custom port at 11652
 

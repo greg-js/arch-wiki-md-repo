@@ -121,7 +121,6 @@ To monitor for all possible SMART errors on all disks:
 To monitor for all possible SMART errors on `/dev/sda` and `/dev/sdb`, and ignore all other devices:
 
  `/etc/smartd.conf` 
-
 ```
 /dev/sda -a
 /dev/sdb -a
@@ -133,7 +132,6 @@ To monitor for all possible SMART errors on externally connected disks (USB-back
 First, you will have to get the UUID of the disk to monitor: `ls -lah /dev/disk/by-uuid/` now look for the disk you want to Monitor
 
  `ls -lah /dev/disk/by-uuid/` 
-
 ```
 lrwxrwxrwx 1 root root   9 Nov  5 22:41 820cdd8a-866a-444d-833c-1edb0f4becac -> ../../sde
 lrwxrwxrwx 1 root root  10 Nov  5 22:41 b51b87f3-425e-4fe7-883f-f4ff1689189e -> ../../sdf2
@@ -145,7 +143,6 @@ lrwxrwxrwx 1 root root  10 Nov  5 22:41 fe9e886a-8031-439f-a909-ad06c494fadb -> 
 I know that my USB disk attached to /dev/sde during boot. Now to tell SMARTd to monitor that disk simply use the `/dev/disk/by-uuid/` path.
 
  `/etc/smartd.conf` 
-
 ```
 /dev/disk/by-uuid/820cdd8a-866a-444d-833c-1edb0f4becac -a
 

@@ -44,8 +44,8 @@ Linux-ck обычно следует за свежими версиями ядр
 Пакет [linux-ck](https://aur.archlinux.org/packages/linux-ck/) устанавливается так же, как и любой другой пакет. Пользователи могут настраивать пакет с помощью `PKBUILD`:
 
 *   Использование nconfig для настройки
-*   Компиляция минимального набора модулей с помощью _localmodconfig_
-*   Использование стандартного _.config_
+*   Компиляция минимального набора модулей с помощью *localmodconfig*
+*   Использование стандартного *.config*
 *   Включение BFQ I/O scheduler по умолчанию
 
 Более подробная информация содержится в самом `PKBUILD` в виде комментариев.
@@ -58,17 +58,17 @@ Linux-ck обычно следует за свежими версиями ядр
 
 **Обратите внимание:** В репозитории содержатся пакеты, в которых BFQ включен как модуль. О том, как включить его, читайте ниже
 
-Для подписи пакета используется [публичный ключ Graysky](http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x6D605D846176ED4B). _pacman_ четвертой версии автоматически получит ключ, но если этого не произошло, вы можете сделать это вручную с помощью ссылки.
+Для подписи пакета используется [публичный ключ Graysky](http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x6D605D846176ED4B). *pacman* четвертой версии автоматически получит ключ, но если этого не произошло, вы можете сделать это вручную с помощью ссылки.
 
 #### Виды пакетов
 
 Репозиторий содержит generic пакет а также пакеты для конкретных CPU.
 
-_GENERIC_
+*GENERIC*
 
 *   **ck-generic** ==> Подходит для любых процессоров как и основное ядро ARCH. будет работать как на intel так и на amd.
 
-_CPU SPECIFIC AND OPTIMIZED_
+*CPU SPECIFIC AND OPTIMIZED*
 
 *   **ck-atom** ==> Ядро оптимизированное для работы на Intel Atom.
 *   **ck-corex** ==> Ядро оптимизированное для процессоров семейства Intel Core 2 (Core 2/Newer Xeon/Mobile Celeron based on Core2). А также Core i3/i5/i7 (Gulftown, Bloomfield, Lynnfield, Clarksfield, Arrendale, and Sandy/Ivybridge CPUs)
@@ -87,7 +87,7 @@ Server = [http://repo-ck.com/$arch](http://repo-ck.com/$arch)
 
 ```
 
-2) Обновитесь с помощью _pacman -Syy_
+2) Обновитесь с помощью *pacman -Syy*
 
 Чтобы увидеть содержимое репозитория используйте:
 
@@ -119,7 +119,7 @@ Enter a selection (default=all):
 #### Предлагаемые пакеты
 
 | **linux-ck and headers** | **Группа** | **x86_64** | **i686** | **Семейство процессоров** |
-| [linux-ck](https://aur.archlinux.org/packages.php?ID=50911) | ck-generic | Yes | Yes | Compiled with generic optimizations suitable for _any_ compatible CPU just like the official ARCH linux package. |
+| [linux-ck](https://aur.archlinux.org/packages.php?ID=50911) | ck-generic | Yes | Yes | Compiled with generic optimizations suitable for *any* compatible CPU just like the official ARCH linux package. |
 | linux-ck-atom | ck-atom | Yes | Yes | Intel Atom platform specific optimizations. |
 | linux-ck-corex | ck-corex | Yes | Yes | Intel Core 2-family specific optimizations including Dual and Quads (Core 2/Newer Xeon/Mobile Celeron based on Core2) as well as Intel Core i3/i5/i7. |
 | linux-ck-kx | ck-kx | Yes | Yes | AMD K7 (Athlon/Athlon XP), K8 (Athlon 64, Athlon 64 X2, 23xx Quad-Core Barcelona, Sempron, Sempron 64), and K10-family (Athlon X2 7x50, Phenom X3/X4, Phenom II, Athlon II X2/X3/X4, Sempron 64 (Socket AM3 only), 61xx Eight-Core Magny-Cours) specific optimizations. |
@@ -140,7 +140,7 @@ Enter a selection (default=all):
 | broadcom-wl-ck-p4 | ck-p4 | No | Yes |
 | broadcom-wl-ck-pentm | ck-pentm | N/A | Yes |
 
-_N/A = Недоступные._
+*N/A = Недоступные.*
 
 #### Как включить BFQ I/O Scheduler
 

@@ -94,7 +94,7 @@ MODULES="sisfb ac battery button processor thermal cdrom agpgart amd64-agp sis-a
 
 ### sisfb
 
-If you want to specify your own resolution using custom video driver, then you have to set _video_ option in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). For example if you want to user resolution 1280x800 with 32-bit color depth at 76Hz (which is recommended for [Acer Aspire 3000](/index.php/Acer_Aspire_3000 "Acer Aspire 3000")) then you can use this option:
+If you want to specify your own resolution using custom video driver, then you have to set *video* option in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). For example if you want to user resolution 1280x800 with 32-bit color depth at 76Hz (which is recommended for [Acer Aspire 3000](/index.php/Acer_Aspire_3000 "Acer Aspire 3000")) then you can use this option:
 
 ```
 video=sisfb:mode:1280x800x32,rate:76

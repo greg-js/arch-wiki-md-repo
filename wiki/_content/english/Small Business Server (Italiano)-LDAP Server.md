@@ -45,7 +45,7 @@ OpenLDAP è un progetto complesso, qui non fornirò nessuna informazione "supple
 
 ### /etc/openldap/slapd.conf
 
-La parte server di openLDAP và configurata editando una serie di file, per primo il file _/etc/openldap/slapd.conf_
+La parte server di openLDAP và configurata editando una serie di file, per primo il file */etc/openldap/slapd.conf*
 
 ```
 sudo nano /etc/openldap/slapd.conf
@@ -75,7 +75,7 @@ index   uid     eq
 
 ```
 
-Attenzione al parametro _rootpw_: la stringa che vedete corrisponde all' [hash](http://it.wikipedia.org/wiki/Hash) [MD5](http://it.wikipedia.org/wiki/MD5) della password che ho deciso, nel mio caso _archimede_, che ho ottenuto così:
+Attenzione al parametro *rootpw*: la stringa che vedete corrisponde all' [hash](http://it.wikipedia.org/wiki/Hash) [MD5](http://it.wikipedia.org/wiki/MD5) della password che ho deciso, nel mio caso *archimede*, che ho ottenuto così:
 
 ```
 slappasswd -h {MD5} -s archimede
@@ -93,7 +93,7 @@ hosts: files dns ldap
 
 ```
 
-specifica che le funzioni di ricerca degli host dovrebbero prima guardare nel file locale /etc/hosts, di seguito fare una richiesta al servizio dei nomi di dominio [DNS](http://it.wikipedia.org/wiki/Domain_Name_System) ed infine utilizzare il server ldap. A quel punto, se nessuna corrispondenza è stata trovata, viene riportato un errore. _Questo file deve essere leggibile da ogni utente!_ Dobbiamo istruire _nsswitch_ al fine di fargli usare il nostro server LDAP per la risoluzione perlomeno delle password. Per ovviare ad un [fastidioso baco di udev](https://bugs.archlinux.org/task/3369) (o di nsswitch, non saprei) creiamo due file che poi scambieramo al boot (vedi più avanti). Prima il file che non utilizza ldap :
+specifica che le funzioni di ricerca degli host dovrebbero prima guardare nel file locale /etc/hosts, di seguito fare una richiesta al servizio dei nomi di dominio [DNS](http://it.wikipedia.org/wiki/Domain_Name_System) ed infine utilizzare il server ldap. A quel punto, se nessuna corrispondenza è stata trovata, viene riportato un errore. *Questo file deve essere leggibile da ogni utente!* Dobbiamo istruire *nsswitch* al fine di fargli usare il nostro server LDAP per la risoluzione perlomeno delle password. Per ovviare ad un [fastidioso baco di udev](https://bugs.archlinux.org/task/3369) (o di nsswitch, non saprei) creiamo due file che poi scambieramo al boot (vedi più avanti). Prima il file che non utilizza ldap :
 
 ```
 sudo nano /etc/nsswitch.file

@@ -152,7 +152,6 @@ As an example, here is how to bind the keys for volume control:
 2.  Crate a config file in your home directory with the following content:
 
  `~/.xbindkeysrc` 
-
 ```
  "amixer sset Master 2+ &"
      m:0x0 + c:176

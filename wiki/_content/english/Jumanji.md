@@ -1,4 +1,4 @@
-[jumanji](http://pwmt.org/projects/jumanji/) is a web browser that provides a minimalistic and space saving interface as well as an easy usage that mainly focuses on keyboard interaction like _vimperator_ does.
+[jumanji](http://pwmt.org/projects/jumanji/) is a web browser that provides a minimalistic and space saving interface as well as an easy usage that mainly focuses on keyboard interaction like *vimperator* does.
 
 ## Contents
 
@@ -63,7 +63,7 @@ bmap ^DD$ quit
 
 ```
 
-**Note:** Latest version seems to use "proxy localhost:8118" instead of "_set_ proxy localhost:8118".
+**Note:** Latest version seems to use "proxy localhost:8118" instead of "*set* proxy localhost:8118".
 
 ## Commands
 

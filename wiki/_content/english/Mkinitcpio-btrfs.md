@@ -3,7 +3,7 @@ Some of Btrfs's neat features like non-volatile rollback or automatic mounting o
 **Note:**
 
 *   This article assumes that you are creating a fresh install.
-*   Arch's default mkinitcpio package contains a standard _btrfs_ hook, which is enough to get multi-device ([RAID](/index.php/RAID "RAID")) support. Beside that, the kernel is capable of booting a single-device btrfs root without any hook.
+*   Arch's default mkinitcpio package contains a standard *btrfs* hook, which is enough to get multi-device ([RAID](/index.php/RAID "RAID")) support. Beside that, the kernel is capable of booting a single-device btrfs root without any hook.
 
 ## Contents
 
@@ -18,12 +18,12 @@ Some of Btrfs's neat features like non-volatile rollback or automatic mounting o
 
 **Warning:**
 
-*   Be aware of the differences between _partitions_ and _sub-volumes_.
-*   Having a separate _/boot_ **partition** is not supported by [mkinitcpio-btrfs](https://aur.archlinux.org/packages/mkinitcpio-btrfs/)
+*   Be aware of the differences between *partitions* and *sub-volumes*.
+*   Having a separate */boot* **partition** is not supported by [mkinitcpio-btrfs](https://aur.archlinux.org/packages/mkinitcpio-btrfs/)
 *   kexec is used to reload the kernel from the root partition to make sure it is rolled back also.
-*   _/boot_ **can** be on a sub-volume within your `__active` sub-volume.
+*   */boot* **can** be on a sub-volume within your `__active` sub-volume.
 
-Create a _snapshot_ of the current root directory. Creating a snapshot automatically creates a new sub-volume. Name this snapshot `__active`. Later on, this will serve as the system's new root directory.
+Create a *snapshot* of the current root directory. Creating a snapshot automatically creates a new sub-volume. Name this snapshot `__active`. Later on, this will serve as the system's new root directory.
 
 ```
 # cd /mnt

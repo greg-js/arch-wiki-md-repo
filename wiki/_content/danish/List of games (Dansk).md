@@ -42,7 +42,7 @@ Der findes flere spil miljøer for at spille spil i Linux:
 
 ## Action og eventyr
 
-*   '_**Astromenace'**_ — AstroMenace is a modern 3D scrolling space shooter with ship upgrade possibilities
+*   '***Astromenace'*** — AstroMenace is a modern 3D scrolling space shooter with ship upgrade possibilities
 
 	[http://www.viewizard.com/download.php](http://www.viewizard.com/download.php) || [astromenace](https://www.archlinux.org/packages/?name=astromenace).
 
@@ -50,7 +50,7 @@ Der findes flere spil miljøer for at spille spil i Linux:
 
 	[http://www.parallelrealities.co.uk/projects/blobAndConquer.php](http://www.parallelrealities.co.uk/projects/blobAndConquer.php) || [blobwars](https://www.archlinux.org/packages/?name=blobwars)
 
-*   '_**Bloodridge'**_ — Java based, 3d adventure fantasy game
+*   '***Bloodridge'*** — Java based, 3d adventure fantasy game
 
 	[http://www.hayles.demon.co.uk/bloodridge/bloodridge.html](http://www.hayles.demon.co.uk/bloodridge/bloodridge.html) || No package
 
@@ -72,7 +72,7 @@ Der findes flere spil miljøer for at spille spil i Linux:
 
 ## Arcade
 
-*   [Barrage](http://lgames.sourceforge.net/index.php?project=Barrage) - Violent _point-and-click_ shooting game with nice effects
+*   [Barrage](http://lgames.sourceforge.net/index.php?project=Barrage) - Violent *point-and-click* shooting game with nice effects
 *   [Bomberclone](http://bomberclone.sourceforge.net/homepage/) - Free Bomberman-like game for Linux and Windows. The rules of the game are simple: run though a level and bomb other players.
 *   [Ceferino (spanish)](http://www.losersjuegos.com.ar/juegos/ceferino) - Action game similar to Super Pang
 *   [Cosmic Trip](http://www.gagaplay.com/cosmictrip/cosmictrip.jnlp) - Fast 3D shooter featuring smooth, psychedelic graphics, fast and addictive gameplay, online high-scores, and free

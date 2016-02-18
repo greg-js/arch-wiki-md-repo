@@ -1,4 +1,4 @@
-VeryNice is a daemon, available in the [AUR](/index.php/AUR "AUR"), for dynamically adjusting the nice levels of executables. The nice level represents the priority of the executable when allocating CPU resources. Simply define executables for which responsiveness is important, like X or multimedia applications, as _goodexe_ in `/etc/verynice.conf`. Similarly, CPU-hungry executables running in the background, like make, can be defined as _badexe_. This prioritisation greatly improves system responsiveness under heavy load.
+VeryNice is a daemon, available in the [AUR](/index.php/AUR "AUR"), for dynamically adjusting the nice levels of executables. The nice level represents the priority of the executable when allocating CPU resources. Simply define executables for which responsiveness is important, like X or multimedia applications, as *goodexe* in `/etc/verynice.conf`. Similarly, CPU-hungry executables running in the background, like make, can be defined as *badexe*. This prioritisation greatly improves system responsiveness under heavy load.
 
 ## Installation
 

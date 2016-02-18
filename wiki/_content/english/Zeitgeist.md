@@ -1,4 +1,4 @@
-[Zeitgeist](http://zeitgeist-project.com/) is a service which logs user activities and events, anywhere from files opened to websites visited or conversations held via email and more. It makes this information readily available for other applications to use in the form of timelines and statistics. See the [Wikipedia article](https://en.wikipedia.org/wiki/Zeitgeist_(framework) "wikipedia:Zeitgeist (framework)") for a more detailed description of Zeitgeist itself.
+[Zeitgeist](http://zeitgeist-project.com/) is a service which logs user activities and events, anywhere from files opened to websites visited or conversations held via email and more. It makes this information readily available for other applications to use in the form of timelines and statistics. See the [Wikipedia article](https://en.wikipedia.org/wiki/Zeitgeist_(framework) for a more detailed description of Zeitgeist itself.
 
 ## Installation
 

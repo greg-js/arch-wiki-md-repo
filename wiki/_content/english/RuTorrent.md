@@ -22,7 +22,7 @@ Install [rutorrent](https://aur.archlinux.org/packages/rutorrent/) from the AUR.
 
 Install and configure Apache with PHP according to the [LAMP](/index.php/LAMP "LAMP") page.
 
-*   Edit the _open_basedir_ value in /etc/php/php.ini to include:
+*   Edit the *open_basedir* value in /etc/php/php.ini to include:
 
 ```
 /etc/webapps/rutorrent/conf/:/usr/share/webapps/rutorrent/php/:/usr/share/webapps/rutorrent/
@@ -47,7 +47,7 @@ SCGIMount /RPC2 127.0.0.1:5000
 
 ```
 
-*   Lastly, add the ruTorrent folder to `/etc/httpd/conf/httpd.conf` with something similar to this anywhere after the inital _</Directory>_:
+*   Lastly, add the ruTorrent folder to `/etc/httpd/conf/httpd.conf` with something similar to this anywhere after the inital *</Directory>*:
 
 ```
 <IfModule alias_module>
@@ -83,7 +83,7 @@ ln -s /usr/share/webapps/rutorrent/ /usr/share/nginx/html/rutorrent
 
 ```
 
-*   Edit the _open_basedir_ value in /etc/php/php.ini to include:
+*   Edit the *open_basedir* value in /etc/php/php.ini to include:
 
 ```
 /etc/webapps/rutorrent/conf/:/usr/share/webapps/rutorrent/php/:/usr/share/webapps/rutorrent/

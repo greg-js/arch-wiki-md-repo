@@ -108,7 +108,7 @@ Véase el artículo de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page
 
 ### Herramientas de compresión
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [Comparison of file archivers](https://en.wikipedia.org/wiki/Comparison_of_file_archivers "wikipedia:Comparison of file archivers").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [Comparison of file archivers](https://en.wikipedia.org/wiki/Comparison_of_file_archivers "wikipedia:Comparison of file archivers").
 
 #### Consola
 
@@ -152,7 +152,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 ### Gestores de archivos
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [Comparison of file managers](https://en.wikipedia.org/wiki/Comparison_of_file_managers "wikipedia:Comparison of file managers").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [Comparison of file managers](https://en.wikipedia.org/wiki/Comparison_of_file_managers "wikipedia:Comparison of file managers").
 
 #### Consola
 
@@ -260,7 +260,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 ### Herramientas de integración y comparación de archivos
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [Comparison of file comparison tools](https://en.wikipedia.org/wiki/Comparison_of_file_comparison_tools "wikipedia:Comparison of file comparison tools").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [Comparison of file comparison tools](https://en.wikipedia.org/wiki/Comparison_of_file_comparison_tools "wikipedia:Comparison of file comparison tools").
 
 *   **Diffuse** — Herramienta de integración de texto pequeña y simple para el escritorio KDE.
 

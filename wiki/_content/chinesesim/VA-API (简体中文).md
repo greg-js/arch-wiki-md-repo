@@ -44,7 +44,7 @@
 
  `$ vainfo` 
 
-_VAEntrypointVLD_ 表示你可以解码该格式，_VAEntrypointEncSlice_ 表示你可以编码该格式。
+*VAEntrypointVLD* 表示你可以解码该格式，*VAEntrypointEncSlice* 表示你可以编码该格式。
 
 ### 配置
 
@@ -61,7 +61,7 @@ export LIBVA_DRIVER_NAME=vdpau
 
 安装 [gst-vaapi](https://www.archlinux.org/packages/?name=gst-vaapi) 软件包，它存在于[官方软件仓库](/index.php/Official_Repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official Repositories (简体中文)")。
 
- `$ gst-launch-1.0 playbin uri=file://_/path/to/foobar.mpeg_` 
+ `$ gst-launch-1.0 playbin uri=file://*/path/to/foobar.mpeg*` 
 
 如果发现了支持的格式，VA-API会自动被使用。
 
@@ -73,7 +73,7 @@ export LIBVA_DRIVER_NAME=vdpau
 
 安装 [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/) 软件包，它存在于[官方软件仓库](/index.php/Official_Repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official Repositories (简体中文)")。
 
- `$ mplayer -vo vaapi -va vaapi _foobar.mpeg_` 
+ `$ mplayer -vo vaapi -va vaapi *foobar.mpeg*` 
 
 *   **-vo** - 指定 vaapi 视频输出驱动
 *   **-va** - 指定 vaapi 视频解码驱动
@@ -82,11 +82,11 @@ export LIBVA_DRIVER_NAME=vdpau
 
 基于 MPlayer 的播放器:
 
-*   [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer): 开启硬件加速的方法: _编辑 > 首选项 > 播放器_, 并设置_视频输出_为 `vaapi`。
-*   [smplayer](https://www.archlinux.org/packages/?name=smplayer): 开启硬件加速的方法: _选项 > 首选项 > 常规 > 视频_, 并设置_输出驱动_为 `vaapi`。
+*   [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer): 开启硬件加速的方法: *编辑 > 首选项 > 播放器*, 并设置*视频输出*为 `vaapi`。
+*   [smplayer](https://www.archlinux.org/packages/?name=smplayer): 开启硬件加速的方法: *选项 > 首选项 > 常规 > 视频*, 并设置*输出驱动*为 `vaapi`。
 
 ### VLC media player
 
 安装 [vlc](https://www.archlinux.org/packages/?name=vlc) 软件包，它位于官方软件仓库。
 
-开启硬件加速的方法: _工具 > 首选项 > 输入 / 编解码器_, 然后设置 _硬件加速解码_ 为 `视频加速 (VA) API`。
+开启硬件加速的方法: *工具 > 首选项 > 输入 / 编解码器*, 然后设置 *硬件加速解码* 为 `视频加速 (VA) API`。

@@ -92,9 +92,7 @@ You can also control the brightness of the keyboard backlight through the `brigh
 # get maximum brightness value
 cat /sys/class/leds/asus::kbd_backlight/max_brightness
 ```
-
  `3` 
-
 ```
 # set to a particular value:
 echo 2 > /sys/class/leds/asus::kbd_backlight/brightness
@@ -279,7 +277,6 @@ There seems to be a problem whereby having an HDMI device plugged in at boot res
 Add the following script as root:
 
  `/usr/local/share/hdmi-plugged-startup` 
-
 ```
 #!/bin/bash
 

@@ -26,7 +26,6 @@ Before installing Xcompmgr, make sure you have installed and correctly configure
 If there is no output, add the `Composite` option to the `Extensions` section of xorg.conf:
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "Extensions"
         Option  "Composite" "true"
@@ -84,11 +83,11 @@ Although its practical use is limited, due to its slow performance, the `transse
 To set the transparency of a program window, make sure the desired program is already running, then execute:
 
 ```
-$ transset-df _opacity_
+$ transset-df *opacity*
 
 ```
 
-where _opacity_ is a number between **0** and **1**, 0 being transparent and 1 being opaque.
+where *opacity* is a number between **0** and **1**, 0 being transparent and 1 being opaque.
 
 Once execution, the mouse cursor will transform to a cross-hair. Click a window and its transparency will change to the value specified. For example, `transset-df 0.25` will set the target window to 25% opacity (75% transparency).
 
@@ -99,7 +98,6 @@ Once execution, the mouse cursor will transform to a cross-hair. Click a window 
 This script allows easy (re)starting and stopping of the compositing manager.
 
  `~/.bin/comp` 
-
 ```
 #!/bin/bash
 #
@@ -175,7 +173,7 @@ export XLIB_SKIP_ARGB_VISUALS=1
 
 ### Background turns light gray briefly after logging in (e.g. in Openbox)
 
-This is fixed by installing [hsetroot](https://aur.archlinux.org/packages/hsetroot/) and setting the background color by executing `hsetroot -solid "#000000"` (just type the code of the color you want instead of _#000000_) before `xcompmgr`.
+This is fixed by installing [hsetroot](https://aur.archlinux.org/packages/hsetroot/) and setting the background color by executing `hsetroot -solid "#000000"` (just type the code of the color you want instead of *#000000*) before `xcompmgr`.
 
 ### BadPicture request in awesome
 
@@ -201,4 +199,4 @@ hsetroot -solid "#000066"
 
 ```
 
-(you can replace _#000066_ with your color of choice).
+(you can replace *#000066* with your color of choice).

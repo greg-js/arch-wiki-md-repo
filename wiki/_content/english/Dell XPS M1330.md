@@ -239,28 +239,28 @@ Reboot, stare at the white frightening screen saying "BIOS update" for an endles
 
 Check this **[thread](http://forum.notebookreview.com/showthread.php?t=324392)** from NoteBook Review for detailed info.
 
-**A10** : _May '08_
+**A10** : *May '08*
 
 *   The only enhancement I noticed with this bios is that you can now eject a CD/DVD without freezing your system (this was really a weird behaviour !). **Please upgrade to A11 or A12 if you are currently using A10 !**
 
-**A11** : _Jun '08_
+**A11** : *Jun '08*
 
 *   Fixing [overheating issues](http://forum.notebookreview.com/showthread.php?t=264653) introduced with A10 bios.
 
-**A12** : _Jul '08_
+**A12** : *Jul '08*
 
 *   Other thermal enhancements. Temperatures are lower for me but the fan is always running.
 
-**A13** : _Oct '08_ (removed-from-the-official-list)
+**A13** : *Oct '08* (removed-from-the-official-list)
 
 *   Added support for new versions of Intel CPUs.
 *   Added support for 8GB memory.
 
-**A14** : _Nov '08_
+**A14** : *Nov '08*
 
 *   Added enhancement for Wifi sniffer function.
 
-**A15** : _Jan '09_
+**A15** : *Jan '09*
 
 *   Enhance `Fn+F8` function (probably only for Intel integrated graphics)
 *   Support for 8GB memory is... back!

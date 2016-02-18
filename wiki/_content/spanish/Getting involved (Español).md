@@ -1,4 +1,4 @@
-En biología, [mutualismo](https://en.wikipedia.org/wiki/es:Mutualismo_(biolog%C3%ADa) "wikipedia:es:Mutualismo (biología)") es la interacción entre dos organismos de la cual cada uno se beneficia. Este principio también se aplica a los miembros proactivos de la comunidad de Arch que quieran involucrarse y colaborar con su distribución de Linux preferida. Esta participación no sólo beneficia a los miembros de la comunidad y sus compañeros Archers, sino también a todos los usuarios del [software libre y de código abierto](https://en.wikipedia.org/wiki/es:Software_libre_y_de_c%C3%B3digo_abierto "wikipedia:es:Software libre y de código abierto").
+En biología, [mutualismo](https://en.wikipedia.org/wiki/es:Mutualismo_(biolog%C3%ADa) es la interacción entre dos organismos de la cual cada uno se beneficia. Este principio también se aplica a los miembros proactivos de la comunidad de Arch que quieran involucrarse y colaborar con su distribución de Linux preferida. Esta participación no sólo beneficia a los miembros de la comunidad y sus compañeros Archers, sino también a todos los usuarios del [software libre y de código abierto](https://en.wikipedia.org/wiki/es:Software_libre_y_de_c%C3%B3digo_abierto "wikipedia:es:Software libre y de código abierto").
 
 ## Contents
 
@@ -68,7 +68,7 @@ Puede encontrar la manera de ayudar a sostener los gastos del servidor en la fic
 
 ## Proyectos de la comunidad
 
-**Nota:** Todos los proyectos que figuran en esta lista son proyectos comunitarios. Ninguno de estos proyectos se consideran proyectos _oficiales_ de Arch.
+**Nota:** Todos los proyectos que figuran en esta lista son proyectos comunitarios. Ninguno de estos proyectos se consideran proyectos *oficiales* de Arch.
 
 La comunidad de Arch mantiene muchos proyectos. ¡Siéntase libre de incluir el tuyo!
 
@@ -148,7 +148,7 @@ Servicios específicamente diseñados para usuarios de Arch.
 
 ### ¿Cómo puedo convertirme en un desarrollador de Arch?
 
-La principal motivación para su trabajo en Arch debe ser ayudar a la comunidad en su conjunto, y no simplemente tratar de convertirse en un _desarrollador de Arch_ por cualquier medio.
+La principal motivación para su trabajo en Arch debe ser ayudar a la comunidad en su conjunto, y no simplemente tratar de convertirse en un *desarrollador de Arch* por cualquier medio.
 
 Por lo general, los nuevos desarrolladores son elegidos por los desarrolladores existentes a medida que aumenta la carga de trabajo. A veces se publica un bando al que se puede responder para obtener el puesto, pero lo más normal es invitar a alguien que saben que será bueno en ello y que encajará con el resto del equipo. Las contribuciones a Arch son la mejor manera de hacerse un hueco en el equipo.
 

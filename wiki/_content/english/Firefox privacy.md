@@ -61,7 +61,7 @@ Disconnect can also stop side-jacking, which utilizes stolen cookies to steal pe
 
 [Ghostery](https://www.ghostery.com/) is similar to Disconnect, but is a proprietary project to track businesses which employ the use of website trackers. From the website:
 
-_Ghostery tracks over 1,000 trackers and gives you a roll-call of the ad networks, behavioural data providers, web publishers, and other companies interested in your activity._
+*Ghostery tracks over 1,000 trackers and gives you a roll-call of the ad networks, behavioural data providers, web publishers, and other companies interested in your activity.*
 
 Ghostery can be installed from the [official website](https://www.ghostery.com/download). Once installed Ghostery can be configured from:
 

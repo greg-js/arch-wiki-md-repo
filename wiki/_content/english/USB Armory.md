@@ -36,7 +36,6 @@ Follow the [official Arch Linux ARM instructions](http://archlinuxarm.org/platfo
 Device already has a static IP configured with `10.0.0.1` via [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"). Notably lacking is a default DNS configuration, which can easily be added:
 
  `/etc/systemd/network/gadget-deadbeef.network` 
-
 ```
 [Network]
 DNS=1.2.3.4
@@ -45,7 +44,6 @@ DNS=1.2.3.4
 On host, use the following [netctl](/index.php/Netctl "Netctl") configuration:
 
  `/etc/netctl/armory` 
-
 ```
 Description='Ethernet over USB Armory'
 Interface=$INTERFACE_NAME
@@ -78,7 +76,6 @@ Or setup a more restrictive rule that allows NAT forwarding on the host.
 By default, LED is way too bright after boot. Disable default modules:
 
  `/etc/modprobe.d/led.conf` 
-
 ```
 blacklist leds_gpio
 blacklist led_class
@@ -89,7 +86,6 @@ blacklist ledtrig_heartbeat
 Use [Systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd") to set the brightness config:
 
  `/etc/tmpfiles.d/led.conf` 
-
 ```
 w /sys/class/gpio/export - - - - 123
 w /sys/class/gpio/gpio123/direction - - - - in

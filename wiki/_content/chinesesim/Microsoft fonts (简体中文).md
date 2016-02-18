@@ -18,7 +18,7 @@
 
 如果有一个安装了Windows的分区, 可以通过链接它们来使用其字体。
 
-_例如, Windows的C:\盘被挂载在`/windows`:_
+*例如, Windows的C:\盘被挂载在`/windows`:*
 
 ```
 # ln -s /windows/Windows/Fonts /usr/share/fonts/WindowsFonts
@@ -112,7 +112,7 @@ Although it provides newer versions of the fonts, it **cannot automatically down
 
 **Note:** usage of Microsoft fonts outside running Windows system is prohibited by EULA (although in certain countries EULA is invalid). Please consult Microsoft license before using fonts.
 
-You can acquire fonts from an installed and fully updated Windows 8.1 system. Any edition of _Windows 8.1 build **Windows 8.1 6.3.9600.17238**_ will work.
+You can acquire fonts from an installed and fully updated Windows 8.1 system. Any edition of *Windows 8.1 build **Windows 8.1 6.3.9600.17238*** will work.
 
 On the installed Windows 8.1 system fonts are usually located in `[%WINDIR%](http://technet.microsoft.com/en-us/library/hh825266.aspx)\Fonts` and license file is `[%SYSTEM32%](http://technet.microsoft.com/en-us/library/hh825266.aspx)\license.rtf`.
 

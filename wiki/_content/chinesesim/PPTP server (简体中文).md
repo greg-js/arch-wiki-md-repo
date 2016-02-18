@@ -21,7 +21,6 @@
 然后编辑文件`/etc/pptpd.conf`
 
  `/etc/pptpd.conf` 
-
 ```
 option /etc/ppp/pptpd-options
 localip 172.16.36.1
@@ -32,7 +31,6 @@ remoteip 172.16.36.2-254
 接着编辑文件`/etc/ppp/pptpd-options`
 
  `/etc/ppp/pptpd-options` 
-
 ```
 name pptpd
 refuse-pap
@@ -54,7 +52,6 @@ ms-dns 8.8.4.4
 在 `/etc/ppp/chap-secrets`中添加用户名和密码：
 
  `/etc/ppp/chap-secrets` 
-
 ```
 <username>     pptpd     <password>   *
 
@@ -116,7 +113,6 @@ systemd 用户需要使用：
 修改`/etc/ufw/before.rules`，添加如下配置到 *filter 之前
 
  `/etc/ufw/before.rules` 
-
 ```
 # nat Table rules
 *nat

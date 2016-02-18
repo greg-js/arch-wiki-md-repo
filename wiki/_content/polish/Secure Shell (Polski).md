@@ -2,7 +2,7 @@
 
 SSH is typically used to log into a remote machine and execute commands, but it also supports tunneling, forwarding arbitrary TCP ports and X11 connections; file transfer can be accomplished using the associated SFTP or SCP protocols.
 
-An SSH server, by default, listens on the standard TCP port 22\. An SSH client program is typically used for establishing connections to an _sshd_ daemon accepting remote connections. Both are commonly present on most modern operating systems, including Mac OS X, GNU/Linux, Solaris and OpenVMS. Proprietary, freeware and open source versions of various levels of complexity and completeness exist.
+An SSH server, by default, listens on the standard TCP port 22\. An SSH client program is typically used for establishing connections to an *sshd* daemon accepting remote connections. Both are commonly present on most modern operating systems, including Mac OS X, GNU/Linux, Solaris and OpenVMS. Proprietary, freeware and open source versions of various levels of complexity and completeness exist.
 
 (Source: [Wikipedia:Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell "wikipedia:Secure Shell"))
 
@@ -60,7 +60,6 @@ The SSH client configuration file can be found and edited in `/etc/ssh/ssh_confi
 An example configuration:
 
  `/etc/ssh/ssh_config` 
-
 ```
 #	$OpenBSD: ssh_config,v 1.26 2010/01/11 01:39:46 dtucker Exp $
 
@@ -128,7 +127,6 @@ The SSH daemon configuration file can be found and edited in `/etc/ssh/ssh**d**_
 An example configuration:
 
  `/etc/ssh/sshd_config` 
-
 ```
 #	$OpenBSD: sshd_config,v 1.82 2010/09/06 17:10:19 naddy Exp $
 
@@ -334,9 +332,9 @@ It's nice to add the verbose `"-v"` flag, because then you can verify that it's 
 
 The above step is completely useless if you do not configure your web browser (or other programs) to use this newly created socks tunnel. Since the current version of SSH supports both SOCKS4 and SOCKS5, you can use either of them.
 
-*   For Firefox: _Edit → Preferences → Advanced → Network → Connection → Setting_:
+*   For Firefox: *Edit → Preferences → Advanced → Network → Connection → Setting*:
 
-	Check the _"Manual proxy configuration"_ radio button, and enter "localhost" in the _"SOCKS host"_ text field, and then enter your port number in the next text field (I used 4711 above).
+	Check the *"Manual proxy configuration"* radio button, and enter "localhost" in the *"SOCKS host"* text field, and then enter your port number in the next text field (I used 4711 above).
 
 Firefox does not automatically make DNS requests through the socks tunnel. This potential privacy concern can be mitigated by the following steps:
 
@@ -557,7 +555,7 @@ Load the Fuse module
 
 ```
 
-Add fuse to the _modules_ array in `/etc/rc.conf` to load it on each system boot.
+Add fuse to the *modules* array in `/etc/rc.conf` to load it on each system boot.
 
 Mount the remote folder using sshfs
 
@@ -608,7 +606,6 @@ ClientAliveInterval 120
 Whenever you want to connect to a ssh server, you usually have to type at least its address and the username. To save that typing work for servers you regularly connect to, you can use the personal `$HOME/.ssh/config` or the global `/etc/ssh/ssh_config` files as shown in the following example:
 
  `$HOME/.ssh/config` 
-
 ```
 Host myserver
     HostName 123.123.123.123
@@ -636,7 +633,6 @@ To see a complete list of the possible options, check out ssh_config's manpage o
 It can sometimes be useful to be able to make the difference between your local and your remote prompt, in particular when they are both configured in the same way. To do that, just insert this in your bashrc:
 
  `$HOME/.bashrc` 
-
 ```
 if [ -n "$SSH_CLIENT" ]; then
         PS1='\[\e[0;33m\]\u@\h:\wSSH$\[\e[m\] '
@@ -734,7 +730,7 @@ See also the [discussion](http://www.gossamer-threads.com/lists/openssh/dev/5133
 
 ### "[your shell]: No such file or directory" / ssh_exchange_identification Problem
 
-One possible cause for this is the need of certain SSH clients to find an absolute path (one returned by `whereis -b [your shell]`, for instance) in `$SHELL`, even if the shell's binary is located in one of the `$PATH` entries. Another reason can be that the user is no member of the _network_ group.
+One possible cause for this is the need of certain SSH clients to find an absolute path (one returned by `whereis -b [your shell]`, for instance) in `$SHELL`, even if the shell's binary is located in one of the `$PATH` entries. Another reason can be that the user is no member of the *network* group.
 
 ## See Also
 

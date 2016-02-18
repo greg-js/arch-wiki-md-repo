@@ -1,4 +1,4 @@
-Enabling the _multilib_ repository allows the user to run and build 32-bit applications on 64-bit installations of Arch Linux. _multilib_ creates a directory containing 32-bit instruction set libraries inside `/usr/lib32/`, which 32-bit binary applications may need when executed.
+Enabling the *multilib* repository allows the user to run and build 32-bit applications on 64-bit installations of Arch Linux. *multilib* creates a directory containing 32-bit instruction set libraries inside `/usr/lib32/`, which 32-bit binary applications may need when executed.
 
 ## Contents
 
@@ -9,7 +9,7 @@ Enabling the _multilib_ repository allows the user to run and build 32-bit appli
 
 ## Directory structure
 
-A 64-bit installation of Arch Linux with _multilib_ enabled follows a directory structure similar to Debian. The 32-bit compatible libraries are located under `/usr/lib32/`, and the native 64-bit libraries under `/usr/lib/`.
+A 64-bit installation of Arch Linux with *multilib* enabled follows a directory structure similar to Debian. The 32-bit compatible libraries are located under `/usr/lib32/`, and the native 64-bit libraries under `/usr/lib/`.
 
 ## Enabling
 
@@ -27,9 +27,9 @@ Then update the package list and upgrade with `pacman -Syu`.
 
 ## Disabling
 
-To revert to a pure 64-bit system, uninstalling _multilib_:
+To revert to a pure 64-bit system, uninstalling *multilib*:
 
-Execute the following command to remove all packages that were installed from _multilib_:
+Execute the following command to remove all packages that were installed from *multilib*:
 
 ```
 # pacman -R $(paclist multilib | cut -f1 -d' ')

@@ -30,7 +30,7 @@ At first, Kolab requires you to use a FQDN (fully qualified domain name), with a
 
  `/etc/hosts`  `192.168.1.101 kolab.example.org` 
 
-Write the same domain name into _/etc/hostname_. You should also check your DNS settings and reverse DNS resolution.
+Write the same domain name into */etc/hostname*. You should also check your DNS settings and reverse DNS resolution.
 
 ### Arch-specific configuration
 
@@ -66,8 +66,8 @@ Kolab ships with its own configuration script (contained in [pykolab](https://au
 
 This runs all configurations steps neccesary for Kolab. During the process, multiple questions will be asked, regarding passwords, etc. The defaults are fine for all but two questions:
 
-*   The _password for the LDAP Directory Manager_ is the password you use for logging in to the web administration panel
-*   When asked about MySQL, you should select _1: Existing MySQL server_ and then the password for the root MySQL user (by default, empty)
+*   The *password for the LDAP Directory Manager* is the password you use for logging in to the web administration panel
+*   When asked about MySQL, you should select *1: Existing MySQL server* and then the password for the root MySQL user (by default, empty)
 
 You can also list the steps with `setup-kolab help` and selectively run some of them.
 
@@ -91,15 +91,12 @@ More information in the Kolab documentation: [[1]](http://docs.kolab.org/install
 The default installation creates a dummy localhost certificate, as some parts of Kolab (most notably kolabd) use TLS to communicate with the IMAP daemon. However, this will not work for external clients. In order to install a proper certificate you must edit the following files:
 
  `/etc/postfix/main.cf` 
-
 ```
 # TLS
 smtpd_tls_cert_file=/etc/ssl/private/localhost.pem
 smtpd_tls_key_file=/etc/ssl/private/localhost.pem
 ```
-
  `/etc/cyrus/imapd.conf` 
-
 ```
 tls_cert_file: /etc/ssl/private/localhost.pem
 tls_key_file: /etc/ssl/private/localhost.pem
@@ -117,7 +114,6 @@ After that, restart Postfix and Cyrus imapd:
 Additionally, you have to change the Roundcube configuration in order to include your domain name instead of localhost. If not, certificate validation will fail (the server is presenting a certificate for the domain and Roundcube expects one for localhost) and the web interface will be unusable. Replace localhost with your domain name in the Roundcube configuration:
 
  `/etc/webapps/roundcubemail/config/config.inc.php` 
-
 ```
 // IMAP Server Settings
 $config['default_host'] = 'tls://localhost';
@@ -173,7 +169,6 @@ The default configuration for the tasklist plugin is to use the database backend
 The default configuration uses TLS for all communications with the IMAP server. This can be slow, specially if you are using a large certificate. You can configure Cyrus IMAP server in order to not require tls for localhost. To do so, edit:
 
  `/etc/cyrus/cyrus.conf` 
-
 ```
 SERVICES {
     # add or remove based on preferences
@@ -187,7 +182,6 @@ Add a new service imapl that listens on localhost. We also need to change the im
 Now, add a line to `imapd.conf` to enable plaintext authentication when connection from localhost (using the imapl service).
 
  `/etc/cyrus/imapd.conf` 
-
 ```
 allowplaintext: no
 imapl_allowplaintext: yes
@@ -203,7 +197,6 @@ Restart the cyrus services:
 Finally, configure roundcube to disable tls. Set the default host to localhost, without any protocol:
 
  `/etc/webapps/roundcubemail/config/config.inc.php` 
-
 ```
 // IMAP Server Settings
 $config['default_host'] = 'localhost';

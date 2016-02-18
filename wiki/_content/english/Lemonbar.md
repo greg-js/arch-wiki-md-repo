@@ -40,9 +40,9 @@ If you want the text in `lemonbar` to update through a script, you need to add t
 The special color `-` indicates the default color (which is set by command-line flags, or is otherwise the default white text on a black background).
 
 | Command | Meaning |
-| `%{F_color_}` | Use _color_ as the foreground/font color |
-| `%{B_color_}` | Use _color_ as the background |
-| `%{U_color_}` | Use _color_ for under/overlining the text |
+| `%{F*color*}` | Use *color* as the foreground/font color |
+| `%{B*color*}` | Use *color* as the background |
+| `%{U*color*}` | Use *color* for under/overlining the text |
 
 #### Text alignment
 
@@ -58,7 +58,6 @@ The special color `-` indicates the default color (which is set by command-line 
 The following example prints the date and time in the middle of the bar, the font's color being `yellow` and the background `blue` and changes the font/background color back to the default color afterwards. Run it with `/path/to/script/example.sh | lemonbar -p`
 
  `example.sh` 
-
 ```
 #!/usr/bin/bash
 
@@ -81,7 +80,6 @@ done
 Another example showing the battery percentage. To use this script you need to install [acpi](https://www.archlinux.org/packages/?name=acpi).
 
  `example.sh` 
-
 ```
 #!/usr/bin/bash
 

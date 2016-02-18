@@ -1,4 +1,4 @@
-_"[Vim](http://www.vim.org/about.php) è un editor di testi avanzato che mira a fornire la potenza del de-facto editor UNIX ‘vi’, con maggiori caratteristiche e funzionalità."_ Vim non è un semplice editor di testo come nano o pico. Esso richiede un po' di pratica per imparare, e molto tempo per padroneggiarlo.
+*"[Vim](http://www.vim.org/about.php) è un editor di testi avanzato che mira a fornire la potenza del de-facto editor UNIX ‘vi’, con maggiori caratteristiche e funzionalità."* Vim non è un semplice editor di testo come nano o pico. Esso richiede un po' di pratica per imparare, e molto tempo per padroneggiarlo.
 
 Vim è ideato per ridurre al minimo il lavoro delle dita, e non ci sarà mai bisogno di usare il mouse. Questo può sembrare sciocco, ma una volta padroneggiato vim, se ne comprenderà il motivo.
 
@@ -50,7 +50,6 @@ Si può [installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") la versio
 **Nota:** [vim](https://www.archlinux.org/packages/?name=vim) non è più compilato con l'opzione X server. Per molti utenti, significa che la normale funzione di copia e incolla dagli appunti di un ambiente grafico non funzionerà. Se non si vuole rinunciare a questa funzionalità, considerare l'installazione di [gvim](https://www.archlinux.org/packages/?name=gvim) che include una versione di Vim con questo supporto. Vedere [FS#14609](https://bugs.archlinux.org/task/14609) per maggiori informazioni.
 
 **Nota:** Il pacchetto vim è concepito per essere il più leggero possibile, per cui non supporta gli interpreti di Python, Lua, e Ruby. Se si richiede tale supporto, scegliere il pacchetto gvim, il quale include il binario vim. Il repository non ufficiale `herecura-stable` fornisce qualche variante di vim / gvim: `$ pacman -Slq herecura-stable | grep vim` 
-
 ```
 vim-cli
 vim-gvim-gtk
@@ -66,10 +65,10 @@ vim-tiny
 
 Questa è una panoramica base su come utilizzare vim. Alternativamente, è possibile utilizzare `vimtutor` per familiarizzare con l'editor. Vim ha quattro differenti modalità:
 
-*   _Command mode_ (modalità comando): i tasti premuti vengono interpretati come comandi.
-*   _Insert mode_ (modalità inserimento): i tasti premuti vengono inseriti nel file.
-*   _Visual mode_ (modalità visuale): i tasti premuti selezionano, tagliano o copiano il testo.
-*   _Ex mode_ (modalità ex): una modalità di input per comandi addizionali (esempio salvare un file, sostituire parti di testo, ecc.).
+*   *Command mode* (modalità comando): i tasti premuti vengono interpretati come comandi.
+*   *Insert mode* (modalità inserimento): i tasti premuti vengono inseriti nel file.
+*   *Visual mode* (modalità visuale): i tasti premuti selezionano, tagliano o copiano il testo.
+*   *Ex mode* (modalità ex): una modalità di input per comandi addizionali (esempio salvare un file, sostituire parti di testo, ecc.).
 
 ### Editing di base
 
@@ -80,7 +79,7 @@ $ vim somefile.txt
 
 ```
 
-si vedrà un documento vuoto (presumendo che somefile.txt non esista. Se esiste, si vedrà il suo contenuto). Non sarà possibile modificarlo immediatamente - la modalità in cui si avvia vim è la modalità comando(_Command Mode_). In questa modalità sarà possibile utilizzare i comandi vim dalla tastiera.
+si vedrà un documento vuoto (presumendo che somefile.txt non esista. Se esiste, si vedrà il suo contenuto). Non sarà possibile modificarlo immediatamente - la modalità in cui si avvia vim è la modalità comando(*Command Mode*). In questa modalità sarà possibile utilizzare i comandi vim dalla tastiera.
 
 **Nota:** Vim è un esempio dello stile Unix. Questo significa che non è vistoso, e non lascerà ferme le nostre mani. Non ha assistenti o giochi integrati. Esso però ci permetterà comunque di portare a termine il lavoro, ed anche velocemente. Anche tutti i suoi comandi sono case sensitive. A volte i comandi maiuscoli sono una versione con effetto più ampio (`s` sostituisce un carattere, `S` sostituisce una linea), altre volte sono comandi completamente diversi (`j` sposta il cursore in basso, `J` unisce due linee).
 
@@ -122,7 +121,7 @@ Vim ha una funzione appunti integrata (anche nota come buffer). Le azioni posson
 
 ### Modalità visuale
 
-Premendo `v` si entrerà in _visual mode_. In questa modalità è possibile selezionare parti di testo, una volta selezionato premendo `y` verrà memorizzato nel buffer, è possibile tagliare il testo premendo `c`. `p` incollerà il testo memorizzato nel buffer dopo il cursore, `P` prima. Il tasto `V` attiverà la _visual line mode_, analoga alla modalità precedente ma con effetto su intere linee. `Ctrl+v` invece per i blocchi di testo.
+Premendo `v` si entrerà in *visual mode*. In questa modalità è possibile selezionare parti di testo, una volta selezionato premendo `y` verrà memorizzato nel buffer, è possibile tagliare il testo premendo `c`. `p` incollerà il testo memorizzato nel buffer dopo il cursore, `P` prima. Il tasto `V` attiverà la *visual line mode*, analoga alla modalità precedente ma con effetto su intere linee. `Ctrl+v` invece per i blocchi di testo.
 
 **Nota:** In qualsiasi momento si cancelli del testo, questo vine inserito nel buffer e sarà disponibile per essere incollato.
 
@@ -130,7 +129,7 @@ Premendo `v` si entrerà in _visual mode_. In questa modalità è possibile sele
 
 Per cercare una parola o un carattere nel file, basterà semplicemente premere `/` e successivamente il/i carattere/i da cercare ed infine premere `ENTER`. Per visualizzare l'occorrenza successiva della ricerca usare `n`, mentre per la precedente usare `N`.
 
-Per cercare e sostituire usare il comando _substitute_ `:s/`. La sua sintassi è `[range]s///[arguments]`. Ad esempio:
+Per cercare e sostituire usare il comando *substitute* `:s/`. La sua sintassi è `[range]s///[arguments]`. Ad esempio:
 
 ```
 Comando        Risultato
@@ -141,7 +140,7 @@ Comando        Risultato
 
 ```
 
-Si può usare il comando _global_ `:g/` per ricercare un pattern ed eseguire un comando per ogni corrispondenza. La sintassi è: `[range]:g//[cmd]`.
+Si può usare il comando *global* `:g/` per ricercare un pattern ed eseguire un comando per ogni corrispondenza. La sintassi è: `[range]:g//[cmd]`.
 
 ```
 Comando  Risultato
@@ -152,7 +151,7 @@ Comando  Risultato
 
 ### Salvare ed uscire
 
-Per salvare e/o uscire, sarà necessario usare la modalità _Ex_. I comandi della modalità _Ex_ sono preceduti da `:`. Per salvare un file usare `**:w** nomefile`. Per uscire `:q`. Se invece si desidera uscire senza salvare le modifiche effettuate, usare `:q!`. Per salvare ed uscire `:x`. Esiste anche un'altra scorciatoia per salvare ed uscire cioè la combinazione `ZZ` (maiuscole).
+Per salvare e/o uscire, sarà necessario usare la modalità *Ex*. I comandi della modalità *Ex* sono preceduti da `:`. Per salvare un file usare `**:w** nomefile`. Per uscire `:q`. Se invece si desidera uscire senza salvare le modifiche effettuate, usare `:q!`. Per salvare ed uscire `:x`. Esiste anche un'altra scorciatoia per salvare ed uscire cioè la combinazione `ZZ` (maiuscole).
 
 ### Altri comandi
 
@@ -194,7 +193,7 @@ set noswapfile    ! (disabilita i file swap)
 
 ### Ripetizione della ricerca
 
-Con quest'opzione, _trova successivo_ torna all'inizio del file quando ne raggiunge la fine. Similarmente, _trova precedente_ va alla fine del file quando ne raggiunge l'inizio.
+Con quest'opzione, *trova successivo* torna all'inizio del file quando ne raggiunge la fine. Similarmente, *trova precedente* va alla fine del file quando ne raggiunge l'inizio.
 
 ```
 set wrapscan
@@ -226,7 +225,7 @@ I file dei dizionari possono essere trovati anche nell'[archivio FTP di Vim](htt
 
 ### Evidenziare la sintassi
 
-Per abilitare l'opzione ed evidenziare la sintassi (_syntax highlighting_) (vim supporta una vasta lista di linguaggi di programmazione):
+Per abilitare l'opzione ed evidenziare la sintassi (*syntax highlighting*) (vim supporta una vasta lista di linguaggi di programmazione):
 
 ```
 filetype plugin on
@@ -268,7 +267,7 @@ Trucchi per portare a termine alcuni compiti.
 Per sostituire solo tra un intervallo di certe linee:
 
 ```
-:_n_,_n_s/one/two/g
+:*n*,*n*s/one/two/g
 
 ```
 

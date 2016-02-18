@@ -34,7 +34,7 @@ Then add the mediawiki sites to the configuration file. For example, the followi
 
 ```
 
-Where _**Archwiki**_ is the name for the site. _**https:/wiki.archlinux.org/**_ is the url of the site and _**username**_ and _**password**_ is your username and password of this site. _**Main Page**_ is the default page opened when you connect to the site.
+Where ***Archwiki*** is the name for the site. ***https:/wiki.archlinux.org/*** is the url of the site and ***username*** and ***password*** is your username and password of this site. ***Main Page*** is the default page opened when you connect to the site.
 
 Other sites can also be added by appending the configuration list to the list variable **mediawiki-site-alist**.
 
@@ -92,7 +92,7 @@ Wikis do not autofill paragraphs. If you do so, it might confuse history diffs, 
 
 ### Specifying the browser
 
-A convenient feature of Mediawiki is the `mediawiki-browse` function which let you see the result of the page in a web browser. The browser is chosen following the _browse-url_ plugin. You can configure this behaviour. For example:
+A convenient feature of Mediawiki is the `mediawiki-browse` function which let you see the result of the page in a web browser. The browser is chosen following the *browse-url* plugin. You can configure this behaviour. For example:
 
 ```
 (setq browse-url-generic-program (executable-find (getenv "BROWSER"))

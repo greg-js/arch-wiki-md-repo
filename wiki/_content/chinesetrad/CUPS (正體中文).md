@@ -205,7 +205,7 @@ tupac -S gtklp                  (KDE下)
 
 ## Linux 對 Linux
 
-Once you have CUPS setup on your Linux print server, sharing the printer with another Linux box is relatively easy. There are several ways to configure such a scenario, here we will describe the manual setup. On the server computer (the one managing and connecting to the printer) simply open up the _/etc/cups/cupsd.conf_ file and allow access to the server by modifying the location lines. For instance:
+Once you have CUPS setup on your Linux print server, sharing the printer with another Linux box is relatively easy. There are several ways to configure such a scenario, here we will describe the manual setup. On the server computer (the one managing and connecting to the printer) simply open up the */etc/cups/cupsd.conf* file and allow access to the server by modifying the location lines. For instance:
 
 ```
 <Location />
@@ -233,7 +233,7 @@ Add the IP address of the client computer by doing Allow From client_ip_address.
 
 ```
 
-On the client side, open up _/etc/cups/client.conf_ and edit the ServerName option to match the ip address or the name of your server. For instance I named my server beast and have entry in my hosts file to point to it. So in my _client.conf_ file, I just edited this line:
+On the client side, open up */etc/cups/client.conf* and edit the ServerName option to match the ip address or the name of your server. For instance I named my server beast and have entry in my hosts file to point to it. So in my *client.conf* file, I just edited this line:
 
 ```
 ServerName beast
@@ -302,7 +302,7 @@ smb://workgroup/username:password@hostname/printer_name
 
 ## Windows to Linux
 
-Sometimes, you might want to allow a Windows computer to connect to your computer. There are a few ways to do this, and the one I am most familiar with is using Samba. In order to do this, you will have to edit your _/etc/samba/smb.conf_ file to allow access to your printers. Your smb.conf can look something like this:
+Sometimes, you might want to allow a Windows computer to connect to your computer. There are a few ways to do this, and the one I am most familiar with is using Samba. In order to do this, you will have to edit your */etc/samba/smb.conf* file to allow access to your printers. Your smb.conf can look something like this:
 
 ```
 [global]
@@ -385,7 +385,7 @@ After this restart your Samba daemon:
 
 ```
 
-Obvious, there are a lot of tweaks and customization that can be done with setting up a Samba print server, so I advise you to look at the Samba and CUPS documentation for more help. The _smb.conf.example_ file also has some good samples to that you might want to look at.
+Obvious, there are a lot of tweaks and customization that can be done with setting up a Samba print server, so I advise you to look at the Samba and CUPS documentation for more help. The *smb.conf.example* file also has some good samples to that you might want to look at.
 
 ## Windows 2000 and Windows XP to Linux
 
@@ -393,7 +393,7 @@ For the most modern flavors of Windows an alternative way of connecting to your 
 
 On the Windows computer, go to the printer control panel and choose to Add a New Printer. Next, choose to give an url. For the url type in the location of your printer:
 
-_[http://host_ip_address:631/printers/printer_name](http://host_ip_address:631/printers/printer_name)_
+*[http://host_ip_address:631/printers/printer_name](http://host_ip_address:631/printers/printer_name)*
 
 where host_ip_address is the Linux server's IP address and printer_name is the name of the printer you are connecting to. After this, install the printer drivers for the Windows computer. If you setup the CUPS server to use its own printer drivers, then you can just select a generic postscript printer for the Windows client. You can then test your print setup by printing a test page.
 
@@ -422,7 +422,7 @@ There is also [gtklp](https://aur.archlinux.org/packages/gtklp/). It is in the [
 
 ## PDF Virtual Printer
 
-A nice little package that I submitted to the incoming folder ([ftp://ftp.archlinux.org/incoming](ftp://ftp.archlinux.org/incoming)) is CUPS-PDF. This package allows one to setup a virtual printer that will generate a PDF from anything sent to it. For example, I wrote this document in AbiWord and then printed it to the Virtual Printer which generated a PDF in my _/var/spool/cups-pdf/neocephas_ folder. Obviously, this package is not necessary, but it can be quite useful. After downloading the package from the FTP server and installing it, you can set it up as you would for any other printer in the web interface. Select Virtual PDF Printer as the device and choose Postscript -> Postscript Color Printer for the drivers.
+A nice little package that I submitted to the incoming folder ([ftp://ftp.archlinux.org/incoming](ftp://ftp.archlinux.org/incoming)) is CUPS-PDF. This package allows one to setup a virtual printer that will generate a PDF from anything sent to it. For example, I wrote this document in AbiWord and then printed it to the Virtual Printer which generated a PDF in my */var/spool/cups-pdf/neocephas* folder. Obviously, this package is not necessary, but it can be quite useful. After downloading the package from the FTP server and installing it, you can set it up as you would for any other printer in the web interface. Select Virtual PDF Printer as the device and choose Postscript -> Postscript Color Printer for the drivers.
 
 ## Online Resources
 
@@ -440,7 +440,7 @@ Here is a listing of websites that may be of use to you:
 
 ## Specialized Cases
 
-This section is dedicated to specific problems and their solutions. If you managed to get some _unusual_ printer working, please put the solution here.
+This section is dedicated to specific problems and their solutions. If you managed to get some *unusual* printer working, please put the solution here.
 
 ### Printing does not work/aborts with the HP Deskjet 700 Series Printers.
 
@@ -493,7 +493,7 @@ $ ./getweb 1020
 
 ```
 
-Open the _Makefile_
+Open the *Makefile*
 
 ```
 $ nano Makefile
@@ -630,7 +630,7 @@ This is a printer status monitor which enables to get the remaining ink quantity
 
 ## Another Source for Printer Drivers
 
-On _[http://www.turboprint.de/english.html](http://www.turboprint.de/english.html)_ is a really good printer driver for many printers not yet supported by Linux (especially Canon i*). The only problem is that high-quality-prints are either marked with a turboprint-logo or you have to pay for it... It's not Open-Source.
+On *[http://www.turboprint.de/english.html](http://www.turboprint.de/english.html)* is a really good printer driver for many printers not yet supported by Linux (especially Canon i*). The only problem is that high-quality-prints are either marked with a turboprint-logo or you have to pay for it... It's not Open-Source.
 
 [Wikipedia:Common_Unix_Printing_System](https://en.wikipedia.org/wiki/Common_Unix_Printing_System "wikipedia:Common Unix Printing System")
 
@@ -660,4 +660,4 @@ In addition, in /etc/cups, there will be a file named cupsd.conf.pacnew. Rename 
 
 After updating CUPS, if all jobs sent to the printer become "stopped", delete the printer and add it again. Using the CUPS web interface ([http://localhost:631](http://localhost:631)), go to Printers > Delete Printer.
 
-_Note:_ If you don't remember your printer's settings, go to Printers > Modify Printer. Copy down the information displayed, click 'Modify Printer' to proceed to the next page(s), etc.
+*Note:* If you don't remember your printer's settings, go to Printers > Modify Printer. Copy down the information displayed, click 'Modify Printer' to proceed to the next page(s), etc.

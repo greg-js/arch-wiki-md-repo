@@ -36,9 +36,7 @@ Laptop has an empty mSATA [SSD](/index.php/SSD "SSD") slot, which can be used fo
 ## Hardware
 
 **Note:** This may differ from your laptop configuration.
-
  `# lspci` 
-
 ```
 00:00.0 Host bridge: Intel Corporation Haswell-ULT DRAM Controller (rev 09)
 00:02.0 VGA compatible controller: Intel Corporation Haswell-ULT Integrated Graphics Controller (rev 09)
@@ -64,7 +62,6 @@ Laptop has an empty mSATA [SSD](/index.php/SSD "SSD") slot, which can be used fo
 ### CPU
 
  `$ lscpu` 
-
 ```
 Architecture:          x86_64
 CPU op-mode(s):        32-bit, 64-bit

@@ -70,7 +70,7 @@ Después reinicie Apache:
 
 ```
 
-Por último, finalice la instalación ejecutando el script _dokuwiki/install.php_ en su navegador.
+Por último, finalice la instalación ejecutando el script *dokuwiki/install.php* en su navegador.
 
 ### Configuración específica para lighttpd
 
@@ -108,7 +108,7 @@ $HTTP["url"] =~ "^" + var.dokudir + "/conf/" { url.access-deny = ( "" ) }
 
 ```
 
-_Estas entradas dan algo de seguridad básica para DokuWiki_. Lighttpd no usa archivos .htaccess como Apache. Se PUEDEN instalar con este, pero NO es recomendable.
+*Estas entradas dan algo de seguridad básica para DokuWiki*. Lighttpd no usa archivos .htaccess como Apache. Se PUEDEN instalar con este, pero NO es recomendable.
 
  `alias.url += ("/dokuwiki" => "/usr/share/webapps/dokuwiki/")` 
 

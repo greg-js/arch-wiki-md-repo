@@ -9,7 +9,7 @@ Driver - Built into kernel, Firmware - iwlwifi-4965-ucode from installation disk
 
 ## Motioneye Inscreen Camera
 
-_lsusb_ will show
+*lsusb* will show
 
 ```
 05ca:1839 Ricoh Co., Ltd 
@@ -18,7 +18,7 @@ _lsusb_ will show
 
 which has support provided by the r5u870 driver (depends on kernel26<2.6.26).
 
-download the latest trunk using _svn_, _make_, and _make install_ as per the normal build drill...
+download the latest trunk using *svn*, *make*, and *make install* as per the normal build drill...
 
 ```
 svn co [http://svn.mediati.org/svn/r5u870/trunk](http://svn.mediati.org/svn/r5u870/trunk) ~/r5u870
@@ -35,13 +35,13 @@ modprobe r5u870
 
 ```
 
-you can test your webcam with _xawtv_ like so
+you can test your webcam with *xawtv* like so
 
 ```
 xawtv /dev/video0
 
 ```
 
-_kernel26>2.6.26_: If you have a kernel that falls beyond the depends for 'r5u870' then you can try 'r5u87x' which is a user-space utility that simply loads the camera's firmware into the device. unloading and reloading uvcvideo module will give you your /dev/video* device. There are certain problems with this as any request for a resolution change below 640x480 will report successful by the camera, but actually fails. I will be following developement closely. --[OrionFyre](/index.php/User:OrionFyre "User:OrionFyre") 15:13, 14 November 2008 (EST)
+*kernel26>2.6.26*: If you have a kernel that falls beyond the depends for 'r5u870' then you can try 'r5u87x' which is a user-space utility that simply loads the camera's firmware into the device. unloading and reloading uvcvideo module will give you your /dev/video* device. There are certain problems with this as any request for a resolution change below 640x480 will report successful by the camera, but actually fails. I will be following developement closely. --[OrionFyre](/index.php/User:OrionFyre "User:OrionFyre") 15:13, 14 November 2008 (EST)
 
-_flashcam note_ Flashcam project was a video loopback device that provided a v4l device that worked with flash, this project is now obsolete as flash10 supports v4l2 and as it too is subject to the same breakage that occures to r5u870 with kernel26>2.6.26\. My intention was to continue to use flashcam to take vga video (which works with uvcvideo) and have flashcam provide the proper resolution needed for the various applications--[OrionFyre](/index.php/User:OrionFyre "User:OrionFyre") 15:13, 14 November 2008 (EST)
+*flashcam note* Flashcam project was a video loopback device that provided a v4l device that worked with flash, this project is now obsolete as flash10 supports v4l2 and as it too is subject to the same breakage that occures to r5u870 with kernel26>2.6.26\. My intention was to continue to use flashcam to take vga video (which works with uvcvideo) and have flashcam provide the proper resolution needed for the various applications--[OrionFyre](/index.php/User:OrionFyre "User:OrionFyre") 15:13, 14 November 2008 (EST)

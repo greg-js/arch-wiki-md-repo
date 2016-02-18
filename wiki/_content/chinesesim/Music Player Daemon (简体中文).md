@@ -100,7 +100,6 @@ MPD 配置必须仅包含一个目录，如果音乐集包含在多个目录下�
 如果你使用不同（甚至是多种）网络或者本地套接字，或者不希望使用网络套接字，只需要简单的添加，更改或者删除 `[Socket]` 章节下的以 `"ListenStream="` 开头的行。
 
  `/etc/systemd/system/mpd.socket` 
-
 ```
 [Unit]
 Description=Music Player Daemon Sockets
@@ -119,7 +118,6 @@ WantedBy=sockets.target
 要使 MPD 的声音和其他程序的声音相独立，在 mpd.conf 中取消此开关的注释或添加此开关：
 
  `/etc/mpd.conf` 
-
 ```
 mixer_type			"software"
 
@@ -128,7 +126,6 @@ mixer_type			"software"
 [ALSA](/index.php/ALSA "ALSA") 用户需要做以下设备定义，以便 MPD 客户端和其他程序可以各自单独控制声音。
 
  `/etc/mpd.conf` 
-
 ```
 audio_output {
         type            "alsa"
@@ -140,7 +137,6 @@ audio_output {
 [PulseAudio](/index.php/PulseAudio "PulseAudio") 用户需要做以下修改：
 
  `/etc/mpd.conf` 
-
 ```
 audio_output {
         type            "pulse"
@@ -154,7 +150,7 @@ PulseAudio 支持多种高级操作。例如：将音频传输到不同的机器
 
 更改用户组，可能会导致 MPD 运行出现以下类似错误： `output: Failed to open "My ALSA Device"`， `[alsa]: Failed to open ALSA device "default": No such file or directory` ，`player_thread: problems opening audio device while playing "Song Name.mp3"`
 
-这是因为 MPD 用户需要是 _audio_ 组的成员来访问 `/dev/snd/` 下的音频设备。将 MPD 用户添加到 _audio_ 组里来解决这个问题。
+这是因为 MPD 用户需要是 *audio* 组的成员来访问 `/dev/snd/` 下的音频设备。将 MPD 用户添加到 *audio* 组里来解决这个问题。
 
 ```
 # gpasswd -a **mpd** audio
@@ -192,7 +188,6 @@ $ cp /usr/share/doc/mpd/mpdconf.example ~/.config/mpd/mpd.conf
 编辑 `~/.config/mpd/mpd.conf` 并且指定所需文件：
 
  `~/.config/mpd/mpd.conf` 
-
 ```
 # Required files
 db_file            "~/.config/mpd/database"
@@ -218,7 +213,7 @@ $ touch ~/.config/mpd/{database,log,pid,state,sticker.sql}
 当配置了所需文件的路径后，就可以启动 MPD 了。要指定配置文件的自定义位置，运行：
 
 ```
-$ mpd _config_file_
+$ mpd *config_file*
 
 ```
 
@@ -237,7 +232,6 @@ $ mpd _config_file_
 如果你安装了[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")，编辑下面的文件并将其放到 `~/.config/autostart/` ：
 
  `~/.config/autostart/mpd.desktop` 
-
 ```
 [Desktop Entry]
 Encoding=UTF-8

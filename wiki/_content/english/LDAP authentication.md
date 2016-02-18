@@ -48,7 +48,6 @@ You can read about installation and basic configuration in the [OpenLDAP](/index
 To make sure that no-one can read the (encrypted) passwords from the LDAP server, but a user can edit their own password, add the following to `/etc/openldap/slapd.conf` and restart `slapd.service` afterwards:
 
  `slapd.conf` 
-
 ```
 access to attrs=userPassword
         by self write
@@ -67,9 +66,7 @@ access to *
 Create a temporarily file called `base.ldif` with the following text.
 
 **Note:** If you have a different domain name then alter "example" and "org" to your needs
-
  `base.ldif` 
-
 ```
 # example.org
 dn: dc=example,dc=org
@@ -119,7 +116,6 @@ $ ldapsearch -x -b 'dc=example,dc=org' '(objectclass=*)'
 To manually add a user, create an `.ldif` file like this:
 
  `user_joe.ldif` 
-
 ```
 dn: uid=johndoe,ou=People,dc=example,dc=org
 objectClass: top
@@ -186,14 +182,13 @@ The basic rule of thumb for PAM configuration is to include `pam_ldap.so` wherev
 
 **Tip:** If you want to prevent UID clashes with local users on your system, you might want to include `minimum_uid=10000` or similar on the end of the `pam_ldap.so` lines. You will have to make sure the LDAP server returns uidNumber fields that match the restriction.
 
-**Note:** Each facility (auth, session, password, account) forms a separate chain and the order matters. Sufficient lines will sometimes "short circuit" and skip the rest of the section, so the rule of thumb for _auth_, _password_, and _account_ is _sufficient_ lines before _required_, but after required lines for the _session_ section; _optional_ can almost always go at the end. When adding your `pam_ldap.so` lines, do not change the relative order of the other lines without good reason! Simply insert LDAP within the chain.
+**Note:** Each facility (auth, session, password, account) forms a separate chain and the order matters. Sufficient lines will sometimes "short circuit" and skip the rest of the section, so the rule of thumb for *auth*, *password*, and *account* is *sufficient* lines before *required*, but after required lines for the *session* section; *optional* can almost always go at the end. When adding your `pam_ldap.so` lines, do not change the relative order of the other lines without good reason! Simply insert LDAP within the chain.
 
 First edit `/etc/pam.d/system-auth`. This file is included in most of the other files in `pam.d`, so changes here propagate nicely. Updates to [pambase](https://www.archlinux.org/packages/?name=pambase) may change this file.
 
-Make `pam_ldap.so` sufficient at the top of each section, except in the _session_ section, where we make it optional.
+Make `pam_ldap.so` sufficient at the top of each section, except in the *session* section, where we make it optional.
 
  `/etc/pam.d/system-auth` 
-
 ```
 **auth      sufficient pam_ldap.so**
 auth      required  pam_unix.so     try_first_pass nullok
@@ -218,10 +213,9 @@ session   optional  pam_permit.so
 
 Then edit both `/etc/pam.d/su` and `/etc/pam.d/su-l` identically. The `su-l` file is used when the user runs `su --login`.
 
-Make `pam_ldap.so` sufficient at the top of each section, and add `use_first_pass` to `pam_unix` in the _auth_ section.
+Make `pam_ldap.so` sufficient at the top of each section, and add `use_first_pass` to `pam_unix` in the *auth* section.
 
  `/etc/pam.d/su` 
-
 ```
 #%PAM-1.0
 **auth      sufficient    pam_ldap.so**
@@ -241,7 +235,6 @@ session   required	pam_unix.so
 To enable users to edit their password, edit `/etc/pam.d/passwd`:
 
  `/etc/pam.d/passwd` 
-
 ```
 #%PAM-1.0
 **password        sufficient      pam_ldap.so**
@@ -252,10 +245,9 @@ password        required        pam_unix.so sha512 shadow nullok
 
 #### Create home folders at login
 
-If you want home folders to be created at login (eg: if you are not using NFS to store home folders), edit `/etc/pam.d/system-login` and add `pam_mkhomedir.so` to the _session_ section above any "sufficient" items. This will cause home folder creation when logging in at a tty, from ssh, xdm, kdm, gdm, etc. You might choose to edit additional files in the same way, such as `/etc/pam.d/su` and `/etc/pam.d/su-l` to enable it for `su` and `su --login`. If you do not want to do this for ssh logins, edit `system-local-login` instead of `system-login`, etc.
+If you want home folders to be created at login (eg: if you are not using NFS to store home folders), edit `/etc/pam.d/system-login` and add `pam_mkhomedir.so` to the *session* section above any "sufficient" items. This will cause home folder creation when logging in at a tty, from ssh, xdm, kdm, gdm, etc. You might choose to edit additional files in the same way, such as `/etc/pam.d/su` and `/etc/pam.d/su-l` to enable it for `su` and `su --login`. If you do not want to do this for ssh logins, edit `system-local-login` instead of `system-login`, etc.
 
  `/etc/pam.d/system-login` 
-
 ```
 ...top of file not shown...
 session    optional   pam_loginuid.so
@@ -267,9 +259,7 @@ session    required   pam_env.so
 **session    required   pam_mkhomedir.so skel=/etc/skel umask=0022**
 
 ```
-
  `/etc/pam.d/su-l` 
-
 ```
 ...top of file not shown...
 **session         required        pam_mkhomedir.so skel=/etc/skel umask=0022**
@@ -283,7 +273,6 @@ session         required        pam_unix.so
 To enable sudo from an LDAP user, edit `/etc/pam.d/sudo`. You will also need to modify sudoers accordingly.
 
  `/etc/pam.d/sudo` 
-
 ```
 #%PAM-1.0
 **auth      sufficient    pam_ldap.so**
@@ -311,7 +300,6 @@ SSSD is a system daemon. Its primary function is to provide access to identity a
 If it does not exist create `/etc/sssd/sssd.conf`.
 
  `/etc/sssd/sssd.conf` 
-
 ```
 [sssd]
 config_file_version = 2
@@ -349,7 +337,6 @@ Disable caching for both the passwd and group entries in `/etc/nscd.conf` as it 
 Edit `/etc/nsswitch.conf` as follows.
 
  `/etc/nsswitch.conf` 
-
 ```
 # Begin /etc/nsswitch.conf
 
@@ -379,7 +366,6 @@ netgroup: files
 The first step is to edit `/etc/pam.d/system-auth` as follows.
 
  `/etc/pam.d/system-auth` 
-
 ```
 #%PAM-1.0
 
@@ -408,7 +394,6 @@ session optional pam_permit.so
 Edit `/etc/pam.d/sudo` as follows.
 
  `/etc/pam.d/sudo` 
-
 ```
 #%PAM-1.0
 auth           sufficient      pam_sss.so
@@ -422,7 +407,6 @@ auth           required        pam_nologin.so
 In order to enable users to change their passwords using `passwd` edit `/etc/pam.d/passwd` as follows.
 
  `/etc/pam.d/passwd` 
-
 ```
 #%PAM-1.0
 password        sufficient      pam_sss.so

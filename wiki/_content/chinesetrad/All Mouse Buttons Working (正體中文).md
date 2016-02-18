@@ -282,11 +282,11 @@ Horizontal scroll works out of the box - push the scroll wheel left or right. Th
 
 It just works™.
 
-Note: buttons can be mapped to functions easily in `Preferences > Advanced > Shortcuts > Mouse set-up`. For example, to bind _button 8_ to _back_:
+Note: buttons can be mapped to functions easily in `Preferences > Advanced > Shortcuts > Mouse set-up`. For example, to bind *button 8* to *back*:
 
-1.  Navigate to mouse set-up and expand the _Application_ drop-down
-2.  In the input column, type: _Button 8_
-3.  In the actions column, type: _Back_
+1.  Navigate to mouse set-up and expand the *Application* drop-down
+2.  In the input column, type: *Button 8*
+3.  In the actions column, type: *Back*
 
 #### Firefox
 

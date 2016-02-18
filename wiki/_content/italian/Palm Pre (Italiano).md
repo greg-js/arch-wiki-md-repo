@@ -131,7 +131,7 @@ Per stopparlo:
 
 # Tips & Tricks
 
-Per eseguire un file .jar, è necessario passare a `java` l'opzione _-jar_:
+Per eseguire un file .jar, è necessario passare a `java` l'opzione *-jar*:
 
 ```
 java -jar filejava

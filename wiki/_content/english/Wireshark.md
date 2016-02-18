@@ -37,7 +37,7 @@ There are two methods to capture as a normal user :
 
 To use wireshark as a normal user, add user to the wireshark group:
 
- `# gpasswd -a _username_ wireshark` 
+ `# gpasswd -a *username* wireshark` 
 
 To make your session aware of this new group without having to log in again, you can use this command before launching wireshark:
 

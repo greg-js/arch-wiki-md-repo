@@ -46,7 +46,7 @@ SLS는 매우 복잡한 역사를 지녔습니다. 이에 대해 가장 잘 씌�
 
 ### Rock
 
-_소개 [http://www.rocklinux.org/wiki/About](http://www.rocklinux.org/wiki/About)_
+*소개 [http://www.rocklinux.org/wiki/About](http://www.rocklinux.org/wiki/About)*
 
 ROCK 리눅스는 유연한 리눅스 배포 빌드 키트입니다, 예를 들어 당신 자신만의 리눅스 배포본을 만들기 위한 툴체인/프레임워크. 만약 당신 자신만의 배포본을 빌드하기 원하지 않지만 단순히 좋은 범용 배포본으로 흥미가 있다면 크리스탈 ROCK을 원할 것입니다. [http://www.rocklinux.org/wiki/Crystal_ROCK](http://www.rocklinux.org/wiki/Crystal_ROCK)
 
@@ -100,7 +100,7 @@ Both Arch and *BSD offer a tightly-integrated base and ports system combined wit
 
 ### FreeBSD
 
-Both Arch and [FreeBSD](http://www.freebsd.org/about.html) offer software which can be obtained using binaries or compiled using 'ports' systems. Both share a very similar init system. FreeBSD boasts that it is more of a system designed as a whole, compared to GNU/Linux distros, with each application 'ported' over to FreeBSD and made sure to work in the process. Both use `/etc/rc.conf` as a main configuration file. The FreeBSD license is generally more protective of the _coder_, compared to the GPL, which in contrast favors protection of the _code_ itself. Arch is released under the GPL. In FreeBSD, like Arch, decisions are delegated to you, the power user. This may be the most interesting comparison to Arch since it goes head-to-head in package modernity and has a somewhat sizable, smart, active, no-nonsense community. Both systems share many similarities and FreeBSD users will generally feel quite comfortable with most aspects of Arch.
+Both Arch and [FreeBSD](http://www.freebsd.org/about.html) offer software which can be obtained using binaries or compiled using 'ports' systems. Both share a very similar init system. FreeBSD boasts that it is more of a system designed as a whole, compared to GNU/Linux distros, with each application 'ported' over to FreeBSD and made sure to work in the process. Both use `/etc/rc.conf` as a main configuration file. The FreeBSD license is generally more protective of the *coder*, compared to the GPL, which in contrast favors protection of the *code* itself. Arch is released under the GPL. In FreeBSD, like Arch, decisions are delegated to you, the power user. This may be the most interesting comparison to Arch since it goes head-to-head in package modernity and has a somewhat sizable, smart, active, no-nonsense community. Both systems share many similarities and FreeBSD users will generally feel quite comfortable with most aspects of Arch.
 
 ### NetBSD
 

@@ -83,7 +83,7 @@ For more information on OMTC in Firefox read here: [https://wiki.mozilla.org/Pla
 
 #### Network settings
 
-Advanced network settings can be found on the `about:config` page (try searching for _network_).
+Advanced network settings can be found on the `about:config` page (try searching for *network*).
 
 <caption>Suggested values</caption>
 | Key | Value | Description |
@@ -96,7 +96,7 @@ Advanced network settings can be found on the `about:config` page (try searching
 
 The anti-phishing features of Firefox may cause Firefox to become slow to start or exit. The problem is that Firefox maintains an [SQLite](/index.php/SQLite "SQLite") database that can grow quite big which makes reading and writing slower after repeated use. If you feel that you do not need Firefox to tell you which sites may be suspect you can disable this feature:
 
-*   Turn off the following options under the security tab in preferences: _"Block reported attack sites"_ and _"Block reported web forgeries"_.
+*   Turn off the following options under the security tab in preferences: *"Block reported attack sites"* and *"Block reported web forgeries"*.
 
 *   Delete all files beginning with `urlclassifier` in your profile folder (`~/.mozilla/firefox/<profile_dir>/`):
 
@@ -124,7 +124,7 @@ This effectively makes the file empty and then read-only so Firefox cannot write
 
 OCSP validation may cause Firefox [to become slower](http://news.netcraft.com/archives/2013/04/16/certificate-revocation-and-the-performance-of-ocsp.html) for each (HTTPS) connection to a new server. This is worse, recently, where web gadgets are included in pages via HTTPS (e.g., "like" buttons of the social networks), resulting in many connections for a single URL.
 
-*   Turn off the following option under Preferences -> Advanced -> Certificates -> _"Requests: Use the Online Certificate Status Protocol (OCSP) to confirm the current validity of certificates"_.
+*   Turn off the following option under Preferences -> Advanced -> Certificates -> *"Requests: Use the Online Certificate Status Protocol (OCSP) to confirm the current validity of certificates"*.
 
 **Warning:** Disabling OCSP causes vulnerabilities to man-in-the-middle attacks. If you are using a potentially vulnerable connection such as Wi-Fi or VPN, it is strongly advised to leave OCSP on.
 
@@ -132,13 +132,13 @@ OCSP validation may cause Firefox [to become slower](http://news.netcraft.com/ar
 
 Every object loaded (html pages, jpeg images, css stylesheets, gif banners) is saved in the Firefox cache, to be loaded in the future without to download it again from the server, but only fraction of these objects will be really reused without download (usually the 30%). This because of too short expiration times for the objects, updates or simply the user behavior (to load new pages instead the ones already visited). The Firefox cache is divided in memory and disk cache and using the disk cache results to frequent disk writes, because every time an object loaded it is written to the disk and some older object is removed.
 
-*   Turn on the following option under Preferences -> Advanced -> Network -> _"Cached Web Content: Override automatic cache management"_ and specify zero in _"Limit cache to"_.
+*   Turn on the following option under Preferences -> Advanced -> Network -> *"Cached Web Content: Override automatic cache management"* and specify zero in *"Limit cache to"*.
 
 #### Longer interval to save session
 
 The Firefox session store automatically saves the current status (opened urls, cookies, history and bookmarks) to the disk every 15 seconds. It may be too frequent for the user needs, resulting in a frequent disk access.
 
-This setting can be found on the `about:config` page (try searching for _sessionstore_).
+This setting can be found on the `about:config` page (try searching for *sessionstore*).
 
 *   browser.sessionstore.interval 300000
 
@@ -211,7 +211,7 @@ Monospace: Courier New Size (pixels): 13
 
 ### General user interface CSS settings
 
-Firefox's user interface can be modified by editing the `userChrome.css` and `userContent.css` files in `~/.mozilla/firefox/<profile_dir>/chrome/` (_profile_dir_ is of the form _hash.name_, where the _hash_ is an 8 character, seemingly random string and the profile _name_ is usually _default_).
+Firefox's user interface can be modified by editing the `userChrome.css` and `userContent.css` files in `~/.mozilla/firefox/<profile_dir>/chrome/` (*profile_dir* is of the form *hash.name*, where the *hash* is an 8 character, seemingly random string and the profile *name* is usually *default*).
 
 **Note:** The `chrome/` folder and `userChrome.css`/`userContent.css` files may not necessarily exist, so they may need to be created.
 
@@ -222,7 +222,6 @@ This section only deals with the `userChrome.css` file which modifies Firefox's 
 The setting effectively overrides the global GTK+ font preferences, and does not affect webpages, only the user interface itself:
 
  `~/.mozilla/firefox/<profile_dir>/chrome/userChrome.css` 
-
 ```
 * {
     font-family: "FONT_NAME";
@@ -235,7 +234,6 @@ The setting effectively overrides the global GTK+ font preferences, and does not
 Enables text-only buttons:
 
  `~/.mozilla/firefox/<profile_dir>/chrome/userChrome.css` 
-
 ```
 .button-box .button-icon {
     display: none;
@@ -248,7 +246,6 @@ Enables text-only buttons:
 These settings hide the arrows that appear to the horizontal edges of the tab bar, the button that toggles the "all tabs" drop-down list, and the plus sign button that creates a new tab.
 
  `~/.mozilla/firefox/<profile_dir>/chrome/userChrome.css` 
-
 ```
 /* Tab bar */
 
@@ -274,7 +271,6 @@ These settings hide the arrows that appear to the horizontal edges of the tab ba
 To place the tab bar horizontally stacked along the sides of the browser window:
 
  `~/.mozilla/firefox/<profile_dir>/chrome/userChrome.css` 
-
 ```
 /* Display the tabbar on the left */
 #content > tabbox {
@@ -329,7 +325,6 @@ The extension [Classic Theme Restorer](https://addons.mozilla.org/nl/firefox/add
 #### Auto-hide Bookmarks Toolbar
 
  `~/.mozilla/firefox/<profile_dir>/chrome/userChrome.css` 
-
 ```
 #PersonalToolbar {
     visibility: collapse !important;
@@ -344,7 +339,6 @@ The extension [Classic Theme Restorer](https://addons.mozilla.org/nl/firefox/add
 #### Remove sidebar width restrictions
 
  `~/.mozilla/firefox/<profile_dir>/chrome/userChrome.css` 
-
 ```
 /* remove maximum/minimum  width restriction of sidebar */
 #sidebar {
@@ -363,7 +357,6 @@ This file can be used for making small fixes or to apply personal styles to freq
 #### Import other CSS files
 
  `~/.mozilla/firefox/<profile_dir>/chrome/userContent.css` 
-
 ```
 @import url("./imports/some_file.css");
 
@@ -372,7 +365,6 @@ This file can be used for making small fixes or to apply personal styles to freq
 #### Block certain parts of a domain
 
  `~/.mozilla/firefox/<profile_dir>/chrome/userContent.css` 
-
 ```
 @-moz-document domain(example.com) {
     div#header {
@@ -385,7 +377,6 @@ This file can be used for making small fixes or to apply personal styles to freq
 #### Add [pdf] after links to PDF files
 
  `~/.mozilla/firefox/<profile_dir>/chrome/userContent.css` 
-
 ```
 /* add '[pdf]' next to links to PDF files */
 a[href$=".pdf"]:after {
@@ -399,8 +390,8 @@ a[href$=".pdf"]:after {
 
 To toggle between the new Firefox button and the classic menu bar:
 
-*   if the button is active, check _Preferences > Menu Bar_, or right click in the toolbar area and check _Menu Bar_.
-*   if the menu bar is active, uncheck _View > Toolbars > Menu Bar_, or right click in the toolbar area and uncheck _Menu Bar_.
+*   if the button is active, check *Preferences > Menu Bar*, or right click in the toolbar area and check *Menu Bar*.
+*   if the menu bar is active, uncheck *View > Toolbars > Menu Bar*, or right click in the toolbar area and uncheck *Menu Bar*.
 
 In GNU/Linux, you will just get a plain grey button instead of the new orange one from Windows. However you can change this to either a Firefox icon or the icon followed by the "Firefox" text.
 
@@ -413,7 +404,7 @@ Adding the following to your `~/.mozilla/firefox/userprofile/chrome/userChrome.c
 
 ```
 
-Adding the following to the same file will _remove_ the "Firefox" text:
+Adding the following to the same file will *remove* the "Firefox" text:
 
 ```
 #appmenu-toolbar-button > .toolbarbutton-text,
@@ -514,12 +505,12 @@ Alternatively you can install the [SmoothWheel add-on](http://smoothwheel.mozdev
 
 To change the order search engines are displayed in:
 
-*   Open the drop-down list of search engines and click _Manage Search Engines..._ entry.
-*   Highlight the engine you want to move and use _Move Up_ or _Move Down_ to move it. Alternatively, you can use drag-and-drop.
+*   Open the drop-down list of search engines and click *Manage Search Engines...* entry.
+*   Highlight the engine you want to move and use *Move Up* or *Move Down* to move it. Alternatively, you can use drag-and-drop.
 
 ### How to open a *.doc automatically with Abiword or LibreOffice Writer
 
-Go to _Preferences > Applications_ and search for _Word Document_ (or _Word 2007 Document_ for `*.docx`). After finding it, click the drop-down list and select _Use other..._. From there you have to specify the exact path to the Abiword or Writer executable (i.e.`/usr/bin/abiword` or `/usr/bin/lowriter`).
+Go to *Preferences > Applications* and search for *Word Document* (or *Word 2007 Document* for `*.docx`). After finding it, click the drop-down list and select *Use other...*. From there you have to specify the exact path to the Abiword or Writer executable (i.e.`/usr/bin/abiword` or `/usr/bin/lowriter`).
 
 ### "I'm Feeling Lucky" mode
 
@@ -582,7 +573,7 @@ An alternative is to add a rule in your window manager configuration file. For e
 
 ```
 
-in the _<keyboard>_ section of your `rc.xml` file.
+in the *<keyboard>* section of your `rc.xml` file.
 
 **Note:** This will be effective for every application used under a graphic server.
 

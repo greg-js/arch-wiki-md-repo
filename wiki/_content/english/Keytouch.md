@@ -170,7 +170,7 @@ The problem is probably the same as above. If you run `keytouchd` as root, the p
 
 *   **I've just created a brand new keyboard file for my own model (using `keytouch-editor`) but when I select it in `keytouch`, it says that my keyboard file doesn't exist. I know that is there!:**
 
-Actually, the error isn't that the file doesn't exist: It only has a bad filename. When you make your own keyboard file, you have to make sure that your filename has _exactly_ this format:
+Actually, the error isn't that the file doesn't exist: It only has a bad filename. When you make your own keyboard file, you have to make sure that your filename has *exactly* this format:
 
 ```
 Model.Manufacturer

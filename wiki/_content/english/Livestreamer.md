@@ -15,10 +15,10 @@ Support of a various streaming services is provided by a plugins, which can be e
 
 ## Usage
 
-Package provides a _livestreamer_ command-line utility, which is a quite easy to use:
+Package provides a *livestreamer* command-line utility, which is a quite easy to use:
 
 ```
-$ livestreamer -p _your_player_ _url_ _stream_
+$ livestreamer -p *your_player* *url* *stream*
 
 ```
 
@@ -38,7 +38,7 @@ See the `livestreamer (1)` [man page](/index.php/Man_page "Man page") for the fu
 ### Twitch
 
 ```
-$ livestreamer -p _player_ twitch.tv/_name_of_channel_ _quality_
+$ livestreamer -p *player* twitch.tv/*name_of_channel* *quality*
 
 ```
 

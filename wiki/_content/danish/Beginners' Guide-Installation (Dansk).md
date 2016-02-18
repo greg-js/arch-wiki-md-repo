@@ -32,7 +32,7 @@ Hvis du ønsker, kan du manuelt indlæse drivere til dit netværkskort. Udev er 
 
 Tilgængelige netværkskort vil vises. Hvis et netværkskort og HWaddr (hardwareadresse) vises, er modulet allerede indlæst. Hvis dit netværkskort ikke er i listen, kan du indlæse det fra installationen, eller gøre det i en anden virtuel konsol. Vælg dit netværkskort for at fortsætte.
 
-Installationen spørger om du vil benytte DHCP. Ved at vælge 'Yes', køres **dhcpcd** for at finde en tilgængelig _gateway_ og hente en IP-adresse. Hvis du vælger 'Np' vil du blive bedt om en statisk konfiguration af IP, netmaske, broadcast, DNS server, HTTP proxy og FTP proxy. Dernæst returneres du til menuen.
+Installationen spørger om du vil benytte DHCP. Ved at vælge 'Yes', køres **dhcpcd** for at finde en tilgængelig *gateway* og hente en IP-adresse. Hvis du vælger 'Np' vil du blive bedt om en statisk konfiguration af IP, netmaske, broadcast, DNS server, HTTP proxy og FTP proxy. Dernæst returneres du til menuen.
 
 Vælg 'Choose Mirror' for at vælge et pakkespejl, og vælg et HTTP/FTP spejl. Vend tilbage til hovedmenuen når du er færdig.
 
@@ -62,7 +62,7 @@ Skift tilbage til den første virtuelle konsol med <Alt>+<F1> og fortsæt med [I
 
 (Hvis du har brug for trådløs internetadgang under installationen)
 
-Drivere og værktøjer til trådløst netværk er tilgængelige i installationsmiljøet. En god viden om hardwaren vil være vigtig for at konfigurere det rigtigt. Bemærk at ved at følge proceduren _på dette punkt i installationen_, vil gøre din trådløse hardware tilgængelig _i installationsmiljøet_. Disse trin (eller en anden form for håndtering af trådløst netværk) skal gentages i det færdige system efter genstart.
+Drivere og værktøjer til trådløst netværk er tilgængelige i installationsmiljøet. En god viden om hardwaren vil være vigtig for at konfigurere det rigtigt. Bemærk at ved at følge proceduren *på dette punkt i installationen*, vil gøre din trådløse hardware tilgængelig *i installationsmiljøet*. Disse trin (eller en anden form for håndtering af trådløst netværk) skal gentages i det færdige system efter genstart.
 
 **Bemærk:** Det følgende eksempel benytter `wlan0` til netkort, og 'linksys' til ESSID. Husk at tilpasse disse til din situation
 
@@ -80,7 +80,6 @@ De grundlæggende trin er som følger:
 *   Sikr dig at udev har indlæst driveren, og at driveren har skabt et brugbart kerneinterface med `/usr/sbin/iwconfig`:
 
  `# iwconfig` 
-
 ```
  lo no wireless extensions.
  eth0 no wireless extensions.

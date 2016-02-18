@@ -1,6 +1,6 @@
-_GpsDrive is a car (bike, ship, plane) navigation system. GpsDrive displays your position provided from your GPS receiver on a zoomable map. The maps are autoselected for best resolution depending of your position and can be downloaded from the Internet. Speech output is supported via the "speech dispatcher" software. All GPS receivers supported by gpsd should be usable._
+*GpsDrive is a car (bike, ship, plane) navigation system. GpsDrive displays your position provided from your GPS receiver on a zoomable map. The maps are autoselected for best resolution depending of your position and can be downloaded from the Internet. Speech output is supported via the "speech dispatcher" software. All GPS receivers supported by gpsd should be usable.*
 
-_GpsDrive is written in C with use of the GTK+ toolkit under the GPL license, and runs with Linux, Mac OSX, and FreeBSD._
+*GpsDrive is written in C with use of the GTK+ toolkit under the GPL license, and runs with Linux, Mac OSX, and FreeBSD.*
 
 GpsDrive 2.11 features OpenStreetMap/Mapnik vector/offline rendering support, which is time-consuming to setup. This article describes step-by-step how to setup PostgreSQL with PostGIS support, import an OpenStreetMap database, and configure the GpsDrive<->Mapnik<->PostgreSQL connection.
 

@@ -59,7 +59,7 @@ On Gnome, an ICC profile can easily be created by using [gnome-color-manager](ht
 
 #### Manually
 
-Ensure _gnome-settings-daemon_ is started, and run:
+Ensure *gnome-settings-daemon* is started, and run:
 
 ```
 $ colormgr get-devices 
@@ -69,7 +69,7 @@ $ colormgr get-devices
 Look for the `Device ID` line of your monitor. If this is e.g. `xrandr-Lenovo Group Limited`, start calibration with the command:
 
 ```
-gcm-calibrate --device "_xrandr-Lenovo Group Limited_"
+gcm-calibrate --device "*xrandr-Lenovo Group Limited*"
 
 ```
 
@@ -87,14 +87,14 @@ Adjust the lighting in the room to what you will be using when working. Even if 
 
 1.  Set the monitor contrast to maximum, or 100%.
 2.  Next, display a pure black over entire screen by creating a small, black PNG image (all pixels have RGB = 0, 0, 0) and opening it up in a picture viewer that is capable of displaying an image in fullscreen mode without any controls.
-3.  Reduce the vertical size of the monitor screen (not the PNG image displayed by a picture viewer but the whole of what's displayed on the screen) to 60% to 70% of the full height. What is revealed above and below the picture is called a _non-scanned area_, and since that area is not receiving any voltage, it is the blackest of black your monitor is capable of displaying.
-4.  Locate the brightness control (usually a sun, circle with rays projecting from it's edges) and lower the value until the black _image_ matches the non-scanned area.
+3.  Reduce the vertical size of the monitor screen (not the PNG image displayed by a picture viewer but the whole of what's displayed on the screen) to 60% to 70% of the full height. What is revealed above and below the picture is called a *non-scanned area*, and since that area is not receiving any voltage, it is the blackest of black your monitor is capable of displaying.
+4.  Locate the brightness control (usually a sun, circle with rays projecting from it's edges) and lower the value until the black *image* matches the non-scanned area.
 
 ##### Color Temperature
 
 As we said in the introduction, setting color temperature must occur at noon. If you only have fixed factory default color temperature, you do not really need to wait for the sunny day to come. Just set it to 6500K.
 
-Place your monitor so that you can see outside the window _and_ your screen at the same time. For this step, you also need to create a white square image (RGB = 255, 255, 255), roughly 10 by 10 centimeters (4 by 3 inches). Using the same Gwenview technique as with brightness/contrast, display the white square on a pure black background.
+Place your monitor so that you can see outside the window *and* your screen at the same time. For this step, you also need to create a white square image (RGB = 255, 255, 255), roughly 10 by 10 centimeters (4 by 3 inches). Using the same Gwenview technique as with brightness/contrast, display the white square on a pure black background.
 
 1.  First, prepare your eyes by staring at the outside world for a while. Let them adjust to the daylight viewing condition for a few minutes.
 2.  Glance at the monitor, and the white square for a few second (it has to be short, because eyes will readjust quickly).
@@ -107,21 +107,21 @@ Take your time with the steps described above. It is essential to get it right.
 
 Start lprof. You will be presented by a fairly large window with multiple tabs on the right.
 
-1.  Click on the _Monitor Profiler_ tab. Then click on the large _Enter monitor values >>_ button.
-2.  White point should be set to _6500K (daylight)_.
-3.  Primaries should be set to either _SMPTE RP145-1994_, or _EBU Tech.3213-E_ or _P22_, or whatever appropriate values for your monitor. If you come across correct values for your monitor, enter those by selecting _User Defined_ from the drop-down. If in doubt, you may use _P22_ for all monitors with Trinitron CRTs (in this case, _Trinitron_ is not related to Sony Trinitron mointors and TVs), and _SMPTE RP145-1994_ for other CRTs.
-4.  Click the _Set Gamma and Black Point_ button.
+1.  Click on the *Monitor Profiler* tab. Then click on the large *Enter monitor values >>* button.
+2.  White point should be set to *6500K (daylight)*.
+3.  Primaries should be set to either *SMPTE RP145-1994*, or *EBU Tech.3213-E* or *P22*, or whatever appropriate values for your monitor. If you come across correct values for your monitor, enter those by selecting *User Defined* from the drop-down. If in doubt, you may use *P22* for all monitors with Trinitron CRTs (in this case, *Trinitron* is not related to Sony Trinitron mointors and TVs), and *SMPTE RP145-1994* for other CRTs.
+4.  Click the *Set Gamma and Black Point* button.
 5.  You will now see a full-screen view of two charts with some controls at the bottom.
-6.  Uncheck the _Link channels_ check-box and adjust individual Red, Green, and Blue gamma by either moving the slider left or right, or by entering and changing values in the three boxes to the left. The goal is to make the chart on the left (the smaller square one) flat. When you are satisfied with how it looks, check the _Link channels_ check-box and adjust the gamma again.
-7.  When you are done, click _OK_. Click _OK_ again.
+6.  Uncheck the *Link channels* check-box and adjust individual Red, Green, and Blue gamma by either moving the slider left or right, or by entering and changing values in the three boxes to the left. The goal is to make the chart on the left (the smaller square one) flat. When you are satisfied with how it looks, check the *Link channels* check-box and adjust the gamma again.
+7.  When you are done, click *OK*. Click *OK* again.
 
 When you are finished entering monitor values, you might want to enter some information about the monitor. This is not mandatory, but it is always nice to know what profile is for what.
 
-1.  Click _Profile identification_ button.
+1.  Click *Profile identification* button.
 2.  Fill in the data.
-3.  Click _OK_ to finish.
+3.  Click *OK* to finish.
 
-After you are all done, click on the '...' button next to _Output Profile File_ box. Enter the name of your profile: _somemonitor.icc_. Click _Create Profile_ button, and you are done.
+After you are all done, click on the '...' button next to *Output Profile File* box. Enter the name of your profile: *somemonitor.icc*. Click *Create Profile* button, and you are done.
 
 ### Argyll CMS
 

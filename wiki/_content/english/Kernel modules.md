@@ -21,7 +21,7 @@ To create a kernel module, you can read [The Linux Kernel Module Programming Gui
 
 ## Obtaining information
 
-Modules are stored in `/usr/lib/modules/_kernel_release_`. You can use the command `uname -r` to get your current kernel release version.
+Modules are stored in `/usr/lib/modules/*kernel_release*`. You can use the command `uname -r` to get your current kernel release version.
 
 **Note:** Module names often use underscores (`_`) or dashes (`-`); however, those symbols are interchangeable, both when using the `modprobe` command and in configuration files in `/etc/modprobe.d/`.
 
@@ -35,14 +35,14 @@ $ lsmod
 To show information about a module:
 
 ```
-$ modinfo _module_name_
+$ modinfo *module_name*
 
 ```
 
 To list the options that are set for a loaded module:
 
 ```
-$ systool -v -m _module_name_
+$ systool -v -m *module_name*
 
 ```
 
@@ -56,14 +56,14 @@ $ modprobe -c | less
 To display the configuration of a particular module:
 
 ```
-$ modprobe -c | grep _module_name_
+$ modprobe -c | grep *module_name*
 
 ```
 
 List the dependencies of a module (or alias), including the module itself:
 
 ```
-$ modprobe --show-depends _module_name_
+$ modprobe --show-depends *module_name*
 
 ```
 
@@ -74,7 +74,6 @@ Today, all necessary modules loading is handled automatically by [udev](/index.p
 Kernel modules can be explicitly loaded during boot and are configured as a static list in files under `/etc/modules-load.d/`. Each configuration file is named in the style of `/etc/modules-load.d/<program>.conf`. Configuration files simply contain a list of kernel modules names to load, separated by newlines. Empty lines and lines whose first non-whitespace character is `#` or `;` are ignored.
 
  `/etc/modules-load.d/virtio-net.conf` 
-
 ```
 # Load virtio-net.ko at boot
 virtio-net
@@ -86,12 +85,12 @@ See `man modules-load.d` for more details.
 
 Kernel modules are handled by tools provided by [kmod](https://www.archlinux.org/packages/?name=kmod) package. You can use these tools manually.
 
-**Note:** If you have upgraded your kernel but have not yet rebooted, _modprobe_ will fail with no error message and exit with code 1, because the path `/lib/modules/$(uname -r)/` no longer exists. Check manually if this path exists when _modprobe_ failed to determine if this is the case.
+**Note:** If you have upgraded your kernel but have not yet rebooted, *modprobe* will fail with no error message and exit with code 1, because the path `/lib/modules/$(uname -r)/` no longer exists. Check manually if this path exists when *modprobe* failed to determine if this is the case.
 
 To load a module:
 
 ```
-# modprobe _module_name_
+# modprobe *module_name*
 
 ```
 
@@ -105,14 +104,14 @@ To load a module by filename (i.e. one that is not installed in `/lib/modules/$(
 To unload a module:
 
 ```
-# modprobe -r _module_name_
+# modprobe -r *module_name*
 
 ```
 
 Or, alternatively:
 
 ```
-# rmmod _module_name_
+# rmmod *module_name*
 
 ```
 
@@ -122,10 +121,10 @@ To pass a parameter to a kernel module, you can pass them manually with modprobe
 
 ### Manually at load time using modprobe
 
-The basic way to pass parameters to a module is using the modprobe command. Parameters are specified on command line using simple `_key=value_` assignments:
+The basic way to pass parameters to a module is using the modprobe command. Parameters are specified on command line using simple `*key=value*` assignments:
 
 ```
-# modprobe _module_name parameter_name=parameter_value_
+# modprobe *module_name parameter_name=parameter_value*
 
 ```
 
@@ -133,12 +132,11 @@ The basic way to pass parameters to a module is using the modprobe command. Para
 
 Files in `/etc/modprobe.d/` directory can be used to pass module settings to [udev](/index.php/Udev "Udev"), which will use `modprobe` to manage the loading of the modules during system boot. Configuration files in this directory can have any name, given that they end with the `.conf` extension. The syntax is:
 
- `/etc/modprobe.d/myfilename.conf`  `options _module_name parameter_name=parameter_value_` 
+ `/etc/modprobe.d/myfilename.conf`  `options *module_name parameter_name=parameter_value*` 
 
 For example:
 
  `/etc/modprobe.d/thinkfan.conf` 
-
 ```
 # On ThinkPads, this lets the 'thinkfan' daemon control fan speed
 options thinkpad_acpi fan_control=1
@@ -151,7 +149,7 @@ options thinkpad_acpi fan_control=1
 If the module is built into the kernel, you can also pass options to the module using the kernel command line. For all common bootloaders, the following syntax is correct:
 
 ```
-_module_name.parameter_name=parameter_value_
+*module_name.parameter_name=parameter_value*
 
 ```
 
@@ -173,7 +171,6 @@ Aliases are alternate names for a module. For example: `alias my-mod really_long
 Some modules have aliases which are used to automatically load them when they are needed by an application. Disabling these aliases can prevent automatic loading but will still allow the modules to be manually loaded.
 
  `/etc/modprobe.d/modprobe.conf` 
-
 ```
 # Prevent Bluetooth autoload
 alias net-pf-31 off
@@ -190,7 +187,6 @@ Some modules are loaded as part of the [initramfs](/index.php/Initramfs "Initram
 Create a `.conf` file inside `/etc/modprobe.d/` and append a line for each module you want to blacklist, using the `blacklist` keyword. If for example you want to prevent the `pcspkr` module from loading:
 
  `/etc/modprobe.d/nobeep.conf` 
-
 ```
 # Do not load the 'pcspkr' module on boot.
 blacklist pcspkr
@@ -201,13 +197,11 @@ blacklist pcspkr
 However, there is a workaround for this behaviour; the `install` command instructs modprobe to run a custom command instead of inserting the module in the kernel as normal, so you can force the module to always fail loading with:
 
  `/etc/modprobe.d/blacklist.conf` 
-
 ```
 ...
-install _module_name_ /bin/false
+install *module_name* /bin/false
 ...
 ```
-
 This will effectively blacklist that module and any other that depends on it.
 
 ### Using kernel command line

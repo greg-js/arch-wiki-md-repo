@@ -1,4 +1,4 @@
-**M**usic **O**n **C**onsole is a lightweight music player which consists of 2 parts, a server (Moc) and a player/interface (Mocp). This is similar to [mpd](/index.php/Mpd "Mpd"), but unlike _mpd_, Moc comes with an interface. Its server does not support remote access.
+**M**usic **O**n **C**onsole is a lightweight music player which consists of 2 parts, a server (Moc) and a player/interface (Mocp). This is similar to [mpd](/index.php/Mpd "Mpd"), but unlike *mpd*, Moc comes with an interface. Its server does not support remote access.
 
 ## Contents
 
@@ -21,7 +21,7 @@
 
 ## Configuration
 
-The package includes a sample configuration file at `/usr/share/doc/moc/config.example`. To configure _moc_, copy this file to `~/.moc/config` and edit it.
+The package includes a sample configuration file at `/usr/share/doc/moc/config.example`. To configure *moc*, copy this file to `~/.moc/config` and edit it.
 
 For instructions about customizing the keybindings, read `/usr/share/doc/moc/keymap.example`.
 
@@ -29,7 +29,7 @@ If you want to use Moc with [OSS](/index.php/OSS "OSS") v4.1, see [OSS#MOC](/ind
 
 ## Usage
 
-Start _moc_:
+Start *moc*:
 
 ```
 $ mocp
@@ -57,7 +57,6 @@ filesystem browsing (and vice versa) | `Tab` |
 | Quit player | `q` |
 
 **Note:** To shut down the server, use `Shift+q` or:
-
 ```
 $ mocp -x
 
@@ -79,7 +78,7 @@ cp /usr/share/doc/mocp-scrobbler/config.example  ~/.mocpscrob/config
 
 Edit `~/.mocpscrob/config` to add your login and password. The password variable will be replaced with `password_md5` on the first run. Its value will be the original value hashed using MD5 algorithm. If you want to change password, just add again password with you new password, and `password_md5` will be replaced.
 
-To scrobble tracks, start _mocp-scrobbler_ as daemon before _mocp_. You can also use an [alias](/index.php/Alias "Alias"):
+To scrobble tracks, start *mocp-scrobbler* as daemon before *mocp*. You can also use an [alias](/index.php/Alias "Alias"):
 
 ```
 alias mocp='/usr/bin/mocp-scrobbler.py -d; mocp'
@@ -107,7 +106,6 @@ alias mocp='/usr/bin/mocp-scrobbler.py -d; mocp'
 ## systemd service file
 
  `/etc/systemd/system/moc@.service` 
-
 ```
 [Unit]
 Description=MOC server
@@ -136,7 +134,7 @@ If MOC fails to start, it is most probably because of something wrong in `~/.moc
 
 ### Strange characters
 
-If you see strange-like characters displayed in _moc_ instead of the normal lines (vertical lines to separate space, etc.), you may have a font set incompatible to MOC. Either change the respective font, or edit `.moc/config` to use ASCII for drawing lines:
+If you see strange-like characters displayed in *moc* instead of the normal lines (vertical lines to separate space, etc.), you may have a font set incompatible to MOC. Either change the respective font, or edit `.moc/config` to use ASCII for drawing lines:
 
 ```
 ASCIILines = no

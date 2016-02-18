@@ -30,7 +30,7 @@ service auth
       user = nobody
       server = /usr/bin/identd
       server_args = -m -N
-      log_on_failure += USERID
+      log*on*failure += USERID
       disable = no
 }
 

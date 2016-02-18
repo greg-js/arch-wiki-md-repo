@@ -18,7 +18,7 @@ Firstly the laptop BIOS must be set to Initialize and Quick Boot must be off. Th
 
 The thinkpad also behaves differently on reset than it does on power on. The sound card driver may not load on reset.
 
-Pcmcia_cs appears to trash the sound card driver on boot. You do not really need pcmcia_cs as hotplug should handle all but very old 16bit pcmcia cards. If you really want it then it is possible to stop it from probing certain ports and irq's. Otherwise you can just fix this by reloading the kernel module. Add this to your /etc/rc.local:
+Pcmcia*cs appears to trash the sound card driver on boot. You do not really need pcmcia*cs as hotplug should handle all but very old 16bit pcmcia cards. If you really want it then it is possible to stop it from probing certain ports and irq's. Otherwise you can just fix this by reloading the kernel module. Add this to your /etc/rc.local:
 
 ```
 rmmod snd-cs4236

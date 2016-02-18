@@ -1,4 +1,4 @@
-[mpv](http://mpv.io/) is a movie player based on [mplayer](http://www.mplayerhq.hu/design7/news.html) and mplayer2\. It supports a wide variety of video file formats, audio and video codecs, and subtitle types. A comprehensive (although admittedly incomplete) list of differences between _mpv_ and the aforementioned players can be found [here](https://github.com/mpv-player/mpv/blob/master/DOCS/mplayer-changes.rst).
+[mpv](http://mpv.io/) is a movie player based on [mplayer](http://www.mplayerhq.hu/design7/news.html) and mplayer2\. It supports a wide variety of video file formats, audio and video codecs, and subtitle types. A comprehensive (although admittedly incomplete) list of differences between *mpv* and the aforementioned players can be found [here](https://github.com/mpv-player/mpv/blob/master/DOCS/mplayer-changes.rst).
 
 ## Contents
 
@@ -27,9 +27,9 @@
 
 ### Front ends
 
-_mpv_ provides an elegant User Interface called OSC which appears when moving the mouse. To ease casual users, other graphical interfaces exist:
+*mpv* provides an elegant User Interface called OSC which appears when moving the mouse. To ease casual users, other graphical interfaces exist:
 
-*   **Baka MPlayer** — Free and open source, cross-platform, _libmpv_ based multimedia player (Qt 5).
+*   **Baka MPlayer** — Free and open source, cross-platform, *libmpv* based multimedia player (Qt 5).
 
 	[https://github.com/u8sand/Baka-MPlayer/](https://github.com/u8sand/Baka-MPlayer/) || [baka-mplayer](https://www.archlinux.org/packages/?name=baka-mplayer), [baka-mplayer-git](https://aur.archlinux.org/packages/baka-mplayer-git/)
 
@@ -37,7 +37,7 @@ _mpv_ provides an elegant User Interface called OSC which appears when moving th
 
 	[https://bomi-player.github.io/](https://bomi-player.github.io/) || [bomi](https://aur.archlinux.org/packages/bomi/), [bomi-git](https://aur.archlinux.org/packages/bomi-git/)
 
-*   **GNOME MPV** — A simple frontend for _mpv_ (GTK+ 3).
+*   **GNOME MPV** — A simple frontend for *mpv* (GTK+ 3).
 
 	[https://github.com/gnome-mpv/gnome-mpv/](https://github.com/gnome-mpv/gnome-mpv/) || [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/), [gnome-mpv](https://aur.archlinux.org/packages/gnome-mpv/)
 
@@ -49,11 +49,11 @@ _mpv_ provides an elegant User Interface called OSC which appears when moving th
 
 	[https://github.com/kokoko3k/xt7-player-mpv](https://github.com/kokoko3k/xt7-player-mpv) || [xt7-player-mpv-git](https://aur.archlinux.org/packages/xt7-player-mpv-git/)
 
-**Note:** CMPlayer/_bomi_ packages provide _mpv_ internally.
+**Note:** CMPlayer/*bomi* packages provide *mpv* internally.
 
 ## Configuration
 
-_mpv'_s configuration is read from the files `mpv.conf` (settings), `input.conf` (key bindings), and `lua-settings/osc.conf` (on screen display). For a full list of options, see the man page or the github docs [options.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/options.rst), [input.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/input.rst), and [osc.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/osc.rst).
+*mpv'*s configuration is read from the files `mpv.conf` (settings), `input.conf` (key bindings), and `lua-settings/osc.conf` (on screen display). For a full list of options, see the man page or the github docs [options.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/options.rst), [input.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/input.rst), and [osc.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/osc.rst).
 
 If the [environment variable](/index.php/Environment_variable "Environment variable") `XDG_CONFIG_HOME` is not set, user configuration files will be read from the `~/.config/mpv` directory. System-wide configuration files are read from the `/etc/mpv` directory.
 
@@ -77,7 +77,7 @@ Alt+k add video-pan-y -0.05
 
 ### Hardware Decoding
 
-Unlike _mplayer_ and _mplayer2_, _mpv_ has both [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") support built-in. To enable it, run _mpv_ with the `--hwdec='method'` option. You can find list of all available methods looking for `--hwdec=<api>` in [man page](/index.php/Man_page "Man page") `mpv (1)`. To make this persistent, add the line `hwdec=_method_` to your configuration file. When hardware decoding is used, the video output should be set to `opengl`, `opengl-hq` or `vdpau` (if using `hwdec=vdpau`). Using `vo=vaapi` is not recommended for use anymore [[1]](https://github.com/mpv-player/mpv/blob/master/DOCS/man/vo.rst). If hardware decoding cannot be used, _mpv_ will automatically fall back to software decoding. See [options.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/options.rst) and [vo.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/vo.rst) for more information.
+Unlike *mplayer* and *mplayer2*, *mpv* has both [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") support built-in. To enable it, run *mpv* with the `--hwdec='method'` option. You can find list of all available methods looking for `--hwdec=<api>` in [man page](/index.php/Man_page "Man page") `mpv (1)`. To make this persistent, add the line `hwdec=*method*` to your configuration file. When hardware decoding is used, the video output should be set to `opengl`, `opengl-hq` or `vdpau` (if using `hwdec=vdpau`). Using `vo=vaapi` is not recommended for use anymore [[1]](https://github.com/mpv-player/mpv/blob/master/DOCS/man/vo.rst). If hardware decoding cannot be used, *mpv* will automatically fall back to software decoding. See [options.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/options.rst) and [vo.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/vo.rst) for more information.
 
 ### High quality video output
 
@@ -91,13 +91,13 @@ This comes with a GLSL debanding filter by default, which may lead to bad perfor
 
 ### Automatically resuming from where you left off
 
-The default key to quit _mpv_, saving the video's current position and state, is `Shift+q`. This key can be changed by adding the `quit_watch_later` string in the key bindings configuration file.
+The default key to quit *mpv*, saving the video's current position and state, is `Shift+q`. This key can be changed by adding the `quit_watch_later` string in the key bindings configuration file.
 
-To always automatically save the current playback position on quit, start _mpv_ with a flag `--save-position-on-quit`. To make option permanent, add line `save-position-on-quit` to configuration file.
+To always automatically save the current playback position on quit, start *mpv* with a flag `--save-position-on-quit`. To make option permanent, add line `save-position-on-quit` to configuration file.
 
 ### Volume is too low
 
-Set `softvol-max=_value_` in your configuration file to a reasonable amount, such as `softvol-max=600`. Additionally (or alternatively), you can utilize [dynamic range compression](https://en.wikipedia.org/wiki/Dynamic_range_compression "wikipedia:Dynamic range compression") with `af=drc`.
+Set `softvol-max=*value*` in your configuration file to a reasonable amount, such as `softvol-max=600`. Additionally (or alternatively), you can utilize [dynamic range compression](https://en.wikipedia.org/wiki/Dynamic_range_compression "wikipedia:Dynamic range compression") with `af=drc`.
 
 ### Quickly cycle between multiple aspect ratio
 
@@ -105,15 +105,15 @@ You can cycle between aspect ratios using `Shift+a` from version 0.8.0 onwards.
 
 ### Drawing to a root window
 
-Run _mpv_ with `--wid=0 file.mp4`. This tells _mpv_ to draw onto a window with a window ID of 0.
+Run *mpv* with `--wid=0 file.mp4`. This tells *mpv* to draw onto a window with a window ID of 0.
 
 ### Always show GUI
 
-It may be useful to always show the GUI window, even for audio files, especially when _mpv_ is not started from terminal. This can be done by using `--force-window` option.
+It may be useful to always show the GUI window, even for audio files, especially when *mpv* is not started from terminal. This can be done by using `--force-window` option.
 
 ### Use as a browser plugin
 
-With the help of [mozplugger](https://aur.archlinux.org/packages/mozplugger/), _mpv_ can be used in a supported browser to play video. See [Browser plugins#MozPlugger](/index.php/Browser_plugins#MozPlugger "Browser plugins") for configuration details. This coupled with a user script such as [ViewTube](http://isebaro.com/viewtube/?ln=en), allows you to use _mpv_ in place of a site's integrated video player.
+With the help of [mozplugger](https://aur.archlinux.org/packages/mozplugger/), *mpv* can be used in a supported browser to play video. See [Browser plugins#MozPlugger](/index.php/Browser_plugins#MozPlugger "Browser plugins") for configuration details. This coupled with a user script such as [ViewTube](http://isebaro.com/viewtube/?ln=en), allows you to use *mpv* in place of a site's integrated video player.
 
 [Browser plugins#Video players workarounds](/index.php/Browser_plugins#Video_players_workarounds "Browser plugins") page shows other easy ways to watch videos.
 
@@ -149,15 +149,15 @@ ytdl-format=bestvideo[height<=?1080][vcodec!=vp9]+bestaudio/best
 
 ## Vapoursynth
 
-Vapoursynth is an alternative to AviSynth that can be used on Linux and allows for Video manipulation via python scripts. Vapoursynths python scripts can be used as video filters for _mpv_.
+Vapoursynth is an alternative to AviSynth that can be used on Linux and allows for Video manipulation via python scripts. Vapoursynths python scripts can be used as video filters for *mpv*.
 
-To use vapoursynth filters you have to install the `vapoursynth` package and compile _mpv_ with the `--enable-vapoursynth` build flag.
+To use vapoursynth filters you have to install the `vapoursynth` package and compile *mpv* with the `--enable-vapoursynth` build flag.
 
 ### Debanding (flash3kyuu)
 
-To use the f3k_db debanding filter install [vapoursynth-plugin-flash3kyuu_deband-git](https://aur.archlinux.org/packages/vapoursynth-plugin-flash3kyuu_deband-git/) and write a python script that uses the _vapoursynth_ extension.
+To use the f3k_db debanding filter install [vapoursynth-plugin-flash3kyuu_deband-git](https://aur.archlinux.org/packages/vapoursynth-plugin-flash3kyuu_deband-git/) and write a python script that uses the *vapoursynth* extension.
 
-The following sample script can be used to enable debanding in _mpv_.
+The following sample script can be used to enable debanding in *mpv*.
 
 ```
 import vapoursynth as vs

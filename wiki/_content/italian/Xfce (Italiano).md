@@ -1,6 +1,6 @@
 Tratto da [Xfce - About](http://www.xfce.org/about/):
 
-	_Xfce incarna la filosofia UNIX tradizionale di modularità e riutilizzabilità. Si compone di una serie di componenti che forniscono la completa funzionalità che si può aspettare da un ambiente desktop moderno. Essi sono distribuiti separatamente e si può scegliere tra i pacchetti disponibili per creare un ambiente ottimale di lavoro personale._
+	*Xfce incarna la filosofia UNIX tradizionale di modularità e riutilizzabilità. Si compone di una serie di componenti che forniscono la completa funzionalità che si può aspettare da un ambiente desktop moderno. Essi sono distribuiti separatamente e si può scegliere tra i pacchetti disponibili per creare un ambiente ottimale di lavoro personale.*
 
 Xfce è un [ambiente Desktop](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)") leggero e modulare, attualmente basato sule GTK+2 anche se in futuro potrebbe essere portato sulle GTK+3\. XFCE include una collezione di applicazioni come un gestore delle, un file manager ed un pannello per fornire un'esperienza utente completa. Xfce è molto popolare ed usato da molti utenti, in parte perché è leggero, ma anche perché una grande quantità delle impostazioni sono gestite tramite una GUI. Questo è in netto contrasto con i desktop come GNOME Shell che nascondono molte delle impostazioni all'utente.
 
@@ -238,7 +238,6 @@ Quando sono installate alcune applicazioni (per esempio tramite [Wine](/index.ph
 Per cambiare lo sfondo bianco di default del testo delle icone sul Desktop con qualcosa di più carino, creare o modificate il file di configurazione GTK
 
  `~/.gtkrc-2.0` 
-
 ```
 style "xfdesktop-icon-view" {
     XfdesktopIconView::label-alpha = 10
@@ -280,7 +279,7 @@ xfconf-query -c xfce4-desktop -v --create -p /desktop-icons/style -t int -s 0
 
 #### Tasto di scelta rapida per uccidere le finestre
 
-Xfce non supporta una scorciatoia per _uccidere le finestre_ direttamente, ma è possibile aggiungere una con un semplice script. Assicurarsi di avere installato il pacchetto [xorg-xkill](https://www.archlinux.org/packages/?name=xorg-xkill).
+Xfce non supporta una scorciatoia per *uccidere le finestre* direttamente, ma è possibile aggiungere una con un semplice script. Assicurarsi di avere installato il pacchetto [xorg-xkill](https://www.archlinux.org/packages/?name=xorg-xkill).
 
 Create uno script `~/.config/xfce4/killwindow.sh` con il seguente contenuto e rendetelo eseguibile (potete usare `chmod 755 killwindow.sh`).
 
@@ -559,7 +558,7 @@ xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/XF86AudioMute -n -t
 
 Se `amixer set Master toggle` non dovesse funzionare, provare invece con il canale PCM (`amixer set PCM toggle`).
 
-Il canale deve avere una opzione 'mute' per passare il comando. Per verificare se il proprio canale Master supporta la commutazione _mute_, eseguire `alsamixer` in un terminale e cercare la doppia M (MM) con il canale Master. Se non sono presenti non supporta l'opzione muto. Se, per esempio, si desidera cambiare il tasto toggle affinché usi il canale PCM, assicurarsi di impostare anche il canale PCM come Mixer Track nelle proprietà del Mixer di Xfce.
+Il canale deve avere una opzione 'mute' per passare il comando. Per verificare se il proprio canale Master supporta la commutazione *mute*, eseguire `alsamixer` in un terminale e cercare la doppia M (MM) con il canale Master. Se non sono presenti non supporta l'opzione muto. Se, per esempio, si desidera cambiare il tasto toggle affinché usi il canale PCM, assicurarsi di impostare anche il canale PCM come Mixer Track nelle proprietà del Mixer di Xfce.
 
 ##### OSS
 
@@ -684,7 +683,6 @@ In alternativa, un programma di cattura schermo indipendente come [scrot](/index
 Il terminale di Xfce utilizza F1 e F11 rispettivamente per il menu Help e la funzionalità a tutto schermo, ciò rende difficoltoso utilizzare programmi da terminale come htop. Per disabilitare questi collegamenti, creare o modificare il file di configurazione , poi disconnettersi e riconnettersi dentro. F10 può essere disabilitato nel menu Preferenze.
 
  `~/.config/xfce4/terminal/accels.scm` 
-
 ```
 (gtk_accel_path "<Actions>/terminal-window/fullscreen" "")
 (gtk_accel_path "<Actions>/terminal-window/contents" "")
@@ -755,7 +753,7 @@ Si può legere un ottimo articolo su come creare [profili colore con dispwin, ec
 
 #### Caricare un profilo
 
-Se si desidera **caricare un profilo ICC** (che avete precedentemente creato o scaricato) per calibrare il monitor all'avvio, è possibile scaricare [xcalib](https://aur.archlinux.org/packages/xcalib/) da [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)"), quindi aprire Gestione impostazioni di XFCE4, fare clic sull'icona _Sessione e Avvio_, e nella scheda _Avvio automatico_ aggiungere una nuova voce in cui il comando sia `/usr/bin/xcalib /percorso/del/file/profilo.icc`. Avete ancora bisogno di impostare nelle vostre applicazioni che utilizzano un profilo, quale deve essere utilizzato per avere le immagini visualizzate con gestione del colore.
+Se si desidera **caricare un profilo ICC** (che avete precedentemente creato o scaricato) per calibrare il monitor all'avvio, è possibile scaricare [xcalib](https://aur.archlinux.org/packages/xcalib/) da [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)"), quindi aprire Gestione impostazioni di XFCE4, fare clic sull'icona *Sessione e Avvio*, e nella scheda *Avvio automatico* aggiungere una nuova voce in cui il comando sia `/usr/bin/xcalib /percorso/del/file/profilo.icc`. Avete ancora bisogno di impostare nelle vostre applicazioni che utilizzano un profilo, quale deve essere utilizzato per avere le immagini visualizzate con gestione del colore.
 
 Un'altra opzione è dispwin. Dispwin calibra non solo la visualizzazione, ma stabilisce anche un _ICC_PROFILE centrale per X in modo che alcune applicazioni possono utilizzare un profilo di visualizzazione di "sistema " invece di richiedere all'utente di impostare manualmente il profilo di visualizzazione (GIMP, Inkscape, darktable, UFRaw, ecc ). Vedere [ICC profiles#Loading ICC Profiles](/index.php/ICC_profiles#Loading_ICC_Profiles "ICC profiles") per ulteriori informazioni.
 
@@ -775,7 +773,7 @@ Se si è configurato X.org in modo che il vostro display si estenda su più moni
 
 Un modo migliore è quello di configurare XFCE per abbinare il vostro arrangiamento di visualizzazione desiderato. Tuttavia, attualmente (xfce-settings 4.10), non vi è alcun strumento a disposizione per assistere con la configurazione di più monitor direttamente.
 
-*   Lo strumento Impostazioni - > Schermo consente la configurazione della risoluzione dello schermo, di rotazione e abilitazione dei singoli monitor ; **Attenzione**: _utilizzando questo strumento per regolare le impostazioni del schermo si resettano o di perdono le impostazioni eseguite manualmente per le proprietà non esplicitamente offerti come pulsanti nello strumento (vedi sotto)_.
+*   Lo strumento Impostazioni - > Schermo consente la configurazione della risoluzione dello schermo, di rotazione e abilitazione dei singoli monitor ; **Attenzione**: *utilizzando questo strumento per regolare le impostazioni del schermo si resettano o di perdono le impostazioni eseguite manualmente per le proprietà non esplicitamente offerti come pulsanti nello strumento (vedi sotto)*.
 *   Impostazioni - > Editor delle Impostazioni la manipolazione di tutti gli elementi di configurazione, in particolare le impostazioni dei display vengono salvati nel file **displays.xml** sottostante
 
 ```
@@ -783,9 +781,9 @@ Un modo migliore è quello di configurare XFCE per abbinare il vostro arrangiame
 
 ```
 
-*   In alternativa, il file _displays.xml_ può essere modificato utilizzando il vostro editor preferito.
+*   In alternativa, il file *displays.xml* può essere modificato utilizzando il vostro editor preferito.
 
-Il requisito principale per impostare più monitor è la loro disposizione l'uno rispetto all'altro. Questo può essere controllato impostando le proprietà di **Position** (**X** e **Y**) per adattarsi; una posizione _(x,y)_ di _0,0_ corrisponde come posizione alla parte superiore (_top_) a sinistra (_left_) della schiera dei monitor. Questa è la posizione di default per tutti i monitor, e se diversi monitor sono abilitati essi appariranno come un area di visualizzazione clonata che si estende da questo punto.
+Il requisito principale per impostare più monitor è la loro disposizione l'uno rispetto all'altro. Questo può essere controllato impostando le proprietà di **Position** (**X** e **Y**) per adattarsi; una posizione *(x,y)* di *0,0* corrisponde come posizione alla parte superiore (*top*) a sinistra (*left*) della schiera dei monitor. Questa è la posizione di default per tutti i monitor, e se diversi monitor sono abilitati essi appariranno come un area di visualizzazione clonata che si estende da questo punto.
 
 Per estendere l'area di visualizzazione correttamente su entrambi i monitor :
 
@@ -793,7 +791,7 @@ Per estendere l'area di visualizzazione correttamente su entrambi i monitor :
 *   Per monitor above-and-below (sopra e sotto), impostare la proprietà Y del monitor inferiore per eguagliare l'altezza del monitor superiore
 *   per altri accordi, impostare le proprietà X e Y di ciascun monitor per corrispondere al layout
 
-Le misure sono in _pixel_. Come esempio , una coppia di monitor con dimensioni nominali di 1920x1080 che sono ruotati di 90 e collocati fianco a fianco può essere configurato con un displays.xml come questo:
+Le misure sono in *pixel*. Come esempio , una coppia di monitor con dimensioni nominali di 1920x1080 che sono ruotati di 90 e collocati fianco a fianco può essere configurato con un displays.xml come questo:
 
 ```
 <channel name="displays" version="1.0">
@@ -846,7 +844,7 @@ Per forzare l'utilizzo di ssh-agent, anche se è installato gpg-agent, eseguire 
 
 xfconf-query -c xfce4-session -p /startup/ssh-agent/type -n -t string -s ssh-agent
 
-Per utilizzare [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") , selezionare _Launch GNOME services on startup_ (avviare servizi di GNOME all'avvio) nella scheda _Avanzate_ di _Sessione e Avvio_ nelle impostazioni di Xfce. Questo disabiliterà automaticamente anche gpg-agent e ssh-agent .
+Per utilizzare [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") , selezionare *Launch GNOME services on startup* (avviare servizi di GNOME all'avvio) nella scheda *Avanzate* di *Sessione e Avvio* nelle impostazioni di Xfce. Questo disabiliterà automaticamente anche gpg-agent e ssh-agent .
 
 Fonte : [http://docs.xfce.org/xfce/xfce4-session/advanced](http://docs.xfce.org/xfce/xfce4-session/advanced)
 
@@ -879,7 +877,6 @@ Un agente di autenticazione polkit è richiesto per questa operazione (insieme a
 Eventi ACPI relativi alla gestione energetica possono essere configurati tramite opzioni utilizzando [Systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)") in `/etc/systemd/logind.conf` per darne il controllo a xfce4-power-manager.
 
  `/etc/systemd/logind.conf` 
-
 ```
 HandlePowerKey=ignore
 HandleSuspendKey=ignore
@@ -902,14 +899,14 @@ EndSection
 
 ### xfce4-xkb-plugin
 
-C'è un bug nella versione [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) 0.5.4.1-1 che causa ad xfce4-xkb-plugin di _perdere la tastiera, la mappatura e le impostazioni di composizione delle chiavi_. Come soluzione alternativa si può attivare l'opzione _Usa predefiniti di sistema_ in _impostazioni della tastiera_ . Per farlo funzionare.
+C'è un bug nella versione [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) 0.5.4.1-1 che causa ad xfce4-xkb-plugin di *perdere la tastiera, la mappatura e le impostazioni di composizione delle chiavi*. Come soluzione alternativa si può attivare l'opzione *Usa predefiniti di sistema* in *impostazioni della tastiera* . Per farlo funzionare.
 
 ```
 xfce4-keyboard-settings
 
 ```
 
-Andare nella scheda _Mappatura_ e spuntare _Usa predefiniti di sistema_, quindi riconfigurare xfce4-xkb-plugin.
+Andare nella scheda *Mappatura* e spuntare *Usa predefiniti di sistema*, quindi riconfigurare xfce4-xkb-plugin.
 
 ### Locales ignorato con GDM
 
@@ -1062,7 +1059,7 @@ flush=true
 
 Si noti che quando si usa UTF -8, il sistema distingue tra caratteri minuscoli superiori, e potenzialmente può corrompere i file, quindi fate attenzione.
 
-É possibile montare dispositivi vfat con opzione _flush_, in modo da scrivere più spesso i dati sul disco, durante la copia da una penna USB, in modo da evitare che la finestre di trasferimento di Thunar venga chiuse mentre i dati non sono ancora stati scritti. Aggiungere _async_ invece accelererà la scrittura, ma assicurarsi di utilizzare l'opzione _Disconnetti_ in Thunar per smontare il dispositivo. A livello globale, le opzioni di montaggio per i dispositivi di archiviazione presenti al boot, possono essere impostati in [fstab](/index.php/Fstab_(Italiano) "Fstab (Italiano)"), e per altri dispositivi nelle regole [udev](/index.php/Udev_(Italiano) "Udev (Italiano)").
+É possibile montare dispositivi vfat con opzione *flush*, in modo da scrivere più spesso i dati sul disco, durante la copia da una penna USB, in modo da evitare che la finestre di trasferimento di Thunar venga chiuse mentre i dati non sono ancora stati scritti. Aggiungere *async* invece accelererà la scrittura, ma assicurarsi di utilizzare l'opzione *Disconnetti* in Thunar per smontare il dispositivo. A livello globale, le opzioni di montaggio per i dispositivi di archiviazione presenti al boot, possono essere impostati in [fstab](/index.php/Fstab_(Italiano) "Fstab (Italiano)"), e per altri dispositivi nelle regole [udev](/index.php/Udev_(Italiano) "Udev (Italiano)").
 
 ### Video tearing quando il composite Xfwm è abilitato
 

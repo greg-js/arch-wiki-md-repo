@@ -16,6 +16,7 @@ The Acer C720 Chromebook (and newer Chromebooks in general) features a "legacy b
 *   [3 Locating the Write-Protect Screw](#Locating_the_Write-Protect_Screw)
 *   [4 Known Issues](#Known_Issues)
     *   [4.1 System freezes](#System_freezes)
+    *   [4.2 Internal microphone not working](#Internal_microphone_not_working)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -31,7 +32,6 @@ For information on general Chromebook post installation configuration (hotkeys, 
 [Add](/index.php/Edit "Edit") the Xorg touchpad configuration below for better usability (increases touchpad sensitivity).
 
  `/etc/X11/xorg.conf.d/50-cros-touchpad.conf` 
-
 ```
 Section "InputClass" 
     Identifier      "touchpad peppy cyapa" 
@@ -46,7 +46,6 @@ EndSection
 If you want to remove the "right-click" behavior from the touchpad from the bottom right area (you can still right-click with two finger clicks), you should add two lines to following section from `/etc/X11/xorg.conf.d/50-cros-touchpad.conf`
 
  `/etc/X11/xorg.conf.d/50-cros-touchpad.conf` 
-
 ```
 
 Section "InputClass"
@@ -120,6 +119,14 @@ Intersil ISL29018 is the light sensor in the C720, as default its module is disa
 ### System freezes
 
 See power saving section at [Improving WLAN and BT performance](#Improving_WLAN_and_BT_performance).
+
+Additionally see [SSD#Troubleshooting](/index.php/SSD#Troubleshooting "SSD") if the system freezes are associated with hard drive errors in the system's journal.
+
+### Internal microphone not working
+
+If your internal microphone is not working (for example, in Skype), select "Microphone (unplugged)" as your input source in the PulseAudio Volume Control. Your internal microphone should now work. [[1]](http://forums.bodhilinux.com/index.php?/topic/9975-microphone-support-on-acer-c720/)
+
+See also [Chromebook#Fixing_audio](/index.php/Chromebook#Fixing_audio "Chromebook") for another possible solution.
 
 ## See also
 

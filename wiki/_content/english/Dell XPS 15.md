@@ -235,7 +235,7 @@ Else your can test the other script m11xr2.sh (it worked for me):
 
 ```
 
-You can use this command _before_ and _after_ to see how the battery consumption change (you need to disconnect sector first):
+You can use this command *before* and *after* to see how the battery consumption change (you need to disconnect sector first):
 
 ```
 grep rate /proc/acpi/battery/BAT1/state
@@ -270,7 +270,6 @@ The following instructions should help configure the laptop to display separate 
 *   Run `Xorg -configure` to generate a `xorg.conf` file. It may have a different filename, so watch the output and regardless of where it generates it, copy it to `/etc/X11/xorg.conf`. This should generate something like the following (for two external monitors):
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "ServerLayout"
 	Identifier     "X.org Configured"
@@ -395,7 +394,6 @@ EndSection
 *   Change the `bumblebee.conf` file to the following settings (these are scattered throughout the conf file):
 
  `/etc/bumblebee/bumblebee.conf` 
-
 ```
 KeepUnusedXServer=true
 Driver=nvidia
@@ -406,7 +404,6 @@ XorgConfFile=/etc/X11/xorg.conf
 *   Add the following to your `.xinitrc` file.
 
  `~/.xinitrc` 
-
 ```
 # Start Bumblebee, create VIRTUAL display, and configure monitors.
 optirun true
@@ -454,7 +451,6 @@ If the camera seems that it does not work (black image), try to enable/disable a
 The special touch keys are strangely mapped by default. One changes brightness, one does next track. They seem to be linked to the same key sequences as the Fn+F# keys that do the same job. To fix this, make this new file:
 
  `/opt/dell_touchkeys_keymap` 
-
 ```
 0x90 previoussong # Previous song
 0xA2 playpause # Play/Pause
@@ -468,7 +464,6 @@ The special touch keys are strangely mapped by default. One changes brightness, 
 and add this to /etc/rc.local:
 
  `/etc/rc.local` 
-
 ```
 …
 # Fix touch keys
@@ -488,7 +483,6 @@ For L502x model the above method can be improved:
 Thus the keymap file should be (I prefer standard location):
 
  `/usr/lib/udev/keymaps/dell-xps-l502x` 
-
 ```
 0x85 prog1 # Second touch key
 0x84 media # Third touch key
@@ -498,7 +492,6 @@ Thus the keymap file should be (I prefer standard location):
 and add this to /etc/rc.local:
 
  `/etc/rc.local` 
-
 ```
 …
 # Fix touch keys
@@ -509,7 +502,6 @@ and add this to /etc/rc.local:
 OR make a udev rule (the former remaps keys on boot, this lets udev take care of the remapping):
 
  `/etc/udev/rules.d/99-local.rules` 
-
 ```
 …
 # Keymap Dell Touch keys

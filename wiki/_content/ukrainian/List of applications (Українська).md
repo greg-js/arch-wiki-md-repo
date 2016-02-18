@@ -476,7 +476,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 	[https://github.com/mutantturkey/sb/](https://github.com/mutantturkey/sb/) || [sb-git](https://aur.archlinux.org/packages/sb-git/)
 
-*   **Surf** — Another lightweight WebKit-based browser, which follows the _suckless ideology_. Which means, the software is even more lightweight (basically, the browser itself is a single C source file)
+*   **Surf** — Another lightweight WebKit-based browser, which follows the *suckless ideology*. Which means, the software is even more lightweight (basically, the browser itself is a single C source file)
 
 	[http://surf.suckless.org](http://surf.suckless.org) || [surf-hg](https://aur.archlinux.org/packages/surf-hg/)
 
@@ -1389,7 +1389,7 @@ There are several steps to the whole OCR process, the actual OCR engine is only 
 *   **gscan2pdf** scans, runs Tesseract and creates a PDF all in one go
 *   **Kooka** is a scanner GUI for KDE which supports the OCR engines GOCR, Ocrad or KADMOS. Used to be part of kdegraphics4, but dropped out due to lack of development.
 *   **OCRFeeder** is a Python GUI for GNOME which performs document analysis and rendition, and can use either CuneiForm, GOCR, Ocrad or Tesseract as OCR engines. It can import from PDF or image files, and export to HTML or OpenDocument. Available from [AUR](/index.php/AUR "AUR"). [http://live.gnome.org/OCRFeeder](http://live.gnome.org/OCRFeeder)
-*   **OCRopus** is an OCR _platform_, modules exist for document layout analysis, OCR engines (it can use Tesseract or its own engine), natural language modelling, etc. Available from [AUR](/index.php/AUR "AUR"). [http://code.google.com/p/ocropus/](http://code.google.com/p/ocropus/)
+*   **OCRopus** is an OCR *platform*, modules exist for document layout analysis, OCR engines (it can use Tesseract or its own engine), natural language modelling, etc. Available from [AUR](/index.php/AUR "AUR"). [http://code.google.com/p/ocropus/](http://code.google.com/p/ocropus/)
 *   [YAGF](/index.php/YAGF "YAGF") is a graphical interface for the CuneiForm text recognition program on the Linux platform. Available from community repository. [http://symmetrica.net/cuneiform-linux/yagf-en.html](http://symmetrica.net/cuneiform-linux/yagf-en.html)
 
 ## Application Launchers

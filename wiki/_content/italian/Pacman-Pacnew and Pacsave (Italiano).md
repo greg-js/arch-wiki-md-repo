@@ -46,27 +46,27 @@ I tipi differenti dei file *.pac* sono i seguenti:
 
 ### .pacnew
 
-Per ogni file `backup` di un pacchetto che sta per essere aggiornato, pacman fa una comparazione incrociata di tre [md5sums](https://en.wikipedia.org/wiki/Md5sum "wikipedia:Md5sum") generati dal contenuti dei file stessi: uno per la versione originariamente installata dal pacchetto, una per la versione corrente, e una per la versione che sta per essere installata con l'aggiornamento. Se il file attualmente presente sul sistema è stato modificato rispetto alla versione originale, pacman non può conoscere come importare questi cambiamenti nella nuova versione dello stesso file. Dunque, invece di sovrascrivere il file vecchio con quello nuovo, pacman salverà la nuova versione del file di configurazione con l'estensione _.pacnew_ e lascerà la versione già presente sul sistema intatta.
+Per ogni file `backup` di un pacchetto che sta per essere aggiornato, pacman fa una comparazione incrociata di tre [md5sums](https://en.wikipedia.org/wiki/Md5sum "wikipedia:Md5sum") generati dal contenuti dei file stessi: uno per la versione originariamente installata dal pacchetto, una per la versione corrente, e una per la versione che sta per essere installata con l'aggiornamento. Se il file attualmente presente sul sistema è stato modificato rispetto alla versione originale, pacman non può conoscere come importare questi cambiamenti nella nuova versione dello stesso file. Dunque, invece di sovrascrivere il file vecchio con quello nuovo, pacman salverà la nuova versione del file di configurazione con l'estensione *.pacnew* e lascerà la versione già presente sul sistema intatta.
 
 Nel dettaglio, il controllo triplo delle somme MD5 possono portare ad uno dei casi seguenti:
 
-	originale = _X_, attuale = _X_, nuovo = _X_ 
+	originale = *X*, attuale = *X*, nuovo = *X* 
 
 	tutte e tre le versioni hanno contenuti identici, quindi sovrascrivere non porta a problemi. Verrà quindi sovrascritto il file e non verranno fatte notifiche all'utente. (nonostante ciò, questa sovrascrittura porterà all'aggiornamento delle informazioni del filesystem relative alle date di installazione, modifica e accesso oltre che alla modifica dei permessi se necessarie.)
 
-	originale = _X_, attuale = _X_, nuovo = _Y_ 
+	originale = *X*, attuale = *X*, nuovo = *Y* 
 
 	la versione corrente del file è identica alla originale, ma la nuova versione è differente. Dato che l'utente non ha dunque modificato la configurazione attuale, e che la nuova versione può contenere miglioramenti o risoluzione di qualche bug, il file corrente verrà sovrascritto con quello nuovo, ancora senza notifiche all'utente. Questa è l'unica maniera che ha pacman per aggiornare i contenuti di un file.
 
-	originale = _X_, attuale = _Y_, nuovo = _X_ 
+	originale = *X*, attuale = *Y*, nuovo = *X* 
 
 	il pacchetto originale e quello nuovo contengono la stessa versione del file, ma quello sul sistema è stato modificato. In questo caso, verrà lasciata la versione correntemente sul sistema, senza notifiche all'utente.
 
-	originale = _X_, attuale = _Y_, nuovo = _Y_ 
+	originale = *X*, attuale = *Y*, nuovo = *Y* 
 
 	la versione nuova è identica a quella installata sul sistema. Anche qui, verrà effettuata la sovrascrittura senza notifiche all'utente. (nonostante ciò, questa sovrascrittura porterà all'aggiornamento delle informazioni del filesystem relative alle date di installazione, modifica e accesso oltre che alla modifica dei permessi se necessarie.)
 
-	originale = _X_, attuale = _Y_, nuovo = _Z_ 
+	originale = *X*, attuale = *Y*, nuovo = *Z* 
 
 	le tre versioni del file sono differenti: in questo caso, verrà conservata la versione corrente al suo posto, la nuova versione verrà installata con estensione `.pacnew` e l'utente verrà avvisato dell'esistenza della nuova versione. In questo caso, l'utente deve intervenire per fare le dovute modifiche al nuovo file e sostituirlo manualmente alla versione corrente.
 

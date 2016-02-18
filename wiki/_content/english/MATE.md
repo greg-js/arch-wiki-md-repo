@@ -1,6 +1,6 @@
 From [MATE homepage](http://mate-desktop.org/):
 
-	_The MATE Desktop Environment is the continuation of GNOME 2\. It provides an intuitive and attractive desktop environment using traditional metaphors for Linux and other Unix-like operating systems. MATE is [under active development](https://github.com/mate-desktop) to add support for new technologies while preserving a traditional desktop experience._
+	*The MATE Desktop Environment is the continuation of GNOME 2\. It provides an intuitive and attractive desktop environment using traditional metaphors for Linux and other Unix-like operating systems. MATE is [under active development](https://github.com/mate-desktop) to add support for new technologies while preserving a traditional desktop experience.*
 
 ## Contents
 
@@ -121,13 +121,13 @@ An experimental GTK+ 3 build of MATE can be installed with [mate-gtk3](https://w
 
 ## Starting MATE
 
-Choose _MATE_ from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice. The MATE team recommends [LightDM](/index.php/LightDM "LightDM") as the display manager.
+Choose *MATE* from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice. The MATE team recommends [LightDM](/index.php/LightDM "LightDM") as the display manager.
 
-Alternatively, to start MATE with _startx_, append `exec mate-session` to your `~/.xinitrc` file. See [xinitrc](/index.php/Xinitrc "Xinitrc") for details, such as preserving the logind session.
+Alternatively, to start MATE with *startx*, append `exec mate-session` to your `~/.xinitrc` file. See [xinitrc](/index.php/Xinitrc "Xinitrc") for details, such as preserving the logind session.
 
 ## Configuration
 
-MATE can be configured with its _Control Center_ application (_mate-control-center_) provided by the [mate-control-center](https://www.archlinux.org/packages/?name=mate-control-center) package. To manage some hardware, you may need to install additional tools.
+MATE can be configured with its *Control Center* application (*mate-control-center*) provided by the [mate-control-center](https://www.archlinux.org/packages/?name=mate-control-center) package. To manage some hardware, you may need to install additional tools.
 
 	Audio
 
@@ -160,7 +160,7 @@ gsettings set org.mate.interface accessibility true
 
 ```
 
-Once you start MATE, you can configure the accessibility applications via _System > Preferences > Assistive Technologies_, although if you need Orca, you will need to run it from the `Alt-F2` run window in order to start getting speech.
+Once you start MATE, you can configure the accessibility applications via *System > Preferences > Assistive Technologies*, although if you need Orca, you will need to run it from the `Alt-F2` run window in order to start getting speech.
 
 ## Tips and tricks
 
@@ -243,20 +243,20 @@ Replace `false` with `true` for the icons to reappear.
 
 ### Use a different window manager with MATE
 
-The _marco_ window manager can be replaced with another window manager via either of the following methods:
+The *marco* window manager can be replaced with another window manager via either of the following methods:
 
 	Using DConf (recommended)
 
 Execute the following to specify a different window manager for MATE:
 
 ```
-$ dconf write /org/mate/desktop/session/required-components/windowmanager _wm-name_
+$ dconf write /org/mate/desktop/session/required-components/windowmanager *wm-name*
 
 ```
 
 	Using MATE session autostart
 
-You can autostart a window manager of your choice using _mate-session-properties_. This means that the autostarted window manager will replace the default window manager at login. Navigate to _System_ -> _Preferences_ -> _Startup Applications_. In the dialog click _Add._ The command should take the syntax `_wm-name_ --replace`.
+You can autostart a window manager of your choice using *mate-session-properties*. This means that the autostarted window manager will replace the default window manager at login. Navigate to *System* -> *Preferences* -> *Startup Applications*. In the dialog click *Add.* The command should take the syntax `*wm-name* --replace`.
 
 ### Prevent Caja from managing the desktop
 
@@ -301,7 +301,6 @@ The full list of configuration options can be found in `/usr/share/glib-2.0/sche
 Example #1: Change the background image of the lock screen:
 
  `/usr/share/glib-2.0/schemas/mate-background.gschema.override` 
-
 ```
 [org.mate.background]
 picture-filename='/path/to/the/background.jpg'
@@ -310,7 +309,6 @@ picture-filename='/path/to/the/background.jpg'
 Example #2: Change the lock screen to use a gradient:
 
  `/usr/share/glib-2.0/schemas/mate-background.gschema.override` 
-
 ```
 [org.mate.background]
 color-shading-type='vertical-gradient'
@@ -340,18 +338,18 @@ $ gsettings set org.mate.caja.preferences always-use-browser false
 
 ### Change font DPI setting
 
-You can alter the DPI (dots per inch) of the fonts in MATE by right-clicking on the desktop and choosing _Change desktop background > Fonts > Details > Resolution_.
+You can alter the DPI (dots per inch) of the fonts in MATE by right-clicking on the desktop and choosing *Change desktop background > Fonts > Details > Resolution*.
 
 ### Change applications menu icon
 
 By default, the applications menu icon is set to `start-here`. To use a different icon, copy your icon to a folder such as `/usr/local/share/pixmaps` and execute the following:
 
 ```
-$ gsettings set org.mate.panel.menubar icon-name _icon_
+$ gsettings set org.mate.panel.menubar icon-name *icon*
 
 ```
 
-where _icon_ is the name of your icon. Do not include the file extension in the icon name. Finally, restart MATE Panel.
+where *icon* is the name of your icon. Do not include the file extension in the icon name. Finally, restart MATE Panel.
 
 ### Panel speed settings
 
@@ -360,22 +358,22 @@ where _icon_ is the name of your icon. Do not include the file extension in the 
 To adjust the amount of time it takes for the panel to disappear or reappear when autohide is enabled, execute the following:
 
 ```
-$ dconf write /org/mate/panel/toplevels/_panel_/(un)hide-delay _time_
+$ dconf write /org/mate/panel/toplevels/*panel*/(un)hide-delay *time*
 
 ```
 
-where _panel_ is either _top_ or _bottom_ and _time_ is a value in miliseconds, e.g. 300.
+where *panel* is either *top* or *bottom* and *time* is a value in miliseconds, e.g. 300.
 
 	Animation speed
 
 To set the speed at which panel animations occur, execute the following:
 
 ```
-$ dconf write /org/mate/panel/toplevels/_panel_/animation-speed _value_
+$ dconf write /org/mate/panel/toplevels/*panel*/animation-speed *value*
 
 ```
 
-where _panel_ is either _top_ or _bottom_ and _value_ is either `"'fast'"`, `"'medium'"` or `"'slow'"`.
+where *panel* is either *top* or *bottom* and *value* is either `"'fast'"`, `"'medium'"` or `"'slow'"`.
 
 ## Troubleshooting
 
@@ -400,7 +398,7 @@ and then create a custom keyboard shortcut that executes the file, e.g. `Ctrl+Al
 
 ### Vertical sync for compositing
 
-_marco_ does not support vertical synchronization via _OpenGL_, which may cause video tearing with enabled compositing. [[1]](https://github.com/mate-desktop/marco/issues/91) Consider a different [composite manager](/index.php/Composite_manager "Composite manager") with OpenGL support such as [Compton](/index.php/Compton "Compton").
+*marco* does not support vertical synchronization via *OpenGL*, which may cause video tearing with enabled compositing. [[1]](https://github.com/mate-desktop/marco/issues/91) Consider a different [composite manager](/index.php/Composite_manager "Composite manager") with OpenGL support such as [Compton](/index.php/Compton "Compton").
 
 ### Consistent cursor theme
 
@@ -408,7 +406,7 @@ See [Cursor themes#Desktop environments](/index.php/Cursor_themes#Desktop_enviro
 
 ### Use of gradient backgrounds with LightDM
 
-If you wish to use the default MATE (1.8) _Stripes_ background as the LightDM background as well so as to make for seamless transition from LightDM to MATE, you will find that it is runtime-constructed from a grayscale PNG upon which MATE layers a vertical blue-to-green gradient, something which LightDM does not currently support. If insistent, you can work around this by temporarily setting `/org/mate/desktop/background/show-desktop-icons` to `false`, either through the `dconf Editor` tool available from the `System Tools` menu or by running
+If you wish to use the default MATE (1.8) *Stripes* background as the LightDM background as well so as to make for seamless transition from LightDM to MATE, you will find that it is runtime-constructed from a grayscale PNG upon which MATE layers a vertical blue-to-green gradient, something which LightDM does not currently support. If insistent, you can work around this by temporarily setting `/org/mate/desktop/background/show-desktop-icons` to `false`, either through the `dconf Editor` tool available from the `System Tools` menu or by running
 
 ```
 dconf write /org/mate/desktop/background/show-desktop-icons false
@@ -431,7 +429,6 @@ Due to a race condition, the panel shadow does not appear after logging in to th
 Copy `/usr/share/applications/marco.desktop` and add a delay:
 
  `~/.local/share/applications/marco.desktop` 
-
 ```
 X-MATE-Autostart-Phase=**Applications**
 **X-MATE-Autostart-Delay=2**
@@ -453,5 +450,5 @@ Whilst there is no way of disabling this feature through MATE's settings, this f
 
 *   [MATE homepage](http://mate-desktop.org)
 *   [MATE wiki for Arch Linux](http://wiki.mate-desktop.org/archlinux_custom_repo)
-*   [_MATE desktop screenshots_](http://mate-desktop.org/gallery/1.8/)
-*   [_The MATE Desktop Environment_](https://bbs.archlinux.org/viewtopic.php?pid=1018647) - Arch Linux forum discussion about MATE
+*   [*MATE desktop screenshots*](http://mate-desktop.org/gallery/1.8/)
+*   [*The MATE Desktop Environment*](https://bbs.archlinux.org/viewtopic.php?pid=1018647) - Arch Linux forum discussion about MATE

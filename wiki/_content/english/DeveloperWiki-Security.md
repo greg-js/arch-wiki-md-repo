@@ -24,7 +24,7 @@ This page documents progress on fixing/implementing non-CVE security-related bug
 *   [7 grsecurity](#grsecurity)
     *   [7.1 kernel](#kernel)
         *   [7.1.1 use upstream features when possible](#use_upstream_features_when_possible)
-        *   [7.1.2 Enable _privileged_ user namespaces](#Enable_privileged_user_namespaces)
+        *   [7.1.2 Enable *privileged* user namespaces](#Enable_privileged_user_namespaces)
         *   [7.1.3 Enable KASLR and hide symbols](#Enable_KASLR_and_hide_symbols)
         *   [7.1.4 CONFIG_GRKERNSEC_PROC=n](#CONFIG_GRKERNSEC_PROC.3Dn)
         *   [7.1.5 CONFIG_GRKERNSEC_SYSCTL_ON=n](#CONFIG_GRKERNSEC_SYSCTL_ON.3Dn)
@@ -191,7 +191,6 @@ Packages with this enabled by default via upstream build flags:
 #### Example
 
  `aslr.c` 
-
 ```
 #include <stdio.h>
 
@@ -200,13 +199,12 @@ static int bar = 5;
 
 int main(void) {
     int baz = 5;
-    printf("function: %p, library function: %p, data: %p, stack: %p\n", foo, &printf, &bar, &baz);
+    printf("function: %p, library function: %p, data: %p, stack: %p
+", foo, &printf, &bar, &baz);
     return 0;
 }
 ```
-
  `$ gcc -o aslr aslr.c; for i in $(seq 1 10); do ./aslr; done` 
-
 ```
 function: 0x400506, library function: 0x4003e0, data: 0x600998, stack: 0x7fff909cac1c
 function: 0x400506, library function: 0x4003e0, data: 0x600998, stack: 0x7fffee85453c
@@ -220,9 +218,7 @@ function: 0x400506, library function: 0x4003e0, data: 0x600998, stack: 0x7fffce2
 function: 0x400506, library function: 0x4003e0, data: 0x600998, stack: 0x7fffedbb9ffc
 
 ```
-
  `$ gcc -fPIE -o aslr aslr.c; for i in $(seq 1 10); do ./aslr; done` 
-
 ```
 function: 0x400516, library function: 0x7f1e55a3e150, data: 0x6009c0, stack: 0x7fff7ce9317c
 function: 0x400516, library function: 0x7ffae3294150, data: 0x6009c0, stack: 0x7fff428a8e1c
@@ -236,9 +232,7 @@ function: 0x400516, library function: 0x7fd9e91dc150, data: 0x6009c0, stack: 0x7
 function: 0x400516, library function: 0x7fdf4c136150, data: 0x6009c0, stack: 0x7fff7f96928c
 
 ```
-
  `$ gcc -fPIE -pie -o aslr aslr.c; for i in $(seq 1 10); do ./aslr; done` 
-
 ```
 function: 0x7f35659b4770, library function: 0x7f3565433150, data: 0x7f3565bb4c38, stack: 0x7ffff3de9a4c
 function: 0x7f173ab2b770, library function: 0x7f173a5aa150, data: 0x7f173ad2bc38, stack: 0x7fffa0e7b12c
@@ -282,7 +276,7 @@ Some grsecurity features have made their way upstream in one form or another. Th
 *   kernel.grsecurity.dmesg (CONFIG_GRKERNSEC_DMESG=y) -> kernel.dmesg_restrict (CONFIG_SECURITY_DMESG_RESTRICT=y)
 *   kernel.grsecurity.linking_restrictions (CONFIG_GRKERNSEC_LINK=y) -> fs.protected_hardlinks, fs.protected_symlinks (set by /usr/lib/sysctl.d/50-default.conf from [systemd](https://www.archlinux.org/packages/?name=systemd))
 
-#### Enable _privileged_ user namespaces
+#### Enable *privileged* user namespaces
 
 The `CONFIG_USER_NS` configuration option is set, but grsecurity disallows unprivileged user namespaces so it doesn't introduce a security hole.
 

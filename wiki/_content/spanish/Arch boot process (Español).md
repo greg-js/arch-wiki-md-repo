@@ -22,7 +22,7 @@ Para arrancar Arch Linux, un [gestor de arranque](/index.php/Boot_loaders "Boot 
 
 ### BIOS
 
-Una BIOS o _«Basic Input-Output System»_ es el primer programa (firmware) que se ejecuta cuando el sistema es puesto en marcha. En la mayoría de los casos, este se almacena en una memoria flash en la propia placa base e independiente del almacenamiento del sistema. La BIOS lanza los primeros 440 bytes ([Master Boot Record](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)")) del primer disco según el orden de discos de la BIOS. Dado que se puede obtener muy poco de un programa que debe adaptarse solo a los primeros 440 bytes del disco, por lo general, un gestor de arranque común como [GRUB](/index.php/GRUB2_(Espa%C3%B1ol) "GRUB2 (Español)"), [Syslinux](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)") o [LILO](/index.php/LILO "LILO") sería cargado por la BIOS, el cual, seguidamente, se ocuparía de cargar el sistema operativo, ya sea cargando los sistemas en cadena, ya sea cargando directamente el kernel.
+Una BIOS o *«Basic Input-Output System»* es el primer programa (firmware) que se ejecuta cuando el sistema es puesto en marcha. En la mayoría de los casos, este se almacena en una memoria flash en la propia placa base e independiente del almacenamiento del sistema. La BIOS lanza los primeros 440 bytes ([Master Boot Record](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)")) del primer disco según el orden de discos de la BIOS. Dado que se puede obtener muy poco de un programa que debe adaptarse solo a los primeros 440 bytes del disco, por lo general, un gestor de arranque común como [GRUB](/index.php/GRUB2_(Espa%C3%B1ol) "GRUB2 (Español)"), [Syslinux](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)") o [LILO](/index.php/LILO "LILO") sería cargado por la BIOS, el cual, seguidamente, se ocuparía de cargar el sistema operativo, ya sea cargando los sistemas en cadena, ya sea cargando directamente el kernel.
 
 ### UEFI
 
@@ -53,17 +53,17 @@ Véase la página principal: [Proceso de arranque bajo UEFI](/index.php/Unified_
 
 ## Kernel
 
-El kernel es el núcleo de un sistema operativo. Funciona en un nivel bajo (_kernelspace_) que interactúa entre el hardware de la máquina y los programas que utilizan los recursos del hardware para funcionar. Para hacer un uso eficiente de la CPU, el kernel utiliza un sistema de programación para arbitrar qué tareas tienen prioridad en un momento dado, creando la ilusión (para la precepción humana) que varias tareas se están ejecutando simultáneamente.
+El kernel es el núcleo de un sistema operativo. Funciona en un nivel bajo (*kernelspace*) que interactúa entre el hardware de la máquina y los programas que utilizan los recursos del hardware para funcionar. Para hacer un uso eficiente de la CPU, el kernel utiliza un sistema de programación para arbitrar qué tareas tienen prioridad en un momento dado, creando la ilusión (para la precepción humana) que varias tareas se están ejecutando simultáneamente.
 
 ## initramfs
 
-Después de estar cargado, el Kernel descomprime la imagen [initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") (sistema de archivos RAM inicial), que se convierte en el sistema de ficheros root inicial. El kernel seguidamente ejecuta `/init` como el primer proceso. El primer espacio de usuario (_«early userspace»_) comienza.
+Después de estar cargado, el Kernel descomprime la imagen [initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") (sistema de archivos RAM inicial), que se convierte en el sistema de ficheros root inicial. El kernel seguidamente ejecuta `/init` como el primer proceso. El primer espacio de usuario (*«early userspace»*) comienza.
 
 El propósito de initramfs es arrancar el sistema hasta el punto donde se puede acceder al sistema de archivos raíz (consulte [FHS](/index.php/FHS "FHS") para más detalles). Esto significa que los módulos que se requieren para dispositivos como IDE, SCSI, SATA, USB/FW (si el arranque se realiza desde una unidad externa) deben ser cargados desde initramfs si no están compilados en el kernel; una vez que los módulos necesarios se cargan (ya sea de forma explícita a través de un programa o script, o implícitamente a través de [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)")), el proceso de arranque continúa. Por esta razón, el initramfs sólo debe contener los módulos necesarios para acceder al sistema de archivos raíz, no tiene por qué contener todos los módulos que sirven al completo funcionamiento de la máquina. La mayoría de los módulos se cargarán más tarde por udev, durante la fase init.
 
 ## Fase init
 
-En la etapa final del _«early userspace»_, el verdadero sistema de archivos root es montado, y pasa a sustituir al sistema de archivos root inicial. `/sbin/init` se ejecuta, sustituyendo al proceso `/init`. Arch Linux utiliza [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") como proceso init.
+En la etapa final del *«early userspace»*, el verdadero sistema de archivos root es montado, y pasa a sustituir al sistema de archivos root inicial. `/sbin/init` se ejecuta, sustituyendo al proceso `/init`. Arch Linux utiliza [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") como proceso init.
 
 ## Getty
 
@@ -75,7 +75,7 @@ Si hay un [gestor de pantallas (o gestor de inicio de sesión)](/index.php/Displ
 
 ## Login
 
-El programa _login_ inicia una sesión para el usuario mediante el establecimiento de las variables de entorno y arranca la shell del usuario, basada en `/etc/passwd`.
+El programa *login* inicia una sesión para el usuario mediante el establecimiento de las variables de entorno y arranca la shell del usuario, basada en `/etc/passwd`.
 
 ## Shell
 

@@ -1,4 +1,4 @@
-_NX 是一项令人激动的远程控制技术。它提供了在高延迟、低带宽环境中 _<u>接近本地速度</u> _的应用程序响应链接。NX 的核心库由 [NoMachine](http://www.nomachine.com/) 在 GPL 授权下提供。**FreeNX** 是一个 NX 服务器和客户端组件的 GPL 实现。_
+*NX 是一项令人激动的远程控制技术。它提供了在高延迟、低带宽环境中 *<u>接近本地速度</u> *的应用程序响应链接。NX 的核心库由 [NoMachine](http://www.nomachine.com/) 在 GPL 授权下提供。**FreeNX** 是一个 NX 服务器和客户端组件的 GPL 实现。*
 
 	— [FreeNX - 自由的 NX](http://freenx.berlios.de/)
 
@@ -66,8 +66,7 @@ NX 的主配置文件位于:
 /opt/NX/etc/node.conf
 
 ```
-
-_如果你的 ssh 守护进程不是运行在默认的 22 端口，你需要取消注释并修改：_ `SSHD_PORT=22` 
+*如果你的 ssh 守护进程不是运行在默认的 22 端口，你需要取消注释并修改：* `SSHD_PORT=22` 
 **Note:** As of OpenSSL 1.0.0, it is necessary to set proper md5sum command in `/opt/NX/etc/node.conf`: `COMMAND_MD5SUM="md5sum"` 
 
 如果你在用 Gnome 或 KDE 桌面环境，你不需要编辑此文件，应为修改过的 MD5SUM 与默认配置在这种场合下能够工作。如果你在使用其它窗口管理器，比如 Fluxbox/Openbox 或 Xfce，你大概需要稍微修改这个文件（见下方）。

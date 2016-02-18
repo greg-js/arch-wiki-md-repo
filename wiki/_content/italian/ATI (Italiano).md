@@ -1,6 +1,6 @@
 I possessori di schede video **AMD** possono scegliere tra i [driver proprietari](/index.php/AMD_Catalyst_(Italiano) "AMD Catalyst (Italiano)") ATI/AMD ([catalyst](https://aur.archlinux.org/packages/catalyst/)) e i driver open source([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)).
 
-Attualmente, le performance dei driver open source non sono _alla pari_ con i driver proprietari in termini di prestazioni 3D e mancano di alcune caratteristiche, come il supporto TV-out. Tuttavia, offrono un miglior supporto dual-head, un'eccellente accelerazione 2D, e forniscono l'accelerazione 3D necessaria ai vari [Window Manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") che sfruttano le accelerazioni OpenGL, come [Compiz](/index.php/Compiz_(Italiano) "Compiz (Italiano)") o KWin.
+Attualmente, le performance dei driver open source non sono *alla pari* con i driver proprietari in termini di prestazioni 3D e mancano di alcune caratteristiche, come il supporto TV-out. Tuttavia, offrono un miglior supporto dual-head, un'eccellente accelerazione 2D, e forniscono l'accelerazione 3D necessaria ai vari [Window Manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") che sfruttano le accelerazioni OpenGL, come [Compiz](/index.php/Compiz_(Italiano) "Compiz (Italiano)") o KWin.
 
 In caso si incertezza, provare in primo luogo i driver open source; sono adatti alla maggior parte delle necessità e sono generalmente più flessibili e meno problematici. (vedere la [tabella delle caratteristiche](http://www.x.org/wiki/RadeonFeature) per i dettagli.) Per una panoramica riservata ai driver proprietari ATI "Catalyst" e la loro configurazione, consultare [ATI Catalyst](/index.php/ATI_Catalyst "ATI Catalyst"); questo articolo copre solamente i driver open source. I driver [ATI Catalyst non sono ufficialmente supportati](https://www.archlinux.org/news/439/) in Arch Linux.
 
@@ -46,7 +46,7 @@ In caso si incertezza, provare in primo luogo i driver open source; sono adatti 
 
 ## Convenzione dei nomi
 
-Il marchio ATI [Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") segue uno schema di nomenclatura che collega ogni prodotto ad un settore di mercato. All'interno di questo articolo, si utilizzerà la nomenclatura sia in base al nome del _prodotto_ (Es. HD 4850, X1900) che in base al nome in _codice_ o del _core_ (Es. RV770, R580). Solitamente, una _serie di prodotti_ corrisponderà ad una _serie di core_ (Es. la serie dei prodotti "X1000" include tutti i prodotti X1300, X1600, X1800, e X1900 i quali utilizzano la dei core della serie "R500" – che includono i core RV515, RV530, R520, e R580).
+Il marchio ATI [Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") segue uno schema di nomenclatura che collega ogni prodotto ad un settore di mercato. All'interno di questo articolo, si utilizzerà la nomenclatura sia in base al nome del *prodotto* (Es. HD 4850, X1900) che in base al nome in *codice* o del *core* (Es. RV770, R580). Solitamente, una *serie di prodotti* corrisponderà ad una *serie di core* (Es. la serie dei prodotti "X1000" include tutti i prodotti X1300, X1600, X1800, e X1900 i quali utilizzano la dei core della serie "R500" – che includono i core RV515, RV530, R520, e R580).
 
 Per una tabella completa di comparazione tra i nomi dei prodotti ed i relativi core, vedere [Wikipedia:Comparison of AMD graphics processing units](https://en.wikipedia.org/wiki/Comparison_of_AMD_graphics_processing_units "wikipedia:Comparison of AMD graphics processing units").
 
@@ -79,7 +79,6 @@ Xorg caricherà automaticamente il driver e userà l'EDID monitor per impostare 
 Se si desidera effettuare una configurazione manuale, creare `/etc/X11/xorg.conf.d/20-radeon.conf`, e aggiungere quanto segue:
 
  `/etc/X11/xorg.conf.d/20-radeon.conf` 
-
 ```
  Section "Device"
      Identifier "vga"
@@ -103,16 +102,16 @@ KMS per le schede video ATI richiede il driver opensource di [Xorg (Italiano)](/
 
 #### Avvio rapido
 
-_Questi due metodi avvieranno KMS il più presto possibile durante il [processo d'avvio](/index.php/Systemd_(Italiano) "Systemd (Italiano)")._
+*Questi due metodi avvieranno KMS il più presto possibile durante il [processo d'avvio](/index.php/Systemd_(Italiano) "Systemd (Italiano)").*
 
 1\. Il primo metodo consiste nell'aggiungere alla riga di boot del kernel il parametro `radeon.modeset=1`. Consultare la pagina relativa al proprio bootloader per sapere come fare.
 
-*   Rimuovere qualsiasi opzione `vga=` dalla linea del _kernel_ nel [file di configurazione del bootloader](/index.php/Boot_Loader#Configuration_files "Boot Loader"). L'uso di altri driver del framebuffer (come `[uvesafb](/index.php/Uvesafb_(Italiano) "Uvesafb (Italiano)")` o `radeonfb`) provocherebbe conflitti con KMS.
+*   Rimuovere qualsiasi opzione `vga=` dalla linea del *kernel* nel [file di configurazione del bootloader](/index.php/Boot_Loader#Configuration_files "Boot Loader"). L'uso di altri driver del framebuffer (come `[uvesafb](/index.php/Uvesafb_(Italiano) "Uvesafb (Italiano)")` o `radeonfb`) provocherebbe conflitti con KMS.
 *   La velocità dell'AGP può essere impostata con il parametro `radeon.agpmode=x`, dove x può assumere i valori 1, 2, 4, 8 (velocità AGP) o -1 (PCI mode).
 
 2\. Altrimenti, quando l'[initramfs](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)") è caricato:
 
-*   Se si utilizza un kernel differente da quello stock `-ARCH` (ad es. linux-zen), ricordarsi di utilizzare un file di configurazione di _mkinitcpio_ separato (ad es. `/etc/mkinitcpio-zen.conf`) e non `/etc/mkinitcpio.conf`.
+*   Se si utilizza un kernel differente da quello stock `-ARCH` (ad es. linux-zen), ricordarsi di utilizzare un file di configurazione di *mkinitcpio* separato (ad es. `/etc/mkinitcpio-zen.conf`) e non `/etc/mkinitcpio.conf`.
 *   Rimuovere ogni modulo relativo al framebuffer dal proprio mkinitcpio.
 *   Aggiungere `radeon` alla stringa MODULES del proprio file di configurazione di mkinitcpio.conf. A seconda dal chipset della scheda madre, può essere necessario aggiungere `intel_agp` (o `ali_agp`, `ati_agp`, `amd_agp`, `amd64_agp` etc.) prima del modulo `radeon`.
 *   Rigenerare [initramfs](/index.php/Mkinitcpio_(Italiano)#Creazione_dell.27immagine_ed_attivazione "Mkinitcpio (Italiano)"):
@@ -120,15 +119,14 @@ _Questi due metodi avvieranno KMS il più presto possibile durante il [processo 
 
 #### Avvio ritardato
 
-_Scegliendo questa modalità, KMS verrà avviato quando i moduli vengono caricati durante il [Arch Boot Process (Italiano)|processo d'avvio]]._
+*Scegliendo questa modalità, KMS verrà avviato quando i moduli vengono caricati durante il [Arch Boot Process (Italiano)|processo d'avvio]].*
 
 Se si sta utilizzando un kernel personalizzato (es:linux-zen), ricordarsi di utilizzare l'appropriato file di configurazione di mkinitcpio. Es: `/etc/mkinitcpio-zen.conf`. Le seguenti istruzioni valgono per il kernel predefinito ([linux](https://www.archlinux.org/packages/?name=linux)).
 
 **Nota:** Per il supporto all'AGP, potrebbe essere necessario aggiungere {ic
-
 , `ali_agp`, `ati_agp`, `amd_agp`, o `amd64_agp`) al file .conf appropriato in `/etc/modules-load.d`.}}
 
-1.  Rimuovere qualsiasi opzione `vga=` dalla linea del _kernel_ nel [file di configurazione del bootloader](/index.php/Boot_Loader#Configuration_files "Boot Loader"). L'utilizzo di altri driver del framebuffer (come `[uvesafb](/index.php/Uvesafb_(Italiano) "Uvesafb (Italiano)")` o `radeonfb`) provocherebbe conflitti con KMS. Rimuovere qualsiasi altro modulo relativo al framebuffer da `/etc/mkinitcpio.conf`. `video=` può essere utilizzato in abbinamento a KMS.
+1.  Rimuovere qualsiasi opzione `vga=` dalla linea del *kernel* nel [file di configurazione del bootloader](/index.php/Boot_Loader#Configuration_files "Boot Loader"). L'utilizzo di altri driver del framebuffer (come `[uvesafb](/index.php/Uvesafb_(Italiano) "Uvesafb (Italiano)")` o `radeonfb`) provocherebbe conflitti con KMS. Rimuovere qualsiasi altro modulo relativo al framebuffer da `/etc/mkinitcpio.conf`. `video=` può essere utilizzato in abbinamento a KMS.
 2.  Aggiungere `options radeon modeset=1` a `/etc/modprobe.d/modprobe.conf`.
 3.  **Riavviare** il sistema.
 
@@ -225,7 +223,7 @@ Ulteriori informazioni su questo [Articolo di Phoronix](http://www.phoronix.com/
 
 ### Glamor
 
-Con le versioni più recenti dei driver radeon è possibile utilizzare un nuovo metodo di accelerazione chiamato _glamor_: è un metodo di accelerazione 2d implementato tramite OpenGL, e dovrebbe funzionare con schede grafiche che montino chip uguali o superiori al R300.
+Con le versioni più recenti dei driver radeon è possibile utilizzare un nuovo metodo di accelerazione chiamato *glamor*: è un metodo di accelerazione 2d implementato tramite OpenGL, e dovrebbe funzionare con schede grafiche che montino chip uguali o superiori al R300.
 
  `Option "AccelMethod"          "glamor"` 
 
@@ -288,7 +286,6 @@ Sostituire "low" con uno dei profili possibili.
 **Nota:** Impostare un valore in questo file non vale in modo permanente. Per ottenere ciò, usare un [file temporaneo di systemd](/index.php/Systemd_(Italiano)#File_temporanei "Systemd (Italiano)") o una regola di [udev (Italiano)](/index.php/Udev_(Italiano) "Udev (Italiano)")
 
 **Nota:** Gli utenti di Gnome-shell potrebbero essere interessati all'estensione [Radeon Power Profile Manager](https://extensions.gnome.org/extension/356/radeon-power-profile-manager) per il controllo manuale dei profili della GPU.
-
  `/etc/tmpfiles.d/radeon-pm.conf`  `w /sys/class/drm/card0/device/power_method - - - - dynpm`  `/etc/udev/rules.d/30-local.rules`  `KERNEL=="dri/card0", SUBSYSTEM=="drm", DRIVERS=="radeon", ATTR{device/power_method}="profile", ATTR{device/power_profile}="auto"` 
 **Nota:**
 
@@ -300,7 +297,6 @@ Questa gestione del risparmio energetico e' supportata su tutte le schede (r1xx-
 Per visualizzare informazioni sulle frequenze di clock della gpu, eseguire questo comando. Si otterrà qualcosa del genere:
 
  `$ cat /sys/kernel/debug/dri/0/radeon_pm_info` 
-
 ```
 state: PM_STATE_ENABLED
 default engine clock: 300000 kHz
@@ -325,7 +321,7 @@ C'è una piccola gui per passare da un profilo all'altro: [power-play-switcher](
 
 ### Senza KMS
 
-Nel file `xorg.conf`, aggiungere due linee alla sezione _Device_:
+Nel file `xorg.conf`, aggiungere due linee alla sezione *Device*:
 
 ```
        Option      "DynamicPM"          "on"
@@ -348,7 +344,7 @@ Se le due opzioni vengono attivate con successo, è possibile trovare un riscont
 
 ```
 
-Se si necessita di un profilo energetico a basso consumo, è possibile aggiungere la linea seguente alla sezione _Device_ di `xorg.conf`:
+Se si necessita di un profilo energetico a basso consumo, è possibile aggiungere la linea seguente alla sezione *Device* di `xorg.conf`:
 
 ```
        Option      "ForceLowPowerMode"   "on"
@@ -445,7 +441,6 @@ root=/dev/disk/by-uuid/d950a14f-fc0c-451d-b0d4-f95c2adefee3 ro quiet radeon.mode
 L'audio HDMI è supportato dai driver video del pacchetto [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati). Di default il modulo necessario è disabilitato nelle versioni del kernel >=3.0\. . In ogni caso, se la propria scheda risulta supportata ([Radeon Feature Matrix](http://www.x.org/wiki/RadeonFeature)) è possibile aggiungere `radeon.audio=1` ai [parametri del kernel](/index.php/Kernel_parameters "Kernel parameters"). Per esempio:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 LABEL arch
     MENU LABEL Arch Linux
@@ -466,7 +461,7 @@ Se l'audio HDMI non dovesse completamente funzionare dopo l'installazione del dr
 
 ### Schermi indipendenti sotto X
 
-Configurazioni indipendenti per il dual-headed possono essere impostate come di consueto. Tuttavia è utile sapere che il driver _radeon_ possiede l'opzione "ZaphodHeads", che consente di associare una specifica sezione del dispositivo a un output di vostra scelta, utilizzando per esempio:
+Configurazioni indipendenti per il dual-headed possono essere impostate come di consueto. Tuttavia è utile sapere che il driver *radeon* possiede l'opzione "ZaphodHeads", che consente di associare una specifica sezione del dispositivo a un output di vostra scelta, utilizzando per esempio:
 
 ```
        Section "Device"
@@ -489,7 +484,6 @@ Inoltre, questa opzione consente di selezionare facilmente la schermata che si d
 L'ultima versione del pacchetto [mesa](https://www.archlinux.org/packages/?name=mesa) ha aggiunto il supporto alla decodifica per MPEG1/2 ai driver liberi, esportandola tramite [libvdpau](https://www.archlinux.org/packages/?name=libvdpau). Dopo averlo installato, assegnare il valore `vdpau` alla variabile d'ambiente `LIBVA_DRIVER_NAME` il nome del core del driver a `VDPAU_DRIVER`, ad es.:
 
  `~/.bashrc` 
-
 ```
 export LIBVA_DRIVER_NAME=vdpau
 export VDPAU_DRIVER=r600
@@ -500,7 +494,6 @@ export VDPAU_DRIVER=r600
 Il driver radeon abiliterà la sincronia verticale di default, scelta adatta ad ogni situazione fuorchè il misuramento delle prestazioni. Per disabilitarla, creare il file `~/.drirc` (o modificarlo se già esistente) ed aggiungere la sezione seguente:
 
  `~/.drirc` 
-
 ```
 <driconf>
     <device screen="0" driver="dri2">
@@ -528,7 +521,6 @@ Per poter funzionare senza un file di configurazione, si raccomanda che il pacch
 Si può anche provare a disabilitare EXAPixmaps nella sezione "Device" di `/etc/X11/xorg.conf.d/20-radeon.conf`::
 
  `/etc/X11/xorg.conf` 
-
 ```
 .....
 Option "EXAPixmaps" "off"
@@ -539,7 +531,6 @@ Option "EXAPixmaps" "off"
 Anche l'opzione AccelDFS sembra essere causa di artefatti, provare a disabilitarla con questa stringa
 
  `/etc/X11/xorg.conf.d/20-radeon.conf` 
-
 ```
 .....
 Option "AccelDFS" "off"
@@ -562,7 +553,7 @@ dmesg | egrep "drm|radeon"
 
 ```
 
-Questo comando dovrebbe mostrare qualcosa _come_ questo, ciò significa che la scheda sta provando ad usare KMS:
+Questo comando dovrebbe mostrare qualcosa *come* questo, ciò significa che la scheda sta provando ad usare KMS:
 
 ```
 [drm] radeon default to kernel modesetting.

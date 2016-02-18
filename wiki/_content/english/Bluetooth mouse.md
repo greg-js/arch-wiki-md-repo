@@ -10,13 +10,13 @@ This article describes how to set up a [Bluetooth](/index.php/Bluetooth "Bluetoo
 
 ## Installation
 
-Install the [bluez](https://www.archlinux.org/packages/?name=bluez) package which contains the current Linux bluetooth stack (Bluez5). You may also want to install [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) which provides the _bluetoothctl_ utility. See [Bluetooth](/index.php/Bluetooth "Bluetooth") for more information.
+Install the [bluez](https://www.archlinux.org/packages/?name=bluez) package which contains the current Linux bluetooth stack (Bluez5). You may also want to install [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) which provides the *bluetoothctl* utility. See [Bluetooth](/index.php/Bluetooth "Bluetooth") for more information.
 
 ## Bluez5 instructions
 
 **Tip:** Ensure that the bluetooth daemon is started before continuing.
 
-The _bluetoothctl_ utility provides a simple interface for configuring bluetooth devices. The text below is an example of how you can connect a bluetooth mouse using _bluetoothctl_:
+The *bluetoothctl* utility provides a simple interface for configuring bluetooth devices. The text below is an example of how you can connect a bluetooth mouse using *bluetoothctl*:
 
 ```
 # bluetoothctl
@@ -36,7 +36,7 @@ Device <mouse mac> Name: Bluetooth Mouse
 
 In order for the device to start on boot you may have to create a [udev](/index.php/Udev "Udev") rule. Please see [Bluetooth#Bluetoothctl](/index.php/Bluetooth#Bluetoothctl "Bluetooth") for more information.
 
-**Tip:** In case you were using USB Bluetooth dongle and moved it to another USB port, you may need to remove the mouse's MAC address in _bluetoothctl_ with _remove <mouse mac>_ command and repeat the entire procedure again.
+**Tip:** In case you were using USB Bluetooth dongle and moved it to another USB port, you may need to remove the mouse's MAC address in *bluetoothctl* with *remove <mouse mac>* command and repeat the entire procedure again.
 
 ## Troubleshooting
 

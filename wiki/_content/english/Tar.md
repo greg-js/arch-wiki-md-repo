@@ -1,6 +1,6 @@
 From [GNU's Tar Page](http://www.gnu.org/software/tar/):
 
-	_"The `Tar` program provides the ability to create tar archives, as well as various other kinds of manipulation. For example, you can use Tar on previously created archives to extract files, to store additional files, or to update or list files which were already stored."_
+	*"The `Tar` program provides the ability to create tar archives, as well as various other kinds of manipulation. For example, you can use Tar on previously created archives to extract files, to store additional files, or to update or list files which were already stored."*
 
 As an early Unix compression format, `tar` files (known as **tarballs**) are widely used for packaging in Unix-like operating systems. Both [pacman](/index.php/Pacman "Pacman") and [AUR](/index.php/AUR "AUR") packages are tarballs, and Arch uses [GNU's](/index.php/GNU_Project "GNU Project") `Tar` program by default.
 
@@ -58,7 +58,7 @@ To back up using parallel compression ([SMP](https://en.wikipedia.org/wiki/Symme
 First back up the files to a plain tarball with no compression:
 
 ```
-# tar -cvf /_destionation_path_/etc-backup.tar /etc
+# tar -cvf /*destionation_path*/etc-backup.tar /etc
 
 ```
 

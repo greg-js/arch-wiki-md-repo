@@ -23,7 +23,7 @@ GNU/Linux 通过用户和用户组实现[访问控制](https://en.wikipedia.org/
 
 ## 概览
 
-_用户_一般指使用计算机的人。在本文语境中，该词指用来识别用户的用户名称，既可以是 Mary 或 Bill 这样的真名，也可以是 Dragonlady, Pirate 这样的昵称。关键是，计算机给每个账户分配了特定的名称，而用户则使用这些名称访问计算机。除了人之外，一些系统服务也以有部分限制，又享有部分特权的用户账户身份运行。
+*用户*一般指使用计算机的人。在本文语境中，该词指用来识别用户的用户名称，既可以是 Mary 或 Bill 这样的真名，也可以是 Dragonlady, Pirate 这样的昵称。关键是，计算机给每个账户分配了特定的名称，而用户则使用这些名称访问计算机。除了人之外，一些系统服务也以有部分限制，又享有部分特权的用户账户身份运行。
 
 由于安全需要，「用户管理」应运而生，以加以明确限制各个用户账户的权限。超级用户 root 于计算机里拥有至高无上的管理权限，所以一般只作管理用。非特权用户则可以用 [su](/index.php/Su "Su") 或 [sudo](/index.php/Sudo "Sudo") 程序以临时获得特权。
 
@@ -48,7 +48,6 @@ _用户_一般指使用计算机的人。在本文语境中，该词指用来识
 GNU/Linux 系统中的每一个文件都从属一个用户（属主）和一个用户组（属组）。另外，还有三种类型的访问权限：读（read）、写（write）、运行（execute）。我们可以针对文件的属主、属组、而设置相应的访问权限。再次，我们可以通过 [ls](/index.php/Core_utilities#ls "Core utilities") 命令的长列表格式以查询文件属主、属组和权限：
 
  `$ ls /boot/ -l` 
-
 ```
 total 18492
 drwxr-xr-x 3 root root    12288 Aug 21 03:27 grub
@@ -58,16 +57,15 @@ drwxr-xr-x 3 root root    12288 Aug 21 03:27 grub
 
 ```
 
-第一列是文件访问权限（例如，文件`initramfs-linux.img`的权限为`-rw-r--r--`），第三列和第四列分别是属主和属组（本例中所有文件属主都是_root_用户，属组都是_root_组）。
+第一列是文件访问权限（例如，文件`initramfs-linux.img`的权限为`-rw-r--r--`），第三列和第四列分别是属主和属组（本例中所有文件属主都是*root*用户，属组都是*root*组）。
 
  `$ ls -l /media/` 
-
 ```
 total 16
 drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
 ```
 
-上述例子中，`sf_Shared`目录由_root_用户和_vboxsf_组所有。使用`stat`命令也可以查看文件所有权和权限：
+上述例子中，`sf_Shared`目录由*root*用户和*vboxsf*组所有。使用`stat`命令也可以查看文件所有权和权限：
 
 属主：
 
@@ -117,7 +115,7 @@ drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
 
 ### 添加登录用户
 
-以典型的桌面系统为例，要添加一个名为_archie_的用户，并使用[bash](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bash (简体中文)")作为登录shell：
+以典型的桌面系统为例，要添加一个名为*archie*的用户，并使用[bash](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bash (简体中文)")作为登录shell：
 
 ```
 # useradd -m -G wheel -s /bin/bash archie
@@ -129,7 +127,7 @@ drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
 要赋予一个群组某个目录的写权限，可以在父目录中设置：
 
 ```
-# chmod g+s _our_shared_directory_
+# chmod g+s *our_shared_directory*
 
 ```
 
@@ -152,7 +150,7 @@ $ man useradd
 为进程、守护进程分配不同的系统用户可以更安全的管控目录及文件的访问。下面命令创建一个不创建 `home` 目录的非登录用户(可以加入 `-U` 参数创建一个和用户名相同的群组):
 
 ```
-# useradd -r -s /usr/bin/nologin _username_
+# useradd -r -s /usr/bin/nologin *username*
 
 ```
 
@@ -161,36 +159,36 @@ $ man useradd
 更改用户登录名：
 
 ```
-# usermod -l _newname_ _oldname_
+# usermod -l *newname* *oldname*
 
 ```
 
 更改用户主目录：
 
 ```
-# usermod -dm /my/new/home _username_
+# usermod -dm /my/new/home *username*
 
 ```
 
 `-m` 选项会自动创建新目录并移动内容。
 
-将用户加入 (`_群组_`，用逗号分隔:
+将用户加入 (`*群组*`，用逗号分隔:
 
 ```
-# usermod -aG _群组_ _username_
-
-```
-
-{{警告|如果不使用 `-a` 选项，用户会离开没有列在`_群组_`的其它群组。
-
-_gpasswd_ 也能实现同样的修改，但是一次只能加入一个组：
-
-```
-# gpasswd --add _username_ _group_
+# usermod -aG *群组* *username*
 
 ```
 
-通过下列命令设置_GECOS_字段（用户信息，例如用户全名）：
+{{警告|如果不使用 `-a` 选项，用户会离开没有列在`*群组*`的其它群组。
+
+*gpasswd* 也能实现同样的修改，但是一次只能加入一个组：
+
+```
+# gpasswd --add *username* *group*
+
+```
+
+通过下列命令设置*GECOS*字段（用户信息，例如用户全名）：
 
 ```
 # chfn [用户名]
@@ -202,7 +200,7 @@ _gpasswd_ 也能实现同样的修改，但是一次只能加入一个组：
 此外，可以设置 GECOS comment：
 
 ```
-# usermod -c "Comment" _username_
+# usermod -c "Comment" *username*
 
 ```
 
@@ -253,7 +251,7 @@ account:password:UID:GID:GECOS:directory:shell
 *   `directory`：用于登录命令设置`$HOME`环境变量。某些服务的用户主目录设置为"/"是安全的，但不建议普通用户设置为此目录。
 *   `shell`：是用户默认登录的shell，通常是[Bash](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bash (简体中文)")，还可选择其他的命令解释器，默认是"/bin/bash"（不带括号），如果你用的是别的shell，在这里设置其路径，此部分是可选的，可留空。
 
-**注意:** Arch Linux 使用_影子_密码。`passwd`文件对所有人可读，在里面存储密码（无论是否加密过）是很不安全的。在`password`字段，通常使用一个占位字符（`x`）代替。加密过的密码储存在`/etc/shadow`文件，该文件对普通用户限制访问。
+**注意:** Arch Linux 使用*影子*密码。`passwd`文件对所有人可读，在里面存储密码（无论是否加密过）是很不安全的。在`password`字段，通常使用一个占位字符（`x`）代替。加密过的密码储存在`/etc/shadow`文件，该文件对普通用户限制访问。
 
 示例：
 
@@ -406,7 +404,7 @@ $ cat /etc/group
 | 组 | 作用 |
 | audio | `/dev/audio`, `/dev/snd/*`, `/dev/rtc0` | 直接访问声音硬件([ALSA](/index.php/ALSA "ALSA") 和 [OSS](/index.php/OSS "OSS")). |
 | camera | 访问 [Digital Cameras](/index.php/Digital_Cameras "Digital Cameras"). |
-| disk | `/dev/sda[1-9]`, `/dev/sdb[1-9]` | 直接访问不受 _optical_, _floppy_ 和 _storage_ 组控制的块设备. 除非有特殊需要, 否则不建议将一般用户添加至该组. |
+| disk | `/dev/sda[1-9]`, `/dev/sdb[1-9]` | 直接访问不受 *optical*, *floppy* 和 *storage* 组控制的块设备. 除非有特殊需要, 否则不建议将一般用户添加至该组. |
 | floppy | `/dev/fd[0-9]` | 访问软盘驱动器。 |
 | lp | `/etc/cups`, `/var/log/cups`, `/var/cache/cups`, `/var/spool/cups` | 访问打印设备，管理打印任务。 |
 | network | 改变网络设置的权限，比如使用 [Networkmanager](/index.php/Networkmanager "Networkmanager") 的权限. |

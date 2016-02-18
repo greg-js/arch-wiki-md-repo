@@ -19,7 +19,6 @@ Contact the author of this wiki with any problems or suggestions (lagagnon at gm
 This laptop has a dual core Pentium T3400 CPU, 2GB RAM, 15.4" WXGA glossy LCD screen 1280x800, 250GB hard drive, DVD+ RW optical drive, PCMCIA, wireless, ethernet, modem, SD card slot, 3 USB ports, VGA out port, webcam, trackpad. Chip details from "lspci" are:
 
 `
-
 ```
 00:00.0 Host bridge: Intel Corporation Mobile 945GM/PM/GMS, 943/940GML and 945GT Express Memory Controller Hub (rev 03)
 00:01.0 PCI bridge: Intel Corporation Mobile 945GM/PM/GMS, 943/940GML and 945GT Express PCI Express Root Port (rev 03)
@@ -47,7 +46,6 @@ This laptop has a dual core Pentium T3400 CPU, 2GB RAM, 15.4" WXGA glossy LCD sc
 03:00.0 Network controller: Atheros Communications Inc. AR928X Wireless Network Adapter (PCI-Express) (rev 01)
 
 ```
-
 `
 
 ## What Works Without Any Configuration?
@@ -60,7 +58,7 @@ Suspend, Hibernate, Fan speed, Video tweaks, Audio, Function Keys (see below for
 
 ## What Does Not Work?
 
-The Fn key and fan control after suspend/hibernate _if_ your BIOS version is less than version 2.20\. If you update your BIOS you will not have these problems.
+The Fn key and fan control after suspend/hibernate *if* your BIOS version is less than version 2.20\. If you update your BIOS you will not have these problems.
 
 ## Not Tested
 
@@ -71,7 +69,6 @@ PCMCIA, Modem.
 **Video:** Follow the [Intel](/index.php/Intel "Intel") wiki entry for Intel video. Edit your /boot/grub/menu.lst kernel boot line. See below. If these suggested changes to /boot/grub/menu.lst and /etc/X11/xorg.conf are not made you may not be able to resume from suspend, will get flickering video on shutdown and other minor video faults, but your screen will generally work OK. Here is a suggested /etc/X11/xorg.conf file for reference:
 
 `
-
 ```
 Section "ServerLayout"
         Identifier     "X.org Configured"
@@ -164,20 +161,18 @@ Section "Screen"
 EndSection
 
 ```
-
 `
 **Warning:** [GRUB2](https://wiki.archlinux.org/index.php/GRUB2) The fan will work properly assigning the parameter:
 **Note:** GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_osi=Linux"
-
 in `/etc/default/grub`.
 
 **kernel boot parameters (/boot/grub/menu.lst):** Heed the [Intel](/index.php/Intel "Intel") video changes and boot manager kernel parameters should include:
 
 `kernel /vmlinuz-linux root=/dev/disk/by-uuid/your_UUID_here acpi_osi="Linux" ro i915.modeset=1 resume=/dev/sda3`
 
-The important kernel parameters above are: _acpi_osi="Linux"_ (fan will not function correctly without), _resume=/dev/sda3_ (this is the swap partition, without which hibernate will not work) and _i915.modeset=1_, necessary for KMS video on the Intel graphics chip.
+The important kernel parameters above are: *acpi_osi="Linux"* (fan will not function correctly without), *resume=/dev/sda3* (this is the swap partition, without which hibernate will not work) and *i915.modeset=1*, necessary for KMS video on the Intel graphics chip.
 
-**Suspend/Hibernate:** The "pm-suspend" and "pm-hibernate" scripts from the pm-utils package work _but_ ACPI fan control after any suspend or hibernate will only function properly with BIOS version 2.20 or higher.
+**Suspend/Hibernate:** The "pm-suspend" and "pm-hibernate" scripts from the pm-utils package work *but* ACPI fan control after any suspend or hibernate will only function properly with BIOS version 2.20 or higher.
 
 **Function Keys:** To get the "Fn" key to work one may need to upgrade your BIOS (see below). With a working Fn key the Num Lock key will function. However, you will still have to bind the hardware function key combinations to specific Linux facilities depending on what desktop environment you use. For instance "Fn+F4" is the "hibernate" facility. You have to bind the hibernate script that you specifically use to that key combo. The same goes for screen brightness, suspend, etc. This is not done automatically in Linux. The old "toshiba_acpi" and "fnfx" modules do not work with the InsydeH2O BIOS, they only work with Toshiba-written BIOSes.
 

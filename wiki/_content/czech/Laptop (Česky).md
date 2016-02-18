@@ -86,7 +86,7 @@ Nainstaluj [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
 ```
 
 *   Konfigurační soubory můžeš nalézt zde: /etc/laptop-mode/laptop-mode.conf a /etc/laptop-mode.conf/conf.d/*
-*   Ujisti se, že démon _laptop-mode_ je přidán v řádku DAEMONS v souboru /etc/rc.conf
+*   Ujisti se, že démon *laptop-mode* je přidán v řádku DAEMONS v souboru /etc/rc.conf
 *   Projdi všechni konfigurační soubory, mnoho úsporných funkcí totiž není implicitně povoleno.
 
 Následuj [toto vlákno(anglicky)](https://bbs.archlinux.org/viewtopic.php?id=39258) s pro více informací.
@@ -111,11 +111,11 @@ OPTIONS="-q -u 15 -l 5"
 
 ## Návhry pro šetření energie
 
-	_Poznámka_: Ne všechny tyto tipy jsou nezbytné pokud používáš laptop-mode=tools, používání laptopmode ti navíc dá možnost aplikovat tyto funkce tehdy, kdy si přeješ(např. když je zdroj připojen nebo odpojen).
+	*Poznámka*: Ne všechny tyto tipy jsou nezbytné pokud používáš laptop-mode=tools, používání laptopmode ti navíc dá možnost aplikovat tyto funkce tehdy, kdy si přeješ(např. když je zdroj připojen nebo odpojen).
 
 ### Nastavení disků
 
-Zakaž změnu času přístupu k souborům: pokaždé když přistopíš(čteš) soubor, souborový sysém zípíše přístupový čas do metadat souboru. Toto můžeš zakázat individuálně na jednotlivých souborech použitím příkazu chattr nebo pro celý disk nastavením _noatime_ v souboru /etc/fstab tímto způsobem:
+Zakaž změnu času přístupu k souborům: pokaždé když přistopíš(čteš) soubor, souborový sysém zípíše přístupový čas do metadat souboru. Toto můžeš zakázat individuálně na jednotlivých souborech použitím příkazu chattr nebo pro celý disk nastavením *noatime* v souboru /etc/fstab tímto způsobem:
 
 ```
 /dev/sda1          /          ext3          defaults,noatime          1  2
@@ -124,7 +124,7 @@ Zakaž změnu času přístupu k souborům: pokaždé když přistopíš(čteš)
 
 [Zdroj](http://www.faqs.org/docs/securing/chap6sec73.html)
 
-	_Poznámka_: zakázaní atime způsobuje problémy s aplikací [mutt](/index.php/Mutt "Mutt") a některými dalšími, které používají časové známky souborů. Zvaž kompromis mezi výkonem a kompaktibilitou při použití možností relatime místo atime, nebo se podívej na [mutt jak obejít noatime](http://wiki.mutt.org/?MaildirFormat)
+	*Poznámka*: zakázaní atime způsobuje problémy s aplikací [mutt](/index.php/Mutt "Mutt") a některými dalšími, které používají časové známky souborů. Zvaž kompromis mezi výkonem a kompaktibilitou při použití možností relatime místo atime, nebo se podívej na [mutt jak obejít noatime](http://wiki.mutt.org/?MaildirFormat)
 
 Aby se po určitém čase přestaly točit hlavičky CD/DVD rom, spust následující:
 
@@ -137,7 +137,7 @@ Aby se po určitém čase přestaly točit hlavičky CD/DVD rom, spust následuj
 
 Zde je několik obecných návrhů, které fungují se všemi notebooky.
 
-Přidej následující do _/etc/modprobe.d/modprobe.conf_:
+Přidej následující do */etc/modprobe.d/modprobe.conf*:
 
 ```
 options usbcore autosuspend=1
@@ -152,7 +152,7 @@ vm.laptop_mode=5
 
 ```
 
-Přidej následující do _/etc/rc.local_ (a ujisti se že to bude spuštěno při startu OS)
+Přidej následující do */etc/rc.local* (a ujisti se že to bude spuštěno při startu OS)
 
 ```
 /usr/sbin/iwpriv your_wireless_interface set_power 5
@@ -167,16 +167,16 @@ Dokuentováno [zde](https://bugs.launchpad.net/ubuntu/+source/acpi-support/+bug/
 
 Pro zabránění příliš častému roztáčení ploten pevného disku (výsledek příliš agresivních impicitních nastavení APM) udělěj následující
 
-Přidej následující do _/etc/rc.local_
+Přidej následující do */etc/rc.local*
 
 ```
-hdparm -B 254 /dev/sdX _kde X je tvůj pevný disk_
+hdparm -B 254 /dev/sdX *kde X je tvůj pevný disk*
 
 ```
 
 Hodnotu můžes také nastavit na 255 pro kompletní vypnutí roztáčení ploten. Můžeš si také přát nastavit nižší hodnotu pokud se s notebookem pohybuješ pro eliminování šance zničení pevného disku při pohybu. Pokud se s notebookem beěhem jeho užívání nepohybuješ, nastavení hodnoty na 254 nebo 255 je pravděpodobně nejlepší. Pokud však ano, můžes zkusit nastavit nížší hodnotu. Hodnota kolem 128 může být zlatým středem.
 
-Přidej následující do _/etc/pm/sleep.d/50-hdparm_pm_
+Přidej následující do */etc/pm/sleep.d/50-hdparm_pm*
 
 ```
 #!/bin/sh

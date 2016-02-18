@@ -80,7 +80,6 @@ O Pacman είναι ο [διαχειριστής πακέτων](https://en.wiki
 Σε αυτόν τον τομέα του `/etc/pacman.conf` δηλώνουμε ποια [Αποθετήρια](/index.php/Official_repositories "Official repositories") θα χρησιμποούνται κατά την εγκατάσταση ή αναβάθμιση πακέτων του συστήματός μας. Υπάρχει δυνατότητα να δηλωθούν άμεσα εδώ, ή να συμπεριληφθούν από ένα άλλο αρχείο όπως το `/etc/pacman.d/mirrorlist`). Για την ρύθμμιση των mirrors δείτε: [mirrors](/index.php/Mirrors "Mirrors")
 
  `/etc/pacman.conf` 
-
 ```
 #[testing]
 #SigLevel = PackageRequired
@@ -121,7 +120,6 @@ Include = /etc/pacman.d/mirrorlist
 ```
 
 **Προσοχή:** Μεγάλη προσοχή πρέπει να δοθεί αν χρησιμοποιείται το αποθετήριο `[testing]`. Βρίσκεται κάτω από συνεχή εξέλιξη και η ενημέρωση είναι δυνατόν να έχει ως αποτέλεσμα ορισμένα πακέτα να σταματήσουν να λειτουργούν. Όσοι χρησιμοποιούν το `[testing]` προτείνεται να εγγραφούν στο [arch-dev-public mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public) για καλύτερη ενημέρωση
-
 .
 
 ### Ασφάλεια πακέτων
@@ -191,7 +189,6 @@ pacman -S testing/package_name
 **Σημείωση:** Ακόμα και αν ένα πακέτο είναι ήδη εγκατεστημένο στο σύστημά σας, θα επανεγκατασταθεί ακόμα και αν είναι ενημερωμένο. Αυτή η διαδικασία μπορεί να παρακαμφθεί, προσθέτοντας την μεταβλητή `--needed`
 
 **Προσοχή:** Όταν εγκαθιστάτε πακέτα **μην** κάνετε μόνο ανανέωση της λίστας πακέτων χωρίς [αναβάθμιση](#Upgrading_packages) του συστήματος (π.χ. `pacman -Sy package_name`. Αυτό μπορεί να οδηγήσει σε προβλήματα με τις εξαρτήσεις των πακέτων. Δείτε [#Μερική αναβάθμιση δεν υποστηρίζεται](#Partial_upgrades_are_unsupported) και [https://bbs.archlinux.org/viewtopic.php?id=89328](https://bbs.archlinux.org/viewtopic.php?id=89328)
-
 .
 
 ### Απεγκατάσταση πακέτων
@@ -344,7 +341,7 @@ O pacman μπορεί να αναζητήσει στην βάση δεδομέν
 
 ### Δεν υποστηρίζεται η μερική αναβάθμιση
 
-Το Arch Linux, είναι μια κυλιόμενη διανομή, και νέες εκδόσεις [βιβλιοθηκών](https://en.wikipedia.org/wiki/Library_(computing) "wikipedia:Library (computing)") θα μπουν στα αποθετήρια. Οι προγραμματιστές (Developers) και οι [Trusted Users](/index.php/Trusted_Users "Trusted Users") θα δημιουργήσουν ξανά όποια αρχεία απαιτούν τέτοια ενέργεια μετά την αναβάθμιση των βιβλιοθηκών. Αν το σύστημα περιέχει αρχεία τοπικά εγκατεστημένα (όπως τα αρχεία από το [AUR](/index.php/Arch_User_Repository "Arch User Repository")) οι χρήστες θα πρέπει να τα δημιουργήσουν ξανά όταν οι εξαρτήσεις τους λάβουν ένα σήμα [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname").
+Το Arch Linux, είναι μια κυλιόμενη διανομή, και νέες εκδόσεις [βιβλιοθηκών](https://en.wikipedia.org/wiki/Library_(computing) θα μπουν στα αποθετήρια. Οι προγραμματιστές (Developers) και οι [Trusted Users](/index.php/Trusted_Users "Trusted Users") θα δημιουργήσουν ξανά όποια αρχεία απαιτούν τέτοια ενέργεια μετά την αναβάθμιση των βιβλιοθηκών. Αν το σύστημα περιέχει αρχεία τοπικά εγκατεστημένα (όπως τα αρχεία από το [AUR](/index.php/Arch_User_Repository "Arch User Repository")) οι χρήστες θα πρέπει να τα δημιουργήσουν ξανά όταν οι εξαρτήσεις τους λάβουν ένα σήμα [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname").
 
 Αυτό σημαίνει πως η μερική αναβάθμιση **δεν υποστηρίζεται**. Μην χρησιμοποιείται `pacman -Sy package` ή οποιοδήποτε ισοδύναμο όπως `pacman -Sy` και μετά `pacman -S package`. Πάντα κάντε την διαδικασία της αναβάθμισης πριν την εγκατάσταση νέου πακέτου, ιδιαίτερα αν ο pacman έχει ανανεώσει την βάση δεδομένων σας, Να είστε πολύ προσεκτικοί με τις `IgnorePkg` & `IgnoreGroup` για τον ίδιο λόγο.
 
@@ -372,7 +369,7 @@ To [MirrorStatus](https://www.archlinux.org/mirrors/status/) σας βοηθά �
 
 ### Λαμβάνω το ακόλουθο σφάλμα κατά την αναβάθμιση: "Το αρχείο υπάρχει ήδη στο σύστημα αρχείων".
 
-Τμήμα: _Από την δημοσίευση [https://bbs.archlinux.org/viewtopic.php?id=56373](https://bbs.archlinux.org/viewtopic.php?id=56373) by Misfit138._
+Τμήμα: *Από την δημοσίευση [https://bbs.archlinux.org/viewtopic.php?id=56373](https://bbs.archlinux.org/viewtopic.php?id=56373) by Misfit138.*
 
 ```
 error: could not prepare transaction

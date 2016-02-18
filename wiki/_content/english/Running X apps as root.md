@@ -7,35 +7,35 @@ The most secure methods are simple. They include:
 *   kdesu (included with KDE)
 
 ```
-$ kdesu _name-of-app_
+$ kdesu *name-of-app*
 
 ```
 
 *   gksu (included with GNOME)
 
 ```
-$ gksu _name-of-app_
+$ gksu *name-of-app*
 
 ```
 
 *   bashrun (in community)
 
 ```
-$ bashrun --su _name-of-app_
+$ bashrun --su *name-of-app*
 
 ```
 
 *   [sudo](/index.php/Sudo "Sudo") (must be installed and properly configured with `visudo`)
 
 ```
-$ sudo _name-of-app_
+$ sudo *name-of-app*
 
 ```
 
 *   [sux](https://aur.archlinux.org/packages/sux/) (wrapper around su which will transfer your X credentials)
 
 ```
-$ sux root _name-of-app_
+$ sux root *name-of-app*
 
 ```
 
@@ -54,7 +54,7 @@ $ xhost +
 
 ```
 
-will temporarily allow root, or _anyone_ to connect your X server. Likewise,
+will temporarily allow root, or *anyone* to connect your X server. Likewise,
 
 ```
 $ xhost -

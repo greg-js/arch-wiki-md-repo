@@ -8,7 +8,7 @@
 
 [GNU GRUB (Legacy)](https://www.gnu.org/software/grub/grub-legacy.en.html) is een [multiboot](http://www.gnu.org/software/grub/manual/multiboot/) bootloader onderhouden door het [GNU Project](/index.php/GNU_Project "GNU Project"). Het is een afgeleide van the GRand Unified Bootloader, dewelke origineel ontworpen en geimplementeerd werd door Erich Stefan Boleyn.
 
-Kort samengevat is de _bootloader_ het eerste software programma dat wordt aangesproken wanneer de computer start. Het is verantwoordelijk voor het laden en transferen van de controle naar de linux kernel. De kernel op zijn beurt initialiseert de rest van het besturingssysteem.
+Kort samengevat is de *bootloader* het eerste software programma dat wordt aangesproken wanneer de computer start. Het is verantwoordelijk voor het laden en transferen van de controle naar de linux kernel. De kernel op zijn beurt initialiseert de rest van het besturingssysteem.
 
 **Note:** GRUB Legacy is al een tijdje afgeschaft en vervangen door [GRUB2](/index.php/GRUB2 "GRUB2") in vele Linux distributies. Voor het booten van meerdere distributies is het beter om GRUB2 te gebruiken. Gebruikers worden in het algemeen aangeraden om naar [GRUB2](/index.php/GRUB2 "GRUB2") of [Syslinux](/index.php/Syslinux "Syslinux") over te stappen.
 
@@ -50,7 +50,7 @@ nano /boot/grub/menu.lst
 
 ```
 
-_Opmerking: Gebruik hd[a-z] voor ide en sd[a-z] voor scsi en sata_
+*Opmerking: Gebruik hd[a-z] voor ide en sd[a-z] voor scsi en sata*
 
 Hier is mijn menu.lst als voorbeeld:
 
@@ -133,14 +133,14 @@ grub> root (hdx,x)
 
 Als je niet weet wat de locatie van /boot is, gebruik dan het **find** commando, om de GRUB bestanden te lokaliseren.
 
-Het volgende voorbeeld is voor systemen _zonder_ een aparte /boot partitie, waar /boot slechts een map is onder / :
+Het volgende voorbeeld is voor systemen *zonder* een aparte /boot partitie, waar /boot slechts een map is onder / :
 
 ```
 grub> find /boot/grub/stage1
 
 ```
 
-Het volgende voorbeeld is voor systemen _met_ een aparte partitie voor /boot:
+Het volgende voorbeeld is voor systemen *met* een aparte partitie voor /boot:
 
 ```
 grub> find /grub/stage1
@@ -197,21 +197,21 @@ De configuratie van GRUB geschied in dit bestand:
 
 ```
 
-*   _(hdn,m)_ is de partitie m op hardeschijf n, nummers startend bij 0
-*   _splashimage (hdn,m)/grub/Name.xpm.gz_ is het splash-image bestand
-*   _default n_ is de standaard boot regel, die gekozen wordt na de time-out voor gebruikersinteractie
-*   _timeout m_ tijd m in seconden om te wachten voor gebruikersinteractie, voordat de standaard regel wordt opgestart
-*   _password -md5 str_ versleutelde opstartwachtwoord 'str'
-*   _title str_ titel 'str' voor een boot regel
-*   _root (hdn,m)_ basispartitie, waar de kernel is opgeslagen
-*   _kernel /path ro root=/dev/device initrd /initrd.img_ gebruik de root optie, als de kernel niet in / is geplaatst
-*   _makeactive
-    chainloader +1_ activeert root en geeft de bootprocedure door aan de boatloader (bijvoorbeeld voor Windows)
-*   _map (hd0) (hd1)
-    map (hd1) (hd0)_ verwisseld de primaire en secondaire disk voor een boot, nodig om Windows van een tweede schijf te booten
-*   _root (hdn,m,z)
-    kernel /boot/loader_ boots de FreeBSD-partitie x
-*   _default saved_ onthoud elke boot-selectie en maak het de nieuwe standaard. Zet "savedefault" aan het eind van elke bootselectie, waarvoor je deze feature wilt gebruiken.
+*   *(hdn,m)* is de partitie m op hardeschijf n, nummers startend bij 0
+*   *splashimage (hdn,m)/grub/Name.xpm.gz* is het splash-image bestand
+*   *default n* is de standaard boot regel, die gekozen wordt na de time-out voor gebruikersinteractie
+*   *timeout m* tijd m in seconden om te wachten voor gebruikersinteractie, voordat de standaard regel wordt opgestart
+*   *password -md5 str* versleutelde opstartwachtwoord 'str'
+*   *title str* titel 'str' voor een boot regel
+*   *root (hdn,m)* basispartitie, waar de kernel is opgeslagen
+*   *kernel /path ro root=/dev/device initrd /initrd.img* gebruik de root optie, als de kernel niet in / is geplaatst
+*   *makeactive
+    chainloader +1* activeert root en geeft de bootprocedure door aan de boatloader (bijvoorbeeld voor Windows)
+*   *map (hd0) (hd1)
+    map (hd1) (hd0)* verwisseld de primaire en secondaire disk voor een boot, nodig om Windows van een tweede schijf te booten
+*   *root (hdn,m,z)
+    kernel /boot/loader* boots de FreeBSD-partitie x
+*   *default saved* onthoud elke boot-selectie en maak het de nieuwe standaard. Zet "savedefault" aan het eind van elke bootselectie, waarvoor je deze feature wilt gebruiken.
 
 Voor degenen die van eye-candy houden, is er [Graphical GRUB](/index.php/Graphical_GRUB "Graphical GRUB").
 
@@ -265,7 +265,7 @@ initrd /boot/initrd.img (if the other kernel uses/needs one)
 
 #### Dual booten met andere Linux distributies (Chainloading)
 
-Om een _onderhoud nachtmerrie_ te voorkomen, zou je de GRUB bootloader mischien willen chainloaden naar een andere bootloader, die je zou kunnen hebben geinstalleerd in het bootrecord van een partitie [ (hd0,2) in ons voorbeeld] in plaats van het MBR. Op deze manier zullen de automatische procedures van de een of andere distributie het menu.lst bestand op [hd0,2] beheren (indien het GRUB is) voor zichzelf, en zul jij met alle benodigde opties booten in je eigen distributie.
+Om een *onderhoud nachtmerrie* te voorkomen, zou je de GRUB bootloader mischien willen chainloaden naar een andere bootloader, die je zou kunnen hebben geinstalleerd in het bootrecord van een partitie [ (hd0,2) in ons voorbeeld] in plaats van het MBR. Op deze manier zullen de automatische procedures van de een of andere distributie het menu.lst bestand op [hd0,2] beheren (indien het GRUB is) voor zichzelf, en zul jij met alle benodigde opties booten in je eigen distributie.
 
 In ons voorbeeld [[1]](http://home.tele2.fr/solsTiCe/img/dualbooting.png) is GRUB in het MBR en een andere bootloader (BL) (bijvoorbeeld GRUB of LiLo) is in het Boot Record van (hd0,2).
 
@@ -354,14 +354,14 @@ In plaats van het gebruiken van die tabel, suggereer ik deze methode:
 
 ### Hoe de correcte code te vinden voor je gewenste resolutie
 
-1.  installeer het _lrmi_ pakket van [community]
-2.  draai _vbetest_ als root in een **console** die al framebuffer draait. Het zal **niet** werken in een terminal in X
+1.  installeer het *lrmi* pakket van [community]
+2.  draai *vbetest* als root in een **console** die al framebuffer draait. Het zal **niet** werken in een terminal in X
 3.  noteer vervolgens het nummer in [ ] dat bij de gewenste resolutie hoort
-4.  Typ 'q' om _vbetest_ interactive prompt te sluiten. Als je de zojuist genoteerde resolutie wilt testen, kun je <tt>vbetest -m [nummer]</tt> uitvoeren, om de resolutie te testen. Je zult een gekleurd plaatje op je console zien, dat na een aantal seconden weer naar zwart terugkeert. Als de tekst op je console niet wordt teruggezet, zul je naar een andere console moeten overschakelen en weer terugschakelen.
+4.  Typ 'q' om *vbetest* interactive prompt te sluiten. Als je de zojuist genoteerde resolutie wilt testen, kun je <tt>vbetest -m [nummer]</tt> uitvoeren, om de resolutie te testen. Je zult een gekleurd plaatje op je console zien, dat na een aantal seconden weer naar zwart terugkeert. Als de tekst op je console niet wordt teruggezet, zul je naar een andere console moeten overschakelen en weer terugschakelen.
 5.  voeg 512 toe aan het vorige nummer en gebruik het totaal als de code in de <tt>vga=</tt> kernel optie in menu.lst.
 6.  herstarten en voilà !
 
-Bijvoorbeeld, wat ik kreeg met _vbetest_ is:
+Bijvoorbeeld, wat ik kreeg met *vbetest* is:
 
 ```
 [356] 1440x900 (256 color palette)
@@ -371,7 +371,7 @@ Bijvoorbeeld, wat ik kreeg met _vbetest_ is:
 
 dus hier is 357 het nummer dat ik wil. 357 + 512 = 869, dus ik zal **vga=869** gebruiken.
 
-Nu heb je een console op de volledige resolutie van je scherm. De volgende stap is om een ander console lettertype te gebruiken op een juiste grootte. In mijn geval gebruik ik het _terminus_ lettertype, genaamd ter-120b.
+Nu heb je een console op de volledige resolutie van je scherm. De volgende stap is om een ander console lettertype te gebruiken op een juiste grootte. In mijn geval gebruik ik het *terminus* lettertype, genaamd ter-120b.
 
 **Let op**:
 
@@ -387,7 +387,7 @@ Controleer dat de kernel regel `ro` bevat in menu.lst.
 
 ### Reboot uitklapmenu in KDE heeft geen effect
 
-Als je een submenu geopend hebt in de lijst van besturingssystemen die je in GRUB hebt geconfigureert, en je kiest er 1 om in te herstarten, en je herstart toch in het standaard besturingssysteem, dan kun je controleren of je de volgende regel in je _/boot/grub/menu.lst_ hebt:
+Als je een submenu geopend hebt in de lijst van besturingssystemen die je in GRUB hebt geconfigureert, en je kiest er 1 om in te herstarten, en je herstart toch in het standaard besturingssysteem, dan kun je controleren of je de volgende regel in je */boot/grub/menu.lst* hebt:
 
 ```
 default   saved

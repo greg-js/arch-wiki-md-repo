@@ -53,7 +53,7 @@ In this example the default block and bucket sizes of 512B and 128kB are used. T
 
 ```
 
-4\. Register the cache device against your backing device. To find its _cache set UUID_, run `# bcache-super-show /dev/sdy2 | grep cset.uuid` and then add it to the bcache device initially. Udev rules will take care of this on reboot and will only need to be done once.
+4\. Register the cache device against your backing device. To find its *cache set UUID*, run `# bcache-super-show /dev/sdy2 | grep cset.uuid` and then add it to the bcache device initially. Udev rules will take care of this on reboot and will only need to be done once.
 
 ```
    # echo **cset.uuid** > /sys/block/bcache0/bcache/attach
@@ -87,7 +87,7 @@ The output can be:
 
 *   **no cache**: this means you have not attached a caching device to your backing bcache device
 *   **clean**: this means everything is ok. The cache is clean.
-*   **dirty**: this means everything is setup fine and that you have enabled _writeback_ and that the cache is dirty.
+*   **dirty**: this means everything is setup fine and that you have enabled *writeback* and that the cache is dirty.
 *   **inconsistent**: you are in trouble because the backing device is not in sync with the caching device
 
 You can have a `/dev/bcache0` device associated with a backing device with no caching device attached. This means that all I/O (read/write) are passed directly to the backing device (pass-through mode)
@@ -100,7 +100,7 @@ You can have a `/dev/bcache0` device associated with a backing device with no ca
 
 ```
 
-In the above example, the _writethrough_ mode is enabled.
+In the above example, the *writethrough* mode is enabled.
 
 3\. Show info about a bcached device:
 
@@ -143,13 +143,13 @@ In the above example, the _writethrough_ mode is enabled.
 
 *   it is widely recommended to use Bcache underneath any other block layer.
 *   the **blocks** package is broken with Python3\. Please visit [this thread](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=769737) for a workaround, or use [Python VirtualEnv](/index.php/Python_VirtualEnv "Python VirtualEnv").
-*   when on top of a **LVM2** layer, the _discard_ mount option may not be handled well.
+*   when on top of a **LVM2** layer, the *discard* mount option may not be handled well.
 
 With `blocks`, you can add a Bcache layer on a device with an existing filesystem or layer (normal partition, LUKS partition, logical volume).
 
 First, install the [blocks-git](https://aur.archlinux.org/packages/blocks-git/) package from [AUR](/index.php/AUR "AUR").
 
-_blocks_ needs to add the **bcache** metadata at the start of the targeted partition, here `/dev/sdz4`; to be able to do so, it will resize the partition just before the targeted one (`/dev/sdz3`) to make necessary room, typically 2048 bits (2k). It will ask for your passphrase if the partition(`/dev/sdz3`) is an LUKS partition. Then it will recreate another partition with the start just lower of 2048 bits and run _make-bcache_, so you do not need to run it yourself.
+*blocks* needs to add the **bcache** metadata at the start of the targeted partition, here `/dev/sdz4`; to be able to do so, it will resize the partition just before the targeted one (`/dev/sdz3`) to make necessary room, typically 2048 bits (2k). It will ask for your passphrase if the partition(`/dev/sdz3`) is an LUKS partition. Then it will recreate another partition with the start just lower of 2048 bits and run *make-bcache*, so you do not need to run it yourself.
 
 ```
    # blocks to-bcache /dev/sdz4
@@ -169,7 +169,7 @@ You can proceed to create the caching device and attach it to the backing device
 
 #### Troubleshooting
 
-If `blocks` complains complains about _overlapping metadata_ when running `blocks to-bcache`, you will need to shrink by 100Mb the partition you want to cache and create a new 100Mb free partition.
+If `blocks` complains complains about *overlapping metadata* when running `blocks to-bcache`, you will need to shrink by 100Mb the partition you want to cache and create a new 100Mb free partition.
 
 ## Installation to a bcache device
 
@@ -218,7 +218,7 @@ Format the SSD as a caching device and link it to the backing device
 ```
 # make-bcache -C /dev/sdb
 # echo /dev/sdb > /sys/fs/bcache/register 
-# echo _UUID__from_previous_command_ > /sys/block/bcache0/bcache/attach
+# echo *UUID__from_previous_command* > /sys/block/bcache0/bcache/attach
 
 ```
 
@@ -340,7 +340,7 @@ Revert back the value after with
 
 ```
 
-For ext3/4 you can use _resize2fs_, but only if the partition is unmounted
+For ext3/4 you can use *resize2fs*, but only if the partition is unmounted
 
 ```
 $ df -h /home

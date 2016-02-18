@@ -117,7 +117,7 @@ $ texconfig
 
 ### 升级时出现 "formats not generated" 错误
 
-参见 [this bug report](https://bugs.archlinux.org/task/16467)。(**如果你没有使用实验性的排版引擎 _LuaTeX_，你可以忽略这个。**) 这种情况通常发生在当`language.def` 且/或 `language.dat` 断句样式包含早期 `texlive-core`的引用时，特别是对文件名频繁变化的最新实验性德语断句样式的引用。现在它们应该指向 `dehyph{n,t}-x-2009-06-19.tex`。
+参见 [this bug report](https://bugs.archlinux.org/task/16467)。(**如果你没有使用实验性的排版引擎 *LuaTeX*，你可以忽略这个。**) 这种情况通常发生在当`language.def` 且/或 `language.dat` 断句样式包含早期 `texlive-core`的引用时，特别是对文件名频繁变化的最新实验性德语断句样式的引用。现在它们应该指向 `dehyph{n,t}-x-2009-06-19.tex`。
 
 解决这个问题，你或者删除这些文件: `/usr/share/texmf-config/tex/generic/config/language.{def,dat}` 或者升级它们使用最新版本： `/usr/share/texmf/tex/generic/config/language.{def,dat}` 然后运行：
 

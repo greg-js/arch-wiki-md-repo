@@ -21,7 +21,7 @@ A variation in difficulty is achieved by requiring that this integer is below a 
 
 The original/official Bitcoin application from [bitcoin.org](https://bitcoin.org) is now called "Bitcoin Core" (originally it was called "bitcoin-qt" upstream) and can be installed in Arch with either: (a) the [bitcoin-qt](https://www.archlinux.org/packages/?name=bitcoin-qt) or (b) the [bitcoin-daemon](https://www.archlinux.org/packages/?name=bitcoin-daemon) **and** [bitcoin-cli](https://www.archlinux.org/packages/?name=bitcoin-cli) packages, available in the [official repositories](/index.php/Official_repositories "Official repositories"). Until release of version 0.10 of Bitcoin Core, bitcoind in [bitcoin-daemon](https://www.archlinux.org/packages/?name=bitcoin-daemon) served as both RPC server **and** RPC client. But with 0.10, the Bitcoin Core RPC [client is a separate binary (bitcoin-cli)](http://bitcoin.stackexchange.com/a/13369/3005). Both bitcoin-qt and bitcoind operate as RPC server, and bitcoin-cli will correctly query whichever server is running. There is no problem with installing all three of these Bitcoin Core packages on one machine, but it is [possible to run](https://en.bitcoin.it/wiki/Running_Bitcoin) only one of the bitcoind **or** bitcoin-qt binaries at once.
 
-This gets the software installed on the computer, however this is just part of the problem; the _quick_ part. The time-consuming part of using Bitcoin Core involves getting the entire BTC block chain, currently (Feb [02015](https://longnow.org/about)) a 22GB data file, downloaded onto the same machine. If you start either bitcoin-qt or bitcoind then one of the first tasks of the software will be to download the entire BTC block chain. A quicker (and nicer to the Bitcoin network) way to get the entire BTC block chain is using [this bootstrap BitTorrent file](https://en.bitcoin.it/wiki/Data_directory#Bootstrapping_the_blockchain_from_a_snapshot_distributed_through_BitTorrent) that is updated by the Bitcoin community from time to time. With this entire bootstrap.dat file located in ~/.bitcoin, one of the first tasks of bitcoind/bitcoin-qt will be to _import_ this bootstrap BTC block chain and _then_ (using much less bandwidth than downloading the entire block chain with bitcoind/bitcoin-qt) _update_ and _validate_ against the Bitcoin network this mostly imported BTC block chain. If you choose this option, then please consider seeding the BitTorrent bootstrap.dat file after downloading it by keeping your BitTorrent application open well after the _download_ completes and at least until _seeding_ is complete (which may be several hours later depending on your upload data rate). Before beginning to download bootstrap.dat over the BitTorrent network, you should also verify the integrity of the torrent bootstrap.dat.torrent and related files using GnuPG.
+This gets the software installed on the computer, however this is just part of the problem; the *quick* part. The time-consuming part of using Bitcoin Core involves getting the entire BTC block chain, currently (Feb [02015](https://longnow.org/about)) a 22GB data file, downloaded onto the same machine. If you start either bitcoin-qt or bitcoind then one of the first tasks of the software will be to download the entire BTC block chain. A quicker (and nicer to the Bitcoin network) way to get the entire BTC block chain is using [this bootstrap BitTorrent file](https://en.bitcoin.it/wiki/Data_directory#Bootstrapping_the_blockchain_from_a_snapshot_distributed_through_BitTorrent) that is updated by the Bitcoin community from time to time. With this entire bootstrap.dat file located in ~/.bitcoin, one of the first tasks of bitcoind/bitcoin-qt will be to *import* this bootstrap BTC block chain and *then* (using much less bandwidth than downloading the entire block chain with bitcoind/bitcoin-qt) *update* and *validate* against the Bitcoin network this mostly imported BTC block chain. If you choose this option, then please consider seeding the BitTorrent bootstrap.dat file after downloading it by keeping your BitTorrent application open well after the *download* completes and at least until *seeding* is complete (which may be several hours later depending on your upload data rate). Before beginning to download bootstrap.dat over the BitTorrent network, you should also verify the integrity of the torrent bootstrap.dat.torrent and related files using GnuPG.
 
 This is one procedure that worked in release 2015.02.01 of Arch:
 
@@ -30,9 +30,9 @@ This is one procedure that worked in release 2015.02.01 of Arch:
 3.  Using a browser, download [README.txt, bootstrap.dat.torrent, bootstrap.dat.torrent.gpg, and bootstrap.txt](https://bitcoin.org/bin/block-chain/)
 4.  Using gnupg, verify the downloaded files as having good signatures (you will need to first import the signer's public key ID A2DB9CCA)
 5.  Using deluge, download the 22GB bootstrap.dat (perhaps hours depending on your download data rate)
-6.  When bootstrap.dat _download_ is complete:
-    1.  leave deluge running until _seeding_ is complete (optional but it helps the community; may require hours or days depending on your upload data rate)
-    2.  _copy_ (do not move or you will interrupt seeding) bootstrap.dat to ~/.bitcoin (do not use a symbolic link as this file will get renamed by bitcoin-qt after it is fully imported, and that too will interrupt seeding)
+6.  When bootstrap.dat *download* is complete:
+    1.  leave deluge running until *seeding* is complete (optional but it helps the community; may require hours or days depending on your upload data rate)
+    2.  *copy* (do not move or you will interrupt seeding) bootstrap.dat to ~/.bitcoin (do not use a symbolic link as this file will get renamed by bitcoin-qt after it is fully imported, and that too will interrupt seeding)
 7.  start bitcoind for background import or bitcoin-qt for import with feedback on progress
     1.  bitcoin-qt begins importing the block chain from bootstrap.dat, giving visual and text feedback as to import progress ("Importing from disk..." and eg. "4 years and 24 weeks behind", etc.; this import from disk may require more than one hour)
     2.  the import process duplicates the 22GB bootstrap.dat file into ~/.bitcoin/blocks/, thus roughly doubling the size of ~/.bitcoin from 22GB before starting Bitcoin Core to 44GB after import is complete.
@@ -56,7 +56,6 @@ You can use this **Systemd service file** for [bitcoin-daemon](https://www.archl
 (you will probably need to change 'User=' or create bitcoin user)
 
  `/etc/systemd/system/bitcoind.service` 
-
 ```
 [Unit]
 Description=Bitcoin daemon service
@@ -90,7 +89,7 @@ For those who are just getting started, you can visit [BitcoinReward](http://www
 
 The basic concept of Bitcoin mining is that there is a little chunk of each block that contains meaningless random data. Bitcoin miners take all the data in the current top block, shuffle up that random chunk and calculate the hash of the whole thing, repeating this until they obtain a valid block. While hashes are easy to reproduce, they are impossible to predict and they seem to function completely randomly, so the miner has no way of predicting what chunk of random data will produce what hash.
 
-Mining requires the use of a _miner_, which is program used compute the required hashes and thus to create Bitcoins. To learn more about mining please read this [article](https://www.weusecoins.com/en/mining-guide/).
+Mining requires the use of a *miner*, which is program used compute the required hashes and thus to create Bitcoins. To learn more about mining please read this [article](https://www.weusecoins.com/en/mining-guide/).
 
 There are several Bitcoin miners in the [AUR](/index.php/AUR "AUR"):
 
@@ -120,9 +119,7 @@ An example of a configuration file for **bitcoin-qt** can be seen below. Make su
 # chmod 600 ~/.bitcoin/bitcoin.conf
 
 ```
-
  `~/.bitcoin/bitcoin.conf` 
-
 ```
 # bitcoin.conf configuration file. Lines beginning with # are comments.
 

@@ -31,7 +31,6 @@ When you are running a kernel with MTD modules, you have to load the modules spe
 To find the available memory ranges run the following command and look for the VGA compatible controller section (see the example below).
 
  `$ lspci -vvv` 
-
 ```
 01:00.0 VGA compatible controller: NVIDIA Corporation GK104 [GeForce GTX 670] (rev a1) (prog-if 00 [VGA controller])
 	Subsystem: ASUSTeK Computer Inc. Device 8405
@@ -68,7 +67,6 @@ Using the numbers above, you can take the difference and determine a reseasonabl
 Load the modules:
 
  `# /etc/modules-load.d/vramswap.conf` 
-
 ```
 slram
 mtdblock
@@ -78,7 +76,6 @@ mtdblock
 systemd service:
 
  `# /usr/lib/systemd/system/vramswap.service` 
-
 ```
 [Unit]
 Description=Swap on Video RAM
@@ -103,7 +100,6 @@ Add the following.
 To keep X stable, your video driver needs to be told to use less than the detected videoram.
 
  `# /etc/X11/xorg.conf.d/vramswap.conf` 
-
 ```
 Section "Device"
     Driver "radeon" # or whichever other driver you use

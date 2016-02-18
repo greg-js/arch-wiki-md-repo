@@ -19,7 +19,7 @@ Mielőtt belevágnánk, kérlek tekintsd meg a leggyakrabban feltett kérdéseke
 **Az Arch Linux Disztribúció Alapelvei:**
 
 *   [Egyszerű](/index.php/The_Arch_Way "The Arch Way") tervezés és filozófia
-*   [Minden csomag](https://www.archlinux.org/packages/?q=) elérhető [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "wikipedia:P6 (microarchitecture)") és [x86_64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64") architektúrákra
+*   [Minden csomag](https://www.archlinux.org/packages/?q=) elérhető [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) és [x86_64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64") architektúrákra
 *   A [Rolling release](https://en.wikipedia.org/wiki/Rolling_release "wikipedia:Rolling release") modell lehetővé teszi a rendszer egyszeri installálása utáni folyamatos frissítését a legújabb stabil csomagokra. Így nincs szükség időközi disztribúciófrissítésre, hiszen a rendszer frissen tartása folyamatosan történik.
 *   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") egy egyszerű és dinamikus [initramfs](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd") készítő
 *   A [Pacman](/index.php/Pacman "Pacman") [csomagkezelő](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager") könnyed, gyors, és kevés memóriát fogyaszt
@@ -32,23 +32,23 @@ Az Arch Linux, a pacman, a dokumentáció, és a szkriptek © 2002-2007 Judd Vin
 
 ### Az Arch filozófia
 
-_**Az Arch mögött álló tervezési elvek lényege az [egyszerűség](/index.php/The_Arch_Way_(Magyar) "The Arch Way (Magyar)").**_
+***Az Arch mögött álló tervezési elvek lényege az [egyszerűség](/index.php/The_Arch_Way_(Magyar) "The Arch Way (Magyar)").***
 
 'Egyszerű', ebben az összefüggésben azt jelenti, hogy 'felesleges kiegészítések, módosítások, vagy komplikációk' nélkül. Röviden, egy elegáns, minimalista megközelítést takar.
 
 **Néhány idézet ezen egyszerűség könnyebb megértésére :**
 
-*   _"Az egyszerűség technikai, nem pedig a könnyed használhatóság szempontjából értendő. Jobb egy hosszabb tanulási folyamat során nagyobb technikai tudásra szert tenni, mint tudatlanul, de könnyű kezelhetőség mellett technikailag butának maradni ." -Aaron Griffin_
-*   _Entia non sunt multiplicanda praeter necessitatem_ vagy "Entities should not be multiplied unnecessarily." -Occam's razor. A _razor_ kifejezés arra utal, hogy söpörjünk félre minden szükségtelen bonyolítást azért, hogy a legegyszerűbb magyarázathoz, módszerhez eljuthassunk.
-*   _"A módszerem rendkívüli része annak egyszerűségében rejlik. A nagy művek mindig az egyszerűségből születnek."_ - _Bruce Lee_
+*   *"Az egyszerűség technikai, nem pedig a könnyed használhatóság szempontjából értendő. Jobb egy hosszabb tanulási folyamat során nagyobb technikai tudásra szert tenni, mint tudatlanul, de könnyű kezelhetőség mellett technikailag butának maradni ." -Aaron Griffin*
+*   *Entia non sunt multiplicanda praeter necessitatem* vagy "Entities should not be multiplied unnecessarily." -Occam's razor. A *razor* kifejezés arra utal, hogy söpörjünk félre minden szükségtelen bonyolítást azért, hogy a legegyszerűbb magyarázathoz, módszerhez eljuthassunk.
+*   *"A módszerem rendkívüli része annak egyszerűségében rejlik. A nagy művek mindig az egyszerűségből születnek."* - *Bruce Lee*
 
 ### Az útmutatóról
 
 Az [Arch telepítő szkriptek](https://github.com/falconindy/arch-install-scripts) az Arch Linux telepítését megkönnyítő szkripteket jelentik. Ez az útmutató összefoglalóan bemutatja az alaprendszer telepítését ezen szkriptek használatával.
 
-Ez a közösség által karbantartott [Arch wiki](/index.php/Main_Page_(Magyar) "Main Page (Magyar)") remek forrás és először itt érdemes tanácsot kérni a felmerülő kérdésekre. Az [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") csatorna ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) az [angol fórum](https://bbs.archlinux.org/) és a [magyar fórum](http://archlinux.hu/forum) ugyan csak elérhető, ha a válasz máshol nem található. Ezek mellett olvasgasd a `man` oldalakat minden olyan paranccsal kapcsolatban, amelyek még ismeretlenek számodra; ezt legkönnyebben a terminálba beírva a következő módon teheted meg: `man _parancs_`.
+Ez a közösség által karbantartott [Arch wiki](/index.php/Main_Page_(Magyar) "Main Page (Magyar)") remek forrás és először itt érdemes tanácsot kérni a felmerülő kérdésekre. Az [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") csatorna ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) az [angol fórum](https://bbs.archlinux.org/) és a [magyar fórum](http://archlinux.hu/forum) ugyan csak elérhető, ha a válasz máshol nem található. Ezek mellett olvasgasd a `man` oldalakat minden olyan paranccsal kapcsolatban, amelyek még ismeretlenek számodra; ezt legkönnyebben a terminálba beírva a következő módon teheted meg: `man *parancs*`.
 
-**Megjegyzés:** Az útmutató követése közel létfontosságú a jól konfigurált Arch Linux sikeres telepítéséhez, tehát _kérlek_ olvasd át alaposan. Erősen ajánlott minden egyes részt végigolvasása <u>mielőtt</u> bármilyen feladatba kezdenél.
+**Megjegyzés:** Az útmutató követése közel létfontosságú a jól konfigurált Arch Linux sikeres telepítéséhez, tehát *kérlek* olvasd át alaposan. Erősen ajánlott minden egyes részt végigolvasása <u>mielőtt</u> bármilyen feladatba kezdenél.
 
 Az útmutató öt fő részre osztható fel:
 

@@ -51,7 +51,6 @@ A modo de ejemplo, el script es creado en el directorio `/etc/cron.daily` , y se
 Primero, cree un script que contenga las opciones de comandos apropiadas:
 
  `/etc/cron.daily/backup` 
-
 ```
 #!/bin/bash
 rsync -a --delete /carpeta/a/respaldar  /carpeta/de/copia/de/seguridad &> /dev/null
@@ -79,7 +78,6 @@ Finalmente, el script debe tener permisos de ejecución:
 Si se respalda a una máquina remota usando [SSH](/index.php/Secure_Shell_(Espa%C3%B1ol) "Secure Shell (Español)"), use este script en su lugar:
 
  `/etc/cron.daily/backup` 
-
 ```
 #!/bin/bash
 rsync -a --delete -e ssh /carpeta/a/respaldar  usuarioremoto@maquinaremota:/carpeta/de/copia/de/seguridad &> /dev/null
@@ -104,7 +102,6 @@ Este script inicia una copia de respaldo cuando conecta el cable de red.
 Primero, cree un script que contenga las opciones de comandos apropiadas:
 
  `/etc/NetworkManager/dispatcher.d/backup` 
-
 ```
 #!/bin/bash
 
@@ -119,7 +116,7 @@ fi
 
 	`--files-from` 
 
-	lee la ruta relativa de _/carpeta/a/respaldar_ desde este archivo
+	lee la ruta relativa de */carpeta/a/respaldar* desde este archivo
 
 	`--bwlimit` 
 
@@ -137,7 +134,6 @@ En vez de basar los respaldos en copias intervalos programados de tiempo, como l
 Primero, cree el fichero `systemd.path` que monitorizará los fichero que quiere respaldar:
 
  `~/.config/systemd/user/backup.path` 
-
 ```
 [Unit]
 Description=Comprueba si rutas que están siendo respaldadas han cambiado
@@ -153,9 +149,7 @@ WantedBy=default.target
 Entonces hay que crear un fichero `systemd.service` que será activado cuando detecte un cambio. Por defecto un fichero de servicio del mismo nombre que la unidad de ruta (en este caso `backup.path`) será activado, excepto con la extension `.service` en vez de la extensión `.path` (en este caso `backup.service`).
 
 **Nota:** Si necesita ejecutar multiples comando rsync , use `Type=oneshot`. Esto le permite especificar multiples parametros `ExecStart=`, uno por cada comando [rsync](/index.php/Rsync "Rsync"), que será ejecutado. En su lugar, también puede simplemente escribit un script que haga todos sus copias de seguridad, como los scripts de [cron](/index.php/Cron "Cron").
-
  `~/.config/systemd/user/backup.service` 
-
 ```
 [Unit]
 Description=Respalda ficheros
@@ -178,7 +172,6 @@ Esta es una opción muy útil de rsync, crear una copia completa y una copia dif
 Primero, cree un script que contenga las opciones de comandos apropiadas::
 
  `/etc/cron.daily/backup` 
-
 ```
 #!/bin/bash
 
@@ -202,7 +195,6 @@ La misma idea se puede aplicar a mantener un árbol de instantáneas de sus fich
 Este script implementa una versión más simple de ello:
 
  `/usr/local/bin/rsnapshot.sh` 
-
 ```
 #!/bin/bash
 

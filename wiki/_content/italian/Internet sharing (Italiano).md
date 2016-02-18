@@ -18,7 +18,7 @@ Assumiamo che la rete sia cosi' connessa:
 
 i computer dovranno essere connessi tra loro tramite un cavo [crossover](http://it.wikipedia.org/wiki/Cavo_ethernet_incrociato) o uno switch
 
-il _pc1_ dovra' possedere due schede di rete: una connessa ad internet (in questo esempio **eth0**) e una connessa al _pc2_ (in questo esempio **eth1**)
+il *pc1* dovra' possedere due schede di rete: una connessa ad internet (in questo esempio **eth0**) e una connessa al *pc2* (in questo esempio **eth1**)
 
 ## Impostazioni generali
 
@@ -26,15 +26,15 @@ il _pc1_ dovra' possedere due schede di rete: una connessa ad internet (in quest
 
 *   pc1:
 
-	_IP_: 192.168.0.1
+	*IP*: 192.168.0.1
 
 *   pc2:
 
-	_IP_: 192.168.0.2
+	*IP*: 192.168.0.2
 
-	_Gateway_: 192.168.0.1
+	*Gateway*: 192.168.0.1
 
-	_DNS_: lo stesso del _pc1_
+	*DNS*: lo stesso del *pc1*
 
 	si puo' utilizzare il semplice comando:
 
@@ -44,13 +44,12 @@ il _pc1_ dovra' possedere due schede di rete: una connessa ad internet (in quest
 
 ## Impostazioni PC1
 
-1.  abilitiamo il _forwarding_ dei pacchetti: `echo 1 > /proc/sys/net/ipv4/ip_forward ` 
-2.  installiamo _iptables_ e configuriamolo in questo modo nel _pc1_:
-
+1.  abilitiamo il *forwarding* dei pacchetti: `echo 1 > /proc/sys/net/ipv4/ip_forward ` 
+2.  installiamo *iptables* e configuriamolo in questo modo nel *pc1*:
     ```
     iptables -A FORWARD -i eth0 -o eth1 -j ACCEPT
     iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT
     iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
     ```
 
-ora il _pc2_ potra' accedere ad internet esattamente nello stesso modo in cui lo fa il _pc1_
+ora il *pc2* potra' accedere ad internet esattamente nello stesso modo in cui lo fa il *pc1*

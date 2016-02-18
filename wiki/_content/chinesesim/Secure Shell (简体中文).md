@@ -153,7 +153,7 @@ alias sshtunnel="ssh -ND 4711 -v user@host"
 
 如果你不配置你的web浏览器以便使用新创建的socks通道的话，上面的一步完全没用！
 
-*   对于Firefox: _Edit -> Preferences -> Advanced -> Network -> Connection -> Setting_:
+*   对于Firefox: *Edit -> Preferences -> Advanced -> Network -> Connection -> Setting*:
 
 	检查"Manual proxy configuration" radio button？, 并且在"SOCKS host" 文本段输入"localhost" , 然后在接下来的一个文本框中输入你的端口数（上面我们用的是4711）。
 
@@ -388,7 +388,6 @@ ClientAliveInterval 120
 通常当你想登录到一台远程主机的时候，你至少需要输入主机名和IP地址。为了减少这个重复劳动，你可以使用本地的`$HOME/.ssh/config` 或者全局的`/etc/ssh/ssh_config`：
 
  `$HOME/.ssh/config` 
-
 ```
 Host myserver
     HostName 123.123.123.123
@@ -416,7 +415,6 @@ $ ssh myserver
 区别你的电脑和远程主机是很有必要的，特别是它们的prompt相同时。只要把一下内容插入到你的bashrc文件即可达到这个效果。
 
  `$HOME/.bashrc` 
-
 ```
 if [ -n "$SSH_CLIENT" ]; then
         PS1='\[\e[0;33m\]\u@\h:\wSSH$\[\e[m\] '
@@ -514,7 +512,7 @@ MACs hmac-md5,hmac-sha1,hmac-ripemd160
 
 ### "[your shell]: No such file or directory" / ssh认证问题
 
-对于这个问题，一个可能的原因是需要SSH客户端在`$SHELL`中提供绝对路径（例如可以通过`whereis -b [your shell]`得到)，即使你的shell在`$PATH`中。另一个原因也可能是，用户不是_network_组的成员。
+对于这个问题，一个可能的原因是需要SSH客户端在`$SHELL`中提供绝对路径（例如可以通过`whereis -b [your shell]`得到)，即使你的shell在`$PATH`中。另一个原因也可能是，用户不是*network*组的成员。
 
 ## See Also
 

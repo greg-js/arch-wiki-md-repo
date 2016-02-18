@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Partitioning](/index.php/Partitioning "Partitioning") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-09-17，点击[这里](https://wiki.archlinux.org/index.php?title=Partitioning&diff=0&oldid=335810)可以查看翻译后英文页面的改动。
 
-_分区_ 硬盘的可用空间可以划分为多个逻辑区块，区块之间的访问是相互独立的。
+*分区* 硬盘的可用空间可以划分为多个逻辑区块，区块之间的访问是相互独立的。
 
 可以为一个硬盘划分一个或者多个分区。一些场景需要使用多个分区：例如双重或多重启动，或使用 [swap](/index.php/Swap "Swap") 分区。此外，分区也可以从逻辑上隔离数据，例如为音频和视频数据创建单独的分区。下面将会讨论通用的分区方案。
 
@@ -47,7 +47,7 @@ MBR原本只支持最多4个分区。后来加入了扩展分区和逻辑分区�
 
 **主分区**每个磁盘或者RAID卷上只能有4个，可设置为可启动状态。如果分区方案要求使用4个以上的分区，就需要使用一个包含**逻辑分区**的**扩展分区**。扩展分区可以被看作是容纳逻辑分区的容器。硬盘上最多只能有1个扩展分区。如果磁盘上有1个扩展分区，它也被看作是1个主分区。因此只能另外再建立3个主分区（例如3个主分区加1个扩展分区）。扩展分区内所包含的逻辑分区数量没有限制。如果在双重启动中有Windows，Windows需要占据一个主分区。
 
-通常习惯是创建主分区_sda1_到_sda3_，然后建立一个扩展分区_sda4_。_sda4_中包含_sda5_，_sda6_等逻辑分区。
+通常习惯是创建主分区*sda1*到*sda3*，然后建立一个扩展分区*sda4*。*sda4*中包含*sda5*，*sda6*等逻辑分区。
 
 请参考 [Wikipedia](https://en.wikipedia.org/wiki/zh:Main_Page "wikipedia:zh:Main Page") 以获取更多关于本主题的信息: **[主引导记录](https://en.wikipedia.org/wiki/zh:%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95 "wikipedia:zh:主引导记录")**
 
@@ -65,7 +65,7 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 ### 选择GPT 还是 MBR
 
-[GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") （GPT）是一种更灵活的分区方式。它正在逐步取代[Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") （MBR）系统。GPT相对于诞生于MS-DOS时代的MBR而言，有许多优点。新版的_fdisk_（MBR）和_gdisk_（GPT）使得使用GPT或者MBR在可靠性和性能最大化上都非常容易。
+[GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") （GPT）是一种更灵活的分区方式。它正在逐步取代[Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") （MBR）系统。GPT相对于诞生于MS-DOS时代的MBR而言，有许多优点。新版的*fdisk*（MBR）和*gdisk*（GPT）使得使用GPT或者MBR在可靠性和性能最大化上都非常容易。
 
 在做出选择前，需要考虑如下内容：
 
@@ -127,11 +127,11 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 #### /tmp
 
-默认情况下这个目录已经是一个独立分区，systemd 将其挂载问_tmpfs_。
+默认情况下这个目录已经是一个独立分区，systemd 将其挂载问*tmpfs*。
 
 #### Swap
 
-[swap](/index.php/Swap "Swap") 分区提供能够被作为虚拟内存的内存空间。[swap file](/index.php/Swap#Swap_file "Swap") 也可以实现同样的功能，并且它们之间没有明显的性能区别，但是后者更易于根据需要调整大小。如果没有使用休眠特性的话，swap 分区_可以_被多个系统共享。
+[swap](/index.php/Swap "Swap") 分区提供能够被作为虚拟内存的内存空间。[swap file](/index.php/Swap#Swap_file "Swap") 也可以实现同样的功能，并且它们之间没有明显的性能区别，但是后者更易于根据需要调整大小。如果没有使用休眠特性的话，swap 分区*可以*被多个系统共享。
 
 #### 分区应该设置多大？
 
@@ -178,7 +178,7 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
-**警告:** _cfdisk_ 创建的第一个分区起始位置是63扇区而不是通常的2048扇区。这将会在 SSD 和使用高级格式化（4k 扇区）的设备上造成性能问题。[GRUB2](/index.php/GRUB2#msdos-style_error_message "GRUB2") 也会受影响。GRUB legacy 和 Syslinux不受影响。
+**警告:** *cfdisk* 创建的第一个分区起始位置是63扇区而不是通常的2048扇区。这将会在 SSD 和使用高级格式化（4k 扇区）的设备上造成性能问题。[GRUB2](/index.php/GRUB2#msdos-style_error_message "GRUB2") 也会受影响。GRUB legacy 和 Syslinux不受影响。
 
 *   **gdisk** — [GPT](/index.php/GPT "GPT") 版的 fdisk。
 
@@ -210,17 +210,17 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 ## 分区对齐
 
-恰当的分区对齐有助于提升性能和使用寿命。这是由硬件层面和文件系统层面的每次[块](https://en.wikipedia.org/wiki/Block_(data_storage) "wikipedia:Block (data storage)") I/O 操作特性决定的。对齐的关健是分区大小（至少）是_块大小_的倍数，_块大小_取决于选用的硬件设备。如果分区没有以_块大小_的整数倍对齐，对齐文件系统就失去意义了，因为从分区的起始偏移开始就是有偏差的。
+恰当的分区对齐有助于提升性能和使用寿命。这是由硬件层面和文件系统层面的每次[块](https://en.wikipedia.org/wiki/Block_(data_storage) I/O 操作特性决定的。对齐的关健是分区大小（至少）是*块大小*的倍数，*块大小*取决于选用的硬件设备。如果分区没有以*块大小*的整数倍对齐，对齐文件系统就失去意义了，因为从分区的起始偏移开始就是有偏差的。
 
 ### 机械硬盘
 
-传统上，机械硬盘是按照_柱面_、_磁头_和_扇区_来寻址需要读写的数据位置（也被称作 [CHS addressing](https://en.wikipedia.org/wiki/Cylinder-head-sector "wikipedia:Cylinder-head-sector")）。这代表了相关数据的径向的位置、驱动器磁头（包括盘片和盘面）和轴向的位置。对于 [LBA (逻辑块寻址)](https://en.wikipedia.org/wiki/Logical_block_addressing "wikipedia:Logical block addressing")，这就不再是这样了。而是整个磁盘被按照连续的数据流寻址，以[扇区](https://en.wikipedia.org/wiki/Disk_sector "wikipedia:Disk sector")作为最小寻址单位。
+传统上，机械硬盘是按照*柱面*、*磁头*和*扇区*来寻址需要读写的数据位置（也被称作 [CHS addressing](https://en.wikipedia.org/wiki/Cylinder-head-sector "wikipedia:Cylinder-head-sector")）。这代表了相关数据的径向的位置、驱动器磁头（包括盘片和盘面）和轴向的位置。对于 [LBA (逻辑块寻址)](https://en.wikipedia.org/wiki/Logical_block_addressing "wikipedia:Logical block addressing")，这就不再是这样了。而是整个磁盘被按照连续的数据流寻址，以[扇区](https://en.wikipedia.org/wiki/Disk_sector "wikipedia:Disk sector")作为最小寻址单位。
 
-标准的_扇区大小_是512B，但是现代的高容量机械硬盘使用更大的值，通常是 4KiB。使用高于512B的值被称作[高级格式化](/index.php/Advanced_Format "Advanced Format")
+标准的*扇区大小*是512B，但是现代的高容量机械硬盘使用更大的值，通常是 4KiB。使用高于512B的值被称作[高级格式化](/index.php/Advanced_Format "Advanced Format")
 
 ### 固态硬盘
 
-固态硬盘基于[闪存芯片](https://en.wikipedia.org/wiki/Flash_memory "wikipedia:Flash memory")，与机械硬盘有显著的不同。只读访问能够以随机方式进行，而擦除（覆写或随机写入）只能以[整块](https://en.wikipedia.org/wiki/Flash_memory#Block_erasure "wikipedia:Flash memory")进行。此外，_擦除块大小_（Erase Block Size，EBS）比_块大小_明显大很多，例如 128KiB vs 4KiB，所以需要以 EBS 的整数倍进行对齐。
+固态硬盘基于[闪存芯片](https://en.wikipedia.org/wiki/Flash_memory "wikipedia:Flash memory")，与机械硬盘有显著的不同。只读访问能够以随机方式进行，而擦除（覆写或随机写入）只能以[整块](https://en.wikipedia.org/wiki/Flash_memory#Block_erasure "wikipedia:Flash memory")进行。此外，*擦除块大小*（Erase Block Size，EBS）比*块大小*明显大很多，例如 128KiB vs 4KiB，所以需要以 EBS 的整数倍进行对齐。
 
 ### 分区工具
 

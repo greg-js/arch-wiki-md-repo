@@ -26,7 +26,7 @@
         *   [8.3.1 Methode 1 - Windows driver terugrollen of veranderen](#Methode_1_-_Windows_driver_terugrollen_of_veranderen)
         *   [8.3.2 Methode 2 - WOL activeren in Windows driver](#Methode_2_-_WOL_activeren_in_Windows_driver)
         *   [8.3.3 Methode 3 - Nieuwere Realtek Linux driver](#Methode_3_-_Nieuwere_Realtek_Linux_driver)
-        *   [8.3.4 Methode 4 - _LAN Boot ROM_ activeren in BIOS/CMOS](#Methode_4_-_LAN_Boot_ROM_activeren_in_BIOS.2FCMOS)
+        *   [8.3.4 Methode 4 - *LAN Boot ROM* activeren in BIOS/CMOS](#Methode_4_-_LAN_Boot_ROM_activeren_in_BIOS.2FCMOS)
     *   [8.4 DLink G604T/DLink G502T DNS probleem](#DLink_G604T.2FDLink_G502T_DNS_probleem)
         *   [8.4.1 Hoe het probleem te constateren?](#Hoe_het_probleem_te_constateren.3F)
         *   [8.4.2 Hoe het probleem op te lossen?](#Hoe_het_probleem_op_te_lossen.3F)
@@ -365,15 +365,15 @@ Waarschijnlijk is de beste en snelste manier, om de gewraakte instelling in de W
 
 ```
 
-*   **Let op**: nieuwere Realtek Windows drivers (getest met _Realtek 8111/8169 LAN Driver v5.708.1030.2008_, dated 2009/01/22, available from GIGABYTE) kunnen iets anders naar deze optie verwijzen, bijvoorbeeld _Shutdown Wake-On-LAN --> Enable_. Een workaround is om Windows te booten en het systeem eenvoudigweg te resetten (zonder gebruik te maken van afsluiten of herstarten), waardoor de Windows driver niet de kans krijgt om de Link te deactiveren. Het Link lampje zal geactiveerd blijven en de netwerkkaart zal toegankelijk blijven na POST - zolang je Windows niet opstart en op de normale manier afsluit.
+*   **Let op**: nieuwere Realtek Windows drivers (getest met *Realtek 8111/8169 LAN Driver v5.708.1030.2008*, dated 2009/01/22, available from GIGABYTE) kunnen iets anders naar deze optie verwijzen, bijvoorbeeld *Shutdown Wake-On-LAN --> Enable*. Een workaround is om Windows te booten en het systeem eenvoudigweg te resetten (zonder gebruik te maken van afsluiten of herstarten), waardoor de Windows driver niet de kans krijgt om de Link te deactiveren. Het Link lampje zal geactiveerd blijven en de netwerkkaart zal toegankelijk blijven na POST - zolang je Windows niet opstart en op de normale manier afsluit.
 
 #### Methode 3 - Nieuwere Realtek Linux driver
 
 Op de Realtek website zijn er nieuwere drivers voor de Realtek kaarten te vinden. Deze drivers zijn nog niet getest, maar het wordt aangenomen dat deze nieuwe drivers de problemen oplossen.
 
-#### Methode 4 - _LAN Boot ROM_ activeren in BIOS/CMOS
+#### Methode 4 - *LAN Boot ROM* activeren in BIOS/CMOS
 
-Het lijkt erop dat het instellen van _Integrated Peripherals --> Onboard LAN Boot ROM --> Enabled_ in het BIOS/CMOS de Realtek LAN chip activeert bij het POSTen van het systeem, ondanks het deactiveren van de kaart door de Windows driver tijdens het afsluiten.
+Het lijkt erop dat het instellen van *Integrated Peripherals --> Onboard LAN Boot ROM --> Enabled* in het BIOS/CMOS de Realtek LAN chip activeert bij het POSTen van het systeem, ondanks het deactiveren van de kaart door de Windows driver tijdens het afsluiten.
 
 <small>Dit is meerdere malen succesvol getest met een GIGABYTE system board GA-G31M-ES2L met BIOS versie F8 vrijgegeven op 2009/02/05\. YMMV.</small>
 

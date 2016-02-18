@@ -20,7 +20,6 @@
 للتغيير من نُوتيلُس إلى نيمو:
 
  `/usr/share/applications/nautilus.desktop` 
-
 ```
 [...]
 #Exec=nautilus %U
@@ -64,7 +63,6 @@ dconf write /org/nemo/desktop/show-desktop-icons false
 ### Clam Scan
 
  `$HOME/.local/share/nemo/actions/clamscan.nemo_action` 
-
 ```
 [Nemo Action]
 Name=Clam Scan
@@ -84,7 +82,6 @@ Extensions=dir;exe;dll;zip;gz;7z;rar;
 ترجمة للكود:
 
  `$HOME/.local/share/nemo/actions/archive.nemo_action` 
-
 ```
 [Nemo Action]
 Active=true
@@ -126,7 +123,6 @@ Extensions=any;
 الكود الأصلي:
 
  `$HOME/.local/share/nemo/actions/archive.nemo_action` 
-
 ```
 [Nemo Action]
 Active=true
@@ -164,9 +160,7 @@ Selection=S
 
 Extensions=any;
 ```
-
  `$HOME/.local/share/nemo/actions/archive.py` 
-
 ```
 #! /usr/bin/python2 -OOt
 

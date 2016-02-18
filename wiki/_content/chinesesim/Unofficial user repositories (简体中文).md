@@ -559,7 +559,7 @@ Server = http://ede.elderlinux.org/repos/archlinux/$arch
 #### heftig
 
 *   **维护者** [Jan Steffens](https://www.archlinux.org/trustedusers/#heftig)
-*   **描述：** Includes linux-zen and aurora (Firefox development build - works alongside [firefox](https://www.archlinux.org/packages/?name=firefox) in the _extra_ repository).
+*   **描述：** Includes linux-zen and aurora (Firefox development build - works alongside [firefox](https://www.archlinux.org/packages/?name=firefox) in the *extra* repository).
 *   **Upstream page:** [https://bbs.archlinux.org/viewtopic.php?id=117157](https://bbs.archlinux.org/viewtopic.php?id=117157)
 
 ```
@@ -571,7 +571,7 @@ Server = http://pkgbuild.com/~heftig/repo/$arch
 #### herecura-stable
 
 *   **维护者**
-*   **描述：** additional packages not found in the _community_ repository
+*   **描述：** additional packages not found in the *community* repository
 
 ```
 [herecura-stable]
@@ -593,7 +593,7 @@ Server = http://repo.herecura.be/herecura-testing/$arch
 #### mesa-git
 
 *   **维护者**
-*   **描述：** Mesa git builds for the _testing_ and _multilib-testing_ repositories
+*   **描述：** Mesa git builds for the *testing* and *multilib-testing* repositories
 
 ```
 [mesa-git]
@@ -906,7 +906,7 @@ Server = http://mirror.fluxent.de/archlinux-custom/$repo/os/$arch
 *   **描述：** Packages are compiled against Heimdal instead of MIT KRB5\. Meant to be dropped before `[core]` in `pacman.conf`. All packages are signed.
 *   **Upstream page:** [https://github.com/Kiwilight/Heimdal-Pkgbuilds](https://github.com/Kiwilight/Heimdal-Pkgbuilds)
 
-**Warning:** Be careful. Do not use this unless you know what you are doing because many of these packages override packages from the _core_ and _extra_ repositories
+**Warning:** Be careful. Do not use this unless you know what you are doing because many of these packages override packages from the *core* and *extra* repositories
 
 ```
 [heimdal]

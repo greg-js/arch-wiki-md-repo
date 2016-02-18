@@ -56,7 +56,7 @@ $ tar -jxvf foobar-cursor-theme-package-foo.tar.bz2
 
 **Create una directory per il tema del cursore:**
 
-_Esempio:_ FooBar-AweSoMe-Cursors-v2.98beta
+*Esempio:* FooBar-AweSoMe-Cursors-v2.98beta
 
 Installazione per il singolo utente corrente:
 
@@ -65,7 +65,7 @@ $ mkdir -p ~/.icons/foobar/cursors
 
 ```
 
-Installazione _system-wide_ (tutto il sistema):
+Installazione *system-wide* (tutto il sistema):
 
 ```
 # mkdir -p /usr/share/icons/foobar/cursors
@@ -83,7 +83,7 @@ $ cp -a FooBar-AweSoMe-Cursors-v2.98beta/cursors/* ~/.icons/foobar/cursors/
 
 ```
 
-Installazione _system-wide_:
+Installazione *system-wide*:
 
 ```
 # cp -a FooBar-AweSoMe-Cursors-v2.98beta/cursors/* /usr/share/icons/foobar/cursors/
@@ -101,7 +101,7 @@ $ cp -a FooBar-AweSoMe-Cursors-v2.98beta/index.theme ~/.icons/foobar/index.theme
 
 ```
 
-Installazione _system-wide_:
+Installazione *system-wide*:
 
 ```
 # cp -a FooBar-AweSoMe-Cursors-v2.98beta/index.theme /usr/share/icons/foobar/index.theme
@@ -154,7 +154,7 @@ xrdb ~/.Xresources &
 
 Fare riferimento alla documentazione del proprio window manager per maggiori informazioni.
 
-Alternativamente, si può creare un link simbolico (un _symlink_) "default" in `~/.icons`, che punti al tema desiderato:
+Alternativamente, si può creare un link simbolico (un *symlink*) "default" in `~/.icons`, che punti al tema desiderato:
 
 ```
 $ ln -s /usr/share/icons/foobar/ ~/.icons/default

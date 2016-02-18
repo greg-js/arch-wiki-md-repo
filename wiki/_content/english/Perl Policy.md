@@ -28,7 +28,7 @@ This page covers the policy for how perl itself is configured and packaged. For 
 
 ## Introduction
 
-This policy document was proposed, accepted, and implemented in version 5.10.0 of the [perl](https://www.archlinux.org/packages/?name=perl) package. It is the standard regarding to the _perl_ package, related Perl packages, and creating Perl module packages (both in binary form and in the form of PKGBUILDs). Portions are derived from the [Debian Perl Policy](http://www.debian.org/doc/packaging-manuals/perl-policy/index.html) document and from various portions of the Perl man pages.
+This policy document was proposed, accepted, and implemented in version 5.10.0 of the [perl](https://www.archlinux.org/packages/?name=perl) package. It is the standard regarding to the *perl* package, related Perl packages, and creating Perl module packages (both in binary form and in the form of PKGBUILDs). Portions are derived from the [Debian Perl Policy](http://www.debian.org/doc/packaging-manuals/perl-policy/index.html) document and from various portions of the Perl man pages.
 
 ### 5.10 caveats
 
@@ -40,10 +40,10 @@ NOT TRUE: The directories for scripts do not conform to the Filesystem Hierarchy
 
 Apparent problems with pre-5.10.0 perl packaging conventions included:
 
-1.  The current Arch Linux default perl installation installs _site_ and _vendor_ packages into the same directory tree, which frequently causes conflicts if the end user installs and upgrades Arch Linux perl (_vendor_) packages on top of _site_ packages.
-2.  The current Arch Linux default perl installation installs updates to _core_ modules into the perl _core_ directories, creating file conflicts. Examples include modules such as `Data::Dumper` and `version`.
+1.  The current Arch Linux default perl installation installs *site* and *vendor* packages into the same directory tree, which frequently causes conflicts if the end user installs and upgrades Arch Linux perl (*vendor*) packages on top of *site* packages.
+2.  The current Arch Linux default perl installation installs updates to *core* modules into the perl *core* directories, creating file conflicts. Examples include modules such as `Data::Dumper` and `version`.
 3.  A symlink-farm is created in `/usr/lib/perl5/` and `/usr/lib/perl5/site_perl` which is un-necessary and confusing.
-4.  A number of standard modules seem to be missing, or were neglected to be added as _provides_ in the perl package itself, causing confusion and redundant entries in AUR and Community as users try and _fix_ the apparent problem of missing modules, which are provided by perl. This is probably a matter of education.
+4.  A number of standard modules seem to be missing, or were neglected to be added as *provides* in the perl package itself, causing confusion and redundant entries in AUR and Community as users try and *fix* the apparent problem of missing modules, which are provided by perl. This is probably a matter of education.
 5.  Current perl-module PKGBUILD's could be simplified and standardized quite a bit.
 
 This policy would eliminate all these problems.
@@ -52,8 +52,8 @@ This policy would eliminate all these problems.
 
 Current (apparent) downsides to adopting a policy such as this one:
 
-1.  An update of every perl module PKGBUILD so that it installs into the correct (_vendor_) directory tree. It remains somewhat backwards-compatible with the old structure, in that old PKGBUILD's would technically **work**.
-2.  Introduces changes into the `perl` package, which lives in the _core_ repository, and proposes a new `perl-modules` package, which would live in the _extra_ repository.
+1.  An update of every perl module PKGBUILD so that it installs into the correct (*vendor*) directory tree. It remains somewhat backwards-compatible with the old structure, in that old PKGBUILD's would technically **work**.
+2.  Introduces changes into the `perl` package, which lives in the *core* repository, and proposes a new `perl-modules` package, which would live in the *extra* repository.
 3.  Non-perl packages which compile static copies of the perl interpreter will not operate correctly until recompiled on an Arch Linux PC which adheres to this document. Examples of such packages include `vim`, `subversion`, and `irssi`. Many such examples exist.
 
 ## Perl versions
@@ -64,27 +64,27 @@ Only one package may contain the `/usr/bin/perl` binary and that package must ei
 
 ## Module paths
 
-Perl searches three different locations for modules, referred to in this document as _core_ in which modules distributed with Perl are installed, _vendor_ for packaged modules, and _site_ for modules installed by the local administrator.
+Perl searches three different locations for modules, referred to in this document as *core* in which modules distributed with Perl are installed, *vendor* for packaged modules, and *site* for modules installed by the local administrator.
 
 The module search path (`@INC`) in the Arch Linux packages has been ordered to include these locations in the following order:
 
-*   _**site**_
+*   ***site***
 
-Modules installed by the local administrator for the current version of Perl. Typically, these modules are installed using the _cpan_ or _cpanp_ tool, or are downloaded in source form and installed via make.
+Modules installed by the local administrator for the current version of Perl. Typically, these modules are installed using the *cpan* or *cpanp* tool, or are downloaded in source form and installed via make.
 
-	`/usr/lib/perl5/site_perl/_version_`
+	`/usr/lib/perl5/site_perl/*version*`
 
-	`/usr/share/perl5/site_perl/_version_`
+	`/usr/share/perl5/site_perl/*version*`
 
-*   _**vendor**_
+*   ***vendor***
 
-Packaged modules, installed via the pacman tool from the _core_, _extra_, or _community_ repositories, or built into proper Arch Linux packages from ABS/AUR PKGBUILDs.
+Packaged modules, installed via the pacman tool from the *core*, *extra*, or *community* repositories, or built into proper Arch Linux packages from ABS/AUR PKGBUILDs.
 
 	`/usr/lib/perl5/vendor_perl`
 
 	`/usr/share/perl5/vendor_perl`
 
-*   _**core**_
+*   ***core***
 
 Modules included in the core Perl distribution.
 
@@ -92,7 +92,7 @@ Modules included in the core Perl distribution.
 
 	`/usr/share/perl5/core_perl`
 
-*   _**obsolete**_
+*   ***obsolete***
 
 Obsolete is the path name to modules installed prior to the establishment of this document. These paths have been removed from @INC in perl 5.12.2.
 
@@ -102,7 +102,7 @@ Obsolete is the path name to modules installed prior to the establishment of thi
 
 	`/usr/lib/perl5/current`
 
-In each of the directory pairs above, the `lib` component is for binary, architecture dependent (XS) modules, and `share` for architecture-independent (pure-perl) modules. Under no circumstances should `current` be used as a replacement for `version`. Core and Vendor modules _should_ be matched to the current installation of perl.
+In each of the directory pairs above, the `lib` component is for binary, architecture dependent (XS) modules, and `share` for architecture-independent (pure-perl) modules. Under no circumstances should `current` be used as a replacement for `version`. Core and Vendor modules *should* be matched to the current installation of perl.
 
 ## Documents
 
@@ -120,21 +120,21 @@ Manual pages distributed with Perl packages must be installed into the standard 
 
 ## Binaries and scripts
 
-In order to prevent file collisions, it is important to keep binaries generated by _core_, _vendor_, and _site_ installs separate. It is also important that the default `PATH` environment variable set in each users profile to search for binaries in the same order as perl's `@INC` path. In order to accomplish this, binaries should be installed into the following directories:
+In order to prevent file collisions, it is important to keep binaries generated by *core*, *vendor*, and *site* installs separate. It is also important that the default `PATH` environment variable set in each users profile to search for binaries in the same order as perl's `@INC` path. In order to accomplish this, binaries should be installed into the following directories:
 
 	Core
 
-	Binaries and scripts for all _core_ packages should be installed into `/usr/bin/core_perl`.
+	Binaries and scripts for all *core* packages should be installed into `/usr/bin/core_perl`.
 
 	Vendor
 
-	Binaries and scripts for all _vendor_ packages should be installed into `/usr/bin/vendor_perl`.
+	Binaries and scripts for all *vendor* packages should be installed into `/usr/bin/vendor_perl`.
 
 	Site
 
-	Binaries and scripts for all _site_ should default to be installed into `/usr/bin/site_perl`.
+	Binaries and scripts for all *site* should default to be installed into `/usr/bin/site_perl`.
 
-The `perl` package should include a mechanism to adjust end-users `PATH` entries accordingly so that perl binaries are searched for in the following order: _site_, _vendor_, _core_.
+The `perl` package should include a mechanism to adjust end-users `PATH` entries accordingly so that perl binaries are searched for in the following order: *site*, *vendor*, *core*.
 
 ## Core
 
@@ -148,13 +148,13 @@ Core modules are Perl modules "typically" included in the core Perl distribution
 
 ### Core perl packages
 
-The `perl` package should contain the `/usr/bin/perl` binary, and a minimal set of modules needed in order for simple perl scripts to run and for a base system to operate. It should be maintained in the _core_ repository.
+The `perl` package should contain the `/usr/bin/perl` binary, and a minimal set of modules needed in order for simple perl scripts to run and for a base system to operate. It should be maintained in the *core* repository.
 
 The following is a list of a few modules (for example), which are provided in the perl package. (See the PKGBUILD for the official list).
 
 `'perl-checktree' 'perl-collate' 'perl-config' 'perl-cwd' 'perl-dynaloader' 'perl-english' 'perl-env' 'perl-exporter' 'perl-fnctl' 'perl-filehandle' 'perl-find' 'perl-finddepth' 'perl-getopt' 'perl-makemaker' 'perl-socket' 'perl-sys-syslog' 'perl-db-file' 'perl-storable' 'perl-data-dumper' 'perl-digest-md5'`.
 
-Every module supplied in the perl package shall be added into the `provides` array in the PKGBUILD. Modules in this array should NOT appear in the perl packages `conflicts` or `replaces` arrays. End users should be able to install newer versions of core modules, either in _vendor_ or _site_ directories without file collisions.
+Every module supplied in the perl package shall be added into the `provides` array in the PKGBUILD. Modules in this array should NOT appear in the perl packages `conflicts` or `replaces` arrays. End users should be able to install newer versions of core modules, either in *vendor* or *site* directories without file collisions.
 
 ## Site
 
@@ -195,10 +195,10 @@ Perl module packages should be named for the primary module provided. The naming
 
 The installation directory for Arch Linux modules must be different from that for `site` modules. Some guidelines include:
 
-*   The current Perl packaging uses the _vendor_ directories for this purpose, which are at present as described in above as `vendor`.
+*   The current Perl packaging uses the *vendor* directories for this purpose, which are at present as described in above as `vendor`.
 *   No version subdirectory exists on these directories as the dependencies for packaged modules should ensure that all work with the current `perl` package.
-*   The Perl distribution includes many modules available separately from CPAN, which may have a newer version. The intent of the `@INC` ordering (described above) is to allow such modules to be packaged to _vendor_ which take precedence over the version in _core_. A packaged module which shadows a _core_ module in this way must be a newer version.
-*   Module packages must install manual pages into the standard directories using the extensions `.1p` and `.3pm` to ensure that no conflict arises where a packaged module duplicates a _core_ module.
+*   The Perl distribution includes many modules available separately from CPAN, which may have a newer version. The intent of the `@INC` ordering (described above) is to allow such modules to be packaged to *vendor* which take precedence over the version in *core*. A packaged module which shadows a *core* module in this way must be a newer version.
+*   Module packages must install manual pages into the standard directories using the extensions `.1p` and `.3pm` to ensure that no conflict arises where a packaged module duplicates a *core* module.
 *   `.packlist` (used for module uninstalls) and `perllocal.pod` (used to record local/site installations) files should not be installed, and should be removed from the package if found.
 *   Empty directories should be pruned.
 
@@ -276,9 +276,9 @@ Binary modules must specify a dependency on either `perl` with a minimum version
 
 #### Architecture-independent modules
 
-Architecture-independent modules which require _core_ modules from the `perl` package must specify a dependency on that package.
+Architecture-independent modules which require *core* modules from the `perl` package must specify a dependency on that package.
 
-Modules which contain explicit `require _version_` or `use _version_` statements must specify a dependency on `perl` with the minimum required version, or more simply the current version.
+Modules which contain explicit `require *version*` or `use *version*` statements must specify a dependency on `perl` with the minimum required version, or more simply the current version.
 
 In the absence of an explicit requirement, architecture-independent modules must depend on a minimum `perl` version of `5.10.0` due to the changes in `@INC` introduced by that version.
 

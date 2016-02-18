@@ -61,7 +61,7 @@ En fungerende [Xorg](/index.php/Xorg "Xorg") (grafisk) miljø er en nødvendighe
 
 ## Installing MythTV
 
-Der er en pakke med MythTV i _Extra_ repoet.
+Der er en pakke med MythTV i *Extra* repoet.
 
 *   Installer MythTV pakken:
 
@@ -83,7 +83,7 @@ Nu skulle du gerne have en fungerende MythTV installation. Det skal herefter def
 
 Inden du konfigurerer din backend, vær sikker på du har et FUNGERENDE TV-kort installeret enten som USB,Firewire eller PCI. Desværre er denne del af installationen udenfor området som denne artikel dækker, men kig under de eneklte specielle install-guides omkring hvorsdan dit kort skal installeres. Det ville også være praktisk at have en Yahoo konto eller lign, for senere brug vedrørende XMLTV og grabning af programlister - mm du vil bruge den EIT der bliver sendt sammen med kanalerne.
 
-_Installering af MySQL databasen:_
+*Installering af MySQL databasen:*
 
 *   Installer og kør MySQL
 
@@ -102,7 +102,7 @@ _Installering af MySQL databasen:_
 
 ```
 
-_Opsætning af master backend:_
+*Opsætning af master backend:*
 
 *   Start X, hvis ikke du allerede har gjort dette:
 
@@ -155,7 +155,7 @@ Denne menu er muligt at ignorer
 
 Dette skulle meget gerne fylde din MySQL database med diverse informationer omkring den næste uges TV-programmer.
 
-*   Tilføj mythbackend til /etc/rc.conf "daemons" linien. _Hvis du ikke kan starte mythbackend - tilføj HOME="/root" i toppen af /etc/rc.conf under variablerne._
+*   Tilføj mythbackend til /etc/rc.conf "daemons" linien. *Hvis du ikke kan starte mythbackend - tilføj HOME="/root" i toppen af /etc/rc.conf under variablerne.*
 
 *   Genstart maskinen
 

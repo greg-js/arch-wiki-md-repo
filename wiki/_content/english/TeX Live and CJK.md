@@ -6,7 +6,8 @@ The below tutorial guides you through getting your Tex to work with the Cyberbit
 \usepackage[utf8x]{inputenc}
 % use one of bsmi(trad Chinese), gbsn(simp Chinese), min(Japanese), mj(Korean); see:
 % /usr/share/texmf-dist/tex/latex/cjk/texinput/UTF8/*.fd
-\newcommand{\cntext}[1]{\begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
+
+ewcommand{\cntext}[1]{\begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
 
 ```
 

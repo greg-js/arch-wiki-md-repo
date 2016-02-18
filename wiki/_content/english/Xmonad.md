@@ -50,13 +50,13 @@ For more information, please visit the xmonad website: [http://xmonad.org/](http
 
 Alternatively, install [xmonad-git](https://aur.archlinux.org/packages/xmonad-git/), the development version, with some additional dependencies; and likewise [xmonad-contrib-git](https://aur.archlinux.org/packages/xmonad-contrib-git/) if wanted.
 
-**Note:** If you choose to use the [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") repositories, you need to install the _haskell-xmonad_ package instead of [xmonad](https://www.archlinux.org/packages/?name=xmonad), as they have different dependencies.
+**Note:** If you choose to use the [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") repositories, you need to install the *haskell-xmonad* package instead of [xmonad](https://www.archlinux.org/packages/?name=xmonad), as they have different dependencies.
 
 ## Starting xmonad
 
-Select _Xmonad_ from the session menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
+Select *Xmonad* from the session menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
 
-Alternatively, append `exec xmonad` to the `~/.xinitrc` file and then start the session by executing _startx_.
+Alternatively, append `exec xmonad` to the `~/.xinitrc` file and then start the session by executing *startx*.
 
 **Note:** By default, xmonad does not set an X cursor, therefore the "cross" cursor is usually displayed. To set the expected left-pointer, see [Cursor themes#Change X shaped default cursor](/index.php/Cursor_themes#Change_X_shaped_default_cursor "Cursor themes").
 
@@ -176,7 +176,6 @@ The keyboard-centered operation in Xmonad can be further supported with a keyboa
 Also, there exists a function "pasteSelection" in XMonad.Util.Paste that can be bound to a key using a line like:
 
  `xmonad.hs` 
-
 ```
   -- X-selection-paste buffer
   , ((0, xK_Insert), pasteSelection)
@@ -210,7 +209,6 @@ There are number of complementary utilities that work well with xmonad. The most
 By default, xmonad uses 9 workspaces. You can increase this to 14 by extending the following line like this:
 
  `xmonad.hs` 
-
 ```
 -- (i, k) <- zip (XMonad.workspaces conf) [xK_1, xK_2, xK_3, xK_4, xK_5, xK_6, xK_7, xK_8, xK_9]
 (i, k) <- zip (XMonad.workspaces conf) [xK_grave, xK_1, xK_2, xK_3, xK_4, xK_5, xK_6, xK_7, xK_8, xK_9, xK_0, xK_minus, xK_equal, xK_BackSpace]
@@ -279,7 +277,6 @@ As of xmonad(-contrib) 0.9, there is a new [statusBar](http://xmonad.org/xmonad-
 The following is an example of how to use it:
 
  `~/.xmonad/xmonad.hs` 
-
 ```
 -- Imports.
 import XMonad
@@ -309,7 +306,6 @@ The template and default xmobarrc contains this.
 At last, open up `~/.xmobarrc` and make sure you have `StdinReader` in the template and run the plugin. E.g.
 
  `~/.xmobarrc` 
-
 ```
 Config { ...
        , commands = [ Run StdinReader .... ]
@@ -341,7 +337,6 @@ xdotool key Super+n
 If you are using [xmonad-git](https://aur.archlinux.org/packages/xmonad-git/), as of January of 2011, you can restart to another window manager from within xmonad. You just need to write a small script, and add stuff to your `~/.xmonad/xmonad.hs`. Here is the script.
 
  `~/bin/obtoxmd` 
-
 ```
 #!/bin/sh
 openbox
@@ -352,7 +347,6 @@ xmonad
 And here are the modifications you need to add to your `~/.xmonad/xmonad.hs`:
 
  `~/.xmonad/xmonad.hs` 
-
 ```
 import XMonad
 --You need to add this import
@@ -371,7 +365,6 @@ main do
 You also need to add the following key binding:
 
  `~/xmonad/xmonad.hs` 
-
 ```
 --Add a keybinding as follows:
 ((modm .|. shiftMask, xK_o     ), restart "/home/abijr/bin/obtoxmd" True)
@@ -391,7 +384,6 @@ It also might be a good idea to set a global keyboard shortcut in KDE to start x
 In orded to create an IM layout for the newer versions of skype, the following code can be used:
 
  `xmonad.hs` 
-
 ```
 myIMLayout = withIM (1%7) skype Grid
     where
@@ -504,7 +496,7 @@ main = xmonad xfceConfig
 
 ```
 
-Also add an entry to _Settings > Session and Startup > Application Autostart_ that runs `xmonad --replace`.
+Also add an entry to *Settings > Session and Startup > Application Autostart* that runs `xmonad --replace`.
 
 ### Missing xmonad-i386-linux or xmonad-x86_64-linux
 

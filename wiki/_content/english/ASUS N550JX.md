@@ -46,7 +46,6 @@ NVIDIA Optimus technology can be implemented and controlled using [Bumblebee](/i
 Built-in speakers and headphones work out of the box with **snd_hda_intel** driver. External sub-woofer works after this patch is applied:
 
  `/etc/modprobe.d/snd-hda-intel-n550jx.conf`  `options snd-hda-intel patch=n550jx-lfe-fix,n550jx-lfe-fix`  `/lib/firmware/n550jx-lfe-fix` 
-
 ```
 [codec]
 0x10ec0668 0x104313df 0
@@ -67,6 +66,6 @@ In order to make all keyboard function keys (FN+F{1..12}) generate correct signa
 
 ## nouveau problems
 
-Installation media sometimes produces a lot of error messages during boot. This is a bug in the _nouveau_ driver. Just ignore hitting Enter few times. Later you can disable _nouveau_ module:
+Installation media sometimes produces a lot of error messages during boot. This is a bug in the *nouveau* driver. Just ignore hitting Enter few times. Later you can disable *nouveau* module:
 
  `/etc/modprobe.d/blacklist-nouveau.conf`  `blacklist nouveau`

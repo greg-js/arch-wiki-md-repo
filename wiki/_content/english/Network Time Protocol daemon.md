@@ -19,22 +19,21 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [ntp](https://www.archlinux.org/packages/?name=ntp) package. By default, _ntpd_ works in client mode without further configuration. You can skip to [#Usage](#Usage), if you want to use the Arch Linux default configuration file for it. For server configuration, see [#NTP server mode](#NTP_server_mode).
+[Install](/index.php/Install "Install") the [ntp](https://www.archlinux.org/packages/?name=ntp) package. By default, *ntpd* works in client mode without further configuration. You can skip to [#Usage](#Usage), if you want to use the Arch Linux default configuration file for it. For server configuration, see [#NTP server mode](#NTP_server_mode).
 
 ## Configuration
 
-The main daemon is _ntpd_, which is configured in `/etc/ntp.conf`. Refer to the manual pages for detail: `man ntp.conf` and the related `man {ntpd|ntp_auth|ntp_mon|ntp_acc|ntp_clock|ntp_misc}`.
+The main daemon is *ntpd*, which is configured in `/etc/ntp.conf`. Refer to the manual pages for detail: `man ntp.conf` and the related `man {ntpd|ntp_auth|ntp_mon|ntp_acc|ntp_clock|ntp_misc}`.
 
 ### Connection to NTP servers
 
-NTP servers are classified in a hierarchical system with many levels called _strata_: the devices which are considered independent time sources are classified as _stratum 0_ sources; the servers directly connected to _stratum 0_ devices are classified as _stratum 1_ sources; servers connected to _stratum 1_ sources are then classified as _stratum 2_ sources and so on.
+NTP servers are classified in a hierarchical system with many levels called *strata*: the devices which are considered independent time sources are classified as *stratum 0* sources; the servers directly connected to *stratum 0* devices are classified as *stratum 1* sources; servers connected to *stratum 1* sources are then classified as *stratum 2* sources and so on.
 
 It has to be understood that a server's stratum cannot be taken as an indication of its accuracy or reliability. Typically, stratum 2 servers are used for general synchronization purposes: if you do not already know the servers you are going to connect to, you should choose a server pool close to your location from the [pool.ntp.org](http://www.pool.ntp.org/) servers ([alternative link](http://support.ntp.org/bin/view/Servers/NTPPoolServers)).
 
-Since _ntp_ version 4.2.7.p465-2, Arch Linux uses its own default vendor pool of NTP servers provided by [the NTP Pool Project](http://www.pool.ntp.org) (see [FS#41700](https://bugs.archlinux.org/task/41700)). Modify those to suit your needs, e.g. if you want to use your country's servers with an option:
+Since *ntp* version 4.2.7.p465-2, Arch Linux uses its own default vendor pool of NTP servers provided by [the NTP Pool Project](http://www.pool.ntp.org) (see [FS#41700](https://bugs.archlinux.org/task/41700)). Modify those to suit your needs, e.g. if you want to use your country's servers with an option:
 
  `/etc/ntp.conf` 
-
 ```
 server 0.fr.pool.ntp.org iburst
 server 1.fr.pool.ntp.org iburst
@@ -47,7 +46,7 @@ The `iburst` option is recommended, and sends a burst of packets only if it cann
 
 ### NTP server mode
 
-If setting up an NTP server, you need to add [_local clock_](http://www.ntp.org/ntpfaq/NTP-s-refclk.htm#Q-LOCAL-CLOCK) as a server, so that, in case it loses internet access, it will continue serving time to the network; add _local clock_ as a stratum 10 server (using the _fudge_ command) (you can set up to [stratum 15](http://www.ntp.org/ntpfaq/NTP-s-algo.htm#Q-ALGO-BASIC-STRATUM)) so that it will never be used unless internet access is lost:
+If setting up an NTP server, you need to add [*local clock*](http://www.ntp.org/ntpfaq/NTP-s-refclk.htm#Q-LOCAL-CLOCK) as a server, so that, in case it loses internet access, it will continue serving time to the network; add *local clock* as a stratum 10 server (using the *fudge* command) (you can set up to [stratum 15](http://www.ntp.org/ntpfaq/NTP-s-algo.htm#Q-ALGO-BASIC-STRATUM)) so that it will never be used unless internet access is lost:
 
 ```
 server 127.127.1.1
@@ -55,14 +54,14 @@ fudge  127.127.1.1 stratum 12
 
 ```
 
-Next, define the rules that will allow clients to connect to your service (_localhost_ is considered a client too) using the _restrict_ command; you should already have a line like this in your file:
+Next, define the rules that will allow clients to connect to your service (*localhost* is considered a client too) using the *restrict* command; you should already have a line like this in your file:
 
 ```
 restrict default nomodify nopeer noquery
 
 ```
 
-This restricts everyone from modifying anything and prevents everyone from querying the status of your time server: `nomodify` prevents reconfiguring _ntpd_ (with _ntpq_ or _ntpdc_), and `noquery` is [important to prevent](https://mailman.archlinux.org/pipermail/arch-dev-public/2014-February/025872.html) dumping status data from _ntpd_ (also with _ntpq_ or _ntpdc_).
+This restricts everyone from modifying anything and prevents everyone from querying the status of your time server: `nomodify` prevents reconfiguring *ntpd* (with *ntpq* or *ntpdc*), and `noquery` is [important to prevent](https://mailman.archlinux.org/pipermail/arch-dev-public/2014-February/025872.html) dumping status data from *ntpd* (also with *ntpq* or *ntpdc*).
 
 You can also add other options:
 
@@ -71,11 +70,11 @@ restrict default kod nomodify notrap nopeer noquery
 
 ```
 
-**Note:** This still allows other people to query your time server. You need to add `noserve` to stop serving time. It will also block time synchronization since it blocks all packets except _ntpq_ and _ntpdc_ queries.
+**Note:** This still allows other people to query your time server. You need to add `noserve` to stop serving time. It will also block time synchronization since it blocks all packets except *ntpq* and *ntpdc* queries.
 
 If you want to change any of these, see the full docs for the "restrict" option in `man ntp_acc`, the detailed [ntp instructions](https://support.ntp.org/bin/view/Support/AccessRestrictions) and [#As a daemon](#As_a_daemon).
 
-Following this line, you need to tell _ntpd_ what to allow through into your server; the following line is enough if you are not configuring an NTP server:
+Following this line, you need to tell *ntpd* what to allow through into your server; the following line is enough if you are not configuring an NTP server:
 
 ```
 restrict 127.0.0.1
@@ -101,7 +100,6 @@ logfile /var/log/ntp.log
 A very basic configuration file will look like this:
 
  `/etc/ntp.conf` 
-
 ```
 server 0.pool.ntp.org iburst
 server 1.pool.ntp.org iburst
@@ -119,7 +117,7 @@ logfile /var/log/ntp.log
 
 ```
 
-**Note:** Defining the log file is not mandatory, but it is always a good idea to have feedback for _ntpd_ operations.
+**Note:** Defining the log file is not mandatory, but it is always a good idea to have feedback for *ntpd* operations.
 
 ## Usage
 
@@ -130,9 +128,9 @@ The package has a default client-mode configuration and its own user and group t
 
 ```
 
-The `-u` option is employed by the two included systemd services. These services also use the `-g` option, which disables a threshold (so-called _panic-gate_). Hence, they will synchonize time even in case the ntp-server's time exceeds the threshold deviation from the system clock.
+The `-u` option is employed by the two included systemd services. These services also use the `-g` option, which disables a threshold (so-called *panic-gate*). Hence, they will synchonize time even in case the ntp-server's time exceeds the threshold deviation from the system clock.
 
-**Warning:** One reason the panic-gate was introduced is that background jobs/services may be susceptible to time-jumps. If the system's clock was never synchronized before, consider stopping them before running _ntpd_ for the first time.
+**Warning:** One reason the panic-gate was introduced is that background jobs/services may be susceptible to time-jumps. If the system's clock was never synchronized before, consider stopping them before running *ntpd* for the first time.
 
 Both services are tied to the system's resolver, and will start synchronizing when an active network connection is detected.
 
@@ -140,16 +138,16 @@ Both services are tied to the system's resolver, and will start synchronizing wh
 
 [Enable](/index.php/Enable "Enable") the daemon with `ntpd.service`. See also [#Running in a chroot](#Running_in_a_chroot).
 
-**Note:** The systemd command _timedatectl_ can only be used to control [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd"), executing `timedatectl set-ntp 1` as root will inadvertedly stop a running `ntpd.service`.[[1]](http://lists.freedesktop.org/archives/systemd-devel/2015-April/030277.html)
+**Note:** The systemd command *timedatectl* can only be used to control [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd"), executing `timedatectl set-ntp 1` as root will inadvertedly stop a running `ntpd.service`.[[1]](http://lists.freedesktop.org/archives/systemd-devel/2015-April/030277.html)
 
-Use _ntpq_ to see the list of configured peers and status of synchronization:
+Use *ntpq* to see the list of configured peers and status of synchronization:
 
 ```
 $ ntpq -p
 
 ```
 
-The delay, offset and jitter columns should be non-zero. The servers _ntpd_ is synchronizing with are prefixed by an asterisk. It can take several minutes before _ntpd_ selects a server to synchronize with; try checking after 17 minutes (1024 seconds).
+The delay, offset and jitter columns should be non-zero. The servers *ntpd* is synchronizing with are prefixed by an asterisk. It can take several minutes before *ntpd* selects a server to synchronize with; try checking after 17 minutes (1024 seconds).
 
 ### Synchronize time once per boot
 
@@ -158,7 +156,6 @@ Alternatively, [enable](/index.php/Enable "Enable") `ntpdate.service` to synchro
 If the synchronized time should be written to the hardware clock as well, configure the provided unit as described in [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") before starting it:
 
  `/etc/systemd/system/ntpdate.service.d/hwclock.conf` 
-
 ```
 [Service]
 ExecStart=/usr/bin/hwclock -w
@@ -168,7 +165,7 @@ ExecStart=/usr/bin/hwclock -w
 
 ### Start ntpd on network connection
 
-_ntpd_ can be started by your network manager, so that the daemon only runs when the computer is online.
+*ntpd* can be started by your network manager, so that the daemon only runs when the computer is online.
 
 	Netctl
 
@@ -182,44 +179,40 @@ ExecDownPre='killall ntpd || true'
 
 	NetworkManager
 
-The _ntpd_ daemon can be brought up/down along with a network connection through the use of NetworkManager's [dispatcher](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") scripts. The [networkmanager-dispatcher-ntpd](https://www.archlinux.org/packages/?name=networkmanager-dispatcher-ntpd) package installs one, pre-configured to start and stop the [ntpd service](#Start_ntpd_at_boot) with a connection.
+The *ntpd* daemon can be brought up/down along with a network connection through the use of NetworkManager's [dispatcher](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") scripts. The [networkmanager-dispatcher-ntpd](https://www.archlinux.org/packages/?name=networkmanager-dispatcher-ntpd) package installs one, pre-configured to start and stop the [ntpd service](#Start_ntpd_at_boot) with a connection.
 
 	Wicd
 
 For [Wicd](/index.php/Wicd "Wicd"), create a start script in the `postconnect` directory and a stop script in the `predisconnect` directory. Remember to make them executable:
 
  `/etc/wicd/scripts/postconnect/ntpd` 
-
 ```
 #!/bin/bash
 systemctl start ntpd &
 
 ```
-
  `/etc/wicd/scripts/predisconnect/ntpd` 
-
 ```
 #!/bin/bash
 systemctl stop ntpd &
 
 ```
 
-**Note:** You are advised to customize the options for the _ntpd_ command as explained in [#Usage](#Usage).
+**Note:** You are advised to customize the options for the *ntpd* command as explained in [#Usage](#Usage).
 
 See also [Wicd#Scripts](/index.php/Wicd#Scripts "Wicd").
 
 	KDE
 
-KDE can use NTP (ntp must be installed) by right clicking the clock and selecting _Adjust date/time_. However, this requires the ntp daemon to be [disabled](/index.php/Disable "Disable") before configuring KDE to use NTP. [[2]](https://bugs.kde.org/show_bug.cgi?id=178968)
+KDE can use NTP (ntp must be installed) by right clicking the clock and selecting *Adjust date/time*. However, this requires the ntp daemon to be [disabled](/index.php/Disable "Disable") before configuring KDE to use NTP. [[2]](https://bugs.kde.org/show_bug.cgi?id=178968)
 
 ### Using ntpd with GPS
 
-Most of the articles online about configuring _ntpd_ to receive time from a GPS suggest to use the SHM (shared memory) method. However, at least since _ntpd_ version 4.2.8 a _much better_ method is available. It connects directly to _gpsd_, so [gpsd](https://www.archlinux.org/packages/?name=gpsd) needs to be installed.
+Most of the articles online about configuring *ntpd* to receive time from a GPS suggest to use the SHM (shared memory) method. However, at least since *ntpd* version 4.2.8 a *much better* method is available. It connects directly to *gpsd*, so [gpsd](https://www.archlinux.org/packages/?name=gpsd) needs to be installed.
 
 Add these lines to your `/etc/ntp.conf`:
 
  `/etc/ntp.conf` 
-
 ```
 #=========================================================
 #  GPSD native ntpd driver
@@ -231,30 +224,29 @@ server 127.127.46.0
 fudge 127.127.46.0 time1 0.0 time2 0.0 refid GPS
 ```
 
-This will work as long as you have _gpsd_ working. It connects to _gpsd_ via the local socket and queries the "gpsd_json" object that is returned.
+This will work as long as you have *gpsd* working. It connects to *gpsd* via the local socket and queries the "gpsd_json" object that is returned.
 
-To test the setup, first ensure that _gpsd_ is working by running:
+To test the setup, first ensure that *gpsd* is working by running:
 
 ```
  $ cgps -s 
 
 ```
 
-Then wait a few minutes and run `ntpq -p`. This will show if _ntpd_ is talking to _gpsd_:
+Then wait a few minutes and run `ntpq -p`. This will show if *ntpd* is talking to *gpsd*:
 
  `$ ntpq -p` 
-
 ```
 remote           refid            st t when poll reach   delay   offset  jitter
  ==================================================================================
 *GPSD_JSON(0)    .GPS.            0 l   55   64  377    0.000    2.556  14.109
 ```
 
-**Tip:** If the _reach_ column is 0, it means _ntpd_ has not been able to talk to _gpsd_. Wait a few minutes and try again. Sometimes it takes _ntpd_ a while.
+**Tip:** If the *reach* column is 0, it means *ntpd* has not been able to talk to *gpsd*. Wait a few minutes and try again. Sometimes it takes *ntpd* a while.
 
 ### Running in a chroot
 
-**Note:** _ntpd_ should be started as non-root (default in the Arch Linux package) before attempting to jail it in a chroot, since chroots are relatively useless at securing processes running as root.
+**Note:** *ntpd* should be started as non-root (default in the Arch Linux package) before attempting to jail it in a chroot, since chroots are relatively useless at securing processes running as root.
 
 Create a new directory `/etc/systemd/system/ntpd.service.d/` if it does not exist and a file named `customexec.conf` inside with the following content:
 
@@ -290,7 +282,6 @@ Create a suitable chroot environment so that getaddrinfo() will work by creating
 and by bind-mounting the aformentioned files:
 
  `/etc/fstab` 
-
 ```
 ...
 #ntpd chroot mounts
@@ -315,7 +306,7 @@ Finally, restart `ntpd` daemon again. Once it restarted you can verify that the 
 
 should now link to `/var/lib/ntp` instead of `/`.
 
-It is relatively difficult to be sure that your driftfile configuration is actually working without waiting a while, as _ntpd_ does not read or write it very often. If you get it wrong, it will log an error; if you get it right, it will update the timestamp. If you do not see any errors about it after a full day of running, and the timestamp is updated, you should be confident of success.
+It is relatively difficult to be sure that your driftfile configuration is actually working without waiting a while, as *ntpd* does not read or write it very often. If you get it wrong, it will log an error; if you get it right, it will update the timestamp. If you do not see any errors about it after a full day of running, and the timestamp is updated, you should be confident of success.
 
 ## See also
 

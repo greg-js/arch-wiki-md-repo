@@ -98,7 +98,6 @@ Java Swing GUI应用程序不认为ratpoison是平铺式窗口管理器, 且不�
 首先安装<tt>wmname</tt> package， 然后将这一行加入你的<tt>.ratpoisonrc</tt>中:
 
  `~/.ratpoisonrc` 
-
 ```
 exec wmname LG3D
 
@@ -113,7 +112,6 @@ exec wmname LG3D
 只要更改你的.ratpoisonrc，然后加入:
 
  `~/.ratpoisonrc` 
-
 ```
 exec /usr/bin/rpws init 6 -k
 
@@ -145,14 +143,11 @@ Urxvt和xter，因为它们被默认安装，发送重调大小的信号给窗�
 我们可以使用xterm/URxvt默认的边框设置工具将ratpoison的边框设置为0。
 
  `~/.Xresources` 
-
 ```
 urxvt*internalBorder: 8 #change urxvt to xterm if necessary. Using the font terminus in urxvt at 14px size, 8 is the correct number here.
 
 ```
-
  `~/.ratpoisonrc` 
-
 ```
 set border 0
 
@@ -163,14 +158,11 @@ set border 0
 当ratpoison启动时自启动应用的例子。文件 `~/.ratpoisonrc`中的内容会在ratpoison启动时执行。
 
  `Launch urxvt with a tmux session` 
-
 ```
 exec urxvt -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
 
 ```
-
  `Launch optimized chromium` 
-
 ```
 exec bash -c 'pidof chromium &>/dev/null || exec /usr/bin/chromium --disk-cache-dir=~/tmp/cache'
 
@@ -181,7 +173,6 @@ exec bash -c 'pidof chromium &>/dev/null || exec /usr/bin/chromium --disk-cache-
 通过[xcompmgr](/index.php/Xcompmgr "Xcompmgr")还有nitrogen设置透明的例子. 首先启动nitrogen然后设置你希望设置成壁纸的壁纸。然后把这个加入到你的.ratpoisonrc中去
 
  `Wallpaper and transparency` 
-
 ```
 exec xcompmgr -c -f -D 5 &
 exec nitrogen --restore
@@ -190,7 +181,7 @@ exec nitrogen --restore
 
 ## 有用的快捷键
 
-| `Ctrl+t` `!` <_程序名称_> 启动某个程序 |
+| `Ctrl+t` `!` <*程序名称*> 启动某个程序 |
 | `Ctrl+t` `?` 显示快捷键设置 |
 | `Ctrl+t` `c` 启动一个x terminal |
 | `Ctrl+t` `n` 切换到下一个窗口 |

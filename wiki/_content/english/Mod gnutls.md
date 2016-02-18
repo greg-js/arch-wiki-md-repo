@@ -26,7 +26,6 @@ Make sure no vhost definitions include mod_ssl.
 Create the file `/etc/httpd/conf/extra/httpd-gnutls.conf` with the following content:
 
  `/etc/httpd/conf/extra/httpd-gnutls.conf` 
-
 ```
 Listen 443
 

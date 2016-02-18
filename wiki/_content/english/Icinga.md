@@ -53,7 +53,6 @@ Copy the sample config files as root:
 Edit `/etc/icinga/resource.cfg`:
 
  `/etc/icinga/resource.cfg` 
-
 ```
 # Default monitoring plugins
 $USER1$=/usr/lib/monitoring-plugins
@@ -174,7 +173,7 @@ If you get 503 'Access denied' errors, check in these configuration files to see
 
 ```
 
-in sections _<Directory "/usr/local/icinga-web/lib/ext3/">_ and _<Directory "/usr/local/icinga-web/pub/">_.
+in sections *<Directory "/usr/local/icinga-web/lib/ext3/">* and *<Directory "/usr/local/icinga-web/pub/">*.
 
 #### Configure PHP
 

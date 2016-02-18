@@ -1,4 +1,4 @@
-[PrBoom](http://prboom.sourceforge.net/) is a cross-platform version of the classic 3D first person shooter [Doom](https://en.wikipedia.org/wiki/Doom_(video_game) "wikipedia:Doom (video game)") from id Software. Originally written for Microsoft Windows, PrBoom has since been ported to Linux and many other platforms. It offers a number of enhancements over the original game, including OpenGL rendering and high video resolutions, while attempting to remain true to the original Doom in terms of play. You will need the original Doom data, unless you install the FreeDoom package (see below).
+[PrBoom](http://prboom.sourceforge.net/) is a cross-platform version of the classic 3D first person shooter [Doom](https://en.wikipedia.org/wiki/Doom_(video_game) from id Software. Originally written for Microsoft Windows, PrBoom has since been ported to Linux and many other platforms. It offers a number of enhancements over the original game, including OpenGL rendering and high video resolutions, while attempting to remain true to the original Doom in terms of play. You will need the original Doom data, unless you install the FreeDoom package (see below).
 
 ## Contents
 

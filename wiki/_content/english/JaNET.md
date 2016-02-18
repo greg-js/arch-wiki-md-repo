@@ -42,7 +42,6 @@ $ wget [http://sourceforge.net/projects/project-janet/files/Binaries/Bin.tar.gz]
 Create a launcher for jaNET now:
 
  `/usr/local/bin/janet` 
-
 ```
 #!/bin/sh
 mono /usr/share/janet/jaNET.exe "$@"
@@ -83,11 +82,11 @@ $ echo "Hello world." | festival --tts
 
 ### Simon configuration
 
-Open Simon program and go to _Settings > Configure Simon > Model Settings_ and choose _Static Model_ and load the HMM definition, Tiedlist, Macros and Stats. Those models can be found [here](https://sourceforge.net/projects/project-janet/files/Essentials/HTK_AcousticModel-2010-10-10_16kHz_16bit_MFCC_O_D.tar.bz2).
+Open Simon program and go to *Settings > Configure Simon > Model Settings* and choose *Static Model* and load the HMM definition, Tiedlist, Macros and Stats. Those models can be found [here](https://sourceforge.net/projects/project-janet/files/Essentials/HTK_AcousticModel-2010-10-10_16kHz_16bit_MFCC_O_D.tar.bz2).
 
 Then go to Vocabulary and import a Shadow Vocabulary using dictionary type HTK Lexicon and import the VoxForgeDict from the HTK Accoustic Model we previously downloaded.
 
-We also need jaNET scenarios, so in Simon go to _Manage Scenarios > Import/Download_ search for jaNET and _Install_. Then click Commands tab and select _Program > Janet > Edit_ and change jaNET's path with `/usr/local/bin/janet`.
+We also need jaNET scenarios, so in Simon go to *Manage Scenarios > Import/Download* search for jaNET and *Install*. Then click Commands tab and select *Program > Janet > Edit* and change jaNET's path with `/usr/local/bin/janet`.
 
 **Note:** You should perhaps change also the gnome-terminal string since you may not have it installed, to use a terminal installed (e.g. `xterm -e`).
 
@@ -99,7 +98,7 @@ The main file used to configure jaNET is `/usr/share/janet/AppConfig.xml`.
 
 #### Configuring alerts
 
-In {{ic|AppConfig.xml in the Settings Sub-Tree: _Settings > Alerts_ sets the email, and sms alerts that jaNET will send.
+In {{ic|AppConfig.xml in the Settings Sub-Tree: *Settings > Alerts* sets the email, and sms alerts that jaNET will send.
 
 #### Configuring Bluetooth device
 
@@ -110,11 +109,11 @@ $ hcitool scan
 
 ```
 
-In `AppConfig.xml` in the _Settings_ sub-tree:
+In `AppConfig.xml` in the *Settings* sub-tree:
 
-*   _Settings > Bluetooth_: Change the id to match your bluetooth device MAC address.
-*   _Settings > Bluetooth > name_: Change this to your bluetooth device. E.g. "Samsung 1234".
-*   _Settings > Bluetooth > macAddr_: Change this to match your bluetooth device MAC address.
+*   *Settings > Bluetooth*: Change the id to match your bluetooth device MAC address.
+*   *Settings > Bluetooth > name*: Change this to your bluetooth device. E.g. "Samsung 1234".
+*   *Settings > Bluetooth > macAddr*: Change this to match your bluetooth device MAC address.
 
 You can also change the behavior when you enter and exit the area in the found and lost sections.
 
@@ -122,7 +121,7 @@ You can also change the behavior when you enter and exit the area in the found a
 
 #### Configuring weather updates
 
-In `AppConfig.xml` in the _Settings_ sub-tree:
+In `AppConfig.xml` in the *Settings* sub-tree:
 
 ```
 Settings > Other > YahooForecastFeed
@@ -160,7 +159,7 @@ Next we need to create the script for jaNET to use. Create `/usr/share/janet/arc
 echo "$(pacman -Qu 
 ```
 
-Now all we need to do is add the new InstructionSets so that we can use this with jaNET! Edit your _AppConfig.xml_ and add the following within the Instructions Sub-Tree.
+Now all we need to do is add the new InstructionSets so that we can use this with jaNET! Edit your *AppConfig.xml* and add the following within the Instructions Sub-Tree.
 
 ```
 <InstructionSet id="*archupdates">bash /usr/share/janet/scripts/archlinux_updates.sh</InstructionSet>

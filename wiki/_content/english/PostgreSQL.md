@@ -26,9 +26,9 @@ This document describes how to set up PostgreSQL. It also describes how to confi
 
 ## Installing PostgreSQL
 
-[Install](/index.php/Install "Install") the [postgresql](https://www.archlinux.org/packages/?name=postgresql) package. Then [set a password](/index.php/Users_and_groups#Other_examples_of_user_management "Users and groups") for the newly created _postgres_ user.
+[Install](/index.php/Install "Install") the [postgresql](https://www.archlinux.org/packages/?name=postgresql) package. Then [set a password](/index.php/Users_and_groups#Other_examples_of_user_management "Users and groups") for the newly created *postgres* user.
 
-Then, switch to the default PostgreSQL user _postgres_ by executing the following command:
+Then, switch to the default PostgreSQL user *postgres* by executing the following command:
 
 *   If you have [sudo](https://www.archlinux.org/packages/?name=sudo) and your username is in `sudoers`:
 
@@ -53,11 +53,11 @@ Before PostgreSQL can function correctly, the database cluster must be initializ
 
 Where:
 
-*   the _--locale_ is the one defined in the file `/etc/locale.conf`;
-*   the _-E_ is the default encoding of the database that will be created in the future;
-*   and _-D_ is the default location where the database cluster must be stored.
+*   the *--locale* is the one defined in the file `/etc/locale.conf`;
+*   the *-E* is the default encoding of the database that will be created in the future;
+*   and *-D* is the default location where the database cluster must be stored.
 
-A bunch of lines should now appear on the screen with several ending by _... ok_:
+A bunch of lines should now appear on the screen with several ending by *... ok*:
 
 ```
 The files belonging to this database system will be owned by user "postgres".
@@ -96,7 +96,7 @@ Become the postgres user. Add a new database user using the [createuser](http://
 
 ```
 
-Create a new database over which the above user has read/write privileges using the [createdb](http://www.postgresql.org/docs/current/static/app-createdb.html) command (execute this command from your login shell if the database user has the same name as your Linux user, otherwise add `-U _database-username_` to the following command):
+Create a new database over which the above user has read/write privileges using the [createdb](http://www.postgresql.org/docs/current/static/app-createdb.html) command (execute this command from your login shell if the database user has the same name as your Linux user, otherwise add `-U *database-username*` to the following command):
 
 ```
 $ createdb myDatabaseName
@@ -174,7 +174,7 @@ Host-based authentication is configured in `/var/lib/postgres/data/pg_hba.conf`.
 
 ```
 # IPv4 local connections:
-host   all   all   _my_remote_client_ip_address_/32   md5
+host   all   all   *my_remote_client_ip_address*/32   md5
 
 ```
 
@@ -215,21 +215,21 @@ Become the postgres user, and initialize the new cluster:
 If enabled, disable `postgresql.service`. Copy `/usr/lib/systemd/system/postgresql.service` to `/etc/systemd/system/postgresql.service` and edit it to change the default `PGROOT` and `PIDFile` paths.
 
 ```
-Environment=PGROOT=_/pathto/pgroot/_
+Environment=PGROOT=*/pathto/pgroot/*
 ...
-PIDFile=_/pathto/pgroot/_data/postmaster.pid
+PIDFile=*/pathto/pgroot/*data/postmaster.pid
 
 ```
 
 Alternatively, the variables can be overridden by a custom configuration, as described in [Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd"):
 
-1.  create the directory _/etc/systemd/system/postgresql.service.d_
-2.  create a file _start.conf_:
+1.  create the directory */etc/systemd/system/postgresql.service.d*
+2.  create a file *start.conf*:
 
 ```
 [Service]
-Environment=PGROOT=_/pathto/pgroot/_
-PIDFile=_/pathto/pgroot/_data/postmaster.pid
+Environment=PGROOT=*/pathto/pgroot/*
+PIDFile=*/pathto/pgroot/*data/postmaster.pid
 
 ```
 

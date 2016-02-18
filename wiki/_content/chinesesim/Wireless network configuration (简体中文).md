@@ -84,7 +84,6 @@ Udev 不是完美的，有些内核模块需要[手动安装](/index.php/Kernel_
 根据设备是 PCI 还是 USB 连接，执行 `lspci -k` 或 `lsusb -v` 检查设备驱动是否已经加载：
 
  `$ lspci -k` 
-
 ```
 06:00.0 Network controller: Intel Corporation WiFi Link 5100
 	Subsystem: Intel Corporation WiFi Link 5100 AGN
@@ -111,7 +110,6 @@ Udev 不是完美的，有些内核模块需要[手动安装](/index.php/Kernel_
 检查内核中的固件信息：
 
  `$ dmesg | grep firmware` 
-
 ```
 [   7.148259] iwlwifi 0000:02:00.0: loaded firmware version 39.30.4.1 build 35138 op_mode iwldvm
 
@@ -120,7 +118,6 @@ Udev 不是完美的，有些内核模块需要[手动安装](/index.php/Kernel_
 如果没有类似的输出，先执行命令，例如`iwlwifi`，然后查找对应的错误信息：
 
  `$ dmesg | grep iwlwifi` 
-
 ```
 [   12.342694] iwlwifi 0000:02:00.0: irq 44 for MSI/MSI-X
 [   12.353466] iwlwifi 0000:02:00.0: loaded firmware version 39.31.5.1 build 35138 op_mode iwldvm
@@ -188,17 +185,17 @@ WPA 或 WPA2 PSK 加密 | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%
 
 **Note:**
 
-*   示例中使用网络接口 `wlan0` 和热点 `_your_essid_`.
+*   示例中使用网络接口 `wlan0` 和热点 `*your_essid*`.
 *   大部分命令需要以 [root 权限](/index.php/Users_and_groups "Users and groups")执行，否则会无输出就退出。
 
-| _iw_ 命令 | _wireless_tools_ 命令 | 描述 |
+| *iw* 命令 | *wireless_tools* 命令 | 描述 |
 | iw dev wlan0 link | iwconfig wlan0 | 获取连接状态 |
 | iw dev wlan0 scan | iwlist wlan0 scan | 扫描可用热点 |
-| iw dev wlan0 set type ibss | iwconfig wlan0 mode ad-hoc | 设置操作模式为 _ad-hoc_. |
-| iw dev wlan0 connect _your_essid_ | iwconfig wlan0 essid _your_essid_ | 连接到开放网络 |
-| iw dev wlan0 connect _your_essid_ 2432 | iwconfig wlan0 essid _your_essid_ freq 2432M | 连接到开放网络的一个频道 |
-| iw dev wlan0 connect _your_essid_ key 0:_your_key_ | iwconfig wlan0 essid _your_essid_ key _your_key_ | 用16进制加密密码访问 WEP 加密网络 |
-| iw dev wlan0 connect _your_essid_ key 0:_your_key_ | iwconfig wlan0 essid _your_essid_ key s:_your_key_ | 用 ASCII 密码访问 WEP 加密网络. |
+| iw dev wlan0 set type ibss | iwconfig wlan0 mode ad-hoc | 设置操作模式为 *ad-hoc*. |
+| iw dev wlan0 connect *your_essid* | iwconfig wlan0 essid *your_essid* | 连接到开放网络 |
+| iw dev wlan0 connect *your_essid* 2432 | iwconfig wlan0 essid *your_essid* freq 2432M | 连接到开放网络的一个频道 |
+| iw dev wlan0 connect *your_essid* key 0:*your_key* | iwconfig wlan0 essid *your_essid* key *your_key* | 用16进制加密密码访问 WEP 加密网络 |
+| iw dev wlan0 connect *your_essid* key 0:*your_key* | iwconfig wlan0 essid *your_essid* key s:*your_key* | 用 ASCII 密码访问 WEP 加密网络. |
 | iw dev wlan0 set power_save on | iwconfig wlan0 power on | 启用省电模式 |
 
 **注意:** 根据硬件和加密设备的不同，有些步骤可以跳过。一些网卡需要在关联到热点前先激活或扫描热点，需要一些实验才能确定。WPA/WPA2 用户可以按照[#关联](#.E5.85.B3.E8.81.94)中的步骤激活网络。
@@ -210,7 +207,6 @@ WPA 或 WPA2 PSK 加密 | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%
 *   获取接口名:
 
  `$ iw dev` 
-
 ```
 phy#0
 	Interface **wlan0**
@@ -225,7 +221,6 @@ phy#0
 *   检查连接状态，未连接时，可以看到：
 
  `$ iw dev wlan0 link` 
-
 ```
 Not connected.
 
@@ -234,7 +229,6 @@ Not connected.
 连接到 AP 后可以看到：
 
  `$ iw dev wlan0 link` 
-
 ```
 Connected to 12:34:56:78:9a:bc (on wlan0)
 	SSID: MyESSID
@@ -253,7 +247,6 @@ Connected to 12:34:56:78:9a:bc (on wlan0)
 *   获取统计数据:
 
  `$ iw dev wlan0 station dump` 
-
 ```
 Station 12:34:56:78:9a:bc (on wlan0)
 	inactive time:	1450 ms
@@ -289,7 +282,6 @@ Station 12:34:56:78:9a:bc (on wlan0)
 要验证接口确实打开：
 
  `# ip link show wlan0` 
-
 ```
 3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state DOWN mode DORMANT group default qlen 1000
     link/ether 12:34:56:78:9a:bc brd ff:ff:ff:ff:ff:ff
@@ -317,7 +309,7 @@ The important points to check:
     *   In the `RSN` and `WPA` blocks you may find the following information:
         *   **Group cipher:** value in TKIP, CCMP, both, others.
         *   **Pairwise ciphers:** value in TKIP, CCMP, both, others. Not necessarily the same value than Group cipher.
-        *   **Authentication suites:** value in PSK, 802.1x, others. For home router, you'll usually find PSK (_i.e._ passphrase). In universities, you are more likely to find 802.1x suite which requires login and password. Then you will need to know which key management is in use (e.g. EAP), and what encapsulation it uses (e.g. PEAP). Find more details at [Wikipedia:Authentication protocol](https://en.wikipedia.org/wiki/Authentication_protocol "wikipedia:Authentication protocol") and the sub-articles.
+        *   **Authentication suites:** value in PSK, 802.1x, others. For home router, you'll usually find PSK (*i.e.* passphrase). In universities, you are more likely to find 802.1x suite which requires login and password. Then you will need to know which key management is in use (e.g. EAP), and what encapsulation it uses (e.g. PEAP). Find more details at [Wikipedia:Authentication protocol](https://en.wikipedia.org/wiki/Authentication_protocol "wikipedia:Authentication protocol") and the sub-articles.
     *   If you do not see neither `RSN` nor `WPA` blocks but there is `Privacy`, then WEP is used.
 
 #### 操作模式
@@ -349,21 +341,21 @@ The important points to check:
 使用十六进制或 ASCII 密码(格式是自动识别出来的，因为 WEP 密码长度是固定的):
 
 ```
-# iw dev wlan0 connect _your_essid_ key 0:_your_key_
+# iw dev wlan0 connect *your_essid* key 0:*your_key*
 
 ```
 
 使用十六进制或 ASCII 密码，第三个是默认 (从0计数，共四个):
 
 ```
-# iw dev wlan0 connect _your_essid_ key d:2:_your_key_
+# iw dev wlan0 connect *your_essid* key d:2:*your_key*
 
 ```
 
 *   **WPA/WPA2**
 
 ```
-# wpa_supplicant -i interface -c <(wpa_passphrase _your_SSID_ _your_key_)
+# wpa_supplicant -i interface -c <(wpa_passphrase *your_SSID* *your_key*)
 
 ```
 
@@ -402,7 +394,7 @@ The important points to check:
 
 ```
 
-**Tip:** [dhcpcd](/index.php/Dhcpcd "Dhcpcd") contains a hook (enabled by default) to automatically launch [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") on wireless interfaces. It is started only if a configuration file at `/etc/wpa_supplicant/wpa_supplicant.conf` exists and no _wpa_supplicant_ process is listening on that interface. In most cases, you do not need to create any [custom service](#Manual_wireless_connection_at_boot_using_systemd_and_dhcpcd), just enable `dhcpcd@_interface_`.
+**Tip:** [dhcpcd](/index.php/Dhcpcd "Dhcpcd") contains a hook (enabled by default) to automatically launch [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") on wireless interfaces. It is started only if a configuration file at `/etc/wpa_supplicant/wpa_supplicant.conf` exists and no *wpa_supplicant* process is listening on that interface. In most cases, you do not need to create any [custom service](#Manual_wireless_connection_at_boot_using_systemd_and_dhcpcd), just enable `dhcpcd@*interface*`.
 
 #### Custom startup scripts/services
 
@@ -417,7 +409,6 @@ This example uses [systemd](/index.php/Systemd "Systemd") for start up, [WPA sup
 Create a systemd unit, e.g `/etc/systemd/system/network-wireless@.service`:
 
  `/etc/systemd/system/network-wireless@.service` 
-
 ```
 [Unit]
 Description=Wireless network connectivity (%i)
@@ -453,10 +444,9 @@ Start and/or enable the unit as described in [systemd#Using units](/index.php/Sy
 
 **Note:** Make sure that [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) is installed and create a custom `/etc/wpa_supplicant/wpa_supplicant.conf`. See [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") for details.
 
-First create configuration file for the [systemd](/index.php/Systemd "Systemd") service, replace `_interface_` with proper interface name:
+First create configuration file for the [systemd](/index.php/Systemd "Systemd") service, replace `*interface*` with proper interface name:
 
- `/etc/conf.d/network-wireless@_interface_` 
-
+ `/etc/conf.d/network-wireless@*interface*` 
 ```
 address=192.168.0.10
 netmask=24
@@ -468,7 +458,6 @@ gateway=192.168.0.1
 Create a systemd unit file:
 
  `/etc/systemd/system/network-wireless@.service` 
-
 ```
 [Unit]
 Description=Wireless network connectivity (%i)
@@ -524,7 +513,7 @@ See: [Connman](/index.php/Connman "Connman")
 
 #### Netctl
 
-_netctl_ is a replacement for _netcfg_ designed to work with systemd. It uses a profile based setup and is capable of detection and connection to a wide range of network types. This is no harder than using graphical tools.
+*netctl* is a replacement for *netcfg* designed to work with systemd. It uses a profile based setup and is capable of detection and connection to a wide range of network types. This is no harder than using graphical tools.
 
 See: [Netctl](/index.php/Netctl "Netctl")
 
@@ -560,10 +549,9 @@ This section contains general troubleshooting tips, not strictly related to prob
 
 ### Rfkill caveat
 
-Many laptops have a hardware button (or switch) to turn off wireless card, however, the card can also be blocked by kernel. This can be handled by [rfkill](https://www.archlinux.org/packages/?name=rfkill). Use _rfkill_ to show the current status:
+Many laptops have a hardware button (or switch) to turn off wireless card, however, the card can also be blocked by kernel. This can be handled by [rfkill](https://www.archlinux.org/packages/?name=rfkill). Use *rfkill* to show the current status:
 
  `# rfkill list` 
-
 ```
 0: phy0: Wireless LAN
 	Soft blocked: yes
@@ -571,14 +559,14 @@ Many laptops have a hardware button (or switch) to turn off wireless card, howev
 
 ```
 
-If the card is _hard-blocked_, use the hardware button (switch) to unblock it. If the card is not _hard-blocked_ but _soft-blocked_, use the following command:
+If the card is *hard-blocked*, use the hardware button (switch) to unblock it. If the card is not *hard-blocked* but *soft-blocked*, use the following command:
 
 ```
 # rfkill unblock wifi
 
 ```
 
-**Note:** It is possible that the card will go from _hard-blocked_ and _soft-unblocked_ state into _hard-unblocked_ and _soft-blocked_ state by pressing the hardware button (i.e. the _soft-blocked_ bit is just switched no matter what). This can be adjusted by tuning some options of the `rfkill` [kernel module](/index.php/Kernel_modules "Kernel modules").
+**Note:** It is possible that the card will go from *hard-blocked* and *soft-unblocked* state into *hard-unblocked* and *soft-blocked* state by pressing the hardware button (i.e. the *soft-blocked* bit is just switched no matter what). This can be adjusted by tuning some options of the `rfkill` [kernel module](/index.php/Kernel_modules "Kernel modules").
 
 More info: [http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill)
 
@@ -670,7 +658,7 @@ The individual tools used in this article further provide options for more detai
 
 ### Failed to get IP address
 
-*   If getting an IP address repeatedly fails using the default [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) client, try installing and using [dhclient](https://www.archlinux.org/packages/?name=dhclient) instead. Do not forget to select _dhclient_ as the primary DHCP client in your [connection manager](#Automatic_setup)!
+*   If getting an IP address repeatedly fails using the default [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) client, try installing and using [dhclient](https://www.archlinux.org/packages/?name=dhclient) instead. Do not forget to select *dhclient* as the primary DHCP client in your [connection manager](#Automatic_setup)!
 
 *   If you can get an IP address for a wired interface and not for a wireless interface, try disabling the wireless card's power saving features:
 
@@ -679,7 +667,7 @@ The individual tools used in this article further provide options for more detai
 
 ```
 
-*   If you get a timeout error due to a _waiting for carrier_ problem, then you might have to set the channel mode to `auto` for the specific device:
+*   If you get a timeout error due to a *waiting for carrier* problem, then you might have to set the channel mode to `auto` for the specific device:
 
 ```
 # iwconfig wlan0 channel auto
@@ -766,7 +754,7 @@ On some laptop models with hardware rfkill switches (e.g., Thinkpad X200 series)
 
 ## Troubleshooting drivers and firmware
 
-This section covers methods and procedures for installing kernel modules and _firmware_ for specific chipsets, that differ from generic method.
+This section covers methods and procedures for installing kernel modules and *firmware* for specific chipsets, that differ from generic method.
 
 See [Kernel modules](/index.php/Kernel_modules "Kernel modules") for general informations on operations with modules.
 
@@ -980,7 +968,6 @@ You can also try to blacklist the module asus_nb_wmi (tested with ASUSPRO P550C)
 If you have problems connecting to networks in general or your link quality is very poor, try to disable 802.11n and enable software encryption:
 
  `/etc/modprobe.d/iwlwifi.conf` 
-
 ```
 options iwlwifi 11n_disable=1
 options iwlwifi swcrypto=1
@@ -997,7 +984,6 @@ In case this does not work for you, you may try disabling power saving for your 
 默认设置中 LED 闪烁是开着的，有些人不喜欢，可以[systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd")禁止闪烁：
 
  `/etc/tmpfiles.d/phy0-led.conf` 
-
 ```
 w /sys/class/leds/phy0-led/trigger - - - - phy0radio
 

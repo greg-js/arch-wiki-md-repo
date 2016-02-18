@@ -56,7 +56,6 @@ The IBM X41 comes with a "ipw2915" wireless Centrino (A, B and G) or ipw2200 wir
 The following file can be added for trackpoint scrolling support in X.
 
  `/etc/X11/xorg.conf.d/10-trackpoint.conf` 
-
 ```
 
 Section "InputClass"

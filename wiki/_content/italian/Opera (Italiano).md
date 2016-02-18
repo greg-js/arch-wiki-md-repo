@@ -43,11 +43,11 @@ Per installare l'ultima versione di Opera:
 
 Se si possiede al tempo dell'installazione di Opera il pacchetto ttf-ms-fonts il browser userà questi font e potrebbe sembrare brutto. Per far usare ad Opera ed ovviare a questo problema si consiglia di rimuovere il pacchetto ttf-ms-fonts prima dell'installazione.
 
-Notare anche tutti i font sono configurabili dal menu _Strumenti -> Preferenze -> Avanzate -> Fonts_
+Notare anche tutti i font sono configurabili dal menu *Strumenti -> Preferenze -> Avanzate -> Fonts*
 
 ### Ulteiori modifiche
 
-*   Per rimuovere la tray icon, avviare Opera con l'opzione _--notrayicon_.
+*   Per rimuovere la tray icon, avviare Opera con l'opzione *--notrayicon*.
 *   Per renedere il menu carino: [polymer](https://aur.archlinux.org/packages/polymer/).
 
 Dopo avviare **qtconfig** (sarà allocato in /opt/qt/bin) e impostare il tema polymer per le applicazioni Qt.
@@ -80,7 +80,7 @@ Creare un symlink (da root):
 
 Questo dovrebbe risolvere il problema.
 
-*   Se a volte si hanno problemi di rendering, tipo una linea di pixel duplicata, spuntare l'opzione "Scorrimento uniforme" (_Strumenti -> Preferenze -> Avanzate -> Navigazione -> Scorrimento uniforme'_).
+*   Se a volte si hanno problemi di rendering, tipo una linea di pixel duplicata, spuntare l'opzione "Scorrimento uniforme" (*Strumenti -> Preferenze -> Avanzate -> Navigazione -> Scorrimento uniforme'*).
 
 ### Aggiustare menù brutti
 

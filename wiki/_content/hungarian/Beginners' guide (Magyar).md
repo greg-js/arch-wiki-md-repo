@@ -96,7 +96,7 @@ Mielőtt belevágnánk, kérlek tekintsd meg a leggyakrabban feltett kérdéseke
 **Az Arch Linux Disztribúció Alapelvei:**
 
 *   [Egyszerű](/index.php/The_Arch_Way "The Arch Way") tervezés és filozófia
-*   [Minden csomag](https://www.archlinux.org/packages/?q=) elérhető [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "wikipedia:P6 (microarchitecture)") és [x86_64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64") architektúrákra
+*   [Minden csomag](https://www.archlinux.org/packages/?q=) elérhető [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) és [x86_64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64") architektúrákra
 *   A [Rolling release](https://en.wikipedia.org/wiki/Rolling_release "wikipedia:Rolling release") modell lehetővé teszi a rendszer egyszeri installálása utáni folyamatos frissítését a legújabb stabil csomagokra. Így nincs szükség időközi disztribúciófrissítésre, hiszen a rendszer frissen tartása folyamatosan történik.
 *   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") egy egyszerű és dinamikus [initramfs](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd") készítő
 *   A [Pacman](/index.php/Pacman "Pacman") [csomagkezelő](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager") könnyed, gyors, és kevés memóriát fogyaszt
@@ -109,23 +109,23 @@ Az Arch Linux, a pacman, a dokumentáció, és a szkriptek © 2002-2007 Judd Vin
 
 ### Az Arch filozófia
 
-_**Az Arch mögött álló tervezési elvek lényege az [egyszerűség](/index.php/The_Arch_Way_(Magyar) "The Arch Way (Magyar)").**_
+***Az Arch mögött álló tervezési elvek lényege az [egyszerűség](/index.php/The_Arch_Way_(Magyar) "The Arch Way (Magyar)").***
 
 'Egyszerű', ebben az összefüggésben azt jelenti, hogy 'felesleges kiegészítések, módosítások, vagy komplikációk' nélkül. Röviden, egy elegáns, minimalista megközelítést takar.
 
 **Néhány idézet ezen egyszerűség könnyebb megértésére :**
 
-*   _"Az egyszerűség technikai, nem pedig a könnyed használhatóság szempontjából értendő. Jobb egy hosszabb tanulási folyamat során nagyobb technikai tudásra szert tenni, mint tudatlanul, de könnyű kezelhetőség mellett technikailag butának maradni ." -Aaron Griffin_
-*   _Entia non sunt multiplicanda praeter necessitatem_ vagy "Entities should not be multiplied unnecessarily." -Occam's razor. A _razor_ kifejezés arra utal, hogy söpörjünk félre minden szükségtelen bonyolítást azért, hogy a legegyszerűbb magyarázathoz, módszerhez eljuthassunk.
-*   _"A módszerem rendkívüli része annak egyszerűségében rejlik. A nagy művek mindig az egyszerűségből születnek."_ - _Bruce Lee_
+*   *"Az egyszerűség technikai, nem pedig a könnyed használhatóság szempontjából értendő. Jobb egy hosszabb tanulási folyamat során nagyobb technikai tudásra szert tenni, mint tudatlanul, de könnyű kezelhetőség mellett technikailag butának maradni ." -Aaron Griffin*
+*   *Entia non sunt multiplicanda praeter necessitatem* vagy "Entities should not be multiplied unnecessarily." -Occam's razor. A *razor* kifejezés arra utal, hogy söpörjünk félre minden szükségtelen bonyolítást azért, hogy a legegyszerűbb magyarázathoz, módszerhez eljuthassunk.
+*   *"A módszerem rendkívüli része annak egyszerűségében rejlik. A nagy művek mindig az egyszerűségből születnek."* - *Bruce Lee*
 
 ### Az útmutatóról
 
 Az [Arch telepítő szkriptek](https://github.com/falconindy/arch-install-scripts) az Arch Linux telepítését megkönnyítő szkripteket jelentik. Ez az útmutató összefoglalóan bemutatja az alaprendszer telepítését ezen szkriptek használatával.
 
-Ez a közösség által karbantartott [Arch wiki](/index.php/Main_Page_(Magyar) "Main Page (Magyar)") remek forrás és először itt érdemes tanácsot kérni a felmerülő kérdésekre. Az [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") csatorna ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) az [angol fórum](https://bbs.archlinux.org/) és a [magyar fórum](http://archlinux.hu/forum) ugyan csak elérhető, ha a válasz máshol nem található. Ezek mellett olvasgasd a `man` oldalakat minden olyan paranccsal kapcsolatban, amelyek még ismeretlenek számodra; ezt legkönnyebben a terminálba beírva a következő módon teheted meg: `man _parancs_`.
+Ez a közösség által karbantartott [Arch wiki](/index.php/Main_Page_(Magyar) "Main Page (Magyar)") remek forrás és először itt érdemes tanácsot kérni a felmerülő kérdésekre. Az [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") csatorna ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) az [angol fórum](https://bbs.archlinux.org/) és a [magyar fórum](http://archlinux.hu/forum) ugyan csak elérhető, ha a válasz máshol nem található. Ezek mellett olvasgasd a `man` oldalakat minden olyan paranccsal kapcsolatban, amelyek még ismeretlenek számodra; ezt legkönnyebben a terminálba beírva a következő módon teheted meg: `man *parancs*`.
 
-**Megjegyzés:** Az útmutató követése közel létfontosságú a jól konfigurált Arch Linux sikeres telepítéséhez, tehát _kérlek_ olvasd át alaposan. Erősen ajánlott minden egyes részt végigolvasása <u>mielőtt</u> bármilyen feladatba kezdenél.
+**Megjegyzés:** Az útmutató követése közel létfontosságú a jól konfigurált Arch Linux sikeres telepítéséhez, tehát *kérlek* olvasd át alaposan. Erősen ajánlott minden egyes részt végigolvasása <u>mielőtt</u> bármilyen feladatba kezdenél.
 
 Az útmutató öt fő részre osztható fel:
 
@@ -157,7 +157,7 @@ Az md5sum ellenőrző hasonlóan működik.
 
 Írd ki a .iso fájlt egy CD-re vagy DVD-re a számodra megfelelő meghajtóval és szoftverrel, majd [indítsd el az Arch Linux telepítőt](#Arch_Linux_telep.C3.ADt.C5.91_bootol.C3.A1sa) róla.
 
-**Megjegyzés:** Az író és a korong minősége változó lehet. Lassú sebességen történő írás ajánlott a biztos eredményhez; Egyesek _**4x-es, vagy akár 2x-es írási sebességet**_ ajánlanak. Ha rendellenes viselkedést tapasztalsz, akkor próbáld meg a lehető leglassabb sebességgel írni.
+**Megjegyzés:** Az író és a korong minősége változó lehet. Lassú sebességen történő írás ajánlott a biztos eredményhez; Egyesek ***4x-es, vagy akár 2x-es írási sebességet*** ajánlanak. Ha rendellenes viselkedést tapasztalsz, akkor próbáld meg a lehető leglassabb sebességgel írni.
 
 #### Memóriakártyáról vagy pendrive-ról történő telepítés
 
@@ -236,7 +236,7 @@ ami (amennyiben működik) nem fogja letiltani a kernelmód beállításokat.
 
 További információért olvasd el az [Intel](/index.php/Intel_(Magyar) "Intel (Magyar)") bejegyzést.
 
-Ha a képernyő _nem_ nem válik feketévé a bootolás során, de megakad, amikor a kernelt próbálja betölteni, nyomj `Tab` billentyűt, hogy szerkeszd a kernel sort, majd írd bele a következőt:
+Ha a képernyő *nem* nem válik feketévé a bootolás során, de megakad, amikor a kernelt próbálja betölteni, nyomj `Tab` billentyűt, hogy szerkeszd a kernel sort, majd írd bele a következőt:
 
 ```
 acpi=off
@@ -253,9 +253,9 @@ Ha nem amerikai kiosztású billentyűzeted van, akkor a következő paranccsal 
 
 vagy használd a loadkeys parancsot:
 
- `# loadkeys _layout_` 
+ `# loadkeys *layout*` 
 
-ahol _layout_ a billentyűzeted kiosztása, mint például `fr` vagy `be-latin1`
+ahol *layout* a billentyűzeted kiosztása, mint például `fr` vagy `be-latin1`
 
 #### Dokumentáció
 
@@ -269,8 +269,7 @@ Válts vissza tty1-re az `Alt+F1` billentyűzetekkel, hogy folytasd a telepíté
 
 ## Telepítés
 
-**Megjegyzés:** Ha az Internetet HTTP és/vagy FTP proxy-n keresztül éred el _és_ DHCP-t használsz a hálózati interfész (felület) konfigurálásához, lehet, hogy be kell állítanod a `http_proxy` és/vagy az `ftp_proxy` környezeti változót a shellben, mielőtt a `/arch/setup`-t futtatnád, az alábbiak szerint:
-
+**Megjegyzés:** Ha az Internetet HTTP és/vagy FTP proxy-n keresztül éred el *és* DHCP-t használsz a hálózati interfész (felület) konfigurálásához, lehet, hogy be kell állítanod a `http_proxy` és/vagy az `ftp_proxy` környezeti változót a shellben, mielőtt a `/arch/setup`-t futtatnád, az alábbiak szerint:
 ```
 export http_proxy=http://<http_proxy_címe>:<proxy_port>
 export ftp_proxy=ftp://<ftp_proxy_címe>:<proxy_port>
@@ -286,7 +285,7 @@ Ezután az ún. Arch Linux Installation Framework képernyőjét kell(ene) látn
 
 Az üdvözlőképernyő után meg kell adnod a telepítési forrást.
 
-A "_Select Source_" (forrás kiválasztása) párbeszédablak megkér, hogy válaszd ki azokat a [csomagtárolókat](/index.php/Official_repositories "Official repositories"), amelyeket engedélyezni szeretnél.
+A "*Select Source*" (forrás kiválasztása) párbeszédablak megkér, hogy válaszd ki azokat a [csomagtárolókat](/index.php/Official_repositories "Official repositories"), amelyeket engedélyezni szeretnél.
 
 	Core
 
@@ -312,13 +311,13 @@ Egy megadott listából viszont választhatsz további FTP és/vagy HTTP tükör
 
 Ha a **core-local** és a **remote** (távoli) csomagtárolókat választottad, akkor most dönthetsz arról is, hogy csak azok a csomagok legyenek letöltve a távoli szerverről, amelyek helyileg nem elérhetőek, illetve legyen minden csomag letöltve.
 
-A következő képernyőn a hálózati beállítás elkezdéséhez válaszd a _"Yes"_-t. Lehet, hogy kapsz egy kiírást arról, hogy az ethernet drivert manuálisan kell betöltened. Az UDev egy hasznos eszköz a megfelelő modulok betöltésére, és nagy valószínűséggel már automatikusan betöltötte neked. A működést leellenőrizheted az `Alt+F3` megnyomása után az `ip addr` parancsot beütve. Ez után visszaléphetsz a tty1-re az `Alt+F1` megnyomásával.
+A következő képernyőn a hálózati beállítás elkezdéséhez válaszd a *"Yes"*-t. Lehet, hogy kapsz egy kiírást arról, hogy az ethernet drivert manuálisan kell betöltened. Az UDev egy hasznos eszköz a megfelelő modulok betöltésére, és nagy valószínűséggel már automatikusan betöltötte neked. A működést leellenőrizheted az `Alt+F3` megnyomása után az `ip addr` parancsot beütve. Ez után visszaléphetsz a tty1-re az `Alt+F1` megnyomásával.
 
 Meg fognak jelenni az elérhető hálózati interfészek. Ha egy interfész és a hozzá tartozó HWaddr (**H**ard**W**are **addr**ess) (fizikai cím) látható, akkor a hálózati modul már sikeresen be lett töltve. Ha nem látszik a listában a hálózati interfészed, akkor megpróbálhatod a telepítővel megkerestetni, vagy manuálisan be kell töltened egy másik virtuális konzolon. A folytatáshoz válaszd ki a hálózati eszközt.
 
-A telepítő ez után meg fogja kérdezni, hogy akarod-e DHCP-vel konfigurálni a hálózati eszközödet. _"Yes"_ válasz esetén lefut a `dhcpcd` program, amely elvégzi az automatikus címkiosztást számodra. _"No"_ válasz esetén manuálisan kell beállítanod a statikus IP címet _(IP address)_, maszkot _(netmask)_, szórási címet (_broadcast_, opcionális), alapértelmezett átjárót _(gateway)_, DNS szervert, HTTP proxyt (opcionális), FTP proxyt (opcionális).
+A telepítő ez után meg fogja kérdezni, hogy akarod-e DHCP-vel konfigurálni a hálózati eszközödet. *"Yes"* válasz esetén lefut a `dhcpcd` program, amely elvégzi az automatikus címkiosztást számodra. *"No"* válasz esetén manuálisan kell beállítanod a statikus IP címet *(IP address)*, maszkot *(netmask)*, szórási címet (*broadcast*, opcionális), alapértelmezett átjárót *(gateway)*, DNS szervert, HTTP proxyt (opcionális), FTP proxyt (opcionális).
 
-Ez után visszakerülsz a főmenübe _(Main Menu)_.
+Ez után visszakerülsz a főmenübe *(Main Menu)*.
 
 ##### ADSL bridging beállítása (opcionális)
 
@@ -359,7 +358,6 @@ vagy, USB eszköz esetén:
 *   Győződj meg arról, hogy az UDev betöltötte-e a drivert, és hogy létrejött-e használható vezeték nélküli kernel interfész: `/usr/sbin/iwconfig` :
 
  `# iwconfig` 
-
 ```
  lo no wireless extensions.
  eth0 no wireless extensions.
@@ -397,7 +395,6 @@ Ha nem látható ilyen üzenet, akkor a chipsetnek nincs szüksége firmware-re.
 *   Ha az ESSID-t elfelejtetted, vagy ismeretlen akkor használd a `iwlist <interface> scan` parancsot az elérhető hálózatok megjelenítéséhez. Példa:
 
  `# iwlist wlan0 scan` 
-
 ```
 Cell 01 - Address: 04:25:10:6B:7F:9D
                     Channel:2
@@ -455,7 +452,6 @@ A kimenet meg kell jelenjen, hogy sikeresen csatlakoztál a kívánt hálózatho
 *   Végül próbáld ki, hogy működik-e a kapcsolat: `/bin/ping`:
 
  `# ping -c 3 www.google.com` 
-
 ```
 PING www.l.google.com (74.125.224.146) 56(84) bytes of data.
 64 bytes from 74.125.224.146: icmp_req=1 ttl=49 time=87.7 ms
@@ -492,7 +488,7 @@ Válaszd a "hardware clock mode"-ot! Ha ez nem egyezik a többi operációs rend
 
 *   **localtime** (nem ajánlott) - A Windows alapértelmezett beállítása. Ha az idő "localtime"-ra van állítva, akkor a Linux nem fogja elvégezni a téli-nyári időszámítás szerinti automatikus óraátállítást.
 
-**Figyelem:** A _localtime_ használata számos ismert hibához vezethet, és sajnos tervben sincs, hogy ezen hibák javításra kerüljenek.
+**Figyelem:** A *localtime* használata számos ismert hibához vezethet, és sajnos tervben sincs, hogy ezen hibák javításra kerüljenek.
 
 **Megjegyzés:** Minden egyéb érték a hardver órát érintetlenül hagyja.(Virtualizációhoz hasznos lehet).
 
@@ -502,7 +498,7 @@ Ha az Arch Linux-ot Windows rendszerrel együtt szeretnéd használni, két lehe
 
 *   Ajánlott: Állíts be UTC-t Arch Linuxban és Windows-ban is. (ehhez Windows-ban egy gyors registry változtatás szükséges. A részletekért nézd meg [ezt az oldalt](https://help.ubuntu.com/community/UbuntuTime#Make_Windows_use_UTC)). Ezek mellett kapcsold ki Windows-ban az idő automatikus internetes szinkronizációját, mert ez a hardver órát "localtime"-ra változtatja. Ha internetes időszinkronizációt szeretnél használni, akkor használd inkább az [ntpd](/index.php/Ntpd "Ntpd")-t az Arch Linux rendszereden.
 
-*   Nem ajánlott: Állítsd az Arch Linux-ot _localtime_ -ra és később a [rendszer beállításánál](#Rendszer_be.C3.A1ll.C3.ADt.C3.A1sa) töröld a `hwclock`-ot a `/etc/rc.conf`-ban található `DAEMONS` sorból. (Windows will take care of hardware clock corrections).
+*   Nem ajánlott: Állítsd az Arch Linux-ot *localtime* -ra és később a [rendszer beállításánál](#Rendszer_be.C3.A1ll.C3.ADt.C3.A1sa) töröld a `hwclock`-ot a `/etc/rc.conf`-ban található `DAEMONS` sorból. (Windows will take care of hardware clock corrections).
 
 ### A merevlemez előkészítése
 
@@ -574,7 +570,7 @@ A következő csatolási pontokat lehetőség van különböző partíciókon ha
 
 	`/` (root)
 
-	A root (gyökér) könyvtár a hierarchia csúcsán helyezkedik el. Ezen a ponton van csatolva az elsődleges fájlrendszer és ebből származik az összes többi fájlrendszer. Minden fájl és könyvtár megjelenik a gyökérkönyvtár _`/`_ alatt, még akkor is ha különböző fizikai lemezen helyezkednek el. A gyökér fájlrendszer tartalmának megfelelőnek kell lennie bootra, helyreállításra, helyrehozásra, és/vagy a rendszer kijavítására. Ezen oknál fogva bizonyos könyvtárak a _`/`_ alatt nem helyezhetőek el külön partíción. Nézd meg a [figyelmeztetést lejjebb](#root-figyelmeztetes).
+	A root (gyökér) könyvtár a hierarchia csúcsán helyezkedik el. Ezen a ponton van csatolva az elsődleges fájlrendszer és ebből származik az összes többi fájlrendszer. Minden fájl és könyvtár megjelenik a gyökérkönyvtár *`/`* alatt, még akkor is ha különböző fizikai lemezen helyezkednek el. A gyökér fájlrendszer tartalmának megfelelőnek kell lennie bootra, helyreállításra, helyrehozásra, és/vagy a rendszer kijavítására. Ezen oknál fogva bizonyos könyvtárak a *`/`* alatt nem helyezhetőek el külön partíción. Nézd meg a [figyelmeztetést lejjebb](#root-figyelmeztetes).
 **Megjegyzés:** A `/usr` külön partícióként való használata alapértelmezésként nem támogatott [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1006924#p1006924). Ha minden áron külön partíción szeretnéd elhelyezni, akkor olvasd el a [mkinitcpio#/usr as a separate partition](/index.php/Mkinitcpio#.2Fusr_as_a_separate_partition "Mkinitcpio") cikket.
 
 	`/boot`
@@ -588,11 +584,11 @@ A következő csatolási pontokat lehetőség van különböző partíciókon ha
 
 	`/tmp`
 
-	Könyvtár azon programok számára, amelyek futásuk során átmeneti fájlokat hoznak létre, úgy mint a _`.lck`_ , ami arra használandó, hogy megakadályozza hogy egy bizonyos program egy fájlból több átmeneti példányt hozzon létre egy bizonyos feladat elvégzése előtt. A feladat elvégeztével a _`.lck`_ fájl automatikusan eltávolításra kerül. A programok nem várják el, hogy bármilyen fájlnak vagy könyvtárnak szükségszerűen a _`/tmp`_ -ben kell elhelyezkednie. A _`/tmp`_ -ben megtalálható fájlok és könyvtárak a rendszerindításkor mindig törlődnek.
+	Könyvtár azon programok számára, amelyek futásuk során átmeneti fájlokat hoznak létre, úgy mint a *`.lck`* , ami arra használandó, hogy megakadályozza hogy egy bizonyos program egy fájlból több átmeneti példányt hozzon létre egy bizonyos feladat elvégzése előtt. A feladat elvégeztével a *`.lck`* fájl automatikusan eltávolításra kerül. A programok nem várják el, hogy bármilyen fájlnak vagy könyvtárnak szükségszerűen a *`/tmp`* -ben kell elhelyezkednie. A *`/tmp`* -ben megtalálható fájlok és könyvtárak a rendszerindításkor mindig törlődnek.
 
 	`/var`
 
-	Különféle változó fájlokat, könyvtárakat, adminisztrációs és napló fájlokat, a [pacman](/index.php/Pacman "Pacman")-nel letöltött csomagokat, az [ABS](/index.php/Arch_Build_System "Arch Build System") által létrehozott fastruktúrát és egyéb változó fájlokat tartalmaz. Lehetőség van a _`/usr`_ csak olvashatóként történő csatolására. Minden ami korábban a _`/usr`_ -be íródott a rendszer működése alatt (a telepítéssel és szoftver karbantartással ellentétben) a _`/var`_-ban kell elhelyezkednie.
+	Különféle változó fájlokat, könyvtárakat, adminisztrációs és napló fájlokat, a [pacman](/index.php/Pacman "Pacman")-nel letöltött csomagokat, az [ABS](/index.php/Arch_Build_System "Arch Build System") által létrehozott fastruktúrát és egyéb változó fájlokat tartalmaz. Lehetőség van a *`/usr`* csak olvashatóként történő csatolására. Minden ami korábban a *`/usr`* -be íródott a rendszer működése alatt (a telepítéssel és szoftver karbantartással ellentétben) a *`/var`*-ban kell elhelyezkednie.
 
 **Megjegyzés:** A `/var` sok kis fájlt tartalmaz. A fájlrendszer típus megválasztásakor gondoljuk át, hogy biztos szükségünk van-e számára különálló partícióra.
 
@@ -635,7 +631,7 @@ Az egyes partíciókon több különböző fájlrendszer közül választhatunk.
 1.  Az [ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2") **Second Extended Filesystem** (második kiterjesztett fájlrendszer) egy erős alapokon álló kiforrott, nagyon stabil GNU/Linux fájlrendszer. A hátránya viszont, hogy nem rendelkezik naplózó (journaling) támogatással (lásd lejjebb) és a fájlrendszer korlátozás kezelésével. A naplózás hiánya viszont rendszerösszeomlás vagy áramkimaradás esetén adatvesztéshez vezethet. Továbbá kényelmetlen lehet a használata root (`/`) és `/home` partíciókként hiszen a fájlrendszer ellenőrzések hosszú ideig is eltarthatnak. Az ext2 fájlrendszert lehetőség van átkonvertálni ext3-mas fájlrendszerré.
 2.  Az [ext3](https://en.wikipedia.org/wiki/ext3 "wikipedia:ext3") **Third Extended Filesystem** (harmadik kiterjesztett fájlrendszer) lényegében egy ext2 fájlrendszer kiegészítve a naplózás és a fájlrendszer korlátok írásának képességével. Visszafelé kompatiblis az ext2-vel, jól tesztelt és nagyon stabil.
 3.  Az [ext4](https://en.wikipedia.org/wiki/ext4 "wikipedia:ext4") **Fourth Extended Filesystem** (negyedik kiterjeszett partíció) egy még újabb fájlrendszer, ami szintúgy visszafelé kompatiblis az ext2 és ext3-mal. Támogatást nyújt nagyobb kötetek kezelésére egészen 1 EXAbájt méretig (1,048,576 Terabájt), valamint 16 Terabájtos fájlméretig. Az ext3-nál élő 32,000 alkönyvtár limitet megnöveli 64,000-re. Ezek mellett támogatja az online töredezettség-mentesítést, azaz nem muszáj a fájlrendszert lecsatolni töredezettség-mentesítsés alatt.
-4.  A [JFS](https://en.wikipedia.org/wiki/JFS_(file_system) "wikipedia:JFS (file system)") **Journaled File System** (naplózó fájlrendszer) az IBM által fejlesztett legelső fájlrendszer, amely képes volt a naplózásra. Több éves IBM AIX® operációs rendszeren való tesztelés/fejlesztés előzte meg a GNU/Linux-ra történő bevezetést. A JFS a legkevésbé processzor erőforrás igényes bármely GNU/Linux fájlrendszert tekintve. A formázás, csatolások és fájlrendszer ellenőrzések (fsck), nagyon gyorsan elvégezhetőek rajta. A JFS nagyon jó általános teljesítményt nyújt különösen a határidős I/O ütemezéssel kapcsolatban. A ReiserFS és az ext szériákhoz képest a JFS kevésbé támogatott, de egy kiforott és stabil fájlrendszer.
+4.  A [JFS](https://en.wikipedia.org/wiki/JFS_(file_system) **Journaled File System** (naplózó fájlrendszer) az IBM által fejlesztett legelső fájlrendszer, amely képes volt a naplózásra. Több éves IBM AIX® operációs rendszeren való tesztelés/fejlesztés előzte meg a GNU/Linux-ra történő bevezetést. A JFS a legkevésbé processzor erőforrás igényes bármely GNU/Linux fájlrendszert tekintve. A formázás, csatolások és fájlrendszer ellenőrzések (fsck), nagyon gyorsan elvégezhetőek rajta. A JFS nagyon jó általános teljesítményt nyújt különösen a határidős I/O ütemezéssel kapcsolatban. A ReiserFS és az ext szériákhoz képest a JFS kevésbé támogatott, de egy kiforott és stabil fájlrendszer.
     **Megjegyzés:** A JFS fájlrendszert nem lehet összezsugorítani partíciókezelő programokkal, úgy mint a **gparted** vagy **parted magic**.
 
 5.  Az [XFS](https://en.wikipedia.org/wiki/XFS "wikipedia:XFS") egy másik korai naplózó fájlrendszer, amit még eredetileg Silicon Graphics fejlesztett az IRIX operációs rendszerre, majd később bevezették a GNU/Linux-ra is. Jó teljesítményt nyújt nagy fájlok és fájlrendszerek esetében, valamint gyorsan formázható és csatolható. Összehasonlító tesztek alapján az állapítható meg, hogy sok kis fájl kezelése esetén lassabban működik. Az XFS is egy kiforott, online töredezettség-mentesítést is támogató fájlrendszer.
@@ -719,8 +715,8 @@ Válassz a csomagkategóriák közül:
 
 **Megjegyzés:** Az egyszerűség kedvéért alapértelmezésként a [base](https://www.archlinux.org/groups/x86_64/base/) csoport összes csomagja ki van jelölve. Használd a "space" billentyűt a csomagok kijelöléséhez, illetve a kijelölés elvetéséhez.
 
-*   [base](https://www.archlinux.org/groups/x86_64/base/): Szoftvercsomagok a [core] csomagtárolóból a minimális rendszerkörnyezet telepítéséhez. Mindig válaszd ki ezt, és ne távolíts el semmilyen csomagot belőle, mert az Arch Linux összes csomagja feltételezi a _base_ meglétét.
-*   [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/): Extra programok a [core]-ból, úgy mint a `make` és `automake`. A legtöbb kezdőnek is ajánlott feltelepíteni, hiszen valószínűleg szükségük lesz rá új szoftverek telepítése végett. A _base-devel_ csoport telepítése szükséges, az [Arch közösségi tárolóból](/index.php/Arch_User_Repository "Arch User Repository") való programok telepítéséhez.
+*   [base](https://www.archlinux.org/groups/x86_64/base/): Szoftvercsomagok a [core] csomagtárolóból a minimális rendszerkörnyezet telepítéséhez. Mindig válaszd ki ezt, és ne távolíts el semmilyen csomagot belőle, mert az Arch Linux összes csomagja feltételezi a *base* meglétét.
+*   [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/): Extra programok a [core]-ból, úgy mint a `make` és `automake`. A legtöbb kezdőnek is ajánlott feltelepíteni, hiszen valószínűleg szükségük lesz rá új szoftverek telepítése végett. A *base-devel* csoport telepítése szükséges, az [Arch közösségi tárolóból](/index.php/Arch_User_Repository "Arch User Repository") való programok telepítéséhez.
 
 A kategória-választás után az elérhető csomagok listája tárul eléd, amelyekből kiválaszthatod a számodra szükséges programokat. Használd a "space" billentyűt a csomagok kijelöléséhez illetve a kijelölés elvetéséhez. Ha nem tudod most eldönteni, hogy milyen csomagokra van szükséged, akkor kihagyhatod ezt a lépést, és majd később feltelepítheted őket a [pacman](/index.php/Pacman "Pacman") használatával.
 
@@ -730,7 +726,7 @@ A kívánt csomagok kiválasztása után továbbléphetsz a következő pontra a
 
 ### Csomagok telepítése
 
-Az _Install Packages_ telepíteni fogja a kiválasztott csomagokat a rendszeredre. Ha a helyi csomagtárolót választottadl, akkor azok a CD/USB-ről fognak települni. Ha viszont távolit, akkor a jelenlegi legújabb csomagverziók fognak letöltődni, majd települni a [pacman](/index.php/Pacman "Pacman") által.
+Az *Install Packages* telepíteni fogja a kiválasztott csomagokat a rendszeredre. Ha a helyi csomagtárolót választottadl, akkor azok a CD/USB-ről fognak települni. Ha viszont távolit, akkor a jelenlegi legújabb csomagverziók fognak letöltődni, majd települni a [pacman](/index.php/Pacman "Pacman") által.
 
 **Megjegyzés:** Néhány telepítésnél előfordulhat, hogy megjelenik egy kérdés azzal kapcsolatban, hogy meg akarod-e tartani a pacman által letöltött csomagokat, amelyek a `/var/cache/pacman/pkg`-ban találhatóak meg. Ha a "yes"-t választod, akkor lehetőséged lesz arra, hogy hiba esetén egy régebbi csomagverziót újra tudj telepíteni. További információkat ennek menetéről a [downgrade](/index.php/Downgrade "Downgrade") leírásban olvashatsz. Ha a lemezen elegendő hely áll a rendelkezésedre, akkor ajánlott a régebbi csomagverziók megtartása. Ez a csomagtár-méret idővel a rendszer folyamatos frissítése miatt növekedni fog, de a csomagok bármikor törölhetőek a [pacman](/index.php/Pacman "Pacman") segítségével.
 
@@ -840,7 +836,7 @@ HOSTNAME="arch"
 
 	netmask
 
-	Opcionális, alapértelmezett _255.255.255.0_. Ha egyéni hálózati maszkot szeretnél használni, akkor itt add meg. **Hagyd ezt a részt üresen DHCP használata esetén!**
+	Opcionális, alapértelmezett *255.255.255.0*. Ha egyéni hálózati maszkot szeretnél használni, akkor itt add meg. **Hagyd ezt a részt üresen DHCP használata esetén!**
 
 	broadcast
 
@@ -856,7 +852,7 @@ HOSTNAME="arch"
 
 	NETWORKS
 
-	Ez az opcionális beállítás csak akkor szükséges, ha a [netcfg](/index.php/Netcfg "Netcfg") csomagot az opcionális _dialog_ csomaggal együtt használjuk. A rendszer betöltésnél netcfg profilokat lehet beállítani. Ez akkor hasznos, ha bővített hálózati funkciókra van szükséged, például több különböző hálózati beállítás szüksége esetén (laptop használók).
+	Ez az opcionális beállítás csak akkor szükséges, ha a [netcfg](/index.php/Netcfg "Netcfg") csomagot az opcionális *dialog* csomaggal együtt használjuk. A rendszer betöltésnél netcfg profilokat lehet beállítani. Ez akkor hasznos, ha bővített hálózati funkciókra van szükséged, például több különböző hálózati beállítás szüksége esetén (laptop használók).
 
 **Példa statikus IP beállításra:**
 
@@ -909,7 +905,7 @@ DAEMONS=(network @syslog-ng netfs @crond)
 
 A [daemons](/index.php/Daemons "Daemons") sor elemeit nem szükséges most módosítani, de jó tudni, mik azok a "démonok" ugyanis később még említésre kerülnek ebben az útmutatóban.
 
-A [daemon](https://en.wikipedia.org/wiki/Daemon_(computing) "wikipedia:Daemon (computing)") az egy háttérben futó program, ami valamilyen esemény bekövetkeztére vár, illetve egyéb szolgáltatásokat kínál. Egy jó példa erra a webszerver démona, (pl.: `httpd`), amely a weboldalak betöltési kérelmét teljesíti, vagy például egy SSH szerver démona, ami egy felhasználó beléptetésére vár (pl.: `sshd`). Ezek mellett egyéb funkciókat elvégző démonok is léteznek, amelyek például rendszerüzeneteket írnak egy naplófájlba (pl.: `syslog`, `metalog`), vagy olyanok, amelyek a grafikus bejelentkezést szolgáltatják (pl.: `gdm`, `kdm`). Mindezen démonok hozzáadhatóak a listához, és rendszerindítással együtt el fognak indulni. A hasznos démonokról az útmutató későbbi részében lesz szó.
+A [daemon](https://en.wikipedia.org/wiki/Daemon_(computing) az egy háttérben futó program, ami valamilyen esemény bekövetkeztére vár, illetve egyéb szolgáltatásokat kínál. Egy jó példa erra a webszerver démona, (pl.: `httpd`), amely a weboldalak betöltési kérelmét teljesíti, vagy például egy SSH szerver démona, ami egy felhasználó beléptetésére vár (pl.: `sshd`). Ezek mellett egyéb funkciókat elvégző démonok is léteznek, amelyek például rendszerüzeneteket írnak egy naplófájlba (pl.: `syslog`, `metalog`), vagy olyanok, amelyek a grafikus bejelentkezést szolgáltatják (pl.: `gdm`, `kdm`). Mindezen démonok hozzáadhatóak a listához, és rendszerindítással együtt el fognak indulni. A hasznos démonokról az útmutató későbbi részében lesz szó.
 
 **Tip:** Az összes Arch démon szkript a `/etc/rc.d/` könyvtárban található meg.
 
@@ -934,7 +930,7 @@ UUID=95783956-c4c6-4fe7-9de6-1883a92c2cc8  /home     ext4    defaults           
 	<file system>
 
 	Describes the block device or remote filesystem to be mounted. For regular mounts, this field will contain a link to a block device node (as created by mknod which is called by udev at boot) for the device to be mounted; for instance, `/dev/cdrom` or `/dev/sda1`.
-**Note:** If your system has more than one hard drive, the installer will default to using UUID rather than the sd_x_ naming scheme, for consistent device mapping. **[Utilizing UUID](/index.php/Persistent_block_device_naming "Persistent block device naming") has several advantages and may also be preferred to avoid issues if hard disks are added to the system in the future.** Due to active developments in the kernel and also udev, the ordering in which drivers for storage controllers are loaded may change randomly, yielding an unbootable system/kernel panic. Nearly every motherboard has several controllers (onboard SATA, onboard IDE), and due to the aforementioned development updates, `/dev/sda` may become `/dev/sdb` on the next reboot. For more information, see [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
+**Note:** If your system has more than one hard drive, the installer will default to using UUID rather than the sd*x* naming scheme, for consistent device mapping. **[Utilizing UUID](/index.php/Persistent_block_device_naming "Persistent block device naming") has several advantages and may also be preferred to avoid issues if hard disks are added to the system in the future.** Due to active developments in the kernel and also udev, the ordering in which drivers for storage controllers are loaded may change randomly, yielding an unbootable system/kernel panic. Nearly every motherboard has several controllers (onboard SATA, onboard IDE), and due to the aforementioned development updates, `/dev/sda` may become `/dev/sdb` on the next reboot. For more information, see [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
 
 	<dir>
 
@@ -950,7 +946,7 @@ UUID=95783956-c4c6-4fe7-9de6-1883a92c2cc8  /home     ext4    defaults           
 
 	<dump>
 
-	Used by the `dump(8)` command to determine which filesystems are to be dumped. dump is a backup utility. If the fifth field is not present, a value of zero is returned and dump will assume that the filesystem does not need to be backed up. _Note that dump is not installed by default._
+	Used by the `dump(8)` command to determine which filesystems are to be dumped. dump is a backup utility. If the fifth field is not present, a value of zero is returned and dump will assume that the filesystem does not need to be backed up. *Note that dump is not installed by default.*
 
 	<pass>
 
@@ -991,7 +987,7 @@ This file can be used to set special configuration options for the kernel module
 
 **Note:** If you are using DHCP, you may safely ignore this file, as by default, it will be dynamically created and destroyed by the dhcpcd daemon. You may change this default behavior if you wish. See the [network](/index.php/Network#For_DHCP_IP "Network") and [resolv.conf](/index.php/Resolv.conf "Resolv.conf") pages for more information.
 
-The _resolver_ is a set of routines in the C library that provide access to the Internet Domain Name System (DNS). One of the main functions of DNS is to translate domain names into IP addresses, to make the Web a friendlier place. The resolver configuration file, or `/etc/resolv.conf`, contains information that is read by the resolver routines the first time they are invoked by a process.
+The *resolver* is a set of routines in the C library that provide access to the Internet Domain Name System (DNS). One of the main functions of DNS is to translate domain names into IP addresses, to make the Web a friendlier place. The resolver configuration file, or `/etc/resolv.conf`, contains information that is read by the resolver routines the first time they are invoked by a process.
 
 If you use a static IP, set your DNS servers in `/etc/resolv.conf` (nameserver <ip-address>). You may have as many as you wish.
 
@@ -1021,7 +1017,7 @@ This file associates IP addresses with hostnames and aliases. Each host is repre
 
 ```
 
-Add your _hostname_, coinciding with the one specified in `/etc/rc.conf`, as an alias, so that it looks like this:
+Add your *hostname*, coinciding with the one specified in `/etc/rc.conf`, as an alias, so that it looks like this:
 
 ```
 127.0.0.1   localhost.localdomain   localhost **yourhostname**
@@ -1029,12 +1025,10 @@ Add your _hostname_, coinciding with the one specified in `/etc/rc.conf`, as an 
 ```
 
 **Warning:** This format, **including the "localhost" and your actual host name**, is required for program compatibility! So, if you have named your computer "arch", then that line above should look like this:
-
 ```
 127.0.0.1   localhost.localdomain   localhost arch
 
 ```
-
 Errors in this entry may cause poor network performance and/or certain programs to open very slowly, or not work at all. This is a very common error for beginners.
 
 **Note:** Recent versions of the Arch Linux Installer automatically add your hostname to this file once you edit `/etc/rc.conf` with such information. If, for whatever reason, this is not the case, you may add it yourself with the given instructions.
@@ -1047,13 +1041,11 @@ If you use a static IP, add another line using the syntax: <static-IP> <hostname
 ```
 
 **Tip:** For convenience, you may also use `/etc/hosts` aliases for hosts on your network, and/or on the Web, e.g.:
-
 ```
 192.168.1.90 media
 192.168.1.88 data
 
 ```
-
 The above example would allow you access a media and data server on your network by name and without the need for typing out their respective IP addresses.
 
 #### /etc/locale.gen
@@ -1114,14 +1106,14 @@ The provided **GRUB** configuration (`/boot/grub/menu.lst`) should be sufficient
 
 	root
 
-	**GRUB'**s root; the drive and partition where the kernel (`/boot`) resides, according to system BIOS. (More accurately, where GRUB's stage2 file resides). **NOT necessarily the root (/) file system**, as they can reside on separate partitions. GRUB's numbering scheme starts at 0, and uses an hd_x,x_ format regardless of IDE or SATA, and enclosed within parentheses. The example indicates that `/boot` is on the first partition of the first drive, according to the BIOS, so (hd0,0).
+	**GRUB'**s root; the drive and partition where the kernel (`/boot`) resides, according to system BIOS. (More accurately, where GRUB's stage2 file resides). **NOT necessarily the root (/) file system**, as they can reside on separate partitions. GRUB's numbering scheme starts at 0, and uses an hd*x,x* format regardless of IDE or SATA, and enclosed within parentheses. The example indicates that `/boot` is on the first partition of the first drive, according to the BIOS, so (hd0,0).
 
 	kernel
 
 	This line specifies:
 
-*   The path and filename of the kernel _**relative to GRUB's root**_. In the example, `/boot` is merely a directory residing on the same partition as `/` and **vmlinuz-linux** is the kernel filename; `/boot/vmlinuz-linux`. If `/boot` were on a separate partition, the path and filename would be simply `/vmlinuz-linux`, being relative to **GRUB'**s root.
-*   The `root=` argument to the kernel statement specifies the partition containing the root (`/`) directory in the booted system, (more accurately, the partition containing `/sbin/init`). An easy way to distinguish the 2 appearances of "root" in `/boot/grub/menu.lst` is to remember that the first root statement _informs GRUB where the kernel resides_, whereas the second `root=` kernel argument _tells the kernel where the root filesystem (`/`) resides_.
+*   The path and filename of the kernel ***relative to GRUB's root***. In the example, `/boot` is merely a directory residing on the same partition as `/` and **vmlinuz-linux** is the kernel filename; `/boot/vmlinuz-linux`. If `/boot` were on a separate partition, the path and filename would be simply `/vmlinuz-linux`, being relative to **GRUB'**s root.
+*   The `root=` argument to the kernel statement specifies the partition containing the root (`/`) directory in the booted system, (more accurately, the partition containing `/sbin/init`). An easy way to distinguish the 2 appearances of "root" in `/boot/grub/menu.lst` is to remember that the first root statement *informs GRUB where the kernel resides*, whereas the second `root=` kernel argument *tells the kernel where the root filesystem (`/`) resides*.
 *   Kernel options: In our example, **ro** mounts the filesystem as read-only during startup, which is usually a safe default; you may wish to change this in case it causes problems booting. **quiet** sets the default kernel log level so that all messages during boot are suppressed except serious ones. Depending on hardware, **rootdelay=8** may need to be added to the kernel options in order to be able to boot from an external usb hard drive.
 
 	initrd
@@ -1321,7 +1313,6 @@ Az **[Arch User Repository](/index.php/Arch_User_Repository "Arch User Repositor
 Meghatározza a pacman csomagtároló tűkroket és a prioritásokat.
 
 **Megjegyzés:** Ha a telepítő médiumod régi, akkor a tűkörlistád (mirrorlist) elavult lehet, ami problémákhoz vezethet az Arch Linux frissítésénél pacman-el, (lásd a hibalistát [bug report](https://bugs.archlinux.org/task/22510)). Ezért fontos, hogy beszerezd a legfrissebb tűkörlistát (mirrorlist) erről a weboldalról [the pacman mirror list generator page](https://www.archlinux.org/mirrorlist/). Másold az újonnan létrehozott listát az `/etc/pacman.d/mirrorlist` fájlba a folytatáshoz.
-
 Nyisd meg a `/etc/pacman.d/mirrorlist` fájlt egy szövegszerkesztővel és távolítsd el a # karakert attól a szervertől amelyik legközelebb található hozzád. Ezt követően add ki a teljes csomaglista frissítéséhez a parancsot: `# pacman -Syy` .
 
 Leütve két `--refresh` vagy `-y` kényszerítjük a pacman-t, hogy frissítse az egész csomaglistát, még akkor is ha azok naprakésznek minősülnek.
@@ -1336,7 +1327,7 @@ Használjuk a következő parancsot, hogy teljesen frissítsük az adatbázist, 
 
  `# pacman -Syyu curl` 
 
-*   _Ha ebben a lépésben hibát kapunk használjuk a `nano /etc/pacman.d/mirrorlist` parancsot és tegyük aktívvá (távolítsuk el a # karaktert) a hozzánk illő szervert._
+*   *Ha ebben a lépésben hibát kapunk használjuk a `nano /etc/pacman.d/mirrorlist` parancsot és tegyük aktívvá (távolítsuk el a # karaktert) a hozzánk illő szervert.*
 
 `cd` a `/etc/pacman.d/` könyvárhoz:
 

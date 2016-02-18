@@ -2,7 +2,7 @@ Secure Shell (SSH) is a network protocol that allows data to be exchanged over a
 
 SSH is typically used to log into a remote machine and execute commands, but it also supports tunneling, forwarding arbitrary TCP ports and X11 connections; file transfer can be accomplished using the associated SFTP or SCP protocols.
 
-An SSH server, by default, listens on the standard TCP port 22\. An SSH client program is typically used for establishing connections to an _sshd_ daemon accepting remote connections. Both are commonly present on most modern operating systems, including Mac OS X, GNU/Linux, Solaris and OpenVMS. Proprietary, freeware and open source versions of various levels of complexity and completeness exist.
+An SSH server, by default, listens on the standard TCP port 22\. An SSH client program is typically used for establishing connections to an *sshd* daemon accepting remote connections. Both are commonly present on most modern operating systems, including Mac OS X, GNU/Linux, Solaris and OpenVMS. Proprietary, freeware and open source versions of various levels of complexity and completeness exist.
 
 ## Contents
 
@@ -148,14 +148,13 @@ It is also recommended to disable password logins entirely. This will greatly in
 [openssh](https://www.archlinux.org/packages/?name=openssh) comes with two kinds of [systemd](/index.php/Systemd "Systemd") service files:
 
 1.  `sshd.service`, which will keep the SSH daemon permanently active and fork for each incoming connection.[[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh#n16) It is especially suitable for systems with a large amount of SSH traffic.[[2]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh&id=4cadf5dff444e4b7265f8918652f4e6dff733812#n15)
-2.  `sshd.socket` + `sshd@.service`, which spawn on-demand instances of the SSH daemon per connection. Using it implies that _systemd_ listens on the SSH socket and will only start the daemon process for an incoming connection. It is the recommended way to run `sshd` in almost all cases.[[3]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh&id=4cadf5dff444e4b7265f8918652f4e6dff733812#n18)[[4]](http://lists.freedesktop.org/archives/systemd-devel/2011-January/001107.html)[[5]](http://0pointer.de/blog/projects/inetd.html)
+2.  `sshd.socket` + `sshd@.service`, which spawn on-demand instances of the SSH daemon per connection. Using it implies that *systemd* listens on the SSH socket and will only start the daemon process for an incoming connection. It is the recommended way to run `sshd` in almost all cases.[[3]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh&id=4cadf5dff444e4b7265f8918652f4e6dff733812#n18)[[4]](http://lists.freedesktop.org/archives/systemd-devel/2011-January/001107.html)[[5]](http://0pointer.de/blog/projects/inetd.html)
 
 You can [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") either `sshd.service` **or** `sshd.socket` to begin using the daemon.
 
 If using the socket service, you will need to [edit](/index.php/Systemd#Editing_provided_units "Systemd") the unit file if you want it to listen on a port other than the default 22:
 
  `# systemctl edit sshd.socket` 
-
 ```
 [Socket]
 ListenStream=
@@ -163,7 +162,7 @@ ListenStream=12345
 
 ```
 
-**Warning:** Using `sshd.socket` negates the `ListenAddress` setting, so it will allow connections over any address. To achieve the effect of setting `ListenAddress`, you must specify the port _and_ IP for `ListenStream` (e.g. `ListenStream=192.168.1.100:22`). You must also add `FreeBind=true` under `[Socket]` or else setting the IP address will have the same drawback as setting `ListenAddress`: the socket will fail to start if the network is not up in time.
+**Warning:** Using `sshd.socket` negates the `ListenAddress` setting, so it will allow connections over any address. To achieve the effect of setting `ListenAddress`, you must specify the port *and* IP for `ListenStream` (e.g. `ListenStream=192.168.1.100:22`). You must also add `FreeBind=true` under `[Socket]` or else setting the IP address will have the same drawback as setting `ListenAddress`: the socket will fail to start if the network is not up in time.
 
 **Tip:** When using socket activation neither `sshd.socket` nor the daemon's regular `sshd.service` allow to monitor connection attempts in the log, but executing `# journalctl /usr/bin/sshd` does.
 
@@ -197,7 +196,6 @@ See [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator
 To use PAM with OpenSSH, edit the following files:
 
  `/etc/ssh/sshd_config` 
-
 ```
 ChallengeResponseAuthentication yes
 AuthenticationMethods publickey keyboard-interactive:pam
@@ -209,7 +207,6 @@ Then you can log in with either a publickey **or** the user authentication as re
 If, on the other hand, you want to authenticate the user on both a publickey **and** the user authentication as required by your PAM setup, use a comma instead of a space to separate the AuthenticationMethods:
 
  `/etc/ssh/sshd_config` 
-
 ```
 ChallengeResponseAuthentication yes
 AuthenticationMethods publickey,keyboard-interactive:pam
@@ -287,7 +284,6 @@ Sudo selectively provides root rights for actions requiring these without requir
 SSH can be configured to deny remote logins with the root user by editing the "Authentication" section in `/etc/ssh/sshd_config`. Simply change `#PermitRootLogin yes` to `no` and uncomment the line:
 
  `/etc/ssh/sshd_config` 
-
 ```
 PermitRootLogin no
 ...
@@ -346,7 +342,7 @@ Apart from OpenSSH, there are many SSH [clients](https://en.wikipedia.org/wiki/C
 
 ### Dropbear
 
-[Dropbear](https://en.wikipedia.org/wiki/Dropbear_(software) "wikipedia:Dropbear (software)") is a SSH-2 client and server. [dropbear](https://www.archlinux.org/packages/?name=dropbear) is available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Dropbear](https://en.wikipedia.org/wiki/Dropbear_(software) is a SSH-2 client and server. [dropbear](https://www.archlinux.org/packages/?name=dropbear) is available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 The command-line ssh client is named dbclient.
 
@@ -373,11 +369,11 @@ This is highly useful for laptop users connected to various unsafe wireless conn
 You only have to execute this single command to start the connection:
 
 ```
-$ ssh -TND 4711 _user_@_host_
+$ ssh -TND 4711 *user*@*host*
 
 ```
 
-where `_user_` is your username at the SSH server running at the `_host_`. It will ask for your password, and then you are connected! The `N` flag disables the interactive prompt, and the `D` flag specifies the local port on which to listen on (you can choose any port number if you want). The `T` flag disables pseudo-tty allocation.
+where `*user*` is your username at the SSH server running at the `*host*`. It will ask for your password, and then you are connected! The `N` flag disables the interactive prompt, and the `D` flag specifies the local port on which to listen on (you can choose any port number if you want). The `T` flag disables pseudo-tty allocation.
 
 It is nice to add the verbose (`-v`) flag, because then you can verify that it is actually connected from that output.
 
@@ -385,8 +381,8 @@ It is nice to add the verbose (`-v`) flag, because then you can verify that it i
 
 The above step is completely useless if you do not configure your web browser (or other programs) to use this newly created socks tunnel. Since the current version of SSH supports both SOCKS4 and SOCKS5, you can use either of them.
 
-*   For Firefox: _Edit > Preferences > Advanced > Network > Connection > Setting_:
-    Check the _Manual proxy configuration_ radio button, and enter `localhost` in the _SOCKS host_ text field, and then enter your port number in the next text field (`4711` in the example above).
+*   For Firefox: *Edit > Preferences > Advanced > Network > Connection > Setting*:
+    Check the *Manual proxy configuration* radio button, and enter `localhost` in the *SOCKS host* text field, and then enter your port number in the next text field (`4711` in the example above).
 
 Firefox does not automatically make DNS requests through the socks tunnel. This potential privacy concern can be mitigated by the following steps:
 
@@ -430,7 +426,7 @@ Enjoy your secure tunnel!
 
 ### X11 forwarding
 
-X11 forwarding is a mechanism that allows graphical interfaces of X11 programs running on a remote system to be displayed on a local client machine. For X11 forwarding the remote host does not need to have a full X11 system installed, however it needs at least to have _xauth_ installed. _xauth_ is a utility that maintains `Xauthority` configurations used by server and client for authentication of X11 session ([source](http://xmodulo.com/2012/11/how-to-enable-x11-forwarding-using-ssh.html)).
+X11 forwarding is a mechanism that allows graphical interfaces of X11 programs running on a remote system to be displayed on a local client machine. For X11 forwarding the remote host does not need to have a full X11 system installed, however it needs at least to have *xauth* installed. *xauth* is a utility that maintains `Xauthority` configurations used by server and client for authentication of X11 session ([source](http://xmodulo.com/2012/11/how-to-enable-x11-forwarding-using-ssh.html)).
 
 **Warning:** X11 forwarding has important security implications which should be at least acknowledged by reading relevant sections of `ssh`, `sshd_config` and `ssh_config` manual pages. See also [a short writeup](https://security.stackexchange.com/questions/14815/security-concerns-with-x11-forwarding)
 
@@ -440,27 +436,26 @@ On the remote system:
 
 *   [install](/index.php/Pacman#Installing_specific_packages "Pacman") [xorg-xauth](https://www.archlinux.org/packages/?name=xorg-xauth) and [xorg-xhost](https://www.archlinux.org/packages/?name=xorg-xhost) from the [official repositories](/index.php/Official_repositories "Official repositories")
 *   in `/etc/ssh/ssh**d**_config`:
-    *   verify that `AllowTcpForwarding` and `X11UseLocalhost` options are set to _yes_, and that `X11DisplayOffset` is set to _10_ (those are the default values if nothing has been changed, see `man sshd_config`)
-    *   set `X11Forwarding` to _yes_
-*   then [restart](/index.php/Restart "Restart") the [_sshd_ daemon](#Managing_the_sshd_daemon).
+    *   verify that `AllowTcpForwarding` and `X11UseLocalhost` options are set to *yes*, and that `X11DisplayOffset` is set to *10* (those are the default values if nothing has been changed, see `man sshd_config`)
+    *   set `X11Forwarding` to *yes*
+*   then [restart](/index.php/Restart "Restart") the [*sshd* daemon](#Managing_the_sshd_daemon).
 
-On the client's side, enable the `ForwardX11` option by either specifying the `-X` switch on the command line for opportunistic connections, or by setting `ForwardX11` to _yes_ in [openSSH client's configuration file](#Client).
+On the client's side, enable the `ForwardX11` option by either specifying the `-X` switch on the command line for opportunistic connections, or by setting `ForwardX11` to *yes* in [openSSH client's configuration file](#Client).
 
 **Tip:** You can enable the `ForwardX11Trusted` option (`-Y` switch on the command line) if GUI is drawing badly or you receive errors; this will prevent X11 forwardings from being subjected to the [X11 SECURITY extension](http://www.x.org/wiki/Development/Documentation/Security/) controls. Be sure you have read [the warning](#X11_forwarding) at the beginning of this section if you do so.
 
 #### Usage
 
-[Log on to the remote machine](#Connecting_to_the_server) normally, specifying the `-X` switch if _ForwardX11_ was not enabled in the client's configuration file:
+[Log on to the remote machine](#Connecting_to_the_server) normally, specifying the `-X` switch if *ForwardX11* was not enabled in the client's configuration file:
+```
+$ ssh -X *user@host*
 
 ```
-$ ssh -X _user@host_
+
+If you receive errors trying to run graphical applications, try *ForwardX11Trusted* instead:
 
 ```
-
-If you receive errors trying to run graphical applications, try _ForwardX11Trusted_ instead:
-
-```
-$ ssh -Y _user@host_
+$ ssh -Y *user@host*
 
 ```
 
@@ -496,8 +491,8 @@ $ firefox --no-remote
 
 If you get "X11 forwarding request failed on channel 0" when you connect (and the server `/var/log/errors.log` shows "Failed to allocate internet-domain X11 display socket"), make sure package [xorg-xauth](https://www.archlinux.org/packages/?name=xorg-xauth) is installed. If its installation is not working, try to either:
 
-*   enable the `AddressFamily any` option in `ssh**d**_config` on the _server_, or
-*   set the `AddressFamily` option in `ssh**d**_config` on the _server_ to inet.
+*   enable the `AddressFamily any` option in `ssh**d**_config` on the *server*, or
+*   set the `AddressFamily` option in `ssh**d**_config` on the *server* to inet.
 
 Setting it to inet may fix problems with Ubuntu clients on IPv4.
 
@@ -547,7 +542,6 @@ Both local and remote forwarding can be used to provide a secure "gateway," allo
 The SSH daemon usually listens on port 22\. However, it is common practice for many public internet hotspots to block all traffic that is not on the regular HTTP/S ports (80 and 443, respectively), thus effectively blocking SSH connections. The immediate solution for this is to have `sshd` listen additionally on one of the whitelisted ports:
 
  `/etc/ssh/sshd_config` 
-
 ```
 Port 22
 Port 443
@@ -571,7 +565,6 @@ Host examplehost.com
 ```
 
 **Tip:** To make it a global setting, you can create a `~/.ssh/sockets/` folder and use the following: `~/.ssh/config` 
-
 ```
 Host *
   ControlPath ~/.ssh/sockets/%r@%h-%p
@@ -587,7 +580,7 @@ Compression yes
 
 ```
 
-**Warning:** `man ssh` states that "_Compression is desirable on modem lines and other slow connections, but will only slow down things on fast networks_". This tip might be counterproductive depending on your network configuration.
+**Warning:** `man ssh` states that "*Compression is desirable on modem lines and other slow connections, but will only slow down things on fast networks*". This tip might be counterproductive depending on your network configuration.
 
 Login time can be shortened by using the `-4` flag, which bypasses IPv6 lookup. This can be made permanent by adding this line under the proper host in `/etc/ssh/ssh_config`:
 
@@ -627,7 +620,6 @@ ClientAliveInterval 120
 Whenever you want to connect to a ssh server, you usually have to type at least its address and the username. To save that typing work for servers you regularly connect to, you can use the personal `~/.ssh/config` or the global `/etc/ssh/ssh_config` files as shown in the following example:
 
  `~/.ssh/config` 
-
 ```
 Host myserver
     HostName 123.123.123.123
@@ -653,12 +645,11 @@ To see a complete list of the possible options, check out ssh_config's manpage o
 
 ### Automatically restart SSH tunnels with systemd
 
-[systemd](/index.php/Systemd "Systemd") can automatically start SSH connections on boot/login _and_ restart them when they fail. This makes it a useful tool for maintaining SSH tunnels.
+[systemd](/index.php/Systemd "Systemd") can automatically start SSH connections on boot/login *and* restart them when they fail. This makes it a useful tool for maintaining SSH tunnels.
 
 The following service can start an SSH tunnel on login using the connection settings in your [ssh config](#Saving_connection_data_in_ssh_config). If the connection closes for any reason, it waits 10 seconds before restarting it:
 
  `~/.config/systemd/user/tunnel.service` 
-
 ```
 [Unit]
 Description=SSH tunnel to myserver
@@ -707,7 +698,6 @@ The session will end once you type `exit` in the session, or the autossh process
 If you want to automatically start autossh, you can create a systemd unit file:
 
  `/etc/systemd/system/autossh.service` 
-
 ```
 [Unit]
 Description=AutoSSH service for port 2222
@@ -791,7 +781,6 @@ This is a first-steps troubleshooting checklist. It is recommended to check thes
 SSH connection hangs after poweroff or reboot if systemd stop network before sshd. To fix that problem, comment and change the `After` statement:
 
  `/usr/lib/systemd/system/systemd-user-sessions.service` 
-
 ```
 #After=remote-fs.target
 After=network.target
@@ -882,18 +871,18 @@ To double check, you can run Wireshark on your server and listen to traffic on p
 For tcpdump:
 
 ```
-# tcpdump -ni _interface_ "port 22"
+# tcpdump -ni *interface* "port 22"
 
 ```
 
 For Wireshark:
 
 ```
-$ tshark -f "tcp port 22" -i _interface_
+$ tshark -f "tcp port 22" -i *interface*
 
 ```
 
-where `_interface_` is the network interface for a WAN connection (see `ip a` to check). If you are not receiving any packets while trying to connect remotely, you can be very sure that your ISP is blocking the incoming traffic on port 22.
+where `*interface*` is the network interface for a WAN connection (see `ip a` to check). If you are not receiving any packets while trying to connect remotely, you can be very sure that your ISP is blocking the incoming traffic on port 22.
 
 ##### Possible solution
 
@@ -952,7 +941,7 @@ A profound solution is transferring the terminfo file of the terminal on your cl
 
 Now copy the terminfo file of your terminal to the new directory. Replace `rxvt-unicode-256color` with your client's terminal in the following command and `ssh-server` with the relevant user and server adress.
 
-`$ scp /usr/share/terminfo/r/_rxvt-unicode-256color_ ssh-server:~/.terminfo/r/`
+`$ scp /usr/share/terminfo/r/*rxvt-unicode-256color* ssh-server:~/.terminfo/r/`
 
 After logging in and out from the ssh server the problem should be fixed.
 

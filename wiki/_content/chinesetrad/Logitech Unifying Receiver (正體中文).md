@@ -18,7 +18,7 @@
 
 ```
 
-將下列程式碼複制到檔案並命名，假設名為 _unifying_pair.c_。
+將下列程式碼複制到檔案並命名，假設名為 *unifying_pair.c*。
 
 ```
 /*
@@ -90,14 +90,18 @@ int main(int argc, char **argv)
        /* Send the magic sequence to the Device */
        res = write(fd, magic_sequence, sizeof(magic_sequence));
        if (res < 0) {
-               printf("Error: %d\n", errno);
+               printf("Error: %d
+", errno);
                perror("write");
        } else if (res == sizeof(magic_sequence)) {
-               printf("The receiver is ready to pair a new device.\n"
-               "Switch your device on to pair it.\n");
+               printf("The receiver is ready to pair a new device.
+"
+               "Switch your device on to pair it.
+");
        } else {
                errno = ENOMEM;
-               printf("write: %d were written instead of %ld.\n", res,
+               printf("write: %d were written instead of %ld.
+", res,
                        sizeof(magic_sequence));
                perror("write");
        }
@@ -107,7 +111,7 @@ int main(int argc, char **argv)
 
 ```
 
-將原始碼編譯成可執行檔 _unifying_pair_：
+將原始碼編譯成可執行檔 *unifying_pair*：
 
 ```
 $ gcc -o unifying_pair unifying_pair.c 
@@ -123,7 +127,7 @@ $ cat /sys/class/hidraw/hidraw**X**/device/uevent |grep NAME
 
 ```
 
-(你必須把 **X** 替換成系統上存在的整數) 直到找到 _Logitech USB Receiver_ 為止(在此假設 X 恰為 **0**)
+(你必須把 **X** 替換成系統上存在的整數) 直到找到 *Logitech USB Receiver* 為止(在此假設 X 恰為 **0**)
 
 ```
 $ cat /sys/class/hidraw/hidraw0/device/uevent |grep NAME
@@ -144,7 +148,7 @@ $ cat /sys/class/hidraw/hidraw0/device/uevent |grep NAME
 
 ### Keyboard Layout via xorg.conf
 
-With kernel 3.2 the Unifying Receiver got its own kernel module _hid_logitech_dj_ which does not work flawlessly together with keyboard layout setting set via [xorg.conf](/index.php/Xorg#Keyboard_settings "Xorg"). A temporary workaround is to use [xorg-setxkbmap](https://www.archlinux.org/packages/?name=xorg-setxkbmap) and set the layout manually. For example for a German layout with no deadkeys one has to execute:
+With kernel 3.2 the Unifying Receiver got its own kernel module *hid_logitech_dj* which does not work flawlessly together with keyboard layout setting set via [xorg.conf](/index.php/Xorg#Keyboard_settings "Xorg"). A temporary workaround is to use [xorg-setxkbmap](https://www.archlinux.org/packages/?name=xorg-setxkbmap) and set the layout manually. For example for a German layout with no deadkeys one has to execute:
 
 ```
 $ setxkbmap -layout de -variant nodeadkeys

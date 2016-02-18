@@ -99,7 +99,7 @@ Questa sezione non intende essere omni comprensiva ma comprende alcune analisi i
 
 **Note:** Se non si conosce l'EBS del proprio SSD, è comunque possibile usare una dimensione di 512 KiB (o 1024 KiB se si vuole essere sicuri e non ci si preoccupa di perdere il primo MiB del proprio disco). Queste dimensioni sono maggiori o uguali di tutti i correnti EBS. Allineare le partizioni per l'EBS produrrà partizioni allineate anche per dimensioni più piccole. Windows 7 e Ubuntu utilizzano questo stratagemma per ottimizzare le partizioni per lavorare con gli SSD.
 
-Se le partizioni non sono allineate per iniziare ad un multiplo dell'EBS (per esempio 512 KiB), l'allineamento del file system è soltanto un esercizio senza senso in quanto l'intero allineamento è rovinato dallo scarto iniziale della partizione. Generalmente, i dischi fissi sono indirizzati tramite _cilindri_, _testine_ e _settori_ nei quali i dati vengono letti e scritti. Questi rappresentano rispettivamente la posizione radiale, la testina del disco (piatto e lato) e la posizione assiale dei dati. Con l' LBA (logical block addressing), questo non è più vero. L'intero disco fisso è indirizzato come un flusso continuo di dati.
+Se le partizioni non sono allineate per iniziare ad un multiplo dell'EBS (per esempio 512 KiB), l'allineamento del file system è soltanto un esercizio senza senso in quanto l'intero allineamento è rovinato dallo scarto iniziale della partizione. Generalmente, i dischi fissi sono indirizzati tramite *cilindri*, *testine* e *settori* nei quali i dati vengono letti e scritti. Questi rappresentano rispettivamente la posizione radiale, la testina del disco (piatto e lato) e la posizione assiale dei dati. Con l' LBA (logical block addressing), questo non è più vero. L'intero disco fisso è indirizzato come un flusso continuo di dati.
 
 ### Usare GPT - METODO RACCOMANDATO
 
@@ -207,7 +207,6 @@ The new table will be used at the next reboot.
 The operation has completed successfully.
 [root@archlinux ~]#
 ```
-
 Adesso è possibile creare il file system seguendo la maniera usuale: `# mkfs.ext4 /dev/sda1` 
 
 #### Usare MBR - METODO DEPRECATO - L'utilizzo di GPT è Raccomandato
@@ -419,7 +418,7 @@ Lo scheduler attualmente utilizzato è indicato fra parentesi quadre.
 
 Ci sono diverse possibilità per cambiare il tipo di scheduler.
 
-**Note:** Cambiare il tipo di scheduler soltanto per gli SSD. Mantener lo scheduler cfq per tutti gli altri HDD fisici è _altamente_ consigliato.
+**Note:** Cambiare il tipo di scheduler soltanto per gli SSD. Mantener lo scheduler cfq per tutti gli altri HDD fisici è *altamente* consigliato.
 
 ##### Usare il filesystem virtuale sys
 
@@ -544,7 +543,7 @@ L'utilizzo di un filesystem con journaling come ext3 o ext4 su un SSD SENZA il j
 | make | 207.6 | 199.4 | 3.95 % |
 | make clean | 6.45 | 3.73 | 42.17 % |
 
-_"Quello che i risultati dimostrano è che carichi di lavoro pesanti per i metadati, come un make clean, raddoppiano la quantità di dati scritti sul disco. Questo è naturale, dal momento che tutt i cambiamenti ai blocchi dei metadati sono prima scritti sul journal e la transazione del journal viene completata prima che i metadati vengano scritti nella loro posizione finale sul disco. Comunque per carichi di lavoro più comuni dove avvengono scritture e modifiche di blocchi metadati, la differenza è molto più piccola."_
+*"Quello che i risultati dimostrano è che carichi di lavoro pesanti per i metadati, come un make clean, raddoppiano la quantità di dati scritti sul disco. Questo è naturale, dal momento che tutt i cambiamenti ai blocchi dei metadati sono prima scritti sul journal e la transazione del journal viene completata prima che i metadati vengano scritti nella loro posizione finale sul disco. Comunque per carichi di lavoro più comuni dove avvengono scritture e modifiche di blocchi metadati, la differenza è molto più piccola."*
 
 **Note:** L'esempio di make clean della tabella precedente enfatizza l'importanza di compilare intenzionalmente in /dev/shm come raccomandato nella [precedente sezione](#Compilare_in_.2Fdev.2Fshm) di questo articolo!
 

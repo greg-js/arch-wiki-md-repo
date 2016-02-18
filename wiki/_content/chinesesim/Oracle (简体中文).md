@@ -27,7 +27,7 @@
 
 ## 安装方法1 - 手动
 
-这节将会引导您在全新的archlinux上安装Oracle。这是一个通用的方法，在内核2.6.28.ARCH 64位机器上安装Oracle 11g R1 64 位测试通过。_**这在其他版本的Orale上也应该可以工作**_。
+这节将会引导您在全新的archlinux上安装Oracle。这是一个通用的方法，在内核2.6.28.ARCH 64位机器上安装Oracle 11g R1 64 位测试通过。***这在其他版本的Orale上也应该可以工作***。
 
 ### 准备安装
 
@@ -187,7 +187,7 @@ oracle    ALL=(ALL) ALL
 
 ```
 
-Add these lines to `/etc/sysctl.d/99-sysctl.conf` (_**Review Oracle documentation to adjust these settings**_).
+Add these lines to `/etc/sysctl.d/99-sysctl.conf` (***Review Oracle documentation to adjust these settings***).
 
 ```
 # oracle kernel settings
@@ -204,7 +204,7 @@ net.core.wmem_max = 262144
 
 ```
 
-Add these lines to `/etc/security/limits.conf` (_**Review Oracle documentation to adjust these settings**_)
+Add these lines to `/etc/security/limits.conf` (***Review Oracle documentation to adjust these settings***)
 
 ```
 # oracle settings
@@ -336,9 +336,9 @@ cd /media/database
 
 This section describes how to install the web based OEM available in 10g+.
 
-_Depending on your settings the OUI may have already installed this_.
+*Depending on your settings the OUI may have already installed this*.
 
-Login or su to oracle, then run the following commands (answering the prompts approriately). _**This may take a while**_.
+Login or su to oracle, then run the following commands (answering the prompts approriately). ***This may take a while***.
 
 ```
 cd ${ORACLE_HOME}/bin
@@ -658,7 +658,7 @@ Script notes
 
 *   the files assume a database sid of **xdb**
 *   the files assume an oracle base of **/oracle/product/db**
-*   _**review all memory and storage parameters against Oracle documentation**_
+*   ***review all memory and storage parameters against Oracle documentation***
 
 Setup filesystem (as root)
 
@@ -667,7 +667,7 @@ Setup filesystem (as root)
 
 ```
 
-Install database from script (_**this will take a long time**_)
+Install database from script (***this will take a long time***)
 
 ```
 su oracle
@@ -847,7 +847,7 @@ Moving or transferring Oracle can be quite useful in the following conditions:
 
 The installation of Oracle requires several packages. However, just running an Oracle database is much simpler and has far fewer requirements, as shown below.
 
-_In principle transferring Oracle should work across distros. Transferring from RHEL/Centos 5.2 to ARCH 2009.02 has been tested successfully._
+*In principle transferring Oracle should work across distros. Transferring from RHEL/Centos 5.2 to ARCH 2009.02 has been tested successfully.*
 
 To prep Oracle for a move shutdown database services
 
@@ -864,7 +864,7 @@ emctl stop dbconsole
 
 ```
 
-_**If you are running other Oracle daemons stop them as well**_
+***If you are running other Oracle daemons stop them as well***
 
 This section assumes the following conditions about the existing Oracle installation:
 
@@ -903,7 +903,7 @@ pacman -S sudo
 
 ```
 
-Install required package run Oracle database and _required_ daemons.
+Install required package run Oracle database and *required* daemons.
 
 ```
 aurbuild -s libaio

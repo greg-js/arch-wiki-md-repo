@@ -3,7 +3,6 @@
 The only real hurdle with getting Arch Linux installed is the RAID configuration. There are several alternatives with various advantages and disadvantages. The easiest is to just leave the raid enabled as per factory settings and treat the resulting partition as a single drive.
 
  `lsblk` 
-
 ```
 $ lsblk
 NAME        MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
@@ -21,7 +20,6 @@ sdb           8:16   0 119.2G  0 disk
 As you can see the system contains two separate drives which have been used to create a single RAID partition, raid0\. When preparing your storage drive during installation, you would then treat that raid0 partition as the drive to install on.
 
  `cfdisk /dev/md126` 
-
 ```
                     Disk: /dev/md126
                                                              Size: 238.5 GiB, 256066453504 bytes, 500129792 sectors

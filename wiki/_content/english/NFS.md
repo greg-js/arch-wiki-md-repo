@@ -1,6 +1,6 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Network File System"):
 
-	_Network File System (NFS) is a distributed file system protocol originally developed by Sun Microsystems in 1984, allowing a user on a client computer to access files over a network in a manner similar to how local storage is accessed._
+	*Network File System (NFS) is a distributed file system protocol originally developed by Sun Microsystems in 1984, allowing a user on a client computer to access files over a network in a manner similar to how local storage is accessed.*
 
 ## Contents
 
@@ -63,7 +63,6 @@ Now mount the actual target share, `/mnt/music` to the NFS share via the mount c
 To make it stick across server reboots, add the bind mount to `fstab`:
 
  `/etc/fstab` 
-
 ```
 /mnt/music /srv/nfs4/music  none   bind   0   0
 
@@ -74,7 +73,6 @@ To make it stick across server reboots, add the bind mount to `fstab`:
 Add directories to be shared and an ip address or hostname(s) of client machines that will be allowed to mount them in `exports`:
 
  `/etc/exports` 
-
 ```
 /srv/nfs4/ 192.168.1.0/24(rw,fsid=root,no_subtree_check)
 /srv/nfs4/music 192.168.1.0/24(rw,no_subtree_check,nohide) # note the nohide option which is applied to mounted directories on the file system.
@@ -86,7 +84,6 @@ Users need-not open the share to the entire subnet; one can specify a single IP 
 For more information about all available options see `man 5 exports`.
 
 **Note:** Modifying `/etc/exports` while the server is running will require a re-export for changes to take effect as noted by the upstream comments in `/etc/exports`:
-
 ```
 # exportfs -rav
 
@@ -139,7 +136,6 @@ To enable access through a firewall, tcp and udp ports 111, 2049, and 20048 need
 To have this configuration load on every system start, edit `/etc/iptables/iptables.rules` to include the following lines:
 
  `/etc/iptables/iptables.rules` 
-
 ```
 -A INPUT -p tcp -m tcp --dport 111 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 2049 -j ACCEPT
@@ -162,7 +158,6 @@ The previous commands can be saved by executing:
 If using NFSv3 and the above listed static ports for `rpc.statd` and `lockd` these also need to be added to the configuration:
 
  `/etc/iptables/iptables.rules` 
-
 ```
 -A INPUT -p tcp -m tcp --dport 32765 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 32803 -j ACCEPT
@@ -174,7 +169,6 @@ If using NFSv3 and the above listed static ports for `rpc.statd` and `lockd` the
 If using V4-only setup, only tcp port 2049 need to be opened. Therefore only one line need.
 
  `/etc/iptables/iptables.rules` 
-
 ```
 -A INPUT -p tcp -m tcp --dport 2049 -j ACCEPT
 
@@ -236,13 +230,12 @@ If mount fails try including the server's export root (required for Debian/RHEL/
 Using [fstab](/index.php/Fstab "Fstab") is useful for a server which is always on, and the NFS shares are available whenever the client boots up. Edit `/etc/fstab` file, and add an appropriate line reflecting the setup. Again, the server's NFS export root is omitted.
 
  `/etc/fstab` 
-
 ```
 servername:/music   /mountpoint/on/client   nfs4   rsize=8192,wsize=8192,timeo=14,_netdev	0 0
 
 ```
 
-**Note:** Consult the _NFS_ and _mount_ man pages for more mount options.
+**Note:** Consult the *NFS* and *mount* man pages for more mount options.
 
 Some additional mount options to consider are include:
 
@@ -264,9 +257,9 @@ Some additional mount options to consider are include:
 
 Another method is using the systemd `automount` service. This is a better option than `_netdev`, because it remounts the network device quickly when the connection is broken and restored. As well, it solves the problem from autofs, see the example below:
 
- `/etc/fstab`  `servername:/home   _/mountpoint/on/client_  nfs  noauto,x-systemd.automount,x-systemd.device-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0` 
+ `/etc/fstab`  `servername:/home   */mountpoint/on/client*  nfs  noauto,x-systemd.automount,x-systemd.device-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0` 
 
-One might have to reboot the client to make systemd aware of the changes to fstab. Alternatively, try [reloading](/index.php/Systemd#Using_units "Systemd") systemd and restarting `_mountpoint-on-client_.automount` to reload the `/etc/fstab` configuration.
+One might have to reboot the client to make systemd aware of the changes to fstab. Alternatively, try [reloading](/index.php/Systemd#Using_units "Systemd") systemd and restarting `*mountpoint-on-client*.automount` to reload the `/etc/fstab` configuration.
 
 **Tip:**
 
@@ -305,7 +298,6 @@ This trick is useful for laptops that require nfs shares from a local wireless n
 Make sure that the NFS mount points are correctly indicated in `/etc/fstab`:
 
  `$ cat /etc/fstab` 
-
 ```
 lithium:/mnt/data           /mnt/data	        nfs noauto,noatime,rsize=32768,wsize=32768 0 0
 lithium:/var/cache/pacman   /var/cache/pacman	nfs noauto,noatime,rsize=32768,wsize=32768 0 0
@@ -316,10 +308,9 @@ The `noauto` mount option tells systemd not to automatically mount the shares at
 
 In order to mount NFS shares with non-root users the `user` option has to be added.
 
-Create the `auto_share` script that will be used by _cron_ or _systemd/Timers_ to use ICMP ping to check if the NFS host is reachable:
+Create the `auto_share` script that will be used by *cron* or *systemd/Timers* to use ICMP ping to check if the NFS host is reachable:
 
  `/usr/local/bin/auto_share` 
-
 ```
 #!/bin/bash
 
@@ -331,7 +322,8 @@ function net_mount {
   mountpoint -q $1 || mount $1
 }
 
-NET_MOUNTS=$(sed -e '/^.*#/d' -e '/^.*:/!d' -e 's/\t/ /g' /etc/fstab | tr -s " ")$'\n'b
+NET_MOUNTS=$(sed -e '/^.*#/d' -e '/^.*:/!d' -e 's/\t/ /g' /etc/fstab | tr -s " ")$'
+'b
 
 printf %s "$NET_MOUNTS" | while IFS= read -r line
 do
@@ -364,7 +356,6 @@ done
 ```
 
 **Note:** If you want to test using a TCP probe instead of ICMP ping (default is tcp port 2049 in NFS4) then replace the line:
-
 ```
  # Check if the server is reachable
  ping -c 1 "${SERVER}" &>/dev/null
@@ -378,7 +369,6 @@ with:
  timeout 1 bash -c ": < /dev/tcp/${SERVER}/2049"
 
 ```
-
 in the `auto_share` script above.
 
 ```
@@ -391,7 +381,6 @@ Create a cron entry or a systemd/Timers timer to check every minute if the serve
 #### Cron
 
  `# crontab -e` 
-
 ```
 * * * * * /usr/local/bin/auto_share
 
@@ -400,7 +389,6 @@ Create a cron entry or a systemd/Timers timer to check every minute if the serve
 #### systemd/Timers
 
  `# /etc/systemd/system/auto_share.timer` 
-
 ```
 [Unit]
 Description=Check the network mounts
@@ -412,9 +400,7 @@ OnCalendar=*-*-* *:*:00
 WantedBy=timer.target
 
 ```
-
  `# /etc/systemd/system/auto_share.service` 
-
 ```
 [Unit]
 Description=Check the network mounts
@@ -435,7 +421,6 @@ ExecStart=/usr/local/bin/auto_share
 A systemd unit file can also be used to mount the NFS shares at startup. The unit file is not necessary if NetworkManager is installed and configured on the client system. See [#NetworkManager dispatcher](#NetworkManager_dispatcher).
 
  `/etc/systemd/system/auto_share.service` 
-
 ```
 [Unit]
 Description=NFS automount
@@ -469,9 +454,7 @@ However, in that particular case unmounting will happen only after the network c
 The following script safely unmounts the NFS shares before the relevant network connection is disabled by listening for the `pre-down` and `vpn-pre-down` events:
 
 **Note:** This script ignores mounts with the noauto option.
-
  `/etc/NetworkManager/dispatcher.d/30_nfs.sh` 
-
 ```
 #!/bin/bash
 

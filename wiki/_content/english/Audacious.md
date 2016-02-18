@@ -32,7 +32,7 @@ One may switch between two interfaces in Audacious.
 
 #### Adding Winamp skins
 
-Adding Winamp skins to Audacious is very simple. Just copy your skin file (.zip, .wsz, .tgz, .tar.gz, or .tar.bz2 file) to either `~/.local/share/audacious/Skins` (affect your user only) or `/usr/share/audacious/Skins` (affects every user), and then you can browse and select it from _Skinned Interface_ tab in _Preferences_. Another way is dragging the skin file directly into the list view of available skins.
+Adding Winamp skins to Audacious is very simple. Just copy your skin file (.zip, .wsz, .tgz, .tar.gz, or .tar.bz2 file) to either `~/.local/share/audacious/Skins` (affect your user only) or `/usr/share/audacious/Skins` (affects every user), and then you can browse and select it from *Skinned Interface* tab in *Preferences*. Another way is dragging the skin file directly into the list view of available skins.
 
 ## Tips and tricks
 

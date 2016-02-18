@@ -1,4 +1,4 @@
-In evolutionary biology, [cooperation](https://en.wikipedia.org/wiki/Co-operation_(evolution) "wikipedia:Co-operation (evolution)") describes interactions where an individual pays a small cost to yield a larger benefit to one or more others. If this costly contribution is reciprocated, everyone involved can benefit tremendously. This principle also applies to proactive members of the Arch community wanting to get involved and contribute to their favorite Linux distribution. Their participation benefits not only the community member and their fellow Archers, but all users of [free and open source software](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software").
+In evolutionary biology, [cooperation](https://en.wikipedia.org/wiki/Co-operation_(evolution) describes interactions where an individual pays a small cost to yield a larger benefit to one or more others. If this costly contribution is reciprocated, everyone involved can benefit tremendously. This principle also applies to proactive members of the Arch community wanting to get involved and contribute to their favorite Linux distribution. Their participation benefits not only the community member and their fellow Archers, but all users of [free and open source software](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software").
 
 This article describes how both new and experienced Arch users can contribute to the community. Note that this is not an exhaustive list.
 
@@ -71,7 +71,7 @@ You can find out how to help sustaining server costs on the [official Arch Linux
 
 ## Community projects
 
-**Note:** All projects listed here are community projects. None of these projects are considered _official_ Arch projects.
+**Note:** All projects listed here are community projects. None of these projects are considered *official* Arch projects.
 
 Arch's community maintains many projects. Feel free to include yours!
 
@@ -177,7 +177,7 @@ Services specifically made for Arch users.
 
 ### How can I become an Arch Developer?
 
-The main motivation for your work on Arch should be helping the whole community, and not simply trying to become an _Arch developer_ by any means.
+The main motivation for your work on Arch should be helping the whole community, and not simply trying to become an *Arch developer* by any means.
 
 Usually, new developers are picked by the existing developers as the workload increases. Sometimes they post a position and you can apply to fill it, but more often, they just invite somebody they know would be good at it and would fit in well with the rest of the team. Having a portfolio of Arch contributions is the best way to make it on the team.
 

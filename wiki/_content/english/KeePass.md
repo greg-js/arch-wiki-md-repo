@@ -1,6 +1,6 @@
 KeePass is an offline encrypted password database format. It is an alternative to popular online password managers and is supported on all major distributions and other OS platforms.
 
-Currently, there are two variants of the database formats: _KeePass 1.x (Classic)_ and _KeePass 2.x_
+Currently, there are two variants of the database formats: *KeePass 1.x (Classic)* and *KeePass 2.x*
 
 ## Contents
 
@@ -19,7 +19,7 @@ There are two major implementations of KeePass, both of which are included in of
 
 	[http://keepass.info](http://keepass.info) || [keepass](https://www.archlinux.org/packages/?name=keepass)
 
-*   **[KeePassX](https://en.wikipedia.org/wiki/KeePassX "wikipedia:KeePassX")** — KeePassX is a cross platform port of the Windows application _Keepass Password Safe (v1.x)_. KeePassX only supports the KeePass 2.x (.kdbx) password database format in the 2.0 branch. However, you can create an export in KeePass 1.x database format (.kdb) from KeePass 2.x, which can be imported to KeePassX. One may also import PwManager databases and KWallet XML databases. While KeepassX does not support plugins on its master branch, the KeepassX-HTTP branch supports KeepassHTTP protocol. Thus, it allows integration through browser addons such as ChromeIPass and PassIFox.
+*   **[KeePassX](https://en.wikipedia.org/wiki/KeePassX "wikipedia:KeePassX")** — KeePassX is a cross platform port of the Windows application *Keepass Password Safe (v1.x)*. KeePassX only supports the KeePass 2.x (.kdbx) password database format in the 2.0 branch. However, you can create an export in KeePass 1.x database format (.kdb) from KeePass 2.x, which can be imported to KeePassX. One may also import PwManager databases and KWallet XML databases. While KeepassX does not support plugins on its master branch, the KeepassX-HTTP branch supports KeepassHTTP protocol. Thus, it allows integration through browser addons such as ChromeIPass and PassIFox.
 
 	[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2) [keepassx-http](https://aur.archlinux.org/packages/keepassx-http/)
 

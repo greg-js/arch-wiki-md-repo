@@ -19,7 +19,7 @@ This page expains how to write [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for s
 
 ## Package naming
 
-A package for mingw-w64 should be named `mingw-w64-_pkgname_`. If a static variant of the package is being built, suffix the package name with `-static` (see below for the cases where this is necessary).
+A package for mingw-w64 should be named `mingw-w64-*pkgname*`. If a static variant of the package is being built, suffix the package name with `-static` (see below for the cases where this is necessary).
 
 ## Packaging
 

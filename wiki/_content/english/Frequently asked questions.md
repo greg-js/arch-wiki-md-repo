@@ -78,7 +78,7 @@ No, but the [Arch Linux ARM](http://archlinuxarm.org/) project provides a port o
 
 ### I am a complete GNU/Linux beginner. Should I use Arch?
 
-This question has had much debate. Arch is targeted more towards advanced GNU/Linux users, but some people feel that Arch is a good place to start for the motivated novice. If you are a beginner and want to use Arch, just be warned that you must be willing to invest significant time into learning a new system, as well as accept the fact that Arch is fundamentally designed as a DIY (Do-It-Yourself) distribution. It is the user who assembles the system and controls what it will become. Before asking for help, do your own independent research by Googling, searching the forum (and reading the rest of these FAQs) and searching the superb documentation provided by the Arch Wiki. _There is a reason these resources were made available to you in the first place._ Many thousands of _volunteered_ hours have been spent compiling this excellent information.
+This question has had much debate. Arch is targeted more towards advanced GNU/Linux users, but some people feel that Arch is a good place to start for the motivated novice. If you are a beginner and want to use Arch, just be warned that you must be willing to invest significant time into learning a new system, as well as accept the fact that Arch is fundamentally designed as a DIY (Do-It-Yourself) distribution. It is the user who assembles the system and controls what it will become. Before asking for help, do your own independent research by Googling, searching the forum (and reading the rest of these FAQs) and searching the superb documentation provided by the Arch Wiki. *There is a reason these resources were made available to you in the first place.* Many thousands of *volunteered* hours have been spent compiling this excellent information.
 
 Recommended reading: The Arch Linux [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
 
@@ -88,11 +88,11 @@ Arch is designed for and used by a specifically targeted user base. Perhaps it i
 
 ### Is Arch designed to be used as a server? A desktop? A workstation?
 
-Arch is not designed for any particular type of use. Rather, it is designed for a particular type of _user_. Arch targets competent users who enjoy its do-it-yourself nature, and who further exploit it to shape the system to fit their unique needs. Therefore, in the hands of its target user base, Arch can be used for virtually any purpose. Many use Arch on both their desktops and workstations. And of course, archlinux.org runs on Arch.
+Arch is not designed for any particular type of use. Rather, it is designed for a particular type of *user*. Arch targets competent users who enjoy its do-it-yourself nature, and who further exploit it to shape the system to fit their unique needs. Therefore, in the hands of its target user base, Arch can be used for virtually any purpose. Many use Arch on both their desktops and workstations. And of course, archlinux.org runs on Arch.
 
 ### I really like Arch, except the development team needs to implement feature X
 
-Before going further, did you read [The Arch Way](/index.php/The_Arch_Way "The Arch Way")? Have you provided the feature/solution? Does it conform to the Arch philosophy of _minimalism_ and _code-correctness over convenience_? Get involved, contribute your code/solution to the community. If it is well regarded by the community and development team, perhaps it will be merged. The Arch community thrives on contribution and sharing of code and tools.
+Before going further, did you read [The Arch Way](/index.php/The_Arch_Way "The Arch Way")? Have you provided the feature/solution? Does it conform to the Arch philosophy of *minimalism* and *code-correctness over convenience*? Get involved, contribute your code/solution to the community. If it is well regarded by the community and development team, perhaps it will be merged. The Arch community thrives on contribution and sharing of code and tools.
 
 ### When will the new release be made available?
 
@@ -102,11 +102,11 @@ The rolling release model keeps every Arch Linux system current and on the bleed
 
 ### Is Arch Linux a stable distribution? Will I get frequent breakage?
 
-The short answer is: It is largely as stable as _you_ make it.
+The short answer is: It is largely as stable as *you* make it.
 
-_You_ assemble your own Arch system, atop the simple base environment, and _you_ control system upgrades. Obviously, a larger, more complicated system incorporating multitudes of customized packages, and a plethora of toolkits and desktop environments would be more likely to experience configuration problems due to upstream changes than a slimmer, more simple system would. Arch is targeted at capable, proactive users. General UNIX competence and good system maintenance and upgrade practices also play a large role in system stability. Also recall that Arch packages are predominantly unpatched, so most application problems are inherently upstream.
+*You* assemble your own Arch system, atop the simple base environment, and *you* control system upgrades. Obviously, a larger, more complicated system incorporating multitudes of customized packages, and a plethora of toolkits and desktop environments would be more likely to experience configuration problems due to upstream changes than a slimmer, more simple system would. Arch is targeted at capable, proactive users. General UNIX competence and good system maintenance and upgrade practices also play a large role in system stability. Also recall that Arch packages are predominantly unpatched, so most application problems are inherently upstream.
 
-Therefore, it is _the user_ who is ultimately responsible for the stability of his own rolling release system. The user decides when to upgrade, and merges necessary changes when required. If the user reaches out to the community for help, it is often provided in a timely manner. The difference between Arch and other distributions in this regard is that Arch is truly a 'do-it-yourself' distribution; complaints of breakage are misguided and unproductive, since upstream changes are not the responsibility of Arch devs.
+Therefore, it is *the user* who is ultimately responsible for the stability of his own rolling release system. The user decides when to upgrade, and merges necessary changes when required. If the user reaches out to the community for help, it is often provided in a timely manner. The difference between Arch and other distributions in this regard is that Arch is truly a 'do-it-yourself' distribution; complaints of breakage are misguided and unproductive, since upstream changes are not the responsibility of Arch devs.
 
 See the [System maintenance](/index.php/System_maintenance "System maintenance") article for tips on how to make an Arch Linux system as stable as possible.
 
@@ -133,7 +133,6 @@ Many new users notice how the Linux kernel handles memory differently than they 
 We could distinguish the difference from `free` command:
 
  `$ free -h` 
-
 ```
               total        used        free      shared  buff/cache   available
 Mem:           2.8G        1.1G        283M        224M        1.4G        1.2G
@@ -158,13 +157,13 @@ You can find out with [pkgfile](/index.php/Pkgfile "Pkgfile").
 For example:
 
 ```
-$ pkgfile _file_name_
+$ pkgfile *file_name*
 
 ```
 
 ### I've found an error with Package X. What should I do?
 
-First, you need to figure out if this error is something the Arch team can fix. Sometimes it's not (e.g. Firefox crashes may be the fault of the Mozilla team); this is called an _upstream error_. If it is an Arch problem, there is a series of steps you can take:
+First, you need to figure out if this error is something the Arch team can fix. Sometimes it's not (e.g. Firefox crashes may be the fault of the Mozilla team); this is called an *upstream error*. If it is an Arch problem, there is a series of steps you can take:
 
 1.  Search the forums for information. See if anyone else has noticed it.
 2.  Post a [bug report](/index.php/Bug_report "Bug report") with detailed information at [https://bugs.archlinux.org](https://bugs.archlinux.org).
@@ -172,7 +171,7 @@ First, you need to figure out if this error is something the Arch team can fix. 
 
 ### Arch packages need to use a unique naming convention. ".pkg.tar.gz" and ".pkg.tar.xz" are too long and/or confusing
 
-This has been discussed on the Arch mailing list. Some proposed a `.pac` file extension. As far as is currently known, there is no plan to change the package extension. As Tobias Kieslich, one of the Arch devs, put it, "_A package **is** a gzipped_ [xz] _tarball! And it can be opened, investigated and manipulated by any tar-capable application. Moreover, the mime-type is automatically detected correctly by most applications._"
+This has been discussed on the Arch mailing list. Some proposed a `.pac` file extension. As far as is currently known, there is no plan to change the package extension. As Tobias Kieslich, one of the Arch devs, put it, "*A package **is** a gzipped* [xz] *tarball! And it can be opened, investigated and manipulated by any tar-capable application. Moreover, the mime-type is automatically detected correctly by most applications.*"
 
 ### Pacman needs a library so other applications can easily access package information
 
@@ -197,7 +196,7 @@ See [Official repositories](/index.php/Official_repositories "Official repositor
 If you're using a desktop environment like [KDE](/index.php/KDE "KDE") or [GNOME](/index.php/GNOME "GNOME"), the program should automatically show up in your menu. If you're trying to run the program from a terminal and do not know the binary name, use:
 
 ```
-$ pacman -Qlq _package_name_ | grep /usr/bin/
+$ pacman -Qlq *package_name* | grep /usr/bin/
 
 ```
 
@@ -209,13 +208,13 @@ Unlike Debian, Arch is a rolling-release cutting-edge distribution. The most vis
 
 ### What if I run a full system upgrade and there will be an update for a shared library, but not for the apps that depend on it?
 
-This scenario should not happen at all. Assuming an application called `foobaz` is in one of the official repositories and builds successfully against a new version of a shared library called `libbaz`, it will be updated along with `libbaz`. If, however, it doesn't build successfully, `foobaz` package will have a versioned dependency (e.g. _libbaz 1.5_), and will be removed by pacman during `libbaz` upgrade, due to a conflict.
+This scenario should not happen at all. Assuming an application called `foobaz` is in one of the official repositories and builds successfully against a new version of a shared library called `libbaz`, it will be updated along with `libbaz`. If, however, it doesn't build successfully, `foobaz` package will have a versioned dependency (e.g. *libbaz 1.5*), and will be removed by pacman during `libbaz` upgrade, due to a conflict.
 
 If `foobaz` is a package that you built yourself and installed from AUR, you should try rebuilding `foobaz` against the new version of `libbaz`. If the build fails, report the bug to the `foobaz` developers.
 
 ### Is it possible that there's a major kernel update in the repository, and that some of the driver packages haven't been updated?
 
-No, it is not possible. Major kernel updates (e.g. _linux 3.5.0-1_ to _linux 3.6.0-1_) are always accompanied by rebuilds of all supported kernel driver packages. On the other hand, if you have an unsupported driver package installed on your system, such as [catalyst](https://aur.archlinux.org/packages/catalyst/), then a kernel update might break things for you if you do not rebuild it for the new kernel. Users are responsible for updating any unsupported driver packages that they have installed.
+No, it is not possible. Major kernel updates (e.g. *linux 3.5.0-1* to *linux 3.6.0-1*) are always accompanied by rebuilds of all supported kernel driver packages. On the other hand, if you have an unsupported driver package installed on your system, such as [catalyst](https://aur.archlinux.org/packages/catalyst/), then a kernel update might break things for you if you do not rebuild it for the new kernel. Users are responsible for updating any unsupported driver packages that they have installed.
 
 ### Does Arch use package signing?
 
@@ -227,13 +226,13 @@ It is important in Arch Linux, before upgrading to "Check the front page [Arch n
 
 ### A package update was released, but pacman says the system is up to date
 
-_pacman_ mirrors are not synced immediately. It may take over 24 hours before an update is available to you. The only options are be patient or use another mirror. [MirrorStatus](https://www.archlinux.org/mirrors/status/) can help you identify an up-to-date mirror.
+*pacman* mirrors are not synced immediately. It may take over 24 hours before an update is available to you. The only options are be patient or use another mirror. [MirrorStatus](https://www.archlinux.org/mirrors/status/) can help you identify an up-to-date mirror.
 
 ## Installation
 
 ### Arch needs an installer. Maybe a GUI installer?
 
-Since installation doesn't occur often (read the rest of this article to know more about what _rolling release_ means), it is not a high priority for developers or users. The [Installation guide](/index.php/Installation_guide "Installation guide") and [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") have been fully updated to use the command-line method. If you're still interested in using an installer, consider using [Archboot](/index.php/Archboot "Archboot").
+Since installation doesn't occur often (read the rest of this article to know more about what *rolling release* means), it is not a high priority for developers or users. The [Installation guide](/index.php/Installation_guide "Installation guide") and [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") have been fully updated to use the command-line method. If you're still interested in using an installer, consider using [Archboot](/index.php/Archboot "Archboot").
 
 ### I installed Arch, and now I am at a shell! What now?
 
@@ -247,9 +246,9 @@ Since many are available to you, use the one you like the most to fit your needs
 
 Some distributions may provide minimal installation methods, sharing some similarities to the Arch installation process. However, a few points must be noted:
 
-1.  Arch has been _fundamentally designed_ as a lightweight, minimal base environment upon which to build.
-2.  The _only_ way to install Arch is by building up from this minimal base.
+1.  Arch has been *fundamentally designed* as a lightweight, minimal base environment upon which to build.
+2.  The *only* way to install Arch is by building up from this minimal base.
 3.  The base system and the entire distribution are inherently a K.I.S.S. design approach, which makes it uniquely suitable for its target base of users.
 4.  Installing services and packages requires manual, interactive user configuration. Unlike other distributions which automatically configure services and startup behavior, the Arch philosophy puts emphasis on the power user's competence and prerogative to handle such responsibilities.
-5.  Arch packaging is designed to be minimal, and _optional_ package dependencies are never automatically installed. Rather, the user is simply notified of their existence during package installation, resulting in a slimmer system.
+5.  Arch packaging is designed to be minimal, and *optional* package dependencies are never automatically installed. Rather, the user is simply notified of their existence during package installation, resulting in a slimmer system.
 6.  Arch provides excellent, thorough documentation, aiding in the process of system assembly.

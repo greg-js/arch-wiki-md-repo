@@ -14,7 +14,7 @@ Windows Maker è un gestore delle finestre (WM = [Windows Manager](/index.php/Wi
 *   [6 Vassoio di sistema](#Vassoio_di_sistema)
 *   [7 Risoluzione dei problemi](#Risoluzione_dei_problemi)
     *   [7.1 Le applicazioni non partono sempre](#Le_applicazioni_non_partono_sempre)
-    *   [7.2 Non è possibile disabilitare lo _smooth_ dei font](#Non_.C3.A8_possibile_disabilitare_lo_smooth_dei_font)
+    *   [7.2 Non è possibile disabilitare lo *smooth* dei font](#Non_.C3.A8_possibile_disabilitare_lo_smooth_dei_font)
 *   [8 Altre fonti](#Altre_fonti)
 
 ## Installazione
@@ -69,7 +69,7 @@ Tutte le impostazioni per Window Maker possono essere trovate nella cartella `GN
 
 *   `Defaults/WindowMaker` - Le impostazioni correnti di Window Maker.
 *   `Defaults/WMGLOBAL`
-*   `Defaults/WMRootMenu` - Il menu principale del desktop. Si usa un semplice formato di testo che può essere modificato manualmente. Per ulteriori dettagli, vedere la voce di menu _modifica_ nell'applicazione _Utility Prefereces_
+*   `Defaults/WMRootMenu` - Il menu principale del desktop. Si usa un semplice formato di testo che può essere modificato manualmente. Per ulteriori dettagli, vedere la voce di menu *modifica* nell'applicazione *Utility Prefereces*
 *   `Defaults/WMState` - Utilizzato per ripristinare la sessione di Window Maker.
 *   `Defaults/WMWindowAttributes` - Da qui è possibile personalizzare le impostazioni individuali per le finestre e le applicazioni, come l'icona dell'applicazione o il titolo della barra. È inoltre possibile accedere a queste modifiche anche facendo clic destro su qualsiasi icona di applicazione o finestra e selezionando la voce "Attributes".
 *   `Defaults/WPrefs` - Impostazioni per l'utilità delle preferenze.
@@ -85,7 +85,6 @@ Tutte le impostazioni per Window Maker possono essere trovate nella cartella `GN
 Gli stili sono semplici file di testo nel quale sono indicate le impostazioni per cambiare l'aspetto di Window Maker. Sono molto simili come strutture al file `Defaults/WindowMaker`. Tutte le impostazioni presenti nel file dello stile verranno applicate al file `Defaults/WindowMaker`. Di seguito viene fornito un esempio di stile che imposta in Windows Maker i colori Blu e Grigio che richiamano i colori ufficiali di Arch Linux:
 
  `Arch.style` 
-
 ```
 {
   FTitleBack = (solid, "#0088CC");
@@ -118,13 +117,13 @@ Gli stili sono semplici file di testo nel quale sono indicate le impostazioni pe
 
 ```
 
-Gli stili possono anche essere modificati mediante l'applicazione _Preferences Utility_.
+Gli stili possono anche essere modificati mediante l'applicazione *Preferences Utility*.
 
 ## Dock
 
 Un dock è una funzionalità dell'interfaccia grafica di alcuni sistemi operativi che serve ad eseguire programmi e funzionalità del sistema e a passare agevolmente tra le applicazioni in esecuzione.
 
-L'interfaccia utente di Mac OS X ha evoluto lo stile di interfaccia utente che utilizza Window Maker. C'è una _dock_ che contiene le icone delle applicazioni che sono _bloccate_ da parte dell'utente. Inoltre, può contenere piccole applicazioni speciali chiamate _dockapps_, che si spostano solo all'interno della dock stessa. Per impostazione predefinita, tutte le applicazioni eseguite in Window Maker avranno l'icona dell'applicazione nella dock, con la quale è possibile interagire per eseguire una nuova istanza di essa, nascondere e visualizzare tutte le finestre dell'applicazione, o uccidere l'istanza in esecuzione. L'icona non rappresenta una finestra. Invece, se si minimizza una finestra, una piccola icona che rappresenta la finestra apparirà sul desktop.
+L'interfaccia utente di Mac OS X ha evoluto lo stile di interfaccia utente che utilizza Window Maker. C'è una *dock* che contiene le icone delle applicazioni che sono *bloccate* da parte dell'utente. Inoltre, può contenere piccole applicazioni speciali chiamate *dockapps*, che si spostano solo all'interno della dock stessa. Per impostazione predefinita, tutte le applicazioni eseguite in Window Maker avranno l'icona dell'applicazione nella dock, con la quale è possibile interagire per eseguire una nuova istanza di essa, nascondere e visualizzare tutte le finestre dell'applicazione, o uccidere l'istanza in esecuzione. L'icona non rappresenta una finestra. Invece, se si minimizza una finestra, una piccola icona che rappresenta la finestra apparirà sul desktop.
 
 Dopo l'avvio di qualsiasi applicazione (per esempio, dalla riga di comando) l'icona viene visualizzata sul desktop. La si può aggiungere alla dock semplicemente selezionandola e trascinandola al suo interno. Per rimuovere l'icona dell'applicazione dalla dock, selezionare e trascinare fuori da essa l'icona dell'istanza. Si modificano le impostazioni, come la possibilità di avviare automaticamente un'applicazione quando si avvia Window Maker, facendo clic col pulsante destro del mouse sull'icona dell'applicazione nella Dock.
 
@@ -155,13 +154,13 @@ Nativamente WindowMaker non include un vassoio di sistema, ma esistono varie sol
 
 Il primo è **stalonetray** che prima della versione 0.8 non funzionava come un contenitore di dock in WindowMaker, ma bisognava usare Docker al suo posto. Inoltre NW è l'unico a crescere ed a funzionare in modo affidabile su WindowMaker, prima di quelle versioni.
 
-Dalla versione 0.8 è stato incluso un supporto base per ma modalità _dockapp_ in WindowMaker, e può essere abilitata attraverso l'opzione `--dockapp-mode wmaker`. Sono rischieste le seguenti opzioni: `--slot-size 32 --geometry 2x2 --parent-bg --scrollbars none`.
+Dalla versione 0.8 è stato incluso un supporto base per ma modalità *dockapp* in WindowMaker, e può essere abilitata attraverso l'opzione `--dockapp-mode wmaker`. Sono rischieste le seguenti opzioni: `--slot-size 32 --geometry 2x2 --parent-bg --scrollbars none`.
 
 Esistono però altre soluzioni più semplici:
 
 *   [wmsystray](https://aur.archlinux.org/packages/wmsystray/) : che facilità il lavoro per voi.
 *   [wmsystemtray](https://aur.archlinux.org/packages/wmsystemtray/) : Non utilizza i bordi e dovrebbe funzionare anche su altri ambienti desktop.
-*   [Peksystray](https://aur.archlinux.org/packages/Peksystray/) : piccolo vassoio di sistema (chiamato anche vassoio di notifiche) progettato per funzionare su tutti i window managers e _supporta il docking_ per le applicazioni.
+*   [Peksystray](https://aur.archlinux.org/packages/Peksystray/) : piccolo vassoio di sistema (chiamato anche vassoio di notifiche) progettato per funzionare su tutti i window managers e *supporta il docking* per le applicazioni.
 
 Peksystray fornisce una finestra dove le icone si aggiungono automaticamente a seconda delle richieste delle applicazioni. Entrambe le dimensioni della finestra e le dimensioni delle icone possono essere selezionate dall'utente. Se la finestra è piena, è possibile visualizzare automaticamente un'altra finestra per visualizzare più icone.
 
@@ -171,7 +170,7 @@ Peksystray fornisce una finestra dove le icone si aggiungono automaticamente a s
 
 Talvolta può capitare che una applicazione, come Firefox o Thunderbird, si avviino correttamente e a volte capita che l'avvio fallisce restituendo un errore, oppure senza nessun output. Se state utilizzando il pacchetto [windowmaker](https://www.archlinux.org/packages/?name=windowmaker), provare ad utilizzare il pacchetto [windowmaker-crm-git](https://aur.archlinux.org/packages/windowmaker-crm-git/) al suo posto.
 
-### Non è possibile disabilitare lo _smooth_ dei font
+### Non è possibile disabilitare lo *smooth* dei font
 
 Cancellare (conviene fare una copia di backup) la cartella `~/.fontconfig/` ed il file `~/.fonts.conf`, successivamente riavviare Window Maker.
 

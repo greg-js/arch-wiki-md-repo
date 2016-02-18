@@ -63,7 +63,6 @@ There are some discussions concerning overheating-related shutdowns when running
 Use the following [thinkfan](https://aur.archlinux.org/packages/thinkfan/) configuration [[3]](http://thinkpad-forum.de/threads/185587-X201-Thinkfan-Standardschaltschwellen-ermitteln):
 
  `/etc/thinkfan.conf` 
-
 ```
 #X201 user specific
 #lvl    low     up      RPM
@@ -89,7 +88,7 @@ Try pressing the **mute button** (next to the Escape key). See [this article](ht
 
 After suspension, an EC IRQ may hang in the queue causing all functions keys to stop working. [[5]](http://www.coreboot.org/Board:lenovo/x201)
 
-It may help to reload the _thinkpad_acpi_ module (`rmmod -f` is used as the module may be in use):
+It may help to reload the *thinkpad_acpi* module (`rmmod -f` is used as the module may be in use):
 
 ```
 # rmmod -f thinkpad_acpi

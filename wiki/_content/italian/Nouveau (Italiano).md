@@ -39,7 +39,7 @@ Si raccomanda inoltre di reinstallare [xorg-server](https://www.archlinux.org/pa
 
 ## Installazione
 
-Prima di procedere bisogna contyrollare se la vostra scheda è [supportata](http://nouveau.freedesktop.org/wiki/CodeNames) (un elenco più dettagliato è disponibile su [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Nvidia_Graphics_Processing_Units "wikipedia:Comparison of Nvidia Graphics Processing Units")), inoltre si controlli anche la pagina [feature matrix](http://nouveau.freedesktop.org/wiki/FeatureMatrix/), per verificare quali funzioni sono supportate dal vostro disposito. Inoltre, assicurarsi di avere [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)") installato correttamente .
+Prima di procedere bisogna contyrollare se la vostra scheda è [supportata](http://nouveau.freedesktop.org/wiki/CodeNames) (un elenco più dettagliato è disponibile su [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Nvidia_Graphics_Processing_Units installato correttamente .
 
 [Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau), che è disponibile nel [Depositi ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"). Il quale fornisce il driver DDX per l'accelerazione 2D e ha come dipendenza il pacchetto [mesa](https://www.archlinux.org/packages/?name=mesa) che fornisce il driver DRI per l'accelerazione 3D.
 
@@ -90,7 +90,7 @@ Ri-generare l'immagine ramdisk iniziale:
 
 ```
 
-Se si hanno problemi con i driver Nouveau, e si è costretti a ricostruire nouveau-drm diverse volte per scopi di test, non si aggiunga `nouveau` all' initramfs. È facile dimenticare di ricostruire l' initramfs e renderà qualsiasi test più difficile. Si usi perciò _avvio ritardato_. Ci potrebbero essere problemi addizionali con initramfs se si ha bisogno di un firmware (generalmente sconsigliato)
+Se si hanno problemi con i driver Nouveau, e si è costretti a ricostruire nouveau-drm diverse volte per scopi di test, non si aggiunga `nouveau` all' initramfs. È facile dimenticare di ricostruire l' initramfs e renderà qualsiasi test più difficile. Si usi perciò *avvio ritardato*. Ci potrebbero essere problemi addizionali con initramfs se si ha bisogno di un firmware (generalmente sconsigliato)
 
 ## Trucchi e Consigli
 
@@ -167,7 +167,6 @@ Nouveau supporta l'estensione xrandr per monitor multipli e per il modesetting. 
 Qui c'è un modello completo dell'inizio di `/etc/X11/xorg.conf.d/20-nouveau.conf` per avviare 2 monitor nella modalità dual head. Si potrebbe preferire usare uno strumento grafico per configurare i monitor come proprietà-display-gnome (Sistema -> Preferenze -> Display).
 
  `/etc/X11/xorg.conf` 
-
 ```
 # the right one
 Section "Monitor"

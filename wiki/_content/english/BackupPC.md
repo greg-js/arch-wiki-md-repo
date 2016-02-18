@@ -72,7 +72,6 @@ where you have to replace 192.168.0 to your corresponding IP-Adresses you want t
 Edit the Apache configuration file to load mod_perl, tell Apache to run as user backuppc and to include `/etc/httpd/conf/extra/backuppc.conf`:
 
  `/etc/httpd/conf/httpd.conf` 
-
 ```
  LoadModule perl_module modules/mod_perl.so
  User backuppc
@@ -88,7 +87,6 @@ Instead of globally changing the Apache user and group like in the example above
 Make sure Apache can run CGI programs (the line loading mod_cgi is not commented) and that it reads the BackupPC configuration by including it in `/etc/httpd/conf/extra/backuppc.conf`:
 
  `/etc/httpd/conf/httpd.conf` 
-
 ```
  LoadModule cgi_module modules/mod_cgi.so
  ...
@@ -104,7 +102,7 @@ You need to replace the original backuppc CGI with the below C code compiled pro
 
 Move the real CGI `/usr/share/backuppc/cgi-bin/BackupPC_Admin` to the lib directory `/usr/share/backuppc/lib/real-BackupPC_Admin.cgi`.
 
-Save the C code below to a file named _wrapper.c_ (please update the CGI path if needed) and compile it with:
+Save the C code below to a file named *wrapper.c* (please update the CGI path if needed) and compile it with:
 
 ```
 $ gcc -o BackupPC_Admin wrapper.c
@@ -147,7 +145,6 @@ Keep your web server with its usual user and backup should now be able to run co
 Install [fcgiwrap](https://www.archlinux.org/packages/?name=fcgiwrap). Enable and start `fcgiwrap.socket`.
 
  `/etc/nginx/sites-available/backuppc` 
-
 ```
 server {
   listen <your_server_port>;
@@ -194,7 +191,6 @@ And symlink to sites-enabled:
 ## Alternative lighttpd configuration
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
  server.port             = 81
  server.username         = "backuppc"
@@ -218,11 +214,9 @@ And symlink to sites-enabled:
  auth.require = ( "/BackupPC_Admin" => ( "method" => "basic", "realm" => "BackupPC", "require" => "user=admin" ) )
 
 ```
-
  `/etc/lighttpd/passwd` 
-
 ```
- admin:_yourpassword_
+ admin:*yourpassword*
 
 ```
 
@@ -236,14 +230,13 @@ And create log file:
 
 ## Accessing the admin page
 
-Browse to [http://localhost/BackupPC_Admin](http://localhost/BackupPC_Admin) respectively http://_your_backuppc_server_ip_/BackupPC_Admin.
+Browse to [http://localhost/BackupPC_Admin](http://localhost/BackupPC_Admin) respectively http://*your_backuppc_server_ip*/BackupPC_Admin.
 
 ## Website view problem
 
 Due an Apache directive, the web interface may not shown properly. If that is your case, just modify the line in your `/etc/httpd/conf/httpd.conf` that avoids .htaccess and .htpasswd from viewed for clients or change directory name /usr/share/backuppc/html for /usr/share/backuppc/files and update `/etc/httpd/conf/extra/backuppc.conf` with the new path, as it follows:
 
  `/etc/httpd/conf/extra/backuppc.conf` 
-
 ```
 Alias           /BackupPC/images        /usr/share/BackupPC/files/
 

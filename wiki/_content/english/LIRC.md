@@ -139,7 +139,6 @@ vlc
 Example:
 
  `~/.lircrc` 
-
 ```
 include "~/.lirc/mplayer"
 include "~/.lirc/mythtv"
@@ -156,7 +155,6 @@ include "~/.lirc/vlc"
 Xorg detects some remotes, such as the Streamzap USB PC Remote, as a Human Interface Device (HID) which means some or all of the keys will show up as key strokes as if entered from the physical keyboard. This behavior will present problems if LIRC is to be used to manage the device. To disable, create the following file and restart X:
 
  `/etc/X11/xorg.conf.d/90-streamzap.conf` 
-
 ```
 Section "InputClass"
   Identifier "Ignore Streamzap IR"

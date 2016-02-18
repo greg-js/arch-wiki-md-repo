@@ -42,11 +42,11 @@ When systemd user instance starts, it brings up the target `default.target`. Oth
 
 ## Basic setup
 
-All the user services will be placed in `~/.config/systemd/user/`. If you want to run services on first login, execute `systemctl --user enable _service_` for any service you want to be autostarted.
+All the user services will be placed in `~/.config/systemd/user/`. If you want to run services on first login, execute `systemctl --user enable *service*` for any service you want to be autostarted.
 
 ### D-Bus
 
-Some programs will need a [D-Bus](/index.php/D-Bus "D-Bus") user message bus. Traditionally it had been started when launching a desktop environment via `dbus-launch`, but since version 226, systemd has become the manager of the user message bus.[[3]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) The _dbus-daemon_ is started once per user for all sessions with the provided `dbus.socket` and `dbus.service` user units.
+Some programs will need a [D-Bus](/index.php/D-Bus "D-Bus") user message bus. Traditionally it had been started when launching a desktop environment via `dbus-launch`, but since version 226, systemd has become the manager of the user message bus.[[3]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) The *dbus-daemon* is started once per user for all sessions with the provided `dbus.socket` and `dbus.service` user units.
 
 **Note:** If you had previously created these units manually under `/etc/systemd/user/` or `~/.config/systemd/user/`, they can be removed.
 
@@ -67,7 +67,6 @@ One variable you may want to set is `PATH`.
 Create the [drop-in](/index.php/Systemd#Drop-in_snippets "Systemd") directory `/etc/systemd/system/user@.service.d/` and inside create a file that has the extension `.conf` (e.g. `local.conf`):
 
  `/etc/systemd/system/user@.service.d/local.conf` 
-
 ```
 [Service]
 Environment="PATH=/usr/lib/ccache/bin/:$PATH"
@@ -85,7 +84,6 @@ Environment="NO_AT_BRIDGE=1"
 As any other environment variable you set in `.bashrc` or `.bash_profile`, the `PATH` variable is not available to systemd. If you customize your `PATH` and plan on launching applications that make use of it from systemd units, you should make sure the modified `PATH` is set on the systemd environment. Assuming you set your `PATH` in `.bash_profile`, the best way to make systemd aware of your modified `PATH` is by adding the following to `.bash_profile` after the `PATH` variable is set:
 
  `~/.bash_profile` 
-
 ```
 systemctl --user import-environment PATH
 
@@ -96,11 +94,11 @@ systemctl --user import-environment PATH
 The systemd user instance is started after the first login of a user and killed after the last session of the user is closed. Sometimes it may be useful to start it right after boot, and keep the systemd user instance running after the last session closes, for instance to have some user process running without any open session. Lingering is used to that effect. Use the following command to enable lingering for specific user:
 
 ```
-# loginctl enable-linger _username_
+# loginctl enable-linger *username*
 
 ```
 
-**Warning:** systemd services are **not** sessions, they run outside of _logind_. Do not use lingering to enable automatic login as it will [break the session](/index.php/General_troubleshooting#Session_permissions "General troubleshooting").
+**Warning:** systemd services are **not** sessions, they run outside of *logind*. Do not use lingering to enable automatic login as it will [break the session](/index.php/General_troubleshooting#Session_permissions "General troubleshooting").
 
 ## Xorg and systemd
 
@@ -116,10 +114,10 @@ Set up your [xinitrc](/index.php/Xinitrc "Xinitrc") from the skeleton, so that i
 
 The session will use its own dbus daemon, but various systemd utilities will automatically connect to the `dbus.service` instance.
 
-Finally, enable (**as root**) the _xlogin_ service for automatic login at boot:
+Finally, enable (**as root**) the *xlogin* service for automatic login at boot:
 
 ```
-# systemctl enable xlogin@_username_
+# systemctl enable xlogin@*username*
 
 ```
 
@@ -145,7 +143,6 @@ This is how to launch xorg from a user service:
 1\. Make xorg run with root privileges and for any user, by editing `/etc/X11/Xwrapper.config`
 
  `/etc/X11/Xwrapper.config` 
-
 ```
 allowed_users=anybody
 needs_root_rights=yes
@@ -155,7 +152,6 @@ needs_root_rights=yes
 2\. Add the following units to `~/.config/systemd/user`
 
  `~/.config/systemd/user/xorg@.socket` 
-
 ```
 [Unit]
 Description=Socket for xorg at display %i
@@ -164,9 +160,7 @@ Description=Socket for xorg at display %i
 ListenStream=/tmp/.X11-unix/X%i
 
 ```
-
  `~/.config/systemd/user/xorg@.service` 
-
 ```
 [Unit]
 Description=Xorg server at display %i
@@ -214,7 +208,6 @@ The environment variable `XDG_VTNR` can be set in the systemd environment from `
 The following is an example of a user version of the mpd service.
 
  `~/.config/systemd/user/mpd.service` 
-
 ```
 [Unit]
 Description=Music Player Daemon
@@ -232,7 +225,6 @@ WantedBy=default.target
 The following is an example of a user version of `sickbeard.service`, which takes into account variable home directories where SickBeard can find certain files:
 
  `~/.config/systemd/user/sickbeard.service` 
-
 ```
 [Unit]
 Description=SickBeard Daemon
@@ -299,7 +291,6 @@ Once this is done, `systemctl --user enable` `tmux.service`, `multiplexer.target
 To run a window manager as a systemd service, you first need to run [#Xorg as a systemd user service](#Xorg_as_a_systemd_user_service). In the following we will use awesome as an example:
 
  `~/.config/systemd/user/awesome.service` 
-
 ```
 [Unit]
 Description=Awesome window manager
@@ -316,7 +307,7 @@ WantedBy=wm.target
 
 ```
 
-**Note:** The `[Install]` section includes a `WantedBy` part. When using `systemctl --user enable` it will link this as `~/.config/systemd/user/wm.target.wants/_window_manager_.service`, allowing it to be started at login. Is recommended to enable this service, not to link it manually.
+**Note:** The `[Install]` section includes a `WantedBy` part. When using `systemctl --user enable` it will link this as `~/.config/systemd/user/wm.target.wants/*window_manager*.service`, allowing it to be started at login. Is recommended to enable this service, not to link it manually.
 
 ## See also
 

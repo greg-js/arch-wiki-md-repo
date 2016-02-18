@@ -22,7 +22,6 @@ Install the [otpw](https://aur.archlinux.org/packages/otpw/) package from the AU
 Create a PAM configuration file for otpw:
 
  `/etc/pam.d/ssh-otpw` 
-
 ```
 auth sufficient pam_otpw.so
 session optional pam_otpw.so
@@ -32,7 +31,6 @@ session optional pam_otpw.so
 Next, modify sshd's PAM configuration to include otpw. If you are disabling static password auth, comment out the 2nd bold line. Here is the modified `/etc/pam.d/sshd` for reference:
 
  `/etc/pam.d/sshd` 
-
 ```
 #%PAM-1.0
 #auth     required  pam_securetty.so     #disable remote root

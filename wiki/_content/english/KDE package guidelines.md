@@ -99,41 +99,41 @@ The same rules as for KDE4, but you need force cmake to use Qt5 instead of Qt4:
 
 ### KDE Config Module
 
-KDE Config Module packages should be named `kcm-_module_`.
+KDE Config Module packages should be named `kcm-*module*`.
 
 ### Plasma widgets
 
-Plasma widgets (formerly Plasmoids) packages should be named `kdeplasma-applets-_widgetname_` so that they are recognizable as [KDE](/index.php/KDE "KDE")-related packages; this also distinguishes them from the official packages.
+Plasma widgets (formerly Plasmoids) packages should be named `kdeplasma-applets-*widgetname*` so that they are recognizable as [KDE](/index.php/KDE "KDE")-related packages; this also distinguishes them from the official packages.
 
 ### Runners
 
-Plasma runners packages should be named `kdeplasma-runners-_runnername_` so that they are recognizable as [KDE](/index.php/KDE "KDE")-related packages; this also distinguishes them from the official packages.
+Plasma runners packages should be named `kdeplasma-runners-*runnername*` so that they are recognizable as [KDE](/index.php/KDE "KDE")-related packages; this also distinguishes them from the official packages.
 
 ### Service menus
 
-Service menus packages should be named `kde-servicemenus-_servicename_` so that they are recognizable as [KDE](/index.php/KDE "KDE")-related packages
+Service menus packages should be named `kde-servicemenus-*servicename*` so that they are recognizable as [KDE](/index.php/KDE "KDE")-related packages
 
 ### Themes
 
-Plasma themes packages should be named `kdeplasma-themes-_themename_` so that they are recognizable as [KDE](/index.php/KDE "KDE")-related packages.
+Plasma themes packages should be named `kdeplasma-themes-*themename*` so that they are recognizable as [KDE](/index.php/KDE "KDE")-related packages.
 
 ## KF5 package naming
 
 ### Plasma widgets
 
-Plasma widgets (formerly Plasmoids) packages should be named `plasma5-applets-_widgetname_` so that they are recognizable as [Plasma 5](/index.php?title=Plasma_5&action=edit&redlink=1 "Plasma 5 (page does not exist)")-related packages; this also distinguishes them from the official packages.
+Plasma widgets (formerly Plasmoids) packages should be named `plasma5-applets-*widgetname*` so that they are recognizable as [Plasma 5](/index.php?title=Plasma_5&action=edit&redlink=1 "Plasma 5 (page does not exist)")-related packages; this also distinguishes them from the official packages.
 
 ### Runners
 
-Plasma runners packages should be named `plasma5-runners-_runnername_` so that they are recognizable as [Plasma 5](/index.php?title=Plasma_5&action=edit&redlink=1 "Plasma 5 (page does not exist)")-related packages; this also distinguishes them from the official packages.
+Plasma runners packages should be named `plasma5-runners-*runnername*` so that they are recognizable as [Plasma 5](/index.php?title=Plasma_5&action=edit&redlink=1 "Plasma 5 (page does not exist)")-related packages; this also distinguishes them from the official packages.
 
 ### Service menus
 
-Service menus packages should be named `kf5-servicemenus-_servicename_` so that they are recognizable as [KF5](/index.php?title=KF5&action=edit&redlink=1 "KF5 (page does not exist)")-related packages
+Service menus packages should be named `kf5-servicemenus-*servicename*` so that they are recognizable as [KF5](/index.php?title=KF5&action=edit&redlink=1 "KF5 (page does not exist)")-related packages
 
 ### Themes
 
-Plasma themes packages should be named `plasma5-themes-_themename_` so that they are recognizable as [Plasma 5](/index.php?title=Plasma_5&action=edit&redlink=1 "Plasma 5 (page does not exist)")-related packages.
+Plasma themes packages should be named `plasma5-themes-*themename*` so that they are recognizable as [Plasma 5](/index.php?title=Plasma_5&action=edit&redlink=1 "Plasma 5 (page does not exist)")-related packages.
 
 ## .install files
 

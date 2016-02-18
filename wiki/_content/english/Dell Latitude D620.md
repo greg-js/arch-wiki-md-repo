@@ -120,7 +120,6 @@ For more information, check [B43:ndiswrapper](/index.php/B43#ndiswrapper "B43")
 The D620 has an awfully loud PC speaker. To disable it, ensure the module `pcspkr` is not loaded during bootup:
 
  `/etc/modprobe.d/nobeep.conf` 
-
 ```
 #Do not load the 'pcspkr' module on boot.
 

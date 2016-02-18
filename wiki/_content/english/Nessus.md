@@ -1,4 +1,4 @@
-[Nessus](https://en.wikipedia.org/wiki/Nessus_(software) "wikipedia:Nessus (software)") is a proprietary [vulnerability scanner](https://en.wikipedia.org/wiki/Vulnerability_scanner "wikipedia:Vulnerability scanner") available free of charge for personal use. There are [over 40,000 plugins](http://www.tenable.com/plugins/) covering a large range of both local and remote flaws.
+[Nessus](https://en.wikipedia.org/wiki/Nessus_(software) is a proprietary [vulnerability scanner](https://en.wikipedia.org/wiki/Vulnerability_scanner "wikipedia:Vulnerability scanner") available free of charge for personal use. There are [over 40,000 plugins](http://www.tenable.com/plugins/) covering a large range of both local and remote flaws.
 
 ## Contents
 

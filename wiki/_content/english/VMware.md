@@ -55,7 +55,7 @@ Download the latest [VMware Workstation Pro](https://www.vmware.com/go/tryworkst
 Start the installation:
 
 ```
-# sh VMware-_edition_-_version_._release_._architecture_.bundle
+# sh VMware-*edition*-*version*.*release*.*architecture*.bundle
 
 ```
 
@@ -72,7 +72,6 @@ For the `System service scripts directory`, use `/etc/init.d` (the default).
 **Note:** During the installation you will get an error about `"No rc*.d style init script directories"` being given. This can be safely ignored, since Arch uses [systemd](/index.php/Systemd "Systemd").
 
 **Tip:** To (re)build the modules from terminal later on, use:
-
 ```
 # vmware-modconfig --console --install-all
 
@@ -90,10 +89,9 @@ VMware Workstation 12 supports kernels up to 4.2.
 
 ### systemd services
 
-_(Optional)_ Instead of using `/etc/init.d/vmware` (`start|stop|status|restart`) and `/usr/bin/vmware-usbarbitrator` directly to manage the services, you may also use `.service` files (also available in the [AUR](/index.php/AUR "AUR") as [vmware-systemd-services](https://aur.archlinux.org/packages/vmware-systemd-services/)):
+*(Optional)* Instead of using `/etc/init.d/vmware` (`start|stop|status|restart`) and `/usr/bin/vmware-usbarbitrator` directly to manage the services, you may also use `.service` files (also available in the [AUR](/index.php/AUR "AUR") as [vmware-systemd-services](https://aur.archlinux.org/packages/vmware-systemd-services/)):
 
  `/etc/systemd/system/vmware.service` 
-
 ```
 [Unit]
 Description=VMware daemon
@@ -110,9 +108,7 @@ RemainAfterExit=yes
 [Install]
 WantedBy=multi-user.target
 ```
-
  `/etc/systemd/system/vmware-usbarbitrator.service` 
-
 ```
 [Unit]
 Description=VMware USB Arbitrator
@@ -131,7 +127,6 @@ WantedBy=multi-user.target
 Add this service as well, if you want to connect to your VMware Workstation installation from another Workstation Server Console:
 
  `/etc/systemd/system/vmware-workstation-server.service` 
-
 ```
 [Unit]
 Description=VMware Workstation Server
@@ -202,22 +197,22 @@ $ perl -e 'use Compress::Zlib; my $v; read STDIN, $v, '$(stat -c%s "./bios440.ro
 To view the contents of the installer `.bundle`:
 
 ```
-$ sh VMware-_edition_-_version_._release_._architecture_.bundle --extract _/tmp/vmware-bundle/_
+$ sh VMware-*edition*-*version*.*release*.*architecture*.bundle --extract */tmp/vmware-bundle/*
 
 ```
 
 #### Using the modified BIOS
 
-If and when you decide to modify the extracted BIOS you can make your virtual machine use it by moving it to `~/vmware/_Virtual_machine_name_`:
+If and when you decide to modify the extracted BIOS you can make your virtual machine use it by moving it to `~/vmware/*Virtual_machine_name*`:
 
 ```
-$ mv bios440.rom ~/vmware/_Virtual_machine_name_/
+$ mv bios440.rom ~/vmware/*Virtual_machine_name*/
 
 ```
 
-then adding the name to the `_Virtual_machine_name_.vmx` file:
+then adding the name to the `*Virtual_machine_name*.vmx` file:
 
- `~/vmware/_Virtual_machine_name_/_Virtual_machine_name_.vmx`  `bios440.filename = "bios440.rom"` 
+ `~/vmware/*Virtual_machine_name*/*Virtual_machine_name*.vmx`  `bios440.filename = "bios440.rom"` 
 
 ### Using DKMS to manage the modules
 
@@ -253,7 +248,6 @@ $ sed -i 's/9/12/' dkms-workstation/dkms.conf
 The `dkms.conf` describes the module names and the compilation/installation procedure. `AUTOINSTALL="yes"` tells the modules to be recompiled/installed automatically each time:
 
  `/usr/src/vmware-modules-12/dkms.conf` 
-
 ```
 PACKAGE_NAME="vmware-modules"
 PACKAGE_VERSION="12"
@@ -288,7 +282,6 @@ AUTOINSTALL="yes"
 and now the `Makefile`:
 
  `/usr/src/vmware-modules-12/Makefile` 
-
 ```
 KERNEL := $(KERNELRELEASE)
 HEADERS := /usr/lib/modules/$(KERNEL)/build/include
@@ -326,7 +319,7 @@ The modules can then be installed with:
 
 ### Enable 3D graphics on Intel and Optimus
 
-Some graphics drivers are blacklisted by default, due to poor and/or unstable 3D acceleration. After enabling _Accelerate 3D graphics_, the log may show something like:
+Some graphics drivers are blacklisted by default, due to poor and/or unstable 3D acceleration. After enabling *Accelerate 3D graphics*, the log may show something like:
 
 ```
 Disabling 3D on this host due to presence of Mesa DRI driver.  Set mks.gl.allowBlacklistedDrivers = TRUE to override.
@@ -388,21 +381,21 @@ If you just get back to the prompt when opening the `.bundle`, then you probably
 
 ### Unable to download VMware Tools for Guests
 
-If after [#Preventing crashes and freezes when checking for updates](#Preventing_crashes_and_freezes_when_checking_for_updates) you are still unable to download the VMware Tools ISOs, you may either try running `vmware` or `vmplayer` as _root_, or downloading them directly from the [VMware repository](http://softwareupdate.vmware.com/cds/vmw-desktop/).
+If after [#Preventing crashes and freezes when checking for updates](#Preventing_crashes_and_freezes_when_checking_for_updates) you are still unable to download the VMware Tools ISOs, you may either try running `vmware` or `vmplayer` as *root*, or downloading them directly from the [VMware repository](http://softwareupdate.vmware.com/cds/vmw-desktop/).
 
-Navigate to: "_application name_ / _version_ / _build ID_ / linux / packages/" and download the appropriate Tools.
+Navigate to: "*application name* / *version* / *build ID* / linux / packages/" and download the appropriate Tools.
 
 Extract with:
 
 ```
-$ tar -xvf vmware-tools-_name_-_version_-_buildID_.x86_64.component.tar
+$ tar -xvf vmware-tools-*name*-*version*-*buildID*.x86_64.component.tar
 
 ```
 
 And install using the VMware installer:
 
 ```
-# vmware-installer --install-component=_/path/_vmware-tools-_name_-_version_-_buildID_.x86_64.component
+# vmware-installer --install-component=*/path/*vmware-tools-*name*-*version*-*buildID*.x86_64.component
 
 ```
 
@@ -413,13 +406,12 @@ If the above does not work, try installing [ncurses5-compat-libs](https://aur.ar
 VMware Workstation provides the possibility to remotely manage Shared VMs through the `vmware-workstation-server` service. However, this will fail with the error `"incorrect username/password"` due to incorrect PAM configuration of the `vmware-authd` service. To fix it, edit `/etc/pam.d/vmware-authd` like this:
 
  `/etc/pam.d/vmware-authd` 
-
 ```
 #%PAM-1.0
-auth     _required       pam_unix.so_
-account  _required       pam_unix.so_
-password _required       pam_permit.so_
-session  _required       pam_unix.so_
+auth     *required       pam_unix.so*
+account  *required       pam_unix.so*
+password *required       pam_permit.so*
+session  *required       pam_unix.so*
 
 ```
 
@@ -438,13 +430,12 @@ $ aplay -L
 
 ```
 
-If interested in playing 5.1 _surround sound_ from the guest, look for `surround51:CARD=_vendor_name_,DEV=_num_`, if experiencing quality issues, look for `front:CARD=_vendor_name_,DEV=_num_`. Finally put the name in the `.vmx`:
+If interested in playing 5.1 *surround sound* from the guest, look for `surround51:CARD=*vendor_name*,DEV=*num*`, if experiencing quality issues, look for `front:CARD=*vendor_name*,DEV=*num*`. Finally put the name in the `.vmx`:
 
- `~/vmware/_Virtual_machine_name_/_Virtual_machine_name_.vmx` 
-
+ `~/vmware/*Virtual_machine_name*/*Virtual_machine_name*.vmx` 
 ```
-sound.fileName=_"surround51:CARD=Live,DEV=0"_
-sound.autodetect=_"FALSE"_
+sound.fileName=*"surround51:CARD=Live,DEV=0"*
+sound.autodetect=*"FALSE"*
 ```
 
 [OSS emulation](/index.php/Advanced_Linux_Sound_Architecture#User-space_utilities "Advanced Linux Sound Architecture") should also be disabled.
@@ -454,7 +445,6 @@ sound.autodetect=_"FALSE"_
 To disable `KVM` on boot, you can use something like:
 
  `/etc/modprobe.d/vmware.conf` 
-
 ```
 blacklist kvm
 blacklist kvm-amd   # For AMD CPUs
@@ -475,19 +465,18 @@ See [Microcode](/index.php/Microcode "Microcode") for how to update the microcod
 
 ### Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"
 
-This is due to [incomplete](http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&externalId=1591) support of power management features ([Intel SpeedStep](https://en.wikipedia.org/wiki/Intel_speedstep "wikipedia:Intel speedstep") and [AMD PowerNow!](https://en.wikipedia.org/wiki/AMD_powernow "wikipedia:AMD powernow")/[Cool'n'Quiet](https://en.wikipedia.org/wiki/Cool%27n%27Quiet "wikipedia:Cool'n'Quiet")) in VMware Linux that vary the CPU frequency. In March 2012, with the release of [linux 3.3-1](https://projects.archlinux.org/svntogit/packages.git/commit/trunk/config.x86_64?h=packages/linux&id=9abe018d91a5d8c3af7523d30b8aa73f86b680be) the maximum frequency [Performance](/index.php/CPU_frequency_governors "CPU frequency governors") governor was replaced with the dynamic _Ondemand_. When the host CPU frequency changes, the Guest system clock runs too quickly or too slowly, but may also render the whole Guest unbootable.
+This is due to [incomplete](http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&externalId=1591) support of power management features ([Intel SpeedStep](https://en.wikipedia.org/wiki/Intel_speedstep "wikipedia:Intel speedstep") and [AMD PowerNow!](https://en.wikipedia.org/wiki/AMD_powernow "wikipedia:AMD powernow")/[Cool'n'Quiet](https://en.wikipedia.org/wiki/Cool%27n%27Quiet "wikipedia:Cool'n'Quiet")) in VMware Linux that vary the CPU frequency. In March 2012, with the release of [linux 3.3-1](https://projects.archlinux.org/svntogit/packages.git/commit/trunk/config.x86_64?h=packages/linux&id=9abe018d91a5d8c3af7523d30b8aa73f86b680be) the maximum frequency [Performance](/index.php/CPU_frequency_governors "CPU frequency governors") governor was replaced with the dynamic *Ondemand*. When the host CPU frequency changes, the Guest system clock runs too quickly or too slowly, but may also render the whole Guest unbootable.
 
 To prevent this, the maximum host CPU frequency can be specified, and [Time Stamp Counter](https://en.wikipedia.org/wiki/Time_Stamp_Counter "wikipedia:Time Stamp Counter") (TSC) disabled, in the global configuration:
 
  `/etc/vmware/config` 
-
 ```
 host.cpukHz = "X"  # The maximum speed in KHz, e.g. 3GHz is "3000000".
 host.noTSC = "TRUE" # Keep the Guest system clock accurate even when
 ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
 ```
 
-**Tip:** To periodically correct the time (once per minute), in the _Options_ tab of VMware Tools, enable: _"Time synchronization between the virtual machine and the host operating system"_.
+**Tip:** To periodically correct the time (once per minute), in the *Options* tab of VMware Tools, enable: *"Time synchronization between the virtual machine and the host operating system"*.
 
 ### Networking on Guests not available after system restart
 
@@ -520,7 +509,7 @@ $ vmware-installer -l
 and uninstall with (`--required` skips the confirmation):
 
 ```
-# vmware-installer -u _product_ --required
+# vmware-installer -u *product* --required
 
 ```
 
@@ -534,4 +523,4 @@ Remember to also [disable](/index.php/Disable "Disable") and remove the services
 
 ```
 
-You may also want to have a look at the module directories in `/usr/lib/modules/_kernel_name_/misc/` for any leftovers.
+You may also want to have a look at the module directories in `/usr/lib/modules/*kernel_name*/misc/` for any leftovers.

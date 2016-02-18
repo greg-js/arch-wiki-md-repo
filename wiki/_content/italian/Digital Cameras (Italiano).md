@@ -1,8 +1,8 @@
-Questa pagina mira a configurare correttamente libgphoto2 così che gli appartenenti al [gruppo](/index.php/Users_and_Groups_(Italiano) "Users and Groups (Italiano)") _camera_ possano accedere a una fotocamera digitale connessa tramite USB. L'obiettivo è stato nel mantenere ciò che è scritto qui, il più semplice possibile, per questo motivo non sono considerati i casi particolari che si possono incontrare.
+Questa pagina mira a configurare correttamente libgphoto2 così che gli appartenenti al [gruppo](/index.php/Users_and_Groups_(Italiano) "Users and Groups (Italiano)") *camera* possano accedere a una fotocamera digitale connessa tramite USB. L'obiettivo è stato nel mantenere ciò che è scritto qui, il più semplice possibile, per questo motivo non sono considerati i casi particolari che si possono incontrare.
 
-**Nota:** **dall'autore**: mi piacerebbe cambiare quest'ultima considerazione, così da realizzare una pagina meglio strutturata e che possa essere d'aiuto per tutta la comunità. Sentitevi quindi liberi di aggiungere i vostri problemi\considerazioni nella pagina _discussione_ così che possa magari essere aggiunto qualcosa in una sezione tipo _Risoluzione dei problemi_.
+**Nota:** **dall'autore**: mi piacerebbe cambiare quest'ultima considerazione, così da realizzare una pagina meglio strutturata e che possa essere d'aiuto per tutta la comunità. Sentitevi quindi liberi di aggiungere i vostri problemi\considerazioni nella pagina *discussione* così che possa magari essere aggiunto qualcosa in una sezione tipo *Risoluzione dei problemi*.
 
-Non tutte le fotocamere digitali sono rilevate con l'opzione --auto-detect (in gphoto2). Alcune fotocamere potrebbero essere riconosciute con un nome generico, o altre avere un nome di un modello differente. Se la fotocamera funziona, non è consigliabile intervenire per sistemare questi _dettagli_.
+Non tutte le fotocamere digitali sono rilevate con l'opzione --auto-detect (in gphoto2). Alcune fotocamere potrebbero essere riconosciute con un nome generico, o altre avere un nome di un modello differente. Se la fotocamera funziona, non è consigliabile intervenire per sistemare questi *dettagli*.
 
 ## Contents
 
@@ -18,7 +18,7 @@ Non tutte le fotocamere digitali sono rilevate con l'opzione --auto-detect (in g
 
 ## Libgphoto2
 
-[Libgphoto2](http://www.gphoto.org/proj/libgphoto2/) è la principale libreria progettata per fornire accesso ad una fotocamera digitale da programmi esterni, come Digikam o gphoto2\. Le fotocamere supportate _ufficialmente_ sono elencate [qui](http://www.gphoto.org/proj/libgphoto2/support.php) anche se è possibile che ne funzionino delle altre.
+[Libgphoto2](http://www.gphoto.org/proj/libgphoto2/) è la principale libreria progettata per fornire accesso ad una fotocamera digitale da programmi esterni, come Digikam o gphoto2\. Le fotocamere supportate *ufficialmente* sono elencate [qui](http://www.gphoto.org/proj/libgphoto2/support.php) anche se è possibile che ne funzionino delle altre.
 
 ### Installazione e Configurazione
 
@@ -67,7 +67,6 @@ Bus 001 Device 005: ID 04a9:318e Canon, Inc.
 Oppure è possibile aggiungere le regole udev locali in `/etc/udev/rules.d/90-local.rules` per garantire che non vengano sovrascrittoe da eventuali nuovi pacchetti.
 
  `90-local.rules` 
-
 ```
 PROGRAM="/lib/udev/check-ptp-camera", MODE="0660", GROUP="camera"
 ATTRS{idVendor}=="04a9", ATTRS{idProduct}=="318e", MODE="0660",  GROUP="camera"

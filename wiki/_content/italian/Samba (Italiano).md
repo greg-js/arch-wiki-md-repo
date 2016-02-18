@@ -284,7 +284,7 @@ $ smbclient -L <hostname> -U%
 3\. Montare la condivisione usando `mount.cifs`. Ricordare che non tutte le opzioni sono sempre necessarie o consigliate, ad esempio l'opzione `password`:
 
 ```
-# mount -t cifs //_SERVER_/_CONDIVISIONE_ _PUNTODIMOUNT_ -o user=_NOMEUTENTE_,password=_PASSWORD_,workgroup=_WORKGROUP_,ip=_IPSERVER_
+# mount -t cifs //*SERVER*/*CONDIVISIONE* *PUNTODIMOUNT* -o user=*NOMEUTENTE*,password=*PASSWORD*,workgroup=*WORKGROUP*,ip=*IPSERVER*
 
 ```
 
@@ -379,9 +379,9 @@ Prima abilitare l'accesso al comando mount, il file `fstab` dovrà essere modifi
 
 ```
 
-**Nota:** Questa è l'opzione `user**s**`(al plurale). Per altri tipi di filesystem, questa opzione è _user_, senza la "**s**".
+**Nota:** Questa è l'opzione `user**s**`(al plurale). Per altri tipi di filesystem, questa opzione è *user*, senza la "**s**".
 
-Questo permetterà agli utenti di montatre la condivisione se il suo punto di mount si trova in una cartella _controllabile_ dall'utente; ad esempio la propria cartella home. Per montare le condivisioni Samba in punti di mount che non si posseggono, utilizzare [#smbnetfs](#smbnetfs) oppure elevare i privilegi tramite [sudo](/index.php/Sudo_(Italiano) "Sudo (Italiano)").
+Questo permetterà agli utenti di montatre la condivisione se il suo punto di mount si trova in una cartella *controllabile* dall'utente; ad esempio la propria cartella home. Per montare le condivisioni Samba in punti di mount che non si posseggono, utilizzare [#smbnetfs](#smbnetfs) oppure elevare i privilegi tramite [sudo](/index.php/Sudo_(Italiano) "Sudo (Italiano)").
 
 ## Tips and tricks
 
@@ -495,7 +495,7 @@ encrypt passwords = yes
 
 ```
 
-Il parametro _workgroup_ imposta il nome del gruppo di lavoro al quale volete che la macchina appartenga. Il parametro _encrypt passwords_ deve essere mantenuto a _yes_ a meno che in rete non siano presenti macchine Windows 95 o Windows 98, questi due sistemi infatti non supportano le password criptate. Infine il parametro "netbios name" è il nome che desiderate assegnare alla macchina su cui state lavorando all'interno della rete.
+Il parametro *workgroup* imposta il nome del gruppo di lavoro al quale volete che la macchina appartenga. Il parametro *encrypt passwords* deve essere mantenuto a *yes* a meno che in rete non siano presenti macchine Windows 95 o Windows 98, questi due sistemi infatti non supportano le password criptate. Infine il parametro "netbios name" è il nome che desiderate assegnare alla macchina su cui state lavorando all'interno della rete.
 
 #### Condivisioni
 
@@ -566,7 +566,6 @@ Se non si conosce la struttura della rete locale, e gli strumenti di automazione
 In questo esempio verrà scansionata l'intera classe di indirizzi 192.168.1.*. Ecco il risultato:
 
  `$ nmap -sT 192.168.1.*` 
-
 ```
 Starting nmap 3.78 ( http://www.insecure.org/nmap/ ) at 2005-02-15 11:45 PHT
 Interesting ports on 192.168.1.1:
@@ -589,7 +588,6 @@ Il primo indirizzo(192.168.1.1) è un altro pc, mentre il secondo è il computer
 3\. Adesso verso il sistema che risulta avere la porta 139 aperta, sarà usato `nmblookup` per ottenere i nomi delle condivisioni(NetBIOS names):
 
  `$ nmblookup -A 192.168.1.1` 
-
 ```
 Looking up status of 192.168.1.1
         PUTER           <00> -         B <ACTIVE>
@@ -605,10 +603,9 @@ Looking up status of 192.168.1.1
 
 Senza preoccuparsi dei vari risultati, cercare il valore **<20>**, che indica la macchina con la condivisione file attiva.
 
-4\. Usare `smbclient` per elencare quali servizi sono condivisi da _PUTER_. Nel caso fosse richiesta una password, premendo invio verrà comunque mostrata la lista:
+4\. Usare `smbclient` per elencare quali servizi sono condivisi da *PUTER*. Nel caso fosse richiesta una password, premendo invio verrà comunque mostrata la lista:
 
  `$ smbclient -L \\PUTER` 
-
 ```
 Sharename       Type      Comment
 ---------       ----      -------
@@ -757,14 +754,14 @@ La soluzione[[3]](https://bugs.launchpad.net/ubuntu/+bug/479266/comments/5), è 
 
 ```
 
-_Testato su Arch Linux aggiornata al 02/12/2009_
+*Testato su Arch Linux aggiornata al 02/12/2009*
 
 ### Devo riavviare Samba per rendere le condivisioni visibili agli altri pc
 
 Se dopo l'avvio del computer, le condivisioni samba configurate non sono accessibili da nessun client, controllare:
 
 *   di non aver dimenticato di inserire il demone `samba` all'interno dell'array `DAEMONS` nel file `/etc/rc.conf` (dopo il demone `network` o qualsiasi sia il demone di gestione della rete es.[wicd](https://www.archlinux.org/packages/?name=wicd),[networkmanager](https://www.archlinux.org/packages/?name=networkmanager))
-*   che il demone _network_ non sia avviato in background (quindi non deve essere preceduto dal simbolo `@` all'interno del suddetto array). Rimuovere il simbolo '`@`' può risolvere il problema. Riavviare e controllare.
+*   che il demone *network* non sia avviato in background (quindi non deve essere preceduto dal simbolo `@` all'interno del suddetto array). Rimuovere il simbolo '`@`' può risolvere il problema. Riavviare e controllare.
 
 Si presume che: quando samba viene avviato, probabilmente il demone `network` non ha ancora finito di avviarsi correttamente, quindi il server samba non identifica l'interfaccia di rete sulla quale stare in ascolto, e quindi fallisce la sua inizializzazione.
 

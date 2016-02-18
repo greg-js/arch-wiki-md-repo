@@ -21,7 +21,7 @@ To install an x86_64 system, follow the [MacBook](/index.php/MacBook "MacBook") 
 
 See notes on **video support** before attempting installation!
 
-_The following assumes that you have somehow managed to install archlinux to a single partition on your drive, and that you still have your osx installation on a different partition._
+*The following assumes that you have somehow managed to install archlinux to a single partition on your drive, and that you still have your osx installation on a different partition.*
 
 ### Dual Boot
 
@@ -141,7 +141,7 @@ Number  Boot  Start Sector   End Sector   Status      Code
 
 ```
 
-Even if the mbr table looks like this (_note that in the second table only the last two lines are missing_), the bootloader will know what to boot. You can compare start and end sectors between the two tables if you wish.
+Even if the mbr table looks like this (*note that in the second table only the last two lines are missing*), the bootloader will know what to boot. You can compare start and end sectors between the two tables if you wish.
 
 Press 'w' to write the table to disk and reboot.
 
@@ -149,7 +149,7 @@ Press 'w' to write the table to disk and reboot.
 
 The next important thing is the bootloader, which acts as the bridge from refind to your kernel. Based on the Mode you use to install arch, either **EFI** or **CSM**, you can choose a bootloader of your choice. But for now, We provide you with information about **Syslinux** and **Gummiboot**, because these are the two we tested successfully for now.
 
-In both cases I assume that you managed to mount the EFI partition mentioned above to _/boot/_ already.
+In both cases I assume that you managed to mount the EFI partition mentioned above to */boot/* already.
 
 Grub is the one bootloader, which can handle both the EFI and the CSM mode. But because it's mighty, it also can be complex and the configuration are far-reaching. I recommending you, unless you want to configure the smallest detail in the bootloader for an **un**forgetting adventure during a booting, to use gummiboot (EFI-only) or syslinux (CSM-only), because both are really easy to setup.
 
@@ -174,7 +174,6 @@ After installing the package, it needs to be configured, so run the installer of
 Then you need to create a config file for gummiboot and add an entry for the arch booting. The **sdaX** means that you have to replace it with your root partition, in this case it may be **/dev/sda3**.
 
  `# nano /boot/loader/entries/arch.conf` 
-
 ```
 title          Arch Linux
 linux          /vmlinuz-linux
@@ -248,7 +247,6 @@ I also recommend `netctl`.
 As of kernel version 3.17.1-2, Broadcom Wireless driver most likely won't work (ERROR @wl_cfg80211_scan :WLC_SCAN error (-22)). The only option seems to be loading the b43 driver in [PIO](http://en.wikipedia.org/wiki/Programmed_input/output) mode. To enable PIO mode, install driver by following the guide at [wireless.kernel.org](http://wireless.kernel.org/en/users/Drivers/b43), then load the b43 kernel module with pio=1 and qos=0 parameters. To make this happen at boot, create `b43-firmware.conf` file in `/etc/modprobe.d/` and add the following lines:
 
  `b43-firmware.conf` 
-
 ```
 options b43 pio=1 qos=0
 
@@ -271,7 +269,7 @@ According to the [Debian Wiki](http://wiki.debian.org/MacBookPro) the MacBook Pr
 
 ### Nouveau
 
-Works out of the box, performance however is not that great and your system will get quite _hot_ when running nouveau.
+Works out of the box, performance however is not that great and your system will get quite *hot* when running nouveau.
 
 ### Nvidia
 

@@ -171,7 +171,6 @@ echo -e \0>>/sys/devices/platform/i8042/serio1/hscroll
 Some models of the U100 have a Synaptics touchpad installed. The Synaptics driver can be installed as described [here](/index.php/Touchpad_Synaptics "Touchpad Synaptics"). Vertical and horizontal edge scrolling work, and can be enabled in the synaptics .conf file:
 
  `/etc/X11/xorg.conf.d/10-synaptics.conf` 
-
 ```
  Section "InputClass"
        Identifier "touchpad"

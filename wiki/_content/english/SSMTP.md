@@ -50,7 +50,6 @@ FromLineOverride=yes
 Create aliases for local usernames (optional)
 
  `/etc/ssmtp/revaliases` 
-
 ```
 root:username@gmail.com:smtp.gmail.com:587
 mainuser:username@gmail.com:smtp.gmail.com:587
@@ -71,7 +70,6 @@ Change the 'From' text by editing `/etc/passwd` to receive mail from 'root at my
 Which changes `/etc/passwd` to:
 
  `$ grep myhostname /etc/passwd` 
-
 ```
 root:x:0:0:root@myhostname,,,:/root:/bin/bash
 mainuser:x:1000:1000:mainuser@myhostname,,,:/home/mainuser:/bin/bash
@@ -104,7 +102,7 @@ Set ssmtp.conf group owner to the new `ssmtp` group:
 
 ```
 
-Set the group owner of the _ssmtp_ binary to the new `ssmtp` group:
+Set the group owner of the *ssmtp* binary to the new `ssmtp` group:
 
 ```
 # chown :ssmtp /usr/bin/ssmtp
@@ -118,7 +116,7 @@ Make sure only root, and the `ssmtp` group can access `ssmtp.conf`:
 
 ```
 
-Set the SGID bit on the _ssmtp_ binary.
+Set the SGID bit on the *ssmtp* binary.
 
 ```
 # chmod g+s /usr/bin/ssmtp
@@ -145,10 +143,9 @@ $ mail username@somedomain.com
 
 **Note:** When using mail interactively, after typing the Subject and hitting enter, you type the body. Hit `Ctrl`+`d` on a blank line to end your message and automatically send it out.
 
-An alternate method for sending emails is to create a text file and send it with _ssmtp_ or _mail_
+An alternate method for sending emails is to create a text file and send it with *ssmtp* or *mail*
 
  `test-mail.txt` 
-
 ```
 To:username@somedomain.com
 From:youraccount@gmail.com
@@ -168,7 +165,7 @@ $ mail username@somedomain.com < test-mail.txt
 
 If you need to be able to add attachments, install and configure [Mutt](/index.php/Mutt "Mutt") and [Msmtp](/index.php/Msmtp "Msmtp") and then go see the tip at [nixcraft](http://www.cyberciti.biz/tips/sending-mail-with-attachment.html).
 
-Alternatively, you can attach using _uuencode_:
+Alternatively, you can attach using *uuencode*:
 
 ```
 $ uuencode file.txt file.txt | mail user@domain.com

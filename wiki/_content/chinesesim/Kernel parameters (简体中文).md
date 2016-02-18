@@ -26,13 +26,13 @@
 
 *   当出现启动选择菜单的时候，按 `Tab` 进入修改模式:
 
-	 `> .linux ../vmlinuz-linux root=/dev/sda3 ro initrd=../initramfs-linux.img _quiet splash_` 
+	 `> .linux ../vmlinuz-linux root=/dev/sda3 ro initrd=../initramfs-linux.img *quiet splash*` 
 
 	Press `Enter` to boot with these parameters.
 
 *   To make the change persistent after reboot, edit `/boot/syslinux/syslinux.cfg` and add them to the `APPEND` line:
 
-	 `APPEND root=/dev/sda3 ro _quiet splash_` 
+	 `APPEND root=/dev/sda3 ro *quiet splash*` 
 
 更多详情请见[Syslinux](/index.php/Syslinux "Syslinux") 。
 
@@ -40,15 +40,15 @@
 
 *   Press `e` when the menu shows up and add them on the `linux` line:
 
-	 `linux   /boot/vmlinuz-linux root=UUID=978e3e81-8048-4ae1-8a06-aa727458e8ff ro  _quiet splash_` 
+	 `linux   /boot/vmlinuz-linux root=UUID=978e3e81-8048-4ae1-8a06-aa727458e8ff ro  *quiet splash*` 
 
 	Press `b` to boot with these parameters.
 
-*   To make the change persistent after reboot, while you _could_ manually edit `/boot/grub/grub.cfg` with the exact line from above, for beginners it's recommended to:
+*   To make the change persistent after reboot, while you *could* manually edit `/boot/grub/grub.cfg` with the exact line from above, for beginners it's recommended to:
 
 	Edit `/etc/default/grub` and append your kernel options to the `GRUB_CMDLINE_LINUX_DEFAULT` line:
 
-	 `GRUB_CMDLINE_LINUX_DEFAULT="_quiet splash_"` 
+	 `GRUB_CMDLINE_LINUX_DEFAULT="*quiet splash*"` 
 
 	And then automatically re-generate the `grub.cfg` file with:
 
@@ -60,7 +60,7 @@ For more information on configuring GRUB, see the [GRUB](/index.php/GRUB "GRUB")
 
 *   Press `e` when the menu shows up and add them on the `kernel` line:
 
-	 `kernel /boot/vmlinuz-linux root=/dev/sda3 ro _quiet splash_` 
+	 `kernel /boot/vmlinuz-linux root=/dev/sda3 ro *quiet splash*` 
 
 	Press `b` to boot with these parameters.
 
@@ -75,7 +75,7 @@ For more information on configuring GRUB Legacy, see the [GRUB Legacy](/index.ph
 ```
 image=/boot/vmlinuz-linux
         ...
-        _quiet splash_
+        *quiet splash*
 ```
 
 For more information on configuring LILO, see the [LILO](/index.php/LILO "LILO") article.

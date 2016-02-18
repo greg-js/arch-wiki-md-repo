@@ -97,7 +97,7 @@ If you have not already done so, enable the testing repository to retrieve the p
 
 **Note:** **Intel WiFi users:** If your WiFi card supports Bluetooth, then the BT interface should be available out-of-the-box, as the required firmware is included in [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).
 
-The Broadcom Bluetooth firmware is not available in the kernel (the same as for 2015 model [source](http://tech.sybreon.com/2015/03/15/xps13-9343-ubuntu-linux/)), so you will have to retrieve it from the [[2]](http://downloads.dell.com/FOLDER03272920M/1/9350_Network_Driver_XMJK7_WN32_12.0.1.720_A00.EXE). You need to extract the `.exe` file with [p7zip](https://www.archlinux.org/packages/?name=p7zip) and then convert it to a `.hcd` file with _hex2hcd_ from [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils):
+The Broadcom Bluetooth firmware is not available in the kernel (the same as for 2015 model [source](http://tech.sybreon.com/2015/03/15/xps13-9343-ubuntu-linux/)), so you will have to retrieve it from the [[2]](http://downloads.dell.com/FOLDER03272920M/1/9350_Network_Driver_XMJK7_WN32_12.0.1.720_A00.EXE). You need to extract the `.exe` file with [p7zip](https://www.archlinux.org/packages/?name=p7zip) and then convert it to a `.hcd` file with *hex2hcd* from [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils):
 
 ```
 $ 7z x 9350_Network_Driver_XMJK7_WN32_12.0.1.720_A00.EXE

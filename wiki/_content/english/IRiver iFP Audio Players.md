@@ -75,7 +75,6 @@ You should now have full access to your iRiver directories via Midnight Commande
 Put the following into the file `/etc/udev/rules.d/ifpdev.rules`:
 
  `/etc/udev/rules.d/ifpdev.rules` 
-
 ```
  # udev rules file for supported ifp devices
  #

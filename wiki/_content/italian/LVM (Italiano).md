@@ -47,12 +47,12 @@ Le componenti base di LVM sono:
 
 Con LVM sarà più facile gestire le proprie partizioni (volumi logici) rispetto ad un disco partizionato normalmente. Ad esempio, sarà possibile:
 
-*   Usare _un qualsiasi numero_ di dischi come un grande disco(VG)
-*   Avere partizioni(LV) sparse _sopra_ a diversi dischi (possono essere grandi quanto la capacità di archiviazione di tutti i dischi insieme)
-*   Ridimensionare/creare/eliminare partizioni(LV) e dischi(VG) _come si vuole_ (non esiste il vincolo della posizione dei volumi logici nel gruppo di volumi come invece per le normali partizioni)
-*   Ridimensionare/creare/cancellare partizioni(LV) e dischi(VG) _online_ (i filesystem che risiedono su di essi dovranno essere ridimensionati, ma solo alcuni supportano il ridimensionamento online)
-*   _Chiamare_ i propri dischi(VG) e le proprie partizioni(LV) come si desidera
-*   Creare piccole partizioni(LV) e ridimensionarle "_dinamicamente_" appena esse si riempono (l'allargamento del filesystem dovrà essere eseguito a mano, ma può essere effettuato online con alcuni filesystem)
+*   Usare *un qualsiasi numero* di dischi come un grande disco(VG)
+*   Avere partizioni(LV) sparse *sopra* a diversi dischi (possono essere grandi quanto la capacità di archiviazione di tutti i dischi insieme)
+*   Ridimensionare/creare/eliminare partizioni(LV) e dischi(VG) *come si vuole* (non esiste il vincolo della posizione dei volumi logici nel gruppo di volumi come invece per le normali partizioni)
+*   Ridimensionare/creare/cancellare partizioni(LV) e dischi(VG) *online* (i filesystem che risiedono su di essi dovranno essere ridimensionati, ma solo alcuni supportano il ridimensionamento online)
+*   *Chiamare* i propri dischi(VG) e le proprie partizioni(LV) come si desidera
+*   Creare piccole partizioni(LV) e ridimensionarle "*dinamicamente*" appena esse si riempono (l'allargamento del filesystem dovrà essere eseguito a mano, ma può essere effettuato online con alcuni filesystem)
 *   ...
 
 Esempio:
@@ -192,7 +192,7 @@ Si può controllare i volumi logici creati con:
 
 ```
 
-**Nota:** Potrebbe essere necessario caricare il modulo _device-mapper_ del kernel (**modprobe dm-mod**) affinché il comando sopra citato abbia successo.
+**Nota:** Potrebbe essere necessario caricare il modulo *device-mapper* del kernel (**modprobe dm-mod**) affinché il comando sopra citato abbia successo.
 
 **Tip:** Sarà possibile iniziare con relativamente piccole dimensioni per i volumi logici ed espanderli successivamente se necessario. Per semplicità lasciare dello spazio libero nel gruppo di volumi così da avere spazio per le espansioni dei volumi logici.
 
@@ -215,7 +215,7 @@ Adesso sarà possibile creare i filesystem sui volumi logici ed effettuarne il m
 
 ```
 
-~~Se si sta installando Arch Linux, avviare `/arch/setup`, selezionare _Prepare Hard Drive_ direttamente al passaggio 3 _Set Filesystem Mountpoints_ e _**leggere le seguenti [sezioni](#_Impostare_i_filesystem_ed_i_punti_di_mount) prima di procedere con l'installazione!**_~~
+~~Se si sta installando Arch Linux, avviare `/arch/setup`, selezionare *Prepare Hard Drive* direttamente al passaggio 3 *Set Filesystem Mountpoints* e ***leggere le seguenti [sezioni](#_Impostare_i_filesystem_ed_i_punti_di_mount) prima di procedere con l'installazione!***~~
 
 ### Impostare i filesystem ed i punti di mount
 
@@ -394,7 +394,7 @@ Creare uno volume logico snapshot come i normali volumi logici.
 
 Con questo volume, si potranno modificare meno di 100 M di dati, prima che il volume si riempa.
 
-E’ importante inserire il modulo _dm-snapshot_ nell’array MODULES nel file `/etc/mkinitcpio.conf`, altrimenti il sistema non si avvierà. Se si effettua la modifica ad un sistema già installato ricostruire l’immagine con il comando:
+E’ importante inserire il modulo *dm-snapshot* nell’array MODULES nel file `/etc/mkinitcpio.conf`, altrimenti il sistema non si avvierà. Se si effettua la modifica ad un sistema già installato ricostruire l’immagine con il comando:
 
 ```
 # mkinitcpio -g /boot/initramfs-linux.img
@@ -416,7 +416,7 @@ gli snapshot sono principalmente usati per fornire una copia congelata del files
 
 ```
 
-*   Provare ad anteporre _lvm_ ai comandi in questo modo:
+*   Provare ad anteporre *lvm* ai comandi in questo modo:
 
 ```
 # lvm pvdisplay

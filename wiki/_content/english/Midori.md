@@ -39,24 +39,24 @@ Development versions are available in the [AUR](/index.php/AUR "AUR"):
 
 ### AdBlock
 
-To enable the AdBlock extensions go to _Menu > Preferences > Extensions_ and check the _Advertisement blocker_ box.
+To enable the AdBlock extensions go to *Menu > Preferences > Extensions* and check the *Advertisement blocker* box.
 
-The AdBlock extension from Midori uses the same lists as the AdBlock Plus extension for Firefox so you can get more lists from the [AdBlock Plus site](http://easylist.adblockplus.org/en/). You can also block specific images on various sites by right-clicking them and choosing _Block image_.
+The AdBlock extension from Midori uses the same lists as the AdBlock Plus extension for Firefox so you can get more lists from the [AdBlock Plus site](http://easylist.adblockplus.org/en/). You can also block specific images on various sites by right-clicking them and choosing *Block image*.
 
 ### Search engines
 
-Midori also supports search engines, much in the fashion other browsers do. Various search engines have shortcuts so that they can be easily used from the address bar. To manage your search engines click on the icon in the search engine box and choose _Manage Search Engines_.
+Midori also supports search engines, much in the fashion other browsers do. Various search engines have shortcuts so that they can be easily used from the address bar. To manage your search engines click on the icon in the search engine box and choose *Manage Search Engines*.
 
-Of course you can do clever things with this features, such as provide various shortcuts for various websites (not just for searching). For example you can add another entry to the _Search Engines_ dialog with the token _arch_ and the necessary information for the Arch Linux homepage. Now you can access the Arch Linux website just by typing _arch_.
+Of course you can do clever things with this features, such as provide various shortcuts for various websites (not just for searching). For example you can add another entry to the *Search Engines* dialog with the token *arch* and the necessary information for the Arch Linux homepage. Now you can access the Arch Linux website just by typing *arch*.
 
 Another example can be to add a shortcut for an URL shortener:
 
 *   just add a new search engine with the URL `[http://is.gd/create.php?longurl=](http://is.gd/create.php?longurl=)` (or another shortener with similar functionality).
-*   set a token for it (_sh_ here).
+*   set a token for it (*sh* here).
 *   get the short URL for any link by typing:
 
 ```
-sh _link_
+sh *link*
 
 ```
 
@@ -64,7 +64,7 @@ in the address bar.
 
 ### User scripts
 
-To enable the user scripts extensions go to _Menu > Preferences > Extensions_ and check the _User addons_ box. Midori's user scripts are compatible with [Firefox's Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) scripts. You can find an extensive list of scripts on [http://userscripts-mirror.org/](http://userscripts-mirror.org/) .
+To enable the user scripts extensions go to *Menu > Preferences > Extensions* and check the *User addons* box. Midori's user scripts are compatible with [Firefox's Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) scripts. You can find an extensive list of scripts on [http://userscripts-mirror.org/](http://userscripts-mirror.org/) .
 
 For manual installation, you have to create the folder `~/.local/share/midori/scripts` and copy your scripts there. This folder will be automatically picked up by Midori and any compatible scripts will be loaded.
 
@@ -90,7 +90,6 @@ For this:
 *   in that folder create a file with the content you want to block:
 
  `myadblockfilters.txt` 
-
 ```
 [Adblock]
 ! Title: Personal AdBlocker v1
@@ -111,7 +110,7 @@ www.phoronix.com#DIV.phxcms_bar_align
 
 ```
 
-*   go to _Menu > Preferences > Extensions_ and click the configuration icon of Adblock and add:
+*   go to *Menu > Preferences > Extensions* and click the configuration icon of Adblock and add:
 
 ```
 file://.local/share/midori/filters/myadblockfilters.txt

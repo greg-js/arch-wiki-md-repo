@@ -38,7 +38,6 @@ Extract that archive to /usr:
 Ensure /usr/share/edk2.git/ovmf-x64 contains these files:
 
  `$ ls /usr/share/edk2.git/ovmf-x64/*pure*.fd` 
-
 ```
 /usr/share/edk2.git/ovmf-x64/OVMF-pure-efi.fd
 /usr/share/edk2.git/ovmf-x64/OVMF_VARS-pure-efi.fd
@@ -51,7 +50,7 @@ This will be the BIOS that the VM will use. Non-UEFI users may need to use i440f
 
 See [Polkit#Bypass password prompt](/index.php/Polkit#Bypass_password_prompt "Polkit") to bypass the password prompt, install [libvirt](https://www.archlinux.org/packages/?name=libvirt), then [enable](/index.php/Enable "Enable") and start `libvirtd.service`.
 
-Start _virt-manager_ and configure the hypervisor. Virtmanager should connect to the qemu session.
+Start *virt-manager* and configure the hypervisor. Virtmanager should connect to the qemu session.
 
 ## Enabling IOMMU
 
@@ -62,7 +61,6 @@ If your processor is Intel, add `intel_iommu=on` to your [bootloader kernel opti
 After rebooting, check dmesg to confirm IOMMU is enabled:
 
  `dmesg|grep -e DMAR -e IOMMU` 
-
 ```
 [    0.000000] ACPI: DMAR 0x00000000BDCB1CB0 0000B8 (v01 INTEL  BDW      00000001 INTL 00000001)
 [    0.000000] Intel-IOMMU: enabled
@@ -87,7 +85,6 @@ After rebooting, check dmesg to confirm IOMMU is enabled:
 Create udev rules to give user-access to devices (hdd and gpu):
 
  `/etc/udev/rules.d/10-qemu-hw-users.rules` 
-
 ```
 KERNEL=="sda[3-6]", OWNER="YOUR_USER", GROUP="YOUR_GROUP"
 KERNEL=="YOUR_VFIO_GROUPS", SUBSYSTEM=="vfio", OWNER="YOUR_USER", GROUP="YOUR_USER"
@@ -100,7 +97,6 @@ This should allow you to set qemu user and group to something a little safer tha
 Find your target card's PCI locations and device IDs:
 
  `lspci -nn|grep -iP "NVIDIA|Radeon"` 
-
 ```
 01:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Cayman PRO [Radeon HD 6950] [1002:6719]
 01:00.1 Audio device [0403]: Advanced Micro Devices, Inc. [AMD/ATI] Cayman/Antilles HDMI Audio [Radeon HD 6900 Series] [1002:aa80]
@@ -125,7 +121,6 @@ If there is no output, you're good to go. If instead you receive `modprobe: FATA
 Ensure the vfio-pci driver is loaded on bootup through `modprobe.d`. It is necessary to tell the vfio-pci driver which PCI devices to bind. If you were adding all three of the PCI devices listed above, your modprobe.d launch config would have the following contents:
 
  `/etc/modprobe.d/vfio.conf` 
-
 ```
 options vfio-pci ids=1002:6719,1002:aa80,10de:0392
 
@@ -134,7 +129,6 @@ options vfio-pci ids=1002:6719,1002:aa80,10de:0392
 Next we'll want to ensure the kernel loads the necessary modules for vfio-pci when starting up:
 
  `/etc/mkinitcpio.conf` 
-
 ```
 ...
 MODULES="vfio vfio_iommu_type1 vfio_pci vfio_virqfd"
@@ -160,7 +154,6 @@ rd.modules-load=vfio-pci,...
 Reboot and check dmesg output for successful assignment of the device(s) to vfio-pci:
 
  `dmesg | grep -i vfio` 
-
 ```
 ...
 [    0.456472] VFIO - User Level meta-driver version: 0.3
@@ -195,7 +188,6 @@ $ echo "pci-stub" > sude tee /etc/modules-load.d/vfio.conf
 Add the relevant PCI device IDs to the kernel command line:
 
  `/etc/mkinitcpio.conf` 
-
 ```
 ...
 GRUB_CMDLINE_LINUX_DEFAULT="... pci-stub.ids=1002:6719,1002:aa80,10de:0392 ..."
@@ -219,7 +211,6 @@ Reload the grub configuration:
 Check dmesg output for successful assignment of the device to pci-stub:
 
  `dmesg | grep pci-stub` 
-
 ```
 ...
 [    2.390128] pci-stub: add 1002:6719 sub=FFFFFFFF:FFFFFFFF cls=00000000/00000000
@@ -250,7 +241,6 @@ There are many methods to bind the card to vfio, here is one example:
 Only complete IOMMU groups can be attached to the guest VM. To see which groups each of your PCI devices are assigned to:
 
  `# find /sys/kernel/iommu_groups/ -type l` 
-
 ```
 /sys/kernel/iommu_groups/0/devices/0000:00:00.0
 /sys/kernel/iommu_groups/1/devices/0000:00:01.0
@@ -305,7 +295,6 @@ After installation and configuration, reconfigure your [bootloader kernel parame
 Give QEMU access to hardware (there may be safer ways of doing this):
 
  `/etc/libvirt/qemu.conf` 
-
 ```
 ...
 user = "root"
@@ -319,9 +308,7 @@ QEMU also needs acces to VFIO files. Include every numbered file in /dev/vfio:
 ls -1 /dev/vfio
 
 ```
-
  `/etc/libvirt/qemu.conf` 
-
 ```
 ...
 cgroup_device_acl = [
@@ -374,7 +361,6 @@ For more commands see [QEMU.](https://wiki.archlinux.org/index.php/QEMU)
 Use virsh to edit the VM with these changes:
 
  `<domain type='kvm'>` 
-
 ```
 <os>
  <loader readonly='yes' type='pflash'>/usr/share/edk2.git/ovmf-x64/OVMF_CODE-pure-efi.fd</loader>
@@ -512,7 +498,6 @@ Additionally, ensure that you are not passing your keyboard or mouse through to 
 Create the synergy server config.
 
  `/etc/synergy.conf` 
-
 ```
 # Example config
 section: screens
@@ -579,7 +564,6 @@ Depending on your operating system, you may find that it may refuse to boot afte
 If GeForce Experience complains about an unsupported CPU being present and some features, e.g. game optimization, don't work, passing the `ignore_msrs=1` option to the KVM module will most likely solve the problem by ignoring accesses to unimplemented MSRs:
 
  `/etc/modprobe.d/kvm.conf` 
-
 ```
 ...
 options kvm ignore_msrs=1

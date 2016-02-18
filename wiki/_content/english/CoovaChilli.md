@@ -29,7 +29,6 @@ Example configuration for a full and working CoovaChilli setup. Consider **eth0*
 ### FreeRadius
 
  `/etc/raddb/clients.conf` 
-
 ```
 client 127.0.0.1 {
  secret     = mysecret
@@ -40,7 +39,6 @@ client 127.0.0.1 {
 Adjust the following settings:
 
  `/etc/raddb/sql.conf` 
-
 ```
         server = "localhost"
         login = "root"
@@ -51,7 +49,6 @@ Adjust the following settings:
 Uncomment the following settings:
 
  `/etc/raddb/sites-available/default` 
-
 ```
 authorize {
           sql
@@ -66,7 +63,6 @@ accounting {
 Uncomment the following settings:
 
  `/etc/raddb/radiusd.conf` 
-
 ```
        $INCLUDE sql.conf
 
@@ -87,7 +83,6 @@ $ mysql -u root -p radius < /usr/share/nginx/html/daloradius/contrib/db/fr2-mysq
 ## CoovaChilli
 
  `/etc/chilli/defaults` 
-
 ```
 HS_NETWORK=192.168.10.0
 HS_UAMLISTEN=192.168.10.1
@@ -109,7 +104,6 @@ $ cp -r /usr/share/webapps/daloradius/contrib/chilli/portal2/* /usr/share/nginx/
 Adjust the following config values:
 
  `/usr/share/nginx/html/daloradius/library/daloradius.conf.php` 
-
 ```
 $configValues['CONFIG_DB_PASS'] = 'xxxx';
 $configValues['CONFIG_MAINT_TEST_USER_RADIUSSECRET'] = 'mysecret';
@@ -120,7 +114,6 @@ $configValues['CONFIG_DB_TBL_RADUSERGROUP'] = 'radusergroup';
 Also in these several files:
 
  `/usr/share/nginx/html/signup-*/library/daloradius.conf.php` 
-
 ```
 $configValues['CONFIG_DB_PASS'] = 'xxxx';
 $configValues['CONFIG_DB_NAME'] = 'radius';

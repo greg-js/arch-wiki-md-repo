@@ -17,11 +17,11 @@
 
 ## 前提
 
-需要[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")[libcap](https://www.archlinux.org/packages/?name=libcap)，用其提供的_setcap_命令进行文件的权限设置和能力扩展。
+需要[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")[libcap](https://www.archlinux.org/packages/?name=libcap)，用其提供的*setcap*命令进行文件的权限设置和能力扩展。
 
 ## 设置方法
 
-在linux系统中，能力是通过_security_命令空间下的[扩展属性](/index.php/File_permissions_and_attributes#Extended_attributes "File permissions and attributes")(`man 7 xattr`)实现。主流的linux文件系统都支持扩展属性, 包括 Ext2, Ext3, Ext4, Btrfs, JFS, XFS, 和 Reiserfs。
+在linux系统中，能力是通过*security*命令空间下的[扩展属性](/index.php/File_permissions_and_attributes#Extended_attributes "File permissions and attributes")(`man 7 xattr`)实现。主流的linux文件系统都支持扩展属性, 包括 Ext2, Ext3, Ext4, Btrfs, JFS, XFS, 和 Reiserfs。
 
 用`getcap`显示ping命令的能力：
 

@@ -55,7 +55,7 @@ Vim专注于键盘操作，它并不是像nano或pico一样的简单编辑器。
 
 **注意:**
 
-*   _vim_ 包 **不包含** 图形界面支持。因此缺失了 `+clipboard` 特性，Vim也就不能够同X11的 _primary_ 和 _clipboard_ 剪切板交互。_gvim*_ 包在全面支持图形界面的同时提供了命令行版本的Vim。
+*   *vim* 包 **不包含** 图形界面支持。因此缺失了 `+clipboard` 特性，Vim也就不能够同X11的 *primary* 和 *clipboard* 剪切板交互。*gvim** 包在全面支持图形界面的同时提供了命令行版本的Vim。
 *   非官方源[herecura-stable](/index.php/Unofficial_user_repositories#herecura-stable "Unofficial user repositories") 也提供大量Vim/gVim变种版本: `vim-cli` `vim-gvim-common` `vim-gvim-gtk` `vim-gvim-qt` `vim-rt` 和 `vim-tiny`。
 
 ## 用法
@@ -108,7 +108,7 @@ h   l
 
 ### 重复命令
 
-如果一个命令前用数字 _n_ 修饰，那么这个命令就会执行 _n_ 次（虽然有些命令例外，例如`s`，但这仍然很有用）。例如，按下`3i`，输入`Help!` ，然后按下`Esc`，会打印`Help! Help! Help!` 。输入`2}`将光标后移两个段落。这在以下几个命令中经常使用。
+如果一个命令前用数字 *n* 修饰，那么这个命令就会执行 *n* 次（虽然有些命令例外，例如`s`，但这仍然很有用）。例如，按下`3i`，输入`Help!` ，然后按下`Esc`，会打印`Help! Help! Help!` 。输入`2}`将光标后移两个段落。这在以下几个命令中经常使用。
 
 ### 删除
 
@@ -165,7 +165,6 @@ Vim内置了剪贴板（也叫缓冲区）。使用`u`撤销命令，`Ctrl+r`可
 如果需要常用的功能（如语法高亮、打开文件时回到上一次的光标位置等），可以使用配置文件范例：
 
  `/etc/vimrc/` 
-
 ```
 ...
 runtime! vimrc_example.vim
@@ -269,7 +268,7 @@ rm file.bck
 
 ### 帮助系统
 
-Vim 提供了一个很完善的帮助系统，可以通过 `:h` 或 `:h _subject_` 打开; 内容包括基本的使用和配置帮助。高亮的内容可以通过 `Ctrl-]` 跳转，用 `Ctrl-T` 返回。用 `:q` 关闭帮助窗口。
+Vim 提供了一个很完善的帮助系统，可以通过 `:h` 或 `:h *subject*` 打开; 内容包括基本的使用和配置帮助。高亮的内容可以通过 `Ctrl-]` 跳转，用 `Ctrl-T` 返回。用 `:q` 关闭帮助窗口。
 
 ### 显示行号
 
@@ -313,7 +312,7 @@ Vim默认只安装了英语字典，其他字典需要从[官方软件仓库](/i
 下面的命令可以替换特定行中的内容：
 
 ```
-:_n_,_n_s/one/two/g
+:*n*,*n*s/one/two/g
 
 ```
 
@@ -414,7 +413,6 @@ wget -P ~/.vim/plugin [http://cscope.sourceforge.net/cscope_maps.vim](http://csc
 ```
 
 **注意:** 在Vim的7.x版本中，你可能需要在`~/.vim/plugin/cscope_maps.vim`中取消下列行的注释来使能cscope快捷键：
-
 ```
 set timeoutlen=4000
 set ttimeout
@@ -423,7 +421,7 @@ set ttimeout
 创建一个文件来包含你希望cscope索引的文件：
 
 ```
-cd _/path/to/projectfolder/_
+cd */path/to/projectfolder/*
 find . -type f -print | grep -E '\.(c(pp)?|h)$' > cscope.files
 
 ```

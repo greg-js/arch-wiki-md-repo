@@ -41,7 +41,6 @@ Furthermore, you will need to keep the files on the ESP up-to-date with later ke
 [Systemd](/index.php/Systemd "Systemd") features event triggered tasks. In this particular case, the ability to detect a change in path is used to sync the EFISTUB kernel and initramfs files when they are updated in `/boot`.
 
  `/etc/systemd/system/efistub-update.path` 
-
 ```
 [Unit]
 Description=Copy EFISTUB Kernel to UEFISYS Partition
@@ -56,9 +55,7 @@ WantedBy=system-update.target
 ```
 
 **Note:** This watches for changes to `initramfs-linux-fallback.img` since this is the last file built by mkinitcpio. This is to avoid a potential race condition where systemd could copy older files before they are all done being built.
-
  `/etc/systemd/system/efistub-update.service` 
-
 ```
 [Unit]
 Description=Copy EFISTUB Kernel to UEFISYS Partition
@@ -80,7 +77,6 @@ Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") 
 [incron](https://www.archlinux.org/packages/?name=incron) can be used to run a script syncing the EFISTUB Kernel after kernel updates.
 
  `/usr/local/bin/efistub-update.sh` 
-
 ```
 #!/usr/bin/env bash
 /usr/bin/cp -f /boot/vmlinuz-linux $esp/EFI/arch/vmlinuz-linux
@@ -89,7 +85,6 @@ Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") 
 ```
 
 **Note:** The first parameter `/boot/initramfs-linux-fallback.img` is the file to watch. The second parameter `IN_CLOSE_WRITE` is the action to watch for. The third parameter `/usr/local/bin/efistub-update.sh` is the script to execute.
-
  `/etc/incron.d/efistub-update.conf`  `/boot/initramfs-linux-fallback.img IN_CLOSE_WRITE /usr/local/bin/efistub-update.sh` 
 
 In order to use this method, enable the incrond service:
@@ -106,7 +101,6 @@ Mkinitcpio can generate a hook that does not need a system level daemon to funct
 Add `efistub-update` to the list of hooks in `/etc/mkinitcpio.conf`.
 
  `/usr/lib/initcpio/install/efistub-update` 
-
 ```
 #!/usr/bin/env bash
 build() {
@@ -119,9 +113,7 @@ This hook waits for mkinitcpio to finish and copies the finished ramdisk and ker
 HELPEOF
 }
 ```
-
  `/root/watch.sh` 
-
 ```
 #!/usr/bin/env bash
 
@@ -143,7 +135,6 @@ Another **alternative** to the above solutions, that is potentially cleaner beca
 Edit the file `/etc/mkinitcpio.d/linux.preset` :
 
  `/etc/mkinitcpio.d/linux.preset` 
-
 ```
 # mkinitcpio preset file for the 'linux' package
 
@@ -168,7 +159,6 @@ fallback_options="-S autodetect"
 Then create the file `/usr/lib/initcpio/install/esp-update-linux` which need to be executable :
 
  `/usr/lib/initcpio/install/esp-update-linux` 
-
 ```
 # Directory to copy the kernel, the initramfs...
 ESP_DIR="/boot/efi/EFI/arch"
@@ -212,13 +202,12 @@ As [before](#Alternative_ESP_Mount_Points), copy all boot files to a directory o
 If your files appear in `/boot` as desired, edit your [Fstab](/index.php/Fstab "Fstab") to make it persistent:
 
  `/etc/fstab` 
-
 ```
 /esp/EFI/arch /boot none defaults,bind 0 0
 
 ```
 
-**Warning:** You _must_ use the `root=_system_root_` [kernel parameter](/index.php/Kernel_parameters#Parameter_list "Kernel parameters") in order to boot using this method.
+**Warning:** You *must* use the `root=*system_root*` [kernel parameter](/index.php/Kernel_parameters#Parameter_list "Kernel parameters") in order to boot using this method.
 
 ## Booting EFISTUB
 
@@ -276,12 +265,10 @@ It is a good idea to then run
 to verify that the resulting entry is correct.
 
 **Warning:** Some kernel and `efibootmgr` version combinations might refuse to create new boot entries. This could be due to lack of free space in the NVRAM. You can try deleting any EFI dump files
-
 ```
 # rm /sys/firmware/efi/efivars/dump-*
 
 ```
-
 Or, as a last resort, boot with the `efi_no_storage_paranoia` kernel parameter. You can also try to downgrade your efibootmgr install to version 0.11.0 if you have it available in your cache. This version works with Linux version 4.0.6\. See the bug discussion [FS#34641](https://bugs.archlinux.org/task/34641) for more information.
 
 To set the boot order, run:

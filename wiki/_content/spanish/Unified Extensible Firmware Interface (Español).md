@@ -63,7 +63,7 @@ Véase [Arch_Boot_Process_(Español)#Tipos_de_firmware](/index.php/Arch_Boot_Pro
 
 ### Multiarranque en UEFI
 
-Debido a que cada sistema operativo o fabricante puede mantener sus propios archivos en la partición del sistema EFI (_«EFI System Partition»_) sin afectar a otros sistemas operativos, el multiarranque con UEFI consiste únicamente en lanzar una aplicación UEFI diferente, correspondiente al gestor de arrranque de un particular sistema operativo. Esto elimina la necesidad de recurrir a mecanismos de cargar los sistemas operativos en cadena con un gestor de arranque para iniciar uno u otro.
+Debido a que cada sistema operativo o fabricante puede mantener sus propios archivos en la partición del sistema EFI (*«EFI System Partition»*) sin afectar a otros sistemas operativos, el multiarranque con UEFI consiste únicamente en lanzar una aplicación UEFI diferente, correspondiente al gestor de arrranque de un particular sistema operativo. Esto elimina la necesidad de recurrir a mecanismos de cargar los sistemas operativos en cadena con un gestor de arranque para iniciar uno u otro.
 
 #### Arranque de Microsoft Windows
 
@@ -143,7 +143,7 @@ Obtenido de [https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/pla
 
 ## Variables de UEFI
 
-UEFI define las variables como la interacción de un sistema operativo con el firmware. Las variables de arranque de UEFI (_«UEFI Boot Variables»_) son utilizadas por el cargador de arranque y por el sistema operativo únicamente durante la primera fase de arranque. Las variables runtime de UEFI permiten a un sistema operativo gestionar ciertos ajustes del firmware como la gestión del arranque de UEFI o la gestión de las claves para el protocolo Boot Secure de UEFI, etc. Se puede obtener el listado de variables utilizando:
+UEFI define las variables como la interacción de un sistema operativo con el firmware. Las variables de arranque de UEFI (*«UEFI Boot Variables»*) son utilizadas por el cargador de arranque y por el sistema operativo únicamente durante la primera fase de arranque. Las variables runtime de UEFI permiten a un sistema operativo gestionar ciertos ajustes del firmware como la gestión del arranque de UEFI o la gestión de las claves para el protocolo Boot Secure de UEFI, etc. Se puede obtener el listado de variables utilizando:
 
 ```
 $ efivar -l
@@ -220,7 +220,6 @@ Si `efivarfs` no se monta automáticamente en `/sys/firmware/efi/efivars` por [s
 También es una buena idea para el montaje automático de `efivarfs` durante el arranque, hacerlo mediante `/etc/fstab`, de la siguiente manera:
 
  `/etc/fstab` 
-
 ```
 efivarfs    /sys/firmware/efi/efivars    efivarfs    defaults    0    0
 
@@ -243,7 +242,7 @@ Existen algunas herramientas que permiten acceder/modificar las variables UEFI, 
 **Nota:**
 
 *   Si `efibootmgr` no funciona en absoluto en su sistema, puede reiniciar en la Shell v2 de UEFI y utilizar la orden `bcfg` para crear una entrada de arranque en el gestor de arranque.
-*   Si no es posible usar `efibootmgr`, algunos firmwares UEFI permiten a los usuarios gestionar directamente las opciones de UEFI Boot Manager desde la BIOS. Por ejemplo, algunas BIOS de ASUS tienen una opción llamada «Add New Boot Option» (_«Añadir nueva opción de arranque»_) que permite seleccionar una partición de sistema EFI local e introducir manualmente la ubicación del código de EFI (por ejemplo `\EFI\refind\refind_x64.efi`).
+*   Si no es posible usar `efibootmgr`, algunos firmwares UEFI permiten a los usuarios gestionar directamente las opciones de UEFI Boot Manager desde la BIOS. Por ejemplo, algunas BIOS de ASUS tienen una opción llamada «Add New Boot Option» (*«Añadir nueva opción de arranque»*) que permite seleccionar una partición de sistema EFI local e introducir manualmente la ubicación del código de EFI (por ejemplo `\EFI\refind\refind_x64.efi`).
 *   Las siguientes órdenes utilizan el cargador de arranque [refind-efi](https://www.archlinux.org/packages/?name=refind-efi) como ejemplo.
 
 Supongamos que el archivo boot-loader para ser lanzado es `/boot/efi/EFI/refind/refind_x64.efi`. El mismo `/boot/efi/EFI/refind/refind_x64.efi` puede ser dividido en `/boot/efi` y `/EFI/refind/refind_x64.efi`, donde `/boot/efi` es el punto de montaje de la partición del sistema UEFI, que se supone que es `/dev/sdXY` (en este caso `X` e `Y` son marcadores de posición para los valores reales - por ejemplo: - en `/dev/sda1`, `X=a`; `Y=1`).
@@ -283,7 +282,7 @@ El sistema de archivos FAT32 no distingue entre mayúsculas y minúsculas, ya qu
 
 ## EFI System Partition
 
-La EFI System Partition (_«Partición del Sistema EFI»_) (también llamada ESP o EFISYS) es una particón física formateada con FAT32 (en la tabla de partición principal del disco, no en LVM o RAID software, etc.) desde donde el firmware UEFI lanza las aplicaciones y el gestor de arranque de UEFI. Es una partición independiente del sistema operativo que actúa como el lugar de almacenamiento para los gestores de arranque EFI y las aplicaciones que el firmware lanza después. Es obligatoria para arrancar UEFI. Debe estar marcada como código tipo **EF00** o **ef00** con gdisk, o la etiqueta **boot** si se utiliza GNU Parted (únicamente para discos GPT). Se recomienda mantener el tamaño de ESP en 512 MiB aunque los tamaños más pequeños/grandes también valen (sin embargo, para los tamaños más pequeños, estos tienen que ser mayores que el límite mínimo del tamaño del sistema de archivos de la partición FAT32 (según lo dispuesto por la especificación FAT32 de Microsoft). Para obtener más información, visite este [enlace](https://en.wikipedia.org/wiki/EFI_System_partition "wikipedia:EFI System partition").
+La EFI System Partition (*«Partición del Sistema EFI»*) (también llamada ESP o EFISYS) es una particón física formateada con FAT32 (en la tabla de partición principal del disco, no en LVM o RAID software, etc.) desde donde el firmware UEFI lanza las aplicaciones y el gestor de arranque de UEFI. Es una partición independiente del sistema operativo que actúa como el lugar de almacenamiento para los gestores de arranque EFI y las aplicaciones que el firmware lanza después. Es obligatoria para arrancar UEFI. Debe estar marcada como código tipo **EF00** o **ef00** con gdisk, o la etiqueta **boot** si se utiliza GNU Parted (únicamente para discos GPT). Se recomienda mantener el tamaño de ESP en 512 MiB aunque los tamaños más pequeños/grandes también valen (sin embargo, para los tamaños más pequeños, estos tienen que ser mayores que el límite mínimo del tamaño del sistema de archivos de la partición FAT32 (según lo dispuesto por la especificación FAT32 de Microsoft). Para obtener más información, visite este [enlace](https://en.wikipedia.org/wiki/EFI_System_partition "wikipedia:EFI System partition").
 
 **Nota:**
 
@@ -427,7 +426,7 @@ La mayoría de los Mac EFI de 32-bit y algunos Mac EFI de 64 bits se niegan a ar
 *   Monte el soporte de instalación oficial y obtenga la `archisolabel` como se muestra en la sección anterior.
 
 ```
-# mount -o loop _input.iso_ /mnt/iso
+# mount -o loop *input.iso* /mnt/iso
 
 ```
 
@@ -436,7 +435,7 @@ La mayoría de los Mac EFI de 32-bit y algunos Mac EFI de 64 bits se niegan a ar
 ```
 $ xorriso -as mkisofs -iso-level 3 \
     -full-iso9660-filenames\
-    -volid "_archisolabel_" \
+    -volid "*archisolabel*" \
     -appid "Arch Linux CD" \
     -publisher "Arch Linux <[https://www.archlinux.org](https://www.archlinux.org)>" \
     -preparer "prepared by $USER" \
@@ -444,10 +443,10 @@ $ xorriso -as mkisofs -iso-level 3 \
     -eltorito-catalog isolinux/boot.cat \
     -no-emul-boot -boot-load-size 4 -boot-info-table \
     -isohybrid-mbr "/mnt/iso/isolinux/isohdpfx.bin" \
-    -output _output.iso_ /mnt/iso/
+    -output *output.iso* /mnt/iso/
 ```
 
-*   Grabe `_output.iso_` en el disco óptico y continúe con la instalación de forma normal.
+*   Grabe `*output.iso*` en el disco óptico y continúe con la instalación de forma normal.
 
 ## Probar UEFI en sistemas sin soporte nativo
 
@@ -478,7 +477,7 @@ Placas base con este tipo de problema:
 
 Gigabyte Z77X-UD3H rev. 1.1 (BIOS UEFI versión F19e)
 
-- La opción _«UEFI Only»_ de la BIOS UEFI no pretende hacer que la BIOS UEFI arranque desde CSM.
+- La opción *«UEFI Only»* de la BIOS UEFI no pretende hacer que la BIOS UEFI arranque desde CSM.
 
 ### Windows cambia el orden de arranque
 
@@ -506,7 +505,6 @@ bcdedit /set {bootmgr} path \EFI\boot_app_dir\boot_app.efi
 *   Cree el archivo `<USB>/EFI/boot/grub.cfg` con el siguiente contenido:
 
  `grub.cfg para ISO Oficial` 
-
 ```
 insmod part_gpt
 insmod part_msdos
@@ -544,9 +542,7 @@ menuentry "UEFI Shell x86_64 v1" {
 }
 
 ```
-
  `grub.cfg para ISO de Archboot` 
-
 ```
 insmod part_gpt
 insmod part_msdos

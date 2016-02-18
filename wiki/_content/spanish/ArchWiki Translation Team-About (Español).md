@@ -17,7 +17,7 @@
 
 ## El equipo
 
-_«El grupo es más amplio que la suma de sus miembros»_ — [Eduard Punset](https://en.wikipedia.org/wiki/es:Eduardo_Punset "wikipedia:es:Eduardo Punset")
+*«El grupo es más amplio que la suma de sus miembros»* — [Eduard Punset](https://en.wikipedia.org/wiki/es:Eduardo_Punset "wikipedia:es:Eduardo Punset")
 
 ### Justificación
 
@@ -85,7 +85,7 @@ La idea de crear un equipo tiene como objetivo fundamental implementar, mediante
 ### Activos
 
 *   [Cabrokimer](/index.php?title=User:Cabrokimer&action=edit&redlink=1 "User:Cabrokimer (page does not exist)") - [email](/index.php/Special:EmailUser/Cabrokimer "Special:EmailUser/Cabrokimer")
-*   [Pedro](/index.php/User:Pedro "User:Pedro") –_omnia vinces perseverando_– [enviar email](/index.php/Special:EmailUser/Pedro "Special:EmailUser/Pedro")
+*   [Pedro](/index.php/User:Pedro "User:Pedro") –*omnia vinces perseverando*– [enviar email](/index.php/Special:EmailUser/Pedro "Special:EmailUser/Pedro")
 *   [SignoSN](/index.php/User:SignoSN "User:SignoSN") - [enviar email](/index.php/Special:EmailUser/SignoSN "Special:EmailUser/SignoSN")
 
 ### Inactivos

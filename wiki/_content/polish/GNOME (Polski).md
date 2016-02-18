@@ -93,7 +93,7 @@
 
 ## Wprowadzenie
 
-GNOME 3 posiada _dwa_ interfejsy: **GNOME Shell**, ustawiony jako domyślny; oraz **tryb zastępczy** (ang. fallback mode). GNOME-session automatycznie wykrywa czy Twój komputer jest w stanie uruchomić GNOME Shell; jeśli nie jest, uruchomi tryb zastępczy.
+GNOME 3 posiada *dwa* interfejsy: **GNOME Shell**, ustawiony jako domyślny; oraz **tryb zastępczy** (ang. fallback mode). GNOME-session automatycznie wykrywa czy Twój komputer jest w stanie uruchomić GNOME Shell; jeśli nie jest, uruchomi tryb zastępczy.
 
 **Tryb zastępczy** jest podobny do GNOME 2 (używa gnome-panel/Metacity zamiast gnome-shell/Mutter).
 
@@ -137,7 +137,6 @@ Menedżer logowania to proces mający dostęp do ustawień systemowych. [PolicyK
 Jeśli wolisz uruchamiać GNOME z konsoli, dodaj następującą linię do twojego pliku `~/.xinitrc`. Upewnij się, że jest to jedyna linia w tym pliku (usuń blok `if/fi` ze standardowego `~/.xinitrc`) i jedyna komenda zaczynająca się od `exec`. Zobacz artykuł [xinitrc](/index.php?title=Xinitrc_(Polski)&action=edit&redlink=1 "Xinitrc (Polski) (page does not exist)").
 
  `~/.xinitrc` 
-
 ```
  #TYLKO TĘ LINIĘ
  exec gnome-session
@@ -158,7 +157,7 @@ Po dokonaniu różnych zmian często będziesz proszony(a) o ponowne uruchomieni
 
 ### Shell przestaje działać
 
-Niektóre zmiany ustawień i/lub powtarzające się restarty Shella mogą spowodować, że Shell przestanie działać. W takim przypadku otrzymasz powiadomienie o błędzie i koniecznym wylogowaniu. Część zmian, przykładowo przełączanie pomiędzy _**GNOME Shell**_ i _**trybem zastępczym**_, nie może być dokonana z klawiatury; musisz się wylogować i zalogować ponownie, aby weszły w życie.
+Niektóre zmiany ustawień i/lub powtarzające się restarty Shella mogą spowodować, że Shell przestanie działać. W takim przypadku otrzymasz powiadomienie o błędzie i koniecznym wylogowaniu. Część zmian, przykładowo przełączanie pomiędzy ***GNOME Shell*** i ***trybem zastępczym***, nie może być dokonana z klawiatury; musisz się wylogować i zalogować ponownie, aby weszły w życie.
 
 Powinno to być nawykiem, warto jednak przypomnieć, że ważne dokumenty powinny być zapisane (a jeśli trzeba, zamknięte) przed próbą ponownego uruchomienia Shella. Nie jest to koniecznie potrzebne; otwarte okna i dokumenty powinny pozostać nietknięte.
 
@@ -177,7 +176,7 @@ GNOME shell powinien uruchomić się automatycznie.
 
 ### Ogólny wygląd
 
-GNOME 3 został "napisany od zera", jednak jak większość dużych projektów jest złożony z części pochodzących z różnych okresów. Nie ma **jednego** całościowego narzędzia konfiguracyjnego. Narzędzie _Ustawienia systemu_ jest dużym ulepszeniem w porównaniu do poprzedniego panelu kontrolnego. _Ustawienia systemu_ dobrze zaprojektowane, możesz jednak potrzebować większej kontroli nad wyglądem systemu.
+GNOME 3 został "napisany od zera", jednak jak większość dużych projektów jest złożony z części pochodzących z różnych okresów. Nie ma **jednego** całościowego narzędzia konfiguracyjnego. Narzędzie *Ustawienia systemu* jest dużym ulepszeniem w porównaniu do poprzedniego panelu kontrolnego. *Ustawienia systemu* dobrze zaprojektowane, możesz jednak potrzebować większej kontroli nad wyglądem systemu.
 
 Możesz być zaznajomiony z istniejącymi narzędziami konfiguracyjnymi: część z nich będzie działać; wiele nie będzie. Część ustawień nie jest łatwo dostępna do modyfikacji. Niewątpliwie, wiele ustawień zostanie przeniesionych do nowych narzędzi i/lub zostanie udostępniona do konfiguracji z biegiem czasu i rozwojem GNOME.
 
@@ -202,10 +201,9 @@ Podobnie do `~/.gtkrc-2.0` w GTK2, można ustawić temat GTK3 w pliku `${XDG_CON
 
 Zmienna `$XDG_CONFIG_HOME` jest zwykle ustawiona na `~/.config`
 
-_Adwaita_, domyślny temat w GNOME 3, jest częścią [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard). Dodatkowe tematy GTK3 mogą być znalezione na [stronie Deviantart](http://browse.deviantart.com/customization/skins/linuxutil/desktopenv/gnome/gtk3/). Przykład:
+*Adwaita*, domyślny temat w GNOME 3, jest częścią [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard). Dodatkowe tematy GTK3 mogą być znalezione na [stronie Deviantart](http://browse.deviantart.com/customization/skins/linuxutil/desktopenv/gnome/gtk3/). Przykład:
 
  `${XDG_CONFIG_HOME}/gtk-3.0/settings.ini` 
-
 ```
   [Settings]
   gtk-theme-name = Adwaita
@@ -232,12 +230,11 @@ $ cp -R /home/user/Desktop/moj_zestaw_ikon ~/.icons
 
 ```
 
-Nowy temat _moj_zestaw_ikon_ zostanie udostępniony do wyboru w zakładce _Motyw_ `gnome-tweak-tool`.
+Nowy temat *moj_zestaw_ikon* zostanie udostępniony do wyboru w zakładce *Motyw* `gnome-tweak-tool`.
 
 Możesz też wybrać swój temat ikon bez użycia gnome-tweak-tool. Dodaj jego nazwę do pliku `${XDG_CONFIG_HOME}/gtk-3.0/settings.ini`. Pamiętaj, żeby nie używać "", inaczej ustawienie nie zostanie rozpoznane.
 
  `${XDG_CONFIG_HOME}/gtk-3.0/settings.ini` 
-
 ```
 ... poprzednie linie ...
 
@@ -246,7 +243,7 @@ gtk-icon-theme-name = moj_nowy_temat_ikon
 
 ### Nautilus
 
-_Zobacz [Nautilus](/index.php?title=Nautilus_(Polski)&action=edit&redlink=1 "Nautilus (Polski) (page does not exist)")._
+*Zobacz [Nautilus](/index.php?title=Nautilus_(Polski)&action=edit&redlink=1 "Nautilus (Polski) (page does not exist)").*
 
 ### Panel GNOME
 
@@ -274,7 +271,6 @@ Podobne rozszerzenia istnieją dla innych ikon, przykładowo zamieniając 'a11y'
 Dla przykładu, usuniemy ikonę **dostępności**. Usuń 'a11y' z linii AREA_ORDER i zakomentuj linię 'a11y' znajdującą się w AREA_SHELL_IMPLEMENTATION:
 
  `/usr/share/gnome-shell/js/ui/panel.js` 
-
 ```
 const STANDARD_STATUS_AREA_ORDER = ['ally', 'keyboard', 'volume', 'network', 'bluetooth', 'battery', 'userMenu'];
 const STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION = {
@@ -290,7 +286,6 @@ const STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION = {
 Zmień na:
 
  `/usr/share/gnome-shell/js/ui/panel.js` 
-
 ```
 const STANDARD_STATUS_AREA_ORDER = ['keyboard', 'volume', 'network', 'bluetooth' 'battery', 'userMenu'];
 const STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION = {
@@ -321,7 +316,7 @@ Zainstaluj [rozszerzenie GNOME Shell](#GNOME_shell_extensions) `alternative stat
 
 Poniższe ustawienie wyłącza pytanie o potwierdzenie i sześćdziesięcio-sekundowe opóźnienie przy wylogowywaniu.
 
-To pytanie pojawia się przy wylogowywaniu z użyciem menu statusu. To ustawienie dotyczy także pytania przy _**Wyłącz komputer**_. Nie dotyczy ono całego systemu; działa tylko dla użytkownika, który je zmienił. Zmiana jest widoczna natychmiast po wydaniu polecenia.
+To pytanie pojawia się przy wylogowywaniu z użyciem menu statusu. To ustawienie dotyczy także pytania przy ***Wyłącz komputer***. Nie dotyczy ono całego systemu; działa tylko dla użytkownika, który je zmienił. Zmiana jest widoczna natychmiast po wydaniu polecenia.
 
 ```
 $ gsettings set org.gnome.SessionManager logout-prompt 'false'
@@ -348,7 +343,7 @@ Podobnie jak inne środowiska graficzne, GNOME używa plików .desktop, aby wype
 
 ```
 
-Jeśli zmiana ma objąć cały system, wyedytuj plik w **`/usr/share/applications`**. Jeśli zmiana ma być lokalna, sporządź kopię pliku _foo.desktop_ w swoim folderze domowym.
+Jeśli zmiana ma objąć cały system, wyedytuj plik w **`/usr/share/applications`**. Jeśli zmiana ma być lokalna, sporządź kopię pliku *foo.desktop* w swoim folderze domowym.
 
 ```
 $ cp /usr/share/applications/foo.desktop ~/.local/share/applications/
@@ -374,10 +369,9 @@ Wyedytuj bezpośrednio pliki systemowe (zrób wcześniej ich kopię) lub skopiuj
 
 Jeśli używasz innego tematu, wyedytuj **`/usr/share/themes/<Temat>/gnome-shell/gnome-shell.css`**
 
-Wyedytuj _gnome-shell.css_ i zamień następujące wartości. Następnie [uruchom ponownie GNOME shell](#Ponowne_uruchomienie_shella).
+Wyedytuj *gnome-shell.css* i zamień następujące wartości. Następnie [uruchom ponownie GNOME shell](#Ponowne_uruchomienie_shella).
 
  `gnome-shell.css` 
-
 ```
  .icon-grid {
      spacing: 18px;
@@ -392,10 +386,9 @@ Wyedytuj _gnome-shell.css_ i zamień następujące wartości. Następnie [urucho
 
 #### Wyłącz "gorący róg" włączający widok Podglądu
 
-Aby wyłączyć automatyczne włączanie widoku Podglądu przy dotknięciu rogu ekranu, wyedytuj **`/usr/share/gnome-shell/js/ui/layout.js`** (ten plik nazywał się _panel.js_ w Gnome 3.0.x) :
+Aby wyłączyć automatyczne włączanie widoku Podglądu przy dotknięciu rogu ekranu, wyedytuj **`/usr/share/gnome-shell/js/ui/layout.js`** (ten plik nazywał się *panel.js* w Gnome 3.0.x) :
 
  `layout.js` 
-
 ```
  this._corner = new Clutter.Rectangle({ name: 'hot-corner',
                                        width: 1,
@@ -406,7 +399,7 @@ Aby wyłączyć automatyczne włączanie widoku Podglądu przy dotknięciu rogu 
 
 ```
 
-i ustaw _reactive_ na _false_. GNOME Shell musi zostać uruchomiony ponownie.
+i ustaw *reactive* na *false*. GNOME Shell musi zostać uruchomiony ponownie.
 
 ### Pasek tytułu
 
@@ -420,7 +413,7 @@ Aby przywrócić domyślne wartości, [zainstaluj](/index.php/Pacman_(Polski) "P
 
 Kolejność przycisków można ustawić z użyciem **dconf-editor.**
 
-Przykładowo, przeniesiemy przyciski zamknięcia i minimalizacji na lewą stronę paska. Otwórz **dconf-editor** i znajdź klucz _**org.gnome.shell.overrides.button_layout**_. Zmień jego wartość na **`close,minimize:`** (dwukropek oznacza obszar pomiędzy lewą i prawą stroną paska). Nie możesz użyć danego przycisku więcej niż raz. Pamiętaj też, że niektóre przyciski zostały uznane za przestarzałe. [Uruchom shell ponownie](#Ponowne_uruchomienie_shella) aby zobaczyć nowy układ przycisków.
+Przykładowo, przeniesiemy przyciski zamknięcia i minimalizacji na lewą stronę paska. Otwórz **dconf-editor** i znajdź klucz ***org.gnome.shell.overrides.button_layout***. Zmień jego wartość na **`close,minimize:`** (dwukropek oznacza obszar pomiędzy lewą i prawą stroną paska). Nie możesz użyć danego przycisku więcej niż raz. Pamiętaj też, że niektóre przyciski zostały uznane za przestarzałe. [Uruchom shell ponownie](#Ponowne_uruchomienie_shella) aby zobaczyć nowy układ przycisków.
 
 #### Ukryj pasek tytułu przy maksymalizacji okna
 
@@ -436,7 +429,6 @@ Użyj `Alt+Space`, `Alt+F5` lub `Alt+F10` aby przywrócić okno do normalnego ro
 Aby zapobiec nadpisaniu `metacity-theme-3.xml` przy aktualizacji pakietu [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard), dodaj jego nazwę do `/etc/pacman.conf` w linii `NoUpgrade`.
 
  `/etc/pacman.conf` 
-
 ```
 ... poprzednie linie ...
 
@@ -480,7 +472,7 @@ Dostępne jest graficzne narzędzie do zmiany tematów (GTK3, ikon, kursora), ta
 
 #### Większa czcionka przy logowaniu
 
-Ta opcja powiększa czcionkę o wybrany współczynnik. Ta sama metoda jest używana przez _Menedżer dostępności_ w GNOME.
+Ta opcja powiększa czcionkę o wybrany współczynnik. Ta sama metoda jest używana przez *Menedżer dostępności* w GNOME.
 
 Musisz wyeksportować [zmienne sesji GDM](#Ekran_logowania) przed kontynuacją.
 
@@ -502,7 +494,7 @@ Jeśli powyższe polecenie nie działa lub nie możesz wyeksportować zmiennych 
 
 #### Interaktywny przycisk włączenia komputera
 
-Domyślnie naciśnięcie przycisku włączenia komputera powoduje jego uśpienie. _**Wyłączenie**_ lub _**Wyświetlenie pytania**_ to lepszy wybór. Najpierw wyeksportuj zmienne sesji GDM jak [pokazano wcześniej](#Ekran_logowania).
+Domyślnie naciśnięcie przycisku włączenia komputera powoduje jego uśpienie. ***Wyłączenie*** lub ***Wyświetlenie pytania*** to lepszy wybór. Najpierw wyeksportuj zmienne sesji GDM jak [pokazano wcześniej](#Ekran_logowania).
 
 ```
  $ GSETTINGS_BACKEND=dconf gsettings set org.gnome.settings-daemon.plugins.power button-power 'interactive'
@@ -530,7 +522,7 @@ $ gnome-session-properties
 
 ### Editing applications menu
 
-[gnome-menus](https://www.archlinux.org/packages/?name=gnome-menus) dostarcza _gmenu-simple-editor_, który potrafi pokazywać/ukrywać elementy menu.
+[gnome-menus](https://www.archlinux.org/packages/?name=gnome-menus) dostarcza *gmenu-simple-editor*, który potrafi pokazywać/ukrywać elementy menu.
 
 [alacarte](https://www.archlinux.org/packages/?name=alacarte) z AUR umożliwia edycję menu i dodawanie/edycję wpisów programów.
 
@@ -551,11 +543,11 @@ $ gnome-session-properties
 
 ```
 
-Powyższe polecenie aplet **Preferencje programów startowych**. Kliknij _**Dodaj**_ i wprowadź:
+Powyższe polecenie aplet **Preferencje programów startowych**. Kliknij ***Dodaj*** i wprowadź:
 
-| Nazwa: | _Numlockx_ |
-| Polecenie: | _/usr/bin/numlockx on_ |
-| Komentarz: | _Włącza numlock._ |
+| Nazwa: | *Numlockx* |
+| Polecenie: | */usr/bin/numlockx on* |
+| Komentarz: | *Włącza numlock.* |
 
 Nie jest to ustawienie systemowe. Powtórz je dla każdego użytkownika chcącego uruchamiać NumLock po zalogowaniu.
 
@@ -617,7 +609,7 @@ Exec=thunar /
 
 ### Domyślny terminal
 
-`gsettings` (który zastąpił `gconftool-2`) jest używany do zmiany domyślnego terminala. To ustawienie wpływa na _nautilus-open-terminal_ (roszerzenie Nautilusa). Aby ustawić [urxvt](/index.php?title=Rxvt-unicode_(Polski)&action=edit&redlink=1 "Rxvt-unicode (Polski) (page does not exist)") domyślnym terminalem, uruchom:
+`gsettings` (który zastąpił `gconftool-2`) jest używany do zmiany domyślnego terminala. To ustawienie wpływa na *nautilus-open-terminal* (roszerzenie Nautilusa). Aby ustawić [urxvt](/index.php?title=Rxvt-unicode_(Polski)&action=edit&redlink=1 "Rxvt-unicode (Polski) (page does not exist)") domyślnym terminalem, uruchom:
 
 ```
 gsettings set org.gnome.desktop.default-applications.terminal exec urxvtc
@@ -625,7 +617,7 @@ gsettings set org.gnome.desktop.default-applications.terminal exec-arg "'-e'"
 
 ```
 
-**Note:** Opcja `-e` oznacza uruchomienie polecenia. Kiedy _nautilus-open-terminal_ uruchamia `urxvtc`, dodaje polecenie `cd` na końcu linii, dlatego nowy terminal zawiera katalog, z którego został uruchomiony. Inne terminale mogą wymagać innej (możliwe, że pustej) opcji `exec-arg`.
+**Note:** Opcja `-e` oznacza uruchomienie polecenia. Kiedy *nautilus-open-terminal* uruchamia `urxvtc`, dodaje polecenie `cd` na końcu linii, dlatego nowy terminal zawiera katalog, z którego został uruchomiony. Inne terminale mogą wymagać innej (możliwe, że pustej) opcji `exec-arg`.
 
 ### Środkowy przycisk myszy
 
@@ -659,9 +651,7 @@ gdzie <liczba> to wartość w sekundach
 Możesz użyć alternatywnego menedżera okien w GNOME poprzez [wymuszenie trybu zastępczego](#Enabling_fallback_mode) i stworzenie dwóch plików:
 
 **Note:** Xmonad jest tylko przykładem, działa to także z innymi menedżerami okien.
-
  `/usr/share/gnome-session/sessions/xmonad.session` 
-
 ```
 [GNOME Session]
 Name=Xmonad session
@@ -670,9 +660,7 @@ RequiredProviders=windowmanager;notifications;
 DefaultProvider-windowmanager=xmonad
 DefaultProvider-notifications=notification-daemon
 ```
-
  `/usr/share/xsessions/xmonad-gnome-session.desktop` 
-
 ```
 [Desktop Entry]
 Name=Xmonad GNOME
@@ -682,12 +670,11 @@ Exec=gnome-session --session=xmonad
 Type=XSession
 ```
 
-Przy następnym logowaniu, powinieneś(aś) móc wybrać sesję _Xmonad GNOME_.
+Przy następnym logowaniu, powinieneś(aś) móc wybrać sesję *Xmonad GNOME*.
 
 Jeśli plik .desktop dla Twojego menedżera nie istnieje, musisz go stworzyć. Przykład dla [wmii](/index.php?title=Wmii_(Polski)&action=edit&redlink=1 "Wmii (Polski) (page does not exist)"):
 
  `/usr/share/applications/wmii.desktop` 
-
 ```
 [Desktop Entry]
 Version=1.0
@@ -705,27 +692,27 @@ GNOME 3 posiada wiele ukrytych opcji, które możesz modyfikować z użyciem **d
 
 ### Zmiana skrótów klawiszowych
 
-Najpierw użyj **dcon-editor**i zaznacz `can-change-accels` w kluczu o nazwie _org.gnome.desktop.interface._
+Najpierw użyj **dcon-editor**i zaznacz `can-change-accels` w kluczu o nazwie *org.gnome.desktop.interface.*
 
 Dla przykładu zmienimy skrót służący do przenoszenia plików do kosza w Nautilusie.
 
 Domyślnie ten skrót to `Ctrl` + `Delete`.
 
 *   Otwórz Nautilusa, zaznacz dowolny plik i naciśnij **Edycja** na pasku menu.
-*   Przejedź kursorem nad opcję _Przenieś do kosza_.
+*   Przejedź kursorem nad opcję *Przenieś do kosza*.
 *   Trzymając tam kursor, naciśnij `Delete`. Domyślny skrót został usunięty.
 *   Naciśnij klawisze, które mają stać się nowym skrótem.
 *   Naciśnij `Delete`, aby nowym skrótem był klawisz Delete.
 
-Dopóki nie zaznaczysz pliku lub folderu, opcja _Przenieś do kosza_ będzie nieaktywna. Na koniec, wyłącz opcję `can-change-accels` aby zapobiec przypadkowym zmianom skrótów klawiszowych.
+Dopóki nie zaznaczysz pliku lub folderu, opcja *Przenieś do kosza* będzie nieaktywna. Na koniec, wyłącz opcję `can-change-accels` aby zapobiec przypadkowym zmianom skrótów klawiszowych.
 
 ### Wyłączenie komputera w menu statusu
 
-Projektanci GNOME usunęli opcję _Wyłącz komputer_ z menu statusu. Aby wyłączyć komputer używając menu statusu, otwórz menu i przytrzymaj klawisz `Alt`, co zmieni opcję _**Uśpij**_ na _**Wyłącz komputer**_.
+Projektanci GNOME usunęli opcję *Wyłącz komputer* z menu statusu. Aby wyłączyć komputer używając menu statusu, otwórz menu i przytrzymaj klawisz `Alt`, co zmieni opcję ***Uśpij*** na ***Wyłącz komputer***.
 
 Jeśli wyłączysz "Uśpij" w menu dla całego systemu jak opisano [powyżej](#Wy.C5.82.C4.85cz_.22U.C5.9Bpij.22_w_menu_statusu_i_GDM) nie musisz tego robić.
 
-Innym wyjściem jest zainstalowanie rozszerzenia _Alternative Status Menu_. Zobacz paragraf o rozszerzeniach shella. Rozszerzenie _Alternative Status Menu_ instaluje nowe menu z dostępną opcją _**Power Off**_.
+Innym wyjściem jest zainstalowanie rozszerzenia *Alternative Status Menu*. Zobacz paragraf o rozszerzeniach shella. Rozszerzenie *Alternative Status Menu* instaluje nowe menu z dostępną opcją ***Power Off***.
 
 ## Zintegrowany komunikator (Empathy)
 
@@ -749,11 +736,11 @@ Twoja sesja automatycznie uruchomi się w trybie zastępczym jeśli **gnome-shel
 Jeśli chcesz korzystać z trybu zastępczego mając zainstalowane **gnome-shell**, wykonaj następujące kroki:
 
 1.  Otwórz **gnome-control-center**,
-2.  Kliknij ikonę _Szczegóły_,
-3.  Kliknij zakładkę _Grafika_,
-4.  Włącz _Wymuszenie trybu zastępczego_.
+2.  Kliknij ikonę *Szczegóły*,
+3.  Kliknij zakładkę *Grafika*,
+4.  Włącz *Wymuszenie trybu zastępczego*.
 
-Możesz też wybrać typ sesji korzystając z terminala i polecenia _gsettings_:
+Możesz też wybrać typ sesji korzystając z terminala i polecenia *gsettings*:
 
 ```
 $ gsettings set org.gnome.desktop.session session-name 'gnome-fallback'
@@ -768,7 +755,7 @@ Zaloguj się ponownie aby zobaczyć zmiany.
 
 ### Logowanie do GNOME zajmuje bardzo dużo czasu
 
-Sprawdź, czy włączona jest opcja _PulseAudio Network_ w **paprefs**. Jeśli jakakolwiek sieć audio jest włączona, GNOME zawiesza się na około minutę podczas logowania.
+Sprawdź, czy włączona jest opcja *PulseAudio Network* w **paprefs**. Jeśli jakakolwiek sieć audio jest włączona, GNOME zawiesza się na około minutę podczas logowania.
 
 Możliwym rozwiązaniem jest stworzenie nowego konta użytkownika i zalogowanie się na to konto. Innym wyjściem jest przeniesienie folderów `~/.gconf`, `~/.gconfd` i `~/.config/dconf` w inne miejsce. Zaloguj się ponownie i zobacz, czy opóźnienie zniknęło.
 
@@ -776,7 +763,7 @@ Jeśli tak, określ które ustawienie je powodowało metodą prób i błędów.
 
 ### Kiedy rozszerzenie zepsuje GNOME
 
-Jeśli włączenie rozszerzenia Shella powoduje awarię GNOME, najpierw usuń rozszerzenia _user-theme_ i _auto-move-windows_ z folderu instalacji rozszerzeń.
+Jeśli włączenie rozszerzenia Shella powoduje awarię GNOME, najpierw usuń rozszerzenia *user-theme* i *auto-move-windows* z folderu instalacji rozszerzeń.
 
 Mogą to być **`~/.local/share/gnome‑shell/extensions`**, **`/usr/share/gnome‑shell/extensions`**, lub **`/usr/local/share/gnome‑shell/extensions`**. Sprawdź, które rozszerzenie powodowało problem metodą prób i błędów.
 
@@ -790,13 +777,13 @@ Wyedytuj każdy plik **`metadata.json`** znajdujący się w podfolderach rozszer
 | Zamiast (przykładowo): | **`"shell-version": ["3.0.1"]`** |
 | Możesz także użyć: | **`"shell-version": ["3.0.0", "3.0.1", "3.0.2"]`** |
 
-**"3.0"** to najlepsze wyjście. Oznacza, że rozszerzenie działa z każdą wersją _**3.0.x**_ GNOME Shell.
+**"3.0"** to najlepsze wyjście. Oznacza, że rozszerzenie działa z każdą wersją ***3.0.x*** GNOME Shell.
 
 ### Ekran nie jest blokowany po wybudzeniu
 
 Blokowanie ekranu działa tylko, jeśli uśpiłeś(aś) system korzystając z menu statusu GNOME. Jeśli korzystałeś(aś) z przycisku zasilania, ekran nie będzie zablokowany po wybudzeniu. Problemem jest błąd w konfiguracji dconf.
 
-Otwórz _dconf-editor_ i odznacz **`lock-use-screensaver`** w kluczu _org.gnome.power-manager._
+Otwórz *dconf-editor* i odznacz **`lock-use-screensaver`** w kluczu *org.gnome.power-manager.*
 
 ```
 # gsettings set org.gnome.power-manager lock-use-screensaver 'false'
@@ -921,8 +908,8 @@ Ustawienia systemu --> Klawiatura --> Skróty --> Nawigacja --> Ukrycie wszystki
 
 1.  Naciśnij `ALT`+`F2`
 2.  Wpisz `gnome-tweak-tool`
-3.  Wybierz zakładkę _Pulpit_
-4.  Wyłącz opcję _Have file manager handle the desktop_.
+3.  Wybierz zakładkę *Pulpit*
+4.  Wyłącz opcję *Have file manager handle the desktop*.
 
 ### Epiphany nie odtwarza filmów we Flashu
 
@@ -954,7 +941,6 @@ $ xinput set-prop "SynPS/2 Synaptics TouchPad" "Device Enabled" 1
 Jeśli napotkałeś(aś) taki problem, wyedytuj `~/.gnome2/accels/nautilus` znajdując dwie linie dotyczące `Ctrl+v`:
 
  `~/.gnome2/accels/nautilus` 
-
 ```
 (gtk_accel_path "<Actions>/DirViewActions/Paste" "<Control>v")
 ...
@@ -981,7 +967,6 @@ Jeśli po naciśnięciu przycisku `Print Screen` (czasami oznaczonego jako `Prnt
 Aby naprawić ten problem, jako root stwórz plik `/usr/share/icons/default/index.theme` (stwórz katalog `/usr/share/icons/default` jeśli nie istnieje) i wpisz do niego:
 
  `/usr/share/icons/default/index.theme` 
-
 ```
 [Icon Theme]
 Inherits=Adwaita

@@ -15,7 +15,7 @@ O [NetworkManager](http://www.gnome.org/projects/NetworkManager/) é uma ferrame
 
 # Instalação
 
-Primeiro verifique se o repositório _community_ está habilitado na [configuração do pacman](/index.php/Pacman_(Portugu%C3%AAs)#Reposit.C3.B3rios "Pacman (Português)")
+Primeiro verifique se o repositório *community* está habilitado na [configuração do pacman](/index.php/Pacman_(Portugu%C3%AAs)#Reposit.C3.B3rios "Pacman (Português)")
 
 Instale o NetworkManager de acordo com o **ambiente desktop** que utiliza:
 
@@ -47,7 +47,7 @@ Instale o NetworkManager de acordo com o **ambiente desktop** que utiliza:
 
 ```
 
-Os usuários deverão pertencer ao grupo _network_ para que possam habilitar ou configurar as conexões através do NetworkManager:
+Os usuários deverão pertencer ao grupo *network* para que possam habilitar ou configurar as conexões através do NetworkManager:
 
 ```
 <tt># gpasswd -a "**logindousuário**" network</tt>
@@ -56,7 +56,7 @@ Os usuários deverão pertencer ao grupo _network_ para que possam habilitar ou 
 
 # Configurando
 
-Como queremos que o NetworkManager configure a rede, então devemos desabilitar no /etc/rc.conf a autoinicialização das conexões, para isso adicionamos _!_ a frente da interface. Mudando a linha de:
+Como queremos que o NetworkManager configure a rede, então devemos desabilitar no /etc/rc.conf a autoinicialização das conexões, para isso adicionamos *!* a frente da interface. Mudando a linha de:
 
 ```
 <tt>INTERFACES=(lo eth0)</tt>
@@ -70,14 +70,14 @@ Para
 
 ```
 
-Agora devemos desabilitar o daemon _networks_ e habilitar os daemons **dhcdbd** e **networkmanager**:
+Agora devemos desabilitar o daemon *networks* e habilitar os daemons **dhcdbd** e **networkmanager**:
 
 ```
 <tt>DAEMONS=(...dbus hal dhcdbd networkmanager...)</tt>
 
 ```
 
-_**Lembre-se de seguir essa ordem dbus hal dhcdbd networkmanager**_. Caso exista o daemon _fam_ na sua lista certifique-se que ele apareça **depois** desses citados.
+***Lembre-se de seguir essa ordem dbus hal dhcdbd networkmanager***. Caso exista o daemon *fam* na sua lista certifique-se que ele apareça **depois** desses citados.
 
 Agora reinicie o computador para reinicializar os daemons e verificar se tudo ocorrerá corretamente. Neste ponto vc ja deve ser capaz de gerenciar suas conexões através do NetworkManager, se você não puder ver um ícone na sua tela para gerenciá-las, é só inicializar:
 

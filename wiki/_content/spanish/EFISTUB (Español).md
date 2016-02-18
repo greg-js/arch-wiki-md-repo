@@ -40,7 +40,6 @@ Además, tendrá que mantener los archivos de ESP al día con las actualizacione
 [Systemd (Español)](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") tiene la facultad de realizar tareas tras desencadenarse un evento. En este caso particular, la capacidad de detectar un cambio en la ruta de acceso se puede utilizar para sincronizar el kernel EFISTUB y los archivos initramfs cuando se actualizan en `/boot`.
 
  `/etc/systemd/system/efistub-update.path` 
-
 ```
 [Unit]
 Description=Copiar Kernel EFISTUB a partición UEFISYS
@@ -54,9 +53,7 @@ WantedBy=multi-user.target
 ```
 
 **Nota:** Este servicio observa a la imagen initramfs-linux-fallback.img para realizar los cambios, ya que dicha imagen es el último archivo compilado por mkinitcpio. Esto actúa como una condición para evitar una carrera potencial donde systemd podría copiar archivos antiguos antes de que se hayan compilado todos los archivos.
-
  `/etc/systemd/system/efistub-update.service` 
-
 ```
 [Unit]
 Description=Copiar Kernel EFISTUB a partición UEFISYS
@@ -81,7 +78,6 @@ Activar estos servicios con:
 [incron](https://www.archlinux.org/packages/?name=incron) se puede utilizar para ejecutar un script de sincronización del Kernel EFISTUB después de las actualizaciones del kernel.
 
  `/usr/local/bin/efistub-update.sh` 
-
 ```
 #!/usr/bin/env bash
 /usr/bin/cp -f /boot/vmlinuz-linux $esp/EFI/arch/vmlinuz-arch.efi
@@ -90,7 +86,6 @@ Activar estos servicios con:
 ```
 
 **Nota:** El primer parámetro `/boot/initramfs-linux-fallback.img` es el archivo que debe tener en cuenta. El segundo parámetro `IN_CLOSE_WRITE` es la acción que debe observar. El tercer parámetro `/usr/local/bin/efistub-update.sh` es el script que debe ejecutar.
-
  `/etc/incron.d/efistub-update.conf`  `/boot/initramfs-linux-fallback.img IN_CLOSE_WRITE /usr/local/bin/efistub-update.sh` 
 
 Para utilizar este método, active el servicio incrond:
@@ -107,7 +102,6 @@ Mkinitcpio puede generar un hook que no necesita un demonio de nivel de sistema 
 Añada `efistub-update` a la lista de hooks en `/etc/mkinitcpio.conf`.
 
  `/usr/lib/initcpio/install/efistub-update` 
-
 ```
 #!/usr/bin/env bash
 build() {
@@ -120,9 +114,7 @@ Este hook espera a que mkinitcpio termine y copia la imagen ramdiks y el kernel 
 HELPEOF
 }
 ```
-
  `/root/watch.sh` 
-
 ```
 #!/usr/bin/env bash
 
@@ -153,13 +145,12 @@ Como se hizo [anteriormente](#Alternative_ESP_Mount_Points), copie todos los arc
 Si sus archivos se muestran en `/boot` como desea, edite [Fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)") para que esta operación sea permanente:
 
  `/etc/fstab` 
-
 ```
 /esp/EFI/arch /boot none defaults,bind 0 0
 
 ```
 
-**Advertencia:** _Debe_ usar el [parámetro del kernel](/index.php/Kernel_parameters#Parameter_list "Kernel parameters") `root=_system_root_` para poder arrancar utilizando este método.
+**Advertencia:** *Debe* usar el [parámetro del kernel](/index.php/Kernel_parameters#Parameter_list "Kernel parameters") `root=*system_root*` para poder arrancar utilizando este método.
 
 ## Arrancar EFISTUB
 
@@ -206,12 +197,10 @@ Donde `X` e `Y` se deben cambiar para reflejar el disco y la partición donde se
 para verificar que la entrada resultante es correcta.
 
 **Advertencia:** Algunas combinaciones de kernel y `efibootmgr` podrían negarse a crear nuevas entradas de inicio. Esto podría ser debido a la falta de espacio libre en la memoria NVRAM. Podría tratar de eliminar cualquier archivo de volcado de EFI:
-
 ```
 # rm /sys/firmware/efi/efivars/dump-*
 
 ```
-
 O, como último recurso, arrancar con el parámetro del kermel `efi_no_storage_paranoia`. Véase bug discussion [[3]](https://bugs.archlinux.org/task/34641) para más información.
 
 Para establecer el orden de arranque, ejecute:
@@ -224,7 +213,6 @@ Para establecer el orden de arranque, ejecute:
 donde XXXX es el número que aparece en la salida de la orden `efibootmgr` de cada entrada.
 
 **Sugerencia:** Guarde la orden para crear su entrada de arranque en un script de shell en algún lugar, lo que hará que sea más fácil de modificar (al cambiar los parámetros del kernel, por ejemplo)
-
 .
 
 Más información sobre efibootmgr en [Unified Extensible Firmware Interface (Español)#efibootmgr](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#efibootmgr "Unified Extensible Firmware Interface (Español)"). Post del foro: [https://bbs.archlinux.org/viewtopic.php?pid=1090040#p1090040](https://bbs.archlinux.org/viewtopic.php?pid=1090040#p1090040) .

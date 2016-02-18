@@ -42,9 +42,9 @@ By default, it monitors CPU temperature using available CPU digital temperature 
 
 [cpupower](https://www.archlinux.org/packages/?name=cpupower) is a set of userspace utilities designed to assist with CPU frequency scaling. The package is not required to use scaling, but is highly recommended because it provides useful command-line utilities and a [systemd](/index.php/Systemd "Systemd") service to change the governor at boot.
 
-The configuration file for _cpupower_ is located in `/etc/default/cpupower`. This configuration file is read by a bash script in `/usr/lib/systemd/scripts/cpupower` which is activated by _systemd_ with `cpupower.service`. You may want to enable `cpupower.service` to start at boot.
+The configuration file for *cpupower* is located in `/etc/default/cpupower`. This configuration file is read by a bash script in `/usr/lib/systemd/scripts/cpupower` which is activated by *systemd* with `cpupower.service`. You may want to enable `cpupower.service` to start at boot.
 
-[cpupower](https://www.archlinux.org/packages/?name=cpupower) 是一组为辅助 _CPU frequency scaling_ 而设计的用户空间工具。这个软件包并不是必须的，但强烈建议安装，因为它提供了方便的命令行工具，且提供在启动时改变调速器的服务。
+[cpupower](https://www.archlinux.org/packages/?name=cpupower) 是一组为辅助 *CPU frequency scaling* 而设计的用户空间工具。这个软件包并不是必须的，但强烈建议安装，因为它提供了方便的命令行工具，且提供在启动时改变调速器的服务。
 
 [cpupower](https://www.archlinux.org/packages/?name=cpupower) 的配置文件位于 `/etc/default/cpupower`。这个配置文件被bash脚本读取，该脚本位于 `/usr/lib/systemd/scripts/cpupower`，它又由 `systemd` 通过 `cpupower.service` 激活。为使用 [systemd](https://www.archlinux.org/packages/?name=systemd) 在启动时启用 [cpupower](https://www.archlinux.org/packages/?name=cpupower)，运行：
 
@@ -62,7 +62,7 @@ The configuration file for _cpupower_ is located in `/etc/default/cpupower`. Thi
 *   实际上，P 状态的状态功能可以通过 `/sys/devices/system/cpu/intel_pstate` 进行更改。例如：通过 `# echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo` 可以关闭 Intel Turbo Boost 来降低 CPU 的温度。
 *   对于现代的 Intel CPU，[Linux Thermal Daemon](https://01.org/linux-thermal-daemon) 也提供了一些其他的控制方法（例如，AUR 中的 [thermald](https://aur.archlinux.org/packages/thermald/)），它们能够更加激进的用 P-states，T-states 或 Intel power clamp driver 对系统温度进行抑制。thermald 也可用于老式的 Intel CPUs。如果最新的驱动不可用，守护进程将会恢复到 x86 model specific registers 而用 Linux ‘cpufreq subsystem’ 来抱持系统的清凉。
 
-_cpupower_ 需要模块才能知道本地的 CPU 限制信息：
+*cpupower* 需要模块才能知道本地的 CPU 限制信息：
 
 | 模块 | 描述 |
 | intel_pstate | This driver implements a scaling driver with an internal governor for Intel Core (SandyBridge and newer) processors. |
@@ -92,30 +92,30 @@ $ cpupower frequency-info
 
 在罕见的情况下，可能有必要手动设置最大和最小频率。
 
-运行以下命令设置最大时钟频率（_clock_freq_ 为时钟频率，单位为：GHz, MHz）：
+运行以下命令设置最大时钟频率（*clock_freq* 为时钟频率，单位为：GHz, MHz）：
 
 ```
-# cpupower frequency-set -u _clock_freq_
+# cpupower frequency-set -u *clock_freq*
 
 ```
 
 运行以下命令设置最小时钟频率：
 
 ```
-# cpupower frequency-set -d _clock_freq_
+# cpupower frequency-set -d *clock_freq*
 
 ```
 
 运行以下命令设置运行于指定频率：
 
 ```
-# cpupower frequency-set -f _clock_freq_
+# cpupower frequency-set -f *clock_freq*
 
 ```
 
 **注意:**
 
-*   仅设置某一核心，添加参数 `-c _core_number_`。
+*   仅设置某一核心，添加参数 `-c *core_number*`。
 *   The governor，频率的最大值和最小值可以在 `/etc/default/cpupower` 中设置。
 
 ## 调整调速器
@@ -137,24 +137,23 @@ $ cpupower frequency-info
 如果需要指定特定的调速器，运行以下命令：
 
 ```
-# cpupower frequency-set -g _governor_
+# cpupower frequency-set -g *governor*
 
 ```
 
 **注意:**
 
-*   仅设置某一核心，请在命令的最后跟随以下参数 `-c _core_number_`。
-*   激活某一调速器，需要特定的 [内核模块](/index.php/Kernel_modules "Kernel modules") （名为 `cpufreq__governor_`）正确载入。在 3.4 内核上，这些模块应该已经自动加载。
+*   仅设置某一核心，请在命令的最后跟随以下参数 `-c *core_number*`。
+*   激活某一调速器，需要特定的 [内核模块](/index.php/Kernel_modules "Kernel modules") （名为 `cpufreq_*governor*`）正确载入。在 3.4 内核上，这些模块应该已经自动加载。
 
 也可以这样实现：
 
 ```
-# echo _governor_ | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor >/dev/null
+# echo *governor* | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor >/dev/null
 
 ```
 
 **Tip:** 如果需要实时监测 CPU 的频率，运行以下命令：
-
 ```
 $ watch grep \"cpu MHz\" /proc/cpuinfo
 
@@ -169,14 +168,14 @@ $ watch grep \"cpu MHz\" /proc/cpuinfo
 设置到其他值（增加）的步长，执行以下命令：
 
 ```
-# echo -n _percent_ > /sys/devices/system/cpu/cpufreq/<governor>/up_threshold
+# echo -n *percent* > /sys/devices/system/cpu/cpufreq/<governor>/up_threshold
 
 ```
 
 设置到其他值（减小）的步长，执行以下命令：
 
 ```
-# echo -n _percent_ > /sys/devices/system/cpu/cpufreq/<governor>/down_threshold
+# echo -n *percent* > /sys/devices/system/cpu/cpufreq/<governor>/down_threshold
 
 ```
 
@@ -259,7 +258,7 @@ ResultActive=yes
 
 *   一些应用程序，如[ntop](/index.php/Ntop "Ntop")，对自动频率调整不能很好地响应。在ntop的案例中它可能导致分段错误和大量信息丢失，因为在大量网络数据包突然到达被监控的网络接口时，`on-demand`调速器不能迅速反应，以致当前处理速度满足不了处理这些数据包所需的速度。
 
-*   一些CPU在默认的`on-demand`调速器配置下可能受到比较严重的性能损失（例如flash视频不能平滑地播放，或窗口动画停顿）。为了解决这些问题，完全禁用掉频率调整不如采取更积极的措施——降低每个CPU的_up_threshold_ [sysctl](/index.php/Sysctl "Sysctl")变量值。阅读[#修改on-demand调速器的阈值](#.E4.BF.AE.E6.94.B9on-demand.E8.B0.83.E9.80.9F.E5.99.A8.E7.9A.84.E9.98.88.E5.80.BC)章节以获得更多信息。
+*   一些CPU在默认的`on-demand`调速器配置下可能受到比较严重的性能损失（例如flash视频不能平滑地播放，或窗口动画停顿）。为了解决这些问题，完全禁用掉频率调整不如采取更积极的措施——降低每个CPU的*up_threshold* [sysctl](/index.php/Sysctl "Sysctl")变量值。阅读[#修改on-demand调速器的阈值](#.E4.BF.AE.E6.94.B9on-demand.E8.B0.83.E9.80.9F.E5.99.A8.E7.9A.84.E9.98.88.E5.80.BC)章节以获得更多信息。
 
 *   有时on-demand调速器可能达不到最高频率而只能达到次级频率。这个问题可以通过把max_freq值设置得稍微高于最大频率的方式来解决。例如，如果CPU的频率范围是2.00 GHz到3.00 GHz，把max_freq设置为3.01 GHz就是一个不错的主意。
 
@@ -286,7 +285,6 @@ ResultActive=yes
 要固化这个修改请参考[Kernel modules](/index.php/Kernel_modules#Configuration "Kernel modules")或继续阅读本文。 添加`processor.ignore_ppc=1`到内核启动参数或创建
 
  `/etc/modprobe.d/ignore_ppc.conf` 
-
 ```
 # 如果你的机器受到错误的BIOS频率限制，这应该会有帮助
 options processor ignore_ppc=1

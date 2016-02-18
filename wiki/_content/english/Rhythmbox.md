@@ -29,7 +29,7 @@ Install [rhythmbox](https://www.archlinux.org/packages/?name=rhythmbox) from the
 
 Rhythmbox takes advantage of the [Grilo](https://live.gnome.org/Grilo) framework to browse external sources such as SHOUTcast webradios and more.
 
-You need to install the [grilo](https://www.archlinux.org/packages/?name=grilo) and [grilo-plugins](https://www.archlinux.org/packages/?name=grilo-plugins) packages. Then, be sure to enable the _Grilo Media Browser_ plugin into Rhythmbox ("Edit" > "Plugins").
+You need to install the [grilo](https://www.archlinux.org/packages/?name=grilo) and [grilo-plugins](https://www.archlinux.org/packages/?name=grilo-plugins) packages. Then, be sure to enable the *Grilo Media Browser* plugin into Rhythmbox ("Edit" > "Plugins").
 
 ### How to activate the Cover Art plugin
 

@@ -12,11 +12,11 @@ Následující proměnné mohou být použity v souboru `PKGBUILD`:
 
 	`pkgname` 
 
-	Obsahuje jméno balíčku. Mělo by se skládat z **alfanumerických znaků a pomlčky ('-')**. Všechna písmena by měla být malá (**lowercase**). V zájmu soudržnosti by se měla proměnná `pkgname` shodovat s názvem zdrojového archivu programu, pro který balíček vytváříte. Například, pokud je jméno tarballu `foobar-2.5.tar.gz`, měla by hodnota `pkgname` být _foobar_.
+	Obsahuje jméno balíčku. Mělo by se skládat z **alfanumerických znaků a pomlčky ('-')**. Všechna písmena by měla být malá (**lowercase**). V zájmu soudržnosti by se měla proměnná `pkgname` shodovat s názvem zdrojového archivu programu, pro který balíček vytváříte. Například, pokud je jméno tarballu `foobar-2.5.tar.gz`, měla by hodnota `pkgname` být *foobar*.
 
 	`pkgver` 
 
-	Verze balíčku. Hodnota proměnné by měla být stejná jako verze sestavovaného programu. Může obsahovat písmena, čísla a tečky ale **NEMĚL BY** obsahovat pomlčku. Pokud autor programu používá ve verzi pomlčku, nahraďte ji podtržítkem. Například, pokud je verze programu _0.99-10_, měla by být změněna na _0.99_10_. Pokud je pak proměnná použita dále ve skriptu, lze jednoduše podtržítko nahradit pomlčkou následovně:
+	Verze balíčku. Hodnota proměnné by měla být stejná jako verze sestavovaného programu. Může obsahovat písmena, čísla a tečky ale **NEMĚL BY** obsahovat pomlčku. Pokud autor programu používá ve verzi pomlčku, nahraďte ji podtržítkem. Například, pokud je verze programu *0.99-10*, měla by být změněna na *0.99_10*. Pokud je pak proměnná použita dále ve skriptu, lze jednoduše podtržítko nahradit pomlčkou následovně:
 
 ```
  source=($pkgname-${pkgver//_/-}.tar.gz)
@@ -58,7 +58,7 @@ Následující proměnné mohou být použity v souboru `PKGBUILD`:
 
 	`groups` 
 
-	Jméno skupiny do které balíček patří. Například když nainstalujete balíče [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/), nainstalují se zároveň i ostatní balíčky, které patří do skupiny _kde_.
+	Jméno skupiny do které balíček patří. Například když nainstalujete balíče [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/), nainstalují se zároveň i ostatní balíčky, které patří do skupiny *kde*.
 
 	`depends` 
 
@@ -87,7 +87,7 @@ optdepends=('cups: printing support'
 
 	`provides` 
 
-	Pole jmen balíčků, které tento balíček funkčně zastupuje. Pokud toto pole použijete, měli byste ještě definovat proměnnou (`pkgver`, případně i `pkgrel`). Například pokud poskytujete upravenou verzi _qt_ v balíčku pojmenovaném _qt-foobar_ verze 3.3.8, mělo by pole `provides` vypadat nějak takto: `provides=('qt=3.3.8')`. Proměnnou `pkgname` do tohoto pole nepřidávejte - _makepkg_ to udělá za vás.
+	Pole jmen balíčků, které tento balíček funkčně zastupuje. Pokud toto pole použijete, měli byste ještě definovat proměnnou (`pkgver`, případně i `pkgrel`). Například pokud poskytujete upravenou verzi *qt* v balíčku pojmenovaném *qt-foobar* verze 3.3.8, mělo by pole `provides` vypadat nějak takto: `provides=('qt=3.3.8')`. Proměnnou `pkgname` do tohoto pole nepřidávejte - *makepkg* to udělá za vás.
 
 	`conflicts` 
 
@@ -105,26 +105,26 @@ optdepends=('cups: printing support'
 
 	Toto pole vám umožňuje změnit základní chování programu `makepkg`. Pro nastavení vložte jméno určité volby do pole. Pro změnu defaultní volby na opačnou hodnotu vložte **!** na začátek jména. V poli lze použít následující:
 
-*   _**strip**_ - Odstranění symbolů z binárních souborů a knihoven.
-*   _**docs**_ - Uložení adresářů `/doc`.
-*   _**libtool**_ - Odstranění souborů programu _libtool_ (`.la`).
-*   _**emptydirs**_ - Odstranění prázdných adresářů z výsledného balíčku.
-*   _**zipman**_ - Komprese _man_ a _info_ stránek programem _gzip_.
-*   _**ccache**_ - Povoluje použití `ccache` v průběhu sestavování balíčku. Více se užívá obrácená varianta této volby `!ccache` - většinou pro balíčky, které mají problém při sestavování s `ccache`.
-*   _**distcc**_ - Povoluje užítí `distcc` v průběhu sestavování balíčku. Více se užívá obrácená varianta této volby `!distcc`. Tuto volbu většinou používájí balíčky, které mají problémy při sestavování s `distcc`.
-*   _**makeflags**_ - Umožňuje definovat proměnné pro kompilaci. Více se užívá její znegovaná forma `!makeflags`.
-*   _**force**_ - Donutí balíček k aktualizaci, a to i v případě, že by to verze balíčku neměla umožňovat. Tato volba se například užívá při změně číslování verzí balíčku nebo když je nutný tzv. downgrade balíčku z důvodu bezpečnosti.
+*   ***strip*** - Odstranění symbolů z binárních souborů a knihoven.
+*   ***docs*** - Uložení adresářů `/doc`.
+*   ***libtool*** - Odstranění souborů programu *libtool* (`.la`).
+*   ***emptydirs*** - Odstranění prázdných adresářů z výsledného balíčku.
+*   ***zipman*** - Komprese *man* a *info* stránek programem *gzip*.
+*   ***ccache*** - Povoluje použití `ccache` v průběhu sestavování balíčku. Více se užívá obrácená varianta této volby `!ccache` - většinou pro balíčky, které mají problém při sestavování s `ccache`.
+*   ***distcc*** - Povoluje užítí `distcc` v průběhu sestavování balíčku. Více se užívá obrácená varianta této volby `!distcc`. Tuto volbu většinou používájí balíčky, které mají problémy při sestavování s `distcc`.
+*   ***makeflags*** - Umožňuje definovat proměnné pro kompilaci. Více se užívá její znegovaná forma `!makeflags`.
+*   ***force*** - Donutí balíček k aktualizaci, a to i v případě, že by to verze balíčku neměla umožňovat. Tato volba se například užívá při změně číslování verzí balíčku nebo když je nutný tzv. downgrade balíčku z důvodu bezpečnosti.
 
 	`install` 
 
-	Představuje jméno skriptu `.install`, který může a nemusí být součástí balíčku. _pacman_ pak tento skript spouští při instalaci, odstranění nebo aktualizaci balíčku. Skript pak může obsahovat následující funkce. Každá z funkcí se spouští v jinou dobu.
+	Představuje jméno skriptu `.install`, který může a nemusí být součástí balíčku. *pacman* pak tento skript spouští při instalaci, odstranění nebo aktualizaci balíčku. Skript pak může obsahovat následující funkce. Každá z funkcí se spouští v jinou dobu.
 
-*   _**pre_install**_ - Tato funkce je volána _předtím_, než jsou soubory rozbaleny. Funkci je argumentem předávána nová verze balíčku.
-*   _**post_install**_ - Tato funkce je volána _po_ rozbalení balíčku. V argumentu ji je předáváno číslo nové verze balíčku.
-*   _**pre_upgrade**_ - Tato funkce je volána _předtím_, než jsou soubory rozbaleny. Jsou ji předávány dva argumenty v tomto pořadí: nová verze balíčku, stará verze balíčku.
-*   _**post_upgrade**_ - Tato funkce je volána _po_ rozbalení balíčku. Jsou ji předávány dva argumenty v tomto pořadí: nová verze balíčku, stará verze balíčku.
-*   _**pre_remove**_ - Funkce, která je volána předtím, než jsou všechny soubory odstraněny. Je jí předáván jeden parametr - stará verze balíčku.
-*   _**post_remove**_ - Funkce, která je volána po odstranění souborů. Je jí předáván jeden argument - stará verze balíčku.
+*   ***pre_install*** - Tato funkce je volána *předtím*, než jsou soubory rozbaleny. Funkci je argumentem předávána nová verze balíčku.
+*   ***post_install*** - Tato funkce je volána *po* rozbalení balíčku. V argumentu ji je předáváno číslo nové verze balíčku.
+*   ***pre_upgrade*** - Tato funkce je volána *předtím*, než jsou soubory rozbaleny. Jsou ji předávány dva argumenty v tomto pořadí: nová verze balíčku, stará verze balíčku.
+*   ***post_upgrade*** - Tato funkce je volána *po* rozbalení balíčku. Jsou ji předávány dva argumenty v tomto pořadí: nová verze balíčku, stará verze balíčku.
+*   ***pre_remove*** - Funkce, která je volána předtím, než jsou všechny soubory odstraněny. Je jí předáván jeden parametr - stará verze balíčku.
+*   ***post_remove*** - Funkce, která je volána po odstranění souborů. Je jí předáván jeden argument - stará verze balíčku.
 
 **Tip:** Prototyp souboru `.install` můžete naleznout zde: `/usr/share/pacman/proto.install`.
 
@@ -138,7 +138,7 @@ optdepends=('cups: printing support'
 
 	`noextract` 
 
-	Pole souborů, které jsou obsaženy v poli `source`, ale nemají být extraktovány. Toto pole se většinou používá pro archívy typu zip, které nemohou být rozbaleny programem _bsdtar_. V těchto situacích by se měl přidat program _unzip_ do pole `makedepends` a první řádka funkce `build()` by měla obsahovat:
+	Pole souborů, které jsou obsaženy v poli `source`, ale nemají být extraktovány. Toto pole se většinou používá pro archívy typu zip, které nemohou být rozbaleny programem *bsdtar*. V těchto situacích by se měl přidat program *unzip* do pole `makedepends` a první řádka funkce `build()` by měla obsahovat:
 
 ```
 cd $srcdir/$pkgname-$pkgver

@@ -19,9 +19,9 @@
 
 Marketed by various telecommunications companies in several countries, the [E220](http://en.wikipedia.org/wiki/Huawei_E220) is a 3.5G HSDPA USB modem used mainly for wireless Internet access via mobile telephony networks. Technically it is a modem, USB and (due to the CDFS format) CD-ROM device. With a kernel version older than 2.6.20, getting Linux to recognize the device as a modem and accessing its functions requires a workaround.
 
-_"Linux kernel versions prior to 2.6.20 have some problems with it, as the SCSI CDROM fakevolume with drivers for Microsoft systems gets automounted by usbstorage.ko module, preventing serial device /dev/ttyUSB0 from working properly."_
+*"Linux kernel versions prior to 2.6.20 have some problems with it, as the SCSI CDROM fakevolume with drivers for Microsoft systems gets automounted by usbstorage.ko module, preventing serial device /dev/ttyUSB0 from working properly."*
 
-However, as support for it was added in 2.6.20 via modules _usb-storage_ and _usbserial_, getting it to work is as simple as plugging it in and dialling up (the above statement is of no concern to us as we can load and unload modules at will, it was probably meant for pre-packaged GNU and Linux distributions). In fact, using the modem under Linux proves to be more reliable as there are no uncalled-for disconnections. This is probably due to the fact that we are communicating directly with the modem, whereas in Windows or Mac OS X drivers are installed on first run (that is what the storage portion is for) and connection is achieved through a thick software layer every time, leaving room for possible interferences and conflicts.
+However, as support for it was added in 2.6.20 via modules *usb-storage* and *usbserial*, getting it to work is as simple as plugging it in and dialling up (the above statement is of no concern to us as we can load and unload modules at will, it was probably meant for pre-packaged GNU and Linux distributions). In fact, using the modem under Linux proves to be more reliable as there are no uncalled-for disconnections. This is probably due to the fact that we are communicating directly with the modem, whereas in Windows or Mac OS X drivers are installed on first run (that is what the storage portion is for) and connection is achieved through a thick software layer every time, leaving room for possible interferences and conflicts.
 
 # Plugging In
 
@@ -37,18 +37,18 @@ Start the networkmanager daemon from rc.conf or manually using /etc/rc.d/network
 
 Activate the connection by choosing it on the Network Manager applet. If it is not showing up, unplug and plug in the modem again to refresh the connection. Now you should see it listed in the Network Manager applet. Click on it and it will try to connect. Once connected, the icon will change. You're good to go then.
 
-For _Vodafone_ brands of this device, you can use [vodafone-mccd](https://aur.archlinux.org/packages.php?ID=32986) which is the [Vodafone Mobile Connect Card Driver for Linux](http://forge.vodafonebetavine.net/projects/vodafonemobilec/). The official name is very long, yes.
+For *Vodafone* brands of this device, you can use [vodafone-mccd](https://aur.archlinux.org/packages.php?ID=32986) which is the [Vodafone Mobile Connect Card Driver for Linux](http://forge.vodafonebetavine.net/projects/vodafonemobilec/). The official name is very long, yes.
 
 ### Bare Naked
 
-You can just try _Plug 'n Dial_ first to see if it works (I will give you free beer if it does!). After hooking up to the USB port (some say an upright position is best; let it hang over the edge of the desk), check to make sure it is detected.
+You can just try *Plug 'n Dial* first to see if it works (I will give you free beer if it does!). After hooking up to the USB port (some say an upright position is best; let it hang over the edge of the desk), check to make sure it is detected.
 
 ```
 $ cat /proc/bus/usb/devices
 
 ```
 
-You should see **Huawei** somewhere there. If not, you are on your own. The _usb-storage_ and/or _usbserial_ modules must be loaded, whether manually or by [HAL](/index.php/HAL "HAL") is up to you and/or your system.
+You should see **Huawei** somewhere there. If not, you are on your own. The *usb-storage* and/or *usbserial* modules must be loaded, whether manually or by [HAL](/index.php/HAL "HAL") is up to you and/or your system.
 
 ```
 # modprobe usb-storage
@@ -58,13 +58,13 @@ $ ls /dev/ttyUSB*
 
 ```
 
-You should see three renditions of **ttyUSB**. If not, we will get to that later. This _is_ a "Quick Start" after all, no? The ports:
+You should see three renditions of **ttyUSB**. If not, we will get to that later. This *is* a "Quick Start" after all, no? The ports:
 
 *   ttyUSB0 - Modem
 *   ttyUSB1 - USB?
 *   ttyUSB2 - Nothing
 
-Now you need a dialler. Most convenient of all would be [wvdial](/index.php/Wvdial "Wvdial"), so install it. You should have _ppp_ already, if not just pull them both in.
+Now you need a dialler. Most convenient of all would be [wvdial](/index.php/Wvdial "Wvdial"), so install it. You should have *ppp* already, if not just pull them both in.
 
 ```
 # pacman -S wvdial ppp
@@ -73,7 +73,7 @@ Now you need a dialler. Most convenient of all would be [wvdial](/index.php/Wvdi
 
 ### Configure n' Dial
 
-Most SIM and data services provided together with the device do not require special settings and work with similar configuration to get connected. They are almost "Plug n' Play", a special trait of Linux. Edit _/etc/wvdial.conf_ and use something like the following:
+Most SIM and data services provided together with the device do not require special settings and work with similar configuration to get connected. They are almost "Plug n' Play", a special trait of Linux. Edit */etc/wvdial.conf* and use something like the following:
 
 ```
 [Dialer hsdpa]
@@ -118,9 +118,9 @@ You can now connect immediately, but probably only as root, which is **not** a d
 
 ## Slow Start
 
-_Edit: This section is nullified if you have UDEV and HAL workarounds, or a script, or a package from AUR._
+*Edit: This section is nullified if you have UDEV and HAL workarounds, or a script, or a package from AUR.*
 
-So why then? Well, for some reason those of us on newer kernels still have to ride the old ways. In some cases, all that is needed to be done is to remove the _usb-storage_ module first, then load _usbserial_ with the device IDs. The first _cat_ command on this page will have that information, while _lsusb_ is an alternative. Anyhow, the IDs are the same for almost all E220s, so you can copy wholesale.
+So why then? Well, for some reason those of us on newer kernels still have to ride the old ways. In some cases, all that is needed to be done is to remove the *usb-storage* module first, then load *usbserial* with the device IDs. The first *cat* command on this page will have that information, while *lsusb* is an alternative. Anyhow, the IDs are the same for almost all E220s, so you can copy wholesale.
 
 ```
 # modprobe -r usb-storage usbserial
@@ -128,14 +128,14 @@ So why then? Well, for some reason those of us on newer kernels still have to ri
 
 ```
 
-In other cases, where the _option_ module gets autoloaded for use by _usbserial_, you just have to blacklist it in [rc.conf](/index.php/Rc.conf "Rc.conf"):
+In other cases, where the *option* module gets autoloaded for use by *usbserial*, you just have to blacklist it in [rc.conf](/index.php/Rc.conf "Rc.conf"):
 
 ```
 MOD_BLACKLIST=(option) 
 
 ```
 
-When you cannot salvage anything from this either, you have to _go Gentoo_ and compile something. Do not worry, it is only a script and we do things like this almost everyday, albeit in _bash_.
+When you cannot salvage anything from this either, you have to *go Gentoo* and compile something. Do not worry, it is only a script and we do things like this almost everyday, albeit in *bash*.
 
 ```
 $ mkdir ~/huawei-e220 && cd ~/huawei-e220
@@ -145,7 +145,7 @@ $ gcc -lusb -o e220 *.c
 
 ```
 
-This gets around the kernel to recognize the modem functionalities of the device. You can now carry on and connect using the above methods. If you had to follow this step, you will always need the script unless you set _udev_ rules and such (package link below). So move it to a global _PATH_.
+This gets around the kernel to recognize the modem functionalities of the device. You can now carry on and connect using the above methods. If you had to follow this step, you will always need the script unless you set *udev* rules and such (package link below). So move it to a global *PATH*.
 
 ```
 $ cd ~/huawei-e220
@@ -157,7 +157,7 @@ Now it is easier.
 
 # Extras
 
-_Note: It seems some people get it to work using ttyUSB1, which should not be the case, but rest assured that at least on recent kernels and systems ttyUSB0 is the correct port to dial with._
+*Note: It seems some people get it to work using ttyUSB1, which should not be the case, but rest assured that at least on recent kernels and systems ttyUSB0 is the correct port to dial with.*
 
 ## Port Testing
 
@@ -175,7 +175,7 @@ Now run it.
 
 ```
 
-Change the serial port to _/dev/ttyUSB1_ and exit from the page, this will open the main program. When it initializes the modem, issue the command _AT_. The answer should be _OK_, which means the modem is working well on that port.
+Change the serial port to */dev/ttyUSB1* and exit from the page, this will open the main program. When it initializes the modem, issue the command *AT*. The answer should be *OK*, which means the modem is working well on that port.
 
 # Troubleshooting
 

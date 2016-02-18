@@ -13,7 +13,7 @@
 
 ### Skype diegimas 32-bitų procesoriams
 
-Norint įdiegti Skype pirmiausia reikia aktyvuoti officialų repozitą. Pagal nutylėjimą jis jau turėtų būti aktyvuotas, bet jei taip nėra, tą galima padaryti nuėmus _"#"_ faile `pacman.conf` šioms dviems eilutėms:
+Norint įdiegti Skype pirmiausia reikia aktyvuoti officialų repozitą. Pagal nutylėjimą jis jau turėtų būti aktyvuotas, bet jei taip nėra, tą galima padaryti nuėmus *"#"* faile `pacman.conf` šioms dviems eilutėms:
 
 ```
 /etc/pacman.conf
@@ -92,7 +92,7 @@ $ cd ~ && rm -rf temp-skype-install
 
 ### Skype paleidimas
 
-Skype paleidimas nesudėtingas. Tiesiog terminale įveskite _skype_ arba du kartus spragtelkite pelės klavišu ant Skype ikonos darbastalyje arba programų meniu.
+Skype paleidimas nesudėtingas. Tiesiog terminale įveskite *skype* arba du kartus spragtelkite pelės klavišu ant Skype ikonos darbastalyje arba programų meniu.
 
 ## Skype garsas
 

@@ -1,6 +1,6 @@
-[Ncmpcpp](http://unkart.ovh.org/ncmpcpp/) or ncmpcpp is an [mpd](/index.php/Mpd "Mpd") client (compatible with _mopidy_) with a UI very similar to _ncmpc_, but it provides new useful features such as support for regular expressions for library searches, extended song format, items filtering, the ability to sort playlists, and a local filesystem browser.
+[Ncmpcpp](http://unkart.ovh.org/ncmpcpp/) or ncmpcpp is an [mpd](/index.php/Mpd "Mpd") client (compatible with *mopidy*) with a UI very similar to *ncmpc*, but it provides new useful features such as support for regular expressions for library searches, extended song format, items filtering, the ability to sort playlists, and a local filesystem browser.
 
-To use it, a functional _mpd_ must be present on the system since _ncmpcpp_/_mpd_ work together in a client/server relationship.
+To use it, a functional *mpd* must be present on the system since *ncmpcpp*/*mpd* work together in a client/server relationship.
 
 ## Contents
 
@@ -21,10 +21,10 @@ To use it, a functional _mpd_ must be present on the system since _ncmpcpp_/_mpd
 
 ## Basic configuration
 
-The shell "GUI" for _ncmpcpp_ is highly customizable. Edit `~/.ncmpcpp/config` to your liking. If, after installation, `~/.ncmpcpp/config` has not been created, simply copy the sample config, [change owner](/index.php/Chmod#chown "Chmod") and edit at the very least the following three configuration options:
+The shell "GUI" for *ncmpcpp* is highly customizable. Edit `~/.ncmpcpp/config` to your liking. If, after installation, `~/.ncmpcpp/config` has not been created, simply copy the sample config, [change owner](/index.php/Chmod#chown "Chmod") and edit at the very least the following three configuration options:
 
-*   **mpd_host** - Should point to the host on which _mpd_ resides, can be "localhost" or "127.0.0.1" if on the same machine
-*   **mpd_port** - The default of _mpd_ should be "6600"
+*   **mpd_host** - Should point to the host on which *mpd* resides, can be "localhost" or "127.0.0.1" if on the same machine
+*   **mpd_port** - The default of *mpd* should be "6600"
 *   **mpd_music_dir** - The same directory value as specified in "music_directory" in `mpd.conf`
 
 For inspiration, see the following resources:
@@ -60,7 +60,7 @@ visualizer_look = "+|"
 
 ```
 
-*   **visualizer_sync_interval** - Set the interval for synchronizing the visualizer with the audio output from _mpd_. It should be set to greater than 10 to avoid trying to synchronize too frequently, which freezes the visualization. The recommended value is 30, but it can be reduced if the audio becomes desynced with the visualization.
+*   **visualizer_sync_interval** - Set the interval for synchronizing the visualizer with the audio output from *mpd*. It should be set to greater than 10 to avoid trying to synchronize too frequently, which freezes the visualization. The recommended value is 30, but it can be reduced if the audio becomes desynced with the visualization.
 *   **visualizer_type** - Set the visualization to either a spectrum analyzer or wave form.
 *   **visualizer_look** - Set the visualizer's look (string has to be exactly 2 characters long: first one is for wave whereas second for frequency spectrum).
 

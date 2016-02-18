@@ -34,7 +34,7 @@ For Braille, see [Arch Linux for the blind](/index.php/Arch_Linux_for_the_blind 
 
 ##### Sticky Keys
 
-In order to enable Sticky Keys in a TTY, you require to know the exact keycodes of the keys to be used. These can be found by a tool like [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev) or [xkeycaps](https://www.archlinux.org/packages/?name=xkeycaps). Alternatively, you can inspect the output of _dumpkeys_, provided that the current keymap is correct.
+In order to enable Sticky Keys in a TTY, you require to know the exact keycodes of the keys to be used. These can be found by a tool like [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev) or [xkeycaps](https://www.archlinux.org/packages/?name=xkeycaps). Alternatively, you can inspect the output of *dumpkeys*, provided that the current keymap is correct.
 
 For example, a Logitech Ultra-X will provide the following keycodes for the modifier keys:
 
@@ -47,7 +47,7 @@ RCtrl = 97
 
 ```
 
-Next, use _dumpkeys_ to determine the range of the keycodes:
+Next, use *dumpkeys* to determine the range of the keycodes:
 
 ```
 # dumpkeys | head -1
@@ -147,7 +147,7 @@ Similar to most implementations, Sticky Keys can be disabled by pressing a modif
 
 ##### Button Mapping
 
-By using _xmodmap_, you can map functions to mouse buttons independent of your graphical environment. For this, you need to know which physical button on your mouse is read as which number, which can be found by a tool such as [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev). Generally, the physical buttons of left, middle, and right are read as the first, second, and third button, respectively.
+By using *xmodmap*, you can map functions to mouse buttons independent of your graphical environment. For this, you need to know which physical button on your mouse is read as which number, which can be found by a tool such as [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev). Generally, the physical buttons of left, middle, and right are read as the first, second, and third button, respectively.
 
 Once you have acquired these, continue by creating a configuration file on a suitable location, e.g. `~/.mousekeys`. Next, open the file with your favourite editor, and write the keyword `pointer =` followed by an enumeration of the previously-found number of mouse buttons.
 

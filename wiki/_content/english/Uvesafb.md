@@ -105,7 +105,7 @@ FILES="/etc/modprobe.d/uvesafb.conf"
 
 ```
 
-To make changes take effect you need to regenerate the _initramfs_ images of the kernel.
+To make changes take effect you need to regenerate the *initramfs* images of the kernel.
 
 ```
 # mkinitcpio -p linux
@@ -174,7 +174,7 @@ run_hook ()
 
 As default 5c is the code of the BIOS mode to replace. You can get a list of the available BIOS video modes with the command `915resolution -l`.
 
-**Note:** You want to choose the code of a mode that you _DO NOT_ need (neither in the framebuffer nor in X), because 915resolution will replace it with a new user-defined mode. In the above example, `1280 800` is the new desired resolution.
+**Note:** You want to choose the code of a mode that you *DO NOT* need (neither in the framebuffer nor in X), because 915resolution will replace it with a new user-defined mode. In the above example, `1280 800` is the new desired resolution.
 
 ### The Hooks Array
 

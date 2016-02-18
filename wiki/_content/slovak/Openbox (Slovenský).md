@@ -107,13 +107,13 @@ mv ~/.config/autostart ~/.config/autostart-bak
 
 #### GNOME 2.26
 
-_**Pokračujte podla nasledujúceho návodu pre GNOME 2.24\. Pokial zlyhá, skúste toto:**_
+***Pokračujte podla nasledujúceho návodu pre GNOME 2.24\. Pokial zlyhá, skúste toto:***
 
 Pokial sa po inštalácií openboxu nejde prihlásiť do sedenia 'Gnome/openbox', je pre zachovanie openboxu ako správcu okien pre sedenie 'Gnome' z prihlasovacieho manažéru (xdm, gdm, kdm, entrance, slim atd.) skúsiť následujúce:
 
 1.  Prihlaste sa len do sedenia Gnome (ktoré ako správca okien stále používa metacity).
 2.  Nainštalujte openbox, pokial už neni nainštalovaný.
-3.  Chodte do menu _System → Preferences → Startup Applications_ (alebo s názvom 'Session' pre staršiu verziu Gnome)
+3.  Chodte do menu *System → Preferences → Startup Applications* (alebo s názvom 'Session' pre staršiu verziu Gnome)
 4.  Otvorte Startup Application, zvolte '+ Add' a zadajte text, ako je uvedené nižšie a vynechajte text za znakom #.
 5.  Teraz stlačte tlačítko 'Add' a uistite sa, že je zatrhnutý checkbox vedla vášho nového záznamu.
 6.  Odhláste sa z Gnome a prihláste sa späť - openbox by mal byť teraz nastavený ako správca okien.
@@ -352,8 +352,8 @@ Openbox podporuje spustenie programov pri štarte pomocou príkazu "openbox-sess
 
 Existujú dva spôsoby spustenia aplikácií pri štarte:
 
-1.  Pokial používate pre prihlásenie do sedenia X startx/xinit, editujte súbor `~/.xinitrc` a zmeňte riadok: execute _openbox_ na execute **openbox-session**.
-2.  Pokial používate pre prihlásenie GDM/KDM, zvolte sedenie _Openbox_ a to automaticky použije autoštart.
+1.  Pokial používate pre prihlásenie do sedenia X startx/xinit, editujte súbor `~/.xinitrc` a zmeňte riadok: execute *openbox* na execute **openbox-session**.
+2.  Pokial používate pre prihlásenie GDM/KDM, zvolte sedenie *Openbox* a to automaticky použije autoštart.
 
 Programy, spustitelné po štarte sa nastavujú v súbore `~/.config/openbox/autostart.sh`. Kompletné inštrukcie sú na [stránkach Openboxu](http://openbox.org/wiki/Help:Autostart).
 
@@ -608,7 +608,7 @@ a pridajte uživatela do skupiny hal:
 
 Pre ešte odlahčenejšiu verziu zvážte [Gentoo](http://www.obsession.se/gentoo/) alebo [emelFM2](http://emelfm2.net/), ktoré obe použivajú dvojpanelový vzhlad 'Midnight Commander'.
 
-Dalšie: Xfe muCommander _(Doplním neskôr, ked ich vyskúšam.)_
+Dalšie: Xfe muCommander *(Doplním neskôr, ked ich vyskúšam.)*
 
 Dalej samozrejme môžete použiť Nautilus z GNOME. Aj ked je pomalší ako vyššie uvedené riešenia, má podporu VFS (napr. vzdialené SSH, FTP a Samba pripojenie)
 

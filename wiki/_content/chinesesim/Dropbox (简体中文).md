@@ -86,7 +86,6 @@ $ ~/.dropbox-dist/dropboxd
 当前的 Dropbox 版本已经包含了 systemd 服务文件。默认的 systemd 服务文件并不能在系统托盘中显示软件的图标，但是依旧在后台默默的为您同步您的文件。如果您需要托盘图标支持，那么建立 `/etc/systemd/system/dropbox@.service` ，修改环境变量 `DISPLAY` 后替换默认的 systemd 服务文件：
 
  `/etc/systemd/system/dropbox@.service` 
-
 ```
 .include /usr/lib/systemd/system/dropbox@.service
 [Service]
@@ -108,7 +107,6 @@ Note that you have to manually start Dropbox the first time after installation, 
 If you have followed the [systemd/User](/index.php/Systemd/User "Systemd/User") wiki page, you probably want to start dropbox only when you log in or launch your WM/DE. The solution in that case is to create a service in your home directory instead of using the sysadmin account:
 
  `$HOME/.config/systemd/user/dropbox@.service` 
-
 ```
 [Unit]
 Description=Dropbox as a systemd service
@@ -203,19 +201,19 @@ Pay attention to use different `.../.dropbox-dist/dropboxd` binaries. Even when 
 
 Dropbox itself is pretty good at dealing with connectivity problems. If you have a laptop and roam between different network environments, Dropbox will have problems reconnecting if you do not restart it. **Try one of the methods described below first,** if for some reason the problem remains, you may try one of these hackish solutions: [[1]](https://bbs.archlinux.org/viewtopic.php?pid=790905), [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1012343#p1012343).
 
-**Note:** When using any of these methods, you need to prevent Dropbox from doing a standard autostart by unchecking _Dropbox - Preferences - General - Start Dropbox on system startup_. This prevents Dropbox from creating the `~/.config/autostart/dropbox.desktop` file and thus from starting twice.
+**Note:** When using any of these methods, you need to prevent Dropbox from doing a standard autostart by unchecking *Dropbox - Preferences - General - Start Dropbox on system startup*. This prevents Dropbox from creating the `~/.config/autostart/dropbox.desktop` file and thus from starting twice.
 
 ### Using netctl
 
 For [netctl](/index.php/Netctl "Netctl"), use `ExecUpPost` and `ExecDownPre` respectively in every network profile you use, or for example in `/etc/netctl/interfaces/wlan0` to start Dropbox automatically whenever profile on `wlan0` is active. Add '|| true' to your command to make sure [netctl](/index.php/Netctl "Netctl") will bring up your profile, although Dropbox fails to start.
 
 ```
-ExecUpPost="_any other code_; su -c 'DISPLAY=:0 /usr/bin/dropboxd &' _your_user_ || true"
-ExecDownPre="_any other code_; killall dropbox"
+ExecUpPost="*any other code*; su -c 'DISPLAY=:0 /usr/bin/dropboxd &' *your_user* || true"
+ExecDownPre="*any other code*; killall dropbox"
 
 ```
 
-Obviously, `_your_user_` has to be edited and `_any other code_;` can be omitted if you do not have any. The above will make sure that Dropbox is running only if there is a network profile active.
+Obviously, `*your_user*` has to be edited and `*any other code*;` can be omitted if you do not have any. The above will make sure that Dropbox is running only if there is a network profile active.
 
 ### Using NetworkManager
 
@@ -284,7 +282,7 @@ An alternative solution, for those not using netctl or NetworkManager, is to del
 
 *   `cp ~/.config/autostart/dropbox.desktop ~/.config/autostart/dropbox-delayed.desktop`
 *   Prevent dropbox from doing a standard autostart by unchecking Dropbox - Preferences - General - Start Dropbox on system startup. This removes `~/.config/autostart/dropbox.desktop`.
-*   Edit `~/.config/autostart/dropbox-delayed.desktop` and replace `Exec=dropboxd` with `Exec=bash -c "sleep _timeout_ && dropboxd"`. Tweak the _timeout_ parameter, the value of `3` is a good start.
+*   Edit `~/.config/autostart/dropbox-delayed.desktop` and replace `Exec=dropboxd` with `Exec=bash -c "sleep *timeout* && dropboxd"`. Tweak the *timeout* parameter, the value of `3` is a good start.
 
 ### Dropbox does not start - "This is usually because of a permission error"
 

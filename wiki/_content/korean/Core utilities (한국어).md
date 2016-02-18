@@ -1,4 +1,4 @@
-이 문서는 _less, ls, grep_ 등 GNU/Linux 시스템 상에서 _Core utilities_라고 불리는 유틸리티들에 대해 설명합니다. 이 문서는 GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) 패키지에 포함되어 있는 유틸리티 등을 포함합니다. 아래에는 해당 유틸리티들에 대한 유용한 도움말과 기타 정보가 제공됩니다.
+이 문서는 *less, ls, grep* 등 GNU/Linux 시스템 상에서 *Core utilities*라고 불리는 유틸리티들에 대해 설명합니다. 이 문서는 GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) 패키지에 포함되어 있는 유틸리티 등을 포함합니다. 아래에는 해당 유틸리티들에 대한 유용한 도움말과 기타 정보가 제공됩니다.
 
 ## Contents
 
@@ -49,50 +49,50 @@
 
 ## cat
 
-[위키백과에서:](http://ko.wikipedia.org/w/index.php?title=Cat_%28%EC%9C%A0%EB%8B%89%EC%8A%A4%29&) _cat_ 명령어는 파일들을 연결하고 표시하기 위해 사용되는 표준 유닉스 프로그램입니다.
+[위키백과에서:](http://ko.wikipedia.org/w/index.php?title=Cat_%28%EC%9C%A0%EB%8B%89%EC%8A%A4%29&) *cat* 명령어는 파일들을 연결하고 표시하기 위해 사용되는 표준 유닉스 프로그램입니다.
 
-*   _cat_은 쉘에 포함된 프로그램이 아닙니다. 스크립트를 작성하고 있거나, 성능을 향상하고 싶은 사용자라면 많은 경우에[리다이렉션](http://ko.wikipedia.org/wiki/%EB%A6%AC%EB%8B%A4%EC%9D%B4%EB%A0%89%EC%85%98)을 사용하는 것이 유용할 수 있습니다. 실제로 `< _file_` 명령은 `cat _file_`과 같은 기능을 합니다.
+*   *cat*은 쉘에 포함된 프로그램이 아닙니다. 스크립트를 작성하고 있거나, 성능을 향상하고 싶은 사용자라면 많은 경우에[리다이렉션](http://ko.wikipedia.org/wiki/%EB%A6%AC%EB%8B%A4%EC%9D%B4%EB%A0%89%EC%85%98)을 사용하는 것이 유용할 수 있습니다. 실제로 `< *file*` 명령은 `cat *file*`과 같은 기능을 합니다.
 
-*   _cat_은 여러 줄을 처리할 수 있습니다. 그러나 경우에 따라 cat을 이렇게 사용하는 것은 권장되지 않습니다.
+*   *cat*은 여러 줄을 처리할 수 있습니다. 그러나 경우에 따라 cat을 이렇게 사용하는 것은 권장되지 않습니다.
 
 ```
-$ cat << EOF >> _path/file_
-_first line_
+$ cat << EOF >> *path/file*
+*first line*
 ...
-_last line_
+*last line*
 EOF
 
 ```
 
-	이런 경우 _echo_ 명령어를 사용하는 것이 낫습니다.
+	이런 경우 *echo* 명령어를 사용하는 것이 낫습니다.
 
 ```
 $ echo "\
-_first line_
+*first line*
 ...
-_last line_" \
->> _path/file_
+*last line*" \
+>> *path/file*
 
 ```
 
-*   파일을 역순으로 나열해야 한다면, [tac](https://en.wikipedia.org/wiki/tac_(Unix) "wikipedia:tac (Unix)") 명령어를 사용하십시오. (tac은 cat을 거꾸로 쓴 것입니다.)
+*   파일을 역순으로 나열해야 한다면, [tac](https://en.wikipedia.org/wiki/tac_(Unix) 명령어를 사용하십시오. (tac은 cat을 거꾸로 쓴 것입니다.)
 
 ## dd
 
 [dd](https://en.wikipedia.org/wiki/dd_(Unix) "wikipedia:dd (Unix)")는 유닉스 계열의 운영체제의 명령어로서, 파일 변환과 복사를 주 목적으로 합니다.
 
-**참고:** _cp_ 명령어는 기타 피연산자 없이도 _dd_와 같은 작업을 실행합니다. 하지만 _cp_는 _dd_와는 다르게 다양한 디스크를 지우는 작업을 지원하지 않습니다.
+**참고:** *cp* 명령어는 기타 피연산자 없이도 *dd*와 같은 작업을 실행합니다. 하지만 *cp*는 *dd*와는 다르게 다양한 디스크를 지우는 작업을 지원하지 않습니다.
 
 ### dd 실행 중 진행률 확인하기
 
-기본적으로 _dd_는 작업이 완료되기 전까지 아무런 메시지도 출력하지 않습니다. _kill_명령어와 `USR1` 신호를 사용하면 dd를 실제로 종료시키지 않고도 진행률을 확인할 수 있습니다. 두번째 터미널 에뮬레이터에서 루트 권한으로 `killall -USR1 dd` 명령을 실행하십시오.
+기본적으로 *dd*는 작업이 완료되기 전까지 아무런 메시지도 출력하지 않습니다. *kill*명령어와 `USR1` 신호를 사용하면 dd를 실제로 종료시키지 않고도 진행률을 확인할 수 있습니다. 두번째 터미널 에뮬레이터에서 루트 권한으로 `killall -USR1 dd` 명령을 실행하십시오.
 
-**참고:** 이 명령은 실행중인 모든 _dd_ 프로세스에 작용합니다.
+**참고:** 이 명령은 실행중인 모든 *dd* 프로세스에 작용합니다.
 
 또는,
 
 ```
-# kill -USR1 _dd_명령어의_pid_
+# kill -USR1 *dd_명령어의_pid*
 
 ```
 
@@ -107,7 +107,7 @@ _last line_" \
 
 를 사용하십시오.
 
-이 명령을 사용할 경우, _dd_는 즉시 진행률을 터미널에 출력합니다. 다음과 유사한 내용이 출력됩니다.
+이 명령을 사용할 경우, *dd*는 즉시 진행률을 터미널에 출력합니다. 다음과 유사한 내용이 출력됩니다.
 
 ```
 605+0 records in
@@ -121,7 +121,7 @@ _last line_" \
 [pv](https://www.archlinux.org/packages/?name=pv)를 사용하여 dd-pipeline의 상태를 보는 것도 가능합니다.
 
 ```
-# dd if=_/소스/파일스트림_ | pv -_모니터링_옵션_ -s _파일_크기_ | dd of=_/목표지점/파일스트림_
+# dd if=*/소스/파일스트림* | pv -*모니터링_옵션* -s *파일_크기* | dd of=*/목표지점/파일스트림*
 
 ```
 
@@ -136,7 +136,7 @@ copy() {
 ```
 
 ```
-# copy _/소스/파일_ _/목표지점/파일_
+# copy */소스/파일* */목표지점/파일*
 
 ```
 
@@ -144,7 +144,7 @@ copy() {
 
 ### dd의 변형판
 
-_dd_와 유사하지만 단순한 상태 바 등을 통해 주기적으로 상태를 출력하는 프로그램들도 있습니다.
+*dd*와 유사하지만 단순한 상태 바 등을 통해 주기적으로 상태를 출력하는 프로그램들도 있습니다.
 
 	dcfldd
 
@@ -156,16 +156,16 @@ _dd_와 유사하지만 단순한 상태 바 등을 통해 주기적으로 상�
 
 ## grep
 
-grep은 유닉스용 명령줄 텍스트 검색 프로그램입니다. ([ed 텍스트 편집기](http://en.wikipedia.org/wiki/Ed_%28text_editor%29)의 g/re/p(모든 범위/정규표현식/출력) 명령어에서 유래되었습니다) _grep_ 명령어는 표준 입력 내용 혹은 파일들에서 주어진 정규표현식과 일치하는 줄들을 찾고, 표준 출력에서 검색 결과를 표시합니다.
+grep은 유닉스용 명령줄 텍스트 검색 프로그램입니다. ([ed 텍스트 편집기](http://en.wikipedia.org/wiki/Ed_%28text_editor%29)의 g/re/p(모든 범위/정규표현식/출력) 명령어에서 유래되었습니다) *grep* 명령어는 표준 입력 내용 혹은 파일들에서 주어진 정규표현식과 일치하는 줄들을 찾고, 표준 출력에서 검색 결과를 표시합니다.
 
-*   _grep_은 파일을 처리합니다. 그러므로 `cat _파일_`과 같은 명령 대신 `grep _파일_ _패턴_`으로 대체해도 무관합니다.
+*   *grep*은 파일을 처리합니다. 그러므로 `cat *파일*`과 같은 명령 대신 `grep *파일* *패턴*`으로 대체해도 무관합니다.
 *   버전 컨트롤 시스템 안의 소스 코드를 위하여 최적화된 `grep` 대용판들에는 [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher)과 [ack](https://www.archlinux.org/packages/?name=ack) 등이 있습니다.
 
 ### 컬러 출력
 
 `grep`의 컬러 출력 기능은 [정규표현식](http://ko.wikipedia.org/wiki/%EC%A0%95%EA%B7%9C_%ED%91%9C%ED%98%84%EC%8B%9D)과 `grep`의 추가적인 기능을 익히는 데에 도움이 될 수 있습니다.
 
-_grep_의 컬러 출력을 활성화하려면 다음 항목을 쉘의 설정 파일에 추가하십시오. (이 예에서는 [Bash](/index.php/Bash "Bash")를 사용할 경우를 보여줍니다)
+*grep*의 컬러 출력을 활성화하려면 다음 항목을 쉘의 설정 파일에 추가하십시오. (이 예에서는 [Bash](/index.php/Bash "Bash")를 사용할 경우를 보여줍니다)
 
  `~/.bashrc`  `alias grep='grep --color=auto'` 
 
@@ -183,14 +183,14 @@ export GREP_COLOR="1;32"
 어떤 명령어들은 출력을 표준 오류로 보내기도 합니다. 이 경우, grep은 아무련 효과도 없는 것처럼 보입니다. 이 때에는 표준 오류의 출력을 표준 출력으로 리다이렉트해주면 됩니다.
 
 ```
-$ _command_ 2>&1 | grep _args_
+$ *command* 2>&1 | grep *args*
 
 ```
 
 혹은 Bash 단축명령어로
 
 ```
-$ _command_ |& grep _args_
+$ *command* |& grep *args*
 
 ```
 

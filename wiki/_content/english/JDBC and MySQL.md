@@ -23,7 +23,7 @@ There are now two "fixes" you have to make. Firstly edit the file `/etc/mysql/my
 
 ```
 
-Finally start _mysql_ [service](/index.php/Daemon "Daemon") up.
+Finally start *mysql* [service](/index.php/Daemon "Daemon") up.
 
 ### Installing JDBC
 
@@ -50,11 +50,11 @@ $ mysql
 
 ### Creating the test database
 
-The following commands create a database and allow a user _user_. You will need to change the user name to whatever yours is.
+The following commands create a database and allow a user *user*. You will need to change the user name to whatever yours is.
 
 ```
 create database emotherearth;
-grant all privileges on emotherearth.* to _user_@localhost identified by "_user_";
+grant all privileges on emotherearth.* to *user*@localhost identified by "*user*";
 flush privileges;
 
 ```

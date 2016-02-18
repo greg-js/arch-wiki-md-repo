@@ -48,7 +48,6 @@ $ feh -g 640x480 -d -S filename /path/to/directory
 Данный скрипт способен обойти эти неудобства.
 
  `feh_browser.sh` 
-
 ```
 #!/bin/bash
 
@@ -87,7 +86,6 @@ exec feh "$@" -- "${arr[@]:c}" "${arr[@]:0:c}"
 Простая, но менее функциональная альтернатива:
 
  `feh_browser.sh` 
-
 ```
 #! /bin/sh
 feh -. "$(dirname "$1")" --start-at "$1"
@@ -157,7 +155,6 @@ sh ~/.fehbg &
 Другой способ устанавливать случайные обои для каждой x.org сессии - отредактируйте ваш `.fehbg`, как показано ниже:
 
  `$HOME/.fehbg` 
-
 ```
  feh --bg-max --randomize --no-fehbg ~/.wallpaper/* 
 
@@ -172,7 +169,6 @@ sh ~/.fehbg &
 Измените каталог `~/.wallpaper` в соответствии с вашими настройками, также можно указать задержку `15m`, по вашему желанию (смотрите `man sleep` для опций).
 
  `wallpaper.sh` 
-
 ```
 #!/bin/sh
 
@@ -189,7 +185,6 @@ done
 Эта версия не создает так много форков, но она не работает рекурсивно по каталогам:
 
  `wallpaper.sh` 
-
 ```
 #!/bin/bash
 
@@ -215,7 +210,6 @@ done
 Этот скрипт заменяет вызов feh для добавления обоев на системах с двумя экранами nvidia twinview (для например):
 
  `wallpaper.sh` 
-
 ```
 #!/bin/sh
 exec feh --bg-max --no-xinerama "$@"
@@ -235,12 +229,11 @@ exec feh --bg-max --no-xinerama "$@"
 
 #### Используя пользовательсую сессию systemd
 
-**Обратите внимание:** Это пригодно **только** если вы используете _пользовательскую сессию systemd_. Прочитайте [Systemd/User](/index.php/Systemd/User "Systemd/User") для дополнительной информации.
+**Обратите внимание:** Это пригодно **только** если вы используете *пользовательскую сессию systemd*. Прочитайте [Systemd/User](/index.php/Systemd/User "Systemd/User") для дополнительной информации.
 
 Создайте юнит service:
 
  `$HOME/.config/systemd/user/feh-wallpaper.service` 
-
 ```
 [Unit]
 Description=Random wallpaper with feh
@@ -258,13 +251,12 @@ WantedBy=default.target
 Теперь создайте юнит таймера. При необходимости измените время. В это примере `15 секунд`:
 
  `$HOME/.config/systemd/user/feh-wallpaper.timer` 
-
 ```
 [Unit]
 Description=Random wallpaper with feh
 
 [Timer]
-OnUnitActiveSec=_15s_
+OnUnitActiveSec=*15s*
 Unit=feh-wallpaper.service
 
 [Install]
@@ -275,9 +267,8 @@ WantedBy=default.target
 В этом примере файл конфигурации является скрым файлом в домашнем каталоге и содержит в себе путь к каталогу с вашими изображениями
 
  `$HOME/.wallpaper` 
-
 ```
-WALLPATH=_/home/user/.wallpaper/_
+WALLPATH=*/home/user/.wallpaper/*
 
 ```
 

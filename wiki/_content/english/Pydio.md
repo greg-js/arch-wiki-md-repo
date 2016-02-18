@@ -9,7 +9,6 @@
 Make sure to adjust following variables to these minimal values in your `php.ini`:
 
  `/etc/php/php.ini` 
-
 ```
 extension=exif.so
 extension=gd.so
@@ -43,7 +42,6 @@ replace the domain name
 and reference this configuration file in the main nginx.conf:
 
  `/etc/nginx/nginx.conf` 
-
 ```
 
 http {

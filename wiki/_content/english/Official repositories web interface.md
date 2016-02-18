@@ -22,13 +22,13 @@ Base URL: `https://www.archlinux.org/packages/`
 
 ### Details
 
-Syntax: `/_repository_/_architecture_/_package_/json`
+Syntax: `/*repository*/*architecture*/*package*/json`
 
 Example: [https://www.archlinux.org/packages/core/x86_64/coreutils/json/](https://www.archlinux.org/packages/core/x86_64/coreutils/json/)
 
 ### Files
 
-Syntax: `/_repository_/_architecture_/_package_/files/json`
+Syntax: `/*repository*/*architecture*/*package*/files/json`
 
 Example: [https://www.archlinux.org/packages/core/i686/coreutils/files/json/](https://www.archlinux.org/packages/core/i686/coreutils/files/json/)
 

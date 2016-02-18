@@ -47,7 +47,7 @@ Input method (IM) frameworks act as frontends to various input methods and libra
 
 	scim
 
-	scim, or the [Smart Common Input Method platform](/index.php/Smart_Common_Input_Method_platform "Smart Common Input Method platform"), is a input method framework for posix-compliant systems. scim-hangul, as of November 2014, has issues with Google Chrome and Chromium web browsers. With the default environment variables, you cannot input Korean in Google Chrome or Chromium. scim also causes problems in Gedit as of November 2014\. When scim-hangul is active, pressing `backspace` does not work properly. A workaround for both these issues will be explained in the scim configuration section. However, even with this workaround applied, Chrome/Chromium users may find that the preedit string disappears when the spacebar or any other modifier key is pressed. _There is currently no known workaround for this issue._
+	scim, or the [Smart Common Input Method platform](/index.php/Smart_Common_Input_Method_platform "Smart Common Input Method platform"), is a input method framework for posix-compliant systems. scim-hangul, as of November 2014, has issues with Google Chrome and Chromium web browsers. With the default environment variables, you cannot input Korean in Google Chrome or Chromium. scim also causes problems in Gedit as of November 2014\. When scim-hangul is active, pressing `backspace` does not work properly. A workaround for both these issues will be explained in the scim configuration section. However, even with this workaround applied, Chrome/Chromium users may find that the preedit string disappears when the spacebar or any other modifier key is pressed. *There is currently no known workaround for this issue.*
 
 	fcitx
 
@@ -76,9 +76,9 @@ $ uim-pref-gtk (Or, uim-pref-gtk3/uim-pref-qt4)
 
 ```
 
-Within global settings, check on the _Specify default IM_ checkbox. Then, set _Byeoru_ as default. You may also want to disable input methods that you do not plan on using by clicking on the 'edit' button. If you want to quickly switch between Korean and other languages (other than English), check the _enable IM switching by hotkey_ checkbox, and set a hotkey to switch between enabled IMEs.
+Within global settings, check on the *Specify default IM* checkbox. Then, set *Byeoru* as default. You may also want to disable input methods that you do not plan on using by clicking on the 'edit' button. If you want to quickly switch between Korean and other languages (other than English), check the *enable IM switching by hotkey* checkbox, and set a hotkey to switch between enabled IMEs.
 
-When you are done with the global preferences, find _Byeoru_ in the tree menu on the left side of the preferences window. From there, you can set the Korean keyboard layout you want to use (e.g. `3 beol`), specify the korean/Hanja dictionary that Byeoru will use, and other miscellaneous settings. Then, click on _Byeoru Keybinding 1_ in the tree menu. Set the hotkey you want to use to enable/disable Byeoru. Most Korean users use `Ctrl+space` or `shift+space`.
+When you are done with the global preferences, find *Byeoru* in the tree menu on the left side of the preferences window. From there, you can set the Korean keyboard layout you want to use (e.g. `3 beol`), specify the korean/Hanja dictionary that Byeoru will use, and other miscellaneous settings. Then, click on *Byeoru Keybinding 1* in the tree menu. Set the hotkey you want to use to enable/disable Byeoru. Most Korean users use `Ctrl+space` or `shift+space`.
 
 **Note:** If you want to use the right `Alt` key to switch from Korean to English and vice versa, go to the [#Using the Right alt key to switch input methods](#Using_the_Right_alt_key_to_switch_input_methods) section.
 
@@ -142,7 +142,6 @@ Once you restart the X session, nabi will autostart by default. The default kore
 You can use the right `Alt` key (e.g. '한/영키') to switch between Input methods if you are using uim, scim, or nabi. To do this, add the following lines **after** the environment variables that start your input method:
 
  `~/.xprofile` 
-
 ```
 xmodmap -e 'remove mod1 = Alt_R'
 xmodmap -e 'keycode 108 = Hangul'

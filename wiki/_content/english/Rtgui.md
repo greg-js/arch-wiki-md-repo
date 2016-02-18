@@ -15,7 +15,7 @@ First [install](/index.php/Install "Install") dependencies: [rtorrent](https://w
 
 ### Apache configuration
 
-Add mod_scgi module to `/etc/httpd/conf/httpd.conf` in _LoadModule_ section:
+Add mod_scgi module to `/etc/httpd/conf/httpd.conf` in *LoadModule* section:
 
 ```
 LoadModule scgi_module modules/mod_scgi.so

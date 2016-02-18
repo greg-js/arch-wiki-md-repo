@@ -33,13 +33,13 @@ First, run `xev` and retrieve the keycodes for the Previous, Next, Play, Stop, a
 
 Then edit `~/.xinitrc` and add the line `xmodmap <file name>` prior to the 'exec' command (if there is one) for the DE/WM, where <file name> is the path to the text file created above.
 
-Finally, in Exaile, go to _Edit > Preferences > Plugins_, and enable the XKeys plugin. After a restart, multimedia keys should work.
+Finally, in Exaile, go to *Edit > Preferences > Plugins*, and enable the XKeys plugin. After a restart, multimedia keys should work.
 
 ## Troubleshooting
 
 ### Progress bar stuck at 0:00
 
-First, make sure there are no problems with your sound architecture ([ALSA](/index.php/ALSA "ALSA"), [OSS](/index.php/OSS "OSS"), etc.). And your _playback sink_ in Exaile is set correctly. Try setting it to automatic first.
+First, make sure there are no problems with your sound architecture ([ALSA](/index.php/ALSA "ALSA"), [OSS](/index.php/OSS "OSS"), etc.). And your *playback sink* in Exaile is set correctly. Try setting it to automatic first.
 
 If you're trying to listen to an MP3 file, try playing an audio file encoded in a different format, such as .ogg or .flac. If these play correctly then try installing [gstreamer0.10-ugly-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-ugly-plugins).
 

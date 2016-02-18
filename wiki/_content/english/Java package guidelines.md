@@ -78,7 +78,7 @@ Bear in mind that `/usr` may be mounted as read-only on some systems. If there a
 
 ### Multiple API implementations
 
-If your package distributes commonly used API implementation(like jdbc driver) you should place the library under `/usr/share/java/_apiname_`. So that applications that allow user to select from various implementations will know where to look for them. Use this location only for raw library packages. If such a implementation is part of distribution of application, **do not** place this jar file under common location but use ordinary package structure.
+If your package distributes commonly used API implementation(like jdbc driver) you should place the library under `/usr/share/java/*apiname*`. So that applications that allow user to select from various implementations will know where to look for them. Use this location only for raw library packages. If such a implementation is part of distribution of application, **do not** place this jar file under common location but use ordinary package structure.
 
 ### Example directory structure
 

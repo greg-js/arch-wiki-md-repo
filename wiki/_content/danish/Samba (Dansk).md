@@ -46,7 +46,7 @@ nano smb.conf
 
 ### Globale parametre
 
-Den første sektion er _Global Parameters_ (globale parametre). Dette henviser til de bredere valgmuligheder. De fleste indstillinger laves her. Her er sektionen _Global Parameters_ fra min /etc/samba/smb.conf til sammenligning.
+Den første sektion er *Global Parameters* (globale parametre). Dette henviser til de bredere valgmuligheder. De fleste indstillinger laves her. Her er sektionen *Global Parameters* fra min /etc/samba/smb.conf til sammenligning.
 
 ```
 #Global Parameters
@@ -56,8 +56,8 @@ encrypt passwords = yes
 
 ```
 
-Parameteren _workgroup_ er navnet på den arbejdsgruppe, du ønsker, at maskinen skal være en del af. (Standard i Windows XP er MSHOME og WORKGROUP.)
-Valgmuligheden _encrypt passwords_ (kryptér adgangskoder) burde forblive _yes_ (ja). Dette kan variere, hvis din anden maskine kører Windows 95 eller Windows 98, da disse tidligere versioner anvendte ikke-krypterede adgangskoder.
+Parameteren *workgroup* er navnet på den arbejdsgruppe, du ønsker, at maskinen skal være en del af. (Standard i Windows XP er MSHOME og WORKGROUP.)
+Valgmuligheden *encrypt passwords* (kryptér adgangskoder) burde forblive *yes* (ja). Dette kan variere, hvis din anden maskine kører Windows 95 eller Windows 98, da disse tidligere versioner anvendte ikke-krypterede adgangskoder.
 Parameteren "netbios name" er hvordan du vil have, at din maskine skal fremstå på netværket.
 
 ### Fildelingsmapper
@@ -71,7 +71,7 @@ read only = no
 
 ```
 
-Hvis du ønsker, at alle skal kunne se filerne, men kun særlige grupper skal kunne skrive (dvs. alle kan læse, men kun f.eks. gruppen _staff_ kan skrive), skal sektionen se således ud:
+Hvis du ønsker, at alle skal kunne se filerne, men kun særlige grupper skal kunne skrive (dvs. alle kan læse, men kun f.eks. gruppen *staff* kan skrive), skal sektionen se således ud:
 
 ```
 [homes]
@@ -91,14 +91,14 @@ read only = no
 
 ```
 
-Husk at føje _smb_ til alles hjemmemapper. Føj også _smb_ til mappen /etc/skel, så alle nye brugere automatisk får føjet _smb_ til deres hjemmemappe:
+Husk at føje *smb* til alles hjemmemapper. Føj også *smb* til mappen /etc/skel, så alle nye brugere automatisk får føjet *smb* til deres hjemmemappe:
 
 ```
  mkdir /etc/skel/smb
 
 ```
 
-At gå ind i en fildelingsmappe ud over hjemmemappen er ikke sværere end at der egentlig kun er yderligere 2 parametre, der ikke lader sig anvende til hjemmemapperne. Det er søgestien (_path_) og 'godkendte brugere' (_valid users_).
+At gå ind i en fildelingsmappe ud over hjemmemappen er ikke sværere end at der egentlig kun er yderligere 2 parametre, der ikke lader sig anvende til hjemmemapperne. Det er søgestien (*path*) og 'godkendte brugere' (*valid users*).
 Et eksempel: Moving on to shares other than the home directory isn't much harder, as there are really only two more commands that did not apply to the homes. These are the path command and the valid users. Looks like this:
 
 ```
@@ -110,8 +110,8 @@ valid users = Bryan, Michael, David, Jane
 
 ```
 
-Søgestien (_path_) er selvfølgelig, hvor på harddisken fildelingsmappen findes. Ganske enkelt - ikke?
-Parameteren _valid users_ (godkendte brugere) lader Samba vide, hvilke brugere der overhovedet har lov til at logge ind på fildelingsområdet. Igen - ganske enkelt, selvom det giver os lidt mere arbejde.
+Søgestien (*path*) er selvfølgelig, hvor på harddisken fildelingsmappen findes. Ganske enkelt - ikke?
+Parameteren *valid users* (godkendte brugere) lader Samba vide, hvilke brugere der overhovedet har lov til at logge ind på fildelingsområdet. Igen - ganske enkelt, selvom det giver os lidt mere arbejde.
 Glem ikke, at brugernavnene **skal** stemme overens med brugerne på Linux-maskinen, og **bør** stemme overens med brugere på Windows-maskinen.
 
 ### Adgangskoder

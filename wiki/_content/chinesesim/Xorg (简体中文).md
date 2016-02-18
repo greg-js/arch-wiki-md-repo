@@ -87,7 +87,7 @@ $ pacman -Ss xf86-video | less
 
 ## 运行
 
-_参见: [Start X at Login (简体中文)](/index.php/Start_X_at_Login_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Start X at Login (简体中文)")_
+*参见: [Start X at Login (简体中文)](/index.php/Start_X_at_Login_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Start X at Login (简体中文)")*
 
 **小贴士:** 最简单的方法是使用 [登录管理器](/index.php/%E7%99%BB%E5%BD%95%E7%AE%A1%E7%90%86%E5%99%A8 "登录管理器") 例如 [GDM](/index.php/GDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GDM (简体中文)"), [KDM](/index.php/KDM "KDM") or [SLiM](/index.php/SLiM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SLiM (简体中文)").
 
@@ -410,7 +410,6 @@ $ man Xserver
 ```
 
 **注意:** 如果你用kdm启动x, 则不会执行startx脚本。上述这些选项必须加在`/usr/share/config/kdm/kdmrc`文件的`"ServerArgsLocal"`或者`"ServerCmd"`变量中. 缺省kdm的选项是
-
 ```
 ServerArgsLocal=-nolisten tcp 
 ServerCmd=/usr/bin/X
@@ -446,7 +445,7 @@ See main article: [SSH#X11 forwarding](/index.php/SSH#X11_forwarding "SSH").
 
 ### On-demand disabling and enabling of input sources
 
-With the help of _xinput_ you can temporarily disable or enable input sources. This might be useful, for example, on systems that have more than one mouse, such as the ThinkPads and you would rather use just one to avoid unwanted mouse clicks.
+With the help of *xinput* you can temporarily disable or enable input sources. This might be useful, for example, on systems that have more than one mouse, such as the ThinkPads and you would rather use just one to avoid unwanted mouse clicks.
 
 [Install](/index.php/Pacman "Pacman") the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
@@ -460,7 +459,6 @@ $ xinput
 For example in a Lenovo ThinkPad T500, the output looks like this:
 
  `$ xinput` 
-
 ```
 ⎡ Virtual core pointer                          id=2    [master pointer  (3)]
 ⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
@@ -476,7 +474,7 @@ For example in a Lenovo ThinkPad T500, the output looks like this:
 
 ```
 
-Disable the device with `xinput --disable _device_id_`, where _device_id_ is the device ID you want to disable. In this example we will disable the Synaptics Touchpad, with the ID 10:
+Disable the device with `xinput --disable *device_id*`, where *device_id* is the device ID you want to disable. In this example we will disable the Synaptics Touchpad, with the ID 10:
 
 ```
 $ xinput --disable 10
@@ -568,15 +566,15 @@ setxkbmap -option terminate:ctrl_alt_bksp
 
 ### Apple 的键盘问题
 
-	_参见 [Apple Keyboard](/index.php/Apple_Keyboard "Apple Keyboard")_
+	*参见 [Apple Keyboard](/index.php/Apple_Keyboard "Apple Keyboard")*
 
 ### 触摸板点击不正常
 
-	_参见: [Synaptics](/index.php/Synaptics "Synaptics")_
+	*参见: [Synaptics](/index.php/Synaptics "Synaptics")*
 
 ### 额外的鼠标按键不工作
 
-	_参见：[Get All Mouse Buttons Working](/index.php/Get_All_Mouse_Buttons_Working "Get All Mouse Buttons Working")_
+	*参见：[Get All Mouse Buttons Working](/index.php/Get_All_Mouse_Buttons_Working "Get All Mouse Buttons Working")*
 
 ### 无法用"su"以root身份启动X客户端
 
@@ -694,7 +692,7 @@ Make some free space on your root partition and X will start.
 If you do not fit these requirements, re-enable root rights in `/etc/X11/Xwrapper.config`:
 
 ```
-needs_root_rights = _yes_
+needs_root_rights = *yes*
 
 ```
 

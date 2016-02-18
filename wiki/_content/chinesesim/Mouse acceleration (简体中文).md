@@ -26,7 +26,6 @@
 范例:
 
  `/etc/X11/xorg.conf.d/50-mouse-acceleration.conf` 
-
 ```
 Section "InputClass"
 	Identifier "My Mouse"
@@ -37,9 +36,7 @@ Section "InputClass"
 	Option "AccelerationThreshold" "4"
 EndSection
 ```
-
  `/etc/X11/xorg.conf.d/50-mouse-deceleration.conf` 
-
 ```
 Section "InputClass"
 	Identifier "My Mouse"
@@ -65,13 +62,13 @@ $ xset q | grep -A 1 Pointer
 如要改变设置，输入:
 
 ```
-$ xset m _acceleration_ _threshold_
+$ xset m *acceleration* *threshold*
 
 ```
 
-在_acceleration_处输入想要加快的倍速. _threshold_为鼠标加速的阀值。
+在*acceleration*处输入想要加快的倍速. *threshold*为鼠标加速的阀值。
 
-_acceleration_也可以用分数来表示,如果想要减慢鼠标的移动速度，您可以尝试1/2, 1/3, 1/4等速率, ... 如果想要更快，您也可以尝试 2/1, 3/1, 4/1等速率，比如:
+*acceleration*也可以用分数来表示,如果想要减慢鼠标的移动速度，您可以尝试1/2, 1/3, 1/4等速率, ... 如果想要更快，您也可以尝试 2/1, 3/1, 4/1等速率，比如:
 
 ```
 $ xset m 3/2 0
@@ -114,18 +111,17 @@ $ xinput list-props 9
 您也可以通过使用下面的命令来达到相同的效果
 
 ```
-$ xinput list-props _mouse brand_
+$ xinput list-props *mouse brand*
 
 ```
 
-请将_mouse brand_替换为在`$ xinput list`中得到的名字
+请将*mouse brand*替换为在`$ xinput list`中得到的名字
 
 例如,改变`Constant Deceleration`属性的值为2:
 
  `$ xinput list-props 9` 
-
 ```
-Device '_mouse brand_':
+Device '*mouse brand*':
        Device Enabled (121):   1
        Device Accel Profile (240):     0
        Device Accel Constant Deceleration (241):       1.000000
@@ -135,7 +131,7 @@ Device '_mouse brand_':
 ```
 
 ```
-$ xinput --set-prop '_mouse brand_' 'Device Accel Constant Deceleration' 2
+$ xinput --set-prop '*mouse brand*' 'Device Accel Constant Deceleration' 2
 
 ```
 
@@ -170,7 +166,6 @@ If you are satisfied of the results, store the preceding commands in `~/.xinitrc
 想要完全取消鼠标加速、减速, 请创建以下文件:
 
  `/etc/X11/xorg.conf.d/50-mouse-acceleration.conf` 
-
 ```
 Section "InputClass"
 	Identifier "My Mouse"

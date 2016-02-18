@@ -4,7 +4,7 @@
 
 [CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – **Lisp** – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
 
-At the moment, there are relatively few [Lisp](https://en.wikipedia.org/wiki/Lisp_(programming_language) "wikipedia:Lisp (programming language)") packages available in the Arch repositories. This means that at some point or another, more will likely appear. It is useful, therefore, to figure out now, while there are few packages, how they should be packaged.
+At the moment, there are relatively few [Lisp](https://en.wikipedia.org/wiki/Lisp_(programming_language) packages available in the Arch repositories. This means that at some point or another, more will likely appear. It is useful, therefore, to figure out now, while there are few packages, how they should be packaged.
 
 ## Contents
 
@@ -15,11 +15,11 @@ At the moment, there are relatively few [Lisp](https://en.wikipedia.org/wiki/Lis
 
 ## Directory structure and naming
 
-There is at least one package in the base repository ([libgpg-error](https://www.archlinux.org/packages/?name=libgpg-error)) that includes lisp files, which are placed in `/usr/share/common-lisp/source/gpg-error`. In keeping with this, other lisp packages should also place their files in `/usr/share/common-lisp/source/_pkgname_`.
+There is at least one package in the base repository ([libgpg-error](https://www.archlinux.org/packages/?name=libgpg-error)) that includes lisp files, which are placed in `/usr/share/common-lisp/source/gpg-error`. In keeping with this, other lisp packages should also place their files in `/usr/share/common-lisp/source/*pkgname*`.
 
 The package directory should be the name of the lisp package, not what it's called in the [Arch repository](/index.php/Official_repositories "Official repositories") (or [AUR](/index.php/AUR "AUR")). This applies even to single-file packages.
 
-For example, a Lisp package called _"cl-ppcre"_ should be called `cl-ppcre` in AUR and reside in `/usr/share/common-lisp/source/**cl-ppcre**`. A Lisp package called _"alexandria"_ should be called `cl-alexandria` in AUR and reside in `/usr/share/common-lisp/source/**alexandria**`.
+For example, a Lisp package called *"cl-ppcre"* should be called `cl-ppcre` in AUR and reside in `/usr/share/common-lisp/source/**cl-ppcre**`. A Lisp package called *"alexandria"* should be called `cl-alexandria` in AUR and reside in `/usr/share/common-lisp/source/**alexandria**`.
 
 ## ASDF
 
@@ -27,10 +27,9 @@ Try to avoid the usage of ASDF-Install as a means of installing these system-wid
 
 ASDF itself may be necessary or helpful as a means of compiling and/or loading packages. In that case, it is suggested that the directory used for the central registry (the location of all of the symlinks to `*.asd`) be `/usr/share/common-lisp/systems/`.
 
-However, I have observed problems with doing the compilation with asdf as a part of the package compilation process. However, it does work during an install, through use of a `_package_.install` file. Such a file might look like this:
+However, I have observed problems with doing the compilation with asdf as a part of the package compilation process. However, it does work during an install, through use of a `*package*.install` file. Such a file might look like this:
 
  `cl-ppcre.install` 
-
 ```
 # arg 1:  the new package version
 post_install() {
@@ -84,7 +83,7 @@ popd
 
 When possible, do not make packages specific to a single lisp implementation; try to be as cross-platform as the package itself will allow. If, however, the package is specifically designed for a single lisp implementation (i.e., the developers haven't gotten around to adding support for others yet, or the package's purpose is specifically to provide a capability that is built in to another lisp implementation), it is appropriate to make your Arch package lisp-specific.
 
-To avoid making packages implementation-specific, ideally all implementation packages (SBCL, cmucl, clisp) would be built with the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") field **common-lisp**. However, that's not the case (and that would likely cause problems for people who prefer to have multiple lisps at their fingertips). In the meantime, you could (a) not make your package depend on *any* lisp and include a statement in the package.install file telling folks to make sure they have a lisp installed (not ideal), or (b) Take direction from the _sbcl_ PKGBUILD and include a conditional statement to figure out which lisp is needed (which is hackish and, again, far from ideal). Other ideas are welcome.
+To avoid making packages implementation-specific, ideally all implementation packages (SBCL, cmucl, clisp) would be built with the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") field **common-lisp**. However, that's not the case (and that would likely cause problems for people who prefer to have multiple lisps at their fingertips). In the meantime, you could (a) not make your package depend on *any* lisp and include a statement in the package.install file telling folks to make sure they have a lisp installed (not ideal), or (b) Take direction from the *sbcl* PKGBUILD and include a conditional statement to figure out which lisp is needed (which is hackish and, again, far from ideal). Other ideas are welcome.
 
 Also note that if ASDF is needed to install/compile/load the package, things could potentially get awkward as far as dependencies go, since SBCL comes with asdf installed, clisp does not but there is an AUR package, and CMUCL may or may not have it (the author of this doc. knows next to nothing about CMUCL; sorry).
 

@@ -74,7 +74,6 @@ Alias /shortname /full_file_path
     </directory>
 
 ```
-
 Změny se projeví až po restartu: `/opt/lampp/lampp restart` 
 
 Toto Vám umožní přistupovat i k souborům z jiných adresářů, ve výše uvedeném příkladu se na nastavený adresář dostanete přes **localhost/shortname**.

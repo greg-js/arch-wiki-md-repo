@@ -3,7 +3,7 @@ The first step when setting up OpenVPN is to create a [Public Key Infrastructure
 *   A public master [Certificate Authority (CA)](https://en.wikipedia.org/wiki/Certificate_Authority "wikipedia:Certificate Authority") certificate and a private key.
 *   A separate public certificate and private key pair (hereafter referred to as a certificate) for each server and each client.
 
-To facilitate the certificate creation process, OpenVPN comes with a collection of [RSA](https://en.wikipedia.org/wiki/RSA_(algorithm) "wikipedia:RSA (algorithm)") key manangement scripts (based on the openssl command line tool) known as easy-rsa.
+To facilitate the certificate creation process, OpenVPN comes with a collection of [RSA](https://en.wikipedia.org/wiki/RSA_(algorithm) key manangement scripts (based on the openssl command line tool) known as easy-rsa.
 
 **Note:** Only .key files need to be kept secret, .crt and .csr files can be sent over insecure channels such as plaintext email.
 
@@ -28,7 +28,6 @@ Change to the directory where you installed the scripts.
 To ensure the consistent use of values when generating the PKI, set default values to be used by the PKI generating scripts. Edit /root/easy-rsa/vars and at a minimum set the KEY_COUNTRY, KEY_PROVINCE, KEY_CITY, KEY_ORG, and KEY_EMAIL parameters (do not leave any of these parameters blank). Change the KEY_SIZE parameter to 2048 for the SSL/TLS to use 2048bit RSA keys for authentication.
 
  `/root/easy-rsa/vars` 
-
 ```
 # easy-rsa parameter settings
 
@@ -119,7 +118,6 @@ Delete any previously created certificates.
 The build-ca script generates the [Certificate Authority (CA)](https://en.wikipedia.org/wiki/Certificate_Authority "wikipedia:Certificate Authority") certificate.
 
  `# ./build-ca` 
-
 ```
 Generating a 2048 bit RSA private key
 ..............++++++
@@ -147,9 +145,7 @@ Email Address [roadrunner@acmecorp.org]:
 The build-key-server script `# ./build-key-server <server name>` generates a server certificate. Make sure that the server name (Common Name when running the script) is unique.
 
 **Note:** Do not enter a challenge password or company name when the script prompts you for one.
-
  `# ./build-key-server elmer` 
-
 ```
 Generating a 2048 bit RSA private key
 .....................++++++
@@ -199,9 +195,7 @@ Data Base Updated
 The build-dh script generates the [Diffie-Hellman parameters](https://web.archive.org/web/20130701090246/https://www.rsa.com/rsalabs/node.asp?id=2248) .pem file needed by the server.
 
 **Note:** It would be better to generate a new one for each server, but you can use the same one if you want to.
-
  `# ./build-dh` 
-
 ```
 Generating DH parameters, 2048 bit long safe prime, generator 2
 This is going to take a long time
@@ -216,9 +210,7 @@ This is going to take a long time
 The build-key script `# ./build-key <client name>` generates a client certificate. Make sure that the client name (Common Name when running the script) is unique.
 
 **Note:** Do not enter a challenge password or company name when the script prompts you for one.
-
  `# ./build-key bugs` 
-
 ```
 Generating a 2048 bit RSA private key
 ....++++++

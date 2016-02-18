@@ -27,7 +27,7 @@
 
 目前默认仅启动一个 getty，如果切换到其它 tty, 一改新的 getty 会通过 socket 激活方式启动。例如 [Ctl] [Alt] [F2] 会在 tty2 启动 gettty.
 
-默认情况下，最多可以自动启动 6 个 gettty. [F7] 到 [F12] 不会启动 getty. 要修改最大值，在 `/etc/systemd/logind.conf` 中修改 `NAutoVTs`. 如果要启用所有的 [F_x_]，可以将其设置为 12\. 如果要把 [日志输出到 tty12](/index.php/Systemd#Forward_journald_to_.2Fdev.2Ftty12 "Systemd")，可以把 NAutoVTs 设置为 11.
+默认情况下，最多可以自动启动 6 个 gettty. [F7] 到 [F12] 不会启动 getty. 要修改最大值，在 `/etc/systemd/logind.conf` 中修改 `NAutoVTs`. 如果要启用所有的 [F*x*]，可以将其设置为 12\. 如果要把 [日志输出到 tty12](/index.php/Systemd#Forward_journald_to_.2Fdev.2Ftty12 "Systemd")，可以把 NAutoVTs 设置为 11.
 
 修改启动时启用的 tty 个数，可以采取下面方法：
 
@@ -91,7 +91,7 @@ systemd 不支持 3.0 版本之前的内核。
 
 ### 如何在启动的时候，运行自定义的一个脚本？
 
-在`/etc/systemd/system` 中新建一个文件(名称可以为 _myscript_.service) 然后在其中写入如下内容：
+在`/etc/systemd/system` 中新建一个文件(名称可以为 *myscript*.service) 然后在其中写入如下内容：
 
 ```
 [Unit]
@@ -108,7 +108,7 @@ WantedBy=multi-user.target
 然后开启该守护进程
 
 ```
-# systemctl enable _myscript_.service
+# systemctl enable *myscript*.service
 
 ```
 

@@ -46,19 +46,19 @@ The below section provides a short overview on usage of Midnight commander. Refe
 
 ### Interface
 
-In prominent view are two vertical panes. Either can list directory contents, show a plain text preview, file details, or a directory tree (see `**Directory Tree**`). File operations are accessible through the function keys or the mouse. More options are visible in a dynamic user menu (`F2`) and option menu (`F9`). Keys above `F12` (`F13` up to `F20`) are accessible through `Shift`. Menu and dialog options have one letter highlighted - pressing this letter (or `Alt+_Letter_` inside a text entry) directly activates the respective option.
+In prominent view are two vertical panes. Either can list directory contents, show a plain text preview, file details, or a directory tree (see `**Directory Tree**`). File operations are accessible through the function keys or the mouse. More options are visible in a dynamic user menu (`F2`) and option menu (`F9`). Keys above `F12` (`F13` up to `F20`) are accessible through `Shift`. Menu and dialog options have one letter highlighted - pressing this letter (or `Alt+*Letter*` inside a text entry) directly activates the respective option.
 
-Below, a command line is visible, connected to a subshell. This shell is generally of the same type _mc_ was launched from, and may be switched to at will (`Ctrl-O`), see `**The subshell support**`. On this command line, _cd_ is interpreted by Midnight Commander, and not passed to the shell for execution. As such, special completion (such as from [Zsh](/index.php/Zsh "Zsh")) is unavailable. Files in the pane interact with the command line; for example, `Alt+Enter` copies the name of a (selected) file to the command line.
+Below, a command line is visible, connected to a subshell. This shell is generally of the same type *mc* was launched from, and may be switched to at will (`Ctrl-O`), see `**The subshell support**`. On this command line, *cd* is interpreted by Midnight Commander, and not passed to the shell for execution. As such, special completion (such as from [Zsh](/index.php/Zsh "Zsh")) is unavailable. Files in the pane interact with the command line; for example, `Alt+Enter` copies the name of a (selected) file to the command line.
 
 Keybindings are generally similar to [GNU Emacs](/index.php/GNU_Emacs "GNU Emacs"). A more strict emacs keymap can be enabled (see `**Redefine hotkey bindings**`). New users may however use Lynx-like (arrow) keybindings (enabled in `F9 > Options > Panel options`) and mouse clicks for navigation.
 
 ### Modules
 
-These can be called via the _mc_ interface (with _Use internal_ enabled in `F9 > Options > Configuration`), or separately as symbolic links to the _mc_ binary.
+These can be called via the *mc* interface (with *Use internal* enabled in `F9 > Options > Configuration`), or separately as symbolic links to the *mc* binary.
 
-*   _mcedit_ - Text and binary file editor, with regex replace, syntax highlighting, macros and shell piping, see `man mcedit`
-*   _mcview_ - Text and hex viewer with goto marks and regex search
-*   _mcdiff_ - Compares and edits two files in-place (`C-x d`)
+*   *mcedit* - Text and binary file editor, with regex replace, syntax highlighting, macros and shell piping, see `man mcedit`
+*   *mcview* - Text and hex viewer with goto marks and regex search
+*   *mcdiff* - Compares and edits two files in-place (`C-x d`)
 
 Per `mc` instance, multiple modules can be run concurrently (`Ctrl-``) (see `**Screen selector**`). External editors may be used instead, and parameters configured accordingly.
 
@@ -100,7 +100,7 @@ Midnight Commander does [not support](https://www.midnight-commander.org/ticket/
 
 #### Using libtrash
 
-Install the [libtrash](https://aur.archlinux.org/packages/libtrash/) package, and create an _mc_ alias in the initialization file of your shell (e.g., `~/.bashrc` or `~/.zshrc`):
+Install the [libtrash](https://aur.archlinux.org/packages/libtrash/) package, and create an *mc* alias in the initialization file of your shell (e.g., `~/.bashrc` or `~/.zshrc`):
 
 ```
 alias mc='LD_PRELOAD=/usr/lib/libtrash.so.3.3 mc'
@@ -119,11 +119,11 @@ UNCOVER_DIRS=/dev
 
 ```
 
-Now files deleted by Midnight Commander (launched with _mc_) will be moved to the `~/.Trash` directory.
+Now files deleted by Midnight Commander (launched with *mc*) will be moved to the `~/.Trash` directory.
 
 **Warning:**
 
-*   Applications launched from _mc_ inherit `LD_PRELOAD`, which may cause problems with some applications. [[1]](http://pages.stern.nyu.edu/~marriaga/software/libtrash/)
+*   Applications launched from *mc* inherit `LD_PRELOAD`, which may cause problems with some applications. [[1]](http://pages.stern.nyu.edu/~marriaga/software/libtrash/)
 *   With `GLOBAL_PROTECTION = YES` set (default), files deleted outside the home directory are moved to the trash, even if they are on a different partition. Depending on the file, this may cause a significant delay.
 
 See also [[2]](https://mail.gnome.org/archives/mc/2010-March/msg00041.html).
@@ -149,10 +149,9 @@ Press `Ctrl+l` to redraw the display. This only redraws, but does not refresh (`
 
 ### Opening files
 
-_mc_ uses [xdg-open](/index.php/Xdg-open "Xdg-open") to open files by default, as shown in `/usr/lib/mc/ext.d/`. While _stderr_ is redirected, _stdout_ is not, which may result in a garbled screen.
+*mc* uses [xdg-open](/index.php/Xdg-open "Xdg-open") to open files by default, as shown in `/usr/lib/mc/ext.d/`. While *stderr* is redirected, *stdout* is not, which may result in a garbled screen.
 
  `/usr/lib/mc/ext.d/*.sh` 
-
 ```
 [ -n "${MC_XDG_OPEN}" ] || MC_XDG_OPEN="xdg-open"
 ...
@@ -161,38 +160,36 @@ open)
         do_open_action "${filetype}"
 ```
 
-Create a script to wrap _xdg-open_:
+Create a script to wrap *xdg-open*:
 
  `~/bin/xdg-open-null` 
-
 ```
 #!/bin/bash
 xdg-open "$@" **>/dev/null**
 
 ```
 
-If _mc_ is blocked until _xdg-open_ ends, detach the process:
+If *mc* is blocked until *xdg-open* ends, detach the process:
 
  `~/bin/xdg-open-null` 
-
 ```
 #!/bin/bash
 nohup xdg-open "$@" >/dev/null &
 
 ```
 
-and make _mc_ aware of it by setting the `MC_XDG_OPEN` [environment variable](/index.php/Environment_variable "Environment variable"):
+and make *mc* aware of it by setting the `MC_XDG_OPEN` [environment variable](/index.php/Environment_variable "Environment variable"):
 
 ```
 export MC_XDG_OPEN=~/bin/xdg-open-null
 
 ```
 
-**Tip:** When [#Using libtrash](#Using_libtrash), add `unset LD_PRELOAD` before _xdg-open_ in the script.
+**Tip:** When [#Using libtrash](#Using_libtrash), add `unset LD_PRELOAD` before *xdg-open* in the script.
 
 ### Find file shows no results
 
-If the _Find file_ dialog (accessible with `Alt+?`) shows no results, check the current directory for symbolic links. Find file does not follow symbolic links, so use bind mounts (see `man mount`) instead, or the _External panelize_ command.
+If the *Find file* dialog (accessible with `Alt+?`) shows no results, check the current directory for symbolic links. Find file does not follow symbolic links, so use bind mounts (see `man mount`) instead, or the *External panelize* command.
 
 ## See also
 

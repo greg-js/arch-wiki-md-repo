@@ -43,7 +43,7 @@ Esta página explica cómo configurar una conexión cableada (**wired**) a una r
         *   [8.3.1 Método 1 - Restaurar el controlador de Windows](#M.C3.A9todo_1_-_Restaurar_el_controlador_de_Windows)
         *   [8.3.2 Método 2 - Habilitar WOL en el controlador de Windows](#M.C3.A9todo_2_-_Habilitar_WOL_en_el_controlador_de_Windows)
         *   [8.3.3 Método 3 - Nuevo driver de Realtek para Linux](#M.C3.A9todo_3_-_Nuevo_driver_de_Realtek_para_Linux)
-        *   [8.3.4 Method 4 - Activar _LAN Boot ROM_ en la BIOS/CMOS](#Method_4_-_Activar_LAN_Boot_ROM_en_la_BIOS.2FCMOS)
+        *   [8.3.4 Method 4 - Activar *LAN Boot ROM* en la BIOS/CMOS](#Method_4_-_Activar_LAN_Boot_ROM_en_la_BIOS.2FCMOS)
     *   [8.4 Problemas de DNS con DLink G604T/DLink G502T](#Problemas_de_DNS_con_DLink_G604T.2FDLink_G502T)
         *   [8.4.1 Cómo diagnosticar el problema](#C.C3.B3mo_diagnosticar_el_problema)
         *   [8.4.2 Cómo arreglarlo](#C.C3.B3mo_arreglarlo)
@@ -61,9 +61,7 @@ Esta página explica cómo configurar una conexión cableada (**wired**) a una r
 Muchas veces, la instalación de base habrá creado una configuración de red correctamente. Para comprobar si esto es así, utilice la siguiente orden:
 
 **Nota:** La opción `-c 3` establece que se ejecute ping tres veces. Vea `man ping` para obtener más información
-
 . `$ ping -c 3 www.google.com` 
-
 ```
 PING www.l.google.com (74.125.224.146) 56(84) bytes of data.
 64 bytes from 74.125.224.146: icmp_req=1 ttl=50 time=437 ms
@@ -80,7 +78,6 @@ Si funciona, se puede personalizar la configuración mediante las opciones sigui
 Si la orden anterior informa de errores de hosts desconocidos, significa que el equipo no pudo resolver este nombre de dominio. Esto podría estar relacionado con su proveedor de servicios o el router/gateway. Se puede intentar hacer ping a una dirección IP estática para comprobar que el equipo tiene acceso a Internet.
 
  `$ ping -c 3 8.8.8.8` 
-
 ```
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 64 bytes from 8.8.8.8: icmp_req=1 ttl=53 time=52.9 ms
@@ -119,7 +116,7 @@ Consulte `man 5 hostname` y `man 1 hostnamectl` para más detalles.
 Para establecer el nombre del equipo temporalmente (hasta que reinicie), use la orden `hostname` del paquete [inetutils](https://www.archlinux.org/packages/?name=inetutils):
 
 ```
-# hostname _elnombredemiequipo_
+# hostname *elnombredemiequipo*
 
 ```
 
@@ -130,7 +127,6 @@ Para establecer el nombre del equipo temporalmente (hasta que reinicie), use la 
 [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") debería detectar el módulo del adaptador de red ([NIC](https://en.wikipedia.org/wiki/es:Tarjeta_de_red "wikipedia:es:Tarjeta de red")) y cargarlo automáticamente al arranque. Compruebe la entrada «Ethernet controller» (o similar) que proporciona la salida `lspci -v`. Cabe decir que los módulos del kernel contienen el controlador del propio dispositivo de red. Por ejemplo:
 
  `$ lspci -v` 
-
 ```
  02:00.0 Ethernet controller: Attansic Technology Corp. L1 Gigabit Ethernet Adapter (rev b0)
  	...
@@ -138,7 +134,7 @@ Para establecer el nombre del equipo temporalmente (hasta que reinicie), use la 
  	Kernel modules: atl1
 ```
 
-A continuación, compruebe que se ha cargado el controlador a través de `dmesg | grep _nombre_del_módulo_`. Por ejemplo:
+A continuación, compruebe que se ha cargado el controlador a través de `dmesg | grep *nombre_del_módulo*`. Por ejemplo:
 
 ```
 $ dmesg | grep atl1
@@ -174,14 +170,13 @@ Los usuarios que actualicen desde una versión anterior de systemd tendrán un a
 
 **Sugerencia:** Puede ejecutar las órdenes `ip link` o `ls /sys/class/net` para conocer la lista de todas las interfaces disponibles.
 
-**Nota:** Al cambiar el esquema de nomenclatura de la interfaz, no se olvide de actualizar todos los archivos de configuración relacionados con la red y los archivos de unidad de systemd personalizados para reflejar el cambio. Específicamente, si tiene [perfiles estáticos de netctl](/index.php/Netctl_(Espa%C3%B1ol)#M.C3.A9todo_b.C3.A1sico "Netctl (Español)") activados, ejecute `netctl reenable _perfil_` para actualizar el archivo de servicios generado.
+**Nota:** Al cambiar el esquema de nomenclatura de la interfaz, no se olvide de actualizar todos los archivos de configuración relacionados con la red y los archivos de unidad de systemd personalizados para reflejar el cambio. Específicamente, si tiene [perfiles estáticos de netctl](/index.php/Netctl_(Espa%C3%B1ol)#M.C3.A9todo_b.C3.A1sico "Netctl (Español)") activados, ejecute `netctl reenable *perfil*` para actualizar el archivo de servicios generado.
 
 #### Cambiar el nombre de dispositivo
 
 Puede cambiar el nombre del dispositivo al definir manualmente el nombre con una regla udev. Por ejemplo:
 
  `/etc/udev/rules.d/10-network.rules` 
-
 ```
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="aa:bb:cc:dd:ee:ff", NAME="net1"
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="ff:ee:dd:cc:bb:aa", NAME="net0"
@@ -195,13 +190,12 @@ Algunas consideraciones:
 Si tiene una tarjeta con dirección MAC dinámica, puede utilizar DEVPATH por ejemplo
 
  `/etc/udev/rules.d/10-network.rules` 
-
 ```
 SUBSYSTEM=="net", DEVPATH=="/devices/platform/wemac.*", NAME="int"
 
 ```
 
-**Nota:** Al elegir los nombres permanentes **se debe evitar el uso de nombres con el formato "eth_X_" y "wlan_X_"**, ya que esto puede conducir a conflictos entre el kernel y udev durante el arranque. En cambio, es mejor utilizar nombres de interfaces que no sean utilizados por el kernel por defecto, por ejemplo: `net0`, `net1`, `wifi0`, `wifi1`. Para más detalles, consulte la documentación de [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames).
+**Nota:** Al elegir los nombres permanentes **se debe evitar el uso de nombres con el formato "eth*X*" y "wlan*X*"**, ya que esto puede conducir a conflictos entre el kernel y udev durante el arranque. En cambio, es mejor utilizar nombres de interfaces que no sean utilizados por el kernel por defecto, por ejemplo: `net0`, `net1`, `wifi0`, `wifi1`. Para más detalles, consulte la documentación de [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames).
 
 ### Establecer el MTU del dispositivo y la longitud de la cola
 
@@ -228,7 +222,6 @@ Puede activar o desactivar interfaces de red usando:
 Para comprobar el resultado:
 
  `$ ip addr show dev eth0` 
-
 ```
 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
 [...]
@@ -245,7 +238,6 @@ Tenemos dos opciones: la asignación dinámica de la dirección usando [DHCP](ht
 Tenga en cuenta que `dhcpcd` no es `dhcpd`.
 
  `$ dhcpcd eth0` 
-
 ```
  dhcpcd: version 5.1.1 starting
  dhcpcd: eth0: broadcasting for a lease
@@ -287,7 +279,6 @@ Si utiliza DHCP y **no** quiere que se asignen automáticamente servidores DNS c
 Además, si tiene una conexión de red con DHCPv4 que filtra los ID Clientes basado en direcciones MAC, es posible que tenga que cambiar la siguiente línea:
 
  `/etc/dhcpcd.conf` 
-
 ```
 # Use the same DUID + IAID as set in DHCPv6 for DHCPv4 Client ID as per RFC4361\. 
 duid
@@ -297,7 +288,6 @@ duid
 a:
 
  `/etc/dhcpcd.conf` 
-
 ```
 # Use the hardware address of the interface for the Client ID (DHCPv4).
 clientid
@@ -319,7 +309,6 @@ Se puede utilizar el paquete [openresolv](https://www.archlinux.org/packages/?na
 Si necesita añadir un cliente adjunto de enrutamiento estático, entonces cree un hook-script nuevo para dhcpcd en `/lib/dhcpcd/dhcpcd-hooks`. El ejemplo muestra un nuevo hook-script que añade un enrutamiento estático a una subred vpn sobre 10.11.12.0/24 a través de una máquina de puerta de enlace en 192.168.192.5:
 
  `/lib/dhcpcd/dhcpcd-hooks/40-vpnroute` 
-
 ```
 ip route add 10.11.12.0/24 via 192.168.192.5
 
@@ -362,7 +351,7 @@ Por ejemplo:
 
 Para conocer más opciones, vea `man ip`.
 
-Añada su puerta de entrada (_gateway_) de esta manera:
+Añada su puerta de entrada (*gateway*) de esta manera:
 
 ```
 # ip route add default via <dirección IP gateway predeterminada>
@@ -376,14 +365,13 @@ Por ejemplo:
 
 ```
 
-Si le sale el mensaje de error _«No such process»_, significa que tiene que ejecutar `ip link set dev eth0 up` como root.
+Si le sale el mensaje de error *«No such process»*, significa que tiene que ejecutar `ip link set dev eth0 up` como root.
 
 #### Conexión manual al arranque usando systemd
 
 En primer lugar crear el archivo de configuración de servicio de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), sustituyendo `<interface>` con el nombre de la interfaz adecuada:
 
  `/etc/conf.d/network@<interface>` 
-
 ```
 address=192.168.0.15
 netmask=24
@@ -395,7 +383,6 @@ gateway=192.168.0.1
 Cree un archivo de unidad de systemd:
 
  `/etc/systemd/system/network@.service` 
-
 ```
 [Unit]
 Description=Network connectivity (%i)
@@ -434,7 +421,6 @@ Active la unidad e iníciela, proporcionando el nombre de la interfaz:
 Se puede utilizar la orden `ipcalc`, proporcionado por el paquete [ipcalc](https://www.archlinux.org/packages/?name=ipcalc), para el calcular la IP broadcast, red, máscara de red y rangos de host para las configuraciones más avanzadas. Por ejemplo, es posible utilizar ethernet a través de firewire para conectar un PC con Windows para Arch. Para la seguridad y organización de la red, puede colocarlos en su propia red, configurar la máscara de red y broadcast de manera que sean las dos únicas máquinas en ella. Para mostrar las direcciones de máscara de red y broadcast, puede utilizar ipcalc, proporcionando la IP arch del firewire nic 10.66.66.1, y especificando ipcalc, debe crear una red de solo dos hosts.
 
  `$ ipcalc -nb 10.66.66.1 -s 1` 
-
 ```
 Address:   10.66.66.1
 
@@ -480,7 +466,7 @@ Véase [Netctl (Español)#Bonding](/index.php/Netctl_(Espa%C3%B1ol)#Bonding "Net
 
 ### Aliasing de direcciones IP
 
-El _aliasing_ IP es el proceso de agregar más de una dirección IP a una interfaz de red. Con esto, un nodo en una red puede tener varias conexiones a una red, cada uno sirviendo a un propósito diferente. Los usos típicos son el alojamiento virtual de servidores Web y FTP o servidores de reorganización sin tener que actualizar cualquier otra máquina (esto es especialmente útil para los servidores de nombres).
+El *aliasing* IP es el proceso de agregar más de una dirección IP a una interfaz de red. Con esto, un nodo en una red puede tener varias conexiones a una red, cada uno sirviendo a un propósito diferente. Los usos típicos son el alojamiento virtual de servidores Web y FTP o servidores de reorganización sin tener que actualizar cualquier otra máquina (esto es especialmente útil para los servidores de nombres).
 
 #### Ejemplo
 
@@ -489,7 +475,6 @@ Necesitará [netcfg](https://aur.archlinux.org/packages/netcfg/) disponible en l
 Prepare la configuración:
 
  `/etc/netctl/mynetwork` 
-
 ```
 Connection='ethernet'
 Description='Five different addresses on the same NIC.'
@@ -607,15 +592,15 @@ En Windows XP (ejemplo)
 
 ```
 
-**Nota:** Los controladores Realtek más recientes para Windows (probado con _Realtek 8111/8169 LAN Driver v5.708.1030.2008_, de fecha 2009/01/22, disponible en GIGABYTE) pueden referirse a esta opción de forma diferente, como _Shutdown Wake-On-LAN --> Enable_. Parece que cambiar a `Disable` no tiene efecto (lo notará al observar que la luz de enlace todavía se apaga, al apagar Windows). Una solución bastante burda consiste en arrancar Windows e, inmediatamente, resetear el sistema (realizar un reinicio/apagado sin miramientos), lo que no da al controlador de Windows la posibilidad de desactivar la LAN. La luz de enlace permanecerá encendida y el adaptador LAN se mantendrán accesible después del POST (_Power On Self Test_) -es decir, hasta que arranque de nuevo con Windows y lo apague correctamente-.
+**Nota:** Los controladores Realtek más recientes para Windows (probado con *Realtek 8111/8169 LAN Driver v5.708.1030.2008*, de fecha 2009/01/22, disponible en GIGABYTE) pueden referirse a esta opción de forma diferente, como *Shutdown Wake-On-LAN --> Enable*. Parece que cambiar a `Disable` no tiene efecto (lo notará al observar que la luz de enlace todavía se apaga, al apagar Windows). Una solución bastante burda consiste en arrancar Windows e, inmediatamente, resetear el sistema (realizar un reinicio/apagado sin miramientos), lo que no da al controlador de Windows la posibilidad de desactivar la LAN. La luz de enlace permanecerá encendida y el adaptador LAN se mantendrán accesible después del POST (*Power On Self Test*) -es decir, hasta que arranque de nuevo con Windows y lo apague correctamente-.
 
 #### Método 3 - Nuevo driver de Realtek para Linux
 
 Los drivers nuevos de estas tarjetas para Linux pueden encontrarse en el sitio de Realtek (no probado aunque se cree que también resuelve el problema).
 
-#### Method 4 - Activar _LAN Boot ROM_ en la BIOS/CMOS
+#### Method 4 - Activar *LAN Boot ROM* en la BIOS/CMOS
 
-Parece que el ajuste _Integrated Peripherals → Onboard LAN Boot ROM → Enabled_ en BIOS/CMOS del chip Realtek reactiva LAN en el sistema al reiniciar, a pesar de que el controlador de Windows lo desactive en el apagado del sistema operativo.
+Parece que el ajuste *Integrated Peripherals → Onboard LAN Boot ROM → Enabled* en BIOS/CMOS del chip Realtek reactiva LAN en el sistema al reiniciar, a pesar de que el controlador de Windows lo desactive en el apagado del sistema operativo.
 
 **Nota:** Esto fue probado con éxito varias veces con la placa base GIGABYTE GA-G31M-ES2L con la liberación de la versión F8 de la BIOS el 05/02/. YMMV.
 
@@ -667,7 +652,7 @@ DHCPCD_ARGS="-R -t 30 -h $HOSTNAME"
 
 **Nota:** Si está usando [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) >= 4.0.2, el flag `-R` ha quedado en desuso. Por favor, consulte el apartado [Configurar la dirección IP](#Configuring_Network_.28Espa.C3.B1ol.29.23Configurar_la_direcci.C3.B3n_IP) para obtener información sobre cómo utilizar un archivo `/etc/resolv.conf` personalizado.
 
-Guarde y cierre el archivo; ahora abra `/etc/resolv.conf`. Debería ver un nombre de servidor único (_nameserver_) (lo más probable 10.1.1.1). Esta es la puerta de entrada (_gateway_) al router, a la cual es necesario conectarse con el fin de obtener los servidores DNS del ISP. Pegue la dirección IP en el navegador y acceda al propio router. Vaya a la sección DNS, donde debería ver una dirección IP en el campo _Primary DNS Server_ («Servidor DNS primario»); cópielo y péguelo como un nombre de servidor (_nameserver_) **ARRIBA** de la puerta de entrada (_gateway_) actual.
+Guarde y cierre el archivo; ahora abra `/etc/resolv.conf`. Debería ver un nombre de servidor único (*nameserver*) (lo más probable 10.1.1.1). Esta es la puerta de entrada (*gateway*) al router, a la cual es necesario conectarse con el fin de obtener los servidores DNS del ISP. Pegue la dirección IP en el navegador y acceda al propio router. Vaya a la sección DNS, donde debería ver una dirección IP en el campo *Primary DNS Server* («Servidor DNS primario»); cópielo y péguelo como un nombre de servidor (*nameserver*) **ARRIBA** de la puerta de entrada (*gateway*) actual.
 
 Por ejemplo, si `/etc/resolv.conf` muestra una línea similar a esta:
 

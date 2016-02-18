@@ -38,7 +38,7 @@ Fluxbox 是另一个 X11 下的窗口管理器。它基于 Blackbox（现在停�
 
 **图形界面登录**
 
-在 [显示管理器](/index.php/%E6%98%BE%E7%A4%BA%E7%AE%A1%E7%90%86%E5%99%A8 "显示管理器") 的会话菜单中选择 _fluxbox_。
+在 [显示管理器](/index.php/%E6%98%BE%E7%A4%BA%E7%AE%A1%E7%90%86%E5%99%A8 "显示管理器") 的会话菜单中选择 *fluxbox*。
 
 **手动**
 
@@ -55,13 +55,13 @@ exec startfluxbox
 
 系统范围的 Fluxbox 配置文件在 `/usr/share/fluxbox` 中，用户个人配置文件在 `~/.fluxbox` 中，配置文件如下：
 
-*   _init_ - 主要的 Fluxbox 资源配置文件。参阅 [编辑init文件](http://fluxbox-wiki.org/category/howtos/en/Editing_the_init_file.html)。
-*   _menu_ - Fluxbox 菜单配置文件。参阅下文和 [编辑menu文件](http://fluxbox-wiki.org/category/howtos/en/Editing_the_menu.html)。
-*   _keys_ - Fluxbox 键盘快捷键（热键）配置文件。参阅下文和 [这里](http://fluxbox-wiki.org/category/howtos/en/Keyboard_shortcuts.html)。
-*   _startup_ - 编辑开机启动程序，参阅下文中关于 .xinitrc 的部分和 [这里](http://fluxbox-wiki.org/category/howtos/en/Editing_the_startup_file.html)。
-*   _overlay_ - 重载主题元素的配置文件。参阅 [这里](http://fluxbox-wiki.org/category/howtos/en/Style_overlay.html)。
-*   _apps_ - 记忆具体应用程序窗口配置的文件。参阅 [这里](http://fluxbox-wiki.org/category/howtos/en/Editing_the_apps_file.html)。
-*   _windowmenu_ - 配置窗口菜单自身的文件。[看这里](http://fluxbox-wiki.org/category/howtos/en/Editing_the_windowmenu.html)。
+*   *init* - 主要的 Fluxbox 资源配置文件。参阅 [编辑init文件](http://fluxbox-wiki.org/category/howtos/en/Editing_the_init_file.html)。
+*   *menu* - Fluxbox 菜单配置文件。参阅下文和 [编辑menu文件](http://fluxbox-wiki.org/category/howtos/en/Editing_the_menu.html)。
+*   *keys* - Fluxbox 键盘快捷键（热键）配置文件。参阅下文和 [这里](http://fluxbox-wiki.org/category/howtos/en/Keyboard_shortcuts.html)。
+*   *startup* - 编辑开机启动程序，参阅下文中关于 .xinitrc 的部分和 [这里](http://fluxbox-wiki.org/category/howtos/en/Editing_the_startup_file.html)。
+*   *overlay* - 重载主题元素的配置文件。参阅 [这里](http://fluxbox-wiki.org/category/howtos/en/Style_overlay.html)。
+*   *apps* - 记忆具体应用程序窗口配置的文件。参阅 [这里](http://fluxbox-wiki.org/category/howtos/en/Editing_the_apps_file.html)。
+*   *windowmenu* - 配置窗口菜单自身的文件。[看这里](http://fluxbox-wiki.org/category/howtos/en/Editing_the_windowmenu.html)。
 
 文件夹中有很多不太重要的配置文件。需要注意的有 init，menu，keys 和 startup。
 
@@ -91,7 +91,7 @@ $ mmaker -f FluxBox
 
 ```
 
-可以在运行命令时加入以下开关来避免将基于命令行的程序—例如 _alsamixer_—加入菜单：`--no-legacy` 和 `--no-debian`。例如：
+可以在运行命令时加入以下开关来避免将基于命令行的程序—例如 *alsamixer*—加入菜单：`--no-legacy` 和 `--no-debian`。例如：
 
 ```
 $ mmaker -f --no-legacy --no-debian FluxBox
@@ -340,7 +340,7 @@ exec /usr/bin/fluxbox
 
 ### 没有 xorg.conf 文件后的 Xorg 配置
 
-Xorg 不再需要 _xorg.conf_ 文件了，以前在 xorg.conf 文件中所做的关于键盘和省电模式的设定可以通过以下方式调整。
+Xorg 不再需要 *xorg.conf* 文件了，以前在 xorg.conf 文件中所做的关于键盘和省电模式的设定可以通过以下方式调整。
 
 #### 在 Fluxbox 中设定键盘布局
 
@@ -351,7 +351,7 @@ setxkbmap us -variant intl & # 在 us 键盘中添加特殊字符支持 (类似 
 
 ```
 
-可以添加自己的语言代码来代替 'us'，并且移除 'variant' 选项。参阅 _setxkbmap_ 手册页来获得更多选项。
+可以添加自己的语言代码来代替 'us'，并且移除 'variant' 选项。参阅 *setxkbmap* 手册页来获得更多选项。
 
 在 `~/.fluxbox/menu` 文件中添加以下行来获得菜单中帮助功能:
 

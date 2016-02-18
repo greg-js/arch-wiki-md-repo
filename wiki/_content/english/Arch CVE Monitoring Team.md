@@ -31,17 +31,17 @@ The Team is a volunteer maintained service. Volunteers are welcome to help ident
 
 Joining is as simple as helping. Firstly, join the [Arch Security mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-security) and/or IRC chan [#archlinux-security](irc://irc.freenode.net/archlinux-security). Secondly, consider the area where you would like to help. It would be ideal to have team members' labor divided across the software ecosystem as equally as possible. This helps the Team to quickly and efficiently find and report CVE's. Software categories are listed [below](#Package_Categories_and_Team_Members). However, it is not required that those who wish to volunteer restrict their monitoring in any way. "Global" and multiple-category volunteers are needed and encouraged.
 
-It is recommended that interested parties please consider monitoring those categories for which there are fewer volunteers. However, it is fully recognized that volunteers contribute best in areas in which they are most interested. Please consider both of these factors when selecting where your primary efforts will be placed. However, please note that it is not required that you restrict your monitoring to any one particular category. _The goal of the ACMT is to simply keep Arch Linux secure. Any and all efforts are more than welcome and unreservedly appreciated._
+It is recommended that interested parties please consider monitoring those categories for which there are fewer volunteers. However, it is fully recognized that volunteers contribute best in areas in which they are most interested. Please consider both of these factors when selecting where your primary efforts will be placed. However, please note that it is not required that you restrict your monitoring to any one particular category. *The goal of the ACMT is to simply keep Arch Linux secure. Any and all efforts are more than welcome and unreservedly appreciated.*
 
-If you would like to join the Team, please edit this page to include your name in the [Package Categories and Team Members](#Package_Categories_and_Team_Members) section below. Please place your name beneath the package category for which you will be monitoring. If you do not care to monitor specific categories and you would like to contribute any and all, please place your name in the "Global" category. _These options are not mutually exclusive._
+If you would like to join the Team, please edit this page to include your name in the [Package Categories and Team Members](#Package_Categories_and_Team_Members) section below. Please place your name beneath the package category for which you will be monitoring. If you do not care to monitor specific categories and you would like to contribute any and all, please place your name in the "Global" category. *These options are not mutually exclusive.*
 
 ## Participation Guidelines
 
 ACMT monitors all packages within the following repositories:
 
-*   _core_
-*   _extra_
-*   _community_
+*   *core*
+*   *extra*
+*   *community*
 
 Follow mailing lists (both development and user), security advisories (if any) and bug trackers on a regular basis. A few resources are listed below. You will quickly learn the different kind of vulnerabilities if you are unfamiliar. For those who will monitor languages, it is ideal to be able to operate at both the interpreter level (often written in C) and the language level.
 
@@ -64,7 +64,7 @@ A security vulnerability has been found in a software package within the Arch Li
     *   If no release is available, links to the upstream patches (or attachments) that mitigate the issue
 *   Add the issue to a new row at the top of the [CVE Tracking](/index.php/CVE "CVE") page (provide a wiki change summary including package name and some information)
 
-If you have a private bug to report, [then use security@archlinux.org](https://mailman.archlinux.org/pipermail/arch-security/2014-June/000088.html). Please note that the address for private bugs reporting is _security_, not _arch-security_. A private bug is one that is too sensitive to post where anyone can read and exploit it, e.g. vulnerabilities in Arch Linux infrastructure.
+If you have a private bug to report, [then use security@archlinux.org](https://mailman.archlinux.org/pipermail/arch-security/2014-June/000088.html). Please note that the address for private bugs reporting is *security*, not *arch-security*. A private bug is one that is too sensitive to post where anyone can read and exploit it, e.g. vulnerabilities in Arch Linux infrastructure.
 
 ### Bug Report Template
 

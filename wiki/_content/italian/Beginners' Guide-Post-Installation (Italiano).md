@@ -26,7 +26,7 @@ Il nuovo sistema di base Arch Linux è ora un funzionale sistema operativo GNU/L
 
 Aggiungere gli account utente che si desiderano, oltre a root, come descritto in [Gestione degli utenti](/index.php/Users_and_Groups_(Italiano)#Gestione_degli_utenti "Users and Groups (Italiano)"). Non è consigliabile utilizzare l'account di root per un uso regolare, o esporlo tramite [SSH](/index.php/Secure_Shell_(Italiano) "Secure Shell (Italiano)") su un server. L'account di root deve essere utilizzato solo per le attività amministrative.
 
-In un tipico sistema desktop per aggiungere un nuovo utente denominato _archie_ specificando [bash](/index.php/Bash_(Italiano) "Bash (Italiano)") come shell di login
+In un tipico sistema desktop per aggiungere un nuovo utente denominato *archie* specificando [bash](/index.php/Bash_(Italiano) "Bash (Italiano)") come shell di login
 
 ```
 # useradd -m -s /bin/bash archie
@@ -70,7 +70,7 @@ Per installare i pacchetti base di [Xorg](/index.php/Xorg "Xorg"):
 
 ```
 
-Installare [mesa](https://en.wikipedia.org/wiki/it:Mesa_(computer_graphics) "wikipedia:it:Mesa (computer graphics)") per il supporto 3D:
+Installare [mesa](https://en.wikipedia.org/wiki/it:Mesa_(computer_graphics) per il supporto 3D:
 
 ```
 # pacman -S mesa
@@ -79,7 +79,7 @@ Installare [mesa](https://en.wikipedia.org/wiki/it:Mesa_(computer_graphics) "wik
 
 #### Installare un driver video
 
-**Nota:** Se si sta installando Arch Linux come _guest_ su _virtualbox_, non è necessario installare un driver video. Consultare la pagina [Arch Linux guests](/index.php/VirtualBox#Arch_Linux_guests "VirtualBox") per installare ed impostare le Guest Additions, e saltare alla parte [Impostare il layout della tastiera](#Configurare_X) descritto di seguito.
+**Nota:** Se si sta installando Arch Linux come *guest* su *virtualbox*, non è necessario installare un driver video. Consultare la pagina [Arch Linux guests](/index.php/VirtualBox#Arch_Linux_guests "VirtualBox") per installare ed impostare le Guest Additions, e saltare alla parte [Impostare il layout della tastiera](#Configurare_X) descritto di seguito.
 
 Il kernel Linux include driver video open-source e il supporto per il framebuffer hardware accelerato. Tuttavia, il supporto in spazio utente è necessario per OpenGL e l'accelerazione 2D in X11 .
 
@@ -134,12 +134,10 @@ Potrebbe essere necessario impostare un Qui è possibile impostare un [[[layout 
 **Suggerimento:** Questi passaggi sono opzionali . Utile solo se si sta installando Arch Linux per la prima volta o per l'hardware più recente.
 
 **Nota:** Se i dispositivi di input non funzionano durante il test, installare il driver necessario dal gruppo [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/), e riprovare. Per un elenco completo di driver di input disponibili, richiamare una ricerca con pacman (premere `Q` per uscire ):
-
 ```
 $ pacman -Ss xf86-input | less
 
 ```
-
 Se avete intenzione di disattivare l'[hot-plugging](https://en.wikipedia.org/wiki/Hot-plugging "wikipedia:Hot-plugging"), avete bisogno solamente dei pacchetti [xf86-input-keyboard](https://www.archlinux.org/packages/?name=xf86-input-keyboard) o [xf86-input-mouse](https://www.archlinux.org/packages/?name=xf86-input-mouse), altrimenti `evdev` agirà come driver di ingresso principale (consigliato).
 
 Installare un Ambiente di test predefinito.
@@ -222,9 +220,9 @@ Fare riferimento a [Font Configuration](/index.php/Font_Configuration_(Italiano)
 
 #### Scegliere ed installare una interfaccia grafica
 
-Mentre il sistema **X** Window fornisce il quadro di base per la costruzione di una _Graphicals User Interface_ (GUI).
+Mentre il sistema **X** Window fornisce il quadro di base per la costruzione di una *Graphicals User Interface* (GUI).
 
-**Nota:** La scelta di un DE o WM è una decisione molto soggettiva e personale. Si scelga l'ambiente migliore in base alle _proprie_ esigenze. É possibile costruire il proprio ambiente desktop (DE) utilizzando un Window Manager (WM) e le applicazioni di propria scelta.
+**Nota:** La scelta di un DE o WM è una decisione molto soggettiva e personale. Si scelga l'ambiente migliore in base alle *proprie* esigenze. É possibile costruire il proprio ambiente desktop (DE) utilizzando un Window Manager (WM) e le applicazioni di propria scelta.
 
 *   Un [Window Manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") (Gestore delle finestre) controlla il posizionamento e l'aspetto delle finestre dell'applicazione in combinazione con il sistema X Window.
 

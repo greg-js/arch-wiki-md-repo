@@ -28,16 +28,16 @@
 Two options exist for manually mounting NTFS partitions. The traditional:
 
 ```
-# mount -t ntfs-3g /dev/_your_NTFS_partition_ _/mount/point_
+# mount -t ntfs-3g /dev/*your_NTFS_partition* */mount/point*
 
 ```
 
-Mount type `ntfs-3g` does not need to be explicitly specified in Arch. The _mount_ command by default will use `/usr/bin/mount.ntfs` which is symlinked to `/usr/bin/ntfs-3g` after the ntfs-3g package is installed.
+Mount type `ntfs-3g` does not need to be explicitly specified in Arch. The *mount* command by default will use `/usr/bin/mount.ntfs` which is symlinked to `/usr/bin/ntfs-3g` after the ntfs-3g package is installed.
 
 The second option is to call `ntfs-3g` directly:
 
 ```
-# ntfs-3g /dev/_your_NTFS_partition_ _/mount/point_
+# ntfs-3g /dev/*your_NTFS_partition* */mount/point*
 
 ```
 
@@ -46,7 +46,7 @@ The second option is to call `ntfs-3g` directly:
 **Warning:** As always, double check the device path.
 
 ```
-# mkfs.ntfs -Q -L diskLabel /dev/sd_XY_
+# mkfs.ntfs -Q -L diskLabel /dev/sd*XY*
 
 ```
 
@@ -64,7 +64,7 @@ Put this in `/etc/fstab`:
 
 ```
 # <file system>   <dir>		<type>    <options>             <dump>  <pass>
-/dev/_NTFS-part_  /mnt/windows  ntfs-3g   defaults		  0       0
+/dev/*NTFS-part*  /mnt/windows  ntfs-3g   defaults		  0       0
 
 ```
 
@@ -83,21 +83,21 @@ UUID=01CD2ABB65E17DE0 /run/media/user1/Windows ntfs-3g uid=user1,gid=users,dmask
 In `/etc/fstab` you can also specify other options like those who are allowed to access (read) the partition. For example, for you to allow people in the `users` group to have access:
 
 ```
-/dev/_NTFS-partition_  /mnt/windows  ntfs-3g   gid=users,umask=0022    0       0
+/dev/*NTFS-partition*  /mnt/windows  ntfs-3g   gid=users,umask=0022    0       0
 
 ```
 
 By default, the above line will enable write support for root only. To enable user writing, you have to specify the user who should be granted write permissions. Use the `uid` parameter together with your username to enable user writing:
 
 ```
-/dev/_NTFS-partition_  /mnt/windows  ntfs-3g   uid=_username_,gid=users,umask=0022    0       0
+/dev/*NTFS-partition*  /mnt/windows  ntfs-3g   uid=*username*,gid=users,umask=0022    0       0
 
 ```
 
 If you are running on a single user machine, you may like to own the file system yourself and grant all possible permissions:
 
 ```
-/dev/_NTFS-partition_  /mnt/windows  ntfs-3g   uid=_username_,gid=users    0       0
+/dev/*NTFS-partition*  /mnt/windows  ntfs-3g   uid=*username*,gid=users    0       0
 
 ```
 
@@ -123,7 +123,7 @@ For most, the above settings should suffice. Here are a few other options that a
 
 ### Allowing user to mount
 
-By default, _ntfs-3g_ requires root rights to mount the filesystem, even with the "user" option in `/etc/fstab`, the reason why can be found [here](http://www.tuxera.com/community/ntfs-3g-faq/#unprivileged). The user option in the fstab is still required. To be able to mount as user, a few tweaks need to be made:
+By default, *ntfs-3g* requires root rights to mount the filesystem, even with the "user" option in `/etc/fstab`, the reason why can be found [here](http://www.tuxera.com/community/ntfs-3g-faq/#unprivileged). The user option in the fstab is still required. To be able to mount as user, a few tweaks need to be made:
 
 First, check that you have access to the mount block you want to use, the easiest way to do that is to be in the disk groups with the following command:
 
@@ -137,7 +137,7 @@ First, check that you have access to the mount block you want to use, the easies
 You also need access to the mountpoint you want to use. Since we're going to mount something as user on this mountpoint, we might as well own it:
 
 ```
-# chown _user_ /mnt/_mountpoint_
+# chown *user* /mnt/*mountpoint*
 
 ```
 
@@ -145,7 +145,7 @@ Second, you need a NTFS-3G driver compiled with integrated FUSE support. The ntf
 
 You should now be able to mount your NTFS partition without root rights.
 
-**Note:** There seems to be an issue with unmounting rights, so you will still need root rights if you need to unmount the filesystem. You can also use `fusermount -u /mnt/_mountpoint_` to unmount the filesystem without root rights. Also, if you use the `_users_` option (plural) in `/etc/fstab` instead of the `user` option, you will be able to both mount and unmount the filesystem using the `mount` and `umount` commands.
+**Note:** There seems to be an issue with unmounting rights, so you will still need root rights if you need to unmount the filesystem. You can also use `fusermount -u /mnt/*mountpoint*` to unmount the filesystem without root rights. Also, if you use the `*users*` option (plural) in `/etc/fstab` instead of the `user` option, you will be able to both mount and unmount the filesystem using the `mount` and `umount` commands.
 
 ### ntfs-config
 
@@ -221,7 +221,7 @@ powercfg /h off
 
 ```
 
-You can check the current settings on _Control Panel > Hardware and Sound > Power Options > System Setting > Choose what the power buttons do_. The box _Turn on fast startup_ should either be disabled or missing.
+You can check the current settings on *Control Panel > Hardware and Sound > Power Options > System Setting > Choose what the power buttons do*. The box *Turn on fast startup* should either be disabled or missing.
 
 ### Mount failure
 

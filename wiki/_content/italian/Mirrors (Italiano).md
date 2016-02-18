@@ -39,9 +39,7 @@ Questa pagina è una guida per la selezione e la configurazione dei "mirrors", e
 Per attivare i mirrors, aprire `/etc/pacman.d/mirrorlist` e individuare la propria regione geografica. Decommentare i mirrors che si desidera utilizzare.
 
 **Nota:** La velocità di banda di ftp.archlinux.org [è limitata a 50KB/s](https://www.archlinux.org/news/throttling-ftparchlinuxorg-rsyncarchlinuxorg/)
-
 Esempio:
-
 ```
 # Any
 # Server = ftp://mirrors.kernel.org/archlinux/$repo/os/i686
@@ -53,7 +51,7 @@ Consultare [#Mirror status](#Mirror_status) e [#Elenco per velocità](#Elenco_pe
 
 **Tip:** Decommentare 5 mirrors di preferenza e metterli in cima al file mirrorlist. In questo modo è più facile trovarli ed eventualmente spostarli se il primo mirror della lista avesse dei problemi. Inoltre agevola gli aggiornamenti dei mirrorlist all'interno del file stesso.
 
-È anche possibile specificare i mirrors in `/etc/pacman.conf`. Per il repository _[core]_, l'impostazione di default è:
+È anche possibile specificare i mirrors in `/etc/pacman.conf`. Per il repository *[core]*, l'impostazione di default è:
 
 ```
 [core]
@@ -61,7 +59,7 @@ Include = /etc/pacman.d/mirrorlist
 
 ```
 
-Per usare il mirror _HostEurope_ come predefinito, aggiungerlo prima della riga `Include`:
+Per usare il mirror *HostEurope* come predefinito, aggiungerlo prima della riga `Include`:
 
 ```
 [core]
@@ -70,9 +68,9 @@ Include = /etc/pacman.d/mirrorlist
 
 ```
 
-pacman tenterà ora di connettersi prima a questo mirror. Procedere con la stessa impostazione per _[testing]_, _[extra]_, e _[community]_, se possibile.
+pacman tenterà ora di connettersi prima a questo mirror. Procedere con la stessa impostazione per *[testing]*, *[extra]*, e *[community]*, se possibile.
 
-**Nota:** Se i mirror sono stati indicati direttamente in `pacman.conf`, ricordarsi di utilizzare lo stesso mirror per tutti i repository. In caso contrario, potrebbero essere installati pacchetti che sono incompatibili tra di loro, come linux da _[core]_ e un vecchio modulo del kernel da _[extra]_.
+**Nota:** Se i mirror sono stati indicati direttamente in `pacman.conf`, ricordarsi di utilizzare lo stesso mirror per tutti i repository. In caso contrario, potrebbero essere installati pacchetti che sono incompatibili tra di loro, come linux da *[core]* e un vecchio modulo del kernel da *[extra]*.
 
 ## Mirror status
 
@@ -82,7 +80,7 @@ Si può generare una lista aggiornata dei mirror [qui](https://www.archlinux.org
 
 1.  scegliere un server ed esplorare "extra/os/";
 2.  accedere a [https://www.archlinux.org/](https://www.archlinux.org/) in un'altra scheda o finestra del browser e,
-3.  confrontare la data dell'ultima modifica della cartella `i686` sul mirror _[extra]_ nella pagina principale, nel box _Package Repositories_ a destra.
+3.  confrontare la data dell'ultima modifica della cartella `i686` sul mirror *[extra]* nella pagina principale, nel box *Package Repositories* a destra.
 
 ## Scelta e selezione dei mirrors
 
@@ -137,7 +135,7 @@ Dopo la creazione/modifica di `/etc/pacman.d/mirrorlist` (manualmente o usando `
 
 ```
 
-**Tip:** L'esecuzione di una doppia flag `--refresh` o `-y` forza pacman ad aggiornare tutti i pacchetti nella lista anche se sono considerati perfettamente aggiornati. Eseguire `pacman -Syy`, _ogni volta che si cambia mirror_, è una buona abitudine, e si evitano eventuali e sempre possibili problemi.
+**Tip:** L'esecuzione di una doppia flag `--refresh` o `-y` forza pacman ad aggiornare tutti i pacchetti nella lista anche se sono considerati perfettamente aggiornati. Eseguire `pacman -Syy`, *ogni volta che si cambia mirror*, è una buona abitudine, e si evitano eventuali e sempre possibili problemi.
 
 ### Elenco misto in base a velocità e stato
 
@@ -152,7 +150,6 @@ Quando si rileva una qualche irregolarità con i mirror, il procedimento descrit
 È possibile utilizzare il seguente script di shell per aggiornare i propri mirror in base ai punteggi di [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/). Se non si vive negli Stati Uniti, è possibile modificare la variabile `country`.
 
  `updatemirrors.sh` 
-
 ```
 #!/bin/sh
 
@@ -212,15 +209,15 @@ Se si verifica un errore che indica che la variabile $arch è usata ma non defin
 
 ### IPv6-ready mirrors
 
-Il [_pacman mirrorlist generator_](https://www.archlinux.org/mirrorlist/?country=all&protocol=http&ip_version=6) può essere usato per generare una lista di mirrors IPv6.
+Il [*pacman mirrorlist generator*](https://www.archlinux.org/mirrorlist/?country=all&protocol=http&ip_version=6) può essere usato per generare una lista di mirrors IPv6.
 
 ## Mirror non ufficiali
 
-Questi mirror _non_ sono elencati in `/etc/pacman.d/mirrorlist`.
+Questi mirror *non* sono elencati in `/etc/pacman.d/mirrorlist`.
 
 ### Globali
 
-*   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) - _Non dispone di ISO delle release post 2006\. Usarlo solo per ISO datate._
+*   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) - *Non dispone di ISO delle release post 2006\. Usarlo solo per ISO datate.*
 
 ### TOR Network
 
@@ -254,18 +251,18 @@ Questi mirror _non_ sono elencati in `/etc/pacman.d/mirrorlist`.
 
 **Cernet**
 
-*   [http://ftp.sjtu.edu.cn/archlinux/](http://ftp.sjtu.edu.cn/archlinux/) - _Shanghai Jiaotong University_
+*   [http://ftp.sjtu.edu.cn/archlinux/](http://ftp.sjtu.edu.cn/archlinux/) - *Shanghai Jiaotong University*
 *   [ftp://ftp.sjtu.edu.cn/archlinux/](ftp://ftp.sjtu.edu.cn/archlinux/)
-*   [http://mirrors.ustc.edu.cn/archlinux/](http://mirrors.ustc.edu.cn/archlinux/) - _University of Science and Technology of China_
+*   [http://mirrors.ustc.edu.cn/archlinux/](http://mirrors.ustc.edu.cn/archlinux/) - *University of Science and Technology of China*
 *   [ftp://mirrors.ustc.edu.cn/archlinux/](ftp://mirrors.ustc.edu.cn/archlinux/)
-*   [http://mirrors.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.tuna.tsinghua.edu.cn/archlinux/) - _Tsinghua University_
-*   [http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/) _(IPv4 only)_
-*   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) _(IPv6 only)_
-*   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) - _Lanzhou University_
+*   [http://mirrors.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.tuna.tsinghua.edu.cn/archlinux/) - *Tsinghua University*
+*   [http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/) *(IPv4 only)*
+*   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) *(IPv6 only)*
+*   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) - *Lanzhou University*
 
 ### Francia
 
-*   [http://delta.archlinux.fr/](http://delta.archlinux.fr/) - _Supporto al Delta Package. È necessario il pacchetto xdelta3 da [extra]_
+*   [http://delta.archlinux.fr/](http://delta.archlinux.fr/) - *Supporto al Delta Package. È necessario il pacchetto xdelta3 da [extra]*
 *   [http://mirror.soa1.org/archlinux](http://mirror.soa1.org/archlinux)
 *   [ftp://mirror:mirror@mirror.soa1.org/archlinux](ftp://mirror:mirror@mirror.soa1.org/archlinux)
 
@@ -280,7 +277,7 @@ Questi mirror _non_ sono elencati in `/etc/pacman.d/mirrorlist`.
 
 ### Indonesia
 
-*   [http://mirror.kavalinux.com/archlinux/](http://mirror.kavalinux.com/archlinux/) - _solo per l'indonesia_
+*   [http://mirror.kavalinux.com/archlinux/](http://mirror.kavalinux.com/archlinux/) - *solo per l'indonesia*
 *   [http://kambing.ui.ac.id/archlinux/](http://kambing.ui.ac.id/archlinux/)
 *   [http://repo.ukdw.ac.id/archlinux/](http://repo.ukdw.ac.id/archlinux/)
 
@@ -292,17 +289,17 @@ Questi mirror _non_ sono elencati in `/etc/pacman.d/mirrorlist`.
 
 ### Lituania
 
-*   [http://edacval.homelinux.org/mirrors/archlinux/](http://edacval.homelinux.org/mirrors/archlinux/) - _Solo per Lituania, no ISO_
+*   [http://edacval.homelinux.org/mirrors/archlinux/](http://edacval.homelinux.org/mirrors/archlinux/) - *Solo per Lituania, no ISO*
 
 ### Malesia
 
 *   [http://mirror.oscc.org.my/archlinux/](http://mirror.oscc.org.my/archlinux/)
-*   [http://mirrors.inetutils.net/archlinux/](http://mirrors.inetutils.net/archlinux/) - _ISO and Core_
+*   [http://mirrors.inetutils.net/archlinux/](http://mirrors.inetutils.net/archlinux/) - *ISO and Core*
 
 ### Nuova Zelanda
 
 *   [http://mirror.ihug.co.nz/archlinux/](http://mirror.ihug.co.nz/archlinux/)
-*   [http://mirror.ece.auckland.ac.nz/archlinux/](http://mirror.ece.auckland.ac.nz/archlinux/) _solo NZ_
+*   [http://mirror.ece.auckland.ac.nz/archlinux/](http://mirror.ece.auckland.ac.nz/archlinux/) *solo NZ*
 
 ### Polonia
 
@@ -312,32 +309,32 @@ Questi mirror _non_ sono elencati in `/etc/pacman.d/mirrorlist`.
 
 ### Russia
 
-*   [http://hatred.homelinux.net/archlinux/](http://hatred.homelinux.net/archlinux/) - _Vladivostok, without iso, with <sub>[3SPY](http://hatred.homelinux.net/wiki/proekty:3spy:start)</sub> project repos and [**mingw32**](http://hatred.homelinux.net/archlinux/mingw32/os/i686) repo_
-*   [http://mirrors.krasinfo.ru/archlinux/](http://mirrors.krasinfo.ru/archlinux/) - _Krasnoyarsk, Classica-Service Ltd_
+*   [http://hatred.homelinux.net/archlinux/](http://hatred.homelinux.net/archlinux/) - *Vladivostok, without iso, with <sub>[3SPY](http://hatred.homelinux.net/wiki/proekty:3spy:start)</sub> project repos and [**mingw32**](http://hatred.homelinux.net/archlinux/mingw32/os/i686) repo*
+*   [http://mirrors.krasinfo.ru/archlinux/](http://mirrors.krasinfo.ru/archlinux/) - *Krasnoyarsk, Classica-Service Ltd*
 
 ### Sud Africa
 
-*   [http://ftp.sun.ac.za/ftp/pub/mirrors/archlinux/](http://ftp.sun.ac.za/ftp/pub/mirrors/archlinux/) - _Università di Stellenbosch_
+*   [http://ftp.sun.ac.za/ftp/pub/mirrors/archlinux/](http://ftp.sun.ac.za/ftp/pub/mirrors/archlinux/) - *Università di Stellenbosch*
 *   [ftp://ftp.sun.ac.za/pub/mirrors/archlinux/](ftp://ftp.sun.ac.za/pub/mirrors/archlinux/)
-*   [http://ftp.leg.uct.ac.za/pub/linux/arch/](http://ftp.leg.uct.ac.za/pub/linux/arch/) - _Università di Cape Town_
+*   [http://ftp.leg.uct.ac.za/pub/linux/arch/](http://ftp.leg.uct.ac.za/pub/linux/arch/) - *Università di Cape Town*
 *   [ftp://ftp.leg.uct.ac.za/pub/linux/arch/](ftp://ftp.leg.uct.ac.za/pub/linux/arch/)
-*   [http://mirror.ufs.ac.za/archlinux/](http://mirror.ufs.ac.za/archlinux/) - _Università di Free State_
+*   [http://mirror.ufs.ac.za/archlinux/](http://mirror.ufs.ac.za/archlinux/) - *Università di Free State*
 *   [ftp://mirror.ufs.ac.za/os/linux/distros/archlinux/](ftp://mirror.ufs.ac.za/os/linux/distros/archlinux/)
-*   [http://ftp.wa.co.za/pub/archlinux/](http://ftp.wa.co.za/pub/archlinux/) - _Web Africa Networks_
+*   [http://ftp.wa.co.za/pub/archlinux/](http://ftp.wa.co.za/pub/archlinux/) - *Web Africa Networks*
 *   [ftp://ftp.wa.co.za/pub/archlinux/](ftp://ftp.wa.co.za/pub/archlinux/)
-*   [http://archlinux.mirror.ac.za](http://archlinux.mirror.ac.za) - _TENET - Tertiary Education and Research Network of South Africa_
+*   [http://archlinux.mirror.ac.za](http://archlinux.mirror.ac.za) - *TENET - Tertiary Education and Research Network of South Africa*
 *   [ftp://archlinux.mirror.ac.za](ftp://archlinux.mirror.ac.za)
 
 ### Stati Uniti
 
-*   [http://archlinux.linuxfreedom.com](http://archlinux.linuxfreedom.com) - _contiente molte ISO ma NON l'ultima 2011.08.19_
+*   [http://archlinux.linuxfreedom.com](http://archlinux.linuxfreedom.com) - *contiente molte ISO ma NON l'ultima 2011.08.19*
 *   [http://mirror.pointysoftware.net/archlinux/](http://mirror.pointysoftware.net/archlinux/)
 
 ## Risoluzioni dei problemi
 
 ### Mirror non sincronizzati: pacchetti corrotti/file non trovati
 
-Le problematiche relative ai mirror _out-of-sync_ sottolineate in [questo post](https://www.archlinux.org/news/482/) possono essere già state risolte per molti utenti, ma nel caso si ripresentino di nuovo gli stessi problemi, provare semplicemente a vedere se sono presenti i pacchetti nel repository [testing].
+Le problematiche relative ai mirror *out-of-sync* sottolineate in [questo post](https://www.archlinux.org/news/482/) possono essere già state risolte per molti utenti, ma nel caso si ripresentino di nuovo gli stessi problemi, provare semplicemente a vedere se sono presenti i pacchetti nel repository [testing].
 
 Dopo aver sincronizzato con `pacman -Sy`, usare questo comando:
 
@@ -356,7 +353,6 @@ In ogni caso, è meglio dare una rinfrescata ai mirror e alla sincronizzazione c
 Per emulare il comportamento di `pacman -Su`, e cioè di scorrere l'intera lista dei mirror, utilizzare questo script:
 
  `~/bin/pacup` 
-
 ```
 #!/bin/bash
 

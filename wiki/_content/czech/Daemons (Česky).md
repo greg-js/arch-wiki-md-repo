@@ -23,7 +23,7 @@ Služby (démony) se při startu spouštějí v pořadí, v jakém jsou uvedeny 
 Skripty určené ke spouštění služeb se nacházejí v adresáři /etc/rc.d/. Služby můžete ručně spouštět, zastavovat nebo restartovat příkazem
 
 ```
-/etc/rc.d/_nameofservice_ {start|stop|restart}
+/etc/rc.d/*nameofservice* {start|stop|restart}
 
 ```
 

@@ -43,7 +43,6 @@ Depending on the hardware, the network drivers may have WOL switched off by defa
 Query the network device via this command:
 
  `# ethtool net0 | grep Wake-on` 
-
 ```
         Supports Wake-on: pumbag
 	Wake-on: d
@@ -65,14 +64,13 @@ This command might not last beyond the next reboot, so it must be repeated via s
 
 If using netctl, one can make this setting persistent by adding the following the netctl profile:
 
- `/etc/netctl/_profile_`  `ExecUpPost='/usr/bin/ethtool -s net0 wol g'` 
+ `/etc/netctl/*profile*`  `ExecUpPost='/usr/bin/ethtool -s net0 wol g'` 
 
 ### systemd-networkd
 
 If [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") is used to setup machine's network then it is easy to enable Wake-On-Lan using `systemd.link` configuration. Add `WakeOnLan` option to the network link file:
 
  `/etc/systemd/network/50-wired.link` 
-
 ```
 [Link]
 WakeOnLan=magic
@@ -86,7 +84,6 @@ See [systemd-networkd#link files](/index.php/Systemd-networkd#link_files "System
 This is an equivalent of previous `systemd.link` option, but uses a standalone systemd service.
 
  `/etc/systemd/system/wol@.service` 
-
 ```
 [Unit]
 Description=Wake-on-LAN for %i
@@ -103,14 +100,13 @@ WantedBy=multi-user.target
 
 Alternatively install the [wol-systemd](https://aur.archlinux.org/packages/wol-systemd/) package.
 
-Then activate this new service by [starting](/index.php/Starting "Starting") `wol@_interface_.service`.
+Then activate this new service by [starting](/index.php/Starting "Starting") `wol@*interface*.service`.
 
 ### udev
 
 udev is capable of running any command as soon as a device is visible. Here, udev will turn on WOL. Due to the predictable network interface names, it can be a bit tricky to get it working. You can either use the PCI path (you can get it via `lspci`), or use a rule that is parsed after the interface renaming, i.e. bigger than 80\. For example, if your `lspci` output is
 
  `$ lspci` 
-
 ```
 04:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 06)
 
@@ -146,7 +142,6 @@ In version 1.0.6 NetworkManager [adds Wake-on-LAN controls](https://www.phoronix
 First, search for the name of the wired connection:
 
  `# nmcli con show` 
-
 ```
 NAME    UUID                                  TYPE            DEVICE
 wired1  612e300a-c047-4adb-91e2-12ea7bfe214e  802-3-ethernet  enp0s25
@@ -155,7 +150,6 @@ wired1  612e300a-c047-4adb-91e2-12ea7bfe214e  802-3-ethernet  enp0s25
 By following, one can view current status of Wake-on-LAN settings:
 
  `# nmcli c show "wired1" | grep 802-3-ethernet.wake-on-lan` 
-
 ```
 802-3-ethernet.wake-on-lan:             default
 802-3-ethernet.wake-on-lan-password:    --
@@ -177,7 +171,6 @@ To trigger WOL on a target machine, its MAC address and external or internal IP 
 To obtain the internal IP address and MAC address of the target computer, execute the following command:
 
  `$ ip addr` 
-
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default
    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -205,14 +198,14 @@ If you are connected directly to another computer through a network cable, or th
 In the simplest case the default broadcast address `255.255.255.255` is used:
 
 ```
-$ wol _target_MAC_address_
+$ wol *target_MAC_address*
 
 ```
 
 To broadcast the magic packet only to a specific subnet or host, use the `-i` switch:
 
 ```
-$ wol -i _target_IP_ _target_MAC_address_
+$ wol -i *target_IP* *target_MAC_address*
 
 ```
 
@@ -225,7 +218,7 @@ When the source and target computers are separated by a router, Wake-on-LAN can 
 To trigger the wakeup:
 
 ```
-$ wol -p _forwarded_port_ -i _router_IP_ _target_MAC_address_
+$ wol -p *forwarded_port* -i *router_IP* *target_MAC_address*
 
 ```
 
@@ -236,7 +229,7 @@ In case of multiple computers behind the router, it is recommended to assign a d
 The syntax needed in this case:
 
 ```
-$ wol -p _target_port_ -i _target_IP_or_hostname_ _target_MAC_address_
+$ wol -p *target_port* -i *target_IP_or_hostname* *target_MAC_address*
 
 ```
 

@@ -27,7 +27,6 @@
 ### Processor
 
  `% lscpu` 
-
 ```
 CPU op-mode(s): 32-bit, 64-bit
     Model name: Intel(R) Core(TM) i7-4700MQ CPU @ 2.40GHz
@@ -64,7 +63,6 @@ Basic functionality is working with the **snd_hda_intel** module provided in the
 ### Mass Storage
 
  `% lsblk` 
-
 ```
 NAME          RM   SIZE TYPE TRAN
 sda            0 931.5G disk sata
@@ -106,7 +104,6 @@ A switch is present for lid-closed/lid-open events, and lid-closed operation is 
 **HDMI port:** An external display has been driven successfully up to the same resolution under the same conditions, with both mirroring and extended desktop modes used.
 
  `% xinput` 
-
 ```
 ⎡ Virtual core pointer
 ⎜   ↳ eGalax Inc. eGalaxTouch
@@ -176,7 +173,6 @@ The integrated Function keys are also dual-function, and default to system contr
 ### Pointer
 
  `% xinput` 
-
 ```
 ⎡ Virtual core pointer
 ⎜   ↳ SynPS/2 Synaptics TouchPad

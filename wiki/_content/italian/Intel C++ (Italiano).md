@@ -39,7 +39,7 @@ Attualmente non ci sono guide ufficiali per usare icc. Questa sezione è intesa 
 
 ### Metodo 1
 
-Modifica `/etc/makepkg.conf` inserendo il seguente codice _sotto_ la linea esistente **CXXFLAGS** per attivare icc con makepkg. Non sono necessarie altre opzioni particolari per attivare icc con makepkg.
+Modifica `/etc/makepkg.conf` inserendo il seguente codice *sotto* la linea esistente **CXXFLAGS** per attivare icc con makepkg. Non sono necessarie altre opzioni particolari per attivare icc con makepkg.
 
 ```
 _CC=icc
@@ -54,15 +54,15 @@ fi
 
 **Note:** per passare da icc ad gcc o viceversa si deve commentare o decomentare la linea dove si definisce la variabile **_CC**.
 
-**Note:** In alcuni casi le direttive in `/etc/makepkg.conf` vengono ignorate e la compilazione avviene con _gcc_, quindi dopo aver costruito il pachetto ti devi assicurare che questo sia stato effettivamente compilato con _icc_
+**Note:** In alcuni casi le direttive in `/etc/makepkg.conf` vengono ignorate e la compilazione avviene con *gcc*, quindi dopo aver costruito il pachetto ti devi assicurare che questo sia stato effettivamente compilato con *icc*
 
 Per verificare che un pacchetto sia stato effettivamente compilato con icc:
 
 *   Dare il comando **ldd [your_app] | grep intel** Se l'applicativo usa un libreria dinamica che si trova nella directory **/opt/intel/lib/** significa che è stato effettivamente compilato con icc
 
-*   Un altro metodo è quello di osservare l'output durante la costruzione del pacchetto e vedere se usa _icc_ o _icpc_ come comando.
+*   Un altro metodo è quello di osservare l'output durante la costruzione del pacchetto e vedere se usa *icc* o *icpc* come comando.
 
-*   L'ultimo metodo è quello di vedere se i warning sono nello stile di _icc_.
+*   L'ultimo metodo è quello di vedere se i warning sono nello stile di *icc*.
 
 ## icc CFLAGS
 
@@ -75,7 +75,7 @@ icc --help
 
 ### -xX
 
-Da usare per generare un codice ottimizzato sulla propria CPU. Se non si è sicuri di quali **flags** usare si deve andare a vedere la sezione _flags_ nel file `/proc/cpuinfo`. Nell'esempio sotto, **SSE4.1** è la scelta coretta:
+Da usare per generare un codice ottimizzato sulla propria CPU. Se non si è sicuri di quali **flags** usare si deve andare a vedere la sezione *flags* nel file `/proc/cpuinfo`. Nell'esempio sotto, **SSE4.1** è la scelta coretta:
 
 ```
 $ cat /proc/cpuinfo  | grep -m 1 flags

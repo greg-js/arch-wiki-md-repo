@@ -21,7 +21,7 @@
 
 #### /boot/grub/menu.lst
 
-Добавьте **quiet vga=791 splash** к командной строке вашего ядра в _/boot/grub/menu.lst_. Т.е.:
+Добавьте **quiet vga=791 splash** к командной строке вашего ядра в */boot/grub/menu.lst*. Т.е.:
 
 ```
 kernel (hd0,6)/vmlinuz26 root=/dev/sda6 ro quiet vga=791 splash
@@ -30,7 +30,7 @@ kernel (hd0,6)/vmlinuz26 root=/dev/sda6 ro quiet vga=791 splash
 
 #### /etc/rc.conf
 
-Добавьте SPLASH="splashy" в _/etc/rc.conf_. Т.е.:
+Добавьте SPLASH="splashy" в */etc/rc.conf*. Т.е.:
 
 ```
 SPLASH="splashy"
@@ -41,7 +41,7 @@ SPLASH="splashy"
 
 *   **Не забудьте пересоздать initramfs образ после того, как изменилась конфигурация Splashy.** (например, когда изменили тему Splashy)
 
-1.  Добавьте **splashy** в **конец** строки HOOKS в файле _/etc/mkinitcpio.conf_. Т.е.: `HOOKS="base udev autodetect ide sata filesystems ... splashy"` 
+1.  Добавьте **splashy** в **конец** строки HOOKS в файле */etc/mkinitcpio.conf*. Т.е.: `HOOKS="base udev autodetect ide sata filesystems ... splashy"` 
 2.  Пересоздайте загрузочный образ ядра `# mkinitcpio -p <имя ядра>` Например: `# mkinitcpio -p linux` 
 
 ### Модернизация(апгрейд)

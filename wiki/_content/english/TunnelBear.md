@@ -36,7 +36,6 @@ $ mv /etc/openvpn/TunnelBear\ Japan.ovpn /etc/openvpn/TunnelBearJapan.conf
 Edit the **.conf** file
 
  `/etc/openvpn/TunnelBearJapan.conf` 
-
 ```
 .
 .
@@ -50,7 +49,6 @@ auth-user-pass login.key
 Create **login.key**
 
  `/etc/openvpn/login.key` 
-
 ```
 
 yourtunnelbearusername

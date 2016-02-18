@@ -4,7 +4,7 @@
 
 尽管实际意义有所不同，守护进程也可以叫做**系统服务**。实际上，后者似乎是个更好理解的名称。
 
-有时 daemon 也会指在系统启动时运行，但是运行之后不会保留进程的程序。因为它们使用相同的启动关闭框架 (例如 `/etc/rc.d/` 脚本)，所以也叫 daemon. 例如 `/etc/rc.d` 中的 _alsa_ 和 _cpufreq_ 提供了固定内核模块参数功能，但是完成后不会保留后台进程。
+有时 daemon 也会指在系统启动时运行，但是运行之后不会保留进程的程序。因为它们使用相同的启动关闭框架 (例如 `/etc/rc.d/` 脚本)，所以也叫 daemon. 例如 `/etc/rc.d` 中的 *alsa* 和 *cpufreq* 提供了固定内核模块参数功能，但是完成后不会保留后台进程。
 
 ## Contents
 
@@ -21,31 +21,31 @@
 
 ## 管理守护进程
 
-在Arch Linux中, 守护进程是用[systemd](/index.php/Systemd "Systemd")管理的. 用户用[systemctl](/index.php/Systemd#Basic_systemctl_usage "Systemd")命令来管理. systemctl读取_<service>_.service文件中包含怎么和什么时候启动相关的进程. Service的文件保存在`/{etc,usr/lib,run}/systemd/system`中. 看看[systemd#Using units](/index.php/Systemd#Using_units "Systemd") 有关怎么使用systemctl管理守护进程的完整信息.
+在Arch Linux中, 守护进程是用[systemd](/index.php/Systemd "Systemd")管理的. 用户用[systemctl](/index.php/Systemd#Basic_systemctl_usage "Systemd")命令来管理. systemctl读取*<service>*.service文件中包含怎么和什么时候启动相关的进程. Service的文件保存在`/{etc,usr/lib,run}/systemd/system`中. 看看[systemd#Using units](/index.php/Systemd#Using_units "Systemd") 有关怎么使用systemctl管理守护进程的完整信息.
 
 ### 开机时自动启动
 
-在启动的时候添加，删除服务使用 `systemctl enable|disable _<service_name>_`命令
+在启动的时候添加，删除服务使用 `systemctl enable|disable *<service_name>*`命令
 
 ### 手动启动
 
-在系统运行时启动，停止服务, 使用 `systemctl start|stop _<service_name>_`命令.
+在系统运行时启动，停止服务, 使用 `systemctl start|stop *<service_name>*`命令.
 
 ### 重启服务
 
-为了重启服务, 使用 `systemctl restart _<service_name>_`命令.
+为了重启服务, 使用 `systemctl restart *<service_name>*`命令.
 
 ### 查看运行状态
 
-查看当前服务的运行状态, 使用 `systemctl status _<service_name>_`命令.
+查看当前服务的运行状态, 使用 `systemctl status *<service_name>*`命令.
 
 ### 检查服务是否开机启动
 
-检查服务是否开机启动，使用 `systemctl is-enabled _<service_name>_; echo $?`命令.
+检查服务是否开机启动，使用 `systemctl is-enabled *<service_name>*; echo $?`命令.
 
 ## 手动添加开机运行的服务
 
-`ln -sf /lib/systemd/system/_<service_name>_ /etc/systemd/system/_<service_name>_`
+`ln -sf /lib/systemd/system/*<service_name>* /etc/systemd/system/*<service_name>*`
 
 ## systemd
 

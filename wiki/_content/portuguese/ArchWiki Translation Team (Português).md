@@ -40,7 +40,7 @@ Informações [aqui](https://dev.archlinux.org/~hugo/arch-i18n/) e [aqui](https:
 
 ## Wiki
 
-Você quer que alguma documentação do wiki internacional seja traduzida? Envie o link para _**documentacao@archlinux-br.org**_.
+Você quer que alguma documentação do wiki internacional seja traduzida? Envie o link para ***documentacao@archlinux-br.org***.
 
 **OBS: Favor colocar a URL do documento original.**
 

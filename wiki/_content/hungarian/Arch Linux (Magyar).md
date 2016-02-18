@@ -12,13 +12,13 @@ Az Arch Linux egy függetlenül fejlesztett, [i686](https://en.wikipedia.org/wik
 
 ## Történet
 
-	_Fő cikk: [Arch Linux története](/index.php/History_of_Arch_Linux "History of Arch Linux")_
+	*Fő cikk: [Arch Linux története](/index.php/History_of_Arch_Linux "History of Arch Linux")*
 
 Az Arch Linuxot Judd Vinet kanadai programozó alapította. Az első kiadása, az Arch Linux 0.1, 2002\. március 11-én jelent meg. Habár az Arch teljesen független, ihletet merít más disztribúciók egyszerűségéből, beleértve a [Slackware-t](http://slackware.com), a [CRUX-ot](http://www.crux.nu) és a [BSD-t](http://en.wikipedia.org/wiki/Berkeley_Software_Distribution). 2007-ben Judd Vinet elhagyta a projektvezetői státuszt egyéb érdekeltségek miatt, és Aaron Griffin amerikai programozó vette át, aki folytatta a projekt vezetését napjainkig.
 
 ## Egyszerűség
 
-[Az Arch Módszert](/index.php/The_Arch_Way_(Magyar) "The Arch Way (Magyar)") követve az Arch Linux könnyed, rugalmas, egyszerű, és célja, hogy nagyon UNIX-szerű legyen. Telepítés után egy, az i686/x86-64 architektúrákra fordított minimális környezetet (GUI nélkül) nyújt: a szükségtelen és felesleges csomagok kigyomlálása helyett a felhasználó megkapja a lehetőségét, hogy egy minimális alapról építkezzen bármiféle előzetesen kiválasztott alapértelmezés nélkül. Az Arch tervezési filozófiája és implementációja könnyedén lehetővé teszi, hogy kibővíthető és alakítható legyen bármilyen fajta rendszerré a minimalista konzolgéptől az elérhető leghatalmasabb és funkciókban gazdag asztali környezetig: _a felhasználó_ az, aki eldönti, mi lesz az ő Arch rendszere.
+[Az Arch Módszert](/index.php/The_Arch_Way_(Magyar) "The Arch Way (Magyar)") követve az Arch Linux könnyed, rugalmas, egyszerű, és célja, hogy nagyon UNIX-szerű legyen. Telepítés után egy, az i686/x86-64 architektúrákra fordított minimális környezetet (GUI nélkül) nyújt: a szükségtelen és felesleges csomagok kigyomlálása helyett a felhasználó megkapja a lehetőségét, hogy egy minimális alapról építkezzen bármiféle előzetesen kiválasztott alapértelmezés nélkül. Az Arch tervezési filozófiája és implementációja könnyedén lehetővé teszi, hogy kibővíthető és alakítható legyen bármilyen fajta rendszerré a minimalista konzolgéptől az elérhető leghatalmasabb és funkciókban gazdag asztali környezetig: *a felhasználó* az, aki eldönti, mi lesz az ő Arch rendszere.
 
 ## Korszerűség
 
@@ -28,13 +28,13 @@ Az Arch a GNU/Linux felhasználók számára elérhető funkciók sokaságát ta
 
 ## Szoftvercsomagolás
 
-Az Arch egy könnyen használható bináris [csomagkezelőre](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager"), a [pacmanra](/index.php/Pacman "Pacman") támaszkodik, ami lehetővé teszi az egész rendszer frissítését egyetlen paranccsal. A pacmant _C_ nyelven írták, és az alapjaitól könnyednek, egyszerűnek és nagyon gyorsnak tervezték. Az Arch biztosít egy ports-szerű rendszert, az [Arch Build Systemet](/index.php/Arch_Build_System "Arch Build System") is, hogy egyszerűvé tegye csomagok forrásból történő építését és telepítését, és szintén egyetlen paranccsal szinkronizálható. Akár az egész rendszer újraépíthető egyetlen paranccsal.
+Az Arch egy könnyen használható bináris [csomagkezelőre](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager"), a [pacmanra](/index.php/Pacman "Pacman") támaszkodik, ami lehetővé teszi az egész rendszer frissítését egyetlen paranccsal. A pacmant *C* nyelven írták, és az alapjaitól könnyednek, egyszerűnek és nagyon gyorsnak tervezték. Az Arch biztosít egy ports-szerű rendszert, az [Arch Build Systemet](/index.php/Arch_Build_System "Arch Build System") is, hogy egyszerűvé tegye csomagok forrásból történő építését és telepítését, és szintén egyetlen paranccsal szinkronizálható. Akár az egész rendszer újraépíthető egyetlen paranccsal.
 
-Az i686 és x86-64 architektúrák támogatásával az Arch [hivatalos tárolói](/index.php/Official_repositories "Official repositories") több ezer magas minőségű csomagot nyújtanak, hogy megfeleljenek a szoftverigényeknek. Ezen túlmenően az Arch ösztönzi a közösség növekedését és hozzájárulását az [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") felkínálásával, ami sok ezer, felhasználók által karbantartott PKGBUILD szkriptet tartalmaz telepíthető csomagok forrásból történő fordításához a _makepkg_ alkalmazás használatával. Szintén lehetséges, hogy a felhasználók egyszerűen építsék és tartsák karban saját egyéni tárolóikat.
+Az i686 és x86-64 architektúrák támogatásával az Arch [hivatalos tárolói](/index.php/Official_repositories "Official repositories") több ezer magas minőségű csomagot nyújtanak, hogy megfeleljenek a szoftverigényeknek. Ezen túlmenően az Arch ösztönzi a közösség növekedését és hozzájárulását az [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") felkínálásával, ami sok ezer, felhasználók által karbantartott PKGBUILD szkriptet tartalmaz telepíthető csomagok forrásból történő fordításához a *makepkg* alkalmazás használatával. Szintén lehetséges, hogy a felhasználók egyszerűen építsék és tartsák karban saját egyéni tárolóikat.
 
 ## Forrásintegritás
 
-Az Arch foltozás nélküli vanilla szoftvereket nyújt; a csomagokat a tiszta [upstream](https://en.wikipedia.org/wiki/upstream_(software_development) "wikipedia:upstream (software development)") forrásokból nyújtja, ahogy a szerző eredetileg szánta terjesztésre. Foltozás csak rendkívül kivételes esetben történik, hogy megakadályozzon erős töréseket, például verzióeltérések esetén, ami előfordulhat egy rolling release modellben.
+Az Arch foltozás nélküli vanilla szoftvereket nyújt; a csomagokat a tiszta [upstream](https://en.wikipedia.org/wiki/upstream_(software_development) forrásokból nyújtja, ahogy a szerző eredetileg szánta terjesztésre. Foltozás csak rendkívül kivételes esetben történik, hogy megakadályozzon erős töréseket, például verzióeltérések esetén, ami előfordulhat egy rolling release modellben.
 
 ## Közösség
 

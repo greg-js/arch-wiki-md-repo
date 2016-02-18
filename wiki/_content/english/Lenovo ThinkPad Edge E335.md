@@ -9,7 +9,7 @@ This laptop has no optical drives, so an alternate installation method is requir
 | Device | Works |
 | Video | Yes |
 | Ethernet | Yes |
-| Wireless (Broadcom BCM43228) | Yes (tested with _w_ driver) |
+| Wireless (Broadcom BCM43228) | Yes (tested with *w* driver) |
 | Audio | Yes (using [PulseAudio](/index.php/PulseAudio "PulseAudio")) |
 | Camera | Yes |
 | Card Reader | Yes |

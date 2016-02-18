@@ -47,7 +47,7 @@ Because of its daemon/client architecture, libvirt needs only be installed on th
 
 [Install](/index.php/Install "Install") the [libvirt](https://www.archlinux.org/packages/?name=libvirt) package, as well as at least one hypervisor:
 
-*   As of 2015-02-01, `libvirtd` **requires** [qemu](https://www.archlinux.org/packages/?name=qemu) to be installed on the system to start (see [FS#41888](https://bugs.archlinux.org/task/41888)). Fortunately, the [libvirt KVM/QEMU driver](http://libvirt.org/drvqemu.html) is the primary _libvirt_ driver and if [KVM is enabled](/index.php/QEMU#Enabling_KVM "QEMU"), fully virtualized, hardware accelerated guests will be available. See the [QEMU](/index.php/QEMU "QEMU") article for more informations.
+*   As of 2015-02-01, `libvirtd` **requires** [qemu](https://www.archlinux.org/packages/?name=qemu) to be installed on the system to start (see [FS#41888](https://bugs.archlinux.org/task/41888)). Fortunately, the [libvirt KVM/QEMU driver](http://libvirt.org/drvqemu.html) is the primary *libvirt* driver and if [KVM is enabled](/index.php/QEMU#Enabling_KVM "QEMU"), fully virtualized, hardware accelerated guests will be available. See the [QEMU](/index.php/QEMU "QEMU") article for more informations.
 
 *   Other virtualization backends include [LXC](/index.php/LXC "LXC"), [VirtualBox](/index.php/VirtualBox "VirtualBox") and [Xen](/index.php/Xen "Xen"). See their respective page for installation instructions.
 
@@ -67,7 +67,7 @@ For network connectivity, install:
 
 The client is the user interface that will be used to manage and access the virtual machines.
 
-*   _virsh_ is a command line program for managing and configuring domains; it is included in the [libvirt](https://www.archlinux.org/packages/?name=libvirt) package.
+*   *virsh* is a command line program for managing and configuring domains; it is included in the [libvirt](https://www.archlinux.org/packages/?name=libvirt) package.
 *   [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) is a graphical user interface for managing virtual machines.
 *   [virtviewer](https://www.archlinux.org/packages/?name=virtviewer) is a lightweight interface for interacting with the graphical display of virtualized guest OS.
 *   [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes) is a simple GNOME 3 application to access remote or virtual systems.
@@ -78,9 +78,9 @@ A list of libvirt-compatible software can be found [here](http://libvirt.org/app
 
 ## Configuration
 
-For _**system**_-level administration (i.e. global settings and image-_volume_ location), libvirt minimally requires [setting up authorization](#Set_up_authentication), and [starting the daemon](#Daemon).
+For ***system***-level administration (i.e. global settings and image-*volume* location), libvirt minimally requires [setting up authorization](#Set_up_authentication), and [starting the daemon](#Daemon).
 
-**Note:** For user-_**session**_ administration, daemon setup and configuration is _not_ required; authorization, however, is limited to local abilities; the front-end will launch a local instance of the **libvirtd** daemon.
+**Note:** For user-***session*** administration, daemon setup and configuration is *not* required; authorization, however, is limited to local abilities; the front-end will launch a local instance of the **libvirtd** daemon.
 
 ### Set up authentication
 
@@ -94,7 +94,7 @@ Because [libvirt](https://www.archlinux.org/packages/?name=libvirt) pulls [polki
 
 **Note:** A system reboot may be required before authenticating with `polkit` works correctly.
 
-The _libvirt_ daemon provides two [polkit actions](/index.php/Polkit#Actions "Polkit") in `/usr/share/polkit-1/actions/org.libvirt.unix.policy`:
+The *libvirt* daemon provides two [polkit actions](/index.php/Polkit#Actions "Polkit") in `/usr/share/polkit-1/actions/org.libvirt.unix.policy`:
 
 *   `org.libvirt.unix.manage` for full management access (RW daemon socket), and
 *   `org.libvirt.unix.monitor` for monitoring only access (read-only socket).
@@ -110,7 +110,6 @@ Arch defaults to consider anybody in the `wheel` group as an administrator: this
 As of libvirt 1.2.16 (commit:[[1]](http://libvirt.org/git/?p=libvirt.git;a=commit;h=e94979e901517af9fdde358d7b7c92cc055dd50c)), members of the `libvirt` group have passwordless access to the RW daemon socket by default. The easiest way to ensure your user has access is to ensure the libvirt group exists and they are a member of it. If you wish to change the group authorized to access the RW daemon socket to be the kvm group, create the following file:
 
  `/etc/polkit-1/rules.d/50-libvirt.rules` 
-
 ```
 /* Allow users in kvm group to manage the libvirt
 daemon without authentication */
@@ -123,16 +122,15 @@ polkit.addRule(function(action, subject) {
 
 ```
 
-Then [add yourself](/index.php/Users_and_groups#Other_examples_of_user_management "Users and groups") to the `kvm` group and relogin. Replace _kvm_ with any group of your preference just make sure it exists and that your user is a member of it (see [Users and groups](/index.php/Users_and_groups "Users and groups") for more information).
+Then [add yourself](/index.php/Users_and_groups#Other_examples_of_user_management "Users and groups") to the `kvm` group and relogin. Replace *kvm* with any group of your preference just make sure it exists and that your user is a member of it (see [Users and groups](/index.php/Users_and_groups "Users and groups") for more information).
 
 Do not forget to relogin for group changes to take effect.
 
 #### Authenticate with file-based permissions
 
-To define file-based permissions for users in the _libvirt_ group to manage virtual machines, uncomment and define:
+To define file-based permissions for users in the *libvirt* group to manage virtual machines, uncomment and define:
 
  `/etc/libvirt/libvirtd.conf` 
-
 ```
 #unix_sock_group = "libvirt"
 #unix_sock_ro_perms = "0777"  # set to 0770 to deny non-group libvirt users
@@ -150,12 +148,11 @@ While some guides mention changed permissions of certain libvirt directories to 
 
 ### Unencrypt TCP/IP sockets
 
-**Warning:** This method is used to help remote domain, connection speed for trusted networks. This is the least secure connection method. This should _only_ be used for testing or use over a secure, private, and trusted network. SASL is not enabled here, so all TCP traffic is _cleartext_. For real world _always_ use enable SASL.
+**Warning:** This method is used to help remote domain, connection speed for trusted networks. This is the least secure connection method. This should *only* be used for testing or use over a secure, private, and trusted network. SASL is not enabled here, so all TCP traffic is *cleartext*. For real world *always* use enable SASL.
 
 Edit `/etc/libvirt/libvirtd.conf`:
 
  `/etc/libvirt/libvirtd.conf` 
-
 ```
 listen_tls = 0
 listen_tcp = 1
@@ -169,14 +166,14 @@ It is also necessary to start the server in listening mode by editing `/etc/conf
 
 ## Test
 
-To test if libvirt is working properly on a _system_ level:
+To test if libvirt is working properly on a *system* level:
 
 ```
 $ virsh -c qemu:///system
 
 ```
 
-To test if libvirt is working properly for a user-_session_:
+To test if libvirt is working properly for a user-*session*:
 
 ```
 $ virsh -c qemu:///session
@@ -189,7 +186,7 @@ Libvirt management is done mostly with three tools: [virt-manager](https://www.a
 
 ### virsh
 
-The virsh program is for managing guest _domains_ (virtual machines) and works well for scripting, virtualization administration. Though most virsh commands require root privileges to run due to the communication channels used to talk to the hypervisor, typical management, creation, and running of domains (like that done with VirtualBox) can be done as a regular user.
+The virsh program is for managing guest *domains* (virtual machines) and works well for scripting, virtualization administration. Though most virsh commands require root privileges to run due to the communication channels used to talk to the hypervisor, typical management, creation, and running of domains (like that done with VirtualBox) can be done as a regular user.
 
 Virsh includes an interactive terminal that can be entered if no commands are passed (options are allowed though): `virsh`. The interactive terminal has support for tab completion.
 
@@ -216,9 +213,9 @@ $ virsh help [option*] or [group-keyword*]
 
 ### Storage pools
 
-A pool is a location where storage _volumes_ can be kept. What libvirt defines as _volumes_ others may define as "virtual disks" or "virtual machine images". Pool locations may be a directory, a network filesystem, or partition (this includes a [LVM](/index.php/LVM "LVM")). Pools can be toggled active or inactive and allocated for space.
+A pool is a location where storage *volumes* can be kept. What libvirt defines as *volumes* others may define as "virtual disks" or "virtual machine images". Pool locations may be a directory, a network filesystem, or partition (this includes a [LVM](/index.php/LVM "LVM")). Pools can be toggled active or inactive and allocated for space.
 
-On the _system_-level, `/var/lib/libvirt/images/` will be activated by default; on a user-_session_, `virt-manager` creates `$HOME/VirtualMachines`.
+On the *system*-level, `/var/lib/libvirt/images/` will be activated by default; on a user-*session*, `virt-manager` creates `$HOME/VirtualMachines`.
 
 Print active and inactive storage pools:
 
@@ -229,28 +226,28 @@ $ virsh pool-list --all
 
 #### Create a new pool using virsh
 
-If wanted to _add_ a storage pool, here are examples of the command form, adding a directory, and adding a LVM volume:
+If wanted to *add* a storage pool, here are examples of the command form, adding a directory, and adding a LVM volume:
 
 ```
 $ virsh pool-define-as name type [source-host] [source-path] [source-dev] [source-name] [<target>] [--source-format format]
-$ virsh pool-define-as _poolname_ dir - - - - /home/_username_/.local/libvirt/images
-$ virsh pool-define-as _poolname_ fs - -  _/dev/vg0/images_ - _mntpoint_
+$ virsh pool-define-as *poolname* dir - - - - /home/*username*/.local/libvirt/images
+$ virsh pool-define-as *poolname* fs - -  */dev/vg0/images* - *mntpoint*
 
 ```
 
 The above command defines the information for the pool, to build it:
 
 ```
-$ virsh pool-build     _poolname_
-$ virsh pool-start     _poolname_
-$ virsh pool-autostart _poolname_
+$ virsh pool-build     *poolname*
+$ virsh pool-start     *poolname*
+$ virsh pool-autostart *poolname*
 
 ```
 
 To remove it:
 
 ```
-$ virsh pool-undefine  _poolname_
+$ virsh pool-undefine  *poolname*
 
 ```
 
@@ -261,22 +258,22 @@ $ virsh pool-undefine  _poolname_
 
 #### Create a new pool using virt-manager
 
-First, connect to a hypervisor (e.g. QEMU/KVM _system_, or user-_session_). Then, right-click on a connection and select _Details_; select the _Storage_ tab, push the _+_ button on the lower-left, and follow the wizard.
+First, connect to a hypervisor (e.g. QEMU/KVM *system*, or user-*session*). Then, right-click on a connection and select *Details*; select the *Storage* tab, push the *+* button on the lower-left, and follow the wizard.
 
 ### Storage volumes
 
-Once the pool has been created, volumes can be created inside the pool. _If building a new domain (virtual machine), this step can be skipped as a volume can be created in the domain creation process._
+Once the pool has been created, volumes can be created inside the pool. *If building a new domain (virtual machine), this step can be skipped as a volume can be created in the domain creation process.*
 
 #### Create a new volume with virsh
 
 Create volume, list volumes, resize, and delete:
 
 ```
-$ virsh vol-create-as      _poolname_ _volumename_ 10GiB
-$ virsh vol-list           _poolname_
-$ virsh vol-resize  --pool _poolname_ _volumename_ 12GiB
-$ virsh vol-delete  --pool _poolname_ _volumename_
-$ virsh vol-dumpxml --pool _poolname_ _volumename_  # for details.
+$ virsh vol-create-as      *poolname* *volumename* 10GiB
+$ virsh vol-list           *poolname*
+$ virsh vol-resize  --pool *poolname* *volumename* 12GiB
+$ virsh vol-delete  --pool *poolname* *volumename*
+$ virsh vol-dumpxml --pool *poolname* *volumename*  # for details.
 
 ```
 
@@ -295,7 +292,7 @@ Then you can use this image as the base for your new domain and it will use the 
 
 ### Domains
 
-Virtual machines are called _domains_. If working from the command line, use `virsh` to list, create, pause, shutdown domains, etc. `virt-viewer` can be used to view domains started with `virsh`. Creation of domains is typically done either graphically with `virt-manager` or with `virt-install` (a command line program that is part of the [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) package).
+Virtual machines are called *domains*. If working from the command line, use `virsh` to list, create, pause, shutdown domains, etc. `virt-viewer` can be used to view domains started with `virsh`. Creation of domains is typically done either graphically with `virt-manager` or with `virt-install` (a command line program that is part of the [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) package).
 
 Creating a new domain typically involves using some installation media, such as an `.iso` from the storage pool or an optical drive.
 
@@ -360,7 +357,7 @@ $ virt-install \
 
 ```
 
-**Tip:** Run `osinfo-query --fields=name,version os` to get argument for `--os-variant`; this will help define some specifications for the domain. However, `--memory` and `--disk` will need to be entered; one can look within the appropriate `/usr/share/libosinfo/db/oses/_os_.xml` if needing these specifications. After installing, it will likely be preferable to install the [Spice Guest Tools](http://www.spice-space.org/download.html) that include the [VirtIO drivers](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Virtualization_Host_Configuration_and_Guest_Installation_Guide/form-Virtualization_Host_Configuration_and_Guest_Installation_Guide-Para_virtualized_drivers-Mounting_the_image_with_virt_manager.html). For a Windows VirtIO network driver there is also [virtio-win](https://aur.archlinux.org/packages/virtio-win/). These drivers are referenced by a `<model type='virtio' />` in the guest's `.xml` configuration section for the device. A bit more information can also be found on the [QEMU article](/index.php/QEMU#Preparing_a_Windows_guest "QEMU").
+**Tip:** Run `osinfo-query --fields=name,version os` to get argument for `--os-variant`; this will help define some specifications for the domain. However, `--memory` and `--disk` will need to be entered; one can look within the appropriate `/usr/share/libosinfo/db/oses/*os*.xml` if needing these specifications. After installing, it will likely be preferable to install the [Spice Guest Tools](http://www.spice-space.org/download.html) that include the [VirtIO drivers](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Virtualization_Host_Configuration_and_Guest_Installation_Guide/form-Virtualization_Host_Configuration_and_Guest_Installation_Guide-Para_virtualized_drivers-Mounting_the_image_with_virt_manager.html). For a Windows VirtIO network driver there is also [virtio-win](https://aur.archlinux.org/packages/virtio-win/). These drivers are referenced by a `<model type='virtio' />` in the guest's `.xml` configuration section for the device. A bit more information can also be found on the [QEMU article](/index.php/QEMU#Preparing_a_Windows_guest "QEMU").
 
 Import existing volume:
 
@@ -375,34 +372,34 @@ $ virt-install  \
 
 #### Create a new domain using virt-manager
 
-First, connect to the hypervisor (e.g. QEMU/KVM _system_ or user _session_), right click on a connection and select _New_, and follow the wizard.
+First, connect to the hypervisor (e.g. QEMU/KVM *system* or user *session*), right click on a connection and select *New*, and follow the wizard.
 
-*   On the _fourth step_, de-selecting _Allocate entire disk now_ will make setup quicker and can save disk space in the interum; _however_, it may cause volume fragmentation over time.
-*   On the _fifth step_, open _Advanced options_ and make sure that _Virt Type_ is set to _kvm_ (this is usually the preferred method). If additional hardware setup is required, select the _Customize configuration before install_ option.
+*   On the *fourth step*, de-selecting *Allocate entire disk now* will make setup quicker and can save disk space in the interum; *however*, it may cause volume fragmentation over time.
+*   On the *fifth step*, open *Advanced options* and make sure that *Virt Type* is set to *kvm* (this is usually the preferred method). If additional hardware setup is required, select the *Customize configuration before install* option.
 
 #### Manage a domain
 
 Start a domain:
 
 ```
-$ virsh start _domain_
-$ virt-viewer --connect qemu:///session _domain_
+$ virsh start *domain*
+$ virt-viewer --connect qemu:///session *domain*
 
 ```
 
 Gracefully attempt to shutdown a domain; force off a domain:
 
 ```
-$ virsh shutdown _domain_
-$ virsh destroy  _domain_
+$ virsh shutdown *domain*
+$ virsh destroy  *domain*
 
 ```
 
 Autostart domain on libvirtd start:
 
 ```
-$ virsh autostart _domain_
-$ virsh autostart _domain_ --disable
+$ virsh autostart *domain*
+$ virsh autostart *domain* --disable
 
 ```
 
@@ -413,7 +410,7 @@ Shutdown domain on host shutdown:
 Edit a domain's XML configuration:
 
 ```
-$ virsh edit _domain_
+$ virsh edit *domain*
 
 ```
 
@@ -423,12 +420,12 @@ $ virsh edit _domain_
 
 A [decent overview of libvirt networking](https://jamielinux.com/docs/libvirt-networking-handbook/).
 
-By default, when the `libvird` systemd service is started, a NAT bridge is created called _default_ to allow external network connectivity (warning see: [#"default" network bug](#.22default.22_network_bug)). For other network connectivity needs, four network types exist that can be created to connect a domain to:
+By default, when the `libvird` systemd service is started, a NAT bridge is created called *default* to allow external network connectivity (warning see: [#"default" network bug](#.22default.22_network_bug)). For other network connectivity needs, four network types exist that can be created to connect a domain to:
 
-*   bridge — a virtual device; shares data directly with a physical interface. Use this if the host has _static_ networking, it does not need to connect other domains, the domain requires full inbound and outbound trafficing, and the domain is running on a _system_-level. See [Network bridge](/index.php/Network_bridge "Network bridge") on how to add a bridge additional to the default one. After creation, it needs to be specified in the respective guest's `.xml` configuration file.
-*   network — a virtual network; has ability to share with other domains. Use a virtual network if the host has _dynamic_ networking (e.g. NetworkManager), or using wireless.
+*   bridge — a virtual device; shares data directly with a physical interface. Use this if the host has *static* networking, it does not need to connect other domains, the domain requires full inbound and outbound trafficing, and the domain is running on a *system*-level. See [Network bridge](/index.php/Network_bridge "Network bridge") on how to add a bridge additional to the default one. After creation, it needs to be specified in the respective guest's `.xml` configuration file.
+*   network — a virtual network; has ability to share with other domains. Use a virtual network if the host has *dynamic* networking (e.g. NetworkManager), or using wireless.
 *   macvtap — connect directly to a host physical interface.
-*   user — local ability networking. Use this only for a user _session_.
+*   user — local ability networking. Use this only for a user *session*.
 
 `virsh` has the ability to create networking with numerous options for most users, however, it is easier to create network connectivity with a graphic user interface (like `virt-manager`), or to do so on [creation with virt-install](#Create_a_new_domain_using_virt-install).
 
@@ -446,8 +443,7 @@ Once a snapshot is taken it is saved as a new block device and the original snap
 
 Print a running domain's volumes (running domains can be printed with `virsh list`):
 
- `# virsh domblklist _domain_` 
-
+ `# virsh domblklist *domain*` 
 ```
  Target     Source
  ------------------------------------------------
@@ -458,7 +454,6 @@ Print a running domain's volumes (running domains can be printed with `virsh lis
 To see a volume's physical properties:
 
  `# qemu-img info /vms/domain.img` 
-
 ```
  image: /vms/domain.img
  file format: qcow2
@@ -471,14 +466,13 @@ To see a volume's physical properties:
 Create a disk-only snapshot (the option `--atomic` will prevent the volume from being modified if snapshot creation fails):
 
 ```
-# virsh snapshot-create-as _domain_ snapshot1 --disk-only --atomic
+# virsh snapshot-create-as *domain* snapshot1 --disk-only --atomic
 
 ```
 
 List snapshots:
 
- `# virsh snapshot-list _domain_` 
-
+ `# virsh snapshot-list *domain*` 
 ```
  Name                 Creation Time             State
  ------------------------------------------------------------
@@ -489,7 +483,7 @@ List snapshots:
 One can they copy the original image with `cp --sparse=true` or `rsync -S` and then merge the the original back into snapshot:
 
 ```
-# virsh blockpull --domain _domain_ --path /vms/_domain_.snapshot1
+# virsh blockpull --domain *domain* --path /vms/*domain*.snapshot1
 
 ```
 
@@ -509,22 +503,22 @@ xen:///
 Connect to the QEMU hypervisor over SSH; and the same with logging:
 
 ```
-$ virsh --connect qemu+ssh://_username_@_host_/system
-$ LIBVIRT_DEBUG=1 virsh --connect qemu+ssh://_username_@_host_/system
+$ virsh --connect qemu+ssh://*username*@*host*/system
+$ LIBVIRT_DEBUG=1 virsh --connect qemu+ssh://*username*@*host*/system
 
 ```
 
 Connect a graphic console over SSH:
 
 ```
-$ virt-viewer  --connect qemu+ssh://_username_@_host_/system _domain_
-$ virt-manager --connect qemu+ssh://_username_@_host_/system _domain_
+$ virt-viewer  --connect qemu+ssh://*username*@*host*/system *domain*
+$ virt-manager --connect qemu+ssh://*username*@*host*/system *domain*
 
 ```
 
 **Note:** If you are having problems connecting to a remote RHEL server (or anything other than Arch, really), try the two workarounds mentioned in [FS#30748](https://bugs.archlinux.org/task/30748) and [FS#22068](https://bugs.archlinux.org/task/22068).
 
-Connect to the VirtualBox hypervisor (_VirtualBox support in libvirt is not stable yet and may cause libvirtd to crash_):
+Connect to the VirtualBox hypervisor (*VirtualBox support in libvirt is not stable yet and may cause libvirtd to crash*):
 
 ```
 $ virsh --connect vbox:///system
@@ -543,7 +537,7 @@ $ virsh -c qemu:///system net-dumpxml default
 
 The [libvirt-python](https://www.archlinux.org/packages/?name=libvirt-python) package provides a [python2](https://www.archlinux.org/packages/?name=python2) API in `/usr/lib/python2.7/site-packages/libvirt.py`.
 
-General examples are given in `/usr/share/doc/libvirt-python-_your_libvirt_version_/examples/`
+General examples are given in `/usr/share/doc/libvirt-python-*your_libvirt_version*/examples/`
 
 Unofficial example using [qemu](https://www.archlinux.org/packages/?name=qemu) and [openssh](https://www.archlinux.org/packages/?name=openssh):
 

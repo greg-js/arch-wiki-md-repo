@@ -62,7 +62,6 @@ I/O Exception: [http://java.net/download/glassgish/3.0.1/release/glassfish-3.0.1
 إذا حصلت على رسالة كالرسالة التالية عندما تقوم بتشغيل NetBeans من الطرفية :
 
  `# netbeans -h` 
-
 ```
  Exception in thread "main" java.lang.UnsatisfiedLinkError: /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libsplashscreen.so: libgif.so.4: cannot open shared object file: No such file or directory
 

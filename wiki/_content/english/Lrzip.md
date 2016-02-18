@@ -21,7 +21,7 @@ From the project [web page](http://ck.kolivas.org/apps/lrzip/):
 
 ### Compression
 
-Compression of directories (recursive) requires _lrztar_, which first tars the directory, then compresses the single file just like _tar_ does when users compress with _gzip_ or _xz_ (`tar zcf ...` and `tar Jcz ...`, respectively).
+Compression of directories (recursive) requires *lrztar*, which first tars the directory, then compresses the single file just like *tar* does when users compress with *gzip* or *xz* (`tar zcf ...` and `tar Jcz ...`, respectively).
 
 This will produce an [LZMA](https://en.wikipedia.org/wiki/LZMA "wikipedia:LZMA") compressed archive `foo.tar.lrz` from a directory named `foo`:
 
@@ -81,7 +81,7 @@ Lrzip uses an extended version of [rzip](https://en.wikipedia.org/wiki/rzip "wik
 
 The major disadvantages are:
 
-1.  The main _lrzip_ application only works on single files, so it requires the _lrztar_ wrapper to fake a complete archiver.
+1.  The main *lrzip* application only works on single files, so it requires the *lrztar* wrapper to fake a complete archiver.
 2.  It requires a lot of memory to get the best performance out of (as much memory as the size of the data to compress; but see the sliding mmap below), and is not really usable (for compression) with less than 256MB. Decompression requires less ram and works on smaller ram machines. Sometimes swap may need to be enabled on these lower ram machines for the operating system to be happy.
 3.  STDIN/STDOUT works fine on both compression and decompression, but larger files compressed in this manner will end up being less efficiently compressed.
 

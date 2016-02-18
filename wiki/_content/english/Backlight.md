@@ -44,7 +44,6 @@ The brightness of the screen backlight is adjusted by setting the power level of
 The name of the folder depends on the graphics card model.
 
  `# ls /sys/class/backlight/` 
-
 ```
 acpi_video0
 
@@ -55,7 +54,6 @@ In this case, the backlight is managed by an ATI graphics card. In the case of a
 The directory contains the following files and folders:
 
  `# ls /sys/class/backlight/acpi_video0/` 
-
 ```
 actual_brightness  brightness         max_brightness     subsystem/    uevent             
 bl_power           device/            power/             type
@@ -65,7 +63,6 @@ bl_power           device/            power/             type
 The maximum brightness can be found by reading from `max_brightness`, which is often 15.
 
  `# cat /sys/class/backlight/acpi_video0/max_brightness` 
-
 ```
 15
 
@@ -99,7 +96,6 @@ acpi_backlight=none
 If the ACPI interface is available, the backlight level can be set at boot using a udev rule:
 
  `/etc/udev/rules.d/81-backlight.rules` 
-
 ```
 # Set backlight level to 8
 SUBSYSTEM=="backlight", ACTION=="add", KERNEL=="acpi_video0", ATTR{brightness}="8"
@@ -138,7 +134,7 @@ For example, this can be put to use when closing the notebook lid as outlined in
 
 The [systemd](/index.php/Systemd "Systemd") package includes the service `systemd-backlight@.service`, which is enabled by default and "static". It saves the backlight brightness level at shutdown and restores it at boot. The service uses the ACPI method described in [#ACPI](#ACPI), generating services for each folder found in `/sys/class/backlight/`. For example, if there is a folder named `acpi_video0`, it generates a service called `systemd-backlight@backlight:acpi_video0.service`. When using other methods of setting the backlight at boot, it is recommended to [mask](/index.php/Mask "Mask") the service `systemd-backlight@.service`.
 
-Some laptops have multiple video cards (e.g. Optimus) and the backlight restoration fails. Try [masking](/index.php/Systemd#Using_units "Systemd") an _instance_ of the service, e.g. `systemd-backlight@backlight\:acpi_video1` for `acpi_video1`.
+Some laptops have multiple video cards (e.g. Optimus) and the backlight restoration fails. Try [masking](/index.php/Systemd#Using_units "Systemd") an *instance* of the service, e.g. `systemd-backlight@backlight\:acpi_video1` for `acpi_video1`.
 
 From the systemd-backlight@.service man page:
 
@@ -185,7 +181,6 @@ $ xgamma -rgamma 1 -ggamma 1 -bgamma 1
 If you get the "No outputs have backlight property" error, it is because xrandr/xbacklight does not choose the right directory in `/sys/class/backlight`. You can specify the directory by setting the `Backlight` option of the device section in xorg.conf. For instance, if the name of the directory is `intel_backlight`, the device section can be configured as follows:
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "Device"
     Identifier  "Card0"
@@ -200,7 +195,7 @@ See [FS#27677](https://bugs.archlinux.org/task/27677) and [[1]](https://bugs.deb
 
 ### light
 
-Light is the successor and C-port of _LightScript_.
+Light is the successor and C-port of *LightScript*.
 
 [Install](/index.php/Install "Install") [light](https://aur.archlinux.org/packages/light/) for the latest tagged version, or [light-git](https://aur.archlinux.org/packages/light-git/) for the latest development version. Patches are frequently committed to the git repository so it is recommended to use the [light-git](https://aur.archlinux.org/packages/light-git/) package.
 
@@ -208,7 +203,7 @@ See the [GitHub page](http://haikarainen.github.io/light/) for more information.
 
 ### relight
 
-[relight](http://xyne.archlinux.ca/projects/relight) is available in [Xyne's repos](http://xyne.archlinux.ca/repos) and as package [relight](https://aur.archlinux.org/packages/relight/) in the [AUR](/index.php/AUR "AUR"). The package provides `relight.service`, a [systemd](/index.php/Systemd "Systemd") service to automatically restore previous backlight settings during reboot along using the ACPI method explained above, and _relight-menu_, a dialog-based menu for selecting and configuring backlights for different screens.
+[relight](http://xyne.archlinux.ca/projects/relight) is available in [Xyne's repos](http://xyne.archlinux.ca/repos) and as package [relight](https://aur.archlinux.org/packages/relight/) in the [AUR](/index.php/AUR "AUR"). The package provides `relight.service`, a [systemd](/index.php/Systemd "Systemd") service to automatically restore previous backlight settings during reboot along using the ACPI method explained above, and *relight-menu*, a dialog-based menu for selecting and configuring backlights for different screens.
 
 ### setpci (use with great care)
 
@@ -240,7 +235,7 @@ Macbook-inspired [brightd](https://aur.archlinux.org/packages/brightd/) automati
 
 ### xcalib
 
-**Note:** _xcalib_ does _not_ change the backlight power, it just modifies the video LUT table: this means that your battery life will be unaffected by the change. Nevertheless, it could be useful when no backlight control is available (Desktop PCs). Use `xcalib -clear` to reset the LUT.
+**Note:** *xcalib* does *not* change the backlight power, it just modifies the video LUT table: this means that your battery life will be unaffected by the change. Nevertheless, it could be useful when no backlight control is available (Desktop PCs). Use `xcalib -clear` to reset the LUT.
 
 The package [xcalib](https://aur.archlinux.org/packages/xcalib/) ([upstream URL](http://xcalib.sourceforge.net/)) is available in the [AUR](/index.php/AUR "AUR") and can be used to dim the screen. A demonstration video is available on [YouTube](https://www.youtube.com/watch?v=A9xsvntT6i4). This program can correct gamma, invert colors, and reduce contrast, the latter of which we use in this case. For example, to dim down:
 
@@ -255,7 +250,7 @@ This program uses ICC technology to interact with X11 and while the screen is di
 
 Xflux is the [f.lux](http://justgetflux.com) port for the X-Windows system. It fluctuates your screen between blue during the day and yellow or orange at night. This helps you adapt to the time of day and stop staying up late because of your bright computer screen.
 
-Various packages exist in the AUR that use _f.lux_.[[2]](https://aur.archlinux.org/packages/?O=0&K=xflux) The "main" package is [xflux](https://aur.archlinux.org/packages/xflux/) which handles the command line functionality of _f.lux_. Various daemons exist to handle the automatic startup of the xflux package.
+Various packages exist in the AUR that use *f.lux*.[[2]](https://aur.archlinux.org/packages/?O=0&K=xflux) The "main" package is [xflux](https://aur.archlinux.org/packages/xflux/) which handles the command line functionality of *f.lux*. Various daemons exist to handle the automatic startup of the xflux package.
 
 ### redshift
 
@@ -292,7 +287,6 @@ If you have an Intel i915 GPU, then it may be possible to adjust PWM modulation 
 Install [intel-gpu-tools](https://www.archlinux.org/packages/?name=intel-gpu-tools) from the official repositories. Get value of the register, that determines PWM modulation frequency
 
  `# intel_reg_read 0xC8254` 
-
 ```
 0xC8254 : 0x12281228
 
@@ -337,7 +331,6 @@ A workaround is to use the inotify kernel api to trigger `xbacklight` each time 
 First [install](/index.php/Install "Install") [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools). Then create a script around inotify that will be launched upon each boot or through [autostart](/index.php/Autostart "Autostart").
 
  `/usr/local/bin/xbacklightmon` 
-
 ```
 #!/bin/bash
 max=/sys/class/backlight/acpi_video0/max_brightness

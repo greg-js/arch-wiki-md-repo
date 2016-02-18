@@ -29,7 +29,8 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [5.7 NetBeans](#NetBeans)
     *   [5.8 Gimp 2.8](#Gimp_2.8)
     *   [5.9 VLC](#VLC)
-    *   [5.10 Unsupported applications](#Unsupported_applications)
+    *   [5.10 Steam](#Steam)
+    *   [5.11 Unsupported applications](#Unsupported_applications)
 *   [6 Multiple displays](#Multiple_displays)
 *   [7 Linux console](#Linux_console)
 *   [8 See also](#See_also)
@@ -109,7 +110,7 @@ For E18, go to the E Setting panel. In Look → Scaling, you can control the UI 
 
 Some programs use the DPI given by the X server. Examples are i3 ([source](https://github.com/i3/i3/blob/next/libi3/dpi.c)) and Chromium ([source](https://code.google.com/p/chromium/codesearch#chromium/src/ui/views/widget/desktop_aura/desktop_screen_x11.cc)).
 
-To verify that the X Server has properly detected the physical dimensions of your monitor, use the _xdpyinfo_ utility from the [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo) package:
+To verify that the X Server has properly detected the physical dimensions of your monitor, use the *xdpyinfo* utility from the [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo) package:
 
 ```
 $ xdpyinfo | grep -B 2 resolution
@@ -128,7 +129,6 @@ If the DPI displayed by xdpyinfo is not correct, see [Xorg#Display size and DPI]
 If you are not using a desktop environment such as GNOME, KDE, Xfce, or other that manipulates the X settings for you, you can set the desired DPI setting manually via the `Xft.dpi` variable in `~/.Xresources`:
 
  `~/.Xresources` 
-
 ```
 Xft.dpi: 180
 Xft.autohint: 0
@@ -233,20 +233,11 @@ $ spotify --force-device-scale-factor=1.5
 
 ### IntelliJ IDEA
 
-If HiDPI support does not work, you have to add `-Dhidpi=true` to your vmoptions file.[[3]](https://youtrack.jetbrains.com/issue/IDEA-114944)
+IntelliJ IDEA 15 and above should include HiDPI support.[[3]](http://blog.jetbrains.com/idea/2015/07/intellij-idea-15-eap-comes-with-true-hidpi-support-for-windows-and-linux/) If it does not work, the most convenient way to fix the problem in this case seems to be changing the Override Default Fonts setting:
 
-```
-/usr/share/intellij-idea-ultimate-edition/bin/idea.vmoptions
-/usr/share/intellij-idea-ultimate-edition/bin/idea64.vmoptions
+	*File -> Settings -> Behaviour & Appearance -> Appearance*
 
-```
-
-Alternatively, you can add them to your `.vmoptions` file under your `$HOME` directory.
-
-```
-echo -Dhidpi=true >> $HOME/.IdeaIC14/idea64.vmoptions
-
-```
+The addition of `-Dhidpi=true` to the vmoptions file in either `$HOME/.IdeaC14/` or `/usr/share/intelligj-idea-ultimate-edition/bin/` of [release 14](https://youtrack.jetbrains.com/issue/IDEA-114944) should not be required anymore.
 
 ### NetBeans
 
@@ -263,6 +254,12 @@ Use a high DPI theme, or [adjust](http://gimpforums.com/thread-increase-all-icon
 ### VLC
 
 As of May 2015, the git version [vlc-git](https://aur.archlinux.org/packages/vlc-git/) seems to solve some of the problems.
+
+### Steam
+
+The "HiDPI-Steam-Skin" [[5]](https://github.com/MoriTanosuke/HiDPI-Steam-Skin) can be installed to increase the font size of the interface. While not perfect, it does improve usability.
+
+Note: The skin must be downloaded to `~/.local/share/Steam/skins`, not `~/.steam/skins/` as the README says.
 
 ### Unsupported applications
 

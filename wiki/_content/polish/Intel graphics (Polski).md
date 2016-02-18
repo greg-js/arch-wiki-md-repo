@@ -1,5 +1,5 @@
 | **Streszczenie**  |
-| Informacje dotyczące kart graficznych Intela i sterownika graficznego _intel_. |
+| Informacje dotyczące kart graficznych Intela i sterownika graficznego *intel*. |
 | **Powiązane artykuły** |
 | [ATI_(Polski)](/index.php/ATI_(Polski) "ATI (Polski)") |
 | [NVIDIA_(Polski)](/index.php?title=NVIDIA_(Polski)&action=edit&redlink=1 "NVIDIA (Polski) (page does not exist)") |
@@ -197,7 +197,6 @@ Nie jest to spowodowane niską wydajnością. System graficzny używa synchroniz
 Innym sposobem jest ustawienie `vblank_mode` na `0` w pliku `~/.drirc` i upewnienie się, że `driver` jest ustawiony na `dri2`:
 
  `~/.drirc` 
-
 ```
 <device screen="0" driver="dri2">
     <application name="Default">
@@ -235,7 +234,6 @@ Znany jest problem z [chipsetem i845G](https://bugs.freedesktop.org/show_bug.cgi
 Jeśli masz problem z wyłączaniem/zawieszaniem się X lub problemy z GPU, rozwiązaniem może być zablokowanie korzystania z GPU korzystając z opcji "NoAccel":
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
  Section "Device"
     Identifier "old intel stuff"

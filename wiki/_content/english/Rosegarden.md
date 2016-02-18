@@ -32,7 +32,6 @@ which will get the configuration files from the development branch of the source
 Keyboard shortcuts can then be set or modified by editing the appropriate file in `~/.local/share/rosegarden/rc`. For example, in order to map the `Space` bar to play/pause, edit the following lines of `rosegardenmainwindow.rc`
 
  `~/.local/share/rosegarden/rc/rosegardenmainwindow.rc` 
-
 ```
 <Action name="play" text="&Play" icon="transport-play" shortcut="Ctrl+Enter, Enter, Media Play, Ctrl+Return, Space" shortcut-context="application" />
 <Action name="recordtoggle" text="P&unch in Record" icon="transport-record" shortcut="" shortcut-context="application" />

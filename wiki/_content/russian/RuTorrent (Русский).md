@@ -22,7 +22,7 @@
 
 Установите и настройте Apache с PHP в соответствии с [LAMP](/index.php/LAMP_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LAMP (Русский)")
 
-*   Отредактируйте значение _open_basedir_ в /etc/php/php.ini включив:
+*   Отредактируйте значение *open_basedir* в /etc/php/php.ini включив:
 
 ```
 /etc/webapps/rutorrent/conf/:/usr/share/webapps/rutorrent/php/:/usr/share/webapps/rutorrent/
@@ -72,13 +72,13 @@ SCGIMount /RPC2 127.0.0.1:5000
 
 ```
 
-**Обратите внимание:** Также пример конфигурации _httpd.conf_ можно взять в `/etc/webapps/rutorrent/apache.example.conf`, а для виртуального хоста _extra/httpd-vhosts.conf_ в `/etc/webapps/rutorrent/apache.example.site.conf`
+**Обратите внимание:** Также пример конфигурации *httpd.conf* можно взять в `/etc/webapps/rutorrent/apache.example.conf`, а для виртуального хоста *extra/httpd-vhosts.conf* в `/etc/webapps/rutorrent/apache.example.site.conf`
 
 **Обратите внимание:** Вы должны включить аутентификацию средствами Apache, если ваш сайт является открытым.
 
 ### Nginx
 
-*   Отредактируйте значение _open_basedir_ в /etc/php/php.ini включив:
+*   Отредактируйте значение *open_basedir* в /etc/php/php.ini включив:
 
 ```
 /etc/webapps/rutorrent/conf/:/usr/share/webapps/rutorrent/php/:/usr/share/webapps/rutorrent/

@@ -58,7 +58,7 @@
 
 ## 安装
 
-Emacs有众多变体发行版本(有时候称作_emacsen_). 最常见的莫过于 [GNU Emacs](http://www.gnu.org/software/emacs/)，在[Official repositories](/index.php/Official_repositories "Official repositories")可以找到
+Emacs有众多变体发行版本(有时候称作*emacsen*). 最常见的莫过于 [GNU Emacs](http://www.gnu.org/software/emacs/)，在[Official repositories](/index.php/Official_repositories "Official repositories")可以找到
 
 ```
 $ pacman -S emacs
@@ -72,7 +72,6 @@ $ pacman -S emacs
 如果你想体验Emacs的所有扩展功能而不用装一堆依赖的话，你可以使用PKGBUILD来按你的需求定制Emacs。不使用`gtk3`可以让Emacs避免使用gconf。图像和声音的支持也可以去除。在Emacs的源代码目录下运行`./configure --help`可以看看有哪些配置选项。
 
  `PKGBUILD` 
-
 ```
 # ...
   ./configure --prefix=/usr --sysconfdir=/etc --libexecdir=/usr/lib \
@@ -88,7 +87,7 @@ $ pacman -S emacs
 
 一般印象是Emacs十分复杂，学习曲线陡峭，但很多资深学习者并不这样认为，反而认为其非常易懂和可定制。因为其源码和配置文件语义化程度较高。简单了解下自定义和高扩展带来的好处花不了多少时间。何况还有很多成熟的功能拓展模块，很方便添加，可以让Emacs为任何文本编辑的需求配置强大的环境。
 
-Emacs自带一个入门教程，你可以点击欢迎界面上的第一个链接来打开它; 或者从菜单栏中选择_Help->Emacs Tutorial_，或者按'F1'键然后按't'. 我们设计这篇文章来为你在Emacs入门学习中提供额外的资源。
+Emacs自带一个入门教程，你可以点击欢迎界面上的第一个链接来打开它; 或者从菜单栏中选择*Help->Emacs Tutorial*，或者按'F1'键然后按't'. 我们设计这篇文章来为你在Emacs入门学习中提供额外的资源。
 
 Emacs也包括一系列引用链接，既有适合初学者的内容，也有骨灰级玩家所喜爱的．参见`/usr/share/emacs/<version>/etc/refcards/` (将<version>换成你的emacs版本).
 
@@ -187,7 +186,7 @@ $ Exec=emacsclient -c
 
 Emacs使用一些刚开始看起来很奇怪的术语和约定，我们会在合适的时候介绍。但是，对于部分术语，我们必须要在前面介绍，因为它们对于使用Emacs来说是非常基础的。
 
-第一个要介绍的术语是_缓冲区_的概念。一个缓冲区就是Emacs中的数据的一种表示方式，比如，当使用Emacs打开一个文件时，这个文件从磁盘中被读出来，它的内容被存储在了缓冲区里面，它的内容可以在这个缓冲区里面被编辑并且可以重新写进磁盘中。缓冲区中的内容不仅仅可以是文本，也可以是图片和widget。现在，让缓冲区可以显示应用程序的工作正在进行！换个角度思考，在磁盘中数据是以文件形式保存的，而在Emacs中，数据是以缓冲区的形式存在的。
+第一个要介绍的术语是*缓冲区*的概念。一个缓冲区就是Emacs中的数据的一种表示方式，比如，当使用Emacs打开一个文件时，这个文件从磁盘中被读出来，它的内容被存储在了缓冲区里面，它的内容可以在这个缓冲区里面被编辑并且可以重新写进磁盘中。缓冲区中的内容不仅仅可以是文本，也可以是图片和widget。现在，让缓冲区可以显示应用程序的工作正在进行！换个角度思考，在磁盘中数据是以文件形式保存的，而在Emacs中，数据是以缓冲区的形式存在的。
 
 在Emacs中，对于按键组合的约定你可能很陌生。比如:
 
@@ -201,13 +200,13 @@ Emacs使用一些刚开始看起来很奇怪的术语和约定，我们会在合
 
 ### 移动
 
-光标移动和其它图形编辑器非常类似，鼠标和方向键可以用来改变光标（在Emacs中称为_点_）的位置。在Emacs中，方向键代表的标准移动命令也有其它辅助的绑定。向前(forward)移动一个字符，使用 **C-f**，向后(back)移动一个字符，使用**C-b**。 **C-n** 和 **C-p** 分别用于移动到下(next)一行和移动到上(previous)一行。再声明一下，强烈推荐使用组合键而不是使用方向键和鼠标。
+光标移动和其它图形编辑器非常类似，鼠标和方向键可以用来改变光标（在Emacs中称为*点*）的位置。在Emacs中，方向键代表的标准移动命令也有其它辅助的绑定。向前(forward)移动一个字符，使用 **C-f**，向后(back)移动一个字符，使用**C-b**。 **C-n** 和 **C-p** 分别用于移动到下(next)一行和移动到上(previous)一行。再声明一下，强烈推荐使用组合键而不是使用方向键和鼠标。
 
 可以想像，Emacs提供了更多的光标高级移动命令，包括移动一个单词和一个句子。 **M-f** 表示光标向前移动一个单词， **M-b** 表示向后移动一个单词。类似地，**M-e** 把光标移动到一个句子的末尾(end)， **M-a** 移动到句子的开头。
 
 直到现在，所有的移动命令都是和光标有关的。**M-<** 表示把光标移动到缓冲区的开头，和它相反的是 **M->**, 把光标移动到缓冲区的末尾。要把光标移动到某一特定行，使用**M-g g**. **M-g g** 会提示输入行号。同样，要移动到一行的开头或者结尾，分别使用**C-a** 和 **C-e**。
 
-**Note:** 这些命令（实际上是全部命令）的绑定，在不同的模式(mode)中，_稍微_会有不同。然而，覆盖的命令提供不同的功能这种情况很少见。更多信息请看[Modes](/index.php/Emacs#Modes "Emacs")。
+**Note:** 这些命令（实际上是全部命令）的绑定，在不同的模式(mode)中，*稍微*会有不同。然而，覆盖的命令提供不同的功能这种情况很少见。更多信息请看[Modes](/index.php/Emacs#Modes "Emacs")。
 
 ### 文件和缓冲区
 
@@ -215,7 +214,7 @@ Emacs 提供了一系列命令来对文件操作，其中最常用的会在这�
 
 **Note:** 如果指向某个文件的缓冲区还在打开的话，**C-x C-f** 是不会重新从磁盘中读取文件的。要从磁盘中重新读取文件，先使用**C-x k**关掉缓冲区，再使用**C-x C-f**打开文件，或者使用**M-x revert-buffer**.
 
-很多互动的命令，比如"find-file" 或者 "write-file" 会在Emacs窗口的底部栏提示输入。这栏称为_minibuffer_。和很多*nix shell一样，minibuffer支持很多基本的操作和TAB补全。按两下**<TAB>**可以显示一个补全的选项列表，并且，如果你喜欢，可以用鼠标从列表中选择。minibuffer的补全在很多输入（包括命令和文件名）中都可以用。
+很多互动的命令，比如"find-file" 或者 "write-file" 会在Emacs窗口的底部栏提示输入。这栏称为*minibuffer*。和很多*nix shell一样，minibuffer支持很多基本的操作和TAB补全。按两下**<TAB>**可以显示一个补全的选项列表，并且，如果你喜欢，可以用鼠标从列表中选择。minibuffer的补全在很多输入（包括命令和文件名）中都可以用。
 
 minibuffer也提供一个记住历史的特性。通过**Up Arrow** 或者 **C-p**可以取得这条命令的上一个条目.
 
@@ -229,9 +228,9 @@ minibuffer也提供一个记住历史的特性。通过**Up Arrow** 或者 **C-p
 
 ### 编辑
 
-Emacs 内建有很多编辑命令。可能最重要的还没有介绍的是'undo'，它的快捷键为 _C-__ 或者 _C-/_ .移动光标的命令通常都有对应的删除字符的命令。例如， **M-<backspace>** 可以用来删除一个光标后的词，**M-d**可以用来删除光标前面的一个词。删除光标至行尾或者句尾的字符可以分别用**C-k** 或者 **M-k**。
+Emacs 内建有很多编辑命令。可能最重要的还没有介绍的是'undo'，它的快捷键为 *C-_* 或者 *C-/* .移动光标的命令通常都有对应的删除字符的命令。例如， **M-<backspace>** 可以用来删除一个光标后的词，**M-d**可以用来删除光标前面的一个词。删除光标至行尾或者句尾的字符可以分别用**C-k** 或者 **M-k**。
 
-通常我们都约定一行不能超过80个字符。这是为了代码的可读性，尤其是一行中的字符可能会接触到窗口边缘。在Emacs，自动地插入或者删除换行符称为_filling_。我们可以用 **M-q** 重整当前的段落（重新分配换行符，删除段落中多余的空格和tab键）
+通常我们都约定一行不能超过80个字符。这是为了代码的可读性，尤其是一行中的字符可能会接触到窗口边缘。在Emacs，自动地插入或者删除换行符称为*filling*。我们可以用 **M-q** 重整当前的段落（重新分配换行符，删除段落中多余的空格和tab键）
 
 字符和单词可以分别通过 **C-t** 和 **M-t** 进行交换。比如： `Hello World!` → `World! Hello`
 
@@ -239,9 +238,9 @@ Emacs 内建有很多编辑命令。可能最重要的还没有介绍的是'undo
 
 ### 移除，召回和区域
 
-一个_区域_（region)是指在两个位置之间的一段字。其中一个位置被称为_标记_(mark)，另一个是光标。**C-<SPC>**用来设置标记的位置，紧接着就可以通过移动光标来创造一个区域。在GNU Emacs 23.1及以后的版本中，这个区域默认是可见的。有许多命令是针对区域的，其中最常用的就是_kill_命令。
+一个*区域*（region)是指在两个位置之间的一段字。其中一个位置被称为*标记*(mark)，另一个是光标。**C-<SPC>**用来设置标记的位置，紧接着就可以通过移动光标来创造一个区域。在GNU Emacs 23.1及以后的版本中，这个区域默认是可见的。有许多命令是针对区域的，其中最常用的就是*kill*命令。
 
-在Emacs中，剪切和粘贴分别对应的命令叫做_kill_和_yank_。许多删除多个字符的命令（包括上面提到的**C-k**和**M-d**命令）实际上是把文字剪切下来，附加到一个叫_kill-ring_的地方。kill-ring 就是一个被删掉的文字的列表。在默认情况下，kill-ring会保存最多60次删除记录。连续的删除会连在一起。
+在Emacs中，剪切和粘贴分别对应的命令叫做*kill*和*yank*。许多删除多个字符的命令（包括上面提到的**C-k**和**M-d**命令）实际上是把文字剪切下来，附加到一个叫*kill-ring*的地方。kill-ring 就是一个被删掉的文字的列表。在默认情况下，kill-ring会保存最多60次删除记录。连续的删除会连在一起。
 
 **C-w** 和 **M-w** 可以用来删除或复制一个区域。
 
@@ -263,7 +262,7 @@ I-search 有一些有用的命令，使用**M-e**来编辑当且搜索区域，�
 
 Indentation is usually performed with either **<TAB>**, to indent a single line, or with **C-M-\**, to indent a region.
 
-Exactly how text is indented usually depends on the _major-mode_ which is active. Major-modes often define indentation styles specialising in indenting a certain type of text. (See [Modes](/index.php/Emacs#Modes "Emacs") for more information.)
+Exactly how text is indented usually depends on the *major-mode* which is active. Major-modes often define indentation styles specialising in indenting a certain type of text. (See [Modes](/index.php/Emacs#Modes "Emacs") for more information.)
 
 In some cases, a suitable major-mode may not exist for a file type, in which case, manual indentation may be necessary. Create a region (see [Killing, yanking and regions](/index.php/Emacs#Killing.2C_yanking_and_regions "Emacs")) then perform indentation with **C-u <n> C-x <TAB>** (where '<n>' is the number of columns which the text within the region should be indented). For example:
 
@@ -285,11 +284,11 @@ C-u -2 C-x <TAB>
 
 ### 窗口和外框架
 
-Emacs的设计是可以同时方便地编辑多个文件。这是通过把Emacs的接口分成三个层次来实现的，即buffer（之前介绍过了），_window_和_frame_。
+Emacs的设计是可以同时方便地编辑多个文件。这是通过把Emacs的接口分成三个层次来实现的，即buffer（之前介绍过了），*window*和*frame*。
 
-_window_ 是显示buffer的一个viewport（社区）。一个window一次只能显示一个buffer。但是一个buffer可以在多个window中显示。在窗口下面有一个_mode-line_，它用于显示当前buffer的信息。
+*window* 是显示buffer的一个viewport（社区）。一个window一次只能显示一个buffer。但是一个buffer可以在多个window中显示。在窗口下面有一个*mode-line*，它用于显示当前buffer的信息。
 
-_frame_ 是Emacs的一个"窗口"（这是标准的术语。比如，'窗口'是现代桌面的称谓），它包含了标题栏，菜单栏，还有一个或多个'window'（这是Emacs的术语，比如上面提到的'window'）。
+*frame* 是Emacs的一个"窗口"（这是标准的术语。比如，'窗口'是现代桌面的称谓），它包含了标题栏，菜单栏，还有一个或多个'window'（这是Emacs的术语，比如上面提到的'window'）。
 
 从现在起，这些Emacs中存在的名词的定义就可以使用了。
 
@@ -336,7 +335,7 @@ line-number-mode 默认是激活的，它可以通过下面的命令来打开/�
 
 **M-x line-number-mode <RET>**
 
-sh-mode 是一个 _major-mode_. Major-modes 调整Emacs，并且经常提供了一些特定的命令来编辑某种类型的文本。一个缓冲区只能激活一种major-mode。除了支持语法高亮和缩进，sh-mode还定义了几条命令来帮助快速开发shell脚本。下面是其中的几条：
+sh-mode 是一个 *major-mode*. Major-modes 调整Emacs，并且经常提供了一些特定的命令来编辑某种类型的文本。一个缓冲区只能激活一种major-mode。除了支持语法高亮和缩进，sh-mode还定义了几条命令来帮助快速开发shell脚本。下面是其中的几条：
 
 ```
 **C-c (**	 插入一个函数定义
@@ -351,7 +350,7 @@ sh-mode 是一个 _major-mode_. Major-modes 调整Emacs，并且经常提供了�
 
 ```
 
-'line-number-mode' 和 'column-number-mode' 是 _minor-modes_. Minor-modes 可以用来扩充major-mode的功能，多个minor-mode可以同时激活。
+'line-number-mode' 和 'column-number-mode' 是 *minor-modes*. Minor-modes 可以用来扩充major-mode的功能，多个minor-mode可以同时激活。
 
 ## 提示和技巧
 
@@ -383,9 +382,9 @@ TRAMP的路径一般是这种格式'/[protocol]:[[user@]host]:<file>'。TRAMP支
 
 我们的目标是产生一个字符列表和它们在这个列表中对应的位置。虽然这可以通过手工格式化来完成，但是这样会很慢而且容易出错。如果我们采用一些Emacs更高级的编辑功能却可以起到四两拨千斤的功效。在介绍这个方法之前，需要先了解一些技术背后的细节。
 
-要介绍的第一个特性就是_寄存器_。寄存器的功能是用来保存和获取各种各样的数据。每个寄存器用一个字母来命名，这个字母就是用来调用这个寄存器的。
+要介绍的第一个特性就是*寄存器*。寄存器的功能是用来保存和获取各种各样的数据。每个寄存器用一个字母来命名，这个字母就是用来调用这个寄存器的。
 
-另一个要介绍的就是_键盘宏_。一个键盘宏存储了一个命令序列以便以后可以重复使用。下面就一步一步地讲解这个方法。
+另一个要介绍的就是*键盘宏*。一个键盘宏存储了一个命令序列以便以后可以重复使用。下面就一步一步地讲解这个方法。
 
 首先我们从一个包含如下字符的缓冲区开始：
 
@@ -437,7 +436,7 @@ C-u C-x r i k C-x r + k
 
 ### 正则表达式
 
-From the Emacs Manual: "A regular expression, or _regexp_ for short, is a pattern that denotes a (possibly infinite) set of strings." This section will not go into any detail regarding regular expressions themselves (as there is simply too much to cover). It will however provide a quick demonstration of their power. See [Regular Expressions](http://www.gnu.org/software/emacs/manual/html_node/elisp/Regular-Expressions.html#Regular-Expressions) section in the Emacs Manual for further reading.
+From the Emacs Manual: "A regular expression, or *regexp* for short, is a pattern that denotes a (possibly infinite) set of strings." This section will not go into any detail regarding regular expressions themselves (as there is simply too much to cover). It will however provide a quick demonstration of their power. See [Regular Expressions](http://www.gnu.org/software/emacs/manual/html_node/elisp/Regular-Expressions.html#Regular-Expressions) section in the Emacs Manual for further reading.
 
 Given the same scenario presented above: A list of characters which are to be formatted to represent their respective position in the list. (see [Keyboard macros and registers](/index.php/Emacs#Keyboard_macros_and_registers "Emacs")). Again, starting with a buffer containing.
 
@@ -519,7 +518,7 @@ Emacs能通过~/.emacs或者**M-x customize**来定制。本段落将着眼于�
 
 ```
 
-Settings can also be applied on a per-mode basis. A common method for this is to add a function to a _hook_. For example, to force indentation to use spaces instead of tabs, but only in text-mode:
+Settings can also be applied on a per-mode basis. A common method for this is to add a function to a *hook*. For example, to force indentation to use spaces instead of tabs, but only in text-mode:
 
 ```
 (add-hook 'text-mode-hook (lambda () (setq indent-tabs-mode nil)))
@@ -558,7 +557,6 @@ Almost anything within Emacs can be configured. Browsing through the [Emacs Wiki
 例如，我们来定义两个配置文件。
 
  `.emacs` 
-
 ```
 (load "~/.emacs.d/main" nil t)
 (load "~/.emacs.d/functions" nil t)
@@ -571,7 +569,6 @@ Almost anything within Emacs can be configured. Browsing through the [Emacs Wiki
 这是我们在后台载入的完整配置。但是plugins文件太大导致载入太慢，如果我们要打开一个新的Emacs窗口，可能就不会使用plugins配置，每次加载它实在是太笨重了。
 
  `.emacs-light` 
-
 ```
 (load "~/.emacs.d/main" nil t)
 (load "~/.emacs.d/functions" nil t)
@@ -653,7 +650,7 @@ Note that the beginning characters need to be comments for the current language,
 
 ```
 
-There is two functions that may help you in defining the variables: _add-file-local-variable_ and _add-file-local-variable-prop-line_.
+There is two functions that may help you in defining the variables: *add-file-local-variable* and *add-file-local-variable-prop-line*.
 
 Finally, custom variable are considered insecure by default. If you try to open a file that contains local variable redefining insecure custom variables, Emacs will ask you for confirmation.
 
@@ -668,7 +665,7 @@ In the previous example, if you attempt to set anything else than a string, Emac
 
 ### Custom colors and theme
 
-Colors can be easily customized using the _face_ facility.
+Colors can be easily customized using the *face* facility.
 
 ```
 (set-face-background  'region                 "color-17")
@@ -677,15 +674,15 @@ Colors can be easily customized using the _face_ facility.
 
 ```
 
-You can have let Emacs tell you the name of the face where the point is. Use the _customize-face_ function for that. The facility will show you how to set colors, bold, underline, etc.
+You can have let Emacs tell you the name of the face where the point is. Use the *customize-face* function for that. The facility will show you how to set colors, bold, underline, etc.
 
-Emacs in console can handle 256 colors, but you will have to use an appropriate terminal for that. For instance URxvt has support for 256 colors. You can use the _list-colors-display_ for a comprehensive list of supported colors. This is highly terminal-dependent.
+Emacs in console can handle 256 colors, but you will have to use an appropriate terminal for that. For instance URxvt has support for 256 colors. You can use the *list-colors-display* for a comprehensive list of supported colors. This is highly terminal-dependent.
 
 ### SyncTeX support
 
 Emacs is definitely one of the most powerful LaTeX editor. This is mostly due to the fact you can adapt or create a LaTeX mode to fit your needs best.
 
-Still, there might be some challenges, like SyncTeX support. First you need to make sure your TeX distribution has it. If you installed TeX Live manually, you may need to install the _synctex_ package.
+Still, there might be some challenges, like SyncTeX support. First you need to make sure your TeX distribution has it. If you installed TeX Live manually, you may need to install the *synctex* package.
 
 ```
 # umask 022 && tlmgr install synctex
@@ -882,7 +879,7 @@ A way to solve it is just put the line above on your startup file, `~/.emacs`:
 
 And no, it isn't a bug, but a feature of new Emacs versions. Reading the subsequent messages about it on the mail list, we found it ([http://lists.gnu.org/archive/html/help-gnu-emacs/2009-05/msg00179.html](http://lists.gnu.org/archive/html/help-gnu-emacs/2009-05/msg00179.html)):
 
-	_It seems that nothing is loaded automatically because there is a choice betwee iso-transl and iso-acc. Both seem to provide an input method with C-x 8 or Alt-<accent> prefix, but what you and I are doing is just pressing a dead key (^, ´, `, ~, ¨) for the accent and then another key to "compose" the accented character. And there is no Alt key used in this! And according to documentation it seems be appropriate for 8-bit encodings, so it should be pretty useless in UTF-8\. I reported this bug when it was introduced, but the bug seems to be_
+	*It seems that nothing is loaded automatically because there is a choice betwee iso-transl and iso-acc. Both seem to provide an input method with C-x 8 or Alt-<accent> prefix, but what you and I are doing is just pressing a dead key (^, ´, `, ~, ¨) for the accent and then another key to "compose" the accented character. And there is no Alt key used in this! And according to documentation it seems be appropriate for 8-bit encodings, so it should be pretty useless in UTF-8\. I reported this bug when it was introduced, but the bug seems to be*
 
 a3b
 
@@ -901,7 +898,6 @@ This is because terminals are more limited than Xorg. Some terminals may handle 
 Example:
 
  `.emacs` 
-
 ```
 (global-set-key (kbd "C-M-y") 'query-replace-regexp)
 
@@ -922,7 +918,6 @@ Graphical Emacs does not suffer from this issue.
 First you must enable xterm-keys in your [tmux](/index.php/Tmux "Tmux") config.
 
  `.tmux.conf` 
-
 ```
 setw -g xterm-keys on
 
@@ -931,7 +926,6 @@ setw -g xterm-keys on
 But, this will break other key combinations. To fix them, put the following in your emacs config.
 
  `.emacs` 
-
 ```
 ;; handle tmux's xterm-keys
 ;; put the following line in your ~/.tmux.conf:

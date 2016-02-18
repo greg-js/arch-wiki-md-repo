@@ -169,7 +169,6 @@ Running the most recent firmware can give significant performance increases, and
 *   Determine what firmware version your adapter has, and your adapter's PSID (more specific than just a model number - specific to a compatible set of revisions)
 
  `# mstflint -d <adapter PCI device ID> query` 
-
 ```
 ...
 FW Version:      **2.7.1000**
@@ -185,8 +184,8 @@ PSID:            **MT_04A0110002**
 *   If there's a more recent version, download new firmware and burn it to your adapter
 
 ```
-$ unzip <_firmware .bin.zip file name_>
-# mstflint -d <_adapter PCI device ID_> -i <_firmware .bin file name_> burn
+$ unzip <*firmware .bin.zip file name*>
+# mstflint -d <*adapter PCI device ID*> -i <*firmware .bin file name*> burn
 
 ```
 
@@ -239,7 +238,6 @@ On one system:
 All of your connected InfiniBand ports should now be in a (port) state of "Active", and a physical state of "LinkUp". You can check this by running [ibstat](#ibstat_-_View_a_computer.27s_InfiniBand_GUIDs) in [infiniband-diags](https://aur.archlinux.org/packages/infiniband-diags/):
 
  `$ ibstat` 
-
 ```
 ... (look at the ports shown you expect to be connected)
 State: Active
@@ -249,7 +247,7 @@ Physical state: LinkUp
 
 And/or by examining the `/sys` filesystem:
 
- `$ cat /sys/class/infiniband/_kernel_module_/ports/_port_number_/phys_state`  `5: LinkUp`  `$ cat /sys/class/infiniband/_kernel_module_/ports/_port_number_/state`  `4: ACTIVE` 
+ `$ cat /sys/class/infiniband/*kernel_module*/ports/*port_number*/phys_state`  `5: LinkUp`  `$ cat /sys/class/infiniband/*kernel_module*/ports/*port_number*/state`  `4: ACTIVE` 
 
 ### TCP/IP over InfiniBand (IPoIB)
 
@@ -258,14 +256,13 @@ You can create a virtual Ethernet Adapter to be ran on an InfiniBand adapter. Th
 There is a performance hit for programs using InfiniBand via TCP/IP rather than natively. Using IPoIB sends all traffic through the normal TCP stack, requires system calls, memory copies, and the network protocols are ran on the CPU rather than on the InfiniBand adapter.
 
 *   [Install rdma for loading kernel modules](#Kernel_modules).
-*   You should now have a network interface(s) (likely `ib_X_` like `ib0`), that you [can configure just like a traditional Ethernet adapter](/index.php/Network_configuration "Network configuration"). If you only have one subnet with point-to-point connections (perhaps with switches) with no gateways, for:
+*   You should now have a network interface(s) (likely `ib*X*` like `ib0`), that you [can configure just like a traditional Ethernet adapter](/index.php/Network_configuration "Network configuration"). If you only have one subnet with point-to-point connections (perhaps with switches) with no gateways, for:
     *   [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"): (replacing the IP addresses as needed, to use a subnet that does not conflict with your existing private network IP addresses)
 
- `/etc/systemd/network/_interface_.network` 
-
+ `/etc/systemd/network/*interface*.network` 
 ```
 [Match]
-Name=_interface_
+Name=*interface*
 
 [Network]
 Address=192.168.2.1/24
@@ -275,15 +272,14 @@ Address=192.168.2.1/24
 
 *   [static IP address via systemd service](/index.php/Network_configuration#systemd_service "Network configuration"): (replacing the IP addresses as needed, to use a subnet that does not conflict with your existing private network IP addresses)
 
- `/etc/conf.d/net-conf-_interface_` 
-
+ `/etc/conf.d/net-conf-*interface*` 
 ```
 address=192.168.2.1
 netmask=24
 broadcast=192.168.2.255
 ```
 
-	[start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `network@_interface_.service`
+	[start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `network@*interface*.service`
 
 #### Connection mode
 
@@ -292,7 +288,7 @@ IPoIB can run in "datagram" (default), or "connected" mode. Connected mode [allo
 To see the current mode used:
 
 ```
-$ cat /sys/class/net/_interface_/mode
+$ cat /sys/class/net/*interface*/mode
 
 ```
 
@@ -305,7 +301,7 @@ In connected mode, RC (Reliable Connected) transport is used, which allows a MTU
 To see your MTU:
 
 ```
-$ ip link show _interface_
+$ ip link show *interface*
 
 ```
 
@@ -344,36 +340,36 @@ There is a lot of overlap with the [ISCSI Target](/index.php/ISCSI_Target "ISCSI
     *   Install [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/) with prerequisites: [python-configshell-fb](https://aur.archlinux.org/packages/python-configshell-fb/); and [python-rtslib-fb](https://aur.archlinux.org/packages/python-rtslib-fb/).
     *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `target.service`
     *   Setup your iSCSI targets. Run `targetcli`, which acts like a shell that presents its complex and not worth creating by hand `/etc/target/saveconfig.json` as a pseudo-filesystem.
-        *   In any pseudo-directory, you can run `help` to see the commands available _in that pseudo-directory_. Or, `help _command_` (like `help create` for more detailed help.
+        *   In any pseudo-directory, you can run `help` to see the commands available *in that pseudo-directory*. Or, `help *command*` (like `help create` for more detailed help.
         *   Run `ls` to see the entire pseudo-filesystem at and below the current pseudo-directory.
         *   Create a backstore (the device or virtual device you want to share)
-            *   To share an actual block device, run: `cd /backstores/block`; and `create _name_ _dev_`.
-            *   To share a file as a virtual block device, run: `cd /backstores/fileio`; and `create _name_ _file_`.
-            *   To share a physical SCSI device as a pass-through, run: `cd /backstores/pscsi`; and `create _name_ _dev_`.
-            *   To share a RAM disk, run: `cd /backstores/ramdisk`; and `create _name_ _size_`.
-            *   Where: _name_ is for the backstore's name.
-            *   Where _dev_ is the block device to share (i.e. /dev/sda, /dev/sda4, /dev/disk/by-id/_x_, or a LVM logical volume /dev/vg0/lv1).
-            *   Where _file_ is the file to share (i.e. _/path/to/file_).
-            *   Where _size_ is the size of the RAM disk to create (i.e. 512MB, 20GB.)
+            *   To share an actual block device, run: `cd /backstores/block`; and `create *name* *dev*`.
+            *   To share a file as a virtual block device, run: `cd /backstores/fileio`; and `create *name* *file*`.
+            *   To share a physical SCSI device as a pass-through, run: `cd /backstores/pscsi`; and `create *name* *dev*`.
+            *   To share a RAM disk, run: `cd /backstores/ramdisk`; and `create *name* *size*`.
+            *   Where: *name* is for the backstore's name.
+            *   Where *dev* is the block device to share (i.e. /dev/sda, /dev/sda4, /dev/disk/by-id/*x*, or a LVM logical volume /dev/vg0/lv1).
+            *   Where *file* is the file to share (i.e. */path/to/file*).
+            *   Where *size* is the size of the RAM disk to create (i.e. 512MB, 20GB.)
         *   Create an iqn (iSCSI Qualified Name) (the name other systems' configurations will see the storage as.)
-            *   Run: `cd /iscsi`; and `create`. It will give you a _randomly_generated_target_name_, i.e. iqn.2003-01.org.linux-iscsi.hostname.x8664:sn.3d74b8d4020a.
+            *   Run: `cd /iscsi`; and `create`. It will give you a *randomly_generated_target_name*, i.e. iqn.2003-01.org.linux-iscsi.hostname.x8664:sn.3d74b8d4020a.
         *   Set up the tpg (Target Portal Group), automatically created in the last step as tpg1.
             *   Create a lun (Logical Unit Number).
-                *   Run: `cd _randomly_generated_target_name_/tpg1/luns`; and `create _storage_object_`. Where `_storage_object_` is a full path to an existing storage object, i.e. /backstores/block/_name_.
+                *   Run: `cd *randomly_generated_target_name*/tpg1/luns`; and `create *storage_object*`. Where `*storage_object*` is a full path to an existing storage object, i.e. /backstores/block/*name*.
             *   Create an acl (Access Control List).
-                *   Run: `cd ../acls`; and `create _wwn_`. Where `_wwn_` is the initiator ("guest") system's iqn (iSCSI Qualified Name), aka its (World Wide Name).
-                    *   Get the `_wwn_` by running on the initiator ("guest") system, **not** this target ("host") system: (after installing on it [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) or [open-iscsi-git](https://aur.archlinux.org/packages/open-iscsi-git/)) `cat /etc/iscsi/initiatorname.iscsi`.
+                *   Run: `cd ../acls`; and `create *wwn*`. Where `*wwn*` is the initiator ("guest") system's iqn (iSCSI Qualified Name), aka its (World Wide Name).
+                    *   Get the `*wwn*` by running on the initiator ("guest") system, **not** this target ("host") system: (after installing on it [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) or [open-iscsi-git](https://aur.archlinux.org/packages/open-iscsi-git/)) `cat /etc/iscsi/initiatorname.iscsi`.
         *   Save and exit by running: `cd /`; `saveconfig`; and `exit`.
 
 *   On the initiator ("guest") system:
     *   Install [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi), or [open-iscsi-git](https://aur.archlinux.org/packages/open-iscsi-git/).
     *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") open-iscsi.service.
     *   At this point, if you need this initiator system's iqn (iSCSI Qualified Name), aka its wwn (World Wide Name), for setting up the target ("host") system's `luns` in `targetcli`, run: `cat /etc/iscsi/initiatorname.iscsi`.
-    *   Discover online targets. Run `iscsiadm -m discovery -t sendtargets -p _portal_`, where _portal_ is an IP (v4 or v6) address or hostname.
+    *   Discover online targets. Run `iscsiadm -m discovery -t sendtargets -p *portal*`, where *portal* is an IP (v4 or v6) address or hostname.
     *   Login to discovered targets. Run `iscsiadm -m node -L all`.
     *   View which block device ID was given to each target logged into. Run `iscsiadm -m session -P 3`. The block device ID will be the last line in the tree for each target. `-P` is the print command, and its option is the verbosity level. Only verbosity level 3 lists the block device IDs.
 
-Now, on the initiator ("guest") system, you should be able to use your new iSCSI-backed block device just like any other. i.e. `fdisk /dev/_block_device_id_`, `mkfs.btrfs /dev/_block_device_id_with_partition_number_`.
+Now, on the initiator ("guest") system, you should be able to use your new iSCSI-backed block device just like any other. i.e. `fdisk /dev/*block_device_id*`, `mkfs.btrfs /dev/*block_device_id_with_partition_number*`.
 
 ## InfiniBand programs for diagnosing and benchmarking
 
@@ -382,7 +378,6 @@ Now, on the initiator ("guest") system, you should be able to use your new iSCSI
 ibstat will show you detailed information about each InfiniBand adapter in the computer it is ran on, including: model number; number of ports; firmware and hardware version; node, system image, and port GUIDs; and port state, physical state, rate, base lid, lmc, SM lid, capability mask, and link layer.
 
  `$ ibstat` 
-
 ```
 CA 'mlx4_0'
         CA type: MT25418
@@ -420,7 +415,6 @@ This example shows a Mellanox Technologies (MT) adapter. Its PCI Device ID is re
 ibhosts will show you the Node GUIDs, number of ports, and device names, for each host on the InfiniBand network.
 
  `# ibhosts` 
-
 ```
 Ca      : 0x0002c90300002778 ports 2 "MT25408 ConnectX Mellanox Technologies"
 Ca      : 0x0002c90300002f78 ports 2 "hostname mlx4_0"
@@ -440,7 +434,6 @@ ibswitches will show you the Node GUIDs, number of ports, and device names, for 
 iblinkinfo will show you the device names, Port GUIDs, number of virtual lanes, [signal transfer rates](#Signal_transfer_rates), state, physical state, and what it is connected to.
 
  `# iblinkinfo` 
-
 ```
 CA: MT25408 ConnectX Mellanox Technologies:
       0x0002c90300002779      4    1[  ] ==( 4X           5.0 Gbps Active/  LinkUp)==>       3    1[  ] "kvm mlx4_0" ( )
@@ -485,7 +478,6 @@ If you're running IPoIB, you can use regular `ping` which pings through the TCP/
 ibdiagnet will show you potential problems on your subnet. You can run it without options. `-lw <1x|4x|12x>` specifies the expected link width (number of virtual lanes) for your computer's adapter, so it can check if it is running as intended. `-ls <2.5|5|10>` specifies the expected link speed (signaling rate) for your computer's adapter, so it can check if it is running as intended, but it does not yet support options faster than 10 for FDR+ devices. `-c <count>` overrides the default number of packets to be sent of 10.
 
  `# ibdiagnet -lw 4x -ls 5 -c 1000` 
-
 ```
 Loading IBDIAGNET from: /usr/lib/ibdiagnet1.5.7
 -W- Topology file is not specified.
@@ -577,7 +569,6 @@ $ qperf SERVERNODE [OPTIONS] TESTS
 #### TCP/IP over IPoIB
 
  `$ qperf 192.168.2.2 tcp_bw tcp_lat` 
-
 ```
 tcp_bw:
     bw  =  701 MB/sec
@@ -599,7 +590,6 @@ $ iperf3 -s
 And in client mode on another.
 
  `$ iperf3 -c 192.168.2.2` 
-
 ```
 [  4] local 192.168.2.1 port 20139 connected to 192.168.2.2 port 5201
 [ ID] Interval           Transfer     Bandwidth
@@ -625,7 +615,6 @@ iperf shows Transfer in base 10 GB's, and Bandwidth in base 2 GB's. So, this exa
 *   See if the InfiniBand hardware modules are recognized by the system.
 
  `$ dmesg | egrep -i "Mellanox|InfiniBand|QLogic|Voltaire" # If you have an Intel adapter, you'll have to use Intel here and look through a few lines if you have other Intel hardware` 
-
 ```
 [    6.287556] mlx4_core: Mellanox ConnectX core driver v2.2-1 (Feb, 2014)
 [    8.686257] <mlx4_ib> mlx4_ib_add: mlx4_ib: Mellanox ConnectX InfiniBand driver v2.2-1 (Feb 2014)

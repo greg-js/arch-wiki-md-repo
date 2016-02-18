@@ -17,7 +17,7 @@
 Hddtemp requires root privileges. The command `hddtemp` must be followed by at least one drive's location, with several directories separated by spaces:
 
 ```
-# hddtemp /dev/sd_X1_ /dev/sd_X2_ ... /dev/sd_Xn_
+# hddtemp /dev/sd*X1* /dev/sd*X2* ... /dev/sd*Xn*
 
 ```
 
@@ -39,7 +39,6 @@ The daemon is [controlled](/index.php/Systemd#Using_units "Systemd") by `hddtemp
 *   Create `customexec.conf` inside and add the drives you want to monitor, e.g.:
 
  `/etc/systemd/system/hddtemp.service.d/customexec.conf` 
-
 ```
 [Service]
 ExecStart=
@@ -74,8 +73,8 @@ Both outputs are similar to:
 
 For a better looking statistic:
 
- `$ nc localhost 7634 |sed 's/|//m' | sed 's/||/ \n/g' | awk -F'|' '{print $1 " " $3 " " $4}'` 
-
+ `$ nc localhost 7634 |sed 's/|//m' | sed 's/||/ 
+/g' | awk -F'|' '{print $1 " " $3 " " $4}'` 
 ```
 /dev/sda 32 C 
 /dev/sdb 36 C

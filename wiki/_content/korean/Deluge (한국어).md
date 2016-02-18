@@ -36,7 +36,7 @@ gtk ui를 사용시에는 **pygtk** and **librsvg** 패키지가 추가로 필�
 
 The default user for deluged, the Deluge daemon, is "deluge". You can change this in `/etc/conf.d/deluged`. Of course, the user needs to exist. In the case of the default "deluge" user, no manual user creation is necessary as the package script has done that for you.
 
-The rest of this guide will assume you use the default "deluge" user. This user's default home dir and therefore its configuration location is in _/srv/deluge_. This should be fine under most circumstances. Note that this is NOT the default download location, it only holds its configuration and ssl certificates. You will be able to change all other options later on once you get a client working.
+The rest of this guide will assume you use the default "deluge" user. This user's default home dir and therefore its configuration location is in */srv/deluge*. This should be fine under most circumstances. Note that this is NOT the default download location, it only holds its configuration and ssl certificates. You will be able to change all other options later on once you get a client working.
 
 Next, start the daemon to generate its default configuration in its homedir:
 
@@ -52,7 +52,7 @@ Finally, start the web ui:
 
 ```
 
-and login in on _[http://deluge-machine:8112](http://deluge-machine:8112)_. Where 'deluge-machine' is name of your deluge server or its private or public IP address. When asked for a password, enter "deluge" as it's the default password.
+and login in on *[http://deluge-machine:8112](http://deluge-machine:8112)*. Where 'deluge-machine' is name of your deluge server or its private or public IP address. When asked for a password, enter "deluge" as it's the default password.
 
 The preferences in the web ui should be rather self explanatory and the first obvious thing to do is to change your password.
 
@@ -74,7 +74,7 @@ In case you want SSL for the web ui, you need to generate a new cert/key set. To
 
 ```
 
-then go to _/srv/deluge/.config/deluge/ssl/_ and issue:
+then go to */srv/deluge/.config/deluge/ssl/* and issue:
 
 ```
 # openssl req -new -x509 -nodes -out deluge.cert.pem -keyout deluge.key.pem

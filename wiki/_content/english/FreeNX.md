@@ -1,6 +1,6 @@
 From [FreeNX - the free NX](http://freenx.berlios.de/):
 
-	NX is an exciting new technology for remote display. It provides _near local speed_ application responsiveness over high latency, low bandwidth links. The core libraries for NX are provided by [NoMachine](http://www.nomachine.com/) under the GPL. FreeNX is a GPL implementation of the NX Server and NX Client Components.
+	NX is an exciting new technology for remote display. It provides *near local speed* application responsiveness over high latency, low bandwidth links. The core libraries for NX are provided by [NoMachine](http://www.nomachine.com/) under the GPL. FreeNX is a GPL implementation of the NX Server and NX Client Components.
 
 ## Contents
 
@@ -70,7 +70,7 @@ Match Address 127.0.0.1
 
 The main configuration file is located at `/usr/NX/etc/node.cfg`.
 
-_If you are running your SSH daemon on a port other than the default port 22, you will need to uncomment and update:_`SSHD_PORT=22`
+*If you are running your SSH daemon on a port other than the default port 22, you will need to uncomment and update:*`SSHD_PORT=22`
 
 If you use KDE or GNOME desktop environments you do not need to edit this file, as the defaults with the modified MD5SUM command should work in this case. If you use another window manager such as Fluxbox/Openbox or Xfce, you may need to edit this file slightly (see below).
 
@@ -152,7 +152,7 @@ Get the client from nomachine's homepage: `[http://www.nomachine.com](http://www
 
 As mentioned above, the client must contain the correct key to connect to the server. If you are using the custom keys generated during install, you need to copy the client key to the following locations:
 
-*   Windows: `_your_install_dir_on_windows_/share/keys/client.id_dsa.key`
+*   Windows: `*your_install_dir_on_windows*/share/keys/client.id_dsa.key`
 *   Arch Linux: `/usr/lib/nx/share/keys/client.id_dsa.key`
 
 After moving the keys you may have use the nxclient GUI to import the new keys. From the configuration dialog press the 'Key...' button and import the new client key.
@@ -207,7 +207,7 @@ display :0
 shared
 forever
 localhost
-rfbauth /home/_user_/.x11vnc/passwd
+rfbauth /home/*user*/.x11vnc/passwd
 
 ```
 
@@ -356,14 +356,14 @@ to
 Then you can look/debug the log files in:
 
 ```
- $HOME/.nx/T-C-_hostname_-_display_-_session-id_
+ $HOME/.nx/T-C-*hostname*-*display*-*session-id*
 
 ```
 
 For succesfull connections and:
 
 ```
- $HOME/.nx/F-C-_hostname_-_display_-_session-id_
+ $HOME/.nx/F-C-*hostname*-*display*-*session-id*
 
 ```
 

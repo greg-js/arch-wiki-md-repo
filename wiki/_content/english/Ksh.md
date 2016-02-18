@@ -59,7 +59,7 @@ Change the default shell before removing the [mksh](https://www.archlinux.org/pa
 Run following command:
 
 ```
-$ chsh -s /bin/bash _user_
+$ chsh -s /bin/bash *user*
 
 ```
 
@@ -72,14 +72,14 @@ Alternatively, change the default shell back to Bash by editing `/etc/passwd` as
 For example, change the following:
 
 ```
-_username_:x:1000:1000:_Full Name_,,,:/home/_username_:/bin/mksh
+*username*:x:1000:1000:*Full Name*,,,:/home/*username*:/bin/mksh
 
 ```
 
 To this:
 
 ```
-_username_:x:1000:1000:_Full Name_,,,:/home/_username_:/bin/bash
+*username*:x:1000:1000:*Full Name*,,,:/home/*username*:/bin/bash
 
 ```
 

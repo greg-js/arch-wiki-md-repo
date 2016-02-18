@@ -78,7 +78,7 @@ See [NVIDIA](/index.php/NVIDIA "NVIDIA") or [nouveau](/index.php/Nouveau "Nouvea
 
 # Touchpad
 
-You should install _xf86-input-synaptics_, worked out of the box for me with xorg.
+You should install *xf86-input-synaptics*, worked out of the box for me with xorg.
 
 If you want to use your mouse without xorg, you can use [GPM](/index.php/GPM "GPM").
 

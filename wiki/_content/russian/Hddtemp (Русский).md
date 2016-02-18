@@ -17,7 +17,7 @@
 Hddtemp требует привилегий суперпользователя. Команда `hddtemp` должна сопровождаться указанием как минимум одного физического устройства или нескольких, разделяемых пробелами. Например:
 
 ```
-# hddtemp /dev/sd_a_ /dev/sd_b_ ... /dev/sd_z_
+# hddtemp /dev/sd*a* /dev/sd*b* ... /dev/sd*z*
 
 ```
 
@@ -39,7 +39,6 @@ Hddtemp требует привилегий суперпользователя. 
 *   Создайте файл `customexec.conf`, в котором понадобится указать физические диски для отслеживания, например:
 
  `/etc/systemd/system/hddtemp.service.d/customexec.conf` 
-
 ```
 [Service]
 ExecStart=
@@ -84,8 +83,8 @@ $ nc localhost 7634
 
 Более читаемый вариант:
 
- `$ nc localhost 7634 |sed 's/|//m' | sed 's/||/ \n/g' | awk -F'|' '{print $1 " " $3 " " $4}'` 
-
+ `$ nc localhost 7634 |sed 's/|//m' | sed 's/||/ 
+/g' | awk -F'|' '{print $1 " " $3 " " $4}'` 
 ```
 /dev/sda 32 C 
 /dev/sdb 36 C

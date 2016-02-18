@@ -1,4 +1,4 @@
-**fdm** (_fetch and deliver mail_), is a simple program for delivering and filtering mail. Comparing it to other same-purposed applications shows that it has similarities with [Mutt](/index.php/Mutt "Mutt")'s very focused design principles.
+**fdm** (*fetch and deliver mail*), is a simple program for delivering and filtering mail. Comparing it to other same-purposed applications shows that it has similarities with [Mutt](/index.php/Mutt "Mutt")'s very focused design principles.
 
 ## Contents
 
@@ -19,7 +19,7 @@
 
 ## Configuring
 
-_fdm_ supports the tried and tested mbox format along with the newer maildir specification.
+*fdm* supports the tried and tested mbox format along with the newer maildir specification.
 
 ### mbox
 
@@ -88,14 +88,14 @@ This will keep your mail untouched on the server incase there are errors. Look o
 
 ## Extended usage
 
-_Non-essential features that add to_ fdm'_s usability_
+*Non-essential features that add to* fdm'*s usability*
 
 ### Additional filtering
 
-If you want to have mail from a certain account go to a specific mailbox, you could add the following lines to your fdm.conf file. From the config file above, if you wanted to filter the mail from `_bar@gmail.com_` into it's own folder `_bar-mail_`, you would add this below the existing "action" line:
+If you want to have mail from a certain account go to a specific mailbox, you could add the following lines to your fdm.conf file. From the config file above, if you wanted to filter the mail from `*bar@gmail.com*` into it's own folder `*bar-mail*`, you would add this below the existing "action" line:
 
 ```
-action _bar-deliver_ mbox "%h/mail/_bar-mail_"
+action *bar-deliver* mbox "%h/mail/*bar-mail*"
 
 ```
 
@@ -104,11 +104,11 @@ Change the `mbox` to `maildir` if needed, also make sure the path is correct.
 To activate the new action, add this before the existing "match" line:
 
 ```
-match account _bar_ action _bar-deliver_
+match account *bar* action *bar-deliver*
 
 ```
 
-Then all mail to `_bar@gmail.com_` will be put into the `_bar-mail_` mail folder.
+Then all mail to `*bar@gmail.com*` will be put into the `*bar-mail*` mail folder.
 
 ### Automation with cron
 

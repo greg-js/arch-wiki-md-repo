@@ -44,7 +44,7 @@ $ su
 
 ```
 
-Přidejte plymouth do pole `HOOKS` v souboru `mkinitcpio.conf`. **Musí** být přidán _až za_ udev a autodetect, aby plymouth fungoval správně.
+Přidejte plymouth do pole `HOOKS` v souboru `mkinitcpio.conf`. **Musí** být přidán *až za* udev a autodetect, aby plymouth fungoval správně.
 
 ```
 # nano /etc/mkinitcpio.conf
@@ -102,7 +102,7 @@ Restartujte a užívejte si eye=candy start!
 Jak jsem se již zmínil výše, Plymouth příchází s několika tématy. Pokud budete chtít vyzkoušet jiná, jednoduše zadejte příkaz
 
 ```
-# plymouth-set-default-theme _název_téma_
+# plymouth-set-default-theme *název_téma*
 
 ```
 
@@ -117,7 +117,7 @@ A restartujte.
 
 ## Řešení chyb
 
-Z nějakého důvodu na obou mých počítačích (notebook s grafickou kartou ATI a KMS, stolní počítač s kartou nVidia a framebufferem) příkaz pro ukončení Plymouthu zanechá v horní oblasti obrazovky malé černé čtverečky, které zastiňují okna pod nimi. Tento problém je způsoben volbou `--retain-splash`, která je potřebná pro zajištění souvislosti boot procesu, jak jen je to možné. Pokud jste zaznamenal tento problém, řešením je sestřelení Plymouthu _po_ přihlášení, tehdy už není volba `--retain-splash` dále potřebná.
+Z nějakého důvodu na obou mých počítačích (notebook s grafickou kartou ATI a KMS, stolní počítač s kartou nVidia a framebufferem) příkaz pro ukončení Plymouthu zanechá v horní oblasti obrazovky malé černé čtverečky, které zastiňují okna pod nimi. Tento problém je způsoben volbou `--retain-splash`, která je potřebná pro zajištění souvislosti boot procesu, jak jen je to možné. Pokud jste zaznamenal tento problém, řešením je sestřelení Plymouthu *po* přihlášení, tehdy už není volba `--retain-splash` dále potřebná.
 
 **Note:** To vyžaduje použití programu sudo. Instrukce pro instalaci a nastavení programu sudo můžete [nalézt zde](/index.php/Sudo "Sudo").
 
@@ -152,7 +152,7 @@ $ su
 A přidejte:
 
 ```
-_uzivatel_      ALL=(ALL) NOPASSWD: /bin/plymouth
+*uzivatel*      ALL=(ALL) NOPASSWD: /bin/plymouth
 
 ```
 

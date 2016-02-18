@@ -77,7 +77,6 @@ dpmsOff:	4:00:00
 注意最后的`&`符号必须添加，这样xscreensaver才会在后台运行。
 
 **注意:** [Xfce](/index.php/Xfce_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xfce (简体中文)")会自启动XScreenSaver，设置在`/etc/xdg/xfce4/xinitrc`，为了保证该设置有效，切记.xinitrc中使用的是 `startxfce4`，而非 `xfce4-session`
-
 ```
 exec startxfce4
 

@@ -21,9 +21,7 @@ Ci sono quattro differenti modi per assegnare dei nomi univoci alle periferiche:
 Quasi tutti i filesystem supportano le etichette. Tutte le partizioni che ne hanno una sono elencate nella cartella `/dev/disk/by-label`.
 
 **Nota:** Questa cartella viene creata (e rimossa) dinamicamente, a seconda delle partizioni presenti ed aventi una etichetta.
-
  `$ ls -lF /dev/disk/by-label` 
-
 ```
 total 0
 lrwxrwxrwx 1 root root 10 Oct 16 10:27 data -> ../../sdb2
@@ -46,7 +44,6 @@ Le etichette possono essere cambiate utilizzando i seguenti comandi:
 ```
 
 **Attenzione:** Questo comando cancellerà l'area di swap.
-
 Se la swap è montata, eseguire `swapoff /dev/XXX` prima e `swapon /dev/XXX` dopo.
 
 	ext2/ext3/ext4 
@@ -102,10 +99,9 @@ Se la swap è montata, eseguire `swapoff /dev/XXX` prima e `swapon /dev/XXX` dop
 
 ### By-uuid
 
-Gli [UUID](http://en.wikipedia.org/wiki/UUID), ovvero _Universally Unique Identifier(identificatore unico universale)_, è un meccanismo che assegna ad ogni filesystem un identificatore unico. Esso è studiato in modo da evitare conflitti. Tutti i filesystem GNU/Linux (inclusa l'area di swap) supportano gli UUID. I filesystem FAT ed NTFS non supportano gli UUID, ma sono comunque elencate in `/dev/disk/by-uuid` con un identificatore unico:
+Gli [UUID](http://en.wikipedia.org/wiki/UUID), ovvero *Universally Unique Identifier(identificatore unico universale)*, è un meccanismo che assegna ad ogni filesystem un identificatore unico. Esso è studiato in modo da evitare conflitti. Tutti i filesystem GNU/Linux (inclusa l'area di swap) supportano gli UUID. I filesystem FAT ed NTFS non supportano gli UUID, ma sono comunque elencate in `/dev/disk/by-uuid` con un identificatore unico:
 
  `$ ls -lF /dev/disk/by-uuid/` 
-
 ```
 total 0
 lrwxrwxrwx 1 root root 10 Oct 16 10:27 2d781b26-0285-421a-b9d0-d4a0d3b55680 -> ../../sda1
@@ -118,7 +114,7 @@ lrwxrwxrwx 1 root root 10 Oct 16 10:27 bae98338-ec29-4beb-aacf-107e44599b2e -> .
 
 ```
 
-Come si può notare, le partizioni FAT ed NTFS (le partizioni aventi etichetta _fat_ e _windows_ nell'esempio precedente) hanno nomi più corti, ma vengono comunque elencate. Il vantaggio nell'uso degli UUID sta nel fatto che è molto meno probabile avere conflitti rispetto al metodo delle etichette. Uno svantaggio è invece che i nomi sono molto meno immediati da leggere o ricordare.
+Come si può notare, le partizioni FAT ed NTFS (le partizioni aventi etichetta *fat* e *windows* nell'esempio precedente) hanno nomi più corti, ma vengono comunque elencate. Il vantaggio nell'uso degli UUID sta nel fatto che è molto meno probabile avere conflitti rispetto al metodo delle etichette. Uno svantaggio è invece che i nomi sono molto meno immediati da leggere o ricordare.
 
 ### By-id e by-path
 
@@ -152,9 +148,9 @@ Per usare i nomi univoci nel proprio boot manager, sarà necessario soddisfare i
 
 *   Il sistema usa un initramfs creato mediante [mkinitcpio](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)")
 *   Nel file `/etc/mkinitcpio.conf` sia abilitato l'hook udev
-*   L'immagine initramfs è stata generata, con una versione di _klibc-udev_ superiore alla **101-3**(**con le versioni precedenti i nomi univoci non funzionano correttamente.**). Se si aggiorna _klibc-udev_ da una versione precedente e si intende usare i nomi univoci, rigenerare l'immagine initramfs prima di riavviare.
+*   L'immagine initramfs è stata generata, con una versione di *klibc-udev* superiore alla **101-3**(**con le versioni precedenti i nomi univoci non funzionano correttamente.**). Se si aggiorna *klibc-udev* da una versione precedente e si intende usare i nomi univoci, rigenerare l'immagine initramfs prima di riavviare.
 
-Nell'esempio precedente, `/dev/sda1` è la partizione di root. Nel file `/boot/grub/menu.lst` di [GRUB Legacy](/index.php/GRUB_Legacy_(Italiano) "GRUB Legacy (Italiano)"), la riga _kernel_ sarà simile a questa:
+Nell'esempio precedente, `/dev/sda1` è la partizione di root. Nel file `/boot/grub/menu.lst` di [GRUB Legacy](/index.php/GRUB_Legacy_(Italiano) "GRUB Legacy (Italiano)"), la riga *kernel* sarà simile a questa:
 
 ```
 kernel /boot/vmlinuz-linux root=/dev/sda1 ro quiet
@@ -175,7 +171,7 @@ kernel /boot/vmlinuz-linux root=/dev/disk/by-uuid/2d781b26-0285-421a-b9d0-d4a0d3
 
 ```
 
-Se si usa [LILO](/index.php/LILO "LILO"), non inserire il nome univoco nell'opzione `root=...`, non funzionerebbe. Sarà invece necessario usare le opzioni `append="root=..."` o `addappend="root=..."`. Consultare il manuale di LILO per maggiori informazioni riguardo alle opzioni _append_ ed _addappend_.
+Se si usa [LILO](/index.php/LILO "LILO"), non inserire il nome univoco nell'opzione `root=...`, non funzionerebbe. Sarà invece necessario usare le opzioni `append="root=..."` o `addappend="root=..."`. Consultare il manuale di LILO per maggiori informazioni riguardo alle opzioni *append* ed *addappend*.
 
 C'è un metodo alternativo per usare le etichette dei filesystem. Ad esempio se (come nell'esempio) il filesystem `/dev/sda1` ha l'etichetta "root", sarà possibile usare la seguente linea in GRUB:
 

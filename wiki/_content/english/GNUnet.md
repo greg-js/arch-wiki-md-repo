@@ -34,7 +34,7 @@ See also [How to start and stop a GNUnet peer](https://gnunet.org/how-start-and-
 
 ### Downloading
 
-To use _gnunet-gtk_ to download a file, just search for the file in the _Filesystem_ tab. When you see the file you want, just download it as you would with any other P2P file-sharing program. Start it with:
+To use *gnunet-gtk* to download a file, just search for the file in the *Filesystem* tab. When you see the file you want, just download it as you would with any other P2P file-sharing program. Start it with:
 
 ```
 # gnunet-fs-gtk
@@ -43,14 +43,14 @@ To use _gnunet-gtk_ to download a file, just search for the file in the _Filesys
 
 ### Uploading
 
-Uploading files to the gnunet network is more complicated. GNUnet differentiates between _indexing_ a file and _inserting_ a file. The details can be read at the [framework's website](https://gnunet.org). The following steps explain how to share data with the network, and are a shortened form of the instructions found on [this page](https://gnunet.org/file-sharing).
+Uploading files to the gnunet network is more complicated. GNUnet differentiates between *indexing* a file and *inserting* a file. The details can be read at the [framework's website](https://gnunet.org). The following steps explain how to share data with the network, and are a shortened form of the instructions found on [this page](https://gnunet.org/file-sharing).
 
-The following steps may have to be done manually. A module, called _gnunet-fuse_, is being developed to make this process easier for a user. However, as of December 2008, there is little documentation for it and it is not even in [AUR](/index.php/AUR "AUR") yet.
+The following steps may have to be done manually. A module, called *gnunet-fuse*, is being developed to make this process easier for a user. However, as of December 2008, there is little documentation for it and it is not even in [AUR](/index.php/AUR "AUR") yet.
 
 #### To index a file/directory
 
 ```
-gnunet-insert [-n] [-k keword1] [-k keyword 2] [-m TYPE:VALUE] _filename_
+gnunet-insert [-n] [-k keword1] [-k keyword 2] [-m TYPE:VALUE] *filename*
 
 ```
 

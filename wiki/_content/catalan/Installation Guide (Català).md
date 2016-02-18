@@ -1,6 +1,6 @@
 Aquest document et guiarà en el procés d'instal·lació de [Arch Linux](/index.php/Arch_Linux "Arch Linux") des del sistema d'arranc de la imatge oficial. Abans de començar la instal·lació et recomanem que passis per la pàgina de preguntes freqüents [FAQ](/index.php/FAQ "FAQ"). També pots veure [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") per a una explicació més detallada.
 
-La comunitat-mantenidora [Arch wiki](/index.php/Main_page "Main page") és un recurs excelent i hauria de ser consultat primerament. El canal [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) juntament amb els [forums](https://bbs.archlinux.org/) estàn a disposició, si no pots trobar la resposta al teu problema enlloc més. Pensa també a consultar els manuals `man`. Pots consultar un manual sobre una comanda/paquet amb `man _commanda_`.
+La comunitat-mantenidora [Arch wiki](/index.php/Main_page "Main page") és un recurs excelent i hauria de ser consultat primerament. El canal [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) juntament amb els [forums](https://bbs.archlinux.org/) estàn a disposició, si no pots trobar la resposta al teu problema enlloc més. Pensa també a consultar els manuals `man`. Pots consultar un manual sobre una comanda/paquet amb `man *commanda*`.
 
 ## Contents
 
@@ -30,8 +30,8 @@ La comunitat-mantenidora [Arch wiki](/index.php/Main_page "Main page") és un re
 Descarrega la darrera ISO de Arch Linux des de [Arch Linux download page](https://www.archlinux.org/download/).
 
 *   La imatge descarregada és un sistema arrencable des d'arquitectures i686 i x86_64 per a instal·lar Arch Linux per la xarxa. Ja no hi ha imatges ISO disponibles que contenguin el repositori [core], per tant es necessària una connexió a internet per a la instal·lació.
-*   Les imatges de instal·lació tenen signatura digital. Es recomanable verificar la imatge abans del seu ús. Això es pot fer descarregant l'arxiu _.sig_ de la pàgina de descarrega (o des de un dels mirrors) i després comprovar la signatura PGP amb `pacman-key -v _iso-file_.sig` o les sumes md5 amb `md5sum _iso-file_.iso`.
-*   La imatge pot esser gravada a un CD, com a arxiu ISO, o també se pot [escriure a un llapis USB](/index.php/USB_Installation_Media "USB Installation Media"). Aquest procediment es només per a noves instal·lacions, Arch Linux es un _rolling release_ i el sistema sempre se pot actualitzar amb `pacman -Syu`.
+*   Les imatges de instal·lació tenen signatura digital. Es recomanable verificar la imatge abans del seu ús. Això es pot fer descarregant l'arxiu *.sig* de la pàgina de descarrega (o des de un dels mirrors) i després comprovar la signatura PGP amb `pacman-key -v *iso-file*.sig` o les sumes md5 amb `md5sum *iso-file*.iso`.
+*   La imatge pot esser gravada a un CD, com a arxiu ISO, o també se pot [escriure a un llapis USB](/index.php/USB_Installation_Media "USB Installation Media"). Aquest procediment es només per a noves instal·lacions, Arch Linux es un *rolling release* i el sistema sempre se pot actualitzar amb `pacman -Syu`.
 
 ## Instal·lació
 
@@ -39,11 +39,11 @@ Una vegada s'hagi arrencat la imatge de instal·lació, es requeriran els següe
 
 ### Distribució del teclat
 
-Hi ha disponibles mapes de teclats apropiats per a molts països, i una comanda com a `loadkeys es` pot ser suficient per a obtenir la seva distribució de teclat. Se poden trobar més mapes de teclat al directori `/usr/share/kbd/keymaps/` (amb la comanda _loadkeys_ no és necessari indicar la ruta o la extensió de l'arxiu).
+Hi ha disponibles mapes de teclats apropiats per a molts països, i una comanda com a `loadkeys es` pot ser suficient per a obtenir la seva distribució de teclat. Se poden trobar més mapes de teclat al directori `/usr/share/kbd/keymaps/` (amb la comanda *loadkeys* no és necessari indicar la ruta o la extensió de l'arxiu).
 
 ### Partició de disc
 
-Vegi [partitioning](/index.php/Partitioning "Partitioning") per a més informació; algunes particions especials poden ser necessàries, vegi [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI") i [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). Si desitja crear qualsevol dispositiu de blocs apilats (_stacked block devices_) per a [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") o [RAID](/index.php/RAID "RAID"), faci-ho ara.
+Vegi [partitioning](/index.php/Partitioning "Partitioning") per a més informació; algunes particions especials poden ser necessàries, vegi [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI") i [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). Si desitja crear qualsevol dispositiu de blocs apilats (*stacked block devices*) per a [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") o [RAID](/index.php/RAID "RAID"), faci-ho ara.
 
 ### Format the partitions
 
@@ -53,7 +53,7 @@ If you are using (U)EFI you will most probably need another partition to host th
 
 ### Mount the partitions
 
-You must now mount the root partition on `/mnt`. After that, you should create directories for and mount any other partitions (`/mnt/boot`, `/mnt/home`, ...) and activate your _swap_ partition if you want them to be detected by _genfstab_.
+You must now mount the root partition on `/mnt`. After that, you should create directories for and mount any other partitions (`/mnt/boot`, `/mnt/home`, ...) and activate your *swap* partition if you want them to be detected by *genfstab*.
 
 ### Connect to the internet
 

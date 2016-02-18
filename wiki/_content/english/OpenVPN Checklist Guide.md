@@ -31,7 +31,7 @@ This article summarizes the install process required for OpenVPN. See [OpenVPN](
 
 *   Create certificate and private key for the server
 
- `#  ./build-key-server _<server-name>_` 
+ `#  ./build-key-server *<server-name>*` 
 
 *   Create the Diffie-Hellman pem file for the server. Do not enter a challenge password or company name when you set these up.
 
@@ -39,7 +39,7 @@ This article summarizes the install process required for OpenVPN. See [OpenVPN](
 
 *   Create a certificate for each client.
 
- `# ./build-key _<client-name>_` 
+ `# ./build-key *<client-name>*` 
 
 All certificates are stored in `keys` directory. If you mess up, you can start all over by doing a `./clean-all`
 
@@ -50,18 +50,17 @@ Copy to each client the `ca.crt`, and their respective crt and key files.
 *   Create `/etc/openvpn/myvpnserver.conf` with a content like this:
 
  `/etc/openvpn/myvpnserver.conf` 
-
 ```
-port _<port>_
+port *<port>*
 proto tcp
 dev tun0
 
 ca /etc/openvpn/easy-rsa/keys/ca.crt
-cert /etc/openvpn/easy-rsa/keys/_<server-name>_.crt
-key /etc/openvpn/easy-rsa/keys/_<server-name>_.key
-dh /etc/openvpn/easy-rsa/keys/_<your pem file>_
+cert /etc/openvpn/easy-rsa/keys/*<server-name>*.crt
+key /etc/openvpn/easy-rsa/keys/*<server-name>*.key
+dh /etc/openvpn/easy-rsa/keys/*<your pem file>*
 
-server _<desired base ip>_ 255.255.255.0
+server *<desired base ip>* 255.255.255.0
 ifconfig-pool-persist ipp.txt
 keepalive 10 120
 comp-lzo
@@ -86,10 +85,9 @@ Read [Daemon](/index.php/Daemon "Daemon") for more information.
 *   Create a .conf file for each client like this:
 
  `a-client-conf-file.conf` 
-
 ```
 client
-remote _<server>_ _<port>_
+remote *<server>* *<port>*
 dev tun0
 proto tcp
 resolv-retry infinite
@@ -98,8 +96,8 @@ persist-key
 persist-tun
 verb 2
 ca ca.crt
-cert _<client crt file with full path>_
-key _<client key file with full path>_
+cert *<client crt file with full path>*
+key *<client key file with full path>*
 comp-lzo
 
 ```

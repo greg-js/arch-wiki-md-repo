@@ -55,6 +55,7 @@ For further information on how to use ROS, see the [ROS Tutorials](http://www.ro
 When you update a library that ROS depends on, e.g. boost, then you need to rebuild all the packages that link to it. You can search for the packages, with a command similar to the one below. You can use the output from that to rebuild the AUR packages with your favorite AUR helper/wrapper.
 
 ```
-export LANG=C;grep -r "libboost" /opt/ros/indigo |  awk '{ print $3 }' | grep opt |  pacman -Qo - | awk '{ print $5 }' | tr '\n' ' '
+export LANG=C;grep -r "libboost" /opt/ros/indigo |  awk '{ print $3 }' | grep opt |  pacman -Qo - | awk '{ print $5 }' | tr '
+' ' '
 
 ```

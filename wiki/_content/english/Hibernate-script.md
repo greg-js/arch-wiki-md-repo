@@ -56,7 +56,7 @@ Using TuxOnIce:
 
 ### Setting the suspend method
 
-Preferred suspend/hibernation method of hibernate-script can be set in the file `/etc/hibernate/hibernate.conf`. If you list several methods, the first one will be used. Note that _hibernate_ can also be used with [Suspend to RAM](/index.php/Suspend_to_RAM "Suspend to RAM") or vanilla uswsusp).
+Preferred suspend/hibernation method of hibernate-script can be set in the file `/etc/hibernate/hibernate.conf`. If you list several methods, the first one will be used. Note that *hibernate* can also be used with [Suspend to RAM](/index.php/Suspend_to_RAM "Suspend to RAM") or vanilla uswsusp).
 
 For Uswsusp use:
 
@@ -128,7 +128,7 @@ OnSuspend 5 netcfg -a
 
 You'll need to set the priority as 05 instead. Its normally best to use something within the range of 20-50 for your user scripts.
 
-If you need/want to eject all PcCards before suspending and reinsert them after resuming, change the _EjectCards_ setting in `common.conf`:
+If you need/want to eject all PcCards before suspending and reinsert them after resuming, change the *EjectCards* setting in `common.conf`:
 
 ```
 ### pcmcia
@@ -198,7 +198,7 @@ ProcSetting extra_pages_allowance 20000
 
 ### Dropping disk caches
 
-	<small>_From: [drop_caches introduction](http://www.linuxinsight.com/proc_sys_vm_drop_caches.html)_</small>
+	<small>*From: [drop_caches introduction](http://www.linuxinsight.com/proc_sys_vm_drop_caches.html)*</small>
 
 As a way to speed up suspending, you can free the memory used for disk caches so there will be less to write to the disk. Just add something like this to the `common.conf`:
 

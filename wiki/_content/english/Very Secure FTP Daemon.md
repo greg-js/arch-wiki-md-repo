@@ -61,7 +61,6 @@ local_enable=YES
 These lines controls whether anonymous users can login. By default, anonymous logins are enabled for download only from `/srv/ftp`:
 
  `/etc/vsftpd.conf` 
-
 ```
 ...
 # Allow anonymous FTP? (Beware - allowed by default if you comment this out).
@@ -81,7 +80,6 @@ anonymous_enable=YES
 You may also add e.g. the following options (see `[man](/index.php/Man "Man") vsftp.conf` for more):
 
  `/etc/vsftpd.conf` 
-
 ```
 # No password is required for an anonymous login          
 no_anon_password=YES
@@ -267,17 +265,16 @@ Often the server running the FTP daemon is protected by an [iptables](/index.php
 
 This article won't provide any instruction on how to set up iptables but here is an example: [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall").
 
-There are some kernel modules needed for proper FTP connection handling by iptables that should be referenced here. Among those especially _ip_conntrack_ftp_. It is needed as FTP uses the given _listen_port_ (21 by default) for commands only; all the data transfer is done over different ports. These ports are chosen by the FTP daemon at random and for each session (also depending on whether active or passive mode is used). To tell iptables that packets on ports should be accepted, _ip_conntrack_ftp_ is required. To load it automatically on boot create a new file in `/etc/modules-load.d` e.g.:
+There are some kernel modules needed for proper FTP connection handling by iptables that should be referenced here. Among those especially *ip_conntrack_ftp*. It is needed as FTP uses the given *listen_port* (21 by default) for commands only; all the data transfer is done over different ports. These ports are chosen by the FTP daemon at random and for each session (also depending on whether active or passive mode is used). To tell iptables that packets on ports should be accepted, *ip_conntrack_ftp* is required. To load it automatically on boot create a new file in `/etc/modules-load.d` e.g.:
 
 ```
 # echo nf_conntrack_ftp > /etc/modules-load.d/nf_conntrack_ftp.conf
 
 ```
 
-If you changed the _listen_port_ you also need to configure the conntrack module accordingly:
+If you changed the *listen_port* you also need to configure the conntrack module accordingly:
 
  `/etc/modprobe.d/ip_conntrack_ftp.conf` 
-
 ```
 options nf_conntrack_ftp ports=2211
 
@@ -450,7 +447,6 @@ vsftpd tries to display plain-text error messages in the SSL session. In order t
 If you have enabled the vsftpd service and it fails to run on boot, make sure it is set to load after network.target in the service file:
 
  `/usr/lib/systemd/system/vsftpd.service` 
-
 ```
 [Unit]
 Description=vsftpd daemon

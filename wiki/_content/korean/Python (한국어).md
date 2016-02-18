@@ -1,8 +1,8 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/%ED%8C%8C%EC%9D%B4%EC%8D%AC "wikipedia:파이썬"):
 
-	_파이썬(Python)은 1991년 프로그래머인 귀도 반 로섬(Guido van Rossum) 이 발표한 고급 프로그래밍 언어로, 플랫폼 독립적이며 인터프리터식, 객체지향적, 동적 타이핑(dynamically typed) 대화형 언어이다. 파이썬이라는 이름은 귀도가 좋아하는 코미디 〈Monty Python's Flying Circus〉에서 따온 것이다._
+	*파이썬(Python)은 1991년 프로그래머인 귀도 반 로섬(Guido van Rossum) 이 발표한 고급 프로그래밍 언어로, 플랫폼 독립적이며 인터프리터식, 객체지향적, 동적 타이핑(dynamically typed) 대화형 언어이다. 파이썬이라는 이름은 귀도가 좋아하는 코미디 〈Monty Python's Flying Circus〉에서 따온 것이다.*
 
-	_파이썬은 비영리의 파이썬 소프트웨어 재단이 관리하는 개방형, 공동체 기반 개발 모델을 가지고 있다. C언어로 구현된 C파이썬 구현이 사실상의 표준이다._
+	*파이썬은 비영리의 파이썬 소프트웨어 재단이 관리하는 개방형, 공동체 기반 개발 모델을 가지고 있다. C언어로 구현된 C파이썬 구현이 사실상의 표준이다.*
 
 ## Contents
 
@@ -49,7 +49,7 @@ Python 3 와 Python2 가 동시에 설치가 되어있다면, Python 2 버전을
 프로그램이나 스크립트의 내용을 수정하지 않고 강제로 Python 2 를 이용하여 실행하도록 하는 방법은 그 프로그램이나 스크립트 파일을 `python2` 를 이용하여 호출하는 것이다.
 
 ```
-$ python2 _myScript.py_
+$ python2 *myScript.py*
 
 ```
 
@@ -60,7 +60,6 @@ $ python2 _myScript.py_
 아래를 Python 명령행으로 복사하면 된다.
 
  `/usr/bin/python` 
-
 ```
 import rlcompleter
 import readline
@@ -84,7 +83,7 @@ readline.parse_and_bind("tab: complete")
 
 2014 년 7 월 당시 Python 2.7, 3.2, 3.3, 그리고 3.4 버전들만 보안 패치를 지원하고 있다. 오래된 버전의 Python 으로 인터넷 통신을 하는 프로그램이나 믿을 수 없는 코드를 실행시키는 것은 위험하다.
 
-기타 오래된 Python 버전에 대한 모듈이나 라이브러리들은 AUR 에서 찾을 수 있을 것이다. `python<_버전에서 마침표를 제거_>` 와 같이 찾아야 한다. 예) Python 2.6 버전에 대한 모듈이나 라이브러리는 python26 로 검색하여 찾을수 있다.
+기타 오래된 Python 버전에 대한 모듈이나 라이브러리들은 AUR 에서 찾을 수 있을 것이다. `python<*버전에서 마침표를 제거*>` 와 같이 찾아야 한다. 예) Python 2.6 버전에 대한 모듈이나 라이브러리는 python26 로 검색하여 찾을수 있다.
 
 ## 팁과 트릭들
 
@@ -97,7 +96,7 @@ readline.parse_and_bind("tab: complete")
 *   [A Byte of Python](http://www.swaroopch.com/notes/Python) is a book suitable for users new to Python (and scripting in general).
 *   [Learn Python The Hard Way](http://learnpythonthehardway.org) the best intro to programming.
 *   [Learn Python](http://learnpython.org) nice site to learn python.
-*   [Crash into Python](http://stephensugden.com/crash_into_python/) Also known as _Python for Programmers with 3 Hours_, this guide gives experienced developers from other languages a crash course on Python.
+*   [Crash into Python](http://stephensugden.com/crash_into_python/) Also known as *Python for Programmers with 3 Hours*, this guide gives experienced developers from other languages a crash course on Python.
 *   [Beginning Game Development with Python and Pygame: From Novice to Professional](http://www.apress.com/book/view/9781590598726) for games.
 *   [Think Python: How to Think Like a Computer Scientist](http://www.greenteapress.com/thinkpython/) A great introduction to Python programming for beginners.
 *   [Pythonspot](https://pythonspot.com) Great Python programming tutorials.

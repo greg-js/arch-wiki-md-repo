@@ -19,7 +19,7 @@ Para obtener una lista actualizada de problemas conocidos, consulte el upstream 
 
 ### ¿Por qué recibo mensajes de registro en mi consola?
 
-Debe establecer el nivel del registro del propio kernel. Históricamente, `/etc/rc.sysinit` hacía esto por nosotros y establecía el nivel del registro de dmesg a `3`, que era un _loglevel_ razonablemente _moderado_. O bien, añada `loglevel=3` o `quiet` en los [parámetros del kernel](/index.php/Kernel_parameters "Kernel parameters").
+Debe establecer el nivel del registro del propio kernel. Históricamente, `/etc/rc.sysinit` hacía esto por nosotros y establecía el nivel del registro de dmesg a `3`, que era un *loglevel* razonablemente *moderado*. O bien, añada `loglevel=3` o `quiet` en los [parámetros del kernel](/index.php/Kernel_parameters "Kernel parameters").
 
 ### ¿Cómo puedo cambiar el número de gettys ejecutadas por defecto?
 
@@ -110,7 +110,7 @@ Asegúrese de usar:
 
 ### ¿Cómo puedo hacer un script de inicio durante el proceso de arranque?
 
-Cree un nuevo archivo `/etc/systemd/system` (por ejemplo, _myscript_.service) y añada el siguiente contenido:
+Cree un nuevo archivo `/etc/systemd/system` (por ejemplo, *myscript*.service) y añada el siguiente contenido:
 
 ```
 [Unit]
@@ -127,7 +127,7 @@ WantedBy=multi-user.target
 Luego:
 
 ```
-# systemctl enable _myscript_.service
+# systemctl enable *myscript*.service
 
 ```
 

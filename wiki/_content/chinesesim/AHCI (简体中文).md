@@ -1,4 +1,4 @@
-**AHCI**, _A_dvanced _H_ost _C_ontroller _I_nterface 的缩写，意思是 高级主机控制器接口, 这是一种SATA设备特有的工作模式.通常AHCI需要通过BIOS来开启或关闭，通过BIOS启用AHCI有两大好处：热插拔SATA驱动器（模拟USB驱动器的行为）和NCQ。该特性在 Linux kernel 2.6.19 以后开始提供支持,现在的 Arch 内核会自动加载 ahci 模块.
+**AHCI**, *A*dvanced *H*ost *C*ontroller *I*nterface 的缩写，意思是 高级主机控制器接口, 这是一种SATA设备特有的工作模式.通常AHCI需要通过BIOS来开启或关闭，通过BIOS启用AHCI有两大好处：热插拔SATA驱动器（模拟USB驱动器的行为）和NCQ。该特性在 Linux kernel 2.6.19 以后开始提供支持,现在的 Arch 内核会自动加载 ahci 模块.
 
 ## 设置BIOS
 

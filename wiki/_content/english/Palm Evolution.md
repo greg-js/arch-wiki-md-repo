@@ -1,6 +1,6 @@
 This document is written to help a new user set up a Palm Pilot in Evolution. It has been tested with my Zire 71 (USB connection) and a Palm T/X (Wifi connection), but should work with most Palm Pilot devices.
 
-Additions for anyone using different devices are appreciated. I have put in what I _think_ will work, but as I only have the one device I can't test anything other than that device.
+Additions for anyone using different devices are appreciated. I have put in what I *think* will work, but as I only have the one device I can't test anything other than that device.
 
 ## Contents
 

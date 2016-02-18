@@ -23,9 +23,9 @@
 
 维基:
 
-	_基于操作系统的RAID并不总是保护引导过程,对Windows桌面版本一般的不实用。硬件RAID昂贵且是专有的。为了填补这一缺口，引入了价格便宜的“RAID控制器“，它不包含RAID控制器芯片，但只是一个带特殊的固件和控制器芯片的标准磁盘驱动器。在启动初期，RAID通过固件实现。当加载了保护模式操作系统内核如Linux或现代微软Windows系统，驱动程序接管RAID。_
+	*基于操作系统的RAID并不总是保护引导过程,对Windows桌面版本一般的不实用。硬件RAID昂贵且是专有的。为了填补这一缺口，引入了价格便宜的“RAID控制器“，它不包含RAID控制器芯片，但只是一个带特殊的固件和控制器芯片的标准磁盘驱动器。在启动初期，RAID通过固件实现。当加载了保护模式操作系统内核如Linux或现代微软Windows系统，驱动程序接管RAID。*
 
-	_这些控制器被制造商描述为RAID控制器，但很少清楚地告诉购买者，RAID处理的开销是由主机的CPU承担,而不是RAID控制器本身,硬件RAID不存在这样的开销。固件控制器往往只能使用特定的几种硬盘（例如：Intel的Matrix RAID使用SATA硬盘，现代Intel ICH南桥不支持PATA和SCSI；但主板厂商在一些主板的南桥之外实现了RAID控制器）。因为在此之前，“RAID控制器“已经实现了--控制器做了处理，所以这种新技术被技术知识界称为“fake RAID“，即使RAID本身是正确实施。 Adaptec的称他们为“host RAID“。_[wikipedia:RAID](https://en.wikipedia.org/wiki/RAID "wikipedia:RAID")
+	*这些控制器被制造商描述为RAID控制器，但很少清楚地告诉购买者，RAID处理的开销是由主机的CPU承担,而不是RAID控制器本身,硬件RAID不存在这样的开销。固件控制器往往只能使用特定的几种硬盘（例如：Intel的Matrix RAID使用SATA硬盘，现代Intel ICH南桥不支持PATA和SCSI；但主板厂商在一些主板的南桥之外实现了RAID控制器）。因为在此之前，“RAID控制器“已经实现了--控制器做了处理，所以这种新技术被技术知识界称为“fake RAID“，即使RAID本身是正确实施。 Adaptec的称他们为“host RAID“。*[wikipedia:RAID](https://en.wikipedia.org/wiki/RAID "wikipedia:RAID")
 
 参考 [Wikipedia:RAID](https://en.wikipedia.org/wiki/RAID "wikipedia:RAID") or [FakeRaidHowto @ Community Ubuntu Documentation](https://help.ubuntu.com/community/FakeRaidHowto)以获得更多的信息。
 
@@ -39,10 +39,10 @@ Heinz Maulshagen开发了dmraid工具来检测RAID和创建它们的映射.支�
 
 ## 支持硬件
 
-*   测试ICH10R在_2009.08_ (x86_64) -- [pointone](/index.php/User:Pointone "User:Pointone") 23:10, 29 November 2009 (EST)
-*   测试Sil3124在_2009.02_ (i686) -- [loosec](/index.php/User:Loosec "User:Loosec")
-*   测试nForce4在_Core Dump_ (i686 and x86_64) -- [loosec](/index.php/User:Loosec "User:Loosec")
-*   测试Sil3512在_Overlord_ (x86_64) -- [loosec](/index.php/User:Loosec "User:Loosec")
+*   测试ICH10R在*2009.08* (x86_64) -- [pointone](/index.php/User:Pointone "User:Pointone") 23:10, 29 November 2009 (EST)
+*   测试Sil3124在*2009.02* (i686) -- [loosec](/index.php/User:Loosec "User:Loosec")
+*   测试nForce4在*Core Dump* (i686 and x86_64) -- [loosec](/index.php/User:Loosec "User:Loosec")
+*   测试Sil3512在*Overlord* (x86_64) -- [loosec](/index.php/User:Loosec "User:Loosec")
 
 要获得更多支持的硬件信息,请参阅[RAID/Onboard @ Gentoo Linux Wiki](http://en.gentoo-wiki.com/wiki/RAID/Onboard)
 

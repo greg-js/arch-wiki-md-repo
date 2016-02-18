@@ -104,7 +104,7 @@ FILES="/etc/modprobe.d/uvesafb.conf"
 
 ```
 
-为使变更生效，你需要重新生成 _initramfs_ 镜像。
+为使变更生效，你需要重新生成 *initramfs* 镜像。
 
 ```
 # mkinitcpio -p linux
@@ -173,7 +173,7 @@ run_hook ()
 
 默认的 5c 用来替换成你要的 BIOS 模式的代码。使用命令 `915resolution -l` 来得到所有可用 BIOS 图形模式的代码。
 
-**注意:** 你可能会选择你_并不需要_的代码 (framebuffer 或是 X 也都不需要), 因为 915resolution 会把它替换成用户选定的模式。上例中，`1280 800` 是新的所需分辨率。
+**注意:** 你可能会选择你*并不需要*的代码 (framebuffer 或是 X 也都不需要), 因为 915resolution 会把它替换成用户选定的模式。上例中，`1280 800` 是新的所需分辨率。
 
 ### 钩子阵列
 

@@ -16,7 +16,7 @@ Los usuarios y los grupos son usados ​​en los sistemas GNU/Linux para el [co
 
 ## Descripción
 
-Un _usuario_ es cualquier persona que usa un ordenador. En este caso, estamos describiendo los nombres que representan a dichos usuarios. Esos nombres pueden ser María o Bill, y pueden ser tambien Dragonlady o Pirata en lugar de sus nombres reales. Lo único que importa es que el equipo tenga un nombre para cada cuenta, y es con este nombre a través del cual una persona adquiere los permisos para usar el sistema. No obstante, algunos servicios del sistema se ejecutan utilizando cuentas de usuario restringidas o privilegiadas.
+Un *usuario* es cualquier persona que usa un ordenador. En este caso, estamos describiendo los nombres que representan a dichos usuarios. Esos nombres pueden ser María o Bill, y pueden ser tambien Dragonlady o Pirata en lugar de sus nombres reales. Lo único que importa es que el equipo tenga un nombre para cada cuenta, y es con este nombre a través del cual una persona adquiere los permisos para usar el sistema. No obstante, algunos servicios del sistema se ejecutan utilizando cuentas de usuario restringidas o privilegiadas.
 
 La gestión de usuarios se realiza con el propósito de dar seguridad al sistema, limitando el acceso de ciertas maneras específicas.
 
@@ -24,24 +24,23 @@ Cualquier persona puede tener más de una cuenta, siempre y cuando se utilice un
 
 Los usuarios pueden ser congregados en un «grupo», y, del mismo modo, pueden optar por unirse a un grupo ya existente para utilizar los privilegios de acceso que dicho grupo concede.
 
-**Nota:** El usuario inexperto debe utilizar estas herramientas con cuidado y evitar modificar cualquier otra cuenta de _usuario_ existente, que no sea la suya propia.
+**Nota:** El usuario inexperto debe utilizar estas herramientas con cuidado y evitar modificar cualquier otra cuenta de *usuario* existente, que no sea la suya propia.
 
 ## Permisos y propiedad
 
-De la página [In UNIX Everything is a File (_«En Unix Todo es un Archivo»_)](http://ph7spot.com/musings/in-unix-everything-is-a-file):
+De la página [In UNIX Everything is a File (*«En Unix Todo es un Archivo»*)](http://ph7spot.com/musings/in-unix-everything-is-a-file):
 
-	_El sistema operativo UNIX es el resultado de algunas ideas y conceptos unificadores que dieron forma a su diseño, la interfaz de usuario, la cultura y la evolución. Uno de los más importantes es probablemente el lema: «everything is a file» (_todo es un archivo)_, considerado como uno de los puntos definitorios de UNIX._
+	*El sistema operativo UNIX es el resultado de algunas ideas y conceptos unificadores que dieron forma a su diseño, la interfaz de usuario, la cultura y la evolución. Uno de los más importantes es probablemente el lema: «everything is a file» (*todo es un archivo)*, considerado como uno de los puntos definitorios de UNIX.*
 
-	_Este principio fundamental de diseño consiste en proporcionar un paradigma unificado para acceder a una amplia gama de recursos de entrada/salida: documentos, directorios, discos duros, CD-ROM, módems, teclados, impresoras, monitores, terminales e, incluso, algunas comunicaciones de procesos internos y de red. El truco consiste en proporcionar una abstracción común para todos estos recursos, para cada uno de los cuales, los padres de UNIX, llamaron «archivo». Debido a que cada «archivo» se expone a través de la misma API, se puede utilizar el mismo conjunto de órdernes básicas para leer/escribir en un disco, un teclado, un documento o un dispositivo de red._
+	*Este principio fundamental de diseño consiste en proporcionar un paradigma unificado para acceder a una amplia gama de recursos de entrada/salida: documentos, directorios, discos duros, CD-ROM, módems, teclados, impresoras, monitores, terminales e, incluso, algunas comunicaciones de procesos internos y de red. El truco consiste en proporcionar una abstracción común para todos estos recursos, para cada uno de los cuales, los padres de UNIX, llamaron «archivo». Debido a que cada «archivo» se expone a través de la misma API, se puede utilizar el mismo conjunto de órdernes básicas para leer/escribir en un disco, un teclado, un documento o un dispositivo de red.*
 
-Del archivo [Extending UNIX File Abstraction for General-Purpose Networking (_«Extender la abstracción de archivo de UNIX para fines generales de gestión de la red»_)](http://www.intel-research.net/Publications/Pittsburgh/101220041324_277.pdf):
+Del archivo [Extending UNIX File Abstraction for General-Purpose Networking (*«Extender la abstracción de archivo de UNIX para fines generales de gestión de la red»*)](http://www.intel-research.net/Publications/Pittsburgh/101220041324_277.pdf):
 
-	_Una abstracción fundamental, potente y consistente, proporcionada en UNIX y sistemas operativos compatibles, es la abstracción de archivo. Muchos servicios del sistema operativo e interfaces de dispositivos se implementan para proporcionar una metáfora del archivo o del sistema de archivos para las aplicaciones. Esto permite usos nuevos, y aumenta, en gran medida, el poder de las aplicaciones existentes —herramientas sencillas diseñadas para usos específicos pueden, con las abstracciones de archivos de UNIX, utilizarse de otras formas novedosas—. Una herramienta simple, como cat, diseñada para leer uno o más archivos y mostrar los contenidos en la salida estándar, se puede utilizar para leer la salida/entrada de dispositivos mediante los archivos de dispositivos especiales, que, por lo general, se encuentran en el directorio `/dev`. En muchos sistemas, la grabación de audio y la reproducción, se pueden hacer simplemente con las órdenes, «`cat /dev/audio > miarchivo`» y «`cat miarchivo > /dev/audio`», respectivamente._
+	*Una abstracción fundamental, potente y consistente, proporcionada en UNIX y sistemas operativos compatibles, es la abstracción de archivo. Muchos servicios del sistema operativo e interfaces de dispositivos se implementan para proporcionar una metáfora del archivo o del sistema de archivos para las aplicaciones. Esto permite usos nuevos, y aumenta, en gran medida, el poder de las aplicaciones existentes —herramientas sencillas diseñadas para usos específicos pueden, con las abstracciones de archivos de UNIX, utilizarse de otras formas novedosas—. Una herramienta simple, como cat, diseñada para leer uno o más archivos y mostrar los contenidos en la salida estándar, se puede utilizar para leer la salida/entrada de dispositivos mediante los archivos de dispositivos especiales, que, por lo general, se encuentran en el directorio `/dev`. En muchos sistemas, la grabación de audio y la reproducción, se pueden hacer simplemente con las órdenes, «`cat /dev/audio > miarchivo`» y «`cat miarchivo > /dev/audio`», respectivamente.*
 
-Cada archivo en un sistema GNU/Linux es propiedad de un usuario y de un grupo. Además, hay tres tipos de permisos de acceso: lectura, escritura y ejecución. Los permisos de acceso pueden aplicarse de forma diferente al usuario propietario de un archivo, al grupo propietario, y o otros (los que no tienen propiedad). Se pueden visualizar los propietarios y los permisos de un archivo utilizando el formato «long listing» (_listado largo_) de la orden `ls`:
+Cada archivo en un sistema GNU/Linux es propiedad de un usuario y de un grupo. Además, hay tres tipos de permisos de acceso: lectura, escritura y ejecución. Los permisos de acceso pueden aplicarse de forma diferente al usuario propietario de un archivo, al grupo propietario, y o otros (los que no tienen propiedad). Se pueden visualizar los propietarios y los permisos de un archivo utilizando el formato «long listing» (*listado largo*) de la orden `ls`:
 
  `$ ls -l /boot/` 
-
 ```
 total 13740
 drwxr-xr-x 2 root root    4096 Jan 12 00:33 grub
@@ -51,16 +50,15 @@ drwxr-xr-x 2 root root    4096 Jan 12 00:33 grub
 -rw-r--r-- 1 root root 2209920 Jan  8 08:19 vmlinuz-linux
 ```
 
-La primera columna muestra los permisos del archivo (por ejemplo, el archivo `initramfs-linux.img` tiene los permisos `-rw-r--r--`). La tercera y cuarta columnas muestran al usuario y al grupo propietarios del archivo, respectivamente. En el presente ejemplo, todos los archivos son propiedad del usuario _root_ y del grupo _root_.
+La primera columna muestra los permisos del archivo (por ejemplo, el archivo `initramfs-linux.img` tiene los permisos `-rw-r--r--`). La tercera y cuarta columnas muestran al usuario y al grupo propietarios del archivo, respectivamente. En el presente ejemplo, todos los archivos son propiedad del usuario *root* y del grupo *root*.
 
  `$ ls -l /media/` 
-
 ```
 total 16
 drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
 ```
 
-En este ejemplo, la carpeta `sf_Shared` es propiedad del usuario _root_ y del grupo _vboxsf_ . También es posible determinar los propietarios y los permisos de un archivo con la orden `stat`:
+En este ejemplo, la carpeta `sf_Shared` es propiedad del usuario *root* y del grupo *vboxsf* . También es posible determinar los propietarios y los permisos de un archivo con la orden `stat`:
 
 El usuario propietario:
 
@@ -88,7 +86,7 @@ Puede listar los archivos que pertenecen a un usuario o a un grupo con la orden 
 
 ```
 
-El usuario y el grupo propietarios de un archivo pueden ser cambiados con la orden `chown` (_«change owner»_). Los permisos de acceso a un archivo se pueden cambiar con la orden `chmod` (_«change mode»_).
+El usuario y el grupo propietarios de un archivo pueden ser cambiados con la orden `chown` (*«change owner»*). Los permisos de acceso a un archivo se pueden cambiar con la orden `chmod` (*«change mode»*).
 
 Véase [man chown](http://linux.die.net/man/1/chown), [man chmod](http://linux.die.net/man/1/chmod), y [Linux file permissions](http://www.tuxfiles.org/linuxhelp/filepermissions.html) para obtener información adicional.
 
@@ -122,7 +120,7 @@ Para agregar un nuevo usuario, utilice la orden `useradd`:
 
 **Advertencia:** La shell de acceso debería ser una de las que figuran en `/etc/shells`. Para los programas que utilizan PAM, esto se comprueba por el módulo `pam_shells`.
 
-He aquí un ejemplo típico de sistema de escritorio, añadiendo un usuario llamado _archie_ y especificando _bash_ como la shell de inicio de sesión:
+He aquí un ejemplo típico de sistema de escritorio, añadiendo un usuario llamado *archie* y especificando *bash* como la shell de inicio de sesión:
 
 ```
 # useradd -m -g users -G wheel -s /bin/bash archie
@@ -145,7 +143,7 @@ Alternativamente, se puede utilizar gpasswd. Aunque el nombre de usuario solo se
 
 **Advertencia:** Si se omite la opción `-a` el usuario será quitado de todos los grupos no mencionados en `[additional_groups]` (es decir, el usuario será miembro únicamente de los grupos listados en `[additional_groups]`).
 
-Para introducir la información del usuario para el campo _GECOS_ (por ejemplo, el nombre completo del usuario), escriba:
+Para introducir la información del usuario para el campo *GECOS* (por ejemplo, el nombre completo del usuario), escriba:
 
 ```
 # chfn [nombredeusuario]
@@ -203,7 +201,7 @@ donde:
 *   `directory` es la carpeta `$HOME` del usuario
 *   `shell` es el intérprete de órdenes utilizado por el usuario (por defecto es `/bin/sh`)
 
-**Nota:** Arch Linux utiliza contraseñas _shadowed_. El archivo `passwd` es legible por todos los usuarios, de modo que guardar las contraseñas (sean cifradas o no) en este archivo es inseguro. Por ello, el campo `password` contendrá un carácter de posición (`x`) que indica que la contraseña cifrada se guarde en el archivo de acceso restringido `/etc/shadow`.
+**Nota:** Arch Linux utiliza contraseñas *shadowed*. El archivo `passwd` es legible por todos los usuarios, de modo que guardar las contraseñas (sean cifradas o no) en este archivo es inseguro. Por ello, el campo `password` contendrá un carácter de posición (`x`) que indica que la contraseña cifrada se guarde en el archivo de acceso restringido `/etc/shadow`.
 
 ## Gestión de grupos
 
@@ -317,7 +315,7 @@ Los grupos siguientes se utilizan para los fines del sistema y no son apropiados
 | storage | Permite el acceso a unidades extraíbles, como discos duros USB, unidades flash/jump, reproductores de MP3; permite al usuario montar dispositivos de almacenamiento. |
 | systemd-journal | `/var/log/journal/*` | Proporciona acceso a los registros completos de systemd. En su defecto, solo se muestran los mensajes generados por los usuarios. |
 | vboxsf | Carpetas compartidad de máquinas virtuales | Usado por [VirtualBox](/index.php/VirtualBox "VirtualBox"). |
-| video | `/dev/fb/0`, `/dev/misc/agpgart` | Permite el acceso a los dispositivos de captura de video, aceleración de hardware 2D/3D, framebuffer (el servidor [X](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") se puede utilizar _sin_ pertenecer a este grupo). Las sesiones locales ya tienen la capacidad de utilizar la aceleración de hardware y de captura de vídeo. |
+| video | `/dev/fb/0`, `/dev/misc/agpgart` | Permite el acceso a los dispositivos de captura de video, aceleración de hardware 2D/3D, framebuffer (el servidor [X](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") se puede utilizar *sin* pertenecer a este grupo). Las sesiones locales ya tienen la capacidad de utilizar la aceleración de hardware y de captura de vídeo. |
 
 ### Grupos para el software
 

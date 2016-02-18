@@ -104,7 +104,6 @@ HOOKS="base udev autodetect block **uresume** filesystems"
 ### Sample config
 
  `/etc/suspend.conf` 
-
 ```
 snapshot device = /dev/snapshot
 
@@ -170,7 +169,6 @@ It is probably necessary to resort to a userspace tool which calls internally s2
 ### With pm-utils
 
 [Pm-utils](/index.php/Pm-utils "Pm-utils") can utilise several [sleep back-ends](/index.php/Pm-utils#Using_another_sleep_backend_.28like_uswsusp.29 "Pm-utils"), including uswsusp. Create or edit `/etc/pm/config.d/module`:
-
 ```
 SLEEP_MODULE=uswsusp
 
@@ -189,7 +187,7 @@ $ dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesk
 
 ### With systemd
 
-To to put your system into hibernation a.k.a _Suspend to Disk_ with `systemctl hibernate`, do:
+To to put your system into hibernation a.k.a *Suspend to Disk* with `systemctl hibernate`, do:
 
 ```
 # cp /usr/lib/systemd/system/systemd-hibernate.service /etc/systemd/system/
@@ -200,7 +198,6 @@ To to put your system into hibernation a.k.a _Suspend to Disk_ with `systemctl h
 Open `systemd-hibernate.service` with your preferred text editor and edit the line from this:
 
  `/etc/systemd/system/systemd-hibernate.service` 
-
 ```
 ...
 ExecStart=/usr/lib/systemd/systemd-sleep hibernate
@@ -209,7 +206,6 @@ ExecStart=/usr/lib/systemd/systemd-sleep hibernate
 to this:
 
  `/etc/systemd/system/systemd-hibernate.service` 
-
 ```
 ...
 ExecStart=/bin/sh -c 's2disk && run-parts --regex .\* -a post /usr/lib/systemd/system-sleep'
@@ -228,7 +224,6 @@ If `s2ram` doesn't match your machine to an entry in its whitelist, it will outp
 If `s2ram -f` doesn't work, try the different workarounds offered by `s2ram`. Run `s2ram -h` to get a list of the possible options:
 
  `# s2ram -h` 
-
 ```
 Usage: s2ram [-nhi] [-fspmrav]
 

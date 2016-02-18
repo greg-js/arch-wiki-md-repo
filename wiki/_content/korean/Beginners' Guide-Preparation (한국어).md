@@ -2,7 +2,7 @@
 
 이 문서는 [아치 설치 스크립트](https://github.com/falconindy/arch-install-scripts)를 사용하여 [Arch Linux](/index.php/Arch_Linux "Arch Linux")를 설치하는 과정을 안내합니다. 설치하기에 앞서 [FAQ](/index.php/FAQ "FAQ")를 읽어 보세요.
 
-아치리눅스 커뮤니티가 관리하는 [Arch wiki](/index.php/Main_page "Main page")는 아주 좋은 자료로 문제가 생기면 가장 먼저 찾아봐야 합니다. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") 채널([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux), [irc://irc.freenode.net/#archlinux-ko](irc://irc.freenode.net/#archlinux-ko) )과 [포럼](https://bbs.archlinux.org/) 또한 문제를 해결할 때 이용할 수 있습니다. 특정 명령어에 대한 도움말을 원하신다면 `man` 항목을 읽어보십시오. `man` 항목은 보통 `man _명령어_`로 볼 수 있습니다.
+아치리눅스 커뮤니티가 관리하는 [Arch wiki](/index.php/Main_page "Main page")는 아주 좋은 자료로 문제가 생기면 가장 먼저 찾아봐야 합니다. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") 채널([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux), [irc://irc.freenode.net/#archlinux-ko](irc://irc.freenode.net/#archlinux-ko) )과 [포럼](https://bbs.archlinux.org/) 또한 문제를 해결할 때 이용할 수 있습니다. 특정 명령어에 대한 도움말을 원하신다면 `man` 항목을 읽어보십시오. `man` 항목은 보통 `man *명령어*`로 볼 수 있습니다.
 
 ## Contents
 
@@ -30,12 +30,12 @@
 
 **도움말:** [archboot](https://downloads.archlinux.de/iso/archboot/latest) 설치 매체를 사용할 경우, 이 가이드에서 설명하는 몇 가지 단계를 [대화형으로 진행](/index.php/Archboot#Interactive_setup_features "Archboot")할 수 있습니다. [Archboot](/index.php/Archboot "Archboot") 문서에서 더 자세한 내용을 읽으실 수 있습니다.
 
-*   아치리눅스 설치 매체는 전자 서명이 되어 있으며, 설치하기 전에 서명을 확인하는 것이 좋습니다. 다운로드 페이지나 사용하신 미러에서 _.sig_ 파일을 같이 다운로드하십시오. 아치리눅스 환경에서는 루트 권한으로 `pacman-key -v _설치매체_파일_.sig` 를 실행하면 됩니다. 다른 환경에서는 루트 권한으로 gpg2를 이용하여 서명을 확인할 수 있습니다. 루트 권한으로 `gpg2 --verify _설치매체_파일_.sig`을 실행하십시오. 파일 무결성 확인을 위한 md5, sha1 체크섬 역시 제공되고 있습니다.
+*   아치리눅스 설치 매체는 전자 서명이 되어 있으며, 설치하기 전에 서명을 확인하는 것이 좋습니다. 다운로드 페이지나 사용하신 미러에서 *.sig* 파일을 같이 다운로드하십시오. 아치리눅스 환경에서는 루트 권한으로 `pacman-key -v *설치매체_파일*.sig` 를 실행하면 됩니다. 다른 환경에서는 루트 권한으로 gpg2를 이용하여 서명을 확인할 수 있습니다. 루트 권한으로 `gpg2 --verify *설치매체_파일*.sig`을 실행하십시오. 파일 무결성 확인을 위한 md5, sha1 체크섬 역시 제공되고 있습니다.
     **참고:** 서명에 사용된 RSA 키에 해당하는 공개키를 다운로드하지 않고 gpg2를 이용할 경우, 확인 절차가 실패합니다. [http://sparewotw.wordpress.com/2012/10/31/how-to-verify-signature-using-sig-file/](http://sparewotw.wordpress.com/2012/10/31/how-to-verify-signature-using-sig-file/) 에서 더 상세한 설명을 읽을 수 있습니다
 
 *   적절한 소프트웨어를 이용해서 .iso 파일을 CD나 DVD에 구우십시오. 아치리눅스 환경에서 구울 경우 [Optical disc drive#Burning](/index.php/Optical_disc_drive#Burning "Optical disc drive") 문서를 참고하십시오.
 
-**참고:** CD 미디어나 광학 드라이브의 질은 매우 편차가 큽니다. 일반적으로 오류를 최대한 줄이기 위해 느리게 기록하는 것을 추천합니다. 몇몇 사용자들은 _**2배속 또는 4배속 정도까지 느린**_ 속도를 추천합니다. 만약 CD로부터 오류가 발생한다면, 가능한 한 가장 느린 속도로 기록하시기 바랍니다.
+**참고:** CD 미디어나 광학 드라이브의 질은 매우 편차가 큽니다. 일반적으로 오류를 최대한 줄이기 위해 느리게 기록하는 것을 추천합니다. 몇몇 사용자들은 ***2배속 또는 4배속 정도까지 느린*** 속도를 추천합니다. 만약 CD로부터 오류가 발생한다면, 가능한 한 가장 느린 속도로 기록하시기 바랍니다.
 
 *   혹은 .iso이미지를 USB 드라이브에 기록하실수도 있습니다. [USB Installation Media](/index.php/USB_Installation_Media "USB Installation Media")에서 상세한 설명을 보십시오.
 
@@ -96,13 +96,13 @@ EFI Default Loader
 
 ```
 
-명령을 내리십시오. _efivar_이 UEFI 변수들을 정확하게 나열했다면, UEFI 모드로 부팅한 것입니다. 만일 _efivar_이 UEFI 변수들을 정확히 나열하지 않았다면, [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_Variables_support_to_work_properly "Unified Extensible Firmware Interface")에 나와있는 요구 사항을 만족시켰는지 확인하십시오.
+명령을 내리십시오. *efivar*이 UEFI 변수들을 정확하게 나열했다면, UEFI 모드로 부팅한 것입니다. 만일 *efivar*이 UEFI 변수들을 정확히 나열하지 않았다면, [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_Variables_support_to_work_properly "Unified Extensible Firmware Interface")에 나와있는 요구 사항을 만족시켰는지 확인하십시오.
 
 #### 부팅 문제 해결
 
 *   인텔 비디오 칩셋을 사용하며, 부팅 과정에서 화면에 아무것도 나오지 않는다면, 아마 커널 모드 세팅([KMS](/index.php/Kernel_Mode_Setting "Kernel Mode Setting"))의 문제일 것입니다. 해결을 위해서는 재부팅을 하고, 메뉴에서 부팅하기를 원하는 항목(i686이나 x86_64)을 선택하고 `Tab`을 누릅니다. 화면에 나오는 문자열의 끝에 `nomodset`을 추가하고 `Enter`를 누릅니다. `nomodset` 대신 `video=SVIDEO-1:d`를 추가하셔도 됩니다. `video=SVIDEO-1:d`는 커널 모드 세팅을 비활성화하지 않습니다. `i915.modeset=0`를 추가하는 것도 가능합니다. 관련 내용은 [Intel](/index.php/Intel "Intel")항목을 참고하십시오.
 
-*   만약 화면이 공백 상태로 가지 _않고_ 커널을 로딩하는 중에 부팅이 멈춘다면, 메뉴 항목을 선택한 상테에서 `Tab`키를 눌러 다음 내용을 추가해 준 다음 `Enter`키를 눌러주십시오.
+*   만약 화면이 공백 상태로 가지 *않고* 커널을 로딩하는 중에 부팅이 멈춘다면, 메뉴 항목을 선택한 상테에서 `Tab`키를 눌러 다음 내용을 추가해 준 다음 `Enter`키를 눌러주십시오.
 
 ```
 `acpi=off`

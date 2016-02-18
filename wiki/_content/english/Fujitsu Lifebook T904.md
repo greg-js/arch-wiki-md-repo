@@ -36,17 +36,17 @@ User confirmations of the fix may be found after post #540 [[1]](http://forum.ta
 
 The wacom kernel module (wacom.ko) loaded by default in the 3.14.4-1-ARCH kernel does not support the T904's integrated digitizer 056A:5002 (VendorID:DeviceID). However, the [Linuxwacom project](http://sourceforge.net/apps/mediawiki/linuxwacom/index.php?title=Linuxwacom) has included support in their upstream kernel module and xf86-input-wacom-git package which are not yet available in the official arch repositories.
 
-Until future updates are released, users may obtain a functional digitizer by installing _xf86-input-wacom-git_ and building the kernel module as described below:
+Until future updates are released, users may obtain a functional digitizer by installing *xf86-input-wacom-git* and building the kernel module as described below:
 
 #### X11 wacom input
 
-Install _xf86-input-wacom-git_ via [building from source](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) or using an [AUR helper](https://wiki.archlinux.org/index.php/AUR_Helpers))
+Install *xf86-input-wacom-git* via [building from source](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) or using an [AUR helper](https://wiki.archlinux.org/index.php/AUR_Helpers))
 
 #### Wacom Kernel Module
 
-The non-functional default wacom kernel module (wacom.ko) is located in /lib/modules/_3.14.-4-1-ARCH_/kernel/drivers/input/tablet/wacom.ko This module must be replaced with the latest [Linuxwacom](http://sourceforge.net/apps/mediawiki/linuxwacom/index.php?title=Linuxwacom) project module as follows:
+The non-functional default wacom kernel module (wacom.ko) is located in /lib/modules/*3.14.-4-1-ARCH*/kernel/drivers/input/tablet/wacom.ko This module must be replaced with the latest [Linuxwacom](http://sourceforge.net/apps/mediawiki/linuxwacom/index.php?title=Linuxwacom) project module as follows:
 
-First, ensure that _git_ and _linux-headers_ are installed:
+First, ensure that *git* and *linux-headers* are installed:
 
 ```
 # pacman -S git linux-headers

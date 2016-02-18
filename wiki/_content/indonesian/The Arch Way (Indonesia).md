@@ -10,7 +10,7 @@ Berikut ini lima prinsip utama yang biasanya disebut sebagai Arch Way, atau Filo
 
 ## Kesederhanaan
 
-_"Kesederhanaan adalah kepuasan tertinggi." -Leonardo Da Vinci_
+*"Kesederhanaan adalah kepuasan tertinggi." -Leonardo Da Vinci*
 
 Kesederhanaan merupakan mutlak tujuan utama di balik pengembangan Arch. Banyak distribusi GNU/Linux menyatakan diri mereka "sederhana". Akan tetapi, kesederhanaan itu sendiri memiliki banyak definisi.
 
@@ -26,7 +26,7 @@ Arch Linux menjaga kompleksitas inheren dengan sistem GNU/Linux yang utuh, sambi
 
 Sistem Arch Linux mendahulukan desain yang elegan serta bersih, kode sederhana, dari pada tambalan yang tidak diperlukan, otomatisasi, jajanan mata atau "newbie-friendliness". Penambalan perangkat lunak tetap ada dengan jumlah seminimum mungkin-- idealnya, tidak ada. Implementasi sederhana akan selalu mengalahkan interface pengguna sederhana.
 
-**Kesederhanaan _implementasi_, keanggunan-kode, dan minimalisme akan selalu tetap menjadi prioritas utama pengembangan Arch.**
+**Kesederhanaan *implementasi*, keanggunan-kode, dan minimalisme akan selalu tetap menjadi prioritas utama pengembangan Arch.**
 
 Konsep, desain, dan fitur-fitur dihasilkan dan diimplementasikan dengan menggunakan prinsip-prinsip Arch Way sebagai panduan, daripada tunduk pada pengaruh eksternal. Tim pengembangan teguh dengan komitmen dan dedikasi mereka terhadap filosofi Arch Way. Jika kita memiliki kesamaan visi, maka anda kami sambut dan kami dorong untuk menggunakan Arch.
 
@@ -34,7 +34,7 @@ Konsep, desain, dan fitur-fitur dihasilkan dan diimplementasikan dengan mengguna
 
 Ketika banyak distribusi GNU/Linux mencoba untuk menjadi lebih ramah pengguna, Linux Arch selalu mencoba, dan akan selalu berpusat pada pengguna.
 
-**Arch Linux targets and accommodates competent GNU/Linux users by giving them complete control and _responsibility_ over the system (Linux Arch menargetkan dan mengakomodasikan pengguna GNU/Linux yang kompeten dengan memberikan mereka kontrol dan _tanggung jawab_ yang utuh atas sistemnya).**
+**Arch Linux targets and accommodates competent GNU/Linux users by giving them complete control and *responsibility* over the system (Linux Arch menargetkan dan mengakomodasikan pengguna GNU/Linux yang kompeten dengan memberikan mereka kontrol dan *tanggung jawab* yang utuh atas sistemnya).**
 
 Pengguna Linux Arch mengelola seluruh sistemnya masing-masing. Sistemnya sendiri akan menawarkan sedikit bantuan, kecuali untuk suatu set perangkat pemeliharaan sederhana yang didesain untuk menyampaikan perintah ke sistem dengan baik melalui perintah pengguna.
 
@@ -44,22 +44,22 @@ Desain berpusat pada pengguna ini memakai pendekatan "do-it-yourself" dalam peng
 
 Keterbukaan setara dengan kesederhanaan, dan juga salah satu prinsip utama pengembangan Linux Arch.
 
-**_Arch Linux uses simple tools, that are selected or built with openness of the sources and their output in mind_ (Linux Arch memakai perangkat sederhana yang dipilih dan dibangun dengan keterbukaan sumber dan hasilnya).**
+***Arch Linux uses simple tools, that are selected or built with openness of the sources and their output in mind* (Linux Arch memakai perangkat sederhana yang dipilih dan dibangun dengan keterbukaan sumber dan hasilnya).**
 
 Keterbukaan menghapus segala batas dan abstraksi antara pengguna dan sistem, memberi kontrol lebih, saat penyederhanaan pemeliharaan sistem secara simultan.
 
 Keterbukaan alami Linux Arch juga mempengaruhi peningkatan bertahap kurva pembelajaran, tetapi pengguna Linux Arch yang berpengalaman merasa bahwa sistem yang lebih tertutup kurang nyaman dikontrol.
 
-Prinsip keterbukaan meluas ke anggota komunitas dengan baik. Pengguna Linux Arch dikenali sangat terbuka dalam memberi bantuan dan nasihat, seperti juga kontribusi paket ke _Arch User Repository_ yang dikelola komuntas.
+Prinsip keterbukaan meluas ke anggota komunitas dengan baik. Pengguna Linux Arch dikenali sangat terbuka dalam memberi bantuan dan nasihat, seperti juga kontribusi paket ke *Arch User Repository* yang dikelola komuntas.
 
 ## Kebebasan
 
 Prinsip utama pengembangan Linux Arch lainnya yaitu kebebasan. Para pengguna bukan hanya diijinkan untuk memutuskan semuanya terkait konfigurasi sistem, tetapi juga menentukan sistem mereka akan menjadi seperti apa.
 
-**_By keeping the system simple, Arch Linux provides the freedom to make any choice about the system_ (Dengan sistem yang sederhana, Linux Arch memberi kebebasan untuk membuat tiap keputusan terhadap sistem).**
+***By keeping the system simple, Arch Linux provides the freedom to make any choice about the system* (Dengan sistem yang sederhana, Linux Arch memberi kebebasan untuk membuat tiap keputusan terhadap sistem).**
 
-Sistem Linux Arch yang baru selesai dipasang, hanya memiliki komponen dasar utama tanpa konfigurasi otomatis. Pengguna dipersilakan mengonfigurasikan sistem sesuai keinginannya, dari _shell_. Dari awal prosedur instalasi, tiap komponen sistem transparan 100% dan mudah diakses, dihapus, atau diganti dengan komponen alternatif.
+Sistem Linux Arch yang baru selesai dipasang, hanya memiliki komponen dasar utama tanpa konfigurasi otomatis. Pengguna dipersilakan mengonfigurasikan sistem sesuai keinginannya, dari *shell*. Dari awal prosedur instalasi, tiap komponen sistem transparan 100% dan mudah diakses, dihapus, atau diganti dengan komponen alternatif.
 
-Sejumlah besar paket dan skrip di pelbagai repositori Linux Arch juga mendukung kebebasan dalam memilih, menawarkan perangkat lunak bebas dan _open source_ bagi yang mengutamakannya, sebagaimana perangkat lunak proprietari, bagi mereka yang lebih mengharapkan fungsionalitas dibanding ideologi. Pengguna yang memilih.
+Sejumlah besar paket dan skrip di pelbagai repositori Linux Arch juga mendukung kebebasan dalam memilih, menawarkan perangkat lunak bebas dan *open source* bagi yang mengutamakannya, sebagaimana perangkat lunak proprietari, bagi mereka yang lebih mengharapkan fungsionalitas dibanding ideologi. Pengguna yang memilih.
 
-Seperti yang Judd Vinet, penemu proyek Linux Arch katakan: _[Arch Linux] is what_ you _make it._
+Seperti yang Judd Vinet, penemu proyek Linux Arch katakan: *[Arch Linux] is what* you *make it.*

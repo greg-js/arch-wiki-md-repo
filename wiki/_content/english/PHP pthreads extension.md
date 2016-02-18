@@ -3,7 +3,6 @@ If you wish to have POSIX multi-threading you will need the pthreads extension. 
 Check what packages depend on the [php](https://www.archlinux.org/packages/?name=php) package, for example:
 
  `pacman -Qii php` 
-
 ```
 :: php-apache: requires php
 :: php-apcu: requires php

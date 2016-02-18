@@ -50,11 +50,11 @@ crontab 的基本格式是：
 
 ```
 
-*   _分钟_ 值从 0 到 59.
-*   _小时_ 值从 0 到 23.
-*   _日_ 值从 1 到 31.
-*   _月_ 值从 1 到 12.
-*   _星期_ 值从 0 到 6, 0 代表星期日.
+*   *分钟* 值从 0 到 59.
+*   *小时* 值从 0 到 23.
+*   *日* 值从 1 到 31.
+*   *月* 值从 1 到 12.
+*   *星期* 值从 0 到 6, 0 代表星期日.
 
 多个时间可以用逗号隔开，范围可以用连字符给出，星号可以作为通配符。空格用来分开字段。例如，下面一行：
 
@@ -67,7 +67,7 @@ crontab 的基本格式是：
 
 ## 基本命令
 
-Crontabs 不应该直接编辑；用户应该使用 _crontab_ 程序来处理他们的 crontabs。为了能够访问这个命令，用户必须添加到 users 用户组 (见 gpasswd 命令).
+Crontabs 不应该直接编辑；用户应该使用 *crontab* 程序来处理他们的 crontabs。为了能够访问这个命令，用户必须添加到 users 用户组 (见 gpasswd 命令).
 
 要查看 crontabs，用户应该运行下面的命令：
 
@@ -93,7 +93,7 @@ $ crontab -d
 如果用户有一个保存好的 crontab 想要用它完全覆盖旧的 crontab，可以使用：
 
 ```
-$ crontab _saved_crontab_filename_
+$ crontab *saved_crontab_filename*
 
 ```
 
@@ -107,11 +107,11 @@ $ crontab -
 想编辑别的用户的 crontab, 使用root运行下面的命令:
 
 ```
-# crontab -u _username_ -e
+# crontab -u *username* -e
 
 ```
 
-同一个格式 (追加 "-u _username_" 到命令后) 也可以用来列出或删除 crontabs。
+同一个格式 (追加 "-u *username*" 到命令后) 也可以用来列出或删除 crontabs。
 
 如果想使用 nano 而不是 vi 作为 crontab 编辑器，添加下面的变量到 `/etc/bash.bashrc`:
 
@@ -142,7 +142,7 @@ export EDITOR="/usr/bin/nano"
 
 将会在一月的每个工作日每五分钟（例如，在12：00，12：05，12：10等）执行一次相同的命令。
 
-As noted in the _Crontab Format_ section, the line:
+As noted in the *Crontab Format* section, the line:
 
 ```
 *0,*5 9-16 * 1-5,9-12 1-5 /home/user/bin/i_love_cron.sh
@@ -153,7 +153,7 @@ Will execute the script `i_love_cron.sh` at five minute intervals from 9 AM to 5
 
 ## 更多信息
 
-The cron daemon parses a configuration file known as _crontab_. Each user on the system can maintain a separate crontab file to schedule commands individually. The root user's crontab is used to schedule system-wide tasks (though users may opt to use `/etc/crontab` or the `/etc/cron.d` directory, depending on which cron implementation they choose).
+The cron daemon parses a configuration file known as *crontab*. Each user on the system can maintain a separate crontab file to schedule commands individually. The root user's crontab is used to schedule system-wide tasks (though users may opt to use `/etc/crontab` or the `/etc/cron.d` directory, depending on which cron implementation they choose).
 
 There are slight differences between the crontab formats of the different cron daemons. The default root crontab for dcron looks like this:
 

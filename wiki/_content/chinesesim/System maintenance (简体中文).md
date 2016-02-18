@@ -98,15 +98,15 @@ Avoid using the `-d` option with pacman. `pacman -Rdd package` skips dependency 
 
 ### 不支持部分升级
 
-Arch Linux 是滚动发行版，新[库](https://en.wikipedia.org/wiki/Library_(computing) "wikipedia:Library (computing)") 版本将不断被推送到源。开发者和信任用户会按照需要重新构建源中的所有软件包。如果有本地安装的版本(例如 AUR 软件包)，需要在它们的依赖关系升级了[soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname")时重新编译。
+Arch Linux 是滚动发行版，新[库](https://en.wikipedia.org/wiki/Library_(computing) 版本将不断被推送到源。开发者和信任用户会按照需要重新构建源中的所有软件包。如果有本地安装的版本(例如 AUR 软件包)，需要在它们的依赖关系升级了[soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname")时重新编译。
 
 也就是说，部分升级是**不被支持的**。
 
 不要使用 `pacman -Sy package` 或等价命令如 `pacman -Sy` 之后再 `pacman -S package`。在安装软件包前请更新源并升级。同理请特别注意 IgnorePkg/IgnoreGroup 的使用。
 
-如果进行了部分升级，二进制包因为找不到链接库而损坏，**不要通过简单的符号链接进行修正**。库升级 [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname") 是因为它们**不再向前兼容**。只要 _pacman_ 可以运行，使用更新的源进行 `pacman -Syu` 就能修复这些问题。
+如果进行了部分升级，二进制包因为找不到链接库而损坏，**不要通过简单的符号链接进行修正**。库升级 [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname") 是因为它们**不再向前兼容**。只要 *pacman* 可以运行，使用更新的源进行 `pacman -Syu` 就能修复这些问题。
 
-The bash script _checkupdates_, included with the pacman package, provides a safe way to check for upgrades to installed packages without running a system update at the same time. See also [BBS##1563725](https://bbs.archlinux.org/viewtopic.php?pid=1563725#p1563725).
+The bash script *checkupdates*, included with the pacman package, provides a safe way to check for upgrades to installed packages without running a system update at the same time. See also [BBS##1563725](https://bbs.archlinux.org/viewtopic.php?pid=1563725#p1563725).
 
 ### Read before upgrading the system
 

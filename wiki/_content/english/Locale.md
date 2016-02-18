@@ -35,7 +35,6 @@ $ locale -a
 The locales that can be generated are listed in the `/etc/locale.gen` file: their names are defined using the format `[language][_TERRITORY][.CODESET][@modifier]`. To generate a locale, first uncomment the corresponding line in the file (or comment to remove); when doing this, also consider localizations needed by other users on the system and specific [variables](#Supported_variables). For example, for American-English uncomment `en_US.UTF-8 UTF-8`.
 
  `/etc/locale.gen` 
-
 ```
 ...
 #en_SG ISO-8859-1
@@ -69,27 +68,26 @@ $ locale
 The locale to be used, chosen among the previously generated ones, is set in `locale.conf` files, each of which must contain a new-line separated list of environment variable assignments, for example:
 
  `locale.conf` 
-
 ```
 LANG=en_AU.UTF-8
 LC_COLLATE=C
 LC_TIME=en_DK.UTF-8
 ```
 
-*   A **system-wide** locale can be set by creating or editing `/etc/locale.conf`. The same result can be obtained with the _localectl_ command:
+*   A **system-wide** locale can be set by creating or editing `/etc/locale.conf`. The same result can be obtained with the *localectl* command:
 
 	 `# localectl set-locale LANG=en_US.UTF-8` 
 
 	See `man 1 localectl` for details.
 
-**Tip:** During system installation, if the output of _locale_ is to your liking, you can save a little time by doing: `locale > /etc/locale.conf` while chrooted.
+**Tip:** During system installation, if the output of *locale* is to your liking, you can save a little time by doing: `locale > /etc/locale.conf` while chrooted.
 
 *   The system-wide locale can be overridden in each **user session** by creating or editing `~/.config/locale.conf` (or, in general, `$XDG_CONFIG_HOME/locale.conf` or `$HOME/.config/locale.conf`).
 
 **Tip:**
 
 *   This can also allow keeping the logs in `/var/log` in English while using the local language in the user environment.
-*   You can create a `/etc/skel/.config/locale.conf` file so that any new users added using _useradd_ and the `-m` option will have `~/.config/locale.conf` automatically generated.
+*   You can create a `/etc/skel/.config/locale.conf` file so that any new users added using *useradd* and the `-m` option will have `~/.config/locale.conf` automatically generated.
 
 The precedence of these `locale.conf` files is defined in `/etc/profile.d/locale.sh`.
 
@@ -150,7 +148,6 @@ The locale set for this variable will be used for all the `LC_*` variables that 
 Programs which use gettext for translations respect the `LANGUAGE` option in addition to the usual variables. This allows users to specify a [list](http://www.gnu.org/software/gettext/manual/gettext.html#The-LANGUAGE-variable) of locales that will be used in that order. If a translation for the preferred locale is unavailable, another from a similar locale will be used instead of the default. For example, an Australian user might want to fall back to British rather than US spelling:
 
  `locale.conf` 
-
 ```
 LANG=en_AU
 LANGUAGE=en_AU:en_GB:en
@@ -166,7 +163,7 @@ If `LC_TIME` is set to `en_US.UTF-8`, for example, the date format will be "MM/D
 
 This variable governs the collation rules used for sorting and regular expressions.
 
-Setting the value to `C` can for example make the _ls_ command sort dotfiles first, followed by uppercase and lowercase filenames:
+Setting the value to `C` can for example make the *ls* command sort dotfiles first, followed by uppercase and lowercase filenames:
 
  `locale.conf`  `LC_COLLATE=C` 
 
@@ -190,8 +187,7 @@ After editing a locale file, do not forget to [re-generate](#Generating_locales)
 
 In many countries the first day of the week is Monday. To adjust this, change or add the following lines:
 
- `/usr/share/i18n/locales/_chosen_locale_` 
-
+ `/usr/share/i18n/locales/*chosen_locale*` 
 ```
 LC_TIME
 [...]
@@ -214,7 +210,7 @@ $ env LANG=he_IL.UTF-8 abiword &
 
 ### Launch application with different locale from desktop
 
-Copy the _.desktop_ file to the user home directory so it will take precedence:
+Copy the *.desktop* file to the user home directory so it will take precedence:
 
 ```
 $ cp /usr/share/applications/abiword.desktop ~/.local/share/applications/
@@ -242,7 +238,7 @@ The following lists some (not all) terminals that support UTF-8:
 *   [st](/index.php/St "St")
 *   [termite](/index.php/Termite "Termite")
 *   [VTE-based terminals](/index.php/List_of_applications/Utilities#VTE-based "List of applications/Utilities")
-*   [xterm](/index.php/Xterm "Xterm") - Must be run with the argument `-u8`. Alternatively run _uxterm_, which is provided by the package [xterm](https://www.archlinux.org/packages/?name=xterm).
+*   [xterm](/index.php/Xterm "Xterm") - Must be run with the argument `-u8`. Alternatively run *uxterm*, which is provided by the package [xterm](https://www.archlinux.org/packages/?name=xterm).
 
 #### Gnome-terminal or rxvt-unicode does not support UTF-8
 
@@ -258,5 +254,5 @@ It is possible that the environment variables are redefined in other files than 
 *   [Gentoo Wiki Archives: Locales](http://www.gentoo-wiki.info/Locales)
 *   [ICU's interactive collation testing](http://demo.icu-project.org/icu-bin/locexp?_=en_US&x=col)
 *   [Free Standards Group Open Internationalisation Initiative](http://www.openi18n.org/)
-*   [_The Single UNIX Specification_ definition of Locale](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) by The Open Group
+*   [*The Single UNIX Specification* definition of Locale](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) by The Open Group
 *   [Locale environment variables](https://help.ubuntu.com/community/EnvironmentVariables#Locale_setting_variables)

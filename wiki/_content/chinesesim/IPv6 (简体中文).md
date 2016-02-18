@@ -38,7 +38,7 @@ $ ping6 ff02::1%eth0
 
 向多播地址`ff02::2`发送PING，只有路由器会回应。
 
-在PING时加入选项`-I _你的ipv6公网地址_`，局域网内的主机会以各自的公网地址回应。这时不必注明网卡：
+在PING时加入选项`-I *你的ipv6公网地址*`，局域网内的主机会以各自的公网地址回应。这时不必注明网卡：
 
 ```
 $ ping6 -I 2001:4f8:fff6::21 ff02::1
@@ -111,9 +111,9 @@ interface LAN {
 # Enable IPv6 Privacy Extensions
 net.ipv6.conf.all.use_tempaddr = 2
 net.ipv6.conf.default.use_tempaddr = 2
-net.ipv6.conf._nic0_.use_tempaddr = 2
+net.ipv6.conf.*nic0*.use_tempaddr = 2
 ...
-net.ipv6.conf._nicN_.use_tempaddr = 2
+net.ipv6.conf.*nicN*.use_tempaddr = 2
 
 ```
 
@@ -127,7 +127,7 @@ net.ipv6.conf._nicN_.use_tempaddr = 2
 
 ### NetworkManager
 
-NetworkManager不遵守`/etc/sysctl.d/40-ipv6.conf`中的配置。可以在重启后运行`$ ip -6 addr show _interface_`验证：正常的地址之外，没有状态为`scope global **temporary**`的地址。
+NetworkManager不遵守`/etc/sysctl.d/40-ipv6.conf`中的配置。可以在重启后运行`$ ip -6 addr show *interface*`验证：正常的地址之外，没有状态为`scope global **temporary**`的地址。
 
 请查阅[NetworkManager#Enable IPv6 Privacy Extensions](/index.php/NetworkManager#Enable_IPv6_Privacy_Extensions "NetworkManager")。
 
@@ -156,12 +156,10 @@ Gateway6='1234:0:123::abcd'
 ```
 
 **注意:** 如果你只有IPv6连接，那么你要给出IPv6的DNS服务器，例如：
-
 ```
 DNS=('6666:6666::1' '6666:6666::2')
 
 ```
-
 如果你的ISP没有告诉你IPv6的DNS服务器地址，并且你也没有自己的服务器，你可以从[resolv.conf](/index.php/Resolv.conf "Resolv.conf")这篇文章中选一个。
 
 ## IPv6与PPPoE
@@ -312,9 +310,9 @@ XMT:  | | X-- **IAPREFIX 1234:5:6700:890::/64**
 ```
 # Disable IPv6
 net.ipv6.conf.all.disable_ipv6 = 1
-net.ipv6.conf._nic0_.disable_ipv6 = 1
+net.ipv6.conf.*nic0*.disable_ipv6 = 1
 ...
-net.ipv6.conf._nicN_.disable_ipv6 = 1
+net.ipv6.conf.*nicN*.disable_ipv6 = 1
 
 ```
 
@@ -337,7 +335,7 @@ net.ipv6.conf._nicN_.disable_ipv6 = 1
 
 #### dhcpcd
 
-_dhcpcd_会尝试发送IPv6路由器请求。要禁用这种行为，可以依照其手册页`dhcpcd.conf (5)`，向`/etc/dhcpcd.conf`加入如下内容：
+*dhcpcd*会尝试发送IPv6路由器请求。要禁用这种行为，可以依照其手册页`dhcpcd.conf (5)`，向`/etc/dhcpcd.conf`加入如下内容：
 
 ```
 noipv6rs
@@ -347,12 +345,12 @@ noipv6
 
 #### NetworkManager
 
-在图形界面下，关闭NetworkManager的IPv6支持可以以右键单击网络状态图表，依次选择_Edit Connections > Wired >_ Network name _> Edit > IPv6 Settings > Method > Ignore/Disabled_，然后点击 "Save"。
+在图形界面下，关闭NetworkManager的IPv6支持可以以右键单击网络状态图表，依次选择*Edit Connections > Wired >* Network name *> Edit > IPv6 Settings > Method > Ignore/Disabled*，然后点击 "Save"。
 
 在命令行终端下，关闭IPv6支持可以使用`nmcli`:
 
 ```
-# nmcli connection edit _connection0_
+# nmcli connection edit *connection0*
 
 ```
 

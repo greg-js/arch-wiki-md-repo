@@ -28,11 +28,11 @@ There are two methods for spoofing a MAC address using either [iproute2](https:/
 First, you can check your current MAC address with the command:
 
 ```
-# ip link show _interface_
+# ip link show *interface*
 
 ```
 
-where `_interface_` is the name of your [network interface](/index.php/Network_configuration#Network_Interfaces "Network configuration").
+where `*interface*` is the name of your [network interface](/index.php/Network_configuration#Network_Interfaces "Network configuration").
 
 The section that interests us at the moment is the one that has "link/ether" followed by a 6-byte number. It will probably look something like this:
 
@@ -44,7 +44,7 @@ link/ether 00:1d:98:5a:d1:3a
 The first step to spoofing the MAC address is to bring the network interface down. It can be accomplished with the command:
 
 ```
-# ip link set dev _interface_ down
+# ip link set dev *interface* down
 
 ```
 
@@ -53,20 +53,20 @@ Next, we actually spoof our MAC. Any hexadecimal value will do, but some network
 To change the MAC, we need to run the command:
 
 ```
-# ip link set dev _interface_ address _XX:XX:XX:XX:XX:XX_
+# ip link set dev *interface* address *XX:XX:XX:XX:XX:XX*
 
 ```
 
-Where any 6-byte value will suffice for `_XX:XX:XX:XX:XX:XX_`.
+Where any 6-byte value will suffice for `*XX:XX:XX:XX:XX:XX*`.
 
 The final step is to bring the network interface back up. This can be accomplished by running the command:
 
 ```
-# ip link set dev _interface_ up
+# ip link set dev *interface* up
 
 ```
 
-If you want to verify that your MAC has been spoofed, simply run `ip link show _interface_` again and check the value for 'link/ether'. If it worked, 'link/ether' should be whatever address you decided to change it to.
+If you want to verify that your MAC has been spoofed, simply run `ip link show *interface*` again and check the value for 'link/ether'. If it worked, 'link/ether' should be whatever address you decided to change it to.
 
 ### Method 2: macchanger
 
@@ -74,35 +74,35 @@ Another method uses [macchanger](https://www.archlinux.org/packages/?name=maccha
 
 [Install](/index.php/Pacman#Installing_specific_packages "Pacman") the package [macchanger](https://www.archlinux.org/packages/?name=macchanger) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
-The spoofing is done on per-interface basis, specify [network interface](/index.php/Network_configuration#Network_Interfaces "Network configuration") name as `_interface_` in each of the following commands.
+The spoofing is done on per-interface basis, specify [network interface](/index.php/Network_configuration#Network_Interfaces "Network configuration") name as `*interface*` in each of the following commands.
 
 The MAC address can be spoofed with a fully random address:
 
 ```
-# macchanger -r _interface_
+# macchanger -r *interface*
 
 ```
 
 To randomize only device-specific bytes of current MAC address (that is, so that if the MAC address was checked it would still register as being from the same vendor), you would run the command:
 
 ```
-# macchanger -e _interface_
+# macchanger -e *interface*
 
 ```
 
 To change the MAC address to a specific value, you would run:
 
 ```
-# macchanger --mac=_XX:XX:XX:XX:XX:XX_ _interface_
+# macchanger --mac=*XX:XX:XX:XX:XX:XX* *interface*
 
 ```
 
-Where `_XX:XX:XX:XX:XX:XX_` is the MAC you wish to change to.
+Where `*XX:XX:XX:XX:XX:XX*` is the MAC you wish to change to.
 
 Finally, to return the MAC address to its original, permanent hardware value:
 
 ```
-# macchanger -p _interface_
+# macchanger -p *interface*
 
 ```
 
@@ -117,21 +117,20 @@ Finally, to return the MAC address to its original, permanent hardware value:
 To set a static spoofed MAC address:
 
  `/etc/systemd/network/00-default.link` 
-
 ```
 [Match]
-MACAddress=_permanent MAC_
+MACAddress=*permanent MAC*
 
 [Link]
-MACAddress=_spoofed MAC_
+MACAddress=*spoofed MAC*
 NamePolicy=kernel database onboard slot path
 ```
 
-To randomize the MAC address on every boot, set `MACAddressPolicy=random` instead of `MACAddress=_spoofed MAC_`.
+To randomize the MAC address on every boot, set `MACAddressPolicy=random` instead of `MACAddress=*spoofed MAC*`.
 
 ### Method 2: systemd-udevd
 
-[Udev](/index.php/Udev "Udev") allows you to perform MAC address spoofing by creating the [udev rule](/index.php/Udev#Writing_udev_rules "Udev"). Use `address` attribute to match the correct device by its original MAC address and change it using the _ip_ command:
+[Udev](/index.php/Udev "Udev") allows you to perform MAC address spoofing by creating the [udev rule](/index.php/Udev#Writing_udev_rules "Udev"). Use `address` attribute to match the correct device by its original MAC address and change it using the *ip* command:
 
  `/etc/udev/rules.d/75-mac-spoof.rules`  `ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="XX:XX:XX:XX:XX:XX", RUN+="/usr/bin/ip link set dev %k address YY:YY:YY:YY:YY:YY"` 
 
@@ -141,14 +140,13 @@ where `XX:XX:XX:XX:XX:XX` is the original MAC address and `YY:YY:YY:YY:YY:YY` is
 
 #### Creating unit
 
-Below you find two examples of [systemd](/index.php/Systemd "Systemd") units to change a MAC address at boot, one sets a static MAC using _ip_ and one uses _macchanger_ to assign a random MAC address. The systemd `network-pre.target` is used to ensure the MAC is changed before a network manager like [Netctl](/index.php/Netctl "Netctl") or [NetworkManager](/index.php/NetworkManager "NetworkManager"), [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") or [dhcpcd](/index.php/Dhcpcd "Dhcpcd") service starts.
+Below you find two examples of [systemd](/index.php/Systemd "Systemd") units to change a MAC address at boot, one sets a static MAC using *ip* and one uses *macchanger* to assign a random MAC address. The systemd `network-pre.target` is used to ensure the MAC is changed before a network manager like [Netctl](/index.php/Netctl "Netctl") or [NetworkManager](/index.php/NetworkManager "NetworkManager"), [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") or [dhcpcd](/index.php/Dhcpcd "Dhcpcd") service starts.
 
 ##### iproute2
 
 [systemd](/index.php/Systemd "Systemd") unit setting a predefined MAC address:
 
  `/etc/systemd/system/macspoof@.service` 
-
 ```
 [Unit]
 Description=MAC Address Change %I
@@ -172,7 +170,6 @@ WantedBy=multi-user.target
 [systemd](/index.php/Systemd "Systemd") unit setting a random address while preserving the original NIC vendor bytes. Ensure that [macchanger](https://www.archlinux.org/packages/?name=macchanger) is [installed](/index.php/Pacman#Installing_specific_packages "Pacman"):
 
  `/etc/systemd/system/macspoof@.service` 
-
 ```
 [Unit]
 Description=macchanger on %I
@@ -200,19 +197,18 @@ Reboot, or stop and start the prerequisite and requisite services in the proper 
 
 ### Method 4: netctl interfaces
 
-You can use a [netctl hook](/index.php/Netctl#Using_hooks "Netctl") to run a command each time a netctl profile is re-/started for a specific network interface. Replace `_interface_` accordingly:
+You can use a [netctl hook](/index.php/Netctl#Using_hooks "Netctl") to run a command each time a netctl profile is re-/started for a specific network interface. Replace `*interface*` accordingly:
 
- `/etc/netctl/interfaces/_interface_` 
-
+ `/etc/netctl/interfaces/*interface*` 
 ```
 #!/usr/bin/env sh
-/usr/bin/macchanger -r _interface_
+/usr/bin/macchanger -r *interface*
 ```
 
 Make the script executable:
 
 ```
-chmod +x /etc/netctl/interfaces/_interface_
+chmod +x /etc/netctl/interfaces/*interface*
 
 ```
 
@@ -238,4 +234,4 @@ If you cannot connect to a DHCPv4 network and you are using dhcpcd, which is the
 ## See also
 
 *   [Macchanger GitHub page](https://github.com/alobbs/macchanger)
-*   [Article on DebianAdmin](http://www.debianadmin.com/change-your-network-card-mac-media-access-control-address.html) with more _macchanger_ options
+*   [Article on DebianAdmin](http://www.debianadmin.com/change-your-network-card-mac-media-access-control-address.html) with more *macchanger* options

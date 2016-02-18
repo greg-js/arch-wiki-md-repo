@@ -30,21 +30,21 @@ See [NetworkManager](/index.php/NetworkManager "NetworkManager") for details.
 Simply run openconnect as root and enter your username and password when prompted:
 
 ```
-# openconnect _vpnserver_
+# openconnect *vpnserver*
 
 ```
 
 More advanced invocation with username and password:
 
 ```
-# echo -n _password_ | openconnect -u _user_ --passwd-on-stdin _vpnserver_
+# echo -n *password* | openconnect -u *user* --passwd-on-stdin *vpnserver*
 
 ```
 
 Often VPN provider are offering different authentication groups for different access configurations like for example for a full tunnel or split tunnel connection. To show the different offered auth-groups and to get more information about the connection to the server in general use:
 
 ```
-# openconnect --authenticate _vpnserver_
+# openconnect --authenticate *vpnserver*
 
 ```
 

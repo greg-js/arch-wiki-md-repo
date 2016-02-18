@@ -1,4 +1,4 @@
-Hay tres formas de pasar opciones al núcleo (también conocido por su nombre en inglés, _kernel_) y de ese modo controlar su comportamiento:
+Hay tres formas de pasar opciones al núcleo (también conocido por su nombre en inglés, *kernel*) y de ese modo controlar su comportamiento:
 
 1.  Durante la compilación del núcleo.
 2.  Al arrancar el núcleo (por lo general, cuando se invoca desde un gestor de arranque).
@@ -28,13 +28,13 @@ Aquí vamos a añadir los parámetros `quiet` y `splash` en [Syslinux](/index.ph
 
 *   Pulse `Tab` cuando el menú se visualice y agregue los parámetros al final de la cadena:
 
-	 `> .linux ../vmlinuz-linux root=/dev/sda3 ro initrd=../initramfs-linux.img _quiet splash_` 
+	 `> .linux ../vmlinuz-linux root=/dev/sda3 ro initrd=../initramfs-linux.img *quiet splash*` 
 
 	Pulse `Intro` para arrancar con estos parámetros.
 
 *   Para hacer permanente la modificación al reiniciar el sistema, edite `/boot/syslinux/syslinux.cfg` y añada los parámetros a la línea `APPEND`:
 
-	 `APPEND root=/dev/sda3 ro _quiet splash_` 
+	 `APPEND root=/dev/sda3 ro *quiet splash*` 
 
 Para obtener más información sobre la configuración de Syslinux, consulte el artículo [Syslinux](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)").
 
@@ -42,15 +42,15 @@ Para obtener más información sobre la configuración de Syslinux, consulte el 
 
 *   Pulse `e` cuando el menú se visualice+ y agregue los parámetros al final de la línea `linux`:
 
-	 `linux   /boot/vmlinuz-linux root=UUID=978e3e81-8048-4ae1-8a06-aa727458e8ff ro  _quiet splash_` 
+	 `linux   /boot/vmlinuz-linux root=UUID=978e3e81-8048-4ae1-8a06-aa727458e8ff ro  *quiet splash*` 
 
 	Pulse `b` para arrancar con estos parámetros.
 
-*   Para hacer el cambio permanente después de reiniciar el sistema, se _podría_ modificar manualmente `/boot/grub/grub.cfg` con la línea exacta vista arriba, para los principiantes se recomienda:
+*   Para hacer el cambio permanente después de reiniciar el sistema, se *podría* modificar manualmente `/boot/grub/grub.cfg` con la línea exacta vista arriba, para los principiantes se recomienda:
 
-	Editar `/etc/default/grub` y añadir las opciones del _kernel_ para la línea `GRUB_CMDLINE_LINUX_DEFAULT`:
+	Editar `/etc/default/grub` y añadir las opciones del *kernel* para la línea `GRUB_CMDLINE_LINUX_DEFAULT`:
 
-	 `GRUB_CMDLINE_LINUX_DEFAULT="_quiet splash_"` 
+	 `GRUB_CMDLINE_LINUX_DEFAULT="*quiet splash*"` 
 
 	Y después vuelva a regenerar automáticamente el archivo `grub.cfg` con la orden:
 
@@ -62,7 +62,7 @@ Para obtener más información sobre la configuración de GRUB, consulte el art�
 
 *   Pulse `e` cuando el menú aparece y agregue los parámetros al final de la línea `kernel`:
 
-	 `kernel /boot/vmlinuz-linux root=/dev/sda3 ro _quiet splash_` 
+	 `kernel /boot/vmlinuz-linux root=/dev/sda3 ro *quiet splash*` 
 
 	Pulse `b` para arrancar con estos parámetros.
 
@@ -77,7 +77,7 @@ Para obtener más información sobre la configuración de GRUB Legacy, consulte 
 ```
 image=/boot/vmlinuz-linux
         ...
-        _quiet splash_
+        *quiet splash*
 ```
 
 Para obtener más información sobre la configuración de LILO, consulte el artículo [LILO](/index.php/LILO "LILO").
@@ -86,7 +86,7 @@ Para obtener más información sobre la configuración de LILO, consulte el art�
 
 *   Pulse `e` cuando aparezca el menú y agregue los parámetros al final de la cadena:
 
-	 `initrd=\initramfs-linux.img root=/dev/sda2 rw _quiet splash_` 
+	 `initrd=\initramfs-linux.img root=/dev/sda2 rw *quiet splash*` 
 
 	Presione `Intro` para arrancar con dichos parámetros.
 
@@ -94,7 +94,7 @@ Para obtener más información sobre la configuración de LILO, consulte el art�
 
 *   Para hacer que los cambios permanezcan tras el reinicio, edite `/boot/loader/entries/arch.conf` (suponiendo que haya establecido la [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#EFI_System_Partition "Unified Extensible Firmware Interface (Español)") y configurado lo archivos de acuerdo a las instrucciones de la [guía para principiantes](/index.php/Beginners%27_Guide_(Espa%C3%B1ol)#Gummiboot "Beginners' Guide (Español)")) y añada lo siguiente a la línea `options`:
 
-	 `options root=/dev/sda2 rw _quiet splash_` 
+	 `options root=/dev/sda2 rw *quiet splash*` 
 
 Para obtener más información sobre la configuración de Gummiboot, consulte el artículo [Gummiboot](/index.php/Gummiboot "Gummiboot").
 

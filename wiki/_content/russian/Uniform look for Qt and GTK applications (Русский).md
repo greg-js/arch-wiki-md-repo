@@ -39,7 +39,7 @@
 
 ## QtCurve
 
-Доступный для _qt4_ (kde4), _qt3_ (kde3), и _gtk2_ (gnome) через **[extra]** репозиторий, этот стиль также достаточно популярен. Вы можете установить его, используя pacman.
+Доступный для *qt4* (kde4), *qt3* (kde3), и *gtk2* (gnome) через **[extra]** репозиторий, этот стиль также достаточно популярен. Вы можете установить его, используя pacman.
 
 ```
 # pacman -S qtcurve-gtk2 qtcurve-kde3 qtcurve-kde4
@@ -61,7 +61,7 @@ This one is for use by GTK+ applications running in KDE, which basically means t
 
 You can access it from:
 
-	_Control Center (kcontrol) --> Appearance & Themes --> GTK Styles and Fonts_
+	*Control Center (kcontrol) --> Appearance & Themes --> GTK Styles and Fonts*
 
 If you want to remove it entirely and every trace of it, you should delete the following files:
 
@@ -88,7 +88,7 @@ This is a Qt style which intends to make applications blend perfectly into the G
 
 ### Having trouble making your Qt applications use QGtkStyle?
 
-Qt won't apply QGtkStyle correctly if GTK is using the [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications"). Qt determines whether the [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications") is in use by reading the GTK configuration files listed in the environmental variable **GTK2_RC_FILES**. If the environmental variable is not set properly, Qt assumes you are using the [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications"), sets QGtkStyle to use the style GTK style _Clearlooks_, and outputs an error message:
+Qt won't apply QGtkStyle correctly if GTK is using the [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications"). Qt determines whether the [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications") is in use by reading the GTK configuration files listed in the environmental variable **GTK2_RC_FILES**. If the environmental variable is not set properly, Qt assumes you are using the [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications"), sets QGtkStyle to use the style GTK style *Clearlooks*, and outputs an error message:
 
 ```
 QGtkStyle cannot be used together with the GTK_Qt engine.
@@ -102,7 +102,6 @@ QGtkStyle cannot be used together with the GTK_Qt engine.
     *   The $HOME part will expand to be path to your user's home directory. Using the ~ shortcut won't work.
 
  `.xinitrc` 
-
 ```
 ...
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
@@ -113,7 +112,6 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
     *   This is usually done for you by an [application which sets GTK2 Styles](/index.php/Uniform_Look_for_QT_and_GTK_Applications#.D0.A1.D1.82.D0.B8.D0.BB.D0.B8_GTK2 "Uniform Look for QT and GTK Applications")
 
  `.gtkrc-2.0` 
-
 ```
 ...
 gtk-theme-name="Crux"
@@ -123,13 +121,11 @@ gtk-theme-name="Crux"
 However it seems in sume cases those tools insert only an include directive like
 
  `.gtkrc-2.0` 
-
 ```
 ...
 include "/usr/share/themes/SomeTheme/gtk-2.0/gtkrc"
 ...
 ```
-
 which apparently is not recognized by all versions of QGtkStyle. You can hotfix this problem by inserting the gtk-theme-name manually in your .gtkrc-2.0 like above, note however that Gtk2-style-change applications might overwrite that change when you use them.
 
 Чтобы выбрать тему GTK для Qt приложений введите:

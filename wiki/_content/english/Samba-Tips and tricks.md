@@ -59,7 +59,6 @@ writable = no
 This is the configuration I use with samba 4 for easy passwordless filesharing with family on a home network. Change any options needed to suit your network (workgroup and interface). I'm restricting it to the static IP I have on my ethernet interface, just delete that line if you do not care which interface is used.
 
  `/etc/samba/smb.conf` 
-
 ```
 [global]
 
@@ -95,7 +94,6 @@ This is the configuration I use with samba 4 for easy passwordless filesharing w
 ## Samba 4.* : Password Complexity
 
 Samba 4 requires strong password when adding new user with pdbedit. If you want to disable the complexity check, just use the follwing command:
-
 ```
 # samba-tool domain passwordsettings set --complexity=off
 

@@ -1,6 +1,6 @@
 From the project [home page](https://launchpad.net/ufw):
 
-	_Ufw stands for Uncomplicated Firewall, and is a program for managing a netfilter [firewall](/index.php/Firewall "Firewall"). It provides a command line interface and aims to be uncomplicated and easy to use._
+	*Ufw stands for Uncomplicated Firewall, and is a program for managing a netfilter [firewall](/index.php/Firewall "Firewall"). It provides a command line interface and aims to be uncomplicated and easy to use.*
 
 ## Contents
 
@@ -36,7 +36,7 @@ A very simplistic configuration which will deny all by default, allow any protoc
 
 ```
 
-The next line is only needed _once_ the first time you install the package:
+The next line is only needed *once* the first time you install the package:
 
 ```
 # ufw enable
@@ -48,7 +48,6 @@ Then enable the `ufw` service with [systemctl](/index.php/Systemd#Using_units "S
 Finally, query the rules being applied via the status command:
 
  `# ufw status` 
-
 ```
 Status: active
 To                         Action      From
@@ -126,7 +125,6 @@ Drawing on the Deluge/Deluge-my example above, the following will remove the sta
 Query the result via the status command:
 
  `# ufw status` 
-
 ```
 Status: active
 To                         Action      From
@@ -144,14 +142,11 @@ ufw has the ability to deny connections from an IP address that has attempted to
 Using the above basic configuration, to enable rate limiting we would simply replace the allow parameter with the limit parameter. The new rule will then replace the previous.
 
  `# ufw limit SSH` 
-
 ```
 Rule updated
 
 ```
-
  `# ufw status` 
-
 ```
 Status: active
 To                         Action      From
@@ -173,7 +168,6 @@ All user rules are stored in `usr/lib/ufw/user.rules` and `usr/lib/ufw/user6.rul
 Change `ACCEPT` to `DROP` in the following lines:
 
  `/etc/ufw/before.rules` 
-
 ```
 # ok icmp codes
 -A ufw-before-input -p icmp --icmp-type destination-unreachable -j ACCEPT

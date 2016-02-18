@@ -39,7 +39,7 @@ Also, you need to mask the getty service with:
 
 for each of the ttys you enabled qingy on.
 
-You may additionaly have to tweak/disable the autovt@.service. The latter spawns getty's on-the-fly when switching virtual-consoles and may interfere with an already spawned qingy. To disable automatic spawning of getty's altogether, modify _/etc/systemd/logind.conf_:
+You may additionaly have to tweak/disable the autovt@.service. The latter spawns getty's on-the-fly when switching virtual-consoles and may interfere with an already spawned qingy. To disable automatic spawning of getty's altogether, modify */etc/systemd/logind.conf*:
 
 ```
 NAutoVTs=0

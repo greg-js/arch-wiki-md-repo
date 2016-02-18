@@ -45,7 +45,7 @@ see [http://opensync.org/download/releases/](http://opensync.org/download/releas
 | cli interface | [msynctool-stable](https://aur.archlinux.org/packages/msynctool-stable/) | msynctool with corresponding version (?) | [osynctool](https://aur.archlinux.org/packages/osynctool/) |
 | gui | [multisync-gui](https://aur.archlinux.org/packages/multisync-gui/) | n.a. |
 
-The kdepim plugin in the stable branch is useless in KDE 4, since PIM data is managed by akonadi. A suitable plugin is proposed as a part of the oncoming version 0.40\. A user who wants to synchronize a syncml-capable mobile phone with evolution might be satisfied with the latest unstable version. Other users might prefer the old but stable branch. Since the _community_ repository provides the latest unstable version of libopensync a manual downgrading is necessary. For i686, there is a unofficial user repository:
+The kdepim plugin in the stable branch is useless in KDE 4, since PIM data is managed by akonadi. A suitable plugin is proposed as a part of the oncoming version 0.40\. A user who wants to synchronize a syncml-capable mobile phone with evolution might be satisfied with the latest unstable version. Other users might prefer the old but stable branch. Since the *community* repository provides the latest unstable version of libopensync a manual downgrading is necessary. For i686, there is a unofficial user repository:
 
 ```
 [kpiche]

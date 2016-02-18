@@ -17,13 +17,13 @@ Either method will work even while the system is running. Since it's going to ta
 This command depends on brace expansion available in both the [bash](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html) and [zsh](http://zsh.sourceforge.net/Doc/Release/Expansion.html#Brace-Expansion) shells. When using a different [shell](/index.php/Shell "Shell"), `--exclude` patterns should be repeated manually.
 
 ```
-# rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / _/path/to/backup/folder_
+# rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / */path/to/backup/folder*
 
 ```
 
 Using the `-aAX` set of options, the files are transferred in archive mode, ensuring that symbolic links, devices, permissions and ownerships, modification times, [ACLs](/index.php/ACL "ACL") and extended attributes are preserved.
 
-The `--exclude` option will cause files that match the given patterns to be excluded. The contents of `/dev`, `/proc`, `/sys`, `/tmp` and `/run` were excluded because they are populated at boot (while the folders themselves are _not_ created), `/lost+found` is filesystem-specific. Quoting the exclude patterns will avoid expansion by [shell](/index.php/Shell "Shell"), which is necessary e.g. when backing up over [SSH](/index.php/SSH "SSH"). Ending the excluded paths with `*` will still ensure that the directories themselves are created if not already existing.
+The `--exclude` option will cause files that match the given patterns to be excluded. The contents of `/dev`, `/proc`, `/sys`, `/tmp` and `/run` were excluded because they are populated at boot (while the folders themselves are *not* created), `/lost+found` is filesystem-specific. Quoting the exclude patterns will avoid expansion by [shell](/index.php/Shell "Shell"), which is necessary e.g. when backing up over [SSH](/index.php/SSH "SSH"). Ending the excluded paths with `*` will still ensure that the directories themselves are created if not already existing.
 
 **Note:**
 
@@ -55,20 +55,18 @@ Having a bootable backup can be useful in case the filesystem becomes corrupt or
 Without rebooting, edit the backup's [fstab](/index.php/Fstab "Fstab") to reflect the changes:
 
  `/path/to/backup/etc/fstab` 
-
 ```
 tmpfs        /tmp          tmpfs     nodev,nosuid             0   0
 
-<font color="#888888">_/dev/sda1    /boot         ext2      defaults                 0   2
+<font color="#888888">*/dev/sda1    /boot         ext2      defaults                 0   2
 /dev/sda5    none          swap      defaults                 0   0
 /dev/sda6    /             ext4      defaults                 0   1
-/dev/sda7    /home         ext4      defaults                 0   2_</font>
+/dev/sda7    /home         ext4      defaults                 0   2*</font>
 ```
 
-Because rsync has performed a recursive copy of the _entire_ root filesystem, all of the `sda` mountpoints are problematic and booting the backup will fail. In this example, all of the offending entries are replaced with a single one:
+Because rsync has performed a recursive copy of the *entire* root filesystem, all of the `sda` mountpoints are problematic and booting the backup will fail. In this example, all of the offending entries are replaced with a single one:
 
  `/path/to/backup/etc/fstab` 
-
 ```
 tmpfs        /tmp          tmpfs     nodev,nosuid             0   0
 

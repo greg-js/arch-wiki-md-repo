@@ -57,7 +57,7 @@ For a complete listing and explanation of rar's switches, see the [user's manual
 ### General syntax
 
 ```
-$ rar _command_ -_switch 1_ -_switch N_ _archive_ _files.rar_ _@listfiles..._
+$ rar *command* -*switch 1* -*switch N* *archive* *files.rar* *@listfiles...*
 
 ```
 
@@ -122,7 +122,7 @@ $ rar a -r -rr10 -s /media/data/homes-backup.rar @/path/to/home-list
 ### General syntax
 
 ```
-$ unrar _command_ -_switch 1_ -_switch N_ _archive_ _files..._ _@listfiles..._ _path_to_extract\_
+$ unrar *command* -*switch 1* -*switch N* *archive* *files...* *@listfiles...* *path_to_extract\*
 
 ```
 

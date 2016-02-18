@@ -14,7 +14,7 @@
 *   [6 Example](#Example)
 *   [7 Hows and whys](#Hows_and_whys)
     *   [7.1 Why not installing into /opt?](#Why_not_installing_into_.2Fopt.3F)
-    *   [7.2 What is that _out-of-path executables_ thing?](#What_is_that_out-of-path_executables_thing.3F)
+    *   [7.2 What is that *out-of-path executables* thing?](#What_is_that_out-of-path_executables_thing.3F)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 What to do if compilation fails without clear message?](#What_to_do_if_compilation_fails_without_clear_message.3F)
     *   [8.2 What does this error [error message] means?](#What_does_this_error_.5Berror_message.5D_means.3F)
@@ -52,7 +52,7 @@ The general approach to building a cross compiler is:
 
 1.  binutils: Build a cross-binutils, which links and processes for the target architecture
 2.  headers: Install a set of C library and kernel headers for the target architecture
-    1.  use [linux-api-headers](https://www.archlinux.org/packages/?name=linux-api-headers) as reference and pass `ARCH=_target-architecture_` to **make**
+    1.  use [linux-api-headers](https://www.archlinux.org/packages/?name=linux-api-headers) as reference and pass `ARCH=*target-architecture*` to **make**
     2.  create libc headers package (process for Glibc is described [here](http://sources.redhat.com/ml/crossgcc/2003-06/msg00170.html))
 3.  gcc-stage-1: Build a basic (stage 1) gcc cross-compiler. This will be used to compile the C library. It will be unable to build almost anything else (because it can't link against the C library it doesn't have).
 4.  libc: Build the cross-compiled C library (using the stage 1 cross compiler).
@@ -140,15 +140,15 @@ Two reasons:
 1.  First, according to File Hierarchy Standard, these files just belong somewhere to `/usr`. Period.
 2.  Second, installing into `/opt` is a last measure when there is no other option.
 
-### What is that _out-of-path executables_ thing?
+### What is that *out-of-path executables* thing?
 
-This weird thing allows easier cross-compiling. Sometimes, project Makefiles do not use `CC` & co. variables and instead use **gcc** directly. If you just want to try to cross-compile such project, editing the Makefile could be a very lengthy operation. However, changing the `$PATH` to use "our" executables first is a very quick solution. You would then run `PATH=/usr/_arch_/bin/:$PATH make` instead of `make`.
+This weird thing allows easier cross-compiling. Sometimes, project Makefiles do not use `CC` & co. variables and instead use **gcc** directly. If you just want to try to cross-compile such project, editing the Makefile could be a very lengthy operation. However, changing the `$PATH` to use "our" executables first is a very quick solution. You would then run `PATH=/usr/*arch*/bin/:$PATH make` instead of `make`.
 
 ## Troubleshooting
 
 ### What to do if compilation fails without clear message?
 
-For error, occurred during running `configure`, read `$srcdir/_pkgname_-build/config.log`. For error, occurred during compilation, scroll console log up or search for word "error".
+For error, occurred during running `configure`, read `$srcdir/*pkgname*-build/config.log`. For error, occurred during compilation, scroll console log up or search for word "error".
 
 ### What does this error [error message] means?
 

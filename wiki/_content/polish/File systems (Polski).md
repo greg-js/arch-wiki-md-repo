@@ -5,7 +5,7 @@
 
 Za [Wikipedia](https://en.wikipedia.org/wiki/pl:System_plik%C3%B3w "wikipedia:pl:System plików"):
 
-	_System plików - metoda przechowywania plików, zarządzania plikami, informacjami o tych plikach, tak by dostęp do plików i danych w nich zgromadzonych był łatwy dla użytkownika systemu._
+	*System plików - metoda przechowywania plików, zarządzania plikami, informacjami o tych plikach, tak by dostęp do plików i danych w nich zgromadzonych był łatwy dla użytkownika systemu.*
 
 Poszczególne partycje mogą używać jednego z wielu dostępnych systemów plików. Każdy z nich ma zalety, wady i unikalne cechy. Poniżej znajduje się jedynie krótki opis dostępnych systemów plików; dostępne są linki do wikipedii, które dostarczą więcej informacji.
 
@@ -52,9 +52,9 @@ Nie wszystkie metody księgowania są takie same. Tylko ext3 i ext4 oferują ksi
 
 ### Przygotowanie
 
-Zanim zaczniesz, musisz znać nazwę urządzenia nadaną przez system Linux. Dyski twarde i pendrive'y są nazywane `/dev/sd_x_`, gdzie "x" to mała litera, a partycje są nazywane `/dev/sd_xY_`, gdzie "Y" to numer.
+Zanim zaczniesz, musisz znać nazwę urządzenia nadaną przez system Linux. Dyski twarde i pendrive'y są nazywane `/dev/sd*x*`, gdzie "x" to mała litera, a partycje są nazywane `/dev/sd*xY*`, gdzie "Y" to numer.
 
-Jeśli urządzenie, które chcesz sformatować jest zamontowane, pojawi się w kolumnie _MOUNTPOINT_ po wydaniu polecenia:
+Jeśli urządzenie, które chcesz sformatować jest zamontowane, pojawi się w kolumnie *MOUNTPOINT* po wydaniu polecenia:
 
 ```
 $ lsblk
@@ -64,11 +64,11 @@ $ lsblk
 Jeśli urządzenie nie jest zamontowane:
 
 ```
-# mount /dev/sd_xY_ /jakis/katalog
+# mount /dev/sd*xY* /jakis/katalog
 
 ```
 
-Żeby je odmontować, możesz użyć _umount_ na katalogu gdzie zamontowałeś(aś) urządzenie:
+Żeby je odmontować, możesz użyć *umount* na katalogu gdzie zamontowałeś(aś) urządzenie:
 
 ```
 # umount /jakis/katalog
@@ -82,7 +82,7 @@ Jeśli urządzenie nie jest zamontowane:
 Do tego możesz użyć `fdisk` (dla MBR) lub `gdisk` (dla GPT):
 
 ```
-# fdisk /dev/_<urzadzenie>_
+# fdisk /dev/*<urzadzenie>*
 
 ```
 
@@ -95,11 +95,11 @@ Do tego możesz użyć `fdisk` (dla MBR) lub `gdisk` (dla GPT):
 Aby stworzyć system plików, musisz użyć `mkfs`:
 
 ```
-# mkfs -t ext4 /dev/_<partycja>_
+# mkfs -t ext4 /dev/*<partycja>*
 
 ```
 
-`mkfs` to nakładka na różne narzędzia `mkfs._typ_`. Musisz zainstalować pakiety dostarczające narzędzia dla systemów plików, które chcesz użyć:
+`mkfs` to nakładka na różne narzędzia `mkfs.*typ*`. Musisz zainstalować pakiety dostarczające narzędzia dla systemów plików, które chcesz użyć:
 
 *   [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) dostarcza `btrfs`
 *   [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) dostarcza `ext2`, `ext3` i `ext4`

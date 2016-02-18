@@ -26,7 +26,6 @@ Most of the user settings are self explanatory based on the commented text withi
 Monitorix comes with a light, built-in webserver; via the dependency [perl-http-server-simple](https://www.archlinux.org/packages/?name=perl-http-server-simple). It is, however, disabled by default. To use it, change the configuration option as follows:
 
  `/etc/monitorix/monitorix.conf` 
-
 ```
 ....
 <httpd_builtin>
@@ -51,7 +50,7 @@ To view system stats, using the perl-http-server, simply point a browser to [htt
 
 [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) is another option.
 
-By default, cgi support is not enabled in lighttpd. To enable it and to assign perl to process _.cgi_ files, add the following two lines to `/etc/lighttpd/lighttpd.conf`:
+By default, cgi support is not enabled in lighttpd. To enable it and to assign perl to process *.cgi* files, add the following two lines to `/etc/lighttpd/lighttpd.conf`:
 
 ```
 server.modules		= ( "mod_cgi" )

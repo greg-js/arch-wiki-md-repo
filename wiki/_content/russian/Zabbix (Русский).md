@@ -107,7 +107,7 @@ zabbix_agentd -t hdd.smart[sda,Temperature_Celsius]
 На сервере команда будет выглядеть следующим образом:
 
 ```
-zabbix_get -s _host_ -k hdd.smart[sda,Temperature_Celsius]
+zabbix_get -s *host* -k hdd.smart[sda,Temperature_Celsius]
 
 ```
 

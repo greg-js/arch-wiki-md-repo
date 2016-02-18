@@ -38,9 +38,9 @@ Let's take it apart piece-by-piece. First, the file name.
 
 ```
 
-*   **pci0000:00** is the id for the first PCI bus. For most machines this will be the only PCI bus you have, but it's possible this can extend to **pci0000:01** or **pci0000:02** - the exacts are unimportant, as it's a good guess that you only have one PCI bus (_HINT:_ try ls /sys/devices/pci* to check)
+*   **pci0000:00** is the id for the first PCI bus. For most machines this will be the only PCI bus you have, but it's possible this can extend to **pci0000:01** or **pci0000:02** - the exacts are unimportant, as it's a good guess that you only have one PCI bus (*HINT:* try ls /sys/devices/pci* to check)
 *   **0000:00:1f.1** is the index of the given device on the PCI bus. Specifically, this is on bus 0000:00 and has index **1f.1**
-*   All this is rather unimportant, unless you want to know where all these numbers come from. For completeness, if you check the output of _lspci_ you will see the same information:
+*   All this is rather unimportant, unless you want to know where all these numbers come from. For completeness, if you check the output of *lspci* you will see the same information:
 
 ```
 $ lspci
@@ -68,7 +68,7 @@ i  8A
 
 ```
 
-Each of these identifiers, and corresponding hex numbers represent some of the info that a given device exposes. For starters, **v** is the _vendor id_ and **d** is the _device id_ - these are very standard numbers, and are the same exact numbers that tools like **hwd** uses to lookup a device. You can even find websites to look up specific hardware identification based on the vendor and device ids, for instance, [http://www.pcidatabase.com/](http://www.pcidatabase.com/)
+Each of these identifiers, and corresponding hex numbers represent some of the info that a given device exposes. For starters, **v** is the *vendor id* and **d** is the *device id* - these are very standard numbers, and are the same exact numbers that tools like **hwd** uses to lookup a device. You can even find websites to look up specific hardware identification based on the vendor and device ids, for instance, [http://www.pcidatabase.com/](http://www.pcidatabase.com/)
 
 We can also see these numbers here:
 
@@ -78,7 +78,7 @@ $ lspci -n
 
 ```
 
-See how the 8086:24db matches to the _v_ and _d_ tokens listed above?
+See how the 8086:24db matches to the *v* and *d* tokens listed above?
 
 For the record, **sv** and **sd** are "subsystem" versions of both vendor and device. A majority of the time these are ignored. They are mainly used by the hardware developers to distinguish slight differences in the inner workings which do not change the device as a whole.
 
@@ -116,13 +116,13 @@ Hey, wait! I recognize that! That's the vendor/device id information from before
 
 Yes, it is. It's a rather simple format of "alias <something> <actual module>". In fact, you can alias just about anything you want. I can add "alias boogabooga snd_intel8x0m" and then safely "modprobe boogabooga".
 
-The "*" indicates it will match anything, much like filesystem globbing (_ls somedir/*_). As stated before, most aliases ignore sv, sd, bc, sc, and i by way of the "*" matching.
+The "*" indicates it will match anything, much like filesystem globbing (*ls somedir/**). As stated before, most aliases ignore sv, sd, bc, sc, and i by way of the "*" matching.
 
 ## Where does this modules.alias file come from?
 
 Ok, now you may be thinking "Well, hwd used to look things up based on a device table, what makes this any different?"
 
-The difference is that this lookup table is not static. It is not maintained by hand. In fact, it is built dynamically whenever you run depmod. "Where does this information come from?", you ask? Why, from the **modules themselves**. When you think about it, each specific module should know what hardware it supports, as it's coded specifically for that hardware. I mean, the _nvidia_ module developers know that their modules only works for Nvidia (vendor) Graphics Cards (class). In fact, the module actually exports this information. It says "Hey, I can support this:".
+The difference is that this lookup table is not static. It is not maintained by hand. In fact, it is built dynamically whenever you run depmod. "Where does this information come from?", you ask? Why, from the **modules themselves**. When you think about it, each specific module should know what hardware it supports, as it's coded specifically for that hardware. I mean, the *nvidia* module developers know that their modules only works for Nvidia (vendor) Graphics Cards (class). In fact, the module actually exports this information. It says "Hey, I can support this:".
 
 ```
 $ modinfo nvidia

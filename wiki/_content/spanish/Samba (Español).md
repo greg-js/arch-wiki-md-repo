@@ -26,7 +26,7 @@ Samba es una reimplementación del protocolo de red SMB/CIFS. Facilita el interc
 
 ## Instalación
 
-Para instalar el servidor Samba, instala el paquete _samba_
+Para instalar el servidor Samba, instala el paquete *samba*
 
 ```
 # pacman -S samba
@@ -35,14 +35,14 @@ Para instalar el servidor Samba, instala el paquete _samba_
 
 ## Configuración
 
-Identificado como superusuario (root), copia el fichero por defecto de Samba a _/etc/samba/smb.conf_
+Identificado como superusuario (root), copia el fichero por defecto de Samba a */etc/samba/smb.conf*
 
 ```
 # cp /etc/samba/smb.conf.default /etc/samba/smb.conf
 
 ```
 
-Abre _/etc/samba/smb.conf_ y edítalo según tus necesidades. El fichero está comentado y proporciona varios ejemplos. No debería ser difícil de entender.
+Abre */etc/samba/smb.conf* y edítalo según tus necesidades. El fichero está comentado y proporciona varios ejemplos. No debería ser difícil de entender.
 
 El fichero, por defecto, crea una carpeta de intercambio para cada usuario. También crea un intercambio de impresoras.
 
@@ -55,9 +55,9 @@ Samba puede ser iniciado con
 
 ```
 
-Samba normalmente usa [FAM](/index.php/FAM "FAM") para vigilar los cambios en el sistema de ficheros. Necesitarás tener el demonio _fam_ iniciado antes que _samba_. Una alternativa es usar [Gamin](/index.php/Gamin "Gamin")
+Samba normalmente usa [FAM](/index.php/FAM "FAM") para vigilar los cambios en el sistema de ficheros. Necesitarás tener el demonio *fam* iniciado antes que *samba*. Una alternativa es usar [Gamin](/index.php/Gamin "Gamin")
 
-Añade samba a la línea DAEMONS en _[rc.conf](/index.php/Rc.conf "Rc.conf")_ para iniciar el demonio en cada arranque.
+Añade samba a la línea DAEMONS en *[rc.conf](/index.php/Rc.conf "Rc.conf")* para iniciar el demonio en cada arranque.
 
 ### SWAT: Herramienta de administración web de Samba
 
@@ -200,11 +200,11 @@ Para montar manualmente una compartición a traves del shell:
 
 ```
 
-Para permitir a montar y desmontar una comparticion samba a un usuario normal puedes agregar setuid root a _/sbin/mount.cifs_. Una alternativa es usar el paquete [smbnetfs](/index.php?title=Smbnetfs&action=edit&redlink=1 "Smbnetfs (page does not exist)").
+Para permitir a montar y desmontar una comparticion samba a un usuario normal puedes agregar setuid root a */sbin/mount.cifs*. Una alternativa es usar el paquete [smbnetfs](/index.php?title=Smbnetfs&action=edit&redlink=1 "Smbnetfs (page does not exist)").
 
 ### Agregando una comparticion a fstab
 
-Puedes agregar una linea a _[fstab](/index.php/Fstab "Fstab")_ de este modo:
+Puedes agregar una linea a *[fstab](/index.php/Fstab "Fstab")* de este modo:
 
 ```
 //<hostname>/<share> <mount_point> cifs credentials=<credentials_file>,rw,user,noauto 0 0
@@ -219,9 +219,9 @@ password=<password>
 
 ```
 
-La opción _user_ de la línea de fstab permite al propietario del <punto_de_montaje>, montar y desmontar la compartición. La opción _noauto_ desabilita el montaje en el arranque.
+La opción *user* de la línea de fstab permite al propietario del <punto_de_montaje>, montar y desmontar la compartición. La opción *noauto* desabilita el montaje en el arranque.
 
-Si estas agreagando una compartición Samba a _[fstab](/index.php/Fstab "Fstab")_, debes agrear también el demonio _[netfs](/index.php?title=Netfs&action=edit&redlink=1 "Netfs (page does not exist)")_ a _[rc.conf](/index.php/Rc.conf "Rc.conf")_, en algun lugar después del demonio _[network](/index.php/Network "Network")_. El demonio _netfs_ montará particiones de red en el arranque y, mas importante, desmontar particiones de red en el apagado. Incluso si estás usando la opción _noauto_ en fstab debes agregar el demonio _netfs_ . Sin él cualquier comparticion de red que es desmontada cuando apagues la máquina, causará que el demonio _network_ espere al time out de la conexión, extendiendo considerablemente el tiempo de apagado.
+Si estas agreagando una compartición Samba a *[fstab](/index.php/Fstab "Fstab")*, debes agrear también el demonio *[netfs](/index.php?title=Netfs&action=edit&redlink=1 "Netfs (page does not exist)")* a *[rc.conf](/index.php/Rc.conf "Rc.conf")*, en algun lugar después del demonio *[network](/index.php/Network "Network")*. El demonio *netfs* montará particiones de red en el arranque y, mas importante, desmontar particiones de red en el apagado. Incluso si estás usando la opción *noauto* en fstab debes agregar el demonio *netfs* . Sin él cualquier comparticion de red que es desmontada cuando apagues la máquina, causará que el demonio *network* espere al time out de la conexión, extendiendo considerablemente el tiempo de apagado.
 
 ## Compartiendo archivos en tu LAN sin usuario y contraseña
 

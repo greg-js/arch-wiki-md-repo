@@ -189,7 +189,6 @@ Az **[Arch User Repository](/index.php/Arch_User_Repository "Arch User Repositor
 Meghatározza a pacman csomagtároló tűkroket és a prioritásokat.
 
 **Megjegyzés:** Ha a telepítő médiumod régi, akkor a tűkörlistád (mirrorlist) elavult lehet, ami problémákhoz vezethet az Arch Linux frissítésénél pacman-el, (lásd a hibalistát [bug report](https://bugs.archlinux.org/task/22510)). Ezért fontos, hogy beszerezd a legfrissebb tűkörlistát (mirrorlist) erről a weboldalról [the pacman mirror list generator page](https://www.archlinux.org/mirrorlist/). Másold az újonnan létrehozott listát az `/etc/pacman.d/mirrorlist` fájlba a folytatáshoz.
-
 Nyisd meg a `/etc/pacman.d/mirrorlist` fájlt egy szövegszerkesztővel és távolítsd el a # karakert attól a szervertől amelyik legközelebb található hozzád. Ezt követően add ki a teljes csomaglista frissítéséhez a parancsot: `# pacman -Syy` .
 
 Leütve két `--refresh` vagy `-y` kényszerítjük a pacman-t, hogy frissítse az egész csomaglistát, még akkor is ha azok naprakésznek minősülnek.
@@ -204,7 +203,7 @@ Használjuk a következő parancsot, hogy teljesen frissítsük az adatbázist, 
 
  `# pacman -Syyu curl` 
 
-*   _Ha ebben a lépésben hibát kapunk használjuk a `nano /etc/pacman.d/mirrorlist` parancsot és tegyük aktívvá (távolítsuk el a # karaktert) a hozzánk illő szervert._
+*   *Ha ebben a lépésben hibát kapunk használjuk a `nano /etc/pacman.d/mirrorlist` parancsot és tegyük aktívvá (távolítsuk el a # karaktert) a hozzánk illő szervert.*
 
 `cd` a `/etc/pacman.d/` könyvárhoz:
 

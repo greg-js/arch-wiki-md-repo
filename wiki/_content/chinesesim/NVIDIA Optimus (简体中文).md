@@ -47,7 +47,6 @@ $ lspci | grep -E "VGA|3D"
 PCI 地址是提到 NVIDIA 的输出行的前7个字符，看起来像 `01:00.0`. 在 `xorg.conf` 中，需转换为 `#:#:#` 格式；例如 `01:00.0` 应该写成 `1:0:0`.
 
  `# nano /etc/X11/xorg.conf` 
-
 ```
 Section "ServerLayout"
     Identifier "layout"
@@ -58,7 +57,7 @@ EndSection
 Section "Device"
     Identifier "nvidia"
     Driver "nvidia"
-    BusID "PCI:_PCI address determined earlier_"
+    BusID "PCI:*PCI address determined earlier*"
     # e.g. BusID "PCI:1:0:0"
 EndSection
 
@@ -83,7 +82,6 @@ EndSection
 之后，把以下内容添加到 `~/.xinitrc` 开头:
 
  `$ nano ~/.xinitrc` 
-
 ```
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
@@ -102,7 +100,6 @@ xrandr --auto
 对于 [LightDM](/index.php/LightDM "LightDM"):
 
  `# nano /etc/lightdm/display_setup.sh` 
-
 ```
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
@@ -118,7 +115,6 @@ xrandr --auto
 编辑 `/etc/lightdm/lightdm.conf` 的 `[SeatDefaults]` 部分以配置 lightdm 运行这个脚本:
 
  `# nano /etc/lightdm/lightdm.conf` 
-
 ```
 [SeatDefaults]
 display-setup-script=/etc/lightdm/display_setup.sh
@@ -131,7 +127,6 @@ display-setup-script=/etc/lightdm/display_setup.sh
 对于 [SDDM](/index.php/SDDM "SDDM"):
 
  `# nano /usr/share/sddm/scripts/Xsetup` 
-
 ```
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto

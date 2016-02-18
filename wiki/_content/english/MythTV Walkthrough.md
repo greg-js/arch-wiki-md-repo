@@ -201,7 +201,7 @@ The next stage is to try and see if it is picking up any signal.
 
 # Getting the first digital signal
 
-_This is no longer required for DVB Setup. However it's very useful if there are problems getting it to work, as it's much simpler than MythTV, and if this part works you know the card is working correctly._
+*This is no longer required for DVB Setup. However it's very useful if there are problems getting it to work, as it's much simpler than MythTV, and if this part works you know the card is working correctly.*
 
 This part is very specific to DVB-T. For a standard analogue card, you have to do very little ; for DVB-C and DVB-S I do not know.
 
@@ -267,7 +267,7 @@ except there will be more of it (one line for each channel). The first things on
 
 # Getting the first picture
 
-_This is no longer required for DVB Setup, but as before, it's useful for solving problems, because if MythTV doesn't work and this does, you know it's the setup of MythTV that's the problem_
+*This is no longer required for DVB Setup, but as before, it's useful for solving problems, because if MythTV doesn't work and this does, you know it's the setup of MythTV that's the problem*
 
 This part is again only applicable to DVB-T transmissions. The next part is to check the card is working by - watching some television. It is no longer required for DVB-T if you are using the DVB-T EPG, but I have left it in, as it is useful if you can't get your card working, or if you want it to run with mplayer or xine.
 
@@ -316,11 +316,11 @@ If you've got this far you can be pretty sure you will get MythTV to work proper
 
 But it *is* worth it. MythTV watching is a whole new way of looking at television ; it's a whole new way of thinking about television. Without DRM.
 
-_"I think this is getting needlessly messianic." (Fook, Hitch Hikers Guide to the Galaxy)_
+*"I think this is getting needlessly messianic." (Fook, Hitch Hikers Guide to the Galaxy)*
 
 # Installing XMLTV
 
-_This is no longer required for DVB Setup as the TV guide data is piggybacked onto the TV signal_
+*This is no longer required for DVB Setup as the TV guide data is piggybacked onto the TV signal*
 
 ## Installing XMLTV
 
@@ -475,7 +475,7 @@ If you are using the Transmitted Guide (EIT) option then if you watch TV for a l
 
 # Linking XMLTV and MythTV
 
-_This is no longer required for DVB Setup - in fact it'll completely screw up the system if you are using the transmitted guide_
+*This is no longer required for DVB Setup - in fact it'll completely screw up the system if you are using the transmitted guide*
 
 ## The shotgun wedding
 
@@ -594,15 +594,18 @@ This is the perl script that takes that file and generates an SQL file match.sql
 ```
 open(my $src,"<mythtv.config") or die($!);
 open(my $sql,">match.sql") or die($!);
-print $sql "USE mythconverg;\n";
+print $sql "USE mythconverg;
+";
 while (readline($src))
 {
 if (/(.*):(.*)/)
   {
   my $mch  = trim($1);
   my $mxm = trim($2);
-  print "channel $mxm\n";
-  print $sql "UPDATE channel SET xmltvid='$mxm' WHERE name='$mch';\n";
+  print "channel $mxm
+";
+  print $sql "UPDATE channel SET xmltvid='$mxm' WHERE name='$mch';
+";
   }
 }
 close($src);

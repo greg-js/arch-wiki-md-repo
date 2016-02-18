@@ -13,7 +13,7 @@
 
 ## Configuration
 
-SciTE has a lot of [configuration settings](http://www.scintilla.org/SciTEDoc.html#DefinedVariables), which are read from `~/.SciTEUser.properties` (user-specific) and `/usr/share/scite/SciTEGlobal.properties` (global). Both of these files can be accessed from the _Options_ menu. The [Frequently Asked Questions](http://www.scintilla.org/SciTEFAQ.html) page also has some tips that may be useful.
+SciTE has a lot of [configuration settings](http://www.scintilla.org/SciTEDoc.html#DefinedVariables), which are read from `~/.SciTEUser.properties` (user-specific) and `/usr/share/scite/SciTEGlobal.properties` (global). Both of these files can be accessed from the *Options* menu. The [Frequently Asked Questions](http://www.scintilla.org/SciTEFAQ.html) page also has some tips that may be useful.
 
 ### Example configuration
 

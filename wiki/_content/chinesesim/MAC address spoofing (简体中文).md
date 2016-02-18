@@ -52,7 +52,7 @@ Another method uses [macchanger](https://www.archlinux.org/packages/?name=maccha
 
 [Install](/index.php/Pacman "Pacman") the package [macchanger](https://www.archlinux.org/packages/?name=macchanger) from the [Official repositories](/index.php/Official_repositories "Official repositories").
 
-After this, the MAC can be spoofed with a random address. The syntax is `macchanger -r _<device>_`.
+After this, the MAC can be spoofed with a random address. The syntax is `macchanger -r *<device>*`.
 
 Here is an example command for spoofing the MAC address of a device named eth0.
 
@@ -85,7 +85,6 @@ You may have to replace `wlan0` with your interface name.
 ### Systemd Unit
 
  `/etc/systemd/system/macspoof@.service` 
-
 ```
 [Unit]
 Description=MAC address change %I

@@ -10,7 +10,7 @@ This article is a general list of applications sorted by category, as a referenc
 
 *   This page exists primarily to make it easier to search for alternatives to an application that you do not know under which section has been added. Use the links in the template at the top to view the main sections as separate pages.
 *   Please consider [installing](/index.php/Installing "Installing") the [pkgstats](/index.php/Pkgstats "Pkgstats") package, which provides a timer that sends a list of the packages installed on your system, along with the architecture and the mirrors you use, to the Arch Linux developers in order to help them prioritize their efforts and make the distribution even better. The information is sent anonymously and cannot be used to identify you. You can view the collected data at the [Statistics page](https://www.archlinux.de/?page=Statistics). More information is available in [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=105431).
-*   Daemon packages usually include the relevant systemd unit file to [start](/index.php/Start "Start"); some packages even include different ones. After installation `pacman -Qql _package_ | grep -Fe .service -e .socket` can be used to check and find the relevant one.
+*   Daemon packages usually include the relevant systemd unit file to [start](/index.php/Start "Start"); some packages even include different ones. After installation `pacman -Qql *package* | grep -Fe .service -e .socket` can be used to check and find the relevant one.
 
 **Note:** Applications listed in "Console" sections can have graphical front-ends. Official ones are currently omitted.
 
@@ -18,64 +18,66 @@ This article is a general list of applications sorted by category, as a referenc
 
 *   [1 Internet](#Internet)
     *   [1.1 Network managers](#Network_managers)
-    *   [1.2 Web browsers](#Web_browsers)
-        *   [1.2.1 Console](#Console)
-        *   [1.2.2 Graphical](#Graphical)
-            *   [1.2.2.1 Gecko-based](#Gecko-based)
-                *   [1.2.2.1.1 Firefox forks](#Firefox_forks)
-            *   [1.2.2.2 Blink-based](#Blink-based)
-            *   [1.2.2.3 Webkit-based](#Webkit-based)
-            *   [1.2.2.4 Other](#Other)
-    *   [1.3 File sharing](#File_sharing)
-        *   [1.3.1 FTP](#FTP)
-            *   [1.3.1.1 FTP clients](#FTP_clients)
-            *   [1.3.1.2 FTP servers](#FTP_servers)
-        *   [1.3.2 BitTorrent clients](#BitTorrent_clients)
-            *   [1.3.2.1 Console](#Console_2)
-                *   [1.3.2.1.1 Command line / backend](#Command_line_.2F_backend)
-                *   [1.3.2.1.2 Console Interface](#Console_Interface)
-            *   [1.3.2.2 Graphical Interface](#Graphical_Interface)
-                *   [1.3.2.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
-                *   [1.3.2.2.2 libktorrent backend](#libktorrent_backend)
-                *   [1.3.2.2.3 others](#others)
-        *   [1.3.3 Other P2P networks](#Other_P2P_networks)
-        *   [1.3.4 Video downloaders](#Video_downloaders)
-    *   [1.4 Communication](#Communication)
-        *   [1.4.1 Email clients](#Email_clients)
-            *   [1.4.1.1 Console](#Console_3)
-            *   [1.4.1.2 Graphical](#Graphical_2)
-        *   [1.4.2 Instant messaging](#Instant_messaging)
-            *   [1.4.2.1 IRC clients](#IRC_clients)
-                *   [1.4.2.1.1 Console](#Console_4)
-                *   [1.4.2.1.2 Graphical](#Graphical_3)
-            *   [1.4.2.2 XMPP (Jabber)](#XMPP_.28Jabber.29)
-                *   [1.4.2.2.1 Console clients](#Console_clients)
-                *   [1.4.2.2.2 Graphical clients](#Graphical_clients)
-                *   [1.4.2.2.3 Servers](#Servers)
-            *   [1.4.2.3 Multi-protocol clients](#Multi-protocol_clients)
-                *   [1.4.2.3.1 Console](#Console_5)
-                *   [1.4.2.3.2 Graphical](#Graphical_4)
-            *   [1.4.2.4 Lan messengers](#Lan_messengers)
-        *   [1.4.3 VoIP / Softphone](#VoIP_.2F_Softphone)
-            *   [1.4.3.1 Clients](#Clients)
-                *   [1.4.3.1.1 SIP](#SIP)
-                *   [1.4.3.1.2 IAX2](#IAX2)
-                *   [1.4.3.1.3 Skype](#Skype)
-                *   [1.4.3.1.4 Other](#Other_2)
-                *   [1.4.3.1.5 Multi-protocol](#Multi-protocol)
-            *   [1.4.3.2 Utilities](#Utilities)
-        *   [1.4.4 Speech recognition](#Speech_recognition)
-    *   [1.5 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
-        *   [1.5.1 News aggregators](#News_aggregators)
-            *   [1.5.1.1 Console](#Console_6)
-            *   [1.5.1.2 Graphical](#Graphical_5)
-        *   [1.5.2 Podcast clients](#Podcast_clients)
-        *   [1.5.3 Usenet newsreaders & newsgrabbers](#Usenet_newsreaders_.26_newsgrabbers)
-        *   [1.5.4 Blog software](#Blog_software)
-        *   [1.5.5 Microblogging clients](#Microblogging_clients)
-    *   [1.6 Pastebin clients](#Pastebin_clients)
-    *   [1.7 Bitcoin](#Bitcoin)
-    *   [1.8 Surveying](#Surveying)
+    *   [1.2 VPN clients](#VPN_clients)
+    *   [1.3 Web browsers](#Web_browsers)
+        *   [1.3.1 Console](#Console)
+        *   [1.3.2 Graphical](#Graphical)
+            *   [1.3.2.1 Gecko-based](#Gecko-based)
+                *   [1.3.2.1.1 Firefox forks](#Firefox_forks)
+            *   [1.3.2.2 Blink-based](#Blink-based)
+            *   [1.3.2.3 Webkit-based](#Webkit-based)
+                *   [1.3.2.3.1 Browsers based on webkitgtk/webkitgtk2/qtwebkit](#Browsers_based_on_webkitgtk.2Fwebkitgtk2.2Fqtwebkit)
+            *   [1.3.2.4 Other](#Other)
+    *   [1.4 File sharing](#File_sharing)
+        *   [1.4.1 FTP](#FTP)
+            *   [1.4.1.1 FTP clients](#FTP_clients)
+            *   [1.4.1.2 FTP servers](#FTP_servers)
+        *   [1.4.2 BitTorrent clients](#BitTorrent_clients)
+            *   [1.4.2.1 Console](#Console_2)
+                *   [1.4.2.1.1 Command line / backend](#Command_line_.2F_backend)
+                *   [1.4.2.1.2 Console Interface](#Console_Interface)
+            *   [1.4.2.2 Graphical Interface](#Graphical_Interface)
+                *   [1.4.2.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
+                *   [1.4.2.2.2 libktorrent backend](#libktorrent_backend)
+                *   [1.4.2.2.3 others](#others)
+        *   [1.4.3 Other P2P networks](#Other_P2P_networks)
+        *   [1.4.4 Video downloaders](#Video_downloaders)
+    *   [1.5 Communication](#Communication)
+        *   [1.5.1 Email clients](#Email_clients)
+            *   [1.5.1.1 Console](#Console_3)
+            *   [1.5.1.2 Graphical](#Graphical_2)
+        *   [1.5.2 Instant messaging](#Instant_messaging)
+            *   [1.5.2.1 IRC clients](#IRC_clients)
+                *   [1.5.2.1.1 Console](#Console_4)
+                *   [1.5.2.1.2 Graphical](#Graphical_3)
+            *   [1.5.2.2 XMPP (Jabber)](#XMPP_.28Jabber.29)
+                *   [1.5.2.2.1 Console clients](#Console_clients)
+                *   [1.5.2.2.2 Graphical clients](#Graphical_clients)
+                *   [1.5.2.2.3 Servers](#Servers)
+            *   [1.5.2.3 Multi-protocol clients](#Multi-protocol_clients)
+                *   [1.5.2.3.1 Console](#Console_5)
+                *   [1.5.2.3.2 Graphical](#Graphical_4)
+            *   [1.5.2.4 Lan messengers](#Lan_messengers)
+        *   [1.5.3 VoIP / Softphone](#VoIP_.2F_Softphone)
+            *   [1.5.3.1 Clients](#Clients)
+                *   [1.5.3.1.1 SIP](#SIP)
+                *   [1.5.3.1.2 IAX2](#IAX2)
+                *   [1.5.3.1.3 Skype](#Skype)
+                *   [1.5.3.1.4 Other](#Other_2)
+                *   [1.5.3.1.5 Multi-protocol](#Multi-protocol)
+            *   [1.5.3.2 Utilities](#Utilities)
+        *   [1.5.4 Speech recognition](#Speech_recognition)
+    *   [1.6 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
+        *   [1.6.1 News aggregators](#News_aggregators)
+            *   [1.6.1.1 Console](#Console_6)
+            *   [1.6.1.2 Graphical](#Graphical_5)
+        *   [1.6.2 Podcast clients](#Podcast_clients)
+        *   [1.6.3 Usenet newsreaders & newsgrabbers](#Usenet_newsreaders_.26_newsgrabbers)
+        *   [1.6.4 Blog software](#Blog_software)
+        *   [1.6.5 Microblogging clients](#Microblogging_clients)
+    *   [1.7 Pastebin clients](#Pastebin_clients)
+    *   [1.8 Bitcoin](#Bitcoin)
+    *   [1.9 Surveying](#Surveying)
 *   [2 Multimedia](#Multimedia)
     *   [2.1 Codecs](#Codecs)
     *   [2.2 Image](#Image)
@@ -270,13 +272,23 @@ This article is a general list of applications sorted by category, as a referenc
 
 	[https://wiki.gnome.org/Projects/NetworkManager](https://wiki.gnome.org/Projects/NetworkManager) || [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)
 
-*   **[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")** — Native [systemd](/index.php/Systemd "Systemd") daemon that manages network configuration. It includes support for basic network configuration through [udev](/index.php/Udev "Udev"). The service is available with _systemd_ > 210.
+*   **[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")** — Native [systemd](/index.php/Systemd "Systemd") daemon that manages network configuration. It includes support for basic network configuration through [udev](/index.php/Udev "Udev"). The service is available with *systemd* > 210.
 
 	[http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html](http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) || [systemd](https://www.archlinux.org/packages/?name=systemd)
 
 *   **[Wicd](/index.php/Wicd "Wicd")** — Wireless and wired connection manager with few dependencies. Comes with an ncurses interface, and a GTK interface [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk) is available.
 
 	[https://launchpad.net/wicd](https://launchpad.net/wicd) || [wicd](https://www.archlinux.org/packages/?name=wicd)
+
+### VPN clients
+
+*   **[OpenConnect](/index.php/OpenConnect "OpenConnect")** — Supports Cisco and Juniper VPNs.
+
+	[http://www.infradead.org/openconnect/](http://www.infradead.org/openconnect/) || [openconnect](https://www.archlinux.org/packages/?name=openconnect)
+
+*   **[PPTPClient](/index.php?title=PPTPClient&action=edit&redlink=1 "PPTPClient (page does not exist)")** — To connect to PPTP VPNs, like Microsoft VPNs (MPPE).
+
+	[http://pptpclient.sourceforge.net/](http://pptpclient.sourceforge.net/) || [pptpclient](https://www.archlinux.org/packages/?name=pptpclient)
 
 ### Web browsers
 
@@ -342,33 +354,73 @@ See also [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(softw
 
 See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(layout_engine) "wikipedia:Blink (layout engine)").
 
+*   **Brave** — Web browser that blocks ads and trackers by default.
+
+	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/)
+
 *   **[Chromium](/index.php/Chromium "Chromium")** — Web browser developed by Google, the open source project behind Google Chrome.
 
 	[http://www.chromium.org/](http://www.chromium.org/) || [chromium](https://www.archlinux.org/packages/?name=chromium)
+
+*   **Liri** — A minimalistic material design web browser written for Papyros.
+
+	[http://liriproject.me/browser](http://liriproject.me/browser) || [liri-browser](https://aur.archlinux.org/packages/liri-browser/)
 
 *   **[Opera](/index.php/Opera "Opera")** — Highly customizable browser with focuses on an adherence to web rendering standards.
 
 	[http://opera.com](http://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
 
+*   **Quill** — A simple web browser that hopefully won't leave you asking "Why is the RAM gone?".
+
+	[https://bitbucket.org/xiannox/quill](https://bitbucket.org/xiannox/quill) || [quill-git](https://aur.archlinux.org/packages/quill-git/)
+
+*   **Vivaldi** — An advanced browser made with the power user in mind.
+
+	[https://vivaldi.com/](https://vivaldi.com/) || [vivaldi](https://aur.archlinux.org/packages/vivaldi/)
+
+*   **Yandex.Browser** — Combines a minimal design with sophisticated technology to make the web faster, safer, and easier.
+
+	[http://browser.yandex.ru/beta/](http://browser.yandex.ru/beta/) || [yandex-browser](https://aur.archlinux.org/packages/yandex-browser/)
+
 ##### Webkit-based
 
 See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webkit").
+
+*   **[GNOME Web](/index.php/GNOME_Web "GNOME Web")** — Browser which uses the WebKitGTK+ rendering engine, part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
+
+	[https://wiki.gnome.org/Apps/Web/](https://wiki.gnome.org/Apps/Web/) || [epiphany](https://www.archlinux.org/packages/?name=epiphany)
+
+*   **Lariza** — A simple web browser using GTK+ 3, GLib and WebKit2GTK+.
+
+	[https://github.com/vain/lariza/](https://github.com/vain/lariza/) || [lariza-git](https://aur.archlinux.org/packages/lariza-git/)
+
+*   **Maxthon** — A browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier. The linux version of Maxthon has not been updated since September 2014.
+
+	[http://www.maxthon.cn/](http://www.maxthon.cn/) || [maxthon-browser](https://aur.archlinux.org/packages/maxthon-browser/)
+
+*   **Rainbow Lollipop** — The visual history browser.
+
+	[http://rainbow-lollipop.de/](http://rainbow-lollipop.de/) || [rainbow-lollipop-git](https://aur.archlinux.org/packages/rainbow-lollipop-git/)
+
+*   **Surf 2** — A simple web browser based on WebKit2GTK+.
+
+	[http://surf.suckless.org](http://surf.suckless.org) || [surf2](https://aur.archlinux.org/packages/surf2/)
+
+*   **Webby** — Allows to use web apps as regular desktop apps, integrated with the OS, without tabs and using the default system launcher.
+
+	[https://launchpad.net/webby-browser](https://launchpad.net/webby-browser) || [webby-browser-bzr](https://aur.archlinux.org/packages/webby-browser-bzr/)
+
+###### Browsers based on webkitgtk/webkitgtk2/qtwebkit
+
+**Warning:** The following browsers are based on one of three webkit ports that are today considered insecure and outdated. GTK+ browsers should be switching to webkit2gtk and Qt browsers to qt5-webengine (Blink). More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
 
 *   **[Arora](https://en.wikipedia.org/wiki/Arora_(browser) "wikipedia:Arora (browser)")** — Cross-platform web browser built using QtWebKit. Development stopped in January 2012.
 
 	[https://github.com/arora/arora](https://github.com/arora/arora) || [arora-git](https://aur.archlinux.org/packages/arora-git/)
 
-*   **Brave** — Web browser that blocks ads and trackers by default.
-
-	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/)
-
-*   **[dwb](/index.php/Dwb "Dwb")** — Lightweight, highly customizable web browser based on the WebKit engine with _vi_-like shortcuts and tiling layouts. As of October 2014 _dwb_ is [unmaintained](https://bitbucket.org/portix/dwb/pull-request/22/several-cleanups-to-increase-portability/diff#comment-3217936).
+*   **[dwb](/index.php/Dwb "Dwb")** — Lightweight, highly customizable web browser based on the WebKit engine with *vi*-like shortcuts and tiling layouts. As of October 2014 *dwb* is [unmaintained](https://bitbucket.org/portix/dwb/pull-request/22/several-cleanups-to-increase-portability/diff#comment-3217936).
 
 	[http://portix.bitbucket.org/dwb/](http://portix.bitbucket.org/dwb/) || [dwb](https://www.archlinux.org/packages/?name=dwb)
-
-*   **[GNOME Web](/index.php/GNOME_Web "GNOME Web")** — Browser which uses the WebKitGTK+ rendering engine, part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
-
-	[https://wiki.gnome.org/Apps/Web/](https://wiki.gnome.org/Apps/Web/) || [epiphany](https://www.archlinux.org/packages/?name=epiphany)
 
 *   **[Jumanji](/index.php/Jumanji "Jumanji")** — Highly customizable and functional web browser.
 
@@ -377,10 +429,6 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 *   **[Luakit](/index.php/Luakit "Luakit")** — Highly configurable, micro-browser framework based on the WebKit engine and the GTK+ toolkit. It is very fast, extensible by Lua and licensed under the GNU GPLv3 license.
 
 	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://www.archlinux.org/packages/?name=luakit)
-
-*   **Maxthon** — A browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier.
-
-	[http://www.maxthon.cn/](http://www.maxthon.cn/) || [maxthon-browser](https://aur.archlinux.org/packages/maxthon-browser/)
 
 *   **[Midori](https://en.wikipedia.org/wiki/Midori_(web_browser) "wikipedia:Midori (web browser)")** — Lightweight web browser based on GTK+ and WebKit.
 
@@ -398,17 +446,9 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 	[https://github.com/The-Compiler/qutebrowser](https://github.com/The-Compiler/qutebrowser) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
 
-*   **[Rekonq](https://en.wikipedia.org/wiki/Rekonq "wikipedia:Rekonq")** — WebKit-based web browser for KDE.
+*   **[Rekonq](https://en.wikipedia.org/wiki/Rekonq) "wikipedia:Rekonq)")** — WebKit-based web browser for KDE.
 
 	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://www.archlinux.org/packages/?name=rekonq)
-
-*   **Sb** — Very lightweight WebKit-based browser that uses keybindings to perform most things the URL bar would usually do.
-
-	[https://github.com/mutantturkey/sb/](https://github.com/mutantturkey/sb/) || [sb-git](https://aur.archlinux.org/packages/sb-git/)
-
-*   **SlimBoat** — Fast, free secure and powerful web browser based on QtWebkit.
-
-	[http://www.slimboat.com/](http://www.slimboat.com/) || [slimboat](https://aur.archlinux.org/packages/slimboat/)
 
 *   **Surf** — Lightweight WebKit-based browser, which follows the [suckless ideology](http://suckless.org/philosophy) (basically, the browser itself is a single C source file).
 
@@ -426,7 +466,7 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 	[http://sourceforge.net/apps/trac/vimprobable/](http://sourceforge.net/apps/trac/vimprobable/) || [vimprobable-git](https://aur.archlinux.org/packages/vimprobable-git/)
 
-*   **[Xombrero](https://en.wikipedia.org/wiki/Xombrero "wikipedia:Xombrero") (formerly known as _xxxterm_)** — Webkit minimalist web browser with sophisticated security features designed-in, BSD style.
+*   **[Xombrero](https://en.wikipedia.org/wiki/Xombrero "wikipedia:Xombrero") (formerly known as *xxxterm*)** — Webkit minimalist web browser with sophisticated security features designed-in, BSD style.
 
 	[https://opensource.conformal.com/wiki/xombrero](https://opensource.conformal.com/wiki/xombrero) || [xombrero-git](https://aur.archlinux.org/packages/xombrero-git/)
 
@@ -650,7 +690,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 	[http://gnus.org/](http://gnus.org/) || [emacs-gnus-git](https://aur.archlinux.org/packages/emacs-gnus-git/)
 
-*   **[S-nail](/index.php/S-nail "S-nail")** — a mail processing system with a command syntax reminiscent of _ed_ with lines replaced by messages. Provides the functionality of [mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx").
+*   **[S-nail](/index.php/S-nail "S-nail")** — a mail processing system with a command syntax reminiscent of *ed* with lines replaced by messages. Provides the functionality of [mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx").
 
 	[http://sourceforge.net/projects/s-nail/](http://sourceforge.net/projects/s-nail/) || [s-nail](https://www.archlinux.org/packages/?name=s-nail)
 
@@ -666,7 +706,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 	[http://www.nongnu.org/nmh/](http://www.nongnu.org/nmh/) || [nmh](https://aur.archlinux.org/packages/nmh/) [nmh-git](https://aur.archlinux.org/packages/nmh-git/)
 
-*   **[notmuch](/index.php/Notmuch "Notmuch")** — A fast mail indexer built on top of _xapian_.
+*   **[notmuch](/index.php/Notmuch "Notmuch")** — A fast mail indexer built on top of *xapian*.
 
 	[http://notmuchmail.org/](http://notmuchmail.org/) || [notmuch](https://www.archlinux.org/packages/?name=notmuch) [notmuch-vim](https://www.archlinux.org/packages/?name=notmuch-vim) [notmuch-mutt](https://www.archlinux.org/packages/?name=notmuch-mutt)
 
@@ -936,7 +976,7 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 	[http://emesene.org/](http://emesene.org/) || [emesene](https://aur.archlinux.org/packages/emesene/)
 
-*   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) "wikipedia:Empathy (software)")** — GNOME instant messaging client using the [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)") framework.
+*   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) framework.
 
 	[https://wiki.gnome.org/Apps/Empathy](https://wiki.gnome.org/Apps/Empathy) || [empathy](https://www.archlinux.org/packages/?name=empathy)
 
@@ -952,7 +992,7 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
 
-*   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — KDE instant messaging client using the [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)") framework. Meant as a replacement for Kopete.
+*   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — KDE instant messaging client using the [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) framework. Meant as a replacement for Kopete.
 
 	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [telepathy-kde-meta](https://www.archlinux.org/packages/?name=telepathy-kde-meta)
 
@@ -1178,7 +1218,7 @@ Some [email clients](#Email_clients) also support NNTP. This section mainly list
 
 See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/List_of_Usenet_newsreaders "wikipedia:List of Usenet newsreaders"), [Wikipedia:Comparison of Usenet newsreaders](https://en.wikipedia.org/wiki/Comparison_of_Usenet_newsreaders "wikipedia:Comparison of Usenet newsreaders").
 
-*   **lottanzb** — A _SABnzbd+_ (Usenet binary downloader) GUI front-end written in PyGTK
+*   **lottanzb** — A *SABnzbd+* (Usenet binary downloader) GUI front-end written in PyGTK
 
 	[http://www.lottanzb.org/](http://www.lottanzb.org/) || [lottanzb](https://aur.archlinux.org/packages/lottanzb/)
 
@@ -1308,7 +1348,7 @@ See also [Wikipedia:Pastebin](https://en.wikipedia.org/wiki/Pastebin "wikipedia:
 
 Pastebin services are often used to quote text or images while collaborating and troubleshooting. Pastebin clients provide a convenient way to post from the command line.
 
-**Tip:** You can access the [ptpb.pw](https://ptpb.pw), [sprunge.us](http://sprunge.us/) and [ix.io](http://ix.io/) pastebins using curl. For example pipe the output of a command to ptpb: `_command_ | curl -F c=@- https://ptpb.pw ` or upload a file (including images): `curl -F c=@- https://ptpb.pw < _file_` 
+**Tip:** You can access the [ptpb.pw](https://ptpb.pw), [sprunge.us](http://sprunge.us/) and [ix.io](http://ix.io/) pastebins using curl. For example pipe the output of a command to ptpb: `*command* | curl -F c=@- https://ptpb.pw ` or upload a file (including images): `curl -F c=@- https://ptpb.pw < *file*` 
 
 **Note:** [pastebin.com](http://pastebin.com/) is blocked for some people and has a history of annoying issues (javascript, adverts, poor formatting, etc).
 
@@ -1728,7 +1768,7 @@ See the main article: [Sound system](/index.php/Sound_system "Sound system").
 
 See also [Wikipedia:Sound server](https://en.wikipedia.org/wiki/Sound_server "wikipedia:Sound server").
 
-*   **wineasio** — Provides an ASIO to JACK driver for _wine_. ASIO is the most common Windows low-latency driver, so is commonly used in audio workstation programs.
+*   **wineasio** — Provides an ASIO to JACK driver for *wine*. ASIO is the most common Windows low-latency driver, so is commonly used in audio workstation programs.
 
 	[http://sourceforge.net/projects/wineasio/](http://sourceforge.net/projects/wineasio/) || [wineasio](https://aur.archlinux.org/packages/wineasio/)
 
@@ -2318,11 +2358,11 @@ See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools
 
 	[http://cryptmount.sourceforge.net/](http://cryptmount.sourceforge.net/) || [cryptmount](https://aur.archlinux.org/packages/cryptmount/)
 
-*   **ldm** — A lightweight daemon that mounts drives automagically using _udev_
+*   **ldm** — A lightweight daemon that mounts drives automagically using *udev*
 
 	[https://github.com/LemonBoy/ldm](https://github.com/LemonBoy/ldm) || [ldm](https://aur.archlinux.org/packages/ldm/)
 
-*   **pmount** — Mount _source_ as a regular user to an automatically created destination `/media/_source_name_`.
+*   **pmount** — Mount *source* as a regular user to an automatically created destination `/media/*source_name*`.
 
 	[http://pmount.alioth.debian.org/](http://pmount.alioth.debian.org/) || [pmount](https://aur.archlinux.org/packages/pmount/)
 
@@ -2330,7 +2370,7 @@ See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools
 
 	[http://mywaytoarch.tumblr.com/post/13111098534/pmount-safe-removal-of-usb-device](http://mywaytoarch.tumblr.com/post/13111098534/pmount-safe-removal-of-usb-device) || [pmount-safe-removal](https://aur.archlinux.org/packages/pmount-safe-removal/)
 
-*   **udevil** — Mounts removable devices as a regular user, show device info, and monitor device changes. Only depends on _udev_ and glib.
+*   **udevil** — Mounts removable devices as a regular user, show device info, and monitor device changes. Only depends on *udev* and glib.
 
 	[http://ignorantguru.github.io/udevil](http://ignorantguru.github.io/udevil) || [udevil](https://www.archlinux.org/packages/?name=udevil)
 
@@ -2344,15 +2384,15 @@ See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools
 
 	[https://github.com/jamielinux/bashmount](https://github.com/jamielinux/bashmount) || [bashmount](https://aur.archlinux.org/packages/bashmount/)
 
-*   **udiskie** — Automatic disk mounting service using _udisks_
+*   **udiskie** — Automatic disk mounting service using *udisks*
 
 	[https://pypi.python.org/pypi/udiskie](https://pypi.python.org/pypi/udiskie) || [udiskie](https://www.archlinux.org/packages/?name=udiskie)
 
-*   **udisks_functions** — Bash functions and aliases for _udisks2_
+*   **udisks_functions** — Bash functions and aliases for *udisks2*
 
 	[https://bbs.archlinux.org/viewtopic.php?id=109307](https://bbs.archlinux.org/viewtopic.php?id=109307) || [udisks_functions](https://aur.archlinux.org/packages/udisks_functions/)
 
-*   **udisksvm** — GUI _udisks_ wrapper for removable media
+*   **udisksvm** — GUI *udisks* wrapper for removable media
 
 	[https://bbs.archlinux.org/viewtopic.php?id=112397](https://bbs.archlinux.org/viewtopic.php?id=112397) || [udisksvm](https://aur.archlinux.org/packages/udisksvm/)
 
@@ -2478,7 +2518,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[http://qt-project.org/downloads#qt-creator](http://qt-project.org/downloads#qt-creator) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
 
-*   **[Scratch](https://en.wikipedia.org/wiki/Scratch_(programming_language) "wikipedia:Scratch (programming language)")** — A multimedia authoring tool for educational and entertainment purposes, such as creating interactive projects and simple sprite-based games. It is used primarly by unskilled users (such as children) as an entry to [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming "wikipedia:Event-driven programming"). _Scratch_ is free software under GPL v2 and [Scratch Source Code License](http://wiki.scratch.mit.edu/wiki/Scratch_Source_Code_License).
+*   **[Scratch](https://en.wikipedia.org/wiki/Scratch_(programming_language) "wikipedia:Scratch (programming language)")** — A multimedia authoring tool for educational and entertainment purposes, such as creating interactive projects and simple sprite-based games. It is used primarly by unskilled users (such as children) as an entry to [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming "wikipedia:Event-driven programming"). *Scratch* is free software under GPL v2 and [Scratch Source Code License](http://wiki.scratch.mit.edu/wiki/Scratch_Source_Code_License).
 
 	[http://scratch.mit.edu](http://scratch.mit.edu) || [scratch](https://www.archlinux.org/packages/?name=scratch) [scratch2](https://aur.archlinux.org/packages/scratch2/)
 
@@ -2826,7 +2866,7 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 
 	[http://gnome.org](http://gnome.org) || [gnome-search-tool](https://www.archlinux.org/packages/?name=gnome-search-tool)
 
-*   **Gnome Search Tool No Nautilus** — _gnome-search-tool_ to search for files without [GNOME Files](/index.php/GNOME_Files "GNOME Files") or _gnome-desktop_
+*   **Gnome Search Tool No Nautilus** — *gnome-search-tool* to search for files without [GNOME Files](/index.php/GNOME_Files "GNOME Files") or *gnome-desktop*
 
 	|| [gnome-search-tool-no-nautilus](https://aur.archlinux.org/packages/gnome-search-tool-no-nautilus/)
 
@@ -3232,7 +3272,7 @@ See: [List of clipboard managers](/index.php/Clipboard#List_of_clipboard_manager
 
 	[https://packages.debian.org/sid/xli](https://packages.debian.org/sid/xli) || [xli](https://aur.archlinux.org/packages/xli/)
 
-**Tip:** In order to avoid installing one more package, you may find convenient to use the `display` utility from [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) or `gm display` from [graphicsmagick](https://www.archlinux.org/packages/?name=graphicsmagick). E.g.: `display -backdrop -background '#3f3f3f' -flatten -window root _image_`.
+**Tip:** In order to avoid installing one more package, you may find convenient to use the `display` utility from [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) or `gm display` from [graphicsmagick](https://www.archlinux.org/packages/?name=graphicsmagick). E.g.: `display -backdrop -background '#3f3f3f' -flatten -window root *image*`.
 
 ### Package management
 
@@ -3360,7 +3400,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 See also [Wikipedia:Comparison of document markup languages](https://en.wikipedia.org/wiki/Comparison_of_document_markup_languages "wikipedia:Comparison of document markup languages").
 
-*   **[asciidoc](https://en.wikipedia.org/wiki/AsciiDoc "wikipedia:AsciiDoc")** — Human-readable text document format. Used by Arch for generating _pacman_ 's man pages[[2]](https://www.archlinux.org/pacman/pacman.8.html).
+*   **[asciidoc](https://en.wikipedia.org/wiki/AsciiDoc "wikipedia:AsciiDoc")** — Human-readable text document format. Used by Arch for generating *pacman* 's man pages[[2]](https://www.archlinux.org/pacman/pacman.8.html).
 
 	[http://asciidoc.org/](http://asciidoc.org/) || [asciidoc](https://www.archlinux.org/packages/?name=asciidoc)
 
@@ -3516,7 +3556,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 	[http://techbase.kde.org/Localization/Tools/Pology](http://techbase.kde.org/Localization/Tools/Pology) || [pology](https://aur.archlinux.org/packages/pology/)
 
-*   **[Virtaal](https://en.wikipedia.org/wiki/Virtaal "wikipedia:Virtaal")** — Editor for translation of both software and other text, based on [Translate Toolkit](https://en.wikipedia.org/wiki/Translate_Toolkit "wikipedia:Translate Toolkit"). It supports the following formats: [gettext](https://en.wikipedia.org/wiki/gettext "wikipedia:gettext"), [XLIFF](https://en.wikipedia.org/wiki/XLIFF "wikipedia:XLIFF") , TMX, TBX, [Wordfast](https://en.wikipedia.org/wiki/Wordfast "wikipedia:Wordfast"), Qt Linguist , Qt Phrase Book, [OmegaT glossary](https://en.wikipedia.org/wiki/OmegaT "wikipedia:OmegaT") and others. It can also show suggestions from [Apertium](https://en.wikipedia.org/wiki/Apertium "wikipedia:Apertium"), [Google Translate](https://en.wikipedia.org/wiki/Google_Translate "wikipedia:Google Translate"), [Bing Translator](https://en.wikipedia.org/wiki/Bing_Translator "wikipedia:Bing Translator"), [Moses](https://en.wikipedia.org/wiki/Moses_(machine_translation) "wikipedia:Moses (machine translation)") and others.
+*   **[Virtaal](https://en.wikipedia.org/wiki/Virtaal and others.
 
 	[http://translate.sourceforge.net/wiki/virtaal](http://translate.sourceforge.net/wiki/virtaal) || [virtaal](https://aur.archlinux.org/packages/virtaal/)
 
@@ -3580,7 +3620,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://github.com/slap-editor/slap](https://github.com/slap-editor/slap) || [slap](https://aur.archlinux.org/packages/slap/)
 
-*   **[vile](https://en.wikipedia.org/wiki/Vile_(editor) "wikipedia:Vile (editor)")** — A lightweight Emacs clone with _vi_-like key bindings.
+*   **[vile](https://en.wikipedia.org/wiki/Vile_(editor) "wikipedia:Vile (editor)")** — A lightweight Emacs clone with *vi*-like key bindings.
 
 	[http://invisible-island.net/vile/vile.html](http://invisible-island.net/vile/vile.html) || [vile](https://www.archlinux.org/packages/?name=vile)
 
@@ -3796,7 +3836,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 	[http://repo.or.cz/w/fbpdf.git](http://repo.or.cz/w/fbpdf.git) || [fbpdf-git](https://aur.archlinux.org/packages/fbpdf-git/)
 
-*   **jfbview** — Framebuffer PDF and image viewer. Features include Vim-like controls, zoom-to-fit, a TOC (outline) view, fast multi-threaded rendering and asynchronous pre-caching. Originally a fork of _fbpdf_ called _jfbpdf_, now completely rewritten.
+*   **jfbview** — Framebuffer PDF and image viewer. Features include Vim-like controls, zoom-to-fit, a TOC (outline) view, fast multi-threaded rendering and asynchronous pre-caching. Originally a fork of *fbpdf* called *jfbpdf*, now completely rewritten.
 
 	[http://seasonofcode.com/pages/jfbview.html](http://seasonofcode.com/pages/jfbview.html) || [jfbview](https://aur.archlinux.org/packages/jfbview/)
 
@@ -3872,7 +3912,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 See also [Wikipedia:Terminal pager](https://en.wikipedia.org/wiki/Terminal_pager "wikipedia:Terminal pager").
 
-*   [more](https://en.wikipedia.org/wiki/More_(command) "wikipedia:More (command)") — A simple and feature-light pager. It is a part of the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package.
+*   [more](https://en.wikipedia.org/wiki/More_(command) — A simple and feature-light pager. It is a part of the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package.
 *   **[less](/index.php/Core_utilities#less "Core utilities")** — A program similar to more, but with support for both forward and backward scrolling, as well as partial loading of files.
 
 	[http://www.gnu.org/software/less](http://www.gnu.org/software/less) || [less](https://www.archlinux.org/packages/?name=less)
@@ -3960,7 +4000,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 	[https://wiki.gnome.org/Apps/OCRFeeder](https://wiki.gnome.org/Apps/OCRFeeder) || [ocrfeeder](https://www.archlinux.org/packages/?name=ocrfeeder)
 
-*   **OCRopy** — OCR _platform_, modules exist for document layout analysis, OCR engines (it can use Tesseract or its own engine), natural language modeling, etc.
+*   **OCRopy** — OCR *platform*, modules exist for document layout analysis, OCR engines (it can use Tesseract or its own engine), natural language modeling, etc.
 
 	[https://github.com/tmbdev/ocropy](https://github.com/tmbdev/ocropy) || [ocropy](https://aur.archlinux.org/packages/ocropy/)
 
@@ -4268,7 +4308,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 #### Screen lockers
 
-**Warning:** Only _sflock_, _physlock_, _Cinnamon Screensaver_, _MATE Screensaver_ and _GNOME Screensaver_ are able to block tty access.
+**Warning:** Only *sflock*, *physlock*, *Cinnamon Screensaver*, *MATE Screensaver* and *GNOME Screensaver* are able to block tty access.
 
 *   **Cinnamon Screensaver** — Screen locker for the Cinnamon desktop.
 
@@ -4282,15 +4322,15 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 	[http://i3wm.org/i3lock/](http://i3wm.org/i3lock/) || [i3lock](https://www.archlinux.org/packages/?name=i3lock)
 
-*   **i3lock-blur** — Fork of _i3lock_ which can use your desktop with the blur effect applied as a background.
+*   **i3lock-blur** — Fork of *i3lock* which can use your desktop with the blur effect applied as a background.
 
 	[http://github.com/karulont/i3lock-blur](http://github.com/karulont/i3lock-blur) || [i3lock-blur](https://aur.archlinux.org/packages/i3lock-blur/)
 
-*   **i3lock-wrapper** — A simple wrapper around _i3lock_ which sets up a blurred screenshot of the desktop as a background image.
+*   **i3lock-wrapper** — A simple wrapper around *i3lock* which sets up a blurred screenshot of the desktop as a background image.
 
 	[https://github.com/ashinkarov/i3-extras](https://github.com/ashinkarov/i3-extras) || [i3lock-wrapper](https://aur.archlinux.org/packages/i3lock-wrapper/)
 
-*   **Light-locker** — A simple locker (forked from _gnome-screensaver_) that aims to have simple, sane, secure defaults and be well integrated with the desktop while not carrying any desktop-specific dependencies. It relies on [LightDM](/index.php/LightDM "LightDM") for locking and unlocking your session via ConsoleKit/UPower or _logind/systemd_
+*   **Light-locker** — A simple locker (forked from *gnome-screensaver*) that aims to have simple, sane, secure defaults and be well integrated with the desktop while not carrying any desktop-specific dependencies. It relies on [LightDM](/index.php/LightDM "LightDM") for locking and unlocking your session via ConsoleKit/UPower or *logind/systemd*
 
 	[https://github.com/the-cavalry/light-locker](https://github.com/the-cavalry/light-locker) || [light-locker](https://www.archlinux.org/packages/?name=light-locker)
 
@@ -4366,7 +4406,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 	[http://ccrypt.sourceforge.net/](http://ccrypt.sourceforge.net/) || [ccrypt](https://www.archlinux.org/packages/?name=ccrypt)
 
-*   **[Enigmail](https://en.wikipedia.org/wiki/Enigmail "wikipedia:Enigmail")** — _a security extension to Mozilla Thunderbird and Seamonkey. It enables you to write and receive email messages signed and/or encrypted with the OpenPGP standard._
+*   **[Enigmail](https://en.wikipedia.org/wiki/Enigmail "wikipedia:Enigmail")** — *a security extension to Mozilla Thunderbird and Seamonkey. It enables you to write and receive email messages signed and/or encrypted with the OpenPGP standard.*
 
 	[https://enigmail.net](https://enigmail.net) || [thunderbird-enigmail](https://aur.archlinux.org/packages/thunderbird-enigmail/)
 
@@ -4378,11 +4418,11 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 	[http://www.nic.funet.fi/pub/crypt/steganography/](http://www.nic.funet.fi/pub/crypt/steganography/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=gzsteg)</small>
 
-*   **[KGpg](https://en.wikipedia.org/wiki/KGPG "wikipedia:KGPG")** — _a simple interface for GnuPG_ for KDE.
+*   **[KGpg](https://en.wikipedia.org/wiki/KGPG "wikipedia:KGPG")** — *a simple interface for GnuPG* for KDE.
 
 	[https://www.kde.org/applications/utilities/kgpg/](https://www.kde.org/applications/utilities/kgpg/) || [kdeutils-kgpg](https://www.archlinux.org/packages/?name=kdeutils-kgpg)
 
-*   **[Seahorse](https://en.wikipedia.org/wiki/Seahorse_(software) "wikipedia:Seahorse (software)")** — _GNOME application for managing encryption keys and passwords in the GnomeKeyring._
+*   **[Seahorse](https://en.wikipedia.org/wiki/Seahorse_(software) "wikipedia:Seahorse (software)")** — *GNOME application for managing encryption keys and passwords in the GnomeKeyring.*
 
 	[https://wiki.gnome.org/Apps/Seahorse/](https://wiki.gnome.org/Apps/Seahorse/) || [seahorse](https://www.archlinux.org/packages/?name=seahorse)
 
@@ -4670,7 +4710,7 @@ See also [Wikipedia:List of information graphics software](https://en.wikipedia.
 
 	[http://labplot.sourceforge.net/](http://labplot.sourceforge.net/) || [labplot2](https://aur.archlinux.org/packages/labplot2/)
 
-*   **[QtiPlot](https://en.wikipedia.org/wiki/QtiPlot "wikipedia:QtiPlot")** — Platform-independent application used for interactive scientific graphing and data analysis, similar to the proprietary [Origin](https://en.wikipedia.org/wiki/Origin_(software) "wikipedia:Origin (software)") or [SigmaPlot](https://en.wikipedia.org/wiki/SigmaPlot "wikipedia:SigmaPlot").
+*   **[QtiPlot](https://en.wikipedia.org/wiki/QtiPlot or [SigmaPlot](https://en.wikipedia.org/wiki/SigmaPlot "wikipedia:SigmaPlot").
 
 	[http://www.qtiplot.com/](http://www.qtiplot.com/) || [qtiplot](https://www.archlinux.org/packages/?name=qtiplot)
 
@@ -5222,15 +5262,15 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[http://tools.suckless.org/dmenu/](http://tools.suckless.org/dmenu/) || [dmenu](https://www.archlinux.org/packages/?name=dmenu)
 
-*   **dmenu-extended** — An extension to _dmenu_ for quickly opening files and folders.
+*   **dmenu-extended** — An extension to *dmenu* for quickly opening files and folders.
 
 	[https://github.com/markjones112358/dmenu-extended](https://github.com/markjones112358/dmenu-extended) || [dmenu-extended](https://aur.archlinux.org/packages/dmenu-extended/)
 
-*   **dmenu-launch** — Simple _dmenu_-based application launcher. Launches binaries and XDG shortcuts.
+*   **dmenu-launch** — Simple *dmenu*-based application launcher. Launches binaries and XDG shortcuts.
 
 	[https://github.com/Wintervenom/Scripts/blob/master/file/launch/dmenu-launch](https://github.com/Wintervenom/Scripts/blob/master/file/launch/dmenu-launch) || [dmenu-launch](https://aur.archlinux.org/packages/dmenu-launch/)
 
-*   **dswitcher** — _dmenu_-based window switcher that works regardless of workspace or minimization.
+*   **dswitcher** — *dmenu*-based window switcher that works regardless of workspace or minimization.
 
 	[https://github.com/Antithesisx/dswitcher](https://github.com/Antithesisx/dswitcher) || [dswitcher-git](https://aur.archlinux.org/packages/dswitcher-git/)
 
@@ -5242,7 +5282,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[http://sourceforge.net/projects/gmrun/](http://sourceforge.net/projects/gmrun/) || [gmrun](https://www.archlinux.org/packages/?name=gmrun)
 
-*   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do "wikipedia:GNOME Do")** — Application launcher inspired by [Quicksilver](https://en.wikipedia.org/wiki/Quicksilver_(software) "wikipedia:Quicksilver (software)") with many plugins, originally developed for the GNOME desktop.
+*   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do with many plugins, originally developed for the GNOME desktop.
 
 	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://www.archlinux.org/packages/?name=gnome-do)
 
@@ -5278,7 +5318,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[http://appstogo.mcfadzean.org.uk/linux.html#whippet](http://appstogo.mcfadzean.org.uk/linux.html#whippet) || [whippet](https://aur.archlinux.org/packages/whippet/)
 
-*   **xboomx** — Light _dmenu_ wrapper that reorders commands based on popularity, written in Python.
+*   **xboomx** — Light *dmenu* wrapper that reorders commands based on popularity, written in Python.
 
 	[https://bitbucket.org/dehun/xboomx](https://bitbucket.org/dehun/xboomx) || [xboomx](https://aur.archlinux.org/packages/xboomx/)
 
@@ -5286,7 +5326,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[http://docs.xfce.org/xfce/xfce4-appfinder/start](http://docs.xfce.org/xfce/xfce4-appfinder/start) || [xfce4-appfinder](https://www.archlinux.org/packages/?name=xfce4-appfinder)
 
-*   **Yeganesh** — Light _dmenu_ wrapper that reorders commands based on popularity, written in Haskell.
+*   **Yeganesh** — Light *dmenu* wrapper that reorders commands based on popularity, written in Haskell.
 
 	[http://dmwit.com/yeganesh](http://dmwit.com/yeganesh) || [yeganesh](https://aur.archlinux.org/packages/yeganesh/)
 
@@ -5358,7 +5398,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 	[http://ledger-cli.org/](http://ledger-cli.org/) || [ledger](https://aur.archlinux.org/packages/ledger/)
 
-*   **Moneychanger** — An intuitive QT/C++ system tray client for _Open-Transactions_
+*   **Moneychanger** — An intuitive QT/C++ system tray client for *Open-Transactions*
 
 	[https://github.com/Open-Transactions/Moneychanger](https://github.com/Open-Transactions/Moneychanger) || [moneychanger-git](https://aur.archlinux.org/packages/moneychanger-git/)
 

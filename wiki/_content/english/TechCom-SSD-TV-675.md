@@ -104,7 +104,7 @@ rmmod saa7134
 modprobe saa7134 card=3 tuner=69
 ```
 
-You can add the line _options saa7134 card=3 tuner=69_ to _/etc/modprobe.d/saa7134.conf_ to auto load the module after reboot
+You can add the line *options saa7134 card=3 tuner=69* to */etc/modprobe.d/saa7134.conf* to auto load the module after reboot
 
 ```
 # cat /etc/modprobe.d/saa7134.conf 

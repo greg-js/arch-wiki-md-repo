@@ -46,7 +46,7 @@ The procedure on a mobile may be as follows:
 *   A PIN, determined by the computer, is prompted for at the mobile
 *   The same key must be re-entered at the computer.
 
-To pair with a device without using the gnome-bluez package, the _bluez-simple-agent_ utility that comes with the bluez package can be used. This utility depends on three packages from the official repositories: [python2-dbus](https://www.archlinux.org/packages/?name=python2-dbus) [python2-gobject2](https://www.archlinux.org/packages/?name=python2-gobject2) [dbus-glib](https://www.archlinux.org/packages/?name=dbus-glib).
+To pair with a device without using the gnome-bluez package, the *bluez-simple-agent* utility that comes with the bluez package can be used. This utility depends on three packages from the official repositories: [python2-dbus](https://www.archlinux.org/packages/?name=python2-dbus) [python2-gobject2](https://www.archlinux.org/packages/?name=python2-gobject2) [dbus-glib](https://www.archlinux.org/packages/?name=dbus-glib).
 
 First, scan for external devices:
 
@@ -84,22 +84,20 @@ See the Examples section below for pairing examples with various devices.
 *   The steps under installation
 
  `$ hcitool scan` 
-
 ```
 Scanning ...
-        _XX:XX:XX:XX:XX:XX_  NAME
+        *XX:XX:XX:XX:XX:XX*  NAME
 
 ```
 
 ```
-$ B=_XX:XX:XX:XX:XX:XX_
+$ B=*XX:XX:XX:XX:XX:XX*
 
 ```
 
 Start the simple-agent in a second terminal:
 
  `$ su -c bluez-simple-agent` 
-
 ```
 Password: 
 Agent registered
@@ -109,7 +107,6 @@ Agent registered
 Back to the first console:
 
  `$ obexftp -b $B -l "Address book"` 
-
 ```
 # Phone ask for pin, I enter it and answer yes when asked if I want to save the device
 ...
@@ -117,9 +114,7 @@ Back to the first console:
 ...
 
 ```
-
  `$ obexftp -b 00:01:E3:6B:FF:D7 -g "Address book/5F07.adr"` 
-
 ```
 Browsing 00:01:E3:6B:FF:D7 ...
 Channel: 5
@@ -128,9 +123,7 @@ Receiving "Address book/5F07.adr"... Sending "Address book"... done
 Disconnecting...done
 
 ```
-
  `$ obexftp -b 00:01:E3:6B:FF:D7 -p a` 
-
 ```
 ...
 Sending "a"... done
@@ -140,11 +133,11 @@ Disconnecting...done
 
 ### Motorola V900
 
-After installing [Blueman](/index.php/Blueman "Blueman") and running _blueman-applet_, click "find me" under _connections > bluetooth_ in Motorola device. In _blueman-applet_, scan devices, find the Motorola, click "add". Click "bond" in _blueman-applet_, enter some PIN, enter the same PIN in Motorola when it asks. In terminal:
+After installing [Blueman](/index.php/Blueman "Blueman") and running *blueman-applet*, click "find me" under *connections > bluetooth* in Motorola device. In *blueman-applet*, scan devices, find the Motorola, click "add". Click "bond" in *blueman-applet*, enter some PIN, enter the same PIN in Motorola when it asks. In terminal:
 
 ```
 $ mkdir ~/bluetooth-temp
-$ obexfs -n _XX:XX:XX:XX:XX:XX_ ~/bluetooth-temp
+$ obexfs -n *XX:XX:XX:XX:XX:XX* ~/bluetooth-temp
 $ cd ~/bluetooth-temp
 
 ```
@@ -156,7 +149,6 @@ and browse... Only audio, video, and pictures are available when you do this.
 Install [obextool](https://www.archlinux.org/packages/?name=obextool) [obexfs](https://www.archlinux.org/packages/?name=obexfs) [obexftp](https://www.archlinux.org/packages/?name=obexftp) [openobex](https://www.archlinux.org/packages/?name=openobex) [bluez](https://www.archlinux.org/packages/?name=bluez).
 
  `# lsusb` 
-
 ```
 Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
 Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
@@ -171,9 +163,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 # hciconfig hci0 up
 
 ```
-
  `# hciconfig` 
-
 ```
 hci0:   Type: BR/EDR  Bus: USB
         BD Address: 00:16:41:97:BA:5E  ACL MTU: 1017:8  SCO MTU: 64:8
@@ -182,9 +172,7 @@ hci0:   Type: BR/EDR  Bus: USB
         TX bytes:38 acl:0 sco:0 commands:11 errors:0
 
 ```
-
  `# hcitool dev` 
-
 ```
 Devices:
         hci0    00:16:41:97:BA:5E
@@ -194,23 +182,18 @@ Devices:
 Make sure that bluetooth on your phone is enabled and your phone is visible!
 
  `# hcitool scan` 
-
 ```
 Scanning ...
         00:1A:1B:82:9B:6D       [quirxi]
 
 ```
-
  `# hcitool inq` 
-
 ```
 Inquiring ...
         00:1A:1B:82:9B:6D       clock offset: 0x1ee4    class: 0x522204
 
 ```
-
  `# l2ping 00:1A:1B:82:9B:6D` 
-
 ```
 Ping: 00:1A:1B:82:9B:6D from 00:16:41:97:BA:5E (data size 44) ...
 44 bytes from 00:1A:1B:82:9B:6D id 0 time 23.94ms
@@ -222,16 +205,12 @@ Ping: 00:1A:1B:82:9B:6D from 00:16:41:97:BA:5E (data size 44) ...
 6 sent, 6 received, 0% loss
 
 ```
-
  `# hcitool name 00:1A:1B:82:9B:6D` 
-
 ```
 [quirxi]
 
 ```
-
  `# hciconfig -a hci0` 
-
 ```
 hci0:   Type: BR/EDR  Bus: USB
         BD Address: 00:16:41:97:BA:5E  ACL MTU: 1017:8  SCO MTU: 64:8
@@ -251,9 +230,7 @@ hci0:   Type: BR/EDR  Bus: USB
         Manufacturer: Broadcoml / Corporation (15)
 
 ```
-
  `# hcitool info 00:1A:1B:82:9B:6D` 
-
 ```
 Requesting information ...
         BD Address:  00:1A:1B:82:9B:6D
@@ -277,9 +254,7 @@ Edit your `/etc/bluetooth/main.conf` and enter the proper class for your phone (
 #Class = 0x000100
 Class =  0x100100
 ```
-
  `# systemctl start bluetooth` 
-
 ```
 :: Stopping bluetooth subsystem:  pand dund rfcomm hidd  bluetoothd
 [DONE]
@@ -290,7 +265,6 @@ Class =  0x100100
 Pairing with bluez-simple-agent only has to be done once. On your Motorola phone give 0000 in as your PIN when phone asks for it!
 
  `/usr/bin/bluez-simple-agent hci0 00:1A:1B:82:9B:6D` 
-
 ```
 RequestPinCode (/org/bluez/10768/hci0/dev_00_1A_1B_82_9B_6D)
 Enter PIN Code: 0000
@@ -302,7 +276,6 @@ New device (/org/bluez/10768/hci0/dev_00_1A_1B_82_9B_6D)
 Now you can browse the filesystem of your phone with obexftp:
 
  `obexftp -v -b 00:1A:1B:82:9B:6D -B 9 -l` 
-
 ```
 Connecting..\done
 Tried to connect for 448ms
@@ -336,7 +309,6 @@ Or you can mount your phone into a directory on your computer and treat it like 
 Assuming a bluetooth device called hci0 and an iPhone that showed up in a hcitool scan as '00:00:DE:AD:BE:EF':
 
  `# bluez-simple-agent hci0 00:00:DE:AD:BE:EF` 
-
 ```
 Passcode:
 
@@ -347,7 +319,7 @@ Passcode:
 To quickly test the connection:
 
 ```
-$ hidd --connect _XX:XX:XX:XX:XX:XX_
+$ hidd --connect *XX:XX:XX:XX:XX:XX*
 
 ```
 
@@ -360,7 +332,7 @@ For automated reconnection, use your desktop wizard to configure the bluetooth m
 1\. Scan for your device:
 
 ```
-$ hcitool (-i _optional hci#_***) scan
+$ hcitool (-i *optional hci#****) scan
 
 ```
 
@@ -402,17 +374,17 @@ $ aplay -L
 
 ```
 
-5\. Now play with _aplay_:
+5\. Now play with *aplay*:
 
 ```
-$ aplay -D btheadset _/path/to/audio/file_
+$ aplay -D btheadset */path/to/audio/file*
 
 ```
 
 or MPlayer:
 
 ```
-$ mplayer -ao alsa:device=btheadset _/path/to/audio/or/video/file_
+$ mplayer -ao alsa:device=btheadset */path/to/audio/or/video/file*
 
 ```
 
@@ -452,8 +424,7 @@ The headset should show up in the Configuration tab.
 
 1\. Scan for your device
 
- `$ hcitool (-i _optional_hci#_***) scan` 
-
+ `$ hcitool (-i *optional_hci#****) scan` 
 ```
 Scanning ...
        00:11:22:33:44:55       Microsoft Bluetooth Mobile Keyboard 6000
@@ -463,7 +434,6 @@ Scanning ...
 2\. On second console run as root (do not terminate):
 
  `# bluez-simple-agent` 
-
 ```
 Agent registered
 
@@ -472,7 +442,6 @@ Agent registered
 3\. Back on first console run:
 
  `$ bluez-simple-agent hci0 00:11:22:33:44:55` 
-
 ```
 Enter PIN Code: 1234
 (now enter that PIN on the keyboard and press enter)
@@ -495,14 +464,13 @@ $ bluez-test-input connect 00:11:22:33:44:55
 
 ```
 
-No your keyboard should work. You can terminate _bluez-simple-agent_ on second console with `Ctrl+C`
+No your keyboard should work. You can terminate *bluez-simple-agent* on second console with `Ctrl+C`
 
 ## Bluez4 - Troubleshooting
 
 ### passkey-agent
 
  `$ passkey-agent --default 1234` 
-
 ```
 Can't register passkey agent
 The name org.bluez was not provided by any .service files

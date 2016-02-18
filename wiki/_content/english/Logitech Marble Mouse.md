@@ -41,10 +41,10 @@ When no additional configuration is specified, buttons are mapped to these funct
 | 1 | Large button left | normal click |
 | 2 | Both large buttons | middle-click  † |
 | 3 | Large button right | right-click |
-| 4 | _(not a button)_ | - |
-| 5 | _(not a button)_ | - |
-| 6 | _(not a button)_ | - |
-| 7 | _(not a button)_ | - |
+| 4 | *(not a button)* | - |
+| 5 | *(not a button)* | - |
+| 6 | *(not a button)* | - |
+| 7 | *(not a button)* | - |
 | 8 | Small button left | browser back |
 | 9 | Small button right | browser forward |
 
@@ -52,26 +52,26 @@ When no additional configuration is specified, buttons are mapped to these funct
 
 *   Both large buttons pressed simultaneously creates a **middle-click**.
 *   †  The simultaneous click is enabled by a configuration directive. It requires `Emulate3buttons`.
-*   Terms _middle-click_ and _wheel-click_ are used interchangeably in this document.
-*   _Alternate-click_ may be used instead of _right-click_. Typically, this pops up a context menu.
+*   Terms *middle-click* and *wheel-click* are used interchangeably in this document.
+*   *Alternate-click* may be used instead of *right-click*. Typically, this pops up a context menu.
 *   The result shown above occurs when no modifier key is pressed.
-*   A different result may occur when a modifier key such as _Ctrl_ is held while a button is clicked.
+*   A different result may occur when a modifier key such as *Ctrl* is held while a button is clicked.
 
 | ID     | Hardware Action     | Result                 |
-| 4 | _Roll ball down_ | move cursor down |
-| 5 | _Roll ball up_ | move cursor up |
-| 6 | _Roll ball left_ | move cursor left |
-| 7 | _Roll ball right_ | move cursor right |
+| 4 | *Roll ball down* | move cursor down |
+| 5 | *Roll ball up* | move cursor up |
+| 6 | *Roll ball left* | move cursor left |
+| 7 | *Roll ball right* | move cursor right |
 
 **Note:**
 
 *   Cursor motion occurs when no modifier is used.
 *   A modifier used in conjunction with rolling motion may create an alternate result.
-*   "Modifier" refers to a key (such as _Ctrl_) or button (as in _mouse button_) being held while the trackball is rolled.
+*   "Modifier" refers to a key (such as *Ctrl*) or button (as in *mouse button*) being held while the trackball is rolled.
 
 **Note:** The Marble Mouse trackball can perform document scrolling, much like a wheel mouse. Scrolling occurs when the **[scroll mod­ifier](#Scroll_modifier)** is held down while the trackball is rolled. You must provide at least a **[minimal configuration](#Minimal_configuration)** to enable this feature.
 
-Using the trackball in "wheel mode" can require some unusual gestures on the user's part. Using a wheel mouse, for example, you can resize the display font in your web browser using the  _Ctrl + wheel_roll_  gesture. With the trackball, this operation becomes  _Ctrl + hold_button + ball_roll_.
+Using the trackball in "wheel mode" can require some unusual gestures on the user's part. Using a wheel mouse, for example, you can resize the display font in your web browser using the  *Ctrl + wheel_roll*  gesture. With the trackball, this operation becomes  *Ctrl + hold_button + ball_roll*.
 
 ## Configuration
 
@@ -111,7 +111,7 @@ Option "ButtonMapping" "3 2 1 4 5 6 7 8 9"
 
 Another reason to reassign is when you do not like the "normal" assignments — especially the small buttons.
 
-The line below changes the button **2** action to _**browser forward**_. Parameter two (both-large-button click) is given value **9** for _browser forward_. The line below also reassigns both small buttons. We want them to emit _**middle-click**_. (Either button may be clicked separately.) Parameters eight and nine are given values of **2** for _middle-click_.
+The line below changes the button **2** action to ***browser forward***. Parameter two (both-large-button click) is given value **9** for *browser forward*. The line below also reassigns both small buttons. We want them to emit ***middle-click***. (Either button may be clicked separately.) Parameters eight and nine are given values of **2** for *middle-click*.
 
 ```
 # Three buttons are given new assignments. For right-handed user.
@@ -126,7 +126,7 @@ Parameters are positioned in numeric order. Parameters you might modify are 1, 2
 
 As stated, button **2** is a simultaneous press of the two large buttons.
 
-Experimentation shows, in the absence of a configuration directive, this action produces an indeterminate result. It appears to issue _some_ command, but the result is inconsistent with my expectation of _middle-click._ The result seems dependent on whichever object is foremost. It is inconsistent regardless. You need to enable the combination-click:
+Experimentation shows, in the absence of a configuration directive, this action produces an indeterminate result. It appears to issue *some* command, but the result is inconsistent with my expectation of *middle-click.* The result seems dependent on whichever object is foremost. It is inconsistent regardless. You need to enable the combination-click:
 
 ```
 # Emulate3Buttons refers to the act of pressing buttons A and D
@@ -135,7 +135,7 @@ Option "Emulate3Buttons" "true"
 
 ```
 
-This is sufficient to enable the default mapping of button **2**, which is _wheel-click_.  See [minimal configuration](#Minimal_configuration).
+This is sufficient to enable the default mapping of button **2**, which is *wheel-click*.  See [minimal configuration](#Minimal_configuration).
 
 As at May 2012, there is an issue with [Gnome 3 and middle click emulation](http://who-t.blogspot.com.au/2011/04/gnome-30-middle-mouse-button-emulation.html). Gnome 3 is used, for example, in Ubuntu 12.04\. Gnome 3 also sets the middle click property, and defaults to "false". Since Gnome does its settings **after** Xorg, the Gnome setting overrides the xorg setting, and emulation is disabled. The Gnome setting can be changed with this command:
 
@@ -148,13 +148,13 @@ You only need to do this once (per user) as Gnome remembers the settings between
 
 #### Scroll modifier
 
-One huge limitation for the Marble Mouse is the lack of a scroll wheel or scroll ring. This limitation is overcome by assigning a _scroll modifier_: a mouse button which allows the trackball to scroll. When the scroll modifier is held, the trackball scrolls. Although a scroll modifier is _assigned_ by default (see [basic function](#Basic_function)), the scroll modifier is **not enabled** by default. In addition to enabling the scroll modifier, you may _also_ assign it to a different button.
+One huge limitation for the Marble Mouse is the lack of a scroll wheel or scroll ring. This limitation is overcome by assigning a *scroll modifier*: a mouse button which allows the trackball to scroll. When the scroll modifier is held, the trackball scrolls. Although a scroll modifier is *assigned* by default (see [basic function](#Basic_function)), the scroll modifier is **not enabled** by default. In addition to enabling the scroll modifier, you may *also* assign it to a different button.
 
 **Note:** The scroll button has a "click" function in addition to its scroll function. The scroll modifier is a "press and hold" function separate from the "click" function. The best choice for scroll modifier is one of the small buttons. Unfortunately, standard "click" actions for those buttons are awkward. I recommend you reassign click actions for the small buttons.
 
-The standard scroll setting defines the small button for scrolling — that is good, — but the same button has a default _"click"_ action that is _**browser back**_. A better choice is _**middle-click**_. _Middle-click_ corresponds to what you would expect from years of wheel mouse usage.
+The standard scroll setting defines the small button for scrolling — that is good, — but the same button has a default *"click"* action that is ***browser back***. A better choice is ***middle-click***. *Middle-click* corresponds to what you would expect from years of wheel mouse usage.
 
-Putting complaints aside (these are addressed by reassigning small buttons), you specify a button to be the _**scroll modifier**_:
+Putting complaints aside (these are addressed by reassigning small buttons), you specify a button to be the ***scroll modifier***:
 
 ```
 Option "EmulateWheel" "true"
@@ -190,7 +190,7 @@ To switch to the opposite placement, I manually edit my configuration file and [
 
 *   With Arch Linux, I prefer a lightweight or non-existent desktop environment running the **[Openbox](/index.php/Openbox "Openbox")** window manager.
 
-Other desktop environments may have widgets to simplify — or complicate, depending how you view it — switching between right and left. With Ubuntu 10.10, for example, you need only mark a box in the mouse control panel to effect a button switch. _(You must change the configuration file to get the correct scroll modifier assignment, however. Also, Ubuntu ignores large button assignments in the configuration file; the control panel makes them unnecessary.)_
+Other desktop environments may have widgets to simplify — or complicate, depending how you view it — switching between right and left. With Ubuntu 10.10, for example, you need only mark a box in the mouse control panel to effect a button switch. *(You must change the configuration file to get the correct scroll modifier assignment, however. Also, Ubuntu ignores large button assignments in the configuration file; the control panel makes them unnecessary.)*
 
 ### System-wide or per-user
 
@@ -267,9 +267,9 @@ The `"Auto"` option for `"Protocol"` works fine, too. Of course you can use the 
 
 The sample configuration modifies and extends the [basic function](#Basic_function) of the Marble Mouse.
 
-In this example, either of the two small buttons may be clicked to send a _**wheel-click**_. Wheel-click means the same as "middle-click" here. In addition, one of the small buttons provides _**scrolling**_ in conjunction with the trackball. Note that only _one_ small button has the ability for scrolling, although both small buttons are able to _wheel-click._
+In this example, either of the two small buttons may be clicked to send a ***wheel-click***. Wheel-click means the same as "middle-click" here. In addition, one of the small buttons provides ***scrolling*** in conjunction with the trackball. Note that only *one* small button has the ability for scrolling, although both small buttons are able to *wheel-click.*
 
-Finally, clicking both large buttons simultaneously sends the _**browser back**_ event. There is no button to send _browser forward_.
+Finally, clicking both large buttons simultaneously sends the ***browser back*** event. There is no button to send *browser forward*.
 
 | ID     | Hardware Action          | Result (this configuration)      | New assignment |
 | 1 | Large button left | normal click | 1 |
@@ -280,8 +280,8 @@ Finally, clicking both large buttons simultaneously sends the _**browser back**_
 
 **Note:**
 
-*   Both large buttons pressed simultaneously results in _browser back_.
-*   Either small button, when clicked, results in _middle-click_.
+*   Both large buttons pressed simultaneously results in *browser back*.
+*   Either small button, when clicked, results in *middle-click*.
 *   †  This small button allows trackball scrolling when held down. It is the scroll modifier.
 *   ‡  This button can be mapped for scrolling function instead. This button works better for left-side placement because it lies near the thumb of one's left-hand. Only one button can be assigned as the scroll modifier as far as I know.
 
@@ -289,7 +289,7 @@ Finally, clicking both large buttons simultaneously sends the _**browser back**_
 
 The following lines are appended to **`/etc/X11/xorg.conf.d/10-evdev.conf`**
 
-**Note:** _Users of other Linux distributions may find the configuration file in another location. Ubuntu uses /usr/share/X11/xorg.conf.d/10-evdev.conf_
+**Note:** *Users of other Linux distributions may find the configuration file in another location. Ubuntu uses /usr/share/X11/xorg.conf.d/10-evdev.conf*
 
 This example is set up for right-hand placement with horizontal scrolling disabled.
 
@@ -367,7 +367,7 @@ KDE (with KDM) : `sudo restart kdm`
 
 At times it can be useful to start with the absolute minimum and build from there. This is one facet of [The Arch Way](/index.php/The_Arch_Way "The Arch Way"). In this spirit, I decided to see how few lines I might use to create a usable Marble Mouse configuration.
 
-You can omit _all_ configuration lines and the Marble Mouse is still usable for basic pointing and clicking. However, it will not be able to scroll. The "both-large-button" simultaneous click produces indeterminate results — experimentation shows this.
+You can omit *all* configuration lines and the Marble Mouse is still usable for basic pointing and clicking. However, it will not be able to scroll. The "both-large-button" simultaneous click produces indeterminate results — experimentation shows this.
 
 Given that you are satisfied with [default button settings](#Basic_function) and you wish only to enable scrolling and the "both-large-button" click, you need these lines. The following lines are appended to **`/etc/X11/xorg.conf.d/10-evdev.conf`**.
 
@@ -388,7 +388,6 @@ EndSection
 As of version 3.16 GDM/Gnome uses libinput. For the device to work as described in the above section (note that wheel click emulation is not yet supported by libinput) you need to install [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) and instead append this to `/etc/X11/xorg.conf.d/10-libinput.conf`.
 
  `/etc/X11/xorg.conf.d/10-libinput.conf` 
-
 ```
 Section "InputClass"
         Identifier      "Marble Mouse"
@@ -415,7 +414,7 @@ This lets you use the large left button for selecting text and the right button 
 
 ### Chromium browser
 
-By default, Chromium treats a middle-click as a _paste_ command. This choice stems from "Linux tradition", not the capricious whim of one developer. Like myself, you may prefer a _**Windows**_ approach. I want the middle button(s) to initiate _automatic scrolling,_ not _pasting_:
+By default, Chromium treats a middle-click as a *paste* command. This choice stems from "Linux tradition", not the capricious whim of one developer. Like myself, you may prefer a ***Windows*** approach. I want the middle button(s) to initiate *automatic scrolling,* not *pasting*:
 
 *   A browser extension **AutoScroll** allows middle-click to initiate automatic scrolling.
 *   This extension is helpful for any Linux user with a wheel mouse, not just Marble Mouse users.
@@ -425,13 +424,13 @@ By default, Chromium treats a middle-click as a _paste_ command. This choice ste
 *   When you program one of the small buttons to act as scroll modifier (mouse setup), you can manually scroll web pages **without** fixing the browser. That is a press‑and‑hold function. (I recommend installing AutoScroll even though it is not absolutely necessary for scrolling.)
 *   After you assign the scroll modifier to one of the small buttons, the small buttons act a bit differently from one another. The difference is seen when you compare their "press‑and‑hold" behaviors.
 
-Be sure to install _**AutoScroll**_;  the similarly-named _Auto Scroll_ extension implements a different feature.
+Be sure to install ***AutoScroll***;  the similarly-named *Auto Scroll* extension implements a different feature.
 
 This information also applies to the browser called **Google Chrome**.
 
 ### Firefox browser
 
-Older versions of Firefox map horizontal-scrolling hardware to perform _**browser back**_ and _**browser forward**_ navigation.
+Older versions of Firefox map horizontal-scrolling hardware to perform ***browser back*** and ***browser forward*** navigation.
 
 This makes vertical scrolling using the trackball almost impossible.
 

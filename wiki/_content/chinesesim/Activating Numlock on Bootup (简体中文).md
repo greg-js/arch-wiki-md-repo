@@ -37,7 +37,6 @@ WantedBy=multi-user.target
 ```
 
 **Note:** 文件名应该有一个`.service`后缀，例如`numlock1to6.service`.
-
 创建它后不要忘记启用服务.
 
 ### 扩展`getty@.service`
@@ -49,7 +48,6 @@ WantedBy=multi-user.target
 在新建的目录中加入如下文件：
 
  `activate-numlock.conf` 
-
 ```
 [Service]
 ExecStartPost=/bin/sh -c 'setleds +num < /dev/%I'
@@ -113,11 +111,11 @@ $ gnome-session-properties
 
 ```
 
-在**Startup Applications Preferences** 程序中，点击_**添加**_ 然后输入：
+在**Startup Applications Preferences** 程序中，点击***添加*** 然后输入：
 
-| Name: | _Numlockx_ |
-| Command: | _/usr/bin/numlockx on_ |
-| Comment: | _Turns on numlock._ |
+| Name: | *Numlockx* |
+| Command: | */usr/bin/numlockx on* |
+| Comment: | *Turns on numlock.* |
 
 **注意:** 这不是系统设置，每个用户都需要单独设置。
 

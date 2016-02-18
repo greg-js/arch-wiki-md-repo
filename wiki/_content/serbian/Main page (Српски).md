@@ -1,4 +1,4 @@
-**Добродошли на [АрчВики](/index.php/AboutWiki "AboutWiki"); _најбољи_ извор документације за Арч Линукс на интернету.**
+**Добродошли на [АрчВики](/index.php/AboutWiki "AboutWiki"); *најбољи* извор документације за Арч Линукс на интернету.**
 
 Посетите [Table of contents](/index.php/Table_of_contents "Table of contents") за списак АрчВики категорија.
 

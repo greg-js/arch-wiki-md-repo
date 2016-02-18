@@ -147,9 +147,9 @@ This is a list of helper utilities that search and/or build packages.
 
 **Note:**
 
-*   _Secure_ means that the application, by default, does not source the PKGBUILD at all, or, before doing so, reminds the user and offers him the opportunity to inspect it manually. Some helpers are known to source PKGBUILDs before the user can inspect them, allowing malicious code to be executed. _Optional_ means that there is a command line flag or configuration option to prevent the automatic sourcing before viewing.
-*   _Clean build_ means that no new variables are exported to the build process.
-*   _Git clone_ means that the helper uses git clones instead of tarballs in line with AUR 4.
+*   *Secure* means that the application, by default, does not source the PKGBUILD at all, or, before doing so, reminds the user and offers him the opportunity to inspect it manually. Some helpers are known to source PKGBUILDs before the user can inspect them, allowing malicious code to be executed. *Optional* means that there is a command line flag or configuration option to prevent the automatic sourcing before viewing.
+*   *Clean build* means that no new variables are exported to the build process.
+*   *Git clone* means that the helper uses git clones instead of tarballs in line with AUR 4.
 
 | Name | Written In | Git clone | Clean build | Pacman-like Syntax | Shell Tab Completion | Secure (<small>see note above</small>) | Multilingual | Specificity |
 | apacman | Bash | No | Yes | Yes | No | Optional | No | Fork of packer |

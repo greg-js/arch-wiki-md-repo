@@ -1,6 +1,6 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [X resources](/index.php/X_resources "X resources"). Дата последней синхронизации: 5 октября 2015\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=X_resources&diff=0&oldid=403404).
 
-**Xresources** - это настраиваемый на уровне пользователя _dotfile_ ("точкафайл", [dotfiles](/index.php/Dotfiles "Dotfiles")), как правило, находящийся по пути `~/.Xresources`. Он может быть использован для установки [ресурсов X](https://en.wikipedia.org/wiki/X_resources "wikipedia:X resources"), параметров настроек для клиентских приложений X.
+**Xresources** - это настраиваемый на уровне пользователя *dotfile* ("точкафайл", [dotfiles](/index.php/Dotfiles "Dotfiles")), как правило, находящийся по пути `~/.Xresources`. Он может быть использован для установки [ресурсов X](https://en.wikipedia.org/wiki/X_resources "wikipedia:X resources"), параметров настроек для клиентских приложений X.
 
 Они может сделать много операций, в том числе:
 
@@ -84,11 +84,11 @@ xrdb -merge ~/.Xresources
 
 **Совет:** `~/.Xresources` это просто условное название; xrdb может загрузить любой файл. Если вы используете вручную xrdb, вы можете поместить этот файл в любом месте, где захотите (например, `~/.config/Xresources`).
 
-**Обратите внимание:** Ресурсы загруженные с xrdb также доступны в _удалённых_ клиентах X11 (таких как перенаправление на SSH).
+**Обратите внимание:** Ресурсы загруженные с xrdb также доступны в *удалённых* клиентах X11 (таких как перенаправление на SSH).
 
 **Важно:**
 
-*   Если вы в фоне выполняете xrdb в цепи команд `~/.xinitrc`, программы запущенные в той же цепи, не могут использовать его, так что рекомендуется _никогда_ не запускать в фоне команды xrdb в `~/.xinitrc`.
+*   Если вы в фоне выполняете xrdb в цепи команд `~/.xinitrc`, программы запущенные в той же цепи, не могут использовать его, так что рекомендуется *никогда* не запускать в фоне команды xrdb в `~/.xinitrc`.
 *   Старый и устаревший файл `~/.Xdefaults` читается каждый раз при запуске программ X11 таких как `xterm`, но **только** если `xrdb` "никогда" не был использован в текущем сеансе X. [[1]](https://groups.google.com/forum/#!msg/comp.windows.x/hQBEdql8l-Q/hF3DETcIHGwJ)
 
 ### Добавление к xinitrc
@@ -188,7 +188,6 @@ xscreensaver.Dialog.headingFont: -*-fixed-bold-r-*-*-*-100-*-*-*-*-iso8859-1
 Чтобы использовать различные файлы для каждого приложения, используйте `#include` в главном файле. Например:
 
  `~/.Xresources` 
-
 ```
 #include ".Xresources.d/xterm"
 #include ".Xresources.d/rxvt-unicode"
@@ -197,12 +196,11 @@ xscreensaver.Dialog.headingFont: -*-fixed-bold-r-*-*-*-100-*-*-*-*-iso8859-1
 
 ```
 
-Если файлы не удалось загрузить, укажите каталог для _xrdb_ с параметром `-I`. Например:
+Если файлы не удалось загрузить, укажите каталог для *xrdb* с параметром `-I`. Например:
 
  `~/.xinitrc` 
-
 ```
-xrdb -I_$HOME_ ~/.Xresources
+xrdb -I*$HOME* ~/.Xresources
 
 ```
 
@@ -310,7 +308,7 @@ xterm*toolBar:            false
 
 ### Ресурсы rxvt-unicode (urxvt)
 
-[rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode) предоставляет большой список доступных опций, которые можно настраивать при помощи файла `~/.Xresources`. Для получения дополнительной информации обратитесь к странице справочного руководства (man) _urxvt_ или разделу [rxvt-unicode (Русский)#Создание ~/.Xresources](/index.php/Rxvt-unicode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.7E.2F.Xresources "Rxvt-unicode (Русский)").
+[rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode) предоставляет большой список доступных опций, которые можно настраивать при помощи файла `~/.Xresources`. Для получения дополнительной информации обратитесь к странице справочного руководства (man) *urxvt* или разделу [rxvt-unicode (Русский)#Создание ~/.Xresources](/index.php/Rxvt-unicode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.7E.2F.Xresources "Rxvt-unicode (Русский)").
 
 ### Предпочтения Aterm
 
@@ -585,7 +583,8 @@ cnorm	dl1	invis	kcuu1	kf20	kf35	kf5	kf7	rc	setaf	vpa
 
 T='gYw'   # The test text
 
-echo -e "\n                 40m     41m     42m     43m\
+echo -e "
+                 40m     41m     42m     43m\
      44m     45m     46m     47m";
 
 for FGs in '    m' '   1m' '  30m' '1;30m' '  31m' '1;31m' '  32m' \
@@ -623,7 +622,8 @@ for b in {0..8}; do
   done
 
   echo -en "\033[0m │"
-  echo -en "\033[0m\n\033[0m     │ "
+  echo -en "\033[0m
+\033[0m     │ "
 
   for f in {0..7}; do
     echo -en "\033[${bg}m\033[1;$((f+30))m ${FGNAMES[f]} "
@@ -661,7 +661,8 @@ for b in $(seq 0 8); do
     done
     echo -en "\033[0m :"
 
-    echo -en "\033[0m\n\033[0m     : "
+    echo -en "\033[0m
+\033[0m     : "
     for f in $(seq 0 7); do
       echo -en "\033[${bg}m\033[1;$(($f+30))m ${FGNAMES[$f]} "
     done
@@ -694,9 +695,12 @@ end
 for bg = 40,47 do
 	io.write(cl(0), ' ', bg, ' ')
 	print_fg(bg, ' ')
-	io.write('\n    ')
+	io.write('
+    ')
 	print_fg(bg, '1;')
-	io.write('\n\n')
+	io.write('
+
+')
 end
 
 -- Andres P
@@ -848,7 +852,7 @@ EOF
 
 ### Ошибки чтения (парсинга) файла ~/.Xresources
 
-[Экранные менеджеры](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display manager (Русский)"), такие как [GDM](/index.php/GDM "GDM") и [LightDM](/index.php/LightDM "LightDM"), могут запускать _xrdb_ с опцией `--nocpp`. Смотрите раздел [LightDM#Xresources not being parsed correctly](/index.php/LightDM#Xresources_not_being_parsed_correctly "LightDM").
+[Экранные менеджеры](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display manager (Русский)"), такие как [GDM](/index.php/GDM "GDM") и [LightDM](/index.php/LightDM "LightDM"), могут запускать *xrdb* с опцией `--nocpp`. Смотрите раздел [LightDM#Xresources not being parsed correctly](/index.php/LightDM#Xresources_not_being_parsed_correctly "LightDM").
 
 ## Смотрите также
 

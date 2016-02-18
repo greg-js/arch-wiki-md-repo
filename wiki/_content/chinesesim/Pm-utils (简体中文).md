@@ -102,7 +102,7 @@ linux   /boot/vmlinuz-linux root=/dev/disk/by-uuid/818dc030-8108-4428-8859-b73a5
 
 关于永久性的讨论,请移步(英文) [论坛](https://bbs.archlinux.org/viewtopic.php?pid=886789#p88678).
 
-即使你的swap分区小于内存,也有很大的可能成功的休眠.根据 [kernel documentation](http://www.mjmwired.net/kernel/Documentation/power/interface.txt), _`/sys/power/image_size` 控制休眠到磁盘镜像的大小_,其中有一个500M的默认值。_休眠将竭尽所能的确保镜像的大小不会超过这个阀值。_ 你可以增加或者减少swap分区的大小来提高休眠的速度.
+即使你的swap分区小于内存,也有很大的可能成功的休眠.根据 [kernel documentation](http://www.mjmwired.net/kernel/Documentation/power/interface.txt), *`/sys/power/image_size` 控制休眠到磁盘镜像的大小*,其中有一个500M的默认值。*休眠将竭尽所能的确保镜像的大小不会超过这个阀值。* 你可以增加或者减少swap分区的大小来提高休眠的速度.
 
 **注意:** 你必须添加`resume` 钩子到 `/etc/mkinitcpio.conf`文件中, 移步 [常见问题解答](#Resume_Hook)!
 
@@ -115,11 +115,11 @@ linux   /boot/vmlinuz-linux root=/dev/disk/by-uuid/818dc030-8108-4428-8859-b73a5
 
 ```
 
-添加如下几行，记住把 _username_ 替换成你自己的登录名：
+添加如下几行，记住把 *username* 替换成你自己的登录名：
 
 ```
-_username_  ALL = (ALL) NOPASSWD: /usr/sbin/pm-hibernate
-_username_  ALL = (ALL) NOPASSWD: /usr/sbin/pm-suspend
+*username*  ALL = (ALL) NOPASSWD: /usr/sbin/pm-hibernate
+*username*  ALL = (ALL) NOPASSWD: /usr/sbin/pm-suspend
 
 ```
 
@@ -139,10 +139,10 @@ $ sudo pm-suspend
 
 ```
 
-同时，把你的用户加入到 _power_ 组，这样桌面小应用程序可以使用挂起操作。如果你不这样做，当你使用如 gnome shutdown 的程序来进行挂起/休眠操作的时候，计算机会发出烦人的声音和锁住屏幕。
+同时，把你的用户加入到 *power* 组，这样桌面小应用程序可以使用挂起操作。如果你不这样做，当你使用如 gnome shutdown 的程序来进行挂起/休眠操作的时候，计算机会发出烦人的声音和锁住屏幕。
 
 ```
-# gpasswd -a _username_ power
+# gpasswd -a *username* power
 
 ```
 
@@ -208,13 +208,13 @@ esac
 
 把以上内容写入`/etc/pm/sleep.d/66dummy`文件中，并执行`chmod +x /etc/pm/sleep.d/66dummy`，之后在挂起/唤醒过程中它将产生一些无实际作用的行。
 
-_**注意：** 所有的钩子都以root用户执行。这意味着你需要在创建临时文件、检查PATH环境变量等时候多加小心，以避免安全问题。_
+***注意：** 所有的钩子都以root用户执行。这意味着你需要在创建临时文件、检查PATH环境变量等时候多加小心，以避免安全问题。*
 
 ## 工作原理
 
 这个概念看起来很简单：这些系统脚本 (`pm-suspend`、`pm-hibernate`、`pm-suspend-hybrid`)将会运行名为"hooks"的可执行文件，这些脚本将会按照字母顺序进行挂起或休眠。一旦hooks运行成功，电脑就会进入休眠状态。直到下次唤醒PC时，所有的脚本按照相反的顺序从内存或者磁盘恢复工作。hooks做了很多事情，例如准备启动，停止蓝牙工作，或者卸载相关的模块。 通常，挂起和休眠都会从HAL或者桌面部件中启用（例如gnome-power-manager、 kpowersave。）
 
-_**注意：** `suspend-hybrid` 还是一个半成品，并不保证一定可用。_
+***注意：** `suspend-hybrid` 还是一个半成品，并不保证一定可用。*
 
 也可以设置电脑在高功耗或低功耗模式下工作，利用这条命令`pm-powersave` 使用参数`true` 或 `false`。它的工作状况基本与挂起的情况相同。
 
@@ -239,13 +239,13 @@ _**注意：** `suspend-hybrid` 还是一个半成品，并不保证一定可用
 系统有时会提示你需要将`resume` hook 添加到 initrd image中,，否则内核将提醒你没有resume. 那么，使用**ROOT**权限编辑`/etc/mkinitcpio.conf` 并且将 `resume` 添加到 HOOKS 中：
 
 ```
-HOOKS="base udev autodetect ide scsi sata _**resume**_ filesystems "
+HOOKS="base udev autodetect ide scsi sata ***resume*** filesystems "
 
 ```
 
 这只是一个示范，你的HOOKS可以安装自己的需要编辑。
 
-`resume` 必须放在 'ide', 'scsi' and/or 'sata' _之后_ ，但必须在 'filesystems'之前。这里应该有一个适当的 'resume' 文件 /lib/initcpio/hooks （修改合适你的配置）, hook文件是 'mkinitcpio'包的一部分。
+`resume` 必须放在 'ide', 'scsi' and/or 'sata' *之后* ，但必须在 'filesystems'之前。这里应该有一个适当的 'resume' 文件 /lib/initcpio/hooks （修改合适你的配置）, hook文件是 'mkinitcpio'包的一部分。
 
 最后，你必须重新制作内核镜像，否则那些变更不会生效。
 
@@ -254,7 +254,7 @@ HOOKS="base udev autodetect ide scsi sata _**resume**_ filesystems "
 
 ```
 
-_注意: 如果你使用的是自己编译的内核，那么必须用 -p 参数重新制作镜像。_
+*注意: 如果你使用的是自己编译的内核，那么必须用 -p 参数重新制作镜像。*
 
 例如这样做:
 
@@ -293,8 +293,8 @@ Openbox users can add the new scripts as additional shutdown options within the 
 	<item label="Logout"> <action name="Exit"/> </item>
 	<item label="Reboot"> <action name="Execute"> <execute>sudo shutdown -r now</execute> </action> </item>
 	<item label="Poweroff"> <action name="Execute"> <execute>sudo shutdown -h now </execute> </action> </item>
-	_**<item label="Hibernate"> <action name="Execute"> <execute>sudo pm-hibernate</execute> </action> </item>**_
-	_**<item label="Suspend"> <action name="Execute"> <execute>sudo pm-suspend</execute> </action> </item>**_
+	***<item label="Hibernate"> <action name="Execute"> <execute>sudo pm-hibernate</execute> </action> </item>***
+	***<item label="Suspend"> <action name="Execute"> <execute>sudo pm-suspend</execute> </action> </item>***
 </menu>
 
 ```
@@ -307,4 +307,4 @@ Openbox users can add the new scripts as additional shutdown options within the 
 
 ## Credits
 
-_This wiki entry was originally sourced from the [OpenSUSE Wiki](http://en.opensuse.org/Pm-utils) (Licensed under GPL). A big thank you goes to the `pm-utils` developers and documenters for their time._
+*This wiki entry was originally sourced from the [OpenSUSE Wiki](http://en.opensuse.org/Pm-utils) (Licensed under GPL). A big thank you goes to the `pm-utils` developers and documenters for their time.*

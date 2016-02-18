@@ -48,7 +48,6 @@ i2c_core               16653  5 drm,drm_kms_helper,i2c_algo_bit,gma500_gfx,video
 Nel caso non si riuscissero a caricare i driver verificare dare il seguente comando e verificare che il campo MODULES contenga la stringa gma500_gfx.
 
  `# nano /etc/mkinitcpio.conf` 
-
 ```
  [...]
 

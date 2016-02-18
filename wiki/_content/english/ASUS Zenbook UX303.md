@@ -88,7 +88,6 @@ To get full functionality, you will need to configure the touchpad. See [Touchpa
 The sensitivity settings may need to be adjusted. If touchpad is not responsive, try changing the settings:
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
 Section "InputClass"
         ....

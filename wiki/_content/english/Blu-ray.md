@@ -71,7 +71,7 @@ BD+ is an additional but optional component of the Blu-ray DRM. In December 2013
 
 1.  [Install](/index.php/Install "Install") [libbluray](https://www.archlinux.org/packages/?name=libbluray) and [libaacs](https://www.archlinux.org/packages/?name=libaacs) from the [official repositories](/index.php/Official_repositories "Official repositories").
 2.  Download the [`KEYDB.cfg`](http://www.labdv.com/aacs/KEYDB.cfg) file from [[11]](http://www.labdv.com/aacs/) and copy it in the directory `~/.config/aacs`. This file contains PK, HC and VUK data required for attempting the decryption process described below for nearly 12000 discs.
-3.  If necessary (_i.e._ if volumes are not mounted automatically on your system), mount the disc to a directory, _e.g._: `# mount /dev/sr0 /media/blurays` 
+3.  If necessary (*i.e.* if volumes are not mounted automatically on your system), mount the disc to a directory, *e.g.*: `# mount /dev/sr0 /media/blurays` 
 
 ### Decryption process
 
@@ -83,7 +83,7 @@ Launch a Blu-ray software player, such as VLC, and try to play the disc (on VLC,
     1.  Check if a valid VUK for the disc is already available in `~/.cache/aacs/vuk/`. If yes, go to step 4.1, if not continue to next step.
     2.  Read `~/.config/aacs/KEYDB.cfg`:
         1.  If a valid VUK is available, go to 4.1, if not continue to next step.
-        2.  If a valid PK (_i.e._ corresponding to the disc MKB version) and a valid (non-revoked by drive) Host key/certificate is available, libaacs will attempt to compute the VUK. The VUK is then stored in `~/.cache/aacs/vuk` for future use. Go to step 4.1\. If no valid PK/HKC are available, go to step 4.2.
+        2.  If a valid PK (*i.e.* corresponding to the disc MKB version) and a valid (non-revoked by drive) Host key/certificate is available, libaacs will attempt to compute the VUK. The VUK is then stored in `~/.cache/aacs/vuk` for future use. Go to step 4.1\. If no valid PK/HKC are available, go to step 4.2.
 4.  Result
     1.  The software player is able to play the disc content.
     2.  The software player fails to read the disc content.
@@ -93,7 +93,7 @@ Launch a Blu-ray software player, such as VLC, and try to play the disc (on VLC,
 Using the VUK specific to your disc will always work, and cannot be revoked by the industry, as it is the most downstream decryption key for a Blu-ray disc. However, there is one unique VUK per disc, corresponding to one VID, making this method rely on VUK lists or databases. The VUK will be known if either of these are true:
 
 *   decrypting using PK and Host K/C described below has worked once, and the generated VUK for your disc has been stored in `~/.cache/aacs/vuk`, or
-*   the valid VUK for your disc has been obtained from a third party (_i.e._ is available in `KEYDB.cfg`). This allows you to read a disc, even if the PK and host key/certificate have been revoked for your disc MKB version.
+*   the valid VUK for your disc has been obtained from a third party (*i.e.* is available in `KEYDB.cfg`). This allows you to read a disc, even if the PK and host key/certificate have been revoked for your disc MKB version.
 
 If none of these are true, then the software player will attempt decrypting the disc using the second method.
 
@@ -103,7 +103,7 @@ The advantage of this method is that - when it works - it can decrypt any disc (
 
 **Note:** As of December 2015, latest commercial Blu-ray discs come with MKB v57\. Since no PK beyond MKB v28 has been made publicly available, this decryption method has been obsolete for quite a long time. It is presented for information purpose, but has little chance to be used with recent discs until newer PKs are made available. Therefore, decrypting using VUK lists is now privileged, since it is irrevocable by the movie industry. However, this implies Linux users rely on discovery by third parties since there is no more any open source tool on Linux that can generate VUKs for discs with MKB v29 and above.
 
-This method uses the Processing keys and a Host key/certificate present at the beginning of the `KEYDB.cfg` file. Currently, they will work for a disc up to MKB v28 but have been revoked in MKB v30 and above discs) in `~/.config/aacs/`. Further, this method will only work if your drive has not revoked the host key/certificate that is in this `KEYDB.cfg` file (_i.e._ if you have not tried to play a disc with MKB v30 and above).
+This method uses the Processing keys and a Host key/certificate present at the beginning of the `KEYDB.cfg` file. Currently, they will work for a disc up to MKB v28 but have been revoked in MKB v30 and above discs) in `~/.config/aacs/`. Further, this method will only work if your drive has not revoked the host key/certificate that is in this `KEYDB.cfg` file (*i.e.* if you have not tried to play a disc with MKB v30 and above).
 
 If this method is successful, after you play the disc, libaacs will store the VUK in `~/.cache/aacs/vuk`. The filename is the disc ID and its content is the VUK itself. VLC will reuse this VUK even if it does not find a valid `KEYDB.cfg` file, so it could be a good idea to backup this directory for the future.
 

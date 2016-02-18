@@ -52,22 +52,22 @@ $ mkdir ~/archlive
 
 现在要将早先安装到主机的 archiso 脚本复制到你新建的工作目录内。
 
-Archiso 附带2个预定义配置（ profiles ）: _releng_ 和_baseline_。
+Archiso 附带2个预定义配置（ profiles ）: *releng* 和*baseline*。
 
-如果您想要创建完全定制的 Live Arch Linux ，并预装所有您喜爱的程序和配置，使用 _releng_。
+如果您想要创建完全定制的 Live Arch Linux ，并预装所有您喜爱的程序和配置，使用 *releng*。
 
-如果您只是想构建一个简易 Live 镜像，无预装软件并仅有基础配置，那么使用 _baseline_。
+如果您只是想构建一个简易 Live 镜像，无预装软件并仅有基础配置，那么使用 *baseline*。
 
-所以，取决于你的需求，将下面命令中的 **PROFILE** 换成 _releng_ 或是 _baseline_ 并执行。
+所以，取决于你的需求，将下面命令中的 **PROFILE** 换成 *releng* 或是 *baseline* 并执行。
 
 ```
 # cp -r /usr/share/archiso/configs/**PROFILE**/ ~/archlive
 
 ```
 
-如果你使用 _releng_ 配置文件来创建一个完全自定义的镜像，那么你可以继续到：[#配置我们的Live介质](#.E9.85.8D.E7.BD.AE.E6.88.91.E4.BB.AC.E7.9A.84Live.E4.BB.8B.E8.B4.A8)。
+如果你使用 *releng* 配置文件来创建一个完全自定义的镜像，那么你可以继续到：[#配置我们的Live介质](#.E9.85.8D.E7.BD.AE.E6.88.91.E4.BB.AC.E7.9A.84Live.E4.BB.8B.E8.B4.A8)。
 
-如果您使用 _baseline_ 配置文件创建一个简易映像，那么你不需要做任何定制，并可以直接继续到[#构建ISO](#.E6.9E.84.E5.BB.BAISO).
+如果您使用 *baseline* 配置文件创建一个简易映像，那么你不需要做任何定制，并可以直接继续到[#构建ISO](#.E6.9E.84.E5.BB.BAISO).
 
 ## 配置我们的Live介质
 
@@ -75,7 +75,7 @@ Archiso 附带2个预定义配置（ profiles ）: _releng_ 和_baseline_。
 
 ### 安装包
 
-你将在你的 Live CD 系统上创建一个列表，它包含你想要安装的包。该文件的格式为：每行一个包名，且没有其他内容。这对于某些特殊需求的 Live CD 来说很_**有帮助**_——仅需在 packages.both 中列出你想要的包并制作映像。你可以分别在 packages.i686 或 packages.x86_64 中列出仅在 32 位或 64 位系统中安装的软件。
+你将在你的 Live CD 系统上创建一个列表，它包含你想要安装的包。该文件的格式为：每行一个包名，且没有其他内容。这对于某些特殊需求的 Live CD 来说很***有帮助***——仅需在 packages.both 中列出你想要的包并制作映像。你可以分别在 packages.i686 或 packages.x86_64 中列出仅在 32 位或 64 位系统中安装的软件。
 
 若你准备在没有互联网连接的设备上安装系统，我建议你安装"rsync"，要不然就重新跳过下载它. ([#安装](#.E5.AE.89.E8.A3.85))
 
@@ -311,7 +311,7 @@ initrd /arch/boot/x86_64/archiso.img
 
 #### 安装 archiso 到新的根
 
-由于没有网络连接以从远程仓库下载每个包，我们不使用 `pacstrap`，而是复制 Live 环境的_所有文件_到新的根目录：
+由于没有网络连接以从远程仓库下载每个包，我们不使用 `pacstrap`，而是复制 Live 环境的*所有文件*到新的根目录：
 
 ```
 # time (cp -a /{usr,bin,lib,lib64,sbin,etc,home,opt,root,srv,var} /mnt)
@@ -357,7 +357,6 @@ initrd /arch/boot/x86_64/archiso.img
 [pam 的这个设置](https://projects.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/pam.d/su)可能会危及您新系统的安全性，建议使用默认配置：
 
  `# nano /etc/pam.d/su` 
-
 ```
 #%PAM-1.0
 auth            sufficient      pam_rootok.so

@@ -2,7 +2,7 @@
 
 根据 [Wikipedia](https://en.wikipedia.org/wiki/File_system "wikipedia:File system"):
 
-	_文件系统是数据组织方式，定义数据在磁盘上的保存、读取和更新方法。不同的文件系统可以根据存储设备的不同进行优化，提高效率_。
+	*文件系统是数据组织方式，定义数据在磁盘上的保存、读取和更新方法。不同的文件系统可以根据存储设备的不同进行优化，提高效率*。
 
 Arch Linux支持许多文件系统类型，我们可以为每个磁盘分区设置不同的文件系统。每种文件系统有自己的优缺点和独有特性。以下内容是关于Arch Linux支持的文件系统类型的概述，左侧的链接地址指向Wikipedia以提供更丰富的信息。
 
@@ -25,7 +25,7 @@ Arch Linux支持许多文件系统类型，我们可以为每个磁盘分区设�
 *   [ext3](https://en.wikipedia.org/wiki/ext3 "wikipedia:ext3") - **Third Extended Filesystem**。基于 ext2 系统, 并添加了日志记录功能。 ext3 向前兼容 ext2 ，非常成熟稳定。
 *   [ext4](https://en.wikipedia.org/wiki/ext4 "wikipedia:ext4") - **Fourth Extended Filesystem**。一种新的文件系统，向前兼容 ext2 和 ext3 ，最大支持 1EB (1,048,576 TB) 分区，支持单个 16TB 的文件。子目录最大个数支持 64,000， ext3 只支持 32,000。支持在线碎片处理。
 *   [F2FS](https://en.wikipedia.org/wiki/F2FS "wikipedia:F2FS") - **Flash-Friendly File System**。由Samsung的Kim Jaegeuk（韩文：김재극）为Linux编写的适用于Flash设备的文件系统。F2FS的设计初衷是为了针对NAND闪存设备（包括SSD，eMMC和SD卡）的特性打造一个新的文件系统。这些设备目前在从移动设备到服务器的范畴内被广泛使用。
-*   [JFS](https://en.wikipedia.org/wiki/JFS_(file_system) "wikipedia:JFS (file system)") - IBM 的**日志文件系统（ Journaled File System ）**。这是第一个支持日志的文件系统。它在 IBM AIX® 操作系统中开发了多年，然后被移植到GNU/Linux上。JFS 效率非常高并且 CPU 资源占用率比 GNU/Linux 上的其他任何一个文件系统都要低。并且在格式化、挂载和磁盘检测的时候都非常快，在各方面的表现都非常突出,尤其是与 deadline I/O 调度器结合。不如ext系列或者ReiserFS那样广泛支持，但非常成熟稳定。
+*   [JFS](https://en.wikipedia.org/wiki/JFS_(file_system) - IBM 的**日志文件系统（ Journaled File System ）**。这是第一个支持日志的文件系统。它在 IBM AIX® 操作系统中开发了多年，然后被移植到GNU/Linux上。JFS 效率非常高并且 CPU 资源占用率比 GNU/Linux 上的其他任何一个文件系统都要低。并且在格式化、挂载和磁盘检测的时候都非常快，在各方面的表现都非常突出,尤其是与 deadline I/O 调度器结合。不如ext系列或者ReiserFS那样广泛支持，但非常成熟稳定。
 *   [NILFS2](https://en.wikipedia.org/wiki/NILFS "wikipedia:NILFS") - **New Implementation of a Log-structured File System**。由 NTT 开发。该文件系统将所有数据以连续的类似日志的结构储存，新数据只添加不改写。这种设计减少了寻址时间，相对传统的 Linux 文件系统能防止在崩溃发生后的数据丢失。
 *   [NTFS](https://en.wikipedia.org/wiki/NTFS "wikipedia:NTFS") - **Windows使用的文件系统**。 NTFS 相比 FAT 和 HPFS（High Performance File System）在技术作了若干改进，例如，支持元数据，并且使用了高级数据结构，以便于改善性能、可靠性和磁盘空间利用率，并提供了若干附加扩展功能，如访问控制列表和文件系统日志。
 *   [Reiser4](https://en.wikipedia.org/wiki/Reiser4 "wikipedia:Reiser4") - **ReiserFS 的继任者**。由 Namesys 开发， DARPA 和 Linspire 赞助。使用 B*-tree 辅以 Dancing Tree，这样的机制使得稀疏的节点通常不会被合并，除非因为内存压力触发刷盘或对应的事务已经完成。这样的机制同时也保证了 Reiser4 在创建文件和目录的时候不需要浪费时间和Fixed Block（Such a system also allows Reiser4 to create files and directories without having to waste time and space through fixed blocks）。
@@ -92,7 +92,7 @@ Arch Linux支持许多文件系统类型，我们可以为每个磁盘分区设�
 
 ## 基于 FUSE 的文件系统支持
 
-[Filesystem in Userspace](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace") （FUSE） 是 Unix 类操作系统中一种允许非特权用户在不修改内核代码的前提下创建自己的文件系统的一种机制。文件系统相关的代码会在_用户空间_运行，FUSE 内核模块仅仅是提供一个通往内核接口的“桥梁”。
+[Filesystem in Userspace](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace") （FUSE） 是 Unix 类操作系统中一种允许非特权用户在不修改内核代码的前提下创建自己的文件系统的一种机制。文件系统相关的代码会在*用户空间*运行，FUSE 内核模块仅仅是提供一个通往内核接口的“桥梁”。
 
 一些值得注意的基于 FUSE 的文件系统如下：
 
@@ -141,20 +141,20 @@ Arch Linux支持许多文件系统类型，我们可以为每个磁盘分区设�
 *   如果你想要改变分区划分，请参考 [分区](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")。
 *   如果你想要创建一个交换分区，请参考 [Swap](/index.php/Swap "Swap")。
 
-在开始前，你需要知道 Linux 给你的设备起了什么名字。硬盘和U盘使用 `/dev/sd_x_` 这样的名字，其中 _x_ 是一个或多个小写字母。文件系统被命名为 `/dev/sd_xY_`，其中 _Y_ 是一个数字。
+在开始前，你需要知道 Linux 给你的设备起了什么名字。硬盘和U盘使用 `/dev/sd*x*` 这样的名字，其中 *x* 是一个或多个小写字母。文件系统被命名为 `/dev/sd*xY*`，其中 *Y* 是一个数字。
 
 通常来说，文件系统是在一个分区上创建的，不过也可以在逻辑容器如[LVM](/index.php/LVM "LVM")，[RAID](/index.php/RAID "RAID")，或者 [dm-crypt](/index.php/Dm-crypt "Dm-crypt") 上创建文件系统。
 
 创建文件系统之前，目标分区必须处于未挂载状态。
 
-如果你想要进行格式化的分区包含了一个已挂载的文件系统，在 lsblk 命令的 _MOUNTPOINT_ 列中可以看到它。
+如果你想要进行格式化的分区包含了一个已挂载的文件系统，在 lsblk 命令的 *MOUNTPOINT* 列中可以看到它。
 
 ```
 $ lsblk
 
 ```
 
-你可以使用 _umount_ 加上分区的挂载点来卸载这个文件系统：
+你可以使用 *umount* 加上分区的挂载点来卸载这个文件系统：
 
 ```
 # umount /mountpoint
@@ -166,14 +166,14 @@ $ lsblk
 **警告:** 创建新文件系统之后，之前存放在该分区的数据会丢失且通常无法找回。请对你想要保留的数据做好备份。
 
 ```
-# mkfs.ext4 /dev/_partition_
+# mkfs.ext4 /dev/*partition*
 
 ```
 
-此外，你可以使用 `mkfs`。这是 `mkfs._fstype_` 工具的统一入口。
+此外，你可以使用 `mkfs`。这是 `mkfs.*fstype*` 工具的统一入口。
 
 ```
-# mkfs -t ext4 /dev/_partition_
+# mkfs -t ext4 /dev/*partition*
 
 ```
 

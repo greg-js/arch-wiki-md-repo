@@ -90,7 +90,7 @@ Alguns preferem instalar o pacote [linux-lts](https://www.archlinux.org/packages
 
 #### Utilize o gerenciador de pacotes para instalar software
 
-O gerenciador de pacotes (no Arch: [pacman](/index.php/Pacman "Pacman")) faz o serviço melhor que você de rastrear e manter arquivos. Se você instalar software manualmente logo você _irá_ esquecer o que fez, e cedo ou tarde instalará mais software que conflitará e desorganizará tudo.
+O gerenciador de pacotes (no Arch: [pacman](/index.php/Pacman "Pacman")) faz o serviço melhor que você de rastrear e manter arquivos. Se você instalar software manualmente logo você *irá* esquecer o que fez, e cedo ou tarde instalará mais software que conflitará e desorganizará tudo.
 
 Do ponto de vista da estabilidade, você deve tentar evitar pacotes não suportados e software customizado, mas se você realmente precisa destes softwares o ideal é criar um pacote ao invés de compilar e instalar manualmente.
 
@@ -99,7 +99,9 @@ Desabilite o comando make install(que geralmente é o início dos problemas) den
 ```
  make() {
    [ "$1" == 'install' ] &&
-     echo -e "AVISO:\nNÃO INSTALE SOFTWARE MANUALMENTE\nNÃO USE unset make PARA SOBRESCREVER" &&
+     echo -e "AVISO:
+NÃO INSTALE SOFTWARE MANUALMENTE
+NÃO USE unset make PARA SOBRESCREVER" &&
      echo "Dica: É fácil criar seus próprios pacotes. Veja: man PKGBUILD makepkg" &&
      return 1;
    /usr/bin/make $@;
@@ -230,7 +232,7 @@ cp config config.bak
 
 ```
 
-Utilizando a extensão _.bak_ garantirá por dedução lógica que tal backup foi efetuado por um humano, diferentemente de arquivos como .pacnew, .pacsave, ou .pacorig.
+Utilizando a extensão *.bak* garantirá por dedução lógica que tal backup foi efetuado por um humano, diferentemente de arquivos como .pacnew, .pacsave, ou .pacorig.
 
 [etckeeper](https://www.archlinux.org/packages/?name=etckeeper) pode ajudar nesta tarefa de lidar com arquivos de configuração. Ele mantém o diretório /etc inteiro dentro de um sistema de versionamento.
 

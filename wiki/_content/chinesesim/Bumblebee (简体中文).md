@@ -2,7 +2,7 @@
 
 引自 Bumblebee [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
 
-"_Bumblebee 致力于使 NVIDIA Optimus 在 GNU/Linux 系统上可用，实现两块不同的供电配置的显卡同时插入使用，共享同一个 framebuffer。_"
+"*Bumblebee 致力于使 NVIDIA Optimus 在 GNU/Linux 系统上可用，实现两块不同的供电配置的显卡同时插入使用，共享同一个 framebuffer。*"
 
 ## Contents
 
@@ -45,7 +45,7 @@
 
 ## Bumblebee: Linux上的 Optimus
 
-[Optimus 技术](http://www.nvidia.cn/object/optimus_technology_cn.html) 是不依赖于硬件复杂结构的 _[交火显卡](http://hybrid-graphics-linux.tuxfamily.org/index.php?title=Hybrid_graphics) _实现。独立显卡按需渲染，并传输给集成显卡，集成显卡则负责显示功能。当笔记本通过电池供电时，独立显卡将关闭，以延长电池寿命。在使用 Intel 集成显卡和 NVIDIA 独立显卡的台式机上也能使用这项技术。
+[Optimus 技术](http://www.nvidia.cn/object/optimus_technology_cn.html) 是不依赖于硬件复杂结构的 *[交火显卡](http://hybrid-graphics-linux.tuxfamily.org/index.php?title=Hybrid_graphics) *实现。独立显卡按需渲染，并传输给集成显卡，集成显卡则负责显示功能。当笔记本通过电池供电时，独立显卡将关闭，以延长电池寿命。在使用 Intel 集成显卡和 NVIDIA 独立显卡的台式机上也能使用这项技术。
 
 Bumblebee 通过软件来实现它的功能，包括两个部分：
 
@@ -89,11 +89,11 @@ Bumblebee 试图模拟 Optimus 技术的行为；当需要的时候，使用独�
 要使用 Bumblebee ，请确保添加相关用户到 `bumblebee` 组：
 
 ```
-# gpasswd -a _user_ bumblebee
+# gpasswd -a *user* bumblebee
 
 ```
 
-其中 _user_ 是要添加的用户登录名。之后注销，并重新登录，以使组变更生效。
+其中 *user* 是要添加的用户登录名。之后注销，并重新登录，以使组变更生效。
 
 并 [启用](/index.php/Enable "Enable") `bumblebeed.service`.重启系统并使用 `[optirun](#Usage)` 开启 Optimus NVIDIA 渲染。
 
@@ -139,12 +139,12 @@ $ optirun glxspheres32
 
 如果一个内有动画的窗口出现，那么 Optimus 和 Bumblebee 正在工作。
 
-**注意:** 如果 `glxgears` 失败但 `glxspheres_XX_` 有效，替换所有 "`glxgears`" 为 "`glxspheres_XX_`".
+**注意:** 如果 `glxgears` 失败但 `glxspheres*XX*` 有效，替换所有 "`glxgears`" 为 "`glxspheres*XX*`".
 
 ### 一般用法
 
 ```
-$ optirun [options] _application_ [application-parameters]
+$ optirun [options] *application* [application-parameters]
 
 ```
 
@@ -182,7 +182,7 @@ Bumblebee 使用你的 Optimus NVIDIA 显卡来渲染一个配置了 VirtualGL �
 要为单个应用程序指定不同的压缩方法：
 
 ```
-$ optirun -c _compress-method_ application
+$ optirun -c *compress-method* application
 
 ```
 
@@ -211,10 +211,9 @@ $ optirun -c _compress-method_ application
 
 **注意:** 使用 `jpeg` 压缩方法时会有延迟。
 
-要为所有应用程序使用一个标准的压缩方法， 在 `/etc/bumblebee/bumblebee.conf` 里把 `VGLTransport` 设为 `_compress-method_`:
+要为所有应用程序使用一个标准的压缩方法， 在 `/etc/bumblebee/bumblebee.conf` 里把 `VGLTransport` 设为 `*compress-method*`:
 
  `/etc/bumblebee/bumblebee.conf` 
-
 ```
 [...]
 [optirun]
@@ -264,7 +263,6 @@ bbswitch的默认行为是保持显卡的电源状态。 `bumblebeed` 启动时�
 如果上次关机时关闭了NVIDIA显卡的电源，NVIDIA显卡可能会在下一次启动时初始化异常。一个解决的办法是在 `/etc/bumblebee/bumblebee.conf` 里设置 `TurnCardOffAtExit=false`， 然而这么做会导致每次停止bumblebee守护进程时启用NVIDIA显卡，就算是手动停止也是一样。为确保NVIDIA显卡总是在关机时启用，添加如下 [systemd](/index.php/Systemd "Systemd") 服务(如果使用 [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) 的话):
 
  `/etc/systemd/system/nvidia-enable.service` 
-
 ```
 [Unit]
 Description=Enable NVIDIA card
@@ -287,7 +285,6 @@ WantedBy=shutdown.target
 如果 (DisplayPort/HDMI/VGA) 接口连接到 Intel 显卡上，你可以通过 xorg.conf 设置多个显示器。设置他们使用 Intel 显卡，同时 Bumblebee 仍然可以使用 NVIDIA 显卡。下面的配置文件示例配置了两个不同的 1080p 的显示器，并且使用了 HDMI 输出。
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "Screen"
     Identifier     "Screen0"
@@ -351,7 +348,6 @@ EndSection
 你可能需要为Intel和NVIDIA显卡调整 BusID 字段的值:
 
  `$ lspci | grep VGA` 
-
 ```
 00:02.0 VGA compatible controller: Intel Corporation 2nd Generation Core Processor Family Integrated Graphics Controller (rev 09)
 
@@ -379,7 +375,6 @@ BusID 值为 0:2:0
 *   改变以下 bumblebee.conf 设置:
 
  `/etc/bumblebee/bumblebee.conf` 
-
 ```
 KeepUnusedXServer=true
 Driver=nvidia
@@ -425,7 +420,6 @@ EndSection  # Samsung 2494
 在 `xorg.nvidia.conf` 里加入这个 Monitor Section.你还可以编辑你的文件使其包含 ServerLayout, Monitor, Device 和 Screen 部分。以下是我的，仅供参考:
 
  `/etc/X11/xorg.nvidia.conf` 
-
 ```
 Section "ServerLayout"
         Identifier     "X.org Nvidia DP"
@@ -467,7 +461,6 @@ EndSection
 *   如果对于你的VIRTUAL显示器没有符合你原生分辨率的Modelines输出, 记下输出的名称。对我来说是 `VIRTUAL1`.然后再看看 Xorg.0.log 文件。你应该会看到一条消息: "Output VIRTUAL1 has no monitor section".我们需要在 `/etc/X11/xorg.conf.d` 里放入含有合适 Monitor Section 的文件，稍后退出并重启X.
 
  `/etc/X11/xorg.conf.d/20-monitor_samsung.conf` 
-
 ```
 Section "Monitor"
     Identifier     "VIRTUAL1"
@@ -499,7 +492,6 @@ EndSection  # Samsung 2494
 为了在Linux里模仿这一行为，你可以使用 [libgl-switcheroo-git](https://aur.archlinux.org/packages/libgl-switcheroo-git/).安装后，往 .xprofile 里添加:
 
  `~/.xprofile` 
-
 ```
 mkdir -p /tmp/libgl-switcheroo-$USER/fs
 gtkglswitch &
@@ -548,7 +540,7 @@ export LD_LIBRARY_PATH=/tmp/libgl-switcheroo-$USER/fs/\$LIB${LD_LIBRARY_PATH+:}$
 这是一个关于 VirtualGL 的已知问题。自从bumblebee 3.1,只要你安装了它就可以用 Primus 作为渲染桥接:
 
 ```
-$ optirun -b primus wine _windows program_.exe
+$ optirun -b primus wine *windows program*.exe
 
 ```
 
@@ -556,7 +548,7 @@ $ optirun -b primus wine _windows program_.exe
 
 ```
 $ optirun bash
-$ optirun wine _windows program_.exe
+$ optirun wine *windows program*.exe
 
 ```
 
@@ -615,7 +607,7 @@ Option "ConnectedMonitor" "CRT"
 
 #### systemd-logind: failed to get session: PID XXX does not belong to any known session
 
-如果终端输出如下 (_PID_会有所不同):
+如果终端输出如下 (*PID*会有所不同):
 
 ```
 [ERROR]Cannot access secondary GPU - error: [XORG] (EE) systemd-logind: failed to get session: PID 753 does not belong to any known session
@@ -722,7 +714,6 @@ $ optirun glxspheres64
 或 (32位):
 
  `$ optirun glxspheres32` 
-
 ```
 [ 1648.179533] [ERROR]You've no permission to communicate with the Bumblebee daemon. Try adding yourself to the 'bumblebee' group
 [ 1648.179628] [ERROR]Could not connect to bumblebee daemon - is it running?
@@ -747,7 +738,6 @@ $ vblank_mode=0 primusrun glxgears
 如果你想使用它替代 `primusrun`,新建文件:
 
  `/usr/bin/optiprime` 
-
 ```
 #!/bin/sh
 vblank_mode=0 primusrun "$@"
@@ -774,7 +764,7 @@ $ optiprime glxgears
 | optiprime unigine-heaven | 31.5 | 793 | 22.3 | 54.8 |
 | primusrun unigine-heaven | 31.4 | 792 | 18.7 | 54.2 |
 
-_Tested with [Asus N550JV](/index.php/ASUS_N550JV "ASUS N550JV") laptop and benchmark app [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/)._
+*Tested with [Asus N550JV](/index.php/ASUS_N550JV "ASUS N550JV") laptop and benchmark app [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/).*
 
 ## 另见
 

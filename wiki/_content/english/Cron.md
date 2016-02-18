@@ -1,6 +1,6 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/Cron "wikipedia:Cron"):
 
-_**cron** is the time-based job scheduler in Unix-like computer operating systems. cron enables users to schedule jobs (commands or shell scripts) to run periodically at certain times or dates. It is commonly used to automate system maintenance or administration._
+***cron** is the time-based job scheduler in Unix-like computer operating systems. cron enables users to schedule jobs (commands or shell scripts) to run periodically at certain times or dates. It is commonly used to automate system maintenance or administration.*
 
 ## Contents
 
@@ -46,15 +46,15 @@ Packages available:
 
 ### Activation and autostart
 
-After installation, the daemon will not be enabled by default. The installed package likely provides a service, which can be controlled by [systemctl](/index.php/Systemd#Using_units "Systemd"). For example, _cronie_ uses `cronie.service`.
+After installation, the daemon will not be enabled by default. The installed package likely provides a service, which can be controlled by [systemctl](/index.php/Systemd#Using_units "Systemd"). For example, *cronie* uses `cronie.service`.
 
 Check `/etc/cron.daily/` and similar directories to see which jobs are present. Activating cron service will trigger all of them.
 
-**Note:** _cronie_ provides the `0anacron` _hourly_ job, which allows for [delayed runs of other jobs](#Asynchronous_job_processing) e.g. if the computer was switched off at the moment of standard execution.
+**Note:** *cronie* provides the `0anacron` *hourly* job, which allows for [delayed runs of other jobs](#Asynchronous_job_processing) e.g. if the computer was switched off at the moment of standard execution.
 
 ### Handling errors of jobs
 
-cron registers the output from _stdout_ and _stderr_ and attempts to send it as email to the user's spools via the `sendmail` command. Cronie disables mail output if `/usr/bin/sendmail` is not found. In order for mail to be written to a user's spool, there must be an smtp daemon running on the system, e.g. [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd). Otherwise, you can install a package that provides the sendmail command, and configure it to send mail to a remote mail exchanger. You can also log the messages by using the `-m` option and writing a custom script.
+cron registers the output from *stdout* and *stderr* and attempts to send it as email to the user's spools via the `sendmail` command. Cronie disables mail output if `/usr/bin/sendmail` is not found. In order for mail to be written to a user's spool, there must be an smtp daemon running on the system, e.g. [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd). Otherwise, you can install a package that provides the sendmail command, and configure it to send mail to a remote mail exchanger. You can also log the messages by using the `-m` option and writing a custom script.
 
 1.  [Edit](/index.php/Systemd#Editing_provided_units "Systemd") the `cronie.service` unit.
 2.  Install [esmtp](https://www.archlinux.org/packages/?name=esmtp), [msmtp](/index.php/Msmtp "Msmtp"), [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) or write a custom script.
@@ -86,7 +86,7 @@ default: your@email.com
 
 ```
 
-Then [modify the configuration](/index.php/Systemd#Editing_provided_units "Systemd") of _cronie_ daemon by replacing the `ExecStart` command with:
+Then [modify the configuration](/index.php/Systemd#Editing_provided_units "Systemd") of *cronie* daemon by replacing the `ExecStart` command with:
 
 ```
 ExecStart=/usr/bin/crond -n -m '/usr/bin/msmtp -t'
@@ -100,12 +100,11 @@ Install [esmtp](https://www.archlinux.org/packages/?name=esmtp) and [procmail](h
 After installation configure the routing:
 
  `/etc/esmtprc` 
-
 ```
-identity _myself_@myisp.com
+identity *myself*@myisp.com
        hostname mail.myisp.com:25
-       username _"myself"_
-       password _"secret"_
+       username *"myself"*
+       password *"secret"*
        starttls enabled
        default
 mda "/usr/bin/procmail -d %T"
@@ -119,24 +118,24 @@ To test that everything works correctly, create a file `message.txt` with `"test
 From the same directory run:
 
 ```
-$ sendmail _user_name_ < message.txt 
+$ sendmail *user_name* < message.txt 
 
 ```
 
 then:
 
 ```
-$ cat /var/spool/mail/_user_name_
+$ cat /var/spool/mail/*user_name*
 
 ```
 
 You should now see the test message and the time and date it was sent.
 
-The error output of all jobs will now be redirected to `/var/spool/mail/_user_name_`.
+The error output of all jobs will now be redirected to `/var/spool/mail/*user_name*`.
 
 Due to the privileged issue, it is hard to create and send emails to root (e.g. `su -c ""`). You can ask `esmtp` to forward all root's email to an ordinary user with:
 
- `/etc/esmtprc`  `force_mda="_user-name_"` 
+ `/etc/esmtprc`  `force_mda="*user-name*"` 
 **Note:** If the above test didn't work, you may try creating a local configuration in `~/.esmtprc` with the same content.
 
 Run the following command to make sure it has the correct permission:
@@ -145,7 +144,6 @@ Run the following command to make sure it has the correct permission:
 $ chmod 710 ~/.esmtprc
 
 ```
-
 Then repeat the test with `message.txt` exactly as before.
 
 #### Example with opensmtpd
@@ -167,7 +165,7 @@ $ echo test | sendmail user
 
 ```
 
-_user_ can check his/her mail in with any [reader](/index.php/Category:Email_clients "Category:Email clients") able to handle mbox format, or just have a look at the file `/var/spool/mail/_user_`. If everything goes as expected, you can [enable](/index.php/Enable "Enable") opensmtpd for future boots.
+*user* can check his/her mail in with any [reader](/index.php/Category:Email_clients "Category:Email clients") able to handle mbox format, or just have a look at the file `/var/spool/mail/*user*`. If everything goes as expected, you can [enable](/index.php/Enable "Enable") opensmtpd for future boots.
 
 This approach has the advantage of not sending local cron notifications to a remote server. Not even network connection is needed. On the downside, you need a new daemon running.
 
@@ -216,15 +214,15 @@ Even if it's not said chronic buffer the command output before opening its stand
 The basic format for a crontab is:
 
 ```
-_minute_ _hour_ _day_of_month_ _month_ _day_of_week_ _command_
+*minute* *hour* *day_of_month* *month* *day_of_week* *command*
 
 ```
 
-*   _minute_ values can be from 0 to 59.
-*   _hour_ values can be from 0 to 23.
-*   _day_of_month_ values can be from 1 to 31.
-*   _month_ values can be from 1 to 12.
-*   _day_of_week_ values can be from 0 to 6, with 0 denoting Sunday.
+*   *minute* values can be from 0 to 59.
+*   *hour* values can be from 0 to 23.
+*   *day_of_month* values can be from 1 to 31.
+*   *month* values can be from 1 to 12.
+*   *day_of_week* values can be from 0 to 6, with 0 denoting Sunday.
 
 Multiple times may be specified with a comma, a range can be given with a hyphen, and the asterisk symbol is a wildcard character. Spaces are used to separate fields. For example, the line:
 
@@ -265,7 +263,7 @@ $ crontab -r
 If a user has a saved crontab and would like to completely overwrite their old crontab, he or she should use:
 
 ```
-$ crontab _saved_crontab_filename_
+$ crontab *saved_crontab_filename*
 
 ```
 
@@ -279,11 +277,11 @@ $ crontab -
 To edit somebody else's crontab, issue the following command as root:
 
 ```
-# crontab -u _username_ -e
+# crontab -u *username* -e
 
 ```
 
-This same format (appending `-u _username_` to a command) works for listing and deleting crontabs as well.
+This same format (appending `-u *username*` to a command) works for listing and deleting crontabs as well.
 
 ## Examples
 
@@ -393,19 +391,19 @@ Vanilla [dcron](https://aur.archlinux.org/packages/dcron/) supports asynchronous
 
 ### Cronwhip
 
-[cronwhip](https://aur.archlinux.org/packages/cronwhip/) is a script to automatically run missed cron jobs; it works with the former default cron implementation, _dcron_. See also the [forum thread](https://bbs.archlinux.org/viewtopic.php?id=57973).
+[cronwhip](https://aur.archlinux.org/packages/cronwhip/) is a script to automatically run missed cron jobs; it works with the former default cron implementation, *dcron*. See also the [forum thread](https://bbs.archlinux.org/viewtopic.php?id=57973).
 
 ### Anacron
 
-Anacron is a full replacement for _dcron_ which processes jobs asynchronously.
+Anacron is a full replacement for *dcron* which processes jobs asynchronously.
 
 It is provided by [cronie](https://www.archlinux.org/packages/?name=cronie). The configuration file is `/etc/anacrontab`. Information on the format can be found in the `anacrontab(5)` [man page](/index.php/Man_page "Man page"). Running `anacron -T` will test `/etc/anacrontab` for validity.
 
 ### Fcron
 
-Like _anacron_, [fcron](https://www.archlinux.org/packages/?name=fcron) assumes the computer is not always running and, unlike _anacron_, it can schedule events at intervals shorter than a single day which may be useful for systems which suspend/hibernate regularly (such as a laptop). Like cronwhip, fcron can run jobs that should have been run during the computer's downtime.
+Like *anacron*, [fcron](https://www.archlinux.org/packages/?name=fcron) assumes the computer is not always running and, unlike *anacron*, it can schedule events at intervals shorter than a single day which may be useful for systems which suspend/hibernate regularly (such as a laptop). Like cronwhip, fcron can run jobs that should have been run during the computer's downtime.
 
-When replacing [cronie](https://www.archlinux.org/packages/?name=cronie) with fcron be aware the spool directory is `/var/spool/fcron` and the `fcrontab` command is used instead of _crontab_ to edit the user crontabs. These crontabs are stored in a binary format with the text version next to them as _foo_.orig in the spool directory. Any scripts which manually edit user crontabs may need to be adjusted due to this difference in behavior.
+When replacing [cronie](https://www.archlinux.org/packages/?name=cronie) with fcron be aware the spool directory is `/var/spool/fcron` and the `fcrontab` command is used instead of *crontab* to edit the user crontabs. These crontabs are stored in a binary format with the text version next to them as *foo*.orig in the spool directory. Any scripts which manually edit user crontabs may need to be adjusted due to this difference in behavior.
 
 A quick scriptlet which may aide in converting traditional user crontabs to fcron format:
 
@@ -447,7 +445,7 @@ Long time users of vixie-cron (traditional cron) will be confused by how cronie 
 
 ```
 
-Note that the crontab file is **not** created by default, but jobs added here will be run if you wish to use this file. Cronie provides both cron and anacron functionality. The difference is that cron will run jobs at particular time intervals (down to a granularity of one minute) _if the machine is on at the particular time specified_, while anacron runs jobs (with a minimum daily granularity) without assuming that the machine is turned on all the time. When the machine is on, anacron will check to see if there are any jobs that _should have been run_ and will run them accordingly. The `/etc/cron.d` and `/etc/cron.hourly` directories are associated with **cron** functionality, while the `/etc/anacrontab` file and `/etc/cron.daily`, `/etc/cron.weekly`, and `/etc/cron.monthly` directories are associated with **anacron** functionality. The `/etc/cron.deny` file is there so that any user who is not specifically prohibited can create their own cron jobs.
+Note that the crontab file is **not** created by default, but jobs added here will be run if you wish to use this file. Cronie provides both cron and anacron functionality. The difference is that cron will run jobs at particular time intervals (down to a granularity of one minute) *if the machine is on at the particular time specified*, while anacron runs jobs (with a minimum daily granularity) without assuming that the machine is turned on all the time. When the machine is on, anacron will check to see if there are any jobs that *should have been run* and will run them accordingly. The `/etc/cron.d` and `/etc/cron.hourly` directories are associated with **cron** functionality, while the `/etc/anacrontab` file and `/etc/cron.daily`, `/etc/cron.weekly`, and `/etc/cron.monthly` directories are associated with **anacron** functionality. The `/etc/cron.deny` file is there so that any user who is not specifically prohibited can create their own cron jobs.
 
 To implement a system-wide cron job, create a crontab-like file for it and place it in the `/etc/cron.d` directory or add the job to /etc/crontab. Any executable (these are almost always shell scripts) in `/etc/cron.hourly` will be run every hour.
 

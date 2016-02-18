@@ -262,9 +262,9 @@ The `"Auto"` option for `"Protocol"` works fine, too. Of course you can use the 
 
 The sample configuration modifies and extends the [basic function](#Basic_function) of the Marble Mouse.
 
-In this example, either of the two small buttons may be clicked to send a _**wheel-click**_. Wheel-click means the same as "middle-click" here. In addition, one of the small buttons provides _**scrolling**_ in conjunction with the trackball. Note that only _one_ small button has the ability for scrolling, although both small buttons are able to _wheel-click._
+In this example, either of the two small buttons may be clicked to send a ***wheel-click***. Wheel-click means the same as "middle-click" here. In addition, one of the small buttons provides ***scrolling*** in conjunction with the trackball. Note that only *one* small button has the ability for scrolling, although both small buttons are able to *wheel-click.*
 
-Finally, clicking both large buttons simultaneously sends the _**browser back**_ event. There is no button to send _browser forward_.
+Finally, clicking both large buttons simultaneously sends the ***browser back*** event. There is no button to send *browser forward*.
 
 | ID | Hardware Action | Result (this configuration) | New assignment |
 | 1 | Large button left | normal click | 1 |
@@ -275,8 +275,8 @@ Finally, clicking both large buttons simultaneously sends the _**browser back**_
 
 **Note:**
 
-*   Both large buttons pressed simultaneously results in _browser back_.
-*   Either small button, when clicked, results in _middle-click_.
+*   Both large buttons pressed simultaneously results in *browser back*.
+*   Either small button, when clicked, results in *middle-click*.
 *   † This small button allows trackball scrolling when held down. It is the scroll modifier.
 *   ‡ This button can be mapped for scrolling function instead. This button works better for left-side placement because it lies near the thumb of one's left-hand. Only one button can be assigned as the scroll modifier as far as I know.
 
@@ -284,7 +284,7 @@ Finally, clicking both large buttons simultaneously sends the _**browser back**_
 
 The following lines are appended to **`/etc/X11/xorg.conf.d/10-evdev.conf`**
 
-**Note:** _Users of other Linux distributions may find the configuration file in another location. Ubuntu uses /usr/share/X11/xorg.conf.d/10-evdev.conf_
+**Note:** *Users of other Linux distributions may find the configuration file in another location. Ubuntu uses /usr/share/X11/xorg.conf.d/10-evdev.conf*
 
 This example is set up for right-hand placement with horizontal scrolling disabled.
 
@@ -362,7 +362,7 @@ KDE (with KDM) : `sudo restart kdm`
 
 At times it can be useful to start with the absolute minimum and build from there. This is one facet of [The Arch Way](/index.php/The_Arch_Way "The Arch Way"). In this spirit, I decided to see how few lines I might use to create a usable Marble Mouse configuration.
 
-You can omit _all_ configuration lines and the Marble Mouse is still usable for basic pointing and clicking. However, it will not be able to scroll. The "both-large-button" simultaneous click produces indeterminate results — experimentation shows this.
+You can omit *all* configuration lines and the Marble Mouse is still usable for basic pointing and clicking. However, it will not be able to scroll. The "both-large-button" simultaneous click produces indeterminate results — experimentation shows this.
 
 Given that you are satisfied with [default button settings](#Basic_function) and you wish only to enable scrolling and the "both-large-button" click, you need these lines. The following lines are appended to **`/etc/X11/xorg.conf.d/10-evdev.conf`**.
 
@@ -383,7 +383,6 @@ EndSection
 As of version 3.16 GDM/Gnome uses libinput. For the device to work as described in the above section (note that wheel click emulation is not yet supported by libinput) you need to install [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) and instead append this to `/etc/X11/xorg.conf.d/10-libinput.conf`.
 
  `/etc/X11/xorg.conf.d/10-libinput.conf` 
-
 ```
 Section "InputClass"
         Identifier      "Marble Mouse"
@@ -410,7 +409,7 @@ This lets you use the large left button for selecting text and the right button 
 
 ### Chromium browser
 
-By default, Chromium treats a middle-click as a _paste_ command. This choice stems from "Linux tradition", not the capricious whim of one developer. Like myself, you may prefer a _**Windows**_ approach. I want the middle button(s) to initiate _automatic scrolling,_ not _pasting_:
+By default, Chromium treats a middle-click as a *paste* command. This choice stems from "Linux tradition", not the capricious whim of one developer. Like myself, you may prefer a ***Windows*** approach. I want the middle button(s) to initiate *automatic scrolling,* not *pasting*:
 
 *   A browser extension **AutoScroll** allows middle-click to initiate automatic scrolling.
 *   This extension is helpful for any Linux user with a wheel mouse, not just Marble Mouse users.
@@ -420,13 +419,13 @@ By default, Chromium treats a middle-click as a _paste_ command. This choice ste
 *   When you program one of the small buttons to act as scroll modifier (mouse setup), you can manually scroll web pages **without** fixing the browser. That is a press‑and‑hold function. (I recommend installing AutoScroll even though it is not absolutely necessary for scrolling.)
 *   After you assign the scroll modifier to one of the small buttons, the small buttons act a bit differently from one another. The difference is seen when you compare their "press‑and‑hold" behaviors.
 
-Be sure to install _**AutoScroll**_; the similarly-named _Auto Scroll_ extension implements a different feature.
+Be sure to install ***AutoScroll***; the similarly-named *Auto Scroll* extension implements a different feature.
 
 This information also applies to the browser called **Google Chrome**.
 
 ### Firefox browser
 
-Older versions of Firefox map horizontal-scrolling hardware to perform _**browser back**_ and _**browser forward**_ navigation.
+Older versions of Firefox map horizontal-scrolling hardware to perform ***browser back*** and ***browser forward*** navigation.
 
 This makes vertical scrolling using the trackball almost impossible.
 

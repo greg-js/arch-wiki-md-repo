@@ -1,6 +1,6 @@
 You can use sftpman (an [sshfs](/index.php/Sshfs "Sshfs") helper) to mount a remote system - accessible via [SSH](/index.php/SSH "SSH") - to a local folder.
 
-sftpman offers both a command-line tool (_sftpman_) and a GTK frontend (_sftpman-gtk_, see [screenshot](https://github.com/spantaleev/sftpman-gtk/raw/master/sftpman-gui.png)), each packaged separately.
+sftpman offers both a command-line tool (*sftpman*) and a GTK frontend (*sftpman-gtk*, see [screenshot](https://github.com/spantaleev/sftpman-gtk/raw/master/sftpman-gui.png)), each packaged separately.
 
 With sftpman, you first setup (define) your remote filesystems and then you mount/unmount them easily (with one click/command).
 
@@ -18,21 +18,21 @@ With sftpman, you first setup (define) your remote filesystems and then you moun
 
 ## Prerequisite
 
-In order to use _sftpman_ or it's GTK frontend _sftpman-gtk_, you'll first need to have a working [sshfs](/index.php/Sshfs "Sshfs") setup.
+In order to use *sftpman* or it's GTK frontend *sftpman-gtk*, you'll first need to have a working [sshfs](/index.php/Sshfs "Sshfs") setup.
 
-[sshfs](/index.php/Sshfs "Sshfs") and fuse are installed as dependencies, so you may just need to add _fuse_ to your module-list in `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")` to auto-load at boot.
+[sshfs](/index.php/Sshfs "Sshfs") and fuse are installed as dependencies, so you may just need to add *fuse* to your module-list in `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")` to auto-load at boot.
 
 ## Installation
 
 The [sftpman](https://aur.archlinux.org/packages/sftpman/) and [sftpman-gtk](https://aur.archlinux.org/packages/sftpman-gtk/) packages are available in the [AUR](/index.php/AUR "AUR").
 
-_sftpman_ provides the base library and the command-line application _sftpman_.
+*sftpman* provides the base library and the command-line application *sftpman*.
 
-_sftpman-gtk_ provides the _sftpman-gtk_ application, a GTK frontend to _sftpman_.
+*sftpman-gtk* provides the *sftpman-gtk* application, a GTK frontend to *sftpman*.
 
 ## Defining filesystems
 
-Each filesystem managed by sftpman needs to have a unique name/id which will be used when managing the system and also in its mount path. A system with an id of _my-machine_ will be mounted locally to _/mnt/sshfs/my-machine_.
+Each filesystem managed by sftpman needs to have a unique name/id which will be used when managing the system and also in its mount path. A system with an id of *my-machine* will be mounted locally to */mnt/sshfs/my-machine*.
 
 Authentication with the remote filesystem during mounting can be performed using passwords or [SSH keys](/index.php/SSH_keys "SSH keys").
 
@@ -52,7 +52,7 @@ Or the equivalent in case you want to use authentication with SSH Keys (recommen
 
 ```
 
-The above setup is the minimum you need to specify to define a new filesystem that sftpman can mount. Depending on your environment, you may need to use some more options (like _--port_, which defaults to 22). To see a full list of available options do:
+The above setup is the minimum you need to specify to define a new filesystem that sftpman can mount. Depending on your environment, you may need to use some more options (like *--port*, which defaults to 22). To see a full list of available options do:
 
 ```
 # sftpman help
@@ -72,7 +72,7 @@ To mount:
 
 ```
 
-which mounts the filesystem to _/mnt/sshfs/my-machine_
+which mounts the filesystem to */mnt/sshfs/my-machine*
 
 To unmount:
 
@@ -94,7 +94,7 @@ To remove a defined filesystem from sftpman's list do:
 
 ### Learning more
 
-To see a list of more commands and options that _sftpman_ supports, consult the help:
+To see a list of more commands and options that *sftpman* supports, consult the help:
 
 ```
 # sftpman help
@@ -103,7 +103,7 @@ To see a list of more commands and options that _sftpman_ supports, consult the 
 
 ### Troubleshooting
 
-_sftpman_ can perform some basic checks on the environment, which may catch some potential problems:
+*sftpman* can perform some basic checks on the environment, which may catch some potential problems:
 
 ```
 # sftpman preflight_check
@@ -112,7 +112,7 @@ _sftpman_ can perform some basic checks on the environment, which may catch some
 
 If the GUI application does not ask you for a password while mounting (when using password-based authentication or for password-protected ssh keys), you will need to install an ssh askpass tool, see [#Mounting/Unmounting](#Mounting.2FUnmounting).
 
-**Note:** If mounting a filesystem fails, sftpman will give you the full _sshfs_ command and its output. You can then use that command and run it manually (possibly after adding some more debug options to it, so you would see some more output).
+**Note:** If mounting a filesystem fails, sftpman will give you the full *sshfs* command and its output. You can then use that command and run it manually (possibly after adding some more debug options to it, so you would see some more output).
 
 When doing authentication using keys, start small and make sure SSHing actually works by trying it manually, before trying to use sshfs. Some common problems can be solved by consulting [Using SSH Keys#Troubleshooting](/index.php/Using_SSH_Keys#Troubleshooting "Using SSH Keys").
 
@@ -124,7 +124,7 @@ Also see [Sshfs#Troubleshooting](/index.php/Sshfs#Troubleshooting "Sshfs").
 
 [sftpman-gtk](https://github.com/spantaleev/sftpman-gtk) - sftpman-gtk (source code, issue tracker) at github
 
-[PKGBUILDs](https://github.com/spantaleev/PKGBUILDs) - Package files (source code, issue tracker) for _sftpman_ and _sftpman-gtk_ at github
+[PKGBUILDs](https://github.com/spantaleev/PKGBUILDs) - Package files (source code, issue tracker) for *sftpman* and *sftpman-gtk* at github
 
 ## See also
 

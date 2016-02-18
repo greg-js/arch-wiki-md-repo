@@ -44,23 +44,23 @@ The performance of both depends on the type of disk activity. While eCryptFS can
 
 [Install](/index.php/Install "Install") the [encfs](https://www.archlinux.org/packages/?name=encfs) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
-**Warning:** A security [review](https://defuse.ca/audits/encfs.htm) (February 2014) of _encfs_ discovered a number of security issues in the stable release 1.7.4 (June 2014). Please consider the report and the references in it for updated information before using the release.
+**Warning:** A security [review](https://defuse.ca/audits/encfs.htm) (February 2014) of *encfs* discovered a number of security issues in the stable release 1.7.4 (June 2014). Please consider the report and the references in it for updated information before using the release.
 
 ## Usage
 
 To create a secured repository, type:
 
 ```
-$ encfs ~/._name_ ~/_name_
+$ encfs ~/.*name* ~/*name*
 
 ```
 
-Note that absolute paths must be used. This will be followed by a prompt about whether you want to go with the default options, expert configuration or a paranoid preset. The latter allows specifying algorithms and other options. The former is a fairly secure default setup. After entering a key for the encryption, the encoded file-system will be created and mounted. The encoded files are stored, in this example, at `~/._name_`, and their unencrypted versions in `~/_name_`.
+Note that absolute paths must be used. This will be followed by a prompt about whether you want to go with the default options, expert configuration or a paranoid preset. The latter allows specifying algorithms and other options. The former is a fairly secure default setup. After entering a key for the encryption, the encoded file-system will be created and mounted. The encoded files are stored, in this example, at `~/.*name*`, and their unencrypted versions in `~/*name*`.
 
 To unmount the file-system, type:
 
 ```
-$ fusermount -u ~/_name_
+$ fusermount -u ~/*name*
 
 ```
 
@@ -97,7 +97,7 @@ Install [pam_encfs](https://aur.archlinux.org/packages/pam_encfs/). See also:
 
 #### /etc/pam.d/
 
-Note that when you are using _try_first_pass_ parameter to _pam_unix.so_ then you will have to set EncFS to use same password as you are using to login (or vice-versa) and you will be entering just single password. Without this parameter you will need to enter two passwords.
+Note that when you are using *try_first_pass* parameter to *pam_unix.so* then you will have to set EncFS to use same password as you are using to login (or vice-versa) and you will be entering just single password. Without this parameter you will need to enter two passwords.
 
 ##### setup pam_encfs for all login methods
 
@@ -300,7 +300,7 @@ There are no known solutions for Plasma 5.
 
 An encrypted directory may be backed up and restored to another location like it is. This is possible, because the configuration file for the encryption options/metadata is actually stored in the directory itself in plaintext in the hidden `.encfs6.xml` file. This poses no direct problem, because the password is not in it.
 
-However, if you - for example - store the backup on a remote location (e.g. in the cloud) or a portable device, you might feel uncomfortable about it. In this case it also is no problem to manually move the file out of the directory before creating the backup. You can even move it permanently and still mount and access the files, if you pass its location to _encfs_ via the `ENCFS6_CONFIG` environment variable. For the [#Usage](#Usage) example above:
+However, if you - for example - store the backup on a remote location (e.g. in the cloud) or a portable device, you might feel uncomfortable about it. In this case it also is no problem to manually move the file out of the directory before creating the backup. You can even move it permanently and still mount and access the files, if you pass its location to *encfs* via the `ENCFS6_CONFIG` environment variable. For the [#Usage](#Usage) example above:
 
 ```
 $ mv ~/.name/encfs6.xml ~/.
@@ -321,7 +321,7 @@ $ encfs --reverse ~/mythesis /tmp/thesisbackup
 
 Note the directory order is reversed to normal usage in this case. Using the `--reverse` option has two effects: Firstly, the configuration file is now stored in the plaintext directory and `/tmp/thesisbackup` only contains it in encrypted form. Secondly, the files in `/tmp/thesisbackup` are not persistent. They will vanish once it is unmounted (no, this is not due to usage of the `/tmp` mountpoint).
 
-For the second reason, now is the time to copy the encrypted files to the desired backup location, _before_ unmounting the temporary _encfs_ directory again:
+For the second reason, now is the time to copy the encrypted files to the desired backup location, *before* unmounting the temporary *encfs* directory again:
 
 ```
 $ cp -R /tmp/thesisbackup/* /mnt/usbstick/
@@ -331,7 +331,7 @@ $ fusermount -u /tmp/thesisbackup
 
 and done.
 
-To restore (or view) the backup, we need access to the encryption options in plaintext, which has to be passed to _encfs_ with the environment variable `ENCFS6_CONFIG` (we use a different directory in order not to mess up the existing `~/mythesis`):
+To restore (or view) the backup, we need access to the encryption options in plaintext, which has to be passed to *encfs* with the environment variable `ENCFS6_CONFIG` (we use a different directory in order not to mess up the existing `~/mythesis`):
 
 ```
 $ ENCFS6_CONFIG=~/mythesis/.encfs6.xml encfs ~/mnt/usbstick/thesisbackup ~/restoremythesis 

@@ -1,6 +1,6 @@
 Da [Home - LibreOffice](https://it.libreoffice.org/):
 
-	_LibreOffice è la suite Open Source di produttività personale per Windows, Macintosh e Linux, che offre sei applicazioni ricche di funzionalità per tutte le necessità di produzione di documenti ed elaborazione dati: Writer, Calc, Impress, Draw, Math e Base. La nostra grande comunità dedicata di utenti, contributori e sviluppatori offre gratuitamente [supporto](https://it.libreoffice.org/supporto/) e [documentazione](https://it.libreoffice.org/supporto/documentazione/). Anche voi potete [contribuire](https://it.libreoffice.org/contribuire/)!_
+	*LibreOffice è la suite Open Source di produttività personale per Windows, Macintosh e Linux, che offre sei applicazioni ricche di funzionalità per tutte le necessità di produzione di documenti ed elaborazione dati: Writer, Calc, Impress, Draw, Math e Base. La nostra grande comunità dedicata di utenti, contributori e sviluppatori offre gratuitamente [supporto](https://it.libreoffice.org/supporto/) e [documentazione](https://it.libreoffice.org/supporto/documentazione/). Anche voi potete [contribuire](https://it.libreoffice.org/contribuire/)!*
 
 ## Contents
 
@@ -78,11 +78,11 @@ SAL_USE_VCLPLUGIN=gtk3 lowriter
 
 Per salvare la scelta si deve salvare il valore della variabile in un file di configurazione della shell: `/etc/bash.bashrc` o `~/.bashrc` se si usa bash.
 
-**Note:** L'interfaccia GTK+ 3 è ancora sperimentale: per abilitarla è necessario abilitare "experimental features" nella finestra delle opzioni di di LibreOffice. Se comunque rimane un'interfaccia in stile Windows 95 deselezionate "Automatically detect high contrast mode of the system" in _Strumenti > Opzioni > Accessibilità_.
+**Note:** L'interfaccia GTK+ 3 è ancora sperimentale: per abilitarla è necessario abilitare "experimental features" nella finestra delle opzioni di di LibreOffice. Se comunque rimane un'interfaccia in stile Windows 95 deselezionate "Automatically detect high contrast mode of the system" in *Strumenti > Opzioni > Accessibilità*.
 
 ### Temi di Firefox
 
-LibreOffice 4.x può usare i temi di Firefox. Aprite _Strumenti > Opzioni_ in LibreOffice, scegliete "Personalizzazione > Scegli Personas" e incollate l'indirizzo URL del vostro tema preferito. Un opportuno bottone nella finestra di scelta vi permetterà di aprire il browser.
+LibreOffice 4.x può usare i temi di Firefox. Aprite *Strumenti > Opzioni* in LibreOffice, scegliete "Personalizzazione > Scegli Personas" e incollate l'indirizzo URL del vostro tema preferito. Un opportuno bottone nella finestra di scelta vi permetterà di aprire il browser.
 
 ## Gestione delle estensioni
 
@@ -124,14 +124,14 @@ Se si vuole usare macro occorre un Java Runtime Environment. Si può abilitarlo 
 
 ## Aumentare la velocità di LibreOffice
 
-Alcune impostazioni possono migliorare il tempo di caricamento e di risposta di LibreOffice, ma alcuni aumentano l'uso di RAM, quindi usateli con cautela. Scegliete _Strumenti > Opzioni_.
+Alcune impostazioni possono migliorare il tempo di caricamento e di risposta di LibreOffice, ma alcuni aumentano l'uso di RAM, quindi usateli con cautela. Scegliete *Strumenti > Opzioni*.
 
-*   Sotto _Memoria_:
-    *   Riducete il numero di _Undo steps_ a 30.
-    *   Sotto _Cache grafica_ aumentate a 128 MB dai 20MB originari.
+*   Sotto *Memoria*:
+    *   Riducete il numero di *Undo steps* a 30.
+    *   Sotto *Cache grafica* aumentate a 128 MB dai 20MB originari.
     *   Aumentate la memoria per oggetto a 20MB dai 5MB originari.
-    *   Se usate spesso LibreOffice, scegliete _LibreOffice Quickstarter_.
-*   Sotto _Avanzate_, deselezionate _Use a Java runtime environment_.
+    *   Se usate spesso LibreOffice, scegliete *LibreOffice Quickstarter*.
+*   Sotto *Avanzate*, deselezionate *Use a Java runtime environment*.
 
 **Note:** Per una lista di funzionalità realizzate esclusivamente in Java controllate [https://wiki.documentfoundation.org/Development/Java](https://wiki.documentfoundation.org/Development/Java)
 
@@ -139,7 +139,7 @@ Alcune impostazioni possono migliorare il tempo di caricamento e di risposta di 
 
 ### Rimpiazzo dei fonts
 
-Queste impostazioni si trovano in _Strumenti > Opzioni > LibreOffice > Fonts_. Selezionate la casella _Applica Tavola di Rimpiazzi_. Scegliete il font da rimpiazzare e il rimpiazzo con l'opzione _Rimpiazza con_ e confermate. Scegliete _Sempre_ o _Solo Schermo_. Confermate. Visitate i menu _Strumenti > Opzioni > LibreOffice > Vista_ e deselezionate "Usa i font di sistema per l'interfaccia". Se usate font senza antialias, come Arial, deselezionate anche "Screen font antialiasing" per avere l'effetto desiderato.
+Queste impostazioni si trovano in *Strumenti > Opzioni > LibreOffice > Fonts*. Selezionate la casella *Applica Tavola di Rimpiazzi*. Scegliete il font da rimpiazzare e il rimpiazzo con l'opzione *Rimpiazza con* e confermate. Scegliete *Sempre* o *Solo Schermo*. Confermate. Visitate i menu *Strumenti > Opzioni > LibreOffice > Vista* e deselezionate "Usa i font di sistema per l'interfaccia". Se usate font senza antialias, come Arial, deselezionate anche "Screen font antialiasing" per avere l'effetto desiderato.
 
 ### Anti-aliasing
 
@@ -221,7 +221,7 @@ cp "$1" "${f}.ppt" && libreoffice "${f}.ppt" && rm -f "${f}.ppt"
 
 ### Problema Bibliography
 
-Se Writer si interrompe bruscamente mentre si tenta di accedere a _Strumenti > Bibliography Database_ e mostra il seguente errore:
+Se Writer si interrompe bruscamente mentre si tenta di accedere a *Strumenti > Bibliography Database* e mostra il seguente errore:
 
 ```
 com::sun::star::loader::CannotActivateFactoryException
@@ -232,4 +232,4 @@ installate [libreoffice-still-base](https://www.archlinux.org/packages/?name=lib
 
 ### Video support
 
-Se non funzionano i video inclusi nei documenti e si vedono solo riquadri grigi assicuratevi di acere installato [gst-plugins-base-libs](https://www.archlinux.org/packages/?name=gst-plugins-base-libs), _gst-plugins-[base|good|bad|ugly]_ e [gst-libav](https://www.archlinux.org/packages/?name=gst-libav).
+Se non funzionano i video inclusi nei documenti e si vedono solo riquadri grigi assicuratevi di acere installato [gst-plugins-base-libs](https://www.archlinux.org/packages/?name=gst-plugins-base-libs), *gst-plugins-[base|good|bad|ugly]* e [gst-libav](https://www.archlinux.org/packages/?name=gst-libav).

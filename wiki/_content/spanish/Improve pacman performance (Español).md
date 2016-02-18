@@ -178,10 +178,8 @@ Este script mejora notablemente la velocidad de descarga para los usuarios de ba
 
 **Nota:** Es necesario insertar «exec» antes de /usr/bin/pacget en XferCommand, de modo que al terminar pacget o aria2 (proceso utilizado por pacget), pacman también termine. Esto evitará inconvenientes, porque Pacman no insistirá en la descarga de un archivo cuando se le ordene interrumpirla.
 
-**Advertencia:** Se pueden experimentar algunos problemas si los mirrors utilizados no están sincronizados o simplemente no están al día. Solo tiene que usar el script [Reflector](/index.php/Reflector_(Espa%C3%B1ol) "Reflector (Español)") para generar una lista de mirrors actualizados y _rápidos_. Además, ftp.archlinux.org viene resuelta con dos IPs. Es posible que desee elegir solo una de ellas y forzar al sistema a utilizar ftp.archlinux.org y la dirección IP elegida mediante `/etc/hosts`.
-
+**Advertencia:** Se pueden experimentar algunos problemas si los mirrors utilizados no están sincronizados o simplemente no están al día. Solo tiene que usar el script [Reflector](/index.php/Reflector_(Espa%C3%B1ol) "Reflector (Español)") para generar una lista de mirrors actualizados y *rápidos*. Además, ftp.archlinux.org viene resuelta con dos IPs. Es posible que desee elegir solo una de ellas y forzar al sistema a utilizar ftp.archlinux.org y la dirección IP elegida mediante `/etc/hosts`.
  `/usr/bin/pacget` 
-
 ```
 #!/bin/bash
 
@@ -243,9 +241,7 @@ $ARIA2 --conf-path=$CONF --max-tries=1 --max-file-not-found=5 \
 exit $?
 
 ```
-
  `/etc/pacget.conf` 
-
 ```
 # El archivo de registro
 log=/var/log/pacget.log
@@ -280,7 +276,7 @@ XferCommand = exec /usr/bin/pacget %u %o
 
 ```
 
-**Nota:** Si utiliza ftp.archlinux.org como el primer servidor listado en los archivos _«include»_ (/etc/pacman.d/*), pueden ocurrir algunos problemas cuando los otros mirror que utiliza no se hayan sincronizado. Para hacer un mejor uso de este script, elija un mirror (que sincronice de manera oportuna) que sea el más apropiado para su caso, y colóquelo en la parte superior de la lista de servidores. Esto es para evitar descargar de ftp.archlinux.org, y hacer uso de este último solo para cuando los otros mirrors no han sido sincronizados aún. El script rankmirrors puede ser útil en este caso.
+**Nota:** Si utiliza ftp.archlinux.org como el primer servidor listado en los archivos *«include»* (/etc/pacman.d/*), pueden ocurrir algunos problemas cuando los otros mirror que utiliza no se hayan sincronizado. Para hacer un mejor uso de este script, elija un mirror (que sincronice de manera oportuna) que sea el más apropiado para su caso, y colóquelo en la parte superior de la lista de servidores. Esto es para evitar descargar de ftp.archlinux.org, y hacer uso de este último solo para cuando los otros mirrors no han sido sincronizados aún. El script rankmirrors puede ser útil en este caso.
 
 ### Utilizar otras aplicaciones
 

@@ -61,7 +61,6 @@ CONFIG_FOO=n
 Or you can use GUI tool to tweak the options. Uncomment one of the possibilities shown in the prepare() function of the PKGBUILD, e.g.:
 
  `PKGBUILD` 
-
 ```
 ...
   # load configuration
@@ -80,7 +79,7 @@ If you have already a kernel `.config` file, uncommenting one of the interactive
 **Note:**
 
 *   If you uncomment and use 'make menuconfig' in build(), then use the menuconfig gui to load your existing config, you will run into problems with conflicting files in the end package. This is because you will overwrite the default config that PKGBUILD has modified to provide a unique install path, specifically the LOCALVERSION and LOCALVERSION_AUTO config options. To fix this, simply re-set LOCALVERSION to your custom kernel naming and LOCALVERSION_AUTO=n while still in menuconfig. For details, see [BBS#173504](https://bbs.archlinux.org/viewtopic.php?id=173504)
-*   If you uncomment _return 1_, you can change to the kernel source directory after makepkg finishes extraction and then make nconfig. This lets you configure the kernel over multiple sessions. When you're ready to compile, copy the .config file over top of either config or config.x86_64 (depending on your architecture), comment _return 1_ and use **makepkg -i**. But do not use this for custom patches; put your patch commands after these lines. If you do patch manually bztar unpack and replace your patch.
+*   If you uncomment *return 1*, you can change to the kernel source directory after makepkg finishes extraction and then make nconfig. This lets you configure the kernel over multiple sessions. When you're ready to compile, copy the .config file over top of either config or config.x86_64 (depending on your architecture), comment *return 1* and use **makepkg -i**. But do not use this for custom patches; put your patch commands after these lines. If you do patch manually bztar unpack and replace your patch.
 
 **Warning:** systemd has a number of kernel configuration requirements for general use, for specific usecases (e.g., UEFI) and for specific systemd functionality (e.g., bootchart). Failure to meet these requirements can result in your system being degraded or unusable. The list of required and recommended kernel CONFIGs can be found in `/usr/share/doc/systemd/README`. Check them before you compile.These requirements also change over time. Because Arch assumes you are using the official kernel, there will be no announcement of these changes. Before you install a new version of systemd, check the version release notes to make sure your current custom kernel meets any new systemd requirements.
 
@@ -125,4 +124,4 @@ After the makepkg, you can have a look at the linux.install file. You will see t
 
 ## Boot Loader
 
-Now, the folders and files for your custom kernel have been created, e.g. `/boot/vmlinuz-linux-test`. To test your kernel, update your bootloader (grub-mkconfig for GRUB) and add new entries ('default' and 'fallback') for your custom kernel. If you renamed your kernel in the _PKGBUILD pkgbase_ you may have to rename the initramfs.img in your _$build/pkg/kernel/etc_ before installing with pacman. That way, you can have both the stock kernel and the custom one to choose from.
+Now, the folders and files for your custom kernel have been created, e.g. `/boot/vmlinuz-linux-test`. To test your kernel, update your bootloader (grub-mkconfig for GRUB) and add new entries ('default' and 'fallback') for your custom kernel. If you renamed your kernel in the *PKGBUILD pkgbase* you may have to rename the initramfs.img in your *$build/pkg/kernel/etc* before installing with pacman. That way, you can have both the stock kernel and the custom one to choose from.

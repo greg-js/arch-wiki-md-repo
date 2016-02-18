@@ -1,6 +1,6 @@
 Desde [wikipedia](https://en.wikipedia.org/wiki/es:C%C3%B3dec "wikipedia:es:Códec"):
 
-	_Un códec es un dispositivo o programa de ordenador capaz de codificar y/o decodificar un flujo de datos digitales o señal analógica._
+	*Un códec es un dispositivo o programa de ordenador capaz de codificar y/o decodificar un flujo de datos digitales o señal analógica.*
 
 En general, los codecs son utilizados por aplicaciones multimedia para codificar o decodificar flujos de audio o vídeo. Con el fin de reproducir secuencias codificadas, los usuarios deben tener instalado un códec apropiado.
 
@@ -147,15 +147,15 @@ No siempre es necesario instalar explícitamente los codecs, si, previamente, se
 
 Desde [http://www.gstreamer.net/](http://www.gstreamer.net/):
 
-	_[GStreamer](/index.php/GStreamer "GStreamer") es una biblioteca utilizada para la construcción gráfica de los componentes multimedia manipulables. Las aplicaciones que soporta van desde la simple reproducción de Ogg/Vorbis, a la conversión de audio/video a audio complejo (mezclar) y la elaboración de vídeo (edición no lineal)._
+	*[GStreamer](/index.php/GStreamer "GStreamer") es una biblioteca utilizada para la construcción gráfica de los componentes multimedia manipulables. Las aplicaciones que soporta van desde la simple reproducción de Ogg/Vorbis, a la conversión de audio/video a audio complejo (mezclar) y la elaboración de vídeo (edición no lineal).*
 
-Simplemente, GStreamer es un _backend_ o _framework_ utilizado por muchos reproductores multimedia.
+Simplemente, GStreamer es un *backend* o *framework* utilizado por muchos reproductores multimedia.
 
 ### xine
 
 Desde [http://www.xine-project.org/about](http://www.xine-project.org/about):
 
-	_Xine es un recurso libre (licencia GPL) de alto rendimiento, un motor de reproducción multimedia, portátil y reutilizable. Xine es, en sí mismo, una biblioteca compartida de uso fácil, pero con un potente API, que es utilizado por muchas aplicaciones para la reproducción fluida de vídeo y para fines de elaboración de video_.
+	*Xine es un recurso libre (licencia GPL) de alto rendimiento, un motor de reproducción multimedia, portátil y reutilizable. Xine es, en sí mismo, una biblioteca compartida de uso fácil, pero con un potente API, que es utilizado por muchas aplicaciones para la reproducción fluida de vídeo y para fines de elaboración de video*.
 
 Como una alternativa a GStreamer, muchos reproductores multimedia pueden ser configurados para utilizar el backend de xine proporcionado por [xine-lib](https://www.archlinux.org/packages/?name=xine-lib).
 

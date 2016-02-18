@@ -70,15 +70,15 @@ See also [List of applications#Audio systems](/index.php/List_of_applications#Au
 
 You may want to consider the following often seen system optimizations:
 
-*   Add yourself to the _audio_ [group](/index.php/Group "Group").
+*   Add yourself to the *audio* [group](/index.php/Group "Group").
 *   Add the `threadirqs` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 
 **Warning:** Enabling threadirqs seems to be causing system lockups in conjunction with usb devices in at least some kernel versions starting with 3.13 and including at least 3.14-rc2\. See for example [https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1279081](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1279081) and [http://www.spinics.net/lists/linux-usb/msg102504.html](http://www.spinics.net/lists/linux-usb/msg102504.html) also linked from there.
 EDIT: The changelog seems to indicate that this has been fixed in the 3.13.6 vanilla kernel. (Search for threadirqs in [https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.13.6](https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.13.6))
 
 *   Install [linux-rt](https://aur.archlinux.org/packages/linux-rt/) kernel.
-*   Set the [cpufreq](/index.php/Cpufreq "Cpufreq") governor to _performance_.
-*   Add _noatime_ to the [filesystem mount options](/index.php/Fstab "Fstab") (see [Maximizing Performance](/index.php/Maximizing_performance#Mount_options "Maximizing performance")).
+*   Set the [cpufreq](/index.php/Cpufreq "Cpufreq") governor to *performance*.
+*   Add *noatime* to the [filesystem mount options](/index.php/Fstab "Fstab") (see [Maximizing Performance](/index.php/Maximizing_performance#Mount_options "Maximizing performance")).
 
 Realtime configuration has mostly been automated. There is no longer any need to edit files like `/etc/security/limits.conf` for realtime access. However, if you must change the settings, see `/etc/security/limits.d/99-audio.conf` and `/usr/lib/udev/rules.d/40-hpet-permissions.rules` (these files are provided by [jack](https://www.archlinux.org/packages/?name=jack) or [jack2](https://www.archlinux.org/packages/?name=jack2)). Additionaly, you may want to increase the highest requested RTC interrupt frequency (default is 64 Hz) by [running the following at boot](/index.php/Systemd_FAQ#How_can_I_make_a_script_start_during_the_boot_process.3F "Systemd FAQ"):
 
@@ -88,7 +88,7 @@ echo 2048 > /proc/sys/dev/hpet/max-user-freq
 
 ```
 
-By default, swap frequency defined by "swappiness" is set to 60\. By reducing this number to 10, the system will wait much longer before trying to write to disk. Then, there is _inotify_ which watches for changes to files and reports them to applications requesting this information. When working with lots of audio data, a lot of watches will need to be kept track of, so they will need to be increased. These two settings can be adjusted in `/etc/sysctl.d/99-sysctl.conf`.
+By default, swap frequency defined by "swappiness" is set to 60\. By reducing this number to 10, the system will wait much longer before trying to write to disk. Then, there is *inotify* which watches for changes to files and reports them to applications requesting this information. When working with lots of audio data, a lot of watches will need to be kept track of, so they will need to be increased. These two settings can be adjusted in `/etc/sysctl.d/99-sysctl.conf`.
 
 ```
 vm.swappiness = 10
@@ -100,14 +100,13 @@ You may also want to maximize the PCI latency timer of the PCI sound card and ra
 
 ```
 $ setpci -v -d *:* latency_timer=**b0**
-$ setpci -v -s _$SOUND_CARD_PCI_ID_ latency_timer=**ff** # eg. SOUND_CARD_PCI_ID=03:00.0 (see below)
+$ setpci -v -s *$SOUND_CARD_PCI_ID* latency_timer=**ff** # eg. SOUND_CARD_PCI_ID=03:00.0 (see below)
 
 ```
 
 The SOUND_CARD_PCI_ID can be obtained like so:
 
  `$ lspci ¦ grep -i audio` 
-
 ```
 **03:00.0** Multimedia audio controller: Creative Labs SB Audigy (rev 03)
 **03:01.0** Multimedia audio controller: VIA Technologies Inc. VT1720/24 [Envy24PT/HT] PCI Multi-Channel Audio Controller (rev 01)
@@ -162,7 +161,7 @@ $ cat /proc/asound/card0/codec#0
 
 ```
 
-Replace _card0_ and _codec#0_ depending on what you have. You will be looking for **rates** or _VRA_ in **Extended ID**. A common sample rate across many of today's devices is **48000 Hz**. Others common rates include 44100 Hz and 96000 Hz.
+Replace *card0* and *codec#0* depending on what you have. You will be looking for **rates** or *VRA* in **Extended ID**. A common sample rate across many of today's devices is **48000 Hz**. Others common rates include 44100 Hz and 96000 Hz.
 
 Almost always, when recording or sequencing with external gear is concerned, **realtime** is a must. Also, you may like to set maximum priority (at least 10 lower than system limits defined in `/etc/security/limits.d/99-audio.conf`); the highest is for the device itself).
 
@@ -177,7 +176,7 @@ $ /usr/bin/jackd -R -P89 -dalsa -dhw:0 -r48000 -p256 -n3
 
 **Note:** Once you set up JACK, try different audio applications to test your configuration results. I spent days trying to troubleshoot JACK xrun issues with LMMS which in the end turned out to be the problem with the latter.
 
-_Further reading: [http://w3.linux-magazine.com/issue/67/JACK_Audio_Server.pdf](http://w3.linux-magazine.com/issue/67/JACK_Audio_Server.pdf)_
+*Further reading: [http://w3.linux-magazine.com/issue/67/JACK_Audio_Server.pdf](http://w3.linux-magazine.com/issue/67/JACK_Audio_Server.pdf)*
 
 #### FireWire
 
@@ -203,12 +202,10 @@ To test whether you have any chances of getting FireWire devices to work:
 We cannot say for sure, particularly for those based on Ricoh (cross-platform issue). Most of the time, your device will run fine, but on occasion you will be faced with funny quirks. For unlucky ones, you will be facing hell.
 
 **Note:** As stated by Takashi Sakamoto [on the alsa-devel mailing list](http://mailman.alsa-project.org/pipermail/alsa-devel/2014-September/081731.html), if you use the FireWire backend with jackd, the DICE module is incompatible. If you see a line like this :
-
 ```
 Warning (dice_eap.cpp)[1811] read: No routes found. Base 0x7, offset 0x4000
 
 ```
-
 you need to disable the "snd_dice" module.
 
 #### Jack Flash
@@ -284,10 +281,10 @@ If you are going to compile your own kernel, remember that removing modules/opti
 
 In any way, you should also ensure that:
 
-*   **Timer Frequency** is set to **1000Hz** (CONFIG_HZ_1000=y; if you do not do _MIDI_ you can ignore this)
+*   **Timer Frequency** is set to **1000Hz** (CONFIG_HZ_1000=y; if you do not do *MIDI* you can ignore this)
 *   **APM** is **DISABLED** (CONFIG_APM=n; Troublesome with some hardware - default in x86_64)
 
-If you truly want a slim system, we suggest you go your own way and deploy one with _static /devs_. You should, however, set your CPU architecture. Selecting "Core 2 Duo" for appropriate hardware will allow for a good deal of optimisation, but not so much as you go down the scale.
+If you truly want a slim system, we suggest you go your own way and deploy one with *static /devs*. You should, however, set your CPU architecture. Selecting "Core 2 Duo" for appropriate hardware will allow for a good deal of optimisation, but not so much as you go down the scale.
 
 General issue(s) with (realtime) kernels:
 
@@ -311,7 +308,7 @@ From the [AUR](/index.php/AUR "AUR") itself, you have the following options:
 
 The first two are standard kernels with the CONFIG_PREEMPT_RT patch, while -ice includes patches some may consider to be nasty, while to others are a blessing.
 
-	_See: [Real-Time Linux Wiki](https://rt.wiki.kernel.org/)_
+	*See: [Real-Time Linux Wiki](https://rt.wiki.kernel.org/)*
 
 ## MIDI
 
@@ -324,16 +321,15 @@ snd_seq_midi
 
 To work with MIDI you can it is highly recommended that you install a2j ([a2jmidid](https://www.archlinux.org/packages/?name=a2jmidid)), a bridge between alsa midi and jack midi. It allows you to connect applications that only communicate with alsa midi to applications that only use jack midi. Laditray can also start/stop a2j.
 
-	_See: [JACK#MIDI](/index.php/JACK#MIDI "JACK")_
+	*See: [JACK#MIDI](/index.php/JACK#MIDI "JACK")*
 
 ## Environment Variables
 
 If you install things to non-standard directories, it is often necessary to set environment path variables so that applications know where to look (for plug-ins and other libraries). This usually affects only VST since users might have a Wine or external Windows location.
 
-We would usually not have Linux plug-ins (LADSPA, LV2, DSSI, LXVST) beyond standard paths, so it is not necessary to export them. But if you do, be sure to include those standard paths as well since Arch does not do anything for _dssi_ or _ladspa_, and some applications like _dssi-vst_ will not look anywhere else if it finds predefined paths.
+We would usually not have Linux plug-ins (LADSPA, LV2, DSSI, LXVST) beyond standard paths, so it is not necessary to export them. But if you do, be sure to include those standard paths as well since Arch does not do anything for *dssi* or *ladspa*, and some applications like *dssi-vst* will not look anywhere else if it finds predefined paths.
 
  `~/.bashrc` 
-
 ```
 ...
 export VST_PATH=/usr/lib/vst:/usr/local/lib/vst:~/.vst:/someother/custom/dir
@@ -363,7 +359,7 @@ $ killall -9 $processname
 
 ```
 
-*   If you are facing a lot of _xruns_ especially with [nvidia](https://www.archlinux.org/packages/?name=nvidia), disable your GPU throttling. This can be done via the card's control applet and for nvidia it is "prefer maximum performance" (thanks to a mail in LAU by Frank Kober).
+*   If you are facing a lot of *xruns* especially with [nvidia](https://www.archlinux.org/packages/?name=nvidia), disable your GPU throttling. This can be done via the card's control applet and for nvidia it is "prefer maximum performance" (thanks to a mail in LAU by Frank Kober).
 
 *   You may like to read more on ALSA: [http://www.volkerschatz.com/noise/alsa.html](http://www.volkerschatz.com/noise/alsa.html)
 
@@ -371,7 +367,7 @@ $ killall -9 $processname
 
 ### M-Audio Delta 1010
 
-The M-Audio Delta series cards are based on the VIA Ice1712 audio chipset. Cards using this chip require that you install the alsa-tools package, because it contains the [envy24control](/index.php/Envy24control "Envy24control") program. [Envy24control](/index.php/Envy24control "Envy24control") is a hardware level mixer/controller. You _can_ use alsa-mixer but you will save yourself some hassle not to try it. Note that this section has no information on MIDI setup or usage.
+The M-Audio Delta series cards are based on the VIA Ice1712 audio chipset. Cards using this chip require that you install the alsa-tools package, because it contains the [envy24control](/index.php/Envy24control "Envy24control") program. [Envy24control](/index.php/Envy24control "Envy24control") is a hardware level mixer/controller. You *can* use alsa-mixer but you will save yourself some hassle not to try it. Note that this section has no information on MIDI setup or usage.
 
 Open the mixer application:
 
@@ -404,7 +400,6 @@ usb-audio: Fast Track Pro config OK
 The interface also needs extra step of cofiguration to switch modes. It is done using option `device_setup` during module loading. The recommended way to setup the interface is using file in `modprobe.d`:
 
  `/etc/modprobe.d/ftp.conf` 
-
 ```
 options snd_usb_audio vid=0x763 pid=0x2012 device_setup=XXX index=YYY enable=1
 
@@ -519,13 +514,12 @@ Volume levels are hardware and routing can be done through QjackCtl, even with m
 
 ### Tascam US-122
 
-_**This does not apply to the US-122L**_
+***This does not apply to the US-122L***
 
 1.  Required packages: [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools) [alsa-firmware](https://www.archlinux.org/packages/?name=alsa-firmware) [fxload](https://aur.archlinux.org/packages/fxload/)
 2.  udev rules: create the following rules file, then reload udev rules, [Udev#Loading new rules](/index.php/Udev#Loading_new_rules "Udev")
 
  `/etc/udev/rules.d/51-tascam-us-122.rules` 
-
 ```
 SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idProduct}=="8006", ATTRS{idVendor}=="1604", RUN+="/bin/sh -c '/sbin/fxload -D %N -s /usr/share/alsa/firmware/usx2yloader/tascam_loader.ihx -I /usr/share/alsa/firmware/usx2yloader/us122fw.ihx'"
 SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idProduct}=="8007", ATTRS{idVendor}=="1604", RUN+="/bin/sh -c '/usr/bin/usx2yloader'"
@@ -555,17 +549,17 @@ The Babyface does not need any special Jack Settings. But if you want to use the
 
 ### Steinberg's SDKs
 
-It is very clear - we can distribute neither the VST nor the ASIO headers in **binary package form**. However, whenever you are building a program which would host Windows _.dll_ VST plug-ins, check for the following hints (that do not require use of any SDK):
+It is very clear - we can distribute neither the VST nor the ASIO headers in **binary package form**. However, whenever you are building a program which would host Windows *.dll* VST plug-ins, check for the following hints (that do not require use of any SDK):
 
 *   dssi-vst
 *   fst
 *   vestige
 
-With that said, if you are building a program which would host native _.so_ VST plug-ins, then there is no escape. For such cases, Arch yet again allows us to maintain a uniform local software database. We can "install" the SDK _system-wide_ - you simply have to download it yourself and place it in the packaging directory.
+With that said, if you are building a program which would host native *.so* VST plug-ins, then there is no escape. For such cases, Arch yet again allows us to maintain a uniform local software database. We can "install" the SDK *system-wide* - you simply have to download it yourself and place it in the packaging directory.
 
 [Get them from AUR](https://aur.archlinux.org/packages.php?O=0&K=steinberg-&do_Search=Go)
 
-_Note: Steinberg does not forbid redistribution of resulting products, nor dictate what license they can be under. There are many GPL-licensed VST plug-ins. As such, distributing binary packages of software built with these restricted headers is **not** a problem, because the headers are simply **buildtime dependencies**._
+*Note: Steinberg does not forbid redistribution of resulting products, nor dictate what license they can be under. There are many GPL-licensed VST plug-ins. As such, distributing binary packages of software built with these restricted headers is **not** a problem, because the headers are simply **buildtime dependencies**.*
 
 ## Arch Linux Pro Audio Project
 

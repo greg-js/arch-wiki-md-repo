@@ -1,6 +1,6 @@
 **Note:** [Steam](/index.php/Steam "Steam") installs library dependencies of a game to a library directory, but some are missing at the moment. Report bugs involving missing libraries on Valve's bug tracker on their [GitHub page](https://github.com/ValveSoftware/steam-for-linux) before adding workarounds here, and then provide a link to the bug so it can be removed as the problems are fixed.
 
-**Tip:** If a game fails to start, a possible reason is that it is missing required libraries. You can find out what libraries it requests by running `ldd _game_executable_`. `_game_executable_` is likely located somewhere in `~/.steam/root/SteamApps/common/`. Please note that most of these "missing" libraries are actually already included with Steam, and do not need to be installed globally.
+**Tip:** If a game fails to start, a possible reason is that it is missing required libraries. You can find out what libraries it requests by running `ldd *game_executable*`. `*game_executable*` is likely located somewhere in `~/.steam/root/SteamApps/common/`. Please note that most of these "missing" libraries are actually already included with Steam, and do not need to be installed globally.
 
 ## Contents
 
@@ -288,7 +288,6 @@ OR
 To fix this, use:
 
  `~/.steam/root/SteamApps/common/And Yet It Moves/AndYetItMovesSteam.sh` 
-
 ```
 #ayim_dir="$(dirname "$(readlink -f ${BASH_SOURCE[0]})")"
 ayim_dir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
@@ -313,7 +312,6 @@ Follow the same steps as [Defender's Quest](#Defender.27s_Quest:_Valley_of_the_F
 If the mouse pointer gets stuck in any one direction, the game becomes unplayable. You may try:
 
  `~/.local/share/Steam/SteamApps/common/Aquaria/usersettings.xml` 
-
 ```
 #<JoystickEnabled on=”1″ />
 <JoystickEnabled on=”0″ />
@@ -350,7 +348,7 @@ Steam Cloud syncing does not (intentionally) work between platforms. With that s
 
 ### Using Ctrl Key
 
-Borderlands 2 does not allow the Ctrl key to be used by default. The game seems to be accessing keycodes and not keysyms, therefore xmodmap has no affect. A workaround is using _setkeycodes_ to map the Ctrl-scancode to some other key, as described in [Map scancodes to keycodes#Using setkeycodes](/index.php/Map_scancodes_to_keycodes#Using_setkeycodes "Map scancodes to keycodes"). I use `setkeycodes 0x1d 56` (as root) to map Ctrl to Alt before starting the game and `setkeycodes 0x1d 29` to restore the default.
+Borderlands 2 does not allow the Ctrl key to be used by default. The game seems to be accessing keycodes and not keysyms, therefore xmodmap has no affect. A workaround is using *setkeycodes* to map the Ctrl-scancode to some other key, as described in [Map scancodes to keycodes#Using setkeycodes](/index.php/Map_scancodes_to_keycodes#Using_setkeycodes "Map scancodes to keycodes"). I use `setkeycodes 0x1d 56` (as root) to map Ctrl to Alt before starting the game and `setkeycodes 0x1d 29` to restore the default.
 
 ### Logging into SHiFT
 
@@ -592,7 +590,7 @@ MESA_GL_VERSION_OVERRIDE=2.1
 
 #### Everything seems OK but the game doesn't start
 
-If you run the game from the terminal and, although no error is shown, try **disabling**: _Steam > Settings > In-Game > Enable Steam Community In-Game_. Apparently the game [The Book of Unwritten Tales](#The_Book_of_Unwritten_Tales) has the same problem. It also describes a workaround that is untested in Dota 2.
+If you run the game from the terminal and, although no error is shown, try **disabling**: *Steam > Settings > In-Game > Enable Steam Community In-Game*. Apparently the game [The Book of Unwritten Tales](#The_Book_of_Unwritten_Tales) has the same problem. It also describes a workaround that is untested in Dota 2.
 
 #### Game runs on the wrong screen
 
@@ -740,7 +738,7 @@ Libraries are downloaded and and placed in the game's data directory for both ar
 
 After installation, FTL may fail to run due to a 'Text file busy' error (characterised in Steam by your portrait border going green then blue again). The easiest way to mend this is to just reboot your system. Upon logging back in FTL should run.
 
-The Steam overlay in FTL does not function as it is not a 3D accelerated game. Because of this the desktop notifications will be visible. If playing in fullscreen, therefore, these notifications in some systems may steal focus and revert you back to windowed mode with no way of going back to fullscreen without relaunching. The binaries for FTL on Steam have no DRM and it is possible to run the game _without_ Steam running, so in some cases that may be optimum - just ensure that you launch FTL via the launcher script in `~/.steam/root/SteamApps/common/FTL Faster than Light/data/` rather than the FTL binary in the $arch directory.
+The Steam overlay in FTL does not function as it is not a 3D accelerated game. Because of this the desktop notifications will be visible. If playing in fullscreen, therefore, these notifications in some systems may steal focus and revert you back to windowed mode with no way of going back to fullscreen without relaunching. The binaries for FTL on Steam have no DRM and it is possible to run the game *without* Steam running, so in some cases that may be optimum - just ensure that you launch FTL via the launcher script in `~/.steam/root/SteamApps/common/FTL Faster than Light/data/` rather than the FTL binary in the $arch directory.
 
 ### Problems with open-source video driver
 
@@ -983,7 +981,7 @@ Launch with:
 
 ```
 
-Or you can simply right click on "Kerbal Space Program" in your game list, click _Properties_, click _SET LAUNCH OPTIONS_, then add this:
+Or you can simply right click on "Kerbal Space Program" in your game list, click *Properties*, click *SET LAUNCH OPTIONS*, then add this:
 
 ```
 LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH" LC_ALL=C %command%_64
@@ -1008,7 +1006,6 @@ Disable "Edge Highlighting (PPFX)" in graphics settings ingame.
 Killing Floor runs pretty much from scratch, although you might have to change in-game resolution screen as the default one is **800x600** and a **4:3** screen format. If you try to modify screen resolution in-game, it might crash your desktop enviroment. To fix this, please set the desired resolution screen size by modifing your `~/.killingfloor/System/KillingFloor.ini` with your prefered editor.
 
  `~/.killingfloor/System/KillingFloor.ini` 
-
 ```
 ...
 
@@ -1205,7 +1202,6 @@ Try running:
 If that does not work, try tweaking `~/.alsoftrc` as proposed by the [Steam community](http://steamcommunity.com/app/221410/discussions/3/846940248238406974/) (Serious Sam 3: BFE uses OpenAL to output sound). If you are not using Pulse Audio, you may want to write the following configuration:
 
  `~/.alsoftrc` 
-
 ```
 [general]
 drivers = alsa
@@ -1260,7 +1256,6 @@ Try running:
 If that does not work, try tweaking `~/.alsoftrc` as proposed by the Steam community (Serious Sam 3: BFE uses OpenAL to output sound). If you are not using Pulse Audio, you may want to write the following configuration:
 
  `~/.alsoftrc` 
-
 ```
 [general]
 drivers = alsa
@@ -1355,7 +1350,7 @@ See the KNOWN ISSUES & WORKAROUNDS​ section of the [release announcement](http
 
 ## The Book of Unwritten Tales
 
-If the game does not start, uncheck: _Properties > Enable Steam Community In-Game_.
+If the game does not start, uncheck: *Properties > Enable Steam Community In-Game*.
 
 The game may segfault upon clicking the Setting menu and possibly during or before gameplay. This is a known problem and you will unfortunately have to wait for a fix from the developer. A workaround (taken from the [Steam forums](http://steamcommunity.com/app/221410/discussions/3/846939071081758230/#p2)) is to replace the game's RenderSystem_GL.so with one from Debian's repositories. To do that download this [deb file](https://launchpad.net/ubuntu/+archive/primary/+files/libogre-1.7.4_1.7.4-3_i386.deb), extract it (with `[dpkg](https://aur.archlinux.org/packages/dpkg/) -x libogre-*.deb outdir`) and replace `~/.local/share/Steam/SteamApps/common/The Book of Unwritten Tales/lib/32/RenderSystem_GL.so` with the one that comes with the `.deb` package.
 
@@ -1366,7 +1361,7 @@ The game may segfault upon clicking the Setting menu and possibly during or befo
 
 ## The Book of Unwritten Tales: The Critter Chronicles
 
-Because it's based on the same engine, the things that apply to _The Book of Unwritten Tales_ also apply for this game.
+Because it's based on the same engine, the things that apply to *The Book of Unwritten Tales* also apply for this game.
 
 To prevent the game from crashing at the very end when the credits are shown, change the size of the credits image as described here: [http://steamcommunity.com/app/221830/discussions/0/828925849276110960/#c810921273836530791](http://steamcommunity.com/app/221830/discussions/0/828925849276110960/#c810921273836530791)
 
@@ -1458,7 +1453,6 @@ Also, check out this thread [[7]](https://steamcommunity.com/app/237930/discussi
 *   If sound plays choppy, try:
 
  `/etc/openal/alsoft.conf` 
-
 ```
 drivers=pulse,alsa
 frequency=48000
@@ -1469,7 +1463,7 @@ frequency=48000
 
 ## Unity3D
 
-Games based on the Unity3D engine, like _War For The Overworld_ or _Pixel Piracy_ may need the package [lsb-release](https://www.archlinux.org/packages/?name=lsb-release) to understand that they run on Linux and work properly.
+Games based on the Unity3D engine, like *War For The Overworld* or *Pixel Piracy* may need the package [lsb-release](https://www.archlinux.org/packages/?name=lsb-release) to understand that they run on Linux and work properly.
 
 ### Locale Settings
 
@@ -1477,7 +1471,7 @@ Games made in C# often have a problem with some locales (e.g. Russian, German) b
 
 To work around this, set the game's launch options to `LC_ALL=C %command%`
 
-Some of the affected games: _FORCED_, _Gone Home_, _Ichi_, _Nimble Quest_, _Syder Arcade_.
+Some of the affected games: *FORCED*, *Gone Home*, *Ichi*, *Nimble Quest*, *Syder Arcade*.
 
 ### Unity 5 and PulseAudio
 

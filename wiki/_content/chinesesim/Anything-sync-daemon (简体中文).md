@@ -82,7 +82,7 @@ $ anything-sync-daemon debug
 
 **注意:** 这一步是可选的， **asd** 可以自己每小时更新。
 
-如果使用者希望提高同步频率的话，可以执行如下命令，在 crontab 中添加一行配置，让 cron 调用 ASD 的 _sync_ 功能：
+如果使用者希望提高同步频率的话，可以执行如下命令，在 crontab 中添加一行配置，让 cron 调用 ASD 的 *sync* 功能：
 
 ```
 # crontab -e

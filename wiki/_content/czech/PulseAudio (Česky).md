@@ -160,7 +160,6 @@ $ padsp sox foo.wav -t ossdsp /dev/dsp
 Pokud preferujete jednoduché spouštění, je možné použít script jako například tento, kde původní program byl přejmenován (přidána koncovka -bin) a takto vytvořený script pojmenovaný dle programu je pak spouštěn jako aplikace. Nutno podotknout, že tato metoda selže v případě aktualizace daného programu balíčkovacím systémem, který tento skript přepíše. Proto ji berte pouze jako příklad:
 
  `/usr/bin/OSSProgram` 
-
 ```
 #!/bin/sh
 if test -x /usr/bin/padsp; then
@@ -173,7 +172,7 @@ fi
 
 ### GStreamer
 
-Abychom přiměli [GStreamer](/index.php/GStreamer "GStreamer") používat PulseAudio, nastavíme gconf proměnné `/system/gstreamer/0.10/default/audiosink` na 'pulsesink _a `/system/gstreamer/0.10/default/audiosrc` na_ pulsesrc _následujícími příkazy:_
+Abychom přiměli [GStreamer](/index.php/GStreamer "GStreamer") používat PulseAudio, nastavíme gconf proměnné `/system/gstreamer/0.10/default/audiosink` na 'pulsesink *a `/system/gstreamer/0.10/default/audiosrc` na* pulsesrc *následujícími příkazy:*
 
 ```
  $ gconftool-2 -t string --set /system/gstreamer/0.10/default/audiosink pulsesink
@@ -181,7 +180,7 @@ Abychom přiměli [GStreamer](/index.php/GStreamer "GStreamer") používat Pulse
 
 ```
 
-Některé aplikace (jako Rhythmbox) ignorují _audiosink_ nastavení a používají _musicaudiosink_. Proto musíme _musicaudiosink_ přenastavit pro tyto aplikace také:
+Některé aplikace (jako Rhythmbox) ignorují *audiosink* nastavení a používají *musicaudiosink*. Proto musíme *musicaudiosink* přenastavit pro tyto aplikace také:
 
 ```
  $ gconftool-2 -t string --set /system/gstreamer/0.10/default/musicaudiosink pulsesink
@@ -229,7 +228,7 @@ load-module module-x11-bell sample=x11-bell
 
 ```
 
-Samozřejmě si můžete nastavit použití i jiného zvukového vzorku než `dialog-error.oga`, který je částí balíčku _sound-theme-freedesktop_.
+Samozřejmě si můžete nastavit použití i jiného zvukového vzorku než `dialog-error.oga`, který je částí balíčku *sound-theme-freedesktop*.
 
 ### GNOME
 
@@ -239,7 +238,7 @@ Samozřejmě si můžete nastavit použití i jiného zvukového vzorku než `di
 *   gnome-settings-daemon-pulse
 *   libcanberra-pulse
 
-Tyto jsou součástí skupiny balíčků _pulseaudio-gnome_.
+Tyto jsou součástí skupiny balíčků *pulseaudio-gnome*.
 
 ### KDE 3
 
@@ -257,7 +256,7 @@ Audacious nativně podporuje PulseAudio takže stačí najít v nastavení Prefe
 
 ### mpd
 
-Je nutno nakonfigurovat mpd dle [návodu](http://mpd.wikia.com/wiki/PulseAudio) pro nastavení výstupu na PulseAudio. Na multimediálním zařízení spusťte PulseAudio jako _mpd_ uživatele. Na běžném PC spouštějte mpd i PulseAudio pod vlastním účtem a nepoužívejte _mpd_ uživatele.
+Je nutno nakonfigurovat mpd dle [návodu](http://mpd.wikia.com/wiki/PulseAudio) pro nastavení výstupu na PulseAudio. Na multimediálním zařízení spusťte PulseAudio jako *mpd* uživatele. Na běžném PC spouštějte mpd i PulseAudio pod vlastním účtem a nepoužívejte *mpd* uživatele.
 
 ### MPlayer
 
@@ -282,7 +281,7 @@ Pokud používáte flashplugin z multilib repozitáře, který je 32bit, je nutn
 
 ### Surround sound systémy
 
-Pro povolení všech zvukových výstupů vaší karty editujte `/etc/pulse/daemon.conf` kde odkomentujte default-sample-channels řádek a nastavte na potřebnou hodnotu (**6** _5.1_ **8** _7.1_):
+Pro povolení všech zvukových výstupů vaší karty editujte `/etc/pulse/daemon.conf` kde odkomentujte default-sample-channels řádek a nastavte na potřebnou hodnotu (**6** *5.1* **8** *7.1*):
 
 ```
 # Výchozí 2 kanály
@@ -301,7 +300,6 @@ Po editaci je nutné restartovat PulseAudio.
 Někdy je nutno nastavit ručně soubor `/etc/asound.conf` (systémové nastavení) nebo `~/.asoundrc` (pro každého uživatele), aby ALSA používala PulseAudio:
 
  `/etc/asound.conf` 
-
 ```
 pcm.pulse {
     type pulse
@@ -455,7 +453,7 @@ Tohle zamezí načtení module-udev-detect, který se snaží převzít zvukovou
 
 Po provedení nastavení probraných výše lze použít QjackCtl pro spouštění skriptu během startu a vypnutí pro start/stop PulseAudia. Proč tohle dělat? Protože změny provedené při zprovoznění JACK nám zakázaly automatickou detekci hardware pomocí modulu pulseaudia. Pomocí těchto skriptů lze patřičná nastavení aplikovat jen pokud zrovna vyžadujeme pro práci JACK.
 
-Následující příklad může být použitý jakož startovací skript, který démonizuje pulseaudio a spouští _padevchooser_. Tento skript nutno upravit pro volby konfigurace pulseaudia, které zde nejsou uvedeny `jack_startup`:
+Následující příklad může být použitý jakož startovací skript, který démonizuje pulseaudio a spouští *padevchooser*. Tento skript nutno upravit pro volby konfigurace pulseaudia, které zde nejsou uvedeny `jack_startup`:
 
 ```
 #!/bin/bash
@@ -484,7 +482,7 @@ chmod +x jack_startup jack_shutdown
 
 ```
 
-Pak po načtení QjackCtl přejdeme do _Setup_ a v _Options_ je tab "Execute Script after Startup:" a "Execute Script on Shutdown:" kde zadáme cestu ke skriptům.
+Pak po načtení QjackCtl přejdeme do *Setup* a v *Options* je tab "Execute Script after Startup:" a "Execute Script on Shutdown:" kde zadáme cestu ke skriptům.
 
 ### Pulseaudio zkrz OSS
 

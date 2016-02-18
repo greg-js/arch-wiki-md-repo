@@ -127,7 +127,7 @@ c0:2345:respawn:/sbin/agetty 9600 ttyS0 linux
 
 ```
 
-Edit `/etc/securetty` and add an entry for the the serial console, _below the existing entries_:
+Edit `/etc/securetty` and add an entry for the the serial console, *below the existing entries*:
 
 ```
 ttyS0
@@ -143,12 +143,10 @@ Reboot.
 ### Connect using a terminal emulator program
 
 **Note:** Before making a connection, it is recommended to add your user to the `uucp` group. Otherwise you will need root's permission to make a connection:
+```
+# gpasswd -a *username* uucp
 
 ```
-# gpasswd -a _username_ uucp
-
-```
-
 See [Users and groups#User groups](/index.php/Users_and_groups#User_groups "Users and groups") for details.
 
 Perform these steps on the machine used to connect the remote console.
@@ -187,7 +185,7 @@ Press Enter to exit the menus (pressing Esc will not save changes). Remove the m
 
 ##### picocom
 
-[picocom](https://www.archlinux.org/packages/?name=picocom) is a tiny dumb-terminal emulation program that is very like minicom, but instead of _mini_, it is _pico_. The following example connect to `ttyS0` at 9600 bps:
+[picocom](https://www.archlinux.org/packages/?name=picocom) is a tiny dumb-terminal emulation program that is very like minicom, but instead of *mini*, it is *pico*. The following example connect to `ttyS0` at 9600 bps:
 
 ```
 $ picocom -b 9600 /dev/ttyS0
@@ -247,7 +245,7 @@ On Windows machines, connect to the serial port using programs like PuTTY[[3]](h
 
 1.  Connect to the target machine using the method described above.
 2.  Boot the target machine using the Arch Linux installation CD.
-3.  When the bootloader appears, select _Boot Arch Linux (<arch>)_ and press `Tab` to edit
+3.  When the bootloader appears, select *Boot Arch Linux (<arch>)* and press `Tab` to edit
 4.  Append `console=ttyS0,38400` and press `Enter`.
 5.  Now systemd should detect ttyS0 and spawn a serial getty on it. Login as `root` and start the installation as usual.
 
@@ -268,7 +266,7 @@ Unlike ssh, serial connection does not have a mechanism to transfer something li
 Resize the terminal via `stty` is a workaround:
 
 ```
-$ stty rows _lines_ cols _columns_
+$ stty rows *lines* cols *columns*
 
 ```
 

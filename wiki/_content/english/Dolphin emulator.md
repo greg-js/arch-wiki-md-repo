@@ -36,15 +36,15 @@ Install one of the following:
 
 **Tip:** Run `dolphin-emu -h` for help Dolphin's options.
 
-**Note:** Dolphin may override these settings on a per-game basis, such as when a setting is know to break a certain game. If absolutely sure a specific setting will not crash the game, you can disable or change these overrides by right-clicking the game and selecting _Properties_. Likewise, you can set per-game settings using this method.
+**Note:** Dolphin may override these settings on a per-game basis, such as when a setting is know to break a certain game. If absolutely sure a specific setting will not crash the game, you can disable or change these overrides by right-clicking the game and selecting *Properties*. Likewise, you can set per-game settings using this method.
 
-While no additional configuration is needed for the emulator to run (it is preconfigured with the default settings), altering the settings can improve performance and graphics alike. Settings are split to three main sections, _Config_, _Graphics_ and _DSP_.
+While no additional configuration is needed for the emulator to run (it is preconfigured with the default settings), altering the settings can improve performance and graphics alike. Settings are split to three main sections, *Config*, *Graphics* and *DSP*.
 
 ### Config section
 
-**Tip:** Recent versions of Dolphin remove the _Audio_ frameskip option, so _Auto_ is now recommended.
+**Tip:** Recent versions of Dolphin remove the *Audio* frameskip option, so *Auto* is now recommended.
 
-On the General tab, check _Enable Dual Core_ and _Enable Idle Skipping_. The frame limit should be set to "Auto", so that it works with games from all regions. The CPU emulation engine should be left as JIT Recompiler. Only check "Force console as NTSC-J" if intending to play imported Japanese discs.
+On the General tab, check *Enable Dual Core* and *Enable Idle Skipping*. The frame limit should be set to "Auto", so that it works with games from all regions. The CPU emulation engine should be left as JIT Recompiler. Only check "Force console as NTSC-J" if intending to play imported Japanese discs.
 
 All options on the "Interface" tab are personal choices.
 
@@ -52,7 +52,7 @@ The Audio tab is the DSP section's screen; setting it up now means there will be
 
 The next two tabs are not very important; the Gamecube tab has settings about connected accessories, such as memory cards, and the only remarkable Wii tab option is the "Aspect Ratio" drop-down list. Set it to either 16:9 or 4:3, depending on the display's [aspect ratio](https://en.wikipedia.org/wiki/Aspect_ratio "wikipedia:Aspect ratio").
 
-On the final tab, "Paths", ISO directories can be set. The directory of game ISOs can also be set by clicking browse from the home screen, but here more options are available, such as _Search Subfolders_.
+On the final tab, "Paths", ISO directories can be set. The directory of game ISOs can also be set by clicking browse from the home screen, but here more options are available, such as *Search Subfolders*.
 
 ### Graphics section
 
@@ -74,11 +74,11 @@ Widescreen Hack,
 Disable fog** | off | your option
 (recommended: off) |
 
-**Tip:** Dolphin is able to render games that were developed for 2D in anaglyph 3D. To enable this, set _Post-Processing Effect_ to _stereoscopic_ (default, for red-cyan mode) or _stereoscopic2_ (blue-yellow). It is also **necessary** to uncheck "_Fast Depth Calculation_" on the _Hacks_ tab (_see below_).
+**Tip:** Dolphin is able to render games that were developed for 2D in anaglyph 3D. To enable this, set *Post-Processing Effect* to *stereoscopic* (default, for red-cyan mode) or *stereoscopic2* (blue-yellow). It is also **necessary** to uncheck "*Fast Depth Calculation*" on the *Hacks* tab (*see below*).
 
 **Warning:** Using filters and other ways to improve graphics might break a few games or cause graphical glitches of any level.
 
-Unless sure, the _Hacks_ tab is best left untouched.
+Unless sure, the *Hacks* tab is best left untouched.
 
 <caption>Defaults</caption>
 | Option | Value |
@@ -95,7 +95,7 @@ Unless sure, the _Hacks_ tab is best left untouched.
 (Should uncheck for anaglyph 3D) |
 | Vertex streaming hack | unchecked |
 
-Similarly, unless sure, leave **everything** in the _Advanced_ tab unchecked.
+Similarly, unless sure, leave **everything** in the *Advanced* tab unchecked.
 
 ### DSP section
 
@@ -105,7 +105,7 @@ Set the DSP emulation engine to
 *   DSP LLE recompiler for better accuracy with the cost of some speed,
 *   DSP LLE interpreter; accurate but makes **everything** unplayable. Too slow.
 
-_DSP LLE on separate thread_ improves speed on computers with multi-core CPUs, but might cause audio glitches, and is known to break [Zelda ucode games](https://wiki.dolphin-emu.org/index.php?title=Category:Zelda_ucode_games). Audio backend is best set to [ALSA](/index.php/ALSA "ALSA"). For `pulseaudio`, Dolphin's optional dependency [PulseAudio](/index.php/PulseAudio "PulseAudio") needs to be installed.
+*DSP LLE on separate thread* improves speed on computers with multi-core CPUs, but might cause audio glitches, and is known to break [Zelda ucode games](https://wiki.dolphin-emu.org/index.php?title=Category:Zelda_ucode_games). Audio backend is best set to [ALSA](/index.php/ALSA "ALSA"). For `pulseaudio`, Dolphin's optional dependency [PulseAudio](/index.php/PulseAudio "PulseAudio") needs to be installed.
 
 **Note:** If you came here from the [Config section's](#Config_section) link, you should go back now.
 
@@ -115,7 +115,7 @@ _DSP LLE on separate thread_ improves speed on computers with multi-core CPUs, b
 
 **Warning:** Make sure you **only** use Dolphin for legally obtained self-made disc dumps of games you legally bought. Dolphin was not developed for unlawful use. Act legally as applying laws define. You are responsible for any usage of the emulator that you make. No links, instructions or tips for obtaining illegal content will be provided on this wiki. No copyright infringement intended.
 
-Click on browse to set a directory of ISOs so that they are shown as a library on Dolphin's default screen. Otherwise just click _Open_ and select the file.
+Click on browse to set a directory of ISOs so that they are shown as a library on Dolphin's default screen. Otherwise just click *Open* and select the file.
 
 ### Dolphin's Wiki
 
@@ -138,13 +138,13 @@ Add "-fno-pie" to "CXX_FLAGS" when building Dolphin.
 
 ### Games play too fast
 
-Make sure the framelimit is set to a proper value for the game's region; 60 for NTSC games or 50 for PAL ones. _Auto_ is recommended. Avoid playing other media simultaneously with Dolphin.
+Make sure the framelimit is set to a proper value for the game's region; 60 for NTSC games or 50 for PAL ones. *Auto* is recommended. Avoid playing other media simultaneously with Dolphin.
 
 ### Emulation is too slow
 
-Double-check the [CPU scaling governor](/index.php/Cpu_scaling#Scaling_governors "Cpu scaling"). If using an nvidia graphics card, on nvidia-settings changing the powermizer setting to "Prefer maximum performance"; check its temperature to make sure the card does not overheat, though. Change Dolphin's priority using _nice_. Killing unnecessary processes and disabling compositing also helps. Configuring Dolphin correctly, as described above, is the most important part.
+Double-check the [CPU scaling governor](/index.php/Cpu_scaling#Scaling_governors "Cpu scaling"). If using an nvidia graphics card, on nvidia-settings changing the powermizer setting to "Prefer maximum performance"; check its temperature to make sure the card does not overheat, though. Change Dolphin's priority using *nice*. Killing unnecessary processes and disabling compositing also helps. Configuring Dolphin correctly, as described above, is the most important part.
 
-_See also: [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance") - most of the advice should be helpful._
+*See also: [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance") - most of the advice should be helpful.*
 
 ## See also
 

@@ -27,17 +27,17 @@ Leggere [Unified Extensible Firmware Interface (Italiano)#Processo di boot con U
 
 ## Kernel
 
-Il kernel è il cuore di un sistema operativo. Esso lavora a basso livello (_kernelspace_) interagendo tra le periferiche della macchina, ed i programmi che ne richiedono le risorse per funzionare. Per sfruttare la CPU in modo efficiente, il kernel usa un sistema di pianificazione per decidere a quale processo assegnare la priorità e quando, creando così l'illusione (per l'occhio umano) che i processi vengano eseguiti contemporaneamente.
+Il kernel è il cuore di un sistema operativo. Esso lavora a basso livello (*kernelspace*) interagendo tra le periferiche della macchina, ed i programmi che ne richiedono le risorse per funzionare. Per sfruttare la CPU in modo efficiente, il kernel usa un sistema di pianificazione per decidere a quale processo assegnare la priorità e quando, creando così l'illusione (per l'occhio umano) che i processi vengano eseguiti contemporaneamente.
 
 ## initramfs
 
-Dopo essere stato caricato, il kernel decomprime l'[initramfs](/index.php/Initramfs "Initramfs") (initial RAM filesystem), che diventa il file system di root iniziale. Il kernel successivamente esegue `/init` come primo processo. La fase _early userspace_ inizia.
+Dopo essere stato caricato, il kernel decomprime l'[initramfs](/index.php/Initramfs "Initramfs") (initial RAM filesystem), che diventa il file system di root iniziale. Il kernel successivamente esegue `/init` come primo processo. La fase *early userspace* inizia.
 
 L'obiettivo di initramfs è di effettuare il bootstrap del sistema fino a che quest'ultimo non sia in gradi di accedere al filesystem di root (vedi [FHS](/index.php/Filesystem_Hierarchy_Standard_(Italiano) "Filesystem Hierarchy Standard (Italiano)") per maggiori informazioni). Ciò significa che ogni modulo richiesto dalle periferiche come dischi IDE, SCSI, o SATA (oppure USB/FireWire, se si effettua il boot da una di queste periferiche) deve essere caricabile dall'initramfs se non è stato compilato all'interno del kernel; Una volta che sono caricati i moduli necessari, (sia da un programma, sia con uno script, o tramite [udev](/index.php/Udev_(Italiano) "Udev (Italiano)")), il processo di boot continua. Per questa ragione nell'initramfs è necessaria la sola presenza dei moduli assolutamente indispensabili per l'accesso al filesystem di root; non è quindi necessario che contenga tutti i moduli che servono al completo funzionamento della macchina. La maggior parte dei moduli sarà caricata in seguito da udev, durante la fase di init.
 
 ## Processo init
 
-Alla fase finale della _early userspace_, la vera root è stata montata, e si sostituisce al file system di root iniziale. `/sbin/init` è eseguito, sostituendo il processo `/init`. Arch usa [systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)") come processo init.
+Alla fase finale della *early userspace*, la vera root è stata montata, e si sostituisce al file system di root iniziale. `/sbin/init` è eseguito, sostituendo il processo `/init`. Arch usa [systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)") come processo init.
 
 ## Altre risorse
 

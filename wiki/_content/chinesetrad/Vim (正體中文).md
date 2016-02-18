@@ -51,7 +51,6 @@ Vim 注重鍵盤的使用，並提供許多有用功能，例如語法標亮和�
 *   [vim](https://www.archlinux.org/packages/?name=vim) 軟體包的目的在於輕量化，因此它不支援 Python, Lua 和 Ruby 直譯，也不支援 X 伺服器 (代表它不支援來自 X 剪貼簿的複製與貼上)。如果您需要這些選項，請改安裝 [gvim](https://www.archlinux.org/packages/?name=gvim) 軟體包 (它同時包含 `vim` 執行檔)。`herecura-stable` 非官方軟體庫也提供一些不同的 Vim / gVim 變形：
 
  `$ pacman -Slq herecura-stable | grep vim` 
-
 ```
 vim-cli
 vim-gvim-gtk
@@ -181,7 +180,7 @@ The Vim global configuration in Arch Linux is very basic and differs from many o
 
 ### 循環搜尋
 
-With this option the _search next_ behaviour allows to jump to the beginning of the file, when the end of file is reached. Similarly, _search previous_ jumps to the end of the file when the start is reached.
+With this option the *search next* behaviour allows to jump to the beginning of the file, when the end of file is reached. Similarly, *search previous* jumps to the end of the file when the start is reached.
 
 ```
 set wrapscan
@@ -270,7 +269,7 @@ wget -P ~/.vim/plugin [http://cscope.sourceforge.net/cscope_maps.vim](http://csc
 Create a file which contains the files you wish cscope to index(Cscope can handle many languages but this example finds .c, .cpp, and .h files):
 
 ```
-cd _/path/to/projectfolder/_
+cd */path/to/projectfolder/*
 find . -type f -print | grep -E '\.(c(pp)?|h)$' > cscope.files
 
 ```
@@ -420,7 +419,7 @@ Specific user tricks to accomplish tasks.
 To only substitute between certain lines:
 
 ```
-:_n_,_n_s/one/two/g
+:*n*,*n*s/one/two/g
 
 ```
 

@@ -67,7 +67,6 @@ If your NUC has become bricked, it might be possible to restore it by momentaril
 The [PulseAudio#Switch_on_connect](/index.php/PulseAudio#Switch_on_connect "PulseAudio") module is buggy and in some cases might cause pulseaudio to stop playing audio when disconnecting the plug, until pulse is restarted. In this case, comment out the module:
 
  `/etc/pulse/default.pa` 
-
 ```
 #load-module module-switch-on-port-available
 

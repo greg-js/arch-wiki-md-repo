@@ -1,4 +1,4 @@
-[Nautilus](http://live.gnome.org/Nautilus) es el gestor de archivos predeterminado para [GNOME](https://live.gnome.org/). [Desde el sitio web de Gnome](http://library.gnome.org/users/user-guide/stable/gosnautilus-22.html.en): _El gestor de archivos Nautilus proporciona un modo sencillo e integrado para administrar sus archivos y aplicaciones. Se puede utilizar el gestor de archivos para hacer lo siguiente:_
+[Nautilus](http://live.gnome.org/Nautilus) es el gestor de archivos predeterminado para [GNOME](https://live.gnome.org/). [Desde el sitio web de Gnome](http://library.gnome.org/users/user-guide/stable/gosnautilus-22.html.en): *El gestor de archivos Nautilus proporciona un modo sencillo e integrado para administrar sus archivos y aplicaciones. Se puede utilizar el gestor de archivos para hacer lo siguiente:*
 
 *   Crear carpetas y documentos
 *   Mostrar archivos y carpetas
@@ -35,7 +35,7 @@ Nautilus forma parte del grupo [gnome](https://www.archlinux.org/groups/x86_64/g
 
 ## Configuración
 
-Nautilus es fácil de configurar gráficamente, pero no todas las configuraciones posibles se pueden hacer a través del menú de preferencias de nautilus. Hay más opciones disponibles con _dconf-editor_ en `org.gnome.nautilus`.
+Nautilus es fácil de configurar gráficamente, pero no todas las configuraciones posibles se pueden hacer a través del menú de preferencias de nautilus. Hay más opciones disponibles con *dconf-editor* en `org.gnome.nautilus`.
 
 ### Administración del escritorio
 
@@ -58,7 +58,7 @@ Las carpetas que se muestran están especificadas en `~/.config/user-dirs.dirs` 
 
 ### Mostrar siempre la ubicación mediante entradas de texto
 
-La barra de herramientas estándar de Nautilus muestra una interfaz de barra de botones para la navegación por las rutas de los archivos. Para entrar en ubicaciones de ruta utilizando el _teclado_, debe exponer la ubicación de la ruta en el campo de navegación con entrada de texto. Ésto se logra pulsando `Ctrl+l`
+La barra de herramientas estándar de Nautilus muestra una interfaz de barra de botones para la navegación por las rutas de los archivos. Para entrar en ubicaciones de ruta utilizando el *teclado*, debe exponer la ubicación de la ruta en el campo de navegación con entrada de texto. Ésto se logra pulsando `Ctrl+l`
 
 Para hacer que esté siempre presente la ubicación de la ruta en el campo de navegación como entrada de texto, utilice GSettings como sigue:
 
@@ -99,7 +99,7 @@ Algunos programas pueden añadir funcionalidad extra a Nautilus. Aquí hay algun
 
 ### Crear un documento vacío con Nautilus 3.6
 
-Gnome 3.6 trae nuevos cambios para Nautilus. Algunas funciones se han abandonado en favor de un mantenimiento más fácil de Nautilus. La opción de crear un documento vacío se ha eliminado de forma predeterminada del menú de Nautilus. Hay que crear una carpeta `~/Templates/` en el directorio _home_, colocar un archivo vacío `touch ~/Templates/new` en el interior de dicho directorio con un Terminal o usando cualquier otro administrador de archivos. Reinicie nautilus para recuperar la función de crear un documento vacío desde el menú de Nautilus.
+Gnome 3.6 trae nuevos cambios para Nautilus. Algunas funciones se han abandonado en favor de un mantenimiento más fácil de Nautilus. La opción de crear un documento vacío se ha eliminado de forma predeterminada del menú de Nautilus. Hay que crear una carpeta `~/Templates/` en el directorio *home*, colocar un archivo vacío `touch ~/Templates/new` en el interior de dicho directorio con un Terminal o usando cualquier otro administrador de archivos. Reinicie nautilus para recuperar la función de crear un documento vacío desde el menú de Nautilus.
 
 ### Utilizar la tecla suprimir en Nautilis 3.6 para mover archivos a la papelera
 

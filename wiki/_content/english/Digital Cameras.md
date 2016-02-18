@@ -42,7 +42,6 @@ These rules will use the group for newly added camera devices.
 If the camera is not present in any [udev](/index.php/Udev "Udev") rule, can check vendor and product id and add it. To check it just run:
 
  `# lsusb` 
-
 ```
  ...
  Bus 001 Device 005: ID 04a9:318e Canon, Inc.

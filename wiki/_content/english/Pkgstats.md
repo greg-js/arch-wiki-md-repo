@@ -6,11 +6,11 @@ pkgstats sends a list of all installed packages, [kernel modules](https://www.ar
 
 ## Usage
 
-_pkgstats_ is set up to automatically run every week using [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). Once installed, it will be activated after the next reboot.
+*pkgstats* is set up to automatically run every week using [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). Once installed, it will be activated after the next reboot.
 
 If you do not want to wait for a reboot cycle, you can manually [start](/index.php/Start "Start") `pkgstats.timer`.
 
-_pkgstats_ can also be run manually: see `pkgstats -h` for usage information.
+*pkgstats* can also be run manually: see `pkgstats -h` for usage information.
 
 ## Results and reference
 

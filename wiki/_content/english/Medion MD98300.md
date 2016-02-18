@@ -97,7 +97,7 @@ Advanced Linux Sound Architecture Driver Version 1.0.17.
 
 ```
 
-(or a higher version) then continue reading at _Edit modprobe.conf_
+(or a higher version) then continue reading at *Edit modprobe.conf*
 
 ## Compile the newest Alsa-driver
 
@@ -301,7 +301,7 @@ EndSection
 
 ## Cpufrequtils
 
-[Cpufrequtils](/index.php/Cpufrequtils "Cpufrequtils") is a CPU Frequency Scaling, a technology used primarily by notebooks which enables the OS to scale the CPU speed up or down, depending on the current system load and/or power scheme. Note that the module you need to load at the _CPU Frequency Driver_ part is **powernow-k8**.
+[Cpufrequtils](/index.php/Cpufrequtils "Cpufrequtils") is a CPU Frequency Scaling, a technology used primarily by notebooks which enables the OS to scale the CPU speed up or down, depending on the current system load and/or power scheme. Note that the module you need to load at the *CPU Frequency Driver* part is **powernow-k8**.
 
 ## Disk related tweaks
 
@@ -333,7 +333,7 @@ ionice -c 3 cp /path/to/huge/file /path/of/the/copy
 
 ```
 
-It starts _cp_ with the scheduling class _idle_. That means that you shouldn't get a hanging system while it is copying (although it will need longer, but thats the deal).
+It starts *cp* with the scheduling class *idle*. That means that you shouldn't get a hanging system while it is copying (although it will need longer, but thats the deal).
 
 More information in the man page[[3]](http://linux.die.net/man/1/ionice):
 

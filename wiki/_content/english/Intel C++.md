@@ -39,7 +39,7 @@ There is currently no official guide to using icc with makepkg. This section is 
 
 ### Method 1 (12/08/2012)
 
-Modify `/etc/makepkg.conf` inserting the following code _under_ the existing line defining **CXXFLAGS** to enable makepkg to use icc. No special switches are needed when calling makepkg to build.
+Modify `/etc/makepkg.conf` inserting the following code *under* the existing line defining **CXXFLAGS** to enable makepkg to use icc. No special switches are needed when calling makepkg to build.
 
 ```
 _CC=icc
@@ -57,15 +57,15 @@ fi
 **Note:**
 
 *   To toggle between the native gcc and icc, simple comment or uncomment the newly created **_CC** variable.
-*   In some case the compilation method described above fails and the compilation will be performed with _gcc_, so you should test if yours application has been effectively compiled with _icc_.
+*   In some case the compilation method described above fails and the compilation will be performed with *gcc*, so you should test if yours application has been effectively compiled with *icc*.
 
 To test if your package has been really compiled with icc:
 
 *   Type the command **ldd [your_app] | grep intel** If the application is linked to a shared object located in the directory **/opt/intel/lib/** it is mind that has been complied with icc.
 
-*   Another method is to observe the build output and watch if it is using the _icc_ or _icpc_ command.
+*   Another method is to observe the build output and watch if it is using the *icc* or *icpc* command.
 
-*   The last method is to watch if the warnings are in _icc_ style or not.
+*   The last method is to watch if the warnings are in *icc* style or not.
 
 ## icc CFLAGS
 
@@ -81,7 +81,6 @@ icc --help
 Use to generate specialized code to run exclusively on processors supporting it. If unsure which option to use, simply inspect the **flags** section of `/proc/cpuinfo`. In the example below, **SSE4.1** would be the correct selection:
 
  `$ grep -m 1 flags /proc/cpuinfo` 
-
 ```
 flags: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush 
 dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx lm constant_tsc arch_perfmon pebs 
@@ -149,7 +148,7 @@ In the following table we report a list of packages from the officials repositor
 | **optipng** | OK | Works with the [Method 1](#Method_1). Comment out LD=xild in makepkg.conf |
 | **python-numpy** | OK | We must edit the PKGBUILD. [python-numpy-mkl](https://aur.archlinux.org/packages/python-numpy-mkl/) |
 | **python-scipy** | OK | We must edit the PKGBUILD. [python-scipy-mkl](https://aur.archlinux.org/packages/python-scipy-mkl/) |
-| **Qt** | OK | We must add the option _-platform linux-icc-64 (or 32)_ in the configure command |
+| **Qt** | OK | We must add the option *-platform linux-icc-64 (or 32)* in the configure command |
 | **systemd** | Fail | undefined reference to `server_dispatch_message' |
 
 **Legend:**

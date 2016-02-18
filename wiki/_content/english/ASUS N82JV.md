@@ -36,25 +36,25 @@
 
 # Hardware
 
-_CPU_ Intel Core i5 430M
+*CPU* Intel Core i5 430M
 
-_Mainboard_ | Intel HM55
+*Mainboard* | Intel HM55
 
-_RAM_ 4096 MB, 2x 2048 MByte DDR3-10700 (1066 MHz)
+*RAM* 4096 MB, 2x 2048 MByte DDR3-10700 (1066 MHz)
 
-_Display_ 14" HD LED (1366x768)
+*Display* 14" HD LED (1366x768)
 
-_Graphics adapter_ NVIDIA GeForce GT 335M - 1024 MB, Core: 450 MHz, Memory: 790 MHz, Shader rate: 1080 MHz
+*Graphics adapter* NVIDIA GeForce GT 335M - 1024 MB, Core: 450 MHz, Memory: 790 MHz, Shader rate: 1080 MHz
 
-_Soundcard_ Realtek ALC269 @ Intel Ibex Peak PCH
+*Soundcard* Realtek ALC269 @ Intel Ibex Peak PCH
 
-_Network_ Atheros AR8131 PCI-E Gigabit Ethernet Controller (1000MBit), Atheros AR9285 Wireless Network
+*Network* Atheros AR8131 PCI-E Gigabit Ethernet Controller (1000MBit), Atheros AR9285 Wireless Network
 
-_Hard disk_ 320GB 5400rpm SATA
+*Hard disk* 320GB 5400rpm SATA
 
-_Webcam_ Chicony Electronics
+*Webcam* Chicony Electronics
 
-_Touchpad_ Elantech
+*Touchpad* Elantech
 
 # Configuration
 
@@ -82,7 +82,7 @@ The official proprietary Nvidia drivers for linux do not support Nvidia Optimus 
 
 #### Switching / Using Nvidia card
 
-While it still isn't possible to _switch_ in the manner that Optimus is supposed to switch, in order to make use of the dedicated graphic card you need to use [Bumblebee](/index.php/Bumblebee "Bumblebee"). In short, **it is possible to run a specific program with Nvidia**, while the rest of the system is relying on the Intel card.
+While it still isn't possible to *switch* in the manner that Optimus is supposed to switch, in order to make use of the dedicated graphic card you need to use [Bumblebee](/index.php/Bumblebee "Bumblebee"). In short, **it is possible to run a specific program with Nvidia**, while the rest of the system is relying on the Intel card.
 
 **Note:** Bumblebee's development is rapidly progressing, so be sure to check it's website[[2]](https://github.com/MrMEEE/bumblebee) regularly; it's also worth checking Linux Hybrid Graphics blog[[3]](http://linux-hybrid-graphics.blogspot.com/) and the mailing list[[4]](https://lists.launchpad.net/hybrid-graphics-linux/).
 
@@ -96,7 +96,7 @@ There's more than one method to do this. Namely with **vgaswitcheroo** (not work
 
 In order to switch following hack is available[[6]](http://linux-hybrid-graphics.blogspot.com/2010/07/using-acpicall-module-to-switch-onoff.html)[[7]](http://github.com/mkottman/acpi_call).
 
-_What it is_: A kernel module that enables you to call parameterless ACPI methods by writing the method name to /proc/acpi/call, e.g. to turn off discrete graphics card in a dual graphics environment (like NVIDIA Optimus).
+*What it is*: A kernel module that enables you to call parameterless ACPI methods by writing the method name to /proc/acpi/call, e.g. to turn off discrete graphics card in a dual graphics environment (like NVIDIA Optimus).
 
 Instalation:
 
@@ -222,7 +222,6 @@ EndSection
 Here's a fully working 10-synaptics.conf with Edge Scrolling, Two Finger Scrolling and with middle mouse click (LTCornerButton and RTCornerButton) on the top corners activated. Circular Scrolling works, but it's deactivated.
 
  `/etc/X11/xorg.conf.d/10-synaptics.conf` 
-
 ```
 Section "InputClass"
         Identifier      "touchpad catchall"

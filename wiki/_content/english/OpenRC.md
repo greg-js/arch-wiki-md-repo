@@ -50,7 +50,7 @@ See [Init#Configuration](/index.php/Init#Configuration "Init").
 
 ### Services
 
-OpenRC services are enabled by issuing `rc-update add _service_name_ _runlevel_` as root. It is recommended to at least enable the following services:
+OpenRC services are enabled by issuing `rc-update add *service_name* *runlevel*` as root. It is recommended to at least enable the following services:
 
 | Service name | [Runlevel](https://wiki.gentoo.org/wiki/OpenRC#Named_runlevels) | Description |
 | udev | sysinit | Device hot-plugging |
@@ -75,7 +75,7 @@ ifup_eth0="ip link set \$int mtu 1500"
 
 The network service is added to the boot runlevel by default, so no further action is required. See [Network configuration](/index.php/Network_configuration "Network configuration") for general networking information.
 
-**Note:** You may also use [NetworkManager](/index.php/NetworkManager "NetworkManager"), [dhcpcd](/index.php/Dhcpcd "Dhcpcd") or [netcfg](https://aur.archlinux.org/packages/netcfg/) by enabling the respective services. _netcfg_ mimics the [netctl](/index.php/Netctl "Netctl") behaviour (see [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1489283#p1489283) if you want to enable profiles connection on booting - requires `wpa_actiond`). You could consult the [official documentation](https://www.archlinux.org/netcfg/features.html) or [old wiki documentation](https://wiki.archlinux.org/index.php?title=Netcfg&oldid=243178) (be aware of consulting version later than [2012-05-13](https://www.archlinux.org/news/netcfg-282-release/))
+**Note:** You may also use [NetworkManager](/index.php/NetworkManager "NetworkManager"), [dhcpcd](/index.php/Dhcpcd "Dhcpcd") or [netcfg](https://aur.archlinux.org/packages/netcfg/) by enabling the respective services. *netcfg* mimics the [netctl](/index.php/Netctl "Netctl") behaviour (see [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1489283#p1489283) if you want to enable profiles connection on booting - requires `wpa_actiond`). You could consult the [official documentation](https://www.archlinux.org/netcfg/features.html) or [old wiki documentation](https://wiki.archlinux.org/index.php?title=Netcfg&oldid=243178) (be aware of consulting version later than [2012-05-13](https://www.archlinux.org/news/netcfg-282-release/))
 
 ### Boot logs
 
@@ -95,7 +95,6 @@ hostname="myhostname"
 OpenRC uses `/etc/openrc/conf.d/modules` instead of `/etc/modules-load.d`. For example:
 
  `/etc/openrc/conf.d/modules` 
-
 ```
 # You should consult your kernel documentation and configuration
 # for a list of modules and their options.
@@ -173,7 +172,7 @@ To prevent a missing file error, create the file:
 
 ## Using OpenRC with a desktop environment
 
-If using _OpenRC_ with a [desktop environment](/index.php/Desktop_environment "Desktop environment"), ConsoleKit may help. Install the [service](https://gist.github.com/ad73f9087f39d7cadd8e) to `/etc/openrc/init.d`, and enable it:
+If using *OpenRC* with a [desktop environment](/index.php/Desktop_environment "Desktop environment"), ConsoleKit may help. Install the [service](https://gist.github.com/ad73f9087f39d7cadd8e) to `/etc/openrc/init.d`, and enable it:
 
 ```
 # rc-update add consolekit default

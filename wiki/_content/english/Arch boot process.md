@@ -56,11 +56,11 @@ See the main page: [Unified Extensible Firmware Interface#Boot Process under UEF
 
 ## Kernel
 
-The kernel is the core of an operating system. It functions on a low level (_kernelspace_) interacting between the hardware of the machine and the programs which use the hardware to run. To make efficient use of the CPU, the kernel uses a scheduler to arbitrate which tasks take priority at any given moment, creating the illusion of many tasks being executed simultaneously.
+The kernel is the core of an operating system. It functions on a low level (*kernelspace*) interacting between the hardware of the machine and the programs which use the hardware to run. To make efficient use of the CPU, the kernel uses a scheduler to arbitrate which tasks take priority at any given moment, creating the illusion of many tasks being executed simultaneously.
 
 ## initramfs
 
-After the kernel is loaded, it unpacks the [initramfs](/index.php/Initramfs "Initramfs") (initial RAM filesystem), which becomes the initial root filesystem. The kernel then executes `/init` as the first process. The _early userspace_ starts.
+After the kernel is loaded, it unpacks the [initramfs](/index.php/Initramfs "Initramfs") (initial RAM filesystem), which becomes the initial root filesystem. The kernel then executes `/init` as the first process. The *early userspace* starts.
 
 The purpose of the initramfs is to bootstrap the system to the point where it can access the root filesystem (see [FHS](/index.php/FHS "FHS") for details). This means that any modules that are required for devices like IDE, SCSI, SATA, USB/FW (if booting from an external drive) must be loadable from the initramfs if not built into the kernel; once the proper modules are loaded (either explicitly via a program or script, or implicitly via [udev](/index.php/Udev "Udev")), the boot process continues. For this reason, the initramfs only needs to contain the modules necessary to access the root filesystem; it does not need to contain every module one would ever want to use. The majority of modules will be loaded later on by udev, during the init process.
 
@@ -78,11 +78,11 @@ If a [display manager](/index.php/Display_manager "Display manager") is installe
 
 ## Login
 
-The _login_ program begins a session for the user by setting environment variables and starting the user's shell, based on `/etc/passwd`.
+The *login* program begins a session for the user by setting environment variables and starting the user's shell, based on `/etc/passwd`.
 
 ### Message of the day
 
-The _login_ program displays the contents of [/etc/motd](https://en.wikipedia.org/wiki/motd_(Unix) "wikipedia:motd (Unix)") (_m_essage _o_f _t_he _d_ay) after a successful login, just before it executes the login shell.
+The *login* program displays the contents of [/etc/motd](https://en.wikipedia.org/wiki/motd_(Unix) (*m*essage *o*f *t*he *d*ay) after a successful login, just before it executes the login shell.
 
 It is a good place to display your Terms of Service to remind users of your local policies or anything you wish to tell them.
 

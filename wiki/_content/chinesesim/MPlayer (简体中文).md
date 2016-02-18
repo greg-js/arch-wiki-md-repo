@@ -86,7 +86,6 @@ MPlayer 可以通过[官方软件仓库](/index.php/Official_repositories "Offic
 一个配置文件范例：
 
  `/etc/mplayer/example.conf` 
-
 ```
 # 应用于所有文件类型的默认设置
 [default]
@@ -152,7 +151,7 @@ stop-xscreensaver="yes" # stop gnome-screensaver
 
 ### 启用 VDPAU （适用于新款nVidia显卡）
 
-[此表](https://en.wikipedia.org/wiki/PureVideo#Table_of_PureVideo_.28HD.29_GPUs "wikipedia:PureVideo")列举了支持VDPAU的显卡。启用VDPAU前，首先需要安装_nvidia_驱动。启用VDPAU方法有二：
+[此表](https://en.wikipedia.org/wiki/PureVideo#Table_of_PureVideo_.28HD.29_GPUs "wikipedia:PureVideo")列举了支持VDPAU的显卡。启用VDPAU前，首先需要安装*nvidia*驱动。启用VDPAU方法有二：
 
 #### 1\. 使用配置文件
 

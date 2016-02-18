@@ -19,7 +19,7 @@ Gli utenti e i gruppi sono usati nei sistemi GNU/Linux per [il controllo degli a
 
 ## Panoramica
 
-Un _utente_ è chiunque utilizzi un computer. In questo caso, ci si riferisce ai nomi che rappresentano questi utenti. Questi utenti possono essere Mary o Bill e possono utilizzare il nome di Dragonlady o Pirate al posto del loro nome reale. L'importante è che sul sistema sia presente un nome per ogni account creato, e questo nome sarà quello necessario per accedevi. Anche alcuni servizi vengono eseguiti usando account utente limitati o privilegiati.
+Un *utente* è chiunque utilizzi un computer. In questo caso, ci si riferisce ai nomi che rappresentano questi utenti. Questi utenti possono essere Mary o Bill e possono utilizzare il nome di Dragonlady o Pirate al posto del loro nome reale. L'importante è che sul sistema sia presente un nome per ogni account creato, e questo nome sarà quello necessario per accedevi. Anche alcuni servizi vengono eseguiti usando account utente limitati o privilegiati.
 
 La gestione degli utenti è stata creata per motivi di sicurezza per limitare gli accessi in determinati modi specifici. Il superutente (root) ha accesso completo al sistema operativo e la sua configurazione, è destinato solo per uso amministrativo. Gli utenti non privilegiati possono usare i programmi [su](/index.php/Su "Su") e [sudo](/index.php/Sudo_(Italiano) "Sudo (Italiano)") per un utilizzo controllato dei privilegi.
 
@@ -27,24 +27,23 @@ Può capitare che una persona abbia più di un account, a patto che utilizzi nom
 
 Infine, gli utenti possono essere raggruppati in un "gruppo", e gli utenti possono scegliere di far parte di un gruppo per usufruire dei privilegi che esso garantisce.
 
-**Nota:** I principianti dovranno utilizzare questi strumenti con cautela ed evitare di modificare altri account _esistenti_, tranne che il proprio.
+**Nota:** I principianti dovranno utilizzare questi strumenti con cautela ed evitare di modificare altri account *esistenti*, tranne che il proprio.
 
 ## Permessi di accesso e proprietà
 
 Da [In UNIX ogni cosa è un File:](http://ph7spot.com/musings/in-unix-everything-is-a-file):
 
-	_Il sistema UNIX è il risultato di alcune idee e concetti unificatori che hanno modellato il suo design, la sua interfaccia utente, la sua cultura ed evoluzione. Una tra le più importanti è probabilmente il mantra: "ogni cosa è un file", largamente considerata come uno dei punti basilari di UNIX._
+	*Il sistema UNIX è il risultato di alcune idee e concetti unificatori che hanno modellato il suo design, la sua interfaccia utente, la sua cultura ed evoluzione. Una tra le più importanti è probabilmente il mantra: "ogni cosa è un file", largamente considerata come uno dei punti basilari di UNIX.*
 
-	_Questo concetto chiave di design consiste nel fornire un paradigma unificato per l'accesso ad un ampio spettro di risorse input/output: documenti, cartelle, dischi rigidi, lettori CD, modem, tastiere, stampanti, monitor, terminali e perfino alcune comunicazioni tra processi o di rete. Il trucco è fornire un'astrazione comune per tutte queste risorse, ognuna delle quali fu chiamata "file" dai padri di UNIX. Dato che ogni "file" è accessibile per mezzo delle stesse API, si può usare lo stesso set di comandi di base per accedere in lettura/scrittura ad un disco, una tastiera, un documento o un dispositivo di rete._
+	*Questo concetto chiave di design consiste nel fornire un paradigma unificato per l'accesso ad un ampio spettro di risorse input/output: documenti, cartelle, dischi rigidi, lettori CD, modem, tastiere, stampanti, monitor, terminali e perfino alcune comunicazioni tra processi o di rete. Il trucco è fornire un'astrazione comune per tutte queste risorse, ognuna delle quali fu chiamata "file" dai padri di UNIX. Dato che ogni "file" è accessibile per mezzo delle stesse API, si può usare lo stesso set di comandi di base per accedere in lettura/scrittura ad un disco, una tastiera, un documento o un dispositivo di rete.*
 
 Da [Estensione dell'Astrazione File di UNIX per il Networking generico](http://www.intel-research.net/Publications/Pittsburgh/101220041324_277.pdf):
 
-	_Un'astrazione fondamentale, efficacissima e coerente, fornita in UNIX e sistemi operativi compatibili, è l'astrazione file. Molti servizi e interfacce per i dispositivi nei sistemi operativi sono implementati per fornire una metafora di file o file system alle applicazioni. Questo permette nuovi utilizzi per le applicazioni esistenti, ed inoltre ne aumenta fortemente le capacità — semplici strumenti con usi specifici possono, con l'astrazione file di UNIX, essere usati in nuove maniere. Un modesto programma come cat, disegnato per leggere uno o più file e mostrare il loro contenuto nello standard output, può essere usato per leggere l'input/output di dispositivi per mezzo di speciali file dispositivo, di solito posti dentro la cartelle `/dev`. Su molti sistemi, la registrazione e la riproduzione audio può essere semplicemente eseguita con i comandi, rispettivamente, "`cat /dev/audio > myfile`" e "`cat myfile > /dev/audio`"._
+	*Un'astrazione fondamentale, efficacissima e coerente, fornita in UNIX e sistemi operativi compatibili, è l'astrazione file. Molti servizi e interfacce per i dispositivi nei sistemi operativi sono implementati per fornire una metafora di file o file system alle applicazioni. Questo permette nuovi utilizzi per le applicazioni esistenti, ed inoltre ne aumenta fortemente le capacità — semplici strumenti con usi specifici possono, con l'astrazione file di UNIX, essere usati in nuove maniere. Un modesto programma come cat, disegnato per leggere uno o più file e mostrare il loro contenuto nello standard output, può essere usato per leggere l'input/output di dispositivi per mezzo di speciali file dispositivo, di solito posti dentro la cartelle `/dev`. Su molti sistemi, la registrazione e la riproduzione audio può essere semplicemente eseguita con i comandi, rispettivamente, "`cat /dev/audio > myfile`" e "`cat myfile > /dev/audio`".*
 
 Ogni file in un sistema GNU/Linux appartiene a un utente e a un gruppo. In aggiunta, ci sono tre tipi di permessi di accesso: il permesso di lettura, di scrittura, e di esecuzione. Differenti tipi di accesso possono essere applicati all'utente proprietario, al gruppo proprietario oppure agli altri(coloro che non ne hanno il possesso). Si possono visualizzare i proprietari ed i permessi dei file usando l'opzione long lisintg del comando `ls`:
 
  `$ ls -l /boot/` 
-
 ```
 total 13740
 drwxr-xr-x 2 root root    4096 Jan 12 00:33 grub
@@ -54,16 +53,15 @@ drwxr-xr-x 2 root root    4096 Jan 12 00:33 grub
 -rw-r--r-- 1 root root 2209920 Jan  8 08:19 vmlinuz-linux
 ```
 
-Nella prima colonna sono visualizzati i permessi dei file(ad esempio, il file `initramfs-linux.img` ha i permessi `-rw-r--r--`). Nella terza e la quarta sono visualizzati rispettivamente l'utente ed il gruppo proprietari. Nello stesso esempio tutti i file sono posseduti dall'utente _root_ e dal gruppo _root_.
+Nella prima colonna sono visualizzati i permessi dei file(ad esempio, il file `initramfs-linux.img` ha i permessi `-rw-r--r--`). Nella terza e la quarta sono visualizzati rispettivamente l'utente ed il gruppo proprietari. Nello stesso esempio tutti i file sono posseduti dall'utente *root* e dal gruppo *root*.
 
  `$ ls -l /media/` 
-
 ```
 total 16
 drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared</nowiki>
 ```
 
-In questo esempio, la cartella `sf_Shared` è posseduta dall'utente _root_ e dal gruppo _vboxsf_. Si possono ottenere maggiori informazioni riguardo ai proprietari ed ai permessi dei file usando il comando `stat`:
+In questo esempio, la cartella `sf_Shared` è posseduta dall'utente *root* e dal gruppo *vboxsf*. Si possono ottenere maggiori informazioni riguardo ai proprietari ed ai permessi dei file usando il comando `stat`:
 
 L'utente proprietario:
 
@@ -118,7 +116,7 @@ Per aggiungere un nuovo utente, usare il comando `useradd`:
 
 ```
 
-*   `-m` crea la carella home nel percorso `/home/_nomeutente_`; all'interno della cartella home, un utente non-root può salvare file, cancellarli ed installare programmi.
+*   `-m` crea la carella home nel percorso `/home/*nomeutente*`; all'interno della cartella home, un utente non-root può salvare file, cancellarli ed installare programmi.
 *   `-g` indica il nome o il numero del gruppo principale di appartenenza dell'utente; il gruppo deve esistere; se non viene specificato, il comportamento di `useradd` dipenderà dalla variabile di ambiente `USERGROUPS_ENAB` definita in `/etc/login.defs`. Il comportamento predefinito (`USERGROUPS_ENAB yes`) è quello di creare un gruppo con lo stesso nome del nome utente, con `GID` pari a `UID`.
 *   `-G` precede una lista di gruppi aggiuntivi a cui l'utente appartiene. Ogni gruppo deve essere separato dal successivo da una virgola, senza usare mai gli spazi. Di default non è previsto nessun gruppo aggiuntivo.
 *   `-s` definisce il percorso ed il nome del file della shell di login dell'utente; dopo che il processo di avvio è completo, la shell di login di default è quella definita qui. Assicurarsi che la shell indicata sia installata se si sceglie una shell diversa da [bash](/index.php/Bash_(Italiano) "Bash (Italiano)").
@@ -127,7 +125,7 @@ Per aggiungere un nuovo utente, usare il comando `useradd`:
 
 ### Esempio aggiunta di un utente
 
-In un tipico sistema desktop per aggiungere un nuovo utente denominato _archie_ specificando [bash](/index.php/Bash_(Italiano) "Bash (Italiano)") come shell di login e aggiungerlo al gruppo `wheel` (si veda [#Gruppi per gli utenti](#Gruppi_per_gli_utenti) per maggiori informazioni) utilizare:
+In un tipico sistema desktop per aggiungere un nuovo utente denominato *archie* specificando [bash](/index.php/Bash_(Italiano) "Bash (Italiano)") come shell di login e aggiungerlo al gruppo `wheel` (si veda [#Gruppi per gli utenti](#Gruppi_per_gli_utenti) per maggiori informazioni) utilizare:
 
 ```
 # useradd -m -G wheel -s /bin/bash archie
@@ -150,23 +148,23 @@ Tuttavia, questo metodo **non** è consigliato per sistemi multi-utente. In gene
 Per aggiungere un utente ad altri gruppi usare:
 
 ```
-# usermod -aG _gruppi_aggiuntivi_ _nome_utente_
+# usermod -aG *gruppi_aggiuntivi* *nome_utente*
 
 ```
 
 In alternativa , può essere utilizzato gpasswd . Anche se il nome utente può essere aggiunto (o rimosso) solo da un gruppo alla volta .
 
 ```
-# gpasswd --add _nome_utente_ _gruppo_
+# gpasswd --add *nome_utente* *gruppo*
 
 ```
 
-**Attenzione:** Se l'opzione `-a` viene omessa al comando _usermod_ descritto sopra, l'utente viene rimosso da tutti i gruppi non elencati in `_gruppi_aggiuntivi_` (cioè l' utente sarà membro solo di quei gruppi elencati in `_gruppi_aggiuntivi_`).
+**Attenzione:** Se l'opzione `-a` viene omessa al comando *usermod* descritto sopra, l'utente viene rimosso da tutti i gruppi non elencati in `*gruppi_aggiuntivi*` (cioè l' utente sarà membro solo di quei gruppi elencati in `*gruppi_aggiuntivi*`).
 
 Per inserire le informazioni dell'utente per il campo GECOS (es. il nome completo), digitare:
 
 ```
-# chfn _nomeutente_
+# chfn *nomeutente*
 
 ```
 
@@ -175,21 +173,21 @@ Per inserire le informazioni dell'utente per il campo GECOS (es. il nome complet
 Per creare la password dell'utente, digitare:
 
 ```
-# passwd _nomeutente_
+# passwd *nomeutente*
 
 ```
 
 Per contrassegnare la password di un utente come scaduta, imponendo loro di crearne una nuova la prima volta che effettuano il log-in, digitare:
 
 ```
-# chage -d 0 _username_
+# chage -d 0 *username*
 
 ```
 
-Gli account utente possono essere rimossi tramite il comando _userdel_.
+Gli account utente possono essere rimossi tramite il comando *userdel*.
 
 ```
-# userdel -r _nomeutente_
+# userdel -r *nomeutente*
 
 ```
 
@@ -221,7 +219,7 @@ dove
 *   `cartella_home` contiene il percorso della cartella `$HOME` dell'utente
 *   `shell` indica l'interprete dei comandi utilizzato dall'utente (il default è `/bin/sh`)
 
-**Nota:** Arch Linux usa le password _shadowed_. Il file `passwd` è leggibile da tutti gli utenti, per cui memorizzare le password (sia criptate che altrimenti) in questo file non sarebbe sicuro. Per questo il campo `password` contiene il carattere segnaposto `x`, il quale indica che la password criptata è salvata nel file ad accesso limitato `/etc/shadow`.
+**Nota:** Arch Linux usa le password *shadowed*. Il file `passwd` è leggibile da tutti gli utenti, per cui memorizzare le password (sia criptate che altrimenti) in questo file non sarebbe sicuro. Per questo il campo `password` contiene il carattere segnaposto `x`, il quale indica che la password criptata è salvata nel file ad accesso limitato `/etc/shadow`.
 
 ## Gestione dei gruppi
 
@@ -346,12 +344,12 @@ I seguenti gruppi al momento non sono utilizzati:
 
 #### Gruppi usati prima di Systemd
 
-**Nota:** Questi gruppi erano necessari prima della migrazione di Arch Linux a [Systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)"). Ora questi non sono più necessari inquanto la sessione _logind_ non soffre più di problemi (si veda [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") per controllare). I gruppi possono anche causare alcune mal-funzionalità del sistema. Si veda [migrazione a systemd](/index.php/SysVinit_(Italiano)#Migrare_a_Systemd "SysVinit (Italiano)") per maggiori dettagli.
+**Nota:** Questi gruppi erano necessari prima della migrazione di Arch Linux a [Systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)"). Ora questi non sono più necessari inquanto la sessione *logind* non soffre più di problemi (si veda [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") per controllare). I gruppi possono anche causare alcune mal-funzionalità del sistema. Si veda [migrazione a systemd](/index.php/SysVinit_(Italiano)#Migrare_a_Systemd "SysVinit (Italiano)") per maggiori dettagli.
 
 | Grouppo | File interessati | Scopo |
 | audio | `/dev/audio`, `/dev/snd/*`, `/dev/rtc0` | Accesso diretto all'hardware sonoro , per tutte le sessioni (requisito imposto sia da [ALSA](/index.php/ALSA_(Italiano) "ALSA (Italiano)") che da [OSS](/index.php/OSS_(Italiano) "OSS (Italiano)")). Le sessioni locali hanno già la possibilità di modificare i controlli del mixer audio e l'accesso. |
 | camera | Accesso alle [Fotocamere digitali](/index.php/Digital_Cameras_(Italiano) "Digital Cameras (Italiano)"). |
-| disk | `/dev/sda[1-9]`, `/dev/sdb[1-9]` | Accesso alle periferiche a blocchi che non appartengono ai gruppi _optical_, _floppy_ e _storage_. |
+| disk | `/dev/sda[1-9]`, `/dev/sdb[1-9]` | Accesso alle periferiche a blocchi che non appartengono ai gruppi *optical*, *floppy* e *storage*. |
 | floppy | `/dev/fd[0-9]` | Accesso ai floppy drive. |
 | lp | `/etc/cups`, `/var/log/cups`, `/var/cache/cups`, `/var/spool/cups`, `/dev/parport[0-9]` | Accesso alle stampanti; permette all'utente di gestire le stampe. |
 | network | Pemette di cambiare le impostazioni di rete nel caso si usino programmi come [NetworkManager](/index.php/NetworkManager_(Italiano) "NetworkManager (Italiano)"). |
@@ -360,4 +358,4 @@ I seguenti gruppi al momento non sono utilizzati:
 | scanner | `/var/lock/sane` | Accesso agli scanner. |
 | storage | Accesso ai dischi rimovibili come dischi esterni USB, pennine USB, lettori MP3; consente all'utente di montare le periferiche di archiviazione. |
 | sys | Permette l'amministrazione delle stampanti in [CUPS](/index.php/CUPS_(Italiano) "CUPS (Italiano)"). |
-| video | `/dev/fb/0`, `/dev/misc/agpgart` | Accesso alle periferiche di acquisizione video, DRI/3D accelerazione hardware ([X](/index.php/Xorg_(Italiano) "Xorg (Italiano)") può essere usato anche _senza_ appartenere a questo gruppo). Le sessioni locali hanno già la possibilità di utilizzare l'accelerazione hardware e di acquisizione video. |
+| video | `/dev/fb/0`, `/dev/misc/agpgart` | Accesso alle periferiche di acquisizione video, DRI/3D accelerazione hardware ([X](/index.php/Xorg_(Italiano) "Xorg (Italiano)") può essere usato anche *senza* appartenere a questo gruppo). Le sessioni locali hanno già la possibilità di utilizzare l'accelerazione hardware e di acquisizione video. |

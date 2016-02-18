@@ -67,7 +67,6 @@ Zie de [rt2x00 wiki page](/index.php/Using_the_new_rt2x00_beta_driver "Using the
 **Let op:**Madwifi-ng zit nu in de unstable package-repository. Je kunt dus gewoon de unstable repository gebruik in plaats van de pkgbuild..
 
 **Let op:**Als je Madwifi drivers van voor Januari 23, 2006 gebruik, moet je de interface opgeven die je wilt gebruiken. Recentere versies hebben dit niet nodig, en dus kun je doorgaan naar ifconfig. Deze stap is door de meeste andere drivers niet nodig hebben. Als je van je wifi0 , ath0 wil maken, moet je het volgende commando uitvoeren: `wlanconfig ath0 create wlandev wifi0 wlanmode sta` Natuurlijk gevolgd door de volgende commando's:
-
 ```
 ifconfig ath0 up
 iwconfig ath0 essid <jouw-essid> key <jouw-wep-key>
@@ -151,7 +150,7 @@ Ndiswrapper is geen echte driver, maar je kunt het gebruiken wanneer er geen ech
 
  `pacman -S ndiswrapper ndiswrapper-utils` 
 
-_Let op:_ AchrCK en Beyond kernels hebben de packages ndiswrapper-archck en ndiswrapper-beyond in plaats van de ndiswrapper package!
+*Let op:* AchrCK en Beyond kernels hebben de packages ndiswrapper-archck en ndiswrapper-beyond in plaats van de ndiswrapper package!
 
 Zodra de installatie klaar is, moet je ndiswrapper configureren:
 
@@ -228,7 +227,7 @@ INTERFACES=(lo eth0 wlan0)
 
 ```
 
-*   Beyond this, the networking scripts need some way to determine that wlan0 is a wireless interface (as not all wireless interfaces are wlan*). This is done in the /etc/conf.d/wireless file. The setup here is very simple. For each wireless interface, you simply declare a setting called wlan_<interface name>. If your wireless interface is "wlan0", it uses wlan_wlan0\. If your wireless interface is "eth1", wlan_eth1 is what you need. The value for this setting is simply the parameters to iwconfig (see man iwconfig for details) _including the interface name_.
+*   Beyond this, the networking scripts need some way to determine that wlan0 is a wireless interface (as not all wireless interfaces are wlan*). This is done in the /etc/conf.d/wireless file. The setup here is very simple. For each wireless interface, you simply declare a setting called wlan_<interface name>. If your wireless interface is "wlan0", it uses wlan_wlan0\. If your wireless interface is "eth1", wlan_eth1 is what you need. The value for this setting is simply the parameters to iwconfig (see man iwconfig for details) *including the interface name*.
 *   A simply, non encrypted setup for the above would look like:
 
 ```
@@ -237,7 +236,7 @@ wlan_wlan0="wlan0 essid MyEssid"
 
 ```
 
-*   _phrakture's trick_
+*   *phrakture's trick*
     *   My personal trick isn't much of a trick at all, it just simplifies a lot of the process. While /etc/conf.d/wireless is sourced (included) in the network script, it is not a requirement for having a wireless interface. Therefore, the actual settings for the wireless interface can exist in anything sourced by the network script. For that reason, I put all my settings in /etc/rc.conf:
 
 ```

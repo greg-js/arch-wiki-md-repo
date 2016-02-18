@@ -39,11 +39,11 @@ Se il processore supporta la virtualizzazione, verrà mostrata anche una riga ch
 
  ` grep -E "(vmx|svm)" --color=always /proc/cpuinfo` 
 
-Se non viene restituito alcun output, il proprio processore _non_ supporta la virtualizzazione, e non è quindi possibile utilizzare QEMU-KVM.
+Se non viene restituito alcun output, il proprio processore *non* supporta la virtualizzazione, e non è quindi possibile utilizzare QEMU-KVM.
 
 KVM necessita inoltre di una versione modificata di QEMU per poter lanciare e gestire le macchine virtuali. È possibile sceglierne una tra le seguenti in base alle proprie esigenze:
 
-1.  Il pacchetto [qemu-kvm](https://www.archlinux.org/packages/?name=qemu-kvm) è disponibile nei [Repository Ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") _(scelta raccomandata)_
+1.  Il pacchetto [qemu-kvm](https://www.archlinux.org/packages/?name=qemu-kvm) è disponibile nei [Repository Ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") *(scelta raccomandata)*
 
 1.  Se è necessario anche l'uso di QEMU, si può scegliere di installare una versione di [qemu](https://www.archlinux.org/packages/?name=qemu) superiore alla 0.9.0, che va in conflitto con il pacchetto [qemu-kvm](https://www.archlinux.org/packages/?name=qemu-kvm). Comunque oramai anche il pacchetto [qemu](https://www.archlinux.org/packages/?name=qemu) fornisce un eseguibile (`qemu -enable-kvm`) che si avvantaggia di tale tecnologia.
 
@@ -84,7 +84,7 @@ Se si vuole che questi moduli vengano caricati all'avvio, sfruttare `/etc/rc.con
 
 **Nota:** La memoria di default di KVM è di 128MB, per modificarla utilizzare il parametro `-m` e specificare il quantitativo di memoria desiderata in megabytes (es. `-m 1024`). Tenere presente inoltre che i sistemi Microsoft più recenti (testato con Vista e Seven) richiedono il tipo di immagine `qcow2`, restituendo altrimenti un codice di errore 0x80070057 durante l'installazione.
 
-Consultare **[QEMU](/index.php/QEMU "QEMU")** per tutte le altre informazioni, e la sezione _[Using the Kernel-based Virtual Machine](/index.php/QEMU#Using_the_Kernel-based_Virtual_Machine "QEMU")_.
+Consultare **[QEMU](/index.php/QEMU "QEMU")** per tutte le altre informazioni, e la sezione *[Using the Kernel-based Virtual Machine](/index.php/QEMU#Using_the_Kernel-based_Virtual_Machine "QEMU")*.
 
 ## Sistema guest paravirtualizzato (virtio)
 
@@ -109,7 +109,7 @@ e rigenerare:
 
  `# mkinitcpio -p linux` 
 
-I dischi virtio sono rilevati col prefisso _**v**_ (come ad esempio vda, vdb, etc...). Devono quindi essere effettuate le opportune modifiche all'interno di `/etc/fstab` e `/boot/grub/menu.lst` (se si esegue il boot da uno di questi dischi; ovviamente se si utilizza un sistema che fa riferimento ai dischi tramite [uuids](/index.php/Persistent_block_device_naming_(Italiano) "Persistent block device naming (Italiano)"), non deve essere modificato nulla.)
+I dischi virtio sono rilevati col prefisso ***v*** (come ad esempio vda, vdb, etc...). Devono quindi essere effettuate le opportune modifiche all'interno di `/etc/fstab` e `/boot/grub/menu.lst` (se si esegue il boot da uno di questi dischi; ovviamente se si utilizza un sistema che fa riferimento ai dischi tramite [uuids](/index.php/Persistent_block_device_naming_(Italiano) "Persistent block device naming (Italiano)"), non deve essere modificato nulla.)
 
 Modificare o creare `/boot/grub/device.map`  `(hd0) /dev/vda` 
 
@@ -197,7 +197,6 @@ pages_volatile è funzione di diversi tipi di attività, ma un valore alto potre
 Una maniera semplice per varificare le effettive performance del KSM, consiste nello stampare il contenuto dei file in questa directory
 
  `# for ii in /sys/kernel/mm/ksm/* ; do echo -n "$ii: " ; cat $ii ; done` 
-
 ```
 /sys/kernel/mm/ksm/full_scans: 151
  /sys/kernel/mm/ksm/max_kernel_pages: 246793
@@ -258,7 +257,6 @@ Consultare [la pagina SSH](/index.php/SSH_(Italiano) "SSH (Italiano)") per confi
 Se tutto funziona, e si è in grado di accede in SSH all'host, è sufficiente aggiungere quanto segue
 
  `/etc/rc.local` 
-
 ```
 # Local SSH Server
 echo "Starting SSH tunnel"

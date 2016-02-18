@@ -2,7 +2,7 @@
 
 From [Wikipedia article](https://en.wikipedia.org/wiki/Netbeans "wikipedia:Netbeans"):
 
-	"_The NetBeans IDE is written in Java and can run anywhere a compatible JVM is installed, including Windows, Mac OS, Linux, and Solaris. A JDK is required for Java development functionality, but is not required for development in other programming languages._"
+	"*The NetBeans IDE is written in Java and can run anywhere a compatible JVM is installed, including Windows, Mac OS, Linux, and Solaris. A JDK is required for Java development functionality, but is not required for development in other programming languages.*"
 
 ## Contents
 

@@ -82,7 +82,7 @@ Os Trusted users seguem as [AUR Trusted User Guidelines (Português)](/index.php
 
 ## bbs
 
-_bbs_ é o acrônimo para "bulletin board system", mas no caso do Arch, é somente o fórum para suporte localizado [aqui](https://bbs.archlinux.org).
+*bbs* é o acrônimo para "bulletin board system", mas no caso do Arch, é somente o fórum para suporte localizado [aqui](https://bbs.archlinux.org).
 
 ## community/[community]
 

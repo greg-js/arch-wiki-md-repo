@@ -17,7 +17,7 @@ This article describes the Linux kernel realtime patch set, and how to configure
 
 ## What is realtime
 
-[Realtime](https://en.wikipedia.org/wiki/Real-time_computing "wikipedia:Real-time computing") applications have operational deadlines between some triggering event and the application's response to that event. To meet these operational deadlines, programmers use realtime operating systems (RTOS) on which the maximum response time can be calculated or measured reliably for the given application and environment. A typical RTOS uses priorities. The highest priority task wanting the CPU always gets the CPU within a fixed amount of time after the event waking the task has taken place. On such an RTOS the [latency](https://en.wikipedia.org/wiki/Latency_(engineering) "wikipedia:Latency (engineering)") of a task only depends on the tasks running at equal or higher priorities, all other tasks can be ignored. On a normal OS (such as normal Linux) the latencies depend on everything running on the system, which of course makes it much harder to be convinced that the deadlines will be met every time on a reasonably complicated system. This is because [preemption](https://en.wikipedia.org/wiki/Preemption_(computing) "wikipedia:Preemption (computing)") can be switched off for an unknown amount of time. The high priority task wanting to run can thus be delayed for an unknown amount of time by low priority tasks running with preemption switched off.
+[Realtime](https://en.wikipedia.org/wiki/Real-time_computing of a task only depends on the tasks running at equal or higher priorities, all other tasks can be ignored. On a normal OS (such as normal Linux) the latencies depend on everything running on the system, which of course makes it much harder to be convinced that the deadlines will be met every time on a reasonably complicated system. This is because [preemption](https://en.wikipedia.org/wiki/Preemption_(computing) can be switched off for an unknown amount of time. The high priority task wanting to run can thus be delayed for an unknown amount of time by low priority tasks running with preemption switched off.
 
 ## How does the realtime patch work
 
@@ -56,7 +56,6 @@ One of the programs in rt-tests is called cyclictest, which can be used to verif
 Here is the result of a typical test run:
 
  `# cyclictest --smp -p98 -m` 
-
 ```
 # /dev/cpu_dma_latency set to 0us
 policy: fifo: loadavg: 239.09 220.49 134.53 142/1304 23799          
@@ -83,7 +82,6 @@ An idle kernel will tend to show much lower scheduling latencies, it's essential
 hwlatdetect can be used to detect SMIs taking an inordinate time, thus introducing latency by blocking normal kernel execution. It consists of a kernel module (present in both linux-rt and linux-rt-lts), and a python script to launch the process and report the results back to the user. To check if the system uses NMIs run the following command:
 
  `$ grep NMI /proc/interrupts` 
-
 ```
 
 NMI:       3335       3336       3335       3335   Non-maskable interrupts
@@ -92,7 +90,6 @@ NMI:       3335       3336       3335       3335   Non-maskable interrupts
 The hwlatdetect kernel module works by turning everything running on the CPUs off through the stop_machine() call. It then polls the TSC (Time Stamp Counter) looking for gaps in the generated data stream. Any gaps indicates that it was interrupted by a NMI, as they are the only possible mechanism (apart from a broken TSC implementation). To run the program for 120 secs, with a detection threshold of 15 usecs, execute the following:
 
  `# hwlatdetect --duration=120 --threshold=15` 
-
 ```
 hwlatdetect:  test duration 120 seconds
    parameters:

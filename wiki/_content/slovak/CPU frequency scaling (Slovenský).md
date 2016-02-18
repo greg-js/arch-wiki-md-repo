@@ -1,4 +1,4 @@
-[cpufrequtils](https://www.archlinux.org/packages/?q=cpufrequtils) je set utilít navrhnutý pre _CPU frequency scaling_, technológiu využívanú primárne na notebook-och. Táto technológia umožňuje operačnému systému meniť frekvenciu CPU v závislosti na aktuálnom vyťažení systému.
+[cpufrequtils](https://www.archlinux.org/packages/?q=cpufrequtils) je set utilít navrhnutý pre *CPU frequency scaling*, technológiu využívanú primárne na notebook-och. Táto technológia umožňuje operačnému systému meniť frekvenciu CPU v závislosti na aktuálnom vyťažení systému.
 
 V spojení s [pm-utils](/index.php/Pm-utils "Pm-utils") poskytuje kompletný power managment.
 
@@ -34,7 +34,7 @@ Balíček [cpufrequtils](https://www.archlinux.org/packages/?name=cpufrequtils) 
 Konfigurácia zmeny frekvencie CPU pozostáva z 3 častí:
 
 1.  Načítanie správneho ovládača
-2.  Načítanie požadovaných tzv. _governors_
+2.  Načítanie požadovaných tzv. *governors*
 3.  Konfigurácia a načítanie daemona.
 
 ### Ovládač frekvencie CPU
@@ -126,7 +126,7 @@ $ cpufreq-info
 
 ```
 
-Pre zobrazenie dostupných _governors_ použijeme:
+Pre zobrazenie dostupných *governors* použijeme:
 
 ```
 cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors
@@ -142,7 +142,7 @@ watch grep \"cpu MHz\" /proc/cpuinfo
 
 ### Pridelenie práv v Gnome
 
-Gnome má pekný applet umožňujúci zmenu _governor_ počas behu. Pre jeho použitie bez potreby zadávanie hesla pre root jednoducho vytvorte `/var/lib/polkit-1/localauthority/50-local.d/org.gnome.cpufreqselector.pkla`a vložte do neho nasledújúci text:
+Gnome má pekný applet umožňujúci zmenu *governor* počas behu. Pre jeho použitie bez potreby zadávanie hesla pre root jednoducho vytvorte `/var/lib/polkit-1/localauthority/50-local.d/org.gnome.cpufreqselector.pkla`a vložte do neho nasledújúci text:
 
 ```
 [org.gnome.cpufreqselector]
@@ -164,21 +164,21 @@ MODULES=(**acpi-cpufreq**)
 
 ```
 
-A potom v `/etc/laptop-mode/conf.d/cpufreq.conf` definujte _governors_, frekvencie a politiky.
+A potom v `/etc/laptop-mode/conf.d/cpufreq.conf` definujte *governors*, frekvencie a politiky.
 
-Ak používate `laptop-mode-tools` na riadenie `cpufrequtils`, potom nepotrebujete načítavať iné moduly a daemonov alebo nastavovať _governors_ a interakcie s ACPI. Prosím prečítajte si [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools"), aby ste sa dozvedeli ako nainštalova a nakonfigurovať `laptop-mode-tools`.
+Ak používate `laptop-mode-tools` na riadenie `cpufrequtils`, potom nepotrebujete načítavať iné moduly a daemonov alebo nastavovať *governors* a interakcie s ACPI. Prosím prečítajte si [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools"), aby ste sa dozvedeli ako nainštalova a nakonfigurovať `laptop-mode-tools`.
 
 ### Governors
 
-Governors môžu byť myslené ako predkonfigurované schémy pre CPU. Tieto _governors_ musia byť načítavané ako moduly kernelu, aby ich programy ako _kpowersave_ alebo _gnome-power-manager_ mohli využívať.
+Governors môžu byť myslené ako predkonfigurované schémy pre CPU. Tieto *governors* musia byť načítavané ako moduly kernelu, aby ich programy ako *kpowersave* alebo *gnome-power-manager* mohli využívať.
 
-Dostupné _governors_:
+Dostupné *governors*:
 
-	`cpufreq_performance` _(default)_
+	`cpufreq_performance` *(default)*
 
 	CPU beží na maximálnej frekvencii. Režím je zabudovaný do kernelu.
 
-	`cpufreq_ondemand` _(odporúčané)_
+	`cpufreq_ondemand` *(odporúčané)*
 
 	Dynamicky mení frekvencie CPU na základe zaťaženia systému.
 
@@ -225,7 +225,7 @@ Tento príkaz nastaví režim iba pre prvý procesor. Ak máte viacjadrový aleb
 
 Pre viac informácii spustite príkaz `cpufreq-set --help` alebo `man cpufreq-set`.
 
-Pre tých, ktorý chcú GUI na zmenu _governors_ alebo frekvencií môžu použiť [trayfreq](/index.php/Trayfreq "Trayfreq").
+Pre tých, ktorý chcú GUI na zmenu *governors* alebo frekvencií môžu použiť [trayfreq](/index.php/Trayfreq "Trayfreq").
 
 #### Zmena prahu `ondemand` režimu
 
@@ -283,7 +283,7 @@ Používatelia si môžu nastaviť režimy tak, aby sa automaticky prepínali v 
 
 ### Daemon
 
-`cpufrequtils` obsahuje daemona, kotrý dovoľuje užívateľom nastaviť požadované režimy a min/max frekvencie pre všetky jadrá počas boot-u a bez potreby ďaľších nástrojov ako napr. _kpowersave_.
+`cpufrequtils` obsahuje daemona, kotrý dovoľuje užívateľom nastaviť požadované režimy a min/max frekvencie pre všetky jadrá počas boot-u a bez potreby ďaľších nástrojov ako napr. *kpowersave*.
 
 Pred spustením daemona editujte ako root `/etc/conf.d/cpufreq` a nastavte požadované hodnoty, napr:
 
@@ -306,7 +306,7 @@ max_freq="2GHz"
 
 ```
 
-**Note:** Presné min/max hodnoty môžete zistiť pomocou `cpufreq-info` po načítaní ovládaču (napr. `modprobe acpi-cpufreq`). Tieto hodnoty sú _voliteľné_. Môžete ich vynechať vymazaním alebo zakomentovaním riadkov min/max. Zmeny budú potom automatické.
+**Note:** Presné min/max hodnoty môžete zistiť pomocou `cpufreq-info` po načítaní ovládaču (napr. `modprobe acpi-cpufreq`). Tieto hodnoty sú *voliteľné*. Môžete ich vynechať vymazaním alebo zakomentovaním riadkov min/max. Zmeny budú potom automatické.
 
 S požadovanou konfiguráciou následne spustíme daemona ako root pomocu:
 
@@ -326,6 +326,6 @@ DAEMONS=(syslog-ng networkmanager @alsa @crond @cupsd **@cpufreq**)
 
 *   Niektoré aplikácie ako napr. [ntop](/index.php/Ntop "Ntop") neodpovedajú dobre na automatické zmeny frekvencie. V tomto prípade to môže viesť k segmentation fault.
 
-*   Niektoré CPU môžu trpieť nízkym výkonom pri režime `ondemand`. Riešením je vypnutie zmien frekvencie alebo zvýšenie alebo zníženie _up_treshold_.
+*   Niektoré CPU môžu trpieť nízkym výkonom pri režime `ondemand`. Riešením je vypnutie zmien frekvencie alebo zvýšenie alebo zníženie *up_treshold*.
 
 *   Niektoré CPU/BIOS konfigurácie môžu mať problém pri zmenách frekvencie na maximum alebo vo všeobecnosti pri zmenách frekvencie. nanešťastie momentálne existuje iba workaround. Pridajte processor.ignore_ppc=1" do kernel boot a/alebo zmente hodnotu v /sys/module/processor/parameters/ignore_ppc z 0 na 1.

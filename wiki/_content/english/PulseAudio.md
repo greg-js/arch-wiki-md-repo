@@ -86,7 +86,7 @@ PulseAudio runs as a server daemon that can run either system-wide or on per-use
 
 *   It is strongly suggested not to edit system wide configuration files, but rather edit user ones. Create the `~/.config/pulse` directory, then copy the system configuration files into it and edit according to your need.
 *   Make sure you keep user configuration in sync with changes to the packaged files in `/etc/pulse/`. Otherwise, PulseAudio may refuse to start due to configuration errors.
-*   There is no need to add your user to audio group, as it uses [udev](/index.php/Udev "Udev") and _logind_ to dynamically give access to the currently "active" user
+*   There is no need to add your user to audio group, as it uses [udev](/index.php/Udev "Udev") and *logind* to dynamically give access to the currently "active" user
 
 #### daemon.conf
 
@@ -99,11 +99,9 @@ Defines base settings like the default sample rates used by modules, resampling 
 | system-instance | Run the daemon as a system-wide instance. Highly discouraged as it can introduce security issues. Useful on (headless) systems that have no real local users. Defaults to `no`. |<caption></caption>
 | resample-method | Which resampler to use when audio with incompatible sample rates needs to be passed between modules (e.g. playback of 96kHz audio on hardware which only supports 48kHz). The available resamplers can be listed with `$ pulseaudio --dump-resample-methods`. Choose the best tradeoff between CPU usage and audio quality for the present use-case.
 **Tip:** In some cases PulseAudio will generate a high CPU load. This can happen when multiple streams are resampled (individually). If this is a common use-case in a workflow, it should be considered to create an additional sink at a matching sample rate which can then be fed into the main sink, resampling only once.
-
  |<caption></caption>
 | flat-volumes | `flat-volumes` scales the device-volume with the volume of the "loudest" application. For example, raising the VoIP call volume will raise the hardware volume and adjust the music-player volume so it stays where it was, without having to lower the volume of the music-player manually. Defaults to `yes` upstream, but to `no` within Arch.
 **Note:** The default behavior upstream can sometimes be confusing and some applications, unaware of this feature, can set their volume to 100% at startup, potentially blowing your speakers or your ears. This is why Arch defaults to the classic (ALSA) behavior by setting this to `no`.
-
  |<caption></caption>
 | default-fragments | Audio samples are split into multiple fragments of `default-fragment-size-msec` each. The larger the buffer is, the less likely audio will skip when the system is overloaded. On the downside this will increase the overall latency. Increase this value if you have issues. |
 
@@ -131,7 +129,7 @@ Once your new settings have been tested and meet your needs, edit the `default.p
 
 It is important to understand that the "sources" (processes, capture devices) and "sinks" (sound cards, servers, other processes) accessible and selectable through PulseAudio depend upon the current hardware "Profile" selected. These "Profiles" are those ALSA "pcms" listed by the command `aplay -L`, and more specifically by the command `pacmd list-cards`, which will include a line "index:", a list beginning "profiles:", and a line "active profile: <...>" in the output, among other things.
 
-The "active profile" can be set with the command `pacmd set-card-profile INDEX PROFILE`, with _no_ comma separating INDEX and PROFILE, where INDEX is just the number on the line "index:" and a PROFILE name is everything shown from the beginning of any line under "profile:" to just _before_ the colon and first space, as shown by the command `pacmd list-cards`. For instance, `pacmd set-card-profile 0 output:analog-stereo+input:analog-stereo`.
+The "active profile" can be set with the command `pacmd set-card-profile INDEX PROFILE`, with *no* comma separating INDEX and PROFILE, where INDEX is just the number on the line "index:" and a PROFILE name is everything shown from the beginning of any line under "profile:" to just *before* the colon and first space, as shown by the command `pacmd list-cards`. For instance, `pacmd set-card-profile 0 output:analog-stereo+input:analog-stereo`.
 
 It may be easier to select a "Profile" with a graphical tool like `pavucontrol`, under the "Configuration" tab, or KDE System Settings, "Multimedia/Audio and Video Settings", under the "Audio Hardware Setup" tab. Each audio "Card", which are those devices listed by the command `aplay -l`, or again by the command `pacmd list-cards`, will have its own selectable "Profile". When a "Profile" has been selected, the then available "sources" and "sinks" can be seen by using the commands `pacmd list-sources` and `pacmd list-sinks`. Note that the "index" of the available sources and sinks will change each time a card profile is changed.
 
@@ -201,7 +199,7 @@ load-module module-alsa-source **device=dsnoop**
 
 ```
 
-*   _Optional:_ If you use [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix) you may want to control ALSA volume instead of PulseAudio volume:
+*   *Optional:* If you use [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix) you may want to control ALSA volume instead of PulseAudio volume:
 
 ```
 $ echo export KMIX_PULSEAUDIO_DISABLE=1 > ~/.kde4/env/kmix_disable_pulse.sh
@@ -241,7 +239,6 @@ $ padsp sox foo.wav -t ossdsp /dev/dsp
 You can also add a custom wrapper script like this:
 
  `/usr/local/bin/OSSProgram` 
-
 ```
 #!/bin/sh
 exec padsp /usr/bin/OSSprogram "$@"
@@ -266,7 +263,7 @@ Edit the libao configuration file:
 
 Be sure to remove the `dev=default` option of the alsa driver or adjust it to specify a specific Pulse sink name or number.
 
-**Note:** You could possibly also keep the libao standard of outputting to the _alsa_ driver and its default device if you install [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) since the ALSA default device then **is** PulseAudio.
+**Note:** You could possibly also keep the libao standard of outputting to the *alsa* driver and its default device if you install [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) since the ALSA default device then **is** PulseAudio.
 
 ## Equalizer
 
@@ -478,17 +475,17 @@ pactl set-source-mute 1 toggle
 
 ### Play sound from a non-interactive shell (systemd service, cron)
 
-Set `XDG_RUNTIME_DIR` before the command (replace `_user_id_` with the ID of the user running PulseAudio):
+Set `XDG_RUNTIME_DIR` before the command (replace `*user_id*` with the ID of the user running PulseAudio):
 
 ```
-XDG_RUNTIME_DIR=/run/user/_user_id_ paplay /usr/share/sounds/freedesktop/stereo/complete.oga
+XDG_RUNTIME_DIR=/run/user/*user_id* paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 
 ```
 
 Or use `machinectl`:
 
 ```
-# machinectl shell .host --uid=_user_id_ /usr/bin/paplay /usr/share/sounds/freedesktop/stereo/complete.oga
+# machinectl shell .host --uid=*user_id* /usr/bin/paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 
 ```
 

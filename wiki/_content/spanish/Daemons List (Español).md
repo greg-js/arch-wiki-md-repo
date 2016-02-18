@@ -1,10 +1,10 @@
 He aquí un listado de [demonios](/index.php/Daemons_(Espa%C3%B1ol) "Daemons (Español)"). Tenga en cuenta que cualquier paquete puede proporcionar un demonio, por lo que esta lista no debe considerarse exhaustiva. Por favor, siéntase libre de añadir cualquier demonio que falte aquí, en orden alfabético. Se pueden tener paquetes que incluyan otros demonios desde [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)"). Estos archivos es probable que se encuentren en `/usr/lib/systemd/system/`.
 
-La columna _Paquete_ contiene un enlace a la página de ArchWiki relativa a cada demonio (o enlaza al paquete, si tal página no existe). La columna _initscripts_ contiene el nombre del script de initscripts y la columna _systemd_ contiene el nombre del archivo de servicio de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"). Tenga en cuenta que puede haber demonios específicos tanto para initscripts como para systemd, con la correspondiente columna vacía. La columna _Descripción_ proporciona una descripción corta, preferiblemente del **demonio** (antes que del paquete).
+La columna *Paquete* contiene un enlace a la página de ArchWiki relativa a cada demonio (o enlaza al paquete, si tal página no existe). La columna *initscripts* contiene el nombre del script de initscripts y la columna *systemd* contiene el nombre del archivo de servicio de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"). Tenga en cuenta que puede haber demonios específicos tanto para initscripts como para systemd, con la correspondiente columna vacía. La columna *Descripción* proporciona una descripción corta, preferiblemente del **demonio** (antes que del paquete).
 
 | Paquete | initscripts | systemd | Descripción |
 | [acpid](/index.php/Acpid "Acpid") | acpid | acpid.service | Un demonio transmisor de los eventos de la gestión de energía por ACPI con soporte para netlink. |
-| [alsa](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") | alsa | _siempre que esté on_ – alsa-store.service, alsa-restore.service | Guarda el estado de una tarjeta de sonido (por ejemplo, el volumen) al cierre y lo restaura en el arranque. |
+| [alsa](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") | alsa | *siempre que esté on* – alsa-store.service, alsa-restore.service | Guarda el estado de una tarjeta de sonido (por ejemplo, el volumen) al cierre y lo restaura en el arranque. |
 | [at](https://www.archlinux.org/packages/?name=at) | atd | atd.service | Guarda trabajos en cola para su posterior ejecución. |
 | [Autofs](/index.php/Autofs "Autofs") | autofs | autofs.service | Monta automáticamente medios extraibles o recursos compartidos de red cuando se insertan o se accede a ellos. |
 | [Avahi](/index.php/Avahi "Avahi") | avahi-daemon | avahi-daemon.service | Permite a los programas encontrar automáticamente servicios de redes locales. |
@@ -17,10 +17,10 @@ La columna _Paquete_ contiene un enlace a la página de ArchWiki relativa a cada
 freshclamd.service | Conjunto de herramientas de antivirus para Unix. |
 | [Connman](/index.php/Connman "Connman") | connmand | connman.service | Administrador de conexiones de red cableadas e inalámbricas. |
 | [Cpupower](/index.php/Cpupower "Cpupower") | cpupower | cpupower.service | Ajusta el gobernador de [cpufreq](/index.php/CPU_frequency_scaling "CPU frequency scaling") y otros parámetros en el arranque. |
- craftbukkit | _aún no implementado_ | Servidor CraftBukkit Minecraft. |
-| [Cron](/index.php/Cron "Cron") | crond | cronie.service (si se usa [cronie](https://www.archlinux.org/packages/?name=cronie)) o dcron.service (si se una [dcron](https://aur.archlinux.org/packages/dcron/)) | Demonio para programar y temporizar eventos. El nombre del demonio _crond_ es usado, al menos, por dos paquetes: [cronie](https://www.archlinux.org/packages/?name=cronie) y [dcron](https://aur.archlinux.org/packages/dcron/). |
+ craftbukkit | *aún no implementado* | Servidor CraftBukkit Minecraft. |
+| [Cron](/index.php/Cron "Cron") | crond | cronie.service (si se usa [cronie](https://www.archlinux.org/packages/?name=cronie)) o dcron.service (si se una [dcron](https://aur.archlinux.org/packages/dcron/)) | Demonio para programar y temporizar eventos. El nombre del demonio *crond* es usado, al menos, por dos paquetes: [cronie](https://www.archlinux.org/packages/?name=cronie) y [dcron](https://aur.archlinux.org/packages/dcron/). |
 | [CUPS](/index.php/CUPS "CUPS") | cupsd | org.cups.cupsd.service | Demonio del sistema de impresión CUPS. |
-| [D-Bus](/index.php/D-Bus "D-Bus") | dbus | _siempre que esté on_ – dbus.service | Sistema bus de mensajes de Freedesktop.org. |
+| [D-Bus](/index.php/D-Bus "D-Bus") | dbus | *siempre que esté on* – dbus.service | Sistema bus de mensajes de Freedesktop.org. |
 | [dante](https://www.archlinux.org/packages/?name=dante) | sockd | sockd.service | Un cliente/servidor de SOCKS. |
 | [Deluge](/index.php/Deluge "Deluge") | deluged | deluged.service | Multiplataforma y cliente BitTorrent completo - demonio principal. |
 | deluge-web | deluge-web.service | Multiplataforma y cliente BitTorrent completo - demonio para la interfaz web. |
@@ -29,7 +29,7 @@ freshclamd.service | Conjunto de herramientas de antivirus para Unix. |
 | [Dropbox](/index.php/Dropbox "Dropbox") | dropboxd | dropbox@.service | Archivo multiplataforma de sincronización con control de versión. |
 | [fail2ban](/index.php/Fail2ban "Fail2ban") | fail2ban | fail2ban.service | Escanedados fail2ban de archivos de registros y baneados de IP que muestran los elementos maliciosos. |
 | [Fan speed control](/index.php/Fan_speed_control "Fan speed control") | fancontrol | fancontrol.service | Demonio de control del ventilador (parte de lm_sensors) |
-| [Fbsplash](/index.php/Fbsplash "Fbsplash") | fbsplash | _aún no implementado_ | Pantalla de arranque gráfica para el usuario. |
+| [Fbsplash](/index.php/Fbsplash "Fbsplash") | fbsplash | *aún no implementado* | Pantalla de arranque gráfica para el usuario. |
 | [FluidSynth](/index.php/FluidSynth "FluidSynth") | fluidsynth | fluidsynth.service | Sintetizador de software. |
  ftpd | ftpd.service | Demonio de ftp Inetutils. |
 | [GDM](/index.php/GDM "GDM") | gdm | gdm.service | Gestor de pantalla de Gnome. |
@@ -76,7 +76,7 @@ NetworkManager-wait-online.service | Demonio de NetworkManager, proporciona la d
 | [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) | php-fpm | php-fpm.service | Administrador de procesos FastCGI para PHP. |
 | [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") | postgresql | postgresql.service | Servidor de base de datos PostgreSQL. |
 | [Postfix](/index.php/Postfix "Postfix") | postfix | postfix.service |
-| [powernowd](/index.php/Powernowd "Powernowd") | powernowd | _aún no implementado_ | Para ajustar la velocidad de la CPU dependiendo de la carga del sistema. |
+| [powernowd](/index.php/Powernowd "Powernowd") | powernowd | *aún no implementado* | Para ajustar la velocidad de la CPU dependiendo de la carga del sistema. |
 | [PPTP server](/index.php/PPTP_server "PPTP server") | pptpd | pptpd.service | Una red privada virtual (VPN) que usa el protocolo de túnel punto a punto (PPTP). |
 | [pppd](/index.php/Pppd "Pppd") | pppd | ppp@.service | Un demonio que implementa el protocolo punto-a-punto al acceso telefónico a redes. |
 | [preload](/index.php/Preload "Preload") | preload | preload.service | Demonio que hace que las aplicaciones se ejecuten más rápido por la obtención previa de los archivos binarios y objetos compartidos. |
@@ -98,7 +98,7 @@ winbindd.service | Servicios de archivos e impresión para los clientes de Micro
 | [SMART](/index.php/SMART "SMART") | smartd | smartd.service | Autoanálisis, análisis e información técnica (S.M.A.R.T) tras monitorizar el disco duro. |
 | [smbnetfs](/index.php/Samba#smbnetfs "Samba") | smbnetfs | smbnetfs.service | Montaje automático de recursos compartidos Samba/Microsoft. |
 | [snmpd](/index.php/Snmpd "Snmpd") | snmpd | snmpd.service | Una suite de aplicaciones que se utilizan para implementar SNMP |
- soundmodem | _not yet implemented_ | Tarjeta de sonido multiplataforma Packet Radio Modem |
+ soundmodem | *not yet implemented* | Tarjeta de sonido multiplataforma Packet Radio Modem |
 | [spamassassin](https://www.archlinux.org/packages/?name=spamassassin) | spamd | spamassassin.service | Servicio para filtrar el spam de los email. |
 | [openssh](/index.php/Secure_Shell "Secure Shell") | sshd | sshd.service | Demonio de OpenSSH (shell segura). |
  stunnel | stunnel.service | Permite encriptar arbitrariamente conexión TCP con SSL. |

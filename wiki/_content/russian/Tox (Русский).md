@@ -2,7 +2,7 @@
 
 С домашней страницы [проекта](https://tox.chat/ru):
 
-	_Tox - это распределённый безопасный мессенджер с возможностью общения по аудио и видео._
+	*Tox - это распределённый безопасный мессенджер с возможностью общения по аудио и видео.*
 
 ## Установка
 
@@ -43,7 +43,6 @@
 Чтобы подключиться к другим, сначала Tox должен подключиться к [DHT ноде](https://wiki.tox.chat/users/nodes). Все DHT ноды соединены между собой, и когда все подключены хотя бы к одной DHT ноде, вы можете подключаться к другим тем или иным путём.
 
  `/etc/conf.d/tox_bootstrap` 
-
 ```
 cmdline="--ipv4"
 
@@ -53,14 +52,13 @@ port="порт_узла"
 key="ключ_узла"
 ```
 
-_IP_узла_, _порт_узла_ и _ключ_узла_ возьмите с [https://wiki.tox.chat/users/nodes](https://wiki.tox.chat/users/nodes).
+*IP_узла*, *порт_узла* и *ключ_узла* возьмите с [https://wiki.tox.chat/users/nodes](https://wiki.tox.chat/users/nodes).
 
 **Важно:** Берите адреса **только** с официальной Вики Tox - они защищены от изменений третьими лицами, в отличие от ArchWiki
 
 Создайте service файл.
 
  `/etc/systemd/system/tox_bootstrap.service` 
-
 ```
 [Unit]
 Description=Tox DHT Bootstrap Daemon
@@ -87,7 +85,7 @@ WantedBy=multi-user.target
 
 ```
 
-Перезапустите _systemd_ для сканирования новых юнитов:
+Перезапустите *systemd* для сканирования новых юнитов:
 
 ```
 # systemctl daemon-reload
@@ -96,4 +94,4 @@ WantedBy=multi-user.target
 
 [Включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") и запустите tox_bootstrap сервис и убедитесь, что он запущен и что порт был назначен:
 
- `# ss --listening --numeric --processes | grep _порт_узла_`  `udp        0      0 *:_порт_узла_                 *:*                                 576/DHT_bootstrap`
+ `# ss --listening --numeric --processes | grep *порт_узла*`  `udp        0      0 *:*порт_узла*                 *:*                                 576/DHT_bootstrap`

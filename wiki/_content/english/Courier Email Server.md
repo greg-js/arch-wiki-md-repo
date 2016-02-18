@@ -80,7 +80,6 @@ with each user you want to have an imap-account
 You should be able to connect from your console with telnet like this:
 
  `[morphus@spielemorph ~]$ telnet 192.168.6.1 143` 
-
 ```
 Trying 192.168.6.1...
 Connected to 192.168.6.1.

@@ -1,5 +1,5 @@
 | **Summary**  |
-| Információk az Intel grafikus kártyákról/chipkészletekről és az _intel_ video driver-ről. |
+| Információk az Intel grafikus kártyákról/chipkészletekről és az *intel* video driver-ről. |
 | **Related** |
 | [ATI](/index.php/ATI "ATI") |
 | [NVIDIA](/index.php/NVIDIA "NVIDIA") |
@@ -72,7 +72,7 @@ A KMS-re az X futtatásához van szükség (Gnome, KDE, ...stb.).
 
 A [KMS](/index.php/KMS "KMS")-t minden i915 DRM drivert-t használó Intel chipkészlet támogatja, sőt a 2.6.32 verziójú kernel óta ez az alapbeállítás. A xf86-video-intel 2.10 verziója óta a KMS használata [kötelező](https://www.archlinux.org/news/484/). A KMS alapvetően a kernel betöltődése után indul, de lehetőség van rá, hogy engedélyezzük, hogy már bootolás során elinduljon. Így már a boot során a natív felbontáson működhet a kijelző.
 
-**Note:** KMS használata esetén /boot/grub/menu.lst fájlban kernel sorából törölni _kell_ minden "vga" vagy "video" opciót
+**Note:** KMS használata esetén /boot/grub/menu.lst fájlban kernel sorából törölni *kell* minden "vga" vagy "video" opciót
 
 Adjuk hozzá `/etc/mkinitcpio.conf` fájl MODULES sorához a `intel_agp` és `i915` modulokat:
 

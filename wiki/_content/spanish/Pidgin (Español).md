@@ -35,7 +35,7 @@ Aspell será bajado como una dependencia, pero para prevenir todo su texto de se
 
 Para el diccionario en Español. Use <tt>pacman -Ss aspell</tt> para una lista de los lenguajes disponibles.
 
-_Nota: El **seleccionador ortográfico**-plugin está incluido en el purple-plugin-pack (ver arriba). Le permte seleccionar entre múltiples idiomas._
+*Nota: El **seleccionador ortográfico**-plugin está incluido en el purple-plugin-pack (ver arriba). Le permte seleccionar entre múltiples idiomas.*
 
 ## Corregir el sonido
 

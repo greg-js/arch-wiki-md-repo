@@ -88,7 +88,6 @@ Other prototypes are found in /usr/share/pacman from the pacman and abs packages
 *   The `packager` field from the package meta file can be **customized** by the package builder by modifying the appropriate option in the `/etc/makepkg.conf` file, or alternatively override it by creating ~/.makepkg.conf
 *   All important messages should be echoed during install using an **.install file**. For example, if a package needs extra setup to work, directions should be included.
 *   Any **optional dependencies** that aren't needed to run the package or have it generally function shouldn't be included; instead the information should be added to the **optdepends** array:
-
     ```
     optdepends=('cups: printing support'
                 'sane: scanners support'
@@ -208,9 +207,8 @@ Note the following before submitting any packages to the AUR:
 
 4.  Verify the package **dependencies** (eg, run `ldd` on dynamic executables, check tools required by scripts, etc). The TU team **strongly** recommend the use of the `namcap` utility, written by [Jason Chu](https://www.archlinux.org/fellows/#jason), to analyze the sanity of packages. `namcap` will warn you about bad permissions, missing dependencies, un-needed dependencies, and other common mistakes. You can install the `namcap` package with `pacman`. Remember `namcap` can be used to check both pkg.tar.gz files and PKGBUILDs
 5.  **Dependencies** are the most common packaging error. Namcap can help detect them, but it is not always correct. Verify dependencies by looking at source documentation and the program website.
-6.  **Don't use <tt>replaces</tt>** in a PKGBUILD unless the package is to be renamed, for example when _Ethereal_ became _Wireshark_. If the package is an alternate version of an already existing package, use <tt>conflicts</tt> (and <tt>provides</tt> if that package is required by others). The main difference is: after syncing (-Sy) pacman immediately wants to replace an installed, 'offending' package upon encountering a package with the matching <tt>replaces</tt> anywhere in its repositories; <tt>conflicts</tt> on the other hand is only evaluated when actually installing the package, which is usually the desired behavior because it is less invasive.
+6.  **Don't use <tt>replaces</tt>** in a PKGBUILD unless the package is to be renamed, for example when *Ethereal* became *Wireshark*. If the package is an alternate version of an already existing package, use <tt>conflicts</tt> (and <tt>provides</tt> if that package is required by others). The main difference is: after syncing (-Sy) pacman immediately wants to replace an installed, 'offending' package upon encountering a package with the matching <tt>replaces</tt> anywhere in its repositories; <tt>conflicts</tt> on the other hand is only evaluated when actually installing the package, which is usually the desired behavior because it is less invasive.
 7.  All files uploaded to the AUR should be contained in a **compressed tar file** containing a directory with the **`PKGBUILD`** and **additional build files** (patches, install, ...) in it.
-
     ```
     foo/PKGBUILD
     foo/foo.install

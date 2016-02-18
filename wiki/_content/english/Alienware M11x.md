@@ -38,14 +38,14 @@ See [Synaptics](/index.php/Synaptics "Synaptics").
 
 **- For Alienware M11x R1 owners:** The Alienware M11x R1 has 2 video cards, and can be manually changed with the **system BIOS** (accessed by pushing **F2** during system POST) ::
 
-*   _Switchable_ => Linux will use the Intel 4500HD internal video
-*   _Discrete_ => Linux will use the NVIDIA GeForce GT 335M
+*   *Switchable* => Linux will use the Intel 4500HD internal video
+*   *Discrete* => Linux will use the NVIDIA GeForce GT 335M
 
 Alienware M11x R1 users running Linux have some tools available which will interact with the hybrid video cards in this laptop.
 
-*   [Bumblebee](/index.php/Bumblebee "Bumblebee") is a software implementation based on VirtualGL and a kernel driver to be able to use the dedicated GPU. Alienware M11x R1 users CAN use this method to switch between the Onboard/Intel and the Discrete/NVIDIA without a system reboot and/or BIOS change (yet the BIOS would need to be set for _Switchable_).
-*   [acpi_call](http://github.com/mkottman/acpi_call) allows you to disable+power down the Discrete/NVIDIA card when the system is booted while BIOS Graphics mode is set to => _Switchable_
-*   [vga_switcheroo](http://people.freedesktop.org/~airlied/vgaswitcheroo/) allows one to switch between the Onboard/Intel and the Discrete/NVIDIA without a system reboot and/or BIOS change (yet the BIOS would need to be set for _Switchable_). [vga_switcheroo](http://people.freedesktop.org/~airlied/vgaswitcheroo/) has been reported as non-functional at this state for Alienware M11x users.
+*   [Bumblebee](/index.php/Bumblebee "Bumblebee") is a software implementation based on VirtualGL and a kernel driver to be able to use the dedicated GPU. Alienware M11x R1 users CAN use this method to switch between the Onboard/Intel and the Discrete/NVIDIA without a system reboot and/or BIOS change (yet the BIOS would need to be set for *Switchable*).
+*   [acpi_call](http://github.com/mkottman/acpi_call) allows you to disable+power down the Discrete/NVIDIA card when the system is booted while BIOS Graphics mode is set to => *Switchable*
+*   [vga_switcheroo](http://people.freedesktop.org/~airlied/vgaswitcheroo/) allows one to switch between the Onboard/Intel and the Discrete/NVIDIA without a system reboot and/or BIOS change (yet the BIOS would need to be set for *Switchable*). [vga_switcheroo](http://people.freedesktop.org/~airlied/vgaswitcheroo/) has been reported as non-functional at this state for Alienware M11x users.
 
 [linux-hybrid-graphics.blogspot.com](http://linux-hybrid-graphics.blogspot.com/) is a great site to check out for up-to-date information regarding the state of hybrid graphics in Linux.
 
@@ -61,7 +61,7 @@ See [Bumblebee](/index.php/Bumblebee "Bumblebee") for details.
 
 ### ACPI_CALL
 
-[ACPI_CALL](http://github.com/peberlein/acpi_call) is a kernel module that enables you to call parameterless ACPI methods by writing the method name to `/proc/acpi/call`, e.g. to turn off the discrete graphics card in a dual graphics environment. acpi_call works on the Alienware M11x R1 for disabling the discrete video card + powering it down successfully. Make sure you boot with BIOS set to _switchable' ::_
+[ACPI_CALL](http://github.com/peberlein/acpi_call) is a kernel module that enables you to call parameterless ACPI methods by writing the method name to `/proc/acpi/call`, e.g. to turn off the discrete graphics card in a dual graphics environment. acpi_call works on the Alienware M11x R1 for disabling the discrete video card + powering it down successfully. Make sure you boot with BIOS set to *switchable' ::*
 
 *   Grab the [acpi_call-git AUR package](https://aur.archlinux.org/packages.php?ID=39470)(IMHO it is working pretty stable), and skip the manual installation/compilation of acpi_call.
     *   OR you can grab [acpi_call](http://github.com/mkottman/acpi_call) and compile manually. Please see the [acpi_call](http://github.com/mkottman/acpi_call) site for details on compilation if you wish to compile manually.
@@ -81,7 +81,7 @@ See [Bumblebee](/index.php/Bumblebee "Bumblebee") for details.
 3.  Echo '\_SB.PCI0.P0P2.PEGP._OFF' to (the **now existing** since acpi_call was loaded) /proc/acpi/call
 4.  Check the current battery mW usage again to see that it dropped (not necessary)
 
-*   Both #2 and #4 as noted are _not necessary_, they just demonstrate that the battery usage is dropping as long as you do them in the order listed here.
+*   Both #2 and #4 as noted are *not necessary*, they just demonstrate that the battery usage is dropping as long as you do them in the order listed here.
 
 #### m11rx2hack
 
@@ -124,7 +124,7 @@ Currently, Alienware M11x R1 owner reports indicate the [vga_switcheroo](http://
 
 This explains how-to use VGA_SWITCHEROO for troubleshooting ::
 
-*   kernel configuration flag - ensure **CONFIG_VGA_SWITCHEROO** is set as module, or built-in :: **CONFIG_VGA_SWITCHEROO**=_y_/_m_
+*   kernel configuration flag - ensure **CONFIG_VGA_SWITCHEROO** is set as module, or built-in :: **CONFIG_VGA_SWITCHEROO**=*y*/*m*
 
 ```
 sudo modprobe vgaswitcheroo
@@ -146,7 +146,7 @@ Use 'nvidia-settings' to configure the video card, and multiple screens if using
 
 *   When booting into Arch Linux using NVIDIA/discrete video card just change brightness using the FUNCTION+F4 = brightness up, and FUNCTION+F5 = brightness down - also 'nvidia-settings' should allow brightness settings changes too.
 
-*   When booting into Arch Linux using the INTEL/onboard video card, the only way to change brightness levels requires passing a command through 'setpci', the following script is adapted from [Samsung_N150-Backlight ArchWiki article](/index.php/Samsung_N150#Backlight "Samsung N150") works fine (ymmv). **REQUIREMENTS:** _**`bc`**_, and _**`setpci`**_
+*   When booting into Arch Linux using the INTEL/onboard video card, the only way to change brightness levels requires passing a command through 'setpci', the following script is adapted from [Samsung_N150-Backlight ArchWiki article](/index.php/Samsung_N150#Backlight "Samsung N150") works fine (ymmv). **REQUIREMENTS:** ***`bc`***, and ***`setpci`***
 
 1.  create a file @ `/sbin/backlight`
 2.  `sudo chown root:video /sbin/backlight`

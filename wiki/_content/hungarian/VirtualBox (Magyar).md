@@ -77,7 +77,7 @@ VirtualBox (OSE) elérhető a közösségi tárolóból:
 
 **Note:** This package is not in x86_64 Repositories. See the link to the PKGBUILD by thotypous in the AUR above if you are running Arch x86_64 and want to use VirtualBox.
 
-This will select by default <tt>virtualbox-ose</tt> and <tt>virtualbox-modules</tt> packages. Once installed, a desktop entry can be located in _Applications → System Tools → VirtualBox OSE_
+This will select by default <tt>virtualbox-ose</tt> and <tt>virtualbox-modules</tt> packages. Once installed, a desktop entry can be located in *Applications → System Tools → VirtualBox OSE*
 
 Now, add the desired username to the **vboxusers** group:
 
@@ -176,7 +176,7 @@ Download the appropriate architecture file i386/AMD64\. In a terminal window, br
 
 This will install the package to the /opt/VirtualBox-2.XXX folder.
 
-After installation, a desktop entry can be located in _Applications → System Tools → Sun xVM VirtualBox_
+After installation, a desktop entry can be located in *Applications → System Tools → Sun xVM VirtualBox*
 
 Now, add the desired username to the **vboxusers** group:
 
@@ -194,7 +194,7 @@ Start the VirtualBox GUI either with the command:
 
 ```
 
-or using the _Applications_ desktop entry. In version 2.1.x, an installation wizard should start and take you through the process of setting up a virtual machine. Otherwise, use the help menu to get started. **Continue reading to see the more advanced options and setups...**
+or using the *Applications* desktop entry. In version 2.1.x, an installation wizard should start and take you through the process of setting up a virtual machine. Otherwise, use the help menu to get started. **Continue reading to see the more advanced options and setups...**
 
 ## Konfigurálás
 
@@ -257,7 +257,7 @@ Also in VirtualBox 2.2.0+ NAT network DHCP clients will not configure your names
 
 #### Kiszolgálói csatoló hálózat használata (VirtualBox módra)
 
-Since VirtuaBox 2.1.0 it has a native support for host interface networking. Just add **vboxnetflt** to your MODULES section in `[rc.conf](/index.php/Rc.conf "Rc.conf")` and choose _Host Interface Networking_ (or _Bridged adapter_ in [2.2](http://forums.virtualbox.org/viewtopic.php?f=1&t=16447)) in the virtual machine configuration.
+Since VirtuaBox 2.1.0 it has a native support for host interface networking. Just add **vboxnetflt** to your MODULES section in `[rc.conf](/index.php/Rc.conf "Rc.conf")` and choose *Host Interface Networking* (or *Bridged adapter* in [2.2](http://forums.virtualbox.org/viewtopic.php?f=1&t=16447)) in the virtual machine configuration.
 
 **Note**: DHCP broadcasting does not seem to work properly under this way. Set up your guest networking with static IP assignment.
 
@@ -468,7 +468,7 @@ $ grep vboxusers /etc/group
 
 ```
 
-Restart Virtualbox and click the USB tab in the settings of the virtual machine and select which devices are available to your pc on boot. If you wish your virtual machine to use device that you have just plugged in (assuming the virtual machine has booted already), go to the VirtualMachine screen go to _Devices → USB Devices_ and select the device you wish to plug in the virtual PC.
+Restart Virtualbox and click the USB tab in the settings of the virtual machine and select which devices are available to your pc on boot. If you wish your virtual machine to use device that you have just plugged in (assuming the virtual machine has booted already), go to the VirtualMachine screen go to *Devices → USB Devices* and select the device you wish to plug in the virtual PC.
 
 **Note** by bjimba:
 
@@ -480,7 +480,7 @@ The Guest Additions make the shared folders feature available, as well as better
 
 **Note:** The instructions immediately below are for an Archlinux guest on an Archlinux host.
 
-After you booted the virtual machine, go to menu _Devices → Install Guest Additions..._ Once you have clicked it, VirtualBox loads an ISO into the current CD-ROM, so you will not see anything happen yet ;).
+After you booted the virtual machine, go to menu *Devices → Install Guest Additions...* Once you have clicked it, VirtualBox loads an ISO into the current CD-ROM, so you will not see anything happen yet ;).
 
 You will require gcc and make if you do not already have them so install them typing the following as root:
 
@@ -550,7 +550,7 @@ Then execute `VBoxLinuxAdditions.run` as before. Before adding `rc.vboxadd` to D
 
 **Windows vendégek**
 
-After installing Windows (XP etc.) on your virtual machine, simply select _Devices → Install Guest Additions..._
+After installing Windows (XP etc.) on your virtual machine, simply select *Devices → Install Guest Additions...*
 
 This will mount the iso image and windows should then automatically launch the guest additions installer. Follow the instructions to the end.
 
@@ -561,7 +561,7 @@ In the settings of the virtual machine go to shared folders tab and add the fold
 *   NOTE: You need to install Guest Additions in order to use this feature.
 
 ```
-In a Linux host, _Devices → Install Guest Additions_
+In a Linux host, *Devices → Install Guest Additions*
 Yes (when asked to download the CD image)
 Mount (when asked to register and mount)
 
@@ -569,7 +569,7 @@ Mount (when asked to register and mount)
 
 In a Linux host, create one folder for sharing files.
 
-In a Windows guest, starting with VirtualBox 1.5.0, shared folders are browseable and are therefore visible in Windows Explorer. Open Windows Explorer and look for it under _My Networking Places → Entire Network → VirtualBox Shared Folders_.
+In a Windows guest, starting with VirtualBox 1.5.0, shared folders are browseable and are therefore visible in Windows Explorer. Open Windows Explorer and look for it under *My Networking Places → Entire Network → VirtualBox Shared Folders*.
 
 Alternatively, on the Windows command line, you can also use the following:
 
@@ -580,7 +580,7 @@ net use x: \\VBOXSVR\sharename
 
 While `VBOXSVR` is a fixed name, replace `x:` with the drive letter that you want to use for the share, and sharename with the share name specified with VBoxManage.
 
-In a Windows guest, to improve loading and saving files (e.g. MS Office) by VirtualBox Shared Folders edit _c:\windows\system32\drivers\etc\hosts_ as below:
+In a Windows guest, to improve loading and saving files (e.g. MS Office) by VirtualBox Shared Folders edit *c:\windows\system32\drivers\etc\hosts* as below:
 
 ```
 127.0.0.1 localhost vboxsvr
@@ -618,11 +618,11 @@ In the machine settings, go to the audio tab and select the correct driver accor
 
 ### RAM és Video Memoria beállítása a virtuális PC-hez
 
-You can change the default values by going to _Settings → General_.
+You can change the default values by going to *Settings → General*.
 
 ### CD-ROM beállítása a virtuális PC-hez
 
-You can change the default values by going to _Settings → CD/DVD-ROM_.
+You can change the default values by going to *Settings → CD/DVD-ROM*.
 
 Check mount CD/DVD drive and select one of the following options.
 
@@ -688,7 +688,7 @@ Note that any time your kernel version changes (due to upgrade, recompile, etc.)
 
 On **version 3.1.2** and possibly later /etc/rc.d/rc.vboxdrv does not exist.
 
-Install _kernel26-headers_. This is difference than the kernel-headers package
+Install *kernel26-headers*. This is difference than the kernel-headers package
 
 As root, run:
 
@@ -699,7 +699,7 @@ As root, run:
 
 * * *
 
-On **virtualbox_bin from AUR** _or_ on **versions 2.1 to 3.1.1**, run the following command:
+On **virtualbox_bin from AUR** *or* on **versions 2.1 to 3.1.1**, run the following command:
 
 ```
 # vbox_build_module
@@ -726,7 +726,7 @@ After rebuilding the module, do not forget to load it with
 
 ```
 
-_vboxdrv_ and _vboxnetflt_ should be in the MODULES=() section of your /etc/rc.conf
+*vboxdrv* and *vboxnetflt* should be in the MODULES=() section of your /etc/rc.conf
 
 ### Compact a Disk Image
 
@@ -767,7 +767,7 @@ The `qemu-img` program can be used to convert images from one format to another,
 
 ### Converting from QEMU images
 
-To convert a QEMU image for use with VirtualBox, first convert it to _raw_ format, then use VirtualBox's conversion utility to convert and compact it in its native format.
+To convert a QEMU image for use with VirtualBox, first convert it to *raw* format, then use VirtualBox's conversion utility to convert and compact it in its native format.
 
 ```
   $ qemu-img convert -O raw test.qcow2 test.raw

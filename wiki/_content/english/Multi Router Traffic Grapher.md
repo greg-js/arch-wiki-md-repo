@@ -76,7 +76,7 @@ The following should all be performed as the mrtg user we created.
 
 now we will begin dealing with the application scripts first we will create a basic mrtg.cfg file
 
-*   The following script call will scan our localhost for its interfaces and create for us the relevant configuration for each interface; _public_ is the community name set for the local SNMP access:
+*   The following script call will scan our localhost for its interfaces and create for us the relevant configuration for each interface; *public* is the community name set for the local SNMP access:
 
 ```
 # cfgmaker --output=/srv/http/mrtg/mrtg.cfg --ifref=name --ifref=descr --global "WorkDir: /srv/http/mrtg" public@localhost

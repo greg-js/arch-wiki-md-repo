@@ -132,7 +132,7 @@ If your flash image is too large for a floppy, go to the [FreeDos bootdisk websi
 First find the first partition (at time of writing, the first partition starts at block 63; this means that the partitions starts at offset <tt>512 * 63 = 32256</tt>). You can either use:
 
 ```
-# file -sk _<image-file>_ | sed -r 's/.*startsector ([0-9]+).*/\1/'
+# file -sk *<image-file>* | sed -r 's/.*startsector ([0-9]+).*/\1/'
 **63**
 
 ```
@@ -140,7 +140,7 @@ First find the first partition (at time of writing, the first partition starts a
 Or:
 
 ```
-# fdisk -l _<image-file>_
+# fdisk -l *<image-file>*
 …
 Units = sectors of 1 * **512** = 512 bytes
 …
@@ -152,7 +152,7 @@ Units = sectors of 1 * **512** = 512 bytes
 Now you can mount the image:
 
 ```
-# mount -oloop,offset=$((63 * 512)) _<image-file>_ /mnt
+# mount -oloop,offset=$((63 * 512)) *<image-file>* /mnt
 
 ```
 
@@ -275,7 +275,7 @@ Install the [geteltorito](https://aur.archlinux.org/packages/geteltorito/) packa
 
 ### Usage
 
-Get the bios update iso from the vendor support site. Run the _geteltorito_ image extraction:
+Get the bios update iso from the vendor support site. Run the *geteltorito* image extraction:
 
 ```
 # geteltorito.pl -o <image>.img <image>.iso

@@ -2,9 +2,9 @@ This article discusses variables definable by the maintainer in a PKGBUILD. For 
 
 A PKGBUILD is a shell script containing the build information required by [Arch Linux](/index.php/Arch_Linux "Arch Linux") packages.
 
-Packages in Arch Linux are built using the [makepkg](/index.php/Makepkg "Makepkg") utility. When _makepkg_ is run, it searches for a `PKGBUILD` file in the current directory and follows the instructions therein to either compile or otherwise acquire the files to build a package archive (`_pkgname_.pkg.tar.xz`). The resulting package contains binary files and installation instructions, readily installable with [pacman](/index.php/Pacman "Pacman").
+Packages in Arch Linux are built using the [makepkg](/index.php/Makepkg "Makepkg") utility. When *makepkg* is run, it searches for a `PKGBUILD` file in the current directory and follows the instructions therein to either compile or otherwise acquire the files to build a package archive (`*pkgname*.pkg.tar.xz`). The resulting package contains binary files and installation instructions, readily installable with [pacman](/index.php/Pacman "Pacman").
 
-Mandatory variables are `pkgname`, `pkgver`, `pkgrel`, and `arch`. `license` is not strictly necessary to build a package, but is recommended for any PKGBUILDs shared with others, as _makepkg_ will produce a warning if not present.
+Mandatory variables are `pkgname`, `pkgver`, `pkgrel`, and `arch`. `license` is not strictly necessary to build a package, but is recommended for any PKGBUILDs shared with others, as *makepkg* will produce a warning if not present.
 
 It is a common practice to define the variables in the PKGBUILD in same order as given here. However, this is not mandatory, as long as correct [Bash](/index.php/Bash "Bash") syntax is used.
 
@@ -52,7 +52,7 @@ It is a common practice to define the variables in the PKGBUILD in same order as
 
 ### pkgbase
 
-An optional global directive is available when building a split package. `pkgbase` is used to refer to the group of packages in the output of _makepkg_ and in the naming of source-only tarballs. If not specified, the first element in the `pkgname` array is used. The variable is not allowed to begin with a hyphen. All values for split packages default to the global ones given in the PKGBUILD. Everything, except [#makedepends](#makedepends), [#Sources](#Sources), and [#Integrity](#Integrity) variables can be overridden within each split package's `package()` function.
+An optional global directive is available when building a split package. `pkgbase` is used to refer to the group of packages in the output of *makepkg* and in the naming of source-only tarballs. If not specified, the first element in the `pkgname` array is used. The variable is not allowed to begin with a hyphen. All values for split packages default to the global ones given in the PKGBUILD. Everything, except [#makedepends](#makedepends), [#Sources](#Sources), and [#Integrity](#Integrity) variables can be overridden within each split package's `package()` function.
 
 ### pkgname
 
@@ -72,7 +72,7 @@ The version of the package. This should be the same as the version released by t
 
 ### pkgrel
 
-The release number. This is usually a positive integer number that allows to differentiate between consecutive builds of the same version of a package. As fixes and additional features are added to the PKGBUILD that influence the resulting package, the `pkgrel` should be incremented by 1\. When a new version of the software is released, this value must be reset to 1\. In exceptional cases other formats can be found in use, such as _major.minor_.
+The release number. This is usually a positive integer number that allows to differentiate between consecutive builds of the same version of a package. As fixes and additional features are added to the PKGBUILD that influence the resulting package, the `pkgrel` should be incremented by 1\. When a new version of the software is released, this value must be reset to 1\. In exceptional cases other formats can be found in use, such as *major.minor*.
 
 ### epoch
 
@@ -85,7 +85,6 @@ pkgver=5.13
 pkgrel=2
 epoch=1
 ```
-
  `1:5.13-2` 
 
 See [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html) for more information on version comparisons.
@@ -116,11 +115,11 @@ The URL of the official site of the software being packaged.
 
 The license under which the software is distributed. The [licenses](https://www.archlinux.org/packages/?name=licenses) package from the [official repositories](/index.php/Official_repositories "Official repositories") contains many commonly used licenses, which are installed to `/usr/share/licenses/common`. If a package is licensed under one of these licenses, the value should be set to the directory name, e.g. `license=('GPL')`. If the appropriate license is not included, several things must be done:
 
-1.  Add `custom` to the `license` array. Optionally, you can replace `custom` with `custom:_name of license_`. Once a license is used in two or more packages in an official repository (including `[community]`), it becomes a part of the [licenses](https://www.archlinux.org/packages/?name=licenses) package.
-2.  Install the license in: `/usr/share/licenses/_pkgname_/`, e.g. `/usr/share/licenses/foobar/LICENSE`.
+1.  Add `custom` to the `license` array. Optionally, you can replace `custom` with `custom:*name of license*`. Once a license is used in two or more packages in an official repository (including `[community]`), it becomes a part of the [licenses](https://www.archlinux.org/packages/?name=licenses) package.
+2.  Install the license in: `/usr/share/licenses/*pkgname*/`, e.g. `/usr/share/licenses/foobar/LICENSE`.
 3.  If the license is only found in a website, then you need to separately include it in the package.
 
-*   The [BSD](https://en.wikipedia.org/wiki/BSD_License "wikipedia:BSD License"), [MIT](https://en.wikipedia.org/wiki/MIT_License "wikipedia:MIT License"), [zlib/png](https://en.wikipedia.org/wiki/ZLIB_license "wikipedia:ZLIB license") and [Python](https://en.wikipedia.org/wiki/Python_License "wikipedia:Python License") licenses are special cases and could not be included in the [licenses](https://www.archlinux.org/packages/?name=licenses) package. For the sake of the `license` array, it is treated as a common license (`license=('BSD')`, `license=('MIT')`, `license=('ZLIB')` and `license=('Python')`), but technically each one is a custom license, because each one has its own copyright line. Any packages licensed under these four should have its own unique license stored in `/usr/share/licenses/_pkgname_`. Some packages may not be covered by a single license. In these cases, multiple entries may be made in the `license` array, e.g. `license=('GPL' 'custom:_name of license'_)`.
+*   The [BSD](https://en.wikipedia.org/wiki/BSD_License "wikipedia:BSD License"), [MIT](https://en.wikipedia.org/wiki/MIT_License "wikipedia:MIT License"), [zlib/png](https://en.wikipedia.org/wiki/ZLIB_license "wikipedia:ZLIB license") and [Python](https://en.wikipedia.org/wiki/Python_License "wikipedia:Python License") licenses are special cases and could not be included in the [licenses](https://www.archlinux.org/packages/?name=licenses) package. For the sake of the `license` array, it is treated as a common license (`license=('BSD')`, `license=('MIT')`, `license=('ZLIB')` and `license=('Python')`), but technically each one is a custom license, because each one has its own copyright line. Any packages licensed under these four should have its own unique license stored in `/usr/share/licenses/*pkgname*`. Some packages may not be covered by a single license. In these cases, multiple entries may be made in the `license` array, e.g. `license=('GPL' 'custom:*name of license'*)`.
 *   (L)GPL has many versions and permutations of those versions. For (L)GPL software, the convention is:
     *   (L)GPL — (L)GPLv2 or any later version
     *   (L)GPL2 — (L)GPL2 only
@@ -141,7 +140,7 @@ The [group](/index.php/Creating_packages#Meta_packages_and_groups "Creating pack
 
 An array of packages that must be installed before the software can be run. Version restrictions can be specified with comparison operators, e.g. `depends=('foobar>=1.8.0')`; if multiple restrictions are needed, the dependency can be repeated for each, e.g. `depends=('foobar>=1.8.0' 'foobar<2.0.0')`.
 
-Dependencies that are provided by other dependencies do not need to be listed. For instance, if a package _foo_ depends on both _bar_ and _baz_, and the _bar_ package depends in turn on _baz_ too, _baz_ does not need to be included in _foo'_s `depends` array.
+Dependencies that are provided by other dependencies do not need to be listed. For instance, if a package *foo* depends on both *bar* and *baz*, and the *bar* package depends in turn on *baz* too, *baz* does not need to be included in *foo'*s `depends` array.
 
 ### optdepends
 
@@ -165,19 +164,18 @@ optdepends=('cups: printing support'
 An array of packages that are **only** required to build the software. The minimum dependency version can be specified in the same format as in the `depends` array. The packages in the `depends` array are implicitly required to build the package, they should not be duplicated here.
 
 **Tip:** The following can be used to see if a particular package is either in the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group or pulled in by a members of the group:
+```
+$ pacman -Si $(pactree -rl *package*) 2>/dev/null | grep -q "^Groups *:.*base-devel"
 
 ```
-$ pacman -Si $(pactree -rl _package_) 2>/dev/null | grep -q "^Groups *:.*base-devel"
 
-```
-
-**Note:** The group [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) is assumed to be already installed when building with _makepkg_. Members of this group **should not** be included in `makedepends` array.
+**Note:** The group [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) is assumed to be already installed when building with *makepkg*. Members of this group **should not** be included in `makedepends` array.
 
 ### checkdepends
 
 An array of packages that the software depends on to run its test suite, but are not needed at runtime. Packages in this list follow the same format as `depends`. These dependencies are only considered when the [check()](/index.php/Creating_packages#check.28.29 "Creating packages") function is present and is to be run by makepkg.
 
-**Note:** The group [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) is assumed to be already installed when building with _makepkg_. Members of this group **should not** be included in `checkdepends` array.
+**Note:** The group [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) is assumed to be already installed when building with *makepkg*. Members of this group **should not** be included in `checkdepends` array.
 
 ## Package relations
 
@@ -187,7 +185,7 @@ An array of packages that the software depends on to run its test suite, but are
 
 An array of additional packages that the software provides the features of (or a virtual package such as `cron` or `sh`). Packages providing the same item can be installed side-by-side, unless at least one of them uses a `conflicts` array.
 
-**Warning:** A version that the package provides should be mentioned (`pkgver` and perhaps the `pkgrel`), if packages needing the software may require one. For instance, a modified _qt_ package version 3.3.8, named _qt-foobar_, should use `provides=('qt=3.3.8')`; using `provides=('qt')` would cause the dependencies that require a specific version of _qt_ to fail. Do not add `pkgname` to the `provides` array, as it is done automatically.
+**Warning:** A version that the package provides should be mentioned (`pkgver` and perhaps the `pkgrel`), if packages needing the software may require one. For instance, a modified *qt* package version 3.3.8, named *qt-foobar*, should use `provides=('qt=3.3.8')`; using `provides=('qt')` would cause the dependencies that require a specific version of *qt* to fail. Do not add `pkgname` to the `provides` array, as it is done automatically.
 
 ### conflicts
 
@@ -195,7 +193,7 @@ An array of packages that conflict with, or cause problems with the package, if 
 
 ### replaces
 
-An array of obsolete packages that are replaced by the package, e.g. [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk) uses `replaces=('wireshark')`. When syncing, _pacman_ will immediately replace an installed package upon encountering another package with the matching `replaces` in the repositories. If providing an alternate version of an already existing package or uploading to the [AUR](/index.php/AUR "AUR"), use the `conflicts` and `provides` arrays, which are only evaluated when actually installing the conflicting package.
+An array of obsolete packages that are replaced by the package, e.g. [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk) uses `replaces=('wireshark')`. When syncing, *pacman* will immediately replace an installed package upon encountering another package with the matching `replaces` in the repositories. If providing an alternate version of an already existing package or uploading to the [AUR](/index.php/AUR "AUR"), use the `conflicts` and `provides` arrays, which are only evaluated when actually installing the conflicting package.
 
 ## Others
 
@@ -211,13 +209,13 @@ See also [Pacnew and Pacsave files](/index.php/Pacnew_and_Pacsave_files "Pacnew 
 
 ### options
 
-This array allows overriding some of the default behavior of _makepkg_, defined in `/etc/makepkg.conf`. To set an option, include the name in the array. To reverse the default behavior, place an **`!`** at the front.
+This array allows overriding some of the default behavior of *makepkg*, defined in `/etc/makepkg.conf`. To set an option, include the name in the array. To reverse the default behavior, place an **`!`** at the front.
 
 The full list of the available options can be found in [PKGBUILD(5)](https://www.archlinux.org/pacman/PKGBUILD.5.html).
 
 ### install
 
-The name of the `.install` script to be included in the package. This should be the same as `pkgname`. _pacman_ has the ability to store and execute a package-specific script when it installs, removes or upgrades a package. The script contains the following functions which run at different times:
+The name of the `.install` script to be included in the package. This should be the same as `pkgname`. *pacman* has the ability to store and execute a package-specific script when it installs, removes or upgrades a package. The script contains the following functions which run at different times:
 
 *   `pre_install` — The script is run right before files are extracted. One argument is passed: new package version.
 *   `post_install` — The script is run right after files are extracted. One argument is passed: new package version.
@@ -226,7 +224,7 @@ The name of the `.install` script to be included in the package. This should be 
 *   `pre_remove` — The script is run right before files are removed. One argument is passed: old package version.
 *   `post_remove` — The script is run right after files are removed. One argument is passed: old package version.
 
-Each function is run [chrooted](/index.php/Chroot "Chroot") inside the _pacman_ install directory. See [this thread](https://bbs.archlinux.org/viewtopic.php?pid=913891).
+Each function is run [chrooted](/index.php/Chroot "Chroot") inside the *pacman* install directory. See [this thread](https://bbs.archlinux.org/viewtopic.php?pid=913891).
 
 **Tip:** A prototype `.install` is provided at [/usr/share/pacman/proto.install](https://projects.archlinux.org/pacman.git/plain/proto/proto.install).
 
@@ -237,7 +235,7 @@ Each function is run [chrooted](/index.php/Chroot "Chroot") inside the _pacman_ 
 The name of the package changelog. To view changelogs for installed packages (that have this file):
 
 ```
-$ pacman -Qc _pkgname_
+$ pacman -Qc *pkgname*
 
 ```
 
@@ -249,21 +247,21 @@ $ pacman -Qc _pkgname_
 
 An array of files needed to build the package. It must contain the location of the software source, which in most cases is a full HTTP or FTP URL. The previously set variables `pkgname` and `pkgver` can be used effectively here (e.g. `source=("https://example.com/$pkgname-$pkgver.tar.gz")`).
 
-Files can also be supplied directly in the location of the `PKGBUILD` and added to this array. These paths are resolved relative to the directory of the `PKGBUILD`. Before the actual build process is started, all of the files referenced in this array will be downloaded or checked for existence, and _makepkg_ will not proceed, if any are missing.
+Files can also be supplied directly in the location of the `PKGBUILD` and added to this array. These paths are resolved relative to the directory of the `PKGBUILD`. Before the actual build process is started, all of the files referenced in this array will be downloaded or checked for existence, and *makepkg* will not proceed, if any are missing.
 
-**Note:** _.install_ files should not be included.
+**Note:** *.install* files should not be included.
 
-**Tip:** An alternative source name for the downloaded file can be specified with the syntax `source=('_filename_::_fileuri_')`: `source=("project_name::hg+https://googlefontdirectory.googlecode.com/hg/")` 
+**Tip:** An alternative source name for the downloaded file can be specified with the syntax `source=('*filename*::*fileuri*')`: `source=("project_name::hg+https://googlefontdirectory.googlecode.com/hg/")` 
 
-Files in the source array with extensions _.sig_, _.sign_, or _.asc_ are recognized by _makepkg_ as PGP signatures and will be automatically used to verify the integrity of the corresponding source file.
+Files in the source array with extensions *.sig*, *.sign*, or *.asc* are recognized by *makepkg* as PGP signatures and will be automatically used to verify the integrity of the corresponding source file.
 
 ### noextract
 
-An array of files listed under `source`, which should not be extracted from their archive format by _makepkg_. This can be used with archives that cannot be handled by `/usr/bin/bsdtar` or those that need to be installed as-is. If an alternative unarchiving tool is used (e.g. [lrzip](https://www.archlinux.org/packages/?name=lrzip)), it should be added in the `makedepends` array and the first line of the [prepare()](/index.php/Creating_packages#prepare.28.29 "Creating packages") function should extract the source archive manually; for example:
+An array of files listed under `source`, which should not be extracted from their archive format by *makepkg*. This can be used with archives that cannot be handled by `/usr/bin/bsdtar` or those that need to be installed as-is. If an alternative unarchiving tool is used (e.g. [lrzip](https://www.archlinux.org/packages/?name=lrzip)), it should be added in the `makedepends` array and the first line of the [prepare()](/index.php/Creating_packages#prepare.28.29 "Creating packages") function should extract the source archive manually; for example:
 
 ```
 prepare() {
-  lrzip -d _source_.tar.lrz
+  lrzip -d *source*.tar.lrz
 }
 
 ```
@@ -276,7 +274,7 @@ noextract=('foobar.tar.xz')
 
 ```
 
-To extract _nothing_, you can do something like this (taken from [firefox-i18n's PKGBUILD](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/firefox-i18n#n123)):
+To extract *nothing*, you can do something like this (taken from [firefox-i18n's PKGBUILD](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/firefox-i18n#n123)):
 
 ```
 noextract=("${source[@]%%::*}")
@@ -285,7 +283,7 @@ noextract=("${source[@]%%::*}")
 
 ### validpgpkeys
 
-An array of PGP fingerprints. If used, _makepkg_ will only accept signatures from the keys listed here and will ignore the trust values from the keyring. If the source file was signed with a subkey, _makepkg_ will still use the primary key for comparison.
+An array of PGP fingerprints. If used, *makepkg* will only accept signatures from the keys listed here and will ignore the trust values from the keyring. If the source file was signed with a subkey, *makepkg* will still use the primary key for comparison.
 
 Only full fingerprints are accepted. They must be uppercase and must not contain whitespace characters.
 
@@ -295,7 +293,7 @@ Only full fingerprints are accepted. They must be uppercase and must not contain
 
 These variables are arrays whose items are checksum strings that will be used to verify the integrity of the respective files in the [source](#source) array. You can also insert `SKIP` for a particular file, and its checksum will not be tested.
 
-Checksums are intended to verify the _integrity_ of the downloaded files, **not** their _authenticity_: for this reason, even though the MD5 algorithm is known to have considerable [vulnerabilities](https://en.wikipedia.org/wiki/MD5#Security "wikipedia:MD5") when used for other purposes, it is recommended for file integrity as a faster alternative to SHA-2 hashes, especially when large files are present in the `source` array. If possible, however, always test the authenticity of the files by adding their signatures to the `source` array: in this case you will also be able to safely skip their checksum verification altogether, as described above.
+Checksums are intended to verify the *integrity* of the downloaded files, **not** their *authenticity*: for this reason, even though the MD5 algorithm is known to have considerable [vulnerabilities](https://en.wikipedia.org/wiki/MD5#Security "wikipedia:MD5") when used for other purposes, it is recommended for file integrity as a faster alternative to SHA-2 hashes, especially when large files are present in the `source` array. If possible, however, always test the authenticity of the files by adding their signatures to the `source` array: in this case you will also be able to safely skip their checksum verification altogether, as described above.
 
 The values for these variables can be auto-generated by [makepkg](/index.php/Makepkg "Makepkg")'s `-g`/`--geninteg` option, then commonly appended with `makepkg -g >> PKGBUILD`. The `updpkgsums` command is able to update the variables wherever they are in the PKGBUILD. Both tools will use the variable that is already set in the PKGBUILD, or fall back to `md5sums` if none is set.
 

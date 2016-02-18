@@ -145,7 +145,7 @@ and type the following commands at the prompt:
 
 Repeat this process for `/dev/sdb` and `/dev/sdc` or use the alternate `sgdisk` method below. You may need to reboot to allow the kernel to recognize the new tables.
 
-**Note:** Make sure to create the same exact partitions on each disk. If a group of partitions of different sizes are assembled to create a RAID partition, it will work, but _the redundant partition will be in multiples of the size of the smallest partition_, leaving the unallocated space to waste.
+**Note:** Make sure to create the same exact partitions on each disk. If a group of partitions of different sizes are assembled to create a RAID partition, it will work, but *the redundant partition will be in multiples of the size of the smallest partition*, leaving the unallocated space to waste.
 
 #### Clone partitions with sgdisk
 
@@ -236,7 +236,6 @@ As with many tasks/items relating to mdadm, the status of the scrub can be queri
 Example:
 
  `$ cat /proc/mdstat` 
-
 ```
 Personalities : [raid6] [raid5] [raid4] [raid1] 
 md0 : active raid1 sdb1[0] sdc1[1]
@@ -331,7 +330,6 @@ Create a **/var** LV:
 ```
 
 **Note:** If you would like to add the swap space to the LVM create a `/swap` LV with the `-C y` option, which creates a contiguous partition, so that your swap space does not get partitioned over one or more disks nor over non-contiguous physical extents:
-
 ```
 # lvcreate -C y -L 2G VolGroupArray -n lvswap
 
@@ -366,7 +364,7 @@ Since the installer builds the initrd using `/etc/mdadm.conf` in the target syst
 
 ### Prepare hard drive
 
-Follow the directions outlined the [Installation](/index.php/Beginners%27_guide#Installation "Beginners' guide") section until you reach the _Prepare Hard Drive_ section. Skip the first two steps and navigate to the _Manually Configure block devices, filesystems and mountpoints_ page. Remember to only configure the PVs (e.g. `/dev/mapper/VolGroupArray-lvhome`) and **not** the actual disks (e.g. `/dev/sda1`).
+Follow the directions outlined the [Installation](/index.php/Beginners%27_guide#Installation "Beginners' guide") section until you reach the *Prepare Hard Drive* section. Skip the first two steps and navigate to the *Manually Configure block devices, filesystems and mountpoints* page. Remember to only configure the PVs (e.g. `/dev/mapper/VolGroupArray-lvhome`) and **not** the actual disks (e.g. `/dev/sda1`).
 
 **Warning:** `mkfs.xfs` will not align the chunk size and stripe size for optimum performance (see: [Optimum RAID](http://www.linuxpromagazine.com/Issues/2009/108/RAID-Performance)).
 

@@ -72,13 +72,13 @@ The [Debian Packaging Tutorial](https://www.debian.org/doc/manuals/packaging-tut
 
 	[http://savannah.nongnu.org/projects/quilt](http://savannah.nongnu.org/projects/quilt) || [quilt](https://www.archlinux.org/packages/?name=quilt)
 
-**Note:** Missing tools: _lintian_, _reprepo_, _equivs_, _cdbs_, _svn-buildpackage_, _javahelper_
+**Note:** Missing tools: *lintian*, *reprepo*, *equivs*, *cdbs*, *svn-buildpackage*, *javahelper*
 
 ### Tips and Tricks
 
 #### Override dependency handling
 
-_dpkg_ does not recognize dependencies installed by [pacman](/index.php/Pacman "Pacman"). This means `dpkg-buildpackage` will generally fail with errors such as:
+*dpkg* does not recognize dependencies installed by [pacman](/index.php/Pacman "Pacman"). This means `dpkg-buildpackage` will generally fail with errors such as:
 
 ```
 dpkg-checkbuilddeps: Unmet build dependencies: build-essential:native debhelper (>= 8.0.0)
@@ -103,14 +103,14 @@ override_dh_shlibdeps:
 
 **Note:** Any run-time dependencies (and matching version numbers) should be added manually to `debian/control`, where `${shlibs:Depends}` now has no meaning.
 
-**Warning:** Even _if_ you manage to successfully build a package this way, it is **strongly recommended** to build in a clean environment (such as chroot) to prevent any incompatibilities.
+**Warning:** Even *if* you manage to successfully build a package this way, it is **strongly recommended** to build in a clean environment (such as chroot) to prevent any incompatibilities.
 
 #### Set up a chroot
 
-See the [Pbuilder How-To](https://wiki.ubuntu.com/PbuilderHowto) for an introduction to _pbuilder-ubuntu_. Using _cowdancer_ in addition is recommended as [copy-on-write](http://en.wikipedia.org/wiki/Copy-on-write) offers a significant performance benefit.
+See the [Pbuilder How-To](https://wiki.ubuntu.com/PbuilderHowto) for an introduction to *pbuilder-ubuntu*. Using *cowdancer* in addition is recommended as [copy-on-write](http://en.wikipedia.org/wiki/Copy-on-write) offers a significant performance benefit.
 
 *   [debian-archive-keyring](https://aur.archlinux.org/packages/debian-archive-keyring/), [ubuntu-keyring](https://aur.archlinux.org/packages/ubuntu-keyring/) and [gnupg1](https://aur.archlinux.org/packages/gnupg1/) from the [AUR](/index.php/AUR "AUR") are required.
-*   _eatmydata_ is available as [libeatmydata](https://aur.archlinux.org/packages/libeatmydata/) and [lib32-libeatmydata](https://aur.archlinux.org/packages/lib32-libeatmydata/) in the [AUR](/index.php/AUR "AUR"). To prevent `LD_PRELOAD` errors, it must be installed both inside and outside the chroot. As the paths are different in Arch and Debian, create the following symbolic links:
+*   *eatmydata* is available as [libeatmydata](https://aur.archlinux.org/packages/libeatmydata/) and [lib32-libeatmydata](https://aur.archlinux.org/packages/lib32-libeatmydata/) in the [AUR](/index.php/AUR "AUR"). To prevent `LD_PRELOAD` errors, it must be installed both inside and outside the chroot. As the paths are different in Arch and Debian, create the following symbolic links:
 
 ```
 # ln -s /usr/lib/libeatmydata.so.1.1.1 /usr/lib/libeatmydata/libeatmydata.so

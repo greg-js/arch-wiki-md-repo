@@ -18,7 +18,7 @@ To fix tiny cursor and misaligned text issues, install either [ttf-liberation](h
 
 ## Templates
 
-If you want to change the default styles in Abiword, you should open a new document, change it to your own needs, and save it as the template name _normal.awt_ in the `$HOME/.AbiSuite/templates` directory. After that, your new documents will follow the template.
+If you want to change the default styles in Abiword, you should open a new document, change it to your own needs, and save it as the template name *normal.awt* in the `$HOME/.AbiSuite/templates` directory. After that, your new documents will follow the template.
 
 The instructions above don't work for Abiword 3.0\. The following does work:
 
@@ -30,7 +30,7 @@ Other styles in /usr/share/abiword-3.0/templates/ can be modified as well.
 
 ## Grammar Checking
 
-Install the [abiword-plugins](https://www.archlinux.org/packages/?name=abiword-plugins) package and enable grammar checking from _Edit>Preferences>Spell Checking>Automatic grammar checking_.
+Install the [abiword-plugins](https://www.archlinux.org/packages/?name=abiword-plugins) package and enable grammar checking from *Edit>Preferences>Spell Checking>Automatic grammar checking*.
 
 ## Change keybindings
 
@@ -76,7 +76,7 @@ It should look similar to the following:
 It is then neccessary to change the default template. You must follow these steps exactly.
 
 1.  Open Abiword and save a blank document titled `normal.rtf` in `~/.AbiSuite/templates/`. If the directory does not exist, create it.
-2.  Rename the file to _normal.awt_.
+2.  Rename the file to *normal.awt*.
 
 Do **not** just save a blank `.awt` file! You must trick Abiword into using a `.rtf` template in order for this to work.
 

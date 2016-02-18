@@ -63,7 +63,6 @@ After configuring dnsmasq, the DHCP client will need to prepend the localhost ad
 One option is a pure `resolv.conf` configuration. To do this, just make the first nameserver in `/etc/resolv.conf` point to localhost:
 
  `/etc/resolv.conf` 
-
 ```
 nameserver 127.0.0.1
 # External nameservers
@@ -74,7 +73,6 @@ nameserver 127.0.0.1
 Now DNS queries will be resolved first with dnsmasq, only checking external servers if dnsmasq cannot resolve the query. [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), unfortunately, tends to overwrite `/etc/resolv.conf` by default, so if you use DHCP it is a good idea to protect `/etc/resolv.conf`. To do this, append `nohook resolv.conf` to the dhcpcd config file:
 
  `/etc/dhcpcd.conf` 
-
 ```
 ...
 nohook resolv.conf
@@ -92,7 +90,6 @@ It is also possible to write protect your resolv.conf:
 A limitation in the way Linux handles DNS queries is that there can only be a maximum of three nameservers used in `resolv.conf`. As a workaround, you can make localhost the only nameserver in `resolv.conf`, and then create a separate `resolv-file` for your external nameservers. First, create a new resolv file for dnsmasq:
 
  `/etc/resolv.dnsmasq.conf` 
-
 ```
 # Google's nameservers, for example
 nameserver 8.8.8.8
@@ -103,7 +100,6 @@ nameserver 8.8.4.4
 And then edit `/etc/dnsmasq.conf` to use your new resolv file:
 
  `/etc/dnsmasq.conf` 
-
 ```
 ...
 resolv-file=/etc/resolv.dnsmasq.conf
@@ -136,7 +132,6 @@ DNS requests can be sped up by caching previous requests locally for subsequent 
 Make sure [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) has been installed, but has been disabled. Then, edit `/etc/NetworkManager/NetworkManager.conf` and change the `dns` in the `[main]` section:
 
  `/etc/NetworkManager/NetworkManager.conf` 
-
 ```
 [main]
 plugins=keyfile
@@ -149,13 +144,13 @@ Now restart NetworkManager or reboot. NetworkManager will automatically start dn
 
 #### Custom Configuration
 
-Custom configurations can be created for _dnsmasq_ by creating configuration files in `/etc/NetworkManager/dnsmasq.d/`. For example, to change the size of the DNS cache (which is stored in RAM):
+Custom configurations can be created for *dnsmasq* by creating configuration files in `/etc/NetworkManager/dnsmasq.d/`. For example, to change the size of the DNS cache (which is stored in RAM):
 
  `/etc/NetworkManager/dnsmasq.d/cache`  `cache-size=1000` 
 
 #### IPv6
 
-Enabling `dnsmasq` in NetworkManager may break IPv6-only DNS lookups (i.e. `dig -6 [hostname]`) which would otherwise work. In order to resolve this, creating the following file will configure _dnsmasq_ to also listen to the IPv6 loopback:
+Enabling `dnsmasq` in NetworkManager may break IPv6-only DNS lookups (i.e. `dig -6 [hostname]`) which would otherwise work. In order to resolve this, creating the following file will configure *dnsmasq* to also listen to the IPv6 loopback:
 
  `/etc/NetworkManager/dnsmasq.d/ipv6_listen.conf`  `listen-address=::1` 
 
@@ -209,7 +204,7 @@ The network will also need to be restarted so the DHCP client can create a new `
 
 ### DNS Caching
 
-To do a lookup speed test choose a website that has not been visited since dnsmasq has been started (_dig_ is part of the [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) package):
+To do a lookup speed test choose a website that has not been visited since dnsmasq has been started (*dig* is part of the [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) package):
 
 ```
 $ dig archlinux.org | grep "Query time"
@@ -219,14 +214,11 @@ $ dig archlinux.org | grep "Query time"
 Running the command again will use the cached DNS IP and result in a faster lookup time if dnsmasq is setup correctly:
 
  `$ dig archlinux.org | grep "Query time"` 
-
 ```
 ;; Query time: 18 msec
 
 ```
-
  `$ dig archlinux.org | grep "Query time"` 
-
 ```
 ;; Query time: 2 msec
 

@@ -31,7 +31,7 @@ Sudo (su "do") consente all'amministratore di sistema di delegare a certi utenti
 
 Sudo è un'alternativa sicura per il comando [su](/index.php/Su "Su") tradizionale. Molto spesso l'utente utilizza su (super user) per ottenere i privilegi di root. In generale, si ritiene imprudente eseguire il login come root, "il superutente", per periodi di tempo prolungati. L'utente root gode di controllo completo e assoluto su tutto il sistema, ma a grande rischio! Alcuni semplici errori possono facilmente rendere un sistema inutilizzabile, e tutte le applicazioni in esecuzione con privilegi di root consentiranno un libero accesso all'intera struttura gerarchica del file system.
 
-Sudo invece, concede dei privilegi _temporanei_ per un singolo comando (sia come root che come altro utente), ristabilendo alla fine dell'operazione lo stato di utente normale, senza privilegi di root e rendendo di conseguenza, il sistema nuovamente "in salvo" da azioni e stati a rischio. Sudo fornisce inoltre, come livello sicurezza aggiuntivo, traccia di tutti i comandi eseguiti, come anche di ogni tentativo di accesso fallito.
+Sudo invece, concede dei privilegi *temporanei* per un singolo comando (sia come root che come altro utente), ristabilendo alla fine dell'operazione lo stato di utente normale, senza privilegi di root e rendendo di conseguenza, il sistema nuovamente "in salvo" da azioni e stati a rischio. Sudo fornisce inoltre, come livello sicurezza aggiuntivo, traccia di tutti i comandi eseguiti, come anche di ogni tentativo di accesso fallito.
 
 ## Installazione
 
@@ -65,7 +65,7 @@ Il file di configurazione di sudo è `/etc/sudoers`, e dovrebbe essere sempre mo
 
 **Warning:** Eventuali errori in `/etc/sudoers` possono rendere sudo inutilizzabile. Editarlo **sempre** con `visudo` per prevenirli.
 
-L'editor predefinito è `vi`, che sarà utilizzato se non si prefissa il comando con _EDITOR=<editor>_. Si possono utilizzare altri editor, ad esempio, gedit:
+L'editor predefinito è `vi`, che sarà utilizzato se non si prefissa il comando con *EDITOR=<editor>*. Si possono utilizzare altri editor, ad esempio, gedit:
 
 ```
 # EDITOR=gedit visudo
@@ -307,7 +307,7 @@ Defaults timestamp_timeout=0,rootpw
 
 Con sudo installato e configurato, qualcuno potrebbe voler disabilitare il login di root. Senza root, eventuali malintenzionati dovrebbero prima individuare un nome utente configurato come sudoer, e poi la password dell'utente.
 
-**Attenzione:** Assicurarsi che l'utente sia correttamente configurato come sudoer _prima_ di disabilitare l'account di root!
+**Attenzione:** Assicurarsi che l'utente sia correttamente configurato come sudoer *prima* di disabilitare l'account di root!
 
 L'account può essere bloccato con `passwd`:
 

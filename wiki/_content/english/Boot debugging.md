@@ -16,7 +16,7 @@ If all you want is to be able to see error messages that are already being displ
 Most kernel messages are hidden during boot. You can see more of these messages by adding different kernel parameters. The simplest ones are:
 
 *   `debug` enables debug messages for both the kernel and [systemd](/index.php/Systemd "Systemd")
-*   `ignore_loglevel` forces _all_ kernel messages to be printed
+*   `ignore_loglevel` forces *all* kernel messages to be printed
 
 Other parameters you can add that might be useful in certain situations are:
 
@@ -33,7 +33,7 @@ Getting an interactive shell at some stage in the boot process can help you pinp
 
 *   `rescue` launches a shell shortly after the root filesystem is remounted read/write
 *   `emergency` launches a shell even earlier, before most filesystems are mounted
-*   `init=/bin/sh` (as a last resort) changes the init program to a root shell. `rescue` and `emergency` both rely on [systemd](/index.php/Systemd "Systemd"), but this should work even if _systemd_ is broken
+*   `init=/bin/sh` (as a last resort) changes the init program to a root shell. `rescue` and `emergency` both rely on [systemd](/index.php/Systemd "Systemd"), but this should work even if *systemd* is broken
 
 Another option is to [enable](/index.php/Enable "Enable") `debug-shell.service`, which adds a root shell on `tty9` (accessible with Ctrl+Alt+F9). Take care to disable the service when done to avoid the security risk of leaving a root shell open on every boot.
 

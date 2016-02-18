@@ -47,7 +47,7 @@
 
 ## 플러그인
 
-_[브라우저 플러그인](/index.php/Browser_plugins "Browser plugins")을 보라_
+*[브라우저 플러그인](/index.php/Browser_plugins "Browser plugins")을 보라*
 
 어떤 플러그인이 설치되어 있고 활성화되었는지 다음을 브라우저 주소 입력줄에 입력하여 확인하라.
 
@@ -56,7 +56,7 @@ about:plugins
 
 ```
 
-또는 메뉴 바에서 _애드온_을 선택한 후 좌측에서 “플러그인”을 선택하라.
+또는 메뉴 바에서 *애드온*을 선택한 후 좌측에서 “플러그인”을 선택하라.
 
 ### GNOME 연결
 

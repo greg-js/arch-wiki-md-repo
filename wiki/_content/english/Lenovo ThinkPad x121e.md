@@ -116,7 +116,7 @@ Speed up trackpoint: [https://bbs.archlinux.org/viewtopic.php?id=130130](https:/
 
 Solution for difficulties suspending or hibernating: [https://bbs.archlinux.org/viewtopic.php?id=125011](https://bbs.archlinux.org/viewtopic.php?id=125011).
 
-VGA disconnect problems: [https://bbs.archlinux.org/viewtopic.php?id=134886](https://bbs.archlinux.org/viewtopic.php?id=134886). The best "solution" appears to be to make the VGA output inactive _before_ pulling the plug. This seems to prevent the confusion which otherwise ensues.
+VGA disconnect problems: [https://bbs.archlinux.org/viewtopic.php?id=134886](https://bbs.archlinux.org/viewtopic.php?id=134886). The best "solution" appears to be to make the VGA output inactive *before* pulling the plug. This seems to prevent the confusion which otherwise ensues.
 
 If you cannot power off when running on battery, see this thread for a possible solution: [https://bbs.archlinux.org/viewtopic.php?id=133108](https://bbs.archlinux.org/viewtopic.php?id=133108). This seems to be unnecessary with systemd which is now default.
 

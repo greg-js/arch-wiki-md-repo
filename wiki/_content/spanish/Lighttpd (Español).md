@@ -24,7 +24,7 @@ pacman -S php php-cgi
 
 ```
 
-Ahora revisa la versión de php-cgi escribiendo _php-cgi --version_
+Ahora revisa la versión de php-cgi escribiendo *php-cgi --version*
 
 ```
 PHP 5.2.5 with Suhosin-Patch 0.9.6.2 (cgi-fcgi) (built: Nov 13 2007 20:03:00)
@@ -35,7 +35,7 @@ Zend Engine v2.2.0, Copyright (c) 1998-2007 Zend Technologies
 
 Si tienes una salida similar a esa quiere decir que PHP fue instalado correctamente
 
-**Note** : Por favor mantén en cuenta que si recibes errores del tipo _No input file found_ luego de intentar accesar a tus arhivos php entonces asegurate de que /etc/php/php.ini tenga las directivas habilitadas
+**Note** : Por favor mantén en cuenta que si recibes errores del tipo *No input file found* luego de intentar accesar a tus arhivos php entonces asegurate de que /etc/php/php.ini tenga las directivas habilitadas
 
 ```
 cgi.fix_pathinfo=1

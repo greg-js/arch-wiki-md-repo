@@ -1,4 +1,4 @@
-Το _iptables_ είναι ένα εργαλείο γραμμής εντολών για τη ρύθμιση του [firewall](/index.php/Firewall "Firewall") του Linux kernel, υλοποιημένο μέσα στο [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") project. Ο όρος _iptables_ χρησιμοποιείται επίσης συχνά όταν αναφερόμαστε στο firewall σε επίπεδο kernel. Μπορεί να παραμετροποιηθεί κατ' ευθείαν με το _iptables_, ή χρησιμοποιώντας ένα από τα πολλά [frontends](/index.php/Firewalls#Console_frontends "Firewalls") και [GUIs](/index.php/Firewalls#Graphic_frontends "Firewalls"). Το _iptables_ χρησιμοποιείται για το [IPv4](https://en.wikipedia.org/wiki/IPv4 "wikipedia:IPv4") και το _ip6tables_ για το [IPv6](/index.php/IPv6 "IPv6").
+Το *iptables* είναι ένα εργαλείο γραμμής εντολών για τη ρύθμιση του [firewall](/index.php/Firewall "Firewall") του Linux kernel, υλοποιημένο μέσα στο [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") project. Ο όρος *iptables* χρησιμοποιείται επίσης συχνά όταν αναφερόμαστε στο firewall σε επίπεδο kernel. Μπορεί να παραμετροποιηθεί κατ' ευθείαν με το *iptables*, ή χρησιμοποιώντας ένα από τα πολλά [frontends](/index.php/Firewalls#Console_frontends "Firewalls") και [GUIs](/index.php/Firewalls#Graphic_frontends "Firewalls"). Το *iptables* χρησιμοποιείται για το [IPv4](https://en.wikipedia.org/wiki/IPv4 "wikipedia:IPv4") και το *ip6tables* για το [IPv6](/index.php/IPv6 "IPv6").
 
 Το [nftables](/index.php/Nftables "Nftables") βγήκε με [την έκδοση του Linux kernel 3.13](http://www.phoronix.com/scan.php?page=news_item&px=MTQ5MDU), και θα αντικαταστήσει μια μέρα το iptables ως το κύριο εργαλείο του Linux firewall.
 
@@ -31,11 +31,11 @@
 
 ## Βασικές έννοιες
 
-Το iptables χρησιμοποιείται για να επιθεωρήσει, τρποποποιήσει, προωθήσει, ανακατευθύνει και/ή απορρίψει IPv4 πακέτα. Ο κώδικας για το φιλτράρισμα των IPv4 πακέτων είναι ήδη ενσωματωμένος στον πυρήνα και οργανώνεται σε μία συλλογή από πίνακες(_tables_), ο καθένας με ένα συγκεκριμένο σκοπό. Οι πίνακες είναι φτιαγμένοι από ένα σύνολο προκαθορισμένων αλυσίδων(_chains_), και οι αλυσίδες περιέχουν κανόνες οι οποίοι διασχίζονται κατά σειρά. Κάθε κανόνας αποτελείται από ένα κατηγόρημα με πιθανά matches και μία αντίστοιχη δράση (που ονομάζεται στόχος(_target_)) η οποία εκτελείται αν το κατηγόρημα είναι αληθές, πχ. οι καταστάσεις ταιριάζουν. Το iptables είναι το εργαλείο του χρήστη που σου επιτρέπει να δουλέψεις με αυτές τις αλυσίδες/κανόνες. Οι περισσότεροι νέοι χρήστες βρίσκουν την πολυπλοκότητα του linux IP routing αρκετά τρομακτική, αλλά στην εφαρμογή, οι πιο συχνές περιπτώσεις χρήσης (NAT και/ή βασικό Internet firewall) είναι πολύ λιγότερο περίπλοκες.
+Το iptables χρησιμοποιείται για να επιθεωρήσει, τρποποποιήσει, προωθήσει, ανακατευθύνει και/ή απορρίψει IPv4 πακέτα. Ο κώδικας για το φιλτράρισμα των IPv4 πακέτων είναι ήδη ενσωματωμένος στον πυρήνα και οργανώνεται σε μία συλλογή από πίνακες(*tables*), ο καθένας με ένα συγκεκριμένο σκοπό. Οι πίνακες είναι φτιαγμένοι από ένα σύνολο προκαθορισμένων αλυσίδων(*chains*), και οι αλυσίδες περιέχουν κανόνες οι οποίοι διασχίζονται κατά σειρά. Κάθε κανόνας αποτελείται από ένα κατηγόρημα με πιθανά matches και μία αντίστοιχη δράση (που ονομάζεται στόχος(*target*)) η οποία εκτελείται αν το κατηγόρημα είναι αληθές, πχ. οι καταστάσεις ταιριάζουν. Το iptables είναι το εργαλείο του χρήστη που σου επιτρέπει να δουλέψεις με αυτές τις αλυσίδες/κανόνες. Οι περισσότεροι νέοι χρήστες βρίσκουν την πολυπλοκότητα του linux IP routing αρκετά τρομακτική, αλλά στην εφαρμογή, οι πιο συχνές περιπτώσεις χρήσης (NAT και/ή βασικό Internet firewall) είναι πολύ λιγότερο περίπλοκες.
 
-Το κλειδί για να καταλάβει κανείς πως δουλέυει το iptables, είναι [αυτό το διάγραμμα](http://www.frozentux.net/iptables-tutorial/images/tables_traverse.jpg). Η λέξη με πεζά στην κορυφή είναι ο πίνακας και η λέξη με κεφαλαία από κάτω είναι η αλυσίδα. Κάθε IP πακέτο το οποίο εισέρχεται _σε οποιοδήποτε network interface_ περνάει μέσω αυτού του διαγράμματος από πάνω προς τα κάτω. Μία συχνή πηγή σύγχυσης είναι ότι τα πακέτα τα οποία εισέρχονται, πχ. από ένα internal interface, διαχειρίζονται διαφορετικά από αυτά τα οποία εισέρχονται από ένα interface που βγαίνει στο Internet. Όλα τα interfaces διαχειρίζονται το ίδιο. Εξαρτάται από το χρήστη να ορίσει κανόνες που συμπεριφέρονται διαφορετικά. Φυσικά, κάποια πακέτα προορίζονται για τοπκικές διεργασίες (local processes), ως εκ τούτου έρχονται από την κορυφή του διαγράμματος και σταματούν στο <Local Process>, ενώ άλλα πακέτα δημιουργούνται από τοπικές διεργασίες τα οποία ξεκινούν από το <Local Process> και προχωρούν προς τα κάτω δια μέσου του διαγράμματος. Μία λεπτομερής εξήγηση του πώς δουλεύει αυτό το διάγραμμα μπορεί να βρεθεί [εδώ](http://www.frozentux.net/iptables-tutorial/iptables-tutorial.html#TRAVERSINGOFTABLES).
+Το κλειδί για να καταλάβει κανείς πως δουλέυει το iptables, είναι [αυτό το διάγραμμα](http://www.frozentux.net/iptables-tutorial/images/tables_traverse.jpg). Η λέξη με πεζά στην κορυφή είναι ο πίνακας και η λέξη με κεφαλαία από κάτω είναι η αλυσίδα. Κάθε IP πακέτο το οποίο εισέρχεται *σε οποιοδήποτε network interface* περνάει μέσω αυτού του διαγράμματος από πάνω προς τα κάτω. Μία συχνή πηγή σύγχυσης είναι ότι τα πακέτα τα οποία εισέρχονται, πχ. από ένα internal interface, διαχειρίζονται διαφορετικά από αυτά τα οποία εισέρχονται από ένα interface που βγαίνει στο Internet. Όλα τα interfaces διαχειρίζονται το ίδιο. Εξαρτάται από το χρήστη να ορίσει κανόνες που συμπεριφέρονται διαφορετικά. Φυσικά, κάποια πακέτα προορίζονται για τοπκικές διεργασίες (local processes), ως εκ τούτου έρχονται από την κορυφή του διαγράμματος και σταματούν στο <Local Process>, ενώ άλλα πακέτα δημιουργούνται από τοπικές διεργασίες τα οποία ξεκινούν από το <Local Process> και προχωρούν προς τα κάτω δια μέσου του διαγράμματος. Μία λεπτομερής εξήγηση του πώς δουλεύει αυτό το διάγραμμα μπορεί να βρεθεί [εδώ](http://www.frozentux.net/iptables-tutorial/iptables-tutorial.html#TRAVERSINGOFTABLES).
 
-Στην πλειοψηφία των περιπτώσεων δε θα χρειαστεί να χρησιμοποιήσετε τους πίνακες **raw**, **mangle**, ή **security** καθόλου. Έτσι, το ακόλουθο διάγραμμα απεικονίζει μία απλοποιημένη ροή πακέτων του δικτύου μέσω του _iptables_:
+Στην πλειοψηφία των περιπτώσεων δε θα χρειαστεί να χρησιμοποιήσετε τους πίνακες **raw**, **mangle**, ή **security** καθόλου. Έτσι, το ακόλουθο διάγραμμα απεικονίζει μία απλοποιημένη ροή πακέτων του δικτύου μέσω του *iptables*:
 
 ```
                                XXXXXXXXXXXXXXXXXX
@@ -89,17 +89,17 @@ Routing decision                                                  |
 
 ### Αλυσίδες
 
-Οι πίνακες αποτελούνται από _αλυσίδες_, λίστες κανόνων που ακολουθούνται διαδοχικά. O προεπιλεγμένος πίνακας, ο `filter`, περιέχει τρεις ενσωματομένες αλυσίδες: τη `INPUT`, τη `OUTPUT` και τη `FORWARD`, που ενεργοποιούνται κατά διαφορετικές στιγμές της διαδικασίας φιλτραρίσματος πακέτων, όπως υποδικνύει το [διάγραμμα](http://www.frozentux.net/iptables-tutorial/chunkyhtml/images/tables_traverse.jpg). Ο πίνακας `nat` περιέχει τις αλυσίδες `PREROUTING`, `POSTROUTING`, και `OUTPUT`.
+Οι πίνακες αποτελούνται από *αλυσίδες*, λίστες κανόνων που ακολουθούνται διαδοχικά. O προεπιλεγμένος πίνακας, ο `filter`, περιέχει τρεις ενσωματομένες αλυσίδες: τη `INPUT`, τη `OUTPUT` και τη `FORWARD`, που ενεργοποιούνται κατά διαφορετικές στιγμές της διαδικασίας φιλτραρίσματος πακέτων, όπως υποδικνύει το [διάγραμμα](http://www.frozentux.net/iptables-tutorial/chunkyhtml/images/tables_traverse.jpg). Ο πίνακας `nat` περιέχει τις αλυσίδες `PREROUTING`, `POSTROUTING`, και `OUTPUT`.
 
 Δείτε μια περιγραφή των ενσωματομένων αλυσιδών σε άλλους πίνακες στο `man 8 iptables`.
 
-Αρχικά, καμία αλυσίδα δεν περιέχει κανόνες. Ο χρήστης γράφει κανόνες στις επιθυμιτές του αλυσίδες, οι οποίες _έχουν_ μια προεπιλεγμένη πολιτική, συνήθως ρυθμισμένη στο `ACCEPT`, η οποία μπορεί να επαναφερθεί στο `DROP` ώστε να εξασφαλιστεί ότι τίποτα δεν ξεφέυγει από το σύνολο κανόνων. Η προεπιλεγμένη πολιτική πάντοτε εφαρμόζεται στο τέλος, μόνο, της κάθε αλυσίδας, και έτσι το πακέτο πρέπει να περάσει από όλους τους υπάρχοντες κανόνες στην αλυσίδα προτού αυτή να εφαρμοστεί.
+Αρχικά, καμία αλυσίδα δεν περιέχει κανόνες. Ο χρήστης γράφει κανόνες στις επιθυμιτές του αλυσίδες, οι οποίες *έχουν* μια προεπιλεγμένη πολιτική, συνήθως ρυθμισμένη στο `ACCEPT`, η οποία μπορεί να επαναφερθεί στο `DROP` ώστε να εξασφαλιστεί ότι τίποτα δεν ξεφέυγει από το σύνολο κανόνων. Η προεπιλεγμένη πολιτική πάντοτε εφαρμόζεται στο τέλος, μόνο, της κάθε αλυσίδας, και έτσι το πακέτο πρέπει να περάσει από όλους τους υπάρχοντες κανόνες στην αλυσίδα προτού αυτή να εφαρμοστεί.
 
 Προσθέτοντας αλυσίδες που καθορίζονται απο το χρήστη, τα σύνολα κανόνων είναι πιο αποτελεσματικά ή τροποποιούνται ευκολότερα. Δείτε το [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall") για ένα παράδειγμα της χρήσης τους.
 
 ### Κανόνες
 
-Το φιλτράρισμα των πακέτων βασίζεται σε _κανόνες'_, που καθορίζονται από πολλαπλές _ζεύξεις_, προϋποθέσεις που πρέπει να τηρεί το πακέτο για να εφαρμοστεί ο κανόνας, και έναν _στόχο_, τη δράση που λαμβάνεται όταν το πακέτο ταιριάζει όλες τις προϋποθέσεις. Τυπικές περιπτώσεις ζεύξης κανόνα είναι η εύρεση της επιφάνειας απ' όπου προέρχεται το πακέτο (όπως eth0 η eth1), τί τύπου πακέτο είναι (ICMP, TCP ή UDP) ή η θύρα για την οποία προορίζεται το πακέτο.
+Το φιλτράρισμα των πακέτων βασίζεται σε *κανόνες'*, που καθορίζονται από πολλαπλές *ζεύξεις*, προϋποθέσεις που πρέπει να τηρεί το πακέτο για να εφαρμοστεί ο κανόνας, και έναν *στόχο*, τη δράση που λαμβάνεται όταν το πακέτο ταιριάζει όλες τις προϋποθέσεις. Τυπικές περιπτώσεις ζεύξης κανόνα είναι η εύρεση της επιφάνειας απ' όπου προέρχεται το πακέτο (όπως eth0 η eth1), τί τύπου πακέτο είναι (ICMP, TCP ή UDP) ή η θύρα για την οποία προορίζεται το πακέτο.
 
 Οι στόχοι καθορίζονται με την επιλογή `-j` ή `--jump`. Μπορούν να είναι είτε αλυσίδες που ορίζει ο χρήστης (π.χ. "εάν αυτές οι προϋποθέσεις τηρούνται, πήδηξε στην επόμενη χειροκίνητα καθορισμένη αλυσίδα και συνέχισε εκεί την επεξεργασία), είτε ένας από τους ενσωματωμένους στόχους, η κάποια επέκταση αυτών. Οι ενσωματωμένοι στόχοι είναι: `ACCEPT`, `DROP`, `QUEUE` και `RETURN`. Παραδείγματα επεκτάσεων στόχων είναι οι `REJECT` και `LOG`. Εάν ο στόχος είναι ανοίκει στους ενσωματωμένους, η μοίρα του πακέτου αποφασίζεται άμεσα και η επεξεργασία του στον τρέχον πίνακα σταματά. Εάν ο στόχος είναι αλυσίδα που ορίστηκε από τον χρήστη και το πακέτο περάσει επιτυχώς από τη δεύτερη αλυσίδα, θα προχωρήσει στον επόμενο κανόνα της αυθεντικής αλυσίδας. Οι επεκτάσεις στόχων χωρίζονται "τερματικές" (ως ενσωματωμένοι στόχοι) και "μη-τερματικές" (ως αλυσίδες που ορίστηκαν από τον χρήστη), δείτε το `man 8 iptables-extensions` για λεπτομέριες.
 
@@ -150,7 +150,6 @@ As with other services, if you want iptables to be loaded automatically on boot,
 You can check the current ruleset and the number of hits per rule by using the command:
 
  `# iptables -nvL` 
-
 ```
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
  pkts bytes target     prot opt in     out     source               destination
@@ -204,7 +203,7 @@ First of all, our computer is not a router (unless, of course, it [is a router](
 
 **Warning:** The rest of this section is meant to teach the syntax and concepts behind iptables rules. It is not intended as a means for securing servers. For improving the security of your system, see [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall") for a minimally secure iptables configuration and [Security](/index.php/Security "Security") for hardening Arch Linux in general.
 
-The [Dropbox](https://en.wikipedia.org/wiki/Dropbox_(service) "wikipedia:Dropbox (service)") LAN sync feature [broadcasts packets every 30 seconds](https://isc.sans.edu/port.html?port=17500) to all computers it can see. If we happen to be on a LAN with Dropbox clients and do not use this feature, then we might wish to reject those packets.
+The [Dropbox](https://en.wikipedia.org/wiki/Dropbox_(service) LAN sync feature [broadcasts packets every 30 seconds](https://isc.sans.edu/port.html?port=17500) to all computers it can see. If we happen to be on a LAN with Dropbox clients and do not use this feature, then we might wish to reject those packets.
 
 ```
 # iptables -A INPUT -p tcp --dport 17500 -j REJECT --reject-with icmp-port-unreachable
@@ -380,7 +379,7 @@ Now whenever we want to drop a packet and log this event, we just jump to the `l
 
 ### Limiting log rate
 
-The above `logdrop` chain uses the limit module to prevent the _iptables_ log from growing too large or causing needless hard drive writes. Without limiting an erroneously configured service trying to connect, or an attacker, could fill the drive (or at least the `/var` partition) by causing writes to the iptables log.
+The above `logdrop` chain uses the limit module to prevent the *iptables* log from growing too large or causing needless hard drive writes. Without limiting an erroneously configured service trying to connect, or an attacker, could fill the drive (or at least the `/var` partition) by causing writes to the iptables log.
 
 The limit module is called with `-m limit`. You can then use `--limit` to set an average rate and `--limit-burst` to set an initial burst rate. In the `logdrop` example above:
 

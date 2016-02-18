@@ -93,7 +93,7 @@ Spiegazione delle opzioni
 
 	Non prealloca lo spazio su disco per il file prima dell'inizio del download. (Default:prealloc)
 
-	Su filesystem più recenti come ext4 (con supporto alle estensioni), btrfs e xfs è consigliabile usare `--file-allocation=falloc`, poichè alloca file di grandi dimensioni (GB) quasi istantaneamente. Non utilizzare _falloc_ su filesystem legacy come ext3, dal momento che _prealloc_ ha lo stesso tempo di esecuzione dell'allocazione standard, ma non consente ad aria2 di iniziare il download finchè l'allocazione non è terminata.
+	Su filesystem più recenti come ext4 (con supporto alle estensioni), btrfs e xfs è consigliabile usare `--file-allocation=falloc`, poichè alloca file di grandi dimensioni (GB) quasi istantaneamente. Non utilizzare *falloc* su filesystem legacy come ext3, dal momento che *prealloc* ha lo stesso tempo di esecuzione dell'allocazione standard, ma non consente ad aria2 di iniziare il download finchè l'allocazione non è terminata.
 
 	`--log-level=error`
 

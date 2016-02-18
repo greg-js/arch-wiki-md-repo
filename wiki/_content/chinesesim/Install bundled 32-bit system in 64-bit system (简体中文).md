@@ -40,9 +40,9 @@ sed -e 's@/etc/pacman.d/mirrorlist@/opt/arch32/mirrorlist@g' /etc/pacman.conf > 
 
 ```
 
-在下面的 pacman 命令中使用了_--root_选项，这会使得_/var/log/pacman.log_、_/var/lib/pacman/db.lck_等文件创建在_/opt/arch32_目录下。这样，pacman 的日志文件将是_/opt/arch32/var/log/pacman.log_, 不会和64位的主系统混在一起。因此，并不需要在_/opt/arch32/pacman.conf_文件里添加_LogFile_指令，也不需要_--logfile_命令行选项，除非你想要把它们放在其它地方。
+在下面的 pacman 命令中使用了*--root*选项，这会使得*/var/log/pacman.log*、*/var/lib/pacman/db.lck*等文件创建在*/opt/arch32*目录下。这样，pacman 的日志文件将是*/opt/arch32/var/log/pacman.log*, 不会和64位的主系统混在一起。因此，并不需要在*/opt/arch32/pacman.conf*文件里添加*LogFile*指令，也不需要*--logfile*命令行选项，除非你想要把它们放在其它地方。
 
-_--cachedir_选项用来设置包缓存的目录，默认是 /var/cache/pacman/pkg，现在要设置为 /opt/arch32/var/cache/pacman/pkg。对于有经验的用户，也可以使用外部的一个目录，这样在完成基本系统的安装后，/opt/arch32目录不会含有任何软件包，比较干净。今后要把 32 位子系统推倒重来的时候也比较方便，不需要重复下载软件包。
+*--cachedir*选项用来设置包缓存的目录，默认是 /var/cache/pacman/pkg，现在要设置为 /opt/arch32/var/cache/pacman/pkg。对于有经验的用户，也可以使用外部的一个目录，这样在完成基本系统的安装后，/opt/arch32目录不会含有任何软件包，比较干净。今后要把 32 位子系统推倒重来的时候也比较方便，不需要重复下载软件包。
 
 这两个目录需要预先创建，因此要执行：
 
@@ -51,7 +51,7 @@ mkdir -p /opt/arch32/var/{cache/pacman/pkg,lib/pacman}
 
 ```
 
-_--config_选项设置 pacman 配置文件的位置，默认是 /etc/pacman.conf，现在要把它改为 /opt/arch32。
+*--config*选项设置 pacman 配置文件的位置，默认是 /etc/pacman.conf，现在要把它改为 /opt/arch32。
 
 现在同步 pacman 数据库：
 
@@ -91,7 +91,6 @@ rm /opt/arch32/{pacman.conf,mirrorlist}
 ## Create an Arch32 Daemon Script and Systemd Service
 
  `/etc/systemd/system/arch32.service` 
-
 ```
 [Unit]
 Description=32-bit chroot
@@ -106,9 +105,7 @@ ExecStop=/usr/local/bin/arch32 stop
 WantedBy=multi-user.target
 
 ```
-
  `/usr/local/bin/arch32` 
-
 ```
 #!/bin/bash
 
@@ -348,7 +345,7 @@ alias wine='schroot -pqd $(pwd) -- wine'
 
 ### 注意事项
 
-如果你还在使用老的 dchroot 而不是这里介绍的schroot，你应该用_-d_选项而不是_-s_。
+如果你还在使用老的 dchroot 而不是这里介绍的schroot，你应该用*-d*选项而不是*-s*。
 
 ## 另类安装方法
 

@@ -1,6 +1,6 @@
 From [Qtile web site](http://qtile.org/):
 
-	_Qtile 是一个全功能、可轻易修改(骇)的平铺式窗口管理程序。 Qtile 简单、轻巧、扩展性高。 撰写自订的窗口堆叠模式、插件以及指令是轻而易举的事情。程序以及设定均是以 [python](/index.php/Python_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python (简体中文)") 写成，意味着：您可以使用语言所提供的所有能力及弹性来满足您对窗口管理的需求。_
+	*Qtile 是一个全功能、可轻易修改(骇)的平铺式窗口管理程序。 Qtile 简单、轻巧、扩展性高。 撰写自订的窗口堆叠模式、插件以及指令是轻而易举的事情。程序以及设定均是以 [python](/index.php/Python_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python (简体中文)") 写成，意味着：您可以使用语言所提供的所有能力及弹性来满足您对窗口管理的需求。*
 
 ## Contents
 
@@ -48,7 +48,7 @@ $ cp  /usr/lib/python2.7/site-packages/libqtile/resources/default_config.py ~/.c
 
 **注意:** 这个章节只会介绍基本的配置模式，若需更详尽的配置讯息请参见 [官方文档](http://docs.qtile.org/en/latest/)。
 
-整个 Qtile 的配置均是以[python](/index.php/Python_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python (简体中文)")写成，存放于 `~/.config/qtile/config.py`。 若需对 [python](/index.php/Python_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python (简体中文)") 有_快速概览_的需求，可以阅读 [这份教程](https://developers.google.com/edu/python/introduction)。 此教程将讲解关于 [python](/index.php/Python_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python (简体中文)") 变数、函数、模组以及其他配置 qtile 所需要的预备知识。
+整个 Qtile 的配置均是以[python](/index.php/Python_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python (简体中文)")写成，存放于 `~/.config/qtile/config.py`。 若需对 [python](/index.php/Python_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python (简体中文)") 有*快速概览*的需求，可以阅读 [这份教程](https://developers.google.com/edu/python/introduction)。 此教程将讲解关于 [python](/index.php/Python_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python (简体中文)") 变数、函数、模组以及其他配置 qtile 所需要的预备知识。
 
 透过以下指令测试你所编写的 config.py 文件是否有语法上的错误。
 
@@ -196,7 +196,7 @@ echo "exec qtile" > /tmp/.start_qtile ; xinit /tmp/.start_qtile -- :2
 *   [Qtile 官方文档](http://docs.qtile.org/en/latest/) 是 Qtile 0.5 的说明文件，而在函式库的呼叫上， 0.5 版与 0.6 版有不相容的差异；这些差异将会使 [缺省配置](https://github.com/qtile/qtile/blob/master/libqtile/resources/default_config.py) 无法于 Qtile 0.5 上运行。
     *   Ubuntu PPA 包含的是 Qtile 0.5
     *   ArchLinux 的 [qtile-git](https://aur.archlinux.org/packages/qtile-git/) 则是最新的 Qtile 0.6
-*   依照邮件列表内开发者的意思， Qtile 并不打算撰写完整的说明文件，而是优先扩充 _问与答 (FAQ)_ ，而若有细节需求，会请求直接阅读源码。
+*   依照邮件列表内开发者的意思， Qtile 并不打算撰写完整的说明文件，而是优先扩充 *问与答 (FAQ)* ，而若有细节需求，会请求直接阅读源码。
 *   Qtile 可以很好的与其他桌面环境组件协调运作。
 
 ### 预备

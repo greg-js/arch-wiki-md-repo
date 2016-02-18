@@ -178,7 +178,7 @@ Si veda l'articolo principale: [List_of_Applications/Documents_(Italiano)#Docume
 
 	[http://labplot.sourceforge.net/](http://labplot.sourceforge.net/) || [labplot2](https://aur.archlinux.org/packages/labplot2/)
 
-*   **[QtiPlot](https://en.wikipedia.org/wiki/QtiPlot "wikipedia:QtiPlot")** — Applicazione multipiattaforma usato per rappresentazioni scientifiche interattive e analisis dei dati, simile al programma proprietario [Origin](https://en.wikipedia.org/wiki/Origin_(software) "wikipedia:Origin (software)") o a [SigmaPlot](https://en.wikipedia.org/wiki/SigmaPlot "wikipedia:SigmaPlot").
+*   **[QtiPlot](https://en.wikipedia.org/wiki/QtiPlot o a [SigmaPlot](https://en.wikipedia.org/wiki/SigmaPlot "wikipedia:SigmaPlot").
 
 	[http://soft.proindependent.com/qtiplot.html](http://soft.proindependent.com/qtiplot.html) || [qtiplot](https://www.archlinux.org/packages/?name=qtiplot)
 

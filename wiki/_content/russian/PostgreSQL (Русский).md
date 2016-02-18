@@ -124,7 +124,7 @@ $ [psql](http://www.postgresql.org/docs/8.3/static/app-psql.html)
 
 ```
 
-	_— Вы также можете использовать `psql <database_name>` для редактирования конкретной базы данных._
+	*— Вы также можете использовать `psql <database_name>` для редактирования конкретной базы данных.*
 
 *   Список всех возможных команд (например, `CREATE TABLE`) для запросов
 
@@ -189,7 +189,6 @@ $ [psql](http://www.postgresql.org/docs/8.3/static/app-psql.html)
 Файл настроек сервера баз данных PostgreSQL `postgresql.conf`. Этот файл находится в папке данных сервера, обычно `/var/lib/postgres/data`. В этой же папке находятся основные файлы настроек включая и `pg_hba.conf`.
 
 **Обратите внимание:** По умолчанию эта папка не доступна даже для просмотра (или поиска) от лица обычного пользователя.
-
 Из-под пользователя root редактируем файл `$ sudo nano /var/lib/postgres/data/postgresql.conf` 
 
 В разделе connections and authentications раскомментируйте или исправьте строку `listen_addresses` по вашему желанию на

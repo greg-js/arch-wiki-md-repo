@@ -34,7 +34,6 @@ The Dell Precision M4800 laptop is a mobile workstation released in late 2013.
 ### lspci
 
  `# lspci` 
-
 ```
 00:00.0 Host bridge: Intel Corporation Xeon E3-1200 v3/4th Gen Core Processor DRAM Controller (rev 06)
 00:01.0 PCI bridge: Intel Corporation Xeon E3-1200 v3/4th Gen Core Processor PCI Express x16 Controller (rev 06)
@@ -67,7 +66,6 @@ The Dell Precision M4800 laptop is a mobile workstation released in late 2013.
 ### lsusb
 
  `# lsusb` 
-
 ```
 Bus 004 Device 003: ID 0a5c:5800 Broadcom Corp. BCM5880 Secure Applications Processor
 Bus 004 Device 002: ID 8087:8000 Intel Corp.
@@ -84,7 +82,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 The M4800 comes with a legacy BIOS and UEFI. The Arch installation media, version 2014.04.01, may not properly boot or install if using legacy BIOS and/or a MS-DOS partition table. Using the UEFI option with a GPT-partitioned hard drive was required to successfully complete the installation process.
 
-The M4800 _will not_ give you a usable system _unless_ `nomodeset` is added to the kernel command line. This is required for both the Arch installation media and post-installation. Because `nomodeset` is required even after booting, use of the [Nouveau](/index.php/Nouveau "Nouveau") driver is not possible because Nouveau requires KMS.
+The M4800 *will not* give you a usable system *unless* `nomodeset` is added to the kernel command line. This is required for both the Arch installation media and post-installation. Because `nomodeset` is required even after booting, use of the [Nouveau](/index.php/Nouveau "Nouveau") driver is not possible because Nouveau requires KMS.
 
 If following [SSD memory cell clearing](/index.php/SSD_memory_cell_clearing "SSD memory cell clearing"), after boot the SSD drive (SK hynix SH920 2.5 7MM 512GB) may be set to the `frozen` state. Ejecting the SSD and then re-inserting the SSD cleared the `frozen` state. After clearing the `frozen` state, the instructions in [SSD memory cell clearing](/index.php/SSD_memory_cell_clearing "SSD memory cell clearing") were followed successfully and the drive was cleared.
 
@@ -92,5 +90,5 @@ If following [SSD memory cell clearing](/index.php/SSD_memory_cell_clearing "SSD
 
 *   The brightness up/down buttons do not work in [Cinnamon](/index.php/Cinnamon "Cinnamon") or at the virtual console without X (untested on other [desktop environments](/index.php/Desktop_environments "Desktop environments")). Interestingly, [redshift](https://www.archlinux.org/packages/?name=redshift) is able to adjust the display brightness.
 *   When Cinnamon locks the screen due to inactivity, pressing keys or moving the mouse does not automatically turn the display back on to allow unlocking the screen. A workaround is to press `Ctrl+Alt+F2` followed by `Ctrl+Alt+F1`, which switches from TTY1 to TTY2 and back again.
-*   Switching TTYs with `Ctrl+Alt+F_X_` after X has started does not present the user with a usable TTY.
+*   Switching TTYs with `Ctrl+Alt+F*X*` after X has started does not present the user with a usable TTY.
 *   When closing the GUI (e.g. by logging out of Cinnamon), the screen goes black, and the virtual console does not appear like it should.

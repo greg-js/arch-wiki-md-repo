@@ -19,11 +19,11 @@
 
 ## 历史
 
-MBR 由几片汇编码 (初始化引导器 – 446B), 四个主分区的分区表 (每个16B) 以及一个 _哨兵_ (0xAA55) 组成。
+MBR 由几片汇编码 (初始化引导器 – 446B), 四个主分区的分区表 (每个16B) 以及一个 *哨兵* (0xAA55) 组成。
 
-"传统" Windows/DOS MBR 引导器代码会在整个分区表里搜寻一个也是唯一的一个"活动"分区，读取该分区的X扇区，并把控制权交给操作系统。Windows/DOS 引导器_不能_启动 Arch Linux 分区因为它不是设计来加载 Linux 内核的，而且它只适应标记为_活动分区_的_主分区_ (GRUB 会完全无视).
+"传统" Windows/DOS MBR 引导器代码会在整个分区表里搜寻一个也是唯一的一个"活动"分区，读取该分区的X扇区，并把控制权交给操作系统。Windows/DOS 引导器*不能*启动 Arch Linux 分区因为它不是设计来加载 Linux 内核的，而且它只适应标记为*活动分区*的*主分区* (GRUB 会完全无视).
 
-[GRand Unified Bootloader (GRUB)](/index.php/GRUB "GRUB") 是实际上的 GNU/Linux 标准引导器，并推荐用户们安装到 MBR 以从_任何_分区启动，无论它是主分区还是逻辑分区。
+[GRand Unified Bootloader (GRUB)](/index.php/GRUB "GRUB") 是实际上的 GNU/Linux 标准引导器，并推荐用户们安装到 MBR 以从*任何*分区启动，无论它是主分区还是逻辑分区。
 
 ## 备份与还原
 

@@ -45,7 +45,6 @@ KMS 支持在 framebuffer 中使用原生分辨率和即时终端(tty)切换。K
 *   Nvidia 卡加入：[nouveau](/index.php/Nouveau "Nouveau")
 
  `/etc/mkinitcpio.conf` 
-
 ```
 MODULES="i915"
 **或**

@@ -1,6 +1,6 @@
 来自 Squid [官方网站](http://www.squid-cache.org)：
 
-	_**Squid** 是一个 Web 缓存代理，支持 HTTP, HTTPS, FTP, 以及更多。它通过缓存与重用经常请求的web页面，减少带宽使用同时提升了响应时间。Squid 具有可扩展的访问控制功能，同时可以使服务器加速。它运行在 Unix 和 Windows 中，采用 GNU GPL 协议发布。_
+	***Squid** 是一个 Web 缓存代理，支持 HTTP, HTTPS, FTP, 以及更多。它通过缓存与重用经常请求的web页面，减少带宽使用同时提升了响应时间。Squid 具有可扩展的访问控制功能，同时可以使服务器加速。它运行在 Unix 和 Windows 中，采用 GNU GPL 协议发布。*
 
 尽管 squid 在大型公司和学校中工作的很好，它也可以为个人家庭用户使用。然而如果你在寻找一个更轻量级的单用户代理，你可以尝试使用 [Polipo](/index.php/Polipo_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Polipo (简体中文)")。
 

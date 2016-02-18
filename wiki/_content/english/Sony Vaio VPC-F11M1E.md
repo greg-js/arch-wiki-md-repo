@@ -123,7 +123,7 @@ Here is an example module-sony keymap file for the VPC-F11M1E:
 
 ### Using the kernel tool `setkeycodes`
 
-_See the detailed article: [setkeycodes](/index.php/Setkeycodes "Setkeycodes")._
+*See the detailed article: [setkeycodes](/index.php/Setkeycodes "Setkeycodes").*
 
 ## Hardware Controls
 
@@ -144,7 +144,6 @@ Your grub kernel entry should look like this
 Make sure you installed ALSA.
 
  `$ aplay -l` 
-
 ```
 **** List of PLAYBACK Hardware Devices ****
 card 0: Intel [HDA Intel], device 0: ALC275 Analog [ALC275 Analog]

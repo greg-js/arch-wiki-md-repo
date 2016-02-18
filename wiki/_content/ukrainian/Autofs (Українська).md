@@ -98,23 +98,23 @@ AutoFS provides a new way of automatically discovering and mounting NFS-shares o
 
 Each host name needs to be resolveable, e.g. the name an IP address in `/etc/hosts` or via DNS.
 
-For instance, if you have a remote server _fileserver_ with an NFS share named _/home/share_, you can just access the share by typing:
+For instance, if you have a remote server *fileserver* with an NFS share named */home/share*, you can just access the share by typing:
 
 ```
 # cd /net/fileserver/home/share
 
 ```
 
-**Note:** Please note that _ghosting_, i.e. automatically creating directory placeholders before mounting shares is enabled by default, although AutoFS installation notes claim to remove that option from `/etc/conf.d/autofs` in order to start the AutoFS daemon.
+**Note:** Please note that *ghosting*, i.e. automatically creating directory placeholders before mounting shares is enabled by default, although AutoFS installation notes claim to remove that option from `/etc/conf.d/autofs` in order to start the AutoFS daemon.
 
-The `-hosts` option uses a similar mechanism as the _showmount_ command to detect remote shares. You can see the exported shares by typing:
+The `-hosts` option uses a similar mechanism as the *showmount* command to detect remote shares. You can see the exported shares by typing:
 
 ```
 # showmount <servername> -e 
 
 ```
 
-Replacing _<servername>_ with the name of your own server.
+Replacing *<servername>* with the name of your own server.
 
 ### Samba
 
@@ -154,7 +154,7 @@ Load the Fuse module:
 
 ```
 
-Add fuse to the _modules_ array in `/etc/rc.conf` to load it on each system boot.
+Add fuse to the *modules* array in `/etc/rc.conf` to load it on each system boot.
 
 Next, add a new entry for FTP servers in `/etc/autofs/auto.master`:
 
@@ -170,7 +170,7 @@ servername -fstype=curl,allow_other    :ftp\://myuser\:mypassword\@remoteserver
 
 ```
 
-Note: Your passwords are plainly visible for anyone that can run _df_ (only for mounted servers) or view the file `/etc/autofs/auto.ftp`. If you want slightly more security you can create the file `~root/.netrc` and add the passwords there. Passwords are still plain text, but you can have mode 600, and _df_ command will not show them (mounted or not). This method is also less sensitive to special characters (that else must be escaped) in the passwords. The format is:
+Note: Your passwords are plainly visible for anyone that can run *df* (only for mounted servers) or view the file `/etc/autofs/auto.ftp`. If you want slightly more security you can create the file `~root/.netrc` and add the passwords there. Passwords are still plain text, but you can have mode 600, and *df* command will not show them (mounted or not). This method is also less sensitive to special characters (that else must be escaped) in the passwords. The format is:
 
 ```
 machine remoteserver  
@@ -232,7 +232,7 @@ Load the Fuse module:
 
 ```
 
-Add fuse to the _modules_ array in `/etc/rc.conf` to load it on each system boot:
+Add fuse to the *modules* array in `/etc/rc.conf` to load it on each system boot:
 
 Install OpenSSH:
 

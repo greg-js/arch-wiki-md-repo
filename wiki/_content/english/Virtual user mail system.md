@@ -53,10 +53,9 @@ A gid and uid of 5000 is used in both cases so that we do not run into conflicts
 
 ### Database
 
-You will need to create an empty database and corresponding user. In this article, the user _postfix_user_ will have read/write access to the database _postfix_db_ using _hunter2_ as password. You are expected to create the database and user yourself, and give the user permission to use the database, as shown in the following code.
+You will need to create an empty database and corresponding user. In this article, the user *postfix_user* will have read/write access to the database *postfix_db* using *hunter2* as password. You are expected to create the database and user yourself, and give the user permission to use the database, as shown in the following code.
 
  `$ mysql -u root -p` 
-
 ```
 CREATE DATABASE postfix_db;
 GRANT ALL ON postfix_db.* TO 'postfix_user'@'localhost' IDENTIFIED BY 'hunter2';
@@ -150,7 +149,6 @@ Those new additional settings reference a lot of files that do not even exist ye
 If you were setting up your database with PostfixAdmin and created the database schema through PostfixAdmin, you can create the following files. Do not forget to change the password:
 
  `/etc/postfix/virtual_alias_maps.cf` 
-
 ```
 user = postfix_user
 password = hunter2
@@ -161,9 +159,7 @@ select_field = goto
 where_field = address
 
 ```
-
  `/etc/postfix/virtual_mailbox_domains.cf` 
-
 ```
 user = postfix_user
 password = hunter2
@@ -174,9 +170,7 @@ select_field = domain
 where_field = domain
 
 ```
-
  `/etc/postfix/virtual_mailbox_maps.cf` 
-
 ```
 user = postfix_user
 password = hunter2
@@ -189,9 +183,7 @@ where_field = username
 ```
 
 **Note:** For setups without using PostfixAdmin, create the following files.
-
  `/etc/postfix/virtual_alias_maps.cf` 
-
 ```
 user = postfix_user
 password = hunter2
@@ -202,9 +194,7 @@ select_field = virtual
 where_field = domain
 
 ```
-
  `/etc/postfix/virtual_mailbox_domains.cf` 
-
 ```
 user = postfix_user
 password = hunter2
@@ -215,9 +205,7 @@ select_field = destination
 where_field = source
 
 ```
-
  `/etc/postfix/virtual_mailbox_maps.cf` 
-
 ```
 user = postfix_user
 password = hunter2
@@ -229,7 +217,7 @@ where_field = email
 
 ```
 
-Run _postmap_ on _transport_ to generate its db:
+Run *postmap* on *transport* to generate its db:
 
 ```
 # postmap /etc/postfix/transport
@@ -241,7 +229,6 @@ Run _postmap_ on _transport_ to generate its db:
 Instead of using the provided Dovecot example config file, we'll create our own `/etc/dovecot/dovecot.conf`. Please note that the user and group here might be vmail **instead of postfix**!
 
  `/etc/dovecot/dovecot.conf` 
-
 ```
 protocols = imap pop3
 auth_mechanisms = plain
@@ -278,7 +265,6 @@ Now we create `/etc/dovecot/dovecot-sql.conf`, which we just referenced in the c
 If you used PostfixAdmin, then you add the following:
 
  `/etc/dovecot/dovecot-sql.conf` 
-
 ```
 driver = mysql
 connect = host=localhost dbname=postfix_db user=postfix_user password=hunter2
@@ -296,7 +282,6 @@ password_query = SELECT username as user, password, '/home/vmail/%d/%n' as userd
 Without having used PostfixAdmin you can use:
 
  `/etc/dovecot/dovecot-sql.conf` 
-
 ```
 driver = mysql
 connect = host=localhost dbname=postfix_db user=postfix_user password=hunter2
@@ -345,7 +330,6 @@ If you are using Apache, copy the example configuration file to your webserver c
 Add the following line in
 
  `/etc/httpd/conf/httpd.conf` 
-
 ```
 Include conf/extra/httpd-roundcubemail.conf
 
@@ -358,7 +342,6 @@ To let users change their passwords from within Roundcube, do the following:
 Enable the password plugin by adding this line to
 
  `/etc/webapps/roundcubemail/config/config.inc.php` 
-
 ```
 $rcmail_config['plugins'] = array('password');
 
@@ -367,7 +350,6 @@ $rcmail_config['plugins'] = array('password');
 Configure the password plugin and make sure you alter the settings accordingly:
 
  `/usr/share/webapps/roundcubemail/plugins/password/config.inc.php` 
-
 ```
 $config['password_driver'] = 'sql';
 $config['password_db_dsn'] = 'mysql://<postfix_database_user>:<password>@localhost/<postfix_database_name>';

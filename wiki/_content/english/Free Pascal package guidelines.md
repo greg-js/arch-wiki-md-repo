@@ -37,7 +37,7 @@ This page explains on how to write [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") f
 
 ### Package naming
 
-The project name alone is usually sufficient. However, in the case of cross-compiling, the package should be prefixed with `fpc32-` when targetting i686 Linux from multilib and named in the format of `fpc-_cpu_-_system_-_pkgname_` when targetting non-Arch Linux systems.
+The project name alone is usually sufficient. However, in the case of cross-compiling, the package should be prefixed with `fpc32-` when targetting i686 Linux from multilib and named in the format of `fpc-*cpu*-*system*-*pkgname*` when targetting non-Arch Linux systems.
 
 ### Helpful snippets
 
@@ -54,13 +54,13 @@ _fpcver=`fpc -iV`
 Please adhere to the following when making an FPC-based package:
 
 *   always add [fpc](https://www.archlinux.org/packages/?name=fpc) to either `makedepends` or `depends`
-*   always put all compiled units (*.a, *.compiled, *.o, *.ppu, *.res, *.rst) under `/usr/lib/fpc/_$_fpcver_/units/_$arch_-linux`
+*   always put all compiled units (*.a, *.compiled, *.o, *.ppu, *.res, *.rst) under `/usr/lib/fpc/*$_fpcver*/units/*$arch*-linux`
 *   add `staticlibs` to `options` if installing an import library
 
 #### Cross compiling
 
-*   always add the corresponding cross compiler package mentioned above (`fpc-_cpu_-_system_-rtl` or [fpc-multilib](https://aur.archlinux.org/packages/fpc-multilib/) for multilib) to `depends`
+*   always add the corresponding cross compiler package mentioned above (`fpc-*cpu*-*system*-rtl` or [fpc-multilib](https://aur.archlinux.org/packages/fpc-multilib/) for multilib) to `depends`
 *   always add `!strip` to `options` for non-Unix-based systems
-*   always put all compiled units (*.a, *.compiled, *.o, *.ppu, *.res, *.rst) under `/usr/lib/fpc/_$_fpcver_/units/_$_unitdir_` (or if multilib, `/usr/lib/fpc/_$_fpcver_/units/i386-linux`)
+*   always put all compiled units (*.a, *.compiled, *.o, *.ppu, *.res, *.rst) under `/usr/lib/fpc/*$_fpcver*/units/*$_unitdir*` (or if multilib, `/usr/lib/fpc/*$_fpcver*/units/i386-linux`)
 *   always use `any` (`x86_64` if multilib) as the architecture
 *   add `staticlibs` to `options` if installing an import library

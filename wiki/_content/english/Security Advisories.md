@@ -28,15 +28,14 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 
 ## Scheduled Advisories
 
-*   [13 February 2016] [ASA-201602-14](https://lists.archlinux.org/pipermail/arch-security/2016-February/000554.html) [glibc](https://www.archlinux.org/packages/?name=glibc) multiple issues
-*   [13 February 2016] [ASA-201602-15](https://lists.archlinux.org/pipermail/arch-security/2016-February/000555.html) [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) multiple issues
-
 ## Recent Advisories
 
 Here is an archive of security advisories posted to the [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list.
 
 ### February 2016
 
+*   [17 February 2016] [ASA-201602-15](https://lists.archlinux.org/pipermail/arch-security/2016-February/000555.html) [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) multiple issues
+*   [17 February 2016] [ASA-201602-14](https://lists.archlinux.org/pipermail/arch-security/2016-February/000554.html) [glibc](https://www.archlinux.org/packages/?name=glibc) multiple issues
 *   [13 February 2016] [ASA-201602-13](https://lists.archlinux.org/pipermail/arch-security/2016-February/000553.html) [nghttp2](https://www.archlinux.org/packages/?name=nghttp2) denial of service
 *   [13 February 2016] [ASA-201602-12](https://lists.archlinux.org/pipermail/arch-security/2016-February/000552.html) [firefox](https://www.archlinux.org/packages/?name=firefox) same-origin policy bypass
 *   [10 February 2016] [ASA-201602-11](https://lists.archlinux.org/pipermail/arch-security/2016-February/000551.html) [botan](https://www.archlinux.org/packages/?name=botan) multiple issues
@@ -554,7 +553,9 @@ ${10:None.}
 Description
 ===========
 
-${3/(CVE-....-....)(\s?)/- $1(?2: : )()\n\n/g}
+${3/(CVE-....-....)(\s?)/- $1(?2: : )()
+
+/g}
 
 Impact
 ======

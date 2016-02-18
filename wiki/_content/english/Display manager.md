@@ -24,9 +24,9 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 	[https://github.com/ghost1227/cdm](https://github.com/ghost1227/cdm) || [cdm-git](https://aur.archlinux.org/packages/cdm-git/)
 
-*   **[Console TDM](/index.php/Console_TDM "Console TDM")** — Extension for _xinit_ written in pure Bash.
+*   **[Console TDM](/index.php/Console_TDM "Console TDM")** — Extension for *xinit* written in pure Bash.
 
-	[http://code.google.com/p/t-display-manager/](http://code.google.com/p/t-display-manager/) || [console-tdm-git](https://aur.archlinux.org/packages/console-tdm-git/)
+	[https://github.com/dopsi/console-tdm](https://github.com/dopsi/console-tdm) || [console-tdm](https://aur.archlinux.org/packages/console-tdm/)
 
 *   **[nodm](/index.php/Nodm "Nodm")** — Minimalistic display manager for automatic logins.
 
@@ -86,7 +86,7 @@ After enabling [SDDM](/index.php/SDDM "SDDM") a symlink `display-manager.service
 
 ### Using systemd-logind
 
-In order to check the status of your user session, you can use _loginctl_. All [polkit](/index.php/Polkit "Polkit") actions like suspending the system or mounting external drives will work out of the box.
+In order to check the status of your user session, you can use *loginctl*. All [polkit](/index.php/Polkit "Polkit") actions like suspending the system or mounting external drives will work out of the box.
 
 ```
 $ loginctl show-session $XDG_SESSION_ID
@@ -97,7 +97,7 @@ $ loginctl show-session $XDG_SESSION_ID
 
 Many display managers read available sessions from `/usr/share/xsessions/` directory. It contains standard [desktop entry files](http://standards.freedesktop.org/desktop-entry-spec/latest/) for each DM/WM.
 
-To add/remove entries to your display manager's session list; create/remove the _.desktop_ files in `/usr/share/xsessions/` as desired. A typical _.desktop_ file will look something like:
+To add/remove entries to your display manager's session list; create/remove the *.desktop* files in `/usr/share/xsessions/` as desired. A typical *.desktop* file will look something like:
 
 ```
 [Desktop Entry]
@@ -132,7 +132,7 @@ Icon=google-chrome
 
 In this case, once you login, the application set with `Exec` will be launched immediately. When you close the application, you will be taken back to the login manager (same as logging out of a normal DE/WM).
 
-It is important to remember that most graphical applications are not intended to be launched this way and you might have manual tweaking to do or limitations to live with (there is no window manager, so do not expect to be able to move or resize _any_ windows, including dialogs; nonetheless, you might be able to set the window geometry in the application's configuration files).
+It is important to remember that most graphical applications are not intended to be launched this way and you might have manual tweaking to do or limitations to live with (there is no window manager, so do not expect to be able to move or resize *any* windows, including dialogs; nonetheless, you might be able to set the window geometry in the application's configuration files).
 
 See also [xinitrc#Starting applications without a window manager](/index.php/Xinitrc#Starting_applications_without_a_window_manager "Xinitrc").
 
@@ -148,11 +148,11 @@ For display managers that use [AccountsService](http://freedesktop.org/wiki/Soft
 
 ```
 [User]
-Language=_your_locale_
+Language=*your_locale*
 
 ```
 
-where _your_locale_ is a value such as `en_GB.UTF-8`.
+where *your_locale* is a value such as `en_GB.UTF-8`.
 
 Restart your display manager for the changes to take effect.
 
@@ -160,7 +160,7 @@ Restart your display manager for the changes to take effect.
 
 ### Incompatibility with systemd
 
-_Affected DMs: Entrance, MDM_
+*Affected DMs: Entrance, MDM*
 
 Some display managers are not fully compatible with systemd, because they reuse the PAM session process. It causes various problems on second login, e.g.:
 

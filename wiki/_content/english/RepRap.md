@@ -116,7 +116,7 @@ Use it to send commands to your 3D printer.
 If you have to run it by calling a helper script like mendel.sh, it might be a good idea modify the script to use python2 instead of default python (python3).
 
 ```
-# sed -r 's,bin/python(2)*,bin/python2,' _/path/to/mendel.sh_
+# sed -r 's,bin/python(2)*,bin/python2,' */path/to/mendel.sh*
 
 ```
 

@@ -47,7 +47,7 @@
 
 	[http://nmap.org/](http://nmap.org/) || [nmap](https://www.archlinux.org/packages/?name=nmap)
 
-*   **[Ntop](/index.php/Ntop "Ntop")** — Сетевой "зонд", показывающий информацию об использовании сети в виде, похожем на то, как это делает утилита _top_ с процессами
+*   **[Ntop](/index.php/Ntop "Ntop")** — Сетевой "зонд", показывающий информацию об использовании сети в виде, похожем на то, как это делает утилита *top* с процессами
 
 	[http://www.ntop.org/](http://www.ntop.org/) || [ntop](https://www.archlinux.org/packages/?name=ntop)
 
@@ -111,13 +111,13 @@
 
 #### Блокировка экрана
 
-**Важно:** Доступ к виртуальной консоли (tty) способны блокировать лишь _sflock_ и _physlock_
+**Важно:** Доступ к виртуальной консоли (tty) способны блокировать лишь *sflock* и *physlock*
 
 *   **i3lock** — Простая программа блокировки экрана. Предоставляет аутентификацию PAM, поддерживает DPMS. В качестве фона может быть установлено изображение или цвет
 
 	[http://i3wm.org/i3lock/](http://i3wm.org/i3lock/) || [i3lock](https://www.archlinux.org/packages/?name=i3lock)
 
-*   **i3lock-blur** — Форк _i3lock_, использующий в качестве фона размытое изображение вашего рабочего стола
+*   **i3lock-blur** — Форк *i3lock*, использующий в качестве фона размытое изображение вашего рабочего стола
 
 	[http://github.com/karulont/i3lock-blur](http://github.com/karulont/i3lock-blur) || [i3lock-blur](https://aur.archlinux.org/packages/i3lock-blur/)
 
@@ -125,7 +125,7 @@
 
 	[https://github.com/ashinkarov/i3-extras](https://github.com/ashinkarov/i3-extras) || [i3lock-wrapper](https://aur.archlinux.org/packages/i3lock-wrapper/)
 
-*   **Light-locker** — Простой блокировщик экрана (форк _gnome-screensaver_), стремящийся "из-коробки" предоставить простую, разумную и безопасную конфигурацию, а также хорошо интегрироваться в любое окружение, не требуя установки дополнительных зависимостей. Использует [LightDM](/index.php/LightDM "LightDM") для блокировки и разблокировки сеанса через ConsoleKit/UPower или logind/systemd
+*   **Light-locker** — Простой блокировщик экрана (форк *gnome-screensaver*), стремящийся "из-коробки" предоставить простую, разумную и безопасную конфигурацию, а также хорошо интегрироваться в любое окружение, не требуя установки дополнительных зависимостей. Использует [LightDM](/index.php/LightDM "LightDM") для блокировки и разблокировки сеанса через ConsoleKit/UPower или logind/systemd
 
 	[https://github.com/the-cavalry/light-locker](https://github.com/the-cavalry/light-locker) || [light-locker](https://www.archlinux.org/packages/?name=light-locker)
 
@@ -133,7 +133,7 @@
 
 	[https://github.com/muennich/physlock](https://github.com/muennich/physlock) || [physlock-git](https://aur.archlinux.org/packages/physlock-git/)
 
-*   **sflock** — Простая утилита блокировки экрана для X, основанная на _slock_. Предоставляет лишь базовую обратную связь с пользователем (приглашение на ввод пароля не отображается: вы можете ориентироваться только на цвет заливки экрана/звук бипера)
+*   **sflock** — Простая утилита блокировки экрана для X, основанная на *slock*. Предоставляет лишь базовую обратную связь с пользователем (приглашение на ввод пароля не отображается: вы можете ориентироваться только на цвет заливки экрана/звук бипера)
 
 	[https://github.com/benruijl/sflock](https://github.com/benruijl/sflock) || [sflock-git](https://aur.archlinux.org/packages/sflock-git/)
 
@@ -155,7 +155,7 @@
 
 #### Проверка хэша (hash-сумм)
 
-*   **cfv** — Крошечная утилита как для проверки, так и для создания файлов контрольных сумм. Поддерживает файлы _.sfv_, _.csv_, _.crc_, _.md5_, _md5sum_, _sha1sum_, _.torrent_, _par_ и _.par2_
+*   **cfv** — Крошечная утилита как для проверки, так и для создания файлов контрольных сумм. Поддерживает файлы *.sfv*, *.csv*, *.crc*, *.md5*, *md5sum*, *sha1sum*, *.torrent*, *par* и *.par2*
 
 	[http://cfv.sourceforge.net/](http://cfv.sourceforge.net/) || [cfv](https://www.archlinux.org/packages/?name=cfv)
 
@@ -255,7 +255,7 @@
 
 	[http://sourceforge.net/projects/mypasswords7/](http://sourceforge.net/projects/mypasswords7/) || <small>Пакет не существует? [искать в AUR](https://aur.archlinux.org/packages/?K=mypasswords)</small>
 
-*   **MyPasswordSafe** — Легкий в использовании менеджер паролей, основанный на QT и совместимый с файлами Password Safe (и, следовательно, _pwsafe_)
+*   **MyPasswordSafe** — Легкий в использовании менеджер паролей, основанный на QT и совместимый с файлами Password Safe (и, следовательно, *pwsafe*)
 
 	[http://www.semanticgap.com/myps/](http://www.semanticgap.com/myps/) || [mypasswordsafe](https://aur.archlinux.org/packages/mypasswordsafe/)
 

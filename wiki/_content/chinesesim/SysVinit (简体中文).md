@@ -59,7 +59,6 @@
 init总是Linux的1号进程，并且是**一切**进程的父进程。通过`pstree`可以形象看出init在所有进程中所处的地位。
 
  `$ pstree -Ap` 
-
 ```
 init(1)-+-acpid(3432)
         |-crond(3423)

@@ -41,7 +41,6 @@ $ locale -a
 例如对于使用美式英语的用户,反注释 `en_US.UTF-8 UTF-8` 一行.
 
  `/etc/locale.gen` 
-
 ```
 ...
 #en_SG ISO-8859-1
@@ -75,14 +74,13 @@ $ locale
 `locale.conf` 文件存放如何使用和选择不同的 Locale 相关的环境变量.一行一个,例如:
 
  `locale.conf` 
-
 ```
 LANG=en_AU.UTF-8
 LC_COLLATE=C
 LC_TIME=en_DK.UTF-8
 ```
 
-*   **整个系统** 使用的 Locale 可以通过创建或编辑 `/etc/locale.conf` 来设置,或者通过 _localectl_ 设置:
+*   **整个系统** 使用的 Locale 可以通过创建或编辑 `/etc/locale.conf` 来设置,或者通过 *localectl* 设置:
 
 	 `# localectl set-locale LANG=en_US.UTF-8` 
 
@@ -95,7 +93,7 @@ LC_TIME=en_DK.UTF-8
 **Tip:**
 
 *   设置用户级 Locale ，就能让日志(例如 `/var/log` )中的文件以英语输出.
-*   建立 `/etc/skel/.config/locale.conf` 文件,可以让新用户建立且同时创建主目录时( _useradd -m_ )自动应用其中的 Locale (会将这个文件复制到 `~/.config/locale.conf` 中.)
+*   建立 `/etc/skel/.config/locale.conf` 文件,可以让新用户建立且同时创建主目录时( *useradd -m* )自动应用其中的 Locale (会将这个文件复制到 `~/.config/locale.conf` 中.)
 
 这些 `locale.conf` 文件的优先级定义在 `/etc/profile.d/locale.sh` 中.
 
@@ -156,7 +154,6 @@ $ export LANG="en_AU.UTF-8"
 使用 gettext 翻译的软件会按照 `LANGUAGE` 选择使用的语言。用户通过这个变量指定一个[locale 列表](http://www.gnu.org/software/gettext/manual/gettext.html#The-LANGUAGE-variable)，如果前面的 locale 缺少翻译，会自动使用后面的 locale 显示界面。 例如下面的例子使用简体中文,没有翻译时使用英文：
 
  `locale.conf` 
-
 ```
 LANG="zh_CN"
 LANGUAGE="zh_CN:en_GB:en"
@@ -172,7 +169,7 @@ LANGUAGE="zh_CN:en_GB:en"
 
 这个变量的值决定排序和正则表达式的格式顺序.
 
-例如将它设置为 `C` 可以让 _ls_ 命令按顺序列出 dotfile,大写字母开头的文件和小写字母开头的文件:
+例如将它设置为 `C` 可以让 *ls* 命令按顺序列出 dotfile,大写字母开头的文件和小写字母开头的文件:
 
  `locale.conf`  `LC_COLLATE=C` 
 
@@ -196,8 +193,7 @@ LANGUAGE="zh_CN:en_GB:en"
 
 很多国家都把星期一作为每周的第一天,可以像这样进行修改:
 
- `/usr/share/i18n/locales/_chosen_locale_` 
-
+ `/usr/share/i18n/locales/*chosen_locale*` 
 ```
 LC_TIME
 [...]
@@ -220,7 +216,7 @@ $ env LANG=he_IL.UTF-8 abiword &
 
 ### 从桌面以另一 Locale 运行程序
 
-把 _.desktop_ 文件复制到你的用户目录:
+把 *.desktop* 文件复制到你的用户目录:
 
 ```
 $ cp /usr/share/applications/abiword.desktop ~/.local/share/applications/
@@ -248,7 +244,7 @@ $ cp /usr/share/applications/abiword.desktop ~/.local/share/applications/
 *   [st](/index.php/St "St")
 *   [termite](/index.php/Termite "Termite")
 *   [VTE-based terminals](/index.php/List_of_applications/Utilities#VTE-based "List of applications/Utilities")
-*   [xterm](/index.php/Xterm "Xterm") - 必须包含参数 `-u8`. 或者 _uxterm_, 随 [xterm](https://www.archlinux.org/packages/?name=xterm) 提供.
+*   [xterm](/index.php/Xterm "Xterm") - 必须包含参数 `-u8`. 或者 *uxterm*, 随 [xterm](https://www.archlinux.org/packages/?name=xterm) 提供.
 
 #### Gnome-terminal / rxvt-unicode 不支持 UTF-8
 
@@ -264,5 +260,5 @@ $ cp /usr/share/applications/abiword.desktop ~/.local/share/applications/
 *   [Gentoo Wiki Archives: Locales](http://www.gentoo-wiki.info/Locales)
 *   [ICU's interactive collation testing](http://demo.icu-project.org/icu-bin/locexp?_=en_US&x=col)
 *   [Free Standards Group Open Internationalisation Initiative](http://www.openi18n.org/)
-*   [_The Single UNIX Specification_ definition of Locale](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) by The Open Group
+*   [*The Single UNIX Specification* definition of Locale](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) by The Open Group
 *   [Locale environment variables](https://help.ubuntu.com/community/EnvironmentVariables#Locale_setting_variables)

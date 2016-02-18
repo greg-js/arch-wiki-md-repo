@@ -9,7 +9,6 @@ Otherwise you can follow these instructions:
 Add the following lines to your `/etc/pacman.conf` file, above the default repositories:
 
  `/etc/pacman.conf` 
-
 ```
 [papyros]
 SigLevel = Never

@@ -25,9 +25,9 @@ $ guake
 
 ```
 
-After guake has started you can right click on the interface and select _Preferences_ to change the hotkey to drop the terminal automatically, by default it is set to `F12`.
+After guake has started you can right click on the interface and select *Preferences* to change the hotkey to drop the terminal automatically, by default it is set to `F12`.
 
-Also, you can adjust many of the Guake preferences with _gconf-editor_ tool under _apps > guake_. If it's not enough for you, you are always free to copy the _guake_ executable (`/usr/bin/guake`) to `/usr/local/bin/guake` and edit it in text editor, since it's just a [Python](/index.php/Python "Python") script. Remember to make the file executable.
+Also, you can adjust many of the Guake preferences with *gconf-editor* tool under *apps > guake*. If it's not enough for you, you are always free to copy the *guake* executable (`/usr/bin/guake`) to `/usr/local/bin/guake` and edit it in text editor, since it's just a [Python](/index.php/Python "Python") script. Remember to make the file executable.
 
 ## Autostartup
 
@@ -46,21 +46,21 @@ Like [Yakuake](/index.php/Yakuake "Yakuake"), Guake allows to control itself at 
 
 Example of such a script is given below this section.
 
-You can use _guake_ executable itself to send D-Bus messages. Here is the list of available options you may be interested in:
+You can use *guake* executable itself to send D-Bus messages. Here is the list of available options you may be interested in:
 
 *   `-t`, `--toggle-visibility` — toggle the visibility of the terminal window. Actually, you can just type `guake`, and it will toggle the visibility of already running instance.
 *   `-f`, `--fullscreen` — put Guake to fullscreen mode.
 *   `--show` — show Guake main window.
 *   `--hide` — hide Guake main window.
-*   `-n _CUR_DIR_`, `--new-tab=_CUR_DIR_` — create new tab and select it. Value of `CUR_DIR` used to set a current directory for the tab, if specified.
-*   `-s _INDEX_`, `--select-tab=_INDEX_` — select tab with index `INDEX`. Tab indexes are started with 0.
+*   `-n *CUR_DIR*`, `--new-tab=*CUR_DIR*` — create new tab and select it. Value of `CUR_DIR` used to set a current directory for the tab, if specified.
+*   `-s *INDEX*`, `--select-tab=*INDEX*` — select tab with index `INDEX`. Tab indexes are started with 0.
 *   `-g`, `--selected-tab` — print index of currently selected tab.
-*   `-e _CMD_`, `--execute-command=_CMD_` — execute an arbitrary command `CMD` in the selected tab.
-*   `-i _INDEX_`, `--tab-index=_INDEX_` — used with `--rename-tab` to specify index `INDEX` of a tab to rename. Default value is 0.
-*   `--rename-tab=_TITLE_` — set the tab name to `TITLE`. You can reset tab title to default value by passing a single dash (`"-"`). Use `-i` option to specify which tab to rename.
-*   `--bgcolor=_RGB_` — set the hexadecimal (`#rrggbb`) background color `RGB` of the selected tab.
-*   `--fgcolor=_RGB_` — set the hexadecimal (`#rrggbb`) foreground color `RGB` of the selected tab.
-*   `-r _TITLE_`, `--rename-current-tab=_TITLE_` — same as `--rename-tab`, but renames the currently selected tab.
+*   `-e *CMD*`, `--execute-command=*CMD*` — execute an arbitrary command `CMD` in the selected tab.
+*   `-i *INDEX*`, `--tab-index=*INDEX*` — used with `--rename-tab` to specify index `INDEX` of a tab to rename. Default value is 0.
+*   `--rename-tab=*TITLE*` — set the tab name to `TITLE`. You can reset tab title to default value by passing a single dash (`"-"`). Use `-i` option to specify which tab to rename.
+*   `--bgcolor=*RGB*` — set the hexadecimal (`#rrggbb`) background color `RGB` of the selected tab.
+*   `--fgcolor=*RGB*` — set the hexadecimal (`#rrggbb`) foreground color `RGB` of the selected tab.
+*   `-r *TITLE*`, `--rename-current-tab=*TITLE*` — same as `--rename-tab`, but renames the currently selected tab.
 *   `-q`, `--quit` — shutdown running Guake instance.
 
 Multiple options may be combined in a single call. If there's no guake instance running, all of the options specified will be applied to the newly created instance.
@@ -110,7 +110,7 @@ guake --rename-tab="shell1"
 
 ```
 
-Notice than we should wait some time calling _sleep_ to avoid race conditions between running instances.
+Notice than we should wait some time calling *sleep* to avoid race conditions between running instances.
 
 ## Using Guake on multiple monitors
 
@@ -120,7 +120,7 @@ There are two GConf options allowing you to change the screen on which Guake win
 
 *   `/apps/guake/general/mouse_display` — appear on the mouse display. This overrides any setting in `display_n`.
 
-Use some tool like _gconf-editor_ to edit GConf options.
+Use some tool like *gconf-editor* to edit GConf options.
 
 ## Throubleshooting
 
@@ -128,7 +128,7 @@ Use some tool like _gconf-editor_ to edit GConf options.
 
 As of [guake](https://www.archlinux.org/packages/?name=guake) 0.4.2-7 there has been a noted bug affecting multiple users concerning the use of the `Ctrl` key to toggle Guake window visibility (i.e. users that setup `Ctrl+Shift+z` to open the guake console are able to open it by just pressing `Shift+z`, independent on whether `Ctrl` key has been pressed).
 
-To solve the problem you should manually fix the value of the GConf key `/apps/guake/keybindings/global/show_hide`. Open a _gconf-editor_, navigate to _apps > guake > keybindings > global > show_hide_ and replace `<Primary>` with `<Control>`.
+To solve the problem you should manually fix the value of the GConf key `/apps/guake/keybindings/global/show_hide`. Open a *gconf-editor*, navigate to *apps > guake > keybindings > global > show_hide* and replace `<Primary>` with `<Control>`.
 
 ### In Floating WM
 

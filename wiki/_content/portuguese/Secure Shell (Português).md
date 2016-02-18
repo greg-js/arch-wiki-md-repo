@@ -1,6 +1,6 @@
-_Secure Shell_ ou SSH é um protocolo de internet que permite a troca de informações por meio de um canal seguro entre dois computadores. A encriptação proporciona sigilo e integridade da informação. SSH usa criptografia de chave-pública para autenticar no computador remoto e permitir que o computador remoto autentique o usuário, se necessário.
+*Secure Shell* ou SSH é um protocolo de internet que permite a troca de informações por meio de um canal seguro entre dois computadores. A encriptação proporciona sigilo e integridade da informação. SSH usa criptografia de chave-pública para autenticar no computador remoto e permitir que o computador remoto autentique o usuário, se necessário.
 
-SSH é tipicamente utilizado para logar em um computador remoto e executar comandos, mas ele também pode ser usado para _tunneling_. Transferência de arquivos pode ser feita usando os protocolos SFTP ou SCP.
+SSH é tipicamente utilizado para logar em um computador remoto e executar comandos, mas ele também pode ser usado para *tunneling*. Transferência de arquivos pode ser feita usando os protocolos SFTP ou SCP.
 
 Um servidor de SSH, por padrão, roda na porta 22\. Um cliente SSH geralmente é usado para estabelecer conexões com um servidor de sshd configurado para aceitar conexões remotas. Ambos estão presentes na maior parte dos sistemas operacionais modernos, incluindo GNU/Linux, MacOS X, Solaris e OpenVMS. Existem versões pagas, grátis e de código aberto.
 
@@ -47,7 +47,6 @@ O arquivo de configuração do cliente SSH pode ser encontrado e editado em `/et
 Um exemplo de configuração:
 
  `/etc/ssh/ssh_config` 
-
 ```
 #       $OpenBSD: ssh_config,v 1.25 2009/02/17 01:28:32 djm Exp $
 
@@ -115,7 +114,6 @@ O Arquivo de configuração do daemon SSH pode ser encontrado e editado em `/etc
 Um exemplo de configuração:
 
  `/etc/ssh/sshd_config` 
-
 ```
 #	$OpenBSD: sshd_config,v 1.75 2007/03/19 01:01:29 djm Exp $
 
@@ -135,10 +133,10 @@ ListenAddress 0.0.0.0
 #ListenAddress ::
 
 # HostKey for protocol version 1
-#HostKey /etc/ssh/ssh_host_key
+#HostKey /etc/ssh/ssh*host*key
 # HostKeys for protocol version 2
-#HostKey /etc/ssh/ssh_host_rsa_key
-#HostKey /etc/ssh/ssh_host_dsa_key
+#HostKey /etc/ssh/ssh*host*rsa_key
+#HostKey /etc/ssh/ssh*host*dsa_key
 
 # Lifetime and size of ephemeral version 1 server key
 #KeyRegenerationInterval 1h
@@ -160,7 +158,7 @@ ListenAddress 0.0.0.0
 #PubkeyAuthentication yes
 #AuthorizedKeysFile     .ssh/authorized_keys
 
-# For this to work you will also need host keys in /etc/ssh/ssh_known_hosts
+# For this to work you will also need host keys in /etc/ssh/ssh*known*hosts
 #RhostsRSAAuthentication no
 # similar for protocol version 2
 #HostbasedAuthentication no
@@ -251,9 +249,7 @@ Você pode também descomentar a opção BANNER e editar `/etc/issue` para uma m
 Mesmo que a porta utilizada pelo ssh possa ser detectada por um port-scanner como o nmap, alterando-a irá reduzir o número de entradas nos logs por tentativas automatizadas de acesso.pts.
 
 **Tip:** Desativando inteiramente logins por senha pode melhorar sua segurança, desde que cada usuário com acesso ao servidor necessitará criar chaves ssh. (veja em inglês [Using SSH Keys](https://wiki.archlinux.org/index.php/Using_SSH_Keys)).
-
  `/etc/ssh/sshd_config` 
-
 ```
 PasswordAuthentication no
 ChallengeResponseAuthentication no
@@ -351,9 +347,9 @@ alias sshtunnel="ssh -ND 4711 -v user@host"
 
 O passo acima é completamente inútil se você não configurar seu navegador ( ou outros programas) para usar o novo túnel. Desde que a versão atual do SSH suporta SOCKS4 e SOCKS5, você pode usar qualquer um deles.
 
-*   Para o Firefox:_Editar → Preferências → Avançado → Rede → Configurar Conexão →_:
+*   Para o Firefox:*Editar → Preferências → Avançado → Rede → Configurar Conexão →*:
 
-	Marque a opção _"Configuração manual de proxy"_, e digite "localhost" no campo_"SOCKS"_, e então o número da porta no campo seguinte (acima eu utilizei 4711).
+	Marque a opção *"Configuração manual de proxy"*, e digite "localhost" no campo*"SOCKS"*, e então o número da porta no campo seguinte (acima eu utilizei 4711).
 
 *   Para o Chromium: você terá que configurar as variáveis de ambiente. Eu recomento adicionar as seguintes linhas ao seu .bashrc:
 
@@ -565,7 +561,6 @@ ClientAliveInterval 120
 Sempre que você quer conectar a um servidor, você normalmente precisa digitar ao menos o endereço e o seu usuário. Para evitar o trabalho de digitar os servidores que você regularmente conecta, você pode utilizar o arquivo `$HOME/.ssh/config` como mostrado no exemplo:
 
  `$HOME/.ssh/config` 
-
 ```
 Host myserver
     HostName 123.123.123.123

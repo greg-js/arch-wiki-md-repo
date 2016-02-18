@@ -41,7 +41,7 @@ This article presents one way of running 32-bit applications, which may be of us
 ```
 
 *   These files would conflict with the normal pacman files, which will be installed in the later steps.
-*   For this reason they must be put _into_ a temporary location (`/opt/arch32` is used here).
+*   For this reason they must be put *into* a temporary location (`/opt/arch32` is used here).
 *   Remember to delete/comment the multilib repo, if you have enabled it, in the `/opt/arch32/pacman.conf` file
 
 3\. Create the directory:
@@ -93,7 +93,6 @@ Remember to define the correct the number of MAKEFLAGS and other vars in `/opt/a
 ### Daemon and systemd service
 
  `/etc/systemd/system/arch32.service` 
-
 ```
 [Unit]
 Description=32-bit chroot
@@ -108,9 +107,7 @@ ExecStop=/usr/local/bin/arch32 stop
 WantedBy=multi-user.target
 
 ```
-
  `/usr/local/bin/arch32` 
-
 ```
 #!/bin/bash
 
@@ -206,7 +203,7 @@ $ xhost +SI:localuser:username_to_give_access_to
 
 ```
 
-It is recommended to use a custom bash prompt inside the 32-bit chroot installation in order to differentiate from the regular system. You can, for example, add a _ARCH32_ string to the _PS1_ variable defined in `~/.bashrc`. In fact, the default Debian .bashrc prompt string contains appropriate logic to report whether the working directory is within a chroot.
+It is recommended to use a custom bash prompt inside the 32-bit chroot installation in order to differentiate from the regular system. You can, for example, add a *ARCH32* string to the *PS1* variable defined in `~/.bashrc`. In fact, the default Debian .bashrc prompt string contains appropriate logic to report whether the working directory is within a chroot.
 
 ### First-time Setup
 
@@ -229,7 +226,7 @@ Initialize pacman:
 
 [Install](/index.php/Install "Install") [schroot](https://www.archlinux.org/packages/?name=schroot) to the native **64-bit** installation:
 
-Edit `/etc/schroot/schroot.conf`, and create an _[Arch32]_ section.
+Edit `/etc/schroot/schroot.conf`, and create an *[Arch32]* section.
 
 ```
 [Arch32]
@@ -249,7 +246,7 @@ Optionally edit `/etc/schroot/arch32/mount` to match the mounts created within `
 
 ### Using Schroot to run a 32-bit application
 
-The general syntax for calling an application _inside_ the chroot is:
+The general syntax for calling an application *inside* the chroot is:
 
 ```
 # schroot -p -- htop
@@ -397,8 +394,8 @@ To access installed CUPS printers from the chroot environment, one needs to bind
 Simply make sure the `/var/run/cups` directory exists in the chroot environment and bind-mount the host `/var/run/cups` to the chroot environment:
 
 ```
-# mkdir _chroot32-dir/var/run/cups_
-# mount --bind /var/run/cups _chroot32-dir/var/run/cups_
+# mkdir *chroot32-dir/var/run/cups*
+# mount --bind /var/run/cups *chroot32-dir/var/run/cups*
 
 ```
 

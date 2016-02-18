@@ -1,6 +1,6 @@
 **Velkommen til [Arch Linux' wiki](/index.php?title=ArchWiki_(Dansk)&action=edit&redlink=1 "ArchWiki (Dansk) (page does not exist)"): din kilde til dokumetation om Arch Linux på nettet.**
 
-_Bemærk: De fleste artikler er på engelsk. De artikler, der er oversat til dansk, vil være markerede._ Er du kun interesseret i de danske artikler, kan du klikke på [Category:Dansk](/index.php/Category:Dansk "Category:Dansk").
+*Bemærk: De fleste artikler er på engelsk. De artikler, der er oversat til dansk, vil være markerede.* Er du kun interesseret i de danske artikler, kan du klikke på [Category:Dansk](/index.php/Category:Dansk "Category:Dansk").
 
 [Indholdsfortegnelsen](/index.php/Table_of_Contents_(Dansk) "Table of Contents (Dansk)") giver dig en mere detaljeret oversig over artiklerne her på wiki.
 

@@ -89,23 +89,23 @@ AutoFS предоставляет новый способ автоматичес
 
 Каждое имя хоста должно быть разрешено, например, любой IP-адрес в `/etc/hosts` или заданный через DNS.
 
-К примеру, есть удалённый сервер _fileserver_ с ресурсом NFS, который называется _/home/share_, вы можете получить доступ к ресурсу просто набрав:
+К примеру, есть удалённый сервер *fileserver* с ресурсом NFS, который называется */home/share*, вы можете получить доступ к ресурсу просто набрав:
 
 ```
 # cd /net/fileserver/home/share
 
 ```
 
-**Обратите внимание:** _ghosting_, i.e. automatically creating directory placeholders before mounting shares is enabled by default, although AutoFS installation notes claim to remove that option from `/etc/conf.d/autofs` in order to start the AutoFS daemon.
+**Обратите внимание:** *ghosting*, i.e. automatically creating directory placeholders before mounting shares is enabled by default, although AutoFS installation notes claim to remove that option from `/etc/conf.d/autofs` in order to start the AutoFS daemon.
 
-The `-hosts` option uses a similar mechanism as the _showmount_ command to detect remote shares. You can see the exported shares by typing:
+The `-hosts` option uses a similar mechanism as the *showmount* command to detect remote shares. You can see the exported shares by typing:
 
 ```
 # showmount <servername> -e 
 
 ```
 
-Замените _<servername>_ на имя ващего собственного сервера.
+Замените *<servername>* на имя ващего собственного сервера.
 
 ### Samba
 
@@ -145,7 +145,7 @@ The `-hosts` option uses a similar mechanism as the _showmount_ command to detec
 
 ```
 
-Добавьте fuse массив _modules_ в `/etc/rc.conf` для загрузки его при каждом запуске компьютера.
+Добавьте fuse массив *modules* в `/etc/rc.conf` для загрузки его при каждом запуске компьютера.
 
 Далее, добавьте новую запись для FTP-серверов в `/etc/autofs/auto.master`:
 
@@ -161,9 +161,9 @@ servername -fstype=curl,allow_other    :ftp\://myuser\:mypassword\@remoteserver
 
 ```
 
-**Обратите внимание:** Ваши пароли может видеть каждый, кто запустит _df_ (только для примонтированных серверов) или откроет файл `/etc/autofs/auto.ftp`.
+**Обратите внимание:** Ваши пароли может видеть каждый, кто запустит *df* (только для примонтированных серверов) или откроет файл `/etc/autofs/auto.ftp`.
 
-Если Вы хотите немного больше безопасности, можете создать файл `~root/.netrc` и указать пароли там. Пароли по-прежнему написаны в текстовом формате, но Вы можете задать права 600, и команда _df_ их не покажет (неважно, примонтирован сервер, или нет). Этот способ также менее чувствителен к специальным символам (которых иначе необходимо избегать) в паролях. Придерживайтесь такого формата:
+Если Вы хотите немного больше безопасности, можете создать файл `~root/.netrc` и указать пароли там. Пароли по-прежнему написаны в текстовом формате, но Вы можете задать права 600, и команда *df* их не покажет (неважно, примонтирован сервер, или нет). Этот способ также менее чувствителен к специальным символам (которых иначе необходимо избегать) в паролях. Придерживайтесь такого формата:
 
 ```
 machine remoteserver  
@@ -225,7 +225,7 @@ fusermount -u $1
 
 ```
 
-Добавьте fuse в секцию _modules_ в `/etc/rc.conf`, чтобы загружать его при каждом запуске системы.
+Добавьте fuse в секцию *modules* в `/etc/rc.conf`, чтобы загружать его при каждом запуске системы.
 
 Установите OpenSSH:
 

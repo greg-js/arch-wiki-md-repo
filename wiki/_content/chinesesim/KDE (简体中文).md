@@ -2,7 +2,7 @@
 
 摘自 [KDE 软件集](http://www.kde.org/community/whatiskde/softwarecompilation.php) 以及 [获取 KDE 软件](http://www.kde.org/download/)：
 
-	_KDE 软件集是由 KDE 产生的一组为 Linux 及类似操作系统建立一个美丽、功能强大的自由桌面计算环境的框架、工作空间和应用。它包含大量的独立应用程序和一个作为外壳的工作空间以运行这些程序。KDE 程序能在任意桌面环境运行，而且可以集成到您的系统组件。_
+	*KDE 软件集是由 KDE 产生的一组为 Linux 及类似操作系统建立一个美丽、功能强大的自由桌面计算环境的框架、工作空间和应用。它包含大量的独立应用程序和一个作为外壳的工作空间以运行这些程序。KDE 程序能在任意桌面环境运行，而且可以集成到您的系统组件。*
 
 KDE 上游维护了一份 [UserBase Wiki](http://userbase.kde.org/)。用户能在那里找到大部分 KDE 应用的详细信息。
 
@@ -185,7 +185,7 @@ Install [appmenu-qt](https://www.archlinux.org/packages/?name=appmenu-qt) from t
 *   [appmenu-gtk](https://aur.archlinux.org/packages/appmenu-gtk/) is orphaned and Canonical has abandoned appmenu-gtk in favor of unity-gtk-module that is depending on Unity desktop. As of October 2014 there is no way of exporting gtk2,3 menus in KDE.
 *   There is a patched package, [firefox-ubuntu](https://aur.archlinux.org/packages/firefox-ubuntu/) available in the AUR which has Canonical's patch for getting the global menu to work with the current version of Firefox (as of this writing).
 
-To actually get the global menu, install [kdeplasma-applets-menubar](https://aur.archlinux.org/packages/kdeplasma-applets-menubar/) from the AUR. Create a plasma-panel on top of your screen and add the window menubar applet to the panel. To export the menus to your global menu, go to _System Settings > Application Appearance > Style_. Now click the fine-tuning tab and use the drop-down list to select _only export_ as your menubar style.
+To actually get the global menu, install [kdeplasma-applets-menubar](https://aur.archlinux.org/packages/kdeplasma-applets-menubar/) from the AUR. Create a plasma-panel on top of your screen and add the window menubar applet to the panel. To export the menus to your global menu, go to *System Settings > Application Appearance > Style*. Now click the fine-tuning tab and use the drop-down list to select *only export* as your menubar style.
 
 #### 窗口装饰
 
@@ -219,15 +219,15 @@ Arch Linux 官方图库位于 [archlinux-artwork](https://www.archlinux.org/pack
 
 尝试安装 [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) 和 [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) 软件包。
 
-安装后，确保注销并重新登录。不需要修改_系统设置 > 应用程序外观 > 字体_里的设置。
+安装后，确保注销并重新登录。不需要修改*系统设置 > 应用程序外观 > 字体*里的设置。
 
-如果您个人已经设置了[字体](/index.php/Fonts "Fonts")渲染，小心系统设置可能会改变它们的外观。当改变了_系统设置 > 应用程序外观 > 字体_里的设置，系统将可能改写字体配置文件(`fonts.conf`)。
+如果您个人已经设置了[字体](/index.php/Fonts "Fonts")渲染，小心系统设置可能会改变它们的外观。当改变了*系统设置 > 应用程序外观 > 字体*里的设置，系统将可能改写字体配置文件(`fonts.conf`)。
 
 没有办法避免这种情况，但是如果把数值调到了匹配 `fonts.conf` 文件的话，所期望的字体渲染效果将会重新出现（这需要重启您的应用程序，在某些情况下可能需要重启桌面环境）。注意 Gnome 中的字体设置也会有这样的效果。
 
 ##### 字体太大或变形
 
-从 _系统设置 > 应用程序外观 > 字体_ 将字体 DPI 强制设置为 **96**
+从 *系统设置 > 应用程序外观 > 字体* 将字体 DPI 强制设置为 **96**
 
 如果还是不行请尝试直接通过 Xorg 配置文件设置 DPI。[参见这里](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Setting_DPI_manually "Xorg (简体中文)").
 
@@ -258,15 +258,13 @@ avahi-daemon 和 cupsd 守护进程必须事先启动，否则，你将看到下
 
 CUPS 在 `/etc/cups/cups-files.conf` 中设置（权限）：
 
-Adding `lpadmin` to `/etc/group` and then to the `SystemGroup` directive in `/etc/cups/cups-files.conf` allows anyone in the `lpadmin` group to configure printers. Do _not_ add the `lp` group to the `SystemGroup` directive, or printing will fail.
+Adding `lpadmin` to `/etc/group` and then to the `SystemGroup` directive in `/etc/cups/cups-files.conf` allows anyone in the `lpadmin` group to configure printers. Do *not* add the `lp` group to the `SystemGroup` directive, or printing will fail.
 
 ```
 # groupadd -g107 lpadmin
 
 ```
-
  `/etc/cups/cups-files.conf` 
-
 ```
 # Administrator user group...
 SystemGroup sys root lpadmin
@@ -374,7 +372,7 @@ KCM 意为 KDE 控制模块（**KC**onfig **M**odule）。这些模块在系统�
 
 ## 桌面搜索和语义桌面
 
-根据 [维基百科](https://en.wikipedia.org/wiki/Semantic_desktop "wikipedia:Semantic desktop")，_"语义桌面是改变计算机的用户界面和数据处理能力，使得不同应用或任务之间分享变得更容易，过去不能自动处理的数据变得可能（自动处理）的各种想法的总称。"_
+根据 [维基百科](https://en.wikipedia.org/wiki/Semantic_desktop "wikipedia:Semantic desktop")，*"语义桌面是改变计算机的用户界面和数据处理能力，使得不同应用或任务之间分享变得更容易，过去不能自动处理的数据变得可能（自动处理）的各种想法的总称。"*
 
 截止 KDE 4.13, KDE 对这个概念的实现关系到两个主要软件: Akonadi 和 Baloo 。这些程序检查计算机上的数据，然后建立便于搜索的索引。这样系统就知道您的数据，并使用元数据和用户提供的标签标记这些数据。Baloo 使用 Xapian 保存数据。
 
@@ -392,7 +390,7 @@ Indexing-Enabled=false
 
 ```
 
-   <small>_Note:_ [Basic Settings] _section in_ ~/.kde4/share/config/baloofilerc _also supports an_ Enabled _entry if you want._</small>
+   <small>*Note:* [Basic Settings] *section in* ~/.kde4/share/config/baloofilerc *also supports an* Enabled *entry if you want.*</small>
 
 Once you added additional folders to the blacklist or disabled Baloo entirely, a process named `baloo_file_cleaner` removes all unneeded index files automatically. They are stored under `~/.local/share/baloo/`.
 
@@ -424,7 +422,7 @@ Akonadi 自身并不存储任何数据：存储格式依赖于数据的性质（
 
 ### Phonon 是什么？
 
-摘自 [Wikipedia](https://en.wikipedia.org/wiki/Phonon "wikipedia:Phonon")： _Phonon 是 KDE 4 的多媒体 API。Phonon 允许 KDE 4 独立于任何一个多媒体框架（例如 GStreamer 或者 xine），并在KDE 4的生命周期中提供一份稳定的 API。由于各种原因而产生了它：创建一个简单的 KDE/Qt 风格的多媒体 API、更好地支持 Windows 和 Mac OS X下的原生多媒体框架以及修复无人维护的框架或者 API 或者 ABI 不稳定的问题。_
+摘自 [Wikipedia](https://en.wikipedia.org/wiki/Phonon "wikipedia:Phonon")： *Phonon 是 KDE 4 的多媒体 API。Phonon 允许 KDE 4 独立于任何一个多媒体框架（例如 GStreamer 或者 xine），并在KDE 4的生命周期中提供一份稳定的 API。由于各种原因而产生了它：创建一个简单的 KDE/Qt 风格的多媒体 API、更好地支持 Windows 和 Mac OS X下的原生多媒体框架以及修复无人维护的框架或者 API 或者 ABI 不稳定的问题。*
 
 KDE 中广泛地使用 **Phonon** 于声音（例如系统通知或者 KDE 声音应用）和视频（例如 Dolphin 中的视频缩略图）中。
 
@@ -432,7 +430,7 @@ KDE 中广泛地使用 **Phonon** 于声音（例如系统通知或者 KDE 声�
 
 你可以在多个后端中选择，比如 [官方源](/index.php/%E5%AE%98%E6%96%B9%E6%BA%90 "官方源") 中的 [phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer) 或者 VLC ([phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc), [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc)))，[AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 中的MPlayer （[phonon-qt4-mplayer-git](https://aur.archlinux.org/packages/phonon-qt4-mplayer-git/)）、（[phonon-quicktime-git](https://aur.archlinux.org/packages/phonon-quicktime-git/)）以及（[phonon-avkode-git](https://aur.archlinux.org/packages/phonon-avkode-git/)）。
 
-VLC 有最好的上游支持，GStreamer 目前没有很好的维护。可以同时安装多个后端，并在 _系统设置 > 多媒体 > Phonon > 后端_ 中进行选择。
+VLC 有最好的上游支持，GStreamer 目前没有很好的维护。可以同时安装多个后端，并在 *系统设置 > 多媒体 > Phonon > 后端* 中进行选择。
 
 **注意:** 根据 [KDE UserBase](http://userbase.kde.org/Phonon#Backend_libraries)，现在Phonon-MPlayer不受维护 。
 
@@ -464,7 +462,7 @@ To use an alternative [window manager](/index.php/Window_manager "Window manager
 
 #### KDE/Openbox Session
 
-The [openbox](https://www.archlinux.org/packages/?name=openbox) package provides a session for using KDE with [Openbox](/index.php/Openbox "Openbox"). To make use of this session, select _KDE/Openbox_ from the [display manager](/index.php/Display_manager "Display manager") menu.
+The [openbox](https://www.archlinux.org/packages/?name=openbox) package provides a session for using KDE with [Openbox](/index.php/Openbox "Openbox"). To make use of this session, select *KDE/Openbox* from the [display manager](/index.php/Display_manager "Display manager") menu.
 
 For those starting the session manually, add the following line to your `.xinitrc` file:
 
@@ -475,10 +473,9 @@ exec openbox-kde-session
 
 #### Compiz Custom
 
-If you need to run Compiz with custom options and switches select _Compiz custom_ and then create a script called `compiz-kde-launcher` and add to it the commands you wish to use to start Compiz. See the example below:
+If you need to run Compiz with custom options and switches select *Compiz custom* and then create a script called `compiz-kde-launcher` and add to it the commands you wish to use to start Compiz. See the example below:
 
  `/usr/local/bin/compiz-kde-launcher` 
-
 ```
 #!/bin/bash
 LIBGL_ALWAYS_INDIRECT=1
@@ -518,7 +515,7 @@ Install [apper](https://aur.archlinux.org/packages/apper/) to get notifications 
 
 ### 配置 KWin 成使用 OpenGL ES
 
-KWin 版本 4.8 开始，可以使用单独编译的二进制文件 **kwin_gles** 替换 kwin。它与在 OpenGL2 模式下执行的 kwin 基本相同，除了它使用 _egl_ 来代替 _glx_ 作为原生平台的接口这个小区别。要测试 kwin_gles，你可以在 Konsole 中运行 `kwin_gles --replace`。 如果你想使得这个改变持久化，你必须在 `$(kde4-config --localprefix)/env/` 中创建一个脚本，导出(export) `KDEWM=kwin_gles`。
+KWin 版本 4.8 开始，可以使用单独编译的二进制文件 **kwin_gles** 替换 kwin。它与在 OpenGL2 模式下执行的 kwin 基本相同，除了它使用 *egl* 来代替 *glx* 作为原生平台的接口这个小区别。要测试 kwin_gles，你可以在 Konsole 中运行 `kwin_gles --replace`。 如果你想使得这个改变持久化，你必须在 `$(kde4-config --localprefix)/env/` 中创建一个脚本，导出(export) `KDEWM=kwin_gles`。
 
 ### Konqueror/Dolphin 文件管理器中开启视频缩略图
 
@@ -558,7 +555,7 @@ KERNEL=="sda2", ENV{UDISKS_IGNORE}="1"
 
 #### 禁用页面快捷键的提示（浏览器）
 
-要在 Konqueror 中禁用那些页面快捷键的提示（网页上按住`CTRL`键），使用 _设置 > 配置 Konqueror > Web 浏览_ 并取消勾选 _用 Ctrl 键激活访问键_ 或者打开 `~/.kde4/share/config/konquerorrc` 并添加这一部分：
+要在 Konqueror 中禁用那些页面快捷键的提示（网页上按住`CTRL`键），使用 *设置 > 配置 Konqueror > Web 浏览* 并取消勾选 *用 Ctrl 键激活访问键* 或者打开 `~/.kde4/share/config/konquerorrc` 并添加这一部分：
 
 ```
 [Access Keys]
@@ -576,7 +573,7 @@ WebKit 是一个由 Apple 公司开发的开源浏览器引擎。它衍生自 KH
 
 可以在 Konqueror 中使用 WebKit 代替 KHTML。首先安装 [kwebkitpart](https://www.archlinux.org/packages/?name=kwebkitpart) 软件包。
 
-然后，运行 Konqueror 之后，访问 _设置 > 配置 Konqueror > 常规 > 默认网页浏览器引擎_，将其设置为 `WebKit`。
+然后，运行 Konqueror 之后，访问 *设置 > 配置 Konqueror > 常规 > 默认网页浏览器引擎*，将其设置为 `WebKit`。
 
 ### Firefox 集成
 
@@ -589,10 +586,9 @@ WebKit 是一个由 Apple 公司开发的开源浏览器引擎。它衍生自 KH
 默认情况下，KDE [不能](https://bugs.kde.org/show_bug.cgi?id=312828)改变“简单的屏幕锁”的背景，但[有](http://forum.kde.org/viewtopic.php?f=66&t=110039)一种 [解决方法](http://lists.opensuse.org/opensuse-kde/2013-02/msg00082.html)：
 
  `/usr/share/apps/ksmserver/screenlocker/org.kde.passworddialog/contents/ui/` 
-
 ```
 [...]
-        _#source: theme.wallpaperPathForSize(parent.width, parent.height)_
+        *#source: theme.wallpaperPathForSize(parent.width, parent.height)*
         source: "1920x1080.jpg"
 [...]
 
@@ -607,14 +603,13 @@ WebKit 是一个由 Apple 公司开发的开源浏览器引擎。它衍生自 KH
 Copy an existing wallpaper profile as a template:
 
 ```
-$ cp -r /usr/share/wallpapers/_ExistingWallpaper_ ~/.kde4/share/wallpapers/
+$ cp -r /usr/share/wallpapers/*ExistingWallpaper* ~/.kde4/share/wallpapers/
 
 ```
 
 Change the name of the directory, and edit `metadata.desktop`:
 
- `~/.kde4/share/wallpapers/_MyWallpaper_/metadata.desktop` 
-
+ `~/.kde4/share/wallpapers/*MyWallpaper*/metadata.desktop` 
 ```
 [Desktop Entry]
 Name=MyWallpaper
@@ -632,14 +627,13 @@ $ rm ~/.kde4/share/wallpapers/MyWallpaper/contents/images/*
 Copy new image in:
 
 ```
-$ cp _path/to/MyWallpaper.png_ MyWallpaper/contents/images/1920x1080.png
+$ cp *path/to/MyWallpaper.png* MyWallpaper/contents/images/1920x1080.png
 
 ```
 
 Edit the metadata profile for the current theme:
 
  `~/.kde4/share/apps/desktoptheme/MyTheme/metadata.desktop` 
-
 ```
 [Wallpaper]
 defaultWallpaperTheme=NewWallpaper
@@ -682,7 +676,7 @@ Plasma 故障通常是由不稳定的 **plasmoids** 或者 **plasma themes** 引
 
 因此，如果你的桌面突然碰到 "locking up"，很可能是由于安装了有问题的组件造成的。如果你不记得故障发生前你安装了什么小部件（有时它可能是一个不寻常的问题），通过逐个移除小部件直到问题不再出现来跟踪这个问题。然后你可以卸载这个小部件，**仅当它是一个官方小部件时**到 bugs.kde.org 填写一份缺陷报告。如果它不是，我推荐你在 kde-look.org 上寻找它的条目并告知小部件的开发者你所碰到的问题（再现它的详细步骤等等）。
 
-如果你找不到问题，也不想丢失 _所有的_ KDE 设置，这样办：
+如果你找不到问题，也不想丢失 *所有的* KDE 设置，这样办：
 
 ```
  rm -r ~/.kde4/share/config/plasma*
@@ -715,7 +709,7 @@ $ mv ~/.config/akonadi ~/.config/akonadi-old
 
 ```
 
-启动 _系统设置 > 个人信息_ 并删除所有资源。回到 Dolphin 中移除原始的 `~/.local/share/akonadi` 和 `~/.config/akonadi` - 所作的备份保证你可以在必要时恢复它们。
+启动 *系统设置 > 个人信息* 并删除所有资源。回到 Dolphin 中移除原始的 `~/.local/share/akonadi` 和 `~/.config/akonadi` - 所作的备份保证你可以在必要时恢复它们。
 
 现在回到 系统设置 页面并小心地添加必要的资源。你应该看到读取你邮件目录的资源。然后启动 Kontact/KMail 查看它是否正常运作。
 
@@ -799,17 +793,17 @@ KDE 一开始启用了桌面效果。旧的显卡可能不够支持 3D 桌面加
 
 #### 有 Nvidia GPU 的系统中桌面混成被禁用
 
-有时 KWin 的配置文件（**kwinrc**）中的配置 _可能_ 在重新激活 3D 桌面 **OpenGL** 混成时引起问题。这可能是随机产生的，（例如，由于 Xorg 的突然崩溃或重启，文件被损坏了），因此，发生这种情况时，删除你的 `~/.kde4/share/config/kwinrc` 文件并重新登录。KWin 配置将变为 KDE 默认值，故障应该就没有了。
+有时 KWin 的配置文件（**kwinrc**）中的配置 *可能* 在重新激活 3D 桌面 **OpenGL** 混成时引起问题。这可能是随机产生的，（例如，由于 Xorg 的突然崩溃或重启，文件被损坏了），因此，发生这种情况时，删除你的 `~/.kde4/share/config/kwinrc` 文件并重新登录。KWin 配置将变为 KDE 默认值，故障应该就没有了。
 
 #### 启用混成后全屏时闪烁
 
-从 KDE SC 4.6.0 起，有一个选项为 _系统设置 > 桌面效果 > 高级 > 为全屏窗口挂起桌面特效_，不选中它将使 kwin 禁用 unredirect fullscreen。
+从 KDE SC 4.6.0 起，有一个选项为 *系统设置 > 桌面效果 > 高级 > 为全屏窗口挂起桌面特效*，不选中它将使 kwin 禁用 unredirect fullscreen。
 
 #### 启用混成后花屏
 
 **注意:** 最近发布的 KDE 4.11 中添加了数件新的 Vsync 选项，可能对解决花屏有用。
 
-启用混成时 KWin 可能花屏。不要选择位于 _系统设置 > 桌面效果 > 高级 > 避免撕裂(VSync) 中的 VSync 选项。_
+启用混成时 KWin 可能花屏。不要选择位于 *系统设置 > 桌面效果 > 高级 > 避免撕裂(VSync) 中的 VSync 选项。*
 
 私有驱动用户要确保启用了驱动的 VSync 选项（[Catalyst](/index.php/Catalyst "Catalyst") 用户运行 `amdccle`，而 [NVIDIA](/index.php/NVIDIA "NVIDIA") 用户运行 nvidia-settings）。
 
@@ -827,7 +821,7 @@ Installing [kscreen](https://www.archlinux.org/packages/?name=kscreen) might fix
 
 当你碰到这些消息：
 
-	音频回放设备 _声音设备的名称_ 不工作。
+	音频回放设备 *声音设备的名称* 不工作。
 
 	返回 default。
 
@@ -861,7 +855,7 @@ shopt -s histappend
 
 ### KDE 在密码提示时每个字母用三颗星表示
 
-可以通过 _系统设置 > 帐户细节 > 密码和用户信息_ 将这项设置改为：
+可以通过 *系统设置 > 帐户细节 > 密码和用户信息* 将这项设置改为：
 
 *   每个字母用一颗星表示
 *   每个字母用三颗星表示
@@ -923,7 +917,6 @@ KDE 到了 beta 或者 RC milestone 时，“不稳定的” KDE 软件包被上
 添加 [kde-unstable] 源：
 
  `/etc/pacman.conf` 
-
 ```
 [kde-unstable]
  Include = /etc/pacman.d/mirrorlist

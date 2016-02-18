@@ -38,7 +38,7 @@ When everything is on you should see the same output on each monitor. The deskto
 
 The best tool to experiment with configuring your monitors to display as you want is `xrandr`. This may already installed as part of your Xorg installation from either the xorg or xorg-apps packages.
 
-Use _xrandr_ to experiment with different configurations until you arrive at settings you want to make permanent. The [DualScreen](/index.php/DualScreen "DualScreen") and [xrandr](/index.php/Xrandr "Xrandr") pages, the man page and various locations on the web provide more information on using the tool.
+Use *xrandr* to experiment with different configurations until you arrive at settings you want to make permanent. The [DualScreen](/index.php/DualScreen "DualScreen") and [xrandr](/index.php/Xrandr "Xrandr") pages, the man page and various locations on the web provide more information on using the tool.
 
 For example, the following command configures my dual monitor set-up:
 
@@ -81,10 +81,9 @@ If none of the above options are available to you or you need a generic solution
 
 *   a user's personal initialisation file is `~/.xinitrc`
     **Tip:** this will be called as a user logins in from kdm, gdm, slim or whatever; some window managers may also call a similar command if it has been included in a start-up file for the window manager; if you see unexpected results, check that **xrandr** is not being called several times with different options
-
     Execution of the command is usually quite noticeable as the monitors change from the basic cloned, landscape display to the independent portrait mode.
 
-**Note:** if your monitor cannot be physically rotated (sometimes referred to as ""pivot"") on its stand, it is unlikely they will support this feature even if you can physically rotate them using a Vesa mounting device; check the specification of the monitor. For example, _Iiyama_ E-series monitors cannot pivot but their almost identical B-series monitors can
+**Note:** if your monitor cannot be physically rotated (sometimes referred to as ""pivot"") on its stand, it is unlikely they will support this feature even if you can physically rotate them using a Vesa mounting device; check the specification of the monitor. For example, *Iiyama* E-series monitors cannot pivot but their almost identical B-series monitors can
 
 ## Make Settings the Default
 
@@ -186,7 +185,7 @@ Using a tool called `synergy` it is possible for a single keyboard and mouse to 
 
 ### Xdmx
 
-Xdmx is a proxy server for X. Using it, the monitors from any number of systems can be consolidated into a single desktop or constructed as a _wall_ of monitors.
+Xdmx is a proxy server for X. Using it, the monitors from any number of systems can be consolidated into a single desktop or constructed as a *wall* of monitors.
 
 To establish an Xdmx desktop involves the following steps automated so that the construction appears transparent:
 

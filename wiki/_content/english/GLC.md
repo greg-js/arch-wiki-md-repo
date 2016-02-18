@@ -48,7 +48,7 @@ glc-capture -a 'hw:0,48000,1;hw:1,48000,1' [application]
 
 ```
 
-The **-a** format is _device,rate,channels;device2..._; you probably want to mix the two audio streams togheter after, so to make it easier keep both sample rate at the same value.
+The **-a** format is *device,rate,channels;device2...*; you probably want to mix the two audio streams togheter after, so to make it easier keep both sample rate at the same value.
 
 ## Playback
 
@@ -84,7 +84,7 @@ rm glc.wav
 
 It will output as output.mkv
 
-**Lossless** (usually quickest, no quality loss, _huge_ files, need plenty of HD space): This script requires the following packages: ffmpeg
+**Lossless** (usually quickest, no quality loss, *huge* files, need plenty of HD space): This script requires the following packages: ffmpeg
 
 ```
 #!/bin/bash

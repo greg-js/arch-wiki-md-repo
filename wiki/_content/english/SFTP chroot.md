@@ -24,7 +24,7 @@ This package is available in the core repository. To install it, run
 
 ## Configuration
 
-In _/etc/ssh/sshd_config_, modify the Subsystem line for sftp:
+In */etc/ssh/sshd_config*, modify the Subsystem line for sftp:
 
 ```
  Subsystem       sftp    internal-sftp
@@ -64,7 +64,7 @@ The chroot directory must be owned by root.
 
 ```
 
-Add the '_sftponly_ group to each user with remote access rights
+Add the '*sftponly* group to each user with remote access rights
 
 ```
  sudo adduser username sftponly
@@ -73,7 +73,7 @@ Add the '_sftponly_ group to each user with remote access rights
 
 ### Fixing path for authorized_keys
 
-With the standard path of _AuthorizedKeysFile_, the public key authentication will fail for chrooted-users. To fix this, we set the _AuthorizedKeysFile_ to a root-owned, non-worldwritable directory and move existing users' keys.
+With the standard path of *AuthorizedKeysFile*, the public key authentication will fail for chrooted-users. To fix this, we set the *AuthorizedKeysFile* to a root-owned, non-worldwritable directory and move existing users' keys.
 
 **Note:** This has the side effect of improving overall security with the tradeoff of root intervention for revocation in case a user changes their key or their key gets lost or stolen.
 
@@ -82,7 +82,7 @@ With the standard path of _AuthorizedKeysFile_, the public key authentication wi
 
 ```
 
-Create _authorized_keys_ directory and move existing users' authorized_keys:
+Create *authorized_keys* directory and move existing users' authorized_keys:
 
 ```
  sudo mkdir /etc/ssh/authorized_keys
@@ -108,7 +108,7 @@ If using the group method above, ensure all sftp users are put in the appropriat
 
 ```
 
-Also, set their shell to _/usr/bin/false_ to prevent a normal ssh login:
+Also, set their shell to */usr/bin/false* to prevent a normal ssh login:
 
 ```
  sudo usermod -s /bin/false username
@@ -117,9 +117,9 @@ Also, set their shell to _/usr/bin/false_ to prevent a normal ssh login:
 
 Their chroot will be the same as their home directory. The permissions are not the same as a normal home, though. Their home directory must be owned as root and not writable by another user or group. This includes the path leading to the directory.
 
-**Warning:** Make sure that _/bin/false_ exists in _/etc/shells_ as well. Otherwise the login will fail with an _invalid password error_.
+**Warning:** Make sure that */bin/false* exists in */etc/shells* as well. Otherwise the login will fail with an *invalid password error*.
 
-Note that since this is only for sftp, a proper chroot environment with a shell and _/dev_ doesn't need to be created. However, if you would like to log access, follow the instructions in the logging section below.
+Note that since this is only for sftp, a proper chroot environment with a shell and */dev* doesn't need to be created. However, if you would like to log access, follow the instructions in the logging section below.
 
 ## Logging
 

@@ -16,7 +16,7 @@ The Compaq nx6325 has the BCM4311 or BCM4312 wireless chipset. The b43 drivers t
 
 # Power management
 
-**NOTE**: All and any of these are optional. Laptop Mode Tools and Acpid are _highly_ advised.
+**NOTE**: All and any of these are optional. Laptop Mode Tools and Acpid are *highly* advised.
 
 Laptop Mode tools with a combination of Cpufreq, acpi and pm-utils will work on this notebook. Thorough installation and configuration instructions for each tool can be found:
 
@@ -31,7 +31,7 @@ Sound works fine, just follow the [ALSA](/index.php/ALSA "ALSA") how-to. For a m
 
 ## Multimedia keys
 
-A modern Desktop Environment will take care of this Automatically. However to manually enable the multimedia keys (volume up/down/mute), create a file _.Xmodmap_ in your home directory, add the following lines:
+A modern Desktop Environment will take care of this Automatically. However to manually enable the multimedia keys (volume up/down/mute), create a file *.Xmodmap* in your home directory, add the following lines:
 
 ```
 keycode 160 = XF86AudioMute

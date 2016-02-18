@@ -33,7 +33,7 @@ Apart from that you can follow the [Beginners' guide](/index.php/Beginners%27_gu
 
 Further attention has to be drawn during the partitioning, as Dell uses an uncommon partition table, which may you run into some trouble. You'll get a "FATAL ERROR", whenever you try to partition "/dev/sda" using the setup. Therefore switch to another terminal (Ctrl + Alt + F2, for instance) and delete the partition table using "fdisk /dev/sda". Follow the program options. More instructions can be found in the man page or the help option (m). It is sufficient to delete all partitions (and writing the table to the disc), from there on you can use the setup in the first terminal again (Ctrl + Alt + F1).
 
-**Note:** When you remove _all_ partitions the Dell Utility won't work anymore, so consider to leave the first partition, which contains the utility program. However the partition can be [recreated](http://www.goodells.net/dellutility/recreate.htm). You can also run the diagnostic utility from an usb stick or a cd.
+**Note:** When you remove *all* partitions the Dell Utility won't work anymore, so consider to leave the first partition, which contains the utility program. However the partition can be [recreated](http://www.goodells.net/dellutility/recreate.htm). You can also run the diagnostic utility from an usb stick or a cd.
 
 # Hardware
 
@@ -44,22 +44,22 @@ This section is about getting the hardware of the Dell Vostro 1320 running prope
 A quick overview which components do work correctly, and which don't. Look at the appropriate section in order to get more details about a component.
 
 | **Dell Vostro 1320 - Overview of the hardware support** |
-| _**Graphics**_ |
+| ***Graphics*** |
 | [NVIDIA® GeForce™ 9300M GS Graphic Card](#NVIDIA.C2.AE_GeForce.E2.84.A2_9300M_GS) | **working** |
-| [Integrated GMA X4500 HD Graphics](#GMA_X4500_HD) | _untested_ |
-| _**Multimedia**_ |
+| [Integrated GMA X4500 HD Graphics](#GMA_X4500_HD) | *untested* |
+| ***Multimedia*** |
 | Audio | **working** |
 | [Webcam](#Webcam) | **working** |
-| Biometric Fingerprint Reader | _untested_ |
-| Extra Keyboard Keys | _working_ |
-| [Card Reader](#Card_Reader) | _working_ |
-| _**Wireless LAN**_ |
-| [Dell Wireless 1397 Mini-Card (802.11 b/g)](#Dell_Wireless_1397_Mini-Card) | _reported working_ |
-| [Dell Wireless 1510 Mini-Card (802.11n)](#Dell_Wireless_1510_Mini-Card) | _reported working_ |
+| Biometric Fingerprint Reader | *untested* |
+| Extra Keyboard Keys | *working* |
+| [Card Reader](#Card_Reader) | *working* |
+| ***Wireless LAN*** |
+| [Dell Wireless 1397 Mini-Card (802.11 b/g)](#Dell_Wireless_1397_Mini-Card) | *reported working* |
+| [Dell Wireless 1510 Mini-Card (802.11n)](#Dell_Wireless_1510_Mini-Card) | *reported working* |
 | [Intel Pro Wireless Wi-Fi 5100 (802.11a/g/Draft-n)](#Intel_Pro_Wireless_Wi-Fi_5100) | **working** |
 | [Intel WiFi Link 5300 Mini-Card (802.11 a/g/n)](#Intel_WiFi_Link_5300_Mini-Card) | **working** |
-| _**Bluetooth**_ |
-| [Dell™ Wireless 355 Bluetooth® Module ROW](#Dell.E2.84.A2_Wireless_355_Bluetooth.C2.AE_Module_ROW) | _working_ |
+| ***Bluetooth*** |
+| [Dell™ Wireless 355 Bluetooth® Module ROW](#Dell.E2.84.A2_Wireless_355_Bluetooth.C2.AE_Module_ROW) | *working* |
 
 ## CPU
 

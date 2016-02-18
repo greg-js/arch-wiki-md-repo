@@ -141,7 +141,7 @@ Ako volite da koristite [Alt] + levi klik za signale po mini mapi i koristite [K
 
 #### GNOME
 
-Opcija za promenu ove precice se nalazi u _System > Preferences > Windows_.
+Opcija za promenu ove precice se nalazi u *System > Preferences > Windows*.
 
 #### KDE
 

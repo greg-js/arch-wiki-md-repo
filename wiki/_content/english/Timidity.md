@@ -51,7 +51,6 @@ The [Freepats](http://freepats.zenvoid.org/) project provides a set of instrumen
 To use Freepats with TiMidity, add the following lines to `timidity.cfg`:
 
  `/etc/timidity++/timidity.cfg` 
-
 ```
 dir /usr/share/timidity/freepats
 source /etc/timidity++/freepats/freepats.cfg
@@ -63,7 +62,6 @@ source /etc/timidity++/freepats/freepats.cfg
 There are other SoundFonts available. To install the [soundfont-fluid](https://www.archlinux.org/packages/?name=soundfont-fluid) SoundFont, append its path to the TiMidity++ configuration file:
 
  `/etc/timidity++/timidity.cfg` 
-
 ```
 soundfont /usr/share/soundfonts/FluidR3_GM2-2.sf2
 
@@ -83,7 +81,6 @@ $ timidity -iA
 You can also use [Systemd/User](/index.php/Systemd/User "Systemd/User") to write an user TiMidity++ service. To do so, write a `timidity.service` file in `~/.config/systemd/user/` like that one :
 
  `/etc/systemd/user/timidity.service` 
-
 ```
 [Unit]
 Description=TiMidity++ Daemon
@@ -130,7 +127,6 @@ If you are runing TiMidity++ as a [daemon](#Daemon) (ALSA sequencer client), it 
 This will give you four output software MIDI ports (in addition of hardware MIDI ports on your system, if any):
 
  `$  aconnect -o` 
-
 ```
 client 128: 'TiMidity' [type=user]
     0 'TiMidity port 0 '
@@ -166,7 +162,6 @@ Load the `snd-virmidi` **kernel module** and (optionally) configure it to be loa
 Use aconnect to verify the port numbers:
 
  `$ aconnect -o` 
-
 ```
 client 14: 'Midi Through' [type=kernel]
      0 'Midi Through Port-0'
@@ -220,7 +215,7 @@ Make sure you've installed some samples and your SoundFile is added to `/etc/tim
 First, make sure you are in the **audio** group. If not, add yourself to it:
 
 ```
-# gpasswd audio -a _username_
+# gpasswd audio -a *username*
 
 ```
 
@@ -253,14 +248,14 @@ And test it using aplaymidi. If this does not work, you may want to configure [J
 TiMidity++ can also convert MIDI files into other formats. The following command saves the resulting sound to a WAV file:
 
 ```
-$ timidity _input.mid_ -Ow -o _out.wav_
+$ timidity *input.mid* -Ow -o *out.wav*
 
 ```
 
 To convert to another formats, you can use [FFmpeg](/index.php/FFmpeg "FFmpeg"). This will convert it to mp3:
 
 ```
-$ timidity _input.mid_ -Ow -o - | ffmpeg -i - -acodec libmp3lame -ab 256k _out.mp3_
+$ timidity *input.mid* -Ow -o - | ffmpeg -i - -acodec libmp3lame -ab 256k *out.mp3*
 
 ```
 
@@ -282,7 +277,6 @@ Make sure you started TiMidity++ as [daemon](#Daemon) as the instructions above,
 Edit this configuration file with any editor, go to the section:
 
  `dosbox.conf` 
-
 ```
 [midi]
 mpu401=intelligent
@@ -290,7 +284,7 @@ device=default
 config=
 ```
 
-put the ALSA connection port into the back of _config=_, in default:
+put the ALSA connection port into the back of *config=*, in default:
 
 ```
 config=128:0

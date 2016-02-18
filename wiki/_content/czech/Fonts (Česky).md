@@ -33,7 +33,7 @@ Jinou možností je použít Instalátor fontů KDE v Ovládacím centru. Vypad�
 
 Také můžete ručně nakopírovat fonty do jednoho ze tří adresářů výše, pak ale nezapoměnte jako root spustit: `fc-cache -vf` 
 
-Víceméně si jich můžete užívat v prostředích jako gnome, xfce4 nebo kde. Ale některé GTK1 nebo staré aplikace nepodporují fontcofig. _(Opravdu? pak by to měl někdo ověřit a případně opravit)_ Měli byste spustit následující příkazy v adresáři s fonty (v konzoli ovšem):
+Víceméně si jich můžete užívat v prostředích jako gnome, xfce4 nebo kde. Ale některé GTK1 nebo staré aplikace nepodporují fontcofig. *(Opravdu? pak by to měl někdo ověřit a případně opravit)* Měli byste spustit následující příkazy v adresáři s fonty (v konzoli ovšem):
 
 ```
   mkfontscale

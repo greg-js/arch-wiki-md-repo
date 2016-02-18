@@ -20,7 +20,6 @@ System/dump capture kernel requires some configuration flags that are not set by
 To create a kernel you need to edit kernel config (or config.x86_64) file and enable following configuration options:
 
  `config{.x86_64} file` 
-
 ```
 CONFIG_DEBUG_INFO=y
 CONFIG_CRASH_DUMP=y
@@ -28,7 +27,7 @@ CONFIG_PROC_VMCORE=y
 
 ```
 
-Also change package base name to something like **linux-kdump** to distinguish the kernel from the default Arch one. Compile kernel package and install it. Save _./src/linux-X.Y/vmlinux_ uncompressed system kernel binary - it contains debug symbols and you will need them later when analyzing crash.
+Also change package base name to something like **linux-kdump** to distinguish the kernel from the default Arch one. Compile kernel package and install it. Save *./src/linux-X.Y/vmlinux* uncompressed system kernel binary - it contains debug symbols and you will need them later when analyzing crash.
 
 In case if you have separate kernel for system and dump capture then it is recommended to consult [Kdump](https://www.kernel.org/doc/Documentation/kdump/kdump.txt) documentation. It has several recommendations how to make dump capture kernel smaller.
 
@@ -37,7 +36,6 @@ In case if you have separate kernel for system and dump capture then it is recom
 First you need to reserve memory for dump capture kernel. Edit you bootloader configuration and add `crashkernel=64M` boot option to the system kernel you just installed. For example [Syslinux](/index.php/Syslinux "Syslinux") boot entry would look like:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 LABEL arch-kdump
         MENU LABEL Arch Linux Kdump
@@ -47,7 +45,7 @@ LABEL arch-kdump
 
 ```
 
-64M of memory should be enough to hadle crash dumps on machines with up to 12G of RAM. Some systems require more reserved memory. In case if dump capture kernel unable not load try to increase the memory to _256M_ or even to _512M_, but note that this memory is unavailable to system kernel.
+64M of memory should be enough to hadle crash dumps on machines with up to 12G of RAM. Some systems require more reserved memory. In case if dump capture kernel unable not load try to increase the memory to *256M* or even to *512M*, but note that this memory is unavailable to system kernel.
 
 Reboot into your system kernel. To make sure that the kernel is booted with correct options please check the `/proc/cmdline` file.
 
@@ -58,14 +56,13 @@ Next you need to tell [Kexec](/index.php/Kexec "Kexec") that you want to use you
 
 ```
 
-It loads the kernel into the reserved area. Without the `-p` flag _kexec_ would boot the kernel right away, but in presence of the flag kernel will be loaded into reserved memory but boot postponed until a crash.
+It loads the kernel into the reserved area. Without the `-p` flag *kexec* would boot the kernel right away, but in presence of the flag kernel will be loaded into reserved memory but boot postponed until a crash.
 
 **Note:** For a loaded kernel `cat /sys/devices/system/cpu/online` shows the active CPU cores. The `maxcpus=1` kernel parameter should [limit](https://www.kernel.org/doc/Documentation/cpu-hotplug.txt) it to one. If it has no effect or your SMP-enabled kernel [does not boot](https://bbs.archlinux.org/viewtopic.php?pid=1424049#p1424049), try using `nr_cpus=1` instead.
 
-Instead of running _kexec_ manually you might want to setup [Systemd](/index.php/Systemd "Systemd") service that will run kexec on boot:
+Instead of running *kexec* manually you might want to setup [Systemd](/index.php/Systemd "Systemd") service that will run kexec on boot:
 
  `/etc/systemd/system/kdump.service` 
-
 ```
 [Unit]
 Description=Load dump capture kernel
@@ -96,7 +93,7 @@ $ cat /sys/kernel/kexec_crash_loaded
 
 ## Testing crash
 
-If you want to test crash then you can use _sysrq_ for this.
+If you want to test crash then you can use *sysrq* for this.
 **Warning:** kernel crash may corrupt data on your disks, run it at your own risk!
 
 ```
@@ -119,16 +116,16 @@ or optionally you can copy the crash to other machine. Once dump is saved you sh
 
 ## Analyzing core dump
 
-You can use either _gdb_ tool or special gdb extension called [crash](https://www.archlinux.org/packages/?name=crash). Run _crash_ as
+You can use either *gdb* tool or special gdb extension called [crash](https://www.archlinux.org/packages/?name=crash). Run *crash* as
 
 ```
-$ crash _vmlinux_ _path_/crash.dump
+$ crash *vmlinux* *path*/crash.dump
 
 ```
 
-Where _vmlinux_ previously saved kernel binary with debug symbols.
+Where *vmlinux* previously saved kernel binary with debug symbols.
 
-Follow _man crash_ or [http://people.redhat.com/~anderson/crash_whitepaper/](http://people.redhat.com/~anderson/crash_whitepaper/) for more information about debugging practices.
+Follow *man crash* or [http://people.redhat.com/~anderson/crash_whitepaper/](http://people.redhat.com/~anderson/crash_whitepaper/) for more information about debugging practices.
 
 ## Additional information
 

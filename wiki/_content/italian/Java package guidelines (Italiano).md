@@ -1,4 +1,4 @@
-_Questo documento definisce uno standard proposto per pacchettizzare i programmi Java sotto Arch Linux. I programmi Java sono notoriamente difficili da pacchettizzare in maniera pulita senza sovrascrivere dipendenze. Questo documento descrive un metodo per rimediare a questa situazione. Queste linee guida sono flessibili nell'ottica di coprire i molti possibili scenari che si possono verificare quando si ha a che fare con applicazioni Java._
+*Questo documento definisce uno standard proposto per pacchettizzare i programmi Java sotto Arch Linux. I programmi Java sono notoriamente difficili da pacchettizzare in maniera pulita senza sovrascrivere dipendenze. Questo documento descrive un metodo per rimediare a questa situazione. Queste linee guida sono flessibili nell'ottica di coprire i molti possibili scenari che si possono verificare quando si ha a che fare con applicazioni Java.*
 
 ## Contents
 
@@ -89,9 +89,9 @@ Per chiarire meglio il concetto, ecco un esempio dell'albero di directory per un
 
 ### Dipendenze
 
-I pacchetti Java potrebbero specificare _java-runtime_ o _java-environment_ come dipendenze, a seconda delle occorrenze.
+I pacchetti Java potrebbero specificare *java-runtime* o *java-environment* come dipendenze, a seconda delle occorrenze.
 
-Per la maggioranza dei pacchetti, _java-runtime_ è tutto quanto è necessario per eseguire un software scritto in java.
+Per la maggioranza dei pacchetti, *java-runtime* è tutto quanto è necessario per eseguire un software scritto in java.
 
 **java-runtime** è una dipendenza virtuale fornita da:
 
@@ -99,7 +99,7 @@ Per la maggioranza dei pacchetti, _java-runtime_ è tutto quanto è necessario p
 *   [java-gcj-compat](https://aur.archlinux.org/packages/java-gcj-compat/) (free)
 *   [jre](https://aur.archlinux.org/packages/jre/) (non-free)
 
-_java-environment_ è richiesto da quei pacchetti che necessitano di compilare il codice sorgente di java nel bytecode.
+*java-environment* è richiesto da quei pacchetti che necessitano di compilare il codice sorgente di java nel bytecode.
 
 **java-environment** è una dipendenza virtuale fornita da:
 

@@ -36,7 +36,6 @@ dasom-indicator
 Re-login to make these environment changes effective.
 
 **Note:** If you are using GNOME, you may need to run the following commands to use dasom:
-
 ```
 $ gsettings set org.gnome.settings-daemon.plugins.keyboard active false
 $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMModule':<'dasom'>}"

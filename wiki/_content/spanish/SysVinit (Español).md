@@ -40,9 +40,9 @@ Aunque un sistema Arch basado en SysVinit no utiliza init, la mayor parte del tr
 ### Consideraciones previas antes de pasarse a systemd
 
 *   Para una aproximación al tema son recomendables [algunas lecturas](http://freedesktop.org/wiki/Software/systemd/) acerca de systemd.
-*   Tenga en cuenta el hecho de que _systemd_ tiene un sistema _journal_ que sustituye a _syslog_, aunque los dos pueden coexistir. Véase la [sección sobre journal](/index.php/Systemd_(Espa%C3%B1ol)#Journal "Systemd (Español)").
-*   Aunque systemd puede reemplazar algunas de las funcionalidades de _cron_, _acpid_, o _xinetd_, no hay necesidad de abandonar el uso de los demonios tradicionales a menos que así lo desee.
-*   La interacción con los initscripts no está funcionando con systemd. En particular, _netcfg-menu_ [no puede](https://bugs.archlinux.org/task/31377) ser usado al inicio del sistema.
+*   Tenga en cuenta el hecho de que *systemd* tiene un sistema *journal* que sustituye a *syslog*, aunque los dos pueden coexistir. Véase la [sección sobre journal](/index.php/Systemd_(Espa%C3%B1ol)#Journal "Systemd (Español)").
+*   Aunque systemd puede reemplazar algunas de las funcionalidades de *cron*, *acpid*, o *xinetd*, no hay necesidad de abandonar el uso de los demonios tradicionales a menos que así lo desee.
+*   La interacción con los initscripts no está funcionando con systemd. En particular, *netcfg-menu* [no puede](https://bugs.archlinux.org/task/31377) ser usado al inicio del sistema.
 
 ### Proceder a la instalación
 
@@ -51,7 +51,7 @@ Aunque un sistema Arch basado en SysVinit no utiliza init, la mayor parte del tr
 3.  Reinicie el sistema y compruebe que `systemd` está realmente activo mediante la orden siguiente: `cat /proc/1/comm`. Esta debería devolver la salida: `systemd`.
 4.  Asegúrese de que el nombre del equipo está configurado correctamente en systemd: `hostnamectl set-hostname elnombredemiequipo` o `/etc/hostnam`.
 5.  Proceda a eliminar [initscripts](https://www.archlinux.org/packages/?name=initscripts) y [sysvinit](https://aur.archlinux.org/packages/sysvinit/) del sistema e instale [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat).
-6.  Opcionalmente, retire el parámetro `init=/usr/lib/systemd/systemd` en cuanto que ya no es necesario. [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) proporciona un enlace simbólico a init de _systemd_ cuando _sysvinit_ es usado
+6.  Opcionalmente, retire el parámetro `init=/usr/lib/systemd/systemd` en cuanto que ya no es necesario. [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) proporciona un enlace simbólico a init de *systemd* cuando *sysvinit* es usado
 
 ### Información complementaria
 
@@ -66,7 +66,6 @@ Aunque un sistema Arch basado en SysVinit no utiliza init, la mayor parte del tr
 init es siempre un proceso y, aparte de gestionar el espacio de intercambio, es el proceso padre a **todos** los demás procesos. Usted puede imaginar dónde se encuentra init en la jerarquía de procesos de su sistema con `pstree`:
 
  `$ pstree -Ap` 
-
 ```
 init(1)-+-acpid(3432)
         |-crond(3423)

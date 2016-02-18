@@ -14,7 +14,7 @@ To have an encrypted home partition (encrypted with, for example, LUKS or ecrypt
 1.  Install [pam_mount](https://www.archlinux.org/packages/?name=pam_mount) from the [Official repositories](/index.php/Official_repositories "Official repositories").
 2.  Edit /etc/security/pam_mount.conf.xml as follows:
 
-Insert 3 new lines at the end of the file, but **before** the last closing tag, _</pam_mount>_. Notes:
+Insert 3 new lines at the end of the file, but **before** the last closing tag, *</pam_mount>*. Notes:
 
 *   USERNAME should be replaced with your linux-username.
 *   /dev/sdaX should be replaced with the corresponding device or container file.
@@ -22,7 +22,6 @@ Insert 3 new lines at the end of the file, but **before** the last closing tag, 
 *   Add mount options, if needed.
 
  `/etc/security/pam_mount.conf.xml` 
-
 ```
 **<lclmount>mount -t%(FSTYPE) %(VOLUME) %(MNTPT) "%(if %(OPTIONS),-o%(OPTIONS))"</lclmount>**
 **<volume user="USERNAME" fstype="auto" path="/dev/sdaX" mountpoint="/home" options="fsck,noatime" />**
@@ -36,7 +35,6 @@ Insert 3 new lines at the end of the file, but **before** the last closing tag, 
 In general, you have to edit configuration files in /etc/pam.d so that pam_mount will be called on login. The correct order of entries in each file is important. It is necessary to edit /etc/pam.d/system-auth as shown below. If you use a display manager (e.g., Slim or GDM) edit its file, too. Example configuration files follow, with the added lines in bold.
 
  `/etc/pam.d/system-auth` 
-
 ```
 #%PAM-1.0
 
@@ -65,7 +63,6 @@ session   optional  pam_permit.so
 For [SLiM](/index.php/SLiM "SLiM"):
 
  `/etc/pam.d/slim` 
-
 ```
 auth            requisite       pam_nologin.so
 auth            required        pam_env.so
@@ -87,9 +84,7 @@ session         optional        pam_ck_connector.so
 For [GDM](/index.php/GDM "GDM"):
 
 **Note:** The configuration file has changed to be /etc/pam.d/gdm-password (instead of /etc/pam.d/gdm) as of GDM version 3.2.
-
  `/etc/pam.d/gdm-password` 
-
 ```
 #%PAM-1.0
 auth            requisite       pam_nologin.so

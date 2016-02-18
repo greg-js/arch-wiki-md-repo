@@ -66,7 +66,6 @@ After you have installed Stata, change the permissions on `/usr/local/stata12` s
 To add Stata to your path, add the following to the end of your path in your [bashrc](/index.php/Bashrc "Bashrc"):
 
  `~/.bashrc` 
-
 ```
 PATH=$PATH:/usr/local/stata12/
 

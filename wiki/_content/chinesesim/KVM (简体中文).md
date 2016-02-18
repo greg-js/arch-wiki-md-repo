@@ -119,7 +119,6 @@ In case the above commands return nothing, you need to [load](/index.php/Kernel_
 使嵌套虚拟化永久生效（请参考[Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules")）：
 
  `/etc/modprobe.d/modprobe.conf` 
-
 ```
 options kvm_intel nested=1
 
@@ -128,7 +127,6 @@ options kvm_intel nested=1
 检验嵌套虚拟化功能是否已被激活：
 
  `$ systool -m kvm_intel -v | grep nested` 
-
 ```
     nested              = "Y"
 
@@ -265,7 +263,6 @@ This is a quite basic strategy to do networking with VMs. However, it is very ro
 You may also want to enable hugepages to improve the performance of your virtual machine. With an up to date Arch Linux and a running KVM you probably already have everything you need. Check if you have the directory `/dev/hugepages`. If not create it. Now we need the right permissions to use this directory. Check if the group `kvm` exist and if you are member of this group. This should be the case if you already have a running virtual machine.
 
  `$ getent group kvm` 
-
 ```
 kvm:x:78:USERNAMES
 
@@ -285,7 +282,6 @@ Of course the gid must match that of the `kvm` group. The mode of `1770` allows 
 # mount /dev/hugepages
 $ mount | grep huge
 ```
-
  `hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,mode=1770,gid=78)` 
 
 Now you can calculate how many hugepages you need. Check how large your hugepages are:
@@ -305,7 +301,6 @@ Normally that should be 2048 kB ≙ 2 MB. Let's say you want to run your virtual
 If you had enough free memory you should see:
 
  `$ cat /proc/meminfo | grep HugePages_Total` 
-
 ```
 HugesPages_Total:  550
 
@@ -323,7 +318,6 @@ Note the `-mem-path` parameter. This will make use of the hugepages.
 Now you can check, while your virtual machine is running, how many pages are used:
 
  `$ cat /proc/meminfo | grep HugePages` 
-
 ```
 HugePages_Total:     550
 HugePages_Free:       48

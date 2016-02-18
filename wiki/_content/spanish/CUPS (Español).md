@@ -1,8 +1,8 @@
 De la [web de CUPS](http://www.cups.org/index.php):
 
-	«_[CUPS](https://en.wikipedia.org/wiki/es:Common_Unix_Printing_System "wikipedia:es:Common Unix Printing System") es el sistema de impresión, basado en estándares y de código abierto, desarrollado por Apple Inc. para Mac OS® X y otros sistemas operativos basados en UNIX®_».
+	«*[CUPS](https://en.wikipedia.org/wiki/es:Common_Unix_Printing_System "wikipedia:es:Common Unix Printing System") es el sistema de impresión, basado en estándares y de código abierto, desarrollado por Apple Inc. para Mac OS® X y otros sistemas operativos basados en UNIX®*».
 
-Aunque hay otras alternativas de impresión como LPRng, el Sistema de Impresión Común de Unix (_**C**ommon **U**nix **P**rinting **S**ystem_) es la opción más popular debido a su relativa facilidad de uso.
+Aunque hay otras alternativas de impresión como LPRng, el Sistema de Impresión Común de Unix (***C**ommon **U**nix **P**rinting **S**ystem*) es la opción más popular debido a su relativa facilidad de uso.
 
 ## Contents
 
@@ -42,8 +42,8 @@ Aunque hay otras alternativas de impresión como LPRng, el Sistema de Impresión
         *   [7.2.2 La impresora HPLIP envía como error «/usr/lib/cups/backend/hp failed»](#La_impresora_HPLIP_env.C3.ADa_como_error_.C2.AB.2Fusr.2Flib.2Fcups.2Fbackend.2Fhp_failed.C2.BB)
         *   [7.2.3 HPLIP indica que todos los trabajos se han completado pero la impresora no responde](#HPLIP_indica_que_todos_los_trabajos_se_han_completado_pero_la_impresora_no_responde)
         *   [7.2.4 hp-setup solicita que especifique el archivo PPD para la impresora descubierta](#hp-setup_solicita_que_especifique_el_archivo_PPD_para_la_impresora_descubierta)
-        *   [7.2.5 Qt instalado, pero hp-setup informa: "Qt/PyQt 4 initialization failed" (_«no se puede iniciar Qt/PyQt 4»_)](#Qt_instalado.2C_pero_hp-setup_informa:_.22Qt.2FPyQt_4_initialization_failed.22_.28.C2.ABno_se_puede_iniciar_Qt.2FPyQt_4.C2.BB.29)
-        *   [7.2.6 hp-setup encuentra la impresora automáticamente, pero informa que "Unable to communicate with device" (_«No se puede comunicar con el dispositivo»_) inmediatamente después de imprimir la página de prueba](#hp-setup_encuentra_la_impresora_autom.C3.A1ticamente.2C_pero_informa_que_.22Unable_to_communicate_with_device.22_.28.C2.ABNo_se_puede_comunicar_con_el_dispositivo.C2.BB.29_inmediatamente_despu.C3.A9s_de_imprimir_la_p.C3.A1gina_de_prueba)
+        *   [7.2.5 Qt instalado, pero hp-setup informa: "Qt/PyQt 4 initialization failed" (*«no se puede iniciar Qt/PyQt 4»*)](#Qt_instalado.2C_pero_hp-setup_informa:_.22Qt.2FPyQt_4_initialization_failed.22_.28.C2.ABno_se_puede_iniciar_Qt.2FPyQt_4.C2.BB.29)
+        *   [7.2.6 hp-setup encuentra la impresora automáticamente, pero informa que "Unable to communicate with device" (*«No se puede comunicar con el dispositivo»*) inmediatamente después de imprimir la página de prueba](#hp-setup_encuentra_la_impresora_autom.C3.A1ticamente.2C_pero_informa_que_.22Unable_to_communicate_with_device.22_.28.C2.ABNo_se_puede_comunicar_con_el_dispositivo.C2.BB.29_inmediatamente_despu.C3.A9s_de_imprimir_la_p.C3.A1gina_de_prueba)
         *   [7.2.7 hp-toolbox envía como error, «Unable to communicate with device» («No se puede comunicar con el dispositivo»)](#hp-toolbox_env.C3.ADa_como_error.2C_.C2.ABUnable_to_communicate_with_device.C2.BB_.28.C2.ABNo_se_puede_comunicar_con_el_dispositivo.C2.BB.29)
         *   [7.2.8 CUPS responde '«foomatic-rip» not available/stopped with status 3' con una impresora HP](#CUPS_responde_.27.C2.ABfoomatic-rip.C2.BB_not_available.2Fstopped_with_status_3.27_con_una_impresora_HP)
         *   [7.2.9 La impresora falla indicando error de autorización](#La_impresora_falla_indicando_error_de_autorizaci.C3.B3n)
@@ -130,13 +130,13 @@ Si no está seguro de qué controladores instalar o si el controlador actual que
 
 #### Descargar el PPD de la impresora
 
-Dependiendo de la impresora, este paso es opcional y puede no ser necesario, ya que la instalación estándar de CUPS incluye un cierto número de archivos PPD (PostScript Printer Description). Por otra parte, los paquetes _foomatic-filters_, _gimp-print_ y _hplip_ ya incluyen un buen número de archivos PPD que serán automáticamente detectados por CUPS.
+Dependiendo de la impresora, este paso es opcional y puede no ser necesario, ya que la instalación estándar de CUPS incluye un cierto número de archivos PPD (PostScript Printer Description). Por otra parte, los paquetes *foomatic-filters*, *gimp-print* y *hplip* ya incluyen un buen número de archivos PPD que serán automáticamente detectados por CUPS.
 
 He aquí una explicación del sitio web de impresión de Linux sobre el significado del archivo PPD:
 
-	«_Para todas las impresoras PostScript los fabricantes pueden proporcionar un archivo PPD que contiene toda la información específica del particular modelo de impresora: esto es, las capacidades básicas de la impresora, como, por ejemplo, si la impresora es a color, las fuentes, el nivel de PostScript, etc., y, sobre todo, la opciones configurables por el usuario, como el tamaño del papel, la resolución, etc._»
+	«*Para todas las impresoras PostScript los fabricantes pueden proporcionar un archivo PPD que contiene toda la información específica del particular modelo de impresora: esto es, las capacidades básicas de la impresora, como, por ejemplo, si la impresora es a color, las fuentes, el nivel de PostScript, etc., y, sobre todo, la opciones configurables por el usuario, como el tamaño del papel, la resolución, etc.*»
 
-Si el PPD para la impresora _no_ está incluido en CUPS, entonces:
+Si el PPD para la impresora *no* está incluido en CUPS, entonces:
 
 *   Compruebe en [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") si hay paquetes para la impresora/fabricante
 *   Visite la base de datos [OpenPrinting](http://www.openprinting.org/printers) y seleccione el fabricante y el modelo de la impresora
@@ -163,7 +163,6 @@ Se puede tener acceso a las impresoras USB de dos modos: a través de los módul
 Algunos usuarios de impresoras USB, pueden, sin embargo, a modo de prevención, querer todavía introducir en blacklisting el [módulo de kernel](/index.php/Kernel_modules_(Espa%C3%B1ol) "Kernel modules (Español)") `usblp`, que se haría como sigue:
 
  `/etc/modprobe.d/blacklistusblp.conf` 
-
 ```
 blacklist usblp
 
@@ -248,7 +247,7 @@ Para ejecutar en la línea de órdenes:
 
 Los archivos PPD están en `/usr/share/ppd/HP/`.
 
-**Nota:** Si obtiene un error de sintaxis durante la instalación, puede volver a vincular _temporalmente_ la orden `python` a la orden `python2` (regrese a la orden `python3` después de configurar).
+**Nota:** Si obtiene un error de sintaxis durante la instalación, puede volver a vincular *temporalmente* la orden `python` a la orden `python2` (regrese a la orden `python3` después de configurar).
 
 Si obtiene errores respecto a dependencias que faltan de gobject/dbus, instale [python2-gobject2](https://www.archlinux.org/packages/?name=python2-gobject2) y [python2-dbus](https://www.archlinux.org/packages/?name=python2-dbus). Para obtener más detalles véase este [informe de error](https://bugs.archlinux.org/task/26666).
 
@@ -268,28 +267,28 @@ Con el módulo del kernel instalado, ahora puede iniciar **cups** y, opcionalmen
 
 ### Interfaz web y herramientas
 
-Una vez iniciado el demonio, abra un navegador y escriba en la barra de navegación: [http://localhost:631](http://localhost:631) (_El término **localhost** puede que tengamos que reemplazarlo con el nombre del equipo establecido en_ `/etc/hosts`).
+Una vez iniciado el demonio, abra un navegador y escriba en la barra de navegación: [http://localhost:631](http://localhost:631) (*El término **localhost** puede que tengamos que reemplazarlo con el nombre del equipo establecido en* `/etc/hosts`).
 
-Desde aquí, siga los distintos asistentes que le vayan apareciendo en pantalla para agregar la impresora. Un procedimiento habitual es empezar haciendo clic en _Añadir impresoras y clases_ y después en _Añadir Impresora_. Cuando se le pida un nombre de usuario y contraseña, inicie la sesión como root. El nombre asignado a la impresora no tiene importancia, lo mismo que para los campos 'ubicación' y 'descripción'. A continuación, se presentará una lista de dispositivos para seleccionar. El nombre real de la impresora aparece junto a la etiqueta (por ejemplo, al lado de _USB Printer #1_ para impresoras USB). Por último, seleccione los controladores adecuados, para completar la configuración.
+Desde aquí, siga los distintos asistentes que le vayan apareciendo en pantalla para agregar la impresora. Un procedimiento habitual es empezar haciendo clic en *Añadir impresoras y clases* y después en *Añadir Impresora*. Cuando se le pida un nombre de usuario y contraseña, inicie la sesión como root. El nombre asignado a la impresora no tiene importancia, lo mismo que para los campos 'ubicación' y 'descripción'. A continuación, se presentará una lista de dispositivos para seleccionar. El nombre real de la impresora aparece junto a la etiqueta (por ejemplo, al lado de *USB Printer #1* para impresoras USB). Por último, seleccione los controladores adecuados, para completar la configuración.
 
-Ahora pruebe la configuración pulsando _Administración_, en el menú desplegable, y seleccione _Imprimir página de prueba_. Si no se imprime y la configuración es correcta, entonces lo más probable sea que el controlador seleccionado no es el adecuado para la impresora.
+Ahora pruebe la configuración pulsando *Administración*, en el menú desplegable, y seleccione *Imprimir página de prueba*. Si no se imprime y la configuración es correcta, entonces lo más probable sea que el controlador seleccionado no es el adecuado para la impresora.
 
 **Sugerencia:** Véase: [Interfaces alternativas para CUPS](#Interfaz_CUPS_alternativas) para conocer otros tipos de interfaces.
 
 **Nota:**
 
-*   Cuando se configura una impresora USB, esta debe aparecer listada en la página _Agregar Impresora_. Si solo se puede ver una «impresora SCSI», probablemente significa que CUPS no ha reconocido la impresora.
+*   Cuando se configura una impresora USB, esta debe aparecer listada en la página *Agregar Impresora*. Si solo se puede ver una «impresora SCSI», probablemente significa que CUPS no ha reconocido la impresora.
 *   Para habilitar el escaneo de redes inalámbricas en determinados dispositivos multifunción HP, utilizando el paquete [hplip](https://www.archlinux.org/packages/extra/i686/hplip/), puede que tenga que agregar la impresora como una impresora de red, utilizando http:// protocol. Para determinar el URI correcto a usar, ejecute la orden `hp-makeuri`.
 
 #### Administración de CUPS
 
-Para administrar la impresora mediante la interfaz web es necesario proporcionar un nombre de usuario y una contraseña, para realizar tareas como, por ejemplo: añadir o eliminar impresoras, detención de tareas de impresión, etc. El nombre de usuario, por defecto es el asignado al grupo _sys_ , o root (para cambiar el grupo modifique `/etc/cups/cupsd.conf` en la línea _SystemGroup_).
+Para administrar la impresora mediante la interfaz web es necesario proporcionar un nombre de usuario y una contraseña, para realizar tareas como, por ejemplo: añadir o eliminar impresoras, detención de tareas de impresión, etc. El nombre de usuario, por defecto es el asignado al grupo *sys* , o root (para cambiar el grupo modifique `/etc/cups/cupsd.conf` en la línea *SystemGroup*).
 
 Si la cuenta de root se ha bloqueado (es decir, cuando se utiliza sudo), no será posible iniciar una sesión en la interfaz de administración de CUPS con el nombre de usuario y contraseña por defecto. En este caso, siga [estas instrucciones](http://www.cups.org/articles.php?L237+T+Qprintadmin) en el FAQ de CUPS. También puede resultarle interesante [este post](https://bbs.archlinux.org/viewtopic.php?id=35567).
 
 #### Acceso remoto a la interfaz web
 
-Por defecto, la interfaz web de CUPS es accesible solo por _localhost_, es decir, el equipo sobre el que está instalado. Para acceder a la interfaz remota, será necesario realizar los siguientes cambios, modificando el archivo `/etc/cups/cupsd.conf`. Cambien la línea:
+Por defecto, la interfaz web de CUPS es accesible solo por *localhost*, es decir, el equipo sobre el que está instalado. Para acceder a la interfaz remota, será necesario realizar los siguientes cambios, modificando el archivo `/etc/cups/cupsd.conf`. Cambien la línea:
 
 ```
 Listen localhost:631
@@ -367,7 +366,7 @@ Esto debería evitar el error: 426 - Es necesaria la actualización cuando se ut
 
 ### Configuración a través de línea de órdenes
 
-CUPS puede ser totalmente controlado desde la línea de órdenes con herramientas sencillas, _es decir_ el conjunto de órdenes de lp* y cups*.
+CUPS puede ser totalmente controlado desde la línea de órdenes con herramientas sencillas, *es decir* el conjunto de órdenes de lp* y cups*.
 
 En Arch Linux, la mayoría de las órdenes vienen con apoyo de aut-completado en las consolas comunes. Tenga en cuenta igualemente que las órdenes no se pueden agrupar en una sola línea.
 
@@ -496,14 +495,13 @@ Para hacer system-config-printer realmente funcional, será necesario ejecutarlo
 2\. Agregue su usuario al grupo recién creado:
 
 ```
-# usermod -aG lpadmin _username_
+# usermod -aG lpadmin *username*
 
 ```
 
 3\. Informe a cups para que acepte el grupo recién creado
 
  `/etc/cups/cups-files.conf` 
-
 ```
  ...
  SystemGroup sys root **lpadmin**
@@ -598,11 +596,11 @@ Imprima un documento y vea `error_log` para obtener una imagen más detallada y 
 
 ### Problemas relacionados con las actualizaciones
 
-_Problemas que aparecieron despues que los paquetes CUPS y programas relacionados fueron actualizados a una versión más reciente._
+*Problemas que aparecieron despues que los paquetes CUPS y programas relacionados fueron actualizados a una versión más reciente.*
 
 #### CUPS deja de funcionar
 
-Puede suceder que, como resultado de una actualización hay cambios en el archivo de configuración. Mensajes como "404 - page not found" (_«404 - página no encontrada»_) puede ser consecuencia de tratar de administrar CUPS a través de localhost:631, por ejemplo.
+Puede suceder que, como resultado de una actualización hay cambios en el archivo de configuración. Mensajes como "404 - page not found" (*«404 - página no encontrada»*) puede ser consecuencia de tratar de administrar CUPS a través de localhost:631, por ejemplo.
 
 Para utilizar la nueva configuración, copie `/etc/cups/cupsd.conf.default` a `/etc/cups/cupsd.conf` (respalde la configuración antigua si es necesario) y reinicie CUPS para emplear la nueva configuración.
 
@@ -610,7 +608,7 @@ Para utilizar la nueva configuración, copie `/etc/cups/cupsd.conf.default` a `/
 
 Si todos los trabajos enviados a la impresora se «detuvieron», elimine la impresora y vuelva a agregarla. Usando la [interfaz web de CUPS](http://localhost:631), vaya a Impresoras > Eliminar impresora.
 
-Para comprobar la configuración de la impresora vaya a _Impresoras_, luego _Modificar Impresora_. Copie la información mostrada, seleccione 'Modificar Impresora' para pasar a la página siguiente(s), y así sucesivamente.
+Para comprobar la configuración de la impresora vaya a *Impresoras*, luego *Modificar Impresora*. Copie la información mostrada, seleccione 'Modificar Impresora' para pasar a la página siguiente(s), y así sucesivamente.
 
 #### Todos los trabajos derivan a «The printer is not responding» (La impresora no responde)
 
@@ -677,11 +675,11 @@ hp-firmware -n
 
 Instale CUPS antes de ejecutar hp-setup.
 
-#### Qt instalado, pero hp-setup informa: "Qt/PyQt 4 initialization failed" (_«no se puede iniciar Qt/PyQt 4»_)
+#### Qt instalado, pero hp-setup informa: "Qt/PyQt 4 initialization failed" (*«no se puede iniciar Qt/PyQt 4»*)
 
 «hp-check -t» no le dará información útil para encontrar el paquete necesario. Hay que instalar todos los «paquetes dependientes» que contengan el prefijo «python2» en [https://www.archlinux.org/packages/extra/x86_64/hplip/](https://www.archlinux.org/packages/extra/x86_64/hplip/)
 
-#### hp-setup encuentra la impresora automáticamente, pero informa que "Unable to communicate with device" (_«No se puede comunicar con el dispositivo»_) inmediatamente después de imprimir la página de prueba
+#### hp-setup encuentra la impresora automáticamente, pero informa que "Unable to communicate with device" (*«No se puede comunicar con el dispositivo»*) inmediatamente después de imprimir la página de prueba
 
 Esto, al menos, pasa con hplip 3.13.5-2 para HP Officejet 6500A través de la conexión de red local. Para resolver el problema, especifique la dirección IP de la impresora HP a hp-setup para que pueda localizarla.
 
@@ -737,7 +735,7 @@ Comentela y reinicie CUPS.
 
 #### Botón de impresora bloqueado en aplicaciones GNOME
 
-	_<small>Fuente (en inglés): [No es posible imprimir con las aplicaciones GNOME. - Arch Forums](https://bbs.archlinux.org/viewtopic.php?id=70418)</small>_
+	*<small>Fuente (en inglés): [No es posible imprimir con las aplicaciones GNOME. - Arch Forums](https://bbs.archlinux.org/viewtopic.php?id=70418)</small>*
 
 Asegúrese de que el paquete: **libgnomeprint** está instalado.
 
@@ -773,7 +771,7 @@ en `/etc/cups/mime.types`.
 A veces, Windows es poco intuitivo en la definición exacta del dispositivo URI (ubicación del dispositivo). Si tiene problemas para especificar la ubicación del dispositivo correcto en CUPS, ejecute la orden siguiente para listar todas las acciones disponibles para un determinado nombre de usuario de Windows:
 
 ```
- $ smbtree -U _windowsusername_
+ $ smbtree -U *windowsusername*
 
 ```
 
@@ -958,7 +956,6 @@ El archivo .service de systemd proporcionado por CUPS utiliza socket, es decir, 
 A fin de comenzar cupsd cuando se inicia un trabajo de impresora a través de la red, cree el siguiente archivo:
 
  `/etc/systemd/system/org.cups.cupsd.socket` 
-
 ```
 .include /usr/lib/systemd/system/org.cups.cupsd.socket
 
@@ -994,9 +991,9 @@ Ahora CUPS debería comenzar automáticamente cuando se imprime localmente o en 
 
 ## Véase también
 
-*   [Official CUPS documentation](http://localhost:631/documentation.html), _locally installed_
+*   [Official CUPS documentation](http://localhost:631/documentation.html), *locally installed*
 *   [Official CUPS Website](http://www.cups.org/)
-*   [Linux Printing](http://www.linuxprinting.org/), _[The Linux Foundation](http://www.linuxfoundation.org)_
-*   [Gentoo's Printing Guide](http://www.gentoo.org/doc/en/printing-howto.xml), _[Gentoo Documentation Resources](http://www.gentoo.org/doc/en)_
+*   [Linux Printing](http://www.linuxprinting.org/), *[The Linux Foundation](http://www.linuxfoundation.org)*
+*   [Gentoo's Printing Guide](http://www.gentoo.org/doc/en/printing-howto.xml), *[Gentoo Documentation Resources](http://www.gentoo.org/doc/en)*
 *   [Arch Linux User Forums](https://bbs.archlinux.org/)
 *   [Install HP Printers Easy Way](http://wiki.gotux.net/config/hp-printer)

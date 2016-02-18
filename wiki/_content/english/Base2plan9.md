@@ -65,7 +65,7 @@ the sha*sum scripts point to the [perl-digest-sha](https://aur.archlinux.org/pac
 
 **Heirloom**
 
-_ucb binaries_
+*ucb binaries*
 
 /bin
 
@@ -74,7 +74,7 @@ _ucb binaries_
 
 ```
 
-_posix2001 binaries_
+*posix2001 binaries*
 
 /usr/bin
 
@@ -83,7 +83,7 @@ _posix2001 binaries_
 
 ```
 
-_s42 binaries_
+*s42 binaries*
 
 /bin
 
@@ -92,7 +92,7 @@ _s42 binaries_
 
 ```
 
-_posix binaries_
+*posix binaries*
 
 /bin
 
@@ -108,7 +108,7 @@ _posix binaries_
 
 ```
 
-_SysV binaries_
+*SysV binaries*
 
 /bin
 

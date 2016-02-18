@@ -23,22 +23,21 @@
 
 ## 安装
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [ntp](https://www.archlinux.org/packages/?name=ntp) 软件包。如果不做任何配置， _ntpd_ 默认工作于客户端模式。如果使用 Arch Linux 默认的配置，请跳转到 [#使用](#.E4.BD.BF.E7.94.A8)。作为服务器的配置，请参阅 [#NTP 服务器模式](#NTP_.E6.9C.8D.E5.8A.A1.E5.99.A8.E6.A8.A1.E5.BC.8F)。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [ntp](https://www.archlinux.org/packages/?name=ntp) 软件包。如果不做任何配置， *ntpd* 默认工作于客户端模式。如果使用 Arch Linux 默认的配置，请跳转到 [#使用](#.E4.BD.BF.E7.94.A8)。作为服务器的配置，请参阅 [#NTP 服务器模式](#NTP_.E6.9C.8D.E5.8A.A1.E5.99.A8.E6.A8.A1.E5.BC.8F)。
 
 ## 配置
 
-主要的后台进程是 _ntpd_, 可以通过 `/etc/ntp.conf` 配置。详细信息可以参考手册 `man ntp.conf` 和相关的 `man {ntpd|ntp_auth|ntp_mon|ntp_acc|ntp_clock|ntp_misc}`.
+主要的后台进程是 *ntpd*, 可以通过 `/etc/ntp.conf` 配置。详细信息可以参考手册 `man ntp.conf` 和相关的 `man {ntpd|ntp_auth|ntp_mon|ntp_acc|ntp_clock|ntp_misc}`.
 
 ### 连接到 NTP 服务器
 
-NTP 服务器通过一个层级系统进行分类，不同的层级称为 _strata_: 独立的时间源为_stratum 0_; 直接连接到 _stratum 0_ 的设备为 _stratum 1_;直接连接到 _stratum 1_ 的源为 _stratum 2_，以此类推。
+NTP 服务器通过一个层级系统进行分类，不同的层级称为 *strata*: 独立的时间源为*stratum 0*; 直接连接到 *stratum 0* 的设备为 *stratum 1*;直接连接到 *stratum 1* 的源为 *stratum 2*，以此类推。
 
 服务器的 stratum 并不能完全等同于它的精度和可靠度。通常的时间同步都使用 stratum 2 服务器。通过[pool.ntp.org](http://www.pool.ntp.org/) 服务器或[这个链接](http://support.ntp.org/bin/view/Servers/NTPPoolServers) 可以选择比较近的服务器池。
 
 下面几行仅仅是例子：
 
  `/etc/ntp.conf` 
-
 ```
 server 0.fr.pool.ntp.org iburst
 server 1.fr.pool.ntp.org iburst
@@ -47,11 +46,11 @@ server 3.fr.pool.ntp.org iburst
 
 ```
 
-推荐使用`iburst`选项,如果第一次尝试无法建立连接，程序会发送一系列的包。`burst` 选项则总是发送一系列的包，即使第一次也是这样。如果没有明确的允许的话不要使用 _burst_ 选项，有可能被封禁。
+推荐使用`iburst`选项,如果第一次尝试无法建立连接，程序会发送一系列的包。`burst` 选项则总是发送一系列的包，即使第一次也是这样。如果没有明确的允许的话不要使用 *burst* 选项，有可能被封禁。
 
 ### NTP 服务器模式
 
-如果建立一个 NTP 服务器，你需要添加 [_local clock_](http://www.ntp.org/ntpfaq/NTP-s-refclk.htm#Q-LOCAL-CLOCK) 作为一个服务器，这样，即便它失去网络连接，它也可以继续为网络提供服务;添加 _local clock_ 作为一个 stratum 10 服务器 (使用 _fudge_ 命令)这样它就只会在失去连接时使用本地时钟：
+如果建立一个 NTP 服务器，你需要添加 [*local clock*](http://www.ntp.org/ntpfaq/NTP-s-refclk.htm#Q-LOCAL-CLOCK) 作为一个服务器，这样，即便它失去网络连接，它也可以继续为网络提供服务;添加 *local clock* 作为一个 stratum 10 服务器 (使用 *fudge* 命令)这样它就只会在失去连接时使用本地时钟：
 
 ```
 server 127.127.1.0
@@ -59,14 +58,14 @@ fudge  127.127.1.0 stratum 10
 
 ```
 
-下一步，定义规则允许客户端连接你的服务(_localhost_ 也被认为是一个客户端)。使用 _restrict_ 命令；你应该在文件中已经有一行：
+下一步，定义规则允许客户端连接你的服务(*localhost* 也被认为是一个客户端)。使用 *restrict* 命令；你应该在文件中已经有一行：
 
 ```
 restrict default nomodify nopeer noquery
 
 ```
 
-这限制了每个人做任何修改并阻止每个人请求你的时间服务器状态：`nomodify` 防止重新配置你的ntpd（使用_ntpq_ 或 _ntpdc_ ），`noquery` 防止从你的nptd（或是_ntpq_ 和 _ntpdc_）获取状态数据。
+这限制了每个人做任何修改并阻止每个人请求你的时间服务器状态：`nomodify` 防止重新配置你的ntpd（使用*ntpq* 或 *ntpdc* ），`noquery` 防止从你的nptd（或是*ntpq* 和 *ntpdc*）获取状态数据。
 
 你也能添加其它选项：
 
@@ -79,7 +78,7 @@ restrict default kod nomodify notrap nopeer noquery
 
 "restrict"选项的完整文档可以从 `man ntp_acc` 中查找到。详见 [https://support.ntp.org/bin/view/Support/AccessRestrictions](https://support.ntp.org/bin/view/Support/AccessRestrictions) 。
 
-你需要在这一行之后告诉 _ntpd_ 什么可以访问你的服务器；如果你不是在配置一台 NTP 服务器的话，下面一行就足够了。
+你需要在这一行之后告诉 *ntpd* 什么可以访问你的服务器；如果你不是在配置一台 NTP 服务器的话，下面一行就足够了。
 
 ```
 restrict 127.0.0.1
@@ -105,7 +104,6 @@ logfile /var/log/ntp.log
 一份基础的配置文件是这样的 （**为了清晰起见，已删掉了所有的注释**）：
 
  `/etc/ntp.conf` 
-
 ```
 server 0.pool.ntp.org iburst
 server 1.pool.ntp.org iburst
@@ -123,7 +121,7 @@ logfile /var/log/ntp.log
 
 ```
 
-**注意:** 定义日志文件不是必须的，但是它对于反馈 _ntpd_ 操作是有好处的。
+**注意:** 定义日志文件不是必须的，但是它对于反馈 *ntpd* 操作是有好处的。
 
 ### 其他关于配置 NTP 的资源
 
@@ -152,10 +150,9 @@ logfile /var/log/ntp.log
 
 **警告:** 这种方法不推荐在服务器上或是需要连续运行2到3天的普通机器上使用，因为系统时钟仅会在启动时更新一次。
 
-写一个 _oneshot_ [systemd](/index.php/Systemd "Systemd") 模块：
+写一个 *oneshot* [systemd](/index.php/Systemd "Systemd") 模块：
 
  `/etc/systemd/system/ntp-once.service` 
-
 ```
 [Unit]
 Description=Network Time Service (once)
@@ -168,7 +165,6 @@ ExecStart=/usr/bin/ntpd -q -g -u ntp:ntp ; /sbin/hwclock -w
 [Install]
 WantedBy=multi-user.target
 ```
-
 并启动它: `# systemctl enable ntp-once` 
 
 ## 作为守护进程运行
@@ -200,7 +196,7 @@ WantedBy=multi-user.target
 
 **Note:** ntpd should still be running when the network is down if the hwclock daemon is disabled, so you should not use this.
 
-_ntpd_ can be brought up/down along with a network connection through the use of [NetworkManager's dispatcher scripts](/index.php/NetworkManager#Network_Services_with_NetworkManager_Dispatcher "NetworkManager"). You can install the needed script from [community]:
+*ntpd* can be brought up/down along with a network connection through the use of [NetworkManager's dispatcher scripts](/index.php/NetworkManager#Network_Services_with_NetworkManager_Dispatcher "NetworkManager"). You can install the needed script from [community]:
 
  `# pacman -S networkmanager-dispatcher-ntpd` 
 
@@ -246,7 +242,6 @@ Create a suitable chroot environment so that getaddrinfo() will work by creating
 and by bind-mounting the aformentioned files:
 
  `/etc/fstab` 
-
 ```
 ...
 #ntpd chroot mounts
@@ -256,7 +251,6 @@ and by bind-mounting the aformentioned files:
 /proc		  /var/lib/ntp/proc none bind 0 0
 
 ```
-
  `# mount -a` 
 
 Finally, restart the daemon again:

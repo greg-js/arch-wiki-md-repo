@@ -59,9 +59,9 @@
 *   输入`devices` 命令获取要配对设备的 MAC 地址。
 *   如果设备未在清单中列出，输入 `scan on` 命令设置设备发现模式。
 *   输入`agent on` 命令打开代理。
-*   输入 `pair _MAC Address_` 开始配对（支持 tab 键补全）。
-*   如果使用无 PIN 码设备，再次连接可能需要手工认证。输入 `trust _MAC Address_` 命令。
-*   最后，用 `connect _MAC_address_` 命令建立连接。
+*   输入 `pair *MAC Address*` 开始配对（支持 tab 键补全）。
+*   如果使用无 PIN 码设备，再次连接可能需要手工认证。输入 `trust *MAC Address*` 命令。
+*   最后，用 `connect *MAC_address*` 命令建立连接。
 
 以下为一个交互实例：
 
@@ -93,16 +93,14 @@ Pairing successful
 为使系统重启后激活设备，需添加一条 udev 规则：
 
  `/etc/udev/rules.d/10-local.rules` 
-
 ```
 # Set bluetooth power up
 ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 up"
 ```
 
-为使设备在系统挂起后唤醒时自动上电，应使用如下例所示 _systemd_ 服务：
+为使设备在系统挂起后唤醒时自动上电，应使用如下例所示 *systemd* 服务：
 
  `/etc/systemd/system/bluetooth-auto-power@.service` 
-
 ```
 [Unit]
 Description=Bluetooth auto power on
@@ -127,9 +125,9 @@ WantedBy=suspend.target
 
 [GNOME Bluetooth](https://wiki.gnome.org/Projects/GnomeBluetooth) 是 [GNOME](/index.php/GNOME "GNOME") 的 蓝牙管理工具。[gnome-bluetooth](https://www.archlinux.org/packages/?name=gnome-bluetooth) 软件包提供后端。[gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) 提供状态监视小部件。[gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) 提供图形化配置前端工具，可以在**活动概览**中输入**Bluetooth**或者用 `gnome-control-center bluetooth` 命令打开。可以用 `bluetooth-sendto` 命令直接向远端设备发送文件。
 
-要接收文件，必须安装 [gnome-user-share](https://www.archlinux.org/packages/?name=gnome-user-share) 软件包。然后在 _设置 -> 共享_ 中授权配对的设备通过蓝牙接收文件。
+要接收文件，必须安装 [gnome-user-share](https://www.archlinux.org/packages/?name=gnome-user-share) 软件包。然后在 *设置 -> 共享* 中授权配对的设备通过蓝牙接收文件。
 
-**小贴士:** 若要在 Thunar 中文件属性的_发送到_菜单中增加蓝牙选项，参阅[这里](http://docs.xfce.org/xfce/thunar/send-to)的命令。（需要设置的命令是 `bluetooth-sendto %F`)。
+**小贴士:** 若要在 Thunar 中文件属性的*发送到*菜单中增加蓝牙选项，参阅[这里](http://docs.xfce.org/xfce/thunar/send-to)的命令。（需要设置的命令是 `bluetooth-sendto %F`)。
 
 ### Bluedevil
 
@@ -139,7 +137,7 @@ bluedevil 是 [KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (
 
 ### Blueberry
 
-_Blueberry_ 是 GNOME Bluetooth 的另一替代方案，可工作于所有桌面环境。可安装 [blueberry](https://www.archlinux.org/packages/?name=blueberry) 软件包。它提供了配置工具（_blueberry_）和系统托盘程序（_blueberry-tray_）。
+*Blueberry* 是 GNOME Bluetooth 的另一替代方案，可工作于所有桌面环境。可安装 [blueberry](https://www.archlinux.org/packages/?name=blueberry) 软件包。它提供了配置工具（*blueberry*）和系统托盘程序（*blueberry-tray*）。
 
 ### Blueman
 
@@ -186,7 +184,7 @@ rfcomm.conf
 
 ```
 
-在不使用gnome-bluez包的情况下配对设备，你需要使用一个包含在bluez包里的，叫做_bluez-simple-agent_的工具。你需要从常用的软件仓库里获取几个跟python相关的工具来使这种方法可用：dbus-python和pygobject。 如果你准备好了，你可以以root身份执行这个脚本：
+在不使用gnome-bluez包的情况下配对设备，你需要使用一个包含在bluez包里的，叫做*bluez-simple-agent*的工具。你需要从常用的软件仓库里获取几个跟python相关的工具来使这种方法可用：dbus-python和pygobject。 如果你准备好了，你可以以root身份执行这个脚本：
 
 ```
  # bluez-simple-agent
@@ -516,7 +514,7 @@ $> hciconfig dev
 
 ### Blueman
 
-如果blueman-applet启动失败，试着删除整个_/var/lib/bluetooth_目录然后重新启动电脑（或者仅仅重启hal、dbus和bluetooth这几个服务）。
+如果blueman-applet启动失败，试着删除整个*/var/lib/bluetooth*目录然后重新启动电脑（或者仅仅重启hal、dbus和bluetooth这几个服务）。
 
 ```
 # rm -rf /var/lib/bluetooth

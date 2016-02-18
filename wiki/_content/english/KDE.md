@@ -124,13 +124,13 @@ If you need language files, install `kde-l10n-**yourlanguagehere**` (e.g. [kde-l
 
 **Note:** The Plasma 4 configuration is not automatically migrated to Plasma 5, so you will have to configure your desktop from scratch.
 
-To launch a Plasma 5 session, choose _Plasma_ in your [display manager](/index.php/Display_manager "Display manager") menu.
+To launch a Plasma 5 session, choose *Plasma* in your [display manager](/index.php/Display_manager "Display manager") menu.
 
-Alternatively, to start Plasma with _startx_, append `exec startkde` to your `.xinitrc` file. If you want to start Xorg at login, please see [Start X at login](/index.php/Start_X_at_login "Start X at login").
+Alternatively, to start Plasma with *startx*, append `exec startkde` to your `.xinitrc` file. If you want to start Xorg at login, please see [Start X at login](/index.php/Start_X_at_login "Start X at login").
 
 ## Configuration
 
-Most settings for KDE applications are stored in `~/.config`, but some older applications may use `~/.kde4`. However, configuring KDE is primarily done through the **System Settings** application. It can be started from a terminal by executing _systemsettings5_.
+Most settings for KDE applications are stored in `~/.config`, but some older applications may use `~/.kde4`. However, configuring KDE is primarily done through the **System Settings** application. It can be started from a terminal by executing *systemsettings5*.
 
 Frameworks 5 applications can use KDE 4 configuration however they expect the configuration files to be located in different places. To allow Frameworks 5 applications running in KDE 4 to share the same configurations they may be moved to the new locations and symlinked back to the old. Examples are:
 
@@ -170,7 +170,7 @@ For Qt4 applications to have a consistent appearance, there are two options: Ins
 
 	GTK+
 
-The recommended theme for a pleasant appearance in GTK+ applications is [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) or [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/), a GTK+ theme designed to mimic the appearance of Plasma 5 Breeze. Install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and select the installed GTK-theme for GTK2/GTK3-Theme in _System Settings > Application Style > GNOME Application Style_.
+The recommended theme for a pleasant appearance in GTK+ applications is [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) or [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/), a GTK+ theme designed to mimic the appearance of Plasma 5 Breeze. Install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and select the installed GTK-theme for GTK2/GTK3-Theme in *System Settings > Application Style > GNOME Application Style*.
 
 ##### Widgets
 
@@ -178,7 +178,7 @@ Plasmoids are little scripted (plasmoid scripts) or coded (plasmoid binaries) KD
 
 Plasmoid binaries can be installed using PKGBUILDs from [AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmoid&do_Search=Go&PP=25&SO=d&SB=v), or you can write your own PKGBUILD.
 
-The easiest way to install plasmoid scripts is by right-clicking onto a panel or the desktop and choosing _Add Widgets > Get new Widgets > Download Widgets_.
+The easiest way to install plasmoid scripts is by right-clicking onto a panel or the desktop and choosing *Add Widgets > Get new Widgets > Download Widgets*.
 
 This will present a nice frontend for [kde-look.org](http://www.kde-look.org/) that allows you to install, uninstall, or update third-party plasmoid scripts with literally just one click.
 
@@ -202,7 +202,6 @@ $ xprop -remove _KDE_NET_WM_SHADOW
 then select the panel with the plus-sized cursor. [[4]](https://forum.kde.org/viewtopic.php?f=285&t=121592) For automation, install [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo) and create the following script:
 
  `/usr/local/bin/kde-no-shadow` 
-
 ```
 #!/bin/bash
 for WID in $(xwininfo -root -tree | sed '/"Plasma": ("plasmashell" "plasmashell")/!d; s/^  *\([^ ]*\) .*/\1/g'); do
@@ -211,7 +210,7 @@ done
 
 ```
 
-The script can be run on login with _Add Script_ in _Autostart_:
+The script can be run on login with *Add Script* in *Autostart*:
 
 ```
 $ kcmshell5 autostart
@@ -220,13 +219,13 @@ $ kcmshell5 autostart
 
 #### Window decorations
 
-[Window decorations](http://kde-look.org/index.php?xcontentmode=75) can be changed in _System Settings > Workspace Appearance > Window Decorations_.
+[Window decorations](http://kde-look.org/index.php?xcontentmode=75) can be changed in *System Settings > Workspace Appearance > Window Decorations*.
 
 There you can also directly download and install more themes with one click, and some are available in the [AUR](https://aur.archlinux.org/packages.php?O=0&K=kdestyle&do_Search=Go&PP=25&SO=d&SB=v).
 
 #### Icon themes
 
-Icon-themes can be installed and changed on _System Settings > Icons_.
+Icon-themes can be installed and changed on *System Settings > Icons*.
 
 **Note:** [GNOME](/index.php/GNOME "GNOME") and KDE4 installed icon-themes may not be (fully) compatible with Plasma. It's recommended to install Plasma compatible icon-themes instead.
 
@@ -236,15 +235,15 @@ Icon-themes can be installed and changed on _System Settings > Icons_.
 
 Try installing the [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) and [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) packages.
 
-After the installation, be sure to log out and back in. You should not have to modify anything in _System Settings > Fonts_.
+After the installation, be sure to log out and back in. You should not have to modify anything in *System Settings > Fonts*.
 
-If you have personally set up how your [Fonts](/index.php/Fonts "Fonts") render, be aware that System Settings may alter their appearance. When you go _System Settings > Appearance > Fonts_ System Settings will likely alter your font configuration file (`fonts.conf`).
+If you have personally set up how your [Fonts](/index.php/Fonts "Fonts") render, be aware that System Settings may alter their appearance. When you go *System Settings > Appearance > Fonts* System Settings will likely alter your font configuration file (`fonts.conf`).
 
 There is no way to prevent this, but, if you set the values to match your `fonts.conf` file, the expected font rendering will return (it will require you to restart your application or in a few cases restart your desktop). Note that Gnome's Font Preferences also does this.
 
 ##### Fonts are huge or seem disproportional
 
-Try to force font DPI to **96** in _System Settings > Application Appearance > Fonts_.
+Try to force font DPI to **96** in *System Settings > Application Appearance > Fonts*.
 
 If that does not work, try setting the DPI directly in your Xorg configuration as documented [here](/index.php/Xorg#Setting_DPI_manually "Xorg").
 
@@ -256,7 +255,7 @@ The Plasma Netbook shell has been dropped from Plasma 5, see the following [KDE 
 
 **Tip:** Use the [CUPS](/index.php/CUPS "CUPS") web interface for faster configuration. Printers configured in this way can be used in KDE applications.
 
-You can also configure printers in _System Settings > Printer Configuration_. To use this method, you must first install [print-manager](https://www.archlinux.org/packages/?name=print-manager) and [cups](https://www.archlinux.org/packages/?name=cups).
+You can also configure printers in *System Settings > Printer Configuration*. To use this method, you must first install [print-manager](https://www.archlinux.org/packages/?name=print-manager) and [cups](https://www.archlinux.org/packages/?name=cups).
 
 The `avahi-daemon.service` and `org.cups.cupsd.service` daemons must be started first; otherwise, you will get the following error:
 
@@ -276,15 +275,13 @@ There was an error during CUPS operation: 'cups-authorization-canceled'
 
 For CUPS, this is set in `/etc/cups/cups-files.conf`.
 
-Adding `lpadmin` to `/etc/group` and then to the `SystemGroup` directive in `/etc/cups/cups-files.conf` allows anyone in the `lpadmin` group to configure printers. Do _not_ add the `lp` group to the `SystemGroup` directive, or printing will fail.
+Adding `lpadmin` to `/etc/group` and then to the `SystemGroup` directive in `/etc/cups/cups-files.conf` allows anyone in the `lpadmin` group to configure printers. Do *not* add the `lp` group to the `SystemGroup` directive, or printing will fail.
 
 ```
 # groupadd -g107 lpadmin
 
 ```
-
  `/etc/cups/cups-files.conf` 
-
 ```
 # Administrator user group...
 SystemGroup sys root lpadmin
@@ -316,7 +313,7 @@ KDE now uses **inotify** directly from the kernel with **kdirwatch** (included i
 
 ### Autostarting applications
 
-Plasma can autostart applications and run scripts on startup and shutdown. To autostart an application, start `systemsettings` and navigate to _Startup and Shutdown_ -> _Autostart_ and add the program or shell script of your choice. Note that programs can be autostarted on login only, whilst shell scripts can also be run on shutdown or even before Plasma itself starts. For applications, a `.desktop` file will be created in the `~/.config/autostart` directory. For shell scripts, a symlink will be created in one the following directories:
+Plasma can autostart applications and run scripts on startup and shutdown. To autostart an application, start `systemsettings` and navigate to *Startup and Shutdown* -> *Autostart* and add the program or shell script of your choice. Note that programs can be autostarted on login only, whilst shell scripts can also be run on shutdown or even before Plasma itself starts. For applications, a `.desktop` file will be created in the `~/.config/autostart` directory. For shell scripts, a symlink will be created in one the following directories:
 
 *   `~/.config/autostart-scripts` - for starting at login.
 *   `~/.config/plasma-workspace/shutdown` - for starting on shutdown.
@@ -326,11 +323,11 @@ Plasma can autostart applications and run scripts on startup and shutdown. To au
 
 ### Terminate Xorg server through KDE System Settings
 
-Navigate to the submenu _System Settings > Input Devices > Keyboard > Advanced (tab) > "Key Sequence to kill the X server"_ and ensure that the checkbox is ticked.
+Navigate to the submenu *System Settings > Input Devices > Keyboard > Advanced (tab) > "Key Sequence to kill the X server"* and ensure that the checkbox is ticked.
 
 ### KCM
 
-KCM stands for **KC**onfig **M**odule. KCMs can help you configure your system by providing interfaces in System Settings, or through the command line with _kcmshell5_.
+KCM stands for **KC**onfig **M**odule. KCMs can help you configure your system by providing interfaces in System Settings, or through the command line with *kcmshell5*.
 
 **Configuration for look and feel of GTK applications.**
 
@@ -444,7 +441,7 @@ Name=/home/username/.local/akonadi/akonadi.db
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Phonon_(software) "wikipedia:Phonon (software)"):
 
-	_“Phonon is the multimedia API provided by KDE and is the standard abstraction for handling multimedia streams within KDE software and also used by several Qt applications._
+	*“Phonon is the multimedia API provided by KDE and is the standard abstraction for handling multimedia streams within KDE software and also used by several Qt applications.*
 
 Phonon was originally created to allow KDE and Qt software to be independent of any single multimedia framework such as GStreamer or xine and to provide a stable API for a major version's lifetime.”
 
@@ -460,7 +457,7 @@ In the past other backends were developed as well but are no longer maintained a
 
 **Note:**
 
-*   Multiple backends can be installed at once and prioritized at _System Settings > Multimedia > Phonon > Backend_. For Plasma 5 this would be _System Settings > Multimedia > Backend_.
+*   Multiple backends can be installed at once and prioritized at *System Settings > Multimedia > Phonon > Backend*. For Plasma 5 this would be *System Settings > Multimedia > Backend*.
 *   According to the [KDE forums](https://forum.kde.org/viewtopic.php?f=250&t=126476&p=335080), the VLC backend lacks support for [ReplayGain](https://en.wikipedia.org/wiki/ReplayGain "wikipedia:ReplayGain").
 
 ## Useful applications
@@ -487,11 +484,11 @@ Telegram protocol is available using [telepathy-haze](https://www.archlinux.org/
 
 There may be reasons you want to use another window manager than KWin, for example to work around the DRI bug that causes [black screen with PRIME](/index.php/PRIME#Black_screen_with_GL-based_compositors "PRIME").
 
-To use an alternative [window manager](/index.php/Window_manager "Window manager") with Plasma open the _System Settings_ panel, navigate to _(Default) Applications > Window Manager > Use a different window manager_ and select the window manager you wish to use from the list.
+To use an alternative [window manager](/index.php/Window_manager "Window manager") with Plasma open the *System Settings* panel, navigate to *(Default) Applications > Window Manager > Use a different window manager* and select the window manager you wish to use from the list.
 
 #### KDE/Openbox session
 
-The [openbox](https://www.archlinux.org/packages/?name=openbox) package provides a session for using KDE with [Openbox](/index.php/Openbox "Openbox"). To make use of this session, select _KDE/Openbox_ from the [display manager](/index.php/Display_manager "Display manager") menu.
+The [openbox](https://www.archlinux.org/packages/?name=openbox) package provides a session for using KDE with [Openbox](/index.php/Openbox "Openbox"). To make use of this session, select *KDE/Openbox* from the [display manager](/index.php/Display_manager "Display manager") menu.
 
 For those starting the session manually, add the following line to your `.xinitrc` file:
 
@@ -502,10 +499,9 @@ exec openbox-kde-session
 
 #### Compiz custom
 
-If you need to run Compiz with custom options and switches select _Compiz custom_ and then create a script called `compiz-kde-launcher` and add to it the commands you wish to use to start Compiz. See the example below:
+If you need to run Compiz with custom options and switches select *Compiz custom* and then create a script called `compiz-kde-launcher` and add to it the commands you wish to use to start Compiz. See the example below:
 
  `/usr/local/bin/compiz-kde-launcher` 
-
 ```
 #!/bin/bash
 LIBGL_ALWAYS_INDIRECT=1
@@ -559,7 +555,7 @@ $ ln -sfv /run/user/$UID/ /home/$USER/.compose-cache
 
 ```
 
-**Note:** For those curious about what is going on here, this enables an optimization which Lubos (of general KDE speediness fame) came up with some time ago and was then rewritten and integrated into libx11\. Ordinarily, on startup, applications read input method information from `/usr/share/X11/locale/_your locale_/Compose`. This file is quite long (>5000 lines for the en_US.UTF-8 one) and takes some time to process. libX11 can create a cache of the parsed information which is much quicker to read subsequently, but it will only re-use an existing cache or create a new one in `~/.compose-cache` if the directory already exists.
+**Note:** For those curious about what is going on here, this enables an optimization which Lubos (of general KDE speediness fame) came up with some time ago and was then rewritten and integrated into libx11\. Ordinarily, on startup, applications read input method information from `/usr/share/X11/locale/*your locale*/Compose`. This file is quite long (>5000 lines for the en_US.UTF-8 one) and takes some time to process. libX11 can create a cache of the parsed information which is much quicker to read subsequently, but it will only re-use an existing cache or create a new one in `~/.compose-cache` if the directory already exists.
 
 ### Configuring monitor resolution / multiple monitors
 
@@ -577,11 +573,11 @@ Many problems in KDE are related to configuration.
 
 #### Plasma desktop behaves strangely
 
-Plasma problems are usually caused by unstable **Plasma widgets** (colloquially called _plasmoids_) or **Plasma themes**. First, find which was the last widget or theme you had installed and disable it or uninstall it.
+Plasma problems are usually caused by unstable **Plasma widgets** (colloquially called *plasmoids*) or **Plasma themes**. First, find which was the last widget or theme you had installed and disable it or uninstall it.
 
 So, if your desktop suddenly exhibits "locking up", this is likely caused by a faulty installed widget. If you cannot remember which widget you installed before the problem began (sometimes it can be an irregular problem), try to track it down by removing each widget until the problem ceases. Then you can uninstall the widget, and file a bug report (bugs.kde.org) **only if it is an official widget**. If it is not, it is recommended you find the entry on kde-look.org and inform the developer of that widget about the problem (detailing steps to reproduce, etc).
 
-If you cannot find the problem, but you do not want _all_ the settings to be lost, navigate to `~/.config`:
+If you cannot find the problem, but you do not want *all* the settings to be lost, navigate to `~/.config`:
 
 ```
 $ for j in plasma*; do mv -- "$j" "${j%}.bak"; done
@@ -614,7 +610,7 @@ $ mv ~/.config/akonadi ~/.config/akonadi-old
 
 ```
 
-Start _SystemSettings > Personal_ and remove all the resources. Go back to Dolphin and remove the original `~/.local/share/akonadi` and `~/.config/akonadi` - the copies you made ensure that you can back-track if necessary.
+Start *SystemSettings > Personal* and remove all the resources. Go back to Dolphin and remove the original `~/.local/share/akonadi` and `~/.config/akonadi` - the copies you made ensure that you can back-track if necessary.
 
 Now go back to the System Settings page and carefully add the necessary resources. You should see the resource reading in your mail folders. Then start Kontact/KMail to see if it work properly.
 
@@ -665,11 +661,11 @@ export KWIN_EXPLICIT_SYNC=0
 
 ```
 
-Then go to _system-settings > Startup and Shutdown > Autostart_ and _Check/Add_ the script as a pre-KDE startup file.
+Then go to *system-settings > Startup and Shutdown > Autostart* and *Check/Add* the script as a pre-KDE startup file.
 
 #### Applications don't refresh properly
 
-If you use 3D-accelerated composition with [Intel](/index.php/Intel "Intel"), you might find that the Plasma panel and other applications don't refresh properly (stay frozen). Some Intel drivers have [problems with EGL](https://bugzilla.redhat.com/show_bug.cgi?id=1259475). Try to set Plasma 5's _OpenGL interface_ setting to GLX instead (in System Settings under _Display and Monitor_ -> _Compositor_). If that does not work, see [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics") for alternative solutions.
+If you use 3D-accelerated composition with [Intel](/index.php/Intel "Intel"), you might find that the Plasma panel and other applications don't refresh properly (stay frozen). Some Intel drivers have [problems with EGL](https://bugzilla.redhat.com/show_bug.cgi?id=1259475). Try to set Plasma 5's *OpenGL interface* setting to GLX instead (in System Settings under *Display and Monitor* -> *Compositor*). If that does not work, see [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics") for alternative solutions.
 
 #### Low 2D desktop performance (or) artifacts appear when on 2D
 
@@ -687,23 +683,23 @@ The raster paint engine enables the CPU to do the majority of the painting, as o
 
 Since Qt 4.7+, recompiling Qt is not needed. Simply export `QT_GRAPHICSSYSTEM=raster`, or `opengl`, or `native` (for the default). Raster depends on the CPU, OpenGL depends on the GPU and high driver support, and Native is just using the X11 rendering (mixture, usually).
 
-**The best and automatic way to do that** is to install [kcm-qt-graphicssystem](https://aur.archlinux.org/packages/kcm-qt-graphicssystem/) from AUR and configure this particular Qt setting through _System Settings > Qt Graphics System_.
+**The best and automatic way to do that** is to install [kcm-qt-graphicssystem](https://aur.archlinux.org/packages/kcm-qt-graphicssystem/) from AUR and configure this particular Qt setting through *System Settings > Qt Graphics System*.
 
 For more information, consult this [KDE Developer blog entry](http://apachelog.wordpress.com/2010/09/05/qt-graphics-system-kcm/) and/or this [Qt Developer blog entry](http://labs.trolltech.com/blogs/2009/12/18/qt-graphics-and-performance-the-raster-engine/).
 
 #### Low 3D desktop performance
 
-KDE begins with desktop effects enabled. Older cards may be insufficient for 3D desktop acceleration. You can disable desktop effects in _System Settings > Desktop Effects_ and you can toggle desktop effects with `Alt+Shift+F12`.
+KDE begins with desktop effects enabled. Older cards may be insufficient for 3D desktop acceleration. You can disable desktop effects in *System Settings > Desktop Effects* and you can toggle desktop effects with `Alt+Shift+F12`.
 
 **Note:** You may encounter such problems with 3D desktop performance even when using a more powerful graphics card. Make sure the GPU driver and it's components has been successfully installed.
 
 #### Desktop compositing is disabled on my system with a modern Nvidia GPU
 
-Sometimes, KWin may have settings in its configuration file (`kwinrc`) that _may_ cause a problem on re-activating the 3D desktop `OpenGL` compositing. That could be caused randomly (for example, due to a sudden Xorg crash or restart, and it gets corrupted), so, in case that happens, delete your `~/.kde4/share/config/kwinrc` file and relogin. The KWin settings will turn to the KDE default ones and the problem should be probably gone.
+Sometimes, KWin may have settings in its configuration file (`kwinrc`) that *may* cause a problem on re-activating the 3D desktop `OpenGL` compositing. That could be caused randomly (for example, due to a sudden Xorg crash or restart, and it gets corrupted), so, in case that happens, delete your `~/.kde4/share/config/kwinrc` file and relogin. The KWin settings will turn to the KDE default ones and the problem should be probably gone.
 
 #### Flickering in fullscreen when compositing is enabled
 
-As of KDE SC 4.6.0, there is an option in _Sytem Settings > Desktop Effect > Advanced > Suspend desktop effects for fullscreen windows_. Uncheck it would tell kwin to disable unredirect fullscren.
+As of KDE SC 4.6.0, there is an option in *Sytem Settings > Desktop Effect > Advanced > Suspend desktop effects for fullscreen windows*. Uncheck it would tell kwin to disable unredirect fullscren.
 
 #### Display settings lost on reboot (multiple monitors)
 
@@ -724,23 +720,22 @@ There is a [bug](https://bugs.kde.org/show_bug.cgi?id=346961) in kscreen that ma
 When you encounter such messages:
 
 ```
-The audio playback device _name_of_the_sound_device_ does not work.
+The audio playback device *name_of_the_sound_device* does not work.
 Falling back to default
 
 ```
 
-Go to _System Settings > Multimedia > Phonon_ and set the device named `default` above all the other devices in each box you see.
+Go to *System Settings > Multimedia > Phonon* and set the device named `default` above all the other devices in each box you see.
 
 ##### MP3 files cannot be played when using the GStreamer Phonon backend
 
-This can be solved by installing the GStreamer libav plugin (package [gst-libav](https://www.archlinux.org/packages/?name=gst-libav)). If you still encounter problems, you can try changing the Phonon backend used by installing another such as [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc) or [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc). Then, make sure the backend is preferred via _System Settings > Multimedia > Phonon > Backend (tab)_.
+This can be solved by installing the GStreamer libav plugin (package [gst-libav](https://www.archlinux.org/packages/?name=gst-libav)). If you still encounter problems, you can try changing the Phonon backend used by installing another such as [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc) or [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc). Then, make sure the backend is preferred via *System Settings > Multimedia > Phonon > Backend (tab)*.
 
 ### Konsole does not save commands' history
 
 By default console command history is saved only when you type 'exit' in console. When you close Konsole with 'x' in the corner it does not happen. To enable autosaving after every command execution:
 
  `~/.bashrc` 
-
 ```
 shopt -s histappend
 [[ "${PROMPT_COMMAND}" ]] && PROMPT_COMMAND="$PROMPT_COMMAND;history -a" || PROMPT_COMMAND="history -a"
@@ -777,20 +772,19 @@ Using [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fs
 
 ## Unstable releases
 
-When KDE is reaching beta or RC milestone, KDE "unstable" packages are uploaded to the _kde-unstable_ repository. They stay there until KDE is declared stable and passes to the _extra_ repository.
+When KDE is reaching beta or RC milestone, KDE "unstable" packages are uploaded to the *kde-unstable* repository. They stay there until KDE is declared stable and passes to the *extra* repository.
 
-You can add _kde-unstable_ with:
+You can add *kde-unstable* with:
 
  `/etc/pacman.conf` 
-
 ```
 [kde-unstable]
 Include = /etc/pacman.d/mirrorlist
 ```
 
-**Warning:** Make sure to add these lines **before** the _extra_ repository. Adding the section after _extra_ will cause [pacman](/index.php/Pacman "Pacman") to prefer the older packages in the extra repository. `pacman -Syu` will not install them, and will warn that they are "too new" if installed manually. Also, some of the libraries will stay at the older versions, which may cause file conflicts and/or instability!
+**Warning:** Make sure to add these lines **before** the *extra* repository. Adding the section after *extra* will cause [pacman](/index.php/Pacman "Pacman") to prefer the older packages in the extra repository. `pacman -Syu` will not install them, and will warn that they are "too new" if installed manually. Also, some of the libraries will stay at the older versions, which may cause file conflicts and/or instability!
 
-1.  _kde-unstable_ is based upon _testing_. Therefore, you need to enable the repositories in the following order: _kde-unstable_, _testing_, _core_, _extra_, _community-testing_, _community_.
+1.  *kde-unstable* is based upon *testing*. Therefore, you need to enable the repositories in the following order: *kde-unstable*, *testing*, *core*, *extra*, *community-testing*, *community*.
 2.  To update from a previous KDE installation, run: `# pacman -Syu` or `# pacman -S kde-unstable/kde`
 3.  If you do not have KDE installed, you might have difficulties to install it by using groups (limitation of pacman)
 4.  **Subscribe and read the [arch-dev-public](https://mailman.archlinux.org/pipermail/arch-dev-public/) mailing list**

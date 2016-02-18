@@ -12,7 +12,6 @@ UWMWiFi is the wireless network used by the University of Wisconsin-Milwaukee.
 Still a work in progress, but this seems to function
 
  `/etc/netctl/UWMWiFi` 
-
 ```
 Description='UWM WiFi Network'
 Interface=wlp3s0
@@ -44,7 +43,6 @@ Then to connect
 If netctl does not work properly, try connecting manually using the iw tool and [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant") as directed in [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). Do not forget that most of these commands need to be run with elevated permissions.
 
  `/etc/wpa_supplicant/uwm.conf` 
-
 ```
 
 network={
@@ -67,7 +65,7 @@ Get card name
 
 ```
 
-Assuming your card is _wlan0_
+Assuming your card is *wlan0*
 
 ```
 # ip link set wlan0 up

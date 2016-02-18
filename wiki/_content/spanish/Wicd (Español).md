@@ -57,7 +57,7 @@ Los script de compilación de [wicd-bzr](https://aur.archlinux.org/packages/wicd
 
 Wicd provee un demonio que debe ser iniciado.
 
-**Advertencia:** La ejecución de varios gestores de red _a voluntad_ simultáneamente causarán problemas, por lo que es importante _desactivar los demás demonios de gestión de red_.
+**Advertencia:** La ejecución de varios gestores de red *a voluntad* simultáneamente causarán problemas, por lo que es importante *desactivar los demás demonios de gestión de red*.
 
 En primer lugar, detenga todos los demonios de red que estén en ejecución (como netctl, dhcpcd, NetworkManager).
 
@@ -74,7 +74,7 @@ Agregue su cuenta al grupo **users**:
 
 ```
 
-**Nota:** El grupo Unix que permite a dbus acceder a **wicd**, está sujeto a cambios, y puede ser diferente de _network_. Compruebe qué grupo viene indicado en la policy presente en `/etc/dbus-1/system.d/wicd.conf`, y añada su propio usuario a dicho grupo.
+**Nota:** El grupo Unix que permite a dbus acceder a **wicd**, está sujeto a cambios, y puede ser diferente de *network*. Compruebe qué grupo viene indicado en la policy presente en `/etc/dbus-1/system.d/wicd.conf`, y añada su propio usuario a dicho grupo.
 
 Si ha agregado el usuario a un grupo nuevo, reinicie sesión de usuario.
 
@@ -208,7 +208,7 @@ fi
 
 ## Solución de problemas
 
-Véase [Network configuration#Troubleshooting](/index.php/Network_configuration#Troubleshooting "Network configuration") para la solución de los problemas sobre las conexiones por cable y [Wireless network configuration#Troubleshooting](/index.php/Wireless_network_configuration#Troubleshooting "Wireless network configuration") para la solución de problemas de las conexiones inalámbricas. Esta sección solo se refiere a los problemas específicos de _wicd_.
+Véase [Network configuration#Troubleshooting](/index.php/Network_configuration#Troubleshooting "Network configuration") para la solución de los problemas sobre las conexiones por cable y [Wireless network configuration#Troubleshooting](/index.php/Wireless_network_configuration#Troubleshooting "Wireless network configuration") para la solución de problemas de las conexiones inalámbricas. Esta sección solo se refiere a los problemas específicos de *wicd*.
 
 ### Fallo importando pynotify, notificaciones desactivadas
 
@@ -279,7 +279,6 @@ Este perfil solo funcionará para las instituciones eduroam que utilizan el prot
 Cree el archivo `/etc/wicd/encryption/templates/ttls-80211`, y guarde lo siguiente:
 
  `/etc/wicd/encryption/templates/ttls-80211` 
-
 ```
 name = TTLS for Wireless
 author = Alexander Clouter

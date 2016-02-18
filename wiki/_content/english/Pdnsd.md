@@ -204,7 +204,6 @@ To increase the cache size, edit the `perm_cache` line in the 'global settings' 
 Alternatively, you can prevent pdnsd from preemptively sourcing your hosts file by adding the option `authrec=off` to the 'source' section. If, for whatever reason, setting authrec to off does not work, an easy workaround is to create a separate hosts file (eg `/etc/hosts-pdnsd`) with only your system information and point your 'source' section to that instead, while leaving your original hosts file intact. This way, pdnsd will reference `/etc/hosts` only when performing lookups. So for example:
 
  `/etc/hosts-pdnsd` 
-
 ```
 #<ip-address>	<hostname.domain.org>	<hostname>
 127.0.0.1	localhost.localdomain	my_hostname
@@ -225,7 +224,7 @@ pdnsd allows you to specify hosts or domains that it should never return results
 
 From the pdnsd-ctl(8) manpage:
 
-	_**pdnsd-ctl** controls **pdnsd**, a proxy dns server with permanent caching. Note that the status control socket must be enabled (by specifying an option on the pdnsd command line or in the configuration file) before you can use **pdnsd-ctl**._
+	***pdnsd-ctl** controls **pdnsd**, a proxy dns server with permanent caching. Note that the status control socket must be enabled (by specifying an option on the pdnsd command line or in the configuration file) before you can use **pdnsd-ctl**.*
 
 A couple of useful commands to get you started...
 
@@ -254,7 +253,6 @@ pdnsd can be used with [DNSCrypt](/index.php/DNSCrypt "DNSCrypt"). DNSCrypt encr
 You can successfully ping your ISP's [dynamic DNS](https://en.wikipedia.org/wiki/Dynamic_DNS "wikipedia:Dynamic DNS") server, even though the log shows the following:
 
  `$ journalctl -f _SYSTEMD_UNIT=pdnsd.service` 
-
 ```
 result of uptest for 192.168.x.x: failed
 

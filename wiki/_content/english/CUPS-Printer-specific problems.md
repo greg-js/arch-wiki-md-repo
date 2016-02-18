@@ -213,6 +213,8 @@ If you have any problems on a 64 system, some other lib32 libraries may be requi
 
 ## HP
 
+See also [CUPS/Troubleshooting#HP issues](/index.php/CUPS/Troubleshooting#HP_issues "CUPS/Troubleshooting").
+
 Most HP printers will use [hplip](https://www.archlinux.org/packages/?name=hplip), but some may use [hpoj](https://aur.archlinux.org/packages/hpoj/).
 
 | Printer | Driver/filter | Notes |
@@ -300,7 +302,6 @@ Lexmark does provide Linux drivers for all their hardware. The following package
 The drivers will need to be [downloaded](http://support.lexmark.com/index?page=driversdownloads) from Lexmark's website. Preferably, create a package (see [Creating packages](/index.php/Creating_packages "Creating packages")) and install it. Here is a basic [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") that still needs work but will give an idea of what is required.
 
  `PKGBUILD` 
-
 ```
 # Contributor: Todd Partridge (Gen2ly) toddrpartridge (at) yahoo
 
@@ -339,7 +340,7 @@ Keep in mind you can use the automated installer but doing so will leave the res
 
 ## Samsung
 
-For printers requiring the _cnijfilter_ drivers, search for the correct driver [in the AUR](https://aur.archlinux.org/packages.php?K=cnijfilter)
+For printers requiring the *cnijfilter* drivers, search for the correct driver [in the AUR](https://aur.archlinux.org/packages.php?K=cnijfilter)
 
 | Printer | Driver/filter | Notes |
 | ML-2010 | [splix](https://www.archlinux.org/packages/?name=splix) |

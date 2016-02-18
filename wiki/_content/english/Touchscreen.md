@@ -29,7 +29,7 @@ for every of your event nodes while touching the display. If you found the corre
 
 ## Available X11 drivers
 
-There are a lot of touchscreen input drivers for X11 out there. The most common ones are in the _extra_ repository:
+There are a lot of touchscreen input drivers for X11 out there. The most common ones are in the *extra* repository:
 
 *   [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) (likely the default driver if you plug in your touchscreen and it "just works")
 *   [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput); see also [libinput](/index.php/Libinput "Libinput")

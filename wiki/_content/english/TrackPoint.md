@@ -19,12 +19,11 @@ Default [Xorg](/index.php/Xorg "Xorg") behavior supports click and point, but mi
 
 When using [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput), middle-button scrolling is enabled by default.
 
-When using [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev), middle-button scrolling is supported via _xinput_ from the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package. For example:
+When using [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev), middle-button scrolling is supported via *xinput* from the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package. For example:
 
  `~/.xinitrc` 
-
 ```
-tpset() { xinput set-prop "_TPPS/2 IBM TrackPoint_" "$@"; }
+tpset() { xinput set-prop "*TPPS/2 IBM TrackPoint*" "$@"; }
 
 tpset "Evdev Wheel Emulation" 1
 tpset "Evdev Wheel Emulation Button" 2
@@ -58,12 +57,12 @@ This rule increases the trackpoint **speed** and enables **tap to select** (see 
 
 ## Xorg configuration
 
-To enable scrolling with the TrackPoint while holding down the middle mouse button, create `/etc/X11/xorg.conf.d/20-thinkpad.conf`, replacing `TPPS/2 IBM TrackPoint` with the device name from _xinput_:
+To enable scrolling with the TrackPoint while holding down the middle mouse button, create `/etc/X11/xorg.conf.d/20-thinkpad.conf`, replacing `TPPS/2 IBM TrackPoint` with the device name from *xinput*:
 
 ```
 Section "InputClass"
     Identifier	"Trackpoint Wheel Emulation"
-    MatchProduct	"_TPPS/2 IBM TrackPoint_"
+    MatchProduct	"*TPPS/2 IBM TrackPoint*"
     MatchDevicePath	"/dev/input/event*"
     Option		"EmulateWheel"		"true"
     Option		"EmulateWheelButton"	"2"

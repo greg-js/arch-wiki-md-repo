@@ -99,7 +99,6 @@ El método predeterminado es SNA (a partir de 2013-08-05[[2]](https://projects.a
 Para usar el antiguo método de aceleración UXA, se debe crear el archivo `/etc/X11/xorg.conf.d/20-intel.conf` con el siguiente contenido:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
    Identifier  "Intel Graphics"
@@ -113,7 +112,6 @@ EndSection
 El controlador de intel utiliza [Triple Buffering](http://www.intel.com/support/graphics/sb/CS-004527.htm) para la sincronización vertical, lo que permite un rendimiento completo y evita la ruptura. Para poner la sincronización vertical en apagado (por ejemplo, para benchmarking) utilice este archivo .drirc en su carpeta «home»:
 
  `~/.drirc` 
-
 ```
 <device screen="0" driver="dri2">
 	<application name="Default">
@@ -187,7 +185,7 @@ $ xrandr --output VGA1 --brightness 1.0
 
 ### Pantalla vacía durante el inicio, en la fase «Loading modules»
 
-Si está utilizando el inicio tardío de KMS (_«late start»_), y la pantalla se queda sin mostrar nada durante la fase «Loading modules», puede ser útil agregar `i915` y `intel_agp` al initramfs. Consulte la [sección](#KMS_.28Kernel_Mode_Setting.29) anterior.
+Si está utilizando el inicio tardío de KMS (*«late start»*), y la pantalla se queda sin mostrar nada durante la fase «Loading modules», puede ser útil agregar `i915` y `intel_agp` al initramfs. Consulte la [sección](#KMS_.28Kernel_Mode_Setting.29) anterior.
 
 Como alternativa, puede intentar resolverlo añadiendo a la línea de comandos del kernel lo que sigue:
 
@@ -201,7 +199,6 @@ video=SVIDEO-1:d
 Si se utiliza el método de aceleración SNA, es posible resolver el problema activando la opción `"TearFree"` en el controlador:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
    Identifier  "Intel Graphics"
@@ -221,7 +218,6 @@ EndSection
 Si tiene un problema con le servidor X que termina inesperadamente, o que parece bloquearse, o la GPU no responde correctamente, puede que la solución sea desactivar el uso de la GPU con la opción `NoAccel`:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
    Identifier "Intel Graphics"
@@ -233,7 +229,6 @@ EndSection
 Como alternativa, pruebe a desactivar únicamente la aceleración 3D con la opción `DRI`:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
    Identifier "Intel Graphics"
@@ -283,7 +278,7 @@ Uno de los juegos que se ve afectado por este problema es [Oil Rush](http://www.
 
 El Kernel 3.9 contiene las modificaciones del controlador Intel que permite un fácil ajuste de los rangos de RGB Limited, que puede causar la alteración de los colores en algunos casos. Esto se relaciona con el nuevo modo "Automatic" para la propiedad "Broadcast RGB". Se puede forzar la modalidad, por ejemplo con `xrandr --output HDMI1 --set "Broadcast RGB" "Full"` usando la salida del dispositivo apropiada distinta de HDMI1.
 
-**Nota:** Algunos televisores solo pueden mostrar colores desde el rango 16-255, de modo que al ajustar a la modalidad _Full_ causará un recorte de los colores en el rango de 0-15, por lo que es mejor dejarlo en _Automatic_, ya que de este modo detectará automáticamente si es necesario comprimir el espacio de color para el televisor.
+**Nota:** Algunos televisores solo pueden mostrar colores desde el rango 16-255, de modo que al ajustar a la modalidad *Full* causará un recorte de los colores en el rango de 0-15, por lo que es mejor dejarlo en *Automatic*, ya que de este modo detectará automáticamente si es necesario comprimir el espacio de color para el televisor.
 
 También hay otros problemas relacionados que pueden ser resueltos modificado los registros de la GPU. Información adicional se puede encontrar en estas páginas: [[6]](http://lists.freedesktop.org/archives/intel-gfx/2012-April/016217.html) y [[7]](http://github.com/OpenELEC/OpenELEC.tv/commit/09109e9259eb051f34f771929b6a02635806404c).
 
@@ -315,7 +310,6 @@ además del parámetro mencionado anteriormente.
 Si ninguna de estas propuestas resuelve el problema, se debe editar/crear el archivo `/etc/X11/xorg.conf.d/20-intel.conf` con el contenido siguiente:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
         Identifier  "card0"
@@ -329,7 +323,6 @@ EndSection
 Si utiliza la aceleración SNA como se mencionó anteriormente, cree el archivo como sigue:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
         Identifier  "card0"

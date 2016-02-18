@@ -88,7 +88,7 @@ NotShowIn=KDE
 
 ### XFCE
 
-`nm-applet` funziona perfettamente anche in XFCE, ma per abilitare le notifiche, _inclusi i messaggi di errore_ è necessaria una specifica implementazione di Freedesktop. Vedere [questo](http://www.galago-project.org/specs/notification/0.9/index.html) per visualizzare le notifiche. L'implementazione più usata è data dal pacchetto [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd).
+`nm-applet` funziona perfettamente anche in XFCE, ma per abilitare le notifiche, *inclusi i messaggi di errore* è necessaria una specifica implementazione di Freedesktop. Vedere [questo](http://www.galago-project.org/specs/notification/0.9/index.html) per visualizzare le notifiche. L'implementazione più usata è data dal pacchetto [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd).
 
 Senza questo demone, networkmanager stamperà questi errori stdout/stderr:
 
@@ -125,7 +125,7 @@ Per usare in modo appropriato networkmanager su [Openbox](/index.php/Openbox_(It
 
 Se si desidera memorizzare i dati di autenticazione (Wireless/DSL) installare [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring").
 
-**Nota:** Se il demone _networkmanager_ è in `/etc/rc.conf`, i seguenti passaggi sono del tutto obsoleti e l'applet verrà avviato due volte.
+**Nota:** Se il demone *networkmanager* è in `/etc/rc.conf`, i seguenti passaggi sono del tutto obsoleti e l'applet verrà avviato due volte.
 
 Per fare in modo che l'autostart di Openbox avvii nm-applet correttamente, potrebbe essere necessario cancellare il file `/etc/xdg/autostart/nm-applet.desktop` (potrebbe essere necessario cancellarlo dopo ogni aggiornamento di network-manager-applet)
 
@@ -147,7 +147,6 @@ Per far si che la password sia memorizzata sarà necessario installare anche [GN
 Per utilizzare `nm-applet` senza un vassoi di sistema, si può avvalersi di [trayer](https://www.archlinux.org/packages/?name=trayer) o `stalonetray`. Si può ad esempio aggiungere uno script come questo al proprio percorso:
 
  `nmgui` 
-
 ```
  #!/bin/sh
  nm-applet    > /dev/null 2>/dev/null &
@@ -232,14 +231,13 @@ Per abilitare il relativo servizio di [systemd](/index.php/Systemd_(Italiano) "S
 
 Vedere [questo](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") per maggiori informazioni. Nella configurazione di default, gli utenti non root non sono autorizzati ad aggiungere connessioni di rete. Procedere così:
 
-_Opzione 1._ Avviare un _authentication agent_ [PolicyKit](/index.php/PolicyKit "PolicyKit") al login come `/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1` (necessita di [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome)). Potrebbe essere richiesta una password ad ogni modifica alla connessione.
+*Opzione 1.* Avviare un *authentication agent* [PolicyKit](/index.php/PolicyKit "PolicyKit") al login come `/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1` (necessita di [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome)). Potrebbe essere richiesta una password ad ogni modifica alla connessione.
 
-_Opzione 2._ Aggiungere il proprio utente al gruppo `wheel`. In questo modo nessuna password verrà chiesta ma bisognerà garantire dei permessi particolari all'utente come ad esempio l' _abilità_ di non immettere password usando [sudo](/index.php/Sudo_(Italiano) "Sudo (Italiano)").
+*Opzione 2.* Aggiungere il proprio utente al gruppo `wheel`. In questo modo nessuna password verrà chiesta ma bisognerà garantire dei permessi particolari all'utente come ad esempio l' *abilità* di non immettere password usando [sudo](/index.php/Sudo_(Italiano) "Sudo (Italiano)").
 
-_Opzione 3._ Aggiungere il proprio utente al gruppo `network` e creare il seguente file:
+*Opzione 3.* Aggiungere il proprio utente al gruppo `network` e creare il seguente file:
 
  `/etc/polkit-1/localauthority/50-local.d/org.freedesktop.NetworkManager.pkla` 
-
 ```
 polkit.addRule(function(action, subject) {
   if (action.id.indexOf("org.freedesktop.NetworkManager.") == 0 && subject.isInGroup("network")) {
@@ -256,7 +254,7 @@ Ci sono un paio di servizi di rete che non si desiderano in esecuzione fino a qu
 
 Per utilizzare questa funzionalità, gli script possono essere aggiunti nella cartella `/etc/NetworkManager/dispatcher.d`. Questi script avranno bisogno dei permessi di esecuzione dell'utente. Per ragioni di sicurezza, è buona prassi renderli di proprietà di **root:root** e scrivibili solo dal proprietario.
 
-Gli script verranno eseguiti in ordine alfabetico al momento della connessione (con argomenti _interface up_), e in ordine alfabetico inverso al momento della disconnessione (_interface down_). Per garantire l'ordine in cui vengono richiamati, è pratica comune utilizzare dei caratteri numerici prima del nome dello script (es. `10_portmap` o `30_netfs` (che assicura che il portmapper sia attivato prima che vengano tentati i montaggi NFS).
+Gli script verranno eseguiti in ordine alfabetico al momento della connessione (con argomenti *interface up*), e in ordine alfabetico inverso al momento della disconnessione (*interface down*). Per garantire l'ordine in cui vengono richiamati, è pratica comune utilizzare dei caratteri numerici prima del nome dello script (es. `10_portmap` o `30_netfs` (che assicura che il portmapper sia attivato prima che vengano tentati i montaggi NFS).
 
 **Attenzione:** Per ragioni di sicurezza è necessario disattivare l'accesso in scrittura per il "gruppo" e per "altri". Ad esempio usare 755 mask. In altri casi può essere negata l'esecuzione di script, con il seguente messaggio di errore "nm-dispatcher.action: Script could not be executed: writable by group or other, or set-UID." in `/var/log/messages.log`
 
@@ -313,7 +311,6 @@ fi
 In questo esempio si desidera connettersi automaticamente a una connessione VPN definita in precedenza con NetworkManager. La prima cosa da fare è creare lo script del dispatcher che definisce che cosa fare dopo aver stabilito la connessione alla rete.
 
 **1)** Creare lo script `/etc/NetworkManager/dispatcher.d/vpn-up` 
-
 ```
 VPN_NAME=<name of VPN connection defined in NetworkManager>
   ESSID=<wifi network ESSID (not connection name)>
@@ -496,7 +493,7 @@ per verificare se il driver informa `rfkill` circa lo stato della scheda wireles
 
 A causa di un bug non risolto, quando si cambia l'impostazione predefinita per le connessioni con IP statico, `nm-applet` potrebbe non memorizzare correttamente la modifica della configurazione, e reimpostare il DHCP automatico. Segue una soluzione per questo problema.
 
-Modificare la connessione predefinita (per esempio "Auto eth0") in `nm-applet`. Cambiare il nome della connessione (ad esempio "la mia eth0"), deselezionare la casella "Disponibile a tutti gli utenti", modificare le impostazioni di IP statico desiderate, quindi fare clic su _Applica_. Ciò salverà una nuova connessione con il nome indicato.
+Modificare la connessione predefinita (per esempio "Auto eth0") in `nm-applet`. Cambiare il nome della connessione (ad esempio "la mia eth0"), deselezionare la casella "Disponibile a tutti gli utenti", modificare le impostazioni di IP statico desiderate, quindi fare clic su *Applica*. Ciò salverà una nuova connessione con il nome indicato.
 
 Successivamente, si desidera effettuare la connessione di default e non connettersi automaticamente. Per fare ciò, eseguire
 
@@ -505,7 +502,7 @@ $ sudo nm-connection-editor  # si deve usare sudo, non su
 
 ```
 
-Nell'editor di connessione, modificare la connessione di default (ad esempio "Auto eth0") e deselezionare "Connetti automaticamente". Fare clic su _Applica_ e chiudere l'editor di connessione.
+Nell'editor di connessione, modificare la connessione di default (ad esempio "Auto eth0") e deselezionare "Connetti automaticamente". Fare clic su *Applica* e chiudere l'editor di connessione.
 
 ### È impossibile editare connessioni da utente
 
@@ -681,7 +678,8 @@ Non è necessario riavviare NetworkManager perchè le modifiche abbiano effetto.
           echo -n ";$i" >> $TARGET_FILE
       fi
   done
-  printf "\n" >> $TARGET_FILE
+  printf "
+" >> $TARGET_FILE
 
 ```
 
@@ -711,7 +709,7 @@ noarp
 
 ```
 
-Questo equivale a lanciare dhcpd con il flag _--noarp_, questo disabilita il sondaggio ARP velocizzando la connessione con DHCP.
+Questo equivale a lanciare dhcpd con il flag *--noarp*, questo disabilita il sondaggio ARP velocizzando la connessione con DHCP.
 
 #### Usare Servers OpenDNS
 
@@ -726,7 +724,6 @@ nameserver 208.67.220.220
 Per sostituire i server DHCP con gli OpenDNS:
 
  `/etc/NetworkManager/dispatcher.d/dns-servers-opendns` 
-
 ```
 #!/bin/bash
 # Use OpenDNS servers over DHCP discovered servers

@@ -171,7 +171,6 @@ $ ./G25manage --evdev /dev/input/by-id/usb-*-event-joystick --axis 0 --deadzone 
 Конфигурация по умолчанию будет выглядеть примерно так:
 
  `$ ./G25manage --showcalibration /dev/input/by-id/usb-Madcatz_Saitek_Pro_Flight_X-55_Rhino_Stick_G0000090-event-joystick` 
-
 ```
 Supported Absolute axes:
    Absolute axis 0x00 (0) (X Axis) (min: 0, max: 65535, flatness: 4095 (=6.25%), fuzz: 255)
@@ -184,7 +183,6 @@ Supported Absolute axes:
 В то время, как более удачная настройка может быть достигнута примерно так (повторить для каждой оси):
 
  `$ ./G25manage --evdev /dev/input/by-id/usb-Madcatz_Saitek_Pro_Flight_X-55_Rhino_Stick_G0000090-event-joystick --axis 0 --deadzone 512` 
-
 ```
 Event device file: /dev/input/by-id/usb-Madcatz_Saitek_Pro_Flight_X-55_Rhino_Stick_G0000090-event-joystick
  Axis index to deal with: 0
@@ -232,7 +230,6 @@ $ xboxdrv --evdev /dev/input/by-id/usb-Madcatz_Saitek_Pro_Flight_X-55_Rhino_Stic
 Если вы хотите играть в игры при помощи контроллера, вы, возможно, захотите отключить управление курсором мыши при помощью джойстика. Чтобы сделать это, отредактируйте файл /etc/X11/xorg.conf.d/50-joystick.conf примерно так:
 
  `/etc/X11/xorg.conf.d/50-joystick.conf ` 
-
 ```
 Section "InputClass"
         Identifier "joystick catchall"
@@ -265,7 +262,7 @@ EndSection
 
 ```
 
-**Note:** Строка _MatchIsJoystick "on"_ вроде как не нужна для этого файла, но вы, возможно, захотите раскомментировать ее
+**Note:** Строка *MatchIsJoystick "on"* вроде как не нужна для этого файла, но вы, возможно, захотите раскомментировать ее
 
 Отключение управления мышью при помощи джойстика
 
@@ -312,7 +309,7 @@ Steam корректно распознает их как геймпады от 
 
 ##### Подключение через Bluetooth
 
-Установите пакеты [bluez-plugins](https://www.archlinux.org/packages/?name=bluez-plugins) и [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils), в состав которого входит плагин _sixaxis_. Затем сделайте [start](/index.php/Start "Start") `bluetooth.service`, подключите контроллер по USB, и плагин автоматически пошлет адрес вашего адаптера bluetooth в контроллер.
+Установите пакеты [bluez-plugins](https://www.archlinux.org/packages/?name=bluez-plugins) и [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils), в состав которого входит плагин *sixaxis*. Затем сделайте [start](/index.php/Start "Start") `bluetooth.service`, подключите контроллер по USB, и плагин автоматически пошлет адрес вашего адаптера bluetooth в контроллер.
 
 Теперь можно отключить контроллер, в следующий раз, когда вы нажмете кнопку PS, он подключится без дополнительных действий. Только не забывайте отключать контроллер, когда закончите, иначе, он будет оставаться подключенным, включенным и будет разряжаться батарея.
 
@@ -329,7 +326,6 @@ Steam корректно распознает их как геймпады от 
 Вы можете также использовать [python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/) для работы со Steam Controller в играх, запущенных из-под Wine. Вам нужно найти и скачать файл `xbox360cemu.v.3.0.rar` (например, отсюда: [ссылка с 2shared](http://www.2shared.com/file/wcq8xuPf/xbox360cemuv30.html)). Затем скопируйте файлы `dinput8.dll`, `xbox360cemu.ini`, `xinput1_3.dll` и `xinput_9_1_0.dll` в папку с файлом запуска игры. Отредактируйте `xbox360cemu.ini`, изменив только следующие значения в разделе `[PAD1]`, чтобы корректно переназначить конфигурацию Steam Controller в XBox Controller.
 
  `xbox360cemu.ini` 
-
 ```
 Right Analog X=4
 Right Analog Y=-5
@@ -349,7 +345,7 @@ Right Trigger=a6
 
 ### Контроллер Xbox 360
 
-Как проводные, так и беспроводные (с модулем _Xbox 360 Wireless Receiver for Windows_) модели поддерживаются модулем ядра `xpad` и должны работать без установки дополнительных пакетов.
+Как проводные, так и беспроводные (с модулем *Xbox 360 Wireless Receiver for Windows*) модели поддерживаются модулем ядра `xpad` и должны работать без установки дополнительных пакетов.
 
 Имеются сообщения о проблемах с некоторыми новыми моделями проводных и беспроводных контроллерах при использовании стандартного драйвера xpad, такие, как:
 
@@ -559,7 +555,6 @@ $ xboxdrv --evdev /dev/input/dualshock3 --mimic-xpad
 Некоторые программы, например, Steam, могут распознать только первый джойстик, с которым столкнутся. Из-за бага в драйвере беспроводных устройств Microsoft, это может быть донгл bluetooth от беспроводной клавиатуры или мыши. Если вы увидите, что `/dev/input/js*` и `/dev/input/event*` принадлежат приемнику bluetooth-клавиатуры, вы можете автоматически избавиться от них, создав соответствующие правила udev. Создайте `/`:
 
  `/etc/udev/rules.d/99-btcleanup.rules` 
-
 ```
 ACTION=="add", KERNEL=="js[0-9]*", SUBSYSTEM=="input", KERNELS=="...", ATTRS{bInterfaceSubClass}=="00", ATTRS{bInterfaceProtocol}=="00", ATTRS{bInterfaceNumber}=="02", RUN+="/usr/bin/rm /dev/input/js%n"
 ACTION=="add", KERNEL=="event*", SUBSYSTEM=="input", KERNELS=="...", ATTRS{bInterfaceSubClass}=="00", ATTRS{bInterfaceProtocol}=="00", ATTRS{bInterfaceNumber}=="02", RUN+="/usr/bin/rm /dev/input/event%n"

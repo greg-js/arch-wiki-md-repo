@@ -22,7 +22,7 @@
 
 ## 下載
 
-在 [Arch Linux 下載頁面](https://www.archlinux.org/download/)，下載最新的 Arch Linux ISO：這是可以依系統架構和使用者選擇啟動於 i686 和 x86_64 模式的混合映象檔。 請注意映象檔內不包含任何套件包：安裝程序必須從套件庫取得套件包，所以必須擁有能夠運行的網路環境。 下載後，用下載頁提供的 PGP 或 CHECKSUM 簽證碼 檢驗映像檔 (例如 `pacman-key -v _inst-image.iso_.sig`、`md5sum _inst-image.iso_`) 。 最後映像檔可以燒製成 CD、以 ISO 檔型式掛載，或是[直接寫入 USB 碟](/index.php/USB_Installation_Media_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "USB Installation Media (正體中文)")。
+在 [Arch Linux 下載頁面](https://www.archlinux.org/download/)，下載最新的 Arch Linux ISO：這是可以依系統架構和使用者選擇啟動於 i686 和 x86_64 模式的混合映象檔。 請注意映象檔內不包含任何套件包：安裝程序必須從套件庫取得套件包，所以必須擁有能夠運行的網路環境。 下載後，用下載頁提供的 PGP 或 CHECKSUM 簽證碼 檢驗映像檔 (例如 `pacman-key -v *inst-image.iso*.sig`、`md5sum *inst-image.iso*`) 。 最後映像檔可以燒製成 CD、以 ISO 檔型式掛載，或是[直接寫入 USB 碟](/index.php/USB_Installation_Media_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "USB Installation Media (正體中文)")。
 
 ## 前期安裝流程
 
@@ -30,7 +30,7 @@
 
 ### 鍵盤配置
 
-預設鍵盤配置是 US. 其它的鍵盤配置可以 `loadkeys _keymap_file_` 改變: keymap 檔存放在 `/usr/share/kbd/keymaps/` (路徑和副檔名可以省略)。
+預設鍵盤配置是 US. 其它的鍵盤配置可以 `loadkeys *keymap_file*` 改變: keymap 檔存放在 `/usr/share/kbd/keymaps/` (路徑和副檔名可以省略)。
 
 ### 分割硬碟
 

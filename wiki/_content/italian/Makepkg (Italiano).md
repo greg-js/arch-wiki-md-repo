@@ -26,9 +26,7 @@ makepkg è incluso nel pacchetto [pacman](https://www.archlinux.org/packages/?na
 Le variabili `MAKEFLAGS`, `CFLAGS` e `CXXFLAGS` vengono usate da [make](https://www.archlinux.org/packages/?name=make), [gcc](https://www.archlinux.org/packages/?name=gcc), e `g++` mentre eseguono la compilazione del software con makepkg. Per impostazione predefinita, queste opzioni creano pacchetti generici che possono essere poi installati su una vasta gamma di macchine. Un miglioramento delle prestazioni può essere ottenuto mediante l'ottimizzazione della opzioni di compilazione per il computer host. Il rovescio della medaglia è che i pacchetti compilati appositamente per il processore host potrebbero non funzionare su altre macchine.
 
 **Nota:** Tenere a mente che non tutti i sistemi di compilazione utilizzeranno le variabili esportate. Alcune di esse potrebbero essere sovrascritte nei Makefiles originali o nel [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
-
  `/etc/makepkg.conf` 
-
 ```
 ...
 
@@ -84,7 +82,6 @@ Consultare `man make` per un elenco completo delle opzioni disponibili.
 Si può quindi impostare dove mettere i sorgenti ed i pacchetti per farli riconoscere dal packager. Questo passaggio è opzionale; i pacchetti verranno creati nella directory di lavoro dove makepkg viene eseguito di default.
 
  `/etc/makepkg.conf` 
-
 ```
 ...
 
@@ -119,7 +116,6 @@ Poi modificare di conseguenza la variabile `PKGDEST` in `/etc/makepkg.conf`.
 La variabile `PACKAGER` imposterà il valore del `packager` all'interno del file metadata dei pacchetti compilati `.PKGINFO`. Per impostazione predefinita, i pacchetti compilati dagli utenti indicheranno:
 
  `pacman -Qi package` 
-
 ```
 ...
 Packager       : Unknown Packager
@@ -130,7 +126,6 @@ Packager       : Unknown Packager
 Poi:
 
  `pacman -Qi package` 
-
 ```
 ...
 Packager       : John Doe <john@doe.com>
@@ -151,7 +146,6 @@ Se il file della firma con estensione .sig è parte dell'array sorgenti del [PKG
 Le chiavi gpg dovrebbero essere memorizzate nel file utente `~/.gnupg/pubring.gpg`. Nel caso in cui non dovesse contenerle, makepkg mostrerà un avviso.
 
  `makepkg` 
-
 ```
 ...
 ==> Verifying source file signatures with gpg...
@@ -173,7 +167,6 @@ E' possibile procedere con la configurazione di gpg per consentire la compilazio
 Aggiungere la seguente linea alla fine del file di configurazione gpg, per includere il keyring di pacman nel keyring personale utente.
 
  `~/.gnupg/gpg.conf` 
-
 ```
 ...
 keyring /etc/pacman.d/gnupg/pubring.gpg

@@ -54,7 +54,7 @@ Archie was a complete live Arch linux system run from a CD/USB-stick, built with
 
 ### ArchLinux PPC
 
-_"Arch Linux PPC移植项目的雄心是让我们热爱的发行版——Arch Linux，可以在PPC平台上运行。我们的社区相当丰富多样，五花八门，且助人为乐，同时我们为我们能够享受Arch的核心技术而感到骄傲。请来我们的论坛和邮件列表稍微小试牛刀下。若意犹未尽，不妨进一步游览维基吧。"_
+*"Arch Linux PPC移植项目的雄心是让我们热爱的发行版——Arch Linux，可以在PPC平台上运行。我们的社区相当丰富多样，五花八门，且助人为乐，同时我们为我们能够享受Arch的核心技术而感到骄傲。请来我们的论坛和邮件列表稍微小试牛刀下。若意犹未尽，不妨进一步游览维基吧。"*
 
 	<small>出处: [Arch Linux PPC](http://archlinuxppc.org/)</small>
 
@@ -96,7 +96,7 @@ Arch Linux is an i686 optimized distribution, but sometimes members of the commu
 
 ## Arch Linux Modified
 
-_"Goal:To make a light-weight version of Arch Linux that will accomodate most users without the need to download and configure packages._"
+*"Goal:To make a light-weight version of Arch Linux that will accomodate most users without the need to download and configure packages.*"
 
 	<small>Source: [Arch Linux Modified](http://rusher.webhop.org/wordpress/?page_id=143)</small>
 
@@ -128,7 +128,7 @@ ArchPwn是以安全为基准的Live CD/DVD，目标剑指渗透测试界的“�
 
 ## Borderless Linux
 
-"_I'm the founder of Borderless Linux. I am pleased to announce that we in fact are merging into what is currently the Chakra Project. We will be creating a LiveCD based upon Chakra's configurations and optimizations, but with a GNOME GUI. We will be using Larch to build the CD and hope to provide all the same functionality as Chakra, except using GNOME._"
+"*I'm the founder of Borderless Linux. I am pleased to announce that we in fact are merging into what is currently the Chakra Project. We will be creating a LiveCD based upon Chakra's configurations and optimizations, but with a GNOME GUI. We will be using Larch to build the CD and hope to provide all the same functionality as Chakra, except using GNOME.*"
 
 	<small>Source: [Borderless Linux](http://www.borderlesslinux.org/)</small>
 
@@ -140,7 +140,7 @@ ArchPwn是以安全为基准的Live CD/DVD，目标剑指渗透测试界的“�
 
 ## Chaox
 
-_"Chaox is a live environment based on Arch Linux focusing on pentesting and forensics. We feature current snapshots of aircrack-ng, the dedected toolkit and forensic applications such as testdisk or foremost, along with the usual tools."_
+*"Chaox is a live environment based on Arch Linux focusing on pentesting and forensics. We feature current snapshots of aircrack-ng, the dedected toolkit and forensic applications such as testdisk or foremost, along with the usual tools."*
 
 	<small>Source: [chaox](http://blag.chaox.net/)</small>
 
@@ -152,7 +152,7 @@ _"Chaox is a live environment based on Arch Linux focusing on pentesting and for
 
 ### ConnochaetOS
 
-"_ConnochaetOS 将是一个使用现代化软件为老式计算机打造的自由桌面操作系统。根据GNU对自由发行版的定义，ConnochaetOS将只会包含自由软件，遵循KISS哲学，尽量减少资源占用，现代并且稳定。我们的目标是最低的硬件要求，低至奔腾I处理器和64MB的内存即可运行一个图形化桌面。我们决定基于Arch Linux开发ConnocaetOS，但是为了支持i586，我们将其完全重建，并且使用我们自己的一些包替换了官方的包，仅仅因为历史，稳定和自由。_"
+"*ConnochaetOS 将是一个使用现代化软件为老式计算机打造的自由桌面操作系统。根据GNU对自由发行版的定义，ConnochaetOS将只会包含自由软件，遵循KISS哲学，尽量减少资源占用，现代并且稳定。我们的目标是最低的硬件要求，低至奔腾I处理器和64MB的内存即可运行一个图形化桌面。我们决定基于Arch Linux开发ConnocaetOS，但是为了支持i586，我们将其完全重建，并且使用我们自己的一些包替换了官方的包，仅仅因为历史，稳定和自由。*"
 
 	<small>来源: [ConnochaetOS Website](http://www.connochaetos.org/wiki/doku.php?id=connochaetos)</small>
 
@@ -204,7 +204,7 @@ Firefly Linux is a lightweight operating system designed with netbooks in mind. 
 
 ### Kahel OS
 
-_"Kahel OS is the first and remains to be the only Filipino Linux Distro with the rolling release model on Arch Linux + GNOME. 它是社区上第一个完成 (非测试) Arch Linux + GNOME的Linux版本."_
+*"Kahel OS is the first and remains to be the only Filipino Linux Distro with the rolling release model on Arch Linux + GNOME. 它是社区上第一个完成 (非测试) Arch Linux + GNOME的Linux版本."*
 
 	<small>Source: [Kahel OS](http://www.kahelos.org/)</small>
 
@@ -216,9 +216,9 @@ _"Kahel OS is the first and remains to be the only Filipino Linux Distro with th
 
 ## LDR
 
-_Project apparently no longer exists._
+*Project apparently no longer exists.*
 
-_"LDR stands for Linux Done Right. It is an Arch Linux derrived GNU/Linux distro which has many software components pre-configured so you can just install and get on with it!"_
+*"LDR stands for Linux Done Right. It is an Arch Linux derrived GNU/Linux distro which has many software components pre-configured so you can just install and get on with it!"*
 
 	<small>Source: LDR Homepage</small>
 
@@ -263,7 +263,7 @@ The Maryan Linux 2 Project is designed to enable older hardware to run a fast an
 
 Shift Linux was a work in progress that aimed to be a desktop distro based on a solid Arch foundation. As of May 8th, 2009, development ceased. Read more about it here: [http://shiftlinux.net/news/item/shift-placed-on-indefinite-hold](http://shiftlinux.net/news/item/shift-placed-on-indefinite-hold)
 
-"_Anyone interested in developing a Linux distro should consider helping out Firefly Linux. It's a great project that spawned from Shift._"
+"*Anyone interested in developing a Linux distro should consider helping out Firefly Linux. It's a great project that spawned from Shift.*"
 
 	<small>Source: Simon, [Shift Linux](http://shiftlinux.net)</small>
 

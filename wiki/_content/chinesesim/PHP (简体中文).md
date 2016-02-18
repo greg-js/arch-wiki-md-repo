@@ -27,7 +27,7 @@
 *   [7 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
     *   [7.1 PHP Fatal error: 'ZipArchive' 类找不到](#PHP_Fatal_error:_.27ZipArchive.27_.E7.B1.BB.E6.89.BE.E4.B8.8D.E5.88.B0)
     *   [7.2 /etc/php/php.ini not parsed](#.2Fetc.2Fphp.2Fphp.ini_not_parsed)
-    *   [7.3 PHP Warning: PHP Startup: _<module>_: Unable to initialize module](#PHP_Warning:_PHP_Startup:_.3Cmodule.3E:_Unable_to_initialize_module)
+    *   [7.3 PHP Warning: PHP Startup: *<module>*: Unable to initialize module](#PHP_Warning:_PHP_Startup:_.3Cmodule.3E:_Unable_to_initialize_module)
 *   [8 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
@@ -84,7 +84,7 @@ extension=gd.so
 
 ### imagemagick
 
-运行`# pecl install imagick`安装[imagemagick](https://www.archlinux.org/packages/?name=imagemagick) . _pecl_ 包含于[php-pear](https://aur.archlinux.org/packages/php-pear/) 包. 在 `/etc/php/php.ini`中加入
+运行`# pecl install imagick`安装[imagemagick](https://www.archlinux.org/packages/?name=imagemagick) . *pecl* 包含于[php-pear](https://aur.archlinux.org/packages/php-pear/) 包. 在 `/etc/php/php.ini`中加入
 
 ```
 extension=imagick.so
@@ -150,10 +150,10 @@ extension=sqlite3.so
 
 ## 缓存
 
-PHP有两种缓存： _opcode_/_bytecode_ 缓存和_userland_/_user data_ 缓存，这两种缓存都大幅度提升性能，因此最好开启。
+PHP有两种缓存： *opcode*/*bytecode* 缓存和*userland*/*user data* 缓存，这两种缓存都大幅度提升性能，因此最好开启。
 
-*   [Zend OPCache](https://en.wikipedia.org/wiki/Zend_Opcache "wikipedia:Zend Opcache")仅提供_opcode_缓存。
-*   [APCu](https://github.com/krakjoe/apcu/)仅提供_userland_缓存
+*   [Zend OPCache](https://en.wikipedia.org/wiki/Zend_Opcache "wikipedia:Zend Opcache")仅提供*opcode*缓存。
+*   [APCu](https://github.com/krakjoe/apcu/)仅提供*userland*缓存
 
 要获得最佳性能，应当开启两种缓存。按照下面[#OPCache](#OPCache)和[#APCu](#APCu)的步骤操作即可。
 
@@ -224,7 +224,7 @@ Ensure the zip extension is enabled.
 
 If your `php.ini` is not parsed, the ini file is named after the sapi it is using. For instance, if you are using uwsgi, the file would be called `/etc/php/php-uwsgi.ini`. If you are using cli, it is `/etc/php/php-cli.ini`.
 
-### PHP Warning: PHP Startup: _<module>_: Unable to initialize module
+### PHP Warning: PHP Startup: *<module>*: Unable to initialize module
 
 When running `php`, this error indicates that the aforementioned module is out of date. This will rarely happen in Arch Linux, since maintainers make sure core PHP and all modules be only available in compatible versions.
 
@@ -232,7 +232,7 @@ This might happen in conjunction with a module compiled from the [AUR](/index.ph
 
 To fix, find a compatible update for your module, probably by looking up the [AUR](/index.php/AUR "AUR") using its common name.
 
-If it applies, flag the outdated [AUR](/index.php/AUR "AUR") package as _outdated_.
+If it applies, flag the outdated [AUR](/index.php/AUR "AUR") package as *outdated*.
 
 ## 参见
 

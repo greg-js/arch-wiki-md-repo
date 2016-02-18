@@ -14,7 +14,7 @@
 
 [Install](/index.php/Install "Install") [pkgfile](https://www.archlinux.org/packages/?name=pkgfile) from the official repositories, or [pkgfile-git](https://aur.archlinux.org/packages/pkgfile-git/) from the [AUR](/index.php/AUR "AUR").
 
-The _pkgfile_ database can then be synced with:
+The *pkgfile* database can then be synced with:
 
 ```
 # pkgfile -u
@@ -30,7 +30,6 @@ To search for a package that owns the file `makepkg`:
 To list all files provided by [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring):
 
  `$ pkgfile -l archlinux-keyring` 
-
 ```
 core/archlinux-keyring usr/
 core/archlinux-keyring usr/share/
@@ -48,7 +47,6 @@ Latter is comparable to `pacman -Ql` (see [pacman#Querying package databases](/i
 [pkgfile](https://www.archlinux.org/packages/?name=pkgfile) includes a "command not found" hook for [Bash](/index.php/Bash "Bash") and [Zsh](/index.php/Zsh "Zsh") that will automatically search the official repositories, when entering an unrecognized command:
 
  `$ abiword` 
-
 ```
 abiword may be found in the following packages:
   extra/abiword 2.8.6-7 usr/bin/abiword

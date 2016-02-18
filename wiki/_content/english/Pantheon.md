@@ -107,7 +107,7 @@ It is also recommended to install the following fonts:
 
 [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/) provides a session entry for display managers such as [gdm](https://www.archlinux.org/packages/?name=gdm) or [lightdm](https://www.archlinux.org/packages/?name=lightdm).
 
-**Note:** Either use the bzr version of _cerbere_ or add 'gala' to the monitored processes for this to work.
+**Note:** Either use the bzr version of *cerbere* or add 'gala' to the monitored processes for this to work.
 
 ### Via .xinitrc
 
@@ -140,15 +140,15 @@ exec cerbere
 
 Pantheon, when launched via `~/.xinitrc`, does not support XDG autostart. However, there are 3 other ways to achieve this for applications which do not provide a systemd unit:
 
-*   You may add any program to your `~/.xinitrc`, preferably right before the _exec cerbere_ line. This is the better choice for one-shot programs.
-*   Or you may edit the `org.pantheon.cerbere.monitored-processes` key using _dconf-editor_ and add the programs of your choice. This method is best for applications which keep running in the background.
+*   You may add any program to your `~/.xinitrc`, preferably right before the *exec cerbere* line. This is the better choice for one-shot programs.
+*   Or you may edit the `org.pantheon.cerbere.monitored-processes` key using *dconf-editor* and add the programs of your choice. This method is best for applications which keep running in the background.
 *   Or you may use a program like [dapper](https://aur.archlinux.org/packages/dapper/), [dex-git](https://aur.archlinux.org/packages/dex-git/), or [fbautostart](https://aur.archlinux.org/packages/fbautostart/) to add support for XDG autostart in your `~/.xinitrc`.
 
-**Note:** Keep in mind that applications started via _cerbere_ cannot be terminated, they will keep respawning.
+**Note:** Keep in mind that applications started via *cerbere* cannot be terminated, they will keep respawning.
 
 ## Configuration
 
-Configuring Pantheon is done via [switchboard-bzr](https://aur.archlinux.org/packages/switchboard-bzr/) and its plugs, most are available in the AUR and the custom repo. All pantheon settings can also be altered via _dconf_, they are located in the `org.pantheon` key. Use _dconf-editor_ for easy editing.
+Configuring Pantheon is done via [switchboard-bzr](https://aur.archlinux.org/packages/switchboard-bzr/) and its plugs, most are available in the AUR and the custom repo. All pantheon settings can also be altered via *dconf*, they are located in the `org.pantheon` key. Use *dconf-editor* for easy editing.
 
 Part of the configuration is handled by [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) via a dedicated plug, which unfortunately only supports GNOME up to 3.6\. Use [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) itself and [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) instead.
 
@@ -190,9 +190,9 @@ This version of indicator-session relies on dbus methods native to Unity for mos
 
 This version of indicator-session fails to interact with the session manager somehow; a (crudely hacked) version that uses systemd/logind instead is available [indicator-session-systemd](https://aur.archlinux.org/packages/indicator-session-systemd/)
 
-_About This Computer_, _Lock_ and _Sound Settings_ ([indicator-sound](https://aur.archlinux.org/packages/indicator-sound/) or [indicator-sound-pantheon-bzr](https://github.com/quequotion/pantheon-bzr-qq/tree/master/REDUNDANT/indicator-session-pantheon-bzr)) rely on gnome components that may not be installed, such as gnome-control-center and gnome-screensaver.
+*About This Computer*, *Lock* and *Sound Settings* ([indicator-sound](https://aur.archlinux.org/packages/indicator-sound/) or [indicator-sound-pantheon-bzr](https://github.com/quequotion/pantheon-bzr-qq/tree/master/REDUNDANT/indicator-session-pantheon-bzr)) rely on gnome components that may not be installed, such as gnome-control-center and gnome-screensaver.
 
-For _Lock_ functionality (including "Ctrl+L" hotkey), replace gnome-screensaver with [light-locker](/index.php/Light-locker "Light-locker") or [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") and [a script that emulates the gnome-screensaver dbus](https://github.com/quequotion/pantheon-bzr-qq/tree/master/EXTRAS/xscreensaver-dbus-screenlock).
+For *Lock* functionality (including "Ctrl+L" hotkey), replace gnome-screensaver with [light-locker](/index.php/Light-locker "Light-locker") or [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") and [a script that emulates the gnome-screensaver dbus](https://github.com/quequotion/pantheon-bzr-qq/tree/master/EXTRAS/xscreensaver-dbus-screenlock).
 
 ### No transparency in pantheon-terminal
 

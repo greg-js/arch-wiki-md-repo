@@ -36,7 +36,6 @@
 为了提早启用 KMS，将内核模块 [radeon](/index.php/Radeon "Radeon")、[i915](/index.php/Intel "Intel")(Intel 显卡)、[nouveau](/index.php/Nouveau "Nouveau") (nvidia 显卡) 加入 `/etc/mkinitcpio.conf` 中的 MODULES 行 :
 
  `/etc/mkinitcpio.conf` 
-
 ```
 MODULES="i915"
 **或**

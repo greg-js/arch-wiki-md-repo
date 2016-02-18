@@ -131,7 +131,7 @@ $ fbsetbg -i
 
 ```
 
-如果回應的訊息不是 _hsetroot is a nice wallpapersetter. You won't have any problems._或類似的話，你需要安裝背景圖片的管理程式來設定背景圖片。你可以使用下列幾個軟體其中一個或是使用其他習慣的軟體。
+如果回應的訊息不是 *hsetroot is a nice wallpapersetter. You won't have any problems.*或類似的話，你需要安裝背景圖片的管理程式來設定背景圖片。你可以使用下列幾個軟體其中一個或是使用其他習慣的軟體。
 
 *   hsetroot
 *   eterm

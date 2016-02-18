@@ -28,9 +28,9 @@ RetroArch is a modular, command-line driven, multi-system emulator that is desig
 
 ## Usage
 
-RetroArch uses separate libraries, called _emulator cores_ or _emulator implementations_, available from both the [AUR](https://aur.archlinux.org/packages/?O=0&K=libretro) and the [libretro github repository](http://github.com/libretro).
+RetroArch uses separate libraries, called *emulator cores* or *emulator implementations*, available from both the [AUR](https://aur.archlinux.org/packages/?O=0&K=libretro) and the [libretro github repository](http://github.com/libretro).
 
-Each package from the [AUR](/index.php/AUR "AUR") will install a library to `/usr/lib/libretro/`. The syntax to choose one when executing _retroarch_ is:
+Each package from the [AUR](/index.php/AUR "AUR") will install a library to `/usr/lib/libretro/`. The syntax to choose one when executing *retroarch* is:
 
 ```
 $ retroarch -L /usr/lib/libretro/libretro-(emulation core).so ~/path/to/foo
@@ -51,11 +51,11 @@ RetroArch provides a very well commented skeleton configuration file located at 
 
 It supports split configuration files using the `#include "foo.cfg"` directive within the main configuration file, `retroarch.cfg`. This can be overridden using the `--appendconfig /path/to/config` parameter and is beneficial if different keybinds, video configurations or audio settings are required for the various implementations.
 
-**Tip:** RetroArch is capable of loading _[bsnes xml filters](https://gitorious.org/bsnes/xml-shaders)_ and _[cg shaders](https://github.com/libretro/common-shaders)_ that can be defined in `retroarch.cfg` as `video_bsnes_shader` and `video_cg_shader` respectively.
+**Tip:** RetroArch is capable of loading *[bsnes xml filters](https://gitorious.org/bsnes/xml-shaders)* and *[cg shaders](https://github.com/libretro/common-shaders)* that can be defined in `retroarch.cfg` as `video_bsnes_shader` and `video_cg_shader` respectively.
 
-**Note:** [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) requires [nvidia-cg-toolkit](https://www.archlinux.org/packages/?name=nvidia-cg-toolkit) in order to use the _cg shaders_.
+**Note:** [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) requires [nvidia-cg-toolkit](https://www.archlinux.org/packages/?name=nvidia-cg-toolkit) in order to use the *cg shaders*.
 
-**Warning:** When using _[ALSA](/index.php/ALSA "ALSA")_ it is necessary for the `audio_out_rate` to be equal to the system's default output rate, usually 48000.
+**Warning:** When using *[ALSA](/index.php/ALSA "ALSA")* it is necessary for the `audio_out_rate` to be equal to the system's default output rate, usually 48000.
 
 ## Troubleshooting
 

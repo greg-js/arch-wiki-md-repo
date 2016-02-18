@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [USB_Flash_Installation_Media](/index.php/USB_Flash_Installation_Media "USB Flash Installation Media") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-09-21，点击[这里](https://wiki.archlinux.org/index.php?title=USB_Flash_Installation_Media&diff=0&oldid=336204)可以查看翻译后英文页面的改动。
 
-本文探讨如何制作能在 UEFI 和 BIOS 系统上启动的 Arch Linux 安装 USB 驱动器（也被称为_“闪存驱动器”，“USB记忆棒"，“U盘”等）。制作好的U盘被称为 LiveUSB 系统（类似 LiveCD 系统），因为[SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS")的性质，关机后所有的更改都会丢失。这样的系统可用于安装 Arch Linux、系统维护或者系统恢复。_
+本文探讨如何制作能在 UEFI 和 BIOS 系统上启动的 Arch Linux 安装 USB 驱动器（也被称为*“闪存驱动器”，“USB记忆棒"，“U盘”等）。制作好的U盘被称为 LiveUSB 系统（类似 LiveCD 系统），因为[SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS")的性质，关机后所有的更改都会丢失。这样的系统可用于安装 Arch Linux、系统维护或者系统恢复。*
 
 如果想在U盘上运行完整的 Arch Linux（即能保留设置），参见[在U盘中安装Arch Linux](/index.php/Installing_Arch_Linux_on_a_USB_key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installing Arch Linux on a USB key (简体中文)")。如果想将 Arch Linux LiveUSB 当作救援 USB 来用，参见[Change Root](/index.php/Change_Root_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Change Root (简体中文)")
 
@@ -148,7 +148,6 @@ $ diskutil unmountDisk /dev/disk1
 接着我们可以依照上面介绍的方法继续操作（如果用的是 OS X `dd`，用 `/dev/rdisk` 替代 `/dev/disk`，且 `bs=1m`。`rdisk`指的是“raw disk”，在 OS X 上比较快，而 `bs=1m`表示 1 MB 块大小）。
 
  `# dd if=image.iso of=/dev/rdisk1 bs=1m` 
-
 ```
 20480+0 records in
 20480+0 records out
@@ -167,7 +166,7 @@ $ diskutil eject /dev/disk1
 
 ISO 镜像是多功能镜像，既可以烧到光盘也能直接写入 USB，所以它不包含一个标准的分区表。
 
-安装 Arch Linux 后，就不需要 USB 安装盘了。你需要往U盘的前 512 字节写零_（表示主引导记录中的引导代码和非标准的分区表）_来恢复它完整的容量。
+安装 Arch Linux 后，就不需要 USB 安装盘了。你需要往U盘的前 512 字节写零*（表示主引导记录中的引导代码和非标准的分区表）*来恢复它完整的容量。
 
 ```
 # dd count=1 bs=512 if=/dev/zero of=/dev/sd**x** && sync
@@ -196,7 +195,7 @@ ISO 镜像是多功能镜像，既可以烧到光盘也能直接写入 USB，所
 
 **注意:** 接下来会用 `/dev/sd**Xn**` 指代目标分区，请根据自身的情况调整 **X** 和 **n**。
 
-*   确保已经安装了最新版的 _syslinux_（6.02或更新）。
+*   确保已经安装了最新版的 *syslinux*（6.02或更新）。
 
 *   如果还未准备好，在继续前创建好分区表和分区。`/dev/sd**Xn**` 必须格式化为 FAT32。
 
@@ -213,12 +212,11 @@ ISO 镜像是多功能镜像，既可以烧到光盘也能直接写入 USB，所
 ```
 
 *   **注意:** 如果用的是 [Archboot](/index.php/Archboot "Archboot")，以下步骤可省略；如果是[Archiso](/index.php/Archiso "Archiso") 则不可。
-
-    卷标，或者 UUID 是成功引导必不可少的。默认识别的卷标是 `ARCH_2014**XX**`（XX 和镜像发布月份有关）。因此，FAT32 分区的卷标须设成一样的（可以用_gparted_）。 要修改识别的卷标，可以编辑 _/mnt/usb/arch/boot/syslinux/archiso_sys32.cfg_、_archiso_sys64.cfg_和_/mnt/usb/loader/entries/archiso-x86_64.conf_中的 `archisolabel=ARCH_2014**XX**`（最后一个文件仅对 EFI 系统生效）。32位的 ISO 需要类似修改。要让安装镜像识别 UUID 而不是卷标，将这些地方改为 `archiso_device_=/dev/disk/by-uuid/**YOUR-UUID**`。UUID 可通过 `blkid -o value -s UUID /dev/sd**Xn**` 查看。
+    卷标，或者 UUID 是成功引导必不可少的。默认识别的卷标是 `ARCH_2014**XX**`（XX 和镜像发布月份有关）。因此，FAT32 分区的卷标须设成一样的（可以用*gparted*）。 要修改识别的卷标，可以编辑 */mnt/usb/arch/boot/syslinux/archiso_sys32.cfg*、*archiso_sys64.cfg*和*/mnt/usb/loader/entries/archiso-x86_64.conf*中的 `archisolabel=ARCH_2014**XX**`（最后一个文件仅对 EFI 系统生效）。32位的 ISO 需要类似修改。要让安装镜像识别 UUID 而不是卷标，将这些地方改为 `archiso*device*=/dev/disk/by-uuid/**YOUR-UUID**`。UUID 可通过 `blkid -o value -s UUID /dev/sd**Xn**` 查看。
 
 **警告:** 错误的卷标或 UUID 会导致启动失败。
 
-*   _/mnt/usb/arch/boot/syslinux_ 里已经安装 syslinux。请按照 [Syslinux#Manual_install](/index.php/Syslinux#Manual_install "Syslinux")进行重装。
+*   */mnt/usb/arch/boot/syslinux* 里已经安装 syslinux。请按照 [Syslinux#Manual_install](/index.php/Syslinux#Manual_install "Syslinux")进行重装。
     *   用新 syslinux 的模块（`*.c32` 文件）覆盖原有 syslinux 的模块，以免因版本差异导致启动失败。
     *   运行：
 
@@ -235,7 +233,7 @@ ISO 镜像是多功能镜像，既可以烧到光盘也能直接写入 USB，所
 
 **注意:**
 
-*   不要使用**可启动 USB 创建工具**制作UEFI 启动 USB。不要用_dd for Windows_将 ISO 镜像写入U盘。
+*   不要使用**可启动 USB 创建工具**制作UEFI 启动 USB。不要用*dd for Windows*将 ISO 镜像写入U盘。
 
 *   以下命令假设U盘盘符为 **X:**。
 
@@ -293,7 +291,6 @@ ISO 镜像是多功能镜像，既可以烧到光盘也能直接写入 USB，所
 编辑 `syslinux.cfg`：
 
  `sysconfig.cfg` 
-
 ```
 default menu.c32
 prompt 0
@@ -334,7 +331,6 @@ append initrd=/arch/boot/i686/archiso.img archisodevice=/dev/sd**x1** ../../
 从命令提示符下，使用 `–p` 参数调用 flashnul 命令来确定 USB 设备的盘符，例如：
 
  `C:\>flashnul -p` 
-
 ```
  Avaible physical drives:
  Avaible logical disks:
@@ -349,7 +345,7 @@ append initrd=/arch/boot/i686/archiso.img archisodevice=/dev/sd**x1** ../../
 当您确定正确的设备后，您可以将镜像写入到您的设备中，通过调用flashnul命令，后面输入您的设备序号，再输入 `-L` 及镜像的完整路径，例如：
 
 ```
-C:\>flashnul **E:** -L _path\to\arch.iso_
+C:\>flashnul **E:** -L *path\to\arch.iso*
 
 ```
 
@@ -385,9 +381,7 @@ C:\>flashnul **E:** -L _path\to\arch.iso_
 复制完所需文件后，在 U 盘的 /Boot/Settings 目录中创建文件 `syslinux.cfg`：
 
 **警告:** `INITRD` 一行中，一定要用复制到 `ISOs` 目录中的 ISO 文件名！
-
  `/Boot/Settings/syslinux.cfg` 
-
 ```
 DEFAULT arch_iso
 
@@ -405,7 +399,6 @@ DEFAULT arch_iso
 最后，在 `syslinux.exe` 所在目录创建一个 `*.bat` 文件并运行（如果是在 Vista 或者 Windows 7 下，需要“以管理员身份运行”）：
 
  `C:\Documents and Settings\username\Desktop\install.bat` 
-
 ```
  @echo off
  syslinux.exe -m -a -d /Boot/Settings X:
@@ -413,9 +406,9 @@ DEFAULT arch_iso
 
 ## 故障排除
 
-*   对于 [MEMDISK 方法](#.E5.9C.A8.E5.86.85.E5.AD.98.E4.B8.AD.E5.8A.A0.E8.BD.BD.E5.AE.89.E8.A3.85.E4.BB.8B.E8.B4.A8)，如果你尝试引导 i686 版本的系统时碰到了著名的 _30 seconds error_，那么在 `Boot Arch Linux (i686)` 条目上按 `Tab` 键，然后在末尾添加 `vmalloc=448M`。参考： _如果你的映像大于 128MiB 且你使用的是32位操作系统，你必须增加最大内存使用参数vmalloc_。[(*)](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
+*   对于 [MEMDISK 方法](#.E5.9C.A8.E5.86.85.E5.AD.98.E4.B8.AD.E5.8A.A0.E8.BD.BD.E5.AE.89.E8.A3.85.E4.BB.8B.E8.B4.A8)，如果你尝试引导 i686 版本的系统时碰到了著名的 *30 seconds error*，那么在 `Boot Arch Linux (i686)` 条目上按 `Tab` 键，然后在末尾添加 `vmalloc=448M`。参考： *如果你的映像大于 128MiB 且你使用的是32位操作系统，你必须增加最大内存使用参数vmalloc*。[(*)](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
 
-*   如果你碰到因 `/dev/disk/by-label/ARCH_XXXXXX` 未挂载而导致的 _30 seconds error_，可尝试重命名你的 USB 媒介为 `ARCH_XXXXXX`（例如 `ARCH_201409`）。
+*   如果你碰到因 `/dev/disk/by-label/ARCH_XXXXXX` 未挂载而导致的 *30 seconds error*，可尝试重命名你的 USB 媒介为 `ARCH_XXXXXX`（例如 `ARCH_201409`）。
 
 ## 参见
 

@@ -186,7 +186,7 @@ See also [Wikipedia:List of information graphics software](https://en.wikipedia.
 
 	[http://labplot.sourceforge.net/](http://labplot.sourceforge.net/) || [labplot2](https://aur.archlinux.org/packages/labplot2/)
 
-*   **[QtiPlot](https://en.wikipedia.org/wiki/QtiPlot "wikipedia:QtiPlot")** — Platform-independent application used for interactive scientific graphing and data analysis, similar to the proprietary [Origin](https://en.wikipedia.org/wiki/Origin_(software) "wikipedia:Origin (software)") or [SigmaPlot](https://en.wikipedia.org/wiki/SigmaPlot "wikipedia:SigmaPlot").
+*   **[QtiPlot](https://en.wikipedia.org/wiki/QtiPlot or [SigmaPlot](https://en.wikipedia.org/wiki/SigmaPlot "wikipedia:SigmaPlot").
 
 	[http://soft.proindependent.com/qtiplot.html](http://soft.proindependent.com/qtiplot.html) || [qtiplot](https://www.archlinux.org/packages/?name=qtiplot)
 

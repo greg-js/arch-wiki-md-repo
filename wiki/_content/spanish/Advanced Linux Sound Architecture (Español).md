@@ -1,7 +1,6 @@
 La [Arquitectura Avanzada para el Sonido en Linux](https://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture "wikipedia:Advanced Linux Sound Architecture") (conocido con el acrónimo **ALSA**) es un componente del kernel destinado a sustituir el original Open Sound System (Open OSSv3) para proporcionar controladores de dispositivos para las tarjetas de sonido. Además de los controladores de dispositivos de sonido, **ALSA** también pone a disposición una amplia biblioteca en el espacio de usuario para los desarrolladores de aplicaciones que quieran utilizar las funciones del controlador mediante un API de alto nivel con una interacción directa con los controladores del kernel.
 
 **Nota:** Para un entorno de sonido alternativo, consulte la página [Open Sound System](/index.php/Open_Sound_System_(Espa%C3%B1ol) "Open Sound System (Español)")
-
 .
 
 ## Contents
@@ -136,7 +135,6 @@ El paquete [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) inc
 Si tiene problemas con virtualbox, el siguiente comando puede ser de ayuda:
 
  `$ alsactl init` 
-
 ```
 
 Found hardware: "ICH" "SigmaTel STAC9700,83,84" "AC97a:83847600" "0x8086" "0x0000"
@@ -151,7 +149,6 @@ Puede que tenga que activar la salida de ALSA en su software de audio también.
 Si sus tarjetas de sonido cambian de orden durante el arranque, puede especificar el orden de las mismas en el archivo `/etc/modprobe.d/modprobe.conf` (se sugiere el archivo `/etc/modprobe.d/alsa-base.conf`). Por ejemplo, si desea que el tarjeta de sonido «mia» se cargue primero, colóquele el valor #0:
 
  `/etc/modprobe.d/alsa-base.conf` 
-
 ```
 options snd slots=snd_mia,snd_hda_intel
 options snd_mia index=0
@@ -164,7 +161,6 @@ Utilice `$ lsmod | grep snd` para obtener una lista de dispositivos. Esta config
 También puede proporcionar un índice de `-2` para indicarle a ALSA que nunca use una tarjeta como la primera. Distribuciones como Linux Mint y Ubuntu utilizan la siguiente configuración para evitar que USB y de otros tipos de controladores «extraños» obtengan el índice `0`:
 
  `/etc/modprobe.d/alsa-base.conf` 
-
 ```
 options bt87x index=-2
 options cx88_alsa index=-2
@@ -211,7 +207,6 @@ Ahora se pueden comenzar los programas seleccionando la tarjeta de sonido con so
 En primer lugar, tendrá que averiguar la identificación de la tarjeta y del dispositivo que desea establecer como predeterminados, ejecutando `aplay -l`:
 
  `$ aplay -l` 
-
 ```
 **** List of PLAYBACK Hardware Devices ****
 card 0: Intel [HDA Intel], device 0: CONEXANT Analog [CONEXANT Analog]
@@ -259,7 +254,6 @@ Si recibe un error acerca de la configuración de asound, compruebe [upstream do
 Es de suponer que udev detectará automáticamente el sonido correctamente. Puede verificar que esto ha ocurrido así con la orden siguiente:
 
  `$ lsmod | grep '^snd' | column -t` 
-
 ```
 snd_hda_codec_hdmi     22378   4
 snd_hda_codec_realtek  294191  1
@@ -280,7 +274,6 @@ Si el resultado es similar, los controladores de sonido han sido reconocidos aut
 También puede ser que desee comprobar el directorio `/dev/snd/` para verificar que los archivos de dispositivos son los correctos:
 
  `$ ls -l /dev/snd` 
-
 ```
 total 0
 crw-rw----  1 root audio 116,  0 Apr  8 14:17 controlC0
@@ -425,7 +418,6 @@ Instale los paquetes [alsa-plugins](https://www.archlinux.org/packages/?name=als
 *   Si no ha creado el archivo `~/.asoundrc` o `/etc/asound.conf`, a continuación, cree cualquiera de ellos y añada lo siguiente:
 
  `/etc/asound.conf` 
-
 ```
 pcm.eq {
   type ladspa
@@ -600,7 +592,7 @@ Si tiene un chipset de audio que soporte mezclar con hardware, entonces no se re
 
 #### Arreglos
 
-Si está usando Arch 64-bit y la tarjeta _Intel Corporation 82801I (ICH9 Family) HD Audio Controller (rev 02)_, se puede obtener sonido para que funcione con «Enemy Territory» haciendo lo siguiente:
+Si está usando Arch 64-bit y la tarjeta *Intel Corporation 82801I (ICH9 Family) HD Audio Controller (rev 02)*, se puede obtener sonido para que funcione con «Enemy Territory» haciendo lo siguiente:
 
 ```
 echo "et.x86 0 0 direct" > /proc/asound/card0/pcm0p/oss
@@ -787,7 +779,7 @@ La solución anterior se ha informado que funciona con `snd_intel8x0`
 
 ### Sin entrada en el micrófono
 
-En alsamixer, asegúrese de que todos los niveles del volumen, en la sección grabación, están activados, y que la modalidad _CAPTURE_ del micrófono está activa (por ejemplo, Mic, -micrófono interno-) y/o sobre _capture_ (en alsamixer, seleccione estos elementos en el primer espacio). Pruebe poner Mic Boost en positivo y aumentar al máximo los niveles de Capture y Digital; esto no produce sonido o lo produce distorsionado, pero entonces podrá ajustar los niveles hacia abajo hasta oir _algo_ cuando se graba.
+En alsamixer, asegúrese de que todos los niveles del volumen, en la sección grabación, están activados, y que la modalidad *CAPTURE* del micrófono está activa (por ejemplo, Mic, -micrófono interno-) y/o sobre *capture* (en alsamixer, seleccione estos elementos en el primer espacio). Pruebe poner Mic Boost en positivo y aumentar al máximo los niveles de Capture y Digital; esto no produce sonido o lo produce distorsionado, pero entonces podrá ajustar los niveles hacia abajo hasta oir *algo* cuando se graba.
 
 En la medida que pulseaudio se muestra como «default» en alsamixer, puede ser necesario presionar F6 para seleccionar la propia tarjeta de sonido en primer lugar. También puede ser necesario activar y aumentar el volumen de Line-in (Línea de entrada) en la sección Playblack (reproducción).
 
@@ -866,7 +858,7 @@ Puede haber un problema con dos módulos cargados en conflicto, a saber `snd_int
 
  `/etc/modprobe.d/modprobe.conf`  `blacklist snd_intel8x0m` 
 
-_Deshabilitar_ el canal «External Amplifier» en `alsamixer` o `amixer` también puede ayudar. Consulte [la wiki de ALSA](http://alsa.opensrc.org/Intel8x0#Dell_Inspiron_8600_.28and_probably_others.29).
+*Deshabilitar* el canal «External Amplifier» en `alsamixer` o `amixer` también puede ayudar. Consulte [la wiki de ALSA](http://alsa.opensrc.org/Intel8x0#Dell_Inspiron_8600_.28and_probably_others.29).
 
 Activar el sonido en la configuración de «Mix» en el mezclador puede ayudar, también.
 
@@ -1030,7 +1022,7 @@ También puede probar con `modprobe snd_hda_intel power_save=0` antes.
 
 Puede que sea necesario también activar el canal 'Line' de alsa para que esto funcione. Cualquier valor puede servir (que no sea '0' o algo muy alto).
 
-_Ejemplo:_ en una tarjeta integrada VIA VT1708S (utilizando el módulo snd-hda-intel) estas distorsiones seguían presentes a pesar de haber ajustado el parámetro 'power_save' a 0\. Activando el canal 'Line' y estableciendo el valor '1' se resolvió el problema.
+*Ejemplo:* en una tarjeta integrada VIA VT1708S (utilizando el módulo snd-hda-intel) estas distorsiones seguían presentes a pesar de haber ajustado el parámetro 'power_save' a 0\. Activando el canal 'Line' y estableciendo el valor '1' se resolvió el problema.
 
 Fuente: [http://www.kernel.org/doc/Documentation/sound/alsa/powersave.txt](http://www.kernel.org/doc/Documentation/sound/alsa/powersave.txt)
 
@@ -1069,7 +1061,6 @@ $ xrandr --output DVI-D_1 --mode 1024x768 --right-of PANEL # enable output
 Utilice la orden `aplay -l` para descubrir el número de la tarjeta y del dispositivo. Por ejemplo:
 
  `$ aplay -l` 
-
 ```
  **** List of PLAYBACK Hardware Devices ****
  card 0: SB [HDA ATI SB], device 0: ALC892 Analog [ALC892 Analog]
@@ -1096,7 +1087,6 @@ Si «aplay» no emite ningún error, pero aún no hay ningún sonido, «reinicie
 Si la prueba tiene éxito, cree o modifique el archivo `~/.asoundrc` para establecer HDMI como el dispositivo de audio predeterminado.
 
  `~/.asoundrc` 
-
 ```
 pcm.!default {
   type hw
@@ -1109,7 +1099,6 @@ pcm.!default {
 O si la configuración de arriba no funciona, pruebe esto:
 
  `~/.asoundrc` 
-
 ```
 defaults.pcm.card 1
 defaults.pcm.device 3

@@ -80,9 +80,9 @@ These are the more popular scripts and tools designed to help power saving:
 
 ### ACPI events
 
-_systemd_ handles some power-related [ACPI](https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface "wikipedia:Advanced Configuration and Power Interface") events, whose actions can be configured in `/etc/systemd/logind.conf` or `/etc/systemd/logind.conf.d/*.conf` — see `man logind.conf`. On systems with no dedicated power manager, this may replace the [acpid](/index.php/Acpid "Acpid") daemon which is usually used to react to these ACPI events.
+*systemd* handles some power-related [ACPI](https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface "wikipedia:Advanced Configuration and Power Interface") events, whose actions can be configured in `/etc/systemd/logind.conf` or `/etc/systemd/logind.conf.d/*.conf` — see `man logind.conf`. On systems with no dedicated power manager, this may replace the [acpid](/index.php/Acpid "Acpid") daemon which is usually used to react to these ACPI events.
 
-The specified action for each event can be one of `ignore`, `poweroff`, `reboot`, `halt`, `suspend`, `hibernate`, `hybrid-sleep`, `lock` or `kexec`. In case of hibernation and suspension, they must be properly [set up](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate"). If an event is not configured, _systemd_ will use a default action.
+The specified action for each event can be one of `ignore`, `poweroff`, `reboot`, `halt`, `suspend`, `hibernate`, `hybrid-sleep`, `lock` or `kexec`. In case of hibernation and suspension, they must be properly [set up](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate"). If an event is not configured, *systemd* will use a default action.
 
 | Event handler | Description | Default action |
 | `HandlePowerKey` | Triggered when the power key/button is pressed. | `poweroff` |
@@ -93,30 +93,30 @@ The specified action for each event can be one of `ignore`, `poweroff`, `reboot`
 
 To apply any changes, [restart](/index.php/Restart "Restart") the `systemd-logind` daemon (be warned that this will terminate all login sessions that might still be open).
 
-**Note:** _systemd_ cannot handle AC and Battery ACPI events, so if you use [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") or other similar tools [acpid](/index.php/Acpid "Acpid") is still required.
+**Note:** *systemd* cannot handle AC and Battery ACPI events, so if you use [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") or other similar tools [acpid](/index.php/Acpid "Acpid") is still required.
 
 #### Power managers
 
-Some [desktop environments](/index.php/Desktop_environment "Desktop environment") include power managers which [inhibit](http://www.freedesktop.org/wiki/Software/systemd/inhibit/) (temporarily turn off) some or all of the _systemd_ ACPI settings. If such a power manager is running, then the actions for ACPI events can be configured in the power manager alone. Changes to `/etc/systemd/logind.conf` or `/etc/systemd/logind.conf.d/*.conf` need be made only if you wish to configure behaviour for a particular event that is not inhibited by the power manager.
+Some [desktop environments](/index.php/Desktop_environment "Desktop environment") include power managers which [inhibit](http://www.freedesktop.org/wiki/Software/systemd/inhibit/) (temporarily turn off) some or all of the *systemd* ACPI settings. If such a power manager is running, then the actions for ACPI events can be configured in the power manager alone. Changes to `/etc/systemd/logind.conf` or `/etc/systemd/logind.conf.d/*.conf` need be made only if you wish to configure behaviour for a particular event that is not inhibited by the power manager.
 
-Note that if the power manager does not inhibit _systemd_ for the appropriate events you can end up with a situation where _systemd_ suspends your system and then when the system is woken up the other power manager suspends it again. Currently, only the power managers of [KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME") and [Xfce](/index.php/Xfce "Xfce") issue the necessary _inhibited_ commands. If the _inhibited_ commands are not being issued, such as when using [acpid](/index.php/Acpid "Acpid") or others to handle ACPI events, set the `Handle` options to `ignore`. See also `man systemd-inhibit`.
+Note that if the power manager does not inhibit *systemd* for the appropriate events you can end up with a situation where *systemd* suspends your system and then when the system is woken up the other power manager suspends it again. Currently, only the power managers of [KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME") and [Xfce](/index.php/Xfce "Xfce") issue the necessary *inhibited* commands. If the *inhibited* commands are not being issued, such as when using [acpid](/index.php/Acpid "Acpid") or others to handle ACPI events, set the `Handle` options to `ignore`. See also `man systemd-inhibit`.
 
 #### xss-lock
 
-[xss-lock-git](https://aur.archlinux.org/packages/xss-lock-git/) subscribes to the systemd-events `suspend`, `hibernate`, `lock-session`, and `unlock-session` with appropriate actions (run locker and wait for user to unlock or kill locker). _xss-lock_ also reacts to the [X screensaver](/index.php/Display_Power_Management_Signaling#xset_screen-saver_control "Display Power Management Signaling") and runs or kills the locker in response to the x-server signals.
+[xss-lock-git](https://aur.archlinux.org/packages/xss-lock-git/) subscribes to the systemd-events `suspend`, `hibernate`, `lock-session`, and `unlock-session` with appropriate actions (run locker and wait for user to unlock or kill locker). *xss-lock* also reacts to the [X screensaver](/index.php/Display_Power_Management_Signaling#xset_screen-saver_control "Display Power Management Signaling") and runs or kills the locker in response to the x-server signals.
 
 Start xss-lock in your [autostart](/index.php/Autostart "Autostart"), for example
 
 ```
-xss-lock -- i3lock -n -i _background_image.png_ &
+xss-lock -- i3lock -n -i *background_image.png* &
 
 ```
 
 ### Suspend and hibernate
 
-_systemd_ provides commands for suspend to RAM, hibernate and a hybrid suspend using the kernel's native suspend/resume functionality. There are also mechanisms to add hooks to customize pre- and post-suspend actions.
+*systemd* provides commands for suspend to RAM, hibernate and a hybrid suspend using the kernel's native suspend/resume functionality. There are also mechanisms to add hooks to customize pre- and post-suspend actions.
 
-**Note:** _systemd_ can also use other suspend backends (such as [Uswsusp](/index.php/Uswsusp "Uswsusp") or [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")), in addition to the default _kernel_ backend, in order to put the computer to sleep or hibernate. See [Uswsusp#With systemd](/index.php/Uswsusp#With_systemd "Uswsusp") for an example.
+**Note:** *systemd* can also use other suspend backends (such as [Uswsusp](/index.php/Uswsusp "Uswsusp") or [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")), in addition to the default *kernel* backend, in order to put the computer to sleep or hibernate. See [Uswsusp#With systemd](/index.php/Uswsusp#With_systemd "Uswsusp") for an example.
 
 `systemctl suspend` should work out of the box, for `systemctl hibernate` to work on your system you need to follow the instructions at [Suspend and hibernate#Hibernation](/index.php/Suspend_and_hibernate#Hibernation "Suspend and hibernate").
 
@@ -126,14 +126,13 @@ _systemd_ provides commands for suspend to RAM, hibernate and a hybrid suspend u
 
 ### Sleep hooks
 
-_systemd_ does not use [pm-utils](/index.php/Pm-utils "Pm-utils") to put the machine to sleep when using `systemctl suspend`, `systemctl hibernate` or `systemctl hybrid-sleep`; _pm-utils_ hooks, including any [custom hooks](/index.php/Pm-utils#Creating_your_own_hooks "Pm-utils"), will not be run. However, _systemd_ provides two similar mechanisms to run custom scripts on these events.
+*systemd* does not use [pm-utils](/index.php/Pm-utils "Pm-utils") to put the machine to sleep when using `systemctl suspend`, `systemctl hibernate` or `systemctl hybrid-sleep`; *pm-utils* hooks, including any [custom hooks](/index.php/Pm-utils#Creating_your_own_hooks "Pm-utils"), will not be run. However, *systemd* provides two similar mechanisms to run custom scripts on these events.
 
 #### Suspend/resume service files
 
-Service files can be hooked into _suspend.target_, _hibernate.target_ and _sleep.target_ to execute actions before or after suspend/hibernate. Separate files should be created for user actions and root/system actions. [Enable](/index.php/Enable "Enable") the `suspend@_user_` and `resume@_user_` services to have them started at boot. Examples:
+Service files can be hooked into *suspend.target*, *hibernate.target* and *sleep.target* to execute actions before or after suspend/hibernate. Separate files should be created for user actions and root/system actions. [Enable](/index.php/Enable "Enable") the `suspend@*user*` and `resume@*user*` services to have them started at boot. Examples:
 
  `/etc/systemd/system/suspend@.service` 
-
 ```
 [Unit]
 Description=User suspend actions
@@ -150,9 +149,7 @@ ExecStartPost=/usr/bin/sleep 1
 [Install]
 WantedBy=sleep.target
 ```
-
  `/etc/systemd/system/resume@.service` 
-
 ```
 [Unit]
 Description=User resume actions
@@ -176,7 +173,6 @@ WantedBy=suspend.target
 For root/system actions ([enable](/index.php/Enable "Enable") the `root-resume` and `root-suspend` services to have them started at boot):
 
  `/etc/systemd/system/root-resume.service` 
-
 ```
 [Unit]
 Description=Local system resume actions
@@ -189,9 +185,7 @@ ExecStart=/usr/bin/systemctl restart mnt-media.automount
 [Install]
 WantedBy=suspend.target
 ```
-
  `/etc/systemd/system/root-suspend.service` 
-
 ```
 [Unit]
 Description=Local system suspend actions
@@ -207,7 +201,7 @@ WantedBy=sleep.target
 
 A couple of handy hints about these service files (more in `man systemd.service`):
 
-*   If `Type=oneshot` then you can use multiple `ExecStart=` lines. Otherwise only one `ExecStart` line is allowed. You can add more commands with either `ExecStartPre` or by separating commands with a semicolon (see the first example above; note the spaces before and after the semicolon, as they are _required_).
+*   If `Type=oneshot` then you can use multiple `ExecStart=` lines. Otherwise only one `ExecStart` line is allowed. You can add more commands with either `ExecStartPre` or by separating commands with a semicolon (see the first example above; note the spaces before and after the semicolon, as they are *required*).
 *   A command prefixed with `-` will cause a non-zero exit status to be ignored and treated as a successful command.
 *   The best place to find errors when troubleshooting these service files is of course with [journalctl](/index.php/Journalctl "Journalctl").
 
@@ -218,7 +212,6 @@ With the combined suspend/resume service file, a single hook does all the work f
 Example and explanation:
 
  `/etc/systemd/system/wicd-sleep.service` 
-
 ```
 [Unit]
 Description=Wicd sleep hook
@@ -236,8 +229,8 @@ WantedBy=sleep.target
 ```
 
 *   `RemainAfterExit=yes`: After started, the service is considered active until it is explicitly stopped.
-*   `StopWhenUnneeded=yes`: When active, the service will be stopped if no other active service requires it. In this specific example, it will be stopped after _sleep.target_ is stopped.
-*   Because _sleep.target_ is pulled in by _suspend.target_, _hibernate.target_ and _hybrid-sleep.target_ and _sleep.target_ itself is a _StopWhenUnneeded_ service, the hook is guaranteed to start/stop properly for different tasks.
+*   `StopWhenUnneeded=yes`: When active, the service will be stopped if no other active service requires it. In this specific example, it will be stopped after *sleep.target* is stopped.
+*   Because *sleep.target* is pulled in by *suspend.target*, *hibernate.target* and *hybrid-sleep.target* and *sleep.target* itself is a *StopWhenUnneeded* service, the hook is guaranteed to start/stop properly for different tasks.
 
 #### Delayed hibernation service file
 
@@ -246,7 +239,6 @@ An alternative approach is delayed hibernation. This makes use of sleep hooks to
 A slightly updated version of the service is:
 
  `/etc/systemd/system/suspend-to-hibernate.service` 
-
 ```
 [Unit]
 Description=Delayed hibernation trigger
@@ -285,26 +277,25 @@ The `Before` and `Conflicts` options ensure it only is run for suspension and no
 
 #### Hooks in /usr/lib/systemd/system-sleep
 
-_systemd_ runs all executables in `/usr/lib/systemd/system-sleep/`, passing two arguments to each of them:
+*systemd* runs all executables in `/usr/lib/systemd/system-sleep/`, passing two arguments to each of them:
 
 *   Argument 1: either `pre` or `post`, depending on whether the machine is going to sleep or waking up
 *   Argument 2: `suspend`, `hibernate` or `hybrid-sleep`, depending on which is being invoked
 
-In contrast to [pm-utils](/index.php/Pm-utils "Pm-utils"), _systemd_ will run these scripts concurrently and not one after another.
+In contrast to [pm-utils](/index.php/Pm-utils "Pm-utils"), *systemd* will run these scripts concurrently and not one after another.
 
-The output of any custom script will be logged by _systemd-suspend.service_, _systemd-hibernate.service_ or _systemd-hybrid-sleep.service_. You can see its output in _systemd_'s [journal](/index.php/Systemd#Journal "Systemd"):
+The output of any custom script will be logged by *systemd-suspend.service*, *systemd-hibernate.service* or *systemd-hybrid-sleep.service*. You can see its output in *systemd*'s [journal](/index.php/Systemd#Journal "Systemd"):
 
 ```
 # journalctl -b -u systemd-suspend
 
 ```
 
-**Note:** You can also use _sleep.target_, _suspend.target_, _hibernate.target_ or _hybrid-sleep.target_ to hook units into the sleep state logic instead of using custom scripts.
+**Note:** You can also use *sleep.target*, *suspend.target*, *hibernate.target* or *hybrid-sleep.target* to hook units into the sleep state logic instead of using custom scripts.
 
 An example of a custom sleep script:
 
  `/usr/lib/systemd/system-sleep/example.sh` 
-
 ```
 #!/bin/sh
 case $1/$2 in
@@ -330,10 +321,9 @@ See `man 7 systemd.special` and `man 8 systemd-sleep` for more details.
 
 #### Delayed lid switch action
 
-When performing lid switches in short succession, _logind_ will delay the suspend action for up to 90s to detect possible docks. [[1]](http://lists.freedesktop.org/archives/systemd-devel/2015-January/027131.html) This delay was made configurable with systemd v220:[[2]](https://github.com/systemd/systemd/commit/9d10cbee89ca7f82d29b9cb27bef11e23e3803ba)
+When performing lid switches in short succession, *logind* will delay the suspend action for up to 90s to detect possible docks. [[1]](http://lists.freedesktop.org/archives/systemd-devel/2015-January/027131.html) This delay was made configurable with systemd v220:[[2]](https://github.com/systemd/systemd/commit/9d10cbee89ca7f82d29b9cb27bef11e23e3803ba)
 
  `/etc/systemd/logind.conf` 
-
 ```
 ...
 HoldoffTimeoutSec=30s
@@ -373,7 +363,6 @@ ATTRS{name}=="AT Translated Set 2 keyboard"
 Now write a custom udev rule to add the "power-switch" tag:
 
  `/etc/udev/rules.d/70-power-switch-my.rules` 
-
 ```
 ACTION=="remove", GOTO="power_switch_my_end"
 SUBSYSTEM=="input", KERNEL=="event*", ATTRS{name}=="AT Translated Set 2 keyboard", TAG+="power-switch"
@@ -436,7 +425,6 @@ To turn off bluetooth only temporarily, use [rfkill](https://www.archlinux.org/p
 Or with udev rule:
 
  `/etc/udev/rules.d/50-bluetooth.rules` 
-
 ```
 # disable bluetooth
 SUBSYSTEM=="rfkill", ATTR{type}=="bluetooth", ATTR{state}="0"
@@ -451,7 +439,7 @@ If you will not use integrated web camera then [blacklist](/index.php/Kernel_mod
 
 ### Kernel parameters
 
-This section uses configs in `/etc/sysctl.d/`, which is _"a drop-in directory for kernel sysctl parameters."_ See [The New Configuration Files](http://0pointer.de/blog/projects/the-new-configuration-files) and more specifically [systemd's sysctl.d man page](http://0pointer.de/public/systemd-man/sysctl.d.html) for more information.
+This section uses configs in `/etc/sysctl.d/`, which is *"a drop-in directory for kernel sysctl parameters."* See [The New Configuration Files](http://0pointer.de/blog/projects/the-new-configuration-files) and more specifically [systemd's sysctl.d man page](http://0pointer.de/public/systemd-man/sysctl.d.html) for more information.
 
 #### Disabling NMI watchdog
 
@@ -473,7 +461,7 @@ See also [sysctl#Virtual memory](/index.php/Sysctl#Virtual_memory "Sysctl") for 
 
 #### Laptop Mode
 
-See the [kernel documentation](https://www.kernel.org/doc/Documentation/laptops/laptop-mode.txt) on the laptop mode 'knob.' _"A sensible value for the knob is 5 seconds."_
+See the [kernel documentation](https://www.kernel.org/doc/Documentation/laptops/laptop-mode.txt) on the laptop mode 'knob.' *"A sensible value for the knob is 5 seconds."*
 
  `/etc/sysctl.d/laptop.conf`  `vm.laptop_mode = 5` 
 
@@ -538,16 +526,14 @@ The linux kernel can automatically suspend USB devices when they are not in use.
 The most simple and likely useless example is enabling autosuspend for all USB devices:
 
  `/etc/udev/rules.d/50-usb_power_save.rules` 
-
 ```
 ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="auto"
 
 ```
 
-To allow autosuspend only for devices that are known to work, use simple matching against vendor and product IDs (use _lsusb_ to get these values):
+To allow autosuspend only for devices that are known to work, use simple matching against vendor and product IDs (use *lsusb* to get these values):
 
  `/etc/udev/rules.d/50-usb_power_save.rules` 
-
 ```
 # whitelist for usb autosuspend
 ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{idVendor}=="05c6", ATTR{idProduct}=="9205", ATTR{power/control}="auto"
@@ -557,7 +543,6 @@ ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{idVendor}=="05c6", 
 Alternatively, to blacklist devices that are not working with USB autosuspend and enable it for all other devices:
 
  `/etc/udev/rules.d/50-usb_power_save.rules` 
-
 ```
 # blacklist for usb autosuspend
 ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", ATTR{idProduct}=="9205", GOTO="power_usb_rules_end"
@@ -570,7 +555,6 @@ LABEL="power_usb_rules_end"
 The default autosuspend idle delay time is controlled by the `autosuspend` parameter of the `usbcore` [kernel module](/index.php/Kernel_module "Kernel module"). To set the delay to 5 seconds instead of the default 2 seconds:
 
  `/etc/modprobe.d/usb-autosuspend.conf` 
-
 ```
 options usbcore autosuspend=5
 
@@ -583,7 +567,6 @@ See the [Linux kernel documentation](https://www.kernel.org/doc/Documentation/us
 #### SATA Active Link Power Management
 
 **Note:** This adds latency when accessing a drive that has been idle, so it is one of the few settings that may be worth toggling based on whether you are on AC power.
-
  `/etc/udev/rules.d/hd_power_save.rules`  `ACTION=="add", SUBSYSTEM=="scsi_host", KERNEL=="host*", ATTR{link_power_management_policy}="min_power"` 
 **Warning:** SATA Active Link Power Management can lead to data loss on some devices (e.g. Lenovo T440s [is known to suffer](http://lkml.indiana.edu/hypermail/linux/kernel/1401.2/02171.html) this problem)
 
@@ -606,14 +589,13 @@ See [Udisks#udisks: Devices do not remain unmounted](/index.php/Udisks#udisks:_D
 Since systemd users can suspend and hibernate through `systemctl suspend` or `systemctl hibernate` and handle acpi events with `/etc/systemd/logind.conf`, it might be interesting to remove [pm-utils](/index.php/Pm-utils "Pm-utils") and [acpid](/index.php/Acpid "Acpid"). There is just one thing systemd cannot do (as of systemd-204): power management depending on whether the system is running on AC or battery. To fill this gap, you can create a single [udev](/index.php/Udev "Udev") rule that runs a script when the AC adapter is plugged and unplugged:
 
  `/etc/udev/rules.d/powersave.rules` 
-
 ```
 SUBSYSTEM=="power_supply", ATTR{online}=="0", RUN+="/path/to/your/script true"
 SUBSYSTEM=="power_supply", ATTR{online}=="1", RUN+="/path/to/your/script false"
 
 ```
 
-**Note:** You can use the same script that _pm-powersave_ uses. You just have to make it executable and place it somewhere else (for example `/usr/local/bin/`).
+**Note:** You can use the same script that *pm-powersave* uses. You just have to make it executable and place it somewhere else (for example `/usr/local/bin/`).
 
 Examples of powersave scripts:
 
@@ -623,7 +605,6 @@ Examples of powersave scripts:
 The above udev rule should work as expected, but if your power settings are not updated after a suspend or hibernate cycle, you should add a script in `/usr/lib/systemd/system-sleep/` with the following contents:
 
  `/usr/lib/systemd/system-sleep/00powersave` 
-
 ```
 #!/bin/sh
 
@@ -662,17 +643,25 @@ do
 	devnum=$(<$busdir/devnum)
 	title=$(lsusb -s $busnum:$devnum)
 
-	printf "\n\n+++ %s\n  -%s\n" "$title" "$busdir"
+	printf "
+
++++ %s
+  -%s
+" "$title" "$busdir"
 
 	for ff in $(find $busdir/power -type f ! -empty 2>/dev/null)
 	do
-		v=$(cat $ff 2>/dev/null|tr -d "\n")
+		v=$(cat $ff 2>/dev/null|tr -d "
+")
 		[[ ${#v} -gt 0 ]] && echo -e " ${ff##*/}=$v";
 		v=;
 	done | sort -g;
 done;
 
-printf "\n\n\n+++ %s\n" "Kernel Modules"
+printf "
+
++++ %s
+" "Kernel Modules"
 for mod in $(lspci -k | sed -n '/in use:/s,^.*: ,,p' | sort -u)
 do
 	echo "+ $mod";

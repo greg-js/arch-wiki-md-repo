@@ -150,7 +150,7 @@ Delete the servers entry from `~/.ssh/known_hosts` file and retry to authenticat
 
 ### No selection screen in x2goclient
 
-A regression in [iproute2](https://www.archlinux.org/packages/?name=iproute2) causes _ss_ to show no result when specifying the `-u` flag, as done in `/usr/bin/x2golistdesktops`. [[1]](https://marc.info/?l=linux-netdev&m=143018447007958&w=2)
+A regression in [iproute2](https://www.archlinux.org/packages/?name=iproute2) causes *ss* to show no result when specifying the `-u` flag, as done in `/usr/bin/x2golistdesktops`. [[1]](https://marc.info/?l=linux-netdev&m=143018447007958&w=2)
 
 See [[2]](http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=799), [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1541035) for more information.
 

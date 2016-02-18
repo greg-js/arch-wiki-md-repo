@@ -60,19 +60,18 @@ Arch users with the same laptop as you are: a minority of a minority of a minori
 
 ## Recompiling it yourself
 
-Your best resources in this endeavor are going to be [The Gentoo wiki article](http://en.gentoo-wiki.com/wiki/ACPI/Fix_common_problems), [ACPI Spec homepage](http://www.acpi.info), and [Linux ACPI Project](http://www.lesswatts.org/projects/acpi/) which supercedes the activity that occurred at _acpi.sourceforge.net_. In a nutshell, you can use Intel's ASL compiler to turn your systems DSDT table into source code, locate/fix the errors, and recompile. This process is detailed more comprehensively at the [Gentoo wiki](http://en.gentoo-wiki.com/wiki/ACPI/Fix_common_problems). You'll need to install [iasl](https://www.archlinux.org/packages/?name=iasl) to modify code, and be familiar with [Kernel Compilation#Compilation](/index.php/Kernel_Compilation#Compilation "Kernel Compilation") to install it.
+Your best resources in this endeavor are going to be [The Gentoo wiki article](http://en.gentoo-wiki.com/wiki/ACPI/Fix_common_problems), [ACPI Spec homepage](http://www.acpi.info), and [Linux ACPI Project](http://www.lesswatts.org/projects/acpi/) which supercedes the activity that occurred at *acpi.sourceforge.net*. In a nutshell, you can use Intel's ASL compiler to turn your systems DSDT table into source code, locate/fix the errors, and recompile. This process is detailed more comprehensively at the [Gentoo wiki](http://en.gentoo-wiki.com/wiki/ACPI/Fix_common_problems). You'll need to install [iasl](https://www.archlinux.org/packages/?name=iasl) to modify code, and be familiar with [Kernel Compilation#Compilation](/index.php/Kernel_Compilation#Compilation "Kernel Compilation") to install it.
 
 **What compiled the original code?** Check if your system's DSDT was compiled using Intel or Microsoft compiler:
 
  ` $ dmesg|grep DSDT ` 
-
 ```
 ACPI: DSDT 00000000bf7e5000 0A35F (v02 Intel  CALPELLA 06040000 INTL 20060912)
 ACPI: EC: Look up EC in DSDT
 
 ```
 
-In case Microsoft's compiler had been used, abbreviation INTL would instead be MSFT. In the example, there were 5 errors on decompiling/recompiling the DSDT. Two of them were easy to fix after a bit of googling and delving into the ACPI specification. Three of them were due to different versions of compiler used and are, as later discovered, handled by the ACPICA at boot-time. The ACPICA component of the kernel can handle most of the trivial errors you get while compiling the DSDT. So do not fret yourself over compile errors if your system is _working the way it should_.
+In case Microsoft's compiler had been used, abbreviation INTL would instead be MSFT. In the example, there were 5 errors on decompiling/recompiling the DSDT. Two of them were easy to fix after a bit of googling and delving into the ACPI specification. Three of them were due to different versions of compiler used and are, as later discovered, handled by the ACPICA at boot-time. The ACPICA component of the kernel can handle most of the trivial errors you get while compiling the DSDT. So do not fret yourself over compile errors if your system is *working the way it should*.
 
 1.) Extract ACPI tables (as root): `# cat /sys/firmware/acpi/tables/DSDT > dsdt.dat`
 
@@ -81,12 +80,10 @@ In case Microsoft's compiler had been used, abbreviation INTL would instead be M
 3.) Recompile: `iasl -tc dsdt.dsl`
 
 4.) Examine errors and fix. e.g.:
-
 ```
 dsdt.dsl   6727:                         Name (_PLD, Buffer (0x10)  
 Error    4105 -          Invalid object type for reserved name ^  (found BUFFER, requires Package) 
 ```
-
  ` nano +6727 dsdt.dsl`  `(_PLD, Package(1) {Buffer (0x10)...` 
 
 5.) Compile fixed code: `iasl -tc dsdt.dsl` (Might want to try option -ic for C include file to insert into kernel source)

@@ -1,4 +1,4 @@
-En un sistema operativo, el reloj (_«clock»_) está determinado por cuatro partes: el valor del horario, la hora estándar, la zona horaria y el horario de verano (-DST- **D**aylight **S**aving **T**ime, si corresponde). En este artículo se explica qué son y cómo leer/configurar los mismos. Para _mantener_ la hora del sistema ajustada mediante la red consulte [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon_(Espa%C3%B1ol) "Network Time Protocol daemon (Español)").
+En un sistema operativo, el reloj (*«clock»*) está determinado por cuatro partes: el valor del horario, la hora estándar, la zona horaria y el horario de verano (-DST- **D**aylight **S**aving **T**ime, si corresponde). En este artículo se explica qué son y cómo leer/configurar los mismos. Para *mantener* la hora del sistema ajustada mediante la red consulte [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon_(Espa%C3%B1ol) "Network Time Protocol daemon (Español)").
 
 ## Contents
 
@@ -52,7 +52,7 @@ El comportamiento normal de la mayoría de los sistemas operativos es el siguien
 
 **Note:** [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") utilizará UTC para el reloj del hardware por defecto.
 
-Hay dos estándares de tiempo: **localtime** y **C**oordinated **U**niversal **T**ime (**UTC**). La hora local (_«localtime»_) estándar depende de la actual _zona horaria_, mientras que UTC es el horario _mundial_ estándar y es independiente de los valores de la zona horaria. Aunque conceptualmente diferentes, UTC es también conocido como GMT (Greenwich Mean Time).
+Hay dos estándares de tiempo: **localtime** y **C**oordinated **U**niversal **T**ime (**UTC**). La hora local (*«localtime»*) estándar depende de la actual *zona horaria*, mientras que UTC es el horario *mundial* estándar y es independiente de los valores de la zona horaria. Aunque conceptualmente diferentes, UTC es también conocido como GMT (Greenwich Mean Time).
 
 El estándar utilizado por el reloj de hardware (reloj CMOS, la hora que aparece en la BIOS) se define por el sistema operativo. De manera predeterminada, Windows utiliza localtime, Mac OS utiliza UTC y varios sistemas operativos como UNIX. Un sistema operativo que utiliza el estándar UTC, por lo general, considera que el horario CMOS (el reloj del hardware) usa el horario UTC (GMT, hora de Greenwich) y lo reajusta, para que al configurarse la hora del sistema en el arranque esta coincida con la zona horaria.
 
@@ -89,7 +89,7 @@ Durante el inicio del kernel, en el momento en que el controlador RTC está carg
 
 ### UTC en Windows
 
-Una razón por la que los usuarios a menudo establecen RTC en localtime es para un [arranque dual con Windows](/index.php/Windows_and_Arch_Dual_Boot "Windows and Arch Dual Boot") ([que utiliza localtime](http://blogs.msdn.com/b/oldnewthing/archive/2004/09/02/224672.aspx)). Sin embargo, Windows puede hacer frente a RTC estando en UTC con un simple [ajuste del registro](#UTC_en_Windows). Es recomendable configurar Windows para que use UTC, en lugar de configurar Linux para que use localtime. Si configura Windows para que use UTC, recuerde también desactivar la función de Windows _«Internet Time Update»_, para que Windows no interfiera en el reloj del hardware, tratando de sincronizarlo con el horario de Internet. En su lugar considere usar [NTP](/index.php/Network_Time_Protocol_daemon_(Espa%C3%B1ol) "Network Time Protocol daemon (Español)") para modificar RTC y sincronizarlo con el horario de internet.
+Una razón por la que los usuarios a menudo establecen RTC en localtime es para un [arranque dual con Windows](/index.php/Windows_and_Arch_Dual_Boot "Windows and Arch Dual Boot") ([que utiliza localtime](http://blogs.msdn.com/b/oldnewthing/archive/2004/09/02/224672.aspx)). Sin embargo, Windows puede hacer frente a RTC estando en UTC con un simple [ajuste del registro](#UTC_en_Windows). Es recomendable configurar Windows para que use UTC, en lugar de configurar Linux para que use localtime. Si configura Windows para que use UTC, recuerde también desactivar la función de Windows *«Internet Time Update»*, para que Windows no interfiera en el reloj del hardware, tratando de sincronizarlo con el horario de Internet. En su lugar considere usar [NTP](/index.php/Network_Time_Protocol_daemon_(Espa%C3%B1ol) "Network Time Protocol daemon (Español)") para modificar RTC y sincronizarlo con el horario de internet.
 
 Utilice `regedit`, y añada un valor `DWORD` con el parámetro hexadecimal `1` en el registro:
 
@@ -108,7 +108,7 @@ Windows Registry Editor Version 5.00
 
 ```
 
-Windows XP y Windows Vista SP1 están habilitados para establecer el horario estándar usando UTC y activarse de la misma manera. Sin embargo, se produce un error después de reanudar desde el modo de suspensión/hibernación que hace que recoloque en _localtime_ el reloj. Para estos sistemas operativos se recomienda usar _localtime_.
+Windows XP y Windows Vista SP1 están habilitados para establecer el horario estándar usando UTC y activarse de la misma manera. Sin embargo, se produce un error después de reanudar desde el modo de suspensión/hibernación que hace que recoloque en *localtime* el reloj. Para estos sistemas operativos se recomienda usar *localtime*.
 
 En el caso de que Windows intente actualizar el reloj siguiendo los cambios de DTS, permítalo. Dejará el reloj en UTC como se esperaba, corrigiendo solamente la hora visualizada.
 
@@ -162,7 +162,7 @@ Véase `man 1 timedatectl`, `man 5 localtime`, y `man 7 archlinux` para más det
 
 ## Desviación del horario
 
-Cada reloj tiene un valor que difiere del _horario actual_ (la mejor representación sigue siendo el [Tiempo Atómico Internacional](https://en.wikipedia.org/wiki/es:Tiempo_At%C3%B3mico_Internacional "wikipedia:es:Tiempo Atómico Internacional")); no hay reloj perfecto. Un reloj electrónico basado en cuarzo mantiene un horaro imperfecto, pero mantiene una inexactitud constante. Esta base de «inexactitud» es lo que se conoce como «tiempo sesgado» o «tiempo de desviación».
+Cada reloj tiene un valor que difiere del *horario actual* (la mejor representación sigue siendo el [Tiempo Atómico Internacional](https://en.wikipedia.org/wiki/es:Tiempo_At%C3%B3mico_Internacional "wikipedia:es:Tiempo Atómico Internacional")); no hay reloj perfecto. Un reloj electrónico basado en cuarzo mantiene un horaro imperfecto, pero mantiene una inexactitud constante. Esta base de «inexactitud» es lo que se conoce como «tiempo sesgado» o «tiempo de desviación».
 
 Cuando el reloj del hardware está configurado con `hwclock`, la aplicación calcula un valor de desviación nuevo en segundos por día. El valor de desviación se calcula mediante la diferencia entre el nuevo valor y el valor del reloj del hardware justo antes del ajuste, teniendo en cuenta para fijar el nuevo valor, el valor de desviación anterior y la última vez que se ajustó el reloj del hardware. El nuevo valor de la desviación y el momento en que se ajustó el reloj, se registran en el archivo `/etc/adjtime`, sobreescribiendo los valores anteriores. El reloj del hardware, por lo tanto, se ajusta, para que sirva de referencia a la desviación, cuando se ejecuta la orden `hwclock --adjust`, lo cual ocurre también en el apagado, pero solo si el demonio `hwclock` está habilitado (por lo tanto, para sistemas que utilizan systemd , esto no sucede).
 
@@ -174,7 +174,7 @@ Si el reloj de hardware mantiene pérdidas o incrementos de tiempo grandes, es p
 
 El reloj del software es muy preciso, pero, como la mayoría de los relojes, no es totalmente preciso y se desvía también. Aunque rara vez, el reloj del sistema puede perder precisión si el kernel omite las interrupciones. Hay algunas herramientas para mejorar la precisión del rejoj del software:
 
-*   [NTP](/index.php/Network_Time_Protocol_daemon_(Espa%C3%B1ol) "Network Time Protocol daemon (Español)") puede sincronizar el reloj del software de un sistema GNU/Linux con servidores de hora de internet utilizando el protocolo de tiempo de red ([_«Network Time Protocol»_](https://en.wikipedia.org/wiki/es:Network_Time_Protocol "wikipedia:es:Network Time Protocol")). NTP también puede ajustar la frecuencia de interrupción y el número de pasos por segundo para reducir la deriva del reloj del sistema. La ejecución de NTP también hará que el reloj del hardware está resincronizado cada 11 minutos.
+*   [NTP](/index.php/Network_Time_Protocol_daemon_(Espa%C3%B1ol) "Network Time Protocol daemon (Español)") puede sincronizar el reloj del software de un sistema GNU/Linux con servidores de hora de internet utilizando el protocolo de tiempo de red ([*«Network Time Protocol»*](https://en.wikipedia.org/wiki/es:Network_Time_Protocol "wikipedia:es:Network Time Protocol")). NTP también puede ajustar la frecuencia de interrupción y el número de pasos por segundo para reducir la deriva del reloj del sistema. La ejecución de NTP también hará que el reloj del hardware está resincronizado cada 11 minutos.
 *   [adjtimex](https://aur.archlinux.org/packages/adjtimex/) en [AUR](/index.php/Arch_User_Repository "Arch User Repository") puede interpretar las variaciones de tiempo del kernel como frecuencias de interrupción, para ayudar a mejorar la deriva del horario del reloj del sistema.
 
 ## Solución de problemas

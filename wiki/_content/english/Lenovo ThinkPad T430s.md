@@ -24,7 +24,6 @@ The following are known problems and workarounds for the Lenovo Thinkpad T430s, 
 [Xbindkeys](/index.php/Xbindkeys "Xbindkeys") or [sxhkd](/index.php/Sxhkd "Sxhkd") can be used to create and modify keyboard bindings. The following example requires the [xorg-xset](https://www.archlinux.org/packages/?name=xorg-xset) package, and turns the display off when the rectangular button to the right of the microphone mute button is pressed.
 
  `~/.xinbkeysrc` 
-
 ```
 # Close display
 "xset dpms force off"

@@ -1,6 +1,6 @@
 Tato stránka vás provede procesem instalace [Arch Linuxu](/index.php/Arch_Linux_(%C4%8Cesky) "Arch Linux (Česky)") pomocí [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Před instalací si prosím pročtěte [často kladené otázky](/index.php/FAQ_(%C4%8Cesky) "FAQ (Česky)"). Pokud hledáte podrobnější a více vysvětlující příručku, navštivte [příručku začátečníka](/index.php/Beginners%27_Guide_(%C4%8Cesky) "Beginners' Guide (Česky)").
 
-Komunitou spravovaná [ArchWiki](/index.php/Main_Page_(%C4%8Cesky) "Main Page (Česky)") je výborným zdrojem dokumentace, řešení problémů hledejte nejdříve zde. Pokud nemůžete nalézt řešení problému, jsou vám k dispozici [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanál ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) a [fórum](https://bbs.archlinux.org/). Určitě také pročtěte manuálové stránky jakéhokoli příkazu, který vám není povědomý; manuálové stránky se obvykle prohlíží příkazem `man _command_`.
+Komunitou spravovaná [ArchWiki](/index.php/Main_Page_(%C4%8Cesky) "Main Page (Česky)") je výborným zdrojem dokumentace, řešení problémů hledejte nejdříve zde. Pokud nemůžete nalézt řešení problému, jsou vám k dispozici [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanál ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) a [fórum](https://bbs.archlinux.org/). Určitě také pročtěte manuálové stránky jakéhokoli příkazu, který vám není povědomý; manuálové stránky se obvykle prohlíží příkazem `man *command*`.
 
 ## Contents
 
@@ -169,7 +169,7 @@ Arch Linux používá init systém [systemd](/index.php/Systemd "Systemd"), kter
 
 ### Zvuk
 
-[ALSA](/index.php/ALSA_(%C4%8Cesky) "ALSA (Česky)") obvykle funguje bez jakékoli konfigurace. Jen je potřeba ji zapnout (_unmute_). Nainstalujte balíček [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) (který obsahuje `alsamixer`) a následujte [tyto](/index.php/Advanced_Linux_Sound_Architecture#Unmuting_the_channels "Advanced Linux Sound Architecture") instrukce.
+[ALSA](/index.php/ALSA_(%C4%8Cesky) "ALSA (Česky)") obvykle funguje bez jakékoli konfigurace. Jen je potřeba ji zapnout (*unmute*). Nainstalujte balíček [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) (který obsahuje `alsamixer`) a následujte [tyto](/index.php/Advanced_Linux_Sound_Architecture#Unmuting_the_channels "Advanced Linux Sound Architecture") instrukce.
 
 ALSA je obsažena v kernelu a je to doporučený systém. Pokud nefunguje, můžete zkusit [OSS](/index.php/OSS "OSS"). Pokud máte na zvuk zvláštní požadavky, podívejte se na [Sound system](/index.php/Sound_system "Sound system") pro přehled různých článků.
 

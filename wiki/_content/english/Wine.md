@@ -1,4 +1,4 @@
-[Wine](https://en.wikipedia.org/wiki/Wine_(software) "wikipedia:Wine (software)") is a _compatibility layer_ capable of running Microsoft Windows applications on Unix-like operating systems. Programs running in Wine act as native programs would, without the performance/memory penalties of an emulator. See the [official project home](http://www.winehq.org/) and [wiki](https://wiki.winehq.org/) pages for longer introduction.
+[Wine](https://en.wikipedia.org/wiki/Wine_(software) is a *compatibility layer* capable of running Microsoft Windows applications on Unix-like operating systems. Programs running in Wine act as native programs would, without the performance/memory penalties of an emulator. See the [official project home](http://www.winehq.org/) and [wiki](https://wiki.winehq.org/) pages for longer introduction.
 
 ## Contents
 
@@ -67,12 +67,12 @@ Configuring Wine is typically accomplished using:
 
 *   [winecfg](https://wiki.winehq.org/Winecfg) is a GUI configuration tool for Wine. You can run it from a console window with: `$ wine winecfg`, or `$ WINEPREFIX=~/.some_prefix wine winecfg`.
 *   `control.exe` is Wine's implementation of Windows' Control Panel which can be accessed with: `$ wine control`.
-*   [regedit](https://wiki.winehq.org/FAQ#How_do_I_edit_the_Wine_registry.3F) is Wine's registry editing tool. If _winecfg_ and the Control Panel are not enough, see WineHQ's article on [Useful Registry Keys](https://wiki.winehq.org/Useful_Registry_Keys).
+*   [regedit](https://wiki.winehq.org/FAQ#How_do_I_edit_the_Wine_registry.3F) is Wine's registry editing tool. If *winecfg* and the Control Panel are not enough, see WineHQ's article on [Useful Registry Keys](https://wiki.winehq.org/Useful_Registry_Keys).
 *   See WineHQ's [List of Commands](https://wiki.winehq.org/List_of_Commands) for the full list.
 
 ### WINEPREFIX
 
-By default, Wine stores its configuration files and installed Windows programs in `~/.wine`. This directory is commonly called a "Wine prefix" or "Wine bottle". It is created/updated automatically whenever you run a Windows program or one of Wine's bundled programs such as _winecfg_. The prefix directory also contains a tree which your Windows programs will see as `C:` (the C-drive).
+By default, Wine stores its configuration files and installed Windows programs in `~/.wine`. This directory is commonly called a "Wine prefix" or "Wine bottle". It is created/updated automatically whenever you run a Windows program or one of Wine's bundled programs such as *winecfg*. The prefix directory also contains a tree which your Windows programs will see as `C:` (the C-drive).
 
 You can override the location Wine uses for a prefix with the `WINEPREFIX` environment variable. This is useful if you want to use separate configurations for different Windows programs. The first time a program is run with a new Wine prefix, Wine will automatically create a directory with a bare C-drive and registry.
 
@@ -101,7 +101,7 @@ $ WINEPREFIX=~/win64 winecfg
 
 **Note:** During prefix creation, the 64-bit version of Wine treats all folders as 64-bit prefixes and will not create a 32-bit in any existing folder. To create a 32-bit prefix you have to let Wine create the folder specified in `WINEPREFIX`. See WineHQ bug [29661](https://bugs.winehq.org/show_bug.cgi?id=29661)
 
-You can also use `WINEARCH` in combination with other Wine programs, such as _winetricks_ (using Steam as an example):
+You can also use `WINEARCH` in combination with other Wine programs, such as *winetricks* (using Steam as an example):
 
 ```
 WINEARCH=win32 WINEPREFIX=~/.local/share/wineprefixes/steam winetricks steam
@@ -127,19 +127,19 @@ Direct rendering is disabled, most likely your OpenGL drivers have not been inst
 
 ```
 
-For 64-bit systems, additional [multilib](/index.php/Multilib "Multilib") packages are required. Please install the one that is listed in the _Multilib Package_ column in the table in [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg").
+For 64-bit systems, additional [multilib](/index.php/Multilib "Multilib") packages are required. Please install the one that is listed in the *Multilib Package* column in the table in [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg").
 
 **Note:** You might need to restart X after having installed the correct library.
 
 ### Sound
 
-By default sound issues may arise when running Wine applications. Ensure only one sound device is selected in _winecfg_. Currently, the [Alsa](/index.php/Alsa "Alsa") driver is the best supported.
+By default sound issues may arise when running Wine applications. Ensure only one sound device is selected in *winecfg*. Currently, the [Alsa](/index.php/Alsa "Alsa") driver is the best supported.
 
 *   If you want to use the [ALSA](/index.php/ALSA "ALSA") driver in Wine on a 64-bit system, you will need to install [lib32-alsa-lib](https://www.archlinux.org/packages/?name=lib32-alsa-lib) and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins).
 *   If you want to use the [PulseAudio](/index.php/PulseAudio "PulseAudio") driver in Wine, you will need to install the [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) package.
 *   If you want to use the [OSS](/index.php/OSS "OSS") driver in Wine, you will need to install the [lib32-alsa-oss](https://www.archlinux.org/packages/?name=lib32-alsa-oss) package. The OSS driver in the kernel will not suffice.
 
-If _winecfg_ **still** fails to detect the audio driver (Selected driver: (none)), [configure it via the registry](http://wine-wiki.org/index.php/Wine_Registry#Configuring_Sound).
+If *winecfg* **still** fails to detect the audio driver (Selected driver: (none)), [configure it via the registry](http://wine-wiki.org/index.php/Wine_Registry#Configuring_Sound).
 
 Games that use advanced sound systems may require installations of [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal).
 
@@ -184,16 +184,15 @@ When a Windows application installer creates a shortcut Wine creates a `.desktop
 
 **Note:** Wine does not support installing Windows applications for all users, so it will not put `.desktop` files in `/usr/share/applications`. See WineHQ bug [11112](https://bugs.winehq.org/show_bug.cgi?id=11112)
 
-**Tip:** If menu items were _not_ created while installing software or have been lost, `wine winemenubuilder` may be of some use.
+**Tip:** If menu items were *not* created while installing software or have been lost, `wine winemenubuilder` may be of some use.
 
 #### Creating menu entries for Wine utilities
 
-By default, installation of Wine does not create desktop menus/icons for the software which comes with Wine (e.g. for _winecfg_, _winebrowser_, etc). These instructions will add entries for these applications.
+By default, installation of Wine does not create desktop menus/icons for the software which comes with Wine (e.g. for *winecfg*, *winebrowser*, etc). These instructions will add entries for these applications.
 
 First, install a Windows program using Wine to create the base menu. After the base menu is created, you can create the following files in `~/.local/share/applications/wine/`:
 
  `wine-browsedrive.desktop` 
-
 ```
 [Desktop Entry]
 Name=Browse C: Drive
@@ -204,9 +203,7 @@ Type=Application
 Icon=folder-wine
 Categories=Wine;
 ```
-
  `wine-uninstaller.desktop` 
-
 ```
 [Desktop Entry]
 Name=Uninstall Wine Software
@@ -217,9 +214,7 @@ Type=Application
 Icon=wine-uninstaller
 Categories=Wine;
 ```
-
  `wine-winecfg.desktop` 
-
 ```
 [Desktop Entry]
 Name=Configure Wine
@@ -234,7 +229,6 @@ Categories=Wine;
 And create the following file in `~/.config/menus/applications-merged/`:
 
  `wine.menu` 
-
 ```
 <!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
 "http://www.freedesktop.org/standards/menu-spec/menu-1.0.dtd">
@@ -255,7 +249,7 @@ If these settings produce a ugly/non-existent icon, it means that there are no i
 
 #### Removing menu entries
 
-Menu entries created by Wine are located in `~/.local/share/applications/wine/Programs/`. Remove the program's _.desktop_ entry to remove the application from the menu.
+Menu entries created by Wine are located in `~/.local/share/applications/wine/Programs/`. Remove the program's *.desktop* entry to remove the application from the menu.
 
 In addition to remove unwanted extensions binding by Wine, execute the following commands (taken from the Wine website):
 
@@ -282,18 +276,18 @@ See [How do I uninstall Windows applications?](https://wiki.winehq.org/FAQ#How_d
 **Tip:** In addition to the links provided in the beginning of the article the following may be of interest:
 
 *   [The Wine Application Database (AppDB)](http://appdb.winehq.org/) - Information about running specific Windows applications (Known issues, ratings, guides, etc tailored to specific applications)
-*   [The WineHQ Forums](http://forum.winehq.org/) - A great place to ask questions _after_ you have looked through the FAQ and AppDB
+*   [The WineHQ Forums](http://forum.winehq.org/) - A great place to ask questions *after* you have looked through the FAQ and AppDB
 
 ### Wineconsole
 
-Often you may need to run _.exe'_s to patch game files, for example a widescreen mod for an old game, and running the _.exe_ normally through Wine might yield nothing happening. In this case, you can open a terminal and run the following command:
+Often you may need to run *.exe'*s to patch game files, for example a widescreen mod for an old game, and running the *.exe* normally through Wine might yield nothing happening. In this case, you can open a terminal and run the following command:
 
 ```
 $ wineconsole cmd
 
 ```
 
-Then navigate to the directory and run the _.exe_ file from there.
+Then navigate to the directory and run the *.exe* file from there.
 
 ### Winetricks
 
@@ -362,7 +356,6 @@ Please note Wine will still create new file associations and even recreate the f
 To prevent this, edit your `$WINEPREFIX/system.reg` file, Search for `winemenubuilder` and remove `-a`, so you'll get:
 
  `$WINEPREFIX/system.reg` 
-
 ```
 [Software\\Microsoft\\Windows\\CurrentVersion\\RunServices]
 "winemenubuilder"="C:\\windows\\system32\\winemenubuilder.exe -r"
@@ -392,14 +385,14 @@ This is a small piece of UI code meant to be installed with (or even before) Win
 Some programs may not offer a language selection, they will guess the desired language upon the sytem locales. Wine will transfer the current environment (including the locales) to the application, so it should work out of the box. If you want to force a program to run in a specific locale (which is fully [generated](/index.php/Locale "Locale") on your system), you can call Wine with the following setting:
 
 ```
-$ LC_ALL=_xx_XX.encoding_ wine _/path/to/program_
+$ LC_ALL=*xx_XX.encoding* wine */path/to/program*
 
 ```
 
 For instance
 
 ```
-$ LC_ALL=it_IT.UTF-8 wine _/path/to/program_
+$ LC_ALL=it_IT.UTF-8 wine */path/to/program*
 
 ```
 
@@ -415,7 +408,6 @@ It is also possible to tell the kernel to use Wine as an interpreter for all Win
 To make the setting permanent, create the `/etc/binfmt.d/wine.conf` file with the following content:
 
  `/etc/binfmt.d/wine.conf` 
-
 ```
 # Start WINE on Windows executables
 :DOSWin:M::MZ::/usr/bin/wine:
@@ -426,12 +418,12 @@ To make the setting permanent, create the `/etc/binfmt.d/wine.conf` file with th
 Try it out by running a Windows program:
 
 ```
-$ chmod +x _exefile.exe_
-$ ./_exefile.exe_
+$ chmod +x *exefile.exe*
+$ ./*exefile.exe*
 
 ```
 
-If all went well, _exefile.exe_ should run.
+If all went well, *exefile.exe* should run.
 
 ### 16-bit programs
 
@@ -461,13 +453,13 @@ To burn CDs or DVDs, you will need to load the `sg` [kernel module](/index.php/K
 
 ### Proper mounting of optical media images
 
-Some applications will check for the optical media to be in drive. They may check for data only, in which case it might be enough to configure the corresponding path as being a CD-ROM drive in _winecfg_. However, other applications will look for a media name and/or a serial number, in which case the image has to be mounted with these special properties.
+Some applications will check for the optical media to be in drive. They may check for data only, in which case it might be enough to configure the corresponding path as being a CD-ROM drive in *winecfg*. However, other applications will look for a media name and/or a serial number, in which case the image has to be mounted with these special properties.
 
 Some virtual drive tools do not handle these metadata, like fuse-based virtual drives (Acetoneiso for instance). CDEmu will handle it correctly.
 
 ### Force OpenGL mode in games
 
-Many games have an OpenGL mode which _may_ perform better than their default DirectX mode. While the steps to enable OpenGL rendering is _application specific_, many games accept the `-opengl` parameter.
+Many games have an OpenGL mode which *may* perform better than their default DirectX mode. While the steps to enable OpenGL rendering is *application specific*, many games accept the `-opengl` parameter.
 
 ```
 $ wine /path/to/3d_game.exe -opengl
@@ -515,13 +507,13 @@ $ wine /path/to/office_cd/setup.exe
 
 If you do not want to setup Office in the default Wine prefix (`~/.wine`), create new one as described in [#WINEPREFIX](#WINEPREFIX) section. You could also put the above exports into your shell initialization script as also noted there.
 
-Once installation has completed, open Word or Excel to activate over the Internet. After activation run _winecfg_ and set `riched20` (under libraries) to `(native,builtin)`. This will enable PowerPoint to work and makes the drop-down list of countries visible for phone activation.
+Once installation has completed, open Word or Excel to activate over the Internet. After activation run *winecfg* and set `riched20` (under libraries) to `(native,builtin)`. This will enable PowerPoint to work and makes the drop-down list of countries visible for phone activation.
 
 For OneNote to work, run `winetricks wininet` and then make sure that `wininet` is set to `(native,builtin)`
 
 For additional info, see the [WineHQ](http://appdb.winehq.org/appview.php?iVersionId=4992) article.
 
-As an alternative to the above method, [playonlinux](https://www.archlinux.org/packages/?name=playonlinux) provides custom installer scripts that make the installation of Office 2003, 2007 and 2010 an ease. You just have to provide the _setup.exe_ or ISO and the installer will guide you seamlessly through the installation procedure. You do not have to deal with the underlying Wine at all. The playonlinux installation for Office 2010 improves on the minimum installation instructions provided above by enabling xml conversions for Word documents created with certain earlier versions of Word.
+As an alternative to the above method, [playonlinux](https://www.archlinux.org/packages/?name=playonlinux) provides custom installer scripts that make the installation of Office 2003, 2007 and 2010 an ease. You just have to provide the *setup.exe* or ISO and the installer will guide you seamlessly through the installation procedure. You do not have to deal with the underlying Wine at all. The playonlinux installation for Office 2010 improves on the minimum installation instructions provided above by enabling xml conversions for Word documents created with certain earlier versions of Word.
 
 #### Office 2013
 
@@ -533,7 +525,7 @@ Doesn't work.
 
 ## Third-party interfaces
 
-These have their own sites, and are _not supported_ in the official Wine forums/bugzilla.
+These have their own sites, and are *not supported* in the official Wine forums/bugzilla.
 
 ### CrossOver
 
@@ -547,9 +539,9 @@ These have their own sites, and are _not supported_ in the official Wine forums/
 
 ### PyWinery
 
-[PyWinery](https://github.com/ergoithz/pywinery) is a graphical and simple wine-prefix manager which allows you to launch apps and manage configuration of separate prefixes, also have a button to open winetricks in the same prefix, to open prefix dir, _winecfg_, application uninstaller and wineDOS. You can install You can install PyWinery with the [pywinery](https://aur.archlinux.org/packages/pywinery/) package. It is especially useful for having differents settings like DirectX games, office, programming, etc, and choose which prefix to use before you open an application or file.
+[PyWinery](https://github.com/ergoithz/pywinery) is a graphical and simple wine-prefix manager which allows you to launch apps and manage configuration of separate prefixes, also have a button to open winetricks in the same prefix, to open prefix dir, *winecfg*, application uninstaller and wineDOS. You can install You can install PyWinery with the [pywinery](https://aur.archlinux.org/packages/pywinery/) package. It is especially useful for having differents settings like DirectX games, office, programming, etc, and choose which prefix to use before you open an application or file.
 
-It is recommended using winetricks by default to open _.exe_ files, so you can choose between any Wine configuration you have.
+It is recommended using winetricks by default to open *.exe* files, so you can choose between any Wine configuration you have.
 
 ### Q4wine
 

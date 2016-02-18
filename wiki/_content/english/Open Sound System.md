@@ -87,7 +87,7 @@ This will install the OSS, run the OSS install script (temporarily disabling the
 
 After blacklisting the module, you can [enable](/index.php/Daemon "Daemon") the **oss** daemon to start at boot.
 
-In case you are not part of the _audio_ group, add yourself and **relogin** for the changes to take effect:
+In case you are not part of the *audio* group, add yourself and **relogin** for the changes to take effect:
 
 ```
 # gpasswd -a $USER audio
@@ -131,7 +131,7 @@ $ vmixctl attach device
 
 ```
 
-where _device_ is your sound device, e.g. `/dev/oss/oss_envy240/pcm0`.
+where *device* is your sound device, e.g. `/dev/oss/oss_envy240/pcm0`.
 
 To avoid having to issue this command manually in the future, you can add it to `/usr/lib/oss/soundon.user`, as suggested [here](http://www.opensound.com/wiki/index.php/Tips_And_Tricks#Changing_the_default_sound_output).
 
@@ -144,7 +144,7 @@ $ ossinfo
 
 ```
 
-You should be able to see your devices listed under _Device Objects_ or _Audio Devices_. If the device that you want to use is not at the top of one of these sections, you have to edit `/usr/lib/oss/etc/installed_drivers` and place the driver for your device at the very top. It may be required to do a:
+You should be able to see your devices listed under *Device Objects* or *Audio Devices*. If the device that you want to use is not at the top of one of these sections, you have to edit `/usr/lib/oss/etc/installed_drivers` and place the driver for your device at the very top. It may be required to do a:
 
 ```
 $ soundoff && soundon
@@ -231,12 +231,12 @@ Other mixers that have support for OSS:
 
 	[http://www.kde.org/applications/multimedia/kmix/](http://www.kde.org/applications/multimedia/kmix/) || [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix)
 
-*   **VolWheel** — After the installation, set it to [autostart](/index.php/Autostarting#Graphical "Autostarting") as needed, then enable OSS support by right-clicking on the system tray icon, choosing _Preferences_ and then changing:
+*   **VolWheel** — After the installation, set it to [autostart](/index.php/Autostarting#Graphical "Autostarting") as needed, then enable OSS support by right-clicking on the system tray icon, choosing *Preferences* and then changing:
 
-*   _Driver_: `OSS`.
-*   _Default Channel_: `vmix0-outvol` (find out what channel to use with `ossmix`).
-*   _Default Mixer_: `ossxmix`.
-*   In the _MiniMixer_ tab (optional), add `vmix0-outvol` and optionally others.
+*   *Driver*: `OSS`.
+*   *Default Channel*: `vmix0-outvol` (find out what channel to use with `ossmix`).
+*   *Default Mixer*: `ossxmix`.
+*   In the *MiniMixer* tab (optional), add `vmix0-outvol` and optionally others.
 
 	[http://oliwer.net/b/volwheel.html](http://oliwer.net/b/volwheel.html) || [volwheel](https://www.archlinux.org/packages/?name=volwheel)
 
@@ -248,8 +248,8 @@ If you have problems with applications that use Gstreamer for audio, you can try
 
 Then you have to change the GStreamer settings to output the sound to OSS instead of the default ALSA with `gstreamer-properties` (part of the [gstreamer-properties](https://aur.archlinux.org/packages/gstreamer-properties/) package). After starting `gstreamer-properties`, you have to modify the fields as follows:
 
-*   in the _Default Output_ section: if OSS is not available as a plugin, change _Plugin_ to **Custom** and _Pipeline_ to **oss4sink**.
-*   in the _Default Input_ section: if OSS is not available, change _Plugin_ to **Custom** and _Pipeline_ to **oss4src**.
+*   in the *Default Output* section: if OSS is not available as a plugin, change *Plugin* to **Custom** and *Pipeline* to **oss4sink**.
+*   in the *Default Input* section: if OSS is not available, change *Plugin* to **Custom** and *Pipeline* to **oss4src**.
 
 **Note:** You can also use `osssrc` as an alternative to `oss4src` if you find that it produces better sound.
 
@@ -295,7 +295,6 @@ Other LINKS: [OSS forum](http://www.4front-tech.com/forum/)
 By default OpenAL uses ALSA. To change this, simply define the usage of OSS in `/etc/openal/alsound.conf`:
 
  `/etc/openal/alsound.conf` 
-
 ```
 drivers=oss
 
@@ -319,7 +318,7 @@ $ ossmix vmix0-enable ON
 
 ### Gajim
 
-By default, [Gajim](http://gajim.org/) uses `aplay -q` to play a sound. For OSS you can change it to the equivalent `ossplay -qq` by going to _Edit > Preferences > Advanced_, opening the _Advanced Configuration Editor_ and modifying the `soundplayer` variable accordingly.
+By default, [Gajim](http://gajim.org/) uses `aplay -q` to play a sound. For OSS you can change it to the equivalent `ossplay -qq` by going to *Edit > Preferences > Advanced*, opening the *Advanced Configuration Editor* and modifying the `soundplayer` variable accordingly.
 
 ### MOC
 
@@ -330,7 +329,6 @@ To use [MOC](/index.php/Moc "Moc") with OSS v4.1 you must change `OSSMixerDevice
 [MPD](/index.php/MPD "MPD") is configured through `/etc/mpd.conf` or `~/.mpdconf`. Check both of these files, looking for something that looks like:
 
  `/etc/mpd.conf` 
-
 ```
 ...
 audio_output {
@@ -343,7 +341,6 @@ audio_output {
 If you find an uncommented (the lines do not begin with #'s) ALSA configuration like the one above, comment all of it out, or delete it, and add the following:
 
  `/etc/mpd.conf` 
-
 ```
 ...
 audio_output {
@@ -365,7 +362,6 @@ $ ossinfo | grep /dev/dsp
 *   Look for the line that says something similar to `/dev/dsp -> /dev/oss/<SOME_CARD_IDENTIFIER>/pcm0`. Take note of what your `<SOME_CARD_IDENTIFIER>` is, and add these lines to your OSS `audio_output` in your MPD configuration file:
 
  `/etc/mpd.conf` 
-
 ```
 ...
 audio_output {
@@ -454,7 +450,6 @@ to see the available commands.
 If you want to use multimedia keys with `ossvol`, see [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") and make sure they are properly configured. After that you can use, for example, [Xbindkeys](/index.php/Xbindkeys "Xbindkeys") to bind them to the `ossvol` script. Add the following to your `~/.xbindkeysrc` file:
 
  `~/.xbindkeysrc` 
-
 ```
 # Toggle mute
 "ossvol -t"
@@ -479,13 +474,13 @@ and optionally change the multimedia keys with whatever shortcuts you prefer.
 
 Changing the output sample rate is not obvious at first. Sample rates can only be changed by root and `vmix` must be unused by any programs when a change is requested. Before you follow any of these steps, ensure you are going through a receiver/amplifier and using quality speakers and not simply computer speakers. If you are only using computer speakers, do not bother changing anything here as you will not notice a difference.
 
-By default the sample rate is 48000hz. There are several conditions in which you may want to change this. This all depends on your usage patterns. You want the sample rate you are using to match the media you use the most. If your computer has to change the sampling rate of the media to suit the hardware it is likely, though not guaranteed, that you will have a loss in audio quality. This is most noticeable in down sampling (ie. 96000hz → 48000hz). There is an article about this issue in [Stereophile](http://www.stereophile.com/news/121707lucky/) which was [discussed](http://lists.apple.com/archives/coreaudio-api/2008/Jan/msg00272.html) on Apple's _CoreAudio API_ mailing list if you wish to learn more about this issue.
+By default the sample rate is 48000hz. There are several conditions in which you may want to change this. This all depends on your usage patterns. You want the sample rate you are using to match the media you use the most. If your computer has to change the sampling rate of the media to suit the hardware it is likely, though not guaranteed, that you will have a loss in audio quality. This is most noticeable in down sampling (ie. 96000hz → 48000hz). There is an article about this issue in [Stereophile](http://www.stereophile.com/news/121707lucky/) which was [discussed](http://lists.apple.com/archives/coreaudio-api/2008/Jan/msg00272.html) on Apple's *CoreAudio API* mailing list if you wish to learn more about this issue.
 
 Some example sample rates:
 
 	44100hz
 
-	Sample rate of standard [Red Book](https://en.wikipedia.org/wiki/Red_Book_(CD_standard) "wikipedia:Red Book (CD standard)") audio CDs.
+	Sample rate of standard [Red Book](https://en.wikipedia.org/wiki/Red_Book_(CD_standard) audio CDs.
 
 	88000hz
 
@@ -512,14 +507,13 @@ If you do not see a `vmix0-rate` (or `vmix1-rate`, etc.) being outputted, then i
 
 To change your sample rate:
 
-1.  First, make sure your card is able to use the new rate. Run `ossinfo -v2` and see if the wanted rate is in the _Native sample rates_ output.
+1.  First, make sure your card is able to use the new rate. Run `ossinfo -v2` and see if the wanted rate is in the *Native sample rates* output.
 2.  As root, run `/usr/lib/oss/scripts/killprocs.sh`. Be aware, this will close any program that currently has an open sound channel.
 3.  After all programs occupying `vmix` are terminated, run as root: `vmixctl rate /dev/dsp 96000` replacing the rate with your desired sample rate (and `ossmix envy24.rate 96000` if applicable).
 4.  Run `ossmix | grep rate` and check for `vmix0-rate <decimal value> (currently 96000) (Read-only)` to see if you were successful.
 5.  **To make the changes permanent** add the following to the `soundon.user` file:
 
  `/usr/lib/oss/soundon.user` 
-
 ```
 #!/bin/sh
 
@@ -572,7 +566,6 @@ or:
 Create an application launcher file named `ossxmix.desktop` in you local application launchers directory (`~/.local/share/applications/` with:
 
  `~/.local/share/applications/ossxmix.desktop` 
-
 ```
 [Desktop Entry]
 Name=Open Sound System Mixer
@@ -586,14 +579,13 @@ Encoding=UTF-8
 
 ```
 
-To have it autostart with your system, add it to the list in _System Settings > System Administration > Startup and Shutdown > Autostart_.
+To have it autostart with your system, add it to the list in *System Settings > System Administration > Startup and Shutdown > Autostart*.
 
 #### Gnome
 
 As root create a file `/usr/local/bin/ossxmix_bg` with the following content:
 
  `/usr/local/bin/ossxmix_bg` 
-
 ```
 #!/bin/sh
 
@@ -601,9 +593,9 @@ exec /usr/bin/ossxmix -b
 
 ```
 
-Then go to _System > Preferences > Start Up Applications_ and:
+Then go to *System > Preferences > Start Up Applications* and:
 
-*   Click _Add_, type `OSSMIX` in the _Name_ field and `/usr/local/bin/ossxmix_bg` in _Command_ field then click _Add Button_.
+*   Click *Add*, type `OSSMIX` in the *Name* field and `/usr/local/bin/ossxmix_bg` in *Command* field then click *Add Button*.
 *   Login and logout to see the changes.
 
 ### Record sound output from a program
@@ -619,7 +611,6 @@ OSS provides `soundon` and `soundoff` to enable and disable OSS, although they o
 The following script is a rather basic method of automatically unloading OSS prior to suspending and reloading afterwards.
 
  `/usr/lib/systemd/system-sleep/50osssound.sh` 
-
 ```
 #!/bin/sh
 suspend_osssound()
@@ -734,7 +725,6 @@ To fix this, a recompile of OSS is necessary, for now.
     *   should look like so:
 
  `ossusb_audio.c` 
-
 ```
 static int
 write_control_value (ossusb_devc * devc, udi_endpoint_handle_t * endpoint,
@@ -800,7 +790,6 @@ To solve this:
 *   Find out which driver is used
 
  `$ lspci -vnn | grep -i -A 15 audio` 
-
 ```
 00:1e.2 Multimedia audio controller [0401]: Intel Corporation 82801FB/FBM/FR/FW/FRW (ICH6 Family) AC'97 Audio Controller [8086:266e] (rev 03)
 Subsystem: Hewlett-Packard Company NX6110/NC6120 [103c:099c]
@@ -843,9 +832,9 @@ in `oss_ich.conf` turns on `jack-sense` (which is responsible for recognizing pl
 
 If you have a HD Audio sound device, it is very likely that you will have to adjust some mixer settings before your sound works.
 
-HD Audio devices are very powerful in the sense that they can contain a lot of small circuits (called _widgets_) that can be adjusted by software at any time. These controls are exposed to the mixer, and they can be used, for example, to turn the earphone jack into a sound input jack instead of a sound output jack.
+HD Audio devices are very powerful in the sense that they can contain a lot of small circuits (called *widgets*) that can be adjusted by software at any time. These controls are exposed to the mixer, and they can be used, for example, to turn the earphone jack into a sound input jack instead of a sound output jack.
 
-However, there are also bad side effects, mainly because the HD Audio standard is more flexible than it perhaps should be, and because the vendors often only care to get their _official drivers_ working.
+However, there are also bad side effects, mainly because the HD Audio standard is more flexible than it perhaps should be, and because the vendors often only care to get their *official drivers* working.
 
 When using HD Audio devices, you often find disorganized mixer controls, that do not work at all by default, and you are forced to try every mixer control combination possible, until it works.
 
@@ -873,7 +862,7 @@ If you hear various cracks or strange noises in Totem during playback, you can t
 
 ### Microphone playing through output channels
 
-By default, OSS plays back the microphone through the speakers. To disable this in `ossxmix` find the _Misc_ section and uncheck every `input-mix-mute` box.
+By default, OSS plays back the microphone through the speakers. To disable this in `ossxmix` find the *Misc* section and uncheck every `input-mix-mute` box.
 
 ## See also
 

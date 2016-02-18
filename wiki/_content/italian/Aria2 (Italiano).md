@@ -1,4 +1,4 @@
-[aria2](http://aria2.sourceforge.net/) è un [download manager](https://en.wikipedia.org/wiki/Download_Manager "wikipedia:Download Manager") leggero a linea di comando che supporta i protocolli [HTTP](https://en.wikipedia.org/wiki/HTTP "wikipedia:HTTP")/[HTTPS](https://en.wikipedia.org/wiki/HTTPS "wikipedia:HTTPS"), [FTP](https://en.wikipedia.org/wiki/FTP "wikipedia:FTP"), [BitTorrent](https://en.wikipedia.org/wiki/BitTorrent_(protocol) "wikipedia:BitTorrent (protocol)") e [Metalink](https://en.wikipedia.org/wiki/Metalink "wikipedia:Metalink"). aria2 è considerato uno dei programmi più veloci e leggeri della sua categoria disponibile per molte piattaforme. È uno strumento flessibile per merito dell'ampio numero di opzioni utilizzabili anche nei file di configurazione e per la possibilità di essere gestito tramite [XML-RPC](https://en.wikipedia.org/wiki/XML-RPC "wikipedia:XML-RPC") e [JSON-RPC](https://en.wikipedia.org/wiki/JSON-RPC "wikipedia:JSON-RPC").
+[aria2](http://aria2.sourceforge.net/) è un [download manager](https://en.wikipedia.org/wiki/Download_Manager e [Metalink](https://en.wikipedia.org/wiki/Metalink "wikipedia:Metalink"). aria2 è considerato uno dei programmi più veloci e leggeri della sua categoria disponibile per molte piattaforme. È uno strumento flessibile per merito dell'ampio numero di opzioni utilizzabili anche nei file di configurazione e per la possibilità di essere gestito tramite [XML-RPC](https://en.wikipedia.org/wiki/XML-RPC "wikipedia:XML-RPC") e [JSON-RPC](https://en.wikipedia.org/wiki/JSON-RPC "wikipedia:JSON-RPC").
 
 ## Contents
 
@@ -173,7 +173,7 @@ summary-interval=120
 
 	`http-user=USER_NAME`
 
-	Set HTTP [username](https://en.wikipedia.org/wiki/User_(computing) "wikipedia:User (computing)") as USER_NAME for password-protected logins. This affects all [URIs](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier "wikipedia:Uniform Resource Identifier").
+	Set HTTP [username](https://en.wikipedia.org/wiki/User_(computing) as USER_NAME for password-protected logins. This affects all [URIs](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier "wikipedia:Uniform Resource Identifier").
 
 	`http-passwd=PASSWORD`
 

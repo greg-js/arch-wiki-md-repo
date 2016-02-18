@@ -64,7 +64,7 @@ Test using the manual method before setting it up for automatic loading and moun
 
 ```
 # modprobe ufsd
-# mount -t ufsd /dev/_your-NTFS-partition_ /{mnt,...}/_folder_ -o uid=_your username_,gid=users
+# mount -t ufsd /dev/*your-NTFS-partition* /{mnt,...}/*folder* -o uid=*your username*,gid=users
 
 ```
 
@@ -74,7 +74,7 @@ For non-dkms setups, edit `/etc/fstab` as below:
 
 ```
 # <file system>   <dir>		<type>    <options>             <dump>  <pass>
-/dev/_NTFS-part_  /mnt/windows  ufsd   uid=_your username_,gid=users,noatime,umask=0222	0 0
+/dev/*NTFS-part*  /mnt/windows  ufsd   uid=*your username*,gid=users,noatime,umask=0222	0 0
 
 ```
 
@@ -82,7 +82,7 @@ For dkms setups, edit `/etc/fstab` as below:
 
 ```
 # <file system>   <dir>		<type>    <options>             <dump>  <pass>
-/dev/_NTFS-part_  /mnt/windows  ufsd   noauto,x-systemd.automount,uid=_your username_,gid=users,noatime,umask=0222	0 0
+/dev/*NTFS-part*  /mnt/windows  ufsd   noauto,x-systemd.automount,uid=*your username*,gid=users,noatime,umask=0222	0 0
 
 ```
 

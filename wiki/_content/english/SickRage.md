@@ -27,7 +27,6 @@ Sickrage can automatically run on start-up:
 By default, the SickRage webui running on port 8081 is not protected by a password. To set a username and password, edit the SickRage config file at `/opt/sickrage/config.ini` and change the `web_username` and `web_password` settings:
 
  `/opt/sickrage/config.ini` 
-
 ```
  web_username =
  web_password =

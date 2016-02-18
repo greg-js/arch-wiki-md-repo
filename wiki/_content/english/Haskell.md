@@ -21,7 +21,7 @@ Installing the compiler alone permits to build Haskell source code. A few additi
 
 ### Compiler
 
-To build a Haskell source–code into native–code, a compiler must be installed. There are several [implementations available](http://www.haskell.org/haskellwiki/Implementations), but the one used most (which is now _de facto_ the reference) is the GHC (Glasgow Haskell Compiler). It is available in the official repositories as [ghc](https://www.archlinux.org/packages/?name=ghc).
+To build a Haskell source–code into native–code, a compiler must be installed. There are several [implementations available](http://www.haskell.org/haskellwiki/Implementations), but the one used most (which is now *de facto* the reference) is the GHC (Glasgow Haskell Compiler). It is available in the official repositories as [ghc](https://www.archlinux.org/packages/?name=ghc).
 
 You can try it with the following file:
 
@@ -43,12 +43,12 @@ Hello, World
 
 To start developing in Haskell easily, one option is the [haskell-platform](http://www.haskell.org/platform/) bundle which is described as:
 
-	_The easiest way to get started with programming Haskell. It comes with all you need to get up and running. Think of it as "Haskell: batteries included"._
+	*The easiest way to get started with programming Haskell. It comes with all you need to get up and running. Think of it as "Haskell: batteries included".*
 
 Although an [AUR](/index.php/AUR "AUR") package exists ([haskell-platform](https://aur.archlinux.org/packages/haskell-platform/)), the Haskell Platform can be advantageously replaced by [installing](/index.php/Installing "Installing") the [following packages](https://bbs.archlinux.org/viewtopic.php?pid=1151382#p1151382) from the [official repositories](/index.php/Official_repositories "Official repositories"):
 
 *   ghc ([ghc](https://www.archlinux.org/packages/?name=ghc)) — The compiler
-*   cabal-install ([cabal-install](https://www.archlinux.org/packages/?name=cabal-install)) — A command line interface for _Cabal_ and _Hackage_
+*   cabal-install ([cabal-install](https://www.archlinux.org/packages/?name=cabal-install)) — A command line interface for *Cabal* and *Hackage*
 *   haddock ([haddock](https://www.archlinux.org/packages/?name=haddock)) — Tools for generating documentation
 *   happy ([happy](https://www.archlinux.org/packages/?name=happy)) — Parser generator
 *   alex ([alex](https://www.archlinux.org/packages/?name=alex)) — Lexical analyzer generator
@@ -59,11 +59,11 @@ Many Haskell libraries and executables are grouped in packages. They are all ava
 
 The recommended workflow is the following:
 
-*   [Official repositories](/index.php/Official_repositories "Official repositories") or [ArchHaskell repository](/index.php/ArchHaskell "ArchHaskell") as principal source of Haskell packages (the _or_ is exclusive here)
+*   [Official repositories](/index.php/Official_repositories "Official repositories") or [ArchHaskell repository](/index.php/ArchHaskell "ArchHaskell") as principal source of Haskell packages (the *or* is exclusive here)
 *   [cabal-install](#cabal-install) (possibly with sandboxes) for Haskell development
 *   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") for packages that are not available elsewhere
 
-[cblrepo](https://github.com/magthe/cblrepo) is a tool used for maintaining Haskell packages for Linux distributions. A wrapper around this, [cabal2pkgbuild-git](https://aur.archlinux.org/packages/cabal2pkgbuild-git/), can create PKGBUILD files from Hackage packages. See [Haskell package guidelines](/index.php/Haskell_package_guidelines "Haskell package guidelines") for more information on _creating new_ Haskell packages.
+[cblrepo](https://github.com/magthe/cblrepo) is a tool used for maintaining Haskell packages for Linux distributions. A wrapper around this, [cabal2pkgbuild-git](https://aur.archlinux.org/packages/cabal2pkgbuild-git/), can create PKGBUILD files from Hackage packages. See [Haskell package guidelines](/index.php/Haskell_package_guidelines "Haskell package guidelines") for more information on *creating new* Haskell packages.
 
 ### Pros/Cons of the different methods
 
@@ -83,7 +83,7 @@ See [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") for details.
 
 **Warning:** Discouraged method, keep in mind that [cabal-install](https://www.archlinux.org/packages/?name=cabal-install) [is not a package manager](https://ivanmiljenovic.wordpress.com/2010/03/15/repeat-after-me-cabal-is-not-a-package-manager).
 
-**Note:** The only exception is for Haskell development, where [cabal-install](https://www.archlinux.org/packages/?name=cabal-install) is the recommended tool. Since version 1.18, cabal provides a _sandbox_ system that permits to isolate different versions of libraries for different projects. There is an introduction to cabal sandbox [here](http://coldwa.st/e/blog/2013-08-20-Cabal-sandbox.html).
+**Note:** The only exception is for Haskell development, where [cabal-install](https://www.archlinux.org/packages/?name=cabal-install) is the recommended tool. Since version 1.18, cabal provides a *sandbox* system that permits to isolate different versions of libraries for different projects. There is an introduction to cabal sandbox [here](http://coldwa.st/e/blog/2013-08-20-Cabal-sandbox.html).
 
 #### Preparation and $PATH
 

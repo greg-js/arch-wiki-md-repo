@@ -1,4 +1,4 @@
-[Notmuch](http://notmuchmail.org/) is a mail indexer. Essentially, is a very thin front end on top of _xapian_. Much like [Sup](/index.php/Sup "Sup"), it focuses on one thing: indexing your email messages. Notmuch can be used as an email reader, or simply as an indexer and search tool for other MUAs, like [mutt](/index.php/Mutt "Mutt").
+[Notmuch](http://notmuchmail.org/) is a mail indexer. Essentially, is a very thin front end on top of *xapian*. Much like [Sup](/index.php/Sup "Sup"), it focuses on one thing: indexing your email messages. Notmuch can be used as an email reader, or simply as an indexer and search tool for other MUAs, like [mutt](/index.php/Mutt "Mutt").
 
 ## Contents
 
@@ -14,7 +14,7 @@
 
 ## Overview
 
-Notmuch is written in C and an order of magnitude faster than sup-mail. Notmuch can be terminated during the indexing process, on the next run it will continue where it left off. Also like sup-mail, it does not provide a way to permanently delete unwanted email messages. It doesn't fetch or send mails, nor does it store your email addresses, you'll need to use programs like [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP"), [msmtp](/index.php/Msmtp "Msmtp") and _abook_ for those tasks.
+Notmuch is written in C and an order of magnitude faster than sup-mail. Notmuch can be terminated during the indexing process, on the next run it will continue where it left off. Also like sup-mail, it does not provide a way to permanently delete unwanted email messages. It doesn't fetch or send mails, nor does it store your email addresses, you'll need to use programs like [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP"), [msmtp](/index.php/Msmtp "Msmtp") and *abook* for those tasks.
 
 Notmuch is available in the [official repositories](/index.php/Official_repositories "Official repositories"): [notmuch](https://www.archlinux.org/packages/?name=notmuch) or [notmuch-git](https://aur.archlinux.org/packages/notmuch-git/) from the [AUR](/index.php/AUR "AUR")
 

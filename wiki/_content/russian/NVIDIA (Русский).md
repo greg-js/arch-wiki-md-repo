@@ -101,9 +101,9 @@
 *   Для более старых моделей, обратитесь к подразделу [#Неподдерживаемые драйвера](#.D0.9D.D0.B5.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0).
 *   Для очень новых моделей графических ускорителей может потребоваться установка (см. [install](/index.php/Install "Install")) пакета [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/), т.к. стабильная версия драйвера может не поддерживать новые функции, добавленные в эти карты.
 
-4\. Если у вас разрядность ОС 64-бит и вам необходима поддержка OpenGL 32-бит,то необходимо установить соответствующие пакеты _lib32_ с репозитория [multilib](/index.php/Multilib "Multilib") (т.к. [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl), [lib32-nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-libgl) или [lib32-nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-libgl)).
+4\. Если у вас разрядность ОС 64-бит и вам необходима поддержка OpenGL 32-бит,то необходимо установить соответствующие пакеты *lib32* с репозитория [multilib](/index.php/Multilib "Multilib") (т.к. [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl), [lib32-nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-libgl) или [lib32-nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-libgl)).
 
-5\. Перезагрузите систему. Пакет [nvidia](https://www.archlinux.org/packages/?name=nvidia) содержит файл с чёрным списком для модуля _nouveau_, поэтому перезагрузка необходима.
+5\. Перезагрузите систему. Пакет [nvidia](https://www.archlinux.org/packages/?name=nvidia) содержит файл с чёрным списком для модуля *nouveau*, поэтому перезагрузка необходима.
 
 После того, как драйвер будет установлен, можно перейти к разделу [#Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0).
 
@@ -180,9 +180,9 @@ $ makepkg -ci
 
 #### Автоматическая пересборка модуля NVIDIA при обновлении ядра
 
-Это возможно благодаря пакету [nvidia-hook](https://aur.archlinux.org/packages/nvidia-hook/) с [AUR](/index.php/AUR "AUR"). Вам необходимо установить пакет с исходным кодом модуля: [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms). В _nvidia-hook_, автоматическая пересборка выполняется хуком `nvidia` в [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") принудительно, при обновлении пакета [linux-headers](https://www.archlinux.org/packages/?name=linux-headers). Вам необходимо добавить `nvidia` в раздел HOOKS файла `/etc/mkinitcpio.conf`.
+Это возможно благодаря пакету [nvidia-hook](https://aur.archlinux.org/packages/nvidia-hook/) с [AUR](/index.php/AUR "AUR"). Вам необходимо установить пакет с исходным кодом модуля: [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms). В *nvidia-hook*, автоматическая пересборка выполняется хуком `nvidia` в [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") принудительно, при обновлении пакета [linux-headers](https://www.archlinux.org/packages/?name=linux-headers). Вам необходимо добавить `nvidia` в раздел HOOKS файла `/etc/mkinitcpio.conf`.
 
-Хук будет вызывать команду _dkms_ для обновления модуля NVIDIA при обновлении версии вашего ядра.
+Хук будет вызывать команду *dkms* для обновления модуля NVIDIA при обновлении версии вашего ядра.
 
 **Обратите внимание:**
 
@@ -200,7 +200,6 @@ $ makepkg -ci
 Базовый блок конфигурации в `20-nvidia.conf` (или устаревший блок в `xorg.conf`) должен выглядеть так:
 
  `/etc/X11/xorg.conf.d/20-nvidia.conf` 
-
 ```
 Section "Device"
         Identifier "Nvidia Card"
@@ -240,7 +239,7 @@ EndSection
 
 ### Несколько мониторов
 
-	_Смотрите [Multihead](/index.php/Multihead "Multihead") для получения основной информации_
+	*Смотрите [Multihead](/index.php/Multihead "Multihead") для получения основной информации*
 
 #### Использование NVIDIA Settings
 
@@ -251,7 +250,6 @@ EndSection
 Если драйвер не определил второй монитор, вы можете принудительно указать его с помощью опции ConnectedMonitor
 
  `/etc/X11/xorg.conf` 
-
 ```
 
 Section "Monitor"
@@ -312,7 +310,6 @@ Option "TwinView" "1"
 Пример конфигурцаии:
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
-
 ```
 Section "ServerLayout"
     Identifier     "TwinLayout"
@@ -360,7 +357,6 @@ EndSection
 Если вы имеете несколько карт, которые совместимы с технологией SLI, вы можете использовать несколько мониторов присоединённых к разным картам (пример: две карты в режиме SLI с подключением монитора на каждой карте). Опция "MetaModes" совместно с режимом SLI Mosaic позволяет это. Ниже указана конфигурация, которая работает для вышеупомянутого примера и безупречно запускает [GNOME](/index.php/GNOME "GNOME").
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
-
 ```
 Section "Device"
         Identifier      "Card A"
@@ -419,7 +415,7 @@ EndSection
 
 ##### Ручная конфигурация из командной строки с использованием xrandr
 
-Если вышеуказанные решения не сработали, вы можете использовать _автозапуск_ вашего менеджера окон совместно с пакетом [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr).
+Если вышеуказанные решения не сработали, вы можете использовать *автозапуск* вашего менеджера окон совместно с пакетом [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr).
 
 Некоторые примеры работы с командой `xrandr`:
 
@@ -533,12 +529,11 @@ Option "RegistryDwords" "EnableBrightnessControl=1"
 
 **Важно:** По состоянию на Май 7, 2011, вы можете испытывать проблемы с производительностью видео в GNOME 3, после включения SLI.
 
-Выдержка из [README](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/xconfigoptions.html) драйвера NVIDIA Приложение B: _Данная опция контролирует рендеринг SLI в поддерживаемых конфигурациях._ Другими словами, в "поддерживаемых конфигурациях" обозначены компьютеры оборудованные материнской платой c сертифицированной поддержкой SLI и 2 или 3 графических процессора GeForce, также с сертифицированной поддержкой SLI. Смотрите [Зона SLI (англ.)](http://www.slizone.com/page/home.html) для получения подробной информации.
+Выдержка из [README](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/xconfigoptions.html) драйвера NVIDIA Приложение B: *Данная опция контролирует рендеринг SLI в поддерживаемых конфигурациях.* Другими словами, в "поддерживаемых конфигурациях" обозначены компьютеры оборудованные материнской платой c сертифицированной поддержкой SLI и 2 или 3 графических процессора GeForce, также с сертифицированной поддержкой SLI. Смотрите [Зона SLI (англ.)](http://www.slizone.com/page/home.html) для получения подробной информации.
 
 Найдем первый PCI Bus ID графического процессора, используя `lspci`:
 
  `$ lspci | grep VGA` 
-
 ```
 03:00.0 VGA compatible controller: nVidia Corporation G92 [GeForce 8800 GTS 512] (rev a2)
 05:00.0 VGA compatible controller: nVidia Corporation G92 [GeForce 8800 GTS 512] (rev a2)
@@ -580,7 +575,6 @@ Option "SLI" "AA"
 Для проверки работы режима SLI в консольном режиме:
 
  `$ nvidia-settings -q all | grep SLIMode` 
-
 ```
   Attribute 'SLIMode' (arch:0.0): AA 
     'SLIMode' is a string attribute.
@@ -595,26 +589,26 @@ Option "SLI" "AA"
 
 **Важно:** Помните, что разгон может привести к повреждению оборудования и авторы этой страницы снимают с себя любую ответственность за повреждение оборудования, вся информация, в том числе и возможность разгона, указывается изготовителем в спецификации к оборудованию.
 
-Разгон контролируется через опцию _Coolbits_ в секции `Device`, позволяя использовать различные неподдерживаемые свойства:
+Разгон контролируется через опцию *Coolbits* в секции `Device`, позволяя использовать различные неподдерживаемые свойства:
 
 ```
-Option "Coolbits" "_value_"
+Option "Coolbits" "*value*"
 
 ```
 
-**Совет:** Опция _Coolbits_ легко контролируется через _nvidia-xconfig_, которая может управлять файлами конфигурации Xorg: `# nvidia-xconfig --cool-bits=_value_` 
+**Совет:** Опция *Coolbits* легко контролируется через *nvidia-xconfig*, которая может управлять файлами конфигурации Xorg: `# nvidia-xconfig --cool-bits=*value*` 
 
-Значение _Coolbits_ - сумма его составляющих битов в двоичной системе исчисления. Типы битов:
+Значение *Coolbits* - сумма его составляющих битов в двоичной системе исчисления. Типы битов:
 
-*   `1` (bit 0) - Включает возможность разгона для старых (до архитектуры Fermi) ядер, вкладка _Clock Frequencies_ в _nvidia-settings_.
+*   `1` (bit 0) - Включает возможность разгона для старых (до архитектуры Fermi) ядер, вкладка *Clock Frequencies* в *nvidia-settings*.
 *   `2` (bit 1) - Когда бит установлен, драйвер "будет пытаться инициализировать режим SLI, когда используются два графических процессора с разным количеством видеопамяти".
-*   `4` (bit 2) - Включает ручное управление охлаждением графического процессора вкладка _Thermal Monitor_ в _nvidia-settings_.
-*   `8` (bit 3) - Включает возможность разгона на вкладке _PowerMizer_ в _nvidia-settings_. Доступна с версии 337.12 для архитектур Fermi и новее. [[1]](http://www.phoronix.com/scan.php?px=MTY1OTM&page=news_item)
-*   `16` (bit 4) - Включает возможность повышения напряжения через параметры командной строки _nvidia-settings_. Доступна с версии 337.12 для архитектур Fermi и новее.[[2]](http://www.phoronix.com/scan.php?page=news_item&px=MTg0MDI)
+*   `4` (bit 2) - Включает ручное управление охлаждением графического процессора вкладка *Thermal Monitor* в *nvidia-settings*.
+*   `8` (bit 3) - Включает возможность разгона на вкладке *PowerMizer* в *nvidia-settings*. Доступна с версии 337.12 для архитектур Fermi и новее. [[1]](http://www.phoronix.com/scan.php?px=MTY1OTM&page=news_item)
+*   `16` (bit 4) - Включает возможность повышения напряжения через параметры командной строки *nvidia-settings*. Доступна с версии 337.12 для архитектур Fermi и новее.[[2]](http://www.phoronix.com/scan.php?page=news_item&px=MTg0MDI)
 
-Чтобы включить несколько свойств, сложите значения _Coolbits_. Например, чтобы включить возможности разгона и повышения напряжения для архитектуры Fermi, установите значение `Option "Coolbits" "24"`.
+Чтобы включить несколько свойств, сложите значения *Coolbits*. Например, чтобы включить возможности разгона и повышения напряжения для архитектуры Fermi, установите значение `Option "Coolbits" "24"`.
 
-Документация по _Coolbits_ находится в `/usr/share/doc/nvidia/html/xconfigoptions.html`. Последния онлайн-версия документации по _Coolbits_ (версия драйвера 355.11) находится [тут (англ.)](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/xconfigoptions.html).
+Документация по *Coolbits* находится в `/usr/share/doc/nvidia/html/xconfigoptions.html`. Последния онлайн-версия документации по *Coolbits* (версия драйвера 355.11) находится [тут (англ.)](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/xconfigoptions.html).
 
 **Обратите внимание:** Также, возможно отредактировать и переписать BIOS графического процессора, используя DOS (предпочтительнее) или с использованием Win32 окружения с помощью [nvflash](http://www.mvktech.net/component/option,com_remository/Itemid,26/func,select/id,127/orderby,2/page,1/) и [NiBiTor 6.0](http://www.mvktech.net/component/option,com_remository/Itemid,26/func,select/id,135/orderby,2/page,1/). Преимущество данного способа в том, что вы можете поднять не только напряжение, но и повысить стабильность программных методов разгона, такие как Coolbits. [Руководство по модификации BIOS архитектуры Fermi (англ.)](http://ivanvojtko.blogspot.sk/2014/03/how-to-overclock-geforce-460gtx-fermi.html)
 
@@ -685,7 +679,6 @@ vc=ffmpeg12vdpau,ffwmv3vdpau,ffvc1vdpau,ffh264vdpau,ffodivxvdpau,
 ### Избежание разрывов изображения (тьюринга) в KDE (KWin)
 
  `/etc/profile.d/kwin.sh` 
-
 ```
 export __GL_YIELD="USLEEP"
 
@@ -694,7 +687,6 @@ export __GL_YIELD="USLEEP"
 Если вышеуказанная строка не поможет, попробуйте заменить на это:
 
  `/etc/profile.d/kwin.sh` 
-
 ```
 export KWIN_TRIPLE_BUFFER=1
 
@@ -824,7 +816,6 @@ $ nvidia-smi
 Пример вывода результата работы программы:
 
  `$ nvidia-smi` 
-
 ```
 Fri Jan  6 18:53:54 2012       
 +------------------------------------------------------+                       
@@ -847,7 +838,6 @@ Fri Jan  6 18:53:54 2012
 Только температура:
 
  `$ nvidia-smi -q -d TEMPERATURE` 
-
 ```
 
 ==============NVSMI LOG==============
@@ -880,7 +870,7 @@ GPU 0000:01:00.0
 
 ### Утсановка скорости вентилятора при входе
 
-Вы можете выставить скорость вентилятора вашей графической карты с помощью консольного интерфейса _nvidia-settings_. Сначала убедитесь в том, что в вашем конфигурационом файле Xorg значения опции Coolbits установлены в `4`, `5` или `12` для архитектуры Ферми и выше в секции `Device` для включения управления скоростью вентилятора.
+Вы можете выставить скорость вентилятора вашей графической карты с помощью консольного интерфейса *nvidia-settings*. Сначала убедитесь в том, что в вашем конфигурационом файле Xorg значения опции Coolbits установлены в `4`, `5` или `12` для архитектуры Ферми и выше в секции `Device` для включения управления скоростью вентилятора.
 
 ```
 Option "Coolbits" "4"
@@ -889,27 +879,27 @@ Option "Coolbits" "4"
 
 **Обратите внимание:** Для карт GeForce 400/500 series, на текущий момент, этот метод при входе не устанавливает скорость вентилятора. Также, этот метод только позволяет настраивать скорость вентилятора только для текущей сессии X через nvidia-settings.
 
-Поместите следующую строку в ваш файл [xinitrc](/index.php/Xinitrc "Xinitrc") для управления вентилятором при запуске Xorg. Замените `_n_` на значение скорости вентилятора нужное вам в процентах.
+Поместите следующую строку в ваш файл [xinitrc](/index.php/Xinitrc "Xinitrc") для управления вентилятором при запуске Xorg. Замените `*n*` на значение скорости вентилятора нужное вам в процентах.
 
 ```
-nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUCurrentFanSpeed=_n_"
+nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUCurrentFanSpeed=*n*"
 
 ```
 
 Также вы можете указать и второй графический процессор, путем увеличения счетчика графического процесора и вентилятора.
 
 ```
-nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUCurrentFanSpeed=_n_" \
-                -a "[gpu:1]/GPUFanControlState=1" -a  [fan:1]/GPUCurrentFanSpeed=_n_" &
+nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUCurrentFanSpeed=*n*" \
+                -a "[gpu:1]/GPUFanControlState=1" -a  [fan:1]/GPUCurrentFanSpeed=*n*" &
 
 ```
 
-Если вы ипользуете менеджер входа такой как GDM или KDM, вы можете создать файл настроек. Создайте `~/.config/autostart/nvidia-fan-speed.desktop` и вставьте следующий текст.Снова измените `_n_` на значение скорости вентилятора нужное вам в процентах.
+Если вы ипользуете менеджер входа такой как GDM или KDM, вы можете создать файл настроек. Создайте `~/.config/autostart/nvidia-fan-speed.desktop` и вставьте следующий текст.Снова измените `*n*` на значение скорости вентилятора нужное вам в процентах.
 
 ```
 [Desktop Entry]
 Type=Application
-Exec=nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUCurrentFanSpeed=_n_"
+Exec=nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUCurrentFanSpeed=*n*"
 X-GNOME-Autostart-enabled=true
 Name=nvidia-fan-speed
 
@@ -1029,7 +1019,7 @@ EndSection
 
 ### '/dev/nvidia0' input/output error
 
-This error can occur for several different reasons, and the most common solution given for this error is to check for group/file permissions, which in almost every case is _not_ the problem. The NVIDIA documentation does not talk in detail on what you should do to correct this problem but there are a few things that have worked for some people. The problem can be a IRQ conflict with another device or bad routing by either the kernel or your BIOS.
+This error can occur for several different reasons, and the most common solution given for this error is to check for group/file permissions, which in almost every case is *not* the problem. The NVIDIA documentation does not talk in detail on what you should do to correct this problem but there are a few things that have worked for some people. The problem can be a IRQ conflict with another device or bad routing by either the kernel or your BIOS.
 
 First thing to try is to remove other video devices such as video capture cards and see if the problem goes away. If there are too many video processors on the same system it can lead into the kernel being unable to start them because of memory allocation problems with the video controller. In particular on systems with low video memory this can occur even if there is only one video processor. In such case you should find out the amount of your system's video memory (e.g. with `lspci -v`) and pass allocation parameters to the kernel, e.g. for a 32-bit kernel:
 
@@ -1076,7 +1066,7 @@ for steps to correct.
 
 ### Ошибки после обновления ядра
 
-Если вы используете самосборный модуль NVIDIA вместо пакета из репозитория _extra_, то требуется пересборка пакета каждый раз после обновления ядра. Рекомендуется перезагрузка после обновления ядра и графических драйверов.
+Если вы используете самосборный модуль NVIDIA вместо пакета из репозитория *extra*, то требуется пересборка пакета каждый раз после обновления ядра. Рекомендуется перезагрузка после обновления ядра и графических драйверов.
 
 ### Crashing in general
 
@@ -1171,7 +1161,7 @@ Enter the BIOS and changed the default graphics setting from 'Optimus' to 'Discr
 Steps:
 
 1.  Enter BIOS.
-2.  Find Graphics Settings (should be in tab _Config > Display_).
+2.  Find Graphics Settings (should be in tab *Config > Display*).
 3.  Change 'Graphics Device' to 'Discrete Graphics' (Disables Intel integrated graphics).
 4.  Change OS Detection for Nvidia Optimus to "Disabled".
 5.  Save and exit.
@@ -1243,7 +1233,6 @@ This bug is due to the incorrect colour key being used by the [flashplugin](http
 If you experience occasional full system freezes (only the mouse is moving) using flashplugin and get:
 
  `/var/log/errors.log` 
-
 ```
 NVRM: Xid (0000:01:00): 31, Ch 00000007, engmask 00000120, intr 10000000
 
@@ -1268,10 +1257,9 @@ If you get a red screen and use GRUB disable the GRUB framebuffer by editing `/e
 
 ### Black screen on systems with Intel integrated GPU
 
-If you have an Intel CPU with an integrated GPU (e.g. Intel HD 4000) and have installed the [nvidia](https://www.archlinux.org/packages/?name=nvidia) package, you may experience a black screen on boot, when changing virtual terminal, or when exiting an X session. This may be caused by a conflict between the graphics modules. This is solved by blacklisting the Intel GPU modules. Create the file `/etc/modprobe.d/blacklist.conf` and prevent the _i915_ and _intel_agp_ modules from loading on boot:
+If you have an Intel CPU with an integrated GPU (e.g. Intel HD 4000) and have installed the [nvidia](https://www.archlinux.org/packages/?name=nvidia) package, you may experience a black screen on boot, when changing virtual terminal, or when exiting an X session. This may be caused by a conflict between the graphics modules. This is solved by blacklisting the Intel GPU modules. Create the file `/etc/modprobe.d/blacklist.conf` and prevent the *i915* and *intel_agp* modules from loading on boot:
 
  `/etc/modprobe.d/blacklist.conf` 
-
 ```
 install i915 /usr/bin/false
 install intel_agp /usr/bin/false
@@ -1280,10 +1268,9 @@ install intel_agp /usr/bin/false
 
 ### Black screen on systems with VIA integrated GPU
 
-As above, blacklisting the _viafb_ module may resolve conflicts with NVIDIA drivers:
+As above, blacklisting the *viafb* module may resolve conflicts with NVIDIA drivers:
 
  `/etc/modprobe.d/blacklist.conf` 
-
 ```
 install viafb /usr/bin/false
 
@@ -1303,7 +1290,6 @@ Like above, if you have an Intel CPU with an integrated GPU and X fails to start
 then you need to add your discrete card's BusID to your X configuration. Find it:
 
  `# lspci | grep VGA` 
-
 ```
 00:02.0 VGA compatible controller: Intel Corporation Xeon E3-1200 v2/3rd Gen Core processor Graphics Controller (rev 09)
 01:00.0 VGA compatible controller: NVIDIA Corporation GK107 [GeForce GTX 650] (rev a1)
@@ -1313,7 +1299,6 @@ then you need to add your discrete card's BusID to your X configuration. Find it
 then you fix it by adding it to the card's Device section in your X configuration. In my case:
 
  `/etc/X11/xorg.conf.d/10-nvidia.conf` 
-
 ```
 Section "Device"
     Identifier     "Device0"
@@ -1331,7 +1316,6 @@ Note how `01:00.0` is written as `1:0:0`.
 On very fast booting systems, systemd may attempt to start the display manager before the NVIDIA driver has fully initialized. You will see a message like the following in your logs only when Xorg runs during boot.
 
  `/var/log/Xorg.0.log` 
-
 ```
 [     1.807] (EE) NVIDIA(0): Failed to initialize the NVIDIA kernel module. Please see the
 [     1.807] (EE) NVIDIA(0):     system's kernel log for additional error messages and
@@ -1346,7 +1330,6 @@ In this case you will need to establish an ordering dependency from the display 
 Then create dependencies from the display manager to the device(s).
 
  `/etc/systemd/system/display-manager.service.d/10-wait-for-dri-devices.conf` 
-
 ```
 [Unit]
 Wants=dev-dri-card0.device
@@ -1370,7 +1353,6 @@ If your monitor is providing wrong EDID information, the nvidia-driver will pick
 Aside from manually setting modelines in the xorg config, you have to allow non-edid modes and disable edid in the device section:
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
-
 ```
 Section "Monitor"
     Identifier     "Monitor0"

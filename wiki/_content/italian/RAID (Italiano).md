@@ -38,7 +38,7 @@ I dispositivi RAID (Redundant Array of Independent Disks - insieme ridondante di
 
 	[RAID-0](https://en.wikipedia.org/wiki/it:RAID#RAID_0_.28Striping.29 "wikipedia:it:RAID")
 
-	Utilizza lo striping per combinare i dischi. Non propriamente un sistema RAID, in quanto _non fornisce alcuna ridondanza_. Essa, tuttavia , offre _un grande vantaggio in velocità_. In questo esempio si utilizza RAID-0 per lo swap, partendo dal presupposto che un sistema desktop è in uso, in cui l'aumento della velocità vale la possibilità di arresto anomalo del sistema se uno dei dischi si guasta. Su un server, un RAID-1 o RAID-5 è più appropriato. L'affidabilità di un dato sistema RAID-0 è uguale all'affidabilità media dei dischi diviso per il numero di dischi presenti. Quindi l'affidabilità, misurata come tempo medio tra due guasti (MTBF) è inversamente proporzionale al numero degli elementi; cioè un sistema di due dischi è affidabile la metà di un disco solo.
+	Utilizza lo striping per combinare i dischi. Non propriamente un sistema RAID, in quanto *non fornisce alcuna ridondanza*. Essa, tuttavia , offre *un grande vantaggio in velocità*. In questo esempio si utilizza RAID-0 per lo swap, partendo dal presupposto che un sistema desktop è in uso, in cui l'aumento della velocità vale la possibilità di arresto anomalo del sistema se uno dei dischi si guasta. Su un server, un RAID-1 o RAID-5 è più appropriato. L'affidabilità di un dato sistema RAID-0 è uguale all'affidabilità media dei dischi diviso per il numero di dischi presenti. Quindi l'affidabilità, misurata come tempo medio tra due guasti (MTBF) è inversamente proporzionale al numero degli elementi; cioè un sistema di due dischi è affidabile la metà di un disco solo.
 
 	[RAID-1](https://en.wikipedia.org/wiki/it:RAID#RAID_1_.28Mirroring.29 "wikipedia:it:RAID")
 
@@ -48,7 +48,7 @@ I dispositivi RAID (Redundant Array of Independent Disks - insieme ridondante di
 
 	Funziona con 3 o più unità fisiche, e fornisce la ridondanza di RAID-1 in combinazione con incrementi di velocità e dimensioni di RAID-0\. RAID-5 utilizza lo striping, come RAID-0, ma memorizza anche blocchi di parità distribuiti su ogni disco che lo compone. Nel caso di un disco guasto, questi blocchi di parità sono utilizzati per ricostruire i dati su un disco sostitutivo. RAID-5 in grado di sopportare la perdita di un disco che lo compone.
 
-**Nota:** RAID-5 è comunemente scelto per la sua combinazione tra velocità e ridondanza dei dati. L'avvertenza è che se 1 unità dovesse fallire, e prima che essa venga sostituita, un'altra unità dovesse fallire, tutti i dati saranno persi. Per informazioni esaustive, riguardo a questo argomento, si veda la discussione _[RAID5 Risks](http://ubuntuforums.org/showthread.php?t=1588106)_ sul forum di Ubuntu. La migliore alternativa a RAID-5, quando la ridondanza è di fondamentale importanza, è RAID-10.
+**Nota:** RAID-5 è comunemente scelto per la sua combinazione tra velocità e ridondanza dei dati. L'avvertenza è che se 1 unità dovesse fallire, e prima che essa venga sostituita, un'altra unità dovesse fallire, tutti i dati saranno persi. Per informazioni esaustive, riguardo a questo argomento, si veda la discussione *[RAID5 Risks](http://ubuntuforums.org/showthread.php?t=1588106)* sul forum di Ubuntu. La migliore alternativa a RAID-5, quando la ridondanza è di fondamentale importanza, è RAID-10.
 
 ### Livelli RAID annidati
 
@@ -151,10 +151,9 @@ o
 Ora si costruirà l'array (e.g. [post sulla configurazione RAID5](http://fomori.org/blog/blog/2011/10/19/raid5-server-to-hold-all-your-data-%e2%80%94-the-nas-alternative/)).
 
 **Attenzione:** Assicurarsi di modificare i **valori in grassetto** qui sotto per farli corrispondere alla vostra configurazione.
-
  ` # mdadm --create --verbose /dev/md/vostra_array --level=**5** --metadata=**1.2** --chunk=**256** --raid-devices=**5 /dev/percorso_array_del_disco-1 /dev/percorso_array_del_disco-2 /dev/percorso_array_del_disco-3 /dev/percorso_array_del_disco-4 /dev/percorso_array_del_disco-5** ` 
 
-L'array viene creato sotto la periferica virtuale _/dev/md/vostra_array_, assemblato e pronto per l'uso (in modalità degradata). Si può direttamente iniziare ad usarlo mentre mdadm sincronizza l'array in background. La sincronizzazione può richiedere molto tempo per ripristinare la parità, è possibile controllare lo stato dell'avanzamento con:
+L'array viene creato sotto la periferica virtuale */dev/md/vostra_array*, assemblato e pronto per l'uso (in modalità degradata). Si può direttamente iniziare ad usarlo mentre mdadm sincronizza l'array in background. La sincronizzazione può richiedere molto tempo per ripristinare la parità, è possibile controllare lo stato dell'avanzamento con:
 
  `$ cat /proc/mdstat` 
 
@@ -203,11 +202,11 @@ o scriverlo in `rc.local`.
 
 Consultare [mkinitcpio](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)") per maggiori informazioni.
 
-Aggiungere **mdadm** oppure **mdadm_udev** nella sezione _HOOKS=_ del file `/etc/mkinitcpio.conf` prima dell'hook filesystem. Questo aggiungerà il supporto per mdadm direttamente nell'immagine.
+Aggiungere **mdadm** oppure **mdadm_udev** nella sezione *HOOKS=* del file `/etc/mkinitcpio.conf` prima dell'hook filesystem. Questo aggiungerà il supporto per mdadm direttamente nell'immagine.
 
- `HOOKS="base udev autodetect block **mdadm_udev** filesystems usbinput fsck"` Si possono visualizzare gli hook disponibili per la sezione _HOOKS=_ con il comando `# mkinitcpio -L` ed ottenere informazioni riguardo ogni hook con: `# mkinitcpio -H mdadm_udev` 
+ `HOOKS="base udev autodetect block **mdadm_udev** filesystems usbinput fsck"` Si possono visualizzare gli hook disponibili per la sezione *HOOKS=* con il comando `# mkinitcpio -L` ed ottenere informazioni riguardo ogni hook con: `# mkinitcpio -H mdadm_udev` 
 
-Aggiungere il modulo **raid456** ed il modulo del filesystem utilizzato sul raid (ext4) nella sezione _MODULES=_ del file `/etc/mkinitcpio.conf`. Questo inserirà i moduli nell'immagine del kernel.
+Aggiungere il modulo **raid456** ed il modulo del filesystem utilizzato sul raid (ext4) nella sezione *MODULES=* del file `/etc/mkinitcpio.conf`. Questo inserirà i moduli nell'immagine del kernel.
 
  `MODULES="**ext4 raid456**"` Successivamente rigenerare initrd con il comando: `# mkinitcpio -p linux` oppure se si utilizza [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) `# mkinitcpio -p linux-lts` 
 
@@ -480,7 +479,7 @@ Ci sono diversi strumenti per misurare le prestazioni di un RAID. Il miglioramen
 *   [Chapter 15: Redundant Array of Independent Disks (RAID)](http://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_Linux/6/html/Storage_Administration_Guide/ch-raid.html) nella documentazione di Red Hat Enterprise Linux 6
 *   [Linux-RAID FAQ](http://tldp.org/FAQ/Linux-RAID-FAQ/x37.html) nel Linux Documentation Project
 *   [Dell.com Raid Tutorial](http://support.dell.com/support/topics/global.aspx/support/entvideos/raid?c=us&l=en&s=gen) - Guida interattiva sul Raid
-*   [BAARF](http://www.miracleas.com/BAARF/) e _[Why should I not use RAID 5?](http://www.miracleas.com/BAARF/RAID5_versus_RAID10.txt)_ di Art S. Kagel
+*   [BAARF](http://www.miracleas.com/BAARF/) e *[Why should I not use RAID 5?](http://www.miracleas.com/BAARF/RAID5_versus_RAID10.txt)* di Art S. Kagel
 *   [Introduction to RAID](http://www.linux-mag.com/id/7924/), [Nested-RAID: RAID-5 and RAID-6 Based Configurations](http://www.linux-mag.com/id/7931/), [Intro to Nested-RAID: RAID-01 and RAID-10](http://www.linux-mag.com/id/7928/), and [Nested-RAID: The Triple Lindy](http://www.linux-mag.com/id/7932/) su Linux Magazine
 
 **mdadm**

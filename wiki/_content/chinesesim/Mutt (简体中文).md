@@ -39,7 +39,6 @@ Mutt是一个基于ncurse的Email客戶端。
 修改配置文件
 
  `~/.muttrc` 
-
 ```
 set mbox_type=Maildir
 set folder=$HOME/.mail
@@ -106,7 +105,6 @@ remotepass = myremotepassword # Login-Password. -- ACHTUNG! Of course, this is n
 下面是一个使用Gmail的例子。
 
  `~/.getmail/getmailrc` 
-
 ```
 [retriever]
 type = SimplePOP3SSLRetriever
@@ -136,7 +134,6 @@ $ */30 * * * * /usr/bin/getmail
 修改getmail设置
 
  `getmailrc` 
-
 ```
 [destination]
 type = MDA_external
@@ -146,7 +143,6 @@ path = /usr/bin/procmail
 配置procmail，下面将对来自happy-kangaroos 邮件列表，以及来自亲朋好友的所有Email作一个排序，每个人都有各自的Maildir。
 
  `.procmailrc` 
-
 ```
 MAILDIR=$HOME/mail
 DEFAULT=$MAILDIR/inbox/

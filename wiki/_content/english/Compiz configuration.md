@@ -33,9 +33,9 @@ This article details more advanced Compiz configuration. It is assumed that you 
 *   Depending on what packages you have installed, not all of the Compiz backends may be available.
 *   Support for the GConf backend was removed with [revision 3991](http://bazaar.launchpad.net/~compiz-team/compiz/0.9.12/revision/3991).
 
-By default, Compiz stores its configuration settings in a plain text file `~/.config/compiz-1/compizconfig/Default.ini`. In CCSM this is known as _Flat-file Configuration Backend_.
+By default, Compiz stores its configuration settings in a plain text file `~/.config/compiz-1/compizconfig/Default.ini`. In CCSM this is known as *Flat-file Configuration Backend*.
 
-Compiz can also store its settings in the GSettings or GConf databases. To change how Compiz saves its settings open CCSM and click on the _Preferences_ tab in the left hand column. Then choose your desired backend from the list under _Backend_.
+Compiz can also store its settings in the GSettings or GConf databases. To change how Compiz saves its settings open CCSM and click on the *Preferences* tab in the left hand column. Then choose your desired backend from the list under *Backend*.
 
 You can also change the backend manually by editing the `~/.config/compiz-1/compizconfig/config` file.
 
@@ -46,19 +46,19 @@ backend = ini
 
 ```
 
-*   ini = _Flat File Configuration Backend_
-*   gsettings = _GSettings Configuration Backend_
-*   gconf = _GConf Configuration Backend_
+*   ini = *Flat File Configuration Backend*
+*   gsettings = *GSettings Configuration Backend*
+*   gconf = *GConf Configuration Backend*
 
 Once you have edited and saved the file the change will take place immediately. There is no need to log out.
 
 ### Profiles
 
-Profiles allow you to switch between different sets of Compiz settings easily. To create a new profile open CCSM and click on the _Preferences_ tab. Under _Profile_ click the plus sign to add a new profile or the minus sign to delete one. All changes made in CCSM will be written to your current profile.
+Profiles allow you to switch between different sets of Compiz settings easily. To create a new profile open CCSM and click on the *Preferences* tab. Under *Profile* click the plus sign to add a new profile or the minus sign to delete one. All changes made in CCSM will be written to your current profile.
 
 Profiles are specific to the backend you are using. For instance, if you are using the GSettings backend then any new profile you create will be a GSettings profile. If you switch to a different backend then your current profile will not work and you will automatically switch to a profile available for that backend.
 
-**Note:** If you see more than one profile named _Default_ this is probably because you have used more than one backend e.g. you will have a default profile for ini and a default profile for GSettings or GConf.
+**Note:** If you see more than one profile named *Default* this is probably because you have used more than one backend e.g. you will have a default profile for ini and a default profile for GSettings or GConf.
 
 ## Window decoration themes
 
@@ -68,7 +68,7 @@ Profiles are specific to the backend you are using. For instance, if you are usi
 
 **Note:** Some themes may cause Emerald to crash if they are selected. See [Compiz#Emerald crashes when selecting a theme](/index.php/Compiz#Emerald_crashes_when_selecting_a_theme "Compiz").
 
-Many Emerald themes are available for download on [compiz-themes.org](http://compiz-themes.org/index.php?xcontentmode=103). Emerald themes can be installed, selected, removed and edited using the _emerald-theme-manager_ program. For downloaded themes, unzip the tarball and then install it using the _Import_ option in the theme manager.
+Many Emerald themes are available for download on [compiz-themes.org](http://compiz-themes.org/index.php?xcontentmode=103). Emerald themes can be installed, selected, removed and edited using the *emerald-theme-manager* program. For downloaded themes, unzip the tarball and then install it using the *Import* option in the theme manager.
 
 Emerald themes are store in two locations:
 
@@ -88,34 +88,34 @@ Many Metacity themes are available for download on [gnome-look.org](http://gnome
 *   **Selecting the theme in Compiz 0.9**: The 0.9 version of GTK Window Decorator will read Metacity's theme settings from GSettings. The theme can be set with the following command:
 
 ```
-$ gsettings set org.gnome.metacity theme _theme-name_
+$ gsettings set org.gnome.metacity theme *theme-name*
 
 ```
 
-where _theme-name_ is the name of the theme you wish to use.
+where *theme-name* is the name of the theme you wish to use.
 
 *   **Selecting the theme in Compiz 0.8**: The 0.8 version of GTK Window Decorator expects Metacity's theme settings to be stored in GConf. Despite the fact that Metacity no longer uses GConf, the GTK Window Decorator theme can still be set using the following command:
 
 ```
-$ gconftool-2 -s /apps/metacity/general/theme -t string _theme-name_
+$ gconftool-2 -s /apps/metacity/general/theme -t string *theme-name*
 
 ```
 
-where _theme-name_ is the name of the theme you wish to use.
+where *theme-name* is the name of the theme you wish to use.
 
 ### KDE Window Decorator
 
-Kwin themes can be downloaded, installed and managed using the [KDE](/index.php/KDE "KDE") _systemsettings_ panel.
+Kwin themes can be downloaded, installed and managed using the [KDE](/index.php/KDE "KDE") *systemsettings* panel.
 
 ## Workspaces and Viewports
 
-**Note:** There was once a _Number of Desktops_ option under CCSM -> _General Options_ -> _Desktop Size_ which made it possible to use standard workspaces instead of viewports (though this was incompatible with many Compiz plugins such as _Cube_). As of Compiz 0.9.11 ([revision 3857](http://bazaar.launchpad.net/~compiz-team/compiz/0.9.12/revision/3857)) the _Number of Desktops_ option has been removed.
+**Note:** There was once a *Number of Desktops* option under CCSM -> *General Options* -> *Desktop Size* which made it possible to use standard workspaces instead of viewports (though this was incompatible with many Compiz plugins such as *Cube*). As of Compiz 0.9.11 ([revision 3857](http://bazaar.launchpad.net/~compiz-team/compiz/0.9.12/revision/3857)) the *Number of Desktops* option has been removed.
 
 Unlike many other window managers, Compiz does not use multiple workspaces. Instead, it uses one workspace but splits it into multiple sections known as viewports.
 
-The number and layout of viewports can be configured in CCSM -> _General Options_ -> _Desktop Size_ Changing the _Horizontal Virtual Size_ will change the number of viewports in a row. Changing the _Vertical Virtual Size_ will add or remove rows of viewports.
+The number and layout of viewports can be configured in CCSM -> *General Options* -> *Desktop Size* Changing the *Horizontal Virtual Size* will change the number of viewports in a row. Changing the *Vertical Virtual Size* will add or remove rows of viewports.
 
-If you are using the _Desktop Cube_ plugin, you will not be to use the rows of viewports added by increasing the _Vertical Virtual Size_. To take advantage of multiple rows of viewports, use the _Desktop Wall_ plugin instead.
+If you are using the *Desktop Cube* plugin, you will not be to use the rows of viewports added by increasing the *Vertical Virtual Size*. To take advantage of multiple rows of viewports, use the *Desktop Wall* plugin instead.
 
 ## Keyboard shortcuts
 
@@ -133,7 +133,7 @@ Extra shortcuts can be added using the commands plugin in CCSM.
 
 ### Edge bindings
 
-Besides mouse and key bindings, Compiz can also assign commands to certain actions involving the screen edges, for example: dragging a window to the screen edge. For instance: the _Rotate Cube_ plugin has an option to switch to the next [viewport](#Workspaces_and_Viewports) if a window is dragged to the screen edge. Edge bindings can usually be disabled, through CCSM, by unticking _Edge Flip_ options in the plugin's settings section or by disabling actions which have the screen icon next to them in the _Bindings_ section of the relevant plugin.
+Besides mouse and key bindings, Compiz can also assign commands to certain actions involving the screen edges, for example: dragging a window to the screen edge. For instance: the *Rotate Cube* plugin has an option to switch to the next [viewport](#Workspaces_and_Viewports) if a window is dragged to the screen edge. Edge bindings can usually be disabled, through CCSM, by unticking *Edge Flip* options in the plugin's settings section or by disabling actions which have the screen icon next to them in the *Bindings* section of the relevant plugin.
 
 ## Plugins
 
@@ -141,36 +141,36 @@ Almost all Compiz functionality is implemented using plugins. Some plugins must 
 
 ### Grid
 
-If you want to compare two windows side by side by dragging them to the edges of the screen, similar to the "Aero Snap" feature introduced in Windows 7, enable the _Grid_ plugin in CCSM. If you are using the _Desktop Wall_ or _Rotate Cube_ plugin then disable the _Edge Flip_ options in that plugin's section to ensure that windows do not move to the next desktop when dragged to the screen edge.
+If you want to compare two windows side by side by dragging them to the edges of the screen, similar to the "Aero Snap" feature introduced in Windows 7, enable the *Grid* plugin in CCSM. If you are using the *Desktop Wall* or *Rotate Cube* plugin then disable the *Edge Flip* options in that plugin's section to ensure that windows do not move to the next desktop when dragged to the screen edge.
 
 **Tip:**
 
-*   The plugin in CCSM labelled _Snapping Windows_ merely adds resistance to the edges of the screen. It does not resize windows that are dragged to the screen edge.
-*   The _Grid_ plugin in Compiz 0.8 does not support resizing windows by dragging them to the screen edge. Windows can only be compared by using keyboard shortcuts.
+*   The plugin in CCSM labelled *Snapping Windows* merely adds resistance to the edges of the screen. It does not resize windows that are dragged to the screen edge.
+*   The *Grid* plugin in Compiz 0.8 does not support resizing windows by dragging them to the screen edge. Windows can only be compared by using keyboard shortcuts.
 
 ### Scale
 
-The _Scale_ plugin provides an option to view scaled thumbnails of all windows in the current viewport, similar to the "Present Windows" feature in [KDE](/index.php/KDE "KDE") or the "Overview Mode" in [GNOME](/index.php/GNOME "GNOME") Shell. Once the plugin is enabled, the view can be accessed by moving the mouse cursor into the top right corner of the screen. The active corner can be configured in the _Bindings_ tab of the plugin's settings section.
+The *Scale* plugin provides an option to view scaled thumbnails of all windows in the current viewport, similar to the "Present Windows" feature in [KDE](/index.php/KDE "KDE") or the "Overview Mode" in [GNOME](/index.php/GNOME "GNOME") Shell. Once the plugin is enabled, the view can be accessed by moving the mouse cursor into the top right corner of the screen. The active corner can be configured in the *Bindings* tab of the plugin's settings section.
 
 ### Widget Layer
 
-The _Widget Layer_ plugin allows you to define certain windows as widgets. Widget windows are shown on a separate "layer" of the screen. When the widget layer is hidden, all windows defined as widget windows will be iconified. By default, the widget layer is shown and hidden using `F9` key.
+The *Widget Layer* plugin allows you to define certain windows as widgets. Widget windows are shown on a separate "layer" of the screen. When the widget layer is hidden, all windows defined as widget windows will be iconified. By default, the widget layer is shown and hidden using `F9` key.
 
-To define a window as a widget, open CCSM and navigate to the _Widget Layer_ plugin. Click on the _Behaviour_ tab and click on the plus sign button next to the _Widget Windows_ field. In the dialog box that appears, choose _Window Title_ from the _Type_ menu. In the _Value_ field enter the title for the window you wish to define as a widget, for example: _galculator_.
+To define a window as a widget, open CCSM and navigate to the *Widget Layer* plugin. Click on the *Behaviour* tab and click on the plus sign button next to the *Widget Windows* field. In the dialog box that appears, choose *Window Title* from the *Type* menu. In the *Value* field enter the title for the window you wish to define as a widget, for example: *galculator*.
 
 ### Screen Magnification
 
-There are two Compiz plugins that can provide magnification functionality. The first is _Magnifier_ which acts much like a magnifying glass (everything within the rectangular box will be zoomed). The magnifier can be used by enabling the plugin in CCSM and pressing `Super+m`.
+There are two Compiz plugins that can provide magnification functionality. The first is *Magnifier* which acts much like a magnifying glass (everything within the rectangular box will be zoomed). The magnifier can be used by enabling the plugin in CCSM and pressing `Super+m`.
 
-The other plugin is called _Enhanced Desktop Zoom_. When this plugin is enabled, pressing the `Super` key and scrolling the middle mouse button will magnify the part of the desktop that is under the mouse cursor.
+The other plugin is called *Enhanced Desktop Zoom*. When this plugin is enabled, pressing the `Super` key and scrolling the middle mouse button will magnify the part of the desktop that is under the mouse cursor.
 
 ### Crash handler
 
-It is a good idea to enable the _Crash handler_ plugin in CCSM. This plugin ensures that if, for whatever reason, Compiz fails to start with the session or crashes at some point during the session, crash logs will be dumped and an alternative window manager will be started. To specify a window manager that can replace Compiz in the event of a crash, click on the _Crash handler_ plugin and tick the _Start Other Window Manager_ option. Then, in the _Window Manager Command Line_ field, enter a command to start the window manager of choice, for instance: `xfwm4 --replace`.
+It is a good idea to enable the *Crash handler* plugin in CCSM. This plugin ensures that if, for whatever reason, Compiz fails to start with the session or crashes at some point during the session, crash logs will be dumped and an alternative window manager will be started. To specify a window manager that can replace Compiz in the event of a crash, click on the *Crash handler* plugin and tick the *Start Other Window Manager* option. Then, in the *Window Manager Command Line* field, enter a command to start the window manager of choice, for instance: `xfwm4 --replace`.
 
 ## Compiz configuration without CCSM
 
-Compiz does not have to be configured through CCSM. Settings can be changed by editing the profile directly. For Flat File profiles, this will mean making editing changes to the `~/.config/compiz-1/compizconfig/Default.ini` file or similar. For GSettings or GConf profiles, this will mean making changes to the DConf or GConf databases using the _gsettings_ or _gconftool-2_ tools.
+Compiz does not have to be configured through CCSM. Settings can be changed by editing the profile directly. For Flat File profiles, this will mean making editing changes to the `~/.config/compiz-1/compizconfig/Default.ini` file or similar. For GSettings or GConf profiles, this will mean making changes to the DConf or GConf databases using the *gsettings* or *gconftool-2* tools.
 
 ### Flat-file sample configuration
 
@@ -285,7 +285,7 @@ as_prev_all_key = Disabled
 
 **Note:**
 
-*   Most Compiz schemas are _relocatable_. This means that a path needs to provided along with the schema name itself - in this case, the path to the Compiz profile, for example: `:/org/compiz/profiles/**Default**/plugins/`.
+*   Most Compiz schemas are *relocatable*. This means that a path needs to provided along with the schema name itself - in this case, the path to the Compiz profile, for example: `:/org/compiz/profiles/**Default**/plugins/`.
 *   That a Compiz plugin's schema is installed does not guarantee that the plugin itself is installed.
 
 List all of the available Compiz profiles:
@@ -305,7 +305,7 @@ $ gsettings list-recursively org.compiz | grep current-profile
 Set the active Compiz profile:
 
 ```
-$ gsettings set org.compiz current-profile _profile-name_
+$ gsettings set org.compiz current-profile *profile-name*
 
 ```
 
@@ -316,21 +316,21 @@ $ gsettings list-relocatable-schemas | grep org.compiz
 
 ```
 
-View all of the available settings for a Compiz plugin and their values (this example will show the settings of _Static Application Switcher_):
+View all of the available settings for a Compiz plugin and their values (this example will show the settings of *Static Application Switcher*):
 
 ```
 $ gsettings list-recursively org.compiz.staticswitcher:/org/compiz/profiles/Default/plugins/staticswitcher/
 
 ```
 
-View the value for a specific Compiz setting (this example checks the whether the _Icon_ option in _Static Application Switcher_ is enabled:
+View the value for a specific Compiz setting (this example checks the whether the *Icon* option in *Static Application Switcher* is enabled:
 
 ```
 $ gsettings get org.compiz.staticswitcher:/org/compiz/profiles/Default/plugins/staticswitcher/ icon
 
 ```
 
-Change the value for a Compiz plugin setting (this will disable icons in _Static Application Switcher_):
+Change the value for a Compiz plugin setting (this will disable icons in *Static Application Switcher*):
 
 ```
 $ gsettings set org.compiz.staticswitcher:/org/compiz/profiles/Default/plugins/staticswitcher/ icon false
@@ -341,7 +341,7 @@ $ gsettings set org.compiz.staticswitcher:/org/compiz/profiles/Default/plugins/s
 
 **Tip:**
 
-*   Do not forget to place quotation marks around the array when overwriting the _active-plugins_ value, e.g. `**"**['core']**"**`.
+*   Do not forget to place quotation marks around the array when overwriting the *active-plugins* value, e.g. `**"**['core']**"**`.
 *   If you enter an invalid plugin name or the name of a plugin that is not installed, the command will complete without error but the invalid name will automatically be removed from the array.
 
 Two steps are required. Firstly, get the list of active Compiz plugins using the command below:
@@ -358,7 +358,7 @@ This should return an output similar to the one below:
 
 ```
 
-Copy and paste the output and add it to the command to set the active plugins, adding or removing plugins from the array as appropriate. The example below will enable the _Static Application Switcher:_
+Copy and paste the output and add it to the command to set the active plugins, adding or removing plugins from the array as appropriate. The example below will enable the *Static Application Switcher:*
 
 ```
 $ gsettings set org.compiz.core:/org/compiz/profiles/Default/plugins/core/ active-plugins "['core', 'composite', 'opengl', 'compiztoolbox', 'decor', 'vpswitch', 'snap', 'mousepoll', 'resize', 'place', 'move', 'wall', 'grid', 'regex', 'imgpng', 'session', 'gnomecompat', 'animation', 'fade', 'workarounds', '**staticswitcher'**]"

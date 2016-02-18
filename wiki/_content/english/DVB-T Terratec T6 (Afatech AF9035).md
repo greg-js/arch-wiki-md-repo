@@ -4,7 +4,7 @@ This tutorial was tested for a Terratec T6 with the [Afatech AF9035](http://www.
 
 ## Identify chipset
 
-Filter _dmesg_ to find out the exact chipset with the following command:
+Filter *dmesg* to find out the exact chipset with the following command:
 
 ```
 $ dmesg | grep dvb
@@ -26,7 +26,7 @@ Download the file of your choice and navigate to the download-folder.
 
 Without a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") the file cannot be installed (and tracked) with pacman. However, for a firmware the main step of an installation is to move the file into the `/lib/firmware` path.
 
-If you move the file manually and re-plug the device, _dmesg_ should show the firmware loaded and the device is now in **warm state**:
+If you move the file manually and re-plug the device, *dmesg* should show the firmware loaded and the device is now in **warm state**:
 
 ```
 $ dmesg |grep -e dvb -e af9033

@@ -1,4 +1,4 @@
-El presente documento contiene un índice con anotaciones a otros artículos de divulgación e información importantes para mejorar y añadir funcionalidades al sistema Arch instalado. Se presume que los lectores han leído y seguido la [Guía para principiantes](/index.php/Beginners%27_Guide_(Espa%C3%B1ol) "Beginners' Guide (Español)") o la [Guía de instalación](/index.php/Installation_Guide_(Espa%C3%B1ol) "Installation Guide (Español)") para instalar un sistema básico de Arch Linux. Es _necesario_ en primer lugar haber leído y comprendido los conceptos explicados en [#Administrar el sistema](#Administrar_el_sistema) y [#Gestionar los paquetes](#Gestionar_los_paquetes) antes de continuar con las otras secciones de esta página y de otros artículos de la wiki.
+El presente documento contiene un índice con anotaciones a otros artículos de divulgación e información importantes para mejorar y añadir funcionalidades al sistema Arch instalado. Se presume que los lectores han leído y seguido la [Guía para principiantes](/index.php/Beginners%27_Guide_(Espa%C3%B1ol) "Beginners' Guide (Español)") o la [Guía de instalación](/index.php/Installation_Guide_(Espa%C3%B1ol) "Installation Guide (Español)") para instalar un sistema básico de Arch Linux. Es *necesario* en primer lugar haber leído y comprendido los conceptos explicados en [#Administrar el sistema](#Administrar_el_sistema) y [#Gestionar los paquetes](#Gestionar_los_paquetes) antes de continuar con las otras secciones de esta página y de otros artículos de la wiki.
 
 ## Contents
 
@@ -79,15 +79,15 @@ Esta sección se ocupa de las tareas administrativas y de gestión del sistema. 
 
 Una instalación nueva deja a los usuarios con tan solo una cuenta de superusuario, más conocido como «root». El inicio de sesión como root durante prolongados periodos de tiempo, incluso exponiéndose, posiblemente, a través de un servidor [SSH](/index.php/SSH "SSH"), es considerado sumamente inseguro. En su lugar de ello, los usuarios deben crear y usar cuentas de usuario sin privilegios para la mayoría de las tareas, dejando la cuenta de root para la administración del sistema. Véase [Users and groups#Example adding a user](/index.php/Users_and_groups#Example_adding_a_user "Users and groups") para obtener un ejemplo típico en un sistema de escritorio.
 
-Los usuarios y grupos se utilizan en GNU/Linux para el _control de acceso_; los administradores pueden ajustar la pertenencia y propiedad a un grupo para conceder o denegar a los usuarios el acceso a los servicios y recursos del sistema. Lea el artículo [Users and groups (Español)](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") para más detalles y conocer potenciales riesgos de seguridad.
+Los usuarios y grupos se utilizan en GNU/Linux para el *control de acceso*; los administradores pueden ajustar la pertenencia y propiedad a un grupo para conceder o denegar a los usuarios el acceso a los servicios y recursos del sistema. Lea el artículo [Users and groups (Español)](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") para más detalles y conocer potenciales riesgos de seguridad.
 
 ### Dosificar privilegios
 
-La orden [su](/index.php/Su "Su") (_substitute user_—usuario sustituto—) permite asumir la identidad de otro usuario en el sistema (generalmente root) en la propia shell, mientras que la orden [sudo](/index.php/Sudo "Sudo") dosifica privilegios al concederlos temporalmente para una específica orden.
+La orden [su](/index.php/Su "Su") (*substitute user*—usuario sustituto—) permite asumir la identidad de otro usuario en el sistema (generalmente root) en la propia shell, mientras que la orden [sudo](/index.php/Sudo "Sudo") dosifica privilegios al concederlos temporalmente para una específica orden.
 
 ### Gestionar los servicios
 
-Arch Linux utiliza [systemd](/index.php/Systemd "Systemd") como init, el cual es un gestor del sistema y de los servicios para Linux. Para el mantenimiento de su instalación de Arch Linux, sería una buena idea aprender los conceptos básicos sobre el mismo. La interacción con systemd se realiza mediante la orden _systemctl_. Lea [Systemd (Español)#Uso básico de systemctl](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") para obtener más información.
+Arch Linux utiliza [systemd](/index.php/Systemd "Systemd") como init, el cual es un gestor del sistema y de los servicios para Linux. Para el mantenimiento de su instalación de Arch Linux, sería una buena idea aprender los conceptos básicos sobre el mismo. La interacción con systemd se realiza mediante la orden *systemctl*. Lea [Systemd (Español)#Uso básico de systemctl](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") para obtener más información.
 
 ### Mantenimiento del sistema
 
@@ -115,7 +115,7 @@ Si ha instalado Arch Linux x86_64 y planea utilizar aplicaciones de 32 bits, ten
 
 ### Arch Build System
 
-_Ports_ es un sistema utilizado inicialmente por las distribuciones BSD consistente en scripts de construcción que se encuentran en un árbol de directorios en el sistema local. En pocas palabras, cada puerto contiene un script en un directorio con el nombre intuitivamente referido a la aplicación instalable de terceros.
+*Ports* es un sistema utilizado inicialmente por las distribuciones BSD consistente en scripts de construcción que se encuentran en un árbol de directorios en el sistema local. En pocas palabras, cada puerto contiene un script en un directorio con el nombre intuitivamente referido a la aplicación instalable de terceros.
 
 El árbol [ABS](/index.php/ABS "ABS") ofrece la misma funcionalidad al proporcionar scripts de construcción llamados [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"), que se cargan con información conocida para una determinada pieza de software: control de la integridad, URL del proyecto, versión, licencia e instrucciones de compilación. Estos PKGBUILDs son analizados posteriormente por [makepkg](/index.php/Makepkg "Makepkg"), el programa que actualmente genera paquetes manejables por pacman.
 
@@ -143,7 +143,7 @@ En esta sección se proporciona orientación para los usuarios que deseen ejecut
 
 ### Controladores de pantalla
 
-El controlador gráfico por defecto, _vesa_, funciona con la mayoría de tarjetas de vídeo, pero el rendimiento puede ser significativamente mejorado en características y ajustes adicionales al instalar el controlador apropiado para los productos [ATI](/index.php/ATI_(Espa%C3%B1ol) "ATI (Español)"), [Intel](/index.php/Intel_(Espa%C3%B1ol) "Intel (Español)"), o [NVIDIA](/index.php/NVIDIA_(Espa%C3%B1ol) "NVIDIA (Español)").
+El controlador gráfico por defecto, *vesa*, funciona con la mayoría de tarjetas de vídeo, pero el rendimiento puede ser significativamente mejorado en características y ajustes adicionales al instalar el controlador apropiado para los productos [ATI](/index.php/ATI_(Espa%C3%B1ol) "ATI (Español)"), [Intel](/index.php/Intel_(Espa%C3%B1ol) "Intel (Español)"), o [NVIDIA](/index.php/NVIDIA_(Espa%C3%B1ol) "NVIDIA (Español)").
 
 ### Gestores de pantalla o de inicio de sesión
 
@@ -151,7 +151,7 @@ En lugar de iniciar X manualmente, vea [Display manager](/index.php/Display_mana
 
 ### Entornos de escritorio
 
-Mientras [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") proporciona el marco básico para la construcción de un entorno gráfico, hay componentes adicionales que pueden ser considerados necesarios para una experiencia completa del usuario. Los [Entornos de Escritorios](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)") como [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), y [Xfce](/index.php/Xfce "Xfce") vienen acompañados de una amplia gama de clientes de _X_, como gestores de ventanas, paneles, administradores de archivos, emuladores de terminal, editores de texto, iconos y otras utilidades. Véase [Category:Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") para una lista completa y recursos adicionales.
+Mientras [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") proporciona el marco básico para la construcción de un entorno gráfico, hay componentes adicionales que pueden ser considerados necesarios para una experiencia completa del usuario. Los [Entornos de Escritorios](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)") como [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), y [Xfce](/index.php/Xfce "Xfce") vienen acompañados de una amplia gama de clientes de *X*, como gestores de ventanas, paneles, administradores de archivos, emuladores de terminal, editores de texto, iconos y otras utilidades. Véase [Category:Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") para una lista completa y recursos adicionales.
 
 ### Gestores de ventanas
 
@@ -173,7 +173,7 @@ Los usuarios, además, pueden instalar y configurar un [servidor de sonido](/ind
 
 ### Complementos para el navegador
 
-Para disfrutar de los contenidos multimedia de la web y para una _completa_ experiencia de navegación, se pueden instalar [plugins al navegador](/index.php/Browser_plugins "Browser plugins") como Adobe Acrobat Reader, Adobe Flash Player y Java.
+Para disfrutar de los contenidos multimedia de la web y para una *completa* experiencia de navegación, se pueden instalar [plugins al navegador](/index.php/Browser_plugins "Browser plugins") como Adobe Acrobat Reader, Adobe Flash Player y Java.
 
 ### Códecs
 
@@ -347,7 +347,7 @@ Colorear las salidas de algunas utilidades específicas de core como `grep` y `l
 
 #### Páginas del manual
 
-Las _«man pages»_ (o páginas del manual) son uno de los recursos más útiles disponibles para los usuarios de GNU/Linux. Para facilitar su lectura, las páginas pueden ser configuradas para hacer que el texto explicativo salga coloreado, como se ilustra en [man page#Colored man pages](/index.php/Man_page#Colored_man_pages "Man page").
+Las *«man pages»* (o páginas del manual) son uno de los recursos más útiles disponibles para los usuarios de GNU/Linux. Para facilitar su lectura, las páginas pueden ser configuradas para hacer que el texto explicativo salga coloreado, como se ilustra en [man page#Colored man pages](/index.php/Man_page#Colored_man_pages "Man page").
 
 ### Archivos comprimidos
 

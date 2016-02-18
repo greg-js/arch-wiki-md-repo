@@ -25,7 +25,6 @@ For information on general Chromebook post installation configuration (hotkeys, 
 Add the Xorg touchpad configuration below for better usability (higher sensitivity).
 
  `/etc/X11/xorg.conf.d/50-cros-touchpad.conf` 
-
 ```
 Section "InputClass" 
     Identifier      "touchpad peppy cyapa" 
@@ -47,7 +46,6 @@ We will create a custom hwdb config file to bypass the default mapping in `/usr/
 Add the following to the new hwdb config file, save and exit.
 
  `/etc/udev/hwdb.d/90-chromebook-keyboard-fix.hwdb` 
-
 ```
 # Chromebook 14 fix
 evdev:atkbd:dmi:bvn*:bvr*:bd*:svnHewlett-Packard*:pnFalco:pvr*
@@ -87,7 +85,6 @@ First make sure you have all the needed packages: [xbindkeys](https://www.archli
 Create `.xbindkeysrc` in your home folder:
 
  `~/.xbindkeysrc` 
-
 ```
 #Delete
 "xvkbd -xsendevent -text '\[Delete]'"

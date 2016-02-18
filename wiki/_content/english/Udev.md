@@ -46,7 +46,7 @@ A standalone fork is available in AUR: [eudev](/index.php/Eudev "Eudev").
 
 ## About udev rules
 
-Udev rules written by the administrator go in `/etc/udev/rules.d/`, their file name has to end with _.rules_. The udev rules shipped with various packages are found in `/usr/lib/udev/rules.d/`. If there are two files by the same name under `/usr/lib` and `/etc`, the ones in `/etc` take precedence.
+Udev rules written by the administrator go in `/etc/udev/rules.d/`, their file name has to end with *.rules*. The udev rules shipped with various packages are found in `/usr/lib/udev/rules.d/`. If there are two files by the same name under `/usr/lib` and `/etc`, the ones in `/etc` take precedence.
 
 ### Writing udev rules
 
@@ -58,7 +58,6 @@ Udev rules written by the administrator go in `/etc/udev/rules.d/`, their file n
 This is an example of a rule that places a symlink `/dev/video-cam1` when a webcamera is connected. First, we have found out that this camera is connected and has loaded with the device `/dev/video2`. The reason for writing this rule is that at the next boot the device might just as well show up under a different name like `/dev/video0`.
 
  `# udevadm info -a -p $(udevadm info -q path -n /dev/video2)` 
-
 ```
 Udevadm info starts with the device specified by the devpath and then walks up the chain of parent devices. It prints for every device found, all possible attributes in the udev rules key format. A rule to match, can be composed by the attributes of the device and the attributes from one single parent device.
 
@@ -88,7 +87,6 @@ Udevadm info starts with the device specified by the devpath and then walks up t
 From the video4linux device we use `KERNEL=="video2"` and `SUBSYSTEM=="video4linux"`, then we match the webcam using vendor and product ID's from the usb parent `SUBSYSTEMS=="usb"`, `ATTRS{idVendor}=="05a9"` and `ATTRS{idProduct}=="4519"`.
 
  `/etc/udev/rules.d/83-webcam.rules` 
-
 ```
 KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{idVendor}=="05a9", ATTRS{idProduct}=="4519", SYMLINK+="video-cam1"
 
@@ -104,7 +102,6 @@ In the example above we create a symlink using `SYMLINK+="video-cam1"` but we co
 In this command's output, you will see value pairs such as ID_VENDOR_ID and ID_MODEL_ID, which match your previously used attributes "idVendor" and "idProduct". A rule that uses device environment variables may look like this:
 
  `/etc/udev/rules.d/83-webcam-removed.rules` 
-
 ```
 ACTION=="remove", SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="05a9", ENV{ID_MODEL_ID}=="4519", RUN+="/path/to/your/script"
 
@@ -171,7 +168,6 @@ See [Udisks](/index.php/Udisks "Udisks").
 The following ruleset will allow normal users (within the "users" group) the ability to access the [USBtinyISP](http://www.ladyada.net/make/usbtinyisp/) USB programmer for AVR microcontrollers and a generic (SiLabs [CP2102](http://www.silabs.com/products/interface/usbtouart)) USB to UART adapter, the [Atmel AVR Dragon](http://www.atmel.com/tools/AVRDRAGON.aspx?tab=overview) programmer, and the [Atmel AVR ISP mkII](http://www.atmel.com/tools/AVRISPMKII.aspx). Adjust the permissions accordingly. Verified as of 31-10-2012.
 
  `/etc/udev/rules.d/50-embedded_devices.rules` 
-
 ```
 # USBtinyISP Programmer rules
 SUBSYSTEMS=="usb", ATTRS{idVendor}=="1781", ATTRS{idProduct}=="0c9f", GROUP="users", MODE="0666"
@@ -206,7 +202,7 @@ See the [Execute on USB insert](/index.php/Execute_on_USB_insert "Execute on USB
 Create the rule `/etc/udev/rules.d/95-monitor-hotplug.rules` with the following content to launch [arandr](https://www.archlinux.org/packages/?name=arandr) on plug in of a VGA monitor cable:
 
 ```
-KERNEL=="card0", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/_username_/.Xauthority", RUN+="/usr/bin/arandr"
+KERNEL=="card0", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/*username*/.Xauthority", RUN+="/usr/bin/arandr"
 
 ```
 
@@ -240,14 +236,12 @@ to see if anything is actually happening.
 If you connected a eSATA bay or an other eSATA adapter the system will still recognize this disk as an internal SATA drive. [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE") will ask you for your root password all the time. The following rule will mark the specified SATA-Port as an external eSATA-Port. With that, a normal GNOME user can connect their eSATA drives to that port like a USB drive, without any root password and so on.
 
  `/etc/udev/rules.d/10-esata.rules` 
-
 ```
 DEVPATH=="/devices/pci0000:00/0000:00:1f.2/host4/*", ENV{UDISKS_SYSTEM}="0"
 
 ```
 
 **Note:** The `DEVPATH` can be found after connection the eSATA drive with the following commands (replace `sdb` accordingly):
-
 ```
 # udevadm info -q path -n /dev/sdb
 /devices/pci0000:00/0000:00:1f.2/host4/target4:0:0/4:0:0:0/block/sdb
@@ -270,10 +264,9 @@ See also [Persistent block device naming](/index.php/Persistent_block_device_nam
 
 For setting up the webcam in the first place, refer to [Webcam configuration](/index.php/Webcam_setup#Webcam_configuration "Webcam setup").
 
-Using multiple webcams, useful for example with [motion](https://www.archlinux.org/packages/?name=motion) (software motion detector which grabs images from video4linux devices and/or from webcams), will assign video devices as /dev/video0..n randomly on boot. The recommended solution is to create symlinks using an _udev_ rule (as in the example in [#Writing udev rules](#Writing_udev_rules)):
+Using multiple webcams, useful for example with [motion](https://www.archlinux.org/packages/?name=motion) (software motion detector which grabs images from video4linux devices and/or from webcams), will assign video devices as /dev/video0..n randomly on boot. The recommended solution is to create symlinks using an *udev* rule (as in the example in [#Writing udev rules](#Writing_udev_rules)):
 
  `/etc/udev/rules.d/83-webcam.rules` 
-
 ```
 KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{idVendor}=="05a9", ATTRS{idProduct}=="4519", SYMLINK+="video-cam1"
 KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="08f6", SYMLINK+="video-cam2"
@@ -290,7 +283,6 @@ If you use multiple printers, `/dev/lp[0-9]` devices will be assigned randomly o
 You can create following rule, which will create symlinks under `/dev/lp/by-id` and `/dev/lp/by-path`, similar to [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") scheme:
 
  `/etc/udev/rules.d/60-persistent-printer.rules` 
-
 ```
 ACTION=="remove", GOTO="persistent_printer_end"
 
@@ -354,7 +346,6 @@ First, find vendor and product ID of your device, for example
 Now change the `power/wakeup` attribute of the device and the USB controller it is connected to, which is in this case `driver/usb7/power/wakeup`. Use the following rule:
 
  `/etc/udev/rules.d/50-wake-on-device.rules` 
-
 ```
 ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c52b", ATTR{power/wakeup}="enabled", ATTR{driver/usb7/power/wakeup}="enabled"
 
@@ -377,7 +368,7 @@ This command will trigger a USB remove event on all USB devices with vendor ID `
 
 ### Blacklisting modules
 
-In rare cases, udev can make mistakes and load the wrong modules. To prevent it from doing this, you can blacklist modules. Once blacklisted, udev will never load that module. See [blacklisting](/index.php/Blacklisting "Blacklisting"). Not at boot-time _or_ later on when a hotplug event is received (eg, you plug in your USB flash drive).
+In rare cases, udev can make mistakes and load the wrong modules. To prevent it from doing this, you can blacklist modules. Once blacklisted, udev will never load that module. See [blacklisting](/index.php/Blacklisting "Blacklisting"). Not at boot-time *or* later on when a hotplug event is received (eg, you plug in your USB flash drive).
 
 ### Debug output
 
@@ -451,11 +442,11 @@ Then we create a rule in `/etc/udev/rules.d/` and set variables for either udisk
 
 For udisks, set `UDISKS_SYSTEM_INTERNAL="0"`, which will mark the device as "removable" and thus "eligible for automounting". See [udisks(7)](http://udisks.freedesktop.org/docs/1.0.5/udisks.7.html) for details.
 
- `/etc/udev/rules.d/50-external-myhomedisk.rules`  `ENV{ID_SERIAL_SHORT}=="_serial_number_", ENV{UDISKS_SYSTEM_INTERNAL}="0"` 
+ `/etc/udev/rules.d/50-external-myhomedisk.rules`  `ENV{ID_SERIAL_SHORT}=="*serial_number*", ENV{UDISKS_SYSTEM_INTERNAL}="0"` 
 
 For udisks2, set `UDISKS_AUTO="1"` to mark the device for automounting and `UDISKS_SYSTEM="0"` to mark the device as "removable". See [udisks(8)](http://udisks.freedesktop.org/docs/1.93.0/udisks.8.html) for details.
 
- `/etc/udev/rules.d/99-removable.rules`  `ENV{ID_SERIAL_SHORT}=="_serial_number_", ENV{UDISKS_AUTO}="1", ENV{UDISKS_SYSTEM}="0"` 
+ `/etc/udev/rules.d/99-removable.rules`  `ENV{ID_SERIAL_SHORT}=="*serial_number*", ENV{UDISKS_AUTO}="1", ENV{UDISKS_SYSTEM}="0"` 
 
 Remember to reload udev rules with `udevadm control --reload`. Next time you plug your device in, it will be treated as an external drive.
 
@@ -467,7 +458,7 @@ Some users have traced this problem to old entries in `/etc/modprobe.d/sound.con
 
 ### IDE CD/DVD-drive support
 
-Starting with version 170, udev does not support CD-ROM/DVD-ROM drives that are loaded as traditional IDE drives with the `ide_cd_mod` module and show up as `/dev/hd*`. The drive remains usable for tools which access the hardware directly, like _cdparanoia_, but is invisible for higher userspace programs, like KDE.
+Starting with version 170, udev does not support CD-ROM/DVD-ROM drives that are loaded as traditional IDE drives with the `ide_cd_mod` module and show up as `/dev/hd*`. The drive remains usable for tools which access the hardware directly, like *cdparanoia*, but is invisible for higher userspace programs, like KDE.
 
 A cause for the loading of the ide_cd_mod module prior to others, like sr_mod, could be e.g. that you have for some reason the module piix loaded with your [initramfs](/index.php/Initramfs "Initramfs"). In that case you can just replace it with ata_piix in your `/etc/mkinitcpio.conf`.
 
@@ -476,7 +467,6 @@ A cause for the loading of the ide_cd_mod module prior to others, like sr_mod, c
 If the group ID of your optical drive is set to `disk` and you want to have it set to `optical`, you have to create a custom udev rule:
 
  `/etc/udev/rules.d` 
-
 ```
 # permissions for IDE CD devices
 SUBSYSTEMS=="ide", KERNEL=="hd[a-z]", ATTR{removable}=="1", ATTRS{media}=="cdrom*", GROUP="optical"

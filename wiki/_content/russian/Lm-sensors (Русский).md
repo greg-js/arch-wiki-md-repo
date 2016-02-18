@@ -46,7 +46,6 @@ sensors-detect
 Пример:
 
  `# sensors-detect` 
-
 ```
 This program will help you determine which kernel modules you need
 to load to use lm_sensors most effectively. It is generally safe
@@ -89,7 +88,6 @@ Unloading cpuid... OK
 Пример запуска `sensors`:
 
  `$ sensors` 
-
 ```
 coretemp-isa-0000
 Adapter: ISA adapter
@@ -120,7 +118,6 @@ temp1:        +57.0°C  (high = +95.0°C, hyst =  +3.0°C)
 Вот часть вывода с одной машины:
 
  `# decode-dimms` 
-
 ```
 Memory Serial Presence Detect Decoder
 By Philip Edelbrock, Christian Zuckschwerdt, Burkart Lingner,
@@ -221,7 +218,6 @@ Part Number                                     OCZ3G1600LV2G
 Это реальный пример для системной платы Zotac ION-ITX-A-U. Значения coretemp смещены на 20 °C (более выше) и отрегулированы в соответствии со спецификацией Intel.
 
  `$ sensors` 
-
 ```
 coretemp-isa-0000
 Adapter: ISA adapter
@@ -234,7 +230,6 @@ Core 1:       +55.0°C  (crit = +125.0°C)
 Запустим `sensors` с параметром `-u`, чтобы увидеть, какие параметры доступны для каждого физического чипа (сырой режим)
 
  `$ sensors -u` 
-
 ```
 coretemp-isa-0000
 Adapter: ISA adapter
@@ -253,7 +248,6 @@ Core 1:
 Создаем следующий файл для переопределения значений по умолчанию:
 
  `/etc/sensors.d/Zotac-IONITX-A-U` 
-
 ```
 chip "coretemp-isa-0000"
   label temp2 "Core 0"
@@ -267,7 +261,6 @@ chip "coretemp-isa-0000"
 Теперь вызов `sensors` отобразит настроенные значения:
 
  `$ sensors` 
-
 ```
 coretemp-isa-0000
 Adapter: ISA adapter
@@ -282,7 +275,6 @@ Core 1:       +35.0°C  (crit = +105.0°C)
 Это реальный пример для системной платы Asus A7M266\. Требуется указать более подробные названия значений температуры 'temp1' and 'temp2':
 
  `$ sensors` 
-
 ```
 as99127f-i2c-0-2d
 Adapter: SMBus Via Pro adapter at e800
@@ -296,7 +288,6 @@ temp2:        +47.5°C  (high = +100.0°C, hyst = +75.0°C)
 Создаем следующий файл, чтобы переопределить значения по умолчанию:
 
  `/etc/sensors.d/Asus_A7M266` 
-
 ```
 chip "as99127f-*"
   label temp1 "Mobo Temp"
@@ -307,7 +298,6 @@ chip "as99127f-*"
 Теперь вызов `sensors` отобразит настроенные значения:
 
  `$ sensors` 
-
 ```
 as99127f-i2c-0-2d
 Adapter: SMBus Via Pro adapter at e800
@@ -323,7 +313,6 @@ CPU0 Temp:        +47.5°C  (high = +100.0°C, hyst = +75.0°C)
 Это реальный пример на HP Z600 workstation с двумя Xeon. Текущая нумерация физических ядер неверно: пронумерованы 0, 1, 9, 10, который повторяются во втором процессоре. Требуется получать значения температур ядер в последовательном порядке, т.е. 0,1,2,3,4,5,6,7.
 
  `$ sensors` 
-
 ```
 coretemp-isa-0000
 Adapter: ISA adapter
@@ -345,7 +334,6 @@ Core 10:      +61.0°C  (high = +85.0°C, crit = +95.0°C)
 Опять же, запустим `sensors` с параметром `-u`, чтобы увидеть, какие варианты доступны для каждого физического чипа:
 
  `$ sensors -u coretemp-isa-0000` 
-
 ```
 coretemp-isa-0000
 Adapter: ISA adapter
@@ -369,9 +357,7 @@ Core 10:
   temp12_crit: 95.000
 
 ```
-
  `$ sensors -u coretemp-isa-0004` 
-
 ```
 coretemp-isa-0004
 Adapter: ISA adapter
@@ -400,7 +386,6 @@ Core 10:
 Создадим следующий файл переопределения значения по умолчанию:
 
  `/etc/sensors.d/HP_Z600` 
-
 ```
 chip "coretemp-isa-0000"
   label temp2 "Core 0"
@@ -418,7 +403,6 @@ chip "coretemp-isa-0004"
 Теперь вызов `sensors` отобразит настроенные значения:
 
  `$ sensors` 
-
 ```
 coretemp-isa-0000
 Adapter: ISA adapter
@@ -461,9 +445,9 @@ Core7:        +60.0°C  (high = +85.0°C, crit = +95.0°C)
 
 У некоторых процессоров K10 имеются проблемы с датчиком температуры. Из документации к ядру (`linux-<version>/Documentation/hwmon/k10temp`):
 
-	_All these processors have a sensor, but on those for Socket F or AM2+, the sensor may return inconsistent values (erratum 319). The driver will refuse to load on these revisions unless users specify the `force=1` module parameter._
+	*All these processors have a sensor, but on those for Socket F or AM2+, the sensor may return inconsistent values (erratum 319). The driver will refuse to load on these revisions unless users specify the `force=1` module parameter.*
 
-	_Due to technical reasons, the driver can detect only the mainboard's socket type, not the processor's actual capabilities. Therefore, users of an AM3 processor on an AM2+ mainboard, can safely use the `force=1` parameter._
+	*Due to technical reasons, the driver can detect only the mainboard's socket type, not the processor's actual capabilities. Therefore, users of an AM3 processor on an AM2+ mainboard, can safely use the `force=1` parameter.*
 
 На проблемных машинах модуль сообщит "unreliable CPU thermal sensor; monitoring disabled". Можно принудительно загрузить его:
 

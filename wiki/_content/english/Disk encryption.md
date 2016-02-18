@@ -1,8 +1,8 @@
 This article discusses common techniques available in Arch Linux for cryptographically protecting a logical part of a storage disk (folder, partition, whole disk, ...), so that all data that is written to it is automatically encrypted, and decrypted on-the-fly when read again.
 
-"Storage disks" in this context can be your computer's hard drive(s), external devices like USB flash drives or DVD's, as well as _virtual_ storage disks like loop-back devices or cloud storage _(as long as Arch Linux can address it as a block device or filesystem)_.
+"Storage disks" in this context can be your computer's hard drive(s), external devices like USB flash drives or DVD's, as well as *virtual* storage disks like loop-back devices or cloud storage *(as long as Arch Linux can address it as a block device or filesystem)*.
 
-If you already know _what_ you want to protect and _how_ you want to encrypt, you are encouraged to directly browse the _related_ how-to articles listed on the right.
+If you already know *what* you want to protect and *how* you want to encrypt, you are encouraged to directly browse the *related* how-to articles listed on the right.
 
 ## Contents
 
@@ -52,10 +52,10 @@ In addition, disk encryption can also be used to add some security against unaut
 You will still be vulnerable to:
 
 *   Attackers who can break into your system (e.g. over the Internet) while it is running and after you have already unlocked and mounted the encrypted parts of the disk.
-*   Attackers who are able to gain physical access to the computer while it is running (even if you use a screenlocker), or very shortly _after_ it was running, if they have the resources to perform a [cold boot attack](https://en.wikipedia.org/wiki/Cold_boot_attack "wikipedia:Cold boot attack").
+*   Attackers who are able to gain physical access to the computer while it is running (even if you use a screenlocker), or very shortly *after* it was running, if they have the resources to perform a [cold boot attack](https://en.wikipedia.org/wiki/Cold_boot_attack "wikipedia:Cold boot attack").
 *   A government entity, which not only has the resources to easily pull off the above attacks, but also may simply force you to give up your keys/passphrases using various techniques of [coercion](https://en.wikipedia.org/wiki/Coercion "wikipedia:Coercion"). In most non-democratic countries around the world, as well as in the USA and UK, it may be legal for law enforcement agencies to do so if they have suspicions that you might be hiding something of interest.
 
-A very strong disk encryption setup (e.g. full system encryption with authenticity checking and no plaintext boot partition) is required to stand a chance against professional attackers who are able to tamper with your system _before_ you use it. And even then it is doubtful whether it can really prevent all types of tampering (e.g. hardware keyloggers). The best remedy might be [hardware-based full disk encryption](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption") and [Trusted Computing](https://en.wikipedia.org/wiki/Trusted_Computing "wikipedia:Trusted Computing").
+A very strong disk encryption setup (e.g. full system encryption with authenticity checking and no plaintext boot partition) is required to stand a chance against professional attackers who are able to tamper with your system *before* you use it. And even then it is doubtful whether it can really prevent all types of tampering (e.g. hardware keyloggers). The best remedy might be [hardware-based full disk encryption](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption") and [Trusted Computing](https://en.wikipedia.org/wiki/Trusted_Computing "wikipedia:Trusted Computing").
 
 **Warning:** Disk encryption also will not protect you against someone simply [wiping your disk](/index.php/Securely_wipe_disk "Securely wipe disk"). [Regular backups](/index.php/Backup_programs "Backup programs") are recommended to keep your data safe.
 
@@ -77,11 +77,11 @@ A very strong disk encryption setup (e.g. full system encryption with authentici
 
 	System encryption
 
-	Defined as the encryption of the operating system _and_ user data, system encryption helps to address some of the inadequacies of data encryption.
+	Defined as the encryption of the operating system *and* user data, system encryption helps to address some of the inadequacies of data encryption.
 
 	Benefits:
 
-*   prevents unauthorized physical access to (and tampering with) operating system files _(but see warning above)_
+*   prevents unauthorized physical access to (and tampering with) operating system files *(but see warning above)*
 *   prevents unauthorized physical access to private data that may be cached by the system
 
 	Disadvantages:
@@ -90,7 +90,7 @@ A very strong disk encryption setup (e.g. full system encryption with authentici
 
 In practice, there is not always a clear line between data encryption and system encryption, and many different compromises and customized setups are possible.
 
-In any case, disk encryption should only be viewed as an adjunct to the existing security mechanisms of the operating system - focused on securing offline physical access, while relying on _other_ parts of the system to provide things like network security and user-based access control.
+In any case, disk encryption should only be viewed as an adjunct to the existing security mechanisms of the operating system - focused on securing offline physical access, while relying on *other* parts of the system to provide things like network security and user-based access control.
 
 See also [Wikipedia:Disk encryption](https://en.wikipedia.org/wiki/Disk_encryption "wikipedia:Disk encryption").
 
@@ -114,7 +114,7 @@ Available solutions in this category are [eCryptfs](/index.php/ECryptfs "ECryptf
 
 ### Block device encryption
 
-Block device encryption methods, on the other hand, operate _below_ the filesystem layer and make sure that everything written to a certain block device (i.e. a whole disk, or a partition, or a file acting as a virtual loop-back device) is encrypted. This means that while the block device is offline, its whole content looks like a large blob of random data, with no way of determining what kind of filesystem and data it contains. Accessing the data happens, again, by mounting the protected container (in this case the block device) to an arbitrary location in a special way.
+Block device encryption methods, on the other hand, operate *below* the filesystem layer and make sure that everything written to a certain block device (i.e. a whole disk, or a partition, or a file acting as a virtual loop-back device) is encrypted. This means that while the block device is offline, its whole content looks like a large blob of random data, with no way of determining what kind of filesystem and data it contains. Accessing the data happens, again, by mounting the protected container (in this case the block device) to an arbitrary location in a special way.
 
 The following "block device encryption" solutions are available in Arch Linux:
 
@@ -124,7 +124,7 @@ The following "block device encryption" solutions are available in Arch Linux:
 
 	dm-crypt
 
-	[dm-crypt](/index.php/Dm-crypt "Dm-crypt") is the standard device-mapper encryption functionality provided by the Linux kernel. It can be used directly by those who like to have full control over all aspects of partition and key management. The management of dm-crypt is done with the [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) userspace utility. It can be used for the following types of block-device encryption: _LUKS_ (default), _plain_, and has limited features for _loopAES_ and _Truecrypt_ devices.
+	[dm-crypt](/index.php/Dm-crypt "Dm-crypt") is the standard device-mapper encryption functionality provided by the Linux kernel. It can be used directly by those who like to have full control over all aspects of partition and key management. The management of dm-crypt is done with the [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) userspace utility. It can be used for the following types of block-device encryption: *LUKS* (default), *plain*, and has limited features for *loopAES* and *Truecrypt* devices.
 
 *   LUKS, used by default, is an additional convenience layer which stores all of the needed setup information for dm-crypt on the disk itself and abstracts partition and key management in an attempt to improve ease of use and cryptographic security.
 *   plain dm-crypt mode, being the original kernel functionality, does not employ the convenience layer. It is more difficult to apply the same cryptographic strength with it. When doing so, longer keys (passphrases or keyfiles) are the result. It has, however, other advantages, described in the following.
@@ -146,7 +146,7 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
  | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
 | Type | block device encryption | block device encryption | block device encryption | stacked filesystem encryption | stacked filesystem encryption |
 | Main selling points | longest-existing one; possibly the fastest; works on legacy systems | de-facto standard for block device encryption on Linux; very flexible | very portable, well-polished, self-contained solution | slightly faster than EncFS; individual encrypted files portable between systems | easiest one to use; supports non-root administration |
-| Availability in Arch Linux | must manually compile custom kernel | _kernel modules:_ already shipped with default kernel; _tools:_ [device-mapper](https://www.archlinux.org/packages/?name=device-mapper), [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) [core] | [truecrypt 7.1a-2](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/truecrypt&id=efe03070990f9e3554508bd982b1bd5a654aa095) [extra] (read-only features in later versions) | _kernel module:_ already shipped with default kernel; _tools:_ [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) [community] | [encfs](https://www.archlinux.org/packages/?name=encfs) [community] |
+| Availability in Arch Linux | must manually compile custom kernel | *kernel modules:* already shipped with default kernel; *tools:* [device-mapper](https://www.archlinux.org/packages/?name=device-mapper), [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) [core] | [truecrypt 7.1a-2](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/truecrypt&id=efe03070990f9e3554508bd982b1bd5a654aa095) [extra] (read-only features in later versions) | *kernel module:* already shipped with default kernel; *tools:* [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) [community] | [encfs](https://www.archlinux.org/packages/?name=encfs) [community] |
 | License | GPL | GPL | custom
 [[1]](#See_also) | GPL | GPL |
 | 
@@ -220,7 +220,7 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
  | eCryptfs | EncFs |
 | Supported file systems | ext3, ext4, xfs (with caveats), jfs, nfs... |  ? |
 | Ability to encrypt filenames | ✔ | ✔ |
-| Ability to _not_ encrypt filenames | ✔ | ✔ |
+| Ability to *not* encrypt filenames | ✔ | ✔ |
 | Optimized handling of sparse files | ✖ | ✔ |
 | 
 
@@ -264,20 +264,20 @@ Among other things, you will need to answer the following questions:
 
 *   Ignore, and hope no data is leaked
 *   Disable or mount as ramdisk
-*   Encrypt _(as part of full disk encryption, or separately)_
+*   Encrypt *(as part of full disk encryption, or separately)*
 
 	How should encrypted parts of the disk be unlocked?
 
-*   Passphrase _(same as login password, or separate)_
-*   Keyfile _(e.g. on a USB stick, that you keep in a safe place or carry around with yourself)_
+*   Passphrase *(same as login password, or separate)*
+*   Keyfile *(e.g. on a USB stick, that you keep in a safe place or carry around with yourself)*
 *   Both
 
-	_When_ should encrypted parts of the disk be unlocked?
+	*When* should encrypted parts of the disk be unlocked?
 
 *   Before boot
 *   During boot
 *   At login
-*   Manually on demand _(after login)_
+*   Manually on demand *(after login)*
 
 	How should multiple users be accomodated?
 
@@ -314,7 +314,7 @@ In practice, it could turn out something like:
 	Partial system encryption with each user's home directory encrypted with [ECryptfs](/index.php/ECryptfs "ECryptfs")
 └──> unlocked on respective user login, using login passphrase
 └──> `swap` and `/tmp` partitions encrypted with [Dm-crypt with LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS"), using an automatically generated per-session throwaway key
-└──> indexing/caching of contents of `/home` by _slocate_ (and similar apps) disabled.
+└──> indexing/caching of contents of `/home` by *slocate* (and similar apps) disabled.
 
 	Example 4
 
@@ -409,7 +409,7 @@ The master key (and thus the encrypted data) can be protected with a secret pass
 
 	Randomly generated on-the-fly for each session
 
-In some cases, e.g. when encrypting swap space or a `/tmp` partition, it is not necessary to keep a persistent master key at all. A new throwaway key can be randomly generated for each session, without requiring any user interaction. This means that once unmounted, all files written to the partition in question can never be decrypted again by _anyone_ - which in those particular use-cases is perfectly fine.
+In some cases, e.g. when encrypting swap space or a `/tmp` partition, it is not necessary to keep a persistent master key at all. A new throwaway key can be randomly generated for each session, without requiring any user interaction. This means that once unmounted, all files written to the partition in question can never be decrypted again by *anyone* - which in those particular use-cases is perfectly fine.
 
 ### Cryptographic metadata
 
@@ -434,7 +434,7 @@ The **key derivation function** (e.g. PBKDF2 or scrypt) is deliberately slow (it
 
 The **encrypted master key** can be stored on disk together with the encrypted data. This way, the confidentiality of the encrypted data depends completely on the secret passphrase.
 
-Additional security can be attained by instead storing the encrypted master key in a keyfile on e.g. a USB stick. This provides **two-factor authentication**: Accessing the encrypted data now requires something only you _know_ (the passphrase), and additionally something only you _have_ (the keyfile).
+Additional security can be attained by instead storing the encrypted master key in a keyfile on e.g. a USB stick. This provides **two-factor authentication**: Accessing the encrypted data now requires something only you *know* (the passphrase), and additionally something only you *have* (the keyfile).
 
 Another way of achieving two-factor authentication is to augment the above key retrieval scheme to mathematically "combine" the passphrase with byte data read from one or more external files (located on a USB stick or similar), before passing it to the key derivation function.The files in question can be anything, e.g. normal JPEG images, which can be beneficial for [#Plausible deniability](#Plausible_deniability). They are still called "keyfiles" in this context, though.
 
@@ -445,7 +445,7 @@ It is usually not used for de/encrypting the disk data directly, though. For exa
 ```
                           ╭┈┈┈┈┈┈┈┈┈┈┈┈╮
                           ┊ master key ┊
-  _file on disk:_           ╰┈┈┈┈┈┬┈┈┈┈┈┈╯
+  *file on disk:*           ╰┈┈┈┈┈┬┈┈┈┈┈┈╯
  ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┐        │
  ╎╭───────────────────╮╎        ▼          ╭┈┈┈┈┈┈┈┈┈┈╮
  ╎│ encrypted file key│━━━━(decryption)━━━▶┊ file key ┊
@@ -480,16 +480,16 @@ The actual algorithm used for translating between pieces of unencrypted and encr
 Disk encryption employs "block ciphers", which operate on fixed-length blocks of data, e.g. 16 bytes (128 bits). At the time of this writing, the predominantly used ones are:
 
  block size | key size | comment |
-| [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard "wikipedia:Advanced Encryption Standard") | 128 bits | 128, 192 or 256 bits | _approved by the NSA for protecting "SECRET" and "TOP SECRET" classified US-government information (when used with a key size of 192 or 256 bits)_ |
-| [Blowfish](https://en.wikipedia.org/wiki/Blowfish_(cipher) "wikipedia:Blowfish (cipher)") | 64 bits | 32–448 bits | _one of the first patent-free secure ciphers that became publicly available, hence very well established on Linux_ |
-| [Twofish](https://en.wikipedia.org/wiki/Twofish "wikipedia:Twofish") | 128 bits | 128, 192 or 256 bits | _developed as successor of Blowfish, but has not attained as much widespread usage_ |
-| [Serpent](https://en.wikipedia.org/wiki/Serpent_(cipher) "wikipedia:Serpent (cipher)") | 128 bits | 128, 192 or 256 bits | Considered the most secure of the five AES-competition finalists[[10]](#See_also)[[11]](#See_also)[[12]](#See_also). |
+| [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard "wikipedia:Advanced Encryption Standard") | 128 bits | 128, 192 or 256 bits | *approved by the NSA for protecting "SECRET" and "TOP SECRET" classified US-government information (when used with a key size of 192 or 256 bits)* |
+| [Blowfish](https://en.wikipedia.org/wiki/Blowfish_(cipher) | 64 bits | 32–448 bits | *one of the first patent-free secure ciphers that became publicly available, hence very well established on Linux* |
+| [Twofish](https://en.wikipedia.org/wiki/Twofish "wikipedia:Twofish") | 128 bits | 128, 192 or 256 bits | *developed as successor of Blowfish, but has not attained as much widespread usage* |
+| [Serpent](https://en.wikipedia.org/wiki/Serpent_(cipher) | 128 bits | 128, 192 or 256 bits | Considered the most secure of the five AES-competition finalists[[10]](#See_also)[[11]](#See_also)[[12]](#See_also). |
 
 Encrypting/decrypting a sector ([see above](#Basic_principle)) is achieved by dividing it into small blocks matching the cipher's block-size, and following a certain rule-set (a so-called "**mode of operation**") for how to consecutively apply the cipher to the individual blocks.
 
-Simply applying it to each block separately without modification (dubbed the "_electronic codebook (ECB)_" mode) would not be secure, because if the same 16 bytes of plaintext always produce the same 16 bytes of ciphertext, an attacker could easily recognize patterns in the ciphertext that is stored on disk.
+Simply applying it to each block separately without modification (dubbed the "*electronic codebook (ECB)*" mode) would not be secure, because if the same 16 bytes of plaintext always produce the same 16 bytes of ciphertext, an attacker could easily recognize patterns in the ciphertext that is stored on disk.
 
-The most basic (and common) mode of operation used in practice is "_cipher-block chaining (CBC)_". When encrypting a sector with this mode, each block of plaintext data is combined in a mathematical way with the ciphertext of the previous block, before encrypting it using the cipher. For the first block, since it has no previous ciphertext to use, a special pre-generated data block stored with the sector's cryptographic metadata and called an "**initialization vector (IV)**" is used:
+The most basic (and common) mode of operation used in practice is "*cipher-block chaining (CBC)*". When encrypting a sector with this mode, each block of plaintext data is combined in a mathematical way with the ciphertext of the previous block, before encrypting it using the cipher. For the first block, since it has no previous ciphertext to use, a special pre-generated data block stored with the sector's cryptographic metadata and called an "**initialization vector (IV)**" is used:
 
 ```
                                   ╭──────────────╮

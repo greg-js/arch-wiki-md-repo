@@ -24,7 +24,7 @@ Firefox è un web browser open source di [Mozilla](http://www.mozilla.com). Il p
         *   [4.1.3 Configurazione dei Font](#Configurazione_dei_Font)
     *   [4.2 Alleggerire, Accellerare Firefox / Sistemare i fonts e i problemi dei controlli](#Alleggerire.2C_Accellerare_Firefox_.2F_Sistemare_i_fonts_e_i_problemi_dei_controlli)
     *   [4.3 Perchè ottengo questo errore quando clicco col tasto centrale del mouse?](#Perch.C3.A8_ottengo_questo_errore_quando_clicco_col_tasto_centrale_del_mouse.3F)
-    *   [4.4 Perchè il pulsante _backspace_ non esegue la funzione 'Indietro'?](#Perch.C3.A8_il_pulsante_backspace_non_esegue_la_funzione_.27Indietro.27.3F)
+    *   [4.4 Perchè il pulsante *backspace* non esegue la funzione 'Indietro'?](#Perch.C3.A8_il_pulsante_backspace_non_esegue_la_funzione_.27Indietro.27.3F)
     *   [4.5 Articoli con ulteriori consigli](#Articoli_con_ulteriori_consigli)
 *   [5 Derivati di Firefox](#Derivati_di_Firefox)
 *   [6 Alternative a Firefox](#Alternative_a_Firefox)
@@ -163,7 +163,7 @@ pacman -S flashplugin
 
 ```
 
-_Potreste aver bisogno di installare il pacchetto ttf-ms-fonts_ (pacman -S ttf-ms-fonts) _per permettere a flashplayer di visualizzare il testo correttamente._
+*Potreste aver bisogno di installare il pacchetto ttf-ms-fonts* (pacman -S ttf-ms-fonts) *per permettere a flashplayer di visualizzare il testo correttamente.*
 
 #### MPlayer
 
@@ -176,14 +176,14 @@ pacman -S mplayer-plugin
 
 #### Gecko Media Player
 
-Un buon rimpiazzo dell'ormai anzianotto _mplayer-plugin_, è [Gecko Media Player](http://code.google.com/p/gecko-mediaplayer/). È generalmente più stabile se associato a MPlayer 1.0RC2\. _(Niente più crash con i trailer Apple.)_
+Un buon rimpiazzo dell'ormai anzianotto *mplayer-plugin*, è [Gecko Media Player](http://code.google.com/p/gecko-mediaplayer/). È generalmente più stabile se associato a MPlayer 1.0RC2\. *(Niente più crash con i trailer Apple.)*
 
 ```
 $ sudo pacman -S gecko-mediaplayer
 
 ```
 
-_(**Nota!** Assicuratevi di rimuovere il pacchetto mplayer-plugin se lo avevate già installato precedentemente.)_
+*(**Nota!** Assicuratevi di rimuovere il pacchetto mplayer-plugin se lo avevate già installato precedentemente.)*
 
 #### Java
 
@@ -236,7 +236,7 @@ In alcuni casi, non si riesce a scaricare e installare nessuno dei plugin di Fir
 
 ### DPI
 
-Modificare il valore seguente ha come conseguenze note il miglioramento della resa visiva dei caratteri in Firefox. Scrivete _about:config_ nella barra indirizzi, e una volta confermato con OK, cercate per _dpi_, trovate la riga **layout.css.dpi** e cambiate il suo valore a **0**.
+Modificare il valore seguente ha come conseguenze note il miglioramento della resa visiva dei caratteri in Firefox. Scrivete *about:config* nella barra indirizzi, e una volta confermato con OK, cercate per *dpi*, trovate la riga **layout.css.dpi** e cambiate il suo valore a **0**.
 
 ### Rimpiazzamento dei Font
 
@@ -262,7 +262,7 @@ Per maggiori informazioni sulla configurazione dei caratteri in X, fare riferime
 
 ## Alleggerire, Accellerare Firefox / Sistemare i fonts e i problemi dei controlli
 
-_Rappresenta un fix per tutta la Suite Mozilla_
+*Rappresenta un fix per tutta la Suite Mozilla*
 
 Provare ad aggiungere
 
@@ -291,9 +291,9 @@ about:config
 
 ```
 
-cercate la riga 'middlemouse.contentLoadURL' e settate il suo valore a _falso_.
+cercate la riga 'middlemouse.contentLoadURL' e settate il suo valore a *falso*.
 
-## Perchè il pulsante _backspace_ non esegue la funzione 'Indietro'?
+## Perchè il pulsante *backspace* non esegue la funzione 'Indietro'?
 
 Come descritto [qui](http://ubuntu.wordpress.com/2006/12/21/fix-firefox-backspace-to-take-you-to-the-previous-page/), questa funzione è stata rimossa per sistemare un bug. Ma la si può riattivare così:
 
@@ -322,11 +322,11 @@ confermate, e cercate la riga 'browser.backspace_action' impostandola poi a 0 (z
 # Alternative a Firefox
 
 *   [Opera](/index.php/Opera "Opera") - Una completa suite per il web e le email. A codice chiuso, ma gratuito (come la birra).
-*   [Epiphany](https://en.wikipedia.org/wiki/Epiphany_(browser) "wikipedia:Epiphany (browser)") - Il browser di default di GNOME. Usa lo stesso motore di Firefox.
+*   [Epiphany](https://en.wikipedia.org/wiki/Epiphany_(browser) - Il browser di default di GNOME. Usa lo stesso motore di Firefox.
 *   [Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror") - Il browser di default di KDE. Usa il motore KHTML (dal quale è poi derivato Webkit).
 *   [Dillo](https://en.wikipedia.org/wiki/Dillo "wikipedia:Dillo") - Un browser molto leggero.
 *   [SeaMonkey](https://en.wikipedia.org/wiki/SeaMonkey "wikipedia:SeaMonkey") - Una naturale continuazione della Suite Mozilla originale. Include un web browser, un client email, ecc.
-*   [Midori](https://en.wikipedia.org/wiki/Midori_(browser) "wikipedia:Midori (browser)") - Un browser GTK+ basato su Webkit. Leggerissimo e ancora in fase di sviluppo, ma già fornito di caratteristiche interessanti.
+*   [Midori](https://en.wikipedia.org/wiki/Midori_(browser) - Un browser GTK+ basato su Webkit. Leggerissimo e ancora in fase di sviluppo, ma già fornito di caratteristiche interessanti.
 
 # Links Esterni
 

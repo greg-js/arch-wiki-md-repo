@@ -79,10 +79,9 @@ Start CherryMusic for the initial setup:
 
 ```
 
-On first startup CherryMusic will create its data and configuration files in `~/.local/share/cherrymusic/` and `~/.config/cherrymusic/`, print a note to _stdout_ and exit. Now, edit the configuration file in `~/.config/cherrymusic/cherrymusic.conf`and change the following lines to match your setup:
+On first startup CherryMusic will create its data and configuration files in `~/.local/share/cherrymusic/` and `~/.config/cherrymusic/`, print a note to *stdout* and exit. Now, edit the configuration file in `~/.config/cherrymusic/cherrymusic.conf`and change the following lines to match your setup:
 
  `~/.config/cherrymusic/cherrymusic.conf` 
-
 ```
 [...]
 basedir = /path/to/your/music
@@ -99,7 +98,7 @@ Open the address "localhost:8080" in your browser (e.g. with [Firefox](/index.ph
 
 ```
 
-After logging in, populate the search database by clicking _Update Music Library_ in the _Admin_ panel.
+After logging in, populate the search database by clicking *Update Music Library* in the *Admin* panel.
 
 If you want CherryMusic to run as a system service and to automatically start on boot, see [systemd service file](#Systemd_service_file).
 
@@ -138,7 +137,7 @@ Probably, the most modular and flexible way of populating CherryMusic's music di
 
 ### Systemd service file
 
-CherryMusic does not come with a daemon yet, but [both CherryMusic AUR packages](#Installation) provide a systemd service file. It can be [started](/index.php/Start "Start") as `cherrymusic@_user_.service`, where `_user_` is the user that should run CherryMusic (do not use root!).
+CherryMusic does not come with a daemon yet, but [both CherryMusic AUR packages](#Installation) provide a systemd service file. It can be [started](/index.php/Start "Start") as `cherrymusic@*user*.service`, where `*user*` is the user that should run CherryMusic (do not use root!).
 
 ### Running in a GNU Screen session
 
@@ -154,7 +153,6 @@ Since CherryMusic only writes the output to the GNU Screen session, there is not
 To run it in a GNU Screen session after boot, the following [systemd](/index.php/Systemd "Systemd") service file can also be created and used:
 
  `/etc/systemd/system/cherrymusic@.service` 
-
 ```
 [Unit]
 Description = CherryMusic server
@@ -223,7 +221,6 @@ If track scrolling is not working in major desktop browsers behind Nginx and pla
 Change the line `proxy_http_version 1.0;` to:
 
  `ngx_http_proxy_module` 
-
 ```
 [...]
 proxy_http_version 1.1;

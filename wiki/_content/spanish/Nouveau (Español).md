@@ -38,7 +38,7 @@ Asegúrese de eliminar también el archivo `/etc/X11/xorg.conf` que el controlad
 
 ## Instalación
 
-Antes de continuar, eche un vistazo a [HardwareStatus](http://nouveau.freedesktop.org/wiki/HardwareStatus) para ver qué características son compatibles con una determinada arquitectura, y a la lista de [codenames](http://nouveau.freedesktop.org/wiki/CodeNames) de la propia tarjeta de vídeo. También puede consultar [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Nvidia_Graphics_Processing_Units "wikipedia:Comparison of Nvidia Graphics Processing Units") para una lista más detallada. Asegúrese igualmente de que tiene instalado [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") correctamente.
+Antes de continuar, eche un vistazo a [HardwareStatus](http://nouveau.freedesktop.org/wiki/HardwareStatus) para ver qué características son compatibles con una determinada arquitectura, y a la lista de [codenames](http://nouveau.freedesktop.org/wiki/CodeNames) de la propia tarjeta de vídeo. También puede consultar [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Nvidia_Graphics_Processing_Units correctamente.
 
 [Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el controlador DDX con el paquete [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau), el cual está disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)"). Dicho paquete aporta [nouveau-dri](https://www.archlinux.org/packages/?name=nouveau-dri) como una dependencia, proporcionando el controlador DRI para una aceleración 3D.
 
@@ -68,13 +68,13 @@ Si esto no sucede, entonces:
 
 **Sugerencia:** Si tiene problemas con la resolución, compruebe [esta página](/index.php/Kernel_Mode_Setting_(Espa%C3%B1ol)#Forzar_modos "Kernel Mode Setting (Español)").
 
-[Kernel Mode Setting](/index.php/Kernel_Mode_Setting_(Espa%C3%B1ol) "Kernel Mode Setting (Español)") (KMS) es requerido por el controlador Nouveau. Durante el arranque del sistema, la resolución es probable que cambie cuando KMS inicializa el controlador de vídeo. Simplemente instalando el controlador Nouveau debe ser suficiente para que el sistema reconozca y se inicialice en modo _«Late Start»_ (inicio tardío) (véase más abajo). Lectura adicional recomendada: [KernelModeSetting](http://nouveau.freedesktop.org/wiki/KernelModeSetting).
+[Kernel Mode Setting](/index.php/Kernel_Mode_Setting_(Espa%C3%B1ol) "Kernel Mode Setting (Español)") (KMS) es requerido por el controlador Nouveau. Durante el arranque del sistema, la resolución es probable que cambie cuando KMS inicializa el controlador de vídeo. Simplemente instalando el controlador Nouveau debe ser suficiente para que el sistema reconozca y se inicialice en modo *«Late Start»* (inicio tardío) (véase más abajo). Lectura adicional recomendada: [KernelModeSetting](http://nouveau.freedesktop.org/wiki/KernelModeSetting).
 
 **Nota:** Algunos usuarios pueden preferir el método de inicio temprano, ya que no causa el cambio molesto de resolución durante el proceso de arranque
 
 #### Inicio tardío
 
-Con esta elección KMS se activa cuando los otros módulos del kernel se carguen. Usted verá el texto _«Loading modules»_ (Cargando los módulos) y el tamaño del texto puede cambiar, posiblemente con un parpadeo no deseado.
+Con esta elección KMS se activa cuando los otros módulos del kernel se carguen. Usted verá el texto *«Loading modules»* (Cargando los módulos) y el tamaño del texto puede cambiar, posiblemente con un parpadeo no deseado.
 
 #### Inicio temprano
 
@@ -98,7 +98,7 @@ Vuelva a generar la imagen ramdisk inicial:
 
 ```
 
-Si experimenta problemas con nouveau y se ve obligado a reconstruir nouveau-drm varias veces para propósitos de prueba, no agregue `nouveau` a initramfs. Es fácil de obviar para reconstruir el initramfs y hacer alguna prueba más difícil. Solo tiene que utilizar _late start_ (inicio tardío) hasta que esté seguro de que el sistema es estable. Puede haber otros problemas con initramfs si necesita un firmware personalizado (por lo general no se recomienda).
+Si experimenta problemas con nouveau y se ve obligado a reconstruir nouveau-drm varias veces para propósitos de prueba, no agregue `nouveau` a initramfs. Es fácil de obviar para reconstruir el initramfs y hacer alguna prueba más difícil. Solo tiene que utilizar *late start* (inicio tardío) hasta que esté seguro de que el sistema es estable. Puede haber otros problemas con initramfs si necesita un firmware personalizado (por lo general no se recomienda).
 
 ## Consejos y trucos
 

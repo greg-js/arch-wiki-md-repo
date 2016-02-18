@@ -1,6 +1,6 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/Jumbo_frame "wikipedia:Jumbo frame"):
 
-	_In computer networking, jumbo frames are Ethernet frames with more than 1,500 bytes of payload (MTU). Conventionally, jumbo frames can carry up to 9,000 bytes of payload, but variations exist and some care must be taken when using the term. Many, but not all, Gigabit Ethernet switches and Gigabit Ethernet network interface cards support jumbo frames, but all Fast Ethernet switches and Fast Ethernet network interface cards support only standard-sized frames._
+	*In computer networking, jumbo frames are Ethernet frames with more than 1,500 bytes of payload (MTU). Conventionally, jumbo frames can carry up to 9,000 bytes of payload, but variations exist and some care must be taken when using the term. Many, but not all, Gigabit Ethernet switches and Gigabit Ethernet network interface cards support jumbo frames, but all Fast Ethernet switches and Fast Ethernet network interface cards support only standard-sized frames.*
 
 Using a larger MTU value (jumbo frames) can significantly speed up your network transfers.
 
@@ -41,7 +41,6 @@ Use `ip link show | grep mtu` to verify that the setting has been applied.
 Example:
 
  `$ ip link show | grep mtu` 
-
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue state UNKNOWN 
 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 4000 qdisc pfifo_fast state UP qlen 1000
@@ -54,7 +53,6 @@ Example:
 To make the setting permanent, we will create a systemd unit.
 
  `/etc/systemd/system/setmtu@.service` 
-
 ```
 [Unit]
 Description=Set mtu on device
@@ -73,7 +71,6 @@ WantedBy=multi-user.target
 Now create the configuration. Adjust it as necessary, adding one line for each device:
 
  `/etc/conf.d/setmtu` 
-
 ```
 eth0=4000
 
@@ -104,7 +101,7 @@ Both machine A and machine B are using EIDE hard drives circa ~2004; a modern SA
 
 **Test 1 - Single large file (1,048,522 kb) via Samba**
 
-_Times and throughput represent the average of three runs._
+*Times and throughput represent the average of three runs.*
 
 | mtu=1500 | t (sec) | Kb/sec | mtu=4000 | t (sec) | Kb/sec | mtu=9000 | t (sec) | Kb/sec |
 | A to B | 48 | 21,844 | A to B | 44 | 23,830 | A to B | 49 | 21,398 |
@@ -120,7 +117,7 @@ _Times and throughput represent the average of three runs._
 
 **Test 2 - Several small files (1,283,439 kb total) via Samba**
 
-_Times and throughput represent the average of three runs._
+*Times and throughput represent the average of three runs.*
 
 | mtu=1500 | t (sec) | Kb/sec | mtu=4000 | t (sec) | Kb/sec | mtu=9000 | t (sec) | Kb/sec |
 | A to B | 59 | 21,753 | A to B | 51 | 25,165 | A to B | 57 | 22,516 |

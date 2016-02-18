@@ -110,19 +110,19 @@ Three methods are available to suspend without the need for a root password: usi
 
 Because the [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) scripts must be run as root, you may want to make the scripts accessible to normal users by running sudo without the root password. To do so, edit the `/etc/sudoers` file with `visudo` as root. For more information, see [sudo](/index.php/Sudo "Sudo").
 
-Add the following lines, replacing `_username_` with your own user name, then save and exit `visudo`:
+Add the following lines, replacing `*username*` with your own user name, then save and exit `visudo`:
 
 ```
-_username_  ALL = NOPASSWD: /usr/sbin/pm-hibernate
-_username_  ALL = NOPASSWD: /usr/sbin/pm-suspend
+*username*  ALL = NOPASSWD: /usr/sbin/pm-hibernate
+*username*  ALL = NOPASSWD: /usr/sbin/pm-suspend
 
 ```
 
-Or you can enable it for a group, using the following lines, replacing `_group_`:
+Or you can enable it for a group, using the following lines, replacing `*group*`:
 
 ```
-%_group_   ALL = NOPASSWD: /usr/sbin/pm-hibernate
-%_group_   ALL = NOPASSWD: /usr/sbin/pm-suspend
+%*group*   ALL = NOPASSWD: /usr/sbin/pm-hibernate
+%*group*   ALL = NOPASSWD: /usr/sbin/pm-suspend
 
 ```
 
@@ -145,7 +145,7 @@ $ sudo pm-suspend
 Also, add yourself to the `power` [group](/index.php/Group "Group") so that way using things like applets to do suspend will work. If you do not do this, when you try to use suspend though things like [GNOME](/index.php/GNOME "GNOME")'s shutdown applet, your computer will just play a very annoying loud triple beep and lock the screen.
 
 ```
-# gpasswd -a _username_ power
+# gpasswd -a *username* power
 
 ```
 
@@ -185,7 +185,7 @@ If you want use swap file instead of regular swap partition, see [Swap File](/in
 
 ## Advanced configuration
 
-The main configuration file is `/usr/lib/pm-utils/defaults`. You _should not edit this file_, since after a package update it might be overwritten with the default settings. Put your config file into `/etc/pm/config.d/` instead. You can just put a simple text file with
+The main configuration file is `/usr/lib/pm-utils/defaults`. You *should not edit this file*, since after a package update it might be overwritten with the default settings. Put your config file into `/etc/pm/config.d/` instead. You can just put a simple text file with
 
 ```
 SUSPEND_MODULES="button uhci_hcd"
@@ -329,12 +329,11 @@ export METHOD="$(echo ${0##*pm-} |tr - _)"
 
 ```
 
-The variable `METHOD` is extracted from the executable name, _suspend_ from `pm-suspend` and _hibernate_ from `pm-hibernate`.
+The variable `METHOD` is extracted from the executable name, *suspend* from `pm-suspend` and *hibernate* from `pm-hibernate`.
 
-The location of runtime configuration parameters is defined in `/usr/lib/pm-utils/pm-functions` as _PM_UTILS_RUNDIR="/var/run/pm-utils"_ and _STORAGEDIR="${PM_UTILS_RUNDIR}/${STASHNAME}/storage"_. Therefore _STORAGEDIR="/var/run/pm-utils/pm-suspend/storage"_; this is where `pm-suspend` will cache its configuration. Disabled hooks are stored as plain text files with the hook name prefixed by "_disable_hook:_". Configuration parameters are appended to the _parameters_ file:
+The location of runtime configuration parameters is defined in `/usr/lib/pm-utils/pm-functions` as *PM_UTILS_RUNDIR="/var/run/pm-utils"* and *STORAGEDIR="${PM_UTILS_RUNDIR}/${STASHNAME}/storage"*. Therefore *STORAGEDIR="/var/run/pm-utils/pm-suspend/storage"*; this is where `pm-suspend` will cache its configuration. Disabled hooks are stored as plain text files with the hook name prefixed by "*disable_hook:*". Configuration parameters are appended to the *parameters* file:
 
  `$  ls -lah /var/run/pm-utils/pm-suspend/storage/` 
-
 ```
 -rw-r--r-- 1 root root  20 May 19 09:57 disable_hook:99video
 -rw-r--r-- 1 root root   0 May 19 02:59 parameters
@@ -398,7 +397,7 @@ add_module_help uswsusp_help
 
 ```
 
-The first function, _add_before_hook_ disables the **pm-utils** hooks **99video** since this functionality is subsumed by **s2ram**. The second function, _add_module_help_, adds uswsusp-module-specific help, which in essence replaces the help function provided by **99video**.
+The first function, *add_before_hook* disables the **pm-utils** hooks **99video** since this functionality is subsumed by **s2ram**. The second function, *add_module_help*, adds uswsusp-module-specific help, which in essence replaces the help function provided by **99video**.
 
 Back to `pm-suspend`:
 
@@ -408,14 +407,14 @@ command_exists "check_$METHOD" && command_exists "do_$METHOD"
 
 ```
 
-This verifies that the _check_suspend_ and _do_suspend_ methods have been defined. The _check_suspend_ method simply verifies that $SUSPEND_MODULE is not empty:
+This verifies that the *check_suspend* and *do_suspend* methods have been defined. The *check_suspend* method simply verifies that $SUSPEND_MODULE is not empty:
 
 ```
 check_suspend() { [ -n "$SUSPEND_MODULE" ]; }
 
 ```
 
-Lastly, `pm-suspend` must run all hooks that have not been disabled, sync file-system buffers, and run _do_suspend_:
+Lastly, `pm-suspend` must run all hooks that have not been disabled, sync file-system buffers, and run *do_suspend*:
 
 ```
 if run_hooks sleep "$ACTION $METHOD"; then
@@ -427,7 +426,7 @@ if run_hooks sleep "$ACTION $METHOD"; then
 
 ```
 
-The method _run_hooks_ is a wrapper for __run_hooks_, which the case of `pm-suspend` is called as _run_hooks sleep "suspend suspend"_. Given that:
+The method *run_hooks* is a wrapper for *_run_hooks*, which the case of `pm-suspend` is called as *run_hooks sleep "suspend suspend"*. Given that:
 
 ```
 PARAMETERS="${STORAGEDIR}/parameters"
@@ -436,7 +435,7 @@ PM_UTILS_ETCDIR="/etc/pm"
 
 ```
 
-The method __run_hooks_, will for each hook in _"${PM_UTILS_LIBDIR}/$1.d"_ and _"${PM_UTILS_ETCDIR}/$1.d"_, check that sleep has not been inhibited and update the runtime parameters stored in _$PARAMETERS_ before running each hook via _run_hook $hook $2_. In the case of Suspend-to-RAM, all the hooks in _{/usr/lib/pm-utils/sleep.d/,/etc/pm/sleep.d/}_ will be enumerated, and _run_hook_ will be passed the parameters _$hook_ and "_suspend suspend_". The method _run_hook_ uses the _hook_ok_ function to verify that the hook has not been disabled before executing the hook with the "_suspend suspend_" parameters.
+The method *_run_hooks*, will for each hook in *"${PM_UTILS_LIBDIR}/$1.d"* and *"${PM_UTILS_ETCDIR}/$1.d"*, check that sleep has not been inhibited and update the runtime parameters stored in *$PARAMETERS* before running each hook via *run_hook $hook $2*. In the case of Suspend-to-RAM, all the hooks in *{/usr/lib/pm-utils/sleep.d/,/etc/pm/sleep.d/}* will be enumerated, and *run_hook* will be passed the parameters *$hook* and "*suspend suspend*". The method *run_hook* uses the *hook_ok* function to verify that the hook has not been disabled before executing the hook with the "*suspend suspend*" parameters.
 
 ## Troubleshooting
 
@@ -516,7 +515,6 @@ modprobe vboxdrv
 If you try to hibernate without an active swap partition, your system will look like it is going into hibernate, and then immediately resume again. There are no error messages warning you that there is no swap partition, even when verbose logging is activated, so this problem can be very hard to debug. On my system, the swap partition was somehow corrupted and deactivated, so this may happen even if you set up a swap partition during install. If hibernate displays this behaviour, make sure that you actually have a swap partition that is being used as such. The output of the `blkid` command should look e.g. like
 
  `# blkid` 
-
 ```
 /dev/sda1: UUID="00000-000-000-0000000" TYPE="ext2" 
 /dev/sda2: UUID="00000-000-000-0000000" TYPE="ext4"
@@ -573,7 +571,6 @@ This can easily be fixed by making an executable file named `/etc/pm/config.d/hi
 If you get a blank display after suspension with radeon gpu, try to create `/etc/pm/config.d/radeon`, and add the following:
 
  `/etc/pm/config.d/radeon` 
-
 ```
 QUIRK_S3_BIOS="true"
 QUIRK_S3_MODE="true"
@@ -586,7 +583,6 @@ QUIRK_S3_MODE="true"
 Do it like this:
 
  `/etc/pm/sleep.d/50-hdparm_pm` 
-
 ```
  #!/bin/dash
 
@@ -606,7 +602,6 @@ Then run:
 If the above [Bash](/index.php/Bash "Bash") script fails the work, the following may work instead:
 
  `/etc/pm/sleep.d/50-hdparm_pm` 
-
 ```
  #!/bin/sh
 
@@ -665,7 +660,6 @@ You may wish to run a screen locking utility when the system suspends (so that a
 A simple example script is:
 
  `/etc/pm/sleep.d/00screensaver-lock` 
-
 ```
  #!/bin/sh
  #
@@ -692,7 +686,6 @@ Replace `/usr/bin/slimlock` with the path to your screen locking utility of choi
 If you do not wish to hard-code your username (e.g., if you have multiple users), then it is necessary to determine the current X11 username and display number. For systems using [systemd](/index.php/Systemd "Systemd"), you can use [xuserrun](https://github.com/rephorm/xuserrun) and the following sleep.d script (be sure to modify the path to xuserrun and your desired screen locker):
 
  `/etc/pm/sleep.d/00screensaver-lock` 
-
 ```
 #!/bin/sh
 #
@@ -713,7 +706,6 @@ esac
 If you have problems using xuserrun, you can instead try having loginctl do this directly. This script will lock all active sessions before going into hibernation:
 
  `/etc/pm/sleep.d/00screensaver-lock` 
-
 ```
 #!/bin/sh
 #
@@ -736,7 +728,6 @@ esac
 In order to disable hibernation, create a new file in /etc/polkit-1/ called 99-disable-hibernate.rules. Then add the following lines:
 
  `99-disable-hibernate.rules` 
-
 ```
 polkit.addRule(function(action, subject) {
    if ((action.id == "org.freedesktop.login1.hibernate")) {

@@ -1,4 +1,4 @@
-**M**usic **O**n **C**onsole (Музыка в консоли) - это легкий музыкальный плеер, который состоит из двух частей: сервера (Moc) и плеера/интерфейса (Mocp). Такая реализация похожа на реализацию [mpd](/index.php/Music_Player_Daemon_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Music Player Daemon (Русский)"), но, в отличие от _mpd_, Moc поставляется сразу с интерфейсом. Сервер не поддерживает удалённый доступ.
+**M**usic **O**n **C**onsole (Музыка в консоли) - это легкий музыкальный плеер, который состоит из двух частей: сервера (Moc) и плеера/интерфейса (Mocp). Такая реализация похожа на реализацию [mpd](/index.php/Music_Player_Daemon_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Music Player Daemon (Русский)"), но, в отличие от *mpd*, Moc поставляется сразу с интерфейсом. Сервер не поддерживает удалённый доступ.
 
 ## Contents
 
@@ -21,7 +21,7 @@
 
 ## Настройка
 
-Пакет включает в себя конфигурационный файл-пример `/usr/share/doc/moc/config.example`. Для настройки _moc_ скопируйте этот файл в `~/.moc/config` и отредактируйте его.
+Пакет включает в себя конфигурационный файл-пример `/usr/share/doc/moc/config.example`. Для настройки *moc* скопируйте этот файл в `~/.moc/config` и отредактируйте его.
 
 Настройка горячих клавиш описана в `/usr/share/doc/moc/keymap.example`.
 
@@ -29,7 +29,7 @@
 
 ## Использование
 
-Запустите _moc_:
+Запустите *moc*:
 
 ```
 $ mocp
@@ -57,7 +57,6 @@ $ mocp
 | Закрыть проигрыватель (без завершения работы сервера) | `q` |
 
 **Обратите внимание:** Для завершения работы сервера, испотльзуйте `Shift+q` или:
-
 ```
 $ mocp -x
 
@@ -79,7 +78,7 @@ cp /usr/share/doc/mocp-scrobbler/config.example  ~/.mocpscrob/config
 
 Отредактируйте `~/.mocpscrob/config`, добавив в него свои имя пользователя и пароль. При первом запуске переменная с паролем будет заменена на переменную `password_md5`, содержащую в себе MD5-хеш. Если необходимо изменить пароль, просто (опять) добавьте переменную с новым паролем, и значение переменной `password_md5` будет обновлено.
 
-Чтобы начать скробблинг, перед запуском _mocp_ запустите как демон _mocp-scrobbler_. Также можно использовать [псевдоним](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9F.D1.81.D0.B5.D0.B2.D0.B4.D0.BE.D0.BD.D0.B8.D0.BC.D1.8B "Bash (Русский)"):
+Чтобы начать скробблинг, перед запуском *mocp* запустите как демон *mocp-scrobbler*. Также можно использовать [псевдоним](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9F.D1.81.D0.B5.D0.B2.D0.B4.D0.BE.D0.BD.D0.B8.D0.BC.D1.8B "Bash (Русский)"):
 
 ```
 alias mocp='/usr/bin/mocp-scrobbler.py -d; mocp'
@@ -96,7 +95,7 @@ alias mocp='/usr/bin/mocp-scrobbler.py -d; mocp'
 
 	[http://mocicon.sourceforge.net/](http://mocicon.sourceforge.net/) || [mocicon](https://aur.archlinux.org/packages/mocicon/)
 
-*   **moc-tray** — Быстрый и простой доступ к основным фунциям _mocp_
+*   **moc-tray** — Быстрый и простой доступ к основным фунциям *mocp*
 
 	[https://code.google.com/p/moc-tray/](https://code.google.com/p/moc-tray/) || [moc-tray](https://www.archlinux.org/packages/?name=moc-tray)
 
@@ -107,7 +106,6 @@ alias mocp='/usr/bin/mocp-scrobbler.py -d; mocp'
 ## Файл сервиса systemd
 
  `/etc/systemd/system/moc@.service` 
-
 ```
 [Unit]
 Description=MOC server

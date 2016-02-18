@@ -84,9 +84,9 @@ in the Firefox address bar.
 
 Once set, these affect the user's current profile, and may be synchronized across all devices via [Firefox Sync](https://www.mozilla.org/en-US/firefox/sync/). Please note that only a subset of the `about:config` entries are synchronized by this method, and the exact subset may be found by searching for `services.sync.prefs` in `about:config`.
 
-Firefox also allows configuration for a profile via a `user.js` file: [user.js](http://kb.mozillazine.org/User.js_file) kept in the profile folder, usually `~/.mozilla/firefox/_some name_.default/`. For a useful starting point, see e.g [custom user.js](https://github.com/pyllyukko/user.js) which is targeted at privacy/security conscious users.
+Firefox also allows configuration for a profile via a `user.js` file: [user.js](http://kb.mozillazine.org/User.js_file) kept in the profile folder, usually `~/.mozilla/firefox/*some name*.default/`. For a useful starting point, see e.g [custom user.js](https://github.com/pyllyukko/user.js) which is targeted at privacy/security conscious users.
 
-One drawback of the above approach is that it is not applied system-wide. Furthermore, this is not useful as a "pre-configuration", since the profile directory is created after first launch of the browser. You can, however, let _firefox_ create a new profile and, after closing it again, [copy the contents](https://support.mozilla.org/en-US/kb/back-and-restore-information-firefox-profiles#w_restoring-a-profile-backup) of an already created profile folder into it.
+One drawback of the above approach is that it is not applied system-wide. Furthermore, this is not useful as a "pre-configuration", since the profile directory is created after first launch of the browser. You can, however, let *firefox* create a new profile and, after closing it again, [copy the contents](https://support.mozilla.org/en-US/kb/back-and-restore-information-firefox-profiles#w_restoring-a-profile-backup) of an already created profile folder into it.
 
 Sometimes it may be desired to lock certain settings, a feature useful in widespread deployments of customized Firefox. In order to create a system-wide configuration, follow the steps outlined in [Locking preferences](http://kb.mozillazine.org/Locking_preferences):
 
@@ -121,7 +121,7 @@ about:plugins
 
 ```
 
-in the Firefox address bar or go to the _Add-ons_ entry in the Firefox Menu and select the _Plugins_ tab.
+in the Firefox address bar or go to the *Add-ons* entry in the Firefox Menu and select the *Plugins* tab.
 
 ### GNOME Keyring integration
 
@@ -139,9 +139,9 @@ Install [firefox-gnome-keyring](https://aur.archlinux.org/packages/firefox-gnome
 
 ### Dictionaries for spell checking
 
-To enable spell checking for a specific language right click on any text field and check the _Check Spelling_ box. To select a language for spell checking to you have right click again and select your language from the _Languages_ sub-menu.
+To enable spell checking for a specific language right click on any text field and check the *Check Spelling* box. To select a language for spell checking to you have right click again and select your language from the *Languages* sub-menu.
 
-To get more languages just click _Add Dictionaries..._ and select the dictionary you want to install from the list.
+To get more languages just click *Add Dictionaries...* and select the dictionary you want to install from the list.
 
 Alternatively, you can install the [hunspell](https://www.archlinux.org/packages/?name=hunspell) package. You also need to install dictionaries for your language, such as [hunspell-fr](https://www.archlinux.org/packages/?name=hunspell-fr) (for the French language) or [hunspell-he](https://www.archlinux.org/packages/?name=hunspell-he) (for Hebrew).
 
@@ -155,9 +155,9 @@ Search engines can be added to Firefox through normal add-ons, see [this page](h
 
 A very extensive list of search engines can be found [here](http://mycroft.mozdev.org/).
 
-Also, you can use the [add-to-searchbar](https://firefox.maltekraus.de/extensions/add-to-search-bar) extension to add a search to your search bar from any web site, by simply right clicking on the site's search field and selecting _Add to Search Bar..._
+Also, you can use the [add-to-searchbar](https://firefox.maltekraus.de/extensions/add-to-search-bar) extension to add a search to your search bar from any web site, by simply right clicking on the site's search field and selecting *Add to Search Bar...*
 
-If you want a manual solution, take a look at `~/.mozilla/firefox/_xxxxxxxx_.default/searchplugins/` (where _xxxxxxxx_ is your profile ID).
+If you want a manual solution, take a look at `~/.mozilla/firefox/*xxxxxxxx*.default/searchplugins/` (where *xxxxxxxx* is your profile ID).
 
 #### arch-firefox-search
 
@@ -183,7 +183,7 @@ See [Font configuration](/index.php/Font_configuration "Font configuration").
 
 ### Setting an email client
 
-Inside the browser, `mailto` links by default are opened by a web application such as Gmail or Yahoo Mail. To set an external email program, go to _Preferences > Applications_ and modify the _action_ corresponding to the `mailto` content type; the file path will need to be designated (e.g. `/usr/bin/kmail` for Kmail).
+Inside the browser, `mailto` links by default are opened by a web application such as Gmail or Yahoo Mail. To set an external email program, go to *Preferences > Applications* and modify the *action* corresponding to the `mailto` content type; the file path will need to be designated (e.g. `/usr/bin/kmail` for Kmail).
 
 Outside the browser, `mailto` links are handled by the `x-scheme-handler/mailto` mime type, which can be easily configured with [xdg-mime](/index.php/Xdg-mime "Xdg-mime"). See [Default applications](/index.php/Default_applications "Default applications") for details and alternatives.
 
@@ -305,7 +305,7 @@ Installation of apps from firefox os marketplace will silently fail if there's n
 
 ### Firefox detects the wrong version of my plugin
 
-When you close Firefox, the latter saves the current timestamp and version of your plugins inside `pluginreg.dat` located in your profile folder, typically in `~/.mozilla/firefox/_some name_.default/`.
+When you close Firefox, the latter saves the current timestamp and version of your plugins inside `pluginreg.dat` located in your profile folder, typically in `~/.mozilla/firefox/*some name*.default/`.
 
 If you upgraded your plugin when Firefox was still running, you will thus have the wrong information inside that file. The next time you will restart Firefox you will get that message `Firefox has prevented the outdated plugin "XXXX" from running on ...` when you will be trying to open content dedicated to that plugin on the web. This problem often appears with the official [Adobe Flash Player plugin](/index.php/Browser_plugins#Flash_Player "Browser plugins") which has been upgraded while Firefox was still running.
 

@@ -39,7 +39,7 @@ Using host libthread_db library "/lib/libthread_db.so.1".
 
 ```
 # pacman -Qo /lib/libthread_db.so.1
-/lib/libthread_db.so.1 is owned by _glibc_ 2.5-8
+/lib/libthread_db.so.1 is owned by *glibc* 2.5-8
 
 ```
 
@@ -69,11 +69,11 @@ options=(debug !strip)
 
 ```
 
-Alternatively you can put the debug information in a separate package by enabling both `debug` and `strip`, debugging information will then be stripped from the main package and placed in a separate `_foo_-debug` package.
+Alternatively you can put the debug information in a separate package by enabling both `debug` and `strip`, debugging information will then be stripped from the main package and placed in a separate `*foo*-debug` package.
 
 **Note:** It is insufficient to simply install the newly compiled debug package, because the debugger will check that the file containing the debug symbols is from the same build as the associated library and executable. You must install both of the recompiled packages. In Arch, the debug symbols files are installed under `/usr/lib/debug`. See the [GDB documentation](https://sourceware.org/gdb/onlinedocs/gdb/Separate-Debug-Files.html) for more information about debug packages.
 
-Note that certain packages such as _glibc_ are stripped regardless. Check the PKGBUILD for sections such as:
+Note that certain packages such as *glibc* are stripped regardless. Check the PKGBUILD for sections such as:
 
 ```
 strip $STRIP_BINARIES usr/bin/{gencat,getconf,getent,iconv,iconvconfig} \
@@ -172,7 +172,6 @@ to output the trace to `trace.log` into the directory `gdb` was started in. To e
 ```
 
 **Tip:** To debug an application written in python:
-
 ```
 # gdb /usr/bin/python
 (gdb) run <python application>

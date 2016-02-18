@@ -288,7 +288,7 @@ cat /usr/lib/syslinux/mbr.bin > /dev/pen
 
 ### mkinitcpio.conf
 
-An _initcpio_ is necessary for creating a system that is able to "wake-up" from a CD/DVD/USB.
+An *initcpio* is necessary for creating a system that is able to "wake-up" from a CD/DVD/USB.
 
 Therefore, you should create a mkinitcpio.conf that holds a list of our hooks:
 
@@ -304,11 +304,11 @@ HOOKS="base udev memdisk archiso archiso_pxe_nbd archiso_loop_mnt block usb fw p
 
 ```
 
-This list will get you a system that can be booted off a CD/DVD or a USB device. It's worth mentioning that hardware auto-detection and things of that nature do not belong here. Only what's necessary to get the system on its feet, and out of the _initcpio_ really belong here, fancier stuff can be done on the booted system anyway.
+This list will get you a system that can be booted off a CD/DVD or a USB device. It's worth mentioning that hardware auto-detection and things of that nature do not belong here. Only what's necessary to get the system on its feet, and out of the *initcpio* really belong here, fancier stuff can be done on the booted system anyway.
 
 ### packages.list
 
-You'll also want to create a list of packages you want installed on your live CD system. A file full of package names, one-per-line, is the format for this. This is _**great**_ for special interest live CDs, just specify packages you want and bake the image.
+You'll also want to create a list of packages you want installed on your live CD system. A file full of package names, one-per-line, is the format for this. This is ***great*** for special interest live CDs, just specify packages you want and bake the image.
 
 **Tip:** You can also create a **[custom local repository](/index.php/Custom_local_repository "Custom local repository")** for the purpose of preparing custom packages or packages from [AUR](/index.php/AUR "AUR")/[ABS](/index.php/ABS "ABS"). Just add your local repository at the first position (for top priority) of your build machine's **pacman.conf** and you are good to go!
 
@@ -382,11 +382,11 @@ It is required to add a **fstab** file in /etc:
 Some tips that will not be covered in this article because there are other articles on this wiki that already do:
 
 *   Adding an user.
-*   Configure an _inittab_ to start into X at boot time
-*   Configure the _hosts_ file
-*   Configure _rc.conf_ (no fancy modules required here)
-*   Configure _sudoers_
-*   Configure _rc.local_
+*   Configure an *inittab* to start into X at boot time
+*   Configure the *hosts* file
+*   Configure *rc.conf* (no fancy modules required here)
+*   Configure *sudoers*
+*   Configure *rc.local*
 *   Put more stuff into etc/skel
 *   Put additional artworks onto the medium
 *   Put arbitrary binary stuff into opt/

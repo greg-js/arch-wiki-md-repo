@@ -34,7 +34,6 @@ Necesitas tener [iptables](https://www.archlinux.org/packages/?name=iptables) in
 A continuacion, agrega `iptables` a la [lista de DAEMONS](/index.php/Daemon "Daemon") en `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")` para que carge tu configuracion al inicio:
 
  `/etc/rc.conf` 
-
 ```
 ...
 
@@ -56,7 +55,6 @@ Usando **recent** podemos averiguar si cierta IP a tocado los puertos correctos 
 A continuacion se representa el contenido de un archivo `iptables.rules` . En este ejemplo, el puerto para ser abierto es el 22 (default para SSH) Este ejemplo tiene comentarios que explican como funciona.
 
  `/etc/iptables/iptables.rules` 
-
 ```
 *filter
  :INPUT ACCEPT [0:0]
@@ -120,7 +118,6 @@ A continuacion se representa el contenido de un archivo `iptables.rules` . En es
 Ahora podemos usar un simple shell script (`knock.sh`) para que los toque:
 
  `knock.sh` 
-
 ```
 #!/bin/bash
 HOST=$1

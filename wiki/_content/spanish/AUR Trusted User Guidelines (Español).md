@@ -18,9 +18,9 @@ Los UC se rigen por el [Estatuto UC](https://aur.archlinux.org/trusted-user/TUby
 
 ### TODO lista para el nuevo usuario de confianza
 
-*   Instalar el paquete _devtools'._
-*   Envíar su clave pública ssh public a Lukas Fleischer. Si no tienes una, usa _ssh-keygen_ para generarla. Puedes revisar la página del wiki [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") para mas información sobre como crear claves ssh y configurar un cliente-ssh para usar esta.
-*   Crear el directorio _staging/community_ dentro de tu carpeta personal en aur.archlinux.org. Este es un paso **importante**, porque devtools scripts usa este directorio para procesar los paquetes entrantes.
+*   Instalar el paquete *devtools'.*
+*   Envíar su clave pública ssh public a Lukas Fleischer. Si no tienes una, usa *ssh-keygen* para generarla. Puedes revisar la página del wiki [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") para mas información sobre como crear claves ssh y configurar un cliente-ssh para usar esta.
+*   Crear el directorio *staging/community* dentro de tu carpeta personal en aur.archlinux.org. Este es un paso **importante**, porque devtools scripts usa este directorio para procesar los paquetes entrantes.
 *   Recuerde a Allan a cambiar su cuenta en los foros
 *   Asegúrese que su sponsor le ha dado estado de UC en AUR
 *   Pregunte a algunos UC por el canal #archlinux-tu@freenode key
@@ -60,11 +60,11 @@ Para **eliminar** un paquete
 Aquí y en el texto siguiente, arch puede ser i686 o x86_64 que son las dos arquitecturas soportadas por Arch Linux.
 
 Cuando hayas terminado con la edición del PKGBUILD, etc, debes hacer un **commit** de los cambios (`svn commit`).
-Cuando desees **entregar** un paquete, primero copia el paquete a la carpeta _staging/community_ en aur.archlinux.org usando scp y luego **mearca** el paquete yendo a la carpeta _pkgname/trunk_y la emisión de `archrelease community-arch`.
+Cuando desees **entregar** un paquete, primero copia el paquete a la carpeta *staging/community* en aur.archlinux.org usando scp y luego **mearca** el paquete yendo a la carpeta *pkgname/trunk*y la emisión de `archrelease community-arch`.
 
-Esto hace una copia svn copy de la entradas de trunk en un directorio llamado _community-i686_ o _community-x86_64_ señalando que este paquete está en el repositorio community para esa arquitectura.
+Esto hace una copia svn copy de la entradas de trunk en un directorio llamado *community-i686* o *community-x86_64* señalando que este paquete está en el repositorio community para esa arquitectura.
 
-_**Nota:** En algunos casos, especialmente para los paquetes en community, un UC x86_64 podría sumar al pkgrel un .1 (y no +1). esto indica que el **cambio al PKGBUILD es específico para x86_64** y los mantenedores de i686 **no deben** reconstruir el paquete para i686\. Cuando el UC decide marcar el pkgrel , se debe hacer con el incremento habitual de +1\. Sin embargo, un pkgrel=2.1 anterior no debe convertirse en pkgrel=3,1 cuando son golpeadas por la TU y en su lugar debe ser pkgrel=3\. En pocas palabras, dejar de punto (.) Comunicados exclusiva a la x86_64 de TU para evitar confusiones._
+***Nota:** En algunos casos, especialmente para los paquetes en community, un UC x86_64 podría sumar al pkgrel un .1 (y no +1). esto indica que el **cambio al PKGBUILD es específico para x86_64** y los mantenedores de i686 **no deben** reconstruir el paquete para i686\. Cuando el UC decide marcar el pkgrel , se debe hacer con el incremento habitual de +1\. Sin embargo, un pkgrel=2.1 anterior no debe convertirse en pkgrel=3,1 cuando son golpeadas por la TU y en su lugar debe ser pkgrel=3\. En pocas palabras, dejar de punto (.) Comunicados exclusiva a la x86_64 de TU para evitar confusiones.*
 
 Así, el **proceso** de actualización de un paquete puede resumirse como
 
@@ -77,7 +77,7 @@ Así, el **proceso** de actualización de un paquete puede resumirse como
 *   **Etiqueta** del paquete (`archrelease community-{i686,x86_64}`)
 *   **Actualizar** el repositorio (`ssh aur.archlinux.org /arch/db-community{,64}`)
 
-Ver también la secciòn _Varios_ en la [Guía de paquetes](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager"). Para la sección _Evite tener que introducir su contraseña todo el tiempo_ use aur.archlinux.org en lugar de archlinux.org y svn.archlinux.org.
+Ver también la secciòn *Varios* en la [Guía de paquetes](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager"). Para la sección *Evite tener que introducir su contraseña todo el tiempo* use aur.archlinux.org en lugar de archlinux.org y svn.archlinux.org.
 
 #### Dejar de mantener paquetes
 

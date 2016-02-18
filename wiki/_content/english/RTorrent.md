@@ -93,7 +93,7 @@ session = ~/.rtorrent.session
 The `schedule` option has rTorrent watch a particular directory for new torrent files. Saving a torrent file to this directory will automatically start the download. Remember to create the directory that will be watched (e.g. `mkdir ~/watch`). Also, be careful when using this option as rTorrent will move the torrent file to your session folder and rename it to its hash value.
 
 ```
-schedule = watch_directory,5,5,load_start=/home/_user_/watch/*.torrent
+schedule = watch_directory,5,5,load_start=/home/*user*/watch/*.torrent
 schedule = untied_directory,5,5,stop_untied=
 schedule = tied_directory,5,5,start_tied=
 
@@ -169,7 +169,6 @@ rTorrent relies exclusively on keyboard shortcuts for user input. A quick refere
 `Ctrl-s` is often used for terminal control to stop screen output while `Ctrl-q` is used to start it. These mappings may interfere with rTorrent. Check to see if these terminal options are bound to a mapping:
 
  `$ stty -a` 
-
 ```
 ...
 swtch = <undef>; start = ^Q; stop = ^S; susp = ^Z; rprnt = ^R; werase = ^W; lnext = ^V;
@@ -194,7 +193,6 @@ To remove these mappings automatically at startup you may add the two preceding 
 *   With tmux (Restart rtorrent if crashed)
 
  `/etc/systemd/user/rt.service` 
-
 ```
 [Unit]
 Description=rTorrent
@@ -216,7 +214,6 @@ WantedBy=default.target
 *   With tmux running as user rtorrent (Restart rtorrent if crashed)
 
  `/etc/systemd/system/rtorrent.service` 
-
 ```
 [Unit]
 Description=rTorrent Daemon
@@ -239,7 +236,6 @@ WantedBy=multi-user.target
 *   With screen
 
  `/etc/systemd/user/rt.service` 
-
 ```
 [Unit]
 Description=rTorrent
@@ -299,7 +295,6 @@ When running dtach from systemd unit, the `TERM` environment variable [has to be
 This service file has no restart because the author occasionally takes the drive in question offline, and rtorrent fails, shall we say, "suboptimally" when started in this scenario and loses many torrent specific settings such as the specific directories each torrent is stored in. In fact the symlinks that kick off rtorrent live on the relevant drive; if it is unmounted rtorrent cannot start. This use case of blocking rtorrent from starting is relevant to users who put the downloaded files on removable media such as NAS, USB or eSATA drives.
 
  `~/.config/systemd/user/rtorrent.service` 
-
 ```
 [Unit]
 Description=rTorrent
@@ -342,7 +337,6 @@ Without this step, when running multiple instances a killall solution would kill
 If multiple rtorrent instances are not needed and the rtorrent rc file is in the default location the above service file may be simplified. The entire file is included but only the ExecStart and ExecStop lines change.
 
  `~/.config/systemd/user/rtorrent.service` 
-
 ```
 [Unit]
 Description=rTorrent
@@ -388,7 +382,6 @@ To make pre-allocation available, recompile libTorrent from the [ABS](/index.php
 To enable it, add the following to your `~/rtorrent.rc`:
 
  `~/rtorrent.rc` 
-
 ```
   # Preallocate files; reduces defragmentation on filesystems.
   system.file_allocate.set = yes
@@ -534,7 +527,6 @@ Now to send the text, we must pipe a message to the mailx program.
 *   Make a Bash script:
 
  `/path/to/mail.sh` 
-
 ```
 echo "$@: Done" | mailx 5551234567@vtext.com
 
@@ -676,7 +668,7 @@ If you wish to have magnet links automatically added to your watch folder, here 
 Save it, for instance as rtorrent-magnet, give it execution permission, and place it somewhere under your $PATH. Then in Firefox:
 
 1.  Type `about:config` into the Location Bar (address bar) and press `Enter`.
-2.  Right-click: _New > Boolean > Name: **network.protocol-handler.expose.magnet** > Value > false_.
+2.  Right-click: *New > Boolean > Name: **network.protocol-handler.expose.magnet** > Value > false*.
 3.  Next time you click a magnet link you will be asked which application to open it with. Select the script we just created and you will be done.
 
 If you want xdg-open to handle this, which you need if you are using chrome instead of firefox, (though gnome and other DE might have their own programs overriding xdg-open) you need to create the desktop entry for the rtorrent-magnet script in `~/.local/share/applications/rtorrent-magnet.desktop` with the following content:
@@ -755,17 +747,21 @@ Optionally: TORQUE: Daemon watchdog schedule. Must be activated by touching the 
 Following steps are important. Before using pyroscope tools you have to set the missing "loaded" times to that of the .torrent file. Run this in your terminal:
 
 ```
-rtcontrol '!*"*' loaded=0 -q -sname -o 'echo "$(name)s"\ntest -f "$(metafile)s" && rtxmlrpc -q d.set_custom $(hash)s tm_loaded \$(\
+rtcontrol '!*"*' loaded=0 -q -sname -o 'echo "$(name)s"
+test -f "$(metafile)s" && rtxmlrpc -q d.set_custom $(hash)s tm_loaded \$(\
     ls -l --time-style "+%%s" "$(metafile)s" \
-    | cut -f6 -d" ")\nrtxmlrpc -q d.save_session $(hash)s' | bash
+    | cut -f6 -d" ")
+rtxmlrpc -q d.save_session $(hash)s' | bash
 ```
 
 And now set the missing "completed" times to that of the data file or directory:
 
 ```
-rtcontrol '!*"*' completed=0 done=100 path=\! is_ghost=no -q -sname -o 'echo "$(name)s"\ntest -e "$(realpath)s" && rtxmlrpc -q d.set_custom $(hash)s tm_completed \$(\
+rtcontrol '!*"*' completed=0 done=100 path=\! is_ghost=no -q -sname -o 'echo "$(name)s"
+test -e "$(realpath)s" && rtxmlrpc -q d.set_custom $(hash)s tm_completed \$(\
     ls -ld --time-style "+%%s" "$(realpath)s" \
-    | cut -f6 -d" ")\nrtxmlrpc -q d.save_session $(hash)s' | bash
+    | cut -f6 -d" ")
+rtxmlrpc -q d.save_session $(hash)s' | bash
 ```
 
 Example usage: Will print out all torrents older than 2 hours:

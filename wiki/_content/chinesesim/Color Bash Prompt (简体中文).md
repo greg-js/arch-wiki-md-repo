@@ -119,7 +119,9 @@ match_lhs=""
 	&& type -P dircolors >/dev/null \
 	&& match_lhs=$(dircolors --print-database)
 
-if [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] ; then
+if [[ $'
+'${match_lhs} == *$'
+'"TERM "${safe_term}* ]] ; then
 
 	# we have colors :-)
 
@@ -285,7 +287,7 @@ andy@alba /etc/skel $ _
 
 更多关于`/etc/skel/`目录自定义的信息, 输入: `$ man useradd`。 看也可以: [http://www.gentoo.org/news/en/gwn/20031222-newsletter.xml](http://www.gentoo.org/news/en/gwn/20031222-newsletter.xml).
 
-现在，在`/etc/skel/.bashrc` 目录中的文件`.bashrc` 已经复制到每个_新_用户的主目录中了它会看起来像这样：
+现在，在`/etc/skel/.bashrc` 目录中的文件`.bashrc` 已经复制到每个*新*用户的主目录中了它会看起来像这样：
 
 ```
 #
@@ -332,7 +334,8 @@ alias pacexpl="/usr/bin/yaourt -D --asexplicit"	# 'mark as [expl]icit'	- mark on
 alias pacimpl="/usr/bin/yaourt -D --asdeps"	# 'mark as [impl]icit'	- mark one or more packages as non explicitly installed
 
 # '[r]emove [o]rphans' - recursively remove ALL orphaned packages
-alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;$!ba;s/\n/ /g')"
+alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;$!ba;s/
+/ /g')"
 ```
 
 ## Random quotations at logon
@@ -365,26 +368,39 @@ with:
 
 if [ "$PS1" ]; then
 	# The characters "£, §" are used as metacharacters. They should not be encountered in a feed...
-	echo -e "$(echo $(curl --silent https://www.archlinux.org/feeds/news/ | sed -e ':a;N;$!ba;s/\n/ /g') | \
+	echo -e "$(echo $(curl --silent https://www.archlinux.org/feeds/news/ | sed -e ':a;N;$!ba;s/
+/ /g') | \
 		sed -e 's/&amp;/\&/g
 		s/&lt;\|&#60;/</g
 		s/&gt;\|&#62;/>/g
 		s/<\/a>/£/g
 		s/href\=\"/§/g
-		s/<title>/\\n\\n\\n   :: \\e[01;31m/g; s/<\/title>/\\e[00m ::\\n/g
+		s/<title>/\
+\
+\
+   :: \\e[01;31m/g; s/<\/title>/\\e[00m ::\
+/g
 		s/<link>/ [ \\e[01;36m/g; s/<\/link>/\\e[00m ]/g
-		s/<description>/\\n\\n\\e[00;37m/g; s/<\/description>/\\e[00m\\n\\n/g
-		s/<p\( [^>]*\)\?>\|<br\s*\/\?>/\n/g
+		s/<description>/\
+\
+\\e[00;37m/g; s/<\/description>/\\e[00m\
+\
+/g
+		s/<p\( [^>]*\)\?>\|<br\s*\/\?>/
+/g
 		s/<b\( [^>]*\)\?>\|<strong\( [^>]*\)\?>/\\e[01;30m/g; s/<\/b>\|<\/strong>/\\e[00;37m/g
 		s/<i\( [^>]*\)\?>\|<em\( [^>]*\)\?>/\\e[41;37m/g; s/<\/i>\|<\/em>/\\e[00;37m/g
 		s/<u\( [^>]*\)\?>/\\e[4;37m/g; s/<\/u>/\\e[00;37m/g
 		s/<code\( [^>]*\)\?>/\\e[00m/g; s/<\/code>/\\e[00;37m/g
 		s/<a[^§|t]*§\([^\"]*\)\"[^>]*>\([^£]*\)[^£]*£/\\e[01;31m\2\\e[00;37m \\e[01;34m[\\e[00;37m \\e[04m\1\\e[00;37m\\e[01;34m ]\\e[00;37m/g
-		s/<li\( [^>]*\)\?>/\n \\e[01;34m*\\e[00;37m /g
+		s/<li\( [^>]*\)\?>/
+ \\e[01;34m*\\e[00;37m /g
 		s/<!\[CDATA\[\|\]\]>//g
 		s/\|>\s*<//g
 		s/ *<[^>]\+> */ /g
-		s/[<>£§]//g')\n\n";
+		s/[<>£§]//g')
+
+";
 fi
 ```
 
@@ -538,26 +554,39 @@ If you don't want to see months worth of updates but only the latest item, you c
 
 if [ "$PS1" ]; then
 	# The characters "£, §" are used as metacharacters. They should not be encountered in a feed...
-	echo -e "$(echo $(curl --silent https://www.archlinux.org/feeds/news/ | awk ' NR == 1 {while ($0 !~ /<\/item>/) {print;getline} sub(/<\/item>.*/,"</item>") ;print}' | sed -e ':a;N;$!ba;s/\n/ /g') | \
+	echo -e "$(echo $(curl --silent https://www.archlinux.org/feeds/news/ | awk ' NR == 1 {while ($0 !~ /<\/item>/) {print;getline} sub(/<\/item>.*/,"</item>") ;print}' | sed -e ':a;N;$!ba;s/
+/ /g') | \
 		sed -e 's/&amp;/\&/g
 		s/&lt;\|&#60;/</g
 		s/&gt;\|&#62;/>/g
 		s/<\/a>/£/g
 		s/href\=\"/§/g
-		s/<title>/\\n\\n\\n   :: \\e[01;31m/g; s/<\/title>/\\e[00m ::\\n/g
+		s/<title>/\
+\
+\
+   :: \\e[01;31m/g; s/<\/title>/\\e[00m ::\
+/g
 		s/<link>/ [ \\e[01;36m/g; s/<\/link>/\\e[00m ]/g
-		s/<description>/\\n\\n\\e[00;37m/g; s/<\/description>/\\e[00m\\n\\n/g
-		s/<p\( [^>]*\)\?>\|<br\s*\/\?>/\n/g
+		s/<description>/\
+\
+\\e[00;37m/g; s/<\/description>/\\e[00m\
+\
+/g
+		s/<p\( [^>]*\)\?>\|<br\s*\/\?>/
+/g
 		s/<b\( [^>]*\)\?>\|<strong\( [^>]*\)\?>/\\e[01;30m/g; s/<\/b>\|<\/strong>/\\e[00;37m/g
 		s/<i\( [^>]*\)\?>\|<em\( [^>]*\)\?>/\\e[41;37m/g; s/<\/i>\|<\/em>/\\e[00;37m/g
 		s/<u\( [^>]*\)\?>/\\e[4;37m/g; s/<\/u>/\\e[00;37m/g
 		s/<code\( [^>]*\)\?>/\\e[00m/g; s/<\/code>/\\e[00;37m/g
 		s/<a[^§|t]*§\([^\"]*\)\"[^>]*>\([^£]*\)[^£]*£/\\e[01;31m\2\\e[00;37m \\e[01;34m[\\e[00;37m \\e[04m\1\\e[00;37m\\e[01;34m ]\\e[00;37m/g
-		s/<li\( [^>]*\)\?>/\n \\e[01;34m*\\e[00;37m /g
+		s/<li\( [^>]*\)\?>/
+ \\e[01;34m*\\e[00;37m /g
 		s/<!\[CDATA\[\|\]\]>//g
 		s/\|>\s*<//g
 		s/ *<[^>]\+> */ /g
-		s/[<>£§]//g')\n\n";
+		s/[<>£§]//g')
+
+";
 fi
 ```
 
@@ -604,7 +633,8 @@ And finally here is the `PS1` variable for this effect to be applyied to [our](/
 
 ```
 	# https://bbs.archlinux.org/viewtopic.php?pid=1068202#p1068202
-	PS1="\[\033[0;37m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[0;31m\]\h'; else echo '\[\033[0;33m\]\u\[\033[0;37m\]@\[\033[0;96m\]\h'; fi)\[\033[0;37m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;37m\]]\n\[\033[0;37m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]"
+	PS1="\[\033[0;37m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[0;31m\]\h'; else echo '\[\033[0;33m\]\u\[\033[0;37m\]@\[\033[0;96m\]\h'; fi)\[\033[0;37m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;37m\]]
+\[\033[0;37m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]"
 ```
 
 ### From an italian blog…
@@ -641,7 +671,8 @@ And finally here is the `PS1` variable for this effect to be applyied to [our](/
 		sq_color="\[\033[0;34m\]"
 	fi
 
-	PS1="$sq_color\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[01;37m\]\342\234\227$sq_color]\342\224\200\")[\[\033[01;37m\]\t$sq_color]\342\224\200[\[\033[01;37m\]\u@\h$sq_color]\n\342\224\224\342\224\200\342\224\200> \[\033[01;37m\]\W$sq_color $ \[\033[01;37m\]>>\\[\\033[0m\\] "
+	PS1="$sq_color\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[01;37m\]\342\234\227$sq_color]\342\224\200\")[\[\033[01;37m\]\t$sq_color]\342\224\200[\[\033[01;37m\]\u@\h$sq_color]
+\342\224\224\342\224\200\342\224\200> \[\033[01;37m\]\W$sq_color $ \[\033[01;37m\]>>\\[\\033[0m\\] "
 
 	unset sq_color
 ```
@@ -678,7 +709,9 @@ Here is the `PS1` variable for this effect to be applyied to [our](/index.php/Co
 
 ```
 	# https://bbs.archlinux.org/viewtopic.php?pid=1156660#p1156660
-	PS1="\n\$(if [[ \$? == 0 ]]; then echo \"\[\033[0;34m\]\"; else echo \"\[\033[0;31m\]\"; fi)\342\226\210\342\226\210 [ \W ] [ \t ]\n\[\033[0m\]\342\226\210\342\226\210 "
+	PS1="
+\$(if [[ \$? == 0 ]]; then echo \"\[\033[0;34m\]\"; else echo \"\[\033[0;31m\]\"; fi)\342\226\210\342\226\210 [ \W ] [ \t ]
+\[\033[0m\]\342\226\210\342\226\210 "
 ```
 
 ### With directory information
@@ -718,7 +751,9 @@ Here is the `PS1` variable for this effect to be applyied to [our](/index.php/Co
 
 ```
 	# http://maketecheasier.com/8-useful-and-interesting-bash-prompts/2009/09/04
-	PS1="\n\[\033[1;37m\]\342\224\214($(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;34m\]\u@\h'; fi)\[\033[1;37m\])\342\224\200(\[\033[1;34m\]\$?\[\033[1;37m\])\342\224\200(\[\033[1;34m\]\@ \d\[\033[1;37m\])\[\033[1;37m\]\n\342\224\224\342\224\200(\[\033[1;32m\]\w\[\033[1;37m\])\342\224\200(\[\033[1;32m\]\$(ls -1 | wc -l | sed 's: ::g') files, \$(ls -lah | grep -m 1 total | sed 's/total //')b\[\033[1;37m\])\342\224\200> \[\033[0m\]"
+	PS1="
+\[\033[1;37m\]\342\224\214($(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;34m\]\u@\h'; fi)\[\033[1;37m\])\342\224\200(\[\033[1;34m\]\$?\[\033[1;37m\])\342\224\200(\[\033[1;34m\]\@ \d\[\033[1;37m\])\[\033[1;37m\]
+\342\224\224\342\224\200(\[\033[1;32m\]\w\[\033[1;37m\])\342\224\200(\[\033[1;32m\]\$(ls -1 | wc -l | sed 's: ::g') files, \$(ls -lah | grep -m 1 total | sed 's/total //')b\[\033[1;37m\])\342\224\200> \[\033[0m\]"
 ```
 
 #### Version #2: with unicode error status symbols
@@ -754,7 +789,9 @@ Here is the `PS1` variable for this effect to be applyied to [our](/index.php/Co
 
 ```
 	# http://maketecheasier.com/8-useful-and-interesting-bash-prompts/2009/09/04
-	PS1="\n\[\033[1;37m\]\342\224\214($(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;34m\]\u@\h'; fi)\[\033[1;37m\])\342\224\200(\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\234\223\"; else echo \"\[\033[01;31m\]\342\234\227\"; fi)\[\033[1;37m\])\342\224\200(\[\033[1;34m\]\@ \d\[\033[1;37m\])\[\033[1;37m\]\n\342\224\224\342\224\200(\[\033[1;32m\]\w\[\033[1;37m\])\342\224\200(\[\033[1;32m\]\$(ls -1 | wc -l | sed 's: ::g') files, \$(ls -lah | grep -m 1 total | sed 's/total //')b\[\033[1;37m\])\342\224\200> \[\033[0m\]"
+	PS1="
+\[\033[1;37m\]\342\224\214($(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;34m\]\u@\h'; fi)\[\033[1;37m\])\342\224\200(\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\234\223\"; else echo \"\[\033[01;31m\]\342\234\227\"; fi)\[\033[1;37m\])\342\224\200(\[\033[1;34m\]\@ \d\[\033[1;37m\])\[\033[1;37m\]
+\342\224\224\342\224\200(\[\033[1;32m\]\w\[\033[1;37m\])\342\224\200(\[\033[1;32m\]\$(ls -1 | wc -l | sed 's: ::g') files, \$(ls -lah | grep -m 1 total | sed 's/total //')b\[\033[1;37m\])\342\224\200> \[\033[0m\]"
 ```
 
 #### Version #3: with unicode error status symbol (non-zero only)
@@ -790,7 +827,9 @@ Here is the `PS1` variable for this effect to be applyied to [our](/index.php/Co
 
 ```
 	# http://maketecheasier.com/8-useful-and-interesting-bash-prompts/2009/09/04
-	PS1="\n\[\033[1;37m\]\342\224\214($(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;34m\]\u@\h'; fi)\[\033[1;37m\])\$([[ \$? != 0 ]] && echo \"\342\224\200(\[\033[0;31m\]\342\234\227\[\033[1;37m\])\")\342\224\200(\[\033[1;34m\]\@ \d\[\033[1;37m\])\[\033[1;37m\]\n\342\224\224\342\224\200(\[\033[1;32m\]\w\[\033[1;37m\])\342\224\200(\[\033[1;32m\]\$(ls -1 | wc -l | sed 's: ::g') files, \$(ls -lah | grep -m 1 total | sed 's/total //')b\[\033[1;37m\])\342\224\200> \[\033[0m\]"
+	PS1="
+\[\033[1;37m\]\342\224\214($(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;34m\]\u@\h'; fi)\[\033[1;37m\])\$([[ \$? != 0 ]] && echo \"\342\224\200(\[\033[0;31m\]\342\234\227\[\033[1;37m\])\")\342\224\200(\[\033[1;34m\]\@ \d\[\033[1;37m\])\[\033[1;37m\]
+\342\224\224\342\224\200(\[\033[1;32m\]\w\[\033[1;37m\])\342\224\200(\[\033[1;32m\]\$(ls -1 | wc -l | sed 's: ::g') files, \$(ls -lah | grep -m 1 total | sed 's/total //')b\[\033[1;37m\])\342\224\200> \[\033[0m\]"
 ```
 
 ## Restoring the original /etc/bash.bashrc file
@@ -799,7 +838,7 @@ If you repent having modified the `/etc/bash.bashrc` file, you can always restor
 
 ## Original /etc/bash.bashrc from Gentoo
 
-The original _not modified_ Gentoo's `/etc/bash.bashrc` file can be found [here](http://www.jeremysands.com/archlinux/gentoo-bashrc-2008.0).
+The original *not modified* Gentoo's `/etc/bash.bashrc` file can be found [here](http://www.jeremysands.com/archlinux/gentoo-bashrc-2008.0).
 
 # Step by step
 
@@ -820,7 +859,6 @@ The following settings are useful for distinguishing the root prompt from non-ro
 *   Add the following green prompt for regular users:
 
 [chiri@zetsubou ~]$ _
-
  `PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '` 
 
 *   Edit root's .bashrc file; copy it from /etc/skel if the file is not present:
@@ -830,7 +868,6 @@ The following settings are useful for distinguishing the root prompt from non-ro
 *   Assign a red prompt for root:
 
 [root@zetsubou ~]# _
-
  `PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '` 
 
 ### Slightly fancier prompts
@@ -840,7 +877,6 @@ The following settings are useful for distinguishing the root prompt from non-ro
 chiri ~/docs $ echo "sample output text"
 sample output text
 chiri ~/docs $ _
-
  `PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'` 
 
 This will give a very pleasing, colorful prompt and theme for the console with bright white text.
@@ -858,7 +894,6 @@ The last color-set sequence, "\[\e[1;37m\]", is not closed, so the remaining tex
 root ~/docs # echo "sample output text"
 sample output text
 root ~/docs # _
-
  `PS1='\[\e[0;31m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[0;31m\]\$ \[\e[m\]\[\e[0;32m\]'` 
 
 This will give you a red designation and green console text.
@@ -871,7 +906,7 @@ Once you have made your changes to .bashrc, to execute your changes:
 
 ### Load/Mem Status for 256colors
 
-This is not even pushing the limits. Other than using 'sed' to parse the memory and load average (using the _-u_ option for non-buffering), and the builtin _history_ to save your history to your _HISTFILE_ after every command, which you may find incredibly useful when dealing with crashing shells or subshells, this is essentially just making BASH print variables it already knows, making this extremely fast compared to prompts with non-builtin commands.
+This is not even pushing the limits. Other than using 'sed' to parse the memory and load average (using the *-u* option for non-buffering), and the builtin *history* to save your history to your *HISTFILE* after every command, which you may find incredibly useful when dealing with crashing shells or subshells, this is essentially just making BASH print variables it already knows, making this extremely fast compared to prompts with non-builtin commands.
 
 This prompt is from AskApache.com's [BASH Power Prompt article](http://www.askapache.com/linux-unix/bash-power-prompt.html), which goes into greater detail. It is especially helpful for those wanting to understand 256 color terminals, ncurses, termcap, and terminfo.
 
@@ -886,7 +921,9 @@ This is for **256 color terminals**, which is where the **\033[38;5;22m** termin
 
 ```
 PROMPT_COMMAND='history -a;echo -en "\033[m\033[38;5;2m"$(( `sed -nu "s/MemFree:[\t ]\+\([0-9]\+\) kB/\1/p" /proc/meminfo`/1024))"\033[38;5;22m/"$((`sed -nu "s/MemTotal:[\t ]\+\([0-9]\+\) kB/\1/Ip" /proc/meminfo`/1024 ))MB"\t\033[m\033[38;5;55m$(< /proc/loadavg)\033[m"'
-PS1='\[\e[m\n\e[1;30m\][$$:$PPID \j:\!\[\e[1;30m\]]\[\e[0;36m\] \T \d \[\e[1;30m\][\[\e[1;34m\]\u@\H\[\e[1;30m\]:\[\e[0;37m\]${SSH_TTY} \[\e[0;32m\]+${SHLVL}\[\e[1;30m\]] \[\e[1;37m\]\w\[\e[0;37m\] \n($SHLVL:\!)\$ '
+PS1='\[\e[m
+\e[1;30m\][$$:$PPID \j:\!\[\e[1;30m\]]\[\e[0;36m\] \T \d \[\e[1;30m\][\[\e[1;34m\]\u@\H\[\e[1;30m\]:\[\e[0;37m\]${SSH_TTY} \[\e[0;32m\]+${SHLVL}\[\e[1;30m\]] \[\e[1;37m\]\w\[\e[0;37m\] 
+($SHLVL:\!)\$ '
 ```
 
 ### List of colors for prompt and Bash
@@ -1045,7 +1082,8 @@ decoded as follows:
 	\H		the hostname
 	\j		the number of jobs currently managed by the shell
 	\l		the basename of the shell's terminal device name
-	\n		newline
+	
+		newline
 	\r		carriage return
 	\s		the name of the shell, the basename of $0 (the portion following
 			  the final slash)
@@ -1062,7 +1100,8 @@ decoded as follows:
 	\!		the history number of this command
 	\#		the command number of this command
 	\$		if the effective UID is 0, a #, otherwise a $
-	\nnn		the character corresponding to the octal number nnn
+	
+nn		the character corresponding to the octal number nnn
 	\\		a backslash
 	\[		begin a sequence of non-printing characters, which could be used
 			  to embed a terminal control sequence into the prompt
@@ -1098,7 +1137,7 @@ The following example uses these sequences to display the time in the upper righ
 
  `PS1=">\[\033[s\]\[\033[1;\$((COLUMNS-4))f\]\$(date +%H:%M)\[\033[u\]"` 
 
-The environment variable _COLUMNS_ contains the number of columns of the terminal. The above example substracts 4 from its value in order to justify the five character wide output of _date_ at the right border.
+The environment variable *COLUMNS* contains the number of columns of the terminal. The above example substracts 4 from its value in order to justify the five character wide output of *date* at the right border.
 
 ### Return value visualisation
 
@@ -1130,7 +1169,7 @@ with a code like this one:
 PS1="\[\033[01;37m\]\$? \$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\];)\"; else echo \"\[\033[01;31m\];(\"; fi) $(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;32m\]\u@\h'; fi)\[\033[01;34m\] \w \$\[\033[00m\] "
 ```
 
-Or, if you want, you can build your prompt using the ✓ unicode symbol for a _zero_ status and the ✗ unicode symbol for a _nonzero_ status:
+Or, if you want, you can build your prompt using the ✓ unicode symbol for a *zero* status and the ✗ unicode symbol for a *nonzero* status:
 
 0 ✓ andy@alba ~ $ true
 0 ✓ andy@alba ~ $ false
@@ -1156,7 +1195,7 @@ PS1="${error} ${PS1}"
 
 After reading through most of the [Bash Prompt Howto](http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/index.html), the author developed a color bash prompt that displays the last 25 characters of the current working directory. This prompt should work well on terminals with a black background. The following code goes in file `~/.bashrc`.
 
-*   Add the bash_prompt_command function. If you have a couple directories with long names or start entering a lot of subdirectories, this function will keep the command prompt from wrapping around the screen by displaying at most the last pwdmaxlen characters from the PWD. This code was taken from the _Bash Prompt Howto_'s section on [Controlling the Size and Appearance of $PWD](http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x783.html) and modified to replace the user's home directory with a tilde.
+*   Add the bash_prompt_command function. If you have a couple directories with long names or start entering a lot of subdirectories, this function will keep the command prompt from wrapping around the screen by displaying at most the last pwdmaxlen characters from the PWD. This code was taken from the *Bash Prompt Howto*'s section on [Controlling the Size and Appearance of $PWD](http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x783.html) and modified to replace the user's home directory with a tilde.
 
 ```
 ##################################################
@@ -1257,13 +1296,15 @@ These prompts offer a little more flash and visual clarity. Note that the use of
 
 **Second**, in ~/.bashrc and right after the PS1= line, enter a new line with the following:
 
- `PS1='\e[1;33;47m\u \e[1;32;47mon \h \e[1;35;47m\d \@\e[0;0m\n\e[1;34m[dir.= \w] \# > \e[0;0m'` 
+ `PS1='\e[1;33;47m\u \e[1;32;47mon \h \e[1;35;47m\d \@\e[0;0m
+\e[1;34m[dir.= \w] \# > \e[0;0m'` 
 
 And then place a # in front of the first PS1 line to remark it out.
 
 **Third**, for root user, edit /root/.bashrc in the same manner to include:
 
- `PS1='\e[1;31;47m\u \e[1;32;47mon \h \e[1;35;47m\d \@\e[0;0m\n\e[1;31m[dir.= \w] \# > \e[0;0m'` 
+ `PS1='\e[1;31;47m\u \e[1;32;47mon \h \e[1;35;47m\d \@\e[0;0m
+\e[1;31m[dir.= \w] \# > \e[0;0m'` 
 
 Do not forget to comment out the old line.
 

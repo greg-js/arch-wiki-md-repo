@@ -1415,7 +1415,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 	[http://guayadeque.org/](http://guayadeque.org/) || [guayadeque](https://aur.archlinux.org/packages/guayadeque/)
 
-*   **[Nightingale](https://en.wikipedia.org/wiki/Nightingale_(software) "wikipedia:Nightingale (software)")** — Clone open source di iTunes basato su [Songbird](https://en.wikipedia.org/wiki/Songbird_(software) "wikipedia:Songbird (software)") che utilizza la tecnologia Mozilla e si appoggia a Gstreamer.
+*   **[Nightingale](https://en.wikipedia.org/wiki/Nightingale_(software) che utilizza la tecnologia Mozilla e si appoggia a Gstreamer.
 
 	[http://getnightingale.com/](http://getnightingale.com/) || [nightingale-git](https://aur.archlinux.org/packages/nightingale-git/)
 
@@ -2625,7 +2625,7 @@ Si veda l'articolo principale: [List_of_Applications/Documents_(Italiano)#Docume
 
 	[http://labplot.sourceforge.net/](http://labplot.sourceforge.net/) || [labplot2](https://aur.archlinux.org/packages/labplot2/)
 
-*   **[QtiPlot](https://en.wikipedia.org/wiki/QtiPlot "wikipedia:QtiPlot")** — Applicazione multipiattaforma usato per rappresentazioni scientifiche interattive e analisis dei dati, simile al programma proprietario [Origin](https://en.wikipedia.org/wiki/Origin_(software) "wikipedia:Origin (software)") o a [SigmaPlot](https://en.wikipedia.org/wiki/SigmaPlot "wikipedia:SigmaPlot").
+*   **[QtiPlot](https://en.wikipedia.org/wiki/QtiPlot o a [SigmaPlot](https://en.wikipedia.org/wiki/SigmaPlot "wikipedia:SigmaPlot").
 
 	[http://soft.proindependent.com/qtiplot.html](http://soft.proindependent.com/qtiplot.html) || [qtiplot](https://www.archlinux.org/packages/?name=qtiplot)
 
@@ -2889,7 +2889,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[http://notecase.sourceforge.net](http://notecase.sourceforge.net) || [notecase](https://aur.archlinux.org/packages/notecase/)
 
-*   **[org-mode](https://en.wikipedia.org/wiki/org-mode "wikipedia:org-mode")** — Modalità [Emacs](/index.php?title=Emacs_(Italiano)&action=edit&redlink=1 "Emacs (Italiano) (page does not exist)") per note, pianificazione progetti e authoring.
+*   **[org-mode](https://en.wikipedia.org/wiki/org-mode per note, pianificazione progetti e authoring.
 
 	[http://orgmode.org](http://orgmode.org) || [emacs-org-mode](https://aur.archlinux.org/packages/emacs-org-mode/)
 
@@ -3005,7 +3005,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[https://projects.gnome.org/gtranslator/](https://projects.gnome.org/gtranslator/) || [gtranslator](https://www.archlinux.org/packages/?name=gtranslator)
 
-*   **[Lokalize](https://en.wikipedia.org/wiki/Lokalize "wikipedia:Lokalize")** — Tool standard di [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)") per traduzioni di software. Permette di modificare i files PO, supporta glossari, translation memory, gestione progetti eccetera.
+*   **[Lokalize](https://en.wikipedia.org/wiki/Lokalize per traduzioni di software. Permette di modificare i files PO, supporta glossari, translation memory, gestione progetti eccetera.
 
 	[http://userbase.kde.org/Lokalize](http://userbase.kde.org/Lokalize) || [kdesdk-lokalize](https://www.archlinux.org/packages/?name=kdesdk-lokalize)
 
@@ -3025,7 +3025,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[http://techbase.kde.org/Localization/Tools/Pology](http://techbase.kde.org/Localization/Tools/Pology) || [pology](https://aur.archlinux.org/packages/pology/)
 
-*   **[Virtaal](https://en.wikipedia.org/wiki/Virtaal "wikipedia:Virtaal")** — Editor per traduzione di software e testi, basato su [Translate Toolkit](https://en.wikipedia.org/wiki/Translate_Toolkit "wikipedia:Translate Toolkit"). Supporta i seguenti formati: [gettext](https://en.wikipedia.org/wiki/gettext "wikipedia:gettext"), [XLIFF](https://en.wikipedia.org/wiki/XLIFF "wikipedia:XLIFF") , TMX, TBX, [Wordfast](https://en.wikipedia.org/wiki/WordFast "wikipedia:WordFast"), Qt Linguist , Qt Phrase Book, [OmegaT glossary](https://en.wikipedia.org/wiki/OmegaT "wikipedia:OmegaT") e altri. Può mostrare suggerimenti da [Apertium](https://en.wikipedia.org/wiki/Apertium "wikipedia:Apertium"), [Google Translate](https://en.wikipedia.org/wiki/Google_Translate "wikipedia:Google Translate"), [Bing Translator](https://en.wikipedia.org/wiki/Bing_Translator "wikipedia:Bing Translator"), [Moses](https://en.wikipedia.org/wiki/Moses_(machine_translation) "wikipedia:Moses (machine translation)") e altri siti.
+*   **[Virtaal](https://en.wikipedia.org/wiki/Virtaal e altri siti.
 
 	[http://translate.sourceforge.net/wiki/virtaal](http://translate.sourceforge.net/wiki/virtaal) || [virtaal](https://aur.archlinux.org/packages/virtaal/)
 
@@ -3167,7 +3167,7 @@ Gli utenti utilizzano emulatori di terminale molto spesso, quindi non sorprende 
 
 	[http://calno.com/evilvte/](http://calno.com/evilvte/) || [evilvte](https://aur.archlinux.org/packages/evilvte/)
 
-*   **[GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")** — Terminale predefinito per [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") con supporto Unicode e pseudo-trasparenza
+*   **[GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal con supporto Unicode e pseudo-trasparenza
 
 	[http://invisible-island.net/xterm/xterm.faq.html#bug_gnometerm](http://invisible-island.net/xterm/xterm.faq.html#bug_gnometerm) || [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal)
 
@@ -3411,7 +3411,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 See also [Wikipedia:Terminal pager](https://en.wikipedia.org/wiki/Terminal_pager "wikipedia:Terminal pager").
 
-*   [more](https://en.wikipedia.org/wiki/it:More_(Unix) "wikipedia:it:More (Unix)") — Semplice, leggero e ricco page, parte del pacchetto [util-linux](https://www.archlinux.org/packages/?name=util-linux).
+*   [more](https://en.wikipedia.org/wiki/it:More_(Unix) — Semplice, leggero e ricco page, parte del pacchetto [util-linux](https://www.archlinux.org/packages/?name=util-linux).
 *   **[less](https://en.wikipedia.org/wiki/it:Less_(Unix) "wikipedia:it:Less (Unix)")** — Programma simile a more, ma che supporta lo scrolling in alto e basso, così come caricamento parziale dei file.
 
 	[http://www.gnu.org/software/less](http://www.gnu.org/software/less) || [less](https://www.archlinux.org/packages/?name=less)
@@ -3449,7 +3449,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[http://sourceforge.net/projects/gmrun/](http://sourceforge.net/projects/gmrun/) || [gmrun](https://www.archlinux.org/packages/?name=gmrun)
 
-*   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do "wikipedia:GNOME Do")** — Lanciatore di applicazioni ispirato da [Quicksilver](https://en.wikipedia.org/wiki/Quicksilver_(software) "wikipedia:Quicksilver (software)") con molti plugins, originariamente sviluppato per il desktop GNOME.
+*   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do con molti plugins, originariamente sviluppato per il desktop GNOME.
 
 	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://www.archlinux.org/packages/?name=gnome-do)
 

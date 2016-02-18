@@ -119,7 +119,6 @@ Per avviare il demone DBUS:
 Oppure aggiungere questo demone all'array **DAEMONS** di `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")`, in modo che venga automaticamente eseguito all'avvio:
 
  `/etc/rc.conf` 
-
 ```
 ......
 DAEMONS=(syslog-ng **dbus** network crond)
@@ -135,7 +134,6 @@ Per caricare il modulo del kernel FUSE:
 Oppure aggiungere il modulo all'array **MODULES** in `/etc/rc.conf` in modo che venga caricato automaticamente all'avvio. Ad es.
 
  `/etc/rc.conf` 
-
 ```
 .....
 MODULES=(**fuse**)
@@ -152,10 +150,9 @@ Per una migliore integrazione col desktop, è consigliato l'uso di **GDM**.
 
 Consultare la pagina [Display Manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)") per capire come eseguirlo correttamente.
 
-Se si preferisce eseguirlo da console, aggiungere la seguente righe a `~/.xinitrc`, accertandosi che sia l'ultima del file e che sia l'unica ad iniziare con _exec_(Consultare la pagina [xinitrc](/index.php/Xinitrc_(Italiano) "Xinitrc (Italiano)")):
+Se si preferisce eseguirlo da console, aggiungere la seguente righe a `~/.xinitrc`, accertandosi che sia l'ultima del file e che sia l'unica ad iniziare con *exec*(Consultare la pagina [xinitrc](/index.php/Xinitrc_(Italiano) "Xinitrc (Italiano)")):
 
  ``/.xinitrc` 
-
 ```
 .....
 exec gnome-session
@@ -179,7 +176,7 @@ Riavviate la shell premendo `Alt` + `F2` poi `r` ed infine `Enter`
 
 ### Crashes della Shell
 
-Alcune modifiche e/o ripetuti riavvii della shell possono causare dei crash. In questi casi sarete informati riguardo l'errore e poi sarete forzati ad effettuare il log out. Alcuni cambiamenti della shell, come il passaggio da _**GNOME Shell**_ a _**fallback mode**_ non possono essere realizzati tramite tastiera, ma si deve effettuare il log out e poi di nuovo il log in perché abbiano effetto.
+Alcune modifiche e/o ripetuti riavvii della shell possono causare dei crash. In questi casi sarete informati riguardo l'errore e poi sarete forzati ad effettuare il log out. Alcuni cambiamenti della shell, come il passaggio da ***GNOME Shell*** a ***fallback mode*** non possono essere realizzati tramite tastiera, ma si deve effettuare il log out e poi di nuovo il log in perché abbiano effetto.
 
 Anche se lo dice il buon senso, vale la pena ripetere che i documenti di valore dovrebbero essere salvati (o addirittura è consigliato chiudere l'intera applicazione con cui si sta lavorando), prima di tentare un riavvio della shell. Non è strettamente necessario; i documenti e le finestre aperte normalmente rimangono intatte dopo il riavvio della shell.
 
@@ -209,7 +206,7 @@ Come **`~/.gtkrc-2.0`** per GTK2+, è possibile settare un tema GTK3 tramite **`
 
 La variabile `$XDG_CONFIG_HOME` normalmente assume il valore **~/.config**
 
-_Adwaita,_ il tema di default in GNOME 3, fa parte di uno dei **gnome-themes-standard** (temi standard di gnome). Altri temi per GTK3 possono essere trovati sul sito [Deviantart web site.](http://browse.deviantart.com/customization/skins/linuxutil/desktopenv/gnome/gtk3/)
+*Adwaita,* il tema di default in GNOME 3, fa parte di uno dei **gnome-themes-standard** (temi standard di gnome). Altri temi per GTK3 possono essere trovati sul sito [Deviantart web site.](http://browse.deviantart.com/customization/skins/linuxutil/desktopenv/gnome/gtk3/)
 
 Ad esempio si può inserire:
 
@@ -234,12 +231,11 @@ GNOME 3 è compatibile con i temi delle icone di GNOME 2, quindi non siete obbli
 
  ` $ cp -R /home/user/Desktop/my_icon_theme ~/.icons` 
 
-Il nuovo tema _my_icon_theme_ ora sarà selezionabile utilizzando **gnome-tweak-tool** sotto la voce _**interface**_ (_interfaccia_).
+Il nuovo tema *my_icon_theme* ora sarà selezionabile utilizzando **gnome-tweak-tool** sotto la voce ***interface*** (*interfaccia*).
 
 In alternativa, potete selezionare il vostro nuovo tema senza aver bisogno di utilizzare gnome-tweak-tool. Per fare questo, aggiungete il vostro tema delle icone GTK al file **`${XDG_CONFIG_HOME}/gtk-3.0/settings.ini`**.
 
  `${XDG_CONFIG_HOME}/gtk-3.0/settings.ini` 
-
 ```
 ... linee precedenti ...
 
@@ -256,7 +252,7 @@ La visualizzazion delle cartele è specificata in `~/.config/user-dirs.dirs` e p
 
 La toolbar standard di GNOME Files visualizza una barra con un'interfaccia basata su dei bottoni per la navigazione nel percorso dei file.
 
-Per entrare in una specifica posizione del percorso file utilizzando la _tastiera_, dovete visualizzare il campo per inserire il testo con la vostra locazione da raggiungere premendo i tasti `Ctrl` + `L`.
+Per entrare in una specifica posizione del percorso file utilizzando la *tastiera*, dovete visualizzare il campo per inserire il testo con la vostra locazione da raggiungere premendo i tasti `Ctrl` + `L`.
 
 Per rendere permanente la visualizzazione del campo percorso come testo, utilizzate gsettings come di seguito.
 
@@ -278,7 +274,6 @@ Quando effettuate l'installazione di Gnome, potrebbero essere visualizzate sul p
 Per esempio, per rimuovere l' **icona di accesso universale**, rimuovete 'a11y' dalla linea AREA_ORDER e commentate 'a11y' alla linea AREA_SHELL_IMPLEMENTATION.
 
  `/usr/share/gnome-shell/js/ui/panel.js` 
-
 ```
 const STANDARD_STATUS_AREA_ORDER = ['a11y', 'keyboard', 'volume', 'network', 'bluetooth', 'battery', 'userMenu'];
 const STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION = {
@@ -294,7 +289,6 @@ const STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION = {
 Il file deve diventare come il seguente:
 
  `/usr/share/gnome-shell/js/ui/panel.js` 
-
 ```
 const STANDARD_STATUS_AREA_ORDER = ['keyboard', 'volume', 'network', 'bluetooth' 'battery', 'userMenu'];
 const STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION = {
@@ -314,7 +308,6 @@ Salvate le vostre modifiche e [riavviate la shell di GNOME](#Riavviare_la_shell)
 Un modo veloce per farlo è cambiare la linea 153 di **`/usr/share/gnome-shell/js/ui/statusMenu.js`**. Questo cambiamento ha effetto al prossimo avvio della Gnome shell.
 
  `/usr/share/gnome-shell/js/ui/statusMenu.js` 
-
 ```
  // this._haveSuspend = this._upClient.get_can_suspend(); // Commentate questa linea.
  this._haveSuspend = false; // Scrivete questa linea.
@@ -329,7 +322,7 @@ Comunque gli effetti non saranno visibili fino all'aggiornamento di Gnome. Un mo
 
 La seguente modifica rimuove il dialogo di conferma ed i sessanta secondi di attesa per il logging out.
 
-Il messaggio normalmente appare quanto si effettua il logout dallo status menu. Questa modifica incide anche sul dialogo che riguarda il _**Power Off**_. Non è una modifica a livello di sistema; ha effetto solo sull'utente che utilizza questo comando. Gli effetti si possono notare subito dopo l'esecuzione del seguente comando.
+Il messaggio normalmente appare quanto si effettua il logout dallo status menu. Questa modifica incide anche sul dialogo che riguarda il ***Power Off***. Non è una modifica a livello di sistema; ha effetto solo sull'utente che utilizza questo comando. Gli effetti si possono notare subito dopo l'esecuzione del seguente comando.
 
  `$ gsettings set org.gnome.SessionManager logout-prompt 'false'` 
 
@@ -353,7 +346,7 @@ Come altri ambienti desktop, GNOME utilizza i .desktop files per popolare la sua
 
 ```
 
-Per le modifiche a livello di sistema, editate i files in **`/usr/share/applications`**. Per una modifica locale, create una copia del file _foo.desktop_ nella vostra cartella home.
+Per le modifiche a livello di sistema, editate i files in **`/usr/share/applications`**. Per una modifica locale, create una copia del file *foo.desktop* nella vostra cartella home.
 
 ```
 $ cp /usr/share/applications/foo.desktop ~/.local/share/applications/
@@ -375,12 +368,11 @@ Una scelta imbarazzante dei progettisti GNOME è stata quella di utilizzare icon
 
 Modificate i vostri file direttamente (ricordatevi di effettuare prima un backup) o copiate i file del tema in una cartella locale e modificateli. Per il tema principale dovete modificare il file :**`/usr/share/gnome-shell/theme/gnome-shell.css`**
 
-Per il tema utente modificate :**`/usr/share/themes/_user_theme_/gnome-shell/gnome-shell.css`**
+Per il tema utente modificate :**`/usr/share/themes/*user_theme*/gnome-shell/gnome-shell.css`**
 
-Apportate cambiamenti a _gnome-shell.css_ sostituendo i seguenti valori. Successivamente [riavviate la Gnome-Shell.](#Riavviare_la_shell)
+Apportate cambiamenti a *gnome-shell.css* sostituendo i seguenti valori. Successivamente [riavviate la Gnome-Shell.](#Riavviare_la_shell)
 
  `gnome-shell.css` 
-
 ```
  .icon-grid {
      spacing: 18px;
@@ -397,10 +389,9 @@ Un clone del tema base della Gnome-Shell con icone più piccole è disponibile [
 
 #### Disabilitare Activity View all'angolo dello schermo
 
-Per disabilitare l'Activity View automatica quando si raggiunge con il mouse l'angolo in alto a sinistra dello schermo, modificate **`/usr/share/gnome-shell/js/ui/layout.js`** (che corrisponde a _panel.js_ in Gnome 3.0.x) :
+Per disabilitare l'Activity View automatica quando si raggiunge con il mouse l'angolo in alto a sinistra dello schermo, modificate **`/usr/share/gnome-shell/js/ui/layout.js`** (che corrisponde a *panel.js* in Gnome 3.0.x) :
 
  `layout.js` 
-
 ```
  this._corner = new Clutter.Rectangle({ name: 'hot-corner',
                                        width: 1,
@@ -411,7 +402,7 @@ Per disabilitare l'Activity View automatica quando si raggiunge con il mouse l'a
 
 ```
 
-Dovete settare _reactive_ a _false_. Successivamente dovete [riavviate la Gnome-Shell.](#Riavviare_la_shell)
+Dovete settare *reactive* a *false*. Successivamente dovete [riavviate la Gnome-Shell.](#Riavviare_la_shell)
 
 ### Titlebar
 
@@ -434,7 +425,7 @@ Al momento l'unica possibilità per cambiare questa impostazione è attraverso *
 
 Per esempio, spostiamo il pulsante di chiusura e della minimizzazione sul lato sinistro della titlebar.
 
-Aprite **gconf-editor** e localizzate la chiave che riguarda _**desktop.gnome.shell.windows.button_layout**_. Cambiate il suo valore in **`close,minimize:`** (I due punti rappresentano lo spazio designato tra la parte sinistra e la destra della titlebar). Utilizzate qualsiasi pulsante nell'ordine che preferite. Non potete utilizzare un pulsante più di una volta. Tenete anche in mente che alcuni bottoni potrebbero essere deprecati. [Riavviate la shell di Gnome](#Riavviare_la_shell) per vedere i cambiamenti apportati.
+Aprite **gconf-editor** e localizzate la chiave che riguarda ***desktop.gnome.shell.windows.button_layout***. Cambiate il suo valore in **`close,minimize:`** (I due punti rappresentano lo spazio designato tra la parte sinistra e la destra della titlebar). Utilizzate qualsiasi pulsante nell'ordine che preferite. Non potete utilizzare un pulsante più di una volta. Tenete anche in mente che alcuni bottoni potrebbero essere deprecati. [Riavviate la shell di Gnome](#Riavviare_la_shell) per vedere i cambiamenti apportati.
 
 #### Nascondere la titlebar con le finestre fullscreen (maximized)
 
@@ -450,7 +441,6 @@ Per uscire da questa situazione potete utilizzare una delle seguenti combinazion
 Per prevenire la sovrascrittura del file **`metacity-theme-3.xml`** ogni volta che viene aggiornato il pacchetto "gnome-themes-standard", aggiungete questo nome a **`/etc/pacman.conf`** con il parametro `NoUpgrade`.
 
  `/etc/pacman.conf` 
-
 ```
 ... linee precedenti ...
 
@@ -493,7 +483,7 @@ Un'alternativa grafica per cambiare il tema (gtk3, icone e cursore), lo sfondo e
 
 #### Font più grandi al login
 
-Questo tweak aumenta i font di login di un fattore scalare. E' lo stesso modo applicato dall' _Accessibility Manager_ presente sul desktop.
+Questo tweak aumenta i font di login di un fattore scalare. E' lo stesso modo applicato dall' *Accessibility Manager* presente sul desktop.
 
 Dovete prima esportare le variabili della sessione GDM per effettuare questa modifica.
 
@@ -543,11 +533,11 @@ Installate numlockx dal repository **[community]**. Poi aggiungete ai programmi 
 $ gnome-session-properties
 ```
 
-I comandi seguenti aprono l'applet **Startup Applications Preferences**. Cliccate su _**Add**_ (aggiungi) e aggiungete le righe seguenti:
+I comandi seguenti aprono l'applet **Startup Applications Preferences**. Cliccate su ***Add*** (aggiungi) e aggiungete le righe seguenti:
 
-| Name: | _Numlockx_ |
-| Command: | _/usr/bin/numlockx on_ |
-| Comment: | _Turns on numlock._ |
+| Name: | *Numlockx* |
+| Command: | */usr/bin/numlockx on* |
+| Comment: | *Turns on numlock.* |
 
 Questo non è un tweak a livello di sistema, quindi dovete ripetere questi passaggi per ogni utente che utilizza il sistema operativo.
 
@@ -591,7 +581,7 @@ Ecco alcune estensioni utili reperibili in [AUR](/index.php/AUR "AUR"):
 
 ### Impostare il terminale predefinito da console
 
-`gsettings`, che rimpiazza `gconftool-2` in Gnome 3, è usato ad esempio per impostare manualmente il terminale predefinito. Questa impostazione viene presa in considerazione dal comando _nautilus-open-terminal_.
+`gsettings`, che rimpiazza `gconftool-2` in Gnome 3, è usato ad esempio per impostare manualmente il terminale predefinito. Questa impostazione viene presa in considerazione dal comando *nautilus-open-terminal*.
 
 I comandi per eseguire [urxvt](/index.php/Rxvt-unicode "Rxvt-unicode") come daemon:
 
@@ -600,7 +590,7 @@ $ gsettings set org.gnome.desktop.default-applications.terminal exec urxvtc
 $ gsettings set org.gnome.desktop.default-applications.terminal exec-arg "'-e'"
 ```
 
-**Nota:** Per _nautilus-open-terminal_, si potrebbe rendere necessario l'uso di una flag (es. `-e`) ad indicare che a seguire è presente un comando: _nautilus-open-terminal_ passa un comando `cd` in modo da spostarsi nella directory corretta.
+**Nota:** Per *nautilus-open-terminal*, si potrebbe rendere necessario l'uso di una flag (es. `-e`) ad indicare che a seguire è presente un comando: *nautilus-open-terminal* passa un comando `cd` in modo da spostarsi nella directory corretta.
 
 ### Emulazione del tasto centrale
 
@@ -613,7 +603,6 @@ Di default, Gnome3 disabilita l'emulazione del tasto centrale del mouse indipend
 Effettuando l'aggiornamento a GNOME3, si riscontrerà sicuramente il non funzionamento della sessione [Xmonad](/index.php/Xmonad "Xmonad"). Si può utilizzarla di nuovo eseguendo GNOME in [modalità fallback](#Abilitare_la_modalit.C3.A0_fallback) (vedere sotto) e creando i due seguenti file:
 
  `/usr/share/gnome-session/sessions/xmonad.session` 
-
 ```
 [GNOME Session]
 Name=Xmonad session
@@ -622,9 +611,7 @@ RequiredProviders=windowmanager;notifications;
 DefaultProvider-windowmanager=xmonad
 DefaultProvider-notifications=notification-daemon
 ```
-
  `/usr/share/xsessions/xmonad-gnome-session.desktop` 
-
 ```
 [Desktop Entry]
 Name=Xmonad GNOME
@@ -643,7 +630,6 @@ Al successivo log-in si avrà la possibilità di selezionare Xmonad GNOME come s
 Potete utilizzare wmii con gnome [abilitando forzatamente il fallback mode](#Abilitare_la_modalit.C3.A0_fallback) e creando i seguenti tre file:
 
  `/usr/share/applications/wmii.desktop` 
-
 ```
 [Desktop Entry]
 Version=1.0
@@ -652,9 +638,7 @@ Name=wmii
 TryExec=wmii
 Exec=wmii
 ```
-
  `/usr/share/xsessions/gnome-wmii.desktop` 
-
 ```
 [Desktop Entry]
 Name=GNOME-wmii
@@ -663,9 +647,7 @@ TryExec=gnome-session
 Exec=gnome-session --session=wmii
 Type=Application
 ```
-
  `/usr/share/gnome-session/sessions/wmii.session` 
-
 ```
 [GNOME Session]
 Name=wmii
@@ -675,7 +657,7 @@ DefaultProvider-windowmanager=wmii
 DefaultProvider-notifications=notification-daemon
 ```
 
-Al prossimo login dovreste avere abilitata la possibilità di sceglere _Gnome-wmii_ come sessione.
+Al prossimo login dovreste avere abilitata la possibilità di sceglere *Gnome-wmii* come sessione.
 
 Le informazioni originali sono state prese da [running-the-awesome-window-manager-within-gnome](http://makandra.com/notes/1367-running-the-awesome-window-manager-within-gnome), dove potete trovare altre info.
 
@@ -709,7 +691,7 @@ Attualmente i designers di Gnome hanno nascosto l'opzione di Spegnimento del com
 
 Se avete disabilitato la Sospensione dal menù nel [seguente modo](#Disabilitare_la_.22Sospensione.22_nello_status_menu) non avete bisogno di effettuare questa operazione.
 
-Un'alternativa è quella di installare l'estensione _Alternative Status Menu_. Guardate la sezione [che riguarda le estensioni](#Abilitare_le_estensioni_della_shell) per installare il menù che non nasconde il pulsante **Power Off**.
+Un'alternativa è quella di installare l'estensione *Alternative Status Menu*. Guardate la sezione [che riguarda le estensioni](#Abilitare_le_estensioni_della_shell) per installare il menù che non nasconde il pulsante **Power Off**.
 
 ## Integrare la messaggistica (Empathy)
 
@@ -729,9 +711,9 @@ La sessione di fallback viene avviata automaticamente quando la **gnome-shell** 
 
 Se volete utilizzare la modalità fallback mentre avete già installato **gnome-shell**, effettuate i seguenti cambiamenti:
 
-Aprite **gnome-control-center.** Cliccate sull'icona _System Info_ e poi su Graphics. Cambiate _Forced Fallback Mode_ in `ON.`
+Aprite **gnome-control-center.** Cliccate sull'icona *System Info* e poi su Graphics. Cambiate *Forced Fallback Mode* in `ON.`
 
-In alternativa potete scegliere il tipo di sessione dal terminale con il comando _gsettings_:
+In alternativa potete scegliere il tipo di sessione dal terminale con il comando *gsettings*:
 
  `$ gsettings set org.gnome.desktop.session session-name 'gnome-fallback'` 
 
@@ -743,7 +725,7 @@ Per disabilitare la modalità forced-fallback (che lancia una normale Gnome Shel
 
 ### Tempo di login in GNOME molto lungo
 
-Controllate se avete abilitato _PulseAudio Network_ nelle impostazioni in **paprefs**. Quando le impostazioni di una network audio sono abilitate, GNOME si blocca per qualche minuto dopo il login.
+Controllate se avete abilitato *PulseAudio Network* nelle impostazioni in **paprefs**. Quando le impostazioni di una network audio sono abilitate, GNOME si blocca per qualche minuto dopo il login.
 
 Una soluzione è quella di creare un nuovo utente ed entrare con quell'account. Un'altra soluzione è quella di muovere la vostre cartelle **~/.gconf**, **~/.gconfd** e **~/.conf/dconf** in una sorta di contenitore. Riloggatevi e controllate che il ritardo non avvenga più.
 
@@ -751,7 +733,7 @@ Se il tempo di attesa diventa eccessivo, cercare di determinare le cause utilizz
 
 ### Quando le estensioni disturbano GNOME
 
-Quando si abilita una estensione della shell, Gnome potrebbe crashare. Per prima cosa dovete rimuovere le estensioni _user-theme_ e_auto-move-windows_ dalla loro directory di installazione.
+Quando si abilita una estensione della shell, Gnome potrebbe crashare. Per prima cosa dovete rimuovere le estensioni *user-theme* e*auto-move-windows* dalla loro directory di installazione.
 
 La directory di installazione potrebbe essere una delle seguenti:**`~/.local/share/gnome‑shell/extensions,`** **`/usr/share/gnome‑shell/extensions,`** oppure **`/usr/local/share/gnome‑shell/extensions`**. Rimuovendo queste due estensioni l'errore dovrebbe sparire, altrimenti cercate di isolare il problema con trial‑and‑error.
 
@@ -767,7 +749,7 @@ Editate ogni occorrenza di **`metadata.json`** che appare in ogni estensione nel
 | Al posto di (per esempio): | **`"shell-version": ["3.0.1"]`** |
 | Potete anche scrivere: | **`"shell-version": ["3.0.0", "3.0.1", "3.0.2"]`** |
 
-**"3.0"** è la migliore soluzione. Questa indica che l'estensione lavora con qualsiasi versione della shell Gnome come segue _**3.0.x**_.
+**"3.0"** è la migliore soluzione. Questa indica che l'estensione lavora con qualsiasi versione della shell Gnome come segue ***3.0.x***.
 
 ### Schermo non bloccato dopo sospensione/ibernazione
 
@@ -819,14 +801,13 @@ EndSection
 
 ### Le nuove finestre si aprono dietro altre finestre quando uso schermi multipli
 
-Questo può essere un possibile bug della gnome shell e causa l'apertura delle nuove finestre dietro alle altre già a perte. Deselezionate "workspaces_only_on_primary" in _desktop/gnome/shell/windows_ usando _gconf-editor_ per risolvere questo problema.
+Questo può essere un possibile bug della gnome shell e causa l'apertura delle nuove finestre dietro alle altre già a perte. Deselezionate "workspaces_only_on_primary" in *desktop/gnome/shell/windows* usando *gconf-editor* per risolvere questo problema.
 
 ### Monitor multipli e Dock extensions
 
 Se si hanno monitor multipli configurati tramite Nvidia Twinview, l'estensione Dock potrebbe risultare incastrata in mezzo ad essi. È possibile modificare il codice sorgente di questa estensione per spostare la dock in qualsiasi posizione a nostro piacimento. Modificare `/usr/share/gnome-shell/extensions/dock@gnome-shell-extensions.gnome.org/extension.js` e trovare nel sorgente questa riga:
 
  `/usr/share/gnome-shell/extensions/dock@gnome-shell-extensions.gnome.org/extension.js` 
-
 ```
 ..........
 this.actor.set_position(primary.width-this._item_size-this._spacing-2, (primary.height-height)/2);
@@ -839,7 +820,6 @@ Il primo parametro è la posizione rispetto all'asse X della dock sul monitor, �
 Per esempio :
 
  `/usr/share/gnome-shell/extensions/dock@gnome-shell-extensions.gnome.org/extension.js` 
-
 ```
 ..........
 this.actor.set_position(primary.width-this._item_size-this._spacing-15, (primary.height-height)/2);
@@ -869,8 +849,8 @@ Aprire `System Settings` (Clickare sul proprio nome → system settings) → `Ke
 
 1.  Premere `ALT`+`F2`
 2.  Inserire `gnome-tweak-tool`
-3.  Selezionare il _File Manager_ tab.
-4.  Localizzate l'opzione _Have file manager handle the desktop_ ed assicuratevi che sia settata su **off**.
+3.  Selezionare il *File Manager* tab.
+4.  Localizzate l'opzione *Have file manager handle the desktop* ed assicuratevi che sia settata su **off**.
 
 ### Impossibile applicare la configurazione memorizzata per i monitor
 
@@ -892,7 +872,6 @@ Alcuni portatili hanno un pulsante di blocco del touchpad che disabilita il touc
 Se siete affetti da questo problema, editate `~/.gnome2/accels/nautilus` dove troverete le seguenti linee per Ctrl+V :
 
  `~/.gnome2/accels/nautilus` 
-
 ```
 (gtk_accel_path "<Actions>/DirViewActions/Paste" "<Control>v")
 ...

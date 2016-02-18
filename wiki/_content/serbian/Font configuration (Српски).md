@@ -78,7 +78,7 @@ Da vidite listu poznatih Xorg fontova upotrebite `xlsfonts`.
 
 ## Fontconfig podesavanja
 
-Paket za renderovanje fontova na Arch Linux-u sadrzi podrsku za _freetype2_ sa omogucenim bajtkod interpreterom (BCI). Ali definisanje vasih podesavanja za font ce ponekad biti neophodno. Razmotrite upotrebu [zakrpljenih paketa](#Patched_packages) za bolje renderovanje fontova, pogotovo sa LCD monitorom.
+Paket za renderovanje fontova na Arch Linux-u sadrzi podrsku za *freetype2* sa omogucenim bajtkod interpreterom (BCI). Ali definisanje vasih podesavanja za font ce ponekad biti neophodno. Razmotrite upotrebu [zakrpljenih paketa](#Patched_packages) za bolje renderovanje fontova, pogotovo sa LCD monitorom.
 
 Konfigurisanje se moze obaviti na nivou jednog korisnika preko `~/.fonts.conf`, ili globalno sa `/etc/fonts/local.conf`. Podesavanja za jednog korisnika imaju prednost u odnosu na globalna podesavanja. Oba ova fajla koriste istu sintaksu. Zapamtite da ne editujete `/etc/fonts/fonts.conf` fajl; to je privremeni fajl i nebi trebali da ga editujete jer se on prepisuje tokom fontconfig osvezavanja.
 
@@ -119,7 +119,7 @@ Da izbegnete ponavljanje, ostatak konfiguracionih primera u ovom clanku ce izbec
 
 ### Anti-aliasing
 
-[Font rasterizacija](https://en.wikipedia.org/wiki/Font_rasterization_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "wikipedia:Font rasterization (Српски)") pretvara vektor font podatke u bitmap podatke tako da moze da se prikaze. Rezultat ce izgledati kao da ima ostre ivice zbog [aliasing-a](https://en.wikipedia.org/wiki/Aliasing "wikipedia:Aliasing"), pa je [anti-aliasing](https://en.wikipedia.org/wiki/Anti-aliasing "wikipedia:Anti-aliasing") ukljucen po difoltu da uveca rezolucija ivica fonta.
+[Font rasterizacija](https://en.wikipedia.org/wiki/Font_rasterization_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) pretvara vektor font podatke u bitmap podatke tako da moze da se prikaze. Rezultat ce izgledati kao da ima ostre ivice zbog [aliasing-a](https://en.wikipedia.org/wiki/Aliasing "wikipedia:Aliasing"), pa je [anti-aliasing](https://en.wikipedia.org/wiki/Anti-aliasing "wikipedia:Anti-aliasing") ukljucen po difoltu da uveca rezolucija ivica fonta.
 
 ```
   <match target="font">
@@ -185,7 +185,7 @@ Subpixel renderovanje efikasno utrostrucuje horizontalnu (ili vertikalnu) rezolu
 
 Vecina monitora proizvedenih u danasnje vreme koristi crvenu, zelenu, plavu (RGB) specifikaciju. Fontconfig ce morati da zna vas tip monitora da bi bio u mogucnosti da prikaze vase fontove na ispravan nacin.
 
-_RGB (najcesci), BGR, V-RGB (vertikalno), ili V-BGR_
+*RGB (najcesci), BGR, V-RGB (vertikalno), ili V-BGR*
 
 Da upalite subpixel renderovanje:
 
@@ -281,7 +281,7 @@ Auto-hinter koristi sofisticirane metode za renderovanje fontova, ali obicno pra
 
 ### Omogucite anti-aliasing samo za vece fontove
 
-_Takodje pogledajte [sharpfonts.co.cc](http://sharpfonts.co.cc/) za dodatne informacije_
+*Takodje pogledajte [sharpfonts.co.cc](http://sharpfonts.co.cc/) za dodatne informacije*
 
 Neki korisnici vise vole ostrije renderovanje koje anti-aliasing ne pruza:
 
@@ -331,7 +331,7 @@ Najpouzdaniji nacin da to uradite je da dodate XML deo slican ovom ispod. Ovo ce
 
 ```
 
-Alternativni pristup je da podesite "preferirani" font, ali _ovo radi samo ako originalni font nije na sistemu_, u kom slucaju onaj koji je zadat ce biti zamenjen:
+Alternativni pristup je da podesite "preferirani" font, ali *ovo radi samo ako originalni font nije na sistemu*, u kom slucaju onaj koji je zadat ce biti zamenjen:
 
 ```
 ...
@@ -367,21 +367,21 @@ Mozete da izaberete sa kojim fontovima da zamenite bitmap fontove (Helvetica, Co
 
 ### Napravite bold i italic stilove za nekompletne fontove
 
-Freetype ima mogucnost da autmoatski napravi _italic_ i **bold** stilove za fontove koji ih nemaju, ali samo ako su eksplicitno zahtevani od strane aplikacije. Dati programi vrlo retko salju ove zahteve. Ova sekcija pokriva manuelno primoravanje generisanja stilova koji nedostaju.
+Freetype ima mogucnost da autmoatski napravi *italic* i **bold** stilove za fontove koji ih nemaju, ali samo ako su eksplicitno zahtevani od strane aplikacije. Dati programi vrlo retko salju ove zahteve. Ova sekcija pokriva manuelno primoravanje generisanja stilova koji nedostaju.
 
 Startujte editovanjem `/usr/share/fonts/fonts.cache-1` kao sto je objasnjeno ispod. Uskladistite kopiju modifikacija u drugi fajl jer font osvezavanje sa `fc-cache` ce prepisati `/usr/share/fonts/fonts.cache-1`.
 
 Pod pretpostavkom da je Dupree font instaliran:
 
 ```
-"dupree.ttf" 0 "Dupree:style=Regular:slant=0:weight=80:width=100:foundry=unknown:index=0:outline=True:_etc..._
+"dupree.ttf" 0 "Dupree:style=Regular:slant=0:weight=80:width=100:foundry=unknown:index=0:outline=True:*etc...*
 
 ```
 
-Duplirajte liniju pa izmenite `style=Regular` na `style=Bold` ili bilo koji drugi stil. Takodje promenite `slant=0` na `slant=100` za italic, `weight=80` na `weight=200` za bold, ili ih kombinujte za _**bold italic**_:
+Duplirajte liniju pa izmenite `style=Regular` na `style=Bold` ili bilo koji drugi stil. Takodje promenite `slant=0` na `slant=100` za italic, `weight=80` na `weight=200` za bold, ili ih kombinujte za ***bold italic***:
 
 ```
-"dupree.ttf" 0 "Dupree:style=Bold Italic:slant=100:weight=200:width=100:foundry=unknown:index=0:outline=True:_etc..._
+"dupree.ttf" 0 "Dupree:style=Bold Italic:slant=100:weight=200:width=100:foundry=unknown:index=0:outline=True:*etc...*
 
 ```
 
@@ -504,7 +504,6 @@ Da se vratite na pakete bez zakrpa, reinstalirajte originale:
 Neke aplikacije poput LibreOffice-a ignorisu fontconfig podesavanja. Ovo je vrlo primetno kada koristite infinality zakrpe koje se u velikoj meri oslanjaju na ispravna podesavanja. Mozete ovo zaobici upotrebom `~/.Xresources`, ali to nije ni priblizno fleksibilno kao fontconfig. Primer (pogledajte [#Fontconfig configuration](#Fontconfig_configuration) za objasnjenja za opcije):
 
  `~/.Xresources` 
-
 ```
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault

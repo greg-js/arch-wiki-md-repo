@@ -132,7 +132,6 @@ If the above steps do not resolve the issue, it is probably a program-specific p
 You can add key binds using the same quoted-insert characters as used for [Readline](#Readline), but use `\033` to represent an escape character:
 
  `lynx.cfg` 
-
 ```
 setkey "\033[1~" HOME
 setkey "\033[4~" END
@@ -156,7 +155,6 @@ Where KP_Home and KP_End are the numpad Home and End keys. These binds might als
 In short, use the terminfo database to set the correct keybind.
 
  `~/.zshrc` 
-
 ```
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
@@ -169,7 +167,6 @@ See [Zsh#Key bindings](/index.php/Zsh#Key_bindings "Zsh") and [zshwiki: bindkeys
 Create a config file using `lesskey` and the same escape codes for [Readline](#Readline):
 
  `$ lesskey -o .less -` 
-
 ```
 #command
 \e[4~ goto-end
@@ -180,7 +177,6 @@ Create a config file using `lesskey` and the same escape codes for [Readline](#R
 or for [xterm](/index.php/Xterm "Xterm") you may have to use different escape codes
 
  `$ lesskey -o .less -` 
-
 ```
 #command
 \eOF goto-end

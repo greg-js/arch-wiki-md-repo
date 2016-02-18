@@ -62,7 +62,6 @@ card 1: PCH [HDA Intel PCH], device 0: ALC3232 Analog [ALC3232 Analog]
 The card that drives the analog line-out is in this case card #1\. Create a global configuration file to make it the default:
 
  `$ cat /etc/asound.conf` 
-
 ```
 defaults.ctl.card 1
 defaults.pcm.card 1
@@ -83,7 +82,6 @@ Some users may prefer to use the trackpoint over the touchpad. In that case, the
 The TrackPoint is usuable out of the box, but the default parameters for speed, sensitivity and inertia yield only insufficient navigation ability given the high-res display. The following udev configuration delivers a snappy experience:
 
  `$ cat /etc/udev/rules.d/10-trackpoint.rules` 
-
 ```
 
 SUBSYSTEM=="serio", DRIVERS=="psmouse", ACTION=="change", ENV{SERIO_TYPE}=="05", ATTR{press_to_select}="1", ATTR{sensitivity}="196", ATTR{speed}="255", ATTR{inertia}="4"

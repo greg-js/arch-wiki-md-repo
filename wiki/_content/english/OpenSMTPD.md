@@ -55,7 +55,6 @@ Create a private key and self-signed certificate. This is adequate for most inst
 *   A working configuration can be had in as little as nine lines!
 
  `/etc/smtpd/smtpd.conf` 
-
 ```
 pki mx.domain.tld certificate  "/etc/smtpd/tls/smtpd.crt"
 pki mx.domain.tld key          "/etc/smtpd/tls/smtpd.key"
@@ -77,7 +76,6 @@ accept for any relay
 *   For the domain table file; simply put one domain per line
 
  `/etc/smtpd/vdoms` 
-
 ```
 personaldomain.org
 businessname.com
@@ -87,7 +85,6 @@ businessname.com
 *   For the user table file; list one inbound SMTP email address per line and then map it to an mbox user account name, SMTP email address, or any combination of the two on the right, separated by commas.
 
  `/etc/smtpd/vusers` 
-
 ```
 roger@personaldomain.org          roger
 newsletters@personaldomain.org    roger,roger.rulz@gmail.com
@@ -102,7 +99,6 @@ contact@businessname.com          info@businessname.com
 *   For the creds table file; put the user name in the 1st column and the password hash in the 2nd column
 
  `/etc/smtpd/creds` 
-
 ```
 roger                              <password hash created using 'smtpctl encrypt' command>
 shirley                            <password hash created using 'smtpctl encrypt' command>

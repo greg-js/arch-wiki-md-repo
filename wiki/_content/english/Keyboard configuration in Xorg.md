@@ -27,7 +27,7 @@ This article's purpose is to detail basic Xorg server keyboard configuration. Fo
 
 ## Overview
 
-The Xorg server uses the [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") (XKB) to define keyboard layouts. Optionally, [xmodmap](/index.php/Xmodmap "Xmodmap") can be used to access the internal keymap table directly, although this is not recommended for complex tasks. Also [systemd](/index.php/Systemd "Systemd")'s _localectl_ can be used to define the keyboard layout for both the Xorg server and the virtual console.
+The Xorg server uses the [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") (XKB) to define keyboard layouts. Optionally, [xmodmap](/index.php/Xmodmap "Xmodmap") can be used to access the internal keymap table directly, although this is not recommended for complex tasks. Also [systemd](/index.php/Systemd "Systemd")'s *localectl* can be used to define the keyboard layout for both the Xorg server and the virtual console.
 
 **Note:** XKB options can be overridden by the tools provided by some desktop environments such as [GNOME (XkbOptions)](/index.php/GNOME#XkbOptions_keyboard_options "GNOME") and [KDE (set keyboard)](/index.php/KDE#Set_keyboard "KDE").
 
@@ -36,7 +36,6 @@ The Xorg server uses the [X KeyBoard extension](/index.php/X_KeyBoard_extension 
 You can use the following command to see the actual XKB settings:
 
  `$ setxkbmap -print -verbose 10` 
-
 ```
 Setting verbose level to 10
 locale is C
@@ -87,26 +86,26 @@ The layout name is usually a [2-letter country code](https://en.wikipedia.org/wi
 
 *   `localectl list-x11-keymap-models`
 *   `localectl list-x11-keymap-layouts`
-*   `localectl list-x11-keymap-variants [_layout_]`
+*   `localectl list-x11-keymap-variants [*layout*]`
 *   `localectl list-x11-keymap-options`
 
 Examples in the following subsections will have the same effect, they will set `pc104` model, `cz` as primary layout, `us` as secondary layout, `dvorak` variant for `us` layout and the `Alt+Shift` combination for switching between layouts.
 
 ### Using setxkbmap
 
-_setxkbmap_ sets the keyboard layout for the current X session only, but can be made persistent in [~/.xinitrc](/index.php/~/.xinitrc "~/.xinitrc"). This overrides system-wide configuration specified by [X configuration files](#Using_X_configuration_files).
+*setxkbmap* sets the keyboard layout for the current X session only, but can be made persistent in [~/.xinitrc](/index.php/~/.xinitrc "~/.xinitrc"). This overrides system-wide configuration specified by [X configuration files](#Using_X_configuration_files).
 
 The usage is as follows (see `man 1 setxkbmap`):
 
 ```
-$ setxkbmap [-model _xkb_model_] [-layout _xkb_layout_] [-variant _xkb_variant_] [-option _xkb_options_]
+$ setxkbmap [-model *xkb_model*] [-layout *xkb_layout*] [-variant *xkb_variant*] [-option *xkb_options*]
 
 ```
 
 To change just the layout (`-layout` is the default flag):
 
 ```
-$ setxkbmap _xkb_layout_
+$ setxkbmap *xkb_layout*
 
 ```
 
@@ -126,7 +125,6 @@ The syntax of X configuration files is explained in [Xorg#Configuration](/index.
 Here is an example:
 
  `/etc/X11/xorg.conf.d/00-keyboard.conf` 
-
 ```
 Section "InputClass"
         Identifier "system-keyboard"
@@ -141,16 +139,16 @@ EndSection
 
 #### Using localectl
 
-For convenience, the tool _localectl_ may be used instead of manually editing X configuration files. It will save the configuration in `/etc/X11/xorg.conf.d/00-keyboard.conf`, this file should not be manually edited, because _localectl_ will overwrite the changes on next start.
+For convenience, the tool *localectl* may be used instead of manually editing X configuration files. It will save the configuration in `/etc/X11/xorg.conf.d/00-keyboard.conf`, this file should not be manually edited, because *localectl* will overwrite the changes on next start.
 
 The usage is as follows:
 
 ```
-$ localectl [--no-convert] set-x11-keymap _layout_ [_model_ [_variant_ [_options_]]]
+$ localectl [--no-convert] set-x11-keymap *layout* [*model* [*variant* [*options*]]]
 
 ```
 
-To set a _model_, _variant_ or _options_, all preceding fields need to be specified. Unless the `--no-convert` option is passed, the specified keymap is also converted to the closest matching console keymap and applied to the [console configuration](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") in `vconsole.conf`. See `man localectl` for more information.
+To set a *model*, *variant* or *options*, all preceding fields need to be specified. Unless the `--no-convert` option is passed, the specified keymap is also converted to the closest matching console keymap and applied to the [console configuration](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") in `vconsole.conf`. See `man localectl` for more information.
 
 To create a `/etc/X11/xorg.conf.d/00-keyboard.conf` like the above:
 
@@ -204,7 +202,7 @@ $ grep "compose:" /usr/share/X11/xkb/rules/base.lst
 
 #### Key combinations
 
-The default combinations for the compose keys depend on the [locale](/index.php/Locale "Locale") configured for the session and are stored in `/usr/share/X11/locale/_used_locale_/Compose`, where `_used_locale_` is for example `en_US.UTF-8`.
+The default combinations for the compose keys depend on the [locale](/index.php/Locale "Locale") configured for the session and are stored in `/usr/share/X11/locale/*used_locale*/Compose`, where `*used_locale*` is for example `en_US.UTF-8`.
 
 You can define your own compose key combinations by copying the default file to `~/.XCompose` and editing it. The compose key works with any of the thousands of valid Unicode characters, including those outside the Basic Multilingual Plane.
 
@@ -220,7 +218,7 @@ The Rupee sign (₹) can be used the same way with `rupeesign:4`.
 
 ### Switching state immediately when Caps Lock is pressed
 
-Those who prefer typing capital letters with the Caps Lock key may experience a short delay when Caps Lock state is switched, resulting in two or more capital letters (e.g. _THe_, _ARch LInux_). This behaviour [stems from typewriters](https://en.wikipedia.org/wiki/Caps_lock#History "wikipedia:Caps lock").
+Those who prefer typing capital letters with the Caps Lock key may experience a short delay when Caps Lock state is switched, resulting in two or more capital letters (e.g. *THe*, *ARch LInux*). This behaviour [stems from typewriters](https://en.wikipedia.org/wiki/Caps_lock#History "wikipedia:Caps lock").
 
 Some more popular operating systems have removed this behaviour, either voluntarily (as it can be confusing to some) or by mistake, however this is a question of preference. Bug reports have been filed on the Xserver bug tracker, as there is currently no easy way to switch to the behaviour reflected by those other operating systems. For anyone who would like to follow up the issue, bug reports and latest working progress can be found at [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=27903) and [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=56491).
 
@@ -233,7 +231,7 @@ $ xkbcomp -xkb $DISPLAY xkbmap
 
 ```
 
-In the file _xkbmap_, locate the Caps Lock section which begins with _key <CAPS>_:
+In the file *xkbmap*, locate the Caps Lock section which begins with *key <CAPS>*:
 
 ```
  key <CAPS> {         [       Caps_Lock ] };
@@ -265,16 +263,16 @@ Consider making it a service launching after X starts, since reloaded configurat
 
 ### Adjusting typematic delay and rate
 
-The _typematic delay_ indicates the amount of time (typically in miliseconds) a key needs to be pressed in order for the repeating process to begin. After the repeating process has been triggered, the character will be repeated with a certain frequency (usually given in Hz) specified by the _typematic rate_. The typematic delay in the [virtual console](/index.php/Keyboard_configuration_in_console#Adjusting_typematic_delay_and_rate "Keyboard configuration in console") is not affected by these settings.
+The *typematic delay* indicates the amount of time (typically in miliseconds) a key needs to be pressed in order for the repeating process to begin. After the repeating process has been triggered, the character will be repeated with a certain frequency (usually given in Hz) specified by the *typematic rate*. The typematic delay in the [virtual console](/index.php/Keyboard_configuration_in_console#Adjusting_typematic_delay_and_rate "Keyboard configuration in console") is not affected by these settings.
 
 #### Using xset
 
-The tool _xset_ can be used to set the typematic delay and rate for an active X server, certain actions during runtime tho may cause the XServer to reset these changes and revert instead to its _seat defaults_.
+The tool *xset* can be used to set the typematic delay and rate for an active X server, certain actions during runtime tho may cause the XServer to reset these changes and revert instead to its *seat defaults*.
 
 Usage:
 
 ```
-$ xset r rate _delay_ [_rate_]
+$ xset r rate *delay* [*rate*]
 
 ```
 
@@ -294,10 +292,10 @@ $ xset r rate
 
 #### Using XServer startup options
 
-A more resistant way to set the typematic delay and rate is to make them the _seat defaults_ by passing the desired settings to the X server on its startup using the following options:
+A more resistant way to set the typematic delay and rate is to make them the *seat defaults* by passing the desired settings to the X server on its startup using the following options:
 
-*   `-ardelay _miliseconds_` - sets the autorepeat delay (length of time in milliseconds that a key must be depressed before autorepeat starts).
-*   `-arinterval _miliseconds_` - sets the autorepeat interval (length of time in milliseconds that should elapse between autorepeat-generated keystrokes).
+*   `-ardelay *miliseconds*` - sets the autorepeat delay (length of time in milliseconds that a key must be depressed before autorepeat starts).
+*   `-arinterval *miliseconds*` - sets the autorepeat interval (length of time in milliseconds that should elapse between autorepeat-generated keystrokes).
 
 See `man xserver` for a full list of X server options and refer to your [display manager](/index.php/Display_manager "Display manager") for information about how to pass these options.
 
@@ -306,6 +304,6 @@ See `man xserver` for a full list of X server options and refer to your [display
 Add this line to `/etc/X11/xorg.conf.d/00-keyboard.conf`:
 
 ```
-Option "AutoRepeat" "_delay_ _rate_"
+Option "AutoRepeat" "*delay* *rate*"
 
 ```

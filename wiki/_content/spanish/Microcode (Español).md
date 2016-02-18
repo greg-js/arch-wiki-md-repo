@@ -1,6 +1,6 @@
 El [microcódigo del procesador](https://en.wikipedia.org/wiki/es:Microc%C3%B3digo "wikipedia:es:Microcódigo") es similar al firmware del procesador. El kernel es capaz de actualizar el firmware del procesador sin necesidad de actualizarlo a través de una actualización de la BIOS.
 
-	_El archivo de datos del microcódigo contiene las definiciones más recientes de microcódigo para todos los procesadores de Intel. Intel lanza actualizaciones de microcódigo para corregir el comportamiento del procesador como se documenta en las respectivas actualizaciones de las especificaciones del procesador. Mientras que el método ordinario para obtener esta actualización de microcódigo es a través de una actualización de la BIOS, Intel da cuenta de que esto puede ser una molestia administrativa. El sistema operativo Linux y los productos de VMware ESX tienen un mecanismo para actualizar el microcódigo después de arrancar. Por ejemplo, este archivo será utilizado por el mecanismo del sistema operativo si el archivo se coloca en el directorio /etc/firmware del sistema Linux._ ~[Intel](https://downloadcenter.intel.com/Detail_Desc.aspx?DwnldID=23082)
+	*El archivo de datos del microcódigo contiene las definiciones más recientes de microcódigo para todos los procesadores de Intel. Intel lanza actualizaciones de microcódigo para corregir el comportamiento del procesador como se documenta en las respectivas actualizaciones de las especificaciones del procesador. Mientras que el método ordinario para obtener esta actualización de microcódigo es a través de una actualización de la BIOS, Intel da cuenta de que esto puede ser una molestia administrativa. El sistema operativo Linux y los productos de VMware ESX tienen un mecanismo para actualizar el microcódigo después de arrancar. Por ejemplo, este archivo será utilizado por el mecanismo del sistema operativo si el archivo se coloca en el directorio /etc/firmware del sistema Linux.* ~[Intel](https://downloadcenter.intel.com/Detail_Desc.aspx?DwnldID=23082)
 
 ## Contents
 
@@ -147,7 +147,7 @@ Es posible saber si intel-ucode.img contiene una imagen de microcódigo para la 
 *   `# modprobe cpuid`
 *   `# bsdtar -Oxf /boot/intel-ucode.img | iucode_tool -tb -lS -`
     (Extrae la imagen microcode y la busca para su cpuid)
-*   Si hay una actualización disponible, debería aparecer debajo de _selected microcodes_
+*   Si hay una actualización disponible, debería aparecer debajo de *selected microcodes*
 
 #### Activación de la carga de Intel Early Microcode en Kernels personalizados
 

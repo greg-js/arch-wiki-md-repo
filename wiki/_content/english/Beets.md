@@ -22,7 +22,6 @@
 User configuration is done in `~/.config/beets/config.yaml` using [YAML](https://en.wikipedia.org/wiki/YAML "wikipedia:YAML") syntax. For example:
 
  `~/.config/beets/config.yaml` 
-
 ```
 directory: ~/Music            # The default library root directory.
 library: ~/Music/library.db   # The default library database file to use.

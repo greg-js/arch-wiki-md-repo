@@ -16,7 +16,7 @@
 
 [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [pkgfile](https://www.archlinux.org/packages/?name=pkgfile) из официальных репозиториев или [pkgfile-git](https://aur.archlinux.org/packages/pkgfile-git/) из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)").
 
-Для синхронизации базы данных _pkgfile_ используйте команду:
+Для синхронизации базы данных *pkgfile* используйте команду:
 
 ```
 # pkgfile -u
@@ -32,7 +32,6 @@
 Чтобы отобразить все файлы из пакета [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring):
 
  `$ pkgfile -l archlinux-keyring` 
-
 ```
 core/archlinux-keyring usr/
 core/archlinux-keyring usr/share/
@@ -50,7 +49,6 @@ core/archlinux-keyring usr/share/pacman/keyrings/archlinux.gpg
 pkgfile добавляет хук "command not found" для [Bash](/index.php/Bash "Bash") и [Zsh](/index.php/Zsh "Zsh"), который автоматически выполняет поиск в официальных репозиториях, если была введена неизвестная команда:
 
  `$ abiword` 
-
 ```
 abiword may be found in the following packages:
   extra/abiword 2.8.6-7 usr/bin/abiword
@@ -72,7 +70,6 @@ abiword may be found in the following packages:
 `pkgfile` не предоставляет хук специально для [Fish](/index.php/Fish_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fish (Русский)"), однако, вы можете создать собственную функцию `command-not-found`, которая будет запускаться каждый раз, когда Fish обнаруживает неизвестную команду:
 
  `~/.config/fish/functions/command-not-found.fish` 
-
 ```
 function command-not-found
         set cmd $argv[2]

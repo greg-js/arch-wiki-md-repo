@@ -57,7 +57,6 @@ Modifica el [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)")
 Las primeras lineas se pareceran a estas:
 
  `PKGBUILD` 
-
 ```
 # $Id: PKGBUILD 130991 2011-07-09 12:23:51Z thomas $
 # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
@@ -74,7 +73,6 @@ _kernelname=${pkgname#linux}
 Como ves, hay un comentario para construir un kernel con diferente nombre (# Build kernel with a different name), todo lo que debemos hacer es descomentar esa linea, cambie el sufijo '-custom' por el nombre que quieras, y comentar la linea anterior ( osea el primer pkgname):
 
  `PKGBUILD build()` 
-
 ```
 ...
 #pkgname=('linux' 'linux-headers' 'linux-docs') # Build stock -ARCH kernel
@@ -92,7 +90,6 @@ Ahora, todas las variables de tu paquete serán cambiadas de acuerdo al nuevo no
 Probablemente necesites un archivo ".config" personalizado para tu kernel. Podes descomentar una de las posibilidades mostradas en la función `build()` del [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)"), por ejemplo:
 
  `PKGBUILD` 
-
 ```
 ...
 # load configuration
@@ -108,14 +105,13 @@ make nconfig # new CLI menu for configuration
 
 Si ya tenias un archivo de configuración para el kernel. Te sugiero descomentar una de las herramientas de configuración interactiva, como nconfig, y cargar tu configuración desde allí. Eso evitará problemas con el nombre del kernel.
 
-**Note:** Si descomentas _return 1_, podes cambiar el directoria principal del kernel luego de que makepkg termine las extracciones y luego hacer la configuración con nconfig. Esto te permitirá configurar tu kernel en varias sesiones. Cuando estés listo para compilar, copia el archivo .config sobre el .config que se haya generado automáticamente, o sobre el config.x86_64 (esto dependerá de la arquitectura del procesador), comenta _return 1_ y usa **makepkg -i**.
+**Note:** Si descomentas *return 1*, podes cambiar el directoria principal del kernel luego de que makepkg termine las extracciones y luego hacer la configuración con nconfig. Esto te permitirá configurar tu kernel en varias sesiones. Cuando estés listo para compilar, copia el archivo .config sobre el .config que se haya generado automáticamente, o sobre el config.x86_64 (esto dependerá de la arquitectura del procesador), comenta *return 1* y usa **makepkg -i**.
 
 #### Cambiando la función package_kernel26()
 
 Debemos escribir una función personalizada para decirle al sistema como instalar el paquete. Esto es muy simple de hacer, solo debemos cambiarle el nombre a la función package_kernel26() por el de package_kernel26-test(),(test, recordemos es el nombre del kernel personalizado) y adaptar las instrucciones a tus necesidades. Si no quieres cambiar nada, la función debería quedar así:
 
  `PKGBUILD package_kernel26-test()` 
-
 ```
 ...
 package_linux-test() {
@@ -132,7 +128,6 @@ Para decirle al compilador que use todos los núcleos al momento de compilar, us
 Por ejemplo un procesador de 2 núcleos (2+1=3):
 
  `/etc/makepkg.conf` 
-
 ```
 ...
 #-- Make Flags: change this for DistCC/SMP systems

@@ -50,7 +50,6 @@ export CCACHE_PATH="/usr/bin"                 # Tell ccache to only use compiler
 Then colorgcc needs to be told to call ccache instead of the real compiler. Edit `/etc/colorgcc/colorgccrc` and change the `/usr/bin` paths to `/usr/lib/ccache/bin` for all the compilers in `/usr/lib/ccache/bin`:
 
  `/etc/colorgcc/colorgccrc` 
-
 ```
 g++: /usr/lib/ccache/bin/g++
 gcc: /usr/lib/ccache/bin/gcc

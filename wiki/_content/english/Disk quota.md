@@ -1,6 +1,6 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/Disk_quota "wikipedia:Disk quota"):
 
-	"_A **disk quota** is a limit set by a system administrator that restricts certain aspects of file system usage on modern operating systems. The function of setting quotas to disks is to allocate limited disk-space in a reasonable way._"
+	"*A **disk quota** is a limit set by a system administrator that restricts certain aspects of file system usage on modern operating systems. The function of setting quotas to disks is to allocate limited disk-space in a reasonable way.*"
 
 This article covers the installation and setup of disk quota.
 
@@ -30,7 +30,7 @@ Disk quota only requires one package:
 
 ## Enabling
 
-_For journaled quota, see the notes in [#Journaled quota](#Journaled_quota)._
+*For journaled quota, see the notes in [#Journaled quota](#Journaled_quota).*
 
 1\. First, edit `/etc/fstab` to enable the quota mount option(s) on selected file systems:
 
@@ -114,8 +114,7 @@ or additionally, enable the group quota mount option;
 
 Replace `$USER` as appropriate:
 
- `# edquota _$USER_` 
-
+ `# edquota *$USER*` 
 ```
 Disk quotas for user **$USER** (uid 1000):
   Filesystem                   blocks       soft       hard     inodes     soft     hard
@@ -152,24 +151,23 @@ Configure the `soft` limit grace period:
 
 ### Example configuration
 
-Consider the following configuration for _user1_:
+Consider the following configuration for *user1*:
 
- `# edquota _user1_` 
-
+ `# edquota *user1*` 
 ```
-Disk quotas for user _user1_ (uid _1000_):
+Disk quotas for user *user1* (uid *1000*):
 Filesystem      blocks      soft      hard      inodes      soft      hard
-_/dev/sda1_       695879      10000     15000     6741        0         0
+*/dev/sda1*       695879      10000     15000     6741        0         0
 
 ```
 
-The `soft` limit means that once _user1_ uses over 10MB of space a warning gets issues, and after the time set by `edquota -t` the soft limit gets enforced.
+The `soft` limit means that once *user1* uses over 10MB of space a warning gets issues, and after the time set by `edquota -t` the soft limit gets enforced.
 
 The `hard` limit is stricter, so to speak; a user can never write more data once this limit is reached.
 
 ## Managing
 
-_Checking for quota limits and advanced operations_
+*Checking for quota limits and advanced operations*
 
 ### Basics
 
@@ -198,23 +196,23 @@ for groups;
 
 #### To one or several users
 
-To copy quota settings from `_user1_` to `_user2_`, use this:
+To copy quota settings from `*user1*` to `*user2*`, use this:
 
 ```
-# edquota -p _user1_ _user2_
+# edquota -p *user1* *user2*
 
 ```
 
-To copy quota settings to several other users, append `_user3_`, `_user4_`, and so on, to the command.
+To copy quota settings to several other users, append `*user3*`, `*user4*`, and so on, to the command.
 
-Use `edquota -g -p _group1_ _group2_ ...` to copy settings for groups.
+Use `edquota -g -p *group1* *group2* ...` to copy settings for groups.
 
 #### To all users
 
-The idea is to modify the quota settings for one user and copy the setting to all other users. Set the quota for `_user1_` and apply the quota to users with a UID greater than 999.
+The idea is to modify the quota settings for one user and copy the setting to all other users. Set the quota for `*user1*` and apply the quota to users with a UID greater than 999.
 
 ```
-# edquota -p _user1_ `awk -F: '$3 > 999 {print $1}' /etc/passwd`
+# edquota -p *user1* `awk -F: '$3 > 999 {print $1}' /etc/passwd`
 
 ```
 
@@ -232,7 +230,6 @@ setquota         # Non-interactive quota setting--useful for scripting
 Lasty, `quotastats` is used to give thorough information about the quota system:
 
  `$ quotastats` 
-
 ```
 Number of dquot lookups: 101289
 Number of dquot drops: 101271

@@ -50,7 +50,6 @@ To create device mappers for all volumes in all discovered disk groups:
 To get Dynamic Disks to behave like filesystems natively supported by the Linux kernel, use this systemd unit:
 
  `/etc/systemd/system/ldmtool.service` 
-
 ```
 [Unit]
 Description=Windows Dynamic Disk Mount

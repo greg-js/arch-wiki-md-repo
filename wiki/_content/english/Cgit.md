@@ -20,8 +20,8 @@
     *   [4.1 Gitosis](#Gitosis)
     *   [4.2 Gitolite](#Gitolite)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 _snapshots_ does not show properly](#snapshots_does_not_show_properly)
-    *   [5.2 _source-filter_ does not work properly](#source-filter_does_not_work_properly)
+    *   [5.1 *snapshots* does not show properly](#snapshots_does_not_show_properly)
+    *   [5.2 *source-filter* does not work properly](#source-filter_does_not_work_properly)
 *   [6 References](#References)
 
 ## Installation
@@ -128,7 +128,6 @@ The following configuration uses [fcgiwrap](https://www.archlinux.org/packages/?
 [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `fcgiwrap.socket`. Then, configure Nginx:
 
  `/etc/nginx/nginx.conf` 
-
 ```
 worker_processes          1;
 
@@ -146,7 +145,7 @@ http {
   # Cgit
   server {
     listen                80;
-    server_name           _git.example.com;_
+    server_name           *git.example.com;*
     root                  /usr/share/webapps/cgit;
     try_files             $uri @cgit;
 
@@ -197,7 +196,6 @@ Add below server block to your configuration:
 Add a uwsgi configuration for cgit.
 
  `/etc/uwsgi/cgit.ini` 
-
 ```
 [uwsgi]
 master = true
@@ -341,20 +339,20 @@ If you want to integrate with [gitosis](/index.php/Gitosis "Gitosis") you will h
 
 If you added repositories managed by [gitolite](/index.php/Gitolite "Gitolite") you have to change the permissions, so the web server can access the files.
 
-*   Add the _http_ user to the _gitolite_ group:
+*   Add the *http* user to the *gitolite* group:
     *   `# usermod -aG gitolite http`
 *   Change permission for future repositories:
     *   Edit `/var/lib/gitolite/.gitolite.rc`. Change the `UMASK` to `0027`
     *   See also: [http://gitolite.com/gitolite/gitolite.html#umask](http://gitolite.com/gitolite/gitolite.html#umask)
-*   Change permission for the _gitolite_ home directory, and existing repositories. Run the following two commands:
+*   Change permission for the *gitolite* home directory, and existing repositories. Run the following two commands:
     *   `# chmod g+rX /var/lib/gitolite`
     *   `# chmod -R g+rX /var/lib/gitolite/repositories`
 
 ## Troubleshooting
 
-### _snapshots_ does not show properly
+### *snapshots* does not show properly
 
-If you have enabled _scan-path_ as well as _snapshots_, the order in cgitrc matters. According to [cgit mailing list](http://comments.gmane.org/gmane.comp.version-control.cgit/917), _snapshots_ should be specified before _scan-path_
+If you have enabled *scan-path* as well as *snapshots*, the order in cgitrc matters. According to [cgit mailing list](http://comments.gmane.org/gmane.comp.version-control.cgit/917), *snapshots* should be specified before *scan-path*
 
 ```
 snapshots=tar.gz tar.bz2 zip
@@ -362,9 +360,9 @@ scan-path=/path/to/your/repositories
 
 ```
 
-### _source-filter_ does not work properly
+### *source-filter* does not work properly
 
-If you have enabled _scan-path_, again, the order in cgitrc matters. _source-filter_ should be specified before _scan-path_, otherwise it will have no effect.
+If you have enabled *scan-path*, again, the order in cgitrc matters. *source-filter* should be specified before *scan-path*, otherwise it will have no effect.
 
 ## References
 

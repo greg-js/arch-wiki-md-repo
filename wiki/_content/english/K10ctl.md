@@ -23,7 +23,6 @@ k10ctl is available in the AUR: [k10ctl](https://aur.archlinux.org/packages/k10c
 ### k10ctl.conf
 
  `/etc/conf.d/k10ctl` 
-
 ```
 # For information how to calculate the following values see:
 # http://www.ztex.de/misc/k10ctl.e.html#c1

@@ -28,7 +28,7 @@
 
 ### Starting evilwm
 
-To start evilwm (without any options) via _startx_, ensure your `~/.xinitrc` file contains:
+To start evilwm (without any options) via *startx*, ensure your `~/.xinitrc` file contains:
 
 ```
 exec evilwm
@@ -43,7 +43,7 @@ xsetroot -cursor_name left_ptr
 
 ```
 
-For other options, please consult _man xsetroot_.
+For other options, please consult *man xsetroot*.
 
 ### Startup options
 
@@ -73,11 +73,11 @@ This would enable
 
 From [http://www.6809.org.uk/evilwm/usage.shtml](http://www.6809.org.uk/evilwm/usage.shtml):
 
-_evilwm will also read options, one per line, from a file called .evilwmrc in the user's home directory._ _Options listed in a configuration file should omit the leading dash. Options specified on the command line_ _override those found in the configuration file._
+*evilwm will also read options, one per line, from a file called .evilwmrc in the user's home directory.* *Options listed in a configuration file should omit the leading dash. Options specified on the command line* *override those found in the configuration file.*
 
 ## Using evilwm
 
-After starting evilwm you will see nothing but a mouse cursor and a black background (or other background if you specified it as above). To open a terminal, use the key combination Ctrl+Alt+Return. Programs can then be run from the terminal using _ProgramName&_.
+After starting evilwm you will see nothing but a mouse cursor and a black background (or other background if you specified it as above). To open a terminal, use the key combination Ctrl+Alt+Return. Programs can then be run from the terminal using *ProgramName&*.
 
 ### Keyboard controls
 
@@ -132,9 +132,9 @@ exec xclock
 
 ### Resize windows using the keyboard
 
-Although not mentioned in the man-page, you can resize windows with the keyboard as well as the mouse. Using the same key-combinations for moving a window, just add the _Shift_ key to the mix to resize a window.
+Although not mentioned in the man-page, you can resize windows with the keyboard as well as the mouse. Using the same key-combinations for moving a window, just add the *Shift* key to the mix to resize a window.
 
-Ctrl+Alt+_Shift_:
+Ctrl+Alt+*Shift*:
 
 ```
 H,J,K,L - Resize window smaller horizontally, larger vertically, smaller vertically, larger horizontally

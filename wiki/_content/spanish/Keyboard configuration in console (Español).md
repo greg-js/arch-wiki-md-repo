@@ -17,7 +17,6 @@ Las asignaciones del teclado (keymaps) para la [consola virtual](https://en.wiki
 Puede utilizar la orden siguiente para ver la configuración del teclado presente en su equipo:
 
  `$ localectl status` 
-
 ```
    System Locale: LANG=es_ES.utf8
                   LC_NUMERIC=es_ES.UTF-8
@@ -32,7 +31,7 @@ Puede utilizar la orden siguiente para ver la configuración del teclado present
 
 ## Configurar la distribución del teclado
 
-A diferencia del teclado [XKB](/index.php/XKB "XKB"), que se integra por varios componentes, la distribución del teclado para la consola virtual tiene solo un componente. Por lo general, un archivo keymap se corresponde con una distribución de teclado (la declaración _include_ se puede utilizar para compartir partes comunes y un archivo keymap puede contener varios diseños con alguna combinación de tecla que se utiliza para la conmutación). Los archivos keymap se almacenan en el árbol de directorio `/usr/share/kbd/keymaps/`. Puede utilizar la siguiente orden para listar todos los mapas de teclado disponibles:
+A diferencia del teclado [XKB](/index.php/XKB "XKB"), que se integra por varios componentes, la distribución del teclado para la consola virtual tiene solo un componente. Por lo general, un archivo keymap se corresponde con una distribución de teclado (la declaración *include* se puede utilizar para compartir partes comunes y un archivo keymap puede contener varios diseños con alguna combinación de tecla que se utiliza para la conmutación). Los archivos keymap se almacenan en el árbol de directorio `/usr/share/kbd/keymaps/`. Puede utilizar la siguiente orden para listar todos los mapas de teclado disponibles:
 
 ```
 $ localectl list-keymaps
@@ -46,17 +45,16 @@ Las convenciones de los nombres de los mapas de teclado de la consola no son muy
 La configuración de alto nivel puede realizarse en `/etc/vconsole.conf`, que es leído por [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") en el arranque. La variable `KEYMAP` se utiliza para especificar la distribución de teclado. Si la variable está vacía o no se establece, la distribución del teclado usada por defecto es `us`. Véase `man 5 vconsole.conf` para obtener más ejemplos. Por ejemplo:
 
  `/etc/vconsole.conf` 
-
 ```
 KEYMAP=es
 ...
 
 ```
 
-Para mayor comodidad, la orden _localectl_ puede ser usada para establecer la distribución del teclado de la consola. Con esta orden se cambia la variable `KEYMAP` en `/etc/vconsole.conf` y fija la distribución del teclado en la sesión en curso. Por ejemplo:
+Para mayor comodidad, la orden *localectl* puede ser usada para establecer la distribución del teclado de la consola. Con esta orden se cambia la variable `KEYMAP` en `/etc/vconsole.conf` y fija la distribución del teclado en la sesión en curso. Por ejemplo:
 
 ```
-$ localectl set-keymap --no-convert _mapa_de_teclas_
+$ localectl set-keymap --no-convert *mapa_de_teclas*
 
 ```
 
@@ -66,10 +64,10 @@ Véase `man 1 localectl` para obtener más detalles.
 
 Es posible establecer un distribución de teclado solo para la sesión actual. Esto es útil para probar diferentes mapas de teclado, resolución de problemas, etc.
 
-La utilidad _loadkeys_ se utiliza para este propósito, utilizado internamente por [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") al cargar la distribución del teclado configurado en `/etc/vconsole.conf`. Su utilización a este fin es muy sencilla:
+La utilidad *loadkeys* se utiliza para este propósito, utilizado internamente por [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") al cargar la distribución del teclado configurado en `/etc/vconsole.conf`. Su utilización a este fin es muy sencilla:
 
 ```
-# loadkeys _mapa_de_teclas_
+# loadkeys *mapa_de_teclas*
 
 ```
 
@@ -84,7 +82,6 @@ El paquete [kbd](https://www.archlinux.org/packages/?name=kbd) proporciona herra
 La configuración se realiza en `vconsole.conf` usando las variables `FONT` y `FONT_MAP`:
 
  `/etc/vconsole.conf` 
-
 ```
 ...
 FONT=Lat2-Terminus16
@@ -96,10 +93,10 @@ Si la variable `FONT` está vacía o no se establece, se utiliza, por defecto, e
 
 ### Ajustar el retardo y la velocidad de typematic
 
-La opción _typematic delay_ indica la cantidad de tiempo (normalmente en milisegundos) que una tecla necesita ser presionada para que el proceso de repetición comience. Después que el proceso de repetición ha sido activado, el carácter se repite con una frecuencia determinada (por lo general en Hz dado) especificado por la opción _typematic rate_. Estos valores se pueden cambiar usando la orden _kbdrate_:
+La opción *typematic delay* indica la cantidad de tiempo (normalmente en milisegundos) que una tecla necesita ser presionada para que el proceso de repetición comience. Después que el proceso de repetición ha sido activado, el carácter se repite con una frecuencia determinada (por lo general en Hz dado) especificado por la opción *typematic rate*. Estos valores se pueden cambiar usando la orden *kbdrate*:
 
 ```
-# kbdrate [-d _delay_] [-r _rate_]
+# kbdrate [-d *delay*] [-r *rate*]
 
 ```
 

@@ -16,7 +16,6 @@
 L'aspetto generale del file `rc.conf` è molto cambiato nel corso di Gennaio 2012\. Molti dei commenti sono stati rimossi e trasferiti in maniera più esplicativa all'interno della pagina di manuale relativa. Di seguito un esempio di come apparirà il file `/etc/rc.conf` su di un sistema aggiornato (([versione corrente](https://projects.archlinux.org/initscripts.git/tree/rc.conf)):
 
  `/etc/rc.conf` 
-
 ```
 #
 # /etc/rc.conf - Main Configuration for Arch Linux
@@ -158,7 +157,6 @@ DAEMONS=(syslog-ng network crond)
 	default route (ignorato per DHCP)
 
  `Static IP Example` 
-
 ```
 interface=eth0
 address=192.168.0.2
@@ -166,9 +164,7 @@ netmask=255.255.255.0
 broadcast=192.168.0.255
 gateway=192.168.0.1
 ```
-
  `DHCP example` 
-
 ```
 interface=eth0
 address=
@@ -184,7 +180,6 @@ Il pacchetto [netcfg](/index.php/Netcfg_(Italiano) "Netcfg (Italiano)") è utili
 
 1.  Creare un profilo di rete `/etc/network.d/profilename` per ogni interfaccia
     1.  Esempio statico: `/etc/network.d/eth0-static`
-
         ```
         CONNECTION='ethernet'
         DESCRIPTION='Una connessione ethernet statica per l'interfaccia eth0'
@@ -197,7 +192,6 @@ Il pacchetto [netcfg](/index.php/Netcfg_(Italiano) "Netcfg (Italiano)") è utili
         ```
 
     2.  Esempio DHCP: `/etc/network.d/eth1-dhcp`
-
         ```
         CONNECTION='ethernet'
         DESCRIPTION='Una connessione dhcp di base su eth1'

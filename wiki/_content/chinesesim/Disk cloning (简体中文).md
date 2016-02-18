@@ -36,7 +36,7 @@ dd if=/dev/sda1 of=/dev/sdb1 bs=4096 conv=notrunc,noerror,sync
 
 ```
 
-如果输出文件 _**of**_ (在这个例子中是sdb1) 不存在, dd 会从这个磁盘的开头开始并且创建他.
+如果输出文件 ***of*** (在这个例子中是sdb1) 不存在, dd 会从这个磁盘的开头开始并且创建他.
 
 ### 克隆整个硬盘
 
@@ -49,10 +49,10 @@ dd if=/dev/sda of=/dev/sdb bs=4096 conv=notrunc,noerror,sync
 
 这条命令会克隆整个盘, 包括MBR(所以也包括bootloader), 所有的分区、UIUD 以及数据.
 
-*   _notrunc_ (也就是'不许删') 通过要求 dd 不对数据进行任何删节来保证数据的统一完整.
-*   _noerror_ 要求 dd 无视任何读错并继续工作. dd的初始设定是一旦遇到错误就停下.
-*   _sync_ 对读错误进行清零, 这样数据的开端就可以保持在 sync.
-*   _bs=4096_ 将block size设置为4k. 这样硬盘读写效率不知道高到哪里去了, 显然这个对克隆速度就是最好的.
+*   *notrunc* (也就是'不许删') 通过要求 dd 不对数据进行任何删节来保证数据的统一完整.
+*   *noerror* 要求 dd 无视任何读错并继续工作. dd的初始设定是一旦遇到错误就停下.
+*   *sync* 对读错误进行清零, 这样数据的开端就可以保持在 sync.
+*   *bs=4096* 将block size设置为4k. 这样硬盘读写效率不知道高到哪里去了, 显然这个对克隆速度就是最好的.
 
 **Note:** 如果想要重新获得独特的UUID, 请对每个分区都使用 "tune2fs /deb/sdbX -U random".
 
@@ -136,11 +136,11 @@ To restore your system:
 
 ### Examples with compression
 
-When you need to create the hard drive or a single partition compressed backup image file you must use compression tools which can do backup from a _stdout_ and the _dd_ command. Those compressed files cannot be mounted by the _mount_ command but are useful to know how to create and restore them.
+When you need to create the hard drive or a single partition compressed backup image file you must use compression tools which can do backup from a *stdout* and the *dd* command. Those compressed files cannot be mounted by the *mount* command but are useful to know how to create and restore them.
 
 #### 7zip
 
-Install the [p7zip](https://www.archlinux.org/packages/?name=p7zip) package from the [official repositories](/index.php/Official_repositories "Official repositories"). This backup example will split the _dd_ command output in the files by up to the 100 megabyte each:
+Install the [p7zip](https://www.archlinux.org/packages/?name=p7zip) package from the [official repositories](/index.php/Official_repositories "Official repositories"). This backup example will split the *dd* command output in the files by up to the 100 megabyte each:
 
 ```
 dd if=/dev/sdXY | 7z a -v100m -t7z -si image-file.7z
@@ -154,11 +154,11 @@ Restore with 7zip:
 
 ```
 
-**Note:** 7zip can split only the _7z_ compression type files
+**Note:** 7zip can split only the *7z* compression type files
 
 #### Zip
 
-Install the [zip](https://www.archlinux.org/packages/?name=zip) package from the [official repositories](/index.php/Official_repositories "Official repositories"), which contains _zipsplit_ among other utilities for the management of zip archives. It will create a file with "-" name inside the image-file.zip file which will contain data from the _dd_ command output. To make a raw output of the file you can use the `-cp` option with _unzip_ in stdout for the _dd_ command. Backup:
+Install the [zip](https://www.archlinux.org/packages/?name=zip) package from the [official repositories](/index.php/Official_repositories "Official repositories"), which contains *zipsplit* among other utilities for the management of zip archives. It will create a file with "-" name inside the image-file.zip file which will contain data from the *dd* command output. To make a raw output of the file you can use the `-cp` option with *unzip* in stdout for the *dd* command. Backup:
 
 ```
 dd if=/dev/sdXY | zip --compression-method bzip2  image-file.zip - 
@@ -172,7 +172,7 @@ unzip -cp image-file.zip | dd of=/dev/sdXY
 
 ```
 
-The _zip_ tool cannot split files on the fly but you can use the `zipsplit` utility on an already created file.
+The *zip* tool cannot split files on the fly but you can use the `zipsplit` utility on an already created file.
 
 See also `man zip` for more information.
 
@@ -180,7 +180,7 @@ See also `man zip` for more information.
 
 Install the [rar](https://aur.archlinux.org/packages/rar/) package from the [AUR](/index.php/AUR "AUR").
 
-**Warning:** The _rar_ examples were made based on the manuals, please confirm!
+**Warning:** The *rar* examples were made based on the manuals, please confirm!
 
 This should do a backup and split the creating file on the fly in by up to 150 megabyte files each.
 
@@ -196,14 +196,13 @@ unrar x -p image-file.rar | dd of=/dev/sdXY
 
 ```
 
-or you can use the _rar_ instead of the [unrar](https://www.archlinux.org/packages/?name=unrar) utility. The unrar utility is available in the official repositories and can be installed with `pacman -S unrar`.
+or you can use the *rar* instead of the [unrar](https://www.archlinux.org/packages/?name=unrar) utility. The unrar utility is available in the official repositories and can be installed with `pacman -S unrar`.
 
 #### Bzip2
 
-Creation by using the _dd_ is more safe and use to be error free:
+Creation by using the *dd* is more safe and use to be error free:
 
  `dd if=/dev/sdXY | bzip2 -f5 > compressedfile.bzip2` 
-
 ```
 937016+0 records in
 937016+0 records out
@@ -211,7 +210,7 @@ Creation by using the _dd_ is more safe and use to be error free:
 
 ```
 
-And a safe way of restoring with combination of the _dd_:
+And a safe way of restoring with combination of the *dd*:
 
 ```
 $ bunzip2 -dc compressedfile.bzip2 | dd of=/dev/sdXY

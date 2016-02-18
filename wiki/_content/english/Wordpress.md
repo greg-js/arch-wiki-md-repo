@@ -71,7 +71,6 @@ Make sure your `/etc/hosts` file is setup correctly. This will be important when
 You will need to create a config file for apache to find your Wordpress install. Create the following file and edit it your favorite text editor:
 
  `# /etc/httpd/conf/extra/httpd-wordpress.conf` 
-
 ```
 Alias /wordpress "/usr/share/webapps/wordpress"
 <Directory "/usr/share/webapps/wordpress">
@@ -89,7 +88,6 @@ Change `/wordpress` in the first line to whatever you want. For example, `/myblo
 Also change the paths to your Wordpress install folder in case you did a manual install. Do not forget to append the parent directory to the `php_admin_value` variable as well as shown below.
 
  `# /etc/httpd/conf/extra/httpd-wordpress.conf` 
-
 ```
 Alias /myblog "/mnt/data/srv/wordpress"
 <Directory "/mnt/data/srv/wordpress">
@@ -103,7 +101,6 @@ Alias /myblog "/mnt/data/srv/wordpress"
 Next edit the apache config file and add the following:
 
  `# /etc/httpd/conf/httpd.conf` 
-
 ```
 ...
 Include conf/extra/httpd-wordpress.conf

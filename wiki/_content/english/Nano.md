@@ -1,4 +1,4 @@
-[GNU nano](http://www.nano-editor.org/) (or nano) is a text editor which aims to introduce a simple interface and intuitive command options to console based text editing. _nano_ supports features including colorized syntax highlighting, DOS/Mac file type conversions, spellchecking and [UTF-8](https://en.wikipedia.org/wiki/UTF-8 "wikipedia:UTF-8") encoding. _nano_ opened with an empty buffer typically occupies under 1.5 MB of resident memory.
+[GNU nano](http://www.nano-editor.org/) (or nano) is a text editor which aims to introduce a simple interface and intuitive command options to console based text editing. *nano* supports features including colorized syntax highlighting, DOS/Mac file type conversions, spellchecking and [UTF-8](https://en.wikipedia.org/wiki/UTF-8 "wikipedia:UTF-8") encoding. *nano* opened with an empty buffer typically occupies under 1.5 MB of resident memory.
 
 ## Contents
 
@@ -154,7 +154,7 @@ Unlike most interactive programs, suspension is not enabled by default. To chang
 
 #### Text wrapping
 
-Unlike many text editors, _nano_ wraps text. To disable this put this in your `~/.nanorc`
+Unlike many text editors, *nano* wraps text. To disable this put this in your `~/.nanorc`
 
 ```
 set nowrap
@@ -218,7 +218,7 @@ Some window managers have keybindings that conflict with nano, for example `Alt+
 
 ## See also
 
-*   [nano (text editor)](https://en.wikipedia.org/wiki/Nano_(text_editor) "wikipedia:Nano (text editor)") - Wikipedia Entry
+*   [nano (text editor)](https://en.wikipedia.org/wiki/Nano_(text_editor) - Wikipedia Entry
 *   [GNU nano Homepage](http://www.nano-editor.org/) - Official Site
 *   [GNU nano Bugs](https://savannah.gnu.org/bugs/?group=nano) Bug Reporting
 *   [Better syntax highlighting definitions](https://github.com/craigbarnes/nanorc)

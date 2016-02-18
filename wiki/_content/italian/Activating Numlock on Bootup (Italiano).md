@@ -63,7 +63,6 @@ numlockx on
 al proprio `/usr/share/config/kdm/Xsetup`, oppure al file `/opt/kde/share/config/kdm/Xsetup` se si usa KDM3.
 
 **Nota:** questo file risiede al di fuori dall'area protetta di Pacman, quindi potrebbe essere sovrascritto in caso di aggiornamento senza avvertimenti o senza la creazione di un file `.pacnew`. Se questo comportamento non è gradito aggiungere la seguente linea al proprio `/etc/pacman.conf` (omettere lo slash all'inizio del percorso):
-
 ```
 NoUpgrade = usr/share/config/kdm/Xsetup
 

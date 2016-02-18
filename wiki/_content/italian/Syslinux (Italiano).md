@@ -1,4 +1,4 @@
-[Syslinux](https://en.wikipedia.org/wiki/SYSLINUX "wikipedia:SYSLINUX") è una collezione di boot loaders capaci di effettuare il boot da dischi rigidi, CD e via rete utilizzando PXE. Supporta i [filesystems](/index.php/File_Systems_(Italiano) "File Systems (Italiano)") [Wikipedia:FAT](https://en.wikipedia.org/wiki/FAT "wikipedia:FAT"), [Wikipedia:ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2"), [ext3](/index.php/Ext3_(Italiano) "Ext3 (Italiano)"), [ext4](/index.php/Ext4_(Italiano) "Ext4 (Italiano)") e [Btrfs](/index.php/Btrfs "Btrfs").
+[Syslinux](https://en.wikipedia.org/wiki/SYSLINUX [Wikipedia:FAT](https://en.wikipedia.org/wiki/FAT e [Btrfs](/index.php/Btrfs "Btrfs").
 
 **Nota:** Syslinux non può accedere a files che non si trovino nella partizione sulla quale è installato. Se si necessita della funzionalità multi-fs, si utilizzi un bootloader alternativo come [GRUB](/index.php/GRUB_(Italiano) "GRUB (Italiano)").
 
@@ -65,7 +65,7 @@
 
 Su questi sistemi, syslinux utilizza delle funzionalità fornite dal BIOS della propria scheda madre per accedere al contenuto dei dischi rigidi. Sfortunatamente, tali funzionalità hanno [limitazioni](http://www.win.tue.nl/~aeb/linux/Large-Disk-4.html) che variano in funzione all'età del BIOS. La maggior parte dei BIOS moderni posono accedere solo ai primi 1024 cilindri, il che corrisponde ad una capacità approssimativa di 8,5 GB. Se la propria partizione `/boot` si trova in un settore sopra tale limite, syslinux potrebbe non essere in grado di caricare i file `syslinux.cfg`, l'`initramfs` o il file `vmlinuz`. Sarà quindi necessario posizionare la partizione `/boot` all'inizio del disco.
 
-Altri bootloaders come [grub](https://www.archlinux.org/packages/?name=grub) utilizzano un "trucco" chiamato _stage 1.5 bootloading_, dove GRUB crea un piccolo programma di circa 32 KB che contiene i driver del disco e lo inserisce all'inizio della tabella partizioni, nello spazio inutilizzato (che su sistemi MBR è chiamato _MBR gap_) oppure, su sistemi GPT, nella partizione di boot BIOS. Il procedimento avviene in questo modo: il boot code nel MBR carica lo _stage 1.5_, inizializza i dischi e vi accede tramite interfaccia SATA, evitando così le limitazioni del BIOS per il caricamento del kernel. Ciò consente di posizionare la partizione `/boot` dovunque sul disco rigido. Sfortunatamente [syslinux](https://www.archlinux.org/packages/?name=syslinux) non dispone di tale funzionalità e si avvale delle funzionalità fornite dal BIOS per il caricamento di `/boot`.
+Altri bootloaders come [grub](https://www.archlinux.org/packages/?name=grub) utilizzano un "trucco" chiamato *stage 1.5 bootloading*, dove GRUB crea un piccolo programma di circa 32 KB che contiene i driver del disco e lo inserisce all'inizio della tabella partizioni, nello spazio inutilizzato (che su sistemi MBR è chiamato *MBR gap*) oppure, su sistemi GPT, nella partizione di boot BIOS. Il procedimento avviene in questo modo: il boot code nel MBR carica lo *stage 1.5*, inizializza i dischi e vi accede tramite interfaccia SATA, evitando così le limitazioni del BIOS per il caricamento del kernel. Ciò consente di posizionare la partizione `/boot` dovunque sul disco rigido. Sfortunatamente [syslinux](https://www.archlinux.org/packages/?name=syslinux) non dispone di tale funzionalità e si avvale delle funzionalità fornite dal BIOS per il caricamento di `/boot`.
 
 ### Installazione
 
@@ -90,13 +90,11 @@ Lo script `syslinux-install_update` si occuperà dell'installazione di Syslinux,
 Se si utilizza una partizione di boot separata, assicurarsi che sia montata. Si controlli con `lsblk`; se non si vede nessun mount point che punta a `/boot`, si monti la partizione prima di procedere.
 
 Si esegua lo script `syslinux-install_update` con gli argomenti `-i` (installa i files) `-a` (imposta la partizione come "attiva") `-m` (installa il boot code nel MBR): `# syslinux-install_update -i -a -m` Se il comando di cui sopra restituisce l'errore `Syslinux BIOS install failed` è probabile che l'eseguibile `extlinux` non sia riuscito ad individuare la partizione contenente `/boot`:
-
 ```
  # extlinux --install /boot/syslinux
  extlinux: cannot find device for path /boot/syslinux
  extlinux: cannot open device (null) 
 ```
-
 Questo problema può verificarsi quando si effettua l'upgrade da [LILO](/index.php/LILO "LILO") e si utilizza un kernel personalizzato. Può infatti accadere che LILO modifichi il parametro `root=` del kernel da (ad esempio) `root=/dev/sda1` al suo equivalente numerico, come `root=801`, come riportato dall'output di `/proc/cmdline` e `mount`. È possibile risolvere il problema effettuando l'installazione manuale descritta sotto, avendo cura di specificare il parametro `--device=/dev/sda1` a `extlinux`, oppure utilizzando un kernel stock di Arch, dal momento che l'utilizzo di un initramfs da parte di quest'ultimo evita il verificarsi dell'errore.
 **Nota:**
 
@@ -146,7 +144,6 @@ Sarà quindi necessario contrassegnare la propria partizione di boot come attiva
 Una volta effettuata l'operazione, la tabella partizioni dovrebbe essere simile alla seguente:
 
  `# fdisk -l /dev/sda` 
-
 ```
 [...]
   Device Boot      Start         End      Blocks   Id  System
@@ -220,7 +217,7 @@ Se il comando di cui sopra non funziona è possibile provare ad utilizzare:
 
 ### Limitazioni di Syslinux in modalità UEFI
 
-*   L'applicazione UEFI di Syslinux (`syslinux.efi`) non può essere firmata da `sbsign` (pacchetto _sbsigntool_) per l'uso con il Secure Boot. Bug report - [http://bugzilla.syslinux.org/show_bug.cgi?id=8](http://bugzilla.syslinux.org/show_bug.cgi?id=8)
+*   L'applicazione UEFI di Syslinux (`syslinux.efi`) non può essere firmata da `sbsign` (pacchetto *sbsigntool*) per l'uso con il Secure Boot. Bug report - [http://bugzilla.syslinux.org/show_bug.cgi?id=8](http://bugzilla.syslinux.org/show_bug.cgi?id=8)
 *   L'utilizzo del tasto `TAB` per la modifica dei parametri del kernel in modalità UEFI crea artefatti a schermo e testo sovrapposto. Bug report - [http://bugzilla.syslinux.org/show_bug.cgi?id=9](http://bugzilla.syslinux.org/show_bug.cgi?id=9)
 *   Syslinux UEFI non supporta il chainloading di altre applicazioni UEFI come {{ic|UEFI Shell} o `Windows Boot Manager`. Bug report - [http://bugzilla.syslinux.org/show_bug.cgi?id=17](http://bugzilla.syslinux.org/show_bug.cgi?id=17)
 *   Syslinux UEFI potrebbe non effettuare il boot in alcune macchine virtuali, come QEMU/OVMF o Virtualbox, oppure in alcune versioni dei prodotti VMware, oltre ad alcuni ambienti UEFI emulati come DUET. Un contributore di Syslinux ha confermato che non ci sono problemi su VMware Workstation 10.0.2 e Syslinux-6.02\. Bug reports - [http://bugzilla.syslinux.org/show_bug.cgi?id=21](http://bugzilla.syslinux.org/show_bug.cgi?id=21) e [http://bugzilla.syslinux.org/show_bug.cgi?id=23](http://bugzilla.syslinux.org/show_bug.cgi?id=23)
@@ -271,7 +268,6 @@ Di seguito viene presentato un semplice file di configurazione che visualizza il
 Configurazione:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 
 PROMPT 1
@@ -302,7 +298,6 @@ Syslinux consente di utilizzare un menù testuale. Per utilizzarlo si copi il mo
 Configurazione:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 
 UI menu.c32
@@ -344,7 +339,6 @@ Questo file di configurazione utilizza lo stesso design del CD di installazione 
 Configurazione:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 
 UI vesamenu.c32
@@ -397,7 +391,6 @@ Per centrare il menù e modificare la risoluzione, si utilizzino i comandi `MENU
 Per centrare il menù, si utilizzino questi valori:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 MENU RESOLUTION 800 600 # inserire la risoluzione in uso
 MENU WIDTH 78           # larghezza menù richiesta per il corretto dimensionamento del menù box
@@ -417,14 +410,14 @@ Gli standard VESA prevedono una dimensione massima di 25 righe e 80 colonne. Imp
 **Se si desidera usare gli [UUID](/index.php/Persistent_block_device_naming_(Italiano)#by-uuid "Persistent block device naming (Italiano)")** per la [nomenclatura persistende dei dispositivi a blocchi](/index.php/Persistent_block_device_naming_(Italiano) "Persistent block device naming (Italiano)") si modifichi la riga APPEND inserendo l'UUID della propria partizione root:
 
 ```
-APPEND root=UUID=_1234_ rw
+APPEND root=UUID=*1234* rw
 
 ```
 
 **Se si usa il sistema di cifratura [LUKS](/index.php/LUKS "LUKS")**, si modifichi la riga `APPEND` affinchè Syslinux utilizzi il volume criptato:
 
 ```
-APPEND root=/dev/mapper/_gruppo_-_nome_ cryptdevice=/dev/sda2:_nome_ rw
+APPEND root=/dev/mapper/*gruppo*-*nome* cryptdevice=/dev/sda2:*nome* rw
 
 ```
 
@@ -484,7 +477,6 @@ La password può essere espressa in chiaro o tramite il suo hash. Si veda in tal
 Se si desidera effettuare il chainload di altri sistemi operativi (ad esempio Windows) o altri bootloader, si copi il modulo `chain.c32` nella directory di Syslinux (per i dettagli si consulti la sezione precedente). Si crei quindi la seguente sezione nel file di configurazione:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 
 LABEL windows
@@ -531,7 +523,6 @@ Per ulteriori dettagli sul chainloading si veda: [[1]](http://syslinux.zytor.com
 Se [GRUB2](/index.php/GRUB2_(Italiano) "GRUB2 (Italiano)") è installato nella propria partizione di boot, è possibile effettuarne il chainload utilizzando:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 
 LABEL grub2
@@ -544,7 +535,6 @@ LABEL grub2
 In alternativa, è possibile caricare [GRUB](/index.php/GRUB_(Italiano) "GRUB (Italiano)") come kernel linux, facendo precedere `lnxboot.img` a `core.img`. Il file `lnxboot.img` fa parte del pacchetto [grub](https://www.archlinux.org/packages/?name=grub) e può essere trovato in `/usr/lib/grub/i386-pc`.
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 ...
  LABEL grub2lnx
@@ -559,7 +549,7 @@ Quanto sopra potrebbe essere necessario per avviare immagini ISO.
 
 ### Chainloading di un altro sistema Linux
 
-Quando si effettua il chainloading di un bootloader come quello di Windows, non ci sono problemi, in quanto si dispone di un bootloader da avviare, mentre Syslinux è in grado di caricare files che risiedono sulla stessa partizione del file di configurazione. Se quindi si ha un'altra versione di Linux installata su una partizione differente e senza `/boot` separata, è _necessario_ utilizzare Extlinux al posto del bootloader di default (ad esempio GRUB). In poche parole, è possibile installare Extlinux sul superblocco della partizione/[VBR](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record") per poi essere richiamato come _bootloader separato_ dal Syslinux installato nel MBR. Extlinux fa parte del progetto Syslinux ed è incluso nel pacchetto [syslinux](https://www.archlinux.org/packages/?name=syslinux).
+Quando si effettua il chainloading di un bootloader come quello di Windows, non ci sono problemi, in quanto si dispone di un bootloader da avviare, mentre Syslinux è in grado di caricare files che risiedono sulla stessa partizione del file di configurazione. Se quindi si ha un'altra versione di Linux installata su una partizione differente e senza `/boot` separata, è *necessario* utilizzare Extlinux al posto del bootloader di default (ad esempio GRUB). In poche parole, è possibile installare Extlinux sul superblocco della partizione/[VBR](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record") per poi essere richiamato come *bootloader separato* dal Syslinux installato nel MBR. Extlinux fa parte del progetto Syslinux ed è incluso nel pacchetto [syslinux](https://www.archlinux.org/packages/?name=syslinux).
 
 Le seguenti istruzioni presuppongono che si sia già installato Syslinux, che il path al file di configurazione sia `/boot/syslinux` e che il sistema di cui effettuare il chainload risieda su `/dev/sda3`.
 
@@ -612,7 +602,6 @@ Si installi [memtest86+](https://www.archlinux.org/packages/?name=memtest86%2B) 
 Si utilizzi questa sezione `LABEL` per effettuare il boot di memtest.
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 
 LABEL memtest
@@ -628,7 +617,6 @@ LABEL memtest
 [HDT (Hardware Detection Tool)](http://hdt-project.org/) è uno strumento per visualizzare informazioni sull'hardware. Come sempre, il rispettivo modulo `.c32` dovrà essere copiato in `/boot/syslinux`. Per i dispositivi PCI, si copi `/usr/share/hwdata/pci.ids` in `/boot/syslinux/pci.ids` e si aggiunga quanto segue al proprio file di configurazione:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 
 LABEL hdt
@@ -644,7 +632,6 @@ LABEL hdt
 Si usino le seguenti sezioni per riavviare o spegnere la macchina:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 
 LABEL reboot
@@ -695,7 +682,6 @@ Si copi `de.ktl` in `/boot/syslinux` e si imposti il proprietario a `root`:
 Ora si modifichi il proprio `syslinux.cfg` aggiungendo:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 KBDMAP de.ktl
 
@@ -723,7 +709,6 @@ Si copi il bootloader `pxelinux.0` (fornito dal pacchetto [syslinux](https://www
 Si noti la creazione della directory `pxelinux.cfg`, dove PXELINUX cerca il file di configurazione di default. Dal momento che non si intende fare differenze tra i MAC dei vari host, sarà creato il file di configurazione `default`.
 
  `# vim "$root/boot/pxelinux.cfg/default"` 
-
 ```
 default linux
 
@@ -754,10 +739,9 @@ Syslinux supporta l'avvio di immagini ISO tramite il modulo [memdisk](http://www
 
 ### Utilizzare la console seriale
 
-Per abilitare la console seriale, si aggiunga `SERIAL port [baudrate]` in cima al proprio `syslinux.cfg`. _port_ è un numero (0 per `/dev/ttyS0`). Se _baudrate_ viene omesso, il default è 9600 bps. I parametri per la trasmissione seriale sono preimpostati a 8 bit, nessuna parità e 1 bit di stop. [[2]](http://www.syslinux.org/wiki/index.php/SYSLINUX#SERIAL_port_.5Bbaudrate_.5Bflowcontrol.5D.5D.)
+Per abilitare la console seriale, si aggiunga `SERIAL port [baudrate]` in cima al proprio `syslinux.cfg`. *port* è un numero (0 per `/dev/ttyS0`). Se *baudrate* viene omesso, il default è 9600 bps. I parametri per la trasmissione seriale sono preimpostati a 8 bit, nessuna parità e 1 bit di stop. [[2]](http://www.syslinux.org/wiki/index.php/SYSLINUX#SERIAL_port_.5Bbaudrate_.5Bflowcontrol.5D.5D.)
 
  `syslinux.cfg` 
-
 ```
 SERIAL 0 115200
 
@@ -814,7 +798,7 @@ Se non si ha accesso a `boot:` in [ramfs](/index.php/Ramdisk "Ramdisk") e si è 
 Nell'eventualità di una partizione root corrotta (con danni al journal) si monti il filesystem di root nella shell di emergenza del ramfs:
 
 ```
-# mount /dev/_partizione root_ /new_root;  ## Si monti la partizione root
+# mount /dev/*partizione root* /new_root;  ## Si monti la partizione root
 
 ```
 
@@ -840,7 +824,7 @@ Poi si installi e configuri Syslinux.
 
 ### Missing Operating System
 
-*   Si verifichi di aver installato `gptmbr.bin` per sistemi di partizionamento GPT o `mbr.bin` per tabelle partizioni DOS. `mbr.bin` visualizza il messaggio d'errore _Missing operating system_, mentre `gptmbr.bin` mostra _Missing OS_.
+*   Si verifichi di aver installato `gptmbr.bin` per sistemi di partizionamento GPT o `mbr.bin` per tabelle partizioni DOS. `mbr.bin` visualizza il messaggio d'errore *Missing operating system*, mentre `gptmbr.bin` mostra *Missing OS*.
 
 *   Si verifichi se la partizione che contiene `/boot` è contrassegnata come avviabile.
 
@@ -883,7 +867,7 @@ Il problema potrebbe anche essere causato dall'assenza di un kernel. Si acceda a
 
 ### Impossibile rimuovere ldlinux.sys
 
-Il file `ldlinux.sys` ha l'attributo _immutable_ impostato, che ne impedisce la rimozione o sovrascrittura. Questo comportamento si verifica poichè il settore sul quale risiede il file in questione non deve cambiare, altrimenti Syslinux dovrà essere reinstallato.
+Il file `ldlinux.sys` ha l'attributo *immutable* impostato, che ne impedisce la rimozione o sovrascrittura. Questo comportamento si verifica poichè il settore sul quale risiede il file in questione non deve cambiare, altrimenti Syslinux dovrà essere reinstallato.
 
 Per rimuovere il file si esegua:
 
@@ -897,7 +881,7 @@ Per rimuovere il file si esegua:
 
 Problema:
 
-_A partire da linux-3.0, il driver del modesetting tenta di mantenere il contenuto corrente dello schermo dopo il cambio di risoluzione (o almeno questo si verifica sulla mia Intel, quando utilizzo Syslinux in modalità testuale). Pare che tale comportamento crei problemi se si usa il modulo vesamenu di Syslinux (il quadrato bianco rappresenta infatti un tentativo di salvare il menù di Syslinux, ma il driver non riesce a catturare l'immagine dalla modalità grafica VESA)_.
+*A partire da linux-3.0, il driver del modesetting tenta di mantenere il contenuto corrente dello schermo dopo il cambio di risoluzione (o almeno questo si verifica sulla mia Intel, quando utilizzo Syslinux in modalità testuale). Pare che tale comportamento crei problemi se si usa il modulo vesamenu di Syslinux (il quadrato bianco rappresenta infatti un tentativo di salvare il menù di Syslinux, ma il driver non riesce a catturare l'immagine dalla modalità grafica VESA)*.
 
 Se si è scelta una risoluzione personalizzata e si utilizza vesamenu assieme al modesetting, si provi ad inserire la seguente riga nel `syslinux.cfg` per rimuovere il quadretto bianco e continuare il boot in modalità grafica:
 
@@ -922,7 +906,7 @@ si sostituisca il codice MBR con quello del drive dove è installato Windows (Si
 
 ### Leggere i log del bootloader
 
-In alcuni casi (ad esempio quando il bootloader non è in grado di effettuare il boot del kernel, è utile poter ottenere più informazioni sul processo di avvio. _Syslinux_ stampa eventuali messaggi d'errore a schermo, che vengono però subito sostituiti dal menu. Per evitare di perdere queste informazioni sarà necessario disabilitare l'interfaccia del menu in `syslinux.cfg` e utilizzare il prompt d'avvio di default, il che si traduce nell'evitare:
+In alcuni casi (ad esempio quando il bootloader non è in grado di effettuare il boot del kernel, è utile poter ottenere più informazioni sul processo di avvio. *Syslinux* stampa eventuali messaggi d'errore a schermo, che vengono però subito sostituiti dal menu. Per evitare di perdere queste informazioni sarà necessario disabilitare l'interfaccia del menu in `syslinux.cfg` e utilizzare il prompt d'avvio di default, il che si traduce nell'evitare:
 
 *   direttive `UI`
 *   `ONTIMEOUT`

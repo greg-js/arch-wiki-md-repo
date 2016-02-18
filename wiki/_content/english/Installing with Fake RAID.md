@@ -26,9 +26,9 @@ The purpose of this guide is to enable use of a RAID set created by the on-board
 
 From [Wikipedia:RAID](https://en.wikipedia.org/wiki/RAID "wikipedia:RAID"):
 
-	_Operating system-based RAID doesn't always protect the boot process and is generally impractical on desktop versions of Windows. Hardware RAID controllers are expensive and proprietary. To fill this gap, cheap "RAID controllers" were introduced that do not contain a RAID controller chip, but simply a standard disk controller chip with special firmware and drivers. During early stage boot-up, the RAID is implemented by the firmware. When a protected-mode operating system kernel such as Linux or a modern version of Microsoft Windows is loaded, the drivers take over._
+	*Operating system-based RAID doesn't always protect the boot process and is generally impractical on desktop versions of Windows. Hardware RAID controllers are expensive and proprietary. To fill this gap, cheap "RAID controllers" were introduced that do not contain a RAID controller chip, but simply a standard disk controller chip with special firmware and drivers. During early stage boot-up, the RAID is implemented by the firmware. When a protected-mode operating system kernel such as Linux or a modern version of Microsoft Windows is loaded, the drivers take over.*
 
-	_These controllers are described by their manufacturers as RAID controllers, and it is rarely made clear to purchasers that the burden of RAID processing is borne by the host computer's central processing unit -- not the RAID controller itself -- thus introducing the aforementioned CPU overhead which hardware controllers do not suffer from. Firmware controllers often can only use certain types of hard drives in their RAID arrays (e.g. SATA for Intel Matrix RAID, as there is neither SCSI nor PATA support in modern Intel ICH southbridges; however, motherboard makers implement RAID controllers outside of the southbridge on some motherboards). Before their introduction, a "RAID controller" implied that the controller did the processing, and the new type has become known in technically knowledgeable circles as "fake RAID" even though the RAID itself is implemented correctly. Adaptec calls them "host RAID"._
+	*These controllers are described by their manufacturers as RAID controllers, and it is rarely made clear to purchasers that the burden of RAID processing is borne by the host computer's central processing unit -- not the RAID controller itself -- thus introducing the aforementioned CPU overhead which hardware controllers do not suffer from. Firmware controllers often can only use certain types of hard drives in their RAID arrays (e.g. SATA for Intel Matrix RAID, as there is neither SCSI nor PATA support in modern Intel ICH southbridges; however, motherboard makers implement RAID controllers outside of the southbridge on some motherboards). Before their introduction, a "RAID controller" implied that the controller did the processing, and the new type has become known in technically knowledgeable circles as "fake RAID" even though the RAID itself is implemented correctly. Adaptec calls them "host RAID".*
 
 See also [FakeRaidHowto @ Community Ubuntu Documentation](https://help.ubuntu.com/community/FakeRaidHowto) for more information.
 
@@ -316,7 +316,7 @@ Re-activate the installer (**tty2**) and proceed as normal with the following ex
 
 ### GRUB2
 
-See [GRUB2](/index.php/GRUB2 "GRUB2") for details on configuring GRUB2\. _grub-bios_ works out of the box with dm-raid partitions:
+See [GRUB2](/index.php/GRUB2 "GRUB2") for details on configuring GRUB2\. *grub-bios* works out of the box with dm-raid partitions:
 
 ```
  $ grub-install --target=i386-pc --recheck --debug /dev/mapper/sil_aiageicechah
@@ -390,7 +390,7 @@ This is because Linux software raid (mdadm) has already attempted to mount the f
 
 If your existing array, set up before attempting to install arch, appears in `/dev/mapper/raidnamehere`, but does not have any partitions (`raidnamehere1`, etc) re-check the status of your RAID partitions.
 
-Arch may not create block devices for partitions _that work in another OS_ if there are certain, even minor, problems.
+Arch may not create block devices for partitions *that work in another OS* if there are certain, even minor, problems.
 
 [gparted](https://www.archlinux.org/packages/?name=gparted) is useful to diagnose and repair most problems. Unfortunately, you may have to repartition from scratch.
 

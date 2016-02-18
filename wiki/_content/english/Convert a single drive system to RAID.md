@@ -142,7 +142,6 @@ Please refer to [GRUB](/index.php/GRUB#Other_Options "GRUB") article.
 You need to tell fstab on the **new** disk where to find the new device. It is recommended to use [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
 
  `/mnt/new-raid/etc/fstab` 
-
 ```
 /dev/md0    /    ext4     defaults   0 1
 
@@ -229,14 +228,11 @@ Once the boot loader on the **new** disk loads, make sure you select to boot the
 Verify you have booted from the RAID array by looking at the output of mount. Also check mdstat again only to confirm which disk is in the array.
 
  `# mount` 
-
 ```
  /dev/md0 on / type ext4 (rw)
 
 ```
-
  `# cat /proc/mdstat` 
-
 ```
  Personalities : [linear] [raid0] [raid1] [raid5] [multipath] [raid6] [raid10]
  md0 : active raid1 sdb1[1]
@@ -275,18 +271,15 @@ Verify that the partitioning is identical:
 ```
 
 **Note:** If you get an error when attempting to add the partition to the array:
-
 ```
 mdadm: /dev/sda1 not large enough to join array
 
 ```
-
 You might have seen an earlier warning message when partitioning this disk that the kernel still sees the old disk size: a reboot ought to fix this, then try adding again to the array.
 
 ### Add disk partition to array
 
  `# mdadm /dev/md0 -a /dev/sda1` 
-
 ```
  mdadm: hot added /dev/sda1
 
@@ -295,7 +288,6 @@ You might have seen an earlier warning message when partitioning this disk that 
 Verify that the RAID array is being rebuilt:
 
  `# cat /proc/mdstat` 
-
 ```
  Personalities : [raid1] 
 md0 : active raid1 sda1[2] sdb1[1]

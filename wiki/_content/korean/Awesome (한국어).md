@@ -1,8 +1,8 @@
-[awesome](https://en.wikipedia.org/wiki/awesome_(window_manager) "wikipedia:awesome (window manager)") 웹사이트 인용:
+[awesome](https://en.wikipedia.org/wiki/awesome_(window_manager) 웹사이트 인용:
 
-"_[awesome](http://awesome.naquadah.org/)은 설정하기 매우 자유로운 차세대 프레임워크 X용 윈도 관리자이다. 매우 빠르고 확장성이 뛰어나며 GNU GPLv2 라이선스에 따라 배포된다._
+"*[awesome](http://awesome.naquadah.org/)은 설정하기 매우 자유로운 차세대 프레임워크 X용 윈도 관리자이다. 매우 빠르고 확장성이 뛰어나며 GNU GPLv2 라이선스에 따라 배포된다.*
 
-_awesome은 상급 사용자, 개발자, 매일 컴퓨터 업무를 다루는 사람 및 그래픽 환경을 세밀하게 조정하기를 원하는 사람을 주요 대상으로 한다._"
+*awesome은 상급 사용자, 개발자, 매일 컴퓨터 업무를 다루는 사람 및 그래픽 환경을 세밀하게 조정하기를 원하는 사람을 주요 대상으로 한다.*"
 
 ## Contents
 
@@ -195,7 +195,7 @@ Revelation brings up a view of all your open clients; left-clicking a client pop
 
 ### Hide / show wibox in awesome 3
 
-To map Modkey-b to hide/show default statusbar on active screen (as default in awesome 2.3), add to your _globalkeys_ in rc.lua:
+To map Modkey-b to hide/show default statusbar on active screen (as default in awesome 2.3), add to your *globalkeys* in rc.lua:
 
 ```
 awful.key({ modkey }, "b", function ()
@@ -269,9 +269,9 @@ See [the awesome wiki page on naughty](http://awesome.naquadah.org/wiki/Naughty)
 
 ### Popup Menus
 
-There's a simple menu by default in awesome3, and customed menus seem very easy now. However, if you're using 2.x awesome, have a look at _[awful.menu](http://awesome.naquadah.org/wiki/Awful.menu)_.
+There's a simple menu by default in awesome3, and customed menus seem very easy now. However, if you're using 2.x awesome, have a look at *[awful.menu](http://awesome.naquadah.org/wiki/Awful.menu)*.
 
-If you want a freedesktop.org menu, you could take a look at _[awesome-freedesktop](https://github.com/terceiro/awesome-freedesktop)_ .
+If you want a freedesktop.org menu, you could take a look at *[awesome-freedesktop](https://github.com/terceiro/awesome-freedesktop)* .
 
 An example for awesome3:
 
@@ -304,7 +304,7 @@ mymainmenu = awful.menu.new({ items = {
 
 ### More Widgets in awesome
 
-_Widgets in awesome are objects that you can add to any widget-box (statusbars and titlebars), they can provide various information about your system, and are useful for having access to this information, right from your window manager. Widgets are simple to use and offer a great deal of flexibility._ -- Source [Awesome Wiki: Widgets](http://awesome.naquadah.org/wiki/Widgets_in_awesome).
+*Widgets in awesome are objects that you can add to any widget-box (statusbars and titlebars), they can provide various information about your system, and are useful for having access to this information, right from your window manager. Widgets are simple to use and offer a great deal of flexibility.* -- Source [Awesome Wiki: Widgets](http://awesome.naquadah.org/wiki/Widgets_in_awesome).
 
 There's a widely used widget library called **Wicked** (compatible with awesome versions **prior to 3.4**), that provides more widgets, like MPD widget, CPU usage, memory usage, etc. For more details see the [Wicked page](http://awesome.naquadah.org/wiki/Wicked).
 
@@ -321,7 +321,7 @@ xcompmgr &
 
 ```
 
-See _man xcompmgr_ or [xcompmgr](/index.php/Xcompmgr "Xcompmgr") for more options.
+See *man xcompmgr* or [xcompmgr](/index.php/Xcompmgr "Xcompmgr") for more options.
 
 In awesome 3.4, window transparency can be set dynamically using signals. For example, your rc.lua could contain the following:
 
@@ -379,11 +379,11 @@ globalkeys = awful.util.table.join(
 
 #### ImageMagick
 
-You may have problems if you set your wallpaper with imagemagick's _display_ command, it doesn't work well with xcompmgr. Please note that awsetbg may be using _display_ if it doesn't have any other options. Installing habak, feh, hsetroot or whatever should fix the problem (_grep -A 1 wpsetters /usr/bin/awsetbg_ to see your options).
+You may have problems if you set your wallpaper with imagemagick's *display* command, it doesn't work well with xcompmgr. Please note that awsetbg may be using *display* if it doesn't have any other options. Installing habak, feh, hsetroot or whatever should fix the problem (*grep -A 1 wpsetters /usr/bin/awsetbg* to see your options).
 
 ### Autorun programs
 
-_See also [the Autostart page on the Awesome wiki](https://awesome.naquadah.org/wiki/Autostart)._
+*See also [the Autostart page on the Awesome wiki](https://awesome.naquadah.org/wiki/Autostart).*
 
 awesome doesn't run programs set to autostart by the Freedesktop specification like GNOME or KDE. However, awesome does provide a few functions for starting programs (in addition to the Lua standard library function `os.execute`). To run the same programs on startup as GNOME or KDE, you can install [dex](https://www.archlinux.org/packages/?name=dex) from the [AUR](/index.php/AUR "AUR") and then run that in your rc.lua:
 

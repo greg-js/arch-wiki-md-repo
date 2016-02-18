@@ -217,7 +217,7 @@ which selects the next layout. Equivalently press `Alt`+`Escape` followed by ":l
 
 ### Status bar not working in last git version
 
-Since some revision, the _status_path_ variable from the _misc_ section is not being used anymore. However, you can exploit the _background_command_ from the _root_ section to start your _status.sh_ script.
+Since some revision, the *status_path* variable from the *misc* section is not being used anymore. However, you can exploit the *background_command* from the *root* section to start your *status.sh* script.
 
 ```
 background_command = "bash $HOME/.config/wmfs/status.sh"
@@ -229,10 +229,9 @@ This solution has some flaws:
 *   The script is running independently from WMFS, so it will keep running after WMFS has terminated (which will outputs errors indefinitely in the TTY).
 *   Reloading WMFS (`CTRL`+`ALT`+`R` by default) will launch another process of the script, which will mess everything up.
 
-Assuming your _status.sh_ file is located in the wmfs config folder, you may try to put this command at the very beginning of your script:
+Assuming your *status.sh* file is located in the wmfs config folder, you may try to put this command at the very beginning of your script:
 
  `~/.config/wmfs/status.sh` 
-
 ```
 kill $(ps U $UID | awk '/wmfs/&&/status.sh/' | grep -vi "$$\|grep\|awk" | awk '{print $1}')
 
@@ -241,7 +240,6 @@ kill $(ps U $UID | awk '/wmfs/&&/status.sh/' | grep -vi "$$\|grep\|awk" | awk '{
 It will prevent it from running multiple times. To stop it once WMFS has terminated, you can use an appropriate loop:
 
  `~/.config/wmfs/status.sh` 
-
 ```
 while [ "$(ps U $UID | awk '{print $5}' | grep ^wmfs$)" != "" ] ; do
 	wmfs -s "Blah"

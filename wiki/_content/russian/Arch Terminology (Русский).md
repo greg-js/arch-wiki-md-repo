@@ -36,16 +36,16 @@
 Следует придерживаться следующего написания имени Arch:
 
 *   **Arch Linux**
-*   **Arch** (_Linux_ добавляем в уме)
+*   **Arch** (*Linux* добавляем в уме)
 *   **archlinux** (в стиле UNIX)
 
 Archlinux, ArchLinux, archLinux, aRcHlInUx и прочие вариации - долой.
 
-'Arch' (подразумевая "Arch Linux") произносится /ˈɑrtʃ/ (_арч_), как в словах "archer" или "arch-nemesis", но _не_ как в словах "ark" или "archangel" (_арк_).
+'Arch' (подразумевая "Arch Linux") произносится /ˈɑrtʃ/ (*арч*), как в словах "archer" или "arch-nemesis", но *не* как в словах "ark" или "archangel" (*арк*).
 
 ## ABS
 
-[Arch Build System](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)") (ABS, _Система Сборки для Arch_) нужна, чтобы:
+[Arch Build System](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)") (ABS, *Система Сборки для Arch*) нужна, чтобы:
 
 *   Создавать новые пакеты программ
 *   Редактировать существующие пакеты под свои нужды
@@ -104,7 +104,7 @@ AUR находится здесь [здесь](https://aur.archlinux.org).
 
 ## hwd
 
-[hwd](https://aur.archlinux.org/packages/hwd/) - это детектор "железа" вашего компьютера и генератор файла `xorg.conf`. _hwd_ может предоставить информацию об используемом процессоре, видеокарте и прочих устройствах.
+[hwd](https://aur.archlinux.org/packages/hwd/) - это детектор "железа" вашего компьютера и генератор файла `xorg.conf`. *hwd* может предоставить информацию об используемом процессоре, видеокарте и прочих устройствах.
 
 ## hwdetect
 

@@ -25,7 +25,7 @@ Come root, digitate il seguente comando da una console:
 
 ## Configurazione
 
-Per far si che il demone FAM sia automaticamente caricato all'avvio del sistema, deve essere aggiunto alla lista dei demoni in /etc/rc.conf. Come utente root aprite il file _/etc/rc.conf_ con il vostro editor preferito:
+Per far si che il demone FAM sia automaticamente caricato all'avvio del sistema, deve essere aggiunto alla lista dei demoni in /etc/rc.conf. Come utente root aprite il file */etc/rc.conf* con il vostro editor preferito:
 
 ```
 # nano /etc/rc.conf

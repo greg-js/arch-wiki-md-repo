@@ -36,7 +36,6 @@
 Показать доступные устройства ввода:
 
  `$ pacmd list-sources | grep -e device.string -e 'name:'` 
-
 ```
 name: <input>
  device.string = "hw:2"
@@ -46,7 +45,7 @@ name: <alsa_output.pci-0000_04_01.0.analog-stereo.monitor>
 name: <combined.monitor>
 ```
 
-Для постоянного хранения в файле _default.pa_
+Для постоянного хранения в файле *default.pa*
 
 Выбор OSS как устройство ввода
 
@@ -91,7 +90,6 @@ $ pacmd "set-default-source input"
 Чтобы выбрать альтернативынй источник звука как стандартный, вы можете получить список всех источников:
 
  `$ aplay -l | grep card` 
-
 ```
 card 0: CMI8768 [C-Media CMI8768], device 0: CMI8738-MC8 [C-Media PCI DAC/ADC]
 card 0: CMI8768 [C-Media CMI8768], device 1: CMI8738-MC8 [C-Media PCI 2nd DAC]
@@ -101,12 +99,11 @@ card 1: HDMI [HDA Intel HDMI], device 7: HDMI 1 [HDMI 1]
 card 1: HDMI [HDA Intel HDMI], device 8: HDMI 2 [HDMI 2]
 ```
 
-Чтобы выбрать _card 0, device 0_, измените `/etc/pulse/default.pa`, добавьте load-module module-alsa-sink device=hw:0,0
+Чтобы выбрать *card 0, device 0*, измените `/etc/pulse/default.pa`, добавьте load-module module-alsa-sink device=hw:0,0
 
 Определите правильный индекс нового источника:
 
  `$ pacmd list-sinks | grep -e 'name:' -e 'index'` 
-
 ```
   * index: 0
 	name: <alsa_output.pci-0000_04_01.0.analog-stereo>
@@ -159,14 +156,13 @@ card 0: Intel [HDA Intel], device 3: HDMI 0 [HDMI 0]
 Или использую команду `pacmd`:
 
  `$ pacmd list-sinks  | grep -e 'name:'  -e 'alsa.device ' -e 'alsa.subdevice '` 
-
 ```
 	name: <alsa_output.pci-0000_00_1b.0.analog-stereo>
 		alsa.subdevice = "0"
 		alsa.device = "0"
 ```
 
-Главное в файле конфигурации вроде этого - понять, что устройство, выбранное в 'pavucontrol' в _Configuration > Internal Audio_ - стандартное. Используйте _pavucontrol > Configuration_ и выберите HDMI в качестве профиля.
+Главное в файле конфигурации вроде этого - понять, что устройство, выбранное в 'pavucontrol' в *Configuration > Internal Audio* - стандартное. Используйте *pavucontrol > Configuration* и выберите HDMI в качестве профиля.
 
 Чтобы установить аналоговое утройство как вторичное устройство вывода, добавьте следующее в начало конфигурационного фала `/etc/pulse/default.pa`, перед тем, как начнётся загрузка модулей:
 
@@ -178,7 +174,7 @@ set-default-sink combined
 
 ```
 
-Перезапустите PulseAudio, запустите _pavucontrol_ и выберите пункт "Output Devices". Вы должны увидеть следующие настройки:
+Перезапустите PulseAudio, запустите *pavucontrol* и выберите пункт "Output Devices". Вы должны увидеть следующие настройки:
 
 1.  Internal Audio Digital Stereo (HDMI)
 2.  Internal Audio
@@ -261,7 +257,7 @@ set-default-sink combined
 
 ## Настройка объёмного звука
 
-У многих людей есть звукокавая карта с поддержкой объёмного зука, но спикеры у них всего на 2 канала, так что PulseAudio не может выставить звуковую настройку для объёмного звука по умолчанию.Чтобы включить все каналы, измените `/etc/pulse/daemon.conf`: раскомментируйте строку _default-sample-channels_ и выставьте значение **6** для **5.1** или **8** для **7.1**и т.д.
+У многих людей есть звукокавая карта с поддержкой объёмного зука, но спикеры у них всего на 2 канала, так что PulseAudio не может выставить звуковую настройку для объёмного звука по умолчанию.Чтобы включить все каналы, измените `/etc/pulse/daemon.conf`: раскомментируйте строку *default-sample-channels* и выставьте значение **6** для **5.1** или **8** для **7.1**и т.д.
 
 ```
 # Стандартное
@@ -349,7 +345,7 @@ load-module module-native-protocol-tcp
 
 Чтобы это работало, клиент и сервер должны разделять общий cookie. Убедитесь, что клиент и сервер разделяют один cookie файл в `~/.config/pulse/cookie`. Не важно, чей файл они используют (клиента/сервера), просто удоствоверьтесь, что это один и тот же файл.
 
-`**Заметка:** Если возникают проблемы с подключением, выполните на сервере _pacmd list-modules_`
+`**Заметка:** Если возникают проблемы с подключением, выполните на сервере *pacmd list-modules*`
 
 ### Поддержка TCP с анонимными клиентами
 
@@ -461,7 +457,7 @@ load-module module-jackdbus-detect
 
 Как описано на странице [Jack-DBUS Packaging](http://trac.jackaudio.org/wiki/JackDbusPackaging):
 
-_Автозапуск сервера реализован как вызов D-Bus, который автоматически запускает JACK D-Bus службу, в случае, если она уже запущена, он запускает JACK сервер._ Правильная воздействие с PulseAudio происходит, используя чере аудио карту,основаннуй на D-Bus механизме "acquire/release".Когда JACK сервер стартует, он просит D-Bus службу получить аудио карту и PulseAudio безоговорочно "отпустит" её. Когда JACK сервер останавливается, он "отпускает" аудио карту и она снова может быть подхвачена PulseAduio.
+*Автозапуск сервера реализован как вызов D-Bus, который автоматически запускает JACK D-Bus службу, в случае, если она уже запущена, он запускает JACK сервер.* Правильная воздействие с PulseAudio происходит, используя чере аудио карту,основаннуй на D-Bus механизме "acquire/release".Когда JACK сервер стартует, он просит D-Bus службу получить аудио карту и PulseAudio безоговорочно "отпустит" её. Когда JACK сервер останавливается, он "отпускает" аудио карту и она снова может быть подхвачена PulseAduio.
 
 `module-jackdbus-detect.so` динамически загружает и выгружает module-jack-sink и module-jack-source когда jackdbus стартует/останавливается.
 
@@ -614,7 +610,7 @@ load-module module-jack-sink
 
 **Note:** padevchooser в следующем примере устарел. Он заменён pasystray
 
-Следующий пример может быть использован и измененён как скрипт загрузки, который делает PulseAudio демона и загружает _padevchooser_ программу (опционално, его можно взять в AUR), которая называется `jack_startup`:
+Следующий пример может быть использован и измененён как скрипт загрузки, который делает PulseAudio демона и загружает *padevchooser* программу (опционално, его можно взять в AUR), которая называется `jack_startup`:
 
 ```
 #!/bin/bash
@@ -643,7 +639,7 @@ chmod +x jack_startup jack_shutdown
 
 ```
 
-затем, с загруженным QjackCtl, нажмите на кнопку _Setup_ и затем вкладку _Options_ и поставьте голочки: "Execute Script after Startup:" и "Execute Script on Shutdown:" и установите "use the ... button" или введите путь до скриптов (предпологается, что скрипты находятся в домашней директории) `~/jack_startup` и `~/jack_shutdown`, убедитесь что сохранили всё.
+затем, с загруженным QjackCtl, нажмите на кнопку *Setup* и затем вкладку *Options* и поставьте голочки: "Execute Script after Startup:" и "Execute Script on Shutdown:" и установите "use the ... button" или введите путь до скриптов (предпологается, что скрипты находятся в домашней директории) `~/jack_startup` и `~/jack_shutdown`, убедитесь что сохранили всё.
 
 ## PulseAudio через OSS
 
@@ -681,7 +677,6 @@ PulseAduio выбирет путь к сокету через XDG_RUNTIME_DIR, �
 Some users may prefer to manually start the PulseAudio server before running certain programs and then stop the PulseAudio server when they are finished. A simple way to accomplish this is to edit `/etc/pulse/client.conf` and change `autospawn = yes` to `autospawn = no`, and set `daemon-binary = /bin/true`. Make sure the two lines are uncommented as well.
 
  `/etc/pulse/client.conf` 
-
 ```
 autospawn = no
 daemon-binary = /bin/true 
@@ -740,16 +735,13 @@ Some people do not want to run PulseAudio all the time for various reasons. This
 This configuration tells native PA clients to autospawn the daemon when they need it, then the daemon is configured to autoexit as soon as all clients have disconnected. The daemon itself uses a plain simple static configuration that uses your configured `pcm.!default` ALSA devices and nothing more. No replacement of ALSA's default, no playing with mixer levels, nothing but record/playback. Also make sure [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) is **not** installed so standard ALSA clients don't default to pulse. `alsamixer` functions properly as well as any other ALSA clients. Also make sure common frameworks like Xine, Gstreamer and Phonon are configured to use ALSA: by default if they detect PulseAudio is installed they will try to use it before ALSA.
 
  `/etc/pulse/daemon.conf` 
-
 ```
 # Replace these with the proper values
 exit-idle-time = 0 # Exit as soon as unneeded
 flat-volumes = yes # Prevent messing with the master volume
 
 ```
-
  `/etc/pulse/client.conf` 
-
 ```
 # Replace these with the proper values
 
@@ -759,9 +751,7 @@ flat-volumes = yes # Prevent messing with the master volume
 autospawn = yes
 
 ```
-
  `/etc/pulse/default.pa` 
-
 ```
 # Replace the *entire* content of this file with these few lines and
 # read the comments

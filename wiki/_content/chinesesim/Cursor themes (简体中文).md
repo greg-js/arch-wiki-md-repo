@@ -32,7 +32,7 @@
 
 ### 手动安装
 
-如果光标主题不在软件仓库或 AUR 中，可以手动进行安装. 下面这些网站提供了下载，下载后需要放到_icons_ 目录：
+如果光标主题不在软件仓库或 AUR 中，可以手动进行安装. 下面这些网站提供了下载，下载后需要放到*icons* 目录：
 
 *   [GNOME Look](http://gnome-look.org/index.php?xcontentmode=36)
 *   [KDE Look](http://kde-look.org/index.php?xcontentmode=36)
@@ -46,7 +46,7 @@ $ bsdtar xvf foobar-cursor-theme.tar.gz --directory ~/.icons
 
 ```
 
-**注意:** _系统级安装_ 使用 `/usr/share/icons` 目录，不建议直接将文件放到这个目录。建议创建一个 [软件包](/index.php/PKGBUILD "PKGBUILD") 以便将文件放到 pacman 的数据库。
+**注意:** *系统级安装* 使用 `/usr/share/icons` 目录，不建议直接将文件放到这个目录。建议创建一个 [软件包](/index.php/PKGBUILD "PKGBUILD") 以便将文件放到 pacman 的数据库。
 
 通过下面目录查看已经安装的光标主题：
 
@@ -73,7 +73,7 @@ See [LXDE#Cursors](/index.php/LXDE#Cursors "LXDE").
 
 ```
 [icon theme] 
-Inherits=_theme-name_
+Inherits=*theme-name*
 
 ```
 
@@ -88,7 +88,7 @@ Inherits=_theme-name_
 要在 [GNOME](/index.php/GNOME "GNOME") 中修改主题，可以使用 [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) 或通过下面命令直接修改：
 
 ```
-gsettings set org.gnome.desktop.interface cursor-theme _theme-name_
+gsettings set org.gnome.desktop.interface cursor-theme *theme-name*
 
 ```
 
@@ -135,10 +135,9 @@ $ XCURSOR_THEME=SomeThemeName xclock
 [GDM](/index.php/GDM "GDM") 不遵守 [GNOME](/index.php/GNOME "GNOME") 光标主题设置，也不遵照XDG 规则。要修改 GDM 光标主题，创建下面内容：
 
  `/etc/dconf/db/gdm.d/10-cursor-settings` 
-
 ```
 [org/gnome/desktop/interface]
-cursor-theme='_theme-name'_
+cursor-theme='*theme-name'*
 
 ```
 
@@ -156,7 +155,7 @@ cursor-theme='_theme-name'_
 如果主题中缺少文件，程序可能使用默认的主题，可以通过增加链接的方式解决：
 
 ```
-$ cd ~/.icons/_theme_/cursors/
+$ cd ~/.icons/*theme*/cursors/
 $ ln -s right_ptr arrow
 $ ln -s cross crosshair
 $ ln -s right_ptr draft_large
@@ -178,7 +177,7 @@ $ ln -s left_ptr_watch 08e8e1c95fe2fc01f976f1e063a24ccd
 也可以用这个方式删除不需要的文件， 例如删除 "watch" 光标：
 
 ```
-$ cd ~/.icons/_theme_/cursors/
+$ cd ~/.icons/*theme*/cursors/
 $ rm watch left_ptr_watch
 $ ln -s left_ptr watch
 $ ln -s left_ptr left_ptr_watch

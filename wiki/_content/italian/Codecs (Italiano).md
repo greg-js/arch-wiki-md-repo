@@ -1,6 +1,6 @@
 Da [wikipedia](https://en.wikipedia.org/wiki/it:Codec "wikipedia:it:Codec"):
 
-	_In elettronica, informatica e telecomunicazioni un codec è un programma o un dispositivo che si occupa di codificare e/o decodificare digitalmente un segnale analogico._
+	*In elettronica, informatica e telecomunicazioni un codec è un programma o un dispositivo che si occupa di codificare e/o decodificare digitalmente un segnale analogico.*
 
 In generale, i codec sono utilizzati dalle applicazioni multimediali per codificare e/o decodificare un flusso audio o video. Per poter decodificare un flusso, gli utenti devono avere installato il codec appropriato.
 
@@ -147,15 +147,15 @@ Non è sempre necesario installare un codec specifico se si installa un lettore 
 
 Da [http://www.gstreamer.net/](http://www.gstreamer.net/):
 
-	_[GStreamer](/index.php/GStreamer "GStreamer") è una piattaforma software altamente modulare utilizzata per creare applicazioni multimediali. Le applicazioni supportate vanno da semplici riproduttori Ogg/Vorbis, flussi audio/video a mixaggio audio complessi ed elaborazione di video-editing non lineare._
+	*[GStreamer](/index.php/GStreamer "GStreamer") è una piattaforma software altamente modulare utilizzata per creare applicazioni multimediali. Le applicazioni supportate vanno da semplici riproduttori Ogg/Vorbis, flussi audio/video a mixaggio audio complessi ed elaborazione di video-editing non lineare.*
 
-Più semplicemente, GStreamer e un _backend_ o _framework_ utilizzato da molti lettori multimediali. Si veda la pagina [GStreamer](/index.php/GStreamer "GStreamer") per ulteriori informazioni.
+Più semplicemente, GStreamer e un *backend* o *framework* utilizzato da molti lettori multimediali. Si veda la pagina [GStreamer](/index.php/GStreamer "GStreamer") per ulteriori informazioni.
 
 ### xine
 
 Da [http://www.xine-project.org/about](http://www.xine-project.org/about):
 
-	_xine è un libero (licenza GPL) motore di riproduzione multimediale ad alte prestazioni, portatile e riutilizzabile. xine è di per sé una libreria condivisa facile da usare, ed anche una potente API che viene utilizzata da molte applicazioni per la riproduzione video e nella finalità di elaborazione video._
+	*xine è un libero (licenza GPL) motore di riproduzione multimediale ad alte prestazioni, portatile e riutilizzabile. xine è di per sé una libreria condivisa facile da usare, ed anche una potente API che viene utilizzata da molte applicazioni per la riproduzione video e nella finalità di elaborazione video.*
 
 In alternativa a GStreamer, molti media player possono essere configurati per utilizzare il backend xine fornito dal pacchetto [xine-lib](https://www.archlinux.org/packages/?name=xine-lib).
 

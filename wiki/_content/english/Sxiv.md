@@ -17,10 +17,9 @@
 
 sxiv supports external key events. First you have to press `Ctrl-x` to send the next key to the external key-handler. The external key-handler requires an executable file `~/.config/sxiv/exec/key-handler` and passes the key combination pressed via argument as well the names of the currently marked images as stdin (or, if none are marked, the currently selected image).
 
-In this example, we will add the bindings `Ctrl+d` to execute `mv _filename_ ~/.trash`, `Ctrl+c` to copy the current images' names to the clipboard with [xclip](https://www.archlinux.org/packages/?name=xclip), and `Ctrl+w` to set the current wallpaper with [nitrogen](/index.php/Nitrogen "Nitrogen"). Obviously, some commands may only make sense with a single image as an argument, so you may want to revise this to handle cases when those are passed more than one.
+In this example, we will add the bindings `Ctrl+d` to execute `mv *filename* ~/.trash`, `Ctrl+c` to copy the current images' names to the clipboard with [xclip](https://www.archlinux.org/packages/?name=xclip), and `Ctrl+w` to set the current wallpaper with [nitrogen](/index.php/Nitrogen "Nitrogen"). Obviously, some commands may only make sense with a single image as an argument, so you may want to revise this to handle cases when those are passed more than one.
 
  `~/.config/sxiv/exec/key-handler` 
-
 ```
 #!/bin/sh
 while read file
@@ -62,7 +61,7 @@ $ mkdir ~/.trash
 Place [this script](http://git.savannah.gnu.org/cgit/ranger.git/tree/doc/examples/rifle_sxiv.sh) in `/usr/local/bin` and call it like this:
 
 ```
-$ _scriptname_ a_single_image.jpg
+$ *scriptname* a_single_image.jpg
 
 ```
 
@@ -75,7 +74,6 @@ As indicated in the comments of the script, it may be used to have this behavior
 Place the following executable script in `~/.config/sxiv/exec/image-info` and make sure that you have the [exiv2](https://www.archlinux.org/packages/?name=exiv2) package installed:
 
  `~/.config/sxiv/exec/image-info` 
-
 ```
 #!/bin/sh
 

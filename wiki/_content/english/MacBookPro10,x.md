@@ -174,7 +174,7 @@ setpci -v -H1 -s 00:01.00 BRIDGE_CONTROL=0
 
 #### Switching to/from GPUs with gpu-switch
 
-You can switch the display output to and from the discrete or integrated intel GPU from _within_ Arch Linux with [gpu-switch](https://aur.archlinux.org/packages/gpu-switch/) if you are using the open-source `xf86-video-nouveau` and `xf86-video-intel` drivers.
+You can switch the display output to and from the discrete or integrated intel GPU from *within* Arch Linux with [gpu-switch](https://aur.archlinux.org/packages/gpu-switch/) if you are using the open-source `xf86-video-nouveau` and `xf86-video-intel` drivers.
 
 **Installation**
 
@@ -294,7 +294,6 @@ To disable the trackpad when typing, install the [dispad-git](https://aur.archli
 *   Using vgaswitcheroo to switch between iGPU / dGPU on the 15" version will result in a black screen. The system is still running and can be rebooted safely.
     *   The dGPU/nouveau is active on boot. As of 3.10.3-1, the only known way to switch to the iGPU/intel is to force this through gfxCardStatus v2.2.1 on MacOS (later versions of gfxCardStatus do *not* work.) This setting will survive reboots. To revert it, you must reboot into MacOS *twice* and/or reset the SMC (shutdown and press shift+control+alt+power at the same time. Press power again to boot.)
     *   Another way to force iGPU/intel is to add following commands into one of the `menuentry` in `grub.cfg`,
-
         ```
         outb 0x7c2 1
         outb 0x7d4 0x28
@@ -385,7 +384,8 @@ To disable the trackpad when typing, install the [dispad-git](https://aur.archli
 
         	//switchto(IGD);
         	set_discrete_state(STATE_OFF);
-        	//printf("Discrete state: 0x%X\n", get_discrete_state());
+        	//printf("Discrete state: 0x%X
+", get_discrete_state());
 
         	return 0;
         }

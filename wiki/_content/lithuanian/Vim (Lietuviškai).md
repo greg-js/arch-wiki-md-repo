@@ -75,7 +75,7 @@ Norint peršokti vieną žodį, paspauskite klavišą **w**. **W** peršoks ten,
 
 Norint peršokti vieną sakinį, naudojamas **(** simbolis. **(** darys tą patį, tik į kitą atgal. Norint peršokti visą paragrafą, naudojamas **{**, **}** darys viską tą patį tik atgal. (**Pastaba**: čia naudojami skliaustai yra komandos ( kaip **w** arba **e** ) - ne tos pačios, kurios yra naudojamos tekste ).
 
-Norint perstumti ekraną į antraštę yra naudojamas **H**. **M _perstums ekraną iki vidurio, o_ **_L **iki apačios.** gg **perkels į bylos pradžią,** G_ perkels į pabaigą. **<ctrl>D** leis peržiūrėti bylą pagal puslapius.
+Norint perstumti ekraną į antraštę yra naudojamas **H**. **M *perstums ekraną iki vidurio, o* ***L **iki apačios.** gg **perkels į bylos pradžią,** G* perkels į pabaigą. **<ctrl>D** leis peržiūrėti bylą pagal puslapius.
 
 ### Komandų pakartojimas
 

@@ -20,7 +20,6 @@ Install the [honeyd](https://aur.archlinux.org/packages/honeyd/) package from th
 Create these files:
 
  `/root/default.conf` 
-
 ```
 create host
 set host default tcp action reset
@@ -29,9 +28,7 @@ add host tcp port 23 "/tmp/hello.sh"
 bind 10.0.0.1 host
 
 ```
-
  `/tmp/hello.sh` 
-
 ```
 #!/bin/sh
 echo "Led Zeppelin, great band or greatest band?"

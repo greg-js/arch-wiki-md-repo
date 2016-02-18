@@ -41,7 +41,6 @@ Dzen follows the [X Logical Font Description](/index.php/X_Logical_Font_Descript
 The following example displays the average load values in red and the current time in the default dzen foreground colour:
 
  `~/.conkyrc` 
-
 ```
  background no
  out_to_console yes
@@ -54,9 +53,7 @@ The following example displays the average load values in red and the current ti
  ^fg(\#ff0000)${loadavg 1 2 3} ^fg()${time %a %b %d %I:%M%P}
 
 ```
-
  `~/bin/dzconky` 
-
 ```
  #!/bin/sh
 
@@ -71,12 +68,11 @@ Simply execute `dzconky` in your startup scripts.
 
 ### Clickable areas and popups
 
-dzen2 allows you to define clickable areas using `^ca(_button_, _command_)Text^ca()`. You can use this property to create popups giving arbitrary information, as seen in various screenshot gifs like [this](http://i.minus.com/ibzmjKMXKk7IbH.gif).
+dzen2 allows you to define clickable areas using `^ca(*button*, *command*)Text^ca()`. You can use this property to create popups giving arbitrary information, as seen in various screenshot gifs like [this](http://i.minus.com/ibzmjKMXKk7IbH.gif).
 
 A simple example can be:
 
  `sysinfo_popup.sh` 
-
 ```
  #/bin/bash
 
@@ -109,7 +105,7 @@ A simple example can be:
 Save this script and make it executable and then use the `^ca()` attribute in your conkyrc (or the script that you pipe to dzen2) to trigger it.
 
 ```
-`^ca(1,_<path to your script>_)Sysinfo^ca()`
+`^ca(1,*<path to your script>*)Sysinfo^ca()`
 
 ```
 
@@ -122,7 +118,6 @@ This will bind the script to mouse button 1 and execute it when it is clicked ov
 As of SVN revision 241 (development), dzen2 has optional support for Xft. To enable Xft support, build dzen2 with these options by editing `config.mk`:
 
  `config.mk` 
-
 ```
  ## Option: With Xinerama and XPM and XFT
  LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 -lXinerama -lXpm $(pkg-config --libs xft)

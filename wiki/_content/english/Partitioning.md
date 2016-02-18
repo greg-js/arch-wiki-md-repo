@@ -1,4 +1,4 @@
-_Partitioning_ a hard drive allows one to logically divide the available space into sections that can be accessed independently of one another.
+*Partitioning* a hard drive allows one to logically divide the available space into sections that can be accessed independently of one another.
 
 An entire hard drive may be allocated to a single partition, or one may divide the available storage space across multiple partitions. A number of scenarios require creating multiple partitions: dual- or multi-booting, for example, or maintaining a [swap](/index.php/Swap "Swap") partition. In other cases, partitioning is used as a means of logically separating data, such as creating separate partitions for audio and video files. Common partitioning schemes are discussed in detail below.
 
@@ -45,7 +45,7 @@ There are 3 types of partitions:
 
 **Primary** partitions can be bootable and are limited to four partitions per disk or RAID volume. If a partitioning scheme requires more than four partitions, an **extended** partition containing **logical** partitions is used. Extended partitions can be thought of as containers for logical partitions. A hard disk can contain no more than one extended partition. The extended partition is also counted as a primary partition so if the disk has an extended partition, only three additional primary partitions are possible (i.e. three primary partitions and one extended partition). The number of logical partitions residing in an extended partition is unlimited. A system that dual boots with Windows will require that Windows reside in a primary partition.
 
-The customary numbering scheme is to create primary partitions _sda1_ through _sda3_ followed by an extended partition _sda4_. The logical partitions on _sda4_ are numbered _sda5_, _sda6_, etc.
+The customary numbering scheme is to create primary partitions *sda1* through *sda3* followed by an extended partition *sda4*. The logical partitions on *sda4* are numbered *sda5*, *sda6*, etc.
 
 See also [Wikipedia:Master boot record](https://en.wikipedia.org/wiki/Master_boot_record "wikipedia:Master boot record").
 
@@ -63,7 +63,7 @@ See also [Wikipedia:Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs"
 
 ### Choosing between GPT and MBR
 
-[GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") (GPT) is an alternative, contemporary, partitioning style; it is intended to replace the old [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") (MBR) system. GPT has several advantages over MBR which has quirks dating back to MS-DOS times. With the recent developments to the formatting tools _fdisk_ (MBR) and _gdisk_ (GPT), it is equally easy to get good dependability and performance for GPT or MBR.
+[GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") (GPT) is an alternative, contemporary, partitioning style; it is intended to replace the old [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") (MBR) system. GPT has several advantages over MBR which has quirks dating back to MS-DOS times. With the recent developments to the formatting tools *fdisk* (MBR) and *gdisk* (GPT), it is equally easy to get good dependability and performance for GPT or MBR.
 
 One should consider these to choose between GPT and MBR:
 
@@ -128,11 +128,11 @@ It exists to make it possible to mount `/usr` as read-only. Everything that hist
 
 #### /tmp
 
-This is already a separate partition by default, by virtue of being mounted as _tmpfs_ by systemd.
+This is already a separate partition by default, by virtue of being mounted as *tmpfs* by systemd.
 
 #### Swap
 
-A [swap](/index.php/Swap "Swap") partition provides memory that can be used as virtual RAM. A [swap file](/index.php/Swap#Swap_file "Swap") should be considered too, as they have almost no performance overhead compared to a partition but are much easier to resize as needed. A swap partition can _potentially_ be shared between operating systems, but not if hibernation is used.
+A [swap](/index.php/Swap "Swap") partition provides memory that can be used as virtual RAM. A [swap file](/index.php/Swap#Swap_file "Swap") should be considered too, as they have almost no performance overhead compared to a partition but are much easier to resize as needed. A swap partition can *potentially* be shared between operating systems, but not if hibernation is used.
 
 #### How big should my partitions be?
 
@@ -212,17 +212,17 @@ The size of the partitions depends on personal preference, but the following inf
 
 ## Partition alignment
 
-Proper partition alignment is essential for optimal performance and longevity. This is due to the [block](https://en.wikipedia.org/wiki/Block_(data_storage) "wikipedia:Block (data storage)") nature of every I/O operation on the hardware level as well as file system level. The key to alignment is partitioning to (at least) the given _block size_, which depends on the used hardware. If the partitions are not aligned to begin at multiples of the _block size_, aligning the file system is a pointless exercise because everything is skewed by the start offset of the partition.
+Proper partition alignment is essential for optimal performance and longevity. This is due to the [block](https://en.wikipedia.org/wiki/Block_(data_storage) nature of every I/O operation on the hardware level as well as file system level. The key to alignment is partitioning to (at least) the given *block size*, which depends on the used hardware. If the partitions are not aligned to begin at multiples of the *block size*, aligning the file system is a pointless exercise because everything is skewed by the start offset of the partition.
 
 ### Hard disk drives
 
-Historically, hard drives were addressed by indicating the _cylinder_, the _head_, and the _sector_ at which data was to be read or written (also known as [CHS addressing](https://en.wikipedia.org/wiki/Cylinder-head-sector "wikipedia:Cylinder-head-sector")). These represented the radial position (cylinder), the axial position (drive head: platter and side), and the azimuth (sector) of the data respectively. Nowadays, with [logical block addressing](https://en.wikipedia.org/wiki/Logical_block_addressing "wikipedia:Logical block addressing"), the entire hard drive is addressed as one continuous stream of data and the term [sector](https://en.wikipedia.org/wiki/Disk_sector "wikipedia:Disk sector") designates the smallest addressable unit.
+Historically, hard drives were addressed by indicating the *cylinder*, the *head*, and the *sector* at which data was to be read or written (also known as [CHS addressing](https://en.wikipedia.org/wiki/Cylinder-head-sector "wikipedia:Cylinder-head-sector")). These represented the radial position (cylinder), the axial position (drive head: platter and side), and the azimuth (sector) of the data respectively. Nowadays, with [logical block addressing](https://en.wikipedia.org/wiki/Logical_block_addressing "wikipedia:Logical block addressing"), the entire hard drive is addressed as one continuous stream of data and the term [sector](https://en.wikipedia.org/wiki/Disk_sector "wikipedia:Disk sector") designates the smallest addressable unit.
 
-The standard _sector size_ is 512B, but modern high-capacity hard drives use greater value, commonly 4KiB. Using values greater than 512B is referred to as the [Advanced Format](/index.php/Advanced_Format "Advanced Format").
+The standard *sector size* is 512B, but modern high-capacity hard drives use greater value, commonly 4KiB. Using values greater than 512B is referred to as the [Advanced Format](/index.php/Advanced_Format "Advanced Format").
 
 ### Solid state drives
 
-Solid state drives are based on [flash memory](https://en.wikipedia.org/wiki/Flash_memory "wikipedia:Flash memory"), and thus differ significantly from hard drives. While reading remains possible in a random access fashion, erasure (hence rewriting and random writing) is possible only by [whole blocks](https://en.wikipedia.org/wiki/Flash_memory#Block_erasure "wikipedia:Flash memory"). Additionally, the _erase block size_ (EBS) are significantly greater than regular _block size_, for example 128KiB vs. 4KiB, so it is necessary to align to multiples of EBS. [NVMe](/index.php/NVMe "NVMe") drives should be aligned to 4KiB.
+Solid state drives are based on [flash memory](https://en.wikipedia.org/wiki/Flash_memory "wikipedia:Flash memory"), and thus differ significantly from hard drives. While reading remains possible in a random access fashion, erasure (hence rewriting and random writing) is possible only by [whole blocks](https://en.wikipedia.org/wiki/Flash_memory#Block_erasure "wikipedia:Flash memory"). Additionally, the *erase block size* (EBS) are significantly greater than regular *block size*, for example 128KiB vs. 4KiB, so it is necessary to align to multiples of EBS. [NVMe](/index.php/NVMe "NVMe") drives should be aligned to 4KiB.
 
 ### Partitioning tools
 

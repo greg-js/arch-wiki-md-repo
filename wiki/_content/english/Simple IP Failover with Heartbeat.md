@@ -1,4 +1,4 @@
-_This article illustrates a method of implementing VERY simple active/passive IP failover using heartbeat. You are reccomended to familiarize yourself with the concepts of High Availability Clustering in Linux before proceeding to implement these instructions in a live/production environment.(SEE: [Linux-HA](http://www.linux-ha.org/wiki/Main_Page))_
+*This article illustrates a method of implementing VERY simple active/passive IP failover using heartbeat. You are reccomended to familiarize yourself with the concepts of High Availability Clustering in Linux before proceeding to implement these instructions in a live/production environment.(SEE: [Linux-HA](http://www.linux-ha.org/wiki/Main_Page))*
 
 ## Methods
 

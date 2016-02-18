@@ -60,7 +60,7 @@
 
 ## Starting Xfce
 
-Choose _Xfce Session_ from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice, or add `exec startxfce4` to [Xinitrc](/index.php/Xinitrc "Xinitrc").
+Choose *Xfce Session* from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice, or add `exec startxfce4` to [Xinitrc](/index.php/Xinitrc "Xinitrc").
 
 **Note:** Do not call the `xfce4-session` executable directly; `startxfce4` is the correct command which, in turn, calls the former when appropriate.
 
@@ -70,7 +70,7 @@ Xfce stores configuration options in [Xfconf](http://docs.xfce.org/xfce/xfconf/s
 
 *   In the main menu, select [Settings](http://docs.xfce.org/xfce/xfce4-settings/start) and the category you want to customize. Categories are programs usually located in `/usr/bin/xfce4-*` and `/usr/bin/xfdesktop-settings`.
 *   `xfce4-settings-editor` can see and modify all settings. Options modified here will take effect immediately. Use `xfconf-query` to change settings from the commandline; see [the documentation](http://docs.xfce.org/xfce/xfconf/xfconf-query) for details.
-*   Settings are stored in XML files in `~/.config/xfce4/xfconf/xfce-perchannel-xml/` which can be edited by hand. However, changes made here will _not_ take effect immediately.
+*   Settings are stored in XML files in `~/.config/xfce4/xfconf/xfce-perchannel-xml/` which can be edited by hand. However, changes made here will *not* take effect immediately.
 
 ### Menu
 
@@ -189,19 +189,19 @@ $ xkill -id "$(xprop -root -notype | sed -n '/^_NET_ACTIVE_WINDOW/ s/^.*# *\|\,.
 
 ```
 
-To add the shortcut, use _Settings > Keyboard_ or an application like [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys).
+To add the shortcut, use *Settings > Keyboard* or an application like [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys).
 
 ### Session
 
 #### Startup applications
 
-To launch custom applications when Xfce starts up, click the _Applications Menu > Settings > Settings Manager_ and then choose the _Session and Startup_ option and click the tab _Application Autostart_. You will see a list of programs that get launched on startup. To add an entry, click the _Add_ button and fill out the form, specifying the path to an executable you want to run.
+To launch custom applications when Xfce starts up, click the *Applications Menu > Settings > Settings Manager* and then choose the *Session and Startup* option and click the tab *Application Autostart*. You will see a list of programs that get launched on startup. To add an entry, click the *Add* button and fill out the form, specifying the path to an executable you want to run.
 
 Alternatively, add the commands you wish to run (including setting environment variables) to [xinitrc](/index.php/Xinitrc "Xinitrc") (or [xprofile](/index.php/Xprofile "Xprofile") when a [display manager](/index.php/Display_manager "Display manager") is being used).
 
 ##### Delay application startup
 
-Sometimes it might be useful to delay the startup of an application. Specifying a command such as `sleep 3 && command` under _Application Autostart_ does not work. As a workaround, one can use the following syntax instead:
+Sometimes it might be useful to delay the startup of an application. Specifying a command such as `sleep 3 && command` under *Application Autostart* does not work. As a workaround, one can use the following syntax instead:
 
 ```
 sh -c "sleep 3 && command"
@@ -210,13 +210,13 @@ sh -c "sleep 3 && command"
 
 #### Lock the screen
 
-To lock an Xfce4 session through the _xflock4_ script one of [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver), [slock](https://www.archlinux.org/packages/?name=slock) or [xlockmore](https://www.archlinux.org/packages/?name=xlockmore) packages needs to be installed. If you are using the Whisker Menu and your screen locker is not specified in _xflock4_, you can change the lock command using _Properties > Behavior > Lock Screen_.
+To lock an Xfce4 session through the *xflock4* script one of [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver), [slock](https://www.archlinux.org/packages/?name=slock) or [xlockmore](https://www.archlinux.org/packages/?name=xlockmore) packages needs to be installed. If you are using the Whisker Menu and your screen locker is not specified in *xflock4*, you can change the lock command using *Properties > Behavior > Lock Screen*.
 
-Bear in mind that if you want Xfce Power Manager to lock the screen on events such as lid close or suspend, your screen locker must be specified in _xflock4_. If it is not, you can create a local copy of _xflock4_, for example `/usr/local/bin/xflock4`, which specifies another screen locker of choice.
+Bear in mind that if you want Xfce Power Manager to lock the screen on events such as lid close or suspend, your screen locker must be specified in *xflock4*. If it is not, you can create a local copy of *xflock4*, for example `/usr/local/bin/xflock4`, which specifies another screen locker of choice.
 
 See [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") for a comprehensive list of screen lockers.
 
-**Tip:** The [light-locker](https://www.archlinux.org/packages/?name=light-locker) session locker integrates with [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager). If light-locker is installed, a _Security_ tab is added to the power manager settings and the existing _Lock screen when system is going for sleep_ setting is relocated under the _Security_ tab.
+**Tip:** The [light-locker](https://www.archlinux.org/packages/?name=light-locker) session locker integrates with [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager). If light-locker is installed, a *Security* tab is added to the power manager settings and the existing *Lock screen when system is going for sleep* setting is relocated under the *Security* tab.
 
 #### User switching
 
@@ -236,7 +236,7 @@ $ xfconf-query -t bool -c xfce4-session -p /general/SaveOnExit -s false
 
 ```
 
-Then navigate to _Applications_ -> _Settings_ -> _Session and Startup_ -> _Sessions_ and click the _Clear saved sessions_ button.
+Then navigate to *Applications* -> *Settings* -> *Session and Startup* -> *Sessions* and click the *Clear saved sessions* button.
 
 **Tip:** If the command above does not change the setting persistently, use the following command instead: `xfconf-query -c xfce4-session -p /general/SaveOnExit -n -t bool -s false`
 
@@ -266,7 +266,7 @@ The files specifying the default window manager are found in the following locat
 *   `~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml` - per user
 *   `/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml` - systemwide
 
-The default window manager for the user can be set easily using _xfconf-query_:
+The default window manager for the user can be set easily using *xfconf-query*:
 
 ```
 $ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa **wm_name**
@@ -282,13 +282,13 @@ $ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string 
 
 If you need more command line options, simply add more `-t string` and `-s **--wm-option**` arguments to the command.
 
-If you want to change the default window manager systemwide, edit the file specified above manually, changing _xfwm4_ to the preferred window manager and adding more `<value type="string" value="**--wm-option**"/>` lines for extra command line options if needed.
+If you want to change the default window manager systemwide, edit the file specified above manually, changing *xfwm4* to the preferred window manager and adding more `<value type="string" value="**--wm-option**"/>` lines for extra command line options if needed.
 
 You can also change the window manager by autostarting `**wm_name** --replace` using the autostart facility or by running `**wm_name** --replace &` in a terminal and making sure the session is saved on logout. Be aware though that this method does not truly change the default manager, it merely replaces it at login. Note that if you are using the autostart facility, you should disable saved sessions as this could lead to the new window manager being started twice after the default window manager.
 
 ### Theming
 
-XFCE themes are available at [xfce-look.org](http://www.xfce-look.org). _Xfwm_ themes are stored in `/usr/share/themes/xfce4`, and set in _Settings > Window Manager_. [GTK+](/index.php/GTK%2B "GTK+") themes are set in _Settings > Appearance_.
+XFCE themes are available at [xfce-look.org](http://www.xfce-look.org). *Xfwm* themes are stored in `/usr/share/themes/xfce4`, and set in *Settings > Window Manager*. [GTK+](/index.php/GTK%2B "GTK+") themes are set in *Settings > Appearance*.
 
 To achieve a uniform look for all applications, see [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
@@ -310,7 +310,7 @@ If you did need to change the default soundcard, logout to ensure that the chang
 
 In some cases (when using [PulseAudio](/index.php/PulseAudio "PulseAudio") or [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/) for instance) it might be necessary to change the default sound card in Xfce4 Mixer in order for volume control to work as expected. [[1]](http://grumbel.blogspot.co.uk/2011/10/fixing-volume-control-in-xfce4.html)
 
-To change the default sound card, open _xfce4-settings-editor_ and navigate to **xfce4-mixer** and check the entries under **sound-cards**. Locate the correct entry for the card you are using and then replace the values of **sound-card** and **active-card** with the entry. If you are using PulseAudio then the entry will likely be similar to the following: **PlaybackInternalAudioAnalogStereoPulseAudioMixer**. Then logout for the changes to take effect.
+To change the default sound card, open *xfce4-settings-editor* and navigate to **xfce4-mixer** and check the entries under **sound-cards**. Locate the correct entry for the card you are using and then replace the values of **sound-card** and **active-card** with the entry. If you are using PulseAudio then the entry will likely be similar to the following: **PlaybackInternalAudioAnalogStereoPulseAudioMixer**. Then logout for the changes to take effect.
 
 #### Keyboard volume buttons
 
@@ -330,7 +330,7 @@ If you are not using an applet or daemon that controls the volume keys, you can 
 
 ### Keyboard Shortcuts
 
-Keyboard shortcuts are defined in two places: _Settings > Window Manager > Keyboard_, and _Settings > Keyboard > Shortcuts_.
+Keyboard shortcuts are defined in two places: *Settings > Window Manager > Keyboard*, and *Settings > Keyboard > Shortcuts*.
 
 ### Polkit Authentication Agent
 
@@ -346,7 +346,7 @@ Some programs that are commonly used with Xfce will control monitor blanking and
 
 	Xfce Power Manager
 
-Xfce Power Manager will control blanking and DPMS settings. These settings can be configured by running _xfce4-power-manager-settings_ and clicking the _Display_ tab. Note that unticking the _Handle display power management_ option means that the Power Manager will disable DPMS - it does not mean that the Power Manager will relinquish control of DPMS. Also note that it will not disable screen blanking. To disable both blanking and DPMS, right click on the power manager system tray icon or left click on the panel applet and make sure that the option labelled _Presentation mode_ is ticked.
+Xfce Power Manager will control blanking and DPMS settings. These settings can be configured by running *xfce4-power-manager-settings* and clicking the *Display* tab. Note that unticking the *Handle display power management* option means that the Power Manager will disable DPMS - it does not mean that the Power Manager will relinquish control of DPMS. Also note that it will not disable screen blanking. To disable both blanking and DPMS, right click on the power manager system tray icon or left click on the panel applet and make sure that the option labelled *Presentation mode* is ticked.
 
 	XScreenSaver
 
@@ -354,7 +354,7 @@ See [XScreenSaver#DPMS and blanking settings](/index.php/XScreenSaver#DPMS_and_b
 
 	xset
 
-If neither of the above applications are running, then blanking and DPMS settings can be controlled using the _xset_ command, see [DPMS#Modifying DPMS and screensaver settings using xset](/index.php/DPMS#Modifying_DPMS_and_screensaver_settings_using_xset "DPMS").
+If neither of the above applications are running, then blanking and DPMS settings can be controlled using the *xset* command, see [DPMS#Modifying DPMS and screensaver settings using xset](/index.php/DPMS#Modifying_DPMS_and_screensaver_settings_using_xset "DPMS").
 
 ## Tips and tricks
 
@@ -366,7 +366,7 @@ See [Udisks#Hide selected partitions](/index.php/Udisks#Hide_selected_partitions
 
 Xfce has its own screenshot tool, [xfce4-screenshooter](https://www.archlinux.org/packages/?name=xfce4-screenshooter). It is part of the [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/) group.
 
-Go to _Applications > Settings > Keyboard_, _Application Shortcuts_. Add the `xfce4-screenshooter -f` (or `-w` for the active window) command to use the `Print` key in order to take fullscreen screenshots. See screenshooter's man page for other optional arguments.
+Go to *Applications > Settings > Keyboard*, *Application Shortcuts*. Add the `xfce4-screenshooter -f` (or `-w` for the active window) command to use the `Print` key in order to take fullscreen screenshots. See screenshooter's man page for other optional arguments.
 
 Alternatively, an independent screenshot program like [scrot](/index.php/Taking_a_screenshot#scrot "Taking a screenshot") can be used.
 
@@ -375,7 +375,6 @@ Alternatively, an independent screenshot program like [scrot](/index.php/Taking_
 The xfce terminal binds F1 and F11 to help and fullscreen, respectively, which can make using programs like htop difficult. To disable those shortcuts, create or edit its configuration file, then log out and log back in. F10 can disabled in the Preferences menu.
 
  `~/.config/xfce4/terminal/accels.scm` 
-
 ```
 (gtk_accel_path "<Actions>/terminal-window/fullscreen" "")
 (gtk_accel_path "<Actions>/terminal-window/contents" "")
@@ -444,7 +443,7 @@ Xfce has no native support for colour management. [[4]](https://bugzilla.xfce.or
 
 ### Multiple monitors
 
-As of [xfce4-settings](https://www.archlinux.org/packages/?name=xfce4-settings) version 4.11.4, Xfce has support for multiple monitors. Settings can be configured in the _Applications_ -> _Settings_ -> _Display_ dialog. For more information, see the [display](http://docs.xfce.org/xfce/xfce4-settings/display) article from the Xfce documentation.
+As of [xfce4-settings](https://www.archlinux.org/packages/?name=xfce4-settings) version 4.11.4, Xfce has support for multiple monitors. Settings can be configured in the *Applications* -> *Settings* -> *Display* dialog. For more information, see the [display](http://docs.xfce.org/xfce/xfce4-settings/display) article from the Xfce documentation.
 
 ### SSH agents
 
@@ -462,17 +461,17 @@ xfconf-query -c xfce4-session -p /startup/ssh-agent/type -n -t string -s ssh-age
 
 ```
 
-To use [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), simply tick the checkbox _Launch GNOME services on startup_ in the _Advanced_ tab of _Session Manager_ in Xfce's settings. This will also disable gpg-agent and ssh-agent.
+To use [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), simply tick the checkbox *Launch GNOME services on startup* in the *Advanced* tab of *Session Manager* in Xfce's settings. This will also disable gpg-agent and ssh-agent.
 
 Source: [http://docs.xfce.org/xfce/xfce4-session/advanced](http://docs.xfce.org/xfce/xfce4-session/advanced)
 
 ### Scroll a background window without shifting focus on it
 
-Go to _Main Menu > Settings > Window Manager Tweaks > Accessibility_ tab. Uncheck _Raise windows when any mouse button is pressed_.
+Go to *Main Menu > Settings > Window Manager Tweaks > Accessibility* tab. Uncheck *Raise windows when any mouse button is pressed*.
 
 ### Mouse button modifier
 
-By default, the mouse button modifier in Xfce is set to `Alt`. This can be changed with _xfconf-query_. For instance, the following command will set the `Super` key as the mouse button modifier:
+By default, the mouse button modifier in Xfce is set to `Alt`. This can be changed with *xfconf-query*. For instance, the following command will set the `Super` key as the mouse button modifier:
 
 ```
 $ xfconf-query -c xfwm4 -p /general/easy_click -n -t string -s "Super"
@@ -504,11 +503,11 @@ $ xfconf-query -c xsettings -p /Net/IconThemeName
 Then set the following variable:
 
 ```
-$ icontheme=/usr/share/icons/_theme-name_
+$ icontheme=/usr/share/icons/*theme-name*
 
 ```
 
-where _theme-name_ is the name of the current icon theme.
+where *theme-name* is the name of the current icon theme.
 
 Then create symbolic links from the current icon theme into the icon theme providing the icons (this example assumes the icons are being provided by the [elementary-xfce-icons](https://aur.archlinux.org/packages/elementary-xfce-icons/) theme.)
 
@@ -543,7 +542,7 @@ means that the Firefox icon will be located on the 4th row of the leftmost colum
 
 ### GTK themes not working with multiple monitors
 
-Some configuration tools may corrupt displays.xml, which results in GTK themes under _Applications Menu > Settings > Appearance_ ceasing to work. To fix the issue, delete `~/.config/xfce4/xfconf/xfce-perchannel-xml/displays.xml` and reconfigure your screens.
+Some configuration tools may corrupt displays.xml, which results in GTK themes under *Applications Menu > Settings > Appearance* ceasing to work. To fix the issue, delete `~/.config/xfce4/xfconf/xfce-perchannel-xml/displays.xml` and reconfigure your screens.
 
 ### Icons do not appear in right-click menus
 
@@ -559,7 +558,7 @@ $ gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons tru
 
 ### Keyboard settings are not saved in xkb-plugin
 
-There is a bug in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) _0.5.4.1-1_ which causes it to lose keyboard, layout switching and compose key settings. [[5]](https://bugzilla.xfce.org/show_bug.cgi?id=10226) As a workaround, enable _Use system defaults_ in `xfce4-keyboard-settings`, then reconfigure _xfce4-xkb-plugin_.
+There is a bug in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) *0.5.4.1-1* which causes it to lose keyboard, layout switching and compose key settings. [[5]](https://bugzilla.xfce.org/show_bug.cgi?id=10226) As a workaround, enable *Use system defaults* in `xfce4-keyboard-settings`, then reconfigure *xfce4-xkb-plugin*.
 
 ### NVIDIA and xfce4-sensors-plugin
 
@@ -571,9 +570,9 @@ Most applications rely on [xdg-open](/index.php/Xdg-open "Xdg-open") for opening
 
 In order for xdg-open and xdg-settings to detect and integrate with the Xfce desktop environment correctly, you need to [install](/index.php/Install "Install") the [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) package.
 
-If you do not do that, your preferred applications preferences (set by exo-preferred-applications) will not be obeyed. Installing the package and allowing _xdg-open_ to detect that you are running Xfce makes it forward all calls to _exo-open_ instead, which correctly uses all your preferred applications preferences.
+If you do not do that, your preferred applications preferences (set by exo-preferred-applications) will not be obeyed. Installing the package and allowing *xdg-open* to detect that you are running Xfce makes it forward all calls to *exo-open* instead, which correctly uses all your preferred applications preferences.
 
-To make sure xdg-open integration is working correctly, ask _xdg-settings_ for the default web browser and see what the result is:
+To make sure xdg-open integration is working correctly, ask *xdg-settings* for the default web browser and see what the result is:
 
 ```
 # xdg-settings get default-web-browser

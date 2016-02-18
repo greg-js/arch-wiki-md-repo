@@ -16,17 +16,17 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
 
 ## Package naming
 
-For Python 3 libraries, use `python-_modulename_`. For applications, use the program name. In either case, the package name should be entirely lowercase.
+For Python 3 libraries, use `python-*modulename*`. For applications, use the program name. In either case, the package name should be entirely lowercase.
 
-Python 2 libraries should instead be named `python2-_modulename_`.
+Python 2 libraries should instead be named `python2-*modulename*`.
 
 ### Versioned packages
 
-If you need to add a versioned package then use `python-_modulename_-_version_`, e.g. `python-colorama-0.2.5`. So python dependency `colorama==0.2.5` will turn into `python-colorama-0.2.5` Arch package.
+If you need to add a versioned package then use `python-*modulename*-*version*`, e.g. `python-colorama-0.2.5`. So python dependency `colorama==0.2.5` will turn into `python-colorama-0.2.5` Arch package.
 
 ## File placement
 
-Most Python packages are installed with the [distutils](http://docs.python.org/library/distutils.html) system using **setup.py**, which installs files under `/usr/lib/python_<python version>_/site-packages/_pkgname_` directory.
+Most Python packages are installed with the [distutils](http://docs.python.org/library/distutils.html) system using **setup.py**, which installs files under `/usr/lib/python*<python version>*/site-packages/*pkgname*` directory.
 
 ## Notes
 

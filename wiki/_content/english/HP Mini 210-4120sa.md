@@ -102,7 +102,6 @@ Bluetooth works out of the box, just follow instructions at [Bluetooth](/index.p
 The Synaptics driver can be installed as described [here](/index.php/Touchpad_Synaptics "Touchpad Synaptics"). Vertical and horizontal two finger scrolling work, as well as palm detection, and can be enabled in the synaptics .conf file:
 
  `/etc/X11/xorg.conf.d/10-synaptics.conf` 
-
 ```
  Section "InputClass"
        Identifier "touchpad"

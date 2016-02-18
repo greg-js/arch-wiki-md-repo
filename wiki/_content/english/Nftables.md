@@ -2,7 +2,7 @@
 
 You can also visit the [official nftables wiki page](http://wiki.nftables.org) for more information.
 
-The first release is available in Linux 3.13, which is in the _core_ repository ([linux](https://www.archlinux.org/packages/?name=linux)), and nftables (the user-space components) is available in the _extra_ repository ([nftables](https://www.archlinux.org/packages/?name=nftables)), and on the [AUR](/index.php/AUR "AUR") in package [nftables-git](https://aur.archlinux.org/packages/nftables-git/).
+The first release is available in Linux 3.13, which is in the *core* repository ([linux](https://www.archlinux.org/packages/?name=linux)), and nftables (the user-space components) is available in the *extra* repository ([nftables](https://www.archlinux.org/packages/?name=nftables)), and on the [AUR](/index.php/AUR "AUR") in package [nftables-git](https://aur.archlinux.org/packages/nftables-git/).
 
 ## Contents
 
@@ -126,8 +126,8 @@ You can list the current tables in a family with the `nft list` command.
 You can list a full table definition by specifying a table name:
 
 ```
-# nft list table _foo_
-# nft list table _ip6 foo_
+# nft list table *foo*
+# nft list table *ip6 foo*
 
 ```
 
@@ -136,8 +136,8 @@ You can list a full table definition by specifying a table name:
 Tables can be added via two commands — one just being a shortcut for the other. Here is an example of how to add an ip table called foo and an ip6 table called foo:
 
 ```
-# nft add table _foo_
-# nft table _ip6 foo_
+# nft add table *foo*
+# nft table *ip6 foo*
 
 ```
 
@@ -148,8 +148,8 @@ You can have two tables with the same name as long as they are in different fami
 Tables can only be deleted if there are no chains in them.
 
 ```
-# nft delete table _foo_
-# nft delete table _ip6 foo_
+# nft delete table *foo*
+# nft delete table *ip6 foo*
 
 ```
 
@@ -162,8 +162,8 @@ The purpose of chains is to hold rules. Unlike chains in iptables, there are no 
 The `nft list table foo` command will list all the chains in the foo table. You can also list rules from an individual chain.
 
 ```
-# nft list chain _foo_ _bar_
-# nft list chain _ip6 foo bar_
+# nft list chain *foo* *bar*
+# nft list chain *ip6 foo bar*
 
 ```
 
@@ -174,8 +174,8 @@ These commands will list the `bar` chains in the ip and ip6 `foo` tables.
 Chains can be added when a table is created in a file definition or one at time via the `nft add chain` command.
 
 ```
-# nft add chain _foo_ _bar_
-# nft add chain _ip6 foo bar_
+# nft add chain *foo* *bar*
+# nft add chain *ip6 foo bar*
 
 ```
 
@@ -223,8 +223,8 @@ Priorities tell nftables which chains packets should pass through first. They ar
 Chains can only be deleted if there are no rules in them.
 
 ```
-# nft delete chain _foo bar_
-# nft delete chain _ip6 foo bar_
+# nft delete chain *foo bar*
+# nft delete chain *ip6 foo bar*
 
 ```
 
@@ -239,8 +239,8 @@ The purpose of rules is to identify packets (match) and carry out tasks (jump). 
 You can list the current rules in a table with the `nft list` command, using the same method as listing a table. You can also list rules from an individual chain.
 
 ```
-# nft list chain _foo bar_
-# nft list chain _ip6 foo bar_
+# nft list chain *foo bar*
+# nft list chain *ip6 foo bar*
 
 ```
 
@@ -356,7 +356,6 @@ Individual rules can only be deleted by their handles. The `nft --handle list` c
 The following determines the handle for a rule and then deletes it. The `--number` argument is useful for viewing some numeric output, like unresolved IP addresses.
 
  `# nft --handle --numeric list chain filter input` 
-
 ```
 table ip fltrTable {
      chain input {
@@ -411,7 +410,6 @@ Now you can edit /tmp/nftables and apply your changes with:
 File definitions can be used by the `nft -f` command, which acts like the `iptables-restore` command. However, unlike `iptables-restore`, this command does not flush out your existing ruleset, to do so you have to prepend the flush command.
 
  `/etc/nftables/filter.rules` 
-
 ```
 flush table ip filter
 table ip filter {
@@ -435,7 +433,7 @@ To export your rules (like `iptables-save`):
 
 ## Getting Started
 
-The below example shows _nft_ commands to configure a basic **IPv4** only firewall. If you want to filter both IPv4 **and** IPv6 you should look at the other examples in `/usr/share/nftables` or just start with the default provided in `/etc/nftables.conf` which already works with IPv4/IPv6.
+The below example shows *nft* commands to configure a basic **IPv4** only firewall. If you want to filter both IPv4 **and** IPv6 you should look at the other examples in `/usr/share/nftables` or just start with the default provided in `/etc/nftables.conf` which already works with IPv4/IPv6.
 
 To get an [iptables](/index.php/Iptables "Iptables")-like chain set up, you will first need to use the provided IPv4 filter file:
 
@@ -477,7 +475,6 @@ Delete all rules in a chain:
 ### Simple IP/IPv6 Firewall
 
  `firewall.rules` 
-
 ```
 # A simple firewall
 
@@ -537,7 +534,6 @@ table ip6 firewall {
 ### Limit rate IP/IPv6 Firewall
 
  `firewall.2.rules` 
-
 ```
 table firewall {
     chain incoming {
@@ -587,7 +583,6 @@ table ip6 firewall {
 When using jumps in config file, it is necessary to define the target chain first. Otherwise one could end up with `Error: Could not process rule: No such file or directory`.
 
  `jump.rules` 
-
 ```
 table inet filter {
     chain web {

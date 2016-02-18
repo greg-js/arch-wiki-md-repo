@@ -97,7 +97,7 @@ write: Broken pipe
 
 ### Keyboard layout via xorg.conf
 
-With kernel 3.2 the Unifying Receiver got its own kernel module _hid_logitech_dj_ which does not work flawlessly together with keyboard layout setting set via [xorg.conf](/index.php/Xorg#Keyboard_settings "Xorg"). A temporary workaround is to use [xorg-setxkbmap](https://www.archlinux.org/packages/?name=xorg-setxkbmap) and set the layout manually. For example for a German layout with no deadkeys one has to execute:
+With kernel 3.2 the Unifying Receiver got its own kernel module *hid_logitech_dj* which does not work flawlessly together with keyboard layout setting set via [xorg.conf](/index.php/Xorg#Keyboard_settings "Xorg"). A temporary workaround is to use [xorg-setxkbmap](https://www.archlinux.org/packages/?name=xorg-setxkbmap) and set the layout manually. For example for a German layout with no deadkeys one has to execute:
 
 ```
 $ setxkbmap -layout de -variant nodeadkeys

@@ -27,11 +27,11 @@ The installation process needs to retrieve packages from a remote repository, th
 
 ### Set the keyboard layout
 
-The default keyboard layout is US. Alternative keyboard layouts can be loaded with `loadkeys _keymap_file_`: keymap files can be found in `/usr/share/kbd/keymaps/` (path and file extension can be ommitted).
+The default keyboard layout is US. Alternative keyboard layouts can be loaded with `loadkeys *keymap_file*`: keymap files can be found in `/usr/share/kbd/keymaps/` (path and file extension can be ommitted).
 
 ### Connect to the Internet
 
-Internet service via DHCP discovery is enabled on boot for supported wired devices; read more at [Network configuration](/index.php/Network_configuration "Network configuration"). For supported wireless devices run `wifi-menu` to set up the network; read more with [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). If needing a static IP or network management tools, stop the DHCP discovery service with `systemctl stop dhcpcd@_eth0_.service`, and read [Netctl](/index.php/Netctl "Netctl").
+Internet service via DHCP discovery is enabled on boot for supported wired devices; read more at [Network configuration](/index.php/Network_configuration "Network configuration"). For supported wireless devices run `wifi-menu` to set up the network; read more with [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). If needing a static IP or network management tools, stop the DHCP discovery service with `systemctl stop dhcpcd@*eth0*.service`, and read [Netctl](/index.php/Netctl "Netctl").
 
 ### Update the system clock
 
@@ -47,13 +47,13 @@ See [File systems](/index.php/File_systems#Create_a_filesystem "File systems") a
 
 ### Mount the partitions
 
-Mount the root partition on `/mnt`. After that, create directories for and mount any other partitions (`/mnt/boot`, `/mnt/home`, ...) and activate your _swap_ partition if you want them to be detected later by _genfstab_.
+Mount the root partition on `/mnt`. After that, create directories for and mount any other partitions (`/mnt/boot`, `/mnt/home`, ...) and activate your *swap* partition if you want them to be detected later by *genfstab*.
 
 ## Installation
 
 ### Select the mirrors
 
-Edit `/etc/pacman.d/mirrorlist` and select a download mirror(s). Regional mirrors usually work best; however, other criteria may be necessary to discern, read more on [Mirrors](/index.php/Mirrors "Mirrors"). This copy of the `mirrorlist` file will later be copied on the new system by _pacstrap_, so it is worth getting it right.
+Edit `/etc/pacman.d/mirrorlist` and select a download mirror(s). Regional mirrors usually work best; however, other criteria may be necessary to discern, read more on [Mirrors](/index.php/Mirrors "Mirrors"). This copy of the `mirrorlist` file will later be copied on the new system by *pacstrap*, so it is worth getting it right.
 
 ### Install the base packages
 
@@ -85,14 +85,14 @@ Generate an [fstab](/index.php/Fstab "Fstab") file (use `-U` or `-L` to define b
 Set the [hostname](/index.php/Hostname "Hostname"):
 
 ```
-# echo _computer_name_ > /etc/hostname
+# echo *computer_name* > /etc/hostname
 
 ```
 
 Set the [time zone](/index.php/Time_zone "Time zone"):
 
 ```
-# ln -s /usr/share/zoneinfo/_zone_/_subzone_ /etc/localtime
+# ln -s /usr/share/zoneinfo/*zone*/*subzone* /etc/localtime
 
 ```
 
@@ -106,7 +106,7 @@ Uncomment the needed [locales](/index.php/Locale "Locale") in `/etc/locale.gen`,
 Set locale preferences in `/etc/locale.conf` and possibly `$HOME/.config/locale.conf`:
 
 ```
-# echo LANG=_your_locale_ > /etc/locale.conf
+# echo LANG=*your_locale* > /etc/locale.conf
 
 ```
 
@@ -138,7 +138,7 @@ Exit the chroot environment by typing `exit` or pressing `Ctrl+D`.
 
 Optionally manually unmount all the partitions with `umount -R /mnt`: this allows noticing any "busy" partitions, and finding the cause with [fuser](https://en.wikipedia.org/wiki/fuser_(Unix) "wikipedia:fuser (Unix)").
 
-Finally, restart the machine by typing `reboot`: any partitions still mounted will be automatically unmounted by _systemd_. Remember to remove the installation media and then login into the new system with the root account.
+Finally, restart the machine by typing `reboot`: any partitions still mounted will be automatically unmounted by *systemd*. Remember to remove the installation media and then login into the new system with the root account.
 
 ## Post-installation
 

@@ -34,7 +34,7 @@ $ unison-gtk2
 
 ### Manual
 
-Alternatively, manually create a profile in `~/.unison` and add the following lines to the default configuration file, `~/.unison/_profilename_.prf`.
+Alternatively, manually create a profile in `~/.unison` and add the following lines to the default configuration file, `~/.unison/*profilename*.prf`.
 
 Define the root directory to be synchronized.
 
@@ -86,7 +86,7 @@ ignore=Name *.tmp
 Once your profile is set up, you can start syncing:
 
 ```
-$ unison _profilename_
+$ unison *profilename*
 
 ```
 
@@ -101,9 +101,9 @@ and select the profile. Unison has a nice interface where you can view the progr
 
 ## Version incompatibility
 
-For Unison to function properly, the same version _must_ be installed on all clients. If, for example, one computer has version 2.40 and the other has 2.32, they will not be able to sync with each other. This applies to _all_ computers that share a directory to be synchronized across your machines.
+For Unison to function properly, the same version *must* be installed on all clients. If, for example, one computer has version 2.40 and the other has 2.32, they will not be able to sync with each other. This applies to *all* computers that share a directory to be synchronized across your machines.
 
-The Unison binary/ies also _must_ be compiled against the same version of OCaml, see [https://groups.yahoo.com/neo/groups/unison-users/conversations/topics/11439](https://groups.yahoo.com/neo/groups/unison-users/conversations/topics/11439) . This makes Unison virtualy unusable on heterogeneous networks.
+The Unison binary/ies also *must* be compiled against the same version of OCaml, see [https://groups.yahoo.com/neo/groups/unison-users/conversations/topics/11439](https://groups.yahoo.com/neo/groups/unison-users/conversations/topics/11439) . This makes Unison virtualy unusable on heterogeneous networks.
 
 Due to the staggered releases with varying Linux distros, you might be stuck with older versions of Unison, while Arch Linux has the latest upstream version in the Extra repository. There are unofficial [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for versions 2.32 ([unison-232](https://aur.archlinux.org/packages/unison-232/)) and 2.27 ([unison-227](https://aur.archlinux.org/packages/unison-227/)) on the [AUR](/index.php/AUR "AUR") that allow users of multiple distros to continue using Unison with their existing systems.
 
@@ -175,6 +175,6 @@ When syncing configuration files which would vary (e.g., due to endemic applicat
 *   [Wikipedia:Unison (file synchronizer)](https://en.wikipedia.org/wiki/Unison_(file_synchronizer) "wikipedia:Unison (file synchronizer)")
 *   [Official website](http://www.cis.upenn.edu/~bcpierce/unison/)
 *   [Yahoo! user group](http://tech.groups.yahoo.com/group/unison-users)
-*   _[Liberation through data replication](http://www.pgbovine.net/unison_guide.htm)_ by Philip Guo
-*   _[Setting up Unison for your mom](http://www.pgbovine.net/unison-for-your-mom.htm)_ by Philip Guo
-*   _[Replication using Unison](http://twiki.org/cgi-bin/view/Codev/ReplicationUsingUnison)_ on TWiki
+*   *[Liberation through data replication](http://www.pgbovine.net/unison_guide.htm)* by Philip Guo
+*   *[Setting up Unison for your mom](http://www.pgbovine.net/unison-for-your-mom.htm)* by Philip Guo
+*   *[Replication using Unison](http://twiki.org/cgi-bin/view/Codev/ReplicationUsingUnison)* on TWiki

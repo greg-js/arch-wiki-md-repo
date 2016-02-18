@@ -71,7 +71,6 @@ done
 1.  If installing from Ubuntu 9.10's LiveCD (perhaps other versions), you will need more than just the pacman files (shared libs) to use pacman at all. Use Lucky's script described in [[this thread](https://bbs.archlinux.org/viewtopic.php?pid=759166)] to get/install them for you!
 
 2.  Alternatively, you can instead turn these tarballs into packages for your distribution with the [alien](http://kitenet.net/~joey/code/alien/) tool. See the man page of the tool for instructions. The packages created that way may be installed into your host distribution using the usual package management tools available there. This approach offers the best integration into the host linux environment. For a debian package based system this is done with the following commands:
-
     ```
     cd /tmp/archlinux
     alien -d pacman-3.3.3-1-i686.pkg.tar.gz
@@ -101,7 +100,7 @@ If you're installing from a LiveCD, and you have a system with a low amount of c
 
 ### 準備分割給 Arch 使用
 
-You don't _have to_ install Arch on a separate partition. You could instead build up a root filesystem in a normal directory, and then create a master tarball from it, or transfer it across the network.
+You don't *have to* install Arch on a separate partition. You could instead build up a root filesystem in a normal directory, and then create a master tarball from it, or transfer it across the network.
 
 However, most users will want to be installing Arch onto its own partition.
 

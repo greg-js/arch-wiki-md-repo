@@ -4,7 +4,7 @@
 | [Arch User Repository (Lietuviškai)](/index.php?title=Arch_User_Repository_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "Arch User Repository (Lietuviškai) (page does not exist)") |
 | [Help:Editing (Lietuviškai)](/index.php?title=Help:Editing_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "Help:Editing (Lietuviškai) (page does not exist)") |
 
-Biologiškai, [mutualism](https://en.wikipedia.org/wiki/Mutualism_(biology) "wikipedia:Mutualism (biology)") yra bendradarbiavimas tarp dviejų organizmų su tarpusavio nauda. Šitas principas taikomas inicijuoti ir motyvuoti Arch bendruomenės narius, norinčius prisidėti ir padėti jų mėgstamos GNU/Linux distribucijos. Toks prisidėjimas naudingas ne tik bendruomenės nariui, bet ir kitiems draugams Archeriams kaip ir visiems [nemokamos ir atviros programinės įrangos](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software") fanams.
+Biologiškai, [mutualism](https://en.wikipedia.org/wiki/Mutualism_(biology) yra bendradarbiavimas tarp dviejų organizmų su tarpusavio nauda. Šitas principas taikomas inicijuoti ir motyvuoti Arch bendruomenės narius, norinčius prisidėti ir padėti jų mėgstamos GNU/Linux distribucijos. Toks prisidėjimas naudingas ne tik bendruomenės nariui, bet ir kitiems draugams Archeriams kaip ir visiems [nemokamos ir atviros programinės įrangos](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software") fanams.
 
 ## Contents
 
@@ -149,9 +149,9 @@ Arch turi gyvybiškai svarbią ir aktyvią bendruomenę, kuri susideda iš progr
 
 ## Kaip programuotojas..
 
-_Šitas įrašas yra paremtas [šia](https://bbs.archlinux.org/viewtopic.php?id=24503) tema Arch forume_
+*Šitas įrašas yra paremtas [šia](https://bbs.archlinux.org/viewtopic.php?id=24503) tema Arch forume*
 
-Pirma, įsiminkite, kad pagrindinė jūsų darbo prie Arch motyvacija yra teikti pagalbą bendruomenei, o ne tiesiog būti _"Arch programuotoju"_. Antra, jūs taip pat esate bendruomenės dalis; teikti pagalba kitiems, reiškia teikti pagalba ir sau.
+Pirma, įsiminkite, kad pagrindinė jūsų darbo prie Arch motyvacija yra teikti pagalbą bendruomenei, o ne tiesiog būti *"Arch programuotoju"*. Antra, jūs taip pat esate bendruomenės dalis; teikti pagalba kitiems, reiškia teikti pagalba ir sau.
 
 ### Ką aš galiu padaryti
 

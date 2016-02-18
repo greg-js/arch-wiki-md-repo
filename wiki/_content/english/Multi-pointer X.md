@@ -37,10 +37,10 @@ When an application grabs input (e.g. a fullscreen game), it grabs a master devi
 
 More pointers can be added with `xinput` CLI utility. Here is how to do it:
 
-Create a new pair of master devices named "_name_ pointer" and "_name_ keyboard":
+Create a new pair of master devices named "*name* pointer" and "*name* keyboard":
 
 ```
-xinput create-master _[name]_
+xinput create-master *[name]*
 
 ```
 
@@ -54,7 +54,7 @@ xinput list
 Reattach slave devices to newly created master devices:
 
 ```
-xinput reattach _[slave device name or id]_ _[master device name or id]_
+xinput reattach *[slave device name or id]* *[master device name or id]*
 
 ```
 

@@ -1,6 +1,6 @@
 From [Home - LibreOffice](http://www.libreoffice.org/):
 
-	_LibreOffice is the free power-packed Open Source personal productivity suite for Windows, Macintosh and Linux, that gives you six feature-rich applications for all your document production and data processing needs: Writer, Calc, Impress, Draw, Math and Base. [Support](http://www.libreoffice.org/get-help/) and [documentation](http://www.libreoffice.org/get-help/documentation/) is free from our large, dedicated community of users, contributors and developers. [You, too, can also get involved!](http://www.libreoffice.org/get-involved/)_
+	*LibreOffice is the free power-packed Open Source personal productivity suite for Windows, Macintosh and Linux, that gives you six feature-rich applications for all your document production and data processing needs: Writer, Calc, Impress, Draw, Math and Base. [Support](http://www.libreoffice.org/get-help/) and [documentation](http://www.libreoffice.org/get-help/documentation/) is free from our large, dedicated community of users, contributors and developers. [You, too, can also get involved!](http://www.libreoffice.org/get-involved/)*
 
 ## Contents
 
@@ -64,13 +64,13 @@ To force the use of a certain VCL UI interface, use one of the `SAL_USE_VCLPLUGI
 
 **Note:** The new GTK3 UI is experimental and will only be available if you enable "experimental features" in LibreOffice main configuration dialog.
 
-However, if it looks like it is using Windows 95/98 icons, go to _Tools > Options..._ in the menus (which presents the Options Dialog), then select _LibreOffice > Accessibility_ and uncheck "Automatically detect high-contrast mode of operating system".
+However, if it looks like it is using Windows 95/98 icons, go to *Tools > Options...* in the menus (which presents the Options Dialog), then select *LibreOffice > Accessibility* and uncheck "Automatically detect high-contrast mode of operating system".
 
-If that does not work immediately, you may need to change the icon set that is in use; this is also in the Options Dialog, under _LibreOffice > View_ with two pop-up boxes for "Icon size and style" (the latter pop-up box should be changed to something other than "High-contrast").
+If that does not work immediately, you may need to change the icon set that is in use; this is also in the Options Dialog, under *LibreOffice > View* with two pop-up boxes for "Icon size and style" (the latter pop-up box should be changed to something other than "High-contrast").
 
 ### Firefox themes
 
-LibreOffice 4.x series is able to use Firefox themes. Enter LibreOffice options and choose _Personalization > Select Theme_, then paste the URL of your favourite one. A convenient button in the dialog box lets you open the browser.
+LibreOffice 4.x series is able to use Firefox themes. Enter LibreOffice options and choose *Personalization > Select Theme*, then paste the URL of your favourite one. A convenient button in the dialog box lets you open the browser.
 
 Themes can be found on [Mozilla's theme repository](https://addons.mozilla.org/en-US/firefox/themes/).
 
@@ -93,7 +93,7 @@ For more extensions, check the [AUR](/index.php/AUR "AUR"), the built-in LibreOf
 
 ### Spell checking
 
-For spell checking, please make sure [hunspell](https://www.archlinux.org/packages/?name=hunspell) is properly installed; this should be the case for both still and fresh LibreOffice versions. Then install a language dictionary for hunspell like [hunspell-en](https://www.archlinux.org/packages/?name=hunspell-en) for English, [hunspell-de](https://www.archlinux.org/packages/?name=hunspell-de) for German, etc. Then enable the Writing aids by selecting the check-box in _Tools -> Options -> Language Settings -> Writing Aids -> Hunspell SpellChecker_.
+For spell checking, please make sure [hunspell](https://www.archlinux.org/packages/?name=hunspell) is properly installed; this should be the case for both still and fresh LibreOffice versions. Then install a language dictionary for hunspell like [hunspell-en](https://www.archlinux.org/packages/?name=hunspell-en) for English, [hunspell-de](https://www.archlinux.org/packages/?name=hunspell-de) for German, etc. Then enable the Writing aids by selecting the check-box in *Tools -> Options -> Language Settings -> Writing Aids -> Hunspell SpellChecker*.
 
 	Finnish
 
@@ -136,14 +136,14 @@ The default path for macros in Arch Linux is different from most Linux distribut
 
 ## Speed up LibreOffice
 
-Some settings may improve LibreOffice's loading time and responsiveness. However, some also increase RAM usage, so use them carefully. They can all be accessed under _Tools > Options_.
+Some settings may improve LibreOffice's loading time and responsiveness. However, some also increase RAM usage, so use them carefully. They can all be accessed under *Tools > Options*.
 
-*   Under _Memory_:
+*   Under *Memory*:
     *   Reduce the number of Undo steps to a figure lower than 100, to something like 20 or 30 steps
-    *   Under _Graphics cache_, set Use for LibreOffice to 128 MB (up from the original 20 MB)
-    *   Set _Memory per object_ to 20 MB (up from the default 5 MB).
-    *   If LibreOffice is used often, check _Enable systray Quickstarter_
-*   Under _Advanced_, uncheck _Use a Java runtime environment_
+    *   Under *Graphics cache*, set Use for LibreOffice to 128 MB (up from the original 20 MB)
+    *   Set *Memory per object* to 20 MB (up from the default 5 MB).
+    *   If LibreOffice is used often, check *Enable systray Quickstarter*
+*   Under *Advanced*, uncheck *Use a Java runtime environment*
 
 **Note:** For a list of functionality written in Java only, see: [https://wiki.documentfoundation.org/Development/Java](https://wiki.documentfoundation.org/Development/Java).
 
@@ -151,7 +151,7 @@ Some settings may improve LibreOffice's loading time and responsiveness. However
 
 ### Font substitution
 
-These settings can be changed in the LibreOffice options. From the drop-down menu, select _Tools > Options > LibreOffice > Fonts_. Check the box that says _Apply Replacement Table_. Type `Andale Sans UI` in the font box and choose your desired font for the _Replace with_ option. When done, click the _checkmark_. Then choose the _Always_ and _Screen only_ options in the box below. Click OK. You will then need to go to _Tools > Options > LibreOffice > View_, and uncheck "Use system font for user interface". If you use a non-antialised font, such as Arial, you will also need to uncheck "Screen font antialiasing" before menu fonts render correctly.
+These settings can be changed in the LibreOffice options. From the drop-down menu, select *Tools > Options > LibreOffice > Fonts*. Check the box that says *Apply Replacement Table*. Type `Andale Sans UI` in the font box and choose your desired font for the *Replace with* option. When done, click the *checkmark*. Then choose the *Always* and *Screen only* options in the box below. Click OK. You will then need to go to *Tools > Options > LibreOffice > View*, and uncheck "Use system font for user interface". If you use a non-antialised font, such as Arial, you will also need to uncheck "Screen font antialiasing" before menu fonts render correctly.
 
 ### Anti-aliasing
 
@@ -206,7 +206,7 @@ cp "$1" "${f}.ppt" && libreoffice "${f}.ppt" && rm -f "${f}.ppt"
 
 ### Application Error (not starting)
 
-When using a different GTK theme than _Adwaita_, LibreOffice may fail to start:
+When using a different GTK theme than *Adwaita*, LibreOffice may fail to start:
 
 ```
 (soffice:2148): GLib-GObject-CRITICAL **: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed

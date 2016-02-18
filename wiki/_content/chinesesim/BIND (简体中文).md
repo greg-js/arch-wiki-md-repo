@@ -27,7 +27,7 @@
 
 BIND 的默认配置即为缓存 DNS 服务器，可以直接使用。
 
-你可以编辑 `/etc/named.conf` 并且在 _options_ 中加上下面的这一行，来只允许来自 localhost 的查询。
+你可以编辑 `/etc/named.conf` 并且在 *options* 中加上下面的这一行，来只允许来自 localhost 的查询。
 
 ```
 listen-on { 127.0.0.1; };

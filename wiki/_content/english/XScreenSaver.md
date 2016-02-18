@@ -28,13 +28,13 @@ For an Arch Linux branded experience, install the [xscreensaver-arch-logo](https
 
 ## Configuration
 
-Most options are configured on a user-by-user basis by running _xscreensaver-demo_. _xscreensaver-demo_ writes the chosen configuration to `~/.xscreensaver`, discarding any manual modifications to the file. Global options are defined in `/usr/share/X11/app-defaults/XScreenSaver`.
+Most options are configured on a user-by-user basis by running *xscreensaver-demo*. *xscreensaver-demo* writes the chosen configuration to `~/.xscreensaver`, discarding any manual modifications to the file. Global options are defined in `/usr/share/X11/app-defaults/XScreenSaver`.
 
 Since at least XScreenSaver 5.22, there is another way to edit XScreenSaver's user configuration, using [Xresources](/index.php/Xresources "Xresources"). This includes theming support. See [[1]](https://gist.github.com/anonymous/682d8daf5631b588e12e) for the version 5.22 defaults.
 
 ### DPMS and blanking settings
 
-XScreenSaver manages screen blanking and display energy saving ([DPMS](/index.php/DPMS "DPMS")) independently of X itself and overrides it. To configure the timings for blanking, standby, display poweroff and such, use _xscreensaver-demo_ or edit the configuration file manually, e.g. `~/.xscreensaver`:
+XScreenSaver manages screen blanking and display energy saving ([DPMS](/index.php/DPMS "DPMS")) independently of X itself and overrides it. To configure the timings for blanking, standby, display poweroff and such, use *xscreensaver-demo* or edit the configuration file manually, e.g. `~/.xscreensaver`:
 
 ```
 timeout:	1:00:00
@@ -53,9 +53,9 @@ dpmsOff:	4:00:00
 
 ```
 
-DPMS and screen blanking can be disabled by starting _xscreensaver-demo_ and, for the _Mode_ setting, choosing _Disable Screen Saver_.
+DPMS and screen blanking can be disabled by starting *xscreensaver-demo* and, for the *Mode* setting, choosing *Disable Screen Saver*.
 
-**Note:** If _Lock Screen After_ in _xscreensaver-demo_ is ticked and set to 0 minutes, the screen will be locked immediately upon blanking. If _Power Manager Enabled_ is unticked, DPMS is disabled; it does not mean that XScreenSaver will relinquish control of DPMS settings.
+**Note:** If *Lock Screen After* in *xscreensaver-demo* is ticked and set to 0 minutes, the screen will be locked immediately upon blanking. If *Power Manager Enabled* is unticked, DPMS is disabled; it does not mean that XScreenSaver will relinquish control of DPMS settings.
 
 ## Usage
 
@@ -78,9 +78,9 @@ See [Power management#xss-lock](/index.php/Power_management#xss-lock "Power mana
 
 **Warning:** When switching users using a display manager such as GDM or LightDM, XScreenSaver will not lock the original session - it can be accessed without a password simply by switching TTY's to the session in question. If you are using LightDM, as a workaround, install [light-locker](https://www.archlinux.org/packages/?name=light-locker) and run it alongside XscreenSaver. Alternatively, use a different screen locking program altogether - see [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
 
-By default, XScreenSaver's _New Login_ button in the lock screen will call `/usr/bin/gdmflexiserver` to switch users. Other [display managers](/index.php/Display_manager "Display manager") than [GDM](/index.php/GDM "GDM") or [KDM](/index.php/KDM "KDM") that support user switching (such as [LightDM](/index.php/LightDM "LightDM")) require a different command.
+By default, XScreenSaver's *New Login* button in the lock screen will call `/usr/bin/gdmflexiserver` to switch users. Other [display managers](/index.php/Display_manager "Display manager") than [GDM](/index.php/GDM "GDM") or [KDM](/index.php/KDM "KDM") that support user switching (such as [LightDM](/index.php/LightDM "LightDM")) require a different command.
 
-As modifications in `~/.xscreensaver` are [discarded](#Configuration) by _xscreensaver-demo_, `~/.Xresources` is used in this section.
+As modifications in `~/.xscreensaver` are [discarded](#Configuration) by *xscreensaver-demo*, `~/.Xresources` is used in this section.
 
 #### LXDM
 
@@ -144,7 +144,6 @@ $ /usr/lib/xscreensaver/glslideshow -root &
 ```
 
 **Note:** If [xcompmgr](/index.php/Xcompmgr "Xcompmgr") causes problems, [install](/index.php/Install "Install") the [shantz-xwinwrap-bzr](https://aur.archlinux.org/packages/shantz-xwinwrap-bzr/) package, and run:
-
 ```
 $ xwinwrap -b -fs -sp -fs -nf -ov  -- /usr/lib/xscreensaver/glslideshow -root -window-id WID &
 
@@ -152,14 +151,13 @@ $ xwinwrap -b -fs -sp -fs -nf -ov  -- /usr/lib/xscreensaver/glslideshow -root -w
 
 ## Troubleshooting
 
-You can configure xscreensaver to write to a log file by creating the logfile `# touch /var/log/xscreensaver.log` and then specifying its X resource _logFile_.
+You can configure xscreensaver to write to a log file by creating the logfile `# touch /var/log/xscreensaver.log` and then specifying its X resource *logFile*.
 
  `~/.Xresources`  `xscreensaver.logFile:/var/log/xscreensaver.log` 
 
 To log verbose debugging information to the logFile as well start xscreensaver with the `-verbose` command line option, or add this to `~/.Xresources`
 
  `~/.Xresources` 
-
 ```
 xscreensaver.logFile:/var/log/xscreensaver.log
 xscreensaver.verbose:true

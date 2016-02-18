@@ -157,7 +157,7 @@ Arch heeft een vitale en actieve gemeenschap van software-ontwikkelaars. Als u e
 
 ## Bijdragen
 
-Ten eerste, bedenk dan dat de belangrijkste motivatie voor je werk op Arch moet de hele gemeenschap te helpen, en niet proberen om een​​ _'Arch-ontwikkelaar "_ met alle middelen te worden. Ten tweede, u maakt ook deel van de gemeenschap, ook de hulp aan anderen betekent dat je ook helpen jezelf.
+Ten eerste, bedenk dan dat de belangrijkste motivatie voor je werk op Arch moet de hele gemeenschap te helpen, en niet proberen om een​​ *'Arch-ontwikkelaar "* met alle middelen te worden. Ten tweede, u maakt ook deel van de gemeenschap, ook de hulp aan anderen betekent dat je ook helpen jezelf.
 
 ### Wat kan ik doen als een ontwikkelaar?
 

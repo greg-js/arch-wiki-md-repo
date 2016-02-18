@@ -68,11 +68,11 @@ This is the most crucial step in customizing the kernel to reflect your computer
 
 ### Configure your kernel
 
-**Warning:** If compiling the _radeon_ driver into the kernel(>3.3.3) for early KMS with a newer video card, you **must** include the firmware files for your card. Otherwise acceleration will be crippled. See [here](http://wiki.x.org/wiki/radeonBuildHowTo#Missing_Extra_Firmware)
+**Warning:** If compiling the *radeon* driver into the kernel(>3.3.3) for early KMS with a newer video card, you **must** include the firmware files for your card. Otherwise acceleration will be crippled. See [here](http://wiki.x.org/wiki/radeonBuildHowTo#Missing_Extra_Firmware)
 
 **Warning:** systemd has a number of kernel configuration requirements for general use, for specific usecases (e.g., UEFI) and for specific systemd functionality (e.g., bootchart). Failure to meet these requirements can result in your system being degraded or unusable. The list of required and recommended kernel CONFIGs can be found in `/usr/share/doc/systemd/README`. Check them before you compile.These requirements also change over time. Because Arch assumes you are using the official kernel, there will be no announcement of these changes. Before you install a new version of systemd, check the version release notes to make sure your current custom kernel meets any new systemd requirements.
 
-**Tip:** It is possible, to configure a kernel that does not require initramfs on _**simple configurations**_. Ensure that all your modules required for video/input/disks/fs are compiled into the kernel. As well as support for DEVTMPFS_MOUNT, TMPFS, AUTOFS4_FS at the very least. If in doubt, learn about these options and what they mean _before_ attempting.
+**Tip:** It is possible, to configure a kernel that does not require initramfs on ***simple configurations***. Ensure that all your modules required for video/input/disks/fs are compiled into the kernel. As well as support for DEVTMPFS_MOUNT, TMPFS, AUTOFS4_FS at the very least. If in doubt, learn about these options and what they mean *before* attempting.
 
 #### First-timers
 

@@ -75,9 +75,9 @@
 
 ## Prefacio
 
-*   El _gestor de arranque_ («bootloader») es el primer programa que se ejecuta cuando se inicia el equipo. Es el responsable de cargar y transferir el control al kérnel de Línux, que, a su vez, inicializa el resto del sistema operativo.
+*   El *gestor de arranque* («bootloader») es el primer programa que se ejecuta cuando se inicia el equipo. Es el responsable de cargar y transferir el control al kérnel de Línux, que, a su vez, inicializa el resto del sistema operativo.
 
-*   El nombre de _GRUB_ oficialmente se refiere a la versión 2 del software, consulte [[2]](https://www.gnu.org/software/grub/). Si se está buscando el artículo sobre la versión legacy, consulte [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy").
+*   El nombre de *GRUB* oficialmente se refiere a la versión 2 del software, consulte [[2]](https://www.gnu.org/software/grub/). Si se está buscando el artículo sobre la versión legacy, consulte [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy").
 
 *   GRUB soporta el uso del sistema de archivos [Btrfs](/index.php/Btrfs "Btrfs") para la partición root (sin necesidad de una partición `/boot` separada con sistema de archivos distinto) compatible con los algoritmos de compresión zlib o LZO.
 
@@ -124,10 +124,10 @@ Hay cuatro formas de instalar los archivos de arranque de GRUB en un sistema BIO
 
 **Nota:** El método es específico para la instalación de GRUB en un disco ya particionado (con MBR o GPT), con los archivos de GRUB instalados en `/boot/grub` y los respectivos códigos instalados en la región de los primeros 440 bytes del [MBR](https://en.wikipedia.org/wiki/es:Registro_de_arranque_principal "wikipedia:es:Registro de arranque principal") (no debe confundirse con la tabla de particiones MBR).
 
-Para instalar `grub` en la región de los 440 bytes relativa al código de arranque, también llamada Master Boot Record (siglas en inglés de _«registro de arranque principal»_), tenemos que poblar la carpeta `/boot/grub`, crear `/boot/grub/i386-pc/core.img`, insértela en el sector de los 31KiB (el tamaño mínimo varía dependiendo de la alineación de las particiones) después del MBR, en el caso de disco particionado con MBR (o BIOS Boot Partition en el caso de GPT, indicada con la etiqueta `bios_grub` con parted y con el código `EF02` con gdisk), ejecute:
+Para instalar `grub` en la región de los 440 bytes relativa al código de arranque, también llamada Master Boot Record (siglas en inglés de *«registro de arranque principal»*), tenemos que poblar la carpeta `/boot/grub`, crear `/boot/grub/i386-pc/core.img`, insértela en el sector de los 31KiB (el tamaño mínimo varía dependiendo de la alineación de las particiones) después del MBR, en el caso de disco particionado con MBR (o BIOS Boot Partition en el caso de GPT, indicada con la etiqueta `bios_grub` con parted y con el código `EF02` con gdisk), ejecute:
 
 ```
-# grub-install --target=i386-pc --recheck --debug /dev/sd_x_
+# grub-install --target=i386-pc --recheck --debug /dev/sd*x*
 # grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
@@ -176,7 +176,7 @@ Para instalar grub en el sector de arranque de una partición o disco sin partic
 **Nota:**
 
 *   El dispositivo `/dev/sdaX` es usado únicamente como ejemplo.
-*   El parámetro `--target=i386-pc` instruye a `grub-install` para la instalación de GRUB únicamente en sistemas BIOS. Se recomienda siempre usar esta opción para eliminar la ambigüedad en _grub-install_.
+*   El parámetro `--target=i386-pc` instruye a `grub-install` para la instalación de GRUB únicamente en sistemas BIOS. Se recomienda siempre usar esta opción para eliminar la ambigüedad en *grub-install*.
 
 Necesitará la opción `--force` para permitir el uso de blocklists, pero no se debe usar `--grub-setup=/bin/true` (lo que equivale a generar únicamente `core.img`).
 
@@ -243,7 +243,7 @@ A continuación, puede realizar el traslado de `core.img` de GRUB desde GRUB Leg
 
 ### Comprobar si se está utilizando GPT y una partición EFI del sistema (ESP)
 
-Se necesita una partición de sistema EFI (ESP) en cada disco que quiera arrancar con EFI. Una tabla de particiones GPT no es estrictamente necesaria, pero es muy recomendable y es el único método actualmente apoyado en este artículo. Si va a instalar Archlinux en un equipo EFI-compatible con un sistema operativo ya funcionando, como Windows 8, por ejemplo, es muy probable que ya tenga una ESP. Para comprobar si usa GPT y una ESP (siglas en inglés de _EFI System partition_ —partición EFI del sistema—), utilice `parted` como root para imprimir la tabla de particiones del disco que desea arrancar (en el ejemplo utilizado aquí se denomina `/dev/sda`.)
+Se necesita una partición de sistema EFI (ESP) en cada disco que quiera arrancar con EFI. Una tabla de particiones GPT no es estrictamente necesaria, pero es muy recomendable y es el único método actualmente apoyado en este artículo. Si va a instalar Archlinux en un equipo EFI-compatible con un sistema operativo ya funcionando, como Windows 8, por ejemplo, es muy probable que ya tenga una ESP. Para comprobar si usa GPT y una ESP (siglas en inglés de *EFI System partition* —partición EFI del sistema—), utilice `parted` como root para imprimir la tabla de particiones del disco que desea arrancar (en el ejemplo utilizado aquí se denomina `/dev/sda`.)
 
 ```
 # parted /dev/sda print
@@ -269,7 +269,7 @@ Asegúrese de que está en una shell de [bash](/index.php/Bash "Bash"). Por ejem
 
 ```
 
-[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") los paquetes [grub](https://www.archlinux.org/packages/?name=grub) y [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr). _GRUB_ es el gestor de arranque, _efibootmgr_ crea las entradas stub `.efi` con capacidad de arranque usadas por el script de instalación de GRUB.
+[Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") los paquetes [grub](https://www.archlinux.org/packages/?name=grub) y [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr). *GRUB* es el gestor de arranque, *efibootmgr* crea las entradas stub `.efi` con capacidad de arranque usadas por el script de instalación de GRUB.
 
 Los siguientes pasos instalan la aplicación GRUB UEFI en `**$esp**/EFI/grub`, instala los módulos en `/boot/grub/x86_64-efi`, y coloca el stub `grubx64.efi` booteable en `**$esp**/EFI/grub_uefi`.
 
@@ -309,7 +309,7 @@ Si desea guardar estos archivos dentro de la misma partición UEFI del sistema, 
 
 ```
 
-De este modo, los archivos de GRUB vendrán instalados en `$esp/grub` en lugar de `/boot/grub`. Usando este método, grub.cfg se guarda en la partición UEFI del sistema, así que asegúrese de que señala el lugar correcto en _grub-mkconfig_ durante la fase de configuración:
+De este modo, los archivos de GRUB vendrán instalados en `$esp/grub` en lugar de `/boot/grub`. Usando este método, grub.cfg se guarda en la partición UEFI del sistema, así que asegúrese de que señala el lugar correcto en *grub-mkconfig* durante la fase de configuración:
 
 ```
 # grub-mkconfig -o $esp/grub/grub.cfg
@@ -370,7 +370,7 @@ Si no se ha hecho una configuración adicional, la generación automática deter
 
 **Nota:** Recuerde que `grub.cfg` tiene que ser regenerado después de realizar cualquier cambio en los archivos `/etc/default/grub` o `/etc/grub.d/*`.
 
-Utilice la utilidad _grub-mkconfig_ para generar el archivo `grub.cfg`:
+Utilice la utilidad *grub-mkconfig* para generar el archivo `grub.cfg`:
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
@@ -380,7 +380,7 @@ Utilice la utilidad _grub-mkconfig_ para generar el archivo `grub.cfg`:
 **Nota:**
 
 *   La ruta del archivo es `/boot/grub/grub.cfg`, no `/boot/grub/i386-pc/grub.cfg`.
-*   Si se está tratando de ejecutar _grub-mkconfig_ en entorno chroot o en un contenedor _systemd-nspawn_, es posible que advierta que no funciona, avisándole de que _grub-probe_ no puede obtener el "canonical path of /dev/sdaX". En este caso, pruebe usando _arch-chroot_ como se describe [aquí](https://bbs.archlinux.org/viewtopic.php?pid=1225067#p1225067).
+*   Si se está tratando de ejecutar *grub-mkconfig* en entorno chroot o en un contenedor *systemd-nspawn*, es posible que advierta que no funciona, avisándole de que *grub-probe* no puede obtener el "canonical path of /dev/sdaX". En este caso, pruebe usando *arch-chroot* como se describe [aquí](https://bbs.archlinux.org/viewtopic.php?pid=1225067#p1225067).
 
 Por defecto, los scripts de generación añaden automáticamente las entradas de menú para Arch Linux a cualquier configuración generada. Véase [#Arranque dual](#Arranque_dual) para configuraciones avanzadas.
 
@@ -392,9 +392,9 @@ Recuerde siempre [#Generar el archivo de configuración principal](#Generar_el_a
 
 ### Argumentos adicionales
 
-Para pasar argumentos adicionales personalizados a la imagen de Línux, se pueden ajustar las variables `GRUB_CMDLINE_LINUX` + `GRUB_CMDLINE_LINUX_DEFAULT` en `/etc/default/grub`. Los dos parámetros se anexan al archivo y se pasan al kérnel al generar las entradas de arranque regulares. Para la _recuperación_ del sistema, solo se usa la variable `GRUB_CMDLINE_LINUX`.
+Para pasar argumentos adicionales personalizados a la imagen de Línux, se pueden ajustar las variables `GRUB_CMDLINE_LINUX` + `GRUB_CMDLINE_LINUX_DEFAULT` en `/etc/default/grub`. Los dos parámetros se anexan al archivo y se pasan al kérnel al generar las entradas de arranque regulares. Para la *recuperación* del sistema, solo se usa la variable `GRUB_CMDLINE_LINUX`.
 
-No es necesario el uso de ambos, pero puede ser útil . Por ejemplo , podría utilizar `GRUB_CMDLINE_LINUX_DEFAULT="resume=/dev/sdaX quiet"` cuando `sda**X**` es la partición de intercambio (swap) para activar la reanuddación del sistema tras la hibernación. Esto generaría una entrada de arranque de reanudación y sin el parámetro _quiet_ que no mostraría los mensajes del kérnel durante el arranque desde esa entrada. Sin embargo, las otras entradas del menú (regulares) seguirían teniendo las demás opciones.
+No es necesario el uso de ambos, pero puede ser útil . Por ejemplo , podría utilizar `GRUB_CMDLINE_LINUX_DEFAULT="resume=/dev/sdaX quiet"` cuando `sda**X**` es la partición de intercambio (swap) para activar la reanuddación del sistema tras la hibernación. Esto generaría una entrada de arranque de reanudación y sin el parámetro *quiet* que no mostraría los mensajes del kérnel durante el arranque desde esa entrada. Sin embargo, las otras entradas del menú (regulares) seguirían teniendo las demás opciones.
 
 Para generar la entrada de recuperación en GRUB también hay que comentar `#GRUB_DISABLE_RECOVERY=true` en `/etc/default/grub`.
 
@@ -406,7 +406,7 @@ Véase [Kernel parameters (Español)](/index.php/Kernel_parameters_(Espa%C3%B1ol
 
 ### Arranque dual
 
-**Sugerencia:** Si desea que _grub-mkconfig_ busque sistemas operativos instalados, debe instalar el paquete [os-prober](https://www.archlinux.org/packages/?name=os-prober).
+**Sugerencia:** Si desea que *grub-mkconfig* busque sistemas operativos instalados, debe instalar el paquete [os-prober](https://www.archlinux.org/packages/?name=os-prober).
 
 #### Generación automática utilizando /etc/grub.d/40_custom y grub-mkconfig
 
@@ -423,7 +423,6 @@ para actualizar `grub.cfg`.
 Por ejemplo, un típico archivo `/etc/grub.d/40_custom`, podría ser similar a uno como el siguiente, creado para [HP Pavilion 15-e056sl Notebook PC](http://h10025.www1.hp.com/ewfrf/wc/product?cc=us&destPage=product&lc=en&product=5402703&tmp_docname=), originalmente con Microsoft Windows 8 preinstalado. Cada `menuentry` debe mantener una estructura similar a una de las de abajo. Tenga en cuenta que la partición UEFI `/dev/sda2` dentro de GRUB se llama `hd0,gpt2` y `ahci0,gpt2` (véase [esto](#Windows_Installed_in_UEFI-GPT_Mode_menu_entry) para obtener más información).
 
  `/etc/grub.d/40_custom` 
-
 ```
 #!/bin/sh
 exec tail -n +3 $0
@@ -474,7 +473,7 @@ menuentry "Otro Línux" {
 }
 ```
 
-De otra forma, puede dejar que grub busque la partición correcto por la _UUID_ o _label_:
+De otra forma, puede dejar que grub busque la partición correcto por la *UUID* o *label*:
 
 ```
 menuentry "Otro Línux" {
@@ -535,7 +534,7 @@ Si el gestor de arranque de Windows está activo en un disco duro completamente 
 
 ##### Entrada de menú para Windows instalado en modo UEFI-GPT
 
-**Nota:** Estas «menuentry» (_entradas_) solo funcionarán en el modo de inicio de UEFI y solo si el valor de bits de Windows coincide con el valor de bits de UEFI. Sin embarbo, esto **NO FUNCIONA** en grub(2) instalado en sistemas BIOS. Véase [esto](/index.php/Windows_and_Arch_Dual_Boot#Windows_UEFI_vs_BIOS_limitations "Windows and Arch Dual Boot") y [esto](/index.php/Windows_and_Arch_Dual_Boot#Bootloader_UEFI_vs_BIOS_limitations "Windows and Arch Dual Boot") para más información.
+**Nota:** Estas «menuentry» (*entradas*) solo funcionarán en el modo de inicio de UEFI y solo si el valor de bits de Windows coincide con el valor de bits de UEFI. Sin embarbo, esto **NO FUNCIONA** en grub(2) instalado en sistemas BIOS. Véase [esto](/index.php/Windows_and_Arch_Dual_Boot#Windows_UEFI_vs_BIOS_limitations "Windows and Arch Dual Boot") y [esto](/index.php/Windows_and_Arch_Dual_Boot#Bootloader_UEFI_vs_BIOS_limitations "Windows and Arch Dual Boot") para más información.
 
 ```
 if [ "${grub_platform}" == "efi" ]; then
@@ -645,13 +644,11 @@ fi
 ```
 
 **Nota:** En algunos casos, al intalar GRUB antes de una instalación limpia de Windows 8, da como resultado que no arranque Windows, provocando un error con `\boot\bcd` (código de error `0xc000000f`). Se puede arreglar llamando a la consola de recuperación de Windows (cmd desde disco de instalación) y ejecutando:
-
 ```
 x:\> "bootrec.exe /fixboot" 
 x:\> "bootrec.exe /RebuildBcd".
 
 ```
-
 **No** haga uso de `bootrec.exe /Fixmbr` porque dejará GRUB al margen.
 
 El archivo `/etc/grub.d/40_custom` se puede utilizar como una plantilla para crear `/etc/grub.d/nn_custom`. Donde `nn` define la prelación, que indica el orden en que los scritps se ejecutan. El orden de los scripts al ejecutarse determina su lugar en el menú de arranque de grub.
@@ -698,7 +695,7 @@ Si utiliza [LVM (Español)](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)") para
 
 y especifíque el parámetro del kérnel `root`:
 
- `/etc/default/grub`  `GRUB_CMDLINE_LINUX_DEFAULT="root=lvm/_lvm_group_name_-_lvm_logical_boot_partition_name_ ..."` 
+ `/etc/default/grub`  `GRUB_CMDLINE_LINUX_DEFAULT="root=lvm/*lvm_group_name*-*lvm_logical_boot_partition_name* ..."` 
 
 ### RAID
 
@@ -716,7 +713,7 @@ set root=(md0,1)
 
 ```
 
-Para instalar GRUB cuando se utiliza RAID 1 como partición `/boot` (o usando `/boot` alojado en una partición root RAID1), en dispositivos con GPT ef02/'BIOS boot partition', basta ejecutar _grub-install_ en ambas unidades, así:
+Para instalar GRUB cuando se utiliza RAID 1 como partición `/boot` (o usando `/boot` alojado en una partición root RAID1), en dispositivos con GPT ef02/'BIOS boot partition', basta ejecutar *grub-install* en ambas unidades, así:
 
 ```
 # grub-install --target=i386-pc --recheck --debug /dev/sda
@@ -755,7 +752,7 @@ GRUB_ENABLE_CRYPTODISK=y
 
 ```
 
-para `/etc/default/grub`. Después de esta configuración es necesario ejecutar _grub-mkconfig_ para [#Generar el archivo de configuración principal](#Generar_el_archivo_de_configuraci.C3.B3n_principal) mientras la partición `/boot` cifrada está montada.
+para `/etc/default/grub`. Después de esta configuración es necesario ejecutar *grub-mkconfig* para [#Generar el archivo de configuración principal](#Generar_el_archivo_de_configuraci.C3.B3n_principal) mientras la partición `/boot` cifrada está montada.
 
 **Nota:** `GRUB_ENABLE_CRYPTODISK=1` [no funcionará](https://savannah.gnu.org/bugs/?41524) en oposición a la solicitud mostrada en GRUB 2.02-beta2.
 
@@ -795,7 +792,7 @@ rescue:grub> normal
 
 ### Soporte para Pager
 
-GRUB apoya pager (paginador o localizador) que permite la lectura de las órdenes que proveen _«salidas»_ extensas (como la orden `help`). Tenga en cuenta que esta característica solo está disponible en la consola normal, y no en una de emergencia. Para activar pager, escriba en una shell de órdenes de GRUB:
+GRUB apoya pager (paginador o localizador) que permite la lectura de las órdenes que proveen *«salidas»* extensas (como la orden `help`). Tenga en cuenta que esta característica solo está disponible en la consola normal, y no en una de emergencia. Para activar pager, escriba en una shell de órdenes de GRUB:
 
 ```
 sh:grub> set pager=1
@@ -811,7 +808,7 @@ grub>
 
 El entorno de la shell de órdenes de GRUB puede utilizarse para arrancar sistemas operativos. Un escenario común puede iniciar Windows/Línux localizado en una unidad/partición a través de **chainloading**.
 
-_Chainloading_ significa cargar otro sistema de arranque desde el vigente, es decir, cargar en cadena.
+*Chainloading* significa cargar otro sistema de arranque desde el vigente, es decir, cargar en cadena.
 
 El otro cargador de arranque puede estar incrustado en el principio del disco (MBR) o en el principio de una partición.
 
@@ -856,7 +853,7 @@ boot
 
 ```
 
-_insmod ntfs_ se utiliza para cargar el módulo del sistema de archivos NTFS para cargar Windows. (hd0,gpt4) o /dev/sda4 es la EFI System Partition (ESP). La entrada en la línea _chainloader_ especifica la ruta del archivo .efi para ser cargado.
+*insmod ntfs* se utiliza para cargar el módulo del sistema de archivos NTFS para cargar Windows. (hd0,gpt4) o /dev/sda4 es la EFI System Partition (ESP). La entrada en la línea *chainloader* especifica la ruta del archivo .efi para ser cargado.
 
 #### Carga normal
 
@@ -1046,7 +1043,6 @@ Si GRUB carga, pero le deja en la consola de rescate sin errores, puede ser debi
 He aquí un ejemplo de EFI funcional:
 
  `# efibootmgr -v` 
-
 ```
 BootCurrent: 0000
 Timeout: 3 seconds
@@ -1066,7 +1062,7 @@ Si la pantalla deviene en negro durante unos segundos y GRUB pasa a la siguiente
 
 ### Invalid signature
 
-Si recibe el error _«invalid signature»_ al intentar iniciar Windows, por ejemplo, si se ha alterado la tabla de particiones después de agregar otras particiones o discos duros, trate de eliminar la configuración de GRUB sobre los dispositivos y deje que la regenere él mismo:
+Si recibe el error *«invalid signature»* al intentar iniciar Windows, por ejemplo, si se ha alterado la tabla de particiones después de agregar otras particiones o discos duros, trate de eliminar la configuración de GRUB sobre los dispositivos y deje que la regenere él mismo:
 
 ```
 # mv /boot/grub/device.map /boot/grub/device.map-old

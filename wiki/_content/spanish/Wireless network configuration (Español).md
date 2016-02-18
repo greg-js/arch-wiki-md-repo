@@ -68,7 +68,7 @@ La configuración inalámbrica es un proceso que consta de dos partes: la primer
 
 ## Controlador del dispositivo
 
-De forma predeterminada el kernel de Arch Linux es _modular_, lo que significa que muchos de los controladores del hardware del equipo residen en el disco duro y están disponibles como _[modulos](/index.php/Kernel_modules_(Espa%C3%B1ol) "Kernel modules (Español)")_. En el arranque, [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") hace un inventario de su hardware, el cual cargará los módulos (controladores) apropiados para el hardware correspondiente, y el controlador, a su vez, permitirá la creación de una _interfaz_ para el kernel.
+De forma predeterminada el kernel de Arch Linux es *modular*, lo que significa que muchos de los controladores del hardware del equipo residen en el disco duro y están disponibles como *[modulos](/index.php/Kernel_modules_(Espa%C3%B1ol) "Kernel modules (Español)")*. En el arranque, [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") hace un inventario de su hardware, el cual cargará los módulos (controladores) apropiados para el hardware correspondiente, y el controlador, a su vez, permitirá la creación de una *interfaz* para el kernel.
 
 Algunos chipsets inalámbricos también requieren un firmware, amén del controlador correspondiente. Muchas imágenes de firmware son proporcionados por el paquete [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) que se instala por defecto, sin embargo, las imágenes de firmware propietarias no están incluidas y deben instalarse por separado. Esto se describe en [#Instalar el controlador/firmware](#Instalar_el_controlador.2Ffirmware).
 
@@ -84,7 +84,6 @@ Algunos chipsets inalámbricos también requieren un firmware, amén del control
 Para comprobar si se ha cargado el controlador de la tarjeta, compruebe la salida de la orden `lspci -k`, con la cual se puede observar si hay algún controlador del kernel en uso, por ejemplo:
 
  `$ lspci -k` 
-
 ```
 06:00.0 Network controller: Intel Corporation WiFi Link 5100
 	Subsystem: Intel Corporation WiFi Link 5100 AGN
@@ -98,7 +97,7 @@ Para comprobar si se ha cargado el controlador de la tarjeta, compruebe la salid
 *   `lsusb -v`
 *   `dmesg | grep usbcore`, debería ver algo como `usbcore: registered new interface driver rtl8187` en la salida
 
-También puede ver la salida de la orden `ip link` para conocer si una interfaz inalámbrica (por ejemplo, `wlan0`, `wlp2s1`, `ath0`) ha sido creada. A continuación, active la interfaz con la orden `ip link set _interfaz_ up`. Por ejemplo, suponiendo que la interfaz es `wlan0`:
+También puede ver la salida de la orden `ip link` para conocer si una interfaz inalámbrica (por ejemplo, `wlan0`, `wlp2s1`, `ath0`) ha sido creada. A continuación, active la interfaz con la orden `ip link set *interfaz* up`. Por ejemplo, suponiendo que la interfaz es `wlan0`:
 
 ```
 # ip link set wlan0 up
@@ -110,7 +109,6 @@ Si recibe este mensaje de error: `SIOCSIFFLAGS: No such file or directory`, sign
 Compruebe los eventuales mensajes del kernel relativos al cargamento del firmware:
 
  `$ dmesg | grep firmware` 
-
 ```
 [   7.148259] iwlwifi 0000:02:00.0: loaded firmware version 39.30.4.1 build 35138 op_mode iwldvm
 
@@ -119,7 +117,6 @@ Compruebe los eventuales mensajes del kernel relativos al cargamento del firmwar
 Si no hay salida relevante, compruebe los mensajes de la salida completa para el módulo que ha identificado anteriormente (`iwlwifi` en este ejemplo) para idenfificar el mensaje pertinente u otras cuestiones:
 
  `$ dmesg | grep iwlwifi` 
-
 ```
 [   12.342694] iwlwifi 0000:02:00.0: irq 44 for MSI/MSI-X
 [   12.353466] iwlwifi 0000:02:00.0: loaded firmware version 39.31.5.1 build 35138 op_mode iwldvm
@@ -176,33 +173,32 @@ Estas herramientas arrastan las dependencias necesarias de la lista de paquetes 
 
 ### Configuración manual
 
-Al igual que otras interfaces de red, las redes inalámbricas se controlan con `ip` del paquete [iproute2](https://www.archlinux.org/packages/?name=iproute2). Los programas proporcionados por el paquete [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) son un conjunto básico de herramientas para configurar una red inalámbrica, Sin embargo, estas herramientas están en desuso en favor de la herramienta [iw](https://www.archlinux.org/packages/?name=iw). Si _iw_ no funciona con su tarjeta, puede utilizar _wireless_tools_, la siguiente tabla presenta un resumen de las órdenes comparables entre ambos (véase [[1]](http://wireless.kernel.org/en/users/Documentation/iw/replace-iwconfig) para más ejemplos). Por otra parte, si se utiliza el cifrado WPA/WPA2, necesitará el paquete [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant). Estas poderosas herramientas en el espacio de usuario funcionan muy bien y permiten un total control manual de las conexiones de red inalámbricas.
+Al igual que otras interfaces de red, las redes inalámbricas se controlan con `ip` del paquete [iproute2](https://www.archlinux.org/packages/?name=iproute2). Los programas proporcionados por el paquete [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) son un conjunto básico de herramientas para configurar una red inalámbrica, Sin embargo, estas herramientas están en desuso en favor de la herramienta [iw](https://www.archlinux.org/packages/?name=iw). Si *iw* no funciona con su tarjeta, puede utilizar *wireless_tools*, la siguiente tabla presenta un resumen de las órdenes comparables entre ambos (véase [[1]](http://wireless.kernel.org/en/users/Documentation/iw/replace-iwconfig) para más ejemplos). Por otra parte, si se utiliza el cifrado WPA/WPA2, necesitará el paquete [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant). Estas poderosas herramientas en el espacio de usuario funcionan muy bien y permiten un total control manual de las conexiones de red inalámbricas.
 
 **Nota:**
 
-*   Los ejemplos de esta sección parten del supuesto de que el dispositivo inalámbrico es `wlan0` y que está conectado al punto de acceso inalámbrico `_your_essid_`. Sustituya dichos valores según su caso.
-*   Tenga en cuenta que la mayoría de las órdenes tienen que ser ejecutadas con [permisos de root](/index.php/Users_and_groups "Users and groups"). Si se ejecutan como usuario normal, algunas de dichas órdenes (por ejemplo _iwlist_) salen sin error, pero no producen la salida correcta o bien pueden ser confusas.
+*   Los ejemplos de esta sección parten del supuesto de que el dispositivo inalámbrico es `wlan0` y que está conectado al punto de acceso inalámbrico `*your_essid*`. Sustituya dichos valores según su caso.
+*   Tenga en cuenta que la mayoría de las órdenes tienen que ser ejecutadas con [permisos de root](/index.php/Users_and_groups "Users and groups"). Si se ejecutan como usuario normal, algunas de dichas órdenes (por ejemplo *iwlist*) salen sin error, pero no producen la salida correcta o bien pueden ser confusas.
 
-| orden _iw_ | orden _wireless_tools_ | Descripción |
+| orden *iw* | orden *wireless_tools* | Descripción |
 | iw dev wlan0 link | iwconfig wlan0 | Obtener el estado del enlace. |
 | iw dev wlan0 scan | iwlist wlan0 scan | Escanear en busca de puntos de acceso disponibles. |
-| iw dev wlan0 set type ibss | iwconfig wlan0 mode ad-hoc | Configurar el modo de operación para _ad-hoc_. |
-| iw dev wlan0 connect _your_essid_ | iwconfig wlan0 essid _your_essid_ | Conectar para establecer conexión de red. |
-| iw dev wlan0 connect _your_essid_ 2432 | iwconfig wlan0 essid _your_essid_ freq 2432M | Conectar para establecer conexión de red a través de un canal específico. |
-| iw dev wlan0 connect _your_essid_ key 0:_your_key_ | iwconfig wlan0 essid _your_essid_ key _your_key_ | Conectar a una red encriptada WEP usando clave hexadecimal. |
-| iw dev wlan0 connect _your_essid_ key 0:_your_key_ | iwconfig wlan0 essid _your_essid_ key s:_your_key_ | Conectar a una red encriptada WEP usando clave ASCII. |
+| iw dev wlan0 set type ibss | iwconfig wlan0 mode ad-hoc | Configurar el modo de operación para *ad-hoc*. |
+| iw dev wlan0 connect *your_essid* | iwconfig wlan0 essid *your_essid* | Conectar para establecer conexión de red. |
+| iw dev wlan0 connect *your_essid* 2432 | iwconfig wlan0 essid *your_essid* freq 2432M | Conectar para establecer conexión de red a través de un canal específico. |
+| iw dev wlan0 connect *your_essid* key 0:*your_key* | iwconfig wlan0 essid *your_essid* key *your_key* | Conectar a una red encriptada WEP usando clave hexadecimal. |
+| iw dev wlan0 connect *your_essid* key 0:*your_key* | iwconfig wlan0 essid *your_essid* key s:*your_key* | Conectar a una red encriptada WEP usando clave ASCII. |
 | iw dev wlan0 set power_save on | iwconfig wlan0 power on | Activar ahorro de energía. |
 
 **Nota:** Según el hardware y el tipo de cifrado, algunos de estos pasos pueden no ser necesario. Algunas tarjetas se sabe que requieren la activación de la interfaz y/o el escaneo del punto de acceso antes de ser asociado a un punto de acceso y asignarle una dirección IP. Puede que sea necesario experimentar previamente. Por ejemplo, los usuarios pueden intentar WPA/WPA2 directamente para activar su red inalámbrica desde el paso [#Asociación](#Asociaci.C3.B3n).
 
 #### Obtener información útil
 
-**Sugerencia:** Véase [official documentation](http://wireless.kernel.org/en/users/Documentation/iw) de la utilidad _iw_ para obtener más ejemplos.
+**Sugerencia:** Véase [official documentation](http://wireless.kernel.org/en/users/Documentation/iw) de la utilidad *iw* para obtener más ejemplos.
 
 *   En primer lugar, necesita encontrar el nombre de la interfaz inalámbrica. Se puede hacer con la siguiente orden:
 
  `$ iw dev` 
-
 ```
 phy#0
 	Interface **wlan0**
@@ -217,7 +213,6 @@ phy#0
 *   Para comprobar el estado del enlace, utilice la orden de abajo. He aquí un ejemplo de salida cuando no está conectado a un punto de acceso:
 
  `$ iw dev wlan0 link` 
-
 ```
 Not connected.
 
@@ -226,7 +221,6 @@ Not connected.
 En cambio, cuando se conecta a un punto de acceso, se verá algo como:
 
  `$ iw dev wlan0 link` 
-
 ```
 Connected to 12:34:56:78:9a:bc (on wlan0)
 	SSID: MyESSID
@@ -245,7 +239,6 @@ Connected to 12:34:56:78:9a:bc (on wlan0)
 *   Se puede obtener información estadística, como por ejemplo, la cantidad de bytes tx/rx, intensidad de la señal, etc., con la siguiente orden:
 
  `$ iw dev wlan0 station dump` 
-
 ```
 Station 12:34:56:78:9a:bc (on wlan0)
 	inactive time:	1450 ms
@@ -269,21 +262,20 @@ Station 12:34:56:78:9a:bc (on wlan0)
 
 #### Activación de la interfaz
 
-_(Opcional, aunque puede ser necesaria)_
+*(Opcional, aunque puede ser necesaria)*
 
-Algunas tarjetas requieren que la interfaz del kernel esté activada antes de poder usar la utilidad _iw_ o _wireless_tools_:
+Algunas tarjetas requieren que la interfaz del kernel esté activada antes de poder usar la utilidad *iw* o *wireless_tools*:
 
 ```
 # ip link set wlan0 up
 
 ```
 
-**Nota:** Si se obtienen errores como `RTNETLINK answers: Operation not possible due to RF-kill`, asegúrese de que el interruptor de hardware está en _on_ (encendido). Además, la tarjeta de red inalámbrica puede estar bloqueda por algún sofware.Véase [#Rfkill](#Rfkill) para más detalles.
+**Nota:** Si se obtienen errores como `RTNETLINK answers: Operation not possible due to RF-kill`, asegúrese de que el interruptor de hardware está en *on* (encendido). Además, la tarjeta de red inalámbrica puede estar bloqueda por algún sofware.Véase [#Rfkill](#Rfkill) para más detalles.
 
 Para verificar que la interfaz está funcionando, inspeccione la salida de la siguiente orden:
 
  `# ip link show wlan0` 
-
 ```
 3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state DOWN mode DORMANT group default qlen 1000
     link/ether 12:34:56:78:9a:bc brd ff:ff:ff:ff:ff:ff
@@ -301,7 +293,7 @@ Para ver los puntos de acceso disponibles:
 
 ```
 
-**Nota:** Si aparece le mensaje «_Interface doesn't support scanning_» (interfaz no compatible con el escaneo), entonces probablemente se olvidó de instalar el firmware. En algunos casos, este mensaje también se muestra cuando no se está ejecutando _iwlist_ como root.
+**Nota:** Si aparece le mensaje «*Interface doesn't support scanning*» (interfaz no compatible con el escaneo), entonces probablemente se olvidó de instalar el firmware. En algunos casos, este mensaje también se muestra cuando no se está ejecutando *iwlist* como root.
 
 **Sugerencia:** Dependiendo de su ubicación, es posible que tenga que establecer el [dominio regulador](#Dominio_regulador) correcto, con el fin de ver todas las redes disponibles.
 
@@ -315,12 +307,12 @@ Puntos importantes a comprobar:
     *   En los bloques `RSN` y `WPA` se puede encontrar la siguiente información:
         *   **Group cipher:** valores TKIP, CCMP, ambos, otros.
         *   **Pairwise ciphers:** valores TKIP, CCMP, ambos, otros. No necesariamente el mismo valor de Group cipher.
-        *   **Authentication Suites:** valores PSK, 802.1x, otros. A través del router, por lo general encontrará PSK (_por ejemplo_ la passphrase). En las universidades, es más probable que encuentre la suite 802.1x que requiere nombre de usuario y contraseña. Entonces tendrá que saber qué administración de claves está en uso (por ejemplo, EAP), y la encapsulación que utiliza (por ejemplo, PEAP). Encuentre más detalles en [Wikipedia:List_of_authentication_protocols](https://en.wikipedia.org/wiki/List_of_authentication_protocols "wikipedia:List of authentication protocols") y artículos relacionados.
+        *   **Authentication Suites:** valores PSK, 802.1x, otros. A través del router, por lo general encontrará PSK (*por ejemplo* la passphrase). En las universidades, es más probable que encuentre la suite 802.1x que requiere nombre de usuario y contraseña. Entonces tendrá que saber qué administración de claves está en uso (por ejemplo, EAP), y la encapsulación que utiliza (por ejemplo, PEAP). Encuentre más detalles en [Wikipedia:List_of_authentication_protocols](https://en.wikipedia.org/wiki/List_of_authentication_protocols "wikipedia:List of authentication protocols") y artículos relacionados.
     *   Si no se observa ni `RSN` ni `WPA` pero informa que es `Privacy`, entonces se utiliza WEP.
 
 #### Modalidades de funcionamiento
 
-_(Opcional, aunque puede ser necesario)_
+*(Opcional, aunque puede ser necesario)*
 
 En este paso, puede que tenga que ajustar el modo de funcionamiento adecuado de la tarjeta inalámbrica. Más específicamente, si se va a conectar una [red ad-hoc](/index.php/Ad-hoc_networking "Ad-hoc networking"), es necesario establecer el modo de funcionamiento a `ibss`:
 
@@ -329,7 +321,7 @@ En este paso, puede que tenga que ajustar el modo de funcionamiento adecuado de 
 
 ```
 
-**Nota:** Para cambiar el modo de funcionamiento en algunas tarjetas puede que sea necesario que desactivar la interfaz inalámbrica (_down_) (`ip link set wlan0 down`).
+**Nota:** Para cambiar el modo de funcionamiento en algunas tarjetas puede que sea necesario que desactivar la interfaz inalámbrica (*down*) (`ip link set wlan0 down`).
 
 #### Asociación
 
@@ -385,7 +377,7 @@ para DHCP, o
 
 para direcciones IP estáticas.
 
-**Sugerencia:** [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) contiene un hook (activado por defecto) para poner en marcha de forma automática [WPA supplicant](/index.php/WPA_supplicant_(Espa%C3%B1ol) "WPA supplicant (Español)") en busca de interfaces inalámbricas. Se inicia solo si existe un archivo de configuración en `/etc/wpa_supplicant.conf` y sin un proceso _wpa_supplicant_ sondeando la interfaz en cuestión. En la mayoría de los casos, no es necesario crear ningún [servicio personalizado](#Wireless_Setup_.28Espa.C3.B1ol.29.23Conectarse_manualmente_a_una_red_inal.C3.A1mbrica_en_el_arranque_con_systemd_y_dhcpcd), basta con activar `dhcpcd@_interfaz_`.
+**Sugerencia:** [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) contiene un hook (activado por defecto) para poner en marcha de forma automática [WPA supplicant](/index.php/WPA_supplicant_(Espa%C3%B1ol) "WPA supplicant (Español)") en busca de interfaces inalámbricas. Se inicia solo si existe un archivo de configuración en `/etc/wpa_supplicant.conf` y sin un proceso *wpa_supplicant* sondeando la interfaz en cuestión. En la mayoría de los casos, no es necesario crear ningún [servicio personalizado](#Wireless_Setup_.28Espa.C3.B1ol.29.23Conectarse_manualmente_a_una_red_inal.C3.A1mbrica_en_el_arranque_con_systemd_y_dhcpcd), basta con activar `dhcpcd@*interfaz*`.
 
 #### Iniciar scripts/servicios personalizados
 
@@ -400,7 +392,6 @@ Este ejemplo utiliza [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Espa�
 Cree una unidad de systemd, por ejemplo `/etc/systemd/system/network-wireless@.service`:
 
  `/etc/systemd/system/network-wireless@.service` 
-
 ```
 [Unit]
 Description=Wireless network connectivity (%i)
@@ -436,10 +427,9 @@ Active la unidad e iníciela, pasándole el nombre de la interfaz:
 
 **Nota:** Asegúrese de que [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) está instalado y crear el archivo `/etc/wpa_supplicant.conf`. Véase [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") para obtener más detalles.
 
-En primer lugar, cree el archivo de configuración del servicio de [systemd](/index.php/Systemd "Systemd"), sustituyendo `_interface_` con el nombre de la interfaz propia:
+En primer lugar, cree el archivo de configuración del servicio de [systemd](/index.php/Systemd "Systemd"), sustituyendo `*interface*` con el nombre de la interfaz propia:
 
- `/etc/conf.d/network-wireless@_interface_` 
-
+ `/etc/conf.d/network-wireless@*interface*` 
 ```
 address=192.168.0.10
 netmask=24
@@ -451,7 +441,6 @@ gateway=192.168.0.1
 Cree un archivo de unidad de systemd:
 
  `/etc/systemd/system/network-wireless@.service` 
-
 ```
 [Unit]
 Description=Wireless network connectivity (%i)
@@ -504,7 +493,7 @@ Oficial | Herramientas de consola |
 
 #### Netctl
 
-_netctl_ sustituye a _netcfg_, diseñado para trabajar con systemd. Utiliza una configuración basada en perfiles y es capaz de la detección y conexión a una amplia gama de tipos de red. No es difícil de manejar usando herramientas gráficas.
+*netctl* sustituye a *netcfg*, diseñado para trabajar con systemd. Utiliza una configuración basada en perfiles y es capaz de la detección y conexión a una amplia gama de tipos de red. No es difícil de manejar usando herramientas gráficas.
 
 Consulte: [Netctl (Español)](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)")
 
@@ -526,7 +515,7 @@ Consulte: [NetworkManager (Español)](/index.php/NetworkManager_(Espa%C3%B1ol) "
 
 #### WiFi Radar
 
-WiFi Radar es una utilidad Python/PyGTK2 para la gestión de perfiles inalámbricos (y _solo_ inalámbricos). Le permite escanear las redes disponibles y crear perfiles para sus redes preferidas.
+WiFi Radar es una utilidad Python/PyGTK2 para la gestión de perfiles inalámbricos (y *solo* inalámbricos). Le permite escanear las redes disponibles y crear perfiles para sus redes preferidas.
 
 Consulte: [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar")
 
@@ -536,10 +525,9 @@ Esta sección contiene sugerencias para resolver problemas generales, no estrict
 
 ### Rfkill
 
-Muchos portátiles tienen un botón de hardware (o switch -_«alternador»_-) para desactivar la tarjeta inalámbrica, sin embargo, la tarjeta puede también ser bloqueada por el kernel. Esto puede ser manejado por [rfkill](https://www.archlinux.org/packages/?name=rfkill). Utilice _rfkill_ para mostrar el estado actual:
+Muchos portátiles tienen un botón de hardware (o switch -*«alternador»*-) para desactivar la tarjeta inalámbrica, sin embargo, la tarjeta puede también ser bloqueada por el kernel. Esto puede ser manejado por [rfkill](https://www.archlinux.org/packages/?name=rfkill). Utilice *rfkill* para mostrar el estado actual:
 
  `# rfkill list` 
-
 ```
 0: phy0: Wireless LAN
 	Soft blocked: yes
@@ -547,14 +535,14 @@ Muchos portátiles tienen un botón de hardware (o switch -_«alternador»_-) pa
 
 ```
 
-Si la tarjeta está _hard-blocked_ («bloqueada por el hardware»), utilice el botón del hardware (switch) para desbloquearla. Si la tarjeta no está _hard-blocked_ pero está _soft-blocked_ («bloqueada por el sotfware»), utilice la siguiente orden:
+Si la tarjeta está *hard-blocked* («bloqueada por el hardware»), utilice el botón del hardware (switch) para desbloquearla. Si la tarjeta no está *hard-blocked* pero está *soft-blocked* («bloqueada por el sotfware»), utilice la siguiente orden:
 
 ```
 # rfkill unblock wifi
 
 ```
 
-**Nota:** Es posible que la tarjeta pase del estado _hard-blocked_ y _soft-unblocked_, al estado _hard-unblocked_ y _soft-blocked_, presionando el botón del hardware (es decir, _soft-blocked_ se cambia de estado sin motivo). Esto se puede ajustar mediante la regulación de algunas de las opciones del [módulo del kernel](/index.php/Kernel_modules_(Espa%C3%B1ol) "Kernel modules (Español)") `rfkill` .
+**Nota:** Es posible que la tarjeta pase del estado *hard-blocked* y *soft-unblocked*, al estado *hard-unblocked* y *soft-blocked*, presionando el botón del hardware (es decir, *soft-blocked* se cambia de estado sin motivo). Esto se puede ajustar mediante la regulación de algunas de las opciones del [módulo del kernel](/index.php/Kernel_modules_(Espa%C3%B1ol) "Kernel modules (Español)") `rfkill` .
 
 Para más información: [http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill)
 
@@ -594,11 +582,11 @@ Véase [Power saving#Network interfaces](/index.php/Power_saving#Network_interfa
 
 ### Imposible obtener una dirección IP
 
-*   Si falla repetidamente la obtención de una dirección IP por el cliente [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) predeterminado, pruebe instalando y usando [dhclient](https://www.archlinux.org/packages/?name=dhclient) en su lugar. No olvide seleccionar _dhclient_ como el principal cliente DHCP en la [gestión de la conexión](#Configuraci.C3.B3n_autom.C3.A1tica).
+*   Si falla repetidamente la obtención de una dirección IP por el cliente [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) predeterminado, pruebe instalando y usando [dhclient](https://www.archlinux.org/packages/?name=dhclient) en su lugar. No olvide seleccionar *dhclient* como el principal cliente DHCP en la [gestión de la conexión](#Configuraci.C3.B3n_autom.C3.A1tica).
 
 *   Si puede obtener una dirección IP para la interfaz de cable y no para la interfaz inalámbrica, pruebe a desactivar las funciones de ahorro de energía de la tarjeta inalámbrica: ` # iwconfig wlan0 power off` 
 
-*   Si se obtiene un error de timeout (_«tiempo excedido»_), debido a problemas _waiting for carrier_, entonces es posible que tenga que configurar la modalidad del canal a `auto` para ese dispositivo específico: ` # iwconfig wlan0 channel auto` Antes de cambiar el canal a auto, asegúrese de que su interfaz inalámbrica está desactivada. Después de que se ha cambiado con éxito, puede activar la interfaz de nuevo y continuar desde ahí.
+*   Si se obtiene un error de timeout (*«tiempo excedido»*), debido a problemas *waiting for carrier*, entonces es posible que tenga que configurar la modalidad del canal a `auto` para ese dispositivo específico: ` # iwconfig wlan0 channel auto` Antes de cambiar el canal a auto, asegúrese de que su interfaz inalámbrica está desactivada. Después de que se ha cambiado con éxito, puede activar la interfaz de nuevo y continuar desde ahí.
 
 ### Conexión siempre fuera de tiempo
 
@@ -674,7 +662,7 @@ intente cambiar el ancho de banda del canal a `20MHz` a través de la página de
 
 ## Solución de problemas sobre controladores y firmware
 
-Esta sección trata sobre los métodos y procedimientos para la instalación de módulos del kernel y _firmware_ para chipsets específicos, que difieren del método general.
+Esta sección trata sobre los métodos y procedimientos para la instalación de módulos del kernel y *firmware* para chipsets específicos, que difieren del método general.
 
 Véase el artículo sobre los [módulos del Kernel](/index.php/Kernel_modules_(Espa%C3%B1ol) "Kernel modules (Español)") para obtener instrucciones generales sobre las operaciones con los módulos.
 
@@ -816,7 +804,6 @@ Estos módulos son totalmente compatibles con el kernel, pero requieren firmware
 Si tiene problemas para conectarse a las redes en general, o su calidad de enlace es muy pobre, trate de desactivar 802.11n y activar el cifrado de software:
 
  `/etc/modprobe.d/iwlwifi.conf` 
-
 ```
 options iwlwifi 11n_disable=1
 options iwlwifi swcrypto=1
@@ -829,7 +816,6 @@ options iwlwifi swcrypto=1
 La configuración predeterminada del módulo establece el parpadeo del LED cuando esté en actividad. Algunos usuarios encuentran esto extremadamente molesto. Para que el LED no parpadee cuando el Wi-Fi está activo, puede usar [systemd-tmpfiles](/index.php/Systemd_(Espa%C3%B1ol)#Archivos_temporales "Systemd (Español)"):
 
  `/etc/tmpfiles.d/phy0-led.conf` 
-
 ```
 w /sys/class/leds/phy0-led/trigger - - - - phy0radio
 
@@ -911,7 +897,6 @@ ndiswrapper -l
 3\. Escriba el siguiente archivo de configuración:
 
  `/etc/modprobe.d/ndiswrapper.conf` 
-
 ```
 ndiswrapper -m
 depmod -a
@@ -928,13 +913,13 @@ iwconfig
 
 ```
 
-y _wlan0_ debería mostrarse. Consulte esta página si está teniendo problemas: [Ndiswrapper installation wiki](http://ndiswrapper.sourceforge.net/joomla/index.php?/component/option,com_openwiki/Itemid,33/id,installation/).
+y *wlan0* debería mostrarse. Consulte esta página si está teniendo problemas: [Ndiswrapper installation wiki](http://ndiswrapper.sourceforge.net/joomla/index.php?/component/option,com_openwiki/Itemid,33/id,installation/).
 
 ### compat-drivers-patched
 
 Los controladores inalámbricos de compat parcheado corrigen el problema «fixed-channel -1», proporcionando, al mismo tiempo, una mejor inyección. Instale el paquete [compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/) disponible en [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)").
 
-[compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/) no entra en conflicto con ningún otro paquete y los módulos compilados residen en `/usr/lib/modules/_your_kernel_version_/updates`.
+[compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/) no entra en conflicto con ningún otro paquete y los módulos compilados residen en `/usr/lib/modules/*your_kernel_version*/updates`.
 
 Estos drivers parcheados provienen de [Linux Wireless project](http://wireless.kernel.org/) y apoyan muchos de los chips anteriormente mencionados, tales como:
 

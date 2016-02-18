@@ -3,7 +3,6 @@
 A login manager-ek helyettesítésére kitűnő alternatíva az, hogy a következőt a `~/.bash_profile` végére fűzöd (ha a `~/.bash_profile` nincs jelen a rendszereden, innen bemásolhatod magadnak: `/etc/skel/.bash_profile`):
 
  `~/.bash_profile` 
-
 ```
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
   . startx
@@ -15,7 +14,6 @@ fi
 vagy (ez némi ellenőrzést is futtat):
 
  `~/.bash_profile` 
-
 ```
 if [[ -z "$DISPLAY" ]] && [[ ! -a "/tmp/.X11-unix/X0" ]] && [[ "`whoami`" != "root" ]]; then
   . startx
@@ -27,7 +25,6 @@ fi
 vagy:
 
  `~/.bash_profile` 
-
 ```
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
   exec xinit -- /usr/bin/X -nolisten tcp

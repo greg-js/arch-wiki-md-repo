@@ -75,7 +75,6 @@ Some times for Intel graphic adapters neither `# hwinfo --framebuffer` nor `vbei
 First you need to find a video mode which will be modified later. For that we need the GRUB command shell:
 
  `sh:grub> 915resolution -l` 
-
 ```
 Intel 800/900 Series VBIOS Hack : version 0.5.3
 [...]
@@ -87,7 +86,6 @@ Intel 800/900 Series VBIOS Hack : version 0.5.3
 Next, we overwrite the `Mode 30` with `1440x900` resolution:
 
  `/etc/grub.d/00_header` 
-
 ```
 [...]
 **915resolution 30 1440 900  # Inserted line**
@@ -211,7 +209,7 @@ GRUB_DISABLE_LINUX_UUID=true
 It is possible to use labels, human-readable strings attached to file systems, by using the `--label` option to `search`. First of all, label your existing partition:
 
 ```
-# tune2fs -L _LABEL_ _PARTITION_
+# tune2fs -L *LABEL* *PARTITION*
 
 ```
 
@@ -231,7 +229,6 @@ menuentry "Arch Linux, session texte" {
 If you want to secure GRUB so it is not possible for anyone to change boot parameters or use the command line, you can add a user/password combination to GRUB's configuration files. To do this, run the command `grub-mkpasswd-pbkdf2`. Enter a password and confirm it:
 
  `grub-mkpasswd-pbkdf2` 
-
 ```
 [...]
 Your PBKDF2 is grub.pbkdf2.sha512.10000.C8ABD3E93C4DFC83138B0C7A3D719BC650E6234310DA069E6FDB0DD4156313DA3D0D9BFFC2846C21D5A2DDA515114CF6378F8A064C94198D0618E70D23717E82.509BFA8A4217EAD0B33C87432524C0B6B64B34FBAD22D3E6E6874D9B101996C5F98AB1746FE7C7199147ECF4ABD8661C222EEEDB7D14A843261FFF2C07B1269A
@@ -241,7 +238,6 @@ Your PBKDF2 is grub.pbkdf2.sha512.10000.C8ABD3E93C4DFC83138B0C7A3D719BC650E62343
 Then, add the following to `/etc/grub.d/40_custom`:
 
  `/etc/grub.d/40_custom` 
-
 ```
 set superusers="**username**"
 password_pbkdf2 **username** **<password>**
@@ -315,11 +311,11 @@ menuentry "Arch Linux 64" {
 
 A basic GRUB config file uses the following options:
 
-*   `(hd_X_,_Y_)` is the partition _Y_ on disk _X_, partition numbers starting at 1, disk numbers starting at 0
-*   `set default=_N_` is the default boot entry that is chosen after timeout for user action
-*   `set timeout=_M_` is the time _M_ to wait in seconds for a user selection before default is booted
+*   `(hd*X*,*Y*)` is the partition *Y* on disk *X*, partition numbers starting at 1, disk numbers starting at 0
+*   `set default=*N*` is the default boot entry that is chosen after timeout for user action
+*   `set timeout=*M*` is the time *M* to wait in seconds for a user selection before default is booted
 *   `menuentry "title" {entry options}` is a boot entry titled `title`
-*   `set root=(hd_X_,_Y_)` sets the boot partition, where the kernel and GRUB modules are stored (boot need not be a separate partition, and may simply be a directory under the "root" partition (`/`)
+*   `set root=(hd*X*,*Y*)` sets the boot partition, where the kernel and GRUB modules are stored (boot need not be a separate partition, and may simply be a directory under the "root" partition (`/`)
 
 ## Multiple entries
 

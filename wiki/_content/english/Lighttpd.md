@@ -137,7 +137,6 @@ If you get a similar output then php is installed correctly.
 Create a new configuration file:
 
  `/etc/lighttpd/conf.d/fastcgi.conf` 
-
 ```
 # Make sure to install php and php-cgi. See:                                                             
 # https://wiki.archlinux.org/index.php/Fastcgi_and_lighttpd#PHP
@@ -177,26 +176,25 @@ fastcgi.server = (
 Make lighttpd use the new configuration file:
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 include "conf.d/fastcgi.conf"
 
 ```
 
-**Note:** Remember that the order in which the modules are loaded is important, the correct order is listed in `/usr/share/doc/lighttpd/config/modules.conf`. Any misconfiguration may cause _lighttpd_ to crash.
+**Note:** Remember that the order in which the modules are loaded is important, the correct order is listed in `/usr/share/doc/lighttpd/config/modules.conf`. Any misconfiguration may cause *lighttpd* to crash.
 
 [Reload](/index.php/Reload "Reload") lighttpd.
 
 **Note:**
 
-*   If you receive errors like _No input file found_ when attempting to access php files, there are several possible explanations. See [this FAQ](http://redmine.lighttpd.net/projects/1/wiki/frequentlyaskedquestions#I-get-the-error-No-input-file-specified-when-trying-to-use-PHP) for more information.
-*   Make sure that no other module (e.g. `mod_cgi`) will try to handle the _.php_ extension.
+*   If you receive errors like *No input file found* when attempting to access php files, there are several possible explanations. See [this FAQ](http://redmine.lighttpd.net/projects/1/wiki/frequentlyaskedquestions#I-get-the-error-No-input-file-specified-when-trying-to-use-PHP) for more information.
+*   Make sure that no other module (e.g. `mod_cgi`) will try to handle the *.php* extension.
 
 ##### Using php-fpm
 
 There is no adaptive spawning anymore in recent lighttpd releases. For dynamic management of PHP processes, you can install [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) and then [start](/index.php/Start "Start") and enable `php-fpm.service`.
 
-**Note:** You can configure the number of servers in the pool and tweak other configuration options by editing the file `/etc/php/php-fpm.conf`. More details on _php-fpm_ can be found on the [php-fpm website](http://php-fpm.org/). Remember that when you make changes to `/etc/php/php.ini` you will need to restart `php-fpm.service`.
+**Note:** You can configure the number of servers in the pool and tweak other configuration options by editing the file `/etc/php/php-fpm.conf`. More details on *php-fpm* can be found on the [php-fpm website](http://php-fpm.org/). Remember that when you make changes to `/etc/php/php.ini` you will need to restart `php-fpm.service`.
 
 In `/etc/lighttpd/conf.d/fastcgi.conf` add:
 
@@ -224,7 +222,6 @@ Install [eaccelerator](https://aur.archlinux.org/packages/eaccelerator/).
 Add own config file for eaccelerator:
 
  `/etc/php/conf.d/eaccelerator-own.ini` 
-
 ```
 zlib.output_compression = On
 cgi.fix_pathinfo=1
@@ -273,7 +270,7 @@ Follow instructions on [RubyOnRails](/index.php/RubyOnRails "RubyOnRails").
 
 #### Python FastCGI
 
-**Note:** This method will not work with Python 3 because _Flup_ library is only available for Python 2\. If you want to use Python 3, you should refer to [#CGI](#CGI) section.
+**Note:** This method will not work with Python 3 because *Flup* library is only available for Python 2\. If you want to use Python 3, you should refer to [#CGI](#CGI) section.
 
 Install and configure FastCGI (see [#FastCGI](#FastCGI) above).
 

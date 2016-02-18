@@ -10,10 +10,9 @@ For additional settings, install [gnome-tweak-tool](https://www.archlinux.org/pa
 
 ### Starting
 
-Choose _Budgie Desktop_ session from a [display manager](/index.php/Display_manager "Display manager") of choice, or modify [xinitrc](/index.php/Xinitrc "Xinitrc") to include Budgie Desktop:
+Choose *Budgie Desktop* session from a [display manager](/index.php/Display_manager "Display manager") of choice, or modify [xinitrc](/index.php/Xinitrc "Xinitrc") to include Budgie Desktop:
 
  `~/.xinitrc` 
-
 ```
 exec budgie-desktop
 

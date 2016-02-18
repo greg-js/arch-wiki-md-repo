@@ -43,17 +43,17 @@ Può essere installata da [addons.mozilla.org](https://addons.mozilla.org/thunde
 
 #### Condivisione della chiave pubblica
 
-Ci sono molti modi per distribuire la chiave pubblica. Uno di questi è quello di caricarla su un _public keyserver network_. Un'altro modo può essere quello di condividerla con gli amici usando email criptate.
+Ci sono molti modi per distribuire la chiave pubblica. Uno di questi è quello di caricarla su un *public keyserver network*. Un'altro modo può essere quello di condividerla con gli amici usando email criptate.
 
 #### Criptazione email
 
-Può accadere che la criptazione non funzioni bene con email che contengono HTML. Prima di tutto è raccomandabile impostare nella finestra della mail da criptare: _Opzioni > Formato di Consegna > Solo testo_.
+Può accadere che la criptazione non funzioni bene con email che contengono HTML. Prima di tutto è raccomandabile impostare nella finestra della mail da criptare: *Opzioni > Formato di Consegna > Solo testo*.
 
-Una volta terminata la mail è possibile firmarla attraverso il menu _OpenPGP_.
+Una volta terminata la mail è possibile firmarla attraverso il menu *OpenPGP*.
 
 #### Decriptazione Email
 
-Nel caso in cui un'email sia criptata, provando ad aprirla apparirà una finestra popup in cui digitare la _keyphrase_.
+Nel caso in cui un'email sia criptata, provando ad aprirla apparirà una finestra popup in cui digitare la *keyphrase*.
 
 ### Lightning - Calendario
 
@@ -69,9 +69,9 @@ FireTray è un'estensione che aggiunge un'icona di sistema personalizzabile per 
 
 **Nota:** Dalla versione 24 le chiavi `network.protocol-handler.app.*` non hanno più effetto e non possono essere utilizzate per impostare il browser predefinito.
 
-Le versioni più recenti di Thunderbird usano il browser predefinito impostato sul sistema. Attraverso Gnome Control Center si possono modificare le applicazioni predefinite: (_Gnome Control Center > Dettagli > Applicazioni Predefinite_) (disponibile in: [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center))
+Le versioni più recenti di Thunderbird usano il browser predefinito impostato sul sistema. Attraverso Gnome Control Center si possono modificare le applicazioni predefinite: (*Gnome Control Center > Dettagli > Applicazioni Predefinite*) (disponibile in: [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center))
 
-Ciò può essere annullato attraverso Thunderbird con _Preferenze > Avanzate > Generale > Editor di Configurazione_ e cercando: `network.protocol-handler.warn-external`.
+Ciò può essere annullato attraverso Thunderbird con *Preferenze > Avanzate > Generale > Editor di Configurazione* e cercando: `network.protocol-handler.warn-external`.
 
 Se le seguenti linee sono tutte impostate su `false` (default), cambiarle con `true`, e quando verrà aperto un link Thunderbird chiederà quale applicazione utilizzare. Il risultato dipende dal [Desktop Environment (Italiano)](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)") in uso, valori più comuni sono `/usr/bin/firefox`, `/usr/bin/google-chrome-stable`, per XFCE `/usr/bin/exo-open` o `/usr/bin/xdg-open` per gli ambienti senza DE.
 
@@ -84,12 +84,11 @@ network.protocol-handler.warn-external.https
 
 ### Impostare la modalità del testo e font uniformi
 
-Per impostare la modalità testo in modo da leggere le mail senza sfruttare il rendering in HTML modificare _Visualizza > Corpo del messaggio come > ..._. Questo è il font standard [Monospace](https://en.wikipedia.org/wiki/Monospace_(Unicode) "wikipedia:Monospace (Unicode)") ma la grandezza del carattere è stata ereditata dalle impostazioni del sistema originale _fontconfig_. L'esempio seguente è una sua riscrittura con Ubuntu Mono di 10 pixel (disponibile in:[ttf-ubuntu-font-family](https://www.archlinux.org/packages/?name=ttf-ubuntu-font-family)).
+Per impostare la modalità testo in modo da leggere le mail senza sfruttare il rendering in HTML modificare *Visualizza > Corpo del messaggio come > ...*. Questo è il font standard [Monospace](https://en.wikipedia.org/wiki/Monospace_(Unicode) ma la grandezza del carattere è stata ereditata dalle impostazioni del sistema originale *fontconfig*. L'esempio seguente è una sua riscrittura con Ubuntu Mono di 10 pixel (disponibile in:[ttf-ubuntu-font-family](https://www.archlinux.org/packages/?name=ttf-ubuntu-font-family)).
 
 Ricordarsi di digitare `fc-cache -fv` per aggiornare la cache di sistema dei font. Per maggiori informazioni vedere [Font configuration](/index.php/Font_configuration "Font configuration").
 
  `~/.config/fontconfig/fonts.conf` 
-
 ```
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">

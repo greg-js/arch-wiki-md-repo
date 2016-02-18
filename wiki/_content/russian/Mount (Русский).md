@@ -1,4 +1,4 @@
-_mount_ это команда для подключения и доступа к файловым системам, дисковых отделав и сетевых ресурсов. Она может подключать файловые системы поддерживающиеся ядром Линукса но может также быть дополнена новыми дополнениями для ядра программами такими как [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) для подключения [NTFS](/index.php/NTFS-3G_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NTFS-3G (Русский)") файловых систем с поддержкой для чтения и записи.
+*mount* это команда для подключения и доступа к файловым системам, дисковых отделав и сетевых ресурсов. Она может подключать файловые системы поддерживающиеся ядром Линукса но может также быть дополнена новыми дополнениями для ядра программами такими как [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) для подключения [NTFS](/index.php/NTFS-3G_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NTFS-3G (Русский)") файловых систем с поддержкой для чтения и записи.
 
 ## Contents
 
@@ -45,14 +45,13 @@ $ zgrep -e 'FS_' -e _FS -e 'CONFIG_ISO' -e  '_NLS=' -e CONFIG_NLS_ISO /proc/conf
 *   [Редактированием fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)")
 *   [Созданием правил udev/udisks](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)") - управляющий устройствами в Linux ядре
 
-Такие как _mount.X_ скрипты где _X_ это название ФС, могут быть использованы для обхода стандартных настроя для _mount_ в ядре для почти каждой поддерживающейся ФС. Используй _-i_ параметр для игнорирования mount.X скриптов, `mount -i /dev/sdXY /mnt/sdXY`.
+Такие как *mount.X* скрипты где *X* это название ФС, могут быть использованы для обхода стандартных настроя для *mount* в ядре для почти каждой поддерживающейся ФС. Используй *-i* параметр для игнорирования mount.X скриптов, `mount -i /dev/sdXY /mnt/sdXY`.
 
 ### VFAT, FAT, DOS
 
-Здесь пример настроек для _mount_ в ядре:
+Здесь пример настроек для *mount* в ядре:
 
  `$ zgrep -e FAT -e DOS /proc/config.gz | sort -r ` 
-
 ```
 # DOS/FAT/NT Filesystems
 CONFIG_FAT_FS=m
@@ -65,12 +64,11 @@ CONFIG_FAT_DEFAULT_IOCHARSET="iso8859-1"
 CONFIG_NCPFS_SMALLDOS=y
 ```
 
-**Обратите внимание:** Права доступа по умолчанию _rwxr-xr-x_, `umask=755` тоже как `fmask=0022,dmask=0022`
+**Обратите внимание:** Права доступа по умолчанию *rwxr-xr-x*, `umask=755` тоже как `fmask=0022,dmask=0022`
 
 Если тип ФС установлен как VFAT то будет запущен `/usr/bin/mount.vfat` скрипт.
 
  `$ cat /usr/bin/mount.vfat` 
-
 ```
 #!/bin/bash
 #mount VFAT with full rw (read-write) permissions for all users
@@ -86,13 +84,12 @@ mount -i -t vfat -oiocharset=utf8,fmask=0000,dmask=0000 "$@"
 В конфигурации по умолчанию:
 
  `$ zgrep ^CONFIG_NTFS  /proc/config.gz` 
-
 ```
 CONFIG_NTFS_FS=m
 CONFIG_NTFS_RW=y
 ```
 
-Опция настройки ядра `CONFIG_NTFS_RW=y` обеспечивает поддержку чтения и записи для [NTFS](https://en.wikipedia.org/wiki/ru:NTFS "wikipedia:ru:NTFS") файловой системы. Это также означает, что ядро ​​предопределено использовать [ntfs-3g](/index.php/NTFS-3G_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NTFS-3G (Русский)") в режиме чтения и записи. Сборка в поддержку файловых систем NTFS ядром является _только для чтения_, даже если активируется опция для чтения и записи.
+Опция настройки ядра `CONFIG_NTFS_RW=y` обеспечивает поддержку чтения и записи для [NTFS](https://en.wikipedia.org/wiki/ru:NTFS в режиме чтения и записи. Сборка в поддержку файловых систем NTFS ядром является *только для чтения*, даже если активируется опция для чтения и записи.
 
 **Обратите внимание:**
 
@@ -103,7 +100,6 @@ CONFIG_NTFS_RW=y
 По умолчанию параметры монтирования могут быть изменены при запуске mount.ntfs путем переименования /usr/bin/mount.ntfs символическую ссылку, если существует и создании скрипта на его месте с предпочтительными настройками или использовать -I параметр ( mount -i -t ntfs ), чтобы игнорировать все файлы mount.X и использовать изначально поддерживается функциональность ядром. Этот пример будет монтировать NTFS как только для чтения:
 
  `$ cat /usr/bin/mount.ntfs` 
-
 ```
 #!/bin/bash
 #mount -i -oro "$@"
@@ -118,7 +114,6 @@ ntfs-3g -oro  "$@" & disown
 Когда iso9660 образ обнаружен с mount, то будет запусчен /usr/bin/mount.iso9660 скрипт.
 
  `$ cat /usr/bin/mount.iso9660` 
-
 ```
 #!/bin/bash
 mount -i -t iso9660 "$@"
@@ -135,7 +130,6 @@ mount -i -t iso9660 "$@"
 Настройки ISO в ядре по умолчанию:
 
  `$ zgrep -e CONFIG_ISO -e  CONFIG_NLS_ISO /proc/config.gz` 
-
 ```
 CONFIG_ISO9660_FS=m
 CONFIG_NLS_ISO8859_8=m
@@ -157,7 +151,6 @@ CONFIG_NLS_ISO8859_15=m
 В конфигурации по умолчанию:
 
  `$ zgrep -ie reiserfs /proc/config.gz` 
-
 ```
 CONFIG_REISERFS_FS=m
 # CONFIG_REISERFS_CHECK is not set
@@ -167,14 +160,13 @@ CONFIG_REISERFS_FS_POSIX_ACL=y
 CONFIG_REISERFS_FS_SECURITY=y
 ```
 
-ReiserFS имеет проблему при подключении с использованием `mount.reiserfs` скриптов. _Mount_ игнорирует `-oro` опцию только для чтения и использует `-orw` вместо её, для записи и чтения, но при использовании с коммандной строки проблема `-oro` не возникает. _Я пробывал только с ReiserFS в соданом пустом документе._
+ReiserFS имеет проблему при подключении с использованием `mount.reiserfs` скриптов. *Mount* игнорирует `-oro` опцию только для чтения и использует `-orw` вместо её, для записи и чтения, но при использовании с коммандной строки проблема `-oro` не возникает. *Я пробывал только с ReiserFS в соданом пустом документе.*
 
 ### Squash ФС
 
 В конфигурации по умолчанию:
 
  `$ zgrep  SQUASHFS /proc/config.gz` 
-
 ```
 CONFIG_SQUASHFS=m
 # CONFIG_SQUASHFS_FILE_CACHE is not set
@@ -202,7 +194,7 @@ mksquashfs source /адрес/назначения.img   -comp lzo  -Xalgorithm 
 
 После того, как сжатый файл создастся, вы можете смонтировать его.
 
-В Arch Linux нет справочного руководства по утилите _mksquashfs_, но вы можете использовать `mksquashfs -h`, чтобы ознакомится со всеми возможными параметрами.
+В Arch Linux нет справочного руководства по утилите *mksquashfs*, но вы можете использовать `mksquashfs -h`, чтобы ознакомится со всеми возможными параметрами.
 
 * * *
 
@@ -211,6 +203,6 @@ mksquashfs source /адрес/назначения.img   -comp lzo  -Xalgorithm 
 ## См. также
 
 *   Документация файловых систем, поддерживаемых ядром: [kernel.org](https://www.kernel.org/doc/Documentation/filesystems/) (англ.)
-*   Руководство по комманде _mount_: [linux.die.net](http://linux.die.net/man/8/mount) (англ.)
+*   Руководство по комманде *mount*: [linux.die.net](http://linux.die.net/man/8/mount) (англ.)
 *   [Mount на Википедии](https://en.wikipedia.org/wiki/ru:Mount "wikipedia:ru:Mount")
 *   Краткая инструкция по созданию и использованию образов диска: [darkdust.net](http://darkdust.net/writings/diskimagesminihowto) (англ.)

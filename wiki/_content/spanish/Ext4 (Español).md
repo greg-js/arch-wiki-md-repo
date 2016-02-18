@@ -1,6 +1,6 @@
-**ext4** constituye la siguiente etapa en la evolución del sistema de archivos (o ficheros; en inglés, _filesystem_) denominado **extended**, que indudablemente se ha convertido en uno de los más utilizados por los usuarios de Linux.
+**ext4** constituye la siguiente etapa en la evolución del sistema de archivos (o ficheros; en inglés, *filesystem*) denominado **extended**, que indudablemente se ha convertido en uno de los más utilizados por los usuarios de Linux.
 
-Es importante destacar que las modificaciones introducidas por ext4 han sido más numerosas y significativas en comparación a las realizadas por su antecesor sobre ext2\. En otras palabras, ext4 presenta modificaciones en las estructuras internas del mismo sistema (de ficheros), como sucede en el caso de aquellas destinadas a la preservación de los datos propios de cada fichero, mientras que ext3 se caracterizó principalmente por haber introducido la funcionalidad _journaling_, inexistente en ext2.
+Es importante destacar que las modificaciones introducidas por ext4 han sido más numerosas y significativas en comparación a las realizadas por su antecesor sobre ext2\. En otras palabras, ext4 presenta modificaciones en las estructuras internas del mismo sistema (de ficheros), como sucede en el caso de aquellas destinadas a la preservación de los datos propios de cada fichero, mientras que ext3 se caracterizó principalmente por haber introducido la funcionalidad *journaling*, inexistente en ext2.
 
 En síntesis, el resultado ha sido un sistema mejor diseñado, más eficiente y confiable, y por supuesto con mayores prestaciones.
 
@@ -29,13 +29,13 @@ En síntesis, el resultado ha sido un sistema mejor diseñado, más eficiente y 
 Aquí le presentamos un método a utilizar para crear particiones en ext4\. Recuerde que puede modificarlo de acuerdo con sus necesidades:
 
 1.  Actualice su sistema: `pacman -Syu`
-2.  Dé formato a la partición que desee: `mkfs.ext4 /dev/<partición>` (Reemplace _/dev/<partición>_ por la ruta de la partición deseada: por ejemplo, _/dev/sda1_).
-3.  Monte la partición: `mount -text4 /dev/<partición>` (Utilice aquí el mismo valor para _/dev/<partición>_ que utilizó en el comando anterior).
-4.  Añada una entrada a `/etc/fstab` especificando _type_ como ext4.
+2.  Dé formato a la partición que desee: `mkfs.ext4 /dev/<partición>` (Reemplace */dev/<partición>* por la ruta de la partición deseada: por ejemplo, */dev/sda1*).
+3.  Monte la partición: `mount -text4 /dev/<partición>` (Utilice aquí el mismo valor para */dev/<partición>* que utilizó en el comando anterior).
+4.  Añada una entrada a `/etc/fstab` especificando *type* como ext4.
 
 **Nota:** Necesitará realizar el último paso únicamente si desea que la partición sea montada automáticamente cada vez que se inicie el sistema.
 
-**Sugerencia:** Vea el manual (_man page_) de mkfs.ext4 para más información.
+**Sugerencia:** Vea el manual (*man page*) de mkfs.ext4 para más información.
 Puede asimismo ver o editar el archivo `/etc/mke2fs.conf` en caso que desee modificar las opciones por defecto.
 
 ## Migrando de ext3
@@ -67,7 +67,7 @@ En lugar de convertir la partición completamente a ext4, es posible montarla co
 
 #### Procedimiento
 
-1.  Edite `/etc/fstab` cambiando el tipo (_type_) de la partición en cuestión a ext4\. Repita el proceso para todas las particiones que desee montar como ext4.
+1.  Edite `/etc/fstab` cambiando el tipo (*type*) de la partición en cuestión a ext4\. Repita el proceso para todas las particiones que desee montar como ext4.
 2.  Vuelva a montar las particiones afectadas (recuerde: `mount -a` montará todas las particiones especificadas en `/etc/fstab`).
 
 ### Convirtiendo Particiones en ext3 a ext4
@@ -90,19 +90,19 @@ Como sugerimos anteriormente, tenga en cuenta además los siguientes puntos a fa
 
 *   La partición no podrá leerse o escribirse utilizando controladores de ext3, (tenga en cuenta que aún no existe un controlador de ext4 para Windows).
 
-*   El proceso es **irreversible**: las particiones en ext4 no podrán _degradarse_ (_downgrade_) a ext3.
+*   El proceso es **irreversible**: las particiones en ext4 no podrán *degradarse* (*downgrade*) a ext3.
 
 #### Requisitos
 
-Si desea convertir su partición _/boot_ a ext4, deberá instalar asimismo `grub (0.97 o superior)`
+Si desea convertir su partición */boot* a ext4, deberá instalar asimismo `grub (0.97 o superior)`
 
-**Nota:** `grub (0.97 o superior)` requiere un parche para ext4, el mismo se encuentra actualmente incluido por defecto en el paquete _GRUB_ de Arch (si bien esto sucede actualmente, es altamente probable que no cambie). De lo contrario, necesitará [GRUB2](/index.php/GRUB2 "GRUB2") para poder arrancar el sistema desde una partición en ext4.
+**Nota:** `grub (0.97 o superior)` requiere un parche para ext4, el mismo se encuentra actualmente incluido por defecto en el paquete *GRUB* de Arch (si bien esto sucede actualmente, es altamente probable que no cambie). De lo contrario, necesitará [GRUB2](/index.php/GRUB2 "GRUB2") para poder arrancar el sistema desde una partición en ext4.
 
 **Advertencia:** GRUB no soporta "oficialmente" el arranque del sistema desde una partición en ext4, y [GRUB2](/index.php/GRUB2 "GRUB2") aún se encuentra en desarrollo. Si bien GRUB funciona actualmente, la opción más "segura" es arrancar desde una partición cuyo formato sea ext2 o ext3\. **CONSIDÉRESE ADVERTIDO**.
 
-**Nota:** Instalar Arch utilizando la última _release_ (2009.02) es altamente recomendado. Otras imágenes más antiguas (anteriores a 2008.06) acarrean versiones anteriores del _software_ requerido (por ejemplo, de `e2fsprogs`); no obstante, es sencillo actualizar el _software_ con `pacman -Sy` y luego `pacman -S e2fsprogs` desde la línea de comando luego de instalar Arch y luego de configurar la red. Una alternativa es utilizar [SystemRescueCD (1.1.4 o superior)](http://www.sysresccd.org/Download), que contiene las versiones apropiadas, siendo además un práctico CD para tener a mano.
+**Nota:** Instalar Arch utilizando la última *release* (2009.02) es altamente recomendado. Otras imágenes más antiguas (anteriores a 2008.06) acarrean versiones anteriores del *software* requerido (por ejemplo, de `e2fsprogs`); no obstante, es sencillo actualizar el *software* con `pacman -Sy` y luego `pacman -S e2fsprogs` desde la línea de comando luego de instalar Arch y luego de configurar la red. Una alternativa es utilizar [SystemRescueCD (1.1.4 o superior)](http://www.sysresccd.org/Download), que contiene las versiones apropiadas, siendo además un práctico CD para tener a mano.
 
-**Sugerencia:** Puede asimismo instalar Arch desde Internet, obteniendo de esa forma las últimas versiones disponibles de cada _software_ requerido.
+**Sugerencia:** Puede asimismo instalar Arch desde Internet, obteniendo de esa forma las últimas versiones disponibles de cada *software* requerido.
 
 **Advertencia:** Recientemente se ha discutido en los foros oficiales de Arch acerca de la peligrosidad que subyace al uso de `pacman -Sy <paquete>` para instalar paquetes, ya que la actualización previa de las bases de datos en conjunción a la instalación de un paquete puede generar inconsistencias en las dependencias de otros ya instalados. Consulte en los foros para más información.
 
@@ -110,40 +110,39 @@ Si desea convertir su partición _/boot_ a ext4, deberá instalar asimismo `grub
 
 Estas instrucciones han sido adaptadas de [ext4 Wiki](http://ext4.wiki.kernel.org/index.php/Ext4_Howto) y [Foros de Arch (Hilo #61602)](https://bbs.archlinux.org/viewtopic.php?id=61602). Fueron examinadas y verificadas por el autor hasta el 16 de Enero de 2009.
 
-*   **ACTUALICE SU SISTEMA**: Haga una actualización global de su sistema para asegurarse de que su _software_ esté al día: `pacman -Syu`.
+*   **ACTUALICE SU SISTEMA**: Haga una actualización global de su sistema para asegurarse de que su *software* esté al día: `pacman -Syu`.
 
 *   **REALICE UN BACK-UP**: Haga una copia de seguridad de las particiones que convertirá a ext4.
     Aunque ext4 se considere "estable" para el uso general, es aún relativamente jóven y no ha sido evaluado exhaustivamente. Además, el proceso de conversión se ha evaluado únicamente en un entorno (en un sistema) de simple configuración; es imposible evaluar este proceso en todas las posibles configuraciones que los usuarios pudieran tener. (Véase la siguiente entrada, en inglés: [Back-Up Programs](/index.php/Backup_programs "Backup programs")).
 
-*   Edite `/etc/fstab` modificando el tipo (_type_) a ext4 para cada partición que desee convertir.
+*   Edite `/etc/fstab` modificando el tipo (*type*) a ext4 para cada partición que desee convertir.
 
-**Advertencia:** ext4 es _backwards-compatible_ (compatible _hacia atrás_) con ext3 hasta tanto se hayan habilitado las nuevas funcionalidades (como _extent_). Si posee particiones compartidas actualmente con otro sistema operativo (SO; OS en inglés) que aún no puede leer particiones en ext4, podrá montarlas como ext4 en Arch sin modificarlas (véase el método anterior). Tenga en consideración que los beneficios serán menores si las mismas no son eventualmente convertidas a ext4.
-
+**Advertencia:** ext4 es *backwards-compatible* (compatible *hacia atrás*) con ext3 hasta tanto se hayan habilitado las nuevas funcionalidades (como *extent*). Si posee particiones compartidas actualmente con otro sistema operativo (SO; OS en inglés) que aún no puede leer particiones en ext4, podrá montarlas como ext4 en Arch sin modificarlas (véase el método anterior). Tenga en consideración que los beneficios serán menores si las mismas no son eventualmente convertidas a ext4.
 También tenga en cuenta que luego del siguiente paso **la partición en cuestión poseerá un nuevo formato: ext4**.
 
-*   El proceso de conversión con `e2fsprogs` deberá realizarse cuando la partición no se encuentre montada. Si desea convertir la partición _root_ (/), hágalo desde otra distribución o desde algún medio que le permita acceder a una línea de comando, (véanse los requisitos previos detallados anteriormente).
+*   El proceso de conversión con `e2fsprogs` deberá realizarse cuando la partición no se encuentre montada. Si desea convertir la partición *root* (/), hágalo desde otra distribución o desde algún medio que le permita acceder a una línea de comando, (véanse los requisitos previos detallados anteriormente).
 
-**Nota:** Aunque se utilice en este texto el término _partición_ para hacer referencia a ciertos directorios específicos (por ejemplo, _/boot_), no es en absoluto necesario que los mismos se encuentren vinculados a _particiones dedicadas_.
+**Nota:** Aunque se utilice en este texto el término *partición* para hacer referencia a ciertos directorios específicos (por ejemplo, */boot*), no es en absoluto necesario que los mismos se encuentren vinculados a *particiones dedicadas*.
 
 *   Arranque el sistema desde el que trabajará (si fuera necesario).
 *   Por cada partición a convertir:
     *   Asegúrese de que la partición **NO** esté montada.
-    *   Ejecute: `tune2fs -O extents,uninit_bg,dir_index /dev/<partición>` (donde _/dev/<partición>_ es la ruta de la partición que desea convertir).
+    *   Ejecute: `tune2fs -O extents,uninit_bg,dir_index /dev/<partición>` (donde */dev/<partición>* es la ruta de la partición que desea convertir).
     *   Ejecute: `fsck -fp /dev/<partición>`
 
-**Nota:** Usted **DEBE** ejecutar _fsck_ en el sistema de ficheros, de lo contrario **quedará ilegible**. Esta ejecución de _fsck_ es necesaria para volver el sistema a un estado consistente. **Se encontrarán errores en las checksums (sumas de verifiación) de los descriptores de grupo**, esto es esperable. La opción "-f" le solicita a _fsck_ que fuerce la verifiación incluso si el sistema parece estar limpio. Por su parte, "-p" solicita a _fsck_ que **repare automáticamente** (de lo contrario, _fsck_ le pedirá instrucciones por cada error encontrado).
+**Nota:** Usted **DEBE** ejecutar *fsck* en el sistema de ficheros, de lo contrario **quedará ilegible**. Esta ejecución de *fsck* es necesaria para volver el sistema a un estado consistente. **Se encontrarán errores en las checksums (sumas de verifiación) de los descriptores de grupo**, esto es esperable. La opción "-f" le solicita a *fsck* que fuerce la verifiación incluso si el sistema parece estar limpio. Por su parte, "-p" solicita a *fsck* que **repare automáticamente** (de lo contrario, *fsck* le pedirá instrucciones por cada error encontrado).
 
 *   Reinicie Arch.
 
-**Advertencia:** Si convirtió la partición _root_ (/), es posible que se produzca un _kernel panic_ al intentar iniciar el sistema. Si sucediere, simplemente reinicie nuevamente el sistema, arranque desde _fallback_ y vuelva a crear el _ramdisk_ inicial con `mkinitcpio -p linux`
+**Advertencia:** Si convirtió la partición *root* (/), es posible que se produzca un *kernel panic* al intentar iniciar el sistema. Si sucediere, simplemente reinicie nuevamente el sistema, arranque desde *fallback* y vuelva a crear el *ramdisk* inicial con `mkinitcpio -p linux`
 
 #### Migrando Ficheros a Extents
 
-Aunque la partición ya se ha convertido a ext4, los ficheros que fueron escritos previamente aún no comenzaron a aprovechar las ventajas de la nueva funcionalidad _extents_ que el mismo provee. Al modificar esta situación, se mejorará el desempeño del sistema, particularmente con los ficheros grandes, como así se reducirá la fragmentación del mismo y el tiempo de verificación.
+Aunque la partición ya se ha convertido a ext4, los ficheros que fueron escritos previamente aún no comenzaron a aprovechar las ventajas de la nueva funcionalidad *extents* que el mismo provee. Al modificar esta situación, se mejorará el desempeño del sistema, particularmente con los ficheros grandes, como así se reducirá la fragmentación del mismo y el tiempo de verificación.
 
 En conclusión, para aprovechar ext4 completamente, todos los ficheros deberán ser reescritos. (Una utilidad llamada `e4defrag` está siendo desarrollada para encargarse de esta tarea, sin embargo, aún no está lista para ser utilizada).
 
-Afortunadamente, es posible utilizar todavía el programa _chattr_ (_change attribute_), que le ordenará al kernel reescribir los ficheros utilizando _extents_. Si bien es posible ejecutar el comando en todos los ficheros y directorios de una partición (por ejemplo, si _/home_ estuviera en una partición separada):
+Afortunadamente, es posible utilizar todavía el programa *chattr* (*change attribute*), que le ordenará al kernel reescribir los ficheros utilizando *extents*. Si bien es posible ejecutar el comando en todos los ficheros y directorios de una partición (por ejemplo, si */home* estuviera en una partición separada):
 
 ```
 find /home -xdev -type f -print0 | xargs -0 chattr +e
@@ -153,29 +152,29 @@ find /home -xdev -type d -print0 | xargs -0 chattr +e
 
 Se recomienda verificar el funcionamiento de los comandos antedichos en un pequeño grupo de ficheros previamente, a fin de evitar poner en riesgo la totalidad de los mismos.
 
-Quizá también resulte útil verificar el sistema de ficheros luego de realizar la conversión (el manual, la _man page_, de _fsck_ puede ayudarle, consúltela).
+Quizá también resulte útil verificar el sistema de ficheros luego de realizar la conversión (el manual, la *man page*, de *fsck* puede ayudarle, consúltela).
 
-Con el comando _lsattr_ (_list attributes_) podrá cotejar que los ficheros estén efectivamente utilizando _extents_. La letra **e** deberá aparecer en la lista de atributos de cada archivo.
+Con el comando *lsattr* (*list attributes*) podrá cotejar que los ficheros estén efectivamente utilizando *extents*. La letra **e** deberá aparecer en la lista de atributos de cada archivo.
 
 ## Solución de Problemas
 
 ### Kernel Panic
 
-<u>Problema</u>: _kernel panic_ luego de realizar la conversión a ext4 de la partición _root_ (/).
+<u>Problema</u>: *kernel panic* luego de realizar la conversión a ext4 de la partición *root* (/).
 
-<u>Causa</u>: el _ramdisk_ inicial detectaba el formato de la partición como _ext4dev_ en lugar de ext4.
+<u>Causa</u>: el *ramdisk* inicial detectaba el formato de la partición como *ext4dev* en lugar de ext4.
 
-<u>Solución</u>: Arrancar el sistema utilizando la imagen _fallback_ y recrear el _ramdisk_ inicial. `# mkinitcpio -p linux` 
+<u>Solución</u>: Arrancar el sistema utilizando la imagen *fallback* y recrear el *ramdisk* inicial. `# mkinitcpio -p linux` 
 
-Durante el proceso de creación, `mkinitcpio` correctamente detectó e incluyó los módulos de ext4 en el _ramkdisk_ inicial.
+Durante el proceso de creación, `mkinitcpio` correctamente detectó e incluyó los módulos de ext4 en el *ramkdisk* inicial.
 
 ### GRUB Error 13
 
-<u>Problema</u>: Al intentar arrancar el sistema desde una partición (normalmente montada en _/boot_) convertida a ext4, GRUB notifica: `Error 13: Invalid or unsupported executable format` 
+<u>Problema</u>: Al intentar arrancar el sistema desde una partición (normalmente montada en */boot*) convertida a ext4, GRUB notifica: `Error 13: Invalid or unsupported executable format` 
 
 <u>Solución</u>:
 
-*   Iniciar desde el medio de instalación de Arch el sistema _live_.
+*   Iniciar desde el medio de instalación de Arch el sistema *live*.
 *   Ejecutar los comandos en la siguiente lista, preferentemente respetando el orden de los mismos:
 
 ```
@@ -188,7 +187,7 @@ Durante el proceso de creación, `mkinitcpio` correctamente detectó e incluyó 
 
 ```
 
-Si _/boot_ se encuentra en una partición aislada (dedicada), entonces también deberá montarse:
+Si */boot* se encuentra en una partición aislada (dedicada), entonces también deberá montarse:
 
 ```
 # mount -t ext4 /dev/<partición> /boot
@@ -202,11 +201,11 @@ Finalmente, el siguiente comando deberá solucionar el problema, (¿sabe alguien
 
 ```
 
-**Nota:** Reemplace cada ocurrencia de _/dev/<partición>_ por la ruta congruente con el comando a ejecutar.
+**Nota:** Reemplace cada ocurrencia de */dev/<partición>* por la ruta congruente con el comando a ejecutar.
 
 ### Corrupción de Datos
 
-Algunos adoptantes iniciales de ext4 han visto sus datos corrompidos después de un _hard reboot_ (reinicio desde la máquina y no desde el sistema). Por favor, vea (en inglés) [Ext4 data loss; explanations and workarounds](http://www.h-online.com/open/Ext4-data-loss-explanations-and-workarounds--/news/112892) para más información.
+Algunos adoptantes iniciales de ext4 han visto sus datos corrompidos después de un *hard reboot* (reinicio desde la máquina y no desde el sistema). Por favor, vea (en inglés) [Ext4 data loss; explanations and workarounds](http://www.h-online.com/open/Ext4-data-loss-explanations-and-workarounds--/news/112892) para más información.
 
 Desde el kernel 2.6.30, ext4 se considera seguro (o más seguro). Diversos parches contribuyeron a incrementar su robustez, tal vez a costa del rendimiento.
 

@@ -7,7 +7,6 @@ Make sure your clocks are synchronized. Kerberos will not work otherwise. [NTP](
 Follow the LDAP auth instructions to [setup SSSD](/index.php/LDAP_authentication#Online_and_Offline_Authentication_with_SSSD "LDAP authentication"). Use a SSSD configuration similar to the following, substituting the requisite fields:
 
  `/etc/sssd/sssd.conf` 
-
 ```
 [sssd]
 config_file_version = 2
@@ -31,7 +30,6 @@ Configure pam in similar way to [LDAP](/index.php/LDAP_authentication#PAM_Config
 Create an `/etc/krb5.conf` file for your domain:
 
  `/etc/krb5.conf` 
-
 ```
 [libdefaults]
         default_realm = DOMAIN.COM

@@ -17,7 +17,7 @@ This document provides instructions on how to set up a Japanese language environ
 
 ## Fonts
 
-_see also [Fonts](/index.php/Fonts "Fonts") and [Font configuration](/index.php/Font_configuration "Font configuration") for configuration or more detail._
+*see also [Fonts](/index.php/Fonts "Fonts") and [Font configuration](/index.php/Font_configuration "Font configuration") for configuration or more detail.*
 
 To use any Japanese input method, you need to have Japanese fonts installed.
 
@@ -42,7 +42,7 @@ If you want to show [2channel Shift JIS art](http://en.wikipedia.org/wiki/2chann
 
 ## Locale
 
-_See [locale](/index.php/Locale "Locale") for detail_
+*See [locale](/index.php/Locale "Locale") for detail*
 
 You should have `ja_JP.UTF-8` enabled in `/etc/locale.gen`.
 
@@ -66,9 +66,9 @@ See each articles for detail.
 
 #### Mozc
 
-_Available IM Frameworks: Fcitx, IBus, uim_
+*Available IM Frameworks: Fcitx, IBus, uim*
 
-_See [Mozc](/index.php/Mozc "Mozc")_
+*See [Mozc](/index.php/Mozc "Mozc")*
 
 [Mozc](http://code.google.com/p/mozc/) is a Japanese Input Method Editor (IME) designed for multi-platform such as Chromium OS, Windows, Mac and Linux which originates from [Google Japanese Input](http://www.google.com/intl/ja/ime/).
 
@@ -76,7 +76,7 @@ Custom package [mozc-ut](https://aur.archlinux.org/packages/mozc-ut/) comes with
 
 #### libkkc
 
-_Available IM Frameworks: Fcitx, IBus_
+*Available IM Frameworks: Fcitx, IBus*
 
 [libkkc](https://bitbucket.org/libkkc/) provides a converter from Japanese Kana-string to Kana-Kanji-mixed-string. It was named after kkc.el in GNU Emacs, a simple Kana Kanji converter, while libkkc tries to convert sentences in a bit more complex way using N-gram language models. It is developed by a Red Hat engineer.
 
@@ -84,7 +84,7 @@ Install [fcitx-kkc](https://www.archlinux.org/packages/?name=fcitx-kkc) (for Fci
 
 #### SKK
 
-_Available IM Frameworks: Fcitx, IBus, uim_
+*Available IM Frameworks: Fcitx, IBus, uim*
 
 [SKK](http://openlab.jp/skk/index.html) (Simple Kana to Kanji conversion program) is a Japanese input method on Emacs. It was designed by Dr. Masahiko Sato (Professor Emeritus, Kyoto University) (old link) and created in 1987\. A unique feature of SKK is that it converts words one by one (single-word conversion), without analyzing syntax or grammar.
 
@@ -92,7 +92,7 @@ Install [skk-jisyo](https://www.archlinux.org/packages/?name=skk-jisyo) and [fci
 
 #### Google CGI API for Japanese input
 
-_Available IM Framewworks: uim_
+*Available IM Framewworks: uim*
 
 [Google CGI API for Japanese Input](http://www.google.co.jp/ime/cgiapi.html) (Google-CGIAPI-Jp) is CGI service to provide Japanese conversion on the Internet by Google. It can be used on [web browser](http://www.google.com/transliterate). Its conversion engine seems to be equivalent to Google Japanese Input, so conversion quality is probably better than Mozc.
 

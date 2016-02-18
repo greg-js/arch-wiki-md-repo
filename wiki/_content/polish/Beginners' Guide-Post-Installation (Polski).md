@@ -61,9 +61,9 @@ Repozytoria są opisane niżej; włącz wybrane repozytoria usuwając # z począ
 
 ##### Repozytoria pakietów
 
-[Repozytorium](https://en.wikipedia.org/wiki/software_repository "wikipedia:software repository") to miejsce przechowywania pakietów oprogramowania, które mogą zostać ściągnięte i zainstalowane na komputerze. [Opiekunowie pakietów](/index.php?title=Package_maintainer_(Polski)&action=edit&redlink=1 "Package maintainer (Polski) (page does not exist)") Arch Linuksa (deweloperzy i [Zaufani Użytkownicy](/index.php?title=Trusted_Users_(Polski)&action=edit&redlink=1 "Trusted Users (Polski) (page does not exist)")) opiekują się pakietami w oficjalnych repozytoriach, zawierającymi niezbędne i popularne oprogramowanie, łatwo dostępne za pomocą [pacmana](/index.php/Pacman_(Polski) "Pacman (Polski)"). Ten artykuł opisuje tylko oficjalne repozytoria. Zobacz [Oficjalne repozytoria](/index.php?title=Official_Repositories_(Polski)&action=edit&redlink=1 "Official Repositories (Polski) (page does not exist)") po więcej informacji dotyczących szczegółów i zawartości każdego repozytorium.
+[Repozytorium](https://en.wikipedia.org/wiki/software_repository Arch Linuksa (deweloperzy i [Zaufani Użytkownicy](/index.php?title=Trusted_Users_(Polski)&action=edit&redlink=1 "Trusted Users (Polski) (page does not exist)")) opiekują się pakietami w oficjalnych repozytoriach, zawierającymi niezbędne i popularne oprogramowanie, łatwo dostępne za pomocą [pacmana](/index.php/Pacman_(Polski) "Pacman (Polski)"). Ten artykuł opisuje tylko oficjalne repozytoria. Zobacz [Oficjalne repozytoria](/index.php?title=Official_Repositories_(Polski)&action=edit&redlink=1 "Official Repositories (Polski) (page does not exist)") po więcej informacji dotyczących szczegółów i zawartości każdego repozytorium.
 
-**Note:** Gdy wybierasz repozytoria, upewnij się, że odblokowałeś tak linie nagłówkową `[_repo_name_]`, jak i pozostałe linie, w przeciwnym wypadku repozytorium pozostanie pominięte przy aktualizacji! To bardzo powszechny błąd. Przykładowy wpis powinien wyglądać tak, jak poniżej.
+**Note:** Gdy wybierasz repozytoria, upewnij się, że odblokowałeś tak linie nagłówkową `[*repo_name*]`, jak i pozostałe linie, w przeciwnym wypadku repozytorium pozostanie pominięte przy aktualizacji! To bardzo powszechny błąd. Przykładowy wpis powinien wyglądać tak, jak poniżej.
 
 Większość użytkowników powinna wybrać [core], [extra] i [community]. Jeśli chcesz używać aplikacji 32-bitowych w systemie 64-bitowym, włącz repozytorium [multilib] dodając te linie do `/etc/pacman.conf`:
 
@@ -106,7 +106,7 @@ Zmuś pacmana do odświeżenia wszystkich list pakietów z nowego pliku mirrorli
 
  `# pacman -Syy` 
 
-Użycie dwóch parametrów `--refresh` lub `-y` zmusza pacmana do odświeżenia wszystkich list pakietów, nawet jeśli uważa je za aktualne. Uruchomienie `pacman -Syy` _przy każdej zmianie mirrorów_, jest dobrą praktyką i oszczędzi wielu problemów.
+Użycie dwóch parametrów `--refresh` lub `-y` zmusza pacmana do odświeżenia wszystkich list pakietów, nawet jeśli uważa je za aktualne. Uruchomienie `pacman -Syy` *przy każdej zmianie mirrorów*, jest dobrą praktyką i oszczędzi wielu problemów.
 
 **Note:** Część problemów zgłaszanych na [forum Arch Linuksa](https://bbs.archlinux.org/) dotyczy problemów z siecią, które nie pozwalają pacmanowi na odświeżenie/aktualizację repozytoriów (zobacz [[1]](https://bbs.archlinux.org/viewtopic.php?id=68944) i [[2]](https://bbs.archlinux.org/viewtopic.php?id=65728)). W natywnej instalacji Archa, te problemy mogą zostać rozwiązane przez zmianę programu do pobierania danych używanego przez pacmana (zobacz [Improve Pacman Performance_(Polski)](/index.php?title=Improve_Pacman_Performance_(Polski)&action=edit&redlink=1 "Improve Pacman Performance (Polski) (page does not exist)") po więcej szczegółów). W przypadku Archa będącego gościem w [VirtualBox](/index.php?title=VirtualBox_(Polski)&action=edit&redlink=1 "VirtualBox (Polski) (page does not exist)"), rozwiązaniem jest użycie "Host interface" zamiast "NAT" w ustawieniach maszyny.
 
@@ -128,7 +128,7 @@ Zweryfikuj [Master Signing Keys](https://www.archlinux.org/master-keys/) będąc
 
 Deweloperzy często dostarczają ważne informacje dotyczące konfiguracji i modyfikacji dotyczących znanych usterek. Użytkownik Arch Linuksa powinien zpoznać się z tymi treściami przed dokonaniem aktualizacji:
 
-*   [Aktualności Archa](https://archlinux.org/news/). Jeśli nie przeczytałeś(aś) tego przed aktualizacją i napotkałeś błąd, przeczytaj aktualności _zanim_ napiszesz post lub zapytanie na forum!
+*   [Aktualności Archa](https://archlinux.org/news/). Jeśli nie przeczytałeś(aś) tego przed aktualizacją i napotkałeś błąd, przeczytaj aktualności *zanim* napiszesz post lub zapytanie na forum!
 *   [Lista mailingowa arch-announce](https://archlinux.org/pipermail/arch-announce/).
 
 Zsynchronizuj, odśwież, i zaktualizuj cały system używając:
@@ -163,7 +163,7 @@ Pamiętaj, że Arch jest dystrybucją **ciągłego wydania**. Oznacza to, że u�
 
 **Warning:** Linux jest środowiskiem wieloużytkownikowym. Nie powinieneś(aś) używać konta roota do codziennych zadań, jest to zła i bardzo niebezpieczna praktyka: konto roota powinno być używane tylko do administracji.
 
-Dodaj konto zwykłego użytkownika, używając jednej z następujących metod. W tym przykładzie stworzymy użytkownika _archie_:
+Dodaj konto zwykłego użytkownika, używając jednej z następujących metod. W tym przykładzie stworzymy użytkownika *archie*:
 
 #### Metoda interaktywna
 
@@ -188,9 +188,9 @@ Expiry date (YYYY-MM-DD) []:
 
 ```
 
-Jak pokazano w przykładzie, powinieneś(aś) wprowadzić dane tylko w _Login name_ (Login) i _Additional groups_ (Dodatkowe grupy), pozostawiając resztę pól pustą.
+Jak pokazano w przykładzie, powinieneś(aś) wprowadzić dane tylko w *Login name* (Login) i *Additional groups* (Dodatkowe grupy), pozostawiając resztę pól pustą.
 
-Lista _Additional groups_ (Dodatkowych grup) w przykładzie jest typowa dla komputera domowego, jest więc polecana dla początkujacych:
+Lista *Additional groups* (Dodatkowych grup) w przykładzie jest typowa dla komputera domowego, jest więc polecana dla początkujacych:
 
 *   **audio** - do działań związanych z kartą dźwiękową i powiązanym oprogramowaniem
 *   **games** - do możliwości zapisu dla gier
@@ -214,7 +214,7 @@ Bedziesz musiał(a) ustawić hasło do konta używając `passwd`. Możesz wprowa
 Można też użyć:
 
 ```
-# useradd -m -g users -G wheel -s /bin/bash _archie_
+# useradd -m -g users -G wheel -s /bin/bash *archie*
 
 ```
 

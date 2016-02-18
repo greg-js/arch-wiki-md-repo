@@ -34,7 +34,7 @@ There are various ways of installing Arch on a USB stick, depending on the opera
 
 Follow the [installation guide](/index.php/Installation_guide "Installation guide") as you normally would, with these exceptions:
 
-*   If cfdisk fails with "Partition ends in the final partial cylinder" fatal error, the only way to proceed is to kill all partitions on the drive. Open another terminal (`Alt+F2`), type `fdisk /dev/_sdX_` (where `_sdX_` is your usb drive), print partition table (p), check that it's ok, delete it (d) and write changes (w). Now return to cfdisk.
+*   If cfdisk fails with "Partition ends in the final partial cylinder" fatal error, the only way to proceed is to kill all partitions on the drive. Open another terminal (`Alt+F2`), type `fdisk /dev/*sdX*` (where `*sdX*` is your usb drive), print partition table (p), check that it's ok, delete it (d) and write changes (w). Now return to cfdisk.
 *   It is highly recommended to review the [tips for minimizing disk reads/writes](/index.php/SSD#Tips_for_minimizing_disk_reads.2Fwrites "SSD") on the [SSD](/index.php/SSD "SSD") wiki article prior to selecting a filesystem. To sum up, [ext4 without a journal](http://fenidik.blogspot.com/2010/03/ext4-disable-journal.html) should be fine, which can be created with `# mkfs.ext4 -O "^has_journal" /dev/sdXX`. Recognize that flash has a limited number of writes, and a journaling file system will take some of these as the journal is updated. For this same reason, it is best to forget the swap partition. Note that this does not affect installing onto a USB hard drive.
 *   Before creating the initial RAM disk `# mkinitcpio -p linux`, in `/etc/mkinitcpio.conf` add the `block` hook to the hooks array right after udev. This is necessary for appropriate module loading in early userspace.
 *   If you want to be able to continue to use the UFD device as a cross-platform removable drive, this can be accomplished by creating a partition housing an appropriate file system (most likely NTFS or exFAT). Note that the data partition may need to be the first partition on the device, as Windows assumes that there can only be one partition on a removable device, and will happily automount an EFI system partition otherwise. Remember to install [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) and [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g). Some tools are available online that may allow you to flip the removable media bit on your UFD device. This would trick operating systems into treating your UFD device as an external hard disk and allow you to use whichever partitioning scheme you choose.
@@ -56,7 +56,7 @@ To get the proper UUIDs for your partitions issue **blkid**
 
 ### GRUB legacy
 
-`menu.lst`, the GRUB legacy configuration file, should be edited to (loosely) match the following: With the static `/dev/sda_X_`:
+`menu.lst`, the GRUB legacy configuration file, should be edited to (loosely) match the following: With the static `/dev/sda*X*`:
 
 ```
 root (hd0,0)
@@ -94,7 +94,7 @@ On GPT with UEFI installations, make sure you follow the instructions on [GRUB#U
 
 ### Syslinux
 
-With the static `/dev/sda_X_`:
+With the static `/dev/sda*X*`:
 
 ```
 LABEL Arch
@@ -165,14 +165,13 @@ The fallback image should be used for maximum compatibility.
 *   You may want to configure [journald](/index.php/Systemd#Journal "Systemd") to store its journals in RAM, e.g. by creating a custom configuration file:
 
  `/etc/systemd/journald.conf.d/usbstick.conf` 
-
 ```
 [Journal]
 Storage=volatile
 RuntimeMaxUse=30M
 ```
 
-*   To disable `fsync` and related system calls in web browsers and other applications that do not write essential data, use the _eatmydata_ command from [libeatmydata](https://aur.archlinux.org/packages/libeatmydata/) to avoid such system calls:
+*   To disable `fsync` and related system calls in web browsers and other applications that do not write essential data, use the *eatmydata* command from [libeatmydata](https://aur.archlinux.org/packages/libeatmydata/) to avoid such system calls:
 
 ```
 $ eatmydata firefox

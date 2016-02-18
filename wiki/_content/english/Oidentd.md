@@ -18,7 +18,7 @@ With no global nor user configuration file(s), the users' ident replies will be 
 
 ### Global configuration
 
-You may create the global configuration file _/etc/oidentd.conf_.
+You may create the global configuration file */etc/oidentd.conf*.
 
 According to the manual, the following is suitable for a global configuration.
 
@@ -46,7 +46,7 @@ Which says, "Grant all users the ability to generate random numeric ident replie
 
 ### User configuration
 
-Additionally and/or alternatively, each user may create his own local configuration file, _$HOME/.oidentd.conf_.
+Additionally and/or alternatively, each user may create his own local configuration file, *$HOME/.oidentd.conf*.
 
 A possible example follows.
 
@@ -69,7 +69,7 @@ systemctl start oidentd.socket
 
 ```
 
-If you want to have oidentd start up automatically every time you start your computer, then you need to enable _oidentd.socket_ with systemd. For example:
+If you want to have oidentd start up automatically every time you start your computer, then you need to enable *oidentd.socket* with systemd. For example:
 
 ```
 systemctl enable oidentd.socket

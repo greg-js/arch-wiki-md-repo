@@ -1,10 +1,10 @@
 **翻译状态：** 本文是英文页面 [pacman](/index.php/Pacman "Pacman") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-01-02，点击[这里](https://wiki.archlinux.org/index.php?title=pacman&diff=0&oldid=413745)可以查看翻译后英文页面的改动。
 
-[pacman](https://archlinux.org/pacman/)[软件包管理器](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system")是 Arch Linux 的一大亮点。它将一个简单的二进制包格式和易用的构建系统结合了起来(参见[makepkg](/index.php/Makepkg "Makepkg")和[ABS](/index.php/ABS "ABS"))。不管软件包是来自官方的 Arch 库还是用户自己创建，_pacman_ 都能方便得管理。
+[pacman](https://archlinux.org/pacman/)[软件包管理器](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system")是 Arch Linux 的一大亮点。它将一个简单的二进制包格式和易用的构建系统结合了起来(参见[makepkg](/index.php/Makepkg "Makepkg")和[ABS](/index.php/ABS "ABS"))。不管软件包是来自官方的 Arch 库还是用户自己创建，*pacman* 都能方便得管理。
 
-_pacman_ 通过和主服务器同步软件包列表来进行系统更新，这使得注重安全的系统管理员的维护工作成为轻而易举的事情。这种服务器/客户端模式可以使用一条命令就下载/安装软件包，同时安装必需的依赖包。
+*pacman* 通过和主服务器同步软件包列表来进行系统更新，这使得注重安全的系统管理员的维护工作成为轻而易举的事情。这种服务器/客户端模式可以使用一条命令就下载/安装软件包，同时安装必需的依赖包。
 
-_pacman_ 用 C 语言编写，使用 `.pkg.tar.xz` 打包格式。
+*pacman* 用 C 语言编写，使用 `.pkg.tar.xz` 打包格式。
 
 **小贴士:** [pacman](https://www.archlinux.org/packages/?name=pacman) 软件包还提供了其它有用工具，例如**makepkg**、**pactree**、**vercomp**、 [checkupdates](/index.php/Checkupdates "Checkupdates")等。可以通过 `pacman -Ql pacman | grep bin` 获取工具列表。
 
@@ -55,15 +55,15 @@ _pacman_ 用 C 语言编写，使用 `.pkg.tar.xz` 打包格式。
 
 ## 用法
 
-下面只是一个可执行操作的小部分示范，_pacman_ 的其他示例请阅读[man pacman](https://www.archlinux.org/pacman/pacman.8.html)。
+下面只是一个可执行操作的小部分示范，*pacman* 的其他示例请阅读[man pacman](https://www.archlinux.org/pacman/pacman.8.html)。
 
 **Tip:** 使用过其它发行版的用户，可以参考 [Pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta") 中的对比.
 
 ### 安装软件包
 
-**注意:** 软件包通常有很多[可选依赖](/index.php/PKGBUILD#optdepends "PKGBUILD")， 它们为软件提供额外功能， 并不强制要求安装它们。 安装软件时, _pacman_ 将会输出它的可选依赖, 但是这个输出不会在 `pacman.log`中；当你想浏览已安装软件的可选依赖时可以[#查询软件数据库](#.E6.9F.A5.E8.AF.A2.E8.BD.AF.E4.BB.B6.E6.95.B0.E6.8D.AE.E5.BA.93) ，同时得到关于可选依赖的简短描述。
+**注意:** 软件包通常有很多[可选依赖](/index.php/PKGBUILD#optdepends "PKGBUILD")， 它们为软件提供额外功能， 并不强制要求安装它们。 安装软件时, *pacman* 将会输出它的可选依赖, 但是这个输出不会在 `pacman.log`中；当你想浏览已安装软件的可选依赖时可以[#查询软件数据库](#.E6.9F.A5.E8.AF.A2.E8.BD.AF.E4.BB.B6.E6.95.B0.E6.8D.AE.E5.BA.93) ，同时得到关于可选依赖的简短描述。
 
-**警告:** 未[更新](#.E5.8D.87.E7.BA.A7.E8.BD.AF.E4.BB.B6.E5.8C.85)系统前，**不要**在安装软件包时更新软件包数据库（`pacman -Sy _package_name_`），否则会有依赖问题。参见[#不支持部分升级](#.E4.B8.8D.E6.94.AF.E6.8C.81.E9.83.A8.E5.88.86.E5.8D.87.E7.BA.A7)和 [https://bbs.archlinux.org/viewtopic.php?id=89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
+**警告:** 未[更新](#.E5.8D.87.E7.BA.A7.E8.BD.AF.E4.BB.B6.E5.8C.85)系统前，**不要**在安装软件包时更新软件包数据库（`pacman -Sy *package_name*`），否则会有依赖问题。参见[#不支持部分升级](#.E4.B8.8D.E6.94.AF.E6.8C.81.E9.83.A8.E5.88.86.E5.8D.87.E7.BA.A7)和 [https://bbs.archlinux.org/viewtopic.php?id=89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
 
 #### 安装指定的包
 
@@ -158,7 +158,7 @@ pacman -Rs package_name
 
 ```
 
-_pacman_ 删除某些程序时会备份重要配置文件，在其后面加上*.pacsave扩展名。-n 选项可以删除这些文件：
+*pacman* 删除某些程序时会备份重要配置文件，在其后面加上*.pacsave扩展名。-n 选项可以删除这些文件：
 
 ```
 pacman -Rn package_name
@@ -166,30 +166,30 @@ pacman -Rsn package_name
 
 ```
 
-**注意:** _pacman_ 不会删除软件自己创建的文件(例如主目录中的 `.dot` 文件不会被删除。
+**注意:** *pacman* 不会删除软件自己创建的文件(例如主目录中的 `.dot` 文件不会被删除。
 
 ### 升级软件包
 
 建议所有用户都 [经常性的更新系统](/index.php/System_maintenance#Upgrading_the_system "System maintenance")，系统长时间不更新更容易出问题。在论坛提问题的时候，一般假定您的系统已经升级到最新状态。Arch 只支持系统完整升级，[不支持部分升级](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance")。
 
-建议升级前访问 [Arch Linux 主页](https://www.archlinux.org/)查看最新消息（或订阅 [RSS](https://www.archlinux.org/feeds/news/)，或订阅 [arch-announce 邮件列表](https://mailman.archlinux.org/mailman/listinfo/arch-announce/)，或关注 [@archlinux](https://twitter.com/archlinux)。如果升级需要不寻常的用户介入（无法简单地按照 _pacman_ 的输出信息处理），总会给出合适的方法。有时候系统更新需要进行一些手动调整，请不要在重要任务前进行系统更新。
+建议升级前访问 [Arch Linux 主页](https://www.archlinux.org/)查看最新消息（或订阅 [RSS](https://www.archlinux.org/feeds/news/)，或订阅 [arch-announce 邮件列表](https://mailman.archlinux.org/mailman/listinfo/arch-announce/)，或关注 [@archlinux](https://twitter.com/archlinux)。如果升级需要不寻常的用户介入（无法简单地按照 *pacman* 的输出信息处理），总会给出合适的方法。有时候系统更新需要进行一些手动调整，请不要在重要任务前进行系统更新。
 
-一个 _pacman_ 命令就可以升级整个系统。花费的时间取决于系统有多老。这个命令会同步非本地(local)软件仓库并升级系统的软件包：
+一个 *pacman* 命令就可以升级整个系统。花费的时间取决于系统有多老。这个命令会同步非本地(local)软件仓库并升级系统的软件包：
 
 ```
 # pacman -Syu
 
 ```
 
-_pacman_ 是强大的软件包管理工具，但是不会做所有的事情。遵循[Arch 之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")，用户需要负责维护自己的系统。**执行系统升级时，请务必阅读 _pacman_ 输出的所有信息。**如果用户修改过的配置文件需要更新，新的配置文件会被保存为 `.pacnew` 文件以免覆盖了用户的配置。_pacman_ 会提醒用户合并新旧文件。这些文件需要手动干预。在升级或删除软件包后，应该立即着手处理。参见 [Pacnew 和 pacsave 文件](/index.php/Pacnew_and_Pacsave_files_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacnew and Pacsave files (简体中文)")。
+*pacman* 是强大的软件包管理工具，但是不会做所有的事情。遵循[Arch 之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")，用户需要负责维护自己的系统。**执行系统升级时，请务必阅读 *pacman* 输出的所有信息。**如果用户修改过的配置文件需要更新，新的配置文件会被保存为 `.pacnew` 文件以免覆盖了用户的配置。*pacman* 会提醒用户合并新旧文件。这些文件需要手动干预。在升级或删除软件包后，应该立即着手处理。参见 [Pacnew 和 pacsave 文件](/index.php/Pacnew_and_Pacsave_files_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacnew and Pacsave files (简体中文)")。
 
-**小贴士:** _pacman_ 输出会记录到 `/var/log/pacman.log`。
+**小贴士:** *pacman* 输出会记录到 `/var/log/pacman.log`。
 
 如果遇到问题，无法按照给出方法解决。请搜索下论坛，很有可能已经有人遇到并解决了。
 
 ### 查询包数据库
 
-_pacman_ 使用 -Q 参数查询本地软件包数据库。参见：
+*pacman* 使用 -Q 参数查询本地软件包数据库。参见：
 
 ```
 $ pacman -Q --help
@@ -203,45 +203,45 @@ $ pacman -S --help
 
 ```
 
-_pacman_ 可以在包数据库中查询软件包，查询位置包含了软件包的名字和描述：
+*pacman* 可以在包数据库中查询软件包，查询位置包含了软件包的名字和描述：
 
 ```
-$ pacman -Ss _string1_ _string2_ ...
+$ pacman -Ss *string1* *string2* ...
 
 ```
 
 要查询已安装的软件包：
 
 ```
-$ pacman -Qs _string1_ _string2_ ...
+$ pacman -Qs *string1* *string2* ...
 
 ```
 
 显示软件包的详尽的信息：
 
 ```
-$ pacman -Si _package_name_
+$ pacman -Si *package_name*
 
 ```
 
 查询本地安装包的详细信息：
 
 ```
-$ pacman -Qi _package_name_
+$ pacman -Qi *package_name*
 
 ```
 
 使用两个 `-i` 将同时显示备份文件和修改状态：
 
 ```
-$ pacman -Qii _package_name_
+$ pacman -Qii *package_name*
 
 ```
 
 要获取已安装软件包所包含文件的列表：
 
 ```
-$ pacman -Ql _package_name_
+$ pacman -Ql *package_name*
 
 ```
 
@@ -250,14 +250,14 @@ $ pacman -Ql _package_name_
 检查软件包安装的文件是否都存在：
 
 ```
-$ pacman -Qk _package_name_
+$ pacman -Qk *package_name*
 
 ```
 
 查询数据库获取某个文件属于哪个软件包：
 
 ```
-$ pacman -Qo _/path/to/file_name_
+$ pacman -Qo */path/to/file_name*
 
 ```
 
@@ -278,14 +278,14 @@ $ pacman -Qet
 要显示软件包的依赖树：
 
 ```
-$ pactree _package_name_
+$ pactree *package_name*
 
 ```
 
-检查一个_安装_的软件包被那些包依赖，可以使用 `-r`:
+检查一个*安装*的软件包被那些包依赖，可以使用 `-r`:
 
 ```
-$ pactree -r _package_name_
+$ pactree -r *package_name*
 
 ```
 
@@ -305,7 +305,7 @@ which-2.20-6
 
 ### 清理软件包缓存
 
-_pacman_ 将下载的软件包保存在 `/var/cache/pacman/pkg/` 并且不会自动移除旧的和未安装版本的软件包，因此需要手动清理，以免该文件夹过于庞大。
+*pacman* 将下载的软件包保存在 `/var/cache/pacman/pkg/` 并且不会自动移除旧的和未安装版本的软件包，因此需要手动清理，以免该文件夹过于庞大。
 
 使用内建选项即可清除未安装软件包的缓存：
 
@@ -321,7 +321,7 @@ _pacman_ 将下载的软件包保存在 `/var/cache/pacman/pkg/` 并且不会自
 
 由于以上种种局限，建议使用专门的脚本去处理清理哪些、清理多少缓存：
 
-[pacman](https://www.archlinux.org/packages/?name=pacman) 提供的 _paccache_ 命令默认会删除近3个版本前的软件包
+[pacman](https://www.archlinux.org/packages/?name=pacman) 提供的 *paccache* 命令默认会删除近3个版本前的软件包
 
 ```
 # paccache -r
@@ -337,14 +337,14 @@ _pacman_ 将下载的软件包保存在 `/var/cache/pacman/pkg/` 并且不会自
 
 更多功能参见`paccache -h`。
 
-_paccache_，还可以使用 [Arch User Repository](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 中的 [pkgcacheclean](https://aur.archlinux.org/packages/pkgcacheclean/)： `# pkgcacheclean` 
+*paccache*，还可以使用 [Arch User Repository](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 中的 [pkgcacheclean](https://aur.archlinux.org/packages/pkgcacheclean/)： `# pkgcacheclean` 
 
 ### 其它命令
 
 升级系统时安装其他软件包：
 
 ```
-# pacman -Syu _package_name1_ _package_name2_ ...
+# pacman -Syu *package_name1* *package_name2* ...
 
 ```
 
@@ -369,7 +369,7 @@ _paccache_，还可以使用 [Arch User Repository](/index.php/Arch_User_Reposit
 
 ```
 
-安装一个**远程**包（不在 _pacman_ 配置的源里面）：
+安装一个**远程**包（不在 *pacman* 配置的源里面）：
 
 ```
 # pacman -U http://www.example.com/repo/example.pkg.tar.xz
@@ -378,11 +378,11 @@ _paccache_，还可以使用 [Arch User Repository](/index.php/Arch_User_Reposit
 
 要禁用 `-S`, `-U` 和 `-R` 动作，可以使用 `-p` 选项.
 
-_pacman_ 会列出需要安装和删除的软件，并在执行动作前要求需要的权限。
+*pacman* 会列出需要安装和删除的软件，并在执行动作前要求需要的权限。
 
 ## 配置
 
-_pacman_ 的配置文件位于`/etc/pacman.conf`。 [man pacman.conf](https://www.archlinux.org/pacman/pacman.conf.5.html) 可以查看配置文件的进一步信息。
+*pacman* 的配置文件位于`/etc/pacman.conf`。 [man pacman.conf](https://www.archlinux.org/pacman/pacman.conf.5.html) 可以查看配置文件的进一步信息。
 
 ### 通用选项
 
@@ -483,13 +483,13 @@ Include = /etc/pacman.d/mirrorlist
 
 ### 软件包的安全性
 
-_pacman_ 4 支持软件包签名。语句 `SigLevel = Required DatabaseOptional` 将启用全局签名验证，但会被每个软件仓库的 `SigLevel` 行所覆盖。详情参见 [pacman-key](/index.php/Pacman-key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman-key (简体中文)").
+*pacman* 4 支持软件包签名。语句 `SigLevel = Required DatabaseOptional` 将启用全局签名验证，但会被每个软件仓库的 `SigLevel` 行所覆盖。详情参见 [pacman-key](/index.php/Pacman-key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman-key (简体中文)").
 
 ### 一般注意事项
 
-**警告:** 小心使用 `--force` 开关。使用不当会造成大问题。 请_只_在 Arch 新闻里要求这么做的时候才用。
+**警告:** 小心使用 `--force` 开关。使用不当会造成大问题。 请*只*在 Arch 新闻里要求这么做的时候才用。
 
-_pacman_ 附带了许多实用工具能让系统使用更加便捷。所有工具功能都能通过 `--help` 开关查看。运行：
+*pacman* 附带了许多实用工具能让系统使用更加便捷。所有工具功能都能通过 `--help` 开关查看。运行：
 
 ```
 $ pacman -Ql pacman | awk -F"[/ ]" '/\/usr\/bin/ {print $5}'
@@ -512,13 +512,13 @@ Errors occurred, no packages were upgraded.
 
 ```
 
-发生了什么事: _pacman_ 检测到文件冲突，而且按照设计，_pacman_ 不会覆盖文件。这是设计功能，不是缺陷。
+发生了什么事: *pacman* 检测到文件冲突，而且按照设计，*pacman* 不会覆盖文件。这是设计功能，不是缺陷。
 
 先用 (`pacman -Qo 文件的完整路径` 检查哪个软件包提供了文件。如果是其它软件包，请[报告问题](/index.php/Reporting_bug_guidelines "Reporting bug guidelines")。如果不是其它软件包提供，将已经存在的文件重命名并重新升级。如果一切顺利，可以删掉备份文件。
 
 如果是通过 `make install` 等非 pacman 方式安装的软件，安装的文件不属于任何软件包！需要先手动删除这些文件，这样就可以正常安装软件了。[不属于任何软件包的文件列表](/index.php/Pacman_tips#Identify_files_not_owned_by_any_package "Pacman tips")一文中提供了查找这些文件的脚本。
 
-每一个安装的软件包都会提供一个 `/var/lib/pacman/local/_$package-$version_/files` 文件，包含此软件包的元数据。如果文件损坏或者丢失，将会导致升级时出现`file exists in filesystem` 错误。此错误通常只会影响一个软件包，除了手动删除或移动所有的问题文件，可以作为特例使用`pacman -S --force $package`让 _pacman_ 强制覆盖这些文件。
+每一个安装的软件包都会提供一个 `/var/lib/pacman/local/*$package-$version*/files` 文件，包含此软件包的元数据。如果文件损坏或者丢失，将会导致升级时出现`file exists in filesystem` 错误。此错误通常只会影响一个软件包，除了手动删除或移动所有的问题文件，可以作为特例使用`pacman -S --force $package`让 *pacman* 强制覆盖这些文件。
 
 **警告:** `--force` 选项非常危险，建议在 Arch 新闻中明确通知的时候才使用它，否则可能导致系统无法启动。
 
@@ -533,7 +533,7 @@ Errors occurred, no packages were upgraded.
 
 ### "error: failed to init transaction (unable to lock database)" 错误
 
-_pacman_ 在更新软件包数据库前，比如安装软件包时会创建一个文件锁 `/var/lib/pacman/db.lck`。该文件会阻止其他 _pacman_ 实例在同一时间修改软件包数据库。如果 _pacman_ 在更新数据库时收到干扰，旧锁会一直存在。如果确认 _pacman_ 没有在运行，那么删掉文件锁：
+*pacman* 在更新软件包数据库前，比如安装软件包时会创建一个文件锁 `/var/lib/pacman/db.lck`。该文件会阻止其他 *pacman* 实例在同一时间修改软件包数据库。如果 *pacman* 在更新数据库时收到干扰，旧锁会一直存在。如果确认 *pacman* 没有在运行，那么删掉文件锁：
 
 ```
 # rm /var/lib/pacman/db.lck
@@ -546,13 +546,13 @@ _pacman_ 在更新软件包数据库前，比如安装软件包时会创建一�
 
 首先确认软件包确实存在（并注意错别字）。如果确认软件包存在，可能本地数据库过时了或者软件仓库没有配置好，试试 `pacman -Syyu` 强制数据库更新和升级。
 
-也有可能包含该软件包的软件仓库没有启动。例如，该软件包可能在 _multilib_ 仓库里，但该仓库没有在 _pacman.conf_ 中启用。
+也有可能包含该软件包的软件仓库没有启动。例如，该软件包可能在 *multilib* 仓库里，但该仓库没有在 *pacman.conf* 中启用。
 
 参阅[FAQ#Why is there only a single version of each shared library in the official repositories?](/index.php/FAQ#Why_is_there_only_a_single_version_of_each_shared_library_in_the_official_repositories.3F "FAQ").
 
 ### pacman 重复升级同一个包
 
-**注意:** _pacman_ 版本 3.4 在遇到重复条目时会显示错误，因此这个问题过时了。
+**注意:** *pacman* 版本 3.4 在遇到重复条目时会显示错误，因此这个问题过时了。
 
 这是因为在 `/var/lib/pacman/local/` 有重复的条目，例如有两个 `linux` 条目。`pacman -Qi` 输出正确的版本，但是 `pacman -Qu` 识别了旧版本，因此尝试升级。
 
@@ -564,17 +564,17 @@ _pacman_ 在更新软件包数据库前，比如安装软件包时会创建一�
 
 ### pacman 完全坏掉，如何修复?
 
-如果 _pacman_ 完全坏掉不能使用，需要手动下载或构建需要的软件包([openssl](https://www.archlinux.org/packages/?name=openssl), [libarchive](https://www.archlinux.org/packages/?name=libarchive), [libfetch](https://www.archlinux.org/packages/?name=libfetch), 和 [pacman](https://www.archlinux.org/packages/?name=pacman)) 并解压到根目录。_pacman_ 会和默认配置文件一起恢复。之后，用 _pacman_ 重新安装这些软件包以保证数据库的完整性。
+如果 *pacman* 完全坏掉不能使用，需要手动下载或构建需要的软件包([openssl](https://www.archlinux.org/packages/?name=openssl), [libarchive](https://www.archlinux.org/packages/?name=libarchive), [libfetch](https://www.archlinux.org/packages/?name=libfetch), 和 [pacman](https://www.archlinux.org/packages/?name=pacman)) 并解压到根目录。*pacman* 会和默认配置文件一起恢复。之后，用 *pacman* 重新安装这些软件包以保证数据库的完整性。
 
 ### pacman 更新时崩溃!
 
-如果 _pacman_ 在删除、重新安装或更新软件包时 "数据库写入" 出错：
+如果 *pacman* 在删除、重新安装或更新软件包时 "数据库写入" 出错：
 
 1.  从 Arch 安装媒体启动，最好用最新的安装媒体
 2.  挂载根文件系统，通过 `df -h` 确认根文件目录包含足够的空间
 3.  如果系统使用默认的数据库目录位置，可以通过root用户执行下面命令`pacman --root=/mnt --cachedir=/mnt/var/cache/pacman/pkg -Syyu`
 4.  更新之后，可以通过下面命令确认是否还存在损坏的包：`find /mnt/usr/lib -size 0`
-5.  通过下面命令重新安装依然损坏的软件包：`pacman --root /mnt --cachedir=/mnt/var/cache/pacman/pkg -S _package_`.
+5.  通过下面命令重新安装依然损坏的软件包：`pacman --root /mnt --cachedir=/mnt/var/cache/pacman/pkg -S *package*`.
 
 ### pacman crashes the official installation media
 
@@ -582,11 +582,11 @@ The official installation media (ISO) before version 10.2015 are not setup to be
 
 If you use the install media to update an installed system, you simply have to use the `--root=` option along with a `--cachedir=` path to point pacman to available real storage. For example, see [#pacman crashes during an upgrade](#pacman_crashes_during_an_upgrade).
 
-If you _require_ an install media with persistent dataspace, the [Archiso](/index.php/Archiso "Archiso") build script can be used to create one along with its [boot options](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams).
+If you *require* an install media with persistent dataspace, the [Archiso](/index.php/Archiso "Archiso") build script can be used to create one along with its [boot options](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams).
 
 ### 升级系统重启后，出现"unable to find root device"错误，无法登陆
 
-很有可能 initramfs 在内核升级时损坏，例如错误的使用 _pacman_ 的 `--force` 选项。有两个选择：
+很有可能 initramfs 在内核升级时损坏，例如错误的使用 *pacman* 的 `--force` 选项。有两个选择：
 
 #### Fallback 启动项
 
@@ -653,17 +653,17 @@ Make sure to correct the [time](/index.php/Time "Time"), for example with `ntpd 
 
 ### "Cannot open shared object file" 错误
 
-It looks like previous _pacman_ transaction removed or corrupted shared libraries needed for pacman itself.
+It looks like previous *pacman* transaction removed or corrupted shared libraries needed for pacman itself.
 
-To recover from this situation you need to unpack required libraries to your filesystem manually. First find what package contains the missed library and then locate it in the _pacman_ cache (`/var/cache/pacman/pkg/`). Unpack required shared library to the filesystem. This will allow to run _pacman_.
+To recover from this situation you need to unpack required libraries to your filesystem manually. First find what package contains the missed library and then locate it in the *pacman* cache (`/var/cache/pacman/pkg/`). Unpack required shared library to the filesystem. This will allow to run *pacman*.
 
-Now you need to [reinstall](#Installing_specific_packages) the broken package. Note that you need to use `--force` flag as you just unpacked system files and _pacman_ does not know about it. _pacman_ will correctly replace our shared library file with one from package.
+Now you need to [reinstall](#Installing_specific_packages) the broken package. Note that you need to use `--force` flag as you just unpacked system files and *pacman* does not know about it. *pacman* will correctly replace our shared library file with one from package.
 
 That's it. Update the rest of the system.
 
 ### 软件包下载停滞
 
-Some issues have been reported regarding network problems that prevent _pacman_ from updating/synchronizing repositories. [[2]](https://bbs.archlinux.org/viewtopic.php?id=68944) [[3]](https://bbs.archlinux.org/viewtopic.php?id=65728) When installing Arch Linux natively, these issues have been resolved by replacing the default _pacman_ file downloader with an alternative (see [Improve pacman performance](/index.php/Improve_pacman_performance "Improve pacman performance") for more details). When installing Arch Linux as a guest OS in [VirtualBox](/index.php/VirtualBox "VirtualBox"), this issue has also been addressed by using _Host interface_ instead of _NAT_ in the machine properties.
+Some issues have been reported regarding network problems that prevent *pacman* from updating/synchronizing repositories. [[2]](https://bbs.archlinux.org/viewtopic.php?id=68944) [[3]](https://bbs.archlinux.org/viewtopic.php?id=65728) When installing Arch Linux natively, these issues have been resolved by replacing the default *pacman* file downloader with an alternative (see [Improve pacman performance](/index.php/Improve_pacman_performance "Improve pacman performance") for more details). When installing Arch Linux as a guest OS in [VirtualBox](/index.php/VirtualBox "VirtualBox"), this issue has also been addressed by using *Host interface* instead of *NAT* in the machine properties.
 
 ### 无法从镜像服务器获取 'core.db'
 

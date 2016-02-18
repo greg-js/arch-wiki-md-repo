@@ -27,7 +27,7 @@ aw = ${archwiki}
 
 ```
 
-Now, in qutebrowser you can search the arch wiki for an article about qutebrowser via `:open aw qutebrowser` which will bring you to this page. As per the standard configuration the key mapping `o` will subsitute `:open`, so typing `o aw _your_search_term_` will henceforth allow you to quickly search the arch wiki. Notice that the arguments required to perform a search vary across search engines, for example, to set up Google use:
+Now, in qutebrowser you can search the arch wiki for an article about qutebrowser via `:open aw qutebrowser` which will bring you to this page. As per the standard configuration the key mapping `o` will subsitute `:open`, so typing `o aw *your_search_term*` will henceforth allow you to quickly search the arch wiki. Notice that the arguments required to perform a search vary across search engines, for example, to set up Google use:
 
 ```
 google = https://www.google.com/search?hl=en&q={}
@@ -39,4 +39,4 @@ g = ${google}
 
 Keybindings reside in `$XDG_CONFIG_HOME/qutebrowser/keys.conf)`.
 
-You can edit the keybindings directly from the browser with the command `:bind _key_ _command_` or you can edit them directly from the file. Notice that there are many, many keybinds already in place. If you notice a lag on one of your keybind it is because some other keybind is also starting with the same key.
+You can edit the keybindings directly from the browser with the command `:bind *key* *command*` or you can edit them directly from the file. Notice that there are many, many keybinds already in place. If you notice a lag on one of your keybind it is because some other keybind is also starting with the same key.

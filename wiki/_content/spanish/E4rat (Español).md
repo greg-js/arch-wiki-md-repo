@@ -103,7 +103,7 @@ Reinicia y a disfrutar.
 
 ## e4rat con diferentes init system
 
-e4rat-collect por default es reemplazado por `/sbin/init` después de finalizar. Si necesitas especificar otro PID 1, por ejemplo `/bin/systemd`, puedes cambiarlo en `/etc/e4rat.conf` ajustando el parámetro '_init_ y recuerda descomentar la línea.
+e4rat-collect por default es reemplazado por `/sbin/init` después de finalizar. Si necesitas especificar otro PID 1, por ejemplo `/bin/systemd`, puedes cambiarlo en `/etc/e4rat.conf` ajustando el parámetro '*init* y recuerda descomentar la línea.
 
 ## Tips and Tricks
 

@@ -43,7 +43,6 @@ $ scanimage --format=tiff > test.tiff
 If the scanning fails with the message `scanimage: sane_start: Invalid argument` you may need to specify the device.
 
  `$ scanimage -L` 
-
 ```
 device `v4l:/dev/video0' is a Noname Video WebCam virtual device
 device `pixma:04A91749_247936' is a CANON Canon PIXMA MG5200 multi-function peripheral
@@ -216,7 +215,7 @@ First, as root, check connected usb devices with `lsusb`:
 
 ```
 
-In our example we see the scanner: `Bus 001 Device 006: ID 03f0:2504 Hewlett-Packard`. Here `03f0` is the _vendorID_ and `2504` is the _productID_.
+In our example we see the scanner: `Bus 001 Device 006: ID 03f0:2504 Hewlett-Packard`. Here `03f0` is the *vendorID* and `2504` is the *productID*.
 
 Now open `/usr/lib/udev/rules.d/49-sane.rules` and see if there is there is a line with the vendorID and productID of your scanner. If there isn't any, create the new file `/etc/udev/rules.d/49-sane-missing-scanner.rules`, with the following contents:
 

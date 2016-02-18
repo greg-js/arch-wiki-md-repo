@@ -52,7 +52,6 @@ The `window_name` , `application_name` and `window_class` can be used to change 
 Example of the devilspie configuration file that you can use for the preferred application
 
  `.devilspie/DesktopConsole.ds` 
-
 ```
 (if (is (**window_class**) "XTerm")
         (begin

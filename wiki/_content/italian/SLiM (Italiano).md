@@ -66,7 +66,7 @@ Per configurare SLiM per caricare un particolare ambiente, semplicemente editare
 exec [session-command]
 ```
 
-Sostituire _[session-command]_ con il comando appropriato. Per esempio:
+Sostituire *[session-command]* con il comando appropriato. Per esempio:
 
 ```
 exec awesome
@@ -157,7 +157,7 @@ blackbox)
 esac
 ```
 
-**Nota:** nella versione 1.3.5, SLiM sembra non essere in grado di preservare la sessione di logind. Quindi è necessario aggiungere la variabile _DEFAULT_SESSION_ in `~/.xinitrc`.
+**Nota:** nella versione 1.3.5, SLiM sembra non essere in grado di preservare la sessione di logind. Quindi è necessario aggiungere la variabile *DEFAULT_SESSION* in `~/.xinitrc`.
 
 ### Temi
 
@@ -198,14 +198,14 @@ input_panel_y		50%
 in valori espressi in pixels:
 
 ```
-# Questi valori servono a impostare il pannello _archlinux-simplyblack_ nel centro di uno schermo 1440x900
+# Questi valori servono a impostare il pannello *archlinux-simplyblack* nel centro di uno schermo 1440x900
 input_panel_x		495
 input_panle_y		325
 
 ```
 
 ```
-# Questi valori servono a impostare il pannello _archlinux-retro_ nel centro di un
+# Questi valori servono a impostare il pannello *archlinux-retro* nel centro di un
 
 ```
 
@@ -256,7 +256,7 @@ Si può spegnere, riavviare, sospendere, uscire o aprire un terminale dalla sche
 
 ### Errore di SLiM eseguito come demone
 
-Se si avvia SLiM come demone da `/etc/rc.conf` e si ha un errore all'avvio potrebbe essere un problema del file di _lock_. SLiM crea un file _lock_ ogni qual volta viene lanciato in `/var/lock/`. È quindi fondamentale che tale directory esista, in caso contrario crearla ora:
+Se si avvia SLiM come demone da `/etc/rc.conf` e si ha un errore all'avvio potrebbe essere un problema del file di *lock*. SLiM crea un file *lock* ogni qual volta viene lanciato in `/var/lock/`. È quindi fondamentale che tale directory esista, in caso contrario crearla ora:
 
 ```
 # mkdir /var/lock/ 
@@ -313,7 +313,7 @@ See [GNOME Keyring#Use Without GNOME, and without a display manager](/index.php/
 
 ### Settare DPI di SLiM
 
-Di solito ci pensa X ad impostare i DPI, volendo però si può impostare una preferenza su SLiM. Settare i DPI con _-dpi 96_ in `/etc/X11/xinit/xserverrc` non funzionerà su SLiM. Si può però modificare questa riga di `slim.conf` da:
+Di solito ci pensa X ad impostare i DPI, volendo però si può impostare una preferenza su SLiM. Settare i DPI con *-dpi 96* in `/etc/X11/xinit/xserverrc` non funzionerà su SLiM. Si può però modificare questa riga di `slim.conf` da:
 
 ```
  xserver_arguments   -nolisten tcp vt07 

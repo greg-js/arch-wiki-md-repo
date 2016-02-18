@@ -45,17 +45,16 @@ echo -n 'PASSWORD' | md5sum | cut -f 1 -d " "
 
 ```
 
-To autostart _mpdas_ along with _mpd_, add an entry for it into the file in which you start _mpd_ (e.g. [xinitrc](/index.php/Xinitrc "Xinitrc")):
+To autostart *mpdas* along with *mpd*, add an entry for it into the file in which you start *mpd* (e.g. [xinitrc](/index.php/Xinitrc "Xinitrc")):
 
 ```
 [[ -z $(pgrep -xU $UID mpdas) ]] && mpdas &
 
 ```
 
-When _mpd_ is started with a [systemd user service](/index.php/Music_Player_Daemon#Autostart_with_systemd "Music Player Daemon"), it is better to start _mpdas_ the same way. Create the following service and start it with `systemctl --user`.
+When *mpd* is started with a [systemd user service](/index.php/Music_Player_Daemon#Autostart_with_systemd "Music Player Daemon"), it is better to start *mpdas* the same way. Create the following service and start it with `systemctl --user`.
 
  `~/.config/systemd/user/mpdas.service` 
-
 ```
 [Unit]
 Description=AudoScrobbler client for MPD
@@ -71,13 +70,13 @@ WantedBy=default.target
 
 ### mpdcron
 
-[mpdcron](http://alip.github.io/mpdcron/) is a cron-like daemon for MPD that listens for events and executes user defined actions. It can be extended via modules to show notifications, submit songs to Last.fm or Libre.fm (_scrobbling_), or to collect statistics about played songs.
+[mpdcron](http://alip.github.io/mpdcron/) is a cron-like daemon for MPD that listens for events and executes user defined actions. It can be extended via modules to show notifications, submit songs to Last.fm or Libre.fm (*scrobbling*), or to collect statistics about played songs.
 
 [mpdcron-git](https://aur.archlinux.org/packages/mpdcron-git/) is available in the [AUR](/index.php/AUR "AUR").
 
 See the official page for information about configuration and modules.
 
-To autostart _mpdcron_ along with _mpd_, add an entry for it into the file in which you start _mpd_ (e.g. [xinitrc](/index.php/Xinitrc "Xinitrc")):
+To autostart *mpdcron* along with *mpd*, add an entry for it into the file in which you start *mpd* (e.g. [xinitrc](/index.php/Xinitrc "Xinitrc")):
 
 ```
 [[ -z $(pgrep -xU $UID mpdcron) ]] && mpdcron &
@@ -91,38 +90,37 @@ To autostart _mpdcron_ along with _mpd_, add an entry for it into the file in wh
 Example configuration:
 
  `~/.mpdscribble/mpdscribble.conf` 
-
 ```
 [mpdscribble]
-host = _your mpd host_ # optional, defaults to $MPD_HOST or localhost
-port = _your mpd port_ # optional, defaults to $MPD_PORT or 6600
-log = /home/_YOUR_USERNAME_/.mpdscribble/mpdscribble.log
+host = *your mpd host* # optional, defaults to $MPD_HOST or localhost
+port = *your mpd port* # optional, defaults to $MPD_PORT or 6600
+log = /home/*YOUR_USERNAME*/.mpdscribble/mpdscribble.log
 verbose = 2
-proxy = _your proxy_ # optional, e. g. [http://your.proxy:8080](http://your.proxy:8080), defaults to none
+proxy = *your proxy* # optional, e. g. [http://your.proxy:8080](http://your.proxy:8080), defaults to none
 
 [last.fm]
 # last.fm section, comment if you do not use last.fm
 url = [http://post.audioscrobbler.com/](http://post.audioscrobbler.com/)
-username = _your last.fm username_
-password = _your last.fm password_
-journal = /home/_YOUR_USERNAME_/.mpdscribble/lastfm.journal
+username = *your last.fm username*
+password = *your last.fm password*
+journal = /home/*YOUR_USERNAME*/.mpdscribble/lastfm.journal
 
 [libre.fm]
 # libre.fm section, comment if you do not use libre.fm
 url = [http://turtle.libre.fm/](http://turtle.libre.fm/)
-username = _your libre.fm username_
-password = _your libre.fm password_
-journal = /home/_YOUR_USERNAME_/.mpdscribble/librefm.journal
+username = *your libre.fm username*
+password = *your libre.fm password*
+journal = /home/*YOUR_USERNAME*/.mpdscribble/librefm.journal
 ```
 
 Your password can also be in the form of an md5hash, but this is [deprecated](http://bugs.musicpd.org/view.php?id=3836):
 
 ```
-echo -n "_password_" | md5sum | cut -f 1 -d " "
+echo -n "*password*" | md5sum | cut -f 1 -d " "
 
 ```
 
-To autostart _mpdscribble_ along with _mpd_, add an entry for it into the file in which you start _mpd_ (e.g. `~/.xinitrc`):
+To autostart *mpdscribble* along with *mpd*, add an entry for it into the file in which you start *mpd* (e.g. `~/.xinitrc`):
 
 ```
 [[ -z $(pgrep -xU $UID mpdscribble) ]] && mpdscribble &
@@ -133,10 +131,9 @@ To autostart _mpdscribble_ along with _mpd_, add an entry for it into the file i
 
 #### systemd user service
 
-Use the following service to start _mpdscribble_ under systemd user instance. See [systemd/User](/index.php/Systemd/User "Systemd/User") for details.
+Use the following service to start *mpdscribble* under systemd user instance. See [systemd/User](/index.php/Systemd/User "Systemd/User") for details.
 
  `~/.config/systemd/user/mpdscribble.service` 
-
 ```
 [Unit]
 Description=MPD Scribbler
@@ -157,7 +154,7 @@ Sonata has built-in support for scrobbling, although that requires the program t
 
 ## Disable resume playback on startup
 
-This feature is present in _mpd_ after version 0.16.2\. When this feature is enabled, _mpd_ will always start in the "paused" state, even if a song was playing when mpd was stopped. Add the line below to your `mpd.conf` to enable this feature.
+This feature is present in *mpd* after version 0.16.2\. When this feature is enabled, *mpd* will always start in the "paused" state, even if a song was playing when mpd was stopped. Add the line below to your `mpd.conf` to enable this feature.
 
 ```
 restore_paused "yes"
@@ -166,22 +163,19 @@ restore_paused "yes"
 
 ## Example configuration: Output with 44.1 KHz at e. g. 16 bit depth, multiple programs at once
 
-_Why these formats?_ Because they are the standard format for CD audio, because ALSA on its own allows more than one program "to sound" only with dmix — which uses an inferior resampling algorithm by default — and because dmix by default resamples anything lower to 48 KHz (or whatever higher format is playing at the time). Also, some get clicking sounds if at least `mpd.conf` is not changed this way.
+*Why these formats?* Because they are the standard format for CD audio, because ALSA on its own allows more than one program "to sound" only with dmix — which uses an inferior resampling algorithm by default — and because dmix by default resamples anything lower to 48 KHz (or whatever higher format is playing at the time). Also, some get clicking sounds if at least `mpd.conf` is not changed this way.
 
-_What is the downside?_ These settings cause _everything_ (if necessary) to be resampled to this format, such as material from DVD or TV which usually is at 48 KHz. But there is no known way to have ALSA dynamically change the format, and particularly if you listen to far more CDs than anything else the occasional 48 → 44.1 is not too great a loss.
+*What is the downside?* These settings cause *everything* (if necessary) to be resampled to this format, such as material from DVD or TV which usually is at 48 KHz. But there is no known way to have ALSA dynamically change the format, and particularly if you listen to far more CDs than anything else the occasional 48 → 44.1 is not too great a loss.
 
 The following assumes that there are not already other settings which conflict resp. overwrite it. This applies especially to the current user's potential `~/.asoundrc` — which MPD as its own user ignores, therefore the following should go to `/etc/asound.conf`:
 
  `/etc/asound.conf` 
-
 ```
 defaults.pcm.dmix.rate 44100 # Force 44.1 KHz
 defaults.pcm.dmix.format S16_LE # Force 16 bits
 
 ```
-
  `/etc/mpd.conf` 
-
 ```
 audio_output {
         type                    "alsa" # Use the ALSA output plugin.
@@ -193,11 +187,11 @@ audio_output {
 }
 ```
 
-**Note:** MPD gives the mp3 format a special treatment at decoding: it is always put out as 24 bit. (The conversion as forced by the _format_ line only comes after that.)
+**Note:** MPD gives the mp3 format a special treatment at decoding: it is always put out as 24 bit. (The conversion as forced by the *format* line only comes after that.)
 
-If one wants to leave the bit depth decision to ALSA resp. MPD, comment out resp. omit the _dmix.format_ line and change the one for mpd with _format_ to "44100:*:2".
+If one wants to leave the bit depth decision to ALSA resp. MPD, comment out resp. omit the *dmix.format* line and change the one for mpd with *format* to "44100:*:2".
 
-**Note:** _Crossfading_ between files decoded at two different bit depths (say, one mp3 and one 16 bit flac) does not work unless conversion is active.
+**Note:** *Crossfading* between files decoded at two different bit depths (say, one mp3 and one 16 bit flac) does not work unless conversion is active.
 
 ## Control MPD with lirc
 
@@ -357,7 +351,7 @@ Once this is done, the server's mpd source should show up on the target computer
 
 ## Cue Files
 
-No additional steps are needed for cue support in mpd since 0.17\. MPD has its own integrated parser which works with both external and embedded cuesheets. For example, the command `mpc load albumx/x.cue` loads the file `_music_directory_/albumx/x.cue` as playlist; or in the case of an CUESHEET tag, `mpc load albumx/x.flac`.
+No additional steps are needed for cue support in mpd since 0.17\. MPD has its own integrated parser which works with both external and embedded cuesheets. For example, the command `mpc load albumx/x.cue` loads the file `*music_directory*/albumx/x.cue` as playlist; or in the case of an CUESHEET tag, `mpc load albumx/x.flac`.
 
 Client support of CUE files is a bit limited. Two available programs that do support CUE files are [cantata](https://www.archlinux.org/packages/?name=cantata) and [ncmpcpp](/index.php/Ncmpcpp "Ncmpcpp").
 

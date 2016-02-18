@@ -97,7 +97,6 @@ $ weston-image image1.jpg image2.jpg...
 键盘布局，模块的选择，UI的修改的示例配置文件，请参阅`man weston.ini`
 
  `~/.config/weston.ini` 
-
 ```
 [core]
 ### uncomment this line for xwayland support ###
@@ -177,7 +176,6 @@ path=/usr/libexec/weston-keyboard
 简单的 `weston.ini` :
 
  `~/.config/weston.ini` 
-
 ```
 [core]
 modules=xwayland.so
@@ -207,7 +205,6 @@ transform=90
 要通过 Weston 运行 X 程序，需要启动 Xwayland 进行请求处理。需要如下配置文件：
 
  `~/.config/weston.ini` 
-
 ```
 [core]
 modules=xwayland.so
@@ -239,7 +236,6 @@ $ wcap-decode capture.wcap --yuv4mpeg2 | theora_encode - -o cap.ogv
 For [Retina](https://en.wikipedia.org/wiki/Retina_Display "wikipedia:Retina Display") or [HiDPI](/index.php/HiDPI "HiDPI") displays, use:
 
  `~/.config/weston.ini` 
-
 ```
 
 [output]
@@ -288,15 +284,15 @@ EFL 已经完全支持 Wayland。请参考[这里](http://trac.enlightenment.org
 
 | Name | Type | Description |
 | GNOME | Compositing | 参见 [GNOME#Starting GNOME](/index.php/GNOME#Starting_GNOME "GNOME"). |
-| Hawaii | _(Unclear)_ | 参见 [Hawaii](/index.php/Hawaii "Hawaii"). |
+| Hawaii | *(Unclear)* | 参见 [Hawaii](/index.php/Hawaii "Hawaii"). |
 | sway | Tiling | [Sway](https://github.com/SirCmpwn/sway) is an i3-compatible window manager for Wayland. |
 | KDE | Compositing | [KDE](/index.php/KDE "KDE") 4.11 added support for [KWin under Wayland system compositor](http://blog.martin-graesslin.com/blog/2013/06/starting-a-full-kde-plasma-session-in-wayland/). With [KDE Plasma 5.4](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland), the first technology preview of a Wayland session is released but it is currently targeted for the mobile platform and does not yet allow to use it as a full replacement for Xorg based desktop. |
 | Orbment | Tiling | [orbment](https://github.com/Cloudef/orbment) (previously loliwm) is a tiling WM for Wayland. |
 | Velox | Tiling | [velox](https://github.com/michaelforney/velox) is a simple window manager based on swc. It is inspired by [dwm](/index.php/Dwm "Dwm") and [xmonad](/index.php/Xmonad "Xmonad"). |
 | Orbital | Compositing | [Orbital](https://github.com/giucam/orbital) is a Wayland compositor and shell, using Qt5 and Weston. The goal of the project is to build a simple yet flexible and good looking Wayland desktop. It is not a full fledged DE but rather the analogue of a WM in the X11 world, such as [Awesome](/index.php/Awesome "Awesome") or [Fluxbox](/index.php/Fluxbox "Fluxbox"). |
-| Papyros Shell | _(Unclear)_ | [Papyros Shell](https://github.com/papyros/papyros-shell) is the desktop shell for [Papyros](http://papyros.io), built using QtQuick and QtCompositor as a compositor for Wayland. |
-| Maynard | _(Unclear)_ | [Maynard](https://github.com/raspberrypi/maynard) is a desktop shell client for Weston based on GTK. It was based on weston-gtk-shell, a project by Tiago Vignatti. |
-| Motorcar | _(Unclear)_ | [Motorcar](https://github.com/evil0sheep/motorcar) is a wayland compositor to explore 3D windowing. |
+| Papyros Shell | *(Unclear)* | [Papyros Shell](https://github.com/papyros/papyros-shell) is the desktop shell for [Papyros](http://papyros.io), built using QtQuick and QtCompositor as a compositor for Wayland. |
+| Maynard | *(Unclear)* | [Maynard](https://github.com/raspberrypi/maynard) is a desktop shell client for Weston based on GTK. It was based on weston-gtk-shell, a project by Tiago Vignatti. |
+| Motorcar | *(Unclear)* | [Motorcar](https://github.com/evil0sheep/motorcar) is a wayland compositor to explore 3D windowing. |
 
 Some of installed wayland desktop clients might store information in `/usr/share/wayland-sessions/*.desktop` files about how to start them in wayland.
 
@@ -320,7 +316,6 @@ This is possibly caused by the `desktop-shell.so` module being loaded by your we
 Remove it from the `[core]` section:
 
  `~/.config/weston.ini` 
-
 ```
 [core]
 modules=xwayland.so,desktop-shell.so
@@ -330,7 +325,6 @@ modules=xwayland.so,desktop-shell.so
 生成：
 
  `~/.config/weston.ini` 
-
 ```
 [core]
 modules=xwayland.so

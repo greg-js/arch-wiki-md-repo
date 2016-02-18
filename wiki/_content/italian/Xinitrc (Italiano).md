@@ -1,6 +1,6 @@
 Il file `~/.xinitrc` è uno shell script letto da `xinit` e `startx`. Viene tipicamente utilizzato per eseguire i [window manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") e altri programmi all'avvio di X, ad esempio demoni e configurazioni delle variabili d'ambiente. Il programma `xinit` viene utilizzato per avviare l'[X Window System](/index.php/Xorg_(Italiano) "Xorg (Italiano)") e funziona come un primo programma client su sistemi che non possono avviare direttamente X da `/etc/init`, o in ambienti che usano vari window manager.
 
-Una delle funzioni principali di `~/.xinitrc` è quello di dettare quale client per il sistema X Window sarà invocato da `/usr/bin/startx` e/o il programma `/usr/bin/xinit` _a utente singolo_. Ci sono molte altre configurazioni e comandi che possono essere aggiunti a `~/.xinitrc` al fine di personalizzare ulteriormente il proprio sistema.
+Una delle funzioni principali di `~/.xinitrc` è quello di dettare quale client per il sistema X Window sarà invocato da `/usr/bin/startx` e/o il programma `/usr/bin/xinit` *a utente singolo*. Ci sono molte altre configurazioni e comandi che possono essere aggiunti a `~/.xinitrc` al fine di personalizzare ulteriormente il proprio sistema.
 
 ## Contents
 
@@ -14,9 +14,9 @@ Una delle funzioni principali di `~/.xinitrc` è quello di dettare quale client 
 
 ## Per iniziare
 
-`/etc/skel/` contiene i file e le directory necessari a fornire valori predefiniti per gli account appena creati. (Il nome _skel_ è derivato dalla parola _skeleton_, perché i file contenuti costituiscono la struttura di base per le home directory degli utenti.) Il pacchetto [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit) provvederà a salvare in `/etc/skel` uno `.xinitrc` di esempio.
+`/etc/skel/` contiene i file e le directory necessari a fornire valori predefiniti per gli account appena creati. (Il nome *skel* è derivato dalla parola *skeleton*, perché i file contenuti costituiscono la struttura di base per le home directory degli utenti.) Il pacchetto [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit) provvederà a salvare in `/etc/skel` uno `.xinitrc` di esempio.
 
-**Note:** `~/.xinitrc` è un cosiddetto "dot" (.) file. Nei sistemi *nix, i file che sono preceduti da un punto (.) sono "nascosti" e non compaiono con un normale comando `ls`, di solito allo scopo di tenere ordinate le directory. I file nascosti possono essere visualizzati con `ls -a`. Il suffisso "rc" significa _Run Commands_ e indica semplicemente che è un file di configurazione. Dal momento che controlla il modo in cui un programma viene eseguito, può inoltre (anche se storicamente inesatto) essere interpretato come "Run Control".
+**Note:** `~/.xinitrc` è un cosiddetto "dot" (.) file. Nei sistemi *nix, i file che sono preceduti da un punto (.) sono "nascosti" e non compaiono con un normale comando `ls`, di solito allo scopo di tenere ordinate le directory. I file nascosti possono essere visualizzati con `ls -a`. Il suffisso "rc" significa *Run Commands* e indica semplicemente che è un file di configurazione. Dal momento che controlla il modo in cui un programma viene eseguito, può inoltre (anche se storicamente inesatto) essere interpretato come "Run Control".
 
 Copiare il file d'esempio `/etc/skel/.xinitrc` nella home directory:
 
@@ -53,9 +53,9 @@ fi
 exec xterm
 ```
 
-**Nota:** Assicurarsi di aver decommentato solo _una_ riga `exec` in `~/.xinitrc`.
+**Nota:** Assicurarsi di aver decommentato solo *una* riga `exec` in `~/.xinitrc`.
 
-Dopo aver editato `.xinitrc` si è pronti a lanciare X. Avviarlo da utente _normale, non-root_ con:
+Dopo aver editato `.xinitrc` si è pronti a lanciare X. Avviarlo da utente *normale, non-root* con:
 
 ```
 $ startx

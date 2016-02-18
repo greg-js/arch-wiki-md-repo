@@ -1,4 +1,4 @@
-_Jeśli zainstalowałeś Archa na systemie plików ext2, dobrym pomysłem byłoby włączenie księgowania i konwersja na system plików ext3\. Księgowanie zapewnia szereg korzyści._
+*Jeśli zainstalowałeś Archa na systemie plików ext2, dobrym pomysłem byłoby włączenie księgowania i konwersja na system plików ext3\. Księgowanie zapewnia szereg korzyści.*
 
 1\. Zidentyfikuj partycję przezanaczoną do konwersji przez sprawdzenie pliku **/etc/fstab** i wyjścia polecenia **mount**.
 
@@ -11,7 +11,7 @@ sudo tune2fs -j PARTYCJA
 
 Gdzie PARTYCJA to /dev/hda1, /dev/sda1, /dev/discs/disc0/part1, itd.
 
-2\. Otwórz **/etc/fstab** i zmień _ext2_ na _ext3_ dla konwertowanej partycji.
+2\. Otwórz **/etc/fstab** i zmień *ext2* na *ext3* dla konwertowanej partycji.
 
 Na przykład:
 

@@ -1,6 +1,6 @@
 [GRUB Legacy](http://www.gnu.org/software/grub/grub-legacy.html) is a [multiboot](http://www.gnu.org/software/grub/manual/multiboot/) bootloader previously maintained by the [GNU Project](/index.php/GNU_Project "GNU Project"). It was derived from GRUB, the GRand Unified Bootloader, which was originally designed and implemented by Erich Stefan Boleyn.
 
-Briefly, the _bootloader_ is the first software program that runs when a computer starts. It is responsible for loading and transferring control to the Linux kernel. The kernel, in turn, initializes the rest of the operating system.
+Briefly, the *bootloader* is the first software program that runs when a computer starts. It is responsible for loading and transferring control to the Linux kernel. The kernel, in turn, initializes the rest of the operating system.
 
 **Warning:** GRUB Legacy is no longer maintained upstream and is not officially supported in Arch (see the news [here](https://www.archlinux.org/news/grub-legacy-no-longer-supported/)). Users are recommended to switch to [GRUB](/index.php/GRUB "GRUB")(2) or [Syslinux](/index.php/Syslinux "Syslinux") instead. See [Upgrading to GRUB2](#Upgrading_to_GRUB2).
 
@@ -51,7 +51,7 @@ Briefly, the _bootloader_ is the first software program that runs when a compute
     *   [7.4 Edit GRUB entries in the boot menu](#Edit_GRUB_entries_in_the_boot_menu)
     *   [7.5 device.map error](#device.map_error)
     *   [7.6 KDE reboot pull-down menu fails](#KDE_reboot_pull-down_menu_fails)
-    *   [7.7 GRUB fails to find or install to any virtio _/dev/vd*_ or other non-BIOS devices](#GRUB_fails_to_find_or_install_to_any_virtio_.2Fdev.2Fvd.2A_or_other_non-BIOS_devices)
+    *   [7.7 GRUB fails to find or install to any virtio */dev/vd** or other non-BIOS devices](#GRUB_fails_to_find_or_install_to_any_virtio_.2Fdev.2Fvd.2A_or_other_non-BIOS_devices)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -77,7 +77,7 @@ Upgrade from GRUB Legacy to [GRUB version 2.x](/index.php/GRUB "GRUB") is much t
 ### Differences
 
 *   There are differences in the commands of GRUB Legacy and GRUB. Familiarize yourself with [GRUB commands](https://www.gnu.org/software/grub/manual/grub.html#Commands) before proceeding (e.g. "find" has been replaced with "search").
-*   GRUB is now _modular_ and no longer requires "stage 1.5". As a result, the bootloader itself is limited -- modules are loaded from the hard drive as needed to expand functionality (e.g. for [LVM](/index.php/LVM "LVM") or RAID support).
+*   GRUB is now *modular* and no longer requires "stage 1.5". As a result, the bootloader itself is limited -- modules are loaded from the hard drive as needed to expand functionality (e.g. for [LVM](/index.php/LVM "LVM") or RAID support).
 *   Device naming has changed between GRUB Legacy and GRUB. Partitions are numbered from 1 instead of 0 while drives are still numbered from 0, and prefixed with partition-table type. For example, `/dev/sda1` would be referred to as `(hd0,msdos1)` (for MBR) or `(hd0,gpt1)` (for GPT).
 *   GRUB is noticeably bigger than GRUB legacy (occupies ~13 MB in `/boot`). If you are booting from a separate `/boot` partition, and this partition is smaller than 32 MB, you will run into disk space issues, and pacman will refuse to install new kernels.
 
@@ -90,17 +90,17 @@ Although a GRUB installation should run smoothly, it is strongly recommended to 
 
 ```
 
-Backup the MBR which contains the boot code and partition table (replace `/dev/sd_X_` with your actual disk path):
+Backup the MBR which contains the boot code and partition table (replace `/dev/sd*X*` with your actual disk path):
 
 ```
-# dd if=/dev/sd_X_ of=/path/to/backup/mbr_backup bs=512 count=1
+# dd if=/dev/sd*X* of=/path/to/backup/mbr_backup bs=512 count=1
 
 ```
 
 Only 446 bytes of the MBR contain boot code, the next 64 contain the partition table. If you do not want to overwrite your partition table when restoring, it is strongly advised to backup only the MBR boot code:
 
 ```
-# dd if=/dev/sd_X_ of=/path/to/backup/bootcode_backup bs=446 count=1
+# dd if=/dev/sd*X* of=/path/to/backup/bootcode_backup bs=446 count=1
 
 ```
 
@@ -120,7 +120,6 @@ If `grub-mkconfig` fails, convert your `/boot/grub/menu.lst` file to `/boot/grub
 For example:
 
  `/boot/grub/menu.lst` 
-
 ```
 default=0
 timeout=5
@@ -136,9 +135,7 @@ kernel /vmlinuz-linux root=/dev/sda2 ro
 initrd /initramfs-linux-fallback.img
 
 ```
-
  `/boot/grub/grub.cfg` 
-
 ```
 set default='0'; if [ x"$default" = xsaved ]; then load_env; set default="$saved_entry"; fi
 set timeout=5
@@ -271,8 +268,8 @@ GRUB must be told where its files reside on the system, since multiple instances
 
 **Note:** GRUB defines storage devices differently than conventional kernel naming does.
 
-*   Hard disks are defined as _(hdX)_; this also refers to any USB storage devices.
-*   Device and partitioning numbering begin at zero. For example, the first hard disk recognized in the BIOS will be defined as _(hd0)_. The second device will be called _(hd1)_. This also applies to partitions. So, the second partition on the first hard disk will be defined as _(hd0,1)_.
+*   Hard disks are defined as *(hdX)*; this also refers to any USB storage devices.
+*   Device and partitioning numbering begin at zero. For example, the first hard disk recognized in the BIOS will be defined as *(hd0)*. The second device will be called *(hd1)*. This also applies to partitions. So, the second partition on the first hard disk will be defined as *(hd0,1)*.
 
 If you are unaware of the the location of `/boot`, use the GRUB shell `find` command to locate the GRUB files. Enter the GRUB shell as root by:
 
@@ -281,14 +278,14 @@ If you are unaware of the the location of `/boot`, use the GRUB shell `find` com
 
 ```
 
-The following example is for systems _without_ a separate `/boot` partition, wherein `/boot` is merely a directory under `/`:
+The following example is for systems *without* a separate `/boot` partition, wherein `/boot` is merely a directory under `/`:
 
 ```
 grub> find /boot/grub/stage1
 
 ```
 
-The following example is for systems _with_ a separate `/boot` partition:
+The following example is for systems *with* a separate `/boot` partition:
 
 ```
 grub> find /grub/stage1
@@ -306,7 +303,6 @@ This value should be entered on the `root` line in your configuration file. Type
 Add the following to the end of your `/boot/grub/menu.lst` (assuming that your Windows partition is on the first partition of the first drive):
 
  `/boot/grub/menu.lst` 
-
 ```
  title Windows
  rootnoverify (hd0,0)
@@ -323,7 +319,6 @@ Add the following to the end of your `/boot/grub/menu.lst` (assuming that your W
 If Windows is located on another hard disk, the `map` command must be used. This will make your Windows install think it is actually on the first drive. Assuming that your Windows partition is on the first partition of the second drive:
 
  `/boot/grub/menu.lst` 
-
 ```
  title Windows
  map (hd0) (hd1)
@@ -341,7 +336,6 @@ If Windows is located on another hard disk, the `map` command must be used. This
 This can be done the same way that an Arch Linux install is defined. For example:
 
  `/boot/grub/menu.lst` 
-
 ```
  title Other Linux
  root (hd0,2)
@@ -408,7 +402,6 @@ chainloader +1
 If the other Linux distribution uses GRUB2 (e.g. Ubuntu 9.10+), and you installed its boot loader to its root partition, you can add an entry like this one to your `/boot/grub/menu.lst`:
 
  `/boot/grub/menu.lst` 
-
 ```
  # other Linux using GRUB2
  title Ubuntu
@@ -436,12 +429,12 @@ Manually copy the GRUB libs like so:
 
 ### General notes about bootloader installation
 
-GRUB may be installed from a separate medium (e.g. a LiveCD), or directly from a running Arch install. The GRUB bootloader is _seldom_ required to be reinstalled and installation is _not_ necessary when:
+GRUB may be installed from a separate medium (e.g. a LiveCD), or directly from a running Arch install. The GRUB bootloader is *seldom* required to be reinstalled and installation is *not* necessary when:
 
 *   The configuration file is updated.
 *   The [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/) package is updated.
 
-Installation is _necessary_ when:
+Installation is *necessary* when:
 
 *   A bootloader is not already installed.
 *   Another operating system overwrites the Linux bootloader.
@@ -564,7 +557,7 @@ kernel /vmlinuz-linux root=/dev/sda1 ro **vga=0x0365**
 
 ```
 
-**Note:** _vbetest_ gives you VESA mode to which we need to add 512 to get the correct value to use in kernel option line. While _hwinfo_ gives you directly the correct value needed by the kernel.
+**Note:** *vbetest* gives you VESA mode to which we need to add 512 to get the correct value to use in kernel option line. While *hwinfo* gives you directly the correct value needed by the kernel.
 
 #### vbetest
 
@@ -604,7 +597,7 @@ kernel /vmlinuz-linux root=/dev/sda1 ro **vga=869**
 If you alter (or plan to alter) partition sizes from time to time, you might want to consider defining your drive/partitions by a label. You can label ext2, ext3, ext4 partitions by:
 
 ```
-e2label _/dev/drive|partition_ label
+e2label */dev/drive|partition* label
 
 ```
 
@@ -620,14 +613,14 @@ kernel /boot/vmlinuz-linux root=/dev/disk/by-label/Arch_Linux ro
 The [UUID](/index.php/UUID "UUID") (Universally Unique IDentifier) of a partition may be discovered with `blkid` or `ls -l /dev/disk/by-uuid`. It is defined in `menu.lst` with either:
 
 ```
-kernel /boot/vmlinuz-linux root=/dev/disk/by-uuid/_uuid_number_
+kernel /boot/vmlinuz-linux root=/dev/disk/by-uuid/*uuid_number*
 
 ```
 
 or:
 
 ```
-kernel /boot/vmlinuz-linux root=UUID=_uuid_number_
+kernel /boot/vmlinuz-linux root=UUID=*uuid_number*
 
 ```
 
@@ -649,7 +642,6 @@ You can enable password protection in the GRUB configuration file for operating 
 First, choose a password you can remember and then encrypt it:
 
  `# grub-md5-crypt` 
-
 ```
  Password:
  Retype password:
@@ -891,7 +883,7 @@ default saved
 
 in `/boot/grub/menu.lst`.
 
-### GRUB fails to find or install to any virtio _/dev/vd*_ or other non-BIOS devices
+### GRUB fails to find or install to any virtio */dev/vd** or other non-BIOS devices
 
 I had trouble installing GRUB while installing Arch Linux in an virtual KVM machine using a virtio device for hard drive. To install GRUB, I figured out the following: Enter a virtual console by typing `Ctrl+Alt+F2` or any other F-key for a free virtual console. This assumes that your root file system is mounted in the folder `/mnt` and the boot file system is either mounted or stored in the folder `/mnt/boot`.
 

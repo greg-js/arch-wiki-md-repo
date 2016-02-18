@@ -31,7 +31,6 @@ A `mount` parancs az fstab-ot hasznája, ha parancsként csak a könyvtárt vagy
 Egyszerű `/etc/fstab` fájl, mely kernel név szerinti leírókat használ:
 
  `/etc/fstab` 
-
 ```
 # <file system>        <dir>         <type>    <options>             <dump> <pass>
 /dev/sda1              /             ext4      defaults,noatime      0      1
@@ -88,7 +87,6 @@ Háromféle módja van a partíciók vagy tárolóeszközök azonosításának a
 A partíciókról alapvető információt az alábbi paranccsal szerezhetünk:
 
  `$ lsblk -f` 
-
 ```
 NAME   FSTYPE LABEL      UUID                                 MOUNTPOINT
 sda                                                           
@@ -117,7 +115,6 @@ Arról, hogy hogyan lássunk el címkével partíciókat vagy meghajtókat, [Per
 Futtassuk az `lsblk -f` parancsot a partíciók listázásához, és helyezzük eléjük a `LABEL=` előtagot:
 
  `/etc/fstab` 
-
 ```
 # <file system>        <dir>         <type>    <options>             <dump> <pass> 
 LABEL=Arch_Linux       /             ext4      defaults,noatime      0      1
@@ -131,14 +128,12 @@ Minden partíciónak és tárolóegységnek van egy egyedi UUID-je. Ezt a fájlr
 Futtassuk az `lsblk -f` parancsot a partíciók listázásához, és lássuk el őket a `UUID=` előtaggal:
 
 **Tip:** Ha csak az UUID-kat akarjuk listázni, használjuk a következőt:
-
 ```
 $ lsblk -no UUID /dev/sda2
 
 ```
 
  `/etc/fstab` 
-
 ```
 # <file system>                            <dir>     <type>    <options>             <dump> <pass>
 UUID=24f28fc6-717e-4bcd-a5f7-32b959024e26  /         ext4      defaults,noatime      0      1
@@ -150,7 +145,7 @@ UUID=4209c845-f495-4c43-8a03-5363dd433153  none      swap      defaults         
 
 ### Automatikus csatolás systemd-vel
 
-Ha a `/home` partíciónk nagyméretű, jobb, ha a `/home`-tól nem függő szolgáltatásaink már akkor is indulhatnak, míg a `/home` _fsck_ ellenőrzés alatt áll. Ezt úgy érhetjük el, hogy az alábbi opciókat adjuk az `/etc/fstab`-ban a `/home` partícióhoz:
+Ha a `/home` partíciónk nagyméretű, jobb, ha a `/home`-tól nem függő szolgáltatásaink már akkor is indulhatnak, míg a `/home` *fsck* ellenőrzés alatt áll. Ezt úgy érhetjük el, hogy az alábbi opciókat adjuk az `/etc/fstab`-ban a `/home` partícióhoz:
 
 ```
 noauto,x-systemd.automount
@@ -163,7 +158,7 @@ Ez akkor ellenőrzi és csatolja a `/home` partíciót, amikor azt először el�
 
 Ugyanez vonatkozik a távoli fájlrendszerek felcsatolására is. Ha azt akarjuk, hogy csak az első hozzáféréskor csatolódjanak, ugyanígy a `noauto,x-systemd.automount` paramétereket kell használnunk. Ehhez még használhatjuk a `x-systemd.device-timeout=#` opciót egy bizonyos várakozási idő megadásához, ha a hálózati erőforrás esetleg nem lenne elérhető.
 
-Ha kulcsokkal titkosított fájlrendszereink vannak, a `noauto` paramétert a megfelelő bejegyzésekhez adhatjuk az `/etc/crypttab`-ban. A _systemd_ így nem nyitja meg a titkosított eszközt a rendszer indulásakor, hanem vár, míg valaki hozzá akar férni, s megnyitja a megjelölt kulccsal, mielőtt felcsatolja. Ez induláskor megspórolhat pár másodpercet, ha például titkosított RAID eszközt használunk, mivel a systemd-nek nem kell várnia, míg az eszköz elérhető lesz. Például:
+Ha kulcsokkal titkosított fájlrendszereink vannak, a `noauto` paramétert a megfelelő bejegyzésekhez adhatjuk az `/etc/crypttab`-ban. A *systemd* így nem nyitja meg a titkosított eszközt a rendszer indulásakor, hanem vár, míg valaki hozzá akar férni, s megnyitja a megjelölt kulccsal, mielőtt felcsatolja. Ez induláskor megspórolhat pár másodpercet, ha például titkosított RAID eszközt használunk, mivel a systemd-nek nem kell várnia, míg az eszköz elérhető lesz. Például:
 
  `/etc/crypttab`  `data /dev/md0 /root/key noauto` 
 
@@ -172,7 +167,6 @@ Ha kulcsokkal titkosított fájlrendszereink vannak, a `noauto` paramétert a me
 Ha bármely csatolási pont szóközt tartalmaz, használjuk az escape karaktert `\`, melyet `040` háromjegyű nyolcas számrendszerű kód követ, hogy a szóközt emulálja:
 
  `/etc/fstab` 
-
 ```
 UUID=47FA-4071     /home/username/Camera<font color="grey">\040</font>Pictures   vfat  defaults,noatime       0  0
 /dev/sda7          /media/100<font color="grey">\040</font>GB<font color="grey">\040</font>(Storage)       ext4  defaults,noatime,user  0  2
@@ -188,7 +182,7 @@ A külső eszközök, melyeket jelenlétükben csatolunk, de ha nincsenek jelen,
 
 A `noatime`, `nodiratime` vagy `relatime` opciók használata hatással lehet a meghajtó teljesítményére.
 
-*   Az `atime` egy állomány minden egyes elérésekor frissíti annak _atime_-ját. Ez a leghasznosabb, ha az ember szervert üzemeltet; ám egy asztali rendszer esetében nem sok értelme van. Az `atime` opció használatának egyik hátulütője az, hogy még a gyorsítótárból való olvasás (ha memóriából olvasunk a lemez helyett)is íráshoz vezet!
+*   Az `atime` egy állomány minden egyes elérésekor frissíti annak *atime*-ját. Ez a leghasznosabb, ha az ember szervert üzemeltet; ám egy asztali rendszer esetében nem sok értelme van. Az `atime` opció használatának egyik hátulütője az, hogy még a gyorsítótárból való olvasás (ha memóriából olvasunk a lemez helyett)is íráshoz vezet!
 
 	A `noatime` opció teljesen kikapcsolja az elérések írását a lemezen, ahányszor csak olvasunk egy állományt. Ez legtöbbször nagyon jól működik, kivéve egyes ritka esetekben ([Mutt](/index.php/Mutt "Mutt")), melyeknek épp erre az információra van szükségük. A mutt használatához a `relatime` opciót kell használni.
 
@@ -196,7 +190,7 @@ A `noatime`, `nodiratime` vagy `relatime` opciók használata hatással lehet a 
 
 **Megjegyzés:** A `noatime` eleve magában foglalja a `nodiratime`-ot. [Nem kell mindkettőt jelölni](http://lwn.net/Articles/244941/).
 
-*   A `relatime` engedélyezi az elérés idejének írását, de csak akkor, ha az állomány módosul (a `noatime`-mal ellenben, ahol a hozzáférési idő nem módosul és mindig régebbi lesz, mint a módosítás ideje). A legjobb kompromisszum ezen opció használata lehet, mert a [Mutt](/index.php/Mutt "Mutt") és a hozzá hasonló programok működni fognak, de bizonyos mértékben a teljesítmény is megnő, hiszen az állományaink elérési ideje csak módosításkor változik. Ez az opció használatos, ha csak a `defaults` kulcsszót, vagy semmiféle opciót nem adunk meg az _fstab_-ban egy adott csatolási ponthoz.
+*   A `relatime` engedélyezi az elérés idejének írását, de csak akkor, ha az állomány módosul (a `noatime`-mal ellenben, ahol a hozzáférési idő nem módosul és mindig régebbi lesz, mint a módosítás ideje). A legjobb kompromisszum ezen opció használata lehet, mert a [Mutt](/index.php/Mutt "Mutt") és a hozzá hasonló programok működni fognak, de bizonyos mértékben a teljesítmény is megnő, hiszen az állományaink elérési ideje csak módosításkor változik. Ez az opció használatos, ha csak a `defaults` kulcsszót, vagy semmiféle opciót nem adunk meg az *fstab*-ban egy adott csatolási ponthoz.
 
 ### tmpfs
 
@@ -223,7 +217,6 @@ A változtatások érvénybe léptetéséhez indítsuk újra a rendszert. Jegyez
 A válzoztatások érvénybe léptetése után leellenőrizhetjük, hogy minden í kívánt módon működik-e, belenézve a `/proc/mounts`-ba és a `findmnt`-vel:
 
  `$ findmnt --target /tmp` 
-
 ```
 TARGET SOURCE FSTYPE OPTIONS
 /tmp   tmpfs  tmpfs  rw,nosuid,nodev,relatime

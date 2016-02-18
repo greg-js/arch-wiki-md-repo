@@ -49,15 +49,12 @@ Once your iPhone's filesystem is mounted, you should be able to use any [network
 Using [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") you can simply adjust the networking to use the iphone as the gateway.
 
  `/etc/udev/rules.d/90-iphone-tethering.rules` 
-
 ```
 # Execute pairing program when appropriate
 ACTION=="add|remove", SUBSYSTEM=="net", ATTR{idVendor}=="05ac", ENV{ID_USB_DRIVER}=="ipheth", SYMLINK+="iphone", RUN+="/usr/bin/systemctl restart systemd-networkd.service"
 
 ```
-
  `/etc/systemd/network/enp0s26u1u2c4i2.network` 
-
 ```
 [Match]
 Name=enp0s26u1u2c4i2
@@ -67,7 +64,7 @@ DHCP=ipv4
 
 ```
 
-_enp0s26u1u2c4i2_ being the name of the network device that is created from the iphone.
+*enp0s26u1u2c4i2* being the name of the network device that is created from the iphone.
 
 #### Troubleshooting
 

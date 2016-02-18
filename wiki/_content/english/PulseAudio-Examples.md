@@ -38,7 +38,6 @@
 List available input sources
 
  `$ pacmd list-sources | grep -e device.string -e 'name:'` 
-
 ```
 name: <input>
  device.string = "hw:2"
@@ -48,7 +47,7 @@ name: <alsa_output.pci-0000_04_01.0.analog-stereo.monitor>
 name: <combined.monitor>
 ```
 
-For permanent store in the _default.pa_ file.
+For permanent store in the *default.pa* file.
 
 Make OSS default
 
@@ -78,7 +77,6 @@ $ pacmd "set-default-source set-default-source alsa_output.pci-0000_04_01.0.anal
 Determine the name of the new source, which has a * in front of index:
 
  `$ pacmd list-sinks | grep -e 'name:' -e 'index'` 
-
 ```
   * index: 0
 	name: <alsa_output.pci-0000_04_01.0.analog-stereo>
@@ -87,7 +85,7 @@ Determine the name of the new source, which has a * in front of index:
 
 ```
 
-For setting it as default in the _default.pa_ you can use
+For setting it as default in the *default.pa* you can use
 
 ```
 set-default-sink alsa_output.pci-0000_04_01.0.analog-stereo
@@ -101,7 +99,6 @@ When done then you can logout/login or restart PulseAudio manually for these cha
 *   The sinks that are set as default are marked with `*` in front of the index.
 *   The numbering of sinks is not guaranteed to be persistent, so all sinks in the `default.pa` file should be identified by the name.
 *   For quick identification at runtime (e.g. to manage sound volume), you can use the sink index instead of the sink name:
-
     ```
     $ pactl set-sink-volume 0 +3%
     $ pactl set-sink-volume 0 -- -3%
@@ -132,14 +129,13 @@ card 0: Intel [HDA Intel], device 3: HDMI 0 [HDMI 0]
 Or by using the the `pacmd` command:
 
  `$ pacmd list-sinks  | grep -e 'name:'  -e 'alsa.device ' -e 'alsa.subdevice '` 
-
 ```
 	name: <alsa_output.pci-0000_00_1b.0.analog-stereo>
 		alsa.subdevice = "0"
 		alsa.device = "0"
 ```
 
-The key to a configuration like this is to understand that whatever is selected in pavucontrol under _Configuration > Internal Audio_ is the default device. Load _pavucontrol > Configuration_ and select HDMI as the profile.
+The key to a configuration like this is to understand that whatever is selected in pavucontrol under *Configuration > Internal Audio* is the default device. Load *pavucontrol > Configuration* and select HDMI as the profile.
 
 To setup the analog device as a secondary source, add the following to the `/etc/pulse/default.pa` configuration at the beginning, before any other modules are loaded:
 
@@ -151,7 +147,7 @@ set-default-sink combined
 
 ```
 
-Restart PulseAudio, run _pavucontrol_ and select the "Output Devices" tab. Three settings should be displayed:
+Restart PulseAudio, run *pavucontrol* and select the "Output Devices" tab. Three settings should be displayed:
 
 1.  Internal Audio Digital Stereo (HDMI)
 2.  Internal Audio
@@ -239,7 +235,6 @@ Then, open the output tab. There should now be two HDMI outputs for the graphics
 Create a script to switch to the desired audio profile if an HDMI cable is plugged in:
 
  `/usr/local/bin/hdmi_sound_toggle.sh` 
-
 ```
 #!/bin/bash
 USER_NAME=$(w -hs | awk -v vt=tty$(fgconsole) '$0 ~ vt {print $1}')
@@ -267,13 +262,11 @@ chmod +x /usr/local/bin/hdmi_sound_toggle.sh
 Create a udev rule to run this script when the status of the HDMI change:
 
 **Note:** udev rule can't directly run a script, a workaround is to use a .service to run this script
-
  `/etc/udev/rules.d/99-hdmi_sound.rules`  `KERNEL=="card0", SUBSYSTEM=="drm", ACTION=="change", RUN+="/usr/bin/systemctl start hdmi_sound_toggle.service"` 
 
 Finally, create the .service file required by the udev rule above:
 
  `/etc/systemd/system/hdmi_sound_toggle.service` 
-
 ```
 [Unit]
 Description=hdmi sound hotplug
@@ -298,7 +291,7 @@ A reboot can be required.
 
 ## Surround sound systems
 
-Many people have a surround sound card, but have speakers for just two channels, so PulseAudio cannot really default to a surround sound setup. To enable all of the channels, edit `/etc/pulse/daemon.conf`: uncomment the default-sample-channels line (i.e. remove the semicolon from the beginning of the line) and set the value to **6**. For a _5.1_ setup, or **8** for a _7.1_ setup etc.
+Many people have a surround sound card, but have speakers for just two channels, so PulseAudio cannot really default to a surround sound setup. To enable all of the channels, edit `/etc/pulse/daemon.conf`: uncomment the default-sample-channels line (i.e. remove the semicolon from the beginning of the line) and set the value to **6**. For a *5.1* setup, or **8** for a *7.1* setup etc.
 
 ```
 # Default
@@ -499,15 +492,15 @@ In Pulseaudio Volume Control (pavucontrol), under the "Playback" tab, change the
 This configuration only works with jackdbus (JACK2 compiled with D-Bus support). It also requires the [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack) package. Make sure that `/etc/pulse/default.pa` contains a line:
 
 ```
-load-module module-jackdbus-detect _options_
+load-module module-jackdbus-detect *options*
 
 ```
 
-Where `_options_` can be any options supported by this module, usually `channels=2`.
+Where `*options*` can be any options supported by this module, usually `channels=2`.
 
 As described on the [Jack-DBUS Packaging](https://github.com/jackaudio/jackaudio.github.com/wiki/JackDbusPackaging) page:
 
-_Server auto-launching is implemented as D-Bus call that auto-activates JACK D-Bus service, in case it is not already started, and starts the JACK server. Correct interaction with PulseAudio is done using a D-Bus based audio card "acquire/release" mechanism. When JACK server starts, it asks this D-Bus service to acquire the audio card and PulseAudio will unconditionally release it. When JACK server stops, it releases the audio card that can be grabbed again by PulseAudio._
+*Server auto-launching is implemented as D-Bus call that auto-activates JACK D-Bus service, in case it is not already started, and starts the JACK server. Correct interaction with PulseAudio is done using a D-Bus based audio card "acquire/release" mechanism. When JACK server starts, it asks this D-Bus service to acquire the audio card and PulseAudio will unconditionally release it. When JACK server stops, it releases the audio card that can be grabbed again by PulseAudio.*
 
 `module-jackdbus-detect.so` dynamically loads and unloads module-jack-sink and module-jack-source when jackdbus is started and stopped.
 
@@ -660,7 +653,7 @@ Using the settings listed above, use QjackCtl to execute a script upon startup a
 
 **Note:** padevchooser in the following example is deprecated. It is replaced by pasystray
 
-The following example could be used and modified as necessary as a startup script that daemonizes PulseAudio and loads the _padevchooser_ program (optional, needs to be built from AUR) called `jack_startup`:
+The following example could be used and modified as necessary as a startup script that daemonizes PulseAudio and loads the *padevchooser* program (optional, needs to be built from AUR) called `jack_startup`:
 
 ```
 #!/bin/bash
@@ -689,7 +682,7 @@ chmod +x jack_startup jack_shutdown
 
 ```
 
-then with QjackCtl loaded, click on the _Setup_ button and then the _Options_ tab and tick both "Execute Script after Startup:" And "Execute Script on Shutdown:" and put either use the ... button or type the path to the scripts (assuming the scripts are in the home directory) `~/jack_startup` and `~/jack_shutdown` making sure to save the changes.
+then with QjackCtl loaded, click on the *Setup* button and then the *Options* tab and tick both "Execute Script after Startup:" And "Execute Script on Shutdown:" and put either use the ... button or type the path to the scripts (assuming the scripts are in the home directory) `~/jack_startup` and `~/jack_shutdown` making sure to save the changes.
 
 ## PulseAudio through OSS
 
@@ -727,7 +720,6 @@ For specific direction on accomplishing the appropriate mounts, please refer to 
 Some users may prefer to manually start the PulseAudio server before running certain programs and then stop the PulseAudio server when they are finished. A simple way to accomplish this is to edit `~/.config/pulse/client.conf` or `/etc/pulse/client.conf` and change `autospawn = yes` to `autospawn=no`. Make sure the line is uncommented as well.
 
  `~/.config/pulse/client.conf #or /etc/pulse/client.conf` 
-
 ```
 autospawn=no
 
@@ -754,7 +746,6 @@ This setting is also respected by the default pulseaudio dektop session startup 
 To disable the pulseaudio daemon completely, and thereby preventing it from starting, one can add `daemon-binary=/bin/true` to the configuration file.
 
  `~/.config/pulse/client.conf #or /etc/pulse/client.conf` 
-
 ```
 daemon-binary=/bin/true
 
@@ -796,16 +787,13 @@ Some people do not want to run PulseAudio all the time for various reasons. This
 This configuration tells native PA clients to autospawn the daemon when they need it, then the daemon is configured to autoexit as soon as all clients have disconnected. The daemon itself uses a plain simple static configuration that uses your configured `pcm.!default` ALSA devices and nothing more. No replacement of ALSA's default, no playing with mixer levels, nothing but record/playback. Also make sure [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) is **not** installed so standard ALSA clients don't default to pulse. `alsamixer` functions properly as well as any other ALSA clients. Also make sure common frameworks like Xine, Gstreamer and Phonon are configured to use ALSA: by default if they detect PulseAudio is installed they will try to use it before ALSA.
 
  `/etc/pulse/daemon.conf` 
-
 ```
 # Replace these with the proper values
 exit-idle-time = 0 # Exit as soon as unneeded
 flat-volumes = yes # Prevent messing with the master volume
 
 ```
-
  `/etc/pulse/client.conf` 
-
 ```
 # Replace these with the proper values
 
@@ -815,9 +803,7 @@ flat-volumes = yes # Prevent messing with the master volume
 autospawn = yes
 
 ```
-
  `/etc/pulse/default.pa` 
-
 ```
 # Replace the *entire* content of this file with these few lines and
 # read the comments

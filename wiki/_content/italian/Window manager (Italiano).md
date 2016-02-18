@@ -10,9 +10,9 @@ Un window manager (WM) è un componente dell'interfaccia grafica di un sistema (
 
 ## X Window System
 
-Il [sistema X Window](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") fornisce le basi per un'interfaccia utente grafica. Prima di installare un gestore di finestre, è necessaria l'installazione di un server X funzionante. Vedere [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)") per informazioni più dettagliate.
+Il [sistema X Window](https://en.wikipedia.org/wiki/X_Window_System per informazioni più dettagliate.
 
-	_X fornisce il quadro di base per la configurazione di tali ambienti GUI: disegnare e muovere le finestre sullo schermo e interagire con il mouse e la tastiera. Non ha competenze specifiche per l'interfaccia utente; saranno i programmi dei singoli client, noti come "window manager" ad occuparsi della gestione di tutto questo. Come tale, lo stile visivo degli ambienti basati su X può variare molto: differenti tipi di programmi possono presentare interfacce radicalmente molto diverse. X è costruito come una ulteriore applicazione (a livello di astrazione), al di sopra del kernel del sistema operativo._
+	*X fornisce il quadro di base per la configurazione di tali ambienti GUI: disegnare e muovere le finestre sullo schermo e interagire con il mouse e la tastiera. Non ha competenze specifiche per l'interfaccia utente; saranno i programmi dei singoli client, noti come "window manager" ad occuparsi della gestione di tutto questo. Come tale, lo stile visivo degli ambienti basati su X può variare molto: differenti tipi di programmi possono presentare interfacce radicalmente molto diverse. X è costruito come una ulteriore applicazione (a livello di astrazione), al di sopra del kernel del sistema operativo.*
 
 L'utente è libero di configurare il proprio ambiente GUI in molti modi.
 
@@ -20,9 +20,9 @@ L'utente è libero di configurare il proprio ambiente GUI in molti modi.
 
 I Window Manager (WM) sono client per X che forniscono il bordo intorno ad una finestra. Controllano l'aspetto delle applicazioni e il modo in cui gestirle: il bordo, barra del titolo, la dimensione e la capacità di ridimensionare una finestra; sono tutte funzionalità gestite dai Window manager. Molti window manager forniscono altre funzionalità, quali le [dockapps](http://www.dockapps.org), come [Window Maker](/index.php/Window_Maker_(Italiano) "Window Maker (Italiano)"), un menu per avviare i programmi, i menu per configurare il WM e altre cose utili. [Fluxbox](/index.php/Fluxbox_(Italiano) "Fluxbox (Italiano)"), per esempio, fornisce la funzione "tab" per le finestre.
 
-I window manager in genere non offrono gli _extra_ come le icone del desktop, che sono così comuni nei [desktop environment](/index.php/Desktop_environment "Desktop environment") (anche se è possibile aggiungere le icone in un WM con un altro programma).
+I window manager in genere non offrono gli *extra* come le icone del desktop, che sono così comuni nei [desktop environment](/index.php/Desktop_environment "Desktop environment") (anche se è possibile aggiungere le icone in un WM con un altro programma).
 
-E proprio grazie della mancanza di tali _extra_, i WM sono molto più leggeri per quanto riguarda le risorse del sistema.
+E proprio grazie della mancanza di tali *extra*, i WM sono molto più leggeri per quanto riguarda le risorse del sistema.
 
 ### Tipi
 

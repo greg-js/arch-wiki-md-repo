@@ -110,8 +110,11 @@ Create `index.pl` in `/srv/http/perlwebtest`:
 
 ```
 #!/usr/bin/perl
-print "Content-type: text/plain\n\n";
-print "mod_perl now works\n";
+print "Content-type: text/plain
+
+";
+print "mod_perl now works
+";
 
 ```
 

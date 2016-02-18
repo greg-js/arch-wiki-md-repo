@@ -150,7 +150,7 @@ $ touch ~/.config/lxsession/LXDE/autostart
 
 ```
 
-Přidejte program, který chcete spustit při startu na nový řádek, začínající znakem _@_ (bez znaku _&_ na konci):
+Přidejte program, který chcete spustit při startu na nový řádek, začínající znakem *@* (bez znaku *&* na konci):
 
 ```
 @lxterminal
@@ -479,7 +479,7 @@ Pro opravu také můžete použít balíček lxappearance z repozitáře communi
 
 ### LXsession - plná verze
 
-V lxsession je několik chyb v souvislosti se správou sezení. _**lxsession-lite**_ je verzí lxsession, která neobsahuje možnost správy sezení. lxsession-lite je stabilnější než lxsession, pouze nedokáže ukládat a obnovovat sezení. Je doporučeno použít _**lxsession-lite**_, dokud nebudou chyby v lxsession odstraněny.
+V lxsession je několik chyb v souvislosti se správou sezení. ***lxsession-lite*** je verzí lxsession, která neobsahuje možnost správy sezení. lxsession-lite je stabilnější než lxsession, pouze nedokáže ukládat a obnovovat sezení. Je doporučeno použít ***lxsession-lite***, dokud nebudou chyby v lxsession odstraněny.
 
 ### Použití aplikací KDEmod3 v LXDE
 

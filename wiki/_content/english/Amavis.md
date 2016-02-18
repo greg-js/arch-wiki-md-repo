@@ -1,6 +1,6 @@
 From [Amavis's site](http://www.ijs.si/software/amavisd/):
 
-	_amavisd-new is a high-performance interface between mailer (MTA) and content checkers: virus scanners, and/or SpamAssassin. It is written in Perl for maintainability, without paying a significant price for speed. It talks to MTA via (E)SMTP or LMTP, or by using helper programs. Best with Postfix, fine with dual-sendmail setup and Exim v4, works with sendmail/milter, or with any MTA as a SMTP relay._
+	*amavisd-new is a high-performance interface between mailer (MTA) and content checkers: virus scanners, and/or SpamAssassin. It is written in Perl for maintainability, without paying a significant price for speed. It talks to MTA via (E)SMTP or LMTP, or by using helper programs. Best with Postfix, fine with dual-sendmail setup and Exim v4, works with sendmail/milter, or with any MTA as a SMTP relay.*
 
 ## Contents
 
@@ -29,7 +29,8 @@ You can enable [ClamAV](/index.php/ClamAV "ClamAV") support by commenting out th
 ```
 # ### http://www.clamav.net/
 ['ClamAV-clamd',
-   \&ask_daemon, ["CONTSCAN {}\n", "/var/lib/clamav/clamd.sock"],
+   \&ask_daemon, ["CONTSCAN {}
+", "/var/lib/clamav/clamd.sock"],
    qr/\bOK$/m, qr/\bFOUND$/m,
    qr/^.*?: (?!Infected Archive)(.*) FOUND$/m ],
 # # NOTE: run clamd under the same user as amavisd - or run it under its own

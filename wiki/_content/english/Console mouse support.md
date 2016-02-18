@@ -13,7 +13,7 @@ $ gpm -m /dev/input/mice -t help
 
 ```
 
-The [gpm](https://www.archlinux.org/packages/?name=gpm) package needs to be started with a few parameters. These parameters can be added in the file `/etc/conf.d/gpm` or used when running _gpm_ directly.
+The [gpm](https://www.archlinux.org/packages/?name=gpm) package needs to be started with a few parameters. These parameters can be added in the file `/etc/conf.d/gpm` or used when running *gpm* directly.
 
 *   For PS/2 mice, replace the existing line with:
 

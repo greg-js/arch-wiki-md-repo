@@ -48,7 +48,7 @@ Sorcerer: [http://sorcerer.berlios.de/](http://sorcerer.berlios.de/)
 
 ## Arch vs Rock
 
-_Vapaa käännös osoitteesta [http://www.rocklinux.org/wiki/About](http://www.rocklinux.org/wiki/About)_
+*Vapaa käännös osoitteesta [http://www.rocklinux.org/wiki/About](http://www.rocklinux.org/wiki/About)*
 
 ROCK Linux on joustava Linux jakelun rakennussarja eli se on työkalukokoelma oman Linux jakelun rakentamiseen. Katso myös Tehtävä tavoitteemme. Jos sinua ei kiinnosta rakentaa omaa jakelu mutta olet kiinnostunut hyvästä peruskäyttöön soveltuvasta jakelusta sinun kannattaa katsastaa Crystal ROCK. [http://www.rocklinux.org/wiki/Crystal_ROCK](http://www.rocklinux.org/wiki/Crystal_ROCK)
 

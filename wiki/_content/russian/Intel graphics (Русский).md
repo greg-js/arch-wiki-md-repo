@@ -98,7 +98,6 @@ $ modinfo i915 | grep parm
 Следующий набор опций, как правило, можно включить без негативных последствий:
 
  `/etc/modprobe.d/i915.conf` 
-
 ```
 options i915 i915_enable_rc6=1 i915_enable_fbc=1 lvds_downclock=1
 
@@ -122,7 +121,6 @@ kernel: drm: not enough stolen space for compressed buffer, disabling.
 Для некоторых пользователей рывки видео происходят из-за метода ускорения SNA. Чтобы исправить это, включите опцию `"Tearfree"` в драйвере:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
    Identifier  "Intel Graphics"
@@ -144,7 +142,6 @@ EndSection
 Драйвер intel использует [тройную буферизацию](http://www.intel.com/support/graphics/sb/CS-004527.htm) для вертикальной синхронизации, что позволяет без потерь в производительности избежать разрывы кадров. Чтобы отключить вертикальную синхронизацию (например, для "бенчмаркинга") создайте файл .drirc в вашей домашней директории со следующим содержимым:
 
  `~/.drirc` 
-
 ```
 <device screen="0" driver="dri2">
 	<application name="Default">
@@ -230,12 +227,11 @@ $ xgamma -rgamma 1 -ggamma 1 -bgamma 1
 
 Согласно `man 4 intel`:
 
-	_Есть несколько движков для ускорения DDX. "UXA" (Архитектура Единого Ускорения) является зрелой базовой, которая была введена для поддержки модели драйвера GEM. Именно в процессе заменены "SNA" (новое ускорение в SandyBridge). Cпособность выбора использовать базовую остается для обратной совместимости._
+	*Есть несколько движков для ускорения DDX. "UXA" (Архитектура Единого Ускорения) является зрелой базовой, которая была введена для поддержки модели драйвера GEM. Именно в процессе заменены "SNA" (новое ускорение в SandyBridge). Cпособность выбора использовать базовую остается для обратной совместимости.*
 
-_SNA_ — стандартный метод ускорения в [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). Если вы наблюдаете проблемы с _SNA_, попробуйте переключить на _UXA_. Для этого нужно создать файл конфигурации [X](/index.php/X_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "X (Русский)") со следующим содержимым:
+*SNA* — стандартный метод ускорения в [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). Если вы наблюдаете проблемы с *SNA*, попробуйте переключить на *UXA*. Для этого нужно создать файл конфигурации [X](/index.php/X_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "X (Русский)") со следующим содержимым:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
    Identifier  "Intel Graphics"
@@ -248,7 +244,6 @@ EndSection
 Можно также воспользоваться [Glamor](http://www.freedesktop.org/wiki/Software/Glamor/):
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
    Identifier  "Intel Graphics"
@@ -281,7 +276,6 @@ video=VGA-1:1280x800
 Некоторые проблемы со сбоем X, зависания GPU, или проблемы с зависанием X, могут быть решены путем отключения использования GPU с опцией `NoAccel`:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
    Identifier "Intel Graphics"
@@ -293,7 +287,6 @@ EndSection
 Кроме того, попробуйте отключить 3D-ускорение только с опцией `DRI`:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
    Identifier "Intel Graphics"
@@ -367,7 +360,6 @@ video.use_native_backlight=1
 Если не один из них не решает проблему, отредактируйте или создайте `/etc/X11/xorg.conf.d/20-intel.conf` со следующим содержимым:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
         Identifier  "card0"
@@ -381,7 +373,6 @@ EndSection
 При использовании ускорения SNA, как упоминалось выше, создайте файл следующим образом:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
         Identifier  "card0"
@@ -412,7 +403,7 @@ $ dmesg |tail
 
 ### Розовые и зелёные артефакты на видео или выводе Веб-камеры
 
-На машинах с Broadwell, приложения использующие вывод _xv_ или _Intel Textured Video_ (в частности Skype и VLC), видеопоток выдаёт розовые и залёные артефакты. Это общая проблема Broadwell, которая была зафиксирована 16.04.2015 [[7]](https://bugs.freedesktop.org/show_bug.cgi?id=89807). Обновите [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) чтобы исправить её.
+На машинах с Broadwell, приложения использующие вывод *xv* или *Intel Textured Video* (в частности Skype и VLC), видеопоток выдаёт розовые и залёные артефакты. Это общая проблема Broadwell, которая была зафиксирована 16.04.2015 [[7]](https://bugs.freedesktop.org/show_bug.cgi?id=89807). Обновите [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) чтобы исправить её.
 
 ### Ядро сбоит с ядрами 4.0+ на чипах Broadwell/Core-M
 
@@ -443,7 +434,7 @@ Jun 16 17:54:03 hostname kernel: RIP  [<          (null)>]           (null)
 
 ```
 
-Это может быть исправлено путем отключения поддержки _execlist_, которая была изменена по умолчанию на ядре с версии 4.0\. Добавьте следующий параметр ядра:
+Это может быть исправлено путем отключения поддержки *execlist*, которая была изменена по умолчанию на ядре с версии 4.0\. Добавьте следующий параметр ядра:
 
 ```
 i915.enable_execlists=0

@@ -2,7 +2,7 @@ This article provides information on prioritizing process threads in real time, 
 
 While many recent processors are powerful enough to play a dozen video or audio streams simultaneously, it is still possible that another thread hijacks the processor for half a second to complete another task. This results in short interrupts in audio or video streams. It is also possible that video/audio streams get out of sync. While this is annoying for a casual music listener; for a content producer, composer or video editor this issue is much more serious as it interrupts their workflow.
 
-The simple solution is to give the audio and video processes a **higher priority**. However, while normal users can set a higher _nice_ value to a process, which means that its priority is lower, only root can set lower values and start processes at a lower _nice_ value than 0\. This protects the normal user from underpowering processes which are essential to the system. This can be especially important on multi-user machines.
+The simple solution is to give the audio and video processes a **higher priority**. However, while normal users can set a higher *nice* value to a process, which means that its priority is lower, only root can set lower values and start processes at a lower *nice* value than 0\. This protects the normal user from underpowering processes which are essential to the system. This can be especially important on multi-user machines.
 
 ## Contents
 
@@ -26,7 +26,7 @@ By default, real-time prioritizing is enabled on Arch, however its configuration
 
 ### pam
 
-The [pam](https://www.archlinux.org/packages/?name=pam) package from the official repositories provides the _pluggable authentication modules_ for the linux kernel.
+The [pam](https://www.archlinux.org/packages/?name=pam) package from the official repositories provides the *pluggable authentication modules* for the linux kernel.
 
 **Note:** If you are running a custom kernel, ensure you have enabled "preemptible kernel" settings. The stock Arch kernel needs no modifications.
 
@@ -63,7 +63,7 @@ There are an infinite variety of possible PAM limits configurations. While an ov
 
 ## Hard and soft realtime
 
-Realtime is a synonym for a process which has the capability to run in time without being interrupted by any other process. However, cycles can occasionally be dropped despite this. Low power supply or a process with higher priority could be a potential cause. To solve this problem, there is a scaling of realtime quality. This article deals with **soft** realtime. Hard realtime is usually not so much desired as it is _needed_. An example could be made for car's ABS (anti-lock braking system). This can not be "rendered" and there is no second chance.
+Realtime is a synonym for a process which has the capability to run in time without being interrupted by any other process. However, cycles can occasionally be dropped despite this. Low power supply or a process with higher priority could be a potential cause. To solve this problem, there is a scaling of realtime quality. This article deals with **soft** realtime. Hard realtime is usually not so much desired as it is *needed*. An example could be made for car's ABS (anti-lock braking system). This can not be "rendered" and there is no second chance.
 
 ## Power is nothing without control
 
@@ -102,7 +102,6 @@ See: [Automatically login some user to a virtual console on startup](/index.php/
 If you prefer to not have a graphical login, you still have a way. You need to edit the `pam` stuff for `su` (from [coreutils](https://www.archlinux.org/packages/?name=coreutils)):
 
  `/etc/pam.d/su` 
-
 ```
  ...
  session              required        pam_limits.so

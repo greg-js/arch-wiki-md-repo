@@ -28,25 +28,25 @@
 
 ## Hardware
 
-_CPU:_ Intel Core i5 450M, 2.4GHz
+*CPU:* Intel Core i5 450M, 2.4GHz
 
-_Mainboard:_ Intel HM55
+*Mainboard:* Intel HM55
 
-_RAM:_ 4096 MB, 2x 2048 MByte DDR3
+*RAM:* 4096 MB, 2x 2048 MByte DDR3
 
-_Display:_ 15,6" HD LED (1366x768)
+*Display:* 15,6" HD LED (1366x768)
 
-_Graphics adapter:_ NVIDIA GeForce GT 335M - 1024 MB and Intel Core Processor Integrated Graphics Controller
+*Graphics adapter:* NVIDIA GeForce GT 335M - 1024 MB and Intel Core Processor Integrated Graphics Controller
 
-_Soundcard:_ integrated Intel HDA
+*Soundcard:* integrated Intel HDA
 
-_Network:_ Atheros Gigabit Ethernet Controller, Atheros AR9285 Wireless Network
+*Network:* Atheros Gigabit Ethernet Controller, Atheros AR9285 Wireless Network
 
-_Hard disk:_ Seagate Momentus 500GB 5400rpm SATA
+*Hard disk:* Seagate Momentus 500GB 5400rpm SATA
 
-_Webcam:_ IMC Networks
+*Webcam:* IMC Networks
 
-_Touchpad:_ Elantech
+*Touchpad:* Elantech
 
 ## Configuration
 

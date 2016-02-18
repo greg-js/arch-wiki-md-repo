@@ -59,7 +59,7 @@
 
 ```
 
-Εγκαταστήστε το πακέτο [mesa](https://en.wikipedia.org/wiki/Mesa_(computer_graphics) "wikipedia:Mesa (computer graphics)") για 3D υποστήριξη:
+Εγκαταστήστε το πακέτο [mesa](https://en.wikipedia.org/wiki/Mesa_(computer_graphics) για 3D υποστήριξη:
 
 ```
 # pacman -S mesa
@@ -123,12 +123,10 @@ $ pacman -Ss xf86-video | less
 **Συμβουλή:** Αυτά τα βήματα είναι προαιρετικά. Δοκιμάστε τα αν εγκαθιστάτε το Arch Linux για πρώτη φορά, ή αν κάνετε εγκατάσταση σε ένα νέο και μη συνηθισμένο υλικό(hardware).
 
 **Σημείωση:** Αν οι συσκευές εισόδου δεν δουλεύουν κατά την διάρκεια αυτής της δοκιμής, εγκαταστήστε τον απαραίτητο οδηγό από το γκρουπ [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/) και δοκιμάστε ξανά. Για μια πλήρη λίστα των οδηγών για συσκευές εισόδου(input devices) επικαλεστείτε την αναζήτηση του pacman (πατήστε `Q` για έξοδο):
-
 ```
 $ pacman -Ss xf86-input | less
 
 ```
-
 Το μόνο που χρειάζεστε είναι το [xf86-input-keyboard](https://www.archlinux.org/packages/?name=xf86-input-keyboard) ή το [xf86-input-mouse](https://www.archlinux.org/packages/?name=xf86-input-mouse) αν σχεδιάζετε να απενεργοποιήσετε το [hot-plugging(αγγλικά)](https://en.wikipedia.org/wiki/Hot-plugging "wikipedia:Hot-plugging"), διαφορετικά ο `evdev` θα λειτουργεί ως ο οδηγός συσκευής εισόδου (προτείνεται).
 
 Εγκαταστήστε το προ-επιλεγμένο περιβάλλον εργασίας:

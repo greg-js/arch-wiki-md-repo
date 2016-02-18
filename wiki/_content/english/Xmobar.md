@@ -1,4 +1,4 @@
-**xmobar** is a lightweight, text-based, status bar written in [Haskell](https://en.wikipedia.org/wiki/Haskell_(programming_language) "wikipedia:Haskell (programming language)"). It was originally designed to be used together with [Xmonad](/index.php/Xmonad "Xmonad"), but it is also usable with any other [window manager](/index.php/Window_manager "Window manager"). While _xmobar_ is written in Haskell, no knowledge of the language is required to install and use it.
+**xmobar** is a lightweight, text-based, status bar written in [Haskell](https://en.wikipedia.org/wiki/Haskell_(programming_language) "wikipedia:Haskell (programming language)"). It was originally designed to be used together with [Xmonad](/index.php/Xmonad "Xmonad"), but it is also usable with any other [window manager](/index.php/Window_manager "Window manager"). While *xmobar* is written in Haskell, no knowledge of the language is required to install and use it.
 
 ## Contents
 
@@ -19,7 +19,7 @@
 *   [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/) — development version.
 *   [xmobar-gmail](https://aur.archlinux.org/packages/xmobar-gmail/) — GMail monitoring.
 *   [xmobar-gmail-darcs](https://aur.archlinux.org/packages/xmobar-gmail-darcs/) — GMail monitoring version.
-*   _xmobar_ from the unofficial [haskell-core](/index.php/ArchHaskell#haskell-core "ArchHaskell") repository — supports wireless and volume plugin with no additional configuration required; the repository also contains all the required dependencies.
+*   *xmobar* from the unofficial [haskell-core](/index.php/ArchHaskell#haskell-core "ArchHaskell") repository — supports wireless and volume plugin with no additional configuration required; the repository also contains all the required dependencies.
 
 ## Running
 
@@ -44,11 +44,11 @@ $ xmobar -B white -a right -F blue -t '%LIPB%' -c '[Run Weather "LIPB" [] 36000]
 
 ```
 
-This will run _xmobar_ right-aligned, with white background and blue text, using the `Weather` plugin. Note that the output template must contain at least one command. Read the following section for further explanation of options.
+This will run *xmobar* right-aligned, with white background and blue text, using the `Weather` plugin. Note that the output template must contain at least one command. Read the following section for further explanation of options.
 
 ## Configuration
 
-The configuration for _xmobar_ is normally defined in `~/.xmobarrc` or by specifying a set of command line options when launching _xmobar_. Any given command line option will override the corresponding option in the configuration file. This can be useful to test new configurations without having to edit a configuration file.
+The configuration for *xmobar* is normally defined in `~/.xmobarrc` or by specifying a set of command line options when launching *xmobar*. Any given command line option will override the corresponding option in the configuration file. This can be useful to test new configurations without having to edit a configuration file.
 
 Following is an example `~/.xmobarrc` file, followed by a description of each option. Note that each option has a corresponding command line option.
 
@@ -243,11 +243,11 @@ And finally some options which control the bar's general behavior---each is set 
 
 ## Tips and tricks
 
-There are various plugins that can be used with _xmobar_ - to name a few, there are plugins for disk usage, ram, cpu, battery status, weather report and network activity. A detailed description of each plugin, its dependencies and how to configure it is on the project [website](http://projects.haskell.org/xmobar/#system-monitor-plugins).
+There are various plugins that can be used with *xmobar* - to name a few, there are plugins for disk usage, ram, cpu, battery status, weather report and network activity. A detailed description of each plugin, its dependencies and how to configure it is on the project [website](http://projects.haskell.org/xmobar/#system-monitor-plugins).
 
 ### GMail integration
 
-Assuming you have either _xmobar-gmail-darcs_ or _xmobar-gmail_ installed, you can configure `.xmobarrc` as follows. Add the GMail plugin to the commands list:
+Assuming you have either *xmobar-gmail-darcs* or *xmobar-gmail* installed, you can configure `.xmobarrc` as follows. Add the GMail plugin to the commands list:
 
 ```
 , Run GMail "gmail.username" "GmailPassword" ["-t", "Mail: <count>"] 3000
@@ -282,7 +282,6 @@ Finally, you will need to place the plugin some place in your template, as follo
 It is possible to utilize the features of [conky-cli](https://aur.archlinux.org/packages/conky-cli/) such as disk space, top and system messages, by piping the information from conky into a text file and read the contents from it. Following is a bash script to use with xmobar for this purpose.
 
  `~/.xmonad/conkyscript` 
-
 ```
 #!/bin/bash
 conky -c ~/.conkyclirc -i1 -q > conkystat &

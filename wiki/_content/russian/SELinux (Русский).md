@@ -47,7 +47,7 @@ Security-Enhanced Linux (SELinux) это функция Linux, которая о
 
 ### Описание пакета
 
-Все пакеты, принадлежащие к SELinux, находятся в группе _selinux_. В _selinux-userspace_ располагаются пакеты пользователтского пространства. В _selinux-policies_ - пакеты политик. Остальные пакеты находятся в _selinux-extras_.
+Все пакеты, принадлежащие к SELinux, находятся в группе *selinux*. В *selinux-userspace* располагаются пакеты пользователтского пространства. В *selinux-policies* - пакеты политик. Остальные пакеты находятся в *selinux-extras*.
 
 #### SELinux aware system utils
 
@@ -61,7 +61,7 @@ Security-Enhanced Linux (SELinux) это функция Linux, которая о
 
 	[selinux-flex](https://aur.archlinux.org/packages/selinux-flex/)
 
-	Версия _flex_, необходимая только для сборки checkpolicy. Текущий _flex_ имеет ошибку, вызывающую отказ в выполнении команды _checkmodule_
+	Версия *flex*, необходимая только для сборки checkpolicy. Текущий *flex* имеет ошибку, вызывающую отказ в выполнении команды *checkmodule*
 
 	[selinux-pam](https://aur.archlinux.org/packages/selinux-pam/)
 
@@ -115,11 +115,11 @@ Security-Enhanced Linux (SELinux) это функция Linux, которая о
 
 	[selinux-usr-libselinux](https://aur.archlinux.org/packages/selinux-usr-libselinux/)
 
-	Library for security-aware applications. [Python](/index.php/Python_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Python (Русский)") bindings needed for _semanage_ and _setools_ now included
+	Library for security-aware applications. [Python](/index.php/Python_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Python (Русский)") bindings needed for *semanage* and *setools* now included
 
 	[selinux-usr-libsemanage](https://aur.archlinux.org/packages/selinux-usr-libsemanage/)
 
-	Library for policy management. Python bindings needed for _semanage_ and _setools_ now included
+	Library for policy management. Python bindings needed for *semanage* and *setools* now included
 
 	[selinux-usr-libsepol](https://aur.archlinux.org/packages/selinux-usr-libsepol/)
 
@@ -299,7 +299,7 @@ Now you are ready to reboot and make sure that everything works.
 
 ## Post-installation steps
 
-**Важно:** Если _selinux-sysvinit_ не установлен, то SELinux не сможет запуститься и `/selinux` не будет смонтирован.
+**Важно:** Если *selinux-sysvinit* не установлен, то SELinux не сможет запуститься и `/selinux` не будет смонтирован.
 
 Выполните `sestatus` чтобы убедиться, что SELinux работает. Должно получиться что-то вроде этого:
 
@@ -313,7 +313,7 @@ Policy from config file:        refpolicy
 
 ```
 
-To maintain correct context, you can use _restorecond_:
+To maintain correct context, you can use *restorecond*:
 
 ```
 touch /etc/rc.d/restorecond

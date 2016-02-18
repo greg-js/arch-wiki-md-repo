@@ -28,9 +28,9 @@
 
 ## 影响
 
-使用DKMS的_积极作用_是通过DKMS管理的内核模块可以在升级内核时被自动重新编译。这意味这你不再需要等待某个公司，项目组或者包维护者释出新版本的内核模块。
+使用DKMS的*积极作用*是通过DKMS管理的内核模块可以在升级内核时被自动重新编译。这意味这你不再需要等待某个公司，项目组或者包维护者释出新版本的内核模块。
 
-_消极作用_是DKMS破坏了Pacman数据库，因为这样一来重新构建后的内核模块不再属于任何一个包，所以Pacman就不能再追逐它们。不过理论上，可以通过添加钩子函数来对此支持(see: [FS#2985](https://bugs.archlinux.org/task/2985))。
+*消极作用*是DKMS破坏了Pacman数据库，因为这样一来重新构建后的内核模块不再属于任何一个包，所以Pacman就不能再追逐它们。不过理论上，可以通过添加钩子函数来对此支持(see: [FS#2985](https://bugs.archlinux.org/task/2985))。
 
 ## 安装
 
@@ -134,20 +134,20 @@ $ dkms status
 
 ### 包名
 
-DKMS的包的命名方式是：原始包名加"_-dkms_"后缀。
+DKMS的包的命名方式是：原始包名加"*-dkms*"后缀。
 
-The variable `$_pkgname` is often used below `$pkgname` to describe the package name minus the "_-dkms_" suffix (e.g. `_pkgname=${pkgname%-*}`). This is useful to help keep similarities between the original package PKGBUILD and the DKMS variant.
+The variable `$_pkgname` is often used below `$pkgname` to describe the package name minus the "*-dkms*" suffix (e.g. `_pkgname=${pkgname%-*}`). This is useful to help keep similarities between the original package PKGBUILD and the DKMS variant.
 
 ### 依赖
 
-Dependencies should be inherited from the original version with [dkms](https://www.archlinux.org/packages/?name=dkms) added and [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) removed (as it is listed by the dkms pacakge as _optional_).
+Dependencies should be inherited from the original version with [dkms](https://www.archlinux.org/packages/?name=dkms) added and [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) removed (as it is listed by the dkms pacakge as *optional*).
 
 ### 源代码构建位置
 
 构建模块所需源代码需要放在（这是DKMS构建模块时使用的默认目录）：
 
 ```
-/usr/src/_PACKAGE_NAME_-_PACKAGE_VERSION_
+/usr/src/*PACKAGE_NAME*-*PACKAGE_VERSION*
 
 ```
 
@@ -177,7 +177,6 @@ In the package directory, a DKMS configuration tells DKMS how to build the modul
 #### PKGBUILD
 
  `PKGBUILD` 
-
 ```
 # Maintainer: foo <foo(at)gmail(dot)com>
 # Contributor: bar <bar(at)gmai(dot)com>
@@ -196,7 +195,7 @@ install=${pkgname}.install
 source=("${url}/files/tarball.tar.gz"
         'dkms.conf'
         'linux-3.14.patch')
-md5sums=(_use 'updpkgsums'_)
+md5sums=(*use 'updpkgsums'*)
 
 build() {
   cd ${_pkgbase}-${pkgver}
@@ -233,7 +232,6 @@ package() {
 #### dkms.conf
 
  `dkms.conf` 
-
 ```
 PACKAGE_NAME="@_PKGBASE@"
 PACKAGE_VERSION="@PKGVER@"
@@ -249,13 +247,12 @@ AUTOINSTALL="yes"
 此时可以使用`dkms install`而不是`depmod`来安装内核模块（`dkms install`依赖`dkms build`，而`dkms build`依赖`dkms add`）：
 
  `amazing-dkms.install` 
-
 ```
 # old version (without -$pkgrel): ${1%%-*}
 # new version (without -$pkgrel): ${2%%-*}
 
 post_install() {
-    dkms install _amazing_/${1%%-*}
+    dkms install *amazing*/${1%%-*}
 }
 
 pre_upgrade() {
@@ -267,7 +264,7 @@ post_upgrade() {
 }
 
 pre_remove() {
-    dkms remove _amazing_/${1%%-*} --all
+    dkms remove *amazing*/${1%%-*} --all
 }
 
 ```

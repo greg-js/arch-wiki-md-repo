@@ -92,7 +92,7 @@ e4rat-realloc  /var/lib/e4rat/startup.log
 
 根据`startup.log`中文件的多少，或长或短要等一段时间。
 
-**Note:** 使用纯 [systemd](/index.php/Systemd "Systemd") 的用户不需要修改 [runlevels](/index.php/Runlevels "Runlevels")，用 root 登陆后执行 _e4rat-collect_ 即可。
+**Note:** 使用纯 [systemd](/index.php/Systemd "Systemd") 的用户不需要修改 [runlevels](/index.php/Runlevels "Runlevels")，用 root 登陆后执行 *e4rat-collect* 即可。
 
 ### e4rat-preload
 

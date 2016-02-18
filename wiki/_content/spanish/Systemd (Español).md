@@ -1,6 +1,6 @@
 De la página web del [proyecto](http://freedesktop.org/wiki/Software/systemd):
 
-	_«**systemd** es un gestor del sistema y de los servicios para Linux, compatible con los initscript SysV y LSB._ systemd _proporciona una notable capacidad de paralelización, utiliza la activación de socket y [D-Bus](/index.php/D-Bus "D-Bus") para iniciar los servicios, permite el inicio de los demonios bajo demanda, realiza un seguimiento de los procesos con el uso de los [grupos de control](/index.php/Cgroups "Cgroups") de Linux, apoya snapshotting y la restauración del estado del sistema, mantiene los puntos montaje y servicios de montaje automático e implementa un elaborado sistema de gestión de dependencias basado en un control lógico de los servicios.»_
+	*«**systemd** es un gestor del sistema y de los servicios para Linux, compatible con los initscript SysV y LSB.* systemd *proporciona una notable capacidad de paralelización, utiliza la activación de socket y [D-Bus](/index.php/D-Bus "D-Bus") para iniciar los servicios, permite el inicio de los demonios bajo demanda, realiza un seguimiento de los procesos con el uso de los [grupos de control](/index.php/Cgroups "Cgroups") de Linux, apoya snapshotting y la restauración del estado del sistema, mantiene los puntos montaje y servicios de montaje automático e implementa un elaborado sistema de gestión de dependencias basado en un control lógico de los servicios.»*
 
 **Nota:** Para conocer una explicación detallada del motivo por el cual Arch está cambiando a systemd, consulte este [post](https://bbs.archlinux.org/viewtopic.php?pid=1149530#p1149530).
 
@@ -41,9 +41,9 @@ De la página web del [proyecto](http://freedesktop.org/wiki/Software/systemd):
 
 ## Uso básico de systemctl
 
-La principal orden para controlar _systemd_ es `systemctl`. Algunos de los posibles usos son el examen del estado del sistema, y la gestión del sistema y de los servicios. Consulte `man 1 systemctl` para conocer más detalles.
+La principal orden para controlar *systemd* es `systemctl`. Algunos de los posibles usos son el examen del estado del sistema, y la gestión del sistema y de los servicios. Consulte `man 1 systemctl` para conocer más detalles.
 
-**Sugerencia:** Puede utilizar las siguientes órdenes `systemctl` con el parámetro `-H _usario_@_host_` para controlar una instancia de systemd en una máquina remota. Esto utilizará [SSH](/index.php/SSH "SSH") para conectarse a la instancia systemd remota.
+**Sugerencia:** Puede utilizar las siguientes órdenes `systemctl` con el parámetro `-H *usario*@*host*` para controlar una instancia de systemd en una máquina remota. Esto utilizará [SSH](/index.php/SSH "SSH") para conectarse a la instancia systemd remota.
 
 **Nota:** `systemadm` es el frontend gráfico oficial para `systemctl`. Proporcionado por el paquete [systemd-ui-git](https://aur.archlinux.org/packages/systemd-ui-git/) disponible en [AUR](/index.php/AUR "AUR").
 
@@ -81,42 +81,42 @@ Consulte `man systemd.unit` para más detalles.
 
 Activa una unidad de inmediato:
 
- `# systemctl start _unidad_` 
+ `# systemctl start *unidad*` 
 
 Desactiva una unidad de inmediato:
 
- `# systemctl stop _unidad_` 
+ `# systemctl stop *unidad*` 
 
 Reinicia la unidad:
 
- `# systemctl restart _unidad_` 
+ `# systemctl restart *unidad*` 
 
 Hace que una unidad recargue su configuración:
 
- `# systemctl reload _unidad_` 
+ `# systemctl reload *unidad*` 
 
 Muestra el estado de una unidad, incluso si se está ejecutando o no:
 
- `$ systemctl status _unidad_` 
+ `$ systemctl status *unidad*` 
 
 Comprueba si la unidad ya está habilitada o no:
 
- `$ systemctl is-enabled _unidad_` 
+ `$ systemctl is-enabled *unidad*` 
 
 Activa el inicio automático en el arranque:
 
- `# systemctl enable _unidad_` 
-**Nota:** Si los servicios no tienen una sección `[Install]` significa, por lo general, que se les llama de forma automática por otros servicios. Pero si necesita instalarlos manualmente, utilice la orden siguiente, reemplazando `foo` con el nombre del servicio. `# ln -s /usr/lib/systemd/system/_foo_.service /etc/systemd/system/graphical.target.wants/` 
+ `# systemctl enable *unidad*` 
+**Nota:** Si los servicios no tienen una sección `[Install]` significa, por lo general, que se les llama de forma automática por otros servicios. Pero si necesita instalarlos manualmente, utilice la orden siguiente, reemplazando `foo` con el nombre del servicio. `# ln -s /usr/lib/systemd/system/*foo*.service /etc/systemd/system/graphical.target.wants/` 
 
 Desactiva el inicio automático durante el arranque:
 
- `# systemctl disable _unidad_` 
+ `# systemctl disable *unidad*` 
 
 Muestra la página del manual asociada con una unidad (esto tiene que ser apoyado por el archivo .unit):
 
- `$ systemctl help _unidad_` 
+ `$ systemctl help *unidad*` 
 
-Recarga _systemd_, escaneando en busca de unidades nuevas o modificadas:
+Recarga *systemd*, escaneando en busca de unidades nuevas o modificadas:
 
 ```
 # systemctl daemon-reload
@@ -125,7 +125,7 @@ Recarga _systemd_, escaneando en busca de unidades nuevas o modificadas:
 
 ### Gestionar la energía
 
-[polkit](/index.php/Polkit "Polkit") es necesario para gestionar la energía. Si se encuentra en una sesión local de `systemd-logind` y ninguna otra sesión está activa, las órdenes siguientes funcionarán sin requerir privilegios de root. Si no es así (por ejemplo, debido a que otro usuario ha iniciado otra sesión tty), _systemd_ automáticamente le requerirá la contraseña de root.
+[polkit](/index.php/Polkit "Polkit") es necesario para gestionar la energía. Si se encuentra en una sesión local de `systemd-logind` y ninguna otra sesión está activa, las órdenes siguientes funcionarán sin requerir privilegios de root. Si no es así (por ejemplo, debido a que otro usuario ha iniciado otra sesión tty), *systemd* automáticamente le requerirá la contraseña de root.
 
 Apagado y reinicio del sistema:
 
@@ -143,7 +143,7 @@ Poner el sistema en hibernación:
 
  `$ systemctl hibernate` 
 
-Poner el sistema en estado de reposo híbrido —_«hybrid-sleep»_ — (o suspensión combinada —_«suspend-to-both»_—):
+Poner el sistema en estado de reposo híbrido —*«hybrid-sleep»* — (o suspensión combinada —*«suspend-to-both»*—):
 
 ```
 $ systemctl hybrid-sleep
@@ -152,11 +152,11 @@ $ systemctl hybrid-sleep
 
 ## Escribir archivos .service personalizados
 
-La sintaxis de los [archivos de unidad](#Usar_las_unidades) de _systemd_ se inspira en los archivos .desktop de XDG Desktop Entry Specification, que, a su vez, están inspirados en los archivos .ini de Microsoft Windows.
+La sintaxis de los [archivos de unidad](#Usar_las_unidades) de *systemd* se inspira en los archivos .desktop de XDG Desktop Entry Specification, que, a su vez, están inspirados en los archivos .ini de Microsoft Windows.
 
 ### Manejar las dependencias
 
-Con _systemd_ las dependencias pueden ser resueltas planificando la unidad correctamente. El caso más típico es que la unidad `A` requiere la unidad `B` para poder funcionar, por lo que esta última debe iniciarse antes que `A`. En ese caso, agregue `Requires=B` y `After=B` a la sección `[Unit]` de `A`. Si la dependencia es opcional agregue, en su lugar, `Wants=B` y `After=B`. Tenga en cuenta que `Wants=` y `Requires=` no incluyen `After=`, lo que significa que si `After=` no esté especificado, las dos unidades se iniciarán en paralelo.
+Con *systemd* las dependencias pueden ser resueltas planificando la unidad correctamente. El caso más típico es que la unidad `A` requiere la unidad `B` para poder funcionar, por lo que esta última debe iniciarse antes que `A`. En ese caso, agregue `Requires=B` y `After=B` a la sección `[Unit]` de `A`. Si la dependencia es opcional agregue, en su lugar, `Wants=B` y `After=B`. Tenga en cuenta que `Wants=` y `Requires=` no incluyen `After=`, lo que significa que si `After=` no esté especificado, las dos unidades se iniciarán en paralelo.
 
 Las dependencias se colocan normalmente en los archivos .service y no en los .target. Por ejemplo, `network.target` es llamado por cualquiera que sea el servicio que configure las interfaces de red, por lo tanto, la solicitud que hace después la propia unidad personalizada es suficiente, ya que `network.target` se inicia de todos modos.
 
@@ -164,38 +164,35 @@ Las dependencias se colocan normalmente en los archivos .service y no en los .ta
 
 Existen diferentes tipos de arranque a tener en cuenta cuando se escribe un archivo de servicio personalizado. Esto se configura mediante el parámetro `Type=` en la sección `[Service]`. Consulte `man systemd.service` para una explicación más detallada.
 
-*   `Type=simple`: _systemd_ considera que el servicio debe iniciarse inmediatamente. El proceso no debe romperse. No utilice este tipo si otros servicios tienen que ser llamados por ese servicio, a menos que no sea activado por el socket.
-*   `Type=forking`: _systemd_ considera que el servicio debe ser iniciado antes que el proceso se rompa y el antecesor se haya terminado. Para los demonios clásicos use este tipo a menos que sepa que no es necesario, ya que la mayoría de los demonios usan doble bifurcación para indicar que están listos. Debe especificar también `PIDFile=` para que _systemd_ puede realizar un seguimiento del proceso principal.
-*   `Type=oneshot`: Esto es útil para los scripts que hacen un solo trabajo y luego concluyen. Es posible que desee también establecer `RemainAfterExit=yes` de modo que _systemd_ sigue considerando el servicio como activo después de que el proceso haya terminado.
-*   `Type=notify`: Igual que `Type=simple`, pero con la condición de que el demonio va a enviar una señal a _systemd_ cuando esté listo. Esto requiere del código específico proporcionado por `libsystemd-daemon.so`.
-*   `Type=dbus`: El servicio se considera listo cuando el `BusName` especificado aparece en el [bus](https://en.wikipedia.org/wiki/es:Bus_(inform%C3%A1tica) "wikipedia:es:Bus (informática)") del sistema [DBus](https://en.wikipedia.org/wiki/es:D-Bus "wikipedia:es:D-Bus").
+*   `Type=simple`: *systemd* considera que el servicio debe iniciarse inmediatamente. El proceso no debe romperse. No utilice este tipo si otros servicios tienen que ser llamados por ese servicio, a menos que no sea activado por el socket.
+*   `Type=forking`: *systemd* considera que el servicio debe ser iniciado antes que el proceso se rompa y el antecesor se haya terminado. Para los demonios clásicos use este tipo a menos que sepa que no es necesario, ya que la mayoría de los demonios usan doble bifurcación para indicar que están listos. Debe especificar también `PIDFile=` para que *systemd* puede realizar un seguimiento del proceso principal.
+*   `Type=oneshot`: Esto es útil para los scripts que hacen un solo trabajo y luego concluyen. Es posible que desee también establecer `RemainAfterExit=yes` de modo que *systemd* sigue considerando el servicio como activo después de que el proceso haya terminado.
+*   `Type=notify`: Igual que `Type=simple`, pero con la condición de que el demonio va a enviar una señal a *systemd* cuando esté listo. Esto requiere del código específico proporcionado por `libsystemd-daemon.so`.
+*   `Type=dbus`: El servicio se considera listo cuando el `BusName` especificado aparece en el [bus](https://en.wikipedia.org/wiki/es:Bus_(inform%C3%A1tica) del sistema [DBus](https://en.wikipedia.org/wiki/es:D-Bus "wikipedia:es:D-Bus").
 
 ### Modificar los archivos de unidad suministrados
 
-Para editar un archivo de unidad proporcionado por un paquete, podemos crear un directorio llamado `/etc/systemd/system/_unit_.d/` por ejemplo `/etc/systemd/system/httpd.service.d/` y colocar los archivos `*.conf` en dicho directorio para reemplazarlos o añadir nuevas opciones. _systemd_ analizará estos archivos `*.conf` y los aplicará antes que los de la unidad original. Por ejemplo, si deseamos simplemente agregar una dependencia adicional a una unidad, podemos crear el siguiente archivo:
+Para editar un archivo de unidad proporcionado por un paquete, podemos crear un directorio llamado `/etc/systemd/system/*unit*.d/` por ejemplo `/etc/systemd/system/httpd.service.d/` y colocar los archivos `*.conf` en dicho directorio para reemplazarlos o añadir nuevas opciones. *systemd* analizará estos archivos `*.conf` y los aplicará antes que los de la unidad original. Por ejemplo, si deseamos simplemente agregar una dependencia adicional a una unidad, podemos crear el siguiente archivo:
 
- `/etc/systemd/system/_unit_.d/customdependency.conf` 
-
+ `/etc/systemd/system/*unit*.d/customdependency.conf` 
 ```
 [Unit]
-Requires=_dependencia nueva_
-After=_dependencia nueva_
+Requires=*dependencia nueva*
+After=*dependencia nueva*
 ```
 
 Siguiendo otro ejemplo, con el fin de reemplazar la directiva `ExecStart` para una unidad que no es del tipo `oneshot`, crearemos el siguiente archivo:
 
- `/etc/systemd/system/_unit_.d/customexec.conf` 
-
+ `/etc/systemd/system/*unit*.d/customexec.conf` 
 ```
 [Service]
 ExecStart=
-ExecStart=_orden nueva_
+ExecStart=*orden nueva*
 ```
 
 Otro último ejemplo, para reiniciar automáticamente un servicio:
 
- `/etc/systemd/system/_unit_.d/restart.conf` 
-
+ `/etc/systemd/system/*unit*.d/restart.conf` 
 ```
 [Service]
 Restart=always
@@ -206,33 +203,32 @@ A continuación, ejecutaremos lo que sigue para que los cambios surtan efecto:
 
 ```
 # systemctl daemon-reload
-# systemctl restart _unidad_
+# systemctl restart *unidad*
 
 ```
 
-Por otro lado, podemos copiar el archivo de la antigua unidad desde `/usr/lib/systemd/system/` a `/etc/systemd/system/` y realizar los cambios allí. Un archivo de unidad ubicado en `/etc/systemd/system/` siempre tiene preferencia sobre la misma unidad localizada en `/usr/lib/systemd/system/`. Debemos tener en cuenta que cuando la unidad original localizada en `/usr/lib/` ha cambiado debido a una actualización del paquete que lo suministra, estos cambios no se aplicarán automáticamente al archivo de unidad personalizada ubicado en `/etc/`. De este modo, tendremos que volver a activar manualmente la unidad con la orden `systemctl reenable _unidad_`. Por consiguiente, se recomienda utilizar el método `*.conf` descrito anteriormente.
+Por otro lado, podemos copiar el archivo de la antigua unidad desde `/usr/lib/systemd/system/` a `/etc/systemd/system/` y realizar los cambios allí. Un archivo de unidad ubicado en `/etc/systemd/system/` siempre tiene preferencia sobre la misma unidad localizada en `/usr/lib/systemd/system/`. Debemos tener en cuenta que cuando la unidad original localizada en `/usr/lib/` ha cambiado debido a una actualización del paquete que lo suministra, estos cambios no se aplicarán automáticamente al archivo de unidad personalizada ubicado en `/etc/`. De este modo, tendremos que volver a activar manualmente la unidad con la orden `systemctl reenable *unidad*`. Por consiguiente, se recomienda utilizar el método `*.conf` descrito anteriormente.
 
 **Sugerencia:** Podemos utilizar la orden **systemd-delta** para ver qué archivos de la unidad han sido invalidados y cuáles han cambiado.
-
 Como los archivos de unidad suministrados se actualizarán de vez en cuando, es conveniente utilizar systemd-delta para tareas de mantenimiento del sistema.
 
 ### Resaltar la sintaxis de las unidades de systemd con Vim
 
-El resaltado de sintaxis para las unidades de _systemd_ con [Vim](/index.php/Vim "Vim") se puede activar mediante la instalación de [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd) desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
+El resaltado de sintaxis para las unidades de *systemd* con [Vim](/index.php/Vim "Vim") se puede activar mediante la instalación de [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd) desde los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)").
 
 ## Targets
 
-_systemd_ utiliza _targets_ (_«objetivos»_) que sirven a un propósito similar a los _runlevels_ (_«niveles de ejecución»_), pero que tienen un comportamiento un poco diferente. Cada _target_ se nomina, en lugar de numerarse, y está destinado a servir a un propósito específico con la posibilidad de realizar más de una acción al mismo tiempo. Algunos _targets_ son activados heredando todos los servicios de otro _target_ e implementando servicios adicionales. Como hay _targets_ de _systemd_ que imitan los runlevels de SystemVinit, es, por tanto, posible pasar de un _target_ a otro utilizando la orden `telinit RUNLEVEL`.
+*systemd* utiliza *targets* (*«objetivos»*) que sirven a un propósito similar a los *runlevels* (*«niveles de ejecución»*), pero que tienen un comportamiento un poco diferente. Cada *target* se nomina, en lugar de numerarse, y está destinado a servir a un propósito específico con la posibilidad de realizar más de una acción al mismo tiempo. Algunos *targets* son activados heredando todos los servicios de otro *target* e implementando servicios adicionales. Como hay *targets* de *systemd* que imitan los runlevels de SystemVinit, es, por tanto, posible pasar de un *target* a otro utilizando la orden `telinit RUNLEVEL`.
 
 ### Conocer los targets presentes
 
-La siguiente orden debe ser utilizada bajo _systemd_, en lugar de `runlevel`:
+La siguiente orden debe ser utilizada bajo *systemd*, en lugar de `runlevel`:
 
  `# systemctl list-units --type=target` 
 
 ### Crear un target personalizado
 
-Los niveles de ejecución (_«runlevels»_) son asignados a un fin específico de la instalación vanilla de Fedora; 0, 1, 3, 5, y 6; tienen una correlación de 1:1 con un específico _target_ de systemd. Desafortunadamente, no hay una buena manera de hacer lo mismo para los niveles de ejecución definidos por el usuario como son el 2 y el 4\. Si se hace uso de estos últimos, se sugiere dar un nuevo nombre al _target_ de systemd como `/etc/systemd/system/_su target_` que tome como base uno de los runlevels existentes (vea `/usr/lib/systemd/system/graphical.target` como ejemplo), cree un directorio `/etc/systemd/system/_su target_.wants`, y haga un enlace a los servicios adicionales de `/usr/lib/systemd/system/` que desea habilitar.
+Los niveles de ejecución (*«runlevels»*) son asignados a un fin específico de la instalación vanilla de Fedora; 0, 1, 3, 5, y 6; tienen una correlación de 1:1 con un específico *target* de systemd. Desafortunadamente, no hay una buena manera de hacer lo mismo para los niveles de ejecución definidos por el usuario como son el 2 y el 4\. Si se hace uso de estos últimos, se sugiere dar un nuevo nombre al *target* de systemd como `/etc/systemd/system/*su target*` que tome como base uno de los runlevels existentes (vea `/usr/lib/systemd/system/graphical.target` como ejemplo), cree un directorio `/etc/systemd/system/*su target*.wants`, y haga un enlace a los servicios adicionales de `/usr/lib/systemd/system/` que desea habilitar.
 
 ### Tabla de targets
 
@@ -247,7 +243,7 @@ Los niveles de ejecución (_«runlevels»_) son asignados a un fin específico d
 
 ### Cambiar el target vigente
 
-En _systemd_ los targets quedan expuestos a través de «target units». Se pueden cambiar de esta manera:
+En *systemd* los targets quedan expuestos a través de «target units». Se pueden cambiar de esta manera:
 
  `# systemctl isolate graphical.target` 
 
@@ -255,18 +251,18 @@ Esto solo cambiará el target actual, y no tendrá ningún efecto sobre el sigui
 
 ### Cambiar el target predeterminado para arrancar
 
-El target estándar es _default.target_, que es un alias predefinido para _graphical.target_ (que corresponde al antiguo nivel de ejecución 5). Para cambiar el target predeterminado en el arranque, añada uno de los siguientes [parámetros del kernel](/index.php/Kernel_parameters "Kernel parameters") al gestor de arranque:
+El target estándar es *default.target*, que es un alias predefinido para *graphical.target* (que corresponde al antiguo nivel de ejecución 5). Para cambiar el target predeterminado en el arranque, añada uno de los siguientes [parámetros del kernel](/index.php/Kernel_parameters "Kernel parameters") al gestor de arranque:
 
-**Sugerencia:** La extensión _.target_ puede omitirse.
+**Sugerencia:** La extensión *.target* puede omitirse.
 
 *   `systemd.unit=multi-user.target` (que corresponde con el antiguo nivel de ejecución 3),
 *   `systemd.unit=rescue.target` (que corresponde con el antiguo nivel de ejecución 1).
 
-Como alternativa, se puede dejar el gestor de arranque inalterado y cambiar _default.target_. Esto puede hacerse usando _systemctl_:
+Como alternativa, se puede dejar el gestor de arranque inalterado y cambiar *default.target*. Esto puede hacerse usando *systemctl*:
 
  `# systemctl enable multi-user.target` 
 
-El efecto de esta orden se puede ver en la salida de _systemctl_; se crea un enlace simbólico al nuevo target prefedinido en `/etc/systemd/system/default.target`. Esto funciona solo si:
+El efecto de esta orden se puede ver en la salida de *systemctl*; se crea un enlace simbólico al nuevo target prefedinido en `/etc/systemd/system/default.target`. Esto funciona solo si:
 
 ```
 [Install]
@@ -274,25 +270,23 @@ Alias=default.target
 
 ```
 
-reside en el archivo de configuración del target. En la actualidad, tanto _multi-user.target_ como _graphical.target_ lo tienen.
+reside en el archivo de configuración del target. En la actualidad, tanto *multi-user.target* como *graphical.target* lo tienen.
 
 ## Archivos temporales
 
 «**systemd-tmpfiles** crea, elimina y limpia archivos y directorios volátiles y temporales.» Lee los archivos de configuración en `/etc/tmpfiles.d/` y `/usr/lib/tmpfiles.d/` para descubrir qué acciones realizar. Los archivos de configuración del primer directorio tienen prioridad sobre los del último directorio.
 
-Los archivos de configuración son proveidos normalmente junto con los archivos de servicio, y reciben su nombre en el estilo `/usr/lib/tmpfiles.d/_programa_.conf`. Por ejemplo, el demonio [Samba](/index.php/Samba "Samba") espera que el directorio `/run/samba` exista para obtener los permisos adecuados. Por tanto, el paquete [samba](https://www.archlinux.org/packages/?name=samba) viene con esta configuración:
+Los archivos de configuración son proveidos normalmente junto con los archivos de servicio, y reciben su nombre en el estilo `/usr/lib/tmpfiles.d/*programa*.conf`. Por ejemplo, el demonio [Samba](/index.php/Samba "Samba") espera que el directorio `/run/samba` exista para obtener los permisos adecuados. Por tanto, el paquete [samba](https://www.archlinux.org/packages/?name=samba) viene con esta configuración:
 
  `/usr/lib/tmpfiles.d/samba.conf` 
-
 ```
 D /var/run/samba 0755 root root
 
 ```
 
-Los archivos de configuración también pueden ser usados para escribir en el arranque valores en ciertos archivos. Por ejemplo, si usa `/etc/rc.local` para dehabilitar la reactivación del sistema (_«wakeup»_) a través de dispositivos USB con la orden `echo USBE > /proc/acpi/wakeup`, se puede utilizar, en su lugar, el siguiente tmpfile:
+Los archivos de configuración también pueden ser usados para escribir en el arranque valores en ciertos archivos. Por ejemplo, si usa `/etc/rc.local` para dehabilitar la reactivación del sistema (*«wakeup»*) a través de dispositivos USB con la orden `echo USBE > /proc/acpi/wakeup`, se puede utilizar, en su lugar, el siguiente tmpfile:
 
  `/etc/tmpfiles.d/disable-usb-wake.conf` 
-
 ```
 w /proc/acpi/wakeup - - - - USBE
 
@@ -300,15 +294,15 @@ w /proc/acpi/wakeup - - - - USBE
 
 Consulte `systemd-tmpfiles` y `tmpfiles.d(5)` para obtener más detalles.
 
-**Nota:** Este método puede no funcionar ajustando las opciones en `/sys` desde el momento en que el servicio `systemd-tmpfiles-setup` puede ejecutarse antes de que los módulos de los dispositivos adecuados se carguen. En este caso, se puede comprobar si el módulo tiene un parámetro para la opción que desea ajustar con `modinfo _modulo_` y establecer esta opción con un [archivo de configuración en /etc/modprobe.d](/index.php/Modprobe.d#Configuration "Modprobe.d"). De lo contrario, tendrá que escribir una [regla udev](/index.php/Udev#About_udev_rules "Udev") para establecer el atributo apropiado tan pronto como el dispositivo lo reclame.
+**Nota:** Este método puede no funcionar ajustando las opciones en `/sys` desde el momento en que el servicio `systemd-tmpfiles-setup` puede ejecutarse antes de que los módulos de los dispositivos adecuados se carguen. En este caso, se puede comprobar si el módulo tiene un parámetro para la opción que desea ajustar con `modinfo *modulo*` y establecer esta opción con un [archivo de configuración en /etc/modprobe.d](/index.php/Modprobe.d#Configuration "Modprobe.d"). De lo contrario, tendrá que escribir una [regla udev](/index.php/Udev#About_udev_rules "Udev") para establecer el atributo apropiado tan pronto como el dispositivo lo reclame.
 
 ## Temporizadores
 
-_systemd_ puede reemplazar la funcionalidad cron en gran medida. Para más información, consulte [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers").
+*systemd* puede reemplazar la funcionalidad cron en gran medida. Para más información, consulte [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers").
 
 ## Journal
 
-Desde la versión 38, _systemd_ tiene un sistema de registro (_«log»_) propio llamado journal. Por tanto, ya no es necesario hacer funcionar el demonio syslog. Para leer el registro, utilice:
+Desde la versión 38, *systemd* tiene un sistema de registro (*«log»*) propio llamado journal. Por tanto, ya no es necesario hacer funcionar el demonio syslog. Para leer el registro, utilice:
 
 ```
 # journalctl
@@ -318,7 +312,6 @@ Desde la versión 38, _systemd_ tiene un sistema de registro (_«log»_) propio 
 Por defecto, (cuando `Storage=` está definido como `auto` en `/etc/systemd/journald.conf`), journal escribe en `/var/log/journal/`. Si el directorio `/var/log/journal/` no existe (por ejemplo, si lo ha eliminado usted o algún programa), systemd **no** lo crea de forma automática, sino que escribe los registros en `/run/systemd/journal`. Esto significa que los registros se perderán al reiniciar.
 
 **Sugerencia:** Si `/var/log/journal/` reside en un sistema de archivos [btrfs](/index.php/Btrfs "Btrfs") debería considerar la opción de desactivar [Copy-on-Write](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs") para el directorio:
-
 ```
 # chattr +C /var/log/journal
 
@@ -411,14 +404,13 @@ Reinicie journald con `sudo systemctl restart systemd-journald`.
 
 Como ejemplo, vamos a investigar un error con el servicio `systemd-modules-load`:
 
-**1.** Vamos a determinar los servicios de _systemd_ que fallan al inicio:
+**1.** Vamos a determinar los servicios de *systemd* que fallan al inicio:
 
  `$ systemctl --state=failed`  `systemd-modules-load.service   loaded **failed failed**  Load Kernel Modules` 
 
 **2.** Encontramos un problema con el servicio `systemd-modules-load`. Indaguemos un poco más:
 
  `$ systemctl status systemd-modules-load` 
-
 ```
 systemd-modules-load.service - Load Kernel Modules
    Loaded: loaded (/usr/lib/systemd/system/systemd-modules-load.service; static)
@@ -431,7 +423,6 @@ systemd-modules-load.service - Load Kernel Modules
 **3.** Ahora tenemos el identificador del proceso (PID) para investigar este error en profundidad. Escribimos la siguiente orden con el `Process ID` (en este caso: 15630):
 
  `$ journalctl -b _PID=15630` 
-
 ```
 -- Logs begin at Sa 2013-05-25 10:31:12 CEST, end at So 2013-08-25 11:51:17 CEST. --
 Aug 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'blacklist usblp'**
@@ -441,7 +432,6 @@ Aug 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'insta
 **4.** Vemos que algunos de los ajustes del módulo del kernel tienen valores erróneos. Por lo tanto, echemos un vistazo a estos valores en `/etc/modules-load.d/`:
 
  `$ ls -Al /etc/modules-load.d/` 
-
 ```
 ...
 -rw-r--r--   1 root root    79  1\. Dez 2012  blacklist.conf
@@ -456,7 +446,6 @@ Aug 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'insta
 **5.** El mensaje del error `Failed to find module 'blacklist usblp'` puede estar relacionado con un mal ajuste de `blacklist.conf`. Podemos desactivarlo insertando un signo **#** delante de cada opción que hemos descubierto que falla por medio del paso 3:
 
  `/etc/modules-load.d/blacklist.conf` 
-
 ```
 **#** blacklist usblp
 **#** install usblp /bin/false
@@ -475,7 +464,6 @@ Si ha tenido éxito, no debe mostrarse ningún prompt. Si ve algún error, volve
 Si todo está bien, se puede verificar que el servicio se ha iniciado satisfactoriamente con:
 
  `$ systemctl status systemd-modules-load` 
-
 ```
 systemd-modules-load.service - Load Kernel Modules
    Loaded: **loaded** (/usr/lib/systemd/system/systemd-modules-load.service; static)
@@ -496,7 +484,7 @@ Arranque con esos parámetros en la línea de órdenes del kernel: `systemd.log_
 
 ### Apagar/reiniciar se hace terriblemente largo
 
-Si el proceso de apagado tarda un tiempo muy largo (o parece congelarse) lo más probable es que un servicio no existente tenga la culpa. _systemd_ espera un tiempo para iniciar cada servicio antes de tratar de acabar con él. Para averiguar si este es su caso, consulte [este artículo](http://freedesktop.org/wiki/Software/systemd/Debugging#Shutdown_Completes_Eventually).
+Si el proceso de apagado tarda un tiempo muy largo (o parece congelarse) lo más probable es que un servicio no existente tenga la culpa. *systemd* espera un tiempo para iniciar cada servicio antes de tratar de acabar con él. Para averiguar si este es su caso, consulte [este artículo](http://freedesktop.org/wiki/Software/systemd/Debugging#Shutdown_Completes_Eventually).
 
 ### Los procesos de corta duración parecen no registrar ninguna salida
 
@@ -544,7 +532,7 @@ Véase [este hilo](https://bbs.archlinux.org/viewtopic.php?pid=1372562#p1372562)
 *   [systemd para Administradores (PDF)](http://0pointer.de/public/systemd-ebook-psankar.pdf)
 *   [Acerca de systemd en Fedora Project](http://fedoraproject.org/wiki/Systemd)
 *   [Cómo depurar problemas en systemd](http://fedoraproject.org/wiki/How_to_debug_Systemd_problems)
-*   [Two](http://www.h-online.com/open/features/Control-Centre-The-systemd-Linux-init-system-1565543.html) [part](http://www.h-online.com/open/features/Booting-up-Tools-and-tips-for-systemd-1570630.html) artículo introductorio de la revista _The H Open_.
+*   [Two](http://www.h-online.com/open/features/Control-Centre-The-systemd-Linux-init-system-1565543.html) [part](http://www.h-online.com/open/features/Booting-up-Tools-and-tips-for-systemd-1570630.html) artículo introductorio de la revista *The H Open*.
 *   [Historia del blog de Lennart](http://0pointer.de/blog/projects/systemd.html)
 *   [Status update](http://0pointer.de/blog/projects/systemd-update.html)
 *   [Status update2](http://0pointer.de/blog/projects/systemd-update-2.html)

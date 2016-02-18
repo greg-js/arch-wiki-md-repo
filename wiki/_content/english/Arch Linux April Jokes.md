@@ -168,7 +168,7 @@ Judd Vinet, the founder of Arch Linux, has actually left the project on the 1st 
 
 ### Arch Linux and its release system
 
-Arch Linux does not use the _stable_ and _production quality_ release system. It is a [rolling release](https://en.wikipedia.org/wiki/Rolling_release "wikipedia:Rolling release") system, where the system is constantly kept up-to-date with no fixed release schedules.
+Arch Linux does not use the *stable* and *production quality* release system. It is a [rolling release](https://en.wikipedia.org/wiki/Rolling_release "wikipedia:Rolling release") system, where the system is constantly kept up-to-date with no fixed release schedules.
 
 ## 2005: Arch against Wombats
 
@@ -206,4 +206,4 @@ Some GTK 2.x related packages were also upgraded to suit the requirements of gno
 
 ### GNOME version history
 
-Before the above _news_ was posted, the GNOME project had released 2.0 in 2002, and latest release before the 1st of April 2004 was GNOME 2.2.[[5]](http://www.greaterbostonrubyandrails.com/Release.html)
+Before the above *news* was posted, the GNOME project had released 2.0 in 2002, and latest release before the 1st of April 2004 was GNOME 2.2.[[5]](http://www.greaterbostonrubyandrails.com/Release.html)

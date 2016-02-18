@@ -31,14 +31,13 @@ Questo articolo descrive come configurare ed eseguire NTPd (Network Time Protoco
 
 La prima cosa che bisogna definire in `/etc/ntp.conf` sono i server con cui il computer dovrà sincronizzarsi.
 
-I server NTP sono classificati in un sistema gerarchico con vari livelli chiamati _stratum_: i dispositivi che sono considerati sorgenti indipendenti dell'orario sono classificati come _stratum 0_; i server direttamente connessi ai dispositivi _stratum 0_ sono classificati come _stratum 1_; i server connessi a loro volta a dispositivi _stratum 1_ sono classificati come _stratum 2_ e così via.
+I server NTP sono classificati in un sistema gerarchico con vari livelli chiamati *stratum*: i dispositivi che sono considerati sorgenti indipendenti dell'orario sono classificati come *stratum 0*; i server direttamente connessi ai dispositivi *stratum 0* sono classificati come *stratum 1*; i server connessi a loro volta a dispositivi *stratum 1* sono classificati come *stratum 2* e così via.
 
-È necessario comprendere che lo _stratum_ di un server non può essere considerato un'indicazione della sua precisione o affidabilità. Tipicamente, per scopi generici di sincronizzazione sono utilizzati server dello _stratum 2_: a meno che non si conoscano già i server a cui connettersi, è bene utilizzare quelli forniti da [pool.ntp.org](http://www.pool.ntp.org/) ([link alternativo](http://support.ntp.org/bin/view/Servers/NTPPoolServers)) scegliendo il pool di server più vicino alla propria posizione geografica.
+È necessario comprendere che lo *stratum* di un server non può essere considerato un'indicazione della sua precisione o affidabilità. Tipicamente, per scopi generici di sincronizzazione sono utilizzati server dello *stratum 2*: a meno che non si conoscano già i server a cui connettersi, è bene utilizzare quelli forniti da [pool.ntp.org](http://www.pool.ntp.org/) ([link alternativo](http://support.ntp.org/bin/view/Servers/NTPPoolServers)) scegliendo il pool di server più vicino alla propria posizione geografica.
 
 Le seguenti linee sono un esempio:
 
  `/etc/ntp.conf` 
-
 ```
 
  server 0.pool.ntp.org iburst
@@ -52,7 +51,7 @@ L'opzione `iburst` è consigliata, e invia una serie (burst) di pacchetti solo s
 
 ### Configurare il proprio server NTP
 
-Se si sta configurando un server ntp, è necessario aggiungere [_local clock_](http://www.ntp.org/ntpfaq/NTP-s-refclk.htm#Q-LOCAL-CLOCK) come server, in maniera che, nel caso il computer perda la connessione ad internet, non smetta comunque di inviare l'orario al network; è bene aggiungere _localhost_ come un server _stratum 10_ (utilizzando il comando _fudge_) in maniera che non sia mai usato a meno che sia perso l'accesso ad internet:
+Se si sta configurando un server ntp, è necessario aggiungere [*local clock*](http://www.ntp.org/ntpfaq/NTP-s-refclk.htm#Q-LOCAL-CLOCK) come server, in maniera che, nel caso il computer perda la connessione ad internet, non smetta comunque di inviare l'orario al network; è bene aggiungere *localhost* come un server *stratum 10* (utilizzando il comando *fudge*) in maniera che non sia mai usato a meno che sia perso l'accesso ad internet:
 
 ```
 server 127.127.1.0
@@ -60,14 +59,14 @@ fudge  127.127.1.0 stratum 10
 
 ```
 
-La prossima cosa da fare è definire le regole che permetteranno ai vari client di connettersi al servizio (anche _localhost_ è considerato un client) utilizzando il comando _restrict_; nel file dovrebbe già essere presente una linea simile a questa:
+La prossima cosa da fare è definire le regole che permetteranno ai vari client di connettersi al servizio (anche *localhost* è considerato un client) utilizzando il comando *restrict*; nel file dovrebbe già essere presente una linea simile a questa:
 
 ```
 restrict default nomodify nopeer
 
 ```
 
-Questa linea nega a chiunque il permesso di modificare qualunque cosa ed impedisce di interrogare lo stato del time server: `nomodify` impedisce la riconfigurazione di ntpd (con _ntpq_ oppure _ntpdc_) e `noquery` impedisce il dumping dei dati da ntpd (sempre con _ntpq_ oppure _ntpdc_).
+Questa linea nega a chiunque il permesso di modificare qualunque cosa ed impedisce di interrogare lo stato del time server: `nomodify` impedisce la riconfigurazione di ntpd (con *ntpq* oppure *ntpdc*) e `noquery` impedisce il dumping dei dati da ntpd (sempre con *ntpq* oppure *ntpdc*).
 
 È possibile aggiungere anche altre opzioni:
 
@@ -80,7 +79,7 @@ restrict default kod nomodify notrap nopeer noquery
 
 La documentazione completa per l'opzione "restrict" è reperibile in `man ntp_acc`. Per istruzioni dettagliate vedere [https://support.ntp.org/bin/view/Support/AccessRestrictions](https://support.ntp.org/bin/view/Support/AccessRestrictions).
 
-La linea seguente serve ad indicare a _ntpd_ cosa può attraversare il proprio server; la seguente riga è sufficiente se non si sta configurando un server NTP:
+La linea seguente serve ad indicare a *ntpd* cosa può attraversare il proprio server; la seguente riga è sufficiente se non si sta configurando un server NTP:
 
 ```
 restrict 127.0.0.1
@@ -106,7 +105,6 @@ logfile /var/log/ntp.log
 Una configurazione basilare, sarà simile a questa (**tutti i commenti sono stati eliminati per chiarezza**):
 
  `/etc/ntp.conf` 
-
 ```
 server 0.pool.ntp.org iburst
 server 1.pool.ntp.org iburst
@@ -124,7 +122,7 @@ logfile /var/log/ntp.log
 
 ```
 
-**Nota:** Definire il file di log non è obbligatorio, ma è sempre una buona idea avere dei feedback per operazioni _ntpd_.
+**Nota:** Definire il file di log non è obbligatorio, ma è sempre una buona idea avere dei feedback per operazioni *ntpd*.
 
 ### Altre risorse inerenti la configurazione NTP
 
@@ -155,7 +153,7 @@ Dopo aver aggiornato l'orologio di sistema, per salvare l'ora nell'orologio hard
 **Attenzione:**
 
 *   Utilizzare questo metodo è fortemente sconsigliato su server e in generale su macchine che devono funzionare continuativamente per periodi maggiori di 2 o 3 giorni, infatti l'orologio di sistema viene aggiornato solo una volta durante il boot.
-*   Lanciare `ntpd -qg` come un evento di _cron_ è da evitare assolutamente, a meno di essere perfettamente consapevoli del comportamento delle proprie applicazioni avviate in caso di modifiche istantanee dell'orologio di sistema.
+*   Lanciare `ntpd -qg` come un evento di *cron* è da evitare assolutamente, a meno di essere perfettamente consapevoli del comportamento delle proprie applicazioni avviate in caso di modifiche istantanee dell'orologio di sistema.
 
 Se si vuole sincronizzare l'orologio di sistema ogni volta che il sistema si avvia, si può aggiungere la riga `ntpd -qg &` al proprio `/etc/rc.local`. Vedere [Autostarting](/index.php/Autostarting "Autostarting") per i metodi alternativi:
 
@@ -193,7 +191,7 @@ Avviare il demone ntpd:
 
  `# rc.d start ntpd` 
 
-Aggiungere _ntpd_ alla lista DAEMONS per avviarlo automaticamente al boot e assicurarsi di disabilitare hwclock:
+Aggiungere *ntpd* alla lista DAEMONS per avviarlo automaticamente al boot e assicurarsi di disabilitare hwclock:
 
  `/etc/rc.conf`  `DAEMONS=(... !hwclock **ntpd** ...)` 
 
@@ -219,7 +217,7 @@ Il ritardo, l'offset e le colonne jitter dovrebbero essere diverse da zero. I se
 
 **Nota:** ntpd dovrebbe restare in esecuzione quando la rete non funziona, se il demone hwclock è disabilitato, quindi questo non dovrebbe essere necessario.
 
-_ntpd_ può essere acceso/spento a seconda della connessione internet attraverso l'uso dei [dispatcher script di NetworkManager](/index.php/NetworkManager_(Italiano)#Servizi_di_rete_con_NetworkManager_Dispatcher "NetworkManager (Italiano)"). È possibile installare gli script necessari dal repo [community]:
+*ntpd* può essere acceso/spento a seconda della connessione internet attraverso l'uso dei [dispatcher script di NetworkManager](/index.php/NetworkManager_(Italiano)#Servizi_di_rete_con_NetworkManager_Dispatcher "NetworkManager (Italiano)"). È possibile installare gli script necessari dal repo [community]:
 
  `# pacman -S networkmanager-dispatcher-ntpd` 
 
@@ -265,7 +263,6 @@ Creare un ambiente chroot adatto, di modo che getaddrinfo() funzionerà creando 
 ed esegueno il collegamento-montaggio dei suddetti file:
 
  `/etc/fstab` 
-
 ```
 ...
 #ntpd chroot mounts
@@ -275,7 +272,6 @@ ed esegueno il collegamento-montaggio dei suddetti file:
 /proc		  /var/lib/ntp/proc none bind 0 0
 
 ```
-
  `# mount -a` 
 
 Infine, riavviare nuovamente il demone:

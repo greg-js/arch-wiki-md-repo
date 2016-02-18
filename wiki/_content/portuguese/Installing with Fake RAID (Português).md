@@ -1,4 +1,4 @@
-O objetivo deste guia é permitir a utilização de um arranjo RAID criado através de uma controladora RAID on-board e assim permitir o dual-boot do GNU/L_i_nux com o Windows a partir de partições dentro do conjunto RAID usando o GRUB. Ao utilizar os chamados "Fake RAID"ou "Host RAID", os arranjos RAID serão atingidos a partir de `/dev/mapper/chipsetName_randomName` e não `/dev/sdX`.
+O objetivo deste guia é permitir a utilização de um arranjo RAID criado através de uma controladora RAID on-board e assim permitir o dual-boot do GNU/L*i*nux com o Windows a partir de partições dentro do conjunto RAID usando o GRUB. Ao utilizar os chamados "Fake RAID"ou "Host RAID", os arranjos RAID serão atingidos a partir de `/dev/mapper/chipsetName_randomName` e não `/dev/sdX`.
 
 ## Contents
 
@@ -23,21 +23,21 @@ O objetivo deste guia é permitir a utilização de um arranjo RAID criado atrav
 
 Segundo a [Wikipedia](http://pt.wikipedia.org/):
 
-	_A implementação via software geralmente não possui uma facil configuração. Já na implementação via hardware as controladoras tem um preço muito elevado. Então foi criada uma "controladora barata" que em vez de um chip controlador RAID voce utiliza uma combinação de funções especiais na BIOS da placa e drivers instalados no sistema operacional ._[[1]](http://pt.wikipedia.org/wiki/Raid#Fake_RAID)
+	*A implementação via software geralmente não possui uma facil configuração. Já na implementação via hardware as controladoras tem um preço muito elevado. Então foi criada uma "controladora barata" que em vez de um chip controlador RAID voce utiliza uma combinação de funções especiais na BIOS da placa e drivers instalados no sistema operacional .*[[1]](http://pt.wikipedia.org/wiki/Raid#Fake_RAID)
 
 Veja [Wikipedia:pt:RAID](https://en.wikipedia.org/wiki/pt:RAID "wikipedia:pt:RAID") ou [Guia do Hardware:RAID](http://www.hardware.com.br/livros/hardware/raid.html)para mais informações.
 
-Apesar da terminologia, "Fake RAID" via dmraid é uma implementação RAID via software robusta que oferece um solido sistema de mirror ou stripe para multiplos discos com sobrecarga insignificante para qualquer sistema moderno. O dmraid é comparável a mdraid (software RAID puro para GNU/L_i_nux) com a vantagem de ser capaz de reconstruir completamente um arranjo.
+Apesar da terminologia, "Fake RAID" via dmraid é uma implementação RAID via software robusta que oferece um solido sistema de mirror ou stripe para multiplos discos com sobrecarga insignificante para qualquer sistema moderno. O dmraid é comparável a mdraid (software RAID puro para GNU/L*i*nux) com a vantagem de ser capaz de reconstruir completamente um arranjo.
 
 ## Hardware Suportado
 
 Esses são alguns exemplos de hardwares que suportam Fake RAID através do dmraid:
 
-*   Testado com ICH10R em _2009.08_ (x86_64) -- [pointone](/index.php/User:Pointone "User:Pointone")
-*   Testado com Sil3124 em _2009.02_ (i686) -- [loosec](/index.php/User:Loosec "User:Loosec")
+*   Testado com ICH10R em *2009.08* (x86_64) -- [pointone](/index.php/User:Pointone "User:Pointone")
+*   Testado com Sil3124 em *2009.02* (i686) -- [loosec](/index.php/User:Loosec "User:Loosec")
 *   Testado com nForce4 (i686 e x86_64) -- [loosec](/index.php/User:Loosec "User:Loosec")
 *   Testado com Sil3512 (x86_64) -- [loosec](/index.php/User:Loosec "User:Loosec")
-*   Testado com nForce2 _2011.05_ (i686) -- [Jere2001](/index.php/User:Jere2001 "User:Jere2001")
+*   Testado com nForce2 *2011.05* (i686) -- [Jere2001](/index.php/User:Jere2001 "User:Jere2001")
 
 Para mais informações sobre hardware suportados veja [RAID/Onboard @ Gentoo Linux Wiki](http://en.gentoo-wiki.com/wiki/RAID/Onboard)
 
@@ -54,7 +54,6 @@ Antes de tudo:
 #### Configure os arranjos RAID
 
 **Atenção:** Se seus HDs não estão configurados como RAID e o MS-Windows já está instalado, a mudança para "RAID" poderá causar danos.
-
 [[2]](http://support.microsoft.com/kb/316401/)
 
 *   Entre no **setup do BIOS** de sua placa-mãe e habilite o **Controlador RAID**, aproveite e também configure para que o PC inicie pelo drive de CD.
@@ -63,7 +62,7 @@ Antes de tudo:
 
 **Dica:** Consulte o manual de sua placa-mãe para maiores detalhes.
 
-Com os arranjos RAID definidos no BIOS da placa-mãe inicie o CD do Arch L_i_nux.
+Com os arranjos RAID definidos no BIOS da placa-mãe inicie o CD do Arch L*i*nux.
 
 ### Inicie com o CD do Arch
 
@@ -126,7 +125,7 @@ Mude para o **tty2** e inicie o instalador:
 *   Escolha **OTHER** e digite o caminho completo para seu arranjo RAID (exemplo `/dev/mapper/sil-aiageicechah`). Mude para **tty1** para verificar a ortografia correta.
 *   Crie suas partições normalmente
 
-**Dica:** Agora seria um bom momento para instalar o "outro" SO para utilizar em dual-boot. Se for instalar o Windows XP em "C:", então todas as partições antes da partição do Windows devem ser alteradas para o tipo [1B] (FAT32 oculta) para escondê-las durante a instalação do Windows. Quando isso for feito, mude-as novamente para o tipo [83] (GNU/L_i_nux). Logicamente isso exigirá um reinício e alguns dos passos acima deverão ser repetidos.
+**Dica:** Agora seria um bom momento para instalar o "outro" SO para utilizar em dual-boot. Se for instalar o Windows XP em "C:", então todas as partições antes da partição do Windows devem ser alteradas para o tipo [1B] (FAT32 oculta) para escondê-las durante a instalação do Windows. Quando isso for feito, mude-as novamente para o tipo [83] (GNU/L*i*nux). Logicamente isso exigirá um reinício e alguns dos passos acima deverão ser repetidos.
 
 #### Monte o sistema de arquivos
 
@@ -188,7 +187,7 @@ nvidia_difdjida3  |	/home		2
 
 Nesse exemplo a correta partição **root** seria **(hd0,1)**.
 
-**Nota:** Se você utiliza mais de um arranjo RAID ou várias distribuições GNU/L_i_nux instaladas em diferentes arranjos (por exemplo 2 discos em nvidia_fdaacfde e 2 discos em nvidia_ffadgic), você precisará designar corretamente a partição e o arranjo RAID a ser utilizado. Por exemplo se você está utilizando o segundo arranjo e a segunda partição sua linha **root** seria assim **root(1,1)**
+**Nota:** Se você utiliza mais de um arranjo RAID ou várias distribuições GNU/L*i*nux instaladas em diferentes arranjos (por exemplo 2 discos em nvidia_fdaacfde e 2 discos em nvidia_ffadgic), você precisará designar corretamente a partição e o arranjo RAID a ser utilizado. Por exemplo se você está utilizando o segundo arranjo e a segunda partição sua linha **root** seria assim **root(1,1)**
 
 Após salvar o arquivo de configuraçã, o instalador do GRUB irá **Falhar**. Mas ele copiará os arquivos para o /boot. **Não desista e reinicie** simplesmente siga as instruções:
 
@@ -258,7 +257,7 @@ Para finalizar, se você tiver multiplas controladoras através do dmraid e ou m
 
 ```
 
-Agora o procedimento está totalmente concluido, termine o utilitário de instalação e reinicie sua nova instalação do Arch L_i_nux com raid.
+Agora o procedimento está totalmente concluido, termine o utilitário de instalação e reinicie sua nova instalação do Arch L*i*nux com raid.
 
 ```
 # reboot
@@ -269,7 +268,7 @@ Agora o procedimento está totalmente concluido, termine o utilitário de instal
 
 ### Iniciando com um arranjo corrompido
 
-Uma desvantagem do uso de Fake RAID no GNU/L_i_nux é que o **dmraid** é, atualmente, incapaz de lidar com arranjos degradados e se recusa a ativar. Nesse cenário, é preciso resolver o problema através de outro sistema operacional (por exemplo o Windows) ou através do utilitário do chipset RAID.
+Uma desvantagem do uso de Fake RAID no GNU/L*i*nux é que o **dmraid** é, atualmente, incapaz de lidar com arranjos degradados e se recusa a ativar. Nesse cenário, é preciso resolver o problema através de outro sistema operacional (por exemplo o Windows) ou através do utilitário do chipset RAID.
 
 Alternativamente, se você estiver utilizando um arranjo de espelhamento (mirror ou RAID 1), você pode desabilitar temporariamente o dmraid e efetuar o boot através de um único drive:
 

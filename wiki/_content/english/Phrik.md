@@ -100,11 +100,11 @@ Factoid can be locked to prevent other people from removing or overwriting a fac
 
 If a factoid you think should be changed is locked, firstly contact the person who locked it (`!factinfo` will tell you), and if the person is either unavailable or refuses to change it but you still think it should be, due to breaking the rules or similar, feel free to contact the ops. (To get a list of ops send `!listops` to phrik in a pm.)
 
- `!fact lock _<factoid key>_` 
+ `!fact lock *<factoid key>*` 
 
 or
 
- `!fact unlock _<factoid key>_` 
+ `!fact unlock *<factoid key>*` 
 
 ### Modifying factoids
 
@@ -124,19 +124,19 @@ Completely replacing a factoid with something new can be done with the no comman
 
 ### Deleting factoids
 
-Removing a factoid is done with `!MoobotFactoids remove _<factoid key>_`, but since that is to long there exists an alias for convenience called `!rmfact`. Don't delete others factoids without a good reason, and do ask first if you're unsure.
+Removing a factoid is done with `!MoobotFactoids remove *<factoid key>*`, but since that is to long there exists an alias for convenience called `!rmfact`. Don't delete others factoids without a good reason, and do ask first if you're unsure.
 
- `!rmfact _<factoid key>_` 
+ `!rmfact *<factoid key>*` 
 
 ## Quotes
 
 Phrik uses the QuoteGrabs plugin to provide an easy to use system for storing and retrieving things users say. You do not need to be identified with phrik to grab/retrieve quotes. All the QuoteGrabs commands can be listed using the command `!list QuoteGrabs`.
 
-(The `_<channel>_` argument does not seem to make any difference to the result of any of the commands listed below.)
+(The `*<channel>*` argument does not seem to make any difference to the result of any of the commands listed below.)
 
 ### Grab
 
-The `!grab _<nickname>_` command is used to "grab" a quote. This means that the last thing `_<nickname>_` said will be stored in phrik's internal database. Example:
+The `!grab *<nickname>*` command is used to "grab" a quote. This means that the last thing `*<nickname>*` said will be stored in phrik's internal database. Example:
 
  `!grab Arch-TK` 
 
@@ -144,19 +144,19 @@ The `!grab _<nickname>_` command is used to "grab" a quote. This means that the 
 
 ### Quote
 
-The `!quote _<nickname>_` command is used to view the last grabbed quote.
+The `!quote *<nickname>*` command is used to view the last grabbed quote.
 
 `!quote` is synonymous to `!QuoteGrabs quote`, and so is `!q`
 
 ### Random
 
-The `!QuoteGrabs random _[<nickname>]_` command is used to view a random selection of quotes. Given a `_<nickname>_` the selection is narrowed to just one user.
+The `!QuoteGrabs random *[<nickname>]*` command is used to view a random selection of quotes. Given a `*<nickname>*` the selection is narrowed to just one user.
 
 The alias `!rq` can be used in place of `!QuoteGrabs random` and the alias `!multirq` gives a selection of 5 random quotes instead of just 1.
 
 ### Search
 
-The `!QuoteGrabs search _[<channel>]_ _<text>_` command is used to search phrik's quote database for a quote containing a given string. This command does a literal search, this means that searching for "Arch-TK broken" will not return any search results unless that literal result is found. For example:
+The `!QuoteGrabs search *[<channel>]* *<text>*` command is used to search phrik's quote database for a quote containing a given string. This command does a literal search, this means that searching for "Arch-TK broken" will not return any search results unless that literal result is found. For example:
 
  `!QuoteGrabs search "Arch-TK Windows"` 
 
@@ -166,13 +166,13 @@ The alias `!qfind` can be used in place of `!QuoteGrabs search`.
 
 ### List
 
-The `!QuoteGrabs list _[<channel>]_ _<nickname>_` command is used to list all the quotes for a given user.
+The `!QuoteGrabs list *[<channel>]* *<nickname>*` command is used to list all the quotes for a given user.
 
 The alias `!qlist` can be used in place of `!QuoteGrabs list`.
 
 ### Say
 
-The `!QuoteGrabs say _[<channel>]_ _<id>_` command is used to view the full quote text using an ID returned by the search and list functions.
+The `!QuoteGrabs say *[<channel>]* *<id>*` command is used to view the full quote text using an ID returned by the search and list functions.
 
 For example:
 
@@ -184,7 +184,7 @@ The alias `!qsay` can be used in place of `!QuoteGrabs say`.
 
 ### Get
 
-The `!QuoteGrabs get _[<channel>]_ _<id>_` command is very similar to the _Say_ command. It returns the full text of the quote along with additional information.
+The `!QuoteGrabs get *[<channel>]* *<id>*` command is very similar to the *Say* command. It returns the full text of the quote along with additional information.
 
 For example:
 
@@ -194,4 +194,4 @@ Will return:
 
  `<sudokode> ew you might as well be using windows (Said by: sudokode!~ponies@unaffiliated/sudokode; grabbed by quantum-mechanic!~neutrino@unaffiliated/electron/x-8286743 at 11:21 AM, November 12, 2014` 
 
-The alias `!qget` can be used in place of `!QuoteGrabs get` but does not permit using a `_<channel>_` argument.
+The alias `!qget` can be used in place of `!QuoteGrabs get` but does not permit using a `*<channel>*` argument.

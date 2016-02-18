@@ -42,11 +42,11 @@
 
 ## 基础设置
 
-所有的用户服务都位于 `~/.config/systemd/user` 路径下。 如果你想在首次用户登陆时运行服务，对想要自动启动的服务执行 `systemctl --user enable _service_` 即可。
+所有的用户服务都位于 `~/.config/systemd/user` 路径下。 如果你想在首次用户登陆时运行服务，对想要自动启动的服务执行 `systemctl --user enable *service*` 即可。
 
 ### D-Bus
 
-有些程序会使用到 [D-Bus (简体中文)](/index.php/D-Bus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "D-Bus (简体中文)") 用户消息总线。 传统的方式是由桌面环境调用 `dbus-launch` 来启动dbus。但从systemd 226版本开始，将由systemd管理用户消息总线。[[3]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) systemd会为每个用户启动一个_dbus-daemon_，提供`dbus.socket` 和 `dbus.service`用户单元，供用户下的所有会话使用。
+有些程序会使用到 [D-Bus (简体中文)](/index.php/D-Bus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "D-Bus (简体中文)") 用户消息总线。 传统的方式是由桌面环境调用 `dbus-launch` 来启动dbus。但从systemd 226版本开始，将由systemd管理用户消息总线。[[3]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) systemd会为每个用户启动一个*dbus-daemon*，提供`dbus.socket` 和 `dbus.service`用户单元，供用户下的所有会话使用。
 
 **Note:** 如果你之前在`/etc/systemd/user/` 或 `~/.config/systemd/user/` 下创建过这两个单元，现在可以删掉了。
 
@@ -75,7 +75,6 @@ systemd用户实例不会继承类似`.bashrc`中定义的 [环境变量](/index
 通过 `.bashrc` 或者 `.bash_profile` 设置的环境变量，对systemd都是不可见的。 如果你改变了你的 `PATH` 变量，并且准备在systemd单元运行的应用中使用这个环境变量，你必须在systemd的环境中设置`PATH`。假设你在 `.bash_profile` 中设置了 `PATH`，让systemd感知到这个变化的最好方法是在修改`PATH` 之后，加入以下行通知systemd：
 
  `~/.bash_profile` 
-
 ```
 systemctl --user import-environment PATH
 
@@ -86,11 +85,11 @@ systemctl --user import-environment PATH
 systemd用户实例在用户首次登陆时启动，并在最有一个会话退出时终止。 但有时候，对于一些不依赖于会话的用户进程，在系统启动时加载用户实例，在会话全部结束时，也不停止用户实例是比较有用的。Lingering 就是用来实现这个的。 使用以下命令来启用驻留指定用户：
 
 ```
-# loginctl enable-linger _username_
+# loginctl enable-linger *username*
 
 ```
 
-**Warning:** systemd 服务是 **没有** 会话的， 它们在 _logind_ 状态之外运行， 所以不要在 lingering 中启用自动登陆的功能，这会导致 [会话中断](/index.php/General_troubleshooting#Session_permissions "General troubleshooting")。
+**Warning:** systemd 服务是 **没有** 会话的， 它们在 *logind* 状态之外运行， 所以不要在 lingering 中启用自动登陆的功能，这会导致 [会话中断](/index.php/General_troubleshooting#Session_permissions "General troubleshooting")。
 
 ## Xorg and systemd
 
@@ -106,10 +105,10 @@ systemd用户实例在用户首次登陆时启动，并在最有一个会话退�
 
 会话会使用它自己的dbus守护，而需要用到`dbus.service`的systemd工具会自动连接到会话的dbus实例上。
 
-最后，在 (**root**) 用户下，启用_xlogin_服务，使其开机自启动：
+最后，在 (**root**) 用户下，启用*xlogin*服务，使其开机自启动：
 
 ```
-# systemctl enable xlogin@_username_
+# systemctl enable xlogin@*username*
 
 ```
 
@@ -133,7 +132,6 @@ systemd用户实例在用户首次登陆时启动，并在最有一个会话退�
 1\. 通过编辑`/etc/X11/Xwrapper.config`文件，允许所有用户使用root权限运行xorg：
 
  `/etc/X11/Xwrapper.config` 
-
 ```
 allowed_users=anybody
 needs_root_rights=yes
@@ -143,7 +141,6 @@ needs_root_rights=yes
 2\. 把下面systemd单元加到`~/.config/systemd/user`目录下：
 
  `~/.config/systemd/user/xorg@.socket` 
-
 ```
 [Unit]
 Description=Socket for xorg at display %i
@@ -152,9 +149,7 @@ Description=Socket for xorg at display %i
 ListenStream=/tmp/.X11-unix/X%i
 
 ```
-
  `~/.config/systemd/user/xorg@.service` 
-
 ```
 [Unit]
 Description=Xorg server at display %i
@@ -202,7 +197,6 @@ $ systemctl --user start xorg@0.socket            # Start listening on the socke
 下面是 mpd 服务用户版本的例子:
 
  `~/.config/systemd/user/mpd.service` 
-
 ```
 [Unit]
 Description=Music Player Daemon
@@ -220,7 +214,6 @@ WantedBy=default.target
 下面是 `sickbeard.service` 用户版本的例子, 在配置中，使用了主目录变量(%h):
 
  `~/.config/systemd/user/sickbeard.service` 
-
 ```
 [Unit]
 Description=SickBeard Daemon
@@ -287,7 +280,6 @@ Once this is done, `systemctl --user enable` `tmux.service`, `multiplexer.target
 To run a window manager as a systemd service, you first need to run [#Xorg as a systemd user service](#Xorg_as_a_systemd_user_service). In the following we will use awesome as an example:
 
  `~/.config/systemd/user/awesome.service` 
-
 ```
 [Unit]
 Description=Awesome window manager
@@ -304,7 +296,7 @@ WantedBy=wm.target
 
 ```
 
-**Note:** The `[Install]` section includes a `WantedBy` part. When using `systemctl --user enable` it will link this as `~/.config/systemd/user/wm.target.wants/_window_manager_.service`, allowing it to be started at login. Is recommended to enable this service, not to link it manually.
+**Note:** The `[Install]` section includes a `WantedBy` part. When using `systemctl --user enable` it will link this as `~/.config/systemd/user/wm.target.wants/*window_manager*.service`, allowing it to be started at login. Is recommended to enable this service, not to link it manually.
 
 ## See also
 

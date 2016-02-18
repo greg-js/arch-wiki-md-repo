@@ -39,7 +39,7 @@
 4.  执行下面命令将 systemd-boot 程序复制到 EFI 系统分区并将 systemd-boot 安装成EFI启动管理器的默认的 EFI 程序。
 
 ```
-# bootctl --path=_$esp_ install
+# bootctl --path=*$esp* install
 
 ```
 
@@ -58,7 +58,7 @@
 
 ### 更新
 
-systemd-boot (bootctl(1), systemd-efi-boot-generator(8)) 假定你的 EFI 系统分区 挂载在 `/boot`. 和 _gummiboot_ 不同,Systemd-boot的升级需要用户手动进行:
+systemd-boot (bootctl(1), systemd-efi-boot-generator(8)) 假定你的 EFI 系统分区 挂载在 `/boot`. 和 *gummiboot* 不同,Systemd-boot的升级需要用户手动进行:
 
 ```
 # bootctl update  
@@ -87,7 +87,6 @@ systemd-boot (bootctl(1), systemd-efi-boot-generator(8)) 假定你的 EFI 系统
 下面是一个样例:
 
  `$esp/loader/loader.conf` 
-
 ```
 default  arch
 timeout  4
@@ -113,16 +112,15 @@ bootctl 会在 `$esp/loader/entries/*.conf` 搜索启动选项– 一个文件�
 
 *   `efi` – 要启动的EFI应用程序的位置,以 (`$esp`) 为相对路径,; 例如 `/vmlinuz-linux`. **需要此选项或是 `linux` (参阅下文) 的一项.**
 
-*   `options` – 传递给EFI应用程序的参数,可选.但如果你要启动linux,至少需要 `initrd=_efipath_` 和 `root=_dev_`选项.
+*   `options` – 传递给EFI应用程序的参数,可选.但如果你要启动linux,至少需要 `initrd=*efipath*` 和 `root=*dev*`选项.
 
-要启动linux,你还可以指定 `linux _path-to-vmlinuz_` 和 `initrd _path-to-initramfs_`;这会自动转换成 `efi _path_` 和 `options initrd=_path_` – 这个语法只是为了方便,在功能上并没有区别.
+要启动linux,你还可以指定 `linux *path-to-vmlinuz*` 和 `initrd *path-to-initramfs*`;这会自动转换成 `efi *path*` 和 `options initrd=*path*` – 这个语法只是为了方便,在功能上并没有区别.
 
 #### 一般的安装选项
 
 这是一个根分区既不在LVM逻辑卷又没有加密时的配置选项:
 
  `$esp/loader/entries/arch.conf` 
-
 ```
 title          Arch Linux
 linux          /vmlinuz-linux
@@ -139,7 +137,6 @@ options        root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660 rw
 这是一个根分区在[LVM](/index.php/LVM "LVM")逻辑卷上时的样例:
 
  `$esp/loader/entries/arch-lvm.conf` 
-
 ```
 title          Arch Linux (LVM)
 linux          /vmlinuz-linux
@@ -160,7 +157,6 @@ options  root=UUID=<UUID identifier> rw
 这是一个加密的根分区 ([例如通过DM-Crypt / LUKS](/index.php/Dm-crypt "Dm-crypt"))的样例:
 
  `$esp/loader/entries/arch-encrypted.conf` 
-
 ```
 title Arch Linux Encrypted
 linux /vmlinuz-linux
@@ -177,7 +173,6 @@ options cryptdevice=UUID=<UUID>:<mapped-name> root=/dev/mapper/<mapped-name> qui
 如果用[btrfs](/index.php/Btrfs "Btrfs")子卷作为根分区,记得加入 `rootflags=subvol=<root 子卷名称>`到`options`选项中,在这个例子中,根分区挂载在名称为'ROOT'的btrfs子卷中 (例如 `mount -o subvol=ROOT /dev/sdxY /mnt`):
 
  `$esp/loader/entries/arch-btrfs-subvol.conf` 
-
 ```
 title          Arch Linux
 linux          /vmlinuz-linux
@@ -192,14 +187,11 @@ options        root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660 rw rootflags=s
 你可以像这样加载EFI Shell或其他EFI应用程序:
 
  `$esp/loader/entries/uefi-shell-v1-x86_64.conf` 
-
 ```
 title  UEFI Shell x86_64 v1
 efi    /EFI/shellx64_v1.efi
 ```
-
  `$esp/loader/entries/uefi-shell-v2-x86_64.conf` 
-
 ```
 title  UEFI Shell x86_64 v2
 efi    /EFI/shellx64_v2.efi
@@ -259,8 +251,8 @@ efi    /EFI/shellx64_v2.efi
 1.  以管理员身份打开命令提示符,运行 `bcdedit /enum firmware`
 2.  寻找描述中带有"linux"的启动选项,例如 "Linux Boot Manager"
 3.  复制带大括号的描述符, 例如 `{31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`
-4.  创建一个批处理文件 (例如 `bootorder.bat`) ,包含下列的内容: `bcdedit /set {fwbootmgr} DEFAULT {_这里是你在第三步中获得的描述符_}` (例如 `bcdedit /set {fwbootmgr} DEFAULT {31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`).
-5.  运行 _gpedit (组策略对象编辑器)_ 在 _本地计算机策略 > 计算机设置 > Windows 设置 > 脚本(启动/关机)_中,选择"启动,会打开一个名为"启动选项:的对话框.
+4.  创建一个批处理文件 (例如 `bootorder.bat`) ,包含下列的内容: `bcdedit /set {fwbootmgr} DEFAULT {*这里是你在第三步中获得的描述符*}` (例如 `bcdedit /set {fwbootmgr} DEFAULT {31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`).
+5.  运行 *gpedit (组策略对象编辑器)* 在 *本地计算机策略 > 计算机设置 > Windows 设置 > 脚本(启动/关机)*中,选择"启动,会打开一个名为"启动选项:的对话框.
 6.  添加第四步中创建的批处理文件到"脚本"列表中.
 
 或者让Windows 启动管理器加载systemd-boot的EFI应用程序,要这样做的话在Windows上以管理员身份运行:

@@ -1508,9 +1508,9 @@ set-top box ( módulo de conexión,caja de conexión )
 
 La recopilación de los términos incluidos en este glosario han tenido como fuente los siguientes documentos:
 
-*   _Basic Computer Spanglish Pitfalls_ de **Ángel Álvarez**
-*   _Computer Spanglish/Spanish terms_ de **Yolanda M. Rivas**
-*   _Errores comunes de traducción al castellano_ de **Fedora**
-*   _Glosario básico inglés-español para usuarios de Internet_ de **Rafael Fernández Calvo**
-*   _Glosario de informática Inglés-Español_ del **proyecto ORCA**
-*   _Glosario_ de **KDE**
+*   *Basic Computer Spanglish Pitfalls* de **Ángel Álvarez**
+*   *Computer Spanglish/Spanish terms* de **Yolanda M. Rivas**
+*   *Errores comunes de traducción al castellano* de **Fedora**
+*   *Glosario básico inglés-español para usuarios de Internet* de **Rafael Fernández Calvo**
+*   *Glosario de informática Inglés-Español* del **proyecto ORCA**
+*   *Glosario* de **KDE**

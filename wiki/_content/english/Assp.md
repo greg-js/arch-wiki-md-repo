@@ -96,25 +96,19 @@ Foreground **true**
 ScanArchive **true**
 
 ```
-
  `[root@trim File-Scan-ClamAV-1.91-VHJd1I]# make install` 
-
 ```
 Installing /usr/share/perl5/site_perl/File/Scan/ClamAV.pm
 Installing /usr/share/man/man3/File::Scan::ClamAV.3pm
 Appending installation info to /usr/lib/perl5/core_perl/perllocal.pod
 
 ```
-
  `[root@trim File-Scan-ClamAV-1.91-VHJd1I]# exit` 
-
 ```
 exit
 
 ```
-
  `cpan> exit` 
-
 ```
 Terminal does not support GetHistory.
 Lockfile removed.
@@ -150,7 +144,6 @@ Lockfile removed.
 ### Start script
 
  `/etc/rc.d/assp` 
-
 ```
 
 #!/bin/bash

@@ -41,7 +41,6 @@ Los controladores propietarios [NVIDIA](/index.php/NVIDIA_(Espa%C3%B1ol) "NVIDIA
 Para cargar KMS tan pronto como sea posible en el proceso de arranque, añada el módulo [radeon](/index.php/Radeon "Radeon") (para tarjetas ATI/AMD), [i915](/index.php/Intel "Intel") (para tarjetas intel integradas) o [noveau](/index.php/Nouveau_(Espa%C3%B1ol) "Nouveau (Español)") (para tarjetas Nvidia) a la línea de `MODULES` en el archivo`/etc/mkinitcpio.conf`:
 
  `/etc/mkinitcpio.conf` 
-
 ```
 MODULES="i915"
 **o**
@@ -56,7 +55,7 @@ Si utiliza un archivo EDID personalizado, debe incorporarlo en initramfs así:
 
 Reconstruya la imagen del kernel (remítase al artículo [mkinitcpio](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") para más información):
 
- `# mkinitcpio -p <nombre del kernel presente; por ejemplo, _linux_>` 
+ `# mkinitcpio -p <nombre del kernel presente; por ejemplo, *linux*>` 
 
 ## Solución de problemas
 
@@ -151,7 +150,6 @@ video=DVI-I-1:1024x768@85 video=TV-1:d
 Para obtener el nombre y el estado actual de los conectores, puede utilizar la siguiente línea de órdenes:
 
  `for p in /sys/class/drm/*/status; do con=${p%/status}; echo -n "${con#*/card?-}: "; cat $p; done` 
-
 ```
 
 DVI-I-1: connected

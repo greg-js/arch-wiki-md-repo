@@ -1,4 +1,4 @@
-**Samba** 是 [SMB/CIFS](https://en.wikipedia.org/wiki/Server_Message_Block "wikipedia:Server Message Block") 网络协议的重新实现, 它作为 [NFS](/index.php/NFS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NFS (简体中文)") 的补充使得在 Linux 和 Windows 系统中进行文件共享、打印机共享更容易实现。一些用户说Samba配置简单，操作直观。然而，许多新用户会因为它的复杂性和非直观的机制而遇到问题。强烈建议新用户仔细按照下面的指导。
+**Samba** 是 [SMB/CIFS](https://en.wikipedia.org/wiki/Server_Message_Block 的补充使得在 Linux 和 Windows 系统中进行文件共享、打印机共享更容易实现。一些用户说Samba配置简单，操作直观。然而，许多新用户会因为它的复杂性和非直观的机制而遇到问题。强烈建议新用户仔细按照下面的指导。
 
 ## Contents
 
@@ -98,7 +98,6 @@ Samba 服务的默认配置文件在 `/etc/samba/smb.conf.default` 中，你可�
 修改 `smb.conf` 配置文件中的以下变量：
 
  `/etc/samba/smb.conf` 
-
 ```
 ...
 [global]
@@ -109,10 +108,10 @@ Samba 服务的默认配置文件在 `/etc/samba/smb.conf.default` 中，你可�
   ...
 ```
 
-以下操作将会将用户添加到群组 _sambashare_ 中。其中，替换 `_your_username_` 为实际的用户名：
+以下操作将会将用户添加到群组 *sambashare* 中。其中，替换 `*your_username*` 为实际的用户名：
 
 ```
-# usermod -a -G sambashare _your_username_
+# usermod -a -G sambashare *your_username*
 
 ```
 
@@ -122,17 +121,17 @@ Samba 服务的默认配置文件在 `/etc/samba/smb.conf.default` 中，你可�
 
 ### 添加用户
 
-Create a [Linux user account](/index.php/Users_and_groups#User_management "Users and groups") for _samba_ user. Substitute `_samba_user_` with preferred name if desired:
+Create a [Linux user account](/index.php/Users_and_groups#User_management "Users and groups") for *samba* user. Substitute `*samba_user*` with preferred name if desired:
 
 ```
-# useradd _samba_user_
+# useradd *samba_user*
 
 ```
 
-Then create a _Samba_ user account with the same name:
+Then create a *Samba* user account with the same name:
 
 ```
-# pdbedit -a -u _samba_user_
+# pdbedit -a -u *samba_user*
 
 ```
 
@@ -141,7 +140,7 @@ Then create a _Samba_ user account with the same name:
 To change a user's password, use `smbpasswd`:
 
 ```
-# smbpasswd _samba_user_
+# smbpasswd *samba_user*
 
 ```
 
@@ -169,31 +168,31 @@ For a lighter approach without support for listing public shares, only install [
 To list public shares on a server:
 
 ```
-$ smbclient -L _hostname_ -U%
+$ smbclient -L *hostname* -U%
 
 ```
 
 Create a mount point for the share:
 
 ```
-# mkdir /mnt/_mountpoint_
+# mkdir /mnt/*mountpoint*
 
 ```
 
 Mount the share using the `mount.cifs` type. Not all the options listed below are needed or desirable (ie. `password`).
 
- `# mount -t cifs //_SERVER_/_sharename_ /mnt/_mountpoint_ -o user=_username_,password=_password_,workgroup=_workgroup_,ip=_serverip_` 
+ `# mount -t cifs //*SERVER*/*sharename* /mnt/*mountpoint* -o user=*username*,password=*password*,workgroup=*workgroup*,ip=*serverip*` 
 **Note:** If you get the output "mount error(13): Permission denied", this might be due to a bug in mount.cifs. See the following bug report. [https://bugs.archlinux.org/task/43015#comment130771](https://bugs.archlinux.org/task/43015#comment130771) Try specifying the option "sec=ntlmv2" to work around it.
 
-_SERVER_
+*SERVER*
 
 	The Windows system name.
 
-_sharename_
+*sharename*
 
 	The shared directory.
 
-_mountpoint_
+*mountpoint*
 
 	The local directory where the share will be mounted.
 
@@ -203,39 +202,37 @@ _mountpoint_
 
 **Note:**
 
-*   Abstain from using a trailing `/`. `//_SERVER_/_sharename_**/**` will not work.
+*   Abstain from using a trailing `/`. `//*SERVER*/*sharename***/**` will not work.
 *   If your mount does not work stable, stutters or freezes, try to enable different SMB protocol version with `vers=` option. For example, `vers=2.0` for Windows Vista mount.
 
 #### Add Share to /etc/fstab
 
 The simplest way to add an fstab entry is something like this:
 
- `/etc/fstab`  `//_SERVER_/_sharename_ /mnt/_mountpoint_ cifs username=_username_,password=_password_ 0 0` 
+ `/etc/fstab`  `//*SERVER*/*sharename* /mnt/*mountpoint* cifs username=*username*,password=*password* 0 0` 
 
-However, storing passwords in a world readable file is not recommended! A safer method would be to use a credentials file. As an example, create a file and `chmod 600 _filename_` so only the owning user can read and write to it. It should contain the following information:
+However, storing passwords in a world readable file is not recommended! A safer method would be to use a credentials file. As an example, create a file and `chmod 600 *filename*` so only the owning user can read and write to it. It should contain the following information:
 
  `/path/to/credentials/sambacreds` 
-
 ```
-username=_username_
-password=_password_
+username=*username*
+password=*password*
 ```
 
 and the line in your fstab should look something like this:
 
- `/etc/fstab`  `//SERVER/SHARENAME /mnt/_mountpoint_ cifs credentials=_/path/to/credentials/sambacreds_ 0 0` 
+ `/etc/fstab`  `//SERVER/SHARENAME /mnt/*mountpoint* cifs credentials=*/path/to/credentials/sambacreds* 0 0` 
 
-If using _systemd_ (modern installations), one can utilize the `x-systemd.automount` option, which speeds up service boot by a few seconds. Also, one can map current user and group to make life a bit easier, utilizing `uid` and `gid` options.
+If using *systemd* (modern installations), one can utilize the `x-systemd.automount` option, which speeds up service boot by a few seconds. Also, one can map current user and group to make life a bit easier, utilizing `uid` and `gid` options.
 
 **Warning:** Using the `uid` and `gid` options may cause input ouput errors in programs that try to fetch data from network drives.
-
- `/etc/fstab`  `//_SERVER_/_SHARENAME_ /mnt/_mountpoint_ cifs credentials=_/path/to/smbcredentials_,x-systemd.automount,uid=_username_,gid=_usergroup_ 0 0` 
-**Note:** Space in sharename should be replaced by `\040` (ASCII code for space in octal). For example, `//_SERVER_/share name` on the command line should be `//_SERVER_/share\040name` in `/etc/fstab`.
+ `/etc/fstab`  `//*SERVER*/*SHARENAME* /mnt/*mountpoint* cifs credentials=*/path/to/smbcredentials*,x-systemd.automount,uid=*username*,gid=*usergroup* 0 0` 
+**Note:** Space in sharename should be replaced by `\040` (ASCII code for space in octal). For example, `//*SERVER*/share name` on the command line should be `//*SERVER*/share\040name` in `/etc/fstab`.
 
 #### User mounting
 
- `/etc/fstab`  `//_SERVER_/_SHARENAME_ /mnt/_mountpoint_ cifs users,credentials=_/path/to/smbcredentials_,workgroup=_workgroup_,ip=_serverip_ 0 0` 
-**Note:** The option is user**s** (plural). For other filesystem types handled by mount, this option is usually _user_; sans the "**s**".
+ `/etc/fstab`  `//*SERVER*/*SHARENAME* /mnt/*mountpoint* cifs users,credentials=*/path/to/smbcredentials*,workgroup=*workgroup*,ip=*serverip* 0 0` 
+**Note:** The option is user**s** (plural). For other filesystem types handled by mount, this option is usually *user*; sans the "**s**".
 
 This will allow users to mount it as long as the mount point resides in a directory controllable by the user; i.e. the user's home. For users to be allowed to mount and unmount the Samba shares with mount points that they do not own, use [smbnetfs](#smbnetfs), or grant privileges using [sudo](/index.php/Sudo "Sudo").
 
@@ -254,7 +251,7 @@ There are several ways to easily browse shared resources:
 First, check if you can see all the shares you are interested in mounting:
 
 ```
-$ smbtree -U _remote_user_
+$ smbtree -U *remote_user*
 
 ```
 
@@ -300,7 +297,6 @@ $ ln -sf /etc/samba/smb.conf ~/.smb/smb.conf
 If a username and a password are required to access some of the shared folders, edit `~/.smb/smbnetfs.auth` to include one or more entries like this:
 
  `~/.smb/smbnetfs.auth` 
-
 ```
 auth			"hostname" "username" "password"
 
@@ -311,7 +307,6 @@ It is also possible to add entries for specific hosts to be mounted by smbnetfs,
 If you are using the Dolphin or Nautilus file managers, you may want to the following to `~/.smb/smbnetfs.conf` to avoid "Disk full" errors as smbnetfs by default will report 0 bytes of free space:
 
  `~/.smb/smbnetfs.conf` 
-
 ```
 free_space_size 1073741824
 
@@ -329,7 +324,7 @@ Otherwise, smbnetfs complains about 'insecure config file permissions'.
 Finally, to mount your Samba network neighbourhood to a directory of your choice, call
 
 ```
-$ smbnetfs _mount_point_
+$ smbnetfs *mount_point*
 
 ```
 
@@ -349,9 +344,9 @@ Then, you can start and/or enable the `smbnetfs` [daemon](/index.php/Daemon "Dae
 
 In order to access samba shares through GNOME Files, Nemo, Thunar or PCManFM, install the [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) package, available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
-Press `Ctrl+l` and enter `smb://_servername_/_share_` in the location bar to access your share.
+Press `Ctrl+l` and enter `smb://*servername*/*share*` in the location bar to access your share.
 
-The mounted share is likely to be present at `/run/user/_your_UID_/gvfs` in the filesystem.
+The mounted share is likely to be present at `/run/user/*your_UID*/gvfs` in the filesystem.
 
 #### KDE
 

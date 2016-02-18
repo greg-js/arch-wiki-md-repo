@@ -23,10 +23,10 @@ Without going into the details of what the format is composed of, you just need 
 ```
 **# FOOBAR.MID**
 Note ON
-  _Use Instrument #1_
-  _Play Note C1_
-  _Set Volume at 100_
-  _Set Pitch at 50_
+  *Use Instrument #1*
+  *Play Note C1*
+  *Set Volume at 100*
+  *Set Pitch at 50*
 
 ```
 
@@ -43,7 +43,7 @@ So up to this point, you should be able to understand that:
 
 ## GM Bank
 
-General MIDI (GM) is a specification to standardise numerous MIDI-related matters, particularly that of instruments layout in a collection of sounds. A "soundbank" which is GM-compatible means that it meets the criteria of General MIDI, and as long as the MIDI file is also GM-compatible (as in nothing extraordinary is defined - such as introducing a new instrument or having one in a different location of the bank), the playback will be as intended since the bank has the correct instrument/handler for the MIDI message/event. One of the most popular soundbank formats is that of **SoundFont**, particularly _SF2_.
+General MIDI (GM) is a specification to standardise numerous MIDI-related matters, particularly that of instruments layout in a collection of sounds. A "soundbank" which is GM-compatible means that it meets the criteria of General MIDI, and as long as the MIDI file is also GM-compatible (as in nothing extraordinary is defined - such as introducing a new instrument or having one in a different location of the bank), the playback will be as intended since the bank has the correct instrument/handler for the MIDI message/event. One of the most popular soundbank formats is that of **SoundFont**, particularly *SF2*.
 
 *   If you have a soundcard which can make use of soundfonts, you can load a **.sf2** file onto it.
 
@@ -57,7 +57,7 @@ Well, because Windows has a default software synthesizer which acts globally. Ev
 
 ### Hardware
 
-_(More details on soundcards and MIDI, possibly links to SBLive MIDI here...)_
+*(More details on soundcards and MIDI, possibly links to SBLive MIDI here...)*
 
 If you simply need to play a MIDI file on a MIDI-capable hardware device (e.g. a hardware synthesizer), you can use the `aplaymidi` command. To get the list of the available MIDI ports use the command
 
@@ -86,19 +86,19 @@ $ asfxload /path/to/any/file.sf2
 
 ```
 
-The .SF2 file can be any SoundFont. If you have access to _2GMGSMT.SF2_ on Windows, you can use that one.
+The .SF2 file can be any SoundFont. If you have access to *2GMGSMT.SF2* on Windows, you can use that one.
 
 You should be all set now. If you want to play your .mid files in [Audacious](/index.php/Audacious "Audacious"), you will need to configure it as follows:
 
-*   _File > Preferences > Plugins > Input > AMIDI-Plug > Preferences_
-    *   _AMIDI PLug (tab) > Backend selection > ALSA Backend_
+*   *File > Preferences > Plugins > Input > AMIDI-Plug > Preferences*
+    *   *AMIDI PLug (tab) > Backend selection > ALSA Backend*
     *   ALSA Backend (tab)
         *   17:0 Emu10k1 WaveTable Emu10k1 Port 0
         *   17:1 Emu10k1 WaveTable Emu10k1 Port 1
         *   17:2 Emu10k1 WaveTable Emu10k1 Port 2
         *   17:3 Emu10k1 WaveTable Emu10k1 Port 3
-        *   _Mixer settings > Soundcard > SB Audigy 1 [SB0092]_
-        *   _Mixer control > Synth_
+        *   *Mixer settings > Soundcard > SB Audigy 1 [SB0092]*
+        *   *Mixer control > Synth*
 
 ### Software
 
@@ -110,7 +110,7 @@ You can play MIDI files on GNOME Videos and all other players using gstreamer as
 
 You can play MIDI files on [VLC](/index.php/VLC "VLC") if you configure the location of the Sound Font file. Previously you need to install a [sound sample](/index.php/Timidity#SoundFonts "Timidity"), as well as the [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth) package.
 
-In VLC choose _Tools > Preferences_: you have to show all settings. Then, go to _Input/Codecs > Audio codecs > FluidSynth_.
+In VLC choose *Tools > Preferences*: you have to show all settings. Then, go to *Input/Codecs > Audio codecs > FluidSynth*.
 
 And, if you installed e.g. fluidr3 as wiki says, set the location to:
 

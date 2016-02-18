@@ -38,7 +38,7 @@ Fonty se dají také nastavit v Tools -> Preferences -> Advanced -> Fonts
 
 ### Různé vychytávky
 
-*   K odstranění icony v systémovém panelu, spusťte Operu s volbou _-notrayicon_.
+*   K odstranění icony v systémovém panelu, spusťte Operu s volbou *-notrayicon*.
 *   Aby menu vypadalo pěkne, nainstalujte polymer:
 
 ```
@@ -46,9 +46,9 @@ Fonty se dají také nastavit v Tools -> Preferences -> Advanced -> Fonts
 
 ```
 
-následně spusťte **qtconfig** (bude umístěn v /opt/qt/bin) a nastavte _polymer_ téma pro Qt applikace.
+následně spusťte **qtconfig** (bude umístěn v /opt/qt/bin) a nastavte *polymer* téma pro Qt applikace.
 
-*   Naneštěstí Opera těžce závisí na fontech z Windows. Ujistěte se, že máte nainstalován balíček _ttf-ms-fonts_, nebo (ještě lépe) zkopírované truetype fonty z Windows, například v /usr/share/fonts/TTF.
+*   Naneštěstí Opera těžce závisí na fontech z Windows. Ujistěte se, že máte nainstalován balíček *ttf-ms-fonts*, nebo (ještě lépe) zkopírované truetype fonty z Windows, například v /usr/share/fonts/TTF.
 *   K vylepšení výkonu flash pluginu v Opeře, před spuštěním Opery prosťe spusťte:
 
 ```

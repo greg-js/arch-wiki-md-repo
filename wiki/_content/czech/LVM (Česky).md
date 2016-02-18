@@ -34,12 +34,12 @@ LVM je správce logických svazků pro Linux. LVM vytváří abstrakci nad fyzic
 
 Správa logických svazků LVM je snazší, než správa běžných diskových oddílů:
 
-*   _Libovolný počet_ pevných disků lze použit jako jeden velký disk (VG).
-*   Diskové oddíly (LV) mohou _přesahovat_ na několik pevných disků. Logický svazek může mít velikost celého diskového úložiště (tj. všech pevných disků v něm).
-*   Je možné _libovolně_ vytářet, rušit a měnit velikost diskových oddílů (LV) a disků (VG). Na umístění logického svazku ve skupině svazků nezáleží tak, jako je tomu s běžnými diskovými oddíly.
-*   Lze měnit vělikost, vytvářet a rušit diskové oddíly (LV) a disky (VG) _za běhu_ systému. Systémy souborů je pak stále nutné zvětšit či zmenšit. Některé z nich toto za běhu také umožňují.
-*   Disky (VG) a diskové oddíly (LV) lze libovolně _pojmenovat_.
-*   Je možné vytvořit malé diskové oddíly (LV) a ty zvětšovat _dynamicky_ podle míry zaplnění daty. Zvětšení systému souborů musí být stále provedeno ručně. Některé systéstémy souborů toto umožňují za běhu.
+*   *Libovolný počet* pevných disků lze použit jako jeden velký disk (VG).
+*   Diskové oddíly (LV) mohou *přesahovat* na několik pevných disků. Logický svazek může mít velikost celého diskového úložiště (tj. všech pevných disků v něm).
+*   Je možné *libovolně* vytářet, rušit a měnit velikost diskových oddílů (LV) a disků (VG). Na umístění logického svazku ve skupině svazků nezáleží tak, jako je tomu s běžnými diskovými oddíly.
+*   Lze měnit vělikost, vytvářet a rušit diskové oddíly (LV) a disky (VG) *za běhu* systému. Systémy souborů je pak stále nutné zvětšit či zmenšit. Některé z nich toto za běhu také umožňují.
+*   Disky (VG) a diskové oddíly (LV) lze libovolně *pojmenovat*.
+*   Je možné vytvořit malé diskové oddíly (LV) a ty zvětšovat *dynamicky* podle míry zaplnění daty. Zvětšení systému souborů musí být stále provedeno ručně. Některé systéstémy souborů toto umožňují za běhu.
 *   ...
 
 Příklad:
@@ -91,13 +91,13 @@ Před spuštěním instalačních skritpů Arch Linuxu (/arch/setup), je potřeb
 
 #### Rozdělení disků
 
-Dalším krokem je vytvoření diskového oddílu pro LVM. Pro tento oddíl použijte systém souborů typu _Linux LVM_, tedy id oddílu 0x8e (typ systému souborů: 8e). Na každém disku, kde chcete použít LVM, stačí vytvořit jeden diskový oddíl typu LVM. Ten bude využit pro logické svazky, volte tedy vhodnou velikost. Pokud chcete používat pouze LVM, využijte pro diskový oddíl LVM veškeré volné místo na každém disku.
+Dalším krokem je vytvoření diskového oddílu pro LVM. Pro tento oddíl použijte systém souborů typu *Linux LVM*, tedy id oddílu 0x8e (typ systému souborů: 8e). Na každém disku, kde chcete použít LVM, stačí vytvořit jeden diskový oddíl typu LVM. Ten bude využit pro logické svazky, volte tedy vhodnou velikost. Pokud chcete používat pouze LVM, využijte pro diskový oddíl LVM veškeré volné místo na každém disku.
 
 **Tip:** Lze nastavit, aby se všechny LVM oddíly na všech discích tvářily jako jeden velký disk.
 
 #### Vytvoření fyzických zařízení
 
-Nyní je třeba inicializovat vytvořené LVM diskové oddíly. Příkazem `fdisk -l` zjistěte, které diskové oddíly mají typ systému souborů _Linux LVM_ a vytvořte z nich fyzické zařízení LVM:
+Nyní je třeba inicializovat vytvořené LVM diskové oddíly. Příkazem `fdisk -l` zjistěte, které diskové oddíly mají typ systému souborů *Linux LVM* a vytvořte z nich fyzické zařízení LVM:
 
 ```
 # pvcreate /dev/sda2
@@ -164,7 +164,7 @@ Logické svazky můžete sledovat příkazem:
 
 ```
 
-**Note:** Pro funkčnost předchozích příkazů může být pořeba načíst modul _device-mapper_. Toho docílíte příkazem **modprobe dm-mod**.
+**Note:** Pro funkčnost předchozích příkazů může být pořeba načíst modul *device-mapper*. Toho docílíte příkazem **modprobe dm-mod**.
 
 **Tip:** Pro začátek můžete vytvořit relativně malé logické svazky a ty rozšiřovat až podle potřeby. Jednoduše nechte ve skupině svazků volné místo.
 
@@ -186,24 +186,24 @@ Nyní můžete na logických svazcích vytvořit systémy souborů. Poté už je
 
 ```
 
-Pokud instalujete Arch Linux, spusťte /arch/setup, vyberte volbu _Prepare Hard Drive_ a pak přímo krok 3 _Set Filesystem Mountpoints_ a _**přečtěte si sekci [Důležité informace](/index.php/LVM_(%C4%8Cesky)#D.C5.AFle.C5.BEit.C3.A9_informace "LVM (Česky)") před tím, než budete s instalací systému pokračovat!**_
+Pokud instalujete Arch Linux, spusťte /arch/setup, vyberte volbu *Prepare Hard Drive* a pak přímo krok 3 *Set Filesystem Mountpoints* a ***přečtěte si sekci [Důležité informace](/index.php/LVM_(%C4%8Cesky)#D.C5.AFle.C5.BEit.C3.A9_informace "LVM (Česky)") před tím, než budete s instalací systému pokračovat!***
 
 ### Důležité informace
 
 Při používání Arch Linuxu s LVM, či instalaci na LVM dbejte na následující (v závorkách jsou uvedena odpovídající menu instalátoru):
 
 *   Při výběru přípojných bodů vybírejte pouze nově vytvořené logické svazky (použijte: `/dev/mapper/Volgroup00-lvolhome`).
-    NEVYBÍREJTE skutečné oddíly, na kterých jsou logické svazky vytvořeny. Tedy nepoužívejte: `/dev/sda2`. (_Set Filesystem Mountpoints_)
-*   Změňte volbu _USELVM="no"_ na _USELVM="yes"_ v souboru `/etc/rc.conf`. (_Configure System_)
-*   Přidejte _lvm2_ do sekce HOOKS v souboru `/etc/mkinitcpio.conf` těsně před _filesystems_, aby kernel dokázal najít LVM oddíly při bootu. Pokud chcete využívat LVM snímky, přidejte _dm-snapshot_ do proměnné MODULES. (_Configure System_)
-*   Pokud jste na logický svazek umístili i systém souborů kořenového adresáře ( "/" ), znovu sestavte obraz kernelu (_/boot/kernel26.img_) s využitím upraveného souboru `/etc/mkinitcpio.conf`. Tím umožníte zavaděči nalezení oddílu root při bootu. Využijte k tomu níže uvedený příkaz: (_Configure System_)
+    NEVYBÍREJTE skutečné oddíly, na kterých jsou logické svazky vytvořeny. Tedy nepoužívejte: `/dev/sda2`. (*Set Filesystem Mountpoints*)
+*   Změňte volbu *USELVM="no"* na *USELVM="yes"* v souboru `/etc/rc.conf`. (*Configure System*)
+*   Přidejte *lvm2* do sekce HOOKS v souboru `/etc/mkinitcpio.conf` těsně před *filesystems*, aby kernel dokázal najít LVM oddíly při bootu. Pokud chcete využívat LVM snímky, přidejte *dm-snapshot* do proměnné MODULES. (*Configure System*)
+*   Pokud jste na logický svazek umístili i systém souborů kořenového adresáře ( "/" ), znovu sestavte obraz kernelu (*/boot/kernel26.img*) s využitím upraveného souboru `/etc/mkinitcpio.conf`. Tím umožníte zavaděči nalezení oddílu root při bootu. Využijte k tomu níže uvedený příkaz: (*Configure System*)
 
 ```
      mkinitcpio -g /boot/kernel26.img 
 
 ```
 
-*   V konfiguračním systému zavaděče grub: `/boot/grub/menu.lst` použijte správný oddíl pro root, například: (_Install Bootloader_)
+*   V konfiguračním systému zavaděče grub: `/boot/grub/menu.lst` použijte správný oddíl pro root, například: (*Install Bootloader*)
 
 ```
      ...
@@ -282,7 +282,7 @@ V příkladě jsme zmenšili systém souborů více, než bylo potřeba. Učinil
 
 ## Přidání diskového oddílu do skupiny svazků
 
-Aby bylo možné přidat oddíl do skupiny svazků, musíte nejprve změnit jeho typ na _Linux LVM_ (například nástrojem `cfdisk`). Poté zbývá ještě vytvořit z oddílu fyzické zařízení a rozšířit o něj skupinu svazků:
+Aby bylo možné přidat oddíl do skupiny svazků, musíte nejprve změnit jeho typ na *Linux LVM* (například nástrojem `cfdisk`). Poté zbývá ještě vytvořit z oddílu fyzické zařízení a rozšířit o něj skupinu svazků:
 
 ```
 # pvcreate /dev/sdb1
@@ -348,7 +348,7 @@ Snímek logického svazku vytvoříte obdobně jako samotný logický svazek:
 
 Takto můžete změnit méně než 100 MB dat, než se svazek snímku zaplní.
 
-Aby systém nabootoval, je potřeba mít v proměnné MODULES souboru `/etc/mkinitcpio.conf` uveden modul _dm-snapshot_. Pokud toto provedete na již používaném systému, nezapomeňte přegenerovat obraz jádra:
+Aby systém nabootoval, je potřeba mít v proměnné MODULES souboru `/etc/mkinitcpio.conf` uveden modul *dm-snapshot*. Pokud toto provedete na již používaném systému, nezapomeňte přegenerovat obraz jádra:
 
 ```
 # mkinitcpio -g /boot/kernel26.img
@@ -370,7 +370,7 @@ Primárním účelem snímku je poskytnout zmraženou kopii systému souborů pr
 
 ```
 
-*   Zkuste předcházet příkazy slovem _lvm_ následovně:
+*   Zkuste předcházet příkazy slovem *lvm* následovně:
 
 ```
 # lvm pvdisplay

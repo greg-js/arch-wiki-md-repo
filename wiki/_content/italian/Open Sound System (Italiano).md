@@ -149,7 +149,7 @@ $ vmixctl attach device
 
 ```
 
-dove _device_ è la scheda audio, eg., /dev/oss/oss_envy240/pcm0 .
+dove *device* è la scheda audio, eg., /dev/oss/oss_envy240/pcm0 .
 
 Per evitare di rieseguire questo comando manualmente in futuro, è possibile aggiungere a /usr/lib/oss/soundon.user, come suggerito in [questo articolo](http://www.opensound.com/wiki/index.php/Tips_And_Tricks#Changing_the_default_sound_output).
 
@@ -377,15 +377,15 @@ Cercare la linea che dice qualcosa di simile a `/dev/dsp -> /dev/oss/<SOME_CARD_
 
 Se si possiede una periferica audio HDAudio, è molto probabile che sia necessario aggiustare alcune regolazioni del mixer prima che l'audio funzioni correttamente.
 
-Le periferiche HDAudio sono molto potenti in questo senso e possono contenere molti piccolo circuiti (chiamati _widgets_) che possono sempre essere regolati via software. Questi controlli sono disponbili nel mixer, e possono essere usati, per esempio, per rimappare un jack per le cuffie in un jack di ingresso piuttosto che in uno di uscita.
+Le periferiche HDAudio sono molto potenti in questo senso e possono contenere molti piccolo circuiti (chiamati *widgets*) che possono sempre essere regolati via software. Questi controlli sono disponbili nel mixer, e possono essere usati, per esempio, per rimappare un jack per le cuffie in un jack di ingresso piuttosto che in uno di uscita.
 
-Comunque, c'è un effetto collaterale, principalmente perchè lo standard HDAudio è più flessibile di quello che dovrebbe essere, e perchè i rivenditori spesso si preoccupano del corretto funzionamento soltanto dei loro _driver ufficiali_
+Comunque, c'è un effetto collaterale, principalmente perchè lo standard HDAudio è più flessibile di quello che dovrebbe essere, e perchè i rivenditori spesso si preoccupano del corretto funzionamento soltanto dei loro *driver ufficiali*
 
 Quindi quando si usano periferiche HDAudio, spesso si troveranno controlli mixer disorganizzati che non funzionano per niente nella configurazione di default e si rende necessario provare ogni combinazione dei controlli del mixer fino a raggiungere una configurazione funzionante.
 
 #### Come risolvere
 
-Aprire <tt>ossxmix</tt> e provare a cambiare ogni configurazione del mixer nell' _area centrale_, che contiene i controlli specifici della scheda audio, come spiegato nella precedente sezione "[Regolazione del Volume](/index.php/OSS_(Italiano)#Regolazione_del_Volume "OSS (Italiano)")".
+Aprire <tt>ossxmix</tt> e provare a cambiare ogni configurazione del mixer nell' *area centrale*, che contiene i controlli specifici della scheda audio, come spiegato nella precedente sezione "[Regolazione del Volume](/index.php/OSS_(Italiano)#Regolazione_del_Volume "OSS (Italiano)")".
 
 Probabilmente si vorrà impostare un programma per registrare/riprodurre continuamente in background (e.g. `ossrecord -` per registrare oppure `osstest -lV` per riprodurre), mentre si stanno cambiando le impostazioni del mixer.
 
@@ -393,11 +393,11 @@ Probabilmente si vorrà impostare un programma per registrare/riprodurre continu
 *   Per ogni opzione, provare a cambiare l'opzione selezionata, provando tutte le possibili combinazione.
 *   Se si ottiene del rumore, provare ad abbassare e/o a silenziare alcuni controlli volume fino ad individuare la sorgente del rumore.
 
-Nota bene che **non** è necessario cambiare nessuna impostazione nell' _area superiore o nell'_ area inferiore_, dal momento che esse sono impostazioni relativa al mixer virtuale <tt>vmix</tt>._
+Nota bene che **non** è necessario cambiare nessuna impostazione nell' *area superiore o nell'* area inferiore*, dal momento che esse sono impostazioni relativa al mixer virtuale <tt>vmix</tt>.*
 
-*   Modificare `/usr/lib/oss/conf/oss_hdaudio.conf` s commentando e modificando _hdaudio_noskip=0_ con un valore da 0 a 7 che può rendere disponibili più opzioni relativa ai jack in ossmix.
+*   Modificare `/usr/lib/oss/conf/oss_hdaudio.conf` s commentando e modificando *hdaudio_noskip=0* con un valore da 0 a 7 che può rendere disponibili più opzioni relativa ai jack in ossmix.
 
-E' stato necessario modificarlo a _hdaudio_noskip=7_ per attivare gli altoparlanti posteriori e il subwoofer sul computer portatile e riavviare oss per applicare i cambiamenti `/etc/rc.d/oss restart`
+E' stato necessario modificarlo a *hdaudio_noskip=7* per attivare gli altoparlanti posteriori e il subwoofer sul computer portatile e riavviare oss per applicare i cambiamenti `/etc/rc.d/oss restart`
 
 ### Suono disturbato con gli MMS in totem
 
@@ -474,7 +474,7 @@ Di default la frequenza di campionamento è 48000hz. Ci sono diverse situazioni 
 
 Alcuni esempi di frequenze di campionamento:
 
-*   44100hz - Frequenza di campionamento dello standard [Red Book](https://en.wikipedia.org/wiki/Red_Book_(audio_CD_standard) "wikipedia:Red Book (audio CD standard)") per i CD audio.
+*   44100hz - Frequenza di campionamento dello standard [Red Book](https://en.wikipedia.org/wiki/Red_Book_(audio_CD_standard) per i CD audio.
 *   88000hz - Frequenza di campionamento dei [SACD](https://en.wikipedia.org/wiki/Super_Audio_CD "wikipedia:Super Audio CD") ad alta definizione. E' raro che la scheda madre supporti questo tipo di frequenza.
 *   96000hz - Frequenza di campionamento della maggior parte dei download audio ad alta definizione. Se la scheda madre è una scheda madre [AC'97](https://en.wikipedia.org/wiki/AC%2797 "wikipedia:AC'97"), probabilmente questa sarà la frequenza più alta.
 *   192000hz - Frequenza di campionamento dei BluRay e di alcuni (molto pochi) download ad alta definizione. Il supporto per ricevitori audio esterni è limitato alle periferiche high-end. Non tutte le schede madri lo supportano. Un esempio di chipset di una scheda madre che potrebbe supportarlo include l'[Intel HDA audio](https://en.wikipedia.org/wiki/Intel_High_Definition_Audio "wikipedia:Intel High Definition Audio").

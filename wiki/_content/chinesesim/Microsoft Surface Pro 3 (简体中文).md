@@ -44,7 +44,7 @@ Surface Pro 3有三种启动模式 [explained 这里](http://www.microsoft.com/s
 
 **Note:** 这会导致启动时有一个丑陋的红色背景
 
-进入UEFI设置选择_Secure Boot Control > Disable_. 现在接着安装. [Microsoft 更多信息](http://www.microsoft.com/surface/en-sg/support/warranty-service-and-recovery/how-to-use-the-bios-uefi)
+进入UEFI设置选择*Secure Boot Control > Disable*. 现在接着安装. [Microsoft 更多信息](http://www.microsoft.com/surface/en-sg/support/warranty-service-and-recovery/how-to-use-the-bios-uefi)
 
 ### 开启Secure Boot启动安装镜像
 

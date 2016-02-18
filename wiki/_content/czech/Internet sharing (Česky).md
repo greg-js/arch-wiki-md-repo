@@ -18,7 +18,7 @@ Vysvětlím vám druhý způsob.
 
 1.  Nainstalujte druhou síťovou kartu do PC1.
 2.  Propojte PC pomocí kříženého kabelu.
-3.  Předpokládejme že první karta (s internetem) je _**eth0**_ a druhá je _**eth1**_. (If those two keep switching at every boot read [this](https://wiki.archlinux.org/index.php/Udev#Mixed_Up_Devices.2C_Sound.2FNetwork_Cards_Changing_Order_Each_Boot) ).
+3.  Předpokládejme že první karta (s internetem) je ***eth0*** a druhá je ***eth1***. (If those two keep switching at every boot read [this](https://wiki.archlinux.org/index.php/Udev#Mixed_Up_Devices.2C_Sound.2FNetwork_Cards_Changing_Order_Each_Boot) ).
 4.  Konfigurace druhé síťové karty s:
 
     	**IP:** 192.168.0.1
@@ -26,14 +26,12 @@ Vysvětlím vám druhý způsob.
     	**Netmask:** 255.255.255.0
 
     nebo zadejte v konzoli (jako root)
-
     ```
     ifconfig eth1 192.168.0.1 netmask 255.255.255.0
     ifconfig eth1 up
     ```
 
 5.  Zadejte stejné informace v souboru **/etc/rc.conf** so that this card is set up correctly earch time your computer starts. **Poznámka**: pokuď používáte **Wicd**, nemusíte to udělat.
-
     ```
     eth1="eth1 192.168.0.1 netmask 255.255.255.0"
     INTERFACES=(lo eth0 eth1)
@@ -42,7 +40,6 @@ Vysvětlím vám druhý způsob.
 6.  Povolení předávání paketů. `echo 1 > /proc/sys/net/ipv4/ip_forward` 
 7.  Editujte `/etc/sysctl.d/30-ipforward.conf` nastavte 1 u net.ipv4.ip_forward (**net.ipv4.ip_forward=1**). To umožní uchování změny po restartu.
 8.  Nainstalujte iptables(Pokuď ještě nemáte) a nastavte pravidlo pro přesměrování internetu do PC2 a uložte. iptables.
-
     ```
     pacman -S iptables
     iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE

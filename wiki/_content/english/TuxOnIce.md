@@ -137,7 +137,7 @@ To change the compressor used by TuxOnIce, for example, edit `/etc/pm/sleep.d/00
  case $1 in
  hibernate)
  #Possible compressors include lzo, lzf, and none
- _echo none > /sys/power/tuxonice/compression/algorithm_
+ *echo none > /sys/power/tuxonice/compression/algorithm*
 ;;
 
 ```

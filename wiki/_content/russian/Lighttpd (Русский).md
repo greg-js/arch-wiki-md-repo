@@ -96,7 +96,6 @@ lighttpd доступ в extra репозитории
 Теперь нужно включить эти настройки в `/etc/lighttpd/lighttpd.conf`:
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 include "conf.d/mime.conf"
 
@@ -111,7 +110,6 @@ include "conf.d/mime.conf"
 Этот модуль позволяет выполнять различные CGI программы. Пример конфигурации CGI модуля приведён ниже:
 
  `/etc/lighttpd/conf.d/cgi.conf` 
-
 ```
 server.modules += ( "mod_alias", "mod_cgi" )
 
@@ -149,7 +147,6 @@ $HTTP["url"] =~ "^/cgi-bin" {
 Следующее содержимое нужно добавить в файл конфигурации
 
  `/etc/lighttpd/conf.d/fastcgi.conf` 
-
 ```
 server.modules += ( "mod_fastcgi" )
 
@@ -177,7 +174,6 @@ fastcgi.server = (
 Проверяем, что php-cgi работает:
 
  `$ php-cgi --version` 
-
 ```
 PHP 5.3.8 with Suhosin-Patch (cgi-fcgi) (built: Sep 11 2011 10:04:49)
 Copyright (c) 1997-2011 The PHP Group
@@ -186,8 +182,7 @@ Zend Engine v2.3.0, Copyright (c) 1998-2011 Zend Technologies
 
 Если вы увидели похожий вывод, значит всё установлено правильно.
 
-**Обратите внимание:** Если вы получаете ошибки, подобные этим "_No input file found_" при попытке получить доступ к вашему php файлу, убедитесь, что следующие директивы активированы в `/etc/php/php.ini`: `/etc/php.ini` 
-
+**Обратите внимание:** Если вы получаете ошибки, подобные этим "*No input file found*" при попытке получить доступ к вашему php файлу, убедитесь, что следующие директивы активированы в `/etc/php/php.ini`: `/etc/php.ini` 
 ```
 cgi.fix_pathinfo=1
 open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/another/path:/second/path
@@ -200,7 +195,6 @@ open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/another/path:/second/pa
 Чтобы lighttpd мог работать с php в `/etc/lighttpd/conf.d/fastcgi-php.conf` добавляем
 
  `/etc/lighttpd/conf.d/fastcgi-php.conf` 
-
 ```
 server.modules += ( "mod_fastcgi" )
 
@@ -251,7 +245,6 @@ fastcgi.map-extensions = ( ".php3" => ".php", ".php4" => ".php", ".php5" => ".ph
 В `/etc/lighttpd/conf.d/fastcgi-php.conf` добавляем:
 
  `/etc/lighttpd/conf.d/fastcgi-php.conf` 
-
 ```
 server.modules += ( "mod_fastcgi" )
 
@@ -279,7 +272,6 @@ SSI (Server Side Includes — включения на стороне серве�
 Чтобы добавить поддержку SSI в Lighttpd добавляем следующие настройки в `/etc/lighttpd/conf.d/ssi.conf`:
 
  `/etc/lighttpd/conf.d/ssi.conf` 
-
 ```
 server.modules += ( "mod_ssi" )
 
@@ -314,7 +306,6 @@ ssi.extension              = ( ".html", ".shtml" )
 Чтобы включить SSL для всего HTTP-сервера (вам также нужно указать порт сервера 443):
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 ssl.engine = "enable" 
 ssl.pemfile = "/etc/lighttpd/certs/www.example.com.pemm"
@@ -323,7 +314,6 @@ ssl.pemfile = "/etc/lighttpd/certs/www.example.com.pemm"
 Чтобы включить SSL в дополнение к HTTP:
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 $SERVER["socket"] == ":443" {
    ssl.engine = "enable" 
@@ -334,7 +324,6 @@ $SERVER["socket"] == ":443" {
 Если вы хотите использовать другой сайт при переходе на HTTPS, вам нужно указать другую директорию в качестве document-root используя сокет (в данном случае 443 порт) в качестве условия:
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 $SERVER["socket"] == ":443" {
    server.document-root = "/srv/ssl" # use your ssl directory here
@@ -346,7 +335,6 @@ $SERVER["socket"] == ":443" {
 Вы также можете использовать named-based виртуальным хостинг, чтобы реализовать несколько SSL серверов:
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 $HTTP["host"] == "www.example.org" {
    ssl.pemfile = "/etc/lighttpd/certs/www.example.org.pem" 
@@ -359,7 +347,6 @@ $HTTP["host"] == "mail.example.org" {
 **Обратите внимание:** [SNI](http://en.wikipedia.org/wiki/Server_Name_Indication) поддерживается не всеми браузерами. [Подробнее](http://en.wikipedia.org/wiki/Server_Name_Indication#Support). IP-based виртуальный хостинг лишён этого недостатка.
 
 **Tip:** Некоторые php-скрипты пытаются определить HTTPS, проверяя значение переменной $_SERVER['HTTPS']. Чтобы разрешить это, вам нужно подключить модуль setenv и передать соответствующую опцию. Пример настройки: `/etc/lighttpd/lighttpd.conf` 
-
 ```
 server.modules = ( ... "mod_setenv", ... )
 
@@ -381,7 +368,6 @@ mod_redirect должен быть включён:
 Перенаправляем трафик для домена example.org:
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 $SERVER["socket"] == ":80" {
    $HTTP["host"] =~ "example.org" {
@@ -394,7 +380,6 @@ $SERVER["socket"] == ":80" {
 Перенаправляем запросы на HTTPS для части сайта (в примере ниже - `/secure`):
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 $SERVER["socket"] == ":80" {
    $HTTP["url"] =~ "^/secure|^/phpmyadmin" {
@@ -406,7 +391,6 @@ $SERVER["socket"] == ":80" {
 Перенаправляем весь трафик на HTTPS:
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 $SERVER["socket"] == ":80" {
    $HTTP["host"] =~ "(.*)" {
@@ -435,7 +419,6 @@ $SERVER["socket"] == ":80" {
 В `/etc/lighttpd/conf.d/compress.conf` вносим:
 
  `/etc/lighttpd/conf.d/compress.conf` 
-
 ```
 server.modules += ( "mod_compress" )
 
@@ -448,7 +431,6 @@ compress.filetype           = ("text/plain", "text/html", "text/javascript", "te
 
  `/etc/lighttpd/lighttpd.conf`  `include "conf.d/compress.conf"` 
 **Tip:** Чтобы каталог, в котором Lighttpd хранит сжатые файлы регулярно очищался от старых, неиспользуемых файлов, можно использовать следующий скрипт в качестве задания Cron: `/etc/cron.daily/lighttpd` 
-
 ```
 #!/bin/bash
 
@@ -459,7 +441,6 @@ find /var/cache/lighttpd/compress -type f -mtime +10 | xargs -r rm
 В данном примере будут удалены все файлы, которые старше 10 дней.
 
 **Tip:** Вы также можете использовать условия (имя хоста или url), чтобы задать произвольный каталог для сжатых фавйлов. `/etc/lighttpd/lighttpd.conf` 
-
 ```
 $HTTP["host"] == "docs.example.org" {
    compress.cache-dir = "/srv/http/cache/docs.example.org/" 
@@ -480,7 +461,6 @@ $HTTP["host"] == "docs.example.org" {
 Для ускорения загрузки статических файлов можно управлять кешем браузера пользователя через заголовки Expires и Cache-Control. Для этого в Lighttpd используется mod_expire.
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 server.modules += ( "mod_expire" )
 
@@ -495,7 +475,6 @@ expire.url = (
 Можно также перечислить отдельные расширения файлов:
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 server.modules += ( "mod_expire" )
 
@@ -512,7 +491,6 @@ expire.url = (
 Альтернативу предыдущему листингу:
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 server.modules += ( "mod_expire" )
 
@@ -529,7 +507,6 @@ $HTTP["url"] =~ "\.(jpe?g|gif|png|css|js)$" {
 Первый способ заключается в изменении server.document-root в зависимости от содержимого заголовка "host".
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 $HTTP["host"] == "www.example1.com" {
    server.document-root = "/srv/vhosts/www.example1.com/http"
@@ -545,7 +522,6 @@ $HTTP["host"] == "www.example2.com" {
 ```
 
 **Обратите внимание:** Не забудьте предварительно создать необходимые каталоги и назначить им соответствующих владельцев (http:http).
-
 ```
 # mkdir -p /srv/vhosts/www.exmaple1.com/http
 # mkdir -p /srv/vhosts/www.exmaple2.com/http
@@ -581,7 +557,6 @@ server-root + default-host + document-root
 В качестве примера приведём следующий:
 
  `/etc/lighttpd/conf.d/simple_vhost.conf` 
-
 ```
 server.modules += ( "mod_simple_vhost" )
 
@@ -615,7 +590,6 @@ simple-vhost.document-root = "http"
 *   %_ => full domain name
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 server.modules = ( ... "mod_evhost", ... )
 evhost.path-pattern = "/srv/vhosts/%0/http/"
@@ -631,12 +605,11 @@ evhost.path-pattern = "/srv/vhosts/%0/http/"
 
  `/etc/lighttpd/lighttpd.conf`  `dir-listing.activate = "enable"` 
 
-Листинг включается для всех каталогов, в корне которых нет файлов перечисленных в директиве _index-file.names_.
+Листинг включается для всех каталогов, в корне которых нет файлов перечисленных в директиве *index-file.names*.
 
 Чтобы включить листинг для отдельного каталога укажите следующее:
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 $HTTP["url"] =~ "^/download($|/)" {
    dir-listing.activate = "enable" 
@@ -658,7 +631,6 @@ $HTTP["url"] =~ "^/download($|/)" {
 Запрет доступа к сайту для определённого IP:
 
  `/etc/lighttpd/lighttpd,conf` 
-
 ```
 $HTTP["remoteip"] == "202.54.1.1" {
    url.access-deny = ( "" )
@@ -668,7 +640,6 @@ $HTTP["remoteip"] == "202.54.1.1" {
 Ограничение доступа к каталогу `/libraries`:
 
  `/etc/lighttpd/lighttpd,conf` 
-
 ```
 $HTTP["url"] =~ "^/libraries/" {
    url.access-deny = ("")
@@ -678,7 +649,6 @@ $HTTP["url"] =~ "^/libraries/" {
 Запрет доступа к каталогу `/stats` всех кроме IP адресов 200.19.1.5 и 210.45.2.7:
 
  `/etc/lighttpd/lighttpd,conf` 
-
 ```
 $HTTP["remoteip"] !~ "200\.19\.1\.5|210\.45\.2\.7" {
    $HTTP["url"] =~ "^/stats/" {
@@ -690,7 +660,6 @@ $HTTP["remoteip"] !~ "200\.19\.1\.5|210\.45\.2\.7" {
 Запрет доступа к файлам jpg, jpeg, png если запрос приходит не с www.example.com (защита от прямых ссылок):
 
  `/etc/lighttpd/lighttpd,conf` 
-
 ```
 $HTTP["referer"] !~ "^($|http://www\.example\.org)" {
    url.access-deny = ( ".jpg", ".jpeg", ".png" )
@@ -698,7 +667,6 @@ $HTTP["referer"] !~ "^($|http://www\.example\.org)" {
 ```
 
 **Важно:** При совместном использовании директив url.access-deny и server.error-handler-404 при запросе запрещённого контента запросы будут направляться согласно директиве server.error-handler-404 ([Подробнее](http://redmine.lighttpd.net/issues/1727)).Чтобы этого избежать необходимо добавить server.error-handler-404 = "forbidden" внутрь условия, содержащего url.access-deny. Пример: `/etc/lighttpd/lighttpd.conf` 
-
 ```
 $HTTP["host"] =~ "mysite\.com" {
    server.document-root = "/srv/http/mysite.com"
@@ -792,7 +760,6 @@ ldap backend обычно выполняет следующие действия
 ### Пример конфигурации
 
  `/etc/lighttpd/conf.d/auth.conf` 
-
 ```
 server.modules += ( "mod_auth" )
 ## отладка
@@ -866,7 +833,6 @@ $HTTP["url"] =~ "/server-info|/protected-folder/" {
 Чтобы установить кодировку для статических файлов, нужно добавить charset=utf-8 в директиве mimetype.assign. Например:
 
  `/etc/lighttpd/conf.d/mime.conf` 
-
 ```
 mimetype.assign             = (
   ".css"          =>      "text/css; charset=utf-8",
@@ -899,7 +865,6 @@ mimetype.assign             = (
 Пример конфигурации при использовании виртуальных хостов:
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 server.modules = (
    ... "mod_proxy", ...
@@ -917,7 +882,6 @@ $HTTP["host"] =~ "example\.com" {
 Можно также перенапрвлять только скрипты с определённым расширением:
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 server.modules = (
    ... "mod_proxy", ...
@@ -935,7 +899,6 @@ $HTTP["host"] =~ "example\.com" {
 В качестве альтернативы можно использовать условие $HTTP["url"]:
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 server.modules = (
    ... "mod_proxy", ...
@@ -954,7 +917,6 @@ $HTTP["host"] =~ "example\.com" {
 Для распределения нагрузки можно использовать следующие настройки:
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 server.modules = (
    ... "mod_proxy", ...
@@ -986,7 +948,6 @@ $SERVER["socket"] == ":80" {
 Отключение Keep-Alive может помочь вашему серверу, если вы страдаете от большого количества дескрипторов файлов. Значения по умолчанию:
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 server.max-keep-alive-requests = 16
 server.max-keep-alive-idle = 5
@@ -999,7 +960,6 @@ server.max-write-idle = 360
 Если сервер обрабатывает несколько соединений сразу под высокой нагрузкой (предположим, 500 соединений одновременно в течение 24 часов), вы можете столкнуться с проблемой нехватки дескрипторов файлов
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 server.max-keep-alive-requests = 4
 server.max-keep-alive-idle = 4
@@ -1053,7 +1013,6 @@ Lighttpd - сервер, работающий в один поток. Его о�
 Раскоментируем следующие директивы в `/etc/php/php.ini`:
 
  `/etc/php/php.ini` 
-
 ```
 extension=mcrypt.so
 extension=mysql.so
@@ -1066,7 +1025,6 @@ extension=mysql.so
 Затем конфигурируем Lighttpd:
 
  `/etc/lighttpd/conf.d/phpmyadmin.conf` 
-
 ```
 # Подкючаем необходимые модули, если этого не было сделано раньше
 server.modules += ( "mod_alias", "mod_access", "mod_redirect", "mod_rewrite" )
@@ -1078,7 +1036,6 @@ url.rewrite = ( "^/phpMyAdmin(/.*)?$" => "/phpmyadmin$1" )
 Если вы хотите, чтобы phpMyAdmin был доступен только по защищённому протоколу добавьте следюущие настройки:
 
  `/etc/lighttpd/conf.d/phpmyadmin.conf` 
-
 ```
 $SERVER["socket"] == ":80" {
    $HTTP["url"] =~ "^/phpmyadmin" {
@@ -1090,7 +1047,6 @@ $SERVER["socket"] == ":80" {
 Вы также можете ограничить доступ к phpMyAdmin для определённых IP адресов:
 
  `/etc/lighttpd/conf.d/phpmyadmin.conf` 
-
 ```
 $HTTP["remoteip"] != "127.0.0.1" {
    $HTTP["url"] =~ "^/phpmyadmin" {
@@ -1140,7 +1096,6 @@ $HTTP["remoteip"] != "127.0.0.1" {
 Настраиваем Lighttpd (согласно нижеприведённые настройки wiki будет доступна по адресу [http://mysite/wiki](http://mysite/wiki)):
 
  `/etc/lighttpd/conf.d/mediawiki.conf` 
-
 ```
 # Подкючаем необходимые модули, если этого не было сделано раньше
 server.modules += ( "mod_alias", "mod_access", "mod_redirect", "mod_rewrite" )
@@ -1193,14 +1148,12 @@ $HTTP["url"] =~ "^/wiki/docs/" {
 Теперь вы можете перейти по адресу [http://localhost/wiki](http://localhost/wiki) для утсановки.
 
 **Tip:** Для получения коротких URL в `/usr/share/webapps/mediawiki/LocalSettings.php` нужно добавить: `/usr/share/webapps/mediawiki/LocalSettings.php` 
-
 ```
 $wgArticlePath = "/wiki/$1";
 $wgUsePathInfo = true;
 ```
 
 **Tip:** Вместо директивы server.error-handler-404 = /wiki/index.php можно использовать следующие правила перезаписи: `/etc/lighttpd/conf.d/mediawiki.conf` 
-
 ```
 url.rewrite-if-not-file = (
    "^/wiki/(mw-)?config(/.*)?$" => "$0",
@@ -1213,7 +1166,6 @@ url.rewrite-if-not-file = (
 Если хотите использовать поддомен для wiki или Mediawiki будет единствуенной CMS на вашем сайте, то настройки Lighttpd будут выглядеть следующим образом:
 
  `/etc/lighttpd/conf.d/mediawiki.conf` 
-
 ```
 # Подкючаем необходимые модули, если этого не было сделано раньше
 server.modules += ( "mod_alias", "mod_access", "mod_redirect", "mod_rewrite" )
@@ -1258,14 +1210,12 @@ $HTTP["host"] =~ "mysite\.com" { # для поддомена "wiki\.mysite\.com"
 ```
 
 **Tip:** Для получения коротких URL в `/usr/share/webapps/mediawiki/LocalSettings.php` нужно добавить: `/usr/share/webapps/mediawiki/LocalSettings.php` 
-
 ```
 $wgArticlePath = "/$1";
 $wgUsePathInfo = true;
 ```
 
 **Tip:** Вместо директивы server.error-handler-404 = /index.php можно использовать следующие правила перезаписи: `/etc/lighttpd/conf.d/mediawiki.conf` 
-
 ```
 url.rewrite-if-not-file = (
    "^/(mw-)?config(/.*)?$" => "$0",
@@ -1284,7 +1234,6 @@ url.rewrite-if-not-file = (
 Затем в файле `/usr/share/webapps/mediawiki/LocalSettings.php` добавляем:
 
  `/usr/share/webapps/mediawiki/LocalSettings.php` 
-
 ```
 $wgUseTeX           = true;
 $wgMaxShellMemory = 8000000;
@@ -1297,7 +1246,6 @@ $wgMaxShellTime = 300;
 Если MediaWiki Установлена в папку wiki, то конфиг будет выглядеть следующим образом:
 
  `/etc/lighttpd/conf.d/mediawiki.conf` 
-
 ```
 $HTTP["scheme"] == "http" {
    $HTTP["url"] =~ "^/wiki/(.*)UserLogin" {
@@ -1326,7 +1274,6 @@ $HTTP["scheme"] == "http" {
 #### Вариант 1: server.error-handler-404
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 $HTTP["host"] =~ "mysite\.com$" { # "drupal\.mysite\.com" для поддомена
    server.document-root = "/usr/share/webapps/drupal"
@@ -1341,7 +1288,6 @@ $HTTP["host"] =~ "mysite\.com$" { # "drupal\.mysite\.com" для поддоме�
 #### Вариант 2: mod_rewrite
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 $HTTP["host"] =~ "mysite\.com$" { # "drupal\.mysite\.com" для поддомена
    server.document-root = "/usr/share/webapps/drupal"
@@ -1365,7 +1311,6 @@ $HTTP["host"] =~ "mysite\.com$" { # "drupal\.mysite\.com" для поддоме�
 Для того, чтобы в MODX заработали "Дружественные URL" в конфиг Lighttpd внесите следующие строки:
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 url.rewrite-if-not-file += (
    "^/$" => "index.php",

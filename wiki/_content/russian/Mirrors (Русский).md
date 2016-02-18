@@ -59,7 +59,7 @@
 
 **Совет:** Раскомментируйте 5 наиболее подходящих вам зеркал и поместите их наверху файла mirrorlist. Таким образом, будет легко потом устанавливать приоритет, меняя их местами, если у первого зеркала в списке начнутся какие-нибудь проблемы. Это также упрощает слияние файлов mirrorlist при обновлениях списка зеркал.
 
-Также вы можете указать зеркала в `/etc/pacman.conf`. Для репозитория _core_ стандартная установка выглядит следующим образом:
+Также вы можете указать зеркала в `/etc/pacman.conf`. Для репозитория *core* стандартная установка выглядит следующим образом:
 
 ```
 [core]
@@ -67,7 +67,7 @@ Include = /etc/pacman.d/mirrorlist
 
 ```
 
-Например, вы хотите использовать зеркало "HostEurope" для _core_. Тогда добавьте его перед `Include`:
+Например, вы хотите использовать зеркало "HostEurope" для *core*. Тогда добавьте его перед `Include`:
 
 ```
 [core]
@@ -76,20 +76,20 @@ Include = /etc/pacman.d/mirrorlist
 
 ```
 
-Теперь pacman будет первым делом пытаться соединиться с этим зеркалом. Аналогично следует сделать и для других репозиториев: _testing_, _extra_, и _community_.
+Теперь pacman будет первым делом пытаться соединиться с этим зеркалом. Аналогично следует сделать и для других репозиториев: *testing*, *extra*, и *community*.
 
 **Обратите внимание:** Если вы указываете зеркала напрямую в `pacman.conf`, вам следует использовать одно и то же зеркало для всех репозиториев. В противном случае вы можете столкнуться с тем, что будут поставлены несовместимые версии пакетов из разных зеркал (так как зеркала синхронизируются не мгновенно).
 
 ### Обновление базы данных pacman после изменения зеркал
 
-После внесения изменений в `/etc/pacman.d/mirrorlist` (неважно, вручную или с _rankmirrors_) выполните синхронизацию базы данных пакетов pacman:
+После внесения изменений в `/etc/pacman.d/mirrorlist` (неважно, вручную или с *rankmirrors*) выполните синхронизацию базы данных пакетов pacman:
 
 ```
 # pacman -Syyu
 
 ```
 
-**Совет:** Указание сразу двух опций `--refresh` или `-y` заставляет pacman обновлять списки пакетов, даже если pacman уже считает их обновленными. Запуск `pacman -Syyu` _при любой смене зеркала_ является хорошей практикой и позволяет избежать возможных проблем.
+**Совет:** Указание сразу двух опций `--refresh` или `-y` заставляет pacman обновлять списки пакетов, даже если pacman уже считает их обновленными. Запуск `pacman -Syyu` *при любой смене зеркала* является хорошей практикой и позволяет избежать возможных проблем.
 
 ## Статус зеркала
 
@@ -116,7 +116,7 @@ Include = /etc/pacman.d/mirrorlist
 
 Отредактируйте `/etc/pacman.d/mirrorlist.backup`, раскомментировав зеркала для проверки скриптом `rankmirrors`.
 
-Если вы хотите попробовать все зеркала, используйте _sed_ для раскомментирования всех зеркал:
+Если вы хотите попробовать все зеркала, используйте *sed* для раскомментирования всех зеркал:
 
 ```
 # sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
@@ -142,7 +142,7 @@ Include = /etc/pacman.d/mirrorlist
 
 ### Скрипт для получения списка зеркал из Pacman Mirrorlist Generator
 
-[Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/) располагает зеркала на основе географического расположения, доступности и уровне. Вы можете использовать удобный скрипт _armrr_ либо из пакета ([armrr-git](https://aur.archlinux.org/packages/armrr-git/), либо загрузив его напрямую командой `curl -O [https://raw.githubusercontent.com/Gen2ly/armrr/master/armrr](https://raw.githubusercontent.com/Gen2ly/armrr/master/armrr)`), который позволяет на основе данных этого ресурса сгенерировать новый файл `mirrorlist`, создав резервную копию старого. Запустите скрипт без аргументов и введите код страны. Вы можете просмотреть список опций командной строки, набрав `armrr -h`.
+[Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/) располагает зеркала на основе географического расположения, доступности и уровне. Вы можете использовать удобный скрипт *armrr* либо из пакета ([armrr-git](https://aur.archlinux.org/packages/armrr-git/), либо загрузив его напрямую командой `curl -O [https://raw.githubusercontent.com/Gen2ly/armrr/master/armrr](https://raw.githubusercontent.com/Gen2ly/armrr/master/armrr)`), который позволяет на основе данных этого ресурса сгенерировать новый файл `mirrorlist`, создав резервную копию старого. Запустите скрипт без аргументов и введите код страны. Вы можете просмотреть список опций командной строки, набрав `armrr -h`.
 
 ### Используя Reflector
 
@@ -187,7 +187,7 @@ awk -v GG=$Cnt '{if(match($0,GG) != "0")AA="1";if(AA == "1"){if( length($0) != "
 Если вы получаете ошибку о том, что переменная `$arch` не определена, добавьте следующую строку в ваш `/etc/pacman.conf`:
 
 ```
-Architecture = _x86_64_
+Architecture = *x86_64*
 
 ```
 
@@ -203,7 +203,7 @@ Architecture = _x86_64_
 
 ### Старые образы
 
-*   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) — _ISO files only; Does not have any releases since 2006\. Use it only if for getting older ISOs._
+*   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) — *ISO files only; Does not have any releases since 2006\. Use it only if for getting older ISOs.*
 
 ### Сеть TOR
 
@@ -213,7 +213,7 @@ Architecture = _x86_64_
 
 ### Австрия
 
-*   [http://gd.tuwien.ac.at/opsys/linux/archlinux/](http://gd.tuwien.ac.at/opsys/linux/archlinux/) — _Vienna University of Technology_
+*   [http://gd.tuwien.ac.at/opsys/linux/archlinux/](http://gd.tuwien.ac.at/opsys/linux/archlinux/) — *Vienna University of Technology*
 *   [ftp://gd.tuwien.ac.at/opsys/linux/archlinux/](ftp://gd.tuwien.ac.at/opsys/linux/archlinux/)
 
 ### Болгария
@@ -234,20 +234,20 @@ Architecture = _x86_64_
 
 **Cernet**
 
-*   [http://mirrors.zju.edu.cn/archlinux/](http://mirrors.zju.edu.cn/archlinux/) — _Zhejian University_
-*   [http://ftp.sjtu.edu.cn/archlinux/](http://ftp.sjtu.edu.cn/archlinux/) — _Shanghai Jiaotong University_
+*   [http://mirrors.zju.edu.cn/archlinux/](http://mirrors.zju.edu.cn/archlinux/) — *Zhejian University*
+*   [http://ftp.sjtu.edu.cn/archlinux/](http://ftp.sjtu.edu.cn/archlinux/) — *Shanghai Jiaotong University*
 *   [ftp://ftp.sjtu.edu.cn/archlinux/](ftp://ftp.sjtu.edu.cn/archlinux/)
-*   [http://mirrors.ustc.edu.cn/archlinux/](http://mirrors.ustc.edu.cn/archlinux/) — _University of Science and Technology of China_
+*   [http://mirrors.ustc.edu.cn/archlinux/](http://mirrors.ustc.edu.cn/archlinux/) — *University of Science and Technology of China*
 *   [ftp://mirrors.ustc.edu.cn/archlinux/](ftp://mirrors.ustc.edu.cn/archlinux/)
-*   [http://mirrors.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.tuna.tsinghua.edu.cn/archlinux/) — _Tsinghua University_
-*   [http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/) _(ipv4 only)_
-*   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) _(ipv6 only)_
-*   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) — _Lanzhou University_
-*   [http://mirrors.huste.du.cn/archlinux](http://mirrors.huste.du.cn/archlinux) — _Huazhong University of Science and Technology_
+*   [http://mirrors.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.tuna.tsinghua.edu.cn/archlinux/) — *Tsinghua University*
+*   [http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/) *(ipv4 only)*
+*   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) *(ipv6 only)*
+*   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) — *Lanzhou University*
+*   [http://mirrors.huste.du.cn/archlinux](http://mirrors.huste.du.cn/archlinux) — *Huazhong University of Science and Technology*
 
 ### Франция
 
-*   [http://delta.archlinux.fr/](http://delta.archlinux.fr/) — _With Delta package support. Needs xdelta3 package from extra to run._
+*   [http://delta.archlinux.fr/](http://delta.archlinux.fr/) — *With Delta package support. Needs xdelta3 package from extra to run.*
 *   [http://mirror.soa1.org/archlinux](http://mirror.soa1.org/archlinux)
 *   [ftp://mirror:mirror@mirror.soa1.org/archlinux](ftp://mirror:mirror@mirror.soa1.org/archlinux)
 
@@ -272,7 +272,7 @@ Architecture = _x86_64_
 
 ### Индонезия
 
-*   [http://mirror.kavalinux.com/archlinux/](http://mirror.kavalinux.com/archlinux/) — _only from Indonesia_
+*   [http://mirror.kavalinux.com/archlinux/](http://mirror.kavalinux.com/archlinux/) — *only from Indonesia*
 *   [http://kambing.ui.ac.id/archlinux/](http://kambing.ui.ac.id/archlinux/)
 *   [http://repo.ukdw.ac.id/archlinux/](http://repo.ukdw.ac.id/archlinux/)
 
@@ -286,7 +286,7 @@ Architecture = _x86_64_
 
 ### Япония
 
-*   [http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/](http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/) — _NAra Institute of Science and Technology_
+*   [http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/](http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/) — *NAra Institute of Science and Technology*
 *   [http://ftp.kddilabs.jp/Linux/packages/archlinux/](http://ftp.kddilabs.jp/Linux/packages/archlinux/)
 *   [http://srv2.ftp.ne.jp/Linux/packages/archlinux/](http://srv2.ftp.ne.jp/Linux/packages/archlinux/)
 
@@ -299,12 +299,12 @@ Architecture = _x86_64_
 ### Малайзия
 
 *   [http://mirror.oscc.org.my/archlinux/](http://mirror.oscc.org.my/archlinux/)
-*   [http://mirrors.inetutils.net/archlinux/](http://mirrors.inetutils.net/archlinux/) — _ISO and Core_
+*   [http://mirrors.inetutils.net/archlinux/](http://mirrors.inetutils.net/archlinux/) — *ISO and Core*
 
 ### Новая Зеландия
 
 *   [http://mirror.ihug.co.nz/archlinux/](http://mirror.ihug.co.nz/archlinux/)
-*   [http://mirror.ece.auckland.ac.nz/archlinux/](http://mirror.ece.auckland.ac.nz/archlinux/) _NZ only_
+*   [http://mirror.ece.auckland.ac.nz/archlinux/](http://mirror.ece.auckland.ac.nz/archlinux/) *NZ only*
 
 ### Польша
 
@@ -314,9 +314,9 @@ Architecture = _x86_64_
 
 ### Россия
 
-*   [http://hatred.homelinux.net/archlinux/](http://hatred.homelinux.net/archlinux/) — _Vladivostok, without iso, with <sub>[3SPY](http://hatred.homelinux.net/wiki/proekty:3spy:start)</sub> project repos and [**mingw32**](http://hatred.homelinux.net/archlinux/mingw32/os/i686) repo_
-*   [http://mirrors.krasinfo.ru/archlinux/](http://mirrors.krasinfo.ru/archlinux/) — _Krasnoyarsk, Classica-Service Ltd_
-*   [http://mirror.yandex.ru/archlinux/](http://mirror.yandex.ru/archlinux/) — _Moscow, [Yandex](http://www.yandex.ru/) LLC_
+*   [http://hatred.homelinux.net/archlinux/](http://hatred.homelinux.net/archlinux/) — *Vladivostok, without iso, with <sub>[3SPY](http://hatred.homelinux.net/wiki/proekty:3spy:start)</sub> project repos and [**mingw32**](http://hatred.homelinux.net/archlinux/mingw32/os/i686) repo*
+*   [http://mirrors.krasinfo.ru/archlinux/](http://mirrors.krasinfo.ru/archlinux/) — *Krasnoyarsk, Classica-Service Ltd*
+*   [http://mirror.yandex.ru/archlinux/](http://mirror.yandex.ru/archlinux/) — *Moscow, [Yandex](http://www.yandex.ru/) LLC*
 
 ### Сингапур
 
@@ -324,13 +324,13 @@ Architecture = _x86_64_
 
 ### Южно-Африканская Республика
 
-*   [http://ftp.leg.uct.ac.za/pub/linux/arch/](http://ftp.leg.uct.ac.za/pub/linux/arch/) — _University of Cape Town_
+*   [http://ftp.leg.uct.ac.za/pub/linux/arch/](http://ftp.leg.uct.ac.za/pub/linux/arch/) — *University of Cape Town*
 *   [ftp://ftp.leg.uct.ac.za/pub/linux/arch/](ftp://ftp.leg.uct.ac.za/pub/linux/arch/)
-*   [http://mirror.ufs.ac.za/archlinux/](http://mirror.ufs.ac.za/archlinux/) — _University of the Free State_
+*   [http://mirror.ufs.ac.za/archlinux/](http://mirror.ufs.ac.za/archlinux/) — *University of the Free State*
 *   [ftp://mirror.ufs.ac.za/os/linux/distros/archlinux/](ftp://mirror.ufs.ac.za/os/linux/distros/archlinux/)
-*   [http://ftp.wa.co.za/pub/archlinux/](http://ftp.wa.co.za/pub/archlinux/) — _Web Africa Networks_
+*   [http://ftp.wa.co.za/pub/archlinux/](http://ftp.wa.co.za/pub/archlinux/) — *Web Africa Networks*
 *   [ftp://ftp.wa.co.za/pub/archlinux/](ftp://ftp.wa.co.za/pub/archlinux/)
-*   [http://archlinux.mirror.ac.za](http://archlinux.mirror.ac.za) — _TENET — Tertiary Education and Research Network of South Africa_
+*   [http://archlinux.mirror.ac.za](http://archlinux.mirror.ac.za) — *TENET — Tertiary Education and Research Network of South Africa*
 *   [ftp://archlinux.mirror.ac.za](ftp://archlinux.mirror.ac.za)
 
 ### Южная Корея
@@ -340,10 +340,10 @@ Architecture = _x86_64_
 
 ### Соединенные Штаты Америки
 
-*   [http://archlinux.linuxfreedom.com](http://archlinux.linuxfreedom.com) — _Contains numerous ISO images but does not contain the ISO dated 2011.08.19_
+*   [http://archlinux.linuxfreedom.com](http://archlinux.linuxfreedom.com) — *Contains numerous ISO images but does not contain the ISO dated 2011.08.19*
 *   [http://mirror.clarkson.edu/archlinux/](http://mirror.clarkson.edu/archlinux/)
 *   [http://mirror.pointysoftware.net/archlinux/](http://mirror.pointysoftware.net/archlinux/)
-*   [http://il.mirrors.linaxe.net/archlinux/](http://il.mirrors.linaxe.net/archlinux/) — _Server location — Chicago, IL_
+*   [http://il.mirrors.linaxe.net/archlinux/](http://il.mirrors.linaxe.net/archlinux/) — *Server location — Chicago, IL*
 
 ### Вьетнам
 

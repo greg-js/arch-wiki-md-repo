@@ -85,10 +85,10 @@ splashimage /boot/grub/splash.xpm.gz
 `splashimage /boot/grub/splash.xpm.gz`
 错误的路径会导致grub黑屏挂起，并且没有任何提示和光标:-(
 
-5\. 将新的 grub引导图像安装到 `/boot`目录。（将_x_改成你的驱动器编号 (比如`hda`):
+5\. 将新的 grub引导图像安装到 `/boot`目录。（将*x*改成你的驱动器编号 (比如`hda`):
 
 ```
-# install-grub /dev/sd_x_
+# install-grub /dev/sd*x*
 
 ```
 
@@ -98,7 +98,7 @@ splashimage /boot/grub/splash.xpm.gz
 
 #### 黑屏有菜单
 
-Stages 可能没有更新，重新运行`install-grub _(你的/boot分区或者MBR所在分区)_`。然后使用 [checksplash.sh](http://ruslug.rutgers.edu/~mcgrof/grub-images/checksplash.sh)脚本以检测你的stage2 是否支持闪屏图像.
+Stages 可能没有更新，重新运行`install-grub *(你的/boot分区或者MBR所在分区)*`。然后使用 [checksplash.sh](http://ruslug.rutgers.edu/~mcgrof/grub-images/checksplash.sh)脚本以检测你的stage2 是否支持闪屏图像.
 
 #### 黑屏无菜单或者未正确显示
 

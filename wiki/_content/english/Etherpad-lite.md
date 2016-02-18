@@ -27,7 +27,6 @@ If you want to use [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/Po
 At least, don't forget to set a sessionkey, e.g. generate with [pwgen](https://www.archlinux.org/packages/?name=pwgen) and `pwgen -y 10 1` and write it down to:
 
  `/usr/share/webapps/etherpad-lite/settings.json` 
-
 ```
 
 "sessionKey" : "",
@@ -41,7 +40,6 @@ Your Etherpad installation can be extended with plugins listed at the administra
 the default IP is `0.0.0.0`, change it to 127.0.0.1 as assumed later.
 
  `/usr/share/webapps/etherpad-lite/settings.json` 
-
 ```
 
   //IP and port which etherpad should bind at

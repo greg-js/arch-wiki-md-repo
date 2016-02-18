@@ -1,6 +1,6 @@
 The [Apache HTTP Server](https://en.wikipedia.org/wiki/Apache_HTTP_Server "wikipedia:Apache HTTP Server"), or Apache for short, is a very popular web server, developed by the Apache Software Foundation.
 
-Apache is often used together with a scripting language such as PHP and database such as MySQL. This combination is often referred to as a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle) "wikipedia:LAMP (software bundle)") stack (**L**inux, **A**pache, **M**ySQL, **P**HP). This article describes how to set up Apache and how to optionally integrate it with [PHP](/index.php/PHP "PHP") and [MySQL](/index.php/MySQL "MySQL").
+Apache is often used together with a scripting language such as PHP and database such as MySQL. This combination is often referred to as a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle) stack (**L**inux, **A**pache, **M**ySQL, **P**HP). This article describes how to set up Apache and how to optionally integrate it with [PHP](/index.php/PHP "PHP") and [MySQL](/index.php/MySQL "MySQL").
 
 ## Contents
 
@@ -49,7 +49,7 @@ User http
 
 ```
 
-	For security reasons, as soon as Apache is started by the root user (directly or via startup scripts) it switches to this UID. The default user is _http_, which is created automatically during installation.
+	For security reasons, as soon as Apache is started by the root user (directly or via startup scripts) it switches to this UID. The default user is *http*, which is created automatically during installation.
 
 ```
 Listen 80
@@ -225,7 +225,6 @@ You can enable and disable single virtual hosts by commenting or uncommenting th
 A very basic vhost file will look like this:
 
  `/etc/httpd/conf/vhosts/domainname1.dom` 
-
 ```
 <VirtualHost domainname1.dom:80>
     ServerAdmin webmaster@domainname1.dom
@@ -287,7 +286,6 @@ Apache is running a threaded MPM, but your PHP Module is not compiled to be thre
 AH00013: Pre-configuration failed
 httpd.service: control process exited, code=exited status=1
 ```
-
 As an alternative, you can use `mod_proxy_fcgi` (see [#Using php-fpm and mod_proxy_fcgi](#Using_php-fpm_and_mod_proxy_fcgi) below).
 
 To enable PHP, add these lines to `/etc/httpd/conf/httpd.conf`:
@@ -328,7 +326,6 @@ For advanced configuration and extensions, please read [PHP](/index.php/PHP "PHP
 Create `/etc/httpd/conf/extra/php-fpm.conf` with the following content:
 
  `/etc/httpd/conf/extra/php-fpm.conf` 
-
 ```
 <FilesMatch \.php$>
     SetHandler "proxy:unix:/run/php-fpm/php-fpm.sock|fcgi://localhost/"
@@ -386,7 +383,6 @@ HTTPD=/usr/bin/httpd.worker
 Create `/etc/httpd/conf/extra/php-fcgid.conf` with the following content:
 
  `/etc/httpd/conf/extra/php-fcgid.conf` 
-
 ```
 # Required modules: fcgid_module
 
@@ -490,7 +486,6 @@ Apache is running a threaded MPM, but your PHP Module is not compiled to be thre
 you need to replace `mpm_event_module` with `mpm_prefork_module`:
 
  `/etc/httpd/conf/httpd.conf` 
-
 ```
 ~~LoadModule mpm_event_module modules/mod_mpm_event.so~~
 LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
@@ -504,7 +499,6 @@ and restart `httpd.service`.
 You might encounter this error after a recent upgrade. This is only the result of a recent change in `httpd.conf` that you might not have reproduced in your local configuration. To fix it, uncomment the following line.
 
  `/etc/httpd/conf/httpd.conf` 
-
 ```
 LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
 
@@ -517,7 +511,6 @@ Also check [the above](#Apache_is_running_a_threaded_MPM.2C_but_your_PHP_Module_
 If you changed the `max_execution_time` in `php.ini` to a value greater than 30 (seconds), you may still get a `503 Service Unavailable` response from Apache after 30 seconds. To solve this, add a `ProxyTimeout` directive to your http configuration right before the `<FilesMatch \.php$>` block:
 
  `/etc/httpd/conf/httpd.conf` 
-
 ```
 ProxyTimeout 300
 

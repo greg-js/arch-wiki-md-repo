@@ -41,7 +41,7 @@ lspci -nn
 
 ## Installation
 
-_**Installation made with the 2015_12_01 image, which includes the kernel version 4.2.5.**_
+***Installation made with the 2015_12_01 image, which includes the kernel version 4.2.5.***
 
 ### BIOS configuration
 

@@ -92,7 +92,7 @@ DocuWiki 部份外掛會尋找網頁伺服器的根目錄，而不是DokuWiki的
 
 ```
 
-啟動你的網頁伺服器 (_sanity check_)
+啟動你的網頁伺服器 (*sanity check*)
 
 ```
  #/etc/rc.d/lighttpd start
@@ -202,7 +202,7 @@ $HTTP["url"] =~ "^" + var.dokudir + "/conf/" { url.access-deny = ( "" ) }
 
 ```
 
-_這些項目給 dokuwiki 設定基本保全。_ lighttpd 不會用到像 apache 的 .htaccess 檔案。 你*可以*不安裝這些設定，但*絕不*建議這麼做。
+*這些項目給 dokuwiki 設定基本保全。* lighttpd 不會用到像 apache 的 .htaccess 檔案。 你*可以*不安裝這些設定，但*絕不*建議這麼做。
 
 ### 重新啟動 lighttp
 

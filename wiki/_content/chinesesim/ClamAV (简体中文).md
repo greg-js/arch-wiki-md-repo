@@ -49,7 +49,7 @@ $ clamscan -r -i --exclude-dir='^/sys|^/proc|^/dev|^/lib|^/bin|^/sbin' /
 ```
 
 *   如果希望 `clamscan` 删除感染的文件，请使用 `--remove` 参数。
-*   使用 `-l _path/to/file_` 参数可以将 `clamscan` 的日志写入 log 文件。
+*   使用 `-l *path/to/file*` 参数可以将 `clamscan` 的日志写入 log 文件。
 
 ## 疑难解答
 

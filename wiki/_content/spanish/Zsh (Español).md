@@ -155,7 +155,6 @@ $ source ~/.zshrc
 Este es un ejemplo de archivo `.zshrc`:
 
  `~/.zshrc` 
-
 ```
 autoload -U compinit promptinit
 compinit
@@ -172,7 +171,6 @@ Información de como establecer la ruta del sistema por cada usuario en zsh pued
 En resumen, coloque lo siguiente en `~/.zshenv`:
 
  `~/.zshenv` 
-
 ```
 typeset -U path
 path=(~/bin /otras/cosas/en/la/ruta $path)
@@ -185,7 +183,6 @@ Véase también la nota en [#Archivos de configuración](#Archivos_de_configurac
 Quizás la característica más llamativa de Zsh es sus capacidades de autocompletado avanzadas. Como mínimo,active el autocompletado en `.zshrc`. Para habilitar el autocompletado, añada lo siguiente a su `~/.zshrc`:
 
  `~/.zshrc` 
-
 ```
 autoload -U compinit
 compinit
@@ -202,7 +199,7 @@ Para autocompletado mediante flechas de teclados, añada lo siguiente a:
 
  `~/.zshrc`  `zstyle ':completion:*' menu select` 
 
-	_Para activar el menú, pulse tab dos veces._
+	*Para activar el menú, pulse tab dos veces.*
 
 Para el autocompletado de parámetros de comandos en alias, añada lo siguiente a:
 
@@ -236,7 +233,6 @@ Vea también [zshwiki: bindkeys](http://zshwiki.org/home/zle/bindkeys).
 Puede asociarse una aplicación ncurses a una combinación de teclas, pero no aceptará interacciones. Use la variable `BUFFER` para que funcione. El siguiente ejemplo permite a los usuarios abrir ncmpcpp usando `Alt+\`:
 
  `~/.zshrc` 
-
 ```
 ncmpcppShow() { BUFFER="ncmpcpp"; zle accept-line; }
 zle -N ncmpcppShow
@@ -248,7 +244,6 @@ bindkey '^[\' ncmpcppShow
 Este método mantendrá todo lo que haya introducido en la línea antes de llamar a la aplicación
 
  `~/.zshrc` 
-
 ```
 ncmpcppShow() { ncmpcpp <$TTY; zle redisplay; }
 zle -N ncmpcppShow
@@ -260,7 +255,6 @@ bindkey '^[\' ncmpcppShow
 Asociaciones de teclas al estilo de los gestores de archivos gráficos pueden ser muy útiles. El primero deja ir hacia atrás en el historial de directorios (`Alt+Left`), El segundo deja al usuario ir hacia el directorio padre (`Alt+Up`). Además de eso muestran el contenido del directorio.
 
  `~/.zshrc` 
-
 ```
 cdUndoKey() {
   popd      > /dev/null
@@ -290,7 +284,6 @@ bindkey '^[[1;3D'      cdUndoKey
 Añada estas líneas a .zshrc
 
  `~/.zshrc` 
-
 ```
 [[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"    history-beginning-search-backward
 [[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}"  history-beginning-search-forward
@@ -304,7 +297,6 @@ Haciendo esto, solo comandos anteriores que comiencen con la entrada actual se m
 Existe una forma rápida y fácil de establecer un prompt con colores en Zsh. Asegúrese que el prompt está establecido para autocargarse en `.zshrc`. Esto puede hacerse añadiendo las siguientes líneas:
 
  `~/.zshrc` 
-
 ```
 autoload -U promptinit
 promptinit
@@ -378,10 +370,9 @@ username@host ~ %                                                         [0]
 
 ### Dirstack
 
-Zsh puede configurarse para recordar los DIRSTACKSIZE últimos directorio visitados. Esto puede usarse para hacer _cd_ a ellos rápidamente. Tiene que añadir algunas lineas a su archivo de configuración:
+Zsh puede configurarse para recordar los DIRSTACKSIZE últimos directorio visitados. Esto puede usarse para hacer *cd* a ellos rápidamente. Tiene que añadir algunas lineas a su archivo de configuración:
 
  `.zshrc` 
-
 ```
 DIRSTACKFILE="$HOME/.cache/zsh/dirs"
 if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
@@ -415,7 +406,7 @@ Para imprimir el dirstack. Use `cd -<NUM>` para volver a un directorio ya visita
 
 ### Comado de ayuda
 
-Al contrario que [bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)"), _zsh_ no habilita un comando de ayuda integrado `help`. Para usar `help` en zsh, añada lo siguiente a su archivo `zshrc`:
+Al contrario que [bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)"), *zsh* no habilita un comando de ayuda integrado `help`. Para usar `help` en zsh, añada lo siguiente a su archivo `zshrc`:
 
 ```
 autoload -U run-help
@@ -455,7 +446,7 @@ Zsh siempre executa `/etc/zsh/zshenv` y `$ZDOTDIR/.zshenv` así que no cargue en
 
 Si la shell es una shell de inicio de sesión, los comandos son leídos desde `/etc/profile` y después desde `$ZDOTDIR/.zprofile`. Entonces, Si la shell es interactiva, los comando son leídos desde `/etc/zsh/zshrc` y luego desde `$ZDOTDIR/.zshrc`. Finalmente, si la shell es una shell de inicio de sesión, `/etc/zsh/zlogin` y `$ZDOTDIR/.zlogin` son leídos.
 
-Vea tambiénla sección _STARTUP/SHUTDOWN FILES_ de `man zsh`.
+Vea tambiénla sección *STARTUP/SHUTDOWN FILES* de `man zsh`.
 
 ### Rehash persistente
 
@@ -480,11 +471,11 @@ Cambie la shell por defecto antes de eliminar el paquete [zsh](https://www.archl
 Ejecute el siguiente comando:
 
 ```
-$ chsh -s /bin/bash _user_
+$ chsh -s /bin/bash *user*
 
 ```
 
-Úselo por cada usuario con _zsh_ establecida como su shell de inicio de sesión (incluyendo root si fuera necesario). Una vez hecho, el paquete [zsh](https://www.archlinux.org/packages/?name=zsh) puede eliminarse.
+Úselo por cada usuario con *zsh* establecida como su shell de inicio de sesión (incluyendo root si fuera necesario). Una vez hecho, el paquete [zsh](https://www.archlinux.org/packages/?name=zsh) puede eliminarse.
 
 Alternativamente, cambie la shell por defecto a Bash editando `/etc/passwd` como root.
 
@@ -493,14 +484,14 @@ Alternativamente, cambie la shell por defecto a Bash editando `/etc/passwd` como
 Por ejemplo, cambie lo siguiente:
 
 ```
-_username_:x:1000:1000:_Full Name_,,,:/home/_username_:/bin/zsh
+*username*:x:1000:1000:*Full Name*,,,:/home/*username*:/bin/zsh
 
 ```
 
 por esto:
 
 ```
-_username_:x:1000:1000:_Full Name_,,,:/home/_username_:/bin/bash
+*username*:x:1000:1000:*Full Name*,,,:/home/*username*:/bin/bash
 
 ```
 

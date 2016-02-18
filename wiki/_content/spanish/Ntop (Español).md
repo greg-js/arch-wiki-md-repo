@@ -22,7 +22,6 @@
 Seguidamente, tiene que editar el archivo de configuración (`/etc/conf.d/ntop`) y adaptarlo a sus necesidades. A continuación tiene un ejemplo de archivo de configuración, enfocándose en el host para conseguir tanta información de las conexiones de hosts como sea posible:
 
  `/etc/conf.d/ntop` 
-
 ```
 # Parameters que se suministrarán a ntop.
 NTOP_ARGS="-K -W 2323 -i enp1s0,wlp2s0 -M -s -4 -6 -s -u ntop -c -r 30 --w3c -t 3 -a /var/log/ntop/http.log -O /var/log/ntop/ -q --skip-version-check 0"
@@ -32,13 +31,13 @@ NTOP_LOG="/var/log/ntop/ntop.log"
 
 ```
 
-Inicie el servicio _ntop_ de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") y si desea iniciar _ntop_ en el arranque, habilítelo.
+Inicie el servicio *ntop* de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") y si desea iniciar *ntop* en el arranque, habilítelo.
 
 ## Trucos y consejos
 
 ### Interfaz web
 
-Para acceder a la interfaz web de ntop, Introduzca [http://127.0.0.1:3000/](http://127.0.0.1:3000/) en su navegador. Para efectuar cambios en el servidor, tendrá que introducir su usuario (por defecto = _admin_) y su contraseña.
+Para acceder a la interfaz web de ntop, Introduzca [http://127.0.0.1:3000/](http://127.0.0.1:3000/) en su navegador. Para efectuar cambios en el servidor, tendrá que introducir su usuario (por defecto = *admin*) y su contraseña.
 
 Si usa ntop no solo en su máquina local, sino también con múltiples usuarios en la red, lo más indicado es que **solo** permita conexiones SSL (http**s**).
 
@@ -61,7 +60,7 @@ También puede suministrar a ntop su propio certificado SSL. Tan solo debe coloc
 
 ### Usuario y grupo
 
-Para que el parámetro _-u_ funcione correctamente y para asegurar un poco más su instalación de ntop, debería crear un usuario y grupo dedicados.
+Para que el parámetro *-u* funcione correctamente y para asegurar un poco más su instalación de ntop, debería crear un usuario y grupo dedicados.
 
 ```
 # useradd -M -s /usr/bin/false ntop

@@ -31,7 +31,7 @@ There are many ways to adjust the screen backlight of a monitor, laptop or integ
     *   яркость можно контролировать через ACPI
     *   яркость можно контролировать через графический драйвер
 
-All methods are exposed to the user through `/sys/class/backlight` and xrandr/xbacklight can choose one method to control brightness. It is still not very clear which one xbacklight prefers by default. _See [FS#27677](https://bugs.archlinux.org/task/27677) for xbacklight, if you get "No outputs have backlight property."_ There is a temporary fix if xrandr/xbacklight does not choose the right directory in `/sys/class/backlight`: You can specify the one you want in xorg.conf by setting the "Backlight" option of the Device section to the name of that directory (see [https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741) at the bottom of the page for details).
+All methods are exposed to the user through `/sys/class/backlight` and xrandr/xbacklight can choose one method to control brightness. It is still not very clear which one xbacklight prefers by default. *See [FS#27677](https://bugs.archlinux.org/task/27677) for xbacklight, if you get "No outputs have backlight property."* There is a temporary fix if xrandr/xbacklight does not choose the right directory in `/sys/class/backlight`: You can specify the one you want in xorg.conf by setting the "Backlight" option of the Device section to the name of that directory (see [https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741) at the bottom of the page for details).
 
 *   brightness is controlled by HW register through setpci
 
@@ -42,7 +42,6 @@ The brightness of the screen backlight is adjusted by setting the power level of
 The name of the folder depends on the graphics card model.
 
  `# ls /sys/class/backlight/` 
-
 ```
 intel_backlight
 
@@ -61,7 +60,6 @@ bl_power           device/            power/             type
 The maximum brightness can be found by reading from `max_brightness`, which is often 15.
 
  `/sys/class/backlight/acpi_video0/max_brightness` 
-
 ```
 15
 
@@ -99,7 +97,6 @@ acpi_osi="!Windows 2012"
 If the ACPI interface is available, the backlight level can be set at boot using a udev rule.
 
  `/etc/udev/rules.d/81-backlight.rules` 
-
 ```
 # Set backlight level to 8
 SUBSYSTEM=="backlight", ACTION=="add", KERNEL=="acpi_video0", ATTR{brightness}="8"
@@ -193,7 +190,7 @@ redshift-gtk -l 37.8717:-122.2728
 
 ### relight
 
-[relight](http://xyne.archlinux.ca/projects/relight) is available in [Xyne's repos](http://xyne.archlinux.ca/repos) and as package [relight](https://aur.archlinux.org/packages/relight/) in the [AUR](/index.php/AUR "AUR"). The package provides `relight.service`, a [systemd](/index.php/Systemd "Systemd") service to automatically restore previous backlight settings during reboot along using the ACPI method explained above, and _relight-menu_, a dialog-based menu for selecting and configuring backlights for different screens.
+[relight](http://xyne.archlinux.ca/projects/relight) is available in [Xyne's repos](http://xyne.archlinux.ca/repos) and as package [relight](https://aur.archlinux.org/packages/relight/) in the [AUR](/index.php/AUR "AUR"). The package provides `relight.service`, a [systemd](/index.php/Systemd "Systemd") service to automatically restore previous backlight settings during reboot along using the ACPI method explained above, and *relight-menu*, a dialog-based menu for selecting and configuring backlights for different screens.
 
 ### setpci (use with great care)
 
@@ -223,7 +220,7 @@ Macbook-inspired [brightd](https://aur.archlinux.org/packages/brightd/) automati
 
 ## KDE
 
-[KDE](/index.php/KDE "KDE") users can adjust the backlight via _System Settings > Power Management > Energy Saving_. If you want to set backlight before kdm just put in /usr/share/config/kdm/Xsetup :
+[KDE](/index.php/KDE "KDE") users can adjust the backlight via *System Settings > Power Management > Energy Saving*. If you want to set backlight before kdm just put in /usr/share/config/kdm/Xsetup :
 
 ```
 xbacklight -inc 10
@@ -245,7 +242,6 @@ If you have an Intel i915 GPU, then it may be possible to adjust PWM modulation 
 Install [intel-gpu-tools](https://www.archlinux.org/packages/?name=intel-gpu-tools) from the official repositories. Get value of the register, that determines PWM modulation frequency
 
  `# intel_reg_read 0xC8254` 
-
 ```
 0xC8254 : 0x12281228
 

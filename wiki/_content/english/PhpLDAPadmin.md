@@ -25,7 +25,6 @@ Install the package [phpldapadmin](https://www.archlinux.org/packages/?name=phpl
 Create the Apache configuration file:
 
  `/etc/httpd/conf/extra/phpldapadmin.conf` 
-
 ```
 Alias /phpldapadmin "/usr/share/webapps/phpldapadmin"
 <Directory "/usr/share/webapps/phpldapadmin">

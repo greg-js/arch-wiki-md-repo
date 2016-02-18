@@ -29,7 +29,6 @@ The `mount` command will use fstab, if just one of either directory or device is
 A simple `/etc/fstab`, using kernel name descriptors:
 
  `/etc/fstab` 
-
 ```
 # <file system>        <dir>         <type>    <options>             <dump> <pass>
 /dev/sda1              /             ext4      defaults,noatime      0      1
@@ -42,31 +41,31 @@ A simple `/etc/fstab`, using kernel name descriptors:
 Each line in the `/etc/fstab` file contains the following fields separated by spaces or tabs:
 
 ```
-_file_system_    _dir_    _type_    _options_    _dump_    _pass_
+*file_system*    *dir*    *type*    *options*    *dump*    *pass*
 
 ```
 
-	_file system_
+	*file system*
 
 	The partition or storage device to be mounted.
 
-	_dir_
+	*dir*
 
 	The mountpoint where <file system> is mounted to.
 
-	_type_
+	*type*
 
 	The file system type of the partition or storage device to be mounted. Many different file systems are supported: `ext2`, `ext3`, `ext4`, `btrfs`, `reiserfs`, `xfs`, `jfs`, `smbfs`, `iso9660`, `vfat`, `ntfs`, `swap` and `auto`. The `auto` type lets the mount command guess what type of file system is used. This is useful for optical media (CD/DVD).
 
-	_options_
+	*options*
 
 	Mount options of the filesystem to be used. See the [mount man page](http://man7.org/linux/man-pages/man8/mount.8.html#FILESYSTEM-INDEPENDENT_MOUNT%20OPTIONS). Please note that some options are specific to filesystems; to discover them see below in the aforementioned mount man page.
 
-	_dump_
+	*dump*
 
-	Used by the dump utility to decide when to make a backup. Dump checks the entry and uses the number to decide if a file system should be backed up. Possible entries are 0 and 1\. If 0, dump will ignore the file system; if 1, dump will make a backup. Most users will not have dump installed, so they should put 0 for the _dump_ entry.
+	Used by the dump utility to decide when to make a backup. Dump checks the entry and uses the number to decide if a file system should be backed up. Possible entries are 0 and 1\. If 0, dump will ignore the file system; if 1, dump will make a backup. Most users will not have dump installed, so they should put 0 for the *dump* entry.
 
-	_pass_
+	*pass*
 
 	Used by [fsck](/index.php/Fsck "Fsck") to decide which order filesystems are to be checked. Possible entries are 0, 1 and 2\. The root file system should have the highest priority 1 (unless its type is [btrfs](/index.php/Btrfs "Btrfs"), in which case this field should be 0) - all other file systems you want to have checked should have a 2\. File systems with a value 0 will not be checked by the fsck utility.
 
@@ -78,10 +77,9 @@ In this section, we will describe how to mount filesystems using all the mount m
 
 ### Kernel name descriptors
 
-Run `lsblk -f` to list the partitions and prefix the values in the _NAME_ column with `/dev/`.
+Run `lsblk -f` to list the partitions and prefix the values in the *NAME* column with `/dev/`.
 
  `/etc/fstab` 
-
 ```
 # <file system> <dir> <type> <options>                                                                                            <dump> <pass>
 /dev/sda1       /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
@@ -93,10 +91,9 @@ Run `lsblk -f` to list the partitions and prefix the values in the _NAME_ column
 
 ### Labels
 
-Run `lsblk -f` to list the partitions, and prefix the values in the _LABEL_ column with `LABEL=`:
+Run `lsblk -f` to list the partitions, and prefix the values in the *LABEL* column with `LABEL=`:
 
  `/etc/fstab` 
-
 ```
 # <file system> <dir> <type> <options>                                                                                            <dump> <pass>
 LABEL=EFI       /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
@@ -110,10 +107,9 @@ LABEL=SWAP      none  swap   defaults                                           
 
 ### UUIDs
 
-Run `lsblk -f` to list the partitions, and prefix the values in the _UUID_ column with `UUID=`:
+Run `lsblk -f` to list the partitions, and prefix the values in the *UUID* column with `UUID=`:
 
  `/etc/fstab` 
-
 ```
 # <file system>                           <dir> <type> <options>                                                                                            <dump> <pass>
 UUID=CBB6-24F2                            /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
@@ -127,10 +123,9 @@ UUID=f9fe0b69-a280-415d-a03a-a32752370dee none  swap   defaults                 
 
 ### GPT labels
 
-Run `blkid` to list the partitions, and use the _PARTLABEL_ values without the quotes:
+Run `blkid` to list the partitions, and use the *PARTLABEL* values without the quotes:
 
  `/etc/fstab` 
-
 ```
 # <file system>                      <dir> <type> <options>                                                                                            <dump> <pass>
 PARTLABEL=EFI\040SYSTEM\040PARTITION /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
@@ -144,10 +139,9 @@ PARTLABEL=SWAP                       none  swap   defaults                      
 
 ### GPT UUIDs
 
-Run `blkid` to list the partitions, and use the _PARTUUID_ values without the quotes:
+Run `blkid` to list the partitions, and use the *PARTUUID* values without the quotes:
 
  `/etc/fstab` 
-
 ```
 # <file system>                               <dir> <type> <options>                                                                                            <dump> <pass>
 PARTUUID=d0d0d110-0a71-4ed6-936a-304969ea36af /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
@@ -161,7 +155,7 @@ PARTUUID=039b6c1c-7553-4455-9537-1befbc9fbc5b none  swap   defaults             
 
 ### Automount with systemd
 
-If you have a large `/home` partition, it might be better to allow services that do not depend on `/home` to start while `/home` is checked by _fsck_. This can be achieved by adding the following options to the `/etc/fstab` entry of your `/home` partition:
+If you have a large `/home` partition, it might be better to allow services that do not depend on `/home` to start while `/home` is checked by *fsck*. This can be achieved by adding the following options to the `/etc/fstab` entry of your `/home` partition:
 
 ```
 noauto,x-systemd.automount
@@ -176,7 +170,7 @@ The same applies to remote filesystem mounts. If you want them to be mounted onl
 
 **Note:** If you intend to use the `exec` flag with automount, you should remove the `user` flag for it to work properly as found in the course of a [Fedora Bug Report](https://bugzilla.redhat.com/show_bug.cgi?id=769636)
 
-If you have encrypted filesystems with keyfiles, you can also add the `noauto` parameter to the corresponding entries in `/etc/crypttab`. _systemd_ will then not open the encrypted device on boot, but instead wait until it is actually accessed and then automatically open it with the specified keyfile before mounting it. This might save a few seconds on boot if you are using an encrypted RAID device for example, because systemd does not have to wait for the device to become available. For example:
+If you have encrypted filesystems with keyfiles, you can also add the `noauto` parameter to the corresponding entries in `/etc/crypttab`. *systemd* will then not open the encrypted device on boot, but instead wait until it is actually accessed and then automatically open it with the specified keyfile before mounting it. This might save a few seconds on boot if you are using an encrypted RAID device for example, because systemd does not have to wait for the device to become available. For example:
 
  `/etc/crypttab`  `data /dev/md0 /root/key noauto` 
 
@@ -203,10 +197,9 @@ If your external device requires another systemd unit to be loaded (for example 
 
 ### Filepath spaces
 
-Since spaces are used in `fstab` to delimit fields, if any field (_PARTLABEL_, _LABEL_ or the mount point) contains spaces, these spaces must be replaced by escape characters `\` followed by the 3 digit octal code `040`:
+Since spaces are used in `fstab` to delimit fields, if any field (*PARTLABEL*, *LABEL* or the mount point) contains spaces, these spaces must be replaced by escape characters `\` followed by the 3 digit octal code `040`:
 
  `/etc/fstab` 
-
 ```
 UUID=47FA-4071     /home/username/Camera<font color="grey">\040</font>Pictures   vfat  defaults,noatime       0  0
 /dev/sda7          /media/100<font color="grey">\040</font>GB<font color="grey">\040</font>(Storage)       ext4  defaults,noatime,user  0  2
@@ -216,7 +209,7 @@ UUID=47FA-4071     /home/username/Camera<font color="grey">\040</font>Pictures  
 
 Below atime options can impact drive performance.
 
-*   The `strictatime` option updates the _atime_ of the files every time they are accessed. This is more purposeful when Linux is used for servers; it does not have much value for desktop use. The drawback about the `strictatime` option is that even reading a file from the page cache (reading from memory instead of the drive) will still result in a write!
+*   The `strictatime` option updates the *atime* of the files every time they are accessed. This is more purposeful when Linux is used for servers; it does not have much value for desktop use. The drawback about the `strictatime` option is that even reading a file from the page cache (reading from memory instead of the drive) will still result in a write!
 
 *   The `noatime` option fully disables writing file access times to the drive every time you read a file. This works well for almost all applications, except for a rare few like [Mutt](/index.php/Mutt "Mutt") that needs such information. For mutt, you should only use the `relatime` option. The write time information to a file will continue to be updated anytime the file is written to with this option enabled.
 
@@ -224,7 +217,7 @@ Below atime options can impact drive performance.
 
 **Note:** `noatime` already includes `nodiratime`. [You do not need to specify both](http://lwn.net/Articles/244941/).
 
-*   `relatime` enables the writing of file access times only when the file is being modified (unlike `noatime` where the file access time will never be changed and will be older than the modification time). The best compromise might be the use this option since programs like [Mutt](/index.php/Mutt "Mutt") will continue to work, but you will still have a performance boost as the files will not get access times updated unless they are modified. This option is used when the `defaults` keyword option, `atime` option (which means to use the kernel default, which is relatime; see `man 8 mount` and [[1]](http://en.wikipedia.org/wiki/Stat_%28system_call%29#Solutions)) or no options at all are specified in _fstab_ for a given mount point.
+*   `relatime` enables the writing of file access times only when the file is being modified (unlike `noatime` where the file access time will never be changed and will be older than the modification time). The best compromise might be the use this option since programs like [Mutt](/index.php/Mutt "Mutt") will continue to work, but you will still have a performance boost as the files will not get access times updated unless they are modified. This option is used when the `defaults` keyword option, `atime` option (which means to use the kernel default, which is relatime; see `man 8 mount` and [[1]](http://en.wikipedia.org/wiki/Stat_%28system_call%29#Solutions)) or no options at all are specified in *fstab* for a given mount point.
 
 The `noatime` and `relatime` options avoid writes to the file system when files are read but not modified, which results in better performance.
 

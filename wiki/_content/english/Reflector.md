@@ -29,7 +29,7 @@ To see all of the available commands, run the following command:
 
 ### Examples
 
-For the below examples, a country-sorted list can be retrieved with _curl_:
+For the below examples, a country-sorted list can be retrieved with *curl*:
 
 ```
 # curl -o /etc/pacman.d/mirrorlist [https://www.archlinux.org/mirrorlist/all/](https://www.archlinux.org/mirrorlist/all/)
@@ -60,7 +60,6 @@ Verbosely rate the 200 most recently synchronized HTTP servers located in the US
 ### Systemd Service
 
  `/etc/systemd/system/reflector.service` 
-
 ```
 [Unit]
 Description=Pacman mirrorlist update
@@ -76,7 +75,6 @@ Then `# systemctl start reflector` will update your mirrorlist.
 To update your mirrorlist every time your computer boots you can enable the following service definition.
 
  `/etc/systemd/system/reflector.service` 
-
 ```
 [Unit]
 Description=Pacman mirrorlist update
@@ -99,7 +97,6 @@ Make sure you [activate the appropriate services](http://www.freedesktop.org/wik
 If you want to run `reflector.service` on a weekly basis:
 
  `/etc/systemd/system/reflector.timer` 
-
 ```
 [Unit]
 Description=Run reflector weekly
@@ -123,7 +120,6 @@ Install the [reflector-timer](https://aur.archlinux.org/packages/reflector-timer
 The default configuration is:
 
  `/usr/share/reflector-timer/reflector.conf` 
-
 ```
 AGE=6
 COUNTRY=Germany
@@ -136,7 +132,6 @@ SORT=rate
 To override this configuration, edit `/etc/conf.d/reflector.conf`:
 
  `/etc/conf.d/reflector.conf` 
-
 ```
 COUNTRY=United States
 

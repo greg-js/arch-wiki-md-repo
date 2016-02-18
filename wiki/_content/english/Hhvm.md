@@ -39,7 +39,6 @@ With default configuration, HHVM serves fastcgi at localhost port 9000.
 Edit `/etc/nginx/nginx.conf` to serve `.php` files through HHVM via fastcgi:
 
  `/etc/nginx/nginx.conf` 
-
 ```
 ..
 location ~ \.php$ {
@@ -54,7 +53,6 @@ location ~ \.php$ {
 ### Lighttpd
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 ..
 fastcgi.server = (

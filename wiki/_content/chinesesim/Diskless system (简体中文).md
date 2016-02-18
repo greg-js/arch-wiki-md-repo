@@ -2,7 +2,7 @@
 
 From [Wikipedia:Diskless node](https://en.wikipedia.org/wiki/Diskless_node "wikipedia:Diskless node")
 
-	_A diskless node (or diskless workstation) is a workstation or personal computer without disk drives, which employs network booting to load its operating system from a server._
+	*A diskless node (or diskless workstation) is a workstation or personal computer without disk drives, which employs network booting to load its operating system from a server.*
 
 ## Contents
 
@@ -43,7 +43,6 @@ From [Wikipedia:Diskless node](https://en.wikipedia.org/wiki/Diskless_node "wiki
 安装ISC [dhcp](https://www.archlinux.org/packages/?name=dhcp) 并配置它:
 
  `/etc/dhcpd.conf` 
-
 ```
 allow booting;
 allow bootp;
@@ -93,7 +92,6 @@ Install [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) on the s
 You will need to add the root of your Arch installation to your [NFS](/index.php/NFS "NFS") exports:
 
  `/etc/exports` 
-
 ```
 /srv       *(rw,fsid=0,no_root_squash,no_subtree_check)
 /srv/arch  *(rw,no_root_squash,no_subtree_check)
@@ -106,7 +104,6 @@ Next, start NFS services: `rpc-idmapd` `rpc-mountd`.
 安装[nbd](https://www.archlinux.org/packages/?name=nbd) 并配置它.
 
  `# vim /etc/nbd-server/config` 
-
 ```
 [generic]
     user = nbd
@@ -166,7 +163,7 @@ The copy of `net` is unfortunately needed so it does not get overwritten when [m
 
 Edit `$root/etc/mkinitcpio.conf` and add `nfsv4` to `MODULES`, `net_nfs4` to `HOOKS`, and `/usr/bin/mount.nfs4` to `BINARIES`.
 
-Next, we [chroot](/index.php/Chroot "Chroot") our installation and run _mkinitcpio_:
+Next, we [chroot](/index.php/Chroot "Chroot") our installation and run *mkinitcpio*:
 
 ```
 # arch-chroot "$root" mkinitcpio -p linux
@@ -175,7 +172,7 @@ Next, we [chroot](/index.php/Chroot "Chroot") our installation and run _mkinitcp
 
 #### NBD
 
-The [mkinitcpio-nbd](https://aur.archlinux.org/packages/mkinitcpio-nbd/) package needs to be installed on the client. Build it with _makepkg_ and install it:
+The [mkinitcpio-nbd](https://aur.archlinux.org/packages/mkinitcpio-nbd/) package needs to be installed on the client. Build it with *makepkg* and install it:
 
 ```
 # pacman --root "$root" --dbpath "$root/var/lib/pacman" -U mkinitcpio-nbd-0.4-1-any.pkg.tar.xz
@@ -211,7 +208,6 @@ Luckily for us, grub-mknetdir creates prefixes for all currently compiled/instal
 Now we create a trivial GRUB configuration:
 
  `# vim "$root/boot/grub/grub.cfg"` 
-
 ```
 menuentry "Arch Linux" {
     linux /vmlinuz-linux quiet add_efi_memmap ip=:::::eth0:dhcp nfsroot=10.0.0.1:/arch
@@ -240,7 +236,6 @@ In late boot, you will want to switch your root filesystem mount to both `rw`, a
 You could mount `/var/log`, for example, as tmpfs so that logs from multiple hosts do not mix unpredictably, and do the same with `/var/spool/cups`, so the 20 instances of cups using the same spool do not fight with each other and make 1,498 print jobs and eat an entire ream of paper (or worse: toner cartridge) overnight.
 
  `# vim "$root/etc/fstab"` 
-
 ```
 tmpfs   /var/log        tmpfs     nodev,nosuid    0 0
 tmpfs   /var/spool/cups tmpfs     nodev,nosuid    0 0
@@ -249,7 +244,6 @@ tmpfs   /var/spool/cups tmpfs     nodev,nosuid    0 0
 It would be best to configure software that has some sort of state/database to use unique state/database storage directories for each host. If you wanted to run [puppet](http://puppetlabs.com/), for example, you could simply use the `%H` specifier in the puppet unit file:
 
  `# vim "$root/etc/systemd/system/puppetagent.service"` 
-
 ```
 [Unit]
 Description=Puppet agent

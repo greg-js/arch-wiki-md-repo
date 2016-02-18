@@ -1,4 +1,4 @@
-_Si has instalado Arch en un sistema de archivos ext2, es una buena idea activar journal y convertirlo en un sistema de archivos ext3._
+*Si has instalado Arch en un sistema de archivos ext2, es una buena idea activar journal y convertirlo en un sistema de archivos ext3.*
 
 Solo es necesario ejecutar:
 

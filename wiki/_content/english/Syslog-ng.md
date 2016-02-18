@@ -34,9 +34,9 @@ syslog-ng takes incoming log messages from defined '[sources](#Sources)' and for
 
 Sources are defined using the "source" directive. These incoming messages are then filtered according to defined filters ("filter" keyword), i.e. according to originating program or log level, and sent to the appropriate "destination". Destinations include log files (e.g. `/var/log/messages.log`), printing messages on a console and remote servers. The pivotal function is [log](#Log_Paths). This function defines which filters should be applied to a certain source, and where the resulting messages should be sent to.
 
-[Enable](/index.php/Enable "Enable") syslog-ng with the `syslog-ng.service` service file. As of _systemd_ 216, messages are no longer forwarded to syslog by default. Syslog-ng did not become journald aware until months later with the release of syslog-ng 3.6\. This meant that if you were running systemd 216 or greater and syslog-ng you needed to set the option `ForwardToSyslog=yes` in `/etc/systemd/journald.conf` to actually use _syslog-ng_ with _journald_.
+[Enable](/index.php/Enable "Enable") syslog-ng with the `syslog-ng.service` service file. As of *systemd* 216, messages are no longer forwarded to syslog by default. Syslog-ng did not become journald aware until months later with the release of syslog-ng 3.6\. This meant that if you were running systemd 216 or greater and syslog-ng you needed to set the option `ForwardToSyslog=yes` in `/etc/systemd/journald.conf` to actually use *syslog-ng* with *journald*.
 
-If you use a current [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng), it is not necessary to change the option because **syslog-ng** pulls the messages from the journal. If you have set `ForwardToSyslog=yes` you should revert it to `ForwardToSyslog=no` in order to avoid the overhead associated with the socket and to avoid [needless error messages in the log](https://github.com/balabit/syslog-ng/issues/314). If on the other hand you do not want to store your logs twice and turn _journald'_s `Storage=none`, you **will** need `ForwardToSyslog=yes`, as _syslog-ng_ tries to follow the 'journald' journal file.
+If you use a current [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng), it is not necessary to change the option because **syslog-ng** pulls the messages from the journal. If you have set `ForwardToSyslog=yes` you should revert it to `ForwardToSyslog=no` in order to avoid the overhead associated with the socket and to avoid [needless error messages in the log](https://github.com/balabit/syslog-ng/issues/314). If on the other hand you do not want to store your logs twice and turn *journald'*s `Storage=none`, you **will** need `ForwardToSyslog=yes`, as *syslog-ng* tries to follow the 'journald' journal file.
 
 ## Sources
 
@@ -103,7 +103,7 @@ source src {
 };
 ```
 
-If, on the other hand, you wish _not_ to retain the journald logs, but only syslog-ng's text logs, set `Storage=none` and `ForwardToSyslog=yes` in `/etc/systemd/journald.conf`.
+If, on the other hand, you wish *not* to retain the journald logs, but only syslog-ng's text logs, set `Storage=none` and `ForwardToSyslog=yes` in `/etc/systemd/journald.conf`.
 
 After the change [restart](/index.php/Restart "Restart") the `systemd-journald.service` and `syslog-ng.service` daemons.
 
@@ -153,7 +153,7 @@ filter <identifier> { expression; };
 
 ```
 
-Functions can be used in the expression, such as the function `facility()` which selects messages based on the facility codes. The Linux kernel has a few facilities you can use for logging. Each facility has a log-level; where debug is the most verbose, and panic only shows serious errors. You can find the facilities, log levels and priority names in `/usr/include/sys/syslog.h`. To filter those messages coming from authorization, like _May 11 23:42:31 mimosinnet su(pam_unix)[18569]: session opened for user root by (uid=1000)_, use the following:
+Functions can be used in the expression, such as the function `facility()` which selects messages based on the facility codes. The Linux kernel has a few facilities you can use for logging. Each facility has a log-level; where debug is the most verbose, and panic only shows serious errors. You can find the facilities, log levels and priority names in `/usr/include/sys/syslog.h`. To filter those messages coming from authorization, like *May 11 23:42:31 mimosinnet su(pam_unix)[18569]: session opened for user root by (uid=1000)*, use the following:
 
 ```
 filter f_auth { facility(auth); };
@@ -360,7 +360,6 @@ postgres=# \q # You are done here for the moment
 Edit `pg_hba.conf` to allow `syslog` and `logwriter` to establish a connection to PostgreSQL.
 
  `/var/lib/postgresql/data/pg_hba.conf` 
-
 ```
 # TYPE  DATABASE    USER        CIDR-ADDRESS          METHOD
 
@@ -491,7 +490,8 @@ The following code will write the log lines to `/var/log/test.log` in the format
 
 ```
 template t_test { template("PROGRAM=$PROGRAM@PID=$PID@BSDTAG=$BSDTAG@TAG=$TAG@TAGS=$TAGS@FACILITY=$FACILITY@FACILITY_NUM=$FACILITY_NUM@LEVEL=$LEVEL@LEVEL_NUM=$LEVEL_NUM@PRI=$PRI@PRIORITY=$PRIORITY@FULLHOST=$FULLHOST@FULLHOST_FROM=$FULLHOST_FROM@HOST=$HOST@HOST_FROM=$HOST_FROM@LOGHOST=$LOGHOST@MSGHDR=$MSGHDR@MSGID=$MSGID@MSGONLY=$MSGONLY@MSG=$MSG@MESSAGE=$MESSAGE@SOURCE=$SOURCE@SOURCEIP=$SOURCEIP@SOURCE_IP=$SOURCE_IP@SEQNUM=$SEQNUM@UNIXTIME=$UNIXTIME@FULLDATE=$FULLDATE@ISODATE=$ISODATE@DATE=$DATE@STAMP=$STAMP@TZ=$TZ@TZOFFSET=$TZOFFSET@SEC=$SEC@MIN=$MIN@HOUR=$HOUR@HOUR12=$HOUR12@DAY=$DAY@WEEK=$WEEK@WEEK_DAY=$WEEK_DAY@WEEK_DAY_ABBREV=$WEEK_DAY_ABBREV@WEEK_DAY_NAME=$WEEK_DAY_NAME@MONTH=$MONTH@MONTH_ABBREV=$MONTH_ABBREV@MONTH_NAME=$MONTH_NAME@MONTH_WEEK=$MONTH_WEEK@YEAR=$YEAR@YEAR_DAY=$YEAR_DAY
-\n"); template_escape(no); };
+
+"); template_escape(no); };
 
 destination d_test { file("/var/log/test.log" template(t_test)); };
 
@@ -499,7 +499,8 @@ log { source(s_local); destination(d_test); flags(final); };
 
 ```
 
-You can create your own value list as below once syslog-ng is restarted with: `tail /var/log/test.log|tr "@" "\n"`
+You can create your own value list as below once syslog-ng is restarted with: `tail /var/log/test.log|tr "@" "
+"`
 
 ```
 PROGRAM=kernel

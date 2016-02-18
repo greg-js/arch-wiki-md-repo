@@ -41,9 +41,9 @@
 **小贴士:**
 
 *   取消5个你最喜欢的镜像的注释，把他们放在 mirrorlist 文件最上方。这样你就很容易找到它们并且如果第一个镜像出问题可以很容易切换。这也让合并 mirrorlist 更新更容易。
-*   HTTP 镜像比 FTP 快，因为 HTTP 可以 [保持连接](https://en.wikipedia.org/wiki/HTTP_persistent_connection "wikipedia:HTTP persistent connection")，而使用 FTP 时 _pacman_每下载一个新软件包就需要重新建立连接。
+*   HTTP 镜像比 FTP 快，因为 HTTP 可以 [保持连接](https://en.wikipedia.org/wiki/HTTP_persistent_connection "wikipedia:HTTP persistent connection")，而使用 FTP 时 *pacman*每下载一个新软件包就需要重新建立连接。
 
-也可以在 `/etc/pacman.conf` 中指定镜像。对于 _[core]_ 仓库，默认设置是：
+也可以在 `/etc/pacman.conf` 中指定镜像。对于 *[core]* 仓库，默认设置是：
 
 ```
 [core]
@@ -51,7 +51,7 @@ Include = /etc/pacman.d/mirrorlist
 
 ```
 
-想要使用 _HostEurope_ 镜像作为默认镜像，把它添加在 `Include` 行之前：
+想要使用 *HostEurope* 镜像作为默认镜像，把它添加在 `Include` 行之前：
 
 ```
 [core]
@@ -60,9 +60,9 @@ Include = /etc/pacman.d/mirrorlist
 
 ```
 
-pacman 会首先尝试链接这个镜像。如果需要的话，可以继续修改_[testing]_, _[extra]_, 和 _[community]_部分。
+pacman 会首先尝试链接这个镜像。如果需要的话，可以继续修改*[testing]*, *[extra]*, 和 *[community]*部分。
 
-**注意:** 如果镜像直接在 `pacman.conf` 中声明，记得在所有的仓库使用同样的镜像。否则不相容的包就可能被安装。如 _[core]_ 中的 linux 和 _[extra]_ 中的旧的内核模块不相容。
+**注意:** 如果镜像直接在 `pacman.conf` 中声明，记得在所有的仓库使用同样的镜像。否则不相容的包就可能被安装。如 *[core]* 中的 linux 和 *[extra]* 中的旧的内核模块不相容。
 
 ### 强制 pacman 刷新软件包列表
 
@@ -152,7 +152,7 @@ Architecture = auto
 
 ### 全球
 
-*   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) - _Does not have recent ISO releases. Use it only if for getting older ISOs._
+*   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) - *Does not have recent ISO releases. Use it only if for getting older ISOs.*
 
 ### 保加利亚
 
@@ -163,8 +163,8 @@ Architecture = auto
 
 **电信**
 
-*   [http://mirror.bit.edu.cn/archlinux/](http://mirror.bit.edu.cn/archlinux/) - _北京理工大学_
-*   [http://mirrors.aliyun.com/archlinux/](http://mirrors.aliyun.com/archlinux/) - _阿里巴巴_
+*   [http://mirror.bit.edu.cn/archlinux/](http://mirror.bit.edu.cn/archlinux/) - *北京理工大学*
+*   [http://mirrors.aliyun.com/archlinux/](http://mirrors.aliyun.com/archlinux/) - *阿里巴巴*
 
 **联通**
 
@@ -173,10 +173,10 @@ Architecture = auto
 
 **教育网**
 
-*   [http://ftp.sjtu.edu.cn/archlinux/](http://ftp.sjtu.edu.cn/archlinux/) - _上海交通大学y_
-*   [http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/) _(ipv4 only)_
-*   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) _(ipv6 only)_
-*   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) - _兰州大学_
+*   [http://ftp.sjtu.edu.cn/archlinux/](http://ftp.sjtu.edu.cn/archlinux/) - *上海交通大学y*
+*   [http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/) *(ipv4 only)*
+*   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) *(ipv6 only)*
+*   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) - *兰州大学*
 
 ### 德国
 
@@ -187,38 +187,38 @@ Architecture = auto
 
 ### 印度尼西亚
 
-*   [http://mirror.kavalinux.com/archlinux/](http://mirror.kavalinux.com/archlinux/) - _only from Indonesia_
+*   [http://mirror.kavalinux.com/archlinux/](http://mirror.kavalinux.com/archlinux/) - *only from Indonesia*
 *   [http://kambing.ui.ac.id/archlinux/](http://kambing.ui.ac.id/archlinux/)
 *   [http://repo.ukdw.ac.id/archlinux/](http://repo.ukdw.ac.id/archlinux/)
 
 ### 立陶宛
 
-*   [http://edacval.homelinux.org/mirrors/archlinux/](http://edacval.homelinux.org/mirrors/archlinux/) - _Only from LT, without ISO_
+*   [http://edacval.homelinux.org/mirrors/archlinux/](http://edacval.homelinux.org/mirrors/archlinux/) - *Only from LT, without ISO*
 
 ### 马来西亚
 
 *   [http://mirror.oscc.org.my/archlinux/](http://mirror.oscc.org.my/archlinux/)
-*   [http://mirrors.inetutils.net/archlinux/](http://mirrors.inetutils.net/archlinux/) - _ISO and Core_
+*   [http://mirrors.inetutils.net/archlinux/](http://mirrors.inetutils.net/archlinux/) - *ISO and Core*
 
 ### 新西兰
 
 *   [http://mirror.ihug.co.nz/archlinux/](http://mirror.ihug.co.nz/archlinux/)
-*   [http://mirror.ece.auckland.ac.nz/archlinux/](http://mirror.ece.auckland.ac.nz/archlinux/) _NZ only_
+*   [http://mirror.ece.auckland.ac.nz/archlinux/](http://mirror.ece.auckland.ac.nz/archlinux/) *NZ only*
 
 ### 俄罗斯
 
-*   [http://hatred.homelinux.net/archlinux/](http://hatred.homelinux.net/archlinux/) - _Vladivostok, without iso, with <sub>[3SPY](http://hatred.homelinux.net/wiki/proekty:3spy:start)</sub> project repos and [**mingw32**](http://hatred.homelinux.net/archlinux/mingw32/os/i686) repo_
+*   [http://hatred.homelinux.net/archlinux/](http://hatred.homelinux.net/archlinux/) - *Vladivostok, without iso, with <sub>[3SPY](http://hatred.homelinux.net/wiki/proekty:3spy:start)</sub> project repos and [**mingw32**](http://hatred.homelinux.net/archlinux/mingw32/os/i686) repo*
 
 ### 南非
 
-*   [http://ftp.sun.ac.za/ftp/pub/mirrors/archlinux/](http://ftp.sun.ac.za/ftp/pub/mirrors/archlinux/) - _Stellenbosch University_
+*   [http://ftp.sun.ac.za/ftp/pub/mirrors/archlinux/](http://ftp.sun.ac.za/ftp/pub/mirrors/archlinux/) - *Stellenbosch University*
 *   [ftp://ftp.sun.ac.za/pub/mirrors/archlinux/](ftp://ftp.sun.ac.za/pub/mirrors/archlinux/)
-*   [http://ftp.leg.uct.ac.za/pub/linux/arch/](http://ftp.leg.uct.ac.za/pub/linux/arch/) - _University of Cape Town_
+*   [http://ftp.leg.uct.ac.za/pub/linux/arch/](http://ftp.leg.uct.ac.za/pub/linux/arch/) - *University of Cape Town*
 *   [ftp://ftp.leg.uct.ac.za/pub/linux/arch/](ftp://ftp.leg.uct.ac.za/pub/linux/arch/)
 
 ### 美国
 
-*   [http://archlinux.linuxfreedom.com](http://archlinux.linuxfreedom.com) - _Contains numerous ISO images but does not contain the ISO dated 2011.08.19_
+*   [http://archlinux.linuxfreedom.com](http://archlinux.linuxfreedom.com) - *Contains numerous ISO images but does not contain the ISO dated 2011.08.19*
 *   [http://mirror.pointysoftware.net/archlinux/](http://mirror.pointysoftware.net/archlinux/)
 
 ## 参见

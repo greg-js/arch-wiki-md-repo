@@ -2,9 +2,9 @@
 
 SageMath provides support for the following:
 
-*   **Calculus**: using [Maxima](https://en.wikipedia.org/wiki/Maxima_(software) "wikipedia:Maxima (software)") and [SymPy](https://en.wikipedia.org/wiki/SymPy "wikipedia:SymPy").
+*   **Calculus**: using [Maxima](https://en.wikipedia.org/wiki/Maxima_(software) and [SymPy](https://en.wikipedia.org/wiki/SymPy "wikipedia:SymPy").
 *   **Linear Algebra**: using the [GSL](https://en.wikipedia.org/wiki/GNU_Scientific_Library "wikipedia:GNU Scientific Library"), [SciPy](https://en.wikipedia.org/wiki/SciPy "wikipedia:SciPy") and [NumPy](https://en.wikipedia.org/wiki/NumPy "wikipedia:NumPy").
-*   **Statistics**: using [R](https://en.wikipedia.org/wiki/R_(programming_language) "wikipedia:R (programming language)") (through RPy) and SciPy.
+*   **Statistics**: using [R](https://en.wikipedia.org/wiki/R_(programming_language) (through RPy) and SciPy.
 *   **Graphs**: using [matplotlib](https://en.wikipedia.org/wiki/matplotlib "wikipedia:matplotlib").
 *   An **interactive shell** using [IPython](https://en.wikipedia.org/wiki/IPython "wikipedia:IPython").
 *   Access to **Python modules** such as [PIL](https://en.wikipedia.org/wiki/Python_Imaging_Library "wikipedia:Python Imaging Library"), [SQLAlchemy](https://en.wikipedia.org/wiki/SQLAlchemy "wikipedia:SQLAlchemy"), etc.
@@ -106,7 +106,7 @@ For local documentation, one can compile it into multiple formats such as HTML o
 
 ```
 
-This builds the HTML documentation for the whole _reference_ tree (may take longer than an hour). An option is to build a smaller part of the documentation tree, but you would need to know what it is you want. Until then, you might consider just browsing the [online reference](http://www.sagemath.org/doc/).
+This builds the HTML documentation for the whole *reference* tree (may take longer than an hour). An option is to build a smaller part of the documentation tree, but you would need to know what it is you want. Until then, you might consider just browsing the [online reference](http://www.sagemath.org/doc/).
 
 For a list of documents see `sage --docbuild --documents` and for a list of supported formats see `sage --docbuild --formats`.
 

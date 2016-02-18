@@ -42,7 +42,6 @@ For further details see the official [HowTo](https://www.hiawatha-webserver.org/
 [Common Gateway Interface](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface") (CGI) scripts work with Hiawatha out of box, you just need to enable the CGI module.
 
  `/etc/hiawatha/hiawatha.conf` 
-
 ```
 VirtualHost {
     ...
@@ -83,7 +82,6 @@ If you get a similar output then php is installed correctly.
 Add one of this `FastCGIserver` sections to your config file.
 
  `/etc/hiawatha/hiawatha.conf` 
-
 ```
 ### The following fast CGI daemon requires php-fpm using a UNIX socket and TCP port, respectively.
 # ACTIVATE a FastCGI server for php  (using UNIX socket)
@@ -95,9 +93,7 @@ FastCGIserver {
 }
 
 ```
-
  `/etc/hiawatha/hiawatha.conf` 
-
 ```
 ### The following fast CGI daemon requires php-fpm using a UNIX socket and TCP port, respectively.
 # ACTIVATE a FastCGI server for php (using IP-address and TCP port)
@@ -113,7 +109,6 @@ FastCGIserver {
 To use the FastCGIserver ad the following to your config file
 
  `/etc/hiawatha/hiawatha.conf` 
-
 ```
 VirtualHost {
     ...
@@ -136,7 +131,6 @@ For some details see the FastCGI section of the [HowTo](https://www.hiawatha-web
 For SSL/TLS support add the following `Binding` to your con fig file. Then [Reload](/index.php/Reload "Reload") the `hiawatha.service`.
 
  `/etc/hiawatha/hiawatha.conf` 
-
 ```
 Binding {
     Port = 443
@@ -148,7 +142,6 @@ Binding {
 The order of the items in `serverkey.pem` is important. The order has to be as follows:
 
  `serverkey.pem` 
-
 ```
 -----BEGIN RSA PRIVATE KEY-----
 [webserver private key]
@@ -173,7 +166,6 @@ For further details see the official [HowTo](https://www.hiawatha-webserver.org/
 Hiawatha has support for SNI, which allows you to serve multiple TLS websites via one IP address. Just configure a TLS binding as explained above. For each virtual host that has its own SSL/TLS certificate, simply use the `TLScertFile` option inside the virtual host block. The certificate specified via Binding{} is used when a website is requested for which no virtual host has been defined.
 
  `/etc/hiawatha/hiawatha.conf` 
-
 ```
 VirtualHost {
     Hostname = www.website.org

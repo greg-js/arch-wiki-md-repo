@@ -48,7 +48,7 @@ If you do not have Windows installed, you can flash with a [FreeDOS thumb drive]
 
 Works out of the box. On some machines, Bluetooth cannot turn on because of `Fn`+`F3` switching only WLAN. [Fixed DSDT table](http://ubuntuforums.org/showpost.php?p=10021228&postcount=183) seems to solve the problem.
 
-On the 3820TG, Bluetooth might not work even if `Fn`+`F3` is used to turn it on. (Symptoms include "usb disconnect" messages in dmesg, and the adapter not showing up in _hcitool dev_.) In this case, copying `/lib/firmware/ath3k-2.fw` to `/lib/firmware/ath3k-1.fw` helps, see [this mailing list thread](http://www.mail-archive.com/ubuntu-bugs@lists.ubuntu.com/msg2579867.html). If it does not work for you, please change this note!
+On the 3820TG, Bluetooth might not work even if `Fn`+`F3` is used to turn it on. (Symptoms include "usb disconnect" messages in dmesg, and the adapter not showing up in *hcitool dev*.) In this case, copying `/lib/firmware/ath3k-2.fw` to `/lib/firmware/ath3k-1.fw` helps, see [this mailing list thread](http://www.mail-archive.com/ubuntu-bugs@lists.ubuntu.com/msg2579867.html). If it does not work for you, please change this note!
 
 For some models of 4820TG, Bluetooth can be turned on with acer_wmi driver. To check that the driver is installed:
 
@@ -60,7 +60,6 @@ lsmod | grep acer_wmi
 To check bluetooth state (1 is on, 0 is off):
 
  `cat /sys/devices/platform/acer-wmi/rfkill/rfkill2/{name,state}` 
-
 ```
 acer-bluetooth
 0

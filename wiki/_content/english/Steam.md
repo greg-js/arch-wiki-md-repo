@@ -1,6 +1,6 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam (software)"):
 
-	_Steam is a digital distribution, digital rights management, multiplayer and communications platform developed by Valve Corporation. It is used to distribute games and related media online, from small independent developers to larger software houses._
+	*Steam is a digital distribution, digital rights management, multiplayer and communications platform developed by Valve Corporation. It is used to distribute games and related media online, from small independent developers to larger software houses.*
 
 [Steam](http://store.steampowered.com/about/) is best known as the platform needed to play Source Engine games (e.g. Half-Life 2, Counter-Strike). Today it offers many games from many other developers.
 
@@ -72,7 +72,6 @@ Steam is not supported on this distribution. As such some fixes are needed on th
 To start Steam in Big Picture Mode from a Display Manager (such as LightDM), create a `/usr/share/xsessions/steam-big-picture.desktop` file with the following content:
 
  `/usr/share/xsessions/steam-big-picture.desktop` 
-
 ```
 [Desktop Entry]
 Name=Steam Big Picture Mode
@@ -97,7 +96,6 @@ $ steam -silent
 alternatively, if you launch Steam from a desktop shortcut, you can add this option to a custom [desktop entry](/index.php/Desktop_entry "Desktop entry"):
 
  `~/.config/autostart/steam.desktop` 
-
 ```
 [Desktop Entry]
 Name=Steam
@@ -298,7 +296,7 @@ Uncomment `en_US.UTF-8 UTF-8` in `/etc/locale.gen` and then run `locale-gen` as 
 
 ### The game crashes immediately after start
 
-If your game crashes immediately, try disabling: _"Enable the Steam Overlay while in-game"_ in game _Properties_.
+If your game crashes immediately, try disabling: *"Enable the Steam Overlay while in-game"* in game *Properties*.
 
 If this doesn't work, you should check Steam's output for any error from the game. You may encounter the following:
 
@@ -391,7 +389,7 @@ If you are running 2k games such as Civilization 5 on xfs partitions, then the g
 
 ### Unable to add library folder because of missing execute permissions
 
-If you add another steam library folder on another drive, you might receive the error message _"New Steam library folder must be on a filesystem mounted with execute permissions"_.
+If you add another steam library folder on another drive, you might receive the error message *"New Steam library folder must be on a filesystem mounted with execute permissions"*.
 
 Make you sure you are mounting the filesystem with the correct flags in your `/etc/fstab`, usually by adding `exec` to the list of mount parameter. The parameter must occur after any `user` or `users` parameter since these can imply `noexec`.
 
@@ -462,7 +460,7 @@ LD_PRELOAD=/usr/lib/nvidia/libGL.so optirun %command%
 If you are running the [Linux-ck](/index.php/Linux-ck "Linux-ck") kernel, you may have some success in reducing overall latencies and improving performance by launching the game in SCHED_ISO (low latency, avoid choking CPU) via [schedtool](https://www.archlinux.org/packages/?name=schedtool)
 
 ```
-# schedtool -I -e %command% _other arguments_
+# schedtool -I -e %command% *other arguments*
 
 ```
 
@@ -562,7 +560,7 @@ Now find the entry: `Notifications.PanelPosition` in whichever file you opened a
 
 This line will look the same in both files. Repeat the process for all the 3 variants (`Top-Right`, `Top-Left` and `Bottom-Left`) and adjust the corners for the desktop and in-game overlay to your satisfaction for each skin, then save the files.
 
-To finish you will have to select the skin in Steam: _Settings > Interface_ and _<default skin>_ in the drop-down menu.
+To finish you will have to select the skin in Steam: *Settings > Interface* and *<default skin>* in the drop-down menu.
 
 You can use these files across distributions and even between Windows and Linux (OS X has its own entry for the desktop notification placement)
 
@@ -575,7 +573,6 @@ Steam updates the files we need to edit everytime it updates (which is everytime
 First you will need a patch:
 
  `$HOME/.steam/topright.patch` 
-
 ```
 --- A/steam/resource/styles/gameoverlay.styles	2013-06-14 23:49:36.000000000 +0000
 +++ B/steam/resource/styles/gameoverlay.styles	2014-07-08 23:13:15.255806000 +0000

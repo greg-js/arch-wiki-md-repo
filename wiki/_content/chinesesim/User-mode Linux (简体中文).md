@@ -32,7 +32,7 @@ dd if=/dev/zero of=archRootFs bs=1MB count=1000
 
 ```
 
-2.) 当创建完成后格式化。 如下命令将会提示 archRootFs 不是一个 block 设备。 你可以完全忽略或者加入 _-F_ 来使 mke2fs 可以屏蔽提示信息。
+2.) 当创建完成后格式化。 如下命令将会提示 archRootFs 不是一个 block 设备。 你可以完全忽略或者加入 *-F* 来使 mke2fs 可以屏蔽提示信息。
 
 ```
 mke2fs archRootFS
@@ -53,29 +53,27 @@ sh archbootstrap /mnt/ ftp://archlinux-mirror
 
 ```
 
-5.) 在系统以 user-mode-linux 模式启动之前, 一些 arch 基本系统文件要求定制。 在 _/mnt/etc/fstab_ 加入:
+5.) 在系统以 user-mode-linux 模式启动之前, 一些 arch 基本系统文件要求定制。 在 */mnt/etc/fstab* 加入:
 
 ```
 /dev/ubd0 / ext2 defaults 0 0
 
 ```
 
-可以通过禁用 hotplugin 来加快启动时间，在 _/mnt/etc/rc.conf_ 加入:
+可以通过禁用 hotplugin 来加快启动时间，在 */mnt/etc/rc.conf* 加入:
 
 ```
 DAEMONS=(syslog-ng !hotplug !pcmcia network netfs crond)
 
 ```
 
-6.) 卸载文件系统。 **注意:** 如果你在加载的系统中改变了 _任何东西_ (例如 /mnt) 而它正在 _运行_，则很有可能 _毁了_ 它 !
+6.) 卸载文件系统。 **注意:** 如果你在加载的系统中改变了 *任何东西* (例如 /mnt) 而它正在 *运行*，则很有可能 *毁了* 它 !
 
 ```
 umount /mnt
 
 ```
-
 7.) 下一步是配置网络。 因此您要创建 tun 设备 (请阅读 [[uml howto](http://user-mode-linux.sourceforge.net/UserModeLinux-HOWTO-6.html)] 得到具体的 tun/tap 信息)， 分配一个 IP 地址。 如下命令将会创建 tun/tap 设备并让普通用户能够使用，然后分配 ip 地址。为了安全起见您最好建立一个 uml 用户组并赋予使用网络设备的权限。
-
 ```
 modprobe tun
 tunctl -u users

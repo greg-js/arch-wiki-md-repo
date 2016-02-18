@@ -10,7 +10,7 @@ This article describes alternative wiping methods to the specialized utilities t
     *   [2.2 Using a template file](#Using_a_template_file)
 *   [3 Wipe free space](#Wipe_free_space)
     *   [3.1 7zip](#7zip)
-    *   [3.2 Create multiple files with help of the _timeout_ command](#Create_multiple_files_with_help_of_the_timeout_command)
+    *   [3.2 Create multiple files with help of the *timeout* command](#Create_multiple_files_with_help_of_the_timeout_command)
 
 ## Wipe a single file
 
@@ -29,7 +29,7 @@ Overwriting of the file without changing its size can be done with common Linux 
 
 *   With `mkfs` you can convert file into the filesystem that will alter everything in it, mount and fill in with any other content for a better overwriting.
 
-*   The `dd` will create a file with preset size and content of your chose, if destination file name exist then it will become overwritten. With `dd` command you can replace the whole file or only a part in it with another content by combining `skip` and `seek` options. You need to know size of the file to avoid expand of the file, to do it can use `du -b _file_name_ | cut -f1` or `stat -c "%s" _file_name_`. It is mandatory to use `iflag=fullblock` option to make it work correct with the file.
+*   The `dd` will create a file with preset size and content of your chose, if destination file name exist then it will become overwritten. With `dd` command you can replace the whole file or only a part in it with another content by combining `skip` and `seek` options. You need to know size of the file to avoid expand of the file, to do it can use `du -b *file_name* | cut -f1` or `stat -c "%s" *file_name*`. It is mandatory to use `iflag=fullblock` option to make it work correct with the file.
 
 *   Replace content in a file with a single symbol to avoid size changing you can do with [perl](https://www.archlinux.org/packages/?name=perl) utility.
 
@@ -47,21 +47,21 @@ Examples:
 Perl command that will replace everything in the file with `.`:
 
 ```
-$ perl -p -i -e 's\[^*]\.\g' _file_name_
+$ perl -p -i -e 's\[^*]\.\g' *file_name*
 
 ```
 
 dd:
 
 ```
-$ _source_content_ | dd bs=_size_in_bytes_ count=1 iflag=fullblock of=_destination_file_ seek=0
+$ *source_content* | dd bs=*size_in_bytes* count=1 iflag=fullblock of=*destination_file* seek=0
 
 ```
 
-Or by using _stdout_ redirection that works a slightly faster for creation but you will not be able to use `seek` option for skipping some parts in the destination:
+Or by using *stdout* redirection that works a slightly faster for creation but you will not be able to use `seek` option for skipping some parts in the destination:
 
 ```
-$ _source_content_ | dd bs=_size_in_bytes_ count=1 iflag=fullblock > _destination_file_
+$ *source_content* | dd bs=*size_in_bytes* count=1 iflag=fullblock > *destination_file*
 
 ```
 
@@ -106,7 +106,7 @@ $ while [ 1 -lt 2 ];do cat file1-to-use.as-template file2-to-use.as-template /tm
 
 ```
 
-With _dd_ you can safely wipe repetitively without out-of-space-errors, if size to be wiped is set up correctly with options. By using _dd_ inside the while loop for _stdout_ you will be able to chose which part of the file you want to restore by combining the `skip` and `seek` options with random or fixed values e.g. restore only partition start or end from a file, related are [head](http://linux.die.net/man/1/head) and [tail](http://linux.die.net/man/1/head) commands for output of the file parts to _stdout_.
+With *dd* you can safely wipe repetitively without out-of-space-errors, if size to be wiped is set up correctly with options. By using *dd* inside the while loop for *stdout* you will be able to chose which part of the file you want to restore by combining the `skip` and `seek` options with random or fixed values e.g. restore only partition start or end from a file, related are [head](http://linux.die.net/man/1/head) and [tail](http://linux.die.net/man/1/head) commands for output of the file parts to *stdout*.
 
 ```
 while [ 2 -gt 1 ]; do 
@@ -114,7 +114,7 @@ while [ 2 -gt 1 ]; do
   break ;
  fi;
 cat file1-to-use.as-template file2-to-use.as-template /tmp/templatefiles/* ;
-done | dd of=/dev/sd"XY" seek=_start_sector_ bs=_sector_size_ count=_sectors_to_wipe_
+done | dd of=/dev/sd"XY" seek=*start_sector* bs=*sector_size* count=*sectors_to_wipe*
 ```
 
 **Tip:** For repeatedly rewriting of the same area. You can also use variables from second loop around `while ... done | dd ...` to change destination of the source template files to use on each new loop.
@@ -146,7 +146,7 @@ Some of the file compression utilities use to have many types of the compression
 ```
 Password="$(dd if=/dev/urandom bs=128 count=1)"
 DestinationFile="$((${RANDOM/0/1}$(date "+%s")/${RANDOM/0/1}))"
-7z a -t7z -mhe=on -p"${Password}" -mx=0 -v1m _${DestinationFile} source_
+7z a -t7z -mhe=on -p"${Password}" -mx=0 -v1m *${DestinationFile} source*
 ```
 
 See also [p7zip](https://www.archlinux.org/packages/?name=p7zip) [man page](http://linux.die.net/man/1/7z) for description of used options.
@@ -158,7 +158,7 @@ The `source` can be a predefined file with random data or a device, e.g. `/dev/u
 *   It is not necessary to set level of compression, enough to store data for minimizing CPU usage and a faster fill free space up.
 *   If you are using a single file as a source then you can put it into the [RAM disk](http://www.vanemery.com/Linux/Ramdisk/ramdisk.html) or the `/tmp` folder, because it uses [tmpfs](/index.php/Tmpfs "Tmpfs") that allocates some amount of RAM because it will speed up reading.
 
-### Create multiple files with help of the _timeout_ command
+### Create multiple files with help of the *timeout* command
 
 The `timeout` command with randomized waiting time used it in a [loop](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-7.html) will break the command that will leave a file with random size. This is a slow method but is one of the possible alternatives. You can also use an array with predefined file names before the random part of it.
 

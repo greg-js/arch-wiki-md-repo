@@ -46,7 +46,6 @@ Idesk looks in `~/.idesktop` for files which names end with `.lnk` for icons. Ea
 Example for Chromium:
 
  `chromium.lnk` 
-
 ```
 table Icon
   Caption: Chromium

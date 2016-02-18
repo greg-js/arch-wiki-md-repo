@@ -1,6 +1,6 @@
 From the project [home page](http://www.snort.org/):
 
-	_Snort® is an open source network intrusion prevention and detection system ([IDS](https://en.wikipedia.org/wiki/Intrusion_detection_system "wikipedia:Intrusion detection system")/IPS) developed by Sourcefire. Combining the benefits of signature, protocol, and anomaly-based inspection, Snort is the most widely deployed IDS/IPS technology worldwide. With millions of downloads and nearly 400,000 registered users, Snort has become the de facto standard for IPS._
+	*Snort® is an open source network intrusion prevention and detection system ([IDS](https://en.wikipedia.org/wiki/Intrusion_detection_system "wikipedia:Intrusion detection system")/IPS) developed by Sourcefire. Combining the benefits of signature, protocol, and anomaly-based inspection, Snort is the most widely deployed IDS/IPS technology worldwide. With millions of downloads and nearly 400,000 registered users, Snort has become the de facto standard for IPS.*
 
 ## Contents
 
@@ -24,7 +24,7 @@ From the project [home page](http://www.snort.org/):
 *   A Snort setup that sniffs WAN <-> LAN is more difficult to use. It does not show you which computer triggered the alert, and it requires you to set HOME_NET as your WAN IP address, which can change if your modem uses DHCP.
 *   Snort will bridge the two interfaces for you, you will not need to configure this.
 
-You can use Snort to sniff wireless traffic with two routers. For simplicity the router with _DHCP on and wireless off_ will be called "router A" and the router with _wireless on and DHCP off_ "router B".
+You can use Snort to sniff wireless traffic with two routers. For simplicity the router with *DHCP on and wireless off* will be called "router A" and the router with *wireless on and DHCP off* "router B".
 
 *   Ensure the routers do not have the same IP address, but are on the same subnet.
 *   If the machine running Snort is configured for inline mode, you will need 3 network interface cards. One for management, one for incoming traffic, and one for outgoing traffic.
@@ -86,7 +86,7 @@ Alias=multi-user.target.wants/snort@%i.service
 
 ```
 
-To start Snort that is configured for inline mode run (_your network interfaces may vary_):
+To start Snort that is configured for inline mode run (*your network interfaces may vary*):
 
 ```
 systemctl start snort@ens1:ens4
@@ -126,7 +126,7 @@ lz /var/tmp/*.gz | egrep '\.rules' | cut -d'/' -f3 | sort -u | perl -lne '/(.*).
 
 ### Drop traffic with Pulledpork
 
-If you want to drop _all_ traffic that matches a Snort signature instead of just alerting, add the following to your `dropsid.conf`:
+If you want to drop *all* traffic that matches a Snort signature instead of just alerting, add the following to your `dropsid.conf`:
 
 ```
 pcre:.
@@ -185,7 +185,7 @@ If you want to be able to download Snort's latest rules, you will need a subscri
 
 ### Oinkmaster setup
 
-Edit `/etc/oinkmaster.conf` and look for the URL section and uncomment the 2.4 line. Make sure to replace _<oinkcode>_ by the Oink code you generated after logging into your Snort account. For Bleeding Snort rules, uncomment the appropriate line.
+Edit `/etc/oinkmaster.conf` and look for the URL section and uncomment the 2.4 line. Make sure to replace *<oinkcode>* by the Oink code you generated after logging into your Snort account. For Bleeding Snort rules, uncomment the appropriate line.
 
 When you log into your new account, create an "Oink code". Another thing to change is
 

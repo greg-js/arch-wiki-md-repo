@@ -31,7 +31,7 @@ You can use sshfs to mount a remote system - accessible via [SSH](/index.php/SSH
 Before attempting to mount a directory, make sure the file permissions on the target directory allow your user correct access. To mount, invoke `sshfs` to mount a remote directory:
 
 ```
-$ sshfs _USERNAME@HOSTNAME_OR_IP:/REMOTE_PATH LOCAL_MOUNT_POINT SSH_OPTIONS_
+$ sshfs *USERNAME@HOSTNAME_OR_IP:/REMOTE_PATH LOCAL_MOUNT_POINT SSH_OPTIONS*
 
 ```
 
@@ -49,14 +49,12 @@ Where `-p 9876` stands for the port number, `-C` use compression and `-o allow_o
 SSH will ask for the password, if needed. If you do not want to type in the password multiple times a day, read: [How to Use RSA Key Authentication with SSH](http://linuxmafia.com/~karsten/Linux/FAQs/sshrsakey.html) or [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys").
 
 **Tip:** To quickly mount a remote dir, do some file-management and unmount it, put this in a script:
-
 ```
 sshfs USERNAME@HOSTNAME_OR_IP:/REMOTE_PATH LOCAL_MOUNT_POINT SSH_OPTIONS
 mc LOCAL_MOUNT_POINT
 fusermount -u LOCAL_MOUNT_POINT
 
 ```
-
 This will mount the remote directory, launch MC, and unmount it when you exit.
 
 ### Unmounting
@@ -64,7 +62,7 @@ This will mount the remote directory, launch MC, and unmount it when you exit.
 To unmount the remote system:
 
 ```
-$ fusermount -u _LOCAL_MOUNT_POINT_
+$ fusermount -u *LOCAL_MOUNT_POINT*
 
 ```
 
@@ -80,7 +78,6 @@ $ fusermount -u /mnt/sessy
 You may want to jail a (specific) user to a directory by editing `/etc/ssh/sshd_config`:
 
  `/etc/ssh/sshd_config` 
-
 ```
 .....
 Match User someuser 
@@ -120,11 +117,11 @@ user@host:/remote/folder /mount/point  fuse.sshfs noauto,x-systemd.automount,_ne
 
 ```
 
-The important mount options here are _noauto,x-systemd.automount,_netdev_.
+The important mount options here are *noauto,x-systemd.automount,_netdev*.
 
-*   _noauto_ tells it not to mount at boot
-*   _x-systemd.automount_ does the on-demand magic
-*   __netdev_ tells it that it is a network device, not a block device (without it "No such device" errors might happen)
+*   *noauto* tells it not to mount at boot
+*   *x-systemd.automount* does the on-demand magic
+*   *_netdev* tells it that it is a network device, not a block device (without it "No such device" errors might happen)
 
 **Tip:**
 
@@ -142,7 +139,7 @@ USERNAME@HOSTNAME_OR_IP:/REMOTE/DIRECTORY  /LOCAL/MOUNTPOINT  fuse.sshfs  defaul
 
 ```
 
-Take for example the _fstab_ line
+Take for example the *fstab* line
 
 ```
 llib@192.168.1.200:/home/llib/FAH  /media/FAH2  fuse.sshfs  defaults,_netdev  0  0
@@ -158,7 +155,7 @@ user@domain.org:/home/user  /media/user   fuse.sshfs    defaults,allow_other,_ne
 
 ```
 
-Again, it is important to set the __netdev_ mount option to make sure the network is available before trying to mount.
+Again, it is important to set the *_netdev* mount option to make sure the network is available before trying to mount.
 
 ### Secure user access
 
@@ -173,22 +170,22 @@ USERNAME@HOSTNAME_OR_IP:/REMOTE/DIRECTORY  /LOCAL/MOUNTPOINT  fuse.sshfs noauto,
 
 Summary of the relevant options:
 
-*   _allow_other_ - Allow other users than the mounter (i.e. root) to access the share.
-*   _default_permissions_ - Allow kernel to check permissions, i.e. use the actual permissions on the remote filesystem. This allows prohibiting access to everybody otherwise granted by _allow_other_.
-*   _uid_, _gid_ - set reported ownership of files to given values; _uid_ is the numeric user ID of your user, _gid_ is the numeric group ID of your user.
+*   *allow_other* - Allow other users than the mounter (i.e. root) to access the share.
+*   *default_permissions* - Allow kernel to check permissions, i.e. use the actual permissions on the remote filesystem. This allows prohibiting access to everybody otherwise granted by *allow_other*.
+*   *uid*, *gid* - set reported ownership of files to given values; *uid* is the numeric user ID of your user, *gid* is the numeric group ID of your user.
 
 ## Options
 
 sshfs can automatically convert your local and remote user IDs.
 
-Add the _idmap_ option with _user_ value to translate UID of connecting user:
+Add the *idmap* option with *user* value to translate UID of connecting user:
 
 ```
 # sshfs -o idmap=user sessy@mycomputer:/home/sessy /mnt/sessy -C -p 9876
 
 ```
 
-This will map UID of the remote user "sessy" to the local user, who runs this process ("root" in the above example) and GID remains unchanged. If you need more precise control over UID and GID translation, look at the options _idmap=file_ and _uidfile_ and _gidfile_.
+This will map UID of the remote user "sessy" to the local user, who runs this process ("root" in the above example) and GID remains unchanged. If you need more precise control over UID and GID translation, look at the options *idmap=file* and *uidfile* and *gidfile*.
 
 ## Troubleshooting
 
@@ -203,7 +200,7 @@ $ mv /etc/issue /etc/issue.orig
 
 ```
 
-2\. Keep in mind that most SSH related troubleshooting articles you will find on the web are **not** Systemd related. Often `/etc/fstab` definitions wrongly begin with `_sshfs#_user@host:/mnt/server/folder ... fuse ...` instead of using the syntax `user@host:/mnt/server/folder ... fuse._sshfs_ ... _x-systemd_, ...`.
+2\. Keep in mind that most SSH related troubleshooting articles you will find on the web are **not** Systemd related. Often `/etc/fstab` definitions wrongly begin with `*sshfs#*user@host:/mnt/server/folder ... fuse ...` instead of using the syntax `user@host:/mnt/server/folder ... fuse.*sshfs* ... *x-systemd*, ...`.
 
 3\. Check that the owner of server's source folder and content is owned by the server's user.
 
@@ -215,7 +212,7 @@ $ chown -R USER_S: /mnt/servers/folder
 4\. The server's user ID can be different from the client's one. Obviously both user names have to be the same. You just have to care for the client's user IDs. SSHFS will translate the UID for you with the following mount options:
 
 ```
-uid=_USER_C_ID_,gid=_GROUP_C_ID_
+uid=*USER_C_ID*,gid=*GROUP_C_ID*
 
 ```
 
@@ -231,7 +228,7 @@ $ chown -R USER_C: /mnt/client/folder
 7\. If you want to automount SSH shares by using an SSH public key authentication (no password) via `/etc/fstab`, you can use this line as an example:
 
 ```
-_USER_S_@_SERVER_:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.automount,_netdev,user,idmap=user,transform_symlinks,identityfile=/home/_USER_C_/.ssh/id_rsa,allow_other,default_permissions,uid=_USER_C_ID_,gid=_GROUP_C_ID_,umask=0   0 0
+*USER_S*@*SERVER*:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.automount,_netdev,user,idmap=user,transform_symlinks,identityfile=/home/*USER_C*/.ssh/id_rsa,allow_other,default_permissions,uid=*USER_C_ID*,gid=*GROUP_C_ID*,umask=0   0 0
 
 ```
 
@@ -271,9 +268,9 @@ pete@serv:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.au
 
 ### Remote host has disconnected
 
-If you receive this message directly after attempting to use _sshfs_:
+If you receive this message directly after attempting to use *sshfs*:
 
-*   First make sure that the **remote** machine has _sftp_ installed! It will not work, if not.
+*   First make sure that the **remote** machine has *sftp* installed! It will not work, if not.
 
 **Tip:** If your remote server is running OpenWRT: `opkg install openssh-sftp-server` will do the trick
 
@@ -299,7 +296,6 @@ See the following [bug report](https://bugs.archlinux.org/task/40260) for more d
 Systemd may hang on shutdown if an sshfs mount was mounted manually and not unmounted before shutdown. To solve this problem, create this file (as root):
 
  `/etc/systemd/system/killsshfs.service` 
-
 ```
 [Unit]
 After=network.target

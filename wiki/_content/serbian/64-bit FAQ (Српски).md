@@ -30,7 +30,7 @@ Najčešće paket u AUR će imat 'i686' , ali možete dodat u liniju PKGBUILD i 
 
 ## Da li 64-bita znače veliko brzinsko poboljšanje?
 
-For applications using the 64-bit CPU registers (large databases and such) this is true in most cases. Some multimedia applications will also run noticeably faster. If you know an application which is known to be much faster when using SSE3 extensions you can rebuild the package yourself. We _only_ compile with SSE2 support (from march=x86_64) and -O2 optimizations. Za više informacija [http://forums.gentoo.org/viewtopic.php?t=221045](http://forums.gentoo.org/viewtopic.php?t=221045) ili [http://www.thejemreport.com/mambo/content/view/74/74/](http://www.thejemreport.com/mambo/content/view/74/74/) .
+For applications using the 64-bit CPU registers (large databases and such) this is true in most cases. Some multimedia applications will also run noticeably faster. If you know an application which is known to be much faster when using SSE3 extensions you can rebuild the package yourself. We *only* compile with SSE2 support (from march=x86_64) and -O2 optimizations. Za više informacija [http://forums.gentoo.org/viewtopic.php?t=221045](http://forums.gentoo.org/viewtopic.php?t=221045) ili [http://www.thejemreport.com/mambo/content/view/74/74/](http://www.thejemreport.com/mambo/content/view/74/74/) .
 
 Za ostatak sistema: To ne čini bilo koji razlika ako se čeka na tastaturi.
 

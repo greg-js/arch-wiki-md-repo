@@ -58,7 +58,7 @@ pacman -S artwiz-fonts ttf-ms-fonts
 
 De esta manera, las fuentes quedarán bajo el directorio /usr/X11R6/lib/X11/fonts. Se recomienda a los usuarios CJK (chinos, japoneses y coreanos) la instalación de ttf-arphic-uming, ttf-arphic-ukai y ttf-fireflysung para una visualización apropiada
 
-Otra opción podría ser el uso de KDE _Font Installer_, en KDE _Control Center_. Funciona perfectamente para aquellos que usen KDE. Además, las fuentes pueden ser instaladas manualmente bajo los tres directorios arriba especificados. En ese caso, como root hemos de hacer
+Otra opción podría ser el uso de KDE *Font Installer*, en KDE *Control Center*. Funciona perfectamente para aquellos que usen KDE. Además, las fuentes pueden ser instaladas manualmente bajo los tres directorios arriba especificados. En ese caso, como root hemos de hacer
 
 ```
 fc-cache -vf
@@ -119,7 +119,7 @@ Si al llegar a este punto piensas que las fuentes se ven muy gruesas, modifica e
 
 **P. Mis fuentes son muy grandes o muy pequeñas. La resolución parece mala. Mis fuentes están deformes.**
 
-R(1). Lea la sección_Display Size/DPI_ de [Xorg](/index.php/Xorg "Xorg") donde encontrará un ejemplo de configuración.
+R(1). Lea la sección*Display Size/DPI* de [Xorg](/index.php/Xorg "Xorg") donde encontrará un ejemplo de configuración.
 
 R(2). Obtenga la resolución correcta desde una consola, ejecutando:
 

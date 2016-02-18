@@ -52,7 +52,7 @@ Para obtener una lista de add-ons populares, visite: [extensiones por descargas 
 
 ## Plugins
 
-_See: [Browser plugins](/index.php/Browser_plugins "Browser plugins")_
+*See: [Browser plugins](/index.php/Browser_plugins "Browser plugins")*
 
 Para comprobar qué plugins están instalados/habilitados, introduzca:
 
@@ -61,7 +61,7 @@ about:plugins
 
 ```
 
-en la barra de direcciones de firefox. O vaya a _Addons_ desde la barra principal y seleccione la pestaña _Plugins_. <-- tengo pendiente ponerme el vimperator -->
+en la barra de direcciones de firefox. O vaya a *Addons* desde la barra principal y seleccione la pestaña *Plugins*. <-- tengo pendiente ponerme el vimperator -->
 
 ### Integración con Gnome
 

@@ -1,6 +1,6 @@
 From [Subtle project page](http://subforge.org/projects/subtle):
 
-	_Subtle is a manual tiling window manager with a rather uncommon approach of tiling: Instead of relying on predefined layouts, Subtle divides the screen into a grid with customizable slots (called gravities)._
+	*Subtle is a manual tiling window manager with a rather uncommon approach of tiling: Instead of relying on predefined layouts, Subtle divides the screen into a grid with customizable slots (called gravities).*
 
 Subtle is configured with [Ruby](/index.php/Ruby "Ruby") for [Xorg](/index.php/Xorg "Xorg").
 
@@ -33,7 +33,7 @@ When windows are opened they are matched against a set of user-defined rules to 
 *   Gravity
 *   Tag
 
-_Views_ are the environment in which the windows will be placed. Much like ordinary desktop surfaces. Defining the actual rules for a window is accomplished with a _tag_. In tags you also determine the _gravity_ to be used. Gravities control the size and position of windows.
+*Views* are the environment in which the windows will be placed. Much like ordinary desktop surfaces. Defining the actual rules for a window is accomplished with a *tag*. In tags you also determine the *gravity* to be used. Gravities control the size and position of windows.
 
 **Note:** When configuring Subtle you actually need to declare these elements in reverse order. Gravity, tag then view.
 

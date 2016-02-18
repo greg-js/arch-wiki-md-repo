@@ -1,4 +1,4 @@
-Questo articolo spiega il processo di installazione e configurazione de _**Synaptics input driver**_ per i touchpad Synaptics (e ALPS) che si trovano sulla maggior parte dei notebook.
+Questo articolo spiega il processo di installazione e configurazione de ***Synaptics input driver*** per i touchpad Synaptics (e ALPS) che si trovano sulla maggior parte dei notebook.
 
 ## Contents
 
@@ -61,7 +61,6 @@ Gli utenti possono modificare questo file per configurare le diverse opzioni del
 I driver Synaptic permettono di essere modificati in un vasto numero di opzioni. Si noti che tutte queste opzioni possono essere semplicemente aggiunte al file di configurazione principale in `/etc/X11/xorg.conf.d/10-synaptics.conf`, come è possibile notare in questo esempio di file di configurazione, dove si è abilitato lo scrolling verticale, orizzontale e circolare:
 
  `/etc/X11/xorg.conf.d/10-synaptics.conf` 
-
 ```
 . 
 
@@ -153,9 +152,9 @@ Per cambiare queste impostazioni in **Gnome 2**:
 
 Per cambiare queste impostazioni in **Gnome 3**:
 
-1.  Si apra _Impostazioni di Sistema_.
-2.  Si selezioni _Mouse e Touchpad_.
-3.  Si cambino le impostazioni nella scheda _Touchpad_.
+1.  Si apra *Impostazioni di Sistema*.
+2.  Si selezioni *Mouse e Touchpad*.
+3.  Si cambino le impostazioni nella scheda *Touchpad*.
 
 Il demone delle impostazioni Gnome potrebbe sovrascrivere le impostazioni esistenti (ad esempio i settaggio in `xorg.conf.d`) per i quali non ci sono equivalenti in alcuna utilità grafica di configurazione). È possibile fare in modo che gnome non modifichi più le impostazioni mouse:
 
@@ -304,7 +303,6 @@ Il cambiamento non sarà permanente, occorrerà mettere questi valori nel propri
 Lo Scrolling Circolare è un'utilità offerta da Synaptics che ricorda da vicino il comportamento degli iPod. Al posto di (o oltre a) scorrere orizzontalmente o verticalmente, è possibile farlo circolarmente. Alcuni utenti lo trovano un sistema più veloce e preciso. Per abilitare lo Scrolling Circolare, si aggiungano le opzioni seguenti alla sezione device del touchpad in `/etc/X11/xorg.conf.d/10-synaptics.conf`:
 
  `/etc/X11/xorg.conf.d/10-synaptics.conf` 
-
 ```
  Section "InputClass"
          ...
@@ -339,7 +337,6 @@ Per scorrere velocemente, disegnare piccoli cerchi nel centro del proprio touchp
 È possibile abilitare lo Scrolling Naturale attraverso Synaptics. Semplicemente si usino valori negativi per `VertScrollDelta` e `HorizScrollDelta` come segue:
 
  `/etc/X11/xorg.conf.d/10-synaptics.conf` 
-
 ```
 Section "InputClass"
          ...
@@ -359,7 +356,6 @@ Si potrebbe dover installare [xbindkeys](/index.php/Xbindkeys "Xbindkeys") nel c
 Quindi si salvi questo script in qualcosa come `/sbin/trackpad-toggle.sh`:
 
  `/sbin/trackpad-toggle.sh` 
-
 ```
  #!/bin/bash
 
@@ -370,7 +366,6 @@ Quindi si salvi questo script in qualcosa come `/sbin/trackpad-toggle.sh`:
 Infine, si aggiunga una combinazione di tasti che lo utilizzi. La cosa migliore è avviarlo con xbindkeys così, in(file `~/.xbindkeysrc`):
 
  `~/.xbindkeysrc` 
-
 ```
  "/sbin/trackpad-toggle.sh"
      m:0x5 + c:65
@@ -457,7 +452,6 @@ L'opzione "-d" è necessaria per avviare syndaemon con un processo in background
 Per avviare syndaemon è necessario usare il programma delle Preferenze delle Applicazioni di Avvio di Gnome. Effettuare il login a Gnome ed accedere a **Sistema > Preferenze > Applicazioni di Avvio**. Sulla tabella dei Programmi di avvio cliccare sul pulsante **Aggiungi**. Si dia il nome che si preferisce al programma di avvio e si inseriscano i commenti che si ritengono opportuni (o si lasci il campo vuoto). Sullo spazio per il comando aggiungere:
 
  `$ syndaemon -t -k -i 2 -d &` 
-
 ```
 In Gnome 3 avviare gnome-session-properties per accedere alla applicazioni di avvio. 
 
@@ -488,7 +482,6 @@ Quindi spuntare **Avvia sul terminale**.
 Per i touchpad ALPS, nel caso in cui le configurazioni sopra indicate non dessero i risultati desiderati, si provi invece ad utilizzare la seguente configurazione:
 
  `/etc/X11/xorg.conf.d/10-synaptics.conf` 
-
 ```
   Section "ServerLayout"
     ...
@@ -532,7 +525,6 @@ Per i touchpad ALPS, nel caso in cui le configurazioni sopra indicate non desser
 A causa del modo in cui synaptic è impostato al momento, vengono caricate due istanze del modulo synaptics. Si può riconoscere questa situazione aprendo il file di log di xorg (`/var/log/Xorg.0.log`) e notando questo:
 
  `/var/log/Xorg.0.log` 
-
 ```
  [ 9304.803] (**) SynPS/2 Synaptics TouchPad: Applying InputClass "evdev touchpad catchall"
  [ 9304.803] (**) SynPS/2 Synaptics TouchPad: Applying InputClass "touchpad catchall"
@@ -544,7 +536,6 @@ Da notare come due istanze dal nome diverso vengano caricate. In alcuni casi que
 Si può prevenire il doppio caricamento editando il proprio file `/etc/X11/xorg.conf.d/10-synaptics.conf`. Si dovrebbe aggiungere `MatchDevicePath "/dev/input/event*"`
 
  `/etc/X11/xorg.conf.d/10-synaptics.conf` 
-
 ```
  Section "InputClass"
        Identifier "touchpad catchall"
@@ -594,7 +585,6 @@ Se impedire che il modulo parta due volte non risolve il problema, provare a com
 Con l'aiuto di [udev](/index.php/Udev_(Italiano) "Udev (Italiano)"), è possibile disabilitare automaticamente il touchpad nel caso in cui venga inserito un mouse esterno. Per realizzare ciò si aggiunga la seguente regola udev a `/etc/udev/rules.d/01-touchpad.rules`:
 
  `/etc/udev/rules.d/01-touchpad.rules` 
-
 ```
  ACTION=="add", SUBSYSTEM=="input", KERNEL=="mouse[0-9]", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/<your username>/.Xauthority", ENV{ID_CLASS}="mouse", ENV{REMOVE_CMD}="/usr/bin/synclient TouchpadOff=0", RUN+="/usr/bin/synclient TouchpadOff=1" 
 
@@ -627,7 +617,7 @@ Se syndaemon si avvia automaticamente alla rimozione del mouse è possibile comb
 
 Alcuni utenti denunciano un cursore che inspiegabilmente "salta" per tutto lo schermo. Al momento non c'è una patch per questo problema, ma gli sviluppatori sono informati sul problema e ci stanno lavorando.
 
-Un'altra possibilità è che si stiano avendo _IRQ losses_ correlate al controller i8042 (questo dispositivo gestisce la tastiera e il touchpad di molti portatili). In questo caso ci sono due possibilità:
+Un'altra possibilità è che si stiano avendo *IRQ losses* correlate al controller i8042 (questo dispositivo gestisce la tastiera e il touchpad di molti portatili). In questo caso ci sono due possibilità:
 
 1\. rmmod && insmod il modulo psmouse. 2\. instrire i8042.nomux=1 alla riga di boot e riavviare la propria macchina.
 
@@ -646,7 +636,6 @@ Si cerchi quindi un dispositivo di input col nome "SynPS/2 Synaptics TouchPad". 
 **Esempio d'output:**
 
  `$ cat /proc/bus/input/devices` 
-
 ```
  I: Bus=0011 Vendor=0002 Product=0007 Version=0000
  N: Name="SynPS/2 Synaptics TouchPad"
@@ -747,7 +736,6 @@ Se si percepisce un ritardo tra la pressione sul touchpad e il click effettivo c
 per farlo occorre aggiungere **Option "FastTaps" "1"** a `/etc/X11/xorg.conf.d/10-synaptics.conf` in modo tale da avere:
 
  `/etc/X11/xorg.conf.d/10-synaptics.conf` 
-
 ```
  Section "InputClass"
       Identifier "Synaptics Touchpad"
@@ -768,7 +756,6 @@ Registrare l'evento del device significa che nessun programma né da parte dell'
 Se lo si vuole controllare, si aggiunga o si modifichi l'opzione "GrabEventDevice" nella sezione touchpad in `/etc/X11/xorg.conf.d/10-synaptics.conf`:
 
  `/etc/X11/xorg.conf.d/10-synaptics.conf` 
-
 ```
  ...
  Option "GrabEventDevice" "''boolean''"
@@ -784,12 +771,11 @@ Molti driver contengono un firmware che viene caricato nella memoria flash quand
 
 ### Touchpad senza pulsanti (o ClickPad)
 
-Alcuni portatili sono dotati di un tipo speciale di touchpad che ha i pulsanti del mouse integrati alla piastra di rilevamento, anziché averli esterni. Per esempio HP series 4500 ProBooks, ThinkPad X220 e le serie X1 di ThinkPad hanno questo tipo di touchpad. Di default l'intera zona tasto è rilevato come un pulsante sinistro, con il risultato che il secondo è di fatto inutilizzabile e che il trascinamento non funziona. In precedenza, il supporto per questo tipo di dispositivi era gestito usando patch di parti terze, ma dalla versione 1.6.0 i driver synaptics possiedono il supporto multitouch nativo (usando la libreria _mtdev_).
+Alcuni portatili sono dotati di un tipo speciale di touchpad che ha i pulsanti del mouse integrati alla piastra di rilevamento, anziché averli esterni. Per esempio HP series 4500 ProBooks, ThinkPad X220 e le serie X1 di ThinkPad hanno questo tipo di touchpad. Di default l'intera zona tasto è rilevato come un pulsante sinistro, con il risultato che il secondo è di fatto inutilizzabile e che il trascinamento non funziona. In precedenza, il supporto per questo tipo di dispositivi era gestito usando patch di parti terze, ma dalla versione 1.6.0 i driver synaptics possiedono il supporto multitouch nativo (usando la libreria *mtdev*).
 
 Per abilitare altri pulsanti modificare la sezione touchpad in `/etc/X11/xorg.conf.d/10-synaptics.conf` (o, meglio, del proprio file di configurazione personalizzato preceduto da un prefisso più alto di 10):
 
  `/etc/X11/xorg.conf.d/10-synaptics.conf` 
-
 ```
 ...
 Option "ClickPad"         "true"

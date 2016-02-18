@@ -53,13 +53,13 @@ You will need Gimp (of course), either Separate or Separate+ plugins, and ICC pr
 
 If you are not interested in the theory, you may skip straight to the heading on [CMYK color support in GIMP](#About_CMYK_color_and_Gimp).
 
-First off, the proper name for _CMYK mode_, as it is commonly known, is _[CMYK color model](http://en.wikipedia.org/wiki/CMYK)_. It is called a _color model_, because it represents a standard way of describing colors.
+First off, the proper name for *CMYK mode*, as it is commonly known, is *[CMYK color model](http://en.wikipedia.org/wiki/CMYK)*. It is called a *color model*, because it represents a standard way of describing colors.
 
-The color model is also called a _subtractive_ color model, as opposed to _additive_ (that is RGB) color model. Words additive and subtractive suggest that light, which is essential for perception of color, is either added or subtracted before it reaches the eye. The choice of primary colors is based on belief that the combination of Red, Green, and Blue (for RGB) or Cyan, Magenta, Yellow (for CMYK) produce the greatest range visible colors.
+The color model is also called a *subtractive* color model, as opposed to *additive* (that is RGB) color model. Words additive and subtractive suggest that light, which is essential for perception of color, is either added or subtracted before it reaches the eye. The choice of primary colors is based on belief that the combination of Red, Green, and Blue (for RGB) or Cyan, Magenta, Yellow (for CMYK) produce the greatest range visible colors.
 
 Subtraction of light occurs when an ink absorbs part of the light that falls on it. The rest is reflected and reaches our eyes. Different inks absorb different parts of the light's spectrum, and the combination of C-M-Y inks yields the greatest range of different colors.
 
-Ideally, subtraction of all light, that is when Cyan, Magenta, and Yellow are mixed together at their full density, we should get black (i.e., no light reflected, fully absorbed by ink). However, this is usually not true in the real world because the inks are semi-transparent and the white paper below reflects some of the light. The use of additional Black ink in printing (_K_ in _CMYK_ stands for Key, or blacK) is due to this fact. It adds the necessary density to the image and makes black a _black_.
+Ideally, subtraction of all light, that is when Cyan, Magenta, and Yellow are mixed together at their full density, we should get black (i.e., no light reflected, fully absorbed by ink). However, this is usually not true in the real world because the inks are semi-transparent and the white paper below reflects some of the light. The use of additional Black ink in printing (*K* in *CMYK* stands for Key, or blacK) is due to this fact. It adds the necessary density to the image and makes black a *black*.
 
 When printing an image on a commercial press, it needs to be printed one primary (or Black) at a time. Therefore the original (usually a digital RGB image, or a printed photograph) needs to be separated into Cyan, Magenta, Yellow, and Black components.
 
@@ -73,7 +73,7 @@ The ICC profiles are used to describe the way colors are reproduced in a system,
 
 ## About CMYK color and Gimp
 
-Gimp still lacks full CMYK color model support. The ability to separate and then _edit_ an image in CMYK mode is still [a long way down the list of features](http://wiki.gimp.org/index.php/Roadmap) to be added. However, there is a plug-in called _Separate_ that offers a partial solution to the problem.
+Gimp still lacks full CMYK color model support. The ability to separate and then *edit* an image in CMYK mode is still [a long way down the list of features](http://wiki.gimp.org/index.php/Roadmap) to be added. However, there is a plug-in called *Separate* that offers a partial solution to the problem.
 
 Separate plugin has following abilities:
 
@@ -112,7 +112,7 @@ tar xvf separate-VERSION.tar.gz
 
 where VERSION would be the version of Separate plug-in (0.1 at the time of this writing).
 
-Copy a file called _separate_ (located inside the extracted _separate_ directory) into Gimp's plug-in directory:
+Copy a file called *separate* (located inside the extracted *separate* directory) into Gimp's plug-in directory:
 
 ```
 cp separate/separate /usr/lib/gimp/GIMPVERSION/plug-ins/
@@ -121,7 +121,7 @@ cp separate/separate /usr/lib/gimp/GIMPVERSION/plug-ins/
 
 where GIMPVERSION would be the major version number of Gimp (2.0 at the time of this writing).
 
-When you start Gimp the Separate will be recognized and reachable through _Image > Separate_ menu.
+When you start Gimp the Separate will be recognized and reachable through *Image > Separate* menu.
 
 ### Separate+ plug-in
 
@@ -166,7 +166,7 @@ make install
 
 ```
 
-When you start Gimp the Separate+ will be reachable through _Image > Separate_ menu.
+When you start Gimp the Separate+ will be reachable through *Image > Separate* menu.
 
 ### Install ICC profiles
 
@@ -178,7 +178,7 @@ To install ICC profiles from AUR, you need to get [eci-icc](https://aur.archlinu
 
 #### Install manually
 
-Before you download and install profiles manually, you need to know that the standard location for ICC profiles is _/usr/share/color/icc_. You have to create this directory and copy any profiles there. Another standard location is _~/.color/icc_.
+Before you download and install profiles manually, you need to know that the standard location for ICC profiles is */usr/share/color/icc*. You have to create this directory and copy any profiles there. Another standard location is *~/.color/icc*.
 
 You can obtain ICC profiles from [Adobe](http://www.adobe.com/support/downloads/product.jsp?product=62&platform=windows) and [ECI](http://www.eci.org/doku.php?id=en:downloads).
 
@@ -186,13 +186,13 @@ Extract the downloaded zip file(s) and copy the contents of CMYK and RGB directo
 
 ## Separating a RGB image
 
-Open an image in Gimp. From the _Image_ menu, open the _Separate_ sub-menu and pick _Separate (to Colour)_.
+Open an image in Gimp. From the *Image* menu, open the *Separate* sub-menu and pick *Separate (to Colour)*.
 
-Choose a source (RGB) and destination (target, CMYK) profile and click _OK_.
+Choose a source (RGB) and destination (target, CMYK) profile and click *OK*.
 
 This will open another window with the CMYK color version. You can see that there are 5 layers total.
 
-Pick _Save..._ (or _Export..._ in Separate+) from the _Separate_ sub-menu and save the file in TIFF format with an attached (embedded) ICC profile.
+Pick *Save...* (or *Export...* in Separate+) from the *Separate* sub-menu and save the file in TIFF format with an attached (embedded) ICC profile.
 
 You can only separate flattened images, so it is recommended that you save a new copy of the image before you create the CMYK TIFF.
 
@@ -206,9 +206,9 @@ Basically, you need to work with grayscale values of each primary color (plus Bl
 
 Given the circumstances, the best way to create a solid CMYK image would be to work in RGB mode, but enable soft-proofing. Soft-proofing is the method of adjusting the on-screen display of colors to match the final print. In the newer versions of The GIMP, soft-proofing is made possible via Display Filters.
 
-Go to the _View_ menu and pick _Display Filters..._ option. From the list of available filters, pick _Color Proof_ (at the bottom in The GIMP version 2.2.13). Click on the right arrow button between the two lists and the _Color Proof_ filter will be placed into the list of active filters. Click on it (the one in the active filters list) and you will get a few options below.
+Go to the *View* menu and pick *Display Filters...* option. From the list of available filters, pick *Color Proof* (at the bottom in The GIMP version 2.2.13). Click on the right arrow button between the two lists and the *Color Proof* filter will be placed into the list of active filters. Click on it (the one in the active filters list) and you will get a few options below.
 
-Although this seems very convenient, experience has proven that this is **not** a reliable method of soft-proofing. Instead of soft-proofing using the display filter, you are advised to properly configure Gimp's color management system and enable the _Print simulation_ mode.
+Although this seems very convenient, experience has proven that this is **not** a reliable method of soft-proofing. Instead of soft-proofing using the display filter, you are advised to properly configure Gimp's color management system and enable the *Print simulation* mode.
 
 ### Intent
 
@@ -219,11 +219,11 @@ The color proof (rendering) intent can be one of the following:
 *   saturation
 *   absolute colorimetric
 
-_Perceptual_ and _relative colorimetric_ are most common.
+*Perceptual* and *relative colorimetric* are most common.
 
 Perceptual compresses or expands the full color range of source color-space into the full color range of target color-space.
 
-Relative colorimetric intent adjusts the white (white point) of source space and then adjusts the rest of the source colors accordingly. Source colors outside the target space are mapped to closest reproducible colors. In some software, this is also called _proof intent_.
+Relative colorimetric intent adjusts the white (white point) of source space and then adjusts the rest of the source colors accordingly. Source colors outside the target space are mapped to closest reproducible colors. In some software, this is also called *proof intent*.
 
 Saturation intent keeps the saturation of the source colors even if the colors get distorted in the target space. This intent is still considered experimental and you may get unexpected (if not undesirable) results.
 
@@ -235,11 +235,11 @@ For color proofing, we usually use the profile of the device that image is to be
 
 ## Soft-proofing with Separate's proof function
 
-Separate itself offers a way of soft-proofing color. This method of soft-proofing is not dynamic: it does not update as you edit the image, but acts more like a one-time preview. However, it is far more accurate than The GIMP's soft-proofing using _Color Proof_ display filter. Basically, the proof function converts the image to RGB space using _absolute colorimetric_ intent. It is supposed to offer a side-by-side match to the printed copy.
+Separate itself offers a way of soft-proofing color. This method of soft-proofing is not dynamic: it does not update as you edit the image, but acts more like a one-time preview. However, it is far more accurate than The GIMP's soft-proofing using *Color Proof* display filter. Basically, the proof function converts the image to RGB space using *absolute colorimetric* intent. It is supposed to offer a side-by-side match to the printed copy.
 
-To soft-proof with Separate's proof function, you first [separate an image](#Separating_a_RGB_image) and then pick _Proof_ from _Separate_ sub-menu. Source profile is your minitor's RGB profile (you can use [lprof to profile your monitor](/index.php/Using_LPROF_to_profile_monitors "Using LPROF to profile monitors") and create an ICC profile). The destination profile is the ICC profile of a your image will be output to.
+To soft-proof with Separate's proof function, you first [separate an image](#Separating_a_RGB_image) and then pick *Proof* from *Separate* sub-menu. Source profile is your minitor's RGB profile (you can use [lprof to profile your monitor](/index.php/Using_LPROF_to_profile_monitors "Using LPROF to profile monitors") and create an ICC profile). The destination profile is the ICC profile of a your image will be output to.
 
-Click _OK_ and you will be presented with an RGB image of how the printed image would look like.
+Click *OK* and you will be presented with an RGB image of how the printed image would look like.
 
 ## Soft-proofing with Separate+'s proof function
 

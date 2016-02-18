@@ -143,7 +143,6 @@ Identity added: /home/user/.ssh/id_dsa (/home/user/.ssh/id_dsa)
 Да би почели са коришћењем GPG агента за SSH кључеве потребно је прво покренути gpg-agent са `--enable-ssh-support` опцијом. Пример (не заборавите да учините фајл извршивим):
 
  `/etc/profile.d/gpg-agent.sh` 
-
 ```
 #!/bin/sh
 
@@ -198,7 +197,6 @@ Keychain се инсталира из репозиторијума extra:
 Потребно је креирати следећи фаји и учинити га извршним:
 
  `/etc/profile.d/keychain.sh` 
-
 ```
 eval `keychain --eval --nogui -Q -q id_rsa`
 
@@ -207,7 +205,6 @@ eval `keychain --eval --nogui -Q -q id_rsa`
 или
 
  `/etc/profile.d/keychain.sh` 
-
 ```
 /usr/bin/keychain -Q -q --nogui ~/.ssh/id_dsa
 [[ -f $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh

@@ -1,6 +1,6 @@
 Los poseedores de tarjetas gráficas **ATI/AMD** pueden elegir entre el [controlador privativo](/index.php/ATI_Catalyst_(Espa%C3%B1ol) "ATI Catalyst (Español)") de AMD ([catalyst](https://aur.archlinux.org/packages/catalyst/)) y el controlador de código abierto ([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)). Este artículo trata sobre el controlador de código abierto.
 
-El controlador libre no está _a la par_ con el controlador propietario en términos de rendimiento 3D en las nuevas tarjetas ni tiene soporte tan fiable para la salida de TV. Sin embargo, ofrece un mejor apoyo dual-head, aceleración 2D excelente, y proporciona suficiente aceleración 3D necesaria para algunos [gestores de ventanas](/index.php/Window_Manager_(Espa%C3%B1ol) "Window Manager (Español)") que aprovechan la aceleración OpenGl, tal como [Compiz](/index.php/Compiz "Compiz") o KWin.
+El controlador libre no está *a la par* con el controlador propietario en términos de rendimiento 3D en las nuevas tarjetas ni tiene soporte tan fiable para la salida de TV. Sin embargo, ofrece un mejor apoyo dual-head, aceleración 2D excelente, y proporciona suficiente aceleración 3D necesaria para algunos [gestores de ventanas](/index.php/Window_Manager_(Espa%C3%B1ol) "Window Manager (Español)") que aprovechan la aceleración OpenGl, tal como [Compiz](/index.php/Compiz "Compiz") o KWin.
 
 Si tiene dudas sobre cuál elegir, pruebe primero el controlador de código abierto, dado que, por regla general, se adaptará perfectamente a la mayoría de sus necesidades y es menos problemático (consulte la [tabla de características](http://www.x.org/wiki/RadeonFeature) para más detalles).
 
@@ -46,7 +46,7 @@ Si tiene dudas sobre cuál elegir, pruebe primero el controlador de código abie
 
 ## Convenciones sobre nombres
 
-La marca ATI [Radeon](https://en.wikipedia.org/wiki/es:Radeon "wikipedia:es:Radeon") sigue un esquema de nombres que relaciona cada producto para un segmento del mercado. En este artículo, se utilizará la nomenclatura tanto en base al nombre del _producto_ (por ejemplo, HD 4850, X1900) como en base al nombre del _código_ o del _núcleo_ (_core_) (por ejemplo, RV770, R580). Tradicionalmente, una _serie del producto_ se correspondería a una _serie del núcleo_ (por ejemplo, la serie del producto «X1000» incluye todos los productos X1300, X1600, X1800, X1900 y del mismo modo cuando utilizan el núcleo de la serie «R500» - que incluiría los núcleos RV515, RV530, R520, y R580).
+La marca ATI [Radeon](https://en.wikipedia.org/wiki/es:Radeon "wikipedia:es:Radeon") sigue un esquema de nombres que relaciona cada producto para un segmento del mercado. En este artículo, se utilizará la nomenclatura tanto en base al nombre del *producto* (por ejemplo, HD 4850, X1900) como en base al nombre del *código* o del *núcleo* (*core*) (por ejemplo, RV770, R580). Tradicionalmente, una *serie del producto* se correspondería a una *serie del núcleo* (por ejemplo, la serie del producto «X1000» incluye todos los productos X1300, X1600, X1800, X1900 y del mismo modo cuando utilizan el núcleo de la serie «R500» - que incluiría los núcleos RV515, RV530, R520, y R580).
 
 Para una tabla completa de comparación entre el nombre de los productos y los correlativos núcleos, consulte la [comparación de las unidades de procesamiento gráfico AMD](http://en.wikipedia.org/wiki/Comparison_of_AMD_graphics_processing_units)
 
@@ -62,7 +62,7 @@ El controlador `xf86-video-ati` (radeon):
 
 Generalmente, **xf86-video-ati** debe ser su primera opción, independientemente de la tarjeta ATI que se posea. En caso de que sea necesario utilizar un controlador para las nuevas tarjetas ATI, es preferible el controlador privativo **catalyst**.
 
-**Nota:** **xf86-video-ati** es reconocido como _radeon_ por el kernel y en `xorg.conf`.
+**Nota:** **xf86-video-ati** es reconocido como *radeon* por el kernel y en `xorg.conf`.
 
 ## Instalación
 
@@ -101,31 +101,31 @@ KMS para tarjetas de vídeo ATI exige el controlador de código abierto de [Xorg
 
 #### Inicio temprano de KMS
 
-_Este método iniciará KMS tan pronto como sea posible en el [proceso de arranque](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)")._
+*Este método iniciará KMS tan pronto como sea posible en el [proceso de arranque](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)").*
 
 1\. Retiraremos todos los controladores UMS en conflicto de la línea de órdenes del kernel:
 
-*   Eliminaremos todas las opciones `vga=` de la línea del _kernel_ en el [archivo de configuración](/index.php/Boot_Loader#Configuration_files "Boot Loader") del gestor de arranque. El uso de otros controladores framebuffer (como `[uvesafb](/index.php/Uvesafb "Uvesafb")` o `radeonfb`) entrarán en conflicto con KMS.
+*   Eliminaremos todas las opciones `vga=` de la línea del *kernel* en el [archivo de configuración](/index.php/Boot_Loader#Configuration_files "Boot Loader") del gestor de arranque. El uso de otros controladores framebuffer (como `[uvesafb](/index.php/Uvesafb "Uvesafb")` o `radeonfb`) entrarán en conflicto con KMS.
 *   La velocidad del bus AGP la podemos ajustar con la opción `radeon.agpmode=x` en la línea del kernel, donde x puede tener los valores 1, 2, 4, 8 (velocidad AGP) o -1 (modo PCI).
 
 2\. De otro modo, cuando [initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") se cargue:
 
 *   Si tiene un kernel especial fuera del stock de `-ARCH` (por ejemplo, linux-zen), recuerde utilizar el archivo de configuración apropiado de mkinitcpio, por ejemplo, `/etc/mkinitcpio-zen.conf` y no `/etc/mkinitcpio.conf`.
-*   Eliminaremos cualquier módulo relacionado con el framebuffer del archivo _mkinitcpio_.
-*   Añadiremos `radeon` a la matriz `MODULES` del archivo _mkinitcpio_ . Para dar soporte técnico a AGP, es necesario añadir `intel_agp` (o `ali_agp`, `ati_agp`, `amd_agp`, `amd64_agp` etc.) antes del módulo `radeon`.
+*   Eliminaremos cualquier módulo relacionado con el framebuffer del archivo *mkinitcpio*.
+*   Añadiremos `radeon` a la matriz `MODULES` del archivo *mkinitcpio* . Para dar soporte técnico a AGP, es necesario añadir `intel_agp` (o `ali_agp`, `ati_agp`, `amd_agp`, `amd64_agp` etc.) antes del módulo `radeon`.
 *   Regeneraremos [initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creaci.C3.B3n_de_la_imagen_y_activaci.C3.B3n "Mkinitcpio (Español)").
 
 Por último, **reinicie** el sistema.
 
 #### Inicio tardío
 
-_Con esta elección, KMS se activará cuando los módulos se carguen durante el [proceso de arranque](/index.php/Boot_process "Boot process")_.
+*Con esta elección, KMS se activará cuando los módulos se carguen durante el [proceso de arranque](/index.php/Boot_process "Boot process")*.
 
 Si tiene un kernel especial (por ejemplo, linux-zen), recuerde utilizar el archivo de configuración apropiado mkinitcpio, por ejemplo, `/ etc/mkinitcpio-zen.conf`. Estas instrucciones están escritas para el kernel por defecto ([linux](https://www.archlinux.org/packages/?name=linux)).
 
 **Nota:** Para soporte AGP, puede ser necesario añadir `intel_agp`, `ali_agp`, `ati_agp`, `amd_agp`, o `amd64_agp`) a los archivos .conf apropiados en `/etc/modules-load.d`.
 
-1.  Elimine todas las opciones `vga=` de la línea del _kernel_ en el [archivo de configuración](/index.php/Boot_Loader#Configuration_files "Boot Loader") del gestor de arranque. El uso de otros controladores framebuffer (como `[uvesafb](/index.php/Uvesafb "Uvesafb")` o `radeonfb`) entrarán en conflicto con KMS. Retire cualquier otro módulo relacionado con framebuffer de `/etc/mkinitcpio.conf`. La opción `video=` puede ahora ser utilizada en conjunción con KMS.
+1.  Elimine todas las opciones `vga=` de la línea del *kernel* en el [archivo de configuración](/index.php/Boot_Loader#Configuration_files "Boot Loader") del gestor de arranque. El uso de otros controladores framebuffer (como `[uvesafb](/index.php/Uvesafb "Uvesafb")` o `radeonfb`) entrarán en conflicto con KMS. Retire cualquier otro módulo relacionado con framebuffer de `/etc/mkinitcpio.conf`. La opción `video=` puede ahora ser utilizada en conjunción con KMS.
 2.  **Reiniciar** el sistema.
 
 ## Optimizar prestaciones
@@ -286,7 +286,6 @@ Así, por ejemplo, digamos que queremos activar el perfil `low` (sustituya `low`
 La activación que se ha descrito anteriormente no es persistente, esto es, no va a durar después de reiniciar el equipo. Para que permanezca, puede utilizar [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd") (ejemplo para [#Variación dinámica de la frecuencia](#Variaci.C3.B3n_din.C3.A1mica_de_la_frecuencia)):
 
  `/etc/tmpfiles.d/radeon-pm.conf` 
-
 ```
 w /sys/class/drm/card0/device/power_method - - - - dynpm
 
@@ -295,7 +294,6 @@ w /sys/class/drm/card0/device/power_method - - - - dynpm
 Como alternativa, puede usar esta regla [udev](/index.php/Udev "Udev") en su lugar (ejemplo para [#Variación de la frecuencia, basada en perfiles](#Variaci.C3.B3n_de_la_frecuencia.2C_basada_en_perfiles)):
 
  `/etc/udev/rules.d/30-radeon-pm.rules` 
-
 ```
 KERNEL=="dri/card0", SUBSYSTEM=="drm", DRIVERS=="radeon", ATTR{device/power_method}="profile", ATTR{device/power_profile}="low"
 
@@ -322,7 +320,6 @@ KERNEL=="dri/card0", SUBSYSTEM=="drm", DRIVERS=="radeon", ATTR{device/power_meth
 Para obtener información sobre la velocidad con que la GPU funciona, ejecute la orden siguiente y obtendrá algo parecido a esto:
 
  `$ cat /sys/kernel/debug/dri/0/radeon_pm_info` 
-
 ```
   state: PM_STATE_ENABLED
   default engine clock: 300000 kHz
@@ -477,7 +474,6 @@ Se puede obtener la lista de salidas de vídeo con la siguiente orden:
 El Audio HDMI es compatible con el controlador de vídeo [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati). Por defecto, el módulo del kernel necesario está desactivado en las versiones del kerne >=3.0\. Sin embargo, si su tarjeta Radeon aparece en el listado de [Radeon Feature Matrix](http://www.x.org/wiki/RadeonFeature), puede añadir `radeon.audio=1` a los [parámetros del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)"). Por ejemplo:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 LABEL arch
     MENU LABEL Arch Linux
@@ -521,7 +517,6 @@ Por otra parte, esta opción le permite seleccionar fácilmente la pantalla que 
 La última versión del paquete [mesa](https://www.archlinux.org/packages/?name=mesa) ha añadido compatibilidad para decodificar MPEG1/2 al controlador libre, expontándola mediante [libvdpau](https://www.archlinux.org/packages/?name=libvdpau). Después de haberlo instalado, asigne el valor `vdpau` a la variable de entorno `LIBVA_DRIVER_NAME` y el nombre del núcleo del controlador a `VDPAU_DRIVER`, por ejemplo:
 
  `~/.bashrc` 
-
 ```
 export LIBVA_DRIVER_NAME=vdpau
 export VDPAU_DRIVER=r600
@@ -534,7 +529,6 @@ para tarjetas basadas en r600 (todos los controladores disponibles para el varlo
 El controlador radeon activa vsync por defecto, lo cual es perfectamente correcto, excepto para el [benchmarking](http://es.wikipedia.org/wiki/Benchmarking). Para desactivarlo, cree el archivo `~/.drirc` (o modifíquelo si ya existe) y añada la siguiente sección:
 
  `~/.drirc` 
-
 ```
 <driconf>
     <device screen="0" driver="dri2">

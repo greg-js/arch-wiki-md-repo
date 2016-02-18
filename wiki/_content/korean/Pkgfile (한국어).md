@@ -11,12 +11,11 @@
 
 #### 보기
 
- `$ pkgfile _makepkg_     #"makepkg"라는 파일을 포함하는 꾸러미를 검색`  `core/pacman           #검색한 파일이 [core] 저장소에 있는 [pacman](https://www.archlinux.org/packages/?name=pacman) 꾸러미에 있다.` 
+ `$ pkgfile *makepkg*     #"makepkg"라는 파일을 포함하는 꾸러미를 검색`  `core/pacman           #검색한 파일이 [core] 저장소에 있는 [pacman](https://www.archlinux.org/packages/?name=pacman) 꾸러미에 있다.` 
 
 또 다른 보기:
 
- `$ pkgfile --list _core/archlinux-keyring_     #[core] 저장소에 있는 [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) 꾸러미가 제공하는 모든 파일을 열거한다.` 
-
+ `$ pkgfile --list *core/archlinux-keyring*     #[core] 저장소에 있는 [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) 꾸러미가 제공하는 모든 파일을 열거한다.` 
 ```
 core/archlinux-keyring usr/
 core/archlinux-keyring usr/share/

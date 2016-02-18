@@ -53,7 +53,7 @@ set mail-format {
 } 
 ```
 
-**Note:** The above variables such as `$SERVICE` are _not_ generic examples but are _specific_ variable names which Monit replaces with what the alert is, on what system, etc.
+**Note:** The above variables such as `$SERVICE` are *not* generic examples but are *specific* variable names which Monit replaces with what the alert is, on what system, etc.
 
 ### CPU, memory and swap utilization
 
@@ -98,7 +98,7 @@ check file smbd_bin with path /usr/sbin/smbd
    if failed gid root then unmonitor
 ```
 
-**Note:** For the above [samba](https://www.archlinux.org/packages/?name=samba) example, the first block has `depends on smbd_bin`, this makes the _testing_ of Samba require the actual `smbd` process
+**Note:** For the above [samba](https://www.archlinux.org/packages/?name=samba) example, the first block has `depends on smbd_bin`, this makes the *testing* of Samba require the actual `smbd` process
 
 ### Hard drive health and temperature using scripts
 
@@ -107,16 +107,13 @@ check file smbd_bin with path /usr/sbin/smbd
 Create the file `/etc/monit.d/scripts/hdtemp.sh` as well as the `/etc/monit.d/scripts` folder if necessary.
 
  `/etc/monit.d/scripts/hdtemp.sh` 
-
 ```
  #!/bin/sh
  HDDTP=`/usr/sbin/smartctl -a /dev/sd${1} | grep Temp | awk -F " " '{printf "%d",$10}'`
  #echo $HDDTP # for debug only
  exit $HDDTP
 ```
-
  `monitrc or /etc/monit.d/*.monit file` 
-
 ```
 check program SSD-A-Temp with path "/etc/monit.d/scripts/hdtemp.sh a"
     every 5 cycles
@@ -134,7 +131,6 @@ In this example, the `/etc/monit.d/scripts/hdtemp.sh` script assumes your drive 
 #### SMART health status
 
  `/etc/monit.d/scripts/hdhealth.sh` 
-
 ```
  #!/bin/sh
  STATUS=`/usr/sbin/smartctl -H /dev/sd${1} | grep overall-health | awk 'match($0,"result:"){print substr($0,RSTART+8,6)}'`
@@ -149,9 +145,7 @@ In this example, the `/etc/monit.d/scripts/hdtemp.sh` script assumes your drive 
  #echo $TP # for debug only
  exit $TP
 ```
-
  `monitrc or /etc/monit.d/*.monit file` 
-
 ```
 check program SSD-A-Health with path "/etc/monit.d/scripts/hdhealth.sh a"
     every 120 cycles

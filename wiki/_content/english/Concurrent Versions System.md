@@ -1,4 +1,4 @@
-_"[Concurrent Versions System](http://www.nongnu.org/cvs/) is a version control system, an important component of Source Configuration Management (SCM). Using it, you can record the history of sources files, and documents. It fills a similar role to the free software RCS, PRCS, and Aegis packages."_
+*"[Concurrent Versions System](http://www.nongnu.org/cvs/) is a version control system, an important component of Source Configuration Management (SCM). Using it, you can record the history of sources files, and documents. It fills a similar role to the free software RCS, PRCS, and Aegis packages."*
 
 This is a quick guide on how to set up the latest CVS server.
 
@@ -53,7 +53,6 @@ Add any users that you want to have local access to the repository to the group 
 Make a xinetd config file:
 
  `/etc/xinetd.d/cvspserver` 
-
 ```
 service cvspserver
 {

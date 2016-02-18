@@ -44,7 +44,7 @@ Są więc 3 typy partycji:
 
 **Partycje główne** mogą być bootowalne i mają limit do maks. czterech partycji na dysk lub urządzenie RAID. Jeśli układ partycji wymaga więcej niż 4 partycji należy użyć partycji rozszerzonej zawierającej partycje logiczne. Partycja rozszerzona może być traktowana jako miejsce przechowywania partycji logicznych. Dysk twardy może zawierać tylko jedną partycję rozszerzoną. Partycja rozszerzona jest oznaczona jako partycja główna, więc oprócz niej można utworzyć jeszcze 3 partycje główne. Nie ma natomiast limitu liczby partycji logicznych w partycji rozszerzonej. Jeśli zamierzasz uruchamiać system w trybie dual-boot z systemem Windows będzie on wymagał jednej (lub 2 w przypadku Windows Vista i nowszych) osobnych partycji głównych.
 
-Powszechnie używa się 3 partycji głównych (_sda1, sda2, sda3_) oraz jednej rozszerzonej (sda4). Partycje logiczne na _sda4_ są oznaczane jako _sda5, sda6_, itd.
+Powszechnie używa się 3 partycji głównych (*sda1, sda2, sda3*) oraz jednej rozszerzonej (sda4). Partycje logiczne na *sda4* są oznaczane jako *sda5, sda6*, itd.
 
 ### GUID Partition Table
 
@@ -88,7 +88,7 @@ Jest to najważniejszy punkt montowania, miejsce, gdzie główny system plików 
 
 Partycja `/` jest potrzebna i najważniejsza. Inne partycje mogą być przez nią zastąpione.
 
-**Warning:** Foldery niezbędne do uruchomienia systemu (oprócz _/boot_) muszą być na tej samej partycji co `/` lub wcześnie montowane przy użyciu [initramfs](/index.php?title=Initramfs_(Polski)&action=edit&redlink=1 "Initramfs (Polski) (page does not exist)"). Te foldery to `/etc` i `/usr`.
+**Warning:** Foldery niezbędne do uruchomienia systemu (oprócz */boot*) muszą być na tej samej partycji co `/` lub wcześnie montowane przy użyciu [initramfs](/index.php?title=Initramfs_(Polski)&action=edit&redlink=1 "Initramfs (Polski) (page does not exist)"). Te foldery to `/etc` i `/usr`.
 
 #### /boot
 
@@ -112,11 +112,11 @@ W folderze `/var` przechowywane są zmienne dane, takie jak katalogi i pliki buf
 
 #### /tmp
 
-Domyślnie jest to osobna partycja montowana jako _tmpfs_ przez systemd.
+Domyślnie jest to osobna partycja montowana jako *tmpfs* przez systemd.
 
 #### Swap
 
-Partycja wymiany ([swap](/index.php?title=Swap_(Polski)&action=edit&redlink=1 "Swap (Polski) (page does not exist)")) to pamięć, która może być użyta jako wirtualny RAM. Powinno się brać pod uwagę również [plik wymiany](/index.php?title=Swapfile_(Polski)&action=edit&redlink=1 "Swapfile (Polski) (page does not exist)"), ponieważ nie ma praktycznie żadnej różnicy w wydajności, ale jest znacznie łatwiejsza do modyfikowania. Partycja swap _prawdopodobnie_ może być współdzielona między kilkoma systemami, ale nie wtedy, kiedy używa się hibernacji.
+Partycja wymiany ([swap](/index.php?title=Swap_(Polski)&action=edit&redlink=1 "Swap (Polski) (page does not exist)")) to pamięć, która może być użyta jako wirtualny RAM. Powinno się brać pod uwagę również [plik wymiany](/index.php?title=Swapfile_(Polski)&action=edit&redlink=1 "Swapfile (Polski) (page does not exist)"), ponieważ nie ma praktycznie żadnej różnicy w wydajności, ale jest znacznie łatwiejsza do modyfikowania. Partycja swap *prawdopodobnie* może być współdzielona między kilkoma systemami, ale nie wtedy, kiedy używa się hibernacji.
 
 **Note:** Stary sposób wyznaczania potrzebnej wielkości swap z używaną pamięcią ram podczas używania [suspend-to-disk](/index.php?title=Suspend_to_Disk_(Polski)&action=edit&redlink=1 "Suspend to Disk (Polski) (page does not exist)") nie jest już poprawny. Standardowa metoda uśpienia używa obrazu 40% dostępnego ramu. Nawet z [TuxOnIce](/index.php?title=TuxOnIce_(Polski)&action=edit&redlink=1 "TuxOnIce (Polski) (page does not exist)") po kompresji nie jest używane więcej niż 70%.[[1]](http://tuxonice.net/features)
 
@@ -156,22 +156,22 @@ Rozmiary partycji są zależne od preferencji użytkownika, ale poniższe inform
 
 ### Użycie gdisk
 
-Jeśli chcesz użyć GPT, narzędziem przeznaczonym do edycji tablicy partycji jest _gdisk_. Może wykonać wyrównanie partycji automatycznie do sektora 2048KiB (lub 1024KiB) co powinno być kompatybilne z większością SSD jeśli nie z wszystkimi. GNU Parted również wspiera GPT, ale jest [trudniejszy w obsłudze](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813). Płyta instalacyjna Archa zawiera gdisk. Jeśli będziesz potrzebować tego później w zainstalowanym systemie wystarczy pobrać paczkę [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk).
+Jeśli chcesz użyć GPT, narzędziem przeznaczonym do edycji tablicy partycji jest *gdisk*. Może wykonać wyrównanie partycji automatycznie do sektora 2048KiB (lub 1024KiB) co powinno być kompatybilne z większością SSD jeśli nie z wszystkimi. GNU Parted również wspiera GPT, ale jest [trudniejszy w obsłudze](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813). Płyta instalacyjna Archa zawiera gdisk. Jeśli będziesz potrzebować tego później w zainstalowanym systemie wystarczy pobrać paczkę [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk).
 
-Podstawowe użycie _gdisk_:
+Podstawowe użycie *gdisk*:
 
-*   Uruchom _gdisk_ na swoim dysku jako root (_dysk_ to na przykład `/dev/sda`):
+*   Uruchom *gdisk* na swoim dysku jako root (*dysk* to na przykład `/dev/sda`):
 
 ```
-# gdisk _dysk_
+# gdisk *dysk*
 
 ```
 
 *   Jeśli dysk jest nowy lub chcesz zacząć od nowa, stwórz pustą tablicę partycji GUID używając komendy `o`.
 *   Utwórz nową partycję wpisując komendę `n` (Główna/pierwsza partycja).
-*   Zakładając, że partycja jest nowa, _gdisk_ da jej największe możliwe wyrównanie. W przeciwnym razie, wybierze największą moc z dwóch, które będą dzielić wszystkie przesunięcia partycji.
-*   Jeśli startujesz z sektora przed 2048 _gdisk_ automatycznie przesunie początek partycji na 2048 sektor dysku. Gwarantuje to wyrównanie do 2048 sektorów (sektor to 512b, to jest wyrównanie do 1024KiB które powinno być odpowiednie dla każdego bloku pamięci NAND na SSD).
-*   Użyj oznaczenia `+_x_{M,G}` do rozszerzenia partycji o _x_ megabajtów lub gigabajtów, a jeśli wybierasz rozmiar który nie jest wielokrotnością wyrównania (1024KiB), _gdisk_ zmniejszy rozmiar do najbliższej wielokrotności. Przykładowo, jeśli chcesz utworzyć partycję o rozmiarze 15GiB, wpisujesz `+15G`
+*   Zakładając, że partycja jest nowa, *gdisk* da jej największe możliwe wyrównanie. W przeciwnym razie, wybierze największą moc z dwóch, które będą dzielić wszystkie przesunięcia partycji.
+*   Jeśli startujesz z sektora przed 2048 *gdisk* automatycznie przesunie początek partycji na 2048 sektor dysku. Gwarantuje to wyrównanie do 2048 sektorów (sektor to 512b, to jest wyrównanie do 1024KiB które powinno być odpowiednie dla każdego bloku pamięci NAND na SSD).
+*   Użyj oznaczenia `+*x*{M,G}` do rozszerzenia partycji o *x* megabajtów lub gigabajtów, a jeśli wybierasz rozmiar który nie jest wielokrotnością wyrównania (1024KiB), *gdisk* zmniejszy rozmiar do najbliższej wielokrotności. Przykładowo, jeśli chcesz utworzyć partycję o rozmiarze 15GiB, wpisujesz `+15G`
 *   Wybierz identyfikator typu partycji, domyślnie `Linux/Windows data` (kod`0700`), powinien być odpowiedni. Wciśnij `L` by zobaczyć listę kodów. Jeśli planujesz używać LVM wybierz `Linux LVM` (`8e00`).
 *   Utwórz inne partycje w podobny sposób.
 *   Zapisz tablicę partycji na dysku i wyjdź wpisując komendę `w`.
@@ -179,29 +179,29 @@ Podstawowe użycie _gdisk_:
 
 **Note:**
 
-*   Żeby uruchomić dysk spartycjonowany jako GPT na komputerze z BIOS musisz utworzyć, najlepiej na początku dysku [BIOS boot partition](/index.php/GRUB2#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB2") bez systemu plików i typem partycji `BIOS boot` lub `bios_grub` (`EF02`) dla bootowania z dysku przy użyciu [GRUB](/index.php?title=GRUB_(Polski)&action=edit&redlink=1 "GRUB (Polski) (page does not exist)"). Dla [Syslinux](/index.php?title=Syslinux_(Polski)&action=edit&redlink=1 "Syslinux (Polski) (page does not exist)"),musisz utworzyć partycję `bios_grub`, ale musi być oddzielona od partycji `/boot` i mieć włączoną opcję `Legacy BIOS Bootable partition` attribute for that partition (using _gdisk_).
+*   Żeby uruchomić dysk spartycjonowany jako GPT na komputerze z BIOS musisz utworzyć, najlepiej na początku dysku [BIOS boot partition](/index.php/GRUB2#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB2") bez systemu plików i typem partycji `BIOS boot` lub `bios_grub` (`EF02`) dla bootowania z dysku przy użyciu [GRUB](/index.php?title=GRUB_(Polski)&action=edit&redlink=1 "GRUB (Polski) (page does not exist)"). Dla [Syslinux](/index.php?title=Syslinux_(Polski)&action=edit&redlink=1 "Syslinux (Polski) (page does not exist)"),musisz utworzyć partycję `bios_grub`, ale musi być oddzielona od partycji `/boot` i mieć włączoną opcję `Legacy BIOS Bootable partition` attribute for that partition (using *gdisk*).
 *   [GRUB Legacy](/index.php?title=GRUB_Legacy_(Polski)&action=edit&redlink=1 "GRUB Legacy (Polski) (page does not exist)") nie wspiera GPT, należy użyć [BURG](/index.php/BURG "BURG"), GRUB lub Syslinux.
 
 **Warning:** Jeśli planujesz dual boot z systemem Windows w trybie BIOSu (to jedyna opcja dla 32-bitowych wersji Windows i 64-bitowego Windowsa XP) **nie** używaj GPT ponieważ Windows **nie** wspiera uruchamiania z dysku GPT w komputerze z BIOSem. Będziesz musiał użyć partycjonowania MBR i startowania w trybie BIOSu jak opisano poniżej. To ograniczenie nie dotyczy nowoczesnych 64-bitowych wersji Windows w trybie UEFI.
 
 ## Użycie MBR - stara metoda
 
-Dla MBR narzędziem do modyfikowania tablicy partycji jest _fdisk_. Ostatnie wersje _fdiska_ nie obsługują przestarzałego systemu wyświetlania cylindrów jako domyślna jednostka, jak również domyślnej kompatybilności z MS-DOS. Najnowsza wersja automatycznie wyrówna partycję do 2048 lub 1024 sektorów, co powinno działać ze wszystkimi rozmiarami EBS które są używane przez producentów dysków SSD. To oznacza, że opcje domyślne ustawią ci odpowiednie wyrównanie.
+Dla MBR narzędziem do modyfikowania tablicy partycji jest *fdisk*. Ostatnie wersje *fdiska* nie obsługują przestarzałego systemu wyświetlania cylindrów jako domyślna jednostka, jak również domyślnej kompatybilności z MS-DOS. Najnowsza wersja automatycznie wyrówna partycję do 2048 lub 1024 sektorów, co powinno działać ze wszystkimi rozmiarami EBS które są używane przez producentów dysków SSD. To oznacza, że opcje domyślne ustawią ci odpowiednie wyrównanie.
 
-Pamiętaj, że dawniej _fdisk_ używał cylindrów jako domyślna jednostka, i utrzymując dziwactwa potrzebne do kompatybilności z MS-DOS mieszały w wyrównaniu SSD. Można więc znaleźć w internecie dużo poradników z lat 2008-2009 opisujących długą drogę do poprawnych ustawień. W najnowszym _fdisku_ wszystko jest znacznie prostsze, tak jak opisano w tym poradniku.
+Pamiętaj, że dawniej *fdisk* używał cylindrów jako domyślna jednostka, i utrzymując dziwactwa potrzebne do kompatybilności z MS-DOS mieszały w wyrównaniu SSD. Można więc znaleźć w internecie dużo poradników z lat 2008-2009 opisujących długą drogę do poprawnych ustawień. W najnowszym *fdisku* wszystko jest znacznie prostsze, tak jak opisano w tym poradniku.
 
 ### Użycie fdisk
 
-*   Uruchom _fdisk_ na twoim dysku jako root (_dysk_ to np. `/dev/sda`):
+*   Uruchom *fdisk* na twoim dysku jako root (*dysk* to np. `/dev/sda`):
 
 ```
-# fdisk _dysk_
+# fdisk *dysk*
 
 ```
 
 *   Jeśli dysk jest nowy, lub chcesz zacząć od początku, utwórz nową tablicę partycji komendą `o`.
 *   Utwórz nową partycję komendą `n` (typ-główna/pierwsza partycja partycja).
-*   Użyj komendy `+_x_G` by rozszerzyć partycję o x gigabajtów. Przykładowo, by utworzyć 15GiB partycję wpisz `+15G`
+*   Użyj komendy `+*x*G` by rozszerzyć partycję o x gigabajtów. Przykładowo, by utworzyć 15GiB partycję wpisz `+15G`
 *   Zmień identyfikator (id) typu partycji z domyślnego Linux (`type 83`) na wybrany poprzez użycie komendy `t`. To tylko opcjonalny krok, w razie gdyby użytkownik np. chciał utworzyć inny typ partycji, swap, NTFS, LVM itp. Listę typów partycji można wywołać komendą `l`.
 *   Ustaw resztę partycji jak wyżej.
 *   Zapisz tablicę partycji na dysk i wyjdź używając komendy `w`.

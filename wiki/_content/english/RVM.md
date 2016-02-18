@@ -101,7 +101,7 @@ $ curl -L get.rvm.io | sudo bash -s stable
 
 ```
 
-(to install a specific version replace _stable_ with, for example, _-- --version 1.13.0_)
+(to install a specific version replace *stable* with, for example, *-- --version 1.13.0*)
 
 After the script has finished, add yourself and your users to the 'rvm' group. (The installer does not auto-add any users to the rvm group. Admins must do this.) For each one, repeat:
 
@@ -125,7 +125,7 @@ RVM will be automatically configured for every user on the system (in opposite t
 
 Before installing gems with multi-user rvm, make sure that /etc/gemrc does not have the line "gem: --user-install". If it does you need to comment it out otherwise the gems will install to the wrong place.
 
-**You only use the sudo command during the install process**. In multi-user configurations, any operations which require sudo access must use the _rvmsudo_ command which preserves the RVM environment and passes this on to sudo. There are very few cases where rvmsudo is required once the core install is completed, except for when updating RVM itself. There is never a reason to use sudo post-install. rvmsudo should only be needed for updating with
+**You only use the sudo command during the install process**. In multi-user configurations, any operations which require sudo access must use the *rvmsudo* command which preserves the RVM environment and passes this on to sudo. There are very few cases where rvmsudo is required once the core install is completed, except for when updating RVM itself. There is never a reason to use sudo post-install. rvmsudo should only be needed for updating with
 
 ```
 $ rvmsudo rvm get head
@@ -149,7 +149,7 @@ root ALL=(ALL) ALL
 %wheel ALL=(ALL) ALL, !RVM
 ```
 
-Where _<ruby_interpreter>_ would be —for example— ruby-1.9.2-p290.
+Where *<ruby_interpreter>* would be —for example— ruby-1.9.2-p290.
 
 ## Post Installation
 
@@ -190,7 +190,7 @@ $ rvm requirements
 
 (Follow the returned instructions if any.)
 
-**Very important**: whenever you upgrade RVM in the future, you should always run _rvm notes_ and _rvm requirements_ as this is usually where you will find details on any major changes and/or additional requirements **to ensure your installation stays working**.
+**Very important**: whenever you upgrade RVM in the future, you should always run *rvm notes* and *rvm requirements* as this is usually where you will find details on any major changes and/or additional requirements **to ensure your installation stays working**.
 
 ### Some extras
 
@@ -213,7 +213,7 @@ Or if you're running as a single user:
 
 ## Using RVM
 
-The RVM documentation is _quite_ comprehensive and explanatory. However, here are some RVM usage examples to get you started.
+The RVM documentation is *quite* comprehensive and explanatory. However, here are some RVM usage examples to get you started.
 
 ### Rubies
 
@@ -267,7 +267,7 @@ $ rvm 1.8.7
 
 ```
 
-(As you see, the flag _use_ is not really necessary.)
+(As you see, the flag *use* is not really necessary.)
 
 You should get a message telling you the switch worked. It can be confirmed by running:
 
@@ -383,7 +383,7 @@ $ rvm use <ruby_version>@<gemset_name>
 
 ##### Notes
 
-When you install a ruby environment, it comes with two gemsets out of the box, their names are _default_ and _global_. You will usually find in the latter some pre-installed common gems, while the former always starts empty.
+When you install a ruby environment, it comes with two gemsets out of the box, their names are *default* and *global*. You will usually find in the latter some pre-installed common gems, while the former always starts empty.
 
 A little bit about where the default and global gemsets differ: When you do not use a gemset at all, you get the gems in the default set. If you use a specific gemset (say @testing), it will inherit gems from that ruby's @global. The global gemset is to allow you to share gems to all your gemsets.
 

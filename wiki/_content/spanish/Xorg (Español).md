@@ -1,6 +1,6 @@
 De [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
-	_El proyecto X.Org proporciona una implementación de código abierto del sistema de ventanas X. El trabajo de desarrollo se está haciendo conjuntamente con la comunidad freedesktop.org. La Fundación X.Org es una corporación educativa sin fines de lucro cuyo Consejo sirve a este fin, y cuyos Miembros encaminan este trabajo._
+	*El proyecto X.Org proporciona una implementación de código abierto del sistema de ventanas X. El trabajo de desarrollo se está haciendo conjuntamente con la comunidad freedesktop.org. La Fundación X.Org es una corporación educativa sin fines de lucro cuyo Consejo sirve a este fin, y cuyos Miembros encaminan este trabajo.*
 
 **Xorg** es una aplicación pública, una implementación en código abierto del sistema X window versión 11\. Desde el momento que Xorg se convierte en la opción más popular entre los usuarios de Linux, su omnipresencia ha dado lugar a que sea un requisito cada vez más utilizado por las aplicaciones GUI (**G**raphical **U**ser **I**nterface), con la consiguiente adopción masiva por la mayoría de las distribuciones. Consulte el artículo de Wikipedia sobre [Xorg](http://en.wikipedia.org/wiki/X.Org_ServerX.Org) o visite el [sitio web de Xorg](http://www.x.org/wiki/) para más detalles.
 
@@ -68,7 +68,7 @@ $ pacman -Ss xf86-video
 
 ```
 
-El controlador de gráficos por defecto es _vesa_ (paquete [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa)), que maneja un gran número de chipsets, pero no incluye ninguna aceleración 2D o 3D. Si no se encuentra o no se puede cargar un controlador mejor, Xorg recurrirá a _vesa_.
+El controlador de gráficos por defecto es *vesa* (paquete [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa)), que maneja un gran número de chipsets, pero no incluye ninguna aceleración 2D o 3D. Si no se encuentra o no se puede cargar un controlador mejor, Xorg recurrirá a *vesa*.
 
 A fin de que pueda funcionar la aceleración de vídeo y, muchas veces, dejar expuestos los modos de la GPU para ajustarlos, se requiere un controlador de vídeo correcto:
 
@@ -89,7 +89,7 @@ Xorg debería funcionar sin problemas y sin necesidad de controladores privativo
 
 ## Ejecución
 
-_Consulte también: [Start X at Login](/index.php/Start_X_at_Login_(Espa%C3%B1ol) "Start X at Login (Español)")_
+*Consulte también: [Start X at Login](/index.php/Start_X_at_Login_(Espa%C3%B1ol) "Start X at Login (Español)")*
 
 **Sugerencia:** La forma más fácil de arrancar X es usando un [gestor de pantalla](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)") como [GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM "KDM") o [SLiM](/index.php/SLiM "SLiM").
 
@@ -113,7 +113,7 @@ Xorg utiliza un archivo de configuración llamado `xorg.conf` y archivos que ter
 
 ### Usar archivos .conf
 
-La carpeta `/etc/X11/xorg.conf.d/` guarda la configuración específica del usuario. Cada usuario es libre de añadir archivos de configuración a `/etc/X11/xorg.conf.d/`, pero tengan en cuenta que dichos archivos deben comenzar con `_XX_-` (donde XX es un número) y tienen que terminar en `.conf` (10 se lee antes que 20, por ejemplo). Estos archivos son analizados por el servidor X al arrancar y son tratados como parte del archivo de configuración `xorg.conf` tradicional. El servidor X, esencialmente, lo que hace es tratar dicha colección de archivos de configuración como un único archivo de gran tamaño con las entradas desde `xorg.conf` al final.
+La carpeta `/etc/X11/xorg.conf.d/` guarda la configuración específica del usuario. Cada usuario es libre de añadir archivos de configuración a `/etc/X11/xorg.conf.d/`, pero tengan en cuenta que dichos archivos deben comenzar con `*XX*-` (donde XX es un número) y tienen que terminar en `.conf` (10 se lee antes que 20, por ejemplo). Estos archivos son analizados por el servidor X al arrancar y son tratados como parte del archivo de configuración `xorg.conf` tradicional. El servidor X, esencialmente, lo que hace es tratar dicha colección de archivos de configuración como un único archivo de gran tamaño con las entradas desde `xorg.conf` al final.
 
 ### Usar xorg.conf
 
@@ -151,7 +151,7 @@ Como alternativa, los controladores de las tarjetas de vídeo pueden proporciona
 
 ## Los dispositivos de entrada
 
-[Udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") detectará el hardware y [evdev](https://en.wikipedia.org/wiki/evdev "wikipedia:evdev") actuará como un controlador de entrada hotplugging (esto es, detectará y configurará sobre la marcha los dispositivos conectados) para casi todos los dispositivos. [Udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") es proporcionado por [systemd](https://www.archlinux.org/packages/?name=systemd), y [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) es requerido por [xorg-server](https://www.archlinux.org/packages/?name=xorg-server), de modo que no hay necesidad de instalar explícitamente dichos paquetes. Si evdev no es compatible con su dispositivo, instale el controlador adecuado del grupo [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/).
+[Udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") detectará el hardware y [evdev](https://en.wikipedia.org/wiki/evdev es proporcionado por [systemd](https://www.archlinux.org/packages/?name=systemd), y [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) es requerido por [xorg-server](https://www.archlinux.org/packages/?name=xorg-server), de modo que no hay necesidad de instalar explícitamente dichos paquetes. Si evdev no es compatible con su dispositivo, instale el controlador adecuado del grupo [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/).
 
 Debe tener el archivo `10-evdev.conf` en el directorio `/etc/X11/xorg.conf.d`, que gestiona el teclado, el ratón, el panel táctil (touchpad) y la pantalla táctil (touchscreen).
 
@@ -180,7 +180,6 @@ Véase la página principal: [Keyboard Configuration in Xorg](/index.php/Keyboar
 En primer lugar, cree un nuevo archivo de configuración, como por ejemplo `/etc/X11/xorg.conf.d/**10-monitor.conf**`.
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
-
 ```
 Section "Monitor"
     Identifier             "Monitor0"
@@ -396,7 +395,6 @@ Busque el ID del dispositivo que deseamos desactivar: `xinput`
 Por ejemplo, en un Lenovo ThinkPad T500, la salida se vería así:
 
  `$ xinput` 
-
 ```
 ⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
 ⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]
@@ -412,7 +410,7 @@ Por ejemplo, en un Lenovo ThinkPad T500, la salida se vería así:
 
 ```
 
-Desactivamos el dispositivo con `xinput --disable device_id`, donde _device_id_ es el ID del dispositivo que deseamos desactivar. En este ejemplo vamos a desactivar el Synaptics Touchpad, con el ID 10:
+Desactivamos el dispositivo con `xinput --disable device_id`, donde *device_id* es el ID del dispositivo que deseamos desactivar. En este ejemplo vamos a desactivar el Synaptics Touchpad, con el ID 10:
 
  `xinput --disable 10` 
 
@@ -466,7 +464,7 @@ a `/etc/pam.d/su`. `pam_xauth` configurará entonces correctamente las variables
 
 ### Programas que requieren "font '(null)'"
 
-*   Mensaje de error: "_unable to load font '(null)'._"
+*   Mensaje de error: "*unable to load font '(null)'.*"
 
 Algunos programas solo funcionan con fuentes bitmap. Están disponibles dos paquetes principales con fuentes de mapa de bits, [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi) y [xorg-fonts-100dpi](https://www.archlinux.org/packages/?name=xorg-fonts-100dpi). No es necesario instalar ambos, con uno debería ser suficiente. Para saber cuál sería el mejor en su caso, intente lo siguiente:
 

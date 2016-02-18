@@ -65,7 +65,6 @@ Other alternative greeters are available in the [AUR](/index.php/AUR "AUR").
 You can set the default greeter by changing the `[Seat:*]` section of the LightDM configuration file, like so:
 
  `/etc/lightdm/lightdm.conf` 
-
 ```
 [Seat:*]
 ...
@@ -145,7 +144,6 @@ You can use the [lightdm-gtk-greeter-settings](https://www.archlinux.org/package
 Users wishing to customize the wallpaper on the greeter screen need to edit `/etc/lightdm/lightdm-gtk-greeter.conf` and define the `background` variable under the `[greeter]` section. For example:
 
  `/etc/lightdm/lightdm-gtk-greeter.conf` 
-
 ```
 [greeter]
 background=/usr/share/pixmaps/black_and_white_photography-wallpaper-1920x1080.jpg
@@ -166,12 +164,11 @@ According to [this](https://bbs.archlinux.org/viewtopic.php?id=149945) page.
 
 #### KDE greeter
 
-Go to _System Settings > Login Screen (LightDM)_ and change the background image for your theme.
+Go to *System Settings > Login Screen (LightDM)* and change the background image for your theme.
 
 Alternatively, you can edit the `Background` variable in `lightdm-kde-greeter.conf` :
 
  `/etc/lightdm/lightdm-kdm-greeter.conf` 
-
 ```
 [greeter]
 theme-name=classic
@@ -186,17 +183,17 @@ GreetMessage=Welcome to %hostname%
 
 **Tip:** If you are using KDE, you can change your avatar in KDE System Settings.
 
-First, make sure the [accountsservice](https://www.archlinux.org/packages/?name=accountsservice) package from the [official repositories](/index.php/Official_repositories "Official repositories") is installed, then set it up as follows, replacing `_username_` with the desired user's login name. The _.png_ file extension should not be included in the filename.
+First, make sure the [accountsservice](https://www.archlinux.org/packages/?name=accountsservice) package from the [official repositories](/index.php/Official_repositories "Official repositories") is installed, then set it up as follows, replacing `*username*` with the desired user's login name. The *.png* file extension should not be included in the filename.
 
-*   Edit or create the file `/var/lib/AccountsService/users/_username_`, and add the lines
+*   Edit or create the file `/var/lib/AccountsService/users/*username*`, and add the lines
 
 ```
 [User]
-Icon=/var/lib/AccountsService/icons/_username_
+Icon=/var/lib/AccountsService/icons/*username*
 
 ```
 
-*   Create the file `/var/lib/AccountsService/icons/_username_` using a 96x96 PNG image file.
+*   Create the file `/var/lib/AccountsService/icons/*username*` using a 96x96 PNG image file.
 
 **Note:** Make sure that both created files have 644 permissions, use [chmod](/index.php/Chmod "Chmod") to correct them.
 
@@ -216,12 +213,11 @@ After copying, the [archlinux-artwork](https://aur.archlinux.org/packages/archli
 Edit the LightDM configuration file and ensure these lines are uncommented and correctly configured:
 
  `/etc/lightdm/lightdm.conf` 
-
 ```
 [Seat:*]
 pam-service=lightdm
 pam-autologin-service=lightdm-autologin
-autologin-user=_username_
+autologin-user=*username*
 autologin-user-timeout=0
 session-wrapper=/etc/lightdm/Xsession
 ```
@@ -230,7 +226,7 @@ LightDM goes through PAM even when `autologin` is enabled. You must be part of t
 
 ```
 # groupadd -r autologin
-# gpasswd -a _username_ autologin
+# gpasswd -a *username* autologin
 
 ```
 
@@ -241,7 +237,6 @@ LightDM goes through PAM even when `autologin` is enabled. You must be part of t
 LightDM goes through PAM so you must configure the lightdm configuration of PAM:
 
  `/etc/pam.d/lightdm` 
-
 ```
 #%PAM-1.0
 **auth        sufficient  pam_succeed_if.so user ingroup nopasswdlogin**
@@ -253,7 +248,7 @@ You must then also be part of the `nopasswdlogin` group to be able to login inte
 
 ```
 # groupadd -r nopasswdlogin
-# gpasswd -a _username_ nopasswdlogin
+# gpasswd -a *username* nopasswdlogin
 
 ```
 
@@ -262,7 +257,7 @@ You must then also be part of the `nopasswdlogin` group to be able to login inte
 To create a new user account that logs in automatically and additionally able to login again without a password the user can be created with supplementary membership of both groups, e.g.:
 
 ```
-# useradd -mG autologin,nopasswdlogin -s /bin/bash _username_
+# useradd -mG autologin,nopasswdlogin -s /bin/bash *username*
 
 ```
 
@@ -285,7 +280,7 @@ greeter-setup-script=/usr/bin/numlockx on
 
 ### User switching under Xfce4
 
-If you use the [Xfce](/index.php/Xfce "Xfce") desktop, the Switch User functionality of the Action Button found in your Application Launcher specifically looks for the _gdmflexiserver_ executable in order to enable itself. If you provide it with an executable shell script `/usr/bin/gdmflexiserver` consisting of
+If you use the [Xfce](/index.php/Xfce "Xfce") desktop, the Switch User functionality of the Action Button found in your Application Launcher specifically looks for the *gdmflexiserver* executable in order to enable itself. If you provide it with an executable shell script `/usr/bin/gdmflexiserver` consisting of
 
 ```
 #!/bin/sh
@@ -366,7 +361,6 @@ Your Xresources will now be pre-processed so that variables are correctly expand
 If you're using [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) as a greeter and it shows placeholder images as icons, make sure valid icon themes and themes are installed and configured. Check the following file:
 
  `/etc/lightdm/lightdm-gtk-greeter.conf` 
-
 ```
 [greeter]
 theme-name=mate      # this should be the name of a directory under /usr/share/themes/
@@ -379,11 +373,11 @@ You may find that after entering the correct username and password and attemptin
 
 ### LightDM displaying in wrong monitor
 
-If you are using multiple monitors, LightDM may display in the wrong one (e.g. if your primary monitor is on the right). To force the LightDM login screen to display on a specific monitor, edit `/etc/lightdm/lightdm.conf` and change the _display-setup-script_ parameter like this:
+If you are using multiple monitors, LightDM may display in the wrong one (e.g. if your primary monitor is on the right). To force the LightDM login screen to display on a specific monitor, edit `/etc/lightdm/lightdm.conf` and change the *display-setup-script* parameter like this:
 
- `/etc/lightdm/lightdm.conf`  `display-setup-script=xrandr --output _HDMI1_ --primary` 
+ `/etc/lightdm/lightdm.conf`  `display-setup-script=xrandr --output *HDMI1* --primary` 
 
-Replace _HDMI1_ with your real monitor ID, which you can find from **xrandr** command output.
+Replace *HDMI1* with your real monitor ID, which you can find from **xrandr** command output.
 
 ### LightDM doesn't appear
 

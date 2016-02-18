@@ -78,7 +78,7 @@ Set `CONFIG_HP_WIRELESS=y` in your kernel config to enable the hardware button (
 
 ### Resume / wake on lid open
 
-This feature needs to be enabled in the bios / uefi setup: _Advanced > Built-in device options > Wake unit from sleep when lid is opened_
+This feature needs to be enabled in the bios / uefi setup: *Advanced > Built-in device options > Wake unit from sleep when lid is opened*
 
 ## See also
 

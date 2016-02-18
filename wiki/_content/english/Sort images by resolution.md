@@ -7,9 +7,7 @@ When recovery of files done and you restored images with help of a [post recover
 **Warning:** You must have installed the [feh](https://www.archlinux.org/packages/?name=feh) program before running the script.
 
 **Note:** To speed up collecting info about images you can skip duplicate images by use a list of [non duplicate](/index.php/Post_recovery_tasks#List_only_unique_files_by_checksum "Post recovery tasks") files but you will also need to remove mime type check in this script and add check files by extension instead.
-
  `collect-info-about-images.sh` 
-
 ```
 #!/bin/bash
 if [ 'XX' != 'XX'"$1" ]; then 
@@ -42,14 +40,14 @@ fi
 
 ```
 
-The _$IfDamaged_ variable contains an exit status code returned by [feh](https://www.archlinux.org/packages/?name=feh).
+The *$IfDamaged* variable contains an exit status code returned by [feh](https://www.archlinux.org/packages/?name=feh).
 
 **Note:**
 
 *   The [feh](https://www.archlinux.org/packages/?name=feh) program ignores some of errors, pixel data errors, in an image if it contains enough of a readable visual data to be shown.
 *   A pixel error makes that a part of an image or a whole image can't be shown correctly, it causes wrong colors or blank/empty spaces that often makes the image more or less useless, mostly depends on the amount of a corrupted data in it.
 
-You can also install [pngcheck](https://aur.archlinux.org/packages/pngcheck/) to check integrity of "PNG, JNG or MNG" and/or [jpeginfo](https://aur.archlinux.org/packages/jpeginfo/) and use output of errors in the _$IfDamaged_ variable or modify script to skip adding of damaged files into a `collect-info-about-images.txt` file.
+You can also install [pngcheck](https://aur.archlinux.org/packages/pngcheck/) to check integrity of "PNG, JNG or MNG" and/or [jpeginfo](https://aur.archlinux.org/packages/jpeginfo/) and use output of errors in the *$IfDamaged* variable or modify script to skip adding of damaged files into a `collect-info-about-images.txt` file.
 
 Example of [pngcheck](https://aur.archlinux.org/packages/pngcheck/) check resuslt:
 
@@ -85,7 +83,7 @@ if [ 'XX'"$ZZ" == 'XX' ]; then
 fi
 ```
 
-The _collect-info-about-images.sh_ script generates data about images by pattern:
+The *collect-info-about-images.sh* script generates data about images by pattern:
 
 ```
 **full path to image**|**Width**|size|**Height**|size|**Format**|type of image|**Errors**|exit code by feh|

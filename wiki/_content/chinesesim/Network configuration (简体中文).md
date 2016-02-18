@@ -50,7 +50,7 @@
         *   [8.3.1 方法一 还原/变更Win驱动](#.E6.96.B9.E6.B3.95.E4.B8.80_.E8.BF.98.E5.8E.9F.2F.E5.8F.98.E6.9B.B4Win.E9.A9.B1.E5.8A.A8)
         *   [8.3.2 方法二 启动Windows驱动里的网络唤醒功能](#.E6.96.B9.E6.B3.95.E4.BA.8C_.E5.90.AF.E5.8A.A8Windows.E9.A9.B1.E5.8A.A8.E9.87.8C.E7.9A.84.E7.BD.91.E7.BB.9C.E5.94.A4.E9.86.92.E5.8A.9F.E8.83.BD)
         *   [8.3.3 方法三 更新Realtek Linux驱动](#.E6.96.B9.E6.B3.95.E4.B8.89_.E6.9B.B4.E6.96.B0Realtek_Linux.E9.A9.B1.E5.8A.A8)
-        *   [8.3.4 方法四 在 BIOS/CMOS 中启用 _LAN Boot ROM_](#.E6.96.B9.E6.B3.95.E5.9B.9B_.E5.9C.A8_BIOS.2FCMOS_.E4.B8.AD.E5.90.AF.E7.94.A8_LAN_Boot_ROM)
+        *   [8.3.4 方法四 在 BIOS/CMOS 中启用 *LAN Boot ROM*](#.E6.96.B9.E6.B3.95.E5.9B.9B_.E5.9C.A8_BIOS.2FCMOS_.E4.B8.AD.E5.90.AF.E7.94.A8_LAN_Boot_ROM)
     *   [8.4 DLink G604T/DLink G502T DNS 故障](#DLink_G604T.2FDLink_G502T_DNS_.E6.95.85.E9.9A.9C)
         *   [8.4.1 如何诊断故障](#.E5.A6.82.E4.BD.95.E8.AF.8A.E6.96.AD.E6.95.85.E9.9A.9C_2)
         *   [8.4.2 如何修复](#.E5.A6.82.E4.BD.95.E4.BF.AE.E5.A4.8D)
@@ -68,7 +68,6 @@
 大多数情况下，基本的安装过程已经创建了正确的网络配置。通过运行以下命令来检查：
 
  `$ ping -c 3 www.google.com` 
-
 ```
 PING www.l.google.com (74.125.224.146) 56(84) bytes of data.
 64 bytes from 74.125.224.146: icmp_req=1 ttl=50 time=437 ms
@@ -88,9 +87,7 @@ rtt min/avg/max/mdev = 298.107/373.642/437.202/57.415 ms
 如果上面的命令说 unknown hosts，意思是你的机器无法进行域名解析。这可能和你的服务提供商或者你的路由器/网关有关。你可以尝试 ping 一个静态的 IP 地址来验证你的电脑是否能访问 Internet。
 
 **注意:** 选项 `-c 3` 表示发送三次。参见 `man ping` 获得更多信息。
-
  `$ ping -c 3 8.8.8.8` 
-
 ```
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 64 bytes from 8.8.8.8: icmp_req=1 ttl=53 time=52.9 ms
@@ -121,18 +118,16 @@ rtt min/avg/max/mdev = 52.975/65.375/72.543/8.803 ms
 详情参见 `man 5 hostname` 和 `man 1 hostnamectl`。
 
 **注意:**
-
 ```
 * `hostnamectl` 支持 FQDNs
 
 ```
-
 * 你不再需要编辑 `/etc/hosts`， [systemd](https://www.archlinux.org/packages/?name=systemd) 提供了主机名称的解析，它默认安装在所有系统上。
 
 要临时设置主机名（直到下次重启为止），使用 [inetutils](https://www.archlinux.org/packages/?name=inetutils) 中的 `hostname` 命令：
 
 ```
-# hostname _myhostname_
+# hostname *myhostname*
 
 ```
 
@@ -143,7 +138,6 @@ rtt min/avg/max/mdev = 52.975/65.375/72.543/8.803 ms
 [Udev](/index.php/Udev "Udev") 会探测网卡（[NIC](https://en.wikipedia.org/wiki/Network_interface_controller "wikipedia:Network interface controller")）并在启动时自动载入必要的模块。 检查 `lspci -v` 输出中 "Ethernet controller" （或者类似的）条目，它会告诉你哪个内核模块包含了网络设备的驱动程序。例如：
 
  `$ lspci -v` 
-
 ```
 02:00.0 Ethernet controller: Attansic Technology Corp. L1 Gigabit Ethernet Adapter (rev b0)
  	...
@@ -152,7 +146,7 @@ rtt min/avg/max/mdev = 52.975/65.375/72.543/8.803 ms
 
 ```
 
-接下来， 用 `dmesg | grep _module_name_` 来检查是否已经加载了驱动。例如：
+接下来， 用 `dmesg | grep *module_name*` 来检查是否已经加载了驱动。例如：
 
 ```
 $ dmesg |grep atl1
@@ -188,14 +182,13 @@ $ dmesg |grep atl1
 
 **小贴士:** 你可以运行 `ip link` 或者 `ls /sys/class/net` 列出所有接口。
 
-**注意:** 当你改变接口命名规则时，不要忘记更新所有与网络相关的配置文件和自定义的 systemd unit 文件以反映变化。特别是当你启用了 [netctl 静态配置](/index.php/Netctl#Basic_method "Netctl") 时，要运行 `netctl reenable _profile_` 来更新生成的服务文件。
+**注意:** 当你改变接口命名规则时，不要忘记更新所有与网络相关的配置文件和自定义的 systemd unit 文件以反映变化。特别是当你启用了 [netctl 静态配置](/index.php/Netctl#Basic_method "Netctl") 时，要运行 `netctl reenable *profile*` 来更新生成的服务文件。
 
 #### 更改设备名称
 
 你可以用 udev-rule 手动定义名称来更改设备名称。例如：
 
  `/etc/udev/rules.d/10-network.rules` 
-
 ```
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="aa:bb:cc:dd:ee:ff", NAME="net1"
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="ff:ee:dd:cc:bb:aa", NAME="net0"
@@ -207,14 +200,13 @@ SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="ff:ee:dd:cc:bb:aa", NAME="net0"
 *   使用这条命令来获得每张网卡的 MAC 地址：`cat /sys/class/net/**设备名**/address`
 *   确保你的 udev 规则中使用小写的十六进制值，而不是大写。
 
-**注意:** 选择静态名称时，**应该避免使用形如 "eth_X_" 或 "wlan_X_" 的名称**，因为这可能在引导时导致内核与 udev 之间的竞争状态。相反，最好用内核默认不会使用的接口名称，例如：`net0`、`net1`、`wifi0`、`wifi1`。更多细节请查看 [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) 文档。
+**注意:** 选择静态名称时，**应该避免使用形如 "eth*X*" 或 "wlan*X*" 的名称**，因为这可能在引导时导致内核与 udev 之间的竞争状态。相反，最好用内核默认不会使用的接口名称，例如：`net0`、`net1`、`wifi0`、`wifi1`。更多细节请查看 [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) 文档。
 
 ### 设定设备的 MTU 和队列长度
 
 你可以手动定义一条 udev 规则来改变队列的 MTU（最大传输单元）和队列长度You can change the device MTU and queue length by defining manually with an udev-rule。举例来说：
 
  `/etc/udev/rules.d/10-network.rules` 
-
 ```
 ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_len}="2000"
 
@@ -225,7 +217,6 @@ ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_
 可以通过 sysfs 找到当前的 NIC 名称：
 
  `$ ls /sys/class/net` 
-
 ```
 
 lo eth0 eth1 firewire0
@@ -245,7 +236,6 @@ lo eth0 eth1 firewire0
 查看结果：
 
  `$ ip link show dev eth0` 
-
 ```
 2: eth0: <BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master br0 state UP mode DEFAULT qlen 1000
 ...
@@ -254,7 +244,7 @@ lo eth0 eth1 firewire0
 
 ## 配置 IP 地址
 
-有两种配置方式：通过 [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol")，或者不变的_静态_地址。
+有两种配置方式：通过 [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol")，或者不变的*静态*地址。
 
 ### 动态 IP 地址
 
@@ -268,10 +258,9 @@ An easy way to setup DHCP for simple requirements is to use [systemd-networkd](/
 
 #### 手工运行 DHCP 客户端守护进程
 
-请注意，`dhcpcd`（DHCP _客户端_ 守护进程）与 `dhcpd`（DHCP _（服务端）_ 守护进程）的不同。
+请注意，`dhcpcd`（DHCP *客户端* 守护进程）与 `dhcpd`（DHCP *（服务端）* 守护进程）的不同。
 
  `# dhcpcd eth0` 
-
 ```
  dhcpcd: version 5.1.1 starting
  dhcpcd: eth0: broadcasting for a lease
@@ -308,7 +297,6 @@ An easy way to setup DHCP for simple requirements is to use [systemd-networkd](/
 如果 dhcpd 服务在你的网卡模块之前启动（[FS#30235](https://bugs.archlinux.org/task/30235)），手动地把你的网卡添加到 `/etc/modules-load.d/*.conf` 中。例如，如果你的 Realtek 网卡需要载入 `r8169`，创建：
 
  `/etc/modules-load.d/realtek.conf` 
-
 ```
 r8169
 
@@ -319,7 +307,6 @@ r8169
 如果你使用 DHCP 自动获取 IP 地址，但是**不**想每次启动网络的时候让 DHCP 更改你的 DNS 服务器（域名服务器），在 `dhcpcd.conf` 的最后一部分中添加：
 
  `/etc/dhcpcd.conf` 
-
 ```
 nohook resolv.conf
 
@@ -328,7 +315,6 @@ nohook resolv.conf
 此外，如果你在一个使用基于 MAC 地址的 Client ID 来过滤的 DHCPv4 网络中，你可能需要把以下这行：
 
  `/etc/dhcpcd.conf` 
-
 ```
 # Use the same DUID + IAID as set in DHCPv6 for DHCPv4 Client ID as per RFC4361\. 
 duid
@@ -338,7 +324,6 @@ duid
 改为：
 
  `/etc/dhcpcd.conf` 
-
 ```
 # Use the hardware address of the interface for the Client ID (DHCPv4).
 clientid
@@ -350,7 +335,6 @@ clientid
 在 `/etc/dhcpcd.conf` 中使用 nooption 选项来阻止 dhcpcd 向 `/etc/resolv.conf` 添加域名服务器：
 
  `/etc/dhcpcd.conf` 
-
 ```
 nooption domain_name_servers
 
@@ -431,7 +415,6 @@ See [dhcpcd#Static profile](/index.php/Dhcpcd#Static_profile "Dhcpcd").
 首先为创建 [systemd](/index.php/Systemd "Systemd") 服务的配置文件，使用适当的接口名称替换 `<interface>`：
 
  `/etc/conf.d/network@<interface>` 
-
 ```
 address=192.168.0.15
 netmask=24
@@ -443,7 +426,6 @@ gateway=192.168.0.1
 创建一个 systemd unit 文件：
 
  `/etc/systemd/system/network@.service` 
-
 ```
 [Unit]
 Description=Network connectivity (%i)
@@ -482,7 +464,6 @@ WantedBy=multi-user.target
 用编辑器创建文件 `/etc/systemd/system/network.service`。这份示例中使用一个静态 IP 地址和 [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant")。
 
  `/etc/systemd/system/network.service` 
-
 ```
 [Unit]
 Description=Network Connectivity
@@ -526,7 +507,6 @@ WantedBy=multi-user.target
 可以用 [ipcalc](https://www.archlinux.org/packages/?name=ipcalc) 软件包提供的 `ipcalc` 工具自动计算 IP 广播、子网掩码、主机范围等。例如通过火线连接视窗系统主机到 Arch。为了安全和网络组织，将它们分到独立的网络中，然后配置子网掩码和广播地址，网络中只有2台主机。要找出掩码和广播地址，我使用了 ipcalc，提供了它 arch firewire nic 的 IP 地址10.66.66.1，并告诉 ipcalc 要建立一个只有2台主机的网络。
 
  `$ ipcalc -nb 10.66.66.1 -s 1` 
-
 ```
 Address:   10.66.66.1
 
@@ -582,7 +562,6 @@ IP 别名是指给同一个网络接口分配多个 IP 地址。这样一个网�
 准备配置文件
 
  `/etc/netctl/mynetwork` 
-
 ```
 
 Connection='ethernet'
@@ -700,15 +679,15 @@ net.ipv4.tcp_window_scaling = 0
 
 ```
 
-**注意:** 新的 Realtek Windows 驱动程序中（已测试了 2009/01/22 GIGABYTE 上的 _Realtek 8111/8169 LAN Driver v5.708.1030.2008_）可能与这里的选项稍微有点不同，像 _Shutdown Wake-On-LAN --> Enable_。似乎把它切换成 `Disable` 没有效果（你仍然可以在Windows关闭时看到连接指示灯熄灭）。一个比较不好的解决方法是引导 Windows，然后立即重启系统（执行非正常重启/关机），不给予 Windows 驱动程序关闭 LAN 的机会。连接指示灯将会保持亮着，网卡也会在 POST 之后保持可用 - 直到你再次进入 Windows 并正常关机。
+**注意:** 新的 Realtek Windows 驱动程序中（已测试了 2009/01/22 GIGABYTE 上的 *Realtek 8111/8169 LAN Driver v5.708.1030.2008*）可能与这里的选项稍微有点不同，像 *Shutdown Wake-On-LAN --> Enable*。似乎把它切换成 `Disable` 没有效果（你仍然可以在Windows关闭时看到连接指示灯熄灭）。一个比较不好的解决方法是引导 Windows，然后立即重启系统（执行非正常重启/关机），不给予 Windows 驱动程序关闭 LAN 的机会。连接指示灯将会保持亮着，网卡也会在 POST 之后保持可用 - 直到你再次进入 Windows 并正常关机。
 
 #### 方法三 更新Realtek Linux驱动
 
 可以在realtek的官方网页上找到新的Linux驱动。(没有测试过，不过相信也能解决问题）。
 
-#### 方法四 在 BIOS/CMOS 中启用 _LAN Boot ROM_
+#### 方法四 在 BIOS/CMOS 中启用 *LAN Boot ROM*
 
-尽管 Windows 驱动程序在系统关闭时禁用了它，但在 BIOS/CMOS 中设置 _Integrated Peripherals --> Onboard LAN Boot ROM --> Enabled_，系统启动时会重新激活 Realtek LAN 芯片。
+尽管 Windows 驱动程序在系统关闭时禁用了它，但在 BIOS/CMOS 中设置 *Integrated Peripherals --> Onboard LAN Boot ROM --> Enabled*，系统启动时会重新激活 Realtek LAN 芯片。
 
 **注意:** 这个方法多次在 GIGABYTE GA-G31M-ES2L 主板，2009/02/05 发布的 BIOS 版本 F8 上测试成功。YMMV。
 

@@ -31,7 +31,7 @@ Just [Install](/index.php/Install "Install") the package [simpleorcapluginsystem
 
 To setup the plug-in system for the current user, run:
 
- `$ _/usr/share/SOPS/install-for-current-user.sh_` 
+ `$ */usr/share/SOPS/install-for-current-user.sh*` 
 
 ## Administration
 
@@ -54,14 +54,14 @@ To setup the plug-in system for the current user, run:
 The tools are located in the "tools" folder beneath the installation directory. The following command enables/activates a plug-in, but you have to rename the filename to create a shortcut and pass a command to the plug-in:
 
 ```
-$ _./ensop <pluginname>_ 
+$ *./ensop <pluginname>* 
 
 ```
 
 The command to disable and unload a plug-in is:
 
 ```
-$ _./dissop <pluginname>_
+$ *./dissop <pluginname>*
 
 ```
 
@@ -148,7 +148,7 @@ Sub process plug-ins are simple plug-ins and the default type. They may be any t
 Say "Hello World when pressing `orca+y`: Filename:`Hello_world__-__key_y.sh`
 
 ```
-_#!/bin/sh_
+*#!/bin/sh*
 echo "Hello World"
 ```
 
@@ -168,7 +168,7 @@ Those type of plug-ins are loaded with the spec.loader.exec_module. you can load
 Configure Orca to speak/braille the word "bang" instead of the "!" while loading the plug-in. Filename:`replace_chnames__-__loadmodule__+__exec.py`
 
 ```
-_#!/bin/python_
+*#!/bin/python*
 import orca.orca
 orca.chnames.chnames["!"] = "bang"
 ```

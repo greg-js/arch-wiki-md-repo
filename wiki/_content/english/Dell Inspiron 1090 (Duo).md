@@ -70,7 +70,6 @@ The Dell Inspiron 1090 (also Dell Inspiron Duo or Dell Duo) is a notebook/tablet
 #### PCI buses and devices
 
  `lspci` 
-
 ```
 00:00.0 Host bridge: Intel Corporation N10 Family DMI Bridge (rev 02)
 00:02.0 VGA compatible controller: Intel Corporation N10 Family Integrated Graphics Controller (rev 02)
@@ -96,7 +95,6 @@ The Dell Inspiron 1090 (also Dell Inspiron Duo or Dell Duo) is a notebook/tablet
 #### USB devices
 
  `lsusb` 
-
 ```
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
@@ -204,7 +202,7 @@ gconftool-2 --type string  --set /desktop/gnome/peripherals/mouse/cursor_theme x
 
 #### Hide mouse pointer in GDM
 
-**Warning:** This will also hide the pointer in _all_ Qt applications (you can only see the arrow pointer, secondary pointers as hand, beam or move will be invisible).
+**Warning:** This will also hide the pointer in *all* Qt applications (you can only see the arrow pointer, secondary pointers as hand, beam or move will be invisible).
 
 Create/edit the file `/usr/share/icons/default/index.theme` with the following contents:
 
@@ -234,9 +232,7 @@ Install [easystroke-mt](https://aur.archlinux.org/packages/easystroke-mt/), avai
 The screen can be rotated with `xrandr`, but the coordinates of the touchscreen are not rotated accordingly. You can fix this with `xinput` by running the following commands:
 
 **Warning:** This commmands depend on the output of `xinput --list`, which may change on driver updates for the touchscreen.
-
  `xrandr -o left` 
-
 ```
 xinput set-prop "eGalax Inc. USB TouchController" 'Coordinate Transformation Matrix' 0 1 0 1 0 0 0 0 1
 xinput set-prop "eGalax Inc. USB TouchController" 'Evdev Axis Inversion' 0 1
@@ -246,9 +242,7 @@ xinput set-prop "eGalaxTouch Virtual Device for Single" 'Coordinate Transformati
 xinput set-prop "eGalaxTouch Virtual Device for Single" 'Evdev Axis Inversion' 0 1
 
 ```
-
  `xrandr -o right` 
-
 ```
 xinput set-prop "eGalax Inc. USB TouchController" 'Coordinate Transformation Matrix' 0 1 0 1 0 0 0 0 1
 xinput set-prop "eGalax Inc. USB TouchController" 'Evdev Axis Inversion' 1 0
@@ -258,9 +252,7 @@ xinput set-prop "eGalaxTouch Virtual Device for Single" 'Coordinate Transformati
 xinput set-prop "eGalaxTouch Virtual Device for Single" 'Evdev Axis Inversion' 1 0
 
 ```
-
  `xrandr -o inverted` 
-
 ```
 xinput set-prop "eGalax Inc. USB TouchController" 'Coordinate Transformation Matrix' 1 0 0 0 1 0 0 0 1
 xinput set-prop "eGalax Inc. USB TouchController" 'Evdev Axis Inversion' 1 1
@@ -270,9 +262,7 @@ xinput set-prop "eGalaxTouch Virtual Device for Single" 'Coordinate Transformati
 xinput set-prop "eGalaxTouch Virtual Device for Single" 'Evdev Axis Inversion' 0 0
 
 ```
-
  `xrandr -o normal` 
-
 ```
 xinput set-prop "eGalax Inc. USB TouchController" 'Coordinate Transformation Matrix' 1 0 0 0 1 0 0 0 1
 xinput set-prop "eGalax Inc. USB TouchController" 'Evdev Axis Inversion' 0 0
@@ -283,7 +273,7 @@ xinput set-prop "eGalaxTouch Virtual Device for Single" 'Evdev Axis Inversion' 0
 
 ```
 
-Observe that the transformation matrix is the same for normal and inverted orientations, and for left and right orientations. Therefor the corresponding commands need to be applied only when changing between orientations with _different_ transformation matrix.
+Observe that the transformation matrix is the same for normal and inverted orientations, and for left and right orientations. Therefor the corresponding commands need to be applied only when changing between orientations with *different* transformation matrix.
 
 ## Examples of use
 
@@ -292,7 +282,6 @@ Observe that the transformation matrix is the same for normal and inverted orien
 The commands above can be used to make a simple shell script for toggling the screen orientation between landscape and portrait as follows, see also [#Screen rotation](#Screen_rotation):
 
  `~/toggle_orientation.sh` 
-
 ```
 #!/bin/bash
 
@@ -329,9 +318,7 @@ exit 0
 The following shell script hides the mouse pointer and activates Gnome 3.x's on-screen keyboard, [caribou](https://www.archlinux.org/packages/?name=caribou), when the netbook is fold into a tablet. It detects the current mode based on the current cursor theme (if the cursor is hidden, then the computer is in tablet mode). When you unfold the computer, it returns the screen to the default orientation.
 
 **Note:** It assumes [xcursor-transparent-theme](https://aur.archlinux.org/packages/xcursor-transparent-theme/) and [caribou](https://www.archlinux.org/packages/?name=caribou) are installed, see [#Transparent cursor](#Transparent_cursor) and [#On-screen keyboard](#On-screen_keyboard); and that `Adwaita`, Gnome 3.x's default cursor theme is in use. See also [#Screen rotation](#Screen_rotation).
-
  `~/toggle_tabletmode.sh` 
-
 ```
 #!/bin/bash
 

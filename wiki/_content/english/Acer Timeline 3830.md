@@ -288,9 +288,9 @@ But still an issue that I cannot set brightness value from software (from sysfs)
 
 The wireless card is detected as an AR9287 when in reality it is an AR5B97.
 
-I've read just about everything under the sun on this topic. It appears that the only "functional" driver is ATH9K. The ATH5K driver will refuse to run with the hardware. Ndiswrapper doesn't seem to run the xp version of the driver. These issues are numerously documented and have existed for over a year. the linux wireless page seems to indicate that there is not much in the way of official bug developement in regards to these problems meaning no foreseeable fix. At the time of writing, 11-14-2011, this card has pretty poor support under linux giving you only 2 _true_ fixes: buy a new wireless card or switch to a different os. Windows 7 has **none** of these issues with the card.
+I've read just about everything under the sun on this topic. It appears that the only "functional" driver is ATH9K. The ATH5K driver will refuse to run with the hardware. Ndiswrapper doesn't seem to run the xp version of the driver. These issues are numerously documented and have existed for over a year. the linux wireless page seems to indicate that there is not much in the way of official bug developement in regards to these problems meaning no foreseeable fix. At the time of writing, 11-14-2011, this card has pretty poor support under linux giving you only 2 *true* fixes: buy a new wireless card or switch to a different os. Windows 7 has **none** of these issues with the card.
 
-All that being said there are 2 mitigation strategies which _minimally_ help:
+All that being said there are 2 mitigation strategies which *minimally* help:
 
 1\. Disabling hardware encryption
 

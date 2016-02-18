@@ -37,7 +37,6 @@ Install [isync](https://www.archlinux.org/packages/?name=isync) from the [offici
 First create and customize the main configuration file using this example ~/.mbsyncrc:
 
  `~/.mbsyncrc` 
-
 ```
 IMAPAccount gmail
 # Address to connect to
@@ -79,7 +78,6 @@ SyncState *
 To get rid of the [Gmail]-Stuff (or [Google Mail] as in my case) in each mailbox name, it's possible to use separate Channels for each directory, and later merge them to a group:
 
  `~/.mbsyncrc` 
-
 ```
 Channel sync-googlemail-default
 Master :googlemail-remote:
@@ -140,7 +138,6 @@ $ mbsync -a
 If you want to automatically synchronize your mailboxes, isync can be started automatically with a [systemd](/index.php/Systemd "Systemd") unit. The following service file can start the **mbsync** command :
 
  `/etc/systemd/system/mbsync@.service` 
-
 ```
 [Unit]
 Description=Mailbox synchronization service for user %I
@@ -157,7 +154,6 @@ StandardError=syslog
 The following timer configures **mbsync** to be started every 2 hours :
 
  `/etc/systemd/system/mbsync@.timer` 
-
 ```
 [Unit]
 Description=Mailbox synchronization timer
@@ -172,7 +168,7 @@ WantedBy=timers.target
 
 ```
 
-Once those two files are created, [reload](/index.php/Reload "Reload") systemd, then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `mbsync@_user_.timer`, replacing `_user_` with your username..
+Once those two files are created, [reload](/index.php/Reload "Reload") systemd, then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `mbsync@*user*.timer`, replacing `*user*` with your username..
 
 ## Troubleshooting
 

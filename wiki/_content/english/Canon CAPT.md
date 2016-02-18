@@ -15,14 +15,14 @@ CAPT is Canon's proprietary Canon Advanced Printing Technology (CAPT) driver, su
 
 **Note:** Installing CAPT printers via the CUPS web interface may not work. [[1]](http://askubuntu.com/a/464334) Instead, use the manual method described below.
 
-Register the printer with CUPS using _lpadmin_:
+Register the printer with CUPS using *lpadmin*:
 
 ```
-# lpadmin -p _printer_model_ -m _printer_ppd_file_ -v ccp://localhost:59687 -E
+# lpadmin -p *printer_model* -m *printer_ppd_file* -v ccp://localhost:59687 -E
 
 ```
 
-Find the right PPD inside `/usr/share/cups/model`. For the printer model, use the _ShortNickName_ found inside the PPD, or take it directly from the file name, for example `CNCUPS**LBP6310**CAPTK.ppd`.
+Find the right PPD inside `/usr/share/cups/model`. For the printer model, use the *ShortNickName* found inside the PPD, or take it directly from the file name, for example `CNCUPS**LBP6310**CAPTK.ppd`.
 
 Alternatively, check the table provided on the [Ubuntu help page](https://help.ubuntu.com/community/CanonCaptDrv190), which matches each supported printer with its corresponding PPD.
 
@@ -35,10 +35,10 @@ For example, for the Canon LBP6310dn (UK model), run:
 
 ```
 
-Next, register the printer with the CAPT driver itself via _ccpdadmin_. Replace `_printer_model_` with the model you found earlier (e.g. `LBP6310`), and `_printer_address_` with either the USB port (e.g. `/dev/usb/lp0`) in case of a local printer, or the IP address, prefixed by `net:` (e.g. `net:192.168.1.100`) in case of a network printer:
+Next, register the printer with the CAPT driver itself via *ccpdadmin*. Replace `*printer_model*` with the model you found earlier (e.g. `LBP6310`), and `*printer_address*` with either the USB port (e.g. `/dev/usb/lp0`) in case of a local printer, or the IP address, prefixed by `net:` (e.g. `net:192.168.1.100`) in case of a network printer:
 
 ```
-# ccpdadmin -p _printer_model_ -o _printer_address_
+# ccpdadmin -p *printer_model* -o *printer_address*
 
 ```
 
@@ -65,7 +65,7 @@ Or for a network printer:
 The driver includes a status monitor which can be launched with
 
 ```
-$ captstatusui -P _printer_model_
+$ captstatusui -P *printer_model*
 
 ```
 
@@ -89,7 +89,7 @@ Unfortunately, a local installation of captstatusui will not detect CAPT printer
 
 Remote print monitoring can be achieved, however, using [SSH](/index.php/SSH "SSH") and [X11 forwarding](/index.php/Secure_Shell#X11_forwarding "Secure Shell").
 
-**Warning:** X11 forwarding has important security implications, especially when using the `-Y` switch (_ForwardX11Trusted_, required for the CAPT status monitor to work via X11 Forwarding). See [X11 forwarding](/index.php/Secure_Shell#X11_forwarding "Secure Shell") for further information.
+**Warning:** X11 forwarding has important security implications, especially when using the `-Y` switch (*ForwardX11Trusted*, required for the CAPT status monitor to work via X11 Forwarding). See [X11 forwarding](/index.php/Secure_Shell#X11_forwarding "Secure Shell") for further information.
 
 **Note:** There are many ways to set up X11 forwarding. For security reasons, this example is based on public key authentication, a dedicated SSH user account, and SSH running on the CUPS server. Adapt these instructions to your specific configuration.
 
@@ -100,7 +100,7 @@ Remote print monitoring can be achieved, however, using [SSH](/index.php/SSH "SS
 
 ```
 #!/bin/sh
-ssh -T -Y -i ~/.ssh/capt _remote_server_hostname_or_IP_address_ < /dev/null
+ssh -T -Y -i ~/.ssh/capt *remote_server_hostname_or_IP_address* < /dev/null
 
 ```
 
@@ -114,7 +114,7 @@ ssh -T -Y -i ~/.ssh/capt _remote_server_hostname_or_IP_address_ < /dev/null
 Match User capt
        X11Forwarding yes
        PermitTTY no
-       ForceCommand captstatusui -P _printer_model_ -e
+       ForceCommand captstatusui -P *printer_model* -e
        AuthenticationMethods publickey
 
 ```

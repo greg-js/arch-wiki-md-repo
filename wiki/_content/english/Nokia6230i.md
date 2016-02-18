@@ -93,12 +93,20 @@ nodetach
 ```
 TIMEOUT 5
 ECHO    ON
-ABORT   '\nBUSY\r'
-ABORT   '\nERROR\r'
-ABORT   '\nNO ANSWER\r'
-ABORT   '\nNO CARRIER\r'
-ABORT   '\nNO DIALTONE\r'
-ABORT   '\nRINGING\r\n\r\nRINGING\r'
+ABORT   '
+BUSY\r'
+ABORT   '
+ERROR\r'
+ABORT   '
+NO ANSWER\r'
+ABORT   '
+NO CARRIER\r'
+ABORT   '
+NO DIALTONE\r'
+ABORT   '
+RINGING\r
+\r
+RINGING\r'
 ''              \rAT
 TIMEOUT 12
 OK              ATH

@@ -16,9 +16,9 @@ El arranque es un proceso multietapa. La mayoría de los PC de hoy inicializan l
 
 El MBR consiste en un pequeño fragmento de código ensamblador (el gestor de arranque inicial - 446 bytes), una tabla de particiones para las 4 particiones primarias (16 bytes por cada una) y un **centinela** (0xAA55).
 
-El código del gestor de arranque "clásico", en el MBR de Windows/DOS, comprueba la tabla de particiones para buscar una, y sólo una, partición _activa_, lee X sectores de la partición y luego transfiere el control al sistema operativo. El gestor de arranque de Windows/DOS _no_ puede arrancar una partición de Arch Linux, ya que no está diseñado para cargar el kernel de Linux, y sólo puede atender a una partición _activa_ y _primaria_ (estas características no afectan a GRUB).
+El código del gestor de arranque "clásico", en el MBR de Windows/DOS, comprueba la tabla de particiones para buscar una, y sólo una, partición *activa*, lee X sectores de la partición y luego transfiere el control al sistema operativo. El gestor de arranque de Windows/DOS *no* puede arrancar una partición de Arch Linux, ya que no está diseñado para cargar el kernel de Linux, y sólo puede atender a una partición *activa* y *primaria* (estas características no afectan a GRUB).
 
-El [GRand Unified Bootloader (GRUB)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") es el gestor de arranque estándar de facto para GNU/Linux, y se recomienda al usuario que lo instale en el MBR para permitir el arranque de _cualquier_ partición, ya sea primaria o lógica.
+El [GRand Unified Bootloader (GRUB)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") es el gestor de arranque estándar de facto para GNU/Linux, y se recomienda al usuario que lo instale en el MBR para permitir el arranque de *cualquier* partición, ya sea primaria o lógica.
 
 ## Copia de seguridad y restauración
 

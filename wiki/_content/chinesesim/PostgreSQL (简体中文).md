@@ -24,7 +24,7 @@ PostgreSQL是一个开源的，社区驱动的，符合标准的 对象-关系�
 
 ## 安装PostgreSQL
 
-[安装](/index.php/Pacman "Pacman") [postgresql](https://www.archlinux.org/packages/?name=postgresql)，并为新用户_postgres_[设置一个密码](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.85.B6.E5.AE.83.E7.94.A8.E6.88.B7.E7.AE.A1.E7.90.86.E7.A4.BA.E4.BE.8B "Users and groups (简体中文)") 。
+[安装](/index.php/Pacman "Pacman") [postgresql](https://www.archlinux.org/packages/?name=postgresql)，并为新用户*postgres*[设置一个密码](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.85.B6.E5.AE.83.E7.94.A8.E6.88.B7.E7.AE.A1.E7.90.86.E7.A4.BA.E4.BE.8B "Users and groups (简体中文)") 。
 
 **注意:** 在本篇文章中需要以postgres用户运行的命令以`[postgres]$`作为前置符号。你可以以root用户执行`su - postgres`登陆postgres用户。如果你使用[sudo](/index.php/Sudo "Sudo")，可以以普通用户执行`sudo -i -u postgres`。
 
@@ -120,7 +120,7 @@ PostgreSQL Server 的配置文件是 `postgresql.conf`。此文件在数据库�
 
 **注意:** 默认情况下这个目录不能被普通用户访问，这就是 `find` 或 `locate` 没有找到这些配置文件的原因。
 
-编辑文件`/var/lib/postgres/data/postgresql.conf`。在_connections and authentications_选项中，按照你的需要添加`listen_addresses`行:
+编辑文件`/var/lib/postgres/data/postgresql.conf`。在*connections and authentications*选项中，按照你的需要添加`listen_addresses`行:
 
 ```
 listen_addresses = 'localhost,my_remote_server_ip_address'
@@ -133,7 +133,7 @@ listen_addresses = 'localhost,my_remote_server_ip_address'
 
 ```
 # IPv4 local connections:
-host   all   all   _my_remote_client_ip_address_/32   md5
+host   all   all   *my_remote_client_ip_address*/32   md5
 
 ```
 
@@ -195,7 +195,7 @@ If not using systemd, edit `/etc/conf.d/postgresql` and change the PGROOT variab
 
 ```
 #PGROOT="/var/lib/postgres/"
-PGROOT="_/pathto/pgroot/_"
+PGROOT="*/pathto/pgroot/*"
 
 ```
 
@@ -203,7 +203,7 @@ If using systemd, edit `/etc/systemd/system/multi-user.target.wants/postgresql.s
 
 ```
 #Environment=PGROOT=/var/lib/postgres/
-Environment=PGROOT=_/pathto/pgroot/_
+Environment=PGROOT=*/pathto/pgroot/*
 
 ```
 
@@ -321,10 +321,10 @@ If you had custom settings in configuration files like pg_hba.conf and postgresq
 
 If the "pg_upgrade" step fails with:
 
-*   _cannot write to log file pg_upgrade_internal.log
-    Failure, exiting_
+*   *cannot write to log file pg_upgrade_internal.log
+    Failure, exiting*
     Make sure you're in a directory that the "postgres" user has enough rights to write the log file to (`/tmp` for example). Or use "su - postgres" instead of "sudo -u postgres".
-*   _LC_COLLATE error that says that old and new values are different_
+*   *LC_COLLATE error that says that old and new values are different*
     Figure out what the old locale was, C or en_US.UTF-8 for example, and force it when calling initdb.
 
 ```
@@ -332,8 +332,8 @@ If the "pg_upgrade" step fails with:
 
 ```
 
-*   _There seems to be a postmaster servicing the old cluster.
-    Please shutdown that postmaster and try again._
+*   *There seems to be a postmaster servicing the old cluster.
+    Please shutdown that postmaster and try again.*
     Make sure postgres isn't running. If you still get the error then chances are these an old PID file you need to clear out.
 
 ```
@@ -361,7 +361,7 @@ If the "pg_upgrade" step fails with:
 
 ```
 
-*   _ERROR: could not access file "$libdir/postgis-2.0": No such file or directory_
+*   *ERROR: could not access file "$libdir/postgis-2.0": No such file or directory*
     Retrieve postgis-2.0.so from postgis package for version postgresql 9.2 () and copy it to /opt/pgsql-9.2/lib (make sure the privileges are right)
 
 ### 详细说明

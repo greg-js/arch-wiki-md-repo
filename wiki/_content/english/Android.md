@@ -231,10 +231,10 @@ To connect to a real device or phone via ADB under Arch, you must:
 2.  Enable USB Debugging on your phone or device:
     *   Jelly Bean (4.2) and newer: Go to `Settings --> About Phone` tap “Build Number” until you get a popup that you have become a developer (7 times). Then go to `Settings --> Developer --> USB debugging` and enable it.
     *   Older versions: This is usually done from `Settings --> Applications --> Development --> USB debugging`. Reboot the phone after checking this option to make sure USB debugging is enabled.
-3.  Add yourself to the _adbusers_ group:
+3.  Add yourself to the *adbusers* group:
 
 ```
-# gpasswd -a _username_ adbusers
+# gpasswd -a *username* adbusers
 
 ```
 
@@ -269,7 +269,6 @@ Bus 002 Device 006: ID 0bb4:0c8d High Tech Computer Corp.
 Use the rules from [Android developer](http://source.android.com/source/initializing.html#configuring-usb-access) or you can use the following template for your udev rules, just replace [VENDOR ID] and [PRODUCT ID] with yours. Copy these rules into `/etc/udev/rules.d/51-android.rules`:
 
  `/etc/udev/rules.d/51-android.rules` 
-
 ```
 SUBSYSTEM=="usb", ATTR{idVendor}=="[VENDOR ID]", MODE="0666", GROUP="adbusers"
 SUBSYSTEM=="usb",ATTR{idVendor}=="[VENDOR ID]",ATTR{idProduct}=="[PRODUCT ID]",SYMLINK+="android_adb"
@@ -317,14 +316,14 @@ HT07VHL00676    device
 You can now use adb to transfer files between the device and your computer. To transfer files to the device, use
 
 ```
-$ adb push _<what-to-copy>_ _<where-to-place>_
+$ adb push *<what-to-copy>* *<where-to-place>*
 
 ```
 
 To transfer files from the device, use
 
 ```
-$ adb pull _<what-to-pull>_ _<where-to-place>_
+$ adb pull *<what-to-pull>* *<where-to-place>*
 
 ```
 
@@ -334,7 +333,7 @@ $ adb pull _<what-to-pull>_ _<where-to-place>_
 
 *   If you are getting an empty list (your device is not there), it may be because you have not enabled USB debugging on your device. You can do that by going to Settings => Applications => Development and enabling USB debugging. On Android 4.2 (Jelly Bean) the Development menu is hidden; to enable it go to Settings => About phone and tap Build number 7 times.
 
-*   If there are still problems such as _adb_ displaying `???????? no permissions` under devices, try restarting the adb server as root.
+*   If there are still problems such as *adb* displaying `???????? no permissions` under devices, try restarting the adb server as root.
 
 ```
 # adb kill-server
@@ -444,7 +443,6 @@ $ repo sync -j4
 ```
 
 **Note:** To further decrease sync times, you can utilize the -c switch with the repo command as such:
-
 ```
 $ repo sync -j8 -c
 
@@ -455,7 +453,6 @@ The `-c` switch will only sync the branch which is specified in the manifest, wh
 Wait a long time. Just the uncompiled source code, along with the `.repo` and `.git` directories that are used to keep track of it, are well over 10 GB.
 
 **Note:** If you want to update your local copy of the Android source, at a later time, simply enter the build directory, load the Virtualenv, and re-sync:
-
 ```
 $ repo sync
 
@@ -477,7 +474,6 @@ If you run **lunch** without arguments, it will ask what build you want to creat
 The build takes a very long time.
 
 **Note:** If `make` fails with something like
-
 ```
 flex-2.5.39: loadlocale.c:131: _nl_intern_locale_data: Assertion `cnt < (sizeof (_nl_value_type_LC_COLLATE) / sizeof (_nl_value_type_LC_COLLATE[0]))' failed.
 

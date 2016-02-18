@@ -49,7 +49,6 @@ See [How to control Insync via command line (CLI)](https://support.insynchq.com/
 The default systemd service file provided in [insync](https://aur.archlinux.org/packages/insync/) uses the `--synchronous-full` flag to make sqlite transactions safer and prevent database corruption. However, for some users this might considerably slow down the sync process. If you do not need full synchronisation, create `/etc/systemd/system/insync@.service` to override the provided service file and modify the `ExecStart` variable:
 
  `/etc/systemd/system/insync@.service` 
-
 ```
 .include /usr/lib/systemd/system/insync@.service
 [Service]

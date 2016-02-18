@@ -1,6 +1,6 @@
 Согласно [Википедии](https://ru.wikipedia.org/wiki/Шрифт):
 
-	_Шрифт (нем. Schrift ← schreiben — писать) — графический рисунок начертаний букв и знаков, составляющих единую стилистическую и композиционную систему, набор символов определенного размера и рисунка._
+	*Шрифт (нем. Schrift ← schreiben — писать) — графический рисунок начертаний букв и знаков, составляющих единую стилистическую и композиционную систему, набор символов определенного размера и рисунка.*
 
 Имейте в виду, что лицензия некоторых шрифтов может накладывать правовые ограничения.
 
@@ -32,32 +32,32 @@
 
 ## Форматы шрифтов
 
-Большинство современных компьютерных шрифтов могут быть в _растровом_ или _контурном_ формате данных.
+Большинство современных компьютерных шрифтов могут быть в *растровом* или *контурном* формате данных.
 
 	Растровые шрифты
 
 	Состоит из матрицы точек или пикселей, представляющих рисунок каждого символа во всех размерах.
 
-	Контурные или _векторные_ шрифты
+	Контурные или *векторные* шрифты
 
 	Используются кривые Безье, инструкции отрисовки и математические формулы для описания каждого символа, что позволяет масштабировать символы в любой размер.
 
 ### Распространённые расширения
 
-*   `bdf` и `bdf.gz` – растровый шрифт, сжатый в gzip (BDF — _B_itmap _D_istribution _F_ormat)
+*   `bdf` и `bdf.gz` – растровый шрифт, сжатый в gzip (BDF — *B*itmap *D*istribution *F*ormat)
 *   `pcf` и `pcf.gz` – растровый, переносимый скомпилированный шрифт, сжатый в gzip
-*   `psf`, `psfu`, `psf.gz` и `psfu.gz` – bitmaps, _P_C _s_creen _f_ont, _P_C _s_creen _f_ont _U_nicode and the gzipped versions (not compatible with X.Org)
-*   `pfa` and `pfb` – outline fonts, _P_ostScript _f_ont _A_SCII and _P_ostScript _f_ont _b_inary. PostScript fonts carry built-in printer instructions.
-*   `ttf` – outline, _T_rue_T_ype _f_ont. Originally designed as a replacement for the PostScript fonts.
-*   `otf` – outline, _O_pen_T_ype _f_ont. TrueType with PostScript typographic instructions.
+*   `psf`, `psfu`, `psf.gz` и `psfu.gz` – bitmaps, *P*C *s*creen *f*ont, *P*C *s*creen *f*ont *U*nicode and the gzipped versions (not compatible with X.Org)
+*   `pfa` and `pfb` – outline fonts, *P*ostScript *f*ont *A*SCII and *P*ostScript *f*ont *b*inary. PostScript fonts carry built-in printer instructions.
+*   `ttf` – outline, *T*rue*T*ype *f*ont. Originally designed as a replacement for the PostScript fonts.
+*   `otf` – outline, *O*pen*T*ype *f*ont. TrueType with PostScript typographic instructions.
 
 В большинстве случаев, технические различия между TrueType и OpenType можно проигнорировать, многие шрифты с расширением {{ic|ttf} обычно OpenType.
 
 ### Другие форматы
 
-The typesetting application, _TeX,_ and its companion font software, _Metafont,_ render characters using their own methods. Some of the file extensions used for fonts by these two programs are `*pk`, `*gf`, `mf` and `vf`.
+The typesetting application, *TeX,* and its companion font software, *Metafont,* render characters using their own methods. Some of the file extensions used for fonts by these two programs are `*pk`, `*gf`, `mf` and `vf`.
 
-_FontForge,_ a font editing application, can store fonts in its native text-based format, `sfd`, _s_pline _f_ont _d_atabase.
+*FontForge,* a font editing application, can store fonts in its native text-based format, `sfd`, *s*pline *f*ont *d*atabase.
 
 The [SVG](http://www.w3.org/TR/SVG/fonts.html) format also has its own font description method.
 
@@ -131,7 +131,7 @@ post_remove() {
 
 Чтобы установить шрифты для всей системы (доступные для всех пользователей), переместите папку шрифтов в директорию `/usr/share/fonts/`. Чтобы установить шрифты только для одного пользователя, добавляйте их директорию `~/.local/share/fonts`.
 
-For Xserver to load fonts directly (as opposed to the use of a _font server_) the directory for your newly added font must be added with a FontPath entry. This entry is located in the _Files_ section [of your Xorg configuration file](/index.php/Xorg#Configuration "Xorg") (e.g. `/etc/X11/xorg.conf` or `/etc/xorg.conf`). See [#Older applications](#Older_applications) for more detail.
+For Xserver to load fonts directly (as opposed to the use of a *font server*) the directory for your newly added font must be added with a FontPath entry. This entry is located in the *Files* section [of your Xorg configuration file](/index.php/Xorg#Configuration "Xorg") (e.g. `/etc/X11/xorg.conf` or `/etc/xorg.conf`). See [#Older applications](#Older_applications) for more detail.
 
 После чего обновите кеш шрифтов fontconfig:
 
@@ -142,7 +142,7 @@ $ fc-cache -vf
 
 # Рекомендации по выбору шрифтов
 
-В качестве основного шрифта рабочего окружения можно рекомендовать либо [Droid Fonts](http://en.wikipedia.org/wiki/Droid_(font)), либо [Bitstream Vera Fonts](http://ru.wikipedia.org/wiki/Bitstream_Vera), либо [Red Hats Liberation Fonts](http://www.redhat.com/promo/fonts). Однако стоит заметить, что [начертание некоторых букв](http://i.imgur.com/osBDC4e.png) шрифта _Red Hats Liberation Fonts_ на данный момент оставляет желать лучшего, поэтому его, в отличие от _Bitstream Vera Fonts_, необходимо устанавливать вручную, а не из репозитория.
+В качестве основного шрифта рабочего окружения можно рекомендовать либо [Droid Fonts](http://en.wikipedia.org/wiki/Droid_(font)), либо [Bitstream Vera Fonts](http://ru.wikipedia.org/wiki/Bitstream_Vera), либо [Red Hats Liberation Fonts](http://www.redhat.com/promo/fonts). Однако стоит заметить, что [начертание некоторых букв](http://i.imgur.com/osBDC4e.png) шрифта *Red Hats Liberation Fonts* на данный момент оставляет желать лучшего, поэтому его, в отличие от *Bitstream Vera Fonts*, необходимо устанавливать вручную, а не из репозитория.
 
 ## Установка Droid Fonts
 
@@ -168,11 +168,11 @@ $ fc-cache -vf
 
 ## Установка шрифтов Microsoft
 
-Так как в пакете _ttf-ms-fonts_ присутствуют некоторые шрифты, начертание которых на данный момент оставляет желать лучшего, можно воспользоваться альтернативным вариантом их установки, который заключается в выборочной инсталляции только необходимых шрифтов.
+Так как в пакете *ttf-ms-fonts* присутствуют некоторые шрифты, начертание которых на данный момент оставляет желать лучшего, можно воспользоваться альтернативным вариантом их установки, который заключается в выборочной инсталляции только необходимых шрифтов.
 
 Необходимые шрифты Вы можете скачать на [этой](http://sourceforge.net/project/showfiles.php?group_id=34153&package_id=56408) странице веб-сайта [SourceForge.net](http://ru.wikipedia.org/wiki/SourceForge.net)
 
-_**Не рекомендуется** скачивать шрифт_ Arial_, т.к._ Red Hats Liberation Fonts_, загруженный с сайта [Red Hat Bugzilla](https://bugzilla.redhat.com/show_bug.cgi?id=427791), имеет схожее начертание и более чёткие линии._
+***Не рекомендуется** скачивать шрифт* Arial*, т.к.* Red Hats Liberation Fonts*, загруженный с сайта [Red Hat Bugzilla](https://bugzilla.redhat.com/show_bug.cgi?id=427791), имеет схожее начертание и более чёткие линии.*
 
 После того, как Вы скачали все необходимые exe-файлы — из них нужно извлечь шрифты в соответствующую папку (напр., `/usr/share/fonts/TTFmisc/`):
 
@@ -740,7 +740,7 @@ ttf-droid
 
 Имеющиеся в системе консольные шрифты находятся в каталоге `/usr/share/kbd/consolefonts/` , проверить их можно, запустив команду `setfont` для каждого из них.
 
-Если для вашей видеокарты при загрузке системы подключается drm-модуль, например i915 для intel, его старт приводит к появлению нового устройства фреймбуфера _(или замене старого на новый)_ (`/dev/fb0` и т.д.), и повторной инициализации консоли со сбросом шрифта. Если это происходит уже **после** того, как `systemd-vconsole-setup` загрузила ваш шрифт, вам требуется либо загрузить его повторно, либо [обеспечить старт drm-модуля](/index.php/KMS#Early_KMS_start "KMS") заведомо раньше загрузки шрифта.
+Если для вашей видеокарты при загрузке системы подключается drm-модуль, например i915 для intel, его старт приводит к появлению нового устройства фреймбуфера *(или замене старого на новый)* (`/dev/fb0` и т.д.), и повторной инициализации консоли со сбросом шрифта. Если это происходит уже **после** того, как `systemd-vconsole-setup` загрузила ваш шрифт, вам требуется либо загрузить его повторно, либо [обеспечить старт drm-модуля](/index.php/KMS#Early_KMS_start "KMS") заведомо раньше загрузки шрифта.
 
 Второе проще всего сделать, добавив ваш drm-модуль в строку [MODULES=](/index.php/Mkinitcpio#MODULES "Mkinitcpio") конфига `/etc/mkinitcpio.conf` и перегенерировав образ initramfs. Для стационарной системы этого вполне достаточно.
 
@@ -812,7 +812,7 @@ KERNEL=="fb*", ACTION=="add", IMPORT{file}="/etc/locale.conf", RUN+="/usr/lib/sy
 
 ```
 
-В этом случае загрузка шрифта не блокируется при отсутствии фреймбуфера, и срабатывает автоматически даже при его повторной инициализации. Единственный недостаток – шрифт не будет загружен для дополнительных виртуальных консолей, если они инициализируются раньше фреймбуфера. Эту возможность учитывает и реализует только решение с шелл-скриптом _(см. выше)_.
+В этом случае загрузка шрифта не блокируется при отсутствии фреймбуфера, и срабатывает автоматически даже при его повторной инициализации. Единственный недостаток – шрифт не будет загружен для дополнительных виртуальных консолей, если они инициализируются раньше фреймбуфера. Эту возможность учитывает и реализует только решение с шелл-скриптом *(см. выше)*.
 
 # Внешние ссылки
 

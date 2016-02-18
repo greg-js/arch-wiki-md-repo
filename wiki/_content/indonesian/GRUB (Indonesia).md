@@ -9,7 +9,7 @@
 
 [GRUB2](http://www.gnu.org/software/grub/) generasi berikutnya dari GRUB. GRUB2 adalah derivasi dari [PUPA](http://www.nongnu.org/pupa/) yang merupakan proyek pengembangand dari GRUB. GRUB 2 telah di tulis ulang untuk membersihkan segalanya dan memberikan modularitas dan portabilitas. [[1]](http://www.gnu.org/software/grub/grub-faq.en.html#q1).
 
-Secara singkat, _bootloader_ adalah program software pertama yang berjalan ketika komputer pertama dinyalakan. _Bootloader_ bertanggung jawab sebagai pemicu dan pengirim kontrol ke Kernel Linux. Kernel, selanjutnya, menginisialisasi seluruh sistem operasi.
+Secara singkat, *bootloader* adalah program software pertama yang berjalan ketika komputer pertama dinyalakan. *Bootloader* bertanggung jawab sebagai pemicu dan pengirim kontrol ke Kernel Linux. Kernel, selanjutnya, menginisialisasi seluruh sistem operasi.
 
 **Note:** grub2 dari 1.99 dan selanjutnya telah mendukung btrfs sebagai root (tanpa /boot filesistem yang terpisah), tetapi tingkat kompresinya terbatas pada zlib, tidak LZO. Dukungan kompresi LZO hanya terdapat pada repo bzr upstream.
 
@@ -99,7 +99,7 @@ Walaupun, [GRUB](/index.php/GRUB "GRUB") (versi 0.9x) adalah bootloader standar 
 
 *   Ada perbedaan perinta dari GRUB dan GRUB2\. Perlu di lihat terlebih dahulu [GRUB2 commands](http://www.gnu.org/software/grub/manual/grub.html#Commands) sebelum melanjutkan (contoh : "find" telah di ganti dengan "search").
 
-*   GRUB2 sekarang _modular_ dan tidak lagi memerlukan "stage 1.5". Sebagai hasilnya, bootloader itu sendiri menjadi terbatas -- modul-modul diambil dari hard disk sebagai kebutuhan untuk meluaskan fungsionalitas. (contoh : dukungan untuk [LVM](/index.php/LVM "LVM") atau RAID).
+*   GRUB2 sekarang *modular* dan tidak lagi memerlukan "stage 1.5". Sebagai hasilnya, bootloader itu sendiri menjadi terbatas -- modul-modul diambil dari hard disk sebagai kebutuhan untuk meluaskan fungsionalitas. (contoh : dukungan untuk [LVM](/index.php/LVM "LVM") atau RAID).
 
 *   Penamaan perangkat telah berubah antara GRUB dan GRUB2\. Partisi diurut dari nomor 1 dari pada 0 ketika disk masih bernomor 0\. Sebagai contoh, `/dev/sda1` akan menjadi `(hd0,msdos1)` (untuk MBR) atau `(hd0,gpt1)` (for GPT) ketika GRUB2 dipakai.
 
@@ -319,7 +319,6 @@ Please specify the module with the option '--modules' explicitly.
 ```
 
 **Warning:** Make sure that you check the `/boot` directory if you use the latter. Sometimes the `boot-directory` parameter creates another `/boot` folder inside of boot. A wrong install would look like this `/boot/boot/grub` !
-
 .
 
 ###### Install to Partition or Partitionless Disk
@@ -398,7 +397,6 @@ If `grub-mkconfig` fails, convert your `/boot/grub/menu.lst` file to `/boot/grub
 For example:
 
  `/boot/grub/menu.lst` 
-
 ```
 default=0
 timeout=5
@@ -414,9 +412,7 @@ kernel /vmlinuz-linux root=/dev/sda2 ro
 initrd /initramfs-linux-fallback.img
 
 ```
-
  `/boot/grub/grub.cfg` 
-
 ```
 set default='0'; if [ x"$default" = xsaved ]; then load_env; set default="$saved_entry"; fi
 set timeout=5
@@ -824,7 +820,7 @@ menuentry "Arch Linux" {
 
 ### Dual-booting
 
-_NOTE: If you want GRUB2 to automatically search for other systems, for example as in Ubuntu. Then you may need to install [os-prober](https://www.archlinux.org/packages/?name=os-prober)._
+*NOTE: If you want GRUB2 to automatically search for other systems, for example as in Ubuntu. Then you may need to install [os-prober](https://www.archlinux.org/packages/?name=os-prober).*
 
 #### Using grub-mkconfig
 
@@ -905,7 +901,7 @@ In GRUB2 it is possible, by default, to change the look of the menu. Make sure t
 
 #### Setting the framebuffer resolution
 
-Grub2 can set the framebuffer for both grub2 itself and the kernel. The old _vga=_ way is deprecated. The preferred method is editing `/etc/default/grub` as the following sample:
+Grub2 can set the framebuffer for both grub2 itself and the kernel. The old *vga=* way is deprecated. The preferred method is editing `/etc/default/grub` as the following sample:
 
 ```
 GRUB_GFXMODE=1024x768x32
@@ -1055,7 +1051,7 @@ insmod lvm
 and specify your root in the menuentry as:
 
 ```
-set root=(_lvm_group_name_-_lvm_logical_boot_partition_name_)
+set root=(*lvm_group_name*-*lvm_logical_boot_partition_name*)
 
 ```
 
@@ -1166,7 +1162,6 @@ Note that manually added menu items, eg Windows in `/etc/grub.d/40_custom`, will
 If you want to secure GRUB2 so it is not possible for anyone to change boot parameters or use the command line, you can add a user/password combination to GRUB2's configuration files. To do this, run the command `grub-mkpasswd_pbkdf2`. Enter a password and confirm it. The output will look like this:
 
  `Your PBKDF2 is grub.pbkdf2.sha512.10000.C8ABD3E93C4DFC83138B0C7A3D719BC650E6234310DA069E6FDB0DD4156313DA3D0D9BFFC2846C21D5A2DDA515114CF6378F8A064C94198D0618E70D23717E82.509BFA8A4217EAD0B33C87432524C0B6B64B34FBAD22D3E6E6874D9B101996C5F98AB1746FE7C7199147ECF4ABD8661C222EEEDB7D14A843261FFF2C07B1269A` Then, add the following to `/etc/grub.d/00_header`:
-
 ```
 cat << EOF
 

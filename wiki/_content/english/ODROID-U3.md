@@ -1,6 +1,6 @@
 From [Arch Linux ARM ODROID-U3 Page](http://archlinuxarm.org/platforms/armv7/samsung/odroid-u3):
 
-	"_The ODROID-U3 is a very low cost and high performance development platform based on an Exynos 4412 ARM Cortex-A9 Quad Core 1.7GHz CPU. It has 3 USB 2.0 ports and micro HDMI._"
+	"*The ODROID-U3 is a very low cost and high performance development platform based on an Exynos 4412 ARM Cortex-A9 Quad Core 1.7GHz CPU. It has 3 USB 2.0 ports and micro HDMI.*"
 
 **Note:** Support for the ARM architecture is provided on [http://archlinuxarm.org](http://archlinuxarm.org) not through posts to the official Arch Linux Forum. Any posts related to ARM specific issues will be promptly closed per the [Arch Linux Distribution Support ONLY](https://wiki.archlinux.org/index.php/Forum_etiquette#Arch_Linux_distribution_support_ONLY) policy.
 
@@ -36,15 +36,15 @@ By default, the blue LED is a heartbeat LED, which flashes when the kernel is ru
 
 #### Temporary configuration
 
-Replace `_TRIGGER_` with one of the available triggers. This setting will apply instantly, but be lost upon reboot.
+Replace `*TRIGGER*` with one of the available triggers. This setting will apply instantly, but be lost upon reboot.
 
- `# echo _TRIGGER_ > /sys/class/leds/led1/trigger` 
+ `# echo *TRIGGER* > /sys/class/leds/led1/trigger` 
 
 #### Permanent configuration
 
-Replace `_TRIGGER_` with one of the available triggers. This setting will apply upon reboot.
+Replace `*TRIGGER*` with one of the available triggers. This setting will apply upon reboot.
 
- `/etc/tmpfiles.d/leds.conf`  `w /sys/class/leds/led1/trigger - - - - _TRIGGER_` 
+ `/etc/tmpfiles.d/leds.conf`  `w /sys/class/leds/led1/trigger - - - - *TRIGGER*` 
 
 ## CPU Fan
 
@@ -62,7 +62,8 @@ Values range from 0 (0%) to 255 (100%)
 
 ### Read CPU Temperature
 
- `awk '{printf "%3.1f°C\n", $1/1000}' /sys/class/thermal/thermal_zone0/temp` 
+ `awk '{printf "%3.1f°C
+", $1/1000}' /sys/class/thermal/thermal_zone0/temp` 
 
 ## See also
 

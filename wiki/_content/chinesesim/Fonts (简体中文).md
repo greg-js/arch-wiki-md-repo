@@ -83,7 +83,7 @@
 
 排版程序 **TeX** 和配套的字体软件 **Metafont** 用它们自己的方法渲染字体。部分用于这两个程序的字体的文件后缀有 `*pk`, `*gf`, `mf` 与 `vf`。
 
-**FontForge**，一个字体编辑程序，可以用自己的格式来储存字体，例如 `sfd` （_s_pline _f_ont _d_atabase）。
+**FontForge**，一个字体编辑程序，可以用自己的格式来储存字体，例如 `sfd` （*s*pline *f*ont *d*atabase）。
 
 [SVG](http://www.w3.org/TR/SVG/fonts.html) 格式也有自己的字体描述方法。
 
@@ -336,10 +336,10 @@ LiberationMono-Regular.ttf: "Liberation Mono" "Regular"
 
 默认情况下, [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") 使用内核的内置字体，其包含 [CP437](https://en.wikipedia.org/wiki/CP437 "wikipedia:CP437") 字体集, 但是这个设置可以非常容易改变.
 
-[Linux console](https://en.wikipedia.org/wiki/Linux_console "wikipedia:Linux console") 默认使用 UTF-8 编码, 但是由于使用的是标准的兼容 VGA 的帧缓存, 终端字体限定为 256 或 512 个字形。如果字体超出了256个字形, 那么颜色的数量就会从 16 减少到 8。为了针对给定的 Unicode z值分配正确的可显示符号，一种特殊的翻译映射，通常叫做 _unimap_,是必须的。 就目前来看大多数终端字体都具有内置的 _unimap_, 但是历史上它是需要被单独载入的。
+[Linux console](https://en.wikipedia.org/wiki/Linux_console "wikipedia:Linux console") 默认使用 UTF-8 编码, 但是由于使用的是标准的兼容 VGA 的帧缓存, 终端字体限定为 256 或 512 个字形。如果字体超出了256个字形, 那么颜色的数量就会从 16 减少到 8。为了针对给定的 Unicode z值分配正确的可显示符号，一种特殊的翻译映射，通常叫做 *unimap*,是必须的。 就目前来看大多数终端字体都具有内置的 *unimap*, 但是历史上它是需要被单独载入的。
 
 ```
-[kbd](https://www.archlinux.org/packages/?name=kbd) 包提供了改变虚拟终端字体和字体映射的工具。可以使用的字体存储在 `/usr/share/kbd/consolefonts/` 目录下, 那些以 _.psfu_ 或者 _.psfu.gz_ 结尾的具有一个内嵌的 Unicode 翻译映射。
+[kbd](https://www.archlinux.org/packages/?name=kbd) 包提供了改变虚拟终端字体和字体映射的工具。可以使用的字体存储在 `/usr/share/kbd/consolefonts/` 目录下, 那些以 *.psfu* 或者 *.psfu.gz* 结尾的具有一个内嵌的 Unicode 翻译映射。
 
 ```
 
@@ -351,14 +351,14 @@ LiberationMono-Regular.ttf: "Liberation Mono" "Regular"
 
 **提示:** 这里有一个整理过的预览影像数据库：[Linux 终端字体截图](http://alexandre.deverteuil.net/pages/consolefonts/)。
 
-_showconsolefont_ 指令会以表格形式显示可用字与字符：
+*showconsolefont* 指令会以表格形式显示可用字与字符：
 
 ```
 $ showconsolefont
 
 ```
 
-_setfont_ 工具可以暂时改变字体，让用户可以决定是否要设为永久性设置。只要指定字体名称即可 (这些字体位于 `/usr/share/kbd/consolefonts/`)，比如：
+*setfont* 工具可以暂时改变字体，让用户可以决定是否要设为永久性设置。只要指定字体名称即可 (这些字体位于 `/usr/share/kbd/consolefonts/`)，比如：
 
 ```
 $ setfont lat2-16
@@ -372,16 +372,15 @@ $ setfont
 
 ```
 
-**注意:** _setfont_ 只作用于当前正在使用的终端。其它终端无论活跃与否都不受影响。
+**注意:** *setfont* 只作用于当前正在使用的终端。其它终端无论活跃与否都不受影响。
 
 ### 持久性配置
 
 `/etc/vconsole.conf` 的 `FONT` 变量可以用来在启动时设置字体, 对于所有的终端都具有持久性作用。详情请查看 `man 5 vconsole.conf` 。
 
-若要显示 _Č, ž, đ, š_ 或 _Ł, ę, ą, ś_ 之类的字符，请使用 `lat2-16.psfu.gz` 这个字体：
+若要显示 *Č, ž, đ, š* 或 *Ł, ę, ą, ś* 之类的字符，请使用 `lat2-16.psfu.gz` 这个字体：
 
  `/etc/vconsole.conf` 
-
 ```
 ...
 FONT=lat2-16
@@ -408,7 +407,6 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 应用程序与浏览器会根据 fontconfig 设置和 Unicode 文字可用的字体来选择其显示字体。用指令 `fc-list :lang="双字母的语言代码"` 枚举系统安装了哪些可对应该语言的字体。例如，枚举已经安装的阿拉伯文字体，以及支持阿拉伯字的字体：
 
  `$ fc-list :lang=ar | cut -d: -f1` 
-
 ```
 /usr/share/fonts/TTF/FreeMono.ttf
 /usr/share/fonts/TTF/DejaVuSansCondensed.ttf
@@ -425,23 +423,23 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 #### 阿拉伯和乌尔都文字
 
-*   [ttf-qurancomplex-fonts](https://aur.archlinux.org/packages/ttf-qurancomplex-fonts/) - 位于麦地那的 King Fahd Glorious Quran Printing Complex 制作的字体 _(AUR)_
-*   [ttf-amiri](https://aur.archlinux.org/packages/ttf-amiri/) - 一个典型的阿拉伯文誊抄体 (Naskh) 字体，一开始由 Amiria Press 采用 _(AUR)_
-*   [ttf-sil-lateef](https://aur.archlinux.org/packages/ttf-sil-lateef/) - 来自 SIL 的 Unicode 阿拉伯文字体 _(AUR)_
-*   [ttf-sil-scheherazade](https://aur.archlinux.org/packages/ttf-sil-scheherazade/) - 来自 SIL 的 Unicode 阿拉伯文字体 _(AUR)_
-*   [ttf-arabeyes-fonts](https://aur.archlinux.org/packages/ttf-arabeyes-fonts/) - 自由的阿拉伯文字体集合 _(AUR)_
+*   [ttf-qurancomplex-fonts](https://aur.archlinux.org/packages/ttf-qurancomplex-fonts/) - 位于麦地那的 King Fahd Glorious Quran Printing Complex 制作的字体 *(AUR)*
+*   [ttf-amiri](https://aur.archlinux.org/packages/ttf-amiri/) - 一个典型的阿拉伯文誊抄体 (Naskh) 字体，一开始由 Amiria Press 采用 *(AUR)*
+*   [ttf-sil-lateef](https://aur.archlinux.org/packages/ttf-sil-lateef/) - 来自 SIL 的 Unicode 阿拉伯文字体 *(AUR)*
+*   [ttf-sil-scheherazade](https://aur.archlinux.org/packages/ttf-sil-scheherazade/) - 来自 SIL 的 Unicode 阿拉伯文字体 *(AUR)*
+*   [ttf-arabeyes-fonts](https://aur.archlinux.org/packages/ttf-arabeyes-fonts/) - 自由的阿拉伯文字体集合 *(AUR)*
 
 #### 波斯文字
 
-*   [ttf-persian-irfonts](https://aur.archlinux.org/packages/ttf-persian-irfonts/) - 伊朗信息与通信技术高级理事会(SCICT)的官方标准波斯字体集 _(AUR)_
-*   [ttf-persian-borna](https://aur.archlinux.org/packages/ttf-persian-borna/) - Borna Rayaneh 波斯 B 字体系列 _(AUR)_
-*   [ttf-persian-x2](https://aur.archlinux.org/packages/ttf-persian-x2/) - X 系列 2 字体是建立在开源可使用的字体基础上并扩展支持波斯语，阿拉伯语，乌尔都语，普什图语，达里语，乌兹别克语，库尔德语，维吾尔语，老土耳其（奥斯曼）和现代土耳其（罗马）. _(AUR)_
-*   [ttf-iran-nastaliq](https://aur.archlinux.org/packages/ttf-iran-nastaliq/) - 由伊朗信息高级理事会公布的一款 Unicode 书法字体 _(AUR)_
+*   [ttf-persian-irfonts](https://aur.archlinux.org/packages/ttf-persian-irfonts/) - 伊朗信息与通信技术高级理事会(SCICT)的官方标准波斯字体集 *(AUR)*
+*   [ttf-persian-borna](https://aur.archlinux.org/packages/ttf-persian-borna/) - Borna Rayaneh 波斯 B 字体系列 *(AUR)*
+*   [ttf-persian-x2](https://aur.archlinux.org/packages/ttf-persian-x2/) - X 系列 2 字体是建立在开源可使用的字体基础上并扩展支持波斯语，阿拉伯语，乌尔都语，普什图语，达里语，乌兹别克语，库尔德语，维吾尔语，老土耳其（奥斯曼）和现代土耳其（罗马）. *(AUR)*
+*   [ttf-iran-nastaliq](https://aur.archlinux.org/packages/ttf-iran-nastaliq/) - 由伊朗信息高级理事会公布的一款 Unicode 书法字体 *(AUR)*
 
 #### 缅甸文字
 
-*   [ttf-myanmar3](https://aur.archlinux.org/packages/ttf-myanmar3/) - 缅甸手写体字体 _(AUR)_
-*   [ttf-myanmar-fonts](https://aur.archlinux.org/packages/ttf-myanmar-fonts/) - 源自myordbok.com的121款字体_(AUR)_
+*   [ttf-myanmar3](https://aur.archlinux.org/packages/ttf-myanmar3/) - 缅甸手写体字体 *(AUR)*
+*   [ttf-myanmar-fonts](https://aur.archlinux.org/packages/ttf-myanmar-fonts/) - 源自myordbok.com的121款字体*(AUR)*
 
 #### 中日韩越文字
 
@@ -453,7 +451,7 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 *   [adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts) - 思源黑体简体中文部分
 *   [adobe-source-han-sans-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-tw-fonts) - 思源黑体繁体中文部分
-*   [ttf-tw](https://aur.archlinux.org/packages/ttf-tw/) - （繁体）台湾教育部发行的标准楷书、宋体字体 _(AUR)_
+*   [ttf-tw](https://aur.archlinux.org/packages/ttf-tw/) - （繁体）台湾教育部发行的标准楷书、宋体字体 *(AUR)*
 *   [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) - 文泉驿微米黑：无衬线形式的高质量中日韩越 (CJKV) 轮廓字体，自 Google Droid 字体衍生而来。
 *   [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) - 文泉驿正黑：黑体 (无衬线) 的中文轮廓字体，附带文泉驿点阵宋体 (也支持部分日韩字符)。
 *   [ttf-arphic-ukai](https://www.archlinux.org/packages/?name=ttf-arphic-ukai) - **楷书** (带有笔触) Unicode 字体 (推荐启用反锯齿)
@@ -466,9 +464,9 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 *   [adobe-source-han-sans-jp-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-jp-fonts) - 思源黑体日文部分
 *   [otf-ipafont](https://www.archlinux.org/packages/?name=otf-ipafont) - 正规的日文哥特体 (无衬线) 与明朝体 (衬线) 字形集；其中一项高质量的开放原始码字形。openSUSE-ja 的缺省字形。
-*   [ttf-vlgothic](https://aur.archlinux.org/packages/ttf-vlgothic/) - 日文哥特体字形。Debian/Fedora/Vine Linux 的缺省字体 _(AUR)_
-*   [ttf-mplus](https://aur.archlinux.org/packages/ttf-mplus/) - 现代哥特体的日文轮廓字体。包含所有日文平假名/片假名、Basic Latin、Latin-1 Supplement、Latin Extended-A、IPA Extensions。另外还有大部分日文汉字、希腊字母、西里尔字与越南文字，可以 7 磅 (等比例) 或 5 磅 (等宽) 字重显示。 _(AUR)_
-*   [ttf-ipa-mona](https://aur.archlinux.org/packages/ttf-ipa-mona/), [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/) - 日文字体，可正确显示 [2ch 的 Shift JIS 艺术创作](https://en.wikipedia.org/wiki/2channel_Shift_JIS_art "wikipedia:2channel Shift JIS art")。 _(AUR)_
+*   [ttf-vlgothic](https://aur.archlinux.org/packages/ttf-vlgothic/) - 日文哥特体字形。Debian/Fedora/Vine Linux 的缺省字体 *(AUR)*
+*   [ttf-mplus](https://aur.archlinux.org/packages/ttf-mplus/) - 现代哥特体的日文轮廓字体。包含所有日文平假名/片假名、Basic Latin、Latin-1 Supplement、Latin Extended-A、IPA Extensions。另外还有大部分日文汉字、希腊字母、西里尔字与越南文字，可以 7 磅 (等比例) 或 5 磅 (等宽) 字重显示。 *(AUR)*
+*   [ttf-ipa-mona](https://aur.archlinux.org/packages/ttf-ipa-mona/), [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/) - 日文字体，可正确显示 [2ch 的 Shift JIS 艺术创作](https://en.wikipedia.org/wiki/2channel_Shift_JIS_art "wikipedia:2channel Shift JIS art")。 *(AUR)*
 *   [ttf-sazanami](https://www.archlinux.org/packages/?name=ttf-sazanami) - 自由的日文 TrueType 字体。已经过期无人维护，但在某些环境下可当作备案字体使用。
 *   [ttf-hanazono](https://www.archlinux.org/packages/?name=ttf-hanazono) - 一款免费的日文汉字字体，Mincho (serif)风格。
 
@@ -476,29 +474,29 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 *   [adobe-source-han-sans-kr-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-kr-fonts) - 思源黑体韩文部分
 *   [ttf-baekmuk](https://www.archlinux.org/packages/?name=ttf-baekmuk) - 韩文 TrueType 字体集合
-*   [ttf-alee](https://aur.archlinux.org/packages/ttf-alee/) - 自由的韩文 (谚文；Hangul) TrueType 字体 (_AUR_)
-*   [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/) - Un 字体 (缺省的 Baekmuk 字体较让人不满意) (_AUR_)
-*   [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) - 共享体 (Nanum) 系列 TrueType 字体 (_AUR_)
-*   [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) - 共享体 (Nanum) 系列 TrueType 等宽字体 (_AUR_)
+*   [ttf-alee](https://aur.archlinux.org/packages/ttf-alee/) - 自由的韩文 (谚文；Hangul) TrueType 字体 (*AUR*)
+*   [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/) - Un 字体 (缺省的 Baekmuk 字体较让人不满意) (*AUR*)
+*   [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) - 共享体 (Nanum) 系列 TrueType 字体 (*AUR*)
+*   [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) - 共享体 (Nanum) 系列 TrueType 等宽字体 (*AUR*)
 
 #### 西里尔文字
 
 另请参阅[#等宽字体](#.E7.AD.89.E5.AE.BD.E5.AD.97.E4.BD.93)、[#无衬线字体](#.E6.97.A0.E8.A1.AC.E7.BA.BF.E5.AD.97.E4.BD.93)和[#衬线字体](#.E8.A1.AC.E7.BA.BF.E5.AD.97.E4.BD.93)
 
-*   [ttf-paratype](https://aur.archlinux.org/packages/ttf-paratype/) - ParaType类别的字体: sans, serif, mono, 扩展的西里尔和拉丁文字, OFL 认证 (_AUR_)
-*   [font-arhangai](https://aur.archlinux.org/packages/font-arhangai/) - 蒙古文西里尔字 (_AUR_)
-*   [ttf-pingwi-typography](https://aur.archlinux.org/packages/ttf-pingwi-typography/) - PingWi Typography (PWT) 字体 (_AUR_)
+*   [ttf-paratype](https://aur.archlinux.org/packages/ttf-paratype/) - ParaType类别的字体: sans, serif, mono, 扩展的西里尔和拉丁文字, OFL 认证 (*AUR*)
+*   [font-arhangai](https://aur.archlinux.org/packages/font-arhangai/) - 蒙古文西里尔字 (*AUR*)
+*   [ttf-pingwi-typography](https://aur.archlinux.org/packages/ttf-pingwi-typography/) - PingWi Typography (PWT) 字体 (*AUR*)
 
 #### 希腊文字
 
 几乎所有 Unicode 字体都包含希腊代码集 (也包含多调变音符号)。某些额外的字体软件包未包含完整的 Unicode 集，但拥有高质量的希腊字字形 (当然包含拉丁字)：
 
-*   [otf-gfs](https://aur.archlinux.org/packages/otf-gfs/) - 由 Greek Font Society 选用的 OpenType 字体 _(AUR)_
-*   [ttf-mgopen](https://aur.archlinux.org/packages/ttf-mgopen/) - 来自 Magenta 的专业 TrueType 字体 _(AUR)_
+*   [otf-gfs](https://aur.archlinux.org/packages/otf-gfs/) - 由 Greek Font Society 选用的 OpenType 字体 *(AUR)*
+*   [ttf-mgopen](https://aur.archlinux.org/packages/ttf-mgopen/) - 来自 Magenta 的专业 TrueType 字体 *(AUR)*
 
 #### 希伯来文字
 
-*   [culmus](https://aur.archlinux.org/packages/culmus/) - 自由的希伯来文字体集合 _(AUR)_
+*   [culmus](https://aur.archlinux.org/packages/culmus/) - 自由的希伯来文字体集合 *(AUR)*
 
 #### 印地文字
 
@@ -507,13 +505,13 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 	(This one contains a "look of disapproval" that might be more to your liking than the [bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont) one mentioned elsewhere in this document)
 
-*   [lohit-fonts](https://aur.archlinux.org/packages/lohit-fonts/) - 来自 Fedora 专案的印地文 TrueType 字体 (包含 Oriya 字体以及更多) _(AUR)_
-*   [ttf-devanagarifonts](https://aur.archlinux.org/packages/ttf-devanagarifonts/) - 梵文TrueType字体(包含 283 种字体) _(AUR)_
-*   [ttf-gujrati-fonts](https://aur.archlinux.org/packages/ttf-gujrati-fonts/) - TTF 古吉拉特 fonts (Avantika,Gopika,Shree768) _(AUR)_
-*   [ttf-gurmukhi-fonts_sikhnet](https://aur.archlinux.org/packages/ttf-gurmukhi-fonts_sikhnet/) - TrueType Gurmukhi fonts (gurbaniwebthick,prabhki) _(AUR)_
-*   [ttf-gurmukhi_punjabi](https://aur.archlinux.org/packages/ttf-gurmukhi_punjabi/) - TTF Gurmukhi / Punjabi (contains 252 fonts) _(AUR)_
-*   [ttf-kannada-font](https://aur.archlinux.org/packages/ttf-kannada-font/) - Kannada, the language of Karnataka state in India _(AUR)_
-*   [ttf-tamil](https://aur.archlinux.org/packages/ttf-tamil/) - Tamil Unicode fonts (_AUR_)
+*   [lohit-fonts](https://aur.archlinux.org/packages/lohit-fonts/) - 来自 Fedora 专案的印地文 TrueType 字体 (包含 Oriya 字体以及更多) *(AUR)*
+*   [ttf-devanagarifonts](https://aur.archlinux.org/packages/ttf-devanagarifonts/) - 梵文TrueType字体(包含 283 种字体) *(AUR)*
+*   [ttf-gujrati-fonts](https://aur.archlinux.org/packages/ttf-gujrati-fonts/) - TTF 古吉拉特 fonts (Avantika,Gopika,Shree768) *(AUR)*
+*   [ttf-gurmukhi-fonts_sikhnet](https://aur.archlinux.org/packages/ttf-gurmukhi-fonts_sikhnet/) - TrueType Gurmukhi fonts (gurbaniwebthick,prabhki) *(AUR)*
+*   [ttf-gurmukhi_punjabi](https://aur.archlinux.org/packages/ttf-gurmukhi_punjabi/) - TTF Gurmukhi / Punjabi (contains 252 fonts) *(AUR)*
+*   [ttf-kannada-font](https://aur.archlinux.org/packages/ttf-kannada-font/) - Kannada, the language of Karnataka state in India *(AUR)*
+*   [ttf-tamil](https://aur.archlinux.org/packages/ttf-tamil/) - Tamil Unicode fonts (*AUR*)
 
 #### 高棉文字
 
@@ -522,11 +520,11 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 #### 僧伽罗文字
 
-*   [ttf-lklug](https://aur.archlinux.org/packages/ttf-lklug/) - 僧伽罗文 (Sinhala) Unicode 字体 (_AUR_)
+*   [ttf-lklug](https://aur.archlinux.org/packages/ttf-lklug/) - 僧伽罗文 (Sinhala) Unicode 字体 (*AUR*)
 
 #### 塔米尔文字
 
-*   [ttf-tamil](https://aur.archlinux.org/packages/ttf-tamil/) - 塔米尔文 (Tamil) Unicode 字体 (_AUR_)
+*   [ttf-tamil](https://aur.archlinux.org/packages/ttf-tamil/) - 塔米尔文 (Tamil) Unicode 字体 (*AUR*)
 
 #### 藏文字
 
@@ -535,8 +533,8 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 ### 数学字体
 
 *   [font-mathematica](https://www.archlinux.org/packages/?name=font-mathematica) - Wolfram 公司的 Mathematica 字体
-*   [ttf-mathtype](https://aur.archlinux.org/packages/ttf-mathtype/) - MathType 字体 _(AUR)_
-*   [ttf-computer-modern-fonts](https://aur.archlinux.org/packages/ttf-computer-modern-fonts/) - _(AUR)_
+*   [ttf-mathtype](https://aur.archlinux.org/packages/ttf-mathtype/) - MathType 字体 *(AUR)*
+*   [ttf-computer-modern-fonts](https://aur.archlinux.org/packages/ttf-computer-modern-fonts/) - *(AUR)*
 
 ### Microsoft 字体
 
@@ -601,19 +599,19 @@ Slant 上的字体图片比较: [最好的编程字体是什么？](http://www.s
 *   Arimo ([ttf-chromeos-fonts](https://aur.archlinux.org/packages/ttf-chromeos-fonts/) 或 [ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) 或 [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - Chrome/Chromium OS 的 Arial 替换 (metric-compatible)
 *   [Calibri](https://en.wikipedia.org/wiki/zh:Calibri "wikipedia:zh:Calibri") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
 *   [Candara](https://en.wikipedia.org/wiki/zh:Candara "wikipedia:zh:Candara") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
-*   [Constantia](https://en.wikipedia.org/wiki/Constantia_(typeface) "wikipedia:Constantia (typeface)") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
-*   [Corbel](https://en.wikipedia.org/wiki/Corbel_(typeface) "wikipedia:Corbel (typeface)") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
+*   [Constantia](https://en.wikipedia.org/wiki/Constantia_(typeface) ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
+*   [Corbel](https://en.wikipedia.org/wiki/Corbel_(typeface) ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
 *   [DejaVu Sans](https://en.wikipedia.org/wiki/zh:DejaVu%E5%AD%97%E4%BD%93 "wikipedia:zh:DejaVu字体") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) - Unicode
 *   [Droid Sans](https://en.wikipedia.org/wiki/zh:Droid "wikipedia:zh:Droid") ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid)，包含于 [ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) 和 [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
 *   [FreeSans](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
-*   [Impact](https://en.wikipedia.org/wiki/Impact_(typeface) "wikipedia:Impact (typeface)") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
+*   [Impact](https://en.wikipedia.org/wiki/Impact_(typeface) ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 *   [Liberation Sans](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)，取代 Arial, 基于 Arimo (metric-compatible)
 *   [Linux Biolinum](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine))
 *   [Lucida Sans](https://en.wikipedia.org/wiki/Lucida_Sans "wikipedia:Lucida Sans") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 *   [Microsoft Sans Serif](https://en.wikipedia.org/wiki/Microsoft_Sans_Serif "wikipedia:Microsoft Sans Serif") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 *   [PT Sans](https://en.wikipedia.org/wiki/PT_Sans "wikipedia:PT Sans") ([ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) 或 [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - 3 种主要变体：正常、变窄与标题 - Unicode：拉丁字、西里尔字
 *   [Source Sans Pro](https://en.wikipedia.org/wiki/Source_Sans_Pro "wikipedia:Source Sans Pro") ([adobe-source-sans-pro-fonts](https://www.archlinux.org/packages/?name=adobe-source-sans-pro-fonts))
-*   [Tahoma](https://en.wikipedia.org/wiki/zh:Tahoma_(typeface) "wikipedia:zh:Tahoma (typeface)") ([ttf-tahoma](https://aur.archlinux.org/packages/ttf-tahoma/))
+*   [Tahoma](https://en.wikipedia.org/wiki/zh:Tahoma_(typeface) ([ttf-tahoma](https://aur.archlinux.org/packages/ttf-tahoma/))
 *   [Trebuchet](https://en.wikipedia.org/wiki/Trebuchet_MS "wikipedia:Trebuchet MS") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 *   [Ubuntu-Title](https://en.wikipedia.org/wiki/Ubuntu-Title "wikipedia:Ubuntu-Title") ([ttf-ubuntu-title](https://aur.archlinux.org/packages/ttf-ubuntu-title/))
 *   [Ubuntu Font Family](https://en.wikipedia.org/wiki/Ubuntu_Font_Family "wikipedia:Ubuntu Font Family") ([ttf-ubuntu-font-family](https://www.archlinux.org/packages/?name=ttf-ubuntu-font-family))
@@ -625,14 +623,14 @@ Slant 上的字体图片比较: [最好的编程字体是什么？](http://www.s
 
 ### 衬线字体
 
-*   [Cambria](https://en.wikipedia.org/wiki/Cambria_(typeface) "wikipedia:Cambria (typeface)") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
+*   [Cambria](https://en.wikipedia.org/wiki/Cambria_(typeface) ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
 *   [Charis](https://en.wikipedia.org/wiki/Charis_SIL "wikipedia:Charis SIL") ([ttf-charis](https://aur.archlinux.org/packages/ttf-charis/)，包含于 [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/)) - Unicode：拉丁字、西里尔字
 *   [DejaVu Serif](https://en.wikipedia.org/wiki/zh:DejaVu%E5%AD%97%E4%BD%93 "wikipedia:zh:DejaVu字体") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) - Unicode
 *   [Doulos](https://en.wikipedia.org/wiki/Doulos_SIL "wikipedia:Doulos SIL") ([doulos-sil](https://aur.archlinux.org/packages/doulos-sil/)，包含于 [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/)) - Unicode：拉丁字、西里尔字
 *   [Droid Serif](https://en.wikipedia.org/wiki/zh:Droid "wikipedia:zh:Droid") ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid)，包含于 [ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) 和 [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
 *   [FreeSerif](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
 *   [Gentium](https://en.wikipedia.org/wiki/Gentium "wikipedia:Gentium") ([ttf-gentium](https://www.archlinux.org/packages/?name=ttf-gentium)，包含于 [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/)) - Unicode：拉丁字、希腊字、西里尔字、音标字母
-*   [Georgia](https://en.wikipedia.org/wiki/zh:Georgia_(%E5%AD%97%E5%9E%8B) "wikipedia:zh:Georgia (字型)") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
+*   [Georgia](https://en.wikipedia.org/wiki/zh:Georgia_(%E5%AD%97%E5%9E%8B) ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 *   [Liberation Serif](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)) - 取代 Times New Roman，基于Tinos (metric-compatible)
 *   [Linux Libertine](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) - Unicode：拉丁字、希腊字、西里尔字、希伯来字
 *   [Times New Roman](https://en.wikipedia.org/wiki/zh:Times_New_Roman "wikipedia:zh:Times New Roman") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
@@ -640,15 +638,15 @@ Slant 上的字体图片比较: [最好的编程字体是什么？](http://www.s
 
 ### 未分类字体
 
-*   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) 与 [ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) — 一个免费字体的大合集（囊括里 ubuntu、inconsolata、droid 等字体）-注意：如果安装这个包，您的系统内将添加 100 多个字体，这将会使您的字体对话框变得很长。[ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) 会从上游网络字体项目中拖下整个 Mercurial 库。[ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)则会从 Git 中拖下一个更小，更精简的非官方库。_(AUR)_
+*   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) 与 [ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) — 一个免费字体的大合集（囊括里 ubuntu、inconsolata、droid 等字体）-注意：如果安装这个包，您的系统内将添加 100 多个字体，这将会使您的字体对话框变得很长。[ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) 会从上游网络字体项目中拖下整个 Mercurial 库。[ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)则会从 Git 中拖下一个更小，更精简的非官方库。*(AUR)*
 *   [ttf-mph-2b-damase](https://www.archlinux.org/packages/?name=ttf-mph-2b-damase) — Covers full plane 1 and several scripts
 *   [ttf-symbola](https://www.archlinux.org/packages/?name=ttf-symbola) — 提供了绘文字及其它一些符号。
-*   [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/) — STL 内的 Gentium, Charis, Doulos, Andika and Abyssinica _(AUR)_
+*   [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/) — STL 内的 Gentium, Charis, Doulos, Andika and Abyssinica *(AUR)*
 *   [font-bh-ttf](https://www.archlinux.org/packages/?name=font-bh-ttf) — X.Org Luxi 字体
-*   [ttf-cheapskate](https://www.archlinux.org/packages/?name=ttf-cheapskate) — 从 _dustismo.com_ 收集来的字体库
-*   [ttf-isabella](https://aur.archlinux.org/packages/ttf-isabella/) — 一款书法字体，基于 1497 年的 _Isabella Breviary_
+*   [ttf-cheapskate](https://www.archlinux.org/packages/?name=ttf-cheapskate) — 从 *dustismo.com* 收集来的字体库
+*   [ttf-isabella](https://aur.archlinux.org/packages/ttf-isabella/) — 一款书法字体，基于 1497 年的 *Isabella Breviary*
 *   [ttf-junicode](https://www.archlinux.org/packages/?name=ttf-junicode) — Junius 字体，几乎包括了所有中世纪的拉丁文字形
-*   arkpandorafonts [ttf-arkpandora](https://aur.archlinux.org/packages/ttf-arkpandora/) — Arial 与 Times New Roman 字体的一个替代字体 _(AUR)_
+*   arkpandorafonts [ttf-arkpandora](https://aur.archlinux.org/packages/ttf-arkpandora/) — Arial 与 Times New Roman 字体的一个替代字体 *(AUR)*
 *   [xorg-fonts-type1](https://www.archlinux.org/packages/?name=xorg-fonts-type1) — IBM Courier 和 Adobe Utopia 的 [PostScript 字体](https://en.wikipedia.org/wiki/PostScript_fonts "wikipedia:PostScript fonts")
 
 ## X11中的字体回滚顺序

@@ -21,7 +21,7 @@ Please note that games must be burned onto DVD+R DL (Dual Layered), as DVD-R DL 
 
 Stealth patching patches a game image to make it ignore the security check done by the Xbox 360 console upon boot. If you use a stealth firmware, you will need to patch your backup. You can do this with a tool called [abgx360](https://aur.archlinux.org/packages/abgx360/), which can be found in the [AUR](/index.php/AUR "AUR").
 
-abgx360 works on .iso _and_ .000 images. In order to patch these images, use the `--af3` flag, as such:
+abgx360 works on .iso *and* .000 images. In order to patch these images, use the `--af3` flag, as such:
 
 ```
    abgx360 --af3 /path/to/game.iso

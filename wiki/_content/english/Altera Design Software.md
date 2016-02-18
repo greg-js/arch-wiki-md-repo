@@ -42,7 +42,7 @@ Quartus II Subscription Edition v15.0 is [officially supported](http://www.alter
 
 ### Get Quartus II
 
-In [Altera's Downloads section](http://dl.altera.com/?edition=subscription), select Linux as the operating system and get the _Combined Files_ tar archive (something like `Quartus-15.0.0.145-linux-complete.tar`).
+In [Altera's Downloads section](http://dl.altera.com/?edition=subscription), select Linux as the operating system and get the *Combined Files* tar archive (something like `Quartus-15.0.0.145-linux-complete.tar`).
 
 ### Install dependencies
 
@@ -96,7 +96,7 @@ $ /opt/altera/15.0/quartus/bin/quartus
 
 ```
 
-All other Altera tools, like Qsys, the Nios II EDS, Chip Planner and SignalTap II may be launched without any problem from the _Tools_ menu of Quartus II.
+All other Altera tools, like Qsys, the Nios II EDS, Chip Planner and SignalTap II may be launched without any problem from the *Tools* menu of Quartus II.
 
 ### Integrating Quartus II with the system
 
@@ -123,7 +123,7 @@ Also, make sure it can be executed:
 
 ```
 
-Please note that those `profile.d` files are loaded at each _login_. In the mean time, simply source that file in Bash:
+Please note that those `profile.d` files are loaded at each *login*. In the mean time, simply source that file in Bash:
 
 ```
 $ source /etc/profile.d/quartus.sh
@@ -172,7 +172,7 @@ SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="xx:xx:xx:xx:xx:xx", NAME="eth0"
 
 ```
 
-where `xx:xx:xx:xx:xx:xx` is your networking device's IP address. Then, _reload_ that file using `udevadm`:
+where `xx:xx:xx:xx:xx:xx` is your networking device's IP address. Then, *reload* that file using `udevadm`:
 
 ```
 # udevadm control --reload
@@ -201,7 +201,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6810", MODE="0666"
 
 ```
 
-Then, _reload_ that file using `udevadm` (disconnect any Altera device from port USB port before this command):
+Then, *reload* that file using `udevadm` (disconnect any Altera device from port USB port before this command):
 
 ```
 # udevadm control --reload
@@ -256,7 +256,7 @@ If there seems to be an error message about "linux64" and you did not install th
 
 ### Install
 
-ModelSim-Altera Edition 10.3d is downloaded and installed from the _Combined Files_ tar archive `Quartus-15.0.0.145-linux-complete.tar` as part of the Quartus II installation procedure above.
+ModelSim-Altera Edition 10.3d is downloaded and installed from the *Combined Files* tar archive `Quartus-15.0.0.145-linux-complete.tar` as part of the Quartus II installation procedure above.
 
 ### Compatibility with Archlinux
 
@@ -352,7 +352,7 @@ Compiling ncurses 5.9 may lead to problems using GCC 5.x. It is also possible to
 
 #### Install libraries
 
-Install library _libxft_ and _ncurses_: [libxft](https://www.archlinux.org/packages/?name=libxft), [ncurses](https://www.archlinux.org/packages/?name=ncurses), [libxext](https://www.archlinux.org/packages/?name=libxext).
+Install library *libxft* and *ncurses*: [libxft](https://www.archlinux.org/packages/?name=libxft), [ncurses](https://www.archlinux.org/packages/?name=ncurses), [libxext](https://www.archlinux.org/packages/?name=libxext).
 
 For 64 bit edition, install these library from [multilib](/index.php/Multilib "Multilib") repository: [lib32-libxft](https://www.archlinux.org/packages/?name=lib32-libxft), [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses), [lib32-libxext](https://www.archlinux.org/packages/?name=lib32-libxext).
 

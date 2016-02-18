@@ -7,11 +7,11 @@ In order to create a F2FS partition, [install](/index.php/Install "Install") [f2
 Create the partition:
 
 ```
-# mkfs.f2fs -l mylabel _/dev/sdxY_
+# mkfs.f2fs -l mylabel */dev/sdxY*
 
 ```
 
-where `_/dev/sdxY_` is the target volume to format in F2FS.
+where `*/dev/sdxY*` is the target volume to format in F2FS.
 
 ## Mounting a F2FS partition
 

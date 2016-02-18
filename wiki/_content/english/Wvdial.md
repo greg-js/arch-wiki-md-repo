@@ -76,7 +76,7 @@ Leave <section> blank if you have not added a section or if `/etc/wvdial.conf` i
 
 ### Using suid
 
-This is arguable the easiest setup but has major impact on system security since it means that _every user can run wvdial as root_. Please consider using one of the other solutions instead.
+This is arguable the easiest setup but has major impact on system security since it means that *every user can run wvdial as root*. Please consider using one of the other solutions instead.
 
 As normal users cannot use wvdial to dial a ppp connection by default, change permissions:
 
@@ -129,7 +129,7 @@ $ ls -l /usr/bin/wvdial
 
 ### Using sudo
 
-	_See main article: [sudo](/index.php/Sudo "Sudo")_
+	*See main article: [sudo](/index.php/Sudo "Sudo")*
 
 [sudo](/index.php/Sudo "Sudo") arguably offers the most secure option to allow regular users to establish dial-up connections using `wvdial`. It can be used to give permission both on a per-user and group basis. Another benefit of using `sudo` is that it is only needed to do the setup once; both previous solutions will be "undone" when a new package of `wvdial` is installed.
 
@@ -222,6 +222,6 @@ wvdial thenet
 
 ```
 
-where VVVV is the hexadecimal vendor ID from lsusb, MMMM is the hexadecimal product ID _when in modem mode_, and "thenet" is the name of the section in wvdial.conf which you wish to use. The maxSize option may or may not be necessary. It simplifies matters if you disable the SIM PIN, but if you require it, run "wvdial mypin" before "wvdial thenet".
+where VVVV is the hexadecimal vendor ID from lsusb, MMMM is the hexadecimal product ID *when in modem mode*, and "thenet" is the name of the section in wvdial.conf which you wish to use. The maxSize option may or may not be necessary. It simplifies matters if you disable the SIM PIN, but if you require it, run "wvdial mypin" before "wvdial thenet".
 
 The final wvdial command should start pppd and the obained IP address should be visible in the terminal output. At that point the internet connection should be live, which can be easily checked with a web browser or by pinging an external IP address.

@@ -164,7 +164,6 @@ In `/etc/mpd.conf` comment out the `group=` part or change it to `group=mpd`
 Create a custom `mpd.service` file in `/etc/systemd/system/` and add your desired group. E. g. run mpd with the group "audio":
 
  `/etc/systemd/system/mpd.service` 
-
 ```
 .include /usr/lib/systemd/system/mpd.service
     [Service]
@@ -194,7 +193,6 @@ For a detailed description, it is recommended to take a look at [this](http://mp
 This problem may be solved by adding the following lines to `mpd.conf`:
 
  `mpd.conf` 
-
 ```
 audio_output {
         type                    "alsa"
@@ -213,7 +211,6 @@ When using MPD with ALSA, users may experience MPD taking up lots of CPU (around
 For most users the problem should be solved by telling MPD not to use resampling by adding `auto_resample "no"` into audio_output-part of `/etc/mpd.conf`.
 
  `mpd.conf` 
-
 ```
 audio_output {
    type			"alsa"
@@ -225,7 +222,6 @@ audio_output {
 Although it may not give as drastic a speedup, enabling mmap may still speed things up:
 
  `mpd.conf` 
-
 ```
 audio_output {
    type			"alsa"
@@ -241,7 +237,6 @@ Some users might also want to tell dmix to use 44kHz as well. More info about tu
 To play audio files of different rate with automatic card rate change install pulseaudio and pulseaudio-alsa and keep using ALSA as output:
 
  `mpd.conf` 
-
 ```
 audio_output {
     type          "alsa"

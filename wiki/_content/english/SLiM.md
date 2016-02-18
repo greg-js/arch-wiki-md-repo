@@ -1,4 +1,4 @@
-**Warning:** The SliM project has been abandoned (the [project homepage](http://slim.berlios.de/) is down, leaving a [github mirror](https://github.com/data-modul/slim)), and is not fully compatible with [systemd](/index.php/Systemd "Systemd"), including _logind_ sessions. Consider using a different [Display manager](/index.php/Display_manager "Display manager") or [Xinitrc](/index.php/Xinitrc "Xinitrc").
+**Warning:** The SliM project has been abandoned (the [project homepage](http://slim.berlios.de/) is down, leaving a [github mirror](https://github.com/data-modul/slim)), and is not fully compatible with [systemd](/index.php/Systemd "Systemd"), including *logind* sessions. Consider using a different [Display manager](/index.php/Display_manager "Display manager") or [Xinitrc](/index.php/Xinitrc "Xinitrc").
 
 [SLiM](http://sourceforge.net/projects/slim.berlios/) is an acronym for **S**imple **L**og**i**n **M**anager. Lightweight and easily configurable, SLiM requires minimal dependencies, and none from the [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE") desktop environments. It therefore contributes towards a lightweight system for users that also like to use lightweight desktops such as [Xfce](/index.php/Xfce "Xfce"), [Openbox](/index.php/Openbox "Openbox"), and [Fluxbox](/index.php/Fluxbox "Fluxbox").
 
@@ -41,7 +41,7 @@ As of version **1.3.6-2**, SLiM can automatically detect installed desktop envir
 
 ### Enabling SLiM
 
-**Note:** [slim](https://www.archlinux.org/packages/?name=slim) relies on _systemd-logind_.
+**Note:** [slim](https://www.archlinux.org/packages/?name=slim) relies on *systemd-logind*.
 
 [Enable](/index.php/Enable "Enable") the SLiM service `slim.service`. This assumes a previously enabled display manager was disabled first. Otherwise, change the [default target](/index.php/Systemd#Change_default_target_to_boot_into "Systemd").
 
@@ -97,7 +97,7 @@ SLiM can be configured to automatically set a desired username, which will there
 Uncomment this line, and change "simone" to the username of choice:
 
 ```
-default_user        _your username_
+default_user        *your username*
 
 ```
 
@@ -285,7 +285,7 @@ See [pam_mount](/index.php/Pam_mount#SLiM "Pam mount").
 
 ### Change Keyboard Layout
 
-Edit `/etc/X11/xorg.conf.d/10-evdev.conf`, find the following section, add the two bolded lines, and replace _dvorak_ with your preferred keymap:
+Edit `/etc/X11/xorg.conf.d/10-evdev.conf`, find the following section, add the two bolded lines, and replace *dvorak* with your preferred keymap:
 
 ```
 Section  "InputClass"
@@ -295,7 +295,7 @@ Section  "InputClass"
           Driver "evdev"
 
           **# Keyboard layouts**
-          **Option "XkbLayout" "_dvorak_"**
+          **Option "XkbLayout" "*dvorak*"**
 EndSection
 
 ```

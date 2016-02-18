@@ -27,7 +27,6 @@
 你需要一个兼容 [nl80211](http://wireless.kernel.org/en/developers/Documentation/nl80211) 的网卡（nl80211网卡支持AP模式[网卡模式](http://wireless.kernel.org/en/users/Documentation/modes)）。你可以输入 `iw list` 命令, 查看 `Supported interface modes`以下的几行，看是否支持 `AP` 模式:
 
  `$ iw list` 
-
 ```
 Wiphy phy1
 ...
@@ -48,7 +47,6 @@ Wiphy phy1
 创建一个无线AP是独立于该网卡其他的网络连接。许多网卡甚至可以支持同时作为AP和客户端。 这样一张网卡你就可以做一个无线中继。 你可以输入 `iw list` 命令, 查看 `valid interface combinations:`　以下的几行，看是否支持无线中继:
 
  `$ iw list` 
-
 ```
 Wiphy phy1
 ...
@@ -88,7 +86,6 @@ ip link set dev wlan0_ap  address 12:34:56:78:ab:ce
 修改hostpad配置是很有必要的. 尤其是修改`ssid`和`wpa_passphrase`. 查看 [hostapd Linux documentation page](http://wireless.kernel.org/en/users/Documentation/hostapd) 来参考更多内容.
 
  `/etc/hostapd/hostapd.conf` 
-
 ```
 ssid=YourWiFiName
 wpa_passphrase=Somepassphrase
@@ -125,11 +122,11 @@ wpa_pairwise=TKIP CCMP
 
 使用NAT会更加灵活。 NAT把Wifi客户端和你的电脑分离开来并且对外界完全不可见。 对于任何种类的网络连接它都适用，而且 （如果必要的话）你可以使用iptables来控制流量。
 
-当然，将两者_联合起来_也是可能的. 那么你需要分别参考相关的文章。 比方说：使用网桥将以太网设备和无线网用静态IP连起来，同时使用DHCP并设置NAT去转发流量到另外一个网络设备（ppp或者 eth）。
+当然，将两者*联合起来*也是可能的. 那么你需要分别参考相关的文章。 比方说：使用网桥将以太网设备和无线网用静态IP连起来，同时使用DHCP并设置NAT去转发流量到另外一个网络设备（ppp或者 eth）。
 
 ### 网桥设置
 
-你应该创建一个 _网桥_ 并连上网络设备 （比方说 `eth0`） 。 你 **不应该** 自行加上一个无线网络设备 （比方说`wlan0`） 在那个桥上， 因为hostapd会自行帮你加上去的。
+你应该创建一个 *网桥* 并连上网络设备 （比方说 `eth0`） 。 你 **不应该** 自行加上一个无线网络设备 （比方说`wlan0`） 在那个桥上， 因为hostapd会自行帮你加上去的。
 
 参阅 [Network bridge](/index.php/Network_bridge "Network bridge")。
 
@@ -162,7 +159,6 @@ wpa_pairwise=TKIP CCMP
 如果网卡被NetworkManager管理的话，hostapd可能不起作用. 你可以掩盖这个设备:
 
  `/etc/NetworkManager/NetworkManager.conf` 
-
 ```
 [keyfile]
 unmanaged-devices=mac:<hwaddr>

@@ -2,7 +2,7 @@
 
 Este documento irá guiá-lo com o processo de instalação do [Arch Linux](/index.php/Arch_Linux "Arch Linux") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalá-lo, é aconselhado que leia o [FAQ](/index.php/FAQ "FAQ").
 
-A [ArchWiki](/index.php/Main_page "Main page") que é mantida pela comunidade, é o primeiro recurso que deve ser consultada se surgirem problemas. O [IRC Channel](/index.php/IRC_Channel "IRC Channel") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) e o [forums](https://bbs.archlinux.org/) também são excelentes recursos quando uma resposta não pode ser encontrada em outro lugar. Conforme [O Jeito Arch](/index.php/The_Arch_Way_(Portugu%C3%AAs) "The Arch Way (Português)"), você é encorajado a usar `man _command_` para ler a página `man` de qualquer comando que você não estiver familiarizado.
+A [ArchWiki](/index.php/Main_page "Main page") que é mantida pela comunidade, é o primeiro recurso que deve ser consultada se surgirem problemas. O [IRC Channel](/index.php/IRC_Channel "IRC Channel") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) e o [forums](https://bbs.archlinux.org/) também são excelentes recursos quando uma resposta não pode ser encontrada em outro lugar. Conforme [O Jeito Arch](/index.php/The_Arch_Way_(Portugu%C3%AAs) "The Arch Way (Português)"), você é encorajado a usar `man *command*` para ler a página `man` de qualquer comando que você não estiver familiarizado.
 
 ## Contents
 
@@ -28,7 +28,7 @@ Antes de instalar, a comunidade do Arch Linux aconselha o utilizador a ler o [FA
 *   Gerenciador do sistema e serviços [systemd](/index.php/Arch_boot_process "Arch boot process"), compatível com scripts SysV e LSB.
 *   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"): Um simples e dinâmico criador de [initramfs](https://en.wikipedia.org/wiki/RAM_drive "wikipedia:RAM drive").
 *   Gerenciador de pacotes [Pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") é leve e ágil, com um consumo de memória muito modesto.
-*   O [Sistema de Compilação Arch](/index.php/Arch_Build_System "Arch Build System"): Um sistema de construção de pacotes ao estilo _ports_ (*BSD), proporcionando um framework simples para criar pacotes de instalação Arch a partir do código-fonte.
+*   O [Sistema de Compilação Arch](/index.php/Arch_Build_System "Arch Build System"): Um sistema de construção de pacotes ao estilo *ports* (*BSD), proporcionando um framework simples para criar pacotes de instalação Arch a partir do código-fonte.
 *   O [Repositório de Usuários do Arch](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)"): contém milhares de contribuições dos usuários de scripts de construção e a possibilidade de partilhar os seus próprios scripts.
 
 ### Licença
@@ -37,21 +37,21 @@ Arch Linux, pacman, documentação e scripts possuem copyright ©2002-2007 por J
 
 ### O Jeito Arch
 
-**_Os princípios de design por trás do Arch são destinados a mantê-lo [simples](/index.php/The_Arch_Way_(Portugu%C3%AAs) "The Arch Way (Português)")._**
+***Os princípios de design por trás do Arch são destinados a mantê-lo [simples](/index.php/The_Arch_Way_(Portugu%C3%AAs) "The Arch Way (Português)").***
 
 'Simples', neste contexto, deverá significar 'sem acréscimos desnecessários, modificações ou complicações'. Em resumo, uma abordagem elegante e minimalista.
 
 **Alguns pensamentos que você deve ter em mente para considerar a simplicidade:**
 
-*   _" 'Simples' é definido a partir de um ponto de vista técnico, não de um ponto de vista da usabilidade. É melhor ser tecnicamente elegante, com uma curva de ensino superior, do que ser fácil de usar e tecnicamente [inferior]." -Aaron Griffin_
-*   _Entia non sunt multiplicanda praeter necessitatem_ ou "Entidades não devem ser multiplicadas desnecessariamente." - A Navalha de Occam. O termo _navalha_ refere-se ao ato de cortar para longe complicações desnecessárias para se chegar a mais simples a explicação do método, ou teoria.
-*   _"A parte extraordinária do [meu método] reside na sua simplicidade. A altura de cultivo corre sempre para a simplicidade."_ - Bruce Lee
+*   *" 'Simples' é definido a partir de um ponto de vista técnico, não de um ponto de vista da usabilidade. É melhor ser tecnicamente elegante, com uma curva de ensino superior, do que ser fácil de usar e tecnicamente [inferior]." -Aaron Griffin*
+*   *Entia non sunt multiplicanda praeter necessitatem* ou "Entidades não devem ser multiplicadas desnecessariamente." - A Navalha de Occam. O termo *navalha* refere-se ao ato de cortar para longe complicações desnecessárias para se chegar a mais simples a explicação do método, ou teoria.
+*   *"A parte extraordinária do [meu método] reside na sua simplicidade. A altura de cultivo corre sempre para a simplicidade."* - Bruce Lee
 
 ### Sobre este Guia
 
-O [Arch wiki](/index.php/Main_page "Main page") mantido pela comunidade é um recurso excelente e deve ser consultado para primeiras questões. O canal [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), e o [fórum](https://bbs.archlinux.org/) também estão disponíveis, se a resposta não puder ser encontrada em outro lugar. Além disso, não se esqueça de verificar as páginas de `manual` para qualquer comando que você não estiver familiarizado; Isso geralmente pode ser invocado com `man _comando_`.
+O [Arch wiki](/index.php/Main_page "Main page") mantido pela comunidade é um recurso excelente e deve ser consultado para primeiras questões. O canal [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), e o [fórum](https://bbs.archlinux.org/) também estão disponíveis, se a resposta não puder ser encontrada em outro lugar. Além disso, não se esqueça de verificar as páginas de `manual` para qualquer comando que você não estiver familiarizado; Isso geralmente pode ser invocado com `man *comando*`.
 
-**Nota:** Seguindo este guia com cuidado é essencial para ter sucesso em instalar um sistema Arch Linux configurado corretamente, por isso _por favor_ leia atentamente. É altamente recomendado que você leia cada seção completamente <u>antes</u> de realizar quaisquer tarefas detalhadas.
+**Nota:** Seguindo este guia com cuidado é essencial para ter sucesso em instalar um sistema Arch Linux configurado corretamente, por isso *por favor* leia atentamente. É altamente recomendado que você leia cada seção completamente <u>antes</u> de realizar quaisquer tarefas detalhadas.
 
 O guia é dividido em 3 componentes principais:
 

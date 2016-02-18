@@ -49,7 +49,7 @@
 
 ### 上游还是 Arch?
 
-Arch Linux is a GNU/Linux _distribution_. Arch developers and Trusted Users are responsible for compiling, packaging, and distributing software from a wide range of sources. **Upstream** refers to these _sources_ – the original authors or maintainers of software that is distributed in Arch Linux. For example, the popular Firefox web browser is developed by the Mozilla Project.
+Arch Linux is a GNU/Linux *distribution*. Arch developers and Trusted Users are responsible for compiling, packaging, and distributing software from a wide range of sources. **Upstream** refers to these *sources* – the original authors or maintainers of software that is distributed in Arch Linux. For example, the popular Firefox web browser is developed by the Mozilla Project.
 
 **If Arch is not responsible for a bug, the problem will not be solved by reporting the bug to Arch developers.** Responsibility for a bug is said to lie upstream when it is not caused through the distribution's porting and integration efforts.
 
@@ -76,16 +76,16 @@ If a bug/feature is not under Arch's responsibility, report it upstream. See als
 *   A bug already reported upstream.
 *   A bug already fixed upstream but not in Arch because the package is not up-to-date.
 *   **A package which is not-up-to-date**. Use the **Flag Package Out-of-Date** feature on [Arch's packages website](https://archlinux.org/packages/).
-*   A package which does not use Fedora, Ubuntu or some other community patch. **Patches should be submitted _upstream_**.
+*   A package which does not use Fedora, Ubuntu or some other community patch. **Patches should be submitted *upstream***.
 *   A package where **non essential function** X or function Y is not activated. This is a feature request.
-*   A package which does not include a **.desktop file** or **icons** or other [freedesktop](http://www.freedesktop.org) stuff. This is not a bug if such files are not included in the source tarball, and this must be requested as a feature request _upstream_. If such files are provided by _upstream_ but not used in the package then this is a bug.
+*   A package which does not include a **.desktop file** or **icons** or other [freedesktop](http://www.freedesktop.org) stuff. This is not a bug if such files are not included in the source tarball, and this must be requested as a feature request *upstream*. If such files are provided by *upstream* but not used in the package then this is a bug.
 
 #### 不是新功能的原因
 
 *   When it is a bug ...
 *   When it is not under Arch responsibility to implement the feature, ie an **upstream feature**.
 *   A package is not up-to-date. Use the **Flag Package Out-of-Date** feature on [Arch's packages website](https://archlinux.org/packages/).
-*   A package which does not use Fedora, Ubuntu or some other community patch. **Patches should be submitted _upstream_**.
+*   A package which does not use Fedora, Ubuntu or some other community patch. **Patches should be submitted *upstream***.
 
 ### 收集有用信息
 
@@ -93,7 +93,7 @@ Here is a list of useful information that should be mentioned in your bug report
 
 *   **Version of the package** being used. **Always specify package version** Saying "the latest" , "todays" , or "the package in extra" have absolutely no meaning. Especially if the bug is not about to get fixed right away.
 
-*   Version of the main libraries used by the package (available in the _depends_ variable in the PKGBUILD), when they are involved in the problem. If you do not know exactly what information to provide then wait for a bug hunter to ask you for it ...
+*   Version of the main libraries used by the package (available in the *depends* variable in the PKGBUILD), when they are involved in the problem. If you do not know exactly what information to provide then wait for a bug hunter to ask you for it ...
 
 *   Version of the kernel used if you are having hardware related problems.
 
@@ -104,7 +104,7 @@ Here is a list of useful information that should be mentioned in your bug report
 *   Add **relevant log information** when any is available. This can be obtained in the following places depending on the problem :
     *   /var/log/messages for kernel and hardware related issues.
     *   /var/log/Xorg.0.log or /var/log/Xorg.2.log or any Xorg like log files if video related problems (nvidia, ati, xorg ...)
-    *   Run your program in a **console** and use **verbose** and/or **debug** mode if available (see your program documentation), and copy the output in a file. When running an application in a terminal make sure relevant information will be displayed in **english** so that many people can understand it. This can be done by using _export LC_ALL="c"_. Example with a software named _foobar_ from which you would like to have relevant information at runtime and provided that foobar has a --verbose option :
+    *   Run your program in a **console** and use **verbose** and/or **debug** mode if available (see your program documentation), and copy the output in a file. When running an application in a terminal make sure relevant information will be displayed in **english** so that many people can understand it. This can be done by using *export LC_ALL="c"*. Example with a software named *foobar* from which you would like to have relevant information at runtime and provided that foobar has a --verbose option :
 
 ```
 someone@somecomputer # export LC_ALL="C"
@@ -132,17 +132,17 @@ You have to create an account on [Arch's bug tracker system](https://bugs.archli
 
 Once you have determined your feature or bug is related to Arch and not an upstream issue, you will need to file your problem in the correct place (watch the project name in the drop down list to the left of 'Switch' button in top left corner of bug report creation page.):
 
-*   **Arch Linux** - for packages in _testing_, _core_, or _extra_. It is also a place for documentation, websites (except AUR), and security issues.
+*   **Arch Linux** - for packages in *testing*, *core*, or *extra*. It is also a place for documentation, websites (except AUR), and security issues.
 
-*   **Arch User Repository (AUR)** - for the AUR website code and server issues. This does not include third party apps used to access the AUR or packages in _unsupported_.
+*   **Arch User Repository (AUR)** - for the AUR website code and server issues. This does not include third party apps used to access the AUR or packages in *unsupported*.
 
-*   **Community Packages** - for packages in _community_. It is not a place for packages in _unsupported_.
+*   **Community Packages** - for packages in *community*. It is not a place for packages in *unsupported*.
 
-*   **Pacman** - for _pacman_ and the official scripts and tools associated with it. This includes things like makepkg and abs. It does not include community developed packages such as yaourt.
+*   **Pacman** - for *pacman* and the official scripts and tools associated with it. This includes things like makepkg and abs. It does not include community developed packages such as yaourt.
 
 *   **Release Engineering** - intended for all release related issues (isos, installer, etc)
 
-There is no place for reporting problems with packages in _unsupported_. The AUR provides a way to add comments to a package in _unsupported_. You should use this to report bugs to the package maintainer.
+There is no place for reporting problems with packages in *unsupported*. The AUR provides a way to add comments to a package in *unsupported*. You should use this to report bugs to the package maintainer.
 
 ### 总结
 
@@ -150,13 +150,13 @@ Please write a concise and descriptive Summary.
 
 Here is a list of recommendations:
 
-*   **Do not** name your report "_pkgname_ is broken after the last update" - it is non-descriptive and "after last update" has no meaning in Arch.
-*   Start the Summary with package name enclosed in square brackets, e.g. "**[_pkgname_]** 3.0.5-1 breaks copy-paste feature". By naming reports this way you make it much easier for developers to sort reports by package names.
+*   **Do not** name your report "*pkgname* is broken after the last update" - it is non-descriptive and "after last update" has no meaning in Arch.
+*   Start the Summary with package name enclosed in square brackets, e.g. "**[*pkgname*]** 3.0.5-1 breaks copy-paste feature". By naming reports this way you make it much easier for developers to sort reports by package names.
 *   Do not write too much text in the Summary. Excessive text will not be visible in reports list.
 
 ### 严重性
 
-Choosing a _critical_ severity will not help to solve the bug faster. It will only make truly critical problems less visible and probably make the developer assigned to your bug a bit less open to fixing it.
+Choosing a *critical* severity will not help to solve the bug faster. It will only make truly critical problems less visible and probably make the developer assigned to your bug a bit less open to fixing it.
 
 Here is a general usage of severities :
 
@@ -186,7 +186,7 @@ Developers or other users will probably ask you for more details and give you so
 
 You can **vote** for your favorite bugs. The number of votes indicates to the developers how many people are impacted by the bug. However, this is not a very effective way of getting the bug solved. Much more important would be posting any additional information you know about the bug if you were not the original reporter.
 
-**Watching** a bug is important- you will receive an email when new comments are added or the bug status has changed. If you opened a bug verify that the _"Notify me whenever this task changes"_ checkbox is activated in order to receive such emails.
+**Watching** a bug is important- you will receive an email when new comments are added or the bug status has changed. If you opened a bug verify that the *"Notify me whenever this task changes"* checkbox is activated in order to receive such emails.
 
 ### 回答更多问题
 
@@ -214,7 +214,7 @@ During its life a bug goes through several states :
 
 *   **Assigned** : The bug has been assigned to a developer responsible for the software involved in the bug. It does not mean that the developer will be the one who will fix the bug. It does not even mean that the developer will work on a solution. It just means that the developer will take care of the life cycle of the bug, including reviewing patches if any, releasing a fix and closing the bug when required. There is no point in contacting a developer directly to have a bug fixed more quickly, he/she will certainly not like it ...
 
-*   **Researching** : Somebody is looking for a solution. This status is **rarely used at Arch** and it is better this way. The _researching_ status could make people believe they do not need to get interested in the bug report. But usually we need more than one person to fix a bug : having several experienced people on a bug helps a lot.
+*   **Researching** : Somebody is looking for a solution. This status is **rarely used at Arch** and it is better this way. The *researching* status could make people believe they do not need to get interested in the bug report. But usually we need more than one person to fix a bug : having several experienced people on a bug helps a lot.
 
 *   **Waiting on customer** and **Requires testing** : The one who reported a bug is asked to provide more information or to try a proposed solution, but he/she did not give a feedback yet. Those status are **rarely used at Arch** and should be used more often. However it is important that you **watch the bug** (see the [voting and watching section](/index.php/Reporting_bug_guidelines#Voting_and_Watching "Reporting bug guidelines")) as developers or bug hunters usually ask questions in the comments.
 

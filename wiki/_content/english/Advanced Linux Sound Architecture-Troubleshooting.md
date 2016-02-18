@@ -57,11 +57,11 @@ Run the following command:
 
 ```
 
-If the problem persists, verify that the `Auto-Mute` option in _alsamixer_ is set to `Disabled`.
+If the problem persists, verify that the `Auto-Mute` option in *alsamixer* is set to `Disabled`.
 
 ### Volume is too low
 
-Run _alsamixer_ and try to increase the value of the sliders, unmuting channels if necessary. Note that if you have many sliders, you may have to scroll to the right to see any missing sliders.
+Run *alsamixer* and try to increase the value of the sliders, unmuting channels if necessary. Note that if you have many sliders, you may have to scroll to the right to see any missing sliders.
 
 If all the sliders are maxed out, and the volume is still too low, you can try running the following [script](http://www.alsa-project.org/hda-analyzer.py) to reset your codec settings:
 
@@ -80,7 +80,7 @@ $ sed -i 's/python %s/python2 %s/' hda-analyzer.py
 
 Close the analyzer, and when prompted as to whether you want to reset the codecs, say "yes".
 
-If the volume is *still* too low, run _alsamixer_ again: resetting the codecs may have caused new sliders to become enabled and some of them may be set to a low value.
+If the volume is *still* too low, run *alsamixer* again: resetting the codecs may have caused new sliders to become enabled and some of them may be set to a low value.
 
 ### Low Sound Volume
 
@@ -135,7 +135,7 @@ If you use mpd and the configuration tips above do not work for you, try [readin
 
 ### No microphone input
 
-In alsamixer, make sure that all the volume levels are up under recording, and that CAPTURE is toggled active on the microphone (e.g. Mic, Internal Mic) and/or on Capture (in alsamixer, select these items and press space). Try making positive Mic Boost and raising Capture and Digital levels higher; this make make static or distortion, but then you can adjust them back down once you are hearing _something_ when you record
+In alsamixer, make sure that all the volume levels are up under recording, and that CAPTURE is toggled active on the microphone (e.g. Mic, Internal Mic) and/or on Capture (in alsamixer, select these items and press space). Try making positive Mic Boost and raising Capture and Digital levels higher; this make make static or distortion, but then you can adjust them back down once you are hearing *something* when you record
 
 As the pulseaudio wrapper is shown as "default" in alsamixer, you may have to press F6 to select your actual soundcard first. You may also need to enable and increase the volume of Line-in in the Playback section.
 
@@ -206,7 +206,7 @@ Replace "U0x46d0x81d" with your capture device's card name in ALSA. You can use 
 
 ### Internal microphone not working
 
-First make sure the volume is enabled under the `Capture` view in _alsamixer_. In some case, the "Internal Microphone" is not displayed in the capture list available when pressing F4\. If so, specifying the card number given by `aplay -l` to start _alsamixer_ (for example `alsamixer -c 0` ) can make it appears.
+First make sure the volume is enabled under the `Capture` view in *alsamixer*. In some case, the "Internal Microphone" is not displayed in the capture list available when pressing F4\. If so, specifying the card number given by `aplay -l` to start *alsamixer* (for example `alsamixer -c 0` ) can make it appears.
 
 Then add the following to `/etc/modprobe.d/snd-hda-intel.conf`:
 
@@ -269,7 +269,7 @@ You might hear a popping sound after resuming the computer from suspension. This
 
 ### Sound skipping during playback
 
-Run _alsamixer_, and if channels exist for nonexistent output devices then disable them (e.g. _alsamixer_ showing a center speaker but you not having one).
+Run *alsamixer*, and if channels exist for nonexistent output devices then disable them (e.g. *alsamixer* showing a center speaker but you not having one).
 
 ### Crackling sound with USB sound devices
 
@@ -345,7 +345,7 @@ ctl.dmixer {
 
 Some modules (e.g. snd_ac97_codec and snd_hda_intel) can power off your sound card when not in use. This can make an audible noise (like a crack/pop/scratch) when turning on/off your sound card. Sometimes even when move the slider volume, or open and close windows (KDE4). If you find this annoying try `modinfo snd_MY_MODULE`, and look for a module option that adjusts or disables this feature.
 
-_Example_: disable the power saving mode and solve cracking sound trough speakers problem, using snd_hda_intel add in `/etc/modprobe.d/modprobe.conf`:
+*Example*: disable the power saving mode and solve cracking sound trough speakers problem, using snd_hda_intel add in `/etc/modprobe.d/modprobe.conf`:
 
 ```
 options snd_hda_intel power_save=0
@@ -363,7 +363,7 @@ You can also try it with `modprobe snd_hda_intel power_save=0` before.
 
 You may also have to unmute the 'Line' ALSA channel for this to work. Any value will do (other than '0' or something too high).
 
-_Example:_ on an onboard VIA VT1708S (using the snd_hda_intel module) these cracks occured even though 'power_save' was set to 0\. Unmuting the 'Line' channel and setting a value of '1' solved the problem.
+*Example:* on an onboard VIA VT1708S (using the snd_hda_intel module) these cracks occured even though 'power_save' was set to 0\. Unmuting the 'Line' channel and setting a value of '1' solved the problem.
 
 Source: [https://www.kernel.org/doc/Documentation/sound/alsa/powersave.txt](https://www.kernel.org/doc/Documentation/sound/alsa/powersave.txt)
 
@@ -396,7 +396,6 @@ If nothing is playing there should be no results.
 Here is an example output for audio with a [bit depth](https://en.wikipedia.org/wiki/Audio_bit_depth "wikipedia:Audio bit depth") of 24 bits and a [sampling frequency](https://en.wikipedia.org/wiki/Sampling_frequency "wikipedia:Sampling frequency") of 44.1 kilohertz:
 
  `cat /proc/asound/card1/pcm0p/sub0/hw_params` 
-
 ```
 access: RW_INTERLEAVED
 format: S24_3LE
@@ -493,7 +492,6 @@ options snd-hda-intel model=hp (works for tx2000cto)
 Discover available modules and their order:
 
  `$ cat /proc/asound/modules` 
-
 ```
  0 snd_hda_intel
  1 snd_ca0106
@@ -503,7 +501,6 @@ Discover available modules and their order:
 Disable the undesired video card audio codec in `/etc/modprobe.d/modprobe.conf`:
 
  `/etc/modprobe.d/modprobe.conf` 
-
 ```
 install snd_hda_intel /bin/false
 
@@ -554,7 +551,7 @@ There may be a problem with two conflicting modules loaded, namely `snd-intel8x0
 
  `/etc/modprobe.d/modprobe.conf`  `blacklist snd-intel8x0m` 
 
-_Muting_ the "External Amplifier" in `alsamixer` or `amixer` may also help. See [the ALSA wiki](http://alsa.opensrc.org/Intel8x0#Dell_Inspiron_8600_.28and_probably_others.29).
+*Muting* the "External Amplifier" in `alsamixer` or `amixer` may also help. See [the ALSA wiki](http://alsa.opensrc.org/Intel8x0#Dell_Inspiron_8600_.28and_probably_others.29).
 
 Unmuting the "Mix" setting in the mixer might help, also.
 
@@ -563,11 +560,11 @@ Unmuting the "Mix" setting in the mixer might help, also.
 With **Intel Corporation 82801 I (ICH9 Family) HD Audio Controller** on laptop, you may need to add this line to modprobe or sound.conf:
 
 ```
-options snd-hda-intel model=_model_
+options snd-hda-intel model=*model*
 
 ```
 
-Where _model_ is any one of the following:
+Where *model* is any one of the following:
 
 *   dell-m6
 *   dell-vostro
@@ -609,7 +606,6 @@ Connect your PC to the Display via HDMI cable and enable the display with [xrand
 Use `aplay -l` to get the discover the card and device number. For example:
 
  `$ aplay -l` 
-
 ```
 **** List of PLAYBACK Hardware Devices ****
 card 0: SB [HDA ATI SB], device 0: ALC892 Analog [ALC892 Analog]
@@ -637,7 +633,6 @@ mplay and other application could be configured to use special HDMI device as au
 If the test is successful, create or edit your `~/.asoundrc` file to set HDMI as the default audio device.
 
  `~/.asoundrc` 
-
 ```
 pcm.!default {
     type hw
@@ -650,7 +645,6 @@ pcm.!default {
 Or if the above configuration does not work try:
 
  `~/.asoundrc` 
-
 ```
 defaults.pcm.card 1
 defaults.pcm.device 3
@@ -709,7 +703,6 @@ Openal defaults to pulseaudio, to change the order, add the following configurat
 If you experience problems with VirtualBox, the following command might be helpful:
 
  `$ alsactl init` 
-
 ```
 Found hardware: "ICH" "SigmaTel STAC9700,83,84" "AC97a:83847600" "0x8086" "0x0000"
 Hardware is initialized using a generic method

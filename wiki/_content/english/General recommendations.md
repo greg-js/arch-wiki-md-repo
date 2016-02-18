@@ -1,4 +1,4 @@
-This document is an annotated index of popular articles and important information for improving and adding functionalities to the installed Arch system. Readers are assumed to have read and followed the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") or [Installation guide](/index.php/Installation_guide "Installation guide") to obtain a basic Arch Linux installation. Having read and understood the concepts explained in [#System administration](#System_administration) and [#Package management](#Package_management) is _required_ for following the other sections of this page and the other articles in the wiki.
+This document is an annotated index of popular articles and important information for improving and adding functionalities to the installed Arch system. Readers are assumed to have read and followed the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") or [Installation guide](/index.php/Installation_guide "Installation guide") to obtain a basic Arch Linux installation. Having read and understood the concepts explained in [#System administration](#System_administration) and [#Package management](#Package_management) is *required* for following the other sections of this page and the other articles in the wiki.
 
 ## Contents
 
@@ -74,7 +74,7 @@ This section deals with administrative tasks and system management. For more, pl
 
 A new installation leaves you with only the superuser account, better known as "root". Logging in as root for prolonged periods of time, possibly even exposing it via [SSH](/index.php/SSH "SSH") on a server, [is insecure](https://apple.stackexchange.com/questions/192365/is-it-ok-to-use-the-root-user-as-a-normal-user/192422#192422). Instead, you should create and use unprivileged user account(s) for most tasks, only using the root account for system administration. See [Users and groups#User management](/index.php/Users_and_groups#User_management "Users and groups") for details.
 
-Users and groups are a mechanism for _access control_; administrators may fine-tune group membership and ownership to grant or deny users and services access to system resources. Read the [Users and groups](/index.php/Users_and_groups "Users and groups") article for details and potential security risks.
+Users and groups are a mechanism for *access control*; administrators may fine-tune group membership and ownership to grant or deny users and services access to system resources. Read the [Users and groups](/index.php/Users_and_groups "Users and groups") article for details and potential security risks.
 
 ### Privilege escalation
 
@@ -82,7 +82,7 @@ The [su](/index.php/Su "Su") (substitute user) command allows you to assume the 
 
 ### Service management
 
-Arch Linux uses [systemd](/index.php/Systemd "Systemd") as the [init](/index.php/Init "Init") process, which is a system and service manager for Linux. For maintaining your Arch Linux installation, it is a good idea to learn the basics about it. Interaction with _systemd_ is done through the _systemctl_ command. Read [systemd#Basic systemctl usage](/index.php/Systemd#Basic_systemctl_usage "Systemd") for more information.
+Arch Linux uses [systemd](/index.php/Systemd "Systemd") as the [init](/index.php/Init "Init") process, which is a system and service manager for Linux. For maintaining your Arch Linux installation, it is a good idea to learn the basics about it. Interaction with *systemd* is done through the *systemctl* command. Read [systemd#Basic systemctl usage](/index.php/Systemd#Basic_systemctl_usage "Systemd") for more information.
 
 ### System maintenance
 
@@ -96,9 +96,9 @@ This section contains helpful information related to package management. For mor
 
 ### pacman
 
-[pacman](/index.php/Pacman "Pacman") is the Arch Linux _pac_kage _man_ager: all users are required to become familiar with it before reading any other articles.
+[pacman](/index.php/Pacman "Pacman") is the Arch Linux *pac*kage *man*ager: all users are required to become familiar with it before reading any other articles.
 
-See [pacman tips](/index.php/Pacman_tips "Pacman tips") for suggestions on how to improve your interaction with _pacman_ and package management in general.
+See [pacman tips](/index.php/Pacman_tips "Pacman tips") for suggestions on how to improve your interaction with *pacman* and package management in general.
 
 ### Repositories
 
@@ -110,15 +110,15 @@ If you installed Arch Linux x86_64 and plan on using 32-bit applications, you wi
 
 ### Mirrors
 
-Visit [Mirrors](/index.php/Mirrors "Mirrors") for steps on taking full advantage of using the fastest and most up to date _pacman_ mirrors. As explained in the article, a particularly good advice is to routinely check the [Mirror Status](https://www.archlinux.org/mirrors/status/) page and/or [Mirror-Status](http://www.archlinux.de/?page=MirrorStatus) for a list of mirrors that have been recently synced.
+Visit [Mirrors](/index.php/Mirrors "Mirrors") for steps on taking full advantage of using the fastest and most up to date *pacman* mirrors. As explained in the article, a particularly good advice is to routinely check the [Mirror Status](https://www.archlinux.org/mirrors/status/) page and/or [Mirror-Status](http://www.archlinux.de/?page=MirrorStatus) for a list of mirrors that have been recently synced.
 
 ### Arch Build System
 
-_Ports_ is a system initially used by BSD distributions consisting of build scripts that reside in a directory tree on the local system. Simply put, each port contains a script within a directory intuitively named after the installable third-party application.
+*Ports* is a system initially used by BSD distributions consisting of build scripts that reside in a directory tree on the local system. Simply put, each port contains a script within a directory intuitively named after the installable third-party application.
 
-The [ABS](/index.php/ABS "ABS") tree offers the same functionality by providing build scripts called [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"), which are populated with information for a given piece of software; integrity hashes, project URL, version, license and build instructions. These PKGBUILDs are later parsed by [makepkg](/index.php/Makepkg "Makepkg"), the actual program that generates packages cleanly manageable by _pacman_.
+The [ABS](/index.php/ABS "ABS") tree offers the same functionality by providing build scripts called [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"), which are populated with information for a given piece of software; integrity hashes, project URL, version, license and build instructions. These PKGBUILDs are later parsed by [makepkg](/index.php/Makepkg "Makepkg"), the actual program that generates packages cleanly manageable by *pacman*.
 
-Every package in the repositories along with those present in the AUR are subject to recompilation with _makepkg_.
+Every package in the repositories along with those present in the AUR are subject to recompilation with *makepkg*.
 
 ### Arch User Repository
 
@@ -134,7 +134,7 @@ Hardware should be auto-detected by [udev](/index.php/Udev "Udev") during the bo
 
 ### Microcode
 
-Processors may have [faulty behaviour](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), which the kernel can correct by updating the _microcode_ on startup. Intel processors require a separate package to this effect. See [Microcode](/index.php/Microcode "Microcode") for details.
+Processors may have [faulty behaviour](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), which the kernel can correct by updating the *microcode* on startup. Intel processors require a separate package to this effect. See [Microcode](/index.php/Microcode "Microcode") for details.
 
 ### Retaining boot messages
 
@@ -150,7 +150,7 @@ This section provides orientation for users wishing to run graphical application
 
 ### Display drivers
 
-The default _vesa_ display driver will work with most video cards, but performance can be significantly improved and additional features harnessed by installing the appropriate driver for [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel "Intel"), or [NVIDIA](/index.php/NVIDIA "NVIDIA") products.
+The default *vesa* display driver will work with most video cards, but performance can be significantly improved and additional features harnessed by installing the appropriate driver for [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel "Intel"), or [NVIDIA](/index.php/NVIDIA "NVIDIA") products.
 
 ### Display server
 
@@ -160,7 +160,7 @@ The default _vesa_ display driver will work with most video cards, but performan
 
 ### Desktop environments
 
-Whilst Xorg provides the basic framework for building a graphical environment, there are additional components that may be considered necessary for a complete user experience. [Desktop environments](/index.php/Desktop_environment "Desktop environment") such as [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), and [Xfce](/index.php/Xfce "Xfce") bundle together a wide range of _X clients_, such as a window manager, panel, file manager, terminal emulator, text editor, icons, and other utilities. Users with less experience may wish to install a desktop environment for a more familiar environment. See [Category:Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") for additional resources.
+Whilst Xorg provides the basic framework for building a graphical environment, there are additional components that may be considered necessary for a complete user experience. [Desktop environments](/index.php/Desktop_environment "Desktop environment") such as [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), and [Xfce](/index.php/Xfce "Xfce") bundle together a wide range of *X clients*, such as a window manager, panel, file manager, terminal emulator, text editor, icons, and other utilities. Users with less experience may wish to install a desktop environment for a more familiar environment. See [Category:Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") for additional resources.
 
 ### Window managers
 
@@ -284,7 +284,7 @@ Most distributions have a `locate` command available to be able to quickly searc
 
 ### Local mail delivery
 
-A default base setup bestows no means for mail syncing. To configure _Postfix_ for simple local mailbox delivery, see [Postfix](/index.php/Postfix "Postfix"). Other options are [SSMTP](/index.php/SSMTP "SSMTP"), [msmtp](/index.php/Msmtp "Msmtp") and [fdm](/index.php/Fdm "Fdm").
+A default base setup bestows no means for mail syncing. To configure *Postfix* for simple local mailbox delivery, see [Postfix](/index.php/Postfix "Postfix"). Other options are [SSMTP](/index.php/SSMTP "SSMTP"), [msmtp](/index.php/Msmtp "Msmtp") and [fdm](/index.php/Fdm "Fdm").
 
 ### Printing
 

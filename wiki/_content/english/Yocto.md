@@ -20,7 +20,7 @@ You may receive the following conflicts:
 
 Resolve these by choosing `y` (we actually want the multilib versions).
 
-Clone the official git repository. In this example the _fido_ branch is used.
+Clone the official git repository. In this example the *fido* branch is used.
 
 ```
 $ git clone --branch fido git://git.yoctoproject.org/poky.git ~/poky
@@ -39,7 +39,7 @@ $ export PATH=~/bin:$PATH
 
 ## Build core-image-minimal
 
-Time to build the _core-image-minimal_ target. First place yourself in the `poky` directory and source the environment script. Then build it with _bitbake_:
+Time to build the *core-image-minimal* target. First place yourself in the `poky` directory and source the environment script. Then build it with *bitbake*:
 
 ```
 $ cd ~/poky
@@ -55,7 +55,6 @@ In `~/poky/build-qemux86/conf/local.conf`:
 *   The build system can use a substantial amount of disk space during the build process, in order to preserve disk space add the line `INHERIT += "rm_work"`.
 
  `$ bitbake core-image-minimal` 
-
 ```
 WARNING: Host distribution "Arch-Linux" has not been validated with this version of the build system; you may possibly experience unexpected failures. It is recommended that you use a tested distribution.
 Parsing recipes: 100%
@@ -93,10 +92,9 @@ This will take some time to complete. For more details about yocto there is a [Q
 
 ## Run core-image-minimal
 
-To run this image in [QEMU](/index.php/QEMU "QEMU"), start it with the _runqemu_ command as follows:
+To run this image in [QEMU](/index.php/QEMU "QEMU"), start it with the *runqemu* command as follows:
 
  `$ runqemu qemux86` 
-
 ```
 Continuing with the following parameters:
 KERNEL: [/home/user/poky/build-qemux86/tmp/deploy/images/qemux86/bzImage-qemux86.bin]
@@ -111,4 +109,4 @@ Set 'tap0' nonpersistent
 Releasing lockfile of preconfigured tap device 'tap0'
 ```
 
-**Tip:** If the kernel was recently updated, rebooting might help you avoid issues with _tunctl_.
+**Tip:** If the kernel was recently updated, rebooting might help you avoid issues with *tunctl*.

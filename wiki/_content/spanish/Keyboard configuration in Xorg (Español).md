@@ -1,6 +1,6 @@
 **Nota:** Este artículo trata únicamente sobre la configuración básica, sin modificar los diseños, asignación de teclas extras, etc. Véase [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") para conocer más sobre estos temas avanzados.
 
-Xorg utiliza [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") (XKB) para gestionar la distribución del teclado. Por otra parte, [xmodmap](/index.php/Xmodmap "Xmodmap") se puede utilizar para acceder al mapa del teclado interno directamente. Por lo general, no se recomienda el uso de _xmodmap_, excepto, tal vez, para tareas simples.
+Xorg utiliza [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") (XKB) para gestionar la distribución del teclado. Por otra parte, [xmodmap](/index.php/Xmodmap "Xmodmap") se puede utilizar para acceder al mapa del teclado interno directamente. Por lo general, no se recomienda el uso de *xmodmap*, excepto, tal vez, para tareas simples.
 
 En este artículo se describe la configuración de bajo nivel usando XKB, que es eficaz en la mayoría de los casos, aunque algunos entornos de escritorios como [GNOME (Español)](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") la sobrescriben con su propia configuración.
 
@@ -27,7 +27,6 @@ En este artículo se describe la configuración de bajo nivel usando XKB, que es
 Se puede utilizar la siguiente orden para ver la configuración vigente de XKB :
 
  `$ setxkbmap -print -verbose 10` 
-
 ```
 Setting verbose level to 10
 locale is C
@@ -76,34 +75,34 @@ La distribución del teclado en Xorg puede configurarse de múltiples maneras. H
 *   `XkbLayout` selecciona la distribución del teclado. Se pueden especificar varias distribuciones en una lista separada por comas, para el caso, por ejemplo, de que desee cambiar rápidamente entre tales distribuciones.
 *   `XkbVariant` selecciona una variante de la distribución específica. Por ejemplo, la variante, por defecto, del teclado `sk` es `qwertz`, pero se pueden especificar otras distintas manualmente tal como `qwerty`, etc.
 
-**Advertencia:** Se deben especificar tantas variantes como número de distribuciones de teclados haya especificado. Si desea utilizar la variante por defecto de dichos teclados, especifique como _«xkbvariant»_ una cadena vacía (la coma debe permanecer). Por ejemplo, si se tiene la distribución de teclado `us` como primario que queremos usar con la variante predeterminada y una distribución de teclado secundaria `us` que queremos utilizar con la variante `dvorak`, especifique `us,us` como `XkbLayout` y `,dvorak` como `XkbVariant`.
+**Advertencia:** Se deben especificar tantas variantes como número de distribuciones de teclados haya especificado. Si desea utilizar la variante por defecto de dichos teclados, especifique como *«xkbvariant»* una cadena vacía (la coma debe permanecer). Por ejemplo, si se tiene la distribución de teclado `us` como primario que queremos usar con la variante predeterminada y una distribución de teclado secundaria `us` que queremos utilizar con la variante `dvorak`, especifique `us,us` como `XkbLayout` y `,dvorak` como `XkbVariant`.
 
 *   `XkbOptions` contiene algunas opciones adicionales. Se utiliza para especificar la forma de alternar, el LED de notificación, el modo de compose, etc.
 
-El nombre de la distribución, [_layout_], es normalmente un [código de dos letras por país](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements "wikipedia:ISO 3166-1 alpha-2"). Puede ver una lista completa de los modelos de teclado, distribuciones, variantes y opciones, con su correspondiente descripción, abriendo `/usr/share/X11/xkb/rules/base.lst`. Del mismo modo, pueden usarse las órdenes de abajo para ver los listados sin más:
+El nombre de la distribución, [*layout*], es normalmente un [código de dos letras por país](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements "wikipedia:ISO 3166-1 alpha-2"). Puede ver una lista completa de los modelos de teclado, distribuciones, variantes y opciones, con su correspondiente descripción, abriendo `/usr/share/X11/xkb/rules/base.lst`. Del mismo modo, pueden usarse las órdenes de abajo para ver los listados sin más:
 
 *   `localectl list-x11-keymap-models`
 *   `localectl list-x11-keymap-layouts`
-*   `localectl list-x11-keymap-variants [_layout_]`
+*   `localectl list-x11-keymap-variants [*layout*]`
 *   `localectl list-x11-keymap-options`
 
 Los ejemplos de las secciones siguientes producirán el mismo resultado, esto es, se definirá el modelo `pc104`, `es` como teclado primario, `us` como teclado secundario, las variantes `deadtilde` para el teclado `es` y `dvorak` para `us`, y la combinación de teclas `Alt+Mayús` para alternar los teclados.
 
 ### Utilizar setxkbmap
 
-La herramienta _setxkbmap_ establece la distribución del teclado para un servidor X activo y mantiene la configuración solo durante la sesión en curso. No obstante, puede utilizarse [xinitrc](/index.php/Xinitrc "Xinitrc") para hacer que la configuración se mantenga después de los reinicios. Esto último es útil para establecer una configuración específica para nuestra sesión de usuario distinta de la establecida para todo el sistema por los [archivos de configuración de X](#Using_X_configuration_files).
+La herramienta *setxkbmap* establece la distribución del teclado para un servidor X activo y mantiene la configuración solo durante la sesión en curso. No obstante, puede utilizarse [xinitrc](/index.php/Xinitrc "Xinitrc") para hacer que la configuración se mantenga después de los reinicios. Esto último es útil para establecer una configuración específica para nuestra sesión de usuario distinta de la establecida para todo el sistema por los [archivos de configuración de X](#Using_X_configuration_files).
 
 Su uso es como sigue:
 
 ```
-$ setxkbmap [-model _modelo_xkb_] [-layout _distribución_xkb_] [-variant _variantes_xkb_] [-option _opciones_xkb_]
+$ setxkbmap [-model *modelo_xkb*] [-layout *distribución_xkb*] [-variant *variantes_xkb*] [-option *opciones_xkb*]
 
 ```
 
 No es necesario especificar todas las opciones, por ejemplo, se puede cambiar solo una distribución:
 
 ```
-$ setxkbmap -layout _distribución_xkb_
+$ setxkbmap -layout *distribución_xkb*
 
 ```
 
@@ -123,7 +122,6 @@ La sintaxis de los archivos de configuración de X se explica en [Xorg#Configura
 He aquí un ejemplo:
 
  `/etc/X11/xorg.conf.d/10-keyboard.conf` 
-
 ```
 Section "InputClass"
         Identifier "system-keyboard"
@@ -138,12 +136,12 @@ EndSection
 
 ### Utilizar localectl
 
-Por conveniencia, la herramienta _localectl_ puede ser utilizada en lugar de editar manualmente el archivo de configuración de X. Se guardará la configuración en `etc/X11/xorg.conf.d/00-keyboard.conf`. Este archivo no debe modificarse manualmente, porque _localectl_ sobrescribirá los cambios en el siguiente inicio.
+Por conveniencia, la herramienta *localectl* puede ser utilizada en lugar de editar manualmente el archivo de configuración de X. Se guardará la configuración en `etc/X11/xorg.conf.d/00-keyboard.conf`. Este archivo no debe modificarse manualmente, porque *localectl* sobrescribirá los cambios en el siguiente inicio.
 
 Su uso es como sigue:
 
 ```
-$ localectl set-x11-keymap [_distribución_] [_modelo_] [_variantes_] [_opciones_]
+$ localectl set-x11-keymap [*distribución*] [*modelo*] [*variantes*] [*opciones*]
 
 ```
 
@@ -186,7 +184,7 @@ $ grep -E "(ctrl|caps):" /usr/share/X11/xkb/rules/base.lst
 
 ### Configurar tecla compose
 
-La [tecla compose](https://en.wikipedia.org/wiki/Compose_key "wikipedia:Compose key"), cuando se pulsa en secuencia con otras teclas, produce un carácter Unicode. Por ejemplo, en la mayoría de configuraciones pulsando `_tecla_compose_ ' e` produce `é`. Esto es especialmente útil si se necesita escribir en un idioma diferente a aquel para el cual la distribución del teclado fue diseñado (como escribir en francés, italiano y alemán en un teclado americano).
+La [tecla compose](https://en.wikipedia.org/wiki/Compose_key "wikipedia:Compose key"), cuando se pulsa en secuencia con otras teclas, produce un carácter Unicode. Por ejemplo, en la mayoría de configuraciones pulsando `*tecla_compose* ' e` produce `é`. Esto es especialmente útil si se necesita escribir en un idioma diferente a aquel para el cual la distribución del teclado fue diseñado (como escribir en francés, italiano y alemán en un teclado americano).
 
 Por ejemplo, para que la tecla `Alt` derecha funcione como una tecla compose, pase el argumento `compose:ralt` a `XkbOptions`.
 
@@ -199,7 +197,7 @@ $ grep "compose:" /usr/share/X11/xkb/rules/base.lst
 
 #### Combinaciones de teclas
 
-Las combinaciones predeterminadas para las teclas compose dependen de la configuración regional y se almacenan en `/usr/share/X11/locale/_locale_usado_/Compose`, donde `_locale_usado_` es, por ejemplo, `es_ES.UTF-8`.
+Las combinaciones predeterminadas para las teclas compose dependen de la configuración regional y se almacenan en `/usr/share/X11/locale/*locale_usado*/Compose`, donde `*locale_usado*` es, por ejemplo, `es_ES.UTF-8`.
 
 Puede definir sus propias combinaciones de la tecla compose copiando el archivo predeterminado a `~/.XCompose` y modificándolo. La tecla compose funciona con cualquiera de los miles de caracteres Unicode válidos, incluyendo aquellos fuera del Basic Multilingual Plane.
 
@@ -211,10 +209,10 @@ No obstante lo anterior, GTK no utiliza [XIM](https://en.wikipedia.org/wiki/X_In
 
 ### Ajustar el retardo y la velocidad de typematic
 
-La opción _typematic delay_ («retardo para la automatización de escritura») indica la cantidad de tiempo (normalmente en milisegundos) que una tecla necesita ser presionada para que el proceso de repetición comience. Después que el proceso de repetición ha sido activado, el carácter se repite con una frecuencia determinada (por lo general en Hz dado) especificado por la opción _typematic rate_ («velocidad de la automatización de escritura»). Estos valores se pueden cambiar usando la orden _xset_:
+La opción *typematic delay* («retardo para la automatización de escritura») indica la cantidad de tiempo (normalmente en milisegundos) que una tecla necesita ser presionada para que el proceso de repetición comience. Después que el proceso de repetición ha sido activado, el carácter se repite con una frecuencia determinada (por lo general en Hz dado) especificado por la opción *typematic rate* («velocidad de la automatización de escritura»). Estos valores se pueden cambiar usando la orden *xset*:
 
 ```
-$ xset r rate _delay_ [_rate_]
+$ xset r rate *delay* [*rate*]
 
 ```
 

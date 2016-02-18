@@ -139,18 +139,18 @@ Při odstraňování jistých aplikací pacman ukládá důležité konfiguračn
 
 ### Upgrade balíčků
 
-pacman dokáže zaktualizovat všechny nainstalované balíčky pomocí jednoho jediného příkazu. V závislosti na tom, jak je váš systém aktuální, to může chvíli trvat. Tento příkaz sesynchronizuje databáze repozitářů _a zároveň_ zaktualizuje balíčky v systému:
+pacman dokáže zaktualizovat všechny nainstalované balíčky pomocí jednoho jediného příkazu. V závislosti na tom, jak je váš systém aktuální, to může chvíli trvat. Tento příkaz sesynchronizuje databáze repozitářů *a zároveň* zaktualizuje balíčky v systému:
 
 ```
 # pacman -Syu
 
 ```
 
-**Note:** Jsouc distribucí používající postupné aktualizace, nebude vždy aktualizace vašeho Arch Linux systému tak přímočará jako u distribucí s pevnými vydáními. Navíc pacman není balíčkovačem s principem "udělat a zapomenout". Údržba systému s Arch Linuxem má proto sklon mást nováčky (vycházeje ze stále se opakujících diskuzí na fóru). Před pokračováním si, prosím, _pečlivě_ pročtěte následující sekci.
+**Note:** Jsouc distribucí používající postupné aktualizace, nebude vždy aktualizace vašeho Arch Linux systému tak přímočará jako u distribucí s pevnými vydáními. Navíc pacman není balíčkovačem s principem "udělat a zapomenout". Údržba systému s Arch Linuxem má proto sklon mást nováčky (vycházeje ze stále se opakujících diskuzí na fóru). Před pokračováním si, prosím, *pečlivě* pročtěte následující sekci.
 
 pacman je mocný nástroj pro správu balíčků, ale nepokouší se "udělat všechno možné". Pokud vás to mate, přečtěte si článek [o principech Arch Linuxu](/index.php/The_Arch_Way_(%C4%8Cesky) "The Arch Way (Česky)"). Místo toho by měli být uživatelé ostražití a za údržbu vlastního systému brát odpovědnost. Například, když vykonováte aktualizaci systému (`pacman -Syu`), **je nezbytné, abyste si přečetli veškerý výstup z pacmana a používali zdravý rozum.**
 
-Namísto okamžitého aktualizování, jakmile jsou balíčky dostupné, by měli uživatelé mít na paměti, že aktualizace _kritického_ balíčku může mít nedozírné následky. To ku příkladu znamená, že není moudré aktualizovat `xorg-server`, máte-li za chvíli předvádět důležitou prezentaci. Raději aktualizujte ve volném čase a buďte připraveni se popást s jakýmkoliv problémem, který kvůli aktualizaci může nastat.
+Namísto okamžitého aktualizování, jakmile jsou balíčky dostupné, by měli uživatelé mít na paměti, že aktualizace *kritického* balíčku může mít nedozírné následky. To ku příkladu znamená, že není moudré aktualizovat `xorg-server`, máte-li za chvíli předvádět důležitou prezentaci. Raději aktualizujte ve volném čase a buďte připraveni se popást s jakýmkoliv problémem, který kvůli aktualizaci může nastat.
 
 Dále je zárukou navštívení [domovské stránky Arch Linuxu](https://archlinux.org/). Když aktualizace vyžadují zásah uživatele, často se na [https://archlinux.org](https://archlinux.org) objeví příslušné oznámení, které o tom pojednává. Krátce po tom, co se stanou aktualizace dostupné na zrcadlech, se na též fóru obvykle objeví příspěvky popisující ten samý problém a případně poskytující jeho řešení.
 
@@ -255,7 +255,7 @@ Vyčištění cache balíčků od balíčků, jenž nejsou momentálně nainstal
 
 Smazání kompletně celé cache balíčků:
 
-**Warning:** Toto provádějte pouze tehdy, jste-li si jistí, že nebude třeba [downgrade některého balíčku](/index.php/Downgrading_Packages_(%C4%8Cesky) "Downgrading Packages (Česky)"), protože `pacman -Scc` z cache odstraní skutečně _všechny_ balíčky.
+**Warning:** Toto provádějte pouze tehdy, jste-li si jistí, že nebude třeba [downgrade některého balíčku](/index.php/Downgrading_Packages_(%C4%8Cesky) "Downgrading Packages (Česky)"), protože `pacman -Scc` z cache odstraní skutečně *všechny* balíčky.
 
 ```
 # pacman -Scc
@@ -284,7 +284,7 @@ Jediné možnosti jsou zde být trpělivý nebo použít jiné zrcadlo.
 
 ### Při aktualizaci dostávám chybu: "file exists in filesystem"!
 
-Pozn. stranou: _Převzato z [https://bbs.archlinux.org/viewtopic.php?id=56373](https://bbs.archlinux.org/viewtopic.php?id=56373) od Misfit138._
+Pozn. stranou: *Převzato z [https://bbs.archlinux.org/viewtopic.php?id=56373](https://bbs.archlinux.org/viewtopic.php?id=56373) od Misfit138.*
 
 ```
 error: could not prepare transaction
@@ -298,7 +298,7 @@ Proč se to stává: pacman zjistil konflikt souborů a shodně s jeho návrhem 
 
 Je odpovědností uživatele udržovat svůj systém, ne správce balíčků. (Pro dotázání, který balíček, pokud vůbec nějaký, vlastní daný soubor, můžete zavolat `pacman -Qo`.)
 
-Tato záležitost má obvykle triviální řešení. Bezpečný způsob je nejdříve si ověřit, zda-li tento soubor nevlastní jiný balíček (`pacman -Qo /cesta/k/souboru`). Pokud je soubor vlastněn jiným balíčkem, [vyplňte zprávu o bugu](/index.php?title=Reporting_Bug_Guidelines_(%C4%8Cesky)&action=edit&redlink=1 "Reporting Bug Guidelines (Česky) (page does not exist)"). Pokud onen soubor _není_ vlastněn jiným balíčkem, přejmenujte soubor, který "existuje v souborovém systému" a vyvolejte příkaz pro aktualizaci znovu. Pokud všechno půjde dobře, ten soubor budete moci odstranit.
+Tato záležitost má obvykle triviální řešení. Bezpečný způsob je nejdříve si ověřit, zda-li tento soubor nevlastní jiný balíček (`pacman -Qo /cesta/k/souboru`). Pokud je soubor vlastněn jiným balíčkem, [vyplňte zprávu o bugu](/index.php?title=Reporting_Bug_Guidelines_(%C4%8Cesky)&action=edit&redlink=1 "Reporting Bug Guidelines (Česky) (page does not exist)"). Pokud onen soubor *není* vlastněn jiným balíčkem, přejmenujte soubor, který "existuje v souborovém systému" a vyvolejte příkaz pro aktualizaci znovu. Pokud všechno půjde dobře, ten soubor budete moci odstranit.
 
 ### Při instalaci balíčku dostávám chybu: "not found in sync db"
 
@@ -323,14 +323,14 @@ V případě, že pacman během odstraňování balíčků spadne spolu s chybov
 
 ### Nainstaloval jsem software pomocí `make install`; tyto soubory nepatří žádnému balíčku!
 
-Pokud předáte pacmanovi při instalaci přepínač `-S --force`, přepíše ručně nainstalovaný software. Pokud byl software nainstalován do `/usr/local`, můžete nechat vyhledat soubory, o kterých pacman _má_ přehled:
+Pokud předáte pacmanovi při instalaci přepínač `-S --force`, přepíše ručně nainstalovaný software. Pokud byl software nainstalován do `/usr/local`, můžete nechat vyhledat soubory, o kterých pacman *má* přehled:
 
 ```
 # find /usr/local -exec bash -c 'file={}; pacman -Qo "$file" 2>/dev/null' \;
 
 ```
 
-Pro vyhledání všech souborů, které _nejsou_ sledovány pacmanem:
+Pro vyhledání všech souborů, které *nejsou* sledovány pacmanem:
 
 ```
 # find / -xdev -exec bash -c 'file={}; [[ "$file" =~ ^/root || \

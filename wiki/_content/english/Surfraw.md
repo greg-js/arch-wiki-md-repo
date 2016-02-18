@@ -31,7 +31,7 @@ $ surfraw -elvi
 You can call surfraw in full, or the shortened form:
 
 ```
-$ sr duckduckgo _topic_name_
+$ sr duckduckgo *topic_name*
 
 ```
 
@@ -47,14 +47,14 @@ $ surfraw amazon -search=books -country=en -q Stanislaw Lem
 To search the [AUR](/index.php/AUR "AUR"):
 
 ```
-sr aur _package_name_
+sr aur *package_name*
 
 ```
 
 To search this wiki:
 
 ```
-sr archwiki _article_name_
+sr archwiki *article_name*
 
 ```
 

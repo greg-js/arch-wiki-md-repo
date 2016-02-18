@@ -120,7 +120,7 @@ USECOLOR="yes"
 
 ```
 
-**Обратите внимание:** Текущая версия [initscripts](https://www.archlinux.org/packages/?name=initscripts) не требует наличия в `rc.conf` переменной _LOCALE_. Тем не менее необходимо внести в файл `/etc/locale.conf` следующие строки:
+**Обратите внимание:** Текущая версия [initscripts](https://www.archlinux.org/packages/?name=initscripts) не требует наличия в `rc.conf` переменной *LOCALE*. Тем не менее необходимо внести в файл `/etc/locale.conf` следующие строки:
 
 ```
 LANG=ru_RU.UTF-8
@@ -191,7 +191,7 @@ pacman -S ttf-dejavu ttf-liberation
 
 #### Опции раскладок
 
-Параметры _xkb.layout_ и _xkb.variant_ указывают соответственно на варианты раскладки. В примере раскладки _us,ru_ дополнены опцией _winkeys_ которая расставляет знаки препинания и некоторые символы в соответствии с раскладкой win.
+Параметры *xkb.layout* и *xkb.variant* указывают соответственно на варианты раскладки. В примере раскладки *us,ru* дополнены опцией *winkeys* которая расставляет знаки препинания и некоторые символы в соответствии с раскладкой win.
 
 #### Переключение раскладок
 
@@ -249,7 +249,6 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 [Полный список последовательностей.](http://webcvs.freedesktop.org/xorg/xc/nls/Compose/en_US.UTF-8?view=co) Пример .XCompose:
 
  `.XCompose` 
-
 ```
 # -*- coding: utf-8 -*-
 #
@@ -347,7 +346,6 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 Отредактируйте файл
 
  `/etc/gtk/gtkrc.ru` 
-
 ```
 style "gtk-default-ru" {
        fontset = "-*-arial-medium-r-normal--12-*-*-*-*-*-iso10646-1",\
@@ -393,7 +391,7 @@ class "GtkWidget" style "gtk-default-ru"
 
 ```
 
-Также позаботьтесь о том, чтобы переменная окружения _LESSCHARSET_ имела значение _UTF-8_, либо просто заккоментируйте строку **export LESSCHARSET="latin1"** в файле _/etc/profile_, тогда less будет автоматически брать кодировку из локали.
+Также позаботьтесь о том, чтобы переменная окружения *LESSCHARSET* имела значение *UTF-8*, либо просто заккоментируйте строку **export LESSCHARSET="latin1"** в файле */etc/profile*, тогда less будет автоматически брать кодировку из локали.
 
 ## Сделаем openoffice русским
 

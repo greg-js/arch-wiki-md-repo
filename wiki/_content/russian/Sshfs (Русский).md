@@ -31,7 +31,7 @@
 Перед монтированием, убедитесь, что права целевой директории позволяют получать к ней надлежащий доступ. Для монтирования удаленной директории, выполните:
 
 ```
-$ sshfs _USERNAME@HOSTNAME_OR_IP:/REMOTE_PATH LOCAL_MOUNT_POINT SSH_OPTIONS_
+$ sshfs *USERNAME@HOSTNAME_OR_IP:/REMOTE_PATH LOCAL_MOUNT_POINT SSH_OPTIONS*
 
 ```
 
@@ -49,14 +49,12 @@ $ sshfs sessy@mycomputer:/remote/path /local/path -C -p 9876 -o allow_other
 SSH запросит пароль, если необходимо. Если вы не хотите постоянно вводить пароль, прочитайте: [как использовать ключ аутентификации RSA с SSH](http://linuxmafia.com/~karsten/Linux/FAQs/sshrsakey.html) или [SSH Keys](/index.php/SSH_keys_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SSH keys (Русский)").
 
 **Совет:** Чтобы быстро смонтировать удаленную директорию, сделать нужные файловые манипуляции и отмонтировать ее, добавьте в скрипт следующее:
-
 ```
 sshfs USERNAME@HOSTNAME_OR_IP:/REMOTE_PATH LOCAL_MOUNT_POINT SSH_OPTIONS
 mc LOCAL_MOUNT_POINT
 fusermount -u LOCAL_MOUNT_POINT
 
 ```
-
 Скрипт смонтирует удаленный каталог, запустит MC и отмонтирует при выходе.
 
 ### Размонтирование
@@ -64,7 +62,7 @@ fusermount -u LOCAL_MOUNT_POINT
 Чтобы отмонтировать удаленную систему:
 
 ```
-$ fusermount -u _LOCAL_MOUNT_POINT_
+$ fusermount -u *LOCAL_MOUNT_POINT*
 
 ```
 
@@ -80,7 +78,6 @@ $ fusermount -u /mnt/sessy
 Вы можете привязать (определенного) пользователя к определенной директории путем редактирования `/etc/ssh/sshd_config`:
 
  `/etc/ssh/sshd_config` 
-
 ```
 .....
 Match User someuser 
@@ -120,11 +117,11 @@ user@host:/remote/folder /mount/point  fuse.sshfs noauto,x-systemd.automount,_ne
 
 ```
 
-Главные опции здесь - _noauto,x-systemd.automount,_netdev_.
+Главные опции здесь - *noauto,x-systemd.automount,_netdev*.
 
-*   _noauto_ - монтирование не будет происходит при загрузке.
-*   _x-systemd.automount_ - делает магию связанную с запросом.
-*   __netdev_ - показывает, что это сетевое устройство, а не блочное (без этой опции может появится ошибка "No such device")
+*   *noauto* - монтирование не будет происходит при загрузке.
+*   *x-systemd.automount* - делает магию связанную с запросом.
+*   *_netdev* - показывает, что это сетевое устройство, а не блочное (без этой опции может появится ошибка "No such device")
 
 **Совет:**
 
@@ -142,7 +139,7 @@ USERNAME@HOSTNAME_OR_IP:/REMOTE/DIRECTORY  /LOCAL/MOUNTPOINT  fuse.sshfs  defaul
 
 ```
 
-Для примера возьмите линию из _fstab_
+Для примера возьмите линию из *fstab*
 
 ```
 llib@192.168.1.200:/home/llib/FAH  /media/FAH2  fuse.sshfs  defaults,_netdev  0  0
@@ -158,7 +155,7 @@ user@domain.org:/home/user  /media/user   fuse.sshfs    defaults,allow_other,_ne
 
 ```
 
-Очень важно убедится в том, что параметр монтирования __netdev_ установлен, чтобы быть уверенным в доступности сети перед монтированием.
+Очень важно убедится в том, что параметр монтирования *_netdev* установлен, чтобы быть уверенным в доступности сети перед монтированием.
 
 ### Безопасный доступ пользователей
 
@@ -173,22 +170,22 @@ USERNAME@HOSTNAME_OR_IP:/REMOTE/DIRECTORY  /LOCAL/MOUNTPOINT  fuse.sshfs noauto,
 
 Описание опций:
 
-*   _allow_other_ - позволяет другим пользователям отличным от монтирующего (т.е. суперпользователь) получать доступ к монтируемуму.
-*   _default_permissions_ - позволяет ядру проверять права, т.е. использовать актуальные права на удаленной файловой системе. А также запрещает доступ всем, кроме объявленных в _allow_other_.
-*   _uid_, _gid_ - устанавливает владельца файлов в соответствии с переданными значениями; _uid_ - это числовой идентификатор пользователя, _gid_ - числовой идентификатор группы пользователя.
+*   *allow_other* - позволяет другим пользователям отличным от монтирующего (т.е. суперпользователь) получать доступ к монтируемуму.
+*   *default_permissions* - позволяет ядру проверять права, т.е. использовать актуальные права на удаленной файловой системе. А также запрещает доступ всем, кроме объявленных в *allow_other*.
+*   *uid*, *gid* - устанавливает владельца файлов в соответствии с переданными значениями; *uid* - это числовой идентификатор пользователя, *gid* - числовой идентификатор группы пользователя.
 
 ## Параметры
 
 sshfs может автоматически конвертировать ваш и удаленный идентификатор пользователя.
 
-Добавьте параметр _idmap_ с значением _user_, чтобы переводить идентификатор подключаемого пользователя:
+Добавьте параметр *idmap* с значением *user*, чтобы переводить идентификатор подключаемого пользователя:
 
 ```
 # sshfs -o idmap=user sessy@mycomputer:/home/sessy /mnt/sessy -C -p 9876
 
 ```
 
-Это действие сопоставит идентификатор удаленного пользователя "sessy" с идентификатором локального пользователя, который запускает этот процесс ("суперпользователь" в примере выше) и идентификатор группы пользователя останется неизменным. Если вам требуется более точный контроль над переводом идентификатора пользователя и его группы, то посмотрите на параметры _idmap=file_, _uidfile_ и _gidfile_.
+Это действие сопоставит идентификатор удаленного пользователя "sessy" с идентификатором локального пользователя, который запускает этот процесс ("суперпользователь" в примере выше) и идентификатор группы пользователя останется неизменным. Если вам требуется более точный контроль над переводом идентификатора пользователя и его группы, то посмотрите на параметры *idmap=file*, *uidfile* и *gidfile*.
 
 ## Решение проблем
 
@@ -203,7 +200,7 @@ $ mv /etc/issue /etc/issue.orig
 
 ```
 
-2\. Имейте в виду, что большинство статей по устранению неполадок связанных с SSH, найденных в интернете, **не** связаны с Systemd. Часто определения в `/etc/fstab` ошибочно начинаются с `_sshfs#_user@host:/mnt/server/folder ... fuse ...` вместо того, чтобы использовать следующий синтаксис `user@host:/mnt/server/folder ... fuse._sshfs_ ... _x-systemd_, ...`.
+2\. Имейте в виду, что большинство статей по устранению неполадок связанных с SSH, найденных в интернете, **не** связаны с Systemd. Часто определения в `/etc/fstab` ошибочно начинаются с `*sshfs#*user@host:/mnt/server/folder ... fuse ...` вместо того, чтобы использовать следующий синтаксис `user@host:/mnt/server/folder ... fuse.*sshfs* ... *x-systemd*, ...`.
 
 3\. Убедитесь, что владелец исходной папки и ее содержимого на сервере владеет соответственный пользователь:
 
@@ -215,7 +212,7 @@ $ chown -R USER_S: /mnt/servers/folder
 4\. Серверный пользовательский идентификатор может отличаться от соответствующего клиентского. Очевидно, что имена пользователей будут одинаковыми. Вам просто нужно позаботиться о клиентском идентификаторе. SSHFS будет преобразовывать идентификатор пользователя посредством следующего параметра:
 
 ```
-uid=_USER_C_ID_,gid=_GROUP_C_ID_
+uid=*USER_C_ID*,gid=*GROUP_C_ID*
 
 ```
 
@@ -231,7 +228,7 @@ $ chown -R USER_C: /mnt/client/folder
 7\. Если вы хотите автоматически монтировать объекты SSH используя публичный ключ аутентификации (без пароля) через `/etc/fstab`, то используйте следующую линию как пример;
 
 ```
-_USER_S_@_SERVER_:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.automount,_netdev,user,idmap=user,transform_symlinks,identityfile=/home/_USER_C_/.ssh/id_rsa,allow_other,default_permissions,uid=_USER_C_ID_,gid=_GROUP_C_ID_,umask=0   0 0
+*USER_S*@*SERVER*:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.automount,_netdev,user,idmap=user,transform_symlinks,identityfile=/home/*USER_C*/.ssh/id_rsa,allow_other,default_permissions,uid=*USER_C_ID*,gid=*GROUP_C_ID*,umask=0   0 0
 
 ```
 
@@ -276,9 +273,9 @@ pete@serv:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.au
 
 ### Remote host has disconnected
 
-Если это сообщение появляется непосредственно после попытки использовать _sshfs_:
+Если это сообщение появляется непосредственно после попытки использовать *sshfs*:
 
-*   Сначала убедитесь, что на удаленном компьютере установлен _sftp_! Ничего не будет работать, пока пакет не будет установлен.
+*   Сначала убедитесь, что на удаленном компьютере установлен *sftp*! Ничего не будет работать, пока пакет не будет установлен.
 
 **Совет:** Если удаленный сервер работает под управлением OpenWRT: `opkg install openssh-sftp-server` сделает все нужное.
 
@@ -304,7 +301,6 @@ See the following [bug report](https://bugs.archlinux.org/task/40260) for more d
 Systemd may hang on shutdown if an sshfs mount was mounted manually and not unmounted before shutdown. To solve this problem, create this file (as root):
 
  `/etc/systemd/system/killsshfs.service` 
-
 ```
 [Unit]
 After=network.target

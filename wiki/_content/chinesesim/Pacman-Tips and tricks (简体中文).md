@@ -182,7 +182,6 @@ alias pacout='sudo pacman -Rns'
 建议定期检查 pacman 数据库之外的文件。通常这些文件是第三方程序使用一般方式安装 (例如 **./configure; make; make install**)。下面脚本可以找出它们：
 
  `pacman-disowned` 
-
 ```
 #!/bin/sh
 
@@ -197,7 +196,8 @@ pacman -Qlq | sort -u > "$db"
 
 find /bin /etc /lib /sbin /usr \
   ! -name lost+found \
-  \( -type d -printf '%p/\n' -o -print \) | sort > "$fs"
+  \( -type d -printf '%p/
+' -o -print \) | sort > "$fs"
 
 comm -23 "$fs" "$db"
 
@@ -247,7 +247,6 @@ orphans() {
 2.  `pactree`是生成软件包依赖树的工具，输出如下：
 
  `$ pactree -lu logrotate` 
-
 ```
 logrotate
 popt
@@ -276,7 +275,7 @@ pacman -Qq |grep -Fv -f <(pacman -Qqm)
 
 ### 从 CD/DVD/ISO 安装软件包
 
-*   先挂载 CD （如果需要，替换_cdrom_为_dvd_或其他介质)：
+*   先挂载 CD （如果需要，替换*cdrom*为*dvd*或其他介质)：
 
 ```
 # mount /mnt/cdrom
@@ -313,7 +312,7 @@ Server = file:///mnt/cdrom/arch/pkg
 
 ```
 
-	如果使用其他介质，记得替换 _cdrom_ 。
+	如果使用其他介质，记得替换 *cdrom* 。
 
 修改`pacman.conf`后，更新软件仓库即可。
 
@@ -346,7 +345,7 @@ Server = file:///mnt/iso
 
 pacman 3 引入了一个名为`repo-add`脚本，用于帮助个人用户生成软件仓库。使用 `repo-add --help` 查看详细用法。
 
-将所有要加入仓库的软件包放入一个目录，运行如下命令（_repo_是自建仓库的名称）：
+将所有要加入仓库的软件包放入一个目录，运行如下命令（*repo*是自建仓库的名称）：
 
 ```
 $ repo-add /path/to/repo.db.tar.gz /path/to/*.pkg.tar.xz
@@ -364,7 +363,7 @@ $ repo-add /path/to/repo.db.tar.gz /path/to/packagetoadd-1.0-1-i686.pkg.tar.xz
 
 **注意:** 使用`repo-remove`删除软件包。
 
-本地仓库建立后，添加仓库到`pacman.conf`。`db.tar.gz`文件的名字就是仓库的名字，路径格式是_file://..._或FTP地址_[ftp://localhost/path/to/directory](ftp://localhost/path/to/directory)_。
+本地仓库建立后，添加仓库到`pacman.conf`。`db.tar.gz`文件的名字就是仓库的名字，路径格式是*file://...*或FTP地址*[ftp://localhost/path/to/directory](ftp://localhost/path/to/directory)*。
 
 欢迎到[非官方用户软件仓库](/index.php/Unofficial_user_repositories "Unofficial user repositories")，分享你的仓库。
 
@@ -424,12 +423,12 @@ CleanMethod = KeepCurrent
 
 解释：
 
-*   _pacman -Slq_列出所有可以安装的软件包。由于输出是按照来源仓库排序的，需要再调用_sort_排序。
-*   排序是为_diff_命令比对列表做准备。
-*   第一个_diff_返回所有无法安装的软件包；第二个返回所有可以安装的软件包。
-*   _--needed_表示跳过已安装软件包。
+*   *pacman -Slq*列出所有可以安装的软件包。由于输出是按照来源仓库排序的，需要再调用*sort*排序。
+*   排序是为*diff*命令比对列表做准备。
+*   第一个*diff*返回所有无法安装的软件包；第二个返回所有可以安装的软件包。
+*   *--needed*表示跳过已安装软件包。
 
-可以接着用_yaourt_恢复从AUR获取的软件包（不推荐）：
+可以接着用*yaourt*恢复从AUR获取的软件包（不推荐）：
 
 ```
 $ yaourt -S --noconfirm $(diff <(cat badpkglist|sort) <(pacman -Slq|sort) |grep \<|cut -f2 -d' ')
@@ -488,14 +487,13 @@ $ ls /var/log/pacman.log
 
 ```
 
-如果日志丢失了，那就_不能_使用本方法修复，可以尝试使用[Xyne的软件包检测脚本](https://bbs.archlinux.org/viewtopic.php?pid=670876)重建数据库。要是还行不通，很遗憾，最后的路就是重装系统。
+如果日志丢失了，那就*不能*使用本方法修复，可以尝试使用[Xyne的软件包检测脚本](https://bbs.archlinux.org/viewtopic.php?pid=670876)重建数据库。要是还行不通，很遗憾，最后的路就是重装系统。
 
 #### 日志过滤脚本
 
 创建一个awk脚本文件，内容如下 ：
 
  `log2pkglist.awk` 
-
 ```
 #!/bin/awk -f
 

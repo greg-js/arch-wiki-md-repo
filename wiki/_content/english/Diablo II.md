@@ -61,7 +61,7 @@ $ wine D2VidTst.exe
 
 ```
 
-Click on _Run Test_. Once it's finished, pick whichever you want. Generally I prefer 2D even on Windows as very few modern cards support Glider. You can try 3D though and see if it lags or not.
+Click on *Run Test*. Once it's finished, pick whichever you want. Generally I prefer 2D even on Windows as very few modern cards support Glider. You can try 3D though and see if it lags or not.
 
 ### Step 4
 
@@ -70,7 +70,7 @@ $ winecfg
 
 ```
 
-Then, add _Game.exe_ and make sure it uses ALSA under the sound tab and that it is emulated as Windows XP. I didn't have to change anything as those were default for me.
+Then, add *Game.exe* and make sure it uses ALSA under the sound tab and that it is emulated as Windows XP. I didn't have to change anything as those were default for me.
 
 ## Additional information
 
@@ -103,7 +103,7 @@ $ cp -dpR /media/windows/Program files (x86)/Diablo II /home/username/Desktop
 
 ```
 
-Once you have successfully decided how to gain access to your content, you will need to have a Diablo II play disc for either classic, if you play classic, or expansion, if you play expansion. If you do not have the actual disc, and use a ISO I recommend mounting it as root using _fuseiso_ from the [fuseiso](https://www.archlinux.org/packages/?name=fuseiso) package.
+Once you have successfully decided how to gain access to your content, you will need to have a Diablo II play disc for either classic, if you play classic, or expansion, if you play expansion. If you do not have the actual disc, and use a ISO I recommend mounting it as root using *fuseiso* from the [fuseiso](https://www.archlinux.org/packages/?name=fuseiso) package.
 
 ```
 # mkdir -m 777 /media/diablo
@@ -153,8 +153,8 @@ $ wine ~/.wine/drive_c/Program\ Files/Diablo\ II/Game.exe
 
 ### Error "ACCESS_VIOLATION" on start
 
-Try setting `dsoundhw=Emulation`. This can be done by starting winetricks _Select the default wineprefix_ and then choose _Change settings_ and check the box in front of _dsoundhw=Emulation_. Another thing to try is to add `-w` at the end of the command line. It will launch the game in windowed mode but it should work where fullscreen does not.
+Try setting `dsoundhw=Emulation`. This can be done by starting winetricks *Select the default wineprefix* and then choose *Change settings* and check the box in front of *dsoundhw=Emulation*. Another thing to try is to add `-w` at the end of the command line. It will launch the game in windowed mode but it should work where fullscreen does not.
 
 ### Only starts in windowed mode
 
-Try running `D2VidTst.exe` in the game folder and then select _3dfxGlide_. If the game still doesn't start in fullscreen place the `glide3x.dll` into the game folder from this website [http://www.svenswrapper.de/english/downloads.html](http://www.svenswrapper.de/english/downloads.html). It is extra written for running Diablo2 with glide.
+Try running `D2VidTst.exe` in the game folder and then select *3dfxGlide*. If the game still doesn't start in fullscreen place the `glide3x.dll` into the game folder from this website [http://www.svenswrapper.de/english/downloads.html](http://www.svenswrapper.de/english/downloads.html). It is extra written for running Diablo2 with glide.

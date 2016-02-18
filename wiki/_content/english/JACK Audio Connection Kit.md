@@ -64,7 +64,7 @@ Also, [cadence](http://kxstudio.linuxaudio.org/Applications:Cadence) offers a se
 
 ### Overview
 
-[This Linux Magazine article](http://www.linux-magazine.com/content/download/63041/486886/version/1/file/JACK_Audio_Server.pdf) is a very good general overview, although do not worry about manual compilations, quite a few JACK tools work right off the wire now, _after_ JACK is configured correctly.
+[This Linux Magazine article](http://www.linux-magazine.com/content/download/63041/486886/version/1/file/JACK_Audio_Server.pdf) is a very good general overview, although do not worry about manual compilations, quite a few JACK tools work right off the wire now, *after* JACK is configured correctly.
 
 Most tutorials are advising a realtime kernel, which is quite helpful for live synthesis and FX; but for purposes of recording and editing it is not necessary, as long as you set up for non-realtime latencies -- 10-40+ ms (100-500+ ms for older hardware).
 
@@ -77,7 +77,6 @@ The D-Bus edition of JACK2 can make startup much easier. Formerly, we had to hav
 Create a shell script that can be executed at X login:
 
  `start_jack.sh` 
-
 ```
 #!/bin/bash
 
@@ -342,14 +341,13 @@ autospawn = no
 
 ```
 
-_If you want both to play along, see: [PulseAudio/Examples#PulseAudio through JACK](/index.php/PulseAudio/Examples#PulseAudio_through_JACK "PulseAudio/Examples")_
+*If you want both to play along, see: [PulseAudio/Examples#PulseAudio through JACK](/index.php/PulseAudio/Examples#PulseAudio_through_JACK "PulseAudio/Examples")*
 
 ### Firewire
 
 In order to prevent ALSA from messing around with your firewire devices you have to blacklist all firewire related kernel modules. This also prevents PulseAudio from using firewire. Create the following file:
 
  `/etc/modprove.d/alsa-no-jack.conf` 
-
 ```
 blacklist snd-fireworks
 blacklist snd-bebob
@@ -364,7 +362,7 @@ blacklist snd-firewire-motu
 
 ```
 
-_The list of modules is the most recent available at the time of writing at [Alsa Firewire Improve Repository](https://github.com/takaswie/snd-firewire-improve)._
+*The list of modules is the most recent available at the time of writing at [Alsa Firewire Improve Repository](https://github.com/takaswie/snd-firewire-improve).*
 
 Now you can unload your loaded firewire modules or reboot.
 
@@ -372,9 +370,9 @@ Now you can unload your loaded firewire modules or reboot.
 
 JACK can handle one soundcard very well, and an arbitrary number of MIDI devices (connected e.g. via USB). If you start JACK and want to use a MIDI keyboard or a synthesizer or some other pure MIDI device, you have to start JACK with a proper soundcard (one that actually outputs or inputs PCM sound). As soon you have done that, you can connect the MIDI device. E.g. with QjackCtl ([qjackctl](https://www.archlinux.org/packages/?name=qjackctl)), you click on the connect button and you will find your device listed under JACK-MIDI or ALSA-MIDI, depending on the driver.
 
-For JACK-MIDI, you may want to set the **MIDI Driver** to **seq** or **raw** in QjackCtl _Setup > Settings_. This should make your MIDI device appear under the _MIDI_ tab. You can also change the name of the client (from a generic "midi_capture_1" to something more descriptive), if you enable _Setup > Display > Enable client/port aliases_ and then _Enable client/port aliases editing (rename)_.
+For JACK-MIDI, you may want to set the **MIDI Driver** to **seq** or **raw** in QjackCtl *Setup > Settings*. This should make your MIDI device appear under the *MIDI* tab. You can also change the name of the client (from a generic "midi_capture_1" to something more descriptive), if you enable *Setup > Display > Enable client/port aliases* and then *Enable client/port aliases editing (rename)*.
 
-For ALSA-MIDI, make sure to turn on **Enable ALSA Sequencer support** in QjackCtl _Setup > Misc_. This will add the _ALSA_ tab in QjackCtl _Connect_ window where your MIDI controller will show up.
+For ALSA-MIDI, make sure to turn on **Enable ALSA Sequencer support** in QjackCtl *Setup > Misc*. This will add the *ALSA* tab in QjackCtl *Connect* window where your MIDI controller will show up.
 
 For bridging ALSA-MIDI to JACK-MIDI, you may consider using a2jmidid ([a2jmidid](https://www.archlinux.org/packages/?name=a2jmidid)). The following command will export all available ALSA MIDI ports to JACK MIDI ports:
 
@@ -383,9 +381,9 @@ $ a2jmidid -e
 
 ```
 
-They will be visible in QjackCtl under the _MIDI_ tab labelled "a2j" client. You can automate starting of a2jmidid by adding to QjackCtl _Setup > Options > Execute script after Startup_: `/usr/bin/a2jmidid -e &`
+They will be visible in QjackCtl under the *MIDI* tab labelled "a2j" client. You can automate starting of a2jmidid by adding to QjackCtl *Setup > Options > Execute script after Startup*: `/usr/bin/a2jmidid -e &`
 
-**Note:** When connecting MIDI keyboard controllers in QjackCtl, make sure to _Expand All_ first and connect the desired _Output Ports_ (below the _Readable Clients_) to the _Input Ports_ (below the _Writable Clients_). As a shortcut, if you select a writable client instead of individual ports as your destination, it should connect all its currently displayed output ports underneath.
+**Note:** When connecting MIDI keyboard controllers in QjackCtl, make sure to *Expand All* first and connect the desired *Output Ports* (below the *Readable Clients*) to the *Input Ports* (below the *Writable Clients*). As a shortcut, if you select a writable client instead of individual ports as your destination, it should connect all its currently displayed output ports underneath.
 
 *   **Q:** What is the difference between JACK-MIDI and ALSA-MIDI?
 *   **A:** The former has improved timing and sample accurate MIDI event alignment. It extends or may even replace the latter but at this point they both co-exist.
@@ -402,7 +400,7 @@ See [Realtime for Users#Add user to audio group](/index.php/Realtime_for_Users#A
 
 Still having the "Cannot allocate memory" and/or "Cannot connect to server socket err = No such file or directory" error(s) when pressing qjackctl's start button (assuming that you have package jack2-dbus installed) ?
 
-Please delete `~/.jackdrc`, `~/.config/jack/conf.xml`, `~/.config/rncbc.org/QjackCtl.conf`. Kill _jackdbus_ and restart from scratch :) (Thanks to nedko)
+Please delete `~/.jackdrc`, `~/.config/jack/conf.xml`, `~/.config/rncbc.org/QjackCtl.conf`. Kill *jackdbus* and restart from scratch :) (Thanks to nedko)
 
 Also try running
 

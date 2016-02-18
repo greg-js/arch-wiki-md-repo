@@ -35,7 +35,7 @@ Now you are ready to begin to configure Ion as described below.
 
 ## Configuration
 
-_**Note:** The files below have been heavily modified from the defaults to better suit my needs. /xerxes2_
+***Note:** The files below have been heavily modified from the defaults to better suit my needs. /xerxes2*
 
 ### cfg_ion.lua
 

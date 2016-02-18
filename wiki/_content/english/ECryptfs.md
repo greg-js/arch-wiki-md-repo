@@ -1,6 +1,6 @@
 This article describes basic usage of [eCryptfs](https://launchpad.net/ecryptfs). It guides you through the process of creating a private and secure encrypted directory within your `$HOME` directory to store sensitive files and private data.
 
-In implementation eCryptfs differs from [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), which provides a _block device encryption layer_, while eCryptfs is an actual file-system – a [stacked cryptographic file system](http://en.wikipedia.org/wiki/Cryptographic_filesystems). For comparison of the two you can refer to [this table](http://ksouedu.com/doc/ecryptfs-utils/ecryptfs-faq.html#compare) and the [Disk encryption#Comparison table](/index.php/Disk_encryption#Comparison_table "Disk encryption"). One distinguished feature is that the encryption is stacked on an existing filesystem; eCryptfs can be mounted onto any single existing directory and does not require a separate partition (or size pre-allocation).
+In implementation eCryptfs differs from [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), which provides a *block device encryption layer*, while eCryptfs is an actual file-system – a [stacked cryptographic file system](http://en.wikipedia.org/wiki/Cryptographic_filesystems). For comparison of the two you can refer to [this table](http://ksouedu.com/doc/ecryptfs-utils/ecryptfs-faq.html#compare) and the [Disk encryption#Comparison table](/index.php/Disk_encryption#Comparison_table "Disk encryption"). One distinguished feature is that the encryption is stacked on an existing filesystem; eCryptfs can be mounted onto any single existing directory and does not require a separate partition (or size pre-allocation).
 
 **Note:** The article is in the process of being re-structured. If you need to find information that might not be in its place yet again, the revision before the restructuring is [here](https://wiki.archlinux.org/index.php?title=ECryptfs&oldid=291214).
 
@@ -59,7 +59,7 @@ Before using eCryptfs, the following disadvantages should be checked for applica
 
 	eCryptfs does not handle [sparse files](https://en.wikipedia.org/wiki/Sparse_file). This is sometimes referred to as a bug, but likewise is a consequence of the design as a [stacked filesystem encryption](/index.php/Disk_encryption#Stacked_filesystem_encryption "Disk encryption"). For example, in an eCryptfs directory a `truncate -s 1G file.img` creates 1GB encrypted data and passes it to the underlying filesystem to store; with the corresponding resource (disk space, data throughput) requirements. Unencrypted, the same file can be allocated efficiently as sparse file space by the filesystem; with a [block device encryption](/index.php/Disk_encryption#Block_device_encryption "Disk encryption") only the respective filesystem output would be encrypted.
 
-	This should be considered before encrypting large portions of the directory structure. For most intents and purposes this deficiency does not pose a problem. One workaround is to place sparse files in an unencrypted `.Public` directory (as opposed to the standard eCryptfs `.Private` directory, explained below). Another method is to use a _dm-crypt_ [container](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Loop_device "Dm-crypt/Encrypting a non-root file system") in `.Public` for such.
+	This should be considered before encrypting large portions of the directory structure. For most intents and purposes this deficiency does not pose a problem. One workaround is to place sparse files in an unencrypted `.Public` directory (as opposed to the standard eCryptfs `.Private` directory, explained below). Another method is to use a *dm-crypt* [container](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Loop_device "Dm-crypt/Encrypting a non-root file system") in `.Public` for such.
 
 ## Setup example overview
 
@@ -89,7 +89,7 @@ Before starting, check the eCryptfs documentation. It is distributed with a very
 
 ### Using the Ubuntu tools
 
-Most of the user-friendly convenience tools installed by the _ecryptfs-utils_ package assume a very specific eCryptfs setup, namely the one that is officially used by Ubuntu (where it can be selected as an option during distro installation). Unfortunately, these choices are not just default options but are actually hard-coded in the tools. If this set-up does not suit your needs, then you can not use the convenience tools and will have to follow the steps at [#Manual setup](#Manual_setup) instead.
+Most of the user-friendly convenience tools installed by the *ecryptfs-utils* package assume a very specific eCryptfs setup, namely the one that is officially used by Ubuntu (where it can be selected as an option during distro installation). Unfortunately, these choices are not just default options but are actually hard-coded in the tools. If this set-up does not suit your needs, then you can not use the convenience tools and will have to follow the steps at [#Manual setup](#Manual_setup) instead.
 
 The set-up used by these tools is as follows:
 
@@ -99,16 +99,16 @@ The set-up used by these tools is as follows:
 *   the **lower directory** for each user is always `~/.Private/`
     <small>(in the case of full home dir encryption, this will be a symlink to the actual location at `/home/.ecryptfs/$USER/.Private/`)</small>
 *   the **encryption options** used are:
-    *   _cipher:_ AES
-    *   _key length:_ 16 bytes (128 bits)
-    *   _key management scheme:_ passphrase
-    *   _plaintext passthrough:_ enabled
+    *   *cipher:* AES
+    *   *key length:* 16 bytes (128 bits)
+    *   *key management scheme:* passphrase
+    *   *plaintext passthrough:* enabled
 *   the **configuration / control info** for the encrypted directory is stored in a bunch of files at `~/.ecryptfs/`:
     <small>(in the case of full home dir encryption, this will be a symlink to the actual location at `/home/.ecryptfs/$USER/.ecryptfs/`)</small>
-    *   `Private.mnt` _[plain text file]_ - contains the path where the upper directory should be mounted (e.g. `/home/lucy` or `/home/lucy/Private`)
-    *   `Private.sig` _[plain text file]_ - contains the signature used to identify the mount passphrase in the kernel keyring
-    *   `wrapped-passphrase` _[binary file]_ - the mount passphrase, encrypted with the login passphrase
-    *   `auto-mount`, `auto-umount` _[empty files]_ - if they exist, the `pam_ecryptfs.so` module will (assuming it is loaded) automatically mount/unmount this encrypted directory when the user logs in/out
+    *   `Private.mnt` *[plain text file]* - contains the path where the upper directory should be mounted (e.g. `/home/lucy` or `/home/lucy/Private`)
+    *   `Private.sig` *[plain text file]* - contains the signature used to identify the mount passphrase in the kernel keyring
+    *   `wrapped-passphrase` *[binary file]* - the mount passphrase, encrypted with the login passphrase
+    *   `auto-mount`, `auto-umount` *[empty files]* - if they exist, the `pam_ecryptfs.so` module will (assuming it is loaded) automatically mount/unmount this encrypted directory when the user logs in/out
 
 #### Encrypting a data directory
 
@@ -123,7 +123,7 @@ $ ecryptfs-setup-private --nopwcheck --noautomount
 
 ```
 
-and follow the instructions. The option `--nopwcheck` enables you to choose a passphrase different to the user login passphrase and the option `--noautomount` is self-explanatory. So, if you want to setup the encrypted directory automatically on log-in later, just _leave out_ both options right away.
+and follow the instructions. The option `--nopwcheck` enables you to choose a passphrase different to the user login passphrase and the option `--noautomount` is self-explanatory. So, if you want to setup the encrypted directory automatically on log-in later, just *leave out* both options right away.
 
 The script will automatically create the `~/.Private/` and `~/.ecryptfs/` directory structures as described in the box above. It will also ask for two passphrases:
 
@@ -133,7 +133,7 @@ The script will automatically create the `~/.Private/` and `~/.ecryptfs/` direct
 
 	**mount passphrase**
 
-	This is used to derive the actual file encryption master key. Thus, you should not enter a custom one unless you know what you are doing - instead press Enter to let it auto-generate a secure random one. It will be encrypted using the login passphrase and stored in this encrypted form in `~/.ecryptfs/wrapped-passphrase`. Later it will automatically be decrypted ("unwrapped") again in RAM when needed, so you never have to enter it manually. Make sure this file does not get lost, otherwise you can never access your encrypted folder again! You may want to run `ecryptfs-unwrap-passphrase` to see the mount passphrase in unencrypted form, write it down on a piece of paper, and keep it in a safe (or similar), so you can use it to recover your encrypted data in case the _wrapped-passphrase_ file is accidentally lost/corrupted or in case you forget the login passphrase.
+	This is used to derive the actual file encryption master key. Thus, you should not enter a custom one unless you know what you are doing - instead press Enter to let it auto-generate a secure random one. It will be encrypted using the login passphrase and stored in this encrypted form in `~/.ecryptfs/wrapped-passphrase`. Later it will automatically be decrypted ("unwrapped") again in RAM when needed, so you never have to enter it manually. Make sure this file does not get lost, otherwise you can never access your encrypted folder again! You may want to run `ecryptfs-unwrap-passphrase` to see the mount passphrase in unencrypted form, write it down on a piece of paper, and keep it in a safe (or similar), so you can use it to recover your encrypted data in case the *wrapped-passphrase* file is accidentally lost/corrupted or in case you forget the login passphrase.
 
 The mount point ("upper directory") for the encrypted folder will be at `~/Private` by default, however you can manually change this right after the setup command has finished running, by doing:
 
@@ -149,16 +149,16 @@ To actually use your encrypted folder, you will have to mount it - see [#Mountin
 
 The wrapper script `ecryptfs-migrate-home` will set up an encrypted home directory for a user and take care of migrating any existing files they have in their not yet encrypted home directory.
 
-To run it, the user in question must be logged out and own no processes. The best way to achieve this is to log the user out, log into a console as the root user, and check that `ps -U _username_` returns no output. You also need to ensure that you have [rsync](https://www.archlinux.org/packages/?name=rsync) and [lsof](https://www.archlinux.org/packages/?name=lsof) installed. Once the prerequisites have been met, run:
+To run it, the user in question must be logged out and own no processes. The best way to achieve this is to log the user out, log into a console as the root user, and check that `ps -U *username*` returns no output. You also need to ensure that you have [rsync](https://www.archlinux.org/packages/?name=rsync) and [lsof](https://www.archlinux.org/packages/?name=lsof) installed. Once the prerequisites have been met, run:
 
 ```
-# ecryptfs-migrate-home -u _username_
+# ecryptfs-migrate-home -u *username*
 
 ```
 
-and follow the instructions. After the wrapper script is complete, follow the instructions for auto-mounting - see [#Auto-mounting](#Auto-mounting) below. It is imperative that the user logs in _before_ the next reboot, to complete the process.
+and follow the instructions. After the wrapper script is complete, follow the instructions for auto-mounting - see [#Auto-mounting](#Auto-mounting) below. It is imperative that the user logs in *before* the next reboot, to complete the process.
 
-Once everything is working, the unencrypted backup of the users home directory, which is saved to `/home/_username_._random_characters_`, can and should be deleted.
+Once everything is working, the unencrypted backup of the users home directory, which is saved to `/home/*username*.*random_characters*`, can and should be deleted.
 
 #### Mounting
 
@@ -171,7 +171,7 @@ $ ecryptfs-mount-private
 
 ```
 
-and entering the passphrase is all needed to mount the encrypted directory to the [above](#Using_the_Ubuntu_tools) described _upper directory_ `~/Private`.
+and entering the passphrase is all needed to mount the encrypted directory to the [above](#Using_the_Ubuntu_tools) described *upper directory* `~/Private`.
 
 Likewise, executing
 
@@ -199,32 +199,32 @@ For auto-mounting it is required that the passphrase to access the encrypted dir
 
 The following steps set it up:
 
-1\. Check if `~/.ecryptfs/auto-mount`, `~/.ecryptfs/auto-umount` and `~/.ecryptfs/wrapped-passphrase` exist (these are automatically created by _ecryptfs-setup-private_).
+1\. Check if `~/.ecryptfs/auto-mount`, `~/.ecryptfs/auto-umount` and `~/.ecryptfs/wrapped-passphrase` exist (these are automatically created by *ecryptfs-setup-private*).
 
-2\. Add _ecryptfs_ to the pam-stack exactly as following to allow transparent unwrapping of the passphrase on login:
+2\. Add *ecryptfs* to the pam-stack exactly as following to allow transparent unwrapping of the passphrase on login:
 
-Open `/etc/pam.d/system-auth` and _after_ the line containing `auth required pam_unix.so` add:
+Open `/etc/pam.d/system-auth` and *after* the line containing `auth required pam_unix.so` add:
 
 ```
 auth    required    pam_ecryptfs.so unwrap
 
 ```
 
-Next, _above_ the line containing `password required pam_unix.so` insert:
+Next, *above* the line containing `password required pam_unix.so` insert:
 
 ```
 password    optional    pam_ecryptfs.so
 
 ```
 
-And finally, _after_ the line `session required pam_unix.so` add:
+And finally, *after* the line `session required pam_unix.so` add:
 
 ```
 session    optional    pam_ecryptfs.so unwrap
 
 ```
 
-3\. Re-login and check output of _mount_ which should now contain a mountpoint, e.g.:
+3\. Re-login and check output of *mount* which should now contain a mountpoint, e.g.:
 
 ```
 /home/$USER/.Private on /home/$USER/Private type ecryptfs (...)
@@ -368,10 +368,11 @@ To summarize:
     *   While not mounted nothing can be written to this directory
     *   While mounted it has the same permissions as the lower directory
 
-Second we create the mount-passphrase ("file encryption key, encryption key", or **fekek**) for the directory. It has to be very secure and cannot be changed easily. The _ecryptfs-setup-private_ script offers the option to generate it from `/dev/urandom`. In the following we do a generation similar to the [source](http://bazaar.launchpad.net/~ecryptfs/ecryptfs/trunk/view/head:/src/utils/ecryptfs-setup-private#L96) and then use _ecryptfs-wrap-passphrase_ to wrap it with an extra password ("Arch"):
+Second we create the mount-passphrase ("file encryption key, encryption key", or **fekek**) for the directory. It has to be very secure and cannot be changed easily. The *ecryptfs-setup-private* script offers the option to generate it from `/dev/urandom`. In the following we do a generation similar to the [source](http://bazaar.launchpad.net/~ecryptfs/ecryptfs/trunk/view/head:/src/utils/ecryptfs-setup-private#L96) and then use *ecryptfs-wrap-passphrase* to wrap it with an extra password ("Arch"):
 
 ```
-$ printf "%s\n%s" $(od -x -N 100 --width=30 /dev/random | head -n 1 | sed "s/^0000000//" | sed "s/\s*//g") "Arch" | ecryptfs-wrap-passphrase /home/username/.ecryptfs/wrapped-passphrase
+$ printf "%s
+%s" $(od -x -N 100 --width=30 /dev/random | head -n 1 | sed "s/^0000000//" | sed "s/\s*//g") "Arch" | ecryptfs-wrap-passphrase /home/username/.ecryptfs/wrapped-passphrase
 
 ```
 
@@ -392,9 +393,9 @@ $ echo "7c5d3dd8a1b49db0" > ~/.ecryptfs/secret.sig
 
 ```
 
-Now we continue to setup the encryption options for the directory and prepare an user-mountable entry for `/etc/fstab`. If you already know the eCryptfs options to use in it, you can skip the following _mount_ and create an entry with the above signature already.
+Now we continue to setup the encryption options for the directory and prepare an user-mountable entry for `/etc/fstab`. If you already know the eCryptfs options to use in it, you can skip the following *mount* and create an entry with the above signature already.
 
-The _mount.ecryptfs_ command needs root and does not allow for piping the passphrase unfortunately. The mount helper will ask questions about the options we want to choose ("Key type": passphrase - choose any, we only do this to generate the options to use), but let it mount:
+The *mount.ecryptfs* command needs root and does not allow for piping the passphrase unfortunately. The mount helper will ask questions about the options we want to choose ("Key type": passphrase - choose any, we only do this to generate the options to use), but let it mount:
 
 ```
 # mount -t ecryptfs /home/username/.secret /home/username/secret
@@ -432,7 +433,7 @@ Before continuing, we can already un-mount the temporary mount we used to genera
 
 ```
 
-Now the mount line has to be edited into the correct format, the mount options `nosuid,nodev,noexec,relatime` before the first _ecryptfs_ option are default and can be left out. But what we need to add is the correct signatures for the passphrases to replace the ones of the current mount:
+Now the mount line has to be edited into the correct format, the mount options `nosuid,nodev,noexec,relatime` before the first *ecryptfs* option are default and can be left out. But what we need to add is the correct signatures for the passphrases to replace the ones of the current mount:
 
 ```
 # cat /home/username/.ecryptfs/secret.sig 
@@ -506,7 +507,7 @@ $ keyctl clear @u
 
 Different methods can be employed to automount the previously defined user-mount in `/etc/fstab` on login. As a first general step, follow point (1) and (2) of [#Auto-mounting](#Auto-mounting).
 
-Then, if you login via console, a simple way is to specify the [user-interactive](#Mounting_2) _mount_ and _umount_ in the user's shell configuration files, for example [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash").
+Then, if you login via console, a simple way is to specify the [user-interactive](#Mounting_2) *mount* and *umount* in the user's shell configuration files, for example [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash").
 
 Another method is to automount the eCryptfs directory on user login using [pam_mount](/index.php/Pam_mount "Pam mount"). To configure this method, add the following lines to `/etc/security/pam_mount.conf.xml`:
 
@@ -538,7 +539,7 @@ Finally, edit `/etc/pam.d/login` as described in [pam_mount](/index.php/Pam_moun
 
 ###### Optional step
 
-To avoid wasting time needlessly unwrapping the passphrase you can create a script that will check _pmvarrun_ to see the number of open sessions:
+To avoid wasting time needlessly unwrapping the passphrase you can create a script that will check *pmvarrun* to see the number of open sessions:
 
 ```
 #!/bin/sh
@@ -594,7 +595,7 @@ You can do backups, or incremental backups, of the encrypted (e.g. `~/.Private`)
 
 Further points to note:
 
-*   If you used the Ubuntu tools for [#Encrypting a home directory](#Encrypting_a_home_directory), be aware the location of the lower directory with the encrypted files is _outside_ the regular user's `$HOME` at `/home/.ecryptfs/$USER/.Private`.
+*   If you used the Ubuntu tools for [#Encrypting a home directory](#Encrypting_a_home_directory), be aware the location of the lower directory with the encrypted files is *outside* the regular user's `$HOME` at `/home/.ecryptfs/$USER/.Private`.
 
 *   It should be ensured to include the eCryptfs setup files (located in `~/.ecryptfs` usually) into the regular or a separate backup.
 

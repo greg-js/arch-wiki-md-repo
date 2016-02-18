@@ -1,6 +1,6 @@
 Vim (**Vi** I**M**Proved), es un editor de texto derivado de Vi. Es notoriamente conocido por su empinada curva de aprendizaje, y su poco amistosa interfaz de usuario. No obstante, debido a su eficiencia, a su variedad de añadidos ("plugins")", y a sus posibilidades de personalización vim es uno de los editores de texto más populares para programadores y usuarios de sistemas tipo Unix (junto con [Emacs](/index.php/Emacs "Emacs")*). Existe también una versión gráfica, gVim, que proporciona un sistema de menús al usuario.
 
-*_Tenga en cuenta que la Religión de Vi ha determinado que utilizar Emacs puede causar sequedad de boca, visión borrosa, somnolencia, vértigos, aumento de la sudoración, temblores, problemas de erección, dolor de cabeza, nauseas y dolor abdominal._
+**Tenga en cuenta que la Religión de Vi ha determinado que utilizar Emacs puede causar sequedad de boca, visión borrosa, somnolencia, vértigos, aumento de la sudoración, temblores, problemas de erección, dolor de cabeza, nauseas y dolor abdominal.*
 
 ## Contents
 
@@ -72,7 +72,7 @@ pacman -S vim-plugins
 *   para iniciar vim y editar un archivo (nuevo o creado anteriormente)
 
 ```
-vim _nombrearchivo_
+vim *nombrearchivo*
 
 ```
 
@@ -87,7 +87,7 @@ vim
 
 ### Cómo introducir texto
 
-Vim es un editor _modal_. Existen muchos modos, pero los modos habituales de vim son:
+Vim es un editor *modal*. Existen muchos modos, pero los modos habituales de vim son:
 
 *   modo de inserción, en el cual, todo lo que teclee (excepto algunas teclas especiales) aparecerá en pantalla y se convertirá en parte integrante de su buffer de archivo
 *   modo de órdenes (también llamado modo normal), en el cual lo que teclee se interpreta como una orden.
@@ -130,7 +130,7 @@ Nos ocuparemos del modo visual más tarde.
 
 ### Cómo mover el cursor
 
-En ambos modos, el de órdenes y el de inserción, las flechas de cursor hacer que el cursor se mueva, y con gvim puede usted "pinchar" en la pantalla para llevar el cursor a otra posición. Sin embargo, ésta no es la manera _**a la vim**_ de hacer las cosas. La manera más efectiva de mover el cursor es entrando primero en modo de órdenes pulsando ESC y moverse entonces por el texto utilizando las ordenes para mover el cursor propias de vim. Las 4 órdenes básicas son:
+En ambos modos, el de órdenes y el de inserción, las flechas de cursor hacer que el cursor se mueva, y con gvim puede usted "pinchar" en la pantalla para llevar el cursor a otra posición. Sin embargo, ésta no es la manera ***a la vim*** de hacer las cosas. La manera más efectiva de mover el cursor es entrando primero en modo de órdenes pulsando ESC y moverse entonces por el texto utilizando las ordenes para mover el cursor propias de vim. Las 4 órdenes básicas son:
 
 *   **j** mueve el curso una línea abajo
 

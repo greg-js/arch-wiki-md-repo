@@ -13,7 +13,6 @@ TTYtter will find where your cURL is located, and if successful, you should see 
 [ttyter launch image](http://postimg.org/image/fthxntgv3/)
 
 Once installed simply type
-
 ```
 ttytter -dostream
 

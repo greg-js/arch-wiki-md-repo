@@ -2,9 +2,9 @@
 
 来自[awesome](https://en.wikipedia.org/wiki/awesome_(window_manager) "wikipedia:awesome (window manager)")网站：
 
-_[Awesome](http://awesome.naquadah.org/) 是 XWindows 下可高度定制的新一代窗口管理器。运行快捷、扩展性强，遵循GPLv2发布。_
+*[Awesome](http://awesome.naquadah.org/) 是 XWindows 下可高度定制的新一代窗口管理器。运行快捷、扩展性强，遵循GPLv2发布。*
 
-_Awesome主要面向高级用户、开发者和那些希望完美控制自己电脑的图形界面的人。_
+*Awesome主要面向高级用户、开发者和那些希望完美控制自己电脑的图形界面的人。*
 
 本文主要内容为安装、使用、配置和自定义 awesome 窗口管理器。
 
@@ -90,7 +90,6 @@ Awesome 会自动地为这些登陆管理器安装一份配置文件，不需要
 以root身份创建:
 
  `/usr/share/apps/kdm/sessions/awesome.desktop` 
-
 ```
 [Desktop Entry]
 Name=Awesome
@@ -411,9 +410,9 @@ Lua 代码:
 
 ### 弹出菜单项
 
-这是一份 awesome3 的默认简单菜单项, 看起来要自定义也十分容易. 然而,如果你在用awesome的 2.x 版本, 那么请看_[awful.menu](http://awesome.naquadah.org/wiki/Awful.menu)_.
+这是一份 awesome3 的默认简单菜单项, 看起来要自定义也十分容易. 然而,如果你在用awesome的 2.x 版本, 那么请看*[awful.menu](http://awesome.naquadah.org/wiki/Awful.menu)*.
 
-如果你想要配置 freedesktop.org 的菜单项,就到 _[awesome-freedesktop](https://github.com/terceiro/awesome-freedesktop)_ .
+如果你想要配置 freedesktop.org 的菜单项,就到 *[awesome-freedesktop](https://github.com/terceiro/awesome-freedesktop)* .
 
 一个 awesome3 的菜单配置示例:
 
@@ -446,7 +445,7 @@ mymainmenu = awful.menu.new({ items = {
 
 ### Awesome的更多插件
 
-_Awesome中的插件是一些你可以加入插件栏 (状态栏和标题栏) 的东西，它们提供了关于你的系统的各种信息，并让你很方便地直接在窗口管理器上就看到这些信息。这些插件很简易而且有很强的灵活性。_ -- 来自 [Awesome Wiki: Widgets](http://awesome.naquadah.org/wiki/Widgets_in_awesome)。
+*Awesome中的插件是一些你可以加入插件栏 (状态栏和标题栏) 的东西，它们提供了关于你的系统的各种信息，并让你很方便地直接在窗口管理器上就看到这些信息。这些插件很简易而且有很强的灵活性。* -- 来自 [Awesome Wiki: Widgets](http://awesome.naquadah.org/wiki/Widgets_in_awesome)。
 
 有一个被广泛使用的插件库叫**Wicked** (只与**3.4版以前**的Awesome兼容)，它提供了更多插件，比如MPD插件，CPU使用情况，内存使用情况等。要更详细的了解参见 [Wicked](http://awesome.naquadah.org/wiki/Wicked)。
 
@@ -463,7 +462,7 @@ xcompmgr &
 
 ```
 
-See _man xcompmgr_ or [xcompmgr](/index.php/Xcompmgr "Xcompmgr") for more options.
+See *man xcompmgr* or [xcompmgr](/index.php/Xcompmgr "Xcompmgr") for more options.
 
 In awesome 3.4, window transparency can be set dynamically using signals. For example, your rc.lua could contain the following:
 
@@ -521,11 +520,11 @@ globalkeys = awful.util.table.join(
 
 #### ImageMagick
 
-如果你用ImageMagick的_display_命令来设置你的墙纸，可能会遇到xcompmgr效果不好的问题。请注意awsetbg可能会用_display_如果它没有其他选项。安装habak，feh，hsetroot或者其他的包应该会解决这个问题。 (_grep -A 1 wpsetters /usr/bin/awsetbg_ 来看你有哪些选项)
+如果你用ImageMagick的*display*命令来设置你的墙纸，可能会遇到xcompmgr效果不好的问题。请注意awsetbg可能会用*display*如果它没有其他选项。安装habak，feh，hsetroot或者其他的包应该会解决这个问题。 (*grep -A 1 wpsetters /usr/bin/awsetbg* 来看你有哪些选项)
 
 ### 自动运行程序
 
-_参见 [Awesome维基上的自动运行](https://awesome.naquadah.org/wiki/Autostart)._
+*参见 [Awesome维基上的自动运行](https://awesome.naquadah.org/wiki/Autostart).*
 
 Awesome不会运行那些被Freedesktop如GNOME或KDE设置为自动运行的程序。不过Awesome提供了一些运行程序的函数 (除了Lua标准库里的函数 `os.execute`)。要运行跟GNOME或KDE里一样自动运行的程序，你可以从 [AUR](/index.php/AUR "AUR") 安装 [dex-git](https://aur.archlinux.org/packages/dex-git/)，然后在你的rc.lua里加入:
 
@@ -727,14 +726,13 @@ awful.titlebar.hide(c)
 
 ### Start xor jump
 
-There is an extension called _Run or raise_, which makes it possible to configure a key to start a program if no instance exists, else jump to it. This is very useful for some programs: browsers, irc clients, music players, etc. The instructions are very well laid out at [http://awesome.naquadah.org/wiki/Run_or_raise](http://awesome.naquadah.org/wiki/Run_or_raise), the modular approach is advisable.
+There is an extension called *Run or raise*, which makes it possible to configure a key to start a program if no instance exists, else jump to it. This is very useful for some programs: browsers, irc clients, music players, etc. The instructions are very well laid out at [http://awesome.naquadah.org/wiki/Run_or_raise](http://awesome.naquadah.org/wiki/Run_or_raise), the modular approach is advisable.
 
 ### Battery notification
 
 If you want to add a simple battery notification you can add following lines to your rc.lua. These lines originate from a [[blogpost](http://bpdp.blogspot.be/2013/06/battery-warning-notification-for.html)]. Note that you need naughty for the notifications (installed by default in version 3.5).
 
  `rc.lua` 
-
 ```
 
 -- battery warning

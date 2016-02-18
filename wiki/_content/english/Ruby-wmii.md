@@ -22,16 +22,16 @@ While [wmii](/index.php/Wmii "Wmii") can be configured using most any language, 
 
 ## Configuration
 
-You'll need to install [Ruby](http://ruby-lang.org), which is available in [extra]. Furthermore, some plugins may require additional ruby libraries, such as the MPD plugin which requires _ruby-mpd_ from [community].
+You'll need to install [Ruby](http://ruby-lang.org), which is available in [extra]. Furthermore, some plugins may require additional ruby libraries, such as the MPD plugin which requires *ruby-mpd* from [community].
 
 mfp's project has many useful basic bar applets and configurations; with the 0.3.0 release, the script has adopted a useful plugin architecture making overriding or adding functionality simple.
 
-The ruby-wmii project is installed to _~/.wmii-3_, consisting of:
+The ruby-wmii project is installed to *~/.wmii-3*, consisting of:
 
-*   _~/.wmii-3/wmiirc_ -- The heart of the ruby-wmii scripts; shouldn't be edited. This is what is run when wmii starts.
-*   _~/.wmii-3/wmiirc-config.rb_ -- Your config file, which should be edited (running wmiirc script will create it if it doesn't already exist)
-*   _~/.wmii-3/plugins_ -- A directory containing plugins (sets of keybindings and bar applets)
-*   _~/.wmii-3/plugins/standard-plugin.rb_ -- The default plugins, which you needn't edit.
+*   *~/.wmii-3/wmiirc* -- The heart of the ruby-wmii scripts; shouldn't be edited. This is what is run when wmii starts.
+*   *~/.wmii-3/wmiirc-config.rb* -- Your config file, which should be edited (running wmiirc script will create it if it doesn't already exist)
+*   *~/.wmii-3/plugins* -- A directory containing plugins (sets of keybindings and bar applets)
+*   *~/.wmii-3/plugins/standard-plugin.rb* -- The default plugins, which you needn't edit.
 
 ### darcs
 
@@ -54,7 +54,7 @@ user@host % ruby install.rb
 
 ```
 
-This last command will copy the updated ruby-wmii over what you have in _~/.wmii-3_. CAUTION: This will overwrite any changes you have in _~/.wmii-3/wmiirc_ or _~/.wmii-3/standard-plugin.rb_. For this reason, you shouldn't edit these files! Rather, make config changes in _~/.wmii-3/wmiirc-config.rb_, and if you want to modify a plugin, copy it into a new file under _~/.wmii-3/plugins_ and make your edits in this file.
+This last command will copy the updated ruby-wmii over what you have in *~/.wmii-3*. CAUTION: This will overwrite any changes you have in *~/.wmii-3/wmiirc* or *~/.wmii-3/standard-plugin.rb*. For this reason, you shouldn't edit these files! Rather, make config changes in *~/.wmii-3/wmiirc-config.rb*, and if you want to modify a plugin, copy it into a new file under *~/.wmii-3/plugins* and make your edits in this file.
 
 ### ssid
 
@@ -71,13 +71,13 @@ Personally I prefer not ever to run a make install unless through a PKGBUILD so 
 
 ### Low level access
 
-The _wmiir_ command can be used to manipulate wmii at a low level; read the manpage for details (although this isn't really necessary for a new user!). Control scripts in different languages can use this command to control wmii. wmii is controlled through a filesystem interface using the 9P2000 protocol, which in turn is derived from the plan 9 operating system. As such, there are also libraries such as ruby-ixp which can be used to manipulate the window manager programmatically over 9P. This is technically faster, as no calling of external programs such as '_wmiir_ is then needed; however, at the time of writing, ruby-ixp is quite new and isn't used by the ruby-wmii project.
+The *wmiir* command can be used to manipulate wmii at a low level; read the manpage for details (although this isn't really necessary for a new user!). Control scripts in different languages can use this command to control wmii. wmii is controlled through a filesystem interface using the 9P2000 protocol, which in turn is derived from the plan 9 operating system. As such, there are also libraries such as ruby-ixp which can be used to manipulate the window manager programmatically over 9P. This is technically faster, as no calling of external programs such as '*wmiir* is then needed; however, at the time of writing, ruby-ixp is quite new and isn't used by the ruby-wmii project.
 
 ### Plugins
 
-ruby-wmii's plugins consist of both bar applets and key bindings. The standard-plugin.rb file provides the following plugins: volume, mode, dict, battery-monitor, mpd, cpuinfo, status. These are mostly self-explanatory, except perhaps _mode_, which toggles between wmii catching key combos and passing them to programs directly. It also provides a lot of sensible key bindings and actions, such as being able to tag and rename windows with ease (check out [this](http://www.suckless.org/wiki/wmii/docs/tagging) for more information about tagging in wmii).
+ruby-wmii's plugins consist of both bar applets and key bindings. The standard-plugin.rb file provides the following plugins: volume, mode, dict, battery-monitor, mpd, cpuinfo, status. These are mostly self-explanatory, except perhaps *mode*, which toggles between wmii catching key combos and passing them to programs directly. It also provides a lot of sensible key bindings and actions, such as being able to tag and rename windows with ease (check out [this](http://www.suckless.org/wiki/wmii/docs/tagging) for more information about tagging in wmii).
 
-Bar applets are used by editing _~/.wmii-3/wmiirc-config.rb_, and modifying/adding "use_bar_applet" lines. Traditionally, numbers are used to modify the order in which plugins appear in the bar; I personally prefer to specify them thusly:
+Bar applets are used by editing *~/.wmii-3/wmiirc-config.rb*, and modifying/adding "use_bar_applet" lines. Traditionally, numbers are used to modify the order in which plugins appear in the bar; I personally prefer to specify them thusly:
 
 ```
  order_index = 1

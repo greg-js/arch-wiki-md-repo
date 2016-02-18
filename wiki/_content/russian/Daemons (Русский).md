@@ -1,16 +1,16 @@
-[Демон](https://en.wikipedia.org/wiki/ru:%D0%94%D0%B5%D0%BC%D0%BE%D0%BD_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0) "wikipedia:ru:Демон (программа)") - это программа, которая запускается в фоновом режиме, ожидая событий и предлагая какие-то службы для их выполнения. Хорошим примером демона может служить веб-сервер, ожидающий запроса на доставку страницы, или сервер [SSH](/index.php/Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Secure Shell (Русский)"), ожидающий чьего-нибудь логина. Существуют приложения, действия которых видны, а работа демонов не видна. К ним относятся, например, демон, записывающий системные сообщения в журналы (_syslog_, _metalog_), или демон, держащий время системы точным ([Ntpd](/index.php/Network_Time_Protocol_daemon_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Network Time Protocol daemon (Русский)")), когда ваши вычислительные ресурсы не используются. Для получения дополнительной информации смотрите страницу справочного руководства `man 7 daemon`.
+[Демон](https://en.wikipedia.org/wiki/ru:%D0%94%D0%B5%D0%BC%D0%BE%D0%BD_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0) - это программа, которая запускается в фоновом режиме, ожидая событий и предлагая какие-то службы для их выполнения. Хорошим примером демона может служить веб-сервер, ожидающий запроса на доставку страницы, или сервер [SSH](/index.php/Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Secure Shell (Русский)"), ожидающий чьего-нибудь логина. Существуют приложения, действия которых видны, а работа демонов не видна. К ним относятся, например, демон, записывающий системные сообщения в журналы (*syslog*, *metalog*), или демон, держащий время системы точным ([Ntpd](/index.php/Network_Time_Protocol_daemon_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Network Time Protocol daemon (Русский)")), когда ваши вычислительные ресурсы не используются. Для получения дополнительной информации смотрите страницу справочного руководства `man 7 daemon`.
 
-В Arch Linux демонами управляет [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"). Команда [systemctl](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9E.D1.81.D0.BD.D0.BE.D0.B2.D1.8B_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_systemctl "Systemd (Русский)") используется для управления ими в пользовательском интерфейсе. _systemd_ читает файлы _.service_, которые содержат информацию о том, как и когда запустить связанный демон. Файлы служб хранятся в каталогах `/{etc,usr/lib,run}/systemd/system`. Для получения дополнительной информации смотрите раздел [systemd (Русский)#Использование юнитов](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)").
+В Arch Linux демонами управляет [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"). Команда [systemctl](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9E.D1.81.D0.BD.D0.BE.D0.B2.D1.8B_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_systemctl "Systemd (Русский)") используется для управления ими в пользовательском интерфейсе. *systemd* читает файлы *.service*, которые содержат информацию о том, как и когда запустить связанный демон. Файлы служб хранятся в каталогах `/{etc,usr/lib,run}/systemd/system`. Для получения дополнительной информации смотрите раздел [systemd (Русский)#Использование юнитов](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)").
 
 ## Список демонов
 
 Вот список демонов. Обратите внимание, что любой пакет может обеспечить демоном, так что этот список никогда не будет полным. Пожалуйста, не стесняйтесь добавлять недостающие демоны здесь, в алфавитном порядке. Вы можете иметь пакеты, которые включают другие демоны от [AUR](/index.php/AUR "AUR"). Эти файлы, скорее, будут расположены в `/usr/lib/systemd/system/`.
 
-Столбец _Пакет_ содержит ссылку на ArchWiki страницу для каждого демона (или ссылку на пакет, если такой страницы не существует). Столбец _initscripts_ содержит имя унаследованное скриптом _rc.d_ и столбец _systemd_ содержит имя файла службы [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"). Обратите внимание, что могут быть демоны, специфичные для либо initscript'ов или Systemd, с соответствующей пустой колонкой. Столбец _Описание_ представляет краткое описание, предпочтительно _демона_ (не пакета).
+Столбец *Пакет* содержит ссылку на ArchWiki страницу для каждого демона (или ссылку на пакет, если такой страницы не существует). Столбец *initscripts* содержит имя унаследованное скриптом *rc.d* и столбец *systemd* содержит имя файла службы [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"). Обратите внимание, что могут быть демоны, специфичные для либо initscript'ов или Systemd, с соответствующей пустой колонкой. Столбец *Описание* представляет краткое описание, предпочтительно *демона* (не пакета).
 
 | Пакет | initscripts | systemd | Описание |
 | [acpid](/index.php/Acpid "Acpid") | acpid | acpid.service | Демон для доставки события управления питанием ACPI с поддержкой NETLink. |
-| [alsa](/index.php/Alsa "Alsa") | alsa | _always on_ – alsa-store.service, alsa-restore.service | Сохраняет состояние звуковой карты (например, уровень звука) и восстанавливает его при запуске. |
+| [alsa](/index.php/Alsa "Alsa") | alsa | *always on* – alsa-store.service, alsa-restore.service | Сохраняет состояние звуковой карты (например, уровень звука) и восстанавливает его при запуске. |
 | [at](https://www.archlinux.org/packages/?name=at) | atd | atd.service | Runs jobs queued for later execution. |
 | [Autofs](/index.php/Autofs "Autofs") | autofs | autofs.service | Автоматическое монтирование съемных носителей и сетевых шар (shares), когда они вставлены или доступны. |
 | [Avahi](/index.php/Avahi "Avahi") | avahi-daemon | avahi-daemon.service | Позволяет программам автоматически находить локальные сетевые службы. |
@@ -23,10 +23,10 @@
 freshclamd.service | Антивирус для Unix. |
 | [Connman](/index.php/Connman "Connman") | connmand | connman.service | Менеджер беспроводного доступа в сеть интернет |
 | [Cpupower](/index.php/Cpupower "Cpupower") | cpupower | cpupower.service | Sets [cpufreq](/index.php/Cpufreq "Cpufreq") governor and other parameters on startup. |
- craftbukkit | _not yet implemented_ | Сервер CraftBukkit Minecraft. |
-| [Cron](/index.php/Cron "Cron") | crond | cronie.service (if using [cronie](https://www.archlinux.org/packages/?name=cronie)) or dcron.service (if using [dcron](https://aur.archlinux.org/packages/dcron/)) | Daemon to schedule and time events. The daemon name _crond_ is used by at least two packages, [cronie](https://www.archlinux.org/packages/?name=cronie) and [dcron](https://aur.archlinux.org/packages/dcron/). |
+ craftbukkit | *not yet implemented* | Сервер CraftBukkit Minecraft. |
+| [Cron](/index.php/Cron "Cron") | crond | cronie.service (if using [cronie](https://www.archlinux.org/packages/?name=cronie)) or dcron.service (if using [dcron](https://aur.archlinux.org/packages/dcron/)) | Daemon to schedule and time events. The daemon name *crond* is used by at least two packages, [cronie](https://www.archlinux.org/packages/?name=cronie) and [dcron](https://aur.archlinux.org/packages/dcron/). |
 | [CUPS](/index.php/CUPS "CUPS") | cupsd | org.cups.cupsd.service | Демон системы печати CUPS. |
-| [D-Bus](/index.php/D-Bus "D-Bus") | dbus | _always on_ – dbus.service | Система шины сообщений Freedesktop.org. |
+| [D-Bus](/index.php/D-Bus "D-Bus") | dbus | *always on* – dbus.service | Система шины сообщений Freedesktop.org. |
 | [dante](https://www.archlinux.org/packages/?name=dante) | sockd | sockd.service | A circuit-level SOCKS client/server. |
 | [Deluge](/index.php/Deluge "Deluge") | deluged | deluged.service | Главный демон кросс-платформенного и полнофункциональноко клиента BitTorrent. |
 | deluge-web | deluge-web.service | Демон веб-интерфейса кросс-платформенного и полнофункциональноко клиента BitTorrent. |
@@ -35,7 +35,7 @@ freshclamd.service | Антивирус для Unix. |
 | [Dropbox](/index.php/Dropbox "Dropbox") | dropboxd | dropbox@.service | Cross-platform file synchronisation with version control. |
 | [fail2ban](/index.php/Fail2ban "Fail2ban") | fail2ban | fail2ban.service | Fail2ban scans log files and bans IP addresses that show malicious activity. |
 | [Fan speed control](/index.php/Fan_speed_control "Fan speed control") | fancontrol | fancontrol.service | Демон контроля вентилятора (часть lm_sensors) |
-| [Fbsplash](/index.php/Fbsplash "Fbsplash") | fbsplash | _not yet implemented_ | Графический экран boot splash для пользователя. |
+| [Fbsplash](/index.php/Fbsplash "Fbsplash") | fbsplash | *not yet implemented* | Графический экран boot splash для пользователя. |
 | [FluidSynth](/index.php/FluidSynth "FluidSynth") | fluidsynth | fluidsynth.service | Software synthesizer. |
  ftpd | ftpd.service | inetutils FTP daemon. |
 | [GDM](/index.php/GDM "GDM") | gdm | gdm.service | Экранный менеджер GNOME. |
@@ -76,14 +76,14 @@ NetworkManager-wait-online.service | NetworkManager daemon, provides configurati
 | [Ntop](/index.php/Ntop "Ntop") | ntop | ntop.service | Ntop is a network traffic probe based on libcap. |
 | [OpenNTPD](/index.php/OpenNTPD "OpenNTPD") | openntpd | openntpd.service | Alternative Network Time Protocol daemon (client and server). |
  osspd | osspd.service | OSS Userspace Bridge. |
-| [OpenVPN](/index.php/OpenVPN "OpenVPN") | openvpn | openvpn@.service | One for each VPN configuration file saved like `/etc/openvpn/_<profile-name>_.conf` |
+| [OpenVPN](/index.php/OpenVPN "OpenVPN") | openvpn | openvpn@.service | One for each VPN configuration file saved like `/etc/openvpn/*<profile-name>*.conf` |
 | [OSS](/index.php/OSS "OSS") | oss | oss.service | Open Sound System. Alternative to [ALSA](/index.php/ALSA "ALSA"). |
 | [Pdnsd](/index.php/Pdnsd "Pdnsd") | pdnsd | pdnsd.service | Proxy DNS server with permanent caching. |
 | [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) | php-fpm | php-fpm.service | FastCGI Process Manager for PHP. |
 | [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") | postgresql | postgresql.service | PostgreSQL database server. |
 | [Postfix](/index.php/Postfix "Postfix") | postfix | postfix.service | Mail server, which is an alternative to using [sendmail](/index.php/Sendmail "Sendmail"). |
 | [Postgrey](/index.php/Postgrey "Postgrey") | postgrey | postgrey.service | Greylisting service, used with Postfix |
-| [powernowd](/index.php/Powernowd "Powernowd") | powernowd | _not yet implemented_ | To adjust speed of CPU depending on system load. |
+| [powernowd](/index.php/Powernowd "Powernowd") | powernowd | *not yet implemented* | To adjust speed of CPU depending on system load. |
 | [PPTP server](/index.php/PPTP_server "PPTP server") | pptpd | pptpd.service | A Virtual Private Network (VPN) server using the Point-to-Point Tunneling Protocol (PPTP). |
 | [pppd](/index.php/Pppd "Pppd") | pppd | ppp@.service | A daemon which implements the Point-to-Point Protocol for dial-up networking. |
 | [preload](/index.php/Preload "Preload") | preload | preload.service | Makes applications run faster by prefetching binaries and shared objects. |
@@ -105,14 +105,14 @@ winbindd.service | Служба Файлов и принтеров для кли
 | [SMART](/index.php/SMART "SMART") | smartd | smartd.service | Self-Monitoring, Analysis, and Reporting Technology (S.M.A.R.T.) Hard Disk Monitoring. |
 | [smbnetfs](/index.php/Samba#smbnetfs "Samba") | smbnetfs | smbnetfs.service | Automatically mount Samba/Microsoft network shares. |
 | [snmpd](/index.php/Snmpd "Snmpd") | snmpd | snmpd.service | A suite of applications used to implement SNMP |
- soundmodem | _not yet implemented_ | Multiplatform Soundcard Packet Radio Modem |
+ soundmodem | *not yet implemented* | Multiplatform Soundcard Packet Radio Modem |
 | [spamassassin](https://www.archlinux.org/packages/?name=spamassassin) | spamd | spamassassin.service | e-mail spam filtering service. |
 | [openssh](/index.php/Openssh "Openssh") | sshd | sshd.service | OpenSSH (secure shell) daemon. |
  stunnel | stunnel.service | Allows encrypting arbitrary TCP connections inside SSL. |
  svnserve | svnserve.service | Subversion server. |
 | [syslog-ng](/index.php/Syslog-ng "Syslog-ng") | syslog-ng | syslog-ng.service | System logger next generation. |
 | [Timidity](/index.php/Timidity "Timidity") | timidity++ | timidity.service | Software synthesizer for MIDI. |
-| [Tinc](/index.php/Tinc "Tinc") |  ? | tincd@.service | One for each configuration directory like /etc/tinc/_<vpnname>_/ |
+| [Tinc](/index.php/Tinc "Tinc") |  ? | tincd@.service | One for each configuration directory like /etc/tinc/*<vpnname>*/ |
 | [Tor](/index.php/Tor "Tor") | tor | tor.service | Onion routing for anonymous communication. |
 | [Transmission](/index.php/Transmission "Transmission") | transmissiond | transmission.service | Демон BitTorrent. |
 | [Ufw](/index.php/Ufw "Ufw") | ufw | ufw.service | Uncomplicated FireWall. |

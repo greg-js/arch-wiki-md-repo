@@ -76,14 +76,14 @@ Sup 目前專注於 MUA (mail user agent) 之功能且不自行處理下載郵�
 備份電子郵件非常重要。爲了保證您不會弄丟任何東西，第一要先備份來源，像是 mbox 檔案和 maildir 目錄，然後執行：
 
 ```
-$ sup-dump > _檔案名稱_
+$ sup-dump > *檔案名稱*
 
 ```
 
 這將會備份所有訊息狀態到文字檔案內。要從文字檔案內復原您的訊息狀態，只要執行：
 
 ```
-$ sup-sync [<來源>+] --restored --restore _檔案名稱_
+$ sup-sync [<來源>+] --restored --restore *檔案名稱*
 
 ```
 

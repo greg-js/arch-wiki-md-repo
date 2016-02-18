@@ -23,7 +23,7 @@ Arch64 je již teď plně připravený pro každodenní použití na serveru i n
 
 ## Znamená 64-bitová architektura znatelné zvýšení rychlosti prostředí?
 
-Pro aplikace, které využívají 64-bitové registry CPU (velké databáze atp.) to platí ve většině případů. Některé multimediální aplikace poběží také znatelně rychleji. Pokud víte o aplikaci, o které je známo, že je rychlejší, když používá rozšíření SSE3, můžete si balíček vytvořit sami. My kompilujeme _pouze_ s podporou SSE2 (from march=x86_64) a -O2 optimalizacemi. Pro další informace si přečtěte [http://forums.gentoo.org/viewtopic.php?t=221045](http://forums.gentoo.org/viewtopic.php?t=221045) nebo [http://www.thejemreport.com/mambo/content/view/74/74/](http://www.thejemreport.com/mambo/content/view/74/74/) .
+Pro aplikace, které využívají 64-bitové registry CPU (velké databáze atp.) to platí ve většině případů. Některé multimediální aplikace poběží také znatelně rychleji. Pokud víte o aplikaci, o které je známo, že je rychlejší, když používá rozšíření SSE3, můžete si balíček vytvořit sami. My kompilujeme *pouze* s podporou SSE2 (from march=x86_64) a -O2 optimalizacemi. Pro další informace si přečtěte [http://forums.gentoo.org/viewtopic.php?t=221045](http://forums.gentoo.org/viewtopic.php?t=221045) nebo [http://www.thejemreport.com/mambo/content/view/74/74/](http://www.thejemreport.com/mambo/content/view/74/74/) .
 
 ## Jak mohu nahlásit chybu?
 

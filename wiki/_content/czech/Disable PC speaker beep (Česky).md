@@ -40,4 +40,4 @@ $ amixer set 'PC Speaker' 0% mute
 
 ```
 
-Další informace najdeš v těchto _manuálových stránkách_: _xset(1), setterm(1), readline(3)_
+Další informace najdeš v těchto *manuálových stránkách*: *xset(1), setterm(1), readline(3)*

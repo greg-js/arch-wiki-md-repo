@@ -12,11 +12,11 @@ Las siguientes son variables que pueden ser encontradas en el archivo `PKGBUILD`
 
 	`pkgname` 
 
-	El nombre del paquete. Debe consistir de **caracteres alfanuméricos y guiones('-')** y todas las letras deben estar en **minúsculas**. Por el bien de la consistencia el nombre del `pkgname` debe coincidir con el nombre del archivo comprimido del código fuente del software que se esta empaquetando. Por ejemplo, si el software que se esta empaquetando es `foobar-2.5.tar.gz`, el nombre del `pkgname` debe ser _foobar_. En el directorio de trabajo el nombre del `PKGBUILD` también debe coincidir con el `pkgname`.
+	El nombre del paquete. Debe consistir de **caracteres alfanuméricos y guiones('-')** y todas las letras deben estar en **minúsculas**. Por el bien de la consistencia el nombre del `pkgname` debe coincidir con el nombre del archivo comprimido del código fuente del software que se esta empaquetando. Por ejemplo, si el software que se esta empaquetando es `foobar-2.5.tar.gz`, el nombre del `pkgname` debe ser *foobar*. En el directorio de trabajo el nombre del `PKGBUILD` también debe coincidir con el `pkgname`.
 
 	`pkgver` 
 
-	La versión del paquete . El valor debe ser el mismo que el del autor del software que se esta empaquetando. Puede contener letras, números y puntos pero no puede contener guiones medios ('-'). si el autor del paquete utiliza guiones medios en su sistema de versiones, remplazelos con un guion bajo ('_'). por ejemplo, si la versión de un paquete es _0.99-10_, deberá ser cambiada a _0.99_10_. si la variable pkgver es utilizada mas tarde en el PKGBUILD entonces el guion bajo puede ser sustituido fácilmente por un guion medio, por ejemplo: source=($pkgname-${pkgver//_/-}.tar.gz)
+	La versión del paquete . El valor debe ser el mismo que el del autor del software que se esta empaquetando. Puede contener letras, números y puntos pero no puede contener guiones medios ('-'). si el autor del paquete utiliza guiones medios en su sistema de versiones, remplazelos con un guion bajo ('_'). por ejemplo, si la versión de un paquete es *0.99-10*, deberá ser cambiada a *0.99_10*. si la variable pkgver es utilizada mas tarde en el PKGBUILD entonces el guion bajo puede ser sustituido fácilmente por un guion medio, por ejemplo: source=($pkgname-${pkgver//_/-}.tar.gz)
 
 	`pkgrel` 
 
@@ -99,26 +99,26 @@ Las siguientes son variables que pueden ser encontradas en el archivo `PKGBUILD`
 
 	Esta lista permite sobre escribir algunos de los comportamientos por default de `makepkg`.para establecer una opción se debe incluir el nombre de la opción en la lista. Para revertir a el comportamiento default se debe agregar un **!** al inicio de la opción. Las siguientes opciones pueden ser agregadas a la lista:
 
-*   _**strip**_ - Tira de los símbolos de binarios y bibliotecas.
-*   _**docs**_ - Salva los directorios `/doc`
-*   _**libtool**_ – Deja los archivos de libtool (`.la`) en los paquetes.
-*   _**emptydirs**_ - Abandona los directorios vacíos de los paquetes
-*   _**zipman**_ – Comprime las paginas _man_ y _info_con _gzip_.
-*   _**ccache**_ - permite el uso de `ccache` durante la compilación. Es mas útil si no esta activada con algunos paquetes que tienen conflicto de construir con `!ccache` activo.
-*   _**distcc**_ - permite el uso de `distcc` durante la compilación. Es mas útil si no esta activada con algunos paquetes que tienen conflicto de construir con `distcc` activo.
-*   _**makeflags**_ - Permite el uso de `makeflags` especificadas por el usuario durante la compilación. Es mas útil si no esta activada con algunos paquetes que tienen conflicto de construir con `makeflags` activo.
-*   _**force**_ - Forza al paquete a ser actualizado con una operación de actualización de pacman, incluso si el numero de versión no indica una actualización de versión. Esto es útil cuando el el esquema de versiones ha cambiado (o es alfabético) o que un downgrade es requerido por razones de seguridad.
+*   ***strip*** - Tira de los símbolos de binarios y bibliotecas.
+*   ***docs*** - Salva los directorios `/doc`
+*   ***libtool*** – Deja los archivos de libtool (`.la`) en los paquetes.
+*   ***emptydirs*** - Abandona los directorios vacíos de los paquetes
+*   ***zipman*** – Comprime las paginas *man* y *info*con *gzip*.
+*   ***ccache*** - permite el uso de `ccache` durante la compilación. Es mas útil si no esta activada con algunos paquetes que tienen conflicto de construir con `!ccache` activo.
+*   ***distcc*** - permite el uso de `distcc` durante la compilación. Es mas útil si no esta activada con algunos paquetes que tienen conflicto de construir con `distcc` activo.
+*   ***makeflags*** - Permite el uso de `makeflags` especificadas por el usuario durante la compilación. Es mas útil si no esta activada con algunos paquetes que tienen conflicto de construir con `makeflags` activo.
+*   ***force*** - Forza al paquete a ser actualizado con una operación de actualización de pacman, incluso si el numero de versión no indica una actualización de versión. Esto es útil cuando el el esquema de versiones ha cambiado (o es alfabético) o que un downgrade es requerido por razones de seguridad.
 
 	`install` 
 
 	El nombre del script de instalación que sera incluido en el paquete. Pacman tiene la habilidad de almacenar y ejecutar un script especifico del paquete cuando instala, remueve o actualiza un paquete. El script contiene las siguientes funciones que se ejecutan en diferentes tiempos:
 
-*   _**pre_install**_ - Este script es ejecutado antes de extraer los archivos de instalación. Un argumento es pasado: nueva versión del paquete.
-*   _**post_install**_ - El script es ejecutado después de que los archivos son extraídos. Un argumento es pasado: nueva versión del paquete.
-*   _**pre_upgrade**_ - Este script es ejecutado antes de extraer los archivos de instalación. Dos nuevos argumentos son pasados en el siguiente orden: nueva versión del paquete, vieja versión del paquete.
-*   _**post_upgrade**_ - El script es ejecutado después de que los archivos son extraídos. Dos nuevos argumentos son pasados en el siguiente orden: nueva versión del paquete, vieja versión del paquete.
-*   _**pre_remove**_ - El script es ejecutado antes de que los archivos sean removidos. Un argumento es pasado: vieja versión del paquete.
-*   _**post_remove**_ – El script es ejecutado después de remover paquetes. Un argumento es pasado: vieja versión del paquete.
+*   ***pre_install*** - Este script es ejecutado antes de extraer los archivos de instalación. Un argumento es pasado: nueva versión del paquete.
+*   ***post_install*** - El script es ejecutado después de que los archivos son extraídos. Un argumento es pasado: nueva versión del paquete.
+*   ***pre_upgrade*** - Este script es ejecutado antes de extraer los archivos de instalación. Dos nuevos argumentos son pasados en el siguiente orden: nueva versión del paquete, vieja versión del paquete.
+*   ***post_upgrade*** - El script es ejecutado después de que los archivos son extraídos. Dos nuevos argumentos son pasados en el siguiente orden: nueva versión del paquete, vieja versión del paquete.
+*   ***pre_remove*** - El script es ejecutado antes de que los archivos sean removidos. Un argumento es pasado: vieja versión del paquete.
+*   ***post_remove*** – El script es ejecutado después de remover paquetes. Un argumento es pasado: vieja versión del paquete.
 
 **Tip:** un prototipo del archivo `.install` esta guardado en `/usr/share/pacman/proto.install`.
 

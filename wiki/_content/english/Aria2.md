@@ -1,6 +1,6 @@
 From the project [home page](http://aria2.sourceforge.net/):
 
-	_aria2 is a lightweight multi-protocol & multi-source command-line download utility. It supports [HTTP](https://en.wikipedia.org/wiki/HTTP "wikipedia:HTTP")/[HTTPS](https://en.wikipedia.org/wiki/HTTPS "wikipedia:HTTPS"), [FTP](https://en.wikipedia.org/wiki/FTP "wikipedia:FTP"), [BitTorrent](https://en.wikipedia.org/wiki/BitTorrent_(protocol) "wikipedia:BitTorrent (protocol)") and [Metalink](https://en.wikipedia.org/wiki/Metalink "wikipedia:Metalink"). aria2 can be manipulated via built-in [JSON-RPC](https://en.wikipedia.org/wiki/JSON-RPC "wikipedia:JSON-RPC") and [XML-RPC](https://en.wikipedia.org/wiki/XML-RPC "wikipedia:XML-RPC") interfaces._
+	*aria2 is a lightweight multi-protocol & multi-source command-line download utility. It supports [HTTP](https://en.wikipedia.org/wiki/HTTP and [Metalink](https://en.wikipedia.org/wiki/Metalink "wikipedia:Metalink"). aria2 can be manipulated via built-in [JSON-RPC](https://en.wikipedia.org/wiki/JSON-RPC "wikipedia:JSON-RPC") and [XML-RPC](https://en.wikipedia.org/wiki/XML-RPC "wikipedia:XML-RPC") interfaces.*
 
 ## Contents
 
@@ -187,7 +187,7 @@ summary-interval=120
 
 	`http-user=USER_NAME`
 
-	Set HTTP [username](https://en.wikipedia.org/wiki/User_(computing) "wikipedia:User (computing)") as USER_NAME for password-protected logins. This affects all [URIs](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier "wikipedia:Uniform Resource Identifier").
+	Set HTTP [username](https://en.wikipedia.org/wiki/User_(computing) as USER_NAME for password-protected logins. This affects all [URIs](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier "wikipedia:Uniform Resource Identifier").
 
 	`http-passwd=PASSWORD`
 
@@ -392,7 +392,6 @@ Gains in application response can be gleaned by removing unused features and pro
 Save the following [systemd](/index.php/Systemd "Systemd") service file, adjust username and config path according to your setup. Ensure your config is set to deamonize (use `daemon=true`).
 
  `/etc/systemd/system/aria2c.service` 
-
 ```
 [Unit]
 Description=Aria2c download manager
@@ -426,7 +425,6 @@ You can use whatever you want, like **-UMozilla/5.0** and so on.
 You can use **Aria2** instead of curl to download source files, just change the `DLAGENTS` variable as follows:
 
  `/etc/makepkg.conf` 
-
 ```
 [...]
 DLAGENTS=('ftp::/usr/bin/aria2c -UWget -s4 %u -o %o'

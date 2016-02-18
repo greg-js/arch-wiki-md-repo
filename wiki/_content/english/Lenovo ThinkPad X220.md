@@ -45,7 +45,6 @@ To set the speed and sensitivity temporarily, run as root:
 The following udev rule makes these changes permanent:
 
  `/etc/udev/rules.d/82-trackpoint.rules` 
-
 ```
 # Set the trackpoint speed and sensitivity
 SUBSYSTEM=="serio", DRIVERS=="psmouse", ATTR{sensitivity}="200", ATTR{speed}="120"
@@ -54,7 +53,6 @@ SUBSYSTEM=="serio", DRIVERS=="psmouse", ATTR{sensitivity}="200", ATTR{speed}="12
 Alternatively an udev add-rule can be used, if the changes are not applied correctly. This can happen if the trackpoint device was not instantiated yet. This solution was posted here: [thinkpad-forum.de](http://thinkpad-forum.de/threads/160979-gel%C3%B6st-Trackpoint-Sensitivit%C3%A4t-Geschwindigkeit-ArchLinux?p=1621976&viewfull=1#post1621976)
 
  `/etc/udev/rules.d/82-trackpoint.rules` 
-
 ```
 # Set the trackpoint speed and sensitivity
 ACTION=="add",SUBSYSTEM=="input",ATTR{name}=="TPPS/2 IBM TrackPoint",ATTR{device/sensitivity}="240",ATTR{device/speed}="200"

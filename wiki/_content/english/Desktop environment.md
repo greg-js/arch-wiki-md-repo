@@ -1,4 +1,4 @@
-A [desktop environment](https://en.wikipedia.org/wiki/Desktop_environment "wikipedia:Desktop environment") provides a _complete_ graphical user interface (GUI) for a system by bundling together a variety of components written using a common widget toolkit and set of libraries.
+A [desktop environment](https://en.wikipedia.org/wiki/Desktop_environment "wikipedia:Desktop environment") provides a *complete* graphical user interface (GUI) for a system by bundling together a variety of components written using a common widget toolkit and set of libraries.
 
 ## Contents
 
@@ -37,7 +37,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 	[http://www.enlightenment.org/](http://www.enlightenment.org/) || [enlightenment](https://www.archlinux.org/packages/?name=enlightenment)
 
-*   **[GNOME](/index.php/GNOME "GNOME")** — The GNOME desktop environment is an attractive and intuitive desktop with both a modern (_GNOME_) and a classic (_GNOME Classic_) session.
+*   **[GNOME](/index.php/GNOME "GNOME")** — The GNOME desktop environment is an attractive and intuitive desktop with both a modern (*GNOME*) and a classic (*GNOME Classic*) session.
 
 	[http://www.gnome.org/gnome-3/](http://www.gnome.org/gnome-3/) || [gnome](https://www.archlinux.org/groups/x86_64/gnome/)
 
@@ -121,7 +121,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 ## Comparison of desktop environments
 
-_This section attempts to draw a comparison between popular desktop environments. Note that first-hand experience is the only effective way to truly evaluate whether a desktop environment best suits your needs._
+*This section attempts to draw a comparison between popular desktop environments. Note that first-hand experience is the only effective way to truly evaluate whether a desktop environment best suits your needs.*
 
 See also [Wikipedia:Comparison of X Window System desktop environments](https://en.wikipedia.org/wiki/Comparison_of_X_Window_System_desktop_environments "wikipedia:Comparison of X Window System desktop environments").
 
@@ -370,13 +370,13 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 
 ### Resource use
 
-In terms of system resources, GNOME and KDE are _expensive_ desktop environments. Not only do complete installations consume more disk space than lightweight alternatives (Enlightenment, LXDE, LXQt and Xfce) but also more CPU and memory resources while in use. This is because GNOME and KDE are relatively _full-featured_: they provide the most complete and well-integrated environments.
+In terms of system resources, GNOME and KDE are *expensive* desktop environments. Not only do complete installations consume more disk space than lightweight alternatives (Enlightenment, LXDE, LXQt and Xfce) but also more CPU and memory resources while in use. This is because GNOME and KDE are relatively *full-featured*: they provide the most complete and well-integrated environments.
 
-Enlightenment, LXDE, LXQt and Xfce, on the other hand, are _lightweight_ desktop environments. They are designed to work well on older or lower-power hardware and generally consume fewer system resources while in use. This is achieved by cutting back on _extra_ features (which some would term _bloat_).
+Enlightenment, LXDE, LXQt and Xfce, on the other hand, are *lightweight* desktop environments. They are designed to work well on older or lower-power hardware and generally consume fewer system resources while in use. This is achieved by cutting back on *extra* features (which some would term *bloat*).
 
 ## Custom environments
 
-Desktop environments represent the simplest means of installing a _complete_ graphical environment. However, users are free to build and customize their graphical environment in any number of ways if none of the popular desktop environments meet their requirements. Generally, building a custom environment involves selection of a suitable [window manager](/index.php/Window_manager "Window manager"), a [taskbar](/index.php/List_of_applications#Taskbars_.2F_panels_.2F_docks "List of applications") and a number of applications (a minimalist selection usually includes a [terminal emulator](/index.php/Terminal_emulator "Terminal emulator"), [file manager](/index.php/List_of_applications#File_managers "List of applications"), and [text editor](/index.php/Text_editor "Text editor")).
+Desktop environments represent the simplest means of installing a *complete* graphical environment. However, users are free to build and customize their graphical environment in any number of ways if none of the popular desktop environments meet their requirements. Generally, building a custom environment involves selection of a suitable [window manager](/index.php/Window_manager "Window manager"), a [taskbar](/index.php/List_of_applications#Taskbars_.2F_panels_.2F_docks "List of applications") and a number of applications (a minimalist selection usually includes a [terminal emulator](/index.php/Terminal_emulator "Terminal emulator"), [file manager](/index.php/List_of_applications#File_managers "List of applications"), and [text editor](/index.php/Text_editor "Text editor")).
 
 Other applications that are usually provided by desktop environments are:
 

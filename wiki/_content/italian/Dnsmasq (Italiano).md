@@ -66,7 +66,6 @@ prepend domain-name-servers 127.0.0.1;
 NetworkManager ha la capacità di avviare `dnsmasq` dal suo file di configurazione. Aggiungere l'opzione `dns=dnsmasq` al file `NetworkManager.conf` (nella sezione `[main]` del file) e togliere dnsmasq dall'avvio automatico:
 
  `/etc/NetworkManager/NetworkManager.conf` 
-
 ```
 [main]
 plugins=keyfile
@@ -90,13 +89,13 @@ Dopo l'aggiornamento di [NetworkManager](/index.php/NetworkManager_(Italiano) "N
 La prima opzione potrebbe essere l'aggiunta di uno script al dispatcher di NetworkManager di preporre localhost in `resolv.conf`:
 
  `/etc/NetworkManager/dispatcher.d/localhost-prepend` 
-
 ```
 #!/bin/bash                                       
 # Prepone localhost in resolv.conf per dnsmasq
 
 if [[ ! $(grep 127.0.0.1 /etc/resolv.conf) ]]; then
-  sed -i '1s|^|nameserver 127.0.0.1\n|' /etc/resolv.conf
+  sed -i '1s|^|nameserver 127.0.0.1
+|' /etc/resolv.conf
 fi
 ```
 

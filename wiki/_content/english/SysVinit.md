@@ -43,7 +43,6 @@ Additional init scripts are available at [arch-rcscripts](https://bitbucket.org/
 init is always process 1 and, other than managing some swap space, is the parent process to **all** other processes. You can get an idea of where init lies in the process hierarchy of your system with `pstree`:
 
  `$ pstree -Ap` 
-
 ```
 init(1)-+-acpid(3432)
         |-crond(3423)
@@ -202,18 +201,18 @@ Initscripts uses rc.d scripts to used to control the starting, stopping and rest
 ### Available functions
 
 *   There are some functions provided by `/etc/rc.d/functions`:
-    *   `stat_busy "_message_"`: set status _busy_ for printed message (e.g. Starting daemon [BUSY])
-    *   `stat_done`: set status _done_ (e.g. Starting daemon [DONE])
-    *   `stat_fail`: set status _failed_ (e.g. Starting daemon [FAILED])
-    *   `get_pid _program_`: get PID of the program
-    *   `ck_pidfile _PID-file_ _program_`: check whether PID-file is still valid for the program (e.g. ck_pidfile /var/run/daemon.pid daemon || rm -f /var/run/daemon.pid)
-    *   `[add|rm]_daemon _program_`: add/remove program to running daemons (stored in `/run/daemons/`)
+    *   `stat_busy "*message*"`: set status *busy* for printed message (e.g. Starting daemon [BUSY])
+    *   `stat_done`: set status *done* (e.g. Starting daemon [DONE])
+    *   `stat_fail`: set status *failed* (e.g. Starting daemon [FAILED])
+    *   `get_pid *program*`: get PID of the program
+    *   `ck_pidfile *PID-file* *program*`: check whether PID-file is still valid for the program (e.g. ck_pidfile /var/run/daemon.pid daemon || rm -f /var/run/daemon.pid)
+    *   `[add|rm]_daemon *program*`: add/remove program to running daemons (stored in `/run/daemons/`)
 
 Full list of functions is much longer and most possibilities (like way to control whether or not non-root users can launch daemon) are still undocumented and can be learned only from `/etc/rc.d/functions` source. See also `man rc.d`.
 
 ### Example
 
-The following is an example for _crond_. Look in `/etc/rc.d` for greater variety.
+The following is an example for *crond*. Look in `/etc/rc.d` for greater variety.
 
 The configuration file:
 
@@ -222,7 +221,6 @@ The configuration file:
 The actual script:
 
  `/etc/rc.d/crond` 
-
 ```
 #!/bin/bash
 
@@ -274,12 +272,12 @@ esac
 
 **Note:**
 
-*   [systemd](https://www.archlinux.org/packages/?name=systemd) and [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) are both installed by default on installation media newer than [2012-10-13](https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/). This section is aimed at Arch Linux installations that still rely on _sysvinit_ and _initscripts_.
+*   [systemd](https://www.archlinux.org/packages/?name=systemd) and [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) are both installed by default on installation media newer than [2012-10-13](https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/). This section is aimed at Arch Linux installations that still rely on *sysvinit* and *initscripts*.
 *   If you are running Arch Linux inside a VPS, please see [Virtual Private Server#Moving your VPS from initscripts to systemd](/index.php/Virtual_Private_Server#Moving_your_VPS_from_initscripts_to_systemd "Virtual Private Server").
 
 ### Considerations before switching
 
-*   Interactive _initscripts_ are not working with _systemd_. In particular, _netcfg-menu_ cannot be used at system start-up ([FS#31377](https://bugs.archlinux.org/task/31377)).
+*   Interactive *initscripts* are not working with *systemd*. In particular, *netcfg-menu* cannot be used at system start-up ([FS#31377](https://bugs.archlinux.org/task/31377)).
 
 ### Supplementary information
 

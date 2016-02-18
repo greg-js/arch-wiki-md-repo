@@ -22,7 +22,7 @@ Se si vuole spegnere il sistema semplicemente premendo il pulsante di accensione
 
 1.  Installare il pacchetto [acpid](/index.php/Acpid "Acpid").
 2.  Aggiungere acpid alla stringa DAEMONS in [rc.conf](/index.php/Rc.conf "Rc.conf").
-3.  Creare un file in _/etc/acpi/events/_ chiamandolo _power_ con il seguente contenuto:
+3.  Creare un file in */etc/acpi/events/* chiamandolo *power* con il seguente contenuto:
 
 ```
 # /etc/acpi/events/power
@@ -75,9 +75,9 @@ In alternativa, è possibile utilizzare `PowerDevil`:
 5.  Selezionare "Shutdown", come azione per "Quando si preme il pulsante di accensione".
 6.  Premere Applica.
 
-**Note:** 1) Con dcop e PowerDevil, il pulsante di accensione funziona _solo_ quando KDE è in esecuzione. Inoltre, KDE ha bisogno di essere avviato da KDM (probabilmente funziona anche quando lanciato da GDM). Non funziona se si avvia KDE con il comando "startx".
+**Note:** 1) Con dcop e PowerDevil, il pulsante di accensione funziona *solo* quando KDE è in esecuzione. Inoltre, KDE ha bisogno di essere avviato da KDM (probabilmente funziona anche quando lanciato da GDM). Non funziona se si avvia KDE con il comando "startx".
 
-**Note:** 2) La configurazione di PowerDevil è _per utente_. Ripetere questi passaggi per ognuno di loro.
+**Note:** 2) La configurazione di PowerDevil è *per utente*. Ripetere questi passaggi per ognuno di loro.
 
 **Todo:** Aggiungere operazioni di configurazione multi-utente.
 
@@ -86,18 +86,18 @@ In alternativa, è possibile utilizzare `PowerDevil`:
 Per **XFCE4.4** cambiare la riga di azione per:
 
 ```
-_action=echo POWEROFF | /usr/lib/xfce4/xfsm-shutdown-helper_
+*action=echo POWEROFF | /usr/lib/xfce4/xfsm-shutdown-helper*
 
 ```
 
 Per **XFCE4.8** cambiare la riga di azione per:
 
 ```
-_action=echo POWEROFF | /usr/lib/xfce4/session/xfsm-shutdown-helper_
+*action=echo POWEROFF | /usr/lib/xfce4/session/xfsm-shutdown-helper*
 
 ```
 
-_**Note:** Per una soluzione più robusta (in caso di frequenti crash del WM o su un PC utilizzato per lo sviluppo o test del software...), si dovrebbe dare un'occhiata a "/usr/src/linux/Documentation/sysrq.txt", che è una funzionalità del kernel utilizzata per qualsiasi lavoro di salvataggio._
+***Note:** Per una soluzione più robusta (in caso di frequenti crash del WM o su un PC utilizzato per lo sviluppo o test del software...), si dovrebbe dare un'occhiata a "/usr/src/linux/Documentation/sysrq.txt", che è una funzionalità del kernel utilizzata per qualsiasi lavoro di salvataggio.*
 
 ## Seconda soluzione
 

@@ -33,7 +33,6 @@ pacman -S deepin deepin-extra
 deepin默认lightdm greeter是lightdm-deepin-greeter，可通过pacman安装，安装后需编辑lightdm.conf:
 
  `/etc/lightdm/lightdm.conf` 
-
 ```
 [SeatDefaults]
 ...
@@ -42,10 +41,9 @@ greeter-session=lightdm-deepin-greeter
 
 ### 使用xinitrc
 
-_查看 [xinitrc](/index.php/Xinitrc "Xinitrc") 页面以获得更多详情._
+*查看 [xinitrc](/index.php/Xinitrc "Xinitrc") 页面以获得更多详情.*
 
  `~/.xinitrc` 
-
 ```
 exec startdde
 

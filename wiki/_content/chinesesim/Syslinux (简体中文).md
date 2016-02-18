@@ -69,7 +69,6 @@ syslinux-install_update脚本将自动安装Syslinux, 复制COM32模块到`/boot
 #### 手工完成安装
 
 **Note:** 若你不知你所使用的分区表是使用什么 (MBR or GPT), 默认一般使用的是MBR分区表。大部分情况下，GPT将使用整个磁盘创建一个特殊的MBR-类型的分区(type 0xEE) ，使用下面命令可显示：
-
 ```
 # fdisk -l /dev/sda
 
@@ -86,7 +85,7 @@ syslinux-install_update脚本将自动安装Syslinux, 复制COM32模块到`/boot
 
 **Note:** If you are trying to rescue an installed system with a live CD, be sure to [chroot](/index.php/Change_root "Change root") into it before executing these commands. If you do not chroot first, you must prepend all file paths (not /dev/ paths) with the mount point.
 
-Make sure you have the _syslinux_ package installed. Then install Syslinux onto your boot partition, which must contain a fat, ext2, ext3, ext4, or btrfs file system.
+Make sure you have the *syslinux* package installed. Then install Syslinux onto your boot partition, which must contain a fat, ext2, ext3, ext4, or btrfs file system.
 
 ```
 # mkdir /boot/syslinux
@@ -351,7 +350,7 @@ Since Syslinux 3.84 vesamenu.c32 supports the "MENU RESOLUTION $WIDTH $HEIGHT" d
 
 ### Chainloading
 
-If you want to chainload other operating systems (such as Windows) or boot loaders, copy (or symlink) the _chain.c32_ module to the syslinux folder (for details, see the instructions in the previous section). Then, create a section in the configuration file:
+If you want to chainload other operating systems (such as Windows) or boot loaders, copy (or symlink) the *chain.c32* module to the syslinux folder (for details, see the instructions in the previous section). Then, create a section in the configuration file:
 
 ```
 LABEL windows
@@ -361,7 +360,7 @@ LABEL windows
 
 ```
 
-_hd0 3_ is the third partition on the first BIOS drive - drives are counted from zero, but partitions are counted from one. For more details about chainloading, see [[1]](http://syslinux.zytor.com/wiki/index.php/Comboot/chain.c32).
+*hd0 3* is the third partition on the first BIOS drive - drives are counted from zero, but partitions are counted from one. For more details about chainloading, see [[1]](http://syslinux.zytor.com/wiki/index.php/Comboot/chain.c32).
 
 If you have [grub2](/index.php/Grub2 "Grub2") installed in your boot partition, you can chainload it by using:
 
@@ -377,7 +376,7 @@ This maybe required for booting from iso images.
 
 ### 使用内存测试 memtest
 
-使用下面的 LABEL章节部分，可加载(需要安装软件包：_memtest86+_，否则不起作用):
+使用下面的 LABEL章节部分，可加载(需要安装软件包：*memtest86+*，否则不起作用):
 
 ```
 LABEL memtest

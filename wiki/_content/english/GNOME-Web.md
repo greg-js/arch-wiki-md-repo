@@ -1,6 +1,6 @@
 Web is the default web browser for [GNOME](https://live.gnome.org/). Web provides a simple and minimalist interface for accessing the internet. Whilst it is developed primarily for GNOME, Web works acceptably in other [desktop environments](/index.php/Desktop_environments "Desktop environments") as well.
 
-**Note:** Web was known as [Epiphany](http://projects.gnome.org/epiphany/) prior to version 3.4\. The application was given new descriptive names, one for each supported language. The name _Epiphany_ is still used in numerous places such as the executable name, some package names, some desktop entries, and some GSettings schemas.
+**Note:** Web was known as [Epiphany](http://projects.gnome.org/epiphany/) prior to version 3.4\. The application was given new descriptive names, one for each supported language. The name *Epiphany* is still used in numerous places such as the executable name, some package names, some desktop entries, and some GSettings schemas.
 
 ## Contents
 
@@ -26,7 +26,7 @@ See [Flash#Flash Player](/index.php/Flash#Flash_Player "Flash").
 
 ### Web Apps
 
-Since version 3.0, Web can add _web app_ launchers to GNOME Shell. To manage and remove them, navigate to `about:applications` in Web.
+Since version 3.0, Web can add *web app* launchers to GNOME Shell. To manage and remove them, navigate to `about:applications` in Web.
 
 ## Troubleshooting
 

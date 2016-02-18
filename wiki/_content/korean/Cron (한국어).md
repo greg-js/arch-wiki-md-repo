@@ -1,6 +1,6 @@
 출처 [Wikipedia](https://en.wikipedia.org/wiki/Cron):
 
-_**cron**은 유닉스 계열 운영 체제의 시간 기반 작업 스케줄러이다. cron을 사용하면 사용자는 명령어나 쉘 스크립트와 같은 작업을 특정 시간이나 날짜에 주기적으로 실행할 수 있도록 일정을 짤 수 있다. 시스템 관리나 작업을 자동화하기 위해 보통 사용된다.[...]_
+***cron**은 유닉스 계열 운영 체제의 시간 기반 작업 스케줄러이다. cron을 사용하면 사용자는 명령어나 쉘 스크립트와 같은 작업을 특정 시간이나 날짜에 주기적으로 실행할 수 있도록 일정을 짤 수 있다. 시스템 관리나 작업을 자동화하기 위해 보통 사용된다.[...]*
 
 ## Contents
 
@@ -51,7 +51,6 @@ Here are two ways to obtain emails from cronie with msmtp:
 1.  Install the [msmtp-mta](https://www.archlinux.org/packages/?name=msmtp-mta) package which effectively creates a symbolic link from `/usr/bin/sendmail` to `/usr/bin/msmtp`. You must then provide a way for msmtp to convert your username into an email address.
     *   Either add a `MAILTO` line to your crontab, like so: `MAILTO=your@email.com` — OR —
     *   add this line to `/etc/msmtprc`: `aliases /etc/aliases` and create `/etc/aliases`:
-
         ```
         your_username: your@email.com
         # Optional:
@@ -59,13 +58,11 @@ Here are two ways to obtain emails from cronie with msmtp:
         ```
 
 2.  [Edit](/index.php/Systemd#Editing_provided_unit_files "Systemd") the `cronie.service` unit. For example, create `/etc/sytemd/system/cronie.service.d/msmtp.conf`:
-
     ```
     [Service]
     ExecStart=
     ExecStart=/usr/bin/crond -n -m '/usr/bin/msmtp -t'
     ```
-
     Note: the empty `ExecStart=` cancels any previous `ExecStart` commands.
 
 #### Example with esmtp
@@ -78,12 +75,11 @@ Here are two ways to obtain emails from cronie with msmtp:
 After installation configure the routing:
 
  `/etc/esmtprc` 
-
 ```
-identity _myself_@myisp.com
+identity *myself*@myisp.com
        hostname mail.myisp.com:25
-       username _"myself"_
-       password _"secret"_
+       username *"myself"*
+       password *"secret"*
        starttls enabled
        default
 mda "/usr/bin/procmail -d %T"
@@ -97,24 +93,24 @@ To test that everything works correctly, create a file `message.txt` with `"test
 From the same directory run:
 
 ```
-$ sendmail _user_name_ < message.txt 
+$ sendmail *user_name* < message.txt 
 
 ```
 
 then:
 
 ```
-$ cat /var/spool/mail/_user_name_
+$ cat /var/spool/mail/*user_name*
 
 ```
 
 You should now see the test message and the time and date it was sent.
 
-The error output of all jobs will now be redirected to `/var/spool/mail/_user_name_`.
+The error output of all jobs will now be redirected to `/var/spool/mail/*user_name*`.
 
 Due to the privileged issue, it is hard to create and send emails to root (e.g. `su -c ""`). You can ask `esmtp` to forward all root's email to an ordinary user with:
 
- `/etc/esmtprc`  `force_mda="_user-name_"` 
+ `/etc/esmtprc`  `force_mda="*user-name*"` 
 **Note:** If the above test didn't work, you may try creating a local configuration in `~/.esmtprc` with the same content.
 
 Run the following command to make sure it has the correct permission:
@@ -123,7 +119,6 @@ Run the following command to make sure it has the correct permission:
 $ chmod 710 ~/.esmtprc
 
 ```
-
 Then repeat the test with `message.txt` exactly as before.
 
 #### Example with opensmtpd
@@ -149,7 +144,7 @@ $ echo test | sendmail user
 
 ```
 
-_user_ can check his/her mail in with any [reader](/index.php/Category:Email_clients "Category:Email clients") able to handle mbox format, or just have a look at the file `/var/spool/mail/_user_`. If everything goes as expected, you can enable opensmtpd for future boots:
+*user* can check his/her mail in with any [reader](/index.php/Category:Email_clients "Category:Email clients") able to handle mbox format, or just have a look at the file `/var/spool/mail/*user*`. If everything goes as expected, you can enable opensmtpd for future boots:
 
 ```
 # systemctl enable smtpd
@@ -206,11 +201,11 @@ The basic format for a crontab is:
 
 ```
 
-*   _minute_ values can be from 0 to 59.
-*   _hour_ values can be from 0 to 23.
-*   _day_of_month_ values can be from 1 to 31.
-*   _month_ values can be from 1 to 12.
-*   _day_of_week_ values can be from 0 to 6, with 0 denoting Sunday.
+*   *minute* values can be from 0 to 59.
+*   *hour* values can be from 0 to 23.
+*   *day_of_month* values can be from 1 to 31.
+*   *month* values can be from 1 to 12.
+*   *day_of_week* values can be from 0 to 6, with 0 denoting Sunday.
 
 Multiple times may be specified with a comma, a range can be given with a hyphen, and the asterisk symbol is a wildcard character. Spaces are used to separate fields. For example, the line:
 
@@ -249,7 +244,7 @@ $ crontab -r
 If a user has a saved crontab and would like to completely overwrite their old crontab, he or she should use:
 
 ```
-$ crontab _saved_crontab_filename_
+$ crontab *saved_crontab_filename*
 
 ```
 
@@ -263,11 +258,11 @@ $ crontab -
 To edit somebody else's crontab, issue the following command as root:
 
 ```
-# crontab -u _username_ -e
+# crontab -u *username* -e
 
 ```
 
-This same format (appending `-u _username_` to a command) works for listing and deleting crontabs as well.
+This same format (appending `-u *username*` to a command) works for listing and deleting crontabs as well.
 
 ## Examples
 
@@ -289,7 +284,7 @@ Similarly,
 
 runs the same job every five minutes on weekdays during the month of January (i.e. at 12:00, 12:05, 12:10, etc.)
 
-As noted in the _Crontab Format_ section, the line:
+As noted in the *Crontab Format* section, the line:
 
 ```
 *0,*5 9-16 * 1-5,9-12 1-5 /home/user/bin/i_love_cron.sh
@@ -303,7 +298,6 @@ Will execute the script `i_love_cron.sh` at five minute intervals from 9 AM to 5
 To use an alternate default editor, define the EDITOR envar it in a shell initialization script ([vim-default-editor](https://aur.archlinux.org/packages/vim-default-editor/) is available in the AUR for vim users). For example:
 
  `/etc/profile.d/nano-default-editor` 
-
 ```
 #!/bin/sh
 

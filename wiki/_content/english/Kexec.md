@@ -1,4 +1,4 @@
-**Kexec** is a system call that enables you to load and boot into another kernel from the currently running kernel. This is useful for kernel developers or other people who need to reboot very quickly without waiting for the whole BIOS boot process to finish. Note that kexec may not work correctly for you due to devices _not_ fully re-initializing when using this method, however this is rarely the case.
+**Kexec** is a system call that enables you to load and boot into another kernel from the currently running kernel. This is useful for kernel developers or other people who need to reboot very quickly without waiting for the whole BIOS boot process to finish. Note that kexec may not work correctly for you due to devices *not* fully re-initializing when using this method, however this is rarely the case.
 
 ## Contents
 
@@ -20,7 +20,6 @@ To install kexec, [install](/index.php/Install "Install") the [kexec-tools](http
 You will need to create a new unit file, `kexec-load@.service`, that will load the specified kernel to be kexec'ed:
 
  `/etc/systemd/system/kexec-load@.service` 
-
 ```
 [Unit]
 Description=load %i kernel into the current kernel

@@ -148,7 +148,7 @@ export QT_IM_MODULE="scim"
 
 #### GNOME, XFCE, LXDE 用户
 
-如果 _export QT_IM_MODULE="scim"_ 无法工作，可以使用 AUR 中的 [scim-bridge](https://aur.archlinux.org/packages/scim-bridge/)。在 2009.02.15 的更新中(scim 1.4.7-1, AUR 中的 scim-bridge 0.4.15-1)下面配置可以在 GNOME, XFCE, LXDE 中工作：
+如果 *export QT_IM_MODULE="scim"* 无法工作，可以使用 AUR 中的 [scim-bridge](https://aur.archlinux.org/packages/scim-bridge/)。在 2009.02.15 的更新中(scim 1.4.7-1, AUR 中的 scim-bridge 0.4.15-1)下面配置可以在 GNOME, XFCE, LXDE 中工作：
 
 ```
 export QT_IM_MODULE="scim-bridge"
@@ -263,7 +263,7 @@ KDE 中需要执行：
 3.  在 **Frontend > X Window** 中点击"Start skim automatically when KDE starts"
 4.  登出并重启 X server (ctrl+alt+del)，重新登录
 
-按键盘 _ctrl+space_ 激活输入法。
+按键盘 *ctrl+space* 激活输入法。
 
 ## 已知问题
 

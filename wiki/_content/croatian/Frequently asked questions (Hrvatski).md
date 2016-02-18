@@ -10,10 +10,10 @@ Osim pitanja ispod, možda ćete pronaći nešto korisno na stranicama [Put Arch
     *   [1.5 Q) Ja sam potpuni GNU/Linux početnik. Bi li probao/la Arch?](#Q.29_Ja_sam_potpuni_GNU.2FLinux_po.C4.8Detnik._Bi_li_probao.2Fla_Arch.3F)
     *   [1.6 Q) Arch requires too much time and effort to install and use. Also, the community keeps telling me to RTFM in so many words.](#Q.29_Arch_requires_too_much_time_and_effort_to_install_and_use._Also.2C_the_community_keeps_telling_me_to_RTFM_in_so_many_words.)
     *   [1.7 Q) Is Arch designed to be used as a server? A desktop? A workstation?](#Q.29_Is_Arch_designed_to_be_used_as_a_server.3F_A_desktop.3F_A_workstation.3F)
-    *   [1.8 Q) I really like Arch, except the development team needs to implement _"feature X"_.](#Q.29_I_really_like_Arch.2C_except_the_development_team_needs_to_implement_.22feature_X.22.)
+    *   [1.8 Q) I really like Arch, except the development team needs to implement *"feature X"*.](#Q.29_I_really_like_Arch.2C_except_the_development_team_needs_to_implement_.22feature_X.22.)
     *   [1.9 Q) When will the new release be made?](#Q.29_When_will_the_new_release_be_made.3F)
     *   [1.10 Q) Is Arch Linux a stable distro? Will I get frequent breakage?](#Q.29_Is_Arch_Linux_a_stable_distro.3F_Will_I_get_frequent_breakage.3F)
-    *   [1.11 Q) What exactly _is_ this 'BSD-style' init framework I keep hearing about?](#Q.29_What_exactly_is_this_.27BSD-style.27_init_framework_I_keep_hearing_about.3F)
+    *   [1.11 Q) What exactly *is* this 'BSD-style' init framework I keep hearing about?](#Q.29_What_exactly_is_this_.27BSD-style.27_init_framework_I_keep_hearing_about.3F)
     *   [1.12 Q) Arch needs more press (i.e. advertisement)](#Q.29_Arch_needs_more_press_.28i.e._advertisement.29)
     *   [1.13 Q) Arch needs more developers](#Q.29_Arch_needs_more_developers)
     *   [1.14 Q) Why is Arch so slow? Programs open slowly or do not run at all!](#Q.29_Why_is_Arch_so_slow.3F_Programs_open_slowly_or_do_not_run_at_all.21)
@@ -26,7 +26,7 @@ Osim pitanja ispod, možda ćete pronaći nešto korisno na stranicama [Put Arch
     *   [2.3 Q) Arch packages need to use a unique naming convention. .pkg.tar.gz and .pkg.tar.xz are too long and/or confusing](#Q.29_Arch_packages_need_to_use_a_unique_naming_convention._.pkg.tar.gz_and_.pkg.tar.xz_are_too_long_and.2For_confusing)
     *   [2.4 Q) Pacman needs a library so other applications can easily access package information](#Q.29_Pacman_needs_a_library_so_other_applications_can_easily_access_package_information)
     *   [2.5 Q) Why does Pacman not have an official GUI front-end?](#Q.29_Why_does_Pacman_not_have_an_official_GUI_front-end.3F)
-    *   [2.6 Q) Pacman needs _"feature X"!_](#Q.29_Pacman_needs_.22feature_X.22.21)
+    *   [2.6 Q) Pacman needs *"feature X"!*](#Q.29_Pacman_needs_.22feature_X.22.21)
     *   [2.7 Q) Arch needs a stable package branch](#Q.29_Arch_needs_a_stable_package_branch)
     *   [2.8 Q) What is the difference between all these repositories?](#Q.29_What_is_the_difference_between_all_these_repositories.3F)
     *   [2.9 Q) I just installed Package X. How do I start it?](#Q.29_I_just_installed_Package_X._How_do_I_start_it.3F)
@@ -66,13 +66,13 @@ Osim pitanja ispod, možda ćete pronaći nešto korisno na stranicama [Put Arch
 *   tražite podršku za bilo koju drugu platformu od x86_64 ili i686.
 *   ne želite koristiti distribuciju sa besplatnim softwareom, kao što je definirano u GNU-u.
 *   vjerujete da se operativni sustav treba sam podesiti, raditi odmah i sadržavati grafičko sučelje za vaš izbor na istalacijskom mediju.
-*   ne želite najnovije, _rolling release_ distribucije kao što je Arch.
+*   ne želite najnovije, *rolling release* distribucije kao što je Arch.
 *   ste zadovoljni sa vašim trenutnim sustavom.
 *   želite operativni sustav koji je namjenjen za druge korisnike.
 
 ### Q) Na kojoj distribuciji se Arch bazira?
 
-**A)** Arch je nezavisno razvijana, napravljena iz nova te ne bazirana na bilo koju drugu, Linux distibucija. Prije pravljenja Archa, Judd Vinet se divio i koristio CRUX, super, minimalističku distribuciju koju je napravio Per Lidén. S originalnom inspiracijom sa CRUX-a, Arch je napravljen iz nova, pa je tada _pacman_ kodiran u C programskom jeziku.
+**A)** Arch je nezavisno razvijana, napravljena iz nova te ne bazirana na bilo koju drugu, Linux distibucija. Prije pravljenja Archa, Judd Vinet se divio i koristio CRUX, super, minimalističku distribuciju koju je napravio Per Lidén. S originalnom inspiracijom sa CRUX-a, Arch je napravljen iz nova, pa je tada *pacman* kodiran u C programskom jeziku.
 
 ### Q) Ja sam potpuni GNU/Linux početnik. Bi li probao/la Arch?
 
@@ -80,7 +80,7 @@ Osim pitanja ispod, možda ćete pronaći nešto korisno na stranicama [Put Arch
 
 Ako ste početnik i želite koristiti Arch, smatrajte se upozorenim da ćete biti spremni odvojiti znatno vremena za učenje novog sustava i morat ćete prihvatiti činjenicu da je Arch napravljen sa 'uradi sam' principom na umu. Korisnik je taj koji gradi sustav i kontrolira kakav će biti. Prije no što nešto pitate, molimo da malo istražujete - tražite na Google-u, tražite forume (čitate prethodna česta pitanja (FAQ)) i pretražujete nevjerovatno napisanu Arch Wiki dokumentaciju.
 
-_Postoji razlog što vam su ovi resursi i informacije dostupni._ Tisuće _volontiranih_ sati je potrošeno da biste vi dobili najbolje informacije.
+*Postoji razlog što vam su ovi resursi i informacije dostupni.* Tisuće *volontiranih* sati je potrošeno da biste vi dobili najbolje informacije.
 
 Preporučeno za čitanje: [Vodič za početnike](/index.php/Beginners%27_Guide_(Hrvatski) "Beginners' Guide (Hrvatski)")
 
@@ -90,11 +90,11 @@ Preporučeno za čitanje: [Vodič za početnike](/index.php/Beginners%27_Guide_(
 
 ### Q) Is Arch designed to be used as a server? A desktop? A workstation?
 
-**A)** Arch is not designed for any particular type of use. Rather, it is designed for a particular type of _user_. Arch targets competent users who enjoy its do-it-yourself nature, and who further exploit it to shape the system to fit their unique needs. Therefore, in the hands of its target user base, Arch can be used for virtually any purpose. Many use Arch on both their desktops and workstations. And of course, archlinux.org runs on Arch.
+**A)** Arch is not designed for any particular type of use. Rather, it is designed for a particular type of *user*. Arch targets competent users who enjoy its do-it-yourself nature, and who further exploit it to shape the system to fit their unique needs. Therefore, in the hands of its target user base, Arch can be used for virtually any purpose. Many use Arch on both their desktops and workstations. And of course, archlinux.org runs on Arch.
 
-### Q) I really like Arch, except the development team needs to implement _"feature X"_.
+### Q) I really like Arch, except the development team needs to implement *"feature X"*.
 
-**A)** Before going further, did you read [The Arch Way](/index.php/The_Arch_Way "The Arch Way")? Have you provided the feature/solution? Does it conform to the Arch philosophy of _minimalism_ and _code-correctness over convenience_? Get involved, contribute your code/solution to the community. If it is well regarded by the community and development team, perhaps it will be merged. The Arch community thrives on contribution and sharing of code and tools.
+**A)** Before going further, did you read [The Arch Way](/index.php/The_Arch_Way "The Arch Way")? Have you provided the feature/solution? Does it conform to the Arch philosophy of *minimalism* and *code-correctness over convenience*? Get involved, contribute your code/solution to the community. If it is well regarded by the community and development team, perhaps it will be merged. The Arch community thrives on contribution and sharing of code and tools.
 
 ### Q) When will the new release be made?
 
@@ -106,13 +106,13 @@ For this same reason, new Arch Linux releases are not typically full of new and 
 
 ### Q) Is Arch Linux a stable distro? Will I get frequent breakage?
 
-**A)** The short answer is: It is largely as stable as _you_ make it.
+**A)** The short answer is: It is largely as stable as *you* make it.
 
-_You_ assemble your own Arch system, atop the simple base environment, and _you_ control system upgrades. Obviously, a larger, more complicated system incorporating multitudes of customized packages, and a plethora of toolkits and desktop environments would be more likely to experience configuration issues due to upstream changes than a slimmer, more simple system would. Arch is targeted at capable, proactive users. General UNIX competence and good system maintenance and upgrade practices also play a large role in system stability. Also recall that Arch packages are predominantly unpatched, so most application issues are inherently upstream.
+*You* assemble your own Arch system, atop the simple base environment, and *you* control system upgrades. Obviously, a larger, more complicated system incorporating multitudes of customized packages, and a plethora of toolkits and desktop environments would be more likely to experience configuration issues due to upstream changes than a slimmer, more simple system would. Arch is targeted at capable, proactive users. General UNIX competence and good system maintenance and upgrade practices also play a large role in system stability. Also recall that Arch packages are predominantly unpatched, so most application issues are inherently upstream.
 
-Therefore, it is _the user_ who is ultimately responsible for the stability of his own rolling release system. The user decides when to upgrade, and merges necessary changes when required. If the user reaches out to the community for help, it is often provided in a timely manner. The difference between Arch and other distributions in this regard is that Arch is truly a 'do-it-yourself' distro; complaints of breakage are misguided and unproductive, since upstream changes are not the responsibility of Arch devs.
+Therefore, it is *the user* who is ultimately responsible for the stability of his own rolling release system. The user decides when to upgrade, and merges necessary changes when required. If the user reaches out to the community for help, it is often provided in a timely manner. The difference between Arch and other distributions in this regard is that Arch is truly a 'do-it-yourself' distro; complaints of breakage are misguided and unproductive, since upstream changes are not the responsibility of Arch devs.
 
-### Q) What exactly _is_ this 'BSD-style' init framework I keep hearing about?
+### Q) What exactly *is* this 'BSD-style' init framework I keep hearing about?
 
 **A)** Part of BSD's heritage is the simple init framework that it has incorporated. The main difference between a BSD init and a SysV init is that Arch's BSD-style init uses a single line in a single text file, `/etc/rc.conf`, to point to scripts within a single directory, `/etc/rc.d/`, for controlling all system services, regardless of runlevel.
 
@@ -143,7 +143,6 @@ Many new users notice how the Linux kernel handles memory differently than they 
 Perhaps the most common culprit of this confusion is the `free` command:
 
  `$ free -m` 
-
 ```
              total       used       free     shared    buffers     cached
 Mem:          1009        741        267          0        104        359
@@ -175,7 +174,7 @@ Example:
 
 ### Q) I've found an error with Package X. What should I do?
 
-**A)** First, you need to figure out if this error is something the Arch team can fix. Sometimes it's not (e.g. Firefox crashes may be the fault of the Mozilla team); this is called an _upstream error_. If it is an Arch problem, there is a series of steps you can take:
+**A)** First, you need to figure out if this error is something the Arch team can fix. Sometimes it's not (e.g. Firefox crashes may be the fault of the Mozilla team); this is called an *upstream error*. If it is an Arch problem, there is a series of steps you can take:
 
 1.  Search the forums for information. See if anyone else has noticed it.
 2.  Post a [bug report](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") with detailed information at [https://bugs.archlinux.org](https://bugs.archlinux.org).
@@ -193,7 +192,7 @@ Example:
 
 **A)** Please read [The Arch Way](/index.php/The_Arch_Way "The Arch Way") and [Arch Linux](/index.php/Arch_Linux "Arch Linux"). The answer is basically that the Arch dev team will not be providing one. Feel free to use one of those developed by users. There is a selective list on [Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends").
 
-### Q) Pacman needs _"feature X"!_
+### Q) Pacman needs *"feature X"!*
 
 **A)** Please read [The Arch Way](/index.php/The_Arch_Way "The Arch Way") and [Arch Linux](/index.php/Arch_Linux "Arch Linux"). The Arch philosophy is "Keep It Simple". If you think the idea has merit, and does not violate this simple litany, then you may choose to discuss it on the forum [here](https://bbs.archlinux.org/). You might also like to check [here](https://bugs.archlinux.org); it's a place for feature requests if you find it is important.
 
@@ -256,11 +255,11 @@ If `foobaz` is a package that you built yourself or installed from AUR, you shou
 
 **A)** A few distributions may provide minimal installation methods sharing some similar aspects to the Arch installation process. However, a few points must be noted:
 
-1.  Arch has been _fundamentally designed_ as a lightweight, minimal base environment upon which to build.
-2.  Whether the Netinstall or Core images are used, the _only_ way to install Arch is by building up from this minimal base.
+1.  Arch has been *fundamentally designed* as a lightweight, minimal base environment upon which to build.
+2.  Whether the Netinstall or Core images are used, the *only* way to install Arch is by building up from this minimal base.
 3.  The installer, base system, and the entire distribution are inherently a K.I.S.S. design approach, which makes it uniquely suitable for its target base of users.
 4.  Installing services and packages requires manual, interactive user configuration. Unlike other distributions which automatically configure services and startup behavior, Arch philosophy puts emphasis on the power user's competence and prerogative to handle such responsibilities.
-5.  Arch packaging is designed to be minimal, and _optional_ package dependencies are never automatically installed. Rather, the user is simply notified of their existence during package installation, resulting in a slimmer system.
+5.  Arch packaging is designed to be minimal, and *optional* package dependencies are never automatically installed. Rather, the user is simply notified of their existence during package installation, resulting in a slimmer system.
 6.  AIF, the simple Arch installer, is designed for a high level of transparency, and the base system is manually configured by the user to their needed specifications.
 7.  Arch provides excellent, thoroughly complete documentation to guide one through this process of system assembly.
 

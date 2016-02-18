@@ -51,7 +51,7 @@ El port está listo para equipos de escritorio y servidores.
 
 ## ¿El uso de los 64 bits significa un gran aumento de rendimiento?
 
-Es así en la mayoría de las aplicaciones que usan los registros de 64-bit (como las aplicaciones para grandes bases de datos). Algunas aplicaciones multimedia funcionarán notoriamente más rápido. Si conoces una aplicación que funcione más rápido en SSE3 puedes recompilar el paquete por ti mismo. Arch64 _solamente_ es compilado con soporte para SSE2 y con optimizaciones -O2. Para más información, lea [http://forums.gentoo.org/viewtopic.php?t=221045](http://forums.gentoo.org/viewtopic.php?t=221045) o [http://www.thejemreport.com/mambo/content/view/74/74/](http://www.thejemreport.com/mambo/content/view/74/74/) (Inglés).
+Es así en la mayoría de las aplicaciones que usan los registros de 64-bit (como las aplicaciones para grandes bases de datos). Algunas aplicaciones multimedia funcionarán notoriamente más rápido. Si conoces una aplicación que funcione más rápido en SSE3 puedes recompilar el paquete por ti mismo. Arch64 *solamente* es compilado con soporte para SSE2 y con optimizaciones -O2. Para más información, lea [http://forums.gentoo.org/viewtopic.php?t=221045](http://forums.gentoo.org/viewtopic.php?t=221045) o [http://www.thejemreport.com/mambo/content/view/74/74/](http://www.thejemreport.com/mambo/content/view/74/74/) (Inglés).
 
 Para el resto del sistema: No hace ninguna diferencia notable.
 
@@ -73,7 +73,7 @@ El port soporta todos los repositorios.
 
 ## ¿Cómo puedo conseguir los PKGBUILDs para Arch64?
 
-Tenemos _**ABS**_ como en el Arch de 32-bit. Se recomienda mirar _/var/abs_. _abs_ busca todas las entradas CVS de archlinux.org que contengan la etiqueta "CURRENT-64".
+Tenemos ***ABS*** como en el Arch de 32-bit. Se recomienda mirar */var/abs*. *abs* busca todas las entradas CVS de archlinux.org que contengan la etiqueta "CURRENT-64".
 
 ## ¿Cómo puedo crear paquetes para Arch64 usando PKGBUILDs para 32-bit?
 
@@ -161,7 +161,7 @@ para compartir el código entre el host y el sistema chroot.
 
 ¡Sí!
 
-**PERO: ¡Nuestra meta es ser la distribución más actualizada! los 32-bit están pasados de moda. Queremos que Arch64 sea moderna y puramente de 64-bit. Así que no tenemos un sistema "Multilib". No añadiremos ningún paquete que requiera compatibilidad con 32-bit. Puede que los dejemos en AUR o en el repositorio comunitario.** _**¡No esperes obtener ningún soporte por parte de los desarrolladores para tener aplicaciones de 32-bit ejecutándose en Arch64!**_
+**PERO: ¡Nuestra meta es ser la distribución más actualizada! los 32-bit están pasados de moda. Queremos que Arch64 sea moderna y puramente de 64-bit. Así que no tenemos un sistema "Multilib". No añadiremos ningún paquete que requiera compatibilidad con 32-bit. Puede que los dejemos en AUR o en el repositorio comunitario.** ***¡No esperes obtener ningún soporte por parte de los desarrolladores para tener aplicaciones de 32-bit ejecutándose en Arch64!***
 
 *   Puedes instalar todas las librerías lib32-* desde el repositorio multilib. Para usar este repositorio debes agregar las siguientes líneas a tu pacman.conf:
 

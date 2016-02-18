@@ -48,7 +48,7 @@ options=('!strip')
 
 Se il pacchetto non contiene bytecode ma distribuisce solamente file binari, `ocaml` non è richiesto come dipendenza, ma è invece ovviamente necessario come makedepends, dato che il compilatore di OCaml è fornito dal pacchetto `ocaml`. Se il pacchetto contiene sia codice nativo che bytecode, `ocaml` deve essere sia una dipendenza che un makedepends.
 
-Il codice OCaml è molto raramente distribuito solo come bytecode, infatti quasi sempre include del codice nativo: l'unico caso in cui è consigliabile usare _any_ come _arch_ è quando viene distribuito solamente codice sorgente non compilato, di solito con una libreria, benché appunto molte librerie distribuiscano anche codice nativo.
+Il codice OCaml è molto raramente distribuito solo come bytecode, infatti quasi sempre include del codice nativo: l'unico caso in cui è consigliabile usare *any* come *arch* è quando viene distribuito solamente codice sorgente non compilato, di solito con una libreria, benché appunto molte librerie distribuiscano anche codice nativo.
 
 Per riassumere, è bene essere sempre coscienti di ciò che si va a distribuire, la probabilità maggiore è che il proprio pacchetto contenga sia codice macchina nativo che bytecode.
 
@@ -88,4 +88,4 @@ package() {
 
 ```
 
-Tenere sempre presente che molti pacchetti OCaml avranno spesso bisogno che siano passati ulteriori parametri a make e make install. Ricordarsi anche di rimuovere l'opzione _'!strip'_ e cambiare l'architettura se il pacchetto non fornisce bytecode.
+Tenere sempre presente che molti pacchetti OCaml avranno spesso bisogno che siano passati ulteriori parametri a make e make install. Ricordarsi anche di rimuovere l'opzione *'!strip'* e cambiare l'architettura se il pacchetto non fornisce bytecode.

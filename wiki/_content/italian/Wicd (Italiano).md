@@ -54,7 +54,7 @@ Se si necessita di una versione alternativa o se si vuole modificare il pacchett
 
 Wicd fornisce un demone che deve essere avviato.
 
-**Attenzione:** Eseguire diversi network manager contemporaneamente _porterà_ problemi, quindi è importante _disabilitare l'avvio di tutti gli altri demoni di gestione delle reti_ (tipo netctl, netcfg, dhcpcd, NetworkManager).
+**Attenzione:** Eseguire diversi network manager contemporaneamente *porterà* problemi, quindi è importante *disabilitare l'avvio di tutti gli altri demoni di gestione delle reti* (tipo netctl, netcfg, dhcpcd, NetworkManager).
 
 Avviare il [demone](/index.php/Daemon_(Italiano) "Daemon (Italiano)") di wicd e abilitarlo all'avvio del sistema:
 
@@ -211,7 +211,6 @@ Questo profilo funzionerà solamente per le istituzioni [eduroam](https://en.wik
 Creare il seguente file `/etc/wicd/encryption/templates/ttls-80211`
 
  `/etc/wicd/encryption/templates/ttls-80211` 
-
 ```
 name = TTLS for Wireless
 author = Alexander Clouter

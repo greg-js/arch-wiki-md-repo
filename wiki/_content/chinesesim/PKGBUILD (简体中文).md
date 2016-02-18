@@ -64,14 +64,14 @@ Arch Linux 用 [makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%8
 
 ### pkgver
 
-软件包的版本号，应该与软件原作者发布的版本号一致。它由字母、数字和'.'组成，但_不能_包含连字符'-'，如果原作者在他的版本号中使用了连字符'-'，那么用下划线'_'来替代。举个例子：原版本号“0.99-10”，改写成“0.99_10”。在之后的 PKGBUILD 指令中 `pkgver` 中的下划线可以用下面这个方法替代为连接符：
+软件包的版本号，应该与软件原作者发布的版本号一致。它由字母、数字和'.'组成，但*不能*包含连字符'-'，如果原作者在他的版本号中使用了连字符'-'，那么用下划线'_'来替代。举个例子：原版本号“0.99-10”，改写成“0.99_10”。在之后的 PKGBUILD 指令中 `pkgver` 中的下划线可以用下面这个方法替代为连接符：
 
 ```
 source=("$pkgname-${pkgver//_/-}.tar.gz")
 
 ```
 
-**注意:** 如果上游使用时间戳格式的版本，例如 _05102014_，请修改为年份在前的格式 _20141005_ (ISO 8601). 否则新版本判断会失效。
+**注意:** 如果上游使用时间戳格式的版本，例如 *05102014*，请修改为年份在前的格式 *20141005* (ISO 8601). 否则新版本判断会失效。
 
 **Tip:** 在 PKGBUILD 中定义`pkgver()`，[makepkg](/index.php/Makepkg "Makepkg") 就可以自动 [更新](http://allanmcrae.com/2013/04/pacman-4-1-released/) 此变量。详情参阅 [VCS_package_guidelines#The pkgver() 函数](/index.php/VCS_package_guidelines#The_pkgver.28.29_.E5.87.BD.E6.95.B0 "VCS package guidelines").
 
@@ -94,7 +94,6 @@ pkgver=5.13
 pkgrel=2
 epoch=1
 ```
-
  `1:5.13-2` 
 
 ## 一般变量
@@ -172,7 +171,7 @@ optdepends=(
 在使用makepkg构建软件包时，[base-devel](https://www.archlinux.org/groups/x86_64/base-devel/)组被视为已安装。该组的成员**不应该**出现在`makedepends`列表中。用下面程序查看一个依赖关系是否已经包含在 base-devel 中：
 
 ```
-$ pacman -Si $(pactree -rl _package_) 2>/dev/null | grep -q "^Groups *:.*base-devel"
+$ pacman -Si $(pactree -rl *package*) 2>/dev/null | grep -q "^Groups *:.*base-devel"
 
 ```
 
@@ -190,7 +189,7 @@ $ pacman -Si $(pactree -rl _package_) 2>/dev/null | grep -q "^Groups *:.*base-de
 
 这个变量说明当前包能提供的功能（或者像 cron、sh 这样的虚拟包）。只要没有标记为 conflicts，提供相同功能的软件包可以同时安装，
 
-如果你使用这个变量，应当加上所替代软件的版本号（`pkgver`，可能的话还有`pkgrel`）。举例来说，如果你提供一个修改过的 _qt_ 包其版本号为 3.3.8，命名为 _qt-foobar_，那么 `provides` 应该写成 `provides=('qt=3.3.8')`。只写成 `provides=('qt')` 会使对 _qt_ 有版本依赖的包编译失败。不要把 `pkgname` 加入 provides 序列，它会自动完成的。
+如果你使用这个变量，应当加上所替代软件的版本号（`pkgver`，可能的话还有`pkgrel`）。举例来说，如果你提供一个修改过的 *qt* 包其版本号为 3.3.8，命名为 *qt-foobar*，那么 `provides` 应该写成 `provides=('qt=3.3.8')`。只写成 `provides=('qt')` 会使对 *qt* 有版本依赖的包编译失败。不要把 `pkgname` 加入 provides 序列，它会自动完成的。
 
 ### conflicts
 
@@ -218,14 +217,14 @@ $ pacman -Si $(pactree -rl _package_) 2>/dev/null | grep -q "^Groups *:.*base-de
 
 ### install
 
-`.install` 脚本的名称, 应该和 pkgname 相同。 _pacman_ 可以在安装、卸载或升级一个软件包时存储及执行一些特定的脚本。在不同的情况下，脚本会执行下面几个函数。
+`.install` 脚本的名称, 应该和 pkgname 相同。 *pacman* 可以在安装、卸载或升级一个软件包时存储及执行一些特定的脚本。在不同的情况下，脚本会执行下面几个函数。
 
-*   _**pre_install**_ - 安装前运行的脚本，可以传递版本号为参数。
-*   _**post_install**_ - 安装后运行的脚本，可以传递版本号为参数。
-*   _**pre_upgrade**_ - 升级前运行的脚本，可以按`新版本号`，`旧版本号`的顺序传递参数。
-*   _**post_upgrade**_ - 升级后运行的脚本，可以按`新版本号`，`旧版本号`的顺序传递参数。
-*   _**pre_remove**_ - 卸载前运行的脚本，可以传递版本号为参数。
-*   _**post_remove**_ - 卸载后运行的脚本，可以传递版本号为参数。
+*   ***pre_install*** - 安装前运行的脚本，可以传递版本号为参数。
+*   ***post_install*** - 安装后运行的脚本，可以传递版本号为参数。
+*   ***pre_upgrade*** - 升级前运行的脚本，可以按`新版本号`，`旧版本号`的顺序传递参数。
+*   ***post_upgrade*** - 升级后运行的脚本，可以按`新版本号`，`旧版本号`的顺序传递参数。
+*   ***pre_remove*** - 卸载前运行的脚本，可以传递版本号为参数。
+*   ***post_remove*** - 卸载后运行的脚本，可以传递版本号为参数。
 
 每一个函数都是在 pacman 安装目录下通过 chroot 运行。参见[这个帖子](https://bbs.archlinux.org/viewtopic.php?pid=913891).
 
@@ -236,7 +235,7 @@ $ pacman -Si $(pactree -rl _package_) 2>/dev/null | grep -q "^Groups *:.*base-de
 软件包 changelog 的名称，要查看安装软件的 changelog：
 
 ```
-$ pacman -Qc _pkgname_
+$ pacman -Qc *pkgname*
 
 ```
 
@@ -250,7 +249,7 @@ $ pacman -Qc _pkgname_
 
 文件也可以放到 `PKGBUILD` 相同目录中，把文件名添加到这个列表中，以相对 `PKGBUILD` 的路径记录。在实际的编译过程开始之前，所有该列表中引用的文件都会被下载或检查是否存在，如果有文件丢失 `makepkg` 就不会继续。
 
-**小贴士:** 你可以为下载的文件指定不同的文件名（如将下载的文件出于某些原因有不同的文件名，像 URL 有一个 GET 参数时）。使用如下语法：`_filename_::_fileuri_`。
+**小贴士:** 你可以为下载的文件指定不同的文件名（如将下载的文件出于某些原因有不同的文件名，像 URL 有一个 GET 参数时）。使用如下语法：`*filename*::*fileuri*`。
 
 例如：
 
@@ -262,7 +261,7 @@ $ pacman -Qc _pkgname_
 
 ```
   prepare() {
-  lrzip -d _source_.tar.lrz
+  lrzip -d *source*.tar.lrz
 }
 
 ```
@@ -284,8 +283,8 @@ noextract=("${source[@]%%::*}")
 
 ## 完整性变量
 
-*   _碰撞漏洞_ 意味着不同的内容可以产生相同的校验和。
-*   _Preimage 漏洞_ 意味着已知校验和的情况下，可以生成一段字符串产生相同的校验和。
+*   *碰撞漏洞* 意味着不同的内容可以产生相同的校验和。
+*   *Preimage 漏洞* 意味着已知校验和的情况下，可以生成一段字符串产生相同的校验和。
 
 | 算法 | 碰撞漏洞 | Preimage 漏洞 |
 | MD5 | 严重. | 理论可行. |
@@ -317,7 +316,7 @@ SHA-2 校验和列表，有224，384 和 512位。它们都可以替代上述的
 
 ### validpgpkeys
 
-PGP 指纹列表。如果使用，_makepkg_ 仅接受这里定义的签名，并且忽略密钥环中的值。如果源代码用子密钥加密，_makepkg_ 会使用主键进行比较。
+PGP 指纹列表。如果使用，*makepkg* 仅接受这里定义的签名，并且忽略密钥环中的值。如果源代码用子密钥加密，*makepkg* 会使用主键进行比较。
 
 仅接受完整签名，必须是大写字母而且不能有空白字符。
 

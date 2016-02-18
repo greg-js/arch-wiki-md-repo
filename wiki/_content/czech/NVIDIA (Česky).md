@@ -1,7 +1,7 @@
 ## Contents
 
 *   [1 Instalace ovladačů NVIDIA pomocí pacmanu](#Instalace_ovlada.C4.8D.C5.AF_NVIDIA_pomoc.C3.AD_pacmanu)
-    *   [1.1 Informace od správce balíčku _tpowa_](#Informace_od_spr.C3.A1vce_bal.C3.AD.C4.8Dku_tpowa)
+    *   [1.1 Informace od správce balíčku *tpowa*](#Informace_od_spr.C3.A1vce_bal.C3.AD.C4.8Dku_tpowa)
     *   [1.2 Instalace ovladačů](#Instalace_ovlada.C4.8D.C5.AF)
     *   [1.3 Nastavení X-Serveru](#Nastaven.C3.AD_X-Serveru)
     *   [1.4 Aktivace kompozitního rozšíření](#Aktivace_kompozitn.C3.ADho_roz.C5.A1.C3.AD.C5.99en.C3.AD)
@@ -26,11 +26,11 @@
 
 ### Instalace ovladačů NVIDIA pomocí pacmanu
 
-#### Informace od správce balíčku _tpowa_
+#### Informace od správce balíčku *tpowa*
 
 Tento balíček je pro ty, kdo používájí distribuční verzi jádra! Testuju pouze s jádrem 2.6 a Xorgem.
 
-_Poznámka: nezapomněli jsme ani na lidi používající jádro -beyond, viz další odstavec_
+*Poznámka: nezapomněli jsme ani na lidi používající jádro -beyond, viz další odstavec*
 
 Pro uživatele více jader: Pro každé jádro musíte nainstalovat balíček nvidia zvlášt!
 
@@ -122,7 +122,7 @@ for steps to correct.
 
 ```
 
-Přidejte svého uživatele do skupiny `video` pomocí `gpasswd -a _yourusername_ video` (nezapomeňte se přelogovat, nebo napište: source /etc/profile).
+Přidejte svého uživatele do skupiny `video` pomocí `gpasswd -a *yourusername* video` (nezapomeňte se přelogovat, nebo napište: source /etc/profile).
 
 ##### Způsobené Archem
 
@@ -134,7 +134,7 @@ Přidejte svého uživatele do skupiny `video` pomocí `gpasswd -a _yourusername
 
 Nový konfigurační nástroj ovladačů nVidia se nazývá 'nvidia-settings'. Nemusíte ho používat, je to jen addon!
 Pro více informací o použití se podívejte do /usr/share/doc/NVIDIA_GLX-1.0/nvidia-settings-user-guide.txt
-Prosím nainstalujte gtk2 pomocí _pacman -S gtk2_ abyste mohli tento nástroj použít.
+Prosím nainstalujte gtk2 pomocí *pacman -S gtk2* abyste mohli tento nástroj použít.
 
 **Poznámka:** Pokud máte problémy, jako pád X-serveru při spuštění nástroje nvidia-settings, smažte soubor `.nvidia-settings-rc` ve svém domovském adresáři.
 
@@ -252,7 +252,7 @@ Budete dotázáni, jestli souhlasíte s jejich licencí, takže klikněte parkr�
 *   Přidejte nvidia do modulů do /etc/rc.conf:
 
 ```
-MODULES=(_... some modules ..._ nvidia)
+MODULES=(*... some modules ...* nvidia)
 
 ```
 
@@ -260,7 +260,7 @@ MODULES=(_... some modules ..._ nvidia)
 
 ## Ladění ovladačů NVIDIA
 
-Otevřete `/etc/X11/xorg.conf` nebo `/etc/X11/XFree86Config` a zkuste následující možnosti: _Ne všechny možnosti musí na vašem systému fungovat; zkoušejte je opatrně a nezapomínejte zálohovat váš konfigurační soubor._
+Otevřete `/etc/X11/xorg.conf` nebo `/etc/X11/XFree86Config` a zkuste následující možnosti: *Ne všechny možnosti musí na vašem systému fungovat; zkoušejte je opatrně a nezapomínejte zálohovat váš konfigurační soubor.*
 
 ### Vypnutí loga NVIDIA
 
@@ -306,7 +306,7 @@ Používejte tuto volbu pouze pokud má vaše grafická karta dostatek paměti (
 
 ### Použití událostí na úrovní OS
 
-Převzato z README souboru od NVIDIA: _"Použijte události na úrovni OS pro efektivní zaznamenání, kdy klient podporuje přímé renderování v okně které má být kompozitní."_ Ať to znamená co chce, může to pomoci zlěpšit výkon. Tento volba je v současnosti nekompatibilní s SLI a multi-GPU módy.
+Převzato z README souboru od NVIDIA: *"Použijte události na úrovni OS pro efektivní zaznamenání, kdy klient podporuje přímé renderování v okně které má být kompozitní."* Ať to znamená co chce, může to pomoci zlěpšit výkon. Tento volba je v současnosti nekompatibilní s SLI a multi-GPU módy.
 
 Do sekce `Device` přidejte:
 

@@ -1,28 +1,34 @@
 ## Contents
 
-*   [1 Preferred installation method](#Preferred_installation_method)
-*   [2 64-bit Hack](#64-bit_Hack)
-*   [3 Another installation method](#Another_installation_method)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 It keeps saying password incorrect](#It_keeps_saying_password_incorrect)
-    *   [4.2 I can login but Network Connect will not launch](#I_can_login_but_Network_Connect_will_not_launch)
-    *   [4.3 Network Connect launched but the VPN does not work](#Network_Connect_launched_but_the_VPN_does_not_work)
-    *   [4.4 Network Connect launched and a configuration error message is displayed](#Network_Connect_launched_and_a_configuration_error_message_is_displayed)
-    *   [4.5 ncapp.error Failed to connect/authenticate with IVE.](#ncapp.error_Failed_to_connect.2Fauthenticate_with_IVE.)
-    *   [4.6 Kernel 3.19 and ncsvc](#Kernel_3.19_and_ncsvc)
-*   [5 Caveats](#Caveats)
-*   [6 Alternative Method](#Alternative_Method)
-*   [7 Yet Another Method using the Mad Scientist's "msjnc" script](#Yet_Another_Method_using_the_Mad_Scientist.27s_.22msjnc.22_script)
-    *   [7.1 Special instructions for 64-bit users](#Special_instructions_for_64-bit_users)
-        *   [7.1.1 Automatic installation of ncsvc using msjnc](#Automatic_installation_of_ncsvc_using_msjnc)
-        *   [7.1.2 Manual installation of msjnc](#Manual_installation_of_msjnc)
-        *   [7.1.3 Note regarding Server/URL](#Note_regarding_Server.2FURL)
-*   [8 Yet another alternative using jvpn script (support 64bits and host checker)](#Yet_another_alternative_using_jvpn_script_.28support_64bits_and_host_checker.29)
-    *   [8.1 Installation](#Installation)
-    *   [8.2 Run](#Run)
-*   [9 Native Open Source support with OpenConnect](#Native_Open_Source_support_with_OpenConnect)
+*   [1 Native Open Source support with OpenConnect](#Native_Open_Source_support_with_OpenConnect)
+*   [2 Official Software Preferred installation method](#Official_Software_Preferred_installation_method)
+*   [3 64-bit Hack](#64-bit_Hack)
+*   [4 Another installation method](#Another_installation_method)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 It keeps saying password incorrect](#It_keeps_saying_password_incorrect)
+    *   [5.2 I can login but Network Connect will not launch](#I_can_login_but_Network_Connect_will_not_launch)
+    *   [5.3 Network Connect launched but the VPN does not work](#Network_Connect_launched_but_the_VPN_does_not_work)
+    *   [5.4 Network Connect launched and a configuration error message is displayed](#Network_Connect_launched_and_a_configuration_error_message_is_displayed)
+    *   [5.5 ncapp.error Failed to connect/authenticate with IVE.](#ncapp.error_Failed_to_connect.2Fauthenticate_with_IVE.)
+    *   [5.6 Kernel 3.19 and ncsvc](#Kernel_3.19_and_ncsvc)
+*   [6 Caveats](#Caveats)
+*   [7 Alternative Method](#Alternative_Method)
+*   [8 Yet Another Method using the Mad Scientist's "msjnc" script](#Yet_Another_Method_using_the_Mad_Scientist.27s_.22msjnc.22_script)
+    *   [8.1 Special instructions for 64-bit users](#Special_instructions_for_64-bit_users)
+        *   [8.1.1 Automatic installation of ncsvc using msjnc](#Automatic_installation_of_ncsvc_using_msjnc)
+        *   [8.1.2 Manual installation of msjnc](#Manual_installation_of_msjnc)
+        *   [8.1.3 Note regarding Server/URL](#Note_regarding_Server.2FURL)
+*   [9 Yet another alternative using jvpn script (support 64bits and host checker)](#Yet_another_alternative_using_jvpn_script_.28support_64bits_and_host_checker.29)
+    *   [9.1 Installation](#Installation)
+    *   [9.2 Run](#Run)
 
-## Preferred installation method
+## Native Open Source support with OpenConnect
+
+The [OpenConnect](http://www.infradead.org/openconnect/) VPN client has recently added support for Juniper VPN, supporting both TCP and UDP data transports. See the [initial announcement](http://lists.infradead.org/pipermail/openconnect-devel/2015-January/002628.html) on the mailing list for more details.
+
+To use, install [openconnect](https://www.archlinux.org/packages/?name=openconnect) from the Archlinux respositories. If you want NetworkManager support, also install [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect), and restart NetworkManager.
+
+## Official Software Preferred installation method
 
 (NOTE: In [some cases](http://kb.juniper.net/InfoCenter/index?page=content&id=KB20490&actp=RSS), depending on your corporate policy configuration, you _must_ login through the browser. If this is the case, command-line tools (jnc, junipernc) will not work.)
 
@@ -37,7 +43,6 @@
 4) Copy and adapt this .config file in this directory:
 
  `~/.juniper_networks/network_connect/config/.config` 
-
 ```
 host=foo.bar.com
 user=username
@@ -89,7 +94,6 @@ This was the final fix after veritable hours of trying to make it work more prop
 5) Edit the bash script and you are done:
 
  `/opt/java/jre/bin/java` 
-
 ```
 #!/bin/bash
 if [ $3x = "NCx" ]
@@ -369,9 +373,3 @@ cd ~/.juniper_networks/network_connect
 ./jvpn.pl
 
 ```
-
-## Native Open Source support with OpenConnect
-
-The [OpenConnect](http://www.infradead.org/openconnect/) VPN client has recently added support for Juniper VPN, supporting both TCP and UDP data transports. See the [initial announcement](http://lists.infradead.org/pipermail/openconnect-devel/2015-January/002628.html) on the mailing list for more details.
-
-To use, install [openconnect](https://www.archlinux.org/packages/?name=openconnect) from the Archlinux respositories. If you want NetworkManager support, also install [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect), and restart NetworkManager.

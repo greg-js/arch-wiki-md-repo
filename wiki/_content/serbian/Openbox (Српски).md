@@ -125,13 +125,13 @@ mv ~/.config/autostart ~/.config/autostart-bak
 
 #### GNOM 2.26
 
-_**Pratite sledeće uputstvo za GNOM 2.24\. Ako ne uspe probajte ovo:**_
+***Pratite sledeće uputstvo za GNOM 2.24\. Ako ne uspe probajte ovo:***
 
 Ako, nakon što ste instalirali Openbox i probali da se ulogujete u 'Gnom/openbox' sesiju session, niste doživeli uspeh, možete uraditi sledeće kao jedan od načina za dostizanje situacije u kojoj će Vam Openbox raditi kao Vaš prozor menadžer svaki put kada se ulogujete u 'Gnom' sesiju iz Vašeg menadžera za prijavljivanje (xdm, gdm, kdm, entrance, slim, itd.)
 
 1.  Prijavite se na Vašu Gnom sesiju (koja će i dalje koristiti metacity kao prozor menadžer) ako niste već.
 2.  Instalirajte openbox ako niste to već uradili
-3.  Istražite Vaše menije u _System → Preferences → Startup Applications_ (verovatno pod imenom 'Session' za starije verzije Gnoma)
+3.  Istražite Vaše menije u *System → Preferences → Startup Applications* (verovatno pod imenom 'Session' za starije verzije Gnoma)
 4.  Otvorite Startup Application, selektujte '+ Add' i dodajte tekst koji vidite u box-u ispod izuzimajući tekst ispod #.
 5.  Sada pritisnite 'Add' dugme za taj prozor za unos podataka i uverite se da je boks za čekiranje ispod Vašeg novog unosa upaljen.
 6.  Thus log out of your gnome session and log back in and you should be running openbox as your window manager.
@@ -387,8 +387,8 @@ Openbox karakteriše podrška za pokretanje programa prilikom startovanja. Ovo j
 
 Postoje načini da omogućite automatsko startovanje:
 
-1.  Ako koristite start/xinit da se ulogujete u X sesiju, izmenite `~/.xinitrc` i promenite liniju koja izvršava _openbox_ da izvršava **openbox-session** umesto.
-2.  Ako se prijavite sa GDM/KDM-om, selektujte _Openbox_ sesiju i oni će automatski koristiti automatsko startovanje.
+1.  Ako koristite start/xinit da se ulogujete u X sesiju, izmenite `~/.xinitrc` i promenite liniju koja izvršava *openbox* da izvršava **openbox-session** umesto.
+2.  Ako se prijavite sa GDM/KDM-om, selektujte *Openbox* sesiju i oni će automatski koristiti automatsko startovanje.
 
 Programi koji se pokreću prilikom startovanja su upravljani u `~/.config/openbox/autostart.sh`. Potpune instrukcije i najbolje prakse vezane za ovo su dostupne na [Openbox web sajt za programe koji automatski startuju](http://openbox.org/wiki/Help:).
 
@@ -831,7 +831,7 @@ Open it with your text-editor and now you can search&replace everything with you
 
 ```
 
-Another way is to use the package _perl-file-mimeinfo_ from the repositories, and invoke the mimeopen command like this:
+Another way is to use the package *perl-file-mimeinfo* from the repositories, and invoke the mimeopen command like this:
 
 ```
 mimeopen -d /path/to/file
@@ -977,7 +977,7 @@ Zatim izmenite vaš `.config/openbox/rc.xml` fajl:
 
 ```
 
-The _magic_ comes from the `<layer>below</layer>` line, which place the application under all others. Here Urxvt is displayed on all desktops, change it to your convenience.
+The *magic* comes from the `<layer>below</layer>` line, which place the application under all others. Here Urxvt is displayed on all desktops, change it to your convenience.
 
 Note: Instead of using <application name="URxvt">, you can use another name ("URxvt-bg" for example), and use the -name option when starting uxrvt. That way, only the urxvt terminals which you choose to name URxvt-bg would be captured and modified by the application rule in rc.xml. For example: urxvt -name URxvt-bg (case sensitive)
 

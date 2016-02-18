@@ -17,10 +17,10 @@
 To set `trap` to intercept a non-zero return code of the last program run:
 
  `~/.bashrc` 
-
 ```
 EC() {
-	echo -e '\e[1;33m'code $?'\e[m\n'
+	echo -e '\e[1;33m'code $?'\e[m
+'
 }
 trap EC ERR
 
@@ -31,12 +31,12 @@ trap EC ERR
 The following function will compile (within the `/tmp/` directory) and execute the [C](http://en.wikipedia.org/wiki/C_%28programming_language%29) source argument on the fly (and the execution will be without arguments). And finally, after program terminates, will remove the compiled file.
 
  `~/.bashrc` 
-
 ```
 # Compile and execute a C source on the fly
 csource() {
 	[[ $1 ]]    || { echo "Missing operand" >&2; return 1; }
-	[[ -r $1 ]] || { printf "File %s does not exist or is not readable\n" "$1" >&2; return 1; }
+	[[ -r $1 ]] || { printf "File %s does not exist or is not readable
+" "$1" >&2; return 1; }
 	local output_path=${TMPDIR:-/tmp}/${1##*/};
 	gcc "$1" -o "$output_path" && "$output_path";
 	rm "$output_path";
@@ -49,7 +49,6 @@ csource() {
 The following function will extract a wide range of compressed file types. and use it with the syntax `extract <file1> <file2> ...`
 
  `~/.bashrc` 
-
 ```
 extract() {
     local c e i
@@ -101,7 +100,6 @@ Another way to do this is to install a specialized package. For example:
 Very often changing to a directory is followed by the `ls` command to list its contents. Therefore it is helpful to have a second function doing both at once. In this example we will name it `cl` (change list) and show an error message if the specified directory does not exist.
 
  `~/.bashrc` 
-
 ```
 cl() {
 	local dir="$1"
@@ -115,12 +113,11 @@ cl() {
 
 ```
 
-Of course the _ls_ command can be altered to fit your needs, for example `ls -hall --color=auto`.
+Of course the *ls* command can be altered to fit your needs, for example `ls -hall --color=auto`.
 
 ## Simple note taker
 
  `~/.bashrc` 
-
 ```
 note () {
     # if file doesn't exist, create it
@@ -136,7 +133,8 @@ note () {
         printf "%s" > "$HOME/.notes"
     else
         # add all arguments to file
-        printf "%s\n" "$*" >> "$HOME/.notes"
+        printf "%s
+" "$*" >> "$HOME/.notes"
     fi
 }
 
@@ -147,7 +145,6 @@ note () {
 Inspired by [#Simple note taker](#Simple_note_taker)
 
  `~/.bashrc` 
-
 ```
 todo() {
     if [[ ! -f $HOME/.todo ]]; then
@@ -166,7 +163,8 @@ todo() {
         read -p "Type a number to remove: " number
         sed -i ${number}d $HOME/.todo "$HOME/.todo"
     else
-        printf "%s\n" "$*" >> "$HOME/.todo"
+        printf "%s
+" "$*" >> "$HOME/.todo"
     fi
 }
 
@@ -175,7 +173,6 @@ todo() {
 ## Calculator
 
  `~/.bashrc` 
-
 ```
 calc() {
     echo "scale=3;$@" | bc -l
@@ -190,7 +187,6 @@ Kingbash - menu driven auto-completion (see [BBS#101010](https://bbs.archlinux.o
 Install [kingbash](https://aur.archlinux.org/packages/kingbash/) from the [AUR](/index.php/AUR "AUR"), then insert the following into your `~/.bashrc`:
 
  `~/.bashrc` 
-
 ```
 function kingbash.fn() {
     echo -n "KingBash> $READLINE_LINE" #Where "KingBash> " looks best if it resembles your PS1, at least in length.
@@ -220,4 +216,4 @@ ipif() {
 
 ```
 
-**Note:** Bash is limited to extended regular expressions; this example uses perl regular expressions with _grep_. [[1]](http://unix.stackexchange.com/questions/84477/forcing-bash-to-use-perl-regex-engine)
+**Note:** Bash is limited to extended regular expressions; this example uses perl regular expressions with *grep*. [[1]](http://unix.stackexchange.com/questions/84477/forcing-bash-to-use-perl-regex-engine)

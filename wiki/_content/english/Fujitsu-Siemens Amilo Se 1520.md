@@ -70,7 +70,7 @@ Fortunately, we have Linux native driver **ipw3945**, just install it and use **
 
 ## ACPI
 
-You will need to install **powersave** and add "powersaved" into _/etc/rc.conf_.
+You will need to install **powersave** and add "powersaved" into */etc/rc.conf*.
 
 ## HOTKEYS, SPECIAL BUTTONS
 

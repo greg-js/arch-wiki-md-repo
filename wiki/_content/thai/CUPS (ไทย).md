@@ -111,7 +111,7 @@ etc...
 
 ### Download Printer PPD (ไฟล์รายละเอียดเครื่องพิมพ์)
 
-ขั้นตอนนี้อาจจะไม่จำเป็นสำหรับเครื่องพิมพ์บางรุ่น เพราะ CUPS ได้มาพร้อมกับชุด driver มาตรฐาน (ส่วนใหญ่สำหรับเครื่องพิมพ์ PostScript) และที่มากไปกว่านั้น _foomatic-filters_, _gimp-print_ และ _hplip_ ได้รวมเอาไฟล์รายละเอียดเครื่องพิมพ์ไว้พอสมควร ซึ่ง CUPS จะตรวจพบได้เอง
+ขั้นตอนนี้อาจจะไม่จำเป็นสำหรับเครื่องพิมพ์บางรุ่น เพราะ CUPS ได้มาพร้อมกับชุด driver มาตรฐาน (ส่วนใหญ่สำหรับเครื่องพิมพ์ PostScript) และที่มากไปกว่านั้น *foomatic-filters*, *gimp-print* และ *hplip* ได้รวมเอาไฟล์รายละเอียดเครื่องพิมพ์ไว้พอสมควร ซึ่ง CUPS จะตรวจพบได้เอง
 
 นี่คือคำอธิบายความหมายของไฟล์ PPD หรือไฟล์รายละเอียดเครื่องพิมพ์ ซึ่งได้มาจากเว็บไซท์ Linux Printing "สำหรับเครื่องพิมพ์ PostScript ทุกตัว ผู้ผลิตจะให้ไฟล์ PPD ซึ่งประกอบไปด้วยรายละเอียดต่างๆ เกี่ยวกับเครื่องพิมพ์รุ่นนั้นๆ เช่น ความสามารถมาตรฐานที่เครื่องพิมพ์สามารถทำได้ ความสามารถในการพิมพ์สี Font ต่างๆ และอื่นๆ อีกมากมาย รวมถึงการตั้งค่าที่ผู้ใช้สามารถเลือกได้ เช่น ขนาดกระดาษ หรือ ความละเอียดเป็นต้น"
 
@@ -230,7 +230,7 @@ lp0
 
 #### การเรียกใช้งานโดยอัตโนมัติ
 
-คุณอาจจะอยากให้ระบบเรียกใช้งาน kernel module อัตโนมัติทุกครั้งที่เริ่มทำงาน คุณสามารถตั้งค่าเหล่านี้ได้โดยการแก้ไขไฟล์ `/etc/rc.conf` และเพิ่มรายละเอียดในส่วนของ _MODULES=()_ นี่คือตัวอย่างการตั้งค่าในส่วนของ MODULES
+คุณอาจจะอยากให้ระบบเรียกใช้งาน kernel module อัตโนมัติทุกครั้งที่เริ่มทำงาน คุณสามารถตั้งค่าเหล่านี้ได้โดยการแก้ไขไฟล์ `/etc/rc.conf` และเพิ่มรายละเอียดในส่วนของ *MODULES=()* นี่คือตัวอย่างการตั้งค่าในส่วนของ MODULES
 
 ```
 MODULES=(!usbserial scsi_mod sd_mod snd-ymfpci snd-pcm-oss printer ide-scsi)
@@ -246,7 +246,7 @@ MODULES=(!usbserial scsi_mod sd_mod snd-ymfpci snd-pcm-oss printer ide-scsi)
 
 ```
 
-และหากคุณต้องการใช้ CUPS เริ่มต้นทำงานโดยอัตโนมัติทุกครั้งที่คุณเริ่มใช้งานคอมพิวเตอร์ ให้เพิ่มข้อมูลเข้าไปในส่วนของ DAEMONS=() ในไฟล์ _/etc/rc.conf_ ตัวอย่างเช่น
+และหากคุณต้องการใช้ CUPS เริ่มต้นทำงานโดยอัตโนมัติทุกครั้งที่คุณเริ่มใช้งานคอมพิวเตอร์ ให้เพิ่มข้อมูลเข้าไปในส่วนของ DAEMONS=() ในไฟล์ */etc/rc.conf* ตัวอย่างเช่น
 
 ```
 # DAEMONS=(pcmcia syslogd klogd !fam esd mono network autofs cupsd crond gdm)
@@ -257,19 +257,19 @@ MODULES=(!usbserial scsi_mod sd_mod snd-ymfpci snd-pcm-oss printer ide-scsi)
 
 หลังจากที่คุณทำให้ Daemon ทำงานได้แล้ว คุณสามารถเข้าสู่ Web Interface ได้ โดยเปิด web browser แล้วเข้าไปยัง
 
-_[http://localhost:631](http://localhost:631)_
+*[http://localhost:631](http://localhost:631)*
 
 หรือติดตั้ง "Gnome Cups Manager" ซึ่งเป็น GUI frontend (โปรดดูภาคผนวกที่ A.1 [การเรียกใช้งาน CUPS ในรูปแบบอื่นๆ](https://wiki.archlinux.org/index.php/CUPS#Alternative_CUPS_Interfaces))
 
-จากจุดนี้ไป คุณเพียงแค่ทำตาม Wizard ต่างๆ เพื่อเพิ่มและจัดการกับเครื่องพิมพ์ของคุณ ตัวอย่างคร่าวๆ คือการคลิก _Manage Printers_ และคลิกต่อไปที่ _Add Printer_ เมื่อระบบถามหาชื่อผู้ใช้และรหัสผ่าน ให้ใส่ _root_ และรหัสผ่านของ root จากนั้นใส่ชื่อ, ที่ตั้ง และคำอธิบายอื่นๆ ของเครื่องพิมพ์ หลังจากนั้นคุณจะต้องเลือกอุปกรณ์ และ Driver ที่เหมาะสมกับเครื่องพิมพ์ เป็นอันเสร็จสิ้นการติดตั้งเครื่องพิมพ์
+จากจุดนี้ไป คุณเพียงแค่ทำตาม Wizard ต่างๆ เพื่อเพิ่มและจัดการกับเครื่องพิมพ์ของคุณ ตัวอย่างคร่าวๆ คือการคลิก *Manage Printers* และคลิกต่อไปที่ *Add Printer* เมื่อระบบถามหาชื่อผู้ใช้และรหัสผ่าน ให้ใส่ *root* และรหัสผ่านของ root จากนั้นใส่ชื่อ, ที่ตั้ง และคำอธิบายอื่นๆ ของเครื่องพิมพ์ หลังจากนั้นคุณจะต้องเลือกอุปกรณ์ และ Driver ที่เหมาะสมกับเครื่องพิมพ์ เป็นอันเสร็จสิ้นการติดตั้งเครื่องพิมพ์
 
-คุณสามารถพิมพ์หน้าทดสอบได้โดยการกดที่ปุ่ม _Print Test Page_
+คุณสามารถพิมพ์หน้าทดสอบได้โดยการกดที่ปุ่ม *Print Test Page*
 
 ## ตั้งค่าการ Share เครื่องพิมพ์
 
 ### Linux กับ Linux
 
-หลังจากที่คุณติดตั้ง CUPS บนระบบ Linux ของคุณที่จะทำหน้าที่เป็นแม่ข่ายแล้ว การ share เครื่องพิมพ์กับระบบ Linux อื่นๆ สามารถทำได้อย่างง่ายดาย โดยมีหลายวิธีในการตั้งค่า ในที่นี้จะอธิบายการตั้งค่าด้วยมือแบบละเอียด บนเครื่องแม่ข่าย (เครื่องที่เชื่อมต่ออยู่กับเครื่องพิมพ์) ให้เปิดไฟล์ _/etc/cups/cupsd.conf_ และอนุญาตให้เครื่องคอมพิวเตอร์อื่นๆ สามารถเข้าสู่ระบบได้ด้วยการแก้ไขการตั้งค่า ตัวอย่างเช่น
+หลังจากที่คุณติดตั้ง CUPS บนระบบ Linux ของคุณที่จะทำหน้าที่เป็นแม่ข่ายแล้ว การ share เครื่องพิมพ์กับระบบ Linux อื่นๆ สามารถทำได้อย่างง่ายดาย โดยมีหลายวิธีในการตั้งค่า ในที่นี้จะอธิบายการตั้งค่าด้วยมือแบบละเอียด บนเครื่องแม่ข่าย (เครื่องที่เชื่อมต่ออยู่กับเครื่องพิมพ์) ให้เปิดไฟล์ */etc/cups/cupsd.conf* และอนุญาตให้เครื่องคอมพิวเตอร์อื่นๆ สามารถเข้าสู่ระบบได้ด้วยการแก้ไขการตั้งค่า ตัวอย่างเช่น
 
 ```
 <Location />
@@ -297,7 +297,7 @@ Listen 10.0.0.1:631
 
 ```
 
-ในส่วนของเครื่องลูกข่าย ให้เปิดไฟล์ `/etc/cups/client.conf` และแก้ไขในส่วนของ ServerName ให้ตรงกับ IP Address หรือชื่อของเครื่องแม่ข่าย ตัวอย่างเช่นเครื่องแม่ข่ายมี IP Address คือ 192.168.0.1 การตั้งค่าจะดูคล้ายกับแบบนี้ ในไฟล์ _client.conf_
+ในส่วนของเครื่องลูกข่าย ให้เปิดไฟล์ `/etc/cups/client.conf` และแก้ไขในส่วนของ ServerName ให้ตรงกับ IP Address หรือชื่อของเครื่องแม่ข่าย ตัวอย่างเช่นเครื่องแม่ข่ายมี IP Address คือ 192.168.0.1 การตั้งค่าจะดูคล้ายกับแบบนี้ ในไฟล์ *client.conf*
 
 ```
 ServerName 192.168.0.1
@@ -357,7 +357,7 @@ Note: if your network contains many printers use "lpoptions -d your_desired_defa
 
 ### Windows to Linux
 
-Sometimes, you might want to allow a Windows computer to connect to your computer. There are a few ways to do this, and the one I am most familiar with is using Samba. In order to do this, you will have to edit your _/etc/samba/smb.conf_ file to allow access to your printers. Your smb.conf can look something like this:
+Sometimes, you might want to allow a Windows computer to connect to your computer. There are a few ways to do this, and the one I am most familiar with is using Samba. In order to do this, you will have to edit your */etc/samba/smb.conf* file to allow access to your printers. Your smb.conf can look something like this:
 
 ```
 [global]
@@ -440,7 +440,7 @@ After this restart your Samba daemon:
 
 ```
 
-Obvious, there are a lot of tweaks and customization that can be done with setting up a Samba print server, so I advise you to look at the Samba and CUPS documentation for more help. The _smb.conf.example_ file also has some good samples to that you might want to look at.
+Obvious, there are a lot of tweaks and customization that can be done with setting up a Samba print server, so I advise you to look at the Samba and CUPS documentation for more help. The *smb.conf.example* file also has some good samples to that you might want to look at.
 
 ### Windows 2000 and Windows XP to Linux
 
@@ -448,7 +448,7 @@ For the most modern flavours of Windows an alternative way of connecting to your
 
 On the Windows computer, go to the printer control panel and choose to Add a New Printer. Next, choose to give an url. For the url type in the location of your printer:
 
-_[http://host_ip_address:631/printers/printer_name](http://host_ip_address:631/printers/printer_name)_
+*[http://host_ip_address:631/printers/printer_name](http://host_ip_address:631/printers/printer_name)*
 
 where host_ip_address is the Linux server's IP address and printer_name is the name of the printer you are connecting to. After this, install the printer drivers for the Windows computer. If you setup the CUPS server to use its own printer drivers, then you can just select a generic postscript printer for the Windows client. You can then test your print setup by printing a test page.
 
@@ -492,7 +492,7 @@ Here is a listing of websites that may be of use to you:
 
 ### Specialized Cases
 
-This section is dedicated to specific problems and their solutions. If you managed to get some _unusual_ printer working, please put the solution here.
+This section is dedicated to specific problems and their solutions. If you managed to get some *unusual* printer working, please put the solution here.
 
 #### Printing does not work/aborts with the HP Deskjet 700 Series Printers.
 
@@ -570,7 +570,7 @@ I'm sure it could have worked with ESP gs 7.07 too(in rep) if i was smart enough
 
 ### Another Source for Printer Drivers
 
-On _[http://www.turboprint.de/english.html](http://www.turboprint.de/english.html)_ is a really good printer driver for many printers not yet supported by Linux (especially Canon i*). The only problem is that high-quality-prints are either marked with a turboprint-logo or you have to pay for it... It's not Open-Source.
+On *[http://www.turboprint.de/english.html](http://www.turboprint.de/english.html)* is a really good printer driver for many printers not yet supported by Linux (especially Canon i*). The only problem is that high-quality-prints are either marked with a turboprint-logo or you have to pay for it... It's not Open-Source.
 
 [Wikipedia:Common_Unix_Printing_System](https://en.wikipedia.org/wiki/Common_Unix_Printing_System "wikipedia:Common Unix Printing System")
 

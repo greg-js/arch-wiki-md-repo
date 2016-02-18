@@ -48,7 +48,6 @@ Open-Xchange is available in the [AUR](/index.php/AUR "AUR"). Right now, no meta
 Add the following lines to your pacman.conf:
 
  `/etc/pacman.conf` 
-
 ```
 [ox]
 Server = http://repo.lynxcore.org/ox/
@@ -126,7 +125,6 @@ Include conf/extra/ox.conf
 Create the following two files:
 
  `/etc/httpd/conf/extra/proxy_http.conf` 
-
 ```
 LoadModule proxy_http_module modules/mod_proxy_http.so
 
@@ -238,9 +236,7 @@ LoadModule proxy_http_module modules/mod_proxy_http.so
 
 </IfModule>
 ```
-
  `/etc/httpd/conf/extra/ox.conf` 
-
 ```
 <VirtualHost *:80>
        ServerAdmin webmaster@localhost
@@ -357,7 +353,6 @@ Install [open-xchange-mailfilter](https://aur.archlinux.org/packages/open-xchang
 to
 
  `/opt/open-xchange/etc/mailfilter.properties` 
-
 ```
 #SIEVE_CREDSRC=session
 SIEVE_CREDSRC=imapLogin
@@ -422,7 +417,6 @@ Get the following packages from the [AUR](/index.php/AUR "AUR") or from the cust
 Edit /opt/open-xchange/etc/documents.properties:
 
  `/opt/open-xchange/etc/documents.properties` 
-
 ```
 # Enables or disables the "text" module capability globally.
 com.openexchange.capability.text=true

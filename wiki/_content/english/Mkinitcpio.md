@@ -33,7 +33,7 @@
 
 mkinitcpio is a Bash script used to create an initial ramdisk environment. From the [mkinitcpio man page](https://projects.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.8.txt):
 
-	_The initial ramdisk is in essence a very small environment (early userspace) which loads various kernel modules and sets up necessary things before handing over control to init. This makes it possible to have, for example, encrypted root file systems and root file systems on a software RAID array. mkinitcpio allows for easy extension with custom hooks, has autodetection at runtime, and many other features._
+	*The initial ramdisk is in essence a very small environment (early userspace) which loads various kernel modules and sets up necessary things before handing over control to init. This makes it possible to have, for example, encrypted root file systems and root file systems on a software RAID array. mkinitcpio allows for easy extension with custom hooks, has autodetection at runtime, and many other features.*
 
 Traditionally, the kernel was responsible for all hardware detection and initialization tasks early in the [boot process](/index.php/Boot_process "Boot process") before mounting the root file system and passing control to `init`. However, as technology advances, these tasks have become increasingly complex.
 
@@ -66,7 +66,7 @@ $ git clone git://projects.archlinux.org/mkinitcpio.git
 
 ## Image creation and activation
 
-By default, the mkinitcpio script generates two images after kernel installation or upgrades: `/boot/initramfs-linux.img` and `/boot/initramfs-linux-fallback.img`. The _fallback_ image utilizes the same configuration file as the _default_ image, except the **autodetect** hook is skipped during creation, thus including a full range of modules. The **autodetect** hook detects required modules and tailors the image for specific hardware, shrinking the initramfs.
+By default, the mkinitcpio script generates two images after kernel installation or upgrades: `/boot/initramfs-linux.img` and `/boot/initramfs-linux-fallback.img`. The *fallback* image utilizes the same configuration file as the *default* image, except the **autodetect** hook is skipped during creation, thus including a full range of modules. The **autodetect** hook detects required modules and tailors the image for specific hardware, shrinking the initramfs.
 
 Users may create any number of initramfs images with a variety of different configurations. The desired image must be specified for the bootloader, often in its [configuration file](/index.php/Boot_Loader#Configuration_files "Boot Loader"). After changes are made to the mkinitcpio configuration file, the image must be regenerated. For the stock Arch Linux kernel, [linux](https://www.archlinux.org/packages/?name=linux), this is done by running this command with root privileges:
 
@@ -75,9 +75,9 @@ Users may create any number of initramfs images with a variety of different conf
 
 ```
 
-The `-p` switch specifies a _preset_ to utilize; most kernel packages provide a related mkinitcpio preset file, found in `/etc/mkinitcpio.d` (e.g. `/etc/mkinitcpio.d/linux.preset` for `linux`). A preset is a predefined definition of how to create an initramfs image instead of specifying the configuration file and output file every time.
+The `-p` switch specifies a *preset* to utilize; most kernel packages provide a related mkinitcpio preset file, found in `/etc/mkinitcpio.d` (e.g. `/etc/mkinitcpio.d/linux.preset` for `linux`). A preset is a predefined definition of how to create an initramfs image instead of specifying the configuration file and output file every time.
 
-**Warning:** _preset_ files are used to automatically regenerate the initramfs after a kernel update; be careful when editing them.
+**Warning:** *preset* files are used to automatically regenerate the initramfs after a kernel update; be careful when editing them.
 
 Users can manually create an image using an alternative configuration file. For example, the following will generate an initramfs image according to the directions in `/etc/mkinitcpio-custom.conf` and save it at `/boot/linux-custom.img`.
 
@@ -135,13 +135,13 @@ The MODULES array is used to specify modules to load before anything else is don
 
 Modules suffixed with a `?` will not throw errors if they are not found. This might be useful for custom kernels that compile in modules which are listed explicitly in a hook or config file.
 
-**Note:** If using **reiser4**, it _must_ be added to the modules list. Additionally, if you will be needing any file system during the boot process that is not live when you run mkinitcpio — for example, if your LUKS encryption key file is on an **ext2** file system but no **ext2** file systems are mounted when you run mkinitcpio — that file system module must also be added to the MODULES list. See [Dm-crypt/System configuration#cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration") for more details.
+**Note:** If using **reiser4**, it *must* be added to the modules list. Additionally, if you will be needing any file system during the boot process that is not live when you run mkinitcpio — for example, if your LUKS encryption key file is on an **ext2** file system but no **ext2** file systems are mounted when you run mkinitcpio — that file system module must also be added to the MODULES list. See [Dm-crypt/System configuration#cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration") for more details.
 
 **Note:** Beginning with Linux 4.4, you may need to add **nvme** to the modules list if your root is on an NVME device.
 
 ### BINARIES and FILES
 
-These options allow users to add files to the image. Both `BINARIES` and `FILES` are added before hooks are run, and may be used to override files used or provided by a hook. `BINARIES` are auto-located within a standard `PATH` and dependency-parsed, meaning any required libraries will also be added. `FILES` are added _as-is_. For example:
+These options allow users to add files to the image. Both `BINARIES` and `FILES` are added before hooks are run, and may be used to override files used or provided by a hook. `BINARIES` are auto-located within a standard `PATH` and dependency-parsed, meaning any required libraries will also be added. `FILES` are added *as-is*. For example:
 
 ```
 FILES="/etc/modprobe.d/modprobe.conf"
@@ -198,20 +198,19 @@ A table of common hooks and how they affect image creation and runtime follows. 
 <caption>**Current hooks**</caption>
 | Hook | Installation | Runtime |
 | **base** | Sets up all initial directories and installs base utilities and libraries. Always add this hook as the first hook unless you know what you are doing. | -- |
-| **systemd** | This will install a basic systemd setup in your initramfs, and is meant to replace the _base_, _usr_ and _udev_ hooks. Other hooks (like encryption) would need to be ported, and may not work as intended. It is **required**, if you use any other systemd specific hooks ("sd-*") from below. As of [systemd](https://www.archlinux.org/packages/?name=systemd) 207, this hook does not work as intended when combined with lvm2 and may break your boot. Use the _sd-lvm2_ hook instead of the _lvm2_ one. You also may wish to still include the _base_ hook (before this hook) to ensure that a rescue shell exists on your initramfs. As of [systemd](https://www.archlinux.org/packages/?name=systemd) 217 this hook also installs the service and binary helper needed for resuming from [hibernation](/index.php/Hibernation "Hibernation").
+| **systemd** | This will install a basic systemd setup in your initramfs, and is meant to replace the *base*, *usr* and *udev* hooks. Other hooks (like encryption) would need to be ported, and may not work as intended. It is **required**, if you use any other systemd specific hooks ("sd-*") from below. As of [systemd](https://www.archlinux.org/packages/?name=systemd) 207, this hook does not work as intended when combined with lvm2 and may break your boot. Use the *sd-lvm2* hook instead of the *lvm2* one. You also may wish to still include the *base* hook (before this hook) to ensure that a rescue shell exists on your initramfs. As of [systemd](https://www.archlinux.org/packages/?name=systemd) 217 this hook also installs the service and binary helper needed for resuming from [hibernation](/index.php/Hibernation "Hibernation").
 **Warning:** The emergency shell feature provided by this hook is non-functional as of 2015-07-07\. A separate hook has to provide a shell, `/sbin/sulogin`, `/etc/shadow`, `/etc/gshadow`, as well as ensure a keyboard driver module like `atkbd` is loaded. The **base** hook only provides the shell. See [FS#36265](https://bugs.archlinux.org/task/36265), [FS#45480](https://bugs.archlinux.org/task/45480).
-
  | -- |
 | **btrfs** | Sets the required modules to enable [Btrfs](/index.php/Btrfs "Btrfs") for root and the use of subvolumes. | Runs `btrfs device scan` to assemble a multi-device Btrfs root file system when no udev hook is present. The [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package is required for this hook. |
 | **udev** | Adds udevd, udevadm, and a small subset of udev rules to your image. | Starts the udev daemon and processes uevents from the kernel; creating device nodes. As it simplifies the boot process by not requiring the user to explicitly specify necessary modules, using the udev hook is recommended. |
 | **autodetect** | Shrinks your initramfs to a smaller size by creating a whitelist of modules from a scan of sysfs. Be sure to verify included modules are correct and none are missing. This hook must be run before other subsystem hooks in order to take advantage of auto-detection. Any hooks placed before 'autodetect' will be installed in full. | -- |
 | **modconf** | Includes modprobe configuration files from `/etc/modprobe.d` and `/usr/lib/modprobe.d` | -- |
-| **block** | Adds all block device modules, formerly separately provided by the _fw_, _mmc_, _pata_, _sata_, _scsi_, _usb_, and _virtio_ hooks. | -- |
+| **block** | Adds all block device modules, formerly separately provided by the *fw*, *mmc*, *pata*, *sata*, *scsi*, *usb*, and *virtio* hooks. | -- |
 | **pcmcia** | Adds the necessary modules for PCMCIA devices. You need to have [pcmciautils](https://www.archlinux.org/packages/?name=pcmciautils) installed to use this. | -- |
 | **net** | Adds the necessary modules for a network device. For PCMCIA net devices, please add the **pcmcia** hook too. | Provides handling for an NFS-based root file system. |
 | **dmraid** | Provides support for fakeRAID root devices. You must have [dmraid](https://www.archlinux.org/packages/?name=dmraid) installed to use this. Note that it is preferred to use `mdadm` with the **mdadm_udev** hook with fakeRAID if your controller supports it. | Locates and assembles fakeRAID block devices using `dmraid`. |
 | **mdadm** | Provides support for assembling RAID arrays from `/etc/mdadm.conf`, or autodetection during boot. You must have [mdadm](https://www.archlinux.org/packages/?name=mdadm) installed to use this. The **mdadm_udev** hook is preferred over this hook. | Locates and assembles software RAID block devices using `mdassemble`. |
-| **mdadm_udev** | Provides support for assembling RAID arrays via udev. You must have [mdadm](https://www.archlinux.org/packages/?name=mdadm) installed to use this. If you use this hook with a FakeRAID array, it is recommended to include `mdmon` in the binaries section and add the **shutdown** hook in order to avoid unnecessary RAID rebuilds on reboot. | Locates and assembles software RAID block devices using `udev` and `mdadm` incremental assembly. This is the preferred method of mdadm assembly (rather than using the above _mdadm_ hook). |
+| **mdadm_udev** | Provides support for assembling RAID arrays via udev. You must have [mdadm](https://www.archlinux.org/packages/?name=mdadm) installed to use this. If you use this hook with a FakeRAID array, it is recommended to include `mdmon` in the binaries section and add the **shutdown** hook in order to avoid unnecessary RAID rebuilds on reboot. | Locates and assembles software RAID block devices using `udev` and `mdadm` incremental assembly. This is the preferred method of mdadm assembly (rather than using the above *mdadm* hook). |
 | **keyboard** | Adds the necessary modules for keyboard devices. Use this if you have an USB keyboard and need it in early userspace (either for entering encryption passphrases or for use in an interactive shell). As a side effect, modules for some non-keyboard input devices might be added to, but this should not be relied on. | -- |
 | **keymap** | Adds the specified keymap(s) from `/etc/vconsole.conf` to the initramfs. | Loads the specified keymap(s) from `/etc/vconsole.conf` during early userspace. |
 | **consolefont** | Adds the specified console font from `/etc/vconsole.conf` to the initramfs. | Loads the specified console font from `/etc/vconsole.conf` during early userspace. |
@@ -224,7 +223,7 @@ See the man page of systemd-cryptsetup-generator(8) for available kernel command
  | -- |
 | **lvm2** | Adds the device mapper kernel module and the `lvm` tool to the image. You must have [lvm2](https://www.archlinux.org/packages/?name=lvm2) installed to use this. | Enables all LVM2 volume groups. This is necessary if you have your root file system on [LVM](/index.php/LVM "LVM"). |
 | **fsck** | Adds the fsck binary and file system-specific helpers. If added after the **autodetect** hook, only the helper specific to your root file system will be added. Usage of this hook is **strongly** recommended, and it is required with a separate `/usr` partition. | Runs fsck against your root device (and `/usr` if separate) prior to mounting. The default configuration of the bootloader is suitable, if in doubt read this [explanation](https://bbs.archlinux.org/viewtopic.php?pid=1307895#p1307895). |
-| **resume** | -- | Tries to resume from the "suspend to disk" state. Works with both _swsusp_ and _[TuxOnIce](/index.php/TuxOnIce "TuxOnIce")_. See [Hibernation](/index.php/Hibernation "Hibernation") for further configuration. Intended to work along with the `base` hook, the `systemd` hook provides its own resume mechanism. |
+| **resume** | -- | Tries to resume from the "suspend to disk" state. Works with both *swsusp* and *[TuxOnIce](/index.php/TuxOnIce "TuxOnIce")*. See [Hibernation](/index.php/Hibernation "Hibernation") for further configuration. Intended to work along with the `base` hook, the `systemd` hook provides its own resume mechanism. |
 | **filesystems** | This includes necessary file system modules into your image. This hook is **required** unless you specify your file system modules in MODULES. | -- |
 | **shutdown** | Adds shutdown initramfs support. Usage of this hook was strongly recommended before mkinitcpio 0.16, if you have a separate `/usr` partition or encrypted root. From mkinitcpio 0.16 onwards, it is deemed [not necessary](https://mailman.archlinux.org/pipermail/arch-dev-public/2013-December/025742.html). | Unmounts and disassembles devices on shutdown. |
 | **usr** | Add supports for `/usr` on a separate partition. | Mounts the `/usr` partition after the real root has been mounted. |
@@ -331,13 +330,13 @@ For parameters explanation, see the [kernel doc](https://www.kernel.org/doc/Docu
 
 ```
 
-**Note:** Make sure to use kernel device names (e.g. _eth0_) for the `<device>` parameter, and not [udev](/index.php/Network_configuration#Device_names "Network configuration") ones (e.g. _enp2s0_) as those will not work.
+**Note:** Make sure to use kernel device names (e.g. *eth0*) for the `<device>` parameter, and not [udev](/index.php/Network_configuration#Device_names "Network configuration") ones (e.g. *enp2s0*) as those will not work.
 
 **BOOTIF=**
 
 If you have multiple network cards, this parameter can include the MAC address of the interface you are booting from. This is often useful as interface numbering may change, or in conjunction with pxelinux IPAPPEND 2 or IPAPPEND 3 option. If not given, eth0 will be used.
 
-_Example:_
+*Example:*
 
 ```
  BOOTIF=01-A1-B2-C3-D4-E5-F6  # Note the prepended "01-" and capital letters.
@@ -353,7 +352,7 @@ If the `nfsroot` parameter is NOT given on the command line, the default `/tftpb
 
 ```
 
-_Parameter explanation:_
+*Parameter explanation:*
 
 ```
  <server-ip>   Specifies the IP address of the NFS server. If this field
@@ -463,9 +462,9 @@ These appear to any Arch Linux users, especially those who have not installed th
 
 ### Boot succeeds on one machine and fails on another
 
-_mkinitcpio'_s `autodetect` hook filters unneeded [kernel modules](/index.php/Kernel_modules "Kernel modules") in the primary initramfs scanning `/sys` and the modules loaded at the time it is run. If you transfer your `/boot` directory to another machine and the boot sequence fails during early userspace, it may be because the new hardware is not detected due to missing kernel modules.
+*mkinitcpio'*s `autodetect` hook filters unneeded [kernel modules](/index.php/Kernel_modules "Kernel modules") in the primary initramfs scanning `/sys` and the modules loaded at the time it is run. If you transfer your `/boot` directory to another machine and the boot sequence fails during early userspace, it may be because the new hardware is not detected due to missing kernel modules.
 
-To fix, first try choosing the [fallback](#Image_creation_and_activation) image from your [bootloader](/index.php/Bootloader "Bootloader"), as it is not filtered by `autodetect`. Once booted, run _mkinitcpio_ on the new machine to rebuild the primary image with the correct modules. If the fallback image fails, try booting into an Arch Linux live CD/USB, chroot into the installation, and run _mkinitcpio_ on the new machine. As a last resort, try [manually](#MODULES) adding modules to the initramfs.
+To fix, first try choosing the [fallback](#Image_creation_and_activation) image from your [bootloader](/index.php/Bootloader "Bootloader"), as it is not filtered by `autodetect`. Once booted, run *mkinitcpio* on the new machine to rebuild the primary image with the correct modules. If the fallback image fails, try booting into an Arch Linux live CD/USB, chroot into the installation, and run *mkinitcpio* on the new machine. As a last resort, try [manually](#MODULES) adding modules to the initramfs.
 
 ## See also
 

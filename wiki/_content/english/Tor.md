@@ -57,11 +57,11 @@
 
 Users of the Tor network run an onion proxy on their machine. This software connects out to Tor, periodically negotiating a virtual circuit through the Tor network. Tor employs cryptography in a layered manner (hence the 'onion' analogy), ensuring perfect forward secrecy between routers. At the same time, the onion proxy software presents a SOCKS interface to its clients. SOCKS-aware applications may be pointed at Tor, which then multiplexes the traffic through a Tor virtual circuit.
 
-**Warning:** Tor by itself is _not_ all you need to maintain your anonymity. There are several major pitfalls to watch out for (see: [Want Tor to really work?](https://www.torproject.org/download/download.html#warning)).
+**Warning:** Tor by itself is *not* all you need to maintain your anonymity. There are several major pitfalls to watch out for (see: [Want Tor to really work?](https://www.torproject.org/download/download.html#warning)).
 
 Through this process the onion proxy manages networking traffic for end-user anonymity. It keeps a user anonymous by encrypting traffic, sending it through other nodes of the Tor network, and decrypting it at the last node to receive your traffic before forwarding it to the server you specified. One trade off that has to be made for the anonymity Tor provides is that it can be considerably slower than a regular direct connection, due to the large amount of traffic re-routing. Additionally, although Tor provides protection against traffic analysis it cannot prevent traffic confirmation at the boundaries of the Tor network (i.e. the traffic entering and exiting the network).
 
-See [Wikipedia:Tor (anonymity network)](https://en.wikipedia.org/wiki/Tor_(anonymity_network) "wikipedia:Tor (anonymity network)") for more information.
+See [Wikipedia:Tor (anonymity network)](https://en.wikipedia.org/wiki/Tor_(anonymity_network) for more information.
 
 ## Installation
 
@@ -71,7 +71,7 @@ The [arm](https://www.archlinux.org/packages/?name=arm) (Anonymizing Relay Monit
 
 Additionally, there is a [Qt](/index.php/Qt "Qt") frontend for Tor in package [vidalia](https://aur.archlinux.org/packages/vidalia/). In addition to controlling the Tor process, Vidalia allows you to view and configure the status of Tor, monitor bandwidth usage, and view, filter, and search log messages.
 
-**Warning:** As there is no active maintainer for Vidalia, along with a large number of longstanding bugs, [avoid using](https://www.whonix.org/wiki/Tor_Controller#Vidalia_recommended_against) _vidalia_.
+**Warning:** As there is no active maintainer for Vidalia, along with a large number of longstanding bugs, [avoid using](https://www.whonix.org/wiki/Tor_Controller#Vidalia_recommended_against) *vidalia*.
 
 ## Configuration
 
@@ -97,7 +97,6 @@ You may wish to review [Lifecycle of a New Relay](https://blog.torproject.org/bl
 For security purposes, it may be desirable to run Tor in a [chroot](/index.php/Chroot "Chroot"). The following script will create an appropriate chroot in /opt/torchroot:
 
  `~/torchroot-setup.sh` 
-
 ```
 #!/bin/bash
 export TORCHROOT=/opt/torchroot
@@ -150,7 +149,6 @@ After running the script as root, Tor can be launched in the [chroot](/index.php
 or if you use systemd overload the service:
 
  `/etc/systemd/system/tor.service.d/chroot.conf` 
-
 ```
 [Service]
 User=root
@@ -208,9 +206,7 @@ Create a Dropin directory for the container service:
 # mkdir /etc/systemd/system/systemd-nspawn@tor-exit.service.d
 
 ```
-
  `/etc/systemd/system/systemd-nspawn@tor-exit.service.d/tor-exit.conf` 
-
 ```
 [Service]
 ExecStart=
@@ -259,7 +255,7 @@ The Tor Project currently only supports web browsing with tor through the [Tor B
 
 ### Firefox
 
-In _Preferences > Advanced > Network tab > Settings_ manually set Firefox to use the SOCKS proxy `localhost` with port `9050`. Then you must type `about:config` into the address bar and _void your warranty_. Change `network.proxy.socks_remote_dns` to `true` and restart the browser. This channels all DNS requests through TOR's socks proxy.
+In *Preferences > Advanced > Network tab > Settings* manually set Firefox to use the SOCKS proxy `localhost` with port `9050`. Then you must type `about:config` into the address bar and *void your warranty*. Change `network.proxy.socks_remote_dns` to `true` and restart the browser. This channels all DNS requests through TOR's socks proxy.
 
 ### Chromium
 
@@ -284,9 +280,9 @@ Next, take a look at the DNS tab of about:net-internals to make sure Chrome isn'
 
 Note that in versions of Chrome after r186548, you can do this more concisely by mapping to ~NOTFOUND rather than 0.0.0.0. Just as with Firefox, you can setup a fast switch for example through [Proxy SwitchySharp](https://chrome.google.com/webstore/detail/dpplabbmogkhghncfbfdeeokoefdjegm).
 
-Once installed enter in its configuration page. Under the tab _Proxy Profiles_ add a new profile _Tor_, if ticked untick the option _Use the same proxy server for all protocols_, then add _localhost_ as SOCKS Host, _9050_ to the respective port and select _SOCKS v5_.
+Once installed enter in its configuration page. Under the tab *Proxy Profiles* add a new profile *Tor*, if ticked untick the option *Use the same proxy server for all protocols*, then add *localhost* as SOCKS Host, *9050* to the respective port and select *SOCKS v5*.
 
-Optionally you can enable the quick switch under the _General_ tab to be able to switch beetween normal navigation and Tor network just by left-clicking on the Proxy SwitchySharp's icon.
+Optionally you can enable the quick switch under the *General* tab to be able to switch beetween normal navigation and Tor network just by left-clicking on the Proxy SwitchySharp's icon.
 
 ### Luakit
 
@@ -305,7 +301,7 @@ Tor can be used with an HTTP proxy like [Polipo](/index.php/Polipo "Polipo") or 
 
 ### Firefox
 
-The [FoxyProxy](https://addons.mozilla.org/en-us/firefox/addon/foxyproxy-standard/) add-on allows you to specify multiple proxies for different URLs or for all your browsing. After restarting Firefox manually set Firefox to port `8118` on `localhost`, which is where [Polipo](/index.php/Polipo "Polipo") or [Privoxy](/index.php/Privoxy "Privoxy") are running. These settings can be access under _Add > Standard proxy type_. Select a proxy label (e.g Tor) and enter the port and host into the _HTTP Proxy_ and _SSL Proxy_ fields. To check if Tor is functioning properly visit the [Tor Check](https://check.torproject.org/) website and toggle Tor.
+The [FoxyProxy](https://addons.mozilla.org/en-us/firefox/addon/foxyproxy-standard/) add-on allows you to specify multiple proxies for different URLs or for all your browsing. After restarting Firefox manually set Firefox to port `8118` on `localhost`, which is where [Polipo](/index.php/Polipo "Polipo") or [Privoxy](/index.php/Privoxy "Privoxy") are running. These settings can be access under *Add > Standard proxy type*. Select a proxy label (e.g Tor) and enter the port and host into the *HTTP Proxy* and *SSL Proxy* fields. To check if Tor is functioning properly visit the [Tor Check](https://check.torproject.org/) website and toggle Tor.
 
 ### Polipo
 
@@ -323,7 +319,7 @@ In order to use an IM client with tor, we do not need an http proxy like [polipo
 
 ### Pidgin
 
-You can set up Pidgin to use Tor globally, or per account. To use Tor globally, go to Tools -> Preferences -> Proxy. To use Tor for specific accounts, go to _Accounts > Manage Accounts_, select the desired account, click Modify, then go to the Proxy tab. The proxy settings are as follows:
+You can set up Pidgin to use Tor globally, or per account. To use Tor globally, go to Tools -> Preferences -> Proxy. To use Tor for specific accounts, go to *Accounts > Manage Accounts*, select the desired account, click Modify, then go to the Proxy tab. The proxy settings are as follows:
 
 ```
 Proxy type SOCKS5
@@ -346,7 +342,7 @@ $ torsocks irssi
 Set your identification to nickserv, which will be read when connecting. Supported mechanisms are ECDSA-NIST256P-CHALLENGE (see [ecdsatool](https://github.com/atheme/ecdsatool/blob/master/cap_sasl.pl)) and PLAIN. DH-BLOWFISH is [no longer supported](https://freenode.net/sasl/sasl-irssi.shtml).
 
 ```
-/sasl set _network_ _username_ _password_ _mechanism_
+/sasl set *network* *username* *password* *mechanism*
 
 ```
 
@@ -355,14 +351,14 @@ Disable CTCP and DCC and set a different hostname to prevent information disclos
 ```
 /ignore * CTCPS
 /ignore * DCC
-/set hostname _fake_host_
+/set hostname *fake_host*
 
 ```
 
 Connect to Freenode:
 
 ```
-/connect -network _network_ frxleqtzgvwkv7oz.onion
+/connect -network *network* frxleqtzgvwkv7oz.onion
 
 ```
 
@@ -373,9 +369,7 @@ For more information check [Accessing freenode Via Tor](http://freenode.net/irc_
 Pacman download operations (repository DBs, packages, and public keys) can be done using the Tor network. Though relatively extreme, this measure is useful to prevent an adversary (most likely at one's LAN or the mirror) from knowing a subset of the packages you have installed, at the cost of longer latency, lower throughput, possible suspicion, and possible failure (if Tor is being filtered via the current connection).
 
 **Warning:** It would be arguably simpler for an adversary, specifically one who desires to indiscriminately disseminate malware, to perform his/her activity by deploying malicious Tor exit node(s). Always use signed packages and verify new public keys by out-of-band means.
-
  `/etc/pacman.conf` 
-
 ```
 ...
 XferCommand = /usr/bin/curl --socks5-hostname localhost:9050 -C - -f %u > %o
@@ -415,7 +409,7 @@ This means that your machine will act as an entry node or forwarding relay (depe
 You should at least share 20KiB/s:
 
 ```
-Nickname _tornickname_
+Nickname *tornickname*
 ORPort 9001                    # This TCP-Port has to be opened/forwarded in your Firewall
 BandwidthRate 20 KB            # Throttle traffic to 20KB/s
 BandwidthBurst 50 KB           # But allow bursts up to 50KB/s
@@ -458,7 +452,7 @@ ExitPolicy accept *:119        # Accept nntp as well as default exit policy
 
 #### +100Mbps Exit Relay configuration example
 
-If you run a fast exit relay (+100Mbps) with `ORPort 443` and `DirPort 80` (as recommended in [Configuring a Tor relay on Debian/Ubuntu](http://www.torproject.org/docs/tor-relay-debian.html.en#after)) the following configuration changes might serve as inspiration to setup Tor alongside [iptables](/index.php/Iptables "Iptables") firewall, [Haveged](/index.php/Haveged "Haveged") to increase system entropy and [pdnsd](/index.php/Pdnsd "Pdnsd") as DNS cache. It is important to _first_ read [Configuring a Tor relay on Debian/Ubuntu](http://www.torproject.org/docs/tor-relay-debian.html.en#after).
+If you run a fast exit relay (+100Mbps) with `ORPort 443` and `DirPort 80` (as recommended in [Configuring a Tor relay on Debian/Ubuntu](http://www.torproject.org/docs/tor-relay-debian.html.en#after)) the following configuration changes might serve as inspiration to setup Tor alongside [iptables](/index.php/Iptables "Iptables") firewall, [Haveged](/index.php/Haveged "Haveged") to increase system entropy and [pdnsd](/index.php/Pdnsd "Pdnsd") as DNS cache. It is important to *first* read [Configuring a Tor relay on Debian/Ubuntu](http://www.torproject.org/docs/tor-relay-debian.html.en#after).
 
 **Note:** See [#Running Tor in a systemd-nspawn container with a virtual network interface](#Running_Tor_in_a_systemd-nspawn_container_with_a_virtual_network_interface) for instructions to install Tor in a `systemd-nspawn` container. [Haveged](/index.php/Haveged "Haveged") should be installed on the container host.
 
@@ -469,7 +463,6 @@ If you run a fast exit relay (+100Mbps) with `ORPort 443` and `DirPort 80` (as r
 To handle more than 8192 connections `LimitNOFILE` can be raised to 32768 as per [Tor FAQ](https://www.torproject.org/docs/faq.html.en#PackagedTor).
 
  `/etc/systemd/system/tor.service.d/increase-file-limits.conf` 
-
 ```
 [Service]
 LimitNOFILE=32768
@@ -479,7 +472,6 @@ LimitNOFILE=32768
 To succesfully raise `nofile` limit, you may also have to append the following:
 
  `/etc/security/limits.conf` 
-
 ```
 ...
 tor     soft    nofile    32768
@@ -496,7 +488,6 @@ Check if the `nofile` (filedescriptor) limit is succesfully raised with `# sudo 
 To bind Tor to privileged ports the service must be started as root. Please specify `User tor` option in `/etc/tor/torrc`.
 
  `/etc/systemd/system/tor.service.d/start-as-root.conf` 
-
 ```
 [Service]
 User=root
@@ -508,7 +499,6 @@ User=root
 To listen on Port 80 and 443 the service need to be started as `root` as described in [#Start tor.service as root to bind Tor to privileged ports](#Start_tor.service_as_root_to_bind_Tor_to_privileged_ports). Use the `User tor` option in `/etc/tor/torrc` to properly reduce Tor’s privileges.
 
  `/etc/tor/torrc` 
-
 ```
 SocksPort 0                                       ## Pure relay configuration without local socks proxy
 
@@ -571,7 +561,6 @@ If `ControlPort 9051` and `CookieAuthentication 1` is specified in `/etc/tor/tor
 Setup and learn to use [iptables](/index.php/Iptables "Iptables"). Instead of being a [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall") where connection tracking would have to track thousands of connections on a tor exit relay this firewall configuration is stateless.
 
  `/etc/iptables/iptables.rules` 
-
 ```
 *raw
 -A PREROUTING -j NOTRACK
@@ -623,7 +612,6 @@ See [Haveged](/index.php/Haveged "Haveged") to decide if your system generates e
 You can use [pdnsd](/index.php/Pdnsd "Pdnsd") to cache DNS queries locally, so the exit relay can resolve DNS faster and the exit relay does not forward all DNS queries to an external DNS recursor.
 
  `/etc/pdnsd.conf` 
-
 ```
 ...
 perm_cache=102400                       ## (Default value)*100 = 1MB * 100 = 100MB
@@ -654,7 +642,6 @@ If your local DNS recursor is in some way censored or interferes with DNS querie
 The Tor 0.2.x series provides a built-in DNS forwarder. To enable it add the following lines to the Tor configuration file and restart the daemon:
 
  `/etc/tor/torrc` 
-
 ```
 DNSPort 9053
 AutomapHostsOnResolve 1
@@ -674,21 +661,20 @@ $ tor-resolve archlinux.org
 
 ### Using TorDNS for all DNS queries
 
-It is possible to configure your system, if so desired, to use TorDNS for _all_ queries your system makes, regardless of whether or not you eventually use Tor to connect to your final destination. To do this, configure your system to use 127.0.0.1 as its DNS server and edit the 'DNSPort' line in `/etc/tor/torrc` to show:
+It is possible to configure your system, if so desired, to use TorDNS for *all* queries your system makes, regardless of whether or not you eventually use Tor to connect to your final destination. To do this, configure your system to use 127.0.0.1 as its DNS server and edit the 'DNSPort' line in `/etc/tor/torrc` to show:
 
 ```
 DNSPort 53
 
 ```
 
-Alternatively, you can use a local caching DNS server, such as [dnsmasq](/index.php/Dnsmasq "Dnsmasq") or [pdnsd](/index.php/Pdnsd "Pdnsd"), which will also compensate for TorDNS being a little slower than traditional DNS servers. The following instructions will show how to set up _dnsmasq_ for this purpose.
+Alternatively, you can use a local caching DNS server, such as [dnsmasq](/index.php/Dnsmasq "Dnsmasq") or [pdnsd](/index.php/Pdnsd "Pdnsd"), which will also compensate for TorDNS being a little slower than traditional DNS servers. The following instructions will show how to set up *dnsmasq* for this purpose.
 
 Change the tor setting to listen for the DNS request in port 9053 and install [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq).
 
 Modify its configuration file so that it contains:
 
  `/etc/dnsmasq.conf` 
-
 ```
 no-resolv
 server=127.0.0.1#9053
@@ -699,7 +685,6 @@ listen-address=127.0.0.1
 These configurations set dnsmasq to listen only for requests from the local computer, and to use TorDNS at its sole upstream provider. It is now neccessary to edit `/etc/resolv.conf` so that your system will query only the dnsmasq server.
 
  `/etc/resolv.conf` 
-
 ```
 nameserver 127.0.0.1
 
@@ -707,22 +692,21 @@ nameserver 127.0.0.1
 
 Start the **dnsmasq** daemon.
 
-Finally if you use _dhcpd_ you would need to change its settings to that it does not alter the resolv configuration file. Just add this line in the configuration file:
+Finally if you use *dhcpd* you would need to change its settings to that it does not alter the resolv configuration file. Just add this line in the configuration file:
 
  `/etc/dhcpcd.conf` 
-
 ```
 nohook resolv.conf
 
 ```
 
-If you already have an _nohook_ line, just add **resolv.conf** separated with a comma.
+If you already have an *nohook* line, just add **resolv.conf** separated with a comma.
 
 ## Torify
 
 **torify** will allow you use an application via the Tor network without the need to make configuration changes to the application involved. From the man page:
 
-_torify is a simple wrapper that attempts to find the best underlying Tor wrapper available on a system. It calls torsocks with a tor specific configuration file._
+*torify is a simple wrapper that attempts to find the best underlying Tor wrapper available on a system. It calls torsocks with a tor specific configuration file.*
 
 Usage example:
 
@@ -732,10 +716,9 @@ $ torify wget -qO- https://check.torproject.org/ | grep -i congratulations
 
 ```
 
-Torify _will not_, however, perform DNS lookups through the Tor network. A workaround is to use it in conjunction with `tor-resolve` (described above). In this case, the procedure for the first of the above examples would look like this:
+Torify *will not*, however, perform DNS lookups through the Tor network. A workaround is to use it in conjunction with `tor-resolve` (described above). In this case, the procedure for the first of the above examples would look like this:
 
  `$ tor-resolve checkip.dyndns.org` 
-
 ```
 208.78.69.70
 
@@ -748,7 +731,7 @@ $ torify elinks 208.78.69.70
 
 ## Transparent Torification
 
-In some cases it is more secure and often easier to transparently torify an entire system instead of configuring individual applications to use Tor's socks port, not to mention preventing DNS leaks. Transparent torification can be done with [iptables](/index.php/Iptables "Iptables") in such a way that all outbound packets are redirected through Tor's _TransPort_, except the Tor traffic itself. Once in place, applications do not need to be configured to use Tor, though Tor's _SocksPort_ will still work. This also works for DNS via Tor's _DNSPort_, but realize that Tor only supports TCP, thus UDP packets other than DNS cannot be sent through Tor and therefore must be blocked entirely to prevent leaks. Using iptables to transparently torify a system affords comparatively strong leak protection, but it is not a substitute for virtualized torification applications such as Whonix, or TorVM [[3]](https://www.whonix.org/wiki/Comparison_with_Others). Transparent torification also will not protect against fingerprinting attacks on its own, so it is recommended to use it in conjunction with the Tor Browser (search the AUR for the version you want: [https://aur.archlinux.org/packages/?K=tor-browser](https://aur.archlinux.org/packages/?K=tor-browser)) or to use an amnesic solution like [Tails](http://tails.boum.org/) instead. Applications can still learn your computer's hostname, MAC address, serial number, timezone, etc. and those with root privileges can disable the firewall entirely. In other words, transparent torification with iptables protects against accidental connections and DNS leaks by misconfigured software, it is not sufficient to protect against malware or software with serious security vulnerabilities.
+In some cases it is more secure and often easier to transparently torify an entire system instead of configuring individual applications to use Tor's socks port, not to mention preventing DNS leaks. Transparent torification can be done with [iptables](/index.php/Iptables "Iptables") in such a way that all outbound packets are redirected through Tor's *TransPort*, except the Tor traffic itself. Once in place, applications do not need to be configured to use Tor, though Tor's *SocksPort* will still work. This also works for DNS via Tor's *DNSPort*, but realize that Tor only supports TCP, thus UDP packets other than DNS cannot be sent through Tor and therefore must be blocked entirely to prevent leaks. Using iptables to transparently torify a system affords comparatively strong leak protection, but it is not a substitute for virtualized torification applications such as Whonix, or TorVM [[3]](https://www.whonix.org/wiki/Comparison_with_Others). Transparent torification also will not protect against fingerprinting attacks on its own, so it is recommended to use it in conjunction with the Tor Browser (search the AUR for the version you want: [https://aur.archlinux.org/packages/?K=tor-browser](https://aur.archlinux.org/packages/?K=tor-browser)) or to use an amnesic solution like [Tails](http://tails.boum.org/) instead. Applications can still learn your computer's hostname, MAC address, serial number, timezone, etc. and those with root privileges can disable the firewall entirely. In other words, transparent torification with iptables protects against accidental connections and DNS leaks by misconfigured software, it is not sufficient to protect against malware or software with serious security vulnerabilities.
 
 To enable transparent torification, use the following file for `iptables-restore` and `ip6tables-restore` (internally used by [systemd](/index.php/Systemd "Systemd")'s `iptables.service` and `ip6tables.service`).
 
@@ -770,7 +753,6 @@ TransPort 9040
 See `man iptables`.
 
  `/etc/iptables/iptables.rules` 
-
 ```
 
 *nat
@@ -909,5 +891,5 @@ Now save changes and run the daemon:
 *   [Running the Tor client on Linux/BSD/Unix](https://www.torproject.org/docs/tor-doc-unix.html.en)
 *   [Unix-based Tor Articles](https://trac.torproject.org/projects/tor/wiki#Unixish)
 *   [Software commonly integrated with Tor](https://trac.torproject.org/projects/tor/wiki/doc/SupportPrograms)
-*   [How to set up a Tor _Hidden Service_](https://www.torproject.org/docs/tor-hidden-service.html.en)
+*   [How to set up a Tor *Hidden Service*](https://www.torproject.org/docs/tor-hidden-service.html.en)
 *   [List of tor pluggable transports for obfuscating tor's traffic](https://trac.torproject.org/projects/tor/wiki/doc/PluggableTransports)

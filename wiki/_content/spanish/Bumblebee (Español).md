@@ -1,6 +1,6 @@
 Del [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ) de Bumblebee:
 
-_Bumblebee es una solución para aprovechar la tecnología Nvidia Optimus, presente en los ordenadores portátiles habilitados, disponible para los sistemas GNU/Linux. Esta tecnología combina el uso de dos tarjetas gráficas con dos perfiles diferentes de consumo de energía, que están conectadas de una manera estratificada compartiendo un solo framebuffer_.
+*Bumblebee es una solución para aprovechar la tecnología Nvidia Optimus, presente en los ordenadores portátiles habilitados, disponible para los sistemas GNU/Linux. Esta tecnología combina el uso de dos tarjetas gráficas con dos perfiles diferentes de consumo de energía, que están conectadas de una manera estratificada compartiendo un solo framebuffer*.
 
 ## Contents
 
@@ -34,7 +34,7 @@ _Bumblebee es una solución para aprovechar la tecnología Nvidia Optimus, prese
 
 ## Bumblebee: Tecnología Optimus para Linux
 
-La [Tecnología Optimus](http://www.nvidia.com/object/optimus_technology.html) es una implementación [_gráfica híbrida_](http://hybrid-graphics-linux.tuxfamily.org/index.php?title=Hybrid_graphics) sin un hardware multiplexor. La GPU integrada controla la pantalla, mientras que la GPU dedicada gestiona las prestaciones más exigente y envía el resultado a la GPU integrada para la visualización. Cuando el ordenador está funcionando con alimentación de la batería, la GPU dedicada se apaga para ahorrar energía y prolongar la autonomía de la batería.
+La [Tecnología Optimus](http://www.nvidia.com/object/optimus_technology.html) es una implementación [*gráfica híbrida*](http://hybrid-graphics-linux.tuxfamily.org/index.php?title=Hybrid_graphics) sin un hardware multiplexor. La GPU integrada controla la pantalla, mientras que la GPU dedicada gestiona las prestaciones más exigente y envía el resultado a la GPU integrada para la visualización. Cuando el ordenador está funcionando con alimentación de la batería, la GPU dedicada se apaga para ahorrar energía y prolongar la autonomía de la batería.
 
 Bumblebee es una implementación de software que se comprende de dos partes:
 
@@ -47,7 +47,7 @@ Se trata de imitar el comportamiento de la tecnología Optimus, utilizando la GP
 
 ## Instalación
 
-Antes de proceder a la instalación de Bunblebee compruebe su BIOS y active la opción _Optimus_ (los ordenadores portátiles más antiguos la llaman _«shareable graphics»_), si es posible (no todas las BIOS proporcionan esta opción), e instale el [controlador intel](/index.php/Intel_(Espa%C3%B1ol) "Intel (Español)") para la tarjeta gráfica secundaria.
+Antes de proceder a la instalación de Bunblebee compruebe su BIOS y active la opción *Optimus* (los ordenadores portátiles más antiguos la llaman *«shareable graphics»*), si es posible (no todas las BIOS proporcionan esta opción), e instale el [controlador intel](/index.php/Intel_(Espa%C3%B1ol) "Intel (Español)") para la tarjeta gráfica secundaria.
 
 Varios paquetes están disponibles para una configuración completa:
 
@@ -57,7 +57,7 @@ Varios paquetes están disponibles para una configuración completa:
     *   Un controlador para la tarjeta de Nvidia. El controlador de código abierto `nouveau` o el controlador propietario `nvidia`. Véase la subsección correspondiente.
     *   Un puente para los procesos/pantalla. Dos paquetes están disponibles en la actualidad para ello, [primus](https://www.archlinux.org/packages/?name=primus) (o [primus-git](https://aur.archlinux.org/packages/primus-git/)) y [virtualgl](https://www.archlinux.org/packages/?name=virtualgl). Solo uno de ellos es necesario, pero la instalación de ambos no hace daño.
 
-**Nota:** Si desea ejecutar una aplicación de 32 bits en un sistema de 64-bit debe instalar las bibliotecas apropiadas lib32-* del programa. Además de esto, también es necesario instalar [lib32-virtualgl](https://www.archlinux.org/packages/?name=lib32-virtualgl) o [lib32-primus](https://www.archlinux.org/packages/?name=lib32-primus), dependiendo de su elección para el «render bridge» (_puentear prestaciones_). Basta con asegurarse de ejecutar `primusrun` en lugar de `optirun` si decide utilizar Primus render bridge.
+**Nota:** Si desea ejecutar una aplicación de 32 bits en un sistema de 64-bit debe instalar las bibliotecas apropiadas lib32-* del programa. Además de esto, también es necesario instalar [lib32-virtualgl](https://www.archlinux.org/packages/?name=lib32-virtualgl) o [lib32-primus](https://www.archlinux.org/packages/?name=lib32-primus), dependiendo de su elección para el «render bridge» (*puentear prestaciones*). Basta con asegurarse de ejecutar `primusrun` en lugar de `optirun` si decide utilizar Primus render bridge.
 
 ### Instalar Bumblebee con Intel/NVIDIA
 
@@ -88,7 +88,7 @@ donde `$USER` es el nombre de inicio de sesión del usuario. A continuación, ci
 
 **Sugerencia:** Para iniciar **bumblebee** automáticamente al arranque, active el servicio **bumblebeed** de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)").
 
-Terminado, reinicie el sistema y utilice el programa `[optirun](#Uso)` para disfrutar de la tecnología NVIDIA Optimus para el _rendering_.
+Terminado, reinicie el sistema y utilice el programa `[optirun](#Uso)` para disfrutar de la tecnología NVIDIA Optimus para el *rendering*.
 
 Si simplemente desea desactivar su tarjeta NVIDIA, esto debería ser todo lo que se necesita, además de tener instalado `bbswitch`. El demonio bumblebeed, de forma predeterminada, instruye a bbswitch para desactivar la tarjeta cuando se inicia. Consulte también la sección [administración de energía](#Administraci.C3.B3n_de_energ.C3.ADa) más abajo.
 
@@ -107,14 +107,14 @@ Si tiene éxito y el terminal donde se está ejecutando muestra algo acerca de s
 
 Utilización general:
 
- `$ optirun [opciones] _aplicación_ [parámetros-de-la-aplicación]` 
+ `$ optirun [opciones] *aplicación* [parámetros-de-la-aplicación]` 
 
 Algunos ejemplos:
 
 Iniciar aplicaciones de Windows con Optimus:
 
 ```
-$ optirun wine _aplicación de windows_.exe
+$ optirun wine *aplicación de windows*.exe
 
 ```
 
@@ -160,7 +160,6 @@ Métodos sin comprimir son: `proxy`, `xv`
 Para utilizar un estándar de compresión para todas las aplicaciones habrá que establecer el valor `VGLTransport` con el `<método-de-compresión>` preferido en `/etc/bumblebee/bumblebee.conf`
 
  `/etc/bumblebee/bumblebee.conf` 
-
 ```
 [...]
 [optirun]
@@ -192,7 +191,6 @@ El comportamiento predeterminado de bbswitch es dejar el estado de energía de l
 Configure la opción de los módulos `load_state` y `unload_state` de acuerdo a sus necesidades (véase la [documentación de bbswitch](https://github.com/Bumblebee-Project/bbswitch)).
 
  `/etc/modprobe.d/bbswitch.conf` 
-
 ```
 options bbswitch load_state=0 unload_state=1
 
@@ -203,7 +201,6 @@ options bbswitch load_state=0 unload_state=1
 La tarjeta NVIDIA no puede inicializarse correctamente durante la fase de arranque si la tarjeta se apaga cuando el sistema se cerró por última vez. Una solución es configurar la opción `TurnCardOffAtExit=false` en `/etc/bumblebee/bumblebee.conf`, sin embargo, ésto todavía permitirá a la tarjeta detenerse cada vez que lo haga el daemon de Bumblebee, aunque se haga manualmente. Para asegurarse de que la tarjeta NVIDIA esté siempre accecible, es decir, activa, durante el apagado, añada el siguiente servicio de[systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") (si está utilizando [bbswitch](https://www.archlinux.org/packages/?name=bbswitch)):
 
  `/etc/systemd/system/nvidia-enable.service` 
-
 ```
 [Unit]
 Description=Enable NVIDIA card
@@ -225,7 +222,6 @@ A continuación, active el servicio ejecutando `systemctl enable nvidia-enable.s
 Si el puerto (DisplayPort/HDMI/VGA) está conectado al chip de Intel, es posible configurar varios monitores con xorg.conf. Puede ajustarse para utilizar la tarjeta Intel, pero con Bumblebee todavía será posible usar la tarjeta NVIDIA. Un ejemplo de configuración, a continuación, muestra dos pantallas idénticas con una resolución de 1080p y utilizando la salida HDMI.
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "Screen"
     Identifier     "Screen0"
@@ -289,7 +285,6 @@ EndSection
 Necesitará probablemente cambiar el BusID tanto para el procesador Intel como para la tarjeta NVIDIA.
 
  `$ lspci | grep VGA` 
-
 ```
 00:02.0 VGA compatible controller: Intel Corporation 2nd Generation Core Processor Family Integrated Graphics Controller (rev 09)
 
@@ -316,7 +311,6 @@ Para simplificar, DP se utiliza a continuación para referirse a la salida digit
 *   Cambie estos ajustes en el archivo bumblebee.conf:
 
  `/etc/bumblebee/bumblebee.conf` 
-
 ```
 KeepUnusedXServer=true
 Driver=nvidia
@@ -362,7 +356,6 @@ EndSection  # Samsung 2494
 Cambie su archivo `xorg.nvidia.conf` para incluir esta sección Monitor. También puede recortar su archivo de forma que solo contenga las secciones ServerLayout, Monitor, Device y Screen. He aquí un archivo de referencia:
 
  `/etc/X11/xorg.nvidia.conf` 
-
 ```
 Section "ServerLayout"
         Identifier     "X.org Nvidia DP"
@@ -401,10 +394,9 @@ EndSection
 
 *   Conecte los dos monitores externos e inicie X (con startx). Mire el archivo `/var/log/Xorg.0.log`. Compruebe que el monitor VGA se detecta con las modalidades correctas. También debería ver una salida VIRTUAL mostrada con una modalidad propia.
 *   Ejecute `xrandr` y las tres pantallas deberían aparecer allí, junto con las modalidades soportadas.
-*   Si el listado Modelines para la pantalla VIRTUAL no tiene la resolución nativa de los monitores, anote el nombre de la salida exacta. Para este ejemplo es `VIRTUAL1`. A continuación, echaremos un vistazo de nuevo al archivo Xorg.0.log. Debe verse el mensaje: "Output VIRTUAL1 has no monitor section" (_«La salida VIRTUAL1 no tiene la sección del monitor»_). Vamos a cambiar esto poniendo un archivo con la necesaria sección Monitor en `/etc/X11/xorg.conf.d`. Salimos y reiniciamos X seguidamente.
+*   Si el listado Modelines para la pantalla VIRTUAL no tiene la resolución nativa de los monitores, anote el nombre de la salida exacta. Para este ejemplo es `VIRTUAL1`. A continuación, echaremos un vistazo de nuevo al archivo Xorg.0.log. Debe verse el mensaje: "Output VIRTUAL1 has no monitor section" (*«La salida VIRTUAL1 no tiene la sección del monitor»*). Vamos a cambiar esto poniendo un archivo con la necesaria sección Monitor en `/etc/X11/xorg.conf.d`. Salimos y reiniciamos X seguidamente.
 
  `/etc/X11/xorg.conf.d/20-monitor_samsung.conf` 
-
 ```
 Section "Monitor"
     Identifier     "VIRTUAL1"
@@ -436,7 +428,6 @@ En Windows, la forma en que funciona Optimus con NVIDIA se basa en la existencia
 Para imitar este comportamiento en Linux, es posible utilizar [libgl-switcheroo-git](https://aur.archlinux.org/packages/libgl-switcheroo-git/). Después de instalarlo, puede agregar lo siguiente en el archivo .xprofile.
 
  `~/.xprofile` 
-
 ```
 mkdir -p /tmp/libgl-switcheroo-$USER/fs
 gtkglswitch &
@@ -458,7 +449,7 @@ Esto no está bien documentado, pero no es necesario que Bumblebee utilice CUDA 
 
 ## Solución de problemas
 
-**Nota:** Por favor, informe de los errores con el _trazador GitHub_ del [Proyecto-Bumblebee](https://github.com/Bumblebee-Project/Bumblebee), como se describe en su [wiki](https://github.com/Bumblebee-Project/Bumblebee/wiki/Reporting-Issues).
+**Nota:** Por favor, informe de los errores con el *trazador GitHub* del [Proyecto-Bumblebee](https://github.com/Bumblebee-Project/Bumblebee), como se describe en su [wiki](https://github.com/Bumblebee-Project/Bumblebee/wiki/Reporting-Issues).
 
 ### [VGL] ERROR: Could not open display :8
 
@@ -559,7 +550,6 @@ Si todavía no está resuelto, trate de desactivar la compositing de su entorno 
 Podemos obtener algo como esto:
 
  `$ optirun glxspheres` 
-
 ```
 [ 1648.179533] [ERROR]You've no permission to communicate with the Bumblebee daemon. Try adding yourself to the 'bumblebee' group
 [ 1648.179628] [ERROR]Could not connect to bumblebee daemon - is it running?

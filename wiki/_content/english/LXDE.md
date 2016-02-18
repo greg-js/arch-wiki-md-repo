@@ -1,6 +1,6 @@
 From project [home page](http://lxde.org/):
 
-	_The "Lightweight X11 Desktop Environment" is an extremely fast-performing and energy-saving desktop environment. Maintained by an international community of developers, it comes with a beautiful interface, multi-language support, standard keyboard short cuts and additional features like tabbed file browsing. LXDE uses less CPU and less RAM than other environments. It is especially designed for cloud computers with low hardware specifications, such as, netbooks, mobile devices (e.g. MIDs) or older computers._
+	*The "Lightweight X11 Desktop Environment" is an extremely fast-performing and energy-saving desktop environment. Maintained by an international community of developers, it comes with a beautiful interface, multi-language support, standard keyboard short cuts and additional features like tabbed file browsing. LXDE uses less CPU and less RAM than other environments. It is especially designed for cloud computers with low hardware specifications, such as, netbooks, mobile devices (e.g. MIDs) or older computers.*
 
 ## Contents
 
@@ -35,7 +35,7 @@ LXDE requires at least [lxde-common](https://www.archlinux.org/packages/?name=lx
 
 ### GTK+ 3 version
 
-An experimental GTK+ 3 build of LXDE can be installed with the _lxde-gtk3_ group from the unofficial [city](/index.php/Unofficial_user_repositories#city "Unofficial user repositories") repository. The packages are available also from the [AUR](/index.php/AUR "AUR"): [search for packages tagged with lxde-gtk3](https://aur.archlinux.org/packages.php?K=lxde-gtk3).
+An experimental GTK+ 3 build of LXDE can be installed with the *lxde-gtk3* group from the unofficial [city](/index.php/Unofficial_user_repositories#city "Unofficial user repositories") repository. The packages are available also from the [AUR](/index.php/AUR "AUR"): [search for packages tagged with lxde-gtk3](https://aur.archlinux.org/packages.php?K=lxde-gtk3).
 
 While it works mostly, there are some known issues with [gpicview](https://sourceforge.net/p/lxde/bugs/769/), [lxappearance-obconf](https://sourceforge.net/p/lxde/bugs/768/), [lxlauncher](https://sourceforge.net/p/lxde/patches/513/) and [lxpanel](https://sourceforge.net/p/lxde/bugs/773/).
 
@@ -95,14 +95,13 @@ See [Desktop entries#Autostart](/index.php/Desktop_entries#Autostart "Desktop en
 Each line in `~/.config/lxsession/LXDE/autostart` represents a command to be executed. If a line starts with `@`, and the command following it crashes, the command is automatically re-executed. For example:
 
  `~/.config/lxsession/LXDE/autostart` 
-
 ```
 @lxterminal
 @leafpad
 
 ```
 
-**Note:** Unlike Openbox, these commands do _not_ end with a `&` symbol.
+**Note:** Unlike Openbox, these commands do *not* end with a `&` symbol.
 
 There is also a global autostart file at `/etc/xdg/lxsession/LXDE/autostart`.
 
@@ -135,9 +134,9 @@ See [Font configuration](/index.php/Font_configuration "Font configuration"). [l
 
 ### Keyboard layout
 
-See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") for generic instructions. A keyboard layout applet is included with _lxpanel_.
+See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") for generic instructions. A keyboard layout applet is included with *lxpanel*.
 
-See [#Autostart](#Autostart) for a way to automatically start _setxkbmap_ in LXDE.
+See [#Autostart](#Autostart) for a way to automatically start *setxkbmap* in LXDE.
 
 ### Screen locking
 
@@ -173,7 +172,7 @@ The panel's menus can be configured in `/etc/xdg/menus/lxde-applications.menu` a
 
 ### Replace Openbox
 
-_lxsession_ uses the [window manager](/index.php/Window_manager "Window manager") defined in `~/.config/lxsession/LXDE/desktop.conf`. If this file does not exist, it searches in `/etc/xdg/lxsession/LXDE/desktop.conf` instead.
+*lxsession* uses the [window manager](/index.php/Window_manager "Window manager") defined in `~/.config/lxsession/LXDE/desktop.conf`. If this file does not exist, it searches in `/etc/xdg/lxsession/LXDE/desktop.conf` instead.
 
 Replace `openbox-lxde` in either file with a window manager of choice:
 
@@ -197,7 +196,7 @@ window_manager=compiz
 
 ```
 
-Alternatively, you can autostart `wm --replace` using the method defined in [#Lxsession](#Lxsession) where _wm_ is the name of the window manager executable being started. This method does mean that Openbox will be started first on each login and will then immediately be replaced by the autostarted window manager.
+Alternatively, you can autostart `wm --replace` using the method defined in [#Lxsession](#Lxsession) where *wm* is the name of the window manager executable being started. This method does mean that Openbox will be started first on each login and will then immediately be replaced by the autostarted window manager.
 
 Note that since openbox dispatches the desktop-wide keyboard shortcuts in LXDE, users who want to replace it and still use these shortcuts will need to reimplement this functionality themselves. A good option is [xbindkeys](/index.php/Xbindkeys "Xbindkeys").
 

@@ -53,7 +53,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Opt
 
 **Warning:** The quality of optical drives and the discs themselves varies greatly. Generally, using a slow burn speed is recommended for reliable burns. If you are experiencing unexpected behaviour from the disc, try burning at the lowest speed supported by your burner.
 
-The burning process of optical disc drives consists of creating or obtaining an image and writing it to an optical medium. The image may in principle be any data file. If you want to mount the resulting medium, then it is usually an ISO 9660 file system image file. Audio and multi-media CDs are often burned from a _.bin_ file, under control of a _.toc_ file or a _.cue_ file which tell the desired track layout.
+The burning process of optical disc drives consists of creating or obtaining an image and writing it to an optical medium. The image may in principle be any data file. If you want to mount the resulting medium, then it is usually an ISO 9660 file system image file. Audio and multi-media CDs are often burned from a *.bin* file, under control of a *.toc* file or a *.cue* file which tell the desired track layout.
 
 ### Install burning utilities
 
@@ -65,28 +65,28 @@ You need at least one program for creation of file system images and one program
 
 Available programs for ISO 9660 image creation are:
 
-*   _mkisofs_ from [cdrtools](https://www.archlinux.org/packages/?name=cdrtools)
-*   _xorriso_ and _xorrisofs_ from [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
-*   _genisoimage_ from [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) (unmaintained)
+*   *mkisofs* from [cdrtools](https://www.archlinux.org/packages/?name=cdrtools)
+*   *xorriso* and *xorrisofs* from [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
+*   *genisoimage* from [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) (unmaintained)
 
-The traditional choice is _mkisofs_.
+The traditional choice is *mkisofs*.
 
 Available programs for burning to media are:
 
-*   _cdrdao_ from [cdrdao](https://www.archlinux.org/packages/?name=cdrdao) (CD only, TOC/CUE/BIN only)
-*   _cdrecord_ from [cdrtools](https://www.archlinux.org/packages/?name=cdrtools)
-*   _cdrskin_ from [libburn](https://www.archlinux.org/packages/?name=libburn)
-*   _growisofs_ from [dvd+rw-tools](https://www.archlinux.org/packages/?name=dvd%2Brw-tools) (DVD and BD only)
-*   _xorriso_ and _xorrecord_ from [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
-*   _wodim_ from [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) (CD only, DVD deprecated, unmaintained)
+*   *cdrdao* from [cdrdao](https://www.archlinux.org/packages/?name=cdrdao) (CD only, TOC/CUE/BIN only)
+*   *cdrecord* from [cdrtools](https://www.archlinux.org/packages/?name=cdrtools)
+*   *cdrskin* from [libburn](https://www.archlinux.org/packages/?name=libburn)
+*   *growisofs* from [dvd+rw-tools](https://www.archlinux.org/packages/?name=dvd%2Brw-tools) (DVD and BD only)
+*   *xorriso* and *xorrecord* from [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
+*   *wodim* from [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) (CD only, DVD deprecated, unmaintained)
 
-The traditional choices are _cdrecord_ for CD and _growisofs_ for DVD and Blu-ray Disk. For writing TOC/CUE/BIN files to CD, install [cdrdao](https://www.archlinux.org/packages/?name=cdrdao).
+The traditional choices are *cdrecord* for CD and *growisofs* for DVD and Blu-ray Disk. For writing TOC/CUE/BIN files to CD, install [cdrdao](https://www.archlinux.org/packages/?name=cdrdao).
 
 The free GUI programs for CD, DVD, and BD burning depend on at least one of the above packages.
 
-Both _genisoimage_ and _xorrisofs_ support the _mkisofs_ options which are shown in this document.
+Both *genisoimage* and *xorrisofs* support the *mkisofs* options which are shown in this document.
 
-Both _wodim_ and _cdrskin_ support the shown _cdrecord_ options; _xorrecord_ also supports those which do not deal with audio CD.
+Both *wodim* and *cdrskin* support the shown *cdrecord* options; *xorrecord* also supports those which do not deal with audio CD.
 
 **Note:** [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) and [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) are in conflict. Install only one of them. [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) is recommended: see [FS#46114](https://bugs.archlinux.org/task/46114).
 
@@ -94,10 +94,10 @@ Both _wodim_ and _cdrskin_ support the shown _cdrecord_ options; _xorrecord_ als
 
 The simplest way to create an ISO image is to first copy the needed files to one directory, for example: `./for_iso`.
 
-Then generate the image file with _mkisofs_:
+Then generate the image file with *mkisofs*:
 
 ```
-$ mkisofs -V "_ARCHIVE_2013_07_27_" -J -r -o _isoimage.iso_ _./for_iso_
+$ mkisofs -V "*ARCHIVE_2013_07_27*" -J -r -o *isoimage.iso* *./for_iso*
 
 ```
 
@@ -111,7 +111,7 @@ Each of those options are explained in the following sections.
 
 	`-J`
 
-	Enables [Joliet](https://en.wikipedia.org/wiki/Joliet_(file_system) "wikipedia:Joliet (file system)") extension, which allocates special space to store file names in Unicode (up to 64 UTF-16 characters for each file).
+	Enables [Joliet](https://en.wikipedia.org/wiki/Joliet_(file_system) extension, which allocates special space to store file names in Unicode (up to 64 UTF-16 characters for each file).
 
 	`-joliet-long`
 
@@ -127,12 +127,12 @@ Each of those options are explained in the following sections.
 
 #### graft-points
 
-It is also possible to let _mkisofs_ to collect files and directories from various paths
+It is also possible to let *mkisofs* to collect files and directories from various paths
 
 ```
-$ mkisofs -V "_BACKUP_2013_07_27_" -J -r -o _backup_2013_07_27.iso_ \
+$ mkisofs -V "*BACKUP_2013_07_27*" -J -r -o *backup_2013_07_27.iso* \
   -graft-points \
-  _/photos=/home/user/photos \_
+  */photos=/home/user/photos \*
   /mail=/home/user/mail \
   /photos/holidays=/home/user/holidays/photos
 
@@ -140,11 +140,11 @@ $ mkisofs -V "_BACKUP_2013_07_27_" -J -r -o _backup_2013_07_27.iso_ \
 
 	`-graft-points`
 
-	Enables the recognition of _pathspecs_ which consist of a target address in the ISO file system (e.g. `/photos`) and a source address on hard disk (e.g. `/home/user/photos`). Both are separated by a "=" character.
+	Enables the recognition of *pathspecs* which consist of a target address in the ISO file system (e.g. `/photos`) and a source address on hard disk (e.g. `/home/user/photos`). Both are separated by a "=" character.
 
 So this example puts the disk directory `/home/user/photos`, `/home/user/mail` and `/home/user/holidays/photos`, respectively in the ISO image as `/photos`, `/mail` and `/photos/holidays`.
 
-Programs _mkisofs_ and _xorrisofs_ accept the same options. For secure backups, consider using _xorrisofs_ with option `--for_backup`, which records eventual ACLs and stores an MD5 checksum for each data file.
+Programs *mkisofs* and *xorrisofs* accept the same options. For secure backups, consider using *xorrisofs* with option `--for_backup`, which records eventual ACLs and stores an MD5 checksum for each data file.
 
 See the manuals of the ISO 9660 programs for more info about their options:
 
@@ -157,7 +157,7 @@ See the manuals of the ISO 9660 programs for more info about their options:
 You can mount an ISO image if you want to browse its files. To mount the ISO image, we can use:
 
 ```
-# mount -t iso9660 -o ro,loop _/path/to/file.iso_ _/mount-point_
+# mount -t iso9660 -o ro,loop */path/to/file.iso* */mount-point*
 
 ```
 
@@ -175,7 +175,7 @@ See also [Mounting images as user](/index.php/Mounting_images_as_user "Mounting 
 To convert an `img`/`ccd` image, you can use [ccd2iso](https://www.archlinux.org/packages/?name=ccd2iso):
 
 ```
-$ ccd2iso _~/image.img_ _~/image.iso_
+$ ccd2iso *~/image.img* *~/image.iso*
 
 ```
 
@@ -186,7 +186,7 @@ For the remainder of this section the name of your recording device is assumed t
 Check this by
 
 ```
-$ cdrecord dev=_/dev/sr0_ -checkdrive
+$ cdrecord dev=*/dev/sr0* -checkdrive
 
 ```
 
@@ -201,10 +201,10 @@ If no drive is found, check whether any `/dev/sr*` exist and whether they offer 
 
 ### Reading the volume label of a CD or DVD
 
-If you want to get the name/label of the media, use _dd_:
+If you want to get the name/label of the media, use *dd*:
 
 ```
-$ dd if=_/dev/sr0_ bs=1 skip=32808 count=32
+$ dd if=*/dev/sr0* bs=1 skip=32808 count=32
 
 ```
 
@@ -212,17 +212,16 @@ $ dd if=_/dev/sr0_ bs=1 skip=32808 count=32
 
 You should determine the size of the ISO file system before copying it to hard disk. Most media types deliver more data than was written to them with the most recent burn run.
 
-Use program _isosize_ out of package [util-linux](https://www.archlinux.org/packages/?name=util-linux) to obtain the count of blocks to read:
+Use program *isosize* out of package [util-linux](https://www.archlinux.org/packages/?name=util-linux) to obtain the count of blocks to read:
 
 ```
-$ blocks=$(isosize -d 2048 _/dev/sr0_)
+$ blocks=$(isosize -d 2048 */dev/sr0*)
 
 ```
 
 Have a look whether the obtained number of blocks is plausible
 
  `$ echo "That would be $(expr $blocks / 512) MB"` 
-
 ```
 That would be 589 MB
 
@@ -231,7 +230,7 @@ That would be 589 MB
 Then copy the determined amount of data from medium to hard disk:
 
 ```
-$ dd if=_/dev/sr0_ of=_isoimage.iso_ bs=2048 count=$blocks
+$ dd if=*/dev/sr0* of=*isoimage.iso* bs=2048 count=$blocks
 
 ```
 
@@ -244,7 +243,7 @@ If the original medium was bootable, then the copy will be a bootable image. You
 Used CD-RW media need to be erased before you can write over the previously recorded data. This is done by
 
 ```
-$ cdrecord -v dev=_/dev/sr0_ blank=fast
+$ cdrecord -v dev=*/dev/sr0* blank=fast
 
 ```
 
@@ -253,31 +252,31 @@ There are two options for blanking: `blank=fast` and `blank=full`. Full blanking
 Alternative commands are:
 
 ```
-$ wodim -v dev=_/dev/sr0_ blank=all
-$ cdrskin -v dev=_/dev/sr0_ blank=all
-$ xorriso -outdev _/dev/sr0_ -blank as_needed
+$ wodim -v dev=*/dev/sr0* blank=all
+$ cdrskin -v dev=*/dev/sr0* blank=all
+$ xorriso -outdev */dev/sr0* -blank as_needed
 
 ```
 
-To erase the DVD-RW use the _dvd+rw-format_ utility from [dvd+rw-tools](https://www.archlinux.org/packages/?name=dvd%2Brw-tools):
+To erase the DVD-RW use the *dvd+rw-format* utility from [dvd+rw-tools](https://www.archlinux.org/packages/?name=dvd%2Brw-tools):
 
 ```
-$ dvd+rw-format -blank=fast _/dev/sr0_
+$ dvd+rw-format -blank=fast */dev/sr0*
 
 ```
 
 Alternative commands are:
 
 ```
-$ cdrskin -v dev=_/dev/sr0_ blank=format_overwrite
-$ xorriso -outdev _/dev/sr0_ -format as_needed
+$ cdrskin -v dev=*/dev/sr0* blank=format_overwrite
+$ xorriso -outdev */dev/sr0* -format as_needed
 
 ```
 
 Formatted DVD+RW (note for `+`!) media can be overwritten without such erasure. So consider to apply once in their life time
 
 ```
-$ dvd+rw-format -force _/dev/sr0_
+$ dvd+rw-format -force */dev/sr0*
 
 ```
 
@@ -288,14 +287,14 @@ All other media are either write-once (CD-R, DVD-R, DVD+R, BD-R) or are overwrit
 To burn a readily prepared ISO image file `isoimage.iso` onto an optical medium, run for CD:
 
 ```
-$ cdrecord -v -sao dev=_/dev/sr0_ _isoimage.iso_
+$ cdrecord -v -sao dev=*/dev/sr0* *isoimage.iso*
 
 ```
 
 and for DVD or BD:
 
 ```
-$ growisofs -dvd-compat -Z _/dev/sr0_=_isoimage.iso_
+$ growisofs -dvd-compat -Z */dev/sr0*=*isoimage.iso*
 
 ```
 
@@ -308,12 +307,12 @@ So if in doubt, do:
 
 ```
 
-*   _growisofs_ has a [small bug](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=713016) with blank BD-R media. It issues an error message after the burning is complete. Programs like _k3b_ then believe the whole burn run failed.
+*   *growisofs* has a [small bug](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=713016) with blank BD-R media. It issues an error message after the burning is complete. Programs like *k3b* then believe the whole burn run failed.
 
 To prevent this, either
 
-*   *   format the blank BD-R by `dvd+rw-format _/dev/sr0_` before submitting it to _growisofs_
-    *   or use _growisofs_ option `-use-the-force-luke=spare:none`
+*   *   format the blank BD-R by `dvd+rw-format */dev/sr0*` before submitting it to *growisofs*
+    *   or use *growisofs* option `-use-the-force-luke=spare:none`
 
 ### Verifying the burnt ISO image
 
@@ -322,7 +321,6 @@ You can verify the integrity of the burnt medium to make sure it contains no err
 First calculate the MD5 checksum of the original ISO image:
 
  `$ md5sum isoimage.iso` 
-
 ```
  e5643e18e05f5646046bb2e4236986d8 isoimage.iso
 
@@ -334,9 +332,7 @@ Next calculate the MD5 checksum of the ISO file system on the medium. Although s
 $ blocks=$(expr $(du -b isoimage.iso | awk '{print $1}') / 2048)
 
 ```
-
  `$ dd if=/dev/sr0 bs=2048 count=$blocks | md5sum` 
-
 ```
  43992+0 records in
  43992+0 records out
@@ -351,7 +347,7 @@ Both runs should yield the same MD5 checksum (here: `e5643e18e05f5646046bb2e4236
 
 It is not necessary to store an emerging ISO file system on hard disk before writing it to optical media. Only very old CD drives at very old computers could suffer failed burns due to empty drive buffer.
 
-If you omit option `-o` from _mkisofs_ then it writes the ISO image to standard output. This can be piped into the standard input of burn programs.
+If you omit option `-o` from *mkisofs* then it writes the ISO image to standard output. This can be piped into the standard input of burn programs.
 
 ```
 $ mkisofs -V "ARCHIVE_2013_07_27" -J -r ./for_iso | \
@@ -359,12 +355,12 @@ $ mkisofs -V "ARCHIVE_2013_07_27" -J -r ./for_iso | \
 
 ```
 
-Option `-waiti` is not really needed here. It prevents _cdrecord_ from writing to the medium before _mkisofs_ starts its output. This would allow _mkisofs_ to read the medium without disturbing an already started burn run. See next section about multi-session.
+Option `-waiti` is not really needed here. It prevents *cdrecord* from writing to the medium before *mkisofs* starts its output. This would allow *mkisofs* to read the medium without disturbing an already started burn run. See next section about multi-session.
 
-On DVD and BD, you may let _growisofs_ operate _mkisofs_ for you and burn its output on-the-fly
+On DVD and BD, you may let *growisofs* operate *mkisofs* for you and burn its output on-the-fly
 
 ```
-$ growisofs -Z _/dev/sr0_ -V "_ARCHIVE_2013_07_27_" -r -J _./for_iso_
+$ growisofs -Z */dev/sr0* -V "*ARCHIVE_2013_07_27*" -r -J *./for_iso*
 
 ```
 
@@ -379,41 +375,41 @@ Linux and many other operating systems will mount the directory tree in the last
 CD-R and CD-RW stay writable (aka "appendable") if cdrecord option `-multi` was used
 
 ```
-$ cdrecord -v -multi dev=_/dev/sr0_ _isoimage.iso_
+$ cdrecord -v -multi dev=*/dev/sr0* *isoimage.iso*
 
 ```
 
 Then the medium can be inquired for the parameters of the next session
 
 ```
-$ m=$(cdrecord dev=_/dev/sr0_ -msinfo)
+$ m=$(cdrecord dev=*/dev/sr0* -msinfo)
 
 ```
 
 By help of these parameters and of the readable medium in the drive you can produce the add-on ISO session
 
 ```
-$ mkisofs -M _/dev/sr0_ -C "$m" \
-   -V "_ARCHIVE_2013_07_28_" -J -r -o _session2.iso_ _./more_for_iso_
+$ mkisofs -M */dev/sr0* -C "$m" \
+   -V "*ARCHIVE_2013_07_28*" -J -r -o *session2.iso* *./more_for_iso*
 
 ```
 
 Finally append the session to the medium and keep it appendable again
 
 ```
-$ cdrecord -v -multi dev=_/dev/sr0_ _session2.iso_
+$ cdrecord -v -multi dev=*/dev/sr0* *session2.iso*
 
 ```
 
-Programs _cdrskin_ and _xorrecord_ do this too with DVD-R, DVD+R, BD-R and unformatted DVD-RW. Program _cdrecord_ does multi-session with at least DVD-R and DVD-RW. They all do with CD-R and CD-RW, of course.
+Programs *cdrskin* and *xorrecord* do this too with DVD-R, DVD+R, BD-R and unformatted DVD-RW. Program *cdrecord* does multi-session with at least DVD-R and DVD-RW. They all do with CD-R and CD-RW, of course.
 
 Most re-usable media types do not record a session history that would be recognizable for a mounting kernel. But with ISO 9660 it is possible to achieve the multi-session effect even on those media.
 
-_growisofs_ and _xorriso_ can do this and hide most of the complexity.
+*growisofs* and *xorriso* can do this and hide most of the complexity.
 
 #### Multi-session by growisofs
 
-By default, _growisofs_ uses _mkisofs_ as a backend for creating ISO images forwards most of its program arguments to . See above examples of _mkisofs_. It bans option `-o` and deprecates option `-C`. By default it uses the _mkisofs_. You may specify to use one of the others compatible backend program by setting environment variable `MKISOFS`:
+By default, *growisofs* uses *mkisofs* as a backend for creating ISO images forwards most of its program arguments to . See above examples of *mkisofs*. It bans option `-o` and deprecates option `-C`. By default it uses the *mkisofs*. You may specify to use one of the others compatible backend program by setting environment variable `MKISOFS`:
 
 ```
 $ export MKISOFS="genisoimage"
@@ -424,34 +420,34 @@ $ export MKISOFS="xorrisofs"
 The wish to begin with a new ISO file system on the optical medium is expressed by option `-Z`
 
 ```
-$ growisofs -Z _/dev/sr0_ -V "_ARCHIVE_2013_07_27_" -r -J _./for_iso_
+$ growisofs -Z */dev/sr0* -V "*ARCHIVE_2013_07_27*" -r -J *./for_iso*
 
 ```
 
 The wish to append more files as new session to an existing ISO file system is expressed by option `-M`
 
 ```
-$ growisofs -M _/dev/sr0_ -V "_ARCHIVE_2013_07_28_" -r -J _./more_for_iso_
+$ growisofs -M */dev/sr0* -V "*ARCHIVE_2013_07_28*" -r -J *./more_for_iso*
 
 ```
 
-For details see the [growisofs manual](http://linux.die.net/man/1/growisofs) and the manuals of _genisoimage_, _mkisofs_ and _xorrisofs_.
+For details see the [growisofs manual](http://linux.die.net/man/1/growisofs) and the manuals of *genisoimage*, *mkisofs* and *xorrisofs*.
 
 #### Multi-session by xorriso
 
-_xorriso_ learns the wish to begin with a new ISO file system from the blank state of the medium. So it is appropriate to blank it if it contains data. The command `-blank as_needed` applies to all kinds of re-usable media and even to ISO images in data files on hard disk. It does not cause error if applied to a blank write-once medium.
+*xorriso* learns the wish to begin with a new ISO file system from the blank state of the medium. So it is appropriate to blank it if it contains data. The command `-blank as_needed` applies to all kinds of re-usable media and even to ISO images in data files on hard disk. It does not cause error if applied to a blank write-once medium.
 
 ```
-$ xorriso -outdev _/dev/sr0_ -blank as_needed \
-          -volid "_ARCHIVE_2013_07_27_" -joliet on -add _./for_iso_ --
+$ xorriso -outdev */dev/sr0* -blank as_needed \
+          -volid "*ARCHIVE_2013_07_27*" -joliet on -add *./for_iso* --
 
 ```
 
-On non-blank writable media _xorriso_ appends the newly given disk files if command `-dev` is used rather than `-outdev`. Of course, no command `-blank` should be given here
+On non-blank writable media *xorriso* appends the newly given disk files if command `-dev` is used rather than `-outdev`. Of course, no command `-blank` should be given here
 
 ```
-$ xorriso -dev _/dev/sr0_ \
-          -volid "_ARCHIVE_2013_07_28_" -joliet on -add _./more_for_iso_ --
+$ xorriso -dev */dev/sr0* \
+          -volid "*ARCHIVE_2013_07_28*" -joliet on -add *./more_for_iso* --
 
 ```
 
@@ -459,19 +455,19 @@ For details see the [manual page](https://www.gnu.org/software/xorriso/man_1_xor
 
 ### BD Defect Management
 
-BD-RE and formatted BD-R media are normally written with enabled Defect Management. This feature reads the written blocks while they are still stored in the drive buffer. In case of poor read quality the blocks get written again or redirected to the _Spare Area_ where the data get stored in replacement blocks.
+BD-RE and formatted BD-R media are normally written with enabled Defect Management. This feature reads the written blocks while they are still stored in the drive buffer. In case of poor read quality the blocks get written again or redirected to the *Spare Area* where the data get stored in replacement blocks.
 
 This checkreading reduces write speed to at most half of the nominal speed of drive and BD medium. Sometimes it is even worse. Heavy use of the Spare Area causes long delays during read operations. So Defect Management is not always desirable.
 
-_cdrecord_ does not format BD-R. It has no means to prevent Defect Management on BD-RE media, though.
+*cdrecord* does not format BD-R. It has no means to prevent Defect Management on BD-RE media, though.
 
-_growisofs_ formats BD-R by default. The Defect Management can be prevented by option `-use-the-force-luke=spare:none`. It has no means to prevent Defect Management on BD-RE media, though.
+*growisofs* formats BD-R by default. The Defect Management can be prevented by option `-use-the-force-luke=spare:none`. It has no means to prevent Defect Management on BD-RE media, though.
 
-_cdrskin_, _xorriso_ and _xorrecord_ do not format BD-R by default. They do with `cdrskin blank=format_if_needed`, resp. `xorriso -format as_needed`, resp. `xorrecord blank=format_overwrite`. These three programs can disable Defect Management with BD-RE and already formatted BD-R by `cdrskin stream_recording=on`, resp. `xorriso -stream_recording on`, resp. `xorrecord stream_recording=on`.
+*cdrskin*, *xorriso* and *xorrecord* do not format BD-R by default. They do with `cdrskin blank=format_if_needed`, resp. `xorriso -format as_needed`, resp. `xorrecord blank=format_overwrite`. These three programs can disable Defect Management with BD-RE and already formatted BD-R by `cdrskin stream_recording=on`, resp. `xorriso -stream_recording on`, resp. `xorrecord stream_recording=on`.
 
 ### Burning an audio CD
 
-Create your audio tracks and store them as uncompressed, 16-bit, stereo WAV files. To convert MP3 to WAV, ensure [lame](https://www.archlinux.org/packages/?name=lame) is installed, _cd_ to the directory with your MP3 files, and run:
+Create your audio tracks and store them as uncompressed, 16-bit, stereo WAV files. To convert MP3 to WAV, ensure [lame](https://www.archlinux.org/packages/?name=lame) is installed, *cd* to the directory with your MP3 files, and run:
 
 ```
 $ for i in *.mp3; do lame --decode "$i" "$(basename "$i" .mp3)".wav; done
@@ -488,7 +484,7 @@ $ for i in *.mp3; do mpg123 --rate 44100 --stereo --buffer 3072 --resync -w $(ba
 Name the audio files in a manner that will cause them to be listed in the desired track order when listed alphabetically, such as `01.wav`, `02.wav`, `03.wav`, etc. Use the following command to simulate burning the WAV files as an audio CD:
 
 ```
-$ cdrecord **-dummy** -v -pad speed=1 dev=_/dev/sr0_ -dao -swab *.wav
+$ cdrecord **-dummy** -v -pad speed=1 dev=*/dev/sr0* -dao -swab *.wav
 
 ```
 
@@ -499,10 +495,9 @@ Track 01: audio    0 MB (00:00.00) no preemp pad
 
 ```
 
-try another decoder (e.g. mpg123) or try using _cdrecord_ from the [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) package.
+try another decoder (e.g. mpg123) or try using *cdrecord* from the [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) package.
 
 **Note:** The WAV file has to be 16bit Stereo 44100 Hz. Check you WAV tracking using the standard `file` command. Otherwise you will get the following error:
-
 ```
 wodim: Inappropriate audio coding in 'file.wav'.
 
@@ -529,7 +524,7 @@ $ mplayer cdda://
 To burn a BIN/CUE image run:
 
 ```
-$ cdrdao write --device _/dev/sr0_ _image.cue_
+$ cdrdao write --device */dev/sr0* *image.cue*
 
 ```
 
@@ -538,14 +533,14 @@ $ cdrdao write --device _/dev/sr0_ _image.cue_
 ISO images only store a single data track. If you want to create an image of a mixed-mode disk (data track with multiple audio tracks) then you need to make a TOC/BIN pair:
 
 ```
-$ cdrdao read-cd --read-raw --datafile _image.bin_ --driver generic-mmc:0x20000 --device _/dev/cdrom_ _image.toc_
+$ cdrdao read-cd --read-raw --datafile *image.bin* --driver generic-mmc:0x20000 --device */dev/cdrom* *image.toc*
 
 ```
 
-Some software only likes CUE/BIN pair, you can make a CUE sheet with _toc2cue_ (part of [cdrdao](https://www.archlinux.org/packages/?name=cdrdao)):
+Some software only likes CUE/BIN pair, you can make a CUE sheet with *toc2cue* (part of [cdrdao](https://www.archlinux.org/packages/?name=cdrdao)):
 
 ```
-$ toc2cue _image.toc_ _image.cue_
+$ toc2cue *image.toc* *image.cue*
 
 ```
 
@@ -573,7 +568,7 @@ See also [Wikipedia:Comparison of disc authoring software](https://en.wikipedia.
 
 	[https://wiki.gnome.org/Apps/Brasero](https://wiki.gnome.org/Apps/Brasero) || [brasero](https://www.archlinux.org/packages/?name=brasero)
 
-*   **cdw** — Ncurses frontend to _cdrecord_, _mkisofs_, _growisofs_, _dvd+rw-mediainfo_, _dvd+rw-format_ and _xorriso_.
+*   **cdw** — Ncurses frontend to *cdrecord*, *mkisofs*, *growisofs*, *dvd+rw-mediainfo*, *dvd+rw-format* and *xorriso*.
 
 	[http://cdw.sourceforge.net/](http://cdw.sourceforge.net/) || [cdw](https://aur.archlinux.org/packages/cdw/)
 
@@ -593,7 +588,7 @@ See also [Wikipedia:Comparison of disc authoring software](https://en.wikipedia.
 
 	[http://www.k3b.org/](http://www.k3b.org/) || [k3b](https://www.archlinux.org/packages/?name=k3b)
 
-*   **[X-CD-Roast](https://en.wikipedia.org/wiki/X-CD-Roast "wikipedia:X-CD-Roast")** — Lightweight _cdrtools_ front-end for CD and DVD writing.
+*   **[X-CD-Roast](https://en.wikipedia.org/wiki/X-CD-Roast "wikipedia:X-CD-Roast")** — Lightweight *cdrtools* front-end for CD and DVD writing.
 
 	[http://www.xcdroast.org/](http://www.xcdroast.org/) || [xcdroast](https://aur.archlinux.org/packages/xcdroast/)
 
@@ -692,7 +687,7 @@ Some utilities perform both tasks, whilst others focus on one aspect or the othe
 
 	[http://www.pixelbeat.org/programs/dvd-vr/](http://www.pixelbeat.org/programs/dvd-vr/) || [dvd-vr](https://aur.archlinux.org/packages/dvd-vr/)
 
-*   **[dvdbackup](/index.php/Dvdbackup "Dvdbackup")** — Tool for pure data extraction which does not transcode. It is useful for creating _exact_ copies of encrypted DVDs in conjunction with **libdvdcss** or for decrypting video for other utilities unable to read encrypted DVDs.
+*   **[dvdbackup](/index.php/Dvdbackup "Dvdbackup")** — Tool for pure data extraction which does not transcode. It is useful for creating *exact* copies of encrypted DVDs in conjunction with **libdvdcss** or for decrypting video for other utilities unable to read encrypted DVDs.
 
 	[http://dvdbackup.sourceforge.net/](http://dvdbackup.sourceforge.net/) || [dvdbackup](https://www.archlinux.org/packages/?name=dvdbackup)
 
@@ -763,10 +758,9 @@ en_US ISO-8859-1
 
 ```
 
-*   Re-generate the locales with _locale-gen_:
+*   Re-generate the locales with *locale-gen*:
 
  `# locale-gen` 
-
 ```
 Generating locales...
 en_US.UTF-8... done
@@ -787,7 +781,7 @@ Brasero uses [gvfs](https://www.archlinux.org/packages/?name=gvfs) to manage CD/
 
 If you try to burn it may stop at the first step called Normalization.
 
-As a workaround you can disable the normalization plugin using the _Edit > Plugins_ menu
+As a workaround you can disable the normalization plugin using the *Edit > Plugins* menu
 
 ### VLC: Error "... could not open the disc /dev/dvd"
 
@@ -885,10 +879,9 @@ Rebuild the kernel image so that it includes the newly added module:
 
 ### BD-R DL 50GB errors on trying to burn second layer
 
-Using _wodim_ from [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) and/or _growisofs_ from [dvd+rw-tools](https://www.archlinux.org/packages/?name=dvd%2Brw-tools) for burning 50GB BD-R DL discs might result in a fatal error and damaged media, such as:
+Using *wodim* from [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) and/or *growisofs* from [dvd+rw-tools](https://www.archlinux.org/packages/?name=dvd%2Brw-tools) for burning 50GB BD-R DL discs might result in a fatal error and damaged media, such as:
 
  `$ growisofs -Z /dev/sr0 -J -R -V "label" files` 
-
 ```
 Executing 'mkisofs -J -R -V label files | builtin_dd of=/dev/sr0 obs=32k seek=0'
 I: -input-charset not specified, using utf-8 (detected in locale settings)
@@ -911,7 +904,7 @@ I: -input-charset not specified, using utf-8 (detected in locale settings)
 
 ```
 
-This happened at the 25GB boundary when starting to write the second layer. Using _cdrecord_ from [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) works with no problems. Tested with a 'HL-DT-ST BD-RE WH16NS40' LG burner, and Verbatim BD-R DL 6x discs (#96911).
+This happened at the 25GB boundary when starting to write the second layer. Using *cdrecord* from [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) works with no problems. Tested with a 'HL-DT-ST BD-RE WH16NS40' LG burner, and Verbatim BD-R DL 6x discs (#96911).
 
 ## See also
 

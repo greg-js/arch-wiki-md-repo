@@ -1,4 +1,4 @@
-[getmail](https://en.wikipedia.org/wiki/getmail "wikipedia:getmail") is a mail retriever designed to allow you to get your mail from one or more mail accounts on various mail servers to your local machine for reading with a minimum of fuss. _getmail_ is designed to be secure, flexible, reliable, and easy-to-use. _getmail_ is designed to replace other mail retrievers such as [fetchmail](https://en.wikipedia.org/wiki/Fetchmail "wikipedia:Fetchmail").
+[getmail](https://en.wikipedia.org/wiki/getmail "wikipedia:getmail") is a mail retriever designed to allow you to get your mail from one or more mail accounts on various mail servers to your local machine for reading with a minimum of fuss. *getmail* is designed to be secure, flexible, reliable, and easy-to-use. *getmail* is designed to replace other mail retrievers such as [fetchmail](https://en.wikipedia.org/wiki/Fetchmail "wikipedia:Fetchmail").
 
 ## Contents
 

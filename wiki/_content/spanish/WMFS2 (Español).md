@@ -85,7 +85,7 @@ Para crear un combinación de teclas personalizado para lanzar una aplicación d
 
 ```
 
-En esta combinación de teclas definimos que nuestra tecla modificadora **(mod)** sea _“super”_, nuestra tecla para completar la combinación **(key)** seria _“b”_, nuestra función **(spawn)** seria lanzar una aplicación y el elemento a lanzar **(cmd)** seria _firefox_ en este caso.
+En esta combinación de teclas definimos que nuestra tecla modificadora **(mod)** sea *“super”*, nuestra tecla para completar la combinación **(key)** seria *“b”*, nuestra función **(spawn)** seria lanzar una aplicación y el elemento a lanzar **(cmd)** seria *firefox* en este caso.
 
 Si deseamos lanzar aplicaciones al inicio del entorno podemos añadir la aplicaciones a iniciar a nuestro `.xinitrc` o crear un script de bash como un autostart.sh y encanalarlo para ser lanzado por el `.xinitrc`
 

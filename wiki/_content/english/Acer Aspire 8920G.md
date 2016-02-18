@@ -57,7 +57,6 @@ This is my 1st ever wiki and I hope that by writing this it can benefit another 
 #### lsusb
 
  `$ lsusb` 
-
 ```
 Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
 Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
@@ -74,7 +73,6 @@ Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 #### lspci
 
  `$ lspci` 
-
 ```
 00:00.0 Host bridge: Intel Corporation Mobile PM965/GM965/GL960 Memory Controller Hub (rev 03)
 00:01.0 PCI bridge: Intel Corporation Mobile PM965/GM965/GL960 PCI Express Root Port (rev 03)

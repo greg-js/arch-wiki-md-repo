@@ -6,7 +6,7 @@ export ftp_proxy="http://192.168.10.11:8080"
 
 ```
 
-Entonces, ejecute tiene tan sólo que ejecutar wget con dos argumentos extra: _--proxy-user="string" --proxy-passwd="string"_
+Entonces, ejecute tiene tan sólo que ejecutar wget con dos argumentos extra: *--proxy-user="string" --proxy-passwd="string"*
 
 Por ejemplo (Nombre de dominio: Wonderwall, usuario JohnDoe, contraseña Go4It"):
 

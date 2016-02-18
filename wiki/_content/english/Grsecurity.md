@@ -219,7 +219,6 @@ You will now be able to enable the RBAC system with your new learned policy.
 ```
 
 **Tip:** If you receive the error **Viewing access is allowed by role <insert user> to /etc/grsec, the directory which stores RBAC policies and RBAC password information.**, add the following to your **subject /** under **# Role: <insert user>**:
-
 ```
 /etc/grsec h
 

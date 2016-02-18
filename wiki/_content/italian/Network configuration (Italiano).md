@@ -37,7 +37,7 @@ Una semplice guida per la configurazione di rete e risoluzione di problemi annes
         *   [8.3.1 Metodo 1 - Ripristino driver Windows](#Metodo_1_-_Ripristino_driver_Windows)
         *   [8.3.2 Metodo 2 - Abilitare il Wake on Lan nel driver Windows](#Metodo_2_-_Abilitare_il_Wake_on_Lan_nel_driver_Windows)
         *   [8.3.3 Metodo 3 - Aggiornare il driver Linux Realtek](#Metodo_3_-_Aggiornare_il_driver_Linux_Realtek)
-        *   [8.3.4 Metodo 4 - Abilitare _LAN Boot ROM_ nel BIOS/CMOS](#Metodo_4_-_Abilitare_LAN_Boot_ROM_nel_BIOS.2FCMOS)
+        *   [8.3.4 Metodo 4 - Abilitare *LAN Boot ROM* nel BIOS/CMOS](#Metodo_4_-_Abilitare_LAN_Boot_ROM_nel_BIOS.2FCMOS)
     *   [8.4 Problema con DLink G604T/DLink G502T DNS](#Problema_con_DLink_G604T.2FDLink_G502T_DNS)
         *   [8.4.1 Come diagnosticare il problema](#Come_diagnosticare_il_problema)
         *   [8.4.2 Come risolvere il problema](#Come_risolvere_il_problema)
@@ -50,7 +50,6 @@ Una semplice guida per la configurazione di rete e risoluzione di problemi annes
 Molte volte, l’installazione di base ha già creato una configurazione di rete funzionante. Per verificare, utilizzare il seguente comando:
 
  `ping -c 3 www.google.com` 
-
 ```
 PING www.l.google.com (74.125.224.146) 56(84) bytes of data.
 64 bytes from 74.125.224.146: icmp_req=1 ttl=50 time=437 ms
@@ -102,7 +101,6 @@ Un host name è un nome univoco creato per identificare un pc in rete. Con Arch 
 Semplicemente inserire il proprio host name in `/etc/hostname`; non inserire il nome di dominio in `/etc/hostname`. Qualora non esistesse, creare il file, come nell'esempio `archlinux` è l'host name:
 
  `/etc/hostname` 
-
 ```
 
 archlinux
@@ -131,7 +129,6 @@ Per impostare l’hostname temporaneamente (fino al successivo riavvio), utilizz
 Udev dovrebbe riconoscere il modulo dell’interfaccia di rete (NIC) e caricarlo automaticamente al boot. Controllare la voce "Ethernet controller" nell'output di `lspci -v`. Esso dovrebbe indicare quali moduli del kernel contengono il driver del proprio dispositivo di rete. Ad esempio:
 
  `lspci -v` 
-
 ```
  02:00.0 Ethernet controller: Attansic Technology Corp. L1 Gigabit Ethernet Adapter (rev b0)
 
@@ -141,7 +138,7 @@ Udev dovrebbe riconoscere il modulo dell’interfaccia di rete (NIC) e caricarlo
 
 ```
 
-Dopodichè, controllare che sia caricato il modulo, tramite _dmesg | grep <module name>_. Ad esempio:
+Dopodichè, controllare che sia caricato il modulo, tramite *dmesg | grep <module name>*. Ad esempio:
 
 ```
 dmesg |grep atl1
@@ -175,10 +172,9 @@ Per le schede madri con schede di rete NICs integrate, è importante conoscere q
 
 ### Ottenere il nome corrente del dispositivo
 
-Il nome attuale NIC può essere individuato con il tool _ip_.
+Il nome attuale NIC può essere individuato con il tool *ip*.
 
  `$ ip addr | sed '/^[0-9]/!d;s/: <.*$//'` 
-
 ```
 
 1: lo
@@ -199,7 +195,6 @@ ip link set <interface> up/down
 Controllare il risultato con `ip addr show dev eth0`. Ad esempio:
 
  `ip addr show dev eth0` 
-
 ```
    2: eth0: <BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP> mtu 1500 qdisc vboxnetflt state UP qlen 1000
    [...]
@@ -217,7 +212,6 @@ Ci sono due opzioni: l'assegnazione dinamica dell'indirizzo utilizzando DHCP opp
 Si noti che dhcpcd non è dhcpd.
 
  `dhcpcd eth0` 
-
 ```
 
   dhcpcd: version 5.1.1 starting 
@@ -347,10 +341,9 @@ Se si ottiene l'errore "No such process", significa che è necessario eseguire `
 
 #### Calcolo indirizzi
 
-E' possibile utilizzare _ipcalc_ fornito dal pacchetto ipcalc package per calcolare l'IP broadcast, network, netmask, ed i range di host host per le configurazioni più avanzate. Ad esempio, è possiblie utilizzare l'ethernet tramite firewire per connettere un pc windows ad arch. Per la sicurezza e l'organizzazione della rete, è possibile posizionarli su una propria rete, configurare netmask e broadcast in modo che siano le uniche 2 macchine su di essa. Per mostrare gli indirizzi netmask e broadcast, si può utilizzare ipcalc, fornendo con l'IP arch del firewire nic 10.66.66.1, e specificando ipcalc, dovrebbe creare una rete di 2 soli host.
+E' possibile utilizzare *ipcalc* fornito dal pacchetto ipcalc package per calcolare l'IP broadcast, network, netmask, ed i range di host host per le configurazioni più avanzate. Ad esempio, è possiblie utilizzare l'ethernet tramite firewire per connettere un pc windows ad arch. Per la sicurezza e l'organizzazione della rete, è possibile posizionarli su una propria rete, configurare netmask e broadcast in modo che siano le uniche 2 macchine su di essa. Per mostrare gli indirizzi netmask e broadcast, si può utilizzare ipcalc, fornendo con l'IP arch del firewire nic 10.66.66.1, e specificando ipcalc, dovrebbe creare una rete di 2 soli host.
 
  `$ ipcalc -nb 10.66.66.1 -s 1` 
-
 ```
 Address:   10.66.66.1
 Netmask:   255.255.255.252 = 30
@@ -436,7 +429,6 @@ options bonding mode=4
 options bonding miimon=100
 
 ```
-
 Per maggiori informazioni inerenti le differenti policy di bonding (ed impostazioni di altri driver) consultare l'[Linux Ethernet Bonding Driver HOWTO](http://sourceforge.net/projects/bonding/files/Documentation/).
 
 Per attivare le nuove porte, eseguire il modprobe di `bonding`, fermare `network` ed avviare il servizio `net-profiles`:
@@ -467,7 +459,7 @@ Per controllare lo stato:
 
 l'aliasing IP è il processo per l'aggiunta di più di un indirizzo IP all'interfaccia di rete. Così facendo, un nodo su una rete può avere connessioni multiple nella rete stessa, ciascuna con una funzione diversa.
 
-Per utilizzare l'IP aliasing da [_netcfg_](/index.php/Netcfg_(Italiano) "Netcfg (Italiano)"), cambiare i comandi `POST_UP` e `PRE_DOWN` sul profilo dell'interfaccia di rete per configurare manualmente gli indirizzi IP aggiuntivi. Vedere [qui](https://bbs.archlinux.org/viewtopic.php?pid=1036395#p1036395) per maggiori dettagli.
+Per utilizzare l'IP aliasing da [*netcfg*](/index.php/Netcfg_(Italiano) "Netcfg (Italiano)"), cambiare i comandi `POST_UP` e `PRE_DOWN` sul profilo dell'interfaccia di rete per configurare manualmente gli indirizzi IP aggiuntivi. Vedere [qui](https://bbs.archlinux.org/viewtopic.php?pid=1036395#p1036395) per maggiori dettagli.
 
 #### Esempio
 
@@ -598,15 +590,15 @@ Right click my computer
 
 ```
 
-**Nota:** I nuovi driver Realtek di Windows (testato con Realtek 8111/8169 Driver LAN v5.708.1030.2008, datato 2009/01/22, disponibile da GIGABYTE) potrebbero fare riferimento a questa opzione in modo leggermente diverso, come _Shutdown Wake-On-LAN --> Enable_. Sembra che cambiare in `Disable` non produca alcun effetto (si noterà che la luce Link rimarrà accesa fino alla chiusura di Windows). Una soluzione, non proprio pulitissima, è avviare Windows e semplicemente resettarlo (eseguendo un brutale riavvio/spegnimento), non dando quindi al driver di Windows la possibilità di disabilitare la LAN. La luce Link rimarrà accesa e l’adattatore LAN rimarrà accessibile dopo il POST – cioè fino a quando non si avvierà Windows e lo si spegnerà correttamente.
+**Nota:** I nuovi driver Realtek di Windows (testato con Realtek 8111/8169 Driver LAN v5.708.1030.2008, datato 2009/01/22, disponibile da GIGABYTE) potrebbero fare riferimento a questa opzione in modo leggermente diverso, come *Shutdown Wake-On-LAN --> Enable*. Sembra che cambiare in `Disable` non produca alcun effetto (si noterà che la luce Link rimarrà accesa fino alla chiusura di Windows). Una soluzione, non proprio pulitissima, è avviare Windows e semplicemente resettarlo (eseguendo un brutale riavvio/spegnimento), non dando quindi al driver di Windows la possibilità di disabilitare la LAN. La luce Link rimarrà accesa e l’adattatore LAN rimarrà accessibile dopo il POST – cioè fino a quando non si avvierà Windows e lo si spegnerà correttamente.
 
 #### Metodo 3 - Aggiornare il driver Linux Realtek
 
 Scaricare ed installare una nuova versione del driver dal sito ufficiale Realtek. (non testato ma dovrebbe risolvere il problema).
 
-#### Metodo 4 - Abilitare _LAN Boot ROM_ nel BIOS/CMOS
+#### Metodo 4 - Abilitare *LAN Boot ROM* nel BIOS/CMOS
 
-Sembra che abilitando nel BIOS/CMOS l’impostazione _Integrated Peripherals --> Onboard LAN Boot ROM_ si riattivi il chip Realtek LAN all’avvio del sistema, nonostante il driver di Windows lo disabiliti allo spegnimento.
+Sembra che abilitando nel BIOS/CMOS l’impostazione *Integrated Peripherals --> Onboard LAN Boot ROM* si riattivi il chip Realtek LAN all’avvio del sistema, nonostante il driver di Windows lo disabiliti allo spegnimento.
 <small>Ciò è stato testato più volte e con successo con una GIGABYTE GA-G31M-ES2L su un BIOS versione F8 rilasciato il 2009/02/05\. Formato data YMMV.</small>
 
 ### Problema con DLink G604T/DLink G502T DNS

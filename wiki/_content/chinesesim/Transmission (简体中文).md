@@ -34,15 +34,15 @@
 
 ### 作为守护进程运行
 
-首先安装 [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli)。 然后启动 _transmission_ [守护进程](/index.php/Daemon "Daemon").
+首先安装 [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli)。 然后启动 *transmission* [守护进程](/index.php/Daemon "Daemon").
 
 在浏览器中访问 [http://127.0.0.1:9091](http://127.0.0.1:9091) 以查看 web 客户端。
 
-你可以根据自己的喜好编辑主要的配置文件 `~/.config/transmission-daemon/settings.json` 。在编辑之前**你必须先停止守护进程**， 否则你的修改 **不会被保存**. 默认情况下，守护进程会以 _transmission_ 的用户身份运行，其 home 目录是 `/var/lib/transmission/`。也就是说，默认的配置文件是 `/var/lib/transmission/.config/transmission-daemon/settings.json`.
+你可以根据自己的喜好编辑主要的配置文件 `~/.config/transmission-daemon/settings.json` 。在编辑之前**你必须先停止守护进程**， 否则你的修改 **不会被保存**. 默认情况下，守护进程会以 *transmission* 的用户身份运行，其 home 目录是 `/var/lib/transmission/`。也就是说，默认的配置文件是 `/var/lib/transmission/.config/transmission-daemon/settings.json`.
 
 **Note:** 如果你找不到 `~/.config/transmission-daemon` 目录, 运行一次 `transmission-daemon` 来创建它
 
-如果你更改了下载目录, 请确保 _transmission_ 用户对新的下载目录有读写权限。
+如果你更改了下载目录, 请确保 *transmission* 用户对新的下载目录有读写权限。
 
 #### 更改守护进程用户
 

@@ -208,7 +208,7 @@ Compiled from the forums, with thanks to [Heller_Barbe](https://bbs.archlinux.or
 
 [Powerpill Portable](http://xyne.archlinux.ca/scripts/pacman/#powerpill-portable) is a tool created by Xyne to simplify offline updates. It has the following requirements:
 
-**Warning:** _Powerpill_ development has been officially discontinued: its latest version does not work with _pacman>=3.5_. See [[2]](https://bbs.archlinux.org/viewtopic.php?id=115660).
+**Warning:** *Powerpill* development has been officially discontinued: its latest version does not work with *pacman>=3.5*. See [[2]](https://bbs.archlinux.org/viewtopic.php?id=115660).
 
 ### Requirements
 

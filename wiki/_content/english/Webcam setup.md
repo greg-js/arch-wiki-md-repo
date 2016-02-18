@@ -183,10 +183,9 @@ Just install [stk11xx-svn](https://aur.archlinux.org/packages/stk11xx-svn/). It 
 
 Add your webcam's [module](/index.php/Kernel_modules#Loading "Kernel modules") in `/etc/modules-load.d/webcam.conf` so it will be loaded into the kernel during init stage bootstrapping.
 
-If your webcam is USB, the kernel _should_ automatically load the proper driver. If this is the case, check dmesg after you plug your webcam in. You should see something like this:
+If your webcam is USB, the kernel *should* automatically load the proper driver. If this is the case, check dmesg after you plug your webcam in. You should see something like this:
 
  `$ dmesg|tail` 
-
 ```
 sn9c102: V4L2 driver for SN9C10x PC Camera Controllers v1:1.24a
 usb 1-1: SN9C10[12] PC Camera Controller detected (vid/pid 0x0C45/0x600D)
@@ -352,7 +351,7 @@ $ mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 15 
 From here you have to press `s` to take the snapshot. The snapshot will be saved in your current folder as **shotXXXX.png**. If you want to record continuous video:
 
 ```
-$ mencoder tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:forceaudio:adevice=/dev/dsp -ovc lavc -oac mp3lame -lameopts cbr:br=64:mode=3 -o _filename_.avi
+$ mencoder tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:forceaudio:adevice=/dev/dsp -ovc lavc -oac mp3lame -lameopts cbr:br=64:mode=3 -o *filename*.avi
 
 ```
 
@@ -385,7 +384,7 @@ You can either set an alias for skype, or rename the original skype binary in `/
 
 ### Motion
 
-	_Motion is a program that monitors the video signal from cameras. It is able to detect if a significant part of the picture has changed; in other words, it can detect motion._
+	*Motion is a program that monitors the video signal from cameras. It is able to detect if a significant part of the picture has changed; in other words, it can detect motion.*
 
 [motion](https://www.archlinux.org/packages/?name=motion) can only handle v4l2 devices so if you need to use a camera that only has v4l1 drivers you need to preload v4l1compat.so as previously mentioned. Otherwise you will get loads of errors about motion not able to find a suitable palette.
 
@@ -398,7 +397,6 @@ You can either set an alias for skype, or rename the original skype binary in `/
 Under certain configurations, the Microsoft lifecam studio/cinema may request too much usb bandwidth and fail [see Uvcvideo FAQ](http://www.ideasonboard.org/uvc/#footnote-13). In this case, change the buffering by loading the `uvcvideo` driver with `quirks=0x80`. Add it to `/etc/modprobe.d/uvcvideo.conf` :
 
  `/etc/modprobe.d/uvcvideo.conf` 
-
 ```
 ## fix bandwidth issue for lifecam studio/cinema
 options uvcvideo quirks=0x80

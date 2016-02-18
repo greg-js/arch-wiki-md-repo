@@ -1,4 +1,4 @@
-**Nginx** (读作"engine X") 由Igor Sysoev(俄罗斯)于2005年编写，是一个免费、开源、高性能的HTTP服务器和反向代理，也可以作为一个IMAP/POP3代理服务器。根据 Netcraft 的 _[April 2015 Web Server Survey](http://news.netcraft.com/archives/2015/04/20/april-2015-web-server-survey.html)_, 现在全世界14.48%的网站使用Nginx，而[Apache](/index.php/Apache "Apache")占38.39%。Nginx因为稳定，丰富的功能集，配置简单，资源占用低而闻名世界。
+**Nginx** (读作"engine X") 由Igor Sysoev(俄罗斯)于2005年编写，是一个免费、开源、高性能的HTTP服务器和反向代理，也可以作为一个IMAP/POP3代理服务器。根据 Netcraft 的 *[April 2015 Web Server Survey](http://news.netcraft.com/archives/2015/04/20/april-2015-web-server-survey.html)*, 现在全世界14.48%的网站使用Nginx，而[Apache](/index.php/Apache "Apache")占38.39%。Nginx因为稳定，丰富的功能集，配置简单，资源占用低而闻名世界。
 
 ## Contents
 
@@ -21,7 +21,6 @@
 ## 安装
 
 [安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")位于[官方仓库](/index.php/%E5%AE%98%E6%96%B9%E4%BB%93%E5%BA%93 "官方仓库")的[nginx](https://www.archlinux.org/packages/?name=nginx) 软件包。
-
 ```
 # pacman -S nginx
 
@@ -176,7 +175,7 @@ fastcgi_pass 127.0.0.1:9000;
 
 解决方法在这: [forum](https://bbs.archlinux.org/viewtopic.php?pid=780561#p780561).
 
-编辑 _/etc/nginx/nginx.conf_ 找到 "server_name localhost" 没有被 # 注释掉的这行, 添加以下内容:
+编辑 */etc/nginx/nginx.conf* 找到 "server_name localhost" 没有被 # 注释掉的这行, 添加以下内容:
 
 ```
 server_name_in_redirect off;

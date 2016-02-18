@@ -61,7 +61,7 @@ or
 
 ```
 
-Alternatively, instead of [pamixer](https://www.archlinux.org/packages/?name=pamixer) it is also possible to use _pactl_ to control a running [PulseAudio](/index.php/PulseAudio "PulseAudio") and to change volume level (replace above _pamixer_ command with the following):
+Alternatively, instead of [pamixer](https://www.archlinux.org/packages/?name=pamixer) it is also possible to use *pactl* to control a running [PulseAudio](/index.php/PulseAudio "PulseAudio") and to change volume level (replace above *pamixer* command with the following):
 
 ```
 pactl set-sink-volume 0 +2%
@@ -108,7 +108,7 @@ $ xbindkeys -k
 
 ```
 
-A blank window will pop up. Press the key(s) to which you wish to assign a command and _xbindkeys_ will output a handy snippet that can be entered into `~/.xbindkeysrc`. For example, while the blank window is open, press `Alt+o` to get the following output (results may vary):
+A blank window will pop up. Press the key(s) to which you wish to assign a command and *xbindkeys* will output a handy snippet that can be entered into `~/.xbindkeysrc`. For example, while the blank window is open, press `Alt+o` to get the following output (results may vary):
 
 ```
 "(Scheme function)"
@@ -142,7 +142,7 @@ The XF86Audio* and other multimedia keys [[1]](http://wiki.linuxquestions.org/wi
 
 ```
 
-However, to actually call the keys themselves you can use tools like [xdotool](https://www.archlinux.org/packages/?name=xdotool) (from [official repositories](/index.php/Official_repositories "Official repositories")) and [xmacro](https://aur.archlinux.org/packages/xmacro/) (from the [AUR](/index.php/AUR "AUR")). Unfortunately since you'd already be holding down some modifier key (Super or Shift, for example), X will see the result as `Super-XF86AudioLowerVolume` which won't do anything useful. Here's a script based on _xmacro_ and _xmodmap_ from the [xorg-server-utils](https://www.archlinux.org/packages/?name=xorg-server-utils) package for doing this[[2]](https://bbs.archlinux.org/viewtopic.php?pid=843395).
+However, to actually call the keys themselves you can use tools like [xdotool](https://www.archlinux.org/packages/?name=xdotool) (from [official repositories](/index.php/Official_repositories "Official repositories")) and [xmacro](https://aur.archlinux.org/packages/xmacro/) (from the [AUR](/index.php/AUR "AUR")). Unfortunately since you'd already be holding down some modifier key (Super or Shift, for example), X will see the result as `Super-XF86AudioLowerVolume` which won't do anything useful. Here's a script based on *xmacro* and *xmodmap* from the [xorg-server-utils](https://www.archlinux.org/packages/?name=xorg-server-utils) package for doing this[[2]](https://bbs.archlinux.org/viewtopic.php?pid=843395).
 
 ```
 #!/bin/sh
@@ -162,11 +162,11 @@ These instructions are valid for pretty much any one of the XF86 multimedia keys
 
 ## Troubleshooting
 
-If, for any reason, a hotkey you _already_ set in `~/.xbindkeysrc` doesn't work, open up a terminal and type the following:
+If, for any reason, a hotkey you *already* set in `~/.xbindkeysrc` doesn't work, open up a terminal and type the following:
 
 ```
 $ xbindkeys -n
 
 ```
 
-By pressing the non-working key, you will be able to see any error _xbindkeys_ encounter (e.g: mistyped command/keycode,...).
+By pressing the non-working key, you will be able to see any error *xbindkeys* encounter (e.g: mistyped command/keycode,...).

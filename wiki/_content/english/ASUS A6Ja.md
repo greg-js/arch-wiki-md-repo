@@ -18,37 +18,37 @@
 
 ## Hardware
 
-*   _CPU:_ Intel Core Duo T2400 (1.83GHz, 2MB cache L2, FSB 667MHz)
-*   _Chipset:_ Mobile Intel® 945 PM Express Chipset
-*   _RAM:_ 1024MB (1 x 1024MB) DDR2 SDRAM 667 Mhz
-*   _Hard Disk:_ SATA 100GB 4200 rpm
-*   _DVD Burner:_ TSS-CORP TS-632d
-*   _Display:_
-    *   _TFT 15.4" WXGA (1280x800)_ ColorShine TFT-LCD, Asus Splendid Video Intelligent Technology
-*   _Video:_ ATI Mobility Radeon X1600 256MB
-*   _Audio:_ Scheda Intel High Definition Audio
-*   _Wi-Fi:_ Intel PRO/Wireless 3945ABG 802.11a/b/g
-*   _Bluetooth:_ 2.0+EDR
-*   _Webcam:_ 1.3 Mpixel
-*   _Modem:_ 56 Kbps V.90
-*   _LAN Gigabit Ethernet:_ 10/100/1000
-*   _Connectors:_
-    *   _1 x Microphone-in jack_
-    *   _1 x Headphone-out jack (S/PDIF)_
-    *   _1 x TypeII PCMCIA slot_
-    *   _1 x Line-in jack_
-    *   _1 x VGA port_
-    *   _1 x DVI-D port_
-    *   _4 x USB 2.0 ports_
-    *   _1 x IEEE 1394 port_
-    *   _1 x RJ11 Modem jack for phone line_
-    *   _1 x RJ45 LAN Jack for LAN insert_
-    *   _1 x TV-out(S-Video)_
-*   _Card Reader:_ MMC, SD, MS, MS-Pro
-*   _Dimension and Weight:_
-    *   _354mm * 284mm * 35 mm(W x D x H)_
-    *   _2.7 Kg (8-cell)_
-*   _Pointer:_ Touch pad
+*   *CPU:* Intel Core Duo T2400 (1.83GHz, 2MB cache L2, FSB 667MHz)
+*   *Chipset:* Mobile Intel® 945 PM Express Chipset
+*   *RAM:* 1024MB (1 x 1024MB) DDR2 SDRAM 667 Mhz
+*   *Hard Disk:* SATA 100GB 4200 rpm
+*   *DVD Burner:* TSS-CORP TS-632d
+*   *Display:*
+    *   *TFT 15.4" WXGA (1280x800)* ColorShine TFT-LCD, Asus Splendid Video Intelligent Technology
+*   *Video:* ATI Mobility Radeon X1600 256MB
+*   *Audio:* Scheda Intel High Definition Audio
+*   *Wi-Fi:* Intel PRO/Wireless 3945ABG 802.11a/b/g
+*   *Bluetooth:* 2.0+EDR
+*   *Webcam:* 1.3 Mpixel
+*   *Modem:* 56 Kbps V.90
+*   *LAN Gigabit Ethernet:* 10/100/1000
+*   *Connectors:*
+    *   *1 x Microphone-in jack*
+    *   *1 x Headphone-out jack (S/PDIF)*
+    *   *1 x TypeII PCMCIA slot*
+    *   *1 x Line-in jack*
+    *   *1 x VGA port*
+    *   *1 x DVI-D port*
+    *   *4 x USB 2.0 ports*
+    *   *1 x IEEE 1394 port*
+    *   *1 x RJ11 Modem jack for phone line*
+    *   *1 x RJ45 LAN Jack for LAN insert*
+    *   *1 x TV-out(S-Video)*
+*   *Card Reader:* MMC, SD, MS, MS-Pro
+*   *Dimension and Weight:*
+    *   *354mm * 284mm * 35 mm(W x D x H)*
+    *   *2.7 Kg (8-cell)*
+*   *Pointer:* Touch pad
 
 ## Configuration
 

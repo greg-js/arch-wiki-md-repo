@@ -20,7 +20,6 @@ If you suspend your computer gajim stays connected for about 15 minutes. To prev
 Therefore create a new systemd unit `gajim-suspend@.service`:
 
  `/etc/systemd/system/gajim-suspend@.service` 
-
 ```
 [Unit]
 Description=Suspend Gajim

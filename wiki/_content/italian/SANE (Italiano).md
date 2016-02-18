@@ -53,7 +53,6 @@ $ scanimage --format=tiff > test.tiff
 Se la scansione non riesce e appare il messaggio `scanimage: sane_start: Invalid argument` potrebbe essere necessario specificare il dispositivo.
 
  `$ scanimage -L` 
-
 ```
 device `v4l:/dev/video0' is a Noname Video WebCam virtual device
 device `pixma:04A91749_247936' is a CANON Canon PIXMA MG5200 multi-function peripheral
@@ -90,8 +89,8 @@ Per l'hardware HP potrebbe anche essere necessario installare [hplip](https://ww
 
 *   Rimuovere il commento o aggiungere `hpaio` e `hpoj` in una nuova riga su `/etc/sane.d/dll.conf`.
 *   Eseguire `hp-setup` da root può aiutarvi ad aggiungere il dispositivo.
-*   `hp-plugin` è l_HPLIP Plugin Download and Install Utility'._
-*   `hp-scan` è l_HPLIP Scan Utility'._
+*   `hp-plugin` è l*HPLIP Plugin Download and Install Utility'.*
+*   `hp-scan` è l*HPLIP Scan Utility'.*
 
 Per Hewlett-Packard OfficeJet, PSC, LaserJet, e stampanti multifuzione PhotoSmart, esguire `ptal-init setup` da root è seguire le istruzioni. Quindi avviare il demone **ptal-init** [daemon](/index.php/Daemon "Daemon").
 
@@ -170,7 +169,6 @@ Alcuni scanner MICROTEK richiedono il modulo `sg`, che dovrebbe essere caricato 
 Controllare se lo scanner viene riconosciuto , si dovrebbe ottenere il seguente output:
 
  `scanimage -L` 
-
 ```
 device `microtek2:/dev/sg5' is a Microtek Phantom 636cx / C6 flatbed scanner
 
@@ -449,7 +447,7 @@ usb 0x04b8 0x0120
 
 ```
 
-È possibile ottenere tali informazioni di codice (`usb 0x04b8 0x0120`) dal comando _sane-find-scanner_.
+È possibile ottenere tali informazioni di codice (`usb 0x04b8 0x0120`) dal comando *sane-find-scanner*.
 
 Aggiungere anche tali linee di informazione su `/etc/hotplug/usb/libsane.usermap` per impostare il privilegio, come :
 
@@ -479,4 +477,4 @@ kernel: WARNING! power/level is deprecated; use power/control instead
 
 ```
 
-La correzione è: Nelle impostazioni del UEFI/BIOS cambiare le impostazioni sotto _USB configuration_, _xhci pre-boot mode_ da enabled a disabled.
+La correzione è: Nelle impostazioni del UEFI/BIOS cambiare le impostazioni sotto *USB configuration*, *xhci pre-boot mode* da enabled a disabled.

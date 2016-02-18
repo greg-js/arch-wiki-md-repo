@@ -2,27 +2,27 @@
 
 En este artículo se analizan las técnicas comunes disponibles en Arch Linux para proteger criptográficamente una parte lógica de un disco de almacenamiento (carpeta, partición, disco completo, ...), de modo que todos los datos que se escriban en él se cifren automáticamente y descifren sobre la marcha cuando se lee de nuevo.
 
-«Los discos de almacenamiento» en el presente contexto comprenden los discos duros del ordenador, los dispositivos externos, tales como unidades flash USB o DVD, así como los discos _virtuales_ de almacenamiento, tales como los dispositivos [loop-back](https://en.wikipedia.org/wiki/es:Loopback "wikipedia:es:Loopback") o de almacenamiento en la nube _(siempre y cuando Arch Linux puede tratarlos como un dispositivo de bloques o un sistema de archivos)_.
+«Los discos de almacenamiento» en el presente contexto comprenden los discos duros del ordenador, los dispositivos externos, tales como unidades flash USB o DVD, así como los discos *virtuales* de almacenamiento, tales como los dispositivos [loop-back](https://en.wikipedia.org/wiki/es:Loopback "wikipedia:es:Loopback") o de almacenamiento en la nube *(siempre y cuando Arch Linux puede tratarlos como un dispositivo de bloques o un sistema de archivos)*.
 
-Si ya sabe _qué_ desea proteger y _cómo_ desea cifrarlo, se le anima a dirigirse directamente a los _artículos relacionados_ que figuran en la parte derecha.
+Si ya sabe *qué* desea proteger y *cómo* desea cifrarlo, se le anima a dirigirse directamente a los *artículos relacionados* que figuran en la parte derecha.
 
 ## Contents
 
 *   [1 ¿Por qué utilizar la criptografía?](#.C2.BFPor_qu.C3.A9_utilizar_la_criptograf.C3.ADa.3F)
-*   [2 Cifrar datos _versus_ cifrar sistema](#Cifrar_datos_versus_cifrar_sistema)
+*   [2 Cifrar datos *versus* cifrar sistema](#Cifrar_datos_versus_cifrar_sistema)
 *   [3 Métodos disponibles](#M.C3.A9todos_disponibles)
     *   [3.1 Cifrar sistemas de archivos apilados](#Cifrar_sistemas_de_archivos_apilados)
     *   [3.2 Cifrar dispositivos de bloques](#Cifrar_dispositivos_de_bloques)
     *   [3.3 Cuadro comparativo](#Cuadro_comparativo)
-        *   [3.3.1 _sinopsis_](#sinopsis)
-        *   [3.3.2 _características básicas_](#caracter.C3.ADsticas_b.C3.A1sicas)
-        *   [3.3.3 _implicaciones prácticas_](#implicaciones_pr.C3.A1cticas)
-        *   [3.3.4 _características de usabilidad_](#caracter.C3.ADsticas_de_usabilidad)
-        *   [3.3.5 _características de seguridad_](#caracter.C3.ADsticas_de_seguridad)
-        *   [3.3.6 _características de rendimiento_](#caracter.C3.ADsticas_de_rendimiento)
-        *   [3.3.7 _específico del cifrado de dispositivos de bloques_](#espec.C3.ADfico_del_cifrado_de_dispositivos_de_bloques)
-        *   [3.3.8 _específico del cifrado de sistemas de archivos apilados_](#espec.C3.ADfico_del_cifrado_de_sistemas_de_archivos_apilados)
-        *   [3.3.9 _compatibilidad y prevalencia_](#compatibilidad_y_prevalencia)
+        *   [3.3.1 *sinopsis*](#sinopsis)
+        *   [3.3.2 *características básicas*](#caracter.C3.ADsticas_b.C3.A1sicas)
+        *   [3.3.3 *implicaciones prácticas*](#implicaciones_pr.C3.A1cticas)
+        *   [3.3.4 *características de usabilidad*](#caracter.C3.ADsticas_de_usabilidad)
+        *   [3.3.5 *características de seguridad*](#caracter.C3.ADsticas_de_seguridad)
+        *   [3.3.6 *características de rendimiento*](#caracter.C3.ADsticas_de_rendimiento)
+        *   [3.3.7 *específico del cifrado de dispositivos de bloques*](#espec.C3.ADfico_del_cifrado_de_dispositivos_de_bloques)
+        *   [3.3.8 *específico del cifrado de sistemas de archivos apilados*](#espec.C3.ADfico_del_cifrado_de_sistemas_de_archivos_apilados)
+        *   [3.3.9 *compatibilidad y prevalencia*](#compatibilidad_y_prevalencia)
 *   [4 Preparación](#Preparaci.C3.B3n)
     *   [4.1 Elegir una configuración](#Elegir_una_configuraci.C3.B3n)
     *   [4.2 Ejemplos](#Ejemplos)
@@ -54,14 +54,14 @@ Además, el cifrado del disco también se puede utilizar para añadir un plus de
 Se seguirá siendo vulnerable a:
 
 *   Los atacantes que pueden irrumpir en su sistema (por ejemplo, a través de Internet) mientras se está funcionando y después de que se han desbloqueado y montado las partes cifradas del disco.
-*   Los atacantes que son capaces de tener acceso físico al ordenador mientras está en ejecución (incluso si se utiliza un screenlocker), o muy poco _después_ de haberlo ejecutado, si tienen los recursos para llevar a cabo un [ataque de arranque en frío](https://en.wikipedia.org/wiki/Cold_boot_attack "wikipedia:Cold boot attack").
+*   Los atacantes que son capaces de tener acceso físico al ordenador mientras está en ejecución (incluso si se utiliza un screenlocker), o muy poco *después* de haberlo ejecutado, si tienen los recursos para llevar a cabo un [ataque de arranque en frío](https://en.wikipedia.org/wiki/Cold_boot_attack "wikipedia:Cold boot attack").
 *   Una entidad gubernamental, que no solo cuenta con los recursos para realizar fácilmente los ataques anteriores, sino que también puede simplemente obligar a renunciar a sus claves/frases de acceso mediante diversas técnicas de [coerción](https://en.wikipedia.org/wiki/Coercion "wikipedia:Coercion"). En la mayoría de los países no democráticos de todo el mundo, así como en los EE.UU. y el Reino Unido, puede ser legal para las agencias de seguridad acceder si tienen sospechas de que se podría estar ocultando algo de interés.
 
-Se requiere una fuerte configuración de cifrado de disco (por ejemplo, el cifrado completo del sistema con comprobación de su autenticidad y sin partición de arranque en modo texto plano) para tener una cierta ventaja contra los atacantes profesionales que son capaces de alterar el sistema _antes_ de que lo utilice. Y aun así no es seguro de que realmente se pueda prevenir todo tipo de manipulación (por ejemplo, keyloggers tipo hardware). El mejor remedio podría ser el [cifrado de disco completo basado en hardware](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption") y la [computación confiable](https://en.wikipedia.org/wiki/es:Trusted_Computing "wikipedia:es:Trusted Computing").
+Se requiere una fuerte configuración de cifrado de disco (por ejemplo, el cifrado completo del sistema con comprobación de su autenticidad y sin partición de arranque en modo texto plano) para tener una cierta ventaja contra los atacantes profesionales que son capaces de alterar el sistema *antes* de que lo utilice. Y aun así no es seguro de que realmente se pueda prevenir todo tipo de manipulación (por ejemplo, keyloggers tipo hardware). El mejor remedio podría ser el [cifrado de disco completo basado en hardware](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption") y la [computación confiable](https://en.wikipedia.org/wiki/es:Trusted_Computing "wikipedia:es:Trusted Computing").
 
 **Advertencia:** El cifrado de discos tampoco lo protegerá contra alguien que simplemente [borre el disco](/index.php/Securely_wipe_disk "Securely wipe disk"). [Copias de respaldo regulares](/index.php/Backup_programs "Backup programs") son recomendadas para mantener sus datos protegidos.
 
-## Cifrar datos _versus_ cifrar sistema
+## Cifrar datos *versus* cifrar sistema
 
 	Cifrar los datos
 
@@ -70,20 +70,20 @@ Se requiere una fuerte configuración de cifrado de disco (por ejemplo, el cifra
 	En los sistemas informáticos modernos, hay muchos procesos ejecutados en segundo plano que puede almacenar, por ejemplo en caché, información sobre los datos del usuario o partes de datos en zonas no cifrados del disco duro, como:
 
 *   particiones swap
-    *   _(posibles remedios: desactivar swap o realizar el [cifrado del espacio de intercambio swap](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") también)_
+    *   *(posibles remedios: desactivar swap o realizar el [cifrado del espacio de intercambio swap](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") también)*
 *   `/tmp` ( archivos temporales creados por las aplicaciones del usuario)
-    *   _(posibles remedios : evitar este tipo de aplicaciones; montar `/tmp` dentro de [ramdisk](/index.php/Ramdisk "Ramdisk"))_
+    *   *(posibles remedios : evitar este tipo de aplicaciones; montar `/tmp` dentro de [ramdisk](/index.php/Ramdisk "Ramdisk"))*
 *   `/var` (archivos de registros, bases de datos y similares; por ejemplo, mlocate almacena un índice de todos los nombres de los archivos en `/var/lib/mlocate/mlocate.db`)
 
 	Además, el mero cifrado de datos lo dejará vulnerable a ataques de manipulación del sistema offline (por ejemplo, instalando un programa oculto que [grabe](https://en.wikipedia.org/wiki/Keystroke_logging "wikipedia:Keystroke logging") la frase de acceso utilizada para desbloquear los datos cifrados, o que espera a que lo desbloque el usuario y luego copia/envía algunos de los datos a una ubicación donde el atacante puede recuperarla).
 
 	Cifrar el sistema
 
-	Se define como el cifrado del sistema operativo _y_ los datos del usuario. El cifrado del sistema ayuda a hacer frente a algunas de las insuficiencias antes mencionadas del cifrado de datos.
+	Se define como el cifrado del sistema operativo *y* los datos del usuario. El cifrado del sistema ayuda a hacer frente a algunas de las insuficiencias antes mencionadas del cifrado de datos.
 
 	Ventajas:
 
-*   impide el acceso físico no autorizado a (y la manipulación con) de los archivos del sistema operativo _(pero con las advertencias anteriores)_;
+*   impide el acceso físico no autorizado a (y la manipulación con) de los archivos del sistema operativo *(pero con las advertencias anteriores)*;
 *   impide el acceso físico no autorizado a los datos privados que puede dejar en caché el sistema.
 
 	Desventajas:
@@ -92,7 +92,7 @@ Se requiere una fuerte configuración de cifrado de disco (por ejemplo, el cifra
 
 En la práctica, no siempre hay una línea clara entre el cifrado de datos y el cifrado del sistema, y es posible combinar diferentes y personalizadas configuraciones.
 
-En cualquier caso, el cifrado de disco solo debe ser visto como un complemento a los mecanismos de seguridad existentes en el sistema operativo —se enfoca a asegurar el acceso físico fuera de línea—, al tiempo que se delega en _otras_ partes del sistema que proporcinan elementos confiables como la seguridad de la red y la seguridad del usuario basada en el control de acceso.
+En cualquier caso, el cifrado de disco solo debe ser visto como un complemento a los mecanismos de seguridad existentes en el sistema operativo —se enfoca a asegurar el acceso físico fuera de línea—, al tiempo que se delega en *otras* partes del sistema que proporcinan elementos confiables como la seguridad de la red y la seguridad del usuario basada en el control de acceso.
 
 Véase también [Wikipedia:Disk encryption](https://en.wikipedia.org/wiki/Disk_encryption "wikipedia:Disk encryption").
 
@@ -116,7 +116,7 @@ Las soluciones disponibles en esta categoría son [eCryptfs](/index.php/ECryptfs
 
 ### Cifrar dispositivos de bloques
 
-Los métodos de cifrado de dispositivo de bloque, por el contrario, operan como una capa _debajo_ del sistema de archivos y se aseguran que todo lo escrito en un determinado dispositivo de bloques (es decir, un disco completo o una partición o un archivo que actúa como un dispositivo loop-back virtual) quede cifrado. Esto significa que mientras el dispositivo de bloque no está en línea, todo su contenido se parece a una amalgama de datos aleatorios, y no hay forma de determinar qué tipo de sistema de archivos y qué datos contiene. El acceso a los datos ocurre, de nuevo, mediante el montaje del contenedor protegido (en este caso el dispositivo de bloque) a una ubicación arbitraria con un método especial.
+Los métodos de cifrado de dispositivo de bloque, por el contrario, operan como una capa *debajo* del sistema de archivos y se aseguran que todo lo escrito en un determinado dispositivo de bloques (es decir, un disco completo o una partición o un archivo que actúa como un dispositivo loop-back virtual) quede cifrado. Esto significa que mientras el dispositivo de bloque no está en línea, todo su contenido se parece a una amalgama de datos aleatorios, y no hay forma de determinar qué tipo de sistema de archivos y qué datos contiene. El acceso a los datos ocurre, de nuevo, mediante el montaje del contenedor protegido (en este caso el dispositivo de bloque) a una ubicación arbitraria con un método especial.
 
 Las siguientes soluciones de «cifrado de dispositivos de bloques» están disponibles en Arch Linux:
 
@@ -126,7 +126,7 @@ Las siguientes soluciones de «cifrado de dispositivos de bloques» están dispo
 
 	dm-crypt
 
-	[dm-crypt](/index.php/Dm-crypt "Dm-crypt") es la funcionalidad de cifrado para el mapeado de dispositivos estándar proporcionada por el kernel de Linux. Puede ser utilizado directamente por aquellos que les gusta tener un control total sobre todos los aspectos de la partición y la gestión de claves. La gestión de dm -crypt se hace con la utilidad [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) en el espacio de usuario. Se puede utilizar para los siguientes tipos de cifrado de dispositivos de bloques: _LUKS_ (por defecto), _plain_, y con carácterística limitadas por dispositivos _loopAES_ y _Truecrypt_.
+	[dm-crypt](/index.php/Dm-crypt "Dm-crypt") es la funcionalidad de cifrado para el mapeado de dispositivos estándar proporcionada por el kernel de Linux. Puede ser utilizado directamente por aquellos que les gusta tener un control total sobre todos los aspectos de la partición y la gestión de claves. La gestión de dm -crypt se hace con la utilidad [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) en el espacio de usuario. Se puede utilizar para los siguientes tipos de cifrado de dispositivos de bloques: *LUKS* (por defecto), *plain*, y con carácterística limitadas por dispositivos *loopAES* y *Truecrypt*.
 
 *   LUKS, utilizado por defecto, es una capa adicional eficaz que almacena toda la información necesaria de configuración para dm-crypt, la partición abstacta y la gestión de las claves, en el propio disco en un intento de mejorar la facilidad de uso y la seguridad criptográfica.
 *   la modalidad plain dm-crypt, aun siendo la funcionalidad original del kernel, no tiene la misma capa de eficacia. Es más difícil de obtener la misma fuerza criptográfica con ella. Para lograrlo, las claves deben ser más largas (frases de acceso, archivos de claves) para conseguir dicho resultado. Sin embargo, tiene otras ventajas, que se describen más adelante.
@@ -143,7 +143,7 @@ La columna «dm-crypt +/- LUKS» denota características de dm-crypt tanto para 
 
 | 
 
-##### _sinopsis_
+##### *sinopsis*
 
  | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
 
@@ -157,14 +157,14 @@ pricipales puntos fuertes
 
 disponibilidad en Arch Linux
 
- | necesita compilar manualmente un kernel personalizado | _módulos del kernel:_ ya cargados por el kernel por defecto; _herramientas:_ [device-mapper](https://www.archlinux.org/packages/?name=device-mapper), [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) [core] | [truecrypt 7.1a-2](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/truecrypt&id=efe03070990f9e3554508bd982b1bd5a654aa095) [extra] (función de solo lectura en versiones posteriores) | _módulos del kernel:_ ya cargados por el kernel por defecto; _herramientas:_ [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) [community] | [encfs](https://www.archlinux.org/packages/?name=encfs) [community] |
+ | necesita compilar manualmente un kernel personalizado | *módulos del kernel:* ya cargados por el kernel por defecto; *herramientas:* [device-mapper](https://www.archlinux.org/packages/?name=device-mapper), [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) [core] | [truecrypt 7.1a-2](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/truecrypt&id=efe03070990f9e3554508bd982b1bd5a654aa095) [extra] (función de solo lectura en versiones posteriores) | *módulos del kernel:* ya cargados por el kernel por defecto; *herramientas:* [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) [community] | [encfs](https://www.archlinux.org/packages/?name=encfs) [community] |
 
 licencia
 
  | GPL | GPL | custom | GPL | GPL |
 | 
 
-##### _características básicas_
+##### *características básicas*
 
  | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
 
@@ -192,7 +192,7 @@ relación con el sistema de archivos...
 cifrado implementado en...
 
  | en el espacio del kernel | en el espacio del usuario
-_(utilizando FUSE)_ |
+*(utilizando FUSE)* |
 
 metadatos criptográficos almacedados en...
 
@@ -203,14 +203,14 @@ clave de cifrado almacenada en...
  |  ? | con LUKS: en la cabecera de LUKS | el archivo de claves se puede almacenar en cualquier lugar | en el archivo de control al principio de cada contenedor EncFs |
 | 
 
-##### _implicaciones prácticas_
+##### *implicaciones prácticas*
 
  | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
 
 los metadatos de los archivos (número de archivos, estructura de directorios, tamaños de archivos, permisos, mtimes, etc.) están cifrados
 
  | ✔ | ✖
-_(sin embargo, se pueden cifrar nombres de archivos y de directorios)_ |
+*(sin embargo, se pueden cifrar nombres de archivos y de directorios)* |
 
 puede ser utilizado para cifrar discos duros enteros (incluyendo las tablas de particiones)
 
@@ -233,7 +233,7 @@ permite copias de seguridad basadas en archivos offline de los archivos cifrados
  | ✖ | ✔ |
 | 
 
-##### _características de usabilidad_
+##### *características de usabilidad*
 
  | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
 
@@ -254,7 +254,7 @@ proporciona una GUI
  | ✖ | ✖ | ✔ | ✖ | ✔ |
 | 
 
-##### _características de seguridad_
+##### *características de seguridad*
 
  | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
 
@@ -287,7 +287,7 @@ soporte para múltiples claves (revocables independientemente) para los mismos d
 (con LUKS) |  ? |  ? | ✖ |
 | 
 
-##### _características de rendimiento_
+##### *características de rendimiento*
 
  | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
 
@@ -300,7 +300,7 @@ soporte para cifrado de hardware acelerado
  | ✔ | ✔ | ✔ | ✔ |
 | 
 
-##### _específico del cifrado de dispositivos de bloques_
+##### *específico del cifrado de dispositivos de bloques*
 
  | Loop-AES | dm-crypt +/- LUKS | Truecrypt |
 
@@ -309,7 +309,7 @@ soporte para redimensionar (manualmente) el dispositivo de bloque cifrado
  |  ? | ✔ | ✖ |
 | 
 
-##### _específico del cifrado de sistemas de archivos apilados_
+##### *específico del cifrado de sistemas de archivos apilados*
 
  | eCryptfs | EncFs |
 
@@ -321,7 +321,7 @@ capacidad para cifrar los nombres de los archivos
 
  | ✔ | ✔ |
 
-capacidad para _no_ cifrar los nombres de los archivos
+capacidad para *no* cifrar los nombres de los archivos
 
  | ✔ | ✔ |
 
@@ -330,7 +330,7 @@ optimizado para el manejo de archivos dispersos
  | ✖ | ✔ |
 | 
 
-##### _compatibilidad y prevalencia_
+##### *compatibilidad y prevalencia*
 
  | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
 
@@ -362,7 +362,7 @@ utilizado por...
 Qué configuración de cifrado de disco es apropiada para cada usuario dependerá de los propósitos del usuario (léase [#¿Por qué utilizar la criptografía?](#.C2.BFPor_qu.C3.A9_utilizar_la_criptograf.C3.ADa.3F) más arriba) y de los parámetros del sistema.
 Entre otras, tendrá que responder a las siguientes preguntas:
 
-*   ¿Contra qué tipo de _ataques_ quiere proteger su sistema?
+*   ¿Contra qué tipo de *ataques* quiere proteger su sistema?
     *   Usuario ocasional de ordenador husmeando el disco cuando el sistema está apagado / robado / etc.
     *   Criptoanalista profesional que puede conseguir acceso de lectura/escritura repetidamente al sistema antes y después de usarse
     *   Ninguno de los anteriores
@@ -375,18 +375,18 @@ Entre otras, tendrá que responder a las siguientes preguntas:
 *   ¿Cómo deben tratarse swap, `/tmp`, etc.?
     *   Ignorar, y con la esperanza de que no se hayan filtrado datos
     *   Desactivar o montar como disco de memoria
-    *   Cifrar _(como parte del cifrado del disco completo o por separado)_
+    *   Cifrar *(como parte del cifrado del disco completo o por separado)*
 
 *   ¿Cómo deben desbloquearse las partes del disco cifradas?
-    *   Con contraseña/frase de acceso _(igual que la contraseña de inicio de sesión, o por separado)_
-    *   Con archivo de claves _(por ejemplo, en una memoria USB, que se mantenga en un lugar seguro o portarlo uno mismo)_
+    *   Con contraseña/frase de acceso *(igual que la contraseña de inicio de sesión, o por separado)*
+    *   Con archivo de claves *(por ejemplo, en una memoria USB, que se mantenga en un lugar seguro o portarlo uno mismo)*
     *   Con ambas
 
-*   ¿_Cuándo_ deben desbloquearse las partes del disco cifradas?
+*   ¿*Cuándo* deben desbloquearse las partes del disco cifradas?
     *   Antes del arranque
     *   Durante del arranque
     *   Al iniciar sesión
-    *   Manualmente bajo demanda _(después de iniciar sesión)_
+    *   Manualmente bajo demanda *(después de iniciar sesión)*
 
 *   ¿Cómo deben ser acomodados varios usuarios?
     *   No hacer nada
@@ -396,7 +396,7 @@ Entre otras, tendrá que responder a las siguientes preguntas:
 
 A continuación, se puede pasar a tomar las decisiones técnicas necesarias (vea [#Métodos disponibles](#M.C3.A9todos_disponibles) más arriba, y [#Cómo funciona el cifrado](#C.C3.B3mo_funciona_el_cifrado) más adelante), en relación con:
 
-*   elegir entre cifrar sistemas de archivos apilados _versus_ cifrar dispositivos de bloques
+*   elegir entre cifrar sistemas de archivos apilados *versus* cifrar dispositivos de bloques
 *   la gestión de las claves
 *   el algoritmo de cifrado y la modalidad de la operación
 *   el almacenamiento de los metadatos
@@ -509,23 +509,23 @@ Véase también [Wikipedia:Authenticated encryption](https://en.wikipedia.org/wi
 
 Los siguientes son ejemplos de cómo almacenar y asegurar criptográficamente una llave maestra con un archivo de claves:
 
-*   _**Almacenada en un archivo de claves de texto plano**_
+*   ***Almacenada en un archivo de claves de texto plano***
 
     Almacenar simplemente la llave maestra en un archivo (en formato legible) es la opción más sencilla . El archivo —llamado un «keyfile» o «archivo de claves»— se puede colocar en una memoria USB mantenida en un lugar seguro y que se conecte al ordenador cuando se quieran montar las partes cifradas del disco (por ejemplo, durante el arranque o el inicio de sesión).
 
-*   _**Almacenada en forma de frase de acceso protegida en un archivo de claves o en el propio disco**_
+*   ***Almacenada en forma de frase de acceso protegida en un archivo de claves o en el propio disco***
 
     La llave maestra (y, por lo tanto, los datos cifrados con ella) se puede proteger con una contraseña secreta, que tendrá que recordar e introducir cada vez que desea montar el dispositivo de bloque o carpeta. Véase [#Cryptographic metadata](#Cryptographic_metadata) a continuación para obtener más detalles.
 
-*   _**Generada de forma aleatoria sobre la marcha para cada sesión**_
+*   ***Generada de forma aleatoria sobre la marcha para cada sesión***
 
-    En algunos casos, por ejemplo, al cifrar el espacio de intercambio o la partición `/tmp`, no es necesario tener una llave maestra permanente en absoluto. Se puede generar de forma aleatoria una llave nueva para un solo uso para cada sesión, sin necesidad de interacción del usuario. Esto significa que una vez desmontada, todos los archivos guardados en la partición en cuestión nunca pueden ser descifrados de nuevo por _nadie_ —que para estos casos particulares está perfectamente bien—.
+    En algunos casos, por ejemplo, al cifrar el espacio de intercambio o la partición `/tmp`, no es necesario tener una llave maestra permanente en absoluto. Se puede generar de forma aleatoria una llave nueva para un solo uso para cada sesión, sin necesidad de interacción del usuario. Esto significa que una vez desmontada, todos los archivos guardados en la partición en cuestión nunca pueden ser descifrados de nuevo por *nadie* —que para estos casos particulares está perfectamente bien—.
 
 ### Metadatos criptográficos
 
 Con frecuencia las técnicas de cifrado utilizan funciones criptográficas para mejorar la seguridad de la llave maestra en sí. En el montaje de los dispositivos cifrados, la contraseña o el archivo de claves se hace pasar a través de dichas funciones y solo el resultado puede desbloquear la llave maestra para descifrar los datos.
 
-Una configuración común es aplicar la llamada «key stretching» («que podríamos traducir como _prolongar la clave_») para la frase de acceso (a través de la «función derivadora de claves»), y utiliza el resultado mejorado como clave de montaje para descifrar la llave maestra vigente (que se ha almacenado previamente de forma cifrada):
+Una configuración común es aplicar la llamada «key stretching» («que podríamos traducir como *prolongar la clave*») para la frase de acceso (a través de la «función derivadora de claves»), y utiliza el resultado mejorado como clave de montaje para descifrar la llave maestra vigente (que se ha almacenado previamente de forma cifrada):
 
 ```
  ╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮                               ╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮
@@ -546,7 +546,7 @@ También toma un [blob](https://en.wikipedia.org/wiki/es:Binary_large_object "wi
 
 La **llave maestra cifrada** se puede almacenar en el disco junto con los datos cifrados. De esta manera, la confidencialidad de los datos cifrados depende completamente de la frase secreta.
 
-Para aumentar la seguridad se puede almacenar la llave maestra cifrada en un archivo de claves, por ejemplo, en una memoria USB. Esto proporciona **dos factores de autenticación**, a saber: el acceso a los datos cifrados ahora requiere algo que solo usted _sabe_ (la frase de acceso), y, además, algo que solo usted _tiene_ (el archivo de claves).
+Para aumentar la seguridad se puede almacenar la llave maestra cifrada en un archivo de claves, por ejemplo, en una memoria USB. Esto proporciona **dos factores de autenticación**, a saber: el acceso a los datos cifrados ahora requiere algo que solo usted *sabe* (la frase de acceso), y, además, algo que solo usted *tiene* (el archivo de claves).
 
 Otra forma de lograr un doble factor de autenticación es aumentar el esquema de obtención de claves, previo a su matematización, «combinando» la frase de acceso con la lectura de datos de byte en uno o más archivos externos (situados en una memoria USB o similar), antes de pasarla por la función derivadora de claves.
 Los archivos en cuestión pueden ser cualquier cosa, por ejemplo, imágenes JPEG normales, lo que puede ser beneficioso para la [#Negabilidad plausible](#Negabilidad_plausible). Estos, sin embargo, todavía se llaman «keyfiles» en el presente contexto.
@@ -558,7 +558,7 @@ Por lo general, sin embargo, no se utiliza para cifrar/descifrar los datos del d
 ```
                                ╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮
                                ┊ llave maestra ┊
-  _archivo en disco:_            ╰┈┈┈┈┈┈┈┬┈┈┈┈┈┈┈╯
+  *archivo en disco:*            ╰┈┈┈┈┈┈┈┬┈┈┈┈┈┈┈╯
  ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┐         │
  ╎╭─────────────────────────╮╎         ▼         ╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮
  ╎│ archivo de clave cifrado│━━━━(descifrado)━━━▶┊archivo de clave┊
@@ -593,16 +593,16 @@ El algoritmo real utilizado para servir de traductor entre las piezas de datos n
 El cifrado de discos emplea «algoritmos de cifrado de bloques», que operan sobre bloques de datos de una longitud fija, por ejemplo 16 bytes (128 bits). En el momento de escribir estas líneas, los más usados son:
 
  tamaño del bloque | tamaño de la clave | comentario |
-| [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard "wikipedia:Advanced Encryption Standard") | 128 bits | 128, 192 o 256 bits | _aprobado por la NSA para la protección de información clasificada «SECRET» y «TOP SECRET» por el gobierno de EE.UU. (cuando se utiliza con un tamaño de clave de 192 o 256 bits)_ |
-| [Blowfish](https://en.wikipedia.org/wiki/Blowfish_(cipher) "wikipedia:Blowfish (cipher)") | 64 bits | 32–448 bits | _uno de los primeros sistemas de cifrado seguro con licencia libre que se puso a disposición del público, por lo tanto, muy bien consolidado en Linux_ |
-| [Twofish](https://en.wikipedia.org/wiki/Twofish "wikipedia:Twofish") | 128 bits | 128, 192 o 256 bits | _desarrollado como sucesor de Blowfish, pero sin haber alcanzado un uso tan amplio_ |
-| [Serpent](https://en.wikipedia.org/wiki/Serpent_(cipher) "wikipedia:Serpent (cipher)") | 128 bits | 128, 192 o 256 bits | Considerado el más seguro de los cinco finalistas de la competición AES. |
+| [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard "wikipedia:Advanced Encryption Standard") | 128 bits | 128, 192 o 256 bits | *aprobado por la NSA para la protección de información clasificada «SECRET» y «TOP SECRET» por el gobierno de EE.UU. (cuando se utiliza con un tamaño de clave de 192 o 256 bits)* |
+| [Blowfish](https://en.wikipedia.org/wiki/Blowfish_(cipher) | 64 bits | 32–448 bits | *uno de los primeros sistemas de cifrado seguro con licencia libre que se puso a disposición del público, por lo tanto, muy bien consolidado en Linux* |
+| [Twofish](https://en.wikipedia.org/wiki/Twofish "wikipedia:Twofish") | 128 bits | 128, 192 o 256 bits | *desarrollado como sucesor de Blowfish, pero sin haber alcanzado un uso tan amplio* |
+| [Serpent](https://en.wikipedia.org/wiki/Serpent_(cipher) | 128 bits | 128, 192 o 256 bits | Considerado el más seguro de los cinco finalistas de la competición AES. |
 
 Cifrar/descifrar un sector ([véase más arriba](#Principio_b.C3.A1sico)) se consigue mediante su división en pequeños bloques, haciéndolos coincidir con el tamaño del bloque cifrado, y siguiendo, después, cierto conjunto de reglas (que antes hemos llamado «**modalidad de operación**») que informan sobre cómo aplicar el algoritmo de cifrado a los bloques individuales.
 
-Aplicar el algoritmo de cifrado sin más a cada bloque por separado sin modificaciones (denominada modalidad «_electronic codebook (ECB)_») no sería seguro, ya que si los mismos 16 bytes de texto plano siempre producen los mismos 16 bytes de texto cifrado, un atacante podría reconocer fácilmente los patrones en el texto cifrado que se almacenan en el disco.
+Aplicar el algoritmo de cifrado sin más a cada bloque por separado sin modificaciones (denominada modalidad «*electronic codebook (ECB)*») no sería seguro, ya que si los mismos 16 bytes de texto plano siempre producen los mismos 16 bytes de texto cifrado, un atacante podría reconocer fácilmente los patrones en el texto cifrado que se almacenan en el disco.
 
-La modalidad más básica (y común) de operar utilizada en la práctica es la denominada «_cipher-block chaining (CBC)_». Al cifrar un bloque de un sector con esta modalidad, cada bloque de datos de texto plano se combina de forma matemática con el texto cifrado del bloque anterior antes de cifrarlo, utilizando el algoritmo de cifrado. Para el primer bloque, ya que no tiene texto cifrado anterior que usar, se utiliza un bloque de datos pregenerado especial almacenado con los metadatos criptográficos del sector y llamado «**vector de inicialización**»:
+La modalidad más básica (y común) de operar utilizada en la práctica es la denominada «*cipher-block chaining (CBC)*». Al cifrar un bloque de un sector con esta modalidad, cada bloque de datos de texto plano se combina de forma matemática con el texto cifrado del bloque anterior antes de cifrarlo, utilizando el algoritmo de cifrado. Para el primer bloque, ya que no tiene texto cifrado anterior que usar, se utiliza un bloque de datos pregenerado especial almacenado con los metadatos criptográficos del sector y llamado «**vector de inicialización**»:
 
 ```
                                                   ╭──────────────╮

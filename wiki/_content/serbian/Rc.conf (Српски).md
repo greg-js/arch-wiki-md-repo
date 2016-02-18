@@ -13,7 +13,6 @@
 Ovako tipični `rc.conf` fajl izgleda nakon sveže instalacije ([izvorni kod](https://projects.archlinux.org/initscripts.git/tree/rc.conf)):
 
  `/etc/rc.conf` 
-
 ```
 #
 # /etc/rc.conf - Main Configuration for Arch Linux

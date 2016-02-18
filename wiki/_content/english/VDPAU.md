@@ -97,7 +97,6 @@ The correct driver name depends on your setup:
 The driver name can determined by running:
 
  `$ grep -i vdpau ~/.local/share/xorg/Xorg.0.log` 
-
 ```
 (II) RADEON(0): [DRI2] VDPAU driver: r300
 
@@ -126,15 +125,15 @@ For more information, see the [PRIME](/index.php/PRIME "PRIME") wiki page.
 
 	|| [mplayer](https://www.archlinux.org/packages/?name=mplayer) [mplayer2](https://aur.archlinux.org/packages/mplayer2/)
 
-*   **gnome-mplayer** — To enable hardware acceleration: _Edit > Preferences > Player_, then set Video Output to `vdpau`.
+*   **gnome-mplayer** — To enable hardware acceleration: *Edit > Preferences > Player*, then set Video Output to `vdpau`.
 
 	|| [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer)
 
-*   **[SMplayer](/index.php/SMplayer "SMplayer")** — To enable hardware acceleration: _Options > Preferences > General > Video_, then set Output driver to `vdpau`.
+*   **[SMplayer](/index.php/SMplayer "SMplayer")** — To enable hardware acceleration: *Options > Preferences > General > Video*, then set Output driver to `vdpau`.
 
 	|| [smplayer](https://www.archlinux.org/packages/?name=smplayer)
 
-*   **bomi** — Hardware acceleration can be enabled: _Preferences > Video > Hardware acceleration_.
+*   **bomi** — Hardware acceleration can be enabled: *Preferences > Video > Hardware acceleration*.
 
 	[https://bomi-player.github.io](https://bomi-player.github.io) || [bomi](https://aur.archlinux.org/packages/bomi/) [bomi-git](https://aur.archlinux.org/packages/bomi-git/)
 

@@ -67,7 +67,6 @@ See [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") for
 Manual configuration is needed as follows to ignore movements, scrolling and tapping on the bottom section of the touchpad, where the touchpad buttons are located. Add the 'JumpyCursorThreshold' and 'AreaBottomEdge' options to `/etc/X11/xorg.conf.d/10-synaptics.conf`:
 
  `/etc/X11/xorg.conf.d/10-synaptics.conf` 
-
 ```
 Section "InputClass"
     Identifier "touchpad catchall"

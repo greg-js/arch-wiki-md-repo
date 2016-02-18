@@ -7,16 +7,16 @@ Como parte del inicio "estilo-BSD" de arch, los scripts del rc.d son usados para
 *   Usar las funciones en `/etc/rc.d/functions` en vez de duplicar las funcionalidades.
 *   Inclir al menos "start", "stop" y "restart" como argumentos en es script.
 *   Hay algunas funcionalidades provistas por `/etc/rc.d/functions`:
-    *   stat_busy "<message>": establece el estado _busy_(ocupado) como mensaje a mostrar (ej: Iniciando Demonio [OCUPADO])
-    *   stat_done: establece el estado _done_ (hecho) (ej: Iniciando Demonio [HECHO])
-    *   stat_fail: establece el estado _failed_ (e.g. Iniciando Demonio [FALLO])
+    *   stat_busy "<message>": establece el estado *busy*(ocupado) como mensaje a mostrar (ej: Iniciando Demonio [OCUPADO])
+    *   stat_done: establece el estado *done* (hecho) (ej: Iniciando Demonio [HECHO])
+    *   stat_fail: establece el estado *failed* (e.g. Iniciando Demonio [FALLO])
     *   get_pid <program>: obtiene el PID del programa.
     *   ck_pidfile <PID-file> <program>: Chekea si el PID-file es aun valido para el programa (e.g. ck_pidfile /var/run/daemon.pid daemon || rm -f /var/run/daemon.pid)
     *   [add|rm]_daemon <program>: Agrega/remueve programas a los demonios activos (almacenados en `/run/daemons/`)
 
 ## Ejemplo
 
-Lo siguiente es un ejemplo para _crond_. Revise en `/etc/rc.d`, encontrara variedad.
+Lo siguiente es un ejemplo para *crond*. Revise en `/etc/rc.d`, encontrara variedad.
 
 El archivo de configuración:
 
@@ -25,7 +25,6 @@ El archivo de configuración:
 El script actual:
 
  `/etc/rc.d/crond` 
-
 ```
 #!/bin/bash
 

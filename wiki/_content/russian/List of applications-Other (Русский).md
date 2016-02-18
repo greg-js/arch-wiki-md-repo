@@ -241,11 +241,11 @@
 
 	[http://adeskbar.tuxfamily.org/](http://adeskbar.tuxfamily.org/) || [adeskbar](https://aur.archlinux.org/packages/adeskbar/)
 
-*   **ayr** — Открывает файлы и URI при помощи кнопок запуска, файлов рабочего стола или приложений, связанных именем или MIME-type. Для управления меню использует _dmenu_
+*   **ayr** — Открывает файлы и URI при помощи кнопок запуска, файлов рабочего стола или приложений, связанных именем или MIME-type. Для управления меню использует *dmenu*
 
 	[http://appstogo.mcfadzean.org.uk/linux.html#ayr](http://appstogo.mcfadzean.org.uk/linux.html#ayr) || [ayr](https://aur.archlinux.org/packages/ayr/)
 
-*   **Bashrun2** — Предоставляет другой, "скелетный" (barebones) подход к диалогу запуска, используя специальную сессию [bash](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)") с небольшим окошком _xterm_
+*   **Bashrun2** — Предоставляет другой, "скелетный" (barebones) подход к диалогу запуска, используя специальную сессию [bash](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)") с небольшим окошком *xterm*
 
 	[https://code.google.com/p/bashrun2/](https://code.google.com/p/bashrun2/) || [bashrun2](https://aur.archlinux.org/packages/bashrun2/)
 
@@ -253,15 +253,15 @@
 
 	[http://tools.suckless.org/dmenu/](http://tools.suckless.org/dmenu/) || [dmenu](https://www.archlinux.org/packages/?name=dmenu)
 
-*   **dmenu-extended** — Расширение для _dmenu_, позволяющее быстро открывать файлы и каталоги
+*   **dmenu-extended** — Расширение для *dmenu*, позволяющее быстро открывать файлы и каталоги
 
 	[https://github.com/markjones112358/dmenu-extended](https://github.com/markjones112358/dmenu-extended) || [dmenu-extended](https://aur.archlinux.org/packages/dmenu-extended/)
 
-*   **dmenu-launch** — Простая утилита запуска приложений, основанная на _dmenu_. Способна запускать двоичные файлы и ярлыки XDG
+*   **dmenu-launch** — Простая утилита запуска приложений, основанная на *dmenu*. Способна запускать двоичные файлы и ярлыки XDG
 
 	[https://github.com/Wintervenom/Scripts/blob/master/file/launch/dmenu-launch](https://github.com/Wintervenom/Scripts/blob/master/file/launch/dmenu-launch) || [dmenu-launch](https://aur.archlinux.org/packages/dmenu-launch/)
 
-*   **dswitcher** — Утилита переключения окон, основанная на _dmenu_ и не зависящая от имеющегося пространства и минимизации
+*   **dswitcher** — Утилита переключения окон, основанная на *dmenu* и не зависящая от имеющегося пространства и минимизации
 
 	[https://github.com/Antithesisx/dswitcher](https://github.com/Antithesisx/dswitcher) || [dswitcher-git](https://aur.archlinux.org/packages/dswitcher-git/)
 
@@ -277,7 +277,7 @@
 
 	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://www.archlinux.org/packages/?name=gnome-do)
 
-*   **j4-dmenu-desktop** — Очень быстрая утилита запуска приложений _dmenu_
+*   **j4-dmenu-desktop** — Очень быстрая утилита запуска приложений *dmenu*
 
 	[https://github.com/enkore/j4-dmenu-desktop](https://github.com/enkore/j4-dmenu-desktop) || [j4-dmenu-desktop](https://aur.archlinux.org/packages/j4-dmenu-desktop/)
 
@@ -297,11 +297,11 @@
 
 	[https://launchpad.net/synapse-project](https://launchpad.net/synapse-project) || [synapse](https://www.archlinux.org/packages/?name=synapse)
 
-*   **xboomx** — Легкая обертка для _dmenu_, которая сортирует команды по популярности, написанная на Python
+*   **xboomx** — Легкая обертка для *dmenu*, которая сортирует команды по популярности, написанная на Python
 
 	[https://bitbucket.org/dehun/xboomx](https://bitbucket.org/dehun/xboomx) || [xboomx](https://aur.archlinux.org/packages/xboomx/)
 
-*   **Yeganesh** — Легкая обертка для _dmenu_, которая сортирует команды по популярности, написанная на Haskell
+*   **Yeganesh** — Легкая обертка для *dmenu*, которая сортирует команды по популярности, написанная на Haskell
 
 	[http://dmwit.com/yeganesh](http://dmwit.com/yeganesh) || [yeganesh](https://aur.archlinux.org/packages/yeganesh/)
 
@@ -357,7 +357,7 @@
 
 	[http://ledger-cli.org/](http://ledger-cli.org/) || [ledger](https://aur.archlinux.org/packages/ledger/)
 
-*   **Moneychanger** — Интуитивно понятный клиент в системном трее для _Open-Transactions_, написанный на QT/C++
+*   **Moneychanger** — Интуитивно понятный клиент в системном трее для *Open-Transactions*, написанный на QT/C++
 
 	[https://github.com/Open-Transactions/Moneychanger](https://github.com/Open-Transactions/Moneychanger) || [moneychanger-git](https://aur.archlinux.org/packages/moneychanger-git/)
 

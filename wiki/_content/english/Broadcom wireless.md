@@ -83,7 +83,7 @@ Install the appropriate driver for your system architecture from [Broadcom's web
 
 ```
 
-The _wl_ module should automatically load _lib80211_ or _lib80211_crypt_tkip_ otherwise they will have to be manually loaded.
+The *wl* module should automatically load *lib80211* or *lib80211_crypt_tkip* otherwise they will have to be manually loaded.
 
 If the driver does not work at this point, you may need to update dependencies:
 

@@ -209,7 +209,7 @@
 
 	[http://labplot.sourceforge.net/](http://labplot.sourceforge.net/) || [labplot2](https://aur.archlinux.org/packages/labplot2/)
 
-*   **[QtiPlot](https://en.wikipedia.org/wiki/ru:QtiPlot "wikipedia:ru:QtiPlot")** — Не зависящее от платформы приложение для построения интерактивных научных графиков и анализа данных, похожее на проприетарные [Origin](https://en.wikipedia.org/wiki/ru:Origin_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0) "wikipedia:ru:Origin (программа)") и [SigmaPlot](https://en.wikipedia.org/wiki/ru:SigmaPlot "wikipedia:ru:SigmaPlot")
+*   **[QtiPlot](https://en.wikipedia.org/wiki/ru:QtiPlot и [SigmaPlot](https://en.wikipedia.org/wiki/ru:SigmaPlot "wikipedia:ru:SigmaPlot")
 
 	[http://www.qtiplot.com/](http://www.qtiplot.com/) || [qtiplot](https://www.archlinux.org/packages/?name=qtiplot)
 
@@ -297,7 +297,7 @@
 
 	[http://easychem.sourceforge.net/](http://easychem.sourceforge.net/) || <small>Пакет не существует? [искать в AUR](https://aur.archlinux.org/packages/?K=easychem)</small>
 
-*   **[Gabedit](https://en.wikipedia.org/wiki/Gabedit "wikipedia:Gabedit")** — Графический пользовательский интерфейс для таких пакетов вычислительной химии, как [GAMESS](https://en.wikipedia.org/wiki/ru:GAMESS_(US) "wikipedia:ru:GAMESS (US)"), [Gaussian](https://en.wikipedia.org/wiki/ru:Gaussian "wikipedia:ru:Gaussian"), [MOLCAS](https://en.wikipedia.org/wiki/MOLCAS "wikipedia:MOLCAS"), [MOLPRO](https://en.wikipedia.org/wiki/MOLPRO "wikipedia:MOLPRO"), [MPQC](https://en.wikipedia.org/wiki/MPQC "wikipedia:MPQC"), [OpenMopac](https://en.wikipedia.org/wiki/MOPAC "wikipedia:MOPAC"), [Firefly](https://en.wikipedia.org/wiki/ru:Firefly_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0) "wikipedia:ru:Firefly (программа)") (прежнее название - PC GAMESS) и [Q-Chem](https://en.wikipedia.org/wiki/Q-Chem "wikipedia:Q-Chem")
+*   **[Gabedit](https://en.wikipedia.org/wiki/Gabedit (прежнее название - PC GAMESS) и [Q-Chem](https://en.wikipedia.org/wiki/Q-Chem "wikipedia:Q-Chem")
 
 	[http://gabedit.sourceforge.net/](http://gabedit.sourceforge.net/) || [gabedit](https://aur.archlinux.org/packages/gabedit/)
 

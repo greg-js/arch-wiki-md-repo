@@ -142,7 +142,7 @@ The default compression method for the dedicated GPU is "proxy" (lower compressi
 
 By changing the compression method while using Nvidia Optimus, the FPS can be increased or decreased, some results (by compression method and approx. FPS, respectively):
 
-_proxy_ 220, _jpeg_ 340, _rgb_ 280, _yuv_ 330.
+*proxy* 220, *jpeg* 340, *rgb* 280, *yuv* 330.
 
 **Power Management**
 

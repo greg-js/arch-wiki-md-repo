@@ -1,4 +1,4 @@
-This article collects user repositories with custom configuration files, commonly known as _dotfiles_.
+This article collects user repositories with custom configuration files, commonly known as *dotfiles*.
 
 ## Contents
 

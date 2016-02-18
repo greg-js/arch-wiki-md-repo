@@ -9,7 +9,7 @@
     *   [1.6 Sostituisco i miei server Windows con Linux/Samba ?](#Sostituisco_i_miei_server_Windows_con_Linux.2FSamba_.3F)
 *   [2 Installazione](#Installazione)
     *   [2.1 Operazioni preliminari](#Operazioni_preliminari)
-    *   [2.2 Il repository _radioattivo_](#Il_repository_radioattivo)
+    *   [2.2 Il repository *radioattivo*](#Il_repository_radioattivo)
         *   [2.2.1 Attiviamo il repository](#Attiviamo_il_repository)
     *   [2.3 Installazione pacchetti](#Installazione_pacchetti)
         *   [2.3.1 Samba](#Samba_2)
@@ -26,7 +26,7 @@
         *   [4.1.3 Assegniamo gli utenti ai gruppi](#Assegniamo_gli_utenti_ai_gruppi)
     *   [4.2 Condivisioni](#Condivisioni)
         *   [4.2.1 public](#public)
-            *   [4.2.1.1 La _"rogna"_ dei permessi utente](#La_.22rogna.22_dei_permessi_utente)
+            *   [4.2.1.1 La *"rogna"* dei permessi utente](#La_.22rogna.22_dei_permessi_utente)
         *   [4.2.2 netlogon & profiles](#netlogon_.26_profiles)
         *   [4.2.3 rootdir](#rootdir)
         *   [4.2.4 apps](#apps)
@@ -73,7 +73,7 @@ Con GNU/Linux ho diverse possibilità di scelta, ma io considererò solo la solu
 
 ## Cos’e’ questa guida ?
 
-Ricordo ancora che questa guida _NON è una guida completa a Samba e OpenLDAP_, oltre a quanto già ribadito presuppone anche che abbiate già una buona conoscenza di come funziona una rete Windows basata su un dominio. Lo scopo che ci prefiggiamo qui è quello di descrivere in modo abbastanza esteso un caso di reale implementazione di una rete che utilizzano Microsoft Windows sui loro desktop e Linux, Samba e OpenLDAP su lato server in sostituzione dei prodotti server di Microsoft. Essendo un progetto di una certa complessità non bisogna trascurare il fatto che leggere le guide “ufficiali” molto ben fatte e aggiornate che trovate sul [sito](http://www.samba.org) è molto più di un consiglio: fare le cose senza capirle bene è una pessima abitudine.
+Ricordo ancora che questa guida *NON è una guida completa a Samba e OpenLDAP*, oltre a quanto già ribadito presuppone anche che abbiate già una buona conoscenza di come funziona una rete Windows basata su un dominio. Lo scopo che ci prefiggiamo qui è quello di descrivere in modo abbastanza esteso un caso di reale implementazione di una rete che utilizzano Microsoft Windows sui loro desktop e Linux, Samba e OpenLDAP su lato server in sostituzione dei prodotti server di Microsoft. Essendo un progetto di una certa complessità non bisogna trascurare il fatto che leggere le guide “ufficiali” molto ben fatte e aggiornate che trovate sul [sito](http://www.samba.org) è molto più di un consiglio: fare le cose senza capirle bene è una pessima abitudine.
 
 ## Samba Server è meglio di Windows Server ?
 
@@ -90,7 +90,7 @@ I motivi possono essere molti. Vi posso dire i miei personali. Ho optato per Sam
 
 ## E’ più facile usare/amministrare Windows o Linux/Samba ?
 
-Qui sarebbe difficile trovare due persone con la stessa opinione. Personalmente vi posso dire che Windows e il suo Active Directory Services (ADS è un LDAP pesantemente personalizzato da Microsoft per lo scopo) è un eccellente prodotto e capire come realizzare un dominio con esso vuol dire masticare argomenti disparati quali LDAP, DNS, DHCP, TCP/IP, KERBEROS, WINS, e tutti gli aspetti inerenti ad una rete Microsoft: Primary Domain Controller (PDC), Backup Domain Controller (BDC), Browsing della rete, Access Control List (ACL) alle share, Profili Roaming eccetera. Insomma l’argomento è complesso, e avventurarsi in una installazione di questo tipo senza padroneggiare questi concetti è una _PESSIMA IDEA_. E con Linux/Samba ? Stessa cosa, devo avere alba di cosa sia Linux, come si installa e come si amministra in modo almeno basilare, oltre a tutte le cose dette per Windows: LDAP, DNS, WINS, PDC, BDC, ACL, Profili Roaming ecc.. Ovviamente anche con Samba ci scontreremo con questi concetti basilari. Alla fine della fiera la differenza sarà che con Windows ho dei comodi (ma a parer mio a volte diseducativi) tools grafici per fare il tutto, con Linux un mix tra tools grafici e cari e vecchi (ma efficaci) tools da linea di comando.
+Qui sarebbe difficile trovare due persone con la stessa opinione. Personalmente vi posso dire che Windows e il suo Active Directory Services (ADS è un LDAP pesantemente personalizzato da Microsoft per lo scopo) è un eccellente prodotto e capire come realizzare un dominio con esso vuol dire masticare argomenti disparati quali LDAP, DNS, DHCP, TCP/IP, KERBEROS, WINS, e tutti gli aspetti inerenti ad una rete Microsoft: Primary Domain Controller (PDC), Backup Domain Controller (BDC), Browsing della rete, Access Control List (ACL) alle share, Profili Roaming eccetera. Insomma l’argomento è complesso, e avventurarsi in una installazione di questo tipo senza padroneggiare questi concetti è una *PESSIMA IDEA*. E con Linux/Samba ? Stessa cosa, devo avere alba di cosa sia Linux, come si installa e come si amministra in modo almeno basilare, oltre a tutte le cose dette per Windows: LDAP, DNS, WINS, PDC, BDC, ACL, Profili Roaming ecc.. Ovviamente anche con Samba ci scontreremo con questi concetti basilari. Alla fine della fiera la differenza sarà che con Windows ho dei comodi (ma a parer mio a volte diseducativi) tools grafici per fare il tutto, con Linux un mix tra tools grafici e cari e vecchi (ma efficaci) tools da linea di comando.
 
 ## Sostituisco i miei server Windows con Linux/Samba ?
 
@@ -102,11 +102,11 @@ Bene, ora che è tutto chiaro (...) con possiamo iniziare :) .
 
 # Installazione
 
-Cominciamo con la configurazione del nostro file server _domain controller_ basato su Samba e OpenLDAP. Come primo passo dedichiamoci all' installazione dei pacchetti necessari.
+Cominciamo con la configurazione del nostro file server *domain controller* basato su Samba e OpenLDAP. Come primo passo dedichiamoci all' installazione dei pacchetti necessari.
 
 ## Operazioni preliminari
 
-In questo tipo di configurazioni è bene concentrarci sul singolo problema, evitando di correr dietro a cause esterne dovute ad altri servizi. Tutto questo per dire che se per caso avete attivato il firewall è giunto il momento di disattivarlo momentaneamente. Quando tutto funzionerà a dovere lo ripristineremo con le _rules_ aggiuntive opportune. Quindi:
+In questo tipo di configurazioni è bene concentrarci sul singolo problema, evitando di correr dietro a cause esterne dovute ad altri servizi. Tutto questo per dire che se per caso avete attivato il firewall è giunto il momento di disattivarlo momentaneamente. Quando tutto funzionerà a dovere lo ripristineremo con le *rules* aggiuntive opportune. Quindi:
 
 ```
 sudo /etc/rc.d/shorewall stop
@@ -129,9 +129,9 @@ all: ALL : allow
 
 Bene, ora che abbiamo eliminato eventuali cause esterne possiamo proseguire.
 
-## Il repository _radioattivo_
+## Il repository *radioattivo*
 
-Durante l'installazione ho, purtroppo, constatato che i pacchetti necessari in questa impresa non sono tutti disponibili né sui repository ufficiali nè su AUR. Certo, essendo degli script _perl_ e delle librerie dello stesso, avrei potuto usare _CPAN_ ed installare gli script a mano, ma finché posso voglio evitare questa pratica e allora (rullo di tamburi:)) ho creato un piccolo e _radioattivo_ repository personale con quello che ci serve. Creare un repository con Arch è veramente una operazione banale con il comando _repo-add_, un po' più complicati sono i _PKGBUILD_. Di grande aiuto mi è stata l'utility _cpan4pacman_ installata precedentemente, che mi ha creato i _PKGBUILD_ per le librerie perl mancanti, appena un po' più complesso il pacchetto _smbldap-tools_ che ho dovuto fare da zero (o quasi). Perchè _radioattivo_ ? Perchè ho ignorato tutte le opzioni di verifica delle dipendenze e i checksum MD5\. Sono script in perl, di bassa pericolosità, ma naturalmente non mi assumo responsabilità.
+Durante l'installazione ho, purtroppo, constatato che i pacchetti necessari in questa impresa non sono tutti disponibili né sui repository ufficiali nè su AUR. Certo, essendo degli script *perl* e delle librerie dello stesso, avrei potuto usare *CPAN* ed installare gli script a mano, ma finché posso voglio evitare questa pratica e allora (rullo di tamburi:)) ho creato un piccolo e *radioattivo* repository personale con quello che ci serve. Creare un repository con Arch è veramente una operazione banale con il comando *repo-add*, un po' più complicati sono i *PKGBUILD*. Di grande aiuto mi è stata l'utility *cpan4pacman* installata precedentemente, che mi ha creato i *PKGBUILD* per le librerie perl mancanti, appena un po' più complesso il pacchetto *smbldap-tools* che ho dovuto fare da zero (o quasi). Perchè *radioattivo* ? Perchè ho ignorato tutte le opzioni di verifica delle dipendenze e i checksum MD5\. Sono script in perl, di bassa pericolosità, ma naturalmente non mi assumo responsabilità.
 
 ### Attiviamo il repository
 
@@ -148,7 +148,7 @@ Server = [http://www.stenoweb.it/repo/i686](http://www.stenoweb.it/repo/i686)
 
 ```
 
-e per finire aggiorniamo la lista dei pacchetti "risucchiando" la lista anche dal repo _stenoweb_:
+e per finire aggiorniamo la lista dei pacchetti "risucchiando" la lista anche dal repo *stenoweb*:
 
 ```
 sudo pacman -Sy
@@ -172,7 +172,7 @@ Funziona ! Scusate non ho resistito ...
 
 ### LDAP Tools
 
-E qui interviene il mio repository. Gli [LDAP Tools](http://freshmeat.net/projects/smbldap-tools) sono degli script realizzati in perl che permettono di gestire utenti e gruppi Samba/Unix salvando i dati sull'albero LDAP anziché sui file _/etc/passwd e /etc/group_. In pratica sostituiscono i vari comandi standard linux di gestione degli utenti. Iniziamo con installare le librerie perl necessarie :
+E qui interviene il mio repository. Gli [LDAP Tools](http://freshmeat.net/projects/smbldap-tools) sono degli script realizzati in perl che permettono di gestire utenti e gruppi Samba/Unix salvando i dati sull'albero LDAP anziché sui file */etc/passwd e /etc/group*. In pratica sostituiscono i vari comandi standard linux di gestione degli utenti. Iniziamo con installare le librerie perl necessarie :
 
 ```
 sudo pacman -S perl-digest-sha1 perl-crypt-smbhash perl-jcode perl-unicode-map perl-unicode-map8 perl-unicode-maputf8 perl-unicode-string perl-ldap perl-io-socket-ssl 
@@ -186,17 +186,17 @@ sudo pacman -S smbldap-tools
 
 ```
 
-Gli script sono stati copiati/installati in _/usr/local/bin_ e i file di configurazione in _/etc/smbldap-tools_. I comandi sono nella forma (ad esempio per aggiungere un utente) :
+Gli script sono stati copiati/installati in */usr/local/bin* e i file di configurazione in */etc/smbldap-tools*. I comandi sono nella forma (ad esempio per aggiungere un utente) :
 
 ```
-sudo /usr/local/bin/smbldap-useradd _nomeutente_
+sudo /usr/local/bin/smbldap-useradd *nomeutente*
 
 ```
 
-ma non provateci adesso, mancando la necessaria configurazione otterrete solo un errore. Ho fatto qualcosa in più: data la lunghezza del comando lo script di installazione del pacchetto crea anche dei link simbolici di più agevole forma in _/bin_. Il comando di prima diventerà il più semplice:
+ma non provateci adesso, mancando la necessaria configurazione otterrete solo un errore. Ho fatto qualcosa in più: data la lunghezza del comando lo script di installazione del pacchetto crea anche dei link simbolici di più agevole forma in */bin*. Il comando di prima diventerà il più semplice:
 
 ```
-sudo netuseradd _nomeutente_
+sudo netuseradd *nomeutente*
 
 ```
 
@@ -204,7 +204,7 @@ Prolunghiamo la vita alle nostre tastiere! :)
 
 ### Samba LDAP Schema
 
-Per ultimo abbiamo bisogno del file di _schema_ da applicare a OpenLDAP per memorizzare i dati di cui ha bisogno Samba. Cos'e' un file di schema ? LDAP in buona sostanza è un database, lo schema non è altro che il _tracciato record_ che descrive, dichiara e crea i campi nel database LDAP. Nello schema Samba ci sono i campi per il nome utente, la password, la home, i gruppi ecc. che servono a memorizzare i nostri dati nell'albero LDAP. Il file _samba.schema_ di cui abbiamo bisogno è fornito con i sorgenti di Samba: anziché scaricare i 17MB, scompattare e recuperare il file ve lo fornisco io direttamente. Spostiamoci nella cartella degli schemi di OpenLDAP :
+Per ultimo abbiamo bisogno del file di *schema* da applicare a OpenLDAP per memorizzare i dati di cui ha bisogno Samba. Cos'e' un file di schema ? LDAP in buona sostanza è un database, lo schema non è altro che il *tracciato record* che descrive, dichiara e crea i campi nel database LDAP. Nello schema Samba ci sono i campi per il nome utente, la password, la home, i gruppi ecc. che servono a memorizzare i nostri dati nell'albero LDAP. Il file *samba.schema* di cui abbiamo bisogno è fornito con i sorgenti di Samba: anziché scaricare i 17MB, scompattare e recuperare il file ve lo fornisco io direttamente. Spostiamoci nella cartella degli schemi di OpenLDAP :
 
 ```
 cd /etc/openldap/schema
@@ -267,7 +267,7 @@ access to *
 
 ```
 
-Soffermiamoci su di un aspetto: il rootdn _cn=Manager,dc=mede,dc=it_ ha comunque accesso ai dati in lettura scrittura anche se non specifico nulla, ma di particolare importanza è la regola di accesso _"access to attrs=userPassword,sambaNTPassword,sambaLMPassword"_ che di fatto permette ai singoli utenti di cambiare la propria password direttamente da Windows. Per ultima cosa definiamo gli indici di ricerca per velocizzare gli accessi all'albero ldap (eliminate le voci "index" già presenti e sostituitele con queste) :
+Soffermiamoci su di un aspetto: il rootdn *cn=Manager,dc=mede,dc=it* ha comunque accesso ai dati in lettura scrittura anche se non specifico nulla, ma di particolare importanza è la regola di accesso *"access to attrs=userPassword,sambaNTPassword,sambaLMPassword"* che di fatto permette ai singoli utenti di cambiare la propria password direttamente da Windows. Per ultima cosa definiamo gli indici di ricerca per velocizzare gli accessi all'albero ldap (eliminate le voci "index" già presenti e sostituitele con queste) :
 
 ```
 # Indices
@@ -297,7 +297,7 @@ Il nostro albero è pronto.
 
 ## LDAP Tools
 
-Gli _LDAP tools_ sono necessari per gestire utenti e gruppi, per poterli utilizzare dobbiamo configurarli a dovere. Per prima cosa diamo un file di configurazione di base a Samba :
+Gli *LDAP tools* sono necessari per gestire utenti e gruppi, per poterli utilizzare dobbiamo configurarli a dovere. Per prima cosa diamo un file di configurazione di base a Samba :
 
 ```
 sudo nano /etc/samba/smb.conf
@@ -337,7 +337,7 @@ e inseriamo :
 
 ```
 
-Come si può notare al momento (ricordo che _il servizio samba non è stato ancora avviato_) forniamo sono i dati essenziali, quali il dominio (workgroup = MEDE), il nome del server (netbios name = ARCHI), il suo ruolo di _Domain Controller_ (domain logons = Yes) e i parametri LDAP. Sugli altri parametri consiglio una buona guida di Samba o le sue _manpage_ :). Come secondo passo prendiamo nota del [SID](http://en.wikipedia.org/wiki/Security_Identifier) del nostro server:
+Come si può notare al momento (ricordo che *il servizio samba non è stato ancora avviato*) forniamo sono i dati essenziali, quali il dominio (workgroup = MEDE), il nome del server (netbios name = ARCHI), il suo ruolo di *Domain Controller* (domain logons = Yes) e i parametri LDAP. Sugli altri parametri consiglio una buona guida di Samba o le sue *manpage* :). Come secondo passo prendiamo nota del [SID](http://en.wikipedia.org/wiki/Security_Identifier) del nostro server:
 
 ```
 sudo net getlocalsid
@@ -392,7 +392,7 @@ masterPw="archimede"
 
 ```
 
-Ricordo che "archimede" è la password che ho deciso per l'amministratore LDAP, la stessa che ho messo in _/etc/openldap/slapd.conf_ in formato MD5 e in _/etc/ldap.secret_ in chiaro. Finito questo proteggiamo i file da occhi indiscreti:
+Ricordo che "archimede" è la password che ho deciso per l'amministratore LDAP, la stessa che ho messo in */etc/openldap/slapd.conf* in formato MD5 e in */etc/ldap.secret* in chiaro. Finito questo proteggiamo i file da occhi indiscreti:
 
 ```
 sudo chmod 0644 /etc/smbldap-tools/smbldap.conf
@@ -418,7 +418,7 @@ Significa che fino ad ora tutto và per il verso giusto, e possiamo proseguire.
 
 ## Popolare LDAP
 
-Per il funzionamento corretto SAMBA ha bisogno di diversi gruppi predefiniti e 2 utenti: Administrator e guest. Inoltre, affinché si riesca ad aggiungere computer al dominio in modo automatico (da macchine Windows), deve esistere un utente con uid = 0 da utilizzare per questa operazione. Tale utente può essere un utente root (da aggiungere a mano) o lo stesso Administrator cambiandogli l'uid. Quest'ultima è la scelta presa in questa configurazione, in modo da avere un utente Administrator che è Administrator per Samba e root per il "dominio" UNIX. Gli _ldap tools_ forniscono un comodo comando per svolgere questa operazione: _smbldap-populate_. Lanciamolo così con questi parametri:
+Per il funzionamento corretto SAMBA ha bisogno di diversi gruppi predefiniti e 2 utenti: Administrator e guest. Inoltre, affinché si riesca ad aggiungere computer al dominio in modo automatico (da macchine Windows), deve esistere un utente con uid = 0 da utilizzare per questa operazione. Tale utente può essere un utente root (da aggiungere a mano) o lo stesso Administrator cambiandogli l'uid. Quest'ultima è la scelta presa in questa configurazione, in modo da avere un utente Administrator che è Administrator per Samba e root per il "dominio" UNIX. Gli *ldap tools* forniscono un comodo comando per svolgere questa operazione: *smbldap-populate*. Lanciamolo così con questi parametri:
 
 ```
 sudo /usr/local/bin/smbldap-populate -a Administrator -u 5001 -g 5001 -r 5001 -b guest -l 5000
@@ -456,7 +456,7 @@ Retype new password:
 
 ```
 
-Come possiamo notare _smbldap-populate_ ha creato utenti e gruppi predefiniti in una installazione di windows server. Per vedere se tutto funziona proviamo a creare un utente _user1_:
+Come possiamo notare *smbldap-populate* ha creato utenti e gruppi predefiniti in una installazione di windows server. Per vedere se tutto funziona proviamo a creare un utente *user1*:
 
 ```
 sudo netuseradd -a -m user1
@@ -486,7 +486,7 @@ user1:x:5001:513:System User:/home/user1:/bin/bash
 
 ```
 
-per le opzioni complete digitiamo _netuseradd_ senza parametri e diamo una occhiata. Nell'esempio il parametro _-a_ crea sia l'utente unix che samba e _-m_ crea la home (/home/user1) dell'utente.
+per le opzioni complete digitiamo *netuseradd* senza parametri e diamo una occhiata. Nell'esempio il parametro *-a* crea sia l'utente unix che samba e *-m* crea la home (/home/user1) dell'utente.
 
 # Pianificazione condivisioni
 
@@ -502,7 +502,7 @@ Definiamo e creiamo un insieme di gruppi di utenti a cui poi assegnare una condi
 | tecnico | utenti ufficio tecnico |
 | Domain Users | gruppo che contiene tutti gli utenti |
 
-_Domain Users_ è già stato creato con _smbldap-populate_. Ogni nuovo utente viene assegnato in modo automatico a questo gruppo.
+*Domain Users* è già stato creato con *smbldap-populate*. Ogni nuovo utente viene assegnato in modo automatico a questo gruppo.
 
 ### Creiamo gli altri gruppi
 
@@ -537,7 +537,7 @@ tecnico1:x:5002:513:System User:/home/tecnico1:/bin/bash
 
 ```
 
-Nota: come possiamo vedere ad ogni utente viene concesso l'accesso shell (_/bin/bash_). Se vogliamo togliere questo privilegio basta modificare l'utente (ad esempio tecnico1) così:
+Nota: come possiamo vedere ad ogni utente viene concesso l'accesso shell (*/bin/bash*). Se vogliamo togliere questo privilegio basta modificare l'utente (ad esempio tecnico1) così:
 
 ```
 sudo netusermod -s /bin/false tecnico1
@@ -567,11 +567,11 @@ Tecnico:*:5002:tecnico1
 
 ```
 
-I comandi _net*_ li trovo in /bin: è utile prendere dimestichezza con questi per amministrare utenti e gruppi.
+I comandi *net** li trovo in /bin: è utile prendere dimestichezza con questi per amministrare utenti e gruppi.
 
 ## Condivisioni
 
-Vediamo ora cosa andremo a condividere, ho deciso di mettere tutto (tranne le home directory) in _/samba_:
+Vediamo ora cosa andremo a condividere, ho deciso di mettere tutto (tranne le home directory) in */samba*:
 
 <caption></caption>
 | Condivisione | Percorso | Descrizione |
@@ -584,7 +584,7 @@ Vediamo ora cosa andremo a condividere, ho deciso di mettere tutto (tranne le ho
 
 ### public
 
-Questa condivisione è la principale, anziché creare una condivisione per ogni gruppo ho deciso di mettere tutto dentro a _public_ e di "giocare" poi con i permessi sulle cartelle. Per capirci meglio :
+Questa condivisione è la principale, anziché creare una condivisione per ogni gruppo ho deciso di mettere tutto dentro a *public* e di "giocare" poi con i permessi sulle cartelle. Per capirci meglio :
 
 <caption></caption>
 | /samba/public | di proprietà di root/Administrator solo leggibile dagli altri |
@@ -592,7 +592,7 @@ Questa condivisione è la principale, anziché creare una condivisione per ogni 
 | /samba/public/tecnico | Cartella per gruppo "Tecnico" |
 | /samba/public/comune | Cartella condivisa di tutti ("Domain Users") |
 
-Poi andremo a mappare una unità L: (a scelta) sulla condivisione "public" e gli utenti del gruppo "Commerciale" vedranno L:\COMUNE e L:\COMMERCIALE, gli utenti del gruppo "Tecnico" vedranno solo L:\COMUNE e L:\TECNICO. Nessuno (tranne i membri del gruppo "Domain Admins", off course) possono creare files o cartelle nella root di L:. Tengo a precisare che questa non è una regola _ma una mia personale idea_ su come organizzare le condivisioni. Quando abbiamo a che fare con molti gruppi ritengo abbastanza noioso e confusionario fare condivisioni separate. Un utente membro di diversi gruppi si troverebbe con molte mappature diverse che esauriscono in breve l'alfabeto. In questo modo ho una unica mappatura (L:\) e ognuno vedrà le sottocartelle a cui avrà accesso. Molto più ordinato e comodo. Questo tipo di organizzazione è la stessa che usavo quando installavo Novell Netware 10-15 anni fà, e quindi non ha niente di specifico di Samba o di Windows. Quindi creiamo la struttura :
+Poi andremo a mappare una unità L: (a scelta) sulla condivisione "public" e gli utenti del gruppo "Commerciale" vedranno L:\COMUNE e L:\COMMERCIALE, gli utenti del gruppo "Tecnico" vedranno solo L:\COMUNE e L:\TECNICO. Nessuno (tranne i membri del gruppo "Domain Admins", off course) possono creare files o cartelle nella root di L:. Tengo a precisare che questa non è una regola *ma una mia personale idea* su come organizzare le condivisioni. Quando abbiamo a che fare con molti gruppi ritengo abbastanza noioso e confusionario fare condivisioni separate. Un utente membro di diversi gruppi si troverebbe con molte mappature diverse che esauriscono in breve l'alfabeto. In questo modo ho una unica mappatura (L:\) e ognuno vedrà le sottocartelle a cui avrà accesso. Molto più ordinato e comodo. Questo tipo di organizzazione è la stessa che usavo quando installavo Novell Netware 10-15 anni fà, e quindi non ha niente di specifico di Samba o di Windows. Quindi creiamo la struttura :
 
 ```
 sudo mkdir /samba/public
@@ -632,9 +632,9 @@ drwxrwx--- 2 root Tecnico      4096 17 dic 16:24 tecnico
 
 ```
 
-#### La _"rogna"_ dei permessi utente
+#### La *"rogna"* dei permessi utente
 
-Ora che abbiamo dato i permessi alle cartelle ci troviamo di fronte ad un problema inaspettato. Quando gli utenti creano nuovi files o cartelle nelle condivisioni questi vengono _flaggati_ con utente=UtenteCreatore e gruppo=GruppoDefaultUtente. Il gruppo di default è "Domain Users", quindi tutti i nuovi files vengono impostati con questo gruppo. Dunque i nuovi files creati in "commerciale" sono potenzialmente a disposizione anche degli utenti del gruppo "Tecnico", essendo anche questi membri del gruppo "Domain Users". In questo caso sono protetti dai permessi della cartella stessa, ma potrebbe non essere così in un altro caso. L'utente "Administrator" ha come gruppo di default "Domain Admins", quindi ogni file creato/copiato/ripristinato dall'amministratore risulta non accessibile dagli utenti "normali". Indubbiamente una bella rottura di scatole dover ogni volta reimpostare a mano i permessi sui files manipolati dall'amministratore ... Ma non disperate ! :) Ci viene in aiuto il flag [SETUID](http://en.wikipedia.org/wiki/Setuid) di unix. Se leggete l'articolo linkato sembra non centrare una benemerita fava con l'argomento in questione, ma in questo caso l'effetto del flag è quello da noi voluto. In pratica abilitiamo il flag sul gruppo in questo modo :
+Ora che abbiamo dato i permessi alle cartelle ci troviamo di fronte ad un problema inaspettato. Quando gli utenti creano nuovi files o cartelle nelle condivisioni questi vengono *flaggati* con utente=UtenteCreatore e gruppo=GruppoDefaultUtente. Il gruppo di default è "Domain Users", quindi tutti i nuovi files vengono impostati con questo gruppo. Dunque i nuovi files creati in "commerciale" sono potenzialmente a disposizione anche degli utenti del gruppo "Tecnico", essendo anche questi membri del gruppo "Domain Users". In questo caso sono protetti dai permessi della cartella stessa, ma potrebbe non essere così in un altro caso. L'utente "Administrator" ha come gruppo di default "Domain Admins", quindi ogni file creato/copiato/ripristinato dall'amministratore risulta non accessibile dagli utenti "normali". Indubbiamente una bella rottura di scatole dover ogni volta reimpostare a mano i permessi sui files manipolati dall'amministratore ... Ma non disperate ! :) Ci viene in aiuto il flag [SETUID](http://en.wikipedia.org/wiki/Setuid) di unix. Se leggete l'articolo linkato sembra non centrare una benemerita fava con l'argomento in questione, ma in questo caso l'effetto del flag è quello da noi voluto. In pratica abilitiamo il flag sul gruppo in questo modo :
 
 ```
 sudo chmod g+s /samba/public/commerciale
@@ -643,11 +643,11 @@ sudo chmod g+s /samba/public/comune
 
 ```
 
-se ricontrollo ora con _ls -al_ dovrei vedere che la tripletta dei permessi sul gruppo è cambiata da _rwx_ a _rws_ che indica, appunto, che è attivo il setuid. Cosa provoca questo ? Questo trucchetto fà si che _ogni file creato nelle cartelle avrà come gruppo proprietario il guppo della cartella e non quello dell'utente_. Quindi ogni file, ad esempio, creato in "commerciale" avrà come gruppo proprietario "Commerciale" che corrisponde al gruppo proprietario della cartella. Ora potete usare anche "Administrator" per ripristinare o creare files che saranno accessibili agli utenti normali. Fiuuuuuu. Andiamo avanti.
+se ricontrollo ora con *ls -al* dovrei vedere che la tripletta dei permessi sul gruppo è cambiata da *rwx* a *rws* che indica, appunto, che è attivo il setuid. Cosa provoca questo ? Questo trucchetto fà si che *ogni file creato nelle cartelle avrà come gruppo proprietario il guppo della cartella e non quello dell'utente*. Quindi ogni file, ad esempio, creato in "commerciale" avrà come gruppo proprietario "Commerciale" che corrisponde al gruppo proprietario della cartella. Ora potete usare anche "Administrator" per ripristinare o creare files che saranno accessibili agli utenti normali. Fiuuuuuu. Andiamo avanti.
 
 ### netlogon & profiles
 
-Queste sono due condivisioni di sistema, necessarie quando si configura un _domain controller_. In _netlogon_ si saranno gli script di login degli utenti (che vedremo come creare al "volo" in modo dinamico), in _profiles_ ci saranno i profili utente nel caso avessimo deciso di usare i _profili roaming_ di Microsoft (utili i certi casi, ma a me, idea personalissima, non piacciono). Creiamo le certelle e diamo i permessi :
+Queste sono due condivisioni di sistema, necessarie quando si configura un *domain controller*. In *netlogon* si saranno gli script di login degli utenti (che vedremo come creare al "volo" in modo dinamico), in *profiles* ci saranno i profili utente nel caso avessimo deciso di usare i *profili roaming* di Microsoft (utili i certi casi, ma a me, idea personalissima, non piacciono). Creiamo le certelle e diamo i permessi :
 
 ```
 sudo mkdir /samba/netlogon
@@ -658,7 +658,7 @@ chmod 777 /samba/profiles
 
 ### rootdir
 
-Questa è una condivisione di "comodo" accessibile solo all'amministratore. Creiamo anche una cartella _system_ con i _link simbolici_ alle cartelle o ai file che poi potremmo salvare via condivisione samba da un altro PC per fare dei veloci backup.
+Questa è una condivisione di "comodo" accessibile solo all'amministratore. Creiamo anche una cartella *system* con i *link simbolici* alle cartelle o ai file che poi potremmo salvare via condivisione samba da un altro PC per fare dei veloci backup.
 
 ```
 sudo ln -s /home /samba/home
@@ -696,7 +696,7 @@ Bene, dovremmo esserci. Ora siamo pronti a completare la configurazione di samba
 
 # Configurazione di Samba
 
-E' giunta l' ora del servizio _Samba_ finalmente. Configuriamolo a dovere e avviamo il servizio. Vediamo anche una (breve) spiegazione dei parametri principali applicati al nostro _smb.conf_. Andiamo ad editare il file di configurazione di Samba:
+E' giunta l' ora del servizio *Samba* finalmente. Configuriamolo a dovere e avviamo il servizio. Vediamo anche una (breve) spiegazione dei parametri principali applicati al nostro *smb.conf*. Andiamo ad editare il file di configurazione di Samba:
 
 ```
 sudo nano /etc/samba/smb.conf
@@ -729,21 +729,21 @@ bind interfaces only = Yes
 
 ```
 
-Diciamo a Samba che il _repository_ di utenti, gruppi e password è il server LDAP specificato.
+Diciamo a Samba che il *repository* di utenti, gruppi e password è il server LDAP specificato.
 
 ```
 passdb backend = ldapsam:ldap://archi.mede.it
 
 ```
 
-Ordine con cui vengono risolti i nomi delle workstation. _Broadcast_ per ultimo off course.
+Ordine con cui vengono risolti i nomi delle workstation. *Broadcast* per ultimo off course.
 
 ```
 name resolve order = wins host dns bcast
 
 ```
 
-Script richiamati da Samba quando _da Windows_ tento le operazioni citate. Questo mi permette di usare tools windows per gestire utenti e gruppi, oltre che ad eseguire la _join_ al dominio.
+Script richiamati da Samba quando *da Windows* tento le operazioni citate. Questo mi permette di usare tools windows per gestire utenti e gruppi, oltre che ad eseguire la *join* al dominio.
 
 ```
 add user script = /bin/netuseradd -a -m '%u'
@@ -757,14 +757,14 @@ add machine script = /bin/netuseradd -w '%u'
 
 ```
 
-Script di login eseguiti dagli utenti quando si collegano. %U viene trasformata nel nome utente. Ad esempio l' utente _tecnico1_ eseguirà (se esiste) lo script _tecnico1.bat_ che si trova in _netlogon_.
+Script di login eseguiti dagli utenti quando si collegano. %U viene trasformata nel nome utente. Ad esempio l' utente *tecnico1* eseguirà (se esiste) lo script *tecnico1.bat* che si trova in *netlogon*.
 
 ```
 logon script = %U.bat
 
 ```
 
-Non voglio i profili roaming, quindi metto a _null_ questi parametri. Attenzione che i parametri _userSmbHome_ e _userProfile_ specificati in _/etc/smbldap-tools/smbldap.conf_ hanno la precedenza su questi !
+Non voglio i profili roaming, quindi metto a *null* questi parametri. Attenzione che i parametri *userSmbHome* e *userProfile* specificati in */etc/smbldap-tools/smbldap.conf* hanno la precedenza su questi !
 
 ```
 logon path =
@@ -772,14 +772,14 @@ logon home =
 
 ```
 
-Il mio server è un _domain controller_ :)
+Il mio server è un *domain controller* :)
 
 ```
 domain logons = Yes
 
 ```
 
-Eleggiamo il nostro server ad autorità _maxima_, facciamolo diventare [master browser](http://en.wikipedia.org/wiki/Domain_Master_Browser) per il segmento della nostra rete.
+Eleggiamo il nostro server ad autorità *maxima*, facciamolo diventare [master browser](http://en.wikipedia.org/wiki/Domain_Master_Browser) per il segmento della nostra rete.
 
 ```
 domain master = yes
@@ -795,7 +795,7 @@ wins support = Yes
 
 ```
 
-Parametri dell'albero LDAP a cui Samba si collega. In questo modo si indica a Samba dove trovare utenti, gruppi, computer e il nome utente da utilizzare per connettersi (cn=Manager). Ricordiamo che la password la abbiamo memorizzata con il comando _smbpasswd -w_ nell'articolo precedente.
+Parametri dell'albero LDAP a cui Samba si collega. In questo modo si indica a Samba dove trovare utenti, gruppi, computer e il nome utente da utilizzare per connettersi (cn=Manager). Ricordiamo che la password la abbiamo memorizzata con il comando *smbpasswd -w* nell'articolo precedente.
 
 ```
 ldap suffix = dc=mede,dc=it
@@ -819,11 +819,11 @@ security = user
 
 ```
 
-Ho specificato dei parametri aggiuntivi che vedete alla fine del post, lascio a voi il compito di interpretarli ;). Ora passiamo alla sezione _condivisioni_.
+Ho specificato dei parametri aggiuntivi che vedete alla fine del post, lascio a voi il compito di interpretarli ;). Ora passiamo alla sezione *condivisioni*.
 
 ## Condivisioni
 
-Abbiamo visto nell' articolo precedente quali condivisioni andiamo a realizzare, vediamo come sono state tradotte sul file di configurazione. Non le espongo tutte, ma solo quelle che hanno qualche parametro significativo da spiegare. La versione completa del file _smb.conf_ la trovate alla fine del post.
+Abbiamo visto nell' articolo precedente quali condivisioni andiamo a realizzare, vediamo come sono state tradotte sul file di configurazione. Non le espongo tutte, ma solo quelle che hanno qualche parametro significativo da spiegare. La versione completa del file *smb.conf* la trovate alla fine del post.
 
 ### public
 
@@ -842,7 +842,7 @@ writeable = yes
 
 ```
 
-La vedo nel _browsing_ della rete:
+La vedo nel *browsing* della rete:
 
 ```
 browseable = Yes
@@ -870,7 +870,7 @@ force directory security mode = 0
 
 ```
 
-I _vfs objects_ sono un utile "plugin" di Samba. In questo caso usiamo l'oggetto _recycle_ per realizzare un _cestino di rete_. I file eliminati non andranno eliminati immediatamente ma finiranno in una cartella nascosta _.cestino/nomeutente_. Poi faremo uno script di _purge_ per vuotare i cestini ogni tanto. I parametri aggiuntivi servono per dire a samba di non salvare i file temporanei e di backup e di non applicare il _versioning_ ai file di office (creano problemi con il salvataggio automatico di quest'ultimo).
+I *vfs objects* sono un utile "plugin" di Samba. In questo caso usiamo l'oggetto *recycle* per realizzare un *cestino di rete*. I file eliminati non andranno eliminati immediatamente ma finiranno in una cartella nascosta *.cestino/nomeutente*. Poi faremo uno script di *purge* per vuotare i cestini ogni tanto. I parametri aggiuntivi servono per dire a samba di non salvare i file temporanei e di backup e di non applicare il *versioning* ai file di office (creano problemi con il salvataggio automatico di quest'ultimo).
 
 ```
 vfs objects = recycle
@@ -893,14 +893,14 @@ browseable = No
 
 ```
 
-Nel momento in cui l'utente accede alla condivisione (e tutti gli utenti di un dominio lo fanno) viene eseguito _/etc/samba/logon.pl_ a cui vengono passati dei parametri tipo il nome utente che ha richiamato lo script, il gruppo, l'orario ecc.. Cosa fà questo programmino ? Semplice, _crea lo script di logon dell'utente "al volo"_ secondo le regole definite in _logon.pl_. Ad esempio viene creato _tecnico1.bat_ per l'utente _tecnico1_. Potrei omettere questo parametro e creare a mano lo script, ma così è molto più comodo e vedremo perché.
+Nel momento in cui l'utente accede alla condivisione (e tutti gli utenti di un dominio lo fanno) viene eseguito */etc/samba/logon.pl* a cui vengono passati dei parametri tipo il nome utente che ha richiamato lo script, il gruppo, l'orario ecc.. Cosa fà questo programmino ? Semplice, *crea lo script di logon dell'utente "al volo"* secondo le regole definite in *logon.pl*. Ad esempio viene creato *tecnico1.bat* per l'utente *tecnico1*. Potrei omettere questo parametro e creare a mano lo script, ma così è molto più comodo e vedremo perché.
 
 ```
 root preexec = /etc/samba/logon.pl "%U" "%G" "%L" "%T" "%m" "%a"
 
 ```
 
-E ora vediamo come è fatto questo _logon.pl_.
+E ora vediamo come è fatto questo *logon.pl*.
 
 ```
 sudo nano /etc/samba/logon.pl
@@ -913,7 +913,8 @@ e impostiamolo così:
 #!/usr/bin/perl
 #
 open LOG, ">>/var/log/samba/netlogon.log";
-print LOG "$ARGV[3] - Utente $ARGV[0] collegato a $ARGV[2]\n";
+print LOG "$ARGV[3] - Utente $ARGV[0] collegato a $ARGV[2]
+";
 close LOG;
 #
 # Elenco utenti per share
@@ -926,19 +927,24 @@ $ADMIN   ="administrator";
 # Inizio generazione script
 #
 open LOGON, ">/samba/netlogon/$ARGV[0].bat";
-print LOGON "\@ECHO OFF\r\n";
-print LOGON "ECHO ARCHI logon script\r\n";
-print LOGON "ECHO.\r\n";
+print LOGON "\@ECHO OFF\r
+";
+print LOGON "ECHO ARCHI logon script\r
+";
+print LOGON "ECHO.\r
+";
 #
 # Sincronizza orario con il server
 #
-print LOGON "NET TIME \\\\ARCHI /SET /YES\r\n";
+print LOGON "NET TIME \\\\ARCHI /SET /YES\r
+";
 #
 # Se piattaforma PC in lista $DELMAP cancella i vecchi mappaggi
 #
 if (index($DELMAP,"-".lc($ARGV[5])."-") >=0)
  {
-       print LOGON "NET USE * /DEL /YES\r\n";
+       print LOGON "NET USE * /DEL /YES\r
+";
  }
 #
 # Esci se utente in lista $NOLOGON altrimenti applica i mappaggi comuni
@@ -946,14 +952,17 @@ if (index($DELMAP,"-".lc($ARGV[5])."-") >=0)
 if (index($NOLOGON,"-".lc($ARGV[0])."-") == -1)
  {
    # Disco L: (PUBLIC)
-   print LOGON "NET USE L: \\\\ARCHI\\public /YES\r\n";
+   print LOGON "NET USE L: \\\\ARCHI\\public /YES\r
+";
    # Disco K: (HOME)
-   print LOGON "NET USE K: \\\\ARCHI\\$ARGV[0] /YES\r\n";
+   print LOGON "NET USE K: \\\\ARCHI\\$ARGV[0] /YES\r
+";
 
    # Disco X: (APPS)
    if (index($APPS,"-".lc($ARGV[0])."-") >=0)
      {
-       print LOGON "NET USE X: \\\\ARCHI\\apps /YES\r\n";
+       print LOGON "NET USE X: \\\\ARCHI\\apps /YES\r
+";
      }
  }
 # Chiudi il file.
@@ -961,11 +970,11 @@ close LOGON;
 
 ```
 
-Possiamo vedere che _condizioniamo_ la creazione dello script in base a delle variabili in testa. Ad esempio solo la lista degli utenti specificata in _$APPS_ (tecnico1 e tecnico2 separati con "-") avranno la mappatura X:, e gli utenti listati in _$NOLOGON_ (administrator) non avranno alcuno script. Tutto chiaro ? Questo script può essere modificato ed esteso con semplicità seguendo questo schema di esempio, e ha il pregio di semplificare la gestione degli script di logon. Voglio che anche l'utente "commerciale1" mappi la X: per \\archi\apps ? Basta aggiungerlo nella lista _$APPS_ e la prossima volta che si collega al server avrà il suo script aggiornato "al volo". In più ho anche un file di log in _/var/log/samba/netlogon.log_ che mi informa dell'orario di collegamento degli utenti.
+Possiamo vedere che *condizioniamo* la creazione dello script in base a delle variabili in testa. Ad esempio solo la lista degli utenti specificata in *$APPS* (tecnico1 e tecnico2 separati con "-") avranno la mappatura X:, e gli utenti listati in *$NOLOGON* (administrator) non avranno alcuno script. Tutto chiaro ? Questo script può essere modificato ed esteso con semplicità seguendo questo schema di esempio, e ha il pregio di semplificare la gestione degli script di logon. Voglio che anche l'utente "commerciale1" mappi la X: per \\archi\apps ? Basta aggiungerlo nella lista *$APPS* e la prossima volta che si collega al server avrà il suo script aggiornato "al volo". In più ho anche un file di log in */var/log/samba/netlogon.log* che mi informa dell'orario di collegamento degli utenti.
 
-Wow. A volte le cose semplici sono le più importanti. Come compito a casa mi fate lo script che scrive nel log l'orario in cui si scollegano usando il parametro _root postexec_. ;)
+Wow. A volte le cose semplici sono le più importanti. Come compito a casa mi fate lo script che scrive nel log l'orario in cui si scollegano usando il parametro *root postexec*. ;)
 
-Tengo a precisare che i parametri _root preexec_ (e _root postexec_ che viene eseguito allo "scollegamento") non sono una prerogativa di _netlogon_. Possono essere usati con _qualunque_ condivisione per eseguire "qualcosa" al momento del collegamento (e/o dello scollegamento).
+Tengo a precisare che i parametri *root preexec* (e *root postexec* che viene eseguito allo "scollegamento") non sono una prerogativa di *netlogon*. Possono essere usati con *qualunque* condivisione per eseguire "qualcosa" al momento del collegamento (e/o dello scollegamento).
 
 Ricordiamoci di rendere eseguibile lo script perl :
 
@@ -976,7 +985,7 @@ sudo chmod 775 /etc/samba/logon.pl
 
 ## smb.conf completo
 
-E _dulcis in fundo_ ecco il file di configurazione completo da _spulciare_ e studiare. Posso, ad esempio, notare che ho gestito il cestino anche sulle _home_ e autorizzato solo i membri del gruppo "Domain Admins" ad accedere alla condivisione di "servizio" _rootdir_.
+E *dulcis in fundo* ecco il file di configurazione completo da *spulciare* e studiare. Posso, ad esempio, notare che ho gestito il cestino anche sulle *home* e autorizzato solo i membri del gruppo "Domain Admins" ad accedere alla condivisione di "servizio" *rootdir*.
 
 ```
 [global]
@@ -1142,11 +1151,11 @@ DAEMONS=(... ... ... ... ... samba ... ... ...)
 
 # Join al dominio e scripts di manutenzione
 
-Ora che finalmente abbiamo avviato Samba, facciamo la _join_ del server al nostro dominio nuovo fiammante, controlliamo che funzioni e creiamo un paio di script bash utili per la manutenzione del sistema
+Ora che finalmente abbiamo avviato Samba, facciamo la *join* del server al nostro dominio nuovo fiammante, controlliamo che funzioni e creiamo un paio di script bash utili per la manutenzione del sistema
 
 ## Join al dominio
 
-Per prima cosa dobbiamo unire il nostro server al dominio (che traduzione orrenda: diciamo che dobbiamo fare la _join_...), con il comando :
+Per prima cosa dobbiamo unire il nostro server al dominio (che traduzione orrenda: diciamo che dobbiamo fare la *join*...), con il comando :
 
 ```
 sudo net rpc join -S ARCHI -U Administrator
@@ -1160,7 +1169,7 @@ Joined domain MEDE.
 
 ```
 
-In questa fase Samba ha creato l'account workstation per il vostro server nel suo backend LDAP nel formato _nomemacchina$_. Andiamo a vedere se è vero con il comando _getent_:
+In questa fase Samba ha creato l'account workstation per il vostro server nel suo backend LDAP nel formato *nomemacchina$*. Andiamo a vedere se è vero con il comando *getent*:
 
 ```
 sudo getent passwd
@@ -1231,7 +1240,7 @@ Wow! Ce l'abbiamo fatta, il nostro domain controller è pronto ad accogliere le 
 
 ### purge
 
-Predentemente abbiamo abilitato il plugin Samba per gestire il _cestino_ del server: ogni utente che cancella i file in realtà li sposta nella cartella _.cestino/nomeutente_ che abbiamo definito. Capirete anche voi che non possiamo lasciarli lì per sempre ma abbiamo bisogno di _purgare_ i cestini di tanto in tanto per mantenere il sistema pulito dalla spazzatura. Chi ha conosciuto _Novell Netware_ non può non ricordare il comando _purge_ che svolgeva egregiamente questa funzione, purtroppo qui non abbiamo niente di simile, e dobbiamo arrangiarci con bash. Tranquilli, ci ho già pensato io qualche anno fa, niente di eclatante ma svolge la sua funzione in modo preciso. Creiamo il file:
+Predentemente abbiamo abilitato il plugin Samba per gestire il *cestino* del server: ogni utente che cancella i file in realtà li sposta nella cartella *.cestino/nomeutente* che abbiamo definito. Capirete anche voi che non possiamo lasciarli lì per sempre ma abbiamo bisogno di *purgare* i cestini di tanto in tanto per mantenere il sistema pulito dalla spazzatura. Chi ha conosciuto *Novell Netware* non può non ricordare il comando *purge* che svolgeva egregiamente questa funzione, purtroppo qui non abbiamo niente di simile, e dobbiamo arrangiarci con bash. Tranquilli, ci ho già pensato io qualche anno fa, niente di eclatante ma svolge la sua funzione in modo preciso. Creiamo il file:
 
 ```
 sudo nano /bin/purge
@@ -1290,7 +1299,7 @@ done;
 
 ```
 
-Come vedete possiamo "purgare" tutto con il parametro _all_ o limitarci ad uno specifico utente. Lo script è poi suddiviso in due parti, la prima si occupa del cestino di ogni singola _home/user_, la seconda del cestino della share principale _public_. Rendiamo eseguibile lo script:
+Come vedete possiamo "purgare" tutto con il parametro *all* o limitarci ad uno specifico utente. Lo script è poi suddiviso in due parti, la prima si occupa del cestino di ogni singola *home/user*, la seconda del cestino della share principale *public*. Rendiamo eseguibile lo script:
 
 ```
 sudo chmod 755 /bin/purge
@@ -1306,11 +1315,11 @@ sudo chgrp "Domain Users" /samba/public/.cestino
 
 ```
 
-Ora basta digitare _purge all_ da shell per avviare le pulizie di primavera :), _purge tecnico1_ per il cestino del solo utente _tecnico1_. Prendiamo anche in considerazione la possibilità di schedularlo con _crontab_ per avviarlo automaticamente al "calar della notte".
+Ora basta digitare *purge all* da shell per avviare le pulizie di primavera :), *purge tecnico1* per il cestino del solo utente *tecnico1*. Prendiamo anche in considerazione la possibilità di schedularlo con *crontab* per avviarlo automaticamente al "calar della notte".
 
 ### setchown
 
-Questo script si usa meno del precedente, ma in alcuni casi è molto utile. Cosa fà lo script ? Semplice, _corregge i permessi su file e directory delle home degli utenti_. A volte magari, come amministratore, si ripristinano, copiano o spostano dei file da una cartella di un utente ad un altro e poi dobbiamo manualmente lavorare di _chown_ e _chmod_ per sistemare il tutto. Lo script _setchown_ lo fa da solo spazzolando tutte le home degli utenti (con i parametro _all_) correggendo permessi e proprietà. Creiamo il file:
+Questo script si usa meno del precedente, ma in alcuni casi è molto utile. Cosa fà lo script ? Semplice, *corregge i permessi su file e directory delle home degli utenti*. A volte magari, come amministratore, si ripristinano, copiano o spostano dei file da una cartella di un utente ad un altro e poi dobbiamo manualmente lavorare di *chown* e *chmod* per sistemare il tutto. Lo script *setchown* lo fa da solo spazzolando tutte le home degli utenti (con i parametro *all*) correggendo permessi e proprietà. Creiamo il file:
 
 ```
 sudo nano /bin/setchown 
@@ -1351,18 +1360,18 @@ done
 
 ```
 
-Anche qui vediamo che possiamo digitare _setchown all_ per tutte le home oppure _setchown tecnico1_ per la singola home. Non dimentichiamoci di rendere eseguibile lo script:
+Anche qui vediamo che possiamo digitare *setchown all* per tutte le home oppure *setchown tecnico1* per la singola home. Non dimentichiamoci di rendere eseguibile lo script:
 
 ```
 sudo chmod 755 /bin/setchown
 
 ```
 
-Tenete presente anche la variabile _$exclude_ nello script, in cui dobbiamo inserire la lista delle cartelle in home da non processare. Ho messo "httpd","ftp" e "amavis" che Archlinux ha la malaugurata idea di creare in home (ma _/var_ faceva schifo ?).
+Tenete presente anche la variabile *$exclude* nello script, in cui dobbiamo inserire la lista delle cartelle in home da non processare. Ho messo "httpd","ftp" e "amavis" che Archlinux ha la malaugurata idea di creare in home (ma */var* faceva schifo ?).
 
 ## Firewall
 
-Ora possiamo riabilitare il firewall. Prima modifichiamo il file _rules_:
+Ora possiamo riabilitare il firewall. Prima modifichiamo il file *rules*:
 
 ```
 sudo nano /etc/shorewall/rules
@@ -1377,7 +1386,7 @@ SMB/ACCEPT      loc             $FW
 
 ```
 
-Per riavviare il servizio usiamo il comando _shorewall_, così vediamo se abbiamo commesso sbagli:
+Per riavviare il servizio usiamo il comando *shorewall*, così vediamo se abbiamo commesso sbagli:
 
 ```
 sudo shorewall start
@@ -1390,13 +1399,13 @@ In teoria sì, in pratica no. Per domini semplici da pochi utenti potreste esser
 
 # Gestione dei permessi
 
-Seeee, abbiamo il nostro nuovo _scintillante_ domain controller Samba su Archlinux, abbiamo sottomesso i creduloni client windows (avete fatto la join al dominio da windows ? Questo non ve lo spiego mica ...) facendoli illudere di giocare in casa. Ah! Con il petto in fuori ci fregiamo a pieno titolo del grado di "sysnetworksuperexpertadmin". Wow, e cosa ci ferma più? --- **Vi fermo io, e con un esempio semplice semplice**. Ecco un caso pratico che dimostra ancora una volta, se ce ne fosse bisogno, come fra la teoria e la pratica ... ci sia di mezzo il vostro zelante capo ufficio tecnico.
+Seeee, abbiamo il nostro nuovo *scintillante* domain controller Samba su Archlinux, abbiamo sottomesso i creduloni client windows (avete fatto la join al dominio da windows ? Questo non ve lo spiego mica ...) facendoli illudere di giocare in casa. Ah! Con il petto in fuori ci fregiamo a pieno titolo del grado di "sysnetworksuperexpertadmin". Wow, e cosa ci ferma più? --- **Vi fermo io, e con un esempio semplice semplice**. Ecco un caso pratico che dimostra ancora una volta, se ce ne fosse bisogno, come fra la teoria e la pratica ... ci sia di mezzo il vostro zelante capo ufficio tecnico.
 
 Raccontiamo una storia.
 
 ## Gli utenti Windows
 
-Tutti abbiamo abbiamo usato o usiamo tuttora (e perchè no?) Windows. Voglia o no questo sistema operativo rappresenta il _motore_ del 92%-98% (a seconda degli studi) dei PC in questo pianeta. Impossibile non farci i conti. Un tipico utente di questo sistema operativo (e per tipico intendo chi lo usa per lavoro o per gioco senza conoscenze tecniche informatiche) non ha mai avuto a che fare con _diritti di accesso e permessi_ su file o attività del computer. Probabilmente non sanno nemmeno che esistono dato che il 99% dei PC con windows lavorano con _Administrator_ o con un utente equivalente. (Spesso se ci si sottrae a questa regola addirittura certi software non funzionano, quindi candidamente ammetto che _pure io_ in Windows lavoro come _Administrator_).
+Tutti abbiamo abbiamo usato o usiamo tuttora (e perchè no?) Windows. Voglia o no questo sistema operativo rappresenta il *motore* del 92%-98% (a seconda degli studi) dei PC in questo pianeta. Impossibile non farci i conti. Un tipico utente di questo sistema operativo (e per tipico intendo chi lo usa per lavoro o per gioco senza conoscenze tecniche informatiche) non ha mai avuto a che fare con *diritti di accesso e permessi* su file o attività del computer. Probabilmente non sanno nemmeno che esistono dato che il 99% dei PC con windows lavorano con *Administrator* o con un utente equivalente. (Spesso se ci si sottrae a questa regola addirittura certi software non funzionano, quindi candidamente ammetto che *pure io* in Windows lavoro come *Administrator*).
 
 Ma quando però scoprono che esistono è la fine, specie se hanno qualche autorità in azienda. "Io voglio vedere i file di Antonio che può vedere quelli Giovanni che però non può cancellare quelli di Lucia. Ok ? " Vengono da voi "sysnetworksuperexpertadmin" e cominciano con queste richieste cambiando idea ogni 2 minuti circa. Vi assicuro che capita, capita...
 
@@ -1404,13 +1413,13 @@ Ma quando però scoprono che esistono è la fine, specie se hanno qualche autori
 
 Senza andare sul paradossale presentiamo un caso molto frequente e per niente ingiustificato, e vediamo se riusciamo a risolverlo con Samba. Come dicevo all'inizio, il Responsabile dell'Ufficio Tecnico viene da voi e vi dice:
 
-_"Antonio e Giovanni disegnano e amministrano le schede tecniche dei prodotti. Vorrei che salvassero i disegni su L:\prodotti e che Lucia e Maria potessero visualizzarle o inviarle ai clienti senza però poterle cancellare o modificare."_
+*"Antonio e Giovanni disegnano e amministrano le schede tecniche dei prodotti. Vorrei che salvassero i disegni su L:\prodotti e che Lucia e Maria potessero visualizzarle o inviarle ai clienti senza però poterle cancellare o modificare."*
 
 Bhe, richiesta ragionevole direi. Sufficente, però, a metterci in crisi. Vediamo perchè.
 
 ## Mettamoci la lavoro
 
-Allora, noi abbiamo la condivisione _"public"_ (che i nostri utenti chiamano L:\), creiamo gli utenti, la cartella "prodotti" e un gruppo "Prodotti" che come membri ha Antonio e Giovanni. Cosa già vista, facciamolo il fretta:
+Allora, noi abbiamo la condivisione *"public"* (che i nostri utenti chiamano L:\), creiamo gli utenti, la cartella "prodotti" e un gruppo "Prodotti" che come membri ha Antonio e Giovanni. Cosa già vista, facciamolo il fretta:
 
 ```
 sudo netuseradd -a -m Antonio
@@ -1426,7 +1435,7 @@ sudo chmod g+s /samba/public/prodotti
 
 ```
 
-Bene. Ora _Antonio_ e _Giovanni_ hanno a disposizione _L:\prodotti_ su cui possono leggere e scrivere liberamente senza aver minimamente modificato la configurazione di Samba, ho solo agito su utenti gruppi e permessi sul file system. Andiamo avanti. Per _Lucia_ e _Maria_ creiamo un gruppo "Prodotti-RO" (Read Only):
+Bene. Ora *Antonio* e *Giovanni* hanno a disposizione *L:\prodotti* su cui possono leggere e scrivere liberamente senza aver minimamente modificato la configurazione di Samba, ho solo agito su utenti gruppi e permessi sul file system. Andiamo avanti. Per *Lucia* e *Maria* creiamo un gruppo "Prodotti-RO" (Read Only):
 
 ```
 sudo netuseradd -a -m Lucia
@@ -1440,9 +1449,9 @@ sudo netgroupmod -m Lucia,Maria Prodotti-RO
 
 E adesso ? Cosa faccio ?
 
-1.  _Cambio permessi a /samba/public/prodotti in 775 così gli "altri" possono leggerci ma non scriverci._ Sbagliato. Così anche gli utenti del gruppo "Commerciale" che non c'entrano nulla possono leggerci.
-2.  _Uso i parametri di smb.conf "Read List" e "Write List"._ Sbagliato. I parametri agiscono su tutta la share/condivisione "public" e hanno la precedenza su quelle del file system. Lucia e Maria non potrebbero scrivere nemmeno su L:\COMUNE.
-3.  _Faccio una share "prodotti" apposita slegata da "public"._Ok, funziona ma a me non piace. Se per ogni caso del genere devo fare una share nuova in breve esaurisco le lettere dell'alfabeto per mapparle e il mio _smb.conf_ diventa un libro. E poi ci hanno richiesto "L:\prodotti", non vorrete mica deluderli ? Con Windows si faceva in due secondi.
+1.  *Cambio permessi a /samba/public/prodotti in 775 così gli "altri" possono leggerci ma non scriverci.* Sbagliato. Così anche gli utenti del gruppo "Commerciale" che non c'entrano nulla possono leggerci.
+2.  *Uso i parametri di smb.conf "Read List" e "Write List".* Sbagliato. I parametri agiscono su tutta la share/condivisione "public" e hanno la precedenza su quelle del file system. Lucia e Maria non potrebbero scrivere nemmeno su L:\COMUNE.
+3.  *Faccio una share "prodotti" apposita slegata da "public".*Ok, funziona ma a me non piace. Se per ogni caso del genere devo fare una share nuova in breve esaurisco le lettere dell'alfabeto per mapparle e il mio *smb.conf* diventa un libro. E poi ci hanno richiesto "L:\prodotti", non vorrete mica deluderli ? Con Windows si faceva in due secondi.
 
 Prima che buttiate dalla finestra la vostra spilla di Samba vi dico che la soluzione c'e'. Poco usata e pubblicizzata ma c'e'.
 
@@ -1470,7 +1479,7 @@ Riavviamo e siamo a posto. Abbiamo le estensioni attivate.
 
 #### setfacl & getfacl
 
-Questi sono i nostri due nuovi amici, _setfacl_ per settare i permessi estesi e _getfacl_ per visualizzarli. Non stò a spiegare come funzionano in dettaglio le acl posix, c'e' chi lo ha già fatto in modo ottimale. Per approfondire leggete ad esempio [qui](http://www.suse.de/~agruen/acl/linux-acls/online/), oppure [qui](http://a2.pluto.it/a2218.htm) se preferite la lingua italiana. Questa è la nostra situazione:
+Questi sono i nostri due nuovi amici, *setfacl* per settare i permessi estesi e *getfacl* per visualizzarli. Non stò a spiegare come funzionano in dettaglio le acl posix, c'e' chi lo ha già fatto in modo ottimale. Per approfondire leggete ad esempio [qui](http://www.suse.de/~agruen/acl/linux-acls/online/), oppure [qui](http://a2.pluto.it/a2218.htm) se preferite la lingua italiana. Questa è la nostra situazione:
 
 ```
 drwxrws---  2 root Prodotti     4096 21 dic 15:46 prodotti
@@ -1530,22 +1539,22 @@ default:other::---
 
 ```
 
-Bene. Abbiamo dato i permessi di lettura al gruppo "Permessi-RO", impostandoli anche come default. Riappuntiamoci sul petto la nostra spilla di "sysnetworksuperexpertadmin" :). Se adesso riguardiamo la situazione con _ls -al_ vedo questo :
+Bene. Abbiamo dato i permessi di lettura al gruppo "Permessi-RO", impostandoli anche come default. Riappuntiamoci sul petto la nostra spilla di "sysnetworksuperexpertadmin" :). Se adesso riguardiamo la situazione con *ls -al* vedo questo :
 
 ```
 drwxrws---+  2 root Prodotti     4096 21 dic 15:46 prodotti
 
 ```
 
-Il segno '+' alla fine indica che nella cartella _prodotti_ sono attive le estensioni acl posix.
+Il segno '+' alla fine indica che nella cartella *prodotti* sono attive le estensioni acl posix.
 
-Questa parte non è proprio specifica di Arch, ma serve sopratutto per capire come anche problemi semplici a volte possono farci traballare e desistere se non si hanno delle basi. E se ne potrebbe fare una montagna di esempi come questo, anche qualcuno da cui non se ne esce ... I manuali di Samba in PDF hanno oltre 1200 pagine, e nessuna scritta per niente. La cosa divertente è che leggendoli e studiandoli capite pure come funziona Windows meglio di molti altri. Le ACL Posix sono importanti e hanno un piacevole effetto collaterale (voluto ovviamente): 'possiamo gestire e cambiare i permessi sulle cartelle anche direttamente da Windows_._ Basta collegarsi con "Administrator" sul dominio da una macchina Windows e con pulsante destro->proprieta->protezione sulla cartella "prodotti" vedo le permissions ACL Posix che posso pure cambiare: Samba si occuperà del comando _setfacl_ corrispondente.
+Questa parte non è proprio specifica di Arch, ma serve sopratutto per capire come anche problemi semplici a volte possono farci traballare e desistere se non si hanno delle basi. E se ne potrebbe fare una montagna di esempi come questo, anche qualcuno da cui non se ne esce ... I manuali di Samba in PDF hanno oltre 1200 pagine, e nessuna scritta per niente. La cosa divertente è che leggendoli e studiandoli capite pure come funziona Windows meglio di molti altri. Le ACL Posix sono importanti e hanno un piacevole effetto collaterale (voluto ovviamente): 'possiamo gestire e cambiare i permessi sulle cartelle anche direttamente da Windows*.* Basta collegarsi con "Administrator" sul dominio da una macchina Windows e con pulsante destro->proprieta->protezione sulla cartella "prodotti" vedo le permissions ACL Posix che posso pure cambiare: Samba si occuperà del comando *setfacl* corrispondente.
 
 Ma voi preferite la shell vero ?
 
 # Conclusioni
 
-Terminiamo qui la parte _File Server_. Si potrebbe continuare per non sò quanto, ma tutto quello che potremmo dire sarebbe "Off Topic" in questa guida incentrata su ArchLinux. Tutto "il di più" sarebbe qualcosa di _cross distro_ (sì può dire ?) ed esistono già valide guide sul web. Limitiamoci allora ad una lista di cose che potrebbero risultare utili e su cui magari sarebbe oppurtuno approfondire in modo autonomo.
+Terminiamo qui la parte *File Server*. Si potrebbe continuare per non sò quanto, ma tutto quello che potremmo dire sarebbe "Off Topic" in questa guida incentrata su ArchLinux. Tutto "il di più" sarebbe qualcosa di *cross distro* (sì può dire ?) ed esistono già valide guide sul web. Limitiamoci allora ad una lista di cose che potrebbero risultare utili e su cui magari sarebbe oppurtuno approfondire in modo autonomo.
 
 ## Print services
 
@@ -1553,11 +1562,11 @@ Non abbiamo minimamente parlato delle condivisioni delle stampanti. Qui si aprir
 
 ## Client grafici di amministrazione
 
-Abbiamo già visto come sia possibile da Windows amministrare le _permissions_ sulle share Samba. Esistono anche delle GUI che ci permettono di gestire utenti e password in modo semplice, specie se le opzioni da settare sono un po' _esotiche_, tipo la scadenza della password o la lista delle workstation da cui un utente può fare il logon. Ne esistono diversi, dall'ufficale [Samba Web Adiministration Tool (SWAT)](http://de.samba.org/samba/docs/man/Samba-HOWTO-Collection/SWAT.html) all' [LDAP Account Manager](http://lam.sourceforge.net/). Possiamo usarne anche da Windows, ad esempio dal mio preferito (forse perchè fatto con Delphi ?) [LDAP Admin](http://ldapadmin.sourceforge.net/), allo [User Manager for Domains](http://www.microsoft.com/downloads/details.aspx?FamilyID=C0011AB8-3178-4701-A791-EAFBA0F42DE2&displaylang=en) "ufficiale" fornito da Microsoft (non è uno scherzo) per amministrare i vari aspetti e flag.
+Abbiamo già visto come sia possibile da Windows amministrare le *permissions* sulle share Samba. Esistono anche delle GUI che ci permettono di gestire utenti e password in modo semplice, specie se le opzioni da settare sono un po' *esotiche*, tipo la scadenza della password o la lista delle workstation da cui un utente può fare il logon. Ne esistono diversi, dall'ufficale [Samba Web Adiministration Tool (SWAT)](http://de.samba.org/samba/docs/man/Samba-HOWTO-Collection/SWAT.html) all' [LDAP Account Manager](http://lam.sourceforge.net/). Possiamo usarne anche da Windows, ad esempio dal mio preferito (forse perchè fatto con Delphi ?) [LDAP Admin](http://ldapadmin.sourceforge.net/), allo [User Manager for Domains](http://www.microsoft.com/downloads/details.aspx?FamilyID=C0011AB8-3178-4701-A791-EAFBA0F42DE2&displaylang=en) "ufficiale" fornito da Microsoft (non è uno scherzo) per amministrare i vari aspetti e flag.
 
 ## Quota
 
-Altro aspetto interessante è la gestione delle _Disk Quota_ da assegnare ad utenti e gruppi. Questo, come per le ACL Posix, è un "affare" anche del file system, oltre che di Samba con il _vfs objects = default_quota_.
+Altro aspetto interessante è la gestione delle *Disk Quota* da assegnare ad utenti e gruppi. Questo, come per le ACL Posix, è un "affare" anche del file system, oltre che di Samba con il *vfs objects = default_quota*.
 
 Per installare le utility di gestione usate :
 
@@ -1570,7 +1579,7 @@ Potete trovare informazioni sulla parte file system su come amministrarli e conf
 
 ## Comandi Samba
 
-Samba viene fornito con una serie di comandi utili all'amministratore, da _pdbedit_ per amministrare utenti e gruppi alla pletora dei comandi _net_ disponibili. Facciamo un paio di esempi, con il comando:
+Samba viene fornito con una serie di comandi utili all'amministratore, da *pdbedit* per amministrare utenti e gruppi alla pletora dei comandi *net* disponibili. Facciamo un paio di esempi, con il comando:
 
 ```
 sudo net rpc rights list -U Administrator
@@ -1591,7 +1600,7 @@ ottengo questo:
 
 ```
 
-e vedo i permessi dell'utente Administrator. Potrei voler assegnare una "right" di amministrazione a qualche altro utente, e questo si fà con i comandi _net rpc right_.
+e vedo i permessi dell'utente Administrator. Potrei voler assegnare una "right" di amministrazione a qualche altro utente, e questo si fà con i comandi *net rpc right*.
 
 Se digito :
 
@@ -1629,13 +1638,13 @@ Logon hours         : FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 
 ```
 
-che sono tutte le impostazioni assegnate all'utente _Antonio_ e che posso variare con _pdbedit_. Gran parte di queste le posso anche amministrare con il nostro _netusermod_, ma sicuramente il comando standard è più completo essendo parte di Samba.
+che sono tutte le impostazioni assegnate all'utente *Antonio* e che posso variare con *pdbedit*. Gran parte di queste le posso anche amministrare con il nostro *netusermod*, ma sicuramente il comando standard è più completo essendo parte di Samba.
 
-I comandi _man net_ e _man pdbedit_ forniscono le informazioni di cui si ha bisogno.
+I comandi *man net* e *man pdbedit* forniscono le informazioni di cui si ha bisogno.
 
 ## Lock sui file
 
-Stiamo amministrando un server con dei file condivisi, quindi il lock dei file è cosa vitale. In genere non ci sono problemi, Samba "standard" ci risolve già gran parte dei problemi, ma in alcuni casi (tipo il "solito" file access mdb condiviso) dovete metter manina voi. Vi scontrerete ad esempio con il concetto di _"Opportunistic Locking"_ inventato da Microsoft per aumentare le performance in rete, ma che in alcuni casi con Samba non produce gli effetti desiderati. Niente paura, vanno solo gestiti. Anche in questo caso (son stufo di scriverlo) vi rimando alla guida ufficiale.
+Stiamo amministrando un server con dei file condivisi, quindi il lock dei file è cosa vitale. In genere non ci sono problemi, Samba "standard" ci risolve già gran parte dei problemi, ma in alcuni casi (tipo il "solito" file access mdb condiviso) dovete metter manina voi. Vi scontrerete ad esempio con il concetto di *"Opportunistic Locking"* inventato da Microsoft per aumentare le performance in rete, ma che in alcuni casi con Samba non produce gli effetti desiderati. Niente paura, vanno solo gestiti. Anche in questo caso (son stufo di scriverlo) vi rimando alla guida ufficiale.
 
 ## Sicurezza
 
@@ -1647,6 +1656,6 @@ O perbacco ! E i client Linux ? Qualcuno comincerà ad arrivare... Per le aute
 
 ## Concludiamo managgia !
 
-Dite la verità: _Pensavate fosse più semplice_. O almeno è quello che ho pensato io la prima volta che mi sono imbattuto in questi argomenti. Spero di aver acceso l'interesse di qualcuno che abbia la voglia di _studiare_, la rete offre tutto di cui si ha bisogno. E credetemi, se imparate bene ad amministrare LOS (**L**inux **O**penldap **S**amba) amigos (senza dimenticare DNS/DHCP) domani (quasi) potete installare una rete con Windows, perchè i concetti li conoscete (anche più in profondità di altri), dovete solo scoprire dove fare "click" con il mouse (uaaaah, questa forse è grossa ma suona bene :)).
+Dite la verità: *Pensavate fosse più semplice*. O almeno è quello che ho pensato io la prima volta che mi sono imbattuto in questi argomenti. Spero di aver acceso l'interesse di qualcuno che abbia la voglia di *studiare*, la rete offre tutto di cui si ha bisogno. E credetemi, se imparate bene ad amministrare LOS (**L**inux **O**penldap **S**amba) amigos (senza dimenticare DNS/DHCP) domani (quasi) potete installare una rete con Windows, perchè i concetti li conoscete (anche più in profondità di altri), dovete solo scoprire dove fare "click" con il mouse (uaaaah, questa forse è grossa ma suona bene :)).
 
 Ma che bello era fare "Pulsante destro sulla cartella -> convidi con nome -> ok " ?

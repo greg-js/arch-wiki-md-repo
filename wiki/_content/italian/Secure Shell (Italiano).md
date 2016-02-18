@@ -57,7 +57,6 @@ Il file di configurazione del client SSH può essere trovato e modificato in `/e
 Un esempio di configurazione:
 
  `/etc/ssh/ssh_config` 
-
 ```
 #	$OpenBSD: ssh_config,v 1.26 2010/01/11 01:39:46 dtucker Exp $
 
@@ -124,7 +123,6 @@ Il file di configurazione del demone SSH può essere trovato e modificato in `/e
 Un esempio di configurazione:
 
  `/etc/ssh/sshd_config` 
-
 ```
 #	$OpenBSD: sshd_config,v 1.82 2010/09/06 17:10:19 naddy Exp $
 
@@ -253,7 +251,7 @@ AllowUsers    user1 user2
 
 ```
 
-Per disabilitare l'accesso SSH per l'utente _root_, aggiungere la seguente linea:
+Per disabilitare l'accesso SSH per l'utente *root*, aggiungere la seguente linea:
 
 ```
 PermitRootLogin no
@@ -323,9 +321,9 @@ Può risultare utile aggiungere il flag "verbose" `"-v"`, in modo da poter verif
 
 Il passo precedente è del tutto inutile se non si configura il browser web (o altri programmi) da utilizzare con il tunnel appena creato. A partire dalla corrente versione di SSH sono supportati sia SOCKS4 che SOCKS5 sarà possibile scegliere uno dei due.
 
-*   Per Firefox: _Modificare → Preferenze → Avanzate → Rete → Connessione → Impostazioni_:
+*   Per Firefox: *Modificare → Preferenze → Avanzate → Rete → Connessione → Impostazioni*:
 
-	Controllare il bottone _"Configurazione manuale del proxy"_, ed immettere "localhost" nel campo testuale _"SOCKS host"_, ed immettere infine il numero della porta nel prossimo campo testuale (usata in questo caso la 4711, come sopra).
+	Controllare il bottone *"Configurazione manuale del proxy"*, ed immettere "localhost" nel campo testuale *"SOCKS host"*, ed immettere infine il numero della porta nel prossimo campo testuale (usata in questo caso la 4711, come sopra).
 
 Firefox non effettua automaticamente le richieste DNS attraverso il tunnel. Questo inconveniente riguardo alla privacy può essere ovviato con questi passi:
 
@@ -421,7 +419,7 @@ $ xhost +nomemacchina
 
 ```
 
-Dove _nomemacchina_ è il nome della macchina a cui si vuole garantire l'accesso. Digitare "`man xhost`" per maggiori informazioni.
+Dove *nomemacchina* è il nome della macchina a cui si vuole garantire l'accesso. Digitare "`man xhost`" per maggiori informazioni.
 
 Alcune applicazioni verificano la presenza di altre istanze sulla macchina locale. Ad esempio Firefox. Sarà necessario quindi chiudere l'applicazione oppure usare la seguente opzione per avviare una sessione remota dalla macchina locale.
 
@@ -591,7 +589,6 @@ ClientAliveInterval 120
 Ogni volta che ci si connette ad un server SSH, è necessario digitare il suo indirizzo ed il nome utente. Per evitare di scrivere questi dati ogni volta per i server a cui siamo soliti connetterci, è possibile utilizzare il file `$HOME/.ssh/config` oppure il file di configurazione globale `/etc/ssh/ssh_config` come nel seguente esempio:
 
  `$HOME/.ssh/config` 
-
 ```
 Host myserver
     HostName 123.123.123.123
@@ -619,7 +616,6 @@ Per una lista completa delle opzioni che si posso utilizzare, consultare il manu
 Può essere utile distinguere la shell locale da quella remota, in particolare quando entrambe sono configurate allo stesso modo. Per fare ciò basterà semplicemente inserire questo nel proprio bashrc:
 
  `$HOME/.bashrc` 
-
 ```
 
 if [ -n "$SSH_CLIENT" ]; then
@@ -695,7 +691,6 @@ Questo comando dovrebbe mostrare alcune informazioni di base, fino a che non si 
 Le recenti versioni di OpenSSH a volte, falliscono segnalando il precedente messaggio di errore, a causa di un bug riguardante la crittografia ECDSA. In questo caso, modificare il file `~/.ssh/config` o crearlo, se non esiste. Aggiungere la seguente linea:
 
  `~/.ssh/config` 
-
 ```
 .....
 HostKeyAlgorithms ssh-rsa-cert-v01@openssh.com,ssh-dss-cert-v01@openssh.com,ssh-rsa-cert-v00@openssh.com,ssh-dss-cert-v00@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,ssh-rsa,ssh-dss

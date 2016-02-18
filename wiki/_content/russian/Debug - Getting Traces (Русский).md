@@ -36,7 +36,7 @@ Using host libthread_db library "/lib/libthread_db.so.1".
 
 ```
 # pacman -Qo /lib/libthread_db.so.1
-/lib/libthread_db.so.1 is owned by _glibc_ 2.5-8
+/lib/libthread_db.so.1 is owned by *glibc* 2.5-8
 
 ```
 
@@ -64,11 +64,11 @@ OPTIONS+=(debug !strip)
 
 ```
 
-Также, можно включить одновременно обе опции `debug` и `strip`, в таком случае отладочная информация бует удалена из пакета, и будет помещена в отдельный пакет `_foo_-debug`.
+Также, можно включить одновременно обе опции `debug` и `strip`, в таком случае отладочная информация бует удалена из пакета, и будет помещена в отдельный пакет `*foo*-debug`.
 
 **Note:** Просто установить отдельный пакет с отладочной информацией недостаточно, поскольку отладчику придётся искать отладочные символы непосредственно в отлаживаемом файле. Нужно установить оба перекомпилированных пакета. Отладочные символы помещаются в `/usr/lib/debug`. Информацию об отладочных пакетах см. в [документации GDB](https://sourceware.org/gdb/onlinedocs/gdb/Separate-Debug-Files.html) .
 
-Некоторые пакеты, такие как _glibc_, очищаются независимо. В таком случае, для сохранения информации нужно найти в PKGBUILD секцию наподобие:
+Некоторые пакеты, такие как *glibc*, очищаются независимо. В таком случае, для сохранения информации нужно найти в PKGBUILD секцию наподобие:
 
 ```
 strip $STRIP_BINARIES usr/bin/{gencat,getconf,getent,iconv,iconvconfig} \
@@ -174,7 +174,6 @@ strip $STRIP_SHARED usr/lib/{libanl,libBrokenLocale,libcidn,libcrypt}-*.so \
 ```
 
 **Tip:** Отладка приложений на Python:
-
 ```
 # gdb /usr/bin/python
 (gdb) run <python application>

@@ -83,14 +83,13 @@ Other configuration file directories can be found under /usr/share. In most case
 By default, the Xdg-menu will be populated with applications which install their desktop entries to `/usr/share/applications`. To add applications to the menu which install their desktop entry to a user folder such as `~/.local/share/applications`, edit the `/etc/xdg/menus/arch-applications.menu` file and add an `<AppDir>` tag for the relevant directory, see below:
 
  `/etc/xdg/menus/arch-applications.menu` 
-
 ```
 <Menu>
 
   <Name>Applications</Name>
   <Directory>Arch-Applications.directory</Directory>
   <DefaultAppDirs/>
-  **<AppDir>/home/_username_/.local/share/applications</AppDir>**
+  **<AppDir>/home/*username*/.local/share/applications</AppDir>**
   <DefaultDirectoryDirs/>
   <DefaultMergeDirs/>
   ...

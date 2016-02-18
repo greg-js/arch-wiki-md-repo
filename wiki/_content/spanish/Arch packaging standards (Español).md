@@ -131,9 +131,9 @@ Este ejemplo se toma del paquete **wine** en el repositorio `extra`. La informac
 
 *   Los nombres de paquetes deben consistir **solamente de caracteres alfanuméricos**; todas las letras deberán ser minúsculas.
 
-*   Las versiones de los paquetes **deben ser las mismas que las usadas por el autor' _original del software. Las versiones pueden incluir letras si es necesario (ejemplo, la versión de nmap es 2.54BETA32). Los nombres de versión_ ¡'no deben incluir guiones!** solo letras, numeros y puntos.
+*   Las versiones de los paquetes **deben ser las mismas que las usadas por el autor' *original del software. Las versiones pueden incluir letras si es necesario (ejemplo, la versión de nmap es 2.54BETA32). Los nombres de versión* ¡'no deben incluir guiones!** solo letras, numeros y puntos.
 
-*   Los números de liberación del paquete (ejemplo, el `-1` en nmap-2.54BETA32**-1**) son **especificos a Arch Linux**. Estos permiten a los usuarios diferenciar entre un paquete viejo y uno nuevo. Cuando una nueva versión _del paquete_ es liberada el contador **se inicia en 1**. Cuando correcciones y optimizaciones son realizadas, el paquete es redistribuido con un incremento de 1 en su numero de liberación. Cuando una nueva versión de _la aplicación_ es distribuida el contador se reinicia a 1\. Los números de liberación siguen las mismas directivas que los números de versión.
+*   Los números de liberación del paquete (ejemplo, el `-1` en nmap-2.54BETA32**-1**) son **especificos a Arch Linux**. Estos permiten a los usuarios diferenciar entre un paquete viejo y uno nuevo. Cuando una nueva versión *del paquete* es liberada el contador **se inicia en 1**. Cuando correcciones y optimizaciones son realizadas, el paquete es redistribuido con un incremento de 1 en su numero de liberación. Cuando una nueva versión de *la aplicación* es distribuida el contador se reinicia a 1\. Los números de liberación siguen las mismas directivas que los números de versión.
 
 ## Directorios
 
@@ -220,9 +220,8 @@ Asegurate de esto antes de subir un paquete a AUR:
 
 4.  Verifica **las dependencias** del paquete (p.ej. utiliza ldd en ejecutables dinámicos, comprueba las herramientas requeridas por los scripts, etc.) El equipo de TUs recomienda **fervientemente** el uso de la utilidad `namcap`, escrita por [Jason Chu](https://www.archlinux.org/fellows/#jason), para analizar el saneamiento de los paquetes. `namcap` te avisará sobre permisos erróneos, dependencias que falten, dependencias innecesarias, y otros errores comunes. Puedes instalar el paquete `namcap` con pacman. Recuerda que `namcap` puede ser usado para comprobar los archivos pkg.tar.gz y PKGBUILDs
 5.  **Las dependencias** son el error de empaquetamiento más común. Namcap puede ayudar a detectarlos pero no siempre acierta. Verifica las dependencias mirando la documentación de las fuentes y la página web del programa.
-6.  No uses `**replaces**` en un PKGBUILD a no ser que el paquete vaya a ser renombrado, por ejemplo, cuando _Ethereal_ se convirtió en _Wireshark_. Si el paquete es una versión alternativa de un paquete ya existente, usa `conflicts` (y `provides` si el paquete es requerido por otros). La principal deferencia es: tras sincronizar (-Sy) pacman inmediatamente quere sustituir un 'ofensivo' paquete instalado cuando encuentra un paquete que lo incluya en `replaces` en cualquiera de sus repositorios; `conflicts` por otro lado solo es evaluado cuando realmente instalas el paquete, que normalmente es el comportamiento deseado porque es menos invasivo.
+6.  No uses `**replaces**` en un PKGBUILD a no ser que el paquete vaya a ser renombrado, por ejemplo, cuando *Ethereal* se convirtió en *Wireshark*. Si el paquete es una versión alternativa de un paquete ya existente, usa `conflicts` (y `provides` si el paquete es requerido por otros). La principal deferencia es: tras sincronizar (-Sy) pacman inmediatamente quere sustituir un 'ofensivo' paquete instalado cuando encuentra un paquete que lo incluya en `replaces` en cualquiera de sus repositorios; `conflicts` por otro lado solo es evaluado cuando realmente instalas el paquete, que normalmente es el comportamiento deseado porque es menos invasivo.
 7.  Todos los archivos subidos a AUR deben estar contenidos en un archivo **tar comprimido que contenga un directorio con el** `PKGBUILD` **y** archivos de instalación adicionales **(parches, install, etc.) en el**.
-
     ```
     foo/PKGBUILD
     foo/foo.install

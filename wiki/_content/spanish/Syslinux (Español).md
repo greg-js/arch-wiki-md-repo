@@ -82,15 +82,13 @@ El script `syslinux-install_update` se ocupará de la instalación de Syslinux, 
 
 1.  Si se utiliza una partición boot separada, asegúrese de que está montada. Compruébelo con `lsblk`; si no se ve ningún punto de montaje que indique a `/boot`, monte la partición antes de continuar.
 
-2.  Ejecute el script `syslinux-install_update` con los siguientes argumentos: `-i` (instala los archivos), `-a` (marca la partición como _activa_ con la etiqueta _boot_), `-m` (instala el código de arranque en el _MBR_): `# syslinux-install_update -i -a -m` Si esta orden falla con el mensaje _Syslinux BIOS install failed_, el problema sea posiblemente que el binario `extlinux` no pudo encontrar la partición que contiene `/boot`:
-
+2.  Ejecute el script `syslinux-install_update` con los siguientes argumentos: `-i` (instala los archivos), `-a` (marca la partición como *activa* con la etiqueta *boot*), `-m` (instala el código de arranque en el *MBR*): `# syslinux-install_update -i -a -m` Si esta orden falla con el mensaje *Syslinux BIOS install failed*, el problema sea posiblemente que el binario `extlinux` no pudo encontrar la partición que contiene `/boot`:
     ```
     # extlinux --install /boot/syslinux
      extlinux: cannot find device for path /boot/syslinux
      extlinux: cannot open device (null)
 
     ```
-
     Esto puede ocurrir, por ejemplo, al actualizar de [LILO](/index.php/LILO "LILO") con un kernel personalizado corriendo, operación que convierte un parámetro de la línea de órdenes del kernel (de ejemplo `root=/dev/sda1`) en su equivalente numérico `root=801`, como se evidencia por las salidas de las órdenes `/proc/cmdline` y `mount`. Es posible remediar este problema ejecutando la instalación manual descrita abajo, cuidando de especificar el parámetro `--device=/dev/sda1` a `extlinux`, o, simplemente, al reiniciar la primera vez el kernel stock de Arch Linux, dado que el uso de su initramfs evita el problema.
 3.  Cree o edite `/boot/syslinux/syslinux.cfg` siguiendo las instrucciones de [#Configuración](#Configuraci.C3.B3n).
 
@@ -138,7 +136,6 @@ Véase el artículo principal: [Master Boot Record (Español)](/index.php/Master
 Será necesario marcar la partición boot como activa en la tabla de particiones. Las aplicaciones que incluyen la capacidad de hacer la operación descrita son `fdisk`, `cfdisk`, `sfdisk`, `parted/gparted` (etiqueta «boot»). Debería tener un aspecto como el siguiente:
 
  `# fdisk -l /dev/sda` 
-
 ```
 [...]
   Device Boot      Start         End      Blocks   Id  System
@@ -154,7 +151,7 @@ Instale Syslinux en el MBR:
 
 ```
 
-Syslinux proporciona un MBR alternativo: `altmbr.bin`. Este MBR _no_ escanea en busca de particiones booteables, sino que el último byte de la MBR establece un valor que indica la partición desde la cual efectuar el arranque. Aquí está un ejemplo de cómo `altmbr.bin` puede copiar esa posición:
+Syslinux proporciona un MBR alternativo: `altmbr.bin`. Este MBR *no* escanea en busca de particiones booteables, sino que el último byte de la MBR establece un valor que indica la partición desde la cual efectuar el arranque. Aquí está un ejemplo de cómo `altmbr.bin` puede copiar esa posición:
 
 ```
 # printf '\x5' | cat /usr/lib/syslinux/altmbr.bin - | \
@@ -175,10 +172,9 @@ Es necesario ajustar el bit 2 a los atributos (atributo «legacy_boot») relativ
 
 ```
 
-Esto cambiará el atributo _legacy BIOS bootable_ en la partición 1\. Para comprobarlo:
+Esto cambiará el atributo *legacy BIOS bootable* en la partición 1\. Para comprobarlo:
 
  `# sgdisk /dev/sda --attributes=1:show` 
-
 ```
  1:2:1 (legacy BIOS bootable)
 
@@ -275,7 +271,6 @@ Este es un archivo de configuración simple que mostrará un prompt `boot:` y un
 Configuración:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
  PROMPT 1
  TIMEOUT 50
@@ -305,7 +300,6 @@ Syslinux también le permite utilizar un menú de arranque. Para utilizarlo, cop
 Configuration:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
  UI menu.c32
  PROMPT 0
@@ -346,7 +340,6 @@ Esta configuración utiliza el mismo diseño del menú del CD de instalación de
 Configuración:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
  UI vesamenu.c32
  DEFAULT arch
@@ -407,14 +400,14 @@ APPEND root=/dev/sda2
 Si desea utilizar [UUID](/index.php/UUID "UUID") para [persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") cambie la línea `APPEND` como sigue, sustituyendo `1234` con la `UUID` de la partición root:
 
 ```
-APPEND root=UUID=_1234_ rw
+APPEND root=UUID=*1234* rw
 
 ```
 
 Si utiliza el cifrado [LUKS](/index.php/LUKS "LUKS") cambie la línea `APPEND` para utilizar el volumen cifrado:
 
 ```
-APPEND root=/dev/mapper/_group_-_name_ cryptdevice=/dev/sda2:_name_ rw
+APPEND root=/dev/mapper/*group*-*name* cryptdevice=/dev/sda2:*name* rw
 
 ```
 
@@ -459,7 +452,6 @@ dentro de un bloque `LABEL` para proteger con contraseña los elementos individu
 Si desea cargar en cadena otros sistemas operativos (como Windows) u otros gestores de arranque, copie (o utilice un enlace simbólico) el módulo `chain.c32` en el directorio Syslinux (para más detalles, consulte las instrucciones de la sección anterior). A continuación, cree una sección en el archivo de configuración:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 ...
  LABEL windows
@@ -477,7 +469,6 @@ Si desea cargar en cadena otros sistemas operativos (como Windows) u otros gesto
 Si no está seguro de qué unidad se identifica como la primera de su BIOS, puede utilizar el identificador MBR, o, si utiliza GPT, la etiqueta del sistema de archivos. Para conocer el identificador de MBR, utilice la orden:
 
  `# fdisk -l /dev/sdb` 
-
 ```
  Disk /dev/sdb: 128.0 GB, 128035676160 bytes 
  255 heads, 63 sectors/track, 15566 cylinders, total 250069680 sectors
@@ -495,7 +486,6 @@ Si no está seguro de qué unidad se identifica como la primera de su BIOS, pued
 reemplazando `/dev/sdb` con la unidad que desea cargar en cadena. Utilizando el número hexadecimal de Disk identifier: `0xf00f1fd3` en este caso, la sintaxis en `syslinux.cfg` sería:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 ...
  LABEL windows
@@ -511,7 +501,6 @@ Para más información sobre chainloading, consulte [la wiki de Syslinux](http:/
 Si tiene [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") instalado en la misma partición, se puede cargar en cadena utilizando:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 ...
  LABEL grub2
@@ -578,7 +567,6 @@ Instale [memtest+](https://www.archlinux.org/packages/?name=memtest%2B) desde lo
 Use la sección`LABEL` para lanzar [memtest](https://en.wikipedia.org/wiki/es:Memtest86%2B "wikipedia:es:Memtest86+"):
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 ...
  LABEL memtest
@@ -593,7 +581,6 @@ Use la sección`LABEL` para lanzar [memtest](https://en.wikipedia.org/wiki/es:Me
 [HDT (Hardware Detection Tool)](http://hdt-project.org/) es un instrumento para visualizar información sobre el hardware. Como siempre, el archivo `.c32` debe ser copiado o debe crearse un enlace simbólico en `/boot/syslinux/`. Para obtener información del dispositivo PCI, o bien copie, o bien cree un enlace simbólico, de `/usr/share/hwdata/pci.ids` a `/boot/syslinux/pci.ids` y añada lo siguiente al archivo de configuración:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
  LABEL hdt
          MENU LABEL Hardware Info
@@ -606,7 +593,6 @@ Use la sección`LABEL` para lanzar [memtest](https://en.wikipedia.org/wiki/es:Me
 Use la siguiente sección para reiniciar o apagar su equipo:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
  LABEL reboot
          MENU LABEL Reboot
@@ -623,7 +609,6 @@ Use la siguiente sección para reiniciar o apagar su equipo:
 Para borrar la pantalla al salir del menú, añada la siguiente línea:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
  MENU CLEAR
 
@@ -658,7 +643,6 @@ Con privilegios root, copie `es.ktl` a `/boot/syslinux/` y establezca como propi
 Ahora edite `syslinux.conf` y añada:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
  KBDMAP es.ktl
 
@@ -669,7 +653,6 @@ Ahora edite `syslinux.conf` y añada:
 Utilice la opción:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
  MENU HIDDEN
 
@@ -695,7 +678,6 @@ Copie el gestor de arranque `{l,}pxelinux.0` (proporcionado por el paquete sysli
 También crearemos el directorio `pxelinux.cfg`, que es donde pxelinux buscará los archivos de configuración por defecto. Dado que no se intanta hacer distinciones entre distintos MAC de varios equipos, se creará el archivo de configuración `default`.
 
  `# vim "$root/boot/pxelinux.cfg/default"` 
-
 ```
 default linux
 
@@ -780,7 +762,7 @@ Siga con las instrucciones descritas en [ext2fs: no external journal](https://wi
 
 ### Default o UI no encontrado en su equipo
 
-Algunos fabricantes de placas madre no proporcionan buena compatibilidad para arrancar desde dispositivos USB u otros. Mientras que una unidad USB con formato ext4 puede permitir el arranque en un equipo más reciente, algunos equipos antiguos pueden bloquearse si la partición de arranque que contiene el _kernel_ y el _initrd_ no está en una partición FAT16\. Para evitar que una máquina antigua cargándose con `ldlinux` falle al leer `syslinux.cfg`, use `cfdisk` para crear una partición FAT16 (<= 2GB) y formatearla usando [dosfstools](https://www.archlinux.org/packages/?name=dosfstools):
+Algunos fabricantes de placas madre no proporcionan buena compatibilidad para arrancar desde dispositivos USB u otros. Mientras que una unidad USB con formato ext4 puede permitir el arranque en un equipo más reciente, algunos equipos antiguos pueden bloquearse si la partición de arranque que contiene el *kernel* y el *initrd* no está en una partición FAT16\. Para evitar que una máquina antigua cargándose con `ldlinux` falle al leer `syslinux.cfg`, use `cfdisk` para crear una partición FAT16 (<= 2GB) y formatearla usando [dosfstools](https://www.archlinux.org/packages/?name=dosfstools):
 
 ```
 # mkfs.msdos -F 16 /dev/sda1
@@ -824,7 +806,7 @@ El MBR que viene con Syslinux busca la primera partición activa que tiene el fl
 
 ### Entradas del menú sin ningún efecto
 
-Si se selecciona una entrada del menú de arranque y no sucede nada, tan solo «refresque» el menú, probablemente signifique que tiene un error en el archivo `syslinux.cfg`. Presione `Tab` y modifique los parámetros del arranque. Alternativamente, pulse `Esc` y escriba en el `LABEL` de su entrada de arranque (por ejemplo, _arch_). Otra causa podría ser que no se tiene un kernel instalado. Encuentre una manera de acceder a su sistema de archivos (a través de live CD, etc.) y asegúrese de que existe `/mount/vmlinuz-linux` y no tiene un tamaño de 0\. Si este es el caso, [reinstale su kernel](/index.php/Kernel_Panics#Option_2:_Reinstall_kernel "Kernel Panics").
+Si se selecciona una entrada del menú de arranque y no sucede nada, tan solo «refresque» el menú, probablemente signifique que tiene un error en el archivo `syslinux.cfg`. Presione `Tab` y modifique los parámetros del arranque. Alternativamente, pulse `Esc` y escriba en el `LABEL` de su entrada de arranque (por ejemplo, *arch*). Otra causa podría ser que no se tiene un kernel instalado. Encuentre una manera de acceder a su sistema de archivos (a través de live CD, etc.) y asegúrese de que existe `/mount/vmlinuz-linux` y no tiene un tamaño de 0\. Si este es el caso, [reinstale su kernel](/index.php/Kernel_Panics#Option_2:_Reinstall_kernel "Kernel Panics").
 
 ### Imposible eliminar ldlinux.sys
 
@@ -838,7 +820,7 @@ El archivo `ldlinux.sys` tiene establecido el atributo de inmutable, para preven
 
 ### Se visualiza un cuadrado blanco en el ángulo superior izquierdo cuando se utiliza vesamenu
 
-Problemas: _A partir de linux-3.0, el controlador de modesetting trata de mantener el contenido actual de la pantalla después de cambiar la resolución (por lo menos, lo hace con mi Intel, al tener Syslinux en modo texto). Parece que esto va mal cuando se combina con el módulo vesamenu en Syslinux (el bloque blanco es, en realidad, un intento de mantener el menú de Syslinux, pero el controlador no logra captar la imagen de la modalidad gráfica vesa)._
+Problemas: *A partir de linux-3.0, el controlador de modesetting trata de mantener el contenido actual de la pantalla después de cambiar la resolución (por lo menos, lo hace con mi Intel, al tener Syslinux en modo texto). Parece que esto va mal cuando se combina con el módulo vesamenu en Syslinux (el bloque blanco es, en realidad, un intento de mantener el menú de Syslinux, pero el controlador no logra captar la imagen de la modalidad gráfica vesa).*
 
 Si tiene una resolución personalizada y se utiliza `vesamenu` junto con modesetting, pruebe insertando lo siguiente en `syslinux.cfg` para remover el bloque blanco y continuar el arranque en modo gráfico:
 
@@ -863,7 +845,7 @@ sustituya el código mbr con el de la unidad de windows (puede ver cómo [más a
 
 ### Leer el registro del gestor de arranque
 
-En algunos casos, por ejemplo, el gestor de arranque no puede arrancar el kernel, es muy conveniente obtener más información sobre el proceso de arranque. _Syslinux_ vuelca mensajes de error en la pantalla, pero sobrescribe rápidamente el texto. Para evitar la pérdida de la información del registro hay que desactivar `menu UI` en `syslinux.cfg` y utilizar "command-line" por defecto del prompt. Esto implica:
+En algunos casos, por ejemplo, el gestor de arranque no puede arrancar el kernel, es muy conveniente obtener más información sobre el proceso de arranque. *Syslinux* vuelca mensajes de error en la pantalla, pero sobrescribe rápidamente el texto. Para evitar la pérdida de la información del registro hay que desactivar `menu UI` en `syslinux.cfg` y utilizar "command-line" por defecto del prompt. Esto implica:
 
 *   evitar la directiva UI
 *   evitar ONTIMEOUT

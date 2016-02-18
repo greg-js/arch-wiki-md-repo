@@ -41,7 +41,7 @@ Management of ZFS is pretty simplistic with only two utils needed:
 
 ### Mirror
 
-For zpools with just two drives, it is recommended to use ZFS in _mirror_ mode which functions like a RAID1 mirroring the data. While this configuration is fine, higher RAIDZ levels are recommended.
+For zpools with just two drives, it is recommended to use ZFS in *mirror* mode which functions like a RAID1 mirroring the data. While this configuration is fine, higher RAIDZ levels are recommended.
 
 ### RAIDZ1
 
@@ -64,7 +64,6 @@ Assemble the RAIDZ1:
 Notice that a 3.91G zpool has been created and mounted for us:
 
  `# zfs list` 
-
 ```
  NAME   USED  AVAIL  REFER  MOUNTPOINT
  test   139K  3.91G  38.6K  /zpool
@@ -74,7 +73,6 @@ Notice that a 3.91G zpool has been created and mounted for us:
 The status of the device can be queried:
 
  `# zpool status zpool` 
-
 ```
   pool: zpool
  state: ONLINE
@@ -118,9 +116,7 @@ Assemble the Linear Span:
 # zpool create san /dev/sdd /dev/sde /dev/sdf
 
 ```
-
  `# zpool status san` 
-
 ```
   pool: san
  state: ONLINE
@@ -184,7 +180,6 @@ Disable the recording of access time in the zpool:
 Verify that the property has been set on the zpool:
 
  `# zfs get atime` 
-
 ```
 NAME  PROPERTY     VALUE     SOURCE
 zpool  atime        off       local
@@ -213,7 +208,6 @@ $ tar xJf linux-3.11.tar.xz -C /zpool
 To see the compression ratio achieved:
 
  `# zfs get compressratio` 
-
 ```
 NAME      PROPERTY       VALUE  SOURCE
 zpool  compressratio  2.32x  -
@@ -232,7 +226,6 @@ $ dd if=/dev/zero of=/scratch/2.img bs=4M count=1 2>/dev/null
 Since we used a blocksize (bs) of 4M, the once 2G image file is now a mere 4M:
 
  `$ ls -lh /scratch ` 
-
 ```
 total 317M
 -rw-r--r-- 1 facade users 2.0G Oct 20 09:13 1.img
@@ -251,7 +244,6 @@ The zpool remains online despite the corruption. Note that if a physical disc do
 Depending on the size and speed of the underlying media as well as the amount of data in the zpool, the scrub may take hours to complete. The status of the scrub can be queried:
 
  `# zpool status zpool` 
-
 ```
   pool: zpool
  state: DEGRADED
@@ -285,7 +277,6 @@ $ truncate -s 2G /scratch/new.img
 Upon replacing the VDEV with a new one, zpool rebuilds the data from the data and parity info in the remaining two good VDEVs. Check the status of this process:
 
  `# zpool status zpool ` 
-
 ```
   pool: zpool
  state: ONLINE
@@ -335,9 +326,7 @@ $ wget -O /zpool/docs/War_and_Peace.txt [http://www.gutenberg.org/ebooks/2600.tx
 $ wget -O /zpool/docs/Beowulf.txt [http://www.gutenberg.org/ebooks/16328.txt.utf-8](http://www.gutenberg.org/ebooks/16328.txt.utf-8)
 
 ```
-
  `# zfs list` 
-
 ```
 NAME           USED  AVAIL  REFER  MOUNTPOINT
 zpool       5.06M  3.91G  40.0K  /zpool
@@ -359,7 +348,6 @@ Now take a snapshot of the dataset:
 Again run the list command:
 
  `# zfs list` 
-
 ```
 NAME           USED  AVAIL  REFER  MOUNTPOINT
 zpool       5.07M  3.91G  40.0K  /zpool
@@ -372,7 +360,6 @@ Note that the size in the USED col did not change showing that the snapshot take
 We can list out the snapshots like so and again confirm the snapshot is taking up no space, but instead **refers to** files from the originals that take up, 4.92M (their original size):
 
  `# zfs list -t snapshot` 
-
 ```
 NAME               USED  AVAIL  REFER  MOUNTPOINT
 zpool/docs@001      0      -  4.92M  -
@@ -392,7 +379,6 @@ $ wget -O /zpool/docs/Les_Mis.txt [http://www.gutenberg.org/ebooks/135.txt.utf-8
 Generate the new list to see how the space has changed:
 
  `# zfs list -t snapshot` 
-
 ```
 NAME               USED  AVAIL  REFER  MOUNTPOINT
 zpool/docs@001  25.3K      -  4.92M  -
@@ -421,7 +407,6 @@ Again, take another snapshot:
 Now list out the snapshots and notice the amount of referred to decreased by about 3.1M:
 
  `# zfs list -t snapshot` 
-
 ```
 NAME               USED  AVAIL  REFER  MOUNTPOINT
 zpool/docs@001  25.3K      -  4.92M  -
@@ -433,7 +418,6 @@ zpool/docs@003      0      -  5.04M  -
 We can easily recover from this situation by looking inside one or both of our older snapshots for good copy of the file. ZFS stores its snapshots in a hidden directory under the zpool: `/zpool/files/.zfs/snapshot`:
 
  `$ ls -l /zpool/docs/.zfs/snapshot` 
-
 ```
 total 0
 dr-xr-xr-x 1 root root 0 Oct 20 16:09 001
@@ -449,7 +433,7 @@ We can copy a good version of the book back out from any of our snapshots to any
 
 ```
 
-**Note:** Using <TAB> for autocompletion will not work by default but can be changed by modifying the _snapdir_ property on the pool or dataset.
+**Note:** Using <TAB> for autocompletion will not work by default but can be changed by modifying the *snapdir* property on the pool or dataset.
 
 ```
 # zfs set snapdir=visible zpool/docs
@@ -500,7 +484,6 @@ Now that everything is back to normal, we can create another snapshot of this st
 And the list now becomes:
 
  `# zfs list -t snapshot` 
-
 ```
 NAME               USED  AVAIL  REFER  MOUNTPOINT
 zpool/docs@001  25.3K      -  4.92M  -
@@ -526,9 +509,7 @@ The limit to the number of snapshots users can save is 2^64\. User can delete a 
 # zfs destroy zpool/docs@001
 
 ```
-
  `# zfs list -t snapshot` 
-
 ```
 NAME               USED  AVAIL  REFER  MOUNTPOINT
 zpool/docs@002  3.28M      -  8.17M  -

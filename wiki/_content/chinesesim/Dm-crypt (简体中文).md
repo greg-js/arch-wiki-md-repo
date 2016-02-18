@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Dm-crypt](/index.php/Dm-crypt "Dm-crypt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-12-30，点击[这里](https://wiki.archlinux.org/index.php?title=Dm-crypt&diff=0&oldid=290892)可以查看翻译后英文页面的改动。
 
-This article focuses on how to set up encryption on Arch Linux using _dm-crypt_, which is the standard device-mapper encryption functionality provided by the Linux kernel.
+This article focuses on how to set up encryption on Arch Linux using *dm-crypt*, which is the standard device-mapper encryption functionality provided by the Linux kernel.
 
 ## Contents
 
@@ -14,11 +14,11 @@ This article focuses on how to set up encryption on Arch Linux using _dm-crypt_,
 
 ## Common scenarios
 
-This section introduces common scenarios to employ _dm-crypt_ to encrypt a system or individual filesystem mount points. The scenarios cross-link to the other subpages where needed. It is meant as starting point to familiarize with different practical encryption procedures.
+This section introduces common scenarios to employ *dm-crypt* to encrypt a system or individual filesystem mount points. The scenarios cross-link to the other subpages where needed. It is meant as starting point to familiarize with different practical encryption procedures.
 
 See [Dm-crypt/Encrypting a non-root file system](/index.php/Dm-crypt/Encrypting_a_non-root_file_system "Dm-crypt/Encrypting a non-root file system") if you need to encrypt a device that is not used for booting a system, like a [partition](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system") or a [loop device](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Loop_device "Dm-crypt/Encrypting a non-root file system").
 
-See [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system") if you want to encrypt an entire system, in particular a root partition. Several scenarios are covered, including the use of _dm-crypt_ with the _LUKS_ extension, _plain_ mode encryption and encryption and _LVM_.
+See [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system") if you want to encrypt an entire system, in particular a root partition. Several scenarios are covered, including the use of *dm-crypt* with the *LUKS* extension, *plain* mode encryption and encryption and *LVM*.
 
 ## Drive preparation
 

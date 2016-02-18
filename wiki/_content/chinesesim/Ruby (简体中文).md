@@ -35,7 +35,7 @@ Ruby 是一门专注于简洁和生产里的动态语言, 是解释型语言, �
 
 ## RubyGems
 
-_gem_ 是 Ruby 模块 (叫做 Gems) 的包管理器, 某种程度上是 [pacman](/index.php/Pacman "Pacman") 相对于 Arch Linux 的角色. _gem_ 命令你可以通过遵循上边的操作来得到.
+*gem* 是 Ruby 模块 (叫做 Gems) 的包管理器, 某种程度上是 [pacman](/index.php/Pacman "Pacman") 相对于 Arch Linux 的角色. *gem* 命令你可以通过遵循上边的操作来得到.
 
 ### 用例
 
@@ -53,7 +53,7 @@ $ gem spec <gem_name>
 
 ```
 
-默认情况下, `gem list` 和 `gem spec` 开启了 `--local` 选项, 导致 _gem_ 只会在本地系统里进行搜索. 这可以用 `--remote` 参数来覆盖. 这样子以后, 来搜索一个 mysql gem:
+默认情况下, `gem list` 和 `gem spec` 开启了 `--local` 选项, 导致 *gem* 只会在本地系统里进行搜索. 这可以用 `--remote` 参数来覆盖. 这样子以后, 来搜索一个 mysql gem:
 
 ```
 $ gem list --remote mysql
@@ -83,7 +83,7 @@ $ gem update
 
 ### 普通用户身份运行
 
-作为普通用户安装 _gem_ 的时候, gem 默认被安装在 `~/.gem` 而不是在系统全局. 这在 Arch 上被认为是做回的管理 gem 的方案. 不巧的是并非所有 gem 都乐意被安装在这, 甚至可能坚持要以 root 身份安装, 特别是模块含有本地扩展(从 C 编译的代码). 每个用户的方案被配置在 `/etc/gemrc` 文件里, 可以通过配置 `~/.gemrc` 文件来改变.
+作为普通用户安装 *gem* 的时候, gem 默认被安装在 `~/.gem` 而不是在系统全局. 这在 Arch 上被认为是做回的管理 gem 的方案. 不巧的是并非所有 gem 都乐意被安装在这, 甚至可能坚持要以 root 身份安装, 特别是模块含有本地扩展(从 C 编译的代码). 每个用户的方案被配置在 `/etc/gemrc` 文件里, 可以通过配置 `~/.gemrc` 文件来改变.
 
 为了使用一些安装了可执行文件的 gem, 需要把 `~/.gem/ruby/2.0.0/bin` 添加到你的 `$PATH` 环境变量里.
 
@@ -106,7 +106,7 @@ $ gem install
 
 ```
 
-Bundler 默认把 gem 安装在系统全局, 这跟 Arch 上处理 _gem_ 的方案正好相反. 纠正的办法的话, 添加下面的配置到你的 `~/.bashrc`:
+Bundler 默认把 gem 安装在系统全局, 这跟 Arch 上处理 *gem* 的方案正好相反. 纠正的办法的话, 添加下面的配置到你的 `~/.bashrc`:
 
 ```
 export GEM_HOME=~/.gem/ruby/2.0.0
@@ -123,7 +123,6 @@ $ bundle init
 然后编辑当前目录 (gem init 执行的目录)下的 `Gemfile` 添加你需要的 gem:
 
  `Gemfile` 
-
 ```
 gem "rails", "3.2.9"
 gem "mysql"

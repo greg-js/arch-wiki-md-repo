@@ -52,14 +52,14 @@ To quit, use the `:quit` command, or press `Shift+z` followed by `Shift+q`. You 
 
 *   Press `o` to open a prompt with the `:open` command and enter the URI you want. Press `Shift+o` to edit the current URI.
 *   If it is not a recognized URI, Luakit will use the default search engine specified in `~/.config/luakit/globals.lua`.
-*   Specify which search engine to use by prefixing the entry with the appropriate keywork (e.g. `:open google foobar` will search _foobar_ on Google).
-*   Use common shortcuts to navigate. For [emacs](/index.php/Emacs "Emacs") and [vim](/index.php/Vim "Vim") _aficionados_, some of their regular shortcuts are provided. You can use the mouse as well.
+*   Specify which search engine to use by prefixing the entry with the appropriate keywork (e.g. `:open google foobar` will search *foobar* on Google).
+*   Use common shortcuts to navigate. For [emacs](/index.php/Emacs "Emacs") and [vim](/index.php/Vim "Vim") *aficionados*, some of their regular shortcuts are provided. You can use the mouse as well.
 *   Use `f` to display the index of all visible links. Enter the appropriate number or a part of the string to open the link.
 *   Use `Shift+f` instead to open link in a new tab.
 *   Press `Ctrl+t` to open a new tab, `Ctrl+w` to close it. Press `t` to prompt for an URI to be opened in a new tab, and `Shift+t` to edit the current URI in a new tab.
 *   Press `w` to prompt for an URI to be opened in a new window, and `Shift+w` to edit the current URI in a new window.
 *   Switch from one tab to another by pressing `g` followed by `t` or `Shift+t`, or use `Ctrl+PageUp` and `Ctrl+PageDown`.
-*   You can switch to a specific tab with `Alt+_number_`.
+*   You can switch to a specific tab with `Alt+*number*`.
 *   Use `Shift+h` to go back in the browser history.
 *   Use `Shift+l` to go forward in the browser history.
 *   Reorder the tabs with `<` and `>`.
@@ -73,14 +73,14 @@ To quit, use the `:quit` command, or press `Shift+z` followed by `Shift+q`. You 
 
 ### Input fields
 
-Many webpages have editable elements like dropdown lists, checkboxes, text fields and so on. While they work perfectly with the mouse, you may encounter some troubles using the _follow_ commands. In such a case, pressing the arrow keys may help. Alternatively, the `g` `i` shortcut can be used to focus input.
+Many webpages have editable elements like dropdown lists, checkboxes, text fields and so on. While they work perfectly with the mouse, you may encounter some troubles using the *follow* commands. In such a case, pressing the arrow keys may help. Alternatively, the `g` `i` shortcut can be used to focus input.
 
 ### Bookmarks
 
 If enabled (default configuration), bookmarks can be used from within Luakit.
 
 *   The `:bookmarks` command opens the bookmarks page. (Shortcut: `g` followed by `b`, or `Shift+b` for a new tab).
-*   The `:bookmark [_URI_ [_tags_]]` command adds the URI specified (or the current tab's URI, if omitted) to the bookmarks by specified tags. Starting from version 2012-09-13-r1, bookmarks page will be opened (new tab) in new bookmark editing mode before saving. (Shortcut: `Shift+b`).
+*   The `:bookmark [*URI* [*tags*]]` command adds the URI specified (or the current tab's URI, if omitted) to the bookmarks by specified tags. Starting from version 2012-09-13-r1, bookmarks page will be opened (new tab) in new bookmark editing mode before saving. (Shortcut: `Shift+b`).
 
 ## Configuration
 
@@ -89,7 +89,6 @@ If enabled (default configuration), bookmarks can be used from within Luakit.
 Set your homepage as follows:
 
  `~/.config/luakit/globals.lua` 
-
 ```
 globals = {
     homepage = "www.example.com",
@@ -104,7 +103,6 @@ To search with the default search engine, press `o` and type the phrases. To sea
 You can virtually add any search engine you want. Make a search on the website you want and copy paste the URI to the Luakit configuration by replacing the searched terms with an `%s`. Example:
 
  `~/.config/luakit/globals.lua` 
-
 ```
 search_engines = {
     aur          = "https://aur.archlinux.org/packages.php?O=0&K=%s&do_Search=Go",
@@ -125,7 +123,6 @@ Set the defaut search engine by using this same keyword:
 To specify download location:
 
  `~/.config/luakit/rc.lua` 
-
 ```
 -- Add download support
 require "downloads"
@@ -151,10 +148,9 @@ There are several plugins available out there.
 To configure the Adblock plugin [featured on the official website](https://github.com/mason-larobina/luakit/wiki/AdBlock-Lua-module):
 
 *   Put the `adblock.lua` and `adblock_chrome.lua` files in `~/.config/luakit`.
-*   Edit `~/.config/rc.lua` and add the following in the section labelled _Optional user script loading_:
+*   Edit `~/.config/rc.lua` and add the following in the section labelled *Optional user script loading*:
 
  `~/.config/rc.lua` 
-
 ```
 ----------------------------------
 -- Optional user script loading --
@@ -168,7 +164,7 @@ require "adblock_chrome"
 
 *   Fetch an adblock-compatible list, like [Easylist](https://easylist-downloads.adblockplus.org/easylist.txt), and save it to `~/.local/share/luakit`.
 *   Restart Luakit to load the extension.
-*   Use `:adblock-list-enable _number_` command within Luakit to turn Adblock's list(s) you downloaded on Adblock itself becomes enabled on startup.
+*   Use `:adblock-list-enable *number*` command within Luakit to turn Adblock's list(s) you downloaded on Adblock itself becomes enabled on startup.
 
 Full info on enabled lists and AdBlock state can be found using `:adblock` or `g` `Shift+a` at `luakit://adblock/` internal page, if the `adblock_chrome` module is enabled, which is not a mandatory part.
 
@@ -186,7 +182,7 @@ You can put a symbolic link in place of the default file to store your bookmarks
 
 #### Converting plain text bookmarks to SQLite format
 
-Bookmarks were stored in a simple plain text file: `~/.local/share/luakit/bookmarks`. Each line is a bookmark. It is composed of 2 fields, the _link_ and the _group_ which are separated by a _tab_ character.
+Bookmarks were stored in a simple plain text file: `~/.local/share/luakit/bookmarks`. Each line is a bookmark. It is composed of 2 fields, the *link* and the *group* which are separated by a *tab* character.
 
 **Warning:** If spaces are inserted instead of tabulation character, the link will not be properly bookmarked.
 
@@ -195,7 +191,6 @@ Bookmarks were stored in a simple plain text file: `~/.local/share/luakit/bookma
 To use bookmarks with the latest Luakit release, the file must be converted. A sample Lua script will do that:
 
  `bookmarks_plain_to_sqlite.lua` 
-
 ```
 local usage = [[Usage: luakit -c bookmarks_plain_to_sqlite.lua [bookmark plaintext path] [bookmark db path]
 ]]
@@ -219,20 +214,26 @@ new_db:exec("CREATE TABLE IF NOT EXISTS bookmarks (id INTEGER PRIMARY KEY, uri T
 -- Fill
 local url,tag
 
-for line in data:gmatch("[^\n]*\n?") do
+for line in data:gmatch("[^
+]*
+?") do
 
    if string.len(line) > 1 then
 
       print ("["..line.."]")
 
       -- Get url and tag (if present) from first line.
-      _, _, url, tag = string.find(line, "([^\n\t]+)\t*([^\n]*)\n?")
+      _, _, url, tag = string.find(line, "([^
+\t]+)\t*([^
+]*)
+?")
 
       -- Optional yet convenient output.
       io.write(url)
       io.write("\t")
       io.write(tag)
-      io.write("\n")
+      io.write("
+")
 
       -- DB insertion. Nothing will be overwritten. If URL and/or tag already exists, then a double is created.
       new_db:exec("INSERT INTO bookmarks VALUES (NULL, ?, ?, ?, ?, ?, ?)", 
@@ -244,7 +245,8 @@ for line in data:gmatch("[^\n]*\n?") do
 end
 
 print("Import finished.")
-print("\nVacuuming database...")
+print("
+Vacuuming database...")
 new_db:exec "VACUUM"
 print("Vacuum done.")
 
@@ -255,7 +257,7 @@ luakit.quit(0)
 As stated at beginning of the script, it must be ran with Luakit:
 
 ```
-$ luakit -c bookmarks_plain_to_sqlite.lua _path/to/plaintext/bookmark_ _path/to/db_
+$ luakit -c bookmarks_plain_to_sqlite.lua *path/to/plaintext/bookmark* *path/to/db*
 
 ```
 
@@ -275,14 +277,16 @@ $ cat bookmarks.html | awk '
 /<\/H3>/{FS=">";gsub(/</,">");og=g;g=$(NF-2);FS=" "}
 /<DL>/{x++;if(x>= 3)gl[x-3]=g}
 /<\/DL>/{x--;if(x==2)g=og"2"}
-/HREF/{gsub(/</," ");gsub(/>/," ");if(g!=""){if(og!=g){printf "\n";og=g};printf "%s\t",$4;if(x>=3){for(i=0;i<=x-4;i++){printf "%s-",gl[i]}printf "%s\n",gl[x-3]}else{printf "\n"}}}'
+/HREF/{gsub(/</," ");gsub(/>/," ");if(g!=""){if(og!=g){printf "
+";og=g};printf "%s\t",$4;if(x>=3){for(i=0;i<=x-4;i++){printf "%s-",gl[i]}printf "%s
+",gl[x-3]}else{printf "
+"}}}'
 
 ```
 
 The more readable version of the script:
 
  `ff2lk.awk` 
-
 ```
 # Notes: 'folders' for Firefox bookmarks mean 'groups' for Luakit.
 
@@ -328,7 +332,8 @@ The more readable version of the script:
     {
         if(oldgroup != group)
         {
-            printf "\n"
+            printf "
+"
             oldgroup=group
         }
         printf "%s\t",$4
@@ -338,7 +343,8 @@ The more readable version of the script:
             {printf "%s-" , groupline[i]}
             printf "%s" , groupline[count-3]
         }
-        printf "\n"
+        printf "
+"
     }
 }
 
@@ -356,7 +362,6 @@ $ awk -f ff2lk.awk bookmarks.html >> bookmarks
 The following script let you export Luakit bookmarks from its SQLite format to a plain text file. The resulting file may be suitable for other web browsers, or may be easily parsed by import scripts.
 
  `bookmarks_sqlite_to_plain.lua` 
-
 ```
 -- USER CONFIG
 
@@ -410,7 +415,8 @@ for _, b in ipairs(rows) do
       string.format("%q%s- ", b.tags or "", sep) ..
       ((b.created or "" ) .. sep) ..
       ((b.modified or "" ) .. sep) ..
-      "\n"
+      "
+"
 
    -- Write entry to file.
    new_db:write(outputstr)
@@ -427,7 +433,7 @@ luakit.quit(0)
 As stated at beginning of the script, it must be ran with Luakit:
 
 ```
-$ luakit -c bookmarks_plain_to_sqlite.lua _path/to/plaintext/bookmarks_ _path/to/database_
+$ luakit -c bookmarks_plain_to_sqlite.lua *path/to/plaintext/bookmarks* *path/to/database*
 
 ```
 
@@ -447,7 +453,6 @@ $ torify luakit
 Place the CSS file in the `styles` subdirectory of Luakit data directory (create if does not exist). For example this will set monospace font for text input areas:
 
  `~/.local/share/luakit/styles/custom.css` 
-
 ```
 input,textarea,select {
   font-family: DejaVu Sans Mono,Consolas,Monaco,Lucida Console,Liberation Mono,Bitstream Vera Sans Mono,Courier New, monospace;
@@ -458,7 +463,6 @@ input,textarea,select {
 And in `globals.lua` assign the variable `user_stylesheet_uri` to that file's location:
 
  `~/.config/luakit/globals.lua` 
-
 ```
 domain_props = {
     ["all"] = {

@@ -52,7 +52,7 @@
 如果你想用你的使用者帳戶(非root帳戶)來使用Docker，把你的帳戶加到Docker的群組中：
 
 ```
-# gpasswd -a _user_ docker
+# gpasswd -a *user* docker
 
 ```
 
@@ -98,7 +98,7 @@ Environment="http_proxy=192.168.1.1:3128"
 
 ### Daemon Socket 設定
 
-_Docker Daemon_ 預設會監聽 [Unix socket](https://en.wikipedia.org/wiki/Unix_domain_socket "wikipedia:Unix domain socket")。如果要讓他監聽特定的通訊埠號，可以修改 `/etc/systemd/system/docker.socket` 中的 `ListenStream` 為想要的通訊埠號：
+*Docker Daemon* 預設會監聽 [Unix socket](https://en.wikipedia.org/wiki/Unix_domain_socket "wikipedia:Unix domain socket")。如果要讓他監聽特定的通訊埠號，可以修改 `/etc/systemd/system/docker.socket` 中的 `ListenStream` 為想要的通訊埠號：
 
 ```
 [Socket]
@@ -108,7 +108,7 @@ ListenStream=0.0.0.0:2375
 
 ## Docker與LXC
 
-0.9.0 版以後的 Docker 提供了一個不依賴LXC的函式庫的新Container啟動方式，稱為_libcontainer_。
+0.9.0 版以後的 Docker 提供了一個不依賴LXC的函式庫的新Container啟動方式，稱為*libcontainer*。
 
 LXC的驅動及設定有可能也在近期移除，因此，使用者將無法在0.9.0版以上的Docker使用 `lxc-attach` 管理Container，它需要 `-e lxc` 作為 Docker daemon 執行時的參數。
 

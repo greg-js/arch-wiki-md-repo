@@ -26,7 +26,6 @@
 Use the [ls](/index.php/Ls "Ls") command's `-l` option to view the permissions (or **file mode**) set for the contents of a directory, for example:
 
  `$ ls -l /path/to/directory` 
-
 ```
 total 128
 drwxr-xr-x 2 archie users  4096 Jul  5 21:03 Desktop
@@ -51,7 +50,7 @@ Each of the three permission triads (`rwx` in the example above) can be made up 
 | Write permission (second character) | `-` | The file cannot be modified. | The directory's contents cannot be modified. |
 | `w` | The file can be modified. | The directory's contents can be modified (create new files or folders; rename or delete existing files or folders); requires the execute permission to be also set, otherwise this permission has no effect. |
 | Execute permission (third character) | `-` | The file cannot be executed. | The directory cannot be accessed with [cd](/index.php/Cd "Cd"). |
-| `x` | The file can be executed. | The directory can be accessed with [cd](/index.php/Cd "Cd"); this is the only permission bit that in practice can be considered to be "inherited" from the ancestor directories, in fact if _any_ folder in the path does not have the `x` bit set, the final file or folder cannot be accessed either, regardless of its permissions; see `man 7 path_resolution` for more information. |
+| `x` | The file can be executed. | The directory can be accessed with [cd](/index.php/Cd "Cd"); this is the only permission bit that in practice can be considered to be "inherited" from the ancestor directories, in fact if *any* folder in the path does not have the `x` bit set, the final file or folder cannot be accessed either, regardless of its permissions; see `man 7 path_resolution` for more information. |
 | `s` | The [setuid](https://en.wikipedia.org/wiki/setuid "w:setuid") bit when found in the **u**ser triad; the **setgid** bit when found in the **g**roup triad; it is not found in the **o**thers triad; it also implies that `x` is set. |
 | `S` | Same as `s`, but `x` is not set; rare on regular files, and useless on folders. |
 | `t` | The [sticky](https://en.wikipedia.org/wiki/sticky_bit "w:sticky bit") bit; it can only be found in the **o**thers triad; it also implies that `x` is set. |
@@ -104,18 +103,18 @@ Here we can see the first letter is not `d` but `-`. So we know it is a file, no
 
 ## Changing permissions
 
-[chmod](https://en.wikipedia.org/wiki/chmod "wikipedia:chmod") is a command in Linux and other Unix-like operating systems that allows to _ch_ange the permissions (or access _mod_e) of a file or directory.
+[chmod](https://en.wikipedia.org/wiki/chmod "wikipedia:chmod") is a command in Linux and other Unix-like operating systems that allows to *ch*ange the permissions (or access *mod*e) of a file or directory.
 
 ### Text method
 
-To change the permissions — or _access mode_ — of a file, use the _chmod_ command in a terminal. Below is the command's general structure:
+To change the permissions — or *access mode* — of a file, use the *chmod* command in a terminal. Below is the command's general structure:
 
 ```
-chmod _who_=_permissions_ _filename_
+chmod *who*=*permissions* *filename*
 
 ```
 
-Where `_who_` is any from a range of letters, each signifying who is being given the permission. They are as follows:
+Where `*who*` is any from a range of letters, each signifying who is being given the permission. They are as follows:
 
 *   `u`: the [user](/index.php/User "User") that owns the file.
 *   `g`: the [group](/index.php/Group "Group") that the file belongs to.
@@ -152,14 +151,14 @@ After: `drwxr-xr-x 6 archie users 4096 Jul 6 17:32 Documents`
 
 In the next example, you want to grant read and execute permissions to the group, and other users, so you put the letters for the permissions (`r` and `x`) after the `=`, with no spaces.
 
-You can simplify this to put more than one `_who_` letter in the same command, e.g:
+You can simplify this to put more than one `*who*` letter in the same command, e.g:
 
 ```
 $ chmod go=rx Documents
 
 ```
 
-**Note:** It does not matter in which order you put the `_who_` letters or the permission letters in a `chmod` command: you could have `chmod go=rx file` or `chmod og=xr file`. It is all the same.
+**Note:** It does not matter in which order you put the `*who*` letters or the permission letters in a `chmod` command: you could have `chmod go=rx file` or `chmod og=xr file`. It is all the same.
 
 Now let us consider a second example, suppose you want to change a `foobar` file so that you have read and write permissions, and fellow users in the group `users` who may be colleagues working on `foobar`, can also read and write to it, but other users can only read it:
 
@@ -176,7 +175,7 @@ This is exactly like the first example, but with a file, not a directory, and yo
 
 #### Text method shortcuts
 
-The _chmod_ command lets add and subtract permissions from an existing set using `+` or `-` instead of `=`. This is different from the above commands, which essentially re-write the permissions (e.g. to change a permission from `r--` to `rw-`, you still need to include `r` as well as `w` after the `=` in the _chmod_ command invocation. If you missed out `r`, it would take away the `r` permission as they are being re-written with the `=`. Using `+` and `-` avoids this by adding or taking away from the _current_ set of permissions).
+The *chmod* command lets add and subtract permissions from an existing set using `+` or `-` instead of `=`. This is different from the above commands, which essentially re-write the permissions (e.g. to change a permission from `r--` to `rw-`, you still need to include `r` as well as `w` after the `=` in the *chmod* command invocation. If you missed out `r`, it would take away the `r` permission as they are being re-written with the `=`. Using `+` and `-` avoids this by adding or taking away from the *current* set of permissions).
 
 Let us try this `+` and `-` method with the previous example of adding write permissions to the group:
 
@@ -209,7 +208,7 @@ $ chmod -R a+rX ./data/
 
 #### Copying permissions
 
-It is possible to tell _chmod_ to copy the permissions from one class, say the owner, and give those same permissions to group or even all. To do this, instead of putting `r`, `w`, or `x` after the `=`, put another _who_ letter. e.g:
+It is possible to tell *chmod* to copy the permissions from one class, say the owner, and give those same permissions to group or even all. To do this, instead of putting `r`, `w`, or `x` after the `=`, put another *who* letter. e.g:
 
 Before: `-rw-r--r-- 1 archie users 5120 Jun 27 08:28 foobar`
 
@@ -227,16 +226,16 @@ $ chmod g=wu foobar
 
 ```
 
-In that case _chmod_ throw an error.
+In that case *chmod* throw an error.
 
 ### Numeric method
 
-_chmod_ can also set permissions using numbers.
+*chmod* can also set permissions using numbers.
 
 Using numbers is another method which allows you to edit the permissions for all three owner, group, and others at the same time. This basic structure of the code is this:
 
 ```
-$ chmod _xxx_ _filename_
+$ chmod *xxx* *filename*
 
 ```
 
@@ -258,15 +257,15 @@ To come up with a 3-digit number you need to consider what permissions you want 
 *   Other: `r-x`=4+0+1=5
 
 ```
-$ chmod 755 _filename_
+$ chmod 755 *filename*
 
 ```
 
 This is the equivalent of using the following:
 
 ```
-$ chmod u=rwx _filename_
-$ chmod go=rx _filename_
+$ chmod u=rwx *filename*
+$ chmod go=rx *filename*
 
 ```
 
@@ -283,7 +282,7 @@ $ chmod 664 foobar
 
 After: `-rw-rw-r-- 1 archie users 5120 Jun 27 08:28 foobar`
 
-If this were an executable the number would be `774` if you wanted to grant executable permission to the owner and group. Alternatively if you wanted everyone to only have read permission the number would be `444`. Treating `r` as 4, `w` as 2, and `x` as 1 is probably the easiest way to work out the numerical values for using `chmod _xxx_ _filename_`, but there is also a binary method, where each permission has a binary number, and then that is in turn converted to a number. It is a bit more convoluted, but here included for completeness.
+If this were an executable the number would be `774` if you wanted to grant executable permission to the owner and group. Alternatively if you wanted everyone to only have read permission the number would be `444`. Treating `r` as 4, `w` as 2, and `x` as 1 is probably the easiest way to work out the numerical values for using `chmod *xxx* *filename*`, but there is also a binary method, where each permission has a binary number, and then that is in turn converted to a number. It is a bit more convoluted, but here included for completeness.
 
 Consider this permission set:
 
@@ -320,23 +319,23 @@ Consider we wanted to remove the writable permission from group:
 
 ```
 
-The value would therefore be 755 and you would use `chmod 755 _filename_` to remove the writable permission. You will notice you get the same three digit number no matter which method you use. Whether you use text or numbers will depend on personal preference and typing speed. When you want to restore a directory or file to default permissions e.g. read and write (and execute) permission to the owner but deny write permission to everyone else, it may be faster to use `chmod 755/644 _filename_`. However if you are changing the permissions to something out of the norm, it may be simpler and quicker to use the text method as opposed to trying to convert it to numbers, which may lead to a mistake. It could be argued that there is not any real significant difference in the speed of either method for a user that only needs to use _chmod_ on occasion.
+The value would therefore be 755 and you would use `chmod 755 *filename*` to remove the writable permission. You will notice you get the same three digit number no matter which method you use. Whether you use text or numbers will depend on personal preference and typing speed. When you want to restore a directory or file to default permissions e.g. read and write (and execute) permission to the owner but deny write permission to everyone else, it may be faster to use `chmod 755/644 *filename*`. However if you are changing the permissions to something out of the norm, it may be simpler and quicker to use the text method as opposed to trying to convert it to numbers, which may lead to a mistake. It could be argued that there is not any real significant difference in the speed of either method for a user that only needs to use *chmod* on occasion.
 
 ### Bulk chmod
 
 Generally directories and files should not have the same permissions. If it is necessary to bulk modify a directory tree, use [find](/index.php/Find "Find") to selectively modify one or the other.
 
-To _chmod_ only directories to 755:
+To *chmod* only directories to 755:
 
 ```
-$ find _directory_ -type d -exec chmod 755 {} +
+$ find *directory* -type d -exec chmod 755 {} +
 
 ```
 
-To _chmod_ only files to 644:
+To *chmod* only files to 644:
 
 ```
-$ find _directory_ -type f -exec chmod 644 {} +
+$ find *directory* -type f -exec chmod 644 {} +
 
 ```
 
@@ -397,7 +396,7 @@ For ext2 and [ext3](/index.php/Ext3 "Ext3") file systems, the [e2fsprogs](https:
 For example, if you want to set the immutable bit on some file, use the following command:
 
 ```
-# chattr +i _/path/to/file_
+# chattr +i */path/to/file*
 
 ```
 

@@ -51,7 +51,6 @@ $ systemctl status teamspeak3-server
 *   Scan the output for the privilege key:
 
  `Example output:` 
-
 ```
 ● teamspeak3-server.service - TeamSpeak3 Server
    Loaded: loaded (/usr/lib/systemd/system/teamspeak3-server.service; enabled; vendor preset: disabled)

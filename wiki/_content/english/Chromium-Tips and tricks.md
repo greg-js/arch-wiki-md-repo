@@ -30,7 +30,7 @@
 
 ### chrome://xxx
 
-A number of tweaks can be accessed via typing _chrome://xxx_ in the URL field. A complete list is available by typing **chrome://chrome-urls** into the URL field. Some of note are listed below:
+A number of tweaks can be accessed via typing *chrome://xxx* in the URL field. A complete list is available by typing **chrome://chrome-urls** into the URL field. Some of note are listed below:
 
 *   **chrome://flags** - access experimental features such as WebGL and rendering webpages with GPU, etc.
 *   **chrome://plugins** - view, enable and disable the currently used Chromium plugins.
@@ -62,7 +62,7 @@ $ chromium --disable-sync-preferences --no-startup-window
 
 ### Search engines
 
-Make sites like [wiki.archlinux.org](https://wiki.archlinux.org) and [wikipedia.org](https://en.wikipedia.org) easily searchable by first executing a search on those pages, then going to _Settings > Search_ and click the _Manage search engines.._ button. From there, "Edit" the Wikipedia entry and change its keyword to **w** (or some other shortcut you prefer). Now searching Wikipedia for "Arch Linux" from the address bar is done simply by entering "**w arch linux**".
+Make sites like [wiki.archlinux.org](https://wiki.archlinux.org) and [wikipedia.org](https://en.wikipedia.org) easily searchable by first executing a search on those pages, then going to *Settings > Search* and click the *Manage search engines..* button. From there, "Edit" the Wikipedia entry and change its keyword to **w** (or some other shortcut you prefer). Now searching Wikipedia for "Arch Linux" from the address bar is done simply by entering "**w arch linux**".
 
 **Note:** Google search is used automatically when typing something into the URL bar. A hard-coded keyword trigger is also available using the **?** prefix.
 
@@ -81,7 +81,7 @@ $ chromium --disk-cache-dir=/tmp/cache
 
 Cache should be considered temporary and will **not** be saved after a reboot or hard lock. Alternatively, use:
 
- `/etc/fstab`  `tmpfs	/home/_username_/.cache	tmpfs	noatime,nodev,nosuid,size=400M	0	0` 
+ `/etc/fstab`  `tmpfs	/home/*username*/.cache	tmpfs	noatime,nodev,nosuid,size=400M	0	0` 
 **Warning:** Adjust the size as needed and be careful. If the size is too large and you are using a sync daemon such as [psd](/index.php/Psd "Psd") on a conventional HDD, it will likely result in very slow start-up times of your graphical system due to long sync back times of the daemon.
 
 #### Profile in tmpfs
@@ -113,7 +113,7 @@ By default, Chromium downloads `*.torrent` files directly and you need to click 
 
 *   Download a `*.torrent` file.
 *   Right-click the notification displayed at the bottom-left corner of the screen.
-*   Check the "_Always Open Files of This Type_" checkbox.
+*   Check the "*Always Open Files of This Type*" checkbox.
 
 See [xdg-open](/index.php/Xdg-open "Xdg-open") to change the default assocation.
 
@@ -122,7 +122,7 @@ See [xdg-open](/index.php/Xdg-open "Xdg-open") to change the default assocation.
 Chrome and Chromium do not support touchscreen by default. There are a couple settings you can change in the "Flags" portion of Chrome to potentially make it work for your device. This has been tested in [chromium](https://www.archlinux.org/packages/?name=chromium) from the [official repositories](/index.php/Official_repositories "Official repositories") and [google-chrome](https://aur.archlinux.org/packages/google-chrome/) from the [AUR](/index.php/AUR "AUR").
 
 *   Browse to **chrome://flags** and set everything to default
-*   Switch "_Enable Touch events_" to "_Enabled_" (**chrome://flags/#touch-events**)
+*   Switch "*Enable Touch events*" to "*Enabled*" (**chrome://flags/#touch-events**)
 *   Restart Chrome and touch scrolling should work. If it does not, it is worth trying the other modes that are available.
 *   You may need to specify which touch device to use. Find your touchscreen device with `xinput list` then launch Chromium with the `--touch-devices=**x**` parameter, where "**x**" is the id of your device.
     **Note:** If the device is designated as a slave pointer, using this may not work, use the master pointer's ID instead.
@@ -137,7 +137,7 @@ Click the restart button at the bottom of the page.
 
 ### Reduce memory usage
 
-By default, Chromium uses a separate OS process for each _instance_ of a visited web site. [[1]](https://www.chromium.org/developers/design-documents/process-models#Supported_Models) However, you can specify command-line switches when starting Chromium to modify this behaviour.
+By default, Chromium uses a separate OS process for each *instance* of a visited web site. [[1]](https://www.chromium.org/developers/design-documents/process-models#Supported_Models) However, you can specify command-line switches when starting Chromium to modify this behaviour.
 
 For example, to share one process for all instances of a website:
 
@@ -273,8 +273,8 @@ The [firefox](https://www.archlinux.org/packages/?name=firefox) browser can be u
 Using firefox:
 
 1.  Browse to the target URL.
-2.  Upon seeing the "This Connection is Untrusted" warning screen, click: _I understand the Risks > Add Exception..._
-3.  Click: _View > Details > Export_ and save the certificate to a temporary location (`/tmp/easy.pem` in this example).
+2.  Upon seeing the "This Connection is Untrusted" warning screen, click: *I understand the Risks > Add Exception...*
+3.  Click: *View > Details > Export* and save the certificate to a temporary location (`/tmp/easy.pem` in this example).
 
 Now import the certificate for use in Chromium:
 

@@ -171,7 +171,6 @@ The easiest configuration to get running with is IPSec in tunnel mode, described
 VPN configuration can be found in `/etc/ipsec.conf`. The following contains the necessary options to build a basic, functional VPN server:
 
  `/etc/ipsec.conf` 
-
 ```
 # ipsec.conf - strongSwan IPsec configuration file
 config setup
@@ -245,7 +244,6 @@ The [L2TP/IPsec VPN client setup](/index.php/L2TP/IPsec_VPN_client_setup "L2TP/I
 strongSwan needs to know which clients are allowed to connect to the VPN. This is configured in the `/etc/ipsec.secrets` file, like the following example:
 
  `/etc/ipsec.secrets` 
-
 ```
 # This file holds shared secrets or RSA private keys for authentication.
 
@@ -272,7 +270,6 @@ $ ipsec rereadsecrets
 You’re almost done setting up your server. There are a few things left to make your VPN server properly route the VPN tunnel:
 
  `/etc/sysctl.d/10-net-forward.conf` 
-
 ```
 # VPN
 net.ipv4.ip_forward = 1
@@ -284,7 +281,6 @@ net.ipv4.conf.all.send_redirects = 0
 The VPN configuration above automatically assigns an IP address to the client using DHCP, so you need to have a working DHCP server. If the server is running on the same host as strongSwan, you may need to edit `/etc/strongswan.d/charon/dhcp.conf` like this:
 
  `/etc/strongswan.d/charon/dhcp.conf` 
-
 ```
 dhcp {
  force_server_address = yes

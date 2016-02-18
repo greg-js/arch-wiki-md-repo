@@ -1,6 +1,6 @@
 From [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
-	_The X.Org project provides an open source implementation of the X Window System. The development work is being done in conjunction with the freedesktop.org community. The X.Org Foundation is the educational non-profit corporation whose Board serves this effort, and whose Members lead this work._
+	*The X.Org project provides an open source implementation of the X Window System. The development work is being done in conjunction with the freedesktop.org community. The X.Org Foundation is the educational non-profit corporation whose Board serves this effort, and whose Members lead this work.*
 
 **Xorg** is the most popular display server among Linux users. Its ubiquity has led to making it an ever-present requisite for GUI applications, resulting in massive adoption from most distributions. See the [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") Wikipedia article or visit the [Xorg website](http://www.x.org/wiki/) for more details.
 
@@ -77,7 +77,7 @@ $ pacman -Ss xf86-video
 
 ```
 
-The default graphics driver is [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa), which handles a large number of chipsets but does not include any 2D or 3D acceleration. If a better driver cannot be found or fails to load, Xorg will fall back to _vesa_.
+The default graphics driver is [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa), which handles a large number of chipsets but does not include any 2D or 3D acceleration. If a better driver cannot be found or fails to load, Xorg will fall back to *vesa*.
 
 In order for video acceleration to work, and often to expose all the modes that the GPU can set, a proper video driver is required:
 
@@ -116,7 +116,7 @@ Xorg uses a configuration file called `xorg.conf` and files ending in the suffix
 
 ### Using .conf files
 
-The `/etc/X11/xorg.conf.d/` directory stores host-specific configuration. You are free to add configuration files there, but they must have a `.conf` suffix: the files are read in ASCII order, and by convention their names start with `_XX_-` (two digits and a hyphen, so that for example 10 is read before 20). These files are parsed by the X server upon startup and are treated like part of the traditional `xorg.conf` configuration file. The X server essentially treats the collection of configuration files as one big file with entries from `xorg.conf` at the end.
+The `/etc/X11/xorg.conf.d/` directory stores host-specific configuration. You are free to add configuration files there, but they must have a `.conf` suffix: the files are read in ASCII order, and by convention their names start with `*XX*-` (two digits and a hyphen, so that for example 10 is read before 20). These files are parsed by the X server upon startup and are treated like part of the traditional `xorg.conf` configuration file. The X server essentially treats the collection of configuration files as one big file with entries from `xorg.conf` at the end.
 
 ### Using xorg.conf
 
@@ -174,7 +174,6 @@ See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "
 First, create a new config file, such as `/etc/X11/xorg.conf.d/10-monitor.conf`.
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
-
 ```
 Section "Monitor"
     Identifier             "Monitor0"
@@ -233,7 +232,6 @@ EndSection
 To get your bus ID:
 
  `$ lspci | grep VGA` 
-
 ```
 01:00.0 VGA compatible controller: nVidia Corporation G96 [GeForce 9600M GT] (rev a1)
 
@@ -404,7 +402,7 @@ See main article: [SSH#X11 forwarding](/index.php/SSH#X11_forwarding "SSH").
 
 ### On-demand disabling and enabling of input sources
 
-With the help of _xinput_ you can temporarily disable or enable input sources. This might be useful, for example, on systems that have more than one mouse, such as the ThinkPads and you would rather use just one to avoid unwanted mouse clicks.
+With the help of *xinput* you can temporarily disable or enable input sources. This might be useful, for example, on systems that have more than one mouse, such as the ThinkPads and you would rather use just one to avoid unwanted mouse clicks.
 
 [Install](/index.php/Install "Install") the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
@@ -418,7 +416,6 @@ $ xinput
 For example in a Lenovo ThinkPad T500, the output looks like this:
 
  `$ xinput` 
-
 ```
 ⎡ Virtual core pointer                          id=2    [master pointer  (3)]
 ⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
@@ -434,7 +431,7 @@ For example in a Lenovo ThinkPad T500, the output looks like this:
 
 ```
 
-Disable the device with `xinput --disable _device_id_`, where _device_id_ is the device ID you want to disable. In this example we will disable the Synaptics Touchpad, with the ID 10:
+Disable the device with `xinput --disable *device_id*`, where *device_id* is the device ID you want to disable. In this example we will disable the Synaptics Touchpad, with the ID 10:
 
 ```
 $ xinput --disable 10
@@ -471,7 +468,6 @@ If a problem occurs, view the log stored in either `/var/log/` or, for the rootl
 The logfiles are of the form `Xorg.n.log` with `n` being the display number. For a single user machine with default configuration the applicable log is frequently `Xorg.0.log`, but otherwise it may vary. To make sure to pick the right file it may help to look at the timestamp of the X server session start and from which console it was started. For example:
 
  `$ grep -e Log -e tty Xorg.0.log` 
-
 ```
 [    40.623] (==) Log file: "/home/archuser/.local/share/xorg/Xorg.0.log", Time: Thu Aug 28 12:36:44 2014
 [    40.704] (--) controlling tty is VT number 1, auto-enabling KeepTty
@@ -479,7 +475,7 @@ The logfiles are of the form `Xorg.n.log` with `n` being the display number. For
 
 *   In the logfile then be on the lookout for any lines beginning with `(EE)`, which represent errors, and also `(WW)`, which are warnings that could indicate other issues.
 
-*   If there is an _empty_ `.xinitrc` file in your `$HOME`, either delete or edit it in order for X to start properly. If you do not do this X will show a blank screen with what appears to be no errors in your `Xorg.0.log`. Simply deleting it will get it running with a default X environment.
+*   If there is an *empty* `.xinitrc` file in your `$HOME`, either delete or edit it in order for X to start properly. If you do not do this X will show a blank screen with what appears to be no errors in your `Xorg.0.log`. Simply deleting it will get it running with a default X environment.
 *   If the screen goes black, you may still attempt to switch to a different virtual console (e.g. `Ctrl+Alt+F2`), and blindly log in as root. You can do this by typing `root` (press `Enter` after typing it) and entering the root password (again, press `Enter` after typing it).
 
 	You may also attempt to kill the X server with:
@@ -575,7 +571,7 @@ EndSection
 
 ### Program requests "font '(null)'"
 
-*   Error message: "_unable to load font `(null)'._"
+*   Error message: "*unable to load font `(null)'.*"
 
 Some programs only work with bitmap fonts. Two major packages with bitmap fonts are available, [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi) and [xorg-fonts-100dpi](https://www.archlinux.org/packages/?name=xorg-fonts-100dpi). You do not need both; one should be enough. To find out which one would be better in your case, try this:
 
@@ -644,7 +640,7 @@ As of version 1.16 [[3]](https://www.archlinux.org/news/xorg-server-116-is-now-a
 If you do not fit these requirements, re-enable root rights in `/etc/X11/Xwrapper.config`:
 
 ```
-needs_root_rights = _yes_
+needs_root_rights = *yes*
 
 ```
 

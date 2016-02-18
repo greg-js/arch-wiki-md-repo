@@ -26,7 +26,7 @@
 
 ## 基础
 
-可以通过 `Ctrl+a` 和其他键来输入命令。通过 `~/.screenrc` 中的_escape_选项来改变 escape 键。例如：
+可以通过 `Ctrl+a` 和其他键来输入命令。通过 `~/.screenrc` 中的*escape*选项来改变 escape 键。例如：
 
 ```
 escape ``

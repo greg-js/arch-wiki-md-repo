@@ -1,6 +1,6 @@
 From the [official website](http://nmap.org/):
 
-	_Nmap (“Network Mapper”) is an open source tool for network exploration and security auditing. It was designed to rapidly scan large networks, although it works fine against single hosts. Nmap uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering, what operating systems (and OS versions) they are running, what type of packet filters/firewalls are in use, and dozens of other characteristics. While Nmap is commonly used for security audits, many systems and network administrators find it useful for routine tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime._
+	*Nmap (“Network Mapper”) is an open source tool for network exploration and security auditing. It was designed to rapidly scan large networks, although it works fine against single hosts. Nmap uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering, what operating systems (and OS versions) they are running, what type of packet filters/firewalls are in use, and dozens of other characteristics. While Nmap is commonly used for security audits, many systems and network administrators find it useful for routine tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime.*
 
 **Warning:** Invoking network scan techniques on systems, hosts or network ranges other than those under the own responsibility is illegal in quite a few jurisdictions. Double-check you scan your own hosts only (see [#List scan](#List_scan)), or re-confirm the approval of the respective owner, before executing a scan!
 
@@ -199,34 +199,34 @@ $ nmap -p -
 
 It has 4 parameters:
 
-*   `--psd-weight-threshold _threshold_`, default value: `21`
+*   `--psd-weight-threshold *threshold*`, default value: `21`
 
 	Total weight of the latest TCP/UDP packets with different destination ports coming from the same host to be treated as port scan sequence.
 
-*   `--psd-delay-threshold _delay_`, default value: `300` (3 seconds)
+*   `--psd-delay-threshold *delay*`, default value: `300` (3 seconds)
 
 	Delay (in hundredths of second) for the packets with different destination ports coming from the same host to be treated as possible port scan subsequence.
 
-*   `--psd-lo-ports-weight _weight_`, default value: `3`
+*   `--psd-lo-ports-weight *weight*`, default value: `3`
 
 	Weight of the packet with privileged (<=1024) destination port.
 
-*   `--psd-hi-ports-weight _weight_`, default value: `1`
+*   `--psd-hi-ports-weight *weight*`, default value: `1`
 
 	Weight of the packet with non-priviliged (>1024) destination port.
 
-The principle behind PSD is simple. If requests from a single IP have gained a value more than _threshold_ in _delay_ seconds, then the IP is classified as a port scanner. In a math expression:
+The principle behind PSD is simple. If requests from a single IP have gained a value more than *threshold* in *delay* seconds, then the IP is classified as a port scanner. In a math expression:
 
 ```
-_lo_ports_weight_ * **REQUESTS_LOW** + _hi_ports_weight_ * **REQUESTS_HIGH** >= _threshold_
+*lo_ports_weight* * **REQUESTS_LOW** + *hi_ports_weight* * **REQUESTS_HIGH** >= *threshold*
 
 ```
 
 where
 
 ```
-**REQUESTS_LOW** = number of requests to priviliged (0 to 1024) ports within last _delay_ seconds
-**REQUESTS_HI** = number of requests to privileged (1024 to 65535) ports within last _delay_ seconds
+**REQUESTS_LOW** = number of requests to priviliged (0 to 1024) ports within last *delay* seconds
+**REQUESTS_HI** = number of requests to privileged (1024 to 65535) ports within last *delay* seconds
 
 ```
 
@@ -247,13 +247,13 @@ $ nmap --scan-delay 3.1 192.168.56.1
 
 Another interesing fact about PSD is that it does not detect a request as a port scan when the `ack` or `rst` flags are set (See the function `is_portscan` in [xt_psd.c](http://sourceforge.net/p/xtables-addons/xtables-addons/ci/master/tree/extensions/xt_psd.c))
 
-Also, if you are port scanning a host and the latter has an HTTP(S) service running on it, nmap will use `Mozilla/5.0 (compatible; Nmap Scripting Engine; [http://nmap.org/book/nse.html](http://nmap.org/book/nse.html))` as default user agent. Your action will thus be easily detected, especially if an administrator or a robot are taking measures if such an user agent appears in the logs. Hopefully, nmap allows us to change that string easily: just pass `-script-args http.useragent="_user agent you want_"`. [Source](http://www.kroosec.com/2012/02/making-nmap-scripting-engine-stealthier.html)
+Also, if you are port scanning a host and the latter has an HTTP(S) service running on it, nmap will use `Mozilla/5.0 (compatible; Nmap Scripting Engine; [http://nmap.org/book/nse.html](http://nmap.org/book/nse.html))` as default user agent. Your action will thus be easily detected, especially if an administrator or a robot are taking measures if such an user agent appears in the logs. Hopefully, nmap allows us to change that string easily: just pass `-script-args http.useragent="*user agent you want*"`. [Source](http://www.kroosec.com/2012/02/making-nmap-scripting-engine-stealthier.html)
 
 ## Tips and Tricks
 
 ### Limiting scan speed
 
-Nmap scans are _fast_. While this is often a desirable feature, it can be counter-productive as well. For example when you want to test your system's firewall without disabling any activated flood detection rules, or when you want to run a long-term test for a specific port/service. The following options specify how fast Nmap sends packets.
+Nmap scans are *fast*. While this is often a desirable feature, it can be counter-productive as well. For example when you want to test your system's firewall without disabling any activated flood detection rules, or when you want to run a long-term test for a specific port/service. The following options specify how fast Nmap sends packets.
 
 To send a packet at most every 3.333 seconds:
 
@@ -276,7 +276,6 @@ For other timing and parallelization options, see `man nmap`.
 Often it is necessary to scan a large number of non-adjuscent addresses. Passing them on the command line is usually not convenient. For this reason Nmap supports **i**nput from a **l**ist file (`-iL`):
 
  `addresses.txt` 
-
 ```
 10.1.1.1 10.1.1.2 10.1.1-10.3
 10.3.1.3 10.3.1.50 10.3.2.55
@@ -362,21 +361,21 @@ Remember that this port number is invalid in RFC standards. However it can be us
 
 Nmap has built-in support for for file output alongside with terminal output:
 
-*   `-oN _filename_`
+*   `-oN *filename*`
 
 	Normal output, same as the terminal output
 
-*   `-oX _filename_`
+*   `-oX *filename*`
 
 	XML output, contains very detailed information about the scan, easy to parse with software
 
-*   `-oG _filename_`
+*   `-oG *filename*`
 
 	Grepable output, deprecated
 
 *   `-oA`
 
-	All of the above combined. Creates files called `_sitename_.nmap`, `_sitename_.xml` and `_sitename_.gnmap` if no filename is specified
+	All of the above combined. Creates files called `*sitename*.nmap`, `*sitename*.xml` and `*sitename*.gnmap` if no filename is specified
 
 For example to output to the terminal, to file and to XML file:
 

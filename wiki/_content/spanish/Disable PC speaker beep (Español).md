@@ -105,7 +105,6 @@ Desplácese hasta beep PC y pulse 'M' para silenciar. Para guardar la configurac
 ```
 
 **Nota:** No todas las tarjetas de sonido muestran el altavoz del PC o un control deslizante del Beep del PC en alsamixer
-
 .
 
 ### En GNOME/Metacity

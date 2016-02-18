@@ -56,7 +56,7 @@ Confirmed working out of the box on the current release (2014.07.03), with 3.15.
 
 ### Cellular 3G Modem
 
-_Specifications required_
+*Specifications required*
 
 ### Graphics Adapter
 
@@ -160,7 +160,7 @@ Don't forget to restart the service after making changes
 
 ```
 
-You can call the functions from the command line with `systemctl _function_`
+You can call the functions from the command line with `systemctl *function*`
 
 Alternatively using a power manager, for example `xfce4-power-manager`, you can control key handling from a GUI.
 
@@ -250,7 +250,6 @@ Install [powertop](https://www.archlinux.org/packages/?name=powertop) which is a
 Enable CPU frequency scaling (P-states) by loading the driver module `acpi-cpufreq`. This is most conveniently done dropping a namesake file in `/etc/modules-load.d`:
 
  `/etc/modules-load.d/acpi-cpufreq.conf` 
-
 ```
 acpi-cpufreq
 
@@ -259,7 +258,6 @@ acpi-cpufreq
 Select the CPU frequency governor by adding the following lines to a systemd tmpfile:
 
  `/etc/tmpfiles.d/local.conf` 
-
 ```
  w /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor - - - - ondemand
  w /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor - - - - ondemand

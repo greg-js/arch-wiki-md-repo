@@ -63,7 +63,7 @@ In general, you may now install Arch as you would on any other system. The Gener
 
 1.  During drive partitioning with `gdisk`, make the first partition on the root drive a 1MB partition of type `ef02 - BIOS boot partition`. Do not format this partition with any filesystem; leave it blank.
 2.  After the rest of the installation, install [grub](https://www.archlinux.org/packages/?name=grub): `# pacman -S grub`.
-3.  Install GRUB to the root drive: `# grub-install --target=i386-pc --recheck /dev/sd_X_`, where `_X_` is the actual drive letter.
+3.  Install GRUB to the root drive: `# grub-install --target=i386-pc --recheck /dev/sd*X*`, where `*X*` is the actual drive letter.
 4.  Run `grub-mkconfig`: `# grub-mkconfig -o /boot/grub/grub.cfg`.
 
 ## Post-installation
@@ -74,7 +74,7 @@ First, you should shut down the VM, open the Settings dialog again, and in the l
 
 ### Shared directories
 
-Files can be shared between the host and guest with very little effort. First, on the host, choose the folder you want to share with the guest, or create it. Open the Properties dialog for the folder (`alt` + `Enter` or right-click and choose "Properties..."). Go to the "Sharing" tab and select "Advanced Sharing...". Activate the "Share this folder" checkbox. By default, the folder will have read-only permissions, meaning the VM can read from the folder but cannot write anything to it. If you'd like to modify these permissions, select "Permissions". Here, you choose which users can access the shared folder, and what permissions they have. In general, you will probably be sharing in both directions and should check "Allow" for both "Change" and "Read". Before exiting the Properties dialog for the shared folder, note its "Network Path", which should be of the form `\\_computer name_\_folder name_`.
+Files can be shared between the host and guest with very little effort. First, on the host, choose the folder you want to share with the guest, or create it. Open the Properties dialog for the folder (`alt` + `Enter` or right-click and choose "Properties..."). Go to the "Sharing" tab and select "Advanced Sharing...". Activate the "Share this folder" checkbox. By default, the folder will have read-only permissions, meaning the VM can read from the folder but cannot write anything to it. If you'd like to modify these permissions, select "Permissions". Here, you choose which users can access the shared folder, and what permissions they have. In general, you will probably be sharing in both directions and should check "Allow" for both "Change" and "Read". Before exiting the Properties dialog for the shared folder, note its "Network Path", which should be of the form `\\*computer name*\*folder name*`.
 
 Next, you need to find the IP address of the host. Exit the Properties dialog, and open Command Prompt or PowerShell. Run `ipconfig`. You should see an entry whose name ends with the name of the virtual switch you created (e.g. `Ethernet adapter vEthernet (New Virtual Switch)`). Under this entry, look for `IPv4 Address` and note it down.
 
@@ -83,17 +83,16 @@ Next, you need to mount the shared folder from Arch. Boot the VM. Once it is run
 In the command to mount the share, replace any backslashes in the "Network Path" from earlier with forward slashes.
 
 ```
-# mount -t cifs [_Network Path with forward slashes_] _mountpoint_ -o user=[_user you wish to authenticate as_],ip=[_host IP noted earlier_]
+# mount -t cifs [*Network Path with forward slashes*] *mountpoint* -o user=[*user you wish to authenticate as*],ip=[*host IP noted earlier*]
 
 ```
 
-You will be prompted for the password for the user you're authenticating as. You can specify the password in the command options via `password=_password_`, but this isn't a good idea in terms of security as the password for the host will now be in your command history file; or if you are running the command from a script, stored in the script indefinitely. Instead, you can use a credentials file, which allows you to specify your username and password in a file with restricted access rights. It can be called anything; for an example, if it were called `.credentials` and stored in your home directory, it would be of the following form:
+You will be prompted for the password for the user you're authenticating as. You can specify the password in the command options via `password=*password*`, but this isn't a good idea in terms of security as the password for the host will now be in your command history file; or if you are running the command from a script, stored in the script indefinitely. Instead, you can use a credentials file, which allows you to specify your username and password in a file with restricted access rights. It can be called anything; for an example, if it were called `.credentials` and stored in your home directory, it would be of the following form:
 
  `~/.credentials` 
-
 ```
-username=_username_
-password=_password_
+username=*username*
+password=*password*
 ```
 
 After creating the file, change the permissions to restrict read access:

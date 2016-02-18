@@ -1,6 +1,6 @@
 From [Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/Mumble_(software) "wikipedia:Mumble (software)"):
 
-	_Mumble is a voice over IP (VoIP) application primarily designed for use by gamers, similar to programs such as TeamSpeak and Ventrilo._
+	*Mumble is a voice over IP (VoIP) application primarily designed for use by gamers, similar to programs such as TeamSpeak and Ventrilo.*
 
 This page goes over installation and configuration of both the client portion of the software (Mumble) and the server portion (Murmur).
 
@@ -83,7 +83,6 @@ Create a self-signed certificate for your server:
 Edit murmur.ini and tell it where your key and cert is:
 
  `/etc/murmur.ini` 
-
 ```
 sslKey=/var/lib/murmur/ssl/voip.example.com.key
 sslCert=/var/lib/murmur/ssl/voip.example.com.crt

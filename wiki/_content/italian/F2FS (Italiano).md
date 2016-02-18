@@ -7,11 +7,11 @@ Per creare una partizione F2FS, [installate](/index.php/Pacman_(Italiano) "Pacma
 Dopo di che date il comando:
 
 ```
-# mkfs.f2fs _/dev/sdxY_
+# mkfs.f2fs */dev/sdxY*
 
 ```
 
-dove _/dev/sdxY_ è il volume da formattare.
+dove */dev/sdxY* è il volume da formattare.
 
 ## Montare una partizione F2FS
 
@@ -36,9 +36,9 @@ Dall'immagine di installazione di Arch Linux 2013.04.01, è possibile installare
 1.  Avviate l'immagine e installate [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
 2.  Caricate il modulo `f2fs` come [descritto](/index.php/F2fs_(Italiano)#Montare_una_partizione_F2FS "F2fs (Italiano)").
 3.  Create la partizione radice formattata in F2FS come [descritto](/index.php/F2fs_(Italiano)#Creare_una_partizione_F2FS "F2fs (Italiano)").
-4.  Create la partizione di avvio (_/boot_) formattata in ext4 (o un altro file system supportato).
+4.  Create la partizione di avvio (*/boot*) formattata in ext4 (o un altro file system supportato).
 5.  Montate, installate e cambiate radice come [descritto](/index.php/Beginners%27_Guide_(Italiano)#Montare_le_partizioni "Beginners' Guide (Italiano)").
-6.  Sul sistema installato aggiungete `f2fs` alla sezione moduli del file `/etc/mkinitcpio.conf` e rimuovete `fsck` dalla sezione hooks perchè F2FS non dispone ancora di un _fsck_.
+6.  Sul sistema installato aggiungete `f2fs` alla sezione moduli del file `/etc/mkinitcpio.conf` e rimuovete `fsck` dalla sezione hooks perchè F2FS non dispone ancora di un *fsck*.
 7.  Rigenerate l'immagine compressa del kernel:
 
 	`# mkinitcpio -p linux`

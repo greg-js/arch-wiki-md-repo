@@ -17,7 +17,7 @@
 
 ## 安装
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [lxqt](https://www.archlinux.org/groups/x86_64/lxqt/) 包组。 你还需要安装一个图标主题。 默认的是 _Oxygen_, 可以从 [oxygen-icons](https://www.archlinux.org/packages/?name=oxygen-icons) 包安装。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [lxqt](https://www.archlinux.org/groups/x86_64/lxqt/) 包组。 你还需要安装一个图标主题。 默认的是 *Oxygen*, 可以从 [oxygen-icons](https://www.archlinux.org/packages/?name=oxygen-icons) 包安装。
 
 你还可以安装以下附加功能包：
 
@@ -58,7 +58,7 @@ exec startlxqt
 
 ### 图形界面登入
 
-在[显示管理器](/index.php/Display_manager "Display manager")的桌面菜单中选择 _LXQt Desktop_.
+在[显示管理器](/index.php/Display_manager "Display manager")的桌面菜单中选择 *LXQt Desktop*.
 
 ## 配置
 
@@ -76,7 +76,7 @@ window_manager=openbox
 改为你所选择的某个[窗口管理器](/index.php/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8 "窗口管理器")：
 
 ```
-window_manager=_你选择的窗口管理器_
+window_manager=*你选择的窗口管理器*
 
 ```
 

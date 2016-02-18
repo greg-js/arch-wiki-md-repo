@@ -24,7 +24,7 @@ With Kernel Mode Setting (KMS), the kernel is now able to set the mode of the vi
 
 ## Installation
 
-At first, note that for _any_ method you use, you should _always_ disable:
+At first, note that for *any* method you use, you should *always* disable:
 
 *   Any `vga=` options in your bootloader as these will conflict with the native resolution enabled by KMS.
 *   Any `video=` lines that enable a framebuffer that conflicts with the driver.
@@ -50,7 +50,7 @@ If you are using a custom EDID file (not applicable for the built-in resolutions
 Rebuild your kernel image (refer to the [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") article for more info):
 
 ```
-# mkinitcpio -p <name of your kernel preset; e.g. _linux_>
+# mkinitcpio -p <name of your kernel preset; e.g. *linux*>
 
 ```
 
@@ -148,7 +148,6 @@ video=DVI-I-1:1024x768@85 video=TV-1:d
 To get the name and current status of connectors, you can use the following shell oneliner:
 
  `$ for p in /sys/class/drm/*/status; do con=${p%/status}; echo -n "${con#*/card?-}: "; cat $p; done` 
-
 ```
 
 DVI-I-1: connected

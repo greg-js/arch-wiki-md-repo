@@ -41,18 +41,17 @@ Although there is no firm rule has been set, it is common thinking that a new dr
 
 ## Comparisons with Other Programs
 
-Typical recommended practice for testing a storage device for bad sectors is to use the manufacturer's testing program. Most manufacturers have programs that do this. The main reasoning for this is that manufacturers usually have their standards built into the test programs that will tell you if the drive needs to be replaced or not. The caveat here being is that some manufacturers testing programs do not print full test results and allow a certain number of bad sectors saying only if they pass or not. Manufacturer programs, however, are generally quicker than _badblocks_ sometimes a fair amount so.
+Typical recommended practice for testing a storage device for bad sectors is to use the manufacturer's testing program. Most manufacturers have programs that do this. The main reasoning for this is that manufacturers usually have their standards built into the test programs that will tell you if the drive needs to be replaced or not. The caveat here being is that some manufacturers testing programs do not print full test results and allow a certain number of bad sectors saying only if they pass or not. Manufacturer programs, however, are generally quicker than *badblocks* sometimes a fair amount so.
 
 ## Testing for Bad Sectors
 
-To test for bad sectors in Linux the program _badblocks_ is typically used. _badblocks_ has several different modes to be able to detect bad sectors.
+To test for bad sectors in Linux the program *badblocks* is typically used. *badblocks* has several different modes to be able to detect bad sectors.
 
 ### read-write Test (warning:destructive)
 
 This test is primarily for testing new drives and is a read-write test. As the pattern is written to every accessible block the device effectively gets [wiped](/index.php/Securely_wipe_disk "Securely wipe disk"). Default is an extensive test with four passes using four different patterns: 0xaa (10101010), 0x55 (01010101), 0xff (11111111) and 0x00 (00000000). For some devices this will take a couple of days to complete.
 
  `# badblocks -wsv /dev/<device>` 
-
 ```
 Checking for bad blocks in read-write mode
 From block 0 to 488386583
@@ -104,7 +103,6 @@ Additional options you might consider:
 Badblocks can be made to repeatedly write a single "random pattern" with the `-t random` option.
 
  `# badblocks -wsv -t random /dev/<device>` 
-
 ```
 Checking for bad blocks in read-write mode
 From block 0 to 488386583
@@ -120,7 +118,6 @@ Pass completed, 0 bad blocks found. (0/0/0 errors)
 This test is designed for devices with data already on them. A non-destructive read-write test makes a backup of the original content of a sector before testing with a single random pattern and then restoring the content from the backup. This is a single pass test and is useful as a general maintenance test.
 
  `# badblocks -nsv /dev/<device>` 
-
 ```
 Checking for bad blocks in non-destructive read-write mode
 From block 0 to 488386583
@@ -137,7 +134,7 @@ To not use bad sectors they have to be known by the filesystem.
 
 ### During Filesystem Check
 
-Incorporating bad sectors can be done using the filesystem check utility (`fsck`). `fsck` can be told to use _badblocks_ during a check. To do a **read-write** (non-destructive) test and have the bad sectors made known to the filesystem run:
+Incorporating bad sectors can be done using the filesystem check utility (`fsck`). `fsck` can be told to use *badblocks* during a check. To do a **read-write** (non-destructive) test and have the bad sectors made known to the filesystem run:
 
 ```
 # fsck -vcck /dev/<device-PARTITION>
@@ -162,7 +159,6 @@ If badblocks is run without the `-o` option bad sectors will only be printed to 
 Example output for read errors in the beginning of the disk:
 
  `# badblocks -wsv /dev/<drive>` 
-
 ```
 [...]
 Testing with pattern **0xff**: done                                                 
@@ -186,7 +182,6 @@ Pass completed, 527405 bad blocks found. (0/0/527405 errors)
 For comfortably passing badblocks error output to the filesystem it has to be written to a file.
 
  `# badblocks -wsv **-o** /root/<badblocks.txt> /dev/<device>` 
-
 ```
 Checking for bad blocks in read-write mode
 From block 0 to 488386583
@@ -216,7 +211,7 @@ first find the file systems **block size**. For example for ext# filesystems:
 
 ```
 
-feed this to _badblocks_:
+feed this to *badblocks*:
 
 ```
 # badblocks -b <block size>

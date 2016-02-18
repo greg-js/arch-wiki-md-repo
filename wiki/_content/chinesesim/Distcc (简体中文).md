@@ -21,7 +21,7 @@ Distcc 是一个将 C、C++、Objective C 或 Objective C++ 等程序的编译�
 
 	distcc daemon
 
-	运行着distcc的计算机与服务器分布式的编译代码. daemon编译一部分代源代码并发送另一部分源代码给_DISTCC_HOSTS_中定义的主机。
+	运行着distcc的计算机与服务器分布式的编译代码. daemon编译一部分代源代码并发送另一部分源代码给*DISTCC_HOSTS*中定义的主机。
 
 	distcc server
 
@@ -54,7 +54,7 @@ DISTCC_ARGS="--user nobody --allow 192.168.0.0/24"
 在daemon上, 编辑`/etc/makepkg.conf`
 
 1.  确保 BUILDENV 中的distcc没有被禁用(前面没有感叹号)
-2.  编辑_DISTCC_HOSTS_ ，加入可以使用的编译服务器的 IP 地址 + 反斜杠 + 线程数，不同 IP 地址用空格隔开，按照处理器性能排列
+2.  编辑*DISTCC_HOSTS* ，加入可以使用的编译服务器的 IP 地址 + 反斜杠 + 线程数，不同 IP 地址用空格隔开，按照处理器性能排列
 3.  修改 MAKEFLAGS 中的 N 为所有使用线程的和。在下面的示例为 5+3+3=11\. 如果超过这个值，超出的线程将会被 distcc阻塞。
 
 **Note:** 在单机编译时一般定义为 CPU 数加一，仅在单机编译时才是对的，这里不应该使用这个方法。
@@ -148,7 +148,7 @@ $ distccmon-text 2
 
 ## 为每个编译任务使用distcc
 
-如果你在pacman之外使用distcc，那么你需要做的就是把你加进_/etc/makepkg.conf_ 文件中的"export ..."加到"/etc/profile"里：_/etc/makepkg.conf_ 里的"export"只在"makepkg"或"makeworld"执行的时间读取，而_/etc/profile_ 会在登录的时候执行。
+如果你在pacman之外使用distcc，那么你需要做的就是把你加进*/etc/makepkg.conf* 文件中的"export ..."加到"/etc/profile"里：*/etc/makepkg.conf* 里的"export"只在"makepkg"或"makeworld"执行的时间读取，而*/etc/profile* 会在登录的时候执行。
 
 ## 技巧
 
@@ -156,7 +156,7 @@ $ distccmon-text 2
 
 #### 修改 $HOME/.distcc 位置
 
-distcc 默认会在 `$HOME/.distcc` 保存中间结果。在内存 /tmp 中创建 _.distcc_ 并链接到 $HOME 可以避免磁盘读写。
+distcc 默认会在 `$HOME/.distcc` 保存中间结果。在内存 /tmp 中创建 *.distcc* 并链接到 $HOME 可以避免磁盘读写。
 
 ```
 $ mv $HOME/.distcc /tmp
@@ -167,7 +167,6 @@ $ ln -s /tmp/.distcc $HOME/.distcc
 只需要在重启时让 Systemd 重新创建目录即可，创建文件：
 
  ` /etc/tmpfiles.d/tmpfs-create.conf ` 
-
 ```
 d /tmp/.distcc 0666 nobody nobody -
 

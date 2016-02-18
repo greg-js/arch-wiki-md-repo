@@ -88,7 +88,6 @@ User http
 Group http
 </IfModule>
 ```
-
 Ora non dimenticatevi di riavviare Apache: `/opt/lampp/lampp restart` 
 
 Questa procedura vi permetterà di "hostare" i vostri files all'interno della home o di una qualsiasi cartella.

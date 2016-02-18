@@ -153,7 +153,7 @@ This is also how you would manually sync your system.
 
 ### Increasing time shift
 
-Starting _openntpd_ in the background could lead to synchronization errors between the actual time and the time stored on your computer. If you recognize an increasing time difference between your desktop clock and the actual time, try to start the _openntpd_ daemon normal and not in the background.
+Starting *openntpd* in the background could lead to synchronization errors between the actual time and the time stored on your computer. If you recognize an increasing time difference between your desktop clock and the actual time, try to start the *openntpd* daemon normal and not in the background.
 
 ### Initialization Failure
 

@@ -32,7 +32,7 @@ Finally, [start](/index.php/Start "Start") the openssh daemon with `sshd.service
 On the local machine, connect to the target machine via SSH with the following command:
 
 ```
-$ ssh root@_ip.address.of.target_
+$ ssh root@*ip.address.of.target*
 
 ```
 

@@ -4,7 +4,7 @@
 
 SSH se suele utilizar para iniciar una sesión en una máquina remota, donde poder ejecutar órdenes, pero también permite la tunelización, el reenvío de puertos TCP de forma arbitraria y de conexiones X11; también se pueden realizar transferencias de archivos usando protocolos SFTP o SCP asociados.
 
-Un servidor SSH, por defecto, escucha el puerto TCP 22\. Un programa cliente de SSH es utilizado, generalmente, para establecer conexiones a un demonio _sshd_ que acepta conexiones remotas. Ambos se encuentran comúnmente en los sistemas operativos más modernos, incluyendo Mac OS X, Linux, Solaris y OpenVMS. Existen versiones propietarias, freeware y open-source de varios niveles de complejidad y exhaustividad.
+Un servidor SSH, por defecto, escucha el puerto TCP 22\. Un programa cliente de SSH es utilizado, generalmente, para establecer conexiones a un demonio *sshd* que acepta conexiones remotas. Ambos se encuentran comúnmente en los sistemas operativos más modernos, incluyendo Mac OS X, Linux, Solaris y OpenVMS. Existen versiones propietarias, freeware y open-source de varios niveles de complejidad y exhaustividad.
 
 (Source: [Wikipedia:es:Secure Shell](https://en.wikipedia.org/wiki/es:Secure_Shell "wikipedia:es:Secure Shell"))
 
@@ -190,7 +190,6 @@ Sudo proporciona los derechos de root de forma selectiva para las acciones que r
 SSH se puede configurar para negar las conexiones remotas con el usuario root, editando la sección «Authentication» en `/etc/ssh/sshd_config`. Basta con cambiar `#PermitRootLogin yes` a `no` y descomentar la línea:
 
  `/etc/ssh/sshd_config` 
-
 ```
 PermitRootLogin no
 ...
@@ -239,7 +238,7 @@ Aparte de OpenSSH, hay otros muchos [clientes](https://en.wikipedia.org/wiki/Com
 
 ### Dropbear
 
-[Dropbear](https://en.wikipedia.org/wiki/Dropbear_(software) "wikipedia:Dropbear (software)") es un cliente SSH-2 y un servidor. El paquete [dropbear](https://www.archlinux.org/packages/?name=dropbear) está disponible en [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)").
+[Dropbear](https://en.wikipedia.org/wiki/Dropbear_(software) es un cliente SSH-2 y un servidor. El paquete [dropbear](https://www.archlinux.org/packages/?name=dropbear) está disponible en [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)").
 
 El cliente ssh en línea de órdenes se llama dbclient.
 
@@ -262,21 +261,21 @@ Este tipo de conexión es muy útil para usuarios de equipos portátiles conecta
 Lo único que tienes que hacer es ejecutar este comando en tu terminal favorita para iniciar la conexión:
 
 ```
-$ ssh -ND 4711 _user_@_host_
+$ ssh -ND 4711 *user*@*host*
 
 ```
 
-donde `_user_` es tu nombre de usuario en el servidor SSH que se está ejecutando en el `_host_`. Preguntará por tu contraseña, y luego ¡estarás conectado! El parámetro `N` desactiva el prompt interactivo, y el `D` especifica el puerto local en el cual escuchar (puedes elegir el numero de puerto que quieras). El parámetro `T` desactiva la asignación pseudo-tty.
+donde `*user*` es tu nombre de usuario en el servidor SSH que se está ejecutando en el `*host*`. Preguntará por tu contraseña, y luego ¡estarás conectado! El parámetro `N` desactiva el prompt interactivo, y el `D` especifica el puerto local en el cual escuchar (puedes elegir el numero de puerto que quieras). El parámetro `T` desactiva la asignación pseudo-tty.
 
-Le puede interesar añadir el parámetro _verbose_ (`-v`), ya que la salida le permite comprobar que está realmente conectado.
+Le puede interesar añadir el parámetro *verbose* (`-v`), ya que la salida le permite comprobar que está realmente conectado.
 
 #### Paso 2: Configurar tu navegador (u otros programas)
 
 El paso anterior es inútil si no configura el navegador web (u otros programas) para su uso con el túnel que acaba de crear. Debido a que la versión actual de SSH soporta SOCKS4 y SOCKS5, se puede usar cualquiera de ellos.
 
-*   Para Firefox: _Editar → Preferencias → Avanzadas → Red → Conexión → Configuración_:
+*   Para Firefox: *Editar → Preferencias → Avanzadas → Red → Conexión → Configuración*:
 
-	Marca la casilla _"Configuración manual de proxy"_ , y escribe `localhost` en el campo _"servidor SOCKS"_ , y luego escribe tu número de puerto en el siguiente campo de texto (`4711` en el siguiente ejemplo).
+	Marca la casilla *"Configuración manual de proxy"* , y escribe `localhost` en el campo *"servidor SOCKS"* , y luego escribe tu número de puerto en el siguiente campo de texto (`4711` en el siguiente ejemplo).
 
 Firefox no hace automáticamente las peticiones DNS a través del túnel socks. Este potencial problema de privacidad puede ser mitigado por los siguientes pasos:
 
@@ -320,7 +319,7 @@ Listo. ¡Disfruta tu túnel seguro!
 
 ### Redireccionar X11
 
-_X11 forwarding_ es un mecanismo que permite a las interfaces gráficas de los programas de X11, que se ejecutan en un sistema remoto, mostrarse en una máquina cliente local. Para reenviar X11 al equipo remoto, este no necesita tener un sistema completo X11 instalado, sin embargo, necesita, al menos, tener _xauth_ instalado. _xauth_ es una utilidad que mantiene las configuraciones de `Xauthority` utilizadas por el servidor y el cliente para la autenticación de la sesión de X11 ([fuente](http://xmodulo.com/2012/11/how-to-enable-x11-forwarding-using-ssh.html)).
+*X11 forwarding* es un mecanismo que permite a las interfaces gráficas de los programas de X11, que se ejecutan en un sistema remoto, mostrarse en una máquina cliente local. Para reenviar X11 al equipo remoto, este no necesita tener un sistema completo X11 instalado, sin embargo, necesita, al menos, tener *xauth* instalado. *xauth* es una utilidad que mantiene las configuraciones de `Xauthority` utilizadas por el servidor y el cliente para la autenticación de la sesión de X11 ([fuente](http://xmodulo.com/2012/11/how-to-enable-x11-forwarding-using-ssh.html)).
 
 **Advertencia:** Redirigir X11 tiene importantes implicaciones de seguridad que aconsejan la lectura de, al menos, las secciones pertinentes de `ssh`, `sshd_config` y `ssh_config` de las páginas del manual. Vea también [esta breve nota](https://security.stackexchange.com/questions/14815/security-concerns-with-x11-forwarding).
 
@@ -330,27 +329,27 @@ En el sistema remoto:
 
 *   [instale](/index.php/Pacman_(Espa%C3%B1ol)#Instalar_paquetes_espec.C3.ADficos "Pacman (Español)") [xorg-xauth](https://www.archlinux.org/packages/?name=xorg-xauth) y [xorg-xhost](https://www.archlinux.org/packages/?name=xorg-xhost) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
 *   en `/etc/ssh/ssh**d**_config`:
-    *   verifique que las opciones `AllowTcpForwarding` y `X11UseLocalhost` están ajustadas a _yes_, y que `X11DisplayOffset` está ajustado a _10_ (esos son los valores por defecto si no se han cambiado, ver `man sshd_config`)
-    *   ajuste `X11Forwarding` a _yes_
-*   a continuación, [reinicie](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") el [demonio _sshd_](#Gesti.C3.B3n_del_Demonio_SSHD).
+    *   verifique que las opciones `AllowTcpForwarding` y `X11UseLocalhost` están ajustadas a *yes*, y que `X11DisplayOffset` está ajustado a *10* (esos son los valores por defecto si no se han cambiado, ver `man sshd_config`)
+    *   ajuste `X11Forwarding` a *yes*
+*   a continuación, [reinicie](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") el [demonio *sshd*](#Gesti.C3.B3n_del_Demonio_SSHD).
 
-En el sistema cliente, active la opción `ForwardX11`, bien especificando el parámetro `-X` en la línea de órdenes para las conexiones ocasionales, bien ajustando `ForwardX11` a _yes_ en el [archivo de configuración del cliente de openSSH](#Cliente).
+En el sistema cliente, active la opción `ForwardX11`, bien especificando el parámetro `-X` en la línea de órdenes para las conexiones ocasionales, bien ajustando `ForwardX11` a *yes* en el [archivo de configuración del cliente de openSSH](#Cliente).
 
 **Sugerencia:** Puede activar la opción `ForwardX11Trusted` (`-Y` en la línea de órdenes) si la interfaz gráfica está llegando mal o recibe errores; esto evitará que las redirecciones de X11 vengan sujetas a los controles de la [extensión de SEGURIDAD de X11](http://www.x.org/wiki/Development/Documentation/Security/). Asegúrese de haber entendido [la advertencia](#Redireccionar_X11) del comienzo de esta sección, si lo hace.
 
 #### Utilización
 
-[Inicie sesión en el equipo remoto](#Conect.C3.A1ndose_al_servidor) como de costumbre, especificando el parámetro `-X` si _ForwardX11_ no se ha activado en el archivo de configuración del cliente:
+[Inicie sesión en el equipo remoto](#Conect.C3.A1ndose_al_servidor) como de costumbre, especificando el parámetro `-X` si *ForwardX11* no se ha activado en el archivo de configuración del cliente:
 
 ```
-$ ssh -X _user@host_
+$ ssh -X *user@host*
 
 ```
 
-Si recibe errores tratando de ejecutar aplicaciones gráficas, pruebe _ForwardX11Trusted_ en su lugar:
+Si recibe errores tratando de ejecutar aplicaciones gráficas, pruebe *ForwardX11Trusted* en su lugar:
 
 ```
-$ ssh -Y _user@host_
+$ ssh -Y *user@host*
 
 ```
 
@@ -386,8 +385,8 @@ $ firefox -no-remote
 
 Si recibe «X11 forwarding request failed on channel 0» cuando se conecta (y el archivo `/var/log/errors.log` del servidor muestra «Failed to allocate internet-domain X11 display socket»), asegúrese de que el paquete [xorg-xauth](https://www.archlinux.org/packages/?name=xorg-xauth) está instalado. Si su instalación no funciona, pruebe cualquiera de los dos opciones siguientes:
 
-*   active la opción `AddressFamily any` en `ssh**d**_config` en el _server_, o
-*   ajuste la opción `AddressFamily` en `ssh**d**_config` en el _server_ a inet.
+*   active la opción `AddressFamily any` en `ssh**d**_config` en el *server*, o
+*   ajuste la opción `AddressFamily` en `ssh**d**_config` en el *server* a inet.
 
 Si establece «inet» puede arreglar los problemas con los clientes de Ubuntu en IPv4.
 
@@ -435,7 +434,6 @@ Tanto el reenvío local como el remoto se pueden utilizar para ofrecer una «pue
 El demonio SSH normalmente escucha en el puerto 22\. Sin embargo, es una práctica común para muchos puntos de acceso público a Internet bloquear todo el tráfico que no pase por los puertos HTTP/S normales (80 y 443, respectivamente), por lo que, efectivamente, bloquean las conexiones SSH. La solución inmediata para esto es tener listado adicionalmente`sshd` en uno de los puertos de la lista blanca:
 
  `/etc/ssh/sshd_config` 
-
 ```
 Port 22
 Port 443
@@ -465,7 +463,7 @@ Compression yes
 
 ```
 
-**Advertencia:** `man ssh` establece que «_La compresión es deseable en las líneas de módem y otras conexiones lentas, pero ralentizará las cosas en redes rápidas_». Este consejo podría ser contraproducente en función de su configuración de red.
+**Advertencia:** `man ssh` establece que «*La compresión es deseable en las líneas de módem y otras conexiones lentas, pero ralentizará las cosas en redes rápidas*». Este consejo podría ser contraproducente en función de su configuración de red.
 
 El tiempo de inicio de sesión puede ser acortado usando el sufijo `-4`,que saltea la búsqueda IPv6\. Esto puede hacerse permanente añadiendo esta línea bajo el host correcto en `/etc/ssh/ssh_config`:
 
@@ -521,7 +519,6 @@ ClientAliveInterval 120
 Cada vez que desee conectarse a un servidor ssh, por lo general, tiene que escribir, al menos, su dirección y el nombre de usuario. Para ahorrarse tener que reescribirlo, puede guardar los datos de los servidores a los que se conecta regularmente, utilizando el archivo personal `~/.ssh/config` o el global del sistema `/etc/ssh/ssh_config`, como se muestra en el siguiente ejemplo:
 
  `~/.ssh/config` 
-
 ```
 Host myserver
     HostName 123.123.123.123
@@ -673,7 +670,6 @@ Esta es una primera aproximación a la solución de problemas con una lista de c
 La conexión SSH se bloquea después de apagar o reiniciar si systemd detiene la conexión de red antes que sshd. Para solucionar este problema, comente y cambie la declaración `After`:
 
  `/usr/lib/systemd/system/systemd-user-sessions.service` 
-
 ```
 #After=remote-fs.target
 After=network.target
@@ -827,7 +823,7 @@ Una solución con más dedicación consiste en transferir el archivo terminfo de
 
 Ahora copie el archivo terminfo de su terminal en el nuevo directorio. Reemplace `rxvt-unicode-256color` con el terminal de su cliente en la siguiente orden y `ssh-server` con el usuario y dirección del servidor correspondiente.
 
-`$ scp /usr/share/terminfo/r/_rxvt-unicode-256color_ ssh-server:~/.terminfo/r/`
+`$ scp /usr/share/terminfo/r/*rxvt-unicode-256color* ssh-server:~/.terminfo/r/`
 
 Después de salir y entrar en el servidor ssh el problema debe haber sido corregido.
 

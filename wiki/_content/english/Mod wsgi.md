@@ -61,7 +61,6 @@ Add this line in Apache configuration file:
 Create a test file:
 
  `/srv/http/wsgi_app.py` 
-
 ```
 #-*- coding: utf-8 -*-
 def wsgi_app(environ, start_response):

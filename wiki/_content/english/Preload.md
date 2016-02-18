@@ -13,7 +13,7 @@ Preloading is the action of putting and keeping target files into the RAM. The b
 [gopreload-git](https://aur.archlinux.org/packages/gopreload-git/) is a small daemon created in the [Gentoo forum](https://forums.gentoo.org/viewtopic-t-622085-highlight-preload.html). To use it, first run this command in a terminal for each program you want to preload at boot:
 
 ```
-# gopreload-prepare _program_
+# gopreload-prepare *program*
 
 ```
 
@@ -27,7 +27,7 @@ For regular users, take ownership of `/usr/share/gopreload/enabled` and `/usr/sh
 and then gopreload each program you want to preload:
 
 ```
-$ gopreload-prepare _program_
+$ gopreload-prepare *program*
 
 ```
 
@@ -37,7 +37,7 @@ To disable the loading of a program, remove the appropriate list in `/usr/share/
 
 ## Preload
 
-**preload** is a program written by Behdad Esfahbod which runs as a [daemon](/index.php/Daemon "Daemon") and records statistics about usage of programs using Markov chains; files of more frequently-used programs are, during a computer's spare time, loaded into memory. This results in faster startup times as less data needs to be fetched from disk. _preload_ is often paired with [prelink](/index.php/Prelink "Prelink").
+**preload** is a program written by Behdad Esfahbod which runs as a [daemon](/index.php/Daemon "Daemon") and records statistics about usage of programs using Markov chains; files of more frequently-used programs are, during a computer's spare time, loaded into memory. This results in faster startup times as less data needs to be fetched from disk. *preload* is often paired with [prelink](/index.php/Prelink "Prelink").
 
 ### Installation
 

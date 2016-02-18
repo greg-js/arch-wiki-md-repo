@@ -53,7 +53,7 @@
     *   [7.4 在引导菜单中编辑 GRUB 条目](#.E5.9C.A8.E5.BC.95.E5.AF.BC.E8.8F.9C.E5.8D.95.E4.B8.AD.E7.BC.96.E8.BE.91_GRUB_.E6.9D.A1.E7.9B.AE)
     *   [7.5 device.map error](#device.map_error)
     *   [7.6 KDE 重启后下拉菜单失效](#KDE_.E9.87.8D.E5.90.AF.E5.90.8E.E4.B8.8B.E6.8B.89.E8.8F.9C.E5.8D.95.E5.A4.B1.E6.95.88)
-    *   [7.7 GRUB 无法找到或安装到 virtio _/dev/vd*_ 或其他非 BIOS 设备](#GRUB_.E6.97.A0.E6.B3.95.E6.89.BE.E5.88.B0.E6.88.96.E5.AE.89.E8.A3.85.E5.88.B0_virtio_.2Fdev.2Fvd.2A_.E6.88.96.E5.85.B6.E4.BB.96.E9.9D.9E_BIOS_.E8.AE.BE.E5.A4.87)
+    *   [7.7 GRUB 无法找到或安装到 virtio */dev/vd** 或其他非 BIOS 设备](#GRUB_.E6.97.A0.E6.B3.95.E6.89.BE.E5.88.B0.E6.88.96.E5.AE.89.E8.A3.85.E5.88.B0_virtio_.2Fdev.2Fvd.2A_.E6.88.96.E5.85.B6.E4.BB.96.E9.9D.9E_BIOS_.E8.AE.BE.E5.A4.87)
 *   [8 另见](#.E5.8F.A6.E8.A7.81)
 
 ## 安装
@@ -79,7 +79,7 @@ GRUB legacy 不支持 [GPT](/index.php/GUID_Partition_Table "GUID Partition Tabl
 ### 区别
 
 *   GRUB Legacy 和 GRUB 的命令之间有许多区别。执行命令之前请学习 [GRUB commands](https://www.gnu.org/software/grub/manual/grub.html#Commands) (例如 "find" 被替换为 "search").
-*   GRUB 现在是_模块化_的并再也不需要 "stage 1.5". 因此，引导器本身受到限制 -- 若想扩展功能必须加载模块 (例如为了添加 [LVM](/index.php/LVM "LVM") 或 RAID 支持).
+*   GRUB 现在是*模块化*的并再也不需要 "stage 1.5". 因此，引导器本身受到限制 -- 若想扩展功能必须加载模块 (例如为了添加 [LVM](/index.php/LVM "LVM") 或 RAID 支持).
 *   GRUB Legacy 和 GRUB 显示的设备名不同。分区从 1 而不是 0 开始计数，但驱动器依然从 0 开始，并添加了分区表前缀。例如，`/dev/sda1` 会显示为 `(hd0,msdos1)` (对于 MBR) 或 `(hd0,gpt1)` (对于 GPT).
 *   GRUB 显著比 GRUB legacy 大 (占用 `/boot` ~13 MB ). 如果你从单独的 `/boot` 分区启动并且它小于 32 MB, 你就会碰到硬盘空间问题，pacman 不会安装新的内核。
 
@@ -92,17 +92,17 @@ GRUB legacy 不支持 [GPT](/index.php/GUID_Partition_Table "GUID Partition Tabl
 
 ```
 
-备份含有引导代码和分区表的 MBR (把 `/dev/sd_X_` 替换为你的真实路径):
+备份含有引导代码和分区表的 MBR (把 `/dev/sd*X*` 替换为你的真实路径):
 
 ```
-# dd if=/dev/sd_X_ of=/path/to/backup/mbr_backup bs=512 count=1
+# dd if=/dev/sd*X* of=/path/to/backup/mbr_backup bs=512 count=1
 
 ```
 
 MBR 只有 446B 包含引导代码，接下来的 64B 包含分区表。如果你不想在恢复时覆盖分区表，我们强烈建议只备份 MBR 引导代码:
 
 ```
-# dd if=/dev/sd_X_ of=/path/to/backup/bootcode_backup bs=446 count=1
+# dd if=/dev/sd*X* of=/path/to/backup/bootcode_backup bs=446 count=1
 
 ```
 
@@ -122,7 +122,6 @@ MBR 只有 446B 包含引导代码，接下来的 64B 包含分区表。如果�
 例如:
 
  `/boot/grub/menu.lst` 
-
 ```
 default=0
 timeout=5
@@ -138,9 +137,7 @@ kernel /vmlinuz-linux root=/dev/sda2 ro
 initrd /initramfs-linux-fallback.img
 
 ```
-
  `/boot/grub/grub.cfg` 
-
 ```
 set default='0'; if [ x"$default" = xsaved ]; then load_env; set default="$saved_entry"; fi
 set timeout=5
@@ -283,14 +280,14 @@ GRUB 必须被告知它的文件位于文件系统的位置。因为可能有多
 
 ```
 
-下面的例子适用于_没有_独立 `/boot` 分区的系统。此时 `/boot` 只是 `/` 下的一个目录:
+下面的例子适用于*没有*独立 `/boot` 分区的系统。此时 `/boot` 只是 `/` 下的一个目录:
 
 ```
 grub> find /boot/grub/stage1
 
 ```
 
-下面的例子适用于_有_独立的 `/boot` 分区的系统:
+下面的例子适用于*有*独立的 `/boot` 分区的系统:
 
 ```
 grub> find /grub/stage1
@@ -308,7 +305,6 @@ GRUB 会找到这个文件，然后输出 `stage1` 文件的位置。例如:
 添加以下内容到你的 `/boot/grub/menu.lst` 末尾 (假设你的 Windows 分区是第一个设备的第一个分区):
 
  `/boot/grub/menu.lst` 
-
 ```
  title Windows
  rootnoverify (hd0,0)
@@ -325,7 +321,6 @@ GRUB 会找到这个文件，然后输出 `stage1` 文件的位置。例如:
 如果 Windows 位于另一块硬盘，需要使用 map 命令。这会欺骗你的 Windows 安装程序，让它以为自己在主硬盘上。假设你的 Windows 分区是在第二块硬盘上的第一个分区:
 
  `/boot/grub/menu.lst` 
-
 ```
  title Windows
  map (hd0) (hd1)
@@ -343,7 +338,6 @@ GRUB 会找到这个文件，然后输出 `stage1` 文件的位置。例如:
 和Arch linux的加载方式一样。例如:
 
  `/boot/grub/menu.lst` 
-
 ```
  title Other Linux
  root (hd0,2)
@@ -410,7 +404,6 @@ chainloader +1
 如果其他 Linux 发行版用 GRUB2 (如：Ubuntu 9.10或者更高版本)，而且你在它的/分区安装了启动装载程序, 你可以添加如下条目到你的 `/boot/grub/menu.lst`:
 
  `/boot/grub/menu.lst` 
-
 ```
  # other Linux using GRUB2
  title Ubuntu
@@ -438,12 +431,12 @@ chainloader +1
 
 ### 安装 GRUB 的常识
 
-GRUB 有可以一个单独的介质安装(例如:一张 LiveCD),或者直接从运行着的 Arch 中安装。GRUB 启动引导器_很少_需要重新安装，当遇到如下情况时_不_需要安装:
+GRUB 有可以一个单独的介质安装(例如:一张 LiveCD),或者直接从运行着的 Arch 中安装。GRUB 启动引导器*很少*需要重新安装，当遇到如下情况时*不*需要安装:
 
 *   更新了配置文件。
 *   升级了软件包 [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/).
 
-遇到如下请况时_需要_安装:
+遇到如下请况时*需要*安装:
 
 *   引导器还没有安装。
 *   其他的操作系统覆盖了 Linux 的引导器。
@@ -566,7 +559,7 @@ kernel /vmlinuz-linux root=/dev/sda1 ro **vga=0x0365**
 
 ```
 
-**注意:** _vbetest_ 所给出的 VESA 模式我们要加上512才能在 kernel 选项里使用。_hwinfo_ 直接给出了选项需要的值。
+**注意:** *vbetest* 所给出的 VESA 模式我们要加上512才能在 kernel 选项里使用。*hwinfo* 直接给出了选项需要的值。
 
 #### vbetest
 
@@ -606,7 +599,7 @@ kernel /vmlinuz-linux root=/dev/sda1 ro **vga=869**
 如果你偶尔会调整 (或准备去调整) 分区大小你可以考虑按盘符给你的分区/驱动器命名。如下命名 ext2, ext3, ext4 分区:
 
 ```
-e2label _/dev/drive|partition_ label
+e2label */dev/drive|partition* label
 
 ```
 
@@ -622,14 +615,14 @@ kernel /boot/vmlinuz-linux root=/dev/disk/by-label/Arch_Linux ro
 可使用 `blkid` 或 `ls -l /dev/disk/by-uuid` 来获取分区的 [UUID](/index.php/Persistent_block_device_naming#by-uuid "Persistent block device naming") (Universally Unique IDentifier, 通用唯一标识符). 在 `menu.lst` 里如下设置:
 
 ```
-kernel /boot/vmlinuz-linux root=/dev/disk/by-uuid/_uuid_number_
+kernel /boot/vmlinuz-linux root=/dev/disk/by-uuid/*uuid_number*
 
 ```
 
 或:
 
 ```
-kernel /boot/vmlinuz-linux root=UUID=_uuid_number_
+kernel /boot/vmlinuz-linux root=UUID=*uuid_number*
 
 ```
 
@@ -653,7 +646,6 @@ kernel /boot/vmlinuz-linux root=UUID=_uuid_number_
 首先选择一个你记得住的密码并加密:
 
  `# grub-md5-crypt` 
-
 ```
  Password:
  Retype password:
@@ -900,7 +892,7 @@ default saved
 
 ```
 
-### GRUB 无法找到或安装到 virtio _/dev/vd*_ 或其他非 BIOS 设备
+### GRUB 无法找到或安装到 virtio */dev/vd** 或其他非 BIOS 设备
 
 我曾经在把 virtio 设备作为硬件设备的 KVM 虚拟机里的 Arch Linux 上安装 GRUB 时碰到了麻烦。为了安装 GRUB, 尝试了以下方案: 按 `Ctrl+Alt+F2` 或其他按键进入虚拟终端。 假设你的根文件系统挂载到 `/mnt`，boot 挂载或存储到 `/mnt/boot`.
 

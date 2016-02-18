@@ -17,7 +17,6 @@ This article explains how to create a transparent Squid proxy server using mogri
 Create `flip.pl` and place it in your `/usr/local/bin` folder
 
  `/usr/local/bin/flip.pl` 
-
 ```
 #!/usr/bin/perl
 $|=1;
@@ -30,22 +29,26 @@ while (<>) {
                $url = $1;
                system("/usr/bin/wget", "-q", "-O","/srv/http/images/$pid-$count.jpg", "$url");
                system("/usr/bin/mogrify", "-flip","/srv/http/images/$pid-$count.jpg");
-               print "http://127.0.0.1/images/$pid-$count.jpg\n";
+               print "http://127.0.0.1/images/$pid-$count.jpg
+";
        }
        elsif ($_ =~ /(.*\.gif)/i) {
                $url = $1;
                system("/usr/bin/wget", "-q", "-O","/srv/http/images/$pid-$count.gif", "$url");
                system("/usr/bin/mogrify", "-flip","/srv/http/images/$pid-$count.gif");
-               print "http://127.0.0.1/images/$pid-$count.gif\n";
+               print "http://127.0.0.1/images/$pid-$count.gif
+";
        }
        elsif ($_ =~ /(.*\.png)/i) {
                $url = $1;
                system("/usr/bin/wget", "-q", "-O","/srv/http/images/$pid-$count.png", "$url");
                system("/usr/bin/mogrify", "-flip","/srv/http/images/$pid-$count.png");
-               print "http://127.0.0.1/images/$pid-$count.png\n";
+               print "http://127.0.0.1/images/$pid-$count.png
+";
        }
        else {
-               print "$splitted[0]\n";
+               print "$splitted[0]
+";
        }
        $count++;
 }
@@ -63,7 +66,6 @@ Next, while not necessary, does clean up the Squid config file a lot making it e
 Now, edit your squid.conf file and append this to the bottom
 
  `squid.conf` 
-
 ```
 url_rewrite_program /usr/local/bin/flip.pl
 
@@ -75,7 +77,7 @@ Also find the line for `http_port` and make it now read
 
 Finally, we have to create the folders for the images to be flipped in and set their permissions
 
-_The directory where the images are to be stored must be owned by the proxy user._
+*The directory where the images are to be stored must be owned by the proxy user.*
 
 ```
 # mkdir /srv/http/images

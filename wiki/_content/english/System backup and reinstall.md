@@ -78,7 +78,7 @@ rsync --archive --files-from=include.txt --exclude-from=exclude.txt / /mnt/backu
 
 ```
 
-(The include file _must_ list valid files or the programs will exit with an error. However, the exclude file does _not_ have to list valid files because it allows glob pattern matches.)
+(The include file *must* list valid files or the programs will exit with an error. However, the exclude file does *not* have to list valid files because it allows glob pattern matches.)
 
 (The `rsync` command defines the source directory as the root directory (`/`), this is necessary to coincide with the full path specified in the file listing.)
 
@@ -86,16 +86,16 @@ See also [Full System Backup with tar](/index.php/Full_System_Backup_with_tar "F
 
 ### Package lists
 
-A listing can be created of installed packages of both _official_ repository packages and _local_ packages. These lists can be used upon the reinstall to define the package selection.
+A listing can be created of installed packages of both *official* repository packages and *local* packages. These lists can be used upon the reinstall to define the package selection.
 
-To create a list of all _official_ repository installed packages do:
+To create a list of all *official* repository installed packages do:
 
 ```
 $ pacman -Qqe | grep -v "$(pacman -Qqm)" > /mnt/backup/amiga_$(date +%F)_pkglist-off.txt
 
 ```
 
-To create a list of all _local_ installed packages do (includes packages installed from the [AUR](/index.php/AUR "AUR")):
+To create a list of all *local* installed packages do (includes packages installed from the [AUR](/index.php/AUR "AUR")):
 
 ```
 $ pacman -Qqm > /mnt/backup/amiga_$(date +%F)_pkglist-loc.txt
@@ -141,14 +141,14 @@ Generating a locale will be the one exception where editing a configuration will
 
 ### Package reinstall
 
-To reinstall packages from the _official_ repositories (using the backup package cache and the package list):
+To reinstall packages from the *official* repositories (using the backup package cache and the package list):
 
 ```
 pacman --needed --cachedir /mnt/backup/amiga_$(date +%F)_pkg/ -S - < /mnt/backup/amiga_$(date +%F)_pkglist-off.txt
 
 ```
 
-To reinstall packages that are _local_ will depend on the method or program that was originally used. If the package tarballs exist for them and they are in the same cache, the above command can be used with the `...pkglist-loc.txt` file. If the packages do not have a package tarball and are AUR packages, use a [AUR Helper](/index.php/AUR_Helper "AUR Helper") to reinstall them:
+To reinstall packages that are *local* will depend on the method or program that was originally used. If the package tarballs exist for them and they are in the same cache, the above command can be used with the `...pkglist-loc.txt` file. If the packages do not have a package tarball and are AUR packages, use a [AUR Helper](/index.php/AUR_Helper "AUR Helper") to reinstall them:
 
 ```
 AURHELPER ... < /mnt/backup/amiga_$(date +%F)_pkglist-off.txt

@@ -28,11 +28,11 @@
 
 ## 配置
 
-_unbound_配置非常简单。示例配置文件位于 `/etc/unbound/unbound.conf.example`，可以复制此文件到 `/etc/unbound/unbound.conf` 然后按需要进行修改。同时可以支持 IPv4 和 IPv6。
+*unbound*配置非常简单。示例配置文件位于 `/etc/unbound/unbound.conf.example`，可以复制此文件到 `/etc/unbound/unbound.conf` 然后按需要进行修改。同时可以支持 IPv4 和 IPv6。
 
 ### 访问控制
 
-You can specify the interfaces to answer queries from by IP address. To listen on _localhost_, use:
+You can specify the interfaces to answer queries from by IP address. To listen on *localhost*, use:
 
 ```
 interface: 127.0.0.1
@@ -49,7 +49,7 @@ interface: 0.0.0.0
 可以进一步被配置 `访问控制` 选项:
 
 ```
-access-control: _子网_ _行为_
+access-control: *子网* *行为*
 
 ```
 
@@ -60,17 +60,17 @@ access-control: 192.168.1.0/24 allow
 
 ```
 
-_action_ can be one of `deny` (drop message), `refuse` (polite error reply), `allow` (recursive ok), or `allow_snoop` (recursive and nonrecursive ok). By default everything is refused except for localhost.
+*action* can be one of `deny` (drop message), `refuse` (polite error reply), `allow` (recursive ok), or `allow_snoop` (recursive and nonrecursive ok). By default everything is refused except for localhost.
 
 ### Root 提示
 
-For querying a host that is not cached as an address the resolver needs to start at the top of the server tree and query the root servers to know where to go for the top level domain for the address being queried. Therefore it is necessary to put a _root hints_ file into the _unbound_ config directory. The simplest way to do this is to run the command:
+For querying a host that is not cached as an address the resolver needs to start at the top of the server tree and query the root servers to know where to go for the top level domain for the address being queried. Therefore it is necessary to put a *root hints* file into the *unbound* config directory. The simplest way to do this is to run the command:
 
  `# wget ftp://FTP.INTERNIC.NET/domain/named.cache -O /etc/unbound/root.hints` 
 
 It is a good idea to run this every six months or so in order to make sure the list of root servers is up to date. This can be done manually or by setting up a [cron](/index.php/Cron "Cron") job for the task.
 
-Point _unbound_ to the `root.hints` file:
+Point *unbound* to the `root.hints` file:
 
 ```
 root-hints: "/etc/unbound/root.hints"
@@ -105,11 +105,11 @@ $ drill @127.0.0.1 -x w.x.y.z
 
 ```
 
-where `w.x.y.z` can be a local or external IP address and the `-x` option requests a reverse lookup. Once all is working, and you have `/etc/resolv.conf` set to use `127.0.0.1` as the nameserver then you no longer need the `@127.0.0.1` in the _drill_ command, and you can test again that it uses the default DNS server - check that the server used as listed at the bottom of the output from each of these commands shows it is `127.0.0.1` being queried.
+where `w.x.y.z` can be a local or external IP address and the `-x` option requests a reverse lookup. Once all is working, and you have `/etc/resolv.conf` set to use `127.0.0.1` as the nameserver then you no longer need the `@127.0.0.1` in the *drill* command, and you can test again that it uses the default DNS server - check that the server used as listed at the bottom of the output from each of these commands shows it is `127.0.0.1` being queried.
 
 ### 记录
 
-如果你想要记录 _unbound_, 然后创建一个日志文件，也可以在同一个目录中, 但你可以选择任何位置。一种方法是做为root:
+如果你想要记录 *unbound*, 然后创建一个日志文件，也可以在同一个目录中, 但你可以选择任何位置。一种方法是做为root:
 
 ```
 # touch /etc/unbound/unbound.log
@@ -121,10 +121,9 @@ where `w.x.y.z` can be a local or external IP address and the `-x` option reques
 
 ### DNSSEC验证
 
-You will need the root server trust key anchor file. It is provided by the [dnssec-anchors](https://www.archlinux.org/packages/?name=dnssec-anchors) package (already installed as a dependency), however, _unbound_ needs read and write access to the file. The `unbound.service` service accomplishes this by copying the `/etc/trusted-key.key` file to `/etc/unbound/trusted-key.key`. You just need to point _unbound_ to this file:
+You will need the root server trust key anchor file. It is provided by the [dnssec-anchors](https://www.archlinux.org/packages/?name=dnssec-anchors) package (already installed as a dependency), however, *unbound* needs read and write access to the file. The `unbound.service` service accomplishes this by copying the `/etc/trusted-key.key` file to `/etc/unbound/trusted-key.key`. You just need to point *unbound* to this file:
 
  `/etc/unbound/unbound.conf` 
-
 ```
 server:
   ...
@@ -137,7 +136,7 @@ Also make sure that if a general [forward](#Forwarding_queries) to the Google se
 
 **Note:** Including DNSSEC checking significantly increases DNS lookup times for initial lookups. Once an address is cached locally, then the lookup is virtually instantaneous.
 
-现在可以测试DNSSEC是否工作, 使用 _drill_ (安装为依赖)为 [ldns](https://www.archlinux.org/packages/?name=ldns) :
+现在可以测试DNSSEC是否工作, 使用 *drill* (安装为依赖)为 [ldns](https://www.archlinux.org/packages/?name=ldns) :
 
 ```
 drill sigfail.verteiltesysteme.net # should return rcode: SERVFAIL
@@ -150,7 +149,7 @@ drill sigok.verteiltesysteme.net   # should return rcode: NOERROR
 If you have a local network which you wish to have DNS queries for and there is a local DNS server that you would like to forward queries to then you should include this line:
 
 ```
-private-address: _本地子网/子网掩码_
+private-address: *本地子网/子网掩码*
 
 ```
 
@@ -186,7 +185,7 @@ forward-addr: 10.0.0.1
 
 ```
 
-**Note:** There is a difference between forward zones and stub zones - stub zones will only work when connected to an authoritative DNS server directly. This would work for lookups from a [BIND](/index.php/BIND "BIND") DNS server if it is providing authoritative DNS - but if you are referring queries to an _unbound_ server in which internal lookups are forwarded on to another DNS server, then defining the referral as a stub zone in the machine here will not work. In that case it is necessary to define a forward zone as above, since forward zones can have daisy chain lookups onward to other DNS servers. i.e. forward zones can refer queries to recursive DNS servers. This distinction is important as you do not get any error messages indicating what the problem is if you use a stub zone inappropriately.
+**Note:** There is a difference between forward zones and stub zones - stub zones will only work when connected to an authoritative DNS server directly. This would work for lookups from a [BIND](/index.php/BIND "BIND") DNS server if it is providing authoritative DNS - but if you are referring queries to an *unbound* server in which internal lookups are forwarded on to another DNS server, then defining the referral as a stub zone in the machine here will not work. In that case it is necessary to define a forward zone as above, since forward zones can have daisy chain lookups onward to other DNS servers. i.e. forward zones can refer queries to recursive DNS servers. This distinction is important as you do not get any error messages indicating what the problem is if you use a stub zone inappropriately.
 
 You can set up the localhost forward and reverse lookups with the following lines:
 
@@ -214,7 +213,7 @@ forward-zone:
 
 ```
 
-This will make _unbound_ use Google and OpenDNS servers as the forward zone for external lookups.
+This will make *unbound* use Google and OpenDNS servers as the forward zone for external lookups.
 
 **Note:** OpenDNS strips DNSSEC records from responses. Do not use the above forward zone if you want to enable [#DNSSEC validation](#DNSSEC_validation).
 
@@ -222,11 +221,11 @@ This will make _unbound_ use Google and OpenDNS servers as the forward zone for 
 
 ### 启动Unbound
 
-The _unbound_ package provides `unbound.service`, just [start](/index.php/Start "Start") it. You may want to _enable_ it so that it starts at boot.
+The *unbound* package provides `unbound.service`, just [start](/index.php/Start "Start") it. You may want to *enable* it so that it starts at boot.
 
 ### 远程控制Unbound
 
-_unbound_ ships with the `unbound-control` utility which enables us to remotely administer the unbound server. It is similar to the [pdnsd-ctl](/index.php/Pdnsd#pdnsd-ctl "Pdnsd") command of [pdnsd](https://www.archlinux.org/packages/?name=pdnsd).
+*unbound* ships with the `unbound-control` utility which enables us to remotely administer the unbound server. It is similar to the [pdnsd-ctl](/index.php/Pdnsd#pdnsd-ctl "Pdnsd") command of [pdnsd](https://www.archlinux.org/packages/?name=pdnsd).
 
 #### 设置 unbound-control
 
@@ -272,7 +271,7 @@ remote-control:
 
 #### 使用unbound-control
 
-Some of the commands that can be used with _unbound-control_ are:
+Some of the commands that can be used with *unbound-control* are:
 
 *   print statistics without resetting them
 
@@ -323,9 +322,9 @@ and some sources suggest that the `num-threads` parameter should be set to the n
 
 ```
 
-However it is not possible to arbitrarily increase `num-threads` above `1` without causing _unbound_ to start with warnings in the logs about exceeding the number of file descriptors. In reality for most users running on small networks or on a single machine it should be unnecessary to seek performance enhancement by increasing `num-threads` above `1`. If you do wish to do so then refer to [official documentation](http://www.unbound.net/documentation/howto_optimise.html) and the following rule of thumb should work:
+However it is not possible to arbitrarily increase `num-threads` above `1` without causing *unbound* to start with warnings in the logs about exceeding the number of file descriptors. In reality for most users running on small networks or on a single machine it should be unnecessary to seek performance enhancement by increasing `num-threads` above `1`. If you do wish to do so then refer to [official documentation](http://www.unbound.net/documentation/howto_optimise.html) and the following rule of thumb should work:
 
-	_Set `num-threads` equal to the number of CPU cores on the system. E.g. for 4 CPUs with 2 cores each, use 8._
+	*Set `num-threads` equal to the number of CPU cores on the system. E.g. for 4 CPUs with 2 cores each, use 8.*
 
 Set the `outgoing-range` to as large a value as possible, see the sections in the referred web page above on how to overcome the limit of `1024` in total. This services more clients at a time. With 1 core, try `950`. With 2 cores, try `450`. With 4 cores try `200`. The `num-queries-per-thread` is best set at half the number of the `outgoing-range`.
 

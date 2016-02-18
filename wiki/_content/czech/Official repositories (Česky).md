@@ -1,4 +1,4 @@
-_Jelikož je kolem oficiálních repozitářů spousta zmatků, tento článek se pokouší vysvětlit jejich význam._
+*Jelikož je kolem oficiálních repozitářů spousta zmatků, tento článek se pokouší vysvětlit jejich význam.*
 
 ## Contents
 
@@ -17,38 +17,38 @@ Slovo repozitář z anglického slova "repository" znamená schránka, úschovna
 
 ## Historické pozadí
 
-Většina rozdělení repozitářů má historické důvody. Původně, když byl Arch Linux používán jen velmi malým počtem uživatelů, byl pouze jeden repozitář jménem _[official]_ (nyní **[core]**). Toho času obsahoval [official] v podstatě aplikace upřednostňované Juddem Vinetem. Byl navržen tak, aby obsahoval jediný od každého "typu" programu -- jedno desktopové prostředí, jeden hlavní prohlížeč atd.
+Většina rozdělení repozitářů má historické důvody. Původně, když byl Arch Linux používán jen velmi malým počtem uživatelů, byl pouze jeden repozitář jménem *[official]* (nyní **[core]**). Toho času obsahoval [official] v podstatě aplikace upřednostňované Juddem Vinetem. Byl navržen tak, aby obsahoval jediný od každého "typu" programu -- jedno desktopové prostředí, jeden hlavní prohlížeč atd.
 
-Přirozeně se tehdy vyskytli uživatelé, kterým se výběr Judda nelíbil. Díky jednoduchosti používání [ABS](/index.php/Arch_Build_System_(%C4%8Cesky) "Arch Build System (Česky)") si vytvářeli balíčky vlastní. Tyto balíčky šly do repozitáře nazvaného _[unofficial]_ a byly spravovány jinými vývojáři než Juddem. Časem se tyto dva repozitáře staly ze strany vývojářů podporované na stejné úrovni, takže již jména [official] a [unofficial] dále neodrážely jejich pravý účel. Posléze byly někdy poblíž verze vydání 0.5 přejmenovány na _[current]_ a _[extra]_.
+Přirozeně se tehdy vyskytli uživatelé, kterým se výběr Judda nelíbil. Díky jednoduchosti používání [ABS](/index.php/Arch_Build_System_(%C4%8Cesky) "Arch Build System (Česky)") si vytvářeli balíčky vlastní. Tyto balíčky šly do repozitáře nazvaného *[unofficial]* a byly spravovány jinými vývojáři než Juddem. Časem se tyto dva repozitáře staly ze strany vývojářů podporované na stejné úrovni, takže již jména [official] a [unofficial] dále neodrážely jejich pravý účel. Posléze byly někdy poblíž verze vydání 0.5 přejmenovány na *[current]* a *[extra]*.
 
-Krátce po vydání 2007.8.1 byl [current] přejmenován na [core], aby se předešlo zmatkům ohledně jeho přesného obsahu. Repozitáře jsou nyní v očích vývojářů a komunity víceméně rovnocenné, ale u [core] jsou jisté rozdíly. Hlavní odlišnost je v tom, že pro instalační CD a ukázková vydání jsou použité _pouze_ balíčky z [core]. Tento repozitář poskytuje kompletní linuxový systém, i když to ještě nemusí být linuxový systém, který byste chtěli.
+Krátce po vydání 2007.8.1 byl [current] přejmenován na [core], aby se předešlo zmatkům ohledně jeho přesného obsahu. Repozitáře jsou nyní v očích vývojářů a komunity víceméně rovnocenné, ale u [core] jsou jisté rozdíly. Hlavní odlišnost je v tom, že pro instalační CD a ukázková vydání jsou použité *pouze* balíčky z [core]. Tento repozitář poskytuje kompletní linuxový systém, i když to ještě nemusí být linuxový systém, který byste chtěli.
 
-Kolem 0.5 nebo 0.6 zjistilo, že je spousta balíčků, které vývojáři nechtěli udržovat. Jeden z vývojářů (Xentac) založil "repozitáře pro důvěryhodné uživatele" (Trusted User Repositories), což byly neoficiální repozitáře, do kterých mohli důvěryhodní uživatelé umisťovat balíčky, které vytvořili. Existoval repozitář _[staging]_, odkud mohly být balíčky někým z vývojářů Arch Linuxu povýšeny do oficiálních repozitářů, ale jinak byli vývojáři a důvěryhodní uživatelé víceméně oddělení.
+Kolem 0.5 nebo 0.6 zjistilo, že je spousta balíčků, které vývojáři nechtěli udržovat. Jeden z vývojářů (Xentac) založil "repozitáře pro důvěryhodné uživatele" (Trusted User Repositories), což byly neoficiální repozitáře, do kterých mohli důvěryhodní uživatelé umisťovat balíčky, které vytvořili. Existoval repozitář *[staging]*, odkud mohly být balíčky někým z vývojářů Arch Linuxu povýšeny do oficiálních repozitářů, ale jinak byli vývojáři a důvěryhodní uživatelé víceméně oddělení.
 
 Takto to po nějakou dobu fungovalo, ale problém nastal, když byli důvěryhodní uživatelé svými repozitáři znudění a nebo když chtěli nedůvěryhodní uživatelé sdílet své vlastní balíčky. To vedlo k vývoji [AUR](https://aur.archlinux.org/). Důvěryhodní uživatelé (anglicky Trusted Users nebo zkráceně TU) byli spojeni do více provázané skupiny a nyní kolektivně udržují repozitář **[community]**. Jsou odděleni od vývojářů Arch Linuxu a moc s nimi nekomunikují, nicméně oblíbené balíčky jsou stále příležitostně povyšovány z [community] do **[extra]**. [AUR](https://aur.archlinux.org) též umožňuje nedůvěryhodným uživatelům, pokud chtějí, dát své PKGBUILDy k dispozici jiným uživatelům. Tyto balíčky nejsou podporovány a občas se jim říká repozitář **[unsupported]**, i když jelikož nejsou distribuovány žádné binární balíčky, ve skutečnosti to ani repozitář není. Důvěryhodní uživatelé mohou na základě vlastního úsudku adoptovat balíčky z [unsupported] do [community], ať už to je kvůli popularitě balíčku nebo jejich zájmu o jeho udržování.
 
 ## [core]
 
-Repozitář [core] můžete najít v _core/os/i686_ nebo _core/os/x86_64_ na svém oblíbeném zrcadle. Obsahuje základní balíčky Arch Linuxu a některý rozšiřující software a poskytne vám plně funkční základní systém.
+Repozitář [core] můžete najít v *core/os/i686* nebo *core/os/x86_64* na svém oblíbeném zrcadle. Obsahuje základní balíčky Arch Linuxu a některý rozšiřující software a poskytne vám plně funkční základní systém.
 
-_Instalační CD obsahuje jednoduše instalační skript a obsah repozitáře core z některého dne._
+*Instalační CD obsahuje jednoduše instalační skript a obsah repozitáře core z některého dne.*
 
 ## [extra]
 
-Repozitář [extra] můžete najít v _extra/os/i686_ nebo _extra/os/x86_64_ na svém oblíbeném zrcadle. Obsahuje všechny balíčky, které nezapadají do [core] – například X.org, okenní správci, webové servery, multimediální přehrávače, jazyky jako Python, Ruby a Perl a mnoho dalších.
+Repozitář [extra] můžete najít v *extra/os/i686* nebo *extra/os/x86_64* na svém oblíbeném zrcadle. Obsahuje všechny balíčky, které nezapadají do [core] – například X.org, okenní správci, webové servery, multimediální přehrávače, jazyky jako Python, Ruby a Perl a mnoho dalších.
 
 ## [community]
 
-Repozitář [community] můžete najít v _community/os/i686_ nebo _community/os/x86_64_ na svém oblíbeném zrcadle. Je udržován _důvěryhodnými uživateli_ (Trusted Users) a je součástí _AUR_. Obsahuje ty balíčky z _AUR_, které obdržely dostatečný počet hlasů a byly adoptovány některým z _důvěryhodných uživatelů_.
+Repozitář [community] můžete najít v *community/os/i686* nebo *community/os/x86_64* na svém oblíbeném zrcadle. Je udržován *důvěryhodnými uživateli* (Trusted Users) a je součástí *AUR*. Obsahuje ty balíčky z *AUR*, které obdržely dostatečný počet hlasů a byly adoptovány některým z *důvěryhodných uživatelů*.
 
 ## [testing]
 
-Repozitář [testing] můžete najít v _testing/os/i686_ nebo _testing/os/x86_64_ na svém oblíbeném zrcadle. [testing] je zvláštní tím, že obsahuje balíčky, které jsou kandidáty na přesun do repozitářů [core] nebo [extra]. Nové balíčky do [testing] putují, pokud:
+Repozitář [testing] můžete najít v *testing/os/i686* nebo *testing/os/x86_64* na svém oblíbeném zrcadle. [testing] je zvláštní tím, že obsahuje balíčky, které jsou kandidáty na přesun do repozitářů [core] nebo [extra]. Nové balíčky do [testing] putují, pokud:
 
 *   se očekává, že něco mohou při aktualizaci rozbít, a musí tak být nejprve otestovány
 *   vyžadují znovusestavení jiných balíčků. V tomto případě jsou všechny balíčky, které musí být znovu sestaveny, umístěny nejprve do [testing] a když je jejich sestavování dokončeno, jsou přesunuty zpět do ostatních repozitářů.
 
-[testing] je jediným repozitářem, jehož jména balíčků smí kolidovat s jakýmkoliv jiným oficiálním repozitářem. Pokud je povolen, musí být prvním repozitářem v souboru _pacman.conf_.
+[testing] je jediným repozitářem, jehož jména balíčků smí kolidovat s jakýmkoliv jiným oficiálním repozitářem. Pokud je povolen, musí být prvním repozitářem v souboru *pacman.conf*.
 
 Při povolení [testing] buďte opatrní. Váš systém se může po aktualizaci s povoleným repozitářem [testing] rozbít. Měli by ho používat pouze zkušení uživatelé, kteří vědí, jak si případně poradit s rozbitým systémem.
 

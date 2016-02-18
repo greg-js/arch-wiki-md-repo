@@ -50,11 +50,11 @@ To make GStreamer useful, install the plugins packages you require.
 
 ### PulseAudio
 
-[PulseAudio](/index.php/PulseAudio "PulseAudio") support is provided by _good_ plugins packages.
+[PulseAudio](/index.php/PulseAudio "PulseAudio") support is provided by *good* plugins packages.
 
 ### Lightweight desktops
 
-To configure GStreamer, for example to change the audio output device, use _gstreamer-properties_ from package [gstreamer-properties](https://aur.archlinux.org/packages/gstreamer-properties/). This can be run by each user or as root for all users. Per-user configuration files are under `$HOME/.gconf/system/gstreamer` and the global files are in `/etc/gconf/gconf.xml.defaults`.
+To configure GStreamer, for example to change the audio output device, use *gstreamer-properties* from package [gstreamer-properties](https://aur.archlinux.org/packages/gstreamer-properties/). This can be run by each user or as root for all users. Per-user configuration files are under `$HOME/.gconf/system/gstreamer` and the global files are in `/etc/gconf/gconf.xml.defaults`.
 
 ### KDE / Phonon integration
 

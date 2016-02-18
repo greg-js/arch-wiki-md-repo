@@ -13,7 +13,7 @@
 
 The majority of the desktop scanners are more or less "passive" devices: They might function with a suitable application but are unable to be used by buttons only.
 
-[scanbd](http://sourceforge.net/projects/scanbd/) tries to solve the problem with managing such scanners to make use of the scanner-buttons they have _(only when the buttons are supported by sane)_.
+[scanbd](http://sourceforge.net/projects/scanbd/) tries to solve the problem with managing such scanners to make use of the scanner-buttons they have *(only when the buttons are supported by sane)*.
 
 ### How does it work?
 
@@ -44,14 +44,13 @@ First, copy all config files from `/etc/sane.d/` to `/etc/scandb/sane.d/` (these
 
 ```
 
-Modify /etc/sane.d/dll.conf so that it includes _only_ the "net" directive (either delete the other directives (printers), or comment them with # symbol):
+Modify /etc/sane.d/dll.conf so that it includes *only* the "net" directive (either delete the other directives (printers), or comment them with # symbol):
 
  `/etc/sane.d/dll.conf`  `net` 
 
 Modify the net-backend configuration file (see scanbd's README.txt for more complicated setups):
 
  `/etc/sane.d/net.conf` 
-
 ```
 connect_timeout = 3
 localhost # scanbm is listening on localhost
@@ -64,7 +63,6 @@ Whenever there is a connection to the standard sane network socket, systemd star
 The last step is to modify the alternative configuration of sane in `/etc/scandb/sane.d/dll.conf`: just make sure that the "net" directive is commented and the corresponding scanner-backends are uncommented:
 
  `/etc/scanbd/sane.d/dll.conf` 
-
 ```
 #net
 pixma
@@ -107,7 +105,6 @@ Whenever the message from the scanner includes word "scan" (see reg-exp for more
 `/etc/scanbd/test.script` does not do anything but sends a message to syslog:
 
  `/etc/scanbd/test.script` 
-
 ```
 #!/bin/bash
 # look in scanbd.conf for environment variables

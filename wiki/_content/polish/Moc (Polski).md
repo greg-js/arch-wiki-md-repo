@@ -1,4 +1,4 @@
-**M**usic **O**n **C**onsole jest lekkim odtwarzaczem muzyki składającym się z dwóch części, z serwera (Moc) i z graficznego interfejsu (Mocp). Ogólnie jest podobny do [mpd](/index.php/Music_Player_Daemon_(Polski) "Music Player Daemon (Polski)"), ale w przeciwieństwie do _mpd_, Moc jest instalowany z razem ze standardowym interfejsem. Serwer Moc nie pozwala na zdalny dostęp.
+**M**usic **O**n **C**onsole jest lekkim odtwarzaczem muzyki składającym się z dwóch części, z serwera (Moc) i z graficznego interfejsu (Mocp). Ogólnie jest podobny do [mpd](/index.php/Music_Player_Daemon_(Polski) "Music Player Daemon (Polski)"), ale w przeciwieństwie do *mpd*, Moc jest instalowany z razem ze standardowym interfejsem. Serwer Moc nie pozwala na zdalny dostęp.
 
 ## Contents
 
@@ -21,15 +21,15 @@ Zainstaluj pakiet [moc](https://www.archlinux.org/packages/?name=moc) za pomocą
 
 ## Konfiguracja
 
-Pakiet zawiera przykładowy plik konfiguracyjny znajdujący się w położeniu `/usr/share/doc/moc/config.example`. By skonfigurować _moc_, skopiuj ten plik do `~/.moc/config` i wyedytuj stosownie do swoich potrzeb.
+Pakiet zawiera przykładowy plik konfiguracyjny znajdujący się w położeniu `/usr/share/doc/moc/config.example`. By skonfigurować *moc*, skopiuj ten plik do `~/.moc/config` i wyedytuj stosownie do swoich potrzeb.
 
 By uzyskać instrukcje dotyczące konfiguracji i skrótów klawiszowych, przeczytaj `/usr/share/doc/moc/keymap.example`.
 
-Jeżeli chcesz używać _Moc_ z serwerem dziwięku [OSS](/index.php?title=OSS_(Polski)&action=edit&redlink=1 "OSS (Polski) (page does not exist)") v4.1, sprawdź [OSS#MOC](/index.php/OSS#MOC "OSS").
+Jeżeli chcesz używać *Moc* z serwerem dziwięku [OSS](/index.php?title=OSS_(Polski)&action=edit&redlink=1 "OSS (Polski) (page does not exist)") v4.1, sprawdź [OSS#MOC](/index.php/OSS#MOC "OSS").
 
 ## Korzystanie
 
-Uruchom _moc_ za pomocą komendy:
+Uruchom *moc* za pomocą komendy:
 
 ```
 $ mocp
@@ -56,8 +56,7 @@ przeglądania plików (i odwrotnie) | `Tab` |
 | Ustaw głośność na 20% | `meta+2` |
 | Zamknij otwarzacz | `q` |
 
-**Note:** By wyłączyć serwer _moc_, użyj `Shift+q` lub:
-
+**Note:** By wyłączyć serwer *moc*, użyj `Shift+q` lub:
 ```
 $ mocp -x
 
@@ -77,7 +76,7 @@ cp /usr/share/doc/mocp-scrobbler/config.example  ~/.mocpscrob/config
 
 ```
 
-I wyedytuj `~/.mocpscrob/config` aby dodać swój login i hasło. zmienna `password` może być zastąpiona zmienną `password_md5` przy pierwszym uruchomieniu. Jej pierwotna wartość zostanie wtedy zastąpiona hashem md5\. Jeżeli chcesz zmienić hasło, po prostu dodaj hasło jeszcze raz, i zmienna `password_md5` zostanie nadpisana. Aby scrooblować utwory, uruchom _mocp-scrobbler_ w tle przed _mocp_. Możesz także użyć [aliasu](/index.php/Alias "Alias"):
+I wyedytuj `~/.mocpscrob/config` aby dodać swój login i hasło. zmienna `password` może być zastąpiona zmienną `password_md5` przy pierwszym uruchomieniu. Jej pierwotna wartość zostanie wtedy zastąpiona hashem md5\. Jeżeli chcesz zmienić hasło, po prostu dodaj hasło jeszcze raz, i zmienna `password_md5` zostanie nadpisana. Aby scrooblować utwory, uruchom *mocp-scrobbler* w tle przed *mocp*. Możesz także użyć [aliasu](/index.php/Alias "Alias"):
 
 ```
 alias mocp='/usr/bin/mocp-scrobbler.py -d; mocp'
@@ -105,7 +104,6 @@ alias mocp='/usr/bin/mocp-scrobbler.py -d; mocp'
 ## Plik usługi dla systemd
 
  `/etc/systemd/system/moc@.service` 
-
 ```
 [Unit]
 Description=MOC server
@@ -134,7 +132,7 @@ Jeżeli MOC nie chce się uruchomić, jest to najprawdopodobniej wina błędnej 
 
 ### Dziwne znaki
 
-Jeżeli widzisz jakieś dziwne znaczki w _moc_ zamiast normalnych linii (Pionowe linie do rozdzielenia przestrzeni, itp.), możesz mieć czcionki niekompatybilne z MOC. Zmień je na poprawnie wyświetlające linie,lub zmodyfikuj plik `.moc/config` by używać znaków ASCII do rysowania linii:
+Jeżeli widzisz jakieś dziwne znaczki w *moc* zamiast normalnych linii (Pionowe linie do rozdzielenia przestrzeni, itp.), możesz mieć czcionki niekompatybilne z MOC. Zmień je na poprawnie wyświetlające linie,lub zmodyfikuj plik `.moc/config` by używać znaków ASCII do rysowania linii:
 
 ```
 ASCIILines = no

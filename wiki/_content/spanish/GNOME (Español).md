@@ -1,6 +1,6 @@
 Tomado de la [página de GNOME](http://www.gnome.org/about/%7Cla):
 
-	_«El Proyecto GNOME se inició en 1997 por —en aquellos días— dos estudiantes universitarios, Miguel de Icaza y Federico Mena. Su objetivo: producir un [entorno de escritorio](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)") de código libre. Desde entonces, GNOME se ha convertido en una empresa exitosa. Usado por millones de personas en todo el mundo, es el entorno de escritorio más popular para GNU/Linux y sistemas operativos tipo UNIX. El escritorio se ha utilizado con éxito en empresas de gran escala, y en despliegues públicos, y las tecnologías del proyecto desarrollador se utilizan en un gran número de dispositivos móviles populares.»_
+	*«El Proyecto GNOME se inició en 1997 por —en aquellos días— dos estudiantes universitarios, Miguel de Icaza y Federico Mena. Su objetivo: producir un [entorno de escritorio](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)") de código libre. Desde entonces, GNOME se ha convertido en una empresa exitosa. Usado por millones de personas en todo el mundo, es el entorno de escritorio más popular para GNU/Linux y sistemas operativos tipo UNIX. El escritorio se ha utilizado con éxito en empresas de gran escala, y en despliegues públicos, y las tecnologías del proyecto desarrollador se utilizan en un gran número de dispositivos móviles populares.»*
 
 ## Contents
 
@@ -105,13 +105,13 @@ Tomado de la [página de GNOME](http://www.gnome.org/about/%7Cla):
 
 ## Introducción
 
-GNOME 3 tiene _dos_ interfaces:
+GNOME 3 tiene *dos* interfaces:
 
 *   **GNOME** es la modalidad estándar, con un diseño innovador.
 
 *   **GNOME Classic** es la modalidad con el diseño de escritorio tradicional, similar a la interfaz de usuario de GNOME 2 al tiempo que usa la tecnología de GNOME 3 estándar. Lo hace mediante el uso de extensiones y parámetros preactivados (véase [esto](http://worldofgnome.org/welcome-to-gnome-3-8-flintstones-mode/) para obtener un listado). Por lo tanto, consiste más en un GNOME Shell personalizado que en una modalidad verdaderamente distinta.
 
-Ambos usan GNOME Shell y el gestor de ventanas Mutter. Mutter actúa como un gestor de composición para el escritorio, empleando aceleración gráfica de hardware para proporcionar efectos dirigidos a reducir el desorden de la pantalla. El gestor de sesiones de GNOME detecta automáticamente si el controlador de vídeo es capaz de ejecutar GNOME Shell y restaura el renderizado de software usando _llvmpipe_ cuando es apropiado.
+Ambos usan GNOME Shell y el gestor de ventanas Mutter. Mutter actúa como un gestor de composición para el escritorio, empleando aceleración gráfica de hardware para proporcionar efectos dirigidos a reducir el desorden de la pantalla. El gestor de sesiones de GNOME detecta automáticamente si el controlador de vídeo es capaz de ejecutar GNOME Shell y restaura el renderizado de software usando *llvmpipe* cuando es apropiado.
 
 ## Instalación
 
@@ -138,7 +138,6 @@ El administrador de inicio de sesión es un proceso limitado, encargado de las t
 Si prefiere iniciar GNOME manualmente desde la consola, agregue la siguiente línea al archivo `~/.xinitrc`:
 
  `~/.xinitrc` 
-
 ```
 exec gnome-session    
 
@@ -191,7 +190,7 @@ Si esto no funciona, puede intentar reiniciar el gestor de pantalla. Por ejemplo
 
 ```
 
-**Sugerencia:** También puede usar **htop** en la tty; pulse _t_, seleccione el árbol _gnome-shell_, pulse _k_ y envíe _SIGKILL_.
+**Sugerencia:** También puede usar **htop** en la tty; pulse *t*, seleccione el árbol *gnome-shell*, pulse *k* y envíe *SIGKILL*.
 
 ## Integración de pacman: GNOME PackageKit
 
@@ -217,7 +216,7 @@ Si quiere que GNOME compruebe automáticamente si hay actualizaciones, debe inst
 
 ### Apariencia general
 
-GNOME 3 puede haber «empezado desde cero», pero, como la mayoría de los grandes proyectos de software, se ensambla a partir de piezas que datan de diferentes épocas. No hay **una** herramienta de configuración que lo abarque todo. La nueva herramienta: _Configuración del Sistema_ es una gran mejora respecto de los paneles de control anteriores. La herramienta _Configuración del Sistema_ está bien organizada, pero puede que encuentre que tiene escaso control sobre la apariencia del sistema.
+GNOME 3 puede haber «empezado desde cero», pero, como la mayoría de los grandes proyectos de software, se ensambla a partir de piezas que datan de diferentes épocas. No hay **una** herramienta de configuración que lo abarque todo. La nueva herramienta: *Configuración del Sistema* es una gran mejora respecto de los paneles de control anteriores. La herramienta *Configuración del Sistema* está bien organizada, pero puede que encuentre que tiene escaso control sobre la apariencia del sistema.
 
 Los instrumentos actuales de configuración se hacen cada vez más familiares: algunos de ellos todavía funcionan; otros muchos no lo harán. Algunos ajustes no están fácilmente expuestos para que pueda modificarlos. Indudablemente, muchos ajustes migrarán a las nuevas herramientas y/o se expondrán a medida que pase el tiempo y la comunidad, en general, adopte y se extienda al último escritorio de GNOME.
 
@@ -233,10 +232,9 @@ Esta herramienta gráfica personaliza tipos de letras, temas, botones en la barr
 
 Es posible definir un tema GTK3 en `${XDG_CONFIG_HOME}/gtk-3.0/settings.ini` (normalmente `~/.config/gtk-3.0/settings.ini`).
 
-El tema por defecto de GNOME 3, _Adwaita,_ es parte del paquete [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard). Otros temas GTK3 se pueden encontrar en [el sitio web Deviantart](http://browse.deviantart.com/customization/skins/linuxutil/desktopenv/gnome/gtk3/). He aquí un ejemplo de configuración:
+El tema por defecto de GNOME 3, *Adwaita,* es parte del paquete [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard). Otros temas GTK3 se pueden encontrar en [el sitio web Deviantart](http://browse.deviantart.com/customization/skins/linuxutil/desktopenv/gnome/gtk3/). He aquí un ejemplo de configuración:
 
  `${XDG_CONFIG_HOME}/gtk-3.0/settings.ini` 
-
 ```
 [Settings]
 gtk-theme-name = Adwaita
@@ -261,12 +259,11 @@ $ cp -R /home/user/Desktop/mi_tema_de_iconos ~/.icons
 
 ```
 
-El nuevo tema (por ejemplo _mi_tema_de_iconos_) se puede seleccionar usando `gnome-tweak-tool` sobre la entrada _interfaz_.
+El nuevo tema (por ejemplo *mi_tema_de_iconos*) se puede seleccionar usando `gnome-tweak-tool` sobre la entrada *interfaz*.
 
 También, se puede seleccionar textualmente el tema de iconos sin necesidad de gnome-tweak-tool. Agregue el nombre del tema de iconos GTK al archivo `${XDG_CONFIG_HOME}/gtk-3.0/settings.ini`. Procure no utilizar `""`, de lo contrario su configuración no se reconocerá.
 
  `${XDG_CONFIG_HOME}/gtk-3.0/settings.ini` 
-
 ```
 ... líneas previas ...
 
@@ -305,7 +302,6 @@ La mejor manera de utilizar las extensiones es instalándolas desde la página w
 Para eliminar, por ejemplo, el **icono de acceso universal** comente la línea 'a11y' en PANEL_ITEM_IMPLEMENTATIONS:
 
  `/usr/share/gnome-shell/js/ui/panel.js` 
-
 ```
 const PANEL_ITEM_IMPLEMENTATIONS = {
     'activities': ActivitiesButton,
@@ -336,7 +332,7 @@ Para mostrar el icono de batería en el panel, [instale](/index.php/Pacman_(Espa
 
 El siguiente ajuste elimina el cuadro de diálogo de confirmación y, por tanto, los sesenta segundos de retraso para cerrar la sesión.
 
-Este cuadro de diálogo aparece normalmente al cerrar la sesión desde el menú de estado. Este ajuste afecta también el diálogo de _**Apagado**_. Esto no es un cambio que afecte a todo el sistema, sino que afecta solo al usuario que lo utiliza. El cambio tiene lugar inmediatamente después de ingresar la siguiente orden:
+Este cuadro de diálogo aparece normalmente al cerrar la sesión desde el menú de estado. Este ajuste afecta también el diálogo de ***Apagado***. Esto no es un cambio que afecte a todo el sistema, sino que afecta solo al usuario que lo utiliza. El cambio tiene lugar inmediatamente después de ingresar la siguiente orden:
 
 ```
 $ gsettings set org.gnome.SessionManager logout-prompt 'false'
@@ -363,7 +359,7 @@ Al igual que otros entornos de escritorio, GNOME utiliza archivos .desktop para 
 
 ```
 
-Para que los cambios se apliquen en todo el sistema, modifique los archivos en **`/usr/share/applications`**. Para que los cambios sean locales, realice una copia del archivo _foo.desktop_ en la propia carpeta personal.
+Para que los cambios se apliquen en todo el sistema, modifique los archivos en **`/usr/share/applications`**. Para que los cambios sean locales, realice una copia del archivo *foo.desktop* en la propia carpeta personal.
 
 ```
 $ cp /usr/share/applications/foo.desktop ~/.local/share/applications/
@@ -395,10 +391,9 @@ Modifique los archivos del sistema directamente (haga una copia de seguridad pri
 
 *   Para los **temas de usuario**, modifique el archivo **`/usr/share/themes/<UserTheme>/gnome-shell/gnome-shell.css`**
 
-Edite _gnome-shell.css_ y reemplace los siguientes valores. Después, [reinicie la shell de GNOME.](#Reiniciar_la_shell)
+Edite *gnome-shell.css* y reemplace los siguientes valores. Después, [reinicie la shell de GNOME.](#Reiniciar_la_shell)
 
  `gnome-shell.css` 
-
 ```
  ...
  /* Application Launchers and Grid */
@@ -421,7 +416,6 @@ Edite _gnome-shell.css_ y reemplace los siguientes valores. Después, [reinicie 
 La vista de actividades de GNOME tiene un menú en el lado izquierdo, donde el tamaño de los iconos en este menú cambia en función de la cantidad de iconos a mostrar. La escala puede ser manipulada o ajustada a un tamaño de icono constante. Para ello, modifique `/usr/share/gnome-shell/js/ui/dash.js`.
 
  `dash.js` 
-
 ```
  ...
 
@@ -436,7 +430,6 @@ La vista de actividades de GNOME tiene un menú en el lado izquierdo, donde el t
 GNOME viene con un alternador de tareas donde el tamaño de los iconos de este conmutador de tareas se modifica en función de la cantidad de iconos a mostrar. La escala puede ser manipulada o ajustada a un tamaño de icono constante. Para ello, edite `/usr/share/gnome-shell/js/ui/altTab.js`
 
  `altTab.js` 
-
 ```
  ...
 
@@ -451,7 +444,6 @@ GNOME viene con un alternador de tareas donde el tamaño de los iconos de este c
 GNOME viene con una lograda bandeja del sistema, visible cuando el cursor del ratón se mueve sobre la parte inferior de la pantalla. El tamaño de los iconos de esta bandeja se ajusta a un valor fijo de 24\. Para cambiar este valor, edite `/usr/share/gnome-shell/js/ui/messageTray.js`
 
  `messageTray.js` 
-
 ```
  ...
 
@@ -463,10 +455,9 @@ GNOME viene con una lograda bandeja del sistema, visible cuando el cursor del ra
 
 #### Desactivar la esquina flotante del menú Actividades
 
-Para desactivar la esquina flotante del menú Actividades cuando el cursor del ratón es ubicado allí, edite `/usr/share/gnome-shell/js/ui/layout.js` (_panel.js_ en GNOME 3.0.x) :
+Para desactivar la esquina flotante del menú Actividades cuando el cursor del ratón es ubicado allí, edite `/usr/share/gnome-shell/js/ui/layout.js` (*panel.js* en GNOME 3.0.x) :
 
  `layout.js` 
-
 ```
  this._corner = new Clutter.Rectangle({ name: 'hot-corner',
                                        width: 1,
@@ -484,7 +475,6 @@ y cambie la opción `reactive` a `false`. GNOME Shell debe ser reiniciado despu�
 La bandeja de mensaje se muestra cuando el puntero del ratón se posa en la parte inferior de la pantalla durante un segundo. Para desactivar este comportamiento, comente la siguiente línea en `/usr/share/gnome-shell/js/ui/messageTray.js`:
 
  `messageTray.js` 
-
 ```
         //pointerWatcher.addWatch(TRAY_DWELL_CHECK_INTERVAL, Lang.bind(this, this._checkTrayDwell));
 
@@ -507,7 +497,7 @@ Para reestablecer los valores por defecto, [instale](/index.php/Pacman "Pacman")
 
 Por el momento esta configuración puede realizarse a traves de **dconf-editor.**
 
-Por ejemplo, movamos el botón cerrar y minimizar hacia el lado izquierdo de la barra de titulo. Abra **dconf-editor** y localice la clave _**org.gnome.shell.overrides.button_layout.**_ Cambie su valor a **`close,minimize:`** (Los dos puntos representan el espacio designado entre la izquierda y la derecha de la barra de título). Use cualquier botón en el orden que prefiera. No puede usar mas de un botón a la vez. Además, tenga en cuenta que algunos botones están en desuso. [Reinicie la shell de GNOME](#Reiniciar_la_shell) para ver la nueva disposición de los botones.
+Por ejemplo, movamos el botón cerrar y minimizar hacia el lado izquierdo de la barra de titulo. Abra **dconf-editor** y localice la clave ***org.gnome.shell.overrides.button_layout.*** Cambie su valor a **`close,minimize:`** (Los dos puntos representan el espacio designado entre la izquierda y la derecha de la barra de título). Use cualquier botón en el orden que prefiera. No puede usar mas de un botón a la vez. Además, tenga en cuenta que algunos botones están en desuso. [Reinicie la shell de GNOME](#Reiniciar_la_shell) para ver la nueva disposición de los botones.
 
 #### Ocultar la barra de títulos cuando se maximiza
 
@@ -523,7 +513,6 @@ Con combinaciones de teclas adecuadas, usted debería ser capaz de usar `Alt+F5`
 Para prevenir que `metacity-theme-3.xml` sobreescriba el paquete [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard) cada vez que se actualice, añada el nombre del paquete a `/etc/pacman.conf` con el parámetro `NoUpgrade`.
 
  `/etc/pacman.conf` 
-
 ```
 ... líneas previas ...
 
@@ -569,7 +558,7 @@ Una interfaz gráfica alternativa para cambiar los temas (gtk3, iconos y cursore
 
 #### Fuentes más grandes para la pantalla de acceso
 
-Este ajuste agranda las fuentes del inicio de sesión con un factor de escalada. Es el mismo método empleado por la _Configuracion del acceso universal_ en el escritorio.
+Este ajuste agranda las fuentes del inicio de sesión con un factor de escalada. Es el mismo método empleado por la *Configuracion del acceso universal* en el escritorio.
 
 Debe [exportar las variables de la sesión GDM](#Pantalla_de_acceso) antes de realizar este ajuste.
 
@@ -591,7 +580,7 @@ Si el anterior ajuste no funciona en su caso o no puede exportar las variables d
 
 #### Hacer interactivo el botón de encendido
 
-La instalación por defecto establece el botón de encendido para suspender el sistema. _**Apagar**_ o _**Mostrar diálogo**_ es una mejor opción. En primer lugar, debe exportar las variables de sesión de GDM como se indica [más arriba.](#Pantalla_de_acceso)
+La instalación por defecto establece el botón de encendido para suspender el sistema. ***Apagar*** o ***Mostrar diálogo*** es una mejor opción. En primer lugar, debe exportar las variables de sesión de GDM como se indica [más arriba.](#Pantalla_de_acceso)
 
 ```
  $ GSETTINGS_BACKEND=dconf gsettings set org.gnome.settings-daemon.plugins.power button-power 'interactive'
@@ -620,7 +609,7 @@ Al configurar los comportamientos esperados al cerrar la tapa mediante [Systemd#
 
 #### Cambiar la acción del nivel de batería crítico (para portátiles)
 
-La interfaz gráfica [gnome-power-manager](https://www.archlinux.org/packages/?name=gnome-power-manager) no tiene una opción: "do nothing" (_«no hacer nada»_) en los portátiles sobren el nivel de batería crítico. Para modificar manualmente esto, abra [dconf](https://www.archlinux.org/packages/?name=dconf)-editor -> org -> gnome -> settings-daemon -> plugins -> power. Modifique la opción "critical-battery-action" al valor "nothing".
+La interfaz gráfica [gnome-power-manager](https://www.archlinux.org/packages/?name=gnome-power-manager) no tiene una opción: "do nothing" (*«no hacer nada»*) en los portátiles sobren el nivel de batería crítico. Para modificar manualmente esto, abra [dconf](https://www.archlinux.org/packages/?name=dconf)-editor -> org -> gnome -> settings-daemon -> plugins -> power. Modifique la opción "critical-battery-action" al valor "nothing".
 
 ### Otros consejos
 
@@ -633,7 +622,6 @@ Véase [GNOME Tips](/index.php/GNOME_Tips "GNOME Tips").
 Si no le gusta el nuevo comportamiento de la barra de desplazamiento solo hay que poner `gtk-primary-button-warps-slider = false` en la sección `[Settings]` de `~/.config/gtk-3.0/settings.ini`:
 
  `~/.config/gtk-3.0/settings.ini` 
-
 ```
 [Settings]
 gtk-primary-button-warps-slider = false
@@ -652,7 +640,7 @@ $ gnome-session-properties
 
 ### Editar el menú de aplicaciones
 
-[gnome-menus](https://www.archlinux.org/packages/?name=gnome-menus) proporciona _gmenu-simple-editor_ que puede mostrar/ocultar las entradas del menú.
+[gnome-menus](https://www.archlinux.org/packages/?name=gnome-menus) proporciona *gmenu-simple-editor* que puede mostrar/ocultar las entradas del menú.
 
 [alacarte](https://www.archlinux.org/packages/?name=alacarte) proporciona un editor del menú más completo para añadir/editar entradas de menú.
 
@@ -660,7 +648,7 @@ $ gnome-session-properties
 
 GNOME 3 está usando [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") (un demonio init para Linux) con capacidades más modernas. Anteriormente, los programas de GNOME fueron alterados para utilizar las funcionalidades de inicio de Arch para aglutinar los ajustes, bien fuera por necesidades de mantenimiento requeridas para ello o, posiblemente, se debiera a la transición hacia el nuevo sistema init (leer más sobre esto [aquí](https://bbs.archlinux.org/viewtopic.php?pid=1115208#p1115208)). Las áreas que la configuración no conserva son la **Fecha y Hora** y la adición de perfiles ICC en el menú **Color**, y posiblemente otras.
 
-Para obtener de nuevo la funcionalidad, [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") tiene que estar instalado y los servicios _gdm.service_ y _NetworkManager.service_ deben ser activados.
+Para obtener de nuevo la funcionalidad, [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") tiene que estar instalado y los servicios *gdm.service* y *NetworkManager.service* deben ser activados.
 
 ### Borde interno en el Terminal de Gnome
 
@@ -726,7 +714,6 @@ Véase [cuando una extensión rompe GNOME](#Cuando_una_extensi.C3.B3n_rompe_GNOM
 Puede engañar a GNOME utilizando otro explorador de archivos mediante la edición de la línea `Exec` en `/usr/share/applications/nautilus.desktop`. Véanse los parámetros correctos en el archivo `.desktop` del administrador de archivos elegido, por ejemplo:
 
  `/usr/share/applications/nautilus.desktop` 
-
 ```
 [...]
 Exec=thunar %F
@@ -756,7 +743,7 @@ gsettings set org.gnome.desktop.default-applications.terminal exec-arg "'-e'"
 
 ```
 
-**Nota:** El flag `-e` es para ejecutar una orden. Cuando _nautilus-open-terminal_ invoca `urxvtc`, pone la orden `cd` al final de cada línea de órdenes para que el nueva terminal se inicie en el directorio correcto para abrirlo desde él. Otras terminales requerirán una orden `exec-arg` diferente (tal vez dejarlo vacío) .
+**Nota:** El flag `-e` es para ejecutar una orden. Cuando *nautilus-open-terminal* invoca `urxvtc`, pone la orden `cd` al final de cada línea de órdenes para que el nueva terminal se inicie en el directorio correcto para abrirlo desde él. Otras terminales requerirán una orden `exec-arg` diferente (tal vez dejarlo vacío) .
 
 ### Aplicaciones predeterminadas
 
@@ -799,7 +786,7 @@ GNOME 3 esconde muchas opciones útiles que se pueden personalizar con **dconf-e
 
 ### Cambiar teclas de acceso rápido
 
-Algunas combinaciones de teclas no se pueden cambiar directamente a través de Configuración -> Teclado -> Atajos. Para cambiar estas teclas , utilice dconf-editor. Un ejemplo de particular interés es la combinación de teclas Alt-Above_Tab. En teclados de US, esto es Alt-`: es una combinación de teclas de uso frecuente en el editor [Emacs](/index.php/Emacs "Emacs").Se puede cambiar mediante la apertura de dconf-editor y modificar la clave _switch-group_ que se encuentra en `org.gnome.desktop.wm.keybindings`.
+Algunas combinaciones de teclas no se pueden cambiar directamente a través de Configuración -> Teclado -> Atajos. Para cambiar estas teclas , utilice dconf-editor. Un ejemplo de particular interés es la combinación de teclas Alt-Above_Tab. En teclados de US, esto es Alt-`: es una combinación de teclas de uso frecuente en el editor [Emacs](/index.php/Emacs "Emacs").Se puede cambiar mediante la apertura de dconf-editor y modificar la clave *switch-group* que se encuentra en `org.gnome.desktop.wm.keybindings`.
 
 Es posible cambiar manualmente las teclas a través del denominado archivo de mapa de aceleración de la aplicación. Dichos archivos acompañan a la correspondiente aplicación: por ejemplo, el de Thunar está en ~/.config/Thunar/accels.scm, mientras que el de Nautilus está localizado en ~/.config/nautilus/accels y ~/.gnome2/accels/nautilus en las versiones antiguas.
 
@@ -821,23 +808,23 @@ The file is regenerate regularly so don't waist time on commenting the file. The
 
 #### Nautilus 3.4 y posterior
 
-En primer lugar, utilice **dconf-editor** para colocar una marca de verificación junto a `can-change-accels` en la clave llamada _org.gnome.desktop.interface._
+En primer lugar, utilice **dconf-editor** para colocar una marca de verificación junto a `can-change-accels` en la clave llamada *org.gnome.desktop.interface.*
 
-Vamos a sustituir la _tecla de acceso directo_ —(«hotkey»), también conocido como atajo del teclado o acelerador del teclado— utilizada por Nautilus para mover archivos a la Papelera.
+Vamos a sustituir la *tecla de acceso directo* —(«hotkey»), también conocido como atajo del teclado o acelerador del teclado— utilizada por Nautilus para mover archivos a la Papelera.
 
 La asignación, por defecto, es un poco incómoda: `Ctrl+Supr`.
 
 *   Abra Nautilus, seleccione cualquier archivo, y haga clic en **Editar** en la barra de menú.
-*   Posicione el ratón sobre el elemento del menú _Mover a la Papelera_.
+*   Posicione el ratón sobre el elemento del menú *Mover a la Papelera*.
 *   Al desplazarse, oprima `Supr`. El atajo actual estará ahora desactivado.
 *   Pulse cualquier tecla para crear la nueva clave para el atajo.
 *   Presione `Supr` para hacer que el nuevo atajo sea la tecla Suprimir.
 
-Asegúrese de seleccionar un archivo o carpeta, de lo contrario _Mover a la Papelera_ será de color gris y no se podrá hacer clic. Por último, desactive nuevamente `can-change-accels` para evitar cambios accidentales con las teclas de acceso rápido.
+Asegúrese de seleccionar un archivo o carpeta, de lo contrario *Mover a la Papelera* será de color gris y no se podrá hacer clic. Por último, desactive nuevamente `can-change-accels` para evitar cambios accidentales con las teclas de acceso rápido.
 
 ### Grabar lo que visualiza en la pantalla
 
-Gnome viene con la función _possbility_ incorporada para crear [screencasts](https://en.wikipedia.org/wiki/es:Screencast "wikipedia:es:Screencast") fácilmente. La combinación de teclas Ctrl+Mayús+Alt+R arranca y detiene la grabación. Un círculo rojo aparece en la esquina inferior derecha de la pantalla cuando la grabación está en curso. Una vez finalizada la grabación, un archivo llamado 'Screencast from %d%u-%c.webm' se guarda en la carpeta Vídeos. Para utilizar la función screencast necesita tener instalados los plugins gst que son:
+Gnome viene con la función *possbility* incorporada para crear [screencasts](https://en.wikipedia.org/wiki/es:Screencast "wikipedia:es:Screencast") fácilmente. La combinación de teclas Ctrl+Mayús+Alt+R arranca y detiene la grabación. Un círculo rojo aparece en la esquina inferior derecha de la pantalla cuando la grabación está en curso. Una vez finalizada la grabación, un archivo llamado 'Screencast from %d%u-%c.webm' se guarda en la carpeta Vídeos. Para utilizar la función screencast necesita tener instalados los plugins gst que son:
 
 ```
 $ pacman -Qs gst
@@ -846,15 +833,15 @@ $ pacman -Qs gst
 
 ### Modificar la distribución del teclado con XkbOptions
 
-Utilice **dconf-editor**, vaya a la clave denominada _org.gnome.desktop.input-sources.xkb-options_ y añada las XkbOptions deseadas (por ejemplo, 'caps:swapescape') a la lista.
+Utilice **dconf-editor**, vaya a la clave denominada *org.gnome.desktop.input-sources.xkb-options* y añada las XkbOptions deseadas (por ejemplo, 'caps:swapescape') a la lista.
 
 Véase `/usr/share/X11/xkb/rules/xorg` para conocer todas las XkbOptions y, luego, `/usr/share/X11/xkb/symbols/*` para conocer sus respectivas descripciones.
 
-**Nota:** Para activar la combinación `Ctrl+Alt+Retroceso` para terminar Xorg, utilice el paquete [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)"). Una vez en Gnome Tweak Tool, navegue a _Escritura > Terminate_ y seleccione la opción `Ctrl+Alt+Backspace` del menú desplegable.
+**Nota:** Para activar la combinación `Ctrl+Alt+Retroceso` para terminar Xorg, utilice el paquete [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) disponible en los [repositorios oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)"). Una vez en Gnome Tweak Tool, navegue a *Escritura > Terminate* y seleccione la opción `Ctrl+Alt+Backspace` del menú desplegable.
 
 ### Alternar distribuciones de teclado
 
-Gnome no considera ninguna configuración establecida en `/etc/X11/conf.d/*.conf`, antes bien, tiene que configurar la orden para alternar distribuciones, bien a través de control center con las opciones _Switch to previous source_ y _Switch to next source_ o bien, si desea utilizar la combinación Alt - Mayús, a través de Gnome-Tweak-Tool donde tendrá que ajustar _Escritura → Modifiers-only input sources → seleccione Alt-shift_. Para más información véase tambien este [hilo del foro](https://bbs.archlinux.org/viewtopic.php?id=152127).
+Gnome no considera ninguna configuración establecida en `/etc/X11/conf.d/*.conf`, antes bien, tiene que configurar la orden para alternar distribuciones, bien a través de control center con las opciones *Switch to previous source* y *Switch to next source* o bien, si desea utilizar la combinación Alt - Mayús, a través de Gnome-Tweak-Tool donde tendrá que ajustar *Escritura → Modifiers-only input sources → seleccione Alt-shift*. Para más información véase tambien este [hilo del foro](https://bbs.archlinux.org/viewtopic.php?id=152127).
 
 ## Mensajería integrada (Empathy)
 
@@ -879,7 +866,7 @@ Cuando no se pueden establecer configuraciones en [dconf](https://www.archlinux.
 
 ### Cuando una extensión rompe GNOME
 
-Cuando al habilitar las extensiones de shell provoca la rotura de GNOME, primero debe remover el _user-theme_ y _auto-move-windows_ desde el directorio de instalación.
+Cuando al habilitar las extensiones de shell provoca la rotura de GNOME, primero debe remover el *user-theme* y *auto-move-windows* desde el directorio de instalación.
 
 El directorio de instalación podría ser uno de los siguientes: **`~/.local/share/gnome‑shell/extensions`** y **`/usr/share/gnome‑shell/extensions`** o **`/usr/local/share/gnome‑shell/extensions`**. La eliminación de estos dos carpetas que contienen la extensión podrá arreglar la ruptura. De lo contrario, procure aislar la extensión que cause el problema con el método del ensayo-error.
 
@@ -1003,12 +990,12 @@ Configuración del sistema --> Teclado --> Atajos --> Navegación --> Ocultar to
 
 1.  Presione `Alt+F2`
 2.  Introduzca `gnome-tweak-tool` y pulse intro.
-3.  Seleccione la pestaña _Escritorio_.
-4.  Coleque la opción _Hacer que el gestor de archivos gestione el escritorio_ y asegúrese que está en **off**.
+3.  Seleccione la pestaña *Escritorio*.
+4.  Coleque la opción *Hacer que el gestor de archivos gestione el escritorio* y asegúrese que está en **off**.
 
 ### «No se puede aplicar la configuración guardada para los monitores»
 
-Si encuentra este mensaje (_«Unable to apply stored configuration for monitors»_), pruebe a desactivar el plugin xrandr de gnome-settings-daemon:
+Si encuentra este mensaje (*«Unable to apply stored configuration for monitors»*), pruebe a desactivar el plugin xrandr de gnome-settings-daemon:
 
 ```
 $ dconf write /org/gnome/settings-daemon/plugins/xrandr/active false
@@ -1033,14 +1020,13 @@ Es posible que se encuentre en la situación de que puede ver la lista de conexi
 
 ### «Cualquier orden viene definida como 33»
 
-Cuando se pulsa la tecla `Imprimir Pantalla` (a veces etiquetada como `PrntScr` o `PrtSc`) para tomar una captura de pantalla, y obtiene el mensaje _«Any command has been defined 33»_, [instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [metacity](https://www.archlinux.org/packages/?name=metacity).
+Cuando se pulsa la tecla `Imprimir Pantalla` (a veces etiquetada como `PrntScr` o `PrtSc`) para tomar una captura de pantalla, y obtiene el mensaje *«Any command has been defined 33»*, [instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [metacity](https://www.archlinux.org/packages/?name=metacity).
 
 ### GDM y GNOME utilizan los cursores de X11
 
 Para solucionar este problema escriba, como root, lo siguiente en `/usr/share/icons/default/index.theme` (creando la carpeta `/usr/share/icons/default` si fuese necesario):
 
  `/usr/share/icons/default/index.theme` 
-
 ```
 [Icon Theme]
 Inherits=Adwaita
@@ -1062,18 +1048,18 @@ Esto creará todas las carpetas habituales de XDG en su directorio personal, si 
 
 ### Las contraseñas no se recuerdan
 
-Si se recibe una solicitud de contraseña cada vez que se conecta, y se encuentra con que las contraseñas no se guardan, es posible que deba crear/establecer un _«gestor de claves»_ por defecto:
+Si se recibe una solicitud de contraseña cada vez que se conecta, y se encuentra con que las contraseñas no se guardan, es posible que deba crear/establecer un *«gestor de claves»* por defecto:
 
 ```
 $ pacman -S seahorse
 
 ```
 
-Abra _«Contraseñas y claves»_ en el menú o ejecute «seahorse». Seleccione _Ver_ → _Mediante Keyring_. Si no hay ningún archivo _keyring_ en la columna de la izquierda (que estará marcado con un icono de bloqueo), vaya a _Archivo_ → _Nuevo_ → _Contraseña de Keyring_ y adjudíquele un nombre. Se le pedirá que introduzca una contraseña. Podemos omitir la contraseña, que hará que se desbloquee automáticamente, incluso cuando se utiliza autologin, pero las contraseñas no se guardarán de forma segura. Por último, haga clic en el archivo de claves que acaba de crear y seleccione «Establecer como predeterminado».
+Abra *«Contraseñas y claves»* en el menú o ejecute «seahorse». Seleccione *Ver* → *Mediante Keyring*. Si no hay ningún archivo *keyring* en la columna de la izquierda (que estará marcado con un icono de bloqueo), vaya a *Archivo* → *Nuevo* → *Contraseña de Keyring* y adjudíquele un nombre. Se le pedirá que introduzca una contraseña. Podemos omitir la contraseña, que hará que se desbloquee automáticamente, incluso cuando se utiliza autologin, pero las contraseñas no se guardarán de forma segura. Por último, haga clic en el archivo de claves que acaba de crear y seleccione «Establecer como predeterminado».
 
 ### Las ventanas no se pueden modificar con la tecla Alt + botón del ratón
 
-Cambie el dconf-setting _«org.gnome.desktop.wm.preferences.mouse-button-modifier»_ de <Super> a <Alt>. No es posible cambiar esto con la _«Configuración del sistema»_ → «Teclado» → «Accesos directos», donde encontrará que están presentes solamente las combinaciones de teclas habituales. Los desarrolladores de GNOME decidieron cambiar esto de la versión 3.4 a 3.6 debido a este informe de error [https://bugzilla.gnome.org/show_bug.cgi?id=607797](https://bugzilla.gnome.org/show_bug.cgi?id=607797)
+Cambie el dconf-setting *«org.gnome.desktop.wm.preferences.mouse-button-modifier»* de <Super> a <Alt>. No es posible cambiar esto con la *«Configuración del sistema»* → «Teclado» → «Accesos directos», donde encontrará que están presentes solamente las combinaciones de teclas habituales. Los desarrolladores de GNOME decidieron cambiar esto de la versión 3.4 a 3.6 debido a este informe de error [https://bugzilla.gnome.org/show_bug.cgi?id=607797](https://bugzilla.gnome.org/show_bug.cgi?id=607797)
 
 ### Gnome-shell 3.8.x falla al cargarse con una pantalla en negro + el cursor
 

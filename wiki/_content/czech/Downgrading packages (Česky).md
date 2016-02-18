@@ -38,7 +38,7 @@ Problematika snižování verze balíčků souvisí s nejnovějším vývojem ba
 
 ## Jak se vrátit k předchozí verzi balíčku
 
-*   Otázka: Použil jsem příkaz `pacman -Syu` a balíček _ABC_ byl aktualizován z verze N na verzi M. Nový balíček ovšem způsobuje problémy, jak se vrátím od verze balíčku M ke starší verzi tohoto balíčku - N?
+*   Otázka: Použil jsem příkaz `pacman -Syu` a balíček *ABC* byl aktualizován z verze N na verzi M. Nový balíček ovšem způsobuje problémy, jak se vrátím od verze balíčku M ke starší verzi tohoto balíčku - N?
 *   Odpověď: Jednoduše se podívejte do adresáře `/var/cache/pacman/pkg` ve vašem systému, nachází-li se zde starší verze dotčeného balíčku. (Pokud jste v nedávné době nepoužili příkaz `pacman -Scc`, měli byste ho zde najít.) Pak nainstalujete starší verzi balíčku příkazem: `pacman -U /var/cache/pacman/pkg/stary_balicek-stara_verze.pkg.tar.gz`.
 
 Tento proces odebere nový balíček, vyřeší potřebné změny v závislostech mezi balíčky a nainstaluje starší verzi balíčku i s potřebnými závislostmi.
@@ -137,7 +137,6 @@ Přesměrování jednoho z oficiálních repozitářu na ARM provedete takto:
 Server = [http://http://arm.konnichi.com/2012/01/30/extra/os/i686/](http://http://arm.konnichi.com/2012/01/30/extra/os/i686/)  #stav repa extra k 30.1.2012
 
 ```
-
 Ne vždy je třeba rovnou přistupovat ke snížení verze. Častěji, než, že nový balíček obsahuje chybu jsme v situaci, kdy potřebujeme starší již nevyvíjenou aplikaci, která vyžaduje starší verzi sdílené knihovny. Pak je vhodné se nejprve porozhlédnout po AURu, zda již někdo potřebnou knihovnu neposkytuje (např. knihoven libpng nebo libjpeg je v AUR i několik starších verzí, které, lze mít v systému současně).
 
 ## A co závislosti?

@@ -124,13 +124,13 @@ mv ~/.config/autostart ~/.config/autostart-bak
 
 #### GNOME 2.26
 
-_**Sekite kitą vadovą GNOME 2.24 versijai. Jeigu nepavyksta, pabandykite tai:**_
+***Sekite kitą vadovą GNOME 2.24 versijai. Jeigu nepavyksta, pabandykite tai:***
 
 Jeigu po openbox įdiegimo ir bandymo prisijungti prie 'Gnome/openbox' sesijos, sistema lūžta, tada Jūs galite pabandyti vieną iš tokių būdų, kurie padės Jums paleisti openbox kaip langų tvarkyklę kiekvieną kart, kai tik prisijungsite prie 'Gnome' sesijos iš Jūsų prisijungimo tvarkytojo (xdm, gdm, kdm, entrance, slim, kt.).
 
 1.  Prisijunkite prie vien tik Gnome sesijos ( kuri naudos metacity kaip langų tvarkyklę ), jeigu iki šiol to dar nepadarėte.
 2.  Įdiekite openbox, jeigu to dar nepadarėte.
-3.  Ištirkite savo menu iki _System → Preferences → Startup Applications_ (tikėtina, kad pavadinimas bus 'Session', jeigu naudojate senesnę Gnome versiją)
+3.  Ištirkite savo menu iki *System → Preferences → Startup Applications* (tikėtina, kad pavadinimas bus 'Session', jeigu naudojate senesnę Gnome versiją)
 4.  Atidarykite Startup Application, paspauskite '+ Add' ir įveskite tekstą, kuris matosi tolesniame bloke, ignuorodami tekstą už # simbolio.
 5.  Dabar paspauskite 'Add' mygtuką duomenų įvedimo langelyje ir įsitikinkite, kad yra žymė šalia Jūsų naujo įrašo yra pažymėta.
 6.  Dabar išsiregistruokite iš gnome sesijos ir įsiregistruokite per naujo. Dabar Jūs jau turėtumėt matyti openbox kaip savo langų tvarkyklę.
@@ -370,8 +370,8 @@ Openbox siūlo paleisties programų palaikymą. Tai suteikiama pasitelkus "openb
 
 Yra du būdai, kaip galima įgalinti paleisties programas:
 
-1.  Jeigu naudojate startx/xinit jungiantis prie X sesijos, paredaguokite `~/.xinitrc` pakeisdami _openbox_ į _openbox-session_.
-2.  Jeigu naudojate GDM/KDM, tuomet pasirinkite _Openbox_ sesiją. Tai automatiškai įgalins paleisties programas.
+1.  Jeigu naudojate startx/xinit jungiantis prie X sesijos, paredaguokite `~/.xinitrc` pakeisdami *openbox* į *openbox-session*.
+2.  Jeigu naudojate GDM/KDM, tuomet pasirinkite *Openbox* sesiją. Tai automatiškai įgalins paleisties programas.
 
 Paleisties programos yra tvarkomos `~/.config/openbox/autostart.sh` faile. Pilna instrukcija ir geriausius praktinius sprendimus galima rasti [Openbox tinklapyje](http://openbox.org/wiki/Help:Autostart).
 
@@ -656,7 +656,7 @@ Norint pasiekti NTFS diskus su PCmanFM, įdiekite ntfs-3g:
 
 ```
 
-ir įsitikinkite, jog esate _hal_ grupėje:
+ir įsitikinkite, jog esate *hal* grupėje:
 
 ```
 # gpasswd -a username hal
@@ -708,7 +708,7 @@ Daugiau informacijos galite rasti [Gmrun](/index.php/Gmrun "Gmrun") wiki puslapy
 
 #### Bashrun
 
-[Bashrun](http://bashrun.sourceforge.net) suteikia kitokį, pliko kiauto priėjimo variantą prie paleidimo dialogo, naudojant specialią bash sesiją su mažu xterm langu. Jis yra pasiekiamas bendruomenės repozite ir gali būti paleistas Alt+F2 stiliumi, aptartu aukščiau. Norint _bashrun_ naudoti kaip tradicišką paleidimo langą, pridėkite sekantį įtašą į `~/.config/openbox/rc.xml` failo <applications> sekciją:
+[Bashrun](http://bashrun.sourceforge.net) suteikia kitokį, pliko kiauto priėjimo variantą prie paleidimo dialogo, naudojant specialią bash sesiją su mažu xterm langu. Jis yra pasiekiamas bendruomenės repozite ir gali būti paleistas Alt+F2 stiliumi, aptartu aukščiau. Norint *bashrun* naudoti kaip tradicišką paleidimo langą, pridėkite sekantį įtašą į `~/.config/openbox/rc.xml` failo <applications> sekciją:
 
 ```
    <application name="bashrun">
@@ -816,7 +816,7 @@ Atidarykite failą su teksto redaktoriumi ir dabar galite ieškoti ir keisti vis
 
 ```
 
-Kitas būdas yra naudoti _perl-file-mimeinfo_ paketą iš repozito, ir pasiremti mimeopen komanda, pavyzdžiui:
+Kitas būdas yra naudoti *perl-file-mimeinfo* paketą iš repozito, ir pasiremti mimeopen komanda, pavyzdžiui:
 
 ```
 mimeopen -d /path/to/file
@@ -843,7 +843,7 @@ Iš terminalo gerai veikia Ctrl+Insert kopijavimui ir Shift+Insert įklijavimui.
 
 ### Skaidrumas
 
-Naudodami transset-df programą, kurios pavadinimas iš esmės yra [transset](/index.php?title=Transset&action=edit&redlink=1 "Transset (page does not exist)"), ( pasiekiama _pacman -S transset-df_ komanda ) galite iškarto nustatyti langų skaidrumą. Pavyzdžiui redaguodami sekantį bloką `~/.config/openbox/rc.xml` faile, galite padaryti, kad kai pelės žymeklis yra ties lango pavadinimo sritimi, pelės ratuko sukimas įjungtu ar išjungtu skaidrumą:
+Naudodami transset-df programą, kurios pavadinimas iš esmės yra [transset](/index.php?title=Transset&action=edit&redlink=1 "Transset (page does not exist)"), ( pasiekiama *pacman -S transset-df* komanda ) galite iškarto nustatyti langų skaidrumą. Pavyzdžiui redaguodami sekantį bloką `~/.config/openbox/rc.xml` faile, galite padaryti, kad kai pelės žymeklis yra ties lango pavadinimo sritimi, pelės ratuko sukimas įjungtu ar išjungtu skaidrumą:
 
 ```
     <context name="Titlebar">
@@ -962,9 +962,9 @@ Tuomet atsidarykite savo `.config/openbox/rc.xml` failą:
 
 ```
 
-_Magija_ ateina iš `<layer>below</layer>` eilutės, kuri patalpiną programą po visom kitom programom. Čia Urxvt yra rodomas visuose darbastaliuose. Pakeitimai, žinoma, yra galimi.
+*Magija* ateina iš `<layer>below</layer>` eilutės, kuri patalpiną programą po visom kitom programom. Čia Urxvt yra rodomas visuose darbastaliuose. Pakeitimai, žinoma, yra galimi.
 
-Pastaba: Vietoj to, kad naudoti <application name="URxvt">, galite naudoti kitą ( pavyzdžiui "URxvt-bg" ), ir naudoti -name pasirinkimą, kuomet paleidžiama urxvt. Tokiu būdu, tik tie terminalai, kuriuos pavadinsite _URxvt-bg_ bus pagauti ir pakeisti, kaip tai aprašyta _rc.xml_. Pavyzdžiui:
+Pastaba: Vietoj to, kad naudoti <application name="URxvt">, galite naudoti kitą ( pavyzdžiui "URxvt-bg" ), ir naudoti -name pasirinkimą, kuomet paleidžiama urxvt. Tokiu būdu, tik tie terminalai, kuriuos pavadinsite *URxvt-bg* bus pagauti ir pakeisti, kaip tai aprašyta *rc.xml*. Pavyzdžiui:
 
 ```
  urxvt -name URxvt-bg
@@ -984,7 +984,7 @@ Jeigu garsui naudojate ALSA, galite naudoti įvairias garso reguliavimo programa
 
 ```
 
-Tai sujungia _Windows_ ir _į viršų_ mygtuką su garso padidėjimu 5%. Atitinkamai, garso lygio mažinimui:
+Tai sujungia *Windows* ir *į viršų* mygtuką su garso padidėjimu 5%. Atitinkamai, garso lygio mažinimui:
 
 ```
    <keybind key="W-Down">

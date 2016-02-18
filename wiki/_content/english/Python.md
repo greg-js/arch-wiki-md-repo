@@ -1,8 +1,8 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wikipedia:Python (programming language)"):
 
-	_Python is a widely used general-purpose, high-level programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C. The language provides constructs intended to enable clear programs on both a small and large scale._
+	*Python is a widely used general-purpose, high-level programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C. The language provides constructs intended to enable clear programs on both a small and large scale.*
 
-	_Python supports multiple programming paradigms, including object-oriented, imperative and functional programming or procedural styles. It features a dynamic type system and automatic memory management, and has a large and comprehensive standard library._
+	*Python supports multiple programming paradigms, including object-oriented, imperative and functional programming or procedural styles. It features a dynamic type system and automatic memory management, and has a large and comprehensive standard library.*
 
 ## Contents
 
@@ -60,7 +60,7 @@ In both cases, just change `python` to `python2` and the program will then use P
 Another way to force the use of python2 without altering the scripts is to call it explicitly with `python2`:
 
 ```
-$ python2 _myScript.py_
+$ python2 *myScript.py*
 
 ```
 
@@ -73,7 +73,7 @@ $ mkdir ~/bin
 
 ```
 
-Then add a symlink `python` to _python2_ and the config scripts in it:
+Then add a symlink `python` to *python2* and the config scripts in it:
 
 ```
 $ ln -s /usr/bin/python2 ~/bin/python
@@ -81,7 +81,7 @@ $ ln -s /usr/bin/python2-config ~/bin/python-config
 
 ```
 
-Finally put the new folder _at the beginning_ of your `PATH` variable:
+Finally put the new folder *at the beginning* of your `PATH` variable:
 
 ```
 $ export PATH=~/bin:$PATH
@@ -104,7 +104,6 @@ A similar approach in tricking the environment, which also relies on `#!/usr/bin
 Many projects' build scripts assume `python` to be Python 2, and that would eventually result in an error — typically complaining that `print 'foo'` is invalid syntax. Luckily, many of them call `python` from the `PATH` instead of hardcoding `#!/usr/bin/python` in the shebang line, and the Python scripts are all contained within the project tree. So, instead of modifying the build scripts manually, there is an easy workaround. Just create `/usr/local/bin/python` with content like this:
 
  `/usr/local/bin/python` 
-
 ```
 #!/bin/bash
 script=$(readlink -f -- "$1")
@@ -135,7 +134,6 @@ Afterwards scripts within the specified project trees will be run with Python 2.
 Copy this into Python's interactive shell:
 
  `/usr/bin/python` 
-
 ```
 import rlcompleter
 import readline
@@ -190,7 +188,7 @@ Old versions of Python are available via the [AUR](/index.php/AUR "AUR") and may
 
 As of July 2014, Python upstream only supports Python 2.7, 3.2, 3.3, and 3.4 for security fixes. Using older versions for Internet-facing applications or untrusted code may be dangerous and is not recommended.
 
-Extra modules/libraries for old versions of Python may be found on the AUR by searching for `python<_version without period_>`, e.g. searching for "python26" for 2.6 modules.
+Extra modules/libraries for old versions of Python may be found on the AUR by searching for `python<*version without period*>`, e.g. searching for "python26" for 2.6 modules.
 
 ## Tips and tricks
 
@@ -212,7 +210,7 @@ to autostart the browser and run the IPython kernel. You can select the python v
 *   [A Byte of Python](http://www.swaroopch.com/notes/Python) is a book suitable for users new to Python (and scripting in general).
 *   [Learn Python The Hard Way](http://learnpythonthehardway.org) the best intro to programming.
 *   [Learn Python](http://learnpython.org) nice site to learn python.
-*   [Crash into Python](http://stephensugden.com/crash_into_python/) Also known as _Python for Programmers with 3 Hours_, this guide gives experienced developers from other languages a crash course on Python.
+*   [Crash into Python](http://stephensugden.com/crash_into_python/) Also known as *Python for Programmers with 3 Hours*, this guide gives experienced developers from other languages a crash course on Python.
 *   [Beginning Game Development with Python and Pygame: From Novice to Professional](http://www.apress.com/book/view/9781590598726) for games.
 *   [Think Python: How to Think Like a Computer Scientist](http://www.greenteapress.com/thinkpython/) A great introduction to Python programming for beginners.
 *   [Pythonspot](https://pythonspot.com) Great Python programming tutorials.

@@ -83,7 +83,6 @@ Include conf/extra/mediawiki.conf
 To get MediaWiki working with [Nginx](/index.php/Nginx "Nginx"), create the following file:
 
  `/etc/nginx/mediawiki.conf` 
-
 ```
 
 location / {
@@ -128,7 +127,6 @@ Ensure that [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) is insta
 Include a server directive, similar to this
 
  `/etc/nginx/nginx.conf` 
-
 ```
 server {
   listen 80;
@@ -152,7 +150,6 @@ Finally, [restart](/index.php/Restart "Restart") the `nginx.service` daemon.
 You should have [Lighttpd](/index.php/Lighttpd "Lighttpd") installed and configured. "mod_alias" and "mod_rewrite" in server.modules array of lighttpd is required. Append to the lighttpd configuration file the following lines
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 alias.url += ("/mediawiki" => "/usr/share/webapps/mediawiki/")
 url.rewrite-once += (
@@ -171,7 +168,7 @@ If the database server is already set up, MediaWiki can automatically create the
 
 ### LocalSettings.php
 
-Open the wiki url (usually `http://_your_server_/mediawiki/`) in a browser and do the initial configuration. Follow [upstream instructions](https://www.mediawiki.org/wiki/Manual:Config_script "mw:Manual:Config script").
+Open the wiki url (usually `http://*your_server*/mediawiki/`) in a browser and do the initial configuration. Follow [upstream instructions](https://www.mediawiki.org/wiki/Manual:Config_script "mw:Manual:Config script").
 
 The generated `LocalSettings.php` file is offered for download, save it to `/usr/share/webapps/mediawiki/LocalSettings.php`. This file defines the specific settings of your wiki. Whenever you upgrade the [mediawiki](https://www.archlinux.org/packages/?name=mediawiki) package, it is not replaced.
 
@@ -205,7 +202,6 @@ After following [this instruction](https://www.mediawiki.org/wiki/Extension:Visu
 Simply install [parsoid-git](https://aur.archlinux.org/packages/parsoid-git/) from the [AUR](/index.php/AUR "AUR") and adjust the path to your MediaWiki in following file:
 
  `/usr/share/webapps/parsoid/api/localsettings.js` 
-
 ```
 parsoidConfig.setInterwiki( 'localhost', 'http://localhost/mediawiki/api.php' );
 

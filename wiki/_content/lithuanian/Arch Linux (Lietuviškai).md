@@ -9,7 +9,7 @@
 
 ## Arch Linux
 
-Arch Linux yra nepriklausomai kuriama i686/x86-64 bendruomeninė distribucija, paremta nuolatinio atnaujinimo (_angl. rolling-release_) modeliu, turinti dideles binarines saugyklas ir pilnavertį paketų palaikymą; tame tarpe ir tų paketų, kurie pasiekiami per portus. Ši distribucija skirta pažengusiems GNU/Linux naudotojams, o pagrindiniai jos kūrimo principai: minimalizmas, grakštumas, programinio teksto korektiškumas ir modernumas. 0.1 versija (Homer) išleista 2002 metų kovo 11 dieną.
+Arch Linux yra nepriklausomai kuriama i686/x86-64 bendruomeninė distribucija, paremta nuolatinio atnaujinimo (*angl. rolling-release*) modeliu, turinti dideles binarines saugyklas ir pilnavertį paketų palaikymą; tame tarpe ir tų paketų, kurie pasiekiami per portus. Ši distribucija skirta pažengusiems GNU/Linux naudotojams, o pagrindiniai jos kūrimo principai: minimalizmas, grakštumas, programinio teksto korektiškumas ir modernumas. 0.1 versija (Homer) išleista 2002 metų kovo 11 dieną.
 
 ## Privalumai
 
@@ -21,13 +21,13 @@ Arch yra paremta lengvai naudojama binarinių paketų sistema ([pacman](/index.p
 
 ## Modernumas
 
-Arch Linux siekia palaikyti pačias naujausias stabilias programų versijas remiantis nuolatinio atnaujinimo modeliu. Šiuo metu palaikome supaprastiną pagrindinių paketų rinkinį minimalioms i686 ir x86-64 pagrindinėms sistemoms ir tūkstančius papildomų PKGBUILD programinių tekstų, skirtų sukurti ir parengti paketus naudojant pirminį programos tekstą. Arch suteikia nekeistas, "vanilines" programas (_angl. vanilla software_); paketai pateikiami nepakeisti - tokie, kokius pateikė pats autorius. Korekcijos daromos labai retai ir tik tais atvejais, kai norima išvengti labai rimtos sisteminės klaidos, kuri gali kilti dėl versijų nesiderinamumo. Arch įtraukia daugelį kitų naujovių, kurias naudoja GNU/Linux naudotojai, pavyzdžiui, šiuolaikines failų sistemas (Ext2/3/4, Reiser, XFS, JFS), LVM2/EVMS, programinį RAID masyvą, udev ir initcpio. Be to, pateikiami patys naujausi sisteminiai branduoliai (_angl. kernels_).
+Arch Linux siekia palaikyti pačias naujausias stabilias programų versijas remiantis nuolatinio atnaujinimo modeliu. Šiuo metu palaikome supaprastiną pagrindinių paketų rinkinį minimalioms i686 ir x86-64 pagrindinėms sistemoms ir tūkstančius papildomų PKGBUILD programinių tekstų, skirtų sukurti ir parengti paketus naudojant pirminį programos tekstą. Arch suteikia nekeistas, "vanilines" programas (*angl. vanilla software*); paketai pateikiami nepakeisti - tokie, kokius pateikė pats autorius. Korekcijos daromos labai retai ir tik tais atvejais, kai norima išvengti labai rimtos sisteminės klaidos, kuri gali kilti dėl versijų nesiderinamumo. Arch įtraukia daugelį kitų naujovių, kurias naudoja GNU/Linux naudotojai, pavyzdžiui, šiuolaikines failų sistemas (Ext2/3/4, Reiser, XFS, JFS), LVM2/EVMS, programinį RAID masyvą, udev ir initcpio. Be to, pateikiami patys naujausi sisteminiai branduoliai (*angl. kernels*).
 
 ## Paprastumas
 
-[The Arch Way](/index.php/The_Arch_Way "The Arch Way") yra filosofija, paremta paprastumu. Arch Linux pagrindinė sistema yra gana paprasta ir minimali, bet tuo pačiu ir funkcionali, GNU/Linux aplinka; Linux branduolys ir GNU įrankių rinkinys (_angl. toolchain_), gausybė papildomų, per komandinę eilutę pasieikiamų, įrankių, pavyzdžiui, **links** ar **Vi**. Neperkrauta, aiški ir paprasta pradinė sistema leidžia bendruomenei įvairiapusiai ją tobulinti ir plėsti.
+[The Arch Way](/index.php/The_Arch_Way "The Arch Way") yra filosofija, paremta paprastumu. Arch Linux pagrindinė sistema yra gana paprasta ir minimali, bet tuo pačiu ir funkcionali, GNU/Linux aplinka; Linux branduolys ir GNU įrankių rinkinys (*angl. toolchain*), gausybė papildomų, per komandinę eilutę pasieikiamų, įrankių, pavyzdžiui, **links** ar **Vi**. Neperkrauta, aiški ir paprasta pradinė sistema leidžia bendruomenei įvairiapusiai ją tobulinti ir plėsti.
 
-Arch paprastos paleidimo (_angl. init_) sistemos sukūrimą labai įtakojo *BSD principas - viskas saugoma _viename faile_ ([rc.conf](/index.php/Rc.conf "Rc.conf")). skirtingai nei nuo sudėtingų hierarchinių aplankų, turinčių begales sisteminių nuorodų kiekvienam eigos lygiui (_angl. run level_), struktūrų.
+Arch paprastos paleidimo (*angl. init*) sistemos sukūrimą labai įtakojo *BSD principas - viskas saugoma *viename faile* ([rc.conf](/index.php/Rc.conf "Rc.conf")). skirtingai nei nuo sudėtingų hierarchinių aplankų, turinčių begales sisteminių nuorodų kiekvienam eigos lygiui (*angl. run level*), struktūrų.
 
 Sistema konfigūruojama redaguojant paprastus tekstinius failus.
 

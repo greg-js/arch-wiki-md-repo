@@ -1,8 +1,8 @@
 From the I2P homepage:
 
-	_I2P is an anonymizing network, offering a simple layer that identity-sensitive applications can use to securely communicate. All data is wrapped with several layers of encryption, and the network is both distributed and dynamic, with no trusted parties._
+	*I2P is an anonymizing network, offering a simple layer that identity-sensitive applications can use to securely communicate. All data is wrapped with several layers of encryption, and the network is both distributed and dynamic, with no trusted parties.*
 
-	_Many applications are available that interface with I2P, including mail, peer-peer, IRC chat, and others._
+	*Many applications are available that interface with I2P, including mail, peer-peer, IRC chat, and others.*
 
 ## Installation
 

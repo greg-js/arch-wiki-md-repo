@@ -189,7 +189,6 @@ Consider switching from the default [CFQ](https://en.wikipedia.org/wiki/CFQ "wik
 The CFQ scheduler is enabled by default on Arch. Verify this by viewing the contents `/sys/block/sd**X**/queue/scheduler`:
 
  `$ cat /sys/block/sd**X**/queue/scheduler` 
-
 ```
 noop deadline [cfq]
 
@@ -224,7 +223,6 @@ This method is preferred when the system has several physical storage devices (f
 Create the following tmpfile where **X** is the letter for the SSD device.
 
  `/etc/tmpfiles.d/set_IO_scheduler.conf ` 
-
 ```
 w /sys/block/sd**X**/queue/scheduler - - - - noop
 
@@ -267,7 +265,6 @@ Though the above will undoubtedly work, it is probably considered a reliable wor
 To do this, create the following:
 
  `/etc/udev/rules.d/60-schedulers.rules` 
-
 ```
 # set deadline scheduler for non-rotating disks
 ACTION=="add|change", KERNEL=="sd[a-z]", TEST!="queue/rotational", ATTR{queue/scheduler}="deadline"
@@ -299,7 +296,6 @@ One can place a swap partition on an SSD. Most modern desktops with an excess of
 Or one can simply do as recommended in the [Maximizing Performance](/index.php/Maximizing_performance#Swappiness "Maximizing performance") article:
 
  `/etc/sysctl.d/99-sysctl.conf` 
-
 ```
 vm.swappiness=1
 vm.vfs_cache_pressure=50
@@ -341,7 +337,7 @@ Using this flag in one's `/etc/fstab` halts the logging of read accesses to the 
 
 #### Browser Profiles
 
-One can _easily_ mount browser profile(s) such as chromium, firefox, opera, etc. into RAM via tmpfs and also use rsync to keep them synced with HDD-based backups. In addition to the obvious speed enhancements, users will also save read/write cycles on their SSD by doing so.
+One can *easily* mount browser profile(s) such as chromium, firefox, opera, etc. into RAM via tmpfs and also use rsync to keep them synced with HDD-based backups. In addition to the obvious speed enhancements, users will also save read/write cycles on their SSD by doing so.
 
 The AUR contains several packages to automate this process, for example [profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/).
 
@@ -368,7 +364,7 @@ Using a journaling filesystem such as ext4 on an SSD WITHOUT a journal is an opt
 | make | 207.6 | 199.4 | 3.95 % |
 | make clean | 6.45 | 3.73 | 42.17 % |
 
-_"What the results show is that metadata-heavy workloads, such as make clean, do result in almost twice the amount data written to disk. This is to be expected, since all changes to metadata blocks are first written to the journal and the journal transaction committed before the metadata is written to their final location on disk. However, for more common workloads where we are writing data as well as modifying filesystem metadata blocks, the difference is much smaller."_
+*"What the results show is that metadata-heavy workloads, such as make clean, do result in almost twice the amount data written to disk. This is to be expected, since all changes to metadata blocks are first written to the journal and the journal transaction committed before the metadata is written to their final location on disk. However, for more common workloads where we are writing data as well as modifying filesystem metadata blocks, the difference is much smaller."*
 
 **Note:** The make clean example from the table above typifies the importance of intentionally doing compiling in tmpfs as recommended in the [preceding section](/index.php/Solid_State_Drives#Compiling_in_tmpfs "Solid State Drives") of this article!
 
@@ -401,7 +397,6 @@ ADATA has a utility available for Linux (i686) on their support page [here](http
 Crucial provides an option for updating the firmware with an ISO image. These images can be found after selecting the product [here](http://www.crucial.com/support/firmware.aspx) and downloading the "Manual Boot File." Owners of an M4 Crucial model, may check if a firmware upgrade is needed with `smartctl`.
 
  `$ smartctl --all /dev/sd**X**` 
-
 ```
 ==> WARNING: This drive may hang after 5184 hours of power-on time:
 [http://www.tomshardware.com/news/Crucial-m4-Firmware-BSOD,14544.html](http://www.tomshardware.com/news/Crucial-m4-Firmware-BSOD,14544.html)
@@ -433,7 +428,7 @@ Samsung notes that update methods other than by using their Magician Software is
 
 ### SanDisk
 
-SanDisk makes **ISO firmware images** to allow SSD firmware update on operating systems that are unsupported by their SanDisk SSD Toolkit. One must choose the firmware for the right _SSD model_, as well as for the _capacity_ that it has (e.g. 60GB, **or** 256GB). After burning the adequate ISO firmware image, simply restart the PC to boot with the newly created CD/DVD boot disk (may work from a USB stick.
+SanDisk makes **ISO firmware images** to allow SSD firmware update on operating systems that are unsupported by their SanDisk SSD Toolkit. One must choose the firmware for the right *SSD model*, as well as for the *capacity* that it has (e.g. 60GB, **or** 256GB). After burning the adequate ISO firmware image, simply restart the PC to boot with the newly created CD/DVD boot disk (may work from a USB stick.
 
 The iso images just contain a linux kernel and an initrd. Extract them to `/boot` partition and boot them with [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux") to update the firmware.
 

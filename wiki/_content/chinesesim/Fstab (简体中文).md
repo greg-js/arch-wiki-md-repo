@@ -26,7 +26,6 @@
 一个简单的 `/etc/fstab`，使用内核名称标识磁盘:
 
  `/etc/fstab` 
-
 ```
 # <file system>        <dir>         <type>    <options>             <dump> <pass>
 tmpfs                  /tmp          tmpfs     nodev,nosuid          0      0
@@ -83,7 +82,6 @@ tmpfs                  /tmp          tmpfs     nodev,nosuid          0      0
 要显示分区的基本信息请运行：
 
  `$ lsblk -f` 
-
 ```
 NAME   FSTYPE LABEL      UUID                                 MOUNTPOINT
 sda                                                         
@@ -108,7 +106,6 @@ sdc
 添加标签的工具和方法位于 [这里](/index.php/Persistent_block_device_naming "Persistent block device naming")。要显示所有设备的标签，可以使用 `lsblk -f` 命令。在 `/etc/fstab` 中使用 `LABEL=` 作为设备名的开头 :
 
  `/etc/fstab` 
-
 ```
 # <file system>        <dir>         <type>    <options>             <dump> <pass>
 
@@ -125,7 +122,6 @@ LABEL=Arch_Swap        none          swap      defaults              0      0
 `lsblk -f` 命令将显示所有设备的 UUID 值。`/etc/fstab` 中使用 `UUID=` 前缀:
 
  `/etc/fstab` 
-
 ```
 # <file system>                           <dir>         <type>    <options>             <dump> <pass>
 
@@ -194,7 +190,6 @@ noauto,x-systemd.automount
 如果挂载的路径中有空格，可以使用 "\040" 转义字符来表示空格（以三位八进制数来进行表示）
 
  `/etc/fstab` 
-
 ```
 UUID=47FA-4071     /home/username/Camera<font color="grey">\040</font>Pictures   vfat  defaults,noatime      0  2
 /dev/sda7          /media/100<font color="grey">\040</font>GB<font color="grey">\040</font>(Storage)       ext4  defaults,noatime,user  0  0
@@ -207,7 +202,6 @@ UUID=47FA-4071     /home/username/Camera<font color="grey">\040</font>Pictures  
 外部设备在插入时挂载，在未插入时忽略。这需要 `nofail` 选项，可以在启动时若设备不存在直接忽略它而不报错.
 
  `/etc/fstab` 
-
 ```
  /dev/sdg1    /media/backup    jfs    defaults,nofail    0  2
 
@@ -232,7 +226,6 @@ UUID=47FA-4071     /home/username/Camera<font color="grey">\040</font>Pictures  
 要将 `/tmp` 放到 tmpfs，将下行加入 `/etc/fstab`：
 
  `/etc/fstab` 
-
 ```
 .....
 tmpfs /tmp      tmpfs nodev,nosuid                 0 0
@@ -242,7 +235,6 @@ tmpfs /tmp      tmpfs nodev,nosuid                 0 0
 可以指定大小，但不要修改 `mode` 选项，以保证文件具有正确的访问权限(1777)。在上例中 `/tmp` 将最多使用一半内存，要指定最大空间，使用 `size` 挂载选项：
 
  `/etc/fstab` 
-
 ```
 .....
 tmpfs /tmp      tmpfs nodev,nosuid,size=2G          0 0
@@ -260,7 +252,6 @@ tmpfs /tmp      tmpfs nodev,nosuid,size=2G          0 0
 应用更改后，可以通过 `findmnt` 检查是否生效：
 
  `$ findmnt --target /tmp` 
-
 ```
 TARGET SOURCE FSTYPE OPTIONS
 /tmp   tmpfs  tmpfs  rw,nosuid,nodev,relatime

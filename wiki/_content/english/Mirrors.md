@@ -59,9 +59,9 @@ See [#Sorting mirrors](#Sorting_mirrors) for tools that help choosing mirrors.
 **Tip:**
 
 *   Uncomment 5 favorite mirrors and place them at the top of the mirrorlist file. That way it's easy to find them and move them around if the first mirror on the list has problems. It also makes merging mirrorlist updates easier.
-*   HTTP mirrors are faster than FTP due to [persistent HTTP connection](https://en.wikipedia.org/wiki/HTTP_persistent_connection "wikipedia:HTTP persistent connection"): with FTP, a new connection to server has to be established each time _pacman_ requests a package to be downloaded, which results in a brief pause.
+*   HTTP mirrors are faster than FTP due to [persistent HTTP connection](https://en.wikipedia.org/wiki/HTTP_persistent_connection "wikipedia:HTTP persistent connection"): with FTP, a new connection to server has to be established each time *pacman* requests a package to be downloaded, which results in a brief pause.
 
-It is also possible to specify mirrors in `/etc/pacman.conf`. For the _[core]_ repository, the default setup is:
+It is also possible to specify mirrors in `/etc/pacman.conf`. For the *[core]* repository, the default setup is:
 
 ```
 [core]
@@ -69,7 +69,7 @@ Include = /etc/pacman.d/mirrorlist
 
 ```
 
-To use the _HostEurope_ mirror as a default mirror, add it before the `Include` line:
+To use the *HostEurope* mirror as a default mirror, add it before the `Include` line:
 
 ```
 [core]
@@ -78,9 +78,9 @@ Include = /etc/pacman.d/mirrorlist
 
 ```
 
-pacman will now try to connect to this mirror first. Proceed to do the same for _[testing]_, _[extra]_, and _[community]_, if applicable.
+pacman will now try to connect to this mirror first. Proceed to do the same for *[testing]*, *[extra]*, and *[community]*, if applicable.
 
-**Note:** If mirrors have been stated directly in `pacman.conf`, remember to use the same mirror for all repositories. Otherwise packages that are incompatible to each other may be installed, like linux from _[core]_ and an older kernel module from _[extra]_.
+**Note:** If mirrors have been stated directly in `pacman.conf`, remember to use the same mirror for all repositories. Otherwise packages that are incompatible to each other may be installed, like linux from *[core]* and an older kernel module from *[extra]*.
 
 ### Force pacman to refresh the package lists
 
@@ -93,7 +93,7 @@ After creating/editing `/etc/pacman.d/mirrorlist`, (manually or by using `rankmi
 
 ```
 
-Passing two `--refresh` or `-y` flags forces pacman to refresh all package lists even if they are considered to be up to date. Issuing `pacman -Syyu` _whenever changing to a new mirror_ is good practice and will avoid possible issues. See also [Is -Syy safe?](https://bbs.archlinux.org/viewtopic.php?id=163124).
+Passing two `--refresh` or `-y` flags forces pacman to refresh all package lists even if they are considered to be up to date. Issuing `pacman -Syyu` *whenever changing to a new mirror* is good practice and will avoid possible issues. See also [Is -Syy safe?](https://bbs.archlinux.org/viewtopic.php?id=163124).
 
 ## Sorting mirrors
 
@@ -179,19 +179,19 @@ Architecture = x86_64
 
 ## Unofficial mirrors
 
-These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
+These mirrors are *not* listed in `/etc/pacman.d/mirrorlist`.
 
 ### Austria
 
-*   [http://gd.tuwien.ac.at/opsys/linux/archlinux/](http://gd.tuwien.ac.at/opsys/linux/archlinux/) - _Vienna University of Technology_
+*   [http://gd.tuwien.ac.at/opsys/linux/archlinux/](http://gd.tuwien.ac.at/opsys/linux/archlinux/) - *Vienna University of Technology*
 *   [ftp://gd.tuwien.ac.at/opsys/linux/archlinux/](ftp://gd.tuwien.ac.at/opsys/linux/archlinux/)
 
 ### China
 
 **Telecom**
 
-*   [http://mirror.bit.edu.cn/archlinux/](http://mirror.bit.edu.cn/archlinux/) - _Beijing Institute of Technology_
-*   [http://mirrors.aliyun.com/archlinux/](http://mirrors.aliyun.com/archlinux/) - _Alibaba_
+*   [http://mirror.bit.edu.cn/archlinux/](http://mirror.bit.edu.cn/archlinux/) - *Beijing Institute of Technology*
+*   [http://mirrors.aliyun.com/archlinux/](http://mirrors.aliyun.com/archlinux/) - *Alibaba*
 
 **Unicom**
 
@@ -200,15 +200,15 @@ These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
 
 **Cernet**
 
-*   [http://mirrors.geekpie.org/archlinux/](http://mirrors.geekpie.org/archlinux/) - _Geek Pie Association @ ShanghaiTech University_
-*   [http://ftp.sjtu.edu.cn/archlinux/](http://ftp.sjtu.edu.cn/archlinux/) - _Shanghai Jiaotong University_
-*   [http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/) _(ipv4 only)_
-*   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) _(ipv6 only)_
-*   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) - _Lanzhou University_
+*   [http://mirrors.geekpie.org/archlinux/](http://mirrors.geekpie.org/archlinux/) - *Geek Pie Association @ ShanghaiTech University*
+*   [http://ftp.sjtu.edu.cn/archlinux/](http://ftp.sjtu.edu.cn/archlinux/) - *Shanghai Jiaotong University*
+*   [http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/) *(ipv4 only)*
+*   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) *(ipv6 only)*
+*   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) - *Lanzhou University*
 
 ### France
 
-*   [http://delta.archlinux.fr/](http://delta.archlinux.fr/) - _With Delta package support. Needs [xdelta3](https://www.archlinux.org/packages/?name=xdelta3) to run._
+*   [http://delta.archlinux.fr/](http://delta.archlinux.fr/) - *With Delta package support. Needs [xdelta3](https://www.archlinux.org/packages/?name=xdelta3) to run.*
 *   [http://mirror.soa1.org/archlinux](http://mirror.soa1.org/archlinux)
 *   [ftp://mirror:mirror@mirror.soa1.org/archlinux](ftp://mirror:mirror@mirror.soa1.org/archlinux)
 
@@ -231,7 +231,7 @@ These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
 
 ### Japan
 
-*   [http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/](http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/) - _NAra Institute of Science and Technology_
+*   [http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/](http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/) - *NAra Institute of Science and Technology*
 *   [http://ftp.kddilabs.jp/Linux/packages/archlinux/](http://ftp.kddilabs.jp/Linux/packages/archlinux/)
 *   [http://srv2.ftp.ne.jp/Linux/packages/archlinux/](http://srv2.ftp.ne.jp/Linux/packages/archlinux/)
 
@@ -241,7 +241,7 @@ These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
 
 ### New Zealand
 
-*   [http://mirror.ece.auckland.ac.nz/archlinux/](http://mirror.ece.auckland.ac.nz/archlinux/) _NZ only_
+*   [http://mirror.ece.auckland.ac.nz/archlinux/](http://mirror.ece.auckland.ac.nz/archlinux/) *NZ only*
 
 ### Poland
 
@@ -251,15 +251,15 @@ These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
 
 ### Russia
 
-*   [http://mirrors.krasinfo.ru/archlinux/](http://mirrors.krasinfo.ru/archlinux/) - _Krasnoyarsk, Classica-Service Ltd_
+*   [http://mirrors.krasinfo.ru/archlinux/](http://mirrors.krasinfo.ru/archlinux/) - *Krasnoyarsk, Classica-Service Ltd*
 
 ### South Africa
 
-*   [http://ftp.leg.uct.ac.za/pub/linux/arch/](http://ftp.leg.uct.ac.za/pub/linux/arch/) - _University of Cape Town_
+*   [http://ftp.leg.uct.ac.za/pub/linux/arch/](http://ftp.leg.uct.ac.za/pub/linux/arch/) - *University of Cape Town*
 *   [ftp://ftp.leg.uct.ac.za/pub/linux/arch/](ftp://ftp.leg.uct.ac.za/pub/linux/arch/)
-*   [http://mirror.ufs.ac.za/archlinux/](http://mirror.ufs.ac.za/archlinux/) - _University of the Free State_
+*   [http://mirror.ufs.ac.za/archlinux/](http://mirror.ufs.ac.za/archlinux/) - *University of the Free State*
 *   [ftp://mirror.ufs.ac.za/os/linux/distros/archlinux/](ftp://mirror.ufs.ac.za/os/linux/distros/archlinux/)
-*   [http://archlinux.mirror.ac.za](http://archlinux.mirror.ac.za) - _TENET - Tertiary Education and Research Network of South Africa_
+*   [http://archlinux.mirror.ac.za](http://archlinux.mirror.ac.za) - *TENET - Tertiary Education and Research Network of South Africa*
 *   [ftp://archlinux.mirror.ac.za](ftp://archlinux.mirror.ac.za)
 
 ### Sweden
@@ -274,4 +274,4 @@ These mirrors are _not_ listed in `/etc/pacman.d/mirrorlist`.
 
 ### Sourceforge (old ISOs)
 
-*   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) - _ISO files only; Does not have any releases since 2006\. Use it only for getting older ISOs._
+*   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) - *ISO files only; Does not have any releases since 2006\. Use it only for getting older ISOs.*

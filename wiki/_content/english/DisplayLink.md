@@ -37,7 +37,6 @@ Install the [displaylink](https://aur.archlinux.org/packages/displaylink/) drive
 After that, run:
 
  `# xrandr --listproviders` 
-
 ```
 Providers: number : 2
 Provider 0: id: 0x49 cap: 0xb, Source Output, Sink Output, Sink Offload crtcs: 2 outputs: 8 associated providers: 0 name:Intel
@@ -99,7 +98,6 @@ Use `xrandr` or your Desktop Environment's display setup UI to configure your US
 Once the driver is loaded, the DisplayLink monitor is listed as an output provider:
 
  `$ xrandr --listproviders` 
-
 ```
 Providers: number : 2
 Provider 0: id: 0x43 cap: 0xb, Source Output, Sink Output, Sink Offload crtcs: 2 outputs: 2 associated providers: 1 name:Intel
@@ -110,7 +108,6 @@ Provider 1: id: 0xcb cap: 0x2, Sink Output crtcs: 1 outputs: 1 associated provid
 In the above example, provider 1 is the DisplayLink device, and provider 0 is the default display. Running `xrandr --current` gives a list of available screens:
 
  `$ xrandr --current` 
-
 ```
 Screen 0: minimum 320 x 200, current 1600 x 900, maximum 8192 x 8192
 LVDS1 connected 1600x900+0+0 (normal left inverted right x axis y axis) 309mm x 174mm

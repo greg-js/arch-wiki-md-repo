@@ -18,7 +18,7 @@
 
 ### Obtendo a última mídia de instalação
 
-Você pode obter a mídia de instalação [aqui](https://www.archlinux.org/download/). No momento atual, a última versão disponível é a 2014.09.03 do qual este guia trata. Lançamentos antigos podem ser encontrados no [seguinte link](https://www.archlinux.org/releng/releases/) _(e estes não são mais oficialmente suportados)_.
+Você pode obter a mídia de instalação [aqui](https://www.archlinux.org/download/). No momento atual, a última versão disponível é a 2014.09.03 do qual este guia trata. Lançamentos antigos podem ser encontrados no [seguinte link](https://www.archlinux.org/releng/releases/) *(e estes não são mais oficialmente suportados)*.
 
 #### Verificação de integridade da imagem ISO
 
@@ -36,13 +36,13 @@ ou
 
 ```
 
-Os arquivos contendo as somas de verificação podem ser encontrados [aqui](https://www.archlinux.org/download/), na sessão _Checksums_. Atente-se apenas para baixar o arquivo de soma correspondente ao algorítmo utilizado (md5 ou sha1) e a versão do Arch Linux que você efetuou download.
+Os arquivos contendo as somas de verificação podem ser encontrados [aqui](https://www.archlinux.org/download/), na sessão *Checksums*. Atente-se apenas para baixar o arquivo de soma correspondente ao algorítmo utilizado (md5 ou sha1) e a versão do Arch Linux que você efetuou download.
 
 #### Instalação através de mídia (CD/DVD) ou pendrive
 
 *   Grave o arquivo de imagem .iso em um CD ou DVD utilizando um programa para gravar imagens ISO de sua preferência
 
-**Nota:** A qualidade dos discos ópticos, bem como da mídia CD em si, variam muito. Geralmente usar uma velocidade lenta de gravação é recomendado para gravações confiáveis; Alguns usuários recomendam velocidades _**tão baixas como 4x ou 2x.**_ Se você está tendo um comportamento inesperado do CD, tente gravar na velocidade mínima suportada pelo seu sistema.
+**Nota:** A qualidade dos discos ópticos, bem como da mídia CD em si, variam muito. Geralmente usar uma velocidade lenta de gravação é recomendado para gravações confiáveis; Alguns usuários recomendam velocidades ***tão baixas como 4x ou 2x.*** Se você está tendo um comportamento inesperado do CD, tente gravar na velocidade mínima suportada pelo seu sistema.
 
 *   Alternativamente, você pode gravar a imagem do Arch Linux em um dispositivo de memória flash (pendrive). Para instruções detalhadas acesse [Instalar a partir de um drive flash USB](/index.php/Install_from_a_USB_flash_drive_(Portugu%C3%AAs) "Install from a USB flash drive (Português)")
 
@@ -97,7 +97,7 @@ Caso você possua uma placa-mãe [UEFI](/index.php/UEFI "UEFI"), o CD/USB irá l
 
 *   Caso você utilize um dispositivo gráfico da Intel e a tela continua branca durante todo o processo de inicialização, há grandes chances de que o problema seja relacionado ao Kernel Mode Setting ([KMS](/index.php/KMS "KMS")). Uma possível solução de contorno pode ser reiniciar o computador pressionando `Tab` em cima da entrada do menu que você irá escolher(i686 or x86_64). A partir daqui, digite o parâmetro `nomodeset` e pressione `Enter`. Alternativamente, tente `video=SVIDEO-1:d` que, caso funcione, não irá desabilitar completamente o KMS. Veja o artigo [Intel](/index.php/Intel "Intel") para maiores informações.
 
-*   Caso a tela _não_ fique branca, porém o processo de inicialização permanece parado no momento da carga do Kernel, pressione `Tab` na entrada de menu como descrito acima, e adiciona `acpi=off` ao final da linha, e então pressione `Enter`.
+*   Caso a tela *não* fique branca, porém o processo de inicialização permanece parado no momento da carga do Kernel, pressione `Tab` na entrada de menu como descrito acima, e adiciona `acpi=off` ao final da linha, e então pressione `Enter`.
 
 **[Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")**
 

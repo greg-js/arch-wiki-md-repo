@@ -44,7 +44,7 @@ Bash является **interactive-оболочкой** (интерактивн
 
 Подробное описание см. [6.2 Bash Startup Files](http://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files) и[DotFiles](http://mywiki.wooledge.org/DotFiles).
 
-| Файл | Описание | Login-оболочки  | Interactive-оболочки (_non-login_) |
+| Файл | Описание | Login-оболочки  | Interactive-оболочки (*non-login*) |
 | `/etc/profile` | [Источник](/index.php?title=%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA&action=edit&redlink=1 "Источник (page does not exist)")и настройки приложения в `/etc/profile.d/*.sh` и`/etc/bash.bashrc`. | Да | Нет |
 | `~/.bash_profile` | Отдельно для каждого пользователя, после `/etc/profile`. Если этого файла не существует, идет обращение к `~/.bash_login` и `~/.profile` (в таком порядке). Файл-"рыба" `/etc/skel/.bash_profile` также берет данные из `~/.bashrc`. | Да | Нет |
 | `~/.bash_logout` | После выхода из login-оболочки. | Да | Нет |
@@ -54,7 +54,7 @@ Bash является **interactive-оболочкой** (интерактивн
 **Note:**
 
 *   Login-оболочки могут быть неинтерактивными (non-interactive), если вызываются при помощи аргумента `--login`..
-*   Будучи интерактивными, _non-login_-оболочки **не** берут данные из `~/.bash_profile`, они по-прежнему наследуют окружение от родительских процессов (которые могут быть login-оболочками). См. [On processes, environments and inheritance](http://mywiki.wooledge.org/ProcessManagement#On_processes.2C_environments_and_inheritance) для получения дополнительной информации.
+*   Будучи интерактивными, *non-login*-оболочки **не** берут данные из `~/.bash_profile`, они по-прежнему наследуют окружение от родительских процессов (которые могут быть login-оболочками). См. [On processes, environments and inheritance](http://mywiki.wooledge.org/ProcessManagement#On_processes.2C_environments_and_inheritance) для получения дополнительной информации.
 
 ### Оболочка и переменные окружения
 
@@ -92,7 +92,6 @@ export VARIABLE=content
 For single press `Tab` results for when a partial or no completion is possible:
 
  `~/.inputrc` 
-
 ```
 set show-all-if-ambiguous on
 
@@ -101,7 +100,6 @@ set show-all-if-ambiguous on
 Alternatively, for results when no completion is possible:
 
  `~/.inputrc` 
-
 ```
 set show-all-if-unmodified on
 
@@ -116,7 +114,6 @@ Bash изначально поддерживает автодополнение 
 Для базовых команд используйте строки вида `complete -cf your_command` (это вызовет конфликт с настройками пакета [bash-completion](https://www.archlinux.org/packages/?name=bash-completion), если он установлен):
 
  `~/.bashrc` 
-
 ```
 complete -cf sudo
 complete -cf man
@@ -128,7 +125,6 @@ complete -cf man
 Просмотр истории команд доступен по нажатию клавиш направления (вверх, вниз) (см: [Readline#History](/index.php/Readline#History "Readline") и[Readline Init File Syntax](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html)):
 
  `~/.bashrc` 
-
 ```
  bind '"\e[A": history-search-backward'
  bind '"\e[B": history-search-forward'
@@ -138,7 +134,6 @@ complete -cf man
 или:
 
  `~/.inputrc` 
-
 ```
 "\e[A": history-search-backward
 "\e[B": history-search-forward
@@ -147,12 +142,11 @@ complete -cf man
 
 ### Быстрый переход между словами при помощи клавиши Ctrl
 
-[Xterm](/index.php/Xterm "Xterm") поддерживает переход между словами при помощи `Ctrl+Left` и`Ctrl+Right` [по умолчанию](http://stackoverflow.com/a/7783928). Для того, чтобы это заработало в других эмуляторах терминала, найдите нужные [коды терминала](http://wiki.bash-hackers.org/scripting/terminalcodes), и привяжите их к `backward-word` и `forward-word` в `~/.inputrc`. Коды можно посмотреть при помощи команды _cat_.
+[Xterm](/index.php/Xterm "Xterm") поддерживает переход между словами при помощи `Ctrl+Left` и`Ctrl+Right` [по умолчанию](http://stackoverflow.com/a/7783928). Для того, чтобы это заработало в других эмуляторах терминала, найдите нужные [коды терминала](http://wiki.bash-hackers.org/scripting/terminalcodes), и привяжите их к `backward-word` и `forward-word` в `~/.inputrc`. Коды можно посмотреть при помощи команды *cat*.
 
 Пример для [urxvt](/index.php/Urxvt "Urxvt"):
 
  `~/.inputrc` 
-
 ```
 "\eOd": backward-word
 "\eOc": forward-word
@@ -163,7 +157,6 @@ complete -cf man
 Zsh can invoke the manual for the written command pushing `Alt+h`. A similar behaviour is obtained in Bash by appending this line in your `inputrc` file:
 
  `/etc/inputrc` 
-
 ```
 "\eh": "\C-a\eb\ed\C-y\e#man \C-y\C-m\C-p\C-p\C-a\C-d\C-e"
 
@@ -171,7 +164,7 @@ Zsh can invoke the manual for the written command pushing `Alt+h`. A similar beh
 
 ## Алиасы
 
-[alias](https://en.wikipedia.org/wiki/Alias_(command) "wikipedia:Alias (command)") - это команда, которая позволяет заменить одним словом целую строку. Часто она используется для сокращения стандартных команд, а так же для добавления часто используемых аргументов к командам.
+[alias](https://en.wikipedia.org/wiki/Alias_(command) - это команда, которая позволяет заменить одним словом целую строку. Часто она используется для сокращения стандартных команд, а так же для добавления часто используемых аргументов к командам.
 
 Созданные пользователем алиасы обычно хранятся в `~/.bashrc`, а общесистемные алиасы (доступные всем пользователям) - в `/etc/bash.bashrc`. См. примеры алиасов на [[4]](https://gist.github.com/anonymous/a9055e30f97bd19645c2) и [Pacman tips#Shortcuts](/index.php/Pacman_tips#Shortcuts "Pacman tips").
 
@@ -184,7 +177,6 @@ Zsh can invoke the manual for the written command pushing `Alt+h`. A similar beh
 За приглашение командной строки Bash отвечает переменная окружения `$PS1`. Чтобы раскрасить приглашение Bash в разные цвета:
 
  `~/.bashrc` 
-
 ```
 #PS1='[\u@\h \W]\$ '  # Закомментируйте значение по умолчанию
 #DO NOT USE RAW ESCAPES, USE TPUT
@@ -203,7 +195,6 @@ PS1='\[$red\]\u\[$reset\] \[$blue\]\w\[$reset\] \[$red\]\$ \[$reset\]\[$green\] 
 Переменная `$PROMPT_COMMAND` позволяет запускать команду до приглашения командной строки. Например, такой вариант добавит в заголовок полный путь к текущей папке:
 
  `~/.bashrc` 
-
 ```
 export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
 
@@ -212,7 +203,6 @@ export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
 А вот так можно изменить заголовок на имя последней запущенной команды и убедиться, что ваш файл истории команд всегда в актуальном состоянии:
 
  `~/.bashrc` 
-
 ```
 export HISTCONTROL=ignoreboth
 export HISTIGNORE='history*'
@@ -225,7 +215,6 @@ export PROMPT_COMMAND='history -a;echo -en "\e]2;";history 1|sed "s/^[ \t]*[0-9]
 [pkgfile](/index.php/Pkgfile "Pkgfile") включает хук "команда не найдена", который автоматически ищет в официальных источниках команды, похожие на ту, что не была распознана системой. Альтернативный хук "команда не найдена" имеется в репозитории AUR [command-not-found](https://aur.archlinux.org/packages/command-not-found/). пример использования:
 
  `$ abiword` 
-
 ```
 The command 'abiword' is been provided by the following packages:
 **abiword** (2.8.6-7) from extra
@@ -239,8 +228,7 @@ The command 'abiword' is been provided by the following packages:
 
 Для автоматического запуска:
 
- `_~/.bashrc_ or _~/.zshrc_` 
-
+ `*~/.bashrc* or *~/.zshrc*` 
 ```
 [ -r /etc/profile.d/cnf.sh ] && . /etc/profile.d/cnf.sh
 
@@ -253,7 +241,7 @@ The command 'abiword' is been provided by the following packages:
 ```
 #!/bin/bash
 trap "" 20
-_adom_
+*adom*
 
 ```
 
@@ -264,7 +252,6 @@ _adom_
 Чтобы очистить экран после выхода из виртуального терминала:
 
  `~/.bash_logout` 
-
 ```
 clear
 reset
@@ -276,7 +263,6 @@ reset
 Bash может автоматически подставлять `cd` при вводе только пути в командной строке. Например:
 
  `$ /etc` 
-
 ```
 bash: /etc: Is a directory
 
@@ -285,7 +271,6 @@ bash: /etc: Is a directory
 Но после добавления одной строки в `.bashrc`:
 
  `~/.bashrc` 
-
 ```
 ...
 shopt -s autocd
@@ -315,7 +300,6 @@ cd /etc
 При изменении размера окна [terminal emulator](/index.php/Terminal_emulator "Terminal emulator"), Bash может не получить этот сигнал. Из-за этого введенный текст может неправильно перенестись и перекрыть собой приглашение командной строки. Опция командной строки `checkwinsize` проверяет размер окна при вводе каждой команды и, если это необходимо, обновляет значения переменных `LINES` и `COLUMNS`.
 
  `~/.bashrc` 
-
 ```
 shopt -s checkwinsize
 
@@ -337,7 +321,7 @@ shopt -s checkwinsize
 *   [Bash Reference](https://www.gnu.org/software/bash/manual/bashref.html)
 *   [Bash manual page](https://www.gnu.org/software/bash/manual/bash.html)
 *   [Readline Init File Syntax](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html)
-*   [The Bourne-Again Shell](http://www.aosabook.org/en/bash.html) - The third chapter of _The Architecture of Open Source Applications_
+*   [The Bourne-Again Shell](http://www.aosabook.org/en/bash.html) - The third chapter of *The Architecture of Open Source Applications*
 *   [Shellcheck](http://shellcheck.net) - Check bash scripts for common errors
 
 ### Туториалы

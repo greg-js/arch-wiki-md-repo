@@ -17,7 +17,6 @@
 At the minimum you should configure your username or mercurial will most likely give you an error when trying to commit. Do this by editing `~/.hgrc` and adding the following:
 
  `~/.hgrc` 
-
 ```
 [ui]
 username = John Smith
@@ -26,7 +25,6 @@ username = John Smith
 To use the graphical browser **hgk** aka. **hg view**, add the following to `~/.hgrc` (see [forum thread](https://bbs.archlinux.org/viewtopic.php?id=31999)):
 
  `~/.hgrc` 
-
 ```
 [extensions]
 hgk=
@@ -39,16 +37,14 @@ You will need to install [tk](https://www.archlinux.org/packages/?name=tk) befor
 To remove Mercurial warnings of unverified certificate fingerprints, add the following to `~/.hgrc` (see [Mercurial wiki](http://mercurial.selenic.com/wiki/CACertificates)):
 
  `~/.hgrc` 
-
 ```
 [web]
 cacerts = /etc/ssl/certs/ca-certificates.crt
 ```
 
-If you are going to be working with large repositories (e.g. [ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/)), you may want to enable the _progress_ extension by adding it to your `~/.hgrc` file:
+If you are going to be working with large repositories (e.g. [ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/)), you may want to enable the *progress* extension by adding it to your `~/.hgrc` file:
 
  `~/.hgrc` 
-
 ```
 [extensions]
 progress =
@@ -57,7 +53,6 @@ progress =
 This will show progress bars on longer operations after 3 seconds. If you would like the progress bar to show sooner, you can append the following to your configuration file:
 
  `~/.hgrc` 
-
 ```
 [progress]
 delay = 1.5
@@ -65,7 +60,7 @@ delay = 1.5
 
 ## Usage
 
-All mercurial commands are initiated with the _hg_ prefix. To see a list of some of the common commands, run
+All mercurial commands are initiated with the *hg* prefix. To see a list of some of the common commands, run
 
  `$ hg help` 
 

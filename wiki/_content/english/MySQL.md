@@ -97,10 +97,9 @@ $ mysql -u root -p
 
 ### Add user
 
-Creating a new user takes two steps: create the user; grant privileges. In the below example, the user _monty_ with _some_pass_ as password is being created, then granted full permissions to the database _mydb_:
+Creating a new user takes two steps: create the user; grant privileges. In the below example, the user *monty* with *some_pass* as password is being created, then granted full permissions to the database *mydb*:
 
  `$ mysql -u root -p` 
-
 ```
 MariaDB> CREATE USER 'monty'@'localhost' IDENTIFIED BY 'some_pass';
 MariaDB> GRANT ALL PRIVILEGES ON mydb.* TO 'monty'@'localhost';
@@ -110,7 +109,7 @@ MariaDB> quit
 
 ### Configuration files
 
-_MariaDB_ configuration options are read from the following files in the given order (according to `mysqld --help --verbose` output):
+*MariaDB* configuration options are read from the following files in the given order (according to `mysqld --help --verbose` output):
 
 ```
 /etc/my.cnf /etc/mysql/my.cnf ~/.my.cnf
@@ -189,7 +188,7 @@ character_set_server        = utf8
 
 ### Using a TMPFS for tmpdir
 
-The directory used by MySQL for storing temporary files is named _tmpdir_. For example, it is used to perform disk based large sorts, as well as for internal and explicit temporary tables.
+The directory used by MySQL for storing temporary files is named *tmpdir*. For example, it is used to perform disk based large sorts, as well as for internal and explicit temporary tables.
 
 Create the directory with appropriate permissions:
 
@@ -276,7 +275,7 @@ This will recreate and repopulate all the databases previously backed up (see [t
 
 ### Non-interactive
 
-If you want to setup non-interactive backup script for use in [cron](/index.php/Cron "Cron") jobs or [systemd timers](/index.php/Systemd/cron_functionality "Systemd/cron functionality"), see [option files](https://dev.mysql.com/doc/refman/5.6/en/option-files.html) and [this illustration](https://stackoverflow.com/a/9293090) for _mysqldump_.
+If you want to setup non-interactive backup script for use in [cron](/index.php/Cron "Cron") jobs or [systemd timers](/index.php/Systemd/cron_functionality "Systemd/cron functionality"), see [option files](https://dev.mysql.com/doc/refman/5.6/en/option-files.html) and [this illustration](https://stackoverflow.com/a/9293090) for *mysqldump*.
 
 Basically you should add the following section to the relevant [configuration file](#Configuration_files):
 

@@ -51,7 +51,6 @@ For the sake of this example, the script is created in the `/etc/cron.daily` dir
 First, create a script containing the appropriate command options:
 
  `/etc/cron.daily/backup` 
-
 ```
 #!/bin/bash
 rsync -a --delete /folder/to/backup /location/to/backup &> /dev/null
@@ -79,7 +78,6 @@ Finally, the script must be executable:
 If backing-up to a remote host using [SSH](/index.php/SSH "SSH"), use this script instead:
 
  `/etc/cron.daily/backup` 
-
 ```
 #!/bin/bash
 rsync -a --delete -e ssh /folder/to/backup remoteuser@remotehost:/location/to/backup &> /dev/null
@@ -104,7 +102,6 @@ This script starts a backup when you plugin your wire.
 First, create a script containing the appropriate command options:
 
  `/etc/NetworkManager/dispatcher.d/backup` 
-
 ```
 #!/bin/bash
 
@@ -119,7 +116,7 @@ fi
 
 	`--files-from` 
 
-	read the relative path of _/folder/to/backup_ from this file
+	read the relative path of */folder/to/backup* from this file
 
 	`--bwlimit` 
 
@@ -132,7 +129,6 @@ This is a useful option of rsync, creating a full backup and a differential back
 First, create a script containing the appropriate command options:
 
  `/etc/cron.daily/backup` 
-
 ```
 #!/bin/bash
 
@@ -156,7 +152,6 @@ The same idea can be used to maintain a tree of snapshots of your files. In othe
 This script implements a simple version of it:
 
  `/usr/local/bin/rsnapshot.sh` 
-
 ```
 #!/bin/bash
 

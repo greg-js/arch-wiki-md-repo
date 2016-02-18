@@ -146,7 +146,7 @@ This command is also capable of changing other useful settings.
 
 ### Error with "formats not generated" upon update
 
-See [this bug report](https://bugs.archlinux.org/task/16467). (**Note that if you do not use the experimental engine _LuaTeX_, you can ignore this.**) This situation typically occurs when the configuration files `language.def` and/or `language.dat` for hyphenation patterns contain references to files from earlier releases of `texlive-core`, in particular to the latest experimental hyphenation patterns for German, whose file name changes frequently. Currently they should point to `dehyph{n,t}-x-2009-06-19.tex`.
+See [this bug report](https://bugs.archlinux.org/task/16467). (**Note that if you do not use the experimental engine *LuaTeX*, you can ignore this.**) This situation typically occurs when the configuration files `language.def` and/or `language.dat` for hyphenation patterns contain references to files from earlier releases of `texlive-core`, in particular to the latest experimental hyphenation patterns for German, whose file name changes frequently. Currently they should point to `dehyph{n,t}-x-2009-06-19.tex`.
 
 To solve this, you need to either remove these files: `/usr/share/texmf-config/tex/generic/config/language.{def,dat}` or update them using the newest version under: `/usr/share/texmf/tex/generic/config/language.{def,dat}` and then run
 

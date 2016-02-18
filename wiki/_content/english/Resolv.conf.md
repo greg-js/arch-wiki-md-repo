@@ -1,8 +1,8 @@
 The configuration file for DNS resolvers is `/etc/resolv.conf`. From its [man page](http://www.kernel.org/doc/man-pages/online/pages/man5/resolv.conf.5.html):
 
-	_"The resolver is a set of routines in the C library that provide access to the Internet Domain Name System (DNS). The resolver configuration file contains information that is read by the resolver routines the first time they are invoked by a process. The file is designed to be human readable and contains a list of keywords with values that provide various types of resolver information._
+	*"The resolver is a set of routines in the C library that provide access to the Internet Domain Name System (DNS). The resolver configuration file contains information that is read by the resolver routines the first time they are invoked by a process. The file is designed to be human readable and contains a list of keywords with values that provide various types of resolver information.*
 
-	_If this file does not exist, only the name server on the local machine will be queried; the domain name is determined from the hostname and the domain search path is constructed from the domain name."_
+	*If this file does not exist, only the name server on the local machine will be queried; the domain name is determined from the hostname and the domain search path is constructed from the domain name."*
 
 ## Contents
 
@@ -25,7 +25,7 @@ The configuration file for DNS resolvers is `/etc/resolv.conf`. From its [man pa
 
 Your ISP (usually) provides working [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") servers, and a router may also add an extra DNS server in case you have your own cache server. Switching between DNS servers does not represent a problem for Windows users, because if a DNS server is slow or does not work it will immediately switch to a better one. However, Linux usually takes longer to timeout, which could be the reason why you are getting a delay.
 
-Use _drill_ (provided by package [ldns](https://www.archlinux.org/packages/?name=ldns)) before any changes, repeat after making the adjustments in the section below and compare the query time(s):
+Use *drill* (provided by package [ldns](https://www.archlinux.org/packages/?name=ldns)) before any changes, repeat after making the adjustments in the section below and compare the query time(s):
 
 ```
 $ drill www5.yahoo.com
@@ -166,8 +166,8 @@ nameserver 2002:d596:2a92:1:71:53::    ## ns1.censurfridns.dk
 
 [dhcpcd](/index.php/Dhcpcd "Dhcpcd"), [netctl](/index.php/Netctl "Netctl"), [NetworkManager](/index.php/NetworkManager "NetworkManager"), and various other processes can overwrite `/etc/resolv.conf`. This is usually desirable behavior, but sometimes DNS settings need to be set manually (e.g. when using a static IP address). There are several ways to accomplish this.
 
-*   If you are using _dhcpcd_, see [#Modify the dhcpcd config](#Modify_the_dhcpcd_config) below.
-*   If you are using [netctl](/index.php/Netctl "Netctl") and static IP address assignment, do not use the `DNS*` options in your profile, otherwise _resolvconf_ is called and `/etc/resolv.conf` overwritten.
+*   If you are using *dhcpcd*, see [#Modify the dhcpcd config](#Modify_the_dhcpcd_config) below.
+*   If you are using [netctl](/index.php/Netctl "Netctl") and static IP address assignment, do not use the `DNS*` options in your profile, otherwise *resolvconf* is called and `/etc/resolv.conf` overwritten.
 
 ### With NetworkManager
 
@@ -182,20 +182,20 @@ dns=none
 
 ### Using openresolv
 
-[openresolv](https://www.archlinux.org/packages/?name=openresolv) provides a utility _resolvconf_, which is a framework for managing multiple DNS configurations. See `man 8 resolvconf` and `man 5 resolvconf.conf` for more information.
+[openresolv](https://www.archlinux.org/packages/?name=openresolv) provides a utility *resolvconf*, which is a framework for managing multiple DNS configurations. See `man 8 resolvconf` and `man 5 resolvconf.conf` for more information.
 
 The configuration is done in `/etc/resolvconf.conf` and running `resolvconf -u` will generate `/etc/resolv.conf`.
 
 ### Modify the dhcpcd config
 
-_dhcpcd'_s configuration file may be edited to prevent the _dhcpcd_ daemon from overwriting `/etc/resolv.conf`. To do this, add the following to the last section of `/etc/dhcpcd.conf`:
+*dhcpcd'*s configuration file may be edited to prevent the *dhcpcd* daemon from overwriting `/etc/resolv.conf`. To do this, add the following to the last section of `/etc/dhcpcd.conf`:
 
 ```
 nohook resolv.conf
 
 ```
 
-Alternatively, you can create a file called `/etc/resolv.conf.head` containing your DNS servers. _dhcpcd_ will prepend this file to the beginning of `/etc/resolv.conf`.
+Alternatively, you can create a file called `/etc/resolv.conf.head` containing your DNS servers. *dhcpcd* will prepend this file to the beginning of `/etc/resolv.conf`.
 
 Or you can configure dhcpcd to use the same DNS servers every time. To do this, add the following line at the end of your `/etc/dhcpcd.conf`:
 

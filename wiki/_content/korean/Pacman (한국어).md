@@ -13,11 +13,11 @@
 
 ## 개요
 
-**pacman** [꾸러미 관리자](http://en.wikipedia.org/wiki/Package_manager)(패키지 매니저)는 아치 리눅스만의 개성있는 주 기능 중 하나입니다. 이진 꾸러미(바이너리 패키지) 형식과 사용하기 쉬운 [빌드 시스템](/index.php/Arch_Build_System_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Arch Build System (한국어)")으로 이루어져 있습니다. _pacman_은 [아치 공식 저장소](/index.php/Official_repositories "Official repositories")나 사용자가 직접 만든 꾸러미 등을 쉽게 관리하도록 해줍니다.
+**pacman** [꾸러미 관리자](http://en.wikipedia.org/wiki/Package_manager)(패키지 매니저)는 아치 리눅스만의 개성있는 주 기능 중 하나입니다. 이진 꾸러미(바이너리 패키지) 형식과 사용하기 쉬운 [빌드 시스템](/index.php/Arch_Build_System_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Arch Build System (한국어)")으로 이루어져 있습니다. *pacman*은 [아치 공식 저장소](/index.php/Official_repositories "Official repositories")나 사용자가 직접 만든 꾸러미 등을 쉽게 관리하도록 해줍니다.
 
-_pacman_은 꾸러미 목록과 마스터 서버를 동기화해 가장 최신의 시스템을 유지합니다. 게다가 이 서버 및 클라이언트 모델은 간단한 명령으로 사용자에게 꾸러미와 필요한 의존성 꾸러미까지 같이 내려받고 설치도 해줍니다!
+*pacman*은 꾸러미 목록과 마스터 서버를 동기화해 가장 최신의 시스템을 유지합니다. 게다가 이 서버 및 클라이언트 모델은 간단한 명령으로 사용자에게 꾸러미와 필요한 의존성 꾸러미까지 같이 내려받고 설치도 해줍니다!
 
-_pacman_은 C로 짜여졌으며 _.pkg.tar.xz_ 형식의 패키지를 씁니다.
+*pacman*은 C로 짜여졌으며 *.pkg.tar.xz* 형식의 패키지를 씁니다.
 
 **Tip:** 아치 공식 [pacman](https://www.archlinux.org/packages/?name=pacman) 꾸러미에는 **makepkg**, **pactree**, **vercmp**, [checkupdates](#Partial_upgrades_are_unsupported) 같이 자주 쓰는 도구들도 포함되어 있어요. `pacman -Ql pacman | grep bin`를 실행하면 모든 도구들을 목록으로 볼 수 있습니다.
 
@@ -116,7 +116,7 @@ pacman -Qs 꾸러미
 
 ```
 
-꾸러미 이름을 알고 있다면, 꾸러미에 대한 정보를 찾아 볼 수 있다. 첨언하자면, _query info_ (-Qi) 는 _sync info_ (-Si) 보다 설치된 꾸러미에 한해서 조금 더 많은 정보를 보여주며, 미설치된 꾸러미 정보는 볼 수 없다.
+꾸러미 이름을 알고 있다면, 꾸러미에 대한 정보를 찾아 볼 수 있다. 첨언하자면, *query info* (-Qi) 는 *sync info* (-Si) 보다 설치된 꾸러미에 한해서 조금 더 많은 정보를 보여주며, 미설치된 꾸러미 정보는 볼 수 없다.
 
 ```
 pacman -Si 꾸러미
@@ -172,7 +172,7 @@ pacman -Scc
 
 ## 설정
 
-_pacman'_의 설정 파일은 `/etc/pacman.conf`에 있습니다. 이건 pacman에게 사용자가 원하는 방식으로 작업하도록 프로그램을 설정하는 스크립트 입니다. 설정 파일에 관한 자세한 정보는 [man pacman.conf](https://www.archlinux.org/pacman/pacman.conf.5.html)에서 볼 수 있습니다.
+*pacman'*의 설정 파일은 `/etc/pacman.conf`에 있습니다. 이건 pacman에게 사용자가 원하는 방식으로 작업하도록 프로그램을 설정하는 스크립트 입니다. 설정 파일에 관한 자세한 정보는 [man pacman.conf](https://www.archlinux.org/pacman/pacman.conf.5.html)에서 볼 수 있습니다.
 
 ### 기본 옵션
 
@@ -183,7 +183,6 @@ _pacman'_의 설정 파일은 `/etc/pacman.conf`에 있습니다. 이건 pacman�
 `/etc/pacman.conf` 설정 파일에 써져있는 바와 같이, 이 부분에서는 어떤 [공식 저장소](/index.php/Official_repositories "Official repositories")를 사용할 것인지 정합니다. 여러 저장소들은 `/etc/pacman.d/mirrorlist`처럼 다른 파일에 포함되어 있거나 직접 설정 파일에서 정할 수 있습니다. 그래서 딱 하나의 목록을 유지보수 함을 필요로 합니다.
 
  `/etc/pacman.conf` 
-
 ```
 #[testing]
 #SigLevel = PackageRequired
@@ -223,7 +222,7 @@ Include = /etc/pacman.d/mirrorlist
 #Server = file:///home/custompkgs
 ```
 
-**Warning:** Care should be taken when using the _testing_ repository. It is in active development and updating may cause some packages to stop working. People who use the _testing_ repository are encouraged to subscribe to the [arch-dev-public mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public) for current information.
+**Warning:** Care should be taken when using the *testing* repository. It is in active development and updating may cause some packages to stop working. People who use the *testing* repository are encouraged to subscribe to the [arch-dev-public mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public) for current information.
 
 ## 연관 고리
 

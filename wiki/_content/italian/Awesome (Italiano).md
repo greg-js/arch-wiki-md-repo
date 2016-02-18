@@ -1,6 +1,6 @@
 Tratto dal sito web di awesome:
 
-"_[awesome](http://awesome.naquadah.org/) è un window manager di ultima generazione altamente configurabile, per X system. Molto veloce, espandibile e distribuito con licenza GNU GPLv2._ _Principalmente indicato per utenti avanzati, sviluppatori e persone che svolgono quotidianamente attività informatiche e che desiderano uno stretto controllo del loro ambiente grafico._"
+"*[awesome](http://awesome.naquadah.org/) è un window manager di ultima generazione altamente configurabile, per X system. Molto veloce, espandibile e distribuito con licenza GNU GPLv2.* *Principalmente indicato per utenti avanzati, sviluppatori e persone che svolgono quotidianamente attività informatiche e che desiderano uno stretto controllo del loro ambiente grafico.*"
 
 ## Contents
 
@@ -173,7 +173,7 @@ Revelation visualizza una panoramica di tutti i propri clients aperti; un click 
 
 ### Nascondere / mostrare wibox in awesome 3
 
-Per indicare a Modkey-b di nascondere/mostrare la statusbar predefinita sullo schermo attivo (opzione predefinita in awesome 2.3), aggiungere a _clientkeys_ in rc.lua:
+Per indicare a Modkey-b di nascondere/mostrare la statusbar predefinita sullo schermo attivo (opzione predefinita in awesome 2.3), aggiungere a *clientkeys* in rc.lua:
 
 ```
 awful.key({ modkey }, "b", function ()
@@ -282,7 +282,7 @@ mymainmenu = awful.menu.new({ items = {
 
 ### Aggiungere widgets in awesome
 
-I _Widgets in awesome sono oggetti che si possono integrare nella widget-box (statusbars e titlebars), possono fornire varie ed utili informazioni riguardo al sistema, direttamente dal window manager. I Widgets sono semplici da usare e offrono un buon compromesso di flessibilità._ -- Fonte [Awesome Wiki: Widgets](http://awesome.naquadah.org/wiki/Widgets_in_awesome).
+I *Widgets in awesome sono oggetti che si possono integrare nella widget-box (statusbars e titlebars), possono fornire varie ed utili informazioni riguardo al sistema, direttamente dal window manager. I Widgets sono semplici da usare e offrono un buon compromesso di flessibilità.* -- Fonte [Awesome Wiki: Widgets](http://awesome.naquadah.org/wiki/Widgets_in_awesome).
 
 C'è un'intera libreria per widget chiamata **Wicked** (compatibile con le versioni di awesome **precedenti alla 3.4**), che fornisce ulteriori widgets, come MPD widget, uso CPU, uso memory, etc. Per ulteriori informazioni consultare [Wicked page](http://awesome.naquadah.org/wiki/Wicked).
 
@@ -299,7 +299,7 @@ exec xcompmgr &
 
 ```
 
-Consultare _man xcompmgr_ o [xcompmgr](/index.php/Xcompmgr "Xcompmgr") per ulteriori opzioni.
+Consultare *man xcompmgr* o [xcompmgr](/index.php/Xcompmgr "Xcompmgr") per ulteriori opzioni.
 
 In awesome 3.4, la transparenza delle finestre può essere impostata dinamicamente utilizzando dei segnali. Per esempio, il file rc.lua può contenere i seguenti:
 
@@ -337,7 +337,7 @@ dove "AA" è il valore impostato per la trasparenza.
 
 #### ImageMagick
 
-Si potrebbero avere problemi se si imposta il wallpaper con il comando _display_ di imagemagick, dato che non funziona bene con xcompmgr. Notare che awsetbg userà _display_ se non ha altre opzioni disponibili. Installare habak, feh, hsetroot o qualsiasi altro programma dovrebbe risolvere il problema (_grep -A 1 wpsetters /usr/bin/awsetbg_ per vedere le opzioni).
+Si potrebbero avere problemi se si imposta il wallpaper con il comando *display* di imagemagick, dato che non funziona bene con xcompmgr. Notare che awsetbg userà *display* se non ha altre opzioni disponibili. Installare habak, feh, hsetroot o qualsiasi altro programma dovrebbe risolvere il problema (*grep -A 1 wpsetters /usr/bin/awsetbg* per vedere le opzioni).
 
 ### Autoavvio di programmi
 
@@ -410,7 +410,7 @@ Non dimenticare di aggiungere il widget alla propria wibox.
 
 ### Utilizzo di alcuni pannelli eyecandy con awesome
 
-Se siete piacevolmente impressionati dalla leggerezza e funzionalità di Awesome, ma non vi piace la visualizzazione _stile hacker_, potete trasformarlo, tramite pannelli alternativi, rendendolo più gradevole alla vista. Basta installare xfce4-panel:
+Se siete piacevolmente impressionati dalla leggerezza e funzionalità di Awesome, ma non vi piace la visualizzazione *stile hacker*, potete trasformarlo, tramite pannelli alternativi, rendendolo più gradevole alla vista. Basta installare xfce4-panel:
 
 ```
 sudo pacman -S xfce4-panel
@@ -424,7 +424,7 @@ awesome -k rc.lua
 
 ```
 
-Inoltre si dovrebbe modificare il tasto rapido "modkey+R", al fine di avviare qualche altro lanciatore di applicazione invece di costruirlo in awesome. Xfrun4, bashrun, etc. Come esempio controllare la sezione _Lanciatori di applicazioni_ nell'articolo di [Openbox](/index.php/Openbox_(Italiano) "Openbox (Italiano)"). Non dimenticarsi di aggiungere:
+Inoltre si dovrebbe modificare il tasto rapido "modkey+R", al fine di avviare qualche altro lanciatore di applicazione invece di costruirlo in awesome. Xfrun4, bashrun, etc. Come esempio controllare la sezione *Lanciatori di applicazioni* nell'articolo di [Openbox](/index.php/Openbox_(Italiano) "Openbox (Italiano)"). Non dimenticarsi di aggiungere:
 
 ```
       properties = { floating = true } },
@@ -453,7 +453,7 @@ exec awesome
 
 ```
 
-Il problema in questo caso è che alcune installazioni di xorg riconoscono _keycode 115_, ma in modo non corretto come il tasto 'Seleziona'. Il comando precedente rimappa esplicitamente _keycode 115_ alla corretta chiave 'Super_L'.
+Il problema in questo caso è che alcune installazioni di xorg riconoscono *keycode 115*, ma in modo non corretto come il tasto 'Seleziona'. Il comando precedente rimappa esplicitamente *keycode 115* alla corretta chiave 'Super_L'.
 
 #### Tasto Mod4 per versioni IBM ThinkPad
 

@@ -17,34 +17,34 @@
 
 ## Hardware
 
-*   _CPU:_
-    *   _Intel(R) Celeron(R), M 520 (1.6GHz), 533MHz FSB, 1MB L2 Cache_
-    *   _Intel(R) Core Duo(R), T 2130 (1.86GHz), 533MHz FSB, 1MB L2 Cache_
-*   _Chipset:_ ATI Radeon Xpress 1100
-*   _RAM:_ 1024MB (1 x 1024MB) SO-DIMM DDR2 533MHz, max 2048 MB
-*   _Hard Disk:_ SATA 120GB 5400 rpm
-*   _DVD Burner:_ DVD-RW Super Multi DualLayer
-*   _Display:_ TFT 15.4" WXGA (1280x800) _ColorShine TFT-LCD, Asus Splendid Video Intelligent Technology_
-*   _Video:_ ATI® Xpress™ Radeon™ X1100 128MB HyperMemory
-*   _Audio:_ Intel High Definition Audio
-*   _Wi-Fi:_ 802.11g
-*   _Bluetooth:_ 2.0+EDR
-*   _Webcam:_ 1.3 Mpixel
-*   _Modem:_ 56 Kbps V.90
-*   _LAN:_10/100 Mbps Ethernet
-*   _Connectors:_
-    *   _1 x Microphone-in jack_
-    *   _1 x Headphone-out jack (S/PDIF)_
-    *   _1 x TypeII PCMCIA slot'_
-    *   _1 x VGA port_
-    *   _4 x USB 2.0 ports_
-    *   _1 x RJ11 Modem jack for phone line_
-    *   _1 x RJ45 LAN Jack for LAN insert_
-*   _Card Reader:_ MMC, SD, MS, MS-Pro
-*   _Dimension and Weight:_
-    *   _362mm * 262mm * 27mm(W x D x H)_
-    *   _2,6 Kg (6-cell)_
-*   _Pointer:_ Touch pad
+*   *CPU:*
+    *   *Intel(R) Celeron(R), M 520 (1.6GHz), 533MHz FSB, 1MB L2 Cache*
+    *   *Intel(R) Core Duo(R), T 2130 (1.86GHz), 533MHz FSB, 1MB L2 Cache*
+*   *Chipset:* ATI Radeon Xpress 1100
+*   *RAM:* 1024MB (1 x 1024MB) SO-DIMM DDR2 533MHz, max 2048 MB
+*   *Hard Disk:* SATA 120GB 5400 rpm
+*   *DVD Burner:* DVD-RW Super Multi DualLayer
+*   *Display:* TFT 15.4" WXGA (1280x800) *ColorShine TFT-LCD, Asus Splendid Video Intelligent Technology*
+*   *Video:* ATI® Xpress™ Radeon™ X1100 128MB HyperMemory
+*   *Audio:* Intel High Definition Audio
+*   *Wi-Fi:* 802.11g
+*   *Bluetooth:* 2.0+EDR
+*   *Webcam:* 1.3 Mpixel
+*   *Modem:* 56 Kbps V.90
+*   *LAN:*10/100 Mbps Ethernet
+*   *Connectors:*
+    *   *1 x Microphone-in jack*
+    *   *1 x Headphone-out jack (S/PDIF)*
+    *   *1 x TypeII PCMCIA slot'*
+    *   *1 x VGA port*
+    *   *4 x USB 2.0 ports*
+    *   *1 x RJ11 Modem jack for phone line*
+    *   *1 x RJ45 LAN Jack for LAN insert*
+*   *Card Reader:* MMC, SD, MS, MS-Pro
+*   *Dimension and Weight:*
+    *   *362mm * 262mm * 27mm(W x D x H)*
+    *   *2,6 Kg (6-cell)*
+*   *Pointer:* Touch pad
 
 ## Configuration
 

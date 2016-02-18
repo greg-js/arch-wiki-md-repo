@@ -1,4 +1,4 @@
-_LI_nux _LO_ader, nebo zkráceně **LILO**, je všeobecně použitelný zavaděč (multi-boot loader) pro Linuxové systémy. Navzdory tomu, že byl mnoho let standardní volbou, byl postupně nahrazován programem [GRUB](/index.php/GRUB "GRUB"), alternativním zavaděčem, který nabízí snadnější konfiguraci a menší šanci, že se systém stane nenabootovatelným.
+*LI*nux *LO*ader, nebo zkráceně **LILO**, je všeobecně použitelný zavaděč (multi-boot loader) pro Linuxové systémy. Navzdory tomu, že byl mnoho let standardní volbou, byl postupně nahrazován programem [GRUB](/index.php/GRUB "GRUB"), alternativním zavaděčem, který nabízí snadnější konfiguraci a menší šanci, že se systém stane nenabootovatelným.
 
 ## Contents
 
@@ -20,7 +20,7 @@ LILO může být instalováno během instalace systému výběrem balíčku [lil
 
 LILO se konfiguruje editací souboru `/etc/lilo.conf` a následným spuštěním příkazu `lilo`, který aplikuje nové nastavení. Pokud zvolíte LILO během instalace Arch Linuxu, konfigurační soubor by měl již být proveden.
 
-Berte na zřetel, že LILO _vyžaduje_ být spuštěno po každém upgradu kernelu, jinak systém zůstane v nebootovatelném stavu.
+Berte na zřetel, že LILO *vyžaduje* být spuštěno po každém upgradu kernelu, jinak systém zůstane v nebootovatelném stavu.
 
 Další nápověda pro nastavení LILO je na serveru [LILO-mini-HOWTO](http://www.tldp.org/HOWTO/LILO.html).
 
@@ -29,9 +29,7 @@ Další nápověda pro nastavení LILO je na serveru [LILO-mini-HOWTO](http://ww
 Typické nastavení LILO:
 
 **Tip:** Pokud LILO opravdu pomalu spouští bzImage, zkuste přidat parametr `compact` do globální sekce souboru `/etc/lilo.conf`, jak je ukázáno níže.
-
  `/etc/lilo.conf` 
-
 ```
 #
 # /etc/lilo.conf
@@ -68,4 +66,4 @@ other=/dev/hda1
 ## Zdroje
 
 *   [Seznam parametrů kernelu, které mohou být použité během bootování](http://www.mjmwired.net/kernel/Documentation/kernel-parameters.txt)
-*   [Seznam parametrů kernelu s bližším vysvětlením a seskupených podle nastavení ('Kernel Boot Command-Line Parameter Reference', _Linux Kernel In A Nutshell_)](http://www.kernel.org/pub/linux/kernel/people/gregkh/lkn/lkn_pdf/ch09.pdf)
+*   [Seznam parametrů kernelu s bližším vysvětlením a seskupených podle nastavení ('Kernel Boot Command-Line Parameter Reference', *Linux Kernel In A Nutshell*)](http://www.kernel.org/pub/linux/kernel/people/gregkh/lkn/lkn_pdf/ch09.pdf)

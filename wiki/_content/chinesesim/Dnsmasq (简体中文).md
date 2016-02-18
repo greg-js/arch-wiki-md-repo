@@ -62,7 +62,6 @@ listen-address=127.0.0.1,192.168.x.x
 一种选择是一个纯粹的 `resolv.conf` 配置。要做到这一点，才使第一个域名服务器在`/etc/resolv.conf` 中指向localhost：
 
  `/etc/resolv.conf` 
-
 ```
 nameserver 127.0.0.1
 # External nameservers
@@ -73,7 +72,6 @@ nameserver 127.0.0.1
 现在，DNS查询将首先解析dnsmasq，只检查外部的服务器如果DNSMasq无法解析查询. [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), 不幸的是，往往默认覆盖 `/etc/resolv.conf`, 所以如果你使用DHCP，这是一个好主意来保护 `/etc/resolv.conf`,要做到这一点，追加 `nohook resolv.conf`到dhcpcd的配置文件：
 
  `/etc/dhcpcd.conf` 
-
 ```
 ...
 nohook resolv.conf
@@ -91,7 +89,6 @@ nohook resolv.conf
 Linux 处理 DNS 请求时有个限制，在 `resolv.conf` 中最多只能配置三个域名服务器（nameserver）。作为一种变通方法,可以在 `resolv.conf` 文件中只保留 localhost 作为域名服务器，然后为外部域名服务器另外创建 `resolv-file` 文件。首先，为 dnsmasq 新建一个域名解析文件：
 
  `/etc/resolv.dnsmasq.conf` 
-
 ```
 # Google's nameservers, for example
 nameserver 8.8.8.8
@@ -102,7 +99,6 @@ nameserver 8.8.4.4
 然后编辑 `/etc/dnsmasq.conf` 让 dnsmasq 使用新创建的域名解析文件：
 
  `/etc/dnsmasq.conf` 
-
 ```
 ...
 resolv-file=/etc/resolv.dnsmasq.conf
@@ -130,10 +126,9 @@ prepend domain-name-servers 127.0.0.1;
 
 ### 使用NetworkManager
 
-[Networkmanager](/index.php/Networkmanager "Networkmanager") 可以靠自身配置文件的设置项启动 _dnsmasq_ 。在 `NetworkManager.conf` 文件的 `[main]` 节段添加 `dns=dnsmasq` 配置语句，然后禁用由 [systemd](/index.php/Systemd "Systemd") 启动的 `dnsmasq.service`:
+[Networkmanager](/index.php/Networkmanager "Networkmanager") 可以靠自身配置文件的设置项启动 *dnsmasq* 。在 `NetworkManager.conf` 文件的 `[main]` 节段添加 `dns=dnsmasq` 配置语句，然后禁用由 [systemd](/index.php/Systemd "Systemd") 启动的 `dnsmasq.service`:
 
  `/etc/NetworkManager/NetworkManager.conf` 
-
 ```
 [main]
 plugins=keyfile
@@ -141,17 +136,17 @@ dns=dnsmasq
 
 ```
 
-可以在 `/etc/NetworkManager/dnsmasq.d/` 目录下为 _dnsmasq_ 创建自定义配置文件。例如，调整 DNS 缓存大小（保存在内存中）：
+可以在 `/etc/NetworkManager/dnsmasq.d/` 目录下为 *dnsmasq* 创建自定义配置文件。例如，调整 DNS 缓存大小（保存在内存中）：
 
  `/etc/NetworkManager/dnsmasq.d/cache`  `cache-size=1000` 
 
-_dnsmasq_ 被 `NetworkManager` 启动后，此目录下配置文件中的配置将取代默认配置。
+*dnsmasq* 被 `NetworkManager` 启动后，此目录下配置文件中的配置将取代默认配置。
 
 **提示:** 这种方法可以让你启用特定域名的自定义DNS设置。例如: `server=/example1.com/exemple2.com/xx.xxx.xxx.x` 改变第一个DNS地址，浏览以下网站`example1.com, example2.com`使用`xx.xxx.xxx.xx`。This method is preferred to a global DNS configuration when using particular DNS nameservers which lack of speed, stability, privacy and security.
 
 #### IPv6
 
-启用 `dnsmasq` 在 NetworkManager 可能会中断仅持IPv6的DNS查询 (例如 `dig -6 [hostname]`) 否则将工作。 为了解决这个问题，创建以下文件将配置 _dnsmasq_ 总是监听IPv6的loopback：
+启用 `dnsmasq` 在 NetworkManager 可能会中断仅持IPv6的DNS查询 (例如 `dig -6 [hostname]`) 否则将工作。 为了解决这个问题，创建以下文件将配置 *dnsmasq* 总是监听IPv6的loopback：
 
  `/etc/NetworkManager/dnsmasq.d/ipv6_listen.conf`  `listen-address=::1` 
 

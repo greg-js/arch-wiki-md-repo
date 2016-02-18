@@ -8,11 +8,11 @@ Selain membaca pertanyan-pertanyaan dibawah ini,Anda juga dapat langsung membaca
     *   [1.3 Q) Apa alasan Saya untuk TIDAK memakai Archlinux?](#Q.29_Apa_alasan_Saya_untuk_TIDAK_memakai_Archlinux.3F)
     *   [1.4 Q) Archlinux berbasis distro apa?](#Q.29_Archlinux_berbasis_distro_apa.3F)
     *   [1.5 Q) Cocok kah pengguna pemula GNU/Linux menggunakan Archlinux?](#Q.29_Cocok_kah_pengguna_pemula_GNU.2FLinux_menggunakan_Archlinux.3F)
-    *   [1.6 Q) Apakah Arch didesain sebagai sebuah server? Desktop? _Workstation_?](#Q.29_Apakah_Arch_didesain_sebagai_sebuah_server.3F_Desktop.3F_Workstation.3F)
+    *   [1.6 Q) Apakah Arch didesain sebagai sebuah server? Desktop? *Workstation*?](#Q.29_Apakah_Arch_didesain_sebagai_sebuah_server.3F_Desktop.3F_Workstation.3F)
     *   [1.7 Q) Alangkah lebih baiknya jika tim Archlinux menerapkan "fitur ini" ?](#Q.29_Alangkah_lebih_baiknya_jika_tim_Archlinux_menerapkan_.22fitur_ini.22_.3F)
     *   [1.8 Q) Kapan rilis baru Archlinux dibuat?](#Q.29_Kapan_rilis_baru_Archlinux_dibuat.3F)
     *   [1.9 Q) Is Arch Linux a stable distro? Will I get frequent breakage?](#Q.29_Is_Arch_Linux_a_stable_distro.3F_Will_I_get_frequent_breakage.3F)
-    *   [1.10 Q) What exactly _is_ this 'BSD-style' init framework I keep hearing about?](#Q.29_What_exactly_is_this_.27BSD-style.27_init_framework_I_keep_hearing_about.3F)
+    *   [1.10 Q) What exactly *is* this 'BSD-style' init framework I keep hearing about?](#Q.29_What_exactly_is_this_.27BSD-style.27_init_framework_I_keep_hearing_about.3F)
     *   [1.11 Q) Arch linux butuh lebih banyak sorotan publik (seperti sosialiasi)?](#Q.29_Arch_linux_butuh_lebih_banyak_sorotan_publik_.28seperti_sosialiasi.29.3F)
     *   [1.12 Q) Apakah Archlinux membutuhkan lebih banyak developer?](#Q.29_Apakah_Archlinux_membutuhkan_lebih_banyak_developer.3F)
     *   [1.13 Q) Kenapa Archlinux Saya lambat saat membuka aplikasi tertentu?](#Q.29_Kenapa_Archlinux_Saya_lambat_saat_membuka_aplikasi_tertentu.3F)
@@ -24,7 +24,7 @@ Selain membaca pertanyan-pertanyaan dibawah ini,Anda juga dapat langsung membaca
     *   [2.3 Q) Archlinux harus mempunyai nama ekstensi file paket dengan format tersendiri karena .pkg.tar.gz dan .pkg.tar.xz terlalu panjang dan membingungkan](#Q.29_Archlinux_harus_mempunyai_nama_ekstensi_file_paket_dengan_format_tersendiri_karena_.pkg.tar.gz_dan_.pkg.tar.xz_terlalu_panjang_dan_membingungkan)
     *   [2.4 Q) Pacman membutuhkan sebuah pustaka yang berisi tentang informasi paket/aplikasi](#Q.29_Pacman_membutuhkan_sebuah_pustaka_yang_berisi_tentang_informasi_paket.2Faplikasi)
     *   [2.5 Q) Kenapa Pacman tidak mempunyai versi khusus dengan GUI?](#Q.29_Kenapa_Pacman_tidak_mempunyai_versi_khusus_dengan_GUI.3F)
-    *   [2.6 Q) Pacman membutuhkan _"Fitur X"_](#Q.29_Pacman_membutuhkan_.22Fitur_X.22)
+    *   [2.6 Q) Pacman membutuhkan *"Fitur X"*](#Q.29_Pacman_membutuhkan_.22Fitur_X.22)
     *   [2.7 Q) Archlinux membutuhkan repositori khusus berisi paket/aplikasi paling stabil](#Q.29_Archlinux_membutuhkan_repositori_khusus_berisi_paket.2Faplikasi_paling_stabil)
     *   [2.8 Q) Apa perbedaan antara semua repositori tersebut?](#Q.29_Apa_perbedaan_antara_semua_repositori_tersebut.3F)
     *   [2.9 Q) Saya baru saja menginstall paket/aplikasi "nama_paket/aplikasi".Bagaimana cara membukanya?](#Q.29_Saya_baru_saja_menginstall_paket.2Faplikasi_.22nama_paket.2Faplikasi.22.Bagaimana_cara_membukanya.3F)
@@ -47,16 +47,16 @@ Selain membaca pertanyan-pertanyaan dibawah ini,Anda juga dapat langsung membaca
 
 **A)** Dikutip dari artikel berjudul [Arch Linux](/index.php/Arch_Linux "Arch Linux"):
 
-_Archlinux adalah distribusi komunitas independen yang dikembangkan untuk arsitektur i686/x86-64, berbasis model_ rolling-release _dan menargetkan pengguna-pengguna GNU/Linux kompeten yang menawarkan banyak repositori binari dan pengelolaan paket yang sangat baik seperti sistem pemaketan serupa_ ports_/_ports-like_. Pengembangan fokus pada minimalisme(kesederhanaan), elegan, ketepatan kode dan modernitas. Versi 0.1 (Homer) dirilis 11 Maret 2002._
+*Archlinux adalah distribusi komunitas independen yang dikembangkan untuk arsitektur i686/x86-64, berbasis model* rolling-release *dan menargetkan pengguna-pengguna GNU/Linux kompeten yang menawarkan banyak repositori binari dan pengelolaan paket yang sangat baik seperti sistem pemaketan serupa* ports*/*ports-like*. Pengembangan fokus pada minimalisme(kesederhanaan), elegan, ketepatan kode dan modernitas. Versi 0.1 (Homer) dirilis 11 Maret 2002.*
 
 ## Q) Apa alasan Saya untuk memakai Archlinux?
 
 **A)**
 
 1.  Anda sudah membaca artikel berjudul [The Arch Way](/index.php/The_Arch_Way "The Arch Way") dan setuju dengan isi artikel tersebut.
-2.  Anda suka dengan tantangan serta hal-hal yang bersifat "_Dikerjakan Sendiri_".
+2.  Anda suka dengan tantangan serta hal-hal yang bersifat "*Dikerjakan Sendiri*".
 3.  Anda membutuhkan sebuah distribusi GNU/Linux yang sederhana,simple,elegan,minimalis namun tetap modern dan sangat mudah dikustomisasi sesuai keinginan.
-4.  Anda menginginkan sistem operasi yang selalu terupdate/_bleeding edge_ dan bersifat _rolling release_ yang akan digunakan untuk tujuan umum.
+4.  Anda menginginkan sistem operasi yang selalu terupdate/*bleeding edge* dan bersifat *rolling release* yang akan digunakan untuk tujuan umum.
 
 Jika pernyataan diatas sesuai dengan Anda,maka Archlinux akan sangat cocok dengan Anda.
 
@@ -67,7 +67,7 @@ Jika pernyataan diatas sesuai dengan Anda,maka Archlinux akan sangat cocok denga
 1.  Anda sudah membaca artikel berjudul [The Arch Way](/index.php/The_Arch_Way "The Arch Way") dan **TIDAK** setuju dengan isi artikel tersebut.
 2.  Anda kurang suka dengan tantangan serta hal-hal yang bersifat manual dan lebih menyukai sistem operasi yang siap pakai tanpa perlu dikonfigurasi lagi (otomatis).
 3.  Anda sudah senang dengan sistem operasi yang digunakan saat ini.
-4.  Anda TIDAK ingin sistem operasi yang bersifat _bleeding edge_ dan _rolling release_.
+4.  Anda TIDAK ingin sistem operasi yang bersifat *bleeding edge* dan *rolling release*.
 5.  Anda membutuhkan sistem operasi dengan dukungan untuk arsitektur selain x86_64 dan i686.
 6.  Anda mengingkan sistem operasi dengan tujuan dan target pengguna yang berbeda.
 
@@ -75,19 +75,19 @@ Jika pernyataan diatas sesuai dengan Anda,mungkin Archlinux kurang cocok dengan 
 
 ## Q) Archlinux berbasis distro apa?
 
-**A)** Archlinux dikembangkan sendiri,dibangun dari _dasar/titik kecil_ dan tidak berbasis distribusi GNU/Linux manapun.Sebelum membuat Archlinux,Judd Vinet menggunakan sistem operasi `CRUX` yang merupakan sebuah distro besar dan minimalis buatan Per Lidén. Dengan ide yang terinspirasi dari `CRUX`,Archlinux pun diciptakan dari _dasar/sebuah titik_ dan munculnya Pacman (packet manager) lalu ditulis dengan bahasa C.
+**A)** Archlinux dikembangkan sendiri,dibangun dari *dasar/titik kecil* dan tidak berbasis distribusi GNU/Linux manapun.Sebelum membuat Archlinux,Judd Vinet menggunakan sistem operasi `CRUX` yang merupakan sebuah distro besar dan minimalis buatan Per Lidén. Dengan ide yang terinspirasi dari `CRUX`,Archlinux pun diciptakan dari *dasar/sebuah titik* dan munculnya Pacman (packet manager) lalu ditulis dengan bahasa C.
 
 ## Q) Cocok kah pengguna pemula GNU/Linux menggunakan Archlinux?
 
-**A)** Pertanyaan ini sering menimbulkan banyak debat.Archlinux ditargetkan untuk pengguna GNU/Linux tingkat lanjut.Namun beberapa orang merasa bahwa menggunakan Archlinux adalah _awal yang bagus_. Perlu diingat bagi seorang pemula,bahwa menggunakan Archlinux berarti Anda harus mau banyak belajar dan menerima prinsip dari Archlinux yaitu _do-it yourself_ yaitu Anda akan lebih sering mengerjakan sesuatu secara manual dan melakukannya sendiri seperti kegiatan kompilasi sistem dan untuk kedepannya mengontrol Archlinux sesuai kebutuhan.
+**A)** Pertanyaan ini sering menimbulkan banyak debat.Archlinux ditargetkan untuk pengguna GNU/Linux tingkat lanjut.Namun beberapa orang merasa bahwa menggunakan Archlinux adalah *awal yang bagus*. Perlu diingat bagi seorang pemula,bahwa menggunakan Archlinux berarti Anda harus mau banyak belajar dan menerima prinsip dari Archlinux yaitu *do-it yourself* yaitu Anda akan lebih sering mengerjakan sesuatu secara manual dan melakukannya sendiri seperti kegiatan kompilasi sistem dan untuk kedepannya mengontrol Archlinux sesuai kebutuhan.
 
-Jika Anda ingin melakukan sesuatu dengan Archlinux Anda,alangkah lebih baiknya Anda mencari info tentang hal tersebut diinternet seperti melalui _mesin pencari_,_Wiki_ dan _Forum (membaca FAQ terkini)_.Sehingga Anda tidak akan tersesat nantinya saat mulai bermain dengan Archlinux.Dan perlu diketahui banyak kejadian di forum dimana ada beberapa pertanyaan tidak dijawab.Alasannya sangat klasik,pertanyaan tersebut bersifat **mendasar dan itu-itu saja**. _There is a reason these resources were created/made available to you in the first place._ Banyak sukarelawan telah meluangkan waktu berjam-jam untuk mengompilasi informasi yang baik ini.
+Jika Anda ingin melakukan sesuatu dengan Archlinux Anda,alangkah lebih baiknya Anda mencari info tentang hal tersebut diinternet seperti melalui *mesin pencari*,*Wiki* dan *Forum (membaca FAQ terkini)*.Sehingga Anda tidak akan tersesat nantinya saat mulai bermain dengan Archlinux.Dan perlu diketahui banyak kejadian di forum dimana ada beberapa pertanyaan tidak dijawab.Alasannya sangat klasik,pertanyaan tersebut bersifat **mendasar dan itu-itu saja**. *There is a reason these resources were created/made available to you in the first place.* Banyak sukarelawan telah meluangkan waktu berjam-jam untuk mengompilasi informasi yang baik ini.
 
 Wajib Anda baca : [Petunjuk Arch Linux untuk Pemula](/index.php/Beginners%27_guide_(Indonesia) "Beginners' guide (Indonesia)").
 
-## Q) Apakah Arch didesain sebagai sebuah server? Desktop? _Workstation_?
+## Q) Apakah Arch didesain sebagai sebuah server? Desktop? *Workstation*?
 
-**A)** Archlinux tidak didesain untuk suatu fungsi khusus.Namun Archlinux didesain agar sesuai dengan berbagai macam tipe pengguna.Archlinux menargetkan pengguna yang menyukai tantangan dan cocok dengan konsep _do-it yourself_ atau _mengerjakannya sendiri_ serta mereka yang suka mengekplorasi sehingga menjadikannya sesuai dengan kebutuhan pengguna.Oleh karena itu,Archlinux akan menjadi sistem operasi yang mampu mencakup segala kebutuhan pengguna jika dikelola oleh pengguna yang tepat.Contohnya saja,Archlinux banyak digunakan pada PC,laptop,notebook,netbook serta komputer kerja.Dan pastinya,server archlinux.org berjalan diatas mesin Archlinux :).
+**A)** Archlinux tidak didesain untuk suatu fungsi khusus.Namun Archlinux didesain agar sesuai dengan berbagai macam tipe pengguna.Archlinux menargetkan pengguna yang menyukai tantangan dan cocok dengan konsep *do-it yourself* atau *mengerjakannya sendiri* serta mereka yang suka mengekplorasi sehingga menjadikannya sesuai dengan kebutuhan pengguna.Oleh karena itu,Archlinux akan menjadi sistem operasi yang mampu mencakup segala kebutuhan pengguna jika dikelola oleh pengguna yang tepat.Contohnya saja,Archlinux banyak digunakan pada PC,laptop,notebook,netbook serta komputer kerja.Dan pastinya,server archlinux.org berjalan diatas mesin Archlinux :).
 
 ## Q) Alangkah lebih baiknya jika tim Archlinux menerapkan "fitur ini" ?
 
@@ -105,13 +105,13 @@ Karena alasan yang sama, rilis baru Archlinux biasanya tidak penuh dengan fitur 
 
 ## Q) Is Arch Linux a stable distro? Will I get frequent breakage?
 
-**A)** The long and short answer is: It is largely as stable as _you_ make it.
+**A)** The long and short answer is: It is largely as stable as *you* make it.
 
-_You_ assemble your own Arch system, atop the simple base environment, and _you_ control system upgrades. (Obviously, a larger, more bloated system incorporating multitudes of packages, multiple toolkits and desktop environments would be more likely to experience configuration issues due to upstream changes than a slimmer, more simple system would.) Arch is targeted at capable, proactive users. General UNIX competence and good system maintenance and upgrade practices also play a large role in system stability. Also recall that Arch packages are predominantly unpatched, so most application issues are inherently upstream.
+*You* assemble your own Arch system, atop the simple base environment, and *you* control system upgrades. (Obviously, a larger, more bloated system incorporating multitudes of packages, multiple toolkits and desktop environments would be more likely to experience configuration issues due to upstream changes than a slimmer, more simple system would.) Arch is targeted at capable, proactive users. General UNIX competence and good system maintenance and upgrade practices also play a large role in system stability. Also recall that Arch packages are predominantly unpatched, so most application issues are inherently upstream.
 
-Therefore, it is _the user_ who is ultimately responsible for the stability of his own rolling release system. The user decides when to upgrade, and merges necessary changes when required. If the the user reaches out to the community for help, it is often provided in a timely manner. The difference between Arch and other distributions in this regard is that Arch is truly a 'do-it-yourself' distro; complaints of breakage are misguided and unproductive, since upstream changes are not the responsibility of Arch devs.
+Therefore, it is *the user* who is ultimately responsible for the stability of his own rolling release system. The user decides when to upgrade, and merges necessary changes when required. If the the user reaches out to the community for help, it is often provided in a timely manner. The difference between Arch and other distributions in this regard is that Arch is truly a 'do-it-yourself' distro; complaints of breakage are misguided and unproductive, since upstream changes are not the responsibility of Arch devs.
 
-## Q) What exactly _is_ this 'BSD-style' init framework I keep hearing about?
+## Q) What exactly *is* this 'BSD-style' init framework I keep hearing about?
 
 Part of BSD's heritage is the simple init framework that it has incorporated. The main difference between a BSD init and a sysV init is that Arch's BSD-style init uses a single line in a single file, `/etc/rc.conf`, to point to scripts within a single directory, `etc/rc.d/`, for all system services, regardless of runlevel.
 
@@ -127,7 +127,7 @@ A SysV init, on the other hand, would use a system of multiple directories (usua
 
 ## Q) Kenapa Archlinux Saya lambat saat membuka aplikasi tertentu?
 
-**A)** Pastikan bahwa _hostname_ sudah diatur dengan benar.Silahkan cek di `/etc/hosts`.Jika Anda tidak mengaturnya dengan benar makan pada saat membuka aplikasi akan terasa lebih lambat dari biasanya.
+**A)** Pastikan bahwa *hostname* sudah diatur dengan benar.Silahkan cek di `/etc/hosts`.Jika Anda tidak mengaturnya dengan benar makan pada saat membuka aplikasi akan terasa lebih lambat dari biasanya.
 
 Cek juga artikel tentang [Konfigurasi sistem](/index.php/Beginners%27_guide#F:_Configure_the_System "Beginners' guide") untuk info lebih lanjut.
 
@@ -144,7 +144,6 @@ Banyak pemula yang baru tahu bahwa kernel Linux mempunyai teknik yang berbeda da
 Untuk memahaminya lebih lanjut silahkan ketikkan perintah `free` diterminal :
 
  `$ free -m` 
-
 ```
 $ free -m
              total       used       free     shared    buffers     cached
@@ -165,7 +164,7 @@ Silahkan cek [artikel berikut](http://www.linuxjournal.com/article/2770) untuk m
 
 ## Q) Saya menemukan error pada sebuah paket/aplikasi.Apa yang harus Saya lakukan?
 
-**A)** Pertama,kamu harus cari tahu apakah Tim Arch bisa menyelesaikan masalah tersebut.Terkadang jika tidak (seperti error pada aplikasi Firefox yang merupakan kesalahan dari Tim Mozzila) maka kasus ini disebut _upstream error_.Jika masalahnya datang dari Archlinux itu sendiri,Anda bisa mengikuti langkah-langkah berikut :
+**A)** Pertama,kamu harus cari tahu apakah Tim Arch bisa menyelesaikan masalah tersebut.Terkadang jika tidak (seperti error pada aplikasi Firefox yang merupakan kesalahan dari Tim Mozzila) maka kasus ini disebut *upstream error*.Jika masalahnya datang dari Archlinux itu sendiri,Anda bisa mengikuti langkah-langkah berikut :
 
 1.  Cari solusi masalah Anda di forum dan lihat apakah ada yang sudah berhasil memperbaiki masalah tersebut.
 2.  Beritahu si pembuat paket/aplikasi.Coba perintah `pacman -Qi` untuk infonya.
@@ -193,7 +192,7 @@ Tobias Kieslich,salah seorang developer Archlinux menambahkan "Sebuah paket meru
 
 **A)** Silahkan baca artikel tentang prinsip [The Arch Way](/index.php/The_Arch_Way "The Arch Way") dan [Arch Linux](/index.php/Arch_Linux "Arch Linux").Tim developer Archlinux tidak akan membuat Pacman dengan versi GUI.Atau Anda bisa cek di [Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends") untuk melihat opsi lainnya.
 
-## Q) Pacman membutuhkan _"Fitur X"_
+## Q) Pacman membutuhkan *"Fitur X"*
 
 **A)** Silahkan baca artikel tentang prinsip [The Arch Way](/index.php/The_Arch_Way "The Arch Way") dan tentang [Arch Linux](/index.php/Arch_Linux "Arch Linux").Archlinux memiliki prinsip "Keep It Simple" atau membuatnya tetap simpel.Jika ide Anda tidak merusak prinsip Archlinux,silahkan diskusikan di [Forum Archlinux](https://bbs.archlinux.org/).Cek juga [bugs.archlinux.org](https://bugs.archlinux.org) untuk melakukan permintaan fitur baru atau masukan lainnya untuk sistem operasi Archlinux.
 
@@ -209,7 +208,7 @@ Selain itu,cara terbaik untuk menambahkan fitur baru terhadap Pacman atau Archli
 
 ## Q) Saya baru saja menginstall paket/aplikasi "nama_paket/aplikasi".Bagaimana cara membukanya?
 
-**A)** Jika Anda menggunakan desktop environment seperti [KDE](/index.php/KDE "KDE") atau [GNOME](/index.php/GNOME "GNOME"),paket/aplikasi/program biasanya akan muncul otomatis dibagian menu/panel.Jika Anda mencoba menjalankan aplikasi dari _terminal_ dan tidak tahu perintah untuk aplikasi tersebut,silahkan jalankan perintah `pacman -Ql namapaket | grep bin`.Masalah umum yang muncul dari aplikasi seperti Firefox atau OpenOffice adalah aplikasi tersebut terinstall pada direktori/folder `/opt` dan bukan di direktori `$PATH` yang mana merupakan tempat Anda berada disebuah direktori sekarang ini.Anda bisa jalankan perintah `source /etc/profile` atau logout kemudian login kembali ke Archlinux untuk mengatasi masalah ini.
+**A)** Jika Anda menggunakan desktop environment seperti [KDE](/index.php/KDE "KDE") atau [GNOME](/index.php/GNOME "GNOME"),paket/aplikasi/program biasanya akan muncul otomatis dibagian menu/panel.Jika Anda mencoba menjalankan aplikasi dari *terminal* dan tidak tahu perintah untuk aplikasi tersebut,silahkan jalankan perintah `pacman -Ql namapaket | grep bin`.Masalah umum yang muncul dari aplikasi seperti Firefox atau OpenOffice adalah aplikasi tersebut terinstall pada direktori/folder `/opt` dan bukan di direktori `$PATH` yang mana merupakan tempat Anda berada disebuah direktori sekarang ini.Anda bisa jalankan perintah `source /etc/profile` atau logout kemudian login kembali ke Archlinux untuk mengatasi masalah ini.
 
 # Proses Instalasi
 
@@ -261,15 +260,15 @@ Namun,jika Anda ingin menginstall Archlinux dengan cara yang lebih user friendly
 
 ## Q) Kenapa layar saya menjadi hijau saat menonton video?
 
-**A)** Bisa jadi pengaturan _Kedalaman warna/Colour Depth_ Anda salah.Sebagai contoh,bisa jadi Anda mengatur _Colour Depth_ ke 16,padahal seharusnya 24.
+**A)** Bisa jadi pengaturan *Kedalaman warna/Colour Depth* Anda salah.Sebagai contoh,bisa jadi Anda mengatur *Colour Depth* ke 16,padahal seharusnya 24.
 
 ## Q) Pengecek ejaan kata menganggap semua teks 'salah'.Kenapa?
 
-**A)** Sudahkan kamu menginstall paket _aspell_ dictionary?Coba jalankan perintah `pacman -Ss aspell` diterminal untuk melihat apakah bahasa Anda tersedia untuk diunduh dan digunakan oleh pengecek ejaan kata?
+**A)** Sudahkan kamu menginstall paket *aspell* dictionary?Coba jalankan perintah `pacman -Ss aspell` diterminal untuk melihat apakah bahasa Anda tersedia untuk diunduh dan digunakan oleh pengecek ejaan kata?
 
-Jika Anda sudah menginstall _aspell_ dan masalah Anda masih tetap muncul,bisa jadi masalah tersebut datang dari `enchant`.
+Jika Anda sudah menginstall *aspell* dan masalah Anda masih tetap muncul,bisa jadi masalah tersebut datang dari `enchant`.
 
-**Pertama**,cek daftar bahasa apa saja yang bisa digunakan oleh _aspell_ dengan mengetik perintah `aspell dicts` :
+**Pertama**,cek daftar bahasa apa saja yang bisa digunakan oleh *aspell* dengan mengetik perintah `aspell dicts` :
 
 ```
 $ aspell dicts

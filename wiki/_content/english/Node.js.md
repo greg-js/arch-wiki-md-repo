@@ -174,7 +174,7 @@ $ npm config set python /usr/bin/python2
 
 ```
 
-In case of errors like **gyp WARN EACCES user "root" does not have permission to access the ... dir** _--unsafe-perm_ option might help:
+In case of errors like **gyp WARN EACCES user "root" does not have permission to access the ... dir** *--unsafe-perm* option might help:
 
 ```
 $ sudo npm install --unsafe-perm -g node-inspector

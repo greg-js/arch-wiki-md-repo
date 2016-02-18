@@ -33,25 +33,25 @@
 
 ## Hardware
 
-_CPU:_ Intel Core i7-2630QM @ 2.00GHz
+*CPU:* Intel Core i7-2630QM @ 2.00GHz
 
-_Mainboard:_ Intel HM65 Express
+*Mainboard:* Intel HM65 Express
 
-_RAM:_ 6/8GB DDR3
+*RAM:* 6/8GB DDR3
 
-_Display:_ 15,6" HD LED (1920x1080)
+*Display:* 15,6" HD LED (1920x1080)
 
-_Graphics adapter:_ Intel Core Processor Integrated Graphics Controller, NVIDIA GeForce GT 555M
+*Graphics adapter:* Intel Core Processor Integrated Graphics Controller, NVIDIA GeForce GT 555M
 
-_Soundcard:_ Integrated Intel HDA, Bang & Olufsen speakers with external subwoofer
+*Soundcard:* Integrated Intel HDA, Bang & Olufsen speakers with external subwoofer
 
-_Network:_ Atheros Gigabit Ethernet Controller, Intel Centrino Wireless-N 1030
+*Network:* Atheros Gigabit Ethernet Controller, Intel Centrino Wireless-N 1030
 
-_Hard disk:_ Seagate Momentus 750GB 5400rpm SATA
+*Hard disk:* Seagate Momentus 750GB 5400rpm SATA
 
-_Webcam:_ IMC Networks
+*Webcam:* IMC Networks
 
-_Touchpad:_ Synaptics
+*Touchpad:* Synaptics
 
 ## Configuration
 
@@ -90,7 +90,6 @@ Follow the official documentation: [ALSA](/index.php/ALSA "ALSA") or/and [PulseA
 We need pulseaudio profile which will use surround21 alsa device.
 
  `/usr/share/pulseaudio/alsa-mixer/profile-sets/default.conf` 
-
 ```
 ...
 [Mapping analog-surround-21]
@@ -106,7 +105,6 @@ direction = output
 Lfe remixing must be enabled for remixing third channel.
 
  `~/.config/pulse/daemon.conf` 
-
 ```
 enable-lfe-remixing = yes
 
@@ -115,7 +113,6 @@ enable-lfe-remixing = yes
 To prevent volume changing of PCM set volume to ignore in:
 
  `/usr/share/pulseaudio/alsa-mixer/paths/analog-output.conf.common` 
-
 ```
 [Element PCM]
 switch = on
@@ -128,9 +125,7 @@ override-map.2 = all-left,all-right
 Install [blop](https://www.archlinux.org/packages/?name=blop),[cmt](https://www.archlinux.org/packages/?name=cmt) and [ladspa](https://www.archlinux.org/packages/?name=ladspa) and append these lines to your default.pa if you want to configure subwoofer on every pulseaudio daemon start:
 
 **Note:** Before using this configuration you should change `alsa_output.pci-0000_00_1b.0.analog-stereo-21` to your own name of sink(you can find names of your sinks in pulseaudio with command `$ pactl list sinks` ).
-
  `~/.config/pulse/default.pa` 
-
 ```
 load-module module-ladspa-sink  sink_name=ladspa_low_pass master=alsa_output.pci-0000_00_1b.0.analog-stereo-21 plugin=lp4pole_1671 label=lp4pole_fcrcia_oa control=200,0
 load-module module-remap-sink   sink_name=remapLFE        master=ladspa_low_pass                               remix=no   channels=1 master_channel_map=lfe                    channel_map=lfe
@@ -156,7 +151,6 @@ pactl set-sink-mute 0 toggle
 External subwoofer + low pass filter configuration. Configuration uses [blop](https://www.archlinux.org/packages/?name=blop),[cmt](https://www.archlinux.org/packages/?name=cmt) and [ladspa](https://www.archlinux.org/packages/?name=ladspa).
 
  `/etc/asound.conf` 
-
 ```
 # upmix 2channels to 3, one for LFE
 pcm.upmix2021 {

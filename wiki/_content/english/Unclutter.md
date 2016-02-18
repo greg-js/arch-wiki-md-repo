@@ -16,7 +16,7 @@ Unclutter hides your X mouse cursor when you do not need it, to prevent it from 
 
 ## Usage
 
-Use your _.xinitrc_ file or WM/DE to start unclutter. For example, add the following to your _.xinitrc_:
+Use your *.xinitrc* file or WM/DE to start unclutter. For example, add the following to your *.xinitrc*:
 
 ```
 unclutter &
@@ -34,7 +34,7 @@ unclutter -grab &
 
 ```
 
-**Note:** The `-grab` option breaks some screen locking applications such as _slock_ and _i3lock_.
+**Note:** The `-grab` option breaks some screen locking applications such as *slock* and *i3lock*.
 
 Unclutter could cause unusual mouse behaviour in some SDL Games. The mouse cursor might be reset to some positions in the screen because of this problem. The details can be found [here](https://bugs.launchpad.net/ubuntu/+source/unclutter/+bug/61105).
 

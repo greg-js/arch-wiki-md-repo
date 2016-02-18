@@ -107,8 +107,8 @@ Il resto del file di configurazione è diviso in (almeno) due valori per ogni op
 
 *   **FCTEMPS**: Il dispositivo di input della temperatura da leggere per la temperatura della CPU. L'esempio sopra riportato corrisponde a `/sys/class/hwmon/hwmon0/device/temp1_input`.
 *   **FCFANS**: La velocità della ventola attuale, che può essere letto (come la temperatura) in `/sys/class/hwmon/hwmon0/device/fan1_input`
-*   **MINTEMP**: La temperatura (°C) alla quale **SPEGNERE** la ventola della cpu. Le CPU efficienti non hanno normalmente bisogno di ventilazione mentre sono al minimo. Assicurarsi di impostare questo ad una temperatura di sicurezza _conosciuta_. Impostare questo valore a 0 non è consigliato, utilizzare un valore più sicuro.
-*   **MAXTEMP**: La temperatura (°C) alla quale far girare la ventola alla _MASSIMA_ velocità. Questo dovrebbe essere impostato, forse 10 o 20 gradi (°C) al di sotto della temperatura critica di spegnimento della CPU. Impostarla troppo vicina alla MINTEMP si tradurrà in superiore velocità generale della ventola.
+*   **MINTEMP**: La temperatura (°C) alla quale **SPEGNERE** la ventola della cpu. Le CPU efficienti non hanno normalmente bisogno di ventilazione mentre sono al minimo. Assicurarsi di impostare questo ad una temperatura di sicurezza *conosciuta*. Impostare questo valore a 0 non è consigliato, utilizzare un valore più sicuro.
+*   **MAXTEMP**: La temperatura (°C) alla quale far girare la ventola alla *MASSIMA* velocità. Questo dovrebbe essere impostato, forse 10 o 20 gradi (°C) al di sotto della temperatura critica di spegnimento della CPU. Impostarla troppo vicina alla MINTEMP si tradurrà in superiore velocità generale della ventola.
 *   **MINSTOP**: Il valore di PWM con cui il ventilatore si ferma. Ogni ventola è un po' diversa. Gli utenti esperti possono impostare valori differenti (tra 0 e 255) a `/sys/class/hwmon/hwmon0/device/pwm1` e poi monitorare la ventola della CPU. Quando si ferma, utilizzare quel valore.
 *   **MINSTART**: Il valore di PWM con cui il ventilatore inizia a girare di nuovo. Questo è spesso un valore superiore a MINSTOP dal momento che è richiesto un maggiore voltaggio per superare l'inerzia.
 
@@ -141,7 +141,7 @@ Dovrebbe avviarsi e probabilmente si sentirà rallentare la ventola della CPU.
 
 Se tutto funziona correttamente, per ottenere l'avvio al boot basta aggiungere `fancontrol` a DAEMONS in `/etc/rc.conf`, dato che uno script init per `fancontrol` è ora fornito di default!
 
-_La maggior parte di questi howto è tratta da [[Forum di ubuntu](http://ubuntuforums.org/)] e dalla [[Guida di ubuntu](http://ubuntuguide.org/)]._
+*La maggior parte di questi howto è tratta da [[Forum di ubuntu](http://ubuntuforums.org/)] e dalla [[Guida di ubuntu](http://ubuntuguide.org/)].*
 
 **Note:** Per i portatili Dell Latitude/Inspiron, si consiglia di utilizzare [i8kutils](https://aur.archlinux.org/packages/i8kutils/)/[i8kmonitor](https://aur.archlinux.org/packages/i8kmonitor/). Tenere conto che questi due pacchetti non funzionano su Ispiron 1764
 

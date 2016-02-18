@@ -147,11 +147,11 @@ To list all your devices capable of being used as a physical volume:
 Create a physical volume on them:
 
 ```
-# pvcreate _DEVICE_
+# pvcreate *DEVICE*
 
 ```
 
-This command creates a header on each device so it can be used for LVM. As defined in [#LVM Building Blocks](#LVM_Building_Blocks), _DEVICE_ can be a disk (e.g. `/dev/sda`), a partition (e.g. `/dev/sda2`) or a loop back device. For example:
+This command creates a header on each device so it can be used for LVM. As defined in [#LVM Building Blocks](#LVM_Building_Blocks), *DEVICE* can be a disk (e.g. `/dev/sda`), a partition (e.g. `/dev/sda2`) or a loop back device. For example:
 
 ```
 # pvcreate /dev/sda2
@@ -174,7 +174,7 @@ The next step is to create a volume group on this physical volume.
 First you need to create a volume group on one of the physical volumes:
 
 ```
-# vgcreate <_volume_group_> <_physical_volume_>
+# vgcreate <*volume_group*> <*physical_volume*>
 
 ```
 
@@ -188,8 +188,8 @@ For example:
 Then add to it all other physical volumes you want to have in it:
 
 ```
-# vgextend <_volume_group_> <_physical_volume_>
-# vgextend <_volume_group_> <_another_physical_volume_>
+# vgextend <*volume_group*> <*physical_volume*>
+# vgextend <*volume_group*> <*another_physical_volume*>
 # ...
 
 ```
@@ -227,7 +227,7 @@ This command will first set up the three partitions as physical volumes (if nece
 Now we need to create logical volumes on this volume group. You create a logical volume with the next command by giving the name of a new logical volume, its size, and the volume group it will live on:
 
 ```
-# lvcreate -L <_size_> <_volume_group_> -n <_logical_volume_>
+# lvcreate -L <*size*> <*volume_group*> -n <*logical_volume*>
 
 ```
 
@@ -250,7 +250,7 @@ You can also specify one or more physical volumes to restrict where LVM allocate
 If you want to fill all the free space left on a volume group, use the next command:
 
 ```
-# lvcreate -l 100%FREE  <_volume_group_> -n <_logical_volume_>
+# lvcreate -l 100%FREE  <*volume_group*> -n <*logical_volume*>
 
 ```
 
@@ -261,13 +261,13 @@ You can track created logical volumes with:
 
 ```
 
-**Note:** You may need to load the _device-mapper_ kernel module (**modprobe dm_mod**) for the above commands to succeed.
+**Note:** You may need to load the *device-mapper* kernel module (**modprobe dm_mod**) for the above commands to succeed.
 
 **Tip:** You can start out with relatively small logical volumes and expand them later if needed. For simplicity, leave some free space in the volume group so there is room for expansion.
 
 ### Create file systems and mount logical volumes
 
-Your logical volumes should now be located in `/dev/mapper/` and `/dev/_YourVolumeGroupName_`. If you cannot find them, use the next commands to bring up the module for creating device nodes and to make volume groups available:
+Your logical volumes should now be located in `/dev/mapper/` and `/dev/*YourVolumeGroupName*`. If you cannot find them, use the next commands to bring up the module for creating device nodes and to make volume groups available:
 
 ```
 # modprobe dm_mod
@@ -279,8 +279,8 @@ Your logical volumes should now be located in `/dev/mapper/` and `/dev/_YourVolu
 Now you can create file systems on logical volumes and mount them as normal partitions (if you are installing Arch linux, refer to [mounting the partitions](/index.php/Beginners%27_guide#Mount_the_partitions "Beginners' guide") for additional details):
 
 ```
-# mkfs.<_fstype_> /dev/mapper/<_volume_group_>-<_logical_volume_>
-# mount /dev/mapper/<_volume_group_>-<_logical_volume_> /<_mountpoint_>
+# mkfs.<*fstype*> /dev/mapper/<*volume_group*>-<*logical_volume*>
+# mount /dev/mapper/<*volume_group*>-<*logical_volume*> /<*mountpoint*>
 
 ```
 
@@ -304,7 +304,7 @@ In case your root filesystem is on LVM, you will need to make sure the `udev` an
 
 Afterwards, you can continue in normal installation instructions with the [create an initial ramdisk](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") step.
 
-**Tip:** The `lvm2` hook is installed by [lvm2](https://www.archlinux.org/packages/?name=lvm2), not [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio). If you are running _mkinitcpio_ in an _arch-chroot_ for a new installation, [lvm2](https://www.archlinux.org/packages/?name=lvm2) must be installed inside the _arch-chroot_ for _mkinitcpio_ to find the `lvm2` hook. If [lvm2](https://www.archlinux.org/packages/?name=lvm2) only exists outside the _arch-chroot_, _mkinitcpio_ will output `Error: Hook 'lvm2' cannot be found`.
+**Tip:** The `lvm2` hook is installed by [lvm2](https://www.archlinux.org/packages/?name=lvm2), not [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio). If you are running *mkinitcpio* in an *arch-chroot* for a new installation, [lvm2](https://www.archlinux.org/packages/?name=lvm2) must be installed inside the *arch-chroot* for *mkinitcpio* to find the `lvm2` hook. If [lvm2](https://www.archlinux.org/packages/?name=lvm2) only exists outside the *arch-chroot*, *mkinitcpio* will output `Error: Hook 'lvm2' cannot be found`.
 
 ### Special preparations for root on thinly-provisioned volume
 
@@ -313,7 +313,6 @@ If your root device is on a thinly-provisioned LVM volume (as may be needed by [
 First, `mkinitcpio` by default does not include modules and binaries needed for thin provisioning. Adjust the configuration file to compensate:
 
  `/etc/mkinitcpio.conf` 
-
 ```
 MODULES="... **dm-thin-pool** ..."
 BINARIES="**/usr/bin/thin_check /usr/bin/pdata_tools** ..."
@@ -325,7 +324,7 @@ Second, with a large number of snapshots, `thin_check` runs for a long enough ti
 
 ### Kernel options
 
-If the root file system resides in a logical volume, the `root=` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") must be pointed to the mapped device, e.g `/dev/mapper/_vg-name_-_lv-name_`.
+If the root file system resides in a logical volume, the `root=` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") must be pointed to the mapped device, e.g `/dev/mapper/*vg-name*-*lv-name*`.
 
 You may also need `dolvm`.
 
@@ -358,7 +357,7 @@ This will automatically detect the new size of the device and extend the PV to i
 
 ##### Shrinking
 
-To shrink a physical volume prior to reducing its underlying device, add the `--setphysicalvolumesize _size_` parameters to the command, _e.g._:
+To shrink a physical volume prior to reducing its underlying device, add the `--setphysicalvolumesize *size*` parameters to the command, *e.g.*:
 
 ```
 # pvresize --setphysicalvolumesize 40G /dev/sda1
@@ -380,7 +379,6 @@ Indeed `pvresize` will refuse to shrink a PV if it has allocated extents after w
 Before moving free extents to the end of the volume, one must run `# pvdisplay -v -m` to see physical segments. In the below example, there is one physical volume on `/dev/sdd1`, one volume group `vg1` and one logical volume `backup`.
 
  `# pvdisplay -v -m` 
-
 ```
     Finding all volume groups.
     Using physical volume(s) on command line.
@@ -413,7 +411,6 @@ One can observe FREE space are split across the volume. To shrink the physical v
 Here, the first free segment is from 0 to 153600 and leaves us with 153601 free extents. We can now move this segment number from the last physical extent to the first extent. The command will thus be:
 
  `# pvmove --alloc anywhere /dev/sdd1:307201-399668 /dev/sdd1:0-92466` 
-
 ```
 /dev/sdd1: Moved: 0.1 %
 /dev/sdd1: Moved: 0.2 %
@@ -436,14 +433,13 @@ Once all your free physical segments are on the last physical extent, run `# vgd
 Then you can now run again the command:
 
 ```
-# pvresize --setphysicalvolumesize _size_ _PhysicalVolume_
+# pvresize --setphysicalvolumesize *size* *PhysicalVolume*
 
 ```
 
 See the result:
 
  `# pvs` 
-
 ```
   PV         VG   Fmt  Attr PSize    PFree 
   /dev/sdd1  vg1  lvm2 a--     1t     500g
@@ -456,39 +452,39 @@ Last, you need to shrink the partition with your favorite [partitioning tool](/i
 
 #### Logical volumes
 
-**Note:** _lvresize_ provides more or less the same options as the specialized `lvextend` and `lvreduce` commands, while allowing to do both types of operation. Notwithstanding this, all those utilities offer a `-r, --resizefs` option which allows to resize the file system together with the LV using `fsadm(8)` (_ext2_, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), _ReiserFS_ and [XFS](/index.php/XFS "XFS") supported). Therefore it may be easier to simply use `lvresize` for both operations and use `--resizefs` to simplify things a bit, except if you have specific needs or want full control over the process.
+**Note:** *lvresize* provides more or less the same options as the specialized `lvextend` and `lvreduce` commands, while allowing to do both types of operation. Notwithstanding this, all those utilities offer a `-r, --resizefs` option which allows to resize the file system together with the LV using `fsadm(8)` (*ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") supported). Therefore it may be easier to simply use `lvresize` for both operations and use `--resizefs` to simplify things a bit, except if you have specific needs or want full control over the process.
 
 ##### Growing or shrinking with lvresize
 
-**Warning:** While enlarging a file system can often be done on-line (_i.e._ while it is mounted), even for the root partition, shrinking will nearly always require to first unmount the file system so as to prevent data loss. Make sure your FS supports what you are trying to do.
+**Warning:** While enlarging a file system can often be done on-line (*i.e.* while it is mounted), even for the root partition, shrinking will nearly always require to first unmount the file system so as to prevent data loss. Make sure your FS supports what you are trying to do.
 
-Extend logical volume _lv1_ within volume group _vg1_ by 2GB _without_ touching its file system:
+Extend logical volume *lv1* within volume group *vg1* by 2GB *without* touching its file system:
 
 ```
 # lvresize -L +2G vg1/lv1
 
 ```
 
-Reduce `vg1/lv1` of 500MB _without_ resizing its file system (make sure it is [already shrunk](#Resizing_the_file_system_separately) in that case):
+Reduce `vg1/lv1` of 500MB *without* resizing its file system (make sure it is [already shrunk](#Resizing_the_file_system_separately) in that case):
 
 ```
 # lvresize -L -500M vg1/lv1
 
 ```
 
-Set `vg1/lv1` to 15GB and resize its file sytem _all at once_:
+Set `vg1/lv1` to 15GB and resize its file sytem *all at once*:
 
 ```
 # lvresize -L 15G -r vg1/lv1
 
 ```
 
-**Note:** Only _ext2_, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), _ReiserFS_ and [XFS](/index.php/XFS "XFS") [file systems](/index.php/File_systems "File systems") are supported. If different look for the [appropriate utility](/index.php/File_systems#Arch_Linux_support "File systems").
+**Note:** Only *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") [file systems](/index.php/File_systems "File systems") are supported. If different look for the [appropriate utility](/index.php/File_systems#Arch_Linux_support "File systems").
 
 If you want to fill all the free space on a volume group, use the following command:
 
 ```
-# lvresize -l +100%FREE _vg_/_lv_
+# lvresize -l +100%FREE *vg*/*lv*
 
 ```
 
@@ -503,21 +499,21 @@ If not using the `-r, --resizefs` option to `lv{resize,extend,reduce}` or using 
 For example with and ext2/ext3/ext4 file system:
 
 ```
-# resize2fs _vg_/_lv_
+# resize2fs *vg*/*lv*
 
 ```
 
 will expand the FS to the maximum size of the underlying LV, while
 
 ```
-# resize2fs -M _vg_/_lv_
+# resize2fs -M *vg*/*lv*
 
 ```
 
 will shrink it to its minimum size. To resize it to a specified size, use:
 
 ```
-# resize2fs _vg_/_lv_ _NewSize_
+# resize2fs *vg*/*lv* *NewSize*
 
 ```
 
@@ -542,14 +538,14 @@ $ lsblk
 Then unmount the filesystem on the logical volume:
 
 ```
-# umount /<_mountpoint_>
+# umount /<*mountpoint*>
 
 ```
 
 Finally, remove the logical volume:
 
 ```
-# lvremove <_volume_group_>/<_logical_volume_>
+# lvremove <*volume_group*>/<*logical_volume*>
 
 ```
 
@@ -658,7 +654,7 @@ Also multiple snapshots can be taken and each one can be merged with the origin 
 
 The snapshot can be mounted and backed up with **dd** or **tar**. The size of the backup file done with **dd** will be the size of the files residing on the snapshot volume. To restore just create a snapshot, mount it, and write or extract the backup to it. And then merge it with the origin.
 
-It is important to have the _dm_snapshot_ module listed in the MODULES variable of `/etc/mkinitcpio.conf`, otherwise the system will not boot. If you do this on an already installed system, make sure to rebuild the image with
+It is important to have the *dm_snapshot* module listed in the MODULES variable of `/etc/mkinitcpio.conf`, otherwise the system will not boot. If you do this on an already installed system, make sure to rebuild the image with
 
 ```
 # mkinitcpio -g /boot/initramfs-linux.img
@@ -679,7 +675,7 @@ If you have LVM volumes not activated via the [initramfs](/index.php/Initramfs "
 
 From [man](http://man7.org/linux/man-pages/man7/lvmcache.7.html):
 
-	_The cache logical volume type uses a small and fast LV to improve the performance of a large and slow LV. It does this by storing the frequently used blocks on the faster LV. LVM refers to the small fast LV as a cache pool LV. The large slow LV is called the origin LV. Due to requirements from dm-cache (the kernel driver), LVM further splits the cache pool LV into two devices - the cache data LV and cache metadata LV. The cache data LV is where copies of data blocks are kept from the origin LV to increase speed. The cache metadata LV holds the accounting information that specifies where data blocks are stored (e.g. on the origin LV or on the cache data LV). Users should be familiar with these LVs if they wish to create the best and most robust cached logical volumes. All of these associated LVs must be in the same VG._
+	*The cache logical volume type uses a small and fast LV to improve the performance of a large and slow LV. It does this by storing the frequently used blocks on the faster LV. LVM refers to the small fast LV as a cache pool LV. The large slow LV is called the origin LV. Due to requirements from dm-cache (the kernel driver), LVM further splits the cache pool LV into two devices - the cache data LV and cache metadata LV. The cache data LV is where copies of data blocks are kept from the origin LV to increase speed. The cache metadata LV holds the accounting information that specifies where data blocks are stored (e.g. on the origin LV or on the cache data LV). Users should be familiar with these LVs if they wish to create the best and most robust cached logical volumes. All of these associated LVs must be in the same VG.*
 
 #### Create
 
@@ -745,7 +741,7 @@ The `dm_mod` module should be automatically loaded. In case it does not, you can
 
 You will need to [rebuild](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") the initramfs to commit any changes you made.
 
-*   Try preceding commands with _lvm_ like this:
+*   Try preceding commands with *lvm* like this:
 
 ```
 # lvm pvdisplay
@@ -783,14 +779,14 @@ Cause:
 	Removing an external LVM drive without deactivating the volume group(s) first. Before you disconnect, make sure to:
 
 ```
-# vgchange -an _volume group name_
+# vgchange -an *volume group name*
 
 ```
 
-Fix: assuming you already tried to activate the volume group with `# vgchange -ay _vg_`, and are receiving the Input/output errors:
+Fix: assuming you already tried to activate the volume group with `# vgchange -ay *vg*`, and are receiving the Input/output errors:
 
 ```
-# vgchange -an _volume group name_
+# vgchange -an *volume group name*
 
 ```
 
@@ -798,7 +794,7 @@ Unplug the external drive and wait a few minutes:
 
 ```
 # vgscan
-# vgchange -ay _volume group name_
+# vgchange -ay *volume group name*
 
 ```
 

@@ -72,7 +72,6 @@
 **注意:** 安装过程中会收到`"No rc*.d style init script directories"`错误。这可以安全忽略,因为Arch使用的是[systemd](/index.php/Systemd "Systemd").
 
 **提示:** 从终端上(重新)构建模块，使用:
-
 ```
 # vmware-modconfig --console --install-all
 
@@ -93,7 +92,6 @@ VMware Workstation 12 支持内核 4.2.
 ”(可选)“ 你也可以创建一个 `.service` 文件 (也可以用[AUR](/index.php/AUR "AUR")中的[vmware-systemd-services](https://aur.archlinux.org/packages/vmware-systemd-services/)包)，而不是直接使用 `/etc/init.d/vmware` (`start|stop|status|restart`) and `/usr/bin/vmware-usbarbitrator` 来管理服务：
 
  `/etc/systemd/system/vmware.service` 
-
 ```
 [Unit]
 Description=VMware daemon
@@ -110,9 +108,7 @@ RemainAfterExit=yes
 [Install]
 WantedBy=multi-user.target
 ```
-
  `/etc/systemd/system/vmware-usbarbitrator.service` 
-
 ```
 [Unit]
 Description=VMware USB Arbitrator
@@ -183,7 +179,7 @@ $ perl -e 'use Compress::Zlib; my $v; read STDIN, $v, '$(stat -c%s "./bios440.ro
 To view the contents of the installer `.bundle`:
 
 ```
-$ sh VMware-_edition_-_version_._release_._architecture_.bundle --extract _/tmp/vmware-bundle/_
+$ sh VMware-*edition*-*version*.*release*.*architecture*.bundle --extract */tmp/vmware-bundle/*
 
 ```
 
@@ -209,7 +205,7 @@ $ chattr +C ~/vmware/<Virtual machine name>/<Virtual machine name>.vmx
 
 ```
 
-**Note:** From the [chattr man page](http://www.linuxhowtos.org/manpages/1/chattr.htm?print=-51): _"For btrfs, the `C` flag should be set only on new or empty files. If set on a file which already has data blocks, it is undefined when the blocks assigned to the file will be fully stable. If set on a directory, only new files will be affected."_
+**Note:** From the [chattr man page](http://www.linuxhowtos.org/manpages/1/chattr.htm?print=-51): *"For btrfs, the `C` flag should be set only on new or empty files. If set on a file which already has data blocks, it is undefined when the blocks assigned to the file will be fully stable. If set on a directory, only new files will be affected."*
 
 ### 使用 DKMS 管理模块
 
@@ -250,7 +246,6 @@ $ sed -i 's/9/11/' dkms-workstation/dkms.conf
 The `dkms.conf` describes the module names and the compilation/installation procedure. `AUTOINSTALL="yes"` tells the modules to be recompiled/installed automatically each time:
 
  `/usr/src/vmware-modules-11/dkms.conf` 
-
 ```
 PACKAGE_NAME="vmware-modules"
 PACKAGE_VERSION="11"
@@ -285,7 +280,6 @@ AUTOINSTALL="yes"
 and now the `Makefile`:
 
  `/usr/src/vmware-modules-11/Makefile` 
-
 ```
 KERNEL := $(KERNELRELEASE)
 HEADERS := /usr/lib/modules/$(KERNEL)/build/include
@@ -323,7 +317,7 @@ The modules can then be installed with:
 
 ### Enable 3D graphics on Intel and Optimus
 
-Some graphics drivers are blacklisted by default, due to poor and/or unstable 3D acceleration. After enabling _Accelerate 3D graphics_, the log may show something like:
+Some graphics drivers are blacklisted by default, due to poor and/or unstable 3D acceleration. After enabling *Accelerate 3D graphics*, the log may show something like:
 
 ```
 Disabling 3D on this host due to presence of Mesa DRI driver.  Set mks.gl.allowBlacklistedDrivers = TRUE to override.
@@ -385,21 +379,21 @@ If you just get back to the prompt when opening the `.bundle`, then you probably
 
 ### 无法为Guests下载VMware Tools
 
-If after [#Preventing crashes and freezes when checking for updates](#Preventing_crashes_and_freezes_when_checking_for_updates) you are still unable to download the VMware Tools ISOs, you may either try running `vmware` or `vmplayer` as _root_, or downloading them directly from the [VMware repository](http://softwareupdate.vmware.com/cds/vmw-desktop/).
+If after [#Preventing crashes and freezes when checking for updates](#Preventing_crashes_and_freezes_when_checking_for_updates) you are still unable to download the VMware Tools ISOs, you may either try running `vmware` or `vmplayer` as *root*, or downloading them directly from the [VMware repository](http://softwareupdate.vmware.com/cds/vmw-desktop/).
 
-Navigate to: "_application name_ / _version_ / _build ID_ / linux / packages/" and download the appropriate Tools.
+Navigate to: "*application name* / *version* / *build ID* / linux / packages/" and download the appropriate Tools.
 
 Extract with:
 
 ```
-$ tar -xvf vmware-tools-_name_-_version_-_buildID_.x86_64.component.tar
+$ tar -xvf vmware-tools-*name*-*version*-*buildID*.x86_64.component.tar
 
 ```
 
 And install using the VMware installer:
 
 ```
-# vmware-installer --install-component=_/path/_vmware-tools-_name_-_version_-_buildID_.x86_64.component
+# vmware-installer --install-component=*/path/*vmware-tools-*name*-*version*-*buildID*.x86_64.component
 
 ```
 
@@ -408,7 +402,6 @@ And install using the VMware installer:
 VMware Workstation 9 provides the possibility to remotely manage Shared VMs through the `vmware-workstation-server` service. However, this will fail with the error `"incorrect username/password"` due to incorrect PAM configuration of the `vmware-authd` service. To fix it, edit `/etc/pam.d/vmware-authd` like this:
 
  `/etc/pam.d/vmware-authd` 
-
 ```
 #%PAM-1.0
 auth     required       pam_unix.so
@@ -438,13 +431,12 @@ $ aplay -L
 
 ```
 
-If interested in playing 5.1 _surround sound_ from the guest, look for `surround51:CARD=_vendor_name_,DEV=_num_`, if experiencing quality issues, look for `front:CARD=_vendor_name_,DEV=_num_`. Finally put the name in the `.vmx`:
+If interested in playing 5.1 *surround sound* from the guest, look for `surround51:CARD=*vendor_name*,DEV=*num*`, if experiencing quality issues, look for `front:CARD=*vendor_name*,DEV=*num*`. Finally put the name in the `.vmx`:
 
- `~/vmware/_Virtual_machine_name_/_Virtual_machine_name_.vmx` 
-
+ `~/vmware/*Virtual_machine_name*/*Virtual_machine_name*.vmx` 
 ```
-sound.fileName=_"surround51:CARD=Live,DEV=0"_
-sound.autodetect=_"FALSE"_
+sound.fileName=*"surround51:CARD=Live,DEV=0"*
+sound.autodetect=*"FALSE"*
 ```
 
 [OSS emulation](/index.php/Advanced_Linux_Sound_Architecture#User-space_utilities "Advanced Linux Sound Architecture") should also be disabled.
@@ -454,7 +446,6 @@ sound.autodetect=_"FALSE"_
 To disable `KVM` on boot, you can use something like:
 
  `/etc/modprobe.d/vmware.conf` 
-
 ```
 blacklist kvm
 blacklist kvm-amd   # For AMD CPUs
@@ -477,19 +468,18 @@ See [Microcode](/index.php/Microcode "Microcode") for more information.
 
 ### Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"
 
-This is due to [incomplete](http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&externalId=1591) support of power management features ([Intel SpeedStep](https://en.wikipedia.org/wiki/Intel_speedstep "wikipedia:Intel speedstep") and [AMD PowerNow!](https://en.wikipedia.org/wiki/AMD_powernow "wikipedia:AMD powernow")/[Cool'n'Quiet](https://en.wikipedia.org/wiki/Cool%27n%27Quiet "wikipedia:Cool'n'Quiet")) in VMware Linux that vary the CPU frequency. In March 2012, with the release of [linux 3.3-1](https://projects.archlinux.org/svntogit/packages.git/commit/trunk/config.x86_64?h=packages/linux&id=9abe018d91a5d8c3af7523d30b8aa73f86b680be) the maximum frequency [Performance](/index.php/CPU_frequency_governors "CPU frequency governors") governor was replaced with the dynamic _Ondemand_. When the host CPU frequency changes, the Guest system clock runs too quickly or too slowly, but may also render the whole Guest unbootable.
+This is due to [incomplete](http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&externalId=1591) support of power management features ([Intel SpeedStep](https://en.wikipedia.org/wiki/Intel_speedstep "wikipedia:Intel speedstep") and [AMD PowerNow!](https://en.wikipedia.org/wiki/AMD_powernow "wikipedia:AMD powernow")/[Cool'n'Quiet](https://en.wikipedia.org/wiki/Cool%27n%27Quiet "wikipedia:Cool'n'Quiet")) in VMware Linux that vary the CPU frequency. In March 2012, with the release of [linux 3.3-1](https://projects.archlinux.org/svntogit/packages.git/commit/trunk/config.x86_64?h=packages/linux&id=9abe018d91a5d8c3af7523d30b8aa73f86b680be) the maximum frequency [Performance](/index.php/CPU_frequency_governors "CPU frequency governors") governor was replaced with the dynamic *Ondemand*. When the host CPU frequency changes, the Guest system clock runs too quickly or too slowly, but may also render the whole Guest unbootable.
 
 To prevent this, the maximum host CPU frequency can be specified, and [Time Stamp Counter](https://en.wikipedia.org/wiki/Time_Stamp_Counter "wikipedia:Time Stamp Counter") (TSC) disabled, in the global configuration:
 
  `/etc/vmware/config` 
-
 ```
 host.cpukHz = "X"  # The maximum speed in KHz, e.g. 3GHz is "3000000".
 host.noTSC = "TRUE" # Keep the Guest system clock accurate even when
 ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
 ```
 
-**Tip:** To periodically correct the time (once per minute), in the _Options_ tab of VMware Tools, enable: _"Time synchronization between the virtual machine and the host operating system"_.
+**Tip:** To periodically correct the time (once per minute), in the *Options* tab of VMware Tools, enable: *"Time synchronization between the virtual machine and the host operating system"*.
 
 ### Guests系统启动后网络不可用
 
@@ -507,7 +497,7 @@ To uninstall VMware you need the product name (`vmware-workstation` 或是 `vmwa
 and uninstall with (`--required` skips the confirmation):
 
 ```
-# vmware-installer -u _product_ --required
+# vmware-installer -u *product* --required
 
 ```
 
@@ -521,4 +511,4 @@ and uninstall with (`--required` skips the confirmation):
 
 ```
 
-你可能还想看看剩余模块在`/usr/lib/modules/_kernel_name_/misc/`模块目录.
+你可能还想看看剩余模块在`/usr/lib/modules/*kernel_name*/misc/`模块目录.

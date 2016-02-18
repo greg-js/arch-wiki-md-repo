@@ -30,7 +30,6 @@ Modificare il PKGBUILD del pacchetto linux ufficiale.
 Le prime righe saranno come queste:
 
  `PKGBUILD` 
-
 ```
 # $Id: PKGBUILD 130991 2011-07-09 12:23:51Z thomas $
 # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
@@ -46,7 +45,6 @@ _kernelname=${pkgname#linux}
 Come puoi vedere, è presente una riga commentata per creare un kernel con nome diverso. Tutto ciò che devi fare qui è decommentare quella riga, cambiare il suffisso '-custom' secondo le tue esigenze e commentare la riga standard. Se vuoi avere due kernel (ARCH e test) devi disabilitare la sezione conflicts. I file linux.install e linux.preset dovranno essere linux-custom.install and linux-custom.preset. Ad esempio, il tuo file potrebbe diventare:
 
  `PKGBUILD` 
-
 ```
 ...
 #pkgname=('linux' 'linux-headers' 'linux-docs') # Build stock -ARCH kernel
@@ -67,7 +65,6 @@ Adesso, tutte le variabili del tuo pacchetto saranno cambiare in base al nuovo n
 Probabilmente avrai bisogno di un file .config personalizzato. Puoi decommentare una delle alternative mostrate nella funzione build() del PKGBUILD:
 
  `PKGBUILD` 
-
 ```
 ...
   # load configuration
@@ -83,14 +80,13 @@ Probabilmente avrai bisogno di un file .config personalizzato. Puoi decommentare
 
 Se hai già un file config del kernel, suggeriamo di decommentare uno degli strumenti di configurazione interattivi, come nconfig, e caricare il tuo config da lì. Questo evita i problemi nel rinominare il kernel riscontrati con altri metodi.
 
-**Nota:** Se decommenti _return 1_, puoi cambiare la cartella sorgente del kernel non appena makepkg termina l'estrazione e dopo usare nconfig. Questo ti permette di configurare il kernel in sessioni multiple. Quando sei pronto per compilare, copia il file .config in cima a config o config.x86_64 (in base alla tua architettura), commenta _return 1_ e usa **makepkg -i**. Non usare questo metodo per le patch personalizzate, metti i comandi delle tue patch dopo queste righe.
+**Nota:** Se decommenti *return 1*, puoi cambiare la cartella sorgente del kernel non appena makepkg termina l'estrazione e dopo usare nconfig. Questo ti permette di configurare il kernel in sessioni multiple. Quando sei pronto per compilare, copia il file .config in cima a config o config.x86_64 (in base alla tua architettura), commenta *return 1* e usa **makepkg -i**. Non usare questo metodo per le patch personalizzate, metti i comandi delle tue patch dopo queste righe.
 
 ### Cambiare la funzione package_linux()
 
 Ora devi scrivere una tua funzione per dire al sistema come installare il pacchetto. Questo può essere fatto facilmente cambiando il nome della funzione package_linux() in package_linux-test() ed adattando le istruzioni ai tuoi bisogni. Se non hai necessità particolari, il tuo package_linux-test() dovrebbe somigliare a qualcosa del genere:
 
  `PKGBUILD` 
-
 ```
 ...
 package_linux-test() {

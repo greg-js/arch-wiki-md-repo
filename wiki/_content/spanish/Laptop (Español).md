@@ -159,7 +159,7 @@ will bring it back up, as, of course, a reboot will.
 
 #### Disk-related tweaks
 
-Disable file access time: every time you access (read) a file the filesystem writes an access time to the file metadata. You can disable this on individual files by using the chattr command, or you can enable it on an entire disk by setting the _noatime_ option in your fstab, as follows:
+Disable file access time: every time you access (read) a file the filesystem writes an access time to the file metadata. You can disable this on individual files by using the chattr command, or you can enable it on an entire disk by setting the *noatime* option in your fstab, as follows:
 
 ```
 /dev/sda1          /          ext3          defaults,noatime          1  2
@@ -168,7 +168,7 @@ Disable file access time: every time you access (read) a file the filesystem wri
 
 [Source](http://www.faqs.org/docs/securing/chap6sec73.html)
 
-	_Note_: disabling atime causes troubles with [mutt](/index.php/Mutt "Mutt") and other applications that make use of file timestamps. Consider compromising between performance and compatibility by using mount option relatime instead, or look into [mutt work-around for noatime](http://wiki.mutt.org/?MaildirFormat).
+	*Note*: disabling atime causes troubles with [mutt](/index.php/Mutt "Mutt") and other applications that make use of file timestamps. Consider compromising between performance and compatibility by using mount option relatime instead, or look into [mutt work-around for noatime](http://wiki.mutt.org/?MaildirFormat).
 
 To allow the CD/DVD rom to spin down after a while, run the following:
 
@@ -195,7 +195,7 @@ To prevent your laptop hard drive from spinning down too often (result of too ag
 Add the following to `/etc/rc.local`
 
 ```
-hdparm -B 254 /dev/sdX _where X is your hard drive device_
+hdparm -B 254 /dev/sdX *where X is your hard drive device*
 
 ```
 
@@ -212,7 +212,7 @@ fi
 
 ```
 
-and run _chmod +x /etc/pm/sleep.d/50-hdparm_pm_ to make sure it resets after suspend. Again, you can change the value 254 as you see fit.
+and run *chmod +x /etc/pm/sleep.d/50-hdparm_pm* to make sure it resets after suspend. Again, you can change the value 254 as you see fit.
 
 Now the APM level should be set for your hard drive.
 
@@ -220,7 +220,7 @@ For some laptops, the option -S to hdparm can also be relevant (sets the spindow
 
 #### Tweaking the scheduler
 
-For multicore and hyperthreading-enabled processors you may use _sched_mc_power_savings_ and _sched_smt_power_savings_ options respectively to make the scheduler keep idle as many cores as possible. To enable these options you can do
+For multicore and hyperthreading-enabled processors you may use *sched_mc_power_savings* and *sched_smt_power_savings* options respectively to make the scheduler keep idle as many cores as possible. To enable these options you can do
 
 ```
 echo 1 > /sys/devices/system/cpu/sched_mc_power_savings
@@ -234,7 +234,7 @@ echo 1 > /sys/devices/system/cpu/sched_smt_power_savings
 
 ```
 
-Echoing 0 will disable them. Also laptop-mode can be used to control _shed_mc_power_savings_ (see the appropriate config file in `/etc/laptop-mode/conf.d`).
+Echoing 0 will disable them. Also laptop-mode can be used to control *shed_mc_power_savings* (see the appropriate config file in `/etc/laptop-mode/conf.d`).
 
 ## Screen brightness
 
@@ -246,7 +246,7 @@ To change your display brightness, first check `/sys/class/backlight`:
 
 ```
 
-So this particular backlight is managed by an Intel card. Keep in mind that different cards might manage this differently! It is called _acpi_video0_ on an ATI card, for instance.
+So this particular backlight is managed by an Intel card. Keep in mind that different cards might manage this differently! It is called *acpi_video0* on an ATI card, for instance.
 
 Check current value:
 

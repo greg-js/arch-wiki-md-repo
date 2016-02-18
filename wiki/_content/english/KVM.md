@@ -122,7 +122,6 @@ On host, enable nested feature for `kvm_intel`:
 To make it permanent (see [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules")):
 
  `/etc/modprobe.d/modprobe.conf` 
-
 ```
 options kvm_intel nested=1
 
@@ -131,7 +130,6 @@ options kvm_intel nested=1
 Verify that feature is activated:
 
  `$ systool -m kvm_intel -v | grep nested` 
-
 ```
     nested              = "Y"
 
@@ -200,7 +198,6 @@ Of course the gid must match that of the `kvm` group. The mode of `1770` allows 
 # mount /dev/hugepages
 $ mount | grep huge
 ```
-
  `hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,mode=1770,gid=78)` 
 
 Now you can calculate how many hugepages you need. Check how large your hugepages are:
@@ -220,7 +217,6 @@ Normally that should be 2048 kB ≙ 2 MB. Let's say you want to run your virtual
 If you had enough free memory you should see:
 
  `$ grep HugePages_Total /proc/meminfo ` 
-
 ```
 HugesPages_Total:  550
 
@@ -238,7 +234,6 @@ Note the `-mem-path` parameter. This will make use of the hugepages.
 Now you can check, while your virtual machine is running, how many pages are used:
 
  `$ grep HugePages /proc/meminfo ` 
-
 ```
 HugePages_Total:     550
 HugePages_Free:       48

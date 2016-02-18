@@ -74,9 +74,9 @@ tail -n0 -F /var/log/auth.log | /usr/sbin/sshguard -b /var/db/sshguard/blacklist
 
 ```
 
-En la configuracion origina, _tail_ lee la informacion de las autentificaciones y se las envia a sshguard. Otro cosa a tener en cuenta es que la opcion -b esta seindo usada, lo que hace las proscripciones permamentes. Los registros de las proscripciones permanentes se guardan en `/var/db/sshguard/blacklist.db` para ser recordadas en cada inicio.
+En la configuracion origina, *tail* lee la informacion de las autentificaciones y se las envia a sshguard. Otro cosa a tener en cuenta es que la opcion -b esta seindo usada, lo que hace las proscripciones permamentes. Los registros de las proscripciones permanentes se guardan en `/var/db/sshguard/blacklist.db` para ser recordadas en cada inicio.
 
-Esta linea habilita el lector de autentificaciones integrado (llamado _Log Sucker_) en vez de _tail_, pero no guardara las proscripciones permanentes:
+Esta linea habilita el lector de autentificaciones integrado (llamado *Log Sucker*) en vez de *tail*, pero no guardara las proscripciones permanentes:
 
 ```
 /usr/sbin/sshguard -l /var/log/auth.log &> /dev/null &

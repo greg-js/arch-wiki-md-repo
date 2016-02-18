@@ -32,7 +32,7 @@ $ svn checkout --depth=empty [svn://svn.archlinux.org/community](svn://svn.archl
 
 In both cases, it simply creates an empty directory, but it does know that it is an svn checkout.
 
-In the sections below, just replace the _packages_ directory name by _community_ when working with community packages.
+In the sections below, just replace the *packages* directory name by *community* when working with community packages.
 
 ### Checkout a package
 
@@ -42,7 +42,7 @@ $ svn update package-name
 
 ```
 
-This will pull the package you requested into your checkout. From now on, any time you _svn update_ at the top level, this will be updated as well.
+This will pull the package you requested into your checkout. From now on, any time you *svn update* at the top level, this will be updated as well.
 
 If you specify a package that doesn't exist, svn won't warn you. It will just print something like "At revision 115847", without creating any files. If that happens, check your spelling of the package name and that the package has not been moved to another repository (i.e. from community to the main repository).
 
@@ -69,7 +69,7 @@ $ svn update -r1729 package-name
 
 ```
 
-This will update an existing working copy of _package-name_ to the chosen revision.
+This will update an existing working copy of *package-name* to the chosen revision.
 
 You can also specify a date. If no revision on that day exists, svn will grab the most recent package before that time:
 

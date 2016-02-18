@@ -48,7 +48,8 @@ You can `/TRIGGER add` the following lines or copy them to `~/.irssi/triggers`.
 You can even make HTML line breaks look like multiple messages:
 
 ```
--privmsgs -nocase -tags 'BitlBee' -regexp '(\s*<br>\s*)+' -replace '\n�8/<�g�</$N�8/>�g �e' 
+-privmsgs -nocase -tags 'BitlBee' -regexp '(\s*<br>\s*)+' -replace '
+�8/<�g�</$N�8/>�g �e' 
 
 ```
 

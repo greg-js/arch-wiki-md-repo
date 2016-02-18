@@ -1,6 +1,6 @@
 Da [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
-	_Il progetto X.Org fornisce un'implementazione open source del sistema X Window. Il lavoro di sviluppo è stato fatto in collaborazione con la comunità freedesktop.org. La Fondazione X.Org è l' organizzazione no-profit educativa, il cui Consiglio serve questo sforzo, e in cui tutti i membri conducono questo lavoro._
+	*Il progetto X.Org fornisce un'implementazione open source del sistema X Window. Il lavoro di sviluppo è stato fatto in collaborazione con la comunità freedesktop.org. La Fondazione X.Org è l' organizzazione no-profit educativa, il cui Consiglio serve questo sforzo, e in cui tutti i membri conducono questo lavoro.*
 
 **Xorg** è un'applicazione pubblica e open-source del sistema X-window versione 11\. Dal momento che Xorg è la scelta più popolare tra gli utenti Linux, la sua ubiquità ha portato a renderlo un requisito sempre presente per le applicazioni GUI, con conseguente adozione massiccia dalla maggior parte delle distribuzioni. Consultare l'articolo di Wikipedia [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") o visitare [Xorg website](http://www.x.org/wiki/) per ulteriori informazioni.
 
@@ -73,7 +73,7 @@ Quindi, installare un driver appropriato. È possibile cercare nel database dei 
 
 ```
 
-Il driver grafico predefinito è _VESA_ ( pacchetto [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa)), che gestisce un gran numero di chipset, ma non include alcuna accelerazione 2D o 3D. Se un driver migliore non può essere trovato o non viene caricato, Xorg ricadrà su _vesa_.
+Il driver grafico predefinito è *VESA* ( pacchetto [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa)), che gestisce un gran numero di chipset, ma non include alcuna accelerazione 2D o 3D. Se un driver migliore non può essere trovato o non viene caricato, Xorg ricadrà su *vesa*.
 
 Al fine di poter usufruire dell'accelerazione video per lavorare, e spesso per poter usufruire di tutte le modalità che la GPU può impostare, è necessario un driver video corretto:
 
@@ -93,7 +93,7 @@ Xorg dovrebbe funzionare senza problemi senza i driver "closed source", che in g
 
 ## Avvio
 
-	_Si veda anche: [Avviare X al login](/index.php/Start_X_at_Login_(Italiano) "Start X at Login (Italiano)")_
+	*Si veda anche: [Avviare X al login](/index.php/Start_X_at_Login_(Italiano) "Start X at Login (Italiano)")*
 
 **Suggerimento:** Il modo più semplice per avviare X è quello di utilizzare un [display manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)"), come [GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM "KDM") o [SLiM](/index.php/SLiM "SLiM").
 
@@ -107,7 +107,7 @@ Per maggiori informazioni, si veda [xinitrc](/index.php/Xinitrc_(Italiano) "Xini
 
 *   X deve sempre essere eseguito sulla stessa tty in cui si è verificato il login, per preservare la sessione logind. Questo è gestito in modo predefinito da `/etc/X11/xinit/xserverrc`.
 *   Se si verifica un problema, potete visualizzare il log di registro di `/var/log/Xorg.0.log`. Cercate tutte le linee che iniziano con `(EE)`, che identificano la presenza di un errore, e anche le linee che iniziano cone `(WW)`, che sono dei warnings che possono identificare un eventuale problema.
-*   Se avete un file `.xinitrc` _vuoto_ nella vostra `$HOME`, eliminatelo o modificatelo al fine di avviare X correttamente. Se non si esegue questa operazione X mostrerà una schermata vuota e nel vostro `Xorg.0.log` non riscontrerete nessun errore rilevante. Semplicemente eliminandolo farà sì che X sia in grado di funzionare con un ambiente predefinito.
+*   Se avete un file `.xinitrc` *vuoto* nella vostra `$HOME`, eliminatelo o modificatelo al fine di avviare X correttamente. Se non si esegue questa operazione X mostrerà una schermata vuota e nel vostro `Xorg.0.log` non riscontrerete nessun errore rilevante. Semplicemente eliminandolo farà sì che X sia in grado di funzionare con un ambiente predefinito.
 
 **Attenzione:** Se si sceglie di utilizzare `xinit` al posto di `startx`, siate responsabili di passare il parametro `-nolisten tcp` e di garantire che la sessione non si rompa avviando X su una tty diversa.
 
@@ -160,7 +160,7 @@ In alternativa, i driver proprietari della scheda video potrebbero includere uno
 
 ## Dispositivi di input
 
-[Udev](/index.php/Udev_(Italiano) "Udev (Italiano)") sarà in grado di rilevare tutto l'hardware ed [evdev](https://en.wikipedia.org/wiki/evdev "wikipedia:evdev") agirà come driver di ingresso hotplugging per quasi tutti i dispositivi. [Udev](/index.php/Udev_(Italiano) "Udev (Italiano)") è fornito da [systemd](https://www.archlinux.org/packages/?name=systemd) e [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) è richiesto dal pacchetto [xorg-server](https://www.archlinux.org/packages/?name=xorg-server), quindi l'installazione dei driver di input non è necessaria per la maggior parte dell'hardware. Tuttavia, se evdev non supporta il dispositivo, installare il driver necessario dal gruppo [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/) (lanciare `pacman -Sg xorg-drivers` per averne un elenco).
+[Udev](/index.php/Udev_(Italiano) "Udev (Italiano)") sarà in grado di rilevare tutto l'hardware ed [evdev](https://en.wikipedia.org/wiki/evdev è fornito da [systemd](https://www.archlinux.org/packages/?name=systemd) e [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) è richiesto dal pacchetto [xorg-server](https://www.archlinux.org/packages/?name=xorg-server), quindi l'installazione dei driver di input non è necessaria per la maggior parte dell'hardware. Tuttavia, se evdev non supporta il dispositivo, installare il driver necessario dal gruppo [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/) (lanciare `pacman -Sg xorg-drivers` per averne un elenco).
 
 Si dovrebbe avere il file `10-evdev.conf` nella directory `/etc/X11/xorg.conf.d/`, che gestisce tastiera, mouse, touchpad e touchscreen.
 
@@ -193,7 +193,6 @@ Per prima cosa, creare un nuovo file di configurazione, `/etc/X11/xorg.conf.d/10
 Inserire il codice riportato in seguito nel file creato sopra:
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
-
 ```
 Section "Monitor"
     Identifier             "Monitor0"
@@ -248,7 +247,6 @@ EndSection
 Per ottenere l'ID bus :
 
  `$ lspci | grep VGA` 
-
 ```
  01:00.0 VGA compatible controller: nVidia Corporation G96 [GeForce 9600M GT] (rev a1)
 
@@ -325,7 +323,7 @@ EndSection
 
 ```
 
-Se si utilizza una scheda Nvidia, è possibile impostare manualmente il DPI aggiungendo le seguenti opzioni su _/etc/X11/xorg.conf.d/20-nvidia.conf_ (nella sezione **Device**):
+Se si utilizza una scheda Nvidia, è possibile impostare manualmente il DPI aggiungendo le seguenti opzioni su */etc/X11/xorg.conf.d/20-nvidia.conf* (nella sezione **Device**):
 
 ```
 Option "UseEdidDpi" "False"
@@ -379,7 +377,6 @@ Le seguenti opzioni devono essere aggiunte alla variabile `"defaultserverargs"` 
 ```
 
 **Nota:** Se si avvia X con kdm, sembra che lo script startx non venga eseguito. Queste opzioni devono essere aggiunte alla variabile `"ServerArgsLocal"` o `"ServerCmd"` nel file `/usr/share/config/kdm/kdmrc`. Le opzioni di kdm predefinite sono:
-
 ```
 ServerArgsLocal=-nolisten tcp
 ServerCmd=/usr/bin/X
@@ -404,7 +401,7 @@ Si veda l'articolo principale: [SSH#X11 forwarding](/index.php/SSH#X11_forwardin
 
 ### Disattivazione e attivazione a richiesta delle sorgenti di ingresso
 
-Con l'aiuto di _xinput_ è possibile disabilitare o abilitare le sorgenti di ingresso temporaneamente. Questo potrebbe essere utile, ad esempio, su sistemi che hanno più di un mouse, come ad esempio i ThinkPad, e si preferisce utilizzarne solo uno per evitare clic indesiderati del mouse. Vediamo come eseguire questa operazione .
+Con l'aiuto di *xinput* è possibile disabilitare o abilitare le sorgenti di ingresso temporaneamente. Questo potrebbe essere utile, ad esempio, su sistemi che hanno più di un mouse, come ad esempio i ThinkPad, e si preferisce utilizzarne solo uno per evitare clic indesiderati del mouse. Vediamo come eseguire questa operazione .
 
 [Installare](/index.php/Pacman "Pacman") il pacchetto [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) contenuto nei [repositori ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
 
@@ -418,7 +415,6 @@ $ xinput
 Per esempio in un Lenovo ThinkPad T500, l'output del comando sarà simile a questo:
 
  `$ xinput` 
-
 ```
 ⎡ Virtual core pointer                          id=2    [master pointer  (3)]
 ⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
@@ -434,7 +430,7 @@ Per esempio in un Lenovo ThinkPad T500, l'output del comando sarà simile a ques
 
 ```
 
-Disabilitare il dispositivo con `xinput --disable _device_id_`, dove per _device_id_ si intende l'ID del dispistico che si vuole disabilitare. In questo esempio proverem,o a disabilitare il touchpad Synaptics, che ha come valore di ID 10:
+Disabilitare il dispositivo con `xinput --disable *device_id*`, dove per *device_id* si intende l'ID del dispistico che si vuole disabilitare. In questo esempio proverem,o a disabilitare il touchpad Synaptics, che ha come valore di ID 10:
 
 ```
 $ xinput --disable 10
@@ -494,7 +490,7 @@ al file `/etc/pam.d/su`. `pam_xauth` sarà quindi impostato per gestire le chiav
 
 ### Programmi che richiedono "font '(null)'"
 
-*   Messaggio di errore: "_unable to load font `(null)'._" (Impossibile caricare il tipo di carattere (null))
+*   Messaggio di errore: "*unable to load font `(null)'.*" (Impossibile caricare il tipo di carattere (null))
 
 Alcuni programmi funzionano solo con i font bitmap. Sono disponibili due pacchetti principali con i font bitmap, [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi) e [xorg-fonts-100dpi](https://www.archlinux.org/packages/?name=xorg-fonts-100dpi). Non vi è la necessità di installarli entrambi: uno solo di essi dovrebbe essere sufficiente. Per scoprire quale dei due pacchetti è più indicato per le vostre esigenze, lanciate il seguente comando in un terminale:
 

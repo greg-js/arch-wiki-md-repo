@@ -40,7 +40,6 @@ extension=zlib.so
 You need to create a habari database for the blog to write stuff to. One can choose **habaridata** for the db name, **habari** for the username, and **habaripass** for the password. Assuming you've already accessed your mysql install and set a root password:
 
  `$ mysql -u root` 
-
 ```
 mysql> CREATE DATABASE habaridata;
 mysql> GRANT ALL PRIVILEGES ON habaridata.* TO 'habari'@'localhost' IDENTIFIED BY 'habaripass';

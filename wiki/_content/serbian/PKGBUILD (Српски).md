@@ -15,11 +15,11 @@
 
 	`pkgname` 
 
-	Име пакета, Треба да садржи **алфанумеричке карактере и црте ('-')** и сва слова би требало да буду **мала**. Због доследности, `pkgname` би требало да се подудара са именом изворног tarball-а софтвера који се пакује. На пример, ако је софтвер `foobar-2.5.tar.gz`, `pkgname` вредност би требало да буде _foobar_. Тренутни радни директоријум за `PKGBUILD` фајл би такође требало да се подудара са `pkgname`.
+	Име пакета, Треба да садржи **алфанумеричке карактере и црте ('-')** и сва слова би требало да буду **мала**. Због доследности, `pkgname` би требало да се подудара са именом изворног tarball-а софтвера који се пакује. На пример, ако је софтвер `foobar-2.5.tar.gz`, `pkgname` вредност би требало да буде *foobar*. Тренутни радни директоријум за `PKGBUILD` фајл би такође требало да се подудара са `pkgname`.
 
 	`pkgver` 
 
-	Верзија пакета. Вредност би требала да буде иста као и верзија пакета који је издао аутор. Садржи слова, бројеве и тачке али **НЕ СМЕ** да садржи црту. Ако аутор пакета користи црту у шеми означавања верзије, треба је заменити са доњом цртом. На пример, ако је верзија _0.99-10_, требало би да се промени у _0.99_10_. Ако се pkgver променљива користи касније у PKGBUILD-у онда се доња црта лако мења цртом, нпр. овако:
+	Верзија пакета. Вредност би требала да буде иста као и верзија пакета који је издао аутор. Садржи слова, бројеве и тачке али **НЕ СМЕ** да садржи црту. Ако аутор пакета користи црту у шеми означавања верзије, треба је заменити са доњом цртом. На пример, ако је верзија *0.99-10*, требало би да се промени у *0.99_10*. Ако се pkgver променљива користи касније у PKGBUILD-у онда се доња црта лако мења цртом, нпр. овако:
 
 ```
  source=($pkgname-${pkgver//_/-}.tar.gz)
@@ -32,7 +32,7 @@
 
 	`epoch` 
 
-	Целобројна вредност, специфична за Arch Linux, представља који 'животни век' да упореди са бројем верзије. Ова вредност дозвољава надјачавање нормалног поређења верзија за пакете који имају нередовно означавање верзија. Подразумевано, за пакете се претпоставља да имају epoch вредност _0_. Не користите ову променљиву осим уколико знате шта радите.
+	Целобројна вредност, специфична за Arch Linux, представља који 'животни век' да упореди са бројем верзије. Ова вредност дозвољава надјачавање нормалног поређења верзија за пакете који имају нередовно означавање верзија. Подразумевано, за пакете се претпоставља да имају epoch вредност *0*. Не користите ову променљиву осим уколико знате шта радите.
 
 	`pkgdesc` 
 
@@ -62,11 +62,11 @@
 
 	`groups` 
 
-	The group the package belongs in. For instance, when you install the [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/) package, it installs all packages that belong in the _kde_ group.
+	The group the package belongs in. For instance, when you install the [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/) package, it installs all packages that belong in the *kde* group.
 
 	`depends` 
 
-	An array of package names that must be installed before this software can be run. If a software requires a minimum version of a dependency, the **>=** operator should be used to point this out, e.g. `depends=('foobar>=1.8.0')`. You do not need to list packages that your software depends on if other packages your software depends on already have those packages listed in their dependency. For instance, _gtk2_ depends on _glib2_ and _glibc_. However, _glibc_ does not need to be listed as a dependency for _gtk2_ because it is a dependency for _glib2_.
+	An array of package names that must be installed before this software can be run. If a software requires a minimum version of a dependency, the **>=** operator should be used to point this out, e.g. `depends=('foobar>=1.8.0')`. You do not need to list packages that your software depends on if other packages your software depends on already have those packages listed in their dependency. For instance, *gtk2* depends on *glib2* and *glibc*. However, *glibc* does not need to be listed as a dependency for *gtk2* because it is a dependency for *glib2*.
 
 	`makedepends` 
 
@@ -91,7 +91,7 @@ optdepends=('cups: printing support'
 
 	`provides` 
 
-	An array of package names that this package provides the features of (or a virtual package such as _cron_ or _sh_). If you use this variable, you should add the version (`pkgver` and perhaps the `pkgrel`) that this package will provide if dependencies may be affected by it. For instance, if you are providing a modified _qt_ package named _qt-foobar_ version 3.3.8 which provides _qt_ then the `provides` array should look like `provides=('qt=3.3.8')`. Putting `provides=('qt')` will cause to fail those dependencies that require a specific version of _qt_. Do not add `pkgname` to your provides array, this is done automatically.
+	An array of package names that this package provides the features of (or a virtual package such as *cron* or *sh*). If you use this variable, you should add the version (`pkgver` and perhaps the `pkgrel`) that this package will provide if dependencies may be affected by it. For instance, if you are providing a modified *qt* package named *qt-foobar* version 3.3.8 which provides *qt* then the `provides` array should look like `provides=('qt=3.3.8')`. Putting `provides=('qt')` will cause to fail those dependencies that require a specific version of *qt*. Do not add `pkgname` to your provides array, this is done automatically.
 
 	`conflicts` 
 
@@ -109,25 +109,25 @@ optdepends=('cups: printing support'
 
 	This array allows you to override some of the default behavior of `makepkg`. To set an option, include the option name in the array. To reverse the default behavior, place an **!** at the front of the option. The following options may be placed in the array:
 
-*   _**strip**_ - Strips symbols from binaries and libraries.
-*   _**docs**_ - Save `/doc` directories.
-*   _**libtool**_ - Leave _libtool_ (`.la`) files in packages.
-*   _**emptydirs**_ - Leave empty directories in packages.
-*   _**zipman**_ - Compress _man_ and _info_ pages with _gzip_.
-*   _**ccache**_ - Allow the use of `ccache` during build. More useful in its negative form `!ccache` with select packages that have problems building with `ccache`.
-*   _**distcc**_ - Allow the use of `distcc` during build. More useful in its negative form `!distcc` with select packages that have problems building with `distcc`.
-*   _**makeflags**_ - Allow the use of user-specific `makeflags` during build. More useful in its negative form `!makeflags` with select packages that have problems building with custom `makeflags`.
+*   ***strip*** - Strips symbols from binaries and libraries.
+*   ***docs*** - Save `/doc` directories.
+*   ***libtool*** - Leave *libtool* (`.la`) files in packages.
+*   ***emptydirs*** - Leave empty directories in packages.
+*   ***zipman*** - Compress *man* and *info* pages with *gzip*.
+*   ***ccache*** - Allow the use of `ccache` during build. More useful in its negative form `!ccache` with select packages that have problems building with `ccache`.
+*   ***distcc*** - Allow the use of `distcc` during build. More useful in its negative form `!distcc` with select packages that have problems building with `distcc`.
+*   ***makeflags*** - Allow the use of user-specific `makeflags` during build. More useful in its negative form `!makeflags` with select packages that have problems building with custom `makeflags`.
 
 	`install` 
 
-	The name of the `.install` script to be included in the package. _pacman_ has the ability to store and execute a package-specific script when it installs, removes or upgrades a package. The script contains the following functions which run at different times:
+	The name of the `.install` script to be included in the package. *pacman* has the ability to store and execute a package-specific script when it installs, removes or upgrades a package. The script contains the following functions which run at different times:
 
-*   _**pre_install**_ - The script is run right before files are extracted. One argument is passed: new package version.
-*   _**post_install**_ - The script is run right after files are extracted. One argument is passed: new package version.
-*   _**pre_upgrade**_ - The script is run right before files are extracted. Two arguments are passed in the following order: new package version, old package version.
-*   _**post_upgrade**_ - The script is run after files are extracted. Two arguments are passed in the following order: new package version, old package version.
-*   _**pre_remove**_ - The script is run right before files are removed. One argument is passed: old package version.
-*   _**post_remove**_ - The script is run right after files are removed. One argument is passed: old package version.
+*   ***pre_install*** - The script is run right before files are extracted. One argument is passed: new package version.
+*   ***post_install*** - The script is run right after files are extracted. One argument is passed: new package version.
+*   ***pre_upgrade*** - The script is run right before files are extracted. Two arguments are passed in the following order: new package version, old package version.
+*   ***post_upgrade*** - The script is run after files are extracted. Two arguments are passed in the following order: new package version, old package version.
+*   ***pre_remove*** - The script is run right before files are removed. One argument is passed: old package version.
+*   ***post_remove*** - The script is run right after files are removed. One argument is passed: old package version.
 
 	Each function is run chrooted inside the pacman install directory. See [this thread](https://bbs.archlinux.org/viewtopic.php?pid=913891).
 
@@ -143,7 +143,7 @@ optdepends=('cups: printing support'
 
 	`noextract` 
 
-	An array of files listed under the `source` array which should not be extracted from their archive format by `makepkg`. This most commonly applies to certain zip files which cannot be handled by _bsdtar_ because _libarchive_ processes all files as streams rather than random access as _unzip_ does. In these situations _unzip_ should be added in the `makedepends` array and the first line of the `build()` function should contain:
+	An array of files listed under the `source` array which should not be extracted from their archive format by `makepkg`. This most commonly applies to certain zip files which cannot be handled by *bsdtar* because *libarchive* processes all files as streams rather than random access as *unzip* does. In these situations *unzip* should be added in the `makedepends` array and the first line of the `build()` function should contain:
 
 ```
 cd $srcdir/$pkgname-$pkgver

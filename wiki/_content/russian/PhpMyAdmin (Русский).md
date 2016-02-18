@@ -45,7 +45,8 @@ Include conf/extra/httpd-phpmyadmin.conf
 Можно это сделать и в консоли, получится тот же самый эффект:
 
 ```
-echo -e "\nInclude conf/extra/httpd-phpmyadmin.conf" >> /etc/httpd/conf/httpd.conf
+echo -e "
+Include conf/extra/httpd-phpmyadmin.conf" >> /etc/httpd/conf/httpd.conf
 
 ```
 

@@ -27,11 +27,11 @@ Dimming of display: Yes
 CPU frequency scaling: Yes | N/A | Web cam (uvcvideo) | No tricky hardware. Fully functional. |
 | NP730U3E (Series 7 Ultra) | 2013.06.01 | Intel HD Graphics 4000 @ 1920x1080_60 - works fine (i915 w/KMS and [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel));
 AMD Radeon 8570M (muxless hybrid) - Seems to work with PRIME (Linux 3.11);
-external screens not tested. | Intel HDA + ALSA | Realtek Gigabit Ethernet, r8169 driver | Intel Centrino Advanced-N 6235 (rev 24), _iwlwifi_ driver;
-rfkill works with _samsung-laptop_ module | Not tested | Suspend to RAM: OK
+external screens not tested. | Intel HDA + ALSA | Realtek Gigabit Ethernet, r8169 driver | Intel Centrino Advanced-N 6235 (rev 24), *iwlwifi* driver;
+rfkill works with *samsung-laptop* module | Not tested | Suspend to RAM: OK
 Disk: Not tested
 Dimming of display: Yes
-CPU frequency scaling: Yes | N/A | Web cam - _uvcvideo_, works ok;
+CPU frequency scaling: Yes | N/A | Web cam - *uvcvideo*, works ok;
 Card reader Realtek RTS5139 - staging driver, works as of Linux 3.11;
 Fn keys - only brightness and sound out-of-the-box;
 Elan Touchpad works perfectly (Linux 3.11);

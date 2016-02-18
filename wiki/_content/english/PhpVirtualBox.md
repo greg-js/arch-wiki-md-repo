@@ -26,7 +26,7 @@ To use the web console, you must install the [virtualbox-ext-oracle](https://aur
 
 ## Configuration
 
-_From here on out, it is assumed that you have a web server (with root at `/srv/http`) and php functioning properly._
+*From here on out, it is assumed that you have a web server (with root at `/srv/http`) and php functioning properly.*
 
 ### Web service
 

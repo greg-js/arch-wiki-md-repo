@@ -51,7 +51,7 @@ El canal actualmente está +q $~a. Esto significa que tienes que registrarte e i
 	[Directrices del canal #archlinux](/index.php/IRC_Channel_(Espa%C3%B1ol)#Directrices_de_.23archlinux "IRC Channel (Español)")
 
 *   **Configuración del cliente y bots**
-    *   Si quieres meter un bot en el canal, pregunta a un operador _antes_ de hacerlo.
+    *   Si quieres meter un bot en el canal, pregunta a un operador *antes* de hacerlo.
     *   La autorespuesta en el canal o en mensajes privados no está permitida (la única excepción en la que se permite es un nick que lo destaque en mp).
 *   **Uso del canal bot**
     *   Solo hay un canal bot oficial. 'phrik n=archbot@archlinux/bot/phrik'
@@ -68,7 +68,7 @@ El canal actualmente está +q $~a. Esto significa que tienes que registrarte e i
 
 1.  El idioma del canal es inglés. Si necesitas ayuda en otro idioma busca [canales internacionales de arch](/index.php/IRC_Channels_(Espa%C3%B1ol)#Canales_internacionales_de_IRC "IRC Channels (Español)").
 2.  Lee el `/tema` con regularidad. Normalmente contiene información importante.
-3.  No participes en [_flamewars_](https://en.wikipedia.org/wiki/es:Flame#Flame_wars "wikipedia:es:Flame"), reporta instantaneamente a los que violen esta norma y a los trolls a los [operadores de canales](#Operadores_de_.23archlinux).
+3.  No participes en [*flamewars*](https://en.wikipedia.org/wiki/es:Flame#Flame_wars "wikipedia:es:Flame"), reporta instantaneamente a los que violen esta norma y a los trolls a los [operadores de canales](#Operadores_de_.23archlinux).
 4.  No hagas spam en el canal, usa pastebin para compartir algo mayor de tres líneas. `comando &> salida del comando.txt` en combinación con [clientes pastebin](/index.php/List_of_Applications_(Espa%C3%B1ol)#Clientes_pastebin "List of Applications (Español)") pueden hacer más sencillo este proceso.
 5.  No abuses de phrik (el canal bot). Si quieres probar comandos o buscar en la función help, hazlo con `/query` o `/msg`. Ejemplo: `/query phrik help <comando>`.
 6.  No pregunte si hay alguien o si alguien usa el programa, solo haz tu pregunta.

@@ -63,7 +63,7 @@ LoadModule dnssd_module modules/mod_dnssd.so
 
 ```
 
-_For some reason the I could only get the mod_dnssd module to work as part of a virtual host block. This was the case with both Ubuntu and also Arch._
+*For some reason the I could only get the mod_dnssd module to work as part of a virtual host block. This was the case with both Ubuntu and also Arch.*
 
 6) In between the virtual host tags create a section for each repository as follows
 
@@ -120,7 +120,7 @@ ServerName korah.home.singlespoon.org.au
 
 ```
 
-_If you do not add a fully qualified domain name via the ServerName directive then the setup will fail with the error: "[error] avahi_entry_group_add_service_strlst("<service name>") failed: Invalid host name" in the apache logs_
+*If you do not add a fully qualified domain name via the ServerName directive then the setup will fail with the error: "[error] avahi_entry_group_add_service_strlst("<service name>") failed: Invalid host name" in the apache logs*
 
 Save the file and exit your editor.
 

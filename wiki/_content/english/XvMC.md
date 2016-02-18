@@ -43,7 +43,7 @@ The open source drivers should work without any configuration. For the proprieta
 
 Install [mplayer](https://www.archlinux.org/packages/?name=mplayer) package, available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
- `$ mplayer -vo xvmc -fs _foobar.mpeg_` 
+ `$ mplayer -vo xvmc -fs *foobar.mpeg*` 
 
 *   **-vo** - Select xvmc video output driver
 *   **-fs** - Fullscreen playback (optional)
@@ -57,11 +57,11 @@ MPlayer based players:
 
 Install [xine-ui](https://www.archlinux.org/packages/?name=xine-ui) package, available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
- `$ xine -V xvmc -f -g --no-splash _foobar.mpeg_` 
+ `$ xine -V xvmc -f -g --no-splash *foobar.mpeg*` 
 
 or
 
- `$ xine -V xxmc -f -g --no-splash _foobar.mpeg_` 
+ `$ xine -V xxmc -f -g --no-splash *foobar.mpeg*` 
 
 *   **-V** - Select the xvmc or xxmc video driver
 *   **-f** - Start in fullscreen mode (optional)

@@ -150,7 +150,7 @@ I temi di lxdm sono localizzati in `/usr/share/lxdm/themes`.
 
 C'è solo un tema fornito di default con [lxdm](https://www.archlinux.org/packages/?name=lxdm), vale a dire "Industrial". Per visualizzare l'immagine di sfondo contenuta nel file `wave.svg` di questo tema, assicurarsi di aver installato [librsvg](https://www.archlinux.org/packages/?name=librsvg).
 
-Ci sono 2 temi forniti di default con [lxdm-git](https://aur.archlinux.org/packages/lxdm-git/). ArchStripes e ArchDark. È possibile impostare il tema modificando il file `/etc/lxdm/lxdm.conf` in `theme=_theme_name_`
+Ci sono 2 temi forniti di default con [lxdm-git](https://aur.archlinux.org/packages/lxdm-git/). ArchStripes e ArchDark. È possibile impostare il tema modificando il file `/etc/lxdm/lxdm.conf` in `theme=*theme_name*`
 
 ## Risoluzione dei problemi
 
@@ -159,7 +159,6 @@ Ci sono 2 temi forniti di default con [lxdm-git](https://aur.archlinux.org/packa
 Potrebbe succedere che, a volte, LXDM abbia qualche problema in fase di log-out. Ad esempio potrebbe non riuscire a uccidere tutti i processi utente e lasciare qualche programma aperto. Per garantire che LXDM effettui il log-out sempre correttamente, aggiungere le seguenti righe allo script `/etc/lxdm/PostLogout`:
 
  `/etc/lxdm/PostLogout` 
-
 ```
 # Terminate current user session
 /usr/bin/loginctl terminate-session $XDG_SESSION_ID

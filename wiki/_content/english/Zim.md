@@ -1,14 +1,14 @@
 From the project [home page](http://zim-wiki.org/):
 
-	_Zim is a graphical text editor used to maintain a collection of wiki pages. Each page can contain links to other pages, simple formatting and images. Pages are stored in a folder structure, like in an outliner, and can have attachments. Creating a new page is as easy as linking to a nonexistent page. All data is stored in plain text files with wiki formatting. Various plugins provide additional functionality, like a task list manager, an equation editor, a tray icon, and support for version control._
+	*Zim is a graphical text editor used to maintain a collection of wiki pages. Each page can contain links to other pages, simple formatting and images. Pages are stored in a folder structure, like in an outliner, and can have attachments. Creating a new page is as easy as linking to a nonexistent page. All data is stored in plain text files with wiki formatting. Various plugins provide additional functionality, like a task list manager, an equation editor, a tray icon, and support for version control.*
 
-	_Zim can be used to:_
+	*Zim can be used to:*
 
-*   _Keep an archive of notes_
-*   _Take notes during meetings or lectures_
-*   _Organize task lists_
-*   _Draft blog entries and emails_
-*   _Do brainstorming_
+*   *Keep an archive of notes*
+*   *Take notes during meetings or lectures*
+*   *Organize task lists*
+*   *Draft blog entries and emails*
+*   *Do brainstorming*
 
 ## Contents
 
@@ -43,7 +43,7 @@ Specific user tricks to accomplish tasks.
 
 ### Plugins
 
-Zim provides a lot of useful plugins where many of them are not enabled by default. They can be found at _Edit > Preferences > Plugins_. That is, there is a plugin which provides a tray icon.
+Zim provides a lot of useful plugins where many of them are not enabled by default. They can be found at *Edit > Preferences > Plugins*. That is, there is a plugin which provides a tray icon.
 
 #### Spell checker
 

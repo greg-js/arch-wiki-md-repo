@@ -173,7 +173,7 @@ The startup programs file is `~/.pekwm/start`. If you'd like to display a wallpa
 To add an application, use the following structure:
 
 ```
-_nameofapplication_ &
+*nameofapplication* &
 
 ```
 
@@ -209,7 +209,7 @@ $TERM="urxvt"
 
 ```
 
-would mean that _urxvt_ would be loaded for terminal commands.
+would mean that *urxvt* would be loaded for terminal commands.
 
 ### Autoproperties
 

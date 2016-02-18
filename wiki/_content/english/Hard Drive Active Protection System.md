@@ -65,7 +65,6 @@ You should check your "Load cycle count" in [SMART](/index.php/SMART "SMART") wh
 You can adjust the parameters, with which hdapsd is run by providing your own unit file as explained in the [systemd article](/index.php/Systemd#Editing_provided_units "Systemd"), for example the following file will adjust sensitivity and logging behaviour of the hdaps daemon:
 
  `/etc/systemd/system/hdapsd.service.d/sensitivity.conf` 
-
 ```
 [Service]
 ExecStart=

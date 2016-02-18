@@ -1645,7 +1645,7 @@ The repo now hosts the following packages/CPU-specific optimized builds.
 
 Bump to 2.6.39.1-2
 
-The ONLY difference is that this PKGBUILD gives a new option to enable the "classic" blue Arch logo at boot time which will replace the Linux Tux logo we've had since tpowa removed the custom logo in 2.6.38.8\. Repo users have this _enabled_ by default by popular demand.
+The ONLY difference is that this PKGBUILD gives a new option to enable the "classic" blue Arch logo at boot time which will replace the Linux Tux logo we've had since tpowa removed the custom logo in 2.6.38.8\. Repo users have this *enabled* by default by popular demand.
 
 **06-Jun-2011 kernel26-ck 2.6.39.1-1**
 
@@ -1659,53 +1659,53 @@ Bump to latest version bfs which is v0.406 as well the ck2 patchset. Previous in
 
 **02-Jun-2011 kernel26-ck 2.6.38-9**
 
-_Looks like CK made some progress on the hardlock issues affecting 2.6.39 by releasing test9 which I have added to 2.6.39-9 that just published to the AUR. If you elect to build this kernel, please report your experiences, good and bad, to CK on his blog which will help the community: [http://ck-hack.blogspot.com/2011/06/2639-bfs-test-9-is-this-one.html](http://ck-hack.blogspot.com/2011/06/2639-bfs-test-9-is-this-one.html)_
+*Looks like CK made some progress on the hardlock issues affecting 2.6.39 by releasing test9 which I have added to 2.6.39-9 that just published to the AUR. If you elect to build this kernel, please report your experiences, good and bad, to CK on his blog which will help the community: [http://ck-hack.blogspot.com/2011/06/2639-bfs-test-9-is-this-one.html](http://ck-hack.blogspot.com/2011/06/2639-bfs-test-9-is-this-one.html)*
 
 Note that the repo doesn't get this since the patch is an option. Once CK calls the code "stable" he will iterate the bfs version and I will then include it.
 
 **30-May-2011 kernel26-ck 2.6.38-8**
 
-_Looks like CK made some progress on the hardlock issues affecting 2.6.39 by releasing bfs404-recheck_unplugged which I have added to 2.6.39-8 that just published to the AUR. If you elect to build this kernel, please report your experiences, good and bad, to CK on his blog which will help the community: [http://ck-hack.blogspot.com/2011/05/2639-bfs-progress.html](http://ck-hack.blogspot.com/2011/05/2639-bfs-progress.html)_
+*Looks like CK made some progress on the hardlock issues affecting 2.6.39 by releasing bfs404-recheck_unplugged which I have added to 2.6.39-8 that just published to the AUR. If you elect to build this kernel, please report your experiences, good and bad, to CK on his blog which will help the community: [http://ck-hack.blogspot.com/2011/05/2639-bfs-progress.html](http://ck-hack.blogspot.com/2011/05/2639-bfs-progress.html)*
 
 Note that the repo doesn't get this since the patch is an option. Once CK calls the code "stable" he will iterate the bfs version and I will then include it.
 
 **26-May-2011 kernel26-ck 2.6.39-7**
 
-_Bump to 2.6.39-7_
+*Bump to 2.6.39-7*
 
-_Includes an option to compile with ck's new bfs v.404 test7 patch for those of us with these random hardlocks associated with Virtualbox and Chromium. This patch tweaks the new plugged I/O flushing. For more or to discuss this patch, see: [http://ck-hack.blogspot.com/2011/05/2639-ck1.html](http://ck-hack.blogspot.com/2011/05/2639-ck1.html)_
+*Includes an option to compile with ck's new bfs v.404 test7 patch for those of us with these random hardlocks associated with Virtualbox and Chromium. This patch tweaks the new plugged I/O flushing. For more or to discuss this patch, see: [http://ck-hack.blogspot.com/2011/05/2639-ck1.html](http://ck-hack.blogspot.com/2011/05/2639-ck1.html)*
 
 Note that the repo doesn't get this since the patch is an option. Once CK calls the code "stable" he will iterate the bfs version and I will then include it.
 
 **25-May-2011 kernel26-ck 2.6.39-5**
 
-_Bump to 2.6.39-5_
+*Bump to 2.6.39-5*
 
-_Includes an option to compile with ck's new bfs v.404 test5 patch for those of us with these random hardlocks associated with Virtualbox and Chromium. This patch tweaks the new plugged I/O flushing. For more or to discuss this patch, see: [http://ck-hack.blogspot.com/2011/05/2639-ck1.html](http://ck-hack.blogspot.com/2011/05/2639-ck1.html)_
+*Includes an option to compile with ck's new bfs v.404 test5 patch for those of us with these random hardlocks associated with Virtualbox and Chromium. This patch tweaks the new plugged I/O flushing. For more or to discuss this patch, see: [http://ck-hack.blogspot.com/2011/05/2639-ck1.html](http://ck-hack.blogspot.com/2011/05/2639-ck1.html)*
 
 Note that the repo doesn't get this since the patch is an option. Once CK calls the code "stable" he will iterate the bfs version and I will then include it.
 
 **25-May-2011 kernel26-ck 2.6.39-4**
 
-_Bump to 2.6.39-4_
+*Bump to 2.6.39-4*
 
-_Includes an option to compile with ck's new bfs v.404 test4 patch for those of us with these random hardlocks associated with Virtualbox and Chromium. This patch tweaks the new plugged I/O flushing. For more or to discuss this patch, see: [http://ck-hack.blogspot.com/2011/05/2639-ck1.html](http://ck-hack.blogspot.com/2011/05/2639-ck1.html)_
+*Includes an option to compile with ck's new bfs v.404 test4 patch for those of us with these random hardlocks associated with Virtualbox and Chromium. This patch tweaks the new plugged I/O flushing. For more or to discuss this patch, see: [http://ck-hack.blogspot.com/2011/05/2639-ck1.html](http://ck-hack.blogspot.com/2011/05/2639-ck1.html)*
 
 Note that the repo doesn't get this since the patch is an option. Once CK calls the code "stable" he will iterate the bfs version and I will then include it.
 
 **24-May-2011 kernel26-ck 2.6.39-3**
 
-_Bump to 2.6.39-3_
+*Bump to 2.6.39-3*
 
-_Includes an option to compile with ck's new bfs v.404 test3 patch for those of us with these random hardlocks associated with Virtualbox and Chromium. This patch tweaks the new plugged I/O flushing. For more or to discuss this patch, see: [http://ck-hack.blogspot.com/2011/05/2639-ck1.html](http://ck-hack.blogspot.com/2011/05/2639-ck1.html)_
+*Includes an option to compile with ck's new bfs v.404 test3 patch for those of us with these random hardlocks associated with Virtualbox and Chromium. This patch tweaks the new plugged I/O flushing. For more or to discuss this patch, see: [http://ck-hack.blogspot.com/2011/05/2639-ck1.html](http://ck-hack.blogspot.com/2011/05/2639-ck1.html)*
 
 Note that the repo doesn't get this since the patch is an option. Once CK calls the code "stable" he will iterate the bfs version and I will then include it.
 
 **23-May-2011 kernel26-ck 2.6.39-3**
 
-_Bump to 2.6.39-2_
+*Bump to 2.6.39-2*
 
-_Includes an option to compile with ck's new bfs v.404 test2 patch for those of us with these random hardlocks associated with Virtualbox and Chromium. This patch tweaks the new plugged I/O flushing. For more or to discuss this patch, see: [http://ck-hack.blogspot.com/2011/05/2639-ck1.html](http://ck-hack.blogspot.com/2011/05/2639-ck1.html)_
+*Includes an option to compile with ck's new bfs v.404 test2 patch for those of us with these random hardlocks associated with Virtualbox and Chromium. This patch tweaks the new plugged I/O flushing. For more or to discuss this patch, see: [http://ck-hack.blogspot.com/2011/05/2639-ck1.html](http://ck-hack.blogspot.com/2011/05/2639-ck1.html)*
 
 Note that the repo doesn't get this since the patch is an option. Once CK calls the code "stable" he will iterate the bfs version and I will then include it.
 
@@ -1837,7 +1837,7 @@ Includes ck2 patchset not ck1 patchset. From ck's blog:
 
 rebuild against latest glibc, binutils git-svn-id: 109724 eb2447ed-0c53-47e4-bac8-5bc4a241df78
 
-I am reading this as glibc 2.13-3 and binutils 2.21-4, both of which are currently in [testing] need to be installed prior to kernel compilation. I can install both of these testing packages on my machine, and compile for the repo, but individual users will have to install those packages, THEN compile their own kernels... therefore both glibc and binuntils have been _temporarily_ added to the deps array in the PKGBUILD. Users will need to snag them either by enabling [testing] in /etc/pacman.conf or simply by downloading via pacman -U.
+I am reading this as glibc 2.13-3 and binutils 2.21-4, both of which are currently in [testing] need to be installed prior to kernel compilation. I can install both of these testing packages on my machine, and compile for the repo, but individual users will have to install those packages, THEN compile their own kernels... therefore both glibc and binuntils have been *temporarily* added to the deps array in the PKGBUILD. Users will need to snag them either by enabling [testing] in /etc/pacman.conf or simply by downloading via pacman -U.
 
 **29-Jan-2011 kernel26-ck/headers-ck 2.6.37-5**
 

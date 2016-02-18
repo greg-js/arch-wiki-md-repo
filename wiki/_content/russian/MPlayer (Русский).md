@@ -44,7 +44,7 @@
 
 *   Qt: [smplayer](https://www.archlinux.org/packages/?name=smplayer). Пакет [smplayer-themes](https://www.archlinux.org/packages/?name=smplayer-themes) содержит различные темы для него
 *   Gtk+: [pymp](https://aur.archlinux.org/packages/pymp/) и [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer)
-*   gmplayer: больше не входит в состав пакета [mplayer](https://www.archlinux.org/packages/?name=mplayer). Существует альтернативный пакет [mplayer-x](https://aur.archlinux.org/packages/mplayer-x/), включающий в себя _gmplayer_
+*   gmplayer: больше не входит в состав пакета [mplayer](https://www.archlinux.org/packages/?name=mplayer). Существует альтернативный пакет [mplayer-x](https://aur.archlinux.org/packages/mplayer-x/), включающий в себя *gmplayer*
 
 ### Интеграция в браузеры
 
@@ -71,7 +71,6 @@
 Пример файла с настройками:
 
  `/etc/mplayer/example.conf` 
-
 ```
 # Это конфигурация по-умолчанию, применяется ко всем файлам
 [default]
@@ -114,7 +113,7 @@ VDPAU - это библиотека, позволяющяя использова
 Перед тем, как устанавливать, убедитесь, что:
 
 *   Видеокарта поддерживает вывод vdpau ([таблица совместимости](https://en.wikipedia.org/wiki/ru:PureVideo#.D0.A2.D0.B0.D0.B1.D0.BB.D0.B8.D1.86.D0.B0_PureVideo_HD_GPU "wikipedia:ru:PureVideo"))
-*   Драйвер _nvidia_ установлен
+*   Драйвер *nvidia* установлен
 
 Теперь выберите способ автоматического включения vdpau.
 
@@ -130,7 +129,7 @@ vc=ffmpeg12vdpau,ffwmv3vdpau,ffvc1vdpau,ffh264vdpau,ffodivxvdpau,
 
 **Обратите внимание:** На концах строк должны стоять запятые!
 
-**Важно:** Библиотека _ffodivxvdpau_ поддерживается лишь новыми сериями карт nVidia. Указывать этот кодек или нет - зависит от видеокарты
+**Важно:** Библиотека *ffodivxvdpau* поддерживается лишь новыми сериями карт nVidia. Указывать этот кодек или нет - зависит от видеокарты
 
 #### Используя скрипт-обертку
 
@@ -167,7 +166,7 @@ ao=jack
 
 ### Горячие клавиши
 
-	_Это список основных горячих клавиш для MPlayer._
+	*Это список основных горячих клавиш для MPlayer.*
 
 | Клавиша | Описание |
 | p | Пауза/воспроизведение. |
@@ -234,7 +233,7 @@ softvol-max=600
 
 ### Нет картинки в Smplayer
 
-У Smplayer бывают проблемы с открытием файлов _.mp4_ (и иногда _.flv_). Если при воспроизведении нет картинки, добавьте следующие строки в файл конфигурации `~/.mplayer/config`:
+У Smplayer бывают проблемы с открытием файлов *.mp4* (и иногда *.flv*). Если при воспроизведении нет картинки, добавьте следующие строки в файл конфигурации `~/.mplayer/config`:
 
 ```
  [extension.mp4]

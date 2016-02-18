@@ -1,4 +1,4 @@
-**Attenzione:** Lo sviluppo di _Powerpill_ è stato ufficialmente terminato: la sua ultima versione non è compatibile con _pacman>=3.5_. Leggere [[1]](https://bbs.archlinux.org/viewtopic.php?id=115660).
+**Attenzione:** Lo sviluppo di *Powerpill* è stato ufficialmente terminato: la sua ultima versione non è compatibile con *pacman>=3.5*. Leggere [[1]](https://bbs.archlinux.org/viewtopic.php?id=115660).
 
 **Nota:** Esistono altri modi per usare aria2 per lo scaricamento dei pacchetti. Leggere [Improve pacman performance#Using_aria2](/index.php/Improve_pacman_performance#Using_aria2 "Improve pacman performance")
 
@@ -16,7 +16,7 @@
 
 Powerpill è uno script scritto da Xyne che incorpora [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)") e velocizza il download dei pacchetti grazie all'utilizzo di aria2c per effettuare download concorrenti e segmentati. Individua i pacchetti obiettivo dell'operazione di aggiornamento richiesta e usa una lista di mirror per creare un metalink. Questo metalink viene poi passato al manager di download aria2 per il download dei pacchetti. Spesso è possibile ottenere una significativa riduzione nei tempi di download grazie agli effetti combinati dei download simultanei e combinati.
 
-Esempio: si vuole effettuare un update e si esegue _pacman -Syu_ il quale restituisce una lista di 20 pacchetti disponibili per un aggiornamento della dimensione totale di 200 mega. Se l'utente effettua il download tramite pacman, i pacchetti verranno scaricati uno alla volta. Se vengono scaricati tramite powerpill, verranno scaricati più pacchetti simultaneamente e nella maggior parte dei casi molto più velocemente (a seconda della velocità della connessione, della disponibilità dei pacchetti sui server, della velocità/carico del server, etc.)
+Esempio: si vuole effettuare un update e si esegue *pacman -Syu* il quale restituisce una lista di 20 pacchetti disponibili per un aggiornamento della dimensione totale di 200 mega. Se l'utente effettua il download tramite pacman, i pacchetti verranno scaricati uno alla volta. Se vengono scaricati tramite powerpill, verranno scaricati più pacchetti simultaneamente e nella maggior parte dei casi molto più velocemente (a seconda della velocità della connessione, della disponibilità dei pacchetti sui server, della velocità/carico del server, etc.)
 
 Un confronto tra pacman e powerpill su un sistema ha rilevato una velocità, nello scenario precedente, 4 volte più veloce usando powerpill con una velocità media di download di 1.2 MB/sec contro i 300 kB/sec di pacman.
 
@@ -24,7 +24,7 @@ Un confronto tra pacman e powerpill su un sistema ha rilevato una velocità, nel
 
 Nonostante l'abbandono del progetto, Powerpill può ancora essere scaricato da [http://xyne.archlinux.ca/old_projects/powerpill/](http://xyne.archlinux.ca/old_projects/powerpill/)
 
-Assicurarsi di avere installato il pacchetto _perl-crypt-ssleay_, altrimenti non sarà possibile utilizzare **Reflector** (leggere sotto)
+Assicurarsi di avere installato il pacchetto *perl-crypt-ssleay*, altrimenti non sarà possibile utilizzare **Reflector** (leggere sotto)
 
 ```
 # pacman -S perl-crypt-ssleay

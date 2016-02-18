@@ -134,7 +134,7 @@ Alcuni utenti avranno notato che non vi è alcun controllo del volume di default
 
 ### I font appaiono asimmetrici
 
-Si può modificare il valore DPI dei font in Gnome con un click destro su desktop _→ Cambia sfondo Desktop → Caratteri → Dettagli → Risoluzione_>
+Si può modificare il valore DPI dei font in Gnome con un click destro su desktop *→ Cambia sfondo Desktop → Caratteri → Dettagli → Risoluzione*>
 
 ```
 Risoluzione: [96] dots per inch
@@ -143,7 +143,7 @@ Risoluzione: [96] dots per inch
 
 ### Migliorare l'aspetto dei font
 
-Per avere una configurazione di caratteri piacevole e leggibile tutto quello che basta fare è cliccare nuovamente con il pulsante destro del mouse sul desktop _→ Caratteri → Dettagli_. Da qui è possibile impostare i subpixel (LCD) per l'antialiasing ed un basso Hinting per avere una configurazione ottimale. Per essere in grado di impostare LCD vedere il capitolo [LCD Font Configuration](/index.php/Font_configuration#LCD_filter_patched_packages "Font configuration").
+Per avere una configurazione di caratteri piacevole e leggibile tutto quello che basta fare è cliccare nuovamente con il pulsante destro del mouse sul desktop *→ Caratteri → Dettagli*. Da qui è possibile impostare i subpixel (LCD) per l'antialiasing ed un basso Hinting per avere una configurazione ottimale. Per essere in grado di impostare LCD vedere il capitolo [LCD Font Configuration](/index.php/Font_configuration#LCD_filter_patched_packages "Font configuration").
 
 ### Cambiare l'immagine di sfondo predefinita
 
@@ -165,7 +165,7 @@ $ sudo gconf-editor
 
 ```
 
-Andare su _File → Nuova Finestra di Base_ e modificare il valore
+Andare su *File → Nuova Finestra di Base* e modificare il valore
 
 ```
 /desktop/gnome/background/primary_color
@@ -183,7 +183,7 @@ e
 
 ### Aprire le finestre di shell in un formato maggiore
 
-Quando si aggiunge un lanciatore per il terminale, lo si può anche modificare per renderne le dimensioni della finestra più grandi dello standard predefinito. Click destro su lanciatore _→ Proprietà_. Poi, sotto la sezione "Comando", aggiungere il seguente
+Quando si aggiunge un lanciatore per il terminale, lo si può anche modificare per renderne le dimensioni della finestra più grandi dello standard predefinito. Click destro su lanciatore *→ Proprietà*. Poi, sotto la sezione "Comando", aggiungere il seguente
 
 ```
 Command: gnome-terminal --geometry 105x25+100+20
@@ -261,7 +261,7 @@ sudo pacman -U *.pkg.tar.gz
 
 ```
 
-Ora creare una cartella chiamata _python-extensions_ in `~/.nautilus`ed aggiungerci il seguente script, chiamato bsc.py. Scaricare lo script da qui: [bsc.py](http://stefanwilkens.eu/bsc.py) Mirror: [bsc.py](http://kclkcl.webege.com/files/bsc.py)
+Ora creare una cartella chiamata *python-extensions* in `~/.nautilus`ed aggiungerci il seguente script, chiamato bsc.py. Scaricare lo script da qui: [bsc.py](http://stefanwilkens.eu/bsc.py) Mirror: [bsc.py](http://kclkcl.webege.com/files/bsc.py)
 
 [bas-v2.py](http://ubuntuforums.org/showthread.php?t=878683) aggiunge correzioni e ulteriori supporti (link alla fine del 4º post).
 Mirror: [bsc-v2.py](http://www.rnstech.com/mirror/bsc-v2.py)
@@ -270,7 +270,7 @@ Riavviare nautilus. Si potrà ora configurare questa nuova funzionalità in Modi
 
 #### Fermare il ridisegno di Nautilus sul desktop
 
-E' necessario aprire _gconf-editor_:
+E' necessario aprire *gconf-editor*:
 
 ```
 apps>nautilus>preferences deselezionare "show_desktop"
@@ -284,7 +284,7 @@ desktop>gnome>background
 
 ```
 
-e deselezionare "_draw_background_"
+e deselezionare "*draw_background*"
 
 #### Thumbnails
 
@@ -629,8 +629,14 @@ else
       if [ $inputIsValid ]; then
         currDir=`pwd`;
         echo "<background>" >> $xmlfile
-        echo "  <starttime>\n    <year>2009</year>\n    <month>08</month>\n    <day>04</day>" >> $xmlfile;
-        echo "    <hour>00</hour>\n    <minute>00</minute>\n    <second>00</second>\n  </starttime>" >> $xmlfile;
+        echo "  <starttime>
+    <year>2009</year>
+    <month>08</month>
+    <day>04</day>" >> $xmlfile;
+        echo "    <hour>00</hour>
+    <minute>00</minute>
+    <second>00</second>
+  </starttime>" >> $xmlfile;
         echo "  <!-- This animation will start at midnight. -->" >> $xmlfile;
         firstFile=`echo $files | cut -d " " -f 1`;#grab the first item
         if [ "`echo $firstFile | sed 's/\(.\).*/\1/'`" != "/" ]; then
@@ -643,7 +649,10 @@ else
         currFile="";
         #TODO add absolute path to the filenames
         #if $currFile =~ "^/.*" then the file needs to path appended
-        echo "  <static>\n    <duration>$duration</duration>\n    <file>$firstFile</file>\n  </static>" >> $xmlfile;
+        echo "  <static>
+    <duration>$duration</duration>
+    <file>$firstFile</file>
+  </static>" >> $xmlfile;
         for currFile in $files
         do
           if [ "`echo $currFile | sed 's/\(.\).*/\1/'`" != "/" ]; then
@@ -651,11 +660,22 @@ else
             currFile="$currDir/$currFile";
           fi
           currFile=`echo $currFile | sed 's/[^/]\+\/\.\.\/\?//g'`;#Remove occurrences of ".." from the filepath
-          echo "  <transition>\n    <duration>5.0</duration>\n    <from>$prevFile</from>\n    <to>$currFile</to>\n  </transition>" >> $xmlfile;
-          echo "  <static>\n    <duration>$duration</duration>\n    <file>$currFile</file>\n  </static>" >> $xmlfile;
+          echo "  <transition>
+    <duration>5.0</duration>
+    <from>$prevFile</from>
+    <to>$currFile</to>
+  </transition>" >> $xmlfile;
+          echo "  <static>
+    <duration>$duration</duration>
+    <file>$currFile</file>
+  </static>" >> $xmlfile;
           prevFile=$currFile;
         done
-        echo "  <transition>\n    <duration>5.0</duration>\n    <from>$currFile</from>\n    <to>$firstFile</to>\n  </transition>" >> $xmlfile;
+        echo "  <transition>
+    <duration>5.0</duration>
+    <from>$currFile</from>
+    <to>$firstFile</to>
+  </transition>" >> $xmlfile;
         echo "</background>" >> $xmlfile;
       fi
     fi
@@ -799,7 +819,7 @@ Un player audio simile ad iTunes.
 
 Estrattore di tacce da cd-audio, si integra con rythmbox.
 
-_In caso di ulteriori problemi con SoundJuicer, vedere [qui](/index.php/User:Munk3h "User:Munk3h")_
+*In caso di ulteriori problemi con SoundJuicer, vedere [qui](/index.php/User:Munk3h "User:Munk3h")*
 
 ### gimp
 

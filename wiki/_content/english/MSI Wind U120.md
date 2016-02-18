@@ -90,19 +90,19 @@ For the most part the hardware should Just Work™. Hardware-specific modules in
 ```
 
 *   **i915** - you will, of course, need to install the **xf86-video-intel** package and configure [Xorg](/index.php/Xorg "Xorg") for a proper desktop.
-*   **uvcvideo** - you may need to add this module to the MODULES array in _/etc/rc.conf_ for automatic loading.
+*   **uvcvideo** - you may need to add this module to the MODULES array in */etc/rc.conf* for automatic loading.
 
 ### AHCI SATA Mode
 
 The U120 supports the [AHCI](http://en.wikipedia.org/wiki/Ahci) SATA specification, however this feature is disabled in the BIOS by default. To enable AHCI during setup:
 
-*   Add "ahci" to the MODULES array in _/etc/mkinitcpio.conf_
+*   Add "ahci" to the MODULES array in */etc/mkinitcpio.conf*
 *   Once Arch installation is complete, reboot and enter the BIOS
 *   Change AHCI Mode to "Enabled"
 
-**Note:** To enable AHCI _after_ installation:
+**Note:** To enable AHCI *after* installation:
 
-*   Add "ahci" to the MODULES array in _/etc/mkinitcpio.conf_
+*   Add "ahci" to the MODULES array in */etc/mkinitcpio.conf*
 *   Run the following as root:
 
 ```
@@ -146,7 +146,7 @@ For more information on the U120 hotkeys, refer to the [Tips & Tricks: More on H
 
 ### Webcam Usage
 
-To load the webcam driver automatically you may need to add **uvcvideo** to the MODULES array in _/etc/rc.conf_.
+To load the webcam driver automatically you may need to add **uvcvideo** to the MODULES array in */etc/rc.conf*.
 
 Install the [cheese](http://projects.gnome.org/cheese/) application:
 

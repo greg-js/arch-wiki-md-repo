@@ -38,7 +38,7 @@ A common idiom to remember this is "**R**eboot **E**ven **I**f **S**ystem **U**t
 
 *   If you are using a [display manager](/index.php/Display_manager "Display manager") and after `Alt+SysRq+e` you are presented with the login screen (or full desktop if autologin is enabled), it is most likely caused by `Restart=always` directive in the relevant [service file](/index.php/Systemd "Systemd"). If necessary, [edit the unit](/index.php/Systemd#Editing_provided_units "Systemd"), however this should not prevent the "REISUB" sequence from working.
 *   If all the above combinations work except `Alt+SysRq+b`, try using the contralateral `Alt` key.
-*   On laptops that use `Fn` key to differentiate `SysRq` from `PrtScrn`, it may not actually be necessary to use the `Fn` key (i.e., `Alt+PrtSc+_letter_` could work).
+*   On laptops that use `Fn` key to differentiate `SysRq` from `PrtScrn`, it may not actually be necessary to use the `Fn` key (i.e., `Alt+PrtSc+*letter*` could work).
 *   You may need to press `Ctrl` along with `Alt`. So for example, full key shortcut would be `Ctrl+Alt+SysRq+b`.
 
 See [Magic SysRq key - Wikipedia](https://en.wikipedia.org/wiki/Magic_SysRq_key "wikipedia:Magic SysRq key") for more details.
@@ -49,7 +49,7 @@ See [Magic SysRq key - Wikipedia](https://en.wikipedia.org/wiki/Magic_SysRq_key 
 
 | Keyboard Shortcut | Description |
 | `Ctrl+Alt+Del` | Reboots Computer (specified by the symlink `/usr/lib/systemd/system/ctrl-alt-del.target`) |
-| `Alt+F1`, `F2`, `F3`, ... | Switch to _n_-th virtual console |
+| `Alt+F1`, `F2`, `F3`, ... | Switch to *n*-th virtual console |
 | `Alt+ ←` | Switch to previous virtual console |
 | `Alt+ →` | Switch to next virtual console |
 | `Scroll Lock` | When Scroll Lock is activated, input/output is locked |
@@ -96,7 +96,7 @@ GNU readline is a commonly used library for line-editing; it is used for example
 ### X11
 
 | Keyboard Shortcut | Description | Notes |
-| `Ctrl+Alt+F1`, `F2`, `F3`, ... | Switch to _n_-th virtual console |
+| `Ctrl+Alt+F1`, `F2`, `F3`, ... | Switch to *n*-th virtual console |
 | `Shift+Insert`
 `Mouse Button 2` | Paste text from the [PRIMARY buffer](/index.php/Clipboard "Clipboard") | By default, Qt maps `Shift+Insert` to CLIPBOARD instead of the PRIMARY buffer (see e.g. [[1]](http://doc.qt.io/qt-5/qlineedit.html#details)). |
 
@@ -104,10 +104,9 @@ GNU readline is a commonly used library for line-editing; it is used for example
 
 ### Readline
 
-This example adds keys that allow (in _vi-mode_) to search backward through the history for the string of characters between the start of the current line and the point. This is a non-incremental search.
+This example adds keys that allow (in *vi-mode*) to search backward through the history for the string of characters between the start of the current line and the point. This is a non-incremental search.
 
  `.inputrc` 
-
 ```
 set editing-mode vi
 set keymap vi-insert
@@ -143,7 +142,6 @@ The method suggested here uses three packages available in the [official reposit
 This example binds the x-selection-paste operation to the `F12` key:
 
  `.xbindkeysrc` 
-
 ```
 "xvkbd -no-jump-pointer -xsendevent -text "\D1`xsel`" 2>/dev/null"
     F12
@@ -166,7 +164,6 @@ The key codes for keys other than `F12` can be determined using `xbindkeys -k`.
 In the [xmonad](https://www.archlinux.org/packages/?name=xmonad) window manager there is a built-in function to paste the x-selection-buffer content. In order to bind that function to a key-stroke (here `Insert` key) the following configuration can be used:
 
  `xmonad.hs` 
-
 ```
 import XMonad.Util.Paste
 ...

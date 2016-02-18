@@ -18,7 +18,6 @@ $ nvidia-xconfig --query-gpu-info
 *   Create /etc/X11/xorg.conf.d/60-qnix-edid.conf and add the following to it (remember to change DFP-0 to your monitor ID)
 
  `/etc/X11/xorg.conf.d/60-qnix-edid.conf` 
-
 ```
 Section "Device"
      Identifier     "Device0"

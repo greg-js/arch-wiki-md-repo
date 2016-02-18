@@ -11,7 +11,7 @@ Some examples:
 
 ```
 
-*   Bootstrap a _x86_64_ system using a specific repository:
+*   Bootstrap a *x86_64* system using a specific repository:
 
 ```
 # bash arch-bootstrap.sh -a x86_64 -r "[ftp://ftp.archlinux.org](ftp://ftp.archlinux.org)" target

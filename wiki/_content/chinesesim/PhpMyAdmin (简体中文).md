@@ -45,7 +45,8 @@ Include conf/extra/httpd-phpmyadmin.conf
 或者，在命令行执行下面的命令也是相同的结果：
 
 ```
-echo -e "\nInclude conf/extra/httpd-phpmyadmin.conf" >> /etc/httpd/conf/httpd.conf
+echo -e "
+Include conf/extra/httpd-phpmyadmin.conf" >> /etc/httpd/conf/httpd.conf
 
 ```
 

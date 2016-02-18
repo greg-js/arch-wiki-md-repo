@@ -37,7 +37,7 @@ $ tar -jxvf foobar-cursor-theme-package-foo.tar.bz2
 
 **Crie um diretório para o tema:**
 
-_Exemplo:_ FooBar-AweSoMe-Cursors-v2.98beta
+*Exemplo:* FooBar-AweSoMe-Cursors-v2.98beta
 
 Instalação na pasta do Usuário (pessoal):
 

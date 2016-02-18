@@ -196,9 +196,9 @@ To use efibootmgr, first load the 'efivars' kernel module:
 
 If you get **no such device found** error for this command, that means you have not booted in UEFI mode or due to some reason the kernel is unable to access UEFI Runtime Variables (noefi?).
 
-Verify whether there are files in _/sys/firmware/efi/vars/_ directory. This directory and its contents are created by "efivars" kernel module and it will exist only if you have booted in UEFI mode, without the "noefi" kernel parameter.
+Verify whether there are files in */sys/firmware/efi/vars/* directory. This directory and its contents are created by "efivars" kernel module and it will exist only if you have booted in UEFI mode, without the "noefi" kernel parameter.
 
-If _/sys/firmware/efi/vars/_ directory is empty or does not exist, then `efibootmgr` command will not work. If you are unable to make the ISO/CD/DVD/USB boot in UEFI mode try [https://gitorious.org/tianocore_uefi_duet_builds/pages/Linux_Windows_BIOS_UEFI_boot_USB](https://gitorious.org/tianocore_uefi_duet_builds/pages/Linux_Windows_BIOS_UEFI_boot_USB).
+If */sys/firmware/efi/vars/* directory is empty or does not exist, then `efibootmgr` command will not work. If you are unable to make the ISO/CD/DVD/USB boot in UEFI mode try [https://gitorious.org/tianocore_uefi_duet_builds/pages/Linux_Windows_BIOS_UEFI_boot_USB](https://gitorious.org/tianocore_uefi_duet_builds/pages/Linux_Windows_BIOS_UEFI_boot_USB).
 
 **Обратите внимание:** The below commands use grub2-efi-x86_64 boot-loader as example.
 

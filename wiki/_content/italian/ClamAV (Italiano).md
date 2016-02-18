@@ -20,7 +20,7 @@ Installalo con pacman digitando:
 
 ## Configurazione
 
-Se hai intenzione di usare ClamAV come demone o come semplice analizzatore di file bisogna commentare la linea che contiene la parola _Example_, di solito si trova all'inizio nel file `/etc/clamav/freshclam.conf`. (probabilmente bisogna fare lo stesso nel file `clamd.conf` che si trova nella stessa directory) ed aggiornare il database dei virus e dei malware.
+Se hai intenzione di usare ClamAV come demone o come semplice analizzatore di file bisogna commentare la linea che contiene la parola *Example*, di solito si trova all'inizio nel file `/etc/clamav/freshclam.conf`. (probabilmente bisogna fare lo stesso nel file `clamd.conf` che si trova nella stessa directory) ed aggiornare il database dei virus e dei malware.
 
 ## Aggiornamento Database
 
@@ -48,7 +48,7 @@ I file del database sono salvati in:
 
 ## Installazione Server
 
-Per eseguirlo come un server modifica `/etc/clamav/clamd.conf` e `/etc/clamav/freshclam.conf` e commenta il flag _Example_. In `/etc/conf.d/clamav` cambia l'opzione start da "no" a "yes".
+Per eseguirlo come un server modifica `/etc/clamav/clamd.conf` e `/etc/clamav/freshclam.conf` e commenta il flag *Example*. In `/etc/conf.d/clamav` cambia l'opzione start da "no" a "yes".
 
 ```
 # change these to "yes" to start

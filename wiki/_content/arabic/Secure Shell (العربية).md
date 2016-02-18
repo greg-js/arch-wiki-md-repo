@@ -65,7 +65,6 @@
 مثال عن ملف الإعدادت :
 
  `/etc/ssh/ssh_config` 
-
 ```
 #	$OpenBSD: ssh_config,v 1.26 2010/01/11 01:39:46 dtucker Exp $
 
@@ -133,7 +132,6 @@ Protocol 2
 مثال عن ملف الإعدادات :
 
  `/etc/ssh/sshd_config` 
-
 ```
 #	$OpenBSD: sshd_config,v 1.82 2010/09/06 17:10:19 naddy Exp $
 
@@ -324,7 +322,7 @@ $ ssh -p port user@server-address
 
 ### Dropbear
 
-[Dropbear](https://en.wikipedia.org/wiki/Dropbear_(software) "wikipedia:Dropbear (software)") هو خادم وعميل ssh-2\. حزمة [dropbear](https://www.archlinux.org/packages/?name=dropbear) متوفرة في [AUR](/index.php/AUR "AUR").
+[Dropbear](https://en.wikipedia.org/wiki/Dropbear_(software) هو خادم وعميل ssh-2\. حزمة [dropbear](https://www.archlinux.org/packages/?name=dropbear) متوفرة في [AUR](/index.php/AUR "AUR").
 
 إن عميل ssh الخاص بموجه الأوامر يُسمى dbclient.
 
@@ -555,7 +553,6 @@ ClientAliveInterval 120
 عندما تقوم بالولوج الى خادم ssh، فإنك ستقوم بإدخال اسم المستخدم وعنوان الخادم على الأقل. إذا أردت توقير هذا الوقت; يمكنك استخدام الملف `$HOME/.ssh/config` الخاص بك، أو الملف العام `/etc/ssh/ssh_config` كما في المثال التالي :
 
  `$HOME/.ssh/config` 
-
 ```
 Host myserver
     HostName 123.123.123.123
@@ -760,7 +757,7 @@ MACs hmac-md5,hmac-sha1,hmac-ripemd160
 
 ### "[الصدفة التي تستخدمها]: No such file or directory"
 
-مسبب من مسببات هذه المشكلة هو أن بعض عملاء SSH يحتاجون الى معرفة المسار المطلق عن طريق الأمر `whereis -b [your shell]`، وحتى لوكان الملف التنفيئي للصدفة موجود في `$PATH`. سبب آخر هو أن المستخدم ليس عضوًا في مجموعة _network_.
+مسبب من مسببات هذه المشكلة هو أن بعض عملاء SSH يحتاجون الى معرفة المسار المطلق عن طريق الأمر `whereis -b [your shell]`، وحتى لوكان الملف التنفيئي للصدفة موجود في `$PATH`. سبب آخر هو أن المستخدم ليس عضوًا في مجموعة *network*.
 
 ### ظهور رسالة الخطأ "Terminal unknown" أو "Error opening terminal"
 
@@ -786,10 +783,10 @@ MACs hmac-md5,hmac-sha1,hmac-ripemd160
 
 ```
 
-الآن قم بنسخ ملف terminfo الخاص بالطرفيتك الى المجلد الجديد. مُستبدلًا _"rxvt-unicode-256color"_ بالطرفية الخاصة بك في التعليمة التالية و _ssh-server_ بإسم المستخدم وعنوان الخادم الخاصين بك
+الآن قم بنسخ ملف terminfo الخاص بالطرفيتك الى المجلد الجديد. مُستبدلًا *"rxvt-unicode-256color"* بالطرفية الخاصة بك في التعليمة التالية و *ssh-server* بإسم المستخدم وعنوان الخادم الخاصين بك
 
 ```
-`$ scp  /usr/share/terminfo/r/_rxvt-unicode-256color_ ssh-server:~/.terminfo/r/`
+`$ scp  /usr/share/terminfo/r/*rxvt-unicode-256color* ssh-server:~/.terminfo/r/`
 
 ```
 

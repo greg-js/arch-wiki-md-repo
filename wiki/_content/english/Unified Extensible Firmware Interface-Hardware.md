@@ -59,7 +59,7 @@ Original Post: [https://bbs.archlinux.org/viewtopic.php?id=133074](https://bbs.a
 3.  BIOS/UEFI vendor: Phoenix SecureCore Tiano
 4.  Could create a working entry in UEFI Boot menu using efibootmgr.
 5.  Have not managed to launch UEFI shell.
-6.  Filesystem of UEFI System Partition : FAT16\. FAT32 does _NOT_ work. More info at [https://bbs.archlinux.org/viewtopic.php?id=131149](https://bbs.archlinux.org/viewtopic.php?id=131149).
+6.  Filesystem of UEFI System Partition : FAT16\. FAT32 does *NOT* work. More info at [https://bbs.archlinux.org/viewtopic.php?id=131149](https://bbs.archlinux.org/viewtopic.php?id=131149).
 
 ### Additional notes
 

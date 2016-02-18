@@ -1,6 +1,6 @@
-If you have invested in a high resolution mouse, adjusting the USB polling rate is a common trick to utilise the added precision it brings. The polling rate (or report rate) determines how often the mouse sends information to your computer. Measured in Hertz (Hz), this setting equates to lag time (in _ms_).
+If you have invested in a high resolution mouse, adjusting the USB polling rate is a common trick to utilise the added precision it brings. The polling rate (or report rate) determines how often the mouse sends information to your computer. Measured in Hertz (Hz), this setting equates to lag time (in *ms*).
 
-By default, the USB polling rate is set at 125 Hz. The table below represents combinations of _Hz_ values and their corresponding delay time:
+By default, the USB polling rate is set at 125 Hz. The table below represents combinations of *Hz* values and their corresponding delay time:
 
 | Hz | ms |
 | 1000 | 1 |
@@ -26,7 +26,7 @@ Here we are using the `usbhid` module of the kernel to set a custom "mousepoll" 
 
  `/etc/modprobe.d/modprobe.conf`  `options usbhid mousepoll=[polling interval]` 
 
-The `[polling interval]` is a number in _ms_ from the table above. For example, to set a polling rate of 500Hz:
+The `[polling interval]` is a number in *ms* from the table above. For example, to set a polling rate of 500Hz:
 
 ```
 options usbhid mousepoll=2
@@ -48,7 +48,7 @@ Then unplug and replug your mouse.
 
 ## Displaying current mouse rate
 
-A tool exists (named _evhz_) that can display the current mouse refresh rate -- useful when checking that your customized polling settings have been applied.
+A tool exists (named *evhz*) that can display the current mouse refresh rate -- useful when checking that your customized polling settings have been applied.
 
 You can install it from [AUR](/index.php/AUR "AUR") [evhz-git](https://aur.archlinux.org/packages/evhz-git/) or compile it yourself:
 

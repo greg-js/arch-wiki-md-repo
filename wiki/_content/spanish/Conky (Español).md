@@ -1,4 +1,4 @@
-Conky es un monitor de sistema para los sistemas X Window. Está disponible para GNU/Linux y FreeBSD. Es un software libre liberado bajo los términos de la licencia GPL. Conky es capaz de monitorear distintas variables de sistema, incluyendo CPU, memoria, swap, espacio de disco, temperaturas, subidas, bajadas, mensajes de sistema, y mucho más. Es completamente configurable, la configuración puede ser un poco difícil de entender, pero es bastante posible realizarla. Conky es un _fork_ de torsmo.
+Conky es un monitor de sistema para los sistemas X Window. Está disponible para GNU/Linux y FreeBSD. Es un software libre liberado bajo los términos de la licencia GPL. Conky es capaz de monitorear distintas variables de sistema, incluyendo CPU, memoria, swap, espacio de disco, temperaturas, subidas, bajadas, mensajes de sistema, y mucho más. Es completamente configurable, la configuración puede ser un poco difícil de entender, pero es bastante posible realizarla. Conky es un *fork* de torsmo.
 
 ## Contents
 
@@ -80,7 +80,7 @@ Esto reemplaza los métodos [feh](https://www.archlinux.org/packages/?name=feh) 
 
 ### Evitar el parpadeo
 
-Conky necesita soporte Doble de extensión de buffer (DBE) desde el servidor X para prevenir el parpadeo, porque no puede actualizar rápidamente la pantalla sin esto. Esto puede ser activado en `/etc/X11/xorg.conf` con `Load "dbe"` línea en `Section "Module"`. El archivo xorg.conf ha sido reemplazado (1.8.x actualización de patch) por `/etc/X11/xorg.conf.d`, que contiene una configuración particular de los archivos. _DBE_ se carga automáticamente.
+Conky necesita soporte Doble de extensión de buffer (DBE) desde el servidor X para prevenir el parpadeo, porque no puede actualizar rápidamente la pantalla sin esto. Esto puede ser activado en `/etc/X11/xorg.conf` con `Load "dbe"` línea en `Section "Module"`. El archivo xorg.conf ha sido reemplazado (1.8.x actualización de patch) por `/etc/X11/xorg.conf.d`, que contiene una configuración particular de los archivos. *DBE* se carga automáticamente.
 
 Para verificar:
 
@@ -293,7 +293,7 @@ else:
 
 ```
 
-Agregar la siguiente línea de comandos a tu `.conky` para verificar tu cuenta de correo Gmail por correo nuevo cada 5 minutos (300 segundos) y mostrar: _# new_
+Agregar la siguiente línea de comandos a tu `.conky` para verificar tu cuenta de correo Gmail por correo nuevo cada 5 minutos (300 segundos) y mostrar: *# new*
 
 ```
 ${execpi 300 python ~/.scripts/gmail.py}
@@ -343,7 +343,7 @@ Inbox: ${imap_unseen}/${imap_messages}
 
 ```
 
-Aquí uso * como la contraseña de conky para preguntar al inicio, pero tú no _necesitas_ hacerlo.
+Aquí uso * como la contraseña de conky para preguntar al inicio, pero tú no *necesitas* hacerlo.
 
 ### Mostrar correos nuevos (IMAP + SSL)
 
@@ -382,7 +382,8 @@ if ($client->IsAuthenticated()) {
 
    $client->select("INBOX");
    $msgct = $client->unseen_count||'0';
-   print "$msgct\n";
+   print "$msgct
+";
 }
 
 $client->logout();
@@ -813,7 +814,7 @@ but must be larger (e.g. more clockwise) than start_angle.
 
 ## Una nota sobre fuentes simbólicas
 
-Muchos de los más decorados archivos _.conkyrc_ usan las fuentes PizzaDude Bullets y Pie Charts para mapas. Están disponibles en el AUR como 'ttf-pizzadude-bullets' y 'ttf-piechartsformaps' respectivamente, o pueden ser hallados y descargados con una simple búsqueda he instalación manual usando las instrucciones en [Fonts](/index.php/Fonts "Fonts").
+Muchos de los más decorados archivos *.conkyrc* usan las fuentes PizzaDude Bullets y Pie Charts para mapas. Están disponibles en el AUR como 'ttf-pizzadude-bullets' y 'ttf-piechartsformaps' respectivamente, o pueden ser hallados y descargados con una simple búsqueda he instalación manual usando las instrucciones en [Fonts](/index.php/Fonts "Fonts").
 
 ## Enlaces externos
 

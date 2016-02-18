@@ -1,6 +1,6 @@
 De la [página principal de gummiboot](http://freedesktop.org/wiki/Software/gummiboot/):
 
-	_gummiboot es un sencillo gestor de arranque UEFI que ejecuta imágenes EFI configuradas. La entrada predeterminada es seleccionada por un patrón configurado (glob) o un menú en pantalla_.
+	*gummiboot es un sencillo gestor de arranque UEFI que ejecuta imágenes EFI configuradas. La entrada predeterminada es seleccionada por un patrón configurado (glob) o un menú en pantalla*.
 
 Es fácil de configurar, pero solo puede iniciar ejecutables EFI, [EFISTUB](/index.php/EFISTUB "EFISTUB") del kernel de Linux , Shell UEFI, grub.efi, y similares.
 
@@ -33,13 +33,13 @@ Después, [instale](/index.php/Pacman_(Espa%C3%B1ol)#Instalar_paquetes "Pacman (
 Por último, escriba la orden siguiente para copiar el binario gummiboot a la partición del sistema EFI y así añadir gummiboot como la aplicación por defecto EFI (entrada de inicio por defecto) para que se cargue por el EFI Boot Manager. Si no ha arrancado en modo UEFI y las variables EFI no están accesibles, la entrada de arranque creada fallará. Sin embargo, todavía podrá ser capaz de arrancar gummiboot copiando el binario gummiboot a la ubicación del binario EFI por defecto en su ESP (`$esp/EFI/boot/bootx64.efi` en sistemas x64) a menos que una aplicación EFI que no sea gummiboot ya está presente con el mismo nombre de archivo.
 
 ```
-# gummiboot --path=_$esp_ install
+# gummiboot --path=*$esp* install
 
 ```
 
 ### Actualización
 
-gummiboot asume que EFI System Partition se monta en `/boot`, en cuyo caso, cada vez que una nueva versión gummiboot esté disponible, la orden `gummiboot --path=_$esp_ update` será llamada automáticamente por el método `post_install` del script de instalación. Si la ESP no está montada en `/boot`, tendrá que ajustar manualmente esta orden.
+gummiboot asume que EFI System Partition se monta en `/boot`, en cuyo caso, cada vez que una nueva versión gummiboot esté disponible, la orden `gummiboot --path=*$esp* update` será llamada automáticamente por el método `post_install` del script de instalación. Si la ESP no está montada en `/boot`, tendrá que ajustar manualmente esta orden.
 
 ## Configuración
 
@@ -54,7 +54,6 @@ La configuración básica se mantiene en `$esp/loader/loader.conf`, con solo dos
 Ejemplo:
 
  `$esp/loader/loader.conf` 
-
 ```
 default  arch
 timeout  4
@@ -77,16 +76,15 @@ gummiboot busca los items para el menú de arranque en `$esp/loader/entries/*.co
 
 *   `efi` – programas EFI a iniciar, que se encuentren en la ESP (`$esp`); por ejemplo, `/vmlinuz-linux`. Tanto este como `linux` (véase a continuación) son **necesarios.**
 
-*   `options` – opciones de línea de órdenes para pasar al programa EFI. Opcional, pero es necesario al menos `initrd=_ruta-a-efi_` y `root=_dev_` para arrancar Linux.
+*   `options` – opciones de línea de órdenes para pasar al programa EFI. Opcional, pero es necesario al menos `initrd=*ruta-a-efi*` y `root=*dev*` para arrancar Linux.
 
-Para Linux, puede especificar `linux _ruta-a-vmlinuz_` y `initrd _ruta-a-initramfs_`; esto se traducirá automáticamente en `_ruta_ a efi` y `options initrd=_ruta_` —esta sintaxis solo es apoyada por eficacia y no altera su función—.
+Para Linux, puede especificar `linux *ruta-a-vmlinuz*` y `initrd *ruta-a-initramfs*`; esto se traducirá automáticamente en `*ruta* a efi` y `options initrd=*ruta*` —esta sintaxis solo es apoyada por eficacia y no altera su función—.
 
 Puede encontrar la PARTUUID de sus dispositivos con la orden `blkid -s PARTUUID -o value /dev/sdxx` (/dev/sdxx debe ser su partición raíz y no $esp)
 
 Una entrada de ejemplo para Arch Linux:
 
  `$esp/loader/entries/arch.conf` 
-
 ```
 title          Arch Linux
 linux          /vmlinuz-linux
@@ -99,14 +97,13 @@ Tenga en cuenta que, en el ejemplo anterior, PARTUUID/PARTLABEL identifica una p
 Un ejemplo de entrada para la raiz (root) encriptada (dm-crypt con LUKS)
 
  `$esp/loader/entries/arch-encrypted.conf` 
-
 ```
 title          Arch Linux (Encrypted)
 linux          /ruta/a/vmlinuz-linux
 options        initrd=/ruta/a/initramfs-linux.img cryptdevice=UUID=<UUID>:luks-<UUID> root=UUID=<luks-UUID> rw
 ```
 
-En el ejemplo de cifrado, advierta que initrd está en _options_ —esto no parece ser discrecional en este momento—. También tenga en cuenta que en este ejemplo se utiliza UUID. PARTUUID debe ser capaz de reemplazar UUID, si así se desea.
+En el ejemplo de cifrado, advierta que initrd está en *options* —esto no parece ser discrecional en este momento—. También tenga en cuenta que en este ejemplo se utiliza UUID. PARTUUID debe ser capaz de reemplazar UUID, si así se desea.
 
 También puede agregar otros programas EFI como `\EFI\arch\grub.efi`.
 

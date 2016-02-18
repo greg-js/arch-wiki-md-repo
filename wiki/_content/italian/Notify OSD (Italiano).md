@@ -44,7 +44,7 @@ Nel caso utilizziate Compiz, è possibile notare un effetto sfarfallamento alla 
 
 1.  aprire **CompizConfig Settings Manager (CCSM)**
 2.  Aprire le impostazioni della plugin **Animations**
-3.  Noterete le stringhe di configurazione, e in particolare una stringa simile a _(type=Menu | PopupMenu | notifications | DropdownMenu)_. E' sufficiente rimuovere **notifications** dalla stringa. Ricordate di effettuare l'operazione sia per la tab **Open Animation** che per la tab **Close Animation**.
+3.  Noterete le stringhe di configurazione, e in particolare una stringa simile a *(type=Menu | PopupMenu | notifications | DropdownMenu)*. E' sufficiente rimuovere **notifications** dalla stringa. Ricordate di effettuare l'operazione sia per la tab **Open Animation** che per la tab **Close Animation**.
 
 ## XFCE
 

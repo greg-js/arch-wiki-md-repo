@@ -20,9 +20,7 @@ Then edit `/etc/pam.d/kde` and add the two lines under their corresponding secti
 auth            optional        pam_kwallet.so kdehome=.kde4
 session         optional        pam_kwallet.so
 ```
-
  `Example /etc/pam.d/kde` 
-
 ```
 #%PAM-1.0
 auth            include         system-login
@@ -46,7 +44,6 @@ For **Plasma 5**, install [kwallet-pam](https://www.archlinux.org/packages/?name
 For [LightDM](/index.php/LightDM "LightDM"), for example, edit lightdm and lightdm-greeter files:
 
  `Example /etc/pam.d/lightdm` 
-
 ```
 #%PAM-1.0
 auth            include         system-login
@@ -63,7 +60,6 @@ session         include         system-login
 For [SDDM](/index.php/SDDM "SDDM"), just edit the sddm file like this to get both kwallet4 and kwallet5 to auto-unlock:
 
  `Example /etc/pam.d/sddm` 
-
 ```
 auth            include         system-login
 auth            optional        pam_kwallet5.so
@@ -116,7 +112,6 @@ Type=Application
 ```
 
 **Tip:** The above ssh-add.sh script will only add the default key `~/.ssh/id_rsa`. Assuming you have different SSH keys named `key1`, `key2`, `key3` in `~/.ssh/`, you may add them automatically on login by changing the above script to:
-
 ```
 #!/bin/sh
 ssh-add $HOME/.ssh/key1 $HOME/.ssh/key2 $HOME/.ssh/key3 </dev/null

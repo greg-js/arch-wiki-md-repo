@@ -40,7 +40,7 @@ Questa opzione è utile per configurare un job da far eseguire durante i tempi m
 
 ### Attenzioni particolari
 
-**xfs_fsr** non lavora sui file mappati in memoria, per cui potrebbero essere esposti a video degli errori se si usa l'opzione **-v**. Inoltre non è necessario solitamente effettuare questa operazione su **/**, **/boot**, **/usr**. L'operazione può risultare nell'impossibilità di avviare il computer se si effettua la deframmentazione di _/boot_ in presenza del bootloader **LILO**: in questo caso è necessario lanciare il comando
+**xfs_fsr** non lavora sui file mappati in memoria, per cui potrebbero essere esposti a video degli errori se si usa l'opzione **-v**. Inoltre non è necessario solitamente effettuare questa operazione su **/**, **/boot**, **/usr**. L'operazione può risultare nell'impossibilità di avviare il computer se si effettua la deframmentazione di */boot* in presenza del bootloader **LILO**: in questo caso è necessario lanciare il comando
 
 ```
 lilo 

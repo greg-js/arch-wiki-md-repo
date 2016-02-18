@@ -28,7 +28,6 @@ $ lomoco -s
 Here an output as example:
 
  `lomoco -s` 
-
 ```
 004.002: 046d:c01b MX310 Optical Mouse (M-BP86) Caps: RES 
 004.001: 1d6b:0001 Not a Logitech device
@@ -72,7 +71,6 @@ for other info.
 The mouse is now configured this is ouput of "lomoco -i" after changing cpi.
 
  `lomoco -i` 
-
 ```
 004.002: 046d:c01b MX310 Optical Mouse (M-BP86) Caps: RES 
 	Resolution (RES): **800 cpi**
@@ -86,7 +84,6 @@ The mouse is now configured this is ouput of "lomoco -i" after changing cpi.
 Just edit /etc/udev/lomoco_mouse.conf with the desired options, here an example for this mouse:
 
  `/etc/udev/lomoco_mouse.conf` 
-
 ```
 # Possible Resolutions Are: 400 800 1200 1600 2000
 LOGITECH_MOUSE_RESOLUTION="800"

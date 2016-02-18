@@ -1,6 +1,6 @@
 **MPD** (music player daemon) je audio plejer koji ima server-klijent arhitekturu. MPD radi u pozadini kao daemon, upravlja muzickim listama i muzickom bazom, i koristi vrlo malo resursa. Da bi uspostavili interfejs sa njim, potreban vam je zaseban klijent. Vise informacija mozete naci na njihovom [web sajtu](http://www.musicpd.org/).
 
-_Molim vas_ pogledajte oficijalnu stranicu u instrukcija za podesavanje i resavanje eventualnih problema. Glavni programer je nazvao nasu MPD wiki stranicu _"punom ubica simptoma"_, iz cega se moze zakljuciti da oficijalne stranice sadrze bolje instrukcije.
+*Molim vas* pogledajte oficijalnu stranicu u instrukcija za podesavanje i resavanje eventualnih problema. Glavni programer je nazvao nasu MPD wiki stranicu *"punom ubica simptoma"*, iz cega se moze zakljuciti da oficijalne stranice sadrze bolje instrukcije.
 
 ## Contents
 
@@ -100,14 +100,13 @@ MPD dolazi sa primerom konfiguracionog fajla, dostupnog na `/usr/share/mpd/mpd.c
 
 (`/usr/share/mpd/mpd.conf.example` je dobar za korisnicko podesavanje)
 
-Jer je MPD podesen da radi kao daemon prilikom startovanja, nikad nemojte da stavljate ovaj fajl u korisnicki direktorijum kao sto to neki tutorijali predlazu, jer nece biti procitan. Stavise, ako ste prethodno napravili `.mpdconf` fajl u vasem home direktorijumu, uklonite ga (da podesite MPD da radi samo sa korisnickim privilegijama, molim vas obratite se sekciji [Alternativno_Podesavanje: Startovanje kao obican korisnik](/index.php/Music_Player_Daemon#Alternative_Setup:_Starting_as_a_User "Music Player Daemon")). Ovo je vazno za sprecavanje konfikata. Prisustvo konfiguracionog fajla u `/etc`, kao sto je ovde slucaj, je ono sto ce omoguciti MPD-u da radi kao daemon prilikom pokretanja sistema. U suprotnom, bila bi neophodna skripta za pokretanje MPD-a _nakon_ sto se korisnik ulogovao (kao kdm ili `~/.fluxbox/startup`) ili bi zahtevao rucnu intervenciju svaki put. Za jednu kolekciju muzike, ovaj metod upotrebljen ovde je jednostavno bolji, cak i dok je kolecija deljena izmedju vise korisnika. Takodje, nemojte oklevati oko root privilegija: cak i dok MPD radi kao daemon, on nikad u potpunosti ne radi kao root jer on automatski odbacuje svoje root privilegije nakon izvrsenja.
+Jer je MPD podesen da radi kao daemon prilikom startovanja, nikad nemojte da stavljate ovaj fajl u korisnicki direktorijum kao sto to neki tutorijali predlazu, jer nece biti procitan. Stavise, ako ste prethodno napravili `.mpdconf` fajl u vasem home direktorijumu, uklonite ga (da podesite MPD da radi samo sa korisnickim privilegijama, molim vas obratite se sekciji [Alternativno_Podesavanje: Startovanje kao obican korisnik](/index.php/Music_Player_Daemon#Alternative_Setup:_Starting_as_a_User "Music Player Daemon")). Ovo je vazno za sprecavanje konfikata. Prisustvo konfiguracionog fajla u `/etc`, kao sto je ovde slucaj, je ono sto ce omoguciti MPD-u da radi kao daemon prilikom pokretanja sistema. U suprotnom, bila bi neophodna skripta za pokretanje MPD-a *nakon* sto se korisnik ulogovao (kao kdm ili `~/.fluxbox/startup`) ili bi zahtevao rucnu intervenciju svaki put. Za jednu kolekciju muzike, ovaj metod upotrebljen ovde je jednostavno bolji, cak i dok je kolecija deljena izmedju vise korisnika. Takodje, nemojte oklevati oko root privilegija: cak i dok MPD radi kao daemon, on nikad u potpunosti ne radi kao root jer on automatski odbacuje svoje root privilegije nakon izvrsenja.
 
 ### Izmenite `mpd.conf`
 
 Difolt arch instalacija cuva podesavanje u /var i koristi "mpd" kao difolt korisnika, umesto da pravi zbrku u ~/. Izmenite `/etc/mpd.conf` da bude u skladu sa tim.
 
  `/etc/mpd.conf` 
-
 ```
 music_directory       "/home/user/music"         # Your music dir.
 playlist_directory    "/var/lib/mpd/playlists"
@@ -128,7 +127,6 @@ user                  "mpd"
 *   Da promenite jacinu zvuka sa MPD-a nezavisno od drugih programa, otkomentirajte ili dodajte prekidac u mpd.conf-u:
 
  `/etc/mpd.conf` 
-
 ```
 mixer_type			"software"
 
@@ -137,7 +135,6 @@ mixer_type			"software"
 *   Na kraju, ako koristite pulseaudio pod Gnomom 3, difolt podesavanja "alsa"-e za audio izlaz nece raditi. Napravite jos izmena u:
 
  `/etc/mpd.conf` 
-
 ```
 audio_output {
         type                    "alsa"
@@ -149,7 +146,6 @@ audio_output {
 to
 
  `/etc/mpd.conf` 
-
 ```
 audio_output {
         type                    "pulseaudio"
@@ -369,11 +365,11 @@ lastfmproxy je python skripta koja strimuje last.fm muzicki strim ka drugom medi
 
 **Note:** Posto instarija u direktorijum koji je samo dostupan za citanje, ali zahteva pristup za citanje/pisanje za funkcije poput cuvanje prethodno slusanih stanica, bilo bi pametno kopirati `/usr/share/lastfmproxy` u vas home direktorijum.
 
-Startujte lastfmproxy sa `lastfmproxy` i posetite [http://localhost:1881/](http://localhost:1881/) u vasem web pretrazivacu. Da dodate last.fm stanicu, pronadjite [http://localhost:1881/](http://localhost:1881/) praceno sa lastfm:// url. Primer: [http://localhost:1881/lastfm://globaltags/punk](http://localhost:1881/lastfm://globaltags/punk). Idite nazad na [http://localhost:1881/](http://localhost:1881/) i preuzmite m3u fajl selektovanjem _Start Listening_ linka. Jednostavno ga dodajte u vasu muzicku biblioteku.
+Startujte lastfmproxy sa `lastfmproxy` i posetite [http://localhost:1881/](http://localhost:1881/) u vasem web pretrazivacu. Da dodate last.fm stanicu, pronadjite [http://localhost:1881/](http://localhost:1881/) praceno sa lastfm:// url. Primer: [http://localhost:1881/lastfm://globaltags/punk](http://localhost:1881/lastfm://globaltags/punk). Idite nazad na [http://localhost:1881/](http://localhost:1881/) i preuzmite m3u fajl selektovanjem *Start Listening* linka. Jednostavno ga dodajte u vasu muzicku biblioteku.
 
 ### Nikad ne pustaj na startu
 
-Ova funkcija je skoro dodata u mpd git od strane Martin-a Kellerman-a, pogledajte _commit_-e b57330cf75bcb339e3f268f1019c63e40d305145 i 2fb40fe728ac07574808c40034fc0f3d2254d49d.
+Ova funkcija je skoro dodata u mpd git od strane Martin-a Kellerman-a, pogledajte *commit*-e b57330cf75bcb339e3f268f1019c63e40d305145 i 2fb40fe728ac07574808c40034fc0f3d2254d49d.
 
 #### [mpd-git](https://aur.archlinux.org/packages/mpd-git/) metod
 
@@ -386,8 +382,8 @@ Ako imate problema sa konektovanjem na klijenta [mpd-git](https://aur.archlinux.
 Ako ne zelite da MPD uvek pusta prilikom startovanja sistema, ali ipak zelite da sacuvate druge informacije u vezi stanja daemona, dodajte sledece linije u vas `/etc/rc.d/mpd` fajl:
 
 ```
- _..._
- _stat_busy "Starting Music Player Daemon"_
+ *...*
+ *stat_busy "Starting Music Player Daemon"*
 
 ```
 
@@ -410,8 +406,8 @@ Ako ne zelite da MPD uvek pusta prilikom startovanja sistema, ali ipak zelite da
 ```
 
 ```
- _/usr/bin/mpd /etc/mpd.conf &> /dev/null_
- _..._
+ */usr/bin/mpd /etc/mpd.conf &> /dev/null*
+ *...*
 
 ```
 
@@ -507,22 +503,19 @@ Neki korisnici ce takodje zeleti da kazu dmix-u da koriste i 44kHz. Vise informa
 
 #### Primer konfiguracije: Izlaz sa 44.1 KHz na npr. 16 bit dubini, vise programa odjednom
 
-_Zasto ovi formati?_ Jer su oni standard CDA, jer ALSA sama po sebi dozvoljava da vise od jednog programa "koristi zvuk" samo sa dmix-om - ciji je algoritam za resamplovanje inferioran - i zato sto dmix po difoltu resampluje sve nize od 48 KHz (ili koji god visi format je pusten u tom momentu). Takodje, neki pojedinci dobijaju klikcuce zvukove ako bar `mpd.conf` nije izmenjen na ovaj nacin.
+*Zasto ovi formati?* Jer su oni standard CDA, jer ALSA sama po sebi dozvoljava da vise od jednog programa "koristi zvuk" samo sa dmix-om - ciji je algoritam za resamplovanje inferioran - i zato sto dmix po difoltu resampluje sve nize od 48 KHz (ili koji god visi format je pusten u tom momentu). Takodje, neki pojedinci dobijaju klikcuce zvukove ako bar `mpd.conf` nije izmenjen na ovaj nacin.
 
-_Koji su nedostaci?_ Ova podesavanja uzrokuju da _sve_ (ako je neophodno) bude resamplovano na ovaj format, kao sto je materijal sa DVD-ja ili TV-a koji je uglavnom na 48 KHz. Ali ne postoji poznati nacin da ALSA dinamicki menja format, a posebno ako slusate mnogo vise CD-ova nego bilo sta drugo. 48 → 44.1 i nije preveliki gubitak.
+*Koji su nedostaci?* Ova podesavanja uzrokuju da *sve* (ako je neophodno) bude resamplovano na ovaj format, kao sto je materijal sa DVD-ja ili TV-a koji je uglavnom na 48 KHz. Ali ne postoji poznati nacin da ALSA dinamicki menja format, a posebno ako slusate mnogo vise CD-ova nego bilo sta drugo. 48 → 44.1 i nije preveliki gubitak.
 
 Slece pretpostavlja da ne postoje vec druga podesavanja koja su u konfliktu, odnosno ga prepisuju. Ovo posebno vazi za potencijal trenutnog korisnika `~/.asoundrc` — koji MPD, kao svoj korisnik, ignorise, stoga sledece treba da ide u `/etc/asound.conf`:
 
  `/etc/asound.conf` 
-
 ```
 defaults.pcm.dmix.rate 44100 # Force 44.1 KHz
 defaults.pcm.dmix.format S16_LE # Force 16 bits
 
 ```
-
  `/etc/mpd.conf` 
-
 ```
 audio_output {
         type                    "alsa" # Use the ALSA output plugin.
@@ -537,11 +530,11 @@ audio_output {
 samplerate_converter		"0" # MPD's best, most CPU intensive algorithm. See 'man mpd.conf' for others — for anything other than the poorest "internal", libsamplerate must be installed.
 ```
 
-**Note:** MPD daje mp3 formatu specijalni tretman prilikom dekodiranja: Kao rezultat uvek daje 24 bitni. (Konverzija kao primorana od strane _format_ linije dolazi tek nakon toga.
+**Note:** MPD daje mp3 formatu specijalni tretman prilikom dekodiranja: Kao rezultat uvek daje 24 bitni. (Konverzija kao primorana od strane *format* linije dolazi tek nakon toga.
 
-Ako neko zeli da ostavi odluku vezanu za bit dubinu ALSA-i, odnosno MPD-u, otkomentirajte, odnosno izostavite _dmix.format_ liniju i izmenite jednu za mpd sa _format_ na "44100:*:2".
+Ako neko zeli da ostavi odluku vezanu za bit dubinu ALSA-i, odnosno MPD-u, otkomentirajte, odnosno izostavite *dmix.format* liniju i izmenite jednu za mpd sa *format* na "44100:*:2".
 
-**Note:** _Pretapanje_ izmedju fajlova dekodiranih na dve razlicite dubine bitova (naprimer, jedan mp3 i jedan 16 bitni flac) ne rade ukoliko konverzija nije aktivna.
+**Note:** *Pretapanje* izmedju fajlova dekodiranih na dve razlicite dubine bitova (naprimer, jedan mp3 i jedan 16 bitni flac) ne rade ukoliko konverzija nije aktivna.
 
 ### Upravljaj MPD-om sa lirc-om
 
@@ -908,7 +901,6 @@ Brute-force pristup:
 ```
 
 **Note:** Ako obicno koristite MPD kao root, moracete da pokrenete gornje komande kao root.
-
 U zadnjoj verziji MPD-a, --create-db je potpuno zastareo. Baza ce biti kreirana automatski prilikom prvog pokretanja i moze se nakon toga azurirati preko vaseg klijenta (npr., mpc update). Sada mozete da koristite inotify podrsku da automatski azurira muzicku bazu. Dodajte sledece u `mpd.conf`  `auto_update "yes"` da ga omogucite.
 
 ### Povezivanje na IPV6 pre IPV4

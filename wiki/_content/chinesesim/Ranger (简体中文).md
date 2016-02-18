@@ -110,10 +110,10 @@ mkdir ~/.config/ranger/colorschemes
 
 ```
 
-然后把新的配色方案 `_newscheme_.py` 复制到那个文件夹. 在 `~/.config/ranger/rc.conf` 文件中改变默认的配色方案:
+然后把新的配色方案 `*newscheme*.py` 复制到那个文件夹. 在 `~/.config/ranger/rc.conf` 文件中改变默认的配色方案:
 
 ```
-set colorscheme _newscheme_
+set colorscheme *newscheme*
 
 ```
 
@@ -313,7 +313,6 @@ class mount(Command):
 你可能已经注意到有两个快捷键能够以家目录为默认目录创建新的标签 (`gn` 和 `Ctrl+n`). 不妨重新绑定 `Ctrl+n`:
 
  `rc.conf` 
-
 ```
 map <c-n>  eval fm.tab_new('%d')
 
@@ -323,12 +322,11 @@ map <c-n>  eval fm.tab_new('%d')
 
 #### 目录同步
 
-_ranger_ 提供了一个 shell [function](/index.php/Bash#Functions "Bash") `/usr/share/doc/ranger/examples/bash_automatic_cd.sh`. 执行 `ranger-cd` 会自动切换到最后一次浏览的目录.
+*ranger* 提供了一个 shell [function](/index.php/Bash#Functions "Bash") `/usr/share/doc/ranger/examples/bash_automatic_cd.sh`. 执行 `ranger-cd` 会自动切换到最后一次浏览的目录.
 
 If you launch ranger from a graphical launcher (such as `$TERMCMD -e ranger`, where TERMCMD is an X terminal), you cannot use `ranger-cd`. Create an executable script:
 
  `ranger-launcher.sh` 
-
 ```
 #!/bin/sh
 export RANGERCD=true
@@ -336,10 +334,9 @@ $TERMCMD
 
 ```
 
-and add at the _very end_ of your shell configuration:
+and add at the *very end* of your shell configuration:
 
- `._shell_rc` 
-
+ `.*shell*rc` 
 ```
 $RANGERCD && unset RANGERCD && ranger-cd
 
@@ -352,7 +349,6 @@ This will launch `ranger-cd` only if the `RANGERCD` variable is set. It is impor
 With the previous method you can switch to a shell in last browsed path simply by leaving ranger. However you may not want to quit ranger for several reasons (numerous opened tabs, copy in progress, etc.). You can start a shell from ranger (`S` by default) without losing your ranger session. Unfortunately, the shell will not switch to the current folder automatically. Again, this can be solved with an executable script:
 
  `shellcd` 
-
 ```
 #!/bin/sh
 export AUTOCD="$(realpath "$1")"
@@ -364,7 +360,6 @@ $SHELL
 and - as before - add this to at the very end of your shell configuration:
 
  `shellrc` 
-
 ```
 cd "$AUTOCD"
 
@@ -373,7 +368,6 @@ cd "$AUTOCD"
 Now you can change your shell binding for ranger:
 
  `rc.conf` 
-
 ```
 map S shell shellcd %d
 
@@ -382,7 +376,6 @@ map S shell shellcd %d
 Alternatively, you can make use of your shell history file if it has any. For instance, you could do this for [zsh](/index.php/Zsh#Dirstack "Zsh"):
 
  `shellcd` 
-
 ```
 ## Prepend argument to zsh dirstack.
 BUF="$(realpath "$1")

@@ -44,7 +44,6 @@
 If the touchpad becomes unresponsive, add the following: [[2]](https://bbs.archlinux.org/viewtopic.php?id=107583)
 
  `~/.xinitrc` 
-
 ```
 xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Two-Finger Pressure" 280
 

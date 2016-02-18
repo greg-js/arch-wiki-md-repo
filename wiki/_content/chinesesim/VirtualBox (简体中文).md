@@ -147,15 +147,15 @@ Therefore, if you are using a kernel from the [official repositories](/index.php
 
 #### 定制内核的主机
 
-If you use or intend to use a self-compiled kernel from sources, you have to know that VirtualBox does not require any virtualization modules (e.g. virtuo, kvm,...). The VirtualBox kernel modules provide all the necessary for VirtualBox to work properly. You can thus disable in your kernel _.config_ file these virtualization modules if you do not use other hypervisors like Xen, KVM or QEMU.
+If you use or intend to use a self-compiled kernel from sources, you have to know that VirtualBox does not require any virtualization modules (e.g. virtuo, kvm,...). The VirtualBox kernel modules provide all the necessary for VirtualBox to work properly. You can thus disable in your kernel *.config* file these virtualization modules if you do not use other hypervisors like Xen, KVM or QEMU.
 
 The `virtualbox-host-modules` package works fine with custom kernels of the same version of the Arch Linux stock kernel such as [linux-ck](https://aur.archlinux.org/packages/linux-ck/). Since the `virtualbox-host-modules` comes with the official Arch Linux kernel ([linux](https://www.archlinux.org/packages/?name=linux)) as a dependency and if you do not use that kernel, install [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) instead.
 
 If you are using a custom kernel which is not of the same version of the Arch Linux stock one, you will have to install the [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) too. The latter comes bundled with the source of the VirtualBox kernel modules that will be compiled to generate these modules for your kernel.
 
-As the [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) package requires compilation, make sure you have the kernel headers corresponding to your custom kernel version to prevent this error from happening `Your kernel headers for kernel _your custom kernel version_ cannot be found at /usr/lib/modules/_your custom kernel version_/build or /usr/lib/modules/_your custom kernel version_/source`.
+As the [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) package requires compilation, make sure you have the kernel headers corresponding to your custom kernel version to prevent this error from happening `Your kernel headers for kernel *your custom kernel version* cannot be found at /usr/lib/modules/*your custom kernel version*/build or /usr/lib/modules/*your custom kernel version*/source`.
 
-*   If you use a self-compiled kernel and have used `make modules_install` to install its modules, folders `/usr/lib/modules/_your custom kernel version_/build` and `(...)/source` will be symlinked to your kernel sources. These will act as the kernel headers you need. If you have not removed these kernel sources yet, you have nothing to do.
+*   If you use a self-compiled kernel and have used `make modules_install` to install its modules, folders `/usr/lib/modules/*your custom kernel version*/build` and `(...)/source` will be symlinked to your kernel sources. These will act as the kernel headers you need. If you have not removed these kernel sources yet, you have nothing to do.
 *   If you use a custom kernel from [AUR](/index.php/AUR "AUR"), make sure the package [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) is installed.
 
 一旦[virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) 安装完成后，只要用下面命令生成内核模块：
@@ -214,11 +214,11 @@ $VirtualBox
 
 **Note:** If the VirtualBox kernel modules were loaded in the kernel while you updated the modules, you need to reload them manually to use the new updated version. To do it, run `vboxreload` as root.
 
-Finally, if you use the aforementioned "Host-only" or "bridge networking" feature, make sure [net-tools](https://www.archlinux.org/packages/?name=net-tools) is installed. VirtualBox actually uses `ifconfig` and `route` to assign the IP and route to the host interface configured with `VBoxManage hostonlyif` or via the GUI in _Settings > Network > Host-only Networks > Edit host-only network (space) > Adapter_.
+Finally, if you use the aforementioned "Host-only" or "bridge networking" feature, make sure [net-tools](https://www.archlinux.org/packages/?name=net-tools) is installed. VirtualBox actually uses `ifconfig` and `route` to assign the IP and route to the host interface configured with `VBoxManage hostonlyif` or via the GUI in *Settings > Network > Host-only Networks > Edit host-only network (space) > Adapter*.
 
 ### 添加用户到 vboxusers组
 
-将需要运行 Virtualbox 的用户名添加到 **vboxusers** [用户组](/index.php/Group "Group")，文件夹共享和其它功能需要正确的组才能工作。新组设置不会应用到当前会话，请重新登录或者通过命令 `newgrp` 或 `sudo -u _username_ -s` 启动一个新环境。
+将需要运行 Virtualbox 的用户名添加到 **vboxusers** [用户组](/index.php/Group "Group")，文件夹共享和其它功能需要正确的组才能工作。新组设置不会应用到当前会话，请重新登录或者通过命令 `newgrp` 或 `sudo -u *username* -s` 启动一个新环境。
 
 ```
 # gpasswd -a $USER vboxusers
@@ -227,13 +227,13 @@ Finally, if you use the aforementioned "Host-only" or "bridge networking" featur
 
 ### Guest 附加光盘
 
-建议在运行VirtualBox 的主机系统上安装[virtualbox-guest-iso](https://www.archlinux.org/packages/?name=virtualbox-guest-iso) 软件包 。 这个包是一个磁盘镜像，用来安装虚拟系统的附加功能。 The _.iso_ file will be located at `/usr/lib/virtualbox/additions/VBoxGuestAdditions.iso`, and may have to be mounted manually inside the virtual machine. Once mounted, you can run the guest additions installer inside the guest.
+建议在运行VirtualBox 的主机系统上安装[virtualbox-guest-iso](https://www.archlinux.org/packages/?name=virtualbox-guest-iso) 软件包 。 这个包是一个磁盘镜像，用来安装虚拟系统的附加功能。 The *.iso* file will be located at `/usr/lib/virtualbox/additions/VBoxGuestAdditions.iso`, and may have to be mounted manually inside the virtual machine. Once mounted, you can run the guest additions installer inside the guest.
 
 ### 扩展包
 
 Since VirtualBox 4.0, non-GPL components have been split from the rest of the application. Despite being released under a non-free license and **being only available for personal use**, you might be interested in installing the Oracle Extension Pack which provides [additional features](https://www.virtualbox.org/manual/ch01.html#intro-installing). To avoid manual manipulation, the [virtualbox-ext-oracle](https://aur.archlinux.org/packages/virtualbox-ext-oracle/) package is available, and a prebuilt version can be found in the [seblu](/index.php/Unofficial_user_repositories#seblu "Unofficial user repositories") repository.
 
-If you prefer to use the traditional and manual way: download the extension manually and install it via the GUI (_File > Preferences > Extensions_) or via `VBoxManage extpack install <.vbox-extpack>`, make sure you have a toolkit (like [Polkit](/index.php/Polkit "Polkit"), gksu, etc.) to grant privileged access to VirtualBox. The installation of this extension [requires root access](https://www.virtualbox.org/ticket/8473).
+If you prefer to use the traditional and manual way: download the extension manually and install it via the GUI (*File > Preferences > Extensions*) or via `VBoxManage extpack install <.vbox-extpack>`, make sure you have a toolkit (like [Polkit](/index.php/Polkit "Polkit"), gksu, etc.) to grant privileged access to VirtualBox. The installation of this extension [requires root access](https://www.virtualbox.org/ticket/8473).
 
 ### 使用正确的前端
 
@@ -241,7 +241,7 @@ If you prefer to use the traditional and manual way: download the extension manu
 
 多个前端提供给您，其中两个是默认提供:
 
-*   If you want to use VirtualBox in command-line only (only launch and change settings of existing virtual machines), you can use the `VBoxSDL` command. VBoxSDL does only provide a simple window that contains only the _pure_ virtual machine, without menus or other controls.
+*   If you want to use VirtualBox in command-line only (only launch and change settings of existing virtual machines), you can use the `VBoxSDL` command. VBoxSDL does only provide a simple window that contains only the *pure* virtual machine, without menus or other controls.
 *   If you want to use VirtualBox in command-line without any GUI running (e.g. on a server) to create, launch and configure virtual machines, use the `VBoxHeadless` which produces no visible output on the host at all, but instead only delivers VRDP data.
 
 If you installed the [qt4](https://www.archlinux.org/packages/?name=qt4) optional dependency, you can run `VirtualBox` and have a nice-looking GUI interface with menus usable via the mouse.
@@ -264,7 +264,7 @@ Boot the Arch installation media through one of the virtual machine's virtual dr
 
 #### 安装模式为EFI
 
-If you want to install Arch Linux in EFI mode inside VirtualBox, in the settings of the virtual machine, go in the _Settings_ tab, and check the checkbox _Enable EFI (special OSes only)_. After selecting the kernel from the Arch Linux installation media's menu, the media will hang for a minute or two and will continue to boot the kernel normally afterwards. Be patient.
+If you want to install Arch Linux in EFI mode inside VirtualBox, in the settings of the virtual machine, go in the *Settings* tab, and check the checkbox *Enable EFI (special OSes only)*. After selecting the kernel from the Arch Linux installation media's menu, the media will hang for a minute or two and will continue to boot the kernel normally afterwards. Be patient.
 
 When booting in EFI mode, VirtualBox will first attempt to run `/EFI/BOOT/BOOTX64.EFI` from the ESP. If that first option fails, VirtualBox will then try the EFI shell script `startup.nsh` from the root of the ESP. Unless you want to manually launch your bootloader from the EFI shell every time, you will need to move your bootloader to that default path. Do not bother with the VirtualBox Boot Manager (accessible with `F2` at boot): EFI entries added to it manually at boot or with [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) will persist after a reboot [but are lost when the VM is shut down](https://www.virtualbox.org/ticket/11177).
 
@@ -272,7 +272,7 @@ When booting in EFI mode, VirtualBox will first attempt to run `/EFI/BOOT/BOOTX6
 
 我对这方面的设置有非常不好的经历，但是依然可以办到。
 
-_UPD. Using efibootmgr has the same effect as using VirtualBox boot menu (see the note below): settings [disappear](https://www.virtualbox.org/ticket/11177) after VM shutdown._首先要说的是 `efibootmgr` *完全无效*。虽然看起来是正常的，但是所有更动似乎在重啟后就失效。在进行正常 UEFI/GPT 安装后重啟，你会被丢到 EFI shell。送出 exit 后会看到菜单，选中 Boot Management Manager -> Boot Options -> Add Boot Option。使用文件浏览器找到 grub efi 文件并选中，添加你要的标签。之后，菜单选中 Change Boot Order，使用方向键选中你的 Arch 选项，按下 `+` 移到最上方。现在 GRUB 应该默认啟动了。
+*UPD. Using efibootmgr has the same effect as using VirtualBox boot menu (see the note below): settings [disappear](https://www.virtualbox.org/ticket/11177) after VM shutdown.*首先要说的是 `efibootmgr` *完全无效*。虽然看起来是正常的，但是所有更动似乎在重啟后就失效。在进行正常 UEFI/GPT 安装后重啟，你会被丢到 EFI shell。送出 exit 后会看到菜单，选中 Boot Management Manager -> Boot Options -> Add Boot Option。使用文件浏览器找到 grub efi 文件并选中，添加你要的标签。之后，菜单选中 Change Boot Order，使用方向键选中你的 Arch 选项，按下 `+` 移到最上方。现在 GRUB 应该默认啟动了。
 
 其它选项: 1) 将引导程序移到 `\EFI\boot\bootx64.efi`, 2) 创建 `\startup.nsh` 脚本，运行选定的引导程序，就像这样:
 
@@ -292,7 +292,7 @@ Yet another useful way to get to VirtualBox boot menu is pressing `F12` right af
 
 After completing the installation of the guest system, install the VirtualBox [Guest Additions](https://www.virtualbox.org/manual/ch04.html) which include drivers and applications that optimize the guest operating system. These can be installed via [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils), which provides [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) as a required dependency.
 
-**Note:** The method described in the [VirtualBox manual](https://www.virtualbox.org/manual/ch04.html#idp54932560) does not work on Arch Linux guests, resulting in an `Unable to determine your Linux distribution` repeated several times as error message. If you tried this method first and you use the right solution described above afterwards, this will fail. You will get a [file conflict](/index.php/Pacman#.22Failed_to_commit_transaction_.28conflicting_files.29.22_error "Pacman"): `/usr/bin/VBox*` and `/usr/lib/VBox* exists in filesystem`. The solution is to remove the offending files first with `rm /usr/bin/VBox* /usr/lib/VBox*` as root. These files are actually symbolic links to the location where the additions tools were installed; by default, this is `/opt/VBoxGuestAdditions-_version number_`. Remove these files too with `rm -r /opt/VBoxGuestAdditions-_version number_` as they are not needed. Now you can restart the installation from the right method above.
+**Note:** The method described in the [VirtualBox manual](https://www.virtualbox.org/manual/ch04.html#idp54932560) does not work on Arch Linux guests, resulting in an `Unable to determine your Linux distribution` repeated several times as error message. If you tried this method first and you use the right solution described above afterwards, this will fail. You will get a [file conflict](/index.php/Pacman#.22Failed_to_commit_transaction_.28conflicting_files.29.22_error "Pacman"): `/usr/bin/VBox*` and `/usr/lib/VBox* exists in filesystem`. The solution is to remove the offending files first with `rm /usr/bin/VBox* /usr/lib/VBox*` as root. These files are actually symbolic links to the location where the additions tools were installed; by default, this is `/opt/VBoxGuestAdditions-*version number*`. Remove these files too with `rm -r /opt/VBoxGuestAdditions-*version number*` as they are not needed. Now you can restart the installation from the right method above.
 
 ### Arch Linux 客户端
 
@@ -300,7 +300,7 @@ After completing the installation of the guest system, install the VirtualBox [G
 
 #### Windows 客户端
 
-在你的虚拟机中安装Windows（XP 等等）后，只需选择_设备 → 安装增强功能_
+在你的虚拟机中安装Windows（XP 等等）后，只需选择*设备 → 安装增强功能*
 
 这将会挂载ISO镜像，接着Windows应该自动运行客户端增强包安装向导（The guest additions installer）。按照说明进行到底。
 
@@ -328,7 +328,6 @@ As this installation step is quite similar to the Vitualbox kernel modules secti
 开机时自动加载VirtualBox模块[Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules") 创建`*.conf` 文件 (e.g. `virtualbox.conf`) 在`/etc/modules-load.d/` 加入如下几行:
 
  `/etc/modules-load.d/virtualbox.conf` 
-
 ```
 vboxguest
 vboxsf
@@ -355,14 +354,14 @@ $ VBoxClient --clipboard --draganddrop --seamless --display --checkhostversion
 
 As a shortcut, the `VBoxClient-all` bash script enables all of these features. You should set `VBoxClient` to be automatically loaded as your [desktop environment](/index.php/Desktop_environment "Desktop environment") or [window manager](/index.php/Window_manager "Window manager") starts. In practice,
 
-*   if you are using a [desktop environment](/index.php/Desktop_environment "Desktop environment"), you just need to check a box or add the `/usr/sbin/VBoxClient-all` to the autostart section in your [desktop environment](/index.php/Desktop_environment "Desktop environment") settings (the DE will typically set a flag to a _.desktop_ file in `~/.config/autostart`, see [the Autostart section](/index.php/Autostart#Desktop_entries "Autostart") for more details);
+*   if you are using a [desktop environment](/index.php/Desktop_environment "Desktop environment"), you just need to check a box or add the `/usr/sbin/VBoxClient-all` to the autostart section in your [desktop environment](/index.php/Desktop_environment "Desktop environment") settings (the DE will typically set a flag to a *.desktop* file in `~/.config/autostart`, see [the Autostart section](/index.php/Autostart#Desktop_entries "Autostart") for more details);
 *   if you do not have any [desktop environment](/index.php/Desktop_environment "Desktop environment"), add the following line to the top of `~/.xinitrc` above any `exec` options. See [Xinitrc](/index.php/Xinitrc "Xinitrc") for detail.
 
  `~/.xinitrc`  `/usr/bin/VBoxClient-all` 
 
 VirtualBox can also synchronize the time between the host and the guest. To do this, run `VBoxService` as root. To set this to run automatically on boot, simply [enable](/index.php/Enable "Enable") the `vboxservice` service.
 
-Now, you should have a working Arch Linux guest. Note that features like clipboard sharing are disabled by default in VirtualBox, and you will need to turn them on in the per-VM settings if you actually want to use them (e.g. _Settings > General > Advanced > Shared Clipboard_).
+Now, you should have a working Arch Linux guest. Note that features like clipboard sharing are disabled by default in VirtualBox, and you will need to turn them on in the per-VM settings if you actually want to use them (e.g. *Settings > General > Advanced > Shared Clipboard*).
 
 If you want to share folders between your host and your Arch Linux guest, read on.
 
@@ -378,7 +377,7 @@ If you want to share folders between your host and your Arch Linux guest, read o
 
 ```
 
-Shared folders are managed on the host, in the settings of the Virtual Machine accessible via the GUI of VirtualBox, in the _Shared Folders_ tab. There, _Folder Path_, the name of the mount point identified by _Folder name_, and options like _Read-only_, _Auto-mount_ and _Make permanent_ can be specified. These parameters can be defined with the `VBoxManage` command line utility. See [there for more details](https://www.virtualbox.org/manual/ch04.html#sharedfolders).
+Shared folders are managed on the host, in the settings of the Virtual Machine accessible via the GUI of VirtualBox, in the *Shared Folders* tab. There, *Folder Path*, the name of the mount point identified by *Folder name*, and options like *Read-only*, *Auto-mount* and *Make permanent* can be specified. These parameters can be defined with the `VBoxManage` command line utility. See [there for more details](https://www.virtualbox.org/manual/ch04.html#sharedfolders).
 
 No matter which method you will use to mount your folder, all methods require some steps first.
 
@@ -424,7 +423,7 @@ $sudo gpasswd -a $USER vboxsf
 Use the following command to mount your folder in your Arch Linux guest:
 
 ```
-# mount -t vboxsf _shared_folder_name_ _mount_point_on_guest_system_
+# mount -t vboxsf *shared_folder_name* *mount_point_on_guest_system*
 
 ```
 
@@ -435,25 +434,25 @@ The vboxsf filesystem offers other options which can be displayed with this comm
 
 ```
 
-For example if the user was not in the _vboxsf_ group, we could have used this command to give access our mountpoint to him:
+For example if the user was not in the *vboxsf* group, we could have used this command to give access our mountpoint to him:
 
 ```
 # mount -t vboxsf -o uid=1000,gid=1000 home /mnt/
 
 ```
 
-Where _uid_ and _gid_ are values corresponding to the users we want to give access to. These values are obtained from the `id` command run against this user.
+Where *uid* and *gid* are values corresponding to the users we want to give access to. These values are obtained from the `id` command run against this user.
 
 #### 自动挂载
 
 In order for the automounting feature to work you must have checked the auto-mount checkbox in the GUI or used the optional `--automount` argument with the command `VBoxManage sharedfolder`.
 
-The shared folder should now appear in `/media/sf__shared_folder_name_`. If users in `media` cannot access the shared folders, check that `media` has permissions 755 or has group ownership `vboxsf` if using permission 750\. This is currently not the default if media is created by installing the `virtualbox-guest-utils`.
+The shared folder should now appear in `/media/sf_*shared_folder_name*`. If users in `media` cannot access the shared folders, check that `media` has permissions 755 or has group ownership `vboxsf` if using permission 750\. This is currently not the default if media is created by installing the `virtualbox-guest-utils`.
 
 You can use symlinks if you want to have a more convenient access and avoid to browse in that directory, e.g.:
 
 ```
-$ ln -s /media/sf__shared_folder_name_ ~/_my_documents_
+$ ln -s /media/sf_*shared_folder_name* ~/*my_documents*
 
 ```
 
@@ -466,7 +465,7 @@ desktop   /media/desktop    vboxsf  uid=user,gid=group,rw,dmode=700,fmode=600,co
 
 ```
 
-As of 2012-08-02, mount.vboxsf does not support the _nofail_ option:
+As of 2012-08-02, mount.vboxsf does not support the *nofail* option:
 
 ```
 desktop   /media/desktop    vboxsf  uid=user,gid=group,rw,dmode=700,fmode=600,nofail 0 0
@@ -491,8 +490,8 @@ If you have installed the additions to your virtual machine, please uninstall th
 
 Some companies provide tools which offer the ability to create virtual machines from a Windows or GNU/Linux operating system located either in a virtual machine or even in a native installation. With such a product, you do not need to apply this and the following steps and can stop reading here.
 
-*   _[Parallels Transporter](http://www.parallels.com/products/transporter)_ which is non free, is a product from Parallels Inc. This solution basically consists in an piece of software called _agent_ that will be installed in the guest you want to import/convert. Then, Parallels Transporter, <u>which only works on OS X</u>, will create a virtual machine from that _agent_ which is contacted either by USB or Ethernet network.
-*   _[VMware vCenter Converter](https://www.vmware.com/products/converter/)_ which is free upon registration on the VMware webiste, works nearly the same way as Parallels Transporter, but the piece of software that will gather the data to create the virtual machine only works on a Windows platform.
+*   *[Parallels Transporter](http://www.parallels.com/products/transporter)* which is non free, is a product from Parallels Inc. This solution basically consists in an piece of software called *agent* that will be installed in the guest you want to import/convert. Then, Parallels Transporter, <u>which only works on OS X</u>, will create a virtual machine from that *agent* which is contacted either by USB or Ethernet network.
+*   *[VMware vCenter Converter](https://www.vmware.com/products/converter/)* which is free upon registration on the VMware webiste, works nearly the same way as Parallels Transporter, but the piece of software that will gather the data to create the virtual machine only works on a Windows platform.
 
 #### 手动转换
 
@@ -511,7 +510,7 @@ First, familiarize yourself with the [#Formats supported by VirtualBox](#Formats
 
 Each hypervisor have their own virtual machine configuration file: `.vbox` for VirtualBox, `.vmx` for VMware, a `config.pvs` file located in the virtual machine bundle (`.pvm` file), etc. You will have thus to recreate a new virtual machine in your new destination hypervisor and specify its hardware configuration as close as possible as your initial virtual machine.
 
-Pay a close attention to the firmware interface (BIOS or UEFI) used to install the guest operating system. While an option is available to choose between these 2 interfaces on VirtualBox and on Parallels solutions, on VMware, you will have to add manually the following line to your _.vmx_ file.
+Pay a close attention to the firmware interface (BIOS or UEFI) used to install the guest operating system. While an option is available to choose between these 2 interfaces on VirtualBox and on Parallels solutions, on VMware, you will have to add manually the following line to your *.vmx* file.
 
  `ArchLinux_vm.vmx`  `firmware = "efi"` 
 
@@ -520,7 +519,7 @@ Finally, ask your hypervisor to use the existing virtual disk you have converted
 **Tip:**
 
 *   On VirtualBox, if you do not want to browse the whole GUI to find the right location to add your new virtual drive device, you can [#Replace a virtual disk manually from the .vbox file](#Replace_a_virtual_disk_manually_from_the_.vbox_file), or use the `VBoxManage storageattach` described in [#Increase virtual disks](#Increase_virtual_disks) or in the [VirtualBox manual page](https://www.virtualbox.org/manual/ch08.html#vboxmanage-storageattach).
-*   Similarly, in VMware products, you can replace the location of the current virtual disk location by adapting the _.vmdk_ file location in your _.vmx_ configuration file.
+*   Similarly, in VMware products, you can replace the location of the current virtual disk location by adapting the *.vmdk* file location in your *.vmx* configuration file.
 
 ## 虚拟磁盘管理
 
@@ -558,14 +557,14 @@ VirtualBox can handle back and forth conversion between VDI and VMDK by itself w
 VMDK to VDI:
 
 ```
-$ VBoxManage clonehd _source.vmdk_ _destination.vdi_ --format VDI
+$ VBoxManage clonehd *source.vmdk* *destination.vdi* --format VDI
 
 ```
 
 VDI to VMDK:
 
 ```
-$ VBoxManage clonehd _source.vdi_ _destination.vmdk_ --format VMDK
+$ VBoxManage clonehd *source.vdi* *destination.vmdk* --format VMDK
 
 ```
 
@@ -576,47 +575,47 @@ VirtualBox can handle conversion back and forth this format with [`VBoxManage cl
 VHD to VDI:
 
 ```
-$ VBoxManage clonehd _source.vhd_ _destination.vdi_ --format VDI
+$ VBoxManage clonehd *source.vhd* *destination.vdi* --format VDI
 
 ```
 
 VDI to VHD:
 
 ```
-$ VBoxManage clonehd _source.vdi_ _destination.vhd_ --format VHD
+$ VBoxManage clonehd *source.vdi* *destination.vhd* --format VHD
 
 ```
 
 #### QCOW2 to VDI and VDI to QCOW2
 
 [`VBoxManage clonehd`](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi) cannot handle the QEMU format conversion; we will thus rely on another tool. The `qemu-img` command from [qemu](https://www.archlinux.org/packages/?name=qemu) can be used to convert images back and forth from VDI to QCOW2\.
-**Note:** `qemu-img` can handle a bunch of other formats too. According to the `qemu-img --help`, here are the supported formats this tool supports: "_vvfat vpc vmdk vhdx vdi ssh sheepdog sheepdog sheepdog raw host_cdrom host_floppy host_device file qed qcow2 qcow parallels nbd nbd nbd iscsi dmg tftp ftps ftp https http cow cloop bochs blkverify blkdebug'"._
+**Note:** `qemu-img` can handle a bunch of other formats too. According to the `qemu-img --help`, here are the supported formats this tool supports: "*vvfat vpc vmdk vhdx vdi ssh sheepdog sheepdog sheepdog raw host_cdrom host_floppy host_device file qed qcow2 qcow parallels nbd nbd nbd iscsi dmg tftp ftps ftp https http cow cloop bochs blkverify blkdebug'".*
 
 QCOW2 to VDI:
 
 ```
-$ qemu-img convert -pO vdi _source.qcow2_ _destination.vdi_
+$ qemu-img convert -pO vdi *source.qcow2* *destination.vdi*
 
 ```
 
 VDI to QCOW2:
 
 ```
-$ qemu-img convert -pO qcow2 _source.vdi_ _destination.qcow2_
+$ qemu-img convert -pO qcow2 *source.vdi* *destination.qcow2*
 
 ```
 
 As QCOW2 comes in two revisions (see [#Formats supported by VirtualBox](#Formats_supported_by_VirtualBox), use the flag `-o compat=` to specify the revision.
 
 ```
-$ qemu-img convert -pO qcow2 _source.vdi_ _destination.qcow2_ -o compat=0.10
+$ qemu-img convert -pO qcow2 *source.vdi* *destination.qcow2* -o compat=0.10
 
 ```
 
 or
 
 ```
-$ qemu-img convert -pO qcow2 _source.vdi_ _destination.qcow2_ -o compat=1.1
+$ qemu-img convert -pO qcow2 *source.vdi* *destination.qcow2* -o compat=1.1
 
 ```
 
@@ -633,7 +632,7 @@ $ qemu-img convert -pO qcow2 _source.vdi_ _destination.qcow2_ -o compat=1.1
 
 ### 从QEMU映像转换
 
-To convert a QEMU image for use with VirtualBox, first convert it to _raw_ format, then use VirtualBox's conversion utility to convert and compact it in its native format.
+To convert a QEMU image for use with VirtualBox, first convert it to *raw* format, then use VirtualBox's conversion utility to convert and compact it in its native format.
 
 ```
   $ qemu-img convert -O raw test.qcow2 test.raw
@@ -680,7 +679,7 @@ The can now be mounted with:
 You can also use [mount.vdi](https://github.com/pld-linux/VirtualBox/blob/master/mount.vdi) script that, which you can use as (install script itself to `/usr/bin/`):
 
 ```
-# mount -t vdi -o fstype=ext4,rw,noatime,noexec _vdi_file_location_ _/mnt/_
+# mount -t vdi -o fstype=ext4,rw,noatime,noexec *vdi_file_location* */mnt/*
 
 ```
 
@@ -706,21 +705,21 @@ Boot your virtual machine and remove all bloat manually or by using cleaning too
 
 Wiping free space with zeroes can be achieved with several tools:
 
-*   If you were previously using Bleachbit, check the checkbox _System > Free disk space_ in the GUI, or use `bleachbit -c system.free_disk_space` in CLI;
+*   If you were previously using Bleachbit, check the checkbox *System > Free disk space* in the GUI, or use `bleachbit -c system.free_disk_space` in CLI;
 *   在 UNIX基本系统,使用 `dd` or preferably [dcfldd](https://www.archlinux.org/packages/?name=dcfldd) (see [here](http://superuser.com/a/355322) to learn the differences) :
 
-	 `# dcfldd if=/dev/zero of=_/fillfile_ bs=4M` 
+	 `# dcfldd if=/dev/zero of=*/fillfile* bs=4M` 
 
 	When `fillfile` reaches the limit of the partition, you will get a message like `1280 blocks (5120Mb) written.dcfldd:: No space left on device`. This means that all of the user-space and non-reserved blocks of the partition will be filled with zeros. Using this command as root is important to make sure all free blocks have been overwritten. Indeed, by default, when using partitions with ext filesystem, a specified percentage of filesystem blocks is reserved for the super-user (see the `-m` argument in the `mkfs.ext4` man pages or use `tune2fs -l` to see how much space is reserved for root applications).
 
-	When the aforementioned process has completed, you can remove the file `_fillfile_` you created.
+	When the aforementioned process has completed, you can remove the file `*fillfile*` you created.
 
 *   On Windows, there are two tools available:
 
-*   `sdelete` from the [Sysinternals Suite](http://technet.microsoft.com/en-us/sysinternals/bb842062.aspx), type `sdelete -s -z _c:_`, where you need to reexecute the command for each drive you have in your virtual machine;
+*   `sdelete` from the [Sysinternals Suite](http://technet.microsoft.com/en-us/sysinternals/bb842062.aspx), type `sdelete -s -z *c:*`, where you need to reexecute the command for each drive you have in your virtual machine;
 *   or, if you love scripts, there is a [PowerShell solution](http://blog.whatsupduck.net/2012/03/powershell-alternative-to-sdelete.html), but which still needs to be repeated for all drives.
 
-	 `PS> ./Write-ZeroesToFreeSpace.ps1 -Root _c:\_ -PercentFree 0` 
+	 `PS> ./Write-ZeroesToFreeSpace.ps1 -Root *c:\* -PercentFree 0` 
 
 **Note:** This script must be run in a PowerShell environment with administrator privileges. By default, scripts cannot be run, ensure the execution policy is at least on `RemoteSigned` and not on `Restricted`. This can be checked with `Get-ExecutionPolicy` and the required policy can be set with `Set-ExecutionPolicy RemoteSigned`.
 
@@ -734,13 +733,13 @@ The next time you boot your virtual machine, it is recommended to do a filesyste
 
 *   On Windows systems, you can use:
 
-*   either `chkdsk _c:_ /F` where `_c:_` needs to be replaced by each disk you need to scan and fix errors;
+*   either `chkdsk *c:* /F` where `*c:*` needs to be replaced by each disk you need to scan and fix errors;
 *   or `FsckDskAll` [from here](http://therightstuff.de/2009/02/14/ChkDskAll-ChkDsk-For-All-Drives.aspx) which is basically the same software as `chkdsk`, but without the need to repeat the command for all drives;
 
 Now, remove the zeros from the `vdi` file with `[VBoxManage modifyhd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi)`:
 
 ```
-$ VBoxManage modifyhd _your_disk.vdi_ --compact
+$ VBoxManage modifyhd *your_disk.vdi* --compact
 
 ```
 
@@ -753,30 +752,30 @@ If you are running out of space due to the small hard drive size you selected wh
 First, create a new virtual disk next to the one you want to increase:
 
 ```
-$ VBoxManage createhd -filename _new.vdi_ --size _10000_
+$ VBoxManage createhd -filename *new.vdi* --size *10000*
 
 ```
 
-where size is in MiB, in this example 10000MiB ~= 10GiB, and _new.vdi_ is name of new hard drive to be created.
+where size is in MiB, in this example 10000MiB ~= 10GiB, and *new.vdi* is name of new hard drive to be created.
 
 Next, the old virtual disk needs to be cloned to the new one which this may take some time:
 
 ```
-$ VBoxManage clonehd _old.vdi_ _new.vdi_ --existing
+$ VBoxManage clonehd *old.vdi* *new.vdi* --existing
 
 ```
 
-**Note:** By default, this command uses the _Standard_ (corresponding to dynamic allocated) file format variant and thus will not use the same file format variant as your source virtual disk. If your _old.vdi_ has a fixed size and you want to keep this variant, add the parameter `--variant Fixed`.
+**Note:** By default, this command uses the *Standard* (corresponding to dynamic allocated) file format variant and thus will not use the same file format variant as your source virtual disk. If your *old.vdi* has a fixed size and you want to keep this variant, add the parameter `--variant Fixed`.
 
 Detach the old hard drive and attach new one, replace all mandatory italic arguments by your own:
 
 ```
-$ VBoxManage storageattach _VM_name_ --storagectl _SATA_ --port _0_ --medium none
-$ VBoxManage storageattach _VM_name_ --storagectl _SATA_ --port _0_ --medium _new.vdi_ --type hdd
+$ VBoxManage storageattach *VM_name* --storagectl *SATA* --port *0* --medium none
+$ VBoxManage storageattach *VM_name* --storagectl *SATA* --port *0* --medium *new.vdi* --type hdd
 
 ```
 
-To get the storage controller name and the port number, you can use the command `VBoxManage showvminfo _VM_name_`. Among the output you will get such a result (what you are looking for is in italic):
+To get the storage controller name and the port number, you can use the command `VBoxManage showvminfo *VM_name*`. Among the output you will get such a result (what you are looking for is in italic):
 
 ```
 [...]
@@ -793,43 +792,42 @@ Storage Controller Max Port Count (1):  30
 Storage Controller Port Count (1):      1
 Storage Controller Bootable (1):        on
 IDE (1, 0): Empty
-_SATA_ (_0_, 0): /home/wget/IT/Virtual_machines/GNU_Linux_distributions/ArchLinux_x64_EFI/Snapshots/{6bb17af7-e8a2-4bbf-baac-fbba05ebd704}.vdi (UUID: 6bb17af7-e8a2-4bbf-baac-fbba05ebd704)
+*SATA* (*0*, 0): /home/wget/IT/Virtual_machines/GNU_Linux_distributions/ArchLinux_x64_EFI/Snapshots/{6bb17af7-e8a2-4bbf-baac-fbba05ebd704}.vdi (UUID: 6bb17af7-e8a2-4bbf-baac-fbba05ebd704)
 [...]
 ```
 
 Download [GParted live image](http://gparted.org/download.php) and mount it as a virtual CD/DVD disk file, boot your virtual machine, increase/move your partitions, umount GParted live and reboot.
 
-**Note:** On GPT disks, increasing the size of the disk will result in the backup GPT header not being at the end of the device. GParted will ask to fix this, click on _Fix_ both times. On MBR disks, you do not have such a problem as this partition table as no trailer at the end of the disk.
+**Note:** On GPT disks, increasing the size of the disk will result in the backup GPT header not being at the end of the device. GParted will ask to fix this, click on *Fix* both times. On MBR disks, you do not have such a problem as this partition table as no trailer at the end of the disk.
 
 Finally, unregister the virtual disk from VirtualBox and remove the file:
 
 ```
-$ VBoxManage closemedium disk _old.vdi_
-$ rm _old.vdi_
+$ VBoxManage closemedium disk *old.vdi*
+$ rm *old.vdi*
 
 ```
 
 ### 从.vbox文件中手动更换虚拟磁盘
 
-If you think that editing a simple _XML_ file is more convenient than playing with the GUI or with `VBoxManage` and you want to replace (or add) a virtual disk to your virtual machine, in the _.vbox_ configuration file corresponding to your virtual machine, simply replace the GUID, the file location and the format to your needs:
+If you think that editing a simple *XML* file is more convenient than playing with the GUI or with `VBoxManage` and you want to replace (or add) a virtual disk to your virtual machine, in the *.vbox* configuration file corresponding to your virtual machine, simply replace the GUID, the file location and the format to your needs:
 
- `ArchLinux_vm.vbox`  `<HardDisk uuid="_{670157e5-8bd4-4f7b-8b96-9ee412a712b5}_" location="_ArchLinux_vm.vdi_" format="_VDI_" type="Normal"/>` 
+ `ArchLinux_vm.vbox`  `<HardDisk uuid="*{670157e5-8bd4-4f7b-8b96-9ee412a712b5}*" location="*ArchLinux_vm.vdi*" format="*VDI*" type="Normal"/>` 
 
 then in the `<AttachedDevice>` sub-tag of `<StorageController>`, replace the GUID by the new one.
 
  `ArchLinux_vm.vbox` 
-
 ```
 <AttachedDevice type="HardDisk" port="0" device="0">
-  <Image uuid="_{670157e5-8bd4-4f7b-8b96-9ee412a712b5}_"/>
+  <Image uuid="*{670157e5-8bd4-4f7b-8b96-9ee412a712b5}*"/>
 </AttachedDevice>
 ```
 
-**Note:** If you do not know the GUID of the drive you want to add, you can use the `VBoxManage showhdinfo _file_`. If you previously used `VBoxManage clonehd` to copy/convert your virtual disk, this command should have outputted the GUID just after the copy/conversion completed. Using a random GUID does not work, as each [UUID is stored inside each disk image](http://www.virtualbox.org/manual/ch05.html#cloningvdis).
+**Note:** If you do not know the GUID of the drive you want to add, you can use the `VBoxManage showhdinfo *file*`. If you previously used `VBoxManage clonehd` to copy/convert your virtual disk, this command should have outputted the GUID just after the copy/conversion completed. Using a random GUID does not work, as each [UUID is stored inside each disk image](http://www.virtualbox.org/manual/ch05.html#cloningvdis).
 
 #### Linux主机和其他操作系统之间的转移
 
-The information about path to harddisks and the snapshots is stored between `<HardDisks> .... </HardDisks>` tags in the file with the _.vbox_ extension. You can edit them manually or use this script where you will need change only the path or use defaults, assumed that _.vbox_ is in the same directory with a virtual harddisk and the snapshots folder. It will print out new configuration to stdout.
+The information about path to harddisks and the snapshots is stored between `<HardDisks> .... </HardDisks>` tags in the file with the *.vbox* extension. You can edit them manually or use this script where you will need change only the path or use defaults, assumed that *.vbox* is in the same directory with a virtual harddisk and the snapshots folder. It will print out new configuration to stdout.
 
 ```
 #!/bin/bash
@@ -851,7 +849,7 @@ else print $0}' "$Filename"
 
 *   If you will prepare virtual machine for use in Windows host then in the path name end you should use backslash \ instead of / .
 *   The script detects snapshots by looking for `{` in the file name.
-*   To make it run on a new host you will need to add it first to the register by clicking on **Machine -> Add...** or use hotkeys Ctrl+A and then browse to _.vbox_ file that contains configuration or use command line `VBoxManage registervm _filename_.vbox`
+*   To make it run on a new host you will need to add it first to the register by clicking on **Machine -> Add...** or use hotkeys Ctrl+A and then browse to *.vbox* file that contains configuration or use command line `VBoxManage registervm *filename*.vbox`
 
 ## 配置
 
@@ -865,9 +863,9 @@ VirtualBox 客户端可以通过不同的方式连接网络；其中，有[#NAT]
 
 在VirtualBox中：
 
-*   访问虚拟机的_设置_菜单；
-*   点击左边的_网络‘’；最后，_
-*   在“连接方式”的下拉列表中选择_NAT_。
+*   访问虚拟机的*设置*菜单；
+*   点击左边的*网络‘’；最后，*
+*   在“连接方式”的下拉列表中选择*NAT*。
 
 与VirtualBox捆绑的DHCP服务使得客户端系统能够与DHCP一起配置，第一张卡的NAT IP地址是 10.0.2.0，第二张是10.0.3.0，往后以此类推。
 
@@ -884,10 +882,10 @@ VirtualBox 客户端可以通过不同的方式连接网络；其中，有[#NAT]
 
 在VirtualBox中：
 
-*   访问虚拟机的_设置_菜单；
-*   点击左边列表中的_网络_
-*   在_链接方式_的下拉列表中选择_Bridged Adapter(桥接适配器)_；最后，
-*   在_界面名称_下拉列表中，选择客户端操作系统被包含在内，主机用于连接网络的接口。
+*   访问虚拟机的*设置*菜单；
+*   点击左边列表中的*网络*
+*   在*链接方式*的下拉列表中选择*Bridged Adapter(桥接适配器)*；最后，
+*   在*界面名称*下拉列表中，选择客户端操作系统被包含在内，主机用于连接网络的接口。
 
 Start the virtual machine and configure its network as usual; e.g., DHCP or static. 打开虚拟机，像往常一样配置其网络；例如 DHCP 或 static（静态网络）。
 
@@ -905,7 +903,7 @@ Start the virtual machine and configure its network as usual; e.g., DHCP or stat
 *   注意：为了使用这个功能你需要安装客户端增强包。
 
 ```
-在Linux主机中，_设备 → 安装增强功能_
+在Linux主机中，*设备 → 安装增强功能*
 确定（被要求下载CD镜像时）
 挂载（被要求注册和挂载时）
 
@@ -913,7 +911,7 @@ Start the virtual machine and configure its network as usual; e.g., DHCP or stat
 
 In a Linux host, create one or more folders for sharing files, then set the shared folders via the virtualbox menu (guest window). 在Linux主机端中，为共享的文件创建一个或更多的文件夹，然后通过Virtualbox菜单中设置（Windows客户端）
 
-在Windows客户端中，从VirtualBox 1.5.0开始，共享文件夹是可浏览的，所以在Windows资源管理器中是可视的。打开Windows资源管理器，在_我的网络位置（My Networking Places） → 整个网络（Entire Network） → VirtualBox Shared Folders（VirtualBox共享文件夹）_。
+在Windows客户端中，从VirtualBox 1.5.0开始，共享文件夹是可浏览的，所以在Windows资源管理器中是可视的。打开Windows资源管理器，在*我的网络位置（My Networking Places） → 整个网络（Entire Network） → VirtualBox Shared Folders（VirtualBox共享文件夹）*。
 
 启动Windows资源管理器（运行资源管理器命令），游览 网络位置（network places） -> （+）号展开： 整个网络（entire network）&rarr； VirtualBox Shared Folders（VirtualBox共享文件夹） &rarr；**\\Vboxsvr** → 然后你就可以在此展开所有已配置的文件夹了，并且在客户端文件系统中为Linux文件夹创建快捷方式。你也可以使用“添加网络位置向导（Add network place wizard）”找到“VBoxsvr”。
 
@@ -926,7 +924,7 @@ net use x: \\VBOXSVR\sharename
 
 虽然`VBOXSVR`是一个固定名称，但请用你所想要用于共享的盘符替代`x:`，用VBoxManage指定的共享名替换sharename。
 
-在Windows客户端中，为了以VirtualBox共享文件夹改善文件的读取与保存（如MS Office），编辑_c:\windows\system32\drivers\etc\hosts_如下：
+在Windows客户端中，为了以VirtualBox共享文件夹改善文件的读取与保存（如MS Office），编辑*c:\windows\system32\drivers\etc\hosts*如下：
 
 ```
 127.0.0.1 localhost vboxsvr
@@ -975,7 +973,7 @@ If you cloned a virtual disk manually by copying the virtual disk file, you will
 You can use this command to assign a new UUID to your virtual disk:
 
 ```
-$ VBoxManage internalcommands sethduuid _/path/to/disk.vdi_
+$ VBoxManage internalcommands sethduuid */path/to/disk.vdi*
 
 ```
 
@@ -992,7 +990,6 @@ $ VBoxManage internalcommands sethduuid _/path/to/disk.vdi_
 此后查找将用于考虑虚拟机作为服务systemd服务的实现。
 
  `/etc/systemd/system/vboxvmservice@.service` 
-
 ```
 [Unit]
 Description=VBox Virtual Machine %i Service
@@ -1000,7 +997,7 @@ Requires=systemd-modules-load.service
 After=systemd-modules-load.service
 
 [Service]
-User=_username_
+User=*username*
 Group=vboxusers
 ExecStart=/usr/bin/VBoxHeadless -s %i
 ExecStop=/usr/bin/VBoxManage controlvm %i savestate
@@ -1009,21 +1006,21 @@ ExecStop=/usr/bin/VBoxManage controlvm %i savestate
 WantedBy=multi-user.target
 ```
 
-**Note:** Replace `_username_` with a user that is a member of the `vboxusers` group. Make sure the user chosen is the same user that will create/import virtual machines, otherwise the user will not see the VM appliances.
+**Note:** Replace `*username*` with a user that is a member of the `vboxusers` group. Make sure the user chosen is the same user that will create/import virtual machines, otherwise the user will not see the VM appliances.
 
 **Note:** If you have multiple virtual machines managed by Systemd and they are not stopping properly, try to add `RemainAfterExit=true` and `KillMode=none` at the end of `[Service]` section.
 
 To enable the service that will launch the virtual machine at next boot, use:
 
 ```
-# systemctl enable vboxvmservice@_your_virtual_machine_name_
+# systemctl enable vboxvmservice@*your_virtual_machine_name*
 
 ```
 
 To start the service that will launch directly the virtual machine, use:
 
 ```
-# systemctl start vboxvmservice@_your_virtual_machine_name_
+# systemctl start vboxvmservice@*your_virtual_machine_name*
 
 ```
 
@@ -1066,9 +1063,9 @@ Make sure you filter any devices that are not a keyboard or a mouse so they do n
 To access [Apache server](https://en.wikipedia.org/wiki/Apache_HTTP_Server "wikipedia:Apache HTTP Server") on a Virtual Machine from the host machine **only**, simply execute the following lines on the host:
 
 ```
-$ VBoxManage setextradata GuestName "VBoxInternal/Devices/_pcnet_/0/LUN#0/Config/Apache/HostPort" _8888_
-$ VBoxManage setextradata GuestName "VBoxInternal/Devices/_pcnet_/0/LUN#0/Config/Apache/GuestPort" _80_
-$ VBoxManage setextradata GuestName "VBoxInternal/Devices/_pcnet_/0/LUN#0/Config/Apache/Protocol" TCP
+$ VBoxManage setextradata GuestName "VBoxInternal/Devices/*pcnet*/0/LUN#0/Config/Apache/HostPort" *8888*
+$ VBoxManage setextradata GuestName "VBoxInternal/Devices/*pcnet*/0/LUN#0/Config/Apache/GuestPort" *80*
+$ VBoxManage setextradata GuestName "VBoxInternal/Devices/*pcnet*/0/LUN#0/Config/Apache/Protocol" TCP
 
 ```
 
@@ -1161,7 +1158,7 @@ If you are still using the old [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy
 ```
 title  Arch Linux
 root
-kernel /vmlinuz-linux root=_/dev/disk/by-uuid/0a3407de-014b-458b-b5c1-848e92a327a3_ ro vga=773
+kernel /vmlinuz-linux root=*/dev/disk/by-uuid/0a3407de-014b-458b-b5c1-848e92a327a3* ro vga=773
 initrd /initramfs-linux-vbox.img
 
 ```
@@ -1182,10 +1179,9 @@ If you are running the most recent version of [GRUB](/index.php/GRUB "GRUB"); yo
 Make sure your [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") configuration uses the [HOOK](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") `block`:
 
  `/etc/mkinitcpio.conf` 
-
 ```
 [...]
-HOOKS="base udev autodetect modconf _block_ filesystems keyboard fsck"
+HOOKS="base udev autodetect modconf *block* filesystems keyboard fsck"
 [...]
 ```
 
@@ -1209,7 +1205,7 @@ Boot the host which will use the Arch Linux virtual machine. The command will ne
 There is 3 ways to achieve this: login as root, changing the access right of the device with `chmod`, adding your user to the `disk` group. The latter way is the more elegant, let us proceed that way:
 
 ```
-# gpasswd -a _your_user_ disk
+# gpasswd -a *your_user* disk
 
 ```
 
@@ -1223,7 +1219,7 @@ $ newgrp
 Now, you can use the command:
 
 ```
-$ VBoxManage internalcommands createrawvmdk -filename _/path/to/file.vmdk_ -rawdisk _/dev/sdb_ -register 
+$ VBoxManage internalcommands createrawvmdk -filename */path/to/file.vmdk* -rawdisk */dev/sdb* -register 
 
 ```
 
@@ -1233,9 +1229,7 @@ Adapt the above command to your need, especially the path and filename of the VM
 
 Open a command prompt must be run as administrator.
 **Tip:** On Windows, open your start menu/start screen, type `cmd`, and type `Ctrl+Shift+Enter`, this is a shortcut to execute the selected program with admin rights.
-
 On Windows, as the disk filename convention is different from UNIX, use this command to determine what drives you have in your Windows system and their location: `# wmic diskdrive get name,size,model` 
-
 ```
 Model                               Name                Size
 WDC WD40EZRX-00SPEB0 ATA Device     \\.\PHYSICALDRIVE1  4000783933440
@@ -1271,10 +1265,10 @@ There are other limitations regarding the aforementioned command when used in ot
 *   To make use of the VBoxManage command on Windows, you need to change the current directory to your VirtualBox installation folder first: cd C:\Program Files\Oracle\VirtualBox\.
 *   Windows makes use of backslashes instead of slashes, please replace all slashes / occurrences by backslashes \ in the commands that follow when you will use them.
 
-After, we need to create a new machine (replace the _VM_name_ to your convenience) and register it with VirtualBox.
+After, we need to create a new machine (replace the *VM_name* to your convenience) and register it with VirtualBox.
 
 ```
-$ VBoxManage createvm -name _VM_name_ -register
+$ VBoxManage createvm -name *VM_name* -register
 
 ```
 
@@ -1283,16 +1277,16 @@ Then, the newly raw disk needs to be attached to the machine. This will depend i
 If you need an IDE controller:
 
 ```
-$ VBoxManage storagectl _VM_name_ --name "IDE Controller" --add ide
-$ VBoxManage storageattach _VM_name_ --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium /path/to/file.vmdk
+$ VBoxManage storagectl *VM_name* --name "IDE Controller" --add ide
+$ VBoxManage storageattach *VM_name* --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium /path/to/file.vmdk
 
 ```
 
 otherwise:
 
 ```
-$ VBoxManage storagectl _VM_name_ --name "SATA Controller" --add sata
-$ VBoxManage storageattach _VM_name_ --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium /path/to/file.vmdk
+$ VBoxManage storagectl *VM_name* --name "SATA Controller" --add sata
+$ VBoxManage storageattach *VM_name* --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium /path/to/file.vmdk
 
 ```
 
@@ -1338,11 +1332,11 @@ The first three following points comes from [this outdated VirtualBox wiki page]
 
 *   Remove IDE/ATA controllers checks (Windows XP only): Windows memorize the IDE/ATA drive controllers it has been installed on and will not boot if it detects these have changed. The solution proposed by Microsoft is to reuse the same controller or use one of the same serial, which is impossible to achieve since we are using a Virtual Machine. [MergeIDE](https://www.virtualbox.org/wiki/Migrate_Windows#HardDiskSupport), a German tool, developped upon another other solution proposed by Microsoft can be used. That solution basically consists in taking all IDE/ATA controller drivers supported by Windows XP from the initial driver archive (the location is hard coded, or specify it as the first argument to the `.bat` script), installing them and registering them with the regedit database.
 
-*   Use the right type of Hardware Abstraction Layer (old 32 bits Windows versions): Microsoft ships 3 default versions: `Hal.dll` (Standard PC), `Halacpi.dll` (ACPI HAL) and `Halaacpi.dll` (ACPI HAL with IO APIC). Your Windows install could come installed with the first or the second version. In that way, please [disable the _Enable IO/APIC_ VirtualBox extended feature](https://www.virtualbox.org/manual/ch08.html#idp56927888).
+*   Use the right type of Hardware Abstraction Layer (old 32 bits Windows versions): Microsoft ships 3 default versions: `Hal.dll` (Standard PC), `Halacpi.dll` (ACPI HAL) and `Halaacpi.dll` (ACPI HAL with IO APIC). Your Windows install could come installed with the first or the second version. In that way, please [disable the *Enable IO/APIC* VirtualBox extended feature](https://www.virtualbox.org/manual/ch08.html#idp56927888).
 
 *   Disable any AGP device driver (only outdated Windows versions): If you have the files `agp440.sys` or `intelppm.sys` inside the `C:\Windows\SYSTEM32\drivers\` directory, remove it. As VirtualBox uses a PCI virtual graphic card, this can cause problems when this AGP driver is used.
 
-*   Create a Windows recovery disk: In the following steps, if things turn bad, you will need to repair your Windows installation. Make sure you have an install media at hand, or create one with _Create a recovery disk_ from Vista SP1, _Create a system repair disc_ on Windows 7 or _Create a recovery drive_ on Windows 8.x).
+*   Create a Windows recovery disk: In the following steps, if things turn bad, you will need to repair your Windows installation. Make sure you have an install media at hand, or create one with *Create a recovery disk* from Vista SP1, *Create a system repair disc* on Windows 7 or *Create a recovery drive* on Windows 8.x).
 
 #### Tasks on GNU/Linux
 
@@ -1350,7 +1344,7 @@ The first three following points comes from [this outdated VirtualBox wiki page]
 
 	Use the `--no-action` option first to run a test:
 
-	 `# ntfsresize --no-action --size _52Gi_ _/dev/sda1_` 
+	 `# ntfsresize --no-action --size *52Gi* */dev/sda1*` 
 
 	If only the previous test succeeded, execute this command again, but this time without the aforementioned test flag.
 
@@ -1360,19 +1354,19 @@ The first three following points comes from [this outdated VirtualBox wiki page]
 
 	 `# sectnum=$(( $(cat /sys/block/''sda/sda1''/start) + $(cat /sys/block/''sda/sda1''/size) ))` 
 
-	Using `cat /sys/block/_sda/sda1_/size` will output the number of total sectors of the first partition of the disk `sda`. Adapt where necessary.
+	Using `cat /sys/block/*sda/sda1*/size` will output the number of total sectors of the first partition of the disk `sda`. Adapt where necessary.
 
 	 `# dd if=''/dev/sda'' bs=512 count=$sectnum | VBoxManage convertfromraw stdin ''windows.vdi'' $(( $sectnum * 512 ))` 
 
 	We need to display the size in byte, `$(( $sectnum * 512 ))` will convert the sector numbers to bytes.
 
-*   Since you created your disk image as root, set the right ownership to the virtual disk image: `# chown _your_user_:_your_group_ windows.vdi` 
+*   Since you created your disk image as root, set the right ownership to the virtual disk image: `# chown *your_user*:*your_group* windows.vdi` 
 
 *   Create your virtual machine configuration file and use the virtual disk created previously as the main virtual hard disk.
 
 *   Try to boot your Windows VM, it may just work. First though remove and repair disks from the boot process as it may interfere (and likely will) booting into safe-mode.
 
-*   Attempt to boot your Windows virtual machine in safe mode (press the F8 key before the Windows logo shows up)... if running into boot issues, read [#Fix MBR and Microsoft bootloader](#Fix_MBR_and_Microsoft_bootloader). In safe-mode, drivers will be installed likely by the Windows plug-and-play detection mechanism [view](http://i.imgur.com/hh1RrSp.png). Additionally, install the VirtualBox Guest Additions via the menu _Devices_ > _Insert Guest Additions CD image..._. If a new disk dialog does not appear, navigate to the CD drive and start the installer manually.
+*   Attempt to boot your Windows virtual machine in safe mode (press the F8 key before the Windows logo shows up)... if running into boot issues, read [#Fix MBR and Microsoft bootloader](#Fix_MBR_and_Microsoft_bootloader). In safe-mode, drivers will be installed likely by the Windows plug-and-play detection mechanism [view](http://i.imgur.com/hh1RrSp.png). Additionally, install the VirtualBox Guest Additions via the menu *Devices* > *Insert Guest Additions CD image...*. If a new disk dialog does not appear, navigate to the CD drive and start the installer manually.
 
 *   You should finally have a working Windows virtual machine. Do not forget to read the [#Known limitations](#Known_limitations).
 
@@ -1394,7 +1388,7 @@ Partition number (''1-3'', default ''3''): ''1''
 
 *   Use [testdisk](https://www.archlinux.org/packages/?name=testdisk) (see [here](http://www.cgsecurity.org/index.html?testdisk.html) for details) to add a generic MBR:
 
-	 `# testdisk > _Disk /dev/sda...'_ > [Proceed] >  [Intel] Intel/PC partition > [MBR Code] Write TestDisk MBR to first sector > Write a new copy of MBR code to first sector? (Y/n) > Y > Write a new copy of MBR code, confirm? (Y/N) > A new copy of MBR code has been written. You have to reboot for the change to take effect. > [OK]` 
+	 `# testdisk > *Disk /dev/sda...'* > [Proceed] >  [Intel] Intel/PC partition > [MBR Code] Write TestDisk MBR to first sector > Write a new copy of MBR code to first sector? (Y/n) > Y > Write a new copy of MBR code, confirm? (Y/N) > A new copy of MBR code has been written. You have to reboot for the change to take effect. > [OK]` 
 
 *   With the new MBR and updated partition table, your Windows virtual machine should be able to boot. If you are still encountering issues, boot your Windows recovery disk from on of the previous step, and inside your Windows RE environment, execute the commands [described here](http://support.microsoft.com/kb/927392).
 
@@ -1427,7 +1421,7 @@ To control transparently your virtual machine with your mouse going back and for
 
 ### 无法发送CTRL + ALT+ Fn键到我的虚拟机
 
-Your guest operating system is a GNU/Linux distribution and you want to open a new TTY shell by hitting `Ctrl+Alt+F2` or exit your current X session with `Ctrl+Alt+Backspace`. If you type these keyboard shortcuts without any adaptation, the guest will not receive any input and the host (if it is a GNU/Linux distribution too) will intercept these shortcut keys. To send `Ctrl+Alt+F2` to the guest for example, simply hit your _Host Key_ (usually the right `Ctrl` key) and press `F2` simultaneously.
+Your guest operating system is a GNU/Linux distribution and you want to open a new TTY shell by hitting `Ctrl+Alt+F2` or exit your current X session with `Ctrl+Alt+Backspace`. If you type these keyboard shortcuts without any adaptation, the guest will not receive any input and the host (if it is a GNU/Linux distribution too) will intercept these shortcut keys. To send `Ctrl+Alt+F2` to the guest for example, simply hit your *Host Key* (usually the right `Ctrl` key) and press `F2` simultaneously.
 
 ### 解决ISO映像问题
 
@@ -1441,10 +1435,10 @@ See [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_an
 
 ### OpenBSD系统无法使用时，虚拟化指令不可用
 
-While OpenBSD is reported to work fine on other hypervisors without virtualisation instructions (VT-x AMD-V) enabled, an OpenBSD virtual machine running on VirtualBox without these instructions will be unusable, manifesting with a bunch of segmentation faults. Starting VirtualBox with the _-norawr0_ argument [may solve the problem](https://www.virtualbox.org/ticket/3947). You can do it like this:
+While OpenBSD is reported to work fine on other hypervisors without virtualisation instructions (VT-x AMD-V) enabled, an OpenBSD virtual machine running on VirtualBox without these instructions will be unusable, manifesting with a bunch of segmentation faults. Starting VirtualBox with the *-norawr0* argument [may solve the problem](https://www.virtualbox.org/ticket/3947). You can do it like this:
 
 ```
-$ VBoxSDL -norawr0 -vm _name_of_OpenBSD_VM_
+$ VBoxSDL -norawr0 -vm *name_of_OpenBSD_VM*
 
 ```
 
@@ -1453,7 +1447,7 @@ $ VBoxSDL -norawr0 -vm _name_of_OpenBSD_VM_
 这种情形可能会在虚拟机没有正常退出时发生，解除锁定虚拟机并不难:
 
 ```
-$ VBoxManage controlvm _virtual_machine_name_ poweroff
+$ VBoxManage controlvm *virtual_machine_name* poweroff
 
 ```
 
@@ -1461,7 +1455,7 @@ $ VBoxManage controlvm _virtual_machine_name_ poweroff
 
 Your user must be in the `vboxusers` group, and you need to install the [extension pack](#Extension_pack) if you want USB 2 support. Then you will be able to enable USB 2 in the VM settings and add one or several filters for the devices you want to access from the guest OS.
 
-Sometimes, on old Linux hosts, the USB subsystem is not auto-detected resulting in an error `Could not load the Host USB Proxy service: VERR_NOT_FOUND` or in a not visible USB drive on the host, [even when the user is in the **vboxusers** group](https://bbs.archlinux.org/viewtopic.php?id=121377). This problem is due to the fact that VirtualBox switched from _usbfs_ to _sysfs_ in version 3.0.8\. If the host does not understand this change, you can revert to the old behaviour by defining the following environment variable in any file that is sourced by your shell (e.g. your `~/.bashrc` if you are using _bash_):
+Sometimes, on old Linux hosts, the USB subsystem is not auto-detected resulting in an error `Could not load the Host USB Proxy service: VERR_NOT_FOUND` or in a not visible USB drive on the host, [even when the user is in the **vboxusers** group](https://bbs.archlinux.org/viewtopic.php?id=121377). This problem is due to the fact that VirtualBox switched from *usbfs* to *sysfs* in version 3.0.8\. If the host does not understand this change, you can revert to the old behaviour by defining the following environment variable in any file that is sourced by your shell (e.g. your `~/.bashrc` if you are using *bash*):
 
  `~/.bashrc`  `VBOX_USB=usbfs` 
 
@@ -1532,13 +1526,13 @@ crw-rw---- 1 root uucp 4, 67 Feb  3 09:12 /dev/ttyS3
 If you get this error code while booting, even if you choose OS Type Win 8, try to enable the `CMPXCHG16B` CPU instruction:
 
 ```
-$ vboxmanage setextradata _virtual_machine_name_ VBoxInternal/CPUM/CMPXCHG16B 1
+$ vboxmanage setextradata *virtual_machine_name* VBoxInternal/CPUM/CMPXCHG16B 1
 
 ```
 
 ### Windows 8 VM fails to boot with error "ERR_DISK_FULL"
 
-Situation: Your Windows 8 VM refuses to start. VirtualBox throws an error stating the virtual disk is full. However, you are certain that the disk is not full. Bring up your VM's settings at _Settings > Storage > Controller:SATA_ and select "Use Host I/O Cache".
+Situation: Your Windows 8 VM refuses to start. VirtualBox throws an error stating the virtual disk is full. However, you are certain that the disk is not full. Bring up your VM's settings at *Settings > Storage > Controller:SATA* and select "Use Host I/O Cache".
 
 ### Linux guests have slow/distorted audio
 
@@ -1551,7 +1545,7 @@ options snd-intel8x0 ac97_clock=48000
 
 ### 客户端启动后的Xorg死机
 
-Faulty or missing drivers may cause the guest to freeze after starting Xorg, see for example [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) and [[2]](https://bbs.archlinux.org/viewtopic.php?id=156079). Try disabling 3D acceleration in _Settings > Display_, and check if all [Xorg](/index.php/Xorg "Xorg") drivers are installed.
+Faulty or missing drivers may cause the guest to freeze after starting Xorg, see for example [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) and [[2]](https://bbs.archlinux.org/viewtopic.php?id=156079). Try disabling 3D acceleration in *Settings > Display*, and check if all [Xorg](/index.php/Xorg "Xorg") drivers are installed.
 
 ### "NS_ERROR_FAILURE" and missing menu items
 
@@ -1573,7 +1567,6 @@ Medium
 Exit VirtualBox, delete all files of the new machine and from virtualbox config file remove the last line in `MachineRegistry` menu (or the offending machine you are creating):
 
  `~/.config/VirtualBox/VirtualBox.xml` 
-
 ```
 ...
 <MachineRegistry>
@@ -1584,7 +1577,7 @@ Exit VirtualBox, delete all files of the new machine and from virtualbox config 
 ...
 ```
 
-This happens sometimes when selecting _QCOW_/_QCOW2_/_QED_ disk format when creating a new virutal disk.
+This happens sometimes when selecting *QCOW*/*QCOW2*/*QED* disk format when creating a new virutal disk.
 
 ### USB modem
 
@@ -1610,7 +1603,7 @@ root=/dev/mapper/vg_main-lv_root ro vga=792 resume=/dev/mapper/vg_main-lv_swap i
 
 ```
 
-接著附加写入权限挂载 _root_-文件系统:
+接著附加写入权限挂载 *root*-文件系统:
 
 ```
 # mount / -o remount,rw
@@ -1626,7 +1619,7 @@ root=/dev/mapper/vg_main-lv_root ro vga=792 resume=/dev/mapper/vg_main-lv_swap i
 
 ### 复制和粘贴在 Arch Linux 客户机没有作用
 
-Since updating `virtualbox-guest-additions` to version `4.2.0-2` copy&paste from Host OS to Arch Linux Guest stopped working. It seems to be due to `VBoxClient-all` requiring _root_ access. In previous versions adding _VBoxClient-all &_ to _~/.xinitrc_ was sufficient to make copy&paste work. Update _~/.xinitrc_ to match `sudo VBoxClient-all &` and add the line `, NOPASSWD: /usr/bin/VBoxClient-all` to your username in the sudoers file and restart X. It should all work again. The line in the sudoers file should look similar to this:
+Since updating `virtualbox-guest-additions` to version `4.2.0-2` copy&paste from Host OS to Arch Linux Guest stopped working. It seems to be due to `VBoxClient-all` requiring *root* access. In previous versions adding *VBoxClient-all &* to *~/.xinitrc* was sufficient to make copy&paste work. Update *~/.xinitrc* to match `sudo VBoxClient-all &` and add the line `, NOPASSWD: /usr/bin/VBoxClient-all` to your username in the sudoers file and restart X. It should all work again. The line in the sudoers file should look similar to this:
 
 ```
  # Allow sudo for user 'you' and let him run VBoxClient-all without requiring a password
@@ -1707,7 +1700,7 @@ At the moment of writing though, the only 100% guaranteed solution to this probl
 Add this line to /etc/rc.local
 
 ```
-exec /bin/su -c 'VBoxManage startvm --type headless <_UUID|NAME_>' _PREFERED_USER_ >/dev/null 2>&1
+exec /bin/su -c 'VBoxManage startvm --type headless <*UUID|NAME*>' *PREFERED_USER* >/dev/null 2>&1
 
 ```
 
@@ -1716,7 +1709,7 @@ Where <UUID|NAME> is the guest identifier, and PREFERRED_USER is the user profil
 Since exec replaces the currently running process, you will not be able to start a second VM, or execute any other commands, after the exec. Try the following if this is a problem:
 
 ```
-su -c 'VBoxHeadless -s <_UUID|NAME_> &' -s /bin/sh _PREFERED_USER_ >/dev/null 2>&1
+su -c 'VBoxHeadless -s <*UUID|NAME*> &' -s /bin/sh *PREFERED_USER* >/dev/null 2>&1
 
 ```
 

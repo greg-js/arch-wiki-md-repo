@@ -1,4 +1,4 @@
-Un [entorno de escritorio](https://en.wikipedia.org/wiki/es:Desktop_environment "wikipedia:es:Desktop environment") proporciona una _completa_ interfaz gráfica de usuario (GUI) para un sistema donde se agrupan una diversidad de clientes de X escritos con un conjunto de herramientas Widget y un conjunto de bibliotecas comunes.
+Un [entorno de escritorio](https://en.wikipedia.org/wiki/es:Desktop_environment "wikipedia:es:Desktop environment") proporciona una *completa* interfaz gráfica de usuario (GUI) para un sistema donde se agrupan una diversidad de clientes de X escritos con un conjunto de herramientas Widget y un conjunto de bibliotecas comunes.
 
 ## Contents
 
@@ -14,9 +14,9 @@ Un [entorno de escritorio](https://en.wikipedia.org/wiki/es:Desktop_environment 
 
 ## X Window System
 
-El [sistema de ventanas X](https://en.wikipedia.org/wiki/es:X_Window_System "wikipedia:es:X Window System") proporciona la base para una interfaz gráfica de usuario. Antes de instalar un gestor de ventanas, es necesaria la instalación previa de un servidor X funcional. Consulte [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") para obtener información detallada.
+El [sistema de ventanas X](https://en.wikipedia.org/wiki/es:X_Window_System para obtener información detallada.
 
-	_X proporciona el marco básico, o primigenio, para la construcción de estos entornos GUI: permite dibujar y mover ventanas en la pantalla e interactuar con el ratón y el teclado. X no proporciona la interfaz de usuario — otros programas clientes individuales conocidos como gestores de ventanas proporcionan dicha interfaz. En consecuencia, el estilo visual de los entornos que corren en X ​​varía mucho; diferentes tipos de programas pueden presentar interfaces radicalmente diferentes. X está construido como una capa de abstracción adicional (a modo de aplicación) que emerge después del kernel del sistema operativo._
+	*X proporciona el marco básico, o primigenio, para la construcción de estos entornos GUI: permite dibujar y mover ventanas en la pantalla e interactuar con el ratón y el teclado. X no proporciona la interfaz de usuario — otros programas clientes individuales conocidos como gestores de ventanas proporcionan dicha interfaz. En consecuencia, el estilo visual de los entornos que corren en X ​​varía mucho; diferentes tipos de programas pueden presentar interfaces radicalmente diferentes. X está construido como una capa de abstracción adicional (a modo de aplicación) que emerge después del kernel del sistema operativo.*
 
 El usuario tiene libertad para configurar su entorno GUI de muchas maneras.Los entornos de escritorio, simplemente, proporcionan un medio completo y conveniente de realizar esta tarea.
 
@@ -124,7 +124,7 @@ Además, las aplicaciones proporcionadas por los DE tienden a integrarse mejor c
 
 ### Comparación de entornos de escritorio
 
-_Esta sección trata de establecer una comparación entre los entornos de escritorio más populares. Tenga en cuenta que de primera mano la experiencia es la única manera efectiva de evaluar realmente si un entorno de escritorio se adapta mejor o no a sus necesidades._
+*Esta sección trata de establecer una comparación entre los entornos de escritorio más populares. Tenga en cuenta que de primera mano la experiencia es la única manera efectiva de evaluar realmente si un entorno de escritorio se adapta mejor o no a sus necesidades.*
 
 Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window System](https://en.wikipedia.org/wiki/es:Comparaci%C3%B3n_de_entornos_de_escritorios_de_X_Window_System "wikipedia:es:Comparación de entornos de escritorios de X Window System")
 
@@ -385,14 +385,14 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 
 #### Uso de los recursos
 
-Con respecto a los recursos del sistema, GNOME y KDE son entornos de escritorio _pesados_ . No sólo las instalaciones completas consumen más espacio de disco que las alternativas más ligeras (E17, LXDE, Razor-qt y Xfce), sino también más recursos de CPU y de memoria mientras están en uso. Esto se debe a que GNOME y KDE son considerados _full-optional_ (es decir, con todas las funciones relativamente disponibles), esto es: proporcionan los ambientes más completos y bien integrados.
+Con respecto a los recursos del sistema, GNOME y KDE son entornos de escritorio *pesados* . No sólo las instalaciones completas consumen más espacio de disco que las alternativas más ligeras (E17, LXDE, Razor-qt y Xfce), sino también más recursos de CPU y de memoria mientras están en uso. Esto se debe a que GNOME y KDE son considerados *full-optional* (es decir, con todas las funciones relativamente disponibles), esto es: proporcionan los ambientes más completos y bien integrados.
 
-Enlightment, LXDE, LX-Qt y Xfce, por otro lado, son entornos de escritorios _ligeros_. Están diseñados para correr bien sobre hardware antiguo o consumir menos energía y generalmente consumen menos recursos del sistema mientras están en uso. Ésto se logra mediante la reducción de las funciones _extras_ (que podrían considerarse _superfluas_).
+Enlightment, LXDE, LX-Qt y Xfce, por otro lado, son entornos de escritorios *ligeros*. Están diseñados para correr bien sobre hardware antiguo o consumir menos energía y generalmente consumen menos recursos del sistema mientras están en uso. Ésto se logra mediante la reducción de las funciones *extras* (que podrían considerarse *superfluas*).
 
 #### Entornos familiares
 
-Muchos usuarios de KDE describen a éste como _más similar a Windows_ y a GNOME _como más similar a Mac_. Esta es una comparación muy subjetiva, ya que cualquiera de los entornos de escritorio puede ser personalizado para emular Windows o Mac. Consulte [¿Es KDE más parecido a Windows respecto a Gnome?](http://www.psychocats.net/ubuntucat/is-kde-more-windows-like-than-gnome/) y [KDE vs Gnome](http://www.jeffwu.net/?p=71) para más información. ([Linux no es Windows](http://linux.oneandoneis2.org/LNW.htm) es otra excelente consulta.)
+Muchos usuarios de KDE describen a éste como *más similar a Windows* y a GNOME *como más similar a Mac*. Esta es una comparación muy subjetiva, ya que cualquiera de los entornos de escritorio puede ser personalizado para emular Windows o Mac. Consulte [¿Es KDE más parecido a Windows respecto a Gnome?](http://www.psychocats.net/ubuntucat/is-kde-more-windows-like-than-gnome/) y [KDE vs Gnome](http://www.jeffwu.net/?p=71) para más información. ([Linux no es Windows](http://linux.oneandoneis2.org/LNW.htm) es otra excelente consulta.)
 
 ## Entornos personalizados
 
-Los entornos de escritorio representan el medio más sencillo de instalar una _completa_ interfaz gráfica. Sin embargo, cada cual es libre de crear y personalizar su propio entorno gráfico de muchas maneras, si ninguno de los entornos de escritorio más populares satisface sus necesidades. En general, la construcción de un entorno personalizado implica, al menos, la selección de un adecuado [gestor de ventanas](/index.php/Window_Manager_(Espa%C3%B1ol) "Window Manager (Español)"), una [barra de tareas](https://en.wikipedia.org/wiki/es:Barra_de_tareas "wikipedia:es:Barra de tareas") y un número variable de [aplicaciones](/index.php/List_of_Applications_(Espa%C3%B1ol) "List of Applications (Español)") (una selección minimalista, por lo general incluye un [emulador de terminal](/index.php/List_of_applications#Terminal_emulators "List of applications"), [administrador de archivos](/index.php/List_of_applications#File_managers "List of applications"), y [editor de texto](/index.php/List_of_applications#Text_editors "List of applications")).
+Los entornos de escritorio representan el medio más sencillo de instalar una *completa* interfaz gráfica. Sin embargo, cada cual es libre de crear y personalizar su propio entorno gráfico de muchas maneras, si ninguno de los entornos de escritorio más populares satisface sus necesidades. En general, la construcción de un entorno personalizado implica, al menos, la selección de un adecuado [gestor de ventanas](/index.php/Window_Manager_(Espa%C3%B1ol) "Window Manager (Español)"), una [barra de tareas](https://en.wikipedia.org/wiki/es:Barra_de_tareas (una selección minimalista, por lo general incluye un [emulador de terminal](/index.php/List_of_applications#Terminal_emulators "List of applications"), [administrador de archivos](/index.php/List_of_applications#File_managers "List of applications"), y [editor de texto](/index.php/List_of_applications#Text_editors "List of applications")).

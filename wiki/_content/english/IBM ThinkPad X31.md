@@ -34,14 +34,13 @@ The following useful packages are in the [AUR](/index.php/AUR "AUR").
 
 To hibernate using [pm-utils](/index.php/Pm-utils "Pm-utils") (tested with kernel 2.6.37), you have to adjust some screws of the default setup. Doing this, hibernation works flawlessly. You have to setup [pm-utils](/index.php/Pm-utils "Pm-utils") first. If it's working out of the box, do not read further.
 
-Don't forget to install _radeontool_ from the AUR, as it's needed to turn off the lcd backlight.
+Don't forget to install *radeontool* from the AUR, as it's needed to turn off the lcd backlight.
 
 If your X31 freezes during hibernation or just reboots instead of resume, when you power on again, this might help you:
 
 Append the following to your **kernel** line in grub's config:
 
  `/boot/grub/menu.lst` 
-
 ```
 nomodeset acpi_sleep=nonvs 
 
@@ -62,7 +61,6 @@ $ lspci | grep Mobility
 Here is a minimal `xorg.conf`, optimized for performance:
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "ServerFlags"
 	Option "AutoAddDevices" "False"
@@ -161,9 +159,11 @@ To find the exact name of the monitors and the maximum resolution that you set u
 This will put your screen brightness to the minimum level when on battery and restore it to maximum when on ac power:
 
 ```
-echo -e '#!/bin/bash\necho 0 > /sys/class/backlight/thinkpad_screen/brightness' > /etc/laptop-mode/batt-start/battscript
+echo -e '#!/bin/bash
+echo 0 > /sys/class/backlight/thinkpad_screen/brightness' > /etc/laptop-mode/batt-start/battscript
 chmod 0755 /etc/laptop-mode/batt-start/battscript
-echo -e '#!/bin/bash\necho 7 > /sys/class/backlight/thinkpad_screen/brightness' > /etc/laptop-mode/lm-ac-start/acscript
+echo -e '#!/bin/bash
+echo 7 > /sys/class/backlight/thinkpad_screen/brightness' > /etc/laptop-mode/lm-ac-start/acscript
 chmod 0755 /etc/laptop-mode/lm-ac-start/acscript
 ln -s /etc/laptop-mode/lm-ac-start/acscript /etc/laptop-mode/onlm-ac-start/acscript
 
@@ -200,7 +200,6 @@ You can add this command to your `/etc/rc.local` to make the undervolting perman
 Create the following file:
 
  `/etc/modprobe.d/powersave.conf` 
-
 ```
  options usbcore autosuspend=1
  options ipw2100 associate=0
@@ -314,7 +313,6 @@ action=/etc/acpi/soundkey.sh %e
 to `/etc/acpi/events/soundkey`, create the following file and make it executable:
 
  `/etc/acpi/soundkey.sh` 
-
 ```
 #!/bin/bash
 

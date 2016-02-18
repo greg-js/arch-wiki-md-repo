@@ -38,20 +38,20 @@ All that problems will not affect you in case of using Arch Linux main kernel [l
 Disabling a discrete GPU is well-written described in [Bumblebee](/index.php/Bumblebee "Bumblebee") article. However, there is a poorly explored issue with
 
 ```
-$ optirun _command1_
+$ optirun *command1*
 
 ```
 
 as well as with
 
 ```
-$ primus _command1_
+$ primus *command1*
 
 ```
 
 An Nvidia card with [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) driver shows lower performance results than an integrated Intel HD4000 in both syntetic tests and real world applications (e.g. FPS in games).
 
-You can check it by comparing (of course, you can use _glxgears_ or any other benchmark instead of glxspheres)
+You can check it by comparing (of course, you can use *glxgears* or any other benchmark instead of glxspheres)
 
 ```
 $ vblank_mode=0 primusrun glxspheres

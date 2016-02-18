@@ -75,7 +75,6 @@ $ pulseaudio --kill
 查看PulseAudio是否正在运行：
 
  `$ pgrep -af pulseaudio` 
-
 ```
 369 /usr/bin/pulseaudio
 
@@ -91,7 +90,6 @@ $ start-pulseaudio-x11
 如果你没有运行GNOME, KDE或者Xfce，并且你的`~/.xinitrc`文件并未引用`/etc/X11/xinit/xinitrc.d`目录下的文件内容，为了让PulseAudio自动启动，你可以这样做：
 
  `~/.xinitrc` 
-
 ```
 /usr/bin/start-pulseaudio-x11
 
@@ -131,7 +129,7 @@ load-module module-alsa-source **device=dsnoop**
 
 ```
 
-*   _Optional:_ 如果你使用 [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix) 你可能希望控制ALSA音量而不是PulseAudio音量：
+*   *Optional:* 如果你使用 [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix) 你可能希望控制ALSA音量而不是PulseAudio音量：
 
 ```
 $ echo export KMIX_PULSEAUDIO_DISABLE=1 > ~/.kde4/env/kmix_disable_pulse.sh
@@ -171,7 +169,6 @@ $ padsp sox foo.wav -t ossdsp /dev/dsp
 你可以像下面这样编写一个程序启动脚本：
 
  `/usr/local/bin/OSSProgram` 
-
 ```
 #!/bin/sh
 exec padsp /usr/bin/OSSprogram "$@"
@@ -269,7 +266,7 @@ $ qemu-system-x86_64 -soundhw help
 
 {{Note|
 
-*   在 `qemu-system-_XXX_`命令中， _XXX_ 代表虚拟机的硬件架构。 运行 `ls /usr/bin/qemu-system-* -1`可以查看可用的硬件架构。
+*   在 `qemu-system-*XXX*`命令中， *XXX* 代表虚拟机的硬件架构。 运行 `ls /usr/bin/qemu-system-* -1`可以查看可用的硬件架构。
 *   虚拟机的虚拟显卡驱动也可能造成音频质量问题。逐个尝试以便解决问题。运行 `qemu-system-x86_64 -h | grep vga`以查看可用的虚拟显卡选项。
 
 ### AlsaMixer.app

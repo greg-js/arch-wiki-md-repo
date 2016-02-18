@@ -33,7 +33,6 @@
 Per selezionare una sorgente output diversa da quella di default, è innanzitutto necessario elencarle tutte:
 
  `$ aplay -l` 
-
 ```
 **** List of PLAYBACK Hardware Devices ****
 card 0: Intel [HDA Intel], device 0: ALC889A Analog [ALC889A Analog]
@@ -78,7 +77,6 @@ Si effettui nuovamente il login o si riavvii PulseAudio per applicare i cambiame
 Pulseaudio permette l'output simulteaneo su più dispositivi. Nell'esempio presentato di seguito, alcune applicazioni sono configurate per usare l'uscita HDMI, mentre altre utilizzeranno quella analogica. E' possibile inviare l'audio a più applicazioni contemporaneamente.
 
  `$ aplay -l` 
-
 ```
 **** List of PLAYBACK Hardware Devices ****
 card 0: Intel [HDA Intel], device 0: ALC889A Analog [ALC889A Analog]
@@ -93,7 +91,7 @@ card 0: Intel [HDA Intel], device 3: HDMI 0 [HDMI 0]
 
 ```
 
-Il segreto per realizzare con succcesso una configurazione come questa è capire che il dispositivo selezionato in pavucontrol (sotto Configuration->Internal Audio), verrà trattato come quello di default. Si avvii pavucontrol, ci si rechi nella sezione _Configurazion_ e si selezioni il profilo HDMI.
+Il segreto per realizzare con succcesso una configurazione come questa è capire che il dispositivo selezionato in pavucontrol (sotto Configuration->Internal Audio), verrà trattato come quello di default. Si avvii pavucontrol, ci si rechi nella sezione *Configurazion* e si selezioni il profilo HDMI.
 
 Si aggiungano poi le seguenti linee ad `/etc/pulse/default.pa`, per impostare l'uscita analogica come sorgente secondaria:
 
@@ -359,7 +357,7 @@ load-module module-jackdbus-detect
 
 Come descritto sulla pagina relativa alla [pacchettizzazione di Jack-DBUS](http://trac.jackaudio.org/wiki/JackDbusPackaging):
 
-_L'autoavvio del server è implementato come una chiamata a D-Bus che attiva automaticamente il servizio D-Bus relativo a Jack, nel caso in cui non sia già stato avviato automaticamente, ed inizializza il server Jack. L'interazione corretta con PulseAudio avviene attraverso un sistema di "acquisizione/rilascio" della scheda audio basato su D-Bus. Quando il server Jack si avvia, richiede al servizio D-Bus di prendere possesso della scheda audio e PulseAudio la rilascia immediatamente. Al contrario, quando il server viene fermato, è quest'ultimo a rilasciare la scheda audio che potrà così essere di nuovo gestita da PulseAudio._
+*L'autoavvio del server è implementato come una chiamata a D-Bus che attiva automaticamente il servizio D-Bus relativo a Jack, nel caso in cui non sia già stato avviato automaticamente, ed inizializza il server Jack. L'interazione corretta con PulseAudio avviene attraverso un sistema di "acquisizione/rilascio" della scheda audio basato su D-Bus. Quando il server Jack si avvia, richiede al servizio D-Bus di prendere possesso della scheda audio e PulseAudio la rilascia immediatamente. Al contrario, quando il server viene fermato, è quest'ultimo a rilasciare la scheda audio che potrà così essere di nuovo gestita da PulseAudio.*
 
 `module-jackdbus-detect.so` carica e rimuove dinamicamente i moduli `module-jack-sink` e `module-jack-source` quando jackdbus viene avviato o fermato.
 
@@ -519,7 +517,7 @@ chmod +x jack_startup jack_shutdown
 
 ```
 
-Poi, una volta avviato QjackCtl, fare click sul pulsante _setup_, selezionare il tab _Opzioni_ e spuntare "Execute Script after Startup" e "Execute Script on Shutdown", quindi specificare il percorso relativo ai due script appena visti, avendo cura di salvare le modifiche apportate.
+Poi, una volta avviato QjackCtl, fare click sul pulsante *setup*, selezionare il tab *Opzioni* e spuntare "Execute Script after Startup" e "Execute Script on Shutdown", quindi specificare il percorso relativo ai due script appena visti, avendo cura di salvare le modifiche apportate.
 
 ## Pulseaudio attraverso OSS
 
@@ -536,7 +534,7 @@ Poi si avvii Pulseaudio come al solito. Dovrebbero essere disponibili sinks e so
 
 Poiché un ambiente di chroot definisce una root alternativa per l'ingabbiamento e l'utilizzo delle applicazioni, Pulseaudio deve essere installato all'interno dello stesso (`pacman -S pulseaudio` dato da dentro l'ambiente di chroot).
 
-Se Pulseaudio non è configurato per connettersi ad un server specifico (si può ovviare modificando `/etc/pulse/client.conf`, usando la variabile d'ambiente PULSE_SERVER, oppure tramite l'annuncio alle proprietà locali di X11 usando il modulo x11-publish), tenterà di connettersi al server Pulseaudio locale, fallendo ed avviando una nuova istanza dello stesso. Ogni server Pulseaudio è identificato da un ID univoco basato sul valore _machine-id_ contenuto in `/var/lib/dbus`. Affinché le applicazioni eseguite all'interno del chroot possano accedere al server, le seguenti directory devono essere montate nel chroot:
+Se Pulseaudio non è configurato per connettersi ad un server specifico (si può ovviare modificando `/etc/pulse/client.conf`, usando la variabile d'ambiente PULSE_SERVER, oppure tramite l'annuncio alle proprietà locali di X11 usando il modulo x11-publish), tenterà di connettersi al server Pulseaudio locale, fallendo ed avviando una nuova istanza dello stesso. Ogni server Pulseaudio è identificato da un ID univoco basato sul valore *machine-id* contenuto in `/var/lib/dbus`. Affinché le applicazioni eseguite all'interno del chroot possano accedere al server, le seguenti directory devono essere montate nel chroot:
 
 ```
 /var/run
@@ -559,7 +557,6 @@ Alcuni utenti potrebbero voler avviare il server pulseaudio manualmente prima di
 È possibile ottenere questo comportamento modificando `/etc/pulse/client.conf`, cambiando `autospawn = yes` in `autospawn = no`, ed impostando la variabile `daemon-binary` a `/bin/true`. Ci si assicuri inoltre che le due linee di cui sopra siano decommentate:
 
  `/etc/pulse/client.conf` 
-
 ```
 autospawn = no
 daemon-binary = /bin/true 

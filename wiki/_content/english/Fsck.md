@@ -1,4 +1,4 @@
-[fsck](https://en.wikipedia.org/wiki/Fsck "wikipedia:Fsck") stands for _"file system check"_ and it is used to check and optionally repair one or more Linux file systems. Normally, the fsck program will try to handle filesystems on different physical disk drives in parallel to reduce the total amount of time needed to check all of the filesystems (see: `man fsck`).
+[fsck](https://en.wikipedia.org/wiki/Fsck "wikipedia:Fsck") stands for *"file system check"* and it is used to check and optionally repair one or more Linux file systems. Normally, the fsck program will try to handle filesystems on different physical disk drives in parallel to reduce the total amount of time needed to check all of the filesystems (see: `man fsck`).
 
 The [Arch Linux boot process](/index.php/Arch_boot_process "Arch boot process") conveniently takes care of the fsck procedure for you and will check all relevant partitions on your drive(s) automatically on every boot. Hence, there is usually no need to resort to the command-line unless necessary.
 
@@ -71,7 +71,6 @@ In this example, `20` is the number of boots between two checks.
 Note that `1` would make it scan at every boot, while `0` would stop scanning altogether.
 
 **Tip:** If you wish to see the frequency number and the current mount count for a specific partition, use:
-
 ```
 # dumpe2fs -h /dev/sda1 | grep -i 'mount count'
 

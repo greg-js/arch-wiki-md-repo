@@ -230,7 +230,7 @@ Web applications can be fully deployed at a virtual host with a single command. 
 
 ### Archboot
 
-Archboot is designed for installation or rescue operations. It provides both the i686 and x86_64 architectures on one CD. It uses hwdetect and a different install script from the official Arch Linux install images. It runs in RAM using iniramfs, without any special filesystems like squashfs, thus it is limited to the RAM which is installed in your system.
+Archboot is designed for installation or rescue operations. It provides both the i686 and x86_64 architectures on one CD. It uses hwdetect and a different install script from the official Arch Linux install images. It runs in RAM using initramfs, without any special filesystems like squashfs, thus it is limited to the RAM which is installed in your system.
 
 *   Documentation: [Archboot - ArchWiki](/index.php/Archboot "Archboot")
 
@@ -267,7 +267,7 @@ Alpine Linux is a run-from-RAM linux distribution. Its original target was small
 
 ### Arquetype CRT
 
-_"Our CRT "Continuous Release Term" is a rolling release with pacman as package manager, with a complete software suite ( internet, multimedia files, office, cloud-storage, development... )."_
+*"Our CRT "Continuous Release Term" is a rolling release with pacman as package manager, with a complete software suite ( internet, multimedia files, office, cloud-storage, development... )."*
 
 *   Homepage: [https://arquetype.org/](https://arquetype.org/)
 *   Forums: [https://arquetype.org/forums/](https://arquetype.org/forums/)
@@ -291,7 +291,7 @@ Enlisy is an i686 optimized Linux distribution for Pentium 2 based processors an
 
 ### Frugalware
 
-_"Frugalware Linux is a general-purpose Linux distribution designed for intermediate users who are familiar with command-line operations. It is based on Slackware, but uses a different package management system, Pacman."_
+*"Frugalware Linux is a general-purpose Linux distribution designed for intermediate users who are familiar with command-line operations. It is based on Slackware, but uses a different package management system, Pacman."*
 
 	Source: [Wikipedia](https://en.wikipedia.org/wiki/Frugalware "wikipedia:Frugalware")
 

@@ -160,7 +160,7 @@ options snd-hda-intel model=laptop
 
 ```
 
-and _unmute_ microphones in alsamixer (press 'M' on devices with an "MM" annotation).
+and *unmute* microphones in alsamixer (press 'M' on devices with an "MM" annotation).
 
 ### Backlight (and XFCE)
 

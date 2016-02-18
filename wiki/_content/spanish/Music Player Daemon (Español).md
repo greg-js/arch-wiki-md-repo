@@ -246,7 +246,6 @@ lastfmsubmitd es un demonio disponible dentro del repositorio "community". Para 
 Desde la versión 0.16 MPD tiene un método para [reproducir desde last.fm](http://mpd.wikia.com/wiki/Last.fm_Radio).
 
  `/etc/mpd.conf` 
-
 ```
 playlist_plugin {
        name            "lastfm"
@@ -265,7 +264,7 @@ Lastfmproxy es un script escrito en python que permite reproducir música desde 
 
 **Note:** El scrip se intslala en un directorio de solo lectura, pero este requiere lectura/escritura, puede mover `/usr/share/lastfmproxy` a su directorio Home.
 
-Para iniciar `lastfmproxy` debe ir a `[http://localhost:1881/](http://localhost:1881/)` en su navegador. Para gregar una estacion a last.fm navegue desde `[http://localhost:1881/](http://localhost:1881/)` seguido por lastfm:// (por ejemplo: `[http://localhost:1881/lastfm://globaltags/punk](http://localhost:1881/lastfm://globaltags/punk)`). Vuelva a `[http://localhost:1881/](http://localhost:1881/)` y descargue el archivo m3u seleccionando el enlace de _Start Listening_. Sólo tiene que añadirlo a su biblioteca de música.
+Para iniciar `lastfmproxy` debe ir a `[http://localhost:1881/](http://localhost:1881/)` en su navegador. Para gregar una estacion a last.fm navegue desde `[http://localhost:1881/](http://localhost:1881/)` seguido por lastfm:// (por ejemplo: `[http://localhost:1881/lastfm://globaltags/punk](http://localhost:1881/lastfm://globaltags/punk)`). Vuelva a `[http://localhost:1881/](http://localhost:1881/)` y descargue el archivo m3u seleccionando el enlace de *Start Listening*. Sólo tiene que añadirlo a su biblioteca de música.
 
 ### Never play on start
 
@@ -304,8 +303,8 @@ Simpler, working method (disables playing on startup of mpd daemon):
 This method was described here before Method 1.1 and is much more complicated:
 
 ```
- _..._
- _stat_busy "Starting Music Player Daemon"_
+ *...*
+ *stat_busy "Starting Music Player Daemon"*
 
 ```
 
@@ -328,8 +327,8 @@ This method was described here before Method 1.1 and is much more complicated:
 ```
 
 ```
- _/usr/bin/mpd /etc/mpd.conf &> /dev/null_
- _..._
+ */usr/bin/mpd /etc/mpd.conf &> /dev/null*
+ *...*
 
 ```
 
@@ -373,7 +372,6 @@ Para mas detalles puede ir a [este](http://mpd.wikia.com/wiki/Alsa) link.
 El problema se puede resolver editando:
 
  `mpd.conf` 
-
 ```
 audio_output {
         type                    "alsa"
@@ -391,7 +389,6 @@ Cuando se utiliza MPD con ALSA, los usuarios pueden experimentar un elevado cons
 En la mayoría de las veces se soluciona indicándole a MPD que no realice resample. Agregue la linea `auto_resample "no"` en audio_output. Con esto disminuye la calidad de sonido.
 
  `mpd.conf` 
-
 ```
 audio_output {
    type			"alsa"
@@ -403,7 +400,6 @@ audio_output {
 Puede que no allá un cambio significativo pero agregando `use_map "yes"` disminuye aun mas el uso de CPU:
 
  `mpd.conf` 
-
 ```
 audio_output {
    type			"alsa"
@@ -423,15 +419,12 @@ Esta configuración hace que todo (si es necesario) se vuelva a muestrear (resam
 Se supone que no hay otras configuraciones por resmple, ya que puede entrar en conflicto. Esto se aplica a nivel de usuario en `~/.asoundrc` pero MPD ignora este archivo por lo que tiene que especificar estas configuraciones en `/etc/asound.conf`:
 
  `/etc/asound.conf` 
-
 ```
 defaults.pcm.dmix.rate 44100 # Force 44.1 KHz
 defaults.pcm.dmix.format S16_LE # Force 16 bits
 
 ```
-
  `/etc/mpd.conf` 
-
 ```
 audio_output {
         type                    "alsa" # Use the ALSA output plugin.
@@ -448,7 +441,7 @@ samplerate_converter		"0" # MPD's best, most CPU intensive algorithm. See 'man m
 
 **Note:** MPD porvee un tratamiento especial para la decodificacion de archivos mp3: Siempre es reproducida en 24 bit. (La conversión forzada de este formato se realiza después de esto)
 
-Si quiere que la profundida de bits sea decidido por ALSA, quite o comente la linea _dmix.format_ y cambiar la linea _format_ to "44100:*:2".
+Si quiere que la profundida de bits sea decidido por ALSA, quite o comente la linea *dmix.format* y cambiar la linea *format* to "44100:*:2".
 
 **Note:** La 'transición' entre los archivos codificados en dos diferentes profundidades de bit (por ejemplo, un mp3 y un flac de 16 bits) no funciona a menos que la conversión está activo.
 
@@ -477,7 +470,6 @@ Edite el archivo de configuración, por defecto se encuentra en `~/.lircrc`.
 Agregue las lineas:
 
  `~/.lircrc` 
-
 ```
 begin
      prog = irexec
@@ -490,7 +482,6 @@ end
 Un ejemplo útil:
 
  `~/.lircrc` 
-
 ```
 ## irexec
 begin
@@ -788,7 +779,6 @@ A more brute-force approach:
 ```
 
 **Note:** If you typically run MPD as root, you will need to run the above commands as root.
-
 In the latest version of MPD, --create-db is completely deprecated. The database will be created automagically on first run and can subsequently be updated via your client (i.e. mpc update). You can now use inotify support to automatically update your music database. Add the following to `mpd.conf`  `auto_update "yes"` to enable it.
 
 ### Binding to IPV6 before IPV4

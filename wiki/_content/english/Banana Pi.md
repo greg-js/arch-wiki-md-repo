@@ -55,7 +55,7 @@ Mount the ext4 filesystem, replacing `sda1` with the formatted partition:
 
 ```
 # mkdir mnt
-# mount /dev/_sda1_ mnt
+# mount /dev/*sda1* mnt
 
 ```
 
@@ -115,7 +115,7 @@ Luckily the [SSH daemon](/index.php/Secure_Shell "Secure Shell") is already inst
 
 ## X.org driver
 
-The X.org driver for Banana Pi can be installed with the _xf86-video-fbdev_ package.
+The X.org driver for Banana Pi can be installed with the *xf86-video-fbdev* package.
 
 ## Troubleshooting
 

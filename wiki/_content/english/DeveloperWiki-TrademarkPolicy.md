@@ -81,4 +81,4 @@ Our logos are presented in multiple colours and it is important that their visua
 
 ##### Attribution
 
-_The Arch Linux trademark policy is published under the CC-BY-SA license, courtesy of the [Ubuntu project](http://www.ubuntu.com/). You are welcome to base your own project trademark policies off of it, but you must give credit to the [Ubuntu project](http://www.ubuntu.com/) as the original source, and let others use your changes freely._
+*The Arch Linux trademark policy is published under the CC-BY-SA license, courtesy of the [Ubuntu project](http://www.ubuntu.com/). You are welcome to base your own project trademark policies off of it, but you must give credit to the [Ubuntu project](http://www.ubuntu.com/) as the original source, and let others use your changes freely.*

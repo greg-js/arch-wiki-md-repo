@@ -1,8 +1,8 @@
 Od [GNOME: Desktop projekat slobodnog softvera](http://www.gnome.org/about/):
 
-	_GNOME je projekat koji pruza dve stvari: GNOME desktop okruzenje, jedan intuitivan i atraktivan desktop za korisnike, i GNOME razvojnu platformu, prosiriv frejmvork za izgradnju aplikacija koje se integrisu u ostatak desktopa._
+	*GNOME je projekat koji pruza dve stvari: GNOME desktop okruzenje, jedan intuitivan i atraktivan desktop za korisnike, i GNOME razvojnu platformu, prosiriv frejmvork za izgradnju aplikacija koje se integrisu u ostatak desktopa.*
 
-	_GNOME je **slobodan**, **koristan**, **dostupan**, **internacionalan**, **pogodan za razvoj aplikacija**, **organizovan**, **podrzan**, i **zajednica**._
+	*GNOME je **slobodan**, **koristan**, **dostupan**, **internacionalan**, **pogodan za razvoj aplikacija**, **organizovan**, **podrzan**, i **zajednica**.*
 
 Ovaj clanak pokriva GNOME desktop okruzenje.
 
@@ -153,7 +153,7 @@ Kao i pre, ovo je meta paket, i preporucuje se da instalirate sve pakete iz ove 
 
 *   **zenity** je alatka za prikazivanje GTK dijaloskih boksova u komandnoj liniji i skriptama za komandnu liniju.
 
-Mozda ste primetili GNOME admin alate (_Sistem → Administracija_) koji nisu sadrzani u ekstra paketima. Trebace vam `gnome-system-tools` paket koji se instalira na sledeci nacin:
+Mozda ste primetili GNOME admin alate (*Sistem → Administracija*) koji nisu sadrzani u ekstra paketima. Trebace vam `gnome-system-tools` paket koji se instalira na sledeci nacin:
 
 ```
 # pacman -S gnome-system-tools
@@ -162,7 +162,7 @@ Mozda ste primetili GNOME admin alate (_Sistem → Administracija_) koji nisu sa
 
 Kao sto je vec receno gore, ovi i druge korisne informacije mozete naci na [Gnom saveti](/index.php/GNOME_tips "GNOME tips") wiki stranici.
 
-**Note:** Upotreba `gnome-system-tools` na starijim GNOME verzijama ce najverovatnije zahtevati da ubacite vaseg korisnika u grupu `stb-admin`, u suprotnom mozete da dobijete poruku _"Podesavanje ne moze biti ucitano. Nije vam dozvoljen pristup sistemskim podesavanjima."_. Ovo nebi trebalo da je neophodno od verzije 2.28 `gnome-system-tools` jer ta verzija ne zahteva `stb-admin` grupu; ustvari, poboljsanje sa prethodne verzije ce ukloniti ovu grupu.
+**Note:** Upotreba `gnome-system-tools` na starijim GNOME verzijama ce najverovatnije zahtevati da ubacite vaseg korisnika u grupu `stb-admin`, u suprotnom mozete da dobijete poruku *"Podesavanje ne moze biti ucitano. Nije vam dozvoljen pristup sistemskim podesavanjima."*. Ovo nebi trebalo da je neophodno od verzije 2.28 `gnome-system-tools` jer ta verzija ne zahteva `stb-admin` grupu; ustvari, poboljsanje sa prethodne verzije ce ukloniti ovu grupu.
 
 Da bi obicni korisnici koristili sistemske alate, neophodan je `gksu` paket:
 
@@ -256,7 +256,7 @@ MODULES=(**fuse** usblp)
 
 ## Pokretanje GNOM-a
 
-Dodajte sledecu liniju u vas `~/.xinitrc` fajl i uverite se da je to zadnja linija i jedina koja pocinje sa _exec_ (pogledajte [xinitrc](/index.php/Xinitrc "Xinitrc")):
+Dodajte sledecu liniju u vas `~/.xinitrc` fajl i uverite se da je to zadnja linija i jedina koja pocinje sa *exec* (pogledajte [xinitrc](/index.php/Xinitrc "Xinitrc")):
 
 ```
 exec gnome-session
@@ -324,7 +324,6 @@ Da ucinite graficko prijavljivanje osnovnim metodom za prijavljivanje na sistem,
 Ako ste naviknuti da koristite `~/.xinitrc` fajl za prosledjivanje argumenata za X server kada se startuje, poput **xmodmap** ili **xsetroot**, mozete da dodate iste komande u [xprofile](/index.php/Xprofile "Xprofile"). Primer:
 
  `~/.xprofile` 
-
 ```
 #!/bin/sh
 
@@ -400,7 +399,6 @@ Za vise informacija i napredna podesavanja procitajte [ovo](http://library.gnome
 Da omogucite automatsko prijavljivanje sa GDM-om, dodajte sledece u `/etc/gdm/custom.conf` (zamenite korisnika sa korisnickim imenom koje zelite da se automatski prijavljuje):
 
  `/etc/gdm/custom.conf` 
-
 ```
 # Omogucite automatsko prijavljivanje za korisnika
 [daemon]
@@ -412,7 +410,6 @@ AutomaticLoginEnable=True
 ili za automatsko prijavljivanje sa kasnjenjem:
 
  `/etc/gdm/custom.conf` 
-
 ```
 [daemon]
 # for login with delay
@@ -437,7 +434,7 @@ Zatim, dodajte grupu **nopasswdlogin** na vas sistem. To mozete da uradite grafi
 
 Sada, kada ste u System > Administration > Users and Groups (komanda: users-admin) i podesite vaseg korisnika za "Password: not asked at login" (cekiranjem "Don't ask for password on login" opcije), vas korisnik ce biti automatski dodat u "nopasswdlogin" grupu i tada cete moci jednostavnim klikom na vase korisnicko ime da se prijavite na sistem, tj. bez neophodne lozinke!
 
-**Warning:** <u>NEMOJTE</u> OVO DA RADITE ZA _**ROOT**_ NALOG!
+**Warning:** <u>NEMOJTE</u> OVO DA RADITE ZA ***ROOT*** NALOG!
 
 ### Vise
 

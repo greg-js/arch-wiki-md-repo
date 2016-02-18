@@ -198,30 +198,30 @@ History of old releases can be found [here](ftp://ftp.archlinux.org/iso/archboot
 
 ```
 # pacman -S archboot
-# mkdir -p _x86_64_chroot_/var/lib/pacman
-# pacman --root "_x86_64_chroot_" -Sy base --noconfirm --noprogressbar
+# mkdir -p *x86_64_chroot*/var/lib/pacman
+# pacman --root "*x86_64_chroot*" -Sy base --noconfirm --noprogressbar
 
 ```
 
 *   Для контейнера i686:
 
 ```
-# mkdir -p _i686_chroot_/var/lib/pacman
-# linux32 pacman --root "_i686_chroot_" -Sy base --noconfirm --noprogressbar
+# mkdir -p *i686_chroot*/var/lib/pacman
+# linux32 pacman --root "*i686_chroot*" -Sy base --noconfirm --noprogressbar
 
 ```
 
 *   Вход в контейнер archboot x86_64:
 
 ```
-# systemd-nspawn --capability=CAP_MKNOD --register=no -M $(uname -m) -D _x86_64_chroot_
+# systemd-nspawn --capability=CAP_MKNOD --register=no -M $(uname -m) -D *x86_64_chroot*
 
 ```
 
 *   Вход в контейнер archboot i686:
 
 ```
-# linux32 systemd-nspawn --capability=CAP_MKNOD --register=no -M $(uname -m) -D _i686_chroot_
+# linux32 systemd-nspawn --capability=CAP_MKNOD --register=no -M $(uname -m) -D *i686_chroot*
 
 ```
 

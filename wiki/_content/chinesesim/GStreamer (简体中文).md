@@ -48,11 +48,11 @@ Gstreamer是一个基于管道的多媒体框架。Gstreamer使用C语言编写�
 
 ### PulseAudio
 
-[PulseAudio](/index.php/PulseAudio "PulseAudio") 支持由 _good_ 插件包提供.
+[PulseAudio](/index.php/PulseAudio "PulseAudio") 支持由 *good* 插件包提供.
 
 ### 轻量级桌面
 
-如果需要设置GStreamer，例如切换音频输出设备，使用[gstreamer-properties](https://aur.archlinux.org/packages/gstreamer-properties/)软件包提供的_gstreamer-properties_。这个程序可以以每个用户的身份独立进行配置，或者以root身份进行全局配置。每个用户的独立设置放在`$HOME/.gconf/system/gstreamer`目录下，全局设置放在`/etc/gconf/gconf.xml.defaults`目录下。
+如果需要设置GStreamer，例如切换音频输出设备，使用[gstreamer-properties](https://aur.archlinux.org/packages/gstreamer-properties/)软件包提供的*gstreamer-properties*。这个程序可以以每个用户的身份独立进行配置，或者以root身份进行全局配置。每个用户的独立设置放在`$HOME/.gconf/system/gstreamer`目录下，全局设置放在`/etc/gconf/gconf.xml.defaults`目录下。
 
 ### KDE / Phonon integration
 

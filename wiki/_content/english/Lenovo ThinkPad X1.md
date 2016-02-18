@@ -44,7 +44,6 @@ Almost everything works out of the box. Install synaptics and video-intel driver
 It has been seen that the relevant udev rules do not get set properly. To do this, open `/usr/lib/udev/rules.d/40-libbsapi.rules` with your favorite text editor to add (or create with) the following lines:
 
  `/usr/lib/udev/rules.d/40-libbsapi.rules` 
-
 ```
 ATTRS{idVendor}==”147e”, ATTRS{idProduct}==”2020″,   SYMLINK+=”input/touchchip-%k”, MODE=”0664″, GROUP=”plugdev”
 ATTRS{idVendor}==”147e”, ATTRS{idProduct}==”2020″,   ATTR{power/control}==”*”, ATTR{power/control}=”auto”

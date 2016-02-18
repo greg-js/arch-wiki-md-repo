@@ -121,7 +121,7 @@ That should be all that is required.
 
 *   Edit by: xxsashixx
 
-This is for Logitech G5 Mouse users. I have not tested this for other mice, but if you do not add this, your mouse _MAY_ not work. If you do not need to add this, then do not.
+This is for Logitech G5 Mouse users. I have not tested this for other mice, but if you do not add this, your mouse *MAY* not work. If you do not need to add this, then do not.
 
 Put
 
@@ -226,11 +226,11 @@ It works. Horizontal scroll works out of the box - push the scroll wheel left or
 
 ### Opera
 
-It works. Note: buttons can be mapped to functions easily in `Preferences > Advanced > Shortcuts > Mouse set-up`. For example, to bind _button 8_ to _back_:
+It works. Note: buttons can be mapped to functions easily in `Preferences > Advanced > Shortcuts > Mouse set-up`. For example, to bind *button 8* to *back*:
 
-1.  Navigate to mouse set-up and expand the _Application_ drop-down
-2.  In the input column, type: _Button 8_
-3.  In the actions column, type: _Back_
+1.  Navigate to mouse set-up and expand the *Application* drop-down
+2.  In the input column, type: *Button 8*
+3.  In the actions column, type: *Back*
 
 ### Firefox
 
@@ -408,7 +408,7 @@ Go to Preferences tab > Additional buttons > Add, and add any special button.
 
 **Note:** In case of easystroke does not automatically detect mouse buttons, you can specify it manually. Button identifiers (numbers) can be viewed by xev.
 
-Go to _Action tab > Add action_, give the new action a name, as Type choose "Key", as Details set "Alt+Left" for Back button, "Alt+Right" for Forward button, as Stroke click the proper mouse button (confirm if a warning is displayed), and voilà! Your mouse button is configured.
+Go to *Action tab > Add action*, give the new action a name, as Type choose "Key", as Details set "Alt+Left" for Back button, "Alt+Right" for Forward button, as Stroke click the proper mouse button (confirm if a warning is displayed), and voilà! Your mouse button is configured.
 
 **Note:** Since Firefox 3, buttons 6 + 7 are no longer mapped to back and forward as in Firefox 2\. Therefore, if using the above methods in Xorg, refer further to corrective methods below if necessary.
 

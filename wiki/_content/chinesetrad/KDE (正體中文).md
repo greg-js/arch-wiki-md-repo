@@ -10,7 +10,7 @@ KDE 是一個功能豐富的桌面環境，以其整合良好的應用程式聞�
 *   [3 啟動 KDE](#.E5.95.9F.E5.8B.95_KDE)
     *   [3.1 使用 KDM (KDE Display Manager)](#.E4.BD.BF.E7.94.A8_KDM_.28KDE_Display_Manager.29)
         *   [3.1.1 作為一個守護進程啟動 KDM](#.E4.BD.9C.E7.82.BA.E4.B8.80.E5.80.8B.E5.AE.88.E8.AD.B7.E9.80.B2.E7.A8.8B.E5.95.9F.E5.8B.95_KDM)
-        *   [3.1.2 透過 /etc/inittab 啟動 KDM [_最佳_]](#.E9.80.8F.E9.81.8E_.2Fetc.2Finittab_.E5.95.9F.E5.8B.95_KDM_.5B.E6.9C.80.E4.BD.B3.5D)
+        *   [3.1.2 透過 /etc/inittab 啟動 KDM [*最佳*]](#.E9.80.8F.E9.81.8E_.2Fetc.2Finittab_.E5.95.9F.E5.8B.95_KDM_.5B.E6.9C.80.E4.BD.B3.5D)
     *   [3.2 使用 xinitrc](#.E4.BD.BF.E7.94.A8_xinitrc)
 *   [4 配置](#.E9.85.8D.E7.BD.AE)
     *   [4.1 個人化](#.E5.80.8B.E4.BA.BA.E5.8C.96)
@@ -169,7 +169,7 @@ pacman -S kdebase-workspace kdebase-konsole
 
 ### 使用 KDM (KDE Display Manager)
 
-_It is highly recommended to get familiar with the [full article](/index.php/Display_manager "Display manager") concerning display managers, before you make any changes. See also [KDM](/index.php/KDM "KDM") Wiki page._
+*It is highly recommended to get familiar with the [full article](/index.php/Display_manager "Display manager") concerning display managers, before you make any changes. See also [KDM](/index.php/KDM "KDM") Wiki page.*
 
 #### 作為一個守護進程啟動 KDM
 
@@ -180,7 +180,7 @@ DAEMONS=(dbus hal syslog-ng network netfs crond ... **kdm**)
 
 ```
 
-#### 透過 /etc/inittab 啟動 KDM [_最佳_]
+#### 透過 /etc/inittab 啟動 KDM [*最佳*]
 
 編輯 **`/etc/inittab`** 並註釋掉：
 
@@ -208,9 +208,9 @@ x:5:respawn:/usr/bin/kdm -nodaemon
 
 ### 使用 xinitrc
 
-_**xinitrc** 的觀念在 [這裡](/index.php/Xinitrc "Xinitrc") 有非常完整的解釋_
+***xinitrc** 的觀念在 [這裡](/index.php/Xinitrc "Xinitrc") 有非常完整的解釋*
 
-編輯 **`/home/`**`_你的帳號_`**`/.xinitrc`**. 然後取消下面這行的註解:
+編輯 **`/home/`**`*你的帳號*`**`/.xinitrc`**. 然後取消下面這行的註解:
 
 ```
 exec startkde 
@@ -243,7 +243,7 @@ For other personalization options not covered below such as activities, differen
 
 ##### 元件
 
-Plasmoids 是一個小腳本或程式碼寫成的 KDE 應用程式，可以以非常愉快的方式提升您桌面的功能。基於 KDE 的 Plasma 技術。您能夠顯示系統關鍵資訊像_剩餘硬碟空間_或_網絡連接監視器_。 取得更多元件的最簡單的方法，是左鍵點擊一個面板或桌面：
+Plasmoids 是一個小腳本或程式碼寫成的 KDE 應用程式，可以以非常愉快的方式提升您桌面的功能。基於 KDE 的 Plasma 技術。您能夠顯示系統關鍵資訊像*剩餘硬碟空間*或*網絡連接監視器*。 取得更多元件的最簡單的方法，是左鍵點擊一個面板或桌面：
 
 ```
 新增元件 -> 取得新元件 -> 下載元件
@@ -367,7 +367,7 @@ Since most aspect ratios of modern flat screens are wider than 4:3 it could be r
 
 ##### Plasma
 
-There are also some settings and modifications you can apply to your plasmoids to make KDE less space wasting. For example, the "Digital Clock" wastes more space than the "Analogue Clock". The little plasma icon ("Casheew") that one can see in the panel can be hidden by locking the widgets via rightklicking onto the panel. If you have got many tasks in your task-manager you should consider using _Smooth-tasks_. This alternative task-manager allows you to just display the icons of a task thus using less space but still maintaining the ability of the user to distinguish the different tasks.
+There are also some settings and modifications you can apply to your plasmoids to make KDE less space wasting. For example, the "Digital Clock" wastes more space than the "Analogue Clock". The little plasma icon ("Casheew") that one can see in the panel can be hidden by locking the widgets via rightklicking onto the panel. If you have got many tasks in your task-manager you should consider using *Smooth-tasks*. This alternative task-manager allows you to just display the icons of a task thus using less space but still maintaining the ability of the user to distinguish the different tasks.
 
 ```
 Install [smooth-tasks](https://aur.archlinux.org/packages.php?ID=29410) from the [AUR](/index.php/AUR "AUR").
@@ -427,7 +427,7 @@ A plasma bar will appear at the bottom of the screen which presents you the curr
 
 ### 省電
 
-KDE 整合了省電服務，稱為"_Powerdevil電源管理'_"，可以調整省電系統配置或螢幕的亮度（如果支援）。
+KDE 整合了省電服務，稱為"*Powerdevil電源管理'*"，可以調整省電系統配置或螢幕的亮度（如果支援）。
 
 #### 如何啟用一般的省電
 
@@ -579,7 +579,7 @@ In the System Settings window, go to Login Screen.
 
 ### 什麼是 Phonon？
 
-_Phonon is the multimedia API for KDE 4\. Phonon was created to allow KDE 4 to be independent of any single multimedia framework such as GStreamer or xine and to provide a stable API for KDE 4's lifetime. It was done for various reasons: to create a simple KDE/Qt style multimedia API, to better support native multimedia frameworks on Windows and Mac OS X, and to fix problems of frameworks becoming unmaintained or having API or ABI instability._
+*Phonon is the multimedia API for KDE 4\. Phonon was created to allow KDE 4 to be independent of any single multimedia framework such as GStreamer or xine and to provide a stable API for KDE 4's lifetime. It was done for various reasons: to create a simple KDE/Qt style multimedia API, to better support native multimedia frameworks on Windows and Mac OS X, and to fix problems of frameworks becoming unmaintained or having API or ABI instability.*
 
 from Wikipedia.
 
@@ -652,7 +652,7 @@ Since the new X-Server 1.8 arrived in the stable repos some users got the impres
 
 ```
 
-For ease of use you should add it to your daemons list in _/etc/rc.conf_:
+For ease of use you should add it to your daemons list in */etc/rc.conf*:
 
 ```
 DAEMONS=( .. @hal ..)
@@ -690,10 +690,10 @@ KDE 預設啟用桌面特效。較舊的顯示卡對於 3D 桌面加速可能會
 
 Many users who use the ATI and Intel open-source drivers have encountered several performance regressions with the latest KWin update in KDE 4.5\. Please try one of the following workarounds (in order of merit) if you have such a problem (via System Settings > Desktop Effects > Advanced):
 
-*   Add **export LIBGL_ALWAYS_INDIRECT=1** to _/etc/profile_
-    *   Optionally (because the above already forces this), _uncheck_ **Enable direct rendering** under _OpenGL Options_
+*   Add **export LIBGL_ALWAYS_INDIRECT=1** to */etc/profile*
+    *   Optionally (because the above already forces this), *uncheck* **Enable direct rendering** under *OpenGL Options*
     *   Reboot (and we mean reboot - don't try to restart the X server)
-*   Use **XRender** as the _Compositing type_
+*   Use **XRender** as the *Compositing type*
 *   Disable Desktop Effects (compositing) altogether
 
 See upstream bug report: [https://bugs.kde.org/show_bug.cgi?id=241402](https://bugs.kde.org/show_bug.cgi?id=241402)
@@ -708,7 +708,7 @@ See upstream bug report: [https://bugs.kde.org/show_bug.cgi?id=241402](https://b
 
 When you encounter such messages:
 
-	The audio playback device _<name-of-the-sound-device>_ does not work.
+	The audio playback device *<name-of-the-sound-device>* does not work.
 
 	Falling back to default
 

@@ -24,17 +24,17 @@ Consider also building it from sources at [[2]](https://sourceware.org/git/?p=sy
 
 You will need at least the [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) package installed.
 
-Because Arch permanently strips debugging data from its distributed binaries (including the kernel), many normal/fancier systemtap capabilities are simply not available, so many examples at _/usr/share/doc/systemtap/examples_ will not work. However, see the [stapprobes man page](https://sourceware.org/systemtap/man/stapprobes.3stap.html) for the NON-DWARF and AUTO-DWARF probe types for what should still work, for example:
+Because Arch permanently strips debugging data from its distributed binaries (including the kernel), many normal/fancier systemtap capabilities are simply not available, so many examples at */usr/share/doc/systemtap/examples* will not work. However, see the [stapprobes man page](https://sourceware.org/systemtap/man/stapprobes.3stap.html) for the NON-DWARF and AUTO-DWARF probe types for what should still work, for example:
 
 *   kernel tracepoints: kernel.trace("*")
 *   user-space probes: process("...").function("...") (for programs you build yourself with -g)
-*   user-space markers: process("...").mark("...") (if they were configured with the _<sys/sdt.h>_ markers)
+*   user-space markers: process("...").mark("...") (if they were configured with the *<sys/sdt.h>* markers)
 *   perfctr-based probes: perf.*
 *   non-dwarf kernel probes: kprobe.function("...") and nd_syscall.* tapset (if a /boot/System.map* file is available, see below).
 
 ## Kernel rebuild
 
-You may consider to build a _linux-custom_ package to run SystemTap, but rebuilding the original [linux](https://www.archlinux.org/packages/?name=linux) package is easy and efficient. See also [[3]](https://wiki.archlinux.org/index.php/Kernels/Compilation/Traditional).
+You may consider to build a *linux-custom* package to run SystemTap, but rebuilding the original [linux](https://www.archlinux.org/packages/?name=linux) package is easy and efficient. See also [[3]](https://wiki.archlinux.org/index.php/Kernels/Compilation/Traditional).
 
 ### Prepare
 
@@ -54,12 +54,11 @@ Edit **config** (for 32-bit systems) or **config.x86_64** (for 64-bit systems), 
 *   CONFIG_DEBUG_INFO_REDUCED=n
 *   CONFIG_X86_DECODER_SELFTEST=n
 
-By default only _CONFIG_DEBUG_INFO_ and _CONFIG_DEBUG_INFO_REDUCED_ are not set.
+By default only *CONFIG_DEBUG_INFO* and *CONFIG_DEBUG_INFO_REDUCED* are not set.
 
 With current core/linux (tested with 3.15.2) you can simply append these lines into config.[x86_64]:
 
  `x86_64` 
-
 ```
 
 echo '
@@ -69,11 +68,11 @@ CONFIG_DEBUG_INFO_REDUCED=n
 
 ```
 
-_Note that if you want to put these lines into a self-maintained script, do not insert any space before CONFIG_* lines._
+*Note that if you want to put these lines into a self-maintained script, do not insert any space before CONFIG_* lines.*
 
 ### Update checksum
 
-_You can safely skip this step if you believe the source files are correct_.
+*You can safely skip this step if you believe the source files are correct*.
 
 Run `md5sum config[.x86_64]` to get a new md5sum.
 

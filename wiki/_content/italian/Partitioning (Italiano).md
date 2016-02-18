@@ -1,4 +1,4 @@
-Il _partizionamento_ del disco fisso permette di dividere logicamente lo spazio disponibile in sezioni che possono essere accessibili indipendentemente l'uno dall'altro.
+Il *partizionamento* del disco fisso permette di dividere logicamente lo spazio disponibile in sezioni che possono essere accessibili indipendentemente l'uno dall'altro.
 
 Un intero disco rigido può essere assegnato a una singola partizione, oppure si può dividere lo spazio di memoria disponibile su più partizioni. Un certo numero di scenari richiedono la creazione di più partizioni: dual- o multi-boot, per esempio, o il mantenimento di un partizione di [swap](/index.php/Swap "Swap"). In altri casi , il partizionamento è usato come mezzo di dati logicamente separati, come ad esempio la creazione di partizioni separate per i file audio e video. Schemi di partizionamento comuni sono discussi in dettaglio qui di seguito .
 
@@ -47,7 +47,7 @@ Ci sono tre tipi di partizioni :
 
 Le partizioni **primarie** possono essere avviabili e sono limitati a quattro partizioni per disco o volume RAID. Se uno schema di partizionamento richiede più di quattro partizioni , viene utilizzata una partizione **estesa** che contiene le partizioni **logiche**. La partizione estesa può essere considerata come un contenitore per le partizioni logiche. Un disco rigido può contenere non più di una partizione estesa. La partizione estesa è anche considerata come una partizione primaria, quindi se il disco ha una partizione estesa, sono possibili solo tre partizioni primarie aggiuntive (cioè tre partizioni primarie e una partizione estesa). Il numero di partizioni logiche che risiedono in una partizione estesa è illimitato. Un sistema in dual boot con Windows richiede che Windows risieda in una partizione primaria.
 
-Lo schema di numerazione consueto è quello di creare partizioni primarie _sda1_ fino a _sda3_ seguita da una partizione estesa **sda4**. Le partizioni logiche su **sda4** sono numerate come **sda5**, **sda6**, ecc
+Lo schema di numerazione consueto è quello di creare partizioni primarie *sda1* fino a *sda3* seguita da una partizione estesa **sda4**. Le partizioni logiche su **sda4** sono numerate come **sda5**, **sda6**, ecc
 
 ### GUID Partition Table
 
@@ -57,7 +57,7 @@ Supporta solo partizioni di tipo **primaria**. La quantità di partizioni per di
 
 ### Scegliere tra GPT e MBR
 
-[GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") (GPT) è un alternativo stile di partizionamento contemporaneo. Esso è destinato a sostituire il vecchio [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") del sistema (MBR). GPT ha diversi vantaggi rispetto MBR, che ha stranezze risalenti ai tempi di MS-DOS. Con i recenti sviluppi degli strumenti di formattazione _fdisk_ (MBR) e _gdisk_ ( GPT), è altrettanto facile ottenere un partizionamento di tipo GPT o MBR, e di ottenere il massimo delle prestazioni.
+[GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") (GPT) è un alternativo stile di partizionamento contemporaneo. Esso è destinato a sostituire il vecchio [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") del sistema (MBR). GPT ha diversi vantaggi rispetto MBR, che ha stranezze risalenti ai tempi di MS-DOS. Con i recenti sviluppi degli strumenti di formattazione *fdisk* (MBR) e *gdisk* ( GPT), è altrettanto facile ottenere un partizionamento di tipo GPT o MBR, e di ottenere il massimo delle prestazioni.
 
 La scelta fondamentalmente fra i due tipi di partizionamento si riduce a questo :
 
@@ -103,7 +103,7 @@ La directory `/home` contiene i file di configurazione specifici dell'utente, ca
 
 Separare `/home` consente a `/` di essere ri-partizionato separatamente, ma si noti che è ancora possibile reinstallare Arch con una partizione di `/home` intatta, anche se non è separato fisicamente- solo le altre directory di primo livello hanno bisogno di essere rimosse, e quindi pacstrap può essere eseguito.
 
-Si consiglia di non condividere la directory _home_ tra utenti su diverse distribuzioni, poiché usano versioni e patch del software incompatibili. Invece, è possibile la condivisione di una partizione multimediale, oppure utilizzare differenti directory _home_ sulla stessa partizione `/home`.
+Si consiglia di non condividere la directory *home* tra utenti su diverse distribuzioni, poiché usano versioni e patch del software incompatibili. Invece, è possibile la condivisione di una partizione multimediale, oppure utilizzare differenti directory *home* sulla stessa partizione `/home`.
 
 #### /var
 
@@ -115,11 +115,11 @@ La directory `/var` archivia dati variabili, come le directory e file di spool, 
 
 #### /tmp
 
-Questa è già una partizione separata per impostazione predefinita, in virtù del fatto che viene montata come _tmpfs_ da systemd.
+Questa è già una partizione separata per impostazione predefinita, in virtù del fatto che viene montata come *tmpfs* da systemd.
 
 #### Swap
 
-Una partizione di [Swap](/index.php/Swap "Swap") fornisce memoria che può essere utilizzata come RAM virtuale. Un [file per Swap](/index.php/Swap#Swap_file "Swap") dovrebbe anche essere considerato, poichè hanno pochissimo sovraccarico di prestazioni rispetto ad una partizione e sono molto più facili da ridimensionare, se necessario. Una partizione di swap può _potenzialmente_ essere condivisa tra i sistemi operativi, ma non se si utilizza l'ibernazione.
+Una partizione di [Swap](/index.php/Swap "Swap") fornisce memoria che può essere utilizzata come RAM virtuale. Un [file per Swap](/index.php/Swap#Swap_file "Swap") dovrebbe anche essere considerato, poichè hanno pochissimo sovraccarico di prestazioni rispetto ad una partizione e sono molto più facili da ridimensionare, se necessario. Una partizione di swap può *potenzialmente* essere condivisa tra i sistemi operativi, ma non se si utilizza l'ibernazione.
 
 #### Quanto grandi dovrebbero essere le mie partizioni?
 
@@ -163,7 +163,7 @@ Una partizione di [Swap](/index.php/Swap "Swap") fornisce memoria che può esser
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
-**Attenzione:** La prima partizione creata da _cfdisk_ inizia dal settore 63, anziché dal consueto 2048\. Questo può portare a prestazioni ridotte su SSD e unità Advanced Format (4k settore). Causerà problemi con [GRUB2](/index.php/GRUB_(Italiano)#messaggio_d.27errore_msdos-style "GRUB (Italiano)"). Mentre GRUB legacy e Syslinux dovrebbero funzionare bene.
+**Attenzione:** La prima partizione creata da *cfdisk* inizia dal settore 63, anziché dal consueto 2048\. Questo può portare a prestazioni ridotte su SSD e unità Advanced Format (4k settore). Causerà problemi con [GRUB2](/index.php/GRUB_(Italiano)#messaggio_d.27errore_msdos-style "GRUB (Italiano)"). Mentre GRUB legacy e Syslinux dovrebbero funzionare bene.
 
 *   **gdisk** — Versione [GPT](/index.php/GPT "GPT") di fdisk.
 
@@ -198,28 +198,28 @@ Una partizione di [Swap](/index.php/Swap "Swap") fornisce memoria che può esser
 *   L'EBS è in gran parte determinato dal fornitore, una ricerca su Google sul modello interessato potrebbe essere una buona idea. L'Intel X25-M, per esempio, è pensato per avere un EBS di 512 KB, ma Intel non ha ancora pubblicato nulla di ufficiale a tal fine.
 *   Se non si conosce l'EBS del proprio SSD, utilizzare una dimensione di 512 KB. Questi numeri sono maggiori o uguali per quasi tutti i correnti EBS. L'allineamento delle partizioni per un tale EBS si tradurrà in partizioni anche allineate per tutte le dimensioni minori. Questo è il modo in cui Windows 7 e le partizioni Ubuntu "ottimizzano" per lavorare con gli SSD.
 
-Se le partizioni non sono allineate per iniziare a multipli della EBS (512 KB per esempio), l'allineando il sistema dei file è un esercizio inutile, perché tutto viene inclinato all'offset della partizione di avvio. Tradizionalmente, gli hard disk sono stati affrontati indicando il _cilindro_, la _testa_, e il _settore_ in cui i dati sono vengono letti o scritti. Questi rappresentavano rispettivamente la posizione radiale, la testina dell'unità (=piatto e laterale) e la posizione assiale dei dati. Con LBA (Logical Block Addressing), questo non è più necessario. Al contrario, l'intero disco rigido viene gestito come un flusso continuo di dati .
+Se le partizioni non sono allineate per iniziare a multipli della EBS (512 KB per esempio), l'allineando il sistema dei file è un esercizio inutile, perché tutto viene inclinato all'offset della partizione di avvio. Tradizionalmente, gli hard disk sono stati affrontati indicando il *cilindro*, la *testa*, e il *settore* in cui i dati sono vengono letti o scritti. Questi rappresentavano rispettivamente la posizione radiale, la testina dell'unità (=piatto e laterale) e la posizione assiale dei dati. Con LBA (Logical Block Addressing), questo non è più necessario. Al contrario, l'intero disco rigido viene gestito come un flusso continuo di dati .
 
 ## Utilizzando GPT - metodo moderno
 
 ### Riepilogo utilizzando Gdisk
 
-Utilizzando GPT, l'utility per la modifica della tabella delle partizioni è chiamato gdisk. Esso può eseguire l'allineamento delle partizioni automaticamente con una base di dimensioni del blocco a 2048 settori (o 1024KiB), che deve essere compatibile con la stragrande maggioranza di SSD, se non tutti. GNU parted supporta anche GPT, ma è [meno facile da usare](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) per l'allineamento delle partizioni . L'ambiente fornito dall'ISO di installazione di Arhc include il comando _gdisk_. Se ne avete bisogno più avanti nel sistema già installato, _gdisk_ è disponibile nel pacchetto [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk).
+Utilizzando GPT, l'utility per la modifica della tabella delle partizioni è chiamato gdisk. Esso può eseguire l'allineamento delle partizioni automaticamente con una base di dimensioni del blocco a 2048 settori (o 1024KiB), che deve essere compatibile con la stragrande maggioranza di SSD, se non tutti. GNU parted supporta anche GPT, ma è [meno facile da usare](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) per l'allineamento delle partizioni . L'ambiente fornito dall'ISO di installazione di Arhc include il comando *gdisk*. Se ne avete bisogno più avanti nel sistema già installato, *gdisk* è disponibile nel pacchetto [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk).
 
-Una sintesi del uso tipico di _gdisk_  :
+Una sintesi del uso tipico di *gdisk*  :
 
-*   Avviare da root _gdisk_ sulla vostra unità (_disk-device_ può essere ad esempio `/dev/sda`):
+*   Avviare da root *gdisk* sulla vostra unità (*disk-device* può essere ad esempio `/dev/sda`):
 
 ```
-# gdisk _disk-device_
+# gdisk *disk-device*
 
 ```
 
 *   Se l'unità è nuova o se si vuole ricominciare da capo, creare una nuova tabella di partizione GUID vuota con il comando {ic|o}}.
 *   Creare una nuova partizione con il comando `n` (1° partizione di tipo primario).
-*   Supponendo che la partizione è nuova, _gdisk_ sceglierà il più alto allineamento possibile. In caso contrario, scegliere la più grande potenza di due che divide tutti gli spostamenti delle partizioni.
-*   Se la scelta di inizializzare un settore prima del valore 2048, _gdisk_ sposterà automaticamente l'avvio delle partizione per il settore del disco 2048\. Questo per garantire un allineamento 2048-settori (se il settore è 512B, questo sarà un allineamento a 1024KiB che dovrebbe adattarsi qualsiasi cancellazione di blocco SSD NAND).
-*   Usare la forma `+_x_{M,G}` per estendere la partizione di _x_ mebibyte o gibibyte, se la scelta di una dimensione che non è un multiplo della dimensione di allineamento (1024kiB), _gdisk_ ridurrà la partizione al multiplo inferiore più vicino. Ad esempio, se si desidera creare una partizione 15GiB, immettere `+15G`.
+*   Supponendo che la partizione è nuova, *gdisk* sceglierà il più alto allineamento possibile. In caso contrario, scegliere la più grande potenza di due che divide tutti gli spostamenti delle partizioni.
+*   Se la scelta di inizializzare un settore prima del valore 2048, *gdisk* sposterà automaticamente l'avvio delle partizione per il settore del disco 2048\. Questo per garantire un allineamento 2048-settori (se il settore è 512B, questo sarà un allineamento a 1024KiB che dovrebbe adattarsi qualsiasi cancellazione di blocco SSD NAND).
+*   Usare la forma `+*x*{M,G}` per estendere la partizione di *x* mebibyte o gibibyte, se la scelta di una dimensione che non è un multiplo della dimensione di allineamento (1024kiB), *gdisk* ridurrà la partizione al multiplo inferiore più vicino. Ad esempio, se si desidera creare una partizione 15GiB, immettere `+15G`.
 *   Selezionare l'ID del tipo di partizione, per valore predefinito, `Linux/Windows data` (code `0700`), dovrebbe andare bene per la maggior parte degli utilizzi. Premere `L` per visualizzare l'elenco dei codici. Se prevedete di usare LVM selezionare `Linux LVM` (`8e00`).
 *   Assegnare altre partizioni in modo simile.
 *   Scrivere la tabella su disco e uscire attraverso con il comando `w`.
@@ -227,29 +227,29 @@ Una sintesi del uso tipico di _gdisk_  :
 
 **Nota:**
 
-*   Per eseguire l'avvio da un disco partizionato in GPT su un sistema basato su BIOS si deve creare, preferibilmente all'inizio del disco , una [partizione BIOS di boot](/index.php/GRUB2_(Italiano)#Istruzioni_specifiche_per_GUID_Partition_Table_.28GPT.29 "GRUB2 (Italiano)") senza file system e con il tipo di partizione impostato come `BIOS boot` o come partizione `bios_grub` (codice _gdisk_ di tipo `EF02`) per l'avvio da disco utilizzando [GRUB](/index.php/GRUB_(Italiano) "GRUB (Italiano)"). Per [Syslinux](/index.php/Syslinux "Syslinux"), non è necessario creare questa partizione `bios_grub`, ma è necessario disporre della partizione `/boot` separata e abilitare l'attributo `Legacy BIOS Bootable partition` per quella partizione (usando _gdisk_).
+*   Per eseguire l'avvio da un disco partizionato in GPT su un sistema basato su BIOS si deve creare, preferibilmente all'inizio del disco , una [partizione BIOS di boot](/index.php/GRUB2_(Italiano)#Istruzioni_specifiche_per_GUID_Partition_Table_.28GPT.29 "GRUB2 (Italiano)") senza file system e con il tipo di partizione impostato come `BIOS boot` o come partizione `bios_grub` (codice *gdisk* di tipo `EF02`) per l'avvio da disco utilizzando [GRUB](/index.php/GRUB_(Italiano) "GRUB (Italiano)"). Per [Syslinux](/index.php/Syslinux "Syslinux"), non è necessario creare questa partizione `bios_grub`, ma è necessario disporre della partizione `/boot` separata e abilitare l'attributo `Legacy BIOS Bootable partition` per quella partizione (usando *gdisk*).
 *   [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") non supporta GPT, gli utenti devono usare [BURG](/index.php/BURG "BURG"), GRUB o Syslinux.
 
 **Attenzione:** Se si sta pianificando di avviare Windows in modalità BIOS (questa è l'unica opzione disponibile per le versioni di Windows a 32 bit e 64-bit di Windows XP), non usare GPT in quanto Windows non supporta il boot da un disco GPT in sistemi BIOS. Avrete bisogno di usare il partizionamento MBR e di avviare in modalità BIOS, come descritto di seguito. Questa limitazione non si applica per l'avvio di una moderna versione di Windows a 64 bit in modalità UEFI.
 
 ## Utilizzando MBR - metodo legacy
 
-Utilizzando MBR, l'utility per la modifica della tabella delle partizioni è chiamata _fdisk_. Le recenti versioni di _fdisk_ hanno abbandonato il sistema deprecato di utilizzare cilindri come unità di visualizzazione di default, così come la compatibilità MS-DOS per impostazione predefinita. L'ultima versione di _fdisk_ allinea automaticamente tutte le partizioni a 2048 settori, o 1024 KiB, che dovrebbe funzionare per tutti i formati EBS che sono noti per essere utilizzati da produttori di SSD. Ciò significa che le impostazioni predefinite vi daranno un corretto allineamento.
+Utilizzando MBR, l'utility per la modifica della tabella delle partizioni è chiamata *fdisk*. Le recenti versioni di *fdisk* hanno abbandonato il sistema deprecato di utilizzare cilindri come unità di visualizzazione di default, così come la compatibilità MS-DOS per impostazione predefinita. L'ultima versione di *fdisk* allinea automaticamente tutte le partizioni a 2048 settori, o 1024 KiB, che dovrebbe funzionare per tutti i formati EBS che sono noti per essere utilizzati da produttori di SSD. Ciò significa che le impostazioni predefinite vi daranno un corretto allineamento.
 
-Si noti che in passato, _fdisk_ usava i cilindri come unità di visualizzazione di default, e mantenuta una compatibilità verso di MS-DOS che coincide con un errato allineamento per SSD. Pertanto si troveranno molte guide su Internet datate 2008-2009, poiché era un grosso problema ottenere l'allineamento in modo corretto. Con l'ultima versione di _fdisk_, le cose sono molto più semplici, come si riflettono in questa guida.
+Si noti che in passato, *fdisk* usava i cilindri come unità di visualizzazione di default, e mantenuta una compatibilità verso di MS-DOS che coincide con un errato allineamento per SSD. Pertanto si troveranno molte guide su Internet datate 2008-2009, poiché era un grosso problema ottenere l'allineamento in modo corretto. Con l'ultima versione di *fdisk*, le cose sono molto più semplici, come si riflettono in questa guida.
 
 ### Riepilogo utilizzando Fdisk
 
-*   Avviare _fdisk_ sul proprio dispositivo come root (_disk-device_ può essere ad esempio `/dev/sda`):
+*   Avviare *fdisk* sul proprio dispositivo come root (*disk-device* può essere ad esempio `/dev/sda`):
 
 ```
-# fdisk _disk-device_
+# fdisk *disk-device*
 
 ```
 
 *   Se l'unità è nuova o se si vuole ricominciare da capo, creare una nuova tabella delle partizioni DOS vuota con il comando `o`.
 *   Creare una nuova partizione con il comando `n` (1° partizione di tipo primario).
-*   Usare la forma `+_x_G` per estendere la partizione di _x_ gibibytes. Ad esempio, se si desidera creare una partizione 15GiB, immettere `+15G`.
+*   Usare la forma `+*x*G` per estendere la partizione di *x* gibibytes. Ad esempio, se si desidera creare una partizione 15GiB, immettere `+15G`.
 *   Cambiare l'ID di sistema della partizione dal tipo predefinito di Linux (`tipo 83`) al tipo desiderato tramite il comando `t`. Questo è un passaggio facoltativo qualora l'utente desideri creare un altro tipo di partizione, ad esempio swap, NTFS, LVM , ecc. Si noti che un elenco completo di tutti i tipi di partizione validi è disponibile tramite il comando `l`.
 *   Assegnare altre partizioni in modo simile.
 *   Scrivere la tabella su disco e uscire attraverso con il comando `w`.

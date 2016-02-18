@@ -1,4 +1,4 @@
-Two different font systems are used by X11: the older or core X Logical Font Description, _XLFD,_ and the newer X FreeType, _Xft,_ systems (see [An Xft Tutorial](http://keithp.com/~keithp/render/Xft.tutorial) for font names format). XLFD was originally designed for bitmap fonts and support for scalable fonts (Type1, TrueType and OpenType) was added later. XLFD does not support anti‑aliasing and sub‑pixel rasterization. Xft uses the FreeType and Fontconfig libraries and is more suitable when the smooth appearance of fonts is desired. A guide for using Fontconfig and Xft may be found at [Font configuration](/index.php/Font_configuration "Font configuration").
+Two different font systems are used by X11: the older or core X Logical Font Description, *XLFD,* and the newer X FreeType, *Xft,* systems (see [An Xft Tutorial](http://keithp.com/~keithp/render/Xft.tutorial) for font names format). XLFD was originally designed for bitmap fonts and support for scalable fonts (Type1, TrueType and OpenType) was added later. XLFD does not support anti‑aliasing and sub‑pixel rasterization. Xft uses the FreeType and Fontconfig libraries and is more suitable when the smooth appearance of fonts is desired. A guide for using Fontconfig and Xft may be found at [Font configuration](/index.php/Font_configuration "Font configuration").
 
 ## Contents
 
@@ -33,7 +33,7 @@ $ xterm -fn 12x24
 
 ```
 
-Two nearly indispensible utilities for working with XLFD names are _xfontsel,_ [xorg-xfontsel](https://www.archlinux.org/packages/?name=xorg-xfontsel), and _xlsfonts,_ [xorg-xlsfonts](https://www.archlinux.org/packages/?name=xorg-xlsfonts). Xfontsel uses dropdown menus for selecting parts of a font name and previews the font selected. Xlsfonts can list fonts by name, with selectable degrees of detail, and can show how wildcards and aliases will be interpreted by the XLFD system. If a fontname is not working, check for a match with xlsfonts.
+Two nearly indispensible utilities for working with XLFD names are *xfontsel,* [xorg-xfontsel](https://www.archlinux.org/packages/?name=xorg-xfontsel), and *xlsfonts,* [xorg-xlsfonts](https://www.archlinux.org/packages/?name=xorg-xlsfonts). Xfontsel uses dropdown menus for selecting parts of a font name and previews the font selected. Xlsfonts can list fonts by name, with selectable degrees of detail, and can show how wildcards and aliases will be interpreted by the XLFD system. If a fontname is not working, check for a match with xlsfonts.
 
 ```
 $ xlsfonts -fn "*-fixed-medium-r-n*--13-120-75-*-iso1*-1"
@@ -46,59 +46,59 @@ $ xlsfonts -ll -fn fixed
 The following table provides a description of the font name fields. The elements are listed in the same order as they appear in a font name. The names used by xfontsel are listed below the longer uppercase names.
 
 | FOUNDRY
-_fndry_ | The supplier of the font.
+*fndry* | The supplier of the font.
 
 Specify this field when two different fonts share the same FAMILY_NAME, for example, `courier`. Otherwise the wildcard, `*`, may be substituted.
 
  |
 | FAMILY_NAME
-_fmly_ | The typeface name, defined by the foundry. Usually, fonts with the same family name are visually similar. |
+*fmly* | The typeface name, defined by the foundry. Usually, fonts with the same family name are visually similar. |
 | WEIGHT_NAME
-_wght_ | The degree of blackness of the glyphs, defined by the foundry. Common values are `bold` and `medium`. |
+*wght* | The degree of blackness of the glyphs, defined by the foundry. Common values are `bold` and `medium`. |
 | SLANT
-_slant_ | Common values are `r` for Roman or upright, and `i` and `o` for the slanted italic and oblique typefaces.
+*slant* | Common values are `r` for Roman or upright, and `i` and `o` for the slanted italic and oblique typefaces.
 
 Usually this needs to be specified.
 
  |
 | SETWIDTH_NAME
-_sWdth_ | Values are set by the designer, examples are `normal`, `narrow` or `condensed` identifying the width.
+*sWdth* | Values are set by the designer, examples are `normal`, `narrow` or `condensed` identifying the width.
 
 A value should be set, not wildcarded, when there are two or more possible values.
 
  |
 | ADD_STYLE
-_adstyl_ | Often an empty field, but values may be supplied by the foundry.
+*adstyl* | Often an empty field, but values may be supplied by the foundry.
 
 In xfontsel, an empty field is chosen by selecting `(nil)` from the dropdown box. It's often safe to wildcard this field with `*`.
 
  |
 | PIXEL_SIZE
-_pxlsz_ | The body size of a font for a particular POINT_SIZE and RESOLUTION_Y. Changes the height of a font independent of the point size for which the font was designed.
+*pxlsz* | The body size of a font for a particular POINT_SIZE and RESOLUTION_Y. Changes the height of a font independent of the point size for which the font was designed.
 
 A zero, `0`, or a `*` may be used for scalable fonts if you specify POINT_SIZE.
 
  |
 | POINT_SIZE
-_ptSz_ | The body heighth for which the font was designed. Values are expressed as tenths of a point (one point is nominally one seventy-secondth of an inch).
+*ptSz* | The body heighth for which the font was designed. Values are expressed as tenths of a point (one point is nominally one seventy-secondth of an inch).
 
 See [Font sizes](#Font_Sizes).
 
  |
 | RESOLUTION_X
-_resx_ | The horizontal resolution as an integer-string for which the font was designed. The values are expressed as pixels or dpi.
+*resx* | The horizontal resolution as an integer-string for which the font was designed. The values are expressed as pixels or dpi.
 
 For scalable fonts this may safely be set to zero or `*`, bitmap fonts usually use `75` or `100`.
 
  |
 | RESOLUTION_Y
-_resy_ | The vertical dpi for which the font was designed.
+*resy* | The vertical dpi for which the font was designed.
 
 Similar to RESOLUTION_X, scalable fonts can have this value set to zero or `*`. For bitmaps, only one of RESOLUTION_X or RESOLUTION_Y needs to be identified. The other may be wildcarded.
 
  |
 | SPACING
-_spc_ | `p`– For proportional fonts
+*spc* | `p`– For proportional fonts
 
 `m` – Monospace; all the glyphs have the same logical width.
 
@@ -106,23 +106,23 @@ _spc_ | `p`– For proportional fonts
 
  |
 | AVERAGE_WIDTH
-_avgWdth_ | Arithmetic mean of the widths of all glyphs. Zero is used for proportional fonts.
+*avgWdth* | Arithmetic mean of the widths of all glyphs. Zero is used for proportional fonts.
 
 It is safe to wildcard this value with *.
 
  |
 | CHARSET_REGISTRY
-_rgstry_ | Always paired with the next field, this names the registration authority for the character encoding used. Examples are `iso10646` and `koi8`.
+*rgstry* | Always paired with the next field, this names the registration authority for the character encoding used. Examples are `iso10646` and `koi8`.
 
 It's always safe to choose an available registry that is compatible with the user's locale settings.
 
  |
 | CHARSET_ENCODING
-_encdng_ | An identifier for the character set encoding. |
+*encdng* | An identifier for the character set encoding. |
 
 ## Font Sizes
 
-Font names are stored in the _fonts.dir_ file in each font directory. For more information about these files, see [The Font Search Path](#The_Font_Search_Path) below. In a font name, the pixel and point sizes, and the x and y resolution values, may be changed and the changes will affect a font's displayed size and also the spacing between characters and between lines.
+Font names are stored in the *fonts.dir* file in each font directory. For more information about these files, see [The Font Search Path](#The_Font_Search_Path) below. In a font name, the pixel and point sizes, and the x and y resolution values, may be changed and the changes will affect a font's displayed size and also the spacing between characters and between lines.
 
 As a general rule, bitmap fonts have their best appearance at the sizes the designers specified. For these fonts, changing the size-related values from those stored in the font names may give unexpected or ugly distortions or an unmatchable font pattern.
 
@@ -133,7 +133,7 @@ Scalable fonts were designed to be resized. A scalable font name, as shown in th
 
 ```
 
-To specify a scalable font at a particular size you only need to provide a value for the POINT_SIZE field, the other size related values can remain at zero. The POINT_SIZE value is in tenths of a point, so the entered value must be the desired point size multiplied by ten. As an example, the following line specifies _Liberation Serif_ at 9 points.
+To specify a scalable font at a particular size you only need to provide a value for the POINT_SIZE field, the other size related values can remain at zero. The POINT_SIZE value is in tenths of a point, so the entered value must be the desired point size multiplied by ten. As an example, the following line specifies *Liberation Serif* at 9 points.
 
 ```
 -misc-liberation serif-medium-r-normal--0-90-0-0-p-0-iso8859-1
@@ -149,9 +149,9 @@ $ xset q
 
 ```
 
-When a font is requested, the X server searches the font directories in the order given in the font path. Each font directory will contain a file named _fonts.dir_ that serves as an index connecting a font's XLFD name to the file containing the font. The search ends when the first matching font is found.
+When a font is requested, the X server searches the font directories in the order given in the font path. Each font directory will contain a file named *fonts.dir* that serves as an index connecting a font's XLFD name to the file containing the font. The search ends when the first matching font is found.
 
-The first line in a _fonts.dir_ file is the number of fonts listed in the file. The following lines then list the fonts in that directory: filename first, followed by a single space, and finally the font name. Below are the first four lines of an example fonts.dir:
+The first line in a *fonts.dir* file is the number of fonts listed in the file. The following lines then list the fonts in that directory: filename first, followed by a single space, and finally the font name. Below are the first four lines of an example fonts.dir:
 
 ```
 1894
@@ -162,11 +162,11 @@ UTBI__10-ISO8859-13.pcf.gz -adobe-utopia-bold-i-normal--14-100-100-100-p-78-iso8
 
 ### mkfontscale and mkfontdir
 
-To create a _fonts.dir_ file, two programs are required, `mkfontscale` and `mkfontdir`. These programs were probably installed when you installed [Xorg](/index.php/Xorg "Xorg"). Mkfontdir reads all the bitmap font files in a directory for the font names, and creates the fonts.dir file using the font and file names it has found. It also adds the entries from a file named _fonts.scale._
+To create a *fonts.dir* file, two programs are required, `mkfontscale` and `mkfontdir`. These programs were probably installed when you installed [Xorg](/index.php/Xorg "Xorg"). Mkfontdir reads all the bitmap font files in a directory for the font names, and creates the fonts.dir file using the font and file names it has found. It also adds the entries from a file named *fonts.scale.*
 
-Because mkfontdir cannot read scalable font files, the program mkfontscale is used to create the names for TrueType, OpenType and Type1 fonts. The font names and font filenames are stored in the file named _fonts.scale._ The structure of a fonts.scale file is identical to a fonts.dir file. The first line is the number of font names listed; the following lines contain the filename first, followed by a single space, and finally the font name.
+Because mkfontdir cannot read scalable font files, the program mkfontscale is used to create the names for TrueType, OpenType and Type1 fonts. The font names and font filenames are stored in the file named *fonts.scale.* The structure of a fonts.scale file is identical to a fonts.dir file. The first line is the number of font names listed; the following lines contain the filename first, followed by a single space, and finally the font name.
 
-Both _fonts.scale_ and _fonts.dir_ can be hand edited. However, every time mkfontscale or mkfontdir is run, any existing fonts.scale or fonts.dir is overwritten. Your edits are easily lost.
+Both *fonts.scale* and *fonts.dir* can be hand edited. However, every time mkfontscale or mkfontdir is run, any existing fonts.scale or fonts.dir is overwritten. Your edits are easily lost.
 
 Any time mkfontdir is run, the font database should be updated, using the command:
 
@@ -175,15 +175,15 @@ $ xset fp rehash
 
 ```
 
-**Note:** Filenames that include spaces cannot be parsed correctly from the _fonts.dir_ and _fonts.scale_ files. Quoting or escaping these spaces will not work. The only solutions are to rename the files using filenames that do not contain spaces or to delete the font listings in the fonts.dir and fonts.scale files.
+**Note:** Filenames that include spaces cannot be parsed correctly from the *fonts.dir* and *fonts.scale* files. Quoting or escaping these spaces will not work. The only solutions are to rename the files using filenames that do not contain spaces or to delete the font listings in the fonts.dir and fonts.scale files.
 
 ## Aliases
 
-Using aliases can greatly simplify the use of XLFD names. Aliases are stored in files named _fonts.alias_ in the directories along the font path.
+Using aliases can greatly simplify the use of XLFD names. Aliases are stored in files named *fonts.alias* in the directories along the font path.
 
-The package [xorg-fonts-alias](https://www.archlinux.org/packages/?name=xorg-fonts-alias) provides some common aliases that have become standard on X servers. This package provides fonts.alias files for fonts in the directories _100dpi, 75dpi, cyrillic, and misc._ Some applications depend on these standard aliases: the default font for _xterm_ is coded to use the font matched by the alias "fixed". Changing these standardized aliases is not recommended, particularly for multi-user machines.
+The package [xorg-fonts-alias](https://www.archlinux.org/packages/?name=xorg-fonts-alias) provides some common aliases that have become standard on X servers. This package provides fonts.alias files for fonts in the directories *100dpi, 75dpi, cyrillic, and misc.* Some applications depend on these standard aliases: the default font for *xterm* is coded to use the font matched by the alias "fixed". Changing these standardized aliases is not recommended, particularly for multi-user machines.
 
-You can add aliases to your system by writing your own _fonts.alias_ file or by adding to an existing one. The format is simple. Comments are restricted to lines beginning with an exclamation point, `!`. Blank lines are ignored. Each alias is defined on a single line. First is the alias name, followed by any amount of whitespace, and finally the font name or the alias name to be matched (an alias may refer to another alias). If an alias name or a font name includes spaces, that name must be enclosed within quotes. Here is a constructed example:
+You can add aliases to your system by writing your own *fonts.alias* file or by adding to an existing one. The format is simple. Comments are restricted to lines beginning with an exclamation point, `!`. Blank lines are ignored. Each alias is defined on a single line. First is the alias name, followed by any amount of whitespace, and finally the font name or the alias name to be matched (an alias may refer to another alias). If an alias name or a font name includes spaces, that name must be enclosed within quotes. Here is a constructed example:
 
 ```
 ! This is a comment.
@@ -193,7 +193,7 @@ djvsm8    "-misc-dejavu sans mono-medium-r-normal--0-80-0-0-m-0-iso10646-1"
 "djvsm 8"        djvsm8
 ```
 
-The location of a _fonts.alias_ file may be in any directory on the font path. The font referred to by an alias may also be in any directory along the font path; the font file does not have to be in the same directory as the fonts.alias file.
+The location of a *fonts.alias* file may be in any directory on the font path. The font referred to by an alias may also be in any directory along the font path; the font file does not have to be in the same directory as the fonts.alias file.
 
 For new font aliases to be available to the user, the font database must be updated, again with
 

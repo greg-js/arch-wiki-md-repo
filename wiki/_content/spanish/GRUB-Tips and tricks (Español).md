@@ -68,7 +68,6 @@ Si está usando tarjeta de vídeo de Intel, puede ocurrir que ni `# hwinfo --fra
 En primer lugar, debe elegir un modo de vídeo para editar más tarde. Para ello necesitamos utilizar la shell de órdenes de GRUB:
 
  `sh:grub> 915resolution -l` 
-
 ```
 Intel 800/900 Series VBIOS Hack : version 0.5.3
 [...]
@@ -80,7 +79,6 @@ Intel 800/900 Series VBIOS Hack : version 0.5.3
 La orden antes descrita sobreescribirá `Mode 30` con la resolución de `1440x900`.
 
  `/etc/grub.d/00_header` 
-
 ```
 [...]
 **915resolution 30 1440 900  # Línea insertada**
@@ -200,7 +198,7 @@ Cuando se usan las UUID son controladas por una opción en `/etc/default/grub`:
 Puede utilizar las etiquetas (cadenas que identifican particiones de una manera legible por el usuario), usando la opción `--label` con la orden `search`. En primer lugar, coloque una etiqueta a las particiones:
 
 ```
-# tune2fs -L _ETIQUETA DE LA PARTICIÓN_
+# tune2fs -L *ETIQUETA DE LA PARTICIÓN*
 
 ```
 
@@ -220,7 +218,6 @@ menuentry "Arch Linux, session texte" {
 Si desea hacer GRUB más seguro, de modo que nadie pueda cambiar los parámetros de arranque o utilizar la línea de órdenes, puede agregar un nombre de usuario y contraseña para los archivos de configuración de GRUB. Para ello, ejecute `grub-mkpasswd_pbkdf2`. Es necesario introducir una contraseña y confirmarla:
 
  `grub-mkpasswd-pbkdf2` 
-
 ```
 [...]
 Your PBKDF2 is grub.pbkdf2.sha512.10000.C8ABD3E93C4DFC83138B0C7A3D719BC650E6234310DA069E6FDB0DD4156313DA3D0D9BFFC2846C21D5A2DDA515114CF6378F8A064C94198D0618E70D23717E82.509BFA8A4217EAD0B33C87432524C0B6B64B34FBAD22D3E6E6874D9B101996C5F98AB1746FE7C7199147ECF4ABD8661C222EEEDB7D14A843261FFF2C07B1269A
@@ -230,7 +227,6 @@ Your PBKDF2 is grub.pbkdf2.sha512.10000.C8ABD3E93C4DFC83138B0C7A3D719BC650E62343
 Después, añada las siguientes cadenas a `/etc/grub.d/40_header`:
 
  `/etc/grub.d/40_header` 
-
 ```
 set superusers="**nombreusuario**"
 password_pbkdf2 **nombreusuario** **<contraseña>**
@@ -299,11 +295,11 @@ Si desea utilizar la asignación de UUID para superar los mapeados poco fiables 
 
 Un archivo `grub.cfg` básico contendrá las siguientes opciones:
 
-*   `(hd_X_,_Y_)` indica la partición Y en el disco X. La numeración de partición comienza en 1, mientras que la del disco comienza en 0
-*   `set default=_N_` le permite elegir qué entrada se inicia por defecto
-*   `set timeout=_M_` indica el límite de tiempo en segundos antes que la elección predefinida se inicie
+*   `(hd*X*,*Y*)` indica la partición Y en el disco X. La numeración de partición comienza en 1, mientras que la del disco comienza en 0
+*   `set default=*N*` le permite elegir qué entrada se inicia por defecto
+*   `set timeout=*M*` indica el límite de tiempo en segundos antes que la elección predefinida se inicie
 *   `menuentry "title" {opciones de entrada}` es una entrada de arranque con nombres `title`
-*   `set root=(hd_X_,_Y_)` establece la partición de arranque, es decir, la que contiene el kernel y los módulos de GRUB (no es necesario una partición `/boot` separada, puede estar contenida como un deirecorio dentro de la partición root `/`).
+*   `set root=(hd*X*,*Y*)` establece la partición de arranque, es decir, la que contiene el kernel y los módulos de GRUB (no es necesario una partición `/boot` separada, puede estar contenida como un deirecorio dentro de la partición root `/`).
 
 ## Múltiples entradas
 

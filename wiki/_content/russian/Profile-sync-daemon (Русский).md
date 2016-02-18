@@ -117,7 +117,7 @@ BROWSERS="chromium opera"
 
 ### Проверка конфигурации
 
-Запуск с опцией 'parse' показывает что именно _psd_ будет делать, основываясь на конфигурации в `$XDG_CONFIG_HOME/psd/psd.conf`, а также выведет прочую полезную информацию.
+Запуск с опцией 'parse' показывает что именно *psd* будет делать, основываясь на конфигурации в `$XDG_CONFIG_HOME/psd/psd.conf`, а также выведет прочую полезную информацию.
 
 ```
 $ psd p
@@ -149,7 +149,7 @@ Psd will manage the following per /home/facade/.config/psd/psd.conf settings:
 
 ```
 
-Как показано в выводе и указано выше, если в массиве BROWSERS не задан конкретный список браузеров, _psd_ будет синхронизировать все профили поддерживаемых браузеров, которые он сможет найти для данного пользователя.
+Как показано в выводе и указано выше, если в массиве BROWSERS не задан конкретный список браузеров, *psd* будет синхронизировать все профили поддерживаемых браузеров, которые он сможет найти для данного пользователя.
 
 ### Режим чистки
 
@@ -188,7 +188,6 @@ Since psd is just a bash script with a systemd service, it should run on any fla
 Предоставленный с пакетом таймер настроен на синхронизацию с интервалом в один час. Пользователь может легко установить другой желаемый интервал, редактируя файл установок таймера. В примере ниже таймер установлен на сихронизацию с интервалом в 10 минут.
 
  `/etc/systemd/system/psd-resync.timer.d/frequency.conf` 
-
 ```
 [Unit]
 Description=Timer for Profile-sync-daemon - 10min
@@ -225,7 +224,7 @@ The standard way of controlling the size of /run/user is the RuntimeDirectorySiz
 
 ### My system crashed and did not sync back. What do I do?
 
-Odds are the "last good" backup of your browser profiles is just fine still sitting happily on your filesystem. Upon restarting `psd` (on a reboot for example), a check is preformed to see if the symlink to the tmpfs copy of your profile is invalid. If it is invalid, _psd_ will snapshot the "last good" backup before it rotates it back into place. This is more for a sanity check that _psd_ did no harm and that any data loss was a function of something else.
+Odds are the "last good" backup of your browser profiles is just fine still sitting happily on your filesystem. Upon restarting `psd` (on a reboot for example), a check is preformed to see if the symlink to the tmpfs copy of your profile is invalid. If it is invalid, *psd* will snapshot the "last good" backup before it rotates it back into place. This is more for a sanity check that *psd* did no harm and that any data loss was a function of something else.
 
 **Note:** Users can disable the snapshot/backup feature entirely by uncommenting and setting the USE_BACKUPS variable to 'no' in `$XDG_CONFIG_HOME/psd/psd.conf` if desired.
 
@@ -236,7 +235,7 @@ It depends on the browser. You will find the snapshot in the same directory as t
 ### How can I restore the snapshot?
 
 *   Stop `psd`.
-*   Confirm that there is no symlink to the tmpfs browser profile directory. If there is, _psd_ did not stop correctly for other reasons.
+*   Confirm that there is no symlink to the tmpfs browser profile directory. If there is, *psd* did not stop correctly for other reasons.
 *   Move the "bad" copy of the profile to a backup (do not blindly delete anything).
 *   Copy the snapshot directory to the name that browser expects.
 
@@ -260,7 +259,7 @@ Yes, run psd with the "clean" switch to delete snapshots.
 
 ## psd в других дистрибутивах
 
-_psd_ представляет из себя обычный bash-скрипт и должен работать на любом дистрибутиве Linux. Многие дистрибутивы предоставляют официальные и пользовательские пакеты для установки psd. На [официальном сайте](https://github.com/graysky2/profile-sync-daemon#installation-from-distro-packages) доступен список пакетов и инструкции по установке.
+*psd* представляет из себя обычный bash-скрипт и должен работать на любом дистрибутиве Linux. Многие дистрибутивы предоставляют официальные и пользовательские пакеты для установки psd. На [официальном сайте](https://github.com/graysky2/profile-sync-daemon#installation-from-distro-packages) доступен список пакетов и инструкции по установке.
 
 ## Смотрите также
 

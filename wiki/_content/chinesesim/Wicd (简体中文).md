@@ -82,7 +82,7 @@ gpasswd -a $USERNAME users
 
 ```
 
-**注意:** 可以访问**wicd**的用户组是能更改的，可能不是 _users_. 检查`/etc/dbus-1/system.d/wicd.conf`中指定的用户组,并将你的用户加入该组。
+**注意:** 可以访问**wicd**的用户组是能更改的，可能不是 *users*. 检查`/etc/dbus-1/system.d/wicd.conf`中指定的用户组,并将你的用户加入该组。
 
 最后，启动**wicd** :
 

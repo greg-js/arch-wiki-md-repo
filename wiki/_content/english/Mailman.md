@@ -1,12 +1,12 @@
-**Mailman** is an application for managing electronic mailing lists. Normally you will use it along a _mail server_ and also a _web server_ too; for the first you may pick one between [Postfix](/index.php/Postfix "Postfix"), [Exim](/index.php/Exim "Exim"), [Sendmail](/index.php/Sendmail "Sendmail") and Qmail —if you are unsure about which one to use, Postfix is a very good choice—; as for the latter, any web server is useful, common options are [Apache](/index.php/Apache "Apache"), [Lighttpd](/index.php/Lighttpd "Lighttpd") and [Nginx](/index.php/Nginx "Nginx"). (These three pieces do not necessarily have to run on the same computer.)
+**Mailman** is an application for managing electronic mailing lists. Normally you will use it along a *mail server* and also a *web server* too; for the first you may pick one between [Postfix](/index.php/Postfix "Postfix"), [Exim](/index.php/Exim "Exim"), [Sendmail](/index.php/Sendmail "Sendmail") and Qmail —if you are unsure about which one to use, Postfix is a very good choice—; as for the latter, any web server is useful, common options are [Apache](/index.php/Apache "Apache"), [Lighttpd](/index.php/Lighttpd "Lighttpd") and [Nginx](/index.php/Nginx "Nginx"). (These three pieces do not necessarily have to run on the same computer.)
 
 Only the Mailman installation will be covered in this article. You can refer to the correspondent wiki pages to learn how to install the mail and web servers.
 
 For this guide we are going to suppose that you are using a machine called "arch" and you want to setup mailing lists for the organizations "a", "b" and "c", with example domains "a.org", "b.org" and "c.org" that point to "arch". For each domain,
 
-*   Mailman's **web interface** will be accessible from _lists.[organization_name].org_ and
-*   the **lists' archives** under _lists.[organization_name].org/archives_.
-*   **Lists addresses** will look like _[list_name]@[organization_name].org_.
+*   Mailman's **web interface** will be accessible from *lists.[organization_name].org* and
+*   the **lists' archives** under *lists.[organization_name].org/archives*.
+*   **Lists addresses** will look like *[list_name]@[organization_name].org*.
 
 **A caveat**: you can use a Mailman installation to manage lists for several domains, but two lists cannot have the same name even though its domains are different!
 
@@ -100,11 +100,11 @@ MTA = None
 
 ## Mail Server Configuration
 
-_Note_: Ensure your domain name server (DNS) setup. For mail delivery on the internet, your DNS must be correct. An MX record should point to the mail host. More info about DNS is beyond the scope of this document.
+*Note*: Ensure your domain name server (DNS) setup. For mail delivery on the internet, your DNS must be correct. An MX record should point to the mail host. More info about DNS is beyond the scope of this document.
 
 ### Postfix
 
-For installing and configuring this mail server, see [Postfix](/index.php/Postfix "Postfix"). (If you will be using Postfix just for Mailman, its setup is much simpler: ignore all the _mailbox_ and _database_ stuff.)
+For installing and configuring this mail server, see [Postfix](/index.php/Postfix "Postfix"). (If you will be using Postfix just for Mailman, its setup is much simpler: ignore all the *mailbox* and *database* stuff.)
 
 `/etc/postfix/main.cf` should have the following fields and values:
 
@@ -155,7 +155,7 @@ mailman_transport:
 
 For installing and configuring this web server, see [Nginx](/index.php/Nginx "Nginx"). Mailman web interface relies on CGI processing; this setup uses Nginx along `fcgiwrap`, see [Nginx#fcgiwrap](/index.php/Nginx#fcgiwrap "Nginx").
 
-`/etc/nginx/nginx.conf` should include the following configuration per domain (example for _a.org_):
+`/etc/nginx/nginx.conf` should include the following configuration per domain (example for *a.org*):
 
 ```
 server {
@@ -187,7 +187,6 @@ server {
 ```
 
 **Note:** Nginx must run with `user` http and `group` http or Mailman will complain. Be sure to define the `user` directive in `/etc/nginx/conf/nginx.conf` as follows (outside the `html` block):
-
 ```
 user http http;
 
@@ -285,7 +284,7 @@ To create this specific list requested by Mailman for its proper operation (betw
 
 ```
 
-This will create a list called "mailman" under the default domain (_mailman@a.org_ in the example). You do not have to do it for the other domains (i.e. _b.org_ and _c.org_).
+This will create a list called "mailman" under the default domain (*mailman@a.org* in the example). You do not have to do it for the other domains (i.e. *b.org* and *c.org*).
 
 Later you should also subscribe yourself to the site list.
 
@@ -334,7 +333,7 @@ It is okay not to set a list creator password, but you probably do want a genera
 
 ## Using Mailman
 
-To administrate your lists (create and configure lists, manage users, etcetera) use the web interface; remember that each domain has its own. For example, the URL of organization "a" would be _[http://lists.a.org](http://lists.a.org)_.
+To administrate your lists (create and configure lists, manage users, etcetera) use the web interface; remember that each domain has its own. For example, the URL of organization "a" would be *[http://lists.a.org](http://lists.a.org)*.
 
 Mailman can be also managed by command-line. Example for list creation:
 
@@ -348,7 +347,7 @@ Mailman can be also managed by command-line. Example for list creation:
 Mailman 3 was designed in a modular fashion:
 
 *   [mailman-core](https://aur.archlinux.org/packages/mailman-core/) or [mailman-core-git](https://aur.archlinux.org/packages/mailman-core-git/) provides the core component of mailman.
-    **Note:** As of December 2015 _mailman-core_ only supports Python 3.4 and crashes using Python 3.5\. Use _mailman-core-git_ until Python 3.5 support is added in version 3.1.
+    **Note:** As of December 2015 *mailman-core* only supports Python 3.4 and crashes using Python 3.5\. Use *mailman-core-git* until Python 3.5 support is added in version 3.1.
 
 *   [python2-django-postorius](https://aur.archlinux.org/packages/python2-django-postorius/) or [python2-django-postorius-git](https://aur.archlinux.org/packages/python2-django-postorius-git/) provides a management interface for Mailman.
 *   [python2-django-hyperkitty](https://aur.archlinux.org/packages/python2-django-hyperkitty/) [python2-django-hyperkitty-git](https://aur.archlinux.org/packages/python2-django-hyperkitty-git/) is the interface to the mailing lists' archives.
@@ -393,7 +392,7 @@ Make sure that the files in `/var/lib/mailman/data/`:
 *   virtual-mailman,
 *   virtual-mailman.db,
 
-are **user** and **group** owned by _mailman_ and that are **group writable**.
+are **user** and **group** owned by *mailman* and that are **group writable**.
 
 ### UTF-8
 

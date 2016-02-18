@@ -286,15 +286,15 @@ Véase también [Wikipedia:Comparison of desktop application launchers](https://
 
 	[http://tools.suckless.org/dmenu/](http://tools.suckless.org/dmenu/) || [dmenu](https://www.archlinux.org/packages/?name=dmenu)
 
-*   **dmenu-extended** — Extensión de _dmenu_ para abrir rápidamente ficheros y carpetas.
+*   **dmenu-extended** — Extensión de *dmenu* para abrir rápidamente ficheros y carpetas.
 
 	[https://github.com/markjones112358/dmenu-extended](https://github.com/markjones112358/dmenu-extended) || [dmenu-extended](https://aur.archlinux.org/packages/dmenu-extended/)
 
-*   **dmenu-launch** — Simple lanzador de aplicaciones basado en _dmenu_. Lanza binarios y accesos directos XDG.
+*   **dmenu-launch** — Simple lanzador de aplicaciones basado en *dmenu*. Lanza binarios y accesos directos XDG.
 
 	[https://github.com/Wintervenom/Scripts/blob/master/file/launch/dmenu-launch](https://github.com/Wintervenom/Scripts/blob/master/file/launch/dmenu-launch) || [dmenu-launch](https://aur.archlinux.org/packages/dmenu-launch/)
 
-*   **dswitcher** — Conmutador de ventanas basado en _dmenu_ que trabaja sin importar el espacio de trabajo o la minimización.
+*   **dswitcher** — Conmutador de ventanas basado en *dmenu* que trabaja sin importar el espacio de trabajo o la minimización.
 
 	[https://github.com/Antithesisx/dswitcher](https://github.com/Antithesisx/dswitcher) || [dswitcher-git](https://aur.archlinux.org/packages/dswitcher-git/)
 
@@ -306,7 +306,7 @@ Véase también [Wikipedia:Comparison of desktop application launchers](https://
 
 	[http://sourceforge.net/projects/gmrun/](http://sourceforge.net/projects/gmrun/) || [gmrun](https://www.archlinux.org/packages/?name=gmrun)
 
-*   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do "wikipedia:GNOME Do")** — Lanzador de aplicaciones inspirado en [Quicksilver](https://en.wikipedia.org/wiki/Quicksilver_(software) "wikipedia:Quicksilver (software)") con muchos plugins, originalmente desarrollado para el escritorio GNOME.
+*   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do con muchos plugins, originalmente desarrollado para el escritorio GNOME.
 
 	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://www.archlinux.org/packages/?name=gnome-do)
 
@@ -338,7 +338,7 @@ Véase también [Wikipedia:Comparison of desktop application launchers](https://
 
 	[http://mcfadzean.org.uk/appstogo/linux.html#whippet](http://mcfadzean.org.uk/appstogo/linux.html#whippet) || [whippet](https://aur.archlinux.org/packages/whippet/)
 
-*   **xboomx** — Wrapper de _dmenu_ ligero que reordena los comandos basándose en su popularidad, escrito en python.
+*   **xboomx** — Wrapper de *dmenu* ligero que reordena los comandos basándose en su popularidad, escrito en python.
 
 	[https://bitbucket.org/dehun/xboomx](https://bitbucket.org/dehun/xboomx) || [xboomx](https://aur.archlinux.org/packages/xboomx/)
 
@@ -346,7 +346,7 @@ Véase también [Wikipedia:Comparison of desktop application launchers](https://
 
 	[http://docs.xfce.org/xfce/xfce4-appfinder/start](http://docs.xfce.org/xfce/xfce4-appfinder/start) || [xfce4-appfinder](https://www.archlinux.org/packages/?name=xfce4-appfinder)
 
-*   **Yeganesh** — Wrapper de _dmenu_ ligero que reordena los comandos basándose en su popularidad, escrito en Haskell.
+*   **Yeganesh** — Wrapper de *dmenu* ligero que reordena los comandos basándose en su popularidad, escrito en Haskell.
 
 	[http://dmwit.com/yeganesh](http://dmwit.com/yeganesh) || [yeganesh](https://aur.archlinux.org/packages/yeganesh/)
 
@@ -402,7 +402,7 @@ Vea también [Wikipedia:Comparison of accounting software](https://en.wikipedia.
 
 	[http://ledger-cli.org/](http://ledger-cli.org/) || [ledger](https://aur.archlinux.org/packages/ledger/)
 
-*   **Moneychanger** — Un intuitivo cliente de la bandeja del sistema escrito en Qt/C++ para _Open-Transactions_
+*   **Moneychanger** — Un intuitivo cliente de la bandeja del sistema escrito en Qt/C++ para *Open-Transactions*
 
 	[https://github.com/Open-Transactions/Moneychanger](https://github.com/Open-Transactions/Moneychanger) || [moneychanger-git](https://aur.archlinux.org/packages/moneychanger-git/)
 

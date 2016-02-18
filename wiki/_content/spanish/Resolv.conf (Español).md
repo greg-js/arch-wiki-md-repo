@@ -1,8 +1,8 @@
 El archivo de configuración para los resolvers de DNS es `/etc/resolv.conf`. Desde su [man page](http://www.kernel.org/doc/man-pages/online/pages/man5/resolv.conf.5.html):
 
-	_«El resolver es un conjunto de rutinas de la biblioteca C, que proporciona acceso al Sistema de Nombres de Dominio de Internet (DNS). El archivo de configuración del resolver contiene información que es leída por las subrutinas cada vez que un proceso le reclama. El archivo está diseñado para ser fácilmente comprensible y contiene una lista de palabras claves con valores que proporcionan diferentes tipos de información del resolver.»_
+	*«El resolver es un conjunto de rutinas de la biblioteca C, que proporciona acceso al Sistema de Nombres de Dominio de Internet (DNS). El archivo de configuración del resolver contiene información que es leída por las subrutinas cada vez que un proceso le reclama. El archivo está diseñado para ser fácilmente comprensible y contiene una lista de palabras claves con valores que proporcionan diferentes tipos de información del resolver.»*
 
-	_«En un sistema correctamente configurado este archivo puede no ser necesario. El único servidor de nombres a consultar será la máquina local; el nombre de dominio se determina a partir del nombre del host y la ruta de búsqueda de dominio se construye a partir del nombre de dominio.»_
+	*«En un sistema correctamente configurado este archivo puede no ser necesario. El único servidor de nombres a consultar será la máquina local; el nombre de dominio se determina a partir del nombre del host y la ruta de búsqueda de dominio se construye a partir del nombre de dominio.»*
 
 ## Contents
 
@@ -23,7 +23,7 @@ El archivo de configuración para los resolvers de DNS es `/etc/resolv.conf`. De
 
 Su proveedor de internet (por lo general) le ofrecerá servidores [DNS](https://en.wikipedia.org/wiki/es:Domain_Name_System "wikipedia:es:Domain Name System") funcionales, y un router, que también puede agregar un servidor DNS adicional, en caso de que tenga su propio servidor caché. El cambio entre los servidores DNS no representa un problema para los usuarios de Windows, ya que si un servidor DNS es lento o no funciona, pasará de inmediato a otro mejor. Sin embargo, Linux, por lo general, toma más tiempo para realizar este proceso, lo que podría ser la razón por la que puede estar apreciando cierto retraso.
 
-Utilice _dig_ (proporcionado por el paquete [dnsutils](https://www.archlinux.org/packages/?name=dnsutils)) antes de realizar cualquier cambio, repítalo después de hacer los ajustes en la sección de abajo, y compare el tiempo(s) de consulta:
+Utilice *dig* (proporcionado por el paquete [dnsutils](https://www.archlinux.org/packages/?name=dnsutils)) antes de realizar cualquier cambio, repítalo después de hacer los ajustes en la sección de abajo, y compare el tiempo(s) de consulta:
 
 ```
 $ dig www5.yahoo.com
@@ -141,11 +141,11 @@ nameserver 77.88.8.3
 [dhcpcd](/index.php/Dhcpcd "Dhcpcd"), [netctl](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)"), [NetworkManager](/index.php/NetworkManager_(Espa%C3%B1ol) "NetworkManager (Español)") y otros muchos procesos, pueden sobrescribir `/etc/resolv.conf`. Esto suele ser un comportamiento deseable, pero a veces la configuración de DNS exige ajustarla manualmente (por ejemplo, cuando se utiliza una dirección IP estática). Hay varias maneras de hacer esto.
 
 *   Si se está usando dhcpcd, vea [#Modificar la configuración dhcpcd](#Modificar_la_configuraci.C3.B3n_dhcpcd) a continuación.
-*   Si se está usando [netctl](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)"), con asignación de dirección IP estática, no utilize las opciones `DNS*` en su perfil, de lo contrario _resolvconf_ será llamado y sobrescribirá `/etc/resolv.conf`.
+*   Si se está usando [netctl](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)"), con asignación de dirección IP estática, no utilize las opciones `DNS*` en su perfil, de lo contrario *resolvconf* será llamado y sobrescribirá `/etc/resolv.conf`.
 
 ### Utilizar openresolv
 
-[openresolv](https://www.archlinux.org/packages/?name=openresolv) proporciona una utilidad _resolvconf_ , que es una infraestructura para la gestión de múltiples configuraciones DNS. Vea `man 8 resolvconf` y `man 5 resolvconf.conf` para obtener más información.
+[openresolv](https://www.archlinux.org/packages/?name=openresolv) proporciona una utilidad *resolvconf* , que es una infraestructura para la gestión de múltiples configuraciones DNS. Vea `man 8 resolvconf` y `man 5 resolvconf.conf` para obtener más información.
 
 La configuración se realiza en `/etc/resolvconf.conf`, que al ejecutar `resolvconf -u` generará `/etc/resolv.conf`.
 

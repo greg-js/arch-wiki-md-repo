@@ -132,9 +132,9 @@ kernel 2.6.30 之后，ext4 更安全了，一些补丁提高了 ext4 的稳定�
 
 从内核 2.6.30 开始，ext4 的性能开始下降，原因是由于提供保护数据完整性的功能发生了变化 [[1]](http://www.phoronix.com/scan.php?page=article&item=ext4_then_now&num=1).
 
-_大多数文件系统 (XFS, ext3, ext4, reiserfs) 在fsync之后或者传输提交的时候，发送写屏障信号给磁盘。写屏障信号可以确保正确的写入顺序，是易失性的写入缓存可以安全的使用(损失一些性能)。如果你的磁盘有一种或多种备用电源，禁用屏障可以安全的提升性能。_
+*大多数文件系统 (XFS, ext3, ext4, reiserfs) 在fsync之后或者传输提交的时候，发送写屏障信号给磁盘。写屏障信号可以确保正确的写入顺序，是易失性的写入缓存可以安全的使用(损失一些性能)。如果你的磁盘有一种或多种备用电源，禁用屏障可以安全的提升性能。*
 
-_发送写入屏障可以通过使用 barrier=0 挂载选项(对于 ext3, ext4, 和 reiserfs) ，或者使用 nobarrier 挂载选项(对于 XFS)来禁用。_ [[2]](http://doc.opensuse.org/products/draft/SLES/SLES-tuning_sd_draft/cha.tuning.io.html).
+*发送写入屏障可以通过使用 barrier=0 挂载选项(对于 ext3, ext4, 和 reiserfs) ，或者使用 nobarrier 挂载选项(对于 XFS)来禁用。* [[2]](http://doc.opensuse.org/products/draft/SLES/SLES-tuning_sd_draft/cha.tuning.io.html).
 
 **警告:** 如果磁盘无法保证在电源掉电时缓存正确写入，禁用写入屏障可以导致严重的文件系统损坏和数据丢失。
 

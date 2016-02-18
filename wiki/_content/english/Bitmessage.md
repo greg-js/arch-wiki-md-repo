@@ -1,6 +1,6 @@
 From the [Bitmessage wiki](https://bitmessage.org/wiki/Main_Page):
 
-	_"Bitmessage is a P2P communications protocol used to send encrypted messages to another person or to many subscribers. It is decentralized and trustless, meaning that you need-not inherently trust any entities like root certificate authorities. It uses strong authentication which means that the sender of a message cannot be spoofed, and it aims to hide "non-content" data, like the sender and receiver of messages, from passive eavesdroppers like those running warrantless wiretapping programs."_
+	*"Bitmessage is a P2P communications protocol used to send encrypted messages to another person or to many subscribers. It is decentralized and trustless, meaning that you need-not inherently trust any entities like root certificate authorities. It uses strong authentication which means that the sender of a message cannot be spoofed, and it aims to hide "non-content" data, like the sender and receiver of messages, from passive eavesdroppers like those running warrantless wiretapping programs."*
 
 Bitmessage may be used independently or with TOR. Using it with TOR has additional security benefits.
 
@@ -25,19 +25,19 @@ Install [pybitmessage](https://aur.archlinux.org/packages/pybitmessage/) or [pyb
 
 ### Without TOR
 
-After launching bitmessage (the name of the bitmessage binary is _pybitmessage_) for the first time, disregard any popups and:
+After launching bitmessage (the name of the bitmessage binary is *pybitmessage*) for the first time, disregard any popups and:
 
-*   Navigate to the _Your Identities_ tab
-*   Hit the _New_ button and create a few new addresses. Since bitmessage is built to be used with different (ideally disposable) addresses, feel free to create more than one address (for instance this user created four addresses)
+*   Navigate to the *Your Identities* tab
+*   Hit the *New* button and create a few new addresses. Since bitmessage is built to be used with different (ideally disposable) addresses, feel free to create more than one address (for instance this user created four addresses)
 *   You can use either a passphrase or a random number as the basis for the generation of your address. A random number is better for security and a passphrase is better for convenience (you can recreate your identity more easily with a passphrase than with a random number)
-*   Remember the _address version number_ and the _stream number_. These will be useful if you need to re-make your address for any reason
+*   Remember the *address version number* and the *stream number*. These will be useful if you need to re-make your address for any reason
 
 ### With TOR
 
 The same steps apply as above, except that you would need to do the following (ideally before you set up your first identity):
 
-*   Navigate to `Settings > Network Settings` and select SOCKS5 from the _Type_ drop down under the Proxy server / Tor section
-*   Next to _Server hostname_ enter "localhost" and next to _Port_ enter "9050" (If using the TOR browser bundle enter "9150")
+*   Navigate to `Settings > Network Settings` and select SOCKS5 from the *Type* drop down under the Proxy server / Tor section
+*   Next to *Server hostname* enter "localhost" and next to *Port* enter "9050" (If using the TOR browser bundle enter "9150")
 *   Restart bitmessage
 
 ## Usage
@@ -67,7 +67,6 @@ This method, however, is neither in the interests of bitmessage (as it increases
 An extreme method, especially if you wish to wish larger files, is to create a magnet link or a torrent file and use that to share your data. You need not list the torrent on a public torrent site for this to work. To use this method, first create the torrent with all the files you wish to share using your favorite torrent application. You can now share this torrent file using the base64 method described above, or you can use the following script to convert it into a magnet ([source blogpost](http://reinhard-seiler.blogspot.in/2013/05/tutorial-how-to-generate-magnetic-link.html)):
 
  `~/.scripts/createMagnetLink.py` 
-
 ```
 !/usr/bin/python2
 
@@ -101,14 +100,13 @@ magneturi = 'magnet:?%s' % paramstr
 print(magneturi)
 ```
 
-You need to have [python2-bencode](https://aur.archlinux.org/packages/python2-bencode/) installed in order to make this script work. The magnet link can be shared with the intended recipient without using _base64_.
+You need to have [python2-bencode](https://aur.archlinux.org/packages/python2-bencode/) installed in order to make this script work. The magnet link can be shared with the intended recipient without using *base64*.
 
 ### Using bitmessage with Thunderbird
 
 After setting up bitmessage normally, add the following to your `~/.config/PyBitmessage/keys.dat` file:
 
  `~/.config/PyBitmessage/keys.dat` 
-
 ```
 apienabled = true
 apiport = 8442
@@ -118,7 +116,7 @@ apipassword = <any password>
 
 ```
 
-You will need the [bmwrapper-git](https://aur.archlinux.org/packages/bmwrapper-git/) package from the AUR. Run `bmwrapper` from the terminal. The script operates by running a POP server on _localhost:12344_, and an SMTP server on _localhost:12345_.
+You will need the [bmwrapper-git](https://aur.archlinux.org/packages/bmwrapper-git/) package from the AUR. Run `bmwrapper` from the terminal. The script operates by running a POP server on *localhost:12344*, and an SMTP server on *localhost:12345*.
 
 When you set up Thunderbird to use your bitmessage address, you will need to use the following settings:
 
@@ -132,9 +130,9 @@ When you set up Thunderbird to use your bitmessage address, you will need to use
 
 According to the [bitmessage wiki](https://bitmessage.org/wiki/DML):
 
-	_A Mailing List without the requirement of a central "authority". Sometimes called Chan (short for channel) because they usually focus on a subject which also is the password for the deterministic address too._
+	*A Mailing List without the requirement of a central "authority". Sometimes called Chan (short for channel) because they usually focus on a subject which also is the password for the deterministic address too.*
 
-A Chan (or a Distributed Mailing List) can be joined or created by hitting _"Join/Create Chan"_ in the file menu. A Passphrase must be entered and the address is generated for creating a can. To join a Chan, you must enter its address and a passphrase (of your choice).
+A Chan (or a Distributed Mailing List) can be joined or created by hitting *"Join/Create Chan"* in the file menu. A Passphrase must be entered and the address is generated for creating a can. To join a Chan, you must enter its address and a passphrase (of your choice).
 
 ## Additional resources
 

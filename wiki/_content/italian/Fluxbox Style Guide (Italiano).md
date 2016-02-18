@@ -55,14 +55,14 @@ Per facilitarne la comprensione è stato effettuato un raggruppamento degli elem
 
 ## Sintassi delle impostazioni
 
-Ogni impostazione è strutturata in quattro parti: {_main_object_} **.** {_sub_object_} **.** {_item_} **:** {_value_} Es.
+Ogni impostazione è strutturata in quattro parti: {*main_object*} **.** {*sub_object*} **.** {*item*} **:** {*value*} Es.
 
 ```
 toolbar.clock.pixmap: value
 
 ```
 
-Il valore di {_value_} è strettamente collegato al tipo di oggetto (_item_) che si vuole impostare. Ad esempio ad un _item_ `.pixmap` corrisponde come _value_ {filemane}
+Il valore di {*value*} è strettamente collegato al tipo di oggetto (*item*) che si vuole impostare. Ad esempio ad un *item* `.pixmap` corrisponde come *value* {filemane}
 
 Quindi la voce pixmap necessita di un {filename} E.s
 
@@ -75,7 +75,7 @@ In pratica tutto quello che bisogna sapere è quale valore può assumere ogni og
 
 ### {texture type}
 
-Per un {item} _pixmap_ è richiesto nome file in *.pixmap
+Per un {item} *pixmap* è richiesto nome file in *.pixmap
 
 ```
  pixmap
@@ -83,7 +83,7 @@ Per un {item} _pixmap_ è richiesto nome file in *.pixmap
 
 ```
 
-Per un {item} _non-pixmap_ si utilizza **.color** per i colori degli oggetti, mentre si usa **.colorTo** per i gradienti o per mettere in evidenza
+Per un {item} *non-pixmap* si utilizza **.color** per i colori degli oggetti, mentre si usa **.colorTo** per i gradienti o per mettere in evidenza
 
 ```
  flat
@@ -189,7 +189,7 @@ menu.title.pixmap: iconbarf.xpm
 
 ### {integer}
 
-Un numero intero che indica l'altezza e la larghezza (_height/width_) di qualcosa ed espresso in pixel Es.
+Un numero intero che indica l'altezza e la larghezza (*height/width*) di qualcosa ed espresso in pixel Es.
 
 ```
 window.title.height: 22
@@ -263,7 +263,7 @@ window.justify: Center
 
 ### {bullet}
 
-Usato solamente per l'oggetto _menu.bullet_: i valori riguardano solo lo stile non-pixmaps.
+Usato solamente per l'oggetto *menu.bullet*: i valori riguardano solo lo stile non-pixmaps.
 
 ```
 triangle
@@ -282,7 +282,7 @@ menu.bullet: triangle
 
 ### {string}
 
-Usato solamente per l'opzione _root.command_: consente di impostare il percorso di una immagine da usare come sfondo e quale applicazione usare per visualizarlo
+Usato solamente per l'opzione *root.command*: consente di impostare il percorso di una immagine da usare come sfondo e quale applicazione usare per visualizarlo
 
 ```
 fbsetbg -f wallpaper.png
@@ -341,7 +341,7 @@ menu.title.font: trebuchet-10:shadow:bold
 
 *   .borderWidth - Crea un bordo di altezza {integer}. 0 equivale a non avere bordi
 
-*   .bevelwidth - è la spaziatura tra il bordo ed un oggetto", ad esempio in un menu : _menu.bevelWidth_ aumenta lo spazio tra le voci di menu
+*   .bevelwidth - è la spaziatura tra il bordo ed un oggetto", ad esempio in un menu : *menu.bevelWidth* aumenta lo spazio tra le voci di menu
 
 *   .picColor - Imposta il colore predefinito di una immagine fluxbox che viene aggiunto in cima ad una voce
 
@@ -356,19 +356,19 @@ toolbar.button.picColor
 
 ### Alcune considerazioni prima di iniziare
 
-*   Uso di **window.label' _e_ **_window.title **con** _**window.bevelWidth**.
+*   Uso di **window.label' *e* ***window.title **con** ***window.bevelWidth**.
 
-L'uso di _window.label_ si sovrappone all'opzione _window.title_. Tuttavia, se si imposta _window.bevelWidth_ il _window.title_ mostrerà un bordo attorno a_window.label_. In pratica _window.label_ galleggia sopra _window.title_. Questo permette semplici ma fantastici effetti, ma limita i pulsanti nella finestra (vedere sotto)
+L'uso di *window.label* si sovrappone all'opzione *window.title*. Tuttavia, se si imposta *window.bevelWidth* il *window.title* mostrerà un bordo attorno a*window.label*. In pratica *window.label* galleggia sopra *window.title*. Questo permette semplici ma fantastici effetti, ma limita i pulsanti nella finestra (vedere sotto)
 
 *   Uso di **toolbar** e **toolbar.iconbar.***, **toolbar.clock**, **toolbar.workspace**, **toolbar.button**.
 
-Come per il punto precedente _toolbar_ viene sovrapposto da _toolbar.iconbar.*_, _toolbar.clock_, _toolbar.workspace_ e _toolbar.button_. Anche in questo caso impostare _toolbar.bevelWidth_ permette a tutte questi oggetti di _galleggiare_ sopra _toolbar_ generando effetto bordo ai livelli.
+Come per il punto precedente *toolbar* viene sovrapposto da *toolbar.iconbar.**, *toolbar.clock*, *toolbar.workspace* e *toolbar.button*. Anche in questo caso impostare *toolbar.bevelWidth* permette a tutte questi oggetti di *galleggiare* sopra *toolbar* generando effetto bordo ai livelli.
 
 *   Uso di **window buttons**.
 
-Se _window.bevelWidth_ **non** è utilizzato, allora tutti i _window.* buttons_ (chiudi, riduci ad icona, ecc.) possono essere di qualsiasi dimensione, ma devono essere **quadrati** e tutti della **stessa dimensione**. Questo permette di creare pulsanti dal design creativo e molti stili di Fluxbox utilizzano questo metodo.
+Se *window.bevelWidth* **non** è utilizzato, allora tutti i *window.* buttons* (chiudi, riduci ad icona, ecc.) possono essere di qualsiasi dimensione, ma devono essere **quadrati** e tutti della **stessa dimensione**. Questo permette di creare pulsanti dal design creativo e molti stili di Fluxbox utilizzano questo metodo.
 
-Tuttavia, se _window.bevelWidth_ **viene' _utilizzato, i pulsanti avranno le dimensioni ridotte rispettando il_ **_font_ utilizzato per _window.label_.Qui la cosa migliore da fare è scegliere la dimensione dei caratteri desiderata per _window.label_ quindi rendere il vostro pixmaps alla dimensione corretta. Oppure, in questo caso, è possibile impostare le opzioni di _window.button_ in modo da dare uno sfondo e permettere a Fluxbox di sovrapposizionarle con il pixmaps predefinito (si può scegliere il colore con _window.button .*. picColor_) o crearne di propri con le dimensioni corrette.
+Tuttavia, se *window.bevelWidth* **viene' *utilizzato, i pulsanti avranno le dimensioni ridotte rispettando il* ***font* utilizzato per *window.label*.Qui la cosa migliore da fare è scegliere la dimensione dei caratteri desiderata per *window.label* quindi rendere il vostro pixmaps alla dimensione corretta. Oppure, in questo caso, è possibile impostare le opzioni di *window.button* in modo da dare uno sfondo e permettere a Fluxbox di sovrapposizionarle con il pixmaps predefinito (si può scegliere il colore con *window.button .*. picColor*) o crearne di propri con le dimensioni corrette.
 
 *   . using * (wildcards)
 
@@ -483,7 +483,7 @@ toolbar.button.pressed.picColor: {color}
 
 ### Le finestre
 
-Con _focus_ si intende la finestra in primo piano , mentre con _unfocus_ la finestra sullo sfondo
+Con *focus* si intende la finestra in primo piano , mentre con *unfocus* la finestra sullo sfondo
 
 #### Impostazioni generali
 
@@ -499,7 +499,7 @@ window.borderColor: {color}
 
 #### Barra del titolo
 
-Lo "sfondo" "background" del titolo della finestra. Si tratta di un livello sotto _window.label_ - vedere la nota nella prima parte.
+Lo "sfondo" "background" del titolo della finestra. Si tratta di un livello sotto *window.label* - vedere la nota nella prima parte.
 
 window.title.height: {integer}
 window.title.focus: {texture type}
@@ -513,7 +513,7 @@ window.title.unfocus.colorTo: {color}
 
 #### Etichetta
 
-E' il testo di sfondo. Questo è un livello sopra _window.title_ - vedere la nota nella prima parte.
+E' il testo di sfondo. Questo è un livello sopra *window.title* - vedere la nota nella prima parte.
 
 window.label.focus: {texture type}
 window.label.focus.pixmap: {filename}

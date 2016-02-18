@@ -66,20 +66,19 @@ I seguenti pacchetti includono delle interfacce grafiche per la personalizzazion
 
 [Blueman](http://blueman-project.org) è un manager completo e dotato di tutte le funzionalità per il Bluetooth, scritto in [GTK+](/index.php/GTK%2B_(Italiano) "GTK+ (Italiano)") e, come tale, raccomandabile per [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") o [Xfce](/index.php/Xfce_(Italiano) "Xfce (Italiano)"). E' possibile installare Blueman con il pacchetto [blueman](https://www.archlinux.org/packages/?name=blueman), disponibile nei [Repository Ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
 
-Assicurarsi che il demone `bluetooth` sia avviato come descritto sopra (aggiunto in rc.conf dopo dbus) ed avviare `blueman-applet`. Per avviare l'applet al login aggiungere `blueman-applet` in _System -> Preferences -> Startup Applications_ (GNOME) o _Xfce Menu -> Settings -> Session and Startup_ (Xfce).
+Assicurarsi che il demone `bluetooth` sia avviato come descritto sopra (aggiunto in rc.conf dopo dbus) ed avviare `blueman-applet`. Per avviare l'applet al login aggiungere `blueman-applet` in *System -> Preferences -> Startup Applications* (GNOME) o *Xfce Menu -> Settings -> Session and Startup* (Xfce).
 
 Per consentire ad un utente di aggiungere e gestire i dispositivi Bluetooth utilizzando Blueman, l'utente deve essere aggiunto al gruppo 'lp'. Vedere /etc/dbus-1/system.d/bluetooth.conf per la sezione che permette agli utenti del gruppo 'lp' di comunicare con il demone Bluetooth.
 
 **Nota:** Se si esegue Blueman al di fuori di GNOME/GDM, ad esempio in Xfce utilizzando il comando `startx`, si dovrebbe aggiungere `. /etc/X11/xinit/xinitrc.d/*` all'inizio del proprio `~/.xinitrc` per abilitare GNOME Files ad esplorare i dispositivi.
 
-Per ricevere i file non dimenticarsi di cliccare con il tasto destro del mouse su _Blueman tray icon -> Local Services -> Transfer -> File Receiving" e flaggare la casellina "Enabled"._
+Per ricevere i file non dimenticarsi di cliccare con il tasto destro del mouse su *Blueman tray icon -> Local Services -> Transfer -> File Receiving" e flaggare la casellina "Enabled".*
 
 #### Script per Thunar
 
 Se non si utilizza GNOME Files (ad esempio Thunar) potrebbe risultare molto utile il seguente script:
 
  `obex_thunar.sh` 
-
 ```
  #!/bin/bash
  fusermount -u ~/bluetooth
@@ -92,13 +91,13 @@ Ora bisognerà posizionare lo script nella directory appropriata (ad esempio, `/
 
  `chmod +x /usr/bin/obex_thunar.sh` 
 
-L'ultimo passo è quello di cambiare la riga in _Local Services > Transfer > Advanced_ in `obex_thunar.sh %d`.
+L'ultimo passo è quello di cambiare la riga in *Local Services > Transfer > Advanced* in `obex_thunar.sh %d`.
 
 ### GNOME Bluetooth
 
-[gnome-bluetooth](http://live.gnome.org/GnomeBluetooth) è un fork del datato _bluez-gnome_, ed è orientato ad integrarsi perfettamente in [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)"). GNOME Bluetooth è richiesto da [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell), percio, se si utilizza GNOME 3, già dovrebbe essere installato. Comunque, lo si può installare con il pacchetto [gnome-bluetooth](https://www.archlinux.org/packages/?name=gnome-bluetooth).
+[gnome-bluetooth](http://live.gnome.org/GnomeBluetooth) è un fork del datato *bluez-gnome*, ed è orientato ad integrarsi perfettamente in [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)"). GNOME Bluetooth è richiesto da [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell), percio, se si utilizza GNOME 3, già dovrebbe essere installato. Comunque, lo si può installare con il pacchetto [gnome-bluetooth](https://www.archlinux.org/packages/?name=gnome-bluetooth).
 
-Eseguire `bluetooth-applet` per avere una gradevole applet Bluetooth. Si dovrebbe ora essere in grado di configurare i dispositivi ed inviare file cliccando col tasto destro sull'icona Bluetooth. Per avviare l'applet al login, aggiungerla a _System -> Preferences -> Startup Applications_.
+Eseguire `bluetooth-applet` per avere una gradevole applet Bluetooth. Si dovrebbe ora essere in grado di configurare i dispositivi ed inviare file cliccando col tasto destro sull'icona Bluetooth. Per avviare l'applet al login, aggiungerla a *System -> Preferences -> Startup Applications*.
 
 Per aggiungere una voce "Inviare a" nel menu del Bluetooth, nel file di configurazione del menù di Thunar, consultare [questa pagina](http://thunar.xfce.org/pwiki/documentation/sendto_menu).
 
@@ -181,7 +180,7 @@ Per eseguire una scansione in cerca di dispositivi, dare
 
 ```
 
-Per sincronizzare un dispositivo senza usare il gnome-bluez package si può usare uno strumento chiamato _bluez-simple-agent_ che fa parte di bluez package. Per poterlo utilizzare saranno necessari alcuni pacchetti python dai repositories ufficiali: dbus-python e pygobject. Una volta installati e pronti si può iniziare lo script da root:
+Per sincronizzare un dispositivo senza usare il gnome-bluez package si può usare uno strumento chiamato *bluez-simple-agent* che fa parte di bluez package. Per poterlo utilizzare saranno necessari alcuni pacchetti python dai repositories ufficiali: dbus-python e pygobject. Una volta installati e pronti si può iniziare lo script da root:
 
 ```
  $> bluez-simple-agent
@@ -620,7 +619,7 @@ Provare a lanciare `hciconfig hc0 up`
 
 ### Blueman
 
-Se blueman-applet non si avvia, provare a rimuovere l'intera cartella _/var/lib/bluetooth_ e riavviare la macchina (o solo HAL, dbus, e servizi bluetooth).
+Se blueman-applet non si avvia, provare a rimuovere l'intera cartella */var/lib/bluetooth* e riavviare la macchina (o solo HAL, dbus, e servizi bluetooth).
 
 ```
 # rm -rf /var/lib/bluetooth

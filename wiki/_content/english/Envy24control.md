@@ -82,19 +82,19 @@ It is vital that you understand your sound card's features and capabilities. If 
 
 ### Monitor Inputs
 
-The Monitor Inputs page is effectively a mixer for your card's _hardware_ inputs. It enables you to meter the "post-gain" incoming audio signals and adjust their volumes in the card's on-board "monitor" mixer. For each physical card input, there is a pair of volume faders, mute buttons, and pre-fader level meters. On the far left, there is a meter indicating the overall signal level being routed to the on-board mixer's "pre out." The output of this digital mixer may be assigned to any of your card's hardware outputs on the Patchbay /Router page, by selecting "Digital Mix L/R." (Typically, you would do this for the hardware outputs that your monitor speakers are connected to, e.g. "H/W OUT 1/2.")
+The Monitor Inputs page is effectively a mixer for your card's *hardware* inputs. It enables you to meter the "post-gain" incoming audio signals and adjust their volumes in the card's on-board "monitor" mixer. For each physical card input, there is a pair of volume faders, mute buttons, and pre-fader level meters. On the far left, there is a meter indicating the overall signal level being routed to the on-board mixer's "pre out." The output of this digital mixer may be assigned to any of your card's hardware outputs on the Patchbay /Router page, by selecting "Digital Mix L/R." (Typically, you would do this for the hardware outputs that your monitor speakers are connected to, e.g. "H/W OUT 1/2.")
 
 #### Meters
 
-Each mixer input channel has its own level meter that indicates the "pre-fader" levels of the incoming audio signal and are therefore not affected by the fader settings. Each input's meters are color-coded into three sections: green, orange, and red. The green section is a _safe_ zone; most incoming audio signals should fill at least this section of the meter when recording. The orange section represents a _hotter_ zone; it is both safe and recommended to adjust the incoming signal to meter mostly in this zone when recording. The red zone represents _danger_; when the signal hits 0dB, overload and audio clipping may occur. Adjust the output level of your audio source along with the appropriate "ADC" faders on the "Analog Volume" page so that the incoming audio levels do not peak in the red very often or for too long. Let your ears be the judge. See [#Analog Volume](#Analog_Volume).
+Each mixer input channel has its own level meter that indicates the "pre-fader" levels of the incoming audio signal and are therefore not affected by the fader settings. Each input's meters are color-coded into three sections: green, orange, and red. The green section is a *safe* zone; most incoming audio signals should fill at least this section of the meter when recording. The orange section represents a *hotter* zone; it is both safe and recommended to adjust the incoming signal to meter mostly in this zone when recording. The red zone represents *danger*; when the signal hits 0dB, overload and audio clipping may occur. Adjust the output level of your audio source along with the appropriate "ADC" faders on the "Analog Volume" page so that the incoming audio levels do not peak in the red very often or for too long. Let your ears be the judge. See [#Analog Volume](#Analog_Volume).
 
 #### Faders
 
-The faders control the signal level in the card's digital mix. They do not control the level of the _incoming_ audio signals -- they are "post-meter." There is no gain control; the faders can only attenuate (reduce) the signal levels. A pair of faders can be "ganged", so that both channels can be controlled as a stereo pair. The mute buttons do exactly what you would expect: they mute the outgoing channel.
+The faders control the signal level in the card's digital mix. They do not control the level of the *incoming* audio signals -- they are "post-meter." There is no gain control; the faders can only attenuate (reduce) the signal levels. A pair of faders can be "ganged", so that both channels can be controlled as a stereo pair. The mute buttons do exactly what you would expect: they mute the outgoing channel.
 
 A mono signal can be panned by setting the stereo faders or mute controls accordingly. For example, to pan hard left, mute the right channel. To pan soft right, set the right fader higher than the left. To preserve a stereo signal coming into 2 hardware inputs -- "H/W In 1/2", for example -- mute the right fader on "H/W In 1", and mute the left fader on "H/W In 2."
 
-The highest level setting on the faders is 0dB, or _Unity Gain_, which is an easy way of indicating a gain of factor 1 (equivalent to 0dB) where both input and output are at the same voltage level and impedance. Since there is no amplification available, clipping is impossible on the outgoing signal. If the incoming audio signal levels are ideal -- say, -12dB to -3dB (in the orange) -- it is perfectly safe to set the faders to 0dB (the highest level setting.)
+The highest level setting on the faders is 0dB, or *Unity Gain*, which is an easy way of indicating a gain of factor 1 (equivalent to 0dB) where both input and output are at the same voltage level and impedance. Since there is no amplification available, clipping is impossible on the outgoing signal. If the incoming audio signal levels are ideal -- say, -12dB to -3dB (in the orange) -- it is perfectly safe to set the faders to 0dB (the highest level setting.)
 
 The overall audio signal level of the on-board digital mixer's "pre-out" is indicated by the large meters on the far left, labeled "Digital Mixer." This meter is visible on all pages in the application's UI and displays the same information regardless of which page is active.
 
@@ -114,13 +114,13 @@ The overall audio signal level of the on-board digital mixer's "pre-out" is indi
 
 **Tip:** For the inquisitive: PCM is an acronym for [Pulse Code Modulation](http://en.wikipedia.org/wiki/Pulse-code_modulation).
 
-The Monitor PCMs page is effectively a monitor mixer for your card's _software_ inputs. Software inputs are the digital audio streams sent by your software applications. Typically, on a Linux-based Digital Audio Workstation (DAW), this means [JACK](/index.php/JACK "JACK"). The power of this functionality is most apparent when "Digital Mix" is connected to a pair of audio outputs in the _Patchbay / Router_ tab, and you are mixing multiple sources from both hardware and software inputs See [#Usage examples](#Usage_examples).
+The Monitor PCMs page is effectively a monitor mixer for your card's *software* inputs. Software inputs are the digital audio streams sent by your software applications. Typically, on a Linux-based Digital Audio Workstation (DAW), this means [JACK](/index.php/JACK "JACK"). The power of this functionality is most apparent when "Digital Mix" is connected to a pair of audio outputs in the *Patchbay / Router* tab, and you are mixing multiple sources from both hardware and software inputs See [#Usage examples](#Usage_examples).
 
 The faders, meters, and mute buttons operate identically to those on the Monitor Inputs page.
 
 #### Tips and tricks
 
-*   The available software inputs are displayed as "playback__X_", where _X_ is a sequential number, in [JACK](/index.php/JACK "JACK")'s Connections dialog (in the "Writable Clients / Input Ports" box.) The number of available inputs will vary depending on your specific card.
+*   The available software inputs are displayed as "playback_*X*", where *X* is a sequential number, in [JACK](/index.php/JACK "JACK")'s Connections dialog (in the "Writable Clients / Input Ports" box.) The number of available inputs will vary depending on your specific card.
 
 *   "PCM Out 1/2" are typically used by applications like [Ardour](/index.php?title=Ardour&action=edit&redlink=1 "Ardour (page does not exist)") for their main outs. This is so common, the default signal routed to your card's physical outputs come from "PCM Out 1/2." Therefore, when using your card for monitoring rather than [Ardour](/index.php?title=Ardour&action=edit&redlink=1 "Ardour (page does not exist)")'s, use "PCM Out 3" or higher to monitor the signal you are actively recording to maintain mixing flexibility. See [#Usage examples](#Usage_examples).
 
@@ -145,7 +145,7 @@ The two rightmost columns, "S/PDIF Out 1/2 (L/R)", function identically as the a
 
 *   Typically, you would select the same option for both the L and R of a stereo output pair. (In fact, the Delta Control Panel software that ships with M-Audio sound cards forces this behavior: there is no separate L and R channel on this page. The envy24control developers provided additional flexibility in this regard.)
 
-*   Depending on your card, the number of _"playback_X"_ channels available in [JACK](/index.php/JACK "JACK")'s Connections dialog will vary. Usually, the two highest-numbered channels are "S/PDIF Out 1/2 (L/R)." This may or may not be the case with your configuration; take a few minutes to experiment and make a note.
+*   Depending on your card, the number of *"playback_X"* channels available in [JACK](/index.php/JACK "JACK")'s Connections dialog will vary. Usually, the two highest-numbered channels are "S/PDIF Out 1/2 (L/R)." This may or may not be the case with your configuration; take a few minutes to experiment and make a note.
 
 *   Learn to use the "Digital Mix" option. It is an extremely powerful feature that allows you to take some of the audio processing load off your recording software by handling the monitor mix with your card's hardware instead. This also provides the added benefit of near-zero latency while monitoring. See [#Usage examples](#Usage_examples).
 
@@ -155,17 +155,17 @@ The two rightmost columns, "S/PDIF Out 1/2 (L/R)", function identically as the a
 
 #### Master Clock
 
-This section allows you to select the source and codec sample rate of the card's master clock. _Int_ indicates a selection that will rely on the card's _internal_ crystal for the clock. _S/PDIF In_ is an advanced capability most often used when synchronizing two or more Ice1712-based cards. To achieve this, one card is set to an _Int_ rate -- it will serve as the master clock. The "S/PDIF Outs" of the master clock card are connected to the "S/PDIF Ins" of the second card, and that card's clock is set to _S/PDIF In_, effectively "chaining" them together.
+This section allows you to select the source and codec sample rate of the card's master clock. *Int* indicates a selection that will rely on the card's *internal* crystal for the clock. *S/PDIF In* is an advanced capability most often used when synchronizing two or more Ice1712-based cards. To achieve this, one card is set to an *Int* rate -- it will serve as the master clock. The "S/PDIF Outs" of the master clock card are connected to the "S/PDIF Ins" of the second card, and that card's clock is set to *S/PDIF In*, effectively "chaining" them together.
 
-When using an _Int_ option, _Int 44100_ (44.1 kHz) and higher are recommended for digital recording.
+When using an *Int* option, *Int 44100* (44.1 kHz) and higher are recommended for digital recording.
 
 #### Rate State
 
-When _Reset_ is selected, the codec sample rate selected in the "Master Clock" section is regarded as the "idle" sample rate. This means that when your card is in use by a software application such as [JACK](/index.php/JACK "JACK"), the rate is set by that application. The card will then switch (if necessary) to the selected sample rate whenever it's not in use by an application. Think of the complete name for this tickbox as _Reset Rate When Idle_.
+When *Reset* is selected, the codec sample rate selected in the "Master Clock" section is regarded as the "idle" sample rate. This means that when your card is in use by a software application such as [JACK](/index.php/JACK "JACK"), the rate is set by that application. The card will then switch (if necessary) to the selected sample rate whenever it's not in use by an application. Think of the complete name for this tickbox as *Reset Rate When Idle*.
 
-The codec sample rate can be locked to a specific rate by selecting _Locked_. When you do this, the card will disallow applications from setting the sample rate differently. If an application attempts to do so, you will most likely experience errors and/or XRUNS.
+The codec sample rate can be locked to a specific rate by selecting *Locked*. When you do this, the card will disallow applications from setting the sample rate differently. If an application attempts to do so, you will most likely experience errors and/or XRUNS.
 
-**Tip:** It's a common misconception that the selected clock rate and the rate of your software applications **must** match, or you'll get oodles of XRUNS. In practice, as long as _Locked_ is not selected, this should not be the case (and the author has never experienced this being a problem). Of course, your mileage may vary depending on your setup. To be sure, setting all applications' clock rates consistently eliminates one more possible source of XRUNS.
+**Tip:** It's a common misconception that the selected clock rate and the rate of your software applications **must** match, or you'll get oodles of XRUNS. In practice, as long as *Locked* is not selected, this should not be the case (and the author has never experienced this being a problem). Of course, your mileage may vary depending on your setup. To be sure, setting all applications' clock rates consistently eliminates one more possible source of XRUNS.
 
 ##### Settings combinations and their behaviors
 
@@ -223,7 +223,7 @@ This example assumes you have a mono audio source plugged into your card's analo
 #### Ardour settings
 
 *   Create a normal mono track. For this example, it will be called "Audio 1."
-*   Under _Options > Monitoring_, ensure that _Ardour does monitoring_ is selected. **VERY IMPORTANT!**
+*   Under *Options > Monitoring*, ensure that *Ardour does monitoring* is selected. **VERY IMPORTANT!**
 *   Ensure "Auto Input" is enabled; you can find the button in the upper right-hand corner. This will cause the signal for your track to toggle between the recorded track and the input signal, depending on whether or not the track is "armed" for recording.
 *   After making the [JACK](/index.php/JACK "JACK") connections as described below, arm "Audio 1" for recording and make any level adjustments in [Ardour](/index.php?title=Ardour&action=edit&redlink=1 "Ardour (page does not exist)"), using the "Audio 1" meter.
 
@@ -265,7 +265,7 @@ As with the first example, this example also assumes you have a mono audio sourc
 #### Ardour settings
 
 *   Create a normal mono track. For this example, it will be called "Audio 1."
-*   Under _Options > Monitoring_, ensure that _Audio Hardware does monitoring_ is selected. **VERY IMPORTANT!**
+*   Under *Options > Monitoring*, ensure that *Audio Hardware does monitoring* is selected. **VERY IMPORTANT!**
 *   Ensure "Auto Input" is disabled; you can find the button in the upper right-hand corner. (This is optional, but helps to avoid confusion.)
 *   After making the [JACK](/index.php/JACK "JACK") connections as described below, arm "Audio 1" for recording and make any level adjustments in [Ardour](/index.php?title=Ardour&action=edit&redlink=1 "Ardour (page does not exist)"), using the "Audio 1" meter.
 
@@ -291,7 +291,7 @@ As with the first example, this example also assumes you have a mono audio sourc
 
 ```
 
-**Note:** "capture_1" is connected to _both_ "Ardour:Audio 1/in 1" and "System:playback_3."
+**Note:** "capture_1" is connected to *both* "Ardour:Audio 1/in 1" and "System:playback_3."
 
 ## See also
 

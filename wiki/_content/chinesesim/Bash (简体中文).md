@@ -62,7 +62,7 @@ Bash调用方式的不同会导致Bash运行方式的不同。下面是在不同
 *   `~/.bash_profile`
 *   `~/.bash_login`
 *   `~/.profile`
-*   `/etc/bash.bashrc` (_非标准_: 只对部分发行版有效，Arch包含在这部分中)
+*   `/etc/bash.bashrc` (*非标准*: 只对部分发行版有效，Arch包含在这部分中)
 *   `~/.bashrc`
 *   `~/.bash_logout`
 
@@ -175,7 +175,7 @@ extract() {
 
 **注意:** [Bash](/index.php/Bash "Bash")用户应该确保extglob功能被打开: `shopt -s extglob`, 比如说将它加入到`.bashrc`。如果使用[Bash completion](/index.php/Bash#Advanced_completion "Bash")，这个功能将默认被打开。 [Zsh](/index.php/Zsh "Zsh")用户应该这样做: 执行`setopt kshglob`来替代上面的操作。
 
-另一个实现方式就是安装_unp_包。
+另一个实现方式就是安装*unp*包。
 
 通常进入到另一个目录后我们会用ls来列出目录下的文件。所以我们可以写一个函数来同时做这两件事情。 这个例子中我们把函数命名为'cl'并且会在给定的目录不存在时报错。
 
@@ -402,7 +402,7 @@ fortune -a | fmt -80 -s | cowsay -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1
            o  
               ,'``.._   ,'``.
              :,--._:)\,:,._,.:
-             :`--,_@@@:`...';\_ 
+             :`--,*@@@:`...';\* 
               `,'@@@@@@@`---'@@`.     
               /@@@@@@@@@@@@@@@@@:
              /@@@@@@@@@@@@@@@@@@@\
@@ -509,5 +509,5 @@ bind '"\e[B": history-search-forward'
 *   [Quote Tutorial](http://www.grymoire.com/Unix/Quote.html)
 *   [irc://irc.freenode.net#bash](irc://irc.freenode.net#bash) - Active and friendly Internet Relay Chat channel for Bash.
 *   [http://chakra-project.org/wiki/index.php/Startup_files](http://chakra-project.org/wiki/index.php/Startup_files)
-*   [The Bourne-Again Shell](http://www.aosabook.org/en/bash.html) - The third chapter of _The Architecture of Open Source Applications_
+*   [The Bourne-Again Shell](http://www.aosabook.org/en/bash.html) - The third chapter of *The Architecture of Open Source Applications*
 *   [How to change the title of an xterm](http://tldp.org/HOWTO/Xterm-Title-4.html)

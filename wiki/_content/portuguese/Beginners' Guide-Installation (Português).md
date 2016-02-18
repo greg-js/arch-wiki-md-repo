@@ -52,7 +52,7 @@ A partir deste momento, você está automaticamente logado em uma shell como usu
 Por padrão, a linguagem do teclado é a `us`. Para utilizadores do Brasil:
 
 ```
-# loadkeys _br-abnt2_
+# loadkeys *br-abnt2*
 
 ```
 
@@ -63,7 +63,7 @@ Para utilizadores de outras comunidades lusófonas:
 
 ```
 
-A fonte de letra do console também pode ser alterada, pois a maioria das linguagens utiliza o padrão de 26 letras. Nesses casos, alguns caracteres podem aparecer na tela como quadrados brancos ou outros símbolos. Note que o comando abaixo é case-sensitive, portanto, digite _exatamente_ da forma como está escrito:
+A fonte de letra do console também pode ser alterada, pois a maioria das linguagens utiliza o padrão de 26 letras. Nesses casos, alguns caracteres podem aparecer na tela como quadrados brancos ou outros símbolos. Note que o comando abaixo é case-sensitive, portanto, digite *exatamente* da forma como está escrito:
 
 ```
 # setfont Lat2-Terminus16
@@ -75,7 +75,6 @@ Por padrão, a linguagem da instalação é o Inglês(US). Para alterar a lingua
 Pressione `Ctrl+X` para sair, e quando perguntado para salvar as alterações, pressione `Y` seguido de `Enter` para sobrescrever o arquivo.
 
  `# nano /etc/locale.gen` 
-
 ```
 en_US.UTF-8 UTF-8
 pt_BR.UTF-8 UTF-8
@@ -90,7 +89,6 @@ pt_BR.UTF-8 UTF-8
 ou, para configurar em Português de Portugal:
 
  `# nano /etc/locale.gen` 
-
 ```
 en_US.UTF-8 UTF-8
 pt_PT.UTF-8 UTF-8
@@ -109,7 +107,6 @@ Lembre-se, `Alt Esquerdo + Shift Esquerdo` ativa e desativa um mapa de teclado.
 O serviço `dhcpcd` inicia automaticamente em tempo de inicialização, e tentará iniciar uma conexão cabeada se disponível. Tente pingar um site para verificar a disponibilidade.
 
  `# ping -c 3 www.google.com` 
-
 ```
 PING www.l.google.com (74.125.132.105) 56(84) bytes of data.
 64 bytes from wb-in-f105.1e100.net (74.125.132.105): icmp_req=1 ttl=50 time=17.0 ms
@@ -129,7 +126,7 @@ Caso contrário, vá para o tópico [Preparando os Discos](#Preparando_os_Discos
 
 Siga o seguinte procedimento para configurar sua conexão cabeada com um endereço IP estático.
 
-Caso o seu computador esteja conectado a uma rede Ethernet você possuirá uma interface chamada `enpXsX` (onde _"X"_ corresponde a um número). Você precisa conhecer as seguintes informações (que você pode conseguir com seu administrador de redes):
+Caso o seu computador esteja conectado a uma rede Ethernet você possuirá uma interface chamada `enpXsX` (onde *"X"* corresponde a um número). Você precisa conhecer as seguintes informações (que você pode conseguir com seu administrador de redes):
 
 *   Endereço IP estático.
 *   Máscara de rede.
@@ -177,7 +174,6 @@ Exemplo:
 Edite o arquivo `resolv.conf`, substituindo no parametro "nameserver" os endereços IP dos DNS's disponíveis, e o valor do seu domínio no parâmetro "search".
 
  `# nano /etc/resolv.conf` 
-
 ```
 nameserver 61.23.173.5
 nameserver 61.95.849.8
@@ -192,11 +188,11 @@ A partir daqui, você deve ter acesso a rede cabeada. Caso contrário, dê uma v
 
 Siga este procedimento caso você precise de conectividade (Wi-Fi) durante o processo de instalação.
 
-Os drivers e utilitários para conexão sem fio agora estão disponíveis na mídia de instalação. Um bom conhecimento do seu hardware sem fio será de suma importância para obter sucesso na configuração. Note que seguindo o procedimento deste passo-a-passo habilitará seu hardware _durante a utilização do sistema live_ ou _executando em determinado processo da instalação_. Estes passos precisam ser repetidos após um reboot no sistema.
+Os drivers e utilitários para conexão sem fio agora estão disponíveis na mídia de instalação. Um bom conhecimento do seu hardware sem fio será de suma importância para obter sucesso na configuração. Note que seguindo o procedimento deste passo-a-passo habilitará seu hardware *durante a utilização do sistema live* ou *executando em determinado processo da instalação*. Estes passos precisam ser repetidos após um reboot no sistema.
 
 Note também que estes passos são opcionais, pois **se a conexão sem fio é desnecessária ao processo de instalação, estas configurações podem ser executadas em um período posterior.**
 
-**Nota:** Os exemplos a seguir usam a nomenclatura `wlpXsX` (onde _"X"_ corresponde a um número) para a interface de rede e `linksys` para a ESSID. Lembre de alterar estes valores de acordo com a sua configuração.
+**Nota:** Os exemplos a seguir usam a nomenclatura `wlpXsX` (onde *"X"* corresponde a um número) para a interface de rede e `linksys` para a ESSID. Lembre de alterar estes valores de acordo com a sua configuração.
 
 O procedimento básico será:
 
@@ -217,9 +213,7 @@ Ou, se utilizando uma placa externa (usb):
 *   Certifique-se de que o udev carregou o driver apropriado, e que uma interface utilizável foi criada, através do comando `iwconfig`:
 
 **Nota:** Caso você não visualize uma saída de tela similar a esta, sua placa wireless não foi carregada. Neste caso, você deverá carregar o módulo do driver por sua conta. Veja [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") para informações mais detalhadas.
-
  `# iwconfig` 
-
 ```
 lo no wireless extensions.
 enp5s0 no wireless extensions.
@@ -271,7 +265,7 @@ Para que seja possível instalar e atualizar o Arch Linux através de um servido
 
 ##### Configurando o pacman
 
-Edite o arquivo `/etc/pacman.conf` e apague o símbolo `#` da linha _"XferCommand = /usr/bin/wget"_:
+Edite o arquivo `/etc/pacman.conf` e apague o símbolo `#` da linha *"XferCommand = /usr/bin/wget"*:
 
  `# nano /etc/pacman.conf`  `XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u` 
 
@@ -280,7 +274,6 @@ Edite o arquivo `/etc/pacman.conf` e apague o símbolo `#` da linha _"XferComman
 Agora será preciso editar o arquivo `/etc/wgetrc` com as informações do seu proxy, apagando o símbolo `#` do início das linhas e alterando com a sua configuração de proxy:
 
  `# nano /etc/wgetrc` 
-
 ```
 https_proxy = http://usuario:senha@ipdoproxy:portadoproxy/
 http_proxy = http://usuario:senha@ipdoproxy:portadoproxy/
@@ -413,7 +406,7 @@ No caso da partição `/boot` ser separada:
 
 ```
 # mkdir /mnt/boot
-# mount /dev/sda_X_ /mnt/boot
+# mount /dev/sda*X* /mnt/boot
 
 ```
 
@@ -421,7 +414,7 @@ Se a sua placa-mãe possuir suporte a UEFI, monte a partição da seguinte manei
 
 ```
 # mkdir /mnt/boot/efi
-# mount /dev/sda_X_ /mnt/boot/efi
+# mount /dev/sda*X* /mnt/boot/efi
 
 ```
 
@@ -430,7 +423,6 @@ Se a sua placa-mãe possuir suporte a UEFI, monte a partição da seguinte manei
 Antes de instalar, você pode desejar configurar seu arquivo `mirrorlist` para apontar pra um repositório de seu interesse. Uma cópia deste arquivo será instalado no seu sistema através do `pacstrap`
 
  `# nano /etc/pacman.d/mirrorlist` 
-
 ```
 ##
 ## Arch Linux repository mirrorlist
@@ -447,7 +439,7 @@ Server = http://mirror.example.xyz/archlinux/$repo/os/$arch
 *   `Ctrl+U` para colar a linha copiada no topo do arquivo.
 *   `Ctrl+X` para sair, e quando lhe for perguntado se deseja salvar as alterações, pressione `Y` e `Enter` para sobrescrever o arquivo
 
-Se desejar, você pode configurar para que este seja o _único_ repositório disponível, excluindo todo o resto (usando `Ctrl+K`), porém, é uma boa ideia ter mais de um repositório disponível, caso um deles esteja offline.
+Se desejar, você pode configurar para que este seja o *único* repositório disponível, excluindo todo o resto (usando `Ctrl+K`), porém, é uma boa ideia ter mais de um repositório disponível, caso um deles esteja offline.
 
 **Dica:**
 
@@ -473,11 +465,11 @@ O sistema base é instalado usando o script [pacstrap](https://github.com/falcon
 
 *   [base](https://www.archlinux.org/groups/x86_64/base/): Softwares que fazem parte do repositório [core], fazendo parte do ambiente mínimo necessário.
 
-*   [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/): Ferramentas extras fora do [core] como `make` e `automake`. A maioria dos iniciantes irá instalar este grupo, que será necessário para aumentar o sistema no futuro. O _base-devel_ é um grupo necessário para a instalação de pacotes vindos do [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+*   [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/): Ferramentas extras fora do [core] como `make` e `automake`. A maioria dos iniciantes irá instalar este grupo, que será necessário para aumentar o sistema no futuro. O *base-devel* é um grupo necessário para a instalação de pacotes vindos do [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 Isto lhe dará um ambiente Arch básico. Outros pacotes podem ser instalados mais tarde através do [pacman](/index.php/Pacman "Pacman").
 
-**Nota:** Se você está instalando o Arch Linux através de um servidor Proxy é importante instalar o pacote [wget](https://www.archlinux.org/packages/?name=wget), além do _base_ e o _base-devel_, através do `pacstrap`.
+**Nota:** Se você está instalando o Arch Linux através de um servidor Proxy é importante instalar o pacote [wget](https://www.archlinux.org/packages/?name=wget), além do *base* e o *base-devel*, através do `pacstrap`.
 
 ### Crie um FSTAB
 
@@ -517,7 +509,6 @@ Dois arquivos precisam ser editados: `locale.gen` e `locale.conf`.
 *   O arquivo `locale.gen` é limpo por padrão(todas linhas comentadas) e você precisará remover o `#` das linhas desejadas. Você deverá descomentar mais linhas que apenas o Inglês (US), assim que escolher a codificação `UTF-8`: encoding:
 
  `# nano /etc/locale.gen` 
-
 ```
 en_US.UTF-8 UTF-8
 pt_BR.UTF-8 UTF-8
@@ -547,7 +538,7 @@ Para usar outras variáveis do tipo `LC_*`, primeiro rode o comando `locale` par
 Se você alterou o mapa do teclado no [inicio](#Instala.C3.A7.C3.A3o) do processo de instalação, recarregue tal configuração novamente pois seu ambiente mudou. Exemplo:
 
 ```
-# loadkeys _br-abnt2_
+# loadkeys *br-abnt2*
 # setfont Lat2-Terminus16
 
 ```
@@ -555,7 +546,7 @@ Se você alterou o mapa do teclado no [inicio](#Instala.C3.A7.C3.A3o) do process
 Para utilizadores de outras comunidades lusófonas:
 
 ```
-# loadkeys _pt-latin9_
+# loadkeys *pt-latin9*
 # setfont Lat2-Terminus16
 
 ```
@@ -563,7 +554,6 @@ Para utilizadores de outras comunidades lusófonas:
 Para que tais configurações persistam após um reboot, edite o arquivo `vconsole.conf`:
 
  `# nano /etc/vconsole.conf` 
-
 ```
 KEYMAP=br-abnt2
 FONT=Lat2-Terminus16
@@ -619,15 +609,15 @@ Você pode gerar o arquivo `/etc/adjtime` automaticamente, usando um dos seguint
 
 *   **localtime** (desencorajante; usado por padrão no Windows)
 
-**Warning:** Usando _localtime_ pode levar a vários bugs conhecidos e incorrigíveis. No entanto, não há planos para largar suporte para _localtime_.
+**Warning:** Usando *localtime* pode levar a vários bugs conhecidos e incorrigíveis. No entanto, não há planos para largar suporte para *localtime*.
 
 	 `# hwclock --systohc --localtime` 
 
 Se você tem (ou pensando em ter) uma configuração dual boot com o Windows:
 
-*   Recomendado: Definir tanto Arch Linux e Windows para usar UTC. Um rápido [registro fixo](/index.php/Time#UTC_in_Windows "Time") é necessário. Além disso, certifique-se de impedir o Windows de sincronizar o tempo on-line, porque o relógio de hardware será o padrão de volta para o _localtime_. Se você quiser tal funcionalidade (NTP sync), você deve usar [ntpd](/index.php/Ntpd "Ntpd") em sua instalação do Arch Linux em seu lugar.
+*   Recomendado: Definir tanto Arch Linux e Windows para usar UTC. Um rápido [registro fixo](/index.php/Time#UTC_in_Windows "Time") é necessário. Além disso, certifique-se de impedir o Windows de sincronizar o tempo on-line, porque o relógio de hardware será o padrão de volta para o *localtime*. Se você quiser tal funcionalidade (NTP sync), você deve usar [ntpd](/index.php/Ntpd "Ntpd") em sua instalação do Arch Linux em seu lugar.
 
-*   Não recomendado: Defina o Arch Linux para o _localtime_ e desativar todos os serviços relacionados com o tempo, como `ntpd.service`. Isso vai deixar o Windows cuidar das correções do relógio do hardware e você precisa se lembrar de inicializar o Windows, pelo menos, duas vezes por ano (na Primavera e no Outono) quando [DST](https://en.wikipedia.org/wiki/Daylight_savings_time "wikipedia:Daylight savings time") retrocede. Então, por favor, não pergunte no fórum por que o relógio é de uma hora atrás ou à frente, se você costuma passar dias ou semanas sem entrar no Windows.
+*   Não recomendado: Defina o Arch Linux para o *localtime* e desativar todos os serviços relacionados com o tempo, como `ntpd.service`. Isso vai deixar o Windows cuidar das correções do relógio do hardware e você precisa se lembrar de inicializar o Windows, pelo menos, duas vezes por ano (na Primavera e no Outono) quando [DST](https://en.wikipedia.org/wiki/Daylight_savings_time "wikipedia:Daylight savings time") retrocede. Então, por favor, não pergunte no fórum por que o relógio é de uma hora atrás ou à frente, se você costuma passar dias ou semanas sem entrar no Windows.
 
 #### Módulos do Kernel
 
@@ -636,7 +626,6 @@ Se você tem (ou pensando em ter) uma configuração dual boot com o Windows:
 Para que os módulos do kernel carregue durante a inicialização, coloque um `*.conf` no arquivo `/etc/modules-load.d/`, com um nome baseado no programa que vai usá-lo.
 
  `# nano /etc/modules-load.d/virtio-net.conf` 
-
 ```
 # Load 'virtio-net.ko' at boot.
 
@@ -649,19 +638,17 @@ Linhas vazias e começando com `#` ou `;` são ignorados.
 
 #### Hostname
 
-Adicione seu _hostname_ em `/etc/hostname`:
+Adicione seu *hostname* em `/etc/hostname`:
 
 ```
 # echo **myhostname** > /etc/hostname
 
 ```
 
-Configure ao seu gosto (ex. _arch_). Este é o nome do seu computador. E adicione para `/etc/hosts`, assim:
+Configure ao seu gosto (ex. *arch*). Este é o nome do seu computador. E adicione para `/etc/hosts`, assim:
 
 **Warning:** Este formato, incluindo `localhost` e seu hostname atual, é necessário para a compatibilidade do programa. Erros nessas entradas podem causar mau desempenho da rede e/ou determinados programas podem abrir muito lentamente, ou não funcionar como ao todo.
-
  `# nano /etc/hosts` 
-
 ```
 127.0.0.1   **myhostname** localhost
 ::1         **myhostname** localhost
@@ -672,13 +659,11 @@ Configure ao seu gosto (ex. _arch_). Este é o nome do seu computador. E adicion
 **Nota:** `127.0.0.1` e `::1` são os endereços IPv4 e IPv6 de local [loopback](https://en.wikipedia.org/wiki/localhost "wikipedia:localhost") interface de rede.
 
 **Dica:** Por conveniência, você pode também usar `/etc/hosts` apelidos para hosts em sua rede, e/ou na web.
-
 ```
 192.168.1.90 media
 192.168.1.88 data
 
 ```
-
 O exemplo acima permitirá o acesso a um servidor de mídia e dados em sua rede pelo nome e sem a necessidade de digitar os seus respectivos endereços IP.
 
 ### Configure a rede
@@ -759,7 +744,7 @@ Se o seu adaptador sem fio requer um firmware (como descrito acima na seção [E
 
 ```
 
-*   Conecte à rede com `wifi-menu` (opcionalmente verificar o nome da interface com `ip link`, mas geralmente é `wlpXsX`) (onde "_X_" corresponde a um número), que irá gerar um arquivo de perfil em `/etc/netctl/` nomeado após o SSID. Há também modelos disponíveis no `/etc/netctl/examples/` para configuração manual.
+*   Conecte à rede com `wifi-menu` (opcionalmente verificar o nome da interface com `ip link`, mas geralmente é `wlpXsX`) (onde "*X*" corresponde a um número), que irá gerar um arquivo de perfil em `/etc/netctl/` nomeado após o SSID. Há também modelos disponíveis no `/etc/netctl/examples/` para configuração manual.
 
 ```
 # wifi-menu
@@ -773,7 +758,7 @@ Se o seu adaptador sem fio requer um firmware (como descrito acima na seção [E
 
 ```
 
-*   Certifique-se de que a interface sem fio está correta (geralmente `wlpXsX`) (onde "_X_" corresponde a um número).
+*   Certifique-se de que a interface sem fio está correta (geralmente `wlpXsX`) (onde "*X*" corresponde a um número).
 
 ### Configurar o pacman
 
@@ -781,7 +766,7 @@ Pacman é o gerenciador de pacotes do Arch Linux. Seu nome vem de **pac**kage **
 
 Para seleções de repositório e opções pacman, edite `pacman.conf`:
 
-**Nota:** Ao escolher um repositório, certifique-se de descomentar tanto as linhas de cabeçalho `[_repo_name_]`, bem como as linhas `Include`. Não fazer isso resultará no repositório escolhido seja omitido! Este é um erro muito comum.
+**Nota:** Ao escolher um repositório, certifique-se de descomentar tanto as linhas de cabeçalho `[*repo_name*]`, bem como as linhas `Include`. Não fazer isso resultará no repositório escolhido seja omitido! Este é um erro muito comum.
 
 ```
 # nano /etc/pacman.conf
@@ -826,18 +811,18 @@ Definir a senha de root com:
 
 **Warning:** Linux é um sistema operacional multi-usuário. Você não deve executar tarefas diárias usando a conta root. É considerada uma prática muito pobre e pode ser extremamente perigoso. A conta root somente deve ser usada para tarefas administrativas.
 
-Em seguida, adicione uma conta de usuário normal. Para uma forma mais interativa, você pode usar `adduser`. No entanto, a seguir é a forma não-interativo. O usuário _archie_ é apenas um exemplo.
+Em seguida, adicione uma conta de usuário normal. Para uma forma mais interativa, você pode usar `adduser`. No entanto, a seguir é a forma não-interativo. O usuário *archie* é apenas um exemplo.
 
 ```
-# useradd -m -g users -s /bin/bash _archie_
-# passwd _archie_
+# useradd -m -g users -s /bin/bash *archie*
+# passwd *archie*
 
 ```
 
 Se você quiser começar de novo, use `userdel`. A opção `-r` irá remover o diretório home do usuário e seu conteúdo, juntamente com as configurações do usuário (as chamadas "dot" arquivos).
 
 ```
-# userdel -r _archie_
+# userdel -r *archie*
 
 ```
 
@@ -855,7 +840,7 @@ Para sistemas BIOS existem três carregadores de boot(bootloaders) - Syslinux, G
 
 ##### Syslinux
 
-Instale o pacote [syslinux](https://www.archlinux.org/packages/?name=syslinux) e utilize o script `syslinux-install_update` para _instalar_ os arquivos (`-i`), marcar a partição _ativa_ atribuindo a flag (`-a`), e instalar o código de boot na _MBR_ (`-m`):
+Instale o pacote [syslinux](https://www.archlinux.org/packages/?name=syslinux) e utilize o script `syslinux-install_update` para *instalar* os arquivos (`-i`), marcar a partição *ativa* atribuindo a flag (`-a`), e instalar o código de boot na *MBR* (`-m`):
 
 **Nota:** Se você particionou o disco como GPT, instale o pacote [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk), através do comando (`pacman -S gptfdisk`), pois este contem o software `sgdisk`, que será utilizado especificamente para atribuir a bootável específica da GPT.
 
@@ -865,10 +850,9 @@ Instale o pacote [syslinux](https://www.archlinux.org/packages/?name=syslinux) e
 
 ```
 
-Configure o arquivo {{ic|syslinux.cfg} para apontar pra partição raíz correta. Este passo é vital. Se apontado para a partição errada, o Arch Linux não irá inicializar. Altere a entrada `/dev/sda3` para refletir a configuração específica de sua partição raíz. _(se você particionou seu disco como o explicado no [exemplo](#Preparando_os_Discos), sua partição raíz é o sda1)_. Faça o mesmo para a entrada "fallback".
+Configure o arquivo {{ic|syslinux.cfg} para apontar pra partição raíz correta. Este passo é vital. Se apontado para a partição errada, o Arch Linux não irá inicializar. Altere a entrada `/dev/sda3` para refletir a configuração específica de sua partição raíz. *(se você particionou seu disco como o explicado no [exemplo](#Preparando_os_Discos), sua partição raíz é o sda1)*. Faça o mesmo para a entrada "fallback".
 
  `# nano /boot/syslinux/syslinux.cfg` 
-
 ```
 ...
 LABEL arch
@@ -883,7 +867,7 @@ Para maiores informações, veja [Syslinux](/index.php/Syslinux "Syslinux").
 
 **Nota:** Para dispositivos particionados no formato GPT, em placas-mãe BIOS, o GRUB necessitará de uma "[Partição BIOS de boot](/index.php/GRUB#GPT_specific_instructions "GRUB")" de 2 MiB.
 
-**Nota:** Por favor não utilize a nomenclatura `/dev/sda_X_` no comando abaixo. Você deve utilizar `/dev/sdb` se o Arch estiver instalado lá e se foi configurado na BIOS para que este seja o primeiro dispositivo na ordem de inicialização.
+**Nota:** Por favor não utilize a nomenclatura `/dev/sda*X*` no comando abaixo. Você deve utilizar `/dev/sdb` se o Arch estiver instalado lá e se foi configurado na BIOS para que este seja o primeiro dispositivo na ordem de inicialização.
 
 ```
 # pacman -S grub
@@ -946,7 +930,6 @@ O Kernel Linux pode atuar como seu próprio bootloader usando o EFISTUP. Este é
 6\. Crie um arquivo `refind_linux.conf` com os parametros de kernel que serão utilizados pelo rEFInd:
 
  `# nano /boot/efi/EFI/arch/refind_linux.conf` 
-
 ```
 "Boot to X"          "root=/dev/sdaX ro rootfstype=ext4 systemd.unit=graphical.target"
 "Boot to console"    "root=/dev/sdaX ro rootfstype=ext4 systemd.unit=multi-user.target"
@@ -1006,7 +989,7 @@ Para maiores informações sobre a configuração do GRUB, veja [GRUB](/index.ph
 
 Frequentemente, os desenvolvedores disponibilizarão informações importantes para configurações e modificações pertinentes a erros conhecidos. Do usuário Arch Linux é esperado que consulte estes lugares antes de efetuar um upgrade:
 
-*   [Arch news](https://archlinux.org/news/). Se você efetuou um upgrade antes de ler aqui, verifique as notícias _antes_ de postar uma questão no fórum!
+*   [Arch news](https://archlinux.org/news/). Se você efetuou um upgrade antes de ler aqui, verifique as notícias *antes* de postar uma questão no fórum!
 
 *   [Lista de email - Anuncios](https://archlinux.org/pipermail/arch-announce/).
 

@@ -118,7 +118,7 @@
 
 *   [Linux Mint](http://www.linuxmint.com/) 最初是一个 [Ubuntu](#Ubuntu) 的衍生版本，后来有添加了LMDE（Linux Mint的 Debian版本）这是一个基于 [Debian](#Debian_GNU.2FLinux) 的版本。而 Arch 是一个独立的发行版，它依赖自己的 [构建系统](/index.php/ABS "ABS") 和 [官方仓库](/index.php/Official_repositories "Official repositories")。
 *   和 Ubuntu 有些类似，Mint致力于创建一个“现代化的，优雅的，用户体验良好的”，并且同时具备“强大功能”和“易于使用”的操作系统。Mint的目标用户群更加关心发行版所配备的默认软件包。这一点与Arch的[简洁之道](/index.php/The_Arch_Way "The Arch Way")不同。
-*   为了方便系统维护，Mint 包含了一些图形化工具，叫做 _MintTools(Mint工具)_，而 Arch 仅仅提供简单的命令行工具，例如 [pacman](/index.php/Pacman "Pacman")，因此 Arch 的系统管理工作需要由用户自己组织。
+*   为了方便系统维护，Mint 包含了一些图形化工具，叫做 *MintTools(Mint工具)*，而 Arch 仅仅提供简单的命令行工具，例如 [pacman](/index.php/Pacman "Pacman")，因此 Arch 的系统管理工作需要由用户自己组织。
 *   Mint 主要运行 [Cinnamon](/index.php/Cinnamon "Cinnamon") 和 [MATE](/index.php/MATE "MATE")作为它的图形界面，也可以选择 [KDE](/index.php/KDE "KDE") 或者[Xfce4](/index.php/Xfce4 "Xfce4")。 Mint 同时支持plus codecs、flash、DVD playback 和 MP3，这其中有一些是私有软件。它也包含了一系列非常流行的软件，例如 [Firefox](/index.php/Firefox "Firefox")、[GIMP](/index.php/GIMP "GIMP")、[LibreOffice](/index.php/LibreOffice "LibreOffice")、[pidgin](/index.php/Pidgin "Pidgin") 等等。 而 Arch 的基础系统甚至不包含 [Xorg](/index.php/Xorg "Xorg")，更不要说其它任何的窗口管理器或者桌面环境。如果用户需要图形界面，这些只能在基本系统之后一步步安装。而且在 Arch 的默认系统中，没有任何有许可证问题的软件会被包含进来。
 *   新的 Mint 系统每半年发布一次新版本。时间大约实在新的 Ubuntu 发布一个月以后。每一个版本都是基于最新的 Ubuntu LTS 而且有五年支持。 Mint 的 Debian 版本 (LMDE) 基于 Debian 稳定版。而且只接受来自 Mint 的更新或者安全性更新。而 Arch 则完全是一个滚动更新的发行版。
 *   Mint 使用 APT 作为它的包管理系统，而 Arch 使用 [pacman](/index.php/Pacman "Pacman")。

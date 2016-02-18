@@ -1,6 +1,6 @@
 Tratto da Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
 
-"_Bumblebee è una soluzione per rendere la tecnologia di Nvidia Optimus, presente sui computer portatili predisposti, disponibile nei sistemi GNU/Linux. Tale caratteristica coinvolge due schede grafiche con due differenti profili di consumo di alimentazione, che collegati in modo stratificato condividono un singolo framebuffer._"
+"*Bumblebee è una soluzione per rendere la tecnologia di Nvidia Optimus, presente sui computer portatili predisposti, disponibile nei sistemi GNU/Linux. Tale caratteristica coinvolge due schede grafiche con due differenti profili di consumo di alimentazione, che collegati in modo stratificato condividono un singolo framebuffer.*"
 
 ## Contents
 
@@ -36,7 +36,7 @@ Tratto da Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/
 
 ## Bumblebee: Tecnologia Optimus per Linux
 
-La [Tecnologia Optimus](http://www.nvidia.com/object/optimus_technology.html) è un'implementazione _[grafica ibrida](http://hybrid-graphics-linux.tuxfamily.org/index.php?title=Hybrid_graphics)_ senza hardware multiplexer. La GPU integrata gestisce il display, mentre la GPU dedicata gestisce il rendering più impegnativo ed invia il risultato alla GPU integrata per la visualizzazione. Quando il portatile è alimentato a batteria, la GPU dedicata si spegne per risparmiare energia e aumentare l'autonomia. É stato anche testato con successo con macchine desktop con grafica Intel integrata e una scheda grafica nVidia dedicata .
+La [Tecnologia Optimus](http://www.nvidia.com/object/optimus_technology.html) è un'implementazione *[grafica ibrida](http://hybrid-graphics-linux.tuxfamily.org/index.php?title=Hybrid_graphics)* senza hardware multiplexer. La GPU integrata gestisce il display, mentre la GPU dedicata gestisce il rendering più impegnativo ed invia il risultato alla GPU integrata per la visualizzazione. Quando il portatile è alimentato a batteria, la GPU dedicata si spegne per risparmiare energia e aumentare l'autonomia. É stato anche testato con successo con macchine desktop con grafica Intel integrata e una scheda grafica nVidia dedicata .
 
 Bumblebee è un'implementazione software composta di due parti:
 
@@ -107,7 +107,7 @@ Se il programma viene eseguito con successo e il terminale fornisce informazioni
 Per avviare un'applicazione utilizzando la scheda grafica dedicata:
 
 ```
-$ optirun [opzione] _application_ [parametri-applicazione]
+$ optirun [opzione] *application* [parametri-applicazione]
 
 ```
 
@@ -116,7 +116,7 @@ Alcuni esempi:
 Avviare applicazioni Windows con Optiumus
 
 ```
-$ optirun wine _windows application_.exe
+$ optirun wine *windows application*.exe
 
 ```
 
@@ -151,7 +151,7 @@ I Frames saranno compressi prima di essere trasportati - ciò consente di rispar
 Per usare un metodo di compressione per una singola applicazione:
 
 ```
-$ optirun -c _metodo-di-comppressione_ applicazione
+$ optirun -c *metodo-di-comppressione* applicazione
 
 ```
 
@@ -161,10 +161,9 @@ Metodi compressi sono: `jpeg`, `rgb`, `yuv`
 
 Metodi non compressi sono: `proxy`, `xv`
 
-Per impostare un metodo di compressione per tutte le applicazioni impostare il valore `VGLTransport` con il `_metodo-di-compressione_` preferito in `/etc/bumblebee/bumblebee.conf`:
+Per impostare un metodo di compressione per tutte le applicazioni impostare il valore `VGLTransport` con il `*metodo-di-compressione*` preferito in `/etc/bumblebee/bumblebee.conf`:
 
  `/etc/bumblebee/bumblebee.conf` 
-
 ```
 [...]
 [optirun]
@@ -201,7 +200,6 @@ Impostare le opzioni dei moduli `load_state` e `unload_state` in base alle vostr
 La scheda NVIDIA non viene inizializzata correttamente durante la fase di boot se la scheda è stata spenta quando il sistema è stato arrestato l'ultima volta. Una soluzione è impostare l'opzione `TurnCardOffAtExit=false` in `/etc/bumblebee/bumblebee.conf`, tuttavia questo consentirà alla scheda di fermare ogni volta il demone Bumblebee, anche se fatto manualmente. Per assicurare che la scheda NVIDIA rimanga sempre accesa durante l'arresto, aggiungere il seguente servizio di [Systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)") (se state utilizzando [bbswitch](https://www.archlinux.org/packages/?name=bbswitch)):
 
  `/etc/systemd/system/nvidia-enable.service` 
-
 ```
 [Unit]
 Description=Enable NVIDIA card
@@ -224,7 +222,6 @@ Per attivare il servizio eseguire `systemctl enable nvidia-enable.service` come 
 Se la porta (DisplayPort/HDMI/VGA) è collegato al chip Intel, è possibile impostare più monitor con xorg.conf. Si possono impostarli per utilizzare la scheda Intel, ma con Bumblebee è ancora possibile utilizzare la scheda NVIDIA. Un esempio di configurazione, qui di seguito, mostra l'uso di due schermi identici con risoluzione 1080p e con connessione HDMI.
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "Screen"
     Identifier     "Screen0"
@@ -288,7 +285,6 @@ EndSection
 Probabilmente sarà necessario cambiare il BusID in base alle vostre esigenze sia per la Intel e la scheda Nvidia.
 
  `$ lspci | grep VGA` 
-
 ```
 00:02.0 VGA compatible controller: Intel Corporation 2nd Generation Core Processor Family Integrated Graphics Controller (rev 09)
 
@@ -316,7 +312,6 @@ Per semplicità, DP viene utilizzato per riferirsi al Digital Output (DisplayPor
 *   Modificare queste impostazioni inbumblebee.conf:
 
  `/etc/bumblebee/bumblebee.conf` 
-
 ```
 KeepUnusedXServer=true
 Driver=nvidia
@@ -362,7 +357,6 @@ EndSection  # Samsung 2494
 Cambiare `xorg.nvidia.conf` per includere questa sezione Monitor. È anche possibile tagliare il vostro file in modo che contenga solo ServerLayout, Monitor Device e sezioni Screen. Per riferimento eccovi un esempio:
 
  `/etc/X11/xorg.nvidia.conf` 
-
 ```
 Section "ServerLayout"
         Identifier     "X.org Nvidia DP"
@@ -401,10 +395,9 @@ EndSection
 
 *   Collegare entrambi i monitor esterni e avviare con startx. Controllare il proprio `/var/log/Xorg.0.log`. Verificare che il monitor VGA venga rilevato con le modalità corrette. Si dovrebbe anche vedere un uscita VIRTUAL mostrata con una propria modalità.
 *   Avviare `xrandr` e i tre display dovrebbe essere incluso lì, insieme con le modalità supportate.
-*   Se i Modelines elencati per il vostro display virtuale non presenta la risoluzione nativa del proprio monitor, prendere nota del nome esatto dell'uscita. Ad esempio `VIRTUAL1`. Successivamente ricontrollate il file `Xorg.0.log`. Si dovrebbe vedere un messaggio del tipo: _Output VIRTUAL1 has no monitor section_. Cambieremo questo mettendo un file con la sezione Monitor necessaria in `/etc/X11/xorg.conf.d`. Poi usciremo e riavvieremo X.
+*   Se i Modelines elencati per il vostro display virtuale non presenta la risoluzione nativa del proprio monitor, prendere nota del nome esatto dell'uscita. Ad esempio `VIRTUAL1`. Successivamente ricontrollate il file `Xorg.0.log`. Si dovrebbe vedere un messaggio del tipo: *Output VIRTUAL1 has no monitor section*. Cambieremo questo mettendo un file con la sezione Monitor necessaria in `/etc/X11/xorg.conf.d`. Poi usciremo e riavvieremo X.
 
  `/etc/X11/xorg.conf.d/20-monitor_samsung.conf` 
-
 ```
 Section "Monitor"
     Identifier     "VIRTUAL1"
@@ -434,7 +427,6 @@ Su Windows, Nvidia Optimus funziona in maniera tale che è possibile avere una w
 Per imitare questo comportamento in Linux , è possibile utilizzare [libgl-switcheroo-git](https://aur.archlinux.org/packages/libgl-switcheroo-git/). Dopo l'installazione, è possibile aggiungere quanto segue in basso nel vostro `.Xprofile`:
 
  `~/.xprofile` 
-
 ```
 mkdir -p /tmp/libgl-switcheroo-$USER/fs
 gtkglswitch &
@@ -465,7 +457,7 @@ Esiste un problema noto con alcune applicazioni che vengono lanciate con wine ch
 Questo è un problema noto con VirtualGL . Come con bumblebee 3.1, fintanto che lo avete installato, è possibile utilizzare Primus come ponte di rendering :
 
 ```
-$ optirun -b primus wine _windows program_.exe
+$ optirun -b primus wine *windows program*.exe
 
 ```
 
@@ -473,7 +465,7 @@ Se questo non funziona, una soluzione alternativa a questo problema è quanto se
 
 ```
 $ optirun bash
-$ optirun wine _windows program_.exe
+$ optirun wine *windows program*.exe
 
 ```
 
@@ -586,7 +578,6 @@ Le voci `X Server XVideo Setings -> Sync to VBlank` e `OpenGL Settings -> Sync t
 Si potrebbe ottenere qualcosa di simile:
 
  `$ optirun glxspheres` 
-
 ```
 [ 1648.179533] [ERROR]You've no permission to communicate with the Bumblebee daemon. Try adding yourself to the 'bumblebee' group
 [ 1648.179628] [ERROR]Could not connect to bumblebee daemon - is it running?

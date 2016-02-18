@@ -8,7 +8,7 @@
 
 ## События нажатия кнопки питания и закрытия крышки ноутбука
 
-События нажатия кнопок ждущего режима, выключения и режима гибернации, а также закрытия крышки ноутбука обрабатываются _logind_, как описано на странице [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
+События нажатия кнопок ждущего режима, выключения и режима гибернации, а также закрытия крышки ноутбука обрабатываются *logind*, как описано на странице [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
 
 ## Используя systemd-logind
 
@@ -21,7 +21,7 @@ $ loginctl show-session $XDG_SESSION_ID --property=Active
 
 ```
 
-Пользователь может использоать команды _systemctl_ в командной строке, или добавить их в меню окружения рабочего стола:
+Пользователь может использоать команды *systemctl* в командной строке, или добавить их в меню окружения рабочего стола:
 
 ```
 $ systemctl poweroff
@@ -29,11 +29,11 @@ $ systemctl reboot
 
 ```
 
-Другие команды, такие как `systemctl suspend` и `systemctl hibernate` также могут быть использованы. Смотрите раздел _System Commands_ в справочном руководстве `man systemctl`.
+Другие команды, такие как `systemctl suspend` и `systemctl hibernate` также могут быть использованы. Смотрите раздел *System Commands* в справочном руководстве `man systemctl`.
 
 ## Используя sudo
 
-[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") [sudo](https://www.archlinux.org/packages/?name=sudo) и [добавьте](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA "Sudo (Русский)") текущего пользователя в список `sudoers`. После этого, текущий пользователь сможет вызывать _systemctl_ через sudo из командной строки или меню окружения рабочего стола:
+[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") [sudo](https://www.archlinux.org/packages/?name=sudo) и [добавьте](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA "Sudo (Русский)") текущего пользователя в список `sudoers`. После этого, текущий пользователь сможет вызывать *systemctl* через sudo из командной строки или меню окружения рабочего стола:
 
 ```
 $ sudo systemctl poweroff
@@ -41,14 +41,14 @@ $ sudo systemctl reboot
 
 ```
 
-Другие команды, такие как `systemctl suspend` и `systemctl hibernate` также могут быть использованы. Смотрите раздел _System Commands_ в справочном руководстве `man systemctl`.
+Другие команды, такие как `systemctl suspend` и `systemctl hibernate` также могут быть использованы. Смотрите раздел *System Commands* в справочном руководстве `man systemctl`.
 
 ### Ограничение привилегий sudo
 
 Если пользователю следует разрешить только, например, использовать команду выключения, добавьте следующее в конец файла `/etc/sudoers`, используя команду `visudo`:
 
 ```
-_имя_пользователя_ _название_хоста_=NOPASSWD: /usr/bin/systemctl poweroff,/usr/bin/systemctl halt,/usr/bin/systemctl reboot
+*имя_пользователя* *название_хоста*=NOPASSWD: /usr/bin/systemctl poweroff,/usr/bin/systemctl halt,/usr/bin/systemctl reboot
 
 ```
 
@@ -65,4 +65,4 @@ alias halt="sudo systemctl halt"
 
 ```
 
-То же самое вы можете сделать, установив [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat), который создаст символические ссылки на _systemctl_ с соответствующими именами.
+То же самое вы можете сделать, установив [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat), который создаст символические ссылки на *systemctl* с соответствующими именами.

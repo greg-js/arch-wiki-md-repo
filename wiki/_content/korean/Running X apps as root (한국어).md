@@ -7,35 +7,35 @@
 *   kdesu (KDE에 포함되어 있음)
 
 ```
-$ kdesu _name-of-app_
+$ kdesu *name-of-app*
 
 ```
 
 *   gksu (GNOME에 포함되어 있음)
 
 ```
-$ gksu _name-of-app_
+$ gksu *name-of-app*
 
 ```
 
 *   bashrun (커뮤니티에 있음)
 
 ```
-$ bashrun --su _name-of-app_
+$ bashrun --su *name-of-app*
 
 ```
 
 *   [sudo](/index.php/Sudo "Sudo") (설치되어 `visudo`로 올바르게 설정되어야 함)
 
 ```
-$ sudo _name-of-app_
+$ sudo *name-of-app*
 
 ```
 
 *   [sux](/index.php?title=Sux&action=edit&redlink=1 "Sux (page does not exist)") (X 인증을 전송하는 su 래퍼)
 
 ```
-$ sux root _name-of-app_
+$ sux root *name-of-app*
 
 ```
 
@@ -54,7 +54,7 @@ $ xhost +
 
 ```
 
-이는 루트를 포함하여 _누구라도_ X 서버에 일시적으로 접근하게 한다.
+이는 루트를 포함하여 *누구라도* X 서버에 일시적으로 접근하게 한다.
 
 ```
 $ xhost -

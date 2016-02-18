@@ -1,4 +1,4 @@
-**WPA2 Enterprise** is a mode of [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access "wikipedia:Wi-Fi Protected Access"). It provides better security and key management than _WPA2 Personal_, and supports other enterprise-type functionality, such as VLANs and [NAP](https://en.wikipedia.org/wiki/Network_Access_Protection "wikipedia:Network Access Protection"). However, it requires an external authentication server, called [RADIUS](https://en.wikipedia.org/wiki/RADIUS "wikipedia:RADIUS") server to handle the authentication of users. This is in contrast to Personal mode which does not require anything beyond the wireless router or access points (APs), and uses a single passphrase or password for all users.
+**WPA2 Enterprise** is a mode of [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access "wikipedia:Wi-Fi Protected Access"). It provides better security and key management than *WPA2 Personal*, and supports other enterprise-type functionality, such as VLANs and [NAP](https://en.wikipedia.org/wiki/Network_Access_Protection "wikipedia:Network Access Protection"). However, it requires an external authentication server, called [RADIUS](https://en.wikipedia.org/wiki/RADIUS "wikipedia:RADIUS") server to handle the authentication of users. This is in contrast to Personal mode which does not require anything beyond the wireless router or access points (APs), and uses a single passphrase or password for all users.
 
 The Enterprise mode enables users to log onto the Wi-Fi network with a username and password and/or a digital certificate. Since each user has a dynamic and unique encryption key, it also helps to prevent user-to-user snooping on the wireless network, and improves encryption strength.
 
@@ -16,7 +16,7 @@ The Enterprise mode enables users to log onto the Wi-Fi network with a username 
 
 ## Supported clients
 
-**Note:** [NetworkManager](/index.php/NetworkManager "NetworkManager") can generate WPA2 Enterprise profiles with [graphical front ends](/index.php/NetworkManager#Graphical_front-ends "NetworkManager"). _nmcli_ and _nmtui_ do not support this, but may use existing profiles.
+**Note:** [NetworkManager](/index.php/NetworkManager "NetworkManager") can generate WPA2 Enterprise profiles with [graphical front ends](/index.php/NetworkManager#Graphical_front-ends "NetworkManager"). *nmcli* and *nmtui* do not support this, but may use existing profiles.
 
 See [List of applications#Network managers](/index.php/List_of_applications#Network_managers "List of applications") for an overview.
 
@@ -27,7 +27,7 @@ See [List of applications#Network managers](/index.php/List_of_applications#Netw
 Once the connection configuration is complete, you can use the dhcp client to test them. For example:
 
 ```
-# dhcpcd _interface_
+# dhcpcd *interface*
 
 ```
 
@@ -50,7 +50,7 @@ For a comparison of protocols see the following [table](http://deployingradius.c
 **Warning:**
 
 *   Check connection details **first** with your institution before applying any profiles listed in this section. Example profiles are not guaranteed to work or match any security requirements.
-*   When storing connection profiles unencrypted, restrict read access to the root account by specifying `chmod 600 _profile_` as root.
+*   When storing connection profiles unencrypted, restrict read access to the root account by specifying `chmod 600 *profile*` as root.
 
 #### connman
 
@@ -62,7 +62,6 @@ For a comparison of protocols see the following [table](http://deployingradius.c
 *   Options are case-sensitive. [[1]](https://together.jolla.com/question/55969/connman-fails-due-to-case-sensitive-settings/)
 
  `/var/lib/connman/wifi_eduroam.config` 
-
 ```
 [service_eduroam]
 Type=wifi
@@ -70,15 +69,15 @@ Name=eduroam
 EAP=ttls
 CACertFile=/etc/ssl/certs/ca-certificates.crt
 Phase2=PAP
-Identity=_username_@_domain.edu_
-Passphrase=_password_
+Identity=*username*@*domain.edu*
+Passphrase=*password*
 ```
 
 [Restart](/index.php/Restart "Restart") `wpa_supplicant.service` and `connman.service` to connect to the new network.
 
 #### Wicd
 
-The [wicd-eduroam](https://aur.archlinux.org/packages/wicd-eduroam/) package contains configuration templates which will appear to wicd as _eduroam_.
+The [wicd-eduroam](https://aur.archlinux.org/packages/wicd-eduroam/) package contains configuration templates which will appear to wicd as *eduroam*.
 
 Alternatively, see [[2]](https://gist.githubusercontent.com/anonymous/0fa3b2c2b2a34c68a6f1/raw/9b8fdb7301182d18b6cd5068a7dbdfc57e5ba430/gistfile1.txt) for an example of a **TTLS** profile. To activate the profile, run:
 
@@ -87,7 +86,7 @@ Alternatively, see [[2]](https://gist.githubusercontent.com/anonymous/0fa3b2c2b2
 
 ```
 
-Open _wicd_, choose _TTLS for Wireless_ and enter the appropriate settings. The format of the subject match should be similar to `/CN=server.example.com`.
+Open *wicd*, choose *TTLS for Wireless* and enter the appropriate settings. The format of the subject match should be similar to `/CN=server.example.com`.
 
 #### netctl
 
@@ -97,7 +96,8 @@ Alternatively, adapt an example configuration from [[3]](https://gist.githubuser
 
 **Tip:**
 
-*   To prevent storing your password as plaintext, you can generate a password hash with `$ tr -d '\n' | iconv -t utf16le | openssl md4`. Type your password, press `Enter` and then `Ctrl+d`. Store the hashed password as `'password=hash:<hash>'`. This password hash is only available for MSCHAPV2 or MSCHAP, when using PAP use a plaintext password.
+*   To prevent storing your password as plaintext, you can generate a password hash with `$ tr -d '
+' | iconv -t utf16le | openssl md4`. Type your password, press `Enter` and then `Ctrl+d`. Store the hashed password as `'password=hash:<hash>'`. This password hash is only available for MSCHAPV2 or MSCHAP, when using PAP use a plaintext password.
 *   Custom certificates can be specified by adding the line `'ca_cert="/path/to/special/certificate.cer"'` in `WPAConfigSection`.
 
 ## Troubleshooting

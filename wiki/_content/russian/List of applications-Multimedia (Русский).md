@@ -67,7 +67,7 @@
 
 	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://www.archlinux.org/packages/?name=fbv)
 
-*   **fim** — Сильно настраиваемая framebuffer-программа просмотра изображений с поддержкой сценариев, основанная на _fbi_
+*   **fim** — Сильно настраиваемая framebuffer-программа просмотра изображений с поддержкой сценариев, основанная на *fbi*
 
 	[http://www.autistici.org/dezperado/fim/](http://www.autistici.org/dezperado/fim/) || [fim-svn](https://aur.archlinux.org/packages/fim-svn/)
 
@@ -347,7 +347,7 @@
 
 Дополнительную информацию смотрите в [Википедии](https://en.wikipedia.org/wiki/ru:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0 "wikipedia:ru:Заглавная страница"): [Звуковой сервер](https://en.wikipedia.org/wiki/Sound_server "wikipedia:Sound server").
 
-*   **wineasio** — Предоставляет для _wine_ драйвер ASIO-JACK. ASIO - это наиболее общий низкоуровневый драйвер в Windows, чаще всего он используется в программах для работы с аудио
+*   **wineasio** — Предоставляет для *wine* драйвер ASIO-JACK. ASIO - это наиболее общий низкоуровневый драйвер в Windows, чаще всего он используется в программах для работы с аудио
 
 	[http://sourceforge.net/projects/wineasio/](http://sourceforge.net/projects/wineasio/) || [wineasio](https://aur.archlinux.org/packages/wineasio/)
 
@@ -527,7 +527,7 @@
 
 	[https://github.com/fernandotcl/pa-applet](https://github.com/fernandotcl/pa-applet) || [pa-applet-git](https://aur.archlinux.org/packages/pa-applet-git/)
 
-*   **PNMixer** — Форк _obmixer_. Имеет множество новых возможностей, таких как выбор канала ALSA, обнаружение присоединения/отсоединения, ярлыки и т.д.
+*   **PNMixer** — Форк *obmixer*. Имеет множество новых возможностей, таких как выбор канала ALSA, обнаружение присоединения/отсоединения, ярлыки и т.д.
 
 	[https://github.com/nicklan/pnmixer/wiki](https://github.com/nicklan/pnmixer/wiki) || [pnmixer](https://aur.archlinux.org/packages/pnmixer/)
 
@@ -617,7 +617,7 @@
 
 	[https://git.gnome.org/browse/gnome-sound-recorder](https://git.gnome.org/browse/gnome-sound-recorder) || [gnome-sound-recorder](https://www.archlinux.org/packages/?name=gnome-sound-recorder)
 
-*   **[Jokosher](https://en.wikipedia.org/wiki/Jokosher "wikipedia:Jokosher")** — Нелинейный цифровой редактор аудио с поддержкой нескольких дорожек, написанный на [python](/index.php/Python_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Python (Русский)") с использованием интерфейса [GTK+](/index.php/GTK%2B "GTK+") и [GStreamer](/index.php/GStreamer "GStreamer") в качестве бэкенда
+*   **[Jokosher](https://en.wikipedia.org/wiki/Jokosher с использованием интерфейса [GTK+](/index.php/GTK%2B "GTK+") и [GStreamer](/index.php/GStreamer "GStreamer") в качестве бэкенда
 
 	[https://launchpad.net/jokosher/](https://launchpad.net/jokosher/) || [jokosher](https://aur.archlinux.org/packages/jokosher/)
 
@@ -671,7 +671,7 @@
 
 	[http://www.mplayerhq.hu/design7/news-ru.html](http://www.mplayerhq.hu/design7/news-ru.html) || [mplayer](https://www.archlinux.org/packages/?name=mplayer) (Смотрите также очень похожий форк: [mplayer2](https://aur.archlinux.org/packages/mplayer2/))
 
-*   **[mpv](/index.php/Mpv_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mpv (Русский)")** — Проигрыватель, основанный на _mplayer_ и _mplayer2_
+*   **[mpv](/index.php/Mpv_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mpv (Русский)")** — Проигрыватель, основанный на *mplayer* и *mplayer2*
 
 	[http://mpv.io](http://mpv.io) || [mpv](https://www.archlinux.org/packages/?name=mpv) [mpv-git](https://aur.archlinux.org/packages/mpv-git/)
 
@@ -691,7 +691,7 @@
 
 	[http://www.kde.org/applications/multimedia/dragonplayer/](http://www.kde.org/applications/multimedia/dragonplayer/) || [kdemultimedia-dragonplayer](https://www.archlinux.org/packages/?name=kdemultimedia-dragonplayer)
 
-*   **GMP Video** — Графический фронтенд к _mpv_. Написан на Vala/GTK3
+*   **GMP Video** — Графический фронтенд к *mpv*. Написан на Vala/GTK3
 
 	[https://bitbucket.org/simargl/alphaos](https://bitbucket.org/simargl/alphaos) || [gmp-video](https://aur.archlinux.org/packages/gmp-video/)
 
@@ -801,7 +801,7 @@
 
 	[https://github.com/nullkey/glc](https://github.com/nullkey/glc) || [glc](https://aur.archlinux.org/packages/glc/)
 
-*   **Istanbul** — Простая программа записи сессии рабочего стола, создающая видео в формате _.ogg_
+*   **Istanbul** — Простая программа записи сессии рабочего стола, создающая видео в формате *.ogg*
 
 	[https://live.gnome.org/Istanbul](https://live.gnome.org/Istanbul) || [istanbul](https://aur.archlinux.org/packages/istanbul/)
 
@@ -809,7 +809,7 @@
 
 	[https://launchpad.net/kazam](https://launchpad.net/kazam) || [kazam-bzr](https://aur.archlinux.org/packages/kazam-bzr/)
 
-*   **[RecordMyDesktop](https://en.wikipedia.org/wiki/ru:RecordMyDesktop "wikipedia:ru:RecordMyDesktop")** — Простая в использовании утилита, производящая запись вашего рабочего стола в файлы формата _.ogg_, с интерфейсами CLI, Qt или GTK+
+*   **[RecordMyDesktop](https://en.wikipedia.org/wiki/ru:RecordMyDesktop "wikipedia:ru:RecordMyDesktop")** — Простая в использовании утилита, производящая запись вашего рабочего стола в файлы формата *.ogg*, с интерфейсами CLI, Qt или GTK+
 
 	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop) [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop) [qt-recordmydesktop](https://www.archlinux.org/packages/?name=qt-recordmydesktop)
 

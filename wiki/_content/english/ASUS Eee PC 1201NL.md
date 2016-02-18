@@ -58,7 +58,7 @@ FATAL: Error inserting eeepc_laptop (/lib/modules/2.6.32-ARCH/kernel/drivers/pla
 
 ```
 
-you need to add _acpi_osi=Linux_ to kernel parameters in your bootloader configuration.
+you need to add *acpi_osi=Linux* to kernel parameters in your bootloader configuration.
 
 ## Function Keys
 

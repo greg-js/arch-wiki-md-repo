@@ -2,13 +2,13 @@
 | Projekt Enlightenment dostarcza użytecznych bibliotek, środowiska graficznego oraz innych aplikacji, w tym narzędzi developerskich. Artykuł ten zawiera informacje na temat instalacji, konfiguracji oraz problemów jakie możemy napotkać podczas pracy ze środowiskiem. |
 | E17 uses the [Elementary](/index.php?title=Elementary&action=edit&redlink=1 "Elementary (page does not exist)") toolkit. |
 | **Overview** |
-| The [Xorg](/index.php/Xorg "Xorg") project provides an open source implementation of the X Window System – the foundation for a graphical user interface. [Desktop environments](/index.php/Desktop_environment "Desktop environment") such as [Enlightenment](/index.php/Enlightenment "Enlightenment"), [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), and [Xfce](/index.php/Xfce "Xfce") provide a complete graphical environment. Various [window managers](/index.php/Window_manager "Window manager") offer alternative and novel environments, and may be used _standalone_ to conserve system resources. [Display managers](/index.php/Display_manager "Display manager") provide a graphical login prompt. |
+| The [Xorg](/index.php/Xorg "Xorg") project provides an open source implementation of the X Window System – the foundation for a graphical user interface. [Desktop environments](/index.php/Desktop_environment "Desktop environment") such as [Enlightenment](/index.php/Enlightenment "Enlightenment"), [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), and [Xfce](/index.php/Xfce "Xfce") provide a complete graphical environment. Various [window managers](/index.php/Window_manager "Window manager") offer alternative and novel environments, and may be used *standalone* to conserve system resources. [Display managers](/index.php/Display_manager "Display manager") provide a graphical login prompt. |
 | **Related** |
 | [Enlightenment](/index.php/Enlightenment "Enlightenment") |
 
 From the [Enlightenment wiki](http://trac.enlightenment.org/e/wiki/Enlightenment):
 
-	_Enlightenment (ang. oświecenie, nazywany też często e) - menedżer okien dla środowiska X Window System, który może być używany samodzielnie lub wraz ze środowiskami graficznymi takimi jak GNOME (swego czasu był to domyślny menedżer okien tego środowiska) czy KDE. Jego głównym autorem jest programista i grafik Carsten Haitzler (Rasterman). Wydany na licencji BSD._
+	*Enlightenment (ang. oświecenie, nazywany też często e) - menedżer okien dla środowiska X Window System, który może być używany samodzielnie lub wraz ze środowiskami graficznymi takimi jak GNOME (swego czasu był to domyślny menedżer okien tego środowiska) czy KDE. Jego głównym autorem jest programista i grafik Carsten Haitzler (Rasterman). Wydany na licencji BSD.*
 
 Enlightenment znany jest z dużych możliwości konfiguracji oraz atrakcyjnej grafiki i efektów specjalnych. Dostępne są (na stronie domowej projektu) niezwykle dopracowane pod względem graficznym tematy pulpitu (themes) oraz statyczne i animowane tła pulpitu.
 
@@ -150,7 +150,7 @@ Settings -> Settings Panel -> Apps -> Startup Applications -> System -> Network
 
 Another available network manager is [Connman](/index.php/Connman "Connman"), you can download it from AUR [connman](https://www.archlinux.org/packages/?name=connman). You do not need to follow any of the other instructions on the [Connman wiki page](/index.php/Connman "Connman"). The current build of ConnMan already includes network policy group section (although with only one statement, not three).
 
-Next, edit your `/etc/rc.conf`. Remove **network** from your DAEMONS line. Add **connmand** (do not forget the **d**) _after_ **dbus** and **hal**.
+Next, edit your `/etc/rc.conf`. Remove **network** from your DAEMONS line. Add **connmand** (do not forget the **d**) *after* **dbus** and **hal**.
 
 ConnMan loads very quickly and appears to handle DHCP quite nicely. If you have installed [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant"), ConnMan latches onto that shows all available wireless connections.
 
@@ -217,7 +217,7 @@ pacman -S ttf-dejavu ttf-bitstream-vera
 
 Often a gadget with the name "Places", for example, will use a corresponding module also named "Places". Also modules may need to use underlying libraries or daemons to interact with various devices connected to your computer. Currently there are at least two choices for these underlying libraries or daemons to interact with connected devices. The two that will be considered here are udisks and HAL. At the time of this entry the [HAL](/index.php/HAL "HAL") page says:
 
-	_HAL (Hardware Abstraction Layer) is a daemon that allows desktop applications to readily access hardware information, to locate and use such hardware regardless of bus or device type. In this way a desktop GUI can present all resources to its user in a seamless and uniform manner. HAL has become deprecated in favor of udev, udisks, upower, etc. and is no longer developed. Currently, a small number of programs still rely on and use HAL, though development is heading toward utilizing udev as a replacement._
+	*HAL (Hardware Abstraction Layer) is a daemon that allows desktop applications to readily access hardware information, to locate and use such hardware regardless of bus or device type. In this way a desktop GUI can present all resources to its user in a seamless and uniform manner. HAL has become deprecated in favor of udev, udisks, upower, etc. and is no longer developed. Currently, a small number of programs still rely on and use HAL, though development is heading toward utilizing udev as a replacement.*
 
 So, apparently [E17](/index.php/E17 "E17") now tries to use udisks instead of [HAL](/index.php/HAL "HAL"). But some of the modules and gadgets, such as Places, have not been updated to use udisks yet.
 
@@ -227,7 +227,7 @@ From the current source code [README](http://trac.enlightenment.org/e/browser/tr
 
 	Places module
 
-	_This module manage the volumes device attached to the system._
+	*This module manage the volumes device attached to the system.*
 
 In [other words](http://www.urbandictionary.com/define.php?term=engrish), Places is a gadget that will help you browse files on various devices you might plug into your computer, like phones, cameras, or other various storage devices you might plug into the usb port.
 

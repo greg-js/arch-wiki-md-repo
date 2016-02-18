@@ -24,7 +24,7 @@ This article will explain one method for creating a dual boot setup while leavin
 
 ## Why is a solution needed?
 
-The situation of a fully encrypted system is a difficult one because even the MBR is encrypted and SafeBoot uses its encrypted bootloader to load the real partition table and load Windows. Thus, if one attempts to simply partition the disk with [c]fdisk, writing the partition table will render one's system unbootable. Likewise, even if there _is_ a free partition, a) one isn't able to update the partition table with the correct type (which is necessary), b) one can't install the bootloader (e.g. grub) to the MBR, and c) even if one installs the bootloader to the partition instead of the MBR, there is no way to make the system aware that such a bootloader exists via the partition table. It is quite a difficult situation to work with.
+The situation of a fully encrypted system is a difficult one because even the MBR is encrypted and SafeBoot uses its encrypted bootloader to load the real partition table and load Windows. Thus, if one attempts to simply partition the disk with [c]fdisk, writing the partition table will render one's system unbootable. Likewise, even if there *is* a free partition, a) one isn't able to update the partition table with the correct type (which is necessary), b) one can't install the bootloader (e.g. grub) to the MBR, and c) even if one installs the bootloader to the partition instead of the MBR, there is no way to make the system aware that such a bootloader exists via the partition table. It is quite a difficult situation to work with.
 
 Some are content with using live distributions or running Linux from a flash drive; the primary author of this article found such methods frustrating and limiting. There is also quite a lot of discussion about how to get around this situation, [1] [2] [3] and thus an article seemed relevant after a firsthand experience and success.
 
@@ -92,13 +92,13 @@ When finished, click the "Apply" button in the upper left of the main window.
 
 ### Add an Option to Boot Linux
 
-Next, we're going to add a Linux option to the Windows boot options using a free program called [EasyBCD](http://neosmart.net/dl.php?id=1). Theoretically, this should be possible using Windows 7's built in program, bcdedit, as shown [HERE](http://www.windows7home.net/how-to-use-bcdedit-in-windows-7/). The author had difficulty attempting this due to privilege errors, and was successful with EasyBCD and thus never retried with bcdedit. Open EasyBCD and click "Add New Entry" on the left. Choose the Linux/BSD tab and set the bootloader type (Grub (legacy)) for Arch and partition. Make sure that if you are going to have a dedicated boot partition that you point EasyBCD to that partition, _not_ the one that will contain the root filesystem. A screenshot of these settings may be found [HERE](http://i.imgur.com/YE79o.png).
+Next, we're going to add a Linux option to the Windows boot options using a free program called [EasyBCD](http://neosmart.net/dl.php?id=1). Theoretically, this should be possible using Windows 7's built in program, bcdedit, as shown [HERE](http://www.windows7home.net/how-to-use-bcdedit-in-windows-7/). The author had difficulty attempting this due to privilege errors, and was successful with EasyBCD and thus never retried with bcdedit. Open EasyBCD and click "Add New Entry" on the left. Choose the Linux/BSD tab and set the bootloader type (Grub (legacy)) for Arch and partition. Make sure that if you are going to have a dedicated boot partition that you point EasyBCD to that partition, *not* the one that will contain the root filesystem. A screenshot of these settings may be found [HERE](http://i.imgur.com/YE79o.png).
 
 Next view the entry by clicking "View Settings," and make sure everything looks appropriate. For a legacy grub setting pointing toward the second partition on the disk, the boot entry should look like [THIS](http://i.imgur.com/5zri9.png).
 
 ### Backup the SafeBoot MBR
 
-**Note:** It is **highly** recommended that one make a backup of the SafeBoot MBR before proceeding. If anything accidentally happens to it, you can restore it and will have a functioning system. Without a backup, if you use [c]fdisk and write the partition table to the MBR, or install Grub to the MBR, _you will lose the ability to ever, ever, ever get back to your Windows installation._
+**Note:** It is **highly** recommended that one make a backup of the SafeBoot MBR before proceeding. If anything accidentally happens to it, you can restore it and will have a functioning system. Without a backup, if you use [c]fdisk and write the partition table to the MBR, or install Grub to the MBR, *you will lose the ability to ever, ever, ever get back to your Windows installation.*
 
 To back up the SafeBoot MBR, boot into a live Linux CD and have a flash drive inserted:
 

@@ -6,7 +6,7 @@
     *   [1.1 Perkenalan](#Perkenalan)
     *   [1.2 Lisensi](#Lisensi)
     *   [1.3 The Arch Way](#The_Arch_Way)
-    *   [1.4 Tentang _Arch wiki_](#Tentang_Arch_wiki)
+    *   [1.4 Tentang *Arch wiki*](#Tentang_Arch_wiki)
 *   [2 Dapatkan file ISO Archlinux terbaru](#Dapatkan_file_ISO_Archlinux_terbaru)
 *   [3 Instalasi sistem dasar](#Instalasi_sistem_dasar)
     *   [3.1 Boot CD Archlinux](#Boot_CD_Archlinux)
@@ -17,7 +17,7 @@
             *   [3.3.2.1 Partisi](#Partisi)
             *   [3.3.2.2 Swap Partition](#Swap_Partition)
         *   [3.3.3 Set File system Mountpoints](#Set_File_system_Mountpoints)
-            *   [3.3.3.1 Penjelasan singkat mengenai **filesystems** dan _file systems_:](#Penjelasan_singkat_mengenai_filesystems_dan_file_systems:)
+            *   [3.3.3.1 Penjelasan singkat mengenai **filesystems** dan *file systems*:](#Penjelasan_singkat_mengenai_filesystems_dan_file_systems:)
     *   [3.4 Memilih Packages](#Memilih_Packages)
     *   [3.5 Instalasi Packages](#Instalasi_Packages)
     *   [3.6 Konfigurasi Sistem](#Konfigurasi_Sistem)
@@ -45,22 +45,22 @@
         *   [4.2.4 ISDN](#ISDN)
         *   [4.2.5 DSL (PPPoE)](#DSL_.28PPPoE.29)
 *   [5 Update, Sync dan Upgrade sistem dengan pacman](#Update.2C_Sync_dan_Upgrade_sistem_dengan_pacman)
-    *   [5.1 _Perhatikan pesan yang muncul ketika terjadi proses_ upgrading _kernel!_](#Perhatikan_pesan_yang_muncul_ketika_terjadi_proses_upgrading_kernel.21)
-    *   [5.2 Mantapnya _Rolling Release_](#Mantapnya_Rolling_Release)
+    *   [5.1 *Perhatikan pesan yang muncul ketika terjadi proses* upgrading *kernel!*](#Perhatikan_pesan_yang_muncul_ketika_terjadi_proses_upgrading_kernel.21)
+    *   [5.2 Mantapnya *Rolling Release*](#Mantapnya_Rolling_Release)
     *   [5.3 Mengenal Pacman lebih dalam](#Mengenal_Pacman_lebih_dalam)
     *   [5.4 Menambahkan pengguna dan atur grup](#Menambahkan_pengguna_dan_atur_grup)
 *   [6 Instalasi dan konfigurasi perangkat keras](#Instalasi_dan_konfigurasi_perangkat_keras)
     *   [6.1 Konfigurasi Kartu Audio](#Konfigurasi_Kartu_Audio)
-    *   [6.2 Konfigurasi _kecepatan frekuensi CPU_](#Konfigurasi_kecepatan_frekuensi_CPU)
-    *   [6.3 _Tweak_ tambahan untuk laptop](#Tweak_tambahan_untuk_laptop)
+    *   [6.2 Konfigurasi *kecepatan frekuensi CPU*](#Konfigurasi_kecepatan_frekuensi_CPU)
+    *   [6.3 *Tweak* tambahan untuk laptop](#Tweak_tambahan_untuk_laptop)
 *   [7 Instalasi dan Konfigurasi X](#Instalasi_dan_Konfigurasi_X)
 *   [8 Membuat /etc/X11/xorg.conf](#Membuat_.2Fetc.2FX11.2Fxorg.conf)
     *   [8.1 Apa itu /etc/X11/xorg.conf?](#Apa_itu_.2Fetc.2FX11.2Fxorg.conf.3F)
     *   [8.2 Simple baseline X test](#Simple_baseline_X_test)
-    *   [8.3 Mengatur _Layout Keyboard_](#Mengatur_Layout_Keyboard)
-    *   [8.4 Mengatur _scroll wheel_ Tetikus/_Mouse_](#Mengatur_scroll_wheel_Tetikus.2FMouse)
+    *   [8.3 Mengatur *Layout Keyboard*](#Mengatur_Layout_Keyboard)
+    *   [8.4 Mengatur *scroll wheel* Tetikus/*Mouse*](#Mengatur_scroll_wheel_Tetikus.2FMouse)
     *   [8.5 evdev](#evdev)
-    *   [8.6 Memakai _Driver_ Grafis Proprietari (nVIDIA, ATI)](#Memakai_Driver_Grafis_Proprietari_.28nVIDIA.2C_ATI.29)
+    *   [8.6 Memakai *Driver* Grafis Proprietari (nVIDIA, ATI)](#Memakai_Driver_Grafis_Proprietari_.28nVIDIA.2C_ATI.29)
         *   [8.6.1 Kartu Grafis nVIDIA](#Kartu_Grafis_nVIDIA)
         *   [8.6.2 Kartu Grafis ATI](#Kartu_Grafis_ATI)
 *   [9 Menginstal dan mengonfigurasikan sebuah Desktop Environment](#Menginstal_dan_mengonfigurasikan_sebuah_Desktop_Environment)
@@ -87,7 +87,7 @@
 *   [11 Aplikasi-aplikasi yang Bermanfaat](#Aplikasi-aplikasi_yang_Bermanfaat)
     *   [11.1 Internet](#Internet)
         *   [11.1.1 Firefox](#Firefox)
-    *   [11.2 Perkantoran (_Office_)](#Perkantoran_.28Office.29)
+    *   [11.2 Perkantoran (*Office*)](#Perkantoran_.28Office.29)
 *   [12 Multimedia](#Multimedia)
     *   [12.1 Pemutar Video](#Pemutar_Video)
         *   [12.1.1 VLC](#VLC)
@@ -109,7 +109,7 @@
         *   [12.3.2 Flash](#Flash)
         *   [12.3.3 Quicktime](#Quicktime)
         *   [12.3.4 Realplayer](#Realplayer)
-    *   [12.4 Membakar (_Burning_) CD dan DVD](#Membakar_.28Burning.29_CD_dan_DVD)
+    *   [12.4 Membakar (*Burning*) CD dan DVD](#Membakar_.28Burning.29_CD_dan_DVD)
         *   [12.4.1 GNOME](#GNOME_3)
             *   [12.4.1.1 Brasero](#Brasero)
         *   [12.4.2 KDE](#KDE_4)
@@ -132,37 +132,37 @@ Disini,Anda akan menemukan petunjuk tentang cara menginstall dan mengkonfigurasi
 
 **Kelebihan Archlinux yang harus Anda ketahui :**
 
-*   Archlinux merupakan distro yang simpel,elegan,minimalis dan selalu _up to date_.Baca juga tentang [Prinsip Archlinux](/index.php/The_Arch_Way "The Arch Way").
+*   Archlinux merupakan distro yang simpel,elegan,minimalis dan selalu *up to date*.Baca juga tentang [Prinsip Archlinux](/index.php/The_Arch_Way "The Arch Way").
 *   Archlinux serta paket/aplikasinya mendukung arsitektur mesin i686 dan x86_64.
-*   Skrip _Init_ [bergaya BSD](/index.php/Arch_boot_process "Arch boot process"), menyajikan konfigurasi berkas yang terpusat.
-*   _mkinitcpio_: sebuah kreator _initramfs_ yang sederhana dan dinamis.
-*   [Pacman](/index.php/Pacman "Pacman") _Manajemen Paket_ yang sangat ringan dan cepat serta hemat memori.
-*   _The [Arch Build System](/index.php/Arch_Build_System "Arch Build System")_: sebuah sistem pembentukan paket menyerupai sistem _ports_, menyediakan _framework_ sederhana untuk membuat paket Arch yang bisa di-_install_ dari kode sumber.
-*   _The [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")_ (AUR): menawarkan lebih dari ribuan kontribusi _build scripts_ dari penggunanya dan memberikan kesempatan bagi Anda untuk ikut berkontribusi.
+*   Skrip *Init* [bergaya BSD](/index.php/Arch_boot_process "Arch boot process"), menyajikan konfigurasi berkas yang terpusat.
+*   *mkinitcpio*: sebuah kreator *initramfs* yang sederhana dan dinamis.
+*   [Pacman](/index.php/Pacman "Pacman") *Manajemen Paket* yang sangat ringan dan cepat serta hemat memori.
+*   *The [Arch Build System](/index.php/Arch_Build_System "Arch Build System")*: sebuah sistem pembentukan paket menyerupai sistem *ports*, menyediakan *framework* sederhana untuk membuat paket Arch yang bisa di-*install* dari kode sumber.
+*   *The [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")* (AUR): menawarkan lebih dari ribuan kontribusi *build scripts* dari penggunanya dan memberikan kesempatan bagi Anda untuk ikut berkontribusi.
 
 ##### Lisensi
 
-Arch Linux, pacman, dokumentasi, dan _scripts_ adalah hak cipta ©2002-2007 oleh Judd Vinet, ©2007-2011 oleh Aaron Griffin dan dilisensikan di bawah [Lisensi Umum GNU Versi 2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
+Arch Linux, pacman, dokumentasi, dan *scripts* adalah hak cipta ©2002-2007 oleh Judd Vinet, ©2007-2011 oleh Aaron Griffin dan dilisensikan di bawah [Lisensi Umum GNU Versi 2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
 
 ### The Arch Way
 
-_**Prinsip desain di balik Arch ditujukan untuk menjaganya agar tetap [sederhana](/index.php/The_Arch_Way "The Arch Way").**_
+***Prinsip desain di balik Arch ditujukan untuk menjaganya agar tetap [sederhana](/index.php/The_Arch_Way "The Arch Way").***
 
 'Sederhana', dalam konteks ini, berarti 'tanpa tambahan yang tidak perlu, modifikasi, atau komplikasi'. Singkatnya, sebuah pendekatan yang elegan, minimalis.
 
 **Beberapa pemikiran yang perlu diingat ketika Anda mempertimbangkan kesederhanaan:**
 
-*   _" 'sederhana' didefinisikan dari sudut pandang teknis, bukan sudut pandang kegunaan Lebih baik secara teknis elegan dengan kurva belajar yang lebih tinggi, daripada menjadi mudah digunakan dan teknis [rendah]." -Aaron Griffin_
+*   *" 'sederhana' didefinisikan dari sudut pandang teknis, bukan sudut pandang kegunaan Lebih baik secara teknis elegan dengan kurva belajar yang lebih tinggi, daripada menjadi mudah digunakan dan teknis [rendah]." -Aaron Griffin*
 
-*   _Entia sunt non multiplicanda praeter necessitatem_ atau "Entitas tidak boleh dikalikan tidak perlu." -s Occam 'pisau cukur. _Pisau cukur_ merujuk pada tindakan memangkas semua hal yang tidak perlu untuk sampai pada metode, penjeleasan, metode ataupun teori yang paling sederhana.
+*   *Entia sunt non multiplicanda praeter necessitatem* atau "Entitas tidak boleh dikalikan tidak perlu." -s Occam 'pisau cukur. *Pisau cukur* merujuk pada tindakan memangkas semua hal yang tidak perlu untuk sampai pada metode, penjeleasan, metode ataupun teori yang paling sederhana.
 
-*   _" Bagian yang luar biasa [metode saya] terletak pada kesederhanaannya .. Budidaya yang tinggi selalu berjalan untuk kesederhanaan."_ - Bruce Lee
+*   *" Bagian yang luar biasa [metode saya] terletak pada kesederhanaannya .. Budidaya yang tinggi selalu berjalan untuk kesederhanaan."* - Bruce Lee
 
-### Tentang _Arch wiki_
+### Tentang *Arch wiki*
 
-Arch Wiki adalah sumber yang bagus dan dapat menjadi referensi untuk permasalahan yang Anda temui [pertama](/index.php/Main_page "Main page"). Ruang IRC (di irc.freenode.net #archlinux), dan [forum](https://bbs.archlinux.org) juga tersedia apabila Anda tidak menemui jawaban untuk permasalahan Anda. Juga selalu biasakan untuk membaca `Man / Petunjuk Penggunaan` untuk semua perintah yang terdengar asing bagi Anda.Ini biasanya dapat dipanggil dengan cara `man _command_`.
+Arch Wiki adalah sumber yang bagus dan dapat menjadi referensi untuk permasalahan yang Anda temui [pertama](/index.php/Main_page "Main page"). Ruang IRC (di irc.freenode.net #archlinux), dan [forum](https://bbs.archlinux.org) juga tersedia apabila Anda tidak menemui jawaban untuk permasalahan Anda. Juga selalu biasakan untuk membaca `Man / Petunjuk Penggunaan` untuk semua perintah yang terdengar asing bagi Anda.Ini biasanya dapat dipanggil dengan cara `man *command*`.
 
-**Note:** Mengikuti panduan ini dengan sangat detil adalah suatu keharusan agar berhasil menginstall ArchLinux dengan benar, jadi _harap_ perhatikan dengan seksama. Di rekomendasikan untuk membaca tiap bagian sampai selesai <u>sebelum</u> melaksanakan tugas-tugas yang ada.
+**Note:** Mengikuti panduan ini dengan sangat detil adalah suatu keharusan agar berhasil menginstall ArchLinux dengan benar, jadi *harap* perhatikan dengan seksama. Di rekomendasikan untuk membaca tiap bagian sampai selesai <u>sebelum</u> melaksanakan tugas-tugas yang ada.
 
 Panduan ini terbagi atas 4 bagian utama :
 
@@ -209,7 +209,7 @@ km
 
 pada prompt dan pilih keymap yang sesuai.
 
-_Contoh_(untuk keymap norwegia) :
+*Contoh*(untuk keymap norwegia) :
 
 Pada console keymap screen pilih
 
@@ -250,15 +250,15 @@ Pada menu pilihan,pilih **Prepare Hard Drive**. Hati-hati, jika memilih **Auto-p
 
 Sebuah partisi adalah bagian dari hard disk yang tampil sebagai ruang yang terpisah, dan dapat ditambahkan ke dalam sistem Arch Linuxmu. Partisi hard disk terbagi ke dalam "Primary", "Extended", dan "Logical". Sebuah partisi "primary" dapat diboot. Jumlah maksimalnya 4\. Jadi, jika kamu menggunakan sebuah PC dengan drive SATA, partisi "primary" pertama dikenal sebagai sda1\. Partisi "primary" kedua dreferensikan sebagai sda2, kemudian sda3 dan sda4\. Jika terdapat lebih dari 4 partisi "primary", maka yang terpaksa digunakan untuk partisi ini adalah "extended", yang dimana partisi ini menampung partisi "logical".
 
-Partisi _extended_ bersifat sebagai "penampung" untuk partisi logical. Partisi logical harus berada dalam partisi extended. Contohnya, ketika mempartisi, kita dapat melihat penomoran partisi dengan memberi nomor sda1-3 pada partisi primary, diikuti dengan nomor sda4 pada partisi extended, kemudian membuat partisi logical dengan penomoran sda5,sda6 dst.
+Partisi *extended* bersifat sebagai "penampung" untuk partisi logical. Partisi logical harus berada dalam partisi extended. Contohnya, ketika mempartisi, kita dapat melihat penomoran partisi dengan memberi nomor sda1-3 pada partisi primary, diikuti dengan nomor sda4 pada partisi extended, kemudian membuat partisi logical dengan penomoran sda5,sda6 dst.
 
-Banyak user memiliki pendapat yang berbeda-beda mengenai bagaimana cara terbaik untuk mempartisi hard disk. Yang perlu diketahui adalah bahwa syarat minimal adalah adanya satu partisi primary yang dijadikan sebagai root [Filesystem](https://en.wikipedia.org/wiki/File_system "wikipedia:File system") ( / ) dan satu partisi lagi sebagai swap. Beberapa pilihan lain untuk dipasang pada partisi yang berbeda adalah /boot (yang secara garis besar menampung kernel) dan /home (menampung data user). Adalah ide yang bagus untuk memisahkan root (/) dan /home pada partisi yang berbeda. Ini memungkinkan untuk melakukan instlasi kembali sistem Arch Linux mu, atau distro lainnya, sementara itu data-data dan konfigurasi _desktop environment_ tetap terjaga.
+Banyak user memiliki pendapat yang berbeda-beda mengenai bagaimana cara terbaik untuk mempartisi hard disk. Yang perlu diketahui adalah bahwa syarat minimal adalah adanya satu partisi primary yang dijadikan sebagai root [Filesystem](https://en.wikipedia.org/wiki/File_system "wikipedia:File system") ( / ) dan satu partisi lagi sebagai swap. Beberapa pilihan lain untuk dipasang pada partisi yang berbeda adalah /boot (yang secara garis besar menampung kernel) dan /home (menampung data user). Adalah ide yang bagus untuk memisahkan root (/) dan /home pada partisi yang berbeda. Ini memungkinkan untuk melakukan instlasi kembali sistem Arch Linux mu, atau distro lainnya, sementara itu data-data dan konfigurasi *desktop environment* tetap terjaga.
 
 Pada contoh ini, kita akan meletakkan root (/), /home dan swap pada partisi yang berbeda.
 
 ##### Swap Partition
 
-Sebuah partisi swap adalah tempat dalam hard disk yang dapat menampung _virtual_ RAM_. Partisi swap digunakan ketika jumlah RAM yang dibutuhkan melebihi daya_ tampung dari memori RAM yang dimiliki mesin anda.
+Sebuah partisi swap adalah tempat dalam hard disk yang dapat menampung *virtual* RAM*. Partisi swap digunakan ketika jumlah RAM yang dibutuhkan melebihi daya* tampung dari memori RAM yang dimiliki mesin anda.
 
 Mengenai ukuran dari partisi swap ini, terdapat beberapa pendapat. Jika kapasitas memory RAM anda besar (lebih besar dari 1024 MB), anda bisa saja tidak menggunakan partisi swap sama sekali. Namun ada pula yang mengusulkan menyediakan ruang bagi partisi swap sebesar 2 kali kapasitas memory RAM mesin anda. Sementara itu ada yang mengusulkan ruang yang dialokasikan tidak lebih dari 1024 MB.
 
@@ -285,31 +285,31 @@ Pilih Done untuk keluar dari menu ini dan kita lanjutkan pada "Set Filesystem Mo
 
 #### Set File system Mountpoints
 
-##### Penjelasan singkat mengenai **filesystems** dan _file systems_:
+##### Penjelasan singkat mengenai **filesystems** dan *file systems*:
 
-Secara teknis, sebuah **filesystem** adalah format data untuk _data throughput_, sementara itu _file system_ (dengan spasi), adalah istilah yang menunjukkan tata letak dari seluruh file dan direktori pada sebuah sistem. Jadi, ketika ada pertanyaan apakah anda mau membuat sebuah **filesystem**, ini berarti anda ditanya untuk **memformat** sebuah partisi. Sedangkan jika anda ditanya mengenai lokasi _mounting_ sebuah partisi, anda diminta untuk menentukan di lokasi mana pada _file system_ partisi ini akan diletakkan. Mari kita mulai.
+Secara teknis, sebuah **filesystem** adalah format data untuk *data throughput*, sementara itu *file system* (dengan spasi), adalah istilah yang menunjukkan tata letak dari seluruh file dan direktori pada sebuah sistem. Jadi, ketika ada pertanyaan apakah anda mau membuat sebuah **filesystem**, ini berarti anda ditanya untuk **memformat** sebuah partisi. Sedangkan jika anda ditanya mengenai lokasi *mounting* sebuah partisi, anda diminta untuk menentukan di lokasi mana pada *file system* partisi ini akan diletakkan. Mari kita mulai.
 
-Pertama, anda akan ditanya mengenai partisi swap. Pilih lokasi yang sesuai (dalam contoh ini adalah sda3). Anda akan ditanya apakah anda ingin menciptakan sebuah _filesystem_, pilih _yes_. Kemudian, tentukan lokasi _mounting_ direktori / (root) (dalam contoh ini adalah sda1). Anda akan ditanya tipe _filesystem_ yang anda inginkan.
+Pertama, anda akan ditanya mengenai partisi swap. Pilih lokasi yang sesuai (dalam contoh ini adalah sda3). Anda akan ditanya apakah anda ingin menciptakan sebuah *filesystem*, pilih *yes*. Kemudian, tentukan lokasi *mounting* direktori / (root) (dalam contoh ini adalah sda1). Anda akan ditanya tipe *filesystem* yang anda inginkan.
 
-Dalam menentukan tipe _filesystem_, terdapat pula perbedaan pendapat. Masing-masing ada kelebihan dan kekurangannya. Di bawah ini adalah sebuah ringkasan sederhana.
+Dalam menentukan tipe *filesystem*, terdapat pula perbedaan pendapat. Masing-masing ada kelebihan dan kekurangannya. Di bawah ini adalah sebuah ringkasan sederhana.
 
-1\. **ext2** - Lebih tua, _filesystem_ yang dapat dihandalkan. Cepat dan sangat stabil, namun tidak memiliki kemampuan _journaling_.
+1\. **ext2** - Lebih tua, *filesystem* yang dapat dihandalkan. Cepat dan sangat stabil, namun tidak memiliki kemampuan *journaling*.
 
-2\. **ext3** - Sama seperti _ext2_, namun dengan tambahan kemampuan _journaling_. Agak lambat bila dibandingkan dengan _ext2_. Sangat stabil, lebih banyak digunakan dan dikembangkan.
+2\. **ext3** - Sama seperti *ext2*, namun dengan tambahan kemampuan *journaling*. Agak lambat bila dibandingkan dengan *ext2*. Sangat stabil, lebih banyak digunakan dan dikembangkan.
 
-3\. **ReiserFS** - _Hans Reiser's high-performance journaling FS_ menggunakan metode yang menarik terkait _data throughput_. _ReiserFS_ sangat cepat, terutama ketika menangani file-file kecil.
+3\. **ReiserFS** - *Hans Reiser's high-performance journaling FS* menggunakan metode yang menarik terkait *data throughput*. *ReiserFS* sangat cepat, terutama ketika menangani file-file kecil.
 
-4\. **JFS** - _IBM's Journaling FS_. JFS cukup dikenal, cepat dan stabil.
+4\. **JFS** - *IBM's Journaling FS*. JFS cukup dikenal, cepat dan stabil.
 
-5\. **XFS** - adalah _journaling filesystem_ yang cepat dan lebih cocok untuk file dengan ukuran yang besar(lebih besar dari 1 GB). Lebih lambat untuk file berukuran kecil. Cukup stabil.
+5\. **XFS** - adalah *journaling filesystem* yang cepat dan lebih cocok untuk file dengan ukuran yang besar(lebih besar dari 1 GB). Lebih lambat untuk file berukuran kecil. Cukup stabil.
 
 Perbedaan utamanya dapat dilihat di [wikipedia:Journaling_file_system](https://en.wikipedia.org/wiki/Journaling_file_system "wikipedia:Journaling file system").
 
-Semua _filesystem_ menggunakan journaling, kecuali ext2\. ext3 kompatibel dengan ext2\. Pilihan yang aman untuk sebuah partisi root adalah ext3.
+Semua *filesystem* menggunakan journaling, kecuali ext2\. ext3 kompatibel dengan ext2\. Pilihan yang aman untuk sebuah partisi root adalah ext3.
 
 Kemudian buatlah partisi ini denga memilih yes. Anda akan ditanya apakah akan membuat partisi baru.
 
-Pada contoh ini, hanya ada partisi sda2 yang tersisa. Pilih sebuah tipe _filesystem_, dan _mount_ sebagai /home. Kemudian ciptakan partisi ini dan pilih Done. Kembalilah ke menu utama.
+Pada contoh ini, hanya ada partisi sda2 yang tersisa. Pilih sebuah tipe *filesystem*, dan *mount* sebagai /home. Kemudian ciptakan partisi ini dan pilih Done. Kembalilah ke menu utama.
 
 ### Memilih Packages
 
@@ -323,7 +323,7 @@ Ini adalah tahapan termudah, karena semua proses berjalan secara otomatis. Buatl
 
 ### Konfigurasi Sistem
 
-Anda akan ditanyakan apakah ingin agar _hwdetect_ mengumpulkan informasi untuk konfigurasi anda. Opsi ini sangat direkomendasikan untuk dipilih. Sekarang anda akan ditanyakan apakah anda butuh support untuk booting dari perangkat USB, perangkat FireWire, perangkat PCMCIA, jaringan NFS, software RAID arrays, LVM2 volumes, and encrypted volumes. Pilih Yes jika anda mebutuhkannya; dalam contoh ini, tidak ada yang diperlukan. Sekarang anda akan ditanya penyunting teks mana yang ingin anda pilih, [nano](https://en.wikipedia.org/wiki/Nano_(text_editor) "wikipedia:Nano (text editor)") atau [vi/vim](https://en.wikipedia.org/wiki/Vim_(text_editor) "wikipedia:Vim (text editor)"). Sekarang Anda akan menemukan menu yang penting untuk mengkonfigurasi sistem anda. Kami hanya melakukan perubahan kecil disini. Jika anda ingin tahu opsi apa saja yang terdapat di rc.conf, tekanlah Alt+F2 untuk masuk shell, dan kembali ke installer dengan Alt+F1\.
+Anda akan ditanyakan apakah ingin agar *hwdetect* mengumpulkan informasi untuk konfigurasi anda. Opsi ini sangat direkomendasikan untuk dipilih. Sekarang anda akan ditanyakan apakah anda butuh support untuk booting dari perangkat USB, perangkat FireWire, perangkat PCMCIA, jaringan NFS, software RAID arrays, LVM2 volumes, and encrypted volumes. Pilih Yes jika anda mebutuhkannya; dalam contoh ini, tidak ada yang diperlukan. Sekarang anda akan ditanya penyunting teks mana yang ingin anda pilih, [nano](https://en.wikipedia.org/wiki/Nano_(text_editor) atau [vi/vim](https://en.wikipedia.org/wiki/Vim_(text_editor) "wikipedia:Vim (text editor)"). Sekarang Anda akan menemukan menu yang penting untuk mengkonfigurasi sistem anda. Kami hanya melakukan perubahan kecil disini. Jika anda ingin tahu opsi apa saja yang terdapat di rc.conf, tekanlah Alt+F2 untuk masuk shell, dan kembali ke installer dengan Alt+F1\.
 
 ##### /etc/rc.conf
 
@@ -341,9 +341,9 @@ diaktifkan oleh hwdetect
 *   Ubah HOSTNAME anda
 *   Ubah pengaturan jaringan anda:
     *   Jangan ubah lo line
-    *   Atur _IP address_, _netmask_ dan _broadcast address_ jika anda menggunakan _static IP_.
+    *   Atur *IP address*, *netmask* dan *broadcast address* jika anda menggunakan *static IP*.
     *   Tetapkan eth0="dhcp" jika anda menggunakan metode DHCP dalam menentukan alamat IP anda.
-    *   Jika anda memiliki _static IP_, tetapkan _gateway address_ sesuai dengan router anda dan hapuskan ! dari baris ROUTES.
+    *   Jika anda memiliki *static IP*, tetapkan *gateway address* sesuai dengan router anda dan hapuskan ! dari baris ROUTES.
 
 ##### Mengenai DAEMONS
 
@@ -353,21 +353,21 @@ Gunakan Ctrl+X untuk keluar dari editor.
 
 ##### /etc/hosts
 
-Tambahkan _hostname_ yang Anda tambahkan pada rc.conf sebelumnya:
+Tambahkan *hostname* yang Anda tambahkan pada rc.conf sebelumnya:
 
 ```
-127.0.0.1   localhost.localdomain   localhost _yourhostname_
-
-```
-
-Format ini, **termasuk entri 'localhost'** , diperlukan untuk kompatibilitas. Biasanya menambahkan _hostname_ di akhir baris ini terbilang cukup. Namun, sebagian pengguna merekomendasikan:
-
-```
-127.0.0.1  _yourhostname_.domain.org localhost.localdomain   localhost 
+127.0.0.1   localhost.localdomain   localhost *yourhostname*
 
 ```
 
-_yourhostname_ Jika anda menggunakan IP statik, tambahkan baris lain menggunakan sintaks: <ip-statik> hostname.domainname.org hostname, e.g.:
+Format ini, **termasuk entri 'localhost'** , diperlukan untuk kompatibilitas. Biasanya menambahkan *hostname* di akhir baris ini terbilang cukup. Namun, sebagian pengguna merekomendasikan:
+
+```
+127.0.0.1  *yourhostname*.domain.org localhost.localdomain   localhost 
+
+```
+
+*yourhostname* Jika anda menggunakan IP statik, tambahkan baris lain menggunakan sintaks: <ip-statik> hostname.domainname.org hostname, e.g.:
 
 ```
 192.168.1.100 yourhostname.domain.org  yourhostname
@@ -430,14 +430,14 @@ Untuk sistem BIOS,tersedia beberapa pilihan bootloader,cek di [Boot loaders](/in
 
 ##### Syslinux
 
-If you opted for a GUID partition table (GPT) for your hard drive earlier, you need to install the [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package now for the installation of _syslinux_ to work:
+If you opted for a GUID partition table (GPT) for your hard drive earlier, you need to install the [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package now for the installation of *syslinux* to work:
 
 ```
 # pacman -S gptfdisk
 
 ```
 
-Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package and then use the `syslinux-install_update` script to automatically _install_ the bootloader (`-i`), mark the partition _active_ by setting the boot flag (`-a`), and install the _MBR_ boot code (`-m`):
+Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package and then use the `syslinux-install_update` script to automatically *install* the bootloader (`-i`), mark the partition *active* by setting the boot flag (`-a`), and install the *MBR* boot code (`-m`):
 
 ```
 # pacman -S syslinux
@@ -448,7 +448,6 @@ Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) packag
 After installing Syslinux, configure `syslinux.cfg` to point to the right root partition. This step is vital. If it points to the wrong partition, Arch Linux will not boot. Change `/dev/sda3` to reflect your root partition (if you partitioned your drive as in [the example](#Prepare_the_storage_drive), your root partition is `/dev/sda1`).
 
  `# nano /boot/syslinux/syslinux.cfg` 
-
 ```
 ...
 LABEL arch
@@ -457,7 +456,7 @@ LABEL arch
         ...
 ```
 
-If adding [UUID](/index.php/UUID "UUID") rather than partition number the syntax is `APPEND root=UUID=_partition_uuid_ rw`.
+If adding [UUID](/index.php/UUID "UUID") rather than partition number the syntax is `APPEND root=UUID=*partition_uuid* rw`.
 
 Do the same for the fallback entry.
 
@@ -475,7 +474,7 @@ Instal paket [grub](https://www.archlinux.org/packages/?name=grub) dan jalankan 
 
 **Catatan:**
 
-*   Change `/dev/sda` to reflect the drive you installed Arch on. Do not append a partition number (do not use `sda_X_`).
+*   Change `/dev/sda` to reflect the drive you installed Arch on. Do not append a partition number (do not use `sda*X*`).
 *   For GPT-partitioned drives on BIOS motherboards, you also need a "BIOS Boot Partition". See [GPT-specific instructions](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") in the GRUB page.
 *   A sample `/boot/grub/grub.cfg` gets installed as part of the [grub](https://www.archlinux.org/packages/?name=grub) package, and subsequent `grub-*` commands may not over-write it. Ensure that your intended changes are in `grub.cfg`, rather than in `grub.cfg.new` or some such file.
 
@@ -523,7 +522,6 @@ Instal paket [gummiboot](https://www.archlinux.org/packages/?name=gummiboot) dan
 Kamu harus menambahkan konfigurasi secara manual untuk memasukkan Archlinux kedalam gummiboot manager.Buat file `/boot/loader/entries/arch.conf` dan tambahkan teks dibawah ini,ganti `/dev/sdaX` dengan partisi **root** kamu.Contoh : `/dev/sda2` :
 
  `# nano /boot/loader/entries/arch.conf` 
-
 ```
 title          Arch Linux
 linux          /vmlinuz-linux
@@ -545,7 +543,7 @@ Instal paket [grub](https://www.archlinux.org/packages/?name=grub) dan [efibootm
 
 Selanjutnya,menggunakan konfigurasi difile `grub.cfg` yang terbuat secara manual adalah hal yang aman,direkomendasikan untuk pengguna pemula membuat file serupa secara otomatis :
 
-**Tip:** Jika kamu ingin menambahkan daftar sistem operasi lainnya didalam bootloader (dual boot),instal paket [os-prober](https://www.archlinux.org/packages/?name=os-prober) sebelum menjalankan perintah dibawah ini.Meskipun _os-prober_ tidak mampu mendeteksi sistem operasi secara baik lainnya di sistem UEFI.
+**Tip:** Jika kamu ingin menambahkan daftar sistem operasi lainnya didalam bootloader (dual boot),instal paket [os-prober](https://www.archlinux.org/packages/?name=os-prober) sebelum menjalankan perintah dibawah ini.Meskipun *os-prober* tidak mampu mendeteksi sistem operasi secara baik lainnya di sistem UEFI.
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
@@ -584,7 +582,7 @@ dan pilihlah lokasi mirror terdekat dengan anda.
 
 ### Konfigurasi jaringan jika dibutuhkan
 
-Jika semua berjalan lancar, maka sekarang seharusnya anda memiliki jaringan yang bekerja. Cobalah mem_ping_ www.google.com untuk memastikan ini.
+Jika semua berjalan lancar, maka sekarang seharusnya anda memiliki jaringan yang bekerja. Cobalah mem*ping* www.google.com untuk memastikan ini.
 
 ```
 ping -c 3 www.google.com
@@ -593,7 +591,7 @@ ping -c 3 www.google.com
 
 Jika jaringan anda sudah berjalan, lanjutkan ke proses "Update, Sync dan Upgrade dengan pacman".
 
-Namun jika setelah melakukan _ping_ di atas anda mendapatkan pesan "unknown host", dapat disimpulkan bahwa jaringan belum berjalan. Anda dapat melihat berkas berikut dan atur konfigurasinya:
+Namun jika setelah melakukan *ping* di atas anda mendapatkan pesan "unknown host", dapat disimpulkan bahwa jaringan belum berjalan. Anda dapat melihat berkas berikut dan atur konfigurasinya:
 
 **/etc/rc.conf** # terutama periksa bagian HOSTNAME= dan NETWORKING
 
@@ -612,14 +610,14 @@ ifconfig
 
 ```
 
-Anda akan melihat baris untuk eth0\. Jika diperlukan, anda dapat mengatur konfigurasi _static IP_:
+Anda akan melihat baris untuk eth0\. Jika diperlukan, anda dapat mengatur konfigurasi *static IP*:
 
 ```
 ifconfig eth0 <ip address> netmask <netmask> up 
 
 ```
 
-dan _default gateway_
+dan *default gateway*
 
 ```
 ip route add default via <ip address gateway>
@@ -650,28 +648,28 @@ Silahkan cek halaman [Wireless network configuration](/index.php/Wireless_networ
 
 #### Modem Analog
 
-Untuk bisa menggunakan modem analog, eksternal, _Hayes-compatible_, kamu perlu memiliki setidaknya paket `ppp` terpasang. Modifikasi berkas `/etc/ppp/options` untuk menyesuaikan dengan kebutuhan kamu dan mengacu pada `man pppd`. Kamu mungkin perlu mengatur skrip `chat` untuk memasukkan _username_ dan _password_ dari ISP setelah koneksi berhasil. Halaman manual `pppd` dan `chat` memiliki contoh yang baik agar koneksi berhasil jika kamu merasa kurang berpengalaman. Dengan `udev`, _serial ports_ kamu biasanya diidentifikasi sebagai `/dev/tts/0` dan `/dev/tts/1`. Tips: Baca [Dialup without a dialer HOWTO](/index.php/Dialup_without_a_dialer_HOWTO "Dialup without a dialer HOWTO").
+Untuk bisa menggunakan modem analog, eksternal, *Hayes-compatible*, kamu perlu memiliki setidaknya paket `ppp` terpasang. Modifikasi berkas `/etc/ppp/options` untuk menyesuaikan dengan kebutuhan kamu dan mengacu pada `man pppd`. Kamu mungkin perlu mengatur skrip `chat` untuk memasukkan *username* dan *password* dari ISP setelah koneksi berhasil. Halaman manual `pppd` dan `chat` memiliki contoh yang baik agar koneksi berhasil jika kamu merasa kurang berpengalaman. Dengan `udev`, *serial ports* kamu biasanya diidentifikasi sebagai `/dev/tts/0` dan `/dev/tts/1`. Tips: Baca [Dialup without a dialer HOWTO](/index.php/Dialup_without_a_dialer_HOWTO "Dialup without a dialer HOWTO").
 
-Daripada repot dengan _plain pppd_, kamu memiliki pilihan untuk memasang `wvdial` atau perangkat sejenis untuk memudahkan penyetelan. Jika kamu memakai WinModem, yang mana dasarnya berupa _PCI plugin card_ yang berfungsi sebagai modem analog internal, kamu sebaiknya mengacu pada informasi di laman (_homepage_) [LinModem](http://www.linmodems.org/).
+Daripada repot dengan *plain pppd*, kamu memiliki pilihan untuk memasang `wvdial` atau perangkat sejenis untuk memudahkan penyetelan. Jika kamu memakai WinModem, yang mana dasarnya berupa *PCI plugin card* yang berfungsi sebagai modem analog internal, kamu sebaiknya mengacu pada informasi di laman (*homepage*) [LinModem](http://www.linmodems.org/).
 
 #### ISDN
 
 Penyetelan ISDN dapat dilakukan dalam 3 langkah:
 
-1.  Instal dan konfigurasi perangkat keras/_hardware_
+1.  Instal dan konfigurasi perangkat keras/*hardware*
 2.  Instal dan konfigurasi perlengkapan ISDN
 3.  Menambah setelan untuk ISP kamu
 
-Kernel terkini Arch telah memasukkan modul ISDN, berarti kamu tidak perlu untuk mengompilasi ulang kernel meskipun kamu berniat akan memakai perangkat keras ISDN lawas. Setelang memasang kartu ISDN secara fisik di mesin kamu atau mencolokkannya di kotak USB ISDN kamu, kamu dapat mencoba mengaktifkan modul dengan `modprobe`. Hampir semua kartu PCI ISDN pasif ditangani oleh modul hisax, yang membutuhkan 2 parameter: tipe dan protokol. Kamu harus mengeset protokol ke '1' jika negara kamu memakai standar 1TR6, '2' jika memakai EuroISDN (EDSS1), '3' jika memakai _hooked_ ke _leased-line_ tanpa _D-channel_, dan '4' untuk US NI1.
+Kernel terkini Arch telah memasukkan modul ISDN, berarti kamu tidak perlu untuk mengompilasi ulang kernel meskipun kamu berniat akan memakai perangkat keras ISDN lawas. Setelang memasang kartu ISDN secara fisik di mesin kamu atau mencolokkannya di kotak USB ISDN kamu, kamu dapat mencoba mengaktifkan modul dengan `modprobe`. Hampir semua kartu PCI ISDN pasif ditangani oleh modul hisax, yang membutuhkan 2 parameter: tipe dan protokol. Kamu harus mengeset protokol ke '1' jika negara kamu memakai standar 1TR6, '2' jika memakai EuroISDN (EDSS1), '3' jika memakai *hooked* ke *leased-line* tanpa *D-channel*, dan '4' untuk US NI1.
 
-Detail tentang semua setelan dan bagaimana mengaturnya sudah ada di dokumentasi kernel, lebih spesifik lagi ada di subdirektori isdn, dan tersedia daring (dalam jaringan; _online_). Tipe parameter tergantung kartu kamu; sebuah daftar yang menyajikan semua kemungkinan tipe dapat ditemukan di dokumentasi kernel `README.HiSax`. Pilih kartu kamu dan aktifkan modul dengan pilihan yang tepat seperti ini:
+Detail tentang semua setelan dan bagaimana mengaturnya sudah ada di dokumentasi kernel, lebih spesifik lagi ada di subdirektori isdn, dan tersedia daring (dalam jaringan; *online*). Tipe parameter tergantung kartu kamu; sebuah daftar yang menyajikan semua kemungkinan tipe dapat ditemukan di dokumentasi kernel `README.HiSax`. Pilih kartu kamu dan aktifkan modul dengan pilihan yang tepat seperti ini:
 
 ```
 # modprobe hisax type=18 protocol=2
 
 ```
 
-Ini akan mengaktifkan modul hisax untuk ELSA Quickstep 1000PCI saya, digunakan di Jerman dengan protokol EDSS1\. Kamu akan menemukan keluaran _debugging_ yang bermanfaat di berkas `/var/log/everything.log`, yang mana kamu akan melihat bahwa kartu kamu sedang dipersiapkan untuk bisa dipakai. Tolong dicatat bahwa kamu mungkin perlu mengaktifkan beberapa modul USB sebelum kamu dapat bekerja dengan Adapter USB ISDN eksternal.
+Ini akan mengaktifkan modul hisax untuk ELSA Quickstep 1000PCI saya, digunakan di Jerman dengan protokol EDSS1\. Kamu akan menemukan keluaran *debugging* yang bermanfaat di berkas `/var/log/everything.log`, yang mana kamu akan melihat bahwa kartu kamu sedang dipersiapkan untuk bisa dipakai. Tolong dicatat bahwa kamu mungkin perlu mengaktifkan beberapa modul USB sebelum kamu dapat bekerja dengan Adapter USB ISDN eksternal.
 
 Sekali kamu memperoleh konfirmasi bahwa kartu kamu sudah bekerja dengan setelan yang ada, kamu dapat menambahkan opsi modul berikut ke berkas `/etc/modprobe.d/modprobe.conf`:
 
@@ -700,9 +698,9 @@ sebagai root. Jika kamu memperoleh masalah, ingat untuk mengecek berkas log!
 
 #### DSL (PPPoE)
 
-Instruksi berikut relevan bagi kamu jika PC kamu ditujukan untuk pengelolaan koneksi ke ISP kamu. Kamu tidak perlu melakukan apapun tetapi cukup menentukan _default gateway_ yang tepat jika kamu memakai _router_ terpisah untuk melakukan _grunt work_.
+Instruksi berikut relevan bagi kamu jika PC kamu ditujukan untuk pengelolaan koneksi ke ISP kamu. Kamu tidak perlu melakukan apapun tetapi cukup menentukan *default gateway* yang tepat jika kamu memakai *router* terpisah untuk melakukan *grunt work*.
 
-Sebelum kamu bisa menggunakan koneksi daring (_online_) DSL kamu, kamu harus memasang (_install_) kartu jaringan (_network card_) yang dipakai untuk menghubungkan Modem-DSL ke komputer. Setelah menambahkan kartu jaringan yang baru ke `modules.conf/modprobe.conf` atau _MODULES array_, kamu harus memasang paket `rp-pppoe` dan menjalankan perintah atau skrip `pppoe-setup` untuk mengonfigurasikan koneksi kamu. Setelah kamu memasukkan semua data, kamu bisa _connect_ dan _disconnect_ dengan perintah:
+Sebelum kamu bisa menggunakan koneksi daring (*online*) DSL kamu, kamu harus memasang (*install*) kartu jaringan (*network card*) yang dipakai untuk menghubungkan Modem-DSL ke komputer. Setelah menambahkan kartu jaringan yang baru ke `modules.conf/modprobe.conf` atau *MODULES array*, kamu harus memasang paket `rp-pppoe` dan menjalankan perintah atau skrip `pppoe-setup` untuk mengonfigurasikan koneksi kamu. Setelah kamu memasukkan semua data, kamu bisa *connect* dan *disconnect* dengan perintah:
 
  `/etc/rc.d/adsl start` 
 
@@ -710,25 +708,25 @@ dan
 
  `/etc/rc.d/adsl stop` 
 
-Penyetelan biasanya mudah, tetapi silakan membaca halaman manual untuk petunjuk lebih lanjut. Jika kamu ingin _dial_ otomatis saat _boot-up_, tambahkan `adsl` ke _DAEMONS array_.
+Penyetelan biasanya mudah, tetapi silakan membaca halaman manual untuk petunjuk lebih lanjut. Jika kamu ingin *dial* otomatis saat *boot-up*, tambahkan `adsl` ke *DAEMONS array*.
 
 ## Update, Sync dan Upgrade sistem dengan [pacman](/index.php/Pacman "Pacman")
 
-Sekarang kita akan memperbarui sistem menggunakan [pacman](/index.php/Pacman "Pacman"). Pacman adalah _**pac**kage **man**ager_ bagi Linux Arch. Pacman adalah _Package Manager_ yang cepat, simpel, dan tangguh. Dia mengelola seluruh sistem _package_ kamu, dan memungkinkan adanya proses instalasi, _downgrade_ (melalui tembolok/_cache_), kompilasi _package custom_, pengaturan dependensi secara otomatis, dan banyak kemampuan lainnya.
+Sekarang kita akan memperbarui sistem menggunakan [pacman](/index.php/Pacman "Pacman"). Pacman adalah ***pac**kage **man**ager* bagi Linux Arch. Pacman adalah *Package Manager* yang cepat, simpel, dan tangguh. Dia mengelola seluruh sistem *package* kamu, dan memungkinkan adanya proses instalasi, *downgrade* (melalui tembolok/*cache*), kompilasi *package custom*, pengaturan dependensi secara otomatis, dan banyak kemampuan lainnya.
 
-_Update_, _sync_, dan **upgrade** sistem anda dengan:
+*Update*, *sync*, dan **upgrade** sistem anda dengan:
 
  `pacman -Syu` 
 
-pacman akan mengunduh informasi terbaru yang tersedia terkait semua _package_ dan melakukan proses _upgrade_ jika ada. Kamu kemungkinan akan mendapatkan permintaan untuk meng-_upgrade_ pacman, ketikkan "y" dan jalankan pacman -Syu jika sudah selesai.
+pacman akan mengunduh informasi terbaru yang tersedia terkait semua *package* dan melakukan proses *upgrade* jika ada. Kamu kemungkinan akan mendapatkan permintaan untuk meng-*upgrade* pacman, ketikkan "y" dan jalankan pacman -Syu jika sudah selesai.
 
-##### _Perhatikan pesan yang muncul ketika terjadi proses_ upgrading _kernel!_
+##### *Perhatikan pesan yang muncul ketika terjadi proses* upgrading *kernel!*
 
-Jika kernel di-_upgrade_, modul-modul seperti `nvidia` mungkin tidak berfungsi, karena modul yang baru, versi yang baru bertentangan dengan kernel yang baru, dan sistem kamu masih memakai yang lama. _Reboot_ mungkin diperlukan.
+Jika kernel di-*upgrade*, modul-modul seperti `nvidia` mungkin tidak berfungsi, karena modul yang baru, versi yang baru bertentangan dengan kernel yang baru, dan sistem kamu masih memakai yang lama. *Reboot* mungkin diperlukan.
 
-##### Mantapnya _Rolling Release_
+##### Mantapnya *Rolling Release*
 
-Ingatlah bahwa Linux Arch adalah sebuah distro yang bersifat **Rolling Release**. Ini berarti bahwa tidak perlu ada instal ulang ataupun pembaruan sistem secara bersamaan untuk mendapatkan versi yang terbaru. Hanya dengan menjalankan **pacman -Syu** secara rutin menjadikan sistemmu selalu terbarui dan berada pada _bleeding edge_.
+Ingatlah bahwa Linux Arch adalah sebuah distro yang bersifat **Rolling Release**. Ini berarti bahwa tidak perlu ada instal ulang ataupun pembaruan sistem secara bersamaan untuk mendapatkan versi yang terbaru. Hanya dengan menjalankan **pacman -Syu** secara rutin menjadikan sistemmu selalu terbarui dan berada pada *bleeding edge*.
 
 ##### Mengenal Pacman lebih dalam
 
@@ -740,29 +738,29 @@ Lihatlah pada bagian akhir artikel ini, dan lihatlah bagian [pacman](/index.php/
 
 ### Menambahkan pengguna dan atur grup
 
-Kamu seharusnya tidak menjalankan kegiatan-kegiatan normal sebagai seorang root. Hal tersebut bukan saja sebuah praktik yang buruk, tapi merupakan kegiatan yang berbahaya. Root adalah tipe pengguna/_user_ administrasi. Oleh karena itu, tambahkanlah sebuah pengguna baru:
+Kamu seharusnya tidak menjalankan kegiatan-kegiatan normal sebagai seorang root. Hal tersebut bukan saja sebuah praktik yang buruk, tapi merupakan kegiatan yang berbahaya. Root adalah tipe pengguna/*user* administrasi. Oleh karena itu, tambahkanlah sebuah pengguna baru:
 
  `adduser` 
 
-Meskipun pengaturan standar sudah aman untuk digunakan, tetapi anda dapat menambahkan pengguna sebagai anggota dari kelompok _audio_ dan _wheel_.
+Meskipun pengaturan standar sudah aman untuk digunakan, tetapi anda dapat menambahkan pengguna sebagai anggota dari kelompok *audio* dan *wheel*.
 
-_Audio_ memungkinkan kamu untuk menggunakan kartu audio, sementara itu _wheel_ mengizinkan kamu untuk menjadi pengguna root menggunakan perintah `su`. Kelompok lain yang dapat ditambahkan adalah:
+*Audio* memungkinkan kamu untuk menggunakan kartu audio, sementara itu *wheel* mengizinkan kamu untuk menjadi pengguna root menggunakan perintah `su`. Kelompok lain yang dapat ditambahkan adalah:
 
-*   disk - untuk mengelola disk, seperti _USB flash drive_ dan sejenisnya.
+*   disk - untuk mengelola disk, seperti *USB flash drive* dan sejenisnya.
 
 *   storage - untuk mengelola disk penyimpanan.
 
 *   video - untuk mengelola tugas-tugas video.
 
-*   optical - untuk mengelola tugas-tugas terkait _drive_ optik.
+*   optical - untuk mengelola tugas-tugas terkait *drive* optik.
 
 *   floppy - untuk mengakses floppy jika dibutuhkan.
 
 *   lp - untuk mengelola tugas mencetak.
 
-Kamu juga dapat menambahkan _user_ kamu ke dalam kelompok _optical_ untuk mengaktifkan perekaman CD/DVD.
+Kamu juga dapat menambahkan *user* kamu ke dalam kelompok *optical* untuk mengaktifkan perekaman CD/DVD.
 
-Lihat artikel [Groups](/index.php/Groups "Groups") untuk mengetahui kelompok mana saja yang perlu kamu masukkan untuk _user_ kamu. Kamu juga bisa menambahkan _user_ kamu ke dalam kelompok berikut (sebagai root):
+Lihat artikel [Groups](/index.php/Groups "Groups") untuk mengetahui kelompok mana saja yang perlu kamu masukkan untuk *user* kamu. Kamu juga bisa menambahkan *user* kamu ke dalam kelompok berikut (sebagai root):
 
  `usermod -aG audio,video,floppy,lp,optical,network,storage,wheel USERNAME` 
 
@@ -791,7 +789,7 @@ aktifkan chanel Master dan PCM dengan bergerak ke posisi chanel masing-masing da
 
 ```
 
-Jika anda merencanakan untuk menggunakan sebuah _desktop environment_ seperti GNOME dan KDE, dan menginginkan alsa untuk mengingat konfigurasi ketika anda sudah mengganti konfigurasinya, jangan jalankan perintah diatas--pengaturan volume anda akan diingat secara otomatis.
+Jika anda merencanakan untuk menggunakan sebuah *desktop environment* seperti GNOME dan KDE, dan menginginkan alsa untuk mengingat konfigurasi ketika anda sudah mengganti konfigurasinya, jangan jalankan perintah diatas--pengaturan volume anda akan diingat secara otomatis.
 
 Jangan lupa untuk menambahkan alsa pada entri DAEMON pada `/etc/rc.conf` untuk memuat kembali mixernya secara otomatis saat boot-up. Jalankan perintah berikut sebagai root:
 
@@ -800,17 +798,17 @@ Jangan lupa untuk menambahkan alsa pada entri DAEMON pada `/etc/rc.conf` untuk m
 
 ```
 
-### Konfigurasi _kecepatan frekuensi CPU_
+### Konfigurasi *kecepatan frekuensi CPU*
 
 Prosesor modern mampu menurunkan frekuensi dan voltasenya untuk mengurangi panas dan konsumsi daya. Berkurangnya panas mendukung sistem menjadi lebih tenang; sistem desktop pun akan mendapat manfaat dari hal ini. Instalasi: [cpufrequtils](https://www.archlinux.org/packages/?name=cpufrequtils):
 
  `pacman -S cpufrequtils` 
 
-dan tambahkan `cpufrequtils` ke _daemons_ kamu di `/etc/rc.conf`. Edit berkas `/etc/conf.d/cpufreq` dan ubah
+dan tambahkan `cpufrequtils` ke *daemons* kamu di `/etc/rc.conf`. Edit berkas `/etc/conf.d/cpufreq` dan ubah
 
  `governor="conservative"` 
 
-yang mana akan meningkatkan frekuensi CPU secara dinamis jika diperlukan (aman juga digunakan di sistem desktop). Sesuaikan `min_freq` dan `max_freq` dengan spesifikasi CPU kamu. Jika kamu tidak mengetahui frekuensinya, jalankan `cpufreq-info` setelah mengaktifkan salah satu modul _frequency scaling_-nya. Tambahkan modul _frequency scaling_ ke berkas `/etc/rc.conf`. Kebanyakan desktop dan komputer jinjing (_notebook_) dapat dengan mudah memakai _driver_ `acpi-cpufreq`, sedangkan opsi lain diantaranya `p4-clockmod, powernow-k6, powernow-k7, powernow-k8`, dan `speedstep-centrino`. _Load_ modul
+yang mana akan meningkatkan frekuensi CPU secara dinamis jika diperlukan (aman juga digunakan di sistem desktop). Sesuaikan `min_freq` dan `max_freq` dengan spesifikasi CPU kamu. Jika kamu tidak mengetahui frekuensinya, jalankan `cpufreq-info` setelah mengaktifkan salah satu modul *frequency scaling*-nya. Tambahkan modul *frequency scaling* ke berkas `/etc/rc.conf`. Kebanyakan desktop dan komputer jinjing (*notebook*) dapat dengan mudah memakai *driver* `acpi-cpufreq`, sedangkan opsi lain diantaranya `p4-clockmod, powernow-k6, powernow-k7, powernow-k8`, dan `speedstep-centrino`. *Load* modul
 
  `modprobe <namamodul>` 
 
@@ -820,17 +818,17 @@ dan start `cpufreq` dengan
 
 Untuk lebih detailnya, lihat [Cpufrequtils](/index.php/Cpufrequtils "Cpufrequtils").
 
-### _Tweak_ tambahan untuk laptop
+### *Tweak* tambahan untuk laptop
 
-Dukungan ACPI dibutuhkan jika kamu ingin memakai beberapa fungsi spesial komputer jinjing/_notebook_/_laptop_ (misalnya _sleep_, _sleep_ ketika _lid_ ditutup, _special keys_...). Pasang `acpid`
+Dukungan ACPI dibutuhkan jika kamu ingin memakai beberapa fungsi spesial komputer jinjing/*notebook*/*laptop* (misalnya *sleep*, *sleep* ketika *lid* ditutup, *special keys*...). Pasang `acpid`
 
  `pacman -S acpid` 
 
-dan tambahkan ke _daemons_ di `/etc/rc.conf` (acpid). Start dengan
+dan tambahkan ke *daemons* di `/etc/rc.conf` (acpid). Start dengan
 
  `/etc/rc.d/acpid start` 
 
-Informasi lebih spesifik tentang Linux Arch di pelbagai komputer jinjing (_laptop_/_notebook_) dapat ditemukan di [Category:Laptops](/index.php/Category:Laptops "Category:Laptops").
+Informasi lebih spesifik tentang Linux Arch di pelbagai komputer jinjing (*laptop*/*notebook*) dapat ditemukan di [Category:Laptops](/index.php/Category:Laptops "Category:Laptops").
 
 ## Instalasi dan Konfigurasi X
 
@@ -840,9 +838,9 @@ See [Xorg](/index.php/Xorg "Xorg").
 
 ##### Apa itu /etc/X11/xorg.conf?
 
-/etc/X11/xorg.conf adalah **berkas konfigurasi utama** untuk **X** Window System, fondasi dari **G**raphical **U**ser **I**nterface. Berkas ini berisi konfigurasi berupa teks yang terbagi kedalam bagian dan subbagian. Bagian yang penting adalah _Files, InputDevice, Monitor, Modes, Screen, Device dan ServerLayout_. Bagian-bagian ini dapat muncul dalam urutan yang beragam. Bagian-bagian tadi juga dapat muncul lebih dari sekali.
+/etc/X11/xorg.conf adalah **berkas konfigurasi utama** untuk **X** Window System, fondasi dari **G**raphical **U**ser **I**nterface. Berkas ini berisi konfigurasi berupa teks yang terbagi kedalam bagian dan subbagian. Bagian yang penting adalah *Files, InputDevice, Monitor, Modes, Screen, Device dan ServerLayout*. Bagian-bagian ini dapat muncul dalam urutan yang beragam. Bagian-bagian tadi juga dapat muncul lebih dari sekali.
 
-Secara default, kamu tidak akan memiliki berkas ini. Bahkan dengan Xorg versi terbaru, kamu tidak membutuhkan berkas ini _jika_ proses pengenalan sistem secara otomatis _berjalan dengan baik_, dan jika kamu tidak perlu mengaktifkan fitur seperti aiglx dan sebagainya. _Tetapi kebanyakan orang tetap membutuhkan berkas ini_.
+Secara default, kamu tidak akan memiliki berkas ini. Bahkan dengan Xorg versi terbaru, kamu tidak membutuhkan berkas ini *jika* proses pengenalan sistem secara otomatis *berjalan dengan baik*, dan jika kamu tidak perlu mengaktifkan fitur seperti aiglx dan sebagainya. *Tetapi kebanyakan orang tetap membutuhkan berkas ini*.
 
 Ada beberapa cara untuk membuat berkas /etc/X11/xorg.conf:
 
@@ -960,30 +958,30 @@ startx
 
 Seharusnya kamu memiliki sebuah session xterm sampingan yang berjalan. Kamu dapat keluar dari X Server ini dengan Ctrl+Alt+Backspace, atau dengan mengetikkan "exit". Jika kamu memiliki permasalahan menjalankan X Server, kamu dapat melihat pesan kesalahan pada berkas /var/log/Xorg.0.log.
 
-Sekarang, kamu mungkin mau menginstal sebuah login manager seperti [GDM](/index.php/GDM "GDM") atau [KDM](/index.php/KDM "KDM"), tetapi ini _dapat_ ditunda dulu. Untuk konfigurasi yang lebih terinci mengenai xorg, dapat dilihat pada artikel [Xorg](/index.php/Xorg "Xorg").
+Sekarang, kamu mungkin mau menginstal sebuah login manager seperti [GDM](/index.php/GDM "GDM") atau [KDM](/index.php/KDM "KDM"), tetapi ini *dapat* ditunda dulu. Untuk konfigurasi yang lebih terinci mengenai xorg, dapat dilihat pada artikel [Xorg](/index.php/Xorg "Xorg").
 
-### Mengatur _Layout Keyboard_
+### Mengatur *Layout Keyboard*
 
-Kamu mungkin ingin mengubah _layout_ papan ketik (_keyboard_) kamu. Untuk melakukannya, edit berkas `/etc/X11/xorg.conf` kamu dan tambahkan baris berikut di _Input Section (keyboard0)_ (contoh berikut menunjukkan _layout_ papan ketik Jerman tanpa _dead keys_; sesuaikan dengan kebutuhan kamu).
+Kamu mungkin ingin mengubah *layout* papan ketik (*keyboard*) kamu. Untuk melakukannya, edit berkas `/etc/X11/xorg.conf` kamu dan tambahkan baris berikut di *Input Section (keyboard0)* (contoh berikut menunjukkan *layout* papan ketik Jerman tanpa *dead keys*; sesuaikan dengan kebutuhan kamu).
 
 ```
 Option          "XkbLayout"     "de"
 Option          "XkbVariant"    "nodeadkeys"
 ```
 
-### Mengatur _scroll wheel_ Tetikus/_Mouse_
+### Mengatur *scroll wheel* Tetikus/*Mouse*
 
-Ketika tetikus (_mouse_) kamu seharusnya berfungsi otomatis, kamu mungkin ingin memakai _scroll wheel_-nya. Tambahkan baris berikut di _Input Section (mouse0)_:
+Ketika tetikus (*mouse*) kamu seharusnya berfungsi otomatis, kamu mungkin ingin memakai *scroll wheel*-nya. Tambahkan baris berikut di *Input Section (mouse0)*:
 
  `Option      "ZAxisMapping" "4 5 6 7"` 
 
 ### evdev
 
-Jika kamu memiliki tetikus (_mouse_) USB modern dengan beberapa tombol dan/atau fungsi, kamu mungkin perlu memasang _driver_ tetikus _evdev_, yang akan memungkinkan kamu mengembangkan fungsi tetikus kamu:
+Jika kamu memiliki tetikus (*mouse*) USB modern dengan beberapa tombol dan/atau fungsi, kamu mungkin perlu memasang *driver* tetikus *evdev*, yang akan memungkinkan kamu mengembangkan fungsi tetikus kamu:
 
  `pacman -S xf86-input-evdev` 
 
-_Load driver_-nya:
+*Load driver*-nya:
 
  `modprobe evdev` 
 
@@ -991,7 +989,7 @@ Temukan nama tetikus kamu:
 
  `cat /proc/bus/input/devices | egrep "Nama"` 
 
-Gunakan nama tetikus, konfigurasikan berkas `/etc/X11/xorg.conf` di seksi _InputDevice_, misalnya:
+Gunakan nama tetikus, konfigurasikan berkas `/etc/X11/xorg.conf` di seksi *InputDevice*, misalnya:
 
 ```
 Section "InputDevice"
@@ -1002,9 +1000,9 @@ Section "InputDevice"
  EndSection
 ```
 
-Kamu boleh memiliki hanya **satu** deklarasi perangkat _CorePointer_ di `/etc/X11/xorg.conf`, jadi pastikan untuk meng-_comment out_ entri tetikus lain sampai kamu merasa aman untuk menghapus entri yang lama.
+Kamu boleh memiliki hanya **satu** deklarasi perangkat *CorePointer* di `/etc/X11/xorg.conf`, jadi pastikan untuk meng-*comment out* entri tetikus lain sampai kamu merasa aman untuk menghapus entri yang lama.
 
-Juda edit bagian _ServerLayout_ untuk memasukkan _Evdev Mouse_ sebagai _CorePointer_, misalnya:
+Juda edit bagian *ServerLayout* untuk memasukkan *Evdev Mouse* sebagai *CorePointer*, misalnya:
 
 ```
 Section "ServerLayout"
@@ -1014,7 +1012,7 @@ Section "ServerLayout"
     InputDevice    "Evdev Mouse" "CorePointer"
 ```
 
-### Memakai _Driver_ Grafis Proprietari (nVIDIA, ATI)
+### Memakai *Driver* Grafis Proprietari (nVIDIA, ATI)
 
 Anda dapat memilih untuk menggunakan driver video kepemilikan dari nVIDIA atau ATI.
 
@@ -1024,11 +1022,11 @@ Driver hak milik nVIDIA umumnya dianggap sangat baik kualitasnya, dan menawarkan
 
 Sebelum Anda mengkonfigurasi Graphics Card Anda, Anda akan harus mengetahui driver mana yang cocok. Arch saat ini memiliki 3 driver yang berbeda yang sama dengan subset tertentu dari kartu:
 
-**1\. nvidia-71xx** _untuk Kartu yang sangat lama seperti TNT dan TNT2_
+**1\. nvidia-71xx** *untuk Kartu yang sangat lama seperti TNT dan TNT2*
 
-**2\. nvidia-96xx** _kartu yang sedikit lebih baru hingga GF 4_
+**2\. nvidia-96xx** *kartu yang sedikit lebih baru hingga GF 4*
 
-**3\. nvidia** _GPU terbaru setelah GF 4_
+**3\. nvidia** *GPU terbaru setelah GF 4*
 
 Konsultasikan Situs nVIDIA untuk melihat mana yang tepat untuk Anda. Perbedaannya hanya pada instalasi, konfigurasi bekerja sama dengan setiap driver.
 
@@ -1150,13 +1148,13 @@ Jika kamu menanyakan 2 orang apa itu Desktop Environment atau Window Manager, ka
 
 *   Jika kamu ingin sesuatu yang kaya fitur dan nampak serupa dengan Windows dan Mac OSX, **KDE** adalah pilihan yang baik
 *   Jika kamu ingin sesuatu yang minimalis, mengikuti prinsip yang mendekati K.I.S.S., **GNOME** adalah pilihan yangg baik
-*   Jika kamu punya mesin tua atau ingin sesuatu yang lebih ringan, **xfce4** adalah pilihan yang baik, tetap mampu memberi _desktop environment_ yang lengkap
+*   Jika kamu punya mesin tua atau ingin sesuatu yang lebih ringan, **xfce4** adalah pilihan yang baik, tetap mampu memberi *desktop environment* yang lengkap
 *   Jika kamu butuh sesuatu yang lebih ringan lagi, **openbox, fluxbox atau fvwm2** mungkin pilihan yang tepat (tidak menyebut semua window managers ringan lain seperti **windowmaker dan twm**).
 *   Jika kamu membutuhkan sesuatu yang sama sekali berbeda, coba **ion, wmii, atau dwm**.
 
 ### Instalasi Huruf/Font
 
-Pada poin ini, kamu mungkin ingin memasang beberapa huruf yang berpenampilan menarik, **sebelum** memasang _desktop environment_/_window manager_. _Dejavu_ dan _bitstream-vera_ adalah set huruf yang baik. Untuk situs Web, kamu mungkin membutuhkan huruf dari Microsoft juga. Pasang dengan cara:
+Pada poin ini, kamu mungkin ingin memasang beberapa huruf yang berpenampilan menarik, **sebelum** memasang *desktop environment*/*window manager*. *Dejavu* dan *bitstream-vera* adalah set huruf yang baik. Untuk situs Web, kamu mungkin membutuhkan huruf dari Microsoft juga. Pasang dengan cara:
 
  `pacman -S ttf-ms-fonts ttf-dejavu ttf-bitstream-vera` 
 
@@ -1164,7 +1162,7 @@ Pada poin ini, kamu mungkin ingin memasang beberapa huruf yang berpenampilan men
 
 #### Tentang GNOME
 
-**G**NU **N**etwork **O**bject **M**odel **E**nvironment. Proyek GNOME menyediakan 2 hal: _The GNOME desktop environment_, sebuah desktop yang intuitif dan atraktif bagi pengguna, dan platform pengembangan berbasis GNOME, suatu _extensive framework_ untuk membangun aplikasi yang terintegrasi ke desktop.
+**G**NU **N**etwork **O**bject **M**odel **E**nvironment. Proyek GNOME menyediakan 2 hal: *The GNOME desktop environment*, sebuah desktop yang intuitif dan atraktif bagi pengguna, dan platform pengembangan berbasis GNOME, suatu *extensive framework* untuk membangun aplikasi yang terintegrasi ke desktop.
 
 #### Instalasi
 
@@ -1186,23 +1184,23 @@ Aman untuk memilih semua paket yang ada.
 
 ##### DAEMON yang berguna untuk GNOME
 
-Mengingat kembali dari keterangan di atas bahwa _daemon_ adalah program yang berjalan di _background_, menunggu suatu _events_ terjadi dan menawarkan layanannya. _Daemon_ **hal**, melebihi yang lain, akan otomatis me-_mounting disks_, _optical drives_, dan _USB drives_/_thumbdrives_ untuk digunakan di GUI. _Daemon_ **fam** memungkinkan representasi _real-time_ alterasi berkas di GUI, mengijinkan akses instan ke program yang terpasang, atau perubahan di sistem berkas (_file system_). Keduanya, **hal** dan **fam**, memudahkan pengguna GNOME.
+Mengingat kembali dari keterangan di atas bahwa *daemon* adalah program yang berjalan di *background*, menunggu suatu *events* terjadi dan menawarkan layanannya. *Daemon* **hal**, melebihi yang lain, akan otomatis me-*mounting disks*, *optical drives*, dan *USB drives*/*thumbdrives* untuk digunakan di GUI. *Daemon* **fam** memungkinkan representasi *real-time* alterasi berkas di GUI, mengijinkan akses instan ke program yang terpasang, atau perubahan di sistem berkas (*file system*). Keduanya, **hal** dan **fam**, memudahkan pengguna GNOME.
 
-Kamu mungkin ingin memasang _graphical login manager_. Untuk GNOME, _daemon_ **gdm** adalah pilihan yang tepat. Pasang _gdm_ dengan
+Kamu mungkin ingin memasang *graphical login manager*. Untuk GNOME, *daemon* **gdm** adalah pilihan yang tepat. Pasang *gdm* dengan
 
  `pacman -S gdm` 
 
-Kamu akan memerlukan _daemon_ **hal** dan **fam**.
+Kamu akan memerlukan *daemon* **hal** dan **fam**.
 
-Start _hal_ dan _fam_:
+Start *hal* dan *fam*:
 
  `/etc/rc.d/hal start`  `/etc/rc.d/fam start` 
 
-Tambahkan ke berkas `/etc/rc.conf` di bagian _DAEMONS_, sehingga keduanya akan dipanggil saat _boot-up_:
+Tambahkan ke berkas `/etc/rc.conf` di bagian *DAEMONS*, sehingga keduanya akan dipanggil saat *boot-up*:
 
  `nano /etc/rc.conf`  `DAEMONS=(syslog-ng network crond alsa hal fam gdm)` 
 
-(Jika kamu lebih memilih log masuk ke _console_ dan memulai X secara manual sesuai tradisi Slackware, jangan ikutkan _gdm_).
+(Jika kamu lebih memilih log masuk ke *console* dan memulai X secara manual sesuai tradisi Slackware, jangan ikutkan *gdm*).
 
 #### ~/.xinitrc
 
@@ -1212,7 +1210,7 @@ Edit berkas `/home/username/.xinitrc` untuk mengaktifkan sesi GNOME:
 
  `nano ~/.xinitrc` 
 
-_Uncomment_ baris `exec gnome-session` sehingga nampak seperti di bawah:
+*Uncomment* baris `exec gnome-session` sehingga nampak seperti di bawah:
 
 ```
  #!/bin/sh
@@ -1246,7 +1244,7 @@ startx
 
 ```
 
-Kamu mungkin ingin memasang sebuah _terminal_ dan _editor_. Saya menyarankan `geany` dan `gnome-terminal` (bagian dari kelompok `gnome-extra`):
+Kamu mungkin ingin memasang sebuah *terminal* dan *editor*. Saya menyarankan `geany` dan `gnome-terminal` (bagian dari kelompok `gnome-extra`):
 
 ```
 pacman -S geany gnome-terminal
@@ -1264,7 +1262,7 @@ pacman -S gtk-engine-murrine
 
 ```
 
-dan pilih di System→Preferences→Theme. Kamu akan menemukan lebih banyak tema, ikon, dan _wallpaper_ di [GNOME Look](http://www.gnome-look.org).
+dan pilih di System→Preferences→Theme. Kamu akan menemukan lebih banyak tema, ikon, dan *wallpaper* di [GNOME Look](http://www.gnome-look.org).
 
 ### KDE
 
@@ -1334,8 +1332,8 @@ Include = /etc/pacman.d/community
 two installations:
 
 ```
-       pacman -S kdemod  _- installs a light base system_
-       pacman -S kdemod-complete  _- installs the full KDE desktop_
+       pacman -S kdemod  *- installs a light base system*
+       pacman -S kdemod-complete  *- installs the full KDE desktop*
 
 ```
 
@@ -1435,7 +1433,7 @@ Congratulations! Welcome to your KDE desktop environment on your new Arch Linux 
 
 #### Tentang Xfce
 
-Xfce adalah sebuah _Desktop Environment_ (DE), seperti GNOME atau KDE. Xfce terdiri dari suatu kumpulan aplikasi seperti aplikasi _root window_, _window manager_, _file manager_, panel, dan sebagainya. Xfce ditulis menggunakan GTK2 _toolkit_ dan mengandung lingkungan pengembangannya sendiri (pustaka/_libraries_, _daemons_, dan lain-lain) serupa dengan DE besar lain. Tidak seperti GNOME atau KDE, Xfce lebih ringan (_lightweight_) dan dirancang dalam CDE dibanding Windows atau Mac. Siklus pengembangannya lebih lambat, tetapi sangat stabil dan cepat. Xfce baik digunakan di perangkat keras (_hardware_) yang lawas.
+Xfce adalah sebuah *Desktop Environment* (DE), seperti GNOME atau KDE. Xfce terdiri dari suatu kumpulan aplikasi seperti aplikasi *root window*, *window manager*, *file manager*, panel, dan sebagainya. Xfce ditulis menggunakan GTK2 *toolkit* dan mengandung lingkungan pengembangannya sendiri (pustaka/*libraries*, *daemons*, dan lain-lain) serupa dengan DE besar lain. Tidak seperti GNOME atau KDE, Xfce lebih ringan (*lightweight*) dan dirancang dalam CDE dibanding Windows atau Mac. Siklus pengembangannya lebih lambat, tetapi sangat stabil dan cepat. Xfce baik digunakan di perangkat keras (*hardware*) yang lawas.
 
 #### Instalasi
 
@@ -1473,11 +1471,11 @@ Informasi lebih lanjut ada di artikel [Fluxbox](/index.php/Fluxbox "Fluxbox").
 
 #### Openbox
 
-Openbox adalah _window manager extensible_ yang memenuhi standar, cepat, dan ringan.
+Openbox adalah *window manager extensible* yang memenuhi standar, cepat, dan ringan.
 
-Openbox dapat berfungsi dengan aplikasi-aplikasi kamu, dan membuat desktop kamu lebih mudah dikelola. Ini karena pendekatan pengembangannya berlawanan dengan _window manager_ umumnya. Openbox awalnya dibuat untuk memenuhi standar dan berfungsi sebagaimana mestinya. Setelah itu tim mengembangkan antarmuka visualnya.
+Openbox dapat berfungsi dengan aplikasi-aplikasi kamu, dan membuat desktop kamu lebih mudah dikelola. Ini karena pendekatan pengembangannya berlawanan dengan *window manager* umumnya. Openbox awalnya dibuat untuk memenuhi standar dan berfungsi sebagaimana mestinya. Setelah itu tim mengembangkan antarmuka visualnya.
 
-Openbox berfungsi penuh sebagai lingkungan yang mandiri, atau dapat digunakan sebagai opsi pengganti _window manager_ bawaan di _desktop environment_ GNOME atau KDE.
+Openbox berfungsi penuh sebagai lingkungan yang mandiri, atau dapat digunakan sebagai opsi pengganti *window manager* bawaan di *desktop environment* GNOME atau KDE.
 
 Pasang `openbox` dengan cara:
 
@@ -1493,7 +1491,7 @@ mkdir -p ~/.config/openbox/
 
 Dalam berkas `rc.xml`, kamu dapat mengubah pelbagai setelan Openbox (atau gunakan `obconf`). Dalam berkas `menu.xml` kamu bisa mengubah menu klik kanan kamu.
 
-Supaya bisa log masuk ke Openbox, kamu bisa melakukannya via _graphical login_ memakai KDM/GDM atau `startx`, atau edit berkas `~/.xinitrc` (sebagai pengguna biasa) dan tambahkan baris berikut:
+Supaya bisa log masuk ke Openbox, kamu bisa melakukannya via *graphical login* memakai KDM/GDM atau `startx`, atau edit berkas `~/.xinitrc` (sebagai pengguna biasa) dan tambahkan baris berikut:
 
  `exec openbox` 
 
@@ -1502,14 +1500,14 @@ Untuk KDM, tidak perlu repot; Openbox sudah ada di pilihan menu sesi KDM.
 Beberapa program yang bermanfaat untuk Openbox:
 
 *   PyPanel atau LXpanel jika kamu butuh panel.
-*   feh jika kamu ingin mengatur latar/_background_.
-*   ROX jika kamu ingin _file manager_ dan ikon desktop sederhana.
+*   feh jika kamu ingin mengatur latar/*background*.
+*   ROX jika kamu ingin *file manager* dan ikon desktop sederhana.
 
 Informasi lebih lanjut tersedia di artikel [Openbox](/index.php/Openbox "Openbox").
 
 ### fvwm2
 
-FVWM adalah _window manager_ desktop virtual yang multipel sesuai standar ICCCM, sangat _powerful_, untuk sistem _X Window_.
+FVWM adalah *window manager* desktop virtual yang multipel sesuai standar ICCCM, sangat *powerful*, untuk sistem *X Window*.
 
 Instal fvwm2:
 
@@ -1521,11 +1519,11 @@ fvwm akan muncul otomatis di sesi menu kdm/gdm. Jika belum, tambahkan:
 
 di berkas `.xinitrc` pengguna.
 
-Catatan: versi stabil fvwm cukup lawas. Jika kamu ingin versi fvwm yang lebih terkini, paket fvwm-devel ada di repo _unstable_.
+Catatan: versi stabil fvwm cukup lawas. Jika kamu ingin versi fvwm yang lebih terkini, paket fvwm-devel ada di repo *unstable*.
 
 ## HAL
 
-Karena kamu akan memasang sebuah _desktop environment_, sebaiknya pasang juga HAL. HAL memungkinkan fungsi _plug-and-play_ untuk ponsel, iPod,_hard disk_ eksternal kamu, dll. HAL akan me-_mount_ perangkat tersebut dan menampilkan ikonnya di desktop dan/atau di _My Computer_, memungkinkan kamu mengakses perangkat setelah menancapkannya dibandng mengaturnya manual di berkas `/etc/fstab` atau _udev rules_ untuk tiap perangkat baru.
+Karena kamu akan memasang sebuah *desktop environment*, sebaiknya pasang juga HAL. HAL memungkinkan fungsi *plug-and-play* untuk ponsel, iPod,*hard disk* eksternal kamu, dll. HAL akan me-*mount* perangkat tersebut dan menampilkan ikonnya di desktop dan/atau di *My Computer*, memungkinkan kamu mengakses perangkat setelah menancapkannya dibandng mengaturnya manual di berkas `/etc/fstab` atau *udev rules* untuk tiap perangkat baru.
 
 KDE, GNOME dan XFCE memakai HAL.
 
@@ -1539,7 +1537,7 @@ Bagian ini tidak akan pernah lengkap. Hanya akan ditampilkan beberapa aplikasi y
 
 ##### Firefox
 
-Peramban Web (_browser_) populer Firefox (Fx atau fx) tersedia via `pacman`. Pasang dengan cara:
+Peramban Web (*browser*) populer Firefox (Fx atau fx) tersedia via `pacman`. Pasang dengan cara:
 
  `pacman -S firefox` 
 
@@ -1549,11 +1547,11 @@ Untuk fungsi Web yang komplit, pastikan paket `flashplugin`, `mplayer`, `mplayer
 
 (Paket `codecs` mengandung pustaka untuk konten Quicktime dan Realplayer.)
 
-Thunderbird berguna untuk mengelola surat elektronik (surel)/email kamu. Jika kamu memakai GNOME, kamu bisa juga memakai Epiphany dan Evolution; jika kamu memakai KDE, Konqueror dan KMail bisa menjadi pilihan kamu. Jika kamu ingin sesuatu yang komplit berbeda, coba Opera. Akhir kata, jika kamu bekerja di lingkungan _console_ - atau sesi _terminal_ - kamu bisa memakai pelbagai peramban Web berbasis teks seperti ELinks, Links & Lynx, dan mengelola surel dengan [Mutt](/index.php/Mutt "Mutt"). Pidgin (sebelumnya bernama Gaim) dan Kopete adalah aplikasi _instant messengers_ yang baik untuk GNOME dan KDE. PSI dan Gajim juga baik jika kamu hanya memakai Jabber atau Google Talk.
+Thunderbird berguna untuk mengelola surat elektronik (surel)/email kamu. Jika kamu memakai GNOME, kamu bisa juga memakai Epiphany dan Evolution; jika kamu memakai KDE, Konqueror dan KMail bisa menjadi pilihan kamu. Jika kamu ingin sesuatu yang komplit berbeda, coba Opera. Akhir kata, jika kamu bekerja di lingkungan *console* - atau sesi *terminal* - kamu bisa memakai pelbagai peramban Web berbasis teks seperti ELinks, Links & Lynx, dan mengelola surel dengan [Mutt](/index.php/Mutt "Mutt"). Pidgin (sebelumnya bernama Gaim) dan Kopete adalah aplikasi *instant messengers* yang baik untuk GNOME dan KDE. PSI dan Gajim juga baik jika kamu hanya memakai Jabber atau Google Talk.
 
-### Perkantoran (_Office_)
+### Perkantoran (*Office*)
 
-OpenOffice adalah suatu perangkat _office suite_ yang komplit (serupa dengan Microsoft Office). Abiword bagus, pengolah kata alternatif yang ringan, dan Gnumeric adalah sebuah pengganti Excel untuk desktop GNOME. KOffice adalah _office suite_ komplit untuk desktop KDE. GIMP (atau GIMPShop) adalah program grafis berbasis piksel (serupa dengan Adobe Photoshop), dimana Inkscape adalah program grafis berbasis vektor (seperti Adobe Illustrator). Dan, tentu saja, Arch hadir dengan satu set penuh program LaTeX.
+OpenOffice adalah suatu perangkat *office suite* yang komplit (serupa dengan Microsoft Office). Abiword bagus, pengolah kata alternatif yang ringan, dan Gnumeric adalah sebuah pengganti Excel untuk desktop GNOME. KOffice adalah *office suite* komplit untuk desktop KDE. GIMP (atau GIMPShop) adalah program grafis berbasis piksel (serupa dengan Adobe Photoshop), dimana Inkscape adalah program grafis berbasis vektor (seperti Adobe Illustrator). Dan, tentu saja, Arch hadir dengan satu set penuh program LaTeX.
 
 ## Multimedia
 
@@ -1573,11 +1571,11 @@ MPlayer adalah pemutar multimedia untuk Linux. Untuk memasangnya, ketik kode di 
 
  `pacman -S mplayer` 
 
-Ada juga _plug-in_ Mozilla untuk video dan _streams embedded_ di halaman Web. Untuk memasangnya, ketik kode di bawah:
+Ada juga *plug-in* Mozilla untuk video dan *streams embedded* di halaman Web. Untuk memasangnya, ketik kode di bawah:
 
  `pacman -S mplayer-plugin` 
 
-Jika kamu memakai KDE, KMplayer adalah pilihan yang baik. Tersedia _plug-in_ untuk video dan _streams embedded_ di halaman Web, yang berfungsi dengan Konqueror. Untuk memasangnya, ketik kode di bawah:
+Jika kamu memakai KDE, KMplayer adalah pilihan yang baik. Tersedia *plug-in* untuk video dan *streams embedded* di halaman Web, yang berfungsi dengan Konqueror. Untuk memasangnya, ketik kode di bawah:
 
  `pacman -S kmplayer` 
 
@@ -1587,11 +1585,11 @@ Jika kamu memakai KDE, KMplayer adalah pilihan yang baik. Tersedia _plug-in_ unt
 
 ##### Totem
 
-[Totem](http://www.gnome.org/projects/totem/) adalah pemutar film resmi _desktop environment_ (DE) GNOME berbasis `xine-lib` atau GStreamer (`gstreamer` otomatis terpasang saat memilih paket arch `totem`). Fiturnya meliputi _playlist_, _full-screen mode_, _seek_, kontrol volume, dan navigasi _keyboard_. Fungsi tambahannya antara lain:
+[Totem](http://www.gnome.org/projects/totem/) adalah pemutar film resmi *desktop environment* (DE) GNOME berbasis `xine-lib` atau GStreamer (`gstreamer` otomatis terpasang saat memilih paket arch `totem`). Fiturnya meliputi *playlist*, *full-screen mode*, *seek*, kontrol volume, dan navigasi *keyboard*. Fungsi tambahannya antara lain:
 
-*   _Video thumbnailer_ untuk _file manager_.
+*   *Video thumbnailer* untuk *file manager*.
 *   GNOME Files properties tab.
-*   _Plugin_ Epiphany / Mozilla (Firefox) untuk menampilkan film di peramban Web.
+*   *Plugin* Epiphany / Mozilla (Firefox) untuk menampilkan film di peramban Web.
 *   Perangkat Webcam (sedang dalam pengembangan).
 
 Totem-xine masih menjadi pilihan terbaik untuk menonton DVD.
@@ -1602,7 +1600,7 @@ Untuk memasangnya secara terpisah:
 
  `pacman -S totem` 
 
-Untuk memasang _plugin_ Totem webbrowser:
+Untuk memasang *plugin* Totem webbrowser:
 
  `pacman -S totem-plugin` 
 
@@ -1631,8 +1629,8 @@ pacman -S kaffeine
 
 Rhythmbox memiliki beberapa fitur, diantaranya:
 
-*   _Music browser_ yang mudah digunakan.
-*   _Searching_ dan _sorting_.
+*   *Music browser* yang mudah digunakan.
+*   *Searching* dan *sorting*.
 *   Dukungan format audio yang komprehensif melalui GStreamer.
 *   Dukungan radio Internet.
 *   Playlists.
@@ -1653,7 +1651,7 @@ Pemutar audio yang baik lainnya: Banshee, Quodlibet, dan Listen. Lihat [Gnomefil
 
 #### Console
 
-Moc adalah pemutar audio berbasis _ncurses_ untuk _console_; opsi lain yang cukup baik ada mpd.
+Moc adalah pemutar audio berbasis *ncurses* untuk *console*; opsi lain yang cukup baik ada mpd.
 
 Pilihan menarik lainnya [cmus](http://freshmeat.net/projects/cmus/).
 
@@ -1677,7 +1675,7 @@ untuk mengaktifkan fitur Macromedia (sekarang Adobe) Flash di peramban Web kamu.
 
 #### Quicktime
 
-_Codec_ Quicktime sudah termasuk di paket `codec`. Cukup ketikkan
+*Codec* Quicktime sudah termasuk di paket `codec`. Cukup ketikkan
 
  `pacman -S codecs` 
 
@@ -1685,19 +1683,19 @@ untuk memasangnya.
 
 #### Realplayer
 
-_Codec_ untuk Realplayer 9 ada di dalam paket `codec`. Cukup ketikkan
+*Codec* untuk Realplayer 9 ada di dalam paket `codec`. Cukup ketikkan
 
  `pacman -S codecs` 
 
 untuk memasangnya. Realplayer 10 tersedia dalam bentuk paket binari untuk Linux. Kamu bisa memperolehnya dari AUR [di sini](https://aur.archlinux.org/packages.php?do_Details=1&ID=1590&O=0&L=0&C=0&K=realplay&SB=&SO=&PP=25&do_MyPackages=0&do_Orphans=0&SeB=nd).
 
-### Membakar (_Burning_) CD dan DVD
+### Membakar (*Burning*) CD dan DVD
 
 #### GNOME
 
 ##### Brasero
 
-[Brasero](http://www.gnome.org/projects/brasero/) adalah sebuah aplikasi untuk membakar (_burn_) CD/DVD di desktop GNOME. Didesain sesederhana mungkin dan memiliki fitur unik yang memungkinkan pengguna untuk membuat cakram/disk dengan mudah dan cepat.
+[Brasero](http://www.gnome.org/projects/brasero/) adalah sebuah aplikasi untuk membakar (*burn*) CD/DVD di desktop GNOME. Didesain sesederhana mungkin dan memiliki fitur unik yang memungkinkan pengguna untuk membuat cakram/disk dengan mudah dan cepat.
 
 Untuk memasangnya, ketikkan:
 
@@ -1729,13 +1727,13 @@ Perangkat pembakar DVD yang baik adalah `growisofs`:
 
 ### TV-Cards
 
-Masih banyak yang harus dilakukan jika kamu ingin menonton TV di Linux (Arch). Tugas yang paling penting adalah menemukan chip mana yang tuner kamu gunakan. Bagaimanapun, dukungan tetap diberikan. Pastikan mengecek Basisdata Perangkat Keras (_Hardware Database_) (misal [TV Cards](http://en.opensuse.org/HCL/TV_Cards) di openSUSE). Setelah kamu mengetahui modelnya, tinggal sedikit lagi langkah yang dibutuhkan.
+Masih banyak yang harus dilakukan jika kamu ingin menonton TV di Linux (Arch). Tugas yang paling penting adalah menemukan chip mana yang tuner kamu gunakan. Bagaimanapun, dukungan tetap diberikan. Pastikan mengecek Basisdata Perangkat Keras (*Hardware Database*) (misal [TV Cards](http://en.opensuse.org/HCL/TV_Cards) di openSUSE). Setelah kamu mengetahui modelnya, tinggal sedikit lagi langkah yang dibutuhkan.
 
-Pada kebanyakan kasus, kamu akan membutuhkan _bttv-drivers_ (_driver_ lain tersedia, lihat [drivers](http://linux.bytesex.org/v4l2/drivers.html)) beserta module I2C. Konfigurasikan perangkat di atas sesuai petunjuk masing-masing. Jika kamu beruntung, coba lakukan
+Pada kebanyakan kasus, kamu akan membutuhkan *bttv-drivers* (*driver* lain tersedia, lihat [drivers](http://linux.bytesex.org/v4l2/drivers.html)) beserta module I2C. Konfigurasikan perangkat di atas sesuai petunjuk masing-masing. Jika kamu beruntung, coba lakukan
 
  `modprobe bttv` 
 
-akan mendeteksi otomatis perangkat kamu (cek `dmesg` untuk melihat hasilnya). Pada kasus tersebut, kamu tinggal memasang aplikasi untuk menonton TV. Kita akan meninjaunya belakangan. Jika deteksi otomatis tidak berhasil, cek berkas CARDLIST, yang ada di _tarball_ dari [bttv](http://dl.bytesex.org/releases/video4linux/) untuk menemukan parameter yang tepat bagimu. PV951 tanpa dukungan radio akan membutuhkan pemanggilan fungsi berikut:
+akan mendeteksi otomatis perangkat kamu (cek `dmesg` untuk melihat hasilnya). Pada kasus tersebut, kamu tinggal memasang aplikasi untuk menonton TV. Kita akan meninjaunya belakangan. Jika deteksi otomatis tidak berhasil, cek berkas CARDLIST, yang ada di *tarball* dari [bttv](http://dl.bytesex.org/releases/video4linux/) untuk menemukan parameter yang tepat bagimu. PV951 tanpa dukungan radio akan membutuhkan pemanggilan fungsi berikut:
 
  `modprobe bttv card=42 radio=0` 
 
@@ -1747,7 +1745,7 @@ Semua itu bervariasi. Jadi, cobalah. Beberapa kartu yang lain membutuhkan:
 
  `modprobe tuner` 
 
-_Trial-and-error_ memang.
+*Trial-and-error* memang.
 
 TODO: klarifikasi prosedur instalasi.
 
@@ -1761,23 +1759,23 @@ TODO: klarifikasi beberapa masalah dan prosedur. Introduksi XAWTV di halaman yan
 
 ### Kamera Digital
 
-Kebanyakan kamera digital terbaru didukung oleh perangkat _USB mass storage_, sehingga cukup menancapkannya lalu kopi/salin berkas gambar/foto yang ada. Kamera yang lebih lawas mungkin membutuhkan PTP (_Picture Transfer Protocol_) yang memerlukan _special driver_. gPhoto2 menyediakan _driver_ ini dan memungkinkan transfer gambar berbasis shell; `digikam` (untuk KDE) dan `gthumb` (untuk GNOME, `gtkam` opsi lainnya) menggunakan _driver_ ini dan memiliki antarmuka yang menarik.
+Kebanyakan kamera digital terbaru didukung oleh perangkat *USB mass storage*, sehingga cukup menancapkannya lalu kopi/salin berkas gambar/foto yang ada. Kamera yang lebih lawas mungkin membutuhkan PTP (*Picture Transfer Protocol*) yang memerlukan *special driver*. gPhoto2 menyediakan *driver* ini dan memungkinkan transfer gambar berbasis shell; `digikam` (untuk KDE) dan `gthumb` (untuk GNOME, `gtkam` opsi lainnya) menggunakan *driver* ini dan memiliki antarmuka yang menarik.
 
 ### USB Memory Sticks / Hard Disks
 
-_USB Memory Sticks_ dan _hard disks_ didukung langsung oleh _USB mass storage_ dan akan muncul sebagai _SCSI device_ (`/dev/sdX`). Jika kamu menggunakan KDE atau GNOME, kamu sebaiknya memakai `dbus` dan `hal` (tambahkan fungsi itu ke _daemons_ di berkas `/etc/rc.conf`), dan perangkat tersebut akan di-_mount_ otomatis. Jika kamu memakai DE yang berbeda, coba gunakan `ivman`.
+*USB Memory Sticks* dan *hard disks* didukung langsung oleh *USB mass storage* dan akan muncul sebagai *SCSI device* (`/dev/sdX`). Jika kamu menggunakan KDE atau GNOME, kamu sebaiknya memakai `dbus` dan `hal` (tambahkan fungsi itu ke *daemons* di berkas `/etc/rc.conf`), dan perangkat tersebut akan di-*mount* otomatis. Jika kamu memakai DE yang berbeda, coba gunakan `ivman`.
 
 ## Memelihara sistem
 
 ### Pacman
 
-[Pacman](/index.php/Pacman "Pacman") adalah pengelola kedua jenis paket--binari dan kode sumber--yang mampu mengunduh, memasang, dan _upgrade_ paket dari _remote_ dan repositori lokal dengan penanganan dependensi otomatis, dan peranti yang mudah dipahami untuk membuat paket kamu sendiri.
+[Pacman](/index.php/Pacman "Pacman") adalah pengelola kedua jenis paket--binari dan kode sumber--yang mampu mengunduh, memasang, dan *upgrade* paket dari *remote* dan repositori lokal dengan penanganan dependensi otomatis, dan peranti yang mudah dipahami untuk membuat paket kamu sendiri.
 
 Deskripsi lebih detail tentang Pacman dapat ditemukan di [artikel ini](/index.php/Pacman "Pacman").
 
 #### Perintah yang bermanfaat
 
-Untuk sinkronisasi dan _update_ basisdata paket lokal dengan _remote_ repositories _(hal ini sebaiknya dilakukan sebelum memasang (_installing_) dan_ upgrading _paket):_
+Untuk sinkronisasi dan *update* basisdata paket lokal dengan *remote* repositories *(hal ini sebaiknya dilakukan sebelum memasang (*installing*) dan* upgrading *paket):*
 
  `pacman -Sy` 
 
@@ -1785,7 +1783,7 @@ Untuk **upgrade** semua paket di sistem:
 
  `pacman -Su` 
 
-Untuk sinkronisasi, _update_, dan **upgrade** semua paket di sistem dengan satu perintah:
+Untuk sinkronisasi, *update*, dan **upgrade** semua paket di sistem dengan satu perintah:
 
  `pacman -Syu` 
 
@@ -1805,11 +1803,11 @@ Untuk menghapus semua dependensi paket yang tidak dibutuhkan dan tidak perlu mem
 
  `pacman -Rsn package` 
 
-Untuk menelusuri daftar basisdata paket di _remote (repo)_ berdasar kata kunci tertentu:
+Untuk menelusuri daftar basisdata paket di *remote (repo)* berdasar kata kunci tertentu:
 
  `pacman -Ss keyword` 
 
-Untuk mengurutkan (_query_) semua paket di sistem kamu:
+Untuk mengurutkan (*query*) semua paket di sistem kamu:
 
  `pacman -Q` 
 
@@ -1821,7 +1819,7 @@ Untuk menelusuri basisdata paket lokal (di mesin kamu) untuk kata kunci tertentu
 
  `pacman -Qi package` 
 
-Untuk _defragment_ _cache_ basisdata `pacman` dan mengoptimalkan kecepatannya:
+Untuk *defragment* *cache* basisdata `pacman` dan mengoptimalkan kecepatannya:
 
  `pacman-optimize` 
 
@@ -1837,4 +1835,4 @@ Catatan: Terdapat banyak fungsi dan perintah tambahan yang tak terhitung jumlahn
 
 ## Informasi Lebih Lanjut
 
-Jika setelah membaca ini kamu ingin sedikit memolesnya lagi, silakan menuju [Post Installation Tips](/index.php/Post_Installation_Tips "Post Installation Tips"). Untuk bantuan dan informasi lebih lanjut, kamu bisa menuju ke [Halaman utama Linux Arch](https://www.archlinux.org), menelusuri [wiki](https://wiki.archlinux.org/index.php/), [forum](https://bbs.archlinux.org), [IRC channel](/index.php/ArchChannel "ArchChannel"), dan [_mailing lists_](https://www.archlinux.org/mailman/listinfo/).
+Jika setelah membaca ini kamu ingin sedikit memolesnya lagi, silakan menuju [Post Installation Tips](/index.php/Post_Installation_Tips "Post Installation Tips"). Untuk bantuan dan informasi lebih lanjut, kamu bisa menuju ke [Halaman utama Linux Arch](https://www.archlinux.org), menelusuri [wiki](https://wiki.archlinux.org/index.php/), [forum](https://bbs.archlinux.org), [IRC channel](/index.php/ArchChannel "ArchChannel"), dan [*mailing lists*](https://www.archlinux.org/mailman/listinfo/).

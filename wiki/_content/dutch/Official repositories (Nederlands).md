@@ -1,4 +1,4 @@
-_Omdat er veel verwarring is over de officiële repository's, zal dit artikel proberen om wat duidelijkheid te scheppen:_
+*Omdat er veel verwarring is over de officiële repository's, zal dit artikel proberen om wat duidelijkheid te scheppen:*
 
 ## Contents
 
@@ -26,26 +26,26 @@ Dit werkte een tijdje, maar niet toen de vertrouwde gebruikers verveeld raakten 
 
 ### [core]
 
-Het [core] repository kan worden gevonden in _core/os/i686_ of _core/os/x86_64_ op je favoriete spiegelserver. Het bevat Arch's core pakketten en een aantal extra softwarepakketten, die je voorzien van een volledig functioneel basis-systeem.
+Het [core] repository kan worden gevonden in *core/os/i686* of *core/os/x86_64* op je favoriete spiegelserver. Het bevat Arch's core pakketten en een aantal extra softwarepakketten, die je voorzien van een volledig functioneel basis-systeem.
 
-_De installatie-CD bevat simpelweg een installatiescript en een momentopname van de inhoud van het [core] repository._
+*De installatie-CD bevat simpelweg een installatiescript en een momentopname van de inhoud van het [core] repository.*
 
 ### [extra]
 
-Het [extra] repository kan worden gevonden in _extra/os/i686_ of _extra/os/x86_64_ op je favoriete spiegelserver. Het bevat alle pakketten die niet in [core] passen. Voorbeeld: X.org, window managers, web servers, mediaspelers, programmeertalen als Python, Ruby en Perl en nog veel meer.
+Het [extra] repository kan worden gevonden in *extra/os/i686* of *extra/os/x86_64* op je favoriete spiegelserver. Het bevat alle pakketten die niet in [core] passen. Voorbeeld: X.org, window managers, web servers, mediaspelers, programmeertalen als Python, Ruby en Perl en nog veel meer.
 
 ### [community]
 
-Het [community] repository kan worden gevonden in _community/os/i686_ of _community/os/x86_64_ op je favoriete spiegelserver. Deze repository wordt onderhouden door de TU's (Trusted Users, oftewel vertrouwde gebruikers), en is onderdeel van het _Arch User Repository (AUR)_. Het bevat pakketten van _AUR_, die genoeg stemmen hebben en geadopteerd zijn door een _TU_.
+Het [community] repository kan worden gevonden in *community/os/i686* of *community/os/x86_64* op je favoriete spiegelserver. Deze repository wordt onderhouden door de TU's (Trusted Users, oftewel vertrouwde gebruikers), en is onderdeel van het *Arch User Repository (AUR)*. Het bevat pakketten van *AUR*, die genoeg stemmen hebben en geadopteerd zijn door een *TU*.
 
 ### [testing]
 
-Het [testing] repository kan worden gevonden in _testing/os/i686_ of _testing/os/x86_64_ op je favoriete spiegelserver. Deze repository is speciaal, omdat het pakketten bevat, die kandidaat zijn voor de repository's [core] of [extra]. Nieuwe pakketten gaan in [testing] als:
+Het [testing] repository kan worden gevonden in *testing/os/i686* of *testing/os/x86_64* op je favoriete spiegelserver. Deze repository is speciaal, omdat het pakketten bevat, die kandidaat zijn voor de repository's [core] of [extra]. Nieuwe pakketten gaan in [testing] als:
 
 *   er van wordt verwacht dat ze iets vernielen tijdens updaten en eerst moeten worden getest
 *   ze afhankelijk zijn van andere pakketten, die eerst opnieuw moeten worden gebouwd. In dit geval worden alle pakketten die opnieuw moeten worden gebouwd, eerst in [testing] gezet, en worden pas naar de originele repository's gezet, als alle pakketten opnieuw gebouwd zijn.
 
-[testing] is het enige repository die botsingen in de namen van pakketten kan hebben met elk van de andere officiële repository's. Indien geactiveerd, moet [testing] de eerste repository zijn in je _pacman.conf_ bestand.
+[testing] is het enige repository die botsingen in de namen van pakketten kan hebben met elk van de andere officiële repository's. Indien geactiveerd, moet [testing] de eerste repository zijn in je *pacman.conf* bestand.
 
 Wees voorzichtig als je [testing] activeert. Je systeem kan breken (in de zin van niet functioneel worden) als je een update uitvoert met [testing] geactiveerd. Alleen ervaren gebruikers zouden [testing] moeten gebruiken.
 

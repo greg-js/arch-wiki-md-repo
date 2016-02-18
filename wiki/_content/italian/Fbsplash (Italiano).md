@@ -65,7 +65,6 @@ Il parametro `loglevel=3` impedisce i messaggi del kernel anche con hardware non
 Aggiungere uno o più temi installati in `/etc/conf.d/splash`. E' possibile aggiungere anche la risoluzione dello schermo per avere spazi initcpio:
 
  `/etc/conf.d/splash` 
-
 ```
 SPLASH_THEMES="
     arch-black
@@ -91,7 +90,7 @@ o in caso di crittografia di sistema:
 
 Rigenera il tuo initcpio via mkinitcpio. Vedere [il wiki di Mkinitcpio](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)") per maggiori informazioni.
 
-**Note:** Con i vecchi kernel che non supportano devtmpfs, **udev** è necessario prima di **fbsplash** per avviare lo splash (/dev/fb0 per il framebuffer, etc.) e/o evitare schermate visualizzate dal kernel patchato con Fbcondecor. Per evitare interferenze, il componente **uresume** fornito con _uswsusp-fbsplash_ aspetterà che qualsiasi estensione **fadein** di Fbcondecor finisca. Per un veloce recupero, è raccomandato mettere **uswsusp** prima di **fbsplash** o addirittura omettere fadein se si una un kernel Fbcondecor.
+**Note:** Con i vecchi kernel che non supportano devtmpfs, **udev** è necessario prima di **fbsplash** per avviare lo splash (/dev/fb0 per il framebuffer, etc.) e/o evitare schermate visualizzate dal kernel patchato con Fbcondecor. Per evitare interferenze, il componente **uresume** fornito con *uswsusp-fbsplash* aspetterà che qualsiasi estensione **fadein** di Fbcondecor finisca. Per un veloce recupero, è raccomandato mettere **uswsusp** prima di **fbsplash** o addirittura omettere fadein se si una un kernel Fbcondecor.
 
 Se si dovessero avere problemi di fbsplash con KMS (Kernel Mode Setting), provare ad [aggiungere il driver appropriato in mkinitcpio.conf](/index.php/Intel_(Italiano)#KMS_.28Kernel_Mode_Setting.29 "Intel (Italiano)").
 

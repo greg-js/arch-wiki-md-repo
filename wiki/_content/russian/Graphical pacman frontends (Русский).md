@@ -41,7 +41,7 @@
 
 	[https://code.google.com/p/wakka-package-manager/](https://code.google.com/p/wakka-package-manager/) || [wakka](https://aur.archlinux.org/packages/wakka/)
 
-*   **GNOME PackageKit** — набор утилит для управления пакетами, поддерживающий различные пакетные менеджеры. Использует консольный пакетный менеджер _alpm_ и обладает следующим функционалом:
+*   **GNOME PackageKit** — набор утилит для управления пакетами, поддерживающий различные пакетные менеджеры. Использует консольный пакетный менеджер *alpm* и обладает следующим функционалом:
 
 *   установка и удаление пакетов из репозиториев;
 *   периодическая синхронизация базы данных пакетов и предложение обновиться;
@@ -49,9 +49,9 @@
 *   поиск пакетов по названию, описанию, категории или файлам;
 *   отображение зависимостей пакетов, файлов и обратных зависимостей;
 *   игнорирование пакетов из `IgnorePkgs` и "заморозка" с `HoldPkgs`;
-*   показ дополнительных зависимостей, файлов _.pacnew_ и т.д.
+*   показ дополнительных зависимостей, файлов *.pacnew* и т.д.
 
-	Вы можете изменить ключ удаления с `-Rc` на `-Rsc`. Для этого следует в _dconf_ установить ключ `org.gnome.packagekit.enable-autoremove`
+	Вы можете изменить ключ удаления с `-Rc` на `-Rsc`. Для этого следует в *dconf* установить ключ `org.gnome.packagekit.enable-autoremove`
 
 **Tip:** Вместо PulseAudio можно установить из AUR пакет [gnome-settings-daemon-nopulse](https://aur.archlinux.org/packages/gnome-settings-daemon-nopulse/).
 
@@ -143,7 +143,7 @@
 
 	[https://code.google.com/p/pacupdate/](https://code.google.com/p/pacupdate/) || [pacupdate-svn](https://aur.archlinux.org/packages/pacupdate-svn/)
 
-*   **Yapan (Yet Another Package mAnager Notifier)** — написан на C++ и [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)"). Поддерживает другие пакетные менеджеры, такие как _clyde_ или [yaourt](/index.php/Yaourt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Yaourt (Русский)"), отображает значок в системном трее и, при доступности обновлений, показывает соответствующее всплывающее уведомление.
+*   **Yapan (Yet Another Package mAnager Notifier)** — написан на C++ и [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)"). Поддерживает другие пакетные менеджеры, такие как *clyde* или [yaourt](/index.php/Yaourt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Yaourt (Русский)"), отображает значок в системном трее и, при доступности обновлений, показывает соответствующее всплывающее уведомление.
 
 	**Скриншоты**: [https://bitbucket.org/otsug/yapan/wiki/Home](https://bitbucket.org/otsug/yapan/wiki/Home)
 
@@ -157,7 +157,7 @@
 
 	[https://aur.archlinux.org/packages.php?ID=25948](https://aur.archlinux.org/packages.php?ID=25948) || [zenman](https://aur.archlinux.org/packages/zenman/)
 
-*   **pkgnotify.sh** — простой 14-ти строчный скрипт, показывающий количество доступных обновлений в заголовке окна [dzen2](https://www.archlinux.org/packages/?name=dzen2), а список обновлений - во вспомогательном окне. Зависит от [dzen2](https://www.archlinux.org/packages/?name=dzen2), [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools), [package-query](https://aur.archlinux.org/packages/package-query/) и, опционально, приложения для работы с AUR (по умолчанию _yaourt_).
+*   **pkgnotify.sh** — простой 14-ти строчный скрипт, показывающий количество доступных обновлений в заголовке окна [dzen2](https://www.archlinux.org/packages/?name=dzen2), а список обновлений - во вспомогательном окне. Зависит от [dzen2](https://www.archlinux.org/packages/?name=dzen2), [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools), [package-query](https://aur.archlinux.org/packages/package-query/) и, опционально, приложения для работы с AUR (по умолчанию *yaourt*).
 
 	**Скриншоты**: [http://andreasbwagner.tumblr.com/post/853471635/arch-linux-update-notifier-for-dzen2](http://andreasbwagner.tumblr.com/post/853471635/arch-linux-update-notifier-for-dzen2)
 
@@ -173,10 +173,10 @@
 
 ## Неактивные программы
 
-*   [pacmanXG 2x series](https://aur.archlinux.org/packages.php?ID=52039/), графическая оболочка для Pacman и _yaourt_, не зависящая от GTK или QT
+*   [pacmanXG 2x series](https://aur.archlinux.org/packages.php?ID=52039/), графическая оболочка для Pacman и *yaourt*, не зависящая от GTK или QT
 *   [GtkPacman](http://gtkpacman.berlios.de/), оболочка на GTK
 *   [Guzuta](http://guzuta.berlios.de/), оболочка на GTK
-*   [Shaman](http://chakra-linux.org/wiki/index.php/Shaman), GUI использующий библиотеку _libalpm_ Pacman’а
+*   [Shaman](http://chakra-linux.org/wiki/index.php/Shaman), GUI использующий библиотеку *libalpm* Pacman’а
 *   [pacmon](http://code.google.com/p/pacmon/), графические всплывающие уведомления
 *   [Paku](https://gna.org/projects/paku/), альтернативный GUI для Pacman
 *   [YAPG](http://www.kde-apps.org/content/show.php/YAPG+-+Yet+Another+Pacman+Gui+?content=60052) список GUI на kde-apps.org

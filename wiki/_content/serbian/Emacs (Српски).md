@@ -33,7 +33,7 @@ Emacs je prosiriv, prilagodljiv, samo-dokumentovan editor koji radi u realnom vr
 
 ## Instalacija
 
-Emacs dolazi u nekoliko varijacija (ponekad se naziva _emacsen_). Najzastupljeniji od ovih je GNU Emacs koji moze da se instalira (kao root) preko:
+Emacs dolazi u nekoliko varijacija (ponekad se naziva *emacsen*). Najzastupljeniji od ovih je GNU Emacs koji moze da se instalira (kao root) preko:
 
 ```
 # pacman -S emacs
@@ -46,7 +46,7 @@ Druga uobicajena varijacija je xemacs, koji je takodje dostupan za instalaciju p
 
 Iako je Emacs kompleksan, nece proci puno vremena pre nego sto pocnete da shvatate koristi koje nivo prilagodljivosti i prosirivosti donosi. Stavise, sveobuhvatna raznolikost dodataka (ekstenzija) koje su vec dostupne pruzaju mogucnost transformacije u mocno okruzenje za skoro svaki oblik tekst editovanja.
 
-Emacs ima odlican ugradjen tutorijal kom se moze pristupiti klikom na prvi link na sples ekranu (pocetni ekran prilikom paljenja Emacs-a); selektovanjem _Help->Emacs Tutorial_ iz menija ili pritiskanjem 'F1' praceno sa 't'. Ova stranica je napravljena s ciljem da bude dodatni izvor za startovanje sa Emacs-om.
+Emacs ima odlican ugradjen tutorijal kom se moze pristupiti klikom na prvi link na sples ekranu (pocetni ekran prilikom paljenja Emacs-a); selektovanjem *Help->Emacs Tutorial* iz menija ili pritiskanjem 'F1' praceno sa 't'. Ova stranica je napravljena s ciljem da bude dodatni izvor za startovanje sa Emacs-om.
 
 Emacs takodje sadrzi skup referentnih kartica, korisnih za pocetnike i eksperte, pogledajte `/usr/share/emacs/<version>/etc/refcards/` (zamenite <version> sa vasom verzijom emacs-a).
 
@@ -77,7 +77,7 @@ $ emacs filename.txt
 
 Emacs korisnici koriste terminologiju i konvencije koje mogu delovati neobicno u pocetku i zbog toga cemo ih predstavljati kako budu nailazile redom. Ipak, postoji deo terminologije koju treba predstaviti odmah, jer je od vitalnog znacaja za rad sa Emacs-om.
 
-Deo terminologije koju je neophodno odmah predstaviti je koncept _bafera_. Bafer predstavlja podatke u okviru Emacs-a. Na primer, kada je fajl otvoren u Emacs-u, taj fajl je iscitan sa diska i njegov sadrzaj je skladisten u baferu, koji pruza mogucnost njegovog editovanja i cuvanja nazad na disk kasnije. Baferi nisu ograniceni na tekst i mogu da sadrze i slike i dodatke. Drugi nacin da razmisljate o tome: podaci dostupni na disku se nazivaju 'fajl', dok podaci dostupni u Emacs-u se nazivaju 'bafer' (eng. buffer).
+Deo terminologije koju je neophodno odmah predstaviti je koncept *bafera*. Bafer predstavlja podatke u okviru Emacs-a. Na primer, kada je fajl otvoren u Emacs-u, taj fajl je iscitan sa diska i njegov sadrzaj je skladisten u baferu, koji pruza mogucnost njegovog editovanja i cuvanja nazad na disk kasnije. Baferi nisu ograniceni na tekst i mogu da sadrze i slike i dodatke. Drugi nacin da razmisljate o tome: podaci dostupni na disku se nazivaju 'fajl', dok podaci dostupni u Emacs-u se nazivaju 'bafer' (eng. buffer).
 
 Konvencija za imenovanje tastera u Emacs-u ce vam najverovatnije biti nepoznata.
 
@@ -91,13 +91,13 @@ Na primer, za izlazak iz Emacs-a se koristi sledeca sekvenca: **C-x C-c**. Ovo m
 
 ### Pokretanje
 
-Pomeranje kursora je slicno kao i u drugim grafickim editorima. Mis i tasteri sa strelicama mogu da se koriste za promenu pozicije kursora (naziva se kao _point_ u Emacs-u). Standardne komande za kretanje koje se vrsi pomocu tastera sa strelicama takodje imaju pristupacnije skracenice u Emacs-u. Da se pomerite napred jedan karakter, upotrebite **C-f**, da se pomerite jedan karakter unazad, **C-b**. **C-n** i **C-p** se mogu upotrebiti za pomeranje na sledecu i prethodnu liniju, redom. Opet, generalno se preporucuje upotreba ovih precica u odnosu na mis ili tastere sa strelicama.
+Pomeranje kursora je slicno kao i u drugim grafickim editorima. Mis i tasteri sa strelicama mogu da se koriste za promenu pozicije kursora (naziva se kao *point* u Emacs-u). Standardne komande za kretanje koje se vrsi pomocu tastera sa strelicama takodje imaju pristupacnije skracenice u Emacs-u. Da se pomerite napred jedan karakter, upotrebite **C-f**, da se pomerite jedan karakter unazad, **C-b**. **C-n** i **C-p** se mogu upotrebiti za pomeranje na sledecu i prethodnu liniju, redom. Opet, generalno se preporucuje upotreba ovih precica u odnosu na mis ili tastere sa strelicama.
 
 Kao sto se moze ocekivati, Emacs pruza naprednije komande za kretanje, ukljucujuci kretanje po rec i recenicu. **M-f** pomera napred jednu rec i **M-b** ce pomeriti kursor jednu rec unazad. Slicno, **M-e** pomera kursor jednu recenicu napred i **M-a** jednu recenicu nazad.
 
 Do sada, sve komande za kretanje koje su predstavljene su bile relativne u odnosu na trenutnu poziciju. **M-<** se moze koristiti za pomeranje kursora na pocetak bafera, sa svojim kolegom, **M->**, koji vrsi pomeranje na kraj bafera. Da pomerite kursor na odredjeni broj linije, upotrebite **M-g g**. **M-g g** ce vas upozoriti za zeljeni broj linije. Takodje, da se pomerite na pocetak ili kraj tekuce linije, upotrebite **C-a** ili **C-e**.
 
-**Note:** Skracenice za ove komande, ili bilo koju komandu, se mogu razlikovati _blago_ u zavisnosti od modova koji su trenutno aktivni. Ipak, te skracenice u najvecem broju slucajeva pruzaju jednaku funkcionalnost. Pogledajte [Modes](/index.php/Emacs#Modes "Emacs") za vise informacija.
+**Note:** Skracenice za ove komande, ili bilo koju komandu, se mogu razlikovati *blago* u zavisnosti od modova koji su trenutno aktivni. Ipak, te skracenice u najvecem broju slucajeva pruzaju jednaku funkcionalnost. Pogledajte [Modes](/index.php/Emacs#Modes "Emacs") za vise informacija.
 
 ### Fajlovi i baferi
 
@@ -105,7 +105,7 @@ Emacs pruza seriju komandi koje se primenjuju na fajlove. O najzastupljenijoj ko
 
 **Note:** **C-x C-f** ne cita opet fajl sa diska ako je bafer koji odgovara fajlu i dalje otvoren. Da ponovo iscitate fajl sa diska, ubite bafer (**C-x k**) pre **C-x C-f** ili upotrebite **M-x revert-buffer**.
 
-Mnoge interaktivne komande poput "find-file" ili "write-file" daju upozorenje za unos u skroz donjoj liniji Emacs prozora. Ova linija se naziva _minibuffer_. Minibafer podrzava mnoge osnovne komande za editovanje kao i tab dovrsavanje komandi. Slicno onom koje je dostupno u mnogim *nix komandnim linijama. **<TAB>** se moze pritisnuti dva puta uzastopno za prikaz liste kompletnih komandi, i ako zelite, mozete da upotrebite mis da selektujete kompletnu komandu sa te liste. Kompletiranje u minibaferu je dostupno za mnoge forme unosa ukljucujuci komande i imena fajlova.
+Mnoge interaktivne komande poput "find-file" ili "write-file" daju upozorenje za unos u skroz donjoj liniji Emacs prozora. Ova linija se naziva *minibuffer*. Minibafer podrzava mnoge osnovne komande za editovanje kao i tab dovrsavanje komandi. Slicno onom koje je dostupno u mnogim *nix komandnim linijama. **<TAB>** se moze pritisnuti dva puta uzastopno za prikaz liste kompletnih komandi, i ako zelite, mozete da upotrebite mis da selektujete kompletnu komandu sa te liste. Kompletiranje u minibaferu je dostupno za mnoge forme unosa ukljucujuci komande i imena fajlova.
 
 Minibafer takodje pruza mogucnost pracenja istorije. Prethodne unesene komande se mogu ponovo pozvati upotrebom **Up Arrow** ili **C-p**.
 
@@ -121,7 +121,7 @@ Lista svih otvorenih bafera se moze prikazati upotrebom **C-x C-b**. Ako bafer v
 
 Postoji veliki broj komandi za editovanje u okviru Emacs-a. Najbitnija komanda je verovatno ona koju jos nismo predstavili, a to je 'undo', koja se moze pokrenuti sa **C-_** ili **C-/**. Komande za kretanje generalno takodje imaju odgovarajuce komande za brisanje. Na primer, **M-<backspace>** se moze koristiti za brisanje reci unazad, i **M-d** za brisanje reci unapred. Da obrisete do kraja linije, ili kraj recenice, upotrebite **C-k** ili **M-k**.
 
-Osnovno je pravilo da ni jedna linija ne treba da prelazi 80 karaktera. Ovo doprinosi citljivosti, pogotovo u slucajevima gde linija obavija na ivici prozora. Automatsko ubacivanje (ili uklanjanje) linije za razdvajanje je poznato kao _filling_ u Emacs-u. Paragraf moze biti popunjen upotrebom **M-q**.
+Osnovno je pravilo da ni jedna linija ne treba da prelazi 80 karaktera. Ovo doprinosi citljivosti, pogotovo u slucajevima gde linija obavija na ivici prozora. Automatsko ubacivanje (ili uklanjanje) linije za razdvajanje je poznato kao *filling* u Emacs-u. Paragraf moze biti popunjen upotrebom **M-q**.
 
 Karakteri i reci mogu biti transponovani koriscenjem **C-t** i **M-t**. Naprimer: `Hello World!` → `World! Hello`
 
@@ -129,9 +129,9 @@ Velika i mala slova su takodje podesiva. **M-l** prebacuje u mala slova sledecu 
 
 ### Ubijanje, yank-ovanje i regioni
 
-Region je deo teksta izmedju dve pozicije. Jedna od ovih pozicija se naziva _mark_, a drugi je tacka. **C-<SPC>** se koristi za zadavanje pocetne pozicije za markiranje, nakon cega tacka moze da se pomera da bi se kreirao region. U okviru GNU Emacs-a 23.1 pa na dalje, ovaj region je vidljiv prema pocetnim podesavanjima. Postoji veliki broj komandi koje deluju na regione, medju kojima se najvise koriste _killing_ komande.
+Region je deo teksta izmedju dve pozicije. Jedna od ovih pozicija se naziva *mark*, a drugi je tacka. **C-<SPC>** se koristi za zadavanje pocetne pozicije za markiranje, nakon cega tacka moze da se pomera da bi se kreirao region. U okviru GNU Emacs-a 23.1 pa na dalje, ovaj region je vidljiv prema pocetnim podesavanjima. Postoji veliki broj komandi koje deluju na regione, medju kojima se najvise koriste *killing* komande.
 
-U Emacs-u, cut i paste se nazivaju _kill_ i 'yank_. Mnoge komande koje brisu vise od jednog karaktera (ukljucujuci mnoge od onih vec naponenutih gore, poput **C-k** i **M-d**) zapravo seku (cut-uju) tekst i dodaju ga na ono sto se zove "kill-ring_. Kill-ring je, jednostavno, lista ubijenog teksta. Kill-ring skladisti do 60 zadnjih ubistava, prema pocenim podesavanjima. Sukcesivna ubistva se skladiste na celo liste.
+U Emacs-u, cut i paste se nazivaju *kill* i 'yank*. Mnoge komande koje brisu vise od jednog karaktera (ukljucujuci mnoge od onih vec naponenutih gore, poput **C-k** i **M-d**) zapravo seku (cut-uju) tekst i dodaju ga na ono sto se zove "kill-ring*. Kill-ring je, jednostavno, lista ubijenog teksta. Kill-ring skladisti do 60 zadnjih ubistava, prema pocenim podesavanjima. Sukcesivna ubistva se skladiste na celo liste.
 
 **C-w** i **M-w** se mogu koristiti za ubijanje i kopiranje regiona.
 
@@ -151,7 +151,7 @@ Kao dodatak pretrazi, takodje je moguce vrsiti zamenu stringova i regularnih izr
 
 Uvlake se obicno postizu sa **<TAB>**, za uvlacenje jedne linije, ili sa **C-M-\**, da uvucete region.
 
-Nacin na koji se tekst uvlaci obicno zavisi od _major-mode_-a (glavni mod) koji je aktivan. Glavni mod obicno definise stil uvlacenja u zavisnosti od tipa teksta koji trenutno obradjujemo. (Pogledajte [Modove](/index.php/Emacs#Modes "Emacs") za vise informacija.)
+Nacin na koji se tekst uvlaci obicno zavisi od *major-mode*-a (glavni mod) koji je aktivan. Glavni mod obicno definise stil uvlacenja u zavisnosti od tipa teksta koji trenutno obradjujemo. (Pogledajte [Modove](/index.php/Emacs#Modes "Emacs") za vise informacija.)
 
 U nekim slucajevima moze da se desi odgovarajuci glavni-mod ne postoji za odredjeni tip fajla, i u tom slucaju je neophodno da rucno pravite uvlake. Napravite region (pogledajte [Ubijanje, jankovanje i regioni](/index.php/Emacs#Killing.2C_yanking_and_regions "Emacs")) zatim izvrsite uvlacenje sa **C-u <n> C-x <TAB>** (gde je '<n>' iznos broja kolona od kojih ce se sastojati uvlaka). Na primer:
 
@@ -173,11 +173,11 @@ C-u -2 C-x <TAB>
 
 ### Prozori i okviri
 
-Emacs je dizajniran za ugodno editovanje mnogih fajlova odjednom. To se postize razdvajanjem Emacs interfejsa na tri nivoa. Naime, baferi, koji su vec predstavljeni, kao i _prozori_ i _okviri_.
+Emacs je dizajniran za ugodno editovanje mnogih fajlova odjednom. To se postize razdvajanjem Emacs interfejsa na tri nivoa. Naime, baferi, koji su vec predstavljeni, kao i *prozori* i *okviri*.
 
-_prozor_ pogled koji se koristi za prikazivanje bafera. Prozor moze da prikazuje samo jedan bafer u datom momentu, ali vise bafera moze biti prikazano u vise prozora. Iza svakog prozora postoji _mode-line_ (mod linija), koja prikazuje informacije o tom baferu.
+*prozor* pogled koji se koristi za prikazivanje bafera. Prozor moze da prikazuje samo jedan bafer u datom momentu, ali vise bafera moze biti prikazano u vise prozora. Iza svakog prozora postoji *mode-line* (mod linija), koja prikazuje informacije o tom baferu.
 
-_frejm_ je Emacs-ov _prozor_ (u standardnoj terminologiji. i.e., 'prozor' u smislu moderne desktop paradigme) koji sadrzi naslovnu traku (eng. title bar), meni liniju i jos jednu ili vise 'prozora'.
+*frejm* je Emacs-ov *prozor* (u standardnoj terminologiji. i.e., 'prozor' u smislu moderne desktop paradigme) koji sadrzi naslovnu traku (eng. title bar), meni liniju i jos jednu ili vise 'prozora'.
 
 Od sada pa na dalje cemo koristiti definiciju ovih termina kao sto postoje u Emacs-u.
 
@@ -224,7 +224,7 @@ line-number-mode je omogucen prema pocetnim podesavanjima, ali moze se upaliti/u
 
 **M-x line-number-mode <RET>**
 
-sh-mode je _glavni-mod_ (major-mode). Glavni modovi podesavaju Emacs i vrlo cesto pruzaju specijalizovani skup komandi za editovanje odredjenog tipa teksta. Samo jedan glavni mod moze biti aktivan u svakom od bafera. Kao dodatak isticanju sintakse i podrske za uvlake, sh-mode definise nekoliko komandi ciji je cilj da pomogne u editovanju shell skripti. Sledi nekoliko tih komandi:
+sh-mode je *glavni-mod* (major-mode). Glavni modovi podesavaju Emacs i vrlo cesto pruzaju specijalizovani skup komandi za editovanje odredjenog tipa teksta. Samo jedan glavni mod moze biti aktivan u svakom od bafera. Kao dodatak isticanju sintakse i podrske za uvlake, sh-mode definise nekoliko komandi ciji je cilj da pomogne u editovanju shell skripti. Sledi nekoliko tih komandi:
 
 ```
 **C-c (**	 Umetanje definicije funkcije
@@ -239,7 +239,7 @@ sh-mode je _glavni-mod_ (major-mode). Glavni modovi podesavaju Emacs i vrlo cest
 
 ```
 
-'line-number-mode' i 'column-number-mode', su _manji-modovi_ (minor-modes). Manji modovi mogu da se koriste za prosirivanje glavnih modova i mogu se koristiti u neogranicenom broju u datom trenutku.
+'line-number-mode' i 'column-number-mode', su *manji-modovi* (minor-modes). Manji modovi mogu da se koriste za prosirivanje glavnih modova i mogu se koristiti u neogranicenom broju u datom trenutku.
 
 ## Saveti i trikovi
 
@@ -267,13 +267,13 @@ Staza za TRAMP je obicno u formi '/[protokol]:[[user@]host]:<fajl>'. TRAMP podrz
 
 ### Makroi sa tastature i registri
 
-Ovaj deo ce pruziti prakticnu demonstraciju upotrebe nekoliko mocnijih metoda za editovanje, a to su _makroi_ i _registri_.
+Ovaj deo ce pruziti prakticnu demonstraciju upotrebe nekoliko mocnijih metoda za editovanje, a to su *makroi* i *registri*.
 
 Cilj je da proizvedemo listing serije karaktera i njihove odgovarajuce pozicije u toj listi. Iako je moguce formatirati svaki od njih rucno, to bi bilo sporo i podlozno pravljenju gresaka. Alternativno, neke od Emacs-ovih mocnijih funkcionalnosti za editovanje se mogu upotrebiti. Pre opisa metode, navescemo neke detalje koji stoje iza tehnike.
 
-Prva funkcija koju cemo predstaviti su _registri_. Registri se koriste za skladistenje i preuzimanje raznih tipova podataka od brojeva do podesavanja za prozore. Svakom registru je dodeljeno ime jednog karaktera: ovaj karakter se koristi za pristupanje registru.
+Prva funkcija koju cemo predstaviti su *registri*. Registri se koriste za skladistenje i preuzimanje raznih tipova podataka od brojeva do podesavanja za prozore. Svakom registru je dodeljeno ime jednog karaktera: ovaj karakter se koristi za pristupanje registru.
 
-Druga funkcija koja ce biti demonstrirana su _makroi sa tastature_. Makro sa tastature skladisti niz komandi kako bi mogli na lak nacin da se izvrse ponovo kasnije.
+Druga funkcija koja ce biti demonstrirana su *makroi sa tastature*. Makro sa tastature skladisti niz komandi kako bi mogli na lak nacin da se izvrse ponovo kasnije.
 
 Pocev od bafera koji sadrzi nas skup karaktera:
 
@@ -325,7 +325,7 @@ Rezultat:
 
 ### Regularni izrazi
 
-Iz Emacs uputstva: "Regularni izraz, ili _regexp_ skraceno, je model koji podrazumeva (moguce beskonacan) skup stringova." Ova sekcija nece ici u detalje o samim regularnim izrazima (jer, prosto, postoji previse toga da se pokrije). Pruzicemo brzu demonstraciju o moci regularnih izraza. Pogledajte [Regularni izrazi](http://www.gnu.org/software/emacs/manual/html_node/elisp/Regular-ressions.html#Regular-Expressions) sekciju u Emacs uputstvu za vise informacija.
+Iz Emacs uputstva: "Regularni izraz, ili *regexp* skraceno, je model koji podrazumeva (moguce beskonacan) skup stringova." Ova sekcija nece ici u detalje o samim regularnim izrazima (jer, prosto, postoji previse toga da se pokrije). Pruzicemo brzu demonstraciju o moci regularnih izraza. Pogledajte [Regularni izrazi](http://www.gnu.org/software/emacs/manual/html_node/elisp/Regular-ressions.html#Regular-Expressions) sekciju u Emacs uputstvu za vise informacija.
 
 S obzirom na isti scenario predstavljen gore: Lista karaktera koji treba da bude formatiran tako da predstavljaju svoje mesto u listi. (pogledajte [Makroi sa tastature i registri](/index.php/Emacs#Keyboard_macros_and_registers "Emacs")). Opet, pocev sa sadrzajem bafera.
 
@@ -409,7 +409,7 @@ Varijabla, 'auto--alist', se moze modifikovati da promeni glavni mod koji se kor
 
 ```
 
-Podesavanja se takodje mogu primeniti na nivou modova. Uobicajena metoda za ovo je dodavanje funkcije _hook_. Naprimer, da forsirate uvlake da koriste razmake umesto tabova, ali samo u text-mode:
+Podesavanja se takodje mogu primeniti na nivou modova. Uobicajena metoda za ovo je dodavanje funkcije *hook*. Naprimer, da forsirate uvlake da koriste razmake umesto tabova, ali samo u text-mode:
 
 ```
 (add-hook 'text-mode-ook (lambda () (setq indent-tabs-mode nil)))

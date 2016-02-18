@@ -1,6 +1,6 @@
 **Примечание:** пожалуйста сообщите об ошибках на [Bumblebee-Project](https://github.com/Bumblebee-Project/Bumblebee)'s GitHub как описано в [Wiki](https://github.com/Bumblebee-Project/Bumblebee/wiki/Reporting-Issues).
 
-_Bumblebee это решение, позволяющее задействовать гибридную графику с Nvidia Optimus. Основатель проекта Martin Juhl_
+*Bumblebee это решение, позволяющее задействовать гибридную графику с Nvidia Optimus. Основатель проекта Martin Juhl*
 
 ## Contents
 
@@ -86,7 +86,6 @@ Bumblebee пытается подражать поведению Optimus; исп
 Добавьте в /etc/modprobe.d/modprobe.conf строки, выключающие Nouveau при загрузке:
 
 /etc/modprobe.d/modprobe.conf
-
  `blacklist nouveau` 
 
 Теперь загрузите модуль Nvidia:
@@ -111,7 +110,6 @@ MODULES=(... nvidia ...)
 После установки файл /etc/bumblebee/xorg.conf.DRIVER будет содержать минимальную конфигурацию устройств (где DRIVER может бытьnouveau или nvidia). В этот файл вам нужно вписать индивидуальный адрес PCI шины вашей карты. Чтобы получить его, введите в терминале:
 
 `$ lspci -d10de: -nn | grep '030[02]'`
-
  `01:00.0 VGA compatible controller [0300]: nVidia Corporation GT218 [GeForce 310M] [10de:0a75] (rev a2)` 
 
 Обратите внимание на PCI адрес карты (01:00.0 в примере) и отредактируйте строку в /etc/bumblebee/xorg.conf.DRIVER с указанной опцией BusID в секции Device:
@@ -218,7 +216,6 @@ Compression and transport regards how the frames are compressed in the server si
 вы можете испробовать разные методы сжатия, добавив аргумент -c к команде optirun и посмотреть, какая подходит вам больше:
 
 `$ optirun -c <compress-method> /opt/VirtualGL/bin/glxspheres`
-
  `Bumblebee будет передавать кадры с помощью: <compress-method>` 
 
 где <compress-method>может бытьjpeg, xv, proxy, rgbилиyuv. Тогда вы сможете заменить одну из переменных VGL_COMPRESS в /etc/bumblebee/bumblebee.conf, используемых по умолчанию.
@@ -348,7 +345,7 @@ ENABLE_POWER_MANAGEMENT=Y
 *   Проверьте загружен ли модуль nvidia командой "lspci -k"
 *   Проверьте файл /etc/bumblebee/xorg.conf.nvidia и посмотрите соответствует ли значение опции "BusID" вашей PCI шине.
 *   Проверьте опцию "ConnectedMonitor" в "DFP-0"или"CRT-0" (или "DFP,CRT"). Это должно быть верно для различных ноутбуков с "LVDS"
-*   Попробуйте установить опцию _X_SERVER_TIMEOUT_ в более высокое значение, если X сервер запускается, но далеко не сразу становится доступен.
+*   Попробуйте установить опцию *X_SERVER_TIMEOUT* в более высокое значение, если X сервер запускается, но далеко не сразу становится доступен.
 
 ## Смотрите также
 

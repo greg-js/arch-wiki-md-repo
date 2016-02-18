@@ -1,6 +1,6 @@
 From the [project web page](http://gobby.0x539.de/trac/wiki):
 
-_Gobby is a free collaborative editor supporting multiple documents in one session and a multi-user chat._ It uses GTK+ 2 as its windowing toolkit and thus integrates nicely into the GNOME desktop environment.
+*Gobby is a free collaborative editor supporting multiple documents in one session and a multi-user chat.* It uses GTK+ 2 as its windowing toolkit and thus integrates nicely into the GNOME desktop environment.
 
 ## Installation
 

@@ -21,7 +21,7 @@ Sshfs può essere usato per effettuare il mount di file system remoti - accessib
 
 ## Uso
 
-Per prima cosa il modulo necessario al corretto funzionamento dovrebbe essere caricato (come utente _root_):
+Per prima cosa il modulo necessario al corretto funzionamento dovrebbe essere caricato (come utente *root*):
 
 ```
 # modprobe fuse
@@ -35,7 +35,7 @@ Per prima cosa il modulo necessario al corretto funzionamento dovrebbe essere ca
 Si dovrà utilizzare il comando `sshfs`. Per effettuare il mount di una cartella remota:
 
 ```
-_# sshfs NOMEUTENTE@NOMEMACCHINA_O_INDIRIZZOIP:/PERCORSO PUNTO_DI_MOUNT_LOCALE OPZIONI_SSH_
+*# sshfs NOMEUTENTE@NOMEMACCHINA_O_INDIRIZZOIP:/PERCORSO PUNTO_DI_MOUNT_LOCALE OPZIONI_SSH*
 
 ```
 
@@ -57,7 +57,7 @@ Inoltre, assicurarsi prima di connettersi, di aver impostato i giusti permessi s
 Per effettuare l'umount delle cartelle remote:
 
 ```
-_# fusermount -u PUNTO_DI_MOUNT_LOCALE_
+*# fusermount -u PUNTO_DI_MOUNT_LOCALE*
 
 ```
 
@@ -88,7 +88,6 @@ Thunar ha un problema con [FAM](/index.php/FAM_(Italiano) "FAM (Italiano)") e gl
 Potrebbe essere necessario abbinare un utente(specifico) ad una cartella. Per effettuare questo, modificare il file `/etc/ssh/sshd_config`:
 
  `/etc/ssh/sshd_config` 
-
 ```
 .....
 Match User nomeutente 
@@ -144,7 +143,6 @@ sshfs#user@domain.org:/home/user  /media/user   fuse    defaults,allow_other    
 ```
 
 **Nota:** Con il precedente metodo, l'umount non verrà effettuato perché il filesystem non si trova in `fstab`. Per evitare questo errore, rimuovere il prefisso '`sshfs#`', cambiare il filesystem da '`fuse`' a '`fuse.sshfs`', quindi creare uno script chiamato '`sbin/mount.fuse.sshfs`': `/sbin/mount.fuse.sshfs` 
-
 ```
 #!/bin/bash
 DEVICE="$1"

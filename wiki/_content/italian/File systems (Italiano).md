@@ -1,6 +1,6 @@
 Da [Wikipedia](https://en.wikipedia.org/wiki/it:File_system "wikipedia:it:File system"):
 
-	_In informatica, un file system è, informalmente, un meccanismo con il quale i file sono immagazzinati e organizzati su un dispositivo di archiviazione, come un disco rigido o un CD-ROM. Più formalmente, un file system è l'insieme dei tipi di dati astratti necessari per la memorizzazione, l'organizzazione gerarchica, la manipolazione, la navigazione, l'accesso e la lettura dei dati. Di fatto, alcuni file system (come NFS) non interagiscono direttamente con i dispositivi di archiviazione._
+	*In informatica, un file system è, informalmente, un meccanismo con il quale i file sono immagazzinati e organizzati su un dispositivo di archiviazione, come un disco rigido o un CD-ROM. Più formalmente, un file system è l'insieme dei tipi di dati astratti necessari per la memorizzazione, l'organizzazione gerarchica, la manipolazione, la navigazione, l'accesso e la lettura dei dati. Di fatto, alcuni file system (come NFS) non interagiscono direttamente con i dispositivi di archiviazione.*
 
 Ogni singola partizione del disco può essere configurata utilizzando uno dei tanti file system disponibili. Ognuno ha i propri vantaggi, svantaggi, e idiosincrasie uniche. Segue una breve panoramica dei filesystem supportati, i link puntano alle pagine di wikipedia che forniscono molte più informazioni:
 
@@ -20,7 +20,7 @@ Prima di essere formattato, un disco deve essere [partizionato](/index.php/Parti
 
 *   [Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs") - Conosciuto anche come "Better FS", **Btrfs** è un nuovo filesystem con notevoli e potenti caratteristiche, simili all'eccellente ZFS sviluppato da Sun/Oracle. Questi comprendono la creazione di istantanee (snapshots), lo striping e mirroring multi-disco (RAID software fondamentalmente senza mdadm), checksuming, backup incrementale, e la compressione on-the-fly integrata, che può dare un impulso significativo delle prestazioni, nonché di risparmiare spazio. A partire da gennaio 2011 Btrfs è ancora considerato "instabile" anche se è stato inserito nella ramo principale del kernel con uno stato sperimentale. Btrfs sembra essere il futuro del filesystem di GNU/Linux, ed è presente come scelta opzionale per il filesystem di root nelle installazioni delle maggiori distribuzioni.
 *   [exFAT](https://en.wikipedia.org/wiki/exFAT "wikipedia:exFAT") - **File system di Microsoft ottimizzata per le unità flash**. A differenza di NTFS, exFAT non può pre-allocare lo spazio su disco per un file da solo, segnando lo spazio sul disco arbitrariamente come 'assegnato'. Come in FAT, quando si crea un file di lunghezza nota, exFAT deve eseguire una completa scrittura fisica pari alla dimensione del file.
-*   [ext2](https://en.wikipedia.org/wiki/it:ext2 "wikipedia:it:ext2") - **Second Extended Filesystem**- È un filesystem GNU/Linux maturo e molto stabile, ma ha l'inconveniente di non avere il supporto al _journaling_ e ai "Barriers". L'assenza del supporto al journaling può causare la perdita di dati in caso di mancanza di corrente o di un crash di sistema. Può essere **sconveniente** utilizzarlo per le partizioni root (`/`) e `/home`, e ciò è dovuto al suo controllo dell'integrità molto lungo. Un filesystem ext2 può facilmente essere [convertito in ext3](/index.php/Convert_ext2_to_ext3 "Convert ext2 to ext3").
+*   [ext2](https://en.wikipedia.org/wiki/it:ext2 "wikipedia:it:ext2") - **Second Extended Filesystem**- È un filesystem GNU/Linux maturo e molto stabile, ma ha l'inconveniente di non avere il supporto al *journaling* e ai "Barriers". L'assenza del supporto al journaling può causare la perdita di dati in caso di mancanza di corrente o di un crash di sistema. Può essere **sconveniente** utilizzarlo per le partizioni root (`/`) e `/home`, e ciò è dovuto al suo controllo dell'integrità molto lungo. Un filesystem ext2 può facilmente essere [convertito in ext3](/index.php/Convert_ext2_to_ext3 "Convert ext2 to ext3").
 *   [ext3](https://en.wikipedia.org/wiki/ext3 "wikipedia:ext3") - **Third Extended Filesystem**- Essenzialmente è il file system ext2, ma con il supporto per il journaling e alla scrittura dei barrier. Ext3 è completamente compatibile con Ext2 ed è ben collaudato ed estremamente stabile.
 *   [ext4](https://en.wikipedia.org/wiki/ext4 "wikipedia:ext4") - **Fourth Extended Filesystem**- É un filesystem più recente ed è retro-compatibile con le versioni ext2 ed ext3\. Introduce il supporto per i volumi con dimensioni fino a 1 exabyte(cioè 1.048.576 terabyte) e file con dimensioni fino a 16 terabyte. Aumenta il limite da 32.000 sottodirectory di ext3 a 64.000\. Offre capacità di deframmentazione in linea.
 *   [F2FS](https://en.wikipedia.org/wiki/F2FS "wikipedia:F2FS") - **Flash-Friendly File System** è un file system per supporti flash creato da Kim Jaegeuk (Hangul:김재극) da Samsung per il kernel del sistema operativo Linux. La motivazione per F2FS era quello di costruire un file system che da subito prende in considerazione le caratteristiche dei dispositivi di memoria NAND flash memory-based (come ad esempio i dischi a stato solido, eMMC, e schede SD), che sono ampiamente in uso nei sistemi dei computer che vanno dai dispositivi mobili ai server .
@@ -40,7 +40,7 @@ Prima di essere formattato, un disco deve essere [partizionato](/index.php/Parti
 
 Tutti i filesystem sopra citati, ad eccezione di ext2, FAT16/32, utilizzano il [journaling](https://en.wikipedia.org/wiki/it:Journaling "wikipedia:it:Journaling"). I file system con journaling, utilizzano un "diario" per registrare le modifiche prima che queste siano inviate al file system. Nel caso di un crash del sistema o di una interruzione di corrente tale procedura è più veloce per riportare on-line il sistema e a meno probabilità di avere perdita di dati o di essere danneggiato.
 
-Non tutte le tecniche di journaling sono uguali: in particolare, solo ext3 ed ext4 si avvalgono della modalità _data-mode_, che annota sia i **dati** che i **meta-dati**. Il journaling in modalità Data-mode soffre di una penalizzazione di velocità significativa e non è abilitata di default. Gli altri filesystem supportano unicamente la modalità _ordered-mode-journaling_, che registra solo i meta-dati. Mentre tutti i journaling restituiranno un filesystem ad uno stato valido dopo un crash, il journaling in modalità Data-mode offre la massima protezione contro la corruzione e la perdita di dati. Vi è quindi un compromesso in termini di prestazioni del sistema in quanto il journaling in modalità data-mode effettua due operazioni di scrittura: prima al journaling e poi al disco. Il [Trade-off](https://en.wikipedia.org/wiki/it:Trade-off "wikipedia:it:Trade-off") tra la velocità del sistema e la sicurezza dei dati deve essere preso in considerazione quando si sceglie il tipo di filesystem.
+Non tutte le tecniche di journaling sono uguali: in particolare, solo ext3 ed ext4 si avvalgono della modalità *data-mode*, che annota sia i **dati** che i **meta-dati**. Il journaling in modalità Data-mode soffre di una penalizzazione di velocità significativa e non è abilitata di default. Gli altri filesystem supportano unicamente la modalità *ordered-mode-journaling*, che registra solo i meta-dati. Mentre tutti i journaling restituiranno un filesystem ad uno stato valido dopo un crash, il journaling in modalità Data-mode offre la massima protezione contro la corruzione e la perdita di dati. Vi è quindi un compromesso in termini di prestazioni del sistema in quanto il journaling in modalità data-mode effettua due operazioni di scrittura: prima al journaling e poi al disco. Il [Trade-off](https://en.wikipedia.org/wiki/it:Trade-off "wikipedia:it:Trade-off") tra la velocità del sistema e la sicurezza dei dati deve essere preso in considerazione quando si sceglie il tipo di filesystem.
 
 ### Supporto su Arch Linux
 
@@ -112,9 +112,9 @@ Non tutte le tecniche di journaling sono uguali: in particolare, solo ext3 ed ex
 
 ### Requisiti
 
-Prima di continuare bisogna conoscere come vengono nominati i dispositivi su Linux. Hard disk e chiavette USB vengono mostrate come `/dev/sd_x_`, dove "x" è una lettera minuscola, mentre le partizioni vengono mostrate come `/dev/sd_xY_`, dove "Y" è un numero.
+Prima di continuare bisogna conoscere come vengono nominati i dispositivi su Linux. Hard disk e chiavette USB vengono mostrate come `/dev/sd*x*`, dove "x" è una lettera minuscola, mentre le partizioni vengono mostrate come `/dev/sd*xY*`, dove "Y" è un numero.
 
-Se il dispositivo che si desidera formattare è montato, verrà visualizzato nella colonna _MOUNTPOINT_ da:
+Se il dispositivo che si desidera formattare è montato, verrà visualizzato nella colonna *MOUNTPOINT* da:
 
 ```
 $ lsblk
@@ -124,11 +124,11 @@ $ lsblk
 Per montare il vostro dispositivo:
 
 ```
-# mount /dev/sd_xY_ /some/directory
+# mount /dev/sd*xY* /some/directory
 
 ```
 
-Per smontarlo è possibile utilizzare _umount_ sul disco dove è montata la directory:
+Per smontarlo è possibile utilizzare *umount* sul disco dove è montata la directory:
 
 ```
 # umount /some/directory
@@ -143,17 +143,17 @@ Ora è possibile creare nuovi file system attraverso strumenti da console o tram
 
 ### Strumenti da console
 
-Per creare un file system è sufficiente utilizzare _mkfs_, che altro non è che un front-end unificato per i differenti tool `mkfs._fstype_`. Esempio:
+Per creare un file system è sufficiente utilizzare *mkfs*, che altro non è che un front-end unificato per i differenti tool `mkfs.*fstype*`. Esempio:
 
 ```
- # mkfs -t ext4 /dev/_partizione_
+ # mkfs -t ext4 /dev/*partizione*
 
 ```
 
 Per creare un file di swap, utilizzare il comando **mkswap**:
 
 ```
-# mkswap /dev/_partitizione_
+# mkswap /dev/*partitizione*
 
 ```
 

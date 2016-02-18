@@ -106,7 +106,6 @@ Once it exits, unplug the stick and plug it back in and it should be seen as a m
 Create the following [udev](/index.php/Udev "Udev") rule:
 
  `/etc/udev/rules.d/90-zte.conf.rules` 
-
 ```
  # This is the Modem part of the card, let's load usbserial with the correct vendor and product IDs so we get our usb serial devices
  ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="19d2", ATTRS{idProduct}=="0124", RUN+="/sbin/modprobe usbserial vendor=0x19d2 product=0x0124", MODE="660", GROUP="network"

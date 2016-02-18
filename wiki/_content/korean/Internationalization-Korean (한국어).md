@@ -42,7 +42,7 @@
 
 	scim
 
-	scim 혹은 [Smart Common Input Method platform](/index.php/Smart_Common_Input_Method_platform "Smart Common Input Method platform")는 posix와 호환되는 운영체제를 위한 입력기 프레임워크입니다. 2014년 11월 현재, scim-hangul는 Google Chrome과 Chromium에서 문제를 일으킵니다. 기본 환경 변수를 사용할 경우, scim-hangul은 Google Chrome이나 Chromium에서 한글 입력을 할 수 없습니다. 2014년 현재, scim-hangul은 gedit과도 문제를 일으킵니다. 기본 환경 변수를 사용할 경우, 한글 입력기를 선택한 상태에서는 gedit에서 백스페이스가 정상적으로 작동하지 않습니다. 이 두 문제에 대한 해결 방법은 아래에서 다룹니다. 단, 아래의 해결 방법을 사용한 후에도 Google Chrome이나 Chromium에서는 입력기 버퍼 안의 글자가 사라지는 현상이 발생합니다. 즉 한글 입력 중에 스페이스바를 누르면 입력 중이던 마지막 한 글자가 사라집니다. _현재 이 문제에 대한 해결책은 없습니다._
+	scim 혹은 [Smart Common Input Method platform](/index.php/Smart_Common_Input_Method_platform "Smart Common Input Method platform")는 posix와 호환되는 운영체제를 위한 입력기 프레임워크입니다. 2014년 11월 현재, scim-hangul는 Google Chrome과 Chromium에서 문제를 일으킵니다. 기본 환경 변수를 사용할 경우, scim-hangul은 Google Chrome이나 Chromium에서 한글 입력을 할 수 없습니다. 2014년 현재, scim-hangul은 gedit과도 문제를 일으킵니다. 기본 환경 변수를 사용할 경우, 한글 입력기를 선택한 상태에서는 gedit에서 백스페이스가 정상적으로 작동하지 않습니다. 이 두 문제에 대한 해결 방법은 아래에서 다룹니다. 단, 아래의 해결 방법을 사용한 후에도 Google Chrome이나 Chromium에서는 입력기 버퍼 안의 글자가 사라지는 현상이 발생합니다. 즉 한글 입력 중에 스페이스바를 누르면 입력 중이던 마지막 한 글자가 사라집니다. *현재 이 문제에 대한 해결책은 없습니다.*
 
 	fcitx
 
@@ -75,15 +75,15 @@ $ uim-pref-gtk (혹은 uim-pref-gtk3/uim-pref-qt4)
 
 명령으로 uim의 설정창을 여십시오.
 
-"Global settings"에서 _specify default IM_(기본 입력기 설정)에 체크 표시를 하십시오. 그리고 "Byeoru"를 기본 입력기로 설정하십시오.
+"Global settings"에서 *specify default IM*(기본 입력기 설정)에 체크 표시를 하십시오. 그리고 "Byeoru"를 기본 입력기로 설정하십시오.
 
 또한, 'Edit'버튼을 눌러 사용하지 않을 입력기들을 비활성화할 수 있습니다.
 
-한글과 영어 외에 다른 언어의 입력기도 사용하며, 여러 입력 방법 사이를 빠르게 전환하고 싶다면, _enable IM switching by hotkey_ 에 체크표시를 하고, 원하는 단축키를 설정하십시오.
+한글과 영어 외에 다른 언어의 입력기도 사용하며, 여러 입력 방법 사이를 빠르게 전환하고 싶다면, *enable IM switching by hotkey* 에 체크표시를 하고, 원하는 단축키를 설정하십시오.
 
-uim의 전역 설정을 마쳤다면, uim 설정창 왼쪽의 트리 메뉴에서 _Byeoru_를 찾아 클릭하십시오. 여기에서 세벌식 등으로 키보드 레이아웃을 변경할 수 있습니다. Byeoru가 사용할 한자 사전 등의 기타 설정 역시 조정할 수 있습니다.
+uim의 전역 설정을 마쳤다면, uim 설정창 왼쪽의 트리 메뉴에서 *Byeoru*를 찾아 클릭하십시오. 여기에서 세벌식 등으로 키보드 레이아웃을 변경할 수 있습니다. Byeoru가 사용할 한자 사전 등의 기타 설정 역시 조정할 수 있습니다.
 
-이제 트리 메뉴에서 _Byeoru_ 바로 아래에 있는 _Byeoru Keybinding 1_에 클릭하십시오. 여기에서 한영 전환에 사용할 단축키를 설정하십시오. 위에서 입력기 전환을 위한 단축키를 선택했다면, 여기에서는 반드시 다른 단축키를 사용해야 합니다. 대부분의 한국 사용자들은 한영 전환에 `Ctrl+space`나 `shift+space`를 사용합니다.
+이제 트리 메뉴에서 *Byeoru* 바로 아래에 있는 *Byeoru Keybinding 1*에 클릭하십시오. 여기에서 한영 전환에 사용할 단축키를 설정하십시오. 위에서 입력기 전환을 위한 단축키를 선택했다면, 여기에서는 반드시 다른 단축키를 사용해야 합니다. 대부분의 한국 사용자들은 한영 전환에 `Ctrl+space`나 `shift+space`를 사용합니다.
 
 **참고:** 오른쪽 alt키(한/영키)로 한영 전환을 하고 싶다면, [#한영키 사용하기](#.ED.95.9C.EC.98.81.ED.82.A4_.EC.82.AC.EC.9A.A9.ED.95.98.EA.B8.B0) 섹션으로 가십시오.
 
@@ -172,7 +172,6 @@ X 세션을 재시작하십시오. 다솜입력기는 자동으로 시작될 것
 scim, nabi, uim 중 하나를 선택했다면 한영키를 이용하여 한영전환을 할 수 있습니다. 입력기를 시작하는 환경 변수 **뒤에** 다음 환경 변수들을 추가하십시오.
 
  `nano .xprofile` 
-
 ```
 xmodmap -e 'remove mod1 = Alt_R'
 xmodmap -e 'keycode 108 = Hangul'

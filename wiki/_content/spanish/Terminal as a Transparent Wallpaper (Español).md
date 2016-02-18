@@ -12,7 +12,7 @@ Hay dos formas populares de configurar una terminal Linux para que trabaje de fo
 
 ## La Forma Facíl
 
-[Tilda](http://sourceforge.net/projects/tilda/) es una terminal Linux altamente adaptable, el autor está inspirado por las terminales clásicas mostradas en _los juegos de disparo en primera persona, Quake, Doom y Half-Life por nombrar algunos, donde la terminal no tiene bordes y está_ oculta del escritorio hasta que una tecla o teclas son presionadas. _En nuestro ejemplo la instalaremos y proporcionaremos una terminal básica._
+[Tilda](http://sourceforge.net/projects/tilda/) es una terminal Linux altamente adaptable, el autor está inspirado por las terminales clásicas mostradas en *los juegos de disparo en primera persona, Quake, Doom y Half-Life por nombrar algunos, donde la terminal no tiene bordes y está* oculta del escritorio hasta que una tecla o teclas son presionadas. *En nuestro ejemplo la instalaremos y proporcionaremos una terminal básica.*
 
 ```
 # pacman -S tilda
@@ -24,14 +24,14 @@ En Gnome se puede encontrar dentro de Aplicaciones –> Accesorios –> Tilda.
 Para lograr la apariencia deseada necesitaremos editar las configuraciones iniciales:
 
 ```
-En la pestaña _General_, **desmarca** "Siempre visible".
+En la pestaña *General*, **desmarca** "Siempre visible".
 
-En _Apariencia_ se puede editar el **alto** y **ancho** a tu gusto,
+En *Apariencia* se puede editar el **alto** y **ancho** a tu gusto,
  pero asegúrate de **marcar** "Activar Transparencia" y poner el "Nivel de Transparencia" **100%**.
 
-En la pestaña de _Colores_, **escoge** "Verde sobre Negro" o "Personalizado".
+En la pestaña de *Colores*, **escoge** "Verde sobre Negro" o "Personalizado".
 
-En _Desplazamiento_ debes **seleccionar** "Deshabilitado".
+En *Desplazamiento* debes **seleccionar** "Deshabilitado".
 
 ```
 
@@ -39,7 +39,7 @@ Eso es todo lo que se necesita, para ejecutar Tilda ir al menú Aplicaciones –
 
 ## La Forma Profesional
 
-Con el uso de [devilspie](http://www.burtonini.com/blog/computers/devilspie) tenemos mayor control sobre la colocación y el comportamiento sobre la ventana de la terminal. ¿Qué es Devilspie? _Devilspie puede ser configurado para detectar ventanas en el momento que son creadas, y corresponder la ventana a un conjunto de reglas. Si la terminal corresponde a las reglas, puede ejecutar una serie de acciones en esa ventana. Por ejemplo, hacer que todas las ventanas creadas por X-Chat aparescan en todos los espacios de trabajo, y la ventana principal de Gkrellm1 no aparezca en el paginador o la lista de tareas._
+Con el uso de [devilspie](http://www.burtonini.com/blog/computers/devilspie) tenemos mayor control sobre la colocación y el comportamiento sobre la ventana de la terminal. ¿Qué es Devilspie? *Devilspie puede ser configurado para detectar ventanas en el momento que son creadas, y corresponder la ventana a un conjunto de reglas. Si la terminal corresponde a las reglas, puede ejecutar una serie de acciones en esa ventana. Por ejemplo, hacer que todas las ventanas creadas por X-Chat aparescan en todos los espacios de trabajo, y la ventana principal de Gkrellm1 no aparezca en el paginador o la lista de tareas.*
 
 ### Paso 1
 
@@ -59,7 +59,7 @@ $ mkdir ~/.devilspie
 
 ```
 
-Hacer un archivo de configuración con extensión _.ds_, dentro del directorio devilspie. Este es el lugar donde devilspie busca por el archivo de configuración por defecto cuando inicia. Editar el archivo de configuración con tu editor favorito, para poner la ventana de terminal de la forma que deseamos.
+Hacer un archivo de configuración con extensión *.ds*, dentro del directorio devilspie. Este es el lugar donde devilspie busca por el archivo de configuración por defecto cuando inicia. Editar el archivo de configuración con tu editor favorito, para poner la ventana de terminal de la forma que deseamos.
 
 ```
 $ nano ~/.devilspie/ConsolaEscritorio.ds
@@ -94,13 +94,13 @@ Abrir una ventana de terminal gnome ir a Editar –> Perfiles –> Nuevo. Llamar
 Editar el Perfil, para lograr el aspecto deseado necesitamos editar las configuraciones iniciales:
 
 ```
-En la pestaña _General_, **desmarca** "Mostrar la barra de menús en las terminales nuevas por omisión"
+En la pestaña *General*, **desmarca** "Mostrar la barra de menús en las terminales nuevas por omisión"
 
-En la pestaña de _Colores_, **escoge** "Verde sobre Negro" (selecciona el que te agrade, yo prediero este).
+En la pestaña de *Colores*, **escoge** "Verde sobre Negro" (selecciona el que te agrade, yo prediero este).
 
-En la pestaña de _Efectos_, **escoge** "Fondo transparente". Asegúrate de que este en "Ninguno"
+En la pestaña de *Efectos*, **escoge** "Fondo transparente". Asegúrate de que este en "Ninguno"
 
-En la pestaña de _Desplazamiento_, **selecciona** "Deshabilitado".
+En la pestaña de *Desplazamiento*, **selecciona** "Deshabilitado".
 
 ```
 

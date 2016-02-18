@@ -2,9 +2,9 @@
 
 [Init](https://en.wikipedia.org/wiki/Init "wikipedia:Init") is the first process started during system boot. It is a a daemon process that continues running until the system is shut down. Init is the direct or indirect ancestor of all other processes, and automatically adopts all orphaned processes. It is started by the kernel using a hard-coded filename; if the kernel is unable to start it, panic will result. Init is typically assigned process identifier 1.
 
-The init _scripts_ (or _rc_) are launched by the init process to guarantee basic functionality on system start and shutdown. This includes (un)mounting of [file systems](/index.php/File_system "File system") and launching of [daemons](/index.php/Daemons "Daemons"). A _service manager_ takes this one step further by providing active control over launched processes, or [process supervision](https://en.wikipedia.org/wiki/Process_Supervision "wikipedia:Process Supervision"). An example is to monitor for crashes and restart processes accordingly.
+The init *scripts* (or *rc*) are launched by the init process to guarantee basic functionality on system start and shutdown. This includes (un)mounting of [file systems](/index.php/File_system "File system") and launching of [daemons](/index.php/Daemons "Daemons"). A *service manager* takes this one step further by providing active control over launched processes, or [process supervision](https://en.wikipedia.org/wiki/Process_Supervision "wikipedia:Process Supervision"). An example is to monitor for crashes and restart processes accordingly.
 
-These components combine to the init _system_. Some inits include the service manager in the init process, or have init scripts in close relation to them. These inits are below referred to as _integrated_, though entries in different categories may explicitely depend on each other.
+These components combine to the init *system*. Some inits include the service manager in the init process, or have init scripts in close relation to them. These inits are below referred to as *integrated*, though entries in different categories may explicitely depend on each other.
 
 ## Contents
 
@@ -129,18 +129,18 @@ $ systemctl list-units --state=running "*.service" > daemons.list
 
 then configure the [#Init scripts](#Init_scripts) accordingly. See also [[2]](http://unix.stackexchange.com/questions/175380/how-to-list-all-running-daemons).
 
-Temporary files (_systemd-tmpfiles_), [kernel modules](/index.php/Kernel_modules "Kernel modules") and [sysctl](/index.php/Sysctl "Sysctl") may also need configuration.
+Temporary files (*systemd-tmpfiles*), [kernel modules](/index.php/Kernel_modules "Kernel modules") and [sysctl](/index.php/Sysctl "Sysctl") may also need configuration.
 
 ### logind
 
-[logind](http://www.freedesktop.org/wiki/Software/systemd/logind/) requires _systemd_ to be the init process. [[3]](http://www.freedesktop.org/wiki/Software/systemd/InterfacePortabilityAndStabilityChart/) As such, [local sessions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") and other functionality is not available.
+[logind](http://www.freedesktop.org/wiki/Software/systemd/logind/) requires *systemd* to be the init process. [[3]](http://www.freedesktop.org/wiki/Software/systemd/InterfacePortabilityAndStabilityChart/) As such, [local sessions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") and other functionality is not available.
 
 #### Device permissions
 
-Add users to the correct [groups](/index.php/Users_and_groups#Group_list "Users and groups") for device access, and reboot. Current group membership should first be checked with `id _user_`. For example:
+Add users to the correct [groups](/index.php/Users_and_groups#Group_list "Users and groups") for device access, and reboot. Current group membership should first be checked with `id *user*`. For example:
 
 ```
-# usermod -a -G video,audio,power,disk,storage,optical,lp,scanner _user_
+# usermod -a -G video,audio,power,disk,storage,optical,lp,scanner *user*
 
 ```
 
@@ -162,10 +162,9 @@ Arch uses [timer](/index.php/Systemd#Timers "Systemd") files instead of [cron](/
 
 ### Dbus
 
-As of systemd 226 and [dbus](/index.php/Dbus "Dbus") 1.10.0-3, user instances of _dbus-daemon_ are launched by [systemd/User](/index.php/Systemd/User#D-Bus "Systemd/User"). [[5]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) When requring IPC between desktop applications, restore `30-dbus.sh`:
+As of systemd 226 and [dbus](/index.php/Dbus "Dbus") 1.10.0-3, user instances of *dbus-daemon* are launched by [systemd/User](/index.php/Systemd/User#D-Bus "Systemd/User"). [[5]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) When requring IPC between desktop applications, restore `30-dbus.sh`:
 
  `/etc/X11/xinit/xinitrc.d/30-dbus.sh` 
-
 ```
 #!/bin/bash
 

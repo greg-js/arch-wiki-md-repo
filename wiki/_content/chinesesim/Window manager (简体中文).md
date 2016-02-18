@@ -15,7 +15,7 @@
 
 [X窗口系统](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System")提供基本的图形用户界面支持。使用桌面环境之前，必须首先安装X服务器。[Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")是这套系统的开源实现。
 
-	_X为GUI环境提供基本的框架：在屏幕上描绘、体现图像与移动程序窗口，同时也受理、运行、及管理电脑与鼠标、键盘的交互程序。不过，X并没有管理到用户界面，而是由其他以X为基础的实现来负责。正因为如此，以X为基础环境所开发成的视觉样式非常地多，不同的程序可能有截然不同的接口体现。X作为系统内核之上的程序应用层发挥作用。_
+	*X为GUI环境提供基本的框架：在屏幕上描绘、体现图像与移动程序窗口，同时也受理、运行、及管理电脑与鼠标、键盘的交互程序。不过，X并没有管理到用户界面，而是由其他以X为基础的实现来负责。正因为如此，以X为基础环境所开发成的视觉样式非常地多，不同的程序可能有截然不同的接口体现。X作为系统内核之上的程序应用层发挥作用。*
 
 用户可以通过各种方法，自由配置GUI环境。
 
@@ -63,7 +63,7 @@
 
 	[http://www.enlightenment.org/](http://www.enlightenment.org/) || [enlightenment](https://www.archlinux.org/packages/?name=enlightenment)
 
-*   **[evilwm](/index.php/Evilwm "Evilwm")** — A minimalist window manager for the X Window System. 'Minimalist' here does not mean it is too bare to be usable - it just means it omits a lot of the stuff that make other window managers _un_usable.
+*   **[evilwm](/index.php/Evilwm "Evilwm")** — A minimalist window manager for the X Window System. 'Minimalist' here does not mean it is too bare to be usable - it just means it omits a lot of the stuff that make other window managers *un*usable.
 
 	[http://www.6809.org.uk/evilwm/](http://www.6809.org.uk/evilwm/) || [evilwm](https://aur.archlinux.org/packages/evilwm/)
 

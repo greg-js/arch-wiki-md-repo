@@ -21,13 +21,13 @@ There are a number of ways to create a bridge.
 
 ### With iproute2
 
-This section describes the management of a network bridge using the _ip_ tool from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package, which is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group.
+This section describes the management of a network bridge using the *ip* tool from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package, which is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group.
 
 Create a new bridge and change its state to up:
 
 ```
-# ip link add name _bridge_name_ type bridge
-# ip link set _bridge_name_ up
+# ip link add name *bridge_name* type bridge
+# ip link set *bridge_name* up
 
 ```
 
@@ -38,14 +38,14 @@ To add an interface (e.g. eth0) into the bridge, its state must be up:
 
 ```
 
-Adding the interface into the bridge is done by setting its master to `_bridge_name_`:
+Adding the interface into the bridge is done by setting its master to `*bridge_name*`:
 
 ```
-# ip link set eth0 master _bridge_name_
+# ip link set eth0 master *bridge_name*
 
 ```
 
-To show the existing bridges and associated interfaces, use the _bridge_ utility (also part of [iproute2](https://www.archlinux.org/packages/?name=iproute2)). See `man bridge` for details.
+To show the existing bridges and associated interfaces, use the *bridge* utility (also part of [iproute2](https://www.archlinux.org/packages/?name=iproute2)). See `man bridge` for details.
 
 ```
 # bridge link
@@ -69,7 +69,7 @@ The interface will still be up, so you may also want to bring it down:
 To delete a bridge issue the following command:
 
 ```
-# ip link delete _bridge_name_ type bridge
+# ip link delete *bridge_name* type bridge
 
 ```
 
@@ -77,19 +77,19 @@ This will automatically remove all interfaces from the bridge. The slave interfa
 
 ### With bridge-utils
 
-This section describes the management of a network bridge using the legacy _brctl_ tool from the [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils) package, which is available in the [official repositories](/index.php/Official_repositories "Official repositories"). See `man brctl` for full listing of options.
+This section describes the management of a network bridge using the legacy *brctl* tool from the [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils) package, which is available in the [official repositories](/index.php/Official_repositories "Official repositories"). See `man brctl` for full listing of options.
 
 Create a new bridge:
 
 ```
-# brctl addbr _bridge_name_
+# brctl addbr *bridge_name*
 
 ```
 
 Add a device to a bridge, for example `eth0`:
 
 ```
-# brctl addif _bridge_name_ eth0
+# brctl addif *bridge_name* eth0
 
 ```
 
@@ -105,20 +105,19 @@ $ brctl show
 Set the bridge device up:
 
 ```
-# ip link set up dev _bridge_name_
+# ip link set up dev *bridge_name*
 
 ```
 
-Delete a bridge, you need to first set it to _down_:
+Delete a bridge, you need to first set it to *down*:
 
 ```
-# ip link set dev _bridge_name_ down
-# brctl delbr _bridge_name_
+# ip link set dev *bridge_name* down
+# brctl delbr *bridge_name*
 
 ```
 
 **Note:** To enable the [bridge-netfilter](http://ebtables.netfilter.org/documentation/bridge-nf.html) functionality, you need to manually load the `br_netfilter` module:
-
 ```
 # modprobe br_netfilter
 
@@ -159,7 +158,7 @@ If NetworkManager's default interface for the device you added to the bridge con
 When the bridge is fully set up, it can be assigned an IP address:
 
 ```
-# ip addr add dev _bridge_name_ 192.168.66.66/24
+# ip addr add dev *bridge_name* 192.168.66.66/24
 
 ```
 

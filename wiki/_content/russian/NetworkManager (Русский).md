@@ -103,7 +103,7 @@ See [Userbase page](http://userbase.kde.org/NetworkManagement) for more info.
 
 ### Xfce
 
-[network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) will work fine in Xfce, but in order to see notifications, _including error messages_, `nm-applet` needs an implementation of the Freedesktop desktop notifications specification (see the [Galapago Project](http://www.galago-project.org/specs/notification/0.9/index.html)) to display them. To enable notifications install [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd), a package that provides an implementation for the specification.
+[network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) will work fine in Xfce, but in order to see notifications, *including error messages*, `nm-applet` needs an implementation of the Freedesktop desktop notifications specification (see the [Galapago Project](http://www.galago-project.org/specs/notification/0.9/index.html)) to display them. To enable notifications install [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd), a package that provides an implementation for the specification.
 
 Without such a notification daemon, `nm-applet` outputs the following errors to stdout/stderr:
 
@@ -141,7 +141,6 @@ To store connection secrets install and configure [gnome-keyring](/index.php/Gno
 In order to run `nm-applet` without a systray, you can use [trayer](https://www.archlinux.org/packages/?name=trayer) or [stalonetray](https://www.archlinux.org/packages/?name=stalonetray). For example, you can add a script like this one in your path:
 
  `nmgui` 
-
 ```
 #!/bin/sh
 nm-applet    > /dev/null 2>/dev/null &
@@ -210,7 +209,7 @@ NetworkManager will require some additional steps to be able run properly. Make 
 
 ### Автозапуск NetworkManager
 
-NetworkManager запускается ([Использование юнитов](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)")) с помощью `NetworkManager.service`. После запуска демона NetworkManager, он автоматически подключатется к любой доступной сети, которые уже были настроены. Для любых "пользовательских соединений" или не настроенных соединений нужен _nmcli_ или апплет для настройки и подключения.
+NetworkManager запускается ([Использование юнитов](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)")) с помощью `NetworkManager.service`. После запуска демона NetworkManager, он автоматически подключатется к любой доступной сети, которые уже были настроены. Для любых "пользовательских соединений" или не настроенных соединений нужен *nmcli* или апплет для настройки и подключения.
 
 **Note:** NetworkManager возможно будет печатать бессмысленные предупреждения ([FS#34971](https://bugs.archlinux.org/task/34971)) в ваш системный лог, когда [NetworkManager-dispatcher.service](/index.php/Networkmanager#Network_services_with_NetworkManager_dispatcher "Networkmanager") и [ModemManager.service](https://www.archlinux.org/packages/?name=modemmanager) не запущены. Чтобы сохранить журнал в чистоте и убрать эти сообщения, запустите оба сервиса, даже если они не требуются вашей среде.
 
@@ -226,14 +225,13 @@ In some cases the service will still fail to start sucessfully on boot due to th
 
 With a working session, you have several options for granting the necessary privileges to NetworkManager:
 
-_Option 1._ Run a [PolicyKit](/index.php/PolicyKit "PolicyKit") authentication agent when you log in, such as `/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1` (part of [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome)). You will be prompted for your password whenever you add or remove a network connection.
+*Option 1.* Run a [PolicyKit](/index.php/PolicyKit "PolicyKit") authentication agent when you log in, such as `/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1` (part of [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome)). You will be prompted for your password whenever you add or remove a network connection.
 
-_Option 2._ Add yourself to the `wheel` group. You will not have to enter your password, but your user account may be granted other permissions as well, such as the ability to use [sudo (Русский)](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Sudo (Русский)") without entering the root password.
+*Option 2.* Add yourself to the `wheel` group. You will not have to enter your password, but your user account may be granted other permissions as well, such as the ability to use [sudo (Русский)](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Sudo (Русский)") without entering the root password.
 
-_Option 3._ Add yourself to the `network` group and create the following file:
+*Option 3.* Add yourself to the `network` group and create the following file:
 
  `/etc/polkit-1/rules.d/50-org.freedesktop.NetworkManager.rules` 
-
 ```
 polkit.addRule(function(action, subject) {
   if (action.id.indexOf("org.freedesktop.NetworkManager.") == 0 && subject.isInGroup("network")) {
@@ -251,7 +249,7 @@ There are quite a few network services that you will not want running until Netw
 
 Once the feature is active, scripts can be added to the `/etc/NetworkManager/dispatcher.d` directory. These scripts will need to have executable, user permissions. For security, it is good practice to make them owned by **root:root** and writable only by the owner.
 
-The scripts will be run in alphabetical order at connection time, and in reverse alphabetical order at disconnect time. They receive two arguments: the name of the interface (e.g. _eth0_) and the status (_up_ or _down_ for interfaces and _vpn-up_ or _vpn-down_ for vpn connections). To ensure what order they come up in, it is common to use numerical characters prior to the name of the script (e.g. `10_portmap` or `30_netfs` (which ensures that the portmapper is up before NFS mounts are attempted).
+The scripts will be run in alphabetical order at connection time, and in reverse alphabetical order at disconnect time. They receive two arguments: the name of the interface (e.g. *eth0*) and the status (*up* or *down* for interfaces and *vpn-up* or *vpn-down* for vpn connections). To ensure what order they come up in, it is common to use numerical characters prior to the name of the script (e.g. `10_portmap` or `30_netfs` (which ensures that the portmapper is up before NFS mounts are attempted).
 
 **Warning:**
 
@@ -286,7 +284,7 @@ REMOTE='user@host:/remote/path'
 LOCAL='/local/path'
 
 interface=$1 status=$2
-if [ "$CONNECTION_UUID" = "_uuid_" ]; then
+if [ "$CONNECTION_UUID" = "*uuid*" ]; then
   case $status in
     up)
       export SSH_AUTH_SOCK=$(find /tmp -maxdepth 1 -type s -user "$USER" -name 'ssh')
@@ -307,7 +305,6 @@ In this example we want to connect automatically to a previously defined VPN con
 	1\. Create the dispatcher script:
 
  `/etc/NetworkManager/dispatcher.d/vpn-up` 
-
 ```
 #!/bin/sh
 VPN_NAME="name of VPN connection defined in NetworkManager"
@@ -335,7 +332,7 @@ Remember to make it executable with `chmod +x` and to make the VPN connection av
 
 Trying to connect using this setup will fail and NetworkManager will complain about 'no valid VPN secrets', because of [the way VPN secrets are stored](http://projects.gnome.org/NetworkManager/developers/migrating-to-09/secrets-flags.html) which brings us to step 2:
 
-	2\. Edit your VPN connection configuration file to make NetworkManager store the secrets by itself rather than inside a keyring [that will be inaccessible for root](https://bugzilla.redhat.com/show_bug.cgi?id=710552): open up `/etc/NetworkManager/system-connections/_name of your VPN connection_` and change the `password-flags` and `secret-flags` from `1` to `0`.
+	2\. Edit your VPN connection configuration file to make NetworkManager store the secrets by itself rather than inside a keyring [that will be inaccessible for root](https://bugzilla.redhat.com/show_bug.cgi?id=710552): open up `/etc/NetworkManager/system-connections/*name of your VPN connection*` and change the `password-flags` and `secret-flags` from `1` to `0`.
 
 Alternatively put the password directly in the configuration file adding the section `vpn-secrets`:
 
@@ -376,7 +373,7 @@ systemctl mask NetworkManager-dispatcher
 
 ## Testing
 
-NetworkManager applets are designed to load upon login so no further configuration should be necessary for most users. If you have already disabled your previous network settings and disconnected from your network, you can now test if NetworkManager will work. The first step is to [start](/index.php/Daemon "Daemon") the _networkmanager_ daemon.
+NetworkManager applets are designed to load upon login so no further configuration should be necessary for most users. If you have already disabled your previous network settings and disconnected from your network, you can now test if NetworkManager will work. The first step is to [start](/index.php/Daemon "Daemon") the *networkmanager* daemon.
 
 Some applets will provide you with a `.desktop` file so that the NetworkManager applet can be loaded through the application menu. If it does not, you are going to either have to discover the command to use or logout and login again to start the applet. Once the applet is started, it will likely begin polling network connections with for auto-configuration with a DHCP server.
 
@@ -443,20 +440,18 @@ Where `aa:bb:cc:dd:ee:ff` is the MAC address of this NIC. The MAC address can be
 It depends on the NetworkManager plugins used, whether the hostname is forwarded to a router on connect. The generic "keyfile" plugin does not forward the hostname in default configuration. To make it forward the hostname, add the following to
 
  `/etc/NetworkManager/NetworkManager.conf` 
-
 ```
 [keyfile]
-hostname=_your_hostname_
+hostname=*your_hostname*
 ```
 
 The options under `[keyfile]` will be applied to network connections in the default `/etc/NetworkManager/system-connections` path.
 
-Another option is to configure the DHCP client, which NetworkManager starts automatically, to forward it. NetworkManager utilizes [dhclient](https://www.archlinux.org/packages/?name=dhclient) in default and falls back to [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), if the former is not installed. To make _dhclient_ forward the hostname requires to set a non-default option, _dhcpcd_ forwards the hostname by default.
+Another option is to configure the DHCP client, which NetworkManager starts automatically, to forward it. NetworkManager utilizes [dhclient](https://www.archlinux.org/packages/?name=dhclient) in default and falls back to [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), if the former is not installed. To make *dhclient* forward the hostname requires to set a non-default option, *dhcpcd* forwards the hostname by default.
 
-First, check which DHCP client is used (_dhclient_ in this example):
+First, check which DHCP client is used (*dhclient* in this example):
 
  `# journalctl -b | egrep "dhclient|dhcpcd"` 
-
 ```
 ...
 Nov 17 21:03:20 zenbook dhclient[2949]: Nov 17 21:03:20 zenbook dhclient[2949]: Bound to *:546
@@ -520,7 +515,7 @@ Due to an unresolved bug, when changing default connections to static IP, `nm-ap
 
 To work around this issue you have to edit the default connection (e.g. "Auto eth0") in `nm-applet`, change the connection name (e.g. "my eth0"), uncheck the "Available to all users" checkbox, change your static IP settings as desired, and click **Apply**. This will save a new connection with the given name.
 
-Next, you will want to make the default connection not connect automatically. To do so, run `nm-connection-editor` (_not_ as root). In the connection editor, edit the default connection (eg "Auto eth0") and uncheck "Connect automatically". Click **Apply** and close the connection editor.
+Next, you will want to make the default connection not connect automatically. To do so, run `nm-connection-editor` (*not* as root). In the connection editor, edit the default connection (eg "Auto eth0") and uncheck "Connect automatically". Click **Apply** and close the connection editor.
 
 ### Cannot edit connections as normal user
 
@@ -744,7 +739,6 @@ Create `/etc/resolv.conf.opendns` with the [alternative DNS server addresses](/i
 And have the dispatcher replace the discovered DHCP servers with the OpenDNS ones:
 
  `/etc/NetworkManager/dispatcher.d/dns-servers-opendns` 
-
 ```
 #!/bin/bash
 # Use OpenDNS servers over DHCP discovered servers

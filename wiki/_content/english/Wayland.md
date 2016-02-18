@@ -48,7 +48,7 @@ As Wayland is only a library, it is useless on its own. To replace X Server, you
 
 ### Usage
 
-<caption>_**Keyboard Shortcuts** (super = windows key - can be changed, see weston.ini)_ `Ctrl-b`</caption>
+<caption>***Keyboard Shortcuts** (super = windows key - can be changed, see weston.ini)* `Ctrl-b`</caption>
 | Cmd | Action |
 | Ctrl + Alt + Backspace | Quit Weston |
 | Super + Scroll (or PageUp/PageDown) | Zoom in/out of desktop |
@@ -60,7 +60,7 @@ As Wayland is only a library, it is useless on its own. To replace X Server, you
 | Super + K | Force Kill Active Window |
 | Super + KeyUp/KeyDown | Switch Prev/Next Workspace |
 | Super + Shift + KeyUp/KeyDown | Grab Current Window and Switch Workspace |
-| Super + F_**n**_ | Switch to Workspace _**n**_ |
+| Super + F***n*** | Switch to Workspace ***n*** |
 | Super + S | Take a screenshot |
 | Super + R | Record a screencast. |
 
@@ -113,7 +113,6 @@ $ weston-image image1.jpg image2.jpg...
 Example configuration file for keyboard layout, module selection and UI modifications. See `man weston.ini` for full details:
 
  `~/.config/weston.ini` 
-
 ```
 [core]
 ### uncomment this line for xwayland support ###
@@ -193,7 +192,6 @@ path=/usr/libexec/weston-keyboard
 Minimal `weston.ini` :
 
  `~/.config/weston.ini` 
-
 ```
 [core]
 modules=xwayland.so
@@ -223,7 +221,6 @@ transform=90
 When you want to run an X application from within Weston, it spins up Xwayland to service the request. The following configuration is shown above:
 
  `~/.config/weston.ini` 
-
 ```
 [core]
 modules=xwayland.so
@@ -248,7 +245,6 @@ The YUV file can then be transcoded to other formats using [FFmpeg](/index.php/F
 For [Retina](https://en.wikipedia.org/wiki/Retina_Display "wikipedia:Retina Display") or [HiDPI](/index.php/HiDPI "HiDPI") displays, use:
 
  `~/.config/weston.ini` 
-
 ```
 [output]
 name=...
@@ -300,16 +296,16 @@ EFL has complete Wayland support. To run a EFL application on Wayland, see Wayla
 
 | Name | Type | Description |
 | GNOME | Compositing | See [GNOME#Starting GNOME](/index.php/GNOME#Starting_GNOME "GNOME"). |
-| Hawaii | _(Unclear)_ | See [Hawaii](/index.php/Hawaii "Hawaii"). |
+| Hawaii | *(Unclear)* | See [Hawaii](/index.php/Hawaii "Hawaii"). |
 | sway | Tiling | [Sway](/index.php/Sway "Sway") is an i3-compatible window manager for Wayland. [Github](https://github.com/SirCmpwn/sway) |
-| Enlightenment | _(Unclear)_ | Long running minimal Window Manager-turned Wayland compositor. E19 originally had Wayland support but this was removed and now only E20+ Wayland is considered stable enough for regular use. [More Info](https://www.enlightenment.org/about-wayland) |
+| Enlightenment | *(Unclear)* | Long running minimal Window Manager-turned Wayland compositor. E19 originally had Wayland support but this was removed and now only E20+ Wayland is considered stable enough for regular use. [More Info](https://www.enlightenment.org/about-wayland) |
 | KDE | Compositing | [KDE](/index.php/KDE "KDE") 4.11 added support for [KWin under Wayland system compositor](http://blog.martin-graesslin.com/blog/2013/06/starting-a-full-kde-plasma-session-in-wayland/). With [KDE Plasma 5.4](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland), the first technology preview of a Wayland session is released but it is currently targeted for the mobile platform and does not yet allow to use it as a full replacement for Xorg based desktop. |
 | Orbment | Tiling | [orbment](https://github.com/Cloudef/orbment) (previously loliwm) is a tiling WM for Wayland. |
 | Velox | Tiling | [Velox](/index.php/Velox "Velox") is a simple window manager based on swc. It is inspired by [dwm](/index.php/Dwm "Dwm") and [xmonad](/index.php/Xmonad "Xmonad"). |
 | Orbital | Compositing | [Orbital](https://github.com/giucam/orbital) is a Wayland compositor and shell, using Qt5 and Weston. The goal of the project is to build a simple yet flexible and good looking Wayland desktop. It is not a full fledged DE but rather the analogue of a WM in the X11 world, such as [Awesome](/index.php/Awesome "Awesome") or [Fluxbox](/index.php/Fluxbox "Fluxbox"). |
-| Papyros Shell | _(Unclear)_ | [Papyros Shell](https://github.com/papyros/papyros-shell) is the desktop shell for [Papyros](/index.php/Papyros "Papyros"), built using QtQuick and QtCompositor as a compositor for Wayland. |
-| Maynard | _(Unclear)_ | [Maynard](https://github.com/raspberrypi/maynard) is a desktop shell client for Weston based on GTK. It was based on weston-gtk-shell, a project by Tiago Vignatti. |
-| Motorcar | _(Unclear)_ | [Motorcar](https://github.com/evil0sheep/motorcar) is a wayland compositor to explore 3D windowing. |
+| Papyros Shell | *(Unclear)* | [Papyros Shell](https://github.com/papyros/papyros-shell) is the desktop shell for [Papyros](/index.php/Papyros "Papyros"), built using QtQuick and QtCompositor as a compositor for Wayland. |
+| Maynard | *(Unclear)* | [Maynard](https://github.com/raspberrypi/maynard) is a desktop shell client for Weston based on GTK. It was based on weston-gtk-shell, a project by Tiago Vignatti. |
+| Motorcar | *(Unclear)* | [Motorcar](https://github.com/evil0sheep/motorcar) is a wayland compositor to explore 3D windowing. |
 
 Some of installed wayland desktop clients might store information in `/usr/share/wayland-sessions/*.desktop` files about how to start them in wayland.
 
@@ -333,7 +329,6 @@ This is possibly caused by the `desktop-shell.so` module being loaded by your `w
 Remove it from the `[core]` section:
 
  `~/.config/weston.ini` 
-
 ```
 [core]
 modules=xwayland.so,desktop-shell.so
@@ -343,7 +338,6 @@ modules=xwayland.so,desktop-shell.so
 So that you end up with:
 
  `~/.config/weston.ini` 
-
 ```
 [core]
 modules=xwayland.so

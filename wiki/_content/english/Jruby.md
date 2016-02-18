@@ -2,7 +2,7 @@
 
 A [jruby](https://www.archlinux.org/packages/?name=jruby) package can be found on [AUR](/index.php/AUR "AUR").
 
-**Note:** _jruby_ will require either [openjdk](/index.php/Java#Installation "Java") or [jre](/index.php/Java#Installation "Java") in order to run
+**Note:** *jruby* will require either [openjdk](/index.php/Java#Installation "Java") or [jre](/index.php/Java#Installation "Java") in order to run
 
 1.  Download the latest Jruby from [http://jruby.org/download](http://jruby.org/download) to '/opt/jruby'
 2.  Add 'opt/jruby/bin' to your path

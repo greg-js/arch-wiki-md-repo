@@ -1,4 +1,4 @@
-[GNU nano](http://www.nano-editor.org/) (или просто nano) это текстовый редактор, с простым и интуитивно понятным интерфейсом, включающим в себя основные команды по редактированию текста. _Nano_ поддерживает раскраску синтаксиса, конвертацию файлов DOS/Mac, проверку орфографии и кодировку [UTF-8](https://en.wikipedia.org/wiki/ru:UTF-8 "wikipedia:ru:UTF-8"). Программа _Nano_ (с пустым буфером) занимает в оперативной памяти всего 1.5 Мб.
+[GNU nano](http://www.nano-editor.org/) (или просто nano) это текстовый редактор, с простым и интуитивно понятным интерфейсом, включающим в себя основные команды по редактированию текста. *Nano* поддерживает раскраску синтаксиса, конвертацию файлов DOS/Mac, проверку орфографии и кодировку [UTF-8](https://en.wikipedia.org/wiki/ru:UTF-8 "wikipedia:ru:UTF-8"). Программа *Nano* (с пустым буфером) занимает в оперативной памяти всего 1.5 Мб.
 
 ## Contents
 
@@ -164,7 +164,7 @@ include "/etc/nano/pkgbuild.nanorc"
 
 #### Перенос текста
 
-В отличие от многих других текстовых редакторов, _nano_ переносит длинные строки. Чтобы отключить это, добавьте следующую строку в `~/.nanorc`
+В отличие от многих других текстовых редакторов, *nano* переносит длинные строки. Чтобы отключить это, добавьте следующую строку в `~/.nanorc`
 
 ```
 set nowrap
@@ -226,7 +226,7 @@ export EDITOR=nano
 
 ## Смотрите также
 
-*   [nano (text editor)](https://en.wikipedia.org/wiki/ru:Nano_(text_editor) "wikipedia:ru:Nano (text editor)") - Статья в Википедии
+*   [nano (text editor)](https://en.wikipedia.org/wiki/ru:Nano_(text_editor) - Статья в Википедии
 *   [GNU nano Homepage](http://www.nano-editor.org/) - Официальный сайт (Eng)
 *   [GNU nano Bugs](https://savannah.gnu.org/bugs/?group=nano) Отчёт ошибок (Eng)
 *   [Улучшенное определение подсветки синтаксиса (Eng)](https://github.com/craigbarnes/nanorc)

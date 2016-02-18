@@ -31,16 +31,16 @@ Na [Gentoo Linux Cron Guide](http://www.gentoo.org/doc/en/cron-guide.xml) nájde
 
 #### Používatelia a autoštart
 
-Cron môže pre väčšinu užívateľov pracovať "out-of-box". Ak chcete používať crontab, používatelia musia byť členom určenej skupiny, ale v Arch-u je táto skupina _users_, ktorej členom by mali byť všetci používatelia. Ak by z nejakých dôvodov užívatelia neboli členmi danej skupiny, môžeme ich pridať nasledujúcim príkazom:
+Cron môže pre väčšinu užívateľov pracovať "out-of-box". Ak chcete používať crontab, používatelia musia byť členom určenej skupiny, ale v Arch-u je táto skupina *users*, ktorej členom by mali byť všetci používatelia. Ak by z nejakých dôvodov užívatelia neboli členmi danej skupiny, môžeme ich pridať nasledujúcim príkazom:
 
 ```
-# gpasswd -a _username_ users
+# gpasswd -a *username* users
 
 ```
 
 a mali by bať schopný editácie svojich vlastných crontab-ov.
 
-Aby ste sa uistili, že cron sa bude spúšťať pri štarte systému, pridajte _crond_ do riadku DAEMONS v `/etc/rc.conf`.
+Aby ste sa uistili, že cron sa bude spúšťať pri štarte systému, pridajte *crond* do riadku DAEMONS v `/etc/rc.conf`.
 
 #### Chyby úloh
 
@@ -77,11 +77,11 @@ Základný formát je:
 
 ```
 
-*   _minute_ nadobúda hodnoty od 0 do 59.
-*   _hour_ nadobúda hodnoty od 0 do 23.
-*   _day_of_month_ nadpbúda hodnoty od 1 do 31.
-*   _month_ nadobúda hodnoty od 1 do 12.
-*   _day_of_week_ nadobúda hodnoty od 0 do 6, kde 0 je nedeľa.
+*   *minute* nadobúda hodnoty od 0 do 59.
+*   *hour* nadobúda hodnoty od 0 do 23.
+*   *day_of_month* nadpbúda hodnoty od 1 do 31.
+*   *month* nadobúda hodnoty od 1 do 12.
+*   *day_of_week* nadobúda hodnoty od 0 do 6, kde 0 je nedeľa.
 
 Viac časom môže byť určených pomocou pomocou čiarky, rozsah (od-do) môže byť určený pomocou pomlčky a hviezdička je použitá ako zástupný znak. Medzery sa používajú na oddelenie jednotlivých polí. Napríklad
 
@@ -94,7 +94,7 @@ spustí skript `i_love_cron.sh` v 5 minútových intervaloch od 9 do 16 každý 
 
 ## Základné príkazy
 
-Crontab nemôže byť nikdy editovaný priamo. Používatelia by mali použiť program _crontab_ na prácu s ich crontabmi.
+Crontab nemôže byť nikdy editovaný priamo. Používatelia by mali použiť program *crontab* na prácu s ich crontabmi.
 
 Na zobrazenie crontab-ov, môžete použiť:
 
@@ -120,7 +120,7 @@ $ crontab -d
 Ak máte uložený crontab a chcete si prepísať svoj starý crontab:
 
 ```
-$ crontab _uložený_crontab_
+$ crontab *uložený_crontab*
 
 ```
 
@@ -134,7 +134,7 @@ $ crontab -
 Na editovanie cudzieho crontab-u, spustite ako root:
 
 ```
-# crontab -u _username_ -e
+# crontab -u *username* -e
 
 ```
 
@@ -167,7 +167,7 @@ spustí skript `i_love_cron.sh` v 5 minútových intervaloch od 9 do 16 každý 
 
 ## Viac informácií
 
-Cron daemon využíva konfiguračný súbor známy ako _crontab_. Každý používateľ v systéme môže používať oddelený crontab na plánovanie svojich individuálnych úloh. ROOT-ov crontab je používaný na plánovanie úloh _system-wide_.
+Cron daemon využíva konfiguračný súbor známy ako *crontab*. Každý používateľ v systéme môže používať oddelený crontab na plánovanie svojich individuálnych úloh. ROOT-ov crontab je používaný na plánovanie úloh *system-wide*.
 
 Medzi formátmi pre crontab jednotlivých daemonov sú rozdiely. Defaul root crontab pre dcron vyzerá asi takto:
 
@@ -229,7 +229,7 @@ Ak to stále nejde, potom potrebujete použiť xhost aby ste získali kontrolu n
 
 ```
 
-Môžete si daný príkaz pridať do ponuky _Aplikácie spúšťané pri štarte_ ako:
+Môžete si daný príkaz pridať do ponuky *Aplikácie spúšťané pri štarte* ako:
 
 ```
 bash -c "xhost +si:localuser:$(whoami)"

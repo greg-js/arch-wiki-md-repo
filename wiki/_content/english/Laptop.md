@@ -41,7 +41,6 @@ Battery state can be read using ACPI utilities from the terminal. ACPI command l
 If your battery sends events to [udev](/index.php/Udev "Udev") whenever it (dis)charges by 1%, you can use this udev rule to automatically hibernate the system when battery level is critical, and thus prevent all unsaved work from being lost.
 
  `/etc/udev/rules.d/99-lowbat.rules` 
-
 ```
 # Suspend the system when battery level drops to 5% or lower
 SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="[0-5]", RUN+="/usr/bin/systemctl hibernate"
@@ -57,7 +56,6 @@ Other rules can be added to perform different actions depending on power supply 
 One way to test udev rules is to have them create a file when they are run. For example:
 
  `/etc/udev/rules.d/98-discharging.rules` 
-
 ```
 SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", RUN+="/usr/bin/touch /home/example/discharging"
 

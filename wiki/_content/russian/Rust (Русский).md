@@ -23,7 +23,6 @@
 Давайте убедимся, что Rust установился корректно, написав простую программу:
 
  `~/hello.rs` 
-
 ```
  fn main() {
      println!("Hello, World!");
@@ -34,7 +33,6 @@
 Затем скомпилируйте её с помощью `rustc`, введя это:
 
  `$ rustc hello.rs && ./hello` 
-
 ```
 Hello, World!
 
@@ -52,7 +50,6 @@ Hello, World!
 4.  Finally, tell cargo where to find the MinGW-w64 gcc/ar by adding the following to your cargo config:
 
  `~/.cargo/config` 
-
 ```
 [target.$ARCH-pc-windows-gnu]
 linker = "/usr/bin/$ARCH-w64-mingw32-gcc"
@@ -82,7 +79,6 @@ Cargo помогает работать с зависимостями вашег
 
  `$ cargo new hello_world --bin` 
 **Note:** Cargo использует файл [манифеста](http://doc.crates.io/manifest.html) `Cargo.toml`, который содержит метаданные, необходимые Cargo для сборки вашего проекта. `Cargo.toml` 
-
 ```
 [package]
 name = "hello_world"

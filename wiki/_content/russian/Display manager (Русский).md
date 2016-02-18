@@ -1,4 +1,4 @@
-[Экранный менеджер](https://en.wikipedia.org/wiki/X_display_manager_(program_type) "wikipedia:X display manager (program type)") или менеджер входа — графический экран, который отображается в конце процесса загрузки вместо стандартного приглашения командной строки. Экранный менеджер представляет собой экран ввода имени пользователя и пароля для входа в систему. Существует множество экранных менеджеров, также как и окружений рабочего стола. Практически все экранные менеджеры можно конфигурировать, изменяя их стиль и поведение.
+[Экранный менеджер](https://en.wikipedia.org/wiki/X_display_manager_(program_type) или менеджер входа — графический экран, который отображается в конце процесса загрузки вместо стандартного приглашения командной строки. Экранный менеджер представляет собой экран ввода имени пользователя и пароля для входа в систему. Существует множество экранных менеджеров, также как и окружений рабочего стола. Практически все экранные менеджеры можно конфигурировать, изменяя их стиль и поведение.
 
 ## Contents
 
@@ -22,7 +22,7 @@
 
 	[https://github.com/ghost1227/cdm](https://github.com/ghost1227/cdm) || [cdm-git](https://aur.archlinux.org/packages/cdm-git/)
 
-*   **[Console TDM](/index.php/Console_TDM "Console TDM")** — расширение для _xinit_, также написанное на Bash.
+*   **[Console TDM](/index.php/Console_TDM "Console TDM")** — расширение для *xinit*, также написанное на Bash.
 
 	[http://code.google.com/p/t-display-manager/](http://code.google.com/p/t-display-manager/) || [console-tdm](https://aur.archlinux.org/packages/console-tdm/)
 
@@ -77,18 +77,18 @@
 
 ```
 
-Это должно работать без дополнительной настройки, и при перезагрузке вы увидите экран входа. Если это не так, вероятно, ссылка _default.target_ была изменена вручную:
+Это должно работать без дополнительной настройки, и при перезагрузке вы увидите экран входа. Если это не так, вероятно, ссылка *default.target* была изменена вручную:
 
  `$ ls -l /etc/systemd/system/default.target`  `[...] /etc/systemd/system/default.target -> /usr/lib/systemd/system/graphical.target` 
 
-Просто удалите символическую ссылку, и _systemd_ станет использовать стандартный _default.target_ (указывающий на _graphical.target_).
+Просто удалите символическую ссылку, и *systemd* станет использовать стандартный *default.target* (указывающий на *graphical.target*).
 
 ```
 # rm /etc/systemd/system/default.target
 
 ```
 
-После включения службы KDM символическая ссылка _display-manager.service_ должна быть установлена в `/etc/systemd/system/`:
+После включения службы KDM символическая ссылка *display-manager.service* должна быть установлена в `/etc/systemd/system/`:
 
  `$ ls -l /etc/systemd/system/display-manager.service`  `[...] /etc/systemd/system/display-manager.service -> /usr/lib/systemd/system/kdm.service` 
 
@@ -105,9 +105,9 @@ $ loginctl show-session $XDG_SESSION_ID
 
 ### Список сеансов
 
-Большинство экранных менеджеров получают список доступных сеансов из каталога `/usr/share/xsessions/`. Он содержит стандартные [файлы _.desktop_](http://standards.freedesktop.org/desktop-entry-spec/latest/) для каждого экранного/оконного менеджера.
+Большинство экранных менеджеров получают список доступных сеансов из каталога `/usr/share/xsessions/`. Он содержит стандартные [файлы *.desktop*](http://standards.freedesktop.org/desktop-entry-spec/latest/) для каждого экранного/оконного менеджера.
 
-Чтобы добавить (удалить) записи в список сеансов вашего экранного менеджера, создайте (удалите) соответствующий файл _.desktop_ в `/usr/share/xsessions/`. Типичный файл _.desktop_ выглядит следующим образом:
+Чтобы добавить (удалить) записи в список сеансов вашего экранного менеджера, создайте (удалите) соответствующий файл *.desktop* в `/usr/share/xsessions/`. Типичный файл *.desktop* выглядит следующим образом:
 
 ```
 [Desktop Entry]
@@ -150,7 +150,7 @@ Icon=google-chrome
 
 ### Несовместимость с systemd
 
-_Это относится к Entrance и MDM._
+*Это относится к Entrance и MDM.*
 
 Некоторые менеджеры не полностью совместимы с systemd, потому, что они переиспользуют процесс сеанса PAM. Это вызывает разнообразные проблемы при повторном входе, например:
 

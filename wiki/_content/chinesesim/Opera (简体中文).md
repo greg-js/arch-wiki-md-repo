@@ -48,7 +48,7 @@ Opera 可以在 [官方软件仓库安装](/index.php/Official_repositories "Off
 
 ## 插件
 
-Opera可以使用大多数主流浏览器所支持的，基于Netscape的插件。 详见 [Browser plugins](/index.php/Browser_plugins "Browser plugins"). opera的插件选项见 _Settings > Preferences... > Advanced > Content > Plug-in Options_.
+Opera可以使用大多数主流浏览器所支持的，基于Netscape的插件。 详见 [Browser plugins](/index.php/Browser_plugins "Browser plugins"). opera的插件选项见 *Settings > Preferences... > Advanced > Content > Plug-in Options*.
 
 ### Adobe Flash
 
@@ -72,11 +72,11 @@ Opera可以使用大多数主流浏览器所支持的，基于Netscape的插件�
 
 一些不需要的功能：
 
-*   **Systray Icon**: uncheck _Show Tray Icon_ under opera:config#UserPrefs.
-*   **BitTorrent**: uncheck _Enable_ under opera:config#BitTorrent.
-*   **Geolocation**: uncheck _Enable geolocation_ under opera:config#Geolocation.
+*   **Systray Icon**: uncheck *Show Tray Icon* under opera:config#UserPrefs.
+*   **BitTorrent**: uncheck *Enable* under opera:config#BitTorrent.
+*   **Geolocation**: uncheck *Enable geolocation* under opera:config#Geolocation.
 *   **Multimedia**: unckeck desired options under opera:config#Multimedia.
-*   **Web Server**: uncheck _Enable_ under opera:config#Web Server.
+*   **Web Server**: uncheck *Enable* under opera:config#Web Server.
 
 为了更简单的找到它，我们把这些选项的相应（没有空格）路径写在地址栏中。 例如 `opera:config#UserPrefs|ShowTrayIcon`或者使用内置搜索。
 
@@ -89,7 +89,7 @@ $ opera -nomail
 
 ```
 
-另外，如果你想永久禁止内部电子邮件客户端，你可以取消选中opera:config#UserPrefs下的' '显示电子邮件客户端_选项。_
+另外，如果你想永久禁止内部电子邮件客户端，你可以取消选中opera:config#UserPrefs下的' '显示电子邮件客户端*选项。*
 
 #### 禁用 ARGB, LIRC and mailto links
 
@@ -122,7 +122,6 @@ GDK_NATIVE_WINDOWS=1
 #### .xinitrc 例子
 
  `~/.xinitrc` 
-
 ```
 ...
 export OPERAPLUGINWRAPPER_PRIORITY=0
@@ -178,11 +177,11 @@ $ opera -pd /tmp/opera
 
 ### 标签模式
 
-Opera原生支持标签级联和平铺模式上。可以通过激活“主”工具栏或通过拖放所需的任何位置上的按钮可以找到适当的按钮 _Menu > Appearance > Buttons > Browser_.
+Opera原生支持标签级联和平铺模式上。可以通过激活“主”工具栏或通过拖放所需的任何位置上的按钮可以找到适当的按钮 *Menu > Appearance > Buttons > Browser*.
 
 ### 字体
 
-可以在 _Settings > Preferences... > Advanced > Fonts_下配置字体.
+可以在 *Settings > Preferences... > Advanced > Fonts*下配置字体.
 
 如果在第一次运行Opera之前已经安装[ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)软件包。不管是由本地 GTK+ 选项[GNOME](/index.php/GNOME "GNOME")还是 KDE 字体管理器指定，Opera都将使用默认字体配置。要强制已经安装的Opera使用系统设置选项：
 
@@ -193,7 +192,7 @@ Opera原生支持标签级联和平铺模式上。可以通过激活“主”工
 *   Restore bookmarks and desired filter files from `~/.opera.bak` to `~/.opera` except for the `operaprefs.ini` file.
 *   Re-install the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) package, if desired.
 
-**Note:** If no text except numbers is showing on some of the webpages that might be a problem with the fonts. A known issue that causes this problem is the _helvetica_ pfb postscript fonts.
+**Note:** If no text except numbers is showing on some of the webpages that might be a problem with the fonts. A known issue that causes this problem is the *helvetica* pfb postscript fonts.
 
 ## 私有标签
 
@@ -215,11 +214,11 @@ $ opera -newprivatetab
 
 为了确保整个会话持续时间只有私有标签使用：
 
-*   Set _Settings > Preferences... > General > Startup > Start without open tabs_.
-*   Clear any entries in _Settings > Preferences... > General > Home page option_.
-*   Enable _Settings > Preferences... > Advanced > Tabs > Additional tab options... > Allow windows with no tabs_.
+*   Set *Settings > Preferences... > General > Startup > Start without open tabs*.
+*   Clear any entries in *Settings > Preferences... > General > Home page option*.
+*   Enable *Settings > Preferences... > Advanced > Tabs > Additional tab options... > Allow windows with no tabs*.
 
-当你已经Opera的时候，你想打开一个私有标签，你能按 `Ctrl+Shift+N` 或者查看 _Menu > New Tabs and Windows > New Private Window_. 随后打开的所有标签也是私有的。
+当你已经Opera的时候，你想打开一个私有标签，你能按 `Ctrl+Shift+N` 或者查看 *Menu > New Tabs and Windows > New Private Window*. 随后打开的所有标签也是私有的。
 
 ## 辅助提示
 
@@ -241,7 +240,7 @@ opera:config#UserPrefs|ScrollIsPan
 
 ```
 
-It is also possible to change this setting on the fly by dragging and dropping the appropriate Opera button into a toolbar. The button can be found in _Menu > Appearance > Buttons > Browser View_.
+It is also possible to change this setting on the fly by dragging and dropping the appropriate Opera button into a toolbar. The button can be found in *Menu > Appearance > Buttons > Browser View*.
 
 ### Long pressing a link opens it in a background tab (extension)
 
@@ -266,15 +265,15 @@ $ nvidia-settings -a InitialPixmapPlacement=2
 
 ### 卧式鼠标滚轮滚动
 
-Check _Settings > Preferences... > Advanced > Shortcuts > Mouse > Middle-Click Options... > Enable horizontal panning_.
+Check *Settings > Preferences... > Advanced > Shortcuts > Mouse > Middle-Click Options... > Enable horizontal panning*.
 
 or
 
-*   Highlight _Settings > Preferences... > Advanced > Shortcuts > Mouse > Opera Standard_.
-*   Duplicate _Settings > Preferences... > Advanced > Shortcuts > Mouse > Opera Standard_.
-*   Edit... _Settings > Preferences... > Advanced > Shortcuts > Mouse > Copy of Opera Standard_.
+*   Highlight *Settings > Preferences... > Advanced > Shortcuts > Mouse > Opera Standard*.
+*   Duplicate *Settings > Preferences... > Advanced > Shortcuts > Mouse > Opera Standard*.
+*   Edit... *Settings > Preferences... > Advanced > Shortcuts > Mouse > Copy of Opera Standard*.
 *   Search the `Forward` and `Back` input contexts and edit the appropriate button shortcuts to `scroll left` and `scroll right`.
-*   Rename _Settings > Preferences... > Advanced > Shortcuts > Mouse > Copy of Opera Standard_ as desired.
+*   Rename *Settings > Preferences... > Advanced > Shortcuts > Mouse > Copy of Opera Standard* as desired.
 
 ### 启动外部浏览器
 
@@ -305,7 +304,7 @@ Button0, "Chromium"="Execute program, "chromium --block-nonsandboxed-plugins --d
 
 ### Opera crashes when starting or closing with GTK+ 2.24.7+
 
-If this crash occurs, you can work around it by changing the _DialogToolkit_ option to 4:
+If this crash occurs, you can work around it by changing the *DialogToolkit* option to 4:
 
 ```
 opera:config#FileSelector|DialogToolkit

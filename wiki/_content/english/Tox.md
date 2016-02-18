@@ -1,6 +1,6 @@
 From the project [home page](https://tox.chat/):
 
-	_Tox is a distributed, secure messenger with audio and video chat capabilities._
+	*Tox is a distributed, secure messenger with audio and video chat capabilities.*
 
 ## Installation
 
@@ -56,7 +56,7 @@ Create user for running the daemon and configuration folder.
 
 ```
 
-Reload _systemd_, scanning for new units:
+Reload *systemd*, scanning for new units:
 
 ```
 # systemctl daemon-reload
@@ -68,7 +68,6 @@ Create the configuration file
 Copy the file below to /etc/tox-bootstrapd.conf
 
  `/etc/tox-bootstrapd.conf` 
-
 ```
 // Tox DHT bootstrap daemon configuration file.
 
@@ -141,4 +140,4 @@ Then edit the config file above to select a node from the [Tox wiki](https://wik
 
 [Enable](/index.php/Enable "Enable") and start tox-bootstrapd service, and check if it is running fine and port has been bound:
 
- `# ss --listening --numeric --processes | grep _node_port_`  `udp        0      0 *:_node_port_                 *:*                                 576/DHT_bootstrap`
+ `# ss --listening --numeric --processes | grep *node_port*`  `udp        0      0 *:*node_port*                 *:*                                 576/DHT_bootstrap`

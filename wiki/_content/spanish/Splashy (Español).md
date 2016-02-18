@@ -47,7 +47,7 @@ Vea por favor [este hilo](https://bbs.archlinux.org/viewtopic.php?id=48978) en e
 
 #### /boot/grub/menu.lst
 
-Añadir **quiet vga=791 splash** en la línea correspondiente del kernel en _/boot/grub/menu.lst_. p.ej.:
+Añadir **quiet vga=791 splash** en la línea correspondiente del kernel en */boot/grub/menu.lst*. p.ej.:
 
 ```
 kernel (hd0,6)/vmlinuz-linux root=/dev/sda6 ro quiet vga=791 splash
@@ -56,7 +56,7 @@ kernel (hd0,6)/vmlinuz-linux root=/dev/sda6 ro quiet vga=791 splash
 
 #### /etc/rc.conf
 
-Añadir SPLASH="splashy" en _/etc/rc.conf_ al final del archivo. p.ej.:
+Añadir SPLASH="splashy" en */etc/rc.conf* al final del archivo. p.ej.:
 
 ```
 SPLASH="splashy"
@@ -67,7 +67,7 @@ SPLASH="splashy"
 
 *   **Debe recordar reconstruir la imagen initramfs cada vez que se cambie la configuración de Splashy.** (p.ej. si cambió el tema de Splashy)
 
-1.  Añadir **splashy** al **final** de la línea HOOKS en _/etc/mkinitcpio.conf_. p.ej.: `HOOKS="base udev autodetect ide sata filesystems splashy"` 
+1.  Añadir **splashy** al **final** de la línea HOOKS en */etc/mkinitcpio.conf*. p.ej.: `HOOKS="base udev autodetect ide sata filesystems splashy"` 
 2.  Reconstruir la imagen del kernel `# mkinitcpio -p <nombre del kernel>` p.ej. `# mkinitcpio -p linux` 
 
 ### Actualizando
@@ -112,7 +112,7 @@ Después de cambiar el tema o hacer cambios en splashy de cualquier clase hemos 
 
 # Problemas conocidos
 
-1.  Cuando un guión de inicio falla o cuando un error se produce, Splashy no finaliza o bien cambia automáticamente a modo _verbose_.
+1.  Cuando un guión de inicio falla o cuando un error se produce, Splashy no finaliza o bien cambia automáticamente a modo *verbose*.
 2.  Algo va "terribelemente mal" cuando estando Splashy en ejecución, comienza una comprobación forzada de un sistema de archivos. Por alguna razón desconocida (aún), después del fsck el sistema se reinicia por sí sólo.
 3.  X puede mostrar iregularidades en la parte superior de la pantalla, si Splashy es activado durante el arranque.
 4.  Añadir `<autoverboseonerror>no</autoverboseonerror>` en `/etc/splashy/config.xml` podría solucionar algunos problemas en portátiles durante el arranque.

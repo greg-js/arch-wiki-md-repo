@@ -47,7 +47,6 @@ VNC 服务由 [tigervnc](https://www.archlinux.org/packages/?name=tigervnc) 提�
 在首次运行时，VNC服务会创建其初始环境文件和用户密码文件：
 
  `$ vncserver` 
-
 ```
 You will require a password to access your desktops.
 
@@ -251,7 +250,7 @@ $ vncviewer -passwd /path/to/server-passwd-file
 
 ### 服务端配置
 
-若希望从 LAN 保护之外访问 VNC 服务，你需要考虑明文密码及客户端与服务端之间未加密通信的问题。VNC 服务可以很简单地使用 SSH 隧道进行加密。另外，不要使用此方法对外界打开另一个端口，因为通信会沿用户之前对 WAN 打开的 SSH 端口在隧道中依次进行。在这种情况下，强烈推荐使用 -localhost 开关运行 vncserver。该开关仅允许接收_从本机_发起的连接，并顺理成章地仅允许物理 SSH 连接并认证到机器上的用户。（This switch only allows connections _from the localhost_ -- and by analogy only by users physically ssh'ed and authenticated on the box!）
+若希望从 LAN 保护之外访问 VNC 服务，你需要考虑明文密码及客户端与服务端之间未加密通信的问题。VNC 服务可以很简单地使用 SSH 隧道进行加密。另外，不要使用此方法对外界打开另一个端口，因为通信会沿用户之前对 WAN 打开的 SSH 端口在隧道中依次进行。在这种情况下，强烈推荐使用 -localhost 开关运行 vncserver。该开关仅允许接收*从本机*发起的连接，并顺理成章地仅允许物理 SSH 连接并认证到机器上的用户。（This switch only allows connections *from the localhost* -- and by analogy only by users physically ssh'ed and authenticated on the box!）
 
 ```
 $ vncserver -geometry 1440x900 -alwaysshared -dpi 96 -localhost :1
@@ -274,11 +273,11 @@ $ vncviewer localhost::8900
 
 ```
 
-以下来自 SSH 的手册页面： _-L [bind_address:] port:host:hostport_
+以下来自 SSH 的手册页面： *-L [bind_address:] port:host:hostport*
 
-_Specifies that the given port on the local (client) host is to be forwarded to the given host and port on the remote side. This works by allocating a socket to listen to port on the local side, optionally bound to the specified bind_address. Whenever a connection is made to this port, the connection is forwarded over the secure channel, and a connection is made to host port hostport from the remote machine. Port forwardings can also be specified in the configuration file. IPv6 addresses can be specified with an alternative syntax:_
+*Specifies that the given port on the local (client) host is to be forwarded to the given host and port on the remote side. This works by allocating a socket to listen to port on the local side, optionally bound to the specified bind_address. Whenever a connection is made to this port, the connection is forwarded over the secure channel, and a connection is made to host port hostport from the remote machine. Port forwardings can also be specified in the configuration file. IPv6 addresses can be specified with an alternative syntax:*
 
-_[bind_address/] port/host/ hostport or by enclosing the address in square brackets._ _Only the superuser can forward privileged ports. By default, the local port is bound in accordance with the GatewayPorts setting. However, an explicit bind_address may be used to bind the connection to a specific address. The bind_address of ``localhost'' indicates that the listening port be bound for local use only, while an empty address or `*' indicates that the port should be available from all interfaces._
+*[bind_address/] port/host/ hostport or by enclosing the address in square brackets.* *Only the superuser can forward privileged ports. By default, the local port is bound in accordance with the GatewayPorts setting. However, an explicit bind_address may be used to bind the connection to a specific address. The bind_address of ``localhost'' indicates that the listening port be bound for local use only, while an empty address or `*' indicates that the port should be available from all interfaces.*
 
 ### 在 Android 设备上通过 SSH 连接 VNC 服务器
 
@@ -321,7 +320,6 @@ Port: 5901
 在这里寻找这个文件`/usr/lib/systemd/system/vncserver.service`
 
  `/etc/systemd/system/vncserver@:1.service` 
-
 ```
 # The vncserver service unit file
 #

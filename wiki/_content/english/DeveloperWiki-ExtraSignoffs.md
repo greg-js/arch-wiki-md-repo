@@ -5,7 +5,7 @@
 The process is simple:
 
 *   If you need to test a package from the [extra] repository, you can add it to [testing]
-*   When a [extra] package is placed in [testing] an email **SHOULD** be sent to the arch-dev-public mailing list with the subject "[signoff] [extra] foobar-1.0-1", where _foobar-1.0-1_ is the package name and version.
+*   When a [extra] package is placed in [testing] an email **SHOULD** be sent to the arch-dev-public mailing list with the subject "[signoff] [extra] foobar-1.0-1", where *foobar-1.0-1* is the package name and version.
 *   In the email the maintainer has to say the reasons why that package went to [testing]
 *   All developers are encouraged to test this package.
 *   If a package works fine, a reply **SHOULD** be sent, telling the maintainer it worked, and on which architecture.

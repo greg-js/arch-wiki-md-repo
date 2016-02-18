@@ -29,7 +29,7 @@ dd if=/dev/sda1 of=/dev/sdb1 bs=4096 conv=notrunc,noerror
 
 ```
 
-Se il file di output _**`of`**_ (`sdb1` nel nostro esempio) non esiste, `dd` lo creerà a partire dall'inizio del disco.
+Se il file di output ***`of`*** (`sdb1` nel nostro esempio) non esiste, `dd` lo creerà a partire dall'inizio del disco.
 
 #### Clonare un intero hard disk
 

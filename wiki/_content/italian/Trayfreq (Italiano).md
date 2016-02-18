@@ -83,7 +83,7 @@ Se si desidera, un file di configurazione può essere inserito nella cartella ho
 
 ## Note
 
-Un file .desktop viene generato in `/etc/xdg/autostart/`. Partirà automaticamente una volta installato. Se non si vuole l'avvio automatico, basta aprire lo Startup Manager del Desktop Enviroment (come _Applicazioni d'avvio_ in GNOME) e deselezionare Trayfreq.
+Un file .desktop viene generato in `/etc/xdg/autostart/`. Partirà automaticamente una volta installato. Se non si vuole l'avvio automatico, basta aprire lo Startup Manager del Desktop Enviroment (come *Applicazioni d'avvio* in GNOME) e deselezionare Trayfreq.
 
 ## Link esterni
 

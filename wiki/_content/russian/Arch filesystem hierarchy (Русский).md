@@ -46,7 +46,7 @@ Arch Linux принадлежит к тем дистрибутивам, кото
 
 С [домашней страницы Filesystem Hierarchy Standard (FHS)](http://www.pathname.com/fhs):
 
-	"_Стандарт файловой системы был разработан, чтобы его использовали разработчики дистрибутивов Unix, пакетов программ и системные разработчики. Он в первую очередь является рекомендацией, а не руководством по управлению файловой системой Unix или иерархией каталогов._"
+	"*Стандарт файловой системы был разработан, чтобы его использовали разработчики дистрибутивов Unix, пакетов программ и системные разработчики. Он в первую очередь является рекомендацией, а не руководством по управлению файловой системой Unix или иерархией каталогов.*"
 
 ### Общедоступные и приватные файлы
 
@@ -103,7 +103,7 @@ UNIX - это многопользовательская среда. Поэто�
 
 ### /lost+found: Filesystem-specific recoverable data
 
-UNIX-like operating systems must execute a proper shutdown sequence. At times, a system might crash or a power failure might take the machine down. Either way, at the next boot, a filesystem check using the _fsck_ program shall be performed. _Fsck_ will go through the system and try to recover any corrupt files that it finds. The result of this recovery operation will be placed in this directory. The files recovered are not likely to be complete or make much sense but there always is a chance that something worthwhile is recovered.
+UNIX-like operating systems must execute a proper shutdown sequence. At times, a system might crash or a power failure might take the machine down. Either way, at the next boot, a filesystem check using the *fsck* program shall be performed. *Fsck* will go through the system and try to recover any corrupt files that it finds. The result of this recovery operation will be placed in this directory. The files recovered are not likely to be complete or make much sense but there always is a chance that something worthwhile is recovered.
 
 ### /mnt: Temporary mount points
 
@@ -115,7 +115,7 @@ Packages and large static files that do not fit cleanly into the above GNU files
 
 ### /proc: Process information
 
-Directory /proc is very special in that it is also a virtual filesystem. It is sometimes referred to as the _process information pseudo-file system_. It doesn't contain 'real' files, but rather, runtime system information (e.g. system memory, devices mounted, hardware configuration, etc). For this reason it can be regarded as a control and information center for the kernel. In fact, quite a lot of system utilities are simply calls to files in this directory. For example, 'lsmod' is the same as 'cat /proc/modules' while 'lspci' is a synonym for 'cat /proc/pci'. By altering files located in this directory, kernel parameters may be read/changed (sysctl) while the system is running.
+Directory /proc is very special in that it is also a virtual filesystem. It is sometimes referred to as the *process information pseudo-file system*. It doesn't contain 'real' files, but rather, runtime system information (e.g. system memory, devices mounted, hardware configuration, etc). For this reason it can be regarded as a control and information center for the kernel. In fact, quite a lot of system utilities are simply calls to files in this directory. For example, 'lsmod' is the same as 'cat /proc/modules' while 'lspci' is a synonym for 'cat /proc/pci'. By altering files located in this directory, kernel parameters may be read/changed (sysctl) while the system is running.
 
 The most distinctive facet about files in this directory is the fact that all of them have a file size of 0, with the exception of **kcore, mounts** and **self**.
 
@@ -143,7 +143,7 @@ This directory contains files that are required temporarily. Many programs use t
 
 While root is the primary filesystem, /usr is the secondary hierarchy, for user data, containing the majority of (multi-)user utilities and applications. /usr is shareable, read-only data. This means that /usr shall be shareable between various hosts and must not be written to, except by the package manager (installation, update, upgrade). Any information that is host-specific or varies with time is stored elsewhere.
 
-Aside from /home/, /usr/ usually contains by far the largest share of data on a system. Hence, this is one of the most important directories in the system as it contains all the user binaries, their documentation, libraries, header files, etc. X and its supporting libraries can be found here. User programs like telnet, ftp, etc., are also placed here. In the original UNIX implementations, /usr/ (for _user_), was where the home directories of the system's users were placed (that is to say, /usr/_someone_ was then the directory now known as /home/_someone_). Over time, /usr/ has become where userspace programs and data (as opposed to 'kernelspace' programs and data) reside. The name has not changed, but its meaning has narrowed and lengthened from _everything user related_ to _user usable programs and data_. As such, the backronym '**U**ser **S**ystem **R**esources' was created.
+Aside from /home/, /usr/ usually contains by far the largest share of data on a system. Hence, this is one of the most important directories in the system as it contains all the user binaries, their documentation, libraries, header files, etc. X and its supporting libraries can be found here. User programs like telnet, ftp, etc., are also placed here. In the original UNIX implementations, /usr/ (for *user*), was where the home directories of the system's users were placed (that is to say, /usr/*someone* was then the directory now known as /home/*someone*). Over time, /usr/ has become where userspace programs and data (as opposed to 'kernelspace' programs and data) reside. The name has not changed, but its meaning has narrowed and lengthened from *everything user related* to *user usable programs and data*. As such, the backronym '**U**ser **S**ystem **R**esources' was created.
 
 #### /usr/bin: Binaries
 

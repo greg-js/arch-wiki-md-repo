@@ -1,6 +1,6 @@
 From the [GTK+ website](http://www.gtk.org):
 
-	_GTK+, or the GIMP Toolkit, is a multi-platform toolkit for creating graphical user interfaces. Offering a complete set of widgets, GTK+ is suitable for projects ranging from small one-off tools to complete application suites._
+	*GTK+, or the GIMP Toolkit, is a multi-platform toolkit for creating graphical user interfaces. Offering a complete set of widgets, GTK+ is suitable for projects ranging from small one-off tools to complete application suites.*
 
 GTK+, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_Project "GNU Project") for the [GIMP](/index.php/GIMP "GIMP") but is now a very popular toolkit with bindings for many languages. This article will explore the tools used to configure the GTK+ theme, style, icon, font and font size, and also detail manual configuration.
 
@@ -43,7 +43,7 @@ Two versions of GTK+ are currently available in the [official repositories](/ind
 
 ## Themes
 
-In GTK+ 2, the default theme is _Raleigh_, but Arch Linux has a custom configuration file at `/usr/share/gtk-2.0/gtkrc`, which sets the default theme to _Adwaita_. In GTK+ 3, the default theme is _Adwaita_, but _HighContrast_ and _Raleigh_ themes are also included.
+In GTK+ 2, the default theme is *Raleigh*, but Arch Linux has a custom configuration file at `/usr/share/gtk-2.0/gtkrc`, which sets the default theme to *Adwaita*. In GTK+ 3, the default theme is *Adwaita*, but *HighContrast* and *Raleigh* themes are also included.
 
 To force a specific theme, you can set environment variables.
 
@@ -77,11 +77,11 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 	[https://gitcafe.com/Deepin/deepin-gtk-theme](https://gitcafe.com/Deepin/deepin-gtk-theme) || [deepin-gtk-theme](https://www.archlinux.org/packages/?name=deepin-gtk-theme)
 
-*   **GNOME Standard Themes** — Default themes for the GNOME desktop. Includes: _Adwaita_, _HighContrast_
+*   **GNOME Standard Themes** — Default themes for the GNOME desktop. Includes: *Adwaita*, *HighContrast*
 
 	[https://github.com/GNOME/gnome-themes-standard](https://github.com/GNOME/gnome-themes-standard) || [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard)
 
-*   **MATE Themes** — Default themes for the MATE desktop. Includes: _BlackMATE_, _BlueMenta_, _Blue-Submarine_, _ContrastHigh_, _ContrastHighInverse_, _GreenLaguna_, _Green-Submarine_, _Menta_, _TraditionalGreen_, _TraditionalOk_, _TraditionalOkTest_
+*   **MATE Themes** — Default themes for the MATE desktop. Includes: *BlackMATE*, *BlueMenta*, *Blue-Submarine*, *ContrastHigh*, *ContrastHighInverse*, *GreenLaguna*, *Green-Submarine*, *Menta*, *TraditionalGreen*, *TraditionalOk*, *TraditionalOkTest*
 
 	[https://github.com/mate-desktop/mate-themes](https://github.com/mate-desktop/mate-themes) || [mate-themes](https://www.archlinux.org/packages/?name=mate-themes)
 
@@ -123,7 +123,7 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 **Only GTK+ 2 is supported:**
 
-*   **GTK+ Engines** — Theme engines for GTK+ 2\. Includes: _Clearlooks_, _Crux_, _Industrial_, _Mist_, _Redmond_, _ThinIce_
+*   **GTK+ Engines** — Theme engines for GTK+ 2\. Includes: *Clearlooks*, *Crux*, *Industrial*, *Mist*, *Redmond*, *ThinIce*
 
 	[https://github.com/GNOME/gtk-engines](https://github.com/GNOME/gtk-engines) || [gtk-engines](https://www.archlinux.org/packages/?name=gtk-engines)
 
@@ -163,11 +163,11 @@ If you have GTK+ and Qt (KDE) applications on your desktop then you know that th
 
 Most major [desktop environments](/index.php/Desktop_environments "Desktop environments") provide tools to configure the GTK+ theme, icons, font and font size, and manage these settings via [XSettings](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html):
 
-*   If you use [Cinnamon](/index.php/Cinnamon "Cinnamon"), use Themes tool (_cinnamon-settings themes_): go to _System Settings > Themes_.
-*   If you use [Enlightenment](/index.php/Enlightenment "Enlightenment"): go to _Settings > All > Look > Application Theme_.
-*   If you use [GNOME](/index.php/GNOME "GNOME"), use GNOME Tweak Tool (_gnome-tweak-tool_): install [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool).
-*   If you use [MATE](/index.php/MATE "MATE"), use the Appearance Preferences tool (_mate-appearance-properties_): go to _System > Settings > Appearance_.
-*   If you use [Xfce](/index.php/Xfce "Xfce"), use the Appearance tool: go to _Settings > Appearance_.
+*   If you use [Cinnamon](/index.php/Cinnamon "Cinnamon"), use Themes tool (*cinnamon-settings themes*): go to *System Settings > Themes*.
+*   If you use [Enlightenment](/index.php/Enlightenment "Enlightenment"): go to *Settings > All > Look > Application Theme*.
+*   If you use [GNOME](/index.php/GNOME "GNOME"), use GNOME Tweak Tool (*gnome-tweak-tool*): install [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool).
+*   If you use [MATE](/index.php/MATE "MATE"), use the Appearance Preferences tool (*mate-appearance-properties*): go to *System > Settings > Appearance*.
+*   If you use [Xfce](/index.php/Xfce "Xfce"), use the Appearance tool: go to *Settings > Appearance*.
 
 Other GUI tools generally overwrite the [configuration files](#Configuration).
 
@@ -177,7 +177,7 @@ Other GUI tools generally overwrite the [configuration files](#Configuration).
 
 	[https://projects.kde.org/kde-gtk-config](https://projects.kde.org/kde-gtk-config) || [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config)
 
-	After installation, `kde-gtk-config` can also be found in _System Settings > Application Style > GTK_.
+	After installation, `kde-gtk-config` can also be found in *System Settings > Application Style > GTK*.
 
 *   **LXAppearance** — Desktop independent GTK+2 and GTK+3 style configuration tool from the LXDE project (it does not require other parts of the LXDE desktop).
 
@@ -189,9 +189,9 @@ Other GUI tools generally overwrite the [configuration files](#Configuration).
 
 	[http://kde-look.org/content/show.php?content=74689](http://kde-look.org/content/show.php?content=74689) || [gtk-kde4](https://aur.archlinux.org/packages/gtk-kde4/)
 
-	After installation, `gtk-kde4` can also be found in _System Settings > Lost and Found > GTK style_.
+	After installation, `gtk-kde4` can also be found in *System Settings > Lost and Found > GTK style*.
 
-*   **GTK+ Change Theme** — Little program that lets you change your GTK+ 2.0 theme (considered a better alternative to _switch2_).
+*   **GTK+ Change Theme** — Little program that lets you change your GTK+ 2.0 theme (considered a better alternative to *switch2*).
 
 	[http://plasmasturm.org/code/gtk-chtheme/](http://plasmasturm.org/code/gtk-chtheme/) || [gtk-chtheme](https://www.archlinux.org/packages/?name=gtk-chtheme)
 
@@ -214,7 +214,7 @@ GTK+ settings can be specified manually in configuration files, but desktop envi
 
 **Note:**
 
-*   See the [GTK+ 3 _GtkSettings_ properties](http://library.gnome.org/devel/gtk3/stable/GtkSettings.html#GtkSettings.properties) (and [GTK+ 2 properties](http://library.gnome.org/devel/gtk2/stable/GtkSettings.html#GtkSettings.properties)) in the GTK+ programming reference manual for the full list of currently supported GTK+ configuration options.
+*   See the [GTK+ 3 *GtkSettings* properties](http://library.gnome.org/devel/gtk3/stable/GtkSettings.html#GtkSettings.properties) (and [GTK+ 2 properties](http://library.gnome.org/devel/gtk2/stable/GtkSettings.html#GtkSettings.properties)) in the GTK+ programming reference manual for the full list of currently supported GTK+ configuration options.
 *   Some of the settings described below (such as `gtk-icon-sizes`) are deprecated and ignored since GTK+ 3.10.
 *   If you edit your GTK+ configuration files, only newly started applications will display the changes.
 
@@ -225,7 +225,6 @@ To manually change the GTK+ theme, icons, font and font size, add the following 
 **GTK+ 2:**
 
  `~/.gtkrc-2.0` 
-
 ```
 gtk-icon-theme-name = "Adwaita"
 gtk-theme-name = "Adwaita"
@@ -235,7 +234,6 @@ gtk-font-name = "DejaVu Sans 11"
 **GTK+ 3:**
 
  `$XDG_CONFIG_HOME/gtk-3.0/settings.ini` 
-
 ```
 [Settings]
 gtk-icon-theme-name = Adwaita
@@ -243,7 +241,7 @@ gtk-theme-name = Adwaita
 gtk-font-name = DejaVu Sans 11
 ```
 
-**Note:** The icon theme name is the name defined in the theme's index file, _not_ the name of its directory.
+**Note:** The icon theme name is the name defined in the theme's index file, *not* the name of its directory.
 
 ### Dark theme variant
 
@@ -256,7 +254,7 @@ gtk-application-prefer-dark-theme = true
 
 ### Keyboard shortcuts
 
-Keyboard shortcuts (otherwise known as _accelerators_ in GTK+) may be changed by hovering the mouse over the respective menu item, and pressing the desired key combination. To enable this feature, set:
+Keyboard shortcuts (otherwise known as *accelerators* in GTK+) may be changed by hovering the mouse over the respective menu item, and pressing the desired key combination. To enable this feature, set:
 
 ```
 gtk-can-change-accels = 1
@@ -313,7 +311,7 @@ Open the file-chooser within the **current-working-directory** and not with the 
 
 **GTK+ 3**
 
-Modify DConf with _gsettings_, there is no configuration file available:
+Modify DConf with *gsettings*, there is no configuration file available:
 
 ```
 $ gsettings set org.gtk.Settings.FileChooser startup-mode cwd
@@ -335,7 +333,6 @@ Modify `~/.config/gtk-2.0/gtkfilechooser.ini`configuration file:
 Prior to GTK+ 3.6, clicking on either side of the slider in the scrollbar would move the scrollbar in the direction of the click by approximately one page. Since GTK+ 3.6, the slider will move directly to the position of the click. This behaviour can be reverted in some applications by creating the file with the content below:
 
  `~/.config/gtk-3.0/settings.ini` 
-
 ```
 [Settings]
 gtk-primary-button-warps-slider = false
@@ -353,7 +350,6 @@ See [Environment variables#Graphical applications](/index.php/Environment_variab
 The positions of the overlay scrollbars are indicated by thin dashed lines in the application window. These dashed lines will be present even when overlay scrolling is disabled using the environment variable discussed in the section above. To remove the indicator lines, create the following file:
 
  `~/.config/gtk-3.0/gtk.css` 
-
 ```
 /* Remove dotted lines from GTK+ 3 applications */
 .undershoot.top, .undershoot.right, .undershoot.bottom, .undershoot.left { background-image: none; }
@@ -390,7 +386,7 @@ Point your browser to [http://localhost:port](http://localhost:port)
 To Start apps
 
 ```
-$ GDK_BACKEND=broadway BROADWAY_DISPLAY=$display_number _<<app>>_
+$ GDK_BACKEND=broadway BROADWAY_DISPLAY=$display_number *<<app>>*
 
 ```
 
@@ -442,7 +438,6 @@ GTK 3.12 introduced [client-side decorations](http://blogs.gnome.org/mclasen/201
 To remove the shadow and gap around windows (for example in combination with a tiling window manager), create the following file:
 
  `~/.config/gtk-3.0/gtk.css` 
-
 ```
 .window-frame, .window-frame:backdrop {
  box-shadow: 0 0 0 black;
@@ -495,7 +490,6 @@ To suppress these warnings, execute programs with `NO_AT_BRIDGE=1` or set that a
 If you are using a [window manager](/index.php/Window_manager "Window manager") which uses a window decoration theme that mimics the GTK+ theme background color, you may find that the titlebar color no longer completely matches the application color in some GTK+ 3 applications. As a workaround, create the following file:
 
  `~/.config/gtk-3.0/gtk.css` 
-
 ```
 /* Always use background color */
 GtkWindow {
@@ -533,7 +527,6 @@ Install [gtk2-patched-filechooser-icon-view](https://aur.archlinux.org/packages/
 GTK+ 2 configuration example:
 
  `~/.gtkrc-2.0` 
-
 ```
 # GTK theme
 include "/usr/share/themes/Clearlooks/gtk-2.0/gtkrc"
@@ -555,7 +548,6 @@ gtk-toolbar-style = GTK_TOOLBAR_ICONS
 GTK+ 3 example of a configuration as converted from GTK+ 2.x to GTK+ 3.x by [lxappearance](https://www.archlinux.org/packages/?name=lxappearance):
 
  `$XDG_CONFIG_HOME/gtk-3.0/settings.ini` 
-
 ```
 [Settings] 
 gtk-theme-name=TraditionalOk

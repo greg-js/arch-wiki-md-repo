@@ -22,7 +22,7 @@ A KMS egy új technológia, melyet még kísérleti stádiumban lévőnek tekint
 
 ## Hibaelhárítás
 
-Fontos, hogy _bármilyen_ beállítást is használsz, _mindig_ töröld ki a "vga="-t a boot opciók közül, mivel ezek összeütközésbe kerülhetnek a KMS által szolgáltatott natív felbontással. Ki kell törölni minden "video=" részt is, mert olyan framebuffereket kapcsolnak be, amelyik összeütközésbe kerülhet a driverrel. Bármilyen más framebuffer drivert (mint például [uvesafb](/index.php/Uvesafb "Uvesafb")) le kell tiltani a KMS engedélyezése előtt.
+Fontos, hogy *bármilyen* beállítást is használsz, *mindig* töröld ki a "vga="-t a boot opciók közül, mivel ezek összeütközésbe kerülhetnek a KMS által szolgáltatott natív felbontással. Ki kell törölni minden "video=" részt is, mert olyan framebuffereket kapcsolnak be, amelyik összeütközésbe kerülhet a driverrel. Bármilyen más framebuffer drivert (mint például [uvesafb](/index.php/Uvesafb "Uvesafb")) le kell tiltani a KMS engedélyezése előtt.
 
 ### Túl kicsik a betűk
 

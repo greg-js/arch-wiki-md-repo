@@ -1,4 +1,4 @@
-[rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html) es un [emulador de terminal](/index.php?title=Terminal_Emulator&action=edit&redlink=1 "Terminal Emulator (page does not exist)") altamente configurable derivado de [rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt"). Comunmente es conocido como <tt>urxvt</tt>, este emulador puede ser [demonizado](/index.php/Daemon "Daemon") para ejecutar los clientes en un solo [proceso](https://en.wikipedia.org/wiki/Process_(computing) "wikipedia:Process (computing)") con el fin de minimizar el uso de los recursos del sistema. Desarrollado por Marc Lehmann, algunas de las características más sobresalientes de rxvt-unicode son el soporte de idiomas internacionales a través de [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode"), asi como la habilidad de mostrar múltiples tipografias y soporte para extensiones [Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl").
+[rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html) es un [emulador de terminal](/index.php?title=Terminal_Emulator&action=edit&redlink=1 "Terminal Emulator (page does not exist)") altamente configurable derivado de [rxvt](https://en.wikipedia.org/wiki/Rxvt con el fin de minimizar el uso de los recursos del sistema. Desarrollado por Marc Lehmann, algunas de las características más sobresalientes de rxvt-unicode son el soporte de idiomas internacionales a través de [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode"), asi como la habilidad de mostrar múltiples tipografias y soporte para extensiones [Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl").
 
 ## Contents
 
@@ -187,7 +187,9 @@ Skottish[[1]](https://bbs.archlinux.org/viewtopic.php?pid=506845#p506845) creó 
 
 sub on_sel_grab {
     my $query=quotemeta $_[0]->selection;
-    $query=~ s/\n/\\n/g;
+    $query=~ s/
+/\
+/g;
     $query=~ s/\r/\\r/g;
     system( "echo -en " . $query . " | xsel -i -b -p" );
 }
@@ -417,7 +419,7 @@ URxvt.perl-ext-common: default,matcher,tabbed
 
 <SHIFT>-Down: Create a new tab
 
-You can also use your mouse to switch the tabs by clicking the wished one and create a new tab by clicking on _[NEW].\\_
+You can also use your mouse to switch the tabs by clicking the wished one and create a new tab by clicking on *[NEW].\\*
 
 To close a tab just enter 'exit' like you'll close a terminal.
 

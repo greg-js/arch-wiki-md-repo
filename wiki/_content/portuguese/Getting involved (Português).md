@@ -1,4 +1,4 @@
-Na biologia, o [mutualismo](https://en.wikipedia.org/wiki/pt:Mutualismo_(biologia) "wikipedia:pt:Mutualismo (biologia)") é uma interação entre dois organismos onde ambos tem benefícios. Este principio se aplica aos membros próativos da comunidade Arch, que desejam contribuir e se envolver com o projeto em pról de sua distribuição Linux favorita. Esta participação beneficia não apenas membros da comunidade e seguidores do Arch, mas também, toda a gama dos usuários de [Software livre](https://en.wikipedia.org/wiki/pt:Software_livre "wikipedia:pt:Software livre").
+Na biologia, o [mutualismo](https://en.wikipedia.org/wiki/pt:Mutualismo_(biologia) é uma interação entre dois organismos onde ambos tem benefícios. Este principio se aplica aos membros próativos da comunidade Arch, que desejam contribuir e se envolver com o projeto em pról de sua distribuição Linux favorita. Esta participação beneficia não apenas membros da comunidade e seguidores do Arch, mas também, toda a gama dos usuários de [Software livre](https://en.wikipedia.org/wiki/pt:Software_livre "wikipedia:pt:Software livre").
 
 ## Contents
 
@@ -63,7 +63,7 @@ Você pode ajudar a sustentar os custos dos servidores, na [página oficial de d
 
 ## Projetos da comunidade
 
-**Nota:** Todos os projetos listados aqui são de criação da comunidade. Nenhum destes são considerados projetos _oficiais_ do Arch Linux.
+**Nota:** Todos os projetos listados aqui são de criação da comunidade. Nenhum destes são considerados projetos *oficiais* do Arch Linux.
 
 A comunidade Arch mantém vários projetos. Sinta-se livre para incluir o seu!
 
@@ -147,7 +147,7 @@ Serviços feitos especialmente para usuários Arch Linux.
 
 ### Como posso me tornar um desenvolvedor do Arch?
 
-A motivação principal no seu trabalho pelo Arch deve ser ajudar a comunidade como um todo, e não simplesmente se tornar um _Desenvolvedor Arch_.
+A motivação principal no seu trabalho pelo Arch deve ser ajudar a comunidade como um todo, e não simplesmente se tornar um *Desenvolvedor Arch*.
 
 Normalmente, novos desenvolvedores são selecionados pelos atuais desenvolvedores quando a carga de trabalho aumenta. Em alguns casos informações sobre um cargo são liberadas e você pode se aplicar a ele, porém, mais frequentemente os desenvolvedores convidam alguém que eles julgam ser bom executando as tarefas de tal cargo, e que irá completar esta lacuna no time. Ter um portfólio de contribuições para o Arch Linux é a melhor maneira de ingressar no time.
 

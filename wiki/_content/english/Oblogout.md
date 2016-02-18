@@ -116,7 +116,6 @@ When using multiple monitors, oblogout may cover all monitors. If you only want 
 For example, if you have two monitors, and you only want oblogout to appear on the first monitor, add this to the applications section of `rc.xml`:
 
  `~/.config/openbox/rc.xml` 
-
 ```
 <applications>
   <application name="oblogout">

@@ -43,14 +43,14 @@ Otherwise also specify upload and download limit as well as other configuration 
 [Modify](/index.php/Systemd#Editing_provided_units "Systemd") `ExecStart` for a desired systemd service, appending `/usr/bin/trickle`. For example:
 
 ```
-ExecStart=/usr/bin/_daemon_
+ExecStart=/usr/bin/*daemon*
 
 ```
 
 changes to
 
 ```
-ExecStart=/usr/bin/trickle /usr/bin/_daemon_
+ExecStart=/usr/bin/trickle /usr/bin/*daemon*
 
 ```
 
@@ -86,7 +86,6 @@ Length-Smoothing = 20
 Create the following two files and customize them to your needs.
 
  `/etc/systemd/system/trickled.service` 
-
 ```
 [Unit]
 Description=trickle bandwith shaper
@@ -102,9 +101,7 @@ Group=nobody
 WantedBy=network.target
 
 ```
-
  `/etc/conf.d/trickled_systemd` 
-
 ```
 # Upload bandwidth limit in KBit/s
 TRICKLE_UP=

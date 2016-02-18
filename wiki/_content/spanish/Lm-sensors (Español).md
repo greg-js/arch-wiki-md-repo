@@ -48,7 +48,6 @@ Instala el paquete de sensores desde el repositorio main
 
 Usa **sensors-detect** para detectar y generar una lista de los modulos del Kernel
  `# sensors-detect` Esto creará la configuración y la guardará en `/etc/conf.d/lm_sensors`. Asegurate de responder YES a las preguntas sobre la exploración de diversos sensores. Cuando el script haya finalizado, se le presentará un resumen de las pruebas, ejemplo de mi sistema
-
 ```
 Now follows a summary of the probes I have just done.
 Just press ENTER to continue:
@@ -58,7 +57,6 @@ Driver `it87':
 Driver `coretemp':
   * Chip `Intel Core family thermal sensor' (confidence: 9)
 ```
-
 Carga automáticamente los modulos del Kernel al momento de bootear agergando **sensors** a la cadena **DAEMONS** en `/etc/rc.conf` `DAEMONS=(syslog-ng crond ... sensors ...)` Alternativamente, agregalos manualmente a **MODULES** en `/etc/rc.conf` `MODULES=(coretemp it87 acpi-cpufreq)` **NO** necesitas ambas configuraciones, la de DAEMONS y la de MODULES.
 
 ### Probando lm_sensors
@@ -266,14 +264,14 @@ Number of SDRAM DIMMs detected and decoded: 4
 
 ### Frontends Graficos
 
-Hay una variedad de front-ends para los datos del sensor. Algunos están listados abajo. El nombre en _cursiva_ es el nombre del paquete en el repositorio, en otras palabras, podes instalarlo/s via pacman.
+Hay una variedad de front-ends para los datos del sensor. Algunos están listados abajo. El nombre en *cursiva* es el nombre del paquete en el repositorio, en otras palabras, podes instalarlo/s via pacman.
 
-1.  _sensors-applet_ - un applet para el panel de Gnome para visualizar lecturas desde los sensores, incluyendo la temperatura del CPU, velocidad de los ventiladores y voltajes.
-2.  _ksensors_ - ksensors es un agradable frontend para lm_sensors para KDE
-3.  _xsensors_ - interfaz X11 para lm_sensors
-4.  _xfce4-sensors-plugin_ - Un plugin de lm_sensors para el panel de Xfce
-5.  _[conky](/index.php/Conky "Conky")_ - Conky es un avanzado, y altamente configurable monitor de sistema para X basado en torsmo
-6.  _kdeutils-superkaramba_ - Superkaramba es una herramienta la cual te da la posibilidad de crear diferentes widgets para el entorno KDE. Mira la [sección karamba en kde-look.org](http://www.kde-look.org/index.php?xcontentmode=38) para ejemplos de frontends hechos en karamba para los ensores.
+1.  *sensors-applet* - un applet para el panel de Gnome para visualizar lecturas desde los sensores, incluyendo la temperatura del CPU, velocidad de los ventiladores y voltajes.
+2.  *ksensors* - ksensors es un agradable frontend para lm_sensors para KDE
+3.  *xsensors* - interfaz X11 para lm_sensors
+4.  *xfce4-sensors-plugin* - Un plugin de lm_sensors para el panel de Xfce
+5.  *[conky](/index.php/Conky "Conky")* - Conky es un avanzado, y altamente configurable monitor de sistema para X basado en torsmo
+6.  *kdeutils-superkaramba* - Superkaramba es una herramienta la cual te da la posibilidad de crear diferentes widgets para el entorno KDE. Mira la [sección karamba en kde-look.org](http://www.kde-look.org/index.php?xcontentmode=38) para ejemplos de frontends hechos en karamba para los ensores.
 
 ### Sensord
 

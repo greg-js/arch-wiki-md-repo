@@ -1,6 +1,6 @@
 From [Unity - Game engine, tools and multiplatform](https://unity3d.com/unity):
 
-	_Unity is a flexible and powerful development platform for creating multiplatform 3D and 2D games and interactive experiences. It's a complete ecosystem for anyone who aims to build a business on creating high-end content and connecting to their most loyal and enthusiastic players and customers._
+	*Unity is a flexible and powerful development platform for creating multiplatform 3D and 2D games and interactive experiences. It's a complete ecosystem for anyone who aims to build a business on creating high-end content and connecting to their most loyal and enthusiastic players and customers.*
 
 Not to be confused with Canonical's [Unity](/index.php/Unity "Unity").
 
@@ -40,14 +40,14 @@ Install the [android-sdk](https://aur.archlinux.org/packages/android-sdk/) packa
 
 #### Configure the Editor
 
-Open the editor, navigate to _Edit -> Preferences_ and set the correct paths to the Android SDK and the JDK.
+Open the editor, navigate to *Edit -> Preferences* and set the correct paths to the Android SDK and the JDK.
 
 **Tip:**
 
 *   The Android SDK is usually in `/opt/android-sdk`.
 *   The JDK varies by the version you are using, if you want to use the default set it to `/usr/lib/jvm/default`.
 
-The navigate to _Edit -> Project Settings -> Editor_ and set `Unity Remote Device` to `Any Android Device`.
+The navigate to *Edit -> Project Settings -> Editor* and set `Unity Remote Device` to `Any Android Device`.
 
 For more help see the [Unity documentation](http://docs.unity3d.com/Manual/android-sdksetup.html).
 
@@ -57,7 +57,7 @@ Install [Unity Remote 4](https://play.google.com/store/apps/details?id=com.unity
 
 It is also [recommended](http://www.howtogeek.com/192732/android-usb-connections-explained-mtp-ptp-and-usb-mass-storage/) to set your Android device to PTP mode.
 
-**Note:** Don’t forget to turn on “USB Debugging” on your device. Go to _Settings -> Developer_ options, then enable USB debugging. As of Android Jelly Bean 4.2 the Developer options are hidden by default. To enable them tap on _Settings -> About Phone -> Build Version_ multiple times. Then you will be able to access the _Settings -> Developer_ options.
+**Note:** Don’t forget to turn on “USB Debugging” on your device. Go to *Settings -> Developer* options, then enable USB debugging. As of Android Jelly Bean 4.2 the Developer options are hidden by default. To enable them tap on *Settings -> About Phone -> Build Version* multiple times. Then you will be able to access the *Settings -> Developer* options.
 
 For more help see the [Unity documentation](http://docs.unity3d.com/Manual/UnityRemote4.html).
 

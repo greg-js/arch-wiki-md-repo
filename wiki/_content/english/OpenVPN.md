@@ -56,7 +56,6 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
 OpenVPN requires TUN/TAP support, which is already configured in the default kernel. If you build your own kernel, make sure to enable the `tun` module as below:
 
  `Kernel config file` 
-
 ```
  Device Drivers
   --> Network device support
@@ -122,7 +121,6 @@ Edit the following:
 *   It is recommended to run OpenVPN with reduced privileges once it has initialized. Do this by uncommenting the `user` and `group` directives.
 
  `/etc/openvpn/server.conf` 
-
 ```
 ca /etc/openvpn/ca.crt
 cert /etc/openvpn/elmer.crt
@@ -158,7 +156,6 @@ Edit the following:
 *   Enable the SSL/TLS HMAC handshake protection. **Note the use of the parameter 1 for a client**.
 
  `/etc/openvpn/client.conf` 
-
 ```
 remote elmer.acmecorp.org 1194
 .
@@ -176,7 +173,7 @@ tls-auth /etc/openvpn/ta.key **1**
 
 #### Drop root privileges after connecting
 
-Using the options `user nobody` and `group nobody` in the configuration file makes _openvpn_ drop its privileges after establishing the connection. The downside is that upon VPN disconnect the daemon is unable to delete its set network routes again. If one wants to limit transmitting traffic without the VPN connection, this may be advantageous. However, it requires manual action to delete the routes and will, hence, often be undesired. For this case the [OpenVPN howto](https://openvpn.net/index.php/open-source/documentation/howto.html#security) explains how to create an unprivileged user mode and wrapper script to have the routes restored automatically.
+Using the options `user nobody` and `group nobody` in the configuration file makes *openvpn* drop its privileges after establishing the connection. The downside is that upon VPN disconnect the daemon is unable to delete its set network routes again. If one wants to limit transmitting traffic without the VPN connection, this may be advantageous. However, it requires manual action to delete the routes and will, hence, often be undesired. For this case the [OpenVPN howto](https://openvpn.net/index.php/open-source/documentation/howto.html#security) explains how to create an unprivileged user mode and wrapper script to have the routes restored automatically.
 
 Further, it is possible to let OpenVPN start as a non-privileged user in the first place, without ever running as root, see [this OpenVPN wiki page](https://community.openvpn.net/openvpn/wiki/UnprivilegedUser).
 
@@ -185,7 +182,6 @@ Further, it is possible to let OpenVPN start as a non-privileged user in the fir
 Run `# openvpn /etc/openvpn/server.conf` on the server, and `# openvpn /etc/openvpn/client.conf` on the client. You should see something similar to this:
 
  `# openvpn /etc/openvpn/server.conf` 
-
 ```
 Wed Dec 28 14:41:26 2011 OpenVPN 2.2.1 x86_64-unknown-linux-gnu [SSL] [LZO2] [EPOLL] [eurephia] built on Aug 13 2011
 Wed Dec 28 14:41:26 2011 NOTE: OpenVPN 2.1 requires '--script-security 2' or higher to call user-defined scripts or executables
@@ -196,9 +192,7 @@ Wed Dec 28 14:41:54 2011 bugs/95.126.136.73:48904 MULTI: primary virtual IP for 
 Wed Dec 28 14:41:57 2011 bugs/95.126.136.73:48904 PUSH: Received control message: 'PUSH_REQUEST'
 Wed Dec 28 14:41:57 2011 bugs/95.126.136.73:48904 SENT CONTROL [bugs]: 'PUSH_REPLY,route 10.8.0.1,topology net30,ping 10,ping-restart 120,ifconfig 10.8.0.6 10.8.0.5' (status=1)
 ```
-
  `# openvpn /etc/openvpn/client.conf` 
-
 ```
 Wed Dec 28 14:41:50 2011 OpenVPN 2.2.1 i686-pc-linux-gnu [SSL] [LZO2] [EPOLL] [eurephia] built on Aug 13 2011
 Wed Dec 28 14:41:50 2011 NOTE: OpenVPN 2.1 requires '--script-security 2' or higher to call user-defined scripts or executables
@@ -213,7 +207,6 @@ Wed Dec 28 14:41:57 2011 Initialization Sequence Completed
 On the server, find the IP address assigned to the tunX device:
 
  `# ip addr show` 
-
 ```
 .
 .
@@ -227,7 +220,6 @@ Here we see that the server end of the tunnel has been given the IP address 10.8
 Do the same on the client:
 
  `# ip addr show` 
-
 ```
 .
 .
@@ -243,7 +235,6 @@ Now try pinging the interfaces.
 On the server:
 
  `# ping -c3 10.8.0.6` 
-
 ```
 PING 10.8.0.6 (10.8.0.6) 56(84) bytes of data.
 64 bytes from 10.8.0.6: icmp_req=1 ttl=64 time=238 ms
@@ -258,7 +249,6 @@ rtt min/avg/max/mdev = 205.862/227.266/238.788/15.160 ms
 On the client:
 
  `# ping -c3 10.8.0.1` 
-
 ```
 PING 10.8.0.1 (10.8.0.1) 56(84) bytes of data.
 64 bytes from 10.8.0.1: icmp_req=1 ttl=64 time=158 ms
@@ -281,7 +271,6 @@ You now have a working OpenVPN installation, and your client (bugs) will be able
 Now it is time to configure the maximum segment size (MSS). In order to do this we need to discover what is the smallest MTU along the path between the client and server. In order to do this you can ping the server and disable fragmentation. Then specify the max packet size.
 
  `# ping -c5 -M do -s 1500 elmer.acmecorp.org` 
-
 ```
 PING elmer.acmecorp.org (99.88.77.66) 1500(1528) bytes of data.
 From 1.2.3.4 (99.88.77.66) icmp_seq=1 Frag needed and DF set (mtu = 576)
@@ -297,7 +286,6 @@ From 1.2.3.4 (99.88.77.66) icmp_seq=1 Frag needed and DF set (mtu = 576)
 We received an ICMP message telling us the MTU is 576 bytes. The means we need to fragment the UDP packets smaller then 576 bytes to allow for some UDP overhead.
 
  `# ping -c5 -M do -s 548 elmer.acmecorp.org` 
-
 ```
 PING elmer.acmecorp.org (99.88.77.66) 548(576) bytes of data.
 556 bytes from 99.88.77.66: icmp_seq=1 ttl=48 time=206 ms
@@ -314,7 +302,6 @@ rtt min/avg/max/mdev = 206.027/210.603/224.158/6.832 ms
 After some trial and error..., we discover that we need to fragment packets on 548 bytes. In order to do this we specify this fragment size in the configuration and instruct OpenVPN to fix the Maximum Segment Size (MSS).
 
  `/etc/openvpn/client.conf` 
-
 ```
 remote elmer.acmecorp.org 1194
 .
@@ -339,9 +326,7 @@ tls-auth /etc/openvpn/ta.key **1**
 We also need to tell the server about the fragmentation. Note that "mssfix" is NOT needed in the server configuration.
 
 **Note:** Clients that do not support the 'fragment' directive (e.g. OpenELEC, [iOS app](https://forums.openvpn.net/topic13201.html#p31156)) are not able to connect to a server that uses the 'fragment' directive. To support such clients, skip this section and configure the clients with the 'mtu-test' directive described below.
-
  `/etc/openvpn/server.conf` 
-
 ```
 ca /etc/openvpn/ca.crt
 cert /etc/openvpn/elmer.crt
@@ -366,7 +351,6 @@ fragment 548
 You can also allow OpenVPN to do this for you by having OpenVPN do the ping testing every time the client connects to the VPN. Be patient, since your client may not inform you about the test being run and the connection may appear as nonfunctional until finished.
 
  `/etc/openvpn/client.conf` 
-
 ```
 remote elmer.acmecorp.org 1194
 .
@@ -426,7 +410,7 @@ To troubleshoot a VPN connection, start the client's daemon manually with `openv
 
 ### systemd service configuration
 
-To start OpenVPN automatically at system boot, either for a client or for a server, [enable](/index.php/Enable "Enable") `openvpn@_<configuration>_.service` on the applicable machine.
+To start OpenVPN automatically at system boot, either for a client or for a server, [enable](/index.php/Enable "Enable") `openvpn@*<configuration>*.service` on the applicable machine.
 
 For example, if the client configuration file is `/etc/openvpn/client.conf`, the service name is `openvpn@client.service`. Or, if the server configuration file is `/etc/openvpn/server.conf`, the service name is `openvpn@server.service`.
 
@@ -435,7 +419,6 @@ For example, if the client configuration file is `/etc/openvpn/client.conf`, the
 On a client you might not always need to run a VPN tunnel and/or only want to establish it for a specific NetworkManager connection. This can be done by adding a script to `/etc/NetworkManager/dispatcher.d/`. In the following example "Provider" is the name of the NetworkManager connection:
 
  `/etc/NetworkManager/dispatcher.d/10-openvpn` 
-
 ```
 #!/bin/bash
 
@@ -488,7 +471,6 @@ In order to configure your ufw settings for VPN traffic first add the following 
 Now change `/etc/ufw/before.rules`, and add the following code after the header and before the "*filter" line. Do not forget to change the IP/subnet mask to match the one in `/etc/openvpn/server.conf`. The adapter ID in the example is generically called `eth0` so edit it for your system accordingly.
 
  `/etc/ufw/before.rules` 
-
 ```
 # NAT (Network Address Translation) table rules
 *nat
@@ -614,7 +596,6 @@ Create a file in the client configuration directory called bugs, containing the 
 Add the client-config-dir and the `route 192.168.4.0 255.255.255.0` directive to the server configuration file. It tells the server what subnet should be routed from the tun device to the server LAN:
 
  `/etc/openvpn/server.conf` 
-
 ```
 client-config-dir ccd
 route 192.168.4.0 255.255.255.0
@@ -628,7 +609,6 @@ route 192.168.4.0 255.255.255.0
 Combine the two previous sections:
 
  `/etc/openvpn/server.conf` 
-
 ```
 push "route 10.66.0.0 255.255.255.0"
 .
@@ -637,7 +617,6 @@ client-config-dir ccd
 route 192.168.4.0 255.255.255.0
 
 ```
-
  `/etc/openvpn/ccd/bugs`  `iroute 192.168.4.0 255.255.255.0` 
 **Note:** Remember to make sure that all the LANs or the needed hosts can route to all the destinations.
 
@@ -648,7 +627,6 @@ By default clients will not see each other. To allow IP packets to flow between 
 In order for another client or client LAN to see a specific client LAN, you will need to add a push directive for each client subnet to the server configuration file (this will make the server announce the available subnet(s) to other clients):
 
  `/etc/openvpn/server.conf` 
-
 ```
 client-to-client
 push "route 192.168.4.0 255.255.255.0"
@@ -664,7 +642,7 @@ push "route 192.168.5.0 255.255.255.0"
 
 The DNS servers used by the system are defined in `/etc/resolv.conf`. Traditionally, this file is the responsibility of whichever program deals with connecting the system to the network (e.g. Wicd, NetworkManager, etc...) However, OpenVPN will need to modify this file if you want to be able to resolve names on the remote side. To achieve this in a sensible way, install [openresolv](https://www.archlinux.org/packages/?name=openresolv), which makes it possible for more than one program to modify `resolv.conf` without stepping on each-other's toes.
 
-Before continuing, test openresolv by restarting your network connection and ensuring that `resolv.conf` states that it was generated by _resolvconf_, and that your DNS resolution still works as before. You should not need to configure openresolv; it should be automatically detected and used by your network system.
+Before continuing, test openresolv by restarting your network connection and ensuring that `resolv.conf` states that it was generated by *resolvconf*, and that your DNS resolution still works as before. You should not need to configure openresolv; it should be automatically detected and used by your network system.
 
 For Linux, OpenVPN can send DNS host information, but expects an external process to act on it. This can be done with a [openvpn-update-resolv-conf](https://github.com/masterkorp/openvpn-update-resolv-conf) script, which can be saved for example at `/etc/openvpn/update-resolv-conf` and make it executable with [chmod](/index.php/Chmod "Chmod"). There is also an AUR package: [openvpn-update-resolv-conf](https://aur.archlinux.org/packages/openvpn-update-resolv-conf/) which will take care of the script installation for you.
 
@@ -689,8 +667,7 @@ For now see: [OpenVPN Bridge](/index.php/OpenVPN_Bridge "OpenVPN Bridge")
 
 If you are having resolve issues when starting your profile:
 
- `# journalctl _SYSTEMD_UNIT=openvpn@_profile_.service` 
-
+ `# journalctl _SYSTEMD_UNIT=openvpn@*profile*.service` 
 ```
 RESOLVE: Cannot resolve host address: example.com: Name or service not known
 
@@ -699,7 +676,6 @@ RESOLVE: Cannot resolve host address: example.com: Name or service not known
 Then, **only if your network setup can be started before OpenVPN**, you should force OpenVPN to wait for the network by adding `Requires=network.target` and `After=network.target` to the OpenVPN systemd service file:
 
  `/usr/lib/systemd/system/openvpn@.service` 
-
 ```
 [Unit]
 Description=OpenVPN connection to %i
@@ -709,14 +685,13 @@ After=network.target
 
 ```
 
-Do not forget to run `systemctl daemon-reload` and [restart](/index.php/Restart "Restart") `openvpn@_profile_.service`.
+Do not forget to run `systemctl daemon-reload` and [restart](/index.php/Restart "Restart") `openvpn@*profile*.service`.
 
 ### Client daemon not restarting after suspend
 
 If you put your client system to sleep, and on resume openvpn does not restart, resulting in broken connectivity, create the following file:
 
  `/usr/lib/systemd/system-sleep/vpn.sh` 
-
 ```
 #!/bin/sh
 if [ "$1" == "pre" ]
@@ -728,7 +703,6 @@ fi
 Make it executable `chmod a+x /usr/lib/systemd/system-sleep/vpn.sh`
 
  `/etc/systemd/system/openvpn@.service.d/restart.conf` 
-
 ```
 [Service]
 Restart=always
@@ -739,7 +713,6 @@ Restart=always
 If the VPN-Connection drops some seconds after it stopped transmitting data and, even though it states it is connected, no data can be transmitted through the tunnel, try adding a `keepalive`directive to the server's configuration:
 
  `/etc/openvpn/server.conf` 
-
 ```
 .
 .

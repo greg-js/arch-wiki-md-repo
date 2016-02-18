@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Udisks](/index.php/Udisks "Udisks") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-10-08，点击[这里](https://wiki.archlinux.org/index.php?title=Udisks&diff=0&oldid=403663)可以查看翻译后英文页面的改动。
 
-[udisks](http://www.freedesktop.org/wiki/Software/udisks/) 提供了 _udisksd_ 守护进程，它实现了用于查询和管理存储设备的 D-Bus 接口；还提供了一个命令行工具 _udisksctl_，用于查询和使用该守护进程。
+[udisks](http://www.freedesktop.org/wiki/Software/udisks/) 提供了 *udisksd* 守护进程，它实现了用于查询和管理存储设备的 D-Bus 接口；还提供了一个命令行工具 *udisksctl*，用于查询和使用该守护进程。
 
 ## Contents
 
@@ -20,16 +20,15 @@
 
 ## 安装
 
-有两个版本的 _udisks_，分别称为 [udisks](https://www.archlinux.org/packages/?name=udisks) 和 [udisks2](https://www.archlinux.org/packages/?name=udisks2)。_udisks_ 的开发已终止以利于 _udisks2_。[[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
+有两个版本的 *udisks*，分别称为 [udisks](https://www.archlinux.org/packages/?name=udisks) 和 [udisks2](https://www.archlinux.org/packages/?name=udisks2)。*udisks* 的开发已终止以利于 *udisks2*。[[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
 
-_udisksd_ ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) 和 _udisks-daemon_ ([udisks](https://www.archlinux.org/packages/?name=udisks)) 都是由 [D-Bus](/index.php/D-Bus "D-Bus") 在后台启动，并且不应该被显式地启用。（参阅 `man udisksd` 和 `man udisks-daemon`）。它们分别可以通过 _udisksctl_ 和 _udisks_ 以命令行方式管控。详情参阅 `man udisksctl` 和 `man udisks`。
+*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) 和 *udisks-daemon* ([udisks](https://www.archlinux.org/packages/?name=udisks)) 都是由 [D-Bus](/index.php/D-Bus "D-Bus") 在后台启动，并且不应该被显式地启用。（参阅 `man udisksd` 和 `man udisks-daemon`）。它们分别可以通过 *udisksctl* 和 *udisks* 以命令行方式管控。详情参阅 `man udisksctl` 和 `man udisks`。
 
 ## 配置
 
 用户通过 udisks 可执行的动作受限于 [Polkit](/index.php/Polkit "Polkit")。If your [session](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") is not activated or present, configure policykit manually. The following file sets common udisks permissions for the `storage` group. [[2]](https://github.com/coldfix/udiskie#permissions)
 
  `/etc/polkit-1/rules.d/50-udisks.rules` 
-
 ```
 polkit.addRule(function(action, subject) {
   var YES = polkit.Result.YES;
@@ -66,27 +65,27 @@ Automatic mounting of devices is easily achieved with [udisks wrappers](/index.p
 
 ### Devmon
 
-[udevil](https://www.archlinux.org/packages/?name=udevil) includes [devmon](http://igurublog.wordpress.com/downloads/script-devmon), which is compatible to _udisks_ and _udisks2_. It uses mount helpers with the following priority:
+[udevil](https://www.archlinux.org/packages/?name=udevil) includes [devmon](http://igurublog.wordpress.com/downloads/script-devmon), which is compatible to *udisks* and *udisks2*. It uses mount helpers with the following priority:
 
 1.  [udevil](http://ignorantguru.github.io/udevil/) (SUID)
 2.  pmount (SUID)
 3.  udisks
 4.  udisks2
 
-To mount devices with _udisks_ or _udisks2_, remove the SUID permission from _udevil_:
+To mount devices with *udisks* or *udisks2*, remove the SUID permission from *udevil*:
 
 ```
 # chmod -s /usr/bin/udevil
 
 ```
 
-**Note:** `chmod -x /usr/bin/udevil` as root causes devmon to use _udisks_ for device monitoring
+**Note:** `chmod -x /usr/bin/udevil` as root causes devmon to use *udisks* for device monitoring
 
-**Tip:** To run devmon in the background and automatically mount devices, [enable](/index.php/Enable "Enable") it with `devmon@.service`, taking the user name as argument: `devmon@_user_.service`. Keep in mind services run outside the [session](/index.php/Session "Session"). Adjust Polkit rules where appropriate, or run `devmon` from the user session (see [Autostart](/index.php/Autostart "Autostart")).
+**Tip:** To run devmon in the background and automatically mount devices, [enable](/index.php/Enable "Enable") it with `devmon@.service`, taking the user name as argument: `devmon@*user*.service`. Keep in mind services run outside the [session](/index.php/Session "Session"). Adjust Polkit rules where appropriate, or run `devmon` from the user session (see [Autostart](/index.php/Autostart "Autostart")).
 
 ### inotify
 
-You may use [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools) to monitor `/dev`, and mount drives when a new block device is created. Stale mount points are automatically removed by _udisksd_, such that no special action is required on deletion.
+You may use [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools) to monitor `/dev`, and mount drives when a new block device is created. Stale mount points are automatically removed by *udisksd*, such that no special action is required on deletion.
 
 ```
 #!/bin/bash
@@ -128,7 +127,6 @@ Udisks2 hides certain devices from the user by default. If this is undesired or 
 默认情况下， udisks2 在 ACL 控制下将可移动设备挂载到 `/run/media/$USER/` 目录下。如果你希望改为挂载到 `/media` 目录下，应用这条规则：
 
  `/etc/udev/rules.d/99-udisks2.rules` 
-
 ```
 # UDISKS_FILESYSTEM_SHARED
 # ==1: mount filesystem to a shared directory (/media/VolumeName)
@@ -143,7 +141,7 @@ ENV{ID_FS_USAGE}=="filesystem|other|crypto", ENV{UDISKS_FILESYSTEM_SHARED}="1"
 To easily mount ISO images, use the following command:
 
 ```
-$ udisksctl loop-setup -r -f _image.iso_
+$ udisksctl loop-setup -r -f *image.iso*
 
 ```
 
@@ -171,12 +169,12 @@ KERNEL=="sda2", ENV{UDISKS_IGNORE}="1"
 
 ### udisks: Devices do not remain unmounted
 
-_udisks_ remounts devices after a given period, or _polls_ those devices. This can cause unexpected behaviour, for example when formatting drives, sharing them in a [virtual machine](/index.php/Virtual_machine "Virtual machine"), power saving, or removing a drive that was not detached with `--detach` before.
+*udisks* remounts devices after a given period, or *polls* those devices. This can cause unexpected behaviour, for example when formatting drives, sharing them in a [virtual machine](/index.php/Virtual_machine "Virtual machine"), power saving, or removing a drive that was not detached with `--detach` before.
 
 To disable polling for a given device, for example a CD/DVD device:
 
 ```
-# udisks --inhibit-polling /dev/sr_0_
+# udisks --inhibit-polling /dev/sr*0*
 
 ```
 

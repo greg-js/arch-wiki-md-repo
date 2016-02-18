@@ -1,4 +1,4 @@
-[PeerGuardian Linux](http://sourceforge.net/projects/peerguardian/) (_pgl_) is a privacy oriented firewall application. It blocks connections to and from hosts specified in huge block lists (thousands or millions of IP ranges). _pgl_ is based on the Linux kernel [netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") framework and [iptables](/index.php/Iptables "Iptables").
+[PeerGuardian Linux](http://sourceforge.net/projects/peerguardian/) (*pgl*) is a privacy oriented firewall application. It blocks connections to and from hosts specified in huge block lists (thousands or millions of IP ranges). *pgl* is based on the Linux kernel [netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") framework and [iptables](/index.php/Iptables "Iptables").
 
 A more native, efficient solution to achieve the same end is to use the [ipset](/index.php/Ipset "Ipset") kernel module in conjunction with the pg2ipset tool and the ipset-update script.
 
@@ -34,7 +34,6 @@ Some program might not be able to reach the outside world. For instance, users o
 Conversely, one could white list all the ports except the ones used by the program to be blocked. The following example only use the block lists to stop incoming traffic on ports 53 (DNS) and 80 (HTTP):
 
  `/etc/pgl/pglcmd.conf` 
-
 ```
 WHITE_TCP_IN="0:79 81:65535"
 WHITE_UDP_IN="0:52 54:65535"
@@ -42,10 +41,9 @@ WHITE_UDP_IN="0:52 54:65535"
 
 ### Server
 
-[systemd](/index.php/Systemd "Systemd") initialization of the system means that it's quite possible for a server to be briefly unprotected, prior to _pgl_ launch. To ensure adequate protection, create a service file named after the original server (i.e. `/etc/systemd/system/httpd.service` and paste the following:
+[systemd](/index.php/Systemd "Systemd") initialization of the system means that it's quite possible for a server to be briefly unprotected, prior to *pgl* launch. To ensure adequate protection, create a service file named after the original server (i.e. `/etc/systemd/system/httpd.service` and paste the following:
 
  `/etc/systemd/system/httpd.service` 
-
 ```
 .include /usr/lib/systemd/system/httpd.service
 
@@ -56,7 +54,7 @@ After=pgl.service
 
 ### LAN
 
-By default, _pgl_ blocks traffic on the local IPv4 addresses. To disable this behavior, edit `/etc/pgl/pglcmd.conf` to add an exception using the _WHITE_IP_*_ setting:
+By default, *pgl* blocks traffic on the local IPv4 addresses. To disable this behavior, edit `/etc/pgl/pglcmd.conf` to add an exception using the *WHITE_IP_** setting:
 
  `/etc/pgl/pglcmd.conf`  `WHITE_IP_OUT="192.168.0.0/24"`  `/etc/pgl/pglcmd.conf`  `WHITE_IP_IN="192.168.0.0/24"` 
 
@@ -64,21 +62,20 @@ For further information, please refer to the `# Whitelist IPs #` section of `/us
 
 ## Starting up
 
-Once comfortable with the configuration of both the daemon and lists, start the `pgl` [service](/index.php/Daemon "Daemon"). To make sure that _pgl_ works as intended, issue this command:
+Once comfortable with the configuration of both the daemon and lists, start the `pgl` [service](/index.php/Daemon "Daemon"). To make sure that *pgl* works as intended, issue this command:
 
 ```
 # pglcmd test
 
 ```
 
-To start _pgl_ automatically at boot, enable the `pgl` service.
+To start *pgl* automatically at boot, enable the `pgl` service.
 
 ## Running pgl from within a container
 
 Users running pgl within a [Linux Container](/index.php/Linux_Container "Linux Container") may need to modify the package included `lxc@.service` to include the loading of key modules needed by pgl.
 
  `/etc/systemd/system/lxc@.service` 
-
 ```
 [Unit]
 Description=%i LXC

@@ -1,6 +1,6 @@
 [Cpufreq](https://www.kernel.org/doc/Documentation/cpu-freq/index.txt) consente al sistema operativo di scalare la velocità della CPU verso l'alto o verso il basso in modo da risparmiare energia. Le frequenze della CPU possono essere scalati automaticamente a seconda del carico del sistema, in risposta agli eventi ACPI, o manualmente da programmi userspace. Gestori della variazione
 
-CPU frequency scaling è implementato nel kernel Linux, l'infrastruttura è chiamata _cpufreq_. Dalla versione del kernel 3.4 i moduli necessari sono caricati automaticamente e il governatore raccomandato [ondemand](/index.php/CPU_Frequency_Scaling_(Italiano)#Gestori_della_variazione "CPU Frequency Scaling (Italiano)") è abilitato in maniera predefinita. Tuttavia gli strumenti a livello utente come [cpupower](https://www.archlinux.org/packages/?name=cpupower), [acpid](/index.php/Acpid_(Italiano) "Acpid (Italiano)") , [laptop-mode-tools](/index.php/Laptop_Mode_Tools_(Italiano) "Laptop Mode Tools (Italiano)") o le GUI fornite dagli ambienti desktop possono essere ancora utilizzati per la configurazione avanzata.
+CPU frequency scaling è implementato nel kernel Linux, l'infrastruttura è chiamata *cpufreq*. Dalla versione del kernel 3.4 i moduli necessari sono caricati automaticamente e il governatore raccomandato [ondemand](/index.php/CPU_Frequency_Scaling_(Italiano)#Gestori_della_variazione "CPU Frequency Scaling (Italiano)") è abilitato in maniera predefinita. Tuttavia gli strumenti a livello utente come [cpupower](https://www.archlinux.org/packages/?name=cpupower), [acpid](/index.php/Acpid_(Italiano) "Acpid (Italiano)") , [laptop-mode-tools](/index.php/Laptop_Mode_Tools_(Italiano) "Laptop Mode Tools (Italiano)") o le GUI fornite dagli ambienti desktop possono essere ancora utilizzati per la configurazione avanzata.
 
 ## Contents
 
@@ -24,9 +24,9 @@ CPU frequency scaling è implementato nel kernel Linux, l'infrastruttura è chia
 
 ### cpupower
 
-[cpupower](https://www.archlinux.org/packages/?name=cpupower) è un insieme di utility in userspace che contribuire ad assicurare _lo scaling della frequenza della CPU_. Il pacchetto non è richiesto per l'uso dello scaling, ma è altamente consigliato in quanto fornisce utility a riga di comando e uno servizio per cambiare il governatore all'avvio.
+[cpupower](https://www.archlinux.org/packages/?name=cpupower) è un insieme di utility in userspace che contribuire ad assicurare *lo scaling della frequenza della CPU*. Il pacchetto non è richiesto per l'uso dello scaling, ma è altamente consigliato in quanto fornisce utility a riga di comando e uno servizio per cambiare il governatore all'avvio.
 
-Il file di configurazione di [cpupower](https://www.archlinux.org/packages/?name=cpupower) è situato in `/etc/default/cpupower`. Questo file di configurazione viene letto da script bash situati in `/usr/lib/systemd/scripts/cpupower`, i quali vengono attivati da _systemd_ tramite `cpupower.service`. Si consiglia di abilitare `cpupower.service` all'avvio.
+Il file di configurazione di [cpupower](https://www.archlinux.org/packages/?name=cpupower) è situato in `/etc/default/cpupower`. Questo file di configurazione viene letto da script bash situati in `/usr/lib/systemd/scripts/cpupower`, i quali vengono attivati da *systemd* tramite `cpupower.service`. Si consiglia di abilitare `cpupower.service` all'avvio.
 
 ### Estensione per GNOME Shell
 
@@ -57,7 +57,7 @@ e verificare che la frequenza della CPU è inferiore al massimo.
 *   Anche il comportamento di P State, menzionato sopra, può essere influenzato con `/sys/devices/system/cpu/intel_pstate`, ad esempio, Intel Turbo Boost può essere disattivato con `# echo 1> /sys/devices/system/cpu/intel_pstate/no_turbo` per mantenere basse le temperature delle CPU.
 *   Un controllo supplementare per le CPU Intel moderne è disponibile con il [Linux Thermal Daemon](https://01.org/linux-thermal-daemon) ( disponibile su AUR con il pacchetto [thermald](https://aur.archlinux.org/packages/thermald/)), che controlla la temperatura in modo pro-attivo utilizzando i P-states, T-states, e il driver Intel power clamp.
 
-_cpupower_ necessita di moduli per conoscere i limiti della cpu nativa.
+*cpupower* necessita di moduli per conoscere i limiti della cpu nativa.
 
 | Module | Description |
 | acpi-cpufreq | CPUFreq driver che utilizza le ACPI Processor Performance States. Questo driver supporta anche i processori Intel Enhanced Speedstep (precedentemente supportato dal deprecato modulo speedstep-centrino). |
@@ -85,30 +85,30 @@ $ cpupower frequency-info
 
 In rari casi , può essere necessario impostare manualmente le frequenze massima e minima.
 
-Per impostare la frequenza massima di clock (_clock_freq_ è la frequenza di clock espressa in unità: GHz, MHz):
+Per impostare la frequenza massima di clock (*clock_freq* è la frequenza di clock espressa in unità: GHz, MHz):
 
 ```
-# cpupower frequency-set -u _clock_freq_
+# cpupower frequency-set -u *clock_freq*
 
 ```
 
 Per impostare la frequenza minima di clock:
 
 ```
-# cpupower frequency-set -d _clock_freq_
+# cpupower frequency-set -d *clock_freq*
 
 ```
 
 Per impostare il processore ad una determinata frequenza:
 
 ```
-# cpupower frequency-set -f _clock_freq_
+# cpupower frequency-set -f *clock_freq*
 
 ```
 
 **Nota:**
 
-*   Per regolare la frequenza solo per un singolo core della CPU, aggiungere `-c _core_number_`.
+*   Per regolare la frequenza solo per un singolo core della CPU, aggiungere `-c *core_number*`.
 *   Il governatore e le frequenze massimo e minimo possono essere impostati in `/etc/default/cpupower`.
 
 ## Gestori della variazione
@@ -130,24 +130,23 @@ A seconda del driver per lo scaling utilizzato, uno di questi governatori sarà 
 Per attivare una particolare governatore, eseguire :
 
 ```
-# cpupower frequency-set -g _governor_
+# cpupower frequency-set -g *governor*
 
 ```
 
 **Nota:**
 
-*   Per regolare la frequenza solo per un singolo core della CPU, aggiungere `-c _core_number_` al comando sopra.
-*   Attivando un governatore, lo specifico [modulo del kernel](/index.php/Kernel_modules "Kernel modules") richiesto (denominato `cpufreq__governatore_`) viene caricato. A partire dal kernel 3.4, questi moduli vengono caricati automaticamente.
+*   Per regolare la frequenza solo per un singolo core della CPU, aggiungere `-c *core_number*` al comando sopra.
+*   Attivando un governatore, lo specifico [modulo del kernel](/index.php/Kernel_modules "Kernel modules") richiesto (denominato `cpufreq_*governatore*`) viene caricato. A partire dal kernel 3.4, questi moduli vengono caricati automaticamente.
 
 In alternativa, è possibile attivare manualmente un governatore su ogni CPU disponibile :
 
 ```
- # echo _governor_ | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor >/dev/null
+ # echo *governor* | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor >/dev/null
 
 ```
 
 **Suggerimento:** Per monitorare la velocità della CPU in tempo reale, eseguire :
-
 ```
  $ watch grep \"cpu MHz\" /proc/cpuinfo
 
@@ -162,14 +161,14 @@ Vedere la [documentazione del kernel](https://www.kernel.org/doc/Documentation/c
 Per impostare la soglia massima per passare ad un'altra frequenza
 
 ```
-# echo -n _percent_ > /sys/devices/system/cpu/cpufreq/_governor_/up_threshold
+# echo -n *percent* > /sys/devices/system/cpu/cpufreq/*governor*/up_threshold
 
 ```
 
 Per impostare la soglia minima per passare ad un'altra frequenza
 
 ```
-# echo -n _percent_ > /sys/devices/system/cpu/cpufreq/_governor_/down_threshold
+# echo -n *percent* > /sys/devices/system/cpu/cpufreq/*governor*/down_threshold
 
 ```
 
@@ -187,7 +186,7 @@ $ cat /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
 Per impostare un valore, eseguire:
 
 ```
-# echo -n _valore_ > /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
+# echo -n *valore* > /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
 
 ```
 
@@ -198,7 +197,6 @@ Gli utenti possono configurare i gestori della variazione in modo tale che varin
 Gli eventi sono definiti in `/etc/acpi/handler.sh`. Se il pacchetto [acpid](https://www.archlinux.org/packages/?name=acpid) è installato, il file deve già esistere ed essere eseguibile. Ad esempio, per cambiare il governatore da `performance` a `conservative` quando l'adattatore CA viene scollegato, e viceversa se ricollegata:
 
  `/etc/acpi/handler.sh` 
-
 ```
 [...]
 
@@ -228,22 +226,21 @@ Gli eventi sono definiti in `/etc/acpi/handler.sh`. Se il pacchetto [acpid](http
 
 ## Concessione dei privilegi sotto Gnome
 
-**Nota:** Systemd ha introdotto logind, che gestisce le azioni consolekit e policykit. di conseguenza il seguente codice qui sotto non funziona. Con logind, si editi semplicemente nel file `/usr/share/polkit-1/actions/org.gnome.cpufreqselector.policy` la voce _defaults_ con ciò che si necessita, in base alle direttive del manuale di polkit [[1]](http://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html)
+**Nota:** Systemd ha introdotto logind, che gestisce le azioni consolekit e policykit. di conseguenza il seguente codice qui sotto non funziona. Con logind, si editi semplicemente nel file `/usr/share/polkit-1/actions/org.gnome.cpufreqselector.policy` la voce *defaults* con ciò che si necessita, in base alle direttive del manuale di polkit [[1]](http://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html)
 
 [GNOME](/index.php/Gnome_(Italiano) "Gnome (Italiano)") include un gradevole applet per cambiare il governatore al volo. Per usarlo senza la necessità di inserire la password di root bisogna creare il file :
 
  `/var/lib/polkit-1/localauthority/50-local.d/org.gnome.cpufreqselector.pkla` 
-
 ```
 [org.gnome.cpufreqselector]
-Identity=unix-user:_utente_
+Identity=unix-user:*utente*
 Action=org.gnome.cpufreqselector
 ResultAny=no
 ResultInactive=no
 ResultActive=yes
 ```
 
-Dove la parola _utente_ deve essere rimpiazzata con il proprio nome utente.
+Dove la parola *utente* deve essere rimpiazzata con il proprio nome utente.
 
 Il pacchetto [desktop-privileges](https://aur.archlinux.org/packages/desktop-privileges/) contenuto in [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)") contiene un file .pkla simile, per autorizzare tutti gli utenti del [gruppo](/index.php/Users_and_Groups_(Italiano) "Users and Groups (Italiano)") `power` di cambiare il governatore.
 
@@ -251,7 +248,7 @@ Il pacchetto [desktop-privileges](https://aur.archlinux.org/packages/desktop-pri
 
 *   Alcune applicazioni, come [ntop](/index.php/Ntop_(Italiano) "Ntop (Italiano)"), non rispondono bene alla variazione di frequenza automatica. Nel caso di ntop può causare difetti di segmentazione e un sacco di informazioni perse. Allo stesso modo il governatore `ondemand` non può cambiare la frequenza abbastanza rapidamente quando molti di pacchetti arrivano improvvisamente alla interfaccia di rete monitorata che non possono essere gestiti da la velocità del processore corrente.
 
-*   Alcune CPU possono soffrire di scarse prestazioni con le impostazioni predefinite del governatore `ondemand` (ad esempio i video in flash possono soffrire di rallentamenti, o scatti nelle animazioni delle finestre). Invece di disabilitare completamente il frequency scaling per risolvere questi problemi, l'aggressività dello variazione di frequenza può essere aumentata riducendo la variabile [sysctl](/index.php/Sysctl "Sysctl") _up_threshold_ per ogni CPU. Si veda [Modifica della soglia (threshold) del governatore 'ondemand'](#Modifica_della_soglia_.28threshold.29_del_governatore_.27ondemand.27).
+*   Alcune CPU possono soffrire di scarse prestazioni con le impostazioni predefinite del governatore `ondemand` (ad esempio i video in flash possono soffrire di rallentamenti, o scatti nelle animazioni delle finestre). Invece di disabilitare completamente il frequency scaling per risolvere questi problemi, l'aggressività dello variazione di frequenza può essere aumentata riducendo la variabile [sysctl](/index.php/Sysctl "Sysctl") *up_threshold* per ogni CPU. Si veda [Modifica della soglia (threshold) del governatore 'ondemand'](#Modifica_della_soglia_.28threshold.29_del_governatore_.27ondemand.27).
 
 *   A volte il governatore `ondemand` non può acceleratore alla frequenza massima, ma un gradino sotto. Questo può essere risolto impostando il valore max_freq ad uno leggermente superiore a quella massima reale. Per esempio, se la gamma di frequenza della CPU va da 2,00 GHz a 3,00 GHz, impostare max_freq a 3,01 GHz può essere una soluzione.
 
@@ -278,7 +275,6 @@ Per effetuare una prova temporanea, modificare il valore in `/sys/module/process
 Per impostarlo in maniera permanente, si faccia riferimento alla pagina [Kernel_parameters](/index.php/Kernel_parameters "Kernel parameters") o continuare a leggere. Aggiungere `processor.ignore_ppc=1` alla linea di caricamento del kernel o creare :
 
  `/etc/modprobe.d/ignore_ppc.conf` 
-
 ```
 # If the frequency of your machine gets wrongly limited by BIOS, this should help
 options processor ignore_ppc=1

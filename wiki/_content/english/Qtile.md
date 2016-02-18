@@ -27,7 +27,7 @@ From [Qtile web site](http://qtile.org/):
 
 ## Starting
 
-To start Qtile add `exec qtile` to your [~/.xinitrc](/index.php/~/.xinitrc "~/.xinitrc") and launch [Xorg](/index.php/Xorg "Xorg"). The [default configuration](http://docs.qtile.org/en/latest/manual/config/default.html#key-bindings) includes the shortcut `Super+Enter` to open a new _xterm_ terminal, and `Super+Ctrl+q` to quit Qtile.
+To start Qtile add `exec qtile` to your [~/.xinitrc](/index.php/~/.xinitrc "~/.xinitrc") and launch [Xorg](/index.php/Xorg "Xorg"). The [default configuration](http://docs.qtile.org/en/latest/manual/config/default.html#key-bindings) includes the shortcut `Super+Enter` to open a new *xterm* terminal, and `Super+Ctrl+q` to quit Qtile.
 
 ## Configuration
 
@@ -37,17 +37,17 @@ As described in [Configuration Lookup](http://docs.qtile.org/en/latest/manual/co
 
 ```
 $ mkdir -p ~/.config/qtile/
-$ cp /usr/share/doc/_qtile_dir_/default_config.py ~/.config/qtile/config.py
+$ cp /usr/share/doc/*qtile_dir*/default_config.py ~/.config/qtile/config.py
 
 ```
 
-Where `_qtile_dir_` is the name of the AUR package you [installed](#Installing).
+Where `*qtile_dir*` is the name of the AUR package you [installed](#Installing).
 
 Alternatively, the most recent default configuration file can be downloaded from the git repository at [libqtile/resources/default_config.py](https://github.com/qtile/qtile/blob/develop/libqtile/resources/default_config.py).
 
 Several more complete configuration file examples can be found in the [qtile-examples](https://github.com/qtile/qtile-examples) repository.
 
-The configuration is fully done in Python: for a _very_ quick introduction to the language you can read [this tutorial](https://developers.google.com/edu/python/introduction).
+The configuration is fully done in Python: for a *very* quick introduction to the language you can read [this tutorial](https://developers.google.com/edu/python/introduction).
 
 Before restarting Qtile you can test your configuration file for syntax errors using the command:
 

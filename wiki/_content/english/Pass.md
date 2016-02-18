@@ -33,7 +33,6 @@ $ pass insert archlinux.org/wiki/username
 *   Get a view of the password store
 
  `$ pass` 
-
 ```
 Password Store
 └── archlinux.org

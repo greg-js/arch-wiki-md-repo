@@ -26,7 +26,6 @@
 shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配置文件格式，以下是一个样例：
 
  `/etc/shadowsocks/config.json` 
-
 ```
 {
 	"server":"remote-shadowsocks-server-ip-addr",
@@ -60,12 +59,11 @@ shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配�
 
  `# sslocal -c /etc/shadowsocks/config.json` 
 **注意:** 有用户报告无法成功在运行时加载`config.json`
-
-，或可尝试手动运行： `# sslocal -s _服务器地址_ -p _服务器端口_ -l _本地端端口_ -k _密码_ -m _加密方法_` 
+，或可尝试手动运行： `# sslocal -s *服务器地址* -p *服务器端口* -l *本地端端口* -k *密码* -m *加密方法*` 
 
 配合nohup和&可以使之后台运行，关闭终端也不影响：
 
- `#nohup sslocal -s _服务器地址_ -p _服务器端口_ -l _本地端端口_ -k _密码_ -m _加密方法_ &` 
+ `#nohup sslocal -s *服务器地址* -p *服务器端口* -l *本地端端口* -k *密码* -m *加密方法* &` 
 
 * * *
 
@@ -90,7 +88,7 @@ shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配�
 
 ### 以守护进程形式运行客户端
 
-Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)")服务可在`/etc/shadowsocks/`里调用不同的`_conf-file_.json`（以`_conf-file_`为区分标志），例： 在`/etc/shadowsocks/`中创建了`foo.json`配置文件，那么执行以下语句就可以调用该配置：
+Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)")服务可在`/etc/shadowsocks/`里调用不同的`*conf-file*.json`（以`*conf-file*`为区分标志），例： 在`/etc/shadowsocks/`中创建了`foo.json`配置文件，那么执行以下语句就可以调用该配置：
 
 ```
 # systemctl start shadowsocks@foo
@@ -154,7 +152,6 @@ Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87
 *   seed-cfb
 
 **注意:** 官方软件源的[shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks)不支持全部加密方式，官方软件源Chacha20以及salsa20的支持可以安装libsodium（For salsa20 and chacha20 support） 。若对非主流加密方式有需求，可尝试[aur](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")中的[shadowsocks-nodejs](https://aur.archlinux.org/packages/shadowsocks-nodejs/)
-
 ,
 
 ### Chrome/Chromium
@@ -174,7 +171,6 @@ Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87
 编辑privoxy配置文件（不要漏下1080后面的点)
 
  `/etc/privoxy/config` 
-
 ```
 forward-socks5   /               127.0.0.1:1080 .
 listen-address  127.0.0.1:8118

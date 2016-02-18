@@ -52,15 +52,15 @@ Alternately, [ruby-jekyll](https://aur.archlinux.org/packages/ruby-jekyll/) can 
 
 ### Rubygems binary repository
 
-[Install](/index.php/Install "Install") _ruby-jekyll_ from the unofficial [quarry](/index.php/Unofficial_user_repositories#quarry "Unofficial user repositories") repository.
+[Install](/index.php/Install "Install") *ruby-jekyll* from the unofficial [quarry](/index.php/Unofficial_user_repositories#quarry "Unofficial user repositories") repository.
 
 ## Select a markup language
 
-There are numerous different markup languages that are used to define text-to-HTML conversion tools. Jekyll has two defaults; [Textile](https://en.wikipedia.org/wiki/Textile_(markup_language) "wikipedia:Textile (markup language)") and [Markdown](http://daringfireball.net/projects/markdown/). Implementations of both are required as dependencies of Jekyll.
+There are numerous different markup languages that are used to define text-to-HTML conversion tools. Jekyll has two defaults; [Textile](https://en.wikipedia.org/wiki/Textile_(markup_language) and [Markdown](http://daringfireball.net/projects/markdown/). Implementations of both are required as dependencies of Jekyll.
 
 ### Textile
 
-[Textile](https://en.wikipedia.org/wiki/Textile_(markup_language) "wikipedia:Textile (markup language)") is a markup language used by Jekyll.
+[Textile](https://en.wikipedia.org/wiki/Textile_(markup_language) is a markup language used by Jekyll.
 
 **Note:** RedCloth, a module for using the Textile markup language in Ruby, fails to install with gcc 4.6.0 (see: [RedCloth Ticket 215](http://jgarber.lighthouseapp.com/projects/13054/tickets/215-native-ext-compilation-failure) and [219](http://jgarber.lighthouseapp.com/projects/13054/tickets/219-427-installation-issue-on-arch-linux-x64)). It is recommended that you install the current stable version 4.2.2 by `gem install RedCloth --version 4.2.2`.
 
@@ -145,7 +145,6 @@ title: Jekyll Base
 This is a basic template for your website's general layout. It will be referenced in the [YAML](https://en.wikipedia.org/wiki/YAML "wikipedia:YAML") Front Matter blocks of each file (see: [Creating a Post](#Creating_a_post)).
 
  `_layouts/layout.html` 
-
 ```
 <!DOCTYPE HTML>
 
@@ -172,7 +171,6 @@ This is a basic template for your website's general layout. It will be reference
 This is a basic template for each of your posts. Again, this will be referenced in the [YAML](https://en.wikipedia.org/wiki/YAML "wikipedia:YAML") Front Matter blocks of each file (see: [Creating a Post](#Creating_a_post)).
 
  `_layouts/post.html` 
-
 ```
 ---
 layout: layout

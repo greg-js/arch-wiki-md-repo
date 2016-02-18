@@ -52,7 +52,6 @@ Clover 是一个 UEFI 启动管理器，提供了一个可以启动 EFISTUB 内�
 ### ELILO
 
 **警告:** ELILO 项目已经声明不再进行开发了，这意味者以后只修复问题而不添加新功能。参阅 [https://sourceforge.net/mailarchive/message.php?msg_id=31524008](https://sourceforge.net/mailarchive/message.php?msg_id=31524008) 。ELILO 也不被 Arch 开发人员正式支持
-
 。
 
 ELILO 是只支持 BIOS [LILO](/index.php/LILO "LILO") 的 UEFI 版本。它的配置文件 `elilo.conf` 与 [LILO](/index.php/LILO "LILO") 的配置文件相似。由上游编译好的二进制文件在此 [http://sourceforge.net/projects/elilo/，和](http://sourceforge.net/projects/elilo/，和) AUR 里的 [elilo-efi](https://aur.archlinux.org/packages/elilo-efi/)。

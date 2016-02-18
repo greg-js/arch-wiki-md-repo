@@ -10,7 +10,7 @@ The vertical wheel and the two buttons near it should work right away, however t
 
 To remap the buttons of the mouse you can use the packages [xbindkeys](/index.php/Xbindkeys "Xbindkeys") and [xautomation](https://www.archlinux.org/packages/?name=xautomation).
 
-_xbindkeys_ will redirect the buttons and _xte_ (which is included in xautomation) will execute the custom key presses. To do so, create a config file named `.xbindkeysrc` in your home directory.
+*xbindkeys* will redirect the buttons and *xte* (which is included in xautomation) will execute the custom key presses. To do so, create a config file named `.xbindkeysrc` in your home directory.
 
 Here is a sample configuration for the vertical scroll wheel and the two buttons near it:
 

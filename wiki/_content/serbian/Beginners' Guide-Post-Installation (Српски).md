@@ -62,7 +62,6 @@ Prijavite se sa root nalogom. Konfigurisacemo pacman i osvezicemo sistem kao roo
 Ako ste dobro konfigurisali vas sistem, trebalo bi da imate mrezu koja radi. Probajte `ping www.google.com` da potvrdite:
 
  `$ ping -c 3 www.google.com ` 
-
 ```
 PING www.l.google.com (74.125.229.51) 56(84) bytes of data.
 64 bytes from 74.125.229.51: icmp_seq=1 ttl=51 time=26.8 ms
@@ -179,7 +178,7 @@ Include = /etc/pacman.d/mirrorlist
 *   Svi PKGBUILD-ovi su bash skripte za izgradnju paketa
 *   **Nije** dostupan sa pacman-om po difoltu
 
-* pacman omotaci (_**[AUR helpers](/index.php/AUR_helpers "AUR helpers")**_) vam mogu pomoci da bez poteskoca pristupite AUR-u.
+* pacman omotaci (***[AUR helpers](/index.php/AUR_helpers "AUR helpers")***) vam mogu pomoci da bez poteskoca pristupite AUR-u.
 
 #### /etc/pacman.d/mirrorlist
 
@@ -192,7 +191,7 @@ Otvorite `/etc/pacman.d/mirrorlist` u nekom tekst editoru i uklonite komentare (
 
 ```
 
-Dodavanje dva --refresh ili -y zastava primorava pacman-a da osvezi sve liste paketa cak i ako se smatra da su vec aktuelni. Izdavanje -Syy _kad god se promeni odraz_, je dobra praksa i tako cete izbeci moguce glavobolje.
+Dodavanje dva --refresh ili -y zastava primorava pacman-a da osvezi sve liste paketa cak i ako se smatra da su vec aktuelni. Izdavanje -Syy *kad god se promeni odraz*, je dobra praksa i tako cete izbeci moguce glavobolje.
 
 ##### `rankmirrors`
 
@@ -205,7 +204,7 @@ Izdajte sledecu komandu da kompletno osvezite bazu paketa, nadogradite i instali
 
 ```
 
-*   _Ako dobijete gresku u ovom koraku, upotrebite komandu "nano /etc/pacman.d/mirrorlist" i uklonite komentar za server koji vam odgovara._
+*   *Ako dobijete gresku u ovom koraku, upotrebite komandu "nano /etc/pacman.d/mirrorlist" i uklonite komentar za server koji vam odgovara.*
 
 `cd` u `/etc/pacman.d/` direktorijumu:
 
@@ -310,9 +309,9 @@ Linux je visekorisnicko okruzenje. Ne bi trebali da radite svakidasnje poslove u
 
 ```
 
-*   **-m** Pravi home direktorijum za korisnika kao /home/**korisnicko-ime**. U okviru svojih home direktorijuma, korisnici mogu da pisu fajlove, brisu ih, instaliraju programe, itd. Home direktorijumi korisnika ce sadrzati njihove podatke i licne konfiguracione fajlove, takozvane 'tacka fajlove' (njihovo ime kao prefiks ima tacku), koji su 'skriveni'. (Da vidite tacka-fajlove, ukljucite odgovarajucu opciju u vasem fajl menadzeru ili pokrenite ls komandu sa -a prekidacem.) Ako postoji konflikt izmedju _korisnickih_ (pod /home/korisnicko-ime) i _globalnih_ konfiguracionih fajlova, (obicno pod /etc/) podesavanja u _korisnickom_ fajlu ce imati prednost. Tacka-fajlovi koji ce najverovatnije biti menjani od strane korisnika su .xinitrc i .bashrc fajlovi. To su konfiguracioni fajlovi za xinit i Bash. Oni omogucavaju korisniku mogucnost da promeni prozor menadzer koji ce biti startovan prilikom prijavljivanja i takodje aliase, komande zadate od strane korisnika i prostorne varijable. Kada je korisnik napravljen, njihovi tacka-fajlovi ce biti preuzeti iz /etc/skel direktorijuma gde obitavaju uzorci sistemskih fajlova.
+*   **-m** Pravi home direktorijum za korisnika kao /home/**korisnicko-ime**. U okviru svojih home direktorijuma, korisnici mogu da pisu fajlove, brisu ih, instaliraju programe, itd. Home direktorijumi korisnika ce sadrzati njihove podatke i licne konfiguracione fajlove, takozvane 'tacka fajlove' (njihovo ime kao prefiks ima tacku), koji su 'skriveni'. (Da vidite tacka-fajlove, ukljucite odgovarajucu opciju u vasem fajl menadzeru ili pokrenite ls komandu sa -a prekidacem.) Ako postoji konflikt izmedju *korisnickih* (pod /home/korisnicko-ime) i *globalnih* konfiguracionih fajlova, (obicno pod /etc/) podesavanja u *korisnickom* fajlu ce imati prednost. Tacka-fajlovi koji ce najverovatnije biti menjani od strane korisnika su .xinitrc i .bashrc fajlovi. To su konfiguracioni fajlovi za xinit i Bash. Oni omogucavaju korisniku mogucnost da promeni prozor menadzer koji ce biti startovan prilikom prijavljivanja i takodje aliase, komande zadate od strane korisnika i prostorne varijable. Kada je korisnik napravljen, njihovi tacka-fajlovi ce biti preuzeti iz /etc/skel direktorijuma gde obitavaju uzorci sistemskih fajlova.
 *   **-g** Ime grupe ili broj korisnikove inicijalne grupe za prijavljivanje. Ime grupe mora da postoji. Ako je obezbedjen broj grupe, on mora da se odnosi na vec postojecu grupu. Ako nije zadat, ponasanje komande useradd ce zavisiti od USERGROUPS_ENAB varijable koja se nalazi u /etc/login.defs.
-*   **-G** Lista dopunskih grupa kojih je korisnik isto clan. _Svaka grupa je odvojena od sledece zarezom, bez praznih prostora_. Prema pocetnim podesavanjima (default) korisnik pripada samo inicijalnoj grupi.
+*   **-G** Lista dopunskih grupa kojih je korisnik isto clan. *Svaka grupa je odvojena od sledece zarezom, bez praznih prostora*. Prema pocetnim podesavanjima (default) korisnik pripada samo inicijalnoj grupi.
 *   **-s** Staza i ime fajla korisnikove osnovnoe skoljke (shell) za logovanje. Arch Linux init skripte koriste Bash. Nakon pokretanja sistema (butovanja), osnovna skoljka za prijavljivanje je specificna za svakog korisnika pojedinacno. (Obezbedite paket za izabranu skoljku ukoliko koristite nesto drugo, a ne Bash).
 
 Korisne grupe za vaseg ne-root korisnika su:
@@ -390,7 +389,7 @@ Ako znate da koristite vi, upotrebite komandu visudo bez EDITOR=nano varijable:
 
 Ovo ce otvoriti fajl /etc/sudoers u specijalnoj sesiji vi-ja. Visudo kopira fajl da bi bio editovan u privremenom fajlu, edituje ga sa nekim editorom, (vi po difoltu), i zatim izvrsava proveru ispravnosti. Ako prodje proveru, privremeni fajl prepisuje original uz odgovarajuce dozvole.
 
-**Warning:** Nemojte da editujete /etc/sudoers direktno sa editorom; Greske u sintaksi mogu uzrokovati probleme (poput toga da root korisnik postane neupotrebljiv. Morate da koristite _visudo_ komandu da editujete /etc/sudoers.
+**Warning:** Nemojte da editujete /etc/sudoers direktno sa editorom; Greske u sintaksi mogu uzrokovati probleme (poput toga da root korisnik postane neupotrebljiv. Morate da koristite *visudo* komandu da editujete /etc/sudoers.
 
 U prethodnoj sekciji mi smo dodali vaseg korisnika u "wheel" grupu. Da damo korisnicima u wheel grupi pune root privilegije kada u svojim komandama imaju "sudo" kao prefix, uklonicemo sledecu liniju:
 
@@ -457,7 +456,7 @@ $ lspci
 
 ```
 
-**Note:** **vesa** drajver je genericki i trebalo bi da radi sa skoro svakim modernim skupom video cipova. Ako ne mozete da nadjete odgovarajuci drajver za vas skup video cipova, vesa _bi_ trebalo da radi sa bilo kojom karticom, ali pruza samo 2D.
+**Note:** **vesa** drajver je genericki i trebalo bi da radi sa skoro svakim modernim skupom video cipova. Ako ne mozete da nadjete odgovarajuci drajver za vas skup video cipova, vesa *bi* trebalo da radi sa bilo kojom karticom, ali pruza samo 2D.
 
 Za kompletnu listu svih **open-source** video drajvera, pretrazite bazu paketa:
 

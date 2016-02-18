@@ -49,7 +49,6 @@ $ echo -n <your password here> | md5sum | cut -d ' ' -f 1
 生成密码后，通过 [ExternalConnect] 参数设置。
 
  `/var/lib/amule/.aMule/amule.conf` 
-
 ```
 [ExternalConnect]
 AcceptExternalConnections=1
@@ -65,7 +64,7 @@ ECPassword=<encrypted password>
 还是使用之前配置amuled时的那个新用户，启动amuleweb以初始化配置文件：
 
 ```
-$ amuleweb --write-config --password=_<这里是密码>_ --admin-pass=<这个是网页登录密码>
+$ amuleweb --write-config --password=*<这里是密码>* --admin-pass=<这个是网页登录密码>
 
 ```
 

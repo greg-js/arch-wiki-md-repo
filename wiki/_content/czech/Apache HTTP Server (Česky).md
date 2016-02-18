@@ -77,7 +77,7 @@ na
 
 ```
 
-*   Apache by nyní měl běžet. Můžete se o tom přesvědčit na adrese `[http://localhost/](http://localhost/)`. Měloa by se zobrazit jednoduchá stránka _Powered by Apache_
+*   Apache by nyní měl běžet. Můžete se o tom přesvědčit na adrese `[http://localhost/](http://localhost/)`. Měloa by se zobrazit jednoduchá stránka *Powered by Apache*
 
 *   Pokud chcete spouštět Apache automaticky při bootování, upravte `/etc/rc.conf`:
 
@@ -249,15 +249,15 @@ Pokud chcete používat MySQL, proveďte následující kroky:
 
 ```
 
-*   Pro nastavení spusťte `/etc/rc.d/mysqld start` jako **root** _**OR**_ proveďte následující kroky:
-*   Vytvořte skupinu _mysql_
+*   Pro nastavení spusťte `/etc/rc.d/mysqld start` jako **root** ***OR*** proveďte následující kroky:
+*   Vytvořte skupinu *mysql*
 
 ```
 # groupadd -g 89 mysql
 
 ```
 
-*   Přidejte uživatele _mysql_
+*   Přidejte uživatele *mysql*
 
 ```
 # useradd -u 89 -g mysql -d /var/lib/mysql -s /bin/false mysql
@@ -299,10 +299,10 @@ Pokud chcete používat MySQL, proveďte následující kroky:
 
 *   Přidejte `mysqld` do seznamu démonů v `/etc/rc.conf` (jako u httpd - viz výše)
 
-*   Pro přihlášení do MySQL, napište (do terminálu, _hostname_ jako je nastavený v `/etc/hosts`)
+*   Pro přihlášení do MySQL, napište (do terminálu, *hostname* jako je nastavený v `/etc/hosts`)
 
 ```
-# mysql -u root -h _hostname_ -p
+# mysql -u root -h *hostname* -p
 
 ```
 

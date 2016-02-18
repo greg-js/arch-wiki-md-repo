@@ -29,7 +29,7 @@ To load all configuration files manually, execute
 which will also output the applied hierarchy. A single parameter file can also be loaded explicitly with
 
 ```
-# sysctl -p _filename.conf_
+# sysctl -p *filename.conf*
 
 ```
 
@@ -55,7 +55,7 @@ or:
 
 To preserve changes between reboots, add or modify the appropriate lines in `/etc/sysctl.d/99-sysctl.conf` or another applicable parameter file in `/etc/sysctl.d/`.
 
-**Tip:** Some parameters that can be applied may depend on kernel modules which in turn might not be loaded. For example parameters in `/proc/sys/net/bridge/*` depend on the `bridge` module. If it is not loaded at runtime (or after a reboot), those will _silently_ not be applied. See [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules")
+**Tip:** Some parameters that can be applied may depend on kernel modules which in turn might not be loaded. For example parameters in `/proc/sys/net/bridge/*` depend on the `bridge` module. If it is not loaded at runtime (or after a reboot), those will *silently* not be applied. See [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules")
 
 ## Security
 

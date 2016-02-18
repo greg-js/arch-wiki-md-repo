@@ -42,7 +42,7 @@ Para carregar o módulo do kernel manualmente:
 Para carregar automaticamente no arranque do sistema, adiciona o o driver respectivo ao array `MODULES` no ficheiro `/etc/rc.conf`. Por exemplo:
 
 ```
-MODULES=( _**acpi-cpufreq**_ vboxdrv fuse fglrx iwl3945 ... )
+MODULES=( ***acpi-cpufreq*** vboxdrv fuse fglrx iwl3945 ... )
 
 ```
 
@@ -91,7 +91,7 @@ Reguladores disponíveis:
 
 	O regulador performance está embutido no kernel e corre o(s) CPU(s) à frequẽncia máxima.
 
-	cpufreq_ondemand _(recomendado)_
+	cpufreq_ondemand *(recomendado)*
 
 	Aumenta/diminui, de forma dinâmica, a velocidade do(s) CPU(s) baseado na necessidade do sistema.
 
@@ -110,7 +110,7 @@ Reguladores disponíveis:
 Adiciona os reguladores desejados ao array MODULES no ficheiro `/etc/rc.conf`:
 
 ```
-MODULES=(acpi-cpufreq _**cpufreq_ondemand cpufreq_powersave**_ vboxdrv fuse fglrx iwl3945 ... )
+MODULES=(acpi-cpufreq ***cpufreq_ondemand cpufreq_powersave*** vboxdrv fuse fglrx iwl3945 ... )
 
 ```
 
@@ -154,7 +154,7 @@ Com o ficheiro de configuração tratado, podes agora iniciar o daemon com o seg
 Para iniciar o daemon automaticamente no arranque, adiciona `cpufreq` ao array `DAEMONS` no ficheiro `/etc/rc.conf`, por exemplo:
 
 ```
-DAEMONS=(syslog-ng hal _**cpufreq**_ network netfs @alsa @crond @cupsd @fam @ntpd @sshd)
+DAEMONS=(syslog-ng hal ***cpufreq*** network netfs @alsa @crond @cupsd @fam @ntpd @sshd)
 
 ```
 

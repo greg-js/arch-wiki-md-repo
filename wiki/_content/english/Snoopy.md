@@ -62,7 +62,6 @@ to determine what it is. A typical default ethernet interface name is enp1s0.
 How you make your script is ultimately up to you. In my example I get the user's uid and gid using `id -u` and `id -g` respectively. I set the interface explicitly, enp1s0\. sudo is used because snoopy must be run as root. Here is an example script:
 
  `/usr/bin/snoopy-sh-local` 
-
 ```
 #!/bin/bash
 sudo snoopy-nox enp1s0 $(id -u) $(id -g)

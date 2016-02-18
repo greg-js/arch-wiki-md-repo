@@ -1,4 +1,4 @@
-**JWM** (Joe's Window Manager) è un peso piuma tra i [Window Manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") per il [X11 Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System"). scritto in [C](http://en.wikipedia.org/wiki/C_(programming_language)); È in uno stato di sviluppo attivo ed è mantenuto da [Joe Wingbermuehle](http://joewing.net/about.shtml). _...Sebbene lo sviluppo di JWM abbia rallentato un po', Joe Wingbermuehle continua a lavorarci...ci sarà probabilmente un nuovo rilascio un giorno di questi_. JWM usa all'incirca 5 MB di memoria in condizioni operative normali. All'inizio del 2009, la dimensione della versione presente nei [repository ufficiali di Arch Linux](/index.php/Official_repositories "Official repositories") è inferiore ai 76 KB (confronto con [dwm](/index.php/Dwm "Dwm") che è sotto i 17 KB) e sotto i 171 KB una volta installato (confronto con dwm che occupa 68 KB).Una versione minimale compilata consuma approssimativamente 136 KB di spazio su disco e occupa al di sotto di 1500 KB di memoria ram.
+**JWM** (Joe's Window Manager) è un peso piuma tra i [Window Manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") per il [X11 Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System"). scritto in [C](http://en.wikipedia.org/wiki/C_(programming_language)); È in uno stato di sviluppo attivo ed è mantenuto da [Joe Wingbermuehle](http://joewing.net/about.shtml). *...Sebbene lo sviluppo di JWM abbia rallentato un po', Joe Wingbermuehle continua a lavorarci...ci sarà probabilmente un nuovo rilascio un giorno di questi*. JWM usa all'incirca 5 MB di memoria in condizioni operative normali. All'inizio del 2009, la dimensione della versione presente nei [repository ufficiali di Arch Linux](/index.php/Official_repositories "Official repositories") è inferiore ai 76 KB (confronto con [dwm](/index.php/Dwm "Dwm") che è sotto i 17 KB) e sotto i 171 KB una volta installato (confronto con dwm che occupa 68 KB).Una versione minimale compilata consuma approssimativamente 136 KB di spazio su disco e occupa al di sotto di 1500 KB di memoria ram.
 
 JWM è generalmente considerato come il più leggero e veloce window manager disponibile per X11 ed è il window manager predefinito per distribuzioni come [Puppy Linux](http://www.puppylinux.org/) e [Damn Small Linux](http://damnsmalllinux.org/). Numerose opzioni permettono layout di grande flessibilità. Alcune tra le maggiori peculiarità di JWM includono la semplicità e facilità di configurazione (in un singolo file [XML](https://en.wikipedia.org/wiki/XML "wikipedia:XML")), supporto nativo per le personalizzazioni di pannelli e bottoni e il modo in cui è stata integrata una dock sul desktop.
 
@@ -188,7 +188,7 @@ Tutto ciò che segue da questo punto in poi è configurare l'ambiente editando i
 
 ```
 
-*   Creare un contenitore _nidificato_ per il menu senza etichetta, di `altezza="32"` pixels e vincolato dal tasto destro del mouse `onroot="3"` sotto `<RootMenu>`
+*   Creare un contenitore *nidificato* per il menu senza etichetta, di `altezza="32"` pixels e vincolato dal tasto destro del mouse `onroot="3"` sotto `<RootMenu>`
 
 ```
 <RootMenu height="32" onroot="3">
@@ -416,7 +416,6 @@ Se non si è loggati e non si sta lavorando su `tty1`, la combinazione di tasti 
 Le applicazioni d'avvio possono venir eseguite al di fuori di `<StartupCommand>` includendo le opzioni appropriate in `~./xinitrc`
 
  `~./xinitrc` 
-
 ```
 
 #!/bin/bash
@@ -489,7 +488,6 @@ Un incremento di reattività delle interfacce grafiche si può ottenere non usan
 #### Minimal PKGBUILD Example
 
  `PKGBUILD` 
-
 ```
 pkgname=jwm
 pkgver=2.0.1
@@ -532,7 +530,7 @@ build() {
 
 ```
 
-*   Consultare la pagina _Man_ `xfontsel` e l'articolo [X Logical Font Description](https://en.wikipedia.org/wiki/X_logical_font_description "wikipedia:X logical font description") per ulteriori dettagli e le descrizioni del modello.
+*   Consultare la pagina *Man* `xfontsel` e l'articolo [X Logical Font Description](https://en.wikipedia.org/wiki/X_logical_font_description "wikipedia:X logical font description") per ulteriori dettagli e le descrizioni del modello.
 
 ### Supporto Tiling manuale
 
@@ -579,7 +577,6 @@ Per rimuovere il pacchetto JWM, i file di configurazione e le dipendenze non ric
 ```
 
 **Note:** Pacman non rimuove file di configurazione al di fuori di quelli predefiniti creati durante l'installazione dei pacchetti. Ciò include `~/.jwmrc`
-
 }
 
 # Ulteriori risorse

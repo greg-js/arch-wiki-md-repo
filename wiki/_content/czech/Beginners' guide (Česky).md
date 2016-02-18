@@ -110,7 +110,7 @@ Před instalací samotnou není od věci přojít si [FAQ](/index.php/FAQ "FAQ")
 **Hlavní vlastnosti Arch Linuxu:**
 
 *   [Jednoduchý](/index.php/The_Arch_Way "The Arch Way") návrh a filozofie
-*   [Všechny balíčky](https://www.archlinux.org/packages/) distribuce jsou zkompilované pro architektury [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "wikipedia:P6 (microarchitecture)") a [x86_64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64")
+*   [Všechny balíčky](https://www.archlinux.org/packages/) distribuce jsou zkompilované pro architektury [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) a [x86_64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64")
 *   Archlinux uplatňuje tzv. [Rolling-release](https://en.wikipedia.org/wiki/Rolling_release "wikipedia:Rolling release") model, kdy se všechen instalovaný software průběžně aktualizuje na nejnovější stabilní verzi.
 *   Archlinux používá tzv. [BSD style](/index.php/Arch_boot_process "Arch boot process") (BSD styl init skriptů.)
 *   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"): Jednoduchý a silný tvůrce initrd obrazů.
@@ -124,7 +124,7 @@ Autorská práva Arch Linux, pacman, dokumentaci and konfigrační skripty drž�
 
 ### The Arch Way
 
-_**Arch je navržený tak, aby byl co [nejjednodušší](/index.php/The_Arch_Way "The Arch Way").**_
+***Arch je navržený tak, aby byl co [nejjednodušší](/index.php/The_Arch_Way "The Arch Way").***
 
 "Jednoduchý" v tomto slova smyslu znamená "bez nepotřebných rozšíření, modifikací nebo komplikací". Ve zkratce: elegantní a minimalistický přístup.
 
@@ -134,9 +134,9 @@ Instalace Archlinuxů probíhá s pomocí [sady instalačních skriptů](https:/
 
 **Note:** Archlinux od verze instalačního media 2012.07.15 již nemá AIF, tedy instalátor v tradičním smyslu slova.
 
-V případě jakýchkoli problémů hledejte řešení na komounitou udržované [Arch wiki](/index.php/Main_page "Main page"), která je skvělým zdrojem informací. Pokud nemůžete svou odpověď najít jinde, zkuste [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanál ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) nebo [fórum](https://bbs.archlinux.org/) uživatelů Archlinuxu. Informace o příkazech, které neznáte najdede v `manuálových stránkách`. Stránku k příslušnému příkazu zobrazíte zadáním `man _příkaz_` do konzole.
+V případě jakýchkoli problémů hledejte řešení na komounitou udržované [Arch wiki](/index.php/Main_page "Main page"), která je skvělým zdrojem informací. Pokud nemůžete svou odpověď najít jinde, zkuste [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanál ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) nebo [fórum](https://bbs.archlinux.org/) uživatelů Archlinuxu. Informace o příkazech, které neznáte najdede v `manuálových stránkách`. Stránku k příslušnému příkazu zobrazíte zadáním `man *příkaz*` do konzole.
 
-**Note:** Chcete-li získat správně nainstalovaný a nakonfigurovaný systém, postupujte podle tohoto průvodce co nejpřesněji, takže _prosím_ čtěte pečlivě. Vždy doporučujeme přečíst nejprve celý oddíl, <u>než</u> se pustíte do dílčích kroků.
+**Note:** Chcete-li získat správně nainstalovaný a nakonfigurovaný systém, postupujte podle tohoto průvodce co nejpřesněji, takže *prosím* čtěte pečlivě. Vždy doporučujeme přečíst nejprve celý oddíl, <u>než</u> se pustíte do dílčích kroků.
 
 Tento průvodce je rozdělen na 4 části:
 
@@ -210,7 +210,7 @@ V případě, že máte základní desku vybavenou [UEFI](/index.php/UEFI "UEFI"
 
 *   Pokud má váš systém grafickou kartu integrovanou v chipsetu a spuštění instalačního média zkončilo černou obrazovkou, je zřejmě problém v tzv. Kernel Mode Setting ([KMS](/index.php/KMS "KMS")). Tento problém pravděpodobně obejdete tak, že změníte parametry spuštění instalačního médie. Restartujte systém, vyberte v menu instalačního media nabídku, která spouští systém (i686 nebo x86_64) a stiskněte klávesu `Tab`. Tím se dostanete do editačního režimu, kde na úplný konec řádku připište `nomodeset` a stiskněte `Enter`. Pokud nechcete úplně zakázat KMS, zkuste místo toho parametr `video=SVIDEO-1:d`. Podrobnosti viz. tento [článek](/index.php/Intel "Intel").
 
-*   Pokud obrazovka _nezčerná_, ale start systému se "zasekne" ve fázi spuštění jádra, doplňte (viz. o bod výše) na konec řádku parametr `acpi=off`.
+*   Pokud obrazovka *nezčerná*, ale start systému se "zasekne" ve fázi spuštění jádra, doplňte (viz. o bod výše) na konec řádku parametr `acpi=off`.
 
 ## Instalace
 
@@ -223,15 +223,15 @@ Nyní se nacházíte v příkazové řádce, automaticky přihlášený jako roo
 Ve výchozím nastavení je rozložení klávesnice nastaveno na `us`. Pokud máte jiné rozložení klávesnice než [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg") zadejte příkaz:
 
 ```
-# loadkeys _layout_
+# loadkeys *layout*
 
 ```
 
-...kde _layout_ může být například `fr`, `uk`, `be-latin1`, atd. Viz. tento [seznam možných rozložení](/index.php/KEYMAP#Keyboard_layouts "KEYMAP").
+...kde *layout* může být například `fr`, `uk`, `be-latin1`, atd. Viz. tento [seznam možných rozložení](/index.php/KEYMAP#Keyboard_layouts "KEYMAP").
 
 **Tip:** Pro češtinu během instalace zadejte: `loadkeys cz-qwertz`.
 
-V souvislosti ze změnou rozložení kláves je obvykle třeba změnit i písmo, protože většina jazyků obsahuje více znaků než [anglická abeceda](https://en.wikipedia.org/wiki/English_alphabet "wikipedia:English alphabet"). Jinak budou neznáme znaky zobrazeny jako čtverečky nebo jiné symboly. Mějte na paměti, že název zakové sady obsahuje velká a malá písmena a musí být zapsán _přesně_, např.:
+V souvislosti ze změnou rozložení kláves je obvykle třeba změnit i písmo, protože většina jazyků obsahuje více znaků než [anglická abeceda](https://en.wikipedia.org/wiki/English_alphabet "wikipedia:English alphabet"). Jinak budou neznáme znaky zobrazeny jako čtverečky nebo jiné symboly. Mějte na paměti, že název zakové sady obsahuje velká a malá písmena a musí být zapsán *přesně*, např.:
 
 ```
 # setfont Lat2-Terminus16
@@ -245,7 +245,6 @@ Jazyk je ve výchozím nastavení nastaven na angličtinu. Pokud chcete nastavit
 Použijte editor nano, pro češtinu takto:
 
  `# nano /etc/locale.gen` 
-
 ```
 cs_CZ.UTF-8 UTF-8
 cs_CZ ISO-8859-2
@@ -268,7 +267,6 @@ Pamatujte, že národní mapu kláves aktivujete / deaktivujete stiskem `Levý A
 Při spuštění instalace se automaticky spouští síťový démon `dhcpcd`, který se pokusí konfigurovat připojení k internetu síťovým kabelem, je-li toto dostupné Zkuste tedy "pingnout" nějaký web v internetu, abyste ověřili funkčnost připojení. Google například, vždy běží :-):
 
  `# ping -c 3 www.google.com` 
-
 ```
 PING www.l.google.com (74.125.132.105) 56(84) bytes of data.
 64 bytes from wb-in-f105.1e100.net (74.125.132.105): icmp_req=1 ttl=50 time=17.0 ms
@@ -338,7 +336,6 @@ například:
 V souboru `resolv.conf` nastavíme IP adresy DNS serverů a jméno místní domény:
 
  `# nano /etc/resolv.conf` 
-
 ```
 nameserver 61.23.173.5
 nameserver 61.95.849.8
@@ -353,7 +350,7 @@ Nyní byste měli mít funkční připojení k inernetu. Není-li tomu tak, konz
 
 Tento postup vám umožní získat během instalace bezdrátové (Wi-Fi) připojení k internetu.
 
-Po spuštění instalačního prostředí máte k dispozici ovladače pro bezdrátová zařízení i nástroje pro jejich konfiguraci. Pro úspěšnou konfiguraci připojení je ovšem důležité je vědět, jaký hardware bezdrátové sítě ve svém počítači. Mějte na paměti, že následující kroky _nastaví síť pouze v instalačním prostředí_. Tyto kroky pak (nebo jinou ekvivalentní formu konfigurace bezdrátové sítě) _bude nutné opakovat_ v nově nainstalovaném systému až ho nakonec spustíme.
+Po spuštění instalačního prostředí máte k dispozici ovladače pro bezdrátová zařízení i nástroje pro jejich konfiguraci. Pro úspěšnou konfiguraci připojení je ovšem důležité je vědět, jaký hardware bezdrátové sítě ve svém počítači. Mějte na paměti, že následující kroky *nastaví síť pouze v instalačním prostředí*. Tyto kroky pak (nebo jinou ekvivalentní formu konfigurace bezdrátové sítě) *bude nutné opakovat* v nově nainstalovaném systému až ho nakonec spustíme.
 
 Také si uvědomte, že pokud není při instalaci potřeba bezdrátové připojení, můžete následující kroky provést kdykoliv později.
 
@@ -378,9 +375,7 @@ nebo, púokud máte USB Wi-Fi zařízení:
 *   Zadáním příkazu `iwconfig`, se ujistěte, že `udev` zavedl správný ovladač zařízení a že ovladač vytvořil síťové rozhraní.
 
 **Note:** Jestli nevidíte výstup podobný tomuto, pak ovladač zařízení nebyl zaveden. V tom případě musíte zavést ovladač sami. Prosím následujte tyto [instrukce](/index.php/Wireless_Setup "Wireless Setup") (anglicky).
-
  `# iwconfig` 
-
 ```
 lo no wireless extensions.
 eth0 no wireless extensions.
@@ -415,7 +410,7 @@ Toto je například hlášení bezdrátového chipsetu Intel, který važaduje f
 
 Pokud neuvidíte žádný výstup, váš bezdrátový adaptér nejspíš firmware nevyžaduje.
 
-**Warning:** Firmware pro bezdrátové adaptéry je naleznete při běhu instalačního prostředí v `/usr/lib/firmware`, ale je potřeba ho ručně přidat do nově instalovaného systému, jinak po restartu nebudete mít k dispozici bezdrátovou síť! _Výběr a instalace balíčků bude popsána později. Ujistěte se, že při výběru nezapomenete nainstalovat jak ovladače tak jejich odpovídající firmware! Informace o požadavcích různých bezdrátových čipů najdete v článku [Wireless Setup](/index.php/Wireless_Setup_(%C4%8Cesky) "Wireless Setup (Česky)")._
+**Warning:** Firmware pro bezdrátové adaptéry je naleznete při běhu instalačního prostředí v `/usr/lib/firmware`, ale je potřeba ho ručně přidat do nově instalovaného systému, jinak po restartu nebudete mít k dispozici bezdrátovou síť! *Výběr a instalace balíčků bude popsána později. Ujistěte se, že při výběru nezapomenete nainstalovat jak ovladače tak jejich odpovídající firmware! Informace o požadavcích různých bezdrátových čipů najdete v článku [Wireless Setup](/index.php/Wireless_Setup_(%C4%8Cesky) "Wireless Setup (Česky)").*
 
 Nakonec použijte pro připojení k síti příkaz `wifi-menu` z balíčku nástrojů [netcfg](https://aur.archlinux.org/packages/netcfg/):
 
@@ -480,7 +475,7 @@ Instalační medium Arch Linuxu obsahuje tyto nástroje:
 
 Tento příklad používá nástroj **cfdisk**, ale není problém použít např. **gdisk**, který umožňuje použít GPT tabulku oddílů.
 
-**Note:** Pokud máte základní desku vybavenou [UEFI](/index.php/UEFI "UEFI") musíte vytvořit zvláštní diskový oddíl tzv. _UEFI System partition_. Viz. [tento článek](/index.php/Unified_Extensible_Firmware_Interface#Create_an_UEFI_System_Partition_in_Linux "Unified Extensible Firmware Interface") (anglicky).
+**Note:** Pokud máte základní desku vybavenou [UEFI](/index.php/UEFI "UEFI") musíte vytvořit zvláštní diskový oddíl tzv. *UEFI System partition*. Viz. [tento článek](/index.php/Unified_Extensible_Firmware_Interface#Create_an_UEFI_System_Partition_in_Linux "Unified Extensible Firmware Interface") (anglicky).
 
 **Note:** Pokud budete instalovat zavaděč GRUB v režimu BIOS-GPT, musíte vytvořit "BIOS Boot Partition" o velikosti 2 MiB. Viz. [GRUB#GPT_specific_instructions](/index.php/GRUB#GPT_specific_instructions "GRUB") (anglicky).
 
@@ -583,7 +578,7 @@ In case you have a separate `/boot` partition:
 
 ```
 # mkdir /mnt/boot
-# mount /dev/sda_X_ /mnt/boot
+# mount /dev/sda*X* /mnt/boot
 
 ```
 
@@ -591,7 +586,7 @@ In case you have a UEFI motherboard, mount the UEFI partition:
 
 ```
 # mkdir /mnt/boot/efi
-# mount /dev/sda_X_ /mnt/boot/efi
+# mount /dev/sda*X* /mnt/boot/efi
 
 ```
 
@@ -619,7 +614,7 @@ Po vybrání potřebných balíčků se vraťte do menu a pokračujte dalším k
 
 ### Instalace balíčků
 
-_Instalace balíčků_ nainstaluje vybrané balíčky do nového systému. Pokud vyberete jako zdroj CD/USB nainstalují se balíčky přímo z instalačního média. Pokud jste zvolili Netinstall, stáhnou se z internetu nejaktuálnější balíčky.
+*Instalace balíčků* nainstaluje vybrané balíčky do nového systému. Pokud vyberete jako zdroj CD/USB nainstalují se balíčky přímo z instalačního média. Pokud jste zvolili Netinstall, stáhnou se z internetu nejaktuálnější balíčky.
 
 **Note:** V některých instalátorech budete dotázání, jestli chcete zachovat cache pacmana. Pokud zvolíte ano, budete mít možnost později [downgradovat](/index.php/Downgrade_packages "Downgrade packages") balíček na předchozí verzi, takže tuto volbu doporučujeme (cache je možné kdykoliv v případě potřeby vyčistit).
 
@@ -637,7 +632,7 @@ Nejdřív budete dotázání, který editor chcete použit. Vyberte [nano](/inde
 
 **Nemohl by to dělat instalátor automaticky?**
 
-Skrytí procesu konfigurace systému je v rozporu s _**[filozofií Arch Linuxu](/index.php/The_Arch_Way "The Arch Way")**_. Je pravda, že současné verze jádra a nástrojů pro detekcí hardware nabízejí perfektní podporu auto-konfigurace, Arch ale dává uživatelům možnost konfigurace během instalace za účelem _transparentnosti a kontroly systémových zdrojů_. Když dokončíte úpravy těchto souborů, pochopíte jednduchost ruční konfigurace Arch Linuxu a seznámíte se blíže s jeho základní strukturou, takže budete lépe připraveni na spravování svého nového systému.
+Skrytí procesu konfigurace systému je v rozporu s ***[filozofií Arch Linuxu](/index.php/The_Arch_Way "The Arch Way")***. Je pravda, že současné verze jádra a nástrojů pro detekcí hardware nabízejí perfektní podporu auto-konfigurace, Arch ale dává uživatelům možnost konfigurace během instalace za účelem *transparentnosti a kontroly systémových zdrojů*. Když dokončíte úpravy těchto souborů, pochopíte jednduchost ruční konfigurace Arch Linuxu a seznámíte se blíže s jeho základní strukturou, takže budete lépe připraveni na spravování svého nového systému.
 
 #### /etc/rc.conf
 
@@ -647,7 +642,7 @@ Arch Linux používá soubor `/etc/rc.conf` jako základní zdroj systémové ko
 
 ##### Sekce LOCALIZATION (lokalizace)
 
-_**Ukázka sekce LOCALIZATION:**_
+***Ukázka sekce LOCALIZATION:***
 
 ```
 LOCALE="cs_CZ.utf8"
@@ -697,7 +692,7 @@ USECOLOR="yes"
 
 ##### Sekce HARDWARE
 
-_**Příklad pro HARDWARE:**_
+***Příklad pro HARDWARE:***
 
 ```
 # Scan hardware and load required modules at boot
@@ -731,7 +726,7 @@ MODULES=(!net-pf-10 !pcspkr loop)
 
 	eth0 
 
-	'Ethernet, karta 0'. _Pokud_ používáte **statickou IP adresu**, upravte adresu rozhraní, síťovou masku, a broadcast adresu. Nastavte na eth0="dhcp", pokud chcete použít **DHCP** pro automatickou konfiguraci.
+	'Ethernet, karta 0'. *Pokud* používáte **statickou IP adresu**, upravte adresu rozhraní, síťovou masku, a broadcast adresu. Nastavte na eth0="dhcp", pokud chcete použít **DHCP** pro automatickou konfiguraci.
 
 	INTERFACES 
 
@@ -745,7 +740,7 @@ MODULES=(!net-pf-10 !pcspkr loop)
 
 	Pokud používáte statickou **IP**, odstraňte **!** z pole 'gateway'. Pokud používáte **DHCP**, můžete zpravidla nechat tuto proměnnou zakomentovanou vykřičníkem (!). Občas je nutné ale ROUTES a gateway nastavit. Pokud budete mít problémy s připojením, vraťte se k této konfiguraci.
 
-**Příklad s dynamickou IP (_DHCP_):**
+**Příklad s dynamickou IP (*DHCP*):**
 
 ```
 HOSTNAME="arch"
@@ -795,9 +790,9 @@ DAEMONS=(network @syslog-ng netfs @crond)
 
 Pole [[Sekce DAEMONS]|DAEMONS] není v tuto chvíli potřeba měnit, ale je užitečné vysvětlit, co to vlastně je, protože v pozdějších částech se k nim ještě dostaneme.
 
-_Démon_ je program, který běží na pozadí, čeká na nějaké události a poskytuje různé služby. Dobrým příkladem je webserver, který čeká na požadavek na doručení webové stránky (třeba httpd), nebo SSH server, který čeká na příhlášení uživatele (sshd). Toto jsou příklady plnohodnotných aplikaci, ale existují i malí skrytí démoni, kteří například zapisují informace do logů (syslog, metalog) nebo démon, který poskytuje grafické přihlášení (gdm, kdm, ...). Všechny tyto programy je možné přidat do seznamu démonů a systém je automaticky spustí při startu. Užiteční démoni budou v tomto průvodci ještě zmíněni.
+*Démon* je program, který běží na pozadí, čeká na nějaké události a poskytuje různé služby. Dobrým příkladem je webserver, který čeká na požadavek na doručení webové stránky (třeba httpd), nebo SSH server, který čeká na příhlášení uživatele (sshd). Toto jsou příklady plnohodnotných aplikaci, ale existují i malí skrytí démoni, kteří například zapisují informace do logů (syslog, metalog) nebo démon, který poskytuje grafické přihlášení (gdm, kdm, ...). Všechny tyto programy je možné přidat do seznamu démonů a systém je automaticky spustí při startu. Užiteční démoni budou v tomto průvodci ještě zmíněni.
 
-Historicky, výraz _démon_ (angl. daemon) vznikl v MIT na projektu MAC. Vývojáři převzali jméno z _Maxwellova démona_, imaginární bytosti ze slavného myšlenkového pokusu, která sedí na pozadí a třídí molekuly. *nixové systémy převzaly tuto terminologii a vytvořili opačný acronym **d**isk **a**nd **e**xecution **mon**itor.
+Historicky, výraz *démon* (angl. daemon) vznikl v MIT na projektu MAC. Vývojáři převzali jméno z *Maxwellova démona*, imaginární bytosti ze slavného myšlenkového pokusu, která sedí na pozadí a třídí molekuly. *nixové systémy převzaly tuto terminologii a vytvořili opačný acronym **d**isk **a**nd **e**xecution **mon**itor.
 
 **Tip:** Všichni démoni v Arch Linuxu jsou drženi v /etc/rc.d/
 
@@ -805,7 +800,7 @@ Historicky, výraz _démon_ (angl. daemon) vznikl v MIT na projektu MAC. Vývoj�
 
 **fstab** ( **f**ile **s**ystems **tab**le - tabulka souborových systémů) je soubor, který obsahuje seznam všech dostupných disků a oddílů a určuje, kam a jak se mají připojit. Soubor **/etc/fstab** je nejčastěji používán programem **mount**. Program mount bere souborový systém na zařízení a připojuje ho do hlavního adresářového podstromu. /etc/rc.sysinit volá **mount -a** přibližně ve třech čtvrtinách bootovacího procesu a program mount čte celý /etc/fstab aby zjistil, které oddíly, kam a jak má připojit. Pokud k filesystému přidáte volbu **noauto** /etc/fstab, **mount -a** tento oddíl nepřipojí.
 
-_An example of `/etc/fstab`_
+*An example of `/etc/fstab`*
 
 ```
 # <file system>        <dir>        <type>        <options>                 <dump>    <pass>
@@ -824,7 +819,7 @@ none                   /dev/shm     tmpfs         defaults                      
 
 	popisuje bloková zařízení nebo vzdálené souborové systémy, které se mají připojit. Pro standardní připojování, toto pole obsahuje název souboru pro blokové zařízení (vytvořeného programem mknod během bootu), například '/dev/cdrom' nebo '/dev/sda1'.
 
-**Note:** Pokud váš systém má více jak jeden pevný disk, instalátor použije UUID, místo sd_x_ kvůli konzistenci v mapování disků **[Použití UUID](/index.php/Persistent_block_device_naming "Persistent block device naming") má několik výhod a předchází problémům, které mohou nastat, když v budoucnu připojíte další pevný disk.** Kvůli aktivnímu vývoji jádra a udevu se také může měnit pořadí, ve kterém ovladače nahrávají jednotlivé řadiče na desce. Téměř každá deska má vícero řadičů (SATA/IDE) a kvůli zmíněným změnám, se při dalším bootu může /dev/sda jmenovat /dev/sdb a naopak. (Viz [tento článek](/index.php/Persistent_block_device_naming "Persistent block device naming") pro více informací o bezpečném mapování zařízení).
+**Note:** Pokud váš systém má více jak jeden pevný disk, instalátor použije UUID, místo sd*x* kvůli konzistenci v mapování disků **[Použití UUID](/index.php/Persistent_block_device_naming "Persistent block device naming") má několik výhod a předchází problémům, které mohou nastat, když v budoucnu připojíte další pevný disk.** Kvůli aktivnímu vývoji jádra a udevu se také může měnit pořadí, ve kterém ovladače nahrávají jednotlivé řadiče na desce. Téměř každá deska má vícero řadičů (SATA/IDE) a kvůli zmíněným změnám, se při dalším bootu může /dev/sda jmenovat /dev/sdb a naopak. (Viz [tento článek](/index.php/Persistent_block_device_naming "Persistent block device naming") pro více informací o bezpečném mapování zařízení).
 
 	<dir> 
 
@@ -840,7 +835,7 @@ none                   /dev/shm     tmpfs         defaults                      
 
 	<dump> 
 
-	používá se programem dump(8) a určuje, jestli se daný oddíl má zálohovat nebo ne. Hodnota 0 znamená zálohování vypnuto. _Nástroj dump není součástí výchozí instalace Arch Linuxu._
+	používá se programem dump(8) a určuje, jestli se daný oddíl má zálohovat nebo ne. Hodnota 0 znamená zálohování vypnuto. *Nástroj dump není součástí výchozí instalace Arch Linuxu.*
 
 	<pass> 
 
@@ -850,7 +845,7 @@ Více informací najdete v článku o [Fstab](/index.php/Fstab "Fstab").
 
 #### **[/etc/mkinitcpio](/index.php?title=Konfigurace_mkinitcpio&action=edit&redlink=1 "Konfigurace mkinitcpio (page does not exist)").conf**
 
-_Ve většině případů není nutné v tuto chvíli soubor upravovat, ale přečtěte si prosím následující informace._
+*Ve většině případů není nutné v tuto chvíli soubor upravovat, ale přečtěte si prosím následující informace.*
 
 Tento soubor umožňuje další dolaďování inital ram filesystemu, tzv. initramfs (historicky označovaného jako initial ramdisk, "initrd") pro váš systém. initramfs je zkomprimovaný obraz, který je načítán jádrem při startu. Účelem je poskytnout minimální filesystém s potřebnými nástroji tak, aby jádro mohlo připojit kořenový filesystém. To znamená načíst moduly, které jsou potřeba pro práci s IDE, SCSI nebo SATA zařízeními. Jakmile initramfs načte potřebné moduly, předá kontrolu jádru a bootovaní pokračuje. Z toho důvodu initramfs obsahuje pouze moduly potřebné, pro připojení kořenové filesystému a nemusí obsahovat všechny moduly, které kdy bude potřeba. Většina jaderných modulů bude načteno udevem později během bootovacího procesu z již připojeného kořenového adresáře.
 
@@ -883,7 +878,7 @@ Tento soubor slouží k nastavení speciálních voleb pro jaderné moduly. V t�
 
 **Note:** Pokud používáte DHCP, můžete tuto část v klidu přeskočit, protože soubor bude vytvořen a odstraněn automaticky DHCP démonem. Toto chování je možné změnit, viz stránky[Network](/index.php/Network#For_DHCP_IP "Network") a [Resolv.conf](/index.php/Resolv.conf "Resolv.conf").
 
-_resolver_ je sada metod ve standardní knihovně C, které umožňují přístup k DNS (Domain Name System). Jednou z hlavních funkcí DNS je překládat doménová jména (např. www.archlinux.org) na IP adresy (66.211.214.131). Konfigurační soubor resolveru /etc/resolv.conf obsahuje informace, které resolver čte, když jej proces poprvé zavolá. Záznamy v tomto souboru jsou mj. adresy serverů, kterých resolver ptá na překlad.
+*resolver* je sada metod ve standardní knihovně C, které umožňují přístup k DNS (Domain Name System). Jednou z hlavních funkcí DNS je překládat doménová jména (např. www.archlinux.org) na IP adresy (66.211.214.131). Konfigurační soubor resolveru /etc/resolv.conf obsahuje informace, které resolver čte, když jej proces poprvé zavolá. Záznamy v tomto souboru jsou mj. adresy serverů, kterých resolver ptá na překlad.
 
 Pokud používáte statickou IP adresu, nastavte v /etc/resolv.conf své DNS servery (nameserver <ip-address>). Můžete vložit libovolný počet záznamů.
 
@@ -913,20 +908,18 @@ Tento soubor spojuje IP adresy s hostnamy a aliasy, jedna řádka na každou adr
 
 ```
 
-Přidejte svůj _hostname_, ten který jste nastavili v /etc/rc.conf, jako alias, tak, aby záznam vypadal následovně:
+Přidejte svůj *hostname*, ten který jste nastavili v /etc/rc.conf, jako alias, tak, aby záznam vypadal následovně:
 
 ```
-127.0.0.1   localhost.localdomain   localhost _**vase_hostname**_
+127.0.0.1   localhost.localdomain   localhost ***vase_hostname***
 
 ```
 
-**Warning:** _Tento formát, **včetně 'localhost' a vašeho hostname** je požadován kvůli kompatibilitě s programy. Pokud jste tedy pojmenovali svůj počítač Arch, bude záznam vypadat:_
-
+**Warning:** *Tento formát, **včetně 'localhost' a vašeho hostname** je požadován kvůli kompatibilitě s programy. Pokud jste tedy pojmenovali svůj počítač Arch, bude záznam vypadat:*
 ```
 127.0.0.1   localhost.localdomain   localhost arch
 
 ```
-
 Chyby v těchto záznamech mohou vést ke zpomalení sítě nebo nefunkčnosti některých programů. Je to častá chyba začátečníků.
 
 **Note:** Současná verze instalátoru automaticky vloží vaše hostname do tohoto souboru, jakmile upravíte `/etc/rc.conf`. Pokud se tak z nějakého důvodu nestalo, přidejte záznam podle uvedených instrukcí ručně.
@@ -934,19 +927,17 @@ Chyby v těchto záznamech mohou vést ke zpomalení sítě nebo nefunkčnosti n
 Pokud používáte statickou IP, přidejte další řádku se syntaxí: <staticka-IP> <hostname.domainname.org> <hostname>, tedy například:
 
 ```
-192.168.1.100 _**vase_hostname**_.domain.org  _**vase_hostname**_
+192.168.1.100 ***vase_hostname***.domain.org  ***vase_hostname***
 
 ```
 
 **Tip:** Pro větší pohodlí si také můžete přidat aliasy pro vaši síť nebo web:
-
 ```
 64.233.169.103   www.google.com   g
 192.168.1.90   media
 192.168.1.88   data
 
 ```
-
 Ukázka výše vám umožňují otevřít google jednoduše zadáním 'g' jako adresy, a přistupovat k médiovému a data serveru pomocí jmén bez nutnosti pamatovat si a psát jejich IP adresy..
 
 #### /etc/locale.gen
@@ -997,14 +988,14 @@ For BIOS systems, several boot loaders are available, see [Boot loaders](/index.
 
 ##### Syslinux
 
-If you opted for a GUID partition table (GPT) for your hard drive earlier, you need to install the [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package now for the installation of _syslinux_ to work:
+If you opted for a GUID partition table (GPT) for your hard drive earlier, you need to install the [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package now for the installation of *syslinux* to work:
 
 ```
 # pacman -S gptfdisk
 
 ```
 
-Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package and then use the `syslinux-install_update` script to automatically _install_ the bootloader (`-i`), mark the partition _active_ by setting the boot flag (`-a`), and install the _MBR_ boot code (`-m`):
+Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package and then use the `syslinux-install_update` script to automatically *install* the bootloader (`-i`), mark the partition *active* by setting the boot flag (`-a`), and install the *MBR* boot code (`-m`):
 
 ```
 # pacman -S syslinux
@@ -1015,7 +1006,6 @@ Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) packag
 After installing Syslinux, configure `syslinux.cfg` to point to the right root partition. This step is vital. If it points to the wrong partition, Arch Linux will not boot. Change `/dev/sda3` to reflect your root partition (if you partitioned your drive as in [the example](#Prepare_the_storage_drive), your root partition is `/dev/sda1`).
 
  `# nano /boot/syslinux/syslinux.cfg` 
-
 ```
 ...
 LABEL arch
@@ -1024,7 +1014,7 @@ LABEL arch
         ...
 ```
 
-If adding [UUID](/index.php/UUID "UUID") rather than partition number the syntax is `APPEND root=UUID=_partition_uuid_ rw`.
+If adding [UUID](/index.php/UUID "UUID") rather than partition number the syntax is `APPEND root=UUID=*partition_uuid* rw`.
 
 Do the same for the fallback entry.
 
@@ -1042,7 +1032,7 @@ Install the [grub](https://www.archlinux.org/packages/?name=grub) package and th
 
 **Note:**
 
-*   Change `/dev/sda` to reflect the drive you installed Arch on. Do not append a partition number (do not use `sda_X_`).
+*   Change `/dev/sda` to reflect the drive you installed Arch on. Do not append a partition number (do not use `sda*X*`).
 *   For GPT-partitioned drives on BIOS motherboards, you also need a "BIOS Boot Partition". See [GPT-specific instructions](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") in the GRUB page.
 *   A sample `/boot/grub/grub.cfg` gets installed as part of the [grub](https://www.archlinux.org/packages/?name=grub) package, and subsequent `grub-*` commands may not over-write it. Ensure that your intended changes are in `grub.cfg`, rather than in `grub.cfg.new` or some such file.
 
@@ -1090,7 +1080,6 @@ Install the [gummiboot](https://www.archlinux.org/packages/?name=gummiboot) pack
 You will need to manually create a configuration file to add an entry for Arch Linux to the gummiboot manager. Create `/boot/loader/entries/arch.conf` and add the following contents, replacing `/dev/sdaX` with your **root** partition, usually `/dev/sda2`:
 
  `# nano /boot/loader/entries/arch.conf` 
-
 ```
 title          Arch Linux
 linux          /vmlinuz-linux
@@ -1112,7 +1101,7 @@ Install the [grub](https://www.archlinux.org/packages/?name=grub) and [efibootmg
 
 Next, while using a manually created `grub.cfg` is absolutely fine, it is recommended that beginners automatically generate one:
 
-**Tip:** To automatically search for other operating systems on your computer, install [os-prober](https://www.archlinux.org/packages/?name=os-prober) before running the next command. However _os-prober_ is not known to properly detect UEFI OSes.
+**Tip:** To automatically search for other operating systems on your computer, install [os-prober](https://www.archlinux.org/packages/?name=os-prober) before running the next command. However *os-prober* is not known to properly detect UEFI OSes.
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
@@ -1216,7 +1205,7 @@ pacman -Syu
 
 pacman stáhne nejnovější informace o dostupných balíčcích a provede všechny dostupné aktualizace. (Je možné, že budete dotázáni na update samotného správce balíčků pacman. Pokud se tak stane, odpovězte Ano, a po jeho aktualizaci proveďte příkaz pacman -Syu znovu.) V případě, že byl aktualizován kernel, proveďte restart.
 
-**Note:** _**Občas se stane, že je po aktualizaci potřeba ruční zásah do konfigurace; sledujte proto během upgrade výpis na obrazovce, kde se o případných nutných zásazích dočtete. Pokud máte například pomalé připojení a byl by pro vás problém hlídat, kdy začne probíhat samotný upgrade, můžete použít příkaz pacman -Syuw, který dostupné balíčky pouze stáhne, a samotnou instalaci provést později příkazem pacman -Su.**_
+**Note:** ***Občas se stane, že je po aktualizaci potřeba ruční zásah do konfigurace; sledujte proto během upgrade výpis na obrazovce, kde se o případných nutných zásazích dočtete. Pokud máte například pomalé připojení a byl by pro vás problém hlídat, kdy začne probíhat samotný upgrade, můžete použít příkaz pacman -Syuw, který dostupné balíčky pouze stáhne, a samotnou instalaci provést později příkazem pacman -Su.***
 
 ##### Krása modelu Arch rolling release
 
@@ -1380,7 +1369,7 @@ Advanced instructions for ATI configuration can be found [here](/index.php/ATI "
 
 ## Instalace a konfigurace desktopového prostředí
 
-Zatímco **X** Window System poskytuje pouze základní lešení pro tvorbu _grafického uživatelského rozhraní_ (GUI), **desktopové prostředí** (DE) pracuje nad a ve spojení s **X**, aby poskytlo GUI, které je zcela funkční a dynamické. DE typicky poskytuje okenního správce, ikony, applety, okna, panely nástrojů, složky, tapety, balík aplikací a věci jako drag and drop. Konkrétní funkcionalita a návrh každého DE jediněčně ovlivňují celé prostředí a dojem z něj. Tím pádem je volba DE velmi subjektivní a osobní rozhodnutí. Zvolte si nejlepší prostředí pro _vaše_ potřeby.
+Zatímco **X** Window System poskytuje pouze základní lešení pro tvorbu *grafického uživatelského rozhraní* (GUI), **desktopové prostředí** (DE) pracuje nad a ve spojení s **X**, aby poskytlo GUI, které je zcela funkční a dynamické. DE typicky poskytuje okenního správce, ikony, applety, okna, panely nástrojů, složky, tapety, balík aplikací a věci jako drag and drop. Konkrétní funkcionalita a návrh každého DE jediněčně ovlivňují celé prostředí a dojem z něj. Tím pádem je volba DE velmi subjektivní a osobní rozhodnutí. Zvolte si nejlepší prostředí pro *vaše* potřeby.
 
 *   Pokud chcete něco plnohodnotného a podobného Windows a Mac OSX, je dobrá volba **[KDE](#KDE)**
 *   Pokud chcete něco trochu více minimalistického, co by více následovalo princip K.I.S.S. (Udržuj to jednoduché a hloupé), je dobrá volba **[GNOME](#GNOME)**
@@ -1543,7 +1532,7 @@ Pěkný GTK engine pro témata (součástí balíčku jsou i některá témata, 
 
 ```
 
-Jakmile je nainstalovaný, vyberte ho v _Systém -> Volby -> Vzhled -> záložka Téma_.
+Jakmile je nainstalovaný, vyberte ho v *Systém -> Volby -> Vzhled -> záložka Téma*.
 
 Repozitáře Arch Linuxu obsahují i další témata a enginy. Nainstalujte následující a podívejte se na ně sami:
 
@@ -1582,7 +1571,7 @@ KDE nainstalujte pomocí:
 
 2\. **KDEmod** je komunitou řízený systém specifický pro Arch Linux, jenž je navrhován pro modularitu a nabízí i volbu mezi KDE 3.5.10 a 4.x.x. Po přidání příslušného repozitáře do /etc/pacman.conf lze KDEmod nainstalovat pacmanem. Stránky projektu včetně kompletních instalačních instrukcí se nacházejí na [http://kdemod.ath.cx/](http://kdemod.ath.cx/).
 
-**Note:** Závislost na celém kdemod3/kdemod-legacy byla odstraněna z oficiálních repozitářů Arch Linuxu. KDEmod není součástí zmíněných repozitářů a žádné standardní programy v Arch Linuxu tento balík nevyužívaly. Pokud chcete nainstalovat kdemod3-complete bez potenciálně problematického obcházení pomocí "vynucených instalací", měli byste nainstalovat balíček libopensync ručně z AUR (Viz [AUR User Guidelines (Česky)#Jak_na_bal.C3.AD.C4.8Dek_z_UNSUPPORTED](/index.php/AUR_User_Guidelines_(%C4%8Cesky)#Jak_na_bal.C3.AD.C4.8Dek_z_UNSUPPORTED "AUR User Guidelines (Česky)")) nebo pomocí programu yaourt (Viz [Yaourt#Easy_Install](/index.php/Yaourt#Easy_Install "Yaourt"), poté yaourt -S libopensync), dokud balíček nebude v repozitářích KDEmod3\. Pokud budete mít problémy, zkuste libopensync-stable (nebo libopensync-unstable pokud jste zoufalí). Jako další možnost by tento problém měla obejít instalace kdemod3-base namísto kdemod3-complete (skupina kdepim, jíž patří tento problém v závislostech, není ve skupině base). Poté můžete jít směrem _vzhůru_ k těm balíčkům, které chcete, namísto jejich odstraňování.
+**Note:** Závislost na celém kdemod3/kdemod-legacy byla odstraněna z oficiálních repozitářů Arch Linuxu. KDEmod není součástí zmíněných repozitářů a žádné standardní programy v Arch Linuxu tento balík nevyužívaly. Pokud chcete nainstalovat kdemod3-complete bez potenciálně problematického obcházení pomocí "vynucených instalací", měli byste nainstalovat balíček libopensync ručně z AUR (Viz [AUR User Guidelines (Česky)#Jak_na_bal.C3.AD.C4.8Dek_z_UNSUPPORTED](/index.php/AUR_User_Guidelines_(%C4%8Cesky)#Jak_na_bal.C3.AD.C4.8Dek_z_UNSUPPORTED "AUR User Guidelines (Česky)")) nebo pomocí programu yaourt (Viz [Yaourt#Easy_Install](/index.php/Yaourt#Easy_Install "Yaourt"), poté yaourt -S libopensync), dokud balíček nebude v repozitářích KDEmod3\. Pokud budete mít problémy, zkuste libopensync-stable (nebo libopensync-unstable pokud jste zoufalí). Jako další možnost by tento problém měla obejít instalace kdemod3-base namísto kdemod3-complete (skupina kdepim, jíž patří tento problém v závislostech, není ve skupině base). Poté můžete jít směrem *vzhůru* k těm balíčkům, které chcete, namísto jejich odstraňování.
 
 #### Užiteční daemoni pro KDE
 
@@ -1717,7 +1706,7 @@ Gratulujeme! Vítejte v desktopovém prostředí Xfce na svém novém systému A
 
 #### O LXDE
 
-LXDE (_L_ightweight _X_11 _D_esktop _E_nvironment) je nový projekt zaměřený na poskytnutí moderního desktopového prostředí, které má za cíl být odlehčené, rychlé, intuitivní a funkční při zachování nízkého využití systémových zdrojů. LXDE je od ostatních desktopových prostředí odlišné, jelikož každá část LXDE je oddělená a nezávislá aplikace a může být lehce nahrazena jinými programy. Tento modulární návrh eliminuje všechny nepotřebné závislosti a poskytuje větší flexibilitu. Detaily a snímky obrazovky jsou dostupné na [http://lxde.org/](http://lxde.org/)
+LXDE (*L*ightweight *X*11 *D*esktop *E*nvironment) je nový projekt zaměřený na poskytnutí moderního desktopového prostředí, které má za cíl být odlehčené, rychlé, intuitivní a funkční při zachování nízkého využití systémových zdrojů. LXDE je od ostatních desktopových prostředí odlišné, jelikož každá část LXDE je oddělená a nezávislá aplikace a může být lehce nahrazena jinými programy. Tento modulární návrh eliminuje všechny nepotřebné závislosti a poskytuje větší flexibilitu. Detaily a snímky obrazovky jsou dostupné na [http://lxde.org/](http://lxde.org/)
 
 LXDE poskytuje:
 
@@ -1747,7 +1736,7 @@ exec startlxde
 
 ```
 
-do svého ~/.xinitrc a spusťte ho pomocí _startx_ nebo _xinit_
+do svého ~/.xinitrc a spusťte ho pomocí *startx* nebo *xinit*
 
 Další informace jsou dostupné ve wiki [článku o LXDE](/index.php/LXDE "LXDE").
 
@@ -1793,7 +1782,7 @@ Též jsou dostupné přídavné konfigurační nástroje, pokud jsou žádoucí
 Jakmile je openbox nainstalován, obdržíte zprávu, že máte zkopírovat soubory menu.xml a rc.xml do ~/.config/openbox ve svém domovském adresáři:
 
 ```
-# su - _vaše-uživatelské-jméno_
+# su - *vaše-uživatelské-jméno*
 $ mkdir -p ~/.config/openbox/
 $ cp /etc/xdg/openbox/rc.xml ~/.config/openbox/
 $ cp /etc/xdg/openbox/menu.xml ~/.config/openbox/
@@ -1852,7 +1841,7 @@ exec fvwm
 
 ### Webový prohlížeč
 
-Věčně populární webový prohlížeč Firefox je dostupný skrze pacmana, nicméně nepoužívá své oficiální označení, a tak se program při otevření objevuje pod svým vývojovým názvem _Gran Paradiso_.
+Věčně populární webový prohlížeč Firefox je dostupný skrze pacmana, nicméně nepoužívá své oficiální označení, a tak se program při otevření objevuje pod svým vývojovým názvem *Gran Paradiso*.
 
 Instalujte pomocí:
 
@@ -1868,9 +1857,9 @@ Dále si určitě nainstalujte 'flashplugin', 'mplayer', 'mplayer-plugin', a bal
 
 ```
 
-_Pro nováčky: Pokud máte x86_64 verzi Arch Linuxu, nepoužívejte u pacmanu volbu `flashplugin` zmíněnou výše nebo obdržíte chybové hlášení. Adobe nyní nabízí 64-bitovou verzi Flash pluginu. Podívejte se prosím na [článek o instalaci Flashe na Arch64](/index.php?title=Instalace_Flashe_na_Arch64_(%C4%8Cesky)&action=edit&redlink=1 "Instalace Flashe na Arch64 (Česky) (page does not exist)")._
+*Pro nováčky: Pokud máte x86_64 verzi Arch Linuxu, nepoužívejte u pacmanu volbu `flashplugin` zmíněnou výše nebo obdržíte chybové hlášení. Adobe nyní nabízí 64-bitovou verzi Flash pluginu. Podívejte se prosím na [článek o instalaci Flashe na Arch64](/index.php?title=Instalace_Flashe_na_Arch64_(%C4%8Cesky)&action=edit&redlink=1 "Instalace Flashe na Arch64 (Česky) (page does not exist)").*
 
-*   _Poznámka: Povedlo se mi zprovoznit pluginy pouze symlinkováním všeho z '/usr/lib/mozilla/plugins' do '~/.mozilla/plugins', přesněji tedy spuštením příkazu '`mkdir ~/.mozilla/plugins && ln -s /usr/lib/mozilla/plugins/* ~/.mozilla/plugins`'._
+*   *Poznámka: Povedlo se mi zprovoznit pluginy pouze symlinkováním všeho z '/usr/lib/mozilla/plugins' do '~/.mozilla/plugins', přesněji tedy spuštením příkazu '`mkdir ~/.mozilla/plugins && ln -s /usr/lib/mozilla/plugins/* ~/.mozilla/plugins`'.*
 
 (Balíček codecs obsahuje většinu kodeků, včetně těch pro Win32, Quicktime a Realplayer9 obsah.)
 

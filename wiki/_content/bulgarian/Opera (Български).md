@@ -27,7 +27,7 @@ $ yaourt -S opera
 
 Opera също така е на разположение чрез статичните връчки към библиотеките на Qt. Това се препоръчва ако не искате да иснталирате допълнителни Qt пакети.
 
-Свалете пакета [opera-static](https://aur.archlinux.org/packages/opera-static/) за i686 (_Остаряло:_ не е обновено за Opera 10 от септември 2009) в AUR.
+Свалете пакета [opera-static](https://aur.archlinux.org/packages/opera-static/) за i686 (*Остаряло:* не е обновено за Opera 10 от септември 2009) в AUR.
 
 ## Интерграция в KDE
 
@@ -71,7 +71,7 @@ in `opera:config` advanced options.
 
 ### Microsoft fonts and Opera
 
-**Note:** Можете да настроите шрифтовете от _Tools -> Preferences -> Advanced -> Fonts_, шрифтове от qtconfig са с приоритед над шрифтовете на GNOME.
+**Note:** Можете да настроите шрифтовете от *Tools -> Preferences -> Advanced -> Fonts*, шрифтове от qtconfig са с приоритед над шрифтовете на GNOME.
 
 Ако [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) не е инсталиран преди да пуснете Opera за първи път, Opera ще използва тези шрифтове по подразбиране, независимо какво е посочено в настройките на GTK, [GNOME](/index.php/GNOME "GNOME") или KDE font management, т.н.
 
@@ -88,7 +88,7 @@ in `opera:config` advanced options.
 
 3\. `rm -rf ~/.opera`
 
-**Warning:** Това е предназначено за _нови_ инсталации на Opera, понеже премахването на този път и всичките му компоненти ще рестартира настройките на Opera, кеша, отметките, т.н.
+**Warning:** Това е предназначено за *нови* инсталации на Opera, понеже премахването на този път и всичките му компоненти ще рестартира настройките на Opera, кеша, отметките, т.н.
 
 4\. Пуснете Opera отново. Можете да реинсталира ttf-ms-fonts след това.
 
@@ -139,7 +139,7 @@ ln -s server/libjvm.so .
 
 ```
 
-3\. Редактирайте пътят към Java в Opera: _Menu -> Tools -> Preferences -> Advanced -> Content -> Java Options_.
+3\. Редактирайте пътят към Java в Opera: *Menu -> Tools -> Preferences -> Advanced -> Content -> Java Options*.
 
 ```
 #openjdk

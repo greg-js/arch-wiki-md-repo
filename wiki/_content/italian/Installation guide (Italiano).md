@@ -32,7 +32,7 @@ L'[Arch wiki](/index.php/Main_Page_(Italiano) "Main Page (Italiano)") mantenuto 
 Scarica la nuova ISO di Arch Linux ISO dalla [pagina di download](http://www.archlinux.it/download/).
 
 *   Viene distribuita una sola immagine da essere utilizzata su architetture i686 e x86_64 per installare Arch Linux tramite la rete. Le immagini che contenevano il repository [core] non sono più distribuite.
-*   Le immagini sono firmate ed è altamente raccomandato verificare la firma prima di usarle: questo si può fare scaricando il file _.sig_ dalla pagina di download (o uno dei mirror elencati qui ) per la stessa directory del file _.iso_ e quindi verificarlo tramite `pacman-key -v _iso-file_.sig`
+*   Le immagini sono firmate ed è altamente raccomandato verificare la firma prima di usarle: questo si può fare scaricando il file *.sig* dalla pagina di download (o uno dei mirror elencati qui ) per la stessa directory del file *.iso* e quindi verificarlo tramite `pacman-key -v *iso-file*.sig`
 *   Le immagini possono essere masterizzate su CD, montate come ISO, o scritte direttamente [su penna USB](/index.php/USB_Installation_Media_(Italiano) "USB Installation Media (Italiano)"). Le ISO servono ad installare un nuovo sistema di Arch Linux; un sistema Arch Linux può sempre essere aggiornato tramite `pacman -Syu`.
 
 ## Installazione
@@ -62,7 +62,7 @@ Se si sta utilizzando (U) EFI avrete probabilmente bisogno di un'altra partizion
 
 ### Montare le partizioni
 
-Ora si deve montare la partizione di root su `/mnt`. Dopodiche si dovrebbero anche creare le directory per montare le altre partizioni (`/mnt/boot`, `/mnt/home`, ..) e attivare la partizione di "swap _se si desidera che vengano rilevate da "genfstab"._
+Ora si deve montare la partizione di root su `/mnt`. Dopodiche si dovrebbero anche creare le directory per montare le altre partizioni (`/mnt/boot`, `/mnt/home`, ..) e attivare la partizione di "swap *se si desidera che vengano rilevate da "genfstab".*
 
 ### Connessione alla rete
 
@@ -100,14 +100,14 @@ Altri pacchetti possono essere installati aggiungendo i loro nomi al comando pre
 
 	 `# ln -s /usr/share/zoneinfo/Europe/Rome /etc/localtime` 
 
-*   De-commentare i _locale_ che si vuole utilizzare in `/etc/locale.gen` e generarlo con il comando `locale-gen`.
+*   De-commentare i *locale* che si vuole utilizzare in `/etc/locale.gen` e generarlo con il comando `locale-gen`.
 *   Impostare le proprie [preferenze sul locale](/index.php/Locale_(Italiano)#Impostare_il_locale_a_livello_di_sistema "Locale (Italiano)") in `/etc/locale.conf`.
 *   Aggiungere un [font](/index.php/Fonts#Console_fonts "Fonts") e una [mappatura della tastiera](/index.php/KEYMAP "KEYMAP") che si desidera utilizzare per la console in `/etc/vconsole.conf`
 *   Configurare `/etc/mkinitcpio.conf` in base alle proprie esigenze (si legga [mkinitcpio](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)")) e creare un RAM disk iniziale con:
 
 	 `# mkinitcpio -p linux` 
 
-*   Impostare una password di _root_ con `passwd`.
+*   Impostare una password di *root* con `passwd`.
 *   Configurare nuovamente la connessione di rete per l'ambiente appena installato. Si consultino [Configurazione della Rete](/index.php/Configurazione_della_Rete "Configurazione della Rete") e [Wireless Setup](/index.php/Wireless_Setup_(Italiano) "Wireless Setup (Italiano)").
 
 ### Installare e configurare un boot loader

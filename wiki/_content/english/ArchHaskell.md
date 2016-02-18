@@ -39,9 +39,9 @@ There are currently two people with commit rights to the ArchHaskell repository 
 
 ### haskell-core
 
-The _haskell-core_ repository is the base repository of packages maintained by the ArchHaskell team. _haskell-core_ can be accessed by adding the following entry to `/etc/pacman.conf` (above [community], to ensure the correct **ghc** package is picked):
+The *haskell-core* repository is the base repository of packages maintained by the ArchHaskell team. *haskell-core* can be accessed by adding the following entry to `/etc/pacman.conf` (above [community], to ensure the correct **ghc** package is picked):
 
-**Warning:** Placing _haskell-core_ above _community_ will cause packages from _haskell-core_ to take precedence, and avoid dependency conflicts in case of duplicate packages. Overriding [official repositories](/index.php/Official_repositories "Official repositories") is however **not** supported.
+**Warning:** Placing *haskell-core* above *community* will cause packages from *haskell-core* to take precedence, and avoid dependency conflicts in case of duplicate packages. Overriding [official repositories](/index.php/Official_repositories "Official repositories") is however **not** supported.
 
 ```
 [haskell-core]
@@ -49,7 +49,7 @@ Server = http://xsounds.org/~haskell/core/$arch
 
 ```
 
-The set of packages in the _haskell-core_ repository is derived from the **habs** tree officially located [here](https://github.com/archhaskell/habs). A tool called [cblrepo](https://github.com/magthe/cblrepo) is used to keep the **habs** tree synchronized with the official Haskell packages from [Hackage](http://hackage.haskell.org/packages/hackage.html).
+The set of packages in the *haskell-core* repository is derived from the **habs** tree officially located [here](https://github.com/archhaskell/habs). A tool called [cblrepo](https://github.com/magthe/cblrepo) is used to keep the **habs** tree synchronized with the official Haskell packages from [Hackage](http://hackage.haskell.org/packages/hackage.html).
 
 The repositories provide both file listings (by using `repo-add --files`), package deltas (`repo-add --delta`), and both packages and the database are signed. The fingerprint of the key used for signing is:
 
@@ -61,7 +61,7 @@ sub   2048D/A418C0FE 2012-12-26
 
 ```
 
-If you use `SigLevel = Required TrustedOnly` in `/etc/pacman.conf` for _haskell-core_, then you need to do the following to add Magnus Therning's key:
+If you use `SigLevel = Required TrustedOnly` in `/etc/pacman.conf` for *haskell-core*, then you need to do the following to add Magnus Therning's key:
 
 ```
 # pacman-key -r 4209170B
@@ -78,7 +78,7 @@ Force a refresh of all package lists:
 
 ### haskell-happstack
 
-The _haskell-happstack_ repository contains packages for web development based on the [Happstack](http://happstack.com/) framework. It requires [#haskell-core](#haskell-core), and includes most of the Happstack packages in [HackageDB](http://hackage.haskell.org/), plus [Gitit](http://gitit.net/) (package name `haskell-gitit`) and [clckwrks](http://clckwrks.com/), all their dependencies not in _haskell-core_ and some other not web related packages. To enable the repository, add the following entry to `/etc/pacman.conf`:
+The *haskell-happstack* repository contains packages for web development based on the [Happstack](http://happstack.com/) framework. It requires [#haskell-core](#haskell-core), and includes most of the Happstack packages in [HackageDB](http://hackage.haskell.org/), plus [Gitit](http://gitit.net/) (package name `haskell-gitit`) and [clckwrks](http://clckwrks.com/), all their dependencies not in *haskell-core* and some other not web related packages. To enable the repository, add the following entry to `/etc/pacman.conf`:
 
 ```
 [haskell-happstack]
@@ -98,9 +98,9 @@ Bug reports and feature requests in [GitHub](https://github.com/tensor5/haskell-
 
 ### haskell-web
 
-**Note:** The _haskell-web_ repository is not maintained anymore. If you wish to help, please send a mail to the list or use the IRC channel.
+**Note:** The *haskell-web* repository is not maintained anymore. If you wish to help, please send a mail to the list or use the IRC channel.
 
-The repository was built on _haskell-core_, providing several more packages, especially those useful for web applications.
+The repository was built on *haskell-core*, providing several more packages, especially those useful for web applications.
 
 ```
 [haskell-web]
@@ -116,21 +116,21 @@ See the **ArchHaskell** community page and get in touch via the mailing list or 
 
 ### Overview
 
-The plan is to have one user-facing repository, _haskell_, which merges the packages available in various satellite repositories (like _haskell-web_), thereby distributing the maintenance load. One satellite repository is special, the _haskell-core_ repository, which provides packages that are dependencies of all the other satellites.
+The plan is to have one user-facing repository, *haskell*, which merges the packages available in various satellite repositories (like *haskell-web*), thereby distributing the maintenance load. One satellite repository is special, the *haskell-core* repository, which provides packages that are dependencies of all the other satellites.
 
 ### haskell-core maintenance
 
 Ensure:
 
-*   _haskell-core_ is an Arch repository hosted at kiwilight and xsounds.
-*   _haskell-core_ is in sync with the [habs](https://github.com/archhaskell/habs) cblrepo database.
+*   *haskell-core* is an Arch repository hosted at kiwilight and xsounds.
+*   *haskell-core* is in sync with the [habs](https://github.com/archhaskell/habs) cblrepo database.
 
 ### Other repository maintenance
 
 For example, for haskell-foo, ensure:
 
-*   haskell-foo is a cblrepo database, possibly using packages from _haskell-core_ as DistroPkgs.
-*   Whenever _haskell-core_ is updated, haskell-foo's database is updated to match within a reasonable time.
+*   haskell-foo is a cblrepo database, possibly using packages from *haskell-core* as DistroPkgs.
+*   Whenever *haskell-core* is updated, haskell-foo's database is updated to match within a reasonable time.
 
 ### Creating another repository
 

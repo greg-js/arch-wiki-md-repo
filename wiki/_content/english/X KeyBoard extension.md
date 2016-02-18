@@ -70,7 +70,6 @@ Look inside `/usr/share/X11/xkb/rules/` for `*.lst` files or the [XKB Homepage](
 For example one may want to remap their `Caps Lock` key to `Escape`:
 
  `90-custom-kbd.conf` 
-
 ```
 Section "InputClass"
     Identifier "keyboard defaults"
@@ -989,7 +988,6 @@ $ xkbcomp keymap.xkb $DISPLAY
 where `keymap.xkb` must have a structure like
 
  `keymap.xkb` 
-
 ```
 xkb_keymap {
     xkb_keycodes  { ... };
@@ -1003,15 +1001,13 @@ xkb_keymap {
 
 ```
 
-You can use _includes_ from this file, where the inclusion refer to a local folder instead of `/usr/share/X11/xkb`. You need to use the `-I/path/` parameter of xkbcomp for that. Full example:
+You can use *includes* from this file, where the inclusion refer to a local folder instead of `/usr/share/X11/xkb`. You need to use the `-I/path/` parameter of xkbcomp for that. Full example:
 
 ```
 $ xkbcomp -I$HOME/.xkb $HOME/.keymap.xkb $DISPLAY
 
 ```
-
  `$HOME/.keymap.xkb` 
-
 ```
 xkb_keymap {
     xkb_keycodes  { include "evdev+aliases(qwerty)" };
@@ -1025,7 +1021,6 @@ xkb_keymap {
 The symbol file must have the same name as specified in the `xkb_symbols` right above.
 
  `$HOME/.xkb/symbols/custom` 
-
 ```
 partial alphanumeric_keys xkb_symbols "custom" { ... };
 

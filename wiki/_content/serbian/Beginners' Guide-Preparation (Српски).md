@@ -26,7 +26,7 @@
 
 [Ovde](https://archlinux.org/download/) mozete preuzeti Arch-ov oficijalni instalacioni medij. Najskorija verzija je 2011.08.19 i ovo uputstvo se odnosi na nju.
 
-*   I **Core** i **Netinstall** slike pruzaju samo neophodne pakete za kreiranje **osnovnog Arch Linux sistema**. _Imajte na umu da Osnovni sistem ne sadrzi GUI. Primarno se sastoji od GNU toolchain-a (kompajlera, asemblera, linkera, biblioteka, shell-a i pomocnih alata), Linux kernel-a, pacman-a (Arch-ov paket menadzer) i nekoliko dodatnih biblioteka i modula._
+*   I **Core** i **Netinstall** slike pruzaju samo neophodne pakete za kreiranje **osnovnog Arch Linux sistema**. *Imajte na umu da Osnovni sistem ne sadrzi GUI. Primarno se sastoji od GNU toolchain-a (kompajlera, asemblera, linkera, biblioteka, shell-a i pomocnih alata), Linux kernel-a, pacman-a (Arch-ov paket menadzer) i nekoliko dodatnih biblioteka i modula.*
 *   **Core** slike omogucavaju instalaciju sa CD-a i Interneta.
 *   **Netinstall** slike su manje i ne sadrze pakete; ceo sistem se preuzima pre interneta.
 *   [Arch64 FAQ](/index.php/Arch64_FAQ "Arch64 FAQ") vam moze pomoci u izboru izmedju 32-bitne i 64-bitne verzije. **Dual Architecture** slika ima pakete za obe arhitekture i sa njom mozete da instalirate Arch na 32-bitne i 64-bitne kompjutere.
@@ -48,7 +48,7 @@ md5sum provera radi na isti nacin.
 
 Narezite fajl .iso slike na CD ili DVD medij sa CD/DVD rezacem i softverom, a zatim nastavite sa [Podizanje Arch Linux instalera](#Boot_Arch_Linux_installer).
 
-**Note:** Kvalitet optickih uredjaja i CD medija varira u velikoj meri. Preporucuje se rezanje na manjim brzinama kako bi dobili pouzdane rezultate; Neki korisnici preporucuju brzine _**kao sto su 4x ili 2x.**_ Ako imate problema sa CD-om, pokusajte da narezete na najmanjoj mogucoj brzini.
+**Note:** Kvalitet optickih uredjaja i CD medija varira u velikoj meri. Preporucuje se rezanje na manjim brzinama kako bi dobili pouzdane rezultate; Neki korisnici preporucuju brzine ***kao sto su 4x ili 2x.*** Ako imate problema sa CD-om, pokusajte da narezete na najmanjoj mogucoj brzini.
 
 #### Flash memorijski uredjaj ili USB stik
 
@@ -77,7 +77,6 @@ Povratni md5sum bi trebalo da se poklopi sa [md5sum-om preuzete archlinux slike 
 Zapis .iso fajla na disk
 
  `# dd if=archlinux-2011.08.19-core-i686.iso of=/dev/sdc` 
-
 ```
  744973+0 records in
  744973+0 records out
@@ -88,7 +87,6 @@ Zapis .iso fajla na disk
 Provera integriteta:
 
  `# dd if=/dev/sdc count=744973 status=noxfer | md5sum` 
-
 ```
  4850d533ddd343b80507543536258229  -
  744973+0 records in
@@ -167,7 +165,7 @@ koji (ako radi) nece iskljuciti kernel mode podesavanja.
 
 Vidite [Intel](/index.php/Intel "Intel") clanak za vise informacija.
 
-Ako ekran _nije_ crn i proces pokretanja se zaglavljuje prilikom ucitavanja kernela, pritisnite `Tab` da izmenite kernel liniju i dodate sledece:
+Ako ekran *nije* crn i proces pokretanja se zaglavljuje prilikom ucitavanja kernela, pritisnite `Tab` da izmenite kernel liniju i dodate sledece:
 
 ```
 acpi=off
@@ -184,9 +182,9 @@ Ako imate ne-US raspored tastera, mozete na interaktivan nacin da izaberete rasp
 
 ili upotrebite loadkeys komandu:
 
- `# loadkeys _layout_` 
+ `# loadkeys *layout*` 
 
-gde je _layout_ raspored vase tastature, kao sto su `fr` ili `be-latin1`
+gde je *layout* raspored vase tastature, kao sto su `fr` ili `be-latin1`
 
 #### Dokumentacija
 

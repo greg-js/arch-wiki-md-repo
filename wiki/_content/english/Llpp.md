@@ -49,7 +49,7 @@ It is possible to configure key bindings. For example, to disable `Esc` exiting 
 <llppconfig>
   <defaults ... >
     <keymap mode='view'>
-      <map in='esc' out=_/>_
+      <map in='esc' out=*/>*
     </keymap>
   </defaults>
 </llppconfig>

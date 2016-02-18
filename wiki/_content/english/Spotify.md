@@ -273,11 +273,11 @@ By placing this script at `/usr/local/bin/spotify`, it gets preferred to `/usr/b
 If you set up ssh on the server, you can send controls from a client to a remote Spotify instance with
 
 ```
-$ ssh user@host _yourcommand_
+$ ssh user@host *yourcommand*
 
 ```
 
-where _yourcommand_ can be [spotifycmd](https://code.google.com/p/spotifycmd/) that you installed on the server, or a dbus script for the linux version, as described above.
+where *yourcommand* can be [spotifycmd](https://code.google.com/p/spotifycmd/) that you installed on the server, or a dbus script for the linux version, as described above.
 
 #### Grab the Spotify window via SSH
 

@@ -54,16 +54,16 @@ If you prefer a different password, or none at all, you can edit `/var/lib/boinc
 
 If you do not like the idea of having this file in your home directory, there is an alternative approach. BOINC Manager will also look for a readable gui_rpc_auth.cfg file in the current working directory. If you make the file readable by the **boinc** group and ensure that the manager is run with `/var/lib/boinc` as the working directory, you should find that the client connects to the daemon automatically, as desired. This can usually be achieved via the menu editor in your desktop environment of choice.
 
-To start the GUI, use the _boincmgr_ command
+To start the GUI, use the *boincmgr* command
 
 ```
 $ boincmgr
 
 ```
 
-BOINC should now take you through the process of attaching to a project. NB, some projects will let you create an account remotely via the GUI while some may require you to first create an account via their website. You can attach to multiple projects if you have the resources (disk space, time, CPU power). Do this via menu option _Tools / Attach to project_.
+BOINC should now take you through the process of attaching to a project. NB, some projects will let you create an account remotely via the GUI while some may require you to first create an account via their website. You can attach to multiple projects if you have the resources (disk space, time, CPU power). Do this via menu option *Tools / Attach to project*.
 
-If BOINC did not ask you to connect to a project, then make sure you are connected to the daemon. Go to menu option _Advanced / Select computer_, choose your machine's name and enter the password. (To avoid this, make sure the above steps regarding gui_rpc_auth.cfg have been done.)
+If BOINC did not ask you to connect to a project, then make sure you are connected to the daemon. Go to menu option *Advanced / Select computer*, choose your machine's name and enter the password. (To avoid this, make sure the above steps regarding gui_rpc_auth.cfg have been done.)
 
 #### Projects using GPU
 

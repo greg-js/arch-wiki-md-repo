@@ -1,6 +1,6 @@
 Tratto dalla [documentazione di Enlightenment](http://trac.enlightenment.org/e/wiki/Enlightenment):
 
-	_L'ambiente di lavoro Enlightenment fornisce un window manager efficiente e mozzafiato basato sul Enlightenment Foundation Libraries (EFL) insieme ad altri componenti del desktop essenziali, come un file manager, le icone del desktop e widget. Vanta un livello senza precedenti di capacità di eseguire temi grafici, pur essendo in grado di eseguirli con hardware più vecchio o su dispositivi embedded._
+	*L'ambiente di lavoro Enlightenment fornisce un window manager efficiente e mozzafiato basato sul Enlightenment Foundation Libraries (EFL) insieme ad altri componenti del desktop essenziali, come un file manager, le icone del desktop e widget. Vanta un livello senza precedenti di capacità di eseguire temi grafici, pur essendo in grado di eseguirli con hardware più vecchio o su dispositivi embedded.*
 
 ## Contents
 
@@ -65,7 +65,7 @@ Le applicazioni seguenti sono basate su EFL, la maggior parte di loro è in fase
 
 #### Log-in grafico
 
-Basta scegliere la sessione _enlightenment_ dal proprio [gestore delle sessioni](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)") preferito.
+Basta scegliere la sessione *enlightenment* dal proprio [gestore delle sessioni](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)") preferito.
 
 **Entrance**
 
@@ -78,7 +78,6 @@ Per Enlightenment è ora disponibile un nuovo display manager chiamato Entrance,
 Se preferite avviare enlightenment manualmente da console, aggiungere la seguente linea al vostro file `~/.xinitrc`:
 
  `~/.xinitrc` 
-
 ```
  exec enlightenment_start
 
@@ -88,7 +87,7 @@ Dopo di che Enlightenment può essere lanciato digitando `startx`. Per i dettagl
 
 ### Configurazione
 
-Enlightenment ha un sistema di configurazione sofisticato che si può accedere dal sottomenu _Impostazioni_ del menu principale.
+Enlightenment ha un sistema di configurazione sofisticato che si può accedere dal sottomenu *Impostazioni* del menu principale.
 
 #### Rete
 
@@ -102,15 +101,15 @@ Per la configurazione estesa con il modulo predefinito Enlightenment di Rete, si
 
 É possibile anche utilizzare [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) per gestire le proprie connessioni di rete.Seguire le istruzioni riportate sulla pagina [NetworkManager](/index.php/NetworkManager_(Italiano) "NetworkManager (Italiano)")
 
-Per la sua configurazione. Potrebbe essere necessaria l'installazione del pacchetto [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) per essere facilitati sulla configurazione e scelta delle impostazioni.Si consiglia di aggiungerlo all'avvio della sessione, in modo ogni volta che si avvia Enlightenment appaia sulla barra delle applicazioni. Per fare questo andare in _Impostazioni > Pannello impostazioni > Applicazioni > Applicazioni per l'avvio > Sistema > Network_
+Per la sua configurazione. Potrebbe essere necessaria l'installazione del pacchetto [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) per essere facilitati sulla configurazione e scelta delle impostazioni.Si consiglia di aggiungerlo all'avvio della sessione, in modo ogni volta che si avvia Enlightenment appaia sulla barra delle applicazioni. Per fare questo andare in *Impostazioni > Pannello impostazioni > Applicazioni > Applicazioni per l'avvio > Sistema > Network*
 
 #### Polkit agent
 
-Enlightenment non ha un [agente di autenticazione polkit grafico](/index.php/Polkit#Authentication_agents "Polkit"), quindi se si vuole accedere ad alcune azioni privilegiate (ad esempio montare un filesystem su un dispositivo del sistema), è necessario installare uno , e autoavviarlo. Per questo si dovrebbe andare per _Impostazioni, Pannello - > Applicazioni - > Applicazioni d'avvio - > Sistema_ e attivarlo.
+Enlightenment non ha un [agente di autenticazione polkit grafico](/index.php/Polkit#Authentication_agents "Polkit"), quindi se si vuole accedere ad alcune azioni privilegiate (ad esempio montare un filesystem su un dispositivo del sistema), è necessario installare uno , e autoavviarlo. Per questo si dovrebbe andare per *Impostazioni, Pannello - > Applicazioni - > Applicazioni d'avvio - > Sistema* e attivarlo.
 
 #### Integrazione con Gnome Keyring
 
-E ' possibile usare gnome-keyring in Enlightenment. Tuttavia, allo stato attuale vi è bisogno di un piccolo hack per farlo funzionare correttamente. In primo luogo si deve dire a Enlightenment di avviare automaticamente gnome-kering. Per questo si dovrebbe andare in _Impostazioni-Pannello->Applicazioni->Applicazioni di avvio_ e attivare _certificato e memorizzazione delle chiavi_, _Agente password GPG_, _Agente di chiavi SSH_ e _servizio di archiviazione Secret_.
+E ' possibile usare gnome-keyring in Enlightenment. Tuttavia, allo stato attuale vi è bisogno di un piccolo hack per farlo funzionare correttamente. In primo luogo si deve dire a Enlightenment di avviare automaticamente gnome-kering. Per questo si dovrebbe andare in *Impostazioni-Pannello->Applicazioni->Applicazioni di avvio* e attivare *certificato e memorizzazione delle chiavi*, *Agente password GPG*, *Agente di chiavi SSH* e *servizio di archiviazione Secret*.
 
 Successivamente si dovrebbe modificare il file `~/.profile` e aggiungere quanto segue :
 
@@ -160,7 +159,7 @@ Molti moduli forniscono dei Gadgets che possono essere aggiunti al proprio deskt
 
 **Attenzione:** Si tratta di moduli di terze parti e non ufficialmente supportato dagli sviluppatori di Enlightenment. Essi sono vengono prelevati direttamente dal ramo SVN, questo fa si che il codice può risultare sempre in sviluppo e possono o non possono funzionare in qualsiasi momento. Utilizzare a proprio rischio e pericolo.
 
-Al di là dei moduli qui descritti, altri moduli _extra_ sono disponibili su AUR, come parte di [e-modules-extra-git](https://aur.archlinux.org/packages/e-modules-extra-git/).
+Al di là dei moduli qui descritti, altri moduli *extra* sono disponibili su AUR, come parte di [e-modules-extra-git](https://aur.archlinux.org/packages/e-modules-extra-git/).
 
 **Places**
 
@@ -172,11 +171,11 @@ Disponibile come [places](https://aur.archlinux.org/packages/places/) oppure com
 
 **Scale Windows**
 
-Il modulo _Scale Windows_, che richiede che il compositing sia abilitato, aggiunge diverse funzionalità. L' effetto di scala finestre riduce tutte le finestre aperte e li porta tutti in vista. L'effetto "scale pager" effettua uno zoom in fuori e mostra tutti i desktop come un muro, come il plugin compiz expo. Entrambi possono essere aggiunti al desktop come un gadget o legati ad una combinazione di tasti, ad una combinazione del mouse o ad un bordo dello schermo.
+Il modulo *Scale Windows*, che richiede che il compositing sia abilitato, aggiunge diverse funzionalità. L' effetto di scala finestre riduce tutte le finestre aperte e li porta tutti in vista. L'effetto "scale pager" effettua uno zoom in fuori e mostra tutti i desktop come un muro, come il plugin compiz expo. Entrambi possono essere aggiunti al desktop come un gadget o legati ad una combinazione di tasti, ad una combinazione del mouse o ad un bordo dello schermo.
 
-A molti utenti piace cambiare la scorciatoia predefinita `ALT + Tab` usata per selezionare le finestre, a favore del di Scale Windows per selezionare una finestra. Per cambiare questa impostazione, andare su _Menu > Impostazioni > Pannello impostazioni > Input > Tasti_. Da qui è possibile impostare la combinazione di tasti desiderata.
+A molti utenti piace cambiare la scorciatoia predefinita `ALT + Tab` usata per selezionare le finestre, a favore del di Scale Windows per selezionare una finestra. Per cambiare questa impostazione, andare su *Menu > Impostazioni > Pannello impostazioni > Input > Tasti*. Da qui è possibile impostare la combinazione di tasti desiderata.
 
-Per sostituire la funzionalità del tasto di scelta rapida per la selezione delle finestre con Scale Windows, scorrere nel pannello a sinistra fino a trovare la sezione _ALT_, e selezionare `ALT + Tab`. Successivamente scorrere attraverso il pannello di destra fino a trovare la sezione "Scale Windows", e scegliere uno delle seguenti opzioni : _Select Next_ oppure _Select Next (All)_, a seconda se si desidera vedere le finestre da un solo desktop corrente o da tutti i desktop e cliccare su _Apply_ per salvare l'associazione.
+Per sostituire la funzionalità del tasto di scelta rapida per la selezione delle finestre con Scale Windows, scorrere nel pannello a sinistra fino a trovare la sezione *ALT*, e selezionare `ALT + Tab`. Successivamente scorrere attraverso il pannello di destra fino a trovare la sezione "Scale Windows", e scegliere uno delle seguenti opzioni : *Select Next* oppure *Select Next (All)*, a seconda se si desidera vedere le finestre da un solo desktop corrente o da tutti i desktop e cliccare su *Apply* per salvare l'associazione.
 
 Disponibile come [comp-scale-git](https://aur.archlinux.org/packages/comp-scale-git/).
 
@@ -204,7 +203,7 @@ Quando la configurazione risulta incasinato e la finestre delle impostazioni non
 
 Se i caratteri sono troppo piccoli e lo schermo è illeggibile, assicurarsi i seguenti pacchetti font sono installati. [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) e [ttf-bitstream-vera](https://www.archlinux.org/packages/?name=ttf-bitstream-vera) sono dei validi font.
 
-È possibile impostare il ridimensionamento in _Impostazioni - > impostazioni del pannello - > Aspetto - > Scaling_ .
+È possibile impostare il ridimensionamento in *Impostazioni - > impostazioni del pannello - > Aspetto - > Scaling* .
 
 ## Enlightenment DR16
 
@@ -220,7 +219,7 @@ Enlightenment può risultare molto differente dagli altri gestori delle finestre
 
 La maggior parte dei file di configurazione di E16 risiede in `~/.e16` sotto forma di testo semplice, modificabili a piacimento. Essi includo anche il Menu.
 
-I tasti di scelta rapida, possono essere modificati manualmente o tramite il programma _e16keyedit_ reperibile come sorgenti dalla pagina [sourceforge](http://sourceforge.net/projects/enlightenment/) del progetto e16, o installando [e16keyedit](https://aur.archlinux.org/packages/e16keyedit/) da AUR.
+I tasti di scelta rapida, possono essere modificati manualmente o tramite il programma *e16keyedit* reperibile come sorgenti dalla pagina [sourceforge](http://sourceforge.net/projects/enlightenment/) del progetto e16, o installando [e16keyedit](https://aur.archlinux.org/packages/e16keyedit/) da AUR.
 
 #### Immagini di sfondo
 

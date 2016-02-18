@@ -89,7 +89,7 @@ Alternatively, provide a custom `pacman.conf` and `makepkg.conf` with the follow
 
 ```
 
-**Warning:** Using a custom `pacman.conf` or `makepkg.conf` during the initial creation of clean chroot can result in unintended custom adjustments to the chroot environment. _Use with caution._
+**Warning:** Using a custom `pacman.conf` or `makepkg.conf` during the initial creation of clean chroot can result in unintended custom adjustments to the chroot environment. *Use with caution.*
 
 ### Building in the Chroot
 

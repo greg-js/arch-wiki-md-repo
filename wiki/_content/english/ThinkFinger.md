@@ -2,7 +2,7 @@ ThinkFinger is a driver for the SGS Thomson Microelectronics fingerprint reader 
 
 ThinkWiki has a [list of various fingerprint readers](http://www.thinkwiki.org/wiki/Integrated_Fingerprint_Reader) found in ThinkPads. Newer models using different readers might not work with ThinkFinger.
 
-**Warning:** ThinkFinger-svn revisions above rev 72 require you to load the module _uinput_!
+**Warning:** ThinkFinger-svn revisions above rev 72 require you to load the module *uinput*!
 
 ## Contents
 
@@ -28,7 +28,7 @@ Install [thinkfinger](https://www.archlinux.org/packages/?name=thinkfinger) from
 
 ### TF-Tool
 
-Use _tf-tool_ to test ThinkFinger. You will have to run this as root because a direct access to the usb devices is needed. Run _tf-tool --acquire_ to generate a test.bir and _tf-tool --verify_ to see if it identifies you correctly. _tf-tool --add-user <username>_ acquires and stores your fingerprint in _/etc/pam_thinkfinger/username.bir_, which is needed for an authentication with pam.
+Use *tf-tool* to test ThinkFinger. You will have to run this as root because a direct access to the usb devices is needed. Run *tf-tool --acquire* to generate a test.bir and *tf-tool --verify* to see if it identifies you correctly. *tf-tool --add-user <username>* acquires and stores your fingerprint in */etc/pam_thinkfinger/username.bir*, which is needed for an authentication with pam.
 
 ## Pam
 
@@ -36,7 +36,7 @@ PAM is the Pluggable Authentication Module, invented by Sun.
 
 ### /etc/pam.d/login
 
-Change the file _/etc/pam.d/login_ to look like this if you want to use your fingerprint to authenticate yourself on logon:
+Change the file */etc/pam.d/login* to look like this if you want to use your fingerprint to authenticate yourself on logon:
 
 ```
 #%PAM-1.0
@@ -50,7 +50,7 @@ session		required	pam_unix.so
 
 ### /etc/pam.d/su
 
-Change this file to confirm the _su_ command with a finger-swipe!
+Change this file to confirm the *su* command with a finger-swipe!
 
 ```
 #%PAM-1.0
@@ -62,11 +62,11 @@ session		required	pam_unix.so
 
 ```
 
-**Tip:** Do not forget to do a _tf-tool --add-user root to use this feature_!
+**Tip:** Do not forget to do a *tf-tool --add-user root to use this feature*!
 
 ### /etc/pam.d/sudo
 
-Change this file to confirm the _sudo_ command with a finger-swipe!
+Change this file to confirm the *sudo* command with a finger-swipe!
 
 ```
 #%PAM-1.0
@@ -156,7 +156,7 @@ That's it!
 
 [I am not an expert in PAMs but this works, This section may need corrections]
 
-Edit _/etc/pam.d/gdm_ as done in sections 3.1 and 3.2
+Edit */etc/pam.d/gdm* as done in sections 3.1 and 3.2
 
 ```
 add as the first line in the file: 

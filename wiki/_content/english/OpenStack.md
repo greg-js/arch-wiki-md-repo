@@ -62,15 +62,15 @@ Swift is not available in Arch, yet.
 
 [Official Openstack images](http://docs.openstack.org/image-guide/content/ch_obtaining_images.html) are available from most popular distributions of GNU/Linux.
 
-Images for Arch are _work in progress_. [http://linuximages.de/openstack/arch/](http://linuximages.de/openstack/arch/) has _experimental_ images for download.
+Images for Arch are *work in progress*. [http://linuximages.de/openstack/arch/](http://linuximages.de/openstack/arch/) has *experimental* images for download.
 
 ### Creating images yourself
 
 OpenStack images need to meet [certain requirements](http://docs.openstack.org/image-guide/content/ch_openstack_images.html). An image can be prepared manually or with help from a tool.
 
-For a tool, [image-bootstrap](https://github.com/hartwork/image-bootstrap) with the `--openstack` parameter may be of help. As of 2015-06-24, resulting images are still in _experimental_ stage.
+For a tool, [image-bootstrap](https://github.com/hartwork/image-bootstrap) with the `--openstack` parameter may be of help. As of 2015-06-24, resulting images are still in *experimental* stage.
 
-For manual creation, the _essential_ steps are:
+For manual creation, the *essential* steps are:
 
 *   [Partitioning](/index.php/Partitioning "Partitioning") a disk with a single [ext3/4](/index.php/Ext4 "Ext4") partition.
 *   Installing a base system (e.g. using `pacstrap` of [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts)) to it

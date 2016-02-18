@@ -166,7 +166,7 @@ Eseguire:
 
 ### Resettare la password di amministratore
 
-Interrompere il servizio _mysqld_. Eseguire questo comando:
+Interrompere il servizio *mysqld*. Eseguire questo comando:
 
 ```
 # mysqld_safe --skip-grant-tables &
@@ -189,7 +189,7 @@ Cambiare la password di amministratore:
 
 ```
 
-Riavviare il servizio _mysqld_.
+Riavviare il servizio *mysqld*.
 
 ## Altre risorse
 

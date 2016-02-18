@@ -1,4 +1,4 @@
-This article provides an unbiased comparison of the most popular _tiling_ [window managers](/index.php/Window_manager "Window manager") (as opposed to _floating_ window managers).
+This article provides an unbiased comparison of the most popular *tiling* [window managers](/index.php/Window_manager "Window manager") (as opposed to *floating* window managers).
 
 ## Contents
 

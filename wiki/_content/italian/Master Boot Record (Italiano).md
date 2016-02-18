@@ -14,11 +14,11 @@ L'avvio è un processo con più fasi. La maggior parte dei PC oggi inizializzano
 
 ## Storia
 
-L'MBR consiste in una piccola porzione di codice assembly (il bootloader - 446 byte), la tavola delle partizioni per le 4 partizioni primarie (16 byte ciascuna) ed una chiusura detta _sentinel_ (0xAA55).
+L'MBR consiste in una piccola porzione di codice assembly (il bootloader - 446 byte), la tavola delle partizioni per le 4 partizioni primarie (16 byte ciascuna) ed una chiusura detta *sentinel* (0xAA55).
 
-Il codice del bootloader "Convenzionale" sull'MBR di sistemi Windows/DOS controlla la tavola delle partizioni alla ricerca di una, e solo una, partizione _attiva_, legge X settori da essa è trasferisce il controllo al sistema operativo. Il bootloader di Windows/DOS _non_ effettua il boot da una partizione di Arch Linux perché non è progettato per avviare il kernel Linux, e può occuparsi di una partizione _attiva_ e _primaria_ (queste caratteristiche non influenzano GRUB).
+Il codice del bootloader "Convenzionale" sull'MBR di sistemi Windows/DOS controlla la tavola delle partizioni alla ricerca di una, e solo una, partizione *attiva*, legge X settori da essa è trasferisce il controllo al sistema operativo. Il bootloader di Windows/DOS *non* effettua il boot da una partizione di Arch Linux perché non è progettato per avviare il kernel Linux, e può occuparsi di una partizione *attiva* e *primaria* (queste caratteristiche non influenzano GRUB).
 
-Il bootloader [GRand Unified Bootloader (GRUB)](/index.php/GRUB_(Italiano) "GRUB (Italiano)") è di fatto il bootloader per sistemi GNU/Linux, e gli utenti sono invitati ad installarlo sull'MBR per permettere il boot da _qualsiasi_ partizione, che sia primaria o logica.
+Il bootloader [GRand Unified Bootloader (GRUB)](/index.php/GRUB_(Italiano) "GRUB (Italiano)") è di fatto il bootloader per sistemi GNU/Linux, e gli utenti sono invitati ad installarlo sull'MBR per permettere il boot da *qualsiasi* partizione, che sia primaria o logica.
 
 ## Backup e ripristino
 

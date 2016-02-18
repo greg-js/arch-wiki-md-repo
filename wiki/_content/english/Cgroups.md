@@ -40,26 +40,26 @@ You can [enable](/index.php/Enable "Enable") the `cgconfig` service with systemd
 One of the powers of cgroups is that you can create "ad-hoc" groups on the fly. You can even grant the privileges to create custom groups to regular users. `groupname` is the cgroup name:
 
 ```
-# cgcreate -a _user_ -g memory,cpu:_groupname_
+# cgcreate -a *user* -g memory,cpu:*groupname*
 
 ```
 
-Alternatively, using with user ID `1000` and system group _root_ (GID 0):
+Alternatively, using with user ID `1000` and system group *root* (GID 0):
 
 ```
-# cgm create memory _groupname_
-# cgm chown  memory _groupname_ _1000_ 0
-# cgm create cpu    _groupname_
-# cgm chown  cpu    _groupname_ _1000_ 0
+# cgm create memory *groupname*
+# cgm chown  memory *groupname* *1000* 0
+# cgm create cpu    *groupname*
+# cgm chown  cpu    *groupname* *1000* 0
 # # the above only makes 'cgroup.procs' and 'tasks' writable
-# chown _user_ /sys/fs/cgroup/{memory,cpu}/_groupname_/*
+# chown *user* /sys/fs/cgroup/{memory,cpu}/*groupname*/*
 
 ```
 
 Now all the tunables in the group `groupname` are writable by your user:
 
 ```
-$ ls -l /sys/fs/cgroup/memory/_groupname_
+$ ls -l /sys/fs/cgroup/memory/*groupname*
 total 0
 -rwxrwxr-x 1 user root 0 Sep 25 00:39 cgroup.event_control
 -rwxrwxr-x 1 user root 0 Sep 25 00:39 cgroup.procs
@@ -140,10 +140,9 @@ $ cat /proc/13244/cgroup
 
 **Note:** when using [Systemd](/index.php/Systemd "Systemd") > = 205 to manage cgroups, you can ignore this file entirely.
 
-If you want your cgroups to be created at boot, you can define them in `/etc/cgconfig.conf` instead. For example, the "groupname" has a permission for `$USER` and _users_ of group `$GROUP` to manage limits and add tasks. A _subgroup_ "groupname/foo" group definitions would look like this:
+If you want your cgroups to be created at boot, you can define them in `/etc/cgconfig.conf` instead. For example, the "groupname" has a permission for `$USER` and *users* of group `$GROUP` to manage limits and add tasks. A *subgroup* "groupname/foo" group definitions would look like this:
 
  `/etc/cgconfig.conf ` 
-
 ```
 group **groupname** {
   perm {
@@ -175,13 +174,13 @@ group **groupname/foo** {
 
 **Note:**
 
-*   Comments should begin at the start of a line! The **#** character for comments must appear as the first character of a line. Else, _cgconfigparser_ will have problem parsing it but will only report `cgroup change of group failed` as the error, unless you started _cgconfig_ with [Systemd](/index.php/Systemd "Systemd")
+*   Comments should begin at the start of a line! The **#** character for comments must appear as the first character of a line. Else, *cgconfigparser* will have problem parsing it but will only report `cgroup change of group failed` as the error, unless you started *cgconfig* with [Systemd](/index.php/Systemd "Systemd")
 *   The permissions section is optional.
-*   The `/sys/fs/cgroup/` hierarchy directory containing all _controllers_ sub-directories is already created and mounted at boot as a virtual file system. This gives the ability to create a new group entry with the `_$CONTROLLER-NAME { }_` command. If for any reason you want to create and mount hierachies in another place, you will then need to write a second entry in `/etc/cgconfig.conf` following this way :
+*   The `/sys/fs/cgroup/` hierarchy directory containing all *controllers* sub-directories is already created and mounted at boot as a virtual file system. This gives the ability to create a new group entry with the `*$CONTROLLER-NAME { }*` command. If for any reason you want to create and mount hierachies in another place, you will then need to write a second entry in `/etc/cgconfig.conf` following this way :
 
 ```
  mount {    
-   cpuset = /your/path/_groupname_;
+   cpuset = /your/path/*groupname*;
 }
 
 ```
@@ -189,8 +188,8 @@ group **groupname/foo** {
 This is equivalent to these shell commands:
 
 ```
- `# mkdir /your/path/_groupname_
-# mount -t /your/path -o cpuset _groupname_ /your/path/_groupname_`
+ `# mkdir /your/path/*groupname*
+# mount -t /your/path -o cpuset *groupname* /your/path/*groupname*`
 
 ```
 
@@ -201,16 +200,15 @@ This is equivalent to these shell commands:
 Matlab does not have any protection against taking all your machine's memory or CPU. Launching a large calculation can thus trash your system. You could put the following in `/etc/cgconfig.conf` to protect from this (where `$USER` is your username):
 
  `/etc/cgconfig.conf ` 
-
 ```
 # Prevent Matlab from taking all memory
 group matlab {
     perm {
         admin {
-            uid = _$USER_;
+            uid = *$USER*;
         }
         task {
-            uid = _$USER_;
+            uid = *$USER*;
         }
     }
 

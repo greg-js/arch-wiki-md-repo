@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Laptop_Mode_Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-12-25，点击[这里](https://wiki.archlinux.org/index.php?title=Laptop_Mode_Tools&diff=0&oldid=290267)可以查看翻译后英文页面的改动。
 
-_[Laptop Mode Tools](http://samwel.tk/laptop_mode/) 是一个 Linux 系统下的笔记本电源管理软件。它是让内核开启笔记本电脑模式功能的主要方法，它会让硬盘降速。另外，它允许你通过一个简单的配置文件调整一些其他的节能相关的设置。_
+*[Laptop Mode Tools](http://samwel.tk/laptop_mode/) 是一个 Linux 系统下的笔记本电源管理软件。它是让内核开启笔记本电脑模式功能的主要方法，它会让硬盘降速。另外，它允许你通过一个简单的配置文件调整一些其他的节能相关的设置。*
 
 与 [acpid](/index.php/Acpid "Acpid")、 [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling")、 和 [pm-utils](/index.php/Pm-utils "Pm-utils") 结合，LMT 提供大多数用户一个完整的笔记本电脑电源管理方案。
 

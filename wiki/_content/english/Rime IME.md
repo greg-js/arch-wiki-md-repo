@@ -39,7 +39,6 @@ $ mkdir ~/.config/ibus/rime
 In this directory, create a file named `default.custom.yaml`, where you can specify your input schema of choice. For example, if you want to be able to type pinyin with tones, you can use the Terra Pinyin input method by adding it to the list of enabled schemas:
 
  `default.custom.yaml` 
-
 ```
 patch:
   schema_list:

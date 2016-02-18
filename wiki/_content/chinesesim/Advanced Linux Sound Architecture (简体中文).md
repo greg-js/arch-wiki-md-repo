@@ -169,7 +169,6 @@ $ speaker-test -D default -c 8
 `-D` accepts PCM channel names as values, which can be retrieved by running the following:
 
  `$ aplay -L | grep :CARD` 
-
 ```
 default:CARD=PCH  # 'default' is the PCM channel name
 sysdefault:CARD=PCH
@@ -209,7 +208,6 @@ Alsa 设置文件遵循一个由分级值到参数（键值）的分配的简单
 赋值能够定义一个键值的具体值，其中有不同的赋值类型和方式可供使用。
 
  `简单赋值` 
-
 ```
 #  使用 # 符号来注释文字，该符号后所有到行尾的符号能够被注释掉。 
 key = value  # 句中等号通常可以省略，因为空格也能够被用作分隔符。
@@ -221,7 +219,6 @@ key value  # 此句意义与上句 key = value 等同
 分隔符被用作指示赋值的开始和结束。使用半角符号来当作赋值分隔符是很普遍的现象，不过逗号或是空白字符也是可以使用的。
 
  `分隔符` 
-
 ```
 key value0; key valueN;
 key value0, key valueN, # 所有赋值操作都是等同意义的
@@ -237,7 +234,6 @@ valueN
 复合赋值使用分号来当作分隔符。
 
  `复合赋值` 
-
 ```
 key {	subkey0 value0;
 	subkeyN valueN;	} 
@@ -252,7 +248,6 @@ key.subkeyN valueN;
 序列定义使用中括号当作分隔符。
 
  `单列` 
-
 ```
 key [	"value0";
 	"valueN";	]
@@ -280,7 +275,6 @@ key.N "valueN";
 *   "!" -- 覆盖
 
  `操作模式` 
-
 ```
 # Merge/create - 如果不存在node,它将被创建. 如果其存在并且类型符合,
 # subkeyN is merged into key.
@@ -309,7 +303,6 @@ key.!subkeyN valueN;
 假设 "默认" 节点设定在 /usr/share/alsa/alsa.conf, where defaults.pcm.card and its ctl counterpart have assignment values "0" (type integer), user wants to set default pcm and control device to (third) sound card "2" or "SB" for an Azalia sound card.
 
  `Defaults node` 
-
 ```
 defaults.ctl.card 2; # Sets default device and control to third card (counting begins with 0).
 defaults.pcm.card 2; # This does not change addressing type.
@@ -337,7 +330,6 @@ Using double quotes here automatically sets values data type to string, so in th
 嵌套在配置中是一件很有效的方式。
 
  `嵌套 pcm 插件` 
-
 ```
 pcm.azalia {	type hw; card 0	}
 pcm.!default {	type plug; slave.pcm "azalia"	}
@@ -357,7 +349,6 @@ pcm.default.slave.pcm.card 0;
 #### 引用配置文件
 
  `引用其他的外部配置文件` 
-
 ```
 </path/to/configuration-file> # 引用一个配置文件
 <confdir:/path/to/configuration-file> # 全局配置目录的引用
@@ -369,7 +360,6 @@ pcm.default.slave.pcm.card 0;
 如果发现开机时声卡次序会发生变化，可以在通过 `/etc/modprobe.d` 中的 `.conf` 文件（比如 `/etc/modprobe.d/alsa-base.conf`）手动设置次序。 比如，要让 mia 声卡成为 #0、Intel HDA 声卡成为 #1：
 
  `/etc/modprobe.d/alsa-base.conf` 
-
 ```
 options snd slots=snd_mia,snd_hda_intel
 options snd_mia index=0
@@ -381,7 +371,6 @@ options snd_hda_intel index=1
 如果使用 -2 的 index 值，ALSA 就不会将对应的设备作为主声卡使用。Linux Mint 和 Ubuntu 等发行版使用了以下配置，避免 USB 声卡和其他“非主流”设备变成 index 为 0 的主声卡：
 
  `/etc/modprobe.d/alsa-base.conf` 
-
 ```
 options bt87x index=-2
 options cx88_alsa index=-2
@@ -405,7 +394,6 @@ options snd-usb-audio index=-2
 当载入被多个卡（比如，snd-hda-intel）使用的模块时，推荐您加入供应商和设备认证信息到选项中。为了获得 `vid` 和 `pid` 信息，使用以下命令：
 
  `$ lspci -nn | grep -i audio` 
-
 ```
 00:14.2 Audio device [0403]: Advanced Micro Devices, Inc. [AMD/ATI] SBx00 Azalia (Intel HDA) [1002:4383] (rev 40)
 01:00.1 Audio device [0403]: Advanced Micro Devices, Inc. [AMD/ATI] RV770 HDMI Audio [Radeon HD 4850/4870] [1002:aa30]
@@ -416,7 +404,6 @@ options snd-usb-audio index=-2
 Last numbers in square brackets are `[vid:pid]`, so for the above example, for setting Azalia as default card following is correct:
 
  `/etc/modprobe.d/alsa-base.conf` 
-
 ```
 # SB [HDA ATI SB]
 options snd-hda-intel index=0 model=auto vid=1002 pid=4383
@@ -450,7 +437,6 @@ options snd-ice1724 index=2 model=prodigy71hifi vid=1412 pid=1724
 为了替代使用新的变量，你能够在全局默认设定中使用选择以下的变量名：
 
  `/etc/share/alsa/alsa.conf:` 
-
 ```
 变量名 # 定义
 ALSA_CARD # pcm.default pcm.hw pcm.plughw ctl.sysdefault ctl.hw rawmidi.default rawmidi.hw hwdep.hw
@@ -472,7 +458,6 @@ ALSA_RAWMIDI_DEVICE # rawmidi.default rawmidi.hw
 首先，运行 `aplay -l`，获取声卡的声卡ID和设备ID：
 
  `$ aplay -l` 
-
 ```
 **** List of PLAYBACK Hardware Devices ****
 card 0: Intel [HDA Intel], device 0: CONEXANT Analog [CONEXANT Analog]
@@ -537,10 +522,9 @@ JamLab
 Audio
 ```
 
-Alternatively use _cat_, which might return unused devices:
+Alternatively use *cat*, which might return unused devices:
 
  `$ cat /proc/asound/card*/id` 
-
 ```
 PCH
 ThinkPadEC
@@ -551,10 +535,10 @@ ThinkPadEC
 
 The 'pcm' options affect which card and device will be used for audio playback while the 'ctl' option affects which card is used by control utilities like alsamixer .
 
-The changes should take effect as soon as you (re-)start an application (MPlayer etc.). You can also test with a command like _aplay_.
+The changes should take effect as soon as you (re-)start an application (MPlayer etc.). You can also test with a command like *aplay*.
 
 ```
-$ aplay -D default _your_favourite_sound.wav_
+$ aplay -D default *your_favourite_sound.wav*
 
 ```
 
@@ -567,7 +551,6 @@ Simply setting a `type hw` as default card is equivalent to addressing hardware 
 一般 udev 都会自动识别出声卡。使用以下命令确认：
 
  `$ lsmod | grep '^snd' | column -t` 
-
 ```
 snd_hda_codec_hdmi     22378   4
 snd_hda_codec_realtek  294191  1
@@ -588,7 +571,6 @@ snd_page_alloc         7017    2  snd_hda_intel,snd_pcm
 还可以检查一下 `/dev/snd/` 目录，看看是否有这些设备文件：
 
  `$ ls -l /dev/snd` 
-
 ```
 total 0
 crw-rw----  1 root audio 116,  0 Apr  8 14:17 controlC0
@@ -723,7 +705,6 @@ $alsaequal-mgr load foo
 *   在 `~/.asoundrc` 或 `/etc/asound.conf` 中添加如下内容：
 
  `/etc/asound.conf` 
-
 ```
 pcm.eq {
   type ladspa
@@ -941,7 +922,6 @@ amixer set Master toggle
 如果你在使用VirtualBox的时候出现了无声的问题，尝试以下命令：
 
  `$ alsactl init` 
-
 ```
 
 Found hardware: "ICH" "SigmaTel STAC9700,83,84" "AC97a:83847600" "0x8086" "0x0000"
@@ -1108,7 +1088,7 @@ options snd-NAME-OF-MODULE ac97_quirk=1
 
 ### 麦克风输入无声音
 
-In alsamixer, make sure that all the volume levels are up under recording, and that CAPTURE is toggled active on the microphone (e.g. Mic, Internal Mic) and/or on Capture (in alsamixer, select these items and press space). Try making positive Mic Boost and raising Capture and Digital levels higher; this make make static or distortion, but then you can adjust them back down once you are hearing _something_ when you record
+In alsamixer, make sure that all the volume levels are up under recording, and that CAPTURE is toggled active on the microphone (e.g. Mic, Internal Mic) and/or on Capture (in alsamixer, select these items and press space). Try making positive Mic Boost and raising Capture and Digital levels higher; this make make static or distortion, but then you can adjust them back down once you are hearing *something* when you record
 
 因为在alsaminxer中pulseaudio wapper是默认设置，你也许需要按下F6来选择你的实际使用的声卡。你也许需要在回放环节启用并增大输入的音量。
 
@@ -1409,7 +1389,6 @@ options snd_hda_intel power_save=0 power_save_controller=N
 若测试成功，接下来编辑或创建 `~/.asoundrc`，把 HDMI 设置为默认音频设备。
 
  `~/.asoundrc` 
-
 ```
 pcm.!default {
   type hw
@@ -1422,7 +1401,6 @@ pcm.!default {
 如果上述配置无效，试试下面这个：
 
  `~/.asoundrc` 
-
 ```
 defaults.pcm.card 0
 defaults.pcm.device 3

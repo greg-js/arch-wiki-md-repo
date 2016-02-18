@@ -87,7 +87,6 @@ Now you should be able to mount and unmount ~/webdav:
 If creating/copying files is not possible, while the same operations work on directories, edit `/etc/davfs2/davfs2.conf` and change the following line accordingly:
 
  `/etc/davfs2/davfs2.conf` 
-
 ```
 [...]
 use_locks 0

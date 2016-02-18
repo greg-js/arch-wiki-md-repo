@@ -1,4 +1,4 @@
-Esta página aborda varios métodos sobre cómo escribir la instatánea de Arch Linux en una unidad USB (también conocida por _«unidad flash», «lápiz USB», «llave USB»_, etc.) El resultado será un sistema de tipo LiveCD (_«LiveUSB»_, si se prefiere) que, debido a la naturaleza de [SquashFS](https://en.wikipedia.org/wiki/es:SquashFS "wikipedia:es:SquashFS"), descarta todos los cambios una vez que se apaga el equipo.
+Esta página aborda varios métodos sobre cómo escribir la instatánea de Arch Linux en una unidad USB (también conocida por *«unidad flash», «lápiz USB», «llave USB»*, etc.) El resultado será un sistema de tipo LiveCD (*«LiveUSB»*, si se prefiere) que, debido a la naturaleza de [SquashFS](https://en.wikipedia.org/wiki/es:SquashFS "wikipedia:es:SquashFS"), descarta todos los cambios una vez que se apaga el equipo.
 
 Si desea realizar una instalación completa de Arch Linux desde una unidad USB (es decir, con valores persistentes), véase [Intatar Arch Linux en una llave USB](/index.php/Installing_Arch_Linux_on_a_USB_key_(Espa%C3%B1ol) "Installing Arch Linux on a USB key (Español)"). Si desea usar la llave USB arrancable de Arch Linux como un USB de rescate, consulte [Change Root](/index.php/Change_Root_(Espa%C3%B1ol) "Change Root (Español)").
 
@@ -61,7 +61,8 @@ Asegúrese de que la instalación de [Cygwin](http://www.cygwin.com/) contiene e
 Coloque el archivo de imagen en su directorio personal, por ejemplo:
 
 ```
-C:\cygwin\home\nombre_de_usuario\
+C:\cygwin\home
+ombre_de_usuario\
 
 ```
 
@@ -94,11 +95,11 @@ dd if=image.iso of=/dev/sdb bs=4M
 
 ##### dd para Windows
 
-**Nota:** Algunos usuarios tienen un problema que indica que «isolinux.bin missing or corrupt» (_isolinux.bin falta o está dañado_) al arrancar el soporte con este método.
+**Nota:** Algunos usuarios tienen un problema que indica que «isolinux.bin missing or corrupt» (*isolinux.bin falta o está dañado*) al arrancar el soporte con este método.
 
 Una versión dd con licencia GPL para Windows está disponible en [http://www.chrysocome.net/dd](http://www.chrysocome.net/dd). La ventaja de este sobre Cygwin es que la descarga es más pequeña. Úselo como se indica para las instrucciones de Cygwin mencionadas más arriba.
 
-Para comenzar, descargue la última versión de dd para Windows. Una vez descargado, extraiga el contenido del archivo en la carpeta _Descargas_ o en otra carpeta.
+Para comenzar, descargue la última versión de dd para Windows. Una vez descargado, extraiga el contenido del archivo en la carpeta *Descargas* o en otra carpeta.
 
 Ahora, inicie un `prompt de órdenes` como administrador. A continuación, muevase al directorio (con la orden `cd`) de Descargas (o a la carpeta donde haya extraido el paquete).
 
@@ -132,7 +133,6 @@ $ diskutil unmountDisk /dev/disk1
 Ahora se puede continuar de acuerdo con las instrucciones anteriores para Linux (pero use `bs=8192` con la orden `dd`, si está utilizando el OS X, el número viene de `1024*8`).
 
  `dd if=image.iso of=/dev/disk1 bs=8192` 
-
 ```
 20480+0 records in
 20480+0 records out
@@ -151,7 +151,7 @@ $ diskutil eject /dev/disk1
 
 Debido a que la imagen ISO es un híbrido que puede ser grabada en un disco o escribirse directamente en una unidad USB, no incluye una tabla de particiones por defecto.
 
-Después de instalar Arch Linux y, por tanto, se ha terminado de utilizar la unidad USB a este fin, en esta se debe ajustar a cero los primeros 512 bytes _(es decir, donde se ubica el código de arranque del MBR y la tabla de particiones no estándar)_ si desea restaurar la funcionalidad del USB completamente:
+Después de instalar Arch Linux y, por tanto, se ha terminado de utilizar la unidad USB a este fin, en esta se debe ajustar a cero los primeros 512 bytes *(es decir, donde se ubica el código de arranque del MBR y la tabla de particiones no estándar)* si desea restaurar la funcionalidad del USB completamente:
 
 ```
 # dd count=1 bs=512 if=/dev/zero of=/dev/sdx && sync
@@ -184,7 +184,7 @@ A continuación, cree una nueva tabla de particiones (por ejemplo, «msdos») y 
 
 Este método es un poco más complicado que escribir la imagen directamente con `dd`, pero, en cambio, mantiene la unidad utilizable para el almacenamiento de datos.
 
-*   Asegúrese de que tiene el paquete más reciente de _syslinux_ (versión 6.02 o posterior) instalado.
+*   Asegúrese de que tiene el paquete más reciente de *syslinux* (versión 6.02 o posterior) instalado.
 
 *   Cree una tabla de particiones MBR (msdos) con, al menos, una partición en el USB que contenga un sistema de archivos FAT32\. Si no es así, cree la partición y/o sistema de archivos antes de continuar.
 
@@ -228,7 +228,7 @@ $ sed -i "s|label=ARCH_.*|device=/dev/disk/by-uuid/$(blkid -o value -s UUID /dev
 
 **Nota:**
 
-*   No utilice cualquier **Bootable USB Creator utility** para crear el USB de arranque UEFI. No utilice _dd en Windows_ para transferir la ISO a la unidad USB.
+*   No utilice cualquier **Bootable USB Creator utility** para crear el USB de arranque UEFI. No utilice *dd en Windows* para transferir la ISO a la unidad USB.
 
 *   En las siguientes órdenes **X** se supone que es la unidad flash USB en Windows.
 
@@ -286,7 +286,6 @@ UNetbootin se puede utilizar en cualquier distribución de Linux o Windows para 
 Edite `syslinux.cfg`:
 
  `sysconfig.cfg` 
-
 ```
 default menu.c32
 prompt 0
@@ -329,7 +328,6 @@ Descargue el programa desde [http://sourceforge.net/projects/usbwriter/](http://
 Desde un intérprete de órdenes, invoque flashnul con el parámetro `-p`, y determine qué dispositivo indica como unidad USB. Por ejemplo:
 
  `C:\>flashnul -p` 
-
 ```
 Avaible physical drives:
 Avaible logical disks:
@@ -341,14 +339,14 @@ E:\
 
 En este caso, la unidad USB es E:
 
-Una vez que haya determinado qué dispositivo es el correcto, puede escribir la imagen al disco, invocando la orden flashnul, con la letra del dispotivo, el parámetro _-L_, y la ruta a la imagen. En este caso, sería:
+Una vez que haya determinado qué dispositivo es el correcto, puede escribir la imagen al disco, invocando la orden flashnul, con la letra del dispotivo, el parámetro *-L*, y la ruta a la imagen. En este caso, sería:
 
 ```
-C:\>flashnul **E:** -L _ruta\a\arch.iso_
+C:\>flashnul **E:** -L *ruta\a\arch.iso*
 
 ```
 
-Si está realmente seguro de que desea escribir los datos, escriba _«yes»_, y luego esperar un poco para que pueda escribir. Si se obtiene un error de _«access denied error»_, cierre todas las ventanas que tenga abiertas con Explorer.
+Si está realmente seguro de que desea escribir los datos, escriba *«yes»*, y luego esperar un poco para que pueda escribir. Si se obtiene un error de *«access denied error»*, cierre todas las ventanas que tenga abiertas con Explorer.
 
 Si está en Vista o Win7, debe abrir la consola como administrador, o de lo contrario flashnul fallará al abrir el lápiz usb como si fuese un dispositivo de bloque y solo será capaz de escribir a través del manejo de la unidad proporcionada por Windows.
 
@@ -383,9 +381,7 @@ Copie la imagen ISO que desea arrancar a la carpeta `Boot/ISOs`, y extraiga los 
 Después de copiar los archivos necesarios, navegue por la unidad flash USB a /boot/Settings y cree un archivo `syslinux.cfg` .
 
 **Advertencia:** En la ínea `INITRD`, asegúrese de usar el nombre del archivo ISO que copió en la carpeta `ISOs`.
-
  `/Boot/Settings/syslinux.cfg` 
-
 ```
 DEFAULT arch_iso
 
@@ -403,7 +399,6 @@ Para más información sobre Syslinux véase el [artículo de Arch Wiki](/index.
 Por último, cree un archivo `*.bat` en la carpeta donde esté ubicado `syslinux.exe` y ejecútelo («ejecute como administrador» si está en Vista o Windows 7):
 
  `C:\Documents and Settings\username\Desktop\install.bat` 
-
 ```
 @echo off
 syslinux.exe -m -a -d /Boot/Settings X:
@@ -415,7 +410,7 @@ La herramienta de Windows [[1]](http://www.pendrivelinux.com/universal-usb-insta
 
 ## Solución de problemas
 
-*   Para el [Método MEMDISK](#Boot_the_entire_ISO_from_RAM), si obtiene el famoso error «30 seconds», intente arrancar la versión i686, para lo cual pulse la tecla `Tab` para desplazarse hasta la entrada `Boot Arch Linux (i686)` y añada `vmalloc=448M` al final. Como referencia: _Si la imagen es más grande de 128MB y tiene un Sistema Operativo de 32 bits, entonces tiene que aumentar el uso de la memoria máxima de vmalloc_. [(*)](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
+*   Para el [Método MEMDISK](#Boot_the_entire_ISO_from_RAM), si obtiene el famoso error «30 seconds», intente arrancar la versión i686, para lo cual pulse la tecla `Tab` para desplazarse hasta la entrada `Boot Arch Linux (i686)` y añada `vmalloc=448M` al final. Como referencia: *Si la imagen es más grande de 128MB y tiene un Sistema Operativo de 32 bits, entonces tiene que aumentar el uso de la memoria máxima de vmalloc*. [(*)](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
 *   Si obtiene el error «30 seconds» debido a que no se monta `/dev/disk/by-label/ARCH_XXXXXX`, pruebe cambiando el nombre del soporte USB a `ARCH_XXXXXX` (por ejemplo, `ARCH_201302`).
 
 ## Véase también

@@ -36,23 +36,23 @@ Por cada archivo en un paquete que se actualiza, `pacman` compara tres [sumas MD
 
 Yendo a más detalles, el resultado de la comparación de tres vías de sumas MD5 resulta en lo siguiente:
 
-	original = _X_, actual = _X_, nuevo = _X_ 
+	original = *X*, actual = *X*, nuevo = *X* 
 
 	Todos las tres versiones del archivo tienen contenido idéntico, así que sobreescribir no es un problema. Sobreescribir la versión actual con la nueva versión y no notificar al usuario. (Aunque el contenido del archivo es el mismo, sobreescribir actualizará la información del sistema del archivo acerca del archivo instalado, su fecha de modificación y acceso, y también se asegura que cualquier cambio de permisos de archivo sea aplicada.)
 
-	original = _X_, actual = _X_, nuevo = _Y_ 
+	original = *X*, actual = *X*, nuevo = *Y* 
 
 	El contenido de la versión actual es idéntivo al original, pero la nueva versión es diferente. Ya que el usuario no ha modificado la versión actual y la nueva versión puede contener mejoras o corregir errores, sobreescribe la versión actual con la nueva versión y no notifica al usuario. Este es la única auto-mezcla de nuevos cambios que `pacman` puede realizar.
 
-	original = _X_, actual = _Y_, nuevo = _X_ 
+	original = *X*, actual = *Y*, nuevo = *X* 
 
 	El paquete original y el nuevo contienen exactamente la misma versión del archivom pero la versión actual en el sistema de archivos ha sido modificada. Deja la versión actual en su lugar y descarta la nueva versión sin notificar al usuario.
 
-	original = _X_, actual = _Y_, nuevo = _Y_ 
+	original = *X*, actual = *Y*, nuevo = *Y* 
 
 	La nueva versión es idéntica a la actual. Sobreescribe la versión actual con la nueva versión y no notifica al usuario. (Aunque el contenido de los archivos es el mismo, esta sobreescritura actualizará la información del sistema de archivo acerca de la fecha de instalación, modificación y acceso del archivo, así como se asegura que cualquier cambio de permisos sea aplicado.)
 
-	original = _X_, actual = _Y_, nuevo = _Z_ 
+	original = *X*, actual = *Y*, nuevo = *Z* 
 
 	Todas las versiones son diferentes, así que deja la versión actual en lugar, instala la versión nueva con una extensión `.pacnew` y advierte al suario acerca de la nueva versión. El usuario se espera que manualmente mezcle cualquier cambio necesario de la nueva versión a la actual.
 
@@ -67,7 +67,7 @@ backup=('etc/pulse/client.conf' 'etc/pulse/daemon.conf' 'etc/pulse/default.pa')
 
 Si el usuario ha modificado uno de los archivos especificados en `backup` entonces ese archivo será renombrado a la extensión `.pacsave` y permanecerá en el sistema de archivos después de que el resto del paquete sea actualizado o removido.
 
-**Note:** El uso de la opción `-n` con `pacman -R` resultará en una completa eliminación de _todos_ los archivos en el paquete especificado, así que ningún archivo `.pacsave` será creado.
+**Note:** El uso de la opción `-n` con `pacman -R` resultará en una completa eliminación de *todos* los archivos en el paquete especificado, así que ningún archivo `.pacsave` será creado.
 
 ### .pacorig
 

@@ -39,7 +39,7 @@ These guidelines have been developed over time based on the extensive experience
 
 *   Arch is a community of volunteers. Therefore, this entire document may be condensed into one simple admonition:
 
-_**Proactively seek to give of yourself and to bring only benefit to your peers and community.**_
+***Proactively seek to give of yourself and to bring only benefit to your peers and community.***
 
 ## Personal topics/rants
 
@@ -49,7 +49,7 @@ Rants and complaints are frowned on and may be closed as they are discovered. Po
 
 Threads stating the equivalent of "there is a problem with the Arch system and methodology, we need to discuss it" have been repeatedly proven ineffective and inflammatory and will usually be locked after a warning from the moderation team. Arch is a Do It Yourself community. If you have identified a systemic issue, find a solution that works for you, implement it, then post.
 
-Furthermore, questioning or discussing the methods used by the Arch Linux development team will be monitored closely and locked _if deemed unhelpful and/or unproductive_. Harsh, unproductive criticism is also uncalled for.
+Furthermore, questioning or discussing the methods used by the Arch Linux development team will be monitored closely and locked *if deemed unhelpful and/or unproductive*. Harsh, unproductive criticism is also uncalled for.
 
 If you have a question regarding Arch development, please ensure that your topic poses a specific question and be open-minded to responses. If possible, provide a solution or partial solution. Submitting code and patches for discussion is always more pragmatic than asking others to do it for you.
 
@@ -77,7 +77,7 @@ Threads seeking advice about computer product recommendations are discouraged. S
 
 Spamming is forbidden. Please report spam with the forum report function and a moderator will review it for removal. Offending spam accounts and associated IP addresses will be banned. Do not reply to spam posts as it increases the amount of work required to clean them up.
 
-Publicity, if it is related to Arch (as a project or community) or GNU/Linux/FOSS, will usually be allowed. Promoting web-invites, blog posts or commercial promotions are actively discouraged, or outright prohibited. Registering just to promote your issue/cause, FOSS-related or not, treats the community as a resource and is not acceptable; if unsure about the appropriateness of your content, contact the moderation team _before_ posting. Also be aware that posting shortened/obscured links is a technique of spammers and deliberately inhibits the communities ability to judge the propriety of the link. Therefore, please only post links that include a clear destination.
+Publicity, if it is related to Arch (as a project or community) or GNU/Linux/FOSS, will usually be allowed. Promoting web-invites, blog posts or commercial promotions are actively discouraged, or outright prohibited. Registering just to promote your issue/cause, FOSS-related or not, treats the community as a resource and is not acceptable; if unsure about the appropriateness of your content, contact the moderation team *before* posting. Also be aware that posting shortened/obscured links is a technique of spammers and deliberately inhibits the communities ability to judge the propriety of the link. Therefore, please only post links that include a clear destination.
 
 ## Homework
 
@@ -99,13 +99,13 @@ Please limit your forum membership to one account only. Having multiple accounts
 
 ## No trolling
 
-_**A "troll" is a person who intentionally attempts to disrupt, cause controversy, incite an argument, and/or receive negative attention by deliberately posting provocative content. The term may also refer to the act of posting such content, or the content itself.**_
+***A "troll" is a person who intentionally attempts to disrupt, cause controversy, incite an argument, and/or receive negative attention by deliberately posting provocative content. The term may also refer to the act of posting such content, or the content itself.***
 
 Trolls are generally deceitful and often use ambivalence as a method of covertly insulting, intimidating, or inciting a person or persons for their own sadistic pleasure. They often pick their words very carefully and are therefore able to defend their masked attempts at creating unrest, frequently redirecting the blame onto the community and its supposed failure to understand them properly. Trolling is strictly prohibited.
 
 ## Avoid controversy/controversial topics
 
-There is no explicit list of topics considered to be "trollish", controversial or provocative, but in the past, threads with posts pertaining to **Religion, Sports, Race, Nationalism** and **Politics** have invariably been closed. Therefore, _**specifically avoid these and all divisive topics on the Arch forums!**_ The forum staff certainly realize that such issues are deeply ingrained human realities. However, this is a GNU/Linux distribution forum and is not intended nor able to effectively facilitate such commentary nor the resulting unrest.
+There is no explicit list of topics considered to be "trollish", controversial or provocative, but in the past, threads with posts pertaining to **Religion, Sports, Race, Nationalism** and **Politics** have invariably been closed. Therefore, ***specifically avoid these and all divisive topics on the Arch forums!*** The forum staff certainly realize that such issues are deeply ingrained human realities. However, this is a GNU/Linux distribution forum and is not intended nor able to effectively facilitate such commentary nor the resulting unrest.
 
 ## No power-posting/empty posts
 
@@ -143,7 +143,7 @@ Thread hijacking is the process of replying to an existing thread with a differe
 
 ## Do not flame
 
-Flaming, in the most common sense definition, is directing negative, disrespectful, and/or insulting comments toward someone. An equally or more negative response, resulting in a cycling exchange of insults is often the consequence. Flaming fellow members (including the Arch team) will not be tolerated. Never resort to personal insults and please avoid sarcastic and patronizing language. _Discussions can be productive, but quarreling is always destructive._
+Flaming, in the most common sense definition, is directing negative, disrespectful, and/or insulting comments toward someone. An equally or more negative response, resulting in a cycling exchange of insults is often the consequence. Flaming fellow members (including the Arch team) will not be tolerated. Never resort to personal insults and please avoid sarcastic and patronizing language. *Discussions can be productive, but quarreling is always destructive.*
 
 ## Respect the staff
 
@@ -183,4 +183,4 @@ Therefore, do not post discussions about or link to criminal solicitation in any
 
 ## Freedom
 
-The free and open exchange of assistance, speech, ideas and opinions is highly regarded and encouraged on the forums, but it must be noted that the freedom granted to forum members is _relative freedom_. It exists within the boundaries of the above guidelines and principles. Complaints of censorship are therefore baseless and unfounded, since this necessary framework must simultaneously provide reasonable limitations. To illustrate, we are aware of the physical laws which govern energy and matter, yet we do not complain of their oppression. Instead, we recognize that such laws are essential for our welfare. Likewise, the Arch community's high standards reflected in these guidelines regulate community freedom for the common good and protection of all. The key, then, to true freedom on the forums is to cultivate benevolence toward others and harmonize our attitude with the Arch Way by bringing only benefit to our peers. In addition, this allows members to satisfy all contributive impulses without aggravating themselves or encroaching on the freedom of others. Embracing the above principles and obeying the forum guidelines therefore benefits the entire community by providing freedom from the harmful and negative consequences of a more chaotic approach.
+The free and open exchange of assistance, speech, ideas and opinions is highly regarded and encouraged on the forums, but it must be noted that the freedom granted to forum members is *relative freedom*. It exists within the boundaries of the above guidelines and principles. Complaints of censorship are therefore baseless and unfounded, since this necessary framework must simultaneously provide reasonable limitations. To illustrate, we are aware of the physical laws which govern energy and matter, yet we do not complain of their oppression. Instead, we recognize that such laws are essential for our welfare. Likewise, the Arch community's high standards reflected in these guidelines regulate community freedom for the common good and protection of all. The key, then, to true freedom on the forums is to cultivate benevolence toward others and harmonize our attitude with the Arch Way by bringing only benefit to our peers. In addition, this allows members to satisfy all contributive impulses without aggravating themselves or encroaching on the freedom of others. Embracing the above principles and obeying the forum guidelines therefore benefits the entire community by providing freedom from the harmful and negative consequences of a more chaotic approach.

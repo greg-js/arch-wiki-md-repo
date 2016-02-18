@@ -56,7 +56,7 @@ Notable variants are:
 
 	[http://www.mplayer2.org/](http://www.mplayer2.org/) || [mplayer2](https://aur.archlinux.org/packages/mplayer2/) [mplayer2-git](https://aur.archlinux.org/packages/mplayer2-git/)
 
-**Note:** _mplayer2_ development seems to be ceased in favour of [mpv](/index.php/Mpv "Mpv"), which is focused on speed and quality of development, though this breaks compatibility with old hardware and software. Be aware of its [differences](https://github.com/mpv-player/mpv/blob/master/DOCS/man/changes.rst) if you want to use it.
+**Note:** *mplayer2* development seems to be ceased in favour of [mpv](/index.php/Mpv "Mpv"), which is focused on speed and quality of development, though this breaks compatibility with old hardware and software. Be aware of its [differences](https://github.com/mpv-player/mpv/blob/master/DOCS/man/changes.rst) if you want to use it.
 
 ## Frontends/GUIs
 
@@ -116,7 +116,7 @@ System-wide configuration files are located in the `/etc/mplayer/`, whereas the 
 *   `example.conf` - Is an example of mplayer.conf, which is not automatically created after installation.
 *   `input.conf` - Contains configuration of a hotkeys.
 
-In the `~/.mplayer/` by default created a file with a name _config_.
+In the `~/.mplayer/` by default created a file with a name *config*.
 
 See also: [Example MPlayer configuration file](http://mplayerhq.hu/DOCS/man/en/mplayer.1.html#CONFIGURATION%20FILES), `man mplayer`.
 
@@ -135,7 +135,7 @@ To get this behavior, you can install the [mplayer-resumer](https://aur.archlinu
 To use it, simply call the wrapper script in place of MPlayer:
 
 ```
-$ mplayer-resumer _options_ _path/to/file_
+$ mplayer-resumer *options* *path/to/file*
 
 ```
 
@@ -150,7 +150,6 @@ For a complete list of NVIDIA VDPAU capable hardware, see [this table](http://en
 For an Intel or (AMD with [Catalyst](/index.php/Catalyst "Catalyst")) video card, you can use [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) — VAAPI backend for VDPAU. For AMD you should also install [xvba-video](https://aur.archlinux.org/packages/xvba-video/). To use it, create:
 
  `/etc/profile.d/vdpau_vaapi.sh` 
-
 ```
 #!/bin/sh
 export VDPAU_DRIVER=va_gl
@@ -195,22 +194,22 @@ Another simple wrapper is [mplayer-vdpau-shell-git](https://aur.archlinux.org/pa
 
 This requires [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/) from the AUR.
 
- `$ mplayer -vo vaapi -va vaapi _foobar.mpeg_` 
+ `$ mplayer -vo vaapi -va vaapi *foobar.mpeg*` 
 
 *   **-vo** - Select vaapi video output driver
 *   **-va** - Select vaapi video decoder driver
 
 MPlayer based players:
 
-*   [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer): To enable hardware acceleration: _Edit > Preferences > Player_, then set Video Output to `vaapi`.
-*   [smplayer](https://www.archlinux.org/packages/?name=smplayer): To enable hardware acceleration: _Options > Preferences > General > Video_, then set Output driver to `vaapi`.
+*   [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer): To enable hardware acceleration: *Edit > Preferences > Player*, then set Video Output to `vaapi`.
+*   [smplayer](https://www.archlinux.org/packages/?name=smplayer): To enable hardware acceleration: *Options > Preferences > General > Video*, then set Output driver to `vaapi`.
 
 ### Translucent video with Radeon cards and Composite enabled
 
 To get translucent video output in X you have to enable textured video in MPlayer:
 
 ```
-$ mplayer -vo xv:adaptor=1 _file_
+$ mplayer -vo xv:adaptor=1 *file*
 
 ```
 
@@ -239,18 +238,18 @@ The `-playlist` option is necessary because these streams are actually playlists
 To play a DVD with MPlayer:
 
 ```
-$ mplayer dvd://_N_
+$ mplayer dvd://*N*
 
 ```
 
-where _N_ is the desired title number. Start at 1 and work up if unsure. To start at a specific chapter use the '-chapter' flag. For example, adding '-chapter 5' to the command starts the dvd playing at chapter five of the title.
+where *N* is the desired title number. Start at 1 and work up if unsure. To start at a specific chapter use the '-chapter' flag. For example, adding '-chapter 5' to the command starts the dvd playing at chapter five of the title.
 
 Mplayer checks `/dev/dvd` by default. Tell it to use `/dev/sr0` with the `dvd-device` option at the command line, or the `dvd-device` variable in `~/.mplayer/config`.
 
 To play a DVD image file:
 
 ```
-$ mplayer -dvd-device movie.iso dvd://_N_
+$ mplayer -dvd-device movie.iso dvd://*N*
 
 ```
 
@@ -270,7 +269,7 @@ $ mplayer -mouse-movements dvdnav://
 
 ```
 
-To find the audio language, start MPlayer with the `-v` switch to output audio IDs. An audio track is selected with `-aid _audio_id_`. Set a default audio language by editing `~/.mplayer/config` and adding the line `alang=en` for English.
+To find the audio language, start MPlayer with the `-v` switch to output audio IDs. An audio track is selected with `-aid *audio_id*`. Set a default audio language by editing `~/.mplayer/config` and adding the line `alang=en` for English.
 
 With MPlayer, the DVD could be set to a low volume. To increase the maximum volume to 400%, use `softvol=yes` and `softvol-max=400`. The startup volume defaults to 100% of software volume and the global mixer levels will remain untouched. Using the `9` and `0` keys, volume can be adjusted between 0 and 400 percent.
 
@@ -297,7 +296,7 @@ ao=jack
 If you do not have JACK running all the time, you can have MPlayer output to JACK on an as-needed basis by invoking MPlayer from the command line as such:
 
 ```
-$ mplayer -ao jack _path/to/file_
+$ mplayer -ao jack *path/to/file*
 
 ```
 
@@ -313,7 +312,7 @@ ass=true
 or add -ass to the command line:
 
 ```
-$ mplayer -ass _path/to/subtitledVideo.mkv_
+$ mplayer -ass *path/to/subtitledVideo.mkv*
 
 ```
 
@@ -357,7 +356,7 @@ $ ps -eo pcpu,pid,user,comm | grep -i "mplayer"$ | sed  "s/ mplayer$//m"
 
 ### MPlayer fails to open files with spaces
 
-MPlayer can fail to open a file with spaces (e.g. 'The Movie') by saying that it could not open the file `file:///_The%20Movie_` (where all spaces are converted to `%20`). This can be fixed by editing `/usr/share/applications/mplayer.desktop` to changing the following line from:
+MPlayer can fail to open a file with spaces (e.g. 'The Movie') by saying that it could not open the file `file:///*The%20Movie*` (where all spaces are converted to `%20`). This can be fixed by editing `/usr/share/applications/mplayer.desktop` to changing the following line from:
 
 ```
 Exec=mplayer %U
@@ -419,14 +418,13 @@ ao=pulse
 
 ```
 
-You can also change this from SMPlayer by going to _Options > Preferences > General > Audio_ and setting the _Output Driver_ option to _pulse_.
+You can also change this from SMPlayer by going to *Options > Preferences > General > Audio* and setting the *Output Driver* option to *pulse*.
 
 ### SMPlayer: no video when using transparency in GNOME
 
 This problem may arise under GNOME when using Compiz to provide transparency: SMPlayer starts with a transparent screen with audio playing, but no video. To fix this, create (as root) a file with the contents:
 
  `/usr/local/bin/smplayer.helper` 
-
 ```
 export XLIB_SKIP_ARGB_VISUALS=1
 exec smplayer.real "$@"
@@ -450,7 +448,7 @@ Since SMPlayer 0.8.2.1 (with MPlayer2 20121128-1), the ratio of the subtitle fon
 
 ```
 
-or to the extra options passed to MPlayer from SMPlayer. These options are found in _Options > Preferences > Advanced > Options for MPlayer_. This can also be achieved by adding the following line to `~/.mplayer/config`:
+or to the extra options passed to MPlayer from SMPlayer. These options are found in *Options > Preferences > Advanced > Options for MPlayer*. This can also be achieved by adding the following line to `~/.mplayer/config`:
 
 ```
 subfont-osd-scale=2

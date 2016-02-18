@@ -1,6 +1,6 @@
 **amdgpu** is the open source graphics driver for the latest AMD Radeon graphics cards.
 
-At the moment there is only support for the [Volcanic Islands](http://xorg.freedesktop.org/wiki/RadeonFeature/) and some cards of the [Sea Islands](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released) family. AMD has yet to decide to add support older cards in the near future.
+At the moment there is only support for the [Volcanic Islands](http://xorg.freedesktop.org/wiki/RadeonFeature/) and some cards of the [Sea Islands](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released) family. AMD has yet to decide to add support for older cards in the near future.
 
 Owners of unsupported AMD/ATI video cards can use the [Radeon open source](/index.php/ATI "ATI") or [AMD's proprietary](/index.php/AMD_Catalyst "AMD Catalyst") driver instead.
 
@@ -89,4 +89,6 @@ CONFIG_DRM_AMDGPU_CIK=Y
 
 To prevent `radeon` from loading, you can disable it in the Kconfig or [blacklist](https://wiki.archlinux.org/index.php/Kernel_modules#Blacklisting) the `radeon` module.
 
- `/etc/modprobe.d/amdgpu.conf`  `blacklist radeon`
+ `/etc/modprobe.d/radeon.conf`  `blacklist radeon` 
+
+It may also be needed to use the `amdgpu.exp_hw_support=1` [[2]](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-Iceland-Experimental) as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or by setting the [kernel module](/index.php/Kernel_modules#Using_files_in_.2Fetc.2Fmodprobe.d.2F "Kernel modules") options.

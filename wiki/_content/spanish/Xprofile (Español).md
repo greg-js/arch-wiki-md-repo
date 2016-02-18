@@ -24,7 +24,6 @@ Es posible hacer que los archivos xprofiles sean compatibles con estos programas
 Todos ellos ejecutan, directa o indirectamente, `~/.[xinitrc (Español)](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)")` (normalmente se obtienen de `/etc/skel/.xinitrc`), o de `/etc/X11/xinit/xinitrc` si no existe aquél. Es por ello que tenemos contenidos de xprofiles en esos archivos.
 
  `~/.xinitrc and /etc/X11/xinit/xinitrc and /etc/skel/.xinitrc` 
-
 ```
 #!/bin/sh
 

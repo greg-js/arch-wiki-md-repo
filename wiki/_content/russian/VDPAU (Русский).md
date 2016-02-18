@@ -102,7 +102,6 @@ $ vdpauinfo
 Чтобы определить правильное название драйвера, воспользуйтесь командой
 
  `$ grep -i vdpau /var/log/Xorg.0.log` 
-
 ```
 (II) RADEON(0): [DRI2] VDPAU driver: r300
 
@@ -127,11 +126,11 @@ $ export DRI_PRIME=1
 
 	|| [flashplugin](https://www.archlinux.org/packages/?name=flashplugin)
 
-*   **bomi** — аппаратное ускорение можно включить в: _Preferences > Video > Hardware acceleration_
+*   **bomi** — аппаратное ускорение можно включить в: *Preferences > Video > Hardware acceleration*
 
 	[https://bomi-player.github.io](https://bomi-player.github.io) || [bomi](https://aur.archlinux.org/packages/bomi/) [bomi-git](https://aur.archlinux.org/packages/bomi-git/)
 
-*   **gnome-mplayer** — чтобы включить аппаратное ускорение зайдите в _Edit > Preferences > Player_ и установите параметр `vdpau` в положение _Video Output_
+*   **gnome-mplayer** — чтобы включить аппаратное ускорение зайдите в *Edit > Preferences > Player* и установите параметр `vdpau` в положение *Video Output*
 
 	|| [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer)
 
@@ -143,7 +142,7 @@ $ export DRI_PRIME=1
 
 	|| [mpv](https://www.archlinux.org/packages/?name=mpv)
 
-*   **[SMplayer](/index.php/MPlayer_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC "MPlayer (Русский)")** — чтобы включить аппаратное ускорение зайдите в _Options > Preferences > General > Video_ и установите параметр `vdpau` в положение _Output driver_
+*   **[SMplayer](/index.php/MPlayer_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC "MPlayer (Русский)")** — чтобы включить аппаратное ускорение зайдите в *Options > Preferences > General > Video* и установите параметр `vdpau` в положение *Output driver*
 
 	|| [smplayer](https://www.archlinux.org/packages/?name=smplayer)
 

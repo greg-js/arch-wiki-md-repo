@@ -75,8 +75,8 @@ Si avrà bisogno di questi files per la regolazione del [color profile](#Color_P
 
 Il passaggio successivo della procedura d'installazione è il ri-partizionamento del disco. Se MAC OS X è stato installato nella sua forma tipica, il disco dovrebbe avere una formattazione GPT e le seguenti partizioni:
 
-*   **EFI**: una partizione di 200 MB all'inizio del disco. Spesso viene riconosciuta come partizione "DOS" o "FAT" da alcuni tool di partizionamento, e solitamente ha label _#1_
-*   **Mac OS X**: la partizione _(HFS+)_, che occuperà tutto lo spazio rimasto. Solitamente ha label _#2_.
+*   **EFI**: una partizione di 200 MB all'inizio del disco. Spesso viene riconosciuta come partizione "DOS" o "FAT" da alcuni tool di partizionamento, e solitamente ha label *#1*
+*   **Mac OS X**: la partizione *(HFS+)*, che occuperà tutto lo spazio rimasto. Solitamente ha label *#2*.
 *   **Recovery**: una partizione per la manutenzione (solo per OS X 10.7 o superiori).
 
 Le modalità per il partizionamento vanno scelte in base al numero di sistemi operativi che si vogliono installare. In questo wiki verranno illustrate:
@@ -221,7 +221,7 @@ boot: arch noapic irqpoll acpi=force
     *   Nel passaggio per la [preparazione degli hard drives](/index.php/Installation_guide#Prepare_Hard_Drive "Installation guide") esegui solo " [set filesystem mountpoints](/index.php/Installation_guide#Set_Filesystem_Mountpoints "Installation guide")" stando attento ad assegnare le giuste partizioni.
     *   Durante l' [installazione del boot loader](/index.php/Installation_guide#Install_Bootloader "Installation guide") modifica il file menu.lst e aggiungi **reboot=pci** alla fine delle linee **kernel** lines, per esempio: `kernel /vmlinuz26 root=/dev/sda5 ro reboot=pci` Questo ti consentirà di riavviare correttamente da Arch.
     *   Durante l' [installazione del boot loader](/index.php/Installation_guide#Install_Bootloader "Installation guide") installa GRUB nella partizione con <tt>/boot</tt>.
-        **Attenzione:** Non installare GRUB in _/dev/sda_ !!! Facendolo rischi di avere un ambiente post-configurazione instabile!!.
+        **Attenzione:** Non installare GRUB in */dev/sda* !!! Facendolo rischi di avere un ambiente post-configurazione instabile!!.
 
     *   Nella [configurazione del sistema](/index.php/Installation_guide#Configure_System "Installation guide"), modifica /etc/mkinitcpio.conf e aggiungi l'hook **usbinput** nella riga degli**HOOKS** line in qualsiasi posizione dopo l'hook **autodetect**. Questo caricherà i drivers della tastiera nel caso che ti serva prima del boot di Arch Linux.
 
@@ -318,7 +318,7 @@ $ yaourt -S nvidia-bl
 
 ```
 
-**Tip:** se usi GNOME o KDE, puoi settare _funzionalità di 3° livello_, _multimedia key_, etc. in **Preferenze Tastiera**.
+**Tip:** se usi GNOME o KDE, puoi settare *funzionalità di 3° livello*, *multimedia key*, etc. in **Preferenze Tastiera**.
 
 **Note:** vedi [Xorg input hotplugging](/index.php/Xorg_input_hotplugging "Xorg input hotplugging") per altre informazioni sulla configurazione.
 
@@ -507,7 +507,7 @@ sudo mkdir /media/mac
 
 ```
 
-Aggiungi alla fine di _/etc/fstab_ questa riga:
+Aggiungi alla fine di */etc/fstab* questa riga:
 
 ```
 /dev/sda2    /media/mac     hfsplus rw,exec,auto,users   0 0
@@ -530,7 +530,7 @@ ls /media/mac
 
 ### Condivisione della Home
 
-_**Sincronizzazione UID**_
+***Sincronizzazione UID***
 
 #### In OS X
 
@@ -538,23 +538,23 @@ _**Sincronizzazione UID**_
 
 ##### Passaggio 1: Cambiare UID e GID(s)
 
-_**Pre-Leopard**_
+***Pre-Leopard***
 
-1.  Apri **NetInfo Manager** , nella cartella _/Applications/Utilities_ .
+1.  Apri **NetInfo Manager** , nella cartella */Applications/Utilities* .
 
 1.  Se non l'hai ancora fatto, abilità l'accesso alle operazioni agli utenti clickando sul lucchetto in fondo alla finestra, e inserisci la password del tuo accounr o la password di root se hai creato un account root.
 
-1.  Vai in _/users/<new user name>_ dove <new user name> è il nome dell'account che avrà permessi di lettura/scrittura nella partizione che sarà condivisacon l'utente di Arch.
+1.  Vai in */users/<new user name>* dove <new user name> è il nome dell'account che avrà permessi di lettura/scrittura nella partizione che sarà condivisacon l'utente di Arch.
 
 1.  Cambia il valore di **UID** in 1000 (Il valore usato di default per il primo utente creato in Arch).
 
 1.  Altrimenti cambia il valore di**GID** in 1000 (il valore usato di default per la creazione di nuovi utenti in Arch).
 
-1.  Vai in _/groups/<new user name>_, salvando le modifiche fatte finora.
+1.  Vai in */groups/<new user name>*, salvando le modifiche fatte finora.
 
 **Note:** Se un errore ti avvisa che le operazioni non sono permesse, esegui un log out e poi riesegui un login.
 
-_**Leopard**_
+***Leopard***
 
 In Leopard, l'applicazione **NetInfo Manager** non è presente. Per la sincronizzazione degli UID, bisogna procedere in un altro modo:
 
@@ -570,7 +570,7 @@ In Leopard, l'applicazione **NetInfo Manager** non è presente. Per la sincroniz
 
 ##### Passaggio 2: Cambiare i permessi di 'HOME'
 
-1.  Apri un **Terminale** ed entra nella cartella _/Applications/Utilities_.
+1.  Apri un **Terminale** ed entra nella cartella */Applications/Utilities*.
 
 1.  Inserisci i seguenti comandi per modificare le impostazioni dei permessi della tua home, sostituendo <your username> con il tuo username, <your user group> con il gruppo a cui appartiene il tuo account e <your old UID> con il vecchio valore di UID.
 
@@ -581,9 +581,9 @@ find /User/<your user name> -user <your old UID> -exec chown <your user name>:<y
 
 #### In Arch
 
-Per sincronizzare il tuo UID in Arch Linux, è consigliato eseguuire questa operazione _mentre crei un nuovo acount_. E' inoltre consigliato farlo subito dopo avere installato Arch Linux.
+Per sincronizzare il tuo UID in Arch Linux, è consigliato eseguuire questa operazione *mentre crei un nuovo acount*. E' inoltre consigliato farlo subito dopo avere installato Arch Linux.
 
-Adesso devi sostituire la home di Arch con la home di Mac, modificando il file _/etc/fstab_.
+Adesso devi sostituire la home di Arch con la home di Mac, modificando il file */etc/fstab*.
 
 ## rEFIt
 

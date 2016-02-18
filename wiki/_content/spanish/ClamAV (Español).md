@@ -18,7 +18,7 @@ ClamAV puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)
 
 ## Configuración
 
-Ya sea que vaya a utilizar clamav como un demonio o como un simple analizador de archivos, es necesario comentar la línea que contiene la palabra _Example_, que, por lo general, se encuentra en el inicio de los archivos `/etc/clamav/freshclam.conf` y `/etc/clamav/clamd.conf`.
+Ya sea que vaya a utilizar clamav como un demonio o como un simple analizador de archivos, es necesario comentar la línea que contiene la palabra *Example*, que, por lo general, se encuentra en el inicio de los archivos `/etc/clamav/freshclam.conf` y `/etc/clamav/clamd.conf`.
 
 **Nota:** En algunas configuraciones no se creará ningún archivo, y `/etc/clamav` contendrá archivos similares marcados con una extensión *.sample en su lugar. Modifiquelos cambiándoles el nombre con los nombres de los archivos mencionados anteriormente, con lo cual obtendrá el mismo resultado.
 
@@ -29,7 +29,6 @@ El servicio se llama `clamd.service`. Léase [Daemons](/index.php/Daemons_(Espa%
 Cambie también las opciones de inicio de `no` a `yes`:
 
  `/etc/conf.d/clamav` 
-
 ```
 # cambiaar a "yes" para iniciar
 START_FRESHCLAM="yes"
@@ -42,7 +41,6 @@ START_CLAMD="yes"
 Edite el archivo de abajo y comente la línea que dice «Example».
 
  `/etc/clamav/freshclam.conf` 
-
 ```
 # Comentar o quitar la línea de abajo.
 # Example
@@ -91,7 +89,7 @@ WARNING: Clamd was NOT notified: Cannot connect to clamd through
 
 ```
 
-Agregue un archivo _«sock»_ para clamav:
+Agregue un archivo *«sock»* para clamav:
 
 ```
 # touch /var/lib/clamav/clamd.sock

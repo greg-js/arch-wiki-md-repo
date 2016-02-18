@@ -15,7 +15,7 @@ The Eclipse IDE is largely written in Java but can be used to develop applicatio
     *   [3.1 Online version](#Online_version)
     *   [3.2 Offline version](#Offline_version)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Crash on first boot or when choosing _Help > Welcome_](#Crash_on_first_boot_or_when_choosing_Help_.3E_Welcome)
+    *   [4.1 Crash on first boot or when choosing *Help > Welcome*](#Crash_on_first_boot_or_when_choosing_Help_.3E_Welcome)
     *   [4.2 Ctrl+X closes Eclipse](#Ctrl.2BX_closes_Eclipse)
     *   [4.3 Eclipse 4 not respecting dark/custom gtk themes resulting in white background](#Eclipse_4_not_respecting_dark.2Fcustom_gtk_themes_resulting_in_white_background)
         *   [4.3.1 4.2.0 and 4.3.0](#4.2.0_and_4.3.0)
@@ -54,7 +54,7 @@ To use the Eclipse Marketplace, install it first: go to Help > Install new softw
 
 **Note:** make sure you have followed the [Add the default update site](#Add_the_default_update_site) section.
 
-Use Eclipse's plugin manager to download and install plugins from their original repositories: in this case you have to find the needed repository in the plugin's website, then go to _Help > Install New Software..._, enter the repository in the _Work with_ field, select the plugin to install from the list below and follow the instructions.
+Use Eclipse's plugin manager to download and install plugins from their original repositories: in this case you have to find the needed repository in the plugin's website, then go to *Help > Install New Software...*, enter the repository in the *Work with* field, select the plugin to install from the list below and follow the instructions.
 
 **Note:**
 
@@ -63,16 +63,16 @@ Use Eclipse's plugin manager to download and install plugins from their original
 
 #### Updates via plugin manager
 
-Run Eclipse and select _Help > Check for Updates_. If you have installed them as root as advised in the section above, you have to run Eclipse as root.
+Run Eclipse and select *Help > Check for Updates*. If you have installed them as root as advised in the section above, you have to run Eclipse as root.
 
-For plugins to be updated, you should check to have their update repositories enabled in _Window > Preferences > Install/Update > Available Software Sites_: you can find each plugin's repository(es) on the respective project website. To add, edit, remove... repositories just use the buttons on the right of the _Available Software Sites_ panel. For Eclipse 4.5 (Mars), check you have enabled this repository:
+For plugins to be updated, you should check to have their update repositories enabled in *Window > Preferences > Install/Update > Available Software Sites*: you can find each plugin's repository(es) on the respective project website. To add, edit, remove... repositories just use the buttons on the right of the *Available Software Sites* panel. For Eclipse 4.5 (Mars), check you have enabled this repository:
 
 ```
 [http://download.eclipse.org/releases/mars](http://download.eclipse.org/releases/mars)
 
 ```
 
-To receive update notifications, go to _Window > Preferences > Install/Update > Automatic Updates_. If you want to receive notifications for plugins installed as root, you should run Eclipse as root, go to _Window > Preferences > Install/Update > Available Software Sites_, select the repositories related to the installed plugins and _Export_ them, then run Eclipse as normal user and _Import_ them in the same panel.
+To receive update notifications, go to *Window > Preferences > Install/Update > Automatic Updates*. If you want to receive notifications for plugins installed as root, you should run Eclipse as root, go to *Window > Preferences > Install/Update > Available Software Sites*, select the repositories related to the installed plugins and *Export* them, then run Eclipse as normal user and *Import* them in the same panel.
 
 ### List of plugins
 
@@ -160,9 +160,9 @@ Want to see API entries when hovering the mouse pointer over standard Java metho
 
 If you have constant Internet access on your machine, you can use the on-line documentation:
 
-1.  Go to _Window > Preferences_, then go to _Java > Installed JREs_.
-2.  There should be one named "java" with the type "Standard VM". Select this and click _Edit_.
-3.  Select the `/opt/java/jre/lib/rt.jar` item under "JRE system libraries:", then click _Javadoc Location..._.
+1.  Go to *Window > Preferences*, then go to *Java > Installed JREs*.
+2.  There should be one named "java" with the type "Standard VM". Select this and click *Edit*.
+3.  Select the `/opt/java/jre/lib/rt.jar` item under "JRE system libraries:", then click *Javadoc Location...*.
 4.  Enter "[https://docs.oracle.com/javase/8/docs/api/](https://docs.oracle.com/javase/8/docs/api/)" in the "Javadoc location path:" text field.
 
 ### Offline version
@@ -171,7 +171,7 @@ You can store the documentation locally by installing the [openjdk8-doc](https:/
 
 ## Troubleshooting
 
-### Crash on first boot or when choosing _Help > Welcome_
+### Crash on first boot or when choosing *Help > Welcome*
 
 Add the following line to `/usr/share/eclipse/eclipse.ini`:
 

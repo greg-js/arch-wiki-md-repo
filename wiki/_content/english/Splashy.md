@@ -27,14 +27,13 @@ Add this in `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")`:
 
 ### Including Splashy in initramfs
 
-Add Splashy to the HOOKS array in `/etc/[mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf")`. It **must** be added _after_ **base**, **udev** and **autodetect** for it to work:
+Add Splashy to the HOOKS array in `/etc/[mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf")`. It **must** be added *after* **base**, **udev** and **autodetect** for it to work:
 
  `/etc/mkinitcpio.conf`  `HOOKS="base udev autodetect splashy [...]"` 
 
 For early KMS start add the module [radeon](/index.php/Radeon "Radeon") (for radeon cards), [i915](/index.php/I915 "I915") (for intel cards) or [nouveau](/index.php/Nouveau "Nouveau") (for nvidia cards) to the MODULES line in `/etc/mkinitcpio.conf`:
 
  `/etc/mkinitcpio.conf` 
-
 ```
 MODULES="i915"
 **or**

@@ -66,7 +66,7 @@ TUs are also in an excellent position to document recommended practices.
 
 *   TUs are strongly encouraged to move packages they currently maintain from [community] if they have low usage. No enforcement will be made, although resigning TUs packages may be filtered before adoption can occur.
 
-*   It is good practice to always bump the **pkgrel** by _1_ (in other words, set it to _n + 1_) when promoting a package from AUR. This is to facilitate automatic updates for those who already have the package installed, so that they may continue to receive updates from the official channel. Another positive effect of this is that users are not warned that their local copy is newer, as is the case if a packager does reset the **pkgrel** to _1_.
+*   It is good practice to always bump the **pkgrel** by *1* (in other words, set it to *n + 1*) when promoting a package from AUR. This is to facilitate automatic updates for those who already have the package installed, so that they may continue to receive updates from the official channel. Another positive effect of this is that users are not warned that their local copy is newer, as is the case if a packager does reset the **pkgrel** to *1*.
 
 ### Accessing and Updating the Repository
 
@@ -90,7 +90,7 @@ ssh nymeria.archlinux.org /community/db-repo-remove community arch pkgname
 
 ```
 
-Here and in the following text, _arch_ can be one of _i686_ or _x86_64_ which are the two architectures supported by Arch Linux.
+Here and in the following text, *arch* can be one of *i686* or *x86_64* which are the two architectures supported by Arch Linux.
 
 When you are done with editing the PKGBUILD, etc., you should **commit** the changes (`svn commit`).
 
@@ -98,9 +98,9 @@ Build the package with `mkarchroot` or the helper scripts `extra-i686-build` and
 
 Sign the package with `gpg --detach-sign *.pkg.tar.xz`.
 
-When you want to **release** a package, first copy the package along with its signatures to the _staging/community_ directory on _nymeria.archlinux.org_ using `scp` and then **tag** the package by going to the _pkgname/trunk_ directory and issuing `archrelease community-arch`. This makes an svn copy of the trunk entries in a directory named _community-i686_ or _community-x86_64_ indicating that this package is in the community repository for that architecture.
+When you want to **release** a package, first copy the package along with its signatures to the *staging/community* directory on *nymeria.archlinux.org* using `scp` and then **tag** the package by going to the *pkgname/trunk* directory and issuing `archrelease community-arch`. This makes an svn copy of the trunk entries in a directory named *community-i686* or *community-x86_64* indicating that this package is in the community repository for that architecture.
 
-_**Note:** In some cases, especially for community packages, an x86_64 TU might bump the pkgrel by .1 (and not +1). This indicates that the change to the PKGBUILD is x86_64 specific and i686 maintainers **should not** rebuild the package for i686\. When the TU decides to bump the pkgrel, it should be done with the usual increment of +1\. However, a previous pkgrel=2.1 must not become pkgrel=3.1 when bumped by the TU and must instead be pkgrel=3\. In a nutshell, leave dot (.) releases exclusive to the x86_64 TU's to avoid confusion._
+***Note:** In some cases, especially for community packages, an x86_64 TU might bump the pkgrel by .1 (and not +1). This indicates that the change to the PKGBUILD is x86_64 specific and i686 maintainers **should not** rebuild the package for i686\. When the TU decides to bump the pkgrel, it should be done with the usual increment of +1\. However, a previous pkgrel=2.1 must not become pkgrel=3.1 when bumped by the TU and must instead be pkgrel=3\. In a nutshell, leave dot (.) releases exclusive to the x86_64 TU's to avoid confusion.*
 
 **Package update summary:**
 
@@ -112,11 +112,11 @@ _**Note:** In some cases, especially for community packages, an x86_64 TU might 
 *   **Commit**, **Sign**, **Copy** and **Tag** the package using `communitypkg "commit message"`. This automates the following:
     *   **Commit** the changes to trunk: `svn commit`.
     *   **Sign** the package: `gpg --detach-sign *.pkg.tar.xz`.
-    *   **Copy** the package and its signature to _nymeria.archlinux.org_: `scp *.pkg.tar.xz *.pkg.tar.xz.sig nymeria.archlinux.org:staging/community/`.
+    *   **Copy** the package and its signature to *nymeria.archlinux.org*: `scp *.pkg.tar.xz *.pkg.tar.xz.sig nymeria.archlinux.org:staging/community/`.
     *   **Tag** the package: `archrelease community-{i686,x86_64`}.
 *   **Update** the repository: `ssh nymeria.archlinux.org /community/db-update`.
 
-Also see the _Miscellaneous_ section in the [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager"). For the section _Avoid having to enter your password all the time_ use _nymeria.archlinux.org_ instead of _gerolde.archlinux.org_.
+Also see the *Miscellaneous* section in the [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager"). For the section *Avoid having to enter your password all the time* use *nymeria.archlinux.org* instead of *gerolde.archlinux.org*.
 
 ### Disowning packages
 

@@ -46,7 +46,7 @@ upload_rate = 28
 
 ```
 
-La siguiente opción determinará donde se grabarán sus torrents. Cambie el directorio por defecto al que usted quiera utilizar. Asegúrese de introducir la ruta absoluta; hay un extraño error en RTorrent que hace que _a veces_ no respete las rutas relativas (esto es, ~/torrents):
+La siguiente opción determinará donde se grabarán sus torrents. Cambie el directorio por defecto al que usted quiera utilizar. Asegúrese de introducir la ruta absoluta; hay un extraño error en RTorrent que hace que *a veces* no respete las rutas relativas (esto es, ~/torrents):
 
 ```
 # Directorio por defecto para grabar los torrents bajados.
@@ -69,7 +69,7 @@ session = /home/[user]/.session/
 
 ```
 
-La siguiente opción hará que RTorrent "vigile" un directorio determinado por nuevos archivos .torrent. Utilizando su navegador, cuando encuentre un archivo torrent que quiera bajar, sólo tendrá que grabar el archivo en este directorio y RTorrent arrancará automáticamente el torrent. Asegúrese de crear el directorio que será puesto en vigilancia (simplemente ejecute como un usuario normal:_mkdir ~/watch_):
+La siguiente opción hará que RTorrent "vigile" un directorio determinado por nuevos archivos .torrent. Utilizando su navegador, cuando encuentre un archivo torrent que quiera bajar, sólo tendrá que grabar el archivo en este directorio y RTorrent arrancará automáticamente el torrent. Asegúrese de crear el directorio que será puesto en vigilancia (simplemente ejecute como un usuario normal:*mkdir ~/watch*):
 
 ```
 # Vigilar un directorio en busca de nuevos torrents, y parar aquellos que hayan sido 
@@ -187,7 +187,7 @@ screen -t rtorrent rtorrent
 
 ```
 
-Para arrancar screen + RTorrent, simplemente tiene que ejecutar _screen_ desde un terminal. Control-D-A quitará screen y ejecutando _screen -raAd_ abrirá screen de nuevo.
+Para arrancar screen + RTorrent, simplemente tiene que ejecutar *screen* desde un terminal. Control-D-A quitará screen y ejecutando *screen -raAd* abrirá screen de nuevo.
 
 ## Consejos adicionales
 

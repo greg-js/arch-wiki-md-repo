@@ -31,27 +31,27 @@ First, prepare the partition by securely erasing it, see [Dm-crypt/Drive prepara
 Then setup the LUKS header with:
 
 ```
-# cryptsetup _options_ luksFormat _device_
+# cryptsetup *options* luksFormat *device*
 
 ```
 
-Replace `_device_` with the previously created partition. See [Dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") for details like the available `_options_`.
+Replace `*device*` with the previously created partition. See [Dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") for details like the available `*options*`.
 
 To gain access to the encrypted partition, unlock it with the device mapper, using:
 
 ```
-# cryptsetup open _device_ _name_
+# cryptsetup open *device* *name*
 
 ```
 
-After unlocking the partition, it will be available at `/dev/mapper/_name_`. Now create a [file system](/index.php/File_system "File system") of your choice with:
+After unlocking the partition, it will be available at `/dev/mapper/*name*`. Now create a [file system](/index.php/File_system "File system") of your choice with:
 
 ```
-# mkfs._fstype_ /dev/mapper/_name_
+# mkfs.*fstype* /dev/mapper/*name*
 
 ```
 
-Mount the file system to `/home`, or if it should be accessible to only one user to `/home/_username_`, see [#Manual mounting and unmounting](#Manual_mounting_and_unmounting).
+Mount the file system to `/home`, or if it should be accessible to only one user to `/home/*username*`, see [#Manual mounting and unmounting](#Manual_mounting_and_unmounting).
 
 **Tip:** Unmount and mount once to verify that the mapping is working as intended.
 
@@ -60,8 +60,8 @@ Mount the file system to `/home`, or if it should be accessible to only one user
 To mount the partition:
 
 ```
-# cryptsetup --type luks open _device_ _name_
-# mount -t _fstype_ /dev/mapper/_name_ /mnt/home
+# cryptsetup --type luks open *device* *name*
+# mount -t *fstype* /dev/mapper/*name* /mnt/home
 
 ```
 
@@ -69,7 +69,7 @@ To unmount it:
 
 ```
 # umount /mnt/home
-# cryptsetup close _name_
+# cryptsetup close *name*
 
 ```
 
@@ -115,7 +115,7 @@ Next create the device node `/dev/loop0`, so that we can mount/use our container
 
 From now on the procedure is the same as for [#Partition](#Partition), except for the fact that the container is already randomised and will not need another secure erasure.
 
-**Tip:** Containers with _dm-crypt_ can be very flexible. Have a look at the features and documentation of [Tomb](/index.php/Tomb "Tomb"). It provides a _dm-crypt_ script wrapper for fast and flexible handling.
+**Tip:** Containers with *dm-crypt* can be very flexible. Have a look at the features and documentation of [Tomb](/index.php/Tomb "Tomb"). It provides a *dm-crypt* script wrapper for fast and flexible handling.
 
 ### Manual mounting and unmounting
 

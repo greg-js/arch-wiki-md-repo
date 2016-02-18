@@ -1,6 +1,6 @@
 From [GitLab's homepage:](https://about.gitlab.com/)
 
-	_GitLab offers git repository management, code reviews, issue tracking, activity feeds and wikis. Enterprises install GitLab on-premise and connect it with LDAP and Active Directory servers for secure authentication and authorization. A single GitLab server can handle more than 25,000 users but it is also possible to create a high availability setup with multiple active servers._
+	*GitLab offers git repository management, code reviews, issue tracking, activity feeds and wikis. Enterprises install GitLab on-premise and connect it with LDAP and Active Directory servers for secure authentication and authorization. A single GitLab server can handle more than 25,000 users but it is also possible to create a high availability setup with multiple active servers.*
 
 An example live version can be found at [GitLab.com](https://gitlab.com/).
 
@@ -88,7 +88,6 @@ The [gitlab](https://aur.archlinux.org/packages/gitlab/) package installs GitLab
 Edit `/etc/webapps/gitlab-shell/config.yml` and set `gitlab_url:` to the prefer url and port:
 
  `/etc/webapps/gitlab-shell/config.yml` 
-
 ```
 # GitLab user. git by default
 user: gitlab
@@ -135,7 +134,6 @@ A Database backend will be required before Gitlab can be run. Currently GitLab s
 To set up MySQL (MariaDB) you need to create a database called `gitlabhq_production` along with a user (default: `gitlab`) who has full privileges to the database:
 
  `$ mysql -u root -p` 
-
 ```
 mysql> CREATE DATABASE `gitlabhq_production` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`;
 mysql> CREATE USER 'gitlab'@'localhost' IDENTIFIED BY 'password';
@@ -153,7 +151,6 @@ $ mysql -u **gitlab** -p -D gitlabhq_production
 Next you will need to open `/etc/webapps/gitlab/database.yml` and set `username:` and `password:` for the `gitlabhq_production`:
 
  `/etc/webapps/gitlab/database.yml` 
-
 ```
 #
 # PRODUCTION
@@ -215,7 +212,6 @@ Copy the PostgreSQL template file before configuring it (overwriting the default
 Open the new `/etc/webapps/gitlab/database.yml` and set the values for `username:` and `password:`. For example:
 
  `/etc/webapps/gitlab/database.yml` 
-
 ```
 #
 # PRODUCTION
@@ -382,9 +378,7 @@ With the following commands we check if the steps we followed so far are configu
 ```
 
 **Note:** These gitlab:env:info and gitlab:check commands will show a fatal error related to git. This is OK.
-
  `$ sudo -u gitlab bundle exec rake gitlab:env:info RAILS_ENV=production` 
-
 ```
 fatal: Not a git repository (or any of the parent directories): .git
 
@@ -418,9 +412,7 @@ Git:		/usr/bin/git
 ```
 
 **Note:** `gitlab:check` will complain about missing initscripts. This is nothing to worry about, as [systemd](/index.php/Systemd "Systemd") service files are used instead (which GitLab does not recognize).
-
  `$ sudo -u gitlab bundle exec rake gitlab:check RAILS_ENV=production` 
-
 ```
 fatal: Not a git repository (or any of the parent directories): .git
 Checking Environment ...
@@ -514,7 +506,6 @@ you should replace that with:
 If you are running SSH on a non-standard port, you must change the GitLab user's SSH config:
 
  `/var/lib/gitlab/.ssh/config` 
-
 ```
 host localhost      # Give your setup a name (here: override localhost)
 user gitlab         # Your remote git user
@@ -557,7 +548,6 @@ Setup [Nginx](/index.php/Nginx "Nginx"), and create the following directories (i
 Create a file `/etc/nginx/servers-available/gitlab` with the following content:
 
  `/etc/nginx/servers-available/gitlab` 
-
 ```
 # Created by: Sameer Naik
 # Contributor: francoism90
@@ -702,7 +692,7 @@ Finally [start](/index.php/Start "Start") `gitlab-unicorn.service`.
 
 ### Redis
 
-Using a Redis setup different from default (e.g. different address, port, unix socket) requires the environment variable _REDIS_URL_ to be set accordingly for unicorn. This can be achieved by extending the systemd service file. Create a file _/etc/systemd/system/gitlab-unicorn.service.d/redis.conf_ that injects the _REDIS_URL_ environment variable:
+Using a Redis setup different from default (e.g. different address, port, unix socket) requires the environment variable *REDIS_URL* to be set accordingly for unicorn. This can be achieved by extending the systemd service file. Create a file */etc/systemd/system/gitlab-unicorn.service.d/redis.conf* that injects the *REDIS_URL* environment variable:
 
 ```
 [Service]
@@ -715,7 +705,6 @@ Environment=REDIS_URL=unix:///run/gitlab/redis.sock
 If Redis is set to listen on socket, you may want to adjust the default configuration:
 
  `/etc/redis.conf` 
-
 ```
 ...
 # Accept connections on the specified port, default is 6379.
@@ -760,15 +749,12 @@ Add the user `git` and `gitlab` to the `redis` group:
 Update `/etc/webapps/gitlab-shell/config.yml` and `/etc/webapps/gitlab/resque.yml` files:
 
  `/etc/webapps/gitlab/resque.yml` 
-
 ```
 development: unix:/var/run/redis/redis.sock
 test: unix:/run/redis/redis.sock
 production: unix:/run/redis/redis.sock
 ```
-
  `/etc/webapps/gitlab-shell/config.yml` 
-
 ```
 ...
 # Redis settings used for pushing commit notices to gitlab
@@ -828,7 +814,6 @@ Go to Gitlab's home directory:
 and run:
 
  `# rake -T | grep gitlab` 
-
 ```
 rake gitlab:app:check                         # GITLAB | Check the configuration of the GitLab Rails app
 rake gitlab:backup:create                     # GITLAB | Create a backup of the GitLab system
@@ -924,16 +909,13 @@ For the complete installation you will want to be the final user (e.g. `git`) so
 Then continue with the installation instructions from above. However, the systemd scripts will not work this way, because the environment for the rvm is not activated. The recommendation here is to create to separate shell scripts for `unicorn` and `sidekiq` to activate the environment and then start the service:
 
  `gitlab.sh` 
-
 ```
 #!/bin/sh
 source `/home/git/.rvm/bin/rvm 1.9.3 do rvm env --path`
 bundle exec "unicorn_rails -c /usr/share/webapps/gitlab/config/unicorn.rb -E production"
 
 ```
-
  `sidekiq.sh` 
-
 ```
 #!/bin/sh
 source `/home/git/.rvm/bin/rvm 1.9.3 do rvm env --path`
@@ -953,14 +935,11 @@ esac
 Then modify the above systemd files so they use these scripts. Modify the given lines:
 
  `gitlab.service` 
-
 ```
 ExecStart=/home/git/bin/gitlab.sh
 
 ```
-
  `sidekiq.service` 
-
 ```
 ExecStart=/home/git/bin/sidekiq.sh start
 ExecStop=/home/git/bin/sidekiq.sh stop
@@ -974,7 +953,6 @@ You might want to use a gmail (or other mail service) to send mails from your gi
 Adjust `smtp_settings.rb` according to your mail server settings:
 
  `/usr/share/webapps/gitlab/config/initializers/smtp_settings.rb` 
-
 ```
 if Rails.env.production?
   Gitlab::Application.config.action_mailer.delivery_method = :smtp

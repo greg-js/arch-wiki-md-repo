@@ -21,10 +21,10 @@ This page is mainly about how to gather more information in connection with bug 
 
 ### Run it from the commandline
 
-If an application suddenly crashes, try running it from a [terminal emulator](/index.php/Terminal_emulator "Terminal emulator"). Type in the name of the application in lowercase letters. If you do not know the name of the executable, only the name of the package, the following command can find the name of the executable. Replace _packagename_ with the name of the package:
+If an application suddenly crashes, try running it from a [terminal emulator](/index.php/Terminal_emulator "Terminal emulator"). Type in the name of the application in lowercase letters. If you do not know the name of the executable, only the name of the package, the following command can find the name of the executable. Replace *packagename* with the name of the package:
 
 ```
-for f in `pacman -Ql _packagename_ | grep "/bin/" | cut -d" " -f2`; do file $f 2>/dev/null | grep -q executable && basename $f; done
+for f in `pacman -Ql *packagename* | grep "/bin/" | cut -d" " -f2`; do file $f 2>/dev/null | grep -q executable && basename $f; done
 
 ```
 
@@ -47,7 +47,7 @@ There are several techniques that can be used to figure out what went wrong. Put
 
 ### Gdb
 
-[gdb](https://www.archlinux.org/packages/?name=gdb) is an ancient and well tested application for debugging applications. Replace _appname_ with the name of your executable:
+[gdb](https://www.archlinux.org/packages/?name=gdb) is an ancient and well tested application for debugging applications. Replace *appname* with the name of your executable:
 
 ```
 $ gdb appname
@@ -90,7 +90,7 @@ bt full
 
 ### Valgrind
 
-Assuming you have an unstripped binary without inlined functions, it is usually a good idea to also run that program through [valgrind](https://www.archlinux.org/packages/?name=valgrind). _valgrind_ is a tool that emulates a CPU and usually shows where things go wrong or provide additional info in addition to gdb.
+Assuming you have an unstripped binary without inlined functions, it is usually a good idea to also run that program through [valgrind](https://www.archlinux.org/packages/?name=valgrind). *valgrind* is a tool that emulates a CPU and usually shows where things go wrong or provide additional info in addition to gdb.
 
 ```
 $ valgrind appname
@@ -114,7 +114,7 @@ and run the output through [kdesdk-kcachegrind](https://www.archlinux.org/packag
 
 [strace](https://www.archlinux.org/packages/?name=strace) finds out in detail what an application is actually doing. If an application tries to open a file that is not there, it can be discovered by strace.
 
-For finding which files a program named _appname_ tries to open:
+For finding which files a program named *appname* tries to open:
 
 ```
 $ strace -eopen appname
@@ -125,11 +125,11 @@ Save the output, post it to a [Pastebin client](/index.php/List_of_applications#
 
 **Tip:** If you wish to grep the output from strace, you can try:
 
-`strace -o /dev/stdout appname | grep _string_`
+`strace -o /dev/stdout appname | grep *string*`
 
 ### LD_DEBUG
 
-Setting `LD_DEBUG=files` gives another overview of what files an application is looking for. For an application named _appname_:
+Setting `LD_DEBUG=files` gives another overview of what files an application is looking for. For an application named *appname*:
 
 ```
 LD_DEBUG=files appname > appname.log 2>&1
@@ -158,7 +158,7 @@ Make sure the interpreter in question (like /lib/ld-linux-x86-64.so.2) actually 
 Use [file](https://www.archlinux.org/packages/?name=file) on the executable to get more information (replace "appname" with your executable):
 
 ```
-$ file /usr/bin/_appname_
+$ file /usr/bin/*appname*
 
 ```
 
@@ -166,7 +166,7 @@ If it says "ELF" it is a binary executable and is usually written in C or C++. I
 
 If it is a shell script, open up the shell script in a text editor and see (usually at the bottom of the file) if you can find the name of the real application (ELF file). You can then temporarily put "gdb" right in the shellscript, before the name of the executable, for debugging purposes. See the sections about gdb further up. Prefix the command with `gdb --args` if the executable in question needs arguments as well.
 
-For pure shell scripts, you can also use `bash -x _script_name_` or `bash -xv _script_name_`.
+For pure shell scripts, you can also use `bash -x *script_name*` or `bash -xv *script_name*`.
 
 For Python applications, the output will often say which file and line number the crash occured at. If you are proficient with Python, you can try to fix this and include the fix in the bug report.
 

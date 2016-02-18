@@ -205,7 +205,6 @@ Aggiornare il sistema con `pacman -Syu` e installare il pacchetto [gcc-multilib]
 *   [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) è in grado di costruire codice a 32-bit e 64-bit. Si può installare `multilib-devel` e sostituire i pacchetti indicati qui di seguito, ma `base-devel` è ancora necessario per gli altri pacchetti che include. Vedere https://bbs.archlinux.org/viewtopic.php?id=102828 per ulteriori informazioni.
 
  `# pacman -S gcc-multilib` 
-
 ```
 resolving dependencies...
 warning: dependency cycle detected:

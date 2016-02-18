@@ -27,7 +27,7 @@ Questo articolo descrive la configurazione dettagliata delle Qt e GTK+ per assic
 
 I programmi basati su [Qt](http://it.wikipedia.org/wiki/Qt_(toolkit))- e [GTK+](/index.php/GTK%2B_(Italiano) "GTK+ (Italiano)") utilizzano diversi widget toolkit per renderizzare l'interfaccia grafica utente. Ognuno di default è fornito di diversi temi, stili e set di icone così il "look & feel" è significativamente differente. Questo articolo vi aiuterà nel rendere le applicazioni Qt e GTK+ simili tra loro in modo da ottenere un'esperienza desktop più "integrata" e razionale.
 
-_"Qt (pronuncia "cute") è un framework di sviluppo applicazioni cross-platform largamente usato per sviluppare sia applicazioni basate su GUI (in questo caso esso è noto come widget toolkit) che applicazioni "non-GUI" come strumenti per console e server."_
+*"Qt (pronuncia "cute") è un framework di sviluppo applicazioni cross-platform largamente usato per sviluppare sia applicazioni basate su GUI (in questo caso esso è noto come widget toolkit) che applicazioni "non-GUI" come strumenti per console e server."*
 
 *   **Tema** - Raccolta di uno stile, un tema di icone e un tema di colori.
 *   **Stile** - Layout grafico; look.
@@ -46,7 +46,7 @@ Un altro port GTK+ è il pacchetto [oxygen-gtk](https://www.archlinux.org/packag
 
 ## QtCurve
 
-QtCurve è uno stile altamente configurabile e molto popolare. Dispone di molti controlli e opzioni che permettono di configurare diverse cose a partire dall'aspetto dei pulsanti fino alla forma delle barre di scorrimento. Disponibile per _qt4_ (kde4), _qt3_ (kde3), e _gtk2_ (gnome) nel repository **[extra]**, si può installare con pacman:
+QtCurve è uno stile altamente configurabile e molto popolare. Dispone di molti controlli e opzioni che permettono di configurare diverse cose a partire dall'aspetto dei pulsanti fino alla forma delle barre di scorrimento. Disponibile per *qt4* (kde4), *qt3* (kde3), e *gtk2* (gnome) nel repository **[extra]**, si può installare con pacman:
 
 ```
 # pacman -S qtcurve-gtk2 qtcurve-kde3 qtcurve-kde4
@@ -65,22 +65,22 @@ E' possibile usare i seguenti metodi per cambiare il tema in ogni ambiente.
 
 ## Stili QT3
 
-*   Usando il _Centro di controllo di KDE3_ (kcontrol):
+*   Usando il *Centro di controllo di KDE3* (kcontrol):
 
 	--> Aspetto & Temi --> Stile --> Stile del Widget
 
 *   kde-config --style [nome dello stile]
-*   _Qt Configuration_ (qt3config | /opt/qt/bin/qtconfig)
+*   *Qt Configuration* (qt3config | /opt/qt/bin/qtconfig)
 
 	--> Aspetto --> Seleziona stile della GUI
 
 ## Stili QT4
 
-*   Usando _Impostazioni di sistema di KDE4_ (/usr/bin/systemsettings)
+*   Usando *Impostazioni di sistema di KDE4* (/usr/bin/systemsettings)
 
 	--> Aspetto e comportamento comune --> Aspetto delle applicazioni --> Stile --> Stile del Widget
 
-*   _Qt Configuration_ (/usr/bin/qtconfig)
+*   *Qt Configuration* (/usr/bin/qtconfig)
 
 	--> Aspetto --> Seleziona stile della GUI
 
@@ -112,7 +112,7 @@ Questo motore può essere usato dalle applicazioni GTK+ nell'ambiente KDE, quest
 
 E' possibile accedere ad esso da:
 
-	_Centro di controllo (kcontrol) --> Aspetto & Temi --> Font e Stili GTK_
+	*Centro di controllo (kcontrol) --> Aspetto & Temi --> Font e Stili GTK*
 
 Se lo si vuole rimuovere completamente si dovrebbero rimuovere i seguenti file:
 
@@ -139,7 +139,7 @@ Questo è uno stile Qt che intende rendere le applicazioni perfettamente armoniz
 
 ### Possibili problemi con le applicazioni Qt che utilizzano QGtkStyle
 
-Le Qt non applicano correttamente lo stile QGtkStyle se le GTK usano [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications"). Qt determina se [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications") è in uso leggendo il file di configurazione delle GTK contenuto nella variabile di sistema **GTK2_RC_FILES**. Se questa variabile non è impostata correttamente Qt suppone che si stia usando [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications"), inoltre configura QGtkStyle in modo che utilizzi lo stile GTK _Clearlooks_ e visualizza il seguente messaggio di errore:
+Le Qt non applicano correttamente lo stile QGtkStyle se le GTK usano [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications"). Qt determina se [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications") è in uso leggendo il file di configurazione delle GTK contenuto nella variabile di sistema **GTK2_RC_FILES**. Se questa variabile non è impostata correttamente Qt suppone che si stia usando [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications"), inoltre configura QGtkStyle in modo che utilizzi lo stile GTK *Clearlooks* e visualizza il seguente messaggio di errore:
 
 ```
 QGtkStyle cannot be used together with the GTK_Qt engine.
@@ -160,7 +160,6 @@ Gli utenti di [Openbox](/index.php/Openbox "Openbox") e degli altri sistemi non-
     *   La variabile $HOME deve contenere il percorso della home del proprio utente. L'utilizzo del simbolo ~ non funziona.
 
  `.xinitrc` 
-
 ```
 ...
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
@@ -172,7 +171,6 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
     *   Se il file `~/.gtkrc-2.0` non esiste basta semplicemente crearlo ed aggiungere le seguenti linee:
 
  `.gtkrc-2.0` 
-
 ```
 ...
 gtk-theme-name="Crux"
@@ -182,13 +180,11 @@ gtk-theme-name="Crux"
 Comunque sembra che a volte questi tool inseriscono solamente una direttiva del tipo:
 
  `.gtkrc-2.0` 
-
 ```
 ...
 include "/usr/share/themes/SomeTheme/gtk-2.0/gtkrc"
 ...
 ```
-
 che apparentemente non viene riconosciuta da tutte le versioni di QGtkStyle. Una soluzione è inserire manualmente il nome del tema gtk nel file .gtkrc-2.0 come sopra. Notare che comunque durante l'utilizzo delle applicazioni per la modifica degli stili GTK2 queste modifiche potrebbero essere perse.
 
 Per scegliere il proprio tema GTK nelle applicazioni Qt si deve eseguire:

@@ -25,7 +25,7 @@ Source: [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4)
 To format a partition do:
 
 ```
-# mkfs.ext4 /dev/_partition_
+# mkfs.ext4 /dev/*partition*
 
 ```
 
@@ -35,7 +35,7 @@ To format a partition do:
 
 From `man mkfs.ext4`:
 
-	_**mke2fs** creates an inode for every_ bytes-per-inode _bytes of space on the disk. The larger the_ bytes-per-inode _ratio, the fewer inodes will be created._
+	***mke2fs** creates an inode for every* bytes-per-inode *bytes of space on the disk. The larger the* bytes-per-inode *ratio, the fewer inodes will be created.*
 
 Creating a new file, directory, symlink etc. requires at least one free inode. If the inode count is too low, no file can be created on the filesystem even though there is still space left on it.
 
@@ -48,35 +48,32 @@ This results in a waste of disk space, because all those unused inodes each take
 This can be evaluated by comparing the `{I}Use%` figures provided by `df` and `df -i`:
 
  `$ df -h /home` 
-
 ```
 Filesystem              Size    Used   Avail  **Use%**   Mounted on
 /dev/mapper/lvm-home    115G    56G    59G    **49%**    /home
 ```
-
  `$ df -hi /home` 
-
 ```
 Filesystem              Inodes  IUsed  IFree  **IUse%**  Mounted on
 /dev/mapper/lvm-home    1.8M    1.1K   1.8M   **1%**     /home
 ```
 
-Here comes the `-T _usage-type_` option, which specifies the expected usage of the filesystem using types defined in `/etc/mke2fs.conf`. Among those types are the bigger `largefile` and `largefile4`, which offer more relevant ratios for bigger disks of 1 MiB and 4 MiB respectively. They can be used as such:
+Here comes the `-T *usage-type*` option, which specifies the expected usage of the filesystem using types defined in `/etc/mke2fs.conf`. Among those types are the bigger `largefile` and `largefile4`, which offer more relevant ratios for bigger disks of 1 MiB and 4 MiB respectively. They can be used as such:
 
 ```
-# mkfs.ext4 -T largefile /dev/_device_
+# mkfs.ext4 -T largefile /dev/*device*
 
 ```
 
-This ratio can also be set directly via the `-i` option: _e.g._ use `-i 2097152` for a 2 MiB ratio and `-i 6291456` for a 6 MiB ratio.
+This ratio can also be set directly via the `-i` option: *e.g.* use `-i 2097152` for a 2 MiB ratio and `-i 6291456` for a 6 MiB ratio.
 
-**Tip:** Conversely, if you are setting up a partition dedicated to host millions of small files like emails or newsgroup items, you can use smaller _usage-type_ values such as `news` (one inode for every 4096 bytes) or `small` (same plus smaller inode and block sizes).
+**Tip:** Conversely, if you are setting up a partition dedicated to host millions of small files like emails or newsgroup items, you can use smaller *usage-type* values such as `news` (one inode for every 4096 bytes) or `small` (same plus smaller inode and block sizes).
 
-**Warning:** If you make a heavy use of symbolic or hard links, _e.g._ you use a backup scheme leveraging [rsync](/index.php/Rsync "Rsync") `--link-dest` feature ([rsnapshot](/index.php/Rsnapshot "Rsnapshot"), [BackupPC](/index.php/BackupPC "BackupPC"), [backintime](https://aur.archlinux.org/packages/backintime/)...), you may want to keep your inode number high enough because while not taking more space, every new hardlink consumes one new inode and therefore inode use may grow dramatically.
+**Warning:** If you make a heavy use of symbolic or hard links, *e.g.* you use a backup scheme leveraging [rsync](/index.php/Rsync "Rsync") `--link-dest` feature ([rsnapshot](/index.php/Rsnapshot "Rsnapshot"), [BackupPC](/index.php/BackupPC "BackupPC"), [backintime](https://aur.archlinux.org/packages/backintime/)...), you may want to keep your inode number high enough because while not taking more space, every new hardlink consumes one new inode and therefore inode use may grow dramatically.
 
 ### Reserved blocks
 
-By default, 5% of the filesystem blocks will be reserved for the super-user, to avoid fragmentation and "_allow root-owned daemons to continue to function correctly after non-privileged processes are prevented from writing to the filesystem_" (from `man mkfs.ext4`).
+By default, 5% of the filesystem blocks will be reserved for the super-user, to avoid fragmentation and "*allow root-owned daemons to continue to function correctly after non-privileged processes are prevented from writing to the filesystem*" (from `man mkfs.ext4`).
 
 For modern high-capacity disks, this is higher than necessary if the partition is used as a long-term archive or not crucial to system operations (like `/home`). See [this email](http://www.redhat.com/archives/ext3-users/2009-January/msg00026.html) for the opinion of ext4 developer Ted Ts'o on reserved blocks.
 
@@ -90,21 +87,21 @@ The `-m` option of ext4-related utilities allows to specify the percentage of re
 To totally prevent reserving blocks upon filesystem creation, use:
 
 ```
-# mkfs.ext4 -m 0 /dev/_device_
+# mkfs.ext4 -m 0 /dev/*device*
 
 ```
 
 To reduce it to 1% afterwards, use:
 
 ```
-# tune2fs -m 1 /dev/_device_
+# tune2fs -m 1 /dev/*device*
 
 ```
 
 You can use `findmnt(8)` to find the device name:
 
 ```
-$ findmnt _/the/mount/point_
+$ findmnt */the/mount/point*
 
 ```
 
@@ -165,9 +162,9 @@ In the following steps `/dev/sdxX` denotes the path to the partition to be conve
 5.  If you want to convert a ext2 partition, the first conversion step is to add a [journal](/index.php/File_systems#Journaling "File systems") by running `tune2fs -j /dev/sdxX` as root; making it a ext3 partition.
 6.  Run `tune2fs -O extent,uninit_bg,dir_index /dev/sdxX` as root. This command converts the ext3 filesystem to ext4 (irreversibly).
 7.  Run `fsck -f /dev/sdxX` as root.
-    *   The user **must _fsck_** the filesystem, or it **will be unreadable**! This _fsck_ run is needed to return the filesystem to a consistent state. It **will** find checksum errors in the group descriptors - this **is** expected. The `-f` option asks _fsck_ to force checking even if the file system seems clean. The `-p` option may be used on top to 'automatically repair' (otherwise, the user will be asked for input for each error).
+    *   The user **must *fsck*** the filesystem, or it **will be unreadable**! This *fsck* run is needed to return the filesystem to a consistent state. It **will** find checksum errors in the group descriptors - this **is** expected. The `-f` option asks *fsck* to force checking even if the file system seems clean. The `-p` option may be used on top to 'automatically repair' (otherwise, the user will be asked for input for each error).
 8.  Recommended: mount the partition and run `e4defrag -c -v /dev/sdxX` as root.
-    *   Even though the filesystem is now converted to ext4, all files that have been written before the conversion do not yet take advantage of the extent option of ext4, which will improve large file performance and reduce fragmentation and filesystem check time. In order to fully take advantage of ext4, all files would have to be rewritten on disk. Use _e4defrag_ to take care of this problem.
+    *   Even though the filesystem is now converted to ext4, all files that have been written before the conversion do not yet take advantage of the extent option of ext4, which will improve large file performance and reduce fragmentation and filesystem check time. In order to fully take advantage of ext4, all files would have to be rewritten on disk. Use *e4defrag* to take care of this problem.
 9.  Reboot Arch Linux!
 
 ## Using ext4 per directory encryption
@@ -189,7 +186,8 @@ index c5b384a..828e7cf 100644
                exit(1);
        }
 
--      printf("arg %s\n", argv[optind]);
+-      printf("arg %s
+", argv[optind]);
 -      exit(0);
 -
        strcpy(saltbuf.key_ref_str, argv[optind]);
@@ -262,9 +260,9 @@ That is all. If you try accessing the disk without adding a key into keychain, f
 
 Since kernel 2.6.30, ext4 performance has decreased due to changes that serve to improve data integrity [[8]](http://www.phoronix.com/scan.php?page=article&item=ext4_then_now&num=1).
 
-_Most file systems (XFS, ext3, ext4, reiserfs) send write barriers to disk after fsync or during transaction commits. Write barriers enforce proper ordering of writes, making volatile disk write caches safe to use (at some performance penalty). If your disks are battery-backed in one way or another, disabling barriers may safely improve performance._
+*Most file systems (XFS, ext3, ext4, reiserfs) send write barriers to disk after fsync or during transaction commits. Write barriers enforce proper ordering of writes, making volatile disk write caches safe to use (at some performance penalty). If your disks are battery-backed in one way or another, disabling barriers may safely improve performance.*
 
-_Sending write barriers can be disabled using the `barrier=0` mount option (for ext3, ext4, and reiserfs), or using the `nobarrier` mount option (for XFS)_ [[9]](http://doc.opensuse.org/products/draft/SLES/SLES-tuning_sd_draft/cha.tuning.io.html).
+*Sending write barriers can be disabled using the `barrier=0` mount option (for ext3, ext4, and reiserfs), or using the `nobarrier` mount option (for XFS)* [[9]](http://doc.opensuse.org/products/draft/SLES/SLES-tuning_sd_draft/cha.tuning.io.html).
 
 **Warning:** Disabling barriers when disks cannot guarantee caches are properly written in case of power failure can lead to severe file system corruption and data loss.
 

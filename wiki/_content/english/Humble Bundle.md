@@ -12,7 +12,7 @@ One must download the packages from Humble Bundle's website in order for the PKG
 
 *   `hib:// DLAGENT`: by creating a `DLAGENT` in [makepkg](/index.php/Makepkg "Makepkg")'s configuration file, the process of giving the PKGBUILD the game files is entirely automated. The recommended package for such a scenario is [hib-dlagent](https://aur.archlinux.org/packages/hib-dlagent), available in the AUR.
 
-After installing a dlagent helper, associate _hib://_ as a valid dlagent in _/etc/makepkg.conf_:
+After installing a dlagent helper, associate *hib://* as a valid dlagent in */etc/makepkg.conf*:
 
 ```
 hib::/usr/bin/hib-dlagent -u USER-EMAIL -o %o %u
@@ -28,13 +28,13 @@ hib::/usr/bin/hib-dlagent -u USER-EMAIL -p PASSWORD -o %o %u
 
 **Warning:** Be aware that any user on the system can read this file. This could expose your password.
 
-For a per-user setup, the following could be added to _~/.makepkg.conf_:
+For a per-user setup, the following could be added to *~/.makepkg.conf*:
 
 ```
 DLAGENT+=('hib::/usr/bin/hib-dlagent -u USER-EMAIL -p PASSWORD -o %o %u')
 
 ```
 
-Now installation of Humble Bundle games will be a simple installation command away (provided the associated PKGBUILD supports the _hib://_ scheme).
+Now installation of Humble Bundle games will be a simple installation command away (provided the associated PKGBUILD supports the *hib://* scheme).
 
 **Warning:** Since AUR automators will download files to the /tmp directory excessively large game files will likely cause /tmp to run out of room. The manual method is best for very large downloads.

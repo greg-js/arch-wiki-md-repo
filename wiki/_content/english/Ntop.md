@@ -22,7 +22,6 @@
 Next, you need to edit the configuration file (`/etc/conf.d/ntop`) to adapt on your needs. Below is an example configuration, with the focus on the host to get as much as information from the hosts connections:
 
  `/etc/conf.d/ntop` 
-
 ```
 # Parameters to be passed to ntop.
 NTOP_ARGS="-K -W 2323 -i enp1s0,wlp2s0 -M -s -4 -6 -s -u ntop -c -r 30 --w3c -t 3 -a /var/log/ntop/http.log -O /var/log/ntop/ -q --skip-version-check 0"
@@ -32,13 +31,13 @@ NTOP_LOG="/var/log/ntop/ntop.log"
 
 ```
 
-Start the _ntop_ [systemd](/index.php/Systemd "Systemd") service and if you want to start _ntop_ at boot, enable it.
+Start the *ntop* [systemd](/index.php/Systemd "Systemd") service and if you want to start *ntop* at boot, enable it.
 
 ## Tips and tricks
 
 ### Web interface
 
-To access ntop's web interface, enter [http://127.0.0.1:3000/](http://127.0.0.1:3000/) into your web browser. To make changes to the server, you will need to enter your username (default = _admin_) and password.
+To access ntop's web interface, enter [http://127.0.0.1:3000/](http://127.0.0.1:3000/) into your web browser. To make changes to the server, you will need to enter your username (default = *admin*) and password.
 
 If ntop is not just used locally on your machine, but network wide by multiple users, you'd be better off by allowing SSL connections (http**s**) **only**.
 
@@ -61,7 +60,7 @@ You can also provide ntop with your own SSL certificate. Simply put it in ntop's
 
 ### Group and user
 
-In order that the _-u_ parameter is able to work properly and to secure your ntop setup a bit more, you should create an own group and user for it.
+In order that the *-u* parameter is able to work properly and to secure your ntop setup a bit more, you should create an own group and user for it.
 
 ```
 # useradd -M -s /usr/bin/false ntop

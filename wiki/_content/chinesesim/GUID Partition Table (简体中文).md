@@ -157,8 +157,8 @@ parted --script --align optimal /dev/sda mkpart primary ext4 0% -8GiB mkpart pri
 
 得到**硬盘空间** (disk space) 和**交换空间** (swap space) 的值，然后设置**根分区** (root partition) 空间。
 
-*   **硬盘空间'**_下舍入'_到最近的MB数值，头 GPT 元数据被扣除 (1 MB).
-*   **交换空间'**_上舍入'_到基于内存大小的MB数值。
+*   **硬盘空间'***下舍入'*到最近的MB数值，头 GPT 元数据被扣除 (1 MB).
+*   **交换空间'***上舍入'*到基于内存大小的MB数值。
 
 ```
 diskspace=$(( $(grep sda$ /proc/partitions | awk '{print $3}') * 2 / 2048 - 1 ))

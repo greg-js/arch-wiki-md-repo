@@ -262,7 +262,7 @@ El comportamiento por defecto de dwm es aplicar el posicionamiento seleccionado 
 
 ### Eliminar espacios entre ventanas de las terminales
 
-Si se ven espacios vacíos en el escritorio fuera de las ventanas de las terminales, probablemente se deba al tamaño de la fuente de la terminal. Para solucionar ésto, o bien puede ajustar el tamaño de la fuente hasta encontrar la escala ideal que elimina el hueco, o modificar `resizehints` a _False_ en el archivo `config.h`:
+Si se ven espacios vacíos en el escritorio fuera de las ventanas de las terminales, probablemente se deba al tamaño de la fuente de la terminal. Para solucionar ésto, o bien puede ajustar el tamaño de la fuente hasta encontrar la escala ideal que elimina el hueco, o modificar `resizehints` a *False* en el archivo `config.h`:
 
 ```
 static Bool resizehints = False; /* False means respect size hints in tiled resizals */
@@ -282,7 +282,7 @@ static Bool resizehints = **True**;
 
 ### Reiniciar dwm sin cerrar sesión y programas abiertos
 
-Para reiniciar dwm sin cerrar sesión o cerrar los programas abiertos, modifique o agregue el siguiente código al script de inicio, así dwm carga en un bucle _while_, de la siguiente manera:
+Para reiniciar dwm sin cerrar sesión o cerrar los programas abiertos, modifique o agregue el siguiente código al script de inicio, así dwm carga en un bucle *while*, de la siguiente manera:
 
 ```
 while true; do

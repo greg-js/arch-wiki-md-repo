@@ -43,7 +43,7 @@
         *   [8.3.1 Μέθοδος 1 - Υποβάθμιση/αλλαγή οδηγού Windows](#.CE.9C.CE.AD.CE.B8.CE.BF.CE.B4.CE.BF.CF.82_1_-_.CE.A5.CF.80.CE.BF.CE.B2.CE.AC.CE.B8.CE.BC.CE.B9.CF.83.CE.B7.2F.CE.B1.CE.BB.CE.BB.CE.B1.CE.B3.CE.AE_.CE.BF.CE.B4.CE.B7.CE.B3.CE.BF.CF.8D_Windows)
         *   [8.3.2 Μέθοδος 2 - Ενεργοποίηση του WOL στον οδηγό των Windows](#.CE.9C.CE.AD.CE.B8.CE.BF.CE.B4.CE.BF.CF.82_2_-_.CE.95.CE.BD.CE.B5.CF.81.CE.B3.CE.BF.CF.80.CE.BF.CE.AF.CE.B7.CF.83.CE.B7_.CF.84.CE.BF.CF.85_WOL_.CF.83.CF.84.CE.BF.CE.BD_.CE.BF.CE.B4.CE.B7.CE.B3.CF.8C_.CF.84.CF.89.CE.BD_Windows)
         *   [8.3.3 Μέθοδος 3 - Νεώτερος οδηγός Realtek Linux](#.CE.9C.CE.AD.CE.B8.CE.BF.CE.B4.CE.BF.CF.82_3_-_.CE.9D.CE.B5.CF.8E.CF.84.CE.B5.CF.81.CE.BF.CF.82_.CE.BF.CE.B4.CE.B7.CE.B3.CF.8C.CF.82_Realtek_Linux)
-        *   [8.3.4 Μέθοδος 4 - Ενεργοποίηση _LAN Boot ROM_ στο BIOS/CMOS](#.CE.9C.CE.AD.CE.B8.CE.BF.CE.B4.CE.BF.CF.82_4_-_.CE.95.CE.BD.CE.B5.CF.81.CE.B3.CE.BF.CF.80.CE.BF.CE.AF.CE.B7.CF.83.CE.B7_LAN_Boot_ROM_.CF.83.CF.84.CE.BF_BIOS.2FCMOS)
+        *   [8.3.4 Μέθοδος 4 - Ενεργοποίηση *LAN Boot ROM* στο BIOS/CMOS](#.CE.9C.CE.AD.CE.B8.CE.BF.CE.B4.CE.BF.CF.82_4_-_.CE.95.CE.BD.CE.B5.CF.81.CE.B3.CE.BF.CF.80.CE.BF.CE.AF.CE.B7.CF.83.CE.B7_LAN_Boot_ROM_.CF.83.CF.84.CE.BF_BIOS.2FCMOS)
     *   [8.4 Πρόβλημα με DNS στο DLink G604T/DLink G502T](#.CE.A0.CF.81.CF.8C.CE.B2.CE.BB.CE.B7.CE.BC.CE.B1_.CE.BC.CE.B5_DNS_.CF.83.CF.84.CE.BF_DLink_G604T.2FDLink_G502T)
         *   [8.4.1 Πως θα αναγνωρίσετε το πρόβλημα](#.CE.A0.CF.89.CF.82_.CE.B8.CE.B1_.CE.B1.CE.BD.CE.B1.CE.B3.CE.BD.CF.89.CF.81.CE.AF.CF.83.CE.B5.CF.84.CE.B5_.CF.84.CE.BF_.CF.80.CF.81.CF.8C.CE.B2.CE.BB.CE.B7.CE.BC.CE.B1)
         *   [8.4.2 Περισσότερα για αυτό το πρόβλημα](#.CE.A0.CE.B5.CF.81.CE.B9.CF.83.CF.83.CF.8C.CF.84.CE.B5.CF.81.CE.B1_.CE.B3.CE.B9.CE.B1_.CE.B1.CF.85.CF.84.CF.8C_.CF.84.CE.BF_.CF.80.CF.81.CF.8C.CE.B2.CE.BB.CE.B7.CE.BC.CE.B1)
@@ -60,9 +60,7 @@
 Συνήθως η διαδικασία της βασικής εγκατάστασης, έχει δημιουργήσει μια σωστά διαμορφωμένη και ενεργή σύνδεση δικτύου. Για να το διαπιστώσετε δώστε την παρακάτω εντολή:
 
 **Σημείωση:** Η επιλογή `-c 3` την επαναλαμβάνει τρεις φορές. Δείτε `man ping` για περισσότερες πληροφορίες.
-
  `$ ping -c 3 www.google.com` 
-
 ```
 PING www.l.google.com (74.125.224.146) 56(84) bytes of data.
 64 bytes from 74.125.224.146: icmp_req=1 ttl=50 time=437 ms
@@ -80,7 +78,6 @@ rtt min/avg/max/mdev = 298.107/373.642/437.202/57.415 ms
 Αν η προηγούμενη εντολή δώσει έξοδο για άγνωστο προορισμό (unknown hosts), σημαίνει πως ο υπολογιστής σας απέτυχε να "μεταφράσει" αυτό το όνομα χώρου (domain name). Ίσως είναι πρόβλημα του δρομολογητή σας (router) και της διεύθυνσης εξόδου του (gateway) ή υπάρχει πρόβλημα με τον πάροχο δικτύου σας (ISP). Προσπαθήστε να κάνετε ping σε στατική ip για να διαπιστώσετε αν κάτι από τα παραπάνω ισχύει
 
  `$ ping -c 3 8.8.8.8` 
-
 ```
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 64 bytes from 8.8.8.8: icmp_req=1 ttl=53 time=52.9 ms
@@ -115,7 +112,7 @@ rtt min/avg/max/mdev = 52.975/65.375/72.543/8.803 ms
 Για προσωρινή ονομασία του υπολογιστή σας (έως την πρώτη επανεκκίνηση) χρησιμοποιήστε την εντολή `hostname` από το πακέτο [inetutils](https://www.archlinux.org/packages/?name=inetutils):
 
 ```
-# hostname _myhostname_
+# hostname *myhostname*
 
 ```
 
@@ -126,7 +123,6 @@ rtt min/avg/max/mdev = 52.975/65.375/72.543/8.803 ms
 O [udev](/index.php/Udev "Udev") πρέπει να έχει αναγνωρίσει την συσκευή σας ([NIC](https://en.wikipedia.org/wiki/Network_interface_controller "wikipedia:Network interface controller")) και να έχει φορτώσει αυτόματα την απαραίτητη λειτουργική μονάδα (module) κατά την εκκίνηση. Ελέγξτε την γραμμή "Ethernet controller" (ή κάποια παρόμοια) στα αποτελέσματα της εντολής `lspci -v`. Θα πρέπει να αναφέρει ποια λειτουργική μονάδα του πυρήνα (kernel module) περιέχει τον οδηγό για την συσκευή σας. Για παράδειγμα:
 
  `$ lspci -v` 
-
 ```
 02:00.0 Ethernet controller: Attansic Technology Corp. L1 Gigabit Ethernet Adapter (rev b0)
  	...
@@ -135,7 +131,7 @@ O [udev](/index.php/Udev "Udev") πρέπει να έχει αναγνωρίσε
 
 ```
 
-Κατόπιν βεβαιωθείτε πως ο οδηγός είναι ήδη φορτωμένος με την εντολή `dmesg | grep _module_name_`. Για παράδειγμα:
+Κατόπιν βεβαιωθείτε πως ο οδηγός είναι ήδη φορτωμένος με την εντολή `dmesg | grep *module_name*`. Για παράδειγμα:
 
 ```
 $ dmesg | grep atl1
@@ -171,14 +167,13 @@ $ dmesg | grep atl1
 
 **Συμβουλή:** Με `ip link` ή `ls /sys/class/net` μπορείτε να δείτε όλες τις διαθέσιμες διασυνδέσεις δικτύου του συστήματος σας.
 
-**Σημείωση:** Όταν αλλάξετε το όνομα κάποιας διεπαφής σας, μην ξεχάσετε να ενημερώσετε όλες τις σχετικές με το δίκτυο διαμορφώσεις και τα σχετικά με το systemd αρχεία (αν έχετε επέμβει στην διαμόρφωσή του χειροκίνητα) ώστε να λάβουν τα νέα ονόματα. Ειδικά, αν έχετε ενεργό το [netctl static profiles](/index.php/Netctl#Basic_method "Netctl"). τρέξτε `netctl reenable _profile_` ώστε να αναβαθμιστεί το παραγόμενο αρχείο.
+**Σημείωση:** Όταν αλλάξετε το όνομα κάποιας διεπαφής σας, μην ξεχάσετε να ενημερώσετε όλες τις σχετικές με το δίκτυο διαμορφώσεις και τα σχετικά με το systemd αρχεία (αν έχετε επέμβει στην διαμόρφωσή του χειροκίνητα) ώστε να λάβουν τα νέα ονόματα. Ειδικά, αν έχετε ενεργό το [netctl static profiles](/index.php/Netctl#Basic_method "Netctl"). τρέξτε `netctl reenable *profile*` ώστε να αναβαθμιστεί το παραγόμενο αρχείο.
 
 #### Αλλαγή ονόματος συσκευής
 
 Μπορείτε να αλλάξετε το όνομα της συσκευής σας ορίζοντας το νέο, χειροκίνητα με έναν udev-rule. Για παράδειγμα:
 
  `/etc/udev/rules.d/10-network.rules` 
-
 ```
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="aa:bb:cc:dd:ee:ff", NAME="net1"
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="ff:ee:dd:cc:bb:aa", NAME="net0"
@@ -187,27 +182,25 @@ SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="ff:ee:dd:cc:bb:aa", NAME="net0"
 
 Δύο πράγματα πρέπει να προσέξετε:
 
-*   Για να δείτε την διεύθυνση MAC (MAC address) της κάθε συσκευής σας χρησιμοποιείστε την παρακάτω εντολή: `cat /sys/class/net/_device_name_/address`
+*   Για να δείτε την διεύθυνση MAC (MAC address) της κάθε συσκευής σας χρησιμοποιείστε την παρακάτω εντολή: `cat /sys/class/net/*device_name*/address`
 
 *   Βεβαιωθείτε πως χρησιμοποιείτε πεζούς χαρακτήρες στους udev-rules. Δεν καταλαβαίνει τα κεφαλαία.
 
 Αν η κάρτα δικτύου σας έχει δυναμική διεύθυνση MAC (dynamic MAC address), μπορείτε να χρησιμοποιήσετε την εντολή DEVPATH για παράδειγμα
 
  `/etc/udev/rules.d/10-network.rules` 
-
 ```
 SUBSYSTEM=="net", DEVPATH=="/devices/platform/wemac.*", NAME="int"
 
 ```
 
-**Σημείωση:** Όταν επιλέγετε στατικά ονόματα συσκευών **πρέπει να αποφεύγετε να χρησιμοποιείτε ονόματα μορφής "eth_Χ_" και "wlan_Χ_"**, διότι μπορεί να εξελιχθεί σε αγώνα ([https://en.wikipedia.org/wiki/Race_condition](https://en.wikipedia.org/wiki/Race_condition)) μεταξύ kernel και udev κατά την διάρκεια της εκκίνησης. Αντ' αυτού είναι καλύτερο να χρησιμοποιείτε ονόματα για τις συσκευές σας που δεν χρησιμοποιούνται από τον πυρήνα από προεπιλογή π.χ. `net0`, `net1`, `wifi0`, `wifi1`. Για περισσότερες πληροφορίες δείτε την τεκμηρίωση του [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames).
+**Σημείωση:** Όταν επιλέγετε στατικά ονόματα συσκευών **πρέπει να αποφεύγετε να χρησιμοποιείτε ονόματα μορφής "eth*Χ*" και "wlan*Χ*"**, διότι μπορεί να εξελιχθεί σε αγώνα ([https://en.wikipedia.org/wiki/Race_condition](https://en.wikipedia.org/wiki/Race_condition)) μεταξύ kernel και udev κατά την διάρκεια της εκκίνησης. Αντ' αυτού είναι καλύτερο να χρησιμοποιείτε ονόματα για τις συσκευές σας που δεν χρησιμοποιούνται από τον πυρήνα από προεπιλογή π.χ. `net0`, `net1`, `wifi0`, `wifi1`. Για περισσότερες πληροφορίες δείτε την τεκμηρίωση του [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames).
 
 ### Ορισμός της μονάδας μέγιστης μετάδοσης (MTU) και μεγέθους ουράς (queue Length)
 
 Μπορείτε να αλλάξετε το MTU και το queue Length ορίζοντας το επιθυμητό σε εσάς με έναν κανόνα udev (udev-rule). Για παράδειγμα:
 
  `/etc/udev/rules.d/10-network.rules` 
-
 ```
 ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_len}="2000"
 
@@ -220,7 +213,6 @@ ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_
 Τα ονόματα των συσκευών δικτύου σας, μπορούν να βρεθούν με την εντολή sysfs
 
  `$ ls /sys/class/net` 
-
 ```
 lo eth0 eth1 firewire0
 
@@ -239,7 +231,6 @@ lo eth0 eth1 firewire0
 Για να ελέγξετε το αποτέλεσμα:
 
  `$ ip link show dev eth0` 
-
 ```
 2: eth0: <BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master br0 state UP mode DEFAULT qlen 1000
 ...
@@ -254,10 +245,9 @@ lo eth0 eth1 firewire0
 
 #### Χειροκίνητη εκκίνηση DHCP Client Daemon
 
-Σημειώστε πως ο δαίμονας `dhcpcd` (DHCP _client_ daemon) δεν είναι ο ίδιος με τον `dhcpd` (DHCP _(server)_ daemon).
+Σημειώστε πως ο δαίμονας `dhcpcd` (DHCP *client* daemon) δεν είναι ο ίδιος με τον `dhcpd` (DHCP *(server)* daemon).
 
  `# dhcpcd eth0` 
-
 ```
  dhcpcd: version 5.1.1 starting
  dhcpcd: eth0: broadcasting for a lease
@@ -291,7 +281,6 @@ lo eth0 eth1 firewire0
 Αν η διεργασία dhcpd, εκκινήσει πριν φορτωθεί στον πυρήνα το άρθρωμα (module) που αφορά την κάρτα σας ([FS#30235](https://bugs.archlinux.org/task/30235)), χειροκίνητα προσθέστε την στο αρχείο `/etc/modules-load.d/*.conf`. Για παράδειγμα, αν η Realtek κάρτα σας απαιτεί το άρθρωμα (module) `r8169`, δημιουργήστε το αρχείο `/etc/modules-load.d/realtek.conf` όπως εμφανίζεται παρακάτω:
 
  `/etc/modules-load.d/realtek.conf` 
-
 ```
 r8169
 
@@ -302,7 +291,6 @@ r8169
 Αν χρησιμοποιήτε DHCP και **δεν** θέλετε να σας αποδίδονται αυτόματα οι DNS servers κάθε φορά που εκκινήτε την σύνδεση με το δίκτυό σας, σιγουρευτείτε πως έχετε προσθέσει στο τελευταίο τμήμα του αρχείου `dhcpcd.conf` την παρακάτω γραμμή:
 
  `/etc/dhcpcd.conf` 
-
 ```
 nohook resolv.conf
 
@@ -311,7 +299,6 @@ nohook resolv.conf
 Επίσης αν είστε σε ένα δίκτυο με ενεργό DHCPv4, το οποίο κάνει επιλογή ταυτότητας client με βάση τις MAC διευθύνσεις, ίσως θα θέλατε να αλλάξετε την ακόλουθη γραμμή:
 
  `/etc/dhcpcd.conf` 
-
 ```
 # Use the same DUID + IAID as set in DHCPv6 for DHCPv4 Client ID as per RFC4361\. 
 duid
@@ -321,7 +308,6 @@ duid
 Σε:
 
  `/etc/dhcpcd.conf` 
-
 ```
 # Use the hardware address of the interface for the Client ID (DHCPv4).
 clientid
@@ -333,7 +319,6 @@ clientid
 Για να αποτρέψετε τον `dhcpcd` από το να προσθέσει DNS servers στο αρχείο `/etc/resolv.conf`, χρησιμοποιήστε την επιλογή `nooption`:
 
  `/etc/dhcpcd.conf` 
-
 ```
 nooption domain_name_servers
 
@@ -399,7 +384,6 @@ nooption domain_name_servers
 Πρώτα πρέπει να δημιουργήσετε ένα αρχείο διαμόρφωσης για την διεργασία [systemd](/index.php/Systemd "Systemd"), αντικαθιστώντας το `<interface>` με το σωστό:
 
  `/etc/conf.d/network@<interface>` 
-
 ```
 address=192.168.0.15
 netmask=24
@@ -411,7 +395,6 @@ gateway=192.168.0.1
 Δημιουργήστε ένα αρχείο μονάδας systemd:
 
  `/etc/systemd/system/network@.service` 
-
 ```
 [Unit]
 Description=Network connectivity (%i)
@@ -450,7 +433,6 @@ WantedBy=multi-user.target
 Μπορείτε να χρησιμοποιήσετε το `ipcalc` που περιέχεται στο πακέτο (ip broadcast), [ipcalc](https://www.archlinux.org/packages/?name=ipcalc) το εύρος από την διεύθυνση εκπομπής (ip broadcast), δίκτυο, μάσκα δικτύου (netmask), και εύρος υποδοχής (host range) για προηγμένες ρυθμίσεις. Για παράδειγμα, χρησιμοποιώ ενσύρματη σύνδεση πάνω από firewire ώστε να συνδέσω έναν υπολογιστή με windows σε αυτόν με arch. Για ασφάλεια και οργάνωση δικτύου, τα τοποθέτησα σε ένα δικό τους δίκτυο και διαμόρφωσα το netmask και το broadcast ώστε να είναι οι μόνοι υπολογιστές σε αυτό το δίκτυο. Για να βρω τις διευθύνσεις του netmask και του broacast για αυτό, χρησιμοποίησα ipcalc, δίνοντάς την διεύθυνση ip του arch firewire nic 10.66.66.1, διευκρινίζοντας στο ipcalc πως θα πρέπει να δημιουργήσει ένα δίκτυο με μόνο δύο οικοδεσπότες (hosts).
 
  `$ ipcalc -nb 10.66.66.1 -s 1` 
-
 ```
 Address:   10.66.66.1
 
@@ -506,7 +488,6 @@ $ ping -c 3 www.google.com
 Προετοιμάστε την διαμόρφωση:
 
  `/etc/netctl/mynetwork` 
-
 ```
 Connection='ethernet'
 Description='Five different addresses on the same NIC.'
@@ -542,7 +523,6 @@ $ netctl start mynetwork
 Το προαπαιτούμενο είναι να ορίσετε το όνομα [#Set the hostname](#Set_the_hostname) αφού υπάρχει σε κάθε τοπικό σύστημα.
 
  `$ ping hostname` 
-
 ```
 PING hostname (192.168.1.2) 56(84) bytes of data.
 64 bytes from hostname (192.168.1.2): icmp_seq=1 ttl=64 time=0.043 ms
@@ -641,17 +621,16 @@ net.ipv4.tcp_window_scaling = 0
 
 ```
 
-**Σημείωση:** Νεώτεροι οδηγοί για Windows (δοκιμασμένοι με _Realtek 8111/8169 LAN Driver v5.708.1030.2008_, ημερομηνίας 22/01/2009, διαθέσιμοι από την GIGABYTE) ίσως να αναφέρονται σε αυτή την επιλογή ελαφρά διαφορετικά, όπως _Shutdown Wake-On-LAN --> Enable_. Φαίνεται πως αλλάζοντάς το σε `Disable` δεν έχει καμία διαφορά (θα παρατηρήσετε πως η λυχνία σύνδεσης θα σβήσει με το κλείσιμο των Windows). Μία κακή λύση είναι να εκκινήσετε στο λειτουργικό Windows και αμέσως να κάνετε reset το σύστημα (πραγματοποιώντας μια απότομη επανεκκίνηση / εκκίνηση) μη δίνοντας την ευκαιρία στον οδηγό των Windows να κάνει ανενεργή την σύνδεση LAN. Η λυχνία της σύνδεσης θα παραμείνει ενεργή και η LAN διεπαφή σας θα παραμείνει προσβάσιμη μετά το POST - μέχρι την επόμενη εκκίνηση των Windows και τον σωστό τερματισμό τους
-
+**Σημείωση:** Νεώτεροι οδηγοί για Windows (δοκιμασμένοι με *Realtek 8111/8169 LAN Driver v5.708.1030.2008*, ημερομηνίας 22/01/2009, διαθέσιμοι από την GIGABYTE) ίσως να αναφέρονται σε αυτή την επιλογή ελαφρά διαφορετικά, όπως *Shutdown Wake-On-LAN --> Enable*. Φαίνεται πως αλλάζοντάς το σε `Disable` δεν έχει καμία διαφορά (θα παρατηρήσετε πως η λυχνία σύνδεσης θα σβήσει με το κλείσιμο των Windows). Μία κακή λύση είναι να εκκινήσετε στο λειτουργικό Windows και αμέσως να κάνετε reset το σύστημα (πραγματοποιώντας μια απότομη επανεκκίνηση / εκκίνηση) μη δίνοντας την ευκαιρία στον οδηγό των Windows να κάνει ανενεργή την σύνδεση LAN. Η λυχνία της σύνδεσης θα παραμείνει ενεργή και η LAN διεπαφή σας θα παραμείνει προσβάσιμη μετά το POST - μέχρι την επόμενη εκκίνηση των Windows και τον σωστό τερματισμό τους
 .
 
 #### Μέθοδος 3 - Νεώτερος οδηγός Realtek Linux
 
 Νεώτερος οδηγός για τις κάρτες Relatek για Linux, μπορεί να βρεθεί στο site της Realtek. (μη δοκιμασμένο αλλά ίσως να λύνει το πρόβλημα).
 
-#### Μέθοδος 4 - Ενεργοποίηση _LAN Boot ROM_ στο BIOS/CMOS
+#### Μέθοδος 4 - Ενεργοποίηση *LAN Boot ROM* στο BIOS/CMOS
 
-Φαίνεται πως η ρύθμιση _Integrated Peripherals --> Onboard LAN Boot ROM --> Enabled_ στο BIOS/CMOS ενεργοποιεί το Realtek LAN chip κατά την εκκίνηση του συστήματος, άσχετα αν ο οδηγός των Windows το έχει απενεργοποιήσει κατά τον τερματισμό τους.
+Φαίνεται πως η ρύθμιση *Integrated Peripherals --> Onboard LAN Boot ROM --> Enabled* στο BIOS/CMOS ενεργοποιεί το Realtek LAN chip κατά την εκκίνηση του συστήματος, άσχετα αν ο οδηγός των Windows το έχει απενεργοποιήσει κατά τον τερματισμό τους.
 
 **Σημείωση:** Αυτό έχει δοκιμαστεί επιτυχώς πολλές φορές με την μητρική κάρτα GIGABYTE system board GA-G31M-ES2L με έκδοση BIOS F8 κυκλοφορίας 02/05/2009\. YMMV.
 

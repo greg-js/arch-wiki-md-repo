@@ -199,9 +199,9 @@ Per utilizzare efibootmgr, prima sarà necessario caricare il modulo del kernel 
 
 Se con questo comando si ottiene l'errore **no such device found**, allora significa che il sistema non è stato avviato in modalità UEFI o che per qualche motivo il kernel non riesce ad accedere alle variabili di runtime UEFI(noefi?).
 
-Verificare l'esistenza dei file nella cartella _/sys/firmware/efi/vars/_. Questa cartella ed il suo contenuto sono creati dal modulo del kernel "efivars" ed esisteranno soltanto se si è avviato in modalità UEFI, senza il parametro del kernel "noefi".
+Verificare l'esistenza dei file nella cartella */sys/firmware/efi/vars/*. Questa cartella ed il suo contenuto sono creati dal modulo del kernel "efivars" ed esisteranno soltanto se si è avviato in modalità UEFI, senza il parametro del kernel "noefi".
 
-Se la cartella _/sys/firmware/efi/vars/_ è vuota o non esiste, allora il comando `efibootmgr` non funzionerà. Se non si riesce ad avviare la ISO/CD/DVD/USB in modalità UEFI consultare [Creare un dispositivo USB avviabile con UEFI dalla ISO](#Creare_un_dispositivo_USB_avviabile_con_UEFI_dalla_ISO) .
+Se la cartella */sys/firmware/efi/vars/* è vuota o non esiste, allora il comando `efibootmgr` non funzionerà. Se non si riesce ad avviare la ISO/CD/DVD/USB in modalità UEFI consultare [Creare un dispositivo USB avviabile con UEFI dalla ISO](#Creare_un_dispositivo_USB_avviabile_con_UEFI_dalla_ISO) .
 
 **Nota:** I seguenti comandi utilizzano il boot-loader [gummiboot](https://www.archlinux.org/packages/?name=gummiboot) come esempio.
 
@@ -392,14 +392,13 @@ Effettuare il mount del filesystem FAT32 appena creato, e copiare il contenuto d
 
 ### Risoluzione degli errori
 
-Se si incorre nell'errore _"No loader found. Configuration files in /loader/entries/*.conf are needed."_ Una possibile soluzione consiste nell'usare un bootloader uefi diverso da quello incluso, gummiboot.
+Se si incorre nell'errore *"No loader found. Configuration files in /loader/entries/*.conf are needed."* Una possibile soluzione consiste nell'usare un bootloader uefi diverso da quello incluso, gummiboot.
 
 Scaricare [il pacchetto refind-efi](https://www.archlinux.org/packages/extra/any/refind-efi/download/) ed estrarre il the file `/usr/lib/refind/refind_x64.efi` dal pacchetto in `(USB)/EFI/boot/bootx64.efi` (sovrascrivere o rinominare ogni file esistente `(USB)/EFI/boot/bootx64.efi`).
 
 Quindi copiare questo testo in `EFI/boot/refind.conf`. Verificare che l'etichetta nella sezione del menu Arch (`ARCH_201302` in questo esempio) coincida con quella della vostra usb.
 
  `refind.conf` 
-
 ```
 timeout 5
 textonly

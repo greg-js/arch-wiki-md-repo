@@ -226,7 +226,7 @@ Tools -> Options -> Miscellaneous -> Android
     *   Jelly Bean （4.2）或更新版本：访问 `Settings（设置） --> About Phone（关于手机）`，不停点击 “Build Number（版本号）” （约10次），直到弹出消息提示开启了开发者选项。然后访问 `Settings（设置） --> Developer（开发者选项） --> USB debugging（USB 调式）` 并启用它。
     *   旧版本： 通常能通过 `Settings（设置） --> Applications （应用程序）--> Development（开发者选项） --> USB debugging（USB调试）`。勾选后重启手机，确保 USB 调试已启用。
 *   安装软件包 [android-udev](https://www.archlinux.org/packages/?name=android-udev)，为设备在 `/dev/` 中建立正确的节点。
-*   将用户加入组 _adbusers_。 （`gpasswd -a _username_ adbusers`）
+*   将用户加入组 *adbusers*。 （`gpasswd -a *username* adbusers`）
 
 如果 [ADB 能识别你的设备](#Does_it_work.3F) (在IDE中可以看见和访问）就行了，否则见下面的内容。
 
@@ -259,7 +259,6 @@ Bus 002 Device 006: ID 0bb4:0c8d High Tech Computer Corp.
 使用 [Android developer](http://source.android.com/source/initializing.html#configuring-usb-access) 的规则，或者下面的模板，并用你的 [VENDOR ID] 和 [PRODUCT ID] 替换里面的值。 然后把这些规则复制到 `/etc/udev/rules.d/51-android.rules`：
 
  `/etc/udev/rules.d/51-android.rules` 
-
 ```
 SUBSYSTEM=="usb", ATTR{idVendor}=="[VENDOR ID]", MODE="0666", GROUP="adbusers"
 SUBSYSTEM=="usb",ATTR{idVendor}=="[VENDOR ID]",ATTR{idProduct}=="[PRODUCT ID]",SYMLINK+="android_adb"
@@ -303,14 +302,14 @@ HT07VHL00676    device
 现在可以通过 adb 在设备和计算机间传输文件了。使用：
 
 ```
-$ adb push _<what-to-copy>_ _<where-to-place>_
+$ adb push *<what-to-copy>* *<where-to-place>*
 
 ```
 
 向设备传送文件，使用：
 
 ```
-$ adb pull _<what-to-pull>_ _<where-to-place>_
+$ adb pull *<what-to-pull>* *<where-to-place>*
 
 ```
 
@@ -318,7 +317,7 @@ $ adb pull _<what-to-pull>_ _<where-to-place>_
 
 如果列表为空（设备没有找到），可能是因为设备上没有启用 USB 调试。可以到 设置 => 应用程序 => 开发 (Settings => Applications => Development) 来启用 USB 调试。Android 4.2 (Jelly Bean) 隐藏了开发者选项菜单，到 设置 => 关于手机 (Settings => About phone)，然后点击 Build number （版本号） 7 次来启用它。
 
-若仍有问题，比如 _adb_ 显示 `???????? no permissions`，尝试以 root 权限重启 adb 服务。
+若仍有问题，比如 *adb* 显示 `???????? no permissions`，尝试以 root 权限重启 adb 服务。
 
 ```
 # adb kill-server
@@ -419,18 +418,15 @@ $ repo sync -j4
 ```
 
 **注意:** 为尽一步减少下载时间，可以像下面使用repo 命令的 -c 开关：
-
 ```
 $ repo sync -j8 -c
 
 ```
-
 `-c` 开关仅同步在 manifest 中指定的分支，它的内容由 `-b` 开关中指定的分支或者使用版本库维护者设置的默认分支来决定，。
 
 静候多时。未编译的源代码加上这些代码的 `.repo`、`.git` 目录，大小会超过 10 GB。
 
 **注意:** 若之后要更新本地的安卓代码，只要进入编译目录，载入 Virtualenv，然后重新同步：
-
 ```
 $ repo sync
 

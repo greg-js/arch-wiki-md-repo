@@ -2,7 +2,7 @@ Webmin viene eseguito come servizio. Tramite [webmin](https://aur.archlinux.org/
 
 Dal sito ufficiale di [Webmin](http://www.webmin.com/)
 
-	_Webmin is a web-based interface for system administration for Unix. Using any modern web browser, you can setup user accounts, Apache, DNS, file sharing and much more. Webmin removes the need to manually edit Unix configuration files like /etc/passwd, and lets you manage a system from the console or remotely._
+	*Webmin is a web-based interface for system administration for Unix. Using any modern web browser, you can setup user accounts, Apache, DNS, file sharing and much more. Webmin removes the need to manually edit Unix configuration files like /etc/passwd, and lets you manage a system from the console or remotely.*
 
 ## Contents
 

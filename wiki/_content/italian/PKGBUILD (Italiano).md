@@ -42,11 +42,11 @@ Le seguenti variabili possono essere utilizzate nel file `PKGBUILD`:
 
 ### pkgname
 
-Il nome del pacchetto. Dovrebbe consistere nei soli **caratteri alfanumerici e seguenti simboli @ . _ + - (chiocciola, punto, trattino basso, segno più, trattino)**. Tutte le lettere dovrebbero essere in **minuscolo** e non è consentito che i nomi inizino con un trattino. Per motivi di coerenza, il `pkgname` dovrebbe corrispondere al nome dell'archivio dei sorgenti del software che si sta impacchettando. Per esempio, se il software è in `foobar-2.5.tar.gz`, il valore di `pkgname` dovrebbe essere _foobar_. Anche la directory di lavoro in cui risiede il file `PKGBUILD` dovrebbe corrispondere al `pkgname`.
+Il nome del pacchetto. Dovrebbe consistere nei soli **caratteri alfanumerici e seguenti simboli @ . _ + - (chiocciola, punto, trattino basso, segno più, trattino)**. Tutte le lettere dovrebbero essere in **minuscolo** e non è consentito che i nomi inizino con un trattino. Per motivi di coerenza, il `pkgname` dovrebbe corrispondere al nome dell'archivio dei sorgenti del software che si sta impacchettando. Per esempio, se il software è in `foobar-2.5.tar.gz`, il valore di `pkgname` dovrebbe essere *foobar*. Anche la directory di lavoro in cui risiede il file `PKGBUILD` dovrebbe corrispondere al `pkgname`.
 
 ### pkgver
 
-La versione del pacchetto. Il valore dovrebbe essere lo stesso della versione rilasciata dell'autore del pacchetto. Può contenere lettere, numeri, punti e trattini bassi, ma **NON** può contenere trattini. Se l'autore del pacchetto usa i trattini nello schema di numerazione della versione, si deve sostituirli con degli underscore. Per esempio, se la versione è _0.99-10_, dovrebbe essere cambiata in _0.99_10_. Se la variabile pkgver viene usata successivamente nel PKGBUILD, allora l'underscore può essere facilmente sostituito con un trattino, per esempio:
+La versione del pacchetto. Il valore dovrebbe essere lo stesso della versione rilasciata dell'autore del pacchetto. Può contenere lettere, numeri, punti e trattini bassi, ma **NON** può contenere trattini. Se l'autore del pacchetto usa i trattini nello schema di numerazione della versione, si deve sostituirli con degli underscore. Per esempio, se la versione è *0.99-10*, dovrebbe essere cambiata in *0.99_10*. Se la variabile pkgver viene usata successivamente nel PKGBUILD, allora l'underscore può essere facilmente sostituito con un trattino, per esempio:
 
 ```
  source=($pkgname-${pkgver/_/-}.tar.gz)
@@ -63,7 +63,7 @@ Questa variabile rappresenta la directory di root di ciò che verrà inserito ne
 
 ### epoch
 
-Un valore intero, specifico di Archlinux, che rappresenta "l'età" tramite la quale effettuare un confronto tra numeri di versione. Questo valore consente di ignorare le normali regole di confronto di versione per pacchetti che hanno una numerazione di versione inconsistente, che richiedono un downgrade, che devono cambiare lo schema di numerazione, etc. Per impostazione predefinita, si assume che i pacchetti abbiano un valore di epoch pari a _0_. Non utilizzare questa variabile a meno che non si sia assolutamente sicuri di ciò che si sta facendo.
+Un valore intero, specifico di Archlinux, che rappresenta "l'età" tramite la quale effettuare un confronto tra numeri di versione. Questo valore consente di ignorare le normali regole di confronto di versione per pacchetti che hanno una numerazione di versione inconsistente, che richiedono un downgrade, che devono cambiare lo schema di numerazione, etc. Per impostazione predefinita, si assume che i pacchetti abbiano un valore di epoch pari a *0*. Non utilizzare questa variabile a meno che non si sia assolutamente sicuri di ciò che si sta facendo.
 
 ### pkgbase
 
@@ -147,7 +147,7 @@ Un array di pacchetti dai quali il pacchetto in oggetto dipende solo per l'esecu
 
 ### provides
 
-Un array di nomi dei pacchetti dei quali questo software fornisce le funzionalità (oppure un pacchetto virtuale come _cron_ o _sh_). Se si usa questa variabile, si dovrebbe aggiungere la versione (`pkgver` e magari la `pkgrel`) che questo pacchetto fornisce se le dipendenze possono esserne influenzate. Per esempio, se si vuole fornire una versione modificata di _qt_ chiamata _qt-foobar_ versione 3.3.8 che fornisce _qt_ allora l'array `provides` dovrebbe essere: `provides=('qt=3.3.8')`. Mettere `provides=('qt')` causerà il fallimento di quelle dipendenze che richiedono una specifica versione di _qt_. Non aggiungere `pkgname` all'array provide, viene fatto in automatico.
+Un array di nomi dei pacchetti dei quali questo software fornisce le funzionalità (oppure un pacchetto virtuale come *cron* o *sh*). Se si usa questa variabile, si dovrebbe aggiungere la versione (`pkgver` e magari la `pkgrel`) che questo pacchetto fornisce se le dipendenze possono esserne influenzate. Per esempio, se si vuole fornire una versione modificata di *qt* chiamata *qt-foobar* versione 3.3.8 che fornisce *qt* allora l'array `provides` dovrebbe essere: `provides=('qt=3.3.8')`. Mettere `provides=('qt')` causerà il fallimento di quelle dipendenze che richiedono una specifica versione di *qt*. Non aggiungere `pkgname` all'array provide, viene fatto in automatico.
 
 ### conflicts
 
@@ -165,29 +165,29 @@ Un array di file che potrebbero contenere personalizzazioni effettuate dall'uten
 
 Questo array permette di sovrascrivere alcuni dei comportamenti di default di `makepkg`. Per impostare un'opzione, si deve includere il nome dell'opzione nell'array. Per invertire il comportamento di default, si deve mettere un `!` davanti l'opzione. Questo è un elenco delle opzioni che si possono mettere nell'array:
 
-*   _**strip**_ - Toglie i simboli dai binari e dalle librerie. Se si utilizzano spesso debugger su programmi e librerie, è più conveniente disabilitare questa opzione.
-*   _**docs**_ - Salva le directory `/doc`.
-*   _**libtool**_ - Lascia i file di _libtool_ (`.la`) nel pacchetto.
-*   _**staticlibs**_ - Lascia i file di librerie statiche (.a) nei pacchetti.
-*   _**emptydirs**_ - Lascia le directory vuote nel pacchetto.
-*   _**zipman**_ - Comprime le pagine di _man_ e _info_ con _gzip_.
-*   _**purge**_ - Rimuove dai pacchetti i file specificati nella variabile `PURGE_TARGETS`
-*   _**upx**_ - Comprime i file eseguibili binari utilizzando UPX. Opzioni addizionali possono essere passate ad UPX tramite la variabile `UPXFLAGS`
-*   _**ccache**_ - Permette l'uso di `ccache` durante la compilazione. Utile principalmente nella sua forma negata `!ccache` con i pacchetti che hanno problemi nella compilazione con `ccache`.
-*   _**distcc**_ - Permette l'uso di `distcc` durante la compilazione. Utile principalmente nella sua forma negata `!distcc` con i pacchetti che hanno problemi nella compilazione con `distcc`.
-*   _**buildflags**_ - Consente l'utilizzo di `buildflags` specifiche per l'utente (CFLAGS, CXXFLAGS, LDFLAGS) durante la compilazione. Utile principalmente nella sua forma negata `!buildflags` con i pacchetti che hanno problemi nella compilazione con `buildflags`.
-*   _**makeflags**_ - Permette l'uso di `makeflags` specifiche per l'utente durante la compilazione. Utile principalmente nella sua forma negata `!makeflags` con i pacchetti che hanno problemi nella compilazione con `makeflags` personalizzate.
+*   ***strip*** - Toglie i simboli dai binari e dalle librerie. Se si utilizzano spesso debugger su programmi e librerie, è più conveniente disabilitare questa opzione.
+*   ***docs*** - Salva le directory `/doc`.
+*   ***libtool*** - Lascia i file di *libtool* (`.la`) nel pacchetto.
+*   ***staticlibs*** - Lascia i file di librerie statiche (.a) nei pacchetti.
+*   ***emptydirs*** - Lascia le directory vuote nel pacchetto.
+*   ***zipman*** - Comprime le pagine di *man* e *info* con *gzip*.
+*   ***purge*** - Rimuove dai pacchetti i file specificati nella variabile `PURGE_TARGETS`
+*   ***upx*** - Comprime i file eseguibili binari utilizzando UPX. Opzioni addizionali possono essere passate ad UPX tramite la variabile `UPXFLAGS`
+*   ***ccache*** - Permette l'uso di `ccache` durante la compilazione. Utile principalmente nella sua forma negata `!ccache` con i pacchetti che hanno problemi nella compilazione con `ccache`.
+*   ***distcc*** - Permette l'uso di `distcc` durante la compilazione. Utile principalmente nella sua forma negata `!distcc` con i pacchetti che hanno problemi nella compilazione con `distcc`.
+*   ***buildflags*** - Consente l'utilizzo di `buildflags` specifiche per l'utente (CFLAGS, CXXFLAGS, LDFLAGS) durante la compilazione. Utile principalmente nella sua forma negata `!buildflags` con i pacchetti che hanno problemi nella compilazione con `buildflags`.
+*   ***makeflags*** - Permette l'uso di `makeflags` specifiche per l'utente durante la compilazione. Utile principalmente nella sua forma negata `!makeflags` con i pacchetti che hanno problemi nella compilazione con `makeflags` personalizzate.
 
 ### install
 
-Il nome dello script di `.install` che deve essere incluso nel pacchetto. _Pacman_ ha l'abilità di memorizzare ed eseguire uno script specifico per pacchetto quando installa, rimuove o aggiorna un pacchetto. Lo script contiene le seguenti istruzioni che vengono eseguite in tempi diversi:
+Il nome dello script di `.install` che deve essere incluso nel pacchetto. *Pacman* ha l'abilità di memorizzare ed eseguire uno script specifico per pacchetto quando installa, rimuove o aggiorna un pacchetto. Lo script contiene le seguenti istruzioni che vengono eseguite in tempi diversi:
 
-*   _**pre_install**_ - Lo script è lanciato appena prima dell'estrazione dei file. La nuova versione del pacchetto viene passata come argomento alla funzione.
-*   _**post_install**_ - Lo script è lanciato appena dopo l'estrazione dei file. La nuova versione del pacchetto viene passata come argomento alla funzione.
-*   _**pre_upgrade**_ - Lo script è lanciato appena prima dell'estrazione dei file. La nuova e la vecchia versione del pacchetto vengono passate come argomento alla funzione.
-*   _**post_upgrade**_ - Lo script è lanciato appena dopo dell'estrazione dei file. La nuova e la vecchia versione del pacchetto vengono passate come argomento alla funzione.
-*   _**pre_remove**_ - Lo script è lanciato appena che i file vengano rimossi. La vecchia versione del pacchetto viene passata come argomento alla funzione.
-*   _**post_remove**_ - Lo script è lanciato dopo che i file vengano rimossi. La vecchia versione del pacchetto viene passata come argomento alla funzione.
+*   ***pre_install*** - Lo script è lanciato appena prima dell'estrazione dei file. La nuova versione del pacchetto viene passata come argomento alla funzione.
+*   ***post_install*** - Lo script è lanciato appena dopo l'estrazione dei file. La nuova versione del pacchetto viene passata come argomento alla funzione.
+*   ***pre_upgrade*** - Lo script è lanciato appena prima dell'estrazione dei file. La nuova e la vecchia versione del pacchetto vengono passate come argomento alla funzione.
+*   ***post_upgrade*** - Lo script è lanciato appena dopo dell'estrazione dei file. La nuova e la vecchia versione del pacchetto vengono passate come argomento alla funzione.
+*   ***pre_remove*** - Lo script è lanciato appena che i file vengano rimossi. La vecchia versione del pacchetto viene passata come argomento alla funzione.
+*   ***post_remove*** - Lo script è lanciato dopo che i file vengano rimossi. La vecchia versione del pacchetto viene passata come argomento alla funzione.
 
 Ogni funzione è eseguita in ambiente chroot all'interno della directory di installazione di pacman. Consultare [questo thread](https://bbs.archlinux.org/viewtopic.php?pid=913891).
 
@@ -197,7 +197,7 @@ Ogni funzione è eseguita in ambiente chroot all'interno della directory di inst
 
 Il nome del changelog del pacchetto. Per vedere i changelog dei pacchetti installati (che lo forniscono):
 
- `pacman -Qc _pkgname_` 
+ `pacman -Qc *pkgname*` 
 **Tip:** Un prototipo di file changelog è installato in `/usr/share/pacman/ChangeLog.proto`.
 
 ### source
@@ -206,7 +206,7 @@ un array di file che sono necessari per compilare il pacchetto. Deve contenere l
 
 **Nota:** Se si ha il bisogno di fornire file che non sono scaricabili al volo, per esempio patch fatte in proprio, è possibile mettere questi file nella stessa directory del proprio `PKGBUILD` e aggiungere il nome del file a questo array. Qualsiasi percorso viene aggiunto qui è risolto relativamente alla directory in cui giace il `PKGBUILD`. Prima che il processo di compilazione parta, tutti i file che sono riferiti in questo array, verranno scaricati o controllati in sussistenza, e `makepkg` non procederà oltre se qualcuno manca.
 
-**Nota:** È possibile specificare un nome diverso per il file scaricato, nel caso tale file abbia per qualche motivo un nome diverso, come il parametro GET assegnato all'url, con la seguente sintassi: `_filename_::_fileuri_`, ad esempio `$pkgname-$pkgver.zip::http://199.91.152.193/7pd0l2tpkidg/jg2e1cynwii/Warez_collection_16.4.exe`
+**Nota:** È possibile specificare un nome diverso per il file scaricato, nel caso tale file abbia per qualche motivo un nome diverso, come il parametro GET assegnato all'url, con la seguente sintassi: `*filename*::*fileuri*`, ad esempio `$pkgname-$pkgver.zip::http://199.91.152.193/7pd0l2tpkidg/jg2e1cynwii/Warez_collection_16.4.exe`
 
 ### noextract
 
@@ -225,7 +225,7 @@ noextract=("grub2_extras_lua_r20.tar.xz")
 
 ```
 
-Per _non estrarre nulla_, si può utilizzare un espediente come questo ( preso dal [PKGBUILD di firefox-i18n](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/firefox-i18n#n123)):
+Per *non estrarre nulla*, si può utilizzare un espediente come questo ( preso dal [PKGBUILD di firefox-i18n](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/firefox-i18n#n123)):
 
 ```
 noextract=(${source[@]%%::*})

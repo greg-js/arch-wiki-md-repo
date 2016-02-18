@@ -6,7 +6,7 @@ U biologiji, mutualizam je interakcija između dvaju organizama od kojih svaki p
     *   [1.1 Objave na forumima](#Objave_na_forumima)
     *   [1.2 Uređivanje wiki stranica](#Ure.C4.91ivanje_wiki_stranica)
     *   [1.3 Pridružite se chat sobi](#Pridru.C5.BEite_se_chat_sobi)
-    *   [1.4 _Fix_evi i bug izvještaji](#Fixevi_i_bug_izvje.C5.A1taji)
+    *   [1.4 *Fix*evi i bug izvještaji](#Fixevi_i_bug_izvje.C5.A1taji)
     *   [1.5 Pravljanje i usvajanje AUR paketa](#Pravljanje_i_usvajanje_AUR_paketa)
     *   [1.6 Službeni softverski projekti](#Slu.C5.BEbeni_softverski_projekti)
     *   [1.7 Sudjelovati u događanjima](#Sudjelovati_u_doga.C4.91anjima)
@@ -16,7 +16,7 @@ U biologiji, mutualizam je interakcija između dvaju organizama od kojih svaki p
     *   [2.2 Software](#Software)
     *   [2.3 Usluge](#Usluge)
     *   [2.4 Ostalo](#Ostalo)
-*   [3 FAQ (_česta pitanja_)](#FAQ_.28.C4.8Desta_pitanja.29)
+*   [3 FAQ (*česta pitanja*)](#FAQ_.28.C4.8Desta_pitanja.29)
     *   [3.1 Kako mogu postati Arch Developer?](#Kako_mogu_postati_Arch_Developer.3F)
     *   [3.2 Kako mogu postati Trusted Upute?](#Kako_mogu_postati_Trusted_Upute.3F)
     *   [3.3 Što mogu učiniti kao umjetnik?](#.C5.A0to_mogu_u.C4.8Diniti_kao_umjetnik.3F)
@@ -31,7 +31,7 @@ Molimo Vas da pročitate [Bonton foruma](/index.php?title=Forum_Etiquette_(Hrvat
 
 ### Uređivanje wiki stranica
 
-_ArchWiki_ održava Arch Linux dokumentaciju. Svi se suradnici potiču da doprinesu nešto zajednici.
+*ArchWiki* održava Arch Linux dokumentaciju. Svi se suradnici potiču da doprinesu nešto zajednici.
 
 Ako se osjećate sposobanim, pogledajte ["Kako uređivati ​​wiki stranice"](/index.php?title=Help:Editing_(Hrvatski)&action=edit&redlink=1 "Help:Editing (Hrvatski) (page does not exist)"), te možete i pomoći sa [Wiki zadacima](/index.php?title=ArchWiki:Tasks_(Hrvatski)&action=edit&redlink=1 "ArchWiki:Tasks (Hrvatski) (page does not exist)").
 
@@ -39,7 +39,7 @@ Ako se osjećate sposobanim, pogledajte ["Kako uređivati ​​wiki stranice"](
 
 Možete pomoći drugim korisnicima u rješavanju problema na [IRC kanalu](/index.php?title=IRC_Channel_(Hrvatski)&action=edit&redlink=1 "IRC Channel (Hrvatski) (page does not exist)"). Ono što je od vitalne važnosti, je da ste pročitali pravila i smjernice prije sudjelovanja. [Ostali kanali](/index.php?title=IRC_Channels_(Hrvatski)&action=edit&redlink=1 "IRC Channels (Hrvatski) (page does not exist)") su dostupni za određene teme.
 
-### _Fix_evi i bug izvještaji
+### *Fix*evi i bug izvještaji
 
 Izvješćivanje i prijavljivanje greškaka na [bug trackeru](https://bugs.archlinux.org/) je jedan od mogućih načina da se pomogne zajednici.
 
@@ -47,7 +47,7 @@ Međutim, neučinkovita uporaba može biti kontra-produktivna. Molimo pročitajt
 
 ### Pravljanje i usvajanje AUR paketa
 
-_Arch korisnički repozitorij_ sadrži paket skripti koje su napravili ljudi iz naše zajednice, tako da korisnici mogu jednostavno instalirati softver koji nije u službenih repozitorijama. Popularni aranžmani mogu biti uključeni u službene [repozitorije](/index.php/Community "Community").
+*Arch korisnički repozitorij* sadrži paket skripti koje su napravili ljudi iz naše zajednice, tako da korisnici mogu jednostavno instalirati softver koji nije u službenih repozitorijama. Popularni aranžmani mogu biti uključeni u službene [repozitorije](/index.php/Community "Community").
 
 Možete pomoći sa kreiranjem i usvajanjem paketa.
 
@@ -57,7 +57,7 @@ Možete se uključiti u razvoj [službenih Arch Linux programskih projekata](htt
 
 ### Sudjelovati u događanjima
 
-Postoje godišnji i mjesečni događaji za _bugfixing_, prevođenje i čišćenje. Možete pogledati nadolazeće događaje u [Arch Linux Kalendaru događanja](/index.php/Arch_Linux_Event_Calendar "Arch Linux Event Calendar").
+Postoje godišnji i mjesečni događaji za *bugfixing*, prevođenje i čišćenje. Možete pogledati nadolazeće događaje u [Arch Linux Kalendaru događanja](/index.php/Arch_Linux_Event_Calendar "Arch Linux Event Calendar").
 
 ### Doniratinje novca
 
@@ -65,7 +65,7 @@ Možete saznati kako pomoći održavanju poslužitelja troškova na službenoj [
 
 ## Projekti u zajednici
 
-**Note:** Svi projekti ovdje navedene su projekti zajednicâ. Niti jedan od tih projekata se smatra _službeni_ Arch projekt.
+**Note:** Svi projekti ovdje navedene su projekti zajednicâ. Niti jedan od tih projekata se smatra *službeni* Arch projekt.
 
 Arch je zajednica koja održava mnoge projekte. Slobodno uključite svoje!
 
@@ -79,7 +79,7 @@ Arch-specifične skupine koje možete sudjelovati u.
 
 	[ArchAudio](http://archaudio.org)
 
-	Korisinčka skladišta i mjesto za online raspravljanje za _pro-audio_ korisnike
+	Korisinčka skladišta i mjesto za online raspravljanje za *pro-audio* korisnike
 
 	[Arch Linux User Group](/index.php/Arch_Linux_User_Group "Arch Linux User Group")
 
@@ -99,7 +99,7 @@ Zajednica je razvila softver koji se usredotočuje na Arch Linux.
 
 	[Arch Based Distributions](/index.php/Arch_Based_Distributions "Arch Based Distributions")
 
-	Linux distribucije koje se temelje na _Arch Linux_u
+	Linux distribucije koje se temelje na *Arch Linux*u
 
 	[AUR helpers](/index.php/AUR_helpers "AUR helpers")
 
@@ -129,15 +129,15 @@ Usluge posebno napravljene za Arch korisnike.
 
 #### Ostalo
 
-	[_TuxLyn_-ov Arch Linux Wiki](http://wiki.gotux.net/archlinux)
+	[*TuxLyn*-ov Arch Linux Wiki](http://wiki.gotux.net/archlinux)
 
 	Osobni Arch wiki
 
-	[Xyne-ov _Arch Linux Stuff_](http://xyne.archlinux.ca)
+	[Xyne-ov *Arch Linux Stuff*](http://xyne.archlinux.ca)
 
 	Sajt pouzdanog Arch korisnika
 
-## FAQ (_česta pitanja_)
+## FAQ (*česta pitanja*)
 
 ### Kako mogu postati Arch Developer?
 

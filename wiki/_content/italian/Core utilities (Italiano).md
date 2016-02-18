@@ -29,7 +29,7 @@ export GREP_OPTIONS='--color=auto'
 
 ```
 
-Per includere il conteggio delle linee del file nell'output si usa l'opzione "_-n_":
+Per includere il conteggio delle linee del file nell'output si usa l'opzione "*-n*":
 
 ```
 alias grep='grep -n --color=auto'
@@ -40,7 +40,7 @@ Si può usare la variabile **GREP_COLORS** per specificare colori diversi dai pr
 
 ## less
 
-[less](https://en.wikipedia.org/wiki/less_(Unix) "wikipedia:less (Unix)") permette di visualizzare il contenuto di un file diviso una schermata alla volta. Anche se è simile a **more** e **pg**, **less** offre un'interfaccia più avanzata e un insieme di caratteristiche più completo.[[3]](http://www.greenwoodsoftware.com/less/faq.html)
+[less](https://en.wikipedia.org/wiki/less_(Unix) permette di visualizzare il contenuto di un file diviso una schermata alla volta. Anche se è simile a **more** e **pg**, **less** offre un'interfaccia più avanzata e un insieme di caratteristiche più completo.[[3]](http://www.greenwoodsoftware.com/less/faq.html)
 
 Si può abilitare la colorazione sintattica per **less**.
 
@@ -107,7 +107,7 @@ eval $(dircolors -b)
 
 ## rm
 
-[rm](https://en.wikipedia.org/wiki/rm_(Unix) "wikipedia:rm (Unix)") è il comando per eliminare file e directory. Può essere molto pericoloso, quindi è prudente usare un alias depotenziato:
+[rm](https://en.wikipedia.org/wiki/rm_(Unix) è il comando per eliminare file e directory. Può essere molto pericoloso, quindi è prudente usare un alias depotenziato:
 
 ```
 alias rm=' timeout 3 rm -Iv'

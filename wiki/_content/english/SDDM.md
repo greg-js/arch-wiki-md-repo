@@ -1,6 +1,6 @@
 The [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Desktop_Display_Manager "wikipedia:Simple Desktop Display Manager") (SDDM) is the preferred [display manager](/index.php/Display_manager "Display manager") for [KDE](/index.php/KDE "KDE") Plasma desktop. From Wikipedia:
 
-	_Simple Desktop Display Manager (SDDM) is a display manager (a graphical login program) for X11\. SDDM was written from scratch in C++11 and supports theming via QML. It is the successor of the KDE Display Manager and is used in conjunction with KDE Frameworks 5, KDE Plasma 5 and KDE Applications 5._
+	*Simple Desktop Display Manager (SDDM) is a display manager (a graphical login program) for X11\. SDDM was written from scratch in C++11 and supports theming via QML. It is the successor of the KDE Display Manager and is used in conjunction with KDE Frameworks 5, KDE Plasma 5 and KDE Applications 5.*
 
 ## Contents
 
@@ -42,7 +42,6 @@ On systems controlled by [systemd](/index.php/Systemd "Systemd"), everything sho
 SDDM supports automatic login through its configuration file, for example:
 
  `/etc/sddm.conf` 
-
 ```
 [Autologin]
 User=john
@@ -89,7 +88,6 @@ Valid [Plasma](/index.php/Plasma "Plasma") mouse cursor theme names are `breeze_
 You can simply put a png image named `username.face.icon` into the default directory `/usr/share/sddm/faces/`. Alternatively you can change the default directory to match your desires:
 
  `/etc/sddm.conf` 
-
 ```
 [Theme]
 FacesDir=/var/lib/AccountsService/icons/
@@ -112,7 +110,7 @@ If you want to enforce Numlock to be enabled, set `Numlock=on` in the `[General]
 
 ### Hangs after login
 
-Try removing _~/.Xauthority_.
+Try removing *~/.Xauthority*.
 
 Alternatively, if your cursor turns to a black cross at the same time, and you are using zsh as your shell, you may be experiencing [this bug](https://github.com/sddm/sddm/issues/352). Follow the instructions in the previous link to fix the issue. This bug is expected to be fixed in the SDDM version subsequent to 0.11.0.
 
@@ -121,7 +119,6 @@ Alternatively, if your cursor turns to a black cross at the same time, and you a
 SDDM follows the [systemd convention](http://0pointer.de/blog/projects/serial-console.html) of starting the first graphical session on tty1\. If you prefer the old convention where tty1 through tty6 are reserved for text consoles, add the following to your `sddm.conf`:
 
  `/etc/sddm.conf` 
-
 ```
 [XDisplay]
 MinimumVT=7
@@ -134,7 +131,6 @@ MinimumVT=7
 SDDM only displays users with a UID in the range of 1000 to 65000 by default, if the UIDs of the desired users are below this value then you will have to modify this range. Modify your `sddm.conf` to (for a UID of 501, say):
 
  `/etc/sddm.conf` 
-
 ```
 [Users]
 HideShells=/sbin/nologin,/bin/false

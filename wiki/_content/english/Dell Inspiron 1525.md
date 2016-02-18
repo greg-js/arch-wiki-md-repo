@@ -16,7 +16,7 @@ This is an install and configuration guide for the Dell Inspiron 1525 laptop, te
 
 ## Installation
 
-When the installation media has boot, hit TAB in the first entry and add _i915.modeset=0_ to the options. Then hit ENTER to install.
+When the installation media has boot, hit TAB in the first entry and add *i915.modeset=0* to the options. Then hit ENTER to install.
 
 ## Configuration
 
@@ -32,7 +32,7 @@ If the built-in microphone is static, [setting the sample rate in PulseAudio](/i
 
 ### Video
 
-The notebook comes with the [Intel GMA X3100](https://en.wikipedia.org/wiki/Intel_GMA#GMA_X3100 "wikipedia:Intel GMA") GPU, which uses the _xf86-video-intel_ driver. See [Intel](/index.php/Intel "Intel") for details.
+The notebook comes with the [Intel GMA X3100](https://en.wikipedia.org/wiki/Intel_GMA#GMA_X3100 "wikipedia:Intel GMA") GPU, which uses the *xf86-video-intel* driver. See [Intel](/index.php/Intel "Intel") for details.
 
 Since xf86-video-intel 2.10, using KMS is [mandatory](https://www.archlinux.org/news/484/), so do not use [GRUB Frame Buffer.](/index.php/GRUB#Frame_Buffer "GRUB") Touchpad
 

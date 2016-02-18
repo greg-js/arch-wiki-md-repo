@@ -59,7 +59,7 @@ read KEY
 
 **Внимание:** Не забудьте убрать паузу!!
 
-В вашей системе, в <tt>/root</tt> создайте каталог "_mylivecd_" и два подкаталога: "_isolinux_" и "_system_" (вы можете использовать свои имена).
+В вашей системе, в <tt>/root</tt> создайте каталог "*mylivecd*" и два подкаталога: "*isolinux*" и "*system*" (вы можете использовать свои имена).
 
 ```
 # cd /root
@@ -72,11 +72,11 @@ read KEY
 
 #### Установите isolinux. Скопируйте его с Live CD
 
-1.  Загрузите "_isolinux.bin_" и "_boot.cat_" в каталог <tt>/root/mylivecd/isolinux/</tt> :
+1.  Загрузите "*isolinux.bin*" и "*boot.cat*" в каталог <tt>/root/mylivecd/isolinux/</tt> :
 
 [http://amlug.bliss-solutions.org/live-cd/distfiles/0.5.1/isolinux/](http://amlug.bliss-solutions.org/live-cd/distfiles/0.5.1/isolinux/)
 
-1.  Создайте загрузочное сообщение "_boot.msg_" (текстовый файл) и запишите туда краткое описание вашего live CD. Сохраните этот файл в <tt>/root/mylivecd/isolinux/</tt>.
+1.  Создайте загрузочное сообщение "*boot.msg*" (текстовый файл) и запишите туда краткое описание вашего live CD. Сохраните этот файл в <tt>/root/mylivecd/isolinux/</tt>.
 
 Пример <tt>boot.msg</tt>:
 
@@ -89,7 +89,7 @@ F2 - package list
 
 ```
 
-1.  Создайте "_isolinux.cfg_" и поместите туда следующий текст. Сохраните файл в <tt>/root/mylivecd/isolinux/</tt>
+1.  Создайте "*isolinux.cfg*" и поместите туда следующий текст. Сохраните файл в <tt>/root/mylivecd/isolinux/</tt>
 
 ```
 prompt 1
@@ -108,7 +108,7 @@ Miniroot загружается в оперативную память во вр
 **Внимание:** Настройка miniroot зависит от <tt>/etc/inittab</tt>, <tt>/etc/rc.sysinit</tt>, <tt>/etc/rc.multi</tt>, и <tt>/etc/rc.shutdown</tt>. Перед созданием miniroot-образа, внимательно изучите эти файлы и продумайте как они могут быть изменены при необходимости. В каталоге <tt>/sbin</tt> вам понадобятся слеующие файлы:
 [http://amlug.bliss-solutions.org/live-cd/distfiles/0.5.1/miniroot/init/sbin/](http://amlug.bliss-solutions.org/live-cd/distfiles/0.5.1/miniroot/init/sbin/)
 
-1.  Создайте текстовый файл "_miniroot_" в <tt>/root/mylivecd</tt> с файловой системой Ext2\. Размер образа зависит от того, как много пакетов вы собираетесь включить в него. В нашем примере мы создадим образ 15.8MB. Рекомендуется создавать образ как можно меньше. Когда будете готовы, примонтируйте образ например в <tt>/mnt/image</tt>
+1.  Создайте текстовый файл "*miniroot*" в <tt>/root/mylivecd</tt> с файловой системой Ext2\. Размер образа зависит от того, как много пакетов вы собираетесь включить в него. В нашем примере мы создадим образ 15.8MB. Рекомендуется создавать образ как можно меньше. Когда будете готовы, примонтируйте образ например в <tt>/mnt/image</tt>
 
 ```
 # cd /root/mylivecd

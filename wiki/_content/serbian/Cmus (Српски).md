@@ -24,7 +24,7 @@
 
 # Opis
 
-**cmus** _(C* Music Player)_ je mali, brz i moćan audio plejer.
+**cmus** *(C* Music Player)* je mali, brz i moćan audio plejer.
 
 # Instalacija
 

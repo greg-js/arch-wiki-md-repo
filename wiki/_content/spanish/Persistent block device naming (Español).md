@@ -24,7 +24,6 @@ Las siguientes secciones describen lo que son y cómo se utilizan los diferentes
 La orden `lsblk -f` se puede utilizar para la visualización gráfica de los primeros esquemas nombres persistentes:
 
  `$ lsblk -f` 
-
 ```
 NAME   FSTYPE LABEL  UUID                                 MOUNTPOINT
 sda                                                       
@@ -38,7 +37,6 @@ sda
 Para aquellos que utilizan [GPT](/index.php/GUID_Partition_Table "GUID Partition Table"), utilice la orden `blkid`. Este último es más eficiente para los scripts, pero más difícil de leer.
 
  `$ blkid` 
-
 ```
 /dev/sda1: UUID="CBB6-24F2" TYPE="vfat" PARTLABEL="EFI SYSTEM PARTITION" PARTUUID="d0d0d110-0a71-4ed6-936a-304969ea36af" 
 /dev/sda2: LABEL="SYSTEM" UUID="0a3407de-014b-458b-b5c1-848e92a327a3" TYPE="ext4" PARTLABEL="GNU/LINUX" PARTUUID="98a81274-10f7-40db-872a-03df048df366" 
@@ -52,7 +50,6 @@ Para aquellos que utilizan [GPT](/index.php/GUID_Partition_Table "GUID Partition
 Casi todos los tipos de sistemas de archivos pueden tener una etiqueta. Todas las particiones que tienen una se enumeran en el directorio `/dev/disk/by-label`. Este directorio se crea y se destruye de forma dinámica, en función de si tiene particiones con etiquetas adjuntas.
 
  `$ ls -l /dev/disk/by-label` 
-
 ```
 
 total 0
@@ -107,10 +104,9 @@ Las etiquetas de los sistemas de archivos se pueden cambiar. Los siguientes son 
 
 ### by-uuid
 
-[UUID](https://en.wikipedia.org/wiki/es:Universally_unique_identifier "wikipedia:es:Universally unique identifier") es un mecanismo para dotar a cada sistema de archivos de un identificador único. Estos identificadores son generados por las utilidades del sistema de archivos (por ejemplo, `mkfs.*`) cuando la partición se formatea y se ha diseñado de manera que evite conflictos. Todos los sistemas de archivos de GNU/Linux (incluyendo swap y las cabeceras LUKS de dispositivos cifrados en bruto) soportan UUID. Los sistemas de archivos FAT y NTFS (_fat_ y etiqueta _windows_ del ejemplo de abajo) no son compatibles con UUID, pero todavía se enumeran en `/dev/disk/by-uuid` con un UID más corto (identificador único):
+[UUID](https://en.wikipedia.org/wiki/es:Universally_unique_identifier "wikipedia:es:Universally unique identifier") es un mecanismo para dotar a cada sistema de archivos de un identificador único. Estos identificadores son generados por las utilidades del sistema de archivos (por ejemplo, `mkfs.*`) cuando la partición se formatea y se ha diseñado de manera que evite conflictos. Todos los sistemas de archivos de GNU/Linux (incluyendo swap y las cabeceras LUKS de dispositivos cifrados en bruto) soportan UUID. Los sistemas de archivos FAT y NTFS (*fat* y etiqueta *windows* del ejemplo de abajo) no son compatibles con UUID, pero todavía se enumeran en `/dev/disk/by-uuid` con un UID más corto (identificador único):
 
  `$ ls -l /dev/disk/by-uuid/` 
-
 ```
 total 0
 lrwxrwxrwx 1 root root 10 May 27 23:31 0a3407de-014b-458b-b5c1-848e92a327a3 -> ../../sda2
@@ -141,7 +137,6 @@ Véase también [Wikipedia:GUID Partition Table#Partition entries](https://en.wi
 Este método es muy similar al de las [etiquetas de los sistemas de archivos](#by-label), excepto en que el directorio dinámico es `/dev/disk/by-partlabel`.
 
  `ls -l /dev/disk/by-partlabel/` 
-
 ```
 total 0
 lrwxrwxrwx 1 root root 10 May 27 23:31 EFI\x20SYSTEM\x20PARTITION -> ../../sda1
@@ -167,7 +162,6 @@ Véase también [Wikipedia:GUID Partition Table#Partition entries](https://en.wi
 El directorio dinámico es similar al de los otros métodos y, al igual que con el [UUID de los sistemas de archivos](#by-uuid), el uso del UUID de las particiones es preferido sobre el de las etiquetas.
 
  `ls -l /dev/disk/by-partuuid/` 
-
 ```
 total 0
 lrwxrwxrwx 1 root root 10 May 27 23:31 039b6c1c-7553-4455-9537-1befbc9fbc5b -> ../../sda4
@@ -196,7 +190,7 @@ Para utilizar nombres permanentes en su gestor de arranque, deben cumplirse los 
 *   estar utilizando [mkinitcpio](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Configuraci.C3.B3n "Mkinitcpio (Español)") para generar la imagen de disco RAM inicial;
 *   tener el hook udev activado en el archivo `/etc/mkinitcpio.conf`.
 
-En el ejemplo anterior, `/dev/sda1` es la partición raíz. En el archivo `grub.cfg` de [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)"), la línea _linux_ se parecerá a esto:
+En el ejemplo anterior, `/dev/sda1` es la partición raíz. En el archivo `grub.cfg` de [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)"), la línea *linux* se parecerá a esto:
 
 ```
 linux /boot/vmlinuz-linux root=/dev/sda1 rw quiet

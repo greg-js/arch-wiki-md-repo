@@ -2,7 +2,7 @@
 
 | **Device** | **Status** | **Modules** |
 | Video | Working | i915 |
-| Wireless | Working | wl _or_ iwlwifi |
+| Wireless | Working | wl *or* iwlwifi |
 | Bluetooth | Works after installing firmware | btbcm |
 | Audio | Working | snd_hda_intel |
 | Touchpad | Works after configuration | hid_multitouch |
@@ -65,7 +65,7 @@ Some higher-end models do not use the Dell-branded adapter but instead use an In
 
 **Note:** **Intel WiFi users:** If your WiFi card supports Bluetooth, then the BT interface should be available out-of-the-box, as the required firmware is included in [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).
 
-The Broadcom Bluetooth firmware is not available in the kernel ([source](http://tech.sybreon.com/2015/03/15/xps13-9343-ubuntu-linux/)), so you will have to retrieve it from the [Windows driver](http://catalog.update.microsoft.com/v7/site/ScopedViewRedirect.aspx?updateid=87a7756f-1451-45da-ba8a-55f8aa29dfee). You need to extract the `.cab` file with [cabextract](https://www.archlinux.org/packages/?name=cabextract) and then convert it to a `.hcd` file with _hex2hcd_ from [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils):
+The Broadcom Bluetooth firmware is not available in the kernel ([source](http://tech.sybreon.com/2015/03/15/xps13-9343-ubuntu-linux/)), so you will have to retrieve it from the [Windows driver](http://catalog.update.microsoft.com/v7/site/ScopedViewRedirect.aspx?updateid=87a7756f-1451-45da-ba8a-55f8aa29dfee). You need to extract the `.cab` file with [cabextract](https://www.archlinux.org/packages/?name=cabextract) and then convert it to a `.hcd` file with *hex2hcd* from [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils):
 
 ```
 $ cabextract 20662520_6c535fbfa9dca0d07ab069e8918896086e2af0a7.cab
@@ -117,7 +117,7 @@ An ICC profile is a binary file which contains precise data regarding the color 
 
 ### Touchpad
 
-With the latest BIOS patch, most of the touchpad functions should work, although [palm detection](/index.php/Touchpad_Synaptics#Using_the_driver.27s_automatic_palm_detection "Touchpad Synaptics") does not work in i2c mode yet. For advanced settings with [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics), the _psmouse_ kernel module must be [blacklisted](/index.php/Kernel_modules#Blacklisting "Kernel modules") first.
+With the latest BIOS patch, most of the touchpad functions should work, although [palm detection](/index.php/Touchpad_Synaptics#Using_the_driver.27s_automatic_palm_detection "Touchpad Synaptics") does not work in i2c mode yet. For advanced settings with [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics), the *psmouse* kernel module must be [blacklisted](/index.php/Kernel_modules#Blacklisting "Kernel modules") first.
 
 The touchpad may freeze if two fingers are detected on the pad. This can be fixed by setting `synclient Clickpad=1`
 
@@ -126,7 +126,6 @@ If your desktop does not provide useful default settings for the clickpad (no ri
 If you need working palm detection, you can use [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput). The libinput driver supports nearly all button layouts out of the box with few additional settings.
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
 Section "InputClass"
 	Identifier "touchpad"
@@ -197,7 +196,7 @@ See [here](https://bugzilla.kernel.org/show_bug.cgi?id=105251). This issue seems
 
 ### Sound doesn't work after upgrading to kernel 4.4
 
-You need to do two cold boots (_don't_ reboot; shutdown and turn back on again) to make sound work again. This is necessary because I2S support was enabled in the Arch 4.4 stock kernel, and the XPS 13's embedded controller requires two cold boots to recognize changes in the sound chipset mode. See the Audio section above for more information.
+You need to do two cold boots (*don't* reboot; shutdown and turn back on again) to make sound work again. This is necessary because I2S support was enabled in the Arch 4.4 stock kernel, and the XPS 13's embedded controller requires two cold boots to recognize changes in the sound chipset mode. See the Audio section above for more information.
 
 It is reported that recompiling the kernel with the CONFIG_ACPI_REV_OVERRIDE_POSSIBLE option will re-enable the microphone. See the [BBS thread](https://bbs.archlinux.org/viewtopic.php?id=208674) and [bug report](https://bugs.archlinux.org/task/47989) for information.
 

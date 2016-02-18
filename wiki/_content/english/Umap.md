@@ -43,7 +43,6 @@ Copy sample uMap configuration file:
 You have to define a `SECRET_KEY` in the configuration file and define database connection settings:
 
  `/usr/share/webapps/umap/settings/local.py` 
-
 ```
 SECRET_KEY = ''
 

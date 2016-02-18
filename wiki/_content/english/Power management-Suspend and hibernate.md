@@ -69,19 +69,19 @@ See main article [pm-utils](/index.php/Pm-utils "Pm-utils").
 
 ## Hibernation
 
-In order to use hibernation, you need to create a [swap](/index.php/Swap "Swap") partition or file. You will need to point the kernel to your swap using the `resume=` kernel parameter, which is configured via the boot loader. You will also need to add the _resume_ [hook](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") to the configuration file of the [initramfs](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd") generator, [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). This tells the kernel to attempt resuming from the specified swap in early userspace. These three steps are described in detail below.
+In order to use hibernation, you need to create a [swap](/index.php/Swap "Swap") partition or file. You will need to point the kernel to your swap using the `resume=` kernel parameter, which is configured via the boot loader. You will also need to add the *resume* [hook](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") to the configuration file of the [initramfs](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd") generator, [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). This tells the kernel to attempt resuming from the specified swap in early userspace. These three steps are described in detail below.
 
 ### About swap partition/file size
 
 Even if your swap partition is smaller than RAM, you still have a big chance of hibernating successfully. According to [kernel documentation](https://www.kernel.org/doc/Documentation/power/interface.txt):
 
-	_`/sys/power/image_size` controls the size of the image created by the suspend-to-disk mechanism. It can be written a string representing a non-negative integer that will be used as an upper limit of the image size, in bytes. The suspend-to-disk mechanism will do its best to ensure the image size will not exceed that number. However, if this turns out to be impossible, it will try to suspend anyway using the smallest image possible. In particular, if "0" is written to this file, the suspend image will be as small as possible. Reading from this file will display the current image size limit, which is set to 2/5 of available RAM by default._
+	*`/sys/power/image_size` controls the size of the image created by the suspend-to-disk mechanism. It can be written a string representing a non-negative integer that will be used as an upper limit of the image size, in bytes. The suspend-to-disk mechanism will do its best to ensure the image size will not exceed that number. However, if this turns out to be impossible, it will try to suspend anyway using the smallest image possible. In particular, if "0" is written to this file, the suspend image will be as small as possible. Reading from this file will display the current image size limit, which is set to 2/5 of available RAM by default.*
 
 You may either decrease the value of `/sys/power/image_size` to make the suspend image as small as possible (for small swap partitions), or increase it to possibly speed up the hibernation process.
 
 ### Required kernel parameters
 
-The kernel parameter `resume=_swap_partition_` has to be used. Either the name the kernel assigns to the partition or its [UUID](/index.php/UUID "UUID") can be used as `_swap_partition_`. For example:
+The kernel parameter `resume=*swap_partition*` has to be used. Either the name the kernel assigns to the partition or its [UUID](/index.php/UUID "UUID") can be used as `*swap_partition*`. For example:
 
 *   `resume=/dev/sda1`
 *   `resume=UUID=4209c845-f495-4c43-8a03-5363dd433153`
@@ -95,12 +95,11 @@ The configuration depends on the used [boot loader](/index.php/Boot_loader "Boot
 
 **Warning:** [Btrfs](/index.php/Btrfs#Swap_file "Btrfs") does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on Btrfs when mounted through a loop device, this will result in severely degraded swap performance.
 
-Using a swap file instead of a swap partition requires an additional kernel parameter `resume_offset=_swap_file_offset_`.
+Using a swap file instead of a swap partition requires an additional kernel parameter `resume_offset=*swap_file_offset*`.
 
-The value of `_swap_file_offset_` can be obtained by running `filefrag -v _swap_file_`, the output is in a table format and the required value is located in the first row of the `physical_offset` column. For example:
+The value of `*swap_file_offset*` can be obtained by running `filefrag -v *swap_file*`, the output is in a table format and the required value is located in the first row of the `physical_offset` column. For example:
 
  `# filefrag -v /swapfile` 
-
 ```
 Filesystem type is: ef53
 File size of /swapfile is 4294967296 (1048576 blocks of 4096 bytes)
@@ -112,9 +111,9 @@ File size of /swapfile is 4294967296 (1048576 blocks of 4096 bytes)
 
 ```
 
-In the example the value of `_swap_file_offset_` is `38912`.
+In the example the value of `*swap_file_offset*` is `38912`.
 
-**Tip:** The value of `_swap_file_offset_` can also be obtained by running `swap-offset _swap_file_`. The _swap-offset_ binary is provided by package [uswsusp-git](https://aur.archlinux.org/packages/uswsusp-git/).
+**Tip:** The value of `*swap_file_offset*` can also be obtained by running `swap-offset *swap_file*`. The *swap-offset* binary is provided by package [uswsusp-git](https://aur.archlinux.org/packages/uswsusp-git/).
 
 **Note:**
 
@@ -123,7 +122,7 @@ In the example the value of `_swap_file_offset_` is `38912`.
 
 ### Configure the initramfs
 
-*   When an [initramfs](/index.php/Initramfs "Initramfs") with the `base` hook is used, which is the default, the `resume` hook is required in `/etc/mkinitcpio.conf`. Whether by label or by UUID, the swap partition is referred to with a udev device node, so the `resume` hook must go _after_ the `udev` hook. This example was made starting from the default hook configuration:
+*   When an [initramfs](/index.php/Initramfs "Initramfs") with the `base` hook is used, which is the default, the `resume` hook is required in `/etc/mkinitcpio.conf`. Whether by label or by UUID, the swap partition is referred to with a udev device node, so the `resume` hook must go *after* the `udev` hook. This example was made starting from the default hook configuration:
 
 	 `HOOKS="base udev **resume** autodetect modconf block filesystems keyboard fsck"` 
 
@@ -156,7 +155,6 @@ If [Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") is active, the network in
 Some USB devices are reported to mess with the ACPI wakeup triggers after being plugged in once, causing the system to wake from suspension instantaneously. This is usually resolved by a reboot, but can also be fixed by disabling wakeup through USB. To view the current configuration:
 
  `# cat /proc/acpi/wakeup` 
-
 ```
 Device  S-state   Status   Sysfs node
 ...

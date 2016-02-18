@@ -12,24 +12,24 @@
     *   [3.1 Keyboard](#Keyboard)
         *   [3.1.1 Backspace not working properly](#Backspace_not_working_properly)
     *   [3.2 Vim](#Vim)
-        *   [3.2.1 The background colour of text in _vim_ will not fill in anything that is not a character](#The_background_colour_of_text_in_vim_will_not_fill_in_anything_that_is_not_a_character)
+        *   [3.2.1 The background colour of text in *vim* will not fill in anything that is not a character](#The_background_colour_of_text_in_vim_will_not_fill_in_anything_that_is_not_a_character)
 *   [4 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the package [st](https://www.archlinux.org/packages/?name=st) or [st-git](https://aur.archlinux.org/packages/st-git/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
-Install [st-git-zsh](https://aur.archlinux.org/packages/st-git-zsh/) package for a _zsh_ preconfigured _st_.
+Install [st-git-zsh](https://aur.archlinux.org/packages/st-git-zsh/) package for a *zsh* preconfigured *st*.
 
 ## Configuration
 
-_st_ is configured through its `config.h` file, which is copied over from `config.h` at compile time. A default `config.def.h` is included with the source.
+*st* is configured through its `config.h` file, which is copied over from `config.h` at compile time. A default `config.def.h` is included with the source.
 
 Consider maintaining your own [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") with your `config.h`.
 
 ### Shell
 
-To change the default shell for _st_, edit this line:
+To change the default shell for *st*, edit this line:
 
 ```
  static char shell[] = "/bin/sh";
@@ -45,9 +45,9 @@ To change the terminal type, edit this line:
 
 ```
 
-_st_ will set the `TERM` variable with the value of `termname`.
+*st* will set the `TERM` variable with the value of `termname`.
 
-**Note:** If you experience trouble with _st_, you can try to set `termname` to `xterm` or `xterm-256color`
+**Note:** If you experience trouble with *st*, you can try to set `termname` to `xterm` or `xterm-256color`
 
 ### Font
 
@@ -67,7 +67,7 @@ You can also pass the value of the font in the command line:
 
 ### Colors
 
-Edit the following line to set _foreground_, _background_ and _cursor_ colors:
+Edit the following line to set *foreground*, *background* and *cursor* colors:
 
 ```
  static unsigned int defaultfg = 7;
@@ -141,7 +141,7 @@ If you want to put the above command in a shell profile, you should consider che
 
 ### Vim
 
-#### The background colour of text in _vim_ will not fill in anything that is not a character
+#### The background colour of text in *vim* will not fill in anything that is not a character
 
 Try setting the value of `termname` in your `config.h` to `st-256color` and recompiling. And do not set the `TERM` var in your shell, at least not to `st-256color` as this seems to cause the issue.
 

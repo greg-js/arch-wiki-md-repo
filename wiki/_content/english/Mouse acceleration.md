@@ -1,4 +1,4 @@
-There are several ways of setting mouse acceleration: by editing [Xorg](/index.php/Xorg "Xorg") configuration files, [xorg-server-utils](https://www.archlinux.org/packages/?name=xorg-server-utils) which provides _xset_ and _xinput_, and configuration interfaces common in [desktop environments](/index.php/Desktop_environments "Desktop environments").
+There are several ways of setting mouse acceleration: by editing [Xorg](/index.php/Xorg "Xorg") configuration files, [xorg-server-utils](https://www.archlinux.org/packages/?name=xorg-server-utils) which provides *xset* and *xinput*, and configuration interfaces common in [desktop environments](/index.php/Desktop_environments "Desktop environments").
 
 ## Contents
 
@@ -18,7 +18,6 @@ See `man xorg.conf` for details.
 Examples:
 
  `/etc/X11/xorg.conf.d/50-mouse-acceleration.conf` 
-
 ```
 Section "InputClass"
 	Identifier "My Mouse"
@@ -29,9 +28,7 @@ Section "InputClass"
 	Option "AccelerationThreshold" "4"
 EndSection
 ```
-
  `/etc/X11/xorg.conf.d/50-mouse-deceleration.conf` 
-
 ```
 Section "InputClass"
 	Identifier "My Mouse"
@@ -64,13 +61,13 @@ $ xset q | grep -A 1 Pointer
 To set new values, type:
 
 ```
-$ xset m _acceleration_ _threshold_
+$ xset m *acceleration* *threshold*
 
 ```
 
-where _acceleration_ defines how many times faster the cursor will move than the default speed. _threshold_ is the velocity required for acceleration to become effective, usually measured in device units per 10ms. _acceleration_ can be a fraction, so if you want to slow down the mouse you can use 1/2, 1/3, 1/4, ... if you want to make it faster you can use 2/1, 3/1, 4/1, ...
+where *acceleration* defines how many times faster the cursor will move than the default speed. *threshold* is the velocity required for acceleration to become effective, usually measured in device units per 10ms. *acceleration* can be a fraction, so if you want to slow down the mouse you can use 1/2, 1/3, 1/4, ... if you want to make it faster you can use 2/1, 3/1, 4/1, ...
 
-_Threshold_ defines the point at which acceleration should occur in pixels per 10 ms. If threshold is zero, e.g. if you use:
+*Threshold* defines the point at which acceleration should occur in pixels per 10 ms. If threshold is zero, e.g. if you use:
 
 ```
 $ xset m 3/2 0
@@ -121,18 +118,17 @@ $ xinput list-props 9
 where `9` is the ID of the device you wish to use. Or
 
 ```
-$ xinput list-props _mouse brand_
+$ xinput list-props *mouse brand*
 
 ```
 
-where _mouse brand_ is the name of your mouse given by `$ xinput list`
+where *mouse brand* is the name of your mouse given by `$ xinput list`
 
 Example, changing the property of `Constant Deceleration` to 2:
 
  `$ xinput list-props 9` 
-
 ```
-Device '_mouse brand_':
+Device '*mouse brand*':
        Device Enabled (121):   1
        Device Accel Profile (240):     0
        Device Accel Constant Deceleration (241):       1.000000
@@ -142,7 +138,7 @@ Device '_mouse brand_':
 ```
 
 ```
-$ xinput --set-prop '_mouse brand_' 'Device Accel Constant Deceleration' 2
+$ xinput --set-prop '*mouse brand*' 'Device Accel Constant Deceleration' 2
 
 ```
 
@@ -175,7 +171,6 @@ Recent changes on `PointerAcceleration` can be read [here](http://xorg.freedeskt
 To completely disable any sort of acceleration/deceleration, create the following file:
 
  `/etc/X11/xorg.conf.d/50-mouse-acceleration.conf` 
-
 ```
 Section "InputClass"
 	Identifier "My Mouse"
@@ -191,7 +186,6 @@ and restart X.
 Since libinput1.1.0-1 and xf86-input-libinput0.15.0-1 you can use a flat acceleration profile which will give a 1:1 mapping of physical to virtual mouse movements. To enable it put this in the following file:
 
  `/etc/X11/xorg.conf.d/50-mouse-acceleration.conf` 
-
 ```
 Section "InputClass"
 	Identifier "My Mouse"

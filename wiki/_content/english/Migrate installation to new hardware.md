@@ -2,8 +2,8 @@ This article discusses the steps required for moving an Arch Linux system to new
 
 There are two different approaches to migrating an installation:
 
-1.  _Bottom to Top_: Install a fresh Arch Linux system on the new hardware, afterwards restore the installed packages and configuration files.
-2.  _Top to Bottom_: Clone the old harddrive to the new harddrive, or place the old harddrive into the new system; modify configuration files where necessary.
+1.  *Bottom to Top*: Install a fresh Arch Linux system on the new hardware, afterwards restore the installed packages and configuration files.
+2.  *Top to Bottom*: Clone the old harddrive to the new harddrive, or place the old harddrive into the new system; modify configuration files where necessary.
 
 Which way you choose depends heavily on how the new system differs from your old and how exact you want to reproduce the system.
 
@@ -41,7 +41,7 @@ $ pacman -Qqm > Packages.aur
 
 ```
 
-gives you a nice list of explicitly installed packages. Don't forget the software _not_ installed through pacman (also see [AUR FAQ](/index.php/Arch_User_Repository#Why_has_foo_disappeared_from_the_AUR.3F "Arch User Repository")). You may also use the following script to give you a better overview of the binaries and libraries installed unbeknownst to pacman (e. g. installed via Steam, Desura or using their own install methods):
+gives you a nice list of explicitly installed packages. Don't forget the software *not* installed through pacman (also see [AUR FAQ](/index.php/Arch_User_Repository#Why_has_foo_disappeared_from_the_AUR.3F "Arch User Repository")). You may also use the following script to give you a better overview of the binaries and libraries installed unbeknownst to pacman (e. g. installed via Steam, Desura or using their own install methods):
 
 ```
 find / -regextype posix-extended -regex "/(sys|srv|proc)|.*/\.ccache/.*" -prune -o -type f \
@@ -64,7 +64,7 @@ done
 
 *   Read some Wiki articles concerning new hardware, for examples your new [SSD](/index.php/SSD "SSD").
 *   Stick to the well-written installation guidelines here in this wiki. Since you are experienced, the [Installation guide](/index.php/Installation_guide "Installation guide") could be enough.
-*   Try to configure as much as possible sticking to _current_ wiki articles and forum posts.
+*   Try to configure as much as possible sticking to *current* wiki articles and forum posts.
 
 #### Copy from backup space
 

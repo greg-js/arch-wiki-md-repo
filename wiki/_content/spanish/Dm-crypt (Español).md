@@ -24,11 +24,11 @@ De la [wiki](https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt) del proyect
 
 ## Escenarios comunes
 
-Esta sección presenta los escenarios más comunes para emplear _dm-crypt_ con el fin de cifrar un sistema o los puntos de montajes de sistemas de archivos individuales. Los escenarios descritos remiten a otras subpáginas para su desarrollo. Este documento se entiende, por tanto, como punto de partida para familiarizarse con las diferentes prácticas en los procedimientos de cifrado.
+Esta sección presenta los escenarios más comunes para emplear *dm-crypt* con el fin de cifrar un sistema o los puntos de montajes de sistemas de archivos individuales. Los escenarios descritos remiten a otras subpáginas para su desarrollo. Este documento se entiende, por tanto, como punto de partida para familiarizarse con las diferentes prácticas en los procedimientos de cifrado.
 
 Véase [Dm-crypt/Encrypting a non-root file system](/index.php/Dm-crypt/Encrypting_a_non-root_file_system "Dm-crypt/Encrypting a non-root file system") si desea cifrar un dispositivo que el sistema no lo utiliza para arrancar, como puede ser una [partición](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system") o un [dispositivo loop](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Loop_device "Dm-crypt/Encrypting a non-root file system").
 
-Véase [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system") si desea cifrar el sistema completo, en especial una partición raíz. En este caso hay varios escenarios posibles, incluyendo la utilización de _dm-crypt_ con la extensión _LUKS_, la modalidad de cifrado _plain_ y la encriptación más _LVM_.
+Véase [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system") si desea cifrar el sistema completo, en especial una partición raíz. En este caso hay varios escenarios posibles, incluyendo la utilización de *dm-crypt* con la extensión *LUKS*, la modalidad de cifrado *plain* y la encriptación más *LVM*.
 
 ## Preparar la unidad
 

@@ -1,4 +1,4 @@
-A product of the [OLPC](https://en.wikipedia.org/wiki/One_Laptop_per_Child "wikipedia:One Laptop per Child") initiative, [Sugar](https://en.wikipedia.org/wiki/Sugar_(software) "wikipedia:Sugar (software)") is a Desktop Environment akin to [KDE](/index.php/KDE "KDE") and [GNOME](/index.php/GNOME "GNOME"), but geared towards children and education. If you have a young son, daughter, brother, sister, puppy or alien, the best way to introduce them to the world of Arch Linux is by deploying an Arch/Sugar platform and then forgetting about it.
+A product of the [OLPC](https://en.wikipedia.org/wiki/One_Laptop_per_Child is a Desktop Environment akin to [KDE](/index.php/KDE "KDE") and [GNOME](/index.php/GNOME "GNOME"), but geared towards children and education. If you have a young son, daughter, brother, sister, puppy or alien, the best way to introduce them to the world of Arch Linux is by deploying an Arch/Sugar platform and then forgetting about it.
 
 Sugar has a special [Taxonomy](http://wiki.sugarlabs.org/go/Taxonomy) to name the parts of its system. The graphical interface itself constitute the **Glucose** group. This is the core system can reasonably expect to be present when installing Sugar. But to really use the environment, you need activities (some sort of applications). Base activities are part of **Fructose**. Then, **Sucrose** is constituted by both Glucose and Fructose and represents what should be distributed as a basic sugar desktop environment. Extra activities are part of **Honey**. Note that Ribose (the underlaying operating system) is here replaced by Arch.
 
@@ -19,8 +19,8 @@ Sugar has a special [Taxonomy](http://wiki.sugarlabs.org/go/Taxonomy) to name th
 
 ### From [city] repository
 
-*   For the core system (_Glucose_), install [sugar](https://aur.archlinux.org/packages/sugar/), available in the [[city] repository](http://pkgbuild.com/~bgyorgy/city.html). It provides the graphical interface and a desktop session, but not very useful on its own.
-*   The _sugar-fructose_ group contains the base activities (_Fructose_) including a web browser, a text editor, a media player and a terminal emulator.
+*   For the core system (*Glucose*), install [sugar](https://aur.archlinux.org/packages/sugar/), available in the [[city] repository](http://pkgbuild.com/~bgyorgy/city.html). It provides the graphical interface and a desktop session, but not very useful on its own.
+*   The *sugar-fructose* group contains the base activities (*Fructose*) including a web browser, a text editor, a media player and a terminal emulator.
 *   The [sugar-runner](https://aur.archlinux.org/packages/sugar-runner/) package provides a helper script that makes it possible to launch Sugar within another desktop environment, or from the command line directly.
 
 ### From AUR
@@ -50,7 +50,7 @@ Sugar can be started either graphically, using a [display manager](/index.php/Di
 
 **Graphically**
 
-Select the session _Sugar_ from the display manager's session menu.
+Select the session *Sugar* from the display manager's session menu.
 
 **Manually**
 
@@ -63,7 +63,6 @@ Alternative method is to add `exec sugar` to the `~/.xinitrc` file. After that, 
 Almost all activities have the same building procedure, a `setup.py` that calls functions shipped with sugar. Below is a typical `PKGBUILD`:
 
  `PKGBUILD` 
-
 ```
 # Contributor: Name <name@mail.com>
 pkgname=sugar-activity-calculate
@@ -90,7 +89,7 @@ build() {
 
 *   Activity building procedure is not made for packaging and using `--prefix` can be dangerous if the application uses this path internally. I think the correct way to do this would be to patch the installation procedure in `sugar` so it accepts an argument such as `--destdir=`.
 
-*   I _suggest_ that we prefix sugar activities packages in AUR with `sugar-activity-`.
+*   I *suggest* that we prefix sugar activities packages in AUR with `sugar-activity-`.
 
 ## See also
 

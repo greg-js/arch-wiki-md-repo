@@ -142,7 +142,7 @@ $ vmixctl attach device
 
 ```
 
-其中_device_是你的声音设备，比如/dev/oss/oss_envy240/pcm0。
+其中*device*是你的声音设备，比如/dev/oss/oss_envy240/pcm0。
 
 为了避免将来手动运行这个命令，可以把它加到/usr/lib/oss/soundon.user里，像[[1]](http://www.opensound.com/wiki/index.php/Tips_And_Tricks#Changing_the_default_sound_output)中建议的。
 
@@ -370,9 +370,9 @@ MPD的配置文件是 /etc/mpd.conf 和 ~/.mpdconf，检查这两个文件，找
 
 如果你有一个HDAudio声音设备，有可能你必须调整一些设置你的声卡才能正常工作。
 
-HDAudio devices are very powerful in the sense that they can contain a lot of small circuits (called _widgets_) that can be adjusted by software at any time.（参考翻译：任何时间软件都可以调整强大的HDAudio上包含的很多小器件）。这些控制对混音器是外露的，例如，可以被用来把耳机声音输出功能改到声音输入功能。
+HDAudio devices are very powerful in the sense that they can contain a lot of small circuits (called *widgets*) that can be adjusted by software at any time.（参考翻译：任何时间软件都可以调整强大的HDAudio上包含的很多小器件）。这些控制对混音器是外露的，例如，可以被用来把耳机声音输出功能改到声音输入功能。
 
-但是，这可能导致问题，主要因为HDAudio标准比理想中应该有的标准来说太灵活了，也因为计算机开发商经常支持关注怎么让_官方驱动_正常工作。
+但是，这可能导致问题，主要因为HDAudio标准比理想中应该有的标准来说太灵活了，也因为计算机开发商经常支持关注怎么让*官方驱动*正常工作。
 
 所以你才会在使用HDAudio设备的时候，发现控制是混乱的，必须自己尝试手动调整每一个控制条直到可以工作，因为默认根本不会正常工作。你需要在前台调整ossxmix混音器设定的时候，后台有个程序录制/播放声音(比如 <tt>ossrecord - | ossplay -</tt> 来录制或者 <tt>osstest -lV</tt>来播放)。
 
@@ -450,7 +450,7 @@ lower volume
 
 Some example sample rates:
 
-*   44100hz - Sample rate of standard [Red Book](https://en.wikipedia.org/wiki/Red_Book_(audio_CD_standard) "wikipedia:Red Book (audio CD standard)") audio cds.
+*   44100hz - Sample rate of standard [Red Book](https://en.wikipedia.org/wiki/Red_Book_(audio_CD_standard) audio cds.
 *   88000hz - Sample rate of [SACD](https://en.wikipedia.org/wiki/Super_Audio_CD "wikipedia:Super Audio CD") high definition audio discs/downloads. It is rare that your motherboard will support this sample rate.
 *   96000hz - Sample rate of most high definition audio downloads. If your motherboard is an [AC'97](https://en.wikipedia.org/wiki/AC%2797 "wikipedia:AC'97") motherboard, this is likely to be your highest bitrate.
 *   192000hz - Sample rate of BluRay, and some (very few) high definition downloads. Support for external audio reciever equipment is limited to high end audio. Not all motherboards support this. An example of a motherboard chipset that would support this includes [Intel HDA audio](https://en.wikipedia.org/wiki/Intel_High_Definition_Audio "wikipedia:Intel High Definition Audio").

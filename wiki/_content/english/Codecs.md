@@ -1,6 +1,6 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/Codec "wikipedia:Codec"):
 
-	_A codec is a device or computer program capable of encoding and/or decoding a digital data stream or signal._
+	*A codec is a device or computer program capable of encoding and/or decoding a digital data stream or signal.*
 
 In general, codecs are utilized by multimedia applications to encode or decode audio or video streams. In order to play encoded streams, users must ensure an appropriate codec is installed.
 
@@ -147,15 +147,15 @@ It is not always necessary to explicitly install codecs if you have installed a 
 
 From [http://www.gstreamer.net/](http://www.gstreamer.net/):
 
-	_GStreamer is a library for constructing graphs of media-handling components. The applications supports range from simple Ogg/Vorbis playback, audio/video streaming to complex audio (mixing) and video (non-linear editing) processing._
+	*GStreamer is a library for constructing graphs of media-handling components. The applications supports range from simple Ogg/Vorbis playback, audio/video streaming to complex audio (mixing) and video (non-linear editing) processing.*
 
-Simply, GStreamer is a _backend_ or _framework_ utilized by many media applications. See [GStreamer](/index.php/GStreamer "GStreamer") article.
+Simply, GStreamer is a *backend* or *framework* utilized by many media applications. See [GStreamer](/index.php/GStreamer "GStreamer") article.
 
 ### xine
 
 From [http://www.xine-project.org/about](http://www.xine-project.org/about):
 
-	_xine is a free (gpl-licensed) high-performance, portable and reusable multimedia playback engine. xine itself is a shared library with an easy to use, yet powerful API which is used by many applications for smooth video playback and video processing purposes._
+	*xine is a free (gpl-licensed) high-performance, portable and reusable multimedia playback engine. xine itself is a shared library with an easy to use, yet powerful API which is used by many applications for smooth video playback and video processing purposes.*
 
 As an alternative to GStreamer, many media players can be configured to utilize the xine backend provided by [xine-lib](https://www.archlinux.org/packages/?name=xine-lib).
 

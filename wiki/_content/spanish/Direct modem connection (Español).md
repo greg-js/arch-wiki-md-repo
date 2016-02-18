@@ -48,7 +48,6 @@ Esto cargará el módulo `hisax` para mi ELSA Quickstep 1000PCI, que es usada en
 Una vez que hayas confirmado que tu tarjeta funciona con cierta configuración, puedes añadir las opciones del [módulo](/index.php/Kernel_modules "Kernel modules") a tu `/etc/modprobe.d/`:
 
  `/etc/modprobe.d/isdn.conf` 
-
 ```
 alias ippp0 hisax
 options hisax type=18 protocol=2

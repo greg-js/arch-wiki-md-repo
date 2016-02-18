@@ -14,7 +14,6 @@
 
 Використовуючи **sensors-detect** визначте список модулів ядра
  `# sensors-detect` Ця команда створить конфігуріційний файл **/etc/sysconfig/lm_sensors** Для автоматичного завантаження модулів ядра під час завантаження комп'ютера додайте **sensors** до змінної **DAEMONS** у **/etc/rc.conf** `DAEMONS=(syslog-ng crond ... sensors ...)` Для перевірки налаштувань запустіть прямо зараз скрипт `# /etc/rc.d/sensors start` Далі викличте команду **sensors** `$ sensors` Ви повинні побачити щось на зразок
-
 ```
  it8712-isa-0290
  Adapter: ISA adapter

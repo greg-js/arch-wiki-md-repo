@@ -1,8 +1,8 @@
 Although USB is the most popular way to connect input devices such as mice, serial input devices, such as older mice, and more exotic input devices such as 3Dconnexion Spaceballs are still quite usable, either with a serial port built into the computer, or via a USB to serial converter dongle.
 
-The traditional way to support these serially attached input devices was to configure _each_ application with the details such as which serial port the input device was attached to and what protocol the device used. As the most common application people used with a serial input device was X.org / XFree86, this wasn't too much of a problem. However, if you used a variety of applications that needed to talk to the serial input device directly, you may encounter limitations to which serial input device or protocol each application supported. Some applications may not have supported a serial input device you'd have preferred to use.
+The traditional way to support these serially attached input devices was to configure *each* application with the details such as which serial port the input device was attached to and what protocol the device used. As the most common application people used with a serial input device was X.org / XFree86, this wasn't too much of a problem. However, if you used a variety of applications that needed to talk to the serial input device directly, you may encounter limitations to which serial input device or protocol each application supported. Some applications may not have supported a serial input device you'd have preferred to use.
 
-A better approach is to have the Linux kernel input subsystem manage the serially attached input device, and then present the input signals the device generates in the same way that USB and PS/2 input device signals are presented to applications, via the _/dev/input/{mice|mouseX}_ device files.
+A better approach is to have the Linux kernel input subsystem manage the serially attached input device, and then present the input signals the device generates in the same way that USB and PS/2 input device signals are presented to applications, via the */dev/input/{mice|mouseX}* device files.
 
 This guide describes the simple steps necessary to "attach" a serial input device to the Linux kernel input subsystem.
 
@@ -17,7 +17,7 @@ Firstly, you'll need to install the **inputattach** utility from [linuxconsole](
 
 ## Configuration and usage
 
-Once you have installed package, you can view the _inputattach_ help, to see the large list of serial input devices the Linux kernel input subsystem supports. Here is an example of the help output:
+Once you have installed package, you can view the *inputattach* help, to see the large list of serial input devices the Linux kernel input subsystem supports. Here is an example of the help output:
 
 ```
 $ inputattach --help
@@ -72,11 +72,11 @@ $
 
 ```
 
-For example, if you have a Logitech TrackMan Marble serial mouse, as I do, the device type you would specify would be either _--mouseman_ or _-mman_.
+For example, if you have a Logitech TrackMan Marble serial mouse, as I do, the device type you would specify would be either *--mouseman* or *-mman*.
 
-The default _/etc/conf.d/inputattach.conf_ file assumes a Microsoft serial mouse, and assumes the mouse is attached to the first serial port of the computer. The **IAPARAMS** variable is an array of inputattach arguments. An inputattach instance will be started for each element. See _inputattach --help_ for details on arguments.
+The default */etc/conf.d/inputattach.conf* file assumes a Microsoft serial mouse, and assumes the mouse is attached to the first serial port of the computer. The **IAPARAMS** variable is an array of inputattach arguments. An inputattach instance will be started for each element. See *inputattach --help* for details on arguments.
 
-Here's an example of a _/etc/conf.d/inputattach.conf_ file, modified to suit a Logitech TrackMan Marble serial mouse:
+Here's an example of a */etc/conf.d/inputattach.conf* file, modified to suit a Logitech TrackMan Marble serial mouse:
 
 ```
 $ cat /etc/conf.d/inputattach.conf 
@@ -94,16 +94,16 @@ $
 
 ```
 
-Once you have modified the _/etc/conf.d/inputattach.conf_ file, you can then attempt to start the _inputattach_ service, by running
+Once you have modified the */etc/conf.d/inputattach.conf* file, you can then attempt to start the *inputattach* service, by running
 
 ```
 # systemctl start inputattach
 
 ```
 
-If you happen to be within Xorg when you do this, and have an _InputDevice_ mouse section that specifies _/dev/input/mice_ as the input device file, your new input device is likely to now be another source for Xorg mouse pointer movements, in addition other input devices e.g., a USB mouse.
+If you happen to be within Xorg when you do this, and have an *InputDevice* mouse section that specifies */dev/input/mice* as the input device file, your new input device is likely to now be another source for Xorg mouse pointer movements, in addition other input devices e.g., a USB mouse.
 
-Another way to confirm that it worked is to check your system's kernel log using the _dmesg_ utility. For a Logitech TrackMan Marble serial mouse, the kernel output is:
+Another way to confirm that it worked is to check your system's kernel log using the *dmesg* utility. For a Logitech TrackMan Marble serial mouse, the kernel output is:
 
 ```
 serio: Serial port ttyS0

@@ -41,7 +41,7 @@
 
 Lenovo ThinkPad X1 Carbon, Gen 2 (X1C). Comes without optical drive. There is also a touch version. Has UEFI BIOS with BIOS-legacy fallback mode.
 
-To ensure you have this version, try running _dmidecode_:
+To ensure you have this version, try running *dmidecode*:
 
 ```
 # dmidecode -t system | grep Version
@@ -123,7 +123,6 @@ $ xmodmap -pke > ~/.Xmodmap
 Then edit your key map:
 
  `~/.Xmodmap` 
-
 ```
 ...
 keycode   9 = Escape asciitilde Escape
@@ -134,7 +133,6 @@ keycode   9 = Escape asciitilde Escape
 Make sure xmodmap loads your new keymap on login:
 
  `~/.xinitrc` 
-
 ```
 ...
 if [ -s ~/.Xmodmap ]; then
@@ -151,7 +149,6 @@ fi
 To get the backtick/tilde back to a normal location, add the following definition for the Escape button:
 
  `/usr/share/X11/xkb/symbols/pc` 
-
 ```
 key <ESC>  { [ grave, asciitilde ] };
 
@@ -162,7 +159,6 @@ key <ESC>  { [ grave, asciitilde ] };
 You may also wish to remap the 'Home' and 'End' button back to Caps Lock, or Escape. Change the lines for HOME and END as follows:
 
  `/usr/share/X11/xkb/symbols/pc` 
-
 ```
 key <HOME> { [ Caps_Lock ] };
 key  <END> { [ Caps_Lock ] };
@@ -172,7 +168,6 @@ key  <END> { [ Caps_Lock ] };
 or to make 'Home' and 'End' be Escape:
 
  `/usr/share/X11/xkb/symbols/pc` 
-
 ```
 key <HOME> { [ Escape ] };
 key  <END> { [ Escape ] };
@@ -184,7 +179,6 @@ key  <END> { [ Escape ] };
 If you find yourself accidentally hitting the delete key instead of backspace, you may wish to make both backspace and delete be 'BackSpace', while functioning as 'Delete' when you hold down shift:
 
  `/usr/share/X11/xkb/symbols/pc` 
-
 ```
 key <BKSP> { [ BackSpace, Delete ] };
 key <DELE> { [ BackSpace, Delete ] };
@@ -202,7 +196,6 @@ There are significant issues with the trackpad locking up on click. This is due 
 One alternative is to abandon the trackpad completely and use the trackpoint. Make sure xf86-input-synaptics is not installed - the trackpad will still register button one mouse clicks. Using xbindkeys [Xbindkeys](/index.php/Xbindkeys "Xbindkeys") and [xdotool](https://www.archlinux.org/packages/?name=xdotool), right button clicks can be mapped to some other event. For example:
 
  `~/.xbindkeysrc` 
-
 ```
 # Emit a right click on Alt + trackpad click
 "xdotool click 3"
@@ -215,7 +208,6 @@ One alternative is to abandon the trackpad completely and use the trackpoint. Ma
 The behavior of the trackpad by default can be contrary to your expectations, particularly if you are coming from an OS X style trackpad. The following settings can help significantly:
 
  `/etc/X11/xorg.conf.d/99-x1carbon.conf` 
-
 ```
 # Copy this to /etc/X11/xorg.conf.d/99-x1carbon.conf
  Section "InputClass"
@@ -289,7 +281,6 @@ There is a small port on the right side for Ethernet. An adaptor is required.
 Works out of the box. The module `iwlwifi` should be automatically loaded by [udev](/index.php/Udev "Udev").
 
  `$ lspci` 
-
 ```
 Network controller: Intel Corporation Wireless 7260 (rev 83)
 

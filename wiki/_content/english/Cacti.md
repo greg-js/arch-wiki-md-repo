@@ -21,7 +21,6 @@ This article assumes that you already have a working [LAMP](/index.php/LAMP "LAM
 Cacti uses PHP, an SQL database (MySQL or MariaDB) and SNMP, so enable the required PHP modules:
 
  `/etc/php/php.ini` 
-
 ```
 extension=mysqli.so
 extension=sockets.so
@@ -102,7 +101,6 @@ $database_password = "some_password";
 Optionally, install [cacti-spine](https://aur.archlinux.org/packages/cacti-spine/), a faster poller for cacti, from the [AUR](/index.php/AUR "AUR"). configure it with database access details:
 
  `/etc/spine.conf` 
-
 ```
 DB_User cactiuser
 DB_Pass some_password
@@ -113,7 +111,6 @@ DB_Pass some_password
 Cacti uses a poller to collect data, so create a [Systemd](/index.php/Systemd "Systemd") service to run poller.php, and a timer to run the service every 5 minutes:
 
  `/etc/systemd/system/cacti_poller.service` 
-
 ```
 [Unit]
 Description=Cacti Poller
@@ -124,9 +121,7 @@ Type=simple
 ExecStart=/usr/bin/php /usr/share/webapps/cacti/poller.php
 
 ```
-
  `/etc/systemd/system/cacti_poller.timer` 
-
 ```
 [Unit]
 Description=Cacti Poller Timer
@@ -144,7 +139,6 @@ WantedBy=multi-user.target
 **Note:** Do not start or enable `cacti_poller.service`. Instead, [start](/index.php/Start "Start") and enable `cacti_poller.timer` only, which calls the service every 5 minutes.
 
 **Tip:** [journalctl](/index.php/Journalctl "Journalctl") can be used to watch for the poller's log messages, which will resemble the following:
-
 ```
 Sep 27 15:50:00 hoom php[4072]: OK u:0.00 s:0.01 r:0.35
 Sep 27 15:50:00 hoom php[4072]: OK u:0.00 s:0.01 r:0.38

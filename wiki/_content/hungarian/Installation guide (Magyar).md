@@ -1,6 +1,6 @@
 Ez a dokumentum végigvezet az [Arch Linux](/index.php/Arch_Linux_(Magyar) "Arch Linux (Magyar)") telepítésének folyamatán a live rendszer hivatalos telepítőképről történő indításától kezdve. Telepítés előtt ajánlott átfutni a [GYIK-et](/index.php/FAQ "FAQ"). Egy nagyon részletes, értelmező telepítési útmutatóhoz lásd az [Útmutató kezdőknek](/index.php/Beginners%27_Guide_(Magyar) "Beginners' Guide (Magyar)") oldalt. A [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") számos további telepítési útmutatót tartalmaz speciális esetekre.
 
-A közösség által karbantartott [Arch wiki](/index.php/Main_page "Main page") egy kiváló forrás, és probléma esetén ehhez javasolt fordulni. Az [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") csatorna ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), és a [fórumok](https://bbs.archlinux.org/) szintén rendelkezésre állnak, ha a válasz nem található meg máshol. Szintén javasolt megnézni a `man` oldalait bármely, általad nem ismert parancsnak; ez általában a `man _parancs_` paranccsal hívható elő.
+A közösség által karbantartott [Arch wiki](/index.php/Main_page "Main page") egy kiváló forrás, és probléma esetén ehhez javasolt fordulni. Az [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") csatorna ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), és a [fórumok](https://bbs.archlinux.org/) szintén rendelkezésre állnak, ha a válasz nem található meg máshol. Szintén javasolt megnézni a `man` oldalait bármely, általad nem ismert parancsnak; ez általában a `man *parancs*` paranccsal hívható elő.
 
 ## Contents
 
@@ -23,7 +23,7 @@ A közösség által karbantartott [Arch wiki](/index.php/Main_page "Main page")
 Töltsd le az új Arch Linux ISO-t az [Arch Linux letöltési oldaláról](https://www.archlinux.org/download/).
 
 *   Egyetlen kép érhető el, ami egy i686 vagy x86_64 live rendszert képes indítani az Arch Linux hálózatról történő telepítéséhez. Olyan médium, amely tartalmazza a [core] tárolót, nem érhető el többé.
-*   A telepítési képeket aláírták, és erősen javasolt az aláírások ellenőrzése használat előtt: ehhez töltsd le a _.sig_ fájlt a letöltési oldalról (vagy az egyik ott felsorolt tükörről) az _.iso_ fájllal megegyező könyvtárba, majd használd a `pacman-key -v _iso-file_.sig` parancsot.
+*   A telepítési képeket aláírták, és erősen javasolt az aláírások ellenőrzése használat előtt: ehhez töltsd le a *.sig* fájlt a letöltési oldalról (vagy az egyik ott felsorolt tükörről) az *.iso* fájllal megegyező könyvtárba, majd használd a `pacman-key -v *iso-file*.sig` parancsot.
 *   A kép kiírható CD-re, felcsatolható ISO fájlként, vagy közvetlenül [pendrive-ra írható](/index.php/USB_Installation_Media "USB Installation Media"). Ez csak új telepítésekhez szükséges; egy meglévő Arch Linux rendszer mindig frissíthető a `pacman -Syu` paranccsal.
 
 ## Telepítés
@@ -46,7 +46,7 @@ Lásd a [fájlrendszereket](/index.php/File_systems#Step_2:_create_the_new_file_
 
 ### Partíciók csatolása
 
-Most fel kell csatolnod a root partíciót a `/mnt` útvonalra. Ezután könyvtárakat kell létrehoznod minden egyéb partícióhoz (`/mnt/boot`, `/mnt/home`, ...), és fel kell csatolnod, valamint aktiválnod kell a [swap](/index.php/Swap "Swap") partíciót, ha azt szeretnéd, hogy a _genfstab_ felismerje azokat.
+Most fel kell csatolnod a root partíciót a `/mnt` útvonalra. Ezután könyvtárakat kell létrehoznod minden egyéb partícióhoz (`/mnt/boot`, `/mnt/home`, ...), és fel kell csatolnod, valamint aktiválnod kell a [swap](/index.php/Swap "Swap") partíciót, ha azt szeretnéd, hogy a *genfstab* felismerje azokat.
 
 ### Kapcsolódás az internetre
 

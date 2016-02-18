@@ -12,12 +12,10 @@ Errors occurred, no packages were upgraded.
 **Warning:** **DO NOT USE --force!** This will seriously break your system. If you are coming to this guide too late and you have already used --force... there are ways to fix your system. [These](https://bbs.archlinux.org/viewtopic.php?pid=1126667#p1126667) [two](https://bbs.archlinux.org/viewtopic.php?pid=1127251#p1127251) do not even require a rescue disk.
 
 **Note:** for installs that have not been updated to glibc-2.16, it will save you lots of time and prevent major breakage to do:
-
 ```
 pacman -U http://pkgbuild.com/~allan/glibc-2.16.0-1-<arch>.pkg.tar.xz
 
 ```
-
 where <arch> is replaced by i686 or x86_64 as required. Add a single "-d" if needed. The instructions below assume that this has been done.
 
 In the simplest case, the update can be performed by doing:

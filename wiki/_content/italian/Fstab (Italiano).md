@@ -25,7 +25,6 @@ Il file [/etc/fstab](https://en.wikipedia.org/wiki/it:Fstab "wikipedia:it:Fstab"
 Questo è un esempio del file `/etc/fstab` usando i descrittori del kernel:
 
  `/etc/fstab` 
-
 ```
 # <file system>        <dir>         <type>    <options>             <dump> <pass>
 /dev/sda1              /             ext4      defaults,noatime      0      1
@@ -79,7 +78,6 @@ I filesystem nel file `/etc/fstab` possono essere identificati in tre modi: util
 Per elencare le alcune informazioni riguardo alle partizioni, eseguire:
 
  `$ lsblk -f` 
-
 ```
 NAME   FSTYPE LABEL      UUID                                 MOUNTPOINT
 sda                                                           
@@ -108,7 +106,6 @@ Per informazioni dettagliate riguardo l'assegnazione di una etichetta ad una per
 Per elencare le partizioni, utilizzare il comando `lsblk -f` quindi inserire prima del nome dell'etichetta `LABEL=`:
 
  `/etc/fstab` 
-
 ```
 # <file system>        <dir>         <type>    <options>             <dump> <pass>
 LABEL=Arch_Linux       /             ext4      defaults,noatime      0      1
@@ -122,14 +119,12 @@ Tutte le partizioni e periferiche hanno un UUID unico. Gli UUID vengono generati
 Per elencare le partizioni, utilizzare il comando `lsblk -f` quindi inserire prima `UUID=`:
 
 **Tip:** Se si desidera ottenere il valore UUID di una specifica partizione:
-
 ```
 $ lsblk -no UUID /dev/sda2
 
 ```
 
  `/etc/fstab` 
-
 ```
 # <file system>                            <dir>     <type>    <options>             <dump> <pass>
 UUID=24f28fc6-717e-4bcd-a5f7-32b959024e26  /         ext4      defaults,noatime      0      1
@@ -176,7 +171,6 @@ Attivare nuovamente la swap:
 Se un punto di mount contiene degli spazi nel nome, può essere usato il carattere di escape `\` seguito dal codice ottale di tre cifre corrispondente allo spazio `\040` per emularlo:
 
  `/etc/fstab` 
-
 ```
 UUID=47FA-4071     /home/username/Camera<font color="grey">\040</font>Pictures   vfat  defaults,noatime       0  0
 /dev/sda7          /media/100<font color="grey">\040</font>GB<font color="grey">\040</font>(Storage)       ext4  defaults,noatime,user  0  2
@@ -223,7 +217,6 @@ Riavviare per fare in modo che i cambiamenti abbiano effetto. Notare che anche s
 Dopo aver effettuato le modifiche, si potrà verificare il funzionamento controllando `/proc/mounts` con il comando `findmnt`:
 
  `$ findmnt --target /tmp` 
-
 ```
 TARGET SOURCE FSTYPE OPTIONS
 /tmp   tmpfs  tmpfs  rw,nosuid,nodev,relatime

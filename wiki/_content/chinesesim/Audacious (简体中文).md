@@ -62,7 +62,7 @@ audacious -i skinned
 
 ### 加入Winamp面板
 
-加入 Winamp 面板到 Audacious 很简单，只要复制你的面板(.zip, .wsz, .tgz, .tar.gz, 和 .tar.bz2 档)到 **`/usr/share/audacious/Skins`**。 之后你就能在 主选单 > _Preferences_ > _Skinned Interface_ 选择面板使用。
+加入 Winamp 面板到 Audacious 很简单，只要复制你的面板(.zip, .wsz, .tgz, .tar.gz, 和 .tar.bz2 档)到 **`/usr/share/audacious/Skins`**。 之后你就能在 主选单 > *Preferences* > *Skinned Interface* 选择面板使用。
 
 这些地方可以找到面板：
 

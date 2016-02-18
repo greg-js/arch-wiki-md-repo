@@ -24,7 +24,7 @@ Pacman-key è un nuovo tool disponibile con pacman 4\. Con la nuova implementazi
 
 Il sistema di firmatura pacchetti in pacman utilizza il modello ["web of trust"](http://it.wikipedia.org/wiki/Web_of_trust) per assicurare che i pacchetti vengano dagli sviluppatori e non da qualcuno che si sostituisca a loro indebitamente. Gli sviluppatori dei pacchetti e i Trusted User hanno chiavi PGP individuali che utilizzano per firmare i propri pacchetti. Questo significa che loro garantiscono il contenuto del pacchetto. Anche l'utente comune possiede una PGP key unica, che viene generata quando questi configura pacman-key.
 
-Le chiavi possono essere usate per firmare _altre_ key. Ciò significa che il proprietario della chiave firmante garantisce per l'autenticità della chiave firmata. Per verificare un pacchetto, è necessario avere una catena di firme dalla propria chiave PGP al pacchetto stesso. Con la struttura di chiavi Arch questo può avventire in tre modi:
+Le chiavi possono essere usate per firmare *altre* key. Ciò significa che il proprietario della chiave firmante garantisce per l'autenticità della chiave firmata. Per verificare un pacchetto, è necessario avere una catena di firme dalla propria chiave PGP al pacchetto stesso. Con la struttura di chiavi Arch questo può avventire in tre modi:
 
 *   **Pacchetti personali (custom)**: l'utente crea da sé il proprio pacchetto e lo firma con una key personale.
 *   **Pacchetti non ufficiali (unofficial)**: uno sviluppatore fa un pacchetto e lo firma. L'utente utilizza la propria key per firmare quella dello sviluppatore.
@@ -45,7 +45,6 @@ Prima di tutto, si deve decidere che livello di controllo si desidera. A determi
 **Note:** Ad ora, Aprile 2012, il sistema di firme del database non è ancora stato completato, quindi si dovrebbe aggiungere l'opzione `DatabaseOptional` se si usa un livello di controllo `Required`, ad esempio: `SigLevel = Required DatabaseOptional TrustedOnly` In questo modo pacman installerà soltanto i pacchetti che sono firmati da chiavi che l'utente ha convalidato.
 
 **Note:** Sembra che `SigLevel = PackageRequired` stia per diventare l'opzione standard per la verifica dei pacchetti ufficiali:
-
 ```
 [core]
 SigLevel = PackageRequired
@@ -100,7 +99,6 @@ E' possibile aggiornarle manualmente eseguendo:
 # pacman-key --refresh-keys
 
 ```
-
 Facendo `--refresh-keys`, anche la propria chiave locale sarà controllata sul keyserver remoto, e si riceverà una notifica sul fatto che non è stata trovata. Non è nulla di cui preoccuparsi.
 
 ### Aggiungere chiavi non ufficiali
@@ -112,18 +110,18 @@ Facendo `--refresh-keys`, anche la propria chiave locale sarà controllata sul k
 Prima di tutto, ci si deve procurare l'ID dal proprietario della key, quindi si deve aggiungere la chiave al keyring.
 
 *   Se la chiave si trova su un keyserver, la si importi con: `# pacman-key -r <keyid>` 
-*   Se invece viene fornito un link ad un keyfile, lo si scarichi e si esegua: `# pacman-key --add _/percorso/al/keyfile_` 
+*   Se invece viene fornito un link ad un keyfile, lo si scarichi e si esegua: `# pacman-key --add */percorso/al/keyfile*` 
 
 Assicurarsi di verificare il fingerprint, come si farebbe per una chiave principale, o con ogni altra chiave che si stia per convalidare:
 
 ```
-$ pacman-key -f _keyid_
+$ pacman-key -f *keyid*
 
 ```
 
 Sarà quindi necessario firmare localmente la chiave appena importata:
 
- `# pacman-key --lsign-key _keyid_` 
+ `# pacman-key --lsign-key *keyid*` 
 
 In questo modo si permetterà alla chiave di firmare i pacchetti.
 
@@ -138,8 +136,7 @@ In questo modo si permetterà alla chiave di firmare i pacchetti.
 
 ## Risoluzione dei problemi
 
-**Attenzione:** _pacman-key_ dipende dall'[[[5]](https://wiki.archlinux.org/index.php/Time%7Corario)] di sistema. Se è impostato in maniera errata, si avrà il seguente errore:
-
+**Attenzione:** *pacman-key* dipende dall'[[[5]](https://wiki.archlinux.org/index.php/Time%7Corario)] di sistema. Se è impostato in maniera errata, si avrà il seguente errore:
 ```
 error: PackageName: signature from "User <email@archlinux.org>" is invalid
 error: failed to commit transaction (invalid or corrupted package (PGP signature))
@@ -157,14 +154,14 @@ Questo problema può essere causato da:
 
 Si potrebbe essere impossibilitati a portare a termine un aggiornamento se il proprio pacchetto [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) non è aggiornato. Si provi ad [aggiornare il sistema](/index.php/Pacman_(Italiano)#Aggiornare_il_sistema "Pacman (Italiano)").
 
-Se quanto sopra non funziona e la data è corretta si può provare ad utilizzare il keyserver MIT, che fornisce una porta alternativa. Per farlo, si modifichi `/etc/pacman.d/gnupg/gpg.conf` e si cambi la riga _keyserver_ in:
+Se quanto sopra non funziona e la data è corretta si può provare ad utilizzare il keyserver MIT, che fornisce una porta alternativa. Per farlo, si modifichi `/etc/pacman.d/gnupg/gpg.conf` e si cambi la riga *keyserver* in:
 
 ```
 keyserver hkp://pgp.mit.edu:11371
 
 ```
 
-Se anche quanto sopra non è d'aiuto, si utilizzi il keyserver _kjsl_, che fornisce il servizio attraverso la porta 80 (HTTP).
+Se anche quanto sopra non è d'aiuto, si utilizzi il keyserver *kjsl*, che fornisce il servizio attraverso la porta 80 (HTTP).
 
 ```
 keyserver hkp://keyserver.kjsl.com:80
@@ -211,14 +208,13 @@ Questa potrebbe essere la soluzione anche qualora si stia ricevendo un messaggio
 
 ### Aggiornamento chiavi via proxy
 
-Un bug in _gnupg_ impedisce di aggiornare le chiavi tramite proxy ([https://bugs.g10code.com/gnupg/issue1786](https://bugs.g10code.com/gnupg/issue1786)).
+Un bug in *gnupg* impedisce di aggiornare le chiavi tramite proxy ([https://bugs.g10code.com/gnupg/issue1786](https://bugs.g10code.com/gnupg/issue1786)).
 
 Per aggirare il problema, è possibile procedere come segue:
 
 Modificare `/etc/hosts`:
 
  `/etc/hosts` 
-
 ```
 127.0.0.1 pool.sks-keyservers.net
 

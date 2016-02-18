@@ -1,6 +1,6 @@
 CPU frequency scaling enables the operating system to scale the CPU frequency up or down in order to save power. CPU frequencies can be scaled automatically depending on the system load, in response to ACPI events, or manually by userspace programs.
 
-CPU frequency scaling is implemented in the Linux kernel, the infrastructure is called _cpufreq_. Since kernel 3.4 the necessary modules are loaded automatically and the recommended [ondemand governor](#Scaling_governors) is enabled by default. However, userspace tools like [cpupower](#cpupower), [acpid](/index.php/Acpid "Acpid"), [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools"), or GUI tools provided for your desktop environment, may still be used for advanced configuration.
+CPU frequency scaling is implemented in the Linux kernel, the infrastructure is called *cpufreq*. Since kernel 3.4 the necessary modules are loaded automatically and the recommended [ondemand governor](#Scaling_governors) is enabled by default. However, userspace tools like [cpupower](#cpupower), [acpid](/index.php/Acpid "Acpid"), [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools"), or GUI tools provided for your desktop environment, may still be used for advanced configuration.
 
 ## Contents
 
@@ -39,7 +39,7 @@ By default, it monitors CPU temperature using available CPU digital temperature 
 
 [cpupower](https://www.archlinux.org/packages/?name=cpupower) is a set of userspace utilities designed to assist with CPU frequency scaling. The package is not required to use scaling, but is highly recommended because it provides useful command-line utilities and a [systemd](/index.php/Systemd "Systemd") service to change the governor at boot.
 
-The configuration file for _cpupower_ is located in `/etc/default/cpupower`. This configuration file is read by a bash script in `/usr/lib/systemd/scripts/cpupower` which is activated by _systemd_ with `cpupower.service`. You may want to enable `cpupower.service` to start at boot.
+The configuration file for *cpupower* is located in `/etc/default/cpupower`. This configuration file is read by a bash script in `/usr/lib/systemd/scripts/cpupower` which is activated by *systemd* with `cpupower.service`. You may want to enable `cpupower.service` to start at boot.
 
 ## CPU frequency driver
 
@@ -50,7 +50,7 @@ The configuration file for _cpupower_ is located in `/etc/default/cpupower`. Thi
 *   Even P State behavior mentioned above can be influenced with `/sys/devices/system/cpu/intel_pstate`, e.g. Intel Turbo Boost can be deactivated with `# echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo` for keeping CPU-Temperatures low.
 *   Additional control for modern Intel CPUs is available with the [Linux Thermal Daemon](https://01.org/linux-thermal-daemon) (available as [thermald](https://aur.archlinux.org/packages/thermald/)), which proactively controls thermal using P-states, T-states, and the Intel power clamp driver. thermald can also be used for older Intel CPUs. If the latest drivers are not available, then the daemon will revert to x86 model specific registers and the Linux ‘cpufreq subsystem’ to control system cooling.
 
-_cpupower_ requires modules to know the limits of the native CPU:
+*cpupower* requires modules to know the limits of the native CPU:
 
 | Module | Description |
 | intel_pstate | This driver implements a scaling driver with an internal governor for Intel Core (SandyBridge and newer) processors. |
@@ -79,30 +79,30 @@ $ cpupower frequency-info
 
 In rare cases, it may be necessary to manually set maximum and minimum frequencies.
 
-To set the maximum clock frequency (_clock_freq_ is a clock frequency with units: GHz, MHz):
+To set the maximum clock frequency (*clock_freq* is a clock frequency with units: GHz, MHz):
 
 ```
-# cpupower frequency-set -u _clock_freq_
+# cpupower frequency-set -u *clock_freq*
 
 ```
 
 To set the minimum clock frequency:
 
 ```
-# cpupower frequency-set -d _clock_freq_
+# cpupower frequency-set -d *clock_freq*
 
 ```
 
 To set the CPU to run at a specified frequency:
 
 ```
-# cpupower frequency-set -f _clock_freq_
+# cpupower frequency-set -f *clock_freq*
 
 ```
 
 **Note:**
 
-*   To adjust for only a single CPU core, append `-c _core_number_`.
+*   To adjust for only a single CPU core, append `-c *core_number*`.
 *   The governor, maximum and minimum frequencies can be set in `/etc/default/cpupower`.
 
 ## Scaling governors
@@ -124,24 +124,23 @@ Depending on the scaling driver, one of these governors will be loaded by defaul
 To activate a particular governor, run:
 
 ```
-# cpupower frequency-set -g _governor_
+# cpupower frequency-set -g *governor*
 
 ```
 
 **Note:**
 
-*   To adjust for only a single CPU core, append `-c _core_number_` to the command above.
-*   Activating a governor requires that specific [kernel module](/index.php/Kernel_module "Kernel module") (named `cpufreq__governor_`) is loaded. As of kernel 3.4, these modules are loaded automatically.
+*   To adjust for only a single CPU core, append `-c *core_number*` to the command above.
+*   Activating a governor requires that specific [kernel module](/index.php/Kernel_module "Kernel module") (named `cpufreq_*governor*`) is loaded. As of kernel 3.4, these modules are loaded automatically.
 
 Alternatively, you can activate a governor on every available CPU manually:
 
 ```
-# echo _governor_ | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor >/dev/null
+# echo *governor* | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor >/dev/null
 
 ```
 
 **Tip:** To monitor cpu speed in real time, run:
-
 ```
 $ watch grep \"cpu MHz\" /proc/cpuinfo
 
@@ -156,14 +155,14 @@ See the [kernel documentation](https://www.kernel.org/doc/Documentation/cpu-freq
 To set the threshold for stepping up to another frequency:
 
 ```
-# echo -n _percent_ > /sys/devices/system/cpu/cpufreq/<governor>/up_threshold
+# echo -n *percent* > /sys/devices/system/cpu/cpufreq/<governor>/up_threshold
 
 ```
 
 To set the threshold for stepping down to another frequency:
 
 ```
-# echo -n _percent_ > /sys/devices/system/cpu/cpufreq/<governor>/down_threshold
+# echo -n *percent* > /sys/devices/system/cpu/cpufreq/<governor>/down_threshold
 
 ```
 
@@ -181,7 +180,7 @@ $ cat /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
 To set the value, run:
 
 ```
-# echo -n _value_ > /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
+# echo -n *value* > /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
 
 ```
 
@@ -190,7 +189,6 @@ To set the value, run:
 To have changes persist on system reboot probably the easiest is to use systemd-tmpfiles. For example to set the sampling_down_factor on boot you could create or edit a `/etc/tmpfiles.d/10-cpu-sampling-down.conf` file as follow
 
  `/etc/tmpfiles.d/10-cpu-sampling-down.conf` 
-
 ```
 w /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor - - - - 40
 
@@ -203,7 +201,6 @@ Users may configure scaling governors to switch automatically based on different
 Events are defined in `/etc/acpi/handler.sh`. If the [acpid](https://www.archlinux.org/packages/?name=acpid) package is installed, the file should already exist and be executable. For example, to change the scaling governor from `performance` to `conservative` when the AC adapter is disconnected and change it back if reconnected:
 
  `/etc/acpi/handler.sh` 
-
 ```
 [...]
 
@@ -238,17 +235,16 @@ ac_adapter)
 [GNOME](/index.php/GNOME "GNOME") has a nice applet to change the governor on the fly. To use it without the need to enter the root password, simply create following file:
 
  `/var/lib/polkit-1/localauthority/50-local.d/org.gnome.cpufreqselector.pkla` 
-
 ```
 [org.gnome.cpufreqselector]
-Identity=unix-user:_user_
+Identity=unix-user:*user*
 Action=org.gnome.cpufreqselector
 ResultAny=no
 ResultInactive=no
 ResultActive=yes
 ```
 
-Where the word _user_ is replaced with the username of interest.
+Where the word *user* is replaced with the username of interest.
 
 The [desktop-privileges](https://aur.archlinux.org/packages/desktop-privileges/) package in the [AUR](/index.php/AUR "AUR") contains a similar `.pkla` file for authorizing all users of the `power` [group](/index.php/Group "Group") to change the governor.
 
@@ -256,7 +252,7 @@ The [desktop-privileges](https://aur.archlinux.org/packages/desktop-privileges/)
 
 *   Some applications, like [ntop](/index.php/Ntop "Ntop"), do not respond well to automatic frequency scaling. In the case of ntop it can result in segmentation faults and lots of lost information as even the `on-demand` governor cannot change the frequency quickly enough when a lot of packets suddenly arrive at the monitored network interface that cannot be handled by the current processor speed.
 
-*   Some CPU's may suffer from poor performance with the default settings of the `on-demand` governor (e.g. flash videos not playing smoothly or stuttering window animations). Instead of completely disabling frequency scaling to resolve these issues, the aggressiveness of frequency scaling can be increased by lowering the _up_threshold_ [sysctl](/index.php/Sysctl "Sysctl") variable for each CPU. See [how to change the on-demand governor's threshold](#Switching_threshold).
+*   Some CPU's may suffer from poor performance with the default settings of the `on-demand` governor (e.g. flash videos not playing smoothly or stuttering window animations). Instead of completely disabling frequency scaling to resolve these issues, the aggressiveness of frequency scaling can be increased by lowering the *up_threshold* [sysctl](/index.php/Sysctl "Sysctl") variable for each CPU. See [how to change the on-demand governor's threshold](#Switching_threshold).
 
 *   Sometimes the on-demand governor may not throttle to the maximum frequency but one step below. This can be solved by setting max_freq value slightly higher than the real maximum. For example, if frequency range of the CPU is from 2.00 GHz to 3.00 GHz, setting max_freq to 3.01 GHz can be a good idea.
 
@@ -283,7 +279,6 @@ For trying this temporarily change the value in `/sys/module/processor/parameter
 For setting it permanent refer to [Kernel modules](/index.php/Kernel_modules#Configuration "Kernel modules") or just read on. Add `processor.ignore_ppc=1` to your kernel boot line or create
 
  `/etc/modprobe.d/ignore_ppc.conf` 
-
 ```
 # If the frequency of your machine gets wrongly limited by BIOS, this should help
 options processor ignore_ppc=1

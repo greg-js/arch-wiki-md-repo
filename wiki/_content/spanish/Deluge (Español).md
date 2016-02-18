@@ -75,7 +75,7 @@ En el caso que desee SSL para la interfaz web, necesitara generar una nueva llav
 
 ```
 
-Luego valla a _/srv/deluge/.config/deluge/ssl/_ y ejecute:
+Luego valla a */srv/deluge/.config/deluge/ssl/* y ejecute:
 
 ```
 # openssl req -new -x509 -nodes -out deluge.cert.pem -keyout deluge.key.pem

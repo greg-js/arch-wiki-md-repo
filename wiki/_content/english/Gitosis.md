@@ -41,7 +41,6 @@ Reinitialized existing Git repository in /srv/gitosis/repositories/gitosis-admin
 ```
 
 **Note:** In some cases, this might result in an error of this kind:
-
 ```
 OSError: [Errno 13] Permission denied: '//gitosis'
 
@@ -86,7 +85,7 @@ To modify repositories or users, or to configure Gitosis, just commit changes in
 
 ### Repositories and permissions
 
-You'll be able to find some example configuration files in _/usr/share/doc/gitosis_.
+You'll be able to find some example configuration files in */usr/share/doc/gitosis*.
 
 ```
 [gitosis]

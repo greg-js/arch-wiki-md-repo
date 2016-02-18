@@ -64,7 +64,6 @@ To apply different value, for example set APM to 127:
 To make the setting persistent, adapt the following [udev](/index.php/Udev "Udev") rule for your values:
 
  `/etc/udev/rules.d/50-hdparm.rules` 
-
 ```
 ACTION=="add", SUBSYSTEM=="block", KERNEL=="sda", RUN+="/usr/bin/hdparm -B 254 -S 0 /dev/sda"
 
@@ -73,7 +72,6 @@ ACTION=="add", SUBSYSTEM=="block", KERNEL=="sda", RUN+="/usr/bin/hdparm -B 254 -
 If you have more than one hard drive you could make the rule more flexible. For example, to apply power-saving settings for all external drives (assuming there is only one internal drive, `/dev/sda`):
 
  `/etc/udev/rules.d/50-hdparm.rules` 
-
 ```
 ACTION=="add|change", KERNEL=="sd[b-z]", ATTR{queue/rotational}=="1", RUN+="/usr/bin/hdparm -B 127 -S 12 /dev/%k"
 

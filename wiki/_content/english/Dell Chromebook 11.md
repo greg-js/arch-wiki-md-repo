@@ -66,7 +66,6 @@ For information on general Chromebook post installation configuration (hotkeys, 
 Add the Xorg touchpad configuration below for better usability (increases touchpad sensitivity).
 
  `/etc/X11/xorg.conf.d/50-cros-touchpad.conf` 
-
 ```
 Section "InputClass" 
     Identifier      "touchpad wolf cyapa" 
@@ -81,7 +80,6 @@ EndSection
 If you want to remove the "Right Click" behavior from the touchpad from the bottom right area (you can still right click with two finger clicks), you should comment out the following section from `/etc/X11/xorg.conf.d/50-synaptics.conf`
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
 #Section "InputClass"
 #        Identifier "Default clickpad buttons"

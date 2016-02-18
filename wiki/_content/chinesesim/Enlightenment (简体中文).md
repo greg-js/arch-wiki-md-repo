@@ -2,7 +2,7 @@
 
 [Enlightenment - Enlightenment](http://trac.enlightenment.org/e/wiki/Enlightenment) 的描述：
 
-	_Enlightenment_ 桌面环境基于 Enlightenment Foundation Libraries 与其他基本的如文件管理器、桌面图标和部件等的桌面环境组件，提供了一个高效而又惊艳的窗口管理器。它的优势在于：在提供了前所未有的定制主题的能力的同时仍然能在老旧的硬件和嵌入式设备上运行流畅。
+	*Enlightenment* 桌面环境基于 Enlightenment Foundation Libraries 与其他基本的如文件管理器、桌面图标和部件等的桌面环境组件，提供了一个高效而又惊艳的窗口管理器。它的优势在于：在提供了前所未有的定制主题的能力的同时仍然能在老旧的硬件和嵌入式设备上运行流畅。
 
 ## Contents
 
@@ -192,7 +192,7 @@ Places 源代码中的 [README](http://trac.enlightenment.org/e/browser/trunk/E-
 
 	Places module
 
-	_This module manage the volumes device attached to the system._
+	*This module manage the volumes device attached to the system.*
 
 Places 是一个帮助用户浏览文件和设备的插件，支持的设备包括电话、摄像机或其他各种 USB 存储设备。
 
@@ -200,7 +200,7 @@ Places 是一个帮助用户浏览文件和设备的插件，支持的设备包�
 
 ### 缩放窗口
 
-_Scale Windows_ 模块需要启用 compositing，可以将所有打开的窗口缩小到一个屏幕。可以加入桌面或通过快捷键启用。
+*Scale Windows* 模块需要启用 compositing，可以将所有打开的窗口缩小到一个屏幕。可以加入桌面或通过快捷键启用。
 
 可以将 `ALT + Tab` 绑定到 Scale Windows 以进行窗口选择，进入 `Menu > Settings > Settings Panel > Input > Keys`，按照喜好进行按键设置。
 

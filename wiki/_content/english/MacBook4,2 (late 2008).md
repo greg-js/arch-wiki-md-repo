@@ -45,7 +45,7 @@ To make sure that you have the right model, here is the list of system specifica
 
 #### Back up your data
 
-You should backup before you begin the installation. It suffices to just backup the Users directory (/Users/_user_/ where _user_ is the name of the username in OSX) onto external hard drive or USB stick.
+You should backup before you begin the installation. It suffices to just backup the Users directory (/Users/*user*/ where *user* is the name of the username in OSX) onto external hard drive or USB stick.
 
 #### Install rEFIt
 

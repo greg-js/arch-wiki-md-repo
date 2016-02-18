@@ -17,7 +17,6 @@ PRIME 是一项用于管理新型号笔记本电脑中的混合显卡的技术([
 首先，检查所有添附到你的显示器上的显卡：
 
  `$ xrandr --listproviders` 
-
 ```
 Providers: number : 2
 Provider 0: id: 0x7d cap: 0xb, Source Output, Sink Output, Sink Offload crtcs: 3 outputs: 4 associated providers: 1 name:Intel
@@ -28,7 +27,6 @@ Provider 1: id: 0x56 cap: 0xf, Source Output, Sink Output, Source Offload, Sink 
 我们可以看到有两块显卡：Intel，也就是集成的图形卡（id为0x7d），以及 Radeon，也就是独立显卡（id为0x56），通常情况下对GPU要求高的程序应该使用独立显卡。我们可以看到，默认情况下被使用的显卡总是Intel集成显卡：
 
  `$ glxinfo | grep "OpenGL renderer"` 
-
 ```
 OpenGL renderer string: Mesa DRI Intel(R) Ivybridge Mobile
 
@@ -44,7 +42,6 @@ $ xrandr --setprovideroffloadsink 0x56 0x7d
 现在你可以在对显卡要求高的程序（如游戏，3D建模工具等等）中使用独立显卡了：
 
  `$ DRI_PRIME=1 glxinfo | grep "OpenGL renderer"` 
-
 ```
 OpenGL renderer string: Gallium 0.4 on AMD TURKS
 

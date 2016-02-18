@@ -43,7 +43,6 @@ Using an Android phone as a Wi-Fi access point (using 3G) has been accessible by
 	Вы должны увидеть `usb0` или `enp?s??u?` устройство в вашем списка (например, здесь это устройство enp0s20u3).
 
  `# ip link` 
-
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default 
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -81,10 +80,9 @@ Bus 001 Device 006: ID **0502**:3202 Acer, Inc.
 
 ```
 
-Then, create the following file, replacing _ciri_ by your own Linux user name, and **0502** by the vendor ID of your own phone:
+Then, create the following file, replacing *ciri* by your own Linux user name, and **0502** by the vendor ID of your own phone:
 
  `/etc/udev/rules.d/51-android.rules` 
-
 ```
 SUBSYSTEM=="usb", ATTR(idVendor)=="0502", MODE="0666" OWNER="ciri"
 
@@ -92,7 +90,7 @@ SUBSYSTEM=="usb", ATTR(idVendor)=="0502", MODE="0666" OWNER="ciri"
 
 As root run the `udevadm control restart` command (or reboot your computer) to make the change effective.
 
-Now run in your linux PC the `adb shell` command from the Android SDK as plain (non root) user: you should get a unix prompt _in your phone_.
+Now run in your linux PC the `adb shell` command from the Android SDK as plain (non root) user: you should get a unix prompt *in your phone*.
 
 ### Procedure
 
@@ -108,7 +106,6 @@ Run the AziLink application in the phone and select "About" at the bottom to rec
 	 `# openvpn AziLink.ovpn` 
 
  `AziLink.ovpn` 
-
 ```
 dev tun
 remote 127.0.0.1 41927 tcp-client
@@ -128,7 +125,6 @@ dhcp-option DNS 192.168.56.1
 You may need to manually update the contents of [resolv.conf](/index.php/Resolv.conf "Resolv.conf") to
 
  `/etc/resolv.conf` 
-
 ```
 nameserver 192.168.56.1
 

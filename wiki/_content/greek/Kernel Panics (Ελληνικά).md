@@ -55,7 +55,7 @@
 Ας υποθέσουμε ότι κρατούσατε τις προηγούμενες εκδόσεις. Θα εγκαταστήσουμε τώρα την προηγούμενη που λειτουργούσε.
 
 ```
-# pacman -U /var/cache/pacman/pkg/kernel26-2.6.23._xx-x_.pkg.tar.gz
+# pacman -U /var/cache/pacman/pkg/kernel26-2.6.23.*xx-x*.pkg.tar.gz
 
 ```
 

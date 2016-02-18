@@ -367,7 +367,7 @@ And add the following line in the end or anywhere you like
 
 ```
 
-You can get such code information (_usb 0x04b8 0x0120_) by "sane-find-scanner" command.
+You can get such code information (*usb 0x04b8 0x0120*) by "sane-find-scanner" command.
 
 Also add such information lines in your libsane.usermap file to setup your privilage, like:
 

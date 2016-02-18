@@ -100,7 +100,6 @@ $ vdpauinfo
 *   Nvidia的专有版本将变量设置为“nvidia”。
 
  `$ grep -i vdpau /var/log/Xorg.0.log` 
-
 ```
 (II) RADEON(0): [DRI2] VDPAU driver: r300
 
@@ -134,15 +133,15 @@ $ export DRI_PRIME=1
 
 	|| [mplayer](https://www.archlinux.org/packages/?name=mplayer) [mplayer2](https://aur.archlinux.org/packages/mplayer2/)
 
-*   **gnome-mplayer** — 开启硬件加速: _Edit > Preferences > Player_, 设置 Video Output 为 `vdpau`.
+*   **gnome-mplayer** — 开启硬件加速: *Edit > Preferences > Player*, 设置 Video Output 为 `vdpau`.
 
 	|| [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer)
 
-*   **[SMplayer](/index.php/SMplayer "SMplayer")** — 开启硬件加速: _Options > Preferences > General > Video_, 设置 Output driver 为 `vdpau`.
+*   **[SMplayer](/index.php/SMplayer "SMplayer")** — 开启硬件加速: *Options > Preferences > General > Video*, 设置 Output driver 为 `vdpau`.
 
 	|| [smplayer](https://www.archlinux.org/packages/?name=smplayer)
 
-*   **bomi** — 硬件加速可以启用: _Preferences > Video > Hardware acceleration_.
+*   **bomi** — 硬件加速可以启用: *Preferences > Video > Hardware acceleration*.
 
 	[https://bomi-player.github.io](https://bomi-player.github.io) || [bomi](https://aur.archlinux.org/packages/bomi/) [bomi-git](https://aur.archlinux.org/packages/bomi-git/)
 

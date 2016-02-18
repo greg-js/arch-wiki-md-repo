@@ -14,7 +14,7 @@
 
 ### Add voices
 
-Packages named _mbrola-voices-xxx_ are available in the [AUR](https://aur.archlinux.org/packages.php?K=mbrola-voices)
+Packages named *mbrola-voices-xxx* are available in the [AUR](https://aur.archlinux.org/packages.php?K=mbrola-voices)
 
 **Note:** these packages have been built by a script so if something is wrong, please leave a comment for the package maintainer.
 
@@ -45,7 +45,7 @@ $ mbrola ./us1 ./TEST/mbrola.pho ~/test.wav; aplay ~/test.wav; rm ~/test.wav
 
 If the installation worked ok, you should hear the voice now.
 
-Note that we this test did not give a text file to _mbrola_ but a phoneme file. To make it a text-to-speech system, see below.
+Note that we this test did not give a text file to *mbrola* but a phoneme file. To make it a text-to-speech system, see below.
 
 ## Install a text-to-phonemes program
 

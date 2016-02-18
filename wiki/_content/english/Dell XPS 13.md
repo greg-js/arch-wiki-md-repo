@@ -30,7 +30,7 @@ You may need to use dosfslabel (install core/dosfstools) to give the USB drive F
 
 #### Screen corruption
 
-If the screen corrupts, append _nomodeset_ to the kernel parameters. There may be issues with the cord of the external optical drive, possibly specific to the device.
+If the screen corrupts, append *nomodeset* to the kernel parameters. There may be issues with the cord of the external optical drive, possibly specific to the device.
 
 On Haswell editions, you may run into [EFISTUB](/index.php/EFISTUB "EFISTUB") issues on full UEFI boot as detailed in [FS #33745](https://bugs.archlinux.org/task/33745). For workarounds, see [Unified Extensible Firmware Interface#USB media gets struck with black screen](/index.php/Unified_Extensible_Firmware_Interface#USB_media_gets_struck_with_black_screen "Unified Extensible Firmware Interface"). This problem is intermittent and may also be present after installation, affecting the choice of bootloaders.
 
@@ -57,7 +57,6 @@ The HDMI output is occasionally detected as the default soundcard on the Haswell
 Add this to your alsa-base.conf file in modprobe.d:
 
  ` /etc/modprobe.d/alsa-base.conf ` 
-
 ```
 # Intel Corporation Haswell-ULT HD Audio Controller
 options snd-hda-intel index=0 model=auto vid=8086 pid=0a0c
@@ -72,7 +71,6 @@ The annoying error beep can be turned off by blacklisting its module.
 Add this to your nobeep.conf file in modprobe.d:
 
  ` /etc/modprobe.d/nobeep.conf ` 
-
 ```
 # Turn off annoying beep
 blacklist pcspkr
@@ -80,6 +78,6 @@ blacklist pcspkr
 
 ## Trackpad
 
-Issues with the trackpad were originally solved with the hardware enablement (Sputnik) kernel. As of Linux 3.9 these trackpad fixes were merged, and the hardware enablement kernel _linux-mainline-dellxps_ has since been removed from the [AUR](/index.php/AUR "AUR").
+Issues with the trackpad were originally solved with the hardware enablement (Sputnik) kernel. As of Linux 3.9 these trackpad fixes were merged, and the hardware enablement kernel *linux-mainline-dellxps* has since been removed from the [AUR](/index.php/AUR "AUR").
 
 The touchpad may not work correctly with the touchscreen, with different solutions depending on the kernel version. See [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1431327).

@@ -1,4 +1,4 @@
-_Linux 将物理内存分为内存段，叫做页面。交换是指内存页面被复制到预先设定好的硬盘空间(叫做交换空间)的过程，目的是释放对于页面的内存。物理内存和交换空间的总大小是可用的虚拟内存的总量。_
+*Linux 将物理内存分为内存段，叫做页面。交换是指内存页面被复制到预先设定好的硬盘空间(叫做交换空间)的过程，目的是释放对于页面的内存。物理内存和交换空间的总大小是可用的虚拟内存的总量。*
 
 	- Linux.com, [关于 Linux Swap 空间](http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space)。
 
@@ -189,7 +189,7 @@ pri=0
 
 ```
 
-in the _original_ swap entry for teaching fstab to use HD swap only when USB is full
+in the *original* swap entry for teaching fstab to use HD swap only when USB is full
 
 This guide will work for other memory such as SD cards, etc.
 
@@ -209,7 +209,7 @@ Swap 参数之可以调整来优化性能。
 
 ### Swappiness
 
-_swappiness_ [sysctl](/index.php/Sysctl "Sysctl") 参数代表了内核对于交换空间的喜好(或厌恶)程度。Swappiness 可以有 0 到 100 的值。设置这个参数为较低的值会减少内存的交换，从而提升一些系统上的响应度。
+*swappiness* [sysctl](/index.php/Sysctl "Sysctl") 参数代表了内核对于交换空间的喜好(或厌恶)程度。Swappiness 可以有 0 到 100 的值。设置这个参数为较低的值会减少内存的交换，从而提升一些系统上的响应度。
 
 ```
 /etc/sysctl.d/90-swappiness.conf

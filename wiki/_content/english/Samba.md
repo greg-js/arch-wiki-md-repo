@@ -108,7 +108,6 @@ This changes the permissions of the usershare directory so that users in the gro
 Set the following variables in `smb.conf` configuration file:
 
  `/etc/samba/smb.conf` 
-
 ```
 ...
 [global]
@@ -119,10 +118,10 @@ Set the following variables in `smb.conf` configuration file:
   ...
 ```
 
-Add your user to the _sambashare_ group. Replace `_your_username_` with the name of your user:
+Add your user to the *sambashare* group. Replace `*your_username*` with the name of your user:
 
 ```
-# gpasswd sambashare -a _your_username_
+# gpasswd sambashare -a *your_username*
 
 ```
 
@@ -137,7 +136,7 @@ You may use an existing user account or create a [Linux user account](/index.php
 Samba uses a password separate from that of the Linux user accounts. Replace `samba_user` with the chosen Samba user account:
 
 ```
-# pdbedit -a -u _samba_user_
+# pdbedit -a -u *samba_user*
 
 ```
 
@@ -148,7 +147,7 @@ Samba uses a password separate from that of the Linux user accounts. Replace `sa
 To change a user's password, use `smbpasswd`:
 
 ```
-# smbpasswd _samba_user_
+# smbpasswd *samba_user*
 
 ```
 
@@ -161,7 +160,6 @@ If you are using a [firewall](/index.php/Firewall "Firewall"), do not forget to 
 See `man smb.conf` for details and explanation of configuration options. There is also an [online version](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html) available.
 
  `/etc/samba/smb.conf` 
-
 ```
 [global]
   deadtime = 60 ; This is useful to stop a server's resources being exhausted by a large number of inactive connections
@@ -231,7 +229,7 @@ Depending on the [desktop environment](/index.php/Desktop_environment "Desktop e
 To following command lists public shares on a server:
 
 ```
-$ smbclient -L _hostname_ -U%
+$ smbclient -L *hostname* -U%
 
 ```
 
@@ -240,29 +238,29 @@ $ smbclient -L _hostname_ -U%
 Create a mount point for the share:
 
 ```
-# mkdir /mnt/_mountpoint_
+# mkdir /mnt/*mountpoint*
 
 ```
 
 Mount the share using `mount.cifs` as `type`. Not all the options listed below are needed or desirable:
 
- `# mount -t cifs //_SERVER_/_sharename_ /mnt/_mountpoint_ -o user=_username_,password=_password_,uid=_username_,gid=_group_,workgroup=_workgroup_,ip=_serverip_,iocharset=_utf8_` 
+ `# mount -t cifs //*SERVER*/*sharename* /mnt/*mountpoint* -o user=*username*,password=*password*,uid=*username*,gid=*group*,workgroup=*workgroup*,ip=*serverip*,iocharset=*utf8*` 
 
 To allow users to mount it as long as the mount point resides in a directory controllable by the user; i.e. the user's home, append the `users` mount option.
 
-**Note:** The option is user**s** (plural). For other filesystem types handled by mount, this option is usually _user_; sans the "**s**".
+**Note:** The option is user**s** (plural). For other filesystem types handled by mount, this option is usually *user*; sans the "**s**".
 
 **Warning:** Using `uid` and/or `gid` as mount options may cause I/O errors, it's recommended to set/check the [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") instead.
 
-_SERVER_
+*SERVER*
 
 	The server name.
 
-_sharename_
+*sharename*
 
 	The shared directory.
 
-_mountpoint_
+*mountpoint*
 
 	The local directory where the share will be mounted.
 
@@ -276,7 +274,7 @@ _mountpoint_
 
 Try specifying the option "sec=ntlmv2" as workaround.
 
-*   Abstain from using a trailing `/`. `//_SERVER_/_sharename_**/**` will not work.
+*   Abstain from using a trailing `/`. `//*SERVER*/*sharename***/**` will not work.
 *   If your mount does not work stable, stutters or freezes, try to enable different SMB protocol version with `vers=` option. For example, `vers=2.0` for Windows Vista mount.
 *   If having timeouts on a mounted network share with cifs on a shutdown, see [WPA supplicant#Problem with mounted network shares (cifs) and shutdown (Date: 1st Oct. 2015)](/index.php/WPA_supplicant#Problem_with_mounted_network_shares_.28cifs.29_and_shutdown_.28Date:_1st_Oct._2015.29 "WPA supplicant").
 
@@ -284,18 +282,17 @@ Try specifying the option "sec=ntlmv2" as workaround.
 
 This is an simple example of a `cifs` [mount entry](/index.php/Fstab "Fstab") that requires authentication:
 
- `/etc/fstab`  `//_SERVER_/_sharename_ /mnt/_mountpoint_ cifs username=_myuser_,password=_mypass_ 0 0` 
-**Note:** Space in sharename should be replaced by `\040` (ASCII code for space in octal). For example, `//_SERVER_/share name` on the command line should be `//_SERVER_/share\040name` in `/etc/fstab`.
+ `/etc/fstab`  `//*SERVER*/*sharename* /mnt/*mountpoint* cifs username=*myuser*,password=*mypass* 0 0` 
+**Note:** Space in sharename should be replaced by `\040` (ASCII code for space in octal). For example, `//*SERVER*/share name` on the command line should be `//*SERVER*/share\040name` in `/etc/fstab`.
 
 ##### Storing Share Passwords
 
 Storing passwords in a world readable file is not recommended. A safer method is to create a credentials file:
 
  `/path/to/credentials/share` 
-
 ```
-username=_myuser_
-password=_mypass_
+username=*myuser*
+password=*mypass*
 ```
 
 Replace `username=myuser,password=mypass` with `credentials=/path/to/credentials/share`.
@@ -311,7 +308,7 @@ The credential file should explicitly readable/writeable to root:
 
 To speed up the service on boot, add the `x-systemd.automount` option to the entry:
 
- `/etc/fstab`  `//_SERVER_/_SHARENAME_ /mnt/_mountpoint_ cifs credentials=_/path/to/smbcredentials/share_,x-systemd.automount 0 0` 
+ `/etc/fstab`  `//*SERVER*/*SHARENAME* /mnt/*mountpoint* cifs credentials=*/path/to/smbcredentials/share*,x-systemd.automount 0 0` 
 
 ### WINS host names
 
@@ -328,7 +325,7 @@ There are several ways to easily browse shared resources:
 First, check if you can see all the shares you are interested in mounting:
 
 ```
-$ smbtree -U _remote_user_
+$ smbtree -U *remote_user*
 
 ```
 
@@ -367,7 +364,6 @@ $ ln -sf /etc/samba/smb.conf ~/.smb/smb.conf
 If a username and a password are required to access some of the shared folders, edit `~/.smb/smbnetfs.auth` to include one or more entries like this:
 
  `~/.smb/smbnetfs.auth` 
-
 ```
 auth			"hostname" "username" "password"
 
@@ -378,7 +374,6 @@ It is also possible to add entries for specific hosts to be mounted by smbnetfs,
 If you are using the Dolphin or Nautilus file managers, you may want to add the following to `~/.smb/smbnetfs.conf` to avoid "Disk full" errors as smbnetfs by default will report 0 bytes of free space:
 
  `~/.smb/smbnetfs.conf` 
-
 ```
 free_space_size 1073741824
 
@@ -396,7 +391,7 @@ Otherwise, smbnetfs complains about 'insecure config file permissions'.
 Finally, to mount your Samba network neighbourhood to a directory of your choice, call
 
 ```
-$ smbnetfs _mount_point_
+$ smbnetfs *mount_point*
 
 ```
 
@@ -416,9 +411,9 @@ See [Autofs](/index.php/Autofs "Autofs") for information on the kernel-based aut
 
 In order to access samba shares through GNOME Files, Nemo, Caja, Thunar or PCManFM, install the [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) package, available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
-Press `Ctrl+l` and enter `smb://_servername_/_share_` in the location bar to access your share.
+Press `Ctrl+l` and enter `smb://*servername*/*share*` in the location bar to access your share.
 
-The mounted share is likely to be present at `/run/user/_your_UID_/gvfs` or `~/.gvfs` in the filesystem.
+The mounted share is likely to be present at `/run/user/*your_UID*/gvfs` or `~/.gvfs` in the filesystem.
 
 #### KDE
 
@@ -444,7 +439,6 @@ There are a number of useful programs, but they may need to have packages create
 Samba offers an option to block files with certain patterns, like file extensions. This option can be used to prevent dissemination of viruses or to dissuade users from wasting space with certain files. More information about this option can be found in `man smb.conf`.
 
  `/etc/samba/smb.conf` 
-
 ```
 ...
 [myshare]
@@ -520,7 +514,7 @@ Looking up status of 192.168.1.1
 
 Regardless of the output, look for **<20>**, which shows the host with open services.
 
-4\. Use `smbclient` to list which services are shared on _PUTER_. If prompted for a password, pressing enter should still display the list:
+4\. Use `smbclient` to list which services are shared on *PUTER*. If prompted for a password, pressing enter should still display the list:
 
 ```
 $ smbclient -L \\PUTER
@@ -677,7 +671,7 @@ and the error should now no longer be appearing.
 
 ### Sharing a folder fails
 
-It means that while you are sharing a folder from _Dolphin_ (file manager) and everything seems ok at first, after restarting _Dolphin_ the share icon is gone from the shared folder, and also some output like this in terminal (_Konsole_) output:
+It means that while you are sharing a folder from *Dolphin* (file manager) and everything seems ok at first, after restarting *Dolphin* the share icon is gone from the shared folder, and also some output like this in terminal (*Konsole*) output:
 
 ```
 ‘net usershare’ returned error 255: net usershare: usershares are currently disabled
@@ -689,7 +683,6 @@ To fix it, enable usershare as described in [#Creating usershare path](#Creating
 ### "Browsing" network fails with "Failed to retrieve share list from server"
 
 And you are using a firewall (iptables) because you do not trust your local (school, university, hotel) local network. This may be due to the following: When the smbclient is browsing the local network it sends out a broadcast request on udp port 137\. The servers on the network then reply to your client but as the source address of this reply is different from the destination address iptables saw when sending the request for the listing out, iptables will not recognize the reply as being "ESTABLISHED" or "RELATED", and hence the packet is dropped. A possible solution is to add:
-
 ```
 iptables -t raw -A OUTPUT -p udp -m udp --dport 137 -j CT --helper netbios-ns
 

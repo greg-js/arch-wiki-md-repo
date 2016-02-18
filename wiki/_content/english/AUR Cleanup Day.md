@@ -117,7 +117,8 @@ This script will take care of packages that no longer exist.
 $dir = $argv[1];
 
 if (empty($dir)) {
-        echo "Please specify AUR directory.\n";
+        echo "Please specify AUR directory.
+";
         exit;
 }
 
@@ -132,13 +133,16 @@ $count = 0;
 
 foreach ($files as $pkgname) {
         if (!package_exists($pkgname)) {
-                echo 'Removing ' . INCOMING_DIR . "$pkgname\n";
+                echo 'Removing ' . INCOMING_DIR . "$pkgname
+";
                 system('rm -r ' . INCOMING_DIR . $pkgname);
                 $count++;
         }
 }
 
-echo "\nRemoved $count directories.\n";
+echo "
+Removed $count directories.
+";
 
 ```
 

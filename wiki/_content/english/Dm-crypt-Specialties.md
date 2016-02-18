@@ -108,7 +108,7 @@ WantedBy=multi-user.target
 
 There is a small caveat for systemd. At the time of writing, the original `chkboot.sh` script provided contains an empty space at the beginning of `#!/bin/bash` which has to be removed for the service to start successfully.
 
-As `/usr/local/bin/chkboot_user.sh` needs to be executed right after login, you need to add it to the [autostart](/index.php/Autostart "Autostart") (e.g. under KDE -> _System Settings -> Startup and Shutdown -> Autostart_; GNOME 3: _gnome-session-properties_).
+As `/usr/local/bin/chkboot_user.sh` needs to be executed right after login, you need to add it to the [autostart](/index.php/Autostart "Autostart") (e.g. under KDE -> *System Settings -> Startup and Shutdown -> Autostart*; GNOME 3: *gnome-session-properties*).
 
 With Arch Linux, changes to `/boot` are pretty frequent, for example by new kernels rolling-in. Therefore it may be helpful to use the scripts with every full system update. One way to do so:
 
@@ -197,7 +197,7 @@ If you want to be able to reboot a fully LUKS-encrypted system remotely, or star
 
 1.  If you do not have an SSH key pair yet, [generate one](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") on the client system (the one which will be used to unlock the remote machine).
 2.  If your choose to use [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/), you have the option of using [Ed25519 keys](/index.php/SSH_keys#Choosing_the_type_of_encryption "SSH keys").
-3.  Insert your SSH public key (i.e. the one you usually put onto hosts so that you can ssh in without a password, or the one you just created and which ends with _.pub_) into the remote machine's `/etc/dropbear/root_key or /etc/tinyssh/root_key` file using the method of your choice, e.g.:
+3.  Insert your SSH public key (i.e. the one you usually put onto hosts so that you can ssh in without a password, or the one you just created and which ends with *.pub*) into the remote machine's `/etc/dropbear/root_key or /etc/tinyssh/root_key` file using the method of your choice, e.g.:
     *   [copy the public key to the remote system](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys")
     *   then enter the following command (on the remote system): `# cat /home/<user>/.ssh/authorized_keys > /etc/<dropbear or tinyssh>/root_key` 
         **Tip:** This method can later be used to add other SSH public keys as needed; in that case verify the content of remote `~/.ssh/authorized_keys` contains only keys you agree to be used to unlock the remote machine. When adding additional keys, also regenerate your initrd with mkinitcpio. See also [Secure Shell#Protection](/index.php/Secure_Shell#Protection "Secure Shell").
@@ -208,13 +208,11 @@ If you want to be able to reboot a fully LUKS-encrypted system remotely, or star
     **Note:** It could be necessary to add [the module for your network card](/index.php/Network_configuration#Device_Driver "Network configuration") to the [MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array.
 
 5.  Configure the required `cryptdevice=` [parameter](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and add the `ip=` [kernel command parameter](/index.php/Kernel_parameters "Kernel parameters") to your bootloader configuration with the appropriate arguments (see [Mkinitcpio#Using_net](/index.php/Mkinitcpio#Using_net "Mkinitcpio")). For example, if the DHCP server does not attribute a static IP to your remote system, making it difficult to access via SSH accross reboots, you can explicitly state the IP you want to be used: `ip=192.168.1.1:::::eth0:none` 
-    **Note:** Make sure to use kernel device names for the interface name (under the form _eth#_) and not _udev_ ones, as those will not work.
-
+    **Note:** Make sure to use kernel device names for the interface name (under the form *eth#*) and not *udev* ones, as those will not work.
     Then update the configuration of your [bootloader](/index.php/Boot_loaders "Boot loaders"), e.g. for [GRUB](/index.php/GRUB#Generating_main_configuration_file "GRUB"): `# grub-mkconfig -o /boot/grub/grub.cfg` 
 6.  Finally, restart the remote system and try to [ssh to it](/index.php/Secure_Shell#Client_usage "Secure Shell"), **explicitly stating the "root" username** (even if the root account is disabled on the machine, this root user is used only in the initrd for the purpose of unlocking the remote system). If you are using the [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/) package and you also have the [openssh](https://www.archlinux.org/packages/?name=openssh) package installed, then you most probably will not get any warnings before logging in, because it convert and use the same host keys openssh uses. (Except Ed25519 keys, dropbear does not support them). In case you are using [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/), you **will** get a warning the first time you login, because tinyssh does not use the same host keys as openssh, and they will be created when you build the initramfs. They will not be recreated every time, just on the first build. In either case, you should be prompted for the passphrase to unlock the root device:
 
  `$ ssh **root**@192.168.1.1` 
-
 ```
 Enter passphrase for /dev/sda2:    
 Connection to 192.168.1.1 closed.
@@ -234,15 +232,13 @@ Below example shows a setup using a usb wifi adapter, connecting to a wifi netwo
     *   Add the needed kernel module for your specific wifi adatper.
     *   Include the `wpa_passphrase` and `wpa_supplicant` binaries.
     *   Add a hook `wifi` (or a name of your choice, this is the custom hook that will be created) before the `net` hook.
-
         ```
-        MODULES="_module_"
+        MODULES="*module*"
         BINARIES="wpa_passphrase wpa_supplicant"
         HOOKS="base udev autodetect ... **wifi** net ... dropbear encryptssh ..."
         ```
 
 2.  Create the `wifi` hook in `/lib/initcpio/hooks/wifi`:
-
     ```
     run_hook ()
     {
@@ -254,7 +250,7 @@ Below example shows a setup using a usb wifi adapter, connecting to a wifi netwo
 
     	# assocciate with wifi network
     	# 1\. save temp config file
-    	wpa_passphrase "_network ESSID_" "_pass phrase_" > /tmp/wifi
+    	wpa_passphrase "*network ESSID*" "*pass phrase*" > /tmp/wifi
 
     	# 2\. assocciate
     	wpa_supplicant -B -D nl80211,wext -i wlan0 -c /tmp/wifi
@@ -278,7 +274,6 @@ Below example shows a setup using a usb wifi adapter, connecting to a wifi netwo
     ```
 
 3.  Create the hook installation file in `/lib/initcpio/install/wifi`:
-
     ```
     build ()
     {
@@ -301,7 +296,7 @@ Remember to setup [wifi](/index.php/Wireless_network_configuration "Wireless net
 
 ## Discard/TRIM support for solid state drives (SSD)
 
-[Solid state drive](/index.php/Solid_state_drive "Solid state drive") users should be aware that by default, Linux's full-drive encryption mechanisms will _not_ forward TRIM commands from the filesystem to the underlying drive. The device-mapper maintainers have made it clear that TRIM support will never be enabled by default on dm-crypt devices because of the potential security implications.[[3]](http://www.saout.de/pipermail/dm-crypt/2011-September/002019.html)[[4]](http://www.saout.de/pipermail/dm-crypt/2012-April/002420.html) Minimal data leakage in the form of freed block information, perhaps sufficient to determine the filesystem in use, may occur on devices with TRIM enabled. An illustration and discussion of the issues arising from activating TRIM is available in the [blog](http://asalor.blogspot.de/2011/08/trim-dm-crypt-problems.html) of a _cryptsetup_ developer. If you are worried about such factors, keep also in mind that threats may add up: for example, if your device is still encrypted with the previous (cryptsetup <1.6.0) default cipher `--cipher aes-cbc-essiv`, more information leakage may occur from trimmed sector observation than with the current [default](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption").
+[Solid state drive](/index.php/Solid_state_drive "Solid state drive") users should be aware that by default, Linux's full-drive encryption mechanisms will *not* forward TRIM commands from the filesystem to the underlying drive. The device-mapper maintainers have made it clear that TRIM support will never be enabled by default on dm-crypt devices because of the potential security implications.[[3]](http://www.saout.de/pipermail/dm-crypt/2011-September/002019.html)[[4]](http://www.saout.de/pipermail/dm-crypt/2012-April/002420.html) Minimal data leakage in the form of freed block information, perhaps sufficient to determine the filesystem in use, may occur on devices with TRIM enabled. An illustration and discussion of the issues arising from activating TRIM is available in the [blog](http://asalor.blogspot.de/2011/08/trim-dm-crypt-problems.html) of a *cryptsetup* developer. If you are worried about such factors, keep also in mind that threats may add up: for example, if your device is still encrypted with the previous (cryptsetup <1.6.0) default cipher `--cipher aes-cbc-essiv`, more information leakage may occur from trimmed sector observation than with the current [default](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption").
 
 The following cases can be distinguished:
 
@@ -332,13 +327,13 @@ For LUKS devices unlocked manually on the console or via `/etc/crypttab` either 
 
 ## The encrypt hook and multiple disks
 
-The `encrypt` hook only allows for a **single** `cryptdevice=` entry. In system setups with multiple drives this may be limiting, because _dm-crypt_ has no feature to exceed the physical device. For example, take "LVM on LUKS": The entire LVM exists inside a LUKS mapper. This is perfectly fine for a single-drive system, since there is only one device to decrypt. But what happens when you want to increase the size of the LVM? You cannot, at least not without modifying the `encrypt` hook.
+The `encrypt` hook only allows for a **single** `cryptdevice=` entry. In system setups with multiple drives this may be limiting, because *dm-crypt* has no feature to exceed the physical device. For example, take "LVM on LUKS": The entire LVM exists inside a LUKS mapper. This is perfectly fine for a single-drive system, since there is only one device to decrypt. But what happens when you want to increase the size of the LVM? You cannot, at least not without modifying the `encrypt` hook.
 
 The following sections briefly show alternatives to overcome the limitation. The first deals with how to expand a [LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system") setup to a new disk. The second with modifying the `encrypt` hook to unlock multiple disks in LUKS setups without LVM. The third section then again uses LVM, but modifies the `encrypt` hook to unlock the encrypted LVM with a remote LUKS header.
 
 ### Expanding LVM on multiple disks
 
-The management of multiple disks is a basic [LVM](/index.php/LVM "LVM") feature and a major reason for its partitioning flexibility. It can also be used with _dm-crypt_, but only if LVM is employed as the first mapper. In such a [LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system") setup the encrypted devices are created inside the logical volumes (with a separate passphrase/key per volume). The following covers the steps to expand that setup to another disk.
+The management of multiple disks is a basic [LVM](/index.php/LVM "LVM") feature and a major reason for its partitioning flexibility. It can also be used with *dm-crypt*, but only if LVM is employed as the first mapper. In such a [LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system") setup the encrypted devices are created inside the logical volumes (with a separate passphrase/key per volume). The following covers the steps to expand that setup to another disk.
 
 **Warning:** Backup! While resizing filesystems may be standard, keep in mind that operations **may** go wrong and the following might not apply to a particular setup. Generally, extending a filesystem to free disk space is less problematic than shrinking one. This in particular applies when stacked mappers are used, as it is the case in the following example.
 
@@ -473,7 +468,6 @@ First create `/etc/crypttab.initramfs` and add the encrypted device to it. The s
 Modify `/etc/mkinitcpio.conf` [to use systemd](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") and add the header to `FILES`.
 
  `/etc/mkinitcpio.conf` 
-
 ```
 FILES="**/boot/header.img**"
 
@@ -496,9 +490,7 @@ This method shows how to modify the `encrypt` hook in order to use a remote LUKS
 # cp /usr/lib/initcpio/install/encrypt{,2}
 
 ```
-
  `/lib/initcpio/hooks/encrypt2 (around line 52)` 
-
 ```
 warn_deprecated() {
     echo "The syntax 'root=${root}' where '${root}' is an encrypted volume is deprecated"
@@ -530,7 +522,6 @@ if resolved=$(resolve_device "${cryptdev}" ${rootdelay}); then
 Now edit the [mkinitcpio.conf](/index.php/Mkinitcpio "Mkinitcpio") to add the `encrypt2` and `lvm2` hooks, the `header.img` to `FILES` and the `loop` to `MODULES`, apart from other configuration the system requires:
 
  `/etc/mkinitcpio.conf` 
-
 ```
 MODULES="**loop**"
 

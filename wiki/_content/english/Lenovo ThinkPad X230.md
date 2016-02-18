@@ -20,7 +20,6 @@
 ### Kernel
 
  `/etc/mkinitcpio.conf` 
-
 ```
 MODULES="i915"
 BINARIES="badblocks"
@@ -28,9 +27,7 @@ FILES="/etc/modprobe.d/modprobe.conf"
 HOOKS="base udev autodetect block filesystems keyboard fsck"
 
 ```
-
  `/etc/modprobe.d/modprobe.conf` 
-
 ```
 options i915 enable_rc6=1 enable_fbc=1 lvds_downclock=1
 options iwlwifi 11n_disable=1
@@ -54,7 +51,6 @@ X230 has IPS screen with 125.37 DPI. Refer to [HiDPI](/index.php/HiDPI "HiDPI") 
 The original configuration renders the touchpad quite useless, as it behaves very jumpily. [[Ubuntu Bugtracker](https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-input-synaptics/+bug/1042069/comments/5)] offers a solution for this issue. Add the following
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
 Section "InputClass"
         Identifier "touchpad"
@@ -98,7 +94,6 @@ The issue can be temporarily and partially [http://www.example.com](http://www.e
 There is an issue with system shutdown with power saving tools that cannot distinguish sys devices. You will need to add to the systemd shutdown trigger on this machine or else you'll get a system reboot when you shutdown the machine. Put this in /etc/rc.local.shutdown and update and enable its service, if not already.
 
  `/etc/rc.local.shutdown` 
-
 ```
 #!/bin/bash
 # /etc/rc.local.shutdown: Local shutdown script.
@@ -112,9 +107,7 @@ for bus in $buslist; do
 done
 
 ```
-
  `/usr/lib/systemd/system/rc-local-shutdown.service` 
-
 ```
 [Unit]
 Description=/etc/rc.local.shutdown Compatibility
@@ -138,7 +131,6 @@ As of kernel 3.10 and 3.11 suspend may fail because the kernel tries to switch o
 A workaround is to unload the driver manually and reload it on wake.
 
  `/usr/lib/systemd/system-sleep/e1000e-probe.sh` 
-
 ```
 #!/bin/bash
 # /usr/lib/systemd/system-sleep/e1000e-probe.sh
@@ -174,7 +166,6 @@ Note that the `acpi_backlight=vendor` kernel option also works with the standard
 Users of [TLP](/index.php/TLP "TLP") need to pay attention to a hardware bug according to which it is recommended to only use either the upper or lower charging threshold. The following configuration is recommended by the developer of TLP.[[1](http://thinkpad-forum.de/threads/184510-elementary-OS-Thinkpad-X230-einrichten?p=1865345&viewfull=1#post1865345)]
 
  `/etc/default/tlp` 
-
 ```
 START_CHARGE_THRESH_BAT0=67
 STOP_CHARGE_THRESH_BAT0=100

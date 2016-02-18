@@ -23,7 +23,6 @@
 Shadowsocks configuration may be done with a JSON formatted file. The following example configuration is included in the package:
 
  `/etc/shadowsocks/example.json` 
-
 ```
 {
     "server":"my_server_ip",
@@ -52,7 +51,7 @@ Shadowsocks configuration may be done with a JSON formatted file. The following 
 | fast_open | use [TCP-Fast-Open](https://github.com/clowwindy/shadowsocks/wiki/TCP-Fast-Open), true / false |
 | workers | number of workers |
 
-To adjust the logging level, the option `"verbose": _value_` may be added, with one of the following value:
+To adjust the logging level, the option `"verbose": *value*` may be added, with one of the following value:
 
 *   2: full logging
 *   1: debug
@@ -74,7 +73,7 @@ $ sslocal -c /etc/shadowsocks/config.json
 Alternatively, the configuration may be specified directly on the command:
 
 ```
-$ sslocal -s _server_address_ -p _server_port_ -l _local_port_ -k _password_ -m _encryption_method_
+$ sslocal -s *server_address* -p *server_port* -l *local_port* -k *password* -m *encryption_method*
 
 ```
 
@@ -117,7 +116,6 @@ For example, to [start](/index.php/Start "Start") and [enable](/index.php/Enable
 To bind Shadowsocks to a privileged port (less than 1024), the server should be started as user root:
 
  `/etc/systemd/system/shadowsocks-server@.service.d/start-as-root.conf` 
-
 ```
 [Service]
 User=root
@@ -128,7 +126,7 @@ User=root
 
 Installing the [python2-m2crypto](https://www.archlinux.org/packages/?name=python2-m2crypto) package will make encryption a little faster.
 
-To use [Salsa20](https://en.wikipedia.org/wiki/Salsa20) or _ChaCha20_ cyphers, install the [libsodium](https://www.archlinux.org/packages/?name=libsodium) package.
+To use [Salsa20](https://en.wikipedia.org/wiki/Salsa20) or *ChaCha20* cyphers, install the [libsodium](https://www.archlinux.org/packages/?name=libsodium) package.
 
 ## See also
 

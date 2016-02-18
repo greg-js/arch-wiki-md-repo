@@ -37,7 +37,6 @@ Per prima cosa, scrivere lo script che verrà inserito all’inserimento della p
 Ad esempio:
 
  `test.sh` 
-
 ```
 #!/bin/sh
 
@@ -61,7 +60,6 @@ Questa procedura non garantisce la sicurezza del sistema, ed è quindi consiglia
 ## exdongle script
 
  `/usr/bin/exdongle` 
-
 ```
 #!/bin/sh
 

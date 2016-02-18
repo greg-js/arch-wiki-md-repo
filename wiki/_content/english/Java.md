@@ -42,7 +42,7 @@ Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net
 
 **Note:** After installation, the Java environment will need to be recognized by the shell (`$PATH` variable). This can be done by sourcing `/etc/profile` from the command line or by logging out/in again of a Desktop Environment.
 
-Two _common_ packages named [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) and [java-environment-common](https://www.archlinux.org/packages/?name=java-environment-common) are automatically pulled as dependency and provide environment file `/etc/profile.d/jre.sh`. This file contains all JVM common environment variables. Package [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) also provides a utility script `archlinux-java` that can display and change the default Java environment. This script sets links `/usr/lib/jvm/default` and `/usr/lib/jvm/default-runtime` to point at a valid non-conflicting Java environment installed and Java runtime in `/usr/lib/jvm/java-${JAVA_MAJOR_VERSION}-${VENDOR_NAME`}. Most executables provided by the Java environment set have direct links from `/usr/bin`, others are available in `$PATH`.
+Two *common* packages named [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) and [java-environment-common](https://www.archlinux.org/packages/?name=java-environment-common) are automatically pulled as dependency and provide environment file `/etc/profile.d/jre.sh`. This file contains all JVM common environment variables. Package [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) also provides a utility script `archlinux-java` that can display and change the default Java environment. This script sets links `/usr/lib/jvm/default` and `/usr/lib/jvm/default-runtime` to point at a valid non-conflicting Java environment installed and Java runtime in `/usr/lib/jvm/java-${JAVA_MAJOR_VERSION}-${VENDOR_NAME`}. Most executables provided by the Java environment set have direct links from `/usr/bin`, others are available in `$PATH`.
 
 **Warning:** File `/etc/profile.d/jdk.sh` is not provided any more by any package.
 
@@ -51,18 +51,18 @@ The following packages are available in the [official repositories](/index.php/O
 ### OpenJDK 7
 
 | Package name | Use |
-| [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) | Java runtime environment (_JRE_) without any graphical tool - version 7 |
-| [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) | Complete Java Runtime Environment (_JRE_) - version 7 |
-| [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) | Java Development Kit (_JDK_) - version 7 |
+| [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) | Java runtime environment (*JRE*) without any graphical tool - version 7 |
+| [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) | Complete Java Runtime Environment (*JRE*) - version 7 |
+| [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) | Java Development Kit (*JDK*) - version 7 |
 | [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) | OpenJDK javadoc - version 7 |
 | [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src) | OpenJDK sources - version 7 |
 
 ### OpenJDK 8
 
 | Package name | Use |
-| [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | Java runtime environment (_JRE_) without any graphical tool - version 8 |
-| [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | Complete Java Runtime Environment (_JRE_) - version 8 |
-| [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | Java Development Kit (_JDK_) - version 8 |
+| [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | Java runtime environment (*JRE*) without any graphical tool - version 8 |
+| [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | Complete Java Runtime Environment (*JRE*) - version 8 |
+| [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | Java Development Kit (*JDK*) - version 8 |
 | [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) | OpenJDK javadoc - version 8 |
 | [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src) | OpenJDK sources - version 8 |
 
@@ -79,8 +79,8 @@ JavaFX is also available from the official repositories. It requires the OpenJDK
 
 Although the Arch Linux package releases may contain a reference to the proprietary versions the packages are based on, the open-source project has its own versioning scheme:
 
-*   [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk), [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk), and [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) should be flagged as out-of-date based on the [_IcedTea_ version](http://icedtea.wildebeest.org/download/source) (e.g. `2.4.3`), rather than on the Oracle reference version (e.g. `u45` in the release `7.u45_2.4.3-1`).
-*   [icedtea-web](https://www.archlinux.org/packages/?name=icedtea-web) should be flagged as out-of-date based on the [_IcedTea Web_ version](http://icedtea.wildebeest.org/download/source) (e.g. `1.4.1`). This is independent of the _IcedTea_ version.
+*   [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk), [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk), and [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) should be flagged as out-of-date based on the [*IcedTea* version](http://icedtea.wildebeest.org/download/source) (e.g. `2.4.3`), rather than on the Oracle reference version (e.g. `u45` in the release `7.u45_2.4.3-1`).
+*   [icedtea-web](https://www.archlinux.org/packages/?name=icedtea-web) should be flagged as out-of-date based on the [*IcedTea Web* version](http://icedtea.wildebeest.org/download/source) (e.g. `1.4.1`). This is independent of the *IcedTea* version.
 
 ## Switching between JVM
 
@@ -115,7 +115,7 @@ Available Java environments:
 
 ```
 
-Note the _(default)_ denoting that `java-7-openjdk` is currently set as default. Invocation of `java` and other binaries will rely on this Java install. Also note on the previous output that only the _JRE_ part of OpenJDK 8 is installed here.
+Note the *(default)* denoting that `java-7-openjdk` is currently set as default. Invocation of `java` and other binaries will rely on this Java install. Also note on the previous output that only the *JRE* part of OpenJDK 8 is installed here.
 
 ### Change default Java environment
 
@@ -180,7 +180,7 @@ This section is targeted at packager willing to provide packages in [AUR](/index
 *   Ship links from `/usr/bin` to executables, only if these links do not already belong to [java-runtime-common](https://www.archlinux.org/packages/extra/any/java-runtime-common/files/) and [java-environment-common](https://www.archlinux.org/packages/extra/any/java-environment-common/files/)
 *   Suffix man pages with `-${VENDOR_NAME}${JAVA_MAJOR_VERSION}` to prevent conflicts (see [jre8-openjdk file list](https://www.archlinux.org/packages/extra/x86_64/jre8-openjdk/files/) where man pages are suffixed with `-openjdk8`)
 *   Do not declare any [conflicts](/index.php/PKGBUILD#conflicts "PKGBUILD") nor [replaces](/index.php/PKGBUILD#replaces "PKGBUILD") with other JDKs, `java-runtime`, `java-runtime-headless` nor `java-environment`
-*   Use script `archlinux-java` in _install functions_ to set the Java environment as default **if no other valid Java environment is already set** (ie: package should not **force** install as default). See [officially supported Java environment package sources](https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/java7-openjdk) for examples
+*   Use script `archlinux-java` in *install functions* to set the Java environment as default **if no other valid Java environment is already set** (ie: package should not **force** install as default). See [officially supported Java environment package sources](https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/java7-openjdk) for examples
 
 Also please note that:
 

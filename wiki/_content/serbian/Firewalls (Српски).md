@@ -211,7 +211,7 @@ Firestarter ima gnome međuzavisnosti i dostupan je iz [AUR](/index.php/AUR "AUR
 
 Guarddog zahteva kdelibs3 i dostupan je u [AUR](/index.php/AUR "AUR") riznici.
 
-Da bi se firewall podešavanja primenila prilikom pokretanja računara _/etc/rc.firewall_ iznutra _/etc/rc.local_ ili nešto slično.
+Da bi se firewall podešavanja primenila prilikom pokretanja računara */etc/rc.firewall* iznutra */etc/rc.local* ili nešto slično.
 
 ### Gufw
 

@@ -85,7 +85,7 @@ If you want to edit tags or properties manually (in case scripts would not be ab
 You can stack different output to the same index file, Demlo does not mind. You can edit this file with your favorite editor. To apply the changes, call Demlo over the desired set of files with the `-i` option. Scripts can still be called or they can be left out if you do not want to perform any additional change.
 
 ```
- $ demlo -i ./index.json -s _ -post 'o.artist,o.album_artist=o.album_artist,artist' <input-files>_
+ $ demlo -i ./index.json -s * -post 'o.artist,o.album_artist=o.album_artist,artist' <input-files>*
 
 ```
 

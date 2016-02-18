@@ -47,7 +47,7 @@ Questo pacchetto di base supporta già lo sviluppo di applicazioni Java.
 Ci sono due modi di installare un plugin per Eclipse:
 
 *   usando [pacman](/index.php/Pacman "Pacman") per installare i plugin presenti nei repository di Arch (vedere [Eclipse plugin package guidelines](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") per ulteriori informazioni);
-*   usando il plugin manager di Eclipse per scaricare e installare plugin dai repository originali; in questo caso è necessario trovare i repository necessari dal sito dei plugin, quindi su Eclipse selezionare _Help -> Install New Software..._, compilare il campo _Work with_ con il repository, selezionare il plugin da installare nella lista e seguire le istruzioni.
+*   usando il plugin manager di Eclipse per scaricare e installare plugin dai repository originali; in questo caso è necessario trovare i repository necessari dal sito dei plugin, quindi su Eclipse selezionare *Help -> Install New Software...*, compilare il campo *Work with* con il repository, selezionare il plugin da installare nella lista e seguire le istruzioni.
 
 **Attenzione:**
 
@@ -122,16 +122,16 @@ Vedere Aptana Studio più avanti nella pagina.
 ## Aggiornamenti
 
 *   Eclipse e i plugin installati con pacman vengono aggiornati con pacman stesso
-*   Per i plugin installati con il plugin manager di Eclipse, è necessario avviare Eclipse e selezionare _Help -> Check for Updates_ (se i plugin sono stati installati come root, anche l'aggiornamento deve essere controllato e installato come root).
+*   Per i plugin installati con il plugin manager di Eclipse, è necessario avviare Eclipse e selezionare *Help -> Check for Updates* (se i plugin sono stati installati come root, anche l'aggiornamento deve essere controllato e installato come root).
 
-Perché i plugin siano aggiornati, occorre controllare di avere abilitato i repository in _Window -> Preferences -> Install/Update -> Available Software Sites_: i repository dei plugin si trovano sui siti di riferimento dei rispettivi progetti. Per aggiungere, modificare e rimuovere i repository è sufficiente utilizzare i pulsanti a destra del pannello _Available Software Sites_. Per Eclipse 3.7 (Indigo), assicurarsi di aver abilitato questa repository:
+Perché i plugin siano aggiornati, occorre controllare di avere abilitato i repository in *Window -> Preferences -> Install/Update -> Available Software Sites*: i repository dei plugin si trovano sui siti di riferimento dei rispettivi progetti. Per aggiungere, modificare e rimuovere i repository è sufficiente utilizzare i pulsanti a destra del pannello *Available Software Sites*. Per Eclipse 3.7 (Indigo), assicurarsi di aver abilitato questa repository:
 
 ```
 [http://download.eclipse.org/releases/indigo](http://download.eclipse.org/releases/indigo)
 
 ```
 
-Per ricevere notifiche di aggiornamento, andare su _Window -> Preferences -> Install/Update -> Automatic Updates_. Se si vogliono ricevere le notifiche anche per i plugin installati come root, bisogna esportare la lista dei relativi repository con _Export_, quindi reimportarla utilizzando _Import_ come utente normale.
+Per ricevere notifiche di aggiornamento, andare su *Window -> Preferences -> Install/Update -> Automatic Updates*. Se si vogliono ricevere le notifiche anche per i plugin installati come root, bisogna esportare la lista dei relativi repository con *Export*, quindi reimportarla utilizzando *Import* come utente normale.
 
 ## Abilitare l'integrazione di javadoc
 

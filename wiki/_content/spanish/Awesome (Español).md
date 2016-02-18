@@ -1,8 +1,8 @@
 Desde el sitio web awesome:
 
-"_[awesome](http://awesome.naquadah.org/) es altamente configurable y es la próxima generación para administradores de ventanas para el X. Es muy rápido, extensible y está bajo la licencia GNU GPLv2._
+"*[awesome](http://awesome.naquadah.org/) es altamente configurable y es la próxima generación para administradores de ventanas para el X. Es muy rápido, extensible y está bajo la licencia GNU GPLv2.*
 
-Esta pensado principalmente para usuarios con experiencia, desarrolladores y personas que lidian cada día con tareas computacionales y que desean un control detallado de su entorno gráfico._"_
+Esta pensado principalmente para usuarios con experiencia, desarrolladores y personas que lidian cada día con tareas computacionales y que desean un control detallado de su entorno gráfico.*"*
 
 ## Contents
 
@@ -150,7 +150,7 @@ Revelar el resultado de todos sus clientes abiertos; clic-izquierdo en un client
 
 ### Esconder / mostrar wibox en awesome 3
 
-La tecla ModKey-b le permite esconder/mostrar la barra de estado en una pantalla activa (por defecto en awesome 2.3), agregue a su _clientkeys_ en rc.lua:
+La tecla ModKey-b le permite esconder/mostrar la barra de estado en una pantalla activa (por defecto en awesome 2.3), agregue a su *clientkeys* en rc.lua:
 
 ```
 awful.key({ modkey }, "b", function ()
@@ -228,7 +228,7 @@ TODO [[3]](http://awesome.naquadah.org/wiki/index.php?title=Naughty)
 
 ### Ventanas Emergentes en los Menus
 
-Hay un solo menu por defecto en awesome3, y personalizarlo es muy fácil ahora. Sin embargo, si esta utilizando la versión 2.x de awesome, tiene que ver _[awful.menu](http://awesome.naquadah.org/wiki/index.php?title=Awful.menu)_.
+Hay un solo menu por defecto en awesome3, y personalizarlo es muy fácil ahora. Sin embargo, si esta utilizando la versión 2.x de awesome, tiene que ver *[awful.menu](http://awesome.naquadah.org/wiki/index.php?title=Awful.menu)*.
 
 Un ejemplo para awesome3:
 
@@ -262,7 +262,7 @@ mymainmenu = awful.menu.new({ items = {
 
 ### Mas Widgets en awesome
 
-_Los Widgets en awesome son objetos que se pueden agregar a cualquier contenedor-widget (barra de estado y barra de títulos), ellos pueden proveer de varias informaciones sobre el sistema, y son muy útiles para tener acceso a esa información desde la manejador de ventanas. Los Widgets son fáciles de utilizar y comúnmente proporcionan mucha flexibilidad._ -- Fuente [Awesome Wiki: Widgets](http://awesome.naquadah.org/wiki/Widgets_in_awesome).
+*Los Widgets en awesome son objetos que se pueden agregar a cualquier contenedor-widget (barra de estado y barra de títulos), ellos pueden proveer de varias informaciones sobre el sistema, y son muy útiles para tener acceso a esa información desde la manejador de ventanas. Los Widgets son fáciles de utilizar y comúnmente proporcionan mucha flexibilidad.* -- Fuente [Awesome Wiki: Widgets](http://awesome.naquadah.org/wiki/Widgets_in_awesome).
 
 Existe una biblioteca para widgets mayormente utilizada llamada **Wicked** (compatible con las versiones **superiores a 3.4** de awesome), que proveen de muchos widgets, como MPD widget, uso del CPU, uso de la memoria, etc. Para más detalles ver [la página de Wicked](http://awesome.naquadah.org/wiki/index.php?title=Wicked).
 
@@ -279,7 +279,7 @@ exec xcompmgr &
 
 ```
 
-Vea _man xcompmgr_ o [xcompmgr](/index.php/Xcompmgr "Xcompmgr") para más opciones.
+Vea *man xcompmgr* o [xcompmgr](/index.php/Xcompmgr "Xcompmgr") para más opciones.
 
 En awesome 3.4, la transparencia de la ventana puede ser establecida dinamicamente usandos señales. Por ejemplo, su rc.lua podría contener lo siguiente:
 

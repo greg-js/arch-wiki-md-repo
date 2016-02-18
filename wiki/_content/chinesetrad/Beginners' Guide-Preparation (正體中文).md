@@ -24,13 +24,13 @@
 
 ### 系統需求
 
-Arch Linux 在任何 [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "wikipedia:P6 (microarchitecture)") 相容的機器上執行，最低需求 RAM 為 64 MB。一般而言將安裝 [base](https://www.archlinux.org/groups/x86_64/base/) 群組下所有軟體包，總共佔用約 500 MB 的硬碟空間。若您目前的空間不足，可以視狀況縮減安裝項目，但您必須真的瞭解自己在做什麼。
+Arch Linux 在任何 [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) 相容的機器上執行，最低需求 RAM 為 64 MB。一般而言將安裝 [base](https://www.archlinux.org/groups/x86_64/base/) 群組下所有軟體包，總共佔用約 500 MB 的硬碟空間。若您目前的空間不足，可以視狀況縮減安裝項目，但您必須真的瞭解自己在做什麼。
 
 ### 準備最新的安裝媒體
 
 最新釋出的安裝媒體可以從官網的[下載](https://archlinux.org/download/)頁面取得。另外註明，單一 ISO 映像同時支援 32 和 64 位元的硬體架構。強烈建議您使用最新的 ISO 映像。
 
-*   我們的安裝媒體都簽署過，強烈建議使用前先驗明正身。從下載頁面 (或任何一個表列的鏡像站) 將 _.sig_ 檔下載到存放 _.iso_ 檔的資料夾。在 Arch Linux 下以 root 身分使用 `pacman-key -v _iso-file_.sig`，其他環境下直接使用 gpg2，一樣用 root 身分執行：`gpg2 --verify _iso-file.sig_`。網站上也提供了 md5 和 sha1 校驗碼。
+*   我們的安裝媒體都簽署過，強烈建議使用前先驗明正身。從下載頁面 (或任何一個表列的鏡像站) 將 *.sig* 檔下載到存放 *.iso* 檔的資料夾。在 Arch Linux 下以 root 身分使用 `pacman-key -v *iso-file*.sig`，其他環境下直接使用 gpg2，一樣用 root 身分執行：`gpg2 --verify *iso-file.sig*`。網站上也提供了 md5 和 sha1 校驗碼。
 
 *   將 ISO 映像燒入 CD 或 DVD，用您習慣的燒錄軟體即可。Arch 下的燒錄程式請參考[光碟機#燒錄](/index.php/Optical_disc_drive#Burning "Optical disc drive")。
 

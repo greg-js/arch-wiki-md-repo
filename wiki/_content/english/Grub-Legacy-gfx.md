@@ -42,7 +42,6 @@ splashimage /boot/grub/splash.xpm.gz
 Otherwise, you will simply be adding the last line to your existing `menu.lst`. This line will point to the image you want to use as the background during your boot selection screen.
 
 **Note:** This line is relative to GRUB's root partition, meaning if you have your own `/boot` partition, the above should read:
-
 ```
 splashimage /grub/splash.xpm.gz
 

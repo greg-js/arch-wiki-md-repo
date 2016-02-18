@@ -8,7 +8,7 @@ Both applications are built easily using the AUR/ABS build system. In the case o
 
 ## Registering Camera Controls
 
-During the installation of libwebcam the following line will be added to your _/etc/udev/rules.d/80-uvcdynctrl.rules_
+During the installation of libwebcam the following line will be added to your */etc/udev/rules.d/80-uvcdynctrl.rules*
 
 ```
 ACTION=="add", SUBSYSTEM=="video4linux", DRIVERS=="uvcvideo", RUN+="/lib/udev/uvcdynctrl"

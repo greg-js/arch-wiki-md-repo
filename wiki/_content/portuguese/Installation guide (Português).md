@@ -1,6 +1,6 @@
 Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php/Arch_Linux "Arch Linux") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ_(Português)](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Consulte [Beginners'_Guide_(Português)](/index.php/Beginners%27_Guide_(Portugu%C3%AAs) "Beginners' Guide (Português)") para um guia de instalação mais detalhado.
 
-[Arch wiki](/index.php/Main_page "Main page") é um excelente recurso e deve ser consultado para as primeiras questões. O canal [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), e o [[1]](http://forum.archlinux-br.org/index.php) também estão disponíveis se a resposta não puder ser encontrada em outro lugar. Além disso, não esqueça de verificar as páginas `man` para qualquer comando não familiarizado, o que normalmente pode ser invocado com `man _command_`.
+[Arch wiki](/index.php/Main_page "Main page") é um excelente recurso e deve ser consultado para as primeiras questões. O canal [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), e o [[1]](http://forum.archlinux-br.org/index.php) também estão disponíveis se a resposta não puder ser encontrada em outro lugar. Além disso, não esqueça de verificar as páginas `man` para qualquer comando não familiarizado, o que normalmente pode ser invocado com `man *command*`.
 
 ## Contents
 
@@ -33,7 +33,7 @@ Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php
 Baixe a nova mídia ISO Arch Linux em [Arch Linux download page](https://www.archlinux.org/download/).
 
 *   Uma única imagem é fornecida, que pode ser iniciada de forma "live" em sistemas i686 e x86_64 para instalar Arch Linux através da rede. A mídia que contém o repositório [core] não são mais fornecidas.
-*   Instale imagens que sejam assinadas e é altamente recomendável verificar a sua assinatura antes do uso: isso pode ser feito baixando o arquivo _.sig_ da página de download (ou um dos espelhos listados lá) para o mesmo diretório do arquivo _.iso_ e usando `pacman-key -v _iso-file_.sig`.
+*   Instale imagens que sejam assinadas e é altamente recomendável verificar a sua assinatura antes do uso: isso pode ser feito baixando o arquivo *.sig* da página de download (ou um dos espelhos listados lá) para o mesmo diretório do arquivo *.iso* e usando `pacman-key -v *iso-file*.sig`.
 *   A imagem pode ser queimada para um CD, montada como um arquivo ISO, ou diretamente [gravados em um pen drive](/index.php/USB_Installation_Media "USB Installation Media"). Destina-se só para novas instalações, um sistema Arch Linux existente pode ser sempre atualizado com `pacman -Syu`.
 
 ## Instalação
@@ -109,7 +109,7 @@ Outros pacotes podem ser instalados adicionando seus nomes no comando acima (sep
 
 Você pode escolher entre [GRUB](/index.php/GRUB "GRUB") ou [Syslinux](/index.php/Syslinux "Syslinux").
 
-_GRUB_
+*GRUB*
 
 *   Para BIOS:
 
@@ -127,7 +127,7 @@ _GRUB_
 
 *   Instale o GRUB antes de executar o chroot (sessão [Configurando o Sistema](#Configurando_o_Sistema)).
 
-_Syslinux_
+*Syslinux*
 
 ```
 # arch-chroot /mnt pacman -S syslinux

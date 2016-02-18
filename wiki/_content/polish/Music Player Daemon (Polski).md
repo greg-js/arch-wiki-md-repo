@@ -114,7 +114,7 @@ X-GNOME-Autostart-enabled=false
 
 **Warning:** Users of PulseAudio with a local mpd have to implement a [workaround](/index.php/Music_Player_Daemon/Tips_and_tricks#Local_.28with_separate_mpd_user.29 "Music Player Daemon/Tips and tricks") in order to run mpd as its own user!
 
-Domyślnie w Archu pliki MPD trzymane są tu: `/var/lib/mpd`; domyślny użytkownik to _mpd_.
+Domyślnie w Archu pliki MPD trzymane są tu: `/var/lib/mpd`; domyślny użytkownik to *mpd*.
 
 Edytuj `/etc/mpd.conf` aby ustawić:
 
@@ -131,7 +131,7 @@ user                  "mpd"
 
 **Note:** Nie używaj znaku ~ jako skrótu do katalogu użytkownika. Wpierw jest czytana konfiguracja, później zaś są zbijane uprawnienia i ponownie jest wczytywana konfiguracja..
 
-Ustawiliśmy właśnie MPD aby był uruchamiany na użytkowniku _mpd_, lecz właścicielem `/var/lib/mpd` jest _root_, możemy to zmienić:
+Ustawiliśmy właśnie MPD aby był uruchamiany na użytkowniku *mpd*, lecz właścicielem `/var/lib/mpd` jest *root*, możemy to zmienić:
 
 ```
 # chown -R mpd /var/lib/mpd
@@ -185,7 +185,7 @@ Zmiana grupy w której uruchamiany jest mpd może powodować błędy typu:
 *   [alsa]: Failed to open ALSA device "default": No such file or directory
 *   player_thread: problems opening audio device while playing "Song Name.mp3"
 
-Dzieje się tak, dlatego że domyślnie MPD jest członkiem grupy _audio_, a pliki w `/dev/snd/` też są w grupie _audio_, co jest dobre ale nie koniecznie prawdziwe w przypadku innego użytkownika. Więc dodaj go do grupy _audio_:
+Dzieje się tak, dlatego że domyślnie MPD jest członkiem grupy *audio*, a pliki w `/dev/snd/` też są w grupie *audio*, co jest dobre ale nie koniecznie prawdziwe w przypadku innego użytkownika. Więc dodaj go do grupy *audio*:
 
 ```
 # gpasswd -a mpd audio

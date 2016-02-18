@@ -74,13 +74,11 @@ El contenido de `locale.conf` es una lista de líneas separadas que definen las 
 **Nota:** El archivo `/etc/locale.conf` no existe por defecto, hay que crearlo manualmente.
 
 **Sugerencia:** Si la salida de `locale` durante la instalación es de su agrado, puede guardarla haciendo: `# locale | cat > /etc/locale.conf` mientras se encuentra en el entorno chroot.
-
  `/etc/locale.conf`  `LANG="es_ES.UTF-8"` 
 
 He aquí un ejemplo de configuración avanzada:
 
  `/etc/locale.conf` 
-
 ```
 # Habilitar UTF-8 con valores españoles.
 LANG="es_ES.UTF-8"
@@ -113,7 +111,6 @@ En los programas que usan gettext para las traducciones comparadas, la opción `
 o, para todo el sistema:
 
  `/etc/locale.conf` 
-
 ```
 LANG="es_AR"
 LANGUAGE="es_AR:es_ES:es"
@@ -141,10 +138,9 @@ $ source ~/.bashrc
 
 ### Establecer la configuración regional en `.locale.conf`
 
-El script `etc/profile.d/locale.sh` sobrescribe la configuración regional _para todo el sistema_ con la que se encuentra en `$HOME/.config/locale.conf`, si existe. Este archivo no existe de forma predeterminada, con lo que habrá que crearlo y poner la configuración regional del idioma deseado.
+El script `etc/profile.d/locale.sh` sobrescribe la configuración regional *para todo el sistema* con la que se encuentra en `$HOME/.config/locale.conf`, si existe. Este archivo no existe de forma predeterminada, con lo que habrá que crearlo y poner la configuración regional del idioma deseado.
 
  `$HOME/.config/locale.conf` 
-
 ```
 LANG="es_ES.UTF-8"
 LANGUAGE="es_ES.UTF-8"
@@ -214,5 +210,5 @@ Es necesario poner en marcha estas aplicaciones desde una localización UTF-8 o 
 *   [Gentoo Wiki Archives: Locales](http://www.gentoo-wiki.info/Locales)
 *   [Test interactivo ICU sobre la clasificación](http://demo.icu-project.org/icu-bin/locexp?_=en_US&x=col)
 *   [Free Standards Group Open Internationalisation Initiative](http://www.openi18n.org/)
-*   [_The Single UNIX Specification_ definition of Locale](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) by The Open Group
+*   [*The Single UNIX Specification* definition of Locale](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) by The Open Group
 *   [Locale environment variables](https://help.ubuntu.com/community/EnvironmentVariables#Locale_setting_variables)

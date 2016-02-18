@@ -255,7 +255,6 @@ Install the package [emacs-arduino-mode-git](https://aur.archlinux.org/packages/
 Add to the init script:
 
  `~/.emacs` 
-
 ```
 ;; arduino-mode
 (require 'cl)
@@ -278,7 +277,6 @@ As of Oct 5, 2014, most of the 3rd party tools only work for Arduino 1.0 ([ardui
 If you have more than one arduino you may have noticed that they names /dev/ttyUSB[0-9] are assigned in the order of connection. In the IDE this is not so much of a problem, but when you have programmed your own software to communicate with an arduino project in the background this can be annoying. Use the following udev rules to assign static symlinks to your arduino's:
 
  `/etc/udev/rules.d/52-arduino.rules` 
-
 ```
 SUBSYSTEMS=="usb", KERNEL=="ttyUSB[0-9]*", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", SYMLINK+="sensors/ftdi_%s{serial}"
 
@@ -287,7 +285,6 @@ SUBSYSTEMS=="usb", KERNEL=="ttyUSB[0-9]*", ATTRS{idVendor}=="0403", ATTRS{idProd
 Your arduino's will be available under names like "/dev/sensors/ftdi_A700dzaF". If you want you can also assign more meaningfull names to several devices like this:
 
  `/etc/udev/rules.d/52-arduino.rules` 
-
 ```
 SUBSYSTEMS=="usb", KERNEL=="ttyUSB[0-9]*", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="A700dzaF", SYMLINK+="arduino/nano"
 

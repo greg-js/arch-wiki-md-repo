@@ -58,4 +58,4 @@ Een vers geinstalleerd Arch Linux systeem bevat alleen de broodnodige componente
 
 De grote hoeveelheid pakketten en bouwscripts in de diverse Arch Linux repository's ondersteunen ook vrijheid van keuze, door open source software aan te bieden voor degenen die dat verkiezen, als ook gesloten softwarepakketten voor degenen die het principe 'functionaliteit over ideologie' omhelsen. Het is de gebruiker die kiest.
 
-Zoals Judd Vinet, de bedenker van Arch Linux, eens zei: "[Arch Linux](/index.php/Arch_Linux "Arch Linux") is what _you_ make it." (Arch Linux is wat je er zelf van maakt)
+Zoals Judd Vinet, de bedenker van Arch Linux, eens zei: "[Arch Linux](/index.php/Arch_Linux "Arch Linux") is what *you* make it." (Arch Linux is wat je er zelf van maakt)

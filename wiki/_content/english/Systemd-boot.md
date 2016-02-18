@@ -37,7 +37,7 @@ It is simple to configure, but can only start EFI executables, such as the Linux
 4.  Copy your kernel and initramfs onto that ESP.
     **Note:** For a way to automatically keep the kernel updated on the ESP, have a look at the [EFISTUB article](/index.php/EFISTUB#Using_systemd "EFISTUB") for some systemd units that can be adapted.
 
-5.  Finally, Type the following command to install systemd-boot: `# bootctl --path=_$esp_ install` It will copy the systemd-boot binary to your EFI System Partition (`$esp/EFI/systemd/systemd-bootx64.efi` and `$esp/EFI/Boot/BOOTX64.EFI` - both of which are identical - on x64 systems) and add systemd-boot itself as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
+5.  Finally, Type the following command to install systemd-boot: `# bootctl --path=*$esp* install` It will copy the systemd-boot binary to your EFI System Partition (`$esp/EFI/systemd/systemd-bootx64.efi` and `$esp/EFI/Boot/BOOTX64.EFI` - both of which are identical - on x64 systems) and add systemd-boot itself as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
 
 ### Legacy boot
 
@@ -54,7 +54,7 @@ If you can do so, the installation is easier: go into your EFI shell or your fir
 
 ### Updating
 
-systemd-boot (bootctl(1), systemd-efi-boot-generator(8)) assumes that your EFI System Partition is mounted on `/boot`. Unlike the previous separate _gummiboot_ package, which updated automatically on a new package release with a `post_install` script, updates of new systemd-boot versions are now handled manually by the user:
+systemd-boot (bootctl(1), systemd-efi-boot-generator(8)) assumes that your EFI System Partition is mounted on `/boot`. Unlike the previous separate *gummiboot* package, which updated automatically on a new package release with a `post_install` script, updates of new systemd-boot versions are now handled manually by the user:
 
 ```
 # bootctl update  
@@ -83,7 +83,6 @@ The basic configuration is kept in `$esp/loader/loader.conf`, with three possibl
 Example:
 
  `$esp/loader/loader.conf` 
-
 ```
 default  arch
 timeout  4
@@ -109,16 +108,15 @@ bootctl searches for boot menu items in `$esp/loader/entries/*.conf` – each fi
 
 *   `efi` – EFI program to start, relative to your ESP (`$esp`); e.g. `/vmlinuz-linux`. Either this or `linux` (see below) is **required.**
 
-*   `options` – command line options to pass to the EFI program. Optional, but you will need at least `initrd=_efipath_` and `root=_dev_` if booting Linux.
+*   `options` – command line options to pass to the EFI program. Optional, but you will need at least `initrd=*efipath*` and `root=*dev*` if booting Linux.
 
-For Linux, you can specify `linux _path-to-vmlinuz_` and `initrd _path-to-initramfs_`; this will be automatically translated to `efi _path_` and `options initrd=_path_` – this syntax is only supported for convenience and has no differences in function.
+For Linux, you can specify `linux *path-to-vmlinuz*` and `initrd *path-to-initramfs*`; this will be automatically translated to `efi *path*` and `options initrd=*path*` – this syntax is only supported for convenience and has no differences in function.
 
 #### Standard root installations
 
 Here is an example entry for a root partition without LVM or LUKS:
 
  `$esp/loader/entries/arch.conf` 
-
 ```
 title          Arch Linux
 linux          /vmlinuz-linux
@@ -135,7 +133,6 @@ Please note in the example above that PARTUUID/PARTLABEL identifies a GPT partit
 Here is an example for a root partition using [Logical Volume Management](/index.php/LVM "LVM"):
 
  `$esp/loader/entries/arch-lvm.conf` 
-
 ```
 title          Arch Linux (LVM)
 linux          /vmlinuz-linux
@@ -158,7 +155,6 @@ Note that `root=**UUID**=` is used instead of `root=**PARTUUID**=`, which is use
 Here is an example configuration file for an encrypted root partition ([DM-Crypt / LUKS](/index.php/Dm-crypt "Dm-crypt")):
 
  `$esp/loader/entries/arch-encrypted.conf` 
-
 ```
 title Arch Linux Encrypted
 linux /vmlinuz-linux
@@ -175,7 +171,6 @@ You can also add other EFI programs such as `\EFI\arch\grub.efi`.
 If booting a [btrfs](/index.php/Btrfs "Btrfs") subvolume as root, amend the `options` line with `rootflags=subvol=<root subvolume>`. In the example below, root has been mounted as a btrfs subvolume called 'ROOT' (e.g. `mount -o subvol=ROOT /dev/sdxY /mnt`):
 
  `$esp/loader/entries/arch-btrfs-subvol.conf` 
-
 ```
 title          Arch Linux
 linux          /vmlinuz-linux
@@ -190,14 +185,11 @@ A failure to do so will otherwise result in the following error message: `ERROR:
 In case you installed EFI shells and other EFI application into the ESP, you can use the following snippets:
 
  `$esp/loader/entries/uefi-shell-v1-x86_64.conf` 
-
 ```
 title  UEFI Shell x86_64 v1
 efi    /EFI/shellx64_v1.efi
 ```
-
  `$esp/loader/entries/uefi-shell-v2-x86_64.conf` 
-
 ```
 title  UEFI Shell x86_64 v2
 efi    /EFI/shellx64_v2.efi
@@ -250,17 +242,17 @@ For example, if you upgraded from Windows 8 to Windows 8.1, and you no longer se
 *   Make sure Secure Boot (UEFI setting) and [Fast Startup](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") (Windows power option setting) are both disabled.
 *   Make sure your UEFI prefers Linux Boot Manager over Windows Boot Manager (UEFI setting like Hard Drive Disk Priority).
 
-**Note:** Windows 8.x+, including Windows 10, will overwrite any UEFI choices you make and install itself as the priority boot choice after every boot. Changing the boot order in the UEFI firmware will only last until the next Windows 10 boot. Know what the _Change Boot Option_ key is for your motherboard.
+**Note:** Windows 8.x+, including Windows 10, will overwrite any UEFI choices you make and install itself as the priority boot choice after every boot. Changing the boot order in the UEFI firmware will only last until the next Windows 10 boot. Know what the *Change Boot Option* key is for your motherboard.
 
-To make Windows 8.X and above respect your boot order, you must enter a Windows group policy and have it execute a batch (_.bat_) file on startup. In Windows:
+To make Windows 8.X and above respect your boot order, you must enter a Windows group policy and have it execute a batch (*.bat*) file on startup. In Windows:
 
 1.  Open a command prompt with admin privlages. Type in `bcdedit /enum firmware`
 2.  Find the Firmware Application that has "Linux" in the description, e.g. "Linux Boot Manager"
 3.  Copy the Identifier, including the brackets, e.g. `{31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`
-4.  Create a batch file (e.g. `bootorder.bat`) somewhere on your system with the following contents: `bcdedit /set {fwbootmgr} DEFAULT {_identifier_copied_in_step_3_}` (e.g. `bcdedit /set {fwbootmgr} DEFAULT {31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`).
-5.  Open _gpedit_ and under _Local Computer Policy > Computer Configuration > Windows Settings > Scripts(Startup/Shutdown)_, choose _Startup_. That should open a window named _Startup Properties_.
-6.  Under the _Scripts_ tab, choose the _Add_ button
-7.  Click _Browse_ and select the batch file you created in step 4.
+4.  Create a batch file (e.g. `bootorder.bat`) somewhere on your system with the following contents: `bcdedit /set {fwbootmgr} DEFAULT {*identifier_copied_in_step_3*}` (e.g. `bcdedit /set {fwbootmgr} DEFAULT {31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`).
+5.  Open *gpedit* and under *Local Computer Policy > Computer Configuration > Windows Settings > Scripts(Startup/Shutdown)*, choose *Startup*. That should open a window named *Startup Properties*.
+6.  Under the *Scripts* tab, choose the *Add* button
+7.  Click *Browse* and select the batch file you created in step 4.
 
 Alternatively, you can make the default Windows boot loader load systemd-boot instead. In an administrator command prompt in Windows, one can change this entry as follows:
 

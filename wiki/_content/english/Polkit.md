@@ -1,6 +1,6 @@
 From [polkit homepage](http://www.freedesktop.org/wiki/Software/polkit/):
 
-	_polkit is an application-level toolkit for defining and handling the policy that allows unprivileged processes to speak to privileged processes: It is a framework for centralizing the decision making process with respect to granting access to privileged operations for unprivileged applications._
+	*polkit is an application-level toolkit for defining and handling the policy that allows unprivileged processes to speak to privileged processes: It is a framework for centralizing the decision making process with respect to granting access to privileged operations for unprivileged applications.*
 
 Polkit is used for controlling system-wide privileges. It provides an organized way for non-privileged processes to communicate with privileged ones. In contrast to systems such as sudo, it does not grant root permission to an entire process, but rather allows a finer level of control of centralized system policy.
 
@@ -57,13 +57,13 @@ Polkit definitions can be divided into two kinds:
 
 **Tip:** To display Policykit actions in a graphical interface, install the [polkit-explorer](https://aur.archlinux.org/packages/polkit-explorer/) package.
 
-The actions available to you via polkit will depend on the packages you have installed. Some are used in multiple desktop environments _(org.freedesktop.*)_, some are DE-specific _(org.gnome.*)_ and some are specific to a single program _(org.archlinux.pkexec.gparted.policy)_. The command `pkaction` lists all the actions defined in `/usr/share/polkit-1/actions` for quick reference.
+The actions available to you via polkit will depend on the packages you have installed. Some are used in multiple desktop environments *(org.freedesktop.*)*, some are DE-specific *(org.gnome.*)* and some are specific to a single program *(org.archlinux.pkexec.gparted.policy)*. The command `pkaction` lists all the actions defined in `/usr/share/polkit-1/actions` for quick reference.
 
 To get an idea of what polkit can do, here are a few commonly used groups of actions:
 
-*   **[systemd-logind](/index.php/Systemd "Systemd")** _(org.freedesktop.login1.policy)_ actions regulated by polkit include powering off, rebooting, suspending and hibernating the system, including when other users may still be logged in.
-*   **[udisks](/index.php/Udisks "Udisks")** _(org.freedesktop.udisks2.policy)_ actions regulated by polkit include mounting file systems and unlocking encrypted devices.
-*   **[NetworkManager](/index.php/NetworkManager "NetworkManager")** _(org.freedesktop.NetworkManager.policy)_ actions regulated by polkit include turning on and off the network, wifi or mobile broadband.
+*   **[systemd-logind](/index.php/Systemd "Systemd")** *(org.freedesktop.login1.policy)* actions regulated by polkit include powering off, rebooting, suspending and hibernating the system, including when other users may still be logged in.
+*   **[udisks](/index.php/Udisks "Udisks")** *(org.freedesktop.udisks2.policy)* actions regulated by polkit include mounting file systems and unlocking encrypted devices.
+*   **[NetworkManager](/index.php/NetworkManager "NetworkManager")** *(org.freedesktop.NetworkManager.policy)* actions regulated by polkit include turning on and off the network, wifi or mobile broadband.
 
 Each action is defined in an `<action>` tag in a .policy file. The `org.archlinux.pkexec.gparted.policy` contains a single action and looks like this:
 
@@ -96,12 +96,12 @@ The **defaults** tag is where the permissions or lack thereof are located. It co
 
 For each of these settings the following options are available:
 
-*   _no_: The user is not authorized to carry out the action. There is therefore no need for authentication.
-*   _yes_: The user is authorized to carry out the action without any authentication.
-*   _auth_self_: Authentication is required but the user need not be an administrative user.
-*   _auth_admin_: Authentication as an administrative user is require.
-*   _auth_self_keep_: The same as auth_self but, like sudo, the authorization lasts a few minutes.
-*   _auth_admin_keep_: The same as auth_admin but, like sudo, the authorization lasts a few minutes.
+*   *no*: The user is not authorized to carry out the action. There is therefore no need for authentication.
+*   *yes*: The user is authorized to carry out the action without any authentication.
+*   *auth_self*: Authentication is required but the user need not be an administrative user.
+*   *auth_admin*: Authentication as an administrative user is require.
+*   *auth_self_keep*: The same as auth_self but, like sudo, the authorization lasts a few minutes.
+*   *auth_admin_keep*: The same as auth_admin but, like sudo, the authorization lasts a few minutes.
 
 These are default setting and unless overruled in later configuration will be valid for all users.
 
@@ -126,7 +126,7 @@ polkit.addRule(function(action, subject) {
 
 ```
 
-Inside the function, we check for the specified action ID _(org.archlinux.pkexec.gparted)_ and for the user's group _(admin)_, then return a value "yes".
+Inside the function, we check for the specified action ID *(org.archlinux.pkexec.gparted)* and for the user's group *(admin)*, then return a value "yes".
 
 #### Administrator identities
 
@@ -135,7 +135,6 @@ The `addAdminRule()` method is used for adding a function that may be called whe
 The default configuration for administrator identities is contained in the file `50-default.rules` so any changes to that configuration should be made by copying the file to, say, `40-default.rules` and editing that file.
 
  `/etc/polkit-1/rules.d/50-default.rules` 
-
 ```
 polkit.addAdminRule(function(action, subject) {
     return ["unix-group:wheel"];
@@ -146,7 +145,7 @@ The only part to edit (once copied) is the return array of the function: as whom
 
 ## Limitations
 
-Polkit operates on top of the existing permissions systems in Linux – group membership, administrator status – it does not replace them. The example above prohibited the user _jack_ from using the GParted action, but it does not preclude him running GParted by some means that do not respect polkit, e.g. the command line. Therefore it's probably better to use polkit to expand access to privileged services for unprivileged users, rather than to try using it to curtail the rights of (semi-)privileged users. For security purposes, the [sudoers file](/index.php/Sudo "Sudo") is still the way to go.
+Polkit operates on top of the existing permissions systems in Linux – group membership, administrator status – it does not replace them. The example above prohibited the user *jack* from using the GParted action, but it does not preclude him running GParted by some means that do not respect polkit, e.g. the command line. Therefore it's probably better to use polkit to expand access to privileged services for unprivileged users, rather than to try using it to curtail the rights of (semi-)privileged users. For security purposes, the [sudoers file](/index.php/Sudo "Sudo") is still the way to go.
 
 ## Examples
 
@@ -155,7 +154,6 @@ Polkit operates on top of the existing permissions systems in Linux – group me
 The following rule disables suspend and hibernate for all users.
 
  `/etc/polkit-1/rules.d/10-disable-suspend.rules` 
-
 ```
 polkit.addRule(function(action, subject) {
     if (action.id == "org.freedesktop.login1.suspend" ||
@@ -177,7 +175,6 @@ To achieve something similar to the [sudo](/index.php/Sudo "Sudo") `NOPASSWD` op
 Create the following file as root:
 
  `/etc/polkit-1/rules.d/49-nopasswd_limited.rules` 
-
 ```
 /* Allow members of the wheel group to execute the defined actions 
  * without password authentication, similar to "sudo NOPASSWD:"
@@ -199,14 +196,13 @@ The `||` operator is used to delimit actions (logical OR), and `&&` means logica
 
 #### Udisks
 
-[File managers](/index.php/File_manager "File manager") may ask for a password when trying to mount a storage device, or yield a _Not authorized_ or similar error. See [Udisks#Configuration](/index.php/Udisks#Configuration "Udisks") for details.
+[File managers](/index.php/File_manager "File manager") may ask for a password when trying to mount a storage device, or yield a *Not authorized* or similar error. See [Udisks#Configuration](/index.php/Udisks#Configuration "Udisks") for details.
 
 #### Globally
 
 Create the following file as root:
 
  `/etc/polkit-1/rules.d/49-nopasswd_global.rules` 
-
 ```
 /* Allow members of the wheel group to execute any actions
  * without password authentication, similar to "sudo NOPASSWD:"
@@ -228,7 +224,6 @@ This will result in automatic authentication for **any** action requiring admin 
 A rule like this will have polkit ask for the root password instead of the users password for Admin authentication.
 
  `/etc/polkit-1/rules.d/49-rootpw_global.rules` 
-
 ```
 /* Always authenticate Admins by prompting for the root
  * password, similar to the rootpw option in sudo

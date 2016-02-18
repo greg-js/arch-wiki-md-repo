@@ -1,4 +1,4 @@
-Netctl je aplikací vyvíjenou v rámci Arch Linuxu, která má za cíl nahradit původní _netcfg_. Netctl představuje budoucnost (a současnot) ve správě síťového nastavení v Arch Linuxu .
+Netctl je aplikací vyvíjenou v rámci Arch Linuxu, která má za cíl nahradit původní *netcfg*. Netctl představuje budoucnost (a současnot) ve správě síťového nastavení v Arch Linuxu .
 
 ## Contents
 
@@ -50,7 +50,7 @@ To use an example profile, simply copy one of them from `/etc/netctl/examples/` 
 Once you have created your profile, make an attempt to establish a connection using the newly created profile by running:
 
 ```
-# netctl start _profile_
+# netctl start *profile*
 
 ```
 
@@ -63,7 +63,7 @@ If issuing the above command results in a failure, then use `journalctl -xn` and
 If you are using only one profile, once that profile is started successfully, it can be `enabled` using
 
 ```
-# netctl enable _profile_ 
+# netctl enable *profile* 
 
 ```
 
@@ -73,15 +73,15 @@ This will create and enable a [systemd](/index.php/Systemd "Systemd") service th
 
 #### Multiple profiles
 
-Whereas with `netcfg` there was `net-auto-wireless.service` and `net-auto-wired.service`, `netctl` uses `netctl-auto@_interface_.service` for wireless profiles, and `netctl-ifplugd@_interface_.service` for wired profiles. In order to make the `netctl-auto@_interface_.service` work for wireless interfaces, the package [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) is required to be installed. In order to make the `netctl-ifplugd@_interface_.service` work for wired interfaces, the package [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) is required to be installed. Configure `/etc/ifplugd/ifplugd.conf` accordingly. Automatic selection of a WPA-enabled profile by netctl-auto is not possible with option `Security=wpa-config`, please use `Security=wpa-configsection` instead.
+Whereas with `netcfg` there was `net-auto-wireless.service` and `net-auto-wired.service`, `netctl` uses `netctl-auto@*interface*.service` for wireless profiles, and `netctl-ifplugd@*interface*.service` for wired profiles. In order to make the `netctl-auto@*interface*.service` work for wireless interfaces, the package [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) is required to be installed. In order to make the `netctl-ifplugd@*interface*.service` work for wired interfaces, the package [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) is required to be installed. Configure `/etc/ifplugd/ifplugd.conf` accordingly. Automatic selection of a WPA-enabled profile by netctl-auto is not possible with option `Security=wpa-config`, please use `Security=wpa-configsection` instead.
 
 To set preferred wired profile for auto-connecting specify `AutoWired=yes` in that profile. By default on failure [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) will pass to other DHCP wired profiles, then to static ones. If you don't want it to do so, set `ForceConnect=yes`.
 
 Once your profiles are set and verified to be working, simply enable these services with
 
 ```
-# systemctl enable netctl-auto@_interface_.service 
-# systemctl enable netctl-ifplugd@_interface_.service  
+# systemctl enable netctl-auto@*interface*.service 
+# systemctl enable netctl-ifplugd@*interface*.service  
 
 ```
 
@@ -90,7 +90,7 @@ Once your profiles are set and verified to be working, simply enable these servi
 If you have previously enabled a profile through `netctl`, run
 
 ```
-# netctl disable _profile_
+# netctl disable *profile*
 
 ```
 
@@ -99,13 +99,13 @@ to prevent the profile from starting twice at boot, and possibly causing issues 
 **Note:**
 
 *   If there is ever a need to alter a currently enabled profile, execute `netctl reenable <profile>` to apply the changes.
-*   _interface_ is hardware minus, e.g netctl-auto@wlan0.service or netctl-auto@wlo1.service
+*   *interface* is hardware minus, e.g netctl-auto@wlan0.service or netctl-auto@wlo1.service
 
 ### Migrating from netcfg
 
-**Warning:** `netctl` conflicts with `netcfg` so disable existing `netcfg@_profile_` service before installing `netctl`.
+**Warning:** `netctl` conflicts with `netcfg` so disable existing `netcfg@*profile*` service before installing `netctl`.
 
-`netctl` uses `/etc/netctl` to store its profiles, _not_ `/etc/network.d` (`netcfg`'s profile storage location).
+`netctl` uses `/etc/netctl` to store its profiles, *not* `/etc/network.d` (`netcfg`'s profile storage location).
 
 In order to migrate from netcfg, at least the following is needed:
 
@@ -114,13 +114,13 @@ In order to migrate from netcfg, at least the following is needed:
 *   For static IP configuration make sure the Address= variables have a netmask after the IP (e.g. Address=('192.168.1.23**/24'** '192.168.1.87**/24'**) in the example profile).
 *   If you setup a wireless profile according in the `wireless-wpa-configsection` example, note that this overrides `wpa_supplicant` options defined above the brackets. For a connection to a hidden wireless network, add `scan_ssid=1` to the options in the `wireless-wpa-configsection`; `Hidden=yes` does not work there.
 *   Unquote interface variables and other variables that don't strictly need quoting (this is mainly a style thing).
-*   Run `netctl enable _profile_` for every profile in the old NETWORKS array. 'last' doesn't work this way, see netctl.special(7).
-*   Use `netctl list`/`netctl start _profile_` instead of **netcfg-menu**. **wifi-menu** remains available.
+*   Run `netctl enable *profile*` for every profile in the old NETWORKS array. 'last' doesn't work this way, see netctl.special(7).
+*   Use `netctl list`/`netctl start *profile*` instead of **netcfg-menu**. **wifi-menu** remains available.
 *   It may be a good idea to use `systemctl --type=service` to ensure that no other service is running that may want to configure the network. Multiple networking services will conflict.
 
 ### Passphrase obfuscation (256-bit PSK)
 
-Users _not_ wishing to have the passphrase to their wireless network stored in _plain text_ have the option of storing the corresponding 256-bit pre-shared key (PSK) instead, which is calculated from the passphrase and the SSID using standard algorithms.
+Users *not* wishing to have the passphrase to their wireless network stored in *plain text* have the option of storing the corresponding 256-bit pre-shared key (PSK) instead, which is calculated from the passphrase and the SSID using standard algorithms.
 
 *   Method 1: Use `wifi-menu -o` to generate a config file in `/etc/netctl`
 *   Method 2: Manual settings as follows. If the passphrase fails, try removing the \" in Key= (see note below)
@@ -138,12 +138,11 @@ In a second terminal window, copy the example file `wireless-wpa` from `/etc/net
 
 ```
 
-You will then need to edit `/etc/netctl/wireless-wpa` using your favorite text editor and add the _pre-shared key_, that was generated earlier using wpa_passphrase, to the `**Key**` variable of this profile.
+You will then need to edit `/etc/netctl/wireless-wpa` using your favorite text editor and add the *pre-shared key*, that was generated earlier using wpa_passphrase, to the `**Key**` variable of this profile.
 
 Once completed your network profile `wireless-wpa` containing a 256-bit PSK should resemble:
 
  `/etc/netctl/wireless-wpa` 
-
 ```
 Description='A simple WPA encrypted wireless connection using 256-bit PSK'
 Interface=wlp2s2
@@ -177,7 +176,7 @@ As of April 2013 there is no netctl alternative to `netcfg current`. If you reli
 or, when `netctl-auto` was used to connect:
 
 ```
-# wpa_cli -i _interface_ status | sed -n 's/^id_str=//p'
+# wpa_cli -i *interface* status | sed -n 's/^id_str=//p'
 
 ```
 
@@ -186,7 +185,6 @@ or, when `netctl-auto` was used to connect:
 To connect ta a wireless network at university it is very likely you need a profile looking like this (tested in Freiburg, Germany):
 
  `/etc/netctl/wlan0-eduroam` 
-
 ```
 Description='Eduroam-profile for <user>'
 Interface=wlan0

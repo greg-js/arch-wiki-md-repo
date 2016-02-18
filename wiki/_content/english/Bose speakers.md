@@ -28,4 +28,4 @@ defaults.pcm.card 0
 
 Change the default number on both values to the number that corresponds with your card. In my case, this is 1.
 
-Then, select the device in _System > Preferences > Sound_ (for Gnome) and change Alsa mixer volume settings.
+Then, select the device in *System > Preferences > Sound* (for Gnome) and change Alsa mixer volume settings.

@@ -48,7 +48,7 @@ De [Wikipedia](https://en.wikipedia.org/wiki/es:LVM "wikipedia:es:LVM"):
 
 ### Bloques para construir LVM
 
-_Logical Volume Management (LVM)_ hace uso de la función [device-mapper](http://sources.redhat.com/dm/) del kérnel de línux para proporcionar un sistema de particiones independientes de la estructura subyacente del disco. Con LVM es posible crear un espacio de almacenamiento abstracto así como distintas «particiones virtuales», por lo que es más fácil de [agrandar/encoger](#Redimensionar_los_vol.C3.BAmenes) particiones (siempre sujeto a posibles limitaciones de su sistema de archivos).
+*Logical Volume Management (LVM)* hace uso de la función [device-mapper](http://sources.redhat.com/dm/) del kérnel de línux para proporcionar un sistema de particiones independientes de la estructura subyacente del disco. Con LVM es posible crear un espacio de almacenamiento abstracto así como distintas «particiones virtuales», por lo que es más fácil de [agrandar/encoger](#Redimensionar_los_vol.C3.BAmenes) particiones (siempre sujeto a posibles limitaciones de su sistema de archivos).
 
 Las particiones virtuales permiten añadir/eliminar particiones sin tener que preocuparse acerca de si se tiene suficiente espacio contiguo en un disco concreto, ni quedar atrapado en el fdisking de un disco en uso (y preguntándose si el kérnel está utilizando una tabla de particiones vieja o nueva), ni tener que mover otras particiones en el camino. Esto es un asunto que afecta estrictamente a la facilidad de gestión: no proporciona ninguna seguridad. Sin embargo, se acomoda muy bien con las otras dos tecnologías que estamos usando.
 
@@ -146,11 +146,11 @@ Para listar todos los dispositivos capaces de ser utilizados como un volumen fí
 Cree un volumen físico en ellos:
 
 ```
-# pvcreate _DISPOSITIVO_
+# pvcreate *DISPOSITIVO*
 
 ```
 
-Esta orden crea una cabecera en cada dispositivo para que se pueda utilizar para LVM. Tal como se define en [LVM (Español)#Bloques para construir LVM](/index.php/LVM_(Espa%C3%B1ol)#Bloques_para_construir_LVM "LVM (Español)"), el _DISPOSITIVO_ puede ser un disco (por ejemplo, `/dev/sda`), una partición (por ejemplo, `/dev/sda2`) o un dispositivo loop back.
+Esta orden crea una cabecera en cada dispositivo para que se pueda utilizar para LVM. Tal como se define en [LVM (Español)#Bloques para construir LVM](/index.php/LVM_(Espa%C3%B1ol)#Bloques_para_construir_LVM "LVM (Español)"), el *DISPOSITIVO* puede ser un disco (por ejemplo, `/dev/sda`), una partición (por ejemplo, `/dev/sda2`) o un dispositivo loop back.
 
 Por ejemplo:
 
@@ -175,7 +175,7 @@ El siguiente paso, será crear un grupo de volúmenes sobre el volumen físico:
 Lo primero que se necesita es crear un grupo de volúmenes sobre uno de los volúmenes físicos:
 
 ```
-# vgcreate <_grupo_de_volúmenes_> <_volumen_físico_>
+# vgcreate <*grupo_de_volúmenes*> <*volumen_físico*>
 
 ```
 
@@ -189,8 +189,8 @@ Por ejemplo:
 A continuación, puede añadir a dicho grupo de volúmenes tantos volúmenes físicos como desee tener en el mismo (a modo de una sola unidad):
 
 ```
-# vgextend <_grupo_de_volúmenes_> <_volumen_físico_>
-# vgextend <_grupo_de_volúmenes_> <_otro_volumen_físico_>
+# vgextend <*grupo_de_volúmenes*> <*volumen_físico*>
+# vgextend <*grupo_de_volúmenes*> <*otro_volumen_físico*>
 # ...
 
 ```
@@ -228,7 +228,7 @@ Esta orden configurará primero las tres particiones como volúmenes físicos (s
 Necesitaremos crear volúmenes lógicos en este grupo de volúmenes. Para ello debe utilizar la siguiente orden, proporcionándole como parámetros, su tamaño (-L), el grupo de volúmenes al que pertenecerá, y el nombre (-n) del nuevo volumen lógico:
 
 ```
-# lvcreate -L <_tamaño_> <_grupo_de_volúmenes_> -n <_volumen_lógico_>
+# lvcreate -L <*tamaño*> <*grupo_de_volúmenes*> -n <*volumen_lógico*>
 
 ```
 
@@ -251,7 +251,7 @@ También puede especificar uno o más volúmenes físicos para limitar donde qui
 Si desea ocupar todo el espacio libre que queda del grupo de volúmenes, utilice la siguiente orden:
 
 ```
-# lvcreate -l +100%FREE  <_grupo_de_volúmenes_> -n <_volumen_lógico_>
+# lvcreate -l +100%FREE  <*grupo_de_volúmenes*> -n <*volumen_lógico*>
 
 ```
 
@@ -262,7 +262,7 @@ Puede hacer un seguimiento de los volúmenes lógicos creados con:
 
 ```
 
-**Nota:** Es posible que deba cargar el módulo del kérnel _device-mapper_ (**modprobe dm-mod**) para que las órdenes anteriores puedan tener éxito.
+**Nota:** Es posible que deba cargar el módulo del kérnel *device-mapper* (**modprobe dm-mod**) para que las órdenes anteriores puedan tener éxito.
 
 **Sugerencia:** Se puede comenzar creando volúmenes lógicos relativamente pequeños y ampliarlos más adelante si fuera necesario. Para simplificar, deje un poco de espacio libre en el grupo de volúmenes para tener margen para su expansión.
 
@@ -280,8 +280,8 @@ Sus volúmenes lógicos deberian encontrarse en `/dev/mapper/` y `/dev/Nombredel
 Ahora puede crear el sistema de archivos en los volúmenes lógicos, y montarlos como particiones normales (si está instalando Arch, remítase a [montar las particiones](/index.php/Beginners%27_Guide_(Espa%C3%B1ol)#Montar_las_particiones "Beginners' Guide (Español)") para obtener información adicional):
 
 ```
-# mkfs.<_tipo_sistema_archivos_> /dev/mapper/<_grupo_volúmenes_>-<_volumen_lógico_>
-# mount /dev/mapper/<_grupo_volúmenes_>-<_volumen_lógico_> /<_punto_montaje_>
+# mkfs.<*tipo_sistema_archivos*> /dev/mapper/<*grupo_volúmenes*>-<*volumen_lógico*>
+# mount /dev/mapper/<*grupo_volúmenes*>-<*volumen_lógico*> /<*punto_montaje*>
 
 ```
 
@@ -307,7 +307,7 @@ Después, puede continuar con las instrucciones normales de instalación en el p
 
 ### Opciones del kérnel
 
-Si el sistema de archivos raíz reside en un volumen lógico, el [parámetro del kérnel](/index.php/Kernel_parameter "Kernel parameter") `root=` debe apuntar al dispositivo mapeado, por ejemplo `/dev/mapper/_<nombre_grupovolumenes>_-_<nombre_volumenlógico>_`.
+Si el sistema de archivos raíz reside en un volumen lógico, el [parámetro del kérnel](/index.php/Kernel_parameter "Kernel parameter") `root=` debe apuntar al dispositivo mapeado, por ejemplo `/dev/mapper/*<nombre_grupovolumenes>*-*<nombre_volumenlógico>*`.
 
 También podría ser necesario `dolvm`.
 
@@ -340,7 +340,7 @@ Esto detectará automáticamente el nuevo tamaño del dispositivo y extenderá e
 
 ##### Encoger
 
-Para reducir un volumen físico antes de reducir el dispositivo subyacente, agregue el parámetro `--setphysicalvolumesize _tamaño_` a la orden, _por ejemplo_:
+Para reducir un volumen físico antes de reducir el dispositivo subyacente, agregue el parámetro `--setphysicalvolumesize *tamaño*` a la orden, *por ejemplo*:
 
 ```
 # pvresize --setphysicalvolumesize 40G /dev/sda1
@@ -362,7 +362,6 @@ De hecho `pvresize` se negará a reducir un volumen físico si tiene asignadas e
 Antes de mover extensiones libres al final del volumen, se debe ejecutar `# pvdisplay -v -m` para ver los segmentos físicos. En el siguiente ejemplo, hay un volumen físico sobre `/dev/sdd1`, un grupo de volumen `vg1` y un volumen lógico `backup`.
 
  `# pvdisplay -v -m` 
-
 ```
     Finding all volume groups.
     Using physical volume(s) on command line.
@@ -395,7 +394,6 @@ Se puede observar que el espacio LIBRE se intercala por todo el volumen. Para re
 Aquí, el primer segmento libre es desde 0 a 153.600, lo cual nos deja con 153.601 extensiones libres. Ahora podemos mover este número de segmentos desde la última extensión física de la primera. La orden sería así:
 
  `# pvmove --alloc anywhere /dev/sdd1:307201-399668 /dev/sdd1:0-92466` 
-
 ```
 /dev/sdd1: Moved: 0.1 %
 /dev/sdd1: Moved: 0.2 %
@@ -418,14 +416,13 @@ Una vez que todos sus segmentos físicos libres están en la última extensión 
 Entonces, podrá ejecutar de nuevo la orden:
 
 ```
-# pvresize --setphysicalvolumesize _tamaño_ _VolumenFísico_
+# pvresize --setphysicalvolumesize *tamaño* *VolumenFísico*
 
 ```
 
 Vea el resultado:
 
  `# pvs` 
-
 ```
   PV         VG   Fmt  Attr PSize    PFree 
   /dev/sdd1  vg1  lvm2 a--     1t     500g
@@ -438,39 +435,39 @@ Vea el resultado:
 
 #### Volúmenes lógicos
 
-**Note:** _lvresize_ proporciona más o menos las mismas opciones que las órdenes especializadas `lvextend` y `lvreduce`, al tiempo que permite hacer ambos tipos de operación. A pesar de esto, todos las utilidades ofrecen una opción `-r, --resizefs` que permite cambiar el tamaño del sistema de archivos junto con el volumen lógico mediante `fsadm(8)` (que soporta _ext2_, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), _ReiserFS_ y [XFS](/index.php/XFS "XFS")). Por lo tanto, puede ser más fácil simplemente utilizar `lvresize` para ambas operaciones y utilizar `--resizefs` para simplificar un poco las cosas, excepto si tiene necesidades específicas o desea tener un control total sobre el proceso.
+**Note:** *lvresize* proporciona más o menos las mismas opciones que las órdenes especializadas `lvextend` y `lvreduce`, al tiempo que permite hacer ambos tipos de operación. A pesar de esto, todos las utilidades ofrecen una opción `-r, --resizefs` que permite cambiar el tamaño del sistema de archivos junto con el volumen lógico mediante `fsadm(8)` (que soporta *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* y [XFS](/index.php/XFS "XFS")). Por lo tanto, puede ser más fácil simplemente utilizar `lvresize` para ambas operaciones y utilizar `--resizefs` para simplificar un poco las cosas, excepto si tiene necesidades específicas o desea tener un control total sobre el proceso.
 
 ##### Agrandar o encoger con lvresize
 
-**Advertencia:** Si bien la ampliación de un sistema de archivos puede, a menudo, hacerse en línea (_es decir_ mientras el mismo está montado), incluso para la partición raíz, en cambio, la reducción necesitará, casi siempre, desmontar primero el sistema de archivos con el fin de evitar pérdida de datos. Asegúrese de que su sistema de archivos apoya lo que está tratando de hacer.
+**Advertencia:** Si bien la ampliación de un sistema de archivos puede, a menudo, hacerse en línea (*es decir* mientras el mismo está montado), incluso para la partición raíz, en cambio, la reducción necesitará, casi siempre, desmontar primero el sistema de archivos con el fin de evitar pérdida de datos. Asegúrese de que su sistema de archivos apoya lo que está tratando de hacer.
 
-Ampliar 2GB el volumen lógico _nv1_ dentro del grupo de volúmenes _vg1_ _sin_ tocar su sistema de archivos:
+Ampliar 2GB el volumen lógico *nv1* dentro del grupo de volúmenes *vg1* *sin* tocar su sistema de archivos:
 
 ```
 # lvresize -L +2G vg1/lv1
 
 ```
 
-Reducir 500MB el volumen lógico `vg1/nv1` _sin_ cambiar el tamaño de su sistema de archivos (asegúrese de que este último [está ya reducido](/index.php/LVM#Resizing_the_file_system_separately "LVM") en este caso):
+Reducir 500MB el volumen lógico `vg1/nv1` *sin* cambiar el tamaño de su sistema de archivos (asegúrese de que este último [está ya reducido](/index.php/LVM#Resizing_the_file_system_separately "LVM") en este caso):
 
 ```
 # lvresize -L -500M vg1/lv1
 
 ```
 
-Ajustar `vg1/lv1` a 15GB y redimensionar su sistema de archivos _todo a la vez_:
+Ajustar `vg1/lv1` a 15GB y redimensionar su sistema de archivos *todo a la vez*:
 
 ```
 # lvresize -L 15G -r vg1/lv1
 
 ```
 
-**Nota:** Solo están soportados los [sistemas de archivos](/index.php/File_systems "File systems") _ext2_, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), _ReiserFS_ y [XFS](/index.php/XFS "XFS"). Para otros casos mire la [utilidad apropiada](/index.php/File_systems#Arch_Linux_support "File systems").
+**Nota:** Solo están soportados los [sistemas de archivos](/index.php/File_systems "File systems") *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* y [XFS](/index.php/XFS "XFS"). Para otros casos mire la [utilidad apropiada](/index.php/File_systems#Arch_Linux_support "File systems").
 
 Si desea ocupar todo el espacio libre de un grupo de volúmenes, utilice la siguiente orden:
 
 ```
-# lvresize -l +100%FREE _grupovolumen_/_volumenlógico_
+# lvresize -l +100%FREE *grupovolumen*/*volumenlógico*
 
 ```
 
@@ -485,21 +482,21 @@ Si no utiliza la opción `-r, --resizefs` para `lv{resize,extend,reduce}` o util
 Por ejemplo, con los sistemas de archivos ext2/ext3/ext4:
 
 ```
-# resize2fs _grupovolumenes_/_volumenfísico_
+# resize2fs *grupovolumenes*/*volumenfísico*
 
 ```
 
 se ampliará el sistema de archivos al tamaño máximo del volumen lógico subyacente, mientras que con:
 
 ```
-# resize2fs -M _grupovolumenes_/_volumenfísico_
+# resize2fs -M *grupovolumenes*/*volumenfísico*
 
 ```
 
 se contraerá a su tamaño mínimo. Para redimensionar a un tamaño determinado, utilice:
 
 ```
-# resize2fs _grupovolumenes_/_volumenfísico_ _NuevoTamaño_
+# resize2fs *grupovolumenes*/*volumenfísico* *NuevoTamaño*
 
 ```
 
@@ -524,14 +521,14 @@ $ lsblk
 Ahora, desmonte el sistema de archivos del volumen lógico:
 
 ```
-# umount /<_punto_montaje_>
+# umount /<*punto_montaje*>
 
 ```
 
 Por último, elimine el volumen lógico:
 
 ```
-# lvremove <_grupo_volúmenes_>/<_volumen_lógico_>
+# lvremove <*grupo_volúmenes*>/<*volumen_lógico*>
 
 ```
 
@@ -606,7 +603,7 @@ Por último, si quiere usar la partición para algo más, y quiere evitar a LVM,
 Basta con invocar la orden:
 
 ```
-# vgchange -a <_grupo_volúmenes_>
+# vgchange -a <*grupo_volúmenes*>
 
 ```
 
@@ -641,7 +638,7 @@ Se pueden tomar también varias instantáneas y cada una se puede combinar con e
 
 La instantánea se puede montar y respaldar con **dd** o **tar**. El tamaño del archivo de respaldo hecho con **dd** será equivalente al tamaño de los archivos que residen en el volumen de instantánea. Para restaurar basta con crear una instantánea, montarla y escribir o extraerla de la copia de seguridad. Y luego fusionarla con la de origen.
 
-Es importante tener el modulo _dm-snapshot_ agregado en la variable MODULES de `/etc/mkinitcpio.conf`, de otra manera el sistema no iniciara. Si hizo esto en un sistema ya instalado, asegúrese de reconstruir la imagen del kérnel con:
+Es importante tener el modulo *dm-snapshot* agregado en la variable MODULES de `/etc/mkinitcpio.conf`, de otra manera el sistema no iniciara. Si hizo esto en un sistema ya instalado, asegúrese de reconstruir la imagen del kérnel con:
 
 ```
 # mkinitcpio -g /boot/initramfs-linux.img
@@ -679,7 +676,7 @@ El módulo `dm_mod` debería cargarse automáticamente. En caso contrario, prueb
 
 Tendrá que [recompilar](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") la imagen initramfs para que surtan efectos los cambios realizados.
 
-*   Anteponga _lvm_ a la orden:
+*   Anteponga *lvm* a la orden:
 
 ```
 # lvm pvdisplay
@@ -717,16 +714,16 @@ Causa:
 	Extraer una unidad externa con LVM sin ​​desactivar el grupo(s) de volúmenes primero. Antes de desconectar el medio, asegúrese de ejecutar:
 
 ```
-# vgchange -an _nombre_del_grupo_de_volumen_
+# vgchange -an *nombre_del_grupo_de_volumen*
 
 ```
 
 Arreglo:
 
-	Asumiendo que ya ha intentado activar el grupo de volúmenes con `# vgchange -ay _vg_`, y se siguen recibiendo los errores de entrada/salida, ejecute:
+	Asumiendo que ya ha intentado activar el grupo de volúmenes con `# vgchange -ay *vg*`, y se siguen recibiendo los errores de entrada/salida, ejecute:
 
 ```
-# vgchange -an _nombre_del_grupo_de_volumen_
+# vgchange -an *nombre_del_grupo_de_volumen*
 
 ```
 
@@ -734,7 +731,7 @@ Arreglo:
 
 ```
 # vgscan
-# vgchange -ay _nombre_del_grupo_de_volumen_
+# vgchange -ay *nombre_del_grupo_de_volumen*
 
 ```
 

@@ -35,7 +35,7 @@ glxgears can be installed via the [mesa-demos](https://www.archlinux.org/package
 
 ### UnixBench
 
-A unixbench package is available in the [AUR](/index.php/AUR "AUR"): [unixbench](https://aur.archlinux.org/packages/unixbench/). To run benchmark run _ubench_ in terminal.
+A unixbench package is available in the [AUR](/index.php/AUR "AUR"): [unixbench](https://aur.archlinux.org/packages/unixbench/). To run benchmark run *ubench* in terminal.
 
 See also:
 
@@ -141,13 +141,13 @@ See also [Author's site](http://wiki.hardinfo.org/HomePage).
 
 ### Phoronix Test Suite
 
-_The [Phoronix Test Suite](http://www.phoronix-test-suite.com/) is the most comprehensive testing and benchmarking platform available that provides an extensible framework for which new tests can be easily added. The software is designed to effectively carry out both qualitative and quantitative benchmarks in a clean, reproducible, and easy-to-use manner._
+*The [Phoronix Test Suite](http://www.phoronix-test-suite.com/) is the most comprehensive testing and benchmarking platform available that provides an extensible framework for which new tests can be easily added. The software is designed to effectively carry out both qualitative and quantitative benchmarks in a clean, reproducible, and easy-to-use manner.*
 
-_The Phoronix Test Suite is based upon the extensive testing and internal tools developed by Phoronix.com since 2004 along with support from leading tier-one computer hardware and software vendors. This software is open-source and licensed under the GNU GPLv3._
+*The Phoronix Test Suite is based upon the extensive testing and internal tools developed by Phoronix.com since 2004 along with support from leading tier-one computer hardware and software vendors. This software is open-source and licensed under the GNU GPLv3.*
 
-_Originally developed for automated Linux testing, support to the Phoronix Test Suite has since been added for OpenSolaris, Apple Mac OS X, Microsoft Windows, and BSD operating systems. The Phoronix Test Suite consists of a lightweight processing core (pts-core) with each benchmark consisting of an XML-based profile and related resource scripts. The process from the benchmark installation, to the actual benchmarking, to the parsing of important hardware and software components is heavily automated and completely repeatable, asking users only for confirmation of actions._
+*Originally developed for automated Linux testing, support to the Phoronix Test Suite has since been added for OpenSolaris, Apple Mac OS X, Microsoft Windows, and BSD operating systems. The Phoronix Test Suite consists of a lightweight processing core (pts-core) with each benchmark consisting of an XML-based profile and related resource scripts. The process from the benchmark installation, to the actual benchmarking, to the parsing of important hardware and software components is heavily automated and completely repeatable, asking users only for confirmation of actions.*
 
-_The Phoronix Test Suite interfaces with OpenBenchmarking.org as a collaborative web platform for the centralized storage of test results, sharing of test profiles and results, advanced analytical features, and other functionality. Phoromatic is an enterprise component to orchestrate test execution across multiple systems with remote management capabilities._
+*The Phoronix Test Suite interfaces with OpenBenchmarking.org as a collaborative web platform for the centralized storage of test results, sharing of test profiles and results, advanced analytical features, and other functionality. Phoromatic is an enterprise component to orchestrate test execution across multiple systems with remote management capabilities.*
 
 This suite can be [installed](/index.php/Pacman "Pacman") with the package [phoronix-test-suite](https://www.archlinux.org/packages/?name=phoronix-test-suite). There is also a developmental version available with [phoronix-test-suite-git](https://aur.archlinux.org/packages/phoronix-test-suite-git/).
 
@@ -164,7 +164,7 @@ See also:
 
 ## Flash media
 
-Performance characteristics can be measured quantitatively using [iozone](https://aur.archlinux.org/packages/iozone/). _Sustained_ read and write values can, but often do not, correlate to real-world use cases of I/O heavy operations, such as unpacking and writing a number of files on a system update. A relevant metric to consider in these cases is the **random write** speed for small files.
+Performance characteristics can be measured quantitatively using [iozone](https://aur.archlinux.org/packages/iozone/). *Sustained* read and write values can, but often do not, correlate to real-world use cases of I/O heavy operations, such as unpacking and writing a number of files on a system update. A relevant metric to consider in these cases is the **random write** speed for small files.
 
 The example invocation tests a 10M file using a 4k record size:
 

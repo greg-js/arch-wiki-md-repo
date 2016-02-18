@@ -45,8 +45,7 @@ Option "OffTime" "30"
 
 ```
 
-**Note:** If the _"OffTime"_ option does not work replace it with the following, (change the _"blanktime"_ to _"0"_ to disable screen blanking)
-
+**Note:** If the *"OffTime"* option does not work replace it with the following, (change the *"blanktime"* to *"0"* to disable screen blanking)
 ```
 Option         "BlankTime" "30"
 
@@ -187,7 +186,6 @@ xset s 3600 3600
 You could also copy this script:
 
  `/usr/local/bin/display.sh` 
-
 ```
 #!/bin/bash
 # Small script to set display into standby, suspend or off mode
@@ -208,7 +206,7 @@ Make it executable (`chmod u+x /usr/local/bin/display.sh`) and just run `display
 
 ## DPMS interaction in a Linux console with setterm
 
-The _setterm_ utility issues terminal recognized escape codes to alter the terminal. Essentially it just writes/echos the terminal sequences to the current terminal device, whether that be in screen, a remote ssh terminal, console mode, serial consoles, etc.
+The *setterm* utility issues terminal recognized escape codes to alter the terminal. Essentially it just writes/echos the terminal sequences to the current terminal device, whether that be in screen, a remote ssh terminal, console mode, serial consoles, etc.
 
 setterm Syntax: (0 disables)
 

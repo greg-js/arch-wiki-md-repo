@@ -150,7 +150,7 @@ $ makepkg -sri
 
 [AUR网站](https://aur.archlinux.org)的评论机制为用户提供了一种对PKGBUILD提建议的渠道。注意，最好不要在评论处贴自己的代码，因为代码很占地方，还很容易被新的评论刷掉。最好直接email通知维护人员，或者用[pastebin](/index.php/Pastebin "Pastebin")贴代码。
 
-'_所有的_ Arch用户都可以通过AUR Web界面为软件包投票.大多数软件包都有机会被TU收录进[community](/index.php/Community "Community")仓库.投票数是[community]仓库软件包选拔的重要依据之一。
+'*所有的* Arch用户都可以通过AUR Web界面为软件包投票.大多数软件包都有机会被TU收录进[community](/index.php/Community "Community")仓库.投票数是[community]仓库软件包选拔的重要依据之一。
 
 ## 分享和维护软件包
 
@@ -177,10 +177,9 @@ AUR不包含任何编译过的二进制包，用户上传[PKGBUILD](/index.php/P
 
 #### 创建软件包
 
-要向AUR间写入软件包,用户需要创建一个[SSH key](/index.php/SSH_keys "SSH keys").将公钥 `.ssh/foo.pub` 导入到用户账户的 _我的帐号_一节,然后为 `aur.archlinux.org` 指定私钥的位置,例如:
+要向AUR间写入软件包,用户需要创建一个[SSH key](/index.php/SSH_keys "SSH keys").将公钥 `.ssh/foo.pub` 导入到用户账户的 *我的帐号*一节,然后为 `aur.archlinux.org` 指定私钥的位置,例如:
 
  `~/.ssh/config` 
-
 ```
 Host aur.archlinux.org
   IdentityFile ~/.ssh/aur
@@ -192,7 +191,7 @@ Host aur.archlinux.org
 要提交软件包，先用软件包名对应的地址克隆镜像：
 
 ```
-$ git clone ssh://aur@aur.archlinux.org/_foobar_.git
+$ git clone ssh://aur@aur.archlinux.org/*foobar*.git
 
 ```
 
@@ -210,7 +209,7 @@ $ git clone ssh://aur@aur.archlinux.org/_foobar_.git
 
 ```
 $ mksrcinfo
-$ git add _PKGBUILD .SRCINFO_
+$ git add *PKGBUILD .SRCINFO*
 $ git commit -m 'Initial import'
 $ git push origin master
 
@@ -222,7 +221,7 @@ $ git push origin master
 
 ```
 $ mksrcinfo
-$ git commit -am 'Update to _1.0.0-2'_
+$ git commit -am 'Update to *1.0.0-2'*
 $ git push
 
 ```
@@ -288,7 +287,7 @@ $ git clone --depth=1 git://pkgbuild.com/aur-mirror.git
 这些字段会组成一个值的某一部分: The following field names are associated with a single value for the section:
 
 *   epoch
-*   pkgver: 软件包版本号,如果epoch字段没有提供的话版本号会被格式化成[_epoch_:]_pkgver_
+*   pkgver: 软件包版本号,如果epoch字段没有提供的话版本号会被格式化成[*epoch*:]*pkgver*
 *   pkgrel: Arch Linux 特定的发行号
 *   pkgdesc
 *   url

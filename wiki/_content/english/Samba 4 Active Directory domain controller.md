@@ -72,7 +72,7 @@ The first step to creating an Active Directory domain is provisioning. If this i
 
 	Administrator password
 
-	**xxxxxxxx** - You must select a _strong_ password for the administrator account. The minimum requirements are one upper case letter, one number, and at least eight characters. If you attempt to use a password that does not meet the complexity requirements, provisioning will fail.
+	**xxxxxxxx** - You must select a *strong* password for the administrator account. The minimum requirements are one upper case letter, one number, and at least eight characters. If you attempt to use a password that does not meet the complexity requirements, provisioning will fail.
 
 ## Configuring daemons
 
@@ -88,7 +88,6 @@ Create a suitable NTP configuration for your network time server. See [Network T
 Create the `/etc/ntp.conf` file with the following contents:
 
  `/etc/ntp.conf` 
-
 ```
 # Associate to the public NTP pool servers
 server 0.pool.ntp.org
@@ -137,7 +136,6 @@ If you elected to use the **BIND9_DLZ** DNS backend, [Install](/index.php/Instal
 Create the `/etc/named.conf` file:
 
  `/etc/named.conf` 
-
 ```
 
 // Global options
@@ -463,7 +461,6 @@ Export the users credentials to a private keytab:
 Modify the `dhcpd-update-samba-dns.conf` file with the following commands (substituting correct values for **server**, **internal**.**domain**.**tld**, and **INTERNAL**.**DOMAIN**.**TLD**):
 
  `/etc/dhcpd/dhcpd-update-samba-dns.conf` 
-
 ```
 # Variables
 KRB5CC="/run/dhcpd4.krb5cc"
@@ -501,7 +498,6 @@ Configure the dhcpd server following the [dhcpd](/index.php/Dhcpd "Dhcpd") artic
 Here is a complete example `/etc/dhcpd.conf` file for reference:
 
  `/etc/dhcpd.conf` 
-
 ```
 # No DHCP service in the DMZ.
 subnet 192.168.2.0 netmask 255.255.255.0 {

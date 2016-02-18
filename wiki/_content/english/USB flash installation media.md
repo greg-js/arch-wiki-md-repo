@@ -1,4 +1,4 @@
-This page discusses various multi-platform methods on how to create an Arch Linux Installer USB drive (also referred to as _"flash drive", "USB stick", "USB key"_, etc) for booting in BIOS and UEFI systems. The result will be a LiveUSB (LiveCD-like) system that can be used for installing Arch Linux, system maintenance or for recovery purposes, and that, because of the nature of [SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS"), will discard all changes once the computer shuts down.
+This page discusses various multi-platform methods on how to create an Arch Linux Installer USB drive (also referred to as *"flash drive", "USB stick", "USB key"*, etc) for booting in BIOS and UEFI systems. The result will be a LiveUSB (LiveCD-like) system that can be used for installing Arch Linux, system maintenance or for recovery purposes, and that, because of the nature of [SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS"), will discard all changes once the computer shuts down.
 
 If you would like to run a full install of Arch Linux from a USB drive (i.e. with persistent settings), see [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key"). If you would like to use your bootable Arch Linux USB stick as a rescue USB, see [Change root](/index.php/Change_root "Change root").
 
@@ -54,7 +54,7 @@ Run the following command, replacing `/dev/**sdx**` with your drive, e.g. `/dev/
 
 ```
 
-The option `status=progress` above reports transfer progress every so often. Do **not** miss _sync_ to complete before pulling the USB drive.
+The option `status=progress` above reports transfer progress every so often. Do **not** miss *sync* to complete before pulling the USB drive.
 
 #### In Windows
 
@@ -119,11 +119,11 @@ Now, launch your `command prompt` as an administrator. Next, change directory (`
 If your Arch Linux ISO is elsewhere you may need to state the full path, for convenience you may wish to put the Arch Linux ISO into the same folder as the dd executable. The basic format of the command will look like this.
 
 ```
-# dd if=_archlinux-2015-XX-YY-dual.iso_ od=\\.\_x_: bs=4M
+# dd if=*archlinux-2015-XX-YY-dual.iso* od=\\.\*x*: bs=4M
 
 ```
 
-**Note:** The Windows drive letters are linked to a partition. To allow selecting the entire disk, _dd for Windows_ provides the `od` parameter, which is used in the commands above. Note however that this parameter is specific to _dd for Windows_ and cannot be found in other implementations of _dd_.
+**Note:** The Windows drive letters are linked to a partition. To allow selecting the entire disk, *dd for Windows* provides the `od` parameter, which is used in the commands above. Note however that this parameter is specific to *dd for Windows* and cannot be found in other implementations of *dd*.
 
 **Warning:** Because the `od` is used, all partitions on the selected disk will be destroyed. Be absolutely sure that you are directing dd to the correct drive before executing.
 
@@ -134,7 +134,7 @@ Simply replace the various null spots (indicated by an "x") with the correct dat
 
 ```
 
-**Note:** Alternatively, replace the drive letter with `\\.\PhysicalDrive_X_`, where `_X_` is the physical drive number (starts from 0). Example: `# dd if=ISOs\archlinux-2015.01.01-dual.iso of=\\.\PhysicalDrive1 bs=4M` 
+**Note:** Alternatively, replace the drive letter with `\\.\PhysicalDrive*X*`, where `*X*` is the physical drive number (starts from 0). Example: `# dd if=ISOs\archlinux-2015.01.01-dual.iso of=\\.\PhysicalDrive1 bs=4M` 
 
 You can find out the physical drive number by typing `wmic diskdrive list brief` at the command prompt or with `dd --list`
 
@@ -159,7 +159,6 @@ $ diskutil unmountDisk /dev/disk2
 Now we can continue in accordance with the instructions above (but, if you are using the OS X `dd`, use `/dev/rdisk` instead of `/dev/disk`, and use `bs=1M`. `rdisk` means "raw disk" and is much faster on OS X, and `bs=1M` indicates a 1 MB block size).
 
  `# dd if=image.iso of=/dev/rdisk2 bs=1M` 
-
 ```
 20480+0 records in
 20480+0 records out
@@ -178,7 +177,7 @@ $ diskutil eject /dev/disk2
 
 Because the ISO image is a hybrid which can either be burned to a disc or directly written to a USB drive, it does not include a standard partition table.
 
-After you install Arch Linux and you are done with the USB drive, you should zero out its first 512 bytes _(meaning the boot code from the MBR and the non-standard partition table)_ if you want to restore it to full capacity:
+After you install Arch Linux and you are done with the USB drive, you should zero out its first 512 bytes *(meaning the boot code from the MBR and the non-standard partition table)* if you want to restore it to full capacity:
 
 ```
 # dd count=1 bs=512 if=/dev/zero of=/dev/sd**x** && sync
@@ -230,12 +229,11 @@ This method is more complicated than writing the image directly with `dd`, but i
 ```
 
 *   **Note:** The following step is not required when using [Archboot](/index.php/Archboot "Archboot") instead of [Archiso](/index.php/Archiso "Archiso").
-
-    To boot either a label or an [UUID](/index.php/UUID "UUID") to select the partition to boot from is required. By default the label `ARCH_2015**XX**` (with the appropriate release month) is used. Thus, the partition’s label has to be set accordingly, for example using _gparted_. Alternatively, you can change this behaviour by altering the lines ending by `archisolabel=ARCH_2015**XX**` in files _/mnt/usb/arch/boot/syslinux/archiso_sys32.cfg_ and _archiso_sys64.cfg_, as well as _/mnt/usb/loader/entries/archiso-x86_64.conf_ or similar for a 32-bit ISO (the last being useful only, if you want to boot the USB flash device from an EFI system). To use an UUID instead, replace those portions of lines with `archiso_device_=/dev/disk/by-uuid/**YOUR-UUID**`. The UUID can be retrieved with `blkid -o value -s UUID /dev/sd**Xn**`.
+    To boot either a label or an [UUID](/index.php/UUID "UUID") to select the partition to boot from is required. By default the label `ARCH_2015**XX**` (with the appropriate release month) is used. Thus, the partition’s label has to be set accordingly, for example using *gparted*. Alternatively, you can change this behaviour by altering the lines ending by `archisolabel=ARCH_2015**XX**` in files */mnt/usb/arch/boot/syslinux/archiso_sys32.cfg* and *archiso_sys64.cfg*, as well as */mnt/usb/loader/entries/archiso-x86_64.conf* or similar for a 32-bit ISO (the last being useful only, if you want to boot the USB flash device from an EFI system). To use an UUID instead, replace those portions of lines with `archiso*device*=/dev/disk/by-uuid/**YOUR-UUID**`. The UUID can be retrieved with `blkid -o value -s UUID /dev/sd**Xn**`.
 
 **Warning:** Mismatching labels or wrong UUID prevents booting from the created medium.
 
-*   Syslinux is already preinstalled in _/mnt/usb/arch/boot/syslinux_. Install it completely to that folder by following [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux"). Instructions are reproduced here for convenience.
+*   Syslinux is already preinstalled in */mnt/usb/arch/boot/syslinux*. Install it completely to that folder by following [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux"). Instructions are reproduced here for convenience.
     *   Overwrite the existing syslinux modules (`*.c32` files) present in the USB (from the ISO) with the ones from the syslinux package. This is necessary to avoid boot failure because of a possible version mismatch.
     *   Run:
 
@@ -252,7 +250,7 @@ This method is more complicated than writing the image directly with `dd`, but i
 
 **Note:**
 
-*   For manual formatting, do not use any **Bootable USB Creator utility** for creating the UEFI bootable USB. For manual formatting, do not use _dd for Windows_ to dd the ISO to the USB drive either.
+*   For manual formatting, do not use any **Bootable USB Creator utility** for creating the UEFI bootable USB. For manual formatting, do not use *dd for Windows* to dd the ISO to the USB drive either.
 
 *   In the below commands, **X:** is assumed to be the USB flash drive in Windows.
 
@@ -314,7 +312,6 @@ UNetbootin can be used on any Linux distribution or Windows to copy your iso to 
 Edit `syslinux.cfg`:
 
  `sysconfig.cfg` 
-
 ```
 default menu.c32
 prompt 0
@@ -373,7 +370,6 @@ Download the program from [http://sourceforge.net/projects/usbwriter/](http://so
 From a command prompt, invoke flashnul with `-p`, and determine which device index is your USB drive, e.g.:
 
  `C:\>flashnul -p` 
-
 ```
 Avaible physical drives:
 Avaible logical disks:
@@ -386,7 +382,7 @@ E:\
 When you have determined which device is the correct one, you can write the image to your drive, by invoking flashnul with the device index, `-L`, and the path to your image, e.g:
 
 ```
-C:\>flashnul **E:** -L _path\to\arch.iso_
+C:\>flashnul **E:** -L *path\to\arch.iso*
 
 ```
 
@@ -424,9 +420,7 @@ Next copy the ISO that you would like to boot to the `Boot/ISOs` folder. After t
 After copying the needed files, navigate to the USB flash drive, /boot/Settings and create a `syslinux.cfg` file.
 
 **Warning:** On the `INITRD` line, be sure to use the name of the ISO file that you copied to your `ISOs` folder!
-
  `/Boot/Settings/syslinux.cfg` 
-
 ```
 DEFAULT arch_iso
 
@@ -444,7 +438,6 @@ For more information on Syslinux see the [Arch Wiki article](/index.php/Syslinux
 Finally, create a `*.bat` file where `syslinux.exe` is located and run it ("Run as administrator" if you are on Vista or Windows 7):
 
  `C:\Documents and Settings\username\Desktop\install.bat` 
-
 ```
 @echo off
 syslinux.exe -m -a -d /Boot/Settings X:
@@ -452,7 +445,7 @@ syslinux.exe -m -a -d /Boot/Settings X:
 
 ## Troubleshooting
 
-*   For the [MEMDISK Method](#Loading_the_installation_media_from_RAM), if you get the famous "30 seconds" error trying to boot the i686 version, press the `Tab` key over the `Boot Arch Linux (i686)` entry and add `vmalloc=448M` at the end. For reference: _If your image is bigger than 128MiB and you have a 32-bit OS, then you have to increase the maximum memory usage of vmalloc_. [[1]](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
+*   For the [MEMDISK Method](#Loading_the_installation_media_from_RAM), if you get the famous "30 seconds" error trying to boot the i686 version, press the `Tab` key over the `Boot Arch Linux (i686)` entry and add `vmalloc=448M` at the end. For reference: *If your image is bigger than 128MiB and you have a 32-bit OS, then you have to increase the maximum memory usage of vmalloc*. [[1]](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
 
 *   If you get the "30 seconds" error due to the `/dev/disk/by-label/ARCH_XXXXYY` not mounting, try renaming your USB media to `ARCH_XXXXYY` (e.g. `ARCH_201501`).
 

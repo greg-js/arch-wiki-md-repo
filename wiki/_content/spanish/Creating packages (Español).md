@@ -54,7 +54,7 @@ Una de las herramientas clave para armar paquetes es [makepkg](/index.php/Makepk
 
 ### Descargar y probar la instalación
 
-Descargue el archivo comprimido tarball del software que quiere empaquetar, extráigalo, y sigua las instrucciones del autor para instalar el programa. Tome nota de todos los comandos y pasos a seguir para compilar e instalar este software. Estará repitiendo esos mismos pasos en el archivo _PKGBUILD_.
+Descargue el archivo comprimido tarball del software que quiere empaquetar, extráigalo, y sigua las instrucciones del autor para instalar el programa. Tome nota de todos los comandos y pasos a seguir para compilar e instalar este software. Estará repitiendo esos mismos pasos en el archivo *PKGBUILD*.
 
 Muchos autores se apegan al proceso de compilación e instalación tradicional:
 
@@ -145,11 +145,11 @@ make DESTDIR=$pkgdir install
 
 ```
 
-**Nota:** se puede dar el caso que el argumento `DESTDIR` no sea utilizado en el `Makefile`; en vez de esto habrá que utilizar el argumento `prefix`, si el paquete es compilado con _automake_/_autoconf_, utiliza `DESTDIR`, esto esta documentado en los manuales. Si `DESTDIR` no funciona trate de compilarlo con `make prefix="$pkgdir/usr/" install`. Si es no funciona, tendrá que investigar aun más en los comandos de instalación que son ejecutados por _make_ e _install_.
+**Nota:** se puede dar el caso que el argumento `DESTDIR` no sea utilizado en el `Makefile`; en vez de esto habrá que utilizar el argumento `prefix`, si el paquete es compilado con *automake*/*autoconf*, utiliza `DESTDIR`, esto esta documentado en los manuales. Si `DESTDIR` no funciona trate de compilarlo con `make prefix="$pkgdir/usr/" install`. Si es no funciona, tendrá que investigar aun más en los comandos de instalación que son ejecutados por *make* e *install*.
 
-En algunos casos raros, el software espera ser ejecutado dentro de algún directorio en específico. En estos casos se recomienda copiar estos a `$pkgdir/opt`. Muy seguido, el proceso de instalación creara subdirectorios dentro del directorio `pkg`. Si no es así, _makepkg_ generara muchos errores y usted se vera obligado a crear estos directorios manualmente agregando los comandos `mkdir -p` dentro de la función `build()` antes de que inicie el proceso de instalación.
+En algunos casos raros, el software espera ser ejecutado dentro de algún directorio en específico. En estos casos se recomienda copiar estos a `$pkgdir/opt`. Muy seguido, el proceso de instalación creara subdirectorios dentro del directorio `pkg`. Si no es así, *makepkg* generara muchos errores y usted se vera obligado a crear estos directorios manualmente agregando los comandos `mkdir -p` dentro de la función `build()` antes de que inicie el proceso de instalación.
 
-También _makepkg_ define tres variables que deberá tomar en cuenta como parte del proceso de compilación e instalación:
+También *makepkg* define tres variables que deberá tomar en cuenta como parte del proceso de compilación e instalación:
 
 	`startdir`
 
@@ -157,13 +157,13 @@ También _makepkg_ define tres variables que deberá tomar en cuenta como parte 
 
 	`srcdir`
 
-	Apunta al directorio donde _makepkg´ extrae o copia todos los archivos fuente_
+	Apunta al directorio donde *makepkg´ extrae o copia todos los archivos fuente*
 
 	`pkgdir`
 
-	Apunta al directorio donde _makepkg_ empaqueta el software instalado, que se convierte el directorio raíz del paquete construido.
+	Apunta al directorio donde *makepkg* empaqueta el software instalado, que se convierte el directorio raíz del paquete construido.
 
-**Nota:** _makepkg_, y por ende la función `build()` son pensadas para no ser interactivas. Las rutinas que requieran interacción del usuario que sean llamadas dentro de la función `build()` podrían destruir el _makepkg_, particularmente si es invocado con el registro de compilación habilitado (ver [Arch Linux Bug #13214](https://bugs.archlinux.org/task/13214))
+**Nota:** *makepkg*, y por ende la función `build()` son pensadas para no ser interactivas. Las rutinas que requieran interacción del usuario que sean llamadas dentro de la función `build()` podrían destruir el *makepkg*, particularmente si es invocado con el registro de compilación habilitado (ver [Arch Linux Bug #13214](https://bugs.archlinux.org/task/13214))
 
 ### Guías adicionales.
 
@@ -181,7 +181,7 @@ También asegúrese de que el software ejecute sin ningún fallo. Es molesto que
 
 ### `Ldd` y `namcap`
 
-Las dependencias incumplidas son el error más común del empaquetado. Hay dos excelentes herramientas para verificar el cumplimiento de las dependencias. La primera es _ldd_ que mostrara las dependencias compartidas de librerías de ejecutables:
+Las dependencias incumplidas son el error más común del empaquetado. Hay dos excelentes herramientas para verificar el cumplimiento de las dependencias. La primera es *ldd* que mostrara las dependencias compartidas de librerías de ejecutables:
 
 ```
 $ ldd gcc
@@ -191,7 +191,7 @@ libc.so.6 => /lib/libc.so.6 (0xb7de0000)
 
 ```
 
-La otra herramienta es _namcap_, que solo verifica por las dependencias y no por la sanidad del todo el paquete en si. Por favor lea el artículo sobre namcap para mayores referencias.
+La otra herramienta es *namcap*, que solo verifica por las dependencias y no por la sanidad del todo el paquete en si. Por favor lea el artículo sobre namcap para mayores referencias.
 
 ## Subir paquetes a AUR
 

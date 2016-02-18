@@ -1,4 +1,4 @@
-_**[SNMP](http://en.wikipedia.org/wiki/Simple_Network_Management_Protocol)** is a tool designed for the management and monitoring of network devices. The Net-SNMP package is one implementation of SNMP that is available for Arch Linux. This article discusses the configuration and testing of the snmpd daemon that ships with Arch's net-snmp package._
+***[SNMP](http://en.wikipedia.org/wiki/Simple_Network_Management_Protocol)** is a tool designed for the management and monitoring of network devices. The Net-SNMP package is one implementation of SNMP that is available for Arch Linux. This article discusses the configuration and testing of the snmpd daemon that ships with Arch's net-snmp package.*
 
 ## Contents
 
@@ -38,14 +38,14 @@ There are three versions of SNMP which are supported by net-snmp: 1, 2c and 3\. 
 
 ```
 mkdir /etc/snmp/
-echo rocommunity _read_only_user_ >> /etc/snmp/snmpd.conf
+echo rocommunity *read_only_user* >> /etc/snmp/snmpd.conf
 
 ```
 
 The above commands will add a user that can be used for monitoring. Optionally, you can add another user used for management. This is not recommended unless you have a specific reason.
 
 ```
-echo rwcommunity _read_write_user_ >> /etc/snmp/snmpd.conf
+echo rwcommunity *read_write_user* >> /etc/snmp/snmpd.conf
 
 ```
 
@@ -55,9 +55,9 @@ SNMP v3 adds security and encrypted authentication/communication. It uses a diff
 
 ```
 mkdir /etc/snmp/
-echo rouser _read_only_user_ >> /etc/snmp/snmpd.conf
+echo rouser *read_only_user* >> /etc/snmp/snmpd.conf
 mkdir -p /var/net-snmp/
-echo createUser _read_only_user_ SHA _password1_ AES _password2_ > /var/net-snmp/snmpd.conf
+echo createUser *read_only_user* SHA *password1* AES *password2* > /var/net-snmp/snmpd.conf
 
 ```
 
@@ -77,15 +77,15 @@ systemctl start snmpd
 If using SNMP 1 or 2c, use one of the following commands to test configuration:
 
 ```
-# snmpwalk -v 1 -c _read_only_user_ localhost | less
-# snmpwalk -v 2c -c _read_only_user_ localhost | less
+# snmpwalk -v 1 -c *read_only_user* localhost | less
+# snmpwalk -v 2c -c *read_only_user* localhost | less
 
 ```
 
 If using SNMP 3, use the following command to test configuration:
 
 ```
-# snmpwalk -v 3 -u _read_only_user_ -a SHA -A _password1_ -x AES -X _password2_ -l authNoPriv localhost | less
+# snmpwalk -v 3 -u *read_only_user* -a SHA -A *password1* -x AES -X *password2* -l authNoPriv localhost | less
 
 ```
 

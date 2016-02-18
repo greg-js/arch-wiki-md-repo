@@ -89,7 +89,7 @@ $ start-pulseaudio-kde
 
 ```
 
-Isso permite que você veja cada um dos dispositivos de áudio no _Configurações do sistema->Multimídia->Phonon_.
+Isso permite que você veja cada um dos dispositivos de áudio no *Configurações do sistema->Multimídia->Phonon*.
 
 Você pode parar o PulseAudio usando:
 
@@ -161,7 +161,6 @@ $ padsp sox foo.wav -t ossdsp /dev/dsp
 Se você preferir você pode renomear seu programa OSS e substituí-lo com um script como esse:
 
  `/usr/bin/OSSProgram` 
-
 ```
 #!/bin/sh
 if test -x /usr/bin/padsp; then
@@ -174,7 +173,7 @@ fi
 
 ### GStreamer
 
-Para fazer o [GStreamer](/index.php/GStreamer "GStreamer") usar o PulseAudio, execute `gstreamer-properties` (parte do pacote _gnome-media_) e selecione _Servidor de som PulseAudio_ tanto na Saída como Entrada padrão. Alternativamente, isso pode ser feito setando as variáveis `/system/gstreamer/0.10/default/audiosink` para _pulsesink_ e `/system/gstreamer/0.10/default/audiosrc` para _pulsesrc_ no gconf2:
+Para fazer o [GStreamer](/index.php/GStreamer "GStreamer") usar o PulseAudio, execute `gstreamer-properties` (parte do pacote *gnome-media*) e selecione *Servidor de som PulseAudio* tanto na Saída como Entrada padrão. Alternativamente, isso pode ser feito setando as variáveis `/system/gstreamer/0.10/default/audiosink` para *pulsesink* e `/system/gstreamer/0.10/default/audiosrc` para *pulsesrc* no gconf2:
 
 ```
  $ gconftool-2 -t string --set /system/gstreamer/0.10/default/audiosink pulsesink
@@ -182,7 +181,7 @@ Para fazer o [GStreamer](/index.php/GStreamer "GStreamer") usar o PulseAudio, ex
 
 ```
 
-Algumas aplicações (como o Rhythmbox) ignoram a propriedade _audiosink_, usando a propriedade _musicaudiosink_, que não pode ser configurada usando o `gstreamer-properties` e precisa ser setada manualmente usando o `gconf-editor` ou `gconftool-2`:
+Algumas aplicações (como o Rhythmbox) ignoram a propriedade *audiosink*, usando a propriedade *musicaudiosink*, que não pode ser configurada usando o `gstreamer-properties` e precisa ser setada manualmente usando o `gconf-editor` ou `gconftool-2`:
 
 ```
  $ gconftool-2 -t string --set /system/gstreamer/0.10/default/musicaudiosink pulsesink
@@ -219,7 +218,7 @@ load-module module-x11-bell sample=x11-bell
 
 ```
 
-Você também pode usar outro som. `dialog-error.ogg` faz parte do pacote _sound-theme-freedesktop_.
+Você também pode usar outro som. `dialog-error.ogg` faz parte do pacote *sound-theme-freedesktop*.
 
 ### GNOME
 
@@ -229,11 +228,11 @@ Para obter integração completa do GNOME com o PulseAudio você deve instalar o
 *   gnome-settings-daemon-pulse
 *   libcanberra-pulse
 
-Eles fazem parte do grupo _pulseaudio-gnome_.
+Eles fazem parte do grupo *pulseaudio-gnome*.
 
 ### KDE 3
 
-PulseAudio _não_ é um substituto para o aRts. Se você usa o KDE 3 não é possível usar o PulseAudio por enquanto.
+PulseAudio *não* é um substituto para o aRts. Se você usa o KDE 3 não é possível usar o PulseAudio por enquanto.
 
 ### KDE 4 e Qt4
 
@@ -249,9 +248,9 @@ Audacious tem suporte nativo ao PulseAudio. Para usá-lo você deve setar nas pr
 
 Você vai precisar [configurar](http://mpd.wikia.com/wiki/PulseAudio) o mpd para usar o PulseAudio.
 
-Se você roda o daemon no modo system-wide, você vai precisar adicionar o usuário _mpd_ no grupo _pulse-access_ para conseguir fazer o mpd se conectar ao daemon.
+Se você roda o daemon no modo system-wide, você vai precisar adicionar o usuário *mpd* no grupo *pulse-access* para conseguir fazer o mpd se conectar ao daemon.
 
-Num desktop, executar o mpd com o seu usuário e não com o _mpd_ é preferível.
+Num desktop, executar o mpd com o seu usuário e não com o *mpd* é preferível.
 
 ### MPlayer
 

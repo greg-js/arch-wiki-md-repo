@@ -39,7 +39,6 @@ It can be annoying to have to look up what `/dev/ttyUSB[0-9]` the device gets as
 There are several ways to do this, the way I personally prefer is to use it by vender/product ID so the bus pirate can be replaced without needing to modify the line. To use this method, add the following line to /etc/udev/rules.d/98-buspirate
 
  `/etc/udev/rules.d/98-buspirate.rules` 
-
 ```
 # Bus pirate v3
 SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", GROUP="users", MODE="0666", SYMLINK+="buspirate"
@@ -59,7 +58,6 @@ You can also do it by serial number, to do this, you will need to find out the s
 Now add/create the following file:
 
  `/etc/udev/rules.d/98-buspirate.rules` 
-
 ```
 SUBSYSTEM=="tty", ATTRS{serial}=="XXXXXXXX", GROUP="users", MODE="0660", SYMLINK+="buspirate"
 

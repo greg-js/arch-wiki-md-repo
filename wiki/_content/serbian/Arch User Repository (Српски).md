@@ -1,5 +1,5 @@
 | **Резиме**  |
-| The Arch User Repository је колекција PKGBUILD-ова који су поднели корисници и који су додатак софтверу који је доступан из официјалних репозиторијума. Овај чланак описује како изградити _unsupported_ софтверске пакете из AUR-а. |
+| The Arch User Repository је колекција PKGBUILD-ова који су поднели корисници и који су додатак софтверу који је доступан из официјалних репозиторијума. Овај чланак описује како изградити *unsupported* софтверске пакете из AUR-а. |
 | **Преглед** |
 | Packages in Arch Linux are built using [makepkg](/index.php/Makepkg "Makepkg") and a custom build script for each package (known as a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")). Once packaged, software can be installed and managed with [pacman](/index.php/Pacman "Pacman"). PKGBUILDs for software in the [official repositories](/index.php/Official_repositories "Official repositories") are available from the [ABS](/index.php/Arch_Build_System "Arch Build System") tree; thousands more are available from the (unsupported) [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). |
 | **Слично** |
@@ -83,13 +83,13 @@ AUR веб интерфејс се може наћи [овде](https://aur.arch
 
 [AUR helpers](/index.php/AUR_helpers "AUR helpers") додају приступ AUR-у. Они варирају у својим карактеристикама, али могу да олакшају претрагу, преузимање, изградњу, и инсталирање из PKGBUILD-ова пронађених у AUR-у. Све ове скрипте се могу наћи у UNSUPPORTED репозиторијуму.
 
-**Note:** Никад неће бити _официјални_ механизам за инсталирање материјала из UNSUPPORTED-а. Сви корисници треба да буду упознати са процесом изградње.
+**Note:** Никад неће бити *официјални* механизам за инсталирање материјала из UNSUPPORTED-а. Сви корисници треба да буду упознати са процесом изградње.
 
 Следеће је детаљни пример инсталације пакета који се зове "foo".
 
 ### Предуслови
 
-Прво се уверите да се неопходни алати инсталирани. Група пакета "base-devel" би требала да буде довољна; укључује _make_ и друге алате неопходне за компајлирање из извора.
+Прво се уверите да се неопходни алати инсталирани. Група пакета "base-devel" би требала да буде довољна; укључује *make* и друге алате неопходне за компајлирање из извора.
 
 **Warning:** Пакету у AUR-у претпостављају да је "base-devel" инсталиран, и неће излистати чланове ове групе као зависности иако се пакет не може изградити без њих. Уверите се да је ова група инсталирана пре жалбе о неуспелој изградњи.
 
@@ -191,7 +191,7 @@ $ makepkg --source
 
 ```
 
-Обратите пажњу да је ово gzip-ован tarball; претпоставимо да шаљете пакет који се зове _libfoo_, кад креирате фајл, требао би да изгледа слично овоме:
+Обратите пажњу да је ово gzip-ован tarball; претпоставимо да шаљете пакет који се зове *libfoo*, кад креирате фајл, требао би да изгледа слично овоме:
 
 ```
 # List contents of tarball.

@@ -12,7 +12,6 @@ The Dell Inspiron Mini 11z is a netbook from Dell.
 ## Hardware
 
  `$ lspci` 
-
 ```
 00:00.0 Host bridge: Intel Corporation Mobile 4 Series Chipset Memory Controller Hub (rev 07)
 00:02.0 VGA compatible controller: Intel Corporation Mobile 4 Series Chipset Integrated Graphics Controller (rev 07)

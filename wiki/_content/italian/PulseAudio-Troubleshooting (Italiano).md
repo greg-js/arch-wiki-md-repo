@@ -115,9 +115,8 @@ Questo comportamento potrebbe essere causato dalla presenza di un file `~/.asoun
 È possibile inibire gli effetti del file `~/.asoundrc` commentando l'ultima linea, in questo modo:
 
  `~/.asoundrc` 
-
 ```
-# </home/_nomeutente_/.asoundrc.asoundconf>	
+# </home/*nomeutente*/.asoundrc.asoundconf>	
 
 ```
 
@@ -131,7 +130,6 @@ Questo comportamento potrebbe essere causato dalla presenza di un file `~/.asoun
 Se l'output è simile a questo,
 
  `# fuser -v /dev/snd/*` 
-
 ```
                      USER      PID  ACCESS COMMAND
 /dev/snd/controlC0:  root        931 F....  timidity
@@ -195,7 +193,6 @@ $ rm -r ~/.pulse ~/.pulse-cookie ~/.config/pulse
 Se alcune applicazioni (ad esempio Teamspeak o Mumble) interrompono la riproduzione di altre già avviate (ad esempio DeadBeef), è possibile rimediare commentando la linea `load-module module-role-cork` in `/etc/pulse/default.pa`, come mostrato sotto:
 
  `/etc/pulse/default.pa` 
-
 ```
 ### Cork music/video streams when a phone stream is active
 # load-module module-role-cork
@@ -215,7 +212,6 @@ $ pulseaudio --start
 Il monitor è collegato tramite HDMI/DisplayPort, e il jack audio è collegato all'uscita cuffie sul monitor, ma PulseAudio lo considera scollegato.
 
  `pactl list sinks` 
-
 ```
 ...
 hdmi-output-0: HDMI / DisplayPort (priority: 5900, not available)
@@ -230,7 +226,6 @@ Il che non consente la riproduzione del suono dall'uscita HDMI. È possibile ovv
 Arch non carica automaticamente il modulo relativo: sarà quindi necessario aggiungerlo in `/etc/pulse/default.pa`. Verificare innanzitutto se il modulo esiste con `pacmd`, inserendo il comando {{|iclist-modules}}. Se non viene visualizzata una linea simile a {ic|name: <module-echo-cancel>}}, sarà necessario aggiungere:
 
  `/etc/pulse/default.pa` 
-
 ```
 load-module module-echo-cancel
 
@@ -286,9 +281,7 @@ Si crei una regola udev per PulseAudio:
 **Nota:** Quanto segue è un esempio valido per una Asus Xonar Essence STX. Si legga la pagina del wiki relativa ad [udev](/index.php/Udev_(Italiano) "Udev (Italiano)") per trovare i valori corretti.
 
 **Nota:** La regola deve avere un numero più basso rispetto a quella originale per avere effetto.
-
  `/usr/lib/udev/rules.d/90-pulseaudio-Xonar-STX.rules` 
-
 ```
 ACTION=="change", SUBSYSTEM=="sound", KERNEL=="card*", \
 ATTRS{subsystem_vendor}=="0x1043", ATTRS{subsystem_device}=="0x835c", ENV{PULSE_PROFILE_SET}="asus-xonar-essence-stx.conf" 
@@ -300,9 +293,7 @@ Si crei quindi un nuovo profilo. È possibile partire da zero ed arricchirlo man
 Per abilitare sink multipli su una Asus Xonar Essence STX, si scriva quanto segue:
 
 **Nota:** `asus-xonar-essence-stx.conf` comprende tutto il codice/mappature di `default.conf`.
-
  `/usr/share/pulseaudio/alsa-mixer/profile-sets/asus-xonar-essence-stx.conf` 
-
 ```
 [Profile analog-stereo+iec958-stereo]
 description = Analog Stereo Duplex + Digital Stereo Output
@@ -330,7 +321,6 @@ bluez5-util.c: GetManagedObjects() failed: org.freedesktop.DBus.Error.ServiceUnk
 Per disabilitare il supporto Bluetooth in PulseAudio, assicurarsi che le seguenti linee dei file di configurazione `~/.config/pulse/default.pa` o `/etc/pulse/default.pa` siano commentate:
 
  `~/.config/pulse/default.pa` 
-
 ```
 ### Automatically load driver modules for Bluetooth hardware
 #.ifexists module-bluetooth-policy.so
@@ -350,7 +340,6 @@ Alcuni utenti [riferiscono](https://bbs.archlinux.org/viewtopic.php?id=117420) d
 Per disabilitare il modulo in questione, assicurarsi che le seguenti linee dei file di configurazione `~/.config/pulse/default.pa` o `/etc/pulse/default.pa` siano commentate:
 
  `~/.config/pulse/default.pa` 
-
 ```
 ### Automatically suspend sinks/sources that become idle for too long
 #load-module module-suspend-on-idle
@@ -364,7 +353,6 @@ Si riavvii PulseAudio per applicare i cambiamenti.
 Si aggiunga la seguente riga al file `/etc/pulse/default.pa`:
 
  `/etc/pulse/default.pa` 
-
 ```
  # automatically switch to newly-connected devices
  load-module module-switch-on-connect
@@ -416,7 +404,7 @@ $ pulseaudio --start
 
 *   Si imposti un metodo di ricampionamento preferito. Utilizzare `pulseaudio --dump-resample-methods` per visualizzare quelli disponibili.
 
-*   Per visualizzare informazioni su eventuali errori o per conoscere lo stato del demone, utilizzare comandi come `pax11publish -d` e `pulseaudio -v`, dove l'opzione `v` può essere specificata più volte per impostare la verbosità dell'output, similmente all'opzione `--log-level=[LEVEL]` dove _LEVEL_ va da 0 a 4\. Si veda la sezione [#Possibili output delle utility per il controllo degli errori di PulseAudio](#Possibili_output_delle_utility_per_il_controllo_degli_errori_di_PulseAudio) per ulteriori informazioni.
+*   Per visualizzare informazioni su eventuali errori o per conoscere lo stato del demone, utilizzare comandi come `pax11publish -d` e `pulseaudio -v`, dove l'opzione `v` può essere specificata più volte per impostare la verbosità dell'output, similmente all'opzione `--log-level=[LEVEL]` dove *LEVEL* va da 0 a 4\. Si veda la sezione [#Possibili output delle utility per il controllo degli errori di PulseAudio](#Possibili_output_delle_utility_per_il_controllo_degli_errori_di_PulseAudio) per ulteriori informazioni.
 
 Si consultino inoltre le pagine di manuale per [pax11publish](http://linux.die.net/man/1/pax11publish) e [pulseaudio](http://linux.die.net/man/1/pulseaudio).
 
@@ -444,9 +432,7 @@ E: [pulseaudio] module-udev-detect.c: You apparently ran out of inotify watches,
 $ echo 100000 > /proc/sys/fs/inotify/max_user_watches
 
 ```
-
 Per rendere la modifica permanente, si modifichi `/etc/sysctl.d/99-sysctl.conf` 
-
 ```
  # Increase inotify max watches per user
  fs.inotify.max_user_watches = 100000
@@ -457,7 +443,7 @@ Per rendere la modifica permanente, si modifichi `/etc/sysctl.d/99-sysctl.conf`
 
 **Vedere anche**
 
-*   [proc_sys_fs_inotify](http://www.linuxinsight.com/proc_sys_fs_inotify.html) e [dnotify, inotify](http://lwn.net/Articles/604686/) - ulteriori dettagli su _inotify/max_user_watches_
+*   [proc_sys_fs_inotify](http://www.linuxinsight.com/proc_sys_fs_inotify.html) e [dnotify, inotify](http://lwn.net/Articles/604686/) - ulteriori dettagli su *inotify/max_user_watches*
 *   [valori ragionevoli per inotify watches su Linux](http://stackoverflow.com/questions/535768/what-is-a-reasonable-amount-of-inotify-watches-with-linux?answertab=votes#tab-top)
 *   [inotify](http://linux.die.net/man/7/inotify) - pagina di manuale
 
@@ -468,7 +454,6 @@ La nuova implementazione del server Pulseaudio usa uno scheduling audio basato s
 Per disattivarlo, si aggiunga `tsched=0` come parametro al modulo udev-detect in `/etc/pulse/default.pa`:
 
  `/etc/pulse/default.pa` 
-
 ```
  load-module module-udev-detect tsched=0
 
@@ -541,7 +526,6 @@ device.buffering.fragment_size = "384000" => 384000/1411200 = 0.272108843537s = 
 #### Modificare il file di configurazione di PulseAudio (3/4)
 
  `/etc/pulse/daemon.conf` 
-
 ```
 ; default-fragments = X
 ; default-fragment-size-msec = Y
@@ -553,7 +537,6 @@ Nel passagio precedente si è calcolata la dimensione del frammento. Il numero d
 Si modifichino quindi le righe di cui sopra utilizzando i risultati ottenuti:
 
  `/etc/pulse/daemon.conf` 
-
 ```
 ; default-fragments = '''2'''
 ; default-fragment-size-msec = '''272'''
@@ -575,7 +558,6 @@ Questo problema è causato da una dimensione non corretta dei buffer. Si verific
 Se il problema si verifica nuovamente si provi ad assegnare questi valori:
 
  `/etc/pulse/daemon.conf` 
-
 ```
 default-fragments = 5
 default-fragment-size-msec = 2
@@ -586,7 +568,6 @@ default-fragment-size-msec = 2
 La scelta di una frequenza di campionamento errata può causare un suono intermittente. Si effettui la seguente modifica:
 
  `/etc/pulse/daemon.conf` 
-
 ```
 default-sample-rate = 48000
 
@@ -598,12 +579,11 @@ Se il suono è intermittente in applicazioni che usano [OpenAL](https://en.wikip
 
  `/etc/openal/alsoft.conf`  `frequency = 48000` 
 
-Impostare il volume del canale PCM sopra 0dB può causare il [clipping](https://en.wikipedia.org/wiki/Clipping_(audio) "wikipedia:Clipping (audio)") del segnale audio. Eseguire `alsamixer -c0` permetterà di capire se questo è il problema. Si noti che ALSA [correctly potrebbe](http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/PulseAudioStoleMyVolumes) non passare correttamente il valore della frequenza di campionamento a PulseAudio.
+Impostare il volume del canale PCM sopra 0dB può causare il [clipping](https://en.wikipedia.org/wiki/Clipping_(audio) del segnale audio. Eseguire `alsamixer -c0` permetterà di capire se questo è il problema. Si noti che ALSA [correctly potrebbe](http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/PulseAudioStoleMyVolumes) non passare correttamente il valore della frequenza di campionamento a PulseAudio.
 
 Si provi come segue:
 
  `/etc/pulse/defaults.pa` 
-
 ```
 load-module module-udev-detect ignore_dB=1
 
@@ -627,7 +607,6 @@ Poiché pulseaudio ha una maggior raggio di incremento (0-65535, per essere prec
 Questo comportamento si verifica a causa dell'utilizzo dei "flat-volumes" da parte di PulseAudio al posto dei volumi relativi, relativi ad un volume master assoluto. Se questa funzionalità dovesse apparirvi scomoda, stupida o comunque indesiderabile, è possibile abilitare i volumi relativi disabilitando i "flat-volumes":
 
  `/etc/pulse/daemon.conf o ~/.config/pulse/daemon.conf` 
-
 ```
 flat-volumes = no
 
@@ -678,7 +657,6 @@ Si installi [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol),
 Si aggiunganno le seguenti righe a `/etc/pulse/default.pa`:
 
  `/etc/pulse/default.pa` 
-
 ```
 load-module module-alsa-sink sink_name=delta_out device=hw:M2496 format=s24le channels=10 channel_map=left,right,aux0,aux1,aux2,aux3,aux4,aux5,aux6,aux7
 load-module module-alsa-source source_name=delta_in device=hw:M2496 format=s24le channels=12 channel_map=left,right,aux0,aux1,aux2,aux3,aux4,aux5,aux6,aux7,aux8,aux9
@@ -696,7 +674,6 @@ Se si ottiene del rumore di fondo nelle registrazioni con skype, gnome-sound-rec
 È necessario che [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) e i relativi pacchetti siano installati:
 
  `$ arecord --list-devices` 
-
 ```
    **** List of CAPTURE Hardware Devices ****
    card 0: Intel [HDA Intel], device 0: ALC888 Analog [ALC888 Analog]
@@ -713,7 +690,6 @@ La scheda audio è `hw:0,0`.
 #### Determinare la frequenza di campionamento della scheda audio (2/5)
 
  ` arecord -f dat -r 60000 -D hw:0,0 -d 5 test.wav` 
-
 ```
   "Recording WAVE 'test.wav' : Signed 16 bit Little Endian, Rate 60000 Hz, Stereo
   Warning: rate is not accurate (requested = 60000Hz, got = 96000Hz)
@@ -728,7 +704,6 @@ Si noti il `got = 96000Hz`, che indica la frequenza di campionamento massima sup
 La frequenza di campionamento predefinita in Pulseaudio è ottenibile con:
 
  `$ grep "default-sample-rate" /etc/pulse/daemon.conf` 
-
 ```
 ; default-sample-rate = 44100
 
@@ -772,7 +747,6 @@ Il problema dovrebbe essere stato risolto.
 A partire da PulseAudio 2.99 e bluez 4.101 è consigliabile evitare l'utilizzo dell'interfaccia Socket. **Non aggiungere quanto segue al proprio** `/etc/bluetooth/audio.conf`:
 
  `/etc/bluetooth/audio.conf` 
-
 ```
  [General]
  Enable=Socket
@@ -788,7 +762,6 @@ Problema noto: [https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/494099
 Per risolvere, modificare `/etc/pulse/daemon.conf` e abilitare l'opzione `enable-lfe-remixing`:
 
  `/etc/pulse/daemon.conf` 
-
 ```
 enable-lfe-remixing = yes
 
@@ -814,7 +787,6 @@ Si verifichi quindi l'utilizzo del microfono corretto.
 Il canale LFE (low-frequency effects) non viene remixato di default. Per abilitare questa funzionalità si modifichi `/etc/pulse/daemon.conf`:
 
  `/etc/pulse/daemon.conf` 
-
 ```
 enable-lfe-remixing = yes
 
@@ -822,7 +794,7 @@ enable-lfe-remixing = yes
 
 ### Impossibilità di scegliere configurazioni surround diverse da "Surround 4.0"
 
-Se non si è in grado di selezionare l'output surround 5.1 da _pavucontrol_, si apra il mixer di ALSA e si imposti un output a 6 canali. Si riavvii quindi PulseAudio; _pavucontrol_ mostrerà ora più opzioni.
+Se non si è in grado di selezionare l'output surround 5.1 da *pavucontrol*, si apra il mixer di ALSA e si imposti un output a 6 canali. Si riavvii quindi PulseAudio; *pavucontrol* mostrerà ora più opzioni.
 
 ### Assenza di suono sotto un certo livello di volume
 
@@ -831,7 +803,6 @@ Problema conosciuto (non sarà sistemato): [https://bugs.launchpad.net/ubuntu/+s
 Se non viene riprodotto alcun suono sotto un certo livello di volume, si passi `ignore_dB=1` come parametro al modulo udev-detect nel file `/etc/pulse/default.pa`:
 
  `/etc/pulse/default.pa` 
-
 ```
 load-module module-udev-detect ignore_dB=1
 
@@ -842,7 +813,6 @@ load-module module-udev-detect ignore_dB=1
 Se il volume del microfono integrato del vostro notebook è troppo basso, si inserisca alla fine del file:
 
  `/etc/pulse/default.pa` 
-
 ```
 set-source-volume 1 300000
 
@@ -850,12 +820,11 @@ set-source-volume 1 300000
 
 ### I client alterano il controllo volume generale (ovvero volume al massimo dopo aver lanciato un'applicazione)
 
-Potrebbe capitare che, a causa della modalità _flat volumes_ di PulseAudio, la modifica del volume in applicazioni specifiche abbia effetto anche sul volume generale di sistema. Al posto di disabilitare tale modalità, gli utenti KDE dovrebbero provare ad abbassare il volume delle notifiche di sistema in _Impostazioni di sistema -> Notifiche delle applicazioni e di sistema -> Gestisci le notifiche_, tab _Impostazioni di riproduzione_. La modifica del livello volume _Event Sounds_ in KMix o altri mixer non sortirà l'effetto desiderato.
+Potrebbe capitare che, a causa della modalità *flat volumes* di PulseAudio, la modifica del volume in applicazioni specifiche abbia effetto anche sul volume generale di sistema. Al posto di disabilitare tale modalità, gli utenti KDE dovrebbero provare ad abbassare il volume delle notifiche di sistema in *Impostazioni di sistema -> Notifiche delle applicazioni e di sistema -> Gestisci le notifiche*, tab *Impostazioni di riproduzione*. La modifica del livello volume *Event Sounds* in KMix o altri mixer non sortirà l'effetto desiderato.
 
-Nel caso la modalità flat-volumes non funzioni, è probabile che qualche altra applicazione stia richiedendo il livello volume al 100% durante la riproduzione. Se non ri riesce a risolvere il problema, è possibile disabilitare la modalità _flat volumes_:
+Nel caso la modalità flat-volumes non funzioni, è probabile che qualche altra applicazione stia richiedendo il livello volume al 100% durante la riproduzione. Se non ri riesce a risolvere il problema, è possibile disabilitare la modalità *flat volumes*:
 
  `/etc/pulse/daemon.conf` 
-
 ```
 flat-volumes = no
 
@@ -902,7 +871,6 @@ Se le operazioni di cui sopra risolvono il problema, si potrebbe volerle automat
 1\. Si crei il template:
 
  `/etc/systemd/system/resume-fix-pulseaudio@.service` 
-
 ```
 [Unit]
 Description=Fix PulseAudio after resume from suspend
@@ -971,12 +939,11 @@ I pacchetti [gnome-control-center](https://www.archlinux.org/packages/?name=gnom
 
 1\. Si spostino manualmente tramite [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) gli stream già in esecuzione al nuovo dispositivo.
 
-2\. Si termini PulseAudio e si cancelli _stream-volumes_ in `~/.config/pulse`, quindi si riavvii PulseAudio. Questa operazione azzera i livelli volume personalizzati delle applicazioni.
+2\. Si termini PulseAudio e si cancelli *stream-volumes* in `~/.config/pulse`, quindi si riavvii PulseAudio. Questa operazione azzera i livelli volume personalizzati delle applicazioni.
 
 3\. Si disabiliti la lettura dei dispositivi di streaming. Tale operazione potrebbe non essere desiderata se si utilizzano diverse schede audio con diverse applicazioni:
 
  `/etc/pulse/default.pa` 
-
 ```
 load-module module-stream-restore restore_device=false
 
@@ -1008,7 +975,6 @@ Output di esempio troncato per brevità: la parte d'interesse è evidenziata in 
 2\. Si aggiunga una regola di rimappatura in `/etc/pulse/default.pa` usando il valore ottenuto con il comando precedente, in questo caso **alsa_input.pci-0000_00_14.2.analog-stereo**:
 
  `/etc/pulse/default.pa` 
-
 ```
 ### Remap microphone to mono
 load-module module-remap-source master=alsa_input.pci-0000_00_14.2.analog-stereo master_channel_map=front-left,front-right channels=2 channel_map=mono,mono
@@ -1023,7 +989,6 @@ load-module module-remap-source master=alsa_input.pci-0000_00_14.2.analog-stereo
 ```
 
 **Nota:** PulseAudio potrebbe non avviarsi correttamente se non si chiudono le applicazioni che stavano usando il microfono (ad esempio se si sono effettuate delle prove su Steam prima di modificare il file), nel qual caso sarà necessario avviare manualmente PulseAudio:
-
 ```
 # pulseaudio --start
 

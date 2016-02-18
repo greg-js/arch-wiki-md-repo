@@ -28,7 +28,7 @@ Primeiramente leia o [O Jeito Arch](/index.php/The_Arch_Way_(Portugu%C3%AAs) "Th
 
 ## P) Eu encontrei um erro no pacote X, o que eu devo fazer?
 
-**R)** Primeiramente você precisa descobrir se o erro é algo que a equipe do Arch pode consertar. Algumas vezes não é (aquele travamento no firefox pode ser falha da equipe do Mozilla) - isto é chamado de _upstream error_. Se for um problema do Arch, existe uma série de coisas que você pode fazer:
+**R)** Primeiramente você precisa descobrir se o erro é algo que a equipe do Arch pode consertar. Algumas vezes não é (aquele travamento no firefox pode ser falha da equipe do Mozilla) - isto é chamado de *upstream error*. Se for um problema do Arch, existe uma série de coisas que você pode fazer:
 
 1.  Procurar informações no fórum. Veja se alguém teve o mesmo problema.
 2.  Informar o mantenedor do pacote. Rode um "pacman -Qi <nome do pacote>" para obter esta informação.
@@ -79,7 +79,7 @@ Além do mais, isso não é uma pergunta e sim uma afirmação; ;-)
 
 ## P) O Arch precisa de um instalador melhor. Talvez um instalador gráfico.
 
-**R)** A discussão sobre um "melhor" instalador é uma opinião subjetiva. A melhor maneira de lidar com isso é colocar o instalador no "jeito arch". Se esta opinião sobre um melhor instalador fosse reforçada com mais argumentos concretos, o desenvolvimento adicional do instalador poderia ser levado em conta. _O Windows usa um instalador baseado em texto_.
+**R)** A discussão sobre um "melhor" instalador é uma opinião subjetiva. A melhor maneira de lidar com isso é colocar o instalador no "jeito arch". Se esta opinião sobre um melhor instalador fosse reforçada com mais argumentos concretos, o desenvolvimento adicional do instalador poderia ser levado em conta. *O Windows usa um instalador baseado em texto*.
 
 * * *
 

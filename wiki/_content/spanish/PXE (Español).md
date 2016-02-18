@@ -1,6 +1,6 @@
 De [Wikipedia:Preboot Execution Environment](https://en.wikipedia.org/wiki/Preboot_Execution_Environment "wikipedia:Preboot Execution Environment"):
 
-	_Preboot eXecution Environment (PXE) (Entorno de ejecución de prearranque), es un entorno para arrancar e instalar el sistema operativo en ordenadores a través de una red, de manera independiente de los dispositivos de almacenamiento de datos disponibles (como discos duros) o de los sistemas operativos instalados._
+	*Preboot eXecution Environment (PXE) (Entorno de ejecución de prearranque), es un entorno para arrancar e instalar el sistema operativo en ordenadores a través de una red, de manera independiente de los dispositivos de almacenamiento de datos disponibles (como discos duros) o de los sistemas operativos instalados.*
 
 En esta guía, PXE se usa para arrancar los medios de instalación con una Option Rom apropiada que soporte PXE como objetivo.
 
@@ -54,7 +54,6 @@ Instala [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq):
 Configura [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq):
 
  `# vim /etc/dnsmasq.conf` 
-
 ```
 port=0
 interface=eth0
@@ -82,7 +81,6 @@ Primero, instala [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd)
 Luego inicia [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd) usando /mnt/archiso como raíz de los archivos:
 
  `# darkhttpd /mnt/archiso` 
-
 ```
 darkhttpd/1.8, copyright (c) 2003-2011 Emil Mikulic.
 listening on: [http://0.0.0.0:80/](http://0.0.0.0:80/)
@@ -90,14 +88,13 @@ listening on: [http://0.0.0.0:80/](http://0.0.0.0:80/)
 
 ## Instalación
 
-Para esta parte, necesitarás averiguar como decirle al cliente que realice un arranque con PXE; en la esquina de la pantalla junto con los mensajes normales, normalmente habrá alguna pista de que tecla apretar para intentar arrancar primero con PXE. En un IBM x3650 _F12_ sale un menú de arranque, la primera opción del cual es _Network_ ("Red"); en un Dell PE 1950/2950 apretar _F12_ inicia el arranque con PXE directamente.
+Para esta parte, necesitarás averiguar como decirle al cliente que realice un arranque con PXE; en la esquina de la pantalla junto con los mensajes normales, normalmente habrá alguna pista de que tecla apretar para intentar arrancar primero con PXE. En un IBM x3650 *F12* sale un menú de arranque, la primera opción del cual es *Network* ("Red"); en un Dell PE 1950/2950 apretar *F12* inicia el arranque con PXE directamente.
 
 ### Arranque
 
 Leer [journald](/index.php/Systemd_(Espa%C3%B1ol)#Journal "Systemd (Español)") en el servidor PXE debería proveernos de cierta información sobre lo que pasa durante las primeras fases del proceso de arranque de PXE:
 
  `# journalctl -u dnsmasq -f` 
-
 ```
 dnsmasq-dhcp[2544]: DHCPDISCOVER(eth1) 00:1a:64:6a:a2:4d 
 dnsmasq-dhcp[2544]: DHCPOFFER(eth1) 192.168.0.110 00:1a:64:6a:a2:4d 
@@ -184,7 +181,6 @@ Una vez cargado el kernel, la imgen bootstrap de Arch copiará el sistema de arc
 Instala [nbd](https://www.archlinux.org/packages/?name=nbd) y configúralo:
 
  `# vim /etc/nbd-server/config` 
-
 ```
 [generic]
 [archiso]

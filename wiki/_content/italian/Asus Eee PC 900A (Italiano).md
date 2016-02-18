@@ -174,7 +174,7 @@ Perfettamente funzionante.
 
 È possibile usare laptop-mode-tools oppure cpufrequtils, ma laptop-mode-tools fornisce molte più configurazioni per i portatili quindi è particolarmente consigliato.
 
-_Laptop mode tools:_
+*Laptop mode tools:*
 
 Installare il pacchetto laptop-mode-tools
 
@@ -187,7 +187,7 @@ In /etc/laptop-mode/ si trovano tutte le configurazioni disponibili, in maggior 
 
 Aggiungere in /etc/rc.conf il demone laptop-mode nella riga DAEMONS.
 
-_Cpufrequtils:_
+*Cpufrequtils:*
 
 Installare il pacchetto cpufrequtils
 
@@ -212,7 +212,7 @@ nano /etc/rc.conf
 
 In /etc/rc.conf aggiungere nella riga DAEMONS cpufreq.
 
-_Valido per qualsiasi scelta:_ Aggiungiamo in MODULES cpufreq_conservative, cpufreq_powersave o cpufreq_userspace in base a ciò che ci serve.
+*Valido per qualsiasi scelta:* Aggiungiamo in MODULES cpufreq_conservative, cpufreq_powersave o cpufreq_userspace in base a ciò che ci serve.
 
 ## Limitare le scritture su SSD
 

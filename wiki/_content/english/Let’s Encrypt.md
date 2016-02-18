@@ -31,7 +31,7 @@ If there is no plugin for your web server, use the following command:
 
 ```
 
-This will automatically verify your domain and create a private key and certificate pair. These are placed in `/etc/letsencrypt/live/_your.domain_/`.
+This will automatically verify your domain and create a private key and certificate pair. These are placed in `/etc/letsencrypt/live/*your.domain*/`.
 
 You can then manually configure your web server to use the key and certificate in that directory.
 
@@ -40,24 +40,22 @@ You can then manually configure your web server to use the key and certificate i
 You can use the webroot method to get/renew certificates with a running webserver (e.g. Apache/nginx).
 
  `/etc/systemd/system/letsencrypt.service` 
-
 ```
 [Unit]
 Description=Let's Encrypt renewal
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/letsencrypt certonly --agree-tos --renew-by-default --email _email@example.com_ --webroot -w _/path/to/html/_ -d _your.domain_
+ExecStart=/usr/bin/letsencrypt certonly --agree-tos --renew-by-default --email *email@example.com* --webroot -w */path/to/html/* -d *your.domain*
 ```
 
-Make sure the server configuration for the certificates points to `/etc/letsencrypt/live/_your.domain_/`.
+Make sure the server configuration for the certificates points to `/etc/letsencrypt/live/*your.domain*/`.
 
 Before adding a [timer](/index.php/Systemd/Timers "Systemd/Timers"), check that the service is working correctly and not trying to prompt anything.
 
 Then, you can add a timer to renew the certificates monthly.
 
  `/etc/systemd/system/letsencrypt.timer` 
-
 ```
 [Unit]
 Description=Monthly renewal of Let's Encrypt's certificates

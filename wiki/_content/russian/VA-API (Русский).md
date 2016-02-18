@@ -90,7 +90,6 @@ export LIBVA_DRIVER_NAME=vdpau
 Проверрьте настройки VAAPI выполнив `vainfo`, которое предоставляет пакет [libva](https://www.archlinux.org/packages/?name=libva):
 
  `$ vainfo` 
-
 ```
 libva info: VA-API version 0.38.0
 libva info: va_getDriverName() returns 0
@@ -113,7 +112,7 @@ vainfo: Supported profile and entrypoints
       VAProfileVC1Advanced            : VAEntrypointVLD
 ```
 
-Строка _VAEntrypointVLD_ означает, что ваша видеокарта поддерживает декодирование данного формата, а _VAEntrypointEncSlice_ — что доступно кодирование в этот формат.
+Строка *VAEntrypointVLD* означает, что ваша видеокарта поддерживает декодирование данного формата, а *VAEntrypointEncSlice* — что доступно кодирование в этот формат.
 
 ## Поддерживаемое программное обеспечение
 

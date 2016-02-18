@@ -71,7 +71,7 @@ JFS is a modern file system supporting many features, a few of which are listed 
 *   Designed to operate on SMP hardware, with code optimized for at least a 4-way SMP machine.
 *   TRIM support (since Kernel 3.7).
 
-**Note:** JFS uses a journal to maintain consistency of metadata _only_. Thus, only consistency of metadata (and not actual file contents) can be assured in the case of improper shutdown. This is also the case for XFS and ReiserFS. Ext3, on the other hand, does support journaling of _both_ metadata and data [[4]](http://www.thehackademy.net/madchat/ebooks/FileSystem/up2-6Galli.pdf), though with a significant performance penalty, and not by default.
+**Note:** JFS uses a journal to maintain consistency of metadata *only*. Thus, only consistency of metadata (and not actual file contents) can be assured in the case of improper shutdown. This is also the case for XFS and ReiserFS. Ext3, on the other hand, does support journaling of *both* metadata and data [[4]](http://www.thehackademy.net/madchat/ebooks/FileSystem/up2-6Galli.pdf), though with a significant performance penalty, and not by default.
 
 A more comprehensive (and technical) overview of the features in JFS can be found in the [JFS Overview](http://jfs.sourceforge.net/project/pub/jfs.pdf) authored by developer Steve Best.
 
@@ -120,7 +120,7 @@ There are several concepts that can be implemented with a JFS filesystem to boos
 *   Periodic defragmentation of the file system.
 *   Using the deadline I/O scheduler.
 *   Utilizing an external journal.
-*   Attaching the _noatime_ attribute the the file system in `/etc/fstab`.
+*   Attaching the *noatime* attribute the the file system in `/etc/fstab`.
 
 ### Defragmenting JFS
 
@@ -148,7 +148,7 @@ Basically, this script copies the data off the JFS file system to a backup drive
 
 ### Deadline I/O scheduler
 
-JFS seems to perform better when the kernel has been configured to use the _Deadline I/O Scheduler_. Indeed, JFS's performance seems to exceed that of other GNU/Linux file systems with this particular scheduler being employed [[8]](http://www.redhat.com/archives/ext3-users/2005-July/msg00018.html). There are several ways to utilize this scheduler. One is to recompile with the Deadline I/O scheduler set to the default:
+JFS seems to perform better when the kernel has been configured to use the *Deadline I/O Scheduler*. Indeed, JFS's performance seems to exceed that of other GNU/Linux file systems with this particular scheduler being employed [[8]](http://www.redhat.com/archives/ext3-users/2005-July/msg00018.html). There are several ways to utilize this scheduler. One is to recompile with the Deadline I/O scheduler set to the default:
 
 ```
 Block layer
@@ -158,7 +158,7 @@ Block layer
 
 ```
 
-If you are using a generic Arch package for your kernel, you can simply append _elevator=deadline_ to the kernel line commandline or permenantly to kernel line in your _/etc/default/grub_ and run _grub-mkconfig -o /boot/grub/grub.cfg_. The kernel entry would look something like:
+If you are using a generic Arch package for your kernel, you can simply append *elevator=deadline* to the kernel line commandline or permenantly to kernel line in your */etc/default/grub* and run *grub-mkconfig -o /boot/grub/grub.cfg*. The kernel entry would look something like:
 
 ```
 # (0) Arch 2.6.22
@@ -202,16 +202,16 @@ or a command can be issued to create both a new external journal and its corresp
 
 This last command formats BOTH the external journal and the JFS file system.
 
-**Note:** Obviously, an external journal is only effective if the journal and its file system exists on separate _physical_ devices.
+**Note:** Obviously, an external journal is only effective if the journal and its file system exists on separate *physical* devices.
 
 ### noatime fstab attribute
 
-Every time a file is accessed (read or write) the default for most file systems is to append the metadata associated with that file with an updated access time. Thus, even read operations incur an overhead associated with a write to the file system. This can lead to a significant degradation in performance in some usage scenarios. Appending _noatime_ to the fstab line for a JFS file system stops this action from happening. As access time is of little importance in most scenarios, this alteration has been widely touted as a fast and easy way to get a performance boost out of one's hardware. Even Linus Torvalds seems to be a proponent of this optimization [[9]](http://kerneltrap.org/node/14148).
+Every time a file is accessed (read or write) the default for most file systems is to append the metadata associated with that file with an updated access time. Thus, even read operations incur an overhead associated with a write to the file system. This can lead to a significant degradation in performance in some usage scenarios. Appending *noatime* to the fstab line for a JFS file system stops this action from happening. As access time is of little importance in most scenarios, this alteration has been widely touted as a fast and easy way to get a performance boost out of one's hardware. Even Linus Torvalds seems to be a proponent of this optimization [[9]](http://kerneltrap.org/node/14148).
 
 **Note:**
 
-*   One may also specify a **relatime** option which updates the atime if the previous atime is older than the mtime or ctime [[10]](http://kerneltrap.org/node/14148). In terms of performance, this will not be as fast as the _noatime_ mount option, but is useful if using applications that need to know when files were last read (like _mutt_).
-*   Using the _noatime/relatime_ option can improve disk performance with any file system, not just JFS.
+*   One may also specify a **relatime** option which updates the atime if the previous atime is older than the mtime or ctime [[10]](http://kerneltrap.org/node/14148). In terms of performance, this will not be as fast as the *noatime* mount option, but is useful if using applications that need to know when files were last read (like *mutt*).
+*   Using the *noatime/relatime* option can improve disk performance with any file system, not just JFS.
 
 Here is an example `/etc/fstab` entry with the **noatime** tag:
 
@@ -227,11 +227,11 @@ One may also mount a file system with the **noatime** attribute by invoking some
 
 ```
 
-**Note:** Access time is NOT the same as the _last-modified_ time. Disabling access time will still enable you to see when files were last modified by a write operation.
+**Note:** Access time is NOT the same as the *last-modified* time. Disabling access time will still enable you to see when files were last modified by a write operation.
 
 ### Journal modes
 
-JFS does not support various journal modes like [ext3](/index.php/Ext3 "Ext3"). Thus, passing the mount option _data=writeback_ with _mount_ or in `/etc/fstab` will have no effect on a JFS file system. JFS's current journaling mode is similar to Ext3's default journaling mode: _ordered_ [[11]](http://www.ibm.com/developerworks/linux/linux390/perf/tuning_res_journaling.html).
+JFS does not support various journal modes like [ext3](/index.php/Ext3 "Ext3"). Thus, passing the mount option *data=writeback* with *mount* or in `/etc/fstab` will have no effect on a JFS file system. JFS's current journaling mode is similar to Ext3's default journaling mode: *ordered* [[11]](http://www.ibm.com/developerworks/linux/linux390/perf/tuning_res_journaling.html).
 
 ### Variable block sizes
 
@@ -239,11 +239,11 @@ While the OS/2 port of JFS supports block sizes of 512, 1024, 2048, and 4096 byt
 
 ## fsck and recovery
 
-In the event that the file system does not get properly unmounted before being powered down, one will usually have to run **fsck** on a JFS file system in order to be able to remount it. This procedure usually only takes a few seconds, unless the log has been damaged. If running fsck returns an unrecognized file system error, try running **fsck.jfs** on the target device. Normally, _fsck_ is all that is needed.
+In the event that the file system does not get properly unmounted before being powered down, one will usually have to run **fsck** on a JFS file system in order to be able to remount it. This procedure usually only takes a few seconds, unless the log has been damaged. If running fsck returns an unrecognized file system error, try running **fsck.jfs** on the target device. Normally, *fsck* is all that is needed.
 
 If the superblock on your file system gets destroyed, it may be possible to recover some parts of the file system. Currently, the only tool able to do this is a utility called **jfsrec**. JFSrec is currently available from the AUR using the [jfsrec-svn](https://aur.archlinux.org/packages/jfsrec-svn/) package.
 
-There is also an AUR package called _jfsrec_, but this is merely a placeholder for _jfsrec-svn_ as JFSrec is currently only in its seventh SVN revision. Once installed, one simply need to type:
+There is also an AUR package called *jfsrec*, but this is merely a placeholder for *jfsrec-svn* as JFSrec is currently only in its seventh SVN revision. Once installed, one simply need to type:
 
 ```
 # jfsrec
@@ -262,7 +262,7 @@ While JFS is very stable in its current stage of development, there are some cau
 
 Occasionally, a JFS root partition will be unable to mount in normal read-write mode. This is usually due to the fact that the JFS root file system fails its fsck after an unclean shutdown. It is rare that JFS fails out of fsck, and it's usually due to the JFS log itself being corrupted.
 
-All that is required in this scenario is to boot your machine with a relatively recent Arch Linux LiveCD. Booting an Arch Linux livecd will give you access to all the JFS utilities and will load a kernel that is able to recognize JFS file systems. After booting the CD simply run _fsck_ (or possibly _fsck.jfs_) on your JFS root and it should recover just fine (even though the fsck will probably take longer than normal due to the log probably being damaged). Once the _fsck_ finishes, you should be able to boot your machine like normal.
+All that is required in this scenario is to boot your machine with a relatively recent Arch Linux LiveCD. Booting an Arch Linux livecd will give you access to all the JFS utilities and will load a kernel that is able to recognize JFS file systems. After booting the CD simply run *fsck* (or possibly *fsck.jfs*) on your JFS root and it should recover just fine (even though the fsck will probably take longer than normal due to the log probably being damaged). Once the *fsck* finishes, you should be able to boot your machine like normal.
 
 **Note:** This scenario happens less than 10% of the time in the case of an improper shutdown.
 
@@ -270,7 +270,7 @@ All that is required in this scenario is to boot your machine with a relatively 
 
 **Note:** This section applies to any journaled file system, not just JFS.
 
-The effectiveness of deleting files by overwriting their corresponding file system blocks with random data (i.e. using utilities like _shred_) can not be assured [[13]](http://lists.kde.org/?l=kfm-devel&m=105770965822522&w=2). Given the design of journaled file systems, maintenance issues, and performance liabilities; reliable shredding of files as a deletion method does not sit highly on the priority list for implementation on any journaled file system.
+The effectiveness of deleting files by overwriting their corresponding file system blocks with random data (i.e. using utilities like *shred*) can not be assured [[13]](http://lists.kde.org/?l=kfm-devel&m=105770965822522&w=2). Given the design of journaled file systems, maintenance issues, and performance liabilities; reliable shredding of files as a deletion method does not sit highly on the priority list for implementation on any journaled file system.
 
 ### Forced fsck on JFS root file system
 
@@ -281,7 +281,7 @@ touch /forcefsck
 
 ```
 
-and rebooting. On Arch linux systems with a JFS root on a partition under control of _device-mapper_ (i.e. the root device is a _lvm_ or a LUKS encrypted one), forcing an fsck can sometimes remove the _/usr/man/man3_ directory. The reason for this issue is not clear, but the problem has been able to be replicated [[14]](https://bbs.archlinux.org/viewtopic.php?id=41261).
+and rebooting. On Arch linux systems with a JFS root on a partition under control of *device-mapper* (i.e. the root device is a *lvm* or a LUKS encrypted one), forcing an fsck can sometimes remove the */usr/man/man3* directory. The reason for this issue is not clear, but the problem has been able to be replicated [[14]](https://bbs.archlinux.org/viewtopic.php?id=41261).
 
 It is suggested to get a list of Arch Packages that use `/usr/man/man3` by issuing a command similar to
 
@@ -290,9 +290,9 @@ find /var/lib/pacman/local/ -name files | xargs fgrep /man/man3/ | cut -d: -f1 |
 
 ```
 
-before attempting a forced fsck on a JFS root partition ([[15]](https://bbs.archlinux.org/viewtopic.php?id=41261) post #1). If `/usr/man/man3` does indeed disappear, simply reinstall all the packages listed in _man3_pkg_list_.
+before attempting a forced fsck on a JFS root partition ([[15]](https://bbs.archlinux.org/viewtopic.php?id=41261) post #1). If `/usr/man/man3` does indeed disappear, simply reinstall all the packages listed in *man3_pkg_list*.
 
-**Note:** If this problem does indeed happen, reinstalling all the packages using _/usr/man/man3_ does appear to fix the issue ([[16]](https://bbs.archlinux.org/viewtopic.php?id=41261) post #4).
+**Note:** If this problem does indeed happen, reinstalling all the packages using */usr/man/man3* does appear to fix the issue ([[16]](https://bbs.archlinux.org/viewtopic.php?id=41261) post #4).
 
 As stated above, the reason for this issue isn't clear at the moment; but it may have something to do with the fact that a forced fsck runs through higher phases of file system checks that only happen when a JFS log gets damaged in an improper dismounting of the partition.
 

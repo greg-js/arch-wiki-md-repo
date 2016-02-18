@@ -21,11 +21,11 @@ Se pueden comenzar fácilmente los scripts o aplicaciones como demonios, consult
 
 ### Systemd
 
-_systemd_ es un reemplazo para _initscripts_ que permite procesos de arranque más rápidos al simultanear el inicio de los servicios. Los servicios que se inician por _systemd_ se encuentran en las subcarpetas de `/etc/systemd/system/`. Los servicios se pueden habilitar mediante la orden `systemctl`. Para obtener más información acerca de _systemd_ y cómo escribir scripts autostarts para él, consulte el artículo sobre [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)").
+*systemd* es un reemplazo para *initscripts* que permite procesos de arranque más rápidos al simultanear el inicio de los servicios. Los servicios que se inician por *systemd* se encuentran en las subcarpetas de `/etc/systemd/system/`. Los servicios se pueden habilitar mediante la orden `systemctl`. Para obtener más información acerca de *systemd* y cómo escribir scripts autostarts para él, consulte el artículo sobre [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)").
 
 ### Runit
 
-_runit_ es un reemplazo maduro para _initscripts_, que ofrece supervisión de procesos, puesta en marcha en paralelo, árboles de servicios por cada usuario, manipulación detallada de los cgroup, sistema de dependencias flexible, y tiempos de arranque no penalizados por dbus. Los servicios de nivel-root son enlaces simbólicos en `/service` cuyos directorios de servicio reales están en `/etc/sv`. Consulte el artículo sobre [Runit](/index.php/Runit "Runit") para obtener más información.
+*runit* es un reemplazo maduro para *initscripts*, que ofrece supervisión de procesos, puesta en marcha en paralelo, árboles de servicios por cada usuario, manipulación detallada de los cgroup, sistema de dependencias flexible, y tiempos de arranque no penalizados por dbus. Los servicios de nivel-root son enlaces simbólicos en `/service` cuyos directorios de servicio reales están en `/etc/sv`. Consulte el artículo sobre [Runit](/index.php/Runit "Runit") para obtener más información.
 
 ## Shell
 

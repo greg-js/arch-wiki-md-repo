@@ -28,7 +28,7 @@ The following desktop environments use their own implementations to display noti
 
 ### Standalone
 
-In other desktop environments, the notification server needs to be launched using your WM's/DE's "autostart" option. (It _can_ be launched on the first call via DBus, but that's not very desirable as it needs global configuration.)
+In other desktop environments, the notification server needs to be launched using your WM's/DE's "autostart" option. (It *can* be launched on the first call via DBus, but that's not very desirable as it needs global configuration.)
 
 You can choose one of the following implementations:
 
@@ -87,7 +87,6 @@ The following examples display simple a "Hello world" notification.
 *   Dependency: [libnotify](https://www.archlinux.org/packages/?name=libnotify)
 
  `hello_world.sh` 
-
 ```
 #!/bin/bash
 notify-send 'Hello world!' 'This is an example notification.' --icon=dialog-information
@@ -96,7 +95,7 @@ notify-send 'Hello world!' 'This is an example notification.' --icon=dialog-info
 **Tip:**
 
 *   An overview on the available icons can be found [here](http://standards.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html).
-*   To send desktop notification from a background script running as root (replace `_X_user_` with the user running X): `# sudo -u _X_user_ DISPLAY=:0 notify-send 'Hello world!' 'This is an example notification.'` 
+*   To send desktop notification from a background script running as root (replace `*X_user*` with the user running X): `# sudo -u *X_user* DISPLAY=:0 notify-send 'Hello world!' 'This is an example notification.'` 
 
 **Boo**
 
@@ -106,7 +105,6 @@ notify-send 'Hello world!' 'This is an example notification.' --icon=dialog-info
 *   Run with: `mono hello_world.exe` (or `booi hello_world.boo`)
 
  `hello_world.boo` 
-
 ```
 import Notifications from "notify-sharp"
 Hello = Notification()
@@ -122,7 +120,6 @@ Hello.Show()
 *   Build with: `gcc -o hello_world `pkg-config --cflags --libs libnotify` hello_world.c`
 
  `hello_world.c` 
-
 ```
 #include <libnotify/notify.h>
 void main () {
@@ -140,7 +137,6 @@ void main () {
 *   Build with: `g++ -o hello_world `pkg-config --cflags --libs libnotifymm-1.0` hello_world.cc`
 
  `hello_world.cc` 
-
 ```
 #include <libnotifymm.h>
 int main(int argc, char *argv[]) {
@@ -157,7 +153,6 @@ int main(int argc, char *argv[]) {
 *   Run with: `mono hello_world.exe`
 
  `hello_world.cs` 
-
 ```
 using Notifications;
 public class HelloWorld {
@@ -179,7 +174,6 @@ public class HelloWorld {
 *   Run with: `mono hello_world.exe`
 
  `hello_world.cs` 
-
 ```
 @args -pkg:notify-sharp-3.0
 use Notifications
@@ -200,7 +194,6 @@ class HelloWorld
 *   Run with: `mono hello_world.exe`
 
  `hello_world.fs` 
-
 ```
 open Notifications
 let Hello = new Notification()
@@ -217,7 +210,6 @@ Hello.Show()
 *   Build with: `valac --pkg libnotify hello_world.gs`
 
  `hello_world.gs` 
-
 ```
 uses 
 	Notify
@@ -235,7 +227,6 @@ init
 *   Run with: `java -cp /usr/share/groovy/embeddable/groovy-all.jar:/usr/share/java/gtk.jar:HelloWorld.jar HelloWorld` (or `groovy -cp /usr/share/java/gtk.jar HelloWorld.groovy`)
 
  `HelloWorld.groovy` 
-
 ```
 import org.gnome.gtk.*
 import org.gnome.notify.*
@@ -254,7 +245,6 @@ Hello.show()
 *   Run with: `java -cp /usr/share/java/gtk.jar:HelloWorld.jar HelloWorld`
 
  `HelloWorld.java` 
-
 ```
 import org.gnome.gtk.Gtk;
 import org.gnome.notify.Notify;
@@ -276,7 +266,6 @@ public class HelloWorld
 *   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [gjs](https://www.archlinux.org/packages/?name=gjs) (works also with [seed](https://www.archlinux.org/packages/?name=seed))
 
  `hello_world.js` 
-
 ```
 #!/usr/bin/gjs
 const Notify = imports.gi.Notify;
@@ -292,7 +281,6 @@ Hello.show ();
 *   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [lua-lgi](https://www.archlinux.org/packages/?name=lua-lgi)
 
  `hello_world.lua` 
-
 ```
 #!/usr/bin/lua
 lgi = require 'lgi'
@@ -307,7 +295,6 @@ Hello:show()
 *   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [perl-glib-object-introspection](https://aur.archlinux.org/packages/perl-glib-object-introspection/)
 
  `hello_world.pl` 
-
 ```
 #!/usr/bin/perl
 use Glib::Object::Introspection;
@@ -325,7 +312,6 @@ $hello->show;
 *   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [python-gobject](https://www.archlinux.org/packages/?name=python-gobject) (or [python2-gobject](https://www.archlinux.org/packages/?name=python2-gobject) for Python 2)
 
  `hello_world.py` 
-
 ```
 #!/usr/bin/python
 from gi.repository import Notify
@@ -339,7 +325,6 @@ Hello.show()
 *   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [ruby-gir_ffi](https://aur.archlinux.org/packages/ruby-gir_ffi/)
 
  `hello_world.rb` 
-
 ```
 #!/usr/bin/ruby
 require 'gir_ffi'
@@ -355,7 +340,6 @@ Hello.show
 *   notification crate: [notify-rust](https://crates.io/crates/notify-rust)
 
  `hello_world.rs` 
-
 ```
 extern crate notify_rust;
 use notify_rust::Notification;
@@ -376,7 +360,6 @@ fn main(){
 *   Run with: `java -cp /usr/share/java/gtk.jar:HelloWorld.jar HelloWorld` (or `scala -cp /usr/share/java/gtk.jar HelloWorld.scala`)
 
  `HelloWorld.scala` 
-
 ```
 import org.gnome.gtk._
 import org.gnome.notify._
@@ -398,7 +381,6 @@ object HelloWorld {
 *   Build with: `valac --pkg libnotify hello_world.vala`
 
  `hello_world.vala` 
-
 ```
 using Notify;
 public class HelloWorld {
@@ -418,7 +400,6 @@ public class HelloWorld {
 *   Run with: `mono hello_world.exe`
 
  `hello_world.vb` 
-
 ```
 Imports Notifications
 Public Class Hello

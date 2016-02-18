@@ -198,7 +198,6 @@ Include = /etc/pacman.d/mirrorlist
 *   حزمة [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) قادرة على بناء أكواد 32 بت و64 بت، يمكنك تثبيت `multilib-devel` لاستبدال الحزم الموضوحة أدناه، لكنك ما زلت تحتاج إلى حزمة `base-devel` بسبب الحزم الأخرى التي تضمها، اطلع على https://bbs.archlinux.org/viewtopic.php?id=102828 لمزيد من المعلومات.
 
  `# pacman -S gcc-multilib` 
-
 ```
 resolving dependencies...
 warning: dependency cycle detected:

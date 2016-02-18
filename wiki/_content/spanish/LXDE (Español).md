@@ -41,7 +41,7 @@ Nosotros usamos LXDE por sus excelentes cualidades tales como:
 	(Persisten algunos errores en lxsession relacionados con la gestión de sesiones.
 
 ```
-_**lxsession-lite**_ es una versión de lxsession que carece de la capacidad de gestionar las sesiones. La estabilidad de lxsession-lite es mejor que la de lxsession, aunque claro está no puede grabar y recuperar sessions. Se recomienda utlizar, por tanto, _**lxsession-lite**_ hasta que se solucionen los problemas de lxsession.)
+***lxsession-lite*** es una versión de lxsession que carece de la capacidad de gestionar las sesiones. La estabilidad de lxsession-lite es mejor que la de lxsession, aunque claro está no puede grabar y recuperar sessions. Se recomienda utlizar, por tanto, ***lxsession-lite*** hasta que se solucionen los problemas de lxsession.)
 
 ```
 
@@ -177,7 +177,6 @@ LXDE intentará usar gestor de ventanas desde el archivo de configuración de us
 Reemplace el comando openbox-lxde con el gestor de ventanas de su elección:
 
  `~/.config/lxsession/LXDE/desktop.conf` 
-
 ```
 [Session]
 window_manager=openbox-lxde
@@ -186,7 +185,6 @@ window_manager=openbox-lxde
 Por metacity:
 
  `~/.config/lxsession/LXDE/desktop.conf` 
-
 ```
 [Session]
 window_manager=metacity
@@ -195,7 +193,6 @@ window_manager=metacity
 Por compiz:
 
  `~/.config/lxsession/LXDE/desktop.conf` 
-
 ```
 [Session]
 window_manager=compiz ccp --indirect-rendering

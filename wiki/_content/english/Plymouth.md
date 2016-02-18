@@ -42,7 +42,6 @@ Add `plymouth` to the HOOKS array in [mkinitcpio.conf](/index.php/Mkinitcpio.con
 For early KMS start (if you are using the open drivers) add the module [radeon](/index.php/Radeon "Radeon") (for radeon cards), [i915](/index.php/I915 "I915") (for intel cards) or [nouveau](/index.php/Nouveau "Nouveau") (for nvidia cards) to the MODULES line in `/etc/mkinitcpio.conf`:
 
  `/etc/mkinitcpio.conf` 
-
 ```
 MODULES="i915"
 **or**
@@ -68,7 +67,7 @@ Rebuild your initrd image (see [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") 
 
 **Warning:** Plymouth version 0.9.2-5 has been reported to cause issues when starting [LightDM](/index.php/LightDM "LightDM"). The issue is known on upstream and you should use light display managers like [SLiM](/index.php/SLiM "SLiM") or [SDDM](/index.php/SDDM "SDDM") for now.
 
-For _smooth transition_ to [display manager](/index.php/Display_manager "Display manager") you have to:
+For *smooth transition* to [display manager](/index.php/Display_manager "Display manager") you have to:
 
 1.  Disable your Display Manager Unit, e.g. `systemctl disable gdm.service`
 2.  Enable the respective DM-plymouth Unit (GDM, KDM, LXDM, SLiM units provided), e.g. `systemctl enable gdm-plymouth.service`
@@ -78,7 +77,6 @@ For _smooth transition_ to [display manager](/index.php/Display_manager "Display
 As of version 0.9.0 plymouth has a new configuration option available in /etc/plymouth/plymouthd.conf
 
  `/etc/plymouth/plymouthd.conf` 
-
 ```
 [Daemon]
 Theme=spinner
@@ -97,15 +95,14 @@ Plymouth comes with a selection of themes:
 4.  **Solar**: "Space theme with violent flaring blue star"
 5.  **Spinner**: "Simple theme with a loading spinner"
 6.  **Spinfinity**: "Simple theme that shows a rotating infinity sign in the center of the screen"
-7.  _(**Text**: "Text mode theme with tricolor progress bar")_
-8.  _(**Details**: "Verbose fallback theme")_
+7.  *(**Text**: "Text mode theme with tricolor progress bar")*
+8.  *(**Details**: "Verbose fallback theme")*
 
 In addition you can install other themes from [AUR](/index.php/AUR "AUR"), just have a look at the "Required by"-Array on [plymouth](https://aur.archlinux.org/packages/plymouth/).
 
 By default, **spinner** theme is selected. You can change the theme by editing `/etc/plymouth/plymouthd.conf`, for example:
 
  `/etc/plymouth/plymouthd.conf` 
-
 ```
 [Daemon]
 Theme=spinner
@@ -124,7 +121,6 @@ $ plymouth-set-default-theme -l
 or:
 
  `$ ls /usr/share/plymouth/themes` 
-
 ```
 details  glow    solar       spinner  tribar
 fade-in  script  spinfinity  text

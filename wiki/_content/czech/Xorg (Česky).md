@@ -121,7 +121,7 @@ $ lspci | grep VGA
 
 ```
 
-Poté nainstalujte ovladač příslušný k dané kartě. Tyto soubory můžete _vyhledat_ spuštěním následujícího příkazu:
+Poté nainstalujte ovladač příslušný k dané kartě. Tyto soubory můžete *vyhledat* spuštěním následujícího příkazu:
 
 ```
 # pacman -Ss xf86-video
@@ -176,7 +176,7 @@ EndSection
 
 #### Více monitorů/Dual screen
 
-**Warning:** `nvidia-settings` a `xrandr` jsou uživatelsky přívětivé nástroje, _nicméně_ vytváří `xorg.conf`, jenž je postupně zatracován.
+**Warning:** `nvidia-settings` a `xrandr` jsou uživatelsky přívětivé nástroje, *nicméně* vytváří `xorg.conf`, jenž je postupně zatracován.
 
 Abyste získali dvojí obrazovku, musíte upravit předešle vytvořený soubor `10-monitor.conf`. Přidejte pro každý monitor jednu sekci Monitor, Device a Screen a nakonec přidejte sekci ServerLayout pro jejich správu.
 
@@ -290,7 +290,7 @@ EndSection
 
 **Převzato z [https://fedoraproject.org/wiki/Input_device_configuration](https://fedoraproject.org/wiki/Input_device_configuration)**
 
-InputClass je nový druh konfigurační sekce, která není specifická pro jedno zařízení, nýbrž se týká jisté třídy zařízení, včetně zařízení přidávaných za běhu. Sekce InputClass je omezena specifikovanými _shodami_ (matches) — aby se pro určité vstupní zařízení aplikovala, všechna kritéria musí být pro dané zařízení splněna. Příklad sekce InputClass následuje níže:
+InputClass je nový druh konfigurační sekce, která není specifická pro jedno zařízení, nýbrž se týká jisté třídy zařízení, včetně zařízení přidávaných za běhu. Sekce InputClass je omezena specifikovanými *shodami* (matches) — aby se pro určité vstupní zařízení aplikovala, všechna kritéria musí být pro dané zařízení splněna. Příklad sekce InputClass následuje níže:
 
 ```
 Section "InputClass"
@@ -301,7 +301,7 @@ EndSection
 
 ```
 
-Pokud je tento úryvek přítomný v souboru `xorg.conf` nebo v některém ze souborů v xorg.conf.d, k jakémukoliv touchpadu přítomném v systému je přiřazen ovladač synaptics. Kvůli pořadí nahrávání (alfanumerické řazení úryvků v xorg.conf.d) přepisuje nastavení určené volbou Driver jakoukoliv _předešlou_ volbu ovladače — čím obecnější je třída, tím dříve by měla být uvedena. Výchozí úryvek dodávaný s balíčkem xorg-x11-drv-Xorg je `00-evdev.conf` a aplikuje na všechna zařízení ovladač evdev.
+Pokud je tento úryvek přítomný v souboru `xorg.conf` nebo v některém ze souborů v xorg.conf.d, k jakémukoliv touchpadu přítomném v systému je přiřazen ovladač synaptics. Kvůli pořadí nahrávání (alfanumerické řazení úryvků v xorg.conf.d) přepisuje nastavení určené volbou Driver jakoukoliv *předešlou* volbu ovladače — čím obecnější je třída, tím dříve by měla být uvedena. Výchozí úryvek dodávaný s balíčkem xorg-x11-drv-Xorg je `00-evdev.conf` a aplikuje na všechna zařízení ovladač evdev.
 
 Volby Match určují, na která zařízení lze danou sekci aplikovat. Aby nastala shoda s nějakým zařízením, musí být splněna všechna kritéria určená Match řádky. Tyto jsou podporovány následující (s příklady):
 
@@ -339,7 +339,7 @@ EndSection
 
 #### Ukázkové konfigurace
 
-Následující podsekce popisují ukázkové konfigurace pro běžně používané konfigurační volby. Měli byste vědět, že pokud používáte desktopové prostředí, jako GNOME nebo KDE, volby nastavené v `xorg.conf` _mohou_ být po přihlášení přepsány nastaveními konkrétního uživatele.
+Následující podsekce popisují ukázkové konfigurace pro běžně používané konfigurační volby. Měli byste vědět, že pokud používáte desktopové prostředí, jako GNOME nebo KDE, volby nastavené v `xorg.conf` *mohou* být po přihlášení přepsány nastaveními konkrétního uživatele.
 
 ##### Příklad: Emulace kolečka (pro Trackpoint)
 
@@ -736,15 +736,15 @@ to `InputDevice` section for keyboard.
 
 ### Apple keyboard issues
 
-	_See: [Apple Keyboard](/index.php/Apple_Keyboard "Apple Keyboard")_
+	*See: [Apple Keyboard](/index.php/Apple_Keyboard "Apple Keyboard")*
 
 ### Touchpad tap-click issues
 
-	_See: [Synaptics](/index.php/Synaptics "Synaptics")_
+	*See: [Synaptics](/index.php/Synaptics "Synaptics")*
 
 ### Extra mouse buttons not recognized
 
-	_See: [Get All Mouse Buttons Working](/index.php/Get_All_Mouse_Buttons_Working "Get All Mouse Buttons Working")_
+	*See: [Get All Mouse Buttons Working](/index.php/Get_All_Mouse_Buttons_Working "Get All Mouse Buttons Working")*
 
 ### X clients started with "su" fail
 
@@ -759,7 +759,7 @@ to `/etc/pam.d/su`. `pam_xauth` will then properly set environment variables and
 
 ### Missing libraries
 
-*   Error message: "_libX... does not exist_"
+*   Error message: "*libX... does not exist*"
 
 In most cases, all you need to do is take the name of the library (e.g., `libXau.so.1`), convert it all to lowercase, remove the extension, and install it:
 
@@ -779,7 +779,7 @@ Reinstall the packages xproto and libx11:
 
 ### Program requests "font '(null)'"
 
-*   Error message: "_unable to load font `(null)'._"
+*   Error message: "*unable to load font `(null)'.*"
 
 Some programs only work with bitmap fonts. Two major packages with bitmap fonts are available, xorg-fonts-75dpi and xorg-fonts-100dpi. You do not need both; one should be enough. To find out which one would be better in your case, try this:
 

@@ -59,7 +59,6 @@ Where **/dev/sdXY** is the partition of your ESP.
 You can read the comments in the install script for explanations of the various installation options.
 
 **Note:** By default `refind-install` installs only the driver for the file system on which kernel resides. Additional file systems need to be installed manually or you can install all drivers with the `--alldrivers` option. This is useful for bootable USB flash drives e.g.
-
 ```
 # refind-install --usedefault /dev/sdXY --alldrivers
 
@@ -101,7 +100,7 @@ At this point, you should be able to reboot into rEFInd but it will not be able 
 
 ```
 
-rEFInd automatically loads all drivers from the subdirectories `drivers` and `drivers__arch_` (e.g. `drivers_x64`) in its install directory.
+rEFInd automatically loads all drivers from the subdirectories `drivers` and `drivers_*arch*` (e.g. `drivers_x64`) in its install directory.
 
 ```
 # cp /usr/share/refind/drivers_x64/**drivername**_x64.efi $esp/EFI/refind/drivers_x64/
@@ -142,7 +141,6 @@ Pacman updates the rEFInd files in `/usr/share/refind` and will not copy new fil
 To automate this process, you need a .path file for watching for rEFInd updates and a .service file for copying the new files and updating the nvram.
 
  `/etc/systemd/system/refind_update.path` 
-
 ```
 [Unit]
 Description=path monitor for rEFInd updates
@@ -154,9 +152,7 @@ PathChanged=/usr/share/refind
 WantedBy=multi-user.target
 
 ```
-
  `/etc/systemd/system/refind_update.service` 
-
 ```
 [Unit]
 Description=rEFInd boot manager update
@@ -182,7 +178,6 @@ There are two methods for setting the [kernel parameters](/index.php/Kernel_para
 If rEFInd automatically detects your kernel, you can place a `refind_linux.conf` file containing the kernel parameters in the same directory as your kernel. You can use `/usr/share/refind/refind_linux.conf-sample` as a starting point. The first uncommented line of `refind_linux.conf` will be the default parameters for the kernel. Subsequent lines will create entries in a submenu accessible using `+`, `F2`, or `Insert`.
 
  `/boot/refind_linux.conf` 
-
 ```
 "Boot using default options"     "root=PARTUUID=XXXXXXXX rw add_efi_memmap"
 "Boot to terminal"               "root=PARTUUID=XXXXXXXX rw add_efi_memmap systemd.unit=multi-user.target"
@@ -206,7 +201,6 @@ If you do not specify an `initrd=` parameter, rEFInd will automatically add it b
 If your kernel is not autodetected, or if you simply want more control over the options for a menu entry, you can manually create boot entries using stanzas in `refind.conf`. Ensure that `scanfor` includes `manual` or these entries will not appear in rEFInd's menu. Kernel parameters are set with the `options` keyword. rEFInd will append the `initrd=` parameter using the file specified by the `initrd` keyword in the stanza. If you need additional initrds (e.g. for [Microcode](/index.php/Microcode "Microcode")), you can specify them in `options` (and the one specified by the `initrd` keyword will be added to the end).
 
  `$esp/EFI/refind/refind.conf` 
-
 ```
 ...
 
@@ -239,7 +233,6 @@ rEFInd is compatible with the EFI system partition created by a UEFI Windows ins
 rEFInd supports running various 3rd-party tools. Tools need to be installed separately. Edit `showtools` in `refind.conf` to choose which ones to show.
 
  `$esp/EFI/refind/refind.conf` 
-
 ```
 ...
 showtools **shell**, **memtest**, **gdisk**, **netboot**, ...
@@ -299,7 +292,6 @@ Now you can access your file system from UEFI shell.
 If booting a [btrfs](/index.php/Btrfs "Btrfs") subvolume as root, amend the `options` line with `rootflags=subvol=<root subvolume>`. In the example below, root has been mounted as a btrfs subvolume called 'ROOT' (e.g. `mount -o subvol=ROOT /dev/sdxY /mnt`):
 
  `$esp/EFI/refind/refind.conf` 
-
 ```
 ...
 

@@ -60,7 +60,7 @@ Visite la [tabla de contenidos](/index.php/Table_of_Contents_(Espa%C3%B1ol) "Tab
 
 	[Canales IRC](/index.php/IRC_Channels_(Espa%C3%B1ol) "IRC Channels (Español)")
 
-	Para reunirse con sus compañeros _«Archers»_ y mantener una buena charla, visite estos canales.
+	Para reunirse con sus compañeros *«Archers»* y mantener una buena charla, visite estos canales.
 
 ## El equipo de traducción de ArchWiki al español
 

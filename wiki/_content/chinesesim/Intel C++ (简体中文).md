@@ -56,15 +56,15 @@ fi
 
 **Note:** 可以简单地通过注释 **_CC**变量切换GCC或ICC。
 
-**Note:** 如果用以上的方法编译失败请使用 _gcc_编译, 所以你应该测试你的程序是否能用 _icc_正确编译。
+**Note:** 如果用以上的方法编译失败请使用 *gcc*编译, 所以你应该测试你的程序是否能用 *icc*正确编译。
 
 测试你的软件是否真的是用ICC编译的:
 
 *   输入命令 **ldd [你的程序] | grep intel** 如果这个程序连接到一个位于 **/opt/intel/lib/**中的共享库，那么它就是ICC编译的。
 
-*   另一种方法是观察编译时的输出，看他是否使用了_icc_ 或者 _icpc_ 命令。
+*   另一种方法是观察编译时的输出，看他是否使用了*icc* 或者 *icpc* 命令。
 
-*   最后一种方法是看警告信息是不是_icc_风格的。
+*   最后一种方法是看警告信息是不是*icc*风格的。
 
 ## icc CFLAGS
 
@@ -136,7 +136,7 @@ pdcm sse4_1 lahf_lm dts tpr_shadow vnmi flexpriority
 | **optipng** | OK | Works with the [Method 1](/index.php/Intel_C%2B%2B#Method_1 "Intel C++"). Comment out LD=xild in makepkg.conf |
 | **python-numpy** | OK | We must edit the PKGBUILD. [python-numpy-mkl](https://aur.archlinux.org/packages/python-numpy-mkl/) |
 | **python-scipy** | OK | We must edit the PKGBUILD. [python-scipy-mkl](https://aur.archlinux.org/packages/python-scipy-mkl/) |
-| **Qt** | OK | We must add the option _-platform linux-icc-64 (or 32)_ in the configure command |
+| **Qt** | OK | We must add the option *-platform linux-icc-64 (or 32)* in the configure command |
 | **systemd** | Fail | undefined reference to `server_dispatch_message' |
 
 **图例:**

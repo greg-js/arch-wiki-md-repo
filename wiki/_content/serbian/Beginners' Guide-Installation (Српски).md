@@ -69,9 +69,9 @@ Bicete obavesteni da ucitate ethernet drajvere rucno, ako zelite. Udev je priloc
 
 Dostupni interfejsi ce se pojaviti. Ako su jedan interfejs i HWaddr (**H**ard**W**are **addr**ess) izlistani, onda je vas modul vec ucitan. Ako vas interfejs nije izlistan, mozete da uradite probe iz instalera ili da to rucno uradite iz druge virtualne konzole. Izaberite vas interfejs da bi nastavili.
 
-Instaler ce vas zatim upitati da li zelite da koristite DHCP. Ako izaberete Yes, to ce pokrenuti **dhcpcd** da pronadje dostupni gateway i da izda zahtev za IP adresom; Izborom No opcije cete biti upitani za vasu staticku IP adresu, netmask, broadcast, gateway DNS IP, HTTP proxy i FTP proxy. Nakon toga bicete vraceni na _Net instalacioni meni_
+Instaler ce vas zatim upitati da li zelite da koristite DHCP. Ako izaberete Yes, to ce pokrenuti **dhcpcd** da pronadje dostupni gateway i da izda zahtev za IP adresom; Izborom No opcije cete biti upitani za vasu staticku IP adresu, netmask, broadcast, gateway DNS IP, HTTP proxy i FTP proxy. Nakon toga bicete vraceni na *Net instalacioni meni*
 
-Izaberite _Choose Mirror_ i selektujte FTP/HTTP odraz. Kada zavrsite, vratite se na glavni meni.
+Izaberite *Choose Mirror* i selektujte FTP/HTTP odraz. Kada zavrsite, vratite se na glavni meni.
 
 **Note:** archlinux.org je usporen na 50KB/s
 
@@ -119,7 +119,6 @@ Osnovna procedura je:
 *   Proverite da je udev ucitao drajver i da je drajver kreirao upotrebljiv vajrles kernel interfejs sa `/usr/sbin/iwconfig`:
 
  `# iwconfig` 
-
 ```
  lo no wireless extensions.
  eth0 no wireless extensions.
@@ -155,7 +154,7 @@ Ako niste sigurni, pokrenite `/usr/bin/dmesg` da upitate kernel log da li su vaj
 
 Ako ne postoji izlaz, moze se zakljuciti da vajrles cipset ne zahteva firmver.
 
-**Note:** **Firmver paketi za vajrles cipove (za kartice koje ih zahtevaju) su unapred instalirani pod /lib/firmware u zivom okruzenju (na CD/USB stiku) _ali moraju biti eksplicitno instalirani na vas sistem da pruze funkcionalnost vajrlesa nakon sto restartujete u sistem!_ Selekcija i instalacija paketa je pokrivena kasnije u ovom uputstvu. Obezbedite instalaciju vajrles modula i firmvera tokom koraka selekcije paketa! Pogledajte [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") ako niste sigurni oko zahteva odgovarajuceg firmvera za vas specificni skup cipova. Ovo je vrlo cesta greska.**
+**Note:** **Firmver paketi za vajrles cipove (za kartice koje ih zahtevaju) su unapred instalirani pod /lib/firmware u zivom okruzenju (na CD/USB stiku) *ali moraju biti eksplicitno instalirani na vas sistem da pruze funkcionalnost vajrlesa nakon sto restartujete u sistem!* Selekcija i instalacija paketa je pokrivena kasnije u ovom uputstvu. Obezbedite instalaciju vajrles modula i firmvera tokom koraka selekcije paketa! Pogledajte [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") ako niste sigurni oko zahteva odgovarajuceg firmvera za vas specificni skup cipova. Ovo je vrlo cesta greska.**
 
 *   Ako je ESSID zaboravljen ili je nepoznat, upotrebite `/sbin/iwlist <interface> scan` da skenirate mreze u okruzenju.
 
@@ -256,9 +255,9 @@ Izaberite prvu opciju na meniju "Prepare Hard Drive".
 
 Auto-Prepare deli disk na sledecu konfiguraciju:
 
-*   ext2 /boot paricija, pocetna velicina 32MB. _Bicete upitani da modifikujete velicinu prema vasim potrebama._
-*   swap paricija, pocetna velicina 256MB. _Bicete upitani da modifikujete velicinu prema vasim potrebama._
-*   Odvojena / i /home particija, (velicina isto mogu biti zadate). Dostupni fajl sistemi su ext2, ext3, ext4, reiserfs, xfs and jfs, ali zapamtite da _oba / i /home ce deliti isti fajl sistem tip_ ako izaberete Auto Prepare opciju.
+*   ext2 /boot paricija, pocetna velicina 32MB. *Bicete upitani da modifikujete velicinu prema vasim potrebama.*
+*   swap paricija, pocetna velicina 256MB. *Bicete upitani da modifikujete velicinu prema vasim potrebama.*
+*   Odvojena / i /home particija, (velicina isto mogu biti zadate). Dostupni fajl sistemi su ext2, ext3, ext4, reiserfs, xfs and jfs, ali zapamtite da *oba / i /home ce deliti isti fajl sistem tip* ako izaberete Auto Prepare opciju.
 
 Znajte da ce Be Auto-prepare kompletno obrisate izabrani hard disk. Procitajte <font color="red">upozorenje</font> prikazano od strane instalera veoma pazljivo i uverite se da je ispravan uredjaj selektovan za particionisanje.
 
@@ -272,7 +271,7 @@ Ako je ovo selektovano, sistem ce listati fajl sisteme i tacke za montiranje koj
 
 *   Opcija 4: Vracanje zadnjih fajl sistem izmena
 
-_U ovom momentu, napredniji GNU/Linux korisnici koji su upoznati i opusteni kada je rucno particionisanje u pitanju, mogu preskociti dole na **[Selektovanje paketa](#Select_Packages)** ispod._
+*U ovom momentu, napredniji GNU/Linux korisnici koji su upoznati i opusteni kada je rucno particionisanje u pitanju, mogu preskociti dole na **[Selektovanje paketa](#Select_Packages)** ispod.*
 
 **Note:** Ako instalirate na USB fles, pogledajte "[Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key")".
 
@@ -308,21 +307,21 @@ Sema za particionisanje diska je zasebna za svaku osobu. Izbor svakog korisnika 
 
 Fajl sistem kandidati za zasebne particije obuhvataju:
 
-**/** (root) _Root fajl sistem je primarni fajl sistem iz kog se svi ostali fajl sistemi granaju; vrh hijerarhije. Svi fajlovi i direktorijumi se pojavljuju pod "/", cak i ako su skladisteni na drugim fizickim uredjajima. Sadrzaji root fajl sistema moraju biti adekvatni za startovanje, povratak, oporavak i/ili popravku sistema. Tako da odgovarajuci direktorijumi pod / nisu sami za sebe kandidati za zasebne particije. (Pogledajte upozorenje ispod)."_
+**/** (root) *Root fajl sistem je primarni fajl sistem iz kog se svi ostali fajl sistemi granaju; vrh hijerarhije. Svi fajlovi i direktorijumi se pojavljuju pod "/", cak i ako su skladisteni na drugim fizickim uredjajima. Sadrzaji root fajl sistema moraju biti adekvatni za startovanje, povratak, oporavak i/ili popravku sistema. Tako da odgovarajuci direktorijumi pod / nisu sami za sebe kandidati za zasebne particije. (Pogledajte upozorenje ispod)."*
 
-**/boot** _Ovaj direktorijum sadrzi kernel i ramdisk odraze i konfiguracioni fajl za bootloader, i bootloader faze. /boot takodje skladisti podatke koji se koriste pre nego sto kernel pocne sa izvrsavanjem programa za korisnicki prostor. Ovo moze da sadrzi cuvanje master boot sektora i sektor map fajlova. /boot je od vitalnog znacaja za startovanje, ali je jedinstven po tome sto moze biti skladisten na svojoj zasebnoj particiji (ukoliko je neophodno)."_
+**/boot** *Ovaj direktorijum sadrzi kernel i ramdisk odraze i konfiguracioni fajl za bootloader, i bootloader faze. /boot takodje skladisti podatke koji se koriste pre nego sto kernel pocne sa izvrsavanjem programa za korisnicki prostor. Ovo moze da sadrzi cuvanje master boot sektora i sektor map fajlova. /boot je od vitalnog znacaja za startovanje, ali je jedinstven po tome sto moze biti skladisten na svojoj zasebnoj particiji (ukoliko je neophodno)."*
 
-**/home** _Pruza poddirektorijume, svaki imenovan za korisnika sistema, za skladistenje raznih licnih podataka kao i konfiguracionih fajlova za aplikacije na nivou korisnika._
+**/home** *Pruza poddirektorijume, svaki imenovan za korisnika sistema, za skladistenje raznih licnih podataka kao i konfiguracionih fajlova za aplikacije na nivou korisnika.*
 
-**/usr** _Dok je root primarni fajl sistem, /usr je sekundarna hijerarhija za sve podatke sistem korisnika, ukljucujuci vecinu visekorisnickih pomocnih programa i aplikacija. /usr je upotrebljiv od strane vise korisnika i dozvoljeno je samo njegovo citanje. To znaci da ce /usr biti deljiv izmedju nekoliko razlicitih hostova i u njega ne sme biti pisano, osim u slucaju osvezavanja/nadogradnje sistema. Svaka informacija koja je specificna za hosta ili varira po pitanju vremena je skladistena na nekom drugom mestu."_
+**/usr** *Dok je root primarni fajl sistem, /usr je sekundarna hijerarhija za sve podatke sistem korisnika, ukljucujuci vecinu visekorisnickih pomocnih programa i aplikacija. /usr je upotrebljiv od strane vise korisnika i dozvoljeno je samo njegovo citanje. To znaci da ce /usr biti deljiv izmedju nekoliko razlicitih hostova i u njega ne sme biti pisano, osim u slucaju osvezavanja/nadogradnje sistema. Svaka informacija koja je specificna za hosta ili varira po pitanju vremena je skladistena na nekom drugom mestu."*
 
-**/tmp** _direktorijum za programe koji zahtevaju privremene fajlove poput '.lck' fajlova, koji se mogu koristiti za sprecavanje vise instanci njihovog odgovarajuceg programa sve dok posao nije zavrsen, u kom momentu ce '.lck' fajl biti uklonjen. Programi ne smeju pretpostaviti da su bilo koji fajlovi ili direktorijumi u /tmp sacuvani izmedju pokretanja programa i fajlovi i direktorijumi locirani pod /tmp ce tipicno biti obrisati svaki put kad se sistem restartuje._
+**/tmp** *direktorijum za programe koji zahtevaju privremene fajlove poput '.lck' fajlova, koji se mogu koristiti za sprecavanje vise instanci njihovog odgovarajuceg programa sve dok posao nije zavrsen, u kom momentu ce '.lck' fajl biti uklonjen. Programi ne smeju pretpostaviti da su bilo koji fajlovi ili direktorijumi u /tmp sacuvani izmedju pokretanja programa i fajlovi i direktorijumi locirani pod /tmp ce tipicno biti obrisati svaki put kad se sistem restartuje.*
 
-**/var** _sadrzi varijabilne podatke; spool direktorijume i fajlove, administrativne i login podatke, kes od pakmena, ABS drvo, itd. /var postoji da bi omogucio montiranje /usr kao samo-citljivog. Sve sto kroz istoriju ide u /usr, a zapisano je tokom operacija sistema (u odnosu na instalaciju i odrzavanje softvera) mora obitavati pod /var._
+**/var** *sadrzi varijabilne podatke; spool direktorijume i fajlove, administrativne i login podatke, kes od pakmena, ABS drvo, itd. /var postoji da bi omogucio montiranje /usr kao samo-citljivog. Sve sto kroz istoriju ide u /usr, a zapisano je tokom operacija sistema (u odnosu na instalaciju i odrzavanje softvera) mora obitavati pod /var.*
 
-**Warning:** Pored /boot, direktorijumi od vitalnog znacaja za startovanje su: '_**/bin', '/etc', '/lib', and '/sbin'. Tako da, oni ne smeju obitavati na odvojenim particijama od /.**_
+**Warning:** Pored /boot, direktorijumi od vitalnog znacaja za startovanje su: '***/bin', '/etc', '/lib', and '/sbin'. Tako da, oni ne smeju obitavati na odvojenim particijama od /.***
 
-_**Postoji nekoliko prednosti za koriscenje diskretnih fajl sistema, pre nego ih kombinovati sve na jednu particiju**_:
+***Postoji nekoliko prednosti za koriscenje diskretnih fajl sistema, pre nego ih kombinovati sve na jednu particiju***:
 
 *   Bezbednost: Svaki fajlsistem moze biti podesen u /etc/fstab kao 'nosuid', 'nodev', 'noexec', 'readonly', itd.
 *   Stabilnost: Korisnik, ili program koji ne funkcionise mogu kompletno da popune fajl sistem sa smecem ako ne imaju dozvole za pisanje da to ucine. Kriticni programi, koji obitavaju na razlicitim fajl sistemima ne trpe ovaj uticaj.
@@ -346,7 +345,7 @@ Ovo pitanje se najbolje odgovara bazirano na individualnim potrebama. Mozda cete
 
 *   Dodatnih 25% prostora dodatih na svaki fajl sistem ce pruziti prostor za nepredvidjene slucajeve, prosirenje, i moze posluziti kao preventiva za fragmentaciju.
 
-_**Iz gornjih uputstava, primer sistema ce sadrzati ~15GB root (/) particiju, ~10GB /var, 1GB swap i /home koji sadrzi ostatak prostora.**_
+***Iz gornjih uputstava, primer sistema ce sadrzati ~15GB root (/) particiju, ~10GB /var, 1GB swap i /home koji sadrzi ostatak prostora.***
 
 ##### Kreiranje particija sa cfdisk
 
@@ -378,7 +377,7 @@ sda4               Primary     Linux                             140480 #/home
 
 Izaberite **W**rite i napisite '**yes'**. Budite na oprezu da ova operacija moze da unisti podatke na vasem disku. Izaberite **Q**uit da napustite particioner. Izaberite Done da napustite meni i nastavite sa "Podesavanje tacaka za montiranje fajl sistema".
 
-**Note:** Od zadnjeg razvoja Linux kernela koji sadrzi libata i PATA module, svi IDE, SATA i SCSI diskovi su usvojili sd_x_ sistem imenovanja. Ovo je savrseno normalno i ne treba da bude briga.
+**Note:** Od zadnjeg razvoja Linux kernela koji sadrzi libata i PATA module, svi IDE, SATA i SCSI diskovi su usvojili sd*x* sistem imenovanja. Ovo je savrseno normalno i ne treba da bude briga.
 
 #### Podesavanje tacaka za montiranje fajl sistema
 
@@ -388,32 +387,31 @@ Zadajte svaku particiju i odgovarajucu tacku za montiranje prema vasim potrebama
 
 Opet, fajl sistem tip je vrlo subjektivna stvar koja se zasniva na licnom izboru. Svaka ima svoje prednosti, nedostatke i jedinstvene atribute. Kratak pregled podrzanih fajl sistema:
 
-1\. [ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2") _Second Extended Filesystem_- Stari, pouzdani GNU/Linux fajl sistem. Vrlo stabilan, ali _bez podrzke za zurnalizovanja_. Moze biti nepogodna za root (/) i /home, zbog vrlo dugackog fsck-a (dugacke provere fajl sistema). ext2 fajl sistem moze lako biti konvertovan u ext3.
+1\. [ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2") *Second Extended Filesystem*- Stari, pouzdani GNU/Linux fajl sistem. Vrlo stabilan, ali *bez podrzke za zurnalizovanja*. Moze biti nepogodna za root (/) i /home, zbog vrlo dugackog fsck-a (dugacke provere fajl sistema). ext2 fajl sistem moze lako biti konvertovan u ext3.
 
-2\. [ext3](https://en.wikipedia.org/wiki/ext3 "wikipedia:ext3") _Third Extended Filesystem_- U sustini ext2 sistem, ali sa podrskom za zurnalizovanje. ext3 je kompatibilan u nazad sa ext2\. Ektremno stabilan, zreo i najvise koriscen i podrzan GNU/Linux fajl sistem.
+2\. [ext3](https://en.wikipedia.org/wiki/ext3 "wikipedia:ext3") *Third Extended Filesystem*- U sustini ext2 sistem, ali sa podrskom za zurnalizovanje. ext3 je kompatibilan u nazad sa ext2\. Ektremno stabilan, zreo i najvise koriscen i podrzan GNU/Linux fajl sistem.
 
-3\. [ext4](https://en.wikipedia.org/wiki/ext4 "wikipedia:ext4") _Fourth Extended Filesystem_- Kompatibilan u nazad sa ext2 i ext3\. Predstavlja podrsku za diskove velicine preko 1 exabajta i fajlove sa velicinom do 16 terabajta. Uvecava 32,000 velicinu poddirektorijuma u ext3 na 64,000\. Pruza mogucnost onlajn defragmentacije.
+3\. [ext4](https://en.wikipedia.org/wiki/ext4 "wikipedia:ext4") *Fourth Extended Filesystem*- Kompatibilan u nazad sa ext2 i ext3\. Predstavlja podrsku za diskove velicine preko 1 exabajta i fajlove sa velicinom do 16 terabajta. Uvecava 32,000 velicinu poddirektorijuma u ext3 na 64,000\. Pruza mogucnost onlajn defragmentacije.
 
 4\. [ReiserFS](https://en.wikipedia.org/wiki/ReiserFS "wikipedia:ReiserFS") (V3)- Hans Reiser-ov fajl sistem visokih performansi sa zurnalizovanjem. Koristi vrlo interestantan metod protoka podataka baziranog na nekonvencionalnom i kreativnom algoritmu. ReiserFS se reklamira kao vrlo brz, pogotovo kada radi sa mnogo malih fajlova. ReiserFS se brzo formatira, ali je spor prilikom montiranja. Prilicno sazreo i stabilan. ReiserFS (V3) nije u procesu razvoja u ovom momentu. Generalno se smartra kao dobar izbor za /var.
 
-5\. [JFS](https://en.wikipedia.org/wiki/JFS_(file_system) "wikipedia:JFS (file system)") - IBM's **J**ournaled **F**ile**S**ystem- Prvi fajl sistem koji je pruzio zurnalizovanje. JFS je imao mnogo godina upotrebe u IBM AIX® OS-u pre nego sto je ubacen u GNU/Linux. JFS trenutno koristi najmanje procesorskih resursa od svih GNU/Linux fajl sistema. Veoma brz prilikom formatiranja, montiranja i fsck-a (provere fajl sistema) i generalno veoma dobre performanse, pogotovo u odnosu sa dedlajnom I/O zakazivacem. (Pogledajte [JFS](/index.php/JFS "JFS").) Nije tako siroko podrzan kao ext ili ReiserFS, ali veoma zreo i stabilan.
+5\. [JFS](https://en.wikipedia.org/wiki/JFS_(file_system) - IBM's **J**ournaled **F**ile**S**ystem- Prvi fajl sistem koji je pruzio zurnalizovanje. JFS je imao mnogo godina upotrebe u IBM AIX® OS-u pre nego sto je ubacen u GNU/Linux. JFS trenutno koristi najmanje procesorskih resursa od svih GNU/Linux fajl sistema. Veoma brz prilikom formatiranja, montiranja i fsck-a (provere fajl sistema) i generalno veoma dobre performanse, pogotovo u odnosu sa dedlajnom I/O zakazivacem. (Pogledajte [JFS](/index.php/JFS "JFS").) Nije tako siroko podrzan kao ext ili ReiserFS, ali veoma zreo i stabilan.
 
 6\. [XFS](https://en.wikipedia.org/wiki/XFS "wikipedia:XFS") - Jos jedan rani fajl sistem sa zurnalizovanjem originalno razvijen od strane Silicon Graphics-a za IRIX operativni sistem i ubacen u GNU/Linux. XFS pruza veoma brz protok za velike fajlove i velike fajl sisteme. Veoma brz prilikom formatiranja i montiranja. Generalno obelezen kao spor sa mnogo malih fajlova, u poredjenju sa ostalim fajl sistemima. XFS je veoma zreo i pruza onlajn mogucnost defragmentovanja.
 
 7\. [Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs") - Takodje poznat kao "Bolji FS" je novi fajl sistem sa znatnim, novim i mocnim karakteristikama. Slican Sun/Oracle-ovom odlicnom [ZFS](https://en.wikipedia.org/wiki/ZFS "wikipedia:ZFS")-u. Ovi sadrze snepsotove, pravljenje odraza sa vise diskova (prakticno softverski raid bez mdadm-a), checksum-e, inkementalni bekap i kompresiju u letu (koja moze da pruzi znacajno povecanje performansi kao i stednju prostora), i jos toga. Jos uvek se smatra "nestabilnim" od Januara 2011, ali je zdruzen u glavni kernel pod eksperimentalnim statusom. Btrfs izgleda kao buducnost linux fajl sistema i sada se pruza kao root fajl sistem izbor u Ubuntu 10.10, OpenSUSE 11.3 i drugim velikim distribucijama.
 
-*   JFS i XFS fajl sistemi ne mogu biti _smanjeni_ sa disk alatima (poput gparted-a ili parted magic-a)
+*   JFS i XFS fajl sistemi ne mogu biti *smanjeni* sa disk alatima (poput gparted-a ili parted magic-a)
 
 ##### Napomena u vezi zurnalizovanja
 
-Svi gornji fajl sistemi, osim ext2, koriste [zurnalizovanje](http://en.wikipedia.org/wiki/Journaling_file_system). Fajl sistemi sa zurnalizovanjem su otporni na greske. Oni koriste zurnalizovanje da loguju promene pre nego sto su pocinjene nad fajl sistemom da bi izbegli korupciju meta podataka u slucaju pada sistema. Imajte na umu da nisu sve tehnike zurnalizovanja iste; samo ext3 i ext4 pruzaju _data-mod zurnalizovanje_, (ali ne kao pocetno podesavanje), koji zurnalizuje _oba_, podatke _i_ meta podatke (ali sa znacajnim penalom u brzini). Ostali samo pruzaju _ordered-mod zurnalizovanje_, koji zurnalizuje samo meta podatke. Dok ce svi vratiti vas fajl sistem u ispravno stanje nakon oporavka od pada, _data-mod zurnalizovanje_ pruza najvecu zastitu protiv korupcije fajl sistema i gubitka podataka, ali moze patiti od pada performansi jer su svi posaci pisu dva puta (prvo u dnevnik, a zatim na disk). U zavisnosti od toga koliko su vam bitni vasi podaci, mozete razmotriti odgovarajuci fajl sistem za vas.
+Svi gornji fajl sistemi, osim ext2, koriste [zurnalizovanje](http://en.wikipedia.org/wiki/Journaling_file_system). Fajl sistemi sa zurnalizovanjem su otporni na greske. Oni koriste zurnalizovanje da loguju promene pre nego sto su pocinjene nad fajl sistemom da bi izbegli korupciju meta podataka u slucaju pada sistema. Imajte na umu da nisu sve tehnike zurnalizovanja iste; samo ext3 i ext4 pruzaju *data-mod zurnalizovanje*, (ali ne kao pocetno podesavanje), koji zurnalizuje *oba*, podatke *i* meta podatke (ali sa znacajnim penalom u brzini). Ostali samo pruzaju *ordered-mod zurnalizovanje*, koji zurnalizuje samo meta podatke. Dok ce svi vratiti vas fajl sistem u ispravno stanje nakon oporavka od pada, *data-mod zurnalizovanje* pruza najvecu zastitu protiv korupcije fajl sistema i gubitka podataka, ali moze patiti od pada performansi jer su svi posaci pisu dva puta (prvo u dnevnik, a zatim na disk). U zavisnosti od toga koliko su vam bitni vasi podaci, mozete razmotriti odgovarajuci fajl sistem za vas.
 
-_**Nastavak dalje ...**_
+***Nastavak dalje ...***
 
 Izaberite i napravite fajl sistem (foramtirajte particiju) za / tako sto cete selektovati **yes**. Bicete upozoreni da dodate dodatne particije. U nasem primeru, sda2 i sda4 ostaju. Za sda2, izaberite fajl sistem tip i montirajte ga je kao /var. Konacno, izaberite fajl sistem tip za sda4 montirajte je kao /home.
 
 **Note:** Ako niste napravili i ne treba vam odvojena /boot particija, mozete bezbedno da izignorisete upozorenje da ona ne postoji.
-
 Vratite se na glavni meni.
 
 ### Izaberite pakete
@@ -440,7 +438,7 @@ Nakon izbora potrebnih paketa, napustite ekran za selekciju i nastavite na slede
 
 ### Instalacija paketa
 
-_Install Packages_ ce instalirati izabrane pakete na vas novi sistem. Ako ste izabrali a CD/USB kao izvor, verzije paketa sa CD/USB-a ce biti instalirani. Ako ste se opredelili za Net-instalaciju (Netinstall), svezi paketi ce biti preuzeti sa interneta i instalirani.
+*Install Packages* ce instalirati izabrane pakete na vas novi sistem. Ako ste izabrali a CD/USB kao izvor, verzije paketa sa CD/USB-a ce biti instalirani. Ako ste se opredelili za Net-instalaciju (Netinstall), svezi paketi ce biti preuzeti sa interneta i instalirani.
 
 **Note:** U nekim instalerima, bicete upitani ako zelite da zadrzite pakete u pacman kesu. Ako izaberete 'yes', imacete fleksibilnost da [unazadite](/index.php/Downgrade_packages "Downgrade packages") na prethodne paket verzije u buducnosti, pa je ovo preporucljivo (uvek mozete da ispraznite kes u buducnosti).
 
@@ -458,11 +456,11 @@ Sada cete biti upitani koji tekst editor zelite da koristite; izaberite [nano](/
 
 **Moze li instaler da obavi ovo vise automatski?**
 
-Skrivanje procesa sistem konfigurisanja je u direktnoj suprotnosti sa _**[The Arch Way (Arch-ovim nacinom)](/index.php?title=The_Arch_Way_(Arch-ovim_nacinom)&action=edit&redlink=1 "The Arch Way (Arch-ovim nacinom) (page does not exist)")**_. Dok je tacno da zadnje verzije alata za isprobavanje kernela i hardvera pruzaju odlicnu podrsku za hardver i automatsku konfiguraciju, Arch predstavlja korisniku sve relevantne konfiguracione fajlove tokom instalacije u svrhu _transparentnosti i kontrole sistemskih resursa_. U momentu kada zavrsite sa menjanjem ovih fajlova prema vasim potrebama, naucicete jednostavan metod rucnog konfigurisanja Arch Linux-a i postacete srodniji i upoznatiji sa osnovnom strukturom. Na taj nacin cete biti bolje pripremljeni da odrzavate vasu novu instalaciju na produktivan nacin.
+Skrivanje procesa sistem konfigurisanja je u direktnoj suprotnosti sa ***[The Arch Way (Arch-ovim nacinom)](/index.php?title=The_Arch_Way_(Arch-ovim_nacinom)&action=edit&redlink=1 "The Arch Way (Arch-ovim nacinom) (page does not exist)")***. Dok je tacno da zadnje verzije alata za isprobavanje kernela i hardvera pruzaju odlicnu podrsku za hardver i automatsku konfiguraciju, Arch predstavlja korisniku sve relevantne konfiguracione fajlove tokom instalacije u svrhu *transparentnosti i kontrole sistemskih resursa*. U momentu kada zavrsite sa menjanjem ovih fajlova prema vasim potrebama, naucicete jednostavan metod rucnog konfigurisanja Arch Linux-a i postacete srodniji i upoznatiji sa osnovnom strukturom. Na taj nacin cete biti bolje pripremljeni da odrzavate vasu novu instalaciju na produktivan nacin.
 
 #### /etc/rc.conf
 
-Arch Linux koristi fajl `/etc/rc.conf` kao glavnu lokaciju za sistemsko podesavanje. On sadrzi sirok spektar konfiguracionih informacija koji se uglavnom koriste prilikom startovanja sistema. Kao sto njegovo ime samo govori, takodje sadrzi podesavanja za pokretanje /etc/rc* fajlova i, naravno, potice _od_ tih fajlova.
+Arch Linux koristi fajl `/etc/rc.conf` kao glavnu lokaciju za sistemsko podesavanje. On sadrzi sirok spektar konfiguracionih informacija koji se uglavnom koriste prilikom startovanja sistema. Kao sto njegovo ime samo govori, takodje sadrzi podesavanja za pokretanje /etc/rc* fajlova i, naravno, potice *od* tih fajlova.
 
 * * *
 
@@ -518,7 +516,7 @@ USECOLOR="yes"
 
 ##### HARDWARE sekcija
 
-_**Primer za HARDVER:**_
+***Primer za HARDVER:***
 
 ```
 # Scan hardware and load required modules at boot
@@ -552,7 +550,7 @@ MODULES=(!net-pf-10 !pcspkr loop)
 
 	eth0 
 
-	'Ethernet, card 0'. _ako_ koristite **staticki IP**, podesite interfejs IP adrese, netmask i broadcast adrese. Podesite eth0="dhcp" ako zelite da koristite **DHCP** za dinamicku/automatsku konfiguraciju.
+	'Ethernet, card 0'. *ako* koristite **staticki IP**, podesite interfejs IP adrese, netmask i broadcast adrese. Podesite eth0="dhcp" ako zelite da koristite **DHCP** za dinamicku/automatsku konfiguraciju.
 
 	INTERFACES 
 
@@ -566,7 +564,7 @@ MODULES=(!net-pf-10 !pcspkr loop)
 
 	Ako koristite staticki **IP**, uklonite **!** ispred 'gateway'. Ako koristite **DHCP**, mozete obicno da ostavite ovu varijablu pod komentarom sa bengom ispred (!), ali opet, neki korisnici zahtevaju gateway i ROUTES definisane. Ako iskusite probleme sa mrezom sa pacman-om, na primer, mozda cete hteti da se vratite na ove varijable.
 
-**Example w/ Dynamic IP (_DHCP_):**
+**Example w/ Dynamic IP (*DHCP*):**
 
 ```
 HOSTNAME="arch"
@@ -608,15 +606,15 @@ DAEMONS=(network @syslog-ng netfs @crond)
 *   Ako skripta ima prefiks "et" simbol (@), ona ce biti izvrsena u pozadini; startna sekvenca nece cekati za uspesan zavrsetak svakog daemon-a pre nego sto predje na sledeci. (Korisno za ubrzavanje procesa startovanja sistema). Nemojte stavljati u pozadinu daemon-e koji su potrebni drugim daemon-ima. Na primer "mpd" zavisi od "network"-a, tako da stavljanje u pozadinu network-a moze uzrokovati da mpd ne radi.
 *   Editujte ovaj niz kad god su novi sistemski servisi instalirani, ako zelite da ih startujete automatski tokom startovanja sistema.
 
-**Note:** Ovaj 'BSD-style' init, je _The Arch way (Arch-ov nacin)_ obavljanja onih stvari koje druge distribucije obavljaju sa razlicitim simbilicnim linkovima ka jednom /etc/init.d direktorijumu.
+**Note:** Ovaj 'BSD-style' init, je *The Arch way (Arch-ov nacin)* obavljanja onih stvari koje druge distribucije obavljaju sa razlicitim simbilicnim linkovima ka jednom /etc/init.d direktorijumu.
 
 **O DAEMON-ima**
 
 [daemons](/index.php/Daemons "Daemons") linija ne mora da se menja u ovom trenutku, ali korisno je da objasnimo sta su zapravo daemoni, jer ce se oni pominjati kasnije u ovom uputstvu.
 
-_daemon_ je program koji radi u pozadini, cekajuci dogadjaje da iskrsnu i pruza servise. Dobar primer je web server koji ceka zahtev da izda stranicu (e.g.:httpd) ili SSH server koji ceka korisnika da se uloguje (e.g.:sshd). Dok su ovi potpuno opremljene aplikacije, postoje i daemoni ciji posao nije tako vidljiv. Primeri su daemoni koji pisu poruke u log fajlove (e.g. syslog, metalog), i daemoni koji pruzaju graficko logovanje (e.g.: gdm, kdm). Svi ovi programi se mogu dodati u daemon liniju kako bi se startovali kada sistem startuje. Korisni daemoni ce biti predstavljeni tokom ovog uputstva.
+*daemon* je program koji radi u pozadini, cekajuci dogadjaje da iskrsnu i pruza servise. Dobar primer je web server koji ceka zahtev da izda stranicu (e.g.:httpd) ili SSH server koji ceka korisnika da se uloguje (e.g.:sshd). Dok su ovi potpuno opremljene aplikacije, postoje i daemoni ciji posao nije tako vidljiv. Primeri su daemoni koji pisu poruke u log fajlove (e.g. syslog, metalog), i daemoni koji pruzaju graficko logovanje (e.g.: gdm, kdm). Svi ovi programi se mogu dodati u daemon liniju kako bi se startovali kada sistem startuje. Korisni daemoni ce biti predstavljeni tokom ovog uputstva.
 
-Istorijski, termin _daemon_ je izmisljen od strane programera MIT-ovog projekta MAC. Oni su uzeli ime od _Maxwell-ovog demon-a_, jednog imaginarnog stvorenja iz poznatog eksperimenta misli koji je stalno radio u pozadini, sortirajuci molekule. *nix sistemi su nasledili ovu terminologiju i napravili inverzni akronim (backronym) **d**isk **a**nd **e**xecution **mon**itor.
+Istorijski, termin *daemon* je izmisljen od strane programera MIT-ovog projekta MAC. Oni su uzeli ime od *Maxwell-ovog demon-a*, jednog imaginarnog stvorenja iz poznatog eksperimenta misli koji je stalno radio u pozadini, sortirajuci molekule. *nix sistemi su nasledili ovu terminologiju i napravili inverzni akronim (backronym) **d**isk **a**nd **e**xecution **mon**itor.
 
 **Tip:** Svi Arch daemoni obitavaju pod /etc/rc.d/
 
@@ -624,7 +622,7 @@ Istorijski, termin _daemon_ je izmisljen od strane programera MIT-ovog projekta 
 
 **fstab** (za **f**ile **s**ystems **tab**le) je deo sistem konfiguracije koji izlistava diskove koji su na raspolaganju i disk particije i pokazuje kako oni mogu biti inicijalizovani ili, u suprotnom, integrisani u sveukupni fajl sistem sistema. **/etc/fstab** fajl je nacesce koriscen od strane **mount** komande. Mount komanda uzima fajl sistem na uredjaju i dodaje ga u glavnu sistem hijerarhiju koju vidite kada koristite vas sistem. **mount -a** se zove iz /etc/rc.sysinit, na oko 3/4 ukupnog puta kroz proces startovanja (but proces), i cita /etc/fstab da odredi koje opcije bi trebale da se koriste kada montira odredjeni uredjaj. Ako je **noauto** dodat za fajl sistem u /etc/fstab, **mount -a** ga nece montirati prilikom prilikom but-a.
 
-_Jedan primer `/etc/fstab`-a_
+*Jedan primer `/etc/fstab`-a*
 
 ```
 # <file system>        <dir>        <type>        <options>                 <dump>    <pass>
@@ -642,7 +640,7 @@ none                   /dev/shm     tmpfs         defaults                      
 	<file system> 
 
 	opisuje blok uredjaj ili udaljeni fajl sistem koji se montira. Za regularno montiranje, ovo polje ce sadrzati link ka nodi blok uredjaja (kao sto je kreirano od strane mknod-a koji se poziva od strane udev-a prilikom butovanja) za uredjaj koji se montira; na primer, '/dev/cdrom' ili '/dev/sda1'.
-**Note:** Ako vas sistem ima vise od jednog hard diska, instaler ce podesiti tako da koristi UUID pre nego sd_x_ semu imenovanja, za konzistentno mapiranje uredjaja. **[Koriscenje UUID-a](/index.php/Persistent_block_device_naming "Persistent block device naming") ima nekoliko prednosti i moze biti upotrebljeno da se izbegnu problemi ako ce se hard diskovi dodavati na sistem u buducnosti.** Prema aktivnom razvoju u kernelu i udev-u, redosled prema kome se drajveri za kontrolere za skladistenje ucitavaju mogu menjati slucajnim redosledom, rezultirajuci sistemom koji nije u mogucnosti da startuje/kernel panika. Skoro svaka matricna ploca ima nekoliko kontrolera (integrisani SATA, integrisani IDE), i prema gore pomenutim informacijama o razvoju, /dev/sda moze postati /dev/sdb na sledecem restartu. (Pogledajte [ovaj wiki clanak](/index.php/Persistent_block_device_naming "Persistent block device naming") za vise informacija o trajnom imenovanju blok uredjaja.)
+**Note:** Ako vas sistem ima vise od jednog hard diska, instaler ce podesiti tako da koristi UUID pre nego sd*x* semu imenovanja, za konzistentno mapiranje uredjaja. **[Koriscenje UUID-a](/index.php/Persistent_block_device_naming "Persistent block device naming") ima nekoliko prednosti i moze biti upotrebljeno da se izbegnu problemi ako ce se hard diskovi dodavati na sistem u buducnosti.** Prema aktivnom razvoju u kernelu i udev-u, redosled prema kome se drajveri za kontrolere za skladistenje ucitavaju mogu menjati slucajnim redosledom, rezultirajuci sistemom koji nije u mogucnosti da startuje/kernel panika. Skoro svaka matricna ploca ima nekoliko kontrolera (integrisani SATA, integrisani IDE), i prema gore pomenutim informacijama o razvoju, /dev/sda moze postati /dev/sdb na sledecem restartu. (Pogledajte [ovaj wiki clanak](/index.php/Persistent_block_device_naming "Persistent block device naming") za vise informacija o trajnom imenovanju blok uredjaja.)
 
 	<dir> 
 
@@ -658,7 +656,7 @@ none                   /dev/shm     tmpfs         defaults                      
 
 	<dump> 
 
-	koristi se od strane dump(8)-a komande koja odredjuje koji fajl sistemi ce biti bekapovani. Ako peto polje ne postoji, nula vrednost se vraca i dump ce pretpostaviti da fajl sistem ne treba da bude bekapovan. _Imajte na umu da dump nije instaliran po difoltu._
+	koristi se od strane dump(8)-a komande koja odredjuje koji fajl sistemi ce biti bekapovani. Ako peto polje ne postoji, nula vrednost se vraca i dump ce pretpostaviti da fajl sistem ne treba da bude bekapovan. *Imajte na umu da dump nije instaliran po difoltu.*
 
 	<pass> 
 
@@ -668,14 +666,14 @@ Prosirene informacije su dostupne na [Fstab](/index.php/Fstab "Fstab") wiki clan
 
 #### **[/etc/mkinitcpio](/index.php/Configuring_mkinitcpio "Configuring mkinitcpio").conf**
 
-_Vecina korisnika nece imati potrebu da modifikuje ovaj fajl u ovom momentu, ali molim vas procitajte sledece informacije koje objasnjavaju njegovu upotrebu._
+*Vecina korisnika nece imati potrebu da modifikuje ovaj fajl u ovom momentu, ali molim vas procitajte sledece informacije koje objasnjavaju njegovu upotrebu.*
 
 Ovaj fajl omogucava dalje fino podesavanje pocetnog ram fajl sistema, ili initramfs-a, (takodje istorijski nazivan kao inicijalni ram disk ili "initrd") za vas sistem. Initramfs je gzip-ovan odraz koji se iscitava od strane kernela prilikom butovanja. Svrha initramfs-a je da butstrapuje sistem do tacke gde on moze da pristupi root fajl sistemu. Ovo znaci da on mora da ucita module koji su neophodni za uredjaje poput IDE, SCSI, ili SATA uredjaja (ili USB/FW, ako butujete sa USB/FW uredjaja). Kad je initramfs ucitao odgovarajuce module, ili manuelno preko udev-a, on prepusta kontrolu kernelu i vas but se nastavlja. Iz ovog razloga, initramfs mora da sadrzi samo module neophodne za pristup root fajl sistemu. On ne zahteva sve module koje ce te ikada zeleti da koristite. Vecina uobicajenih kernel modula ce biti ucitani kasnije od strane udev-a, tokom init procesa.
 
 `mkinitcpio` je sledeca generacija **initramfs kreacije**. Ima mnoge prednosti u odnosu na stari `mkinitrd` i `mkinitramfs` skripte.
 
 *   Koristi **glibc** i **busybox** da pruzi malu i laganu bazu za rani korisnicki prostor.
-*   Moze da koristi "_udev'_ za hardversku automatsku detekciju prilikom izvrsavanja i tako spreci ucitavanje mnogobrojnih bespotrebnih module.
+*   Moze da koristi "*udev'* za hardversku automatsku detekciju prilikom izvrsavanja i tako spreci ucitavanje mnogobrojnih bespotrebnih module.
 *   Njegova hook-bazirana init skripta je lako prosoriva sa dodatnim kukama, koje se lako mogu dodati u pacman paketima bez potrebe za modifikovanjem samog mkinitcpio-a.
 *   Vec podrzava **lvm2**, **dm-crypt** za oba, legacy i luks uredjaje, **raid**, **swsusp** i **suspend2** nastavak i butovanje sa **usb uredjaja za masovno skladistenje**.
 *   Mnoge mogucnosti mogu biti konfigurisane iz kernel komandne linije bez potrebe za reizgradnjom odraza.
@@ -701,7 +699,7 @@ Ovaj fajl moze da se koristi za podesavanje specijalnih konfiguracionih opcija z
 
 **Note:** Ako koristite DHCP, mozete bezbedno da ignorisete ovaj fajl, jer prema pocetnim podesavanjima, on ce biti dinamicki kreiran i unistavan od strane dhcpcd daemon-a. Mozete promeniti ovo pocetno ponasanje ako zelite. Pogledajte [Mreza](/index.php/Network#For_DHCP_IP "Network") i [Resolv.conf](/index.php/Resolv.conf "Resolv.conf") stranice za vise informacija.
 
-_resolver_ je skup rutina u C biblioteci koji pruza pristup Internet Domen Ime Sistemu (DNS). Jedna od glavnih funkcija DNS-a je da prevede domen imena u IP adrese, da bi ucinio Web prijateljskijim mestom. Resolver konfiguracioni fajl, ili /etc/resolv.conf, sadrzi informacije koje se citaju od strane resolver-a rutina prvog puta kada su pokrenute od strane procesa.
+*resolver* je skup rutina u C biblioteci koji pruza pristup Internet Domen Ime Sistemu (DNS). Jedna od glavnih funkcija DNS-a je da prevede domen imena u IP adrese, da bi ucinio Web prijateljskijim mestom. Resolver konfiguracioni fajl, ili /etc/resolv.conf, sadrzi informacije koje se citaju od strane resolver-a rutina prvog puta kada su pokrenute od strane procesa.
 
 Ako koristite staticki IP, podesite vase DNS servere u /etc/resolv.conf (nameserver <ip-address>). Mozete ih imati koliko god zelite. Jedan primer sa upotrebom OpenDNS-a:
 
@@ -729,20 +727,18 @@ Ovaj fajl asocira IP adrese sa imenima hostova i alias-ovima, jedna linija po IP
 
 ```
 
-Dodajte vas _hostname_, tako da se poklapa sa onim zadatim u /etc/rc.conf, tako da izgleda ovako:
+Dodajte vas *hostname*, tako da se poklapa sa onim zadatim u /etc/rc.conf, tako da izgleda ovako:
 
 ```
-127.0.0.1   localhost.localdomain   localhost _**vasehostime**_
+127.0.0.1   localhost.localdomain   localhost ***vasehostime***
 
 ```
 
-**Warning:** _Ovaj format, **ukljucujuci 'localhost' i vase host ime**, su neophodni za kompatibilnost programa! Tako da ako ste imenovali vas kompjuter "arch", onda ta linija iznad treba da izgleda ovako:_
-
+**Warning:** *Ovaj format, **ukljucujuci 'localhost' i vase host ime**, su neophodni za kompatibilnost programa! Tako da ako ste imenovali vas kompjuter "arch", onda ta linija iznad treba da izgleda ovako:*
 ```
 127.0.0.1   localhost.localdomain   localhost arch
 
 ```
-
 Greske u ovom delu mogu da uzrokuju lose performanse mreze i/ili da odredjeni programi budu mnogo spori prilikom startovanja, ili da ne rade uopste. Ovo je vrlo cesta greska kod pocetnika.
 
 **Note:** Skorije verzije Arch Linux instalera utomatski dodaju vas hostname u ovaj fajl cim editujete `/etc/rc.conf` sa tim informacijama. Ako, iz nekog razloga, ovo nije slucaj, mozete ga dodati sami u skladu sa datim informacijama.
@@ -750,24 +746,22 @@ Greske u ovom delu mogu da uzrokuju lose performanse mreze i/ili da odredjeni pr
 Ako koristite staticki IP dodajte drugu liniju upotrebom sintakse: <static-IP> <hostname.domainname.org> <hostname> npr.:
 
 ```
-192.168.1.100 _**vasehostime**_.domain.org  _**vasehostime**_
+192.168.1.100 ***vasehostime***.domain.org  ***vasehostime***
 
 ```
 
 **Tip:** Za prakticnost, mozete isto upotrebiti /etc/hosts alijase za hostove na vasoj mrezi, i/ili na Web-u, npr.:
-
 ```
 64.233.169.103   www.google.com   g
 192.168.1.90   media
 192.168.1.88   data
 
 ```
-
 Gornji primer bi vam pruzio mogucnost da pristupite guglu jednostavnim ukucavanjem slova 'g' u vas browser i da pristupite serverima za mediju i podatke na vasoj mrezi prema imenu i bez potrebe za ukucavanjem njihovih odgovarajucih IP adresa.
 
 #### /etc/hosts.deny and /etc/hosts.allow
 
-Izmenite ova podesavanja u skladu sa vasim potrebama ako planirate da koristite {[SSH|ssh]] daemon. Pocetno podesavanje ce odbiti sve dolazece konekcije, ne samo ssh konekcije. Editujte vas "_/etc/hosts.allow '_ fajl i dodajte odgovarajuce parametre:
+Izmenite ova podesavanja u skladu sa vasim potrebama ako planirate da koristite {[SSH|ssh]] daemon. Pocetno podesavanje ce odbiti sve dolazece konekcije, ne samo ssh konekcije. Editujte vas "*/etc/hosts.allow '* fajl i dodajte odgovarajuce parametre:
 
 *   Da dozvolite svima da se konektuju na vas
 
@@ -840,14 +834,14 @@ For BIOS systems, several boot loaders are available, see [Boot loaders](/index.
 
 ##### Syslinux
 
-If you opted for a GUID partition table (GPT) for your hard drive earlier, you need to install the [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package now for the installation of _syslinux_ to work:
+If you opted for a GUID partition table (GPT) for your hard drive earlier, you need to install the [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package now for the installation of *syslinux* to work:
 
 ```
 # pacman -S gptfdisk
 
 ```
 
-Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package and then use the `syslinux-install_update` script to automatically _install_ the bootloader (`-i`), mark the partition _active_ by setting the boot flag (`-a`), and install the _MBR_ boot code (`-m`):
+Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package and then use the `syslinux-install_update` script to automatically *install* the bootloader (`-i`), mark the partition *active* by setting the boot flag (`-a`), and install the *MBR* boot code (`-m`):
 
 ```
 # pacman -S syslinux
@@ -858,7 +852,6 @@ Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) packag
 After installing Syslinux, configure `syslinux.cfg` to point to the right root partition. This step is vital. If it points to the wrong partition, Arch Linux will not boot. Change `/dev/sda3` to reflect your root partition (if you partitioned your drive as in [the example](#Prepare_the_storage_drive), your root partition is `/dev/sda1`).
 
  `# nano /boot/syslinux/syslinux.cfg` 
-
 ```
 ...
 LABEL arch
@@ -867,7 +860,7 @@ LABEL arch
         ...
 ```
 
-If adding [UUID](/index.php/UUID "UUID") rather than partition number the syntax is `APPEND root=UUID=_partition_uuid_ rw`.
+If adding [UUID](/index.php/UUID "UUID") rather than partition number the syntax is `APPEND root=UUID=*partition_uuid* rw`.
 
 Do the same for the fallback entry.
 
@@ -885,7 +878,7 @@ Install the [grub](https://www.archlinux.org/packages/?name=grub) package and th
 
 **Note:**
 
-*   Change `/dev/sda` to reflect the drive you installed Arch on. Do not append a partition number (do not use `sda_X_`).
+*   Change `/dev/sda` to reflect the drive you installed Arch on. Do not append a partition number (do not use `sda*X*`).
 *   For GPT-partitioned drives on BIOS motherboards, you also need a "BIOS Boot Partition". See [GPT-specific instructions](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") in the GRUB page.
 *   A sample `/boot/grub/grub.cfg` gets installed as part of the [grub](https://www.archlinux.org/packages/?name=grub) package, and subsequent `grub-*` commands may not over-write it. Ensure that your intended changes are in `grub.cfg`, rather than in `grub.cfg.new` or some such file.
 
@@ -933,7 +926,6 @@ Install the [gummiboot](https://www.archlinux.org/packages/?name=gummiboot) pack
 You will need to manually create a configuration file to add an entry for Arch Linux to the gummiboot manager. Create `/boot/loader/entries/arch.conf` and add the following contents, replacing `/dev/sdaX` with your **root** partition, usually `/dev/sda2`:
 
  `# nano /boot/loader/entries/arch.conf` 
-
 ```
 title          Arch Linux
 linux          /vmlinuz-linux
@@ -955,7 +947,7 @@ Install the [grub](https://www.archlinux.org/packages/?name=grub) and [efibootmg
 
 Next, while using a manually created `grub.cfg` is absolutely fine, it is recommended that beginners automatically generate one:
 
-**Tip:** To automatically search for other operating systems on your computer, install [os-prober](https://www.archlinux.org/packages/?name=os-prober) before running the next command. However _os-prober_ is not known to properly detect UEFI OSes.
+**Tip:** To automatically search for other operating systems on your computer, install [os-prober](https://www.archlinux.org/packages/?name=os-prober) before running the next command. However *os-prober* is not known to properly detect UEFI OSes.
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg

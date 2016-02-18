@@ -187,7 +187,7 @@ Per essere più precisi, si potrebbe aggiungere un messaggio nel file .install p
 
 ## Gecko
 
-Gecko è un motore html usato da Wine per effettuare il rendering html per quei programmi che normalmente usano Explorer. Solo pochi programmi attualmente necessitano di questa caratteristica, ma Wine richiederà l'installazione di Gecko se non si è provveduto. Per disabilitare la visualizzazione della richiesta si può: installare Gecko, usare una _dlloverride_.
+Gecko è un motore html usato da Wine per effettuare il rendering html per quei programmi che normalmente usano Explorer. Solo pochi programmi attualmente necessitano di questa caratteristica, ma Wine richiederà l'installazione di Gecko se non si è provveduto. Per disabilitare la visualizzazione della richiesta si può: installare Gecko, usare una *dlloverride*.
 
 Il metodo più facile per installare Gecko è usando [winetricks](https://www.archlinux.org/packages/?name=winetricks) (dall'omonimo pacchetto):
 
@@ -197,11 +197,11 @@ $ winetricks -q gecko
 
 ```
 
-Per disabilitare il rendering html ed il messaggio sara necessario usare un _dlloverride_ nel proprio script.
+Per disabilitare il rendering html ed il messaggio sara necessario usare un *dlloverride* nel proprio script.
 
 ```
 export WINEDLLOVERRIDES="mshtml="
 
 ```
 
-è possibile disabilitarlo anche tramite `winecfg`: semplicemente impostando _mshtml_ a **Disable**.
+è possibile disabilitarlo anche tramite `winecfg`: semplicemente impostando *mshtml* a **Disable**.

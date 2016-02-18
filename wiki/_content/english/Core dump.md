@@ -23,7 +23,6 @@ Users may wish to disable automatic core dumps for a number of reasons:
 [systemd](/index.php/Systemd "Systemd")'s default behavior is to generate core dumps for all processes in `/var/lib/systemd/coredump`. This behavior can be overridden by creating a configuration snippet in the `/etc/systemd/coredump.conf.d/` directory with the following content[[1]](http://www.freedesktop.org/software/systemd/man/coredump.conf.html#Description)[[2]](https://bbs.archlinux.org/viewtopic.php?pid=1211433):
 
  `/etc/systemd/coredump.conf.d/custom.conf` 
-
 ```
 [Coredump]
 Storage=none
@@ -54,9 +53,9 @@ The maximum core dump size is enforced by ulimit. Setting it to zero disables co
 
 ## Making a core dump
 
-To generate a core dump of an arbitrary process, first [install](/index.php/Install "Install") the [gdb](https://www.archlinux.org/packages/?name=gdb) package. Then find the PID of the running process, for example with _pgrep_:
+To generate a core dump of an arbitrary process, first [install](/index.php/Install "Install") the [gdb](https://www.archlinux.org/packages/?name=gdb) package. Then find the PID of the running process, for example with *pgrep*:
 
- `$ pgrep -f _firefox_`  `2071 firefox` 
+ `$ pgrep -f *firefox*`  `2071 firefox` 
 
 Attach to the process:
 
@@ -94,7 +93,7 @@ To retrieve a core dump from the journal, see `man coredumpctl`
 
 ## Examining a core dump
 
-Use _coredumpctl_ to find the corresponding dump:
+Use *coredumpctl* to find the corresponding dump:
 
 ```
 # coredumpctl list
@@ -104,18 +103,18 @@ Use _coredumpctl_ to find the corresponding dump:
 You need to uniquely identify the relevant dump. This is possible by specifying a `PID`, name of the executable, path to the executable or a journalctl predicate (see `coredumpctl(1)` and `journalctl(1)` for details). To see details of the core dumps:
 
 ```
-# coredumpctl info _match_
+# coredumpctl info *match*
 
 ```
 
-Pay attention to "Signal" row, that helps to identify crash cause. For deeper analysis you can examine the backtrace using _gdb_:
+Pay attention to "Signal" row, that helps to identify crash cause. For deeper analysis you can examine the backtrace using *gdb*:
 
 ```
-# coredumpctl gdb _match_
+# coredumpctl gdb *match*
 
 ```
 
-When _gdb_ is started, use the `bt` command to print the backtrace:
+When *gdb* is started, use the `bt` command to print the backtrace:
 
 ```
 (gdb) bt

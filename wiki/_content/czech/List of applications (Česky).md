@@ -216,7 +216,7 @@ Mnoho zde uvedených klientů (včetně Pidgina a všech jeho forků) podporuje 
 
 	[http://emesene.org/](http://emesene.org/) || [emesene](https://aur.archlinux.org/packages/emesene/)
 
-*   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) "wikipedia:Empathy (software)")** — IM klient z prostředí GNOME, používá [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)") framework
+*   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) framework
 
 	[http://live.gnome.org/Empathy](http://live.gnome.org/Empathy) || [empathy](https://www.archlinux.org/packages/?name=empathy)
 
@@ -232,7 +232,7 @@ Mnoho zde uvedených klientů (včetně Pidgina a všech jeho forků) podporuje 
 
 	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
 
-*   **[KDE Telepathy](/index.php/Kde#KDE_Telepathy "Kde")** — IM klient z prostředí KDE používající [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)") framework. Míněn jako náhrada za Kopete.
+*   **[KDE Telepathy](/index.php/Kde#KDE_Telepathy "Kde")** — IM klient z prostředí KDE používající [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) framework. Míněn jako náhrada za Kopete.
 
 	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [kde-telepathy-meta](https://www.archlinux.org/packages/?name=kde-telepathy-meta)
 
@@ -546,7 +546,7 @@ See also [Wikipedia:List of SIP software](https://en.wikipedia.org/wiki/List_of_
 
 ### Firefox
 
-Věčně populární webový prohlížeč Firefox je dostupný přes pacmana, nicméně nemá své oficiální označení, a tak se program při otevření objevuje pod svým vývojovým kódovým názvem _Gran Paradiso_.
+Věčně populární webový prohlížeč Firefox je dostupný přes pacmana, nicméně nemá své oficiální označení, a tak se program při otevření objevuje pod svým vývojovým kódovým názvem *Gran Paradiso*.
 
 Instalujte s:
 
@@ -564,22 +564,22 @@ Určitě si nainstalujte 'flashplugin', 'mplayer', 'mplayer-plugin', a balíky '
 
 ```
 
-_Nyní je tu i balíček flashplugin pro 64-bity. Pokud flash na x86_64 po spuštění předcházejícího příkazu stále nejde, zkuste níže uvedené rady._
+*Nyní je tu i balíček flashplugin pro 64-bity. Pokud flash na x86_64 po spuštění předcházejícího příkazu stále nejde, zkuste níže uvedené rady.*
 
-*   _Poznámka_ Povedlo se mi zprovoznit pluginy pouze symlinkováním všeho z '/usr/lib/mozilla/plugins' do '~/.mozilla/plugins', přesněji tedy spuštením příkazu 'mkdir ~/.mozilla/plugins && ln -s /usr/lib/mozilla/plugins/* ~/.mozilla/plugins'.
+*   *Poznámka* Povedlo se mi zprovoznit pluginy pouze symlinkováním všeho z '/usr/lib/mozilla/plugins' do '~/.mozilla/plugins', přesněji tedy spuštením příkazu 'mkdir ~/.mozilla/plugins && ln -s /usr/lib/mozilla/plugins/* ~/.mozilla/plugins'.
 
 (Balík codecs obsahuje většinu kodeků, včetně těch pro Win32, QuickTime a RealPlayer9 obsah.)
 
 ### Gecko Media Player
 
-Dobrá náhrada v současnosti zastarávajícího _mplayer-plugin_ je [Gecko Media Player](http://code.google.com/p/gecko-mediaplayer/). Stabilnější v kombinaci s MPlayer 1.0RC2\. _(Už žádné pády na Apple Trailers.)_
+Dobrá náhrada v současnosti zastarávajícího *mplayer-plugin* je [Gecko Media Player](http://code.google.com/p/gecko-mediaplayer/). Stabilnější v kombinaci s MPlayer 1.0RC2\. *(Už žádné pády na Apple Trailers.)*
 
 ```
 #pacman -S gecko-mediaplayer
 
 ```
 
-_(**Poznámka!** Odstraňte mplayer-plugin, pokud je již nainstalován.)_
+*(**Poznámka!** Odstraňte mplayer-plugin, pokud je již nainstalován.)*
 
 Pro správu vašich e-mailů je užitečný Thunderbird. Pokud používáte GNOME, můžete se spíše podívat na Epiphany a Evolution; pokud používáte KDE, vaší volbou může být zas Konqueror a KMail. Pokud chcete něco zcela jiného, můžete používat Operu. No a nakonec pokud pracujete v systémové konzoli nebo terminálovém sezení, můžete používat různé textové prohlížeče jako ELinks, Links a Lynx, a spravovat své e-maily s [Muttem](/index.php/Mutt "Mutt"). Pidgin (předtím známý jako Gaim) a Kopete jsou dobrými "kecálky" (instant messengery) pro GNOME, respektive KDE. Když používáte pouze Jabber nebo Google Talk, jsou perfektní PSI a Gajim.
 

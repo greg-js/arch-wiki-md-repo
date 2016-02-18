@@ -46,7 +46,6 @@ SSH 클라이언트 설정은 `/etc/ssh/ssh_config` 파일에서 설정할 수 �
 아래는 예시입니다.
 
  `/etc/ssh/ssh_config` 
-
 ```
 #       $OpenBSD: ssh_config,v 1.25 2009/02/17 01:28:32 djm Exp $
 
@@ -114,7 +113,6 @@ SSH 데몬은 `/etc/ssh/ssh**d**_config` 파일에서 설정할 수 있습니다
 아래는 예시입니다.
 
  `/etc/ssh/sshd_config` 
-
 ```
 #	$OpenBSD: sshd_config,v 1.75 2007/03/19 01:01:29 djm Exp $
 
@@ -134,10 +132,10 @@ ListenAddress 0.0.0.0
 #ListenAddress ::
 
 # HostKey for protocol version 1
-#HostKey /etc/ssh/ssh_host_key
+#HostKey /etc/ssh/ssh*host*key
 # HostKeys for protocol version 2
-#HostKey /etc/ssh/ssh_host_rsa_key
-#HostKey /etc/ssh/ssh_host_dsa_key
+#HostKey /etc/ssh/ssh*host*rsa_key
+#HostKey /etc/ssh/ssh*host*dsa_key
 
 # Lifetime and size of ephemeral version 1 server key
 #KeyRegenerationInterval 1h
@@ -159,7 +157,7 @@ ListenAddress 0.0.0.0
 #PubkeyAuthentication yes
 #AuthorizedKeysFile     .ssh/authorized_keys
 
-# For this to work you will also need host keys in /etc/ssh/ssh_known_hosts
+# For this to work you will also need host keys in /etc/ssh/ssh*known*hosts
 #RhostsRSAAuthentication no
 # similar for protocol version 2
 #HostbasedAuthentication no
@@ -339,9 +337,9 @@ alias sshtunnel="ssh -ND 4711 -v user@host"
 
 ### 2단계 : 브라우저 설정 (또는 다른 프로그램)
 
-*   파이어 폭스: _도구 → 설정 → 고급 → 네티워크 → 연결 → 설정_:
+*   파이어 폭스: *도구 → 설정 → 고급 → 네티워크 → 연결 → 설정*:
 
-	_"프록시 수동 설정"_ 체크한 후 _"SOCKS host"_ 칸에 "localhost" 를 입력합니다, 그리고 다음칸에 포트 번호를 입력합니다.
+	*"프록시 수동 설정"* 체크한 후 *"SOCKS host"* 칸에 "localhost" 를 입력합니다, 그리고 다음칸에 포트 번호를 입력합니다.
 
 	사용하는 프로토콜로 SOCK4를 선택해야 합니다. SOCKS5는 작동하지 않습니다.
 
@@ -400,7 +398,7 @@ Fuse 모듈 올리기
 
 ```
 
-`/etc/rc.conf`에서 _modules_ 배열란에 fuse를 추가하여 시스템 부팅 때 모듈을 올릴 수 있습니다.
+`/etc/rc.conf`에서 *modules* 배열란에 fuse를 추가하여 시스템 부팅 때 모듈을 올릴 수 있습니다.
 
 sshfs를 사용하여 원격 디렉토리를 마운트
 

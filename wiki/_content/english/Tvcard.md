@@ -193,7 +193,7 @@ To add several channels you can create a play list with all the frequencies, and
 
 ### Kworld PlusTV Analog PCI PVR 7131SE
 
-This card is reported by _lspci_ as:
+This card is reported by *lspci* as:
 
 ```
 01:0a.0 Multimedia controller: Philips Semiconductors SAA7134/SAA7135HL Video Broadcast Decoder (rev 01)
@@ -211,7 +211,7 @@ See [specifications](http://us.kworld-global.com/main/prod_in.aspx?mnuid=1306&mo
 
 ### Kworld PCI Analog TV Card Lite PVR-TV 7134SE
 
-This card is reported by _lspci_ as:
+This card is reported by *lspci* as:
 
 ```
 xx:xx.x Multimedia controller: Philips Semiconductors SAA7134/SAA7135HL Video Broadcast Decoder (rev 01)

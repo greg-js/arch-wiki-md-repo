@@ -358,7 +358,7 @@ xmodmap -pke | grep Alt_R
 
 ```
 
-然后只需要在启动脚本（比如 `~/.xinitrc`）添加如下内容, 把 _113_ 换成之前`xmodmap` 的结果：
+然后只需要在启动脚本（比如 `~/.xinitrc`）添加如下内容, 把 *113* 换成之前`xmodmap` 的结果：
 
 ```
 xmodmap -e "keycode 113 = Super_L"  # reassign Alt_R to Super_L

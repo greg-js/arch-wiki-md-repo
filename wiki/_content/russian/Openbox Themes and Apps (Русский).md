@@ -425,7 +425,7 @@ gnome-panel-control --run-dialog
 
 #### Gvolwheel, gvtray
 
-[gvolwheel](https://aur.archlinux.org/packages/gvolwheel/) - аудиомикшер, который интегрируется в системный трей. Форк _gvolwheel_ - [gvtray](https://aur.archlinux.org/packages/gvtray/).
+[gvolwheel](https://aur.archlinux.org/packages/gvolwheel/) - аудиомикшер, который интегрируется в системный трей. Форк *gvolwheel* - [gvtray](https://aur.archlinux.org/packages/gvtray/).
 
 #### Obmixer, PNMixer
 

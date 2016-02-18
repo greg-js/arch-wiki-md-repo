@@ -15,16 +15,16 @@ You can then run PHPUnit using `php phpunit.phar`. You can also make the PHP Arc
 
 This section gives beginners a very brief introduction to how to use PHPUnit to run test cases. It won't explain how to write them but if you want to get more information about this have a look at the references.
 
-As the application to be tested we use in this example a [JSON schema validator](https://github.com/hasbridge/php-json-schema%7C). In the directory _tests_ you'll see the directory _mock_ and three files.
+As the application to be tested we use in this example a [JSON schema validator](https://github.com/hasbridge/php-json-schema%7C). In the directory *tests* you'll see the directory *mock* and three files.
 
 *   mock
 *   JsonValidatorTest.php
 *   bootstrap.php
 *   phpunit.xml
 
-_mock_ contains JSON schemas which have nothing to do with PHPUnit itself, it's application-specific here, you won't find it in other applications.
+*mock* contains JSON schemas which have nothing to do with PHPUnit itself, it's application-specific here, you won't find it in other applications.
 
-_phpunit.xml is a [configuration file](http://www.phpunit.de/manual/current/en/appendixes.configuration.html) where you_
+*phpunit.xml is a [configuration file](http://www.phpunit.de/manual/current/en/appendixes.configuration.html) where you*
 
 *   configure PHPUnit's core functionality,
 *   compose a test suite out of test suites and test cases,
@@ -35,9 +35,9 @@ _phpunit.xml is a [configuration file](http://www.phpunit.de/manual/current/en/a
 *   configure PHP settings, constants, and global variables or
 *   configure a list of Selenium RC servers.
 
-In _bootstrap.php_ you put code to be run before tests are executed. Here you could register your autoloading functions or include other php scripts. Though there's one limitation, only one bootstrap can be defined per PHPUnit configuration file.
+In *bootstrap.php* you put code to be run before tests are executed. Here you could register your autoloading functions or include other php scripts. Though there's one limitation, only one bootstrap can be defined per PHPUnit configuration file.
 
-_JsonValidatorTest.php_ is the PHP file with the test cases. It's beyond the scope to explain the content of this file in depth. As a beginner you are most likely interested in how to run the test cases so what you need to execute is simply
+*JsonValidatorTest.php* is the PHP file with the test cases. It's beyond the scope to explain the content of this file in depth. As a beginner you are most likely interested in how to run the test cases so what you need to execute is simply
 
  `phpunit JsonValidatorTest JsonValidatorTest.php` 
 

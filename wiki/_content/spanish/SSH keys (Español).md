@@ -145,7 +145,6 @@ El agente [GnuPG](/index.php/GnuPG "GnuPG"), es distribuido en el paquete {Packa
 Para empezar a usar el agente GPG primero hay que correr `gpg-agent` con las opciones `--enable-ssh-support`. Por ejemplo (no olvide darle los permisos de ejecución):
 
  `/etc/profile.d/gpg-agent.sh` 
-
 ```
 #!/bin/sh
 
@@ -200,7 +199,6 @@ Instalar keychain de los repositorios extra:
 Cree el siguiente archivo y hágalo ejecutable:
 
  `/etc/profile.d/keychain.sh` 
-
 ```
 eval `keychain --eval --nogui -Q -q id_rsa`
 
@@ -209,7 +207,6 @@ eval `keychain --eval --nogui -Q -q id_rsa`
 o
 
  `/etc/profile.d/keychain.sh` 
-
 ```
 /usr/bin/keychain -Q -q --nogui ~/.ssh/id_dsa
 [[ -f $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh

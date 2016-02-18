@@ -46,7 +46,7 @@ Once your Wiimote has been detected you can test if it is working by running the
 
 ## Input Device
 
-The Wiimote can act as a regular input device like a mouse using `wminput`. If you have _no infrared source_ simply run:
+The Wiimote can act as a regular input device like a mouse using `wminput`. If you have *no infrared source* simply run:
 
 ```
 $ wminput -w
@@ -55,7 +55,7 @@ $ wminput -w
 
 You can control your pointer now by tilting your Wiimote forward, backward or to the sides.
 
-If you _have an infrared source_ run:
+If you *have an infrared source* run:
 
 ```
 $ wminput -c ir_ptr -w

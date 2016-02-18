@@ -60,7 +60,7 @@ The [wicd-bzr](https://aur.archlinux.org/packages/wicd-bzr/) buildscript is avai
 
 Wicd provides a daemon that must be started.
 
-**Warning:** Running multiple network managers _will_ cause problems, so it is important to _disable all other network management daemons_.
+**Warning:** Running multiple network managers *will* cause problems, so it is important to *disable all other network management daemons*.
 
 First, stop all previously running network daemons (like netctl, netcfg, dhcpcd, NetworkManager).
 
@@ -77,7 +77,7 @@ Add your account to **users** group:
 
 ```
 
-**Note:** The Unix group that D-Bus allows to access _wicd_ is subject to change, and it may be different than _users_. Check which policy group is specified in `/etc/dbus-1/system.d/wicd.conf`, and add your user to that group.
+**Note:** The Unix group that D-Bus allows to access *wicd* is subject to change, and it may be different than *users*. Check which policy group is specified in `/etc/dbus-1/system.d/wicd.conf`, and add your user to that group.
 
 If you added your user to a new group, log out and then log in.
 
@@ -124,11 +124,11 @@ $ wicd-curses
 
 **Note:** Wicd does not prompt you for a passkey. To use encrypted connections (WPA/WEP), expand the network you want to connect to, click **Advanced** and enter the needed info.
 
-**Note:** _wicd-curses_ is less stable than _wicd-gtk_, and is known to crash regularly.
+**Note:** *wicd-curses* is less stable than *wicd-gtk*, and is known to crash regularly.
 
 ### Switching WPA supplicant driver
 
-_Wicd_ still suggests to "almost always" use Wext as WPA supplicant driver and defaults to it. This is [outdated behavior](http://linuxwireless.org/en/developers/Documentation/Wireless-Extensions/index.html#Do_we_still_use_WE_.3F). One should use nl80211 instead, except with old drivers that do not support it. The relevant option is located in _Preferences > Advanced Settings_.
+*Wicd* still suggests to "almost always" use Wext as WPA supplicant driver and defaults to it. This is [outdated behavior](http://linuxwireless.org/en/developers/Documentation/Wireless-Extensions/index.html#Do_we_still_use_WE_.3F). One should use nl80211 instead, except with old drivers that do not support it. The relevant option is located in *Preferences > Advanced Settings*.
 
 ### Autostart
 
@@ -217,14 +217,13 @@ fi
 
 ## Troubleshooting
 
-See [Network configuration#Troubleshooting](/index.php/Network_configuration#Troubleshooting "Network configuration") for troubleshooting wired connections and [Wireless network configuration#Troubleshooting](/index.php/Wireless_network_configuration#Troubleshooting "Wireless network configuration") for troubleshooting wireless connections. This section covers only problems specific to _wicd_.
+See [Network configuration#Troubleshooting](/index.php/Network_configuration#Troubleshooting "Network configuration") for troubleshooting wired connections and [Wireless network configuration#Troubleshooting](/index.php/Wireless_network_configuration#Troubleshooting "Wireless network configuration") for troubleshooting wireless connections. This section covers only problems specific to *wicd*.
 
 ### Autoconnect on resume from hibernation/suspension
 
 If for some reasons autoconnect on resume from hibernation or suspension does not work automatically, you can manually restart Wicd by enabling the following service file for your user.
 
  `/etc/systemd/system/wicd-resume@.service` 
-
 ```
 [Unit]
 Description=Restart Wicd autoconnect service on resume
@@ -328,7 +327,7 @@ Normally it should not be required, nor recommended to run the dhcpcd service ne
 
 Alternatively, as a workaround you might consider switching to [dhclient](https://www.archlinux.org/packages/?name=dhclient) in the Wicd settings.
 
-**Note:** If you get _send_packet: Network is unreachable_ errors, then try increasing the timeout in /usr/share/dhclient/dhclient.conf.
+**Note:** If you get *send_packet: Network is unreachable* errors, then try increasing the timeout in /usr/share/dhclient/dhclient.conf.
 
 ## See also
 

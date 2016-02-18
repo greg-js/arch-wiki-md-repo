@@ -114,7 +114,7 @@ Note also that if you have a 2 USB ports on the front of your machine, and 4 USB
 
 ### Partitioning
 
-If using a traditional spinning HDD, your partition layout can influence the system's performance. Sectors at the beginning of the drive (closer to the outside of the disk) are faster than those at the end. Also, a smaller partition requires less movements from the drive's head, and so speed up disk operations. Therefore, it is advised to create a small partition (10GB, more or less depending on your needs) only for your system, as near to the beginning of the drive as possible. Other data (pictures, videos) should be kept on a separate partition, and this is usually achieved by separating the home directory (`/home/_user_`) from the system (`/`).
+If using a traditional spinning HDD, your partition layout can influence the system's performance. Sectors at the beginning of the drive (closer to the outside of the disk) are faster than those at the end. Also, a smaller partition requires less movements from the drive's head, and so speed up disk operations. Therefore, it is advised to create a small partition (10GB, more or less depending on your needs) only for your system, as near to the beginning of the drive as possible. Other data (pictures, videos) should be kept on a separate partition, and this is usually achieved by separating the home directory (`/home/*user*`) from the system (`/`).
 
 ### Choosing and tuning your filesystem
 
@@ -185,7 +185,6 @@ The characteristics of a SSD are different. It does not have moving parts. Rando
 It is possible to change the scheduler at runtime and even to use different schedulers for separate storage devices at the same time. Available schedulers can be queried by viewing the contents of `/sys/block/sd**X**/queue/scheduler` (the active scheduler is denoted by brackets):
 
  `$ cat /sys/block/sd**X**/queue/scheduler` 
-
 ```
 noop deadline [cfq]
 
@@ -219,7 +218,6 @@ Though the above will undoubtedly work, it is probably considered a reliable wor
 To do this, create the following:
 
  `/etc/udev/rules.d/60-schedulers.rules` 
-
 ```
 # set deadline scheduler for non-rotating disks
 ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="deadline"
@@ -248,7 +246,6 @@ See [[2]](https://bbs.archlinux.org/viewtopic.php?pid=493773#p493773).
 If USB drives like pendrives are slow to copy files, append these three lines in a [systemd](/index.php/Systemd "Systemd") tmpfile:
 
  `/etc/tmpfiles.d/local.conf` 
-
 ```
 w /sys/kernel/mm/transparent_hugepage/enabled - - - - madvise
 w /sys/kernel/mm/transparent_hugepage/defrag - - - - madvise
@@ -272,7 +269,7 @@ Kernel PKGBUILDs that include the BFS patch can be installed from the [AUR](/ind
 
 ### Verynice
 
-[VeryNice](/index.php/VeryNice "VeryNice") is a daemon, available in the [AUR](/index.php/AUR "AUR") as [verynice](https://aur.archlinux.org/packages/verynice/), for dynamically adjusting the nice levels of executables. The nice level represents the priority of the executable when allocating CPU resources. Simply define executables for which responsiveness is important, like X or multimedia applications, as _goodexe_ in `/etc/verynice.conf`. Similarly, CPU-hungry executables running in the background, like make, can be defined as _badexe_. This prioritization greatly improves system responsiveness under heavy load.
+[VeryNice](/index.php/VeryNice "VeryNice") is a daemon, available in the [AUR](/index.php/AUR "AUR") as [verynice](https://aur.archlinux.org/packages/verynice/), for dynamically adjusting the nice levels of executables. The nice level represents the priority of the executable when allocating CPU resources. Simply define executables for which responsiveness is important, like X or multimedia applications, as *goodexe* in `/etc/verynice.conf`. Similarly, CPU-hungry executables running in the background, like make, can be defined as *badexe*. This prioritization greatly improves system responsiveness under heavy load.
 
 ### cgroups
 
@@ -292,7 +289,7 @@ Graphics performance may depend on the settings in `/etc/X11/xorg.conf`; see the
 
 ### Driconf
 
-[driconf](https://www.archlinux.org/packages/?name=driconf) is a small utility which allows to change direct rendering settings for open source drivers. Enabling _HyperZ_ may improve performance.
+[driconf](https://www.archlinux.org/packages/?name=driconf) is a small utility which allows to change direct rendering settings for open source drivers. Enabling *HyperZ* may improve performance.
 
 ## RAM and swap
 
@@ -350,7 +347,6 @@ The example below describes how to set up swap on zRAM automatically at boot wit
 First, enable the module:
 
  `/etc/modules-load.d/zram.conf` 
-
 ```
 zram
 
@@ -359,7 +355,6 @@ zram
 Configure the number of /dev/zram nodes you need.
 
  `/etc/modprobe.d/zram.conf` 
-
 ```
 options zram num_devices=2
 
@@ -368,7 +363,6 @@ options zram num_devices=2
 Create the udev rule as shown in the example.
 
  `/etc/udev/rules.d/99-zram.rules` 
-
 ```
 KERNEL=="zram0", ATTR{disksize}="512M" RUN="/usr/bin/mkswap /dev/zram0", TAG+="systemd"
 KERNEL=="zram1", ATTR{disksize}="512M" RUN="/usr/bin/mkswap /dev/zram1", TAG+="systemd"
@@ -378,7 +372,6 @@ KERNEL=="zram1", ATTR{disksize}="512M" RUN="/usr/bin/mkswap /dev/zram1", TAG+="s
 Add /dev/zram to your fstab.
 
  `/etc/fstab` 
-
 ```
 /dev/zram0 none swap defaults 0 0
 /dev/zram1 none swap defaults 0 0

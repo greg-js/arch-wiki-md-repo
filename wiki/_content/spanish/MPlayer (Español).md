@@ -35,7 +35,7 @@ Algunas versiones destacables:
 
 	[http://www.mplayer2.org/](http://www.mplayer2.org/) || [mplayer2](https://aur.archlinux.org/packages/mplayer2/) [mplayer2-git](https://aur.archlinux.org/packages/mplayer2-git/)
 
-**Nota:** El desarrollo de _mplayer2_ parece haber cesado en favor de [mpv](/index.php/Mpv "Mpv") (un reproductor basado en _mplayer_ y _mplayer2_), que esta enfocado en la velocidad y calidad de desarrollo, aunque esto supone incompatibilidades entre hardware antiguo y el software. Tenga en cuenta estas [diferencias](https://github.com/mpv-player/mpv/blob/master/DOCS/man/changes.rst) si desea utilizarlo.
+**Nota:** El desarrollo de *mplayer2* parece haber cesado en favor de [mpv](/index.php/Mpv "Mpv") (un reproductor basado en *mplayer* y *mplayer2*), que esta enfocado en la velocidad y calidad de desarrollo, aunque esto supone incompatibilidades entre hardware antiguo y el software. Tenga en cuenta estas [diferencias](https://github.com/mpv-player/mpv/blob/master/DOCS/man/changes.rst) si desea utilizarlo.
 
 ## Interfaces/GUIs
 
@@ -95,7 +95,7 @@ Los archivos de configuración global del sistema están situados en `/etc/mplay
 *   `example.conf` - Es un ejemplo de mplayer.conf, el cual no es creado automáticamente tras la instalación.
 *   `input.conf` - Contienen la configuración de atajos del teclado.
 
-En el directorio `~/.mplayer/` hay un archivo creado automáticamente con el nombre _config_ destinado a contener las configuraciones por defecto para el usuario.
+En el directorio `~/.mplayer/` hay un archivo creado automáticamente con el nombre *config* destinado a contener las configuraciones por defecto para el usuario.
 
 Véase también: [Example MPlayer configuration file](http://mplayerhq.hu/DOCS/man/en/mplayer.1.html#CONFIGURATION%20FILES), `man mplayer`.
 

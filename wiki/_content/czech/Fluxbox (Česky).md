@@ -297,7 +297,7 @@ $ xdg_menu --help
 
 ```
 
-_Viz také: [XdgMenu](/index.php/XdgMenu "XdgMenu")_
+*Viz také: [XdgMenu](/index.php/XdgMenu "XdgMenu")*
 
 ### Vytvoření uživatelského menu pomocí programu fluxconf
 
@@ -501,7 +501,7 @@ Odkazy na některé servery s tématy jsou uvedené níže.
 
 ## Témata GTK2
 
-_Viz: [GTK+](/index.php/GTK%2B "GTK+")_
+*Viz: [GTK+](/index.php/GTK%2B "GTK+")*
 
 ## Spouštění aplikací při startu
 

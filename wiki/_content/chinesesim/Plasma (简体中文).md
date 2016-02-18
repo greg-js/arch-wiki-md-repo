@@ -34,18 +34,17 @@ Plasma是 [KDE](/index.php/KDE "KDE") 提供桌面(比如 wallpapers and panels)
 
 ### 使用 xinitrc
 
-_参阅 [xinitrc](/index.php/Xinitrc "Xinitrc") 页面获取更多信息。_
+*参阅 [xinitrc](/index.php/Xinitrc "Xinitrc") 页面获取更多信息。*
 
 在你的 `.xinitrc` 文件中添加下面的内容：
 
  `~/.xinitrc` 
-
 ```
 exec startkde
 
 ```
 
-执行 _startx_ 或者 _xinit_ 启动 Plasma。
+执行 *startx* 或者 *xinit* 启动 Plasma。
 
 **注意:** 如果你想开机时启动 Xorg，请参阅 [Start X at login](/index.php/Start_X_at_login "Start X at login") article。
 

@@ -1,6 +1,6 @@
-_dhcpcd_ is a DHCP and DHCPv6 client. It is currently the most feature-rich open source DHCP client, see the [home page](http://roy.marples.name/projects/dhcpcd/) for the full list of features.
+*dhcpcd* is a DHCP and DHCPv6 client. It is currently the most feature-rich open source DHCP client, see the [home page](http://roy.marples.name/projects/dhcpcd/) for the full list of features.
 
-**Note:** _dhcpcd_ (DHCP **client** daemon) is not the same as [dhcpd](/index.php/Dhcpd "Dhcpd") (DHCP **(server)** daemon).
+**Note:** *dhcpcd* (DHCP **client** daemon) is not the same as [dhcpd](/index.php/Dhcpd "Dhcpd") (DHCP **(server)** daemon).
 
 ## Contents
 
@@ -29,26 +29,25 @@ _dhcpcd_ is a DHCP and DHCPv6 client. It is currently the most feature-rich open
 
 The [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) package is available to be [installed](/index.php/Install "Install"). It is part of the [base](https://www.archlinux.org/groups/x86_64/base/) group, so it is likely already installed on your system.
 
-You might be interested in [dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/), which is a [GTK+](/index.php/GTK%2B "GTK+") frontend for the _dhcpcd_ daemon (and optionally [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant")). It features a configuration dialogue and the ability to enter a pass phrase for wireless networks.
+You might be interested in [dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/), which is a [GTK+](/index.php/GTK%2B "GTK+") frontend for the *dhcpcd* daemon (and optionally [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant")). It features a configuration dialogue and the ability to enter a pass phrase for wireless networks.
 
 ## Running
 
-_dhcpcd_ includes two unit files which can be used to [control](/index.php/Enable "Enable") the daemon:
+*dhcpcd* includes two unit files which can be used to [control](/index.php/Enable "Enable") the daemon:
 
-*   `dhcpcd.service` starts the daemon for _all_ [network interfaces](/index.php/Network_configuration#Network_Interfaces "Network configuration");
-*   the template unit `dhcpcd@.service` binds it to a particular interface, for example `dhcpcd@_interface_.service` where _interface_ is an interface shown with `ip link`.
+*   `dhcpcd.service` starts the daemon for *all* [network interfaces](/index.php/Network_configuration#Network_Interfaces "Network configuration");
+*   the template unit `dhcpcd@.service` binds it to a particular interface, for example `dhcpcd@*interface*.service` where *interface* is an interface shown with `ip link`.
 
 Using the template unit is recommended; see [#dhcpcd and systemd network interfaces](#dhcpcd_and_systemd_network_interfaces) for details.
 
-To start _dhcpcd_ manually, run the following command:
+To start *dhcpcd* manually, run the following command:
 
- `# dhcpcd _eth0_` 
-
+ `# dhcpcd *eth0*` 
 ```
 dhcpcd: version 5.1.1 starting
-dhcpcd: _eth0_: broadcasting for a lease
+dhcpcd: *eth0*: broadcasting for a lease
 ...
-dhcpcd: _eth0_: leased 192.168.1.70 for 86400 seconds
+dhcpcd: *eth0*: leased 192.168.1.70 for 86400 seconds
 
 ```
 
@@ -61,7 +60,6 @@ The main configuration is done in `/etc/dhcpcd.conf`, see `dhcpcd.conf(5)` for d
 If you need to add a static route client-side, create a new dhcpcd hook-script in `/usr/lib/dhcpcd/dhcpcd-hooks`. The example shows a new hook-script which adds a static route to a VPN subnet on `10.11.12.0/24` via a gateway machine at `192.168.192.5`:
 
  `/usr/lib/dhcpcd/dhcpcd-hooks/40-vpnroute` 
-
 ```
 ip route add 10.11.12.0/24 via 192.168.192.5
 
@@ -82,9 +80,9 @@ For a further description, see [RFC 3315](https://tools.ietf.org/html/rfc3315#se
 
 It depends on the DHCP-server configuration which options are optional or required to request a DHCP IP lease.
 
-**Note:** The _dhcpcd_ default configuration should be sufficient usually. The listed identifiers are determined automatically and manual configuration changes only be required in case of problems.
+**Note:** The *dhcpcd* default configuration should be sufficient usually. The listed identifiers are determined automatically and manual configuration changes only be required in case of problems.
 
-If the _dhcpcd_ default configuration fails to obtain an IP, the following options are available to use in `dhcpcd.conf`:
+If the *dhcpcd* default configuration fails to obtain an IP, the following options are available to use in `dhcpcd.conf`:
 
 *   `hostname` sends the hostname set in `/etc/hostname`
 *   `clientid` sends the MAC address as identifier
@@ -97,7 +95,7 @@ Care must be taken on a network running [Dynamic DNS](https://en.wikipedia.org/w
 
 ### Speed up DHCP by disabling ARP probing
 
-_dhcpcd_ contains an implementation of a recommendation of the DHCP standard ([RFC2131](http://www.ietf.org/rfc/rfc2131.txt) section 2.2) to check via ARP if the assigned IP address is really not taken. This seems mostly useless in home networks, so you can save about 5 seconds on every connect by adding the following line to `/etc/dhcpcd.conf`:
+*dhcpcd* contains an implementation of a recommendation of the DHCP standard ([RFC2131](http://www.ietf.org/rfc/rfc2131.txt) section 2.2) to check via ARP if the assigned IP address is really not taken. This seems mostly useless in home networks, so you can save about 5 seconds on every connect by adding the following line to `/etc/dhcpcd.conf`:
 
 ```
 noarp
@@ -108,12 +106,11 @@ This is equivalent to passing `--noarp` to `dhcpcd`, and disables the described 
 
 ### Static profile
 
-Required settings are explained in [Network configuration#Static IP address](/index.php/Network_configuration#Static_IP_address "Network configuration"). These typically include the [device name](/index.php/Network_configuration#Device_names "Network configuration"), _IP address_, _router address_, and _name server_.
+Required settings are explained in [Network configuration#Static IP address](/index.php/Network_configuration#Static_IP_address "Network configuration"). These typically include the [device name](/index.php/Network_configuration#Device_names "Network configuration"), *IP address*, *router address*, and *name server*.
 
-Configure a static profile for _dhcpcd_ in `/etc/dhcpcd.conf`, for example:
+Configure a static profile for *dhcpcd* in `/etc/dhcpcd.conf`, for example:
 
  `/etc/dhcpcd.conf` 
-
 ```
 interface eth0
 static ip_address=192.168.0.10/24	
@@ -125,12 +122,11 @@ More complicated configurations are possible, for example combining with the `ar
 
 #### Fallback profile
 
-It is possible to configure a static profile within _dhcpcd_ and fall back to it when DHCP lease fails. This is useful particularly for [headless machines](https://en.wikipedia.org/wiki/Headless_computer "wikipedia:Headless computer") such as [Raspberry Pi](/index.php/Raspberry_Pi "Raspberry Pi"), where the static profile can be used as "recovery" profile to ensure that it is always possible to connect to the machine.
+It is possible to configure a static profile within *dhcpcd* and fall back to it when DHCP lease fails. This is useful particularly for [headless machines](https://en.wikipedia.org/wiki/Headless_computer "wikipedia:Headless computer") such as [Raspberry Pi](/index.php/Raspberry_Pi "Raspberry Pi"), where the static profile can be used as "recovery" profile to ensure that it is always possible to connect to the machine.
 
 The following example configures a `static_eth0` profile with `192.168.1.23` as IP address, `192.168.1.1` as gateway and name server, and makes this profile fallback for interface `eth0`.
 
  `/etc/dhcpcd.conf` 
-
 ```
 # define static profile
 profile static_eth0
@@ -139,13 +135,13 @@ static routers=192.168.1.1
 static domain_name_servers=192.168.1.1
 
 # fallback to static profile on eth0
-interface _eth0_
+interface *eth0*
 fallback static_eth0
 ```
 
 ## Hooks
 
-_dhcpcd_ executes all scripts found in `/usr/lib/dhcpcd/dhcpcd-hooks/` in a lexical order. See `dhcpcd(5)` and `dhcpcd-run-hooks(8)` for details.
+*dhcpcd* executes all scripts found in `/usr/lib/dhcpcd/dhcpcd-hooks/` in a lexical order. See `dhcpcd(5)` and `dhcpcd-run-hooks(8)` for details.
 
 **Note:**
 
@@ -165,22 +161,22 @@ Enable this hook by creating a symbolic link (to ensure that always the current 
 
 The `10-wpa_supplicant` hook, if enabled, automatically launches [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") on wireless interfaces. It is started only if:
 
-*   no _wpa_supplicant_ process is already listening on that interface.
-*   a _wpa_supplicant_ configuration file exists. _dhcpcd_ checks
+*   no *wpa_supplicant* process is already listening on that interface.
+*   a *wpa_supplicant* configuration file exists. *dhcpcd* checks
 
 ```
-/etc/wpa_supplicant/wpa_supplicant-_interface_.conf
+/etc/wpa_supplicant/wpa_supplicant-*interface*.conf
 /etc/wpa_supplicant/wpa_supplicant.conf
-/etc/wpa_supplicant-_interface_.conf
+/etc/wpa_supplicant-*interface*.conf
 /etc/wpa_supplicant.conf
 
 ```
 
-by default, in that order, but a custom path can be set by adding `env wpa_supplicant_conf=_configuration_file_path_` into `/etc/dhcpcd.conf`.
+by default, in that order, but a custom path can be set by adding `env wpa_supplicant_conf=*configuration_file_path*` into `/etc/dhcpcd.conf`.
 
-**Note:** The hook stops at the first configuration file found, thus you should take this into consideration if you have several _wpa_supplicant_ configuration files, otherwise _dhcpcd_ might end up using the wrong file.
+**Note:** The hook stops at the first configuration file found, thus you should take this into consideration if you have several *wpa_supplicant* configuration files, otherwise *dhcpcd* might end up using the wrong file.
 
-If you manage wireless connections with _wpa_supplicant_ itself, the hook may create unwanted connection events. For example, if you stop _wpa_supplicant_ the hook may bring the interface up again. Also, if you use [netctl-auto](/index.php/Netctl#Automatic_switching_of_profiles "Netctl"), _wpa_supplicant_ is started automatically with `/run/network/wpa_supplicant__interface_.conf` for config, so starting it again from the hook is unnecessary and may result in boot-time parse errors of the `/etc/wpa_supplicant/wpa_supplicant.conf` file, which only contains dummy values in the default packaged version.
+If you manage wireless connections with *wpa_supplicant* itself, the hook may create unwanted connection events. For example, if you stop *wpa_supplicant* the hook may bring the interface up again. Also, if you use [netctl-auto](/index.php/Netctl#Automatic_switching_of_profiles "Netctl"), *wpa_supplicant* is started automatically with `/run/network/wpa_supplicant_*interface*.conf` for config, so starting it again from the hook is unnecessary and may result in boot-time parse errors of the `/etc/wpa_supplicant/wpa_supplicant.conf` file, which only contains dummy values in the default packaged version.
 
 To disable the hook, add `nohook wpa_supplicant` to `dhcpcd.conf`.
 
@@ -188,9 +184,9 @@ To disable the hook, add `nohook wpa_supplicant` to `dhcpcd.conf`.
 
 ### Remove old DHCP lease
 
-The file `/var/lib/dhcpcd/dhcpcd-_interface_.lease`, where `_interface_` is the name of the interface on which you have a lease, contains the actual DHCP lease reply sent by the DHCP server. It is used to determine the last lease from the server, and its `mtime` attribute is used to determine when it was issued. This last lease information is then used to request the same IP address previously held on a network, if it is available. If you do not want that, simply delete this file.
+The file `/var/lib/dhcpcd/dhcpcd-*interface*.lease`, where `*interface*` is the name of the interface on which you have a lease, contains the actual DHCP lease reply sent by the DHCP server. It is used to determine the last lease from the server, and its `mtime` attribute is used to determine when it was issued. This last lease information is then used to request the same IP address previously held on a network, if it is available. If you do not want that, simply delete this file.
 
-If the DHCP server still assigns the same IP address, this may happen because it is configured to keep the assignment stable and recognizes the requesting DHCP client id or DUID (see [#DHCP Client Identifier](#DHCP_Client_Identifier)). You can test it by stopping _dhcpcd_ and removing or renaming `/etc/dhcpcd.duid`. _dhcpcd_ will generate a new one on next run.
+If the DHCP server still assigns the same IP address, this may happen because it is configured to keep the assignment stable and recognizes the requesting DHCP client id or DUID (see [#DHCP Client Identifier](#DHCP_Client_Identifier)). You can test it by stopping *dhcpcd* and removing or renaming `/etc/dhcpcd.duid`. *dhcpcd* will generate a new one on next run.
 
 Keep in mind that the DUID is intended as persistent machine identifier across reboots and interfaces. If you are transferring the system to new computer, preserving this file should make it appear as old one.
 
@@ -218,7 +214,6 @@ If you are using a [dnsmasq](/index.php/Dnsmasq "Dnsmasq") DHCP server, the diff
 If you are on a network with DHCPv4 that filters Client IDs based on MAC addresses, you may need to change the following line:
 
  `/etc/dhcpcd.conf` 
-
 ```
 # Use the same DUID + IAID as set in DHCPv6 for DHCPv4 Client ID as per RFC4361\. 
 duid
@@ -228,7 +223,6 @@ duid
 To:
 
  `/etc/dhcpcd.conf` 
-
 ```
 # Use the hardware address of the interface for the Client ID (DHCPv4).
 clientid
@@ -268,23 +262,22 @@ in `/etc/dhcpcd.conf`. This should not cause issues unless you have multiple DHC
 
 ### dhcpcd and systemd network interfaces
 
-`dhcpcd.service` can be [enabled](/index.php/Enabled "Enabled") without specifying an interface. This may, however, create a race condition at boot with _systemd-udevd_ trying to apply a predictable network interface name:
+`dhcpcd.service` can be [enabled](/index.php/Enabled "Enabled") without specifying an interface. This may, however, create a race condition at boot with *systemd-udevd* trying to apply a predictable network interface name:
 
 ```
 error changing net interface name wlan0 to wlp4s0: Device or resource busy" 
 
 ```
 
-To avoid it, enable _dhcpcd_ per interface it should bind to as described in [#Running](#Running). The downside of the template unit is, however, that it does not support hot-plugging of a wired connection and will fail if the network cable is not connected. To work-around the failure, see [#Timeout delay](#Timeout_delay).
+To avoid it, enable *dhcpcd* per interface it should bind to as described in [#Running](#Running). The downside of the template unit is, however, that it does not support hot-plugging of a wired connection and will fail if the network cable is not connected. To work-around the failure, see [#Timeout delay](#Timeout_delay).
 
 ### Timeout delay
 
-If _dhcpcd_ operates on a single interface and fails to obtain a lease after 30 seconds (for example when the server is not ready or the cable not plugged), it will exit with an error.
+If *dhcpcd* operates on a single interface and fails to obtain a lease after 30 seconds (for example when the server is not ready or the cable not plugged), it will exit with an error.
 
-To have _dhcpcd_ wait indefinitely for one-time, set the `timeout` option to `0`:
+To have *dhcpcd* wait indefinitely for one-time, set the `timeout` option to `0`:
 
  `/etc/systemd/system/dhcpcd@.service.d/timeout.conf` 
-
 ```
 [Service]
 ExecStart=
@@ -294,7 +287,6 @@ ExecStart=/usr/bin/dhcpcd -w -q **-t 0** %I
 To have it wait indefinetely, let the unit restart after it exited:
 
  `/etc/systemd/system/dhcpcd@.service.d/dhcpcdrestart.conf` 
-
 ```
 [Service]
 Restart=always

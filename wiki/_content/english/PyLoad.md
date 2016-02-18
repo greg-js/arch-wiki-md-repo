@@ -50,7 +50,7 @@ Run Setup Assistant:
 
 **Note:** This command must be run as the same user that will run pyload. For example if you run pyload as a daemon using the systemd service, either run this command as user pyload or change `/etc/systemd/system/pyload.service` to another user. If you choose to run this command as user pyload you will have to edit `/etc/passwd` to modify pyload's shell from `/bin/false` to `/bin/bash`.
 
-The Setup Assistant gives you a jump start, by providing a _basic_ but _working_ setup. Being a basic setup, there are more options and you should at least look at them, since some sections are untouched by the Assistant, like the permissions section.
+The Setup Assistant gives you a jump start, by providing a *basic* but *working* setup. Being a basic setup, there are more options and you should at least look at them, since some sections are untouched by the Assistant, like the permissions section.
 
 **Tip:** Most (if not all) of the options can be changed with `pyLoadGui` or with the the web interface.
 
@@ -70,7 +70,7 @@ While also editable with the web interface, you can change the plugins configura
 **Extraction passwords** are stored in `~/.pyload/unrar_passwords.txt`. To add passwords either edit the file or:
 
 ```
-# echo '_password_' >> ~/.pyload/unrar_passwords.txt
+# echo '*password*' >> ~/.pyload/unrar_passwords.txt
 
 ```
 
@@ -95,7 +95,7 @@ If you are interested in running userscripts, before running, you need to either
 or
 
 ```
-# chown _user you defined in pyload.conf / permissions settings_ /opt/pyload/scripts/
+# chown *user you defined in pyload.conf / permissions settings* /opt/pyload/scripts/
 
 ```
 
@@ -139,9 +139,7 @@ http://localhost:8000
 ## Daemon
 
 **Tip:** Do not forget to change `$USER` and `$GROUP`
-
  `/etc/systemd/system/pyload.service` 
-
 ```
 [Unit]
 Description=Downloadtool for One-Click-Hoster written in python.
@@ -156,9 +154,9 @@ Group=$GROUP
 WantedBy=multi-user.target
 ```
 
-To start pyload start _pyload_ service.
+To start pyload start *pyload* service.
 
-To have it started automatically on boot, enable _pyload_ service.
+To have it started automatically on boot, enable *pyload* service.
 
 ## Alternatives
 

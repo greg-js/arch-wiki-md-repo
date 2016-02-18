@@ -27,7 +27,7 @@ $ dd if=image.iso of=/dev/sd[x]
 
 ```
 
-_image.iso_ е пътя към iso файла, а _/dev/sd[x]_ е USB устройството. _**Проверете че ползвате /dev/sdx а НЕ /dev/sdx1.**_ **Това е често срещана грешка!**
+*image.iso* е пътя към iso файла, а */dev/sd[x]* е USB устройството. ***Проверете че ползвате /dev/sdx а НЕ /dev/sdx1.*** **Това е често срещана грешка!**
 
 Тази команда ще изтрие всичко на USB устройството.
 
@@ -104,11 +104,11 @@ As long as you are really sure you want to write the data, type yes, then wait a
 
 If under Vista or Win7, you should open the console as administrator, or else flashnul will fail to open the stick as a block device and will only be able to write via the drive handle windows provides
 
-**Note:** _I had to do "C:\flashnul\flashnul.exe **H:** -L c:\archlinux-2008.06-core-i686.img" for it to work. I kept getting access denied if i just used the number. -gejr_
+**Note:** *I had to do "C:\flashnul\flashnul.exe **H:** -L c:\archlinux-2008.06-core-i686.img" for it to work. I kept getting access denied if i just used the number. -gejr*
 
-**Note:** _The output of flashnul -p was considerably different for me. No numbers were returned or block information, just a list of logical drive mappings (C:, D:, etc..) so I just did flashnul -L archlinux.img E: --[Kahrn](/index.php?title=User:Kahrn&action=edit&redlink=1 "User:Kahrn (page does not exist)") 18:12, 28 April 2010 (EDT)_
+**Note:** *The output of flashnul -p was considerably different for me. No numbers were returned or block information, just a list of logical drive mappings (C:, D:, etc..) so I just did flashnul -L archlinux.img E: --[Kahrn](/index.php?title=User:Kahrn&action=edit&redlink=1 "User:Kahrn (page does not exist)") 18:12, 28 April 2010 (EDT)*
 
-**Note:** _Confirmed that you need to use drive letter as opposed to number. flashnul 1rc1, Windows 7 x64\. -bgalakazam_
+**Note:** *Confirmed that you need to use drive letter as opposed to number. flashnul 1rc1, Windows 7 x64\. -bgalakazam*
 
 ### Със Cygwin
 

@@ -1,6 +1,6 @@
 From the squid [website](http://www.squid-cache.org):
 
-	_Squid is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages. Squid has extensive access controls and makes a great server accelerator. It runs on Unix and Windows and is licensed under the GNU GPL._
+	*Squid is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages. Squid has extensive access controls and makes a great server accelerator. It runs on Unix and Windows and is licensed under the GNU GPL.*
 
 While squid works wonderfully in large corporations and schools, it can also benefit the home user too. However, if you're looking for a more lightweight single-user proxy, you should try [Polipo](/index.php/Polipo "Polipo").
 
@@ -387,7 +387,6 @@ Then add something like this to squid.conf:
 If you are using both squid and NetworkManager, the following error means that squid is launched before the wifi connection is enabled by NetworkManager (`/etc/resolv.conf` is empty).
 
  `/var/log/squid/cache.log` 
-
 ```
 Warning: Could not find any nameservers. Trying to use localhost 
 Please check your /etc/resolv.conf file
@@ -402,7 +401,6 @@ You can:
 `sudo systemctl disable squid.service`
 
  `sudo nano /etc/NetworkManager/dispatcher.d/10_squid` 
-
 ```
 if [ $1 == 'wlp2s0' ]
 then

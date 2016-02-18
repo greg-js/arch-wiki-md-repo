@@ -41,7 +41,7 @@ $ setfattr -n user.pax.flags -v "emr" /usr/bin/problematic_binary
 
 ```
 
-**Note:** The [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) package _only_ supports the extended attributes, and does not include support for the ELF exception markers. The extended attributes do not require special tooling and leave the binaries unaltered, making them a far better option.
+**Note:** The [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) package *only* supports the extended attributes, and does not include support for the ELF exception markers. The extended attributes do not require special tooling and leave the binaries unaltered, making them a far better option.
 
 The MPROTECT feature is by far the most common source of issues, and [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) defaults to [logging violations](/index.php/Grsecurity#Auditing "Grsecurity") to the kernel log. It is more difficult to identify these issues with only the PaX subset of [grsecurity](/index.php/Grsecurity "Grsecurity").
 
@@ -71,7 +71,6 @@ Setting `kernel.pax.softmode=1` with [sysctl](/index.php/Sysctl "Sysctl") will r
 The [paxtest](https://www.archlinux.org/packages/?name=paxtest) tool can be used to test the userspace exploit mitigation features. Note that the UDEREF self-protection feature shrinks the address space on x86_64, reducing the entropy available for randomization. It's an extremely important feature and outweighs the minimal gain from the additional entropy.
 
  `Vanilla kernel (x86_64)` 
-
 ```
 Executable anonymous mapping             : Killed
 Executable bss                           : Killed
@@ -107,9 +106,7 @@ Return to function (strcpy, PIE)         : paxtest: return address contains a N
 Return to function (memcpy, PIE)         : Killed
 
 ```
-
  `PaX kernel (x86_64 without UDEREF)` 
-
 ```
 Executable anonymous mapping             : Killed
 Executable bss                           : Killed
@@ -145,9 +142,7 @@ Return to function (strcpy, PIE)         : paxtest: return address contains a N
 Return to function (memcpy, PIE)         : Killed
 
 ```
-
  `PaX kernel (x86_64 with UDEREF)` 
-
 ```
 Executable anonymous mapping             : Killed
 Executable bss                           : Killed

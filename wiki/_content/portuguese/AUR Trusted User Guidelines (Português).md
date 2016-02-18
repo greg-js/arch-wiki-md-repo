@@ -84,9 +84,9 @@ Aqui e no texto seguinte, a arquitetura pode ser i686 ou x86_64, as quais são a
 
 Quando você tiver finalizado a edição do PKGBUILD, etc, você deveria fazer um **commit** das alterações (`svn commit`).
 
-Quando você quiser enviar (**release**) um pacote, primeiro copie o pacote para o diretório _staging/community_ no nymeria.archlinux.org usando scp e, então, marque (**tag**) o pacote no diretório _pkgname/trunk_ e informando a `archrelease community-arch`. Isso faz uma cópia svn das entradas do trunk em um diretório chamado _community-i686_ ou _community-x86_64_. indicando que este pacote está no repositório [community] para aquela arquitetura.
+Quando você quiser enviar (**release**) um pacote, primeiro copie o pacote para o diretório *staging/community* no nymeria.archlinux.org usando scp e, então, marque (**tag**) o pacote no diretório *pkgname/trunk* e informando a `archrelease community-arch`. Isso faz uma cópia svn das entradas do trunk em um diretório chamado *community-i686* ou *community-x86_64*. indicando que este pacote está no repositório [community] para aquela arquitetura.
 
-_**Nota:** Em alguns casos, especialmente para pacotes do [community], um TU de x86_64 podem subir o pkgrel por .1 (e não por +1). Isso indica que a alteração do PKGBUILD é especificamente de x86_64 e mantenedores de i686 **não deveriam** recompilar o pacote para i686\. Quando o TU decide subir o pkgrel, isso deveria ser feito com o acréscimo normal de +1\. Porém, um pkgrel=2.1 anterior não deve se tornar pkgrel=3.1 quando o TU subir o pkgrel, ao invés disso deve ser pkgrel=3\. Em resumo, mantenha os lançamentos com ponto (.) exclusivamente para TUs de x86_64 para evitar confusão._
+***Nota:** Em alguns casos, especialmente para pacotes do [community], um TU de x86_64 podem subir o pkgrel por .1 (e não por +1). Isso indica que a alteração do PKGBUILD é especificamente de x86_64 e mantenedores de i686 **não deveriam** recompilar o pacote para i686\. Quando o TU decide subir o pkgrel, isso deveria ser feito com o acréscimo normal de +1\. Porém, um pkgrel=2.1 anterior não deve se tornar pkgrel=3.1 quando o TU subir o pkgrel, ao invés disso deve ser pkgrel=3\. Em resumo, mantenha os lançamentos com ponto (.) exclusivamente para TUs de x86_64 para evitar confusão.*
 
 Deste modo, o **processo** de atualização de pacotes pode ser resumida em:
 
@@ -100,7 +100,7 @@ Deste modo, o **processo** de atualização de pacotes pode ser resumida em:
     *   **Tag** do pacote (`archrelease community-{i686,x86_64`})
 *   **Atualizar** o repositório (`ssh nymeria.archlinux.org /community/db-update`)
 
-Veja também a seção de _Miscelânia_ no [Guia do Empacotador](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager"). Para a seção _Avoid having to enter your password all the time_ ("evite de precisar digitar sua senha toda vez") uso nymeria.archlinux.org ao invés do gerolde.archlinux.org.
+Veja também a seção de *Miscelânia* no [Guia do Empacotador](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager"). Para a seção *Avoid having to enter your password all the time* ("evite de precisar digitar sua senha toda vez") uso nymeria.archlinux.org ao invés do gerolde.archlinux.org.
 
 ### Abandonando pacotes
 

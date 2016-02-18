@@ -40,7 +40,7 @@ Estas orientações foram desenvolvidas com o passar do tempo, baseado na extens
 
 *   O Arch é uma comunidade de voluntários. O conteúdo de todo este documento pode ser resumido na seguinte notação:
 
-_**Busque proativamente se doar e trazer apenas beneficios, para a membros e comunidade.**_
+***Busque proativamente se doar e trazer apenas beneficios, para a membros e comunidade.***
 
 ## Tópicos pessoais/retóricos
 
@@ -50,7 +50,7 @@ Tópicos retóricos e "choromingos" não são bem vistos e serão fechados assim
 
 Tópicos iniciados com uma frase similar a "existe um problema na metodologia do sistema Arch, precisamos discutir" repetidamente provaram-se inefetivos e inflamatórios e são normalmente trancados após um aviso da moderação. A comunidade Arch é do estilo "Faça Você Mesmo". Se você encontrou um problema na sistemática, encontre uma solução que lhe caiba e então, retorne o conhecimento através de postagem.
 
-Ainda mais, questionamentos e discussões sobre os métodos utilizados pela equipe de desenvolvimento serão monitorados de forma ferrenha, e trancados _se provados inprodutivos ou sem sentido_. Aspereza, e críticas improdutivas não são bemvindas.
+Ainda mais, questionamentos e discussões sobre os métodos utilizados pela equipe de desenvolvimento serão monitorados de forma ferrenha, e trancados *se provados inprodutivos ou sem sentido*. Aspereza, e críticas improdutivas não são bemvindas.
 
 Se você possui algum questionamento sobre o time de desenvolvimento do Arch, tenha certeza de que seu tópico possui uma questão aberta, para ter respostas de pessoas de mente aberta. Se possível, dê uma solução ou solução parcial. O envio de código e patches para discussão são mais pragmáticos que simplesmente pedir para outros fazerem algo por você.
 
@@ -76,7 +76,7 @@ Tópicos que buscam informar sobre recomendações de produtos de informática s
 
 ## Publicidade/Solicitações
 
-Publicidade para a promoção de bens e/ou serviços será monitorada de perto. Geralmente, se relacionadas ao Arch(como projeto ou comunidade) ou ao GNU/Linux/FOSS serão permitidas. Convites, convites para redes sociais, postagens comerciais ou no estilo "matéria de blog" são desencorajadas e dependendo da situação, proibídas. Se inseguro quando ao conteúdo de sua postagem ser apropriado ou não, contate alguém do time da moderação _antes_ de postar.
+Publicidade para a promoção de bens e/ou serviços será monitorada de perto. Geralmente, se relacionadas ao Arch(como projeto ou comunidade) ou ao GNU/Linux/FOSS serão permitidas. Convites, convites para redes sociais, postagens comerciais ou no estilo "matéria de blog" são desencorajadas e dependendo da situação, proibídas. Se inseguro quando ao conteúdo de sua postagem ser apropriado ou não, contate alguém do time da moderação *antes* de postar.
 
 ## Tarefa de casa
 
@@ -98,13 +98,13 @@ Por favor, limite-se ao cadastro de apenas uma conta de fórum. Ter mais que uma
 
 ## Diga não a "Trolagem"
 
-_**O "troll" é uma pessoa que intencionalmente tenta corromper, causar controvérsia, incitar argumentos, e/ou receber atenção negativa por deliberadamente postar conteúdo provocativo na internet. O termpo pode ser usado para referenciar o ato de postar tal conteúdo, e o conteúdo por si.**_
+***O "troll" é uma pessoa que intencionalmente tenta corromper, causar controvérsia, incitar argumentos, e/ou receber atenção negativa por deliberadamente postar conteúdo provocativo na internet. O termpo pode ser usado para referenciar o ato de postar tal conteúdo, e o conteúdo por si.***
 
 Trolls são geralmente traiçoeiros e se utilizam da ambivalência como método de dissimuladamente insultar, intimidar ou incitar uma pessoa ou várias para seu próprio prazer sádico. Eles normalmente selecionam suas palavras de forma estudada e são habeis o suficiente para defender suas tentativas mascaradas de criar inquetação, frequentemente redirecionando a culpa na comunidade por serem incompreendidos. Trolagem é estritamente proibído.
 
 ## Evite tópicos controversos
 
-Não há uma lista de tópicos explicitamente "trolls", controversos ou provocativos, entretanto no passado, postagens pertinentes a **Religião, Esportes, Corrida, Nacionalismo** e **Política** foram invariavelmente fechados. Então, _**evite especialmente este tipo de tópicos que podem causar divisão nos fóruns do Arch!**_ O pessoal do fórum certamente notará que tais problemas são pertinentes a realidade humana. Contudo, este é um fórum de uma distribuição GNU/Linux, não tendo a idéia de facilitar comentários e futuras agitações sobre tais assuntos.
+Não há uma lista de tópicos explicitamente "trolls", controversos ou provocativos, entretanto no passado, postagens pertinentes a **Religião, Esportes, Corrida, Nacionalismo** e **Política** foram invariavelmente fechados. Então, ***evite especialmente este tipo de tópicos que podem causar divisão nos fóruns do Arch!*** O pessoal do fórum certamente notará que tais problemas são pertinentes a realidade humana. Contudo, este é um fórum de uma distribuição GNU/Linux, não tendo a idéia de facilitar comentários e futuras agitações sobre tais assuntos.
 
 ## Proibição de tópicos vazios/Power-posting
 
@@ -186,4 +186,4 @@ Sendo assim, não poste links de solicitações criminais em qualquer forma. Ist
 
 ## Liberdade
 
-A troca livre e aberta de assistência, fala, idéias e opiniões é altamente considerado e encorajado nos fóruns, porém, note que esta liberdade garantida é uma _liberdade relativa_. Ela existe dentro dos limites das linhas gerais e princípios descritos acima. Reclamações de censura são então infundados, pois esta é uma implementação figura necessária limitação para uma razoável para a solução de conflitos. Para ilustrar, estamos cientes das leis físicas que governam a energia, e mesmo assim não reclamamos de sua opressão. Ao inves disto, reconhecemos que tais leis são essenciais para nosso bem-estar. Portanto, os altos padrões da comunidade Arch refletidos nestas diretrizes regulam a liberdade da comunidade pelo bem comum e proteção de todos. A chave então, para a liberdade verdadeira nos fóruns é o cultivo da benevolência aos outros e armonização da atitude com a filosofia Arch trazendo apenas benefícios aos envolvidos. Adicionalmente, isto permite que membros satisfaçam todos os impulsos de contribuição sem agravarem ou invadirem a liberdade de outros. Aderindo os princípios e obedecendo as diretrizes do fórum, beneficia a comunidade provando que a liberdade pode trazer consequências negativas e prejudiciais em uma visão mais caótica.
+A troca livre e aberta de assistência, fala, idéias e opiniões é altamente considerado e encorajado nos fóruns, porém, note que esta liberdade garantida é uma *liberdade relativa*. Ela existe dentro dos limites das linhas gerais e princípios descritos acima. Reclamações de censura são então infundados, pois esta é uma implementação figura necessária limitação para uma razoável para a solução de conflitos. Para ilustrar, estamos cientes das leis físicas que governam a energia, e mesmo assim não reclamamos de sua opressão. Ao inves disto, reconhecemos que tais leis são essenciais para nosso bem-estar. Portanto, os altos padrões da comunidade Arch refletidos nestas diretrizes regulam a liberdade da comunidade pelo bem comum e proteção de todos. A chave então, para a liberdade verdadeira nos fóruns é o cultivo da benevolência aos outros e armonização da atitude com a filosofia Arch trazendo apenas benefícios aos envolvidos. Adicionalmente, isto permite que membros satisfaçam todos os impulsos de contribuição sem agravarem ou invadirem a liberdade de outros. Aderindo os princípios e obedecendo as diretrizes do fórum, beneficia a comunidade provando que a liberdade pode trazer consequências negativas e prejudiciais em uma visão mais caótica.

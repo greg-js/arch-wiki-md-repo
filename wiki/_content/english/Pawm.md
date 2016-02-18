@@ -26,7 +26,7 @@ This wiki page details installation and configuration of the PAWM window manager
 
 PAWM was written by David Gómez and Raúl Núñez de Arenas Coronado. PAWM was written with the objective of creating a tiny window manager that would execute any X application, but still keep it simple and intuitive to use.
 
-PAWM stands for _Puto Amo Window Manager'._
+PAWM stands for *Puto Amo Window Manager'.*
 
 ## Installation
 

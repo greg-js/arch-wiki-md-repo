@@ -1,4 +1,4 @@
-[GNU nano](http://www.nano-editor.org/) (o nano) es un editor de texto cuya finalidad es presentar una interface simple y opciones de comandos intuitivos de editores de textos basados en consola. _nano_ incorpora características incluyendo resaltado colorida de sintaxis, conversión de tipos de archivos DOS/Mac, revisor de ortografía y codificación [UTF-8](https://en.wikipedia.org/wiki/UTF-8 "wikipedia:UTF-8"). _nano_ inicia con un buffer vacío, normalmente ocupa menos de 1.5 MB de memoria.
+[GNU nano](http://www.nano-editor.org/) (o nano) es un editor de texto cuya finalidad es presentar una interface simple y opciones de comandos intuitivos de editores de textos basados en consola. *nano* incorpora características incluyendo resaltado colorida de sintaxis, conversión de tipos de archivos DOS/Mac, revisor de ortografía y codificación [UTF-8](https://en.wikipedia.org/wiki/UTF-8 "wikipedia:UTF-8"). *nano* inicia con un buffer vacío, normalmente ocupa menos de 1.5 MB de memoria.
 
 ## Contents
 
@@ -154,7 +154,7 @@ A diferencia de muchos programas interactivos, la suspensión no esta disponible
 
 #### Ajuste de texto
 
-Diferente a muchos editores de texto, _nano_ ajusta el texto. Para desactivar esto, añade esto a `~/.nanorc`
+Diferente a muchos editores de texto, *nano* ajusta el texto. Para desactivar esto, añade esto a `~/.nanorc`
 
 ```
 set nowrap
@@ -221,7 +221,7 @@ Algunos administradores de ventanas tienen algunas combinaciones de teclas que c
 
 ## Véase también
 
-*   [nano (text editor)](https://en.wikipedia.org/wiki/Nano_(text_editor) "wikipedia:Nano (text editor)") - Wikipedia
+*   [nano (text editor)](https://en.wikipedia.org/wiki/Nano_(text_editor) - Wikipedia
 *   [GNU nano Homepage](http://www.nano-editor.org/) - Sitio Oficial (en Inglés)
 *   [GNU nano Bugs](https://savannah.gnu.org/bugs/?group=nano) Reportar fallos
 *   [Mejor remarcado de sintaxis](https://github.com/craigbarnes/nanorc)

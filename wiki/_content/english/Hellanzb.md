@@ -41,7 +41,7 @@ cp /etc/hellanzb.conf.sample ~/.config/hellanzb.conf
 
 ##### /etc/conf.d/hellanzb
 
-When run in daemon mode, the _/etc/conf.d/hellanzb_ file needs to be modified to configure the user that will be running hellanzb
+When run in daemon mode, the */etc/conf.d/hellanzb* file needs to be modified to configure the user that will be running hellanzb
 
 ```
 HELLANZB_USER="username"

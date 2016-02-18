@@ -1,6 +1,6 @@
 Взято [отсюда](http://www.squid-cache.org):
 
-	_Squid - кеширующий прокси-сервер поддерживающий HTTP, HTTPS, FTP, и многое другое. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages. Squid has extensive access controls and makes a great server accelerator. It runs on Unix and Windows and is licensed under the GNU GPL._
+	*Squid - кеширующий прокси-сервер поддерживающий HTTP, HTTPS, FTP, и многое другое. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages. Squid has extensive access controls and makes a great server accelerator. It runs on Unix and Windows and is licensed under the GNU GPL.*
 
 Помимо того что squid отлично работает в больших корпорациях и школах, он может быть использован и дома. Если вы ищите более легкий однопользовательский прокси, вам следует взглянуть на [Polipo](/index.php/Polipo "Polipo") ([website](http://www.pps.jussieu.fr/~jch/software/polipo/)).
 
@@ -142,7 +142,7 @@ If you're looking for a content filtering solution to work with Squid, you shoul
 
 ## NTLM
 
-_This section is really unclear..._
+*This section is really unclear...*
 
 To get Windows authentication, we should change /etc/squid/squid.conf: Что бы получить аутентификацию в Windows,вы должны изменить /etc/squid/squid.conf:
 

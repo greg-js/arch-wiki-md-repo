@@ -25,7 +25,7 @@ Many Windows programs may still be useful in Linux and so we may want to have a 
 *   Installer: is it possible to install the program silently? Even better, does an installer-less version exist?
 *   Portability and cleanness: is the program portable? It is clean?
 
-Here we mean a program is portable if it _never_ writes in the registry or outside its directory; we mean a program is clean if it _never_ writes in its directory, but it may write its settings in the user folder. A program can be also both (e.g., it never writes settings) or neither (e.g., it writes in its directory, it writes around, it writes in the registry...)
+Here we mean a program is portable if it *never* writes in the registry or outside its directory; we mean a program is clean if it *never* writes in its directory, but it may write its settings in the user folder. A program can be also both (e.g., it never writes settings) or neither (e.g., it writes in its directory, it writes around, it writes in the registry...)
 
 ### License
 
@@ -121,7 +121,7 @@ The task of preparing the environment may differ greatly between applications, b
 
 Of course the minimum is just starting `WINEDEBUG=-all wine /usr/share/programname "$@"`.
 
-Usually the environment will be made by symlinking between the `"$HOME"/._programname_` directory and the `/usr/share/_programname_` files. But since some Windows programs are very fickle about their paths, you may need to symlink directly in the `"$HOME"/._programname_/wine/drive_c/Program\ Files/_programname_` directory.
+Usually the environment will be made by symlinking between the `"$HOME"/.*programname*` directory and the `/usr/share/*programname*` files. But since some Windows programs are very fickle about their paths, you may need to symlink directly in the `"$HOME"/.*programname*/wine/drive_c/Program\ Files/*programname*` directory.
 
 Of course those are just ideas to integrate Win32 applications in the Linux environment, do not forget your intelligence and gumption.
 

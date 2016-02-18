@@ -96,7 +96,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-_**Bus 001 Device 003: ID 147e:1002 Upek**_
+***Bus 001 Device 003: ID 147e:1002 Upek***
 
 ```
 
@@ -119,7 +119,6 @@ The thinkpad_acpi kernel module needs to be configured so user space programs ca
 The thinkfan configuration file also needs to know how to set the fan speed. Replace the default sensor settings with the following.
 
  `/etc/thinkfan.conf` 
-
 ```
 sensor /sys/devices/platform/coretemp.0/temp1_input
 

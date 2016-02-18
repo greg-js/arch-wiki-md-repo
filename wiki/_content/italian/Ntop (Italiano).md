@@ -22,7 +22,7 @@ Ntop è un analizzatore del traffico di rete basato su [libcap](http://www.tcpdu
 *   Prima di eseguire ntop, è necessario impostare la password d'amministratore:
 
 ```
-# ntop --set-admin-password=_password_
+# ntop --set-admin-password=*password*
 
 ```
 
@@ -39,7 +39,7 @@ Ntop è un analizzatore del traffico di rete basato su [libcap](http://www.tcpdu
 
 ### Accedere all'interfaccia web di ntop
 
-*   Per accedere all'interfaccia web di ntop, basta inserire `[http://127.0.0.1:3000/](http://127.0.0.1:3000/)` nella barra indirizzi di un qualsiasi web browser. Per effettuare modifiche alla configurazione del web server, è necessario fornire username (predefinito = _admin_) e password.
+*   Per accedere all'interfaccia web di ntop, basta inserire `[http://127.0.0.1:3000/](http://127.0.0.1:3000/)` nella barra indirizzi di un qualsiasi web browser. Per effettuare modifiche alla configurazione del web server, è necessario fornire username (predefinito = *admin*) e password.
 
 ## Risoluzione dei problemi
 

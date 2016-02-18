@@ -2,7 +2,7 @@
 
 摘自[GTK+ 官方网站](http://www.gtk.org)：
 
-	_GTK+，或称 GIMP Toolkit，是一个跨平台的图形界面开发库。该库提供各式各样的窗口部件，小到一次性使用的程序、大到大型应用，GTK+ 都能满足你的需求。_
+	*GTK+，或称 GIMP Toolkit，是一个跨平台的图形界面开发库。该库提供各式各样的窗口部件，小到一次性使用的程序、大到大型应用，GTK+ 都能满足你的需求。*
 
 GTK+，或称 GIMP Toolkit，最初由[GNU项目](/index.php/GNU_Project "GNU Project")为图像编辑软件[GIMP](/index.php/GIMP "GIMP")开发，但现在它已经被广泛地应用在各种语言的图形界面编程中。
 
@@ -63,13 +63,13 @@ GTK+，或称 GIMP Toolkit，最初由[GNU项目](/index.php/GNU_Project "GNU Pr
 
 [AUR](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)")上有不错的主题：[gtk-smooth-engine](https://aur.archlinux.org/packages/gtk-smooth-engine/)
 
-可以使用_gtk-theme-switch2_修改主题。
+可以使用*gtk-theme-switch2*修改主题。
 
 ### GTK+ 2.x
 
 多数[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")都会提供配置GTK+主题、图标、字体的工具。此外，下面提到的这些工具也很不错。
 
-建议同时安装一些好看的GTK+2主题，比如_Clearlooks_（包含在[gtk-engines](https://www.archlinux.org/packages/?name=gtk-engines)软件包）：
+建议同时安装一些好看的GTK+2主题，比如*Clearlooks*（包含在[gtk-engines](https://www.archlinux.org/packages/?name=gtk-engines)软件包）：
 
 ```
 # pacman -S gtk-engines
@@ -84,7 +84,6 @@ GTK+，或称 GIMP Toolkit，最初由[GNU项目](/index.php/GNU_Project "GNU Pr
 可以手动修改配置文件`~/.gtkrc-2.0`来配置GTK+。[GNOME图书馆](http://library.gnome.org/devel/gtk/stable/GtkSettings.html)提供了各种设置的清单。下面给出了配置GTK+主题、图标、字体和字体大小的示范：
 
  `~/.gtkrc-2.0` 
-
 ```
 gtk-icon-theme-name = "[图标主题名称]"
 gtk-theme-name = "[主题名称]"
@@ -94,7 +93,6 @@ gtk-font-name = "[字体名] [大小]"
 例如：
 
  `~/.gtkrc-2.0` 
-
 ```
 gtk-icon-theme-name = "Tango"
 gtk-theme-name = "Murrine-Gray"
@@ -115,7 +113,6 @@ gtk-font-name = "DejaVu Sans 8"
 如果不想用[gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool)，需要自己编辑`{XDG_CONFIG_HOME}/gtk-3.0/settings.ini`（通常为`~/.config/gtk-3.0/settings.ini`）设置主题。文件示例：
 
  `{XDG_CONFIG_HOME}/gtk-3.0/settings.ini` 
-
 ```
 [Settings]
 gtk-application-prefer-dark-theme = false
@@ -150,7 +147,7 @@ cp -r /usr/share/themes/Zukitwo/gtk-3.0/ ~/.config/
 
 ## 配置文件
 
-**注意:** 参见GTK+编程手册中的[_GtkSettings_设置](http://library.gnome.org/devel/gtk/stable/GtkSettings.html#GtkSettings.properties)部分，以了解所有GTK+配置选项。
+**注意:** 参见GTK+编程手册中的[*GtkSettings*设置](http://library.gnome.org/devel/gtk/stable/GtkSettings.html#GtkSettings.properties)部分，以了解所有GTK+配置选项。
 
 本节介绍了许多GTK+设置，可用在`~/.gtkrc-2.0`文件中。
 
@@ -231,7 +228,6 @@ gcc -g -Wall `pkg-config --cflags --libs gtk+-3.0` -o base base.c
 *   依赖：[zenity](https://www.archlinux.org/packages/?name=zenity)
 
  `hello_world.sh` 
-
 ```
 #!/bin/bash
 zenity --info --title='Hello world!' --text='This is an example dialog.'
@@ -245,7 +241,6 @@ zenity --info --title='Hello world!' --text='This is an example dialog.'
 *   运行： `mono hello_world.exe` (or `booi hello_world.boo`)
 
  `hello_world.boo` 
-
 ```
 import Gtk from "gtk-sharp"
 Application.Init()
@@ -260,7 +255,6 @@ Hello.Run()
 *   编译：`gcc -o hello_world `pkg-config --cflags --libs gtk+-3.0` hello_world.c`
 
  `hello_world.c` 
-
 ```
 #include <gtk/gtk.h>
 void main (int argc, char *argv[]) {
@@ -277,7 +271,6 @@ void main (int argc, char *argv[]) {
 *   编译：`g++ -o hello_world `pkg-config --cflags --libs gtkmm-3.0` hello_world.cc`
 
  `hello_world.cc` 
-
 ```
 #include <gtkmm.h>
 #include <gtkmm/messagedialog.h>
@@ -296,7 +289,6 @@ int main(int argc, char *argv[]) {
 *   运行： `mono hello_world.exe`
 
  `hello_world.cs` 
-
 ```
 using Gtk;
 public class HelloWorld {
@@ -316,7 +308,6 @@ public class HelloWorld {
 *   编译：`valac --pkg gtk+-3.0 hello_world.gs`
 
  `hello_world.gs` 
-
 ```
 uses 
 	Gtk
@@ -335,7 +326,6 @@ init
 *   运行： `java -classpath /usr/share/java/gtk.jar:HelloWorld HelloWorld`
 
  `HelloWorld.java` 
-
 ```
 import org.gnome.gtk.Gtk;
 import org.gnome.gtk.Dialog;
@@ -356,7 +346,6 @@ public class HelloWorld
 *   依赖：[gtk3](https://www.archlinux.org/packages/?name=gtk3)，[gjs](https://www.archlinux.org/packages/?name=gjs)（或者[seed](https://www.archlinux.org/packages/?name=seed)）
 
  `hello_world.js` 
-
 ```
 #!/usr/bin/gjs
 Gtk = imports.gi.Gtk
@@ -373,7 +362,6 @@ Hello.run()
 *   依赖： [perl-gtk3](https://aur.archlinux.org/packages/perl-gtk3/) 来自 AUR
 
  `hello_world.pl` 
-
 ```
 #!/usr/bin/perl
 use Gtk3 -init;
@@ -387,7 +375,6 @@ $hello->run;
 *   依赖：[gtk3](https://www.archlinux.org/packages/?name=gtk3)，[python-gobject](https://www.archlinux.org/packages/?name=python-gobject)
 
  `hello_world.py` 
-
 ```
 #!/usr/bin/python
 from gi.repository import Gtk
@@ -404,7 +391,6 @@ Hello.run()
 *   编译：`valac --pkg gtk+-3.0 hello_world.vala`
 
  `hello_world.vala` 
-
 ```
 using Gtk;
 public class HelloWorld {
@@ -425,7 +411,6 @@ public class HelloWorld {
 *   运行： `mono hello_world.exe`
 
  `hello_world.vb` 
-
 ```
 Imports Gtk
 Public Class Hello

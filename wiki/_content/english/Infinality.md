@@ -49,13 +49,13 @@ A number of presets are included and can be used by setting the USE_STYLE variab
 
 Currently, the bundle comprises:
 
-*   _freetype2-infinality-ultimate_ - [freetype2](https://www.archlinux.org/packages/?name=freetype2) built with [Infinality](http://www.infinality.net/blog/) and additional patches.
-*   _fontconfig-infinality-ultimate_ - [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) optimized for use with _freetype2-infinality-ultimate_, including separate configuration presets for free (default), MS and custom font collections.
-*   _cairo-infinality-ultimate_ - [cairo](https://www.archlinux.org/packages/?name=cairo) built with Ubuntu and additional patches.
+*   *freetype2-infinality-ultimate* - [freetype2](https://www.archlinux.org/packages/?name=freetype2) built with [Infinality](http://www.infinality.net/blog/) and additional patches.
+*   *fontconfig-infinality-ultimate* - [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) optimized for use with *freetype2-infinality-ultimate*, including separate configuration presets for free (default), MS and custom font collections.
+*   *cairo-infinality-ultimate* - [cairo](https://www.archlinux.org/packages/?name=cairo) built with Ubuntu and additional patches.
 
 All libraries are built in a clean chroot environment and are available for both i686 and x86_64 architectures, including multilib support.
 
-For best results and users' convenience, a complementary repository _infinality-bundle-fonts_ is available, offering a wide selection of all necessary typefaces needed to create and reproduce hypertext documents. All fonts were manually selected, ensuring high quality text rendering as well as compatibility with proprietary equivalents used for the Web and the office. All fonts are 100% freely available and are licensed under GPL, OFL, Apache or compatible, non-restrictive licenses.
+For best results and users' convenience, a complementary repository *infinality-bundle-fonts* is available, offering a wide selection of all necessary typefaces needed to create and reproduce hypertext documents. All fonts were manually selected, ensuring high quality text rendering as well as compatibility with proprietary equivalents used for the Web and the office. All fonts are 100% freely available and are licensed under GPL, OFL, Apache or compatible, non-restrictive licenses.
 
 By default, no post installation configuration is required. However, for maximum flexibility users can easily customize the bundle depending on their needs.
 
@@ -63,27 +63,25 @@ By default, no post installation configuration is required. However, for maximum
 
 The installation consists of adding the selected repositories to `pacman.conf` and [installing](/index.php/Installing "Installing") the packages from the relevant groups or meta packages. Remember to restart the X server after the installation to see the changes.
 
-*   The [infinality-bundle](/index.php/Unofficial_user_repositories#infinality-bundle "Unofficial user repositories") repository contains core packages gathered into the _infinality-bundle_ group.
-*   The [infinality-bundle-multilib](/index.php/Unofficial_user_repositories#infinality-bundle-multilib "Unofficial user repositories") repository contains optional multilib libraries for the x86_64 architecture gathered in the _infinality-bundle-multilib_ group.
-*   The [infinality-bundle-fonts](/index.php/Unofficial_user_repositories#infinality-bundle-fonts "Unofficial user repositories") repository contains a comprehensive collection of free fonts gathered in the _ibfonts-meta-base_, _ibfonts-meta-extended_ and _ibfonts-meta-extended-lt_ meta packages.
+*   The [infinality-bundle](/index.php/Unofficial_user_repositories#infinality-bundle "Unofficial user repositories") repository contains core packages gathered into the *infinality-bundle* group.
+*   The [infinality-bundle-multilib](/index.php/Unofficial_user_repositories#infinality-bundle-multilib "Unofficial user repositories") repository contains optional multilib libraries for the x86_64 architecture gathered in the *infinality-bundle-multilib* group.
+*   The [infinality-bundle-fonts](/index.php/Unofficial_user_repositories#infinality-bundle-fonts "Unofficial user repositories") repository contains a comprehensive collection of free fonts gathered in the *ibfonts-meta-base*, *ibfonts-meta-extended* and *ibfonts-meta-extended-lt* meta packages.
 
 **Note:**
 
 *   Do not forget to add key ID 962DDE58 to your pacman keyring. See [Pacman-key#Adding unofficial keys](/index.php/Pacman-key#Adding_unofficial_keys "Pacman-key") to detailed instructions.
 *   When pacman resolves dependencies and encounters a conflicting package, e.g.:
-
     ```
     resolving dependencies...
     looking for inter-conflicts...
     :: freetype2-infinality-ultimate and freetype2 are in conflict. Remove freetype2? [y/N]
 
     ```
-
     answer `yes`.
 
 #### Recommended fonts with restricted licenses
 
-Below you will find a list of fonts that cannot be freely redistributed and thus could not be included in the _infinality-bundle-fonts_ collection as binary packages. However, they can still be installed and used free of charge under specified conditions. Source packages can be found in the [AUR](/index.php/AUR "AUR"). Please, read the EULAs for details before you use the fonts!
+Below you will find a list of fonts that cannot be freely redistributed and thus could not be included in the *infinality-bundle-fonts* collection as binary packages. However, they can still be installed and used free of charge under specified conditions. Source packages can be found in the [AUR](/index.php/AUR "AUR"). Please, read the EULAs for details before you use the fonts!
 
 *   [ttf-brill](https://aur.archlinux.org/packages/ttf-brill/)
 *   [otf-neris](https://aur.archlinux.org/packages/otf-neris/)
@@ -118,10 +116,9 @@ export INFINALITY_FT_FILTER_PARAMS="16 20 28 20 16"
 
 **Note:** Your customisations will be saved in a `.pacsave` file on an update of the infinality package.
 
-*   It is possible to skip installation of _infinality-bundle-fonts_ if you want to use Microsoft proprietary font collection instead. If this is the case, you have to activate fontconfig MS preset to ensure the correct set of fonts is selected. To do so, issue
+*   It is possible to skip installation of *infinality-bundle-fonts* if you want to use Microsoft proprietary font collection instead. If this is the case, you have to activate fontconfig MS preset to ensure the correct set of fonts is selected. To do so, issue
 
  `# fc-presets set` 
-
 ```
 1) combi
 2) free
@@ -140,7 +137,7 @@ Run `fc-presets help` for more information.
 
 #### More fonts
 
-If you want to install even more fonts, there is an additional _infinality-bundle-fonts-extra_ collection. Run
+If you want to install even more fonts, there is an additional *infinality-bundle-fonts-extra* collection. Run
 
 ```
 $ pacman -Ss infinality-bundle-fonts-extra
@@ -149,13 +146,13 @@ $ pacman -Ss infinality-bundle-fonts-extra
 
 to list available packages.
 
-**Warning:** **Do not** attempt to install the entire _infinality-bundle-fonts_ or _infinality-bundle-fonts-extra_ group. Unless you know for sure you need any of the fonts available there, you will only unnecessarily clutter your hard drive and decrease performance of the font cache. _ibfonts-meta-extended_ should suffice in most, even very complex, use scenarios. Besides, several font families are available in multiple formats (T1, TTF, OTF): trying to install all font packages will lead to unresolvable package conflicts. If this is the case, you should always use only **one** format per family.
+**Warning:** **Do not** attempt to install the entire *infinality-bundle-fonts* or *infinality-bundle-fonts-extra* group. Unless you know for sure you need any of the fonts available there, you will only unnecessarily clutter your hard drive and decrease performance of the font cache. *ibfonts-meta-extended* should suffice in most, even very complex, use scenarios. Besides, several font families are available in multiple formats (T1, TTF, OTF): trying to install all font packages will lead to unresolvable package conflicts. If this is the case, you should always use only **one** format per family.
 
-**Tip:** Before you install any third party font from either [official repositories](/index.php/Official_repositories "Official repositories") or the [AUR](/index.php/AUR "AUR"), always check if it is available in the _infinality-bundle-fonts_ collection.
+**Tip:** Before you install any third party font from either [official repositories](/index.php/Official_repositories "Official repositories") or the [AUR](/index.php/AUR "AUR"), always check if it is available in the *infinality-bundle-fonts* collection.
 
 #### Font substitutions
 
-If you want to override default font substitutions set in `/etc/fonts/conf.d/37-repl-global-_preset_.conf` or add new ones, use `/etc/fonts/conf.d/35-repl-custom.conf` to do so. You will need to duplicate the template (16 lines of code) for each font family to be replaced and provide appropriate font names.
+If you want to override default font substitutions set in `/etc/fonts/conf.d/37-repl-global-*preset*.conf` or add new ones, use `/etc/fonts/conf.d/35-repl-custom.conf` to do so. You will need to duplicate the template (16 lines of code) for each font family to be replaced and provide appropriate font names.
 
 #### Package signatures
 
@@ -163,16 +160,16 @@ One frequent issue users may face with this repositories is that the package dat
 
 #### Updating
 
-_fontconfig-infinality-ultimate_ is updated frequently, usually every 3-4 weeks, after a number of recently reported minor bugs has been fixed. As every fix is immediately committed to the GitHub repository, users who chose [fontconfig-infinality-ultimate-git](https://aur.archlinux.org/packages/fontconfig-infinality-ultimate-git/) from the AUR will get them sooner, i.e. when they rebuild the package.
+*fontconfig-infinality-ultimate* is updated frequently, usually every 3-4 weeks, after a number of recently reported minor bugs has been fixed. As every fix is immediately committed to the GitHub repository, users who chose [fontconfig-infinality-ultimate-git](https://aur.archlinux.org/packages/fontconfig-infinality-ultimate-git/) from the AUR will get them sooner, i.e. when they rebuild the package.
 
 **Note:**
 
-*   _fontconfig-infinality-ultimate-git_ is a development branch of the package available in the [infinality-bundle] repository. Keep in mind that it is not a stable release and can break at times.
+*   *fontconfig-infinality-ultimate-git* is a development branch of the package available in the [infinality-bundle] repository. Keep in mind that it is not a stable release and can break at times.
 *   When **reporting bugs**, please report all code-related issues (incorrect rendering, fontconfig problems, etc.) at GitHub [Issues * bohoomil/fontconfig-ultimate](https://github.com/bohoomil/fontconfig-ultimate/issues) and Arch specific, including problems regarding maintenance, packaging and general questions, in dedicated threads at Arch Forums. Before filing a report, make sure that [infinality-bundle] packages were correctly installed and customized.
 
 ### Upstream infinality
 
-**Warning:** Upstream infinality patches are intended for the older 2.4x freetype2 branch. Users are advised to use the [infinality-bundle](#Infinality-bundle) by _bohoomil_.
+**Warning:** Upstream infinality patches are intended for the older 2.4x freetype2 branch. Users are advised to use the [infinality-bundle](#Infinality-bundle) by *bohoomil*.
 
 [freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/) can be installed from the [AUR](/index.php/AUR "AUR"). If you are a multilib user, also install [lib32-freetype2-infinality](https://aur.archlinux.org/packages/lib32-freetype2-infinality/) from the AUR. The AUR also contains the latest development snapshot of freetype2 with the Infinality patchset: [freetype2-infinality-git](https://aur.archlinux.org/packages/freetype2-infinality-git/) and [lib32-freetype2-infinality-git](https://aur.archlinux.org/packages/lib32-freetype2-infinality-git/).
 
@@ -264,7 +261,6 @@ Note that there may be other faces either in default Emacs or specified by theme
 GIMP users have reported issues with the subpixel rendering of text in images (see for example [this topic](http://www.infinality.net/forum/viewtopic.php?f=2&t=229)). The best course of action is to disable subpixel rendering completely for GIMP. Add a file `/etc/gimp/2.0/fonts.conf` (or `~/.gimp-2.8/fonts.conf` for a single user) with the following content:
 
  `/etc/gimp/2.0/fonts.conf` 
-
 ```
 <fontconfig>
   <match target="font">
@@ -290,7 +286,7 @@ $ ln -s ../conf.avail.infinality/36-repl-missing-glyphs.conf .
 
 and then edit the file accordingly following the provided example.
 
-**Note:** Default fonts for non-Latin scripts are set in `65-non-latin-_preset_.conf` (default settings).
+**Note:** Default fonts for non-Latin scripts are set in `65-non-latin-*preset*.conf` (default settings).
 
 Overriding default replacement rules and adding custom ones is possible with `35-repl-custom.conf`. The file is activated by default, so all you need to do is edit if you want to use it.
 
@@ -326,6 +322,6 @@ This will remove the entire font cache and recreate it from scratch.
 
 *   [Short article about infinality (contains screenshots)](http://www.webupd8.org/2013/06/better-font-rendering-in-linux-with.html)
 *   [Infinality bundle and fonts](http://bohoomil.com) - Home page of the infinality bundle
-*   [fontconfig-ultimate](https://github.com/bohoomil/fontconfig-ultimate) - git repository providing all patches, configuration files and build scripts for the entire _infinality-bundle+fonts_ collection in separate branches
-*   [infinality-bundle: good looking fonts made (even) easier](https://bbs.archlinux.org/viewtopic.php?id=162098) - _infinality-bundle_ support thread in the Arch Linux Forums
-*   [infinality-bundle-fonts: a free multilingual font collection for Arch](https://bbs.archlinux.org/viewtopic.php?id=170976) - _infinality-bundle-fonts_ support thread in the Arch Linux Forums
+*   [fontconfig-ultimate](https://github.com/bohoomil/fontconfig-ultimate) - git repository providing all patches, configuration files and build scripts for the entire *infinality-bundle+fonts* collection in separate branches
+*   [infinality-bundle: good looking fonts made (even) easier](https://bbs.archlinux.org/viewtopic.php?id=162098) - *infinality-bundle* support thread in the Arch Linux Forums
+*   [infinality-bundle-fonts: a free multilingual font collection for Arch](https://bbs.archlinux.org/viewtopic.php?id=170976) - *infinality-bundle-fonts* support thread in the Arch Linux Forums

@@ -1,4 +1,4 @@
-[cmus](http://cmus.sourceforge.net/) _(C* MUsic Player)_ is a small, fast and powerful console audio player which supports most major audio formats. Various features include gapless playback, ReplayGain support, MP3 and Ogg streaming, live filtering, instant startup, customizable key-bindings, and vi-style default key-bindings.
+[cmus](http://cmus.sourceforge.net/) *(C* MUsic Player)* is a small, fast and powerful console audio player which supports most major audio formats. Various features include gapless playback, ReplayGain support, MP3 and Ogg streaming, live filtering, instant startup, customizable key-bindings, and vi-style default key-bindings.
 
 ## Contents
 
@@ -30,7 +30,6 @@
 When using cmus with [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") the default configuration does not allow playing music. What you might encounter when trying to start cmus is a blank terminal line with no output whatsoever. To fix it, create a new config file and set the following variables
 
  `~/.config/cmus/rc` 
-
 ```
 set output_plugin=alsa
 set dsp.alsa.device=default
@@ -141,9 +140,7 @@ fi
 To use the previous script in [Openbox](/index.php/Openbox "Openbox"), copy the code above into a file `~/bin/cplay`. Make the file executable using `chmod +x ~/bin/cplay`. Next edit `~/.config/openbox/rc.xml` and change the following key-bindings to look like this:
 
 **Note:** Make sure there are no conflicting keybindings in rc.xml
-
  `~/.config/openbox/rc.xml` 
-
 ```
   <keyboard>
     <keybind key="XF86AudioPlay">

@@ -21,7 +21,7 @@ Install the [mythplugins-mythweb](https://www.archlinux.org/packages/?name=mythp
 
 ### Link to the Video Directory
 
-MythWeb looks in the _video_dir_ directory for _[MythTV](/index.php/MythTV "MythTV")_ recordings. You will need to create a link to the folder where your MythTV recordings are stored.
+MythWeb looks in the *video_dir* directory for *[MythTV](/index.php/MythTV "MythTV")* recordings. You will need to create a link to the folder where your MythTV recordings are stored.
 
 ```
 # ln -s <recording_dir> /var/lib/mythtv/mythweb/video_dir
@@ -32,7 +32,7 @@ MythWeb looks in the _video_dir_ directory for _[MythTV](/index.php/MythTV "Myth
 
 ### MythWeb
 
-Copy the MythWeb configuration file _mythweb.conf_ to the [Apache](/index.php/Apache "Apache") configuration directory.
+Copy the MythWeb configuration file *mythweb.conf* to the [Apache](/index.php/Apache "Apache") configuration directory.
 
 ```
 # cp /var/lib/mythtv/mythweb/mythweb.conf.apache /etc/httpd/conf/extra/mythweb.conf
@@ -46,7 +46,7 @@ Include conf/extra/mythweb.conf
 
 ```
 
-Edit _mythweb.conf_ to point it to the directory where you'll be installing mythweb (near the beginning of the file).
+Edit *mythweb.conf* to point it to the directory where you'll be installing mythweb (near the beginning of the file).
 
 ```
 <Directory "/srv/http/mythweb/data">
@@ -72,21 +72,21 @@ setenv db_password      "mythtv"
 
 Edit the [PHP](/index.php/PHP "PHP") configuration file `/etc/php/php.ini`
 
-Uncomment the following lines in the _Dynamic extensions_ section.
+Uncomment the following lines in the *Dynamic extensions* section.
 
 ```
 extension=mysqli.so
 
 ```
 
-Make sure _open_basedir_ contains _/srv/http/_ and _/var/lib/mythtv/mythweb_ to allow file operation in the MythWeb directory. Starting with MythTV 0.23, you will also need to permit access to _/usr/share/mythtv/_.
+Make sure *open_basedir* contains */srv/http/* and */var/lib/mythtv/mythweb* to allow file operation in the MythWeb directory. Starting with MythTV 0.23, you will also need to permit access to */usr/share/mythtv/*.
 
 ```
 open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/var/lib/mythtv/mythweb:/usr/share/mythtv/
 
 ```
 
-Enable the _allow_url_fopen_ option for MythWeb's status page to work.
+Enable the *allow_url_fopen* option for MythWeb's status page to work.
 
 ```
 allow_url_fopen = On
@@ -107,7 +107,7 @@ ln -s /var/lib/mythtv/mythweb /srv/http/
 
 ## Using MythWeb
 
-You can now start the Apache daemon, _mythbackend_ must already be running.
+You can now start the Apache daemon, *mythbackend* must already be running.
 
 ```
 systemctl start httpd.service
@@ -123,7 +123,7 @@ Open MythWeb in your browser.
 
 ## Securing MythWeb
 
-It is also probably a good idea to set up password protection for MythWeb if you intend to allow connections from the Internet. To enable authentication open the _/etc/httpd/conf/extra/mythweb.conf_ file and uncomment the authentication section (near the beginning):
+It is also probably a good idea to set up password protection for MythWeb if you intend to allow connections from the Internet. To enable authentication open the */etc/httpd/conf/extra/mythweb.conf* file and uncomment the authentication section (near the beginning):
 
 ```
 AuthType           Digest
@@ -136,7 +136,7 @@ Satisfy            any
 
 ```
 
-Now we need to fix the configuration to match how we have MythWeb set up, change the _AuthUserFile_ so it reads
+Now we need to fix the configuration to match how we have MythWeb set up, change the *AuthUserFile* so it reads
 
 ```
 AuthUserFile       /etc/httpd/conf/extra/httpd-passwords

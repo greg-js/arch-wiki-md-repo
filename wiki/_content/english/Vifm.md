@@ -1,6 +1,6 @@
 From the [Vifm](http://vifm.info/) home page:
 
-	_Vifm is an ncurses based file manager with vi like keybindings/modes/options/commands/configuration, which also borrows some useful ideas from mutt._
+	*Vifm is an ncurses based file manager with vi like keybindings/modes/options/commands/configuration, which also borrows some useful ideas from mutt.*
 
 If you use vi, Vifm gives you complete keyboard control over your files without having to learn a new set of commands.
 
@@ -63,7 +63,7 @@ To get started, read the information avaliable in:
 The `~/.vifm/colors` directory contains the color schemes. The format is outlined in the file and follows vi/vim syntax highlight format. It is basically:
 
 ```
-highlight _group_ cterm=_attribute_ ctermfg=_color_ ctermbg=_color_
+highlight *group* cterm=*attribute* ctermfg=*color* ctermbg=*color*
 
 ```
 

@@ -35,20 +35,19 @@ Cinnamon can be [installed](/index.php/Installed "Installed") with the package [
 
 ### Graphical log-in
 
-Choose _Cinnamon_ or _Cinnamon (Software Rendering)_ from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice. Cinnamon is the 3D accelerated version, which should normally be used. If you experience problems with your video driver (e.g. artifacts or crashing), try the _Cinnamon (Software Rendering)_ session, which disables 3D acceleration.
+Choose *Cinnamon* or *Cinnamon (Software Rendering)* from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice. Cinnamon is the 3D accelerated version, which should normally be used. If you experience problems with your video driver (e.g. artifacts or crashing), try the *Cinnamon (Software Rendering)* session, which disables 3D acceleration.
 
 ### Starting Cinnamon manually
 
 If you prefer to start Cinnamon manually from the console, add the following line to [Xinitrc](/index.php/Xinitrc "Xinitrc"):
 
  `~/.xinitrc` 
-
 ```
  exec cinnamon-session
 
 ```
 
-If the _Cinnamon (Software Rendering)_ session is required, use `cinnamon-session-cinnamon2d` instead of `cinnamon-session`.
+If the *Cinnamon (Software Rendering)* session is required, use `cinnamon-session-cinnamon2d` instead of `cinnamon-session`.
 
 ## Configuration
 
@@ -56,7 +55,7 @@ Cinnamon is quite easy to configure — most common settings can be configured g
 
 ### Cinnamon settings
 
-_cinnamon-settings_ launches a settings module specified on the command line. Without (correct) arguments, it launches _System Settings_. For example, to start the panel settings:
+*cinnamon-settings* launches a settings module specified on the command line. Without (correct) arguments, it launches *System Settings*. For example, to start the panel settings:
 
 ```
 $ cinnamon-settings panel
@@ -84,7 +83,7 @@ $ pacman -Ql cinnamon | awk -F'[_.]' '/cs_.+\.py/ {print $2}'
 
 ### Applets and extensions
 
-While an **applet** is an addition to the Cinnamon panel, an **extension** can fully change the Cinnamon experience. They can be installed from the [AUR](/index.php/AUR "AUR"), ([package search](https://aur.archlinux.org/packages.php?O=0&K=cinnamon-&do_Search=Go)), or from inside Cinnamon (_Get more online_):
+While an **applet** is an addition to the Cinnamon panel, an **extension** can fully change the Cinnamon experience. They can be installed from the [AUR](/index.php/AUR "AUR"), ([package search](https://aur.archlinux.org/packages.php?O=0&K=cinnamon-&do_Search=Go)), or from inside Cinnamon (*Get more online*):
 
 ```
 $ cinnamon-settings applets
@@ -111,7 +110,7 @@ This is the default behaviour. To change the setting open the `cinnamon-settings
 
 ### Creating custom applets
 
-The official tutorial on creating a Cinnamon _applet_ can be found [here](http://developer.linuxmint.com/reference/2.6/cinnamon-tutorials/write-applet.html).
+The official tutorial on creating a Cinnamon *applet* can be found [here](http://developer.linuxmint.com/reference/2.6/cinnamon-tutorials/write-applet.html).
 
 ### Default desktop background wallpaper path
 
@@ -123,11 +122,11 @@ By default Cinnamon starts with desktop icons enabled but with no desktop icons 
 
 ### Menu editor
 
-The Menu applet supports launching custom commands. Right click on the applet, click on _Configure..._ and then _Open the menu editor_. Select a sub-menu (or create a new one) and select _New Item_. Set _Name_, _Command_ and _Comment_. Check the launch in terminal checkbox if needed. Leave unchecked for graphical applications. Click _OK_ and close the menu editor afterwards. The launcher is added to the menu.
+The Menu applet supports launching custom commands. Right click on the applet, click on *Configure...* and then *Open the menu editor*. Select a sub-menu (or create a new one) and select *New Item*. Set *Name*, *Command* and *Comment*. Check the launch in terminal checkbox if needed. Leave unchecked for graphical applications. Click *OK* and close the menu editor afterwards. The launcher is added to the menu.
 
 ### Workspaces
 
-A workspace pager can be added to the panel. Right click the panel and choose the option _Add applets to the panel_. Add the _Workspace switch_ applet to the panel. To change its position right click on the panel and change the _Panel edit mode_ on/off switch to on. Click and drag the switcher to the desired position and turn the panel edit mode off when finished.
+A workspace pager can be added to the panel. Right click the panel and choose the option *Add applets to the panel*. Add the *Workspace switch* applet to the panel. To change its position right click on the panel and change the *Panel edit mode* on/off switch to on. Click and drag the switcher to the desired position and turn the panel edit mode off when finished.
 
 By default there are 2 workspaces. To add more, hit `Control+Alt+Up` to show all workspaces. Then click on the plus sign button on the right of the screen to add more workspaces.
 
@@ -182,10 +181,10 @@ dconf load /org/cinnamon/desktop/keybindings/ <keybindings-backup.dconf
 
 ### Screenshot
 
-As explained in [Taking a screenshot](/index.php/Taking_a_screenshot#Cinnamon "Taking a screenshot"), installing [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot) will add this functionality. The default shortcut key is `Prt Sc` key. This binding ca be changed in the applet _Menu > Preferences > Keyboard_ under _Shortcuts > System > Screenshots and Recording_. The default save directory is `$HOME/Pictures`, but can be customized with eg.
+As explained in [Taking a screenshot](/index.php/Taking_a_screenshot#Cinnamon "Taking a screenshot"), installing [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot) will add this functionality. The default shortcut key is `Prt Sc` key. This binding ca be changed in the applet *Menu > Preferences > Keyboard* under *Shortcuts > System > Screenshots and Recording*. The default save directory is `$HOME/Pictures`, but can be customized with eg.
 
 ```
-$ gsettings set org.gnome.gnome-screenshot auto-save-directory file:///home/_USER_/_some_path_
+$ gsettings set org.gnome.gnome-screenshot auto-save-directory file:///home/*USER*/*some_path*
 
 ```
 
@@ -193,7 +192,7 @@ $ gsettings set org.gnome.gnome-screenshot auto-save-directory file:///home/_USE
 
 ### cinnamon-settings: No module named Image
 
-If _cinnamon-settings_ does not start with the message that it cannot find a certain module, e.g. the Image module, it is likely that it uses outdated compiled files which refer to no longer existing file locations. In this case remove all `*.pyc` files in `/usr/lib/cinnamon-settings` and its sub-folders. See the [upstream bug report](https://github.com/linuxmint/Cinnamon/issues/2495).
+If *cinnamon-settings* does not start with the message that it cannot find a certain module, e.g. the Image module, it is likely that it uses outdated compiled files which refer to no longer existing file locations. In this case remove all `*.pyc` files in `/usr/lib/cinnamon-settings` and its sub-folders. See the [upstream bug report](https://github.com/linuxmint/Cinnamon/issues/2495).
 
 ### Video tearing
 
@@ -201,7 +200,7 @@ Because [muffin](https://www.archlinux.org/packages/?name=muffin) is based upon 
 
 ### Disable the NetworkManager applet
 
-Even if you do not use [NetworkManager](/index.php/NetworkManager "NetworkManager") and remove the _Network Manager_ applet from the default panel, Cinnamon will still load _nm-applet_ and display it in the system tray. You cannot uninstall the package, because it is required by [cinnamon](https://www.archlinux.org/packages/?name=cinnamon) and [cinnamon-control-center](https://www.archlinux.org/packages/?name=cinnamon-control-center), but you can still easily disable it. To do so copy the autostart file from `/etc/xdg/autostart/nm-applet.desktop` to `~/.config/autostart/nm-applet.desktop`. Open it with your favorite text editor and add at the end `X-GNOME-Autostart-enabled=false`.
+Even if you do not use [NetworkManager](/index.php/NetworkManager "NetworkManager") and remove the *Network Manager* applet from the default panel, Cinnamon will still load *nm-applet* and display it in the system tray. You cannot uninstall the package, because it is required by [cinnamon](https://www.archlinux.org/packages/?name=cinnamon) and [cinnamon-control-center](https://www.archlinux.org/packages/?name=cinnamon-control-center), but you can still easily disable it. To do so copy the autostart file from `/etc/xdg/autostart/nm-applet.desktop` to `~/.config/autostart/nm-applet.desktop`. Open it with your favorite text editor and add at the end `X-GNOME-Autostart-enabled=false`.
 
 Alternatively you can disable it is by creating the following symlink:
 
@@ -210,4 +209,4 @@ $ ln -s /bin/true /usr/local/bin/nm-applet
 
 ```
 
-The ability to blacklist particular icons from the system tray (such as the _nm-applet_ icon) has been [requested upstream](https://github.com/linuxmint/Cinnamon/issues/3318).
+The ability to blacklist particular icons from the system tray (such as the *nm-applet* icon) has been [requested upstream](https://github.com/linuxmint/Cinnamon/issues/3318).

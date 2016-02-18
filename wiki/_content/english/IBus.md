@@ -1,4 +1,4 @@
-**IBus** (_Intelligent Input Bus_) is an [input method framework](http://en.wikipedia.org/wiki/Input_method), a system for entering foreign characters. IBus functions similarly to [Fcitx](/index.php/Fcitx "Fcitx"), [SCIM](/index.php/SCIM "SCIM") and [UIM](/index.php/UIM "UIM").
+**IBus** (*Intelligent Input Bus*) is an [input method framework](http://en.wikipedia.org/wiki/Input_method), a system for entering foreign characters. IBus functions similarly to [Fcitx](/index.php/Fcitx "Fcitx"), [SCIM](/index.php/SCIM "SCIM") and [UIM](/index.php/UIM "UIM").
 
 ## Contents
 
@@ -65,23 +65,23 @@ export QT_IM_MODULE=ibus
 
 **Note:**
 
-*   Although IBus uses a daemon, it is not the sort of daemon managed by _systemd_: it runs as an ordinary user and will be started for you when you login.
+*   Although IBus uses a daemon, it is not the sort of daemon managed by *systemd*: it runs as an ordinary user and will be started for you when you login.
 *   If, however, IBus is **not** autostarted upon login, then move the “export …” lines above to `$HOME/.xprofile` instead, and append this line to the same file: `ibus-daemon -drx`, and relogin your desktop. You can also try adding `ibus-daemon -drx` after the `export ...` lines in `$HOME/.bashrc`.
 
-You will then see a configuration screen; you can access this screen whenever IBus is running by right-clicking the icon in the system tray and choosing _Preferences_. See [Configuration](#Configuration).
+You will then see a configuration screen; you can access this screen whenever IBus is running by right-clicking the icon in the system tray and choosing *Preferences*. See [Configuration](#Configuration).
 
-If IBus does not work in Qt/KDE applications, ensure that the _ibus-qt_ library is installed and define IBus as the default IME in the Qt configuration editor:
+If IBus does not work in Qt/KDE applications, ensure that the *ibus-qt* library is installed and define IBus as the default IME in the Qt configuration editor:
 
 ```
 $ qtconfig-qt4
 
 ```
 
-In _Interface > Default Input Method_, select _ibus_ instead of _xim_.
+In *Interface > Default Input Method*, select *ibus* instead of *xim*.
 
 ### GNOME
 
-GNOME includes IBus by default, so you should only need to install the package specific to your language. To enable input in your language, add it to the _Input Sources_ section of the _Region & Language_ settings. After you add your input sources (at least 2), GNOME will show the input switcher icon in the tray. If you do not find your appropriate input source when trying to add your input sources, most likely you have not done locale-gen for that locale. The default keyboard shortcut to switch to the next input method in GNOME is `Super+space`; disregard the _next input method_ shortcut set in _ibus-setup_.
+GNOME includes IBus by default, so you should only need to install the package specific to your language. To enable input in your language, add it to the *Input Sources* section of the *Region & Language* settings. After you add your input sources (at least 2), GNOME will show the input switcher icon in the tray. If you do not find your appropriate input source when trying to add your input sources, most likely you have not done locale-gen for that locale. The default keyboard shortcut to switch to the next input method in GNOME is `Super+space`; disregard the *next input method* shortcut set in *ibus-setup*.
 
 ## Configuration
 
@@ -89,13 +89,13 @@ GNOME includes IBus by default, so you should only need to install the package s
 
 **Note:** You need to have [east Asian fonts](/index.php/Fonts_FAQ#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese "Fonts FAQ") installed if you want to enter Chinese, Japanese, Korean or Vietnamese characters.
 
-The default _General_ settings should be fine, but go to _Input Methods_ and select your input method(s) in the drop down box, then press _Add_. You can use multiple input methods if you wish. Once IBus is set up, you can press `Super+space` to use it (multiple times to cycle through available input methods). IBus will remember which input method you are using in each window, so you will have to reactivate it for each new window. You can override this behavior by right clicking the system tray icon, selecting _Preferences_, and going to the _Advanced_ tab.
+The default *General* settings should be fine, but go to *Input Methods* and select your input method(s) in the drop down box, then press *Add*. You can use multiple input methods if you wish. Once IBus is set up, you can press `Super+space` to use it (multiple times to cycle through available input methods). IBus will remember which input method you are using in each window, so you will have to reactivate it for each new window. You can override this behavior by right clicking the system tray icon, selecting *Preferences*, and going to the *Advanced* tab.
 
 **Note:** By default, IBus overrides your [Xmodmap](/index.php/Xmodmap "Xmodmap") setting. You can disable this feature by enabling "Use system keyboard layout" option in Preference -> Advanced.
 
 ### Ibus-rime
 
-If you have decided to use the great _ibus-rime_ IME, check out [Rime IME](/index.php/Rime_IME "Rime IME") for some help to configure it.
+If you have decided to use the great *ibus-rime* IME, check out [Rime IME](/index.php/Rime_IME "Rime IME") for some help to configure it.
 
 ### Entering Special Characters—The Compose Input Method
 
@@ -105,7 +105,7 @@ To type special characters, XKB supports compose key sequences. To fulfil this f
 
 ### Pinyin usage
 
-When using _ibus-pinyin_,
+When using *ibus-pinyin*,
 
 *   First type the pinyin (sans tones) for the characters you wish to enter.
 *   Press `Up` and `Down` repeatedly to select a character (going on to the next page if necessary).
@@ -159,7 +159,7 @@ Then you can either let KDE autostart ibus, or set it as the input method applic
 
 ### rxvt-unicode
 
-If anyone has any issues with IBus and _rxvt-unicode_, the following steps should solve it.
+If anyone has any issues with IBus and *rxvt-unicode*, the following steps should solve it.
 
 Add the following to your `~/.Xdefaults` (possibly not required, first try without):
 
@@ -176,7 +176,7 @@ $ ibus-daemon --xim
 
 ```
 
-If you start _ibus-daemon_ automatically (e.g. in `~/.xinitrc` or `~/.xsession`) but used to use `ibus-daemon &` without the `--xim` option, make sure to kill the existing process before testing the new command.
+If you start *ibus-daemon* automatically (e.g. in `~/.xinitrc` or `~/.xsession`) but used to use `ibus-daemon &` without the `--xim` option, make sure to kill the existing process before testing the new command.
 
 ### GTK+ applications
 
@@ -196,13 +196,13 @@ export GTK_IM_MODULE_FILE=/usr/lib/gtk-3.0/3.0.0/immodules.cache
 
 for GTK+ 3, in addition to the three lines above in your `$HOME/.bashrc` seems to fix the problem.
 
-**Note:** If you set it to GTK+ 2, then you cannot use GTK+ 3 applications like _gedit_, if you set it to GTK+ 3, then you cannot use GTK+ 2 applications like Xfce.
+**Note:** If you set it to GTK+ 2, then you cannot use GTK+ 3 applications like *gedit*, if you set it to GTK+ 3, then you cannot use GTK+ 2 applications like Xfce.
 
 ### Chinese input
 
 If you encounter problems when using Chinese input, check your locale setting. For example in Hong Kong, export LANG=zh_HK.utf8.
 
-**Note:** There are large revisions after IBus 1.4, you might not be able to input Chinese words with _ibus-pinyin_ or _ibus-sunpinyin_, which are written in C. So the solution is to install [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin).
+**Note:** There are large revisions after IBus 1.4, you might not be able to input Chinese words with *ibus-pinyin* or *ibus-sunpinyin*, which are written in C. So the solution is to install [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin).
 
 To start ibus with GNOME, add this in `~/.profile` and restart the GNOME.
 

@@ -1,4 +1,4 @@
-Un [cortafuegos](https://en.wikipedia.org/wiki/es:Cortafuegos_(inform%C3%A1tica) "wikipedia:es:Cortafuegos (informática)") es un sistema diseñado para prevenir el acceso no autorizado a una red privada (que podría ser, incluso, a una sola máquina) o proveniente de ella. Los cortafuegos pueden ser implementados en hardware o software separadamente, o en una combinación de ambos. Los cortafuegos se utilizan, con frecuencia, para evitar que los usuarios de Internet no autorizados tengan acceso a redes privadas conectadas a Internet, especialmente [intranets](https://en.wikipedia.org/wiki/es:Intranet "wikipedia:es:Intranet"). Todos los paquetes que entren o salgan de la intranet pasan a través del cortafuegos, que examina cada paquete y permite o deniega (esto es, realiza la función de un servidor [proxy](https://en.wikipedia.org/wiki/es:Proxy "wikipedia:es:Proxy")),el tráfico en función de los criterios de seguridad especificados.
+Un [cortafuegos](https://en.wikipedia.org/wiki/es:Cortafuegos_(inform%C3%A1tica) es un sistema diseñado para prevenir el acceso no autorizado a una red privada (que podría ser, incluso, a una sola máquina) o proveniente de ella. Los cortafuegos pueden ser implementados en hardware o software separadamente, o en una combinación de ambos. Los cortafuegos se utilizan, con frecuencia, para evitar que los usuarios de Internet no autorizados tengan acceso a redes privadas conectadas a Internet, especialmente [intranets](https://en.wikipedia.org/wiki/es:Intranet "wikipedia:es:Intranet"). Todos los paquetes que entren o salgan de la intranet pasan a través del cortafuegos, que examina cada paquete y permite o deniega (esto es, realiza la función de un servidor [proxy](https://en.wikipedia.org/wiki/es:Proxy "wikipedia:es:Proxy")),el tráfico en función de los criterios de seguridad especificados.
 
 Los cortafuegos que figuran en este artículo se basan en los programas [iptables](/index.php/Iptables_(Espa%C3%B1ol) "Iptables (Español)"). Considere la posibilidad de configurar los procesos [iptables](https://en.wikipedia.org/wiki/es:Netfilter/iptables "wikipedia:es:Netfilter/iptables") siguiendo el mismo procedimiento descrito en las páginas de la wiki (indicadas a continuación) para mantener la filosofía [The Arch Way](/index.php/The_Arch_Way "The Arch Way").
 
@@ -22,13 +22,13 @@ Hay muchos posts en los foros sobre las diferentes aplicaciones y scripts de cor
 
 *   [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall") — Página de ArchWiki sobre la interfaz simple de [iptables](/index.php/Iptables_(Espa%C3%B1ol) "Iptables (Español)"), [**ufw**](https://en.wikipedia.org/wiki/es:Uncomplicated_Firewall "wikipedia:es:Uncomplicated Firewall") — Proporciona un buen tutorial para una configuración básica.
 
-*   Guía de configuración del [Router](/index.php/Router "Router") — Un tutorial para convertir un ordenador en una [puesta de enlace](https://en.wikipedia.org/wiki/es:Puerta_de_enlace "wikipedia:es:Puerta de enlace")/[router](https://en.wikipedia.org/wiki/es:Router "wikipedia:es:Router") de Internet. Se centra en la [seguridad](/index.php/Security "Security") y la configuración de la puerta de enlace (_gateway_) para tener el menor número de agujeros de seguridad posibles en Internet.
+*   Guía de configuración del [Router](/index.php/Router "Router") — Un tutorial para convertir un ordenador en una [puesta de enlace](https://en.wikipedia.org/wiki/es:Puerta_de_enlace "wikipedia:es:Puerta de enlace")/[router](https://en.wikipedia.org/wiki/es:Router "wikipedia:es:Router") de Internet. Se centra en la [seguridad](/index.php/Security "Security") y la configuración de la puerta de enlace (*gateway*) para tener el menor número de agujeros de seguridad posibles en Internet.
 
 #### Tutoriales de cortafuegos externos
 
 *   [http://www.frozentux.net/documents/iptables-tutorial/](http://www.frozentux.net/documents/iptables-tutorial/) Un tutorial de iptables fácil y completo.
 
-*   [http://tldp.org/HOWTO/Masquerading-Simple-HOWTO/IP](http://tldp.org/HOWTO/Masquerading-Simple-HOWTO/IP) Masq es una forma de _traducción de direcciones de red_ (o [NAT](https://en.wikipedia.org/wiki/es:Network_Address_Translation "wikipedia:es:Network Address Translation")) que permite a los ordenadores conectados en una red privada, que no cuentan con más de una IP registrada, tener la posibilidad de comunicarse todos ellos con Internet, usando una máquina Linux con solo una IP.
+*   [http://tldp.org/HOWTO/Masquerading-Simple-HOWTO/IP](http://tldp.org/HOWTO/Masquerading-Simple-HOWTO/IP) Masq es una forma de *traducción de direcciones de red* (o [NAT](https://en.wikipedia.org/wiki/es:Network_Address_Translation "wikipedia:es:Network Address Translation")) que permite a los ordenadores conectados en una red privada, que no cuentan con más de una IP registrada, tener la posibilidad de comunicarse todos ellos con Internet, usando una máquina Linux con solo una IP.
 
 *   [http://tldp.org/HOWTO/Masquerading-Simple-HOWTO/](http://tldp.org/HOWTO/Masquerading-Simple-HOWTO/) Enmascaramiento de IP, [proxy transparente](https://en.wikipedia.org/wiki/es:Proxy#Proxies_transparentes "wikipedia:es:Proxy"), [redirección de puerto](https://en.wikipedia.org/wiki/es:Redirecci%C3%B3n_de_puertos "wikipedia:es:Redirección de puertos") y otras formas de traducción de direcciones de red con los kernels 2.4 de Linux.
 
@@ -42,7 +42,7 @@ El kernel de Linux incluye [iptables](/index.php/Iptables_(Espa%C3%B1ol) "Iptabl
 
 	[http://rocky.eld.leidenuniv.nl/](http://rocky.eld.leidenuniv.nl/) || [arno-iptables-firewall](https://aur.archlinux.org/packages/arno-iptables-firewall/)
 
-*   **ferm** — (del acrónimo _«For Easy Rule Making»_) Es una herramienta para mantener cortafuegos complejos, sin tener la molestia de reescribir reglas complejas una y otra vez. ferm permite guardar el completo conjunto de reglas en un archivo separado, y cargarlas con una sola orden. La configuración del cortafuegos se parece a un lenguaje de programación estructurado, que puede contener niveles y listas.
+*   **ferm** — (del acrónimo *«For Easy Rule Making»*) Es una herramienta para mantener cortafuegos complejos, sin tener la molestia de reescribir reglas complejas una y otra vez. ferm permite guardar el completo conjunto de reglas en un archivo separado, y cargarlas con una sola orden. La configuración del cortafuegos se parece a un lenguaje de programación estructurado, que puede contener niveles y listas.
 
 	[http://ferm.foo-projects.org/](http://ferm.foo-projects.org/) || [ferm](https://www.archlinux.org/packages/?name=ferm)
 
@@ -58,7 +58,7 @@ El kernel de Linux incluye [iptables](/index.php/Iptables_(Espa%C3%B1ol) "Iptabl
 
 	[http://www.shorewall.net/](http://www.shorewall.net/) || [shorewall](https://www.archlinux.org/packages/?name=shorewall)
 
-*   **[ufw](/index.php/Ufw "Ufw")** — (del acrónimo _«uncomplicated firewall»_) Es una sencilla interfaz para iptables.
+*   **[ufw](/index.php/Ufw "Ufw")** — (del acrónimo *«uncomplicated firewall»*) Es una sencilla interfaz para iptables.
 
 	[https://launchpad.net/ufw](https://launchpad.net/ufw) || [ufw](https://www.archlinux.org/packages/?name=ufw)
 
@@ -106,7 +106,7 @@ El kernel de Linux incluye [iptables](/index.php/Iptables_(Espa%C3%B1ol) "Iptabl
 
 	[http://etherape.sourceforge.net/](http://etherape.sourceforge.net/) || [etherape](https://www.archlinux.org/packages/?name=etherape)
 
-*   **[Fail2ban](/index.php/Fail2ban "Fail2ban")** — Efectúa el [_baneo_](https://en.wikipedia.org/wiki/es:Ban "wikipedia:es:Ban") (restricción) de las IP después de varios intentos de autenticación fallidos al entrar en confrontación con los demonios más comunes.
+*   **[Fail2ban](/index.php/Fail2ban "Fail2ban")** — Efectúa el [*baneo*](https://en.wikipedia.org/wiki/es:Ban "wikipedia:es:Ban") (restricción) de las IP después de varios intentos de autenticación fallidos al entrar en confrontación con los demonios más comunes.
 
 	[http://www.fail2ban.org/](http://www.fail2ban.org/) || [fail2ban](https://www.archlinux.org/packages/?name=fail2ban)
 

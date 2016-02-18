@@ -103,7 +103,6 @@ Also note that some fonts might require modification of the `WIDTHDIFF` and `HEI
 ### Color Support
 
 By default, the AUR package installs the custom terminfo for fbpad, but you will need to add `export TERM=fbpad-256` to your shellrc to take advantage of the 256 color support. Clearly, commands not spawned in your default shell (for instance, those for `EDITOR` and `MAIL`) will not read your shellrc file, so you will need to edit their definitions in your `config.h` file to have the commands for `EDITOR` and `MAIL` run in a parent shell. For instance, the author of this article, who uses [zsh](/index.php/Zsh "Zsh"), changed the default command for `MAIL` from:
-
 ```
 #define MAIL		"mailx"
 

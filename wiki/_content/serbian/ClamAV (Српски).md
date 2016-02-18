@@ -20,7 +20,7 @@ Instalirajte ClamAV sa sledećom komandom:
 
 ## Konfiguracija
 
-Bilo da koristitw clamav kao daemon ili da ga koristite za povremeno proveravanje datoteka potrebno je da zakomentarišete (postavite tarabu #) na reč _Example_, koja se nalazi na početku fajla `/etc/clamav/freshclam.conf` Verovatno će biti potrebno da se isto uradi i kod `clamd.conf` koji se nalazi u istom direktorijumu, zatim kada ste ovo uradili možete da ažurirate bazu podataka za viruse.
+Bilo da koristitw clamav kao daemon ili da ga koristite za povremeno proveravanje datoteka potrebno je da zakomentarišete (postavite tarabu #) na reč *Example*, koja se nalazi na početku fajla `/etc/clamav/freshclam.conf` Verovatno će biti potrebno da se isto uradi i kod `clamd.conf` koji se nalazi u istom direktorijumu, zatim kada ste ovo uradili možete da ažurirate bazu podataka za viruse.
 
 ## Ažuriranje baze podataka
 
@@ -48,7 +48,7 @@ Baza podataka je sačuvana ovde:
 
 ## Postavke Servera
 
-Da biste pokrenuli kao server uredite sledeće `/etc/clamav/clamd.conf` i `/etc/clamav/freshclam.conf` and comment out the _Example_ flag. In `/etc/conf.d/clamav` promenite start opciju iz "no" u "yes".
+Da biste pokrenuli kao server uredite sledeće `/etc/clamav/clamd.conf` i `/etc/clamav/freshclam.conf` and comment out the *Example* flag. In `/etc/conf.d/clamav` promenite start opciju iz "no" u "yes".
 
 ```
 # change these to "yes" to start

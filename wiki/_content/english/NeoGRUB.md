@@ -1,4 +1,4 @@
-NeoGRUB is an implementation of GRUB4DOS provided by the EasyBCD bootloader-configurator for Windows. When installed to the Windows bootloader (via Add New Entry - NeoGrub ) from EasyBCD, it embeds an implementation of GRUB Legacy _inside the Windows Bootloader_. This implementation can boot Arch Linux and other Linuxes _directly, without chainloading a Linux bootloader installed on the linux's /boot._
+NeoGRUB is an implementation of GRUB4DOS provided by the EasyBCD bootloader-configurator for Windows. When installed to the Windows bootloader (via Add New Entry - NeoGrub ) from EasyBCD, it embeds an implementation of GRUB Legacy *inside the Windows Bootloader*. This implementation can boot Arch Linux and other Linuxes *directly, without chainloading a Linux bootloader installed on the linux's /boot.*
 
 This can be helpful if you find that updates to Arch are breaking your Arch's GRUB or Syslinux.
 

@@ -44,13 +44,13 @@ grep --color '\<lm\>' /proc/cpuinfo
 
 ```
 
-对支持x86_64的cpu将返回 `lm` 标志 (“long mode”) 被高亮。注意 _lahf_lm_ 是不同的标志，与是否支持64位无关。
+对支持x86_64的cpu将返回 `lm` 标志 (“long mode”) 被高亮。注意 *lahf_lm* 是不同的标志，与是否支持64位无关。
 
 ### 空间需求
 
 你应该在迁移期间为 `/var/cache/pacman/pkg` 预备当前大约两倍的空间。这是假设只有当前安装的软件包都在缓存中， 好像 “pacman -Sc” (clean) 刚刚运行过。磁盘占据空间的增加源于在两个架构间迁移时没个软件包的复制。
 
-如果你没有足够的空间请使用_[gparted](/index.php/Gparted "Gparted")_ 重新划分相关分区的大小，或者将另一个分区挂载到 _/var/cache/pacman_
+如果你没有足够的空间请使用*[gparted](/index.php/Gparted "Gparted")* 重新划分相关分区的大小，或者将另一个分区挂载到 */var/cache/pacman*
 
 在系统完全在新架构操作前请勿从缓存中移除旧架构中的软件包。过早地移除软件包将使你不能回退和撤销改变。
 
@@ -142,7 +142,7 @@ find /usr/bin -type f -exec bash -c 'file {} | grep 32-bit' \;
 
 #### 改变 Pacman 架构
 
-编辑 _/etc/pacman.conf_ 文件 并将 _Architecture_ 从 `auto` 更改到新值。可以使用这些 _sed_ 命令:
+编辑 */etc/pacman.conf* 文件 并将 *Architecture* 从 `auto` 更改到新值。可以使用这些 *sed* 命令:
 
 对于 x86_64:
 
@@ -158,7 +158,7 @@ find /usr/bin -type f -exec bash -c 'file {} | grep 32-bit' \;
 
 ```
 
-确定_/etc/pacman.conf_和_/etc/pacman.d/mirrorlist_中的server列表使用_$arch_来代替显式指定i686或x86_64。现在强制pacman同步新的仓库：
+确定*/etc/pacman.conf*和*/etc/pacman.d/mirrorlist*中的server列表使用*$arch*来代替显式指定i686或x86_64。现在强制pacman同步新的仓库：
 
 ```
 # pacman -Syy
@@ -181,7 +181,7 @@ find /usr/bin -type f -exec bash -c 'file {} | grep 32-bit' \;
 
 ```
 
-**警告:** 不要现在安装 _lib32-glibc_ 软件包。在执行命令 _ldconfig_ 后，当你安装 _linux_（内核）时，生成的镜像文件中，_librt.so_ 等库文件会在 _/usr/lib32_ 目录下，启动的时候二进制文件不会在此搜索库文件，导致启动失败。
+**警告:** 不要现在安装 *lib32-glibc* 软件包。在执行命令 *ldconfig* 后，当你安装 *linux*（内核）时，生成的镜像文件中，*librt.so* 等库文件会在 */usr/lib32* 目录下，启动的时候二进制文件不会在此搜索库文件，导致启动失败。
 
 ### 软件包安装
 
@@ -196,7 +196,7 @@ find /usr/bin -type f -exec bash -c 'file {} | grep 32-bit' \;
 
 ```
 
-现在该安装 _lib32-glibc_ 软件包了（你需要添加[multilib]软件仓库，如果你还没有：
+现在该安装 *lib32-glibc* 软件包了（你需要添加[multilib]软件仓库，如果你还没有：
 
 ```
 # pacman -S lib32-glibc
@@ -243,7 +243,7 @@ find /usr/bin -type f -exec bash -c 'file {} | grep 32-bit' \;
 
 ## 清理
 
-现在可以随意移除Busybox 和_lib32-glibc_.
+现在可以随意移除Busybox 和*lib32-glibc*.
 
 ```
 # pacman -Rcn busybox lib32-glibc

@@ -128,7 +128,7 @@ chown ldap.ldap /var/lib/openldap/openldap-data/*
 Для проверки работоспособности ваших настроек запустите команду:
 
 ```
-ldapsearch -x -b _ -s base '(objectclass=*)' namingContexts_
+ldapsearch -x -b * -s base '(objectclass=*)' namingContexts*
 
 ```
 
@@ -146,7 +146,7 @@ ldapsearch -x -b _ -s base '(objectclass=*)' namingContexts_
 
 #### Создание само-подписанного сертификата
 
-Для создания _само-подписанного_ сертификата, используйте команду:
+Для создания *само-подписанного* сертификата, используйте команду:
 
  `openssl req -new -x509 -nodes -out slapdcert.pem -keyout slapdkey.pem -days 365` 
 

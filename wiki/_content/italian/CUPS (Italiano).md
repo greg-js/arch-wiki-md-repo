@@ -1,6 +1,6 @@
 Dal sito di [CUPS](http://www.cups.org/index.php):
 
-	"_[CUPS](https://en.wikipedia.org/wiki/it:CUPS "wikipedia:it:CUPS") è il sistema di stampa, standard e open source, sviluppato da Apple Inc. per Mac OS® X e altri sistemi operativi UNIX®-like._"
+	"*[CUPS](https://en.wikipedia.org/wiki/it:CUPS "wikipedia:it:CUPS") è il sistema di stampa, standard e open source, sviluppato da Apple Inc. per Mac OS® X e altri sistemi operativi UNIX®-like.*"
 
 Anche se ci sono altri sistemi di stampa come LPRNG, il Common Unix Printing System è la scelta più popolare per la sua relativa facilità d'uso.
 
@@ -71,9 +71,9 @@ Ci sono due modi per configurare una stampante:
 
 ### Configurazione avanzata della rete
 
-È possibile lanciare l'istanza _cupsd_+_cups-browserd_ sul proprio client con l'aiuto di [Avahi](/index.php/Avahi "Avahi") per rintracciare l'IP della stampante. Tale operazione non ha senso che venga svolta su una rete domestica dove si presuppone si conosca a priori la posizione della stampante. Può invece essere molto utile in caso di grandi reti lan, dove IP e hostname della stampante sono ignoti.
+È possibile lanciare l'istanza *cupsd*+*cups-browserd* sul proprio client con l'aiuto di [Avahi](/index.php/Avahi "Avahi") per rintracciare l'IP della stampante. Tale operazione non ha senso che venga svolta su una rete domestica dove si presuppone si conosca a priori la posizione della stampante. Può invece essere molto utile in caso di grandi reti lan, dove IP e hostname della stampante sono ignoti.
 
-**Nota:** Questa caratteristica non è cambiata dalle precedenti versioni di [cups](https://www.archlinux.org/packages/?name=cups) (<1.6.x). L'unica differenza infatti è che fino a CUPS 1.5.x l'interfaccia web non necessitava del demone [avahi](/index.php/Avahi "Avahi"). Per poter cercare con il browser le stampanti condivise della rete da un server cups remoto è necessario avviare anche _cups-browserd_ (da cups-filters =< 1.0.26).
+**Nota:** Questa caratteristica non è cambiata dalle precedenti versioni di [cups](https://www.archlinux.org/packages/?name=cups) (<1.6.x). L'unica differenza infatti è che fino a CUPS 1.5.x l'interfaccia web non necessitava del demone [avahi](/index.php/Avahi "Avahi"). Per poter cercare con il browser le stampanti condivise della rete da un server cups remoto è necessario avviare anche *cups-browserd* (da cups-filters =< 1.0.26).
 
 ## Installare il server
 
@@ -105,13 +105,13 @@ Se non si è sicuri di quale driver installare o se l'attuale driver non funzion
 
 #### Scaricare il PPD della stampante
 
-A seconda della stampante, questo passo è opzionale e potrebbe non essere necessario, dal momento che l'installazione standard di CUPS include già un certo numero di file PPD (Postscript Printer Description). Inoltre, i pacchetti _foomatic-filters_, _gimp-print_ e _hplip_ includono a loro volta dei file PPD, che verranno rilevati automaticamente da CUPS.
+A seconda della stampante, questo passo è opzionale e potrebbe non essere necessario, dal momento che l'installazione standard di CUPS include già un certo numero di file PPD (Postscript Printer Description). Inoltre, i pacchetti *foomatic-filters*, *gimp-print* e *hplip* includono a loro volta dei file PPD, che verranno rilevati automaticamente da CUPS.
 
 Ecco una spiegazione dal sito di stampa di Linux sul significato dei file PPD:
 
-	"_Per ogni PostScript di una stampante, i costruttori forniscono un file PPD, che contiene tutte le informazioni specifiche del particolare modello della stampante: caratteristiche di base della stampante, come ad esempio se è una stampante a colori, i caratteri, il livello PostScript, ecc, e soprattutto le opzioni configurabili dall'utente , la dimensione della carta, la risoluzione, ecc._"
+	"*Per ogni PostScript di una stampante, i costruttori forniscono un file PPD, che contiene tutte le informazioni specifiche del particolare modello della stampante: caratteristiche di base della stampante, come ad esempio se è una stampante a colori, i caratteri, il livello PostScript, ecc, e soprattutto le opzioni configurabili dall'utente , la dimensione della carta, la risoluzione, ecc.*"
 
-Se il PPD per la stampante _non_ è già incluso in CUPS:
+Se il PPD per la stampante *non* è già incluso in CUPS:
 
 *   controllare su [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)") per verificare se ci sono i pacchetti per la stampante e/o produttore
 *   visitare il database [OpenPrinting](http://www.openprinting.org/printers) e selezionare il produttore e il modello della stampante
@@ -259,25 +259,25 @@ L'integrazione con Avahi per il discover delle stampanti in lan è ora gestito c
 
 ### Interfaccia web e strumenti
 
-Una volta avviato il demone, aprire un brower ed inserire nella barra dell'indirizzo: [http://localhost:631](http://localhost:631) (_Al posto di **localhost** può essere necessario inserire il nome host presente in_ `/etc/hostname`.
+Una volta avviato il demone, aprire un brower ed inserire nella barra dell'indirizzo: [http://localhost:631](http://localhost:631) (*Al posto di **localhost** può essere necessario inserire il nome host presente in* `/etc/hostname`.
 
-A questo punto. seguire le varie procedure guidate per aggiungere la stampante. Una procedura consueta è quella di iniziare facendo click sul pulsante _Aggiungere stampanti e classi_ e poi su _Aggiungi Stampante_. Quando vengono richieste le credenziali inserire quelle di root. Il nome assegnato alla stampante non è rilevante, come i campi "ubicazione"' e "descrizione". Successivamente si presenterà un elenco di stampanti tra cui scegliere. L'attuale nome della stampante sarà presente vicino all'etichetta (ad esempio _USB Printer #1_ per le stampanti USB). Infine selezionare il driver appropriato per completare la configurazione.
+A questo punto. seguire le varie procedure guidate per aggiungere la stampante. Una procedura consueta è quella di iniziare facendo click sul pulsante *Aggiungere stampanti e classi* e poi su *Aggiungi Stampante*. Quando vengono richieste le credenziali inserire quelle di root. Il nome assegnato alla stampante non è rilevante, come i campi "ubicazione"' e "descrizione". Successivamente si presenterà un elenco di stampanti tra cui scegliere. L'attuale nome della stampante sarà presente vicino all'etichetta (ad esempio *USB Printer #1* per le stampanti USB). Infine selezionare il driver appropriato per completare la configurazione.
 
-Ora, testare la configurazione premendo il menù a discesa _Amministrazione_ e scegliere _Stampa pagina di prova_. Se non stampa e le configurazioni sono corrette, probabilmente il driver selezionato non è quello appropriato.
+Ora, testare la configurazione premendo il menù a discesa *Amministrazione* e scegliere *Stampa pagina di prova*. Se non stampa e le configurazioni sono corrette, probabilmente il driver selezionato non è quello appropriato.
 
 **Tip:** Vedere [#Interfacce alternative per CUPS](#Interfacce_alternative_per_CUPS) per altri tipi di interfaccia.
 
-**Note:** Quando si configura una stampante USB, essa dovrebbe essere elncata nella pagina _Aggiungi Stampante_. Se è invece elencata solo una "Stampante SCSI", probabilmente CUPS ha fallito nel riconoscere la stampante.
+**Note:** Quando si configura una stampante USB, essa dovrebbe essere elncata nella pagina *Aggiungi Stampante*. Se è invece elencata solo una "Stampante SCSI", probabilmente CUPS ha fallito nel riconoscere la stampante.
 
 #### Amministrazione di CUPS
 
-Per poter amministrare le stampanti tramite l'interfaccia web è necessario fornire un nome utente e la password, ad esempio: per aggiungere o rimuovere stampanti, per interrompere i processi di stampa eccetera. L'utente di default è quello appartenente al gruppo _sys_ oppure root (per cambiare il gruppo modificare `/etc/cups/cupsd.conf` alla riga _SystemGroup_).
+Per poter amministrare le stampanti tramite l'interfaccia web è necessario fornire un nome utente e la password, ad esempio: per aggiungere o rimuovere stampanti, per interrompere i processi di stampa eccetera. L'utente di default è quello appartenente al gruppo *sys* oppure root (per cambiare il gruppo modificare `/etc/cups/cupsd.conf` alla riga *SystemGroup*).
 
 Se l'utente root è stato bloccato (per esempio se si usa solo `sudo`), non sarà possibile accedere all'interfaccia di amministrazione con il proprio utente e password. In questo caso seguire quanto descritto [nelle faq](http://www.cups.org/articles.php?L237+T+Qprintadmin) di CUPS e leggere [questo post sul forum internazionale](https://bbs.archlinux.org/viewtopic.php?id=35567).
 
 #### Accesso remoto all'interfaccia web
 
-Di default, l'interfaccia web di configurazione di CUPS è accessibile solo da _localhost_; cioè dal computer su cui è installato. Per consentire l'accesso da remoto, sarà necessario effettuare le seguenti modifiche al file `/etc/cups/cupsd.conf`. Sostituire la seguente riga:
+Di default, l'interfaccia web di configurazione di CUPS è accessibile solo da *localhost*; cioè dal computer su cui è installato. Per consentire l'accesso da remoto, sarà necessario effettuare le seguenti modifiche al file `/etc/cups/cupsd.conf`. Sostituire la seguente riga:
 
 ```
 Listen localhost:631
@@ -491,7 +491,7 @@ SystemGroup sys root <inserire qui>
 
  `# systemctl restart cupsd` 
 
-Gli utenti [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)") possono gestire le stampanti nel Centro di Controllo. Entrambi gli utenti (GNOME o KDE), dovrebbero riferirsi alla documentazione dei rispettivi _Desktop Environment_ per maggiori informazioni su come gestire l'interfaccia.
+Gli utenti [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)") possono gestire le stampanti nel Centro di Controllo. Entrambi gli utenti (GNOME o KDE), dovrebbero riferirsi alla documentazione dei rispettivi *Desktop Environment* per maggiori informazioni su come gestire l'interfaccia.
 
 Un'altra interfaccia utile è [gtklp](https://aur.archlinux.org/packages/gtklp/) disponibile su [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)").
 
@@ -566,7 +566,7 @@ Si stampi un documento e si analizzi `error_log` per avere un'immagine più dett
 
 ### Problemi legati all'aggiornamento
 
-_Problemi che appaiono dopo che i pacchetti CUPS e i relativi programmi vengono aggiornati ad una versione più recente_
+*Problemi che appaiono dopo che i pacchetti CUPS e i relativi programmi vengono aggiornati ad una versione più recente*
 
 #### CUPS smette di funzionare
 
@@ -578,7 +578,7 @@ Per usare la nuova configurazione, copiare `/etc/cups/cupsd.conf.default` in `/e
 
 Se tutti i lavori inviati alla stampante risultano "stopped", si elimini la stampante e quindi la si riaggiunga. Si usi [l'interfaccia web di CUPS](http://localhost:631), si vada in Stampante > Elimina Stampante.
 
-Per controllare la configurazione della stampante di vada in _Stampanti_, quindi _Modificare Stampante_. Trascrivere le informazioni mostrate, selezionare 'Modificare Stampante' per procedere alle pagine successive, e così via.
+Per controllare la configurazione della stampante di vada in *Stampanti*, quindi *Modificare Stampante*. Trascrivere le informazioni mostrate, selezionare 'Modificare Stampante' per procedere alle pagine successive, e così via.
 
 #### Tutti i lavori convergono in un "The printer is not responding"
 
@@ -688,7 +688,7 @@ La si commenti e si riavvii CUPS.
 
 #### Pulsante Stampa bloccato nelle applicazioni GNOME
 
-	_<small>Fonte (in inglese): [Non posso stampare nelle applicazioni GNOME. - Arch Forums](https://bbs.archlinux.org/viewtopic.php?id=70418)</small>_
+	*<small>Fonte (in inglese): [Non posso stampare nelle applicazioni GNOME. - Arch Forums](https://bbs.archlinux.org/viewtopic.php?id=70418)</small>*
 
 Assicurarsi che il pacchetto [libgnomeprint](https://aur.archlinux.org/packages/libgnomeprint/) sia installato.
 
@@ -729,7 +729,7 @@ in `/etc/cups/mime.types`.
 Spesso Windows è poco intuitivo nella definizione esatta degli URI (la posizione dei dispositivi).Se si riscontrano problemi nello specificare la corretta posizione di un dispositivo in CUPS, eseguire il seguente comando per mostrare una lista di tutte le condivisioni disponibili per un dato utente di Windows:
 
 ```
-$ smbtree -U _utentewindows_
+$ smbtree -U *utentewindows*
 
 ```
 
@@ -853,8 +853,8 @@ KERNEL=="lp[0-9]", SYMLINK+="%k", GROUP="lp"}}
 
 ## Vedere anche
 
-*   [Documentazione Ufficiale di CUPS](http://localhost:631/documentation.html), _Installata Localmente_
+*   [Documentazione Ufficiale di CUPS](http://localhost:631/documentation.html), *Installata Localmente*
 *   [Sito ufficiale di CUPS](http://www.cups.org/)
-*   [Linux Printing](http://www.linuxprinting.org/), _[The Linux Foundation](http://www.linuxfoundation.org)_
-*   [Guida alla stampa di Gentoo](http://www.gentoo.org/doc/en/printing-howto.xml), _[Documentazione di Gentoo](http://www.gentoo.org/doc/en)_
+*   [Linux Printing](http://www.linuxprinting.org/), *[The Linux Foundation](http://www.linuxfoundation.org)*
+*   [Guida alla stampa di Gentoo](http://www.gentoo.org/doc/en/printing-howto.xml), *[Documentazione di Gentoo](http://www.gentoo.org/doc/en)*
 *   [Forum internazionale di Arch Linux](https://bbs.archlinux.org/)

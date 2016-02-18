@@ -30,7 +30,7 @@ Analog headphone out works if the "Independent HP" switch in `alsamixer` is set 
 
 External microphone jack not tested.
 
- | Realtek 8168 (_r8169_) works. | Intel Centrino Advanced-N 6235 ([iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration")), unreliable on some 802.11n networks. A workaround is to disable 802.11n with module parameter `11n_disable=1`. | Intel Centrino Advanced-N 6235, [works after an initial](/index.php/Bluetooth#hcitool_scan:_Device_not_found "Bluetooth") `sudo hciconfig hci0 up` which persists after reboot. | [Suspend](/index.php/Suspend "Suspend") to disk and RAM works (see note on card reader). | N/A | Web cam works (_uvcvideo_).
+ | Realtek 8168 (*r8169*) works. | Intel Centrino Advanced-N 6235 ([iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration")), unreliable on some 802.11n networks. A workaround is to disable 802.11n with module parameter `11n_disable=1`. | Intel Centrino Advanced-N 6235, [works after an initial](/index.php/Bluetooth#hcitool_scan:_Device_not_found "Bluetooth") `sudo hciconfig hci0 up` which persists after reboot. | [Suspend](/index.php/Suspend "Suspend") to disk and RAM works (see note on card reader). | N/A | Web cam works (*uvcvideo*).
 
 All Fn-keys work.
 
@@ -40,12 +40,12 @@ Touchpad works with multitouch support.
 
 USB 3.0 not tested.
 
-Card reader Realtek 5289 works (_rtsx_pci_).
+Card reader Realtek 5289 works (*rtsx_pci*).
 
 Battery reports percentage of charge, not the time left, which is a BIOS/ACPI limitation.
 
  | A highly Linux-friendly machine. Tested only in BIOS mode, not in UEFI. |
-| MX6961 | 2007.05 | intel_agp, intelfb, i915, [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). Use 915resolution to get 1280x800 | Intel HD Audio with [ALSA](/index.php/ALSA "ALSA") | Yes, using the _sky2_ module | Yes, ipw3945 | Yes | Suspend-to-RAM works fine; hibernate untested | Untested | SD card: module _tifm_core_. | Fn keys for brightness and volume unsupported |
+| MX6961 | 2007.05 | intel_agp, intelfb, i915, [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). Use 915resolution to get 1280x800 | Intel HD Audio with [ALSA](/index.php/ALSA "ALSA") | Yes, using the *sky2* module | Yes, ipw3945 | Yes | Suspend-to-RAM works fine; hibernate untested | Untested | SD card: module *tifm_core*. | Fn keys for brightness and volume unsupported |
 | CF-Y2 Toughbook (CF-Y2EWAZZBM) | 2008.06 | Intel 855GM (rev 02) - works perfectly at 1400x1050 with xf86-video-intel package and 'intel' xorg driver | Intel ICH4 AC'97 (rev 03) - works perfectly with default ALSA | Realtek RTL-8139 (rev 10) - works perfectly with default Linux 2.6 kernel | Intel 2915ABG (rev 05) - works perfectly with default Linux wireless drivers | NA | Suspend to
 RAM: Yes, via /sys/power/state
 

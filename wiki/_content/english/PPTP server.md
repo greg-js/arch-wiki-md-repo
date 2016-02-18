@@ -27,7 +27,6 @@ This entry will show you on how to create a PPTP server in Arch.
 A typical configuration may look like:
 
  `/etc/pptpd.conf` 
-
 ```
 # See man pptpd.conf to get more information about this file
 
@@ -46,7 +45,6 @@ remoteip 192.168.1.234-238,192.168.1.245
 Now create the pppd options file, in our example this is `/etc/ppp/options.pptpd`:
 
  `/etc/ppp/options.pptpd` 
-
 ```
 # Read man pppd to see the full list of available options
 
@@ -86,14 +84,13 @@ ms-dns 8.8.4.4
 Now create credentials file for authenticating users:
 
  `/etc/ppp/chap-secrets` 
-
 ```
 # <username> <server name> <password> <ip addresses>
 user2    pptpd    123    *
 
 ```
 
-Now you can be authenticated with _user2_ as username and _123_ for password.
+Now you can be authenticated with *user2* as username and *123* for password.
 
 Create a sysctl configuration file `/etc/sysctl.d/30-ipforward.conf` and enable kernel packet forwarding that allow connecting clients to have access to your subnet (see also [Internet Share#Enable packet forwarding](/index.php/Internet_Share#Enable_packet_forwarding "Internet Share")):
 
@@ -154,7 +151,6 @@ You must change default forward policy in `/etc/default/ufw`
 Now change `/etc/ufw/before.rules`, add following code after header and before *filter line
 
  `/etc/ufw/before.rules` 
-
 ```
 # nat Table rules
 *nat
@@ -193,7 +189,7 @@ As with any service, see [Systemd#Troubleshooting](/index.php/Systemd#Troublesho
 
 ### Error 619 on the client side
 
-Search for the `logwtmp` option in `/etc/pptpd.conf` and comment it out. When this is enabled, _wtmp_ will be used to record client connections and disconnections.
+Search for the `logwtmp` option in `/etc/pptpd.conf` and comment it out. When this is enabled, *wtmp* will be used to record client connections and disconnections.
 
 ```
 #logwtmp

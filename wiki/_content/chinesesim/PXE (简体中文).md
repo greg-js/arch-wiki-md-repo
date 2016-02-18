@@ -2,7 +2,7 @@
 
 [维基百科：预启动执行环境](https://en.wikipedia.org/wiki/Preboot_Execution_Environment "wikipedia:Preboot Execution Environment")：
 
-	_预启动执行环境（Preboot eXecution Environment，PXE，也被称为预执行环境)提供了一种使用网络接口（Network Interface）启动计算机的机制。这种机制让计算机的启动可以不依赖本地数据存储设备（如硬盘）或本地已安装的操作系统。_
+	*预启动执行环境（Preboot eXecution Environment，PXE，也被称为预执行环境)提供了一种使用网络接口（Network Interface）启动计算机的机制。这种机制让计算机的启动可以不依赖本地数据存储设备（如硬盘）或本地已安装的操作系统。*
 
 在本指南中，PXE 用于通过支持 PXE 的 Option ROM 在目标机器上启动安装介质。
 
@@ -52,7 +52,6 @@
 配置 dnsmasq：
 
  `# /etc/dnsmasq.conf` 
-
 ```
 port=0
 interface=eth0
@@ -76,7 +75,6 @@ tftp-root=/mnt/archiso
 然后用`/mnt/archiso`作文件根目录并启动 [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd)：
 
  `# darkhttpd /mnt/archiso --no-keepalive` 
-
 ```
 darkhttpd/1.8, copyright (c) 2003-2011 Emil Mikulic.
 listening on: http://0.0.0.0:80/
@@ -84,14 +82,13 @@ listening on: http://0.0.0.0:80/
 
 ## 安装
 
-在本小节，您需要知道如何让客户端进行 PXE 启动。屏幕显示 POST 信息时，某个角落通常会有提示，按哪个键进行 PXE 启动。在 IBM x3650 上，_F12_ 会调出启动菜单，第一个选项就是 _Network_；在 Dell PE 1950/2950 上，按下 _F12_ 会直接开始 PXE 启动。
+在本小节，您需要知道如何让客户端进行 PXE 启动。屏幕显示 POST 信息时，某个角落通常会有提示，按哪个键进行 PXE 启动。在 IBM x3650 上，*F12* 会调出启动菜单，第一个选项就是 *Network*；在 Dell PE 1950/2950 上，按下 *F12* 会直接开始 PXE 启动。
 
 ### 启动
 
 通过[journald](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.97.A5.E5.BF.97 "Systemd (简体中文)")，可以查看 PXE 服务器早期 PXE 启动过程的信息：
 
  `# journalctl -u dnsmasq -f` 
-
 ```
 dnsmasq-dhcp[2544]: DHCPDISCOVER(eth1) 00:1a:64:6a:a2:4d 
 dnsmasq-dhcp[2544]: DHCPOFFER(eth1) 192.168.0.110 00:1a:64:6a:a2:4d 
@@ -113,7 +110,7 @@ dnsmasq-tftp[2544]: sent /mnt/archiso/arch/boot/syslinux/splash.png to 192.168.0
 
 加载完 `pxelinux.0` 和 `archiso.cfg` 文件后，您会看到 [syslinux](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") 启动菜单。
 
-根据 CPU 构架，选择 _Boot Arch Linux (x86_64) (HTTP)_ 或 _Boot Arch Linux (i686) (HTTP)_。
+根据 CPU 构架，选择 *Boot Arch Linux (x86_64) (HTTP)* 或 *Boot Arch Linux (i686) (HTTP)*。
 
 接着会传送内核和 initramfs：
 
@@ -176,7 +173,6 @@ syslinux 菜单中暗含着其他方法：
 安装 [nbd](https://www.archlinux.org/packages/?name=nbd) 并配置：
 
  `# vim /etc/nbd-server/config` 
-
 ```
 [generic]
 [archiso]

@@ -133,7 +133,7 @@ dd if=$my_boot_part of=/media/win/linux.bin bs=512 count=1
 
 ```
 
-*   Boot to Windows and open up and you should be able to see the FAT32 partition. Copy the linux.bin file to `C:\`. Now run **cmd** with administrator privileges (navigate to _Start > All Programs > Accessories_, right-click on _Command Prompt_ and select _Run as administrator_):
+*   Boot to Windows and open up and you should be able to see the FAT32 partition. Copy the linux.bin file to `C:\`. Now run **cmd** with administrator privileges (navigate to *Start > All Programs > Accessories*, right-click on *Command Prompt* and select *Run as administrator*):
 
 ```
 bcdedit /create /d “Linux” /application BOOTSECTOR
@@ -165,7 +165,7 @@ Using the Disk Management utility in Windows, check how the partitions are label
 
 You can then proceed with [partitioning](/index.php/Partitioning "Partitioning"), depending on your needs. Mind that there is no need to create an additional EFI System Partition, since it already exists (see above): when required, [mount](/index.php/Mount "Mount") this to `/boot`, install your [bootloader](/index.php/Bootloader "Bootloader") to it and save the entry in `/etc/[fstab](/index.php/Fstab "Fstab")`.
 
-Concerning bootloaders, [systemd-boot](/index.php/Systemd-boot "Systemd-boot") and [rEFInd](/index.php/REFInd "REFInd") autodetect _Windows Boot Manager_ (`\EFI\Microsoft\Boot\bootmgfw.efi`) and show it in their boot menu automatically. For [GRUB](/index.php/GRUB "GRUB") follow [GRUB#Windows installed in UEFI-GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI-GPT_Mode_menu_entry "GRUB"). Syslinux (as of version 6.02 and 6.03-pre9) and ELILO do not support chainloading other EFI applications, so they cannot be used to boot `\EFI\Microsoft\Boot\bootmgfw.efi`.
+Concerning bootloaders, [systemd-boot](/index.php/Systemd-boot "Systemd-boot") and [rEFInd](/index.php/REFInd "REFInd") autodetect *Windows Boot Manager* (`\EFI\Microsoft\Boot\bootmgfw.efi`) and show it in their boot menu automatically. For [GRUB](/index.php/GRUB "GRUB") follow [GRUB#Windows installed in UEFI-GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI-GPT_Mode_menu_entry "GRUB"). Syslinux (as of version 6.02 and 6.03-pre9) and ELILO do not support chainloading other EFI applications, so they cannot be used to boot `\EFI\Microsoft\Boot\bootmgfw.efi`.
 
 Computers that come with newer versions of Windows often have [secure boot](/index.php/UEFI#Secure_Boot "UEFI") enabled. You will need to take extra steps to either disable secure boot or to make your installation media compatible with secure boot (see above and in the linked page).
 
@@ -177,9 +177,9 @@ The usb-stick for installing Windows 8.1 seems to need a MBR partition table (no
 
 ## Time standard
 
-*   Recommended: Set both Arch Linux and Windows to use UTC, following [Time#UTC in Windows](/index.php/Time#UTC_in_Windows "Time"). Also, be sure to prevent Windows from synchronizing the time on-line, because the hardware clock will default back to _localtime_.
+*   Recommended: Set both Arch Linux and Windows to use UTC, following [Time#UTC in Windows](/index.php/Time#UTC_in_Windows "Time"). Also, be sure to prevent Windows from synchronizing the time on-line, because the hardware clock will default back to *localtime*.
 
-*   Not recommended: Set Arch Linux to _localtime_ and disable any time-related services, like [NTPd](/index.php/NTPd "NTPd") . This will let Windows take care of hardware clock corrections and you will need to remember to boot into Windows at least two times a year (in Spring and Autumn) when [DST](https://en.wikipedia.org/wiki/Daylight_saving_time "wikipedia:Daylight saving time") kicks in. So please do not ask on the forums why the clock is one hour behind or ahead if you usually go for days or weeks without booting into Windows.
+*   Not recommended: Set Arch Linux to *localtime* and disable any time-related services, like [NTPd](/index.php/NTPd "NTPd") . This will let Windows take care of hardware clock corrections and you will need to remember to boot into Windows at least two times a year (in Spring and Autumn) when [DST](https://en.wikipedia.org/wiki/Daylight_saving_time "wikipedia:Daylight saving time") kicks in. So please do not ask on the forums why the clock is one hour behind or ahead if you usually go for days or weeks without booting into Windows.
 
 ## See also
 

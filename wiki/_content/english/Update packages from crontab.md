@@ -35,7 +35,6 @@ LOGFILE=/var/log/cron-pacman.log
 00   13   *   *   *  . /etc/profile && (echo; date; pacman -Syuq --noconfirm) &>>$LOGFILE || (echo 'pacman failed!'; tail $LOGFILE; false)
 
 ```
-
 To check every */time you must use e.g. `*/2` to check every 2 min or any other time value.
 
 If you want to automatically reboot your computer upon a successful upgrade, append '&& reboot' to the above line.
@@ -118,7 +117,6 @@ testdb -b "/var/lib/pacman/"
 The easiest way of creating a short list of updates is by creating the script that will print them to stdout, e.g.
 
  `ShortListUpdates.sh` 
-
 ```
 #!/bin/bash
 pacman -Qq | \
@@ -140,7 +138,6 @@ Steps for downloading process
 1.  Check if stop mark after download exist, e.g. `if [ ! -f /tmp/.downloaded_yes ];then echo Is OK to download;else echo Already downloaded;fi`
 2.  Check if computer is idle and how long time. Utilities [xprintidle](https://aur.archlinux.org/packages/xprintidle/)[[2]](http://www.ruddwire.com/handy-code/date-to-millisecond-calculators/) for X and command `w` for tty.
 3.  Check if computer is connected with cable or how much battery is charged. You will need to install [upower](https://www.archlinux.org/packages/?name=upower).
-
     ```
     #!/bin/bash
 
@@ -183,7 +180,7 @@ sleep 2
 ...............
 ```
 
-If you will use a GUI notifier then you may want to use this part in the begin of the update script if updates runs after reboot and user comes to log in screen([Display manager](/index.php/Display_manager "Display manager")). Be careful with the `sleep` timeout if too low it might freeze the screen. The notifier will be shown even on the login screen that will probably make user wait until updates are finished or after user logged if you will set _sleep_ timeout too high and user logged in before script started.
+If you will use a GUI notifier then you may want to use this part in the begin of the update script if updates runs after reboot and user comes to log in screen([Display manager](/index.php/Display_manager "Display manager")). Be careful with the `sleep` timeout if too low it might freeze the screen. The notifier will be shown even on the login screen that will probably make user wait until updates are finished or after user logged if you will set *sleep* timeout too high and user logged in before script started.
 
 ```
 #!/bin/bash
@@ -248,7 +245,6 @@ Some of updates can be installed directly if you want make it download new relea
 First must be created the [GPG key](/index.php/GnuPG#Create_key "GnuPG") and added to the `makepkg` configuration file.
 
  `/etc/makepkg.conf` 
-
 ```
 ...............
 PKGDEST=/path/to/custom_repo
@@ -268,7 +264,7 @@ When you are installing Arch Linux on someones computer for use as a desktop the
 
 This example shows how to start "makepkg" as root, for that you should have created an user with limited rights for that purpose.
 
- `runuser -u _user_name_with_limited_rights_ makepkg` 
+ `runuser -u *user_name_with_limited_rights* makepkg` 
 
 ### Update the mirrorlist file
 

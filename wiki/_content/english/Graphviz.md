@@ -34,7 +34,6 @@ $ dot example.dot -Tpng -o foo.png -v 2>&1 | grep font
 Here is a dot file example.
 
  `example.dot` 
-
 ```
 digraph graph_name {
   graph [

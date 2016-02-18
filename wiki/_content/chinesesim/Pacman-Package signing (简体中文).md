@@ -52,7 +52,6 @@ Pacman 中的软件包签名使用在[信任网络](http://www.gnupg.org/gph/en/
 签名检查可以设成全局的或针对每个仓库的。如果 `SigLevel` 在 [options] 节中进行了全局设置，那么所有的包都必须签名。包括你自己编译构建的包，也需要使用 `makepkg` 进行签名。
 
 **注意:** 尽管所有的官方软件包现在都进行了签名，但是在2012年6月的时候签名数据库还在开发。如果设置了 `Required` ，那么 `DatabaseOptional` 也应该被设置。
-
 默认的设置 `/etc/pacman.conf`  `SigLevel = Required DatabaseOptional` 会使得系统只安装被授信的密钥签署的软件包。因为 `TrustOnly` 是一个已经被编译进pacman的默认设置。 所以上面这些的效果和 `SigLevel = Required DatabaseOptional TrustedOnly` 是一样的。
 
 上面这些也可以在仓库内部进行设置，比如：
@@ -69,7 +68,7 @@ Include = /etc/pacman.d/mirrorlist
 
 ### 初始化密钥环
 
-关于初始化，[收集熵](https://en.wikipedia.org/wiki/Entropy_(computing) "wikipedia:Entropy (computing)") 是必须的。 随意移动鼠标，随即按键盘或者运行一些磁盘级别的操作（比如在其他终端运行`ls -R /`或者`find / -name foo` 或者 `dd if=/dev/sda8 of=/dev/tty7`之类的)应该会收集足够的熵。如果你的系统没有足够的熵，这项工作需要好几个小时，但是如果你有，那么就会快多了。
+关于初始化，[收集熵](https://en.wikipedia.org/wiki/Entropy_(computing) 是必须的。 随意移动鼠标，随即按键盘或者运行一些磁盘级别的操作（比如在其他终端运行`ls -R /`或者`find / -name foo` 或者 `dd if=/dev/sda8 of=/dev/tty7`之类的)应该会收集足够的熵。如果你的系统没有足够的熵，这项工作需要好几个小时，但是如果你有，那么就会快多了。
 
 要初始化 pacman 密钥:
 
@@ -113,7 +112,6 @@ PGP 通常很长(2048 位或更长)，不太容易使用，所以通常创建一
 # pacman-key --refresh-keys
 
 ```
-
 当使用`--refresh-keys` 时，本地签名也会被远程查找，并收到未找到的消息，这是正常的。
 
 ### 导入非官方密钥
@@ -125,23 +123,23 @@ PGP 通常很长(2048 位或更长)，不太容易使用，所以通常创建一
 
 **Note:** You may first need to run `dirmngr` as root, see [#gpg:_keyserver_receive_failed:_No_dirmngr](#gpg:_keyserver_receive_failed:_No_dirmngr).
 
-First get the key ID (`_keyid_`) from the owner of the key. Then you need to add the key to the keyring:
+First get the key ID (`*keyid*`) from the owner of the key. Then you need to add the key to the keyring:
 
-*   If the key is found on a keyserver, import it with: `# pacman-key -r _keyid_` 
+*   If the key is found on a keyserver, import it with: `# pacman-key -r *keyid*` 
 
-*   If otherwise a link to a keyfile is provided, download it and then run: `# pacman-key --add _/path/to/downloaded/keyfile_` 
+*   If otherwise a link to a keyfile is provided, download it and then run: `# pacman-key --add */path/to/downloaded/keyfile*` 
 
 Always be sure to verify the fingerprint, as you would with a master key, or any other key which you are going to sign.
 
 ```
-$ pacman-key -f _keyid_
+$ pacman-key -f *keyid*
 
 ```
 
 Finally, you need to locally sign the imported key:
 
 ```
-# pacman-key --lsign-key _keyid_
+# pacman-key --lsign-key *keyid*
 
 ```
 
@@ -159,7 +157,6 @@ You now trust this key to sign packages.
 ## 问题解决
 
 **警告:** Pacman-key 依赖于 [Time_(简体中文)](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Time (简体中文)"). 如果系统时间是错误的，将会获得一个报错：
-
 ```
 error: PackageName: signature from "User <email@archlinux.org>" is invalid
 error: failed to commit transaction (invalid or corrupted package (PGP signature))
@@ -243,14 +240,13 @@ SigLevel = Never
 
 ### Updating keys via proxy
 
-There's a bug in _gnupg_ which prevents updating keys via http proxies ([https://bugs.g10code.com/gnupg/issue1786](https://bugs.g10code.com/gnupg/issue1786)).
+There's a bug in *gnupg* which prevents updating keys via http proxies ([https://bugs.g10code.com/gnupg/issue1786](https://bugs.g10code.com/gnupg/issue1786)).
 
 To work around that problem you can do the following:
 
 Change `/etc/hosts`:
 
  `/etc/hosts` 
-
 ```
 127.0.0.1 pool.sks-keyservers.net
 

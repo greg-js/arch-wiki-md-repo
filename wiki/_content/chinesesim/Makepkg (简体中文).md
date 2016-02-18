@@ -49,7 +49,6 @@ $ mkdir /home/$USER/packages
 `PACKAGER` 变量会设置包的`.PKGINFO` 元数据文件中的 `packager` 值。默认情况下，用户编译的包会显示：
 
  `pacman -Qi package` 
-
 ```
 ...
 Packager       : Unknown Packager
@@ -60,7 +59,6 @@ Packager       : Unknown Packager
 修改之后：
 
  `pacman -Qi package` 
-
 ```
 ...
 Packager       : John Doe <john@doe.com>
@@ -72,7 +70,7 @@ Packager       : John Doe <john@doe.com>
 
 ### 包输出
 
-By default, _makepkg_ creates the package tarballs in the working directory and downloads source data directly to the `src/` directory. Custom paths can be configured, for example to keep all built packages in `~/build/packages/` and all sources in `~/build/sources/`.
+By default, *makepkg* creates the package tarballs in the working directory and downloads source data directly to the `src/` directory. Custom paths can be configured, for example to keep all built packages in `~/build/packages/` and all sources in `~/build/sources/`.
 
 配置以下`makepkg.conf`,如果需要配置变量:
 
@@ -91,7 +89,6 @@ By default, _makepkg_ creates the package tarballs in the working directory and 
 gpg 密钥应该保存在`~/.gnupg/pubring.gpg`文件中，如果其中不包含需要的签名，makepkg 会显示警告.
 
  `$ makepkg` 
-
 ```
 ...
 ==> Verifying source file signatures with gpg...
@@ -114,7 +111,6 @@ $ gpg --list-keys
 要让 gpg 验证 Arch 开发者提交的 AUR 软件包。将如下内容加到 gpg 配置文件的末尾：
 
  `~/.gnupg/gpg.conf` 
-
 ```
 ...
 keyring /etc/pacman.d/gnupg/pubring.gpg
@@ -184,9 +180,7 @@ $ makepkg --sign --key <key-id>
 在使用 makepkg 编译软件时，[make](https://www.archlinux.org/packages/?name=make), [gcc](https://www.archlinux.org/packages/?name=gcc) 和 `g++` 会使用 `MAKEFLAGS`, `CFLAGS` 和 `CXXFLAGS` 选项。默认情况下，这些选项产生的是通用的包，可以在不同的机器上安装。使用针对目标机器的设置，可以获得性能提升，但编译出的包也许无法在其他机器上运行。
 
 **注意:** 记住不是所有的包创建系统都会使用你设置的变量。一些包的 Makefiles 或者 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")文件会覆盖设置。
-
  `/etc/makepkg.conf` 
-
 ```
 ...
 
@@ -224,7 +218,6 @@ CXXFLAGS="${CFLAGS}"
 ```
 
 **Tip:** 要查看`march=native`启用的选项，运行：
-
 ```
 $ gcc -march=native -E -v - </dev/null 2>&1 | sed -n 's/.* -v - //p'
 
@@ -257,7 +250,7 @@ $ updpkgsums
 
 编译过程需要大量的读写操作，要处理很多小文件。将工作目录移动到 [tmpfs](/index.php/Tmpfs "Tmpfs") 可以减少编译时间。
 
-使用`BUILDDIR`变量可以临时将 _makepkg_ 的编译目录设置到 tmpfs：
+使用`BUILDDIR`变量可以临时将 *makepkg* 的编译目录设置到 tmpfs：
 
 ```
 $ BUILDDIR=/tmp/makepkg makepkg
@@ -291,7 +284,6 @@ $ updpkgsums
 如果只是本地安装，可以用下面设置跳过 [LZMA2](https://en.wikipedia.org/wiki/xz "wikipedia:xz") 压缩和解压缩：
 
  `/etc/makepkg.conf` 
-
 ```
 [...]
 #PKGEXT='.pkg.tar.xz'
@@ -301,10 +293,9 @@ PKGEXT='.pkg.tar'
 
 ### Utilizing multiple cores on compression
 
-[xz](https://www.archlinux.org/packages/?name=xz) supports [symmetric multiprocessing (SMP)](https://en.wikipedia.org/wiki/Symmetric_multiprocessing "wikipedia:Symmetric multiprocessing") on compression. This can be done by using the `-T 0`/`--threads=0` flag, which makes _xz_ use as many threads as there are cores on the system:
+[xz](https://www.archlinux.org/packages/?name=xz) supports [symmetric multiprocessing (SMP)](https://en.wikipedia.org/wiki/Symmetric_multiprocessing "wikipedia:Symmetric multiprocessing") on compression. This can be done by using the `-T 0`/`--threads=0` flag, which makes *xz* use as many threads as there are cores on the system:
 
  `/etc/makepkg.conf` 
-
 ```
 [...]
 COMPRESSXZ=(xz -T 0 -c -z -)
@@ -326,7 +317,6 @@ See [GnuPG#gpg-agent](/index.php/GnuPG#gpg-agent "GnuPG") for ways to do this.
 Qmake automatically sets the variable `CFLAGS` and `CXXFLAGS` according to what it thinks should be the right configuration. In order to let qmake use the variables defined in the makepkg configuration file, you must edit the PKGBUILD and pass the variables [QMAKE_CFLAGS_RELEASE](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cflags-release) and [QMAKE_CXXFLAGS_RELEASE](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cxxflags-release) to qmake. For example:
 
  `PKGBUILD` 
-
 ```
 ...
 

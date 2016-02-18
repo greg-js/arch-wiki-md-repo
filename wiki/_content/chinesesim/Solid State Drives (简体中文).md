@@ -178,7 +178,6 @@ VFAT 只有挂载参数为'discard'(而不是fstrim)时才支持 TRIM 。
 在 Arch 上CFQ调度器默认是启用的。查看 `/sys/block/sd**X**/queue/scheduler`的内容来检查:
 
  `$ cat /sys/block/sd**X**/queue/scheduler` 
-
 ```
 noop deadline [cfq]
 
@@ -213,7 +212,6 @@ $ sudo tee /sys/block/sd**X**/queue/scheduler <<< noop
 创建如下内容:
 
  `/etc/udev/rules.d/60-schedulers.rules` 
-
 ```
 # set deadline scheduler for non-rotating disks
 ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="deadline"
@@ -240,7 +238,6 @@ $ cat /sys/block/sd**X**/queue/scheduler  # **X**是应用变更的设备
 一些主板BIOS在初始化时发送了"security freeze"命令给连接上的存储设备。同样，一些SSD(和HDD) BIOS在工厂已设置为"security freeze"。二者都会导致设备的密码安全设置设为 **frozen**，如下面的输出:
 
  `:~# hdparm -I /dev/sda` 
-
 ```
 Security: 
  	Master password revision code = 65534
@@ -297,8 +294,7 @@ Security:
 
 使用 [iotop](https://www.archlinux.org/packages/?name=iotop) 以及 sort 对硬盘写入排序来观察程序对硬盘写的量及频率。
 
-**提示:** _iotop_ 使用 `-b` 参数可在批处理模式而不是默认的交互模式下运行。 `-o` 用于查看正在输入输出的程序， `-qqq` 用于废止字段名和I/O总览。更多选项见 `man iotop`。
-
+**提示:** *iotop* 使用 `-b` 参数可在批处理模式而不是默认的交互模式下运行。 `-o` 用于查看正在输入输出的程序， `-qqq` 用于废止字段名和I/O总览。更多选项见 `man iotop`。
 ```
 # iotop -boqqq
 
@@ -316,7 +312,7 @@ Security:
 
 #### 浏览器配置文件
 
-人们可以_轻松_通过tmpfs把浏览器配置文件挂载入内存，如chromium, firefox, opera等，同时也使用rsync，同步与基于硬盘的备份。除了明显的速度的改进，用户也将节省他们的SSD读/写周期。
+人们可以*轻松*通过tmpfs把浏览器配置文件挂载入内存，如chromium, firefox, opera等，同时也使用rsync，同步与基于硬盘的备份。除了明显的速度的改进，用户也将节省他们的SSD读/写周期。
 
 AUR上有自动完成这些过程的软件，如 [profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/)。
 
@@ -337,7 +333,7 @@ AUR上有自动完成这些过程的软件，如 [profile-sync-daemon](https://a
 | make | 207.6 | 199.4 | 3.95 % |
 | make clean | 6.45 | 3.73 | 42.17 % |
 
-_"研究结果表明，重的元数据工作负载，如make clean，确实造成了近两倍写入磁盘的数据量。这是可以预料的，因为元数据块所有的改变都是第一次写日志和日志变更提交之前写入到磁盘上的最终位置。然而，更常见的工作负载，如写数据以及修改文件系统元数据块，差异要小得多。"_
+*"研究结果表明，重的元数据工作负载，如make clean，确实造成了近两倍写入磁盘的数据量。这是可以预料的，因为元数据块所有的改变都是第一次写日志和日志变更提交之前写入到磁盘上的最终位置。然而，更常见的工作负载，如写数据以及修改文件系统元数据块，差异要小得多。"*
 
 **注意:** 上面表格中的 make clean 实例代表了在tmpfs中编译这个建议的重要性!
 
@@ -374,7 +370,6 @@ ADATA 在其[支持页面](http://www.adata.com.tw/index.php?action=ss_main&page
 Crucial 提供了以ISO镜像文件升级固件的选项。镜像可以在[选择产品](http://www.crucial.com/usa/en/support-ssd)和下载"Manual Boot File"之后找到。M4 Crucial 型号的用户须确认固件是否通过 `smartctl` 来升级。
 
  `$ smartctl --all /dev/sd**X**` 
-
 ```
 ==> WARNING: This drive may hang after 5184 hours of power-on time:
 [http://www.tomshardware.com/news/Crucial-m4-Firmware-BSOD,14544.html](http://www.tomshardware.com/news/Crucial-m4-Firmware-BSOD,14544.html)
@@ -408,7 +403,7 @@ Samsung 注意到使用他们的 Magician Software 是"不支持的"，但是是
 
 ### SanDisk
 
-SanDisk 制作**ISO固件镜像**来允许用户在 SanDisk SSD 工具包不支持的系统上升级。必须找到正确的_SSD 型号_以及它的_容量_(例如 60GB, **或者** 256GB)。烧制合适的ISO固件镜像之后，只需重启电脑启动到新创立的CD/DVD启动盘(也可以是USB)。
+SanDisk 制作**ISO固件镜像**来允许用户在 SanDisk SSD 工具包不支持的系统上升级。必须找到正确的*SSD 型号*以及它的*容量*(例如 60GB, **或者** 256GB)。烧制合适的ISO固件镜像之后，只需重启电脑启动到新创立的CD/DVD启动盘(也可以是USB)。
 
 ISO镜像必须只包含一个linux内核和一个initrd.解压到 `/boot` 分区并用 [GRUB](/index.php/GRUB "GRUB") 或者 [Syslinux](/index.php/Syslinux "Syslinux") 启动它来升级。
 

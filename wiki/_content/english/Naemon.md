@@ -18,7 +18,6 @@ Install the plugins from [monitoring-plugins](https://www.archlinux.org/packages
 Install [naemon-livestatus](https://aur.archlinux.org/packages/naemon-livestatus/) and [naemon-thruk](https://aur.archlinux.org/packages/naemon-thruk/), then uncomment:
 
  `/etc/naemon/naemon.cfg` 
-
 ```
 broker_module=/usr/lib/naemon/naemon-livestatus/livestatus.so /var/cache/naemon/live
 
@@ -38,7 +37,6 @@ usermod -aG naemon http
 Load modules and include naemon-thruk.conf:
 
  `/etc/httpd/conf/httpd.conf` 
-
 ```
 LoadModule rewrite_module modules/mod_rewrite.so                            
 LoadModule fcgid_module modules/mod_fcgid.so 

@@ -55,7 +55,6 @@ listen-address=192.168.1.1    # Пример IP
 Одним из вариантов может быть использование конфигурации `resolv.conf`. Для этого просто укажите localhost первой строчкой в `/etc/resolv.conf`:
 
  `/etc/resolv.conf` 
-
 ```
 nameserver 127.0.0.1
 # другие сервера DNS
@@ -66,7 +65,6 @@ nameserver 127.0.0.1
 Теперь все запросы DNS будут перенаправляться на обработку к dnsmasq. Внешние сервера будут использоваться только тогда, когда dnsmasq не удастся выполнить запрос. [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) может переписать стандартный `/etc/resolv.conf`. Если используется DHCP, то хорошей практикой будет защита `/etc/resolv.conf`. Для этого добавьте `nohook resolv.conf` в конфигурационный файл dhcpcd:
 
  `/etc/dhcpcd.conf` 
-
 ```
 ...
 nohook resolv.conf
@@ -84,7 +82,6 @@ nohook resolv.conf
 В Linux имеется ограничение способности самостоятельной обрабатки DNS запросов, при котором можно использовать не более трех серверов DNS в `resolv.conf`. В качестве обходного пути можно указать только localhost в `resolv.conf`, а затем создать отдельный `resolv-file` для используемых внешних серверов DNS. Сначала создайте новый resolv файл для dnsmasq:
 
  `/etc/resolv.dnsmasq.conf` 
-
 ```
 # например, DNS сервера от Google
 nameserver 8.8.8.8
@@ -95,7 +92,6 @@ nameserver 8.8.4.4
 Затем отредактируйте `/etc/dnsmasq.conf` для использования нового resolv файла:
 
  `/etc/dnsmasq.conf` 
-
 ```
 ...
 resolv-file=/etc/resolv.dnsmasq.conf
@@ -123,10 +119,9 @@ prepend domain-name-servers 127.0.0.1;
 
 ### NetworkManager
 
-[NetworkManager](/index.php/NetworkManager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NetworkManager (Русский)") можно сконфигурировать так, чтобы он запускал _dnsmasq_. Добавьте опцию `dns=dnsmasq` в секцию `[main]` файла `NetworkManager.conf`, затем [выключите](/index.php/%D0%92%D1%8B%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Выключите") `dnsmasq.service`:
+[NetworkManager](/index.php/NetworkManager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NetworkManager (Русский)") можно сконфигурировать так, чтобы он запускал *dnsmasq*. Добавьте опцию `dns=dnsmasq` в секцию `[main]` файла `NetworkManager.conf`, затем [выключите](/index.php/%D0%92%D1%8B%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Выключите") `dnsmasq.service`:
 
  `/etc/NetworkManager/NetworkManager.conf` 
-
 ```
 [main]
 plugins=keyfile
@@ -134,17 +129,17 @@ dns=dnsmasq
 
 ```
 
-Собственные настройки _dnsmasq_ желательно хранить в `/etc/NetworkManager/dnsmasq.d/`. Например, чтобы изменить размер кэша DNS (который хранится в RAM):
+Собственные настройки *dnsmasq* желательно хранить в `/etc/NetworkManager/dnsmasq.d/`. Например, чтобы изменить размер кэша DNS (который хранится в RAM):
 
  `/etc/NetworkManager/dnsmasq.d/cache`  `cache-size=1000` 
 
-Когда _dnsmasq_ запускается `NetworkManager`, настройки в этом каталоге приоритетней стандартного файла конфигурации.
+Когда *dnsmasq* запускается `NetworkManager`, настройки в этом каталоге приоритетней стандартного файла конфигурации.
 
 **Совет:** This method can allow you to enable custom DNS settings on particular domains. For instance: `server=/example1.com/exemple2.com/xx.xxx.xxx.x` change the first DNS address to `xx.xxx.xxx.xx` while browsing only the following websites `example1.com, example2.com`. This method is preferred to a global DNS configuration when using particular DNS nameservers which lack of speed, stability, privacy and security.
 
 #### IPv6
 
-Enabling `dnsmasq` in NetworkManager may break IPv6-only DNS lookups (i.e. `dig -6 [hostname]`) which would otherwise work. In order to resolve this, creating the following file will configure _dnsmasq_ to also listen to the IPv6 loopback:
+Enabling `dnsmasq` in NetworkManager may break IPv6-only DNS lookups (i.e. `dig -6 [hostname]`) which would otherwise work. In order to resolve this, creating the following file will configure *dnsmasq* to also listen to the IPv6 loopback:
 
  `/etc/NetworkManager/dnsmasq.d/ipv6_listen.conf`  `listen-address=::1` 
 
@@ -208,7 +203,7 @@ domain ALL : ALLOW
 
 ### Кэширования DNS
 
-Чтобы протестировать скорость ответа на запрос ресурса, к которому ещё не обращались через Dnsmasq (_dig_- утилита из пакета [bind-tools](https://www.archlinux.org/packages/?name=bind-tools)):
+Чтобы протестировать скорость ответа на запрос ресурса, к которому ещё не обращались через Dnsmasq (*dig*- утилита из пакета [bind-tools](https://www.archlinux.org/packages/?name=bind-tools)):
 
 ```
 dig archlinux.org | grep "Query time"
@@ -218,14 +213,11 @@ dig archlinux.org | grep "Query time"
 При повторном запуске команды будет использоваться кэшированный DNS IP , что значительно ускорит обработку запроса, если Dnsmasq настроен правильно:
 
  `$ dig archlinux.org | grep "Query time"` 
-
 ```
 ;; Query time: 18 msec
 
 ```
-
  `$ dig archlinux.org | grep "Query time"` 
-
 ```
 ;; Query time: 2 msec
 

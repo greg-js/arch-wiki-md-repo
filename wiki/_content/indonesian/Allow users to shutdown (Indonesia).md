@@ -2,7 +2,7 @@ Jika anda ingin mengijinkan penguna(user) untuk shutdown atau reboot sistem dan 
 
 * * *
 
-Dengan merubah ijin permisi dari perintah halt, reboot tidak perlu diubah karena merupakan _symlink_ ke halt. Sebagai root lakukan perintah di bawah ini:
+Dengan merubah ijin permisi dari perintah halt, reboot tidak perlu diubah karena merupakan *symlink* ke halt. Sebagai root lakukan perintah di bawah ini:
 
 ```
 chmod +s /sbin/halt
@@ -20,7 +20,7 @@ Cara lain dengan menggunakan `sudo`. Pertama-tama install sudo:
 
 ```
 
-Setelah itu sebagai root tambahkan baris dibawah ini di file `/etc/sudoers` dengan menggunakan `visudo` (ketikkan visudo lalu file akan terbuka, jangan mengedit secara manual!). Rubah _pengguna_ dengan nama user yang ingin anda ijinkan dan _hostname_ dengan nama hostname komputer anda.
+Setelah itu sebagai root tambahkan baris dibawah ini di file `/etc/sudoers` dengan menggunakan `visudo` (ketikkan visudo lalu file akan terbuka, jangan mengedit secara manual!). Rubah *pengguna* dengan nama user yang ingin anda ijinkan dan *hostname* dengan nama hostname komputer anda.
 
 ```
 pengguna hostname = NOPASSWD: /sbin/shutdown -h now
@@ -32,7 +32,7 @@ dudung localhost = NOPASSWD: /sbin/reboot
 
 ```
 
-Atau apabila anda ingin memberikan ijin ini pada semua pengguna dalam group tertentu rubah format diatas menjadi seperti ini(sesuaikan _namagroup_ dengan group yang anda inginkan).
+Atau apabila anda ingin memberikan ijin ini pada semua pengguna dalam group tertentu rubah format diatas menjadi seperti ini(sesuaikan *namagroup* dengan group yang anda inginkan).
 
 ```
 %namagroup hostname = NOPASSWD: /sbin/shutdown -h now
@@ -51,7 +51,7 @@ Apabila anda menggunakan XFCE setelah install sudo. Tambahkan baris ini ke `/etc
 
 ```
 
-Sesuaikan _hostname_ dengan hostname anda.
+Sesuaikan *hostname* dengan hostname anda.
 
 Untuk satu user saja(sesuikan user dengan user anda):
 
@@ -60,6 +60,6 @@ user hostname=NOPASSWD:/usr/lib/xfce4/xfsm-shutdown-helper
 
 ```
 
-Sesuikan _hostname_ dengan hostname anda.
+Sesuikan *hostname* dengan hostname anda.
 
 Hal diatas akan mengaktifkan pilihan "reboot" dan "turn off" pada dialog logout XFCE.

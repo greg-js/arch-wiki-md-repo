@@ -30,16 +30,15 @@ The following autostart file should have been created: `/etc/xdg/autostart/bluem
 
 ### Permissions
 
-To receive files remember to right click on the _Blueman tray icon > Local Services > Transfer > File Receiving (Object Push)_ and tick the _Accept files from trusted devices_ box.
+To receive files remember to right click on the *Blueman tray icon > Local Services > Transfer > File Receiving (Object Push)* and tick the *Accept files from trusted devices* box.
 
 To be able to manage devices, you might need to add your user to the `lp` group, else you might receive the following error when connecting to a device: `DBusFailedError: No such file or directory`. This is because the user needs to be authorized to communicate with the bluetooth daemon via [D-Bus](/index.php/D-Bus "D-Bus") - the `lp` group is specified in `/etc/dbus-1/system.d/bluetooth.conf`. For information on adding a user to a group, see [Users and groups#Other examples of user management](/index.php/Users_and_groups#Other_examples_of_user_management "Users and groups").
 
 ### Mounting Bluetooth devices
 
-The instructions below describe a method for using different file managers with Blueman. The examples in this section focus on [Thunar](/index.php/Thunar "Thunar"). If you are using a different file manager, substitute _thunar_ with the name of the file manager you are using.
+The instructions below describe a method for using different file managers with Blueman. The examples in this section focus on [Thunar](/index.php/Thunar "Thunar"). If you are using a different file manager, substitute *thunar* with the name of the file manager you are using.
 
  `obex_thunar.sh` 
-
 ```
 #!/bin/bash
 fusermount -u ~/bluetooth
@@ -55,9 +54,9 @@ Now you will need to move the script to an appropriate location (e.g., `/usr/loc
 
 ```
 
-The last step is to change the line in _Blueman tray icon > Local Services > Transfer > Advanced_ to `obex_thunar.sh %d`.
+The last step is to change the line in *Blueman tray icon > Local Services > Transfer > Advanced* to `obex_thunar.sh %d`.
 
-**Tip:** If you do not want to create a script, you could just replace this command: `nautilus --browse obex://` with this one: `thunar obex://` in _Local Services > Transfer > Advanced_
+**Tip:** If you do not want to create a script, you could just replace this command: `nautilus --browse obex://` with this one: `thunar obex://` in *Local Services > Transfer > Advanced*
 
 ### Blueman and PulseAudio
 

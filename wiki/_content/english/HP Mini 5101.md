@@ -99,7 +99,6 @@ So we have to edit
 like this
 
  `/etc/acpi/handler.sh ` 
-
 ```
 case "$1" in
     .

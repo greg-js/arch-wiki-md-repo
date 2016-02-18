@@ -1,8 +1,8 @@
 From the [project web page](http://freedesktop.org/wiki/Software/systemd):
 
-	_systemd_ is a system and service manager for Linux, compatible with SysV and LSB init scripts. systemd provides aggressive parallelization capabilities, uses socket and [D-Bus](/index.php/D-Bus "D-Bus") activation for starting services, offers on-demand starting of daemons, keeps track of processes using Linux [control groups](/index.php/Control_groups "Control groups"), supports snapshotting and restoring of the system state, maintains mount and automount points and implements an elaborate transactional dependency-based service control logic.
+	*systemd* is a system and service manager for Linux, compatible with SysV and LSB init scripts. systemd provides aggressive parallelization capabilities, uses socket and [D-Bus](/index.php/D-Bus "D-Bus") activation for starting services, offers on-demand starting of daemons, keeps track of processes using Linux [control groups](/index.php/Control_groups "Control groups"), supports snapshotting and restoring of the system state, maintains mount and automount points and implements an elaborate transactional dependency-based service control logic.
 
-**Note:** For a detailed explanation as to why Arch has moved to _systemd_, see [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1149530#p1149530).
+**Note:** For a detailed explanation as to why Arch has moved to *systemd*, see [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1149530#p1149530).
 
 ## Contents
 
@@ -46,13 +46,13 @@ From the [project web page](http://freedesktop.org/wiki/Software/systemd):
 
 ## Basic systemctl usage
 
-The main command used to introspect and control _systemd_ is _systemctl_. Some of its uses are examining the system state and managing the system and services. See `man systemctl` for more details.
+The main command used to introspect and control *systemd* is *systemctl*. Some of its uses are examining the system state and managing the system and services. See `man systemctl` for more details.
 
 **Tip:**
 
-*   You can use all of the following _systemctl_ commands with the `-H _user_@_host_` switch to control a _systemd_ instance on a remote machine. This will use [SSH](/index.php/SSH "SSH") to connect to the remote _systemd_ instance.
-*   _systemadm_ is the official graphical frontend for _systemctl_. It is provided by [systemd-ui](https://www.archlinux.org/packages/?name=systemd-ui) from the [official repositories](/index.php/Official_repositories "Official repositories") or by [systemd-ui-git](https://aur.archlinux.org/packages/systemd-ui-git/) from the [AUR](/index.php/AUR "AUR") for the development version.
-*   [Plasma](/index.php/Plasma "Plasma") users can install [systemd-kcm](https://www.archlinux.org/packages/?name=systemd-kcm) as a graphical fronted for _systemctl_. After installing the module will be added under _System administration_.
+*   You can use all of the following *systemctl* commands with the `-H *user*@*host*` switch to control a *systemd* instance on a remote machine. This will use [SSH](/index.php/SSH "SSH") to connect to the remote *systemd* instance.
+*   *systemadm* is the official graphical frontend for *systemctl*. It is provided by [systemd-ui](https://www.archlinux.org/packages/?name=systemd-ui) from the [official repositories](/index.php/Official_repositories "Official repositories") or by [systemd-ui-git](https://aur.archlinux.org/packages/systemd-ui-git/) from the [AUR](/index.php/AUR "AUR") for the development version.
+*   [Plasma](/index.php/Plasma "Plasma") users can install [systemd-kcm](https://www.archlinux.org/packages/?name=systemd-kcm) as a graphical fronted for *systemctl*. After installing the module will be added under *System administration*.
 
 ### Analyzing the system state
 
@@ -93,104 +93,104 @@ $ systemctl list-unit-files
 
 ### Using units
 
-Units can be, for example, services (_.service_), mount points (_.mount_), devices (_.device_) or sockets (_.socket_).
+Units can be, for example, services (*.service*), mount points (*.mount*), devices (*.device*) or sockets (*.socket*).
 
-When using _systemctl_, you generally have to specify the complete name of the unit file, including its suffix, for example `sshd.socket`. There are however a few short forms when specifying the unit in the following _systemctl_ commands:
+When using *systemctl*, you generally have to specify the complete name of the unit file, including its suffix, for example `sshd.socket`. There are however a few short forms when specifying the unit in the following *systemctl* commands:
 
-*   If you do not specify the suffix, systemctl will assume _.service_. For example, `netctl` and `netctl.service` are equivalent.
-*   Mount points will automatically be translated into the appropriate _.mount_ unit. For example, specifying `/home` is equivalent to `home.mount`.
-*   Similar to mount points, devices are automatically translated into the appropriate _.device_ unit, therefore specifying `/dev/sda2` is equivalent to `dev-sda2.device`.
+*   If you do not specify the suffix, systemctl will assume *.service*. For example, `netctl` and `netctl.service` are equivalent.
+*   Mount points will automatically be translated into the appropriate *.mount* unit. For example, specifying `/home` is equivalent to `home.mount`.
+*   Similar to mount points, devices are automatically translated into the appropriate *.device* unit, therefore specifying `/dev/sda2` is equivalent to `dev-sda2.device`.
 
 See `man systemd.unit` for details.
 
-**Note:** Some unit names contain an `@` sign (e.g. `name@_string_.service`): this means that they are [instances](http://0pointer.de/blog/projects/instances.html) of a _template_ unit, whose actual file name does not contain the `_string_` part (e.g. `name@.service`). `_string_` is called the _instance identifier_, and is similar to an argument that is passed to the template unit when called with the _systemctl_ command: in the unit file it will substitute the `%i` specifier.
+**Note:** Some unit names contain an `@` sign (e.g. `name@*string*.service`): this means that they are [instances](http://0pointer.de/blog/projects/instances.html) of a *template* unit, whose actual file name does not contain the `*string*` part (e.g. `name@.service`). `*string*` is called the *instance identifier*, and is similar to an argument that is passed to the template unit when called with the *systemctl* command: in the unit file it will substitute the `%i` specifier.
 
-To be more accurate, _before_ trying to instantiate the `name@.suffix` template unit, _systemd_ will actually look for a unit with the exact `name@string.suffix` file name, although by convention such a "clash" happens rarely, i.e. most unit files containing an `@` sign are meant to be templates. Also, if a template unit is called without an instance identifier, it will just fail, since the `%i` specifier cannot be substituted.
+To be more accurate, *before* trying to instantiate the `name@.suffix` template unit, *systemd* will actually look for a unit with the exact `name@string.suffix` file name, although by convention such a "clash" happens rarely, i.e. most unit files containing an `@` sign are meant to be templates. Also, if a template unit is called without an instance identifier, it will just fail, since the `%i` specifier cannot be substituted.
 
 **Tip:**
 
 *   Most of the following commands also work if multiple units are specified, see `man systemctl` for more information.
 *   Since [systemd 220](https://github.com/systemd/systemd/blob/master/NEWS#L323-L326), a `--now` switch can be used in conjunction with `enable`, `disable` and `mask` to respectively start, stop or mask immediately the unit rather than after the next boot.
-*   A package may offer units for different purposes. If you just installed a package, `pacman -Qql _package_ | grep -Fe .service -e .socket` can be used to check and find them.
+*   A package may offer units for different purposes. If you just installed a package, `pacman -Qql *package* | grep -Fe .service -e .socket` can be used to check and find them.
 
 **Start** a unit immediately:
 
 ```
-# systemctl start _unit_
+# systemctl start *unit*
 
 ```
 
 **Stop** a unit immediately:
 
 ```
-# systemctl stop _unit_
+# systemctl stop *unit*
 
 ```
 
 **Restart** a unit:
 
 ```
-# systemctl restart _unit_
+# systemctl restart *unit*
 
 ```
 
 Ask a unit to **reload** its configuration:
 
 ```
-# systemctl reload _unit_
+# systemctl reload *unit*
 
 ```
 
 Show the **status** of a unit, including whether it is running or not:
 
 ```
-$ systemctl status _unit_
+$ systemctl status *unit*
 
 ```
 
 **Check** whether a unit is already enabled or not:
 
 ```
-$ systemctl is-enabled _unit_
+$ systemctl is-enabled *unit*
 
 ```
 
 **Enable** a unit to be started on **bootup**:
 
 ```
-# systemctl enable _unit_
+# systemctl enable *unit*
 
 ```
 
 **Disable** a unit to not start during bootup:
 
 ```
-# systemctl disable _unit_
+# systemctl disable *unit*
 
 ```
 
 **Mask** a unit to make it impossible to start it:
 
 ```
-# systemctl mask _unit_
+# systemctl mask *unit*
 
 ```
 
 **Unmask** a unit:
 
 ```
-# systemctl unmask _unit_
+# systemctl unmask *unit*
 
 ```
 
 Show the **manual page** associated with a unit (this has to be supported by the unit file):
 
 ```
-$ systemctl help _unit_
+$ systemctl help *unit*
 
 ```
 
-Reload _systemd_, scanning for **new or changed units**:
+Reload *systemd*, scanning for **new or changed units**:
 
 ```
 # systemctl daemon-reload
@@ -199,7 +199,7 @@ Reload _systemd_, scanning for **new or changed units**:
 
 ### Power management
 
-[polkit](/index.php/Polkit "Polkit") is necessary for power management as an unprivileged user. If you are in a local _systemd-logind_ user session and no other session is active, the following commands will work without root privileges. If not (for example, because another user is logged into a tty), _systemd_ will automatically ask you for the root password.
+[polkit](/index.php/Polkit "Polkit") is necessary for power management as an unprivileged user. If you are in a local *systemd-logind* user session and no other session is active, the following commands will work without root privileges. If not (for example, because another user is logged into a tty), *systemd* will automatically ask you for the root password.
 
 Shut down and reboot the system:
 
@@ -238,23 +238,23 @@ $ systemctl hybrid-sleep
 
 ## Writing unit files
 
-The syntax of _systemd'_s [unit files](http://www.freedesktop.org/software/systemd/man/systemd.unit.html) is inspired by XDG Desktop Entry Specification _.desktop_ files, which are in turn inspired by Microsoft Windows _.ini_ files. Unit files are loaded from two locations. From lowest to highest precedence they are:
+The syntax of *systemd'*s [unit files](http://www.freedesktop.org/software/systemd/man/systemd.unit.html) is inspired by XDG Desktop Entry Specification *.desktop* files, which are in turn inspired by Microsoft Windows *.ini* files. Unit files are loaded from two locations. From lowest to highest precedence they are:
 
 *   `/usr/lib/systemd/system/`: units provided by installed packages
 *   `/etc/systemd/system/`: units installed by the system administrator
 
 **Note:**
 
-*   The load paths are completely different when running _systemd_ in [user mode](/index.php/Systemd/User#How_it_works "Systemd/User").
+*   The load paths are completely different when running *systemd* in [user mode](/index.php/Systemd/User#How_it_works "Systemd/User").
 *   systemd unit names may only contain ASCII alphanumeric characters, underscores and periods. All other characters must be replaced by C-style "\x2d" escapes. See `man systemd.unit` and `man systemd-escape` for more information.
 
 Look at the units installed by your packages for examples, as well as the [annotated example section](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples) of `man systemd.service`.
 
-**Tip:** Comments prepended with `#` may be used in unit-files as well, but only in new lines. Do not use end-line comments after _systemd_ parameters or the unit will fail to activate.
+**Tip:** Comments prepended with `#` may be used in unit-files as well, but only in new lines. Do not use end-line comments after *systemd* parameters or the unit will fail to activate.
 
 ### Handling dependencies
 
-With _systemd_, dependencies can be resolved by designing the unit files correctly. The most typical case is that the unit _A_ requires the unit _B_ to be running before _A_ is started. In that case add `Requires=_B_` and `After=_B_` to the `[Unit]` section of _A_. If the dependency is optional, add `Wants=_B_` and `After=_B_` instead. Note that `Wants=` and `Requires=` do not imply `After=`, meaning that if `After=` is not specified, the two units will be started in parallel.
+With *systemd*, dependencies can be resolved by designing the unit files correctly. The most typical case is that the unit *A* requires the unit *B* to be running before *A* is started. In that case add `Requires=*B*` and `After=*B*` to the `[Unit]` section of *A*. If the dependency is optional, add `Wants=*B*` and `After=*B*` instead. Note that `Wants=` and `Requires=` do not imply `After=`, meaning that if `After=` is not specified, the two units will be started in parallel.
 
 Dependencies are typically placed on services and not on targets. For example, `network.target` is pulled in by whatever service configures your network interfaces, therefore ordering your custom unit after it is sufficient since `network.target` is started anyway.
 
@@ -262,12 +262,12 @@ Dependencies are typically placed on services and not on targets. For example, `
 
 There are several different start-up types to consider when writing a custom service file. This is set with the `Type=` parameter in the `[Service]` section:
 
-*   `Type=simple` (default): _systemd_ considers the service to be started up immediately. The process must not fork. Do not use this type if other services need to be ordered on this service, unless it is socket activated.
-*   `Type=forking`: _systemd_ considers the service started up once the process forks and the parent has exited. For classic daemons use this type unless you know that it is not necessary. You should specify `PIDFile=` as well so _systemd_ can keep track of the main process.
-*   `Type=oneshot`: this is useful for scripts that do a single job and then exit. You may want to set `RemainAfterExit=yes` as well so that _systemd_ still considers the service as active after the process has exited.
-*   `Type=notify`: identical to `Type=simple`, but with the stipulation that the daemon will send a signal to _systemd_ when it is ready. The reference implementation for this notification is provided by _libsystemd-daemon.so_.
+*   `Type=simple` (default): *systemd* considers the service to be started up immediately. The process must not fork. Do not use this type if other services need to be ordered on this service, unless it is socket activated.
+*   `Type=forking`: *systemd* considers the service started up once the process forks and the parent has exited. For classic daemons use this type unless you know that it is not necessary. You should specify `PIDFile=` as well so *systemd* can keep track of the main process.
+*   `Type=oneshot`: this is useful for scripts that do a single job and then exit. You may want to set `RemainAfterExit=yes` as well so that *systemd* still considers the service as active after the process has exited.
+*   `Type=notify`: identical to `Type=simple`, but with the stipulation that the daemon will send a signal to *systemd* when it is ready. The reference implementation for this notification is provided by *libsystemd-daemon.so*.
 *   `Type=dbus`: the service is considered ready when the specified `BusName` appears on DBus's system bus.
-*   `Type=idle`: _systemd_ will delay execution of the service binary until all jobs are dispatched. Other than that behavior is very similar to `Type=simple`.
+*   `Type=idle`: *systemd* will delay execution of the service binary until all jobs are dispatched. Other than that behavior is very similar to `Type=simple`.
 
 See the [systemd.service(5)](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Type=) man page for a more detailed explanation of the `Type` values.
 
@@ -282,71 +282,68 @@ To avoid conflicts with pacman, unit files provided by packages should not be di
 
 **Tip:**
 
-*   You can use _systemd-delta_ to see which unit files have been overridden or extended and what exactly has been changed.
-*   Use `systemctl cat _unit_` to view the content of a unit file and all associated drop-in snippets.
-*   Syntax highlighting for _systemd_ unit files within [Vim](/index.php/Vim "Vim") can be enabled by installing [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd).
+*   You can use *systemd-delta* to see which unit files have been overridden or extended and what exactly has been changed.
+*   Use `systemctl cat *unit*` to view the content of a unit file and all associated drop-in snippets.
+*   Syntax highlighting for *systemd* unit files within [Vim](/index.php/Vim "Vim") can be enabled by installing [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd).
 
 #### Replacement unit files
 
-To replace the unit file `/usr/lib/systemd/system/_unit_`, create the file `/etc/systemd/system/_unit_` and reenable the unit to update the symlinks:
+To replace the unit file `/usr/lib/systemd/system/*unit*`, create the file `/etc/systemd/system/*unit*` and reenable the unit to update the symlinks:
 
 ```
-# systemctl reenable _unit_
+# systemctl reenable *unit*
 
 ```
 
 Alternatively, run:
 
 ```
-# systemctl edit --full _unit_
+# systemctl edit --full *unit*
 
 ```
 
-This opens `/etc/systemd/system/_unit_` in your editor (copying the installed version if it does not exist yet) and automatically reloads it when you finish editing.
+This opens `/etc/systemd/system/*unit*` in your editor (copying the installed version if it does not exist yet) and automatically reloads it when you finish editing.
 
 **Note:** Pacman does not update the replacement unit files when the originals are updated, so this method can make system maintenance more difficult. For this reason the next approach is recommended.
 
 #### Drop-in snippets
 
-To create drop-in snippets for the unit file `/usr/lib/systemd/system/_unit_`, create the directory `/etc/systemd/system/_unit_.d/` and place _.conf_ files there to override or add new options. _systemd_ will parse these _.conf_ files and apply them on top of the original unit.
+To create drop-in snippets for the unit file `/usr/lib/systemd/system/*unit*`, create the directory `/etc/systemd/system/*unit*.d/` and place *.conf* files there to override or add new options. *systemd* will parse these *.conf* files and apply them on top of the original unit.
 
 The easiest way to do this is to run:
 
 ```
-# systemctl edit _unit_
+# systemctl edit *unit*
 
 ```
 
-This opens the file `/etc/systemd/system/_unit_.d/override.conf` in your text editor (creating it if necessary) and automatically reloads the unit when you are done editing.
+This opens the file `/etc/systemd/system/*unit*.d/override.conf` in your text editor (creating it if necessary) and automatically reloads the unit when you are done editing.
 
 #### Examples
 
 For example, if you simply want to add an additional dependency to a unit, you may create the following file:
 
- `/etc/systemd/system/_unit_.d/customdependency.conf` 
-
+ `/etc/systemd/system/*unit*.d/customdependency.conf` 
 ```
 [Unit]
-Requires=_new dependency_
-After=_new dependency_
+Requires=*new dependency*
+After=*new dependency*
 ```
 
 As another example, in order to replace the `ExecStart` directive for a unit that is not of type `oneshot`, create the following file:
 
- `/etc/systemd/system/_unit_.d/customexec.conf` 
-
+ `/etc/systemd/system/*unit*.d/customexec.conf` 
 ```
 [Service]
 ExecStart=
-ExecStart=_new command_
+ExecStart=*new command*
 ```
 
 Note how `ExecStart` must be cleared before being re-assigned ([[1]](https://bugzilla.redhat.com/show_bug.cgi?id=756787#c9)).
 
 One more example to automatically restart a service:
 
- `/etc/systemd/system/_unit_.d/restart.conf` 
-
+ `/etc/systemd/system/*unit*.d/restart.conf` 
 ```
 [Service]
 Restart=always
@@ -355,11 +352,11 @@ RestartSec=30
 
 ## Targets
 
-_systemd_ uses _targets_ which serve a similar purpose as runlevels but act a little different. Each _target_ is named instead of numbered and is intended to serve a specific purpose with the possibility of having multiple ones active at the same time. Some _target_s are implemented by inheriting all of the services of another _target_ and adding additional services to it. There are _systemd_ _target_s that mimic the common SystemVinit runlevels so you can still switch _target_s using the familiar `telinit RUNLEVEL` command.
+*systemd* uses *targets* which serve a similar purpose as runlevels but act a little different. Each *target* is named instead of numbered and is intended to serve a specific purpose with the possibility of having multiple ones active at the same time. Some *target*s are implemented by inheriting all of the services of another *target* and adding additional services to it. There are *systemd* *target*s that mimic the common SystemVinit runlevels so you can still switch *target*s using the familiar `telinit RUNLEVEL` command.
 
 ### Get current targets
 
-The following should be used under _systemd_ instead of running `runlevel`:
+The following should be used under *systemd* instead of running `runlevel`:
 
 ```
 $ systemctl list-units --type=target
@@ -368,7 +365,7 @@ $ systemctl list-units --type=target
 
 ### Create custom target
 
-The runlevels that held a defined meaning under sysvinit (i.e., 0, 1, 3, 5, and 6); have a 1:1 mapping with a specific _systemd_ _target_. Unfortunately, there is no good way to do the same for the user-defined runlevels like 2 and 4\. If you make use of those it is suggested that you make a new named _systemd_ _target_ as `/etc/systemd/system/_your target_` that takes one of the existing runlevels as a base (you can look at `/usr/lib/systemd/system/graphical.target` as an example), make a directory `/etc/systemd/system/_your target_.wants`, and then symlink the additional services from `/usr/lib/systemd/system/` that you wish to enable.
+The runlevels that held a defined meaning under sysvinit (i.e., 0, 1, 3, 5, and 6); have a 1:1 mapping with a specific *systemd* *target*. Unfortunately, there is no good way to do the same for the user-defined runlevels like 2 and 4\. If you make use of those it is suggested that you make a new named *systemd* *target* as `/etc/systemd/system/*your target*` that takes one of the existing runlevels as a base (you can look at `/usr/lib/systemd/system/graphical.target` as an example), make a directory `/etc/systemd/system/*your target*.wants`, and then symlink the additional services from `/usr/lib/systemd/system/` that you wish to enable.
 
 ### Targets table
 
@@ -383,7 +380,7 @@ The runlevels that held a defined meaning under sysvinit (i.e., 0, 1, 3, 5, and 
 
 ### Change current target
 
-In _systemd_ targets are exposed via _target units_. You can change them like this:
+In *systemd* targets are exposed via *target units*. You can change them like this:
 
 ```
 # systemctl isolate graphical.target
@@ -399,7 +396,7 @@ The standard target is `default.target`, which is aliased by default to `graphic
 *   `systemd.unit=multi-user.target` (which roughly corresponds to the old runlevel 3),
 *   `systemd.unit=rescue.target` (which roughly corresponds to the old runlevel 1).
 
-Alternatively, you may leave the bootloader alone and change `default.target`. This can be done using _systemctl_:
+Alternatively, you may leave the bootloader alone and change `default.target`. This can be done using *systemctl*:
 
 ```
 # systemctl set-default multi-user.target
@@ -413,13 +410,13 @@ To be able to override the previously set `default.target`, use the force option
 
 ```
 
-The effect of this command is output by _systemctl_; a symlink to the new default target is made at `/etc/systemd/system/default.target`.
+The effect of this command is output by *systemctl*; a symlink to the new default target is made at `/etc/systemd/system/default.target`.
 
 ## Temporary files
 
-"_systemd-tmpfiles_ creates, deletes and cleans up volatile and temporary files and directories." It reads configuration files in `/etc/tmpfiles.d/` and `/usr/lib/tmpfiles.d/` to discover which actions to perform. Configuration files in the former directory take precedence over those in the latter directory.
+"*systemd-tmpfiles* creates, deletes and cleans up volatile and temporary files and directories." It reads configuration files in `/etc/tmpfiles.d/` and `/usr/lib/tmpfiles.d/` to discover which actions to perform. Configuration files in the former directory take precedence over those in the latter directory.
 
-Configuration files are usually provided together with service files, and they are named in the style of `/usr/lib/tmpfiles.d/_program_.conf`. For example, the [Samba](/index.php/Samba "Samba") daemon expects the directory `/run/samba` to exist and to have the correct permissions. Therefore, the [samba](https://www.archlinux.org/packages/?name=samba) package ships with this configuration:
+Configuration files are usually provided together with service files, and they are named in the style of `/usr/lib/tmpfiles.d/*program*.conf`. For example, the [Samba](/index.php/Samba "Samba") daemon expects the directory `/run/samba` to exist and to have the correct permissions. Therefore, the [samba](https://www.archlinux.org/packages/?name=samba) package ships with this configuration:
 
  `/usr/lib/tmpfiles.d/samba.conf`  `D /run/samba 0755 root root` 
 
@@ -429,30 +426,30 @@ Configuration files may also be used to write values into certain files on boot.
 
 See the `systemd-tmpfiles(8)` and `tmpfiles.d(5)` man pages for details.
 
-**Note:** This method may not work to set options in `/sys` since the _systemd-tmpfiles-setup_ service may run before the appropriate device modules is loaded. In this case you could check whether the module has a parameter for the option you want to set with `modinfo _module_` and set this option with a [config file in /etc/modprobe.d](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). Otherwise you will have to write a [udev rule](/index.php/Udev#About_udev_rules "Udev") to set the appropriate attribute as soon as the device appears.
+**Note:** This method may not work to set options in `/sys` since the *systemd-tmpfiles-setup* service may run before the appropriate device modules is loaded. In this case you could check whether the module has a parameter for the option you want to set with `modinfo *module*` and set this option with a [config file in /etc/modprobe.d](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). Otherwise you will have to write a [udev rule](/index.php/Udev#About_udev_rules "Udev") to set the appropriate attribute as soon as the device appears.
 
 ## Timers
 
-A timer is a unit configuration file whose name ends with _.timer_ and encodes information about a timer controlled and supervised by _systemd_, for timer-based activation. See [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers").
+A timer is a unit configuration file whose name ends with *.timer* and encodes information about a timer controlled and supervised by *systemd*, for timer-based activation. See [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers").
 
-**Note:** Timers can replace _cron_ functionality to a great extent. See [systemd/Timers#As a cron replacement](/index.php/Systemd/Timers#As_a_cron_replacement "Systemd/Timers").
+**Note:** Timers can replace *cron* functionality to a great extent. See [systemd/Timers#As a cron replacement](/index.php/Systemd/Timers#As_a_cron_replacement "Systemd/Timers").
 
 ## Journal
 
-_systemd_ has its own logging system called the journal; therefore, running a `syslog` daemon is no longer required. To read the log, use:
+*systemd* has its own logging system called the journal; therefore, running a `syslog` daemon is no longer required. To read the log, use:
 
 ```
 # journalctl
 
 ```
 
-In Arch Linux, the directory `/var/log/journal/` is a part of the [systemd](https://www.archlinux.org/packages/?name=systemd) package, and the journal (when `Storage=` is set to `auto` in `/etc/systemd/journald.conf`) will write to `/var/log/journal/`. If you or some program delete that directory, _systemd_ will **not** recreate it automatically and instead will write its logs to `/run/systemd/journal` in a nonpersistent way. However, the folder will be recreated when you set `Storage=persistent` and run `systemctl restart systemd-journald` (or reboot).
+In Arch Linux, the directory `/var/log/journal/` is a part of the [systemd](https://www.archlinux.org/packages/?name=systemd) package, and the journal (when `Storage=` is set to `auto` in `/etc/systemd/journald.conf`) will write to `/var/log/journal/`. If you or some program delete that directory, *systemd* will **not** recreate it automatically and instead will write its logs to `/run/systemd/journal` in a nonpersistent way. However, the folder will be recreated when you set `Storage=persistent` and run `systemctl restart systemd-journald` (or reboot).
 
 ### Filtering output
 
-_journalctl_ allows you to filter the output by specific fields. Be aware that if there are many messages to display or filtering of large time span has to be done, the output of this command can be delayed for quite some time.
+*journalctl* allows you to filter the output by specific fields. Be aware that if there are many messages to display or filtering of large time span has to be done, the output of this command can be delayed for quite some time.
 
-**Tip:** While the journal is stored in a binary format, the content of stored messages is not modified. This means it is viewable with _strings_, for example for recovery in an environment which does not have _systemd_ installed. Example command: `$ strings /mnt/arch/var/log/journal/af4967d77fba44c6b093d0e9862f6ddd/system.journal | grep -i _message_` 
+**Tip:** While the journal is stored in a binary format, the content of stored messages is not modified. This means it is viewable with *strings*, for example for recovery in an environment which does not have *systemd* installed. Example command: `$ strings /mnt/arch/var/log/journal/af4967d77fba44c6b093d0e9862f6ddd/system.journal | grep -i *message*` 
 
 Examples:
 
@@ -468,15 +465,14 @@ Examples:
 
 See `man 1 journalctl`, `man 7 systemd.journal-fields`, or Lennart's [blog post](http://0pointer.de/blog/projects/journalctl.html) for details.
 
-**Tip:** By default, _journalctl_ truncates lines longer than screen width, but in some cases, it may be better to enable wrapping instead of truncating. This can be controlled by the `SYSTEMD_LESS` [environment variable](/index.php/Environment_variable "Environment variable"), which contains options passed to [less](/index.php/Core_utilities#less "Core utilities") (the default pager) and defaults to `FRSXMK` (see `man 1 less` and `man 1 journalctl` for details).
+**Tip:** By default, *journalctl* truncates lines longer than screen width, but in some cases, it may be better to enable wrapping instead of truncating. This can be controlled by the `SYSTEMD_LESS` [environment variable](/index.php/Environment_variable "Environment variable"), which contains options passed to [less](/index.php/Core_utilities#less "Core utilities") (the default pager) and defaults to `FRSXMK` (see `man 1 less` and `man 1 journalctl` for details).
 
-By omitting the `S` option, the output will be wrapped instead of truncated. For example, start _journalctl_ as follows:
+By omitting the `S` option, the output will be wrapped instead of truncated. For example, start *journalctl* as follows:
 
 ```
 $ SYSTEMD_LESS=FRXMK journalctl
 
 ```
-
 If you would like to set this behaviour as default, [export](/index.php/Environment_variables#Per_user "Environment variables") the variable from `~/.bashrc` or `~/.zshrc`.
 
 ### Journal size limit
@@ -500,9 +496,9 @@ Refer to `man journalctl` for more info.
 
 ### Journald in conjunction with syslog
 
-Compatibility with a classic, non-journald aware [syslog](/index.php/Syslog-ng "Syslog-ng") implementation can be provided by letting _systemd_ forward all messages via the socket `/run/systemd/journal/syslog`. To make the syslog daemon work with the journal, it has to bind to this socket instead of `/dev/log` ([official announcement](http://lwn.net/Articles/474968/)).
+Compatibility with a classic, non-journald aware [syslog](/index.php/Syslog-ng "Syslog-ng") implementation can be provided by letting *systemd* forward all messages via the socket `/run/systemd/journal/syslog`. To make the syslog daemon work with the journal, it has to bind to this socket instead of `/dev/log` ([official announcement](http://lwn.net/Articles/474968/)).
 
-As of _systemd_ 216 the default `journald.conf` for forwarding to the socket was changed to `ForwardToSyslog=no` to avoid system overhead, because [rsyslog](/index.php/Rsyslog "Rsyslog") or [syslog-ng](/index.php/Syslog-ng "Syslog-ng") (since 3.6) pull the messages from the journal by [itself](http://lists.freedesktop.org/archives/systemd-devel/2014-August/022295.html#journald).
+As of *systemd* 216 the default `journald.conf` for forwarding to the socket was changed to `ForwardToSyslog=no` to avoid system overhead, because [rsyslog](/index.php/Rsyslog "Rsyslog") or [syslog-ng](/index.php/Syslog-ng "Syslog-ng") (since 3.6) pull the messages from the journal by [itself](http://lists.freedesktop.org/archives/systemd-devel/2014-August/022295.html#journald).
 
 See [Syslog-ng#Overview](/index.php/Syslog-ng#Overview "Syslog-ng") and [Syslog-ng#syslog-ng and systemd journal](/index.php/Syslog-ng#syslog-ng_and_systemd_journal "Syslog-ng"), or [rsyslog](/index.php/Rsyslog "Rsyslog") respectively, for details on configuration.
 
@@ -511,7 +507,6 @@ See [Syslog-ng#Overview](/index.php/Syslog-ng#Overview "Syslog-ng") and [Syslog-
 Create a [drop-in directory](#Editing_provided_units) `/etc/systemd/journald.conf.d` and create a `fw-tty12.conf` file in it:
 
  `/etc/systemd/journald.conf.d/fw-tty12.conf` 
-
 ```
 [Journal]
 ForwardToConsole=yes
@@ -526,7 +521,7 @@ Then [restart](/index.php/Restart "Restart") systemd-journald.
 There may be a need to check the logs of another system that is dead in the water, like booting from a live system to recover a production system. In such case, one can mount the disk in e.g. `/mnt`, and specify the journal path via `-D`/`--directory`, like so:
 
 ```
-$ journalctl -D _/mnt_/var/log/journal -xe
+$ journalctl -D */mnt*/var/log/journal -xe
 
 ```
 
@@ -536,14 +531,13 @@ $ journalctl -D _/mnt_/var/log/journal -xe
 
 As an example, we will investigate an error with `systemd-modules-load` service:
 
-**1.** Lets find the _systemd_ services which fail to start:
+**1.** Lets find the *systemd* services which fail to start:
 
  `$ systemctl --failed`  `systemd-modules-load.service   loaded **failed failed**  Load Kernel Modules` 
 
 **2.** Ok, we found a problem with `systemd-modules-load` service. We want to know more:
 
  `$ systemctl status systemd-modules-load` 
-
 ```
 systemd-modules-load.service - Load Kernel Modules
    Loaded: loaded (/usr/lib/systemd/system/systemd-modules-load.service; static)
@@ -558,7 +552,6 @@ If the `Process ID` is not listed, just restart the failed service with `systemc
 **3.** Now we have the process id (PID) to investigate this error in depth. Enter the following command with the current `Process ID` (here: 15630):
 
  `$ journalctl _PID=15630` 
-
 ```
 -- Logs begin at Sa 2013-05-25 10:31:12 CEST, end at So 2013-08-25 11:51:17 CEST. --
 Aug 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'blacklist usblp'**
@@ -568,7 +561,6 @@ Aug 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'insta
 **4.** We see that some of the kernel module configs have wrong settings. Therefore we have a look at these settings in `/etc/modules-load.d/`:
 
  `$ ls -Al /etc/modules-load.d/` 
-
 ```
 ...
 -rw-r--r--   1 root root    79  1\. Dez 2012  blacklist.conf
@@ -583,7 +575,6 @@ Aug 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'insta
 **5.** The `Failed to find module 'blacklist usblp'` error message might be related to a wrong setting inside of `blacklist.conf`. Lets deactivate it with inserting a trailing **#** before each option we found via step 3:
 
  `/etc/modules-load.d/blacklist.conf` 
-
 ```
 **#** blacklist usblp
 **#** install usblp /bin/false
@@ -602,7 +593,6 @@ If it was successful, this should not prompt anything. If you see any error, go 
 If everything is ok, you can verify that the service was started successfully with:
 
  `$ systemctl status systemd-modules-load` 
-
 ```
 systemd-modules-load.service - Load Kernel Modules
    Loaded: **loaded** (/usr/lib/systemd/system/systemd-modules-load.service; static)
@@ -617,11 +607,11 @@ Often you can solve these kind of problems like shown above. For further investi
 
 ### Diagnosing boot problems
 
-_systemd_ has several options for diagnosing problems with the boot process. See [boot debugging](/index.php/Boot_debugging "Boot debugging") and the [systemd debugging documentation](http://freedesktop.org/wiki/Software/systemd/Debugging/).
+*systemd* has several options for diagnosing problems with the boot process. See [boot debugging](/index.php/Boot_debugging "Boot debugging") and the [systemd debugging documentation](http://freedesktop.org/wiki/Software/systemd/Debugging/).
 
 ### Diagnosing problems with a specific service
 
-If some _systemd_ service misbehaves and you want to get more information about what is going on, set the `SYSTEMD_LOG_LEVEL` [environment variable](/index.php/Environment_variable "Environment variable") to `debug`. For example, to run the _systemd-networkd_ daemon in debug mode:
+If some *systemd* service misbehaves and you want to get more information about what is going on, set the `SYSTEMD_LOG_LEVEL` [environment variable](/index.php/Environment_variable "Environment variable") to `debug`. For example, to run the *systemd-networkd* daemon in debug mode:
 
 ```
 # systemctl stop systemd-networkd
@@ -632,7 +622,6 @@ If some _systemd_ service misbehaves and you want to get more information about 
 Or, equivalently, modify the service file temporarily for gathering enough output. For example:
 
  `/usr/lib/systemd/system/systemd-networkd.service` 
-
 ```
 [Service]
 ...
@@ -644,7 +633,7 @@ If debug information is required long-term, add the variable the [regular](#Edit
 
 ### Shutdown/reboot takes terribly long
 
-If the shutdown process takes a very long time (or seems to freeze) most likely a service not exiting is to blame. _systemd_ waits some time for each service to exit before trying to kill it. To find out if you are affected, see [this article](http://freedesktop.org/wiki/Software/systemd/Debugging/#shutdowncompleteseventually).
+If the shutdown process takes a very long time (or seems to freeze) most likely a service not exiting is to blame. *systemd* waits some time for each service to exit before trying to kill it. To find out if you are affected, see [this article](http://freedesktop.org/wiki/Software/systemd/Debugging/#shutdowncompleteseventually).
 
 ### Short lived processes do not seem to log any output
 
@@ -682,7 +671,7 @@ See [Access Control Lists#Enabling ACL](/index.php/Access_Control_Lists#Enabling
 
 ### systemctl enable fails for symlinks in /etc/systemd/system
 
-If `/etc/systemd/system/_foo_.service` is a symlink and `systemctl enable _foo_.service` is run, it will fail with this error:
+If `/etc/systemd/system/*foo*.service` is a symlink and `systemctl enable *foo*.service` is run, it will fail with this error:
 
 ```
 Failed to issue method call: No such file or directory
@@ -692,7 +681,7 @@ Failed to issue method call: No such file or directory
 This is a [design choice](https://bugzilla.redhat.com/show_bug.cgi?id=955379#c14) of systemd. As a workaround, enabling by absolute path works:
 
 ```
-# systemctl enable _/absolute/path/foo_.service
+# systemctl enable */absolute/path/foo*.service
 
 ```
 
@@ -707,7 +696,7 @@ This is a [design choice](https://bugzilla.redhat.com/show_bug.cgi?id=955379#c14
 *   [systemd for Administrators (PDF)](http://0pointer.de/public/systemd-ebook-psankar.pdf)
 *   [About systemd on Fedora Project](http://fedoraproject.org/wiki/Systemd)
 *   [How to debug systemd problems](http://fedoraproject.org/wiki/How_to_debug_Systemd_problems)
-*   [Two](http://www.h-online.com/open/features/Control-Centre-The-systemd-Linux-init-system-1565543.html) [part](http://www.h-online.com/open/features/Booting-up-Tools-and-tips-for-systemd-1570630.html) introductory article in _The H Open_ magazine.
+*   [Two](http://www.h-online.com/open/features/Control-Centre-The-systemd-Linux-init-system-1565543.html) [part](http://www.h-online.com/open/features/Booting-up-Tools-and-tips-for-systemd-1570630.html) introductory article in *The H Open* magazine.
 *   [Lennart's blog story](http://0pointer.de/blog/projects/systemd.html)
 *   [Status update](http://0pointer.de/blog/projects/systemd-update.html)
 *   [Status update2](http://0pointer.de/blog/projects/systemd-update-2.html)

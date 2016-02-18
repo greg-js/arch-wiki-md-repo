@@ -13,7 +13,6 @@ Soubor `rc.conf` (`/etc/rc.conf`) je základní konfigurační soubor používan
 Takto vypadá soubor `rc.conf` po čerstvé instalaci ([zdroj](https://projects.archlinux.org/initscripts.git/tree/rc.conf)):
 
  `/etc/rc.conf` 
-
 ```
 #
 # /etc/rc.conf - Main Configuration for Arch Linux

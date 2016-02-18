@@ -21,7 +21,7 @@ First, create a keymap file. This keymap file can be anywhere, but one method is
 
 As a side note, it is worth noting that such a personal keymap is useful also to redefine the behaviour of keys already treated by the default keymap: when loaded with `loadkeys`, the directives in the default keymap will be replaced when they conflict with the new directives and conserved otherwise. This way, only changes to the keymap must be specified in the personal keymap.
 
-**Tip:** You can also edit an existing keymap located in the `/usr/share/kbd/keymaps/` directory tree. Keymaps have an _.map.gz_ extension, for example `us.map.gz` is an American keymap. Just copy the keymap to `/usr/local/share/kbd/keymaps/personal.map.gz` and _gunzip_ it.
+**Tip:** You can also edit an existing keymap located in the `/usr/share/kbd/keymaps/` directory tree. Keymaps have an *.map.gz* extension, for example `us.map.gz` is an American keymap. Just copy the keymap to `/usr/local/share/kbd/keymaps/personal.map.gz` and *gunzip* it.
 
 ## Adding directives
 
@@ -63,7 +63,8 @@ string F70 = "Hello"
 When key 112 is pressed, it will output the contents of F70\. In order to execute a printed command in a terminal, a newline escape character must be appended to the end of the command string. For example, to enter a system into hibernation, the following keymap is added:
 
 ```
-string F70 = "sudo /usr/sbin/hibernate\n"
+string F70 = "sudo /usr/sbin/hibernate
+"
 
 ```
 
@@ -101,7 +102,7 @@ keycode 58 = Control
 
 ## Saving changes
 
-In order to make use of the personal keymap, it must be loaded with _loadkeys_:
+In order to make use of the personal keymap, it must be loaded with *loadkeys*:
 
 ```
 $ loadkeys /usr/local/share/kbd/keymaps/personal.map

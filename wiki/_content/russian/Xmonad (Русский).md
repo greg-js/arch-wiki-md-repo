@@ -53,7 +53,7 @@ xmonad написан, настроен и расширяем на [Haskell](htt
 
 Как вариант, установите [xmonad-git](https://aur.archlinux.org/packages/xmonad-git/), разрабатываемая версия, с некоторыми дополнительными зависимостями; а также [xmonad-contrib-git](https://aur.archlinux.org/packages/xmonad-contrib-git/) если хотите.
 
-**Обратите внимание:** Если вы решите использовать [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") репозиторий, вы должны установить _haskell-xmonad_ пакет вместо [xmonad](https://www.archlinux.org/packages/?name=xmonad), так как они имеют различные зависимости. Т.е. pacman -S haskell-xmonad haskell-xmonad-contrib xmobar dmenu2
+**Обратите внимание:** Если вы решите использовать [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") репозиторий, вы должны установить *haskell-xmonad* пакет вместо [xmonad](https://www.archlinux.org/packages/?name=xmonad), так как они имеют различные зависимости. Т.е. pacman -S haskell-xmonad haskell-xmonad-contrib xmobar dmenu2
 
 **Совет:** pacman -S xmonad xmonad-contrib xmobar dmenu2
 
@@ -61,11 +61,11 @@ xmonad написан, настроен и расширяем на [Haskell](htt
 
 ### С установленным Экранным менеджером
 
-Выберите _Xmonad_ из меню ссессий [Экранного менеджера](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display manager (Русский)").
+Выберите *Xmonad* из меню ссессий [Экранного менеджера](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display manager (Русский)").
 
 ### Без установленного экранного менеджера
 
-Если установлен только Xmonad, без использования экранного менеджера (такого как KDE, Gnome и т.д.). Добавьте `exec xmonad` в ваш [~/.xinitrc](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)") файл а затем начните сеанс, выполнив _startx_ .
+Если установлен только Xmonad, без использования экранного менеджера (такого как KDE, Gnome и т.д.). Добавьте `exec xmonad` в ваш [~/.xinitrc](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)") файл а затем начните сеанс, выполнив *startx* .
 
 **Обратите внимание:** По умолчанию, xmonad не устанавливает курсор X, поэтому обычно отоброжается "крест" вместо курсора. Чтобы установить привычный курсор (стрелочка показывающая влево-вверх), добавьте следующую строку в ваш `~/.xinitrc` (или `~/.xprofile` если вы используете оконный менеджер): `xsetroot -cursor_name left_ptr`
 
@@ -86,9 +86,9 @@ exec xmonad
 
 **Обратите внимание:** По умолчанию клавиша `Mod` - это `Alt`
 
-**Совет:** Настройка по умолчанию для _xmonad_ вполне удобна и полностью работает без файла `xmonad.hs`
+**Совет:** Настройка по умолчанию для *xmonad* вполне удобна и полностью работает без файла `xmonad.hs`
 
-Поскольку файл настройки _xmonad_ написан на [Haskell](/index.php/Haskell "Haskell"), не-программистам, возможно, будет сложно настраивать параметры. Для получения более подробных руководств и примеров настроек вы можете обратиться к следующим ресурсам:
+Поскольку файл настройки *xmonad* написан на [Haskell](/index.php/Haskell "Haskell"), не-программистам, возможно, будет сложно настраивать параметры. Для получения более подробных руководств и примеров настроек вы можете обратиться к следующим ресурсам:
 
 *   [xmonad wiki](http://wiki.haskell.org/Xmonad)
 *   [xmonad configuration archive](http://wiki.haskell.org/Xmonad/Config_archive)
@@ -164,7 +164,7 @@ exec xmonad
 
 ```
 
-Сам пакет также включает в себя `xmonad.hs`, последний использует официальный пример `xmonad.hs`, который поставляется с модулем Haskell _'xmonad'_ в качестве примера того, как всё это реализовать. Его не рекомендуется использоваться в качестве шаблона настроек, но он подойдёт в качестве примера. Можете взять часть кода для использования в собственной настройке. Он расположен в (зависит от версии архитектуры) каталоге `/usr/share/` (или выполните для поиска `find /usr/share -name xmonad.hs`).
+Сам пакет также включает в себя `xmonad.hs`, последний использует официальный пример `xmonad.hs`, который поставляется с модулем Haskell *'xmonad'* в качестве примера того, как всё это реализовать. Его не рекомендуется использоваться в качестве шаблона настроек, но он подойдёт в качестве примера. Можете взять часть кода для использования в собственной настройке. Он расположен в (зависит от версии архитектуры) каталоге `/usr/share/` (или выполните для поиска `find /usr/share -name xmonad.hs`).
 
 ### Базовая настройка Рабочего Стола
 
@@ -198,7 +198,6 @@ exec xmonad
 Кроме того, существует функция "pasteSelection" в XMonad.Util.Paste которая может быть связана с клавишей, используя строку:
 
  `xmonad.hs` 
-
 ```
   -- X-selection-paste buffer
   , ((0, xK_Insert), pasteSelection)
@@ -262,7 +261,6 @@ Mod+Shift+Q — закрыть Xmonad.
 По умолчанию, xmonad использует 9 рабочих столов. Вы можете увеличить это значение до 14 расширяя следующую строку:
 
  `xmonad.hs` 
-
 ```
 -- (i, k) <- zip (XMonad.workspaces conf) [xK_1, xK_2, xK_3, xK_4, xK_5, xK_6, xK_7, xK_8, xK_9]
 (i, k) <- zip (XMonad.workspaces conf) [xK_grave, xK_1, xK_2, xK_3, xK_4, xK_5, xK_6, xK_7, xK_8, xK_9, xK_0, xK_minus, xK_equal, xK_BackSpace]
@@ -329,7 +327,6 @@ main = xmonad =<< xmobar defaultConfig { modMask = mod4Mask {- или любая
 Ниже приведен пример как ей воспользоваться:
 
  `~/.xmonad/xmonad.hs` 
-
 ```
 -- Импорт.
 import XMonad
@@ -357,7 +354,6 @@ myConfig = defaultConfig { modMask = mod4Mask }
 Шаблон xmobarrc по умолчанию содержит это. Откройте `~/.xmobarrc` и убедитесь, что у вас есть `StdinReader` в шаблоне, и запустите плагин, например:
 
  `~/.xmobarrc` 
-
 ```
 Config { ...
        , commands = [ Run StdinReader .... ]
@@ -391,7 +387,6 @@ xdotool key Super+n
 Если вы используете [xmonad-git](https://aur.archlinux.org/packages/xmonad-git/), с Января 2011, вы можете перезапустить xmonad с другим оконным менеджером. Вам просто нужно написать небольшой скрипт и добавить в `~/.xmonad/xmonad.hs`. Вот этот скрипт:
 
  `~/bin/obtoxmd` 
-
 ```
 #!/bin/sh
 openbox
@@ -402,7 +397,6 @@ xmonad
 А вот поправки, которые нужно добавить к вашему `~/.xmonad/xmonad.hs`:
 
  `~/.xmonad/xmonad.hs` 
-
 ```
 import XMonad
 --You need to add this import
@@ -421,14 +415,13 @@ main do
 Также нужно добавить привязку клавиш:
 
  `~/xmonad/xmonad.hs` 
-
 ```
 --Add a keybinding as follows:
 ((modm .|. shiftMask, xK_o     ), restart "/home/abijr/bin/obtoxmd" True)
 
 ```
 
-Только не забудьте добавить запятую перед или после, а также изменить путь к реальному пути скрипта. Нажмите `Mod+q` (перезапустите _xmonad_ с обновлёнными настройками), затем `Mod+Shift+o`, и вы должны получить работающий Openbox с теми же открытыми окнами, что и в _xmonad_. Чтобы вернуться к _xmonad_, просто выйдите из Openbox. Вот ссылка на файл `~/.xmonad/xmonad.hs` от adamvo, который использует эту установку: [Adamvo's xmonad.hs](http://wiki.haskell.org/Xmonad/Config_archive/adamvo%27s_xmonad.hs).
+Только не забудьте добавить запятую перед или после, а также изменить путь к реальному пути скрипта. Нажмите `Mod+q` (перезапустите *xmonad* с обновлёнными настройками), затем `Mod+Shift+o`, и вы должны получить работающий Openbox с теми же открытыми окнами, что и в *xmonad*. Чтобы вернуться к *xmonad*, просто выйдите из Openbox. Вот ссылка на файл `~/.xmonad/xmonad.hs` от adamvo, который использует эту установку: [Adamvo's xmonad.hs](http://wiki.haskell.org/Xmonad/Config_archive/adamvo%27s_xmonad.hs).
 
 ### KDE и xmonad
 
@@ -441,7 +434,6 @@ main do
 Чтобы создать IM слой для новой версии skype, используйте следующий код:
 
  `xmonad.hs` 
-
 ```
 myIMLayout = withIM (1%7) skype Grid
     where
@@ -557,7 +549,7 @@ main = xmonad xfceConfig
 
 ```
 
-Также добавьте запись в _Настройки > Session and Startup > Application Autostart_ чтобы выполнить `xmonad --replace`.
+Также добавьте запись в *Настройки > Session and Startup > Application Autostart* чтобы выполнить `xmonad --replace`.
 
 ### Отсутствует xmonad-i386-linux или xmonad-x86_64-linux
 

@@ -32,7 +32,7 @@ X Window System is the underlying graphical interface of most if not all Unix/Li
 
 **Note:** There is still a rare configuration often called [Zaphod display](https://en.wikipedia.org/wiki/Multiseat_configuration "wikipedia:Multiseat configuration"), which allows multiple users of a single computer to each have an independent set of display, mouse, and keyboard, as though they were using separate computers, but at a lower per-seat cost.
 
-All of this means that there are many ways of achieving the same thing and many slightly different things that can meet the same purpose. In modern X versions sometimes you can get away with limited or no configuration. In the last few years the boast is that X is self configuring. Certainly the best practice rule of thumb is less configuration is better - that is _only configure what is wrong_.
+All of this means that there are many ways of achieving the same thing and many slightly different things that can meet the same purpose. In modern X versions sometimes you can get away with limited or no configuration. In the last few years the boast is that X is self configuring. Certainly the best practice rule of thumb is less configuration is better - that is *only configure what is wrong*.
 
 ## Separate screens
 
@@ -72,7 +72,7 @@ RandR can be configured for the current session via the [xrandr](/index.php/Xran
 
 ### Configuration using xrandr
 
-**Note:** This section assumes that you have read the [xrandr](/index.php/Xrandr "Xrandr") page for basic info about _xrandr_.
+**Note:** This section assumes that you have read the [xrandr](/index.php/Xrandr "Xrandr") page for basic info about *xrandr*.
 
 You may arrange your screens either relatively to each other (using the `--right-of`, `--left-of`, `--above`, `--below` options), or by absolute coordinates (using the `--pos` option; note that in this case you usually need to know resolutions of your monitors). See `man xrandr` for details. Some frequently used settings are described below.
 
@@ -103,12 +103,11 @@ $ xrandr --output VGA1 --mode 1024x768 --output HDMI1 --mode 1920x1080 --left-of
 
 ### Configuration using xorg.conf
 
-This is similar to using _xrandr_, separate `Monitor` section is needed for each screen. As an `Identifier`, the same value as reported by `xrandr -q` is used (i.e. `Identifier "VGA1"` is used instead of `--output VGA1`).
+This is similar to using *xrandr*, separate `Monitor` section is needed for each screen. As an `Identifier`, the same value as reported by `xrandr -q` is used (i.e. `Identifier "VGA1"` is used instead of `--output VGA1`).
 
 #### Example: dualhead configuration using relative coordinates
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
-
 ```
 Section "Monitor"
     Identifier  "VGA1"
@@ -129,7 +128,6 @@ The ID for each monitor can be found by running the `$ xrandr -q` command and sh
 See [Xrandr#Adding_undetected_resolutions](/index.php/Xrandr#Adding_undetected_resolutions "Xrandr").
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
-
 ```
 Section "Monitor"
   Identifier "DVI"
@@ -159,9 +157,7 @@ Section "Screen"
 EndSection
 
 ```
-
  `/etc/X11/xorg.conf.d/20-radeon.conf` 
-
 ```
 Section "Device"
   Identifier "Radeon"
@@ -175,7 +171,6 @@ EndSection
 #### Example: dualhead configuration using absolute coordinates
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
-
 ```
 Section "Monitor"
     Identifier  "VGA1"
@@ -214,7 +209,6 @@ Xinerama is configured via custom [X configuration files](/index.php/Xorg#Config
 This is a ServerLayout section which controls where each monitor sits relative to the others.
 
  `/etc/X11/xorg.conf.d/90-serverlayout.conf` 
-
 ```
 Section "ServerLayout"
   Identifier   "Main"
@@ -230,7 +224,6 @@ EndSection
 Each Screen in the above section is defined in a separate file, such as this one:
 
  `/etc/X11/xorg.conf.d/30-screen-dell2001.conf` 
-
 ```
 # Define the monitor's physical specs
 Section "Monitor"
@@ -268,7 +261,6 @@ EndSection
 You will need to create a `Device` section for each **monitor**, i.e. a dual head video card will have two Device sections. The following example shows how to configure two video cards each providing two outputs, for a total of four monitors.
 
  `/etc/X11/xorg.conf.d/20-nvidia.conf` 
-
 ```
 # First head of first video card in the system
 Section "Device"
@@ -383,7 +375,6 @@ To create a new layout, copy `/etc/X11/xorg.d/90-serverlayout.conf` and call it 
 Adjust this new configuration file to your preferred gaming configuration. Here is an example (based on the example Xinerama configuration above) with only one screen defined, noting that the screen specifics (such as resolution) are defined in other files and are unchanged from and shared with the normal configuration:
 
  `/etc/X11/xorg.conf.d/91-serverlayout-gaming.conf` 
-
 ```
 # New screen layout only using a single screen called "Primary"
 Section "ServerLayout"

@@ -1,10 +1,10 @@
-**Fbsplash** (anteriormente gensplash) es una implementación en espacio de usuario de una pantalla _splash_ para sistemas Linux. Provee un ambiente gráfico durante el arranque del sistema usando la capa framebuffer de Linux.
+**Fbsplash** (anteriormente gensplash) es una implementación en espacio de usuario de una pantalla *splash* para sistemas Linux. Provee un ambiente gráfico durante el arranque del sistema usando la capa framebuffer de Linux.
 
 ## Contents
 
 *   [1 Instalación](#Instalaci.C3.B3n)
     *   [1.1 Fbsplash](#Fbsplash)
-    *   [1.2 _Scripts_](#Scripts)
+    *   [1.2 *Scripts*](#Scripts)
     *   [1.3 Temas](#Temas)
     *   [1.4 Suspender al Disco](#Suspender_al_Disco)
 *   [2 Configuración](#Configuraci.C3.B3n)
@@ -19,9 +19,9 @@
 
 Instale fbsplash con yaourt o aurbuild, o descargue el [fbsplash paquete](https://aur.archlinux.org/packages.php?ID=13541) del [AUR](/index.php/AUR "AUR") y compilelo e instalelo con makepkg.
 
-## _Scripts_
+## *Scripts*
 
-El paquete fbsplash provee los _scripts_ para un funcionamiento básico. Si desea mayor funcionalidad, como progreso fluido, mensajes del progreso de revisión de sistemas de archivos, soporte para servicios de arranque/íconos de 'demonios' y _scripts_ gancho de tema, puede instalar el paquete [fbsplash-extras](https://aur.archlinux.org/packages/fbsplash-extras/).
+El paquete fbsplash provee los *scripts* para un funcionamiento básico. Si desea mayor funcionalidad, como progreso fluido, mensajes del progreso de revisión de sistemas de archivos, soporte para servicios de arranque/íconos de 'demonios' y *scripts* gancho de tema, puede instalar el paquete [fbsplash-extras](https://aur.archlinux.org/packages/fbsplash-extras/).
 
 ## Temas
 
@@ -44,7 +44,7 @@ logo.nologo quiet nomodeset vga=792 console=tty1 splash=silent,fadein,fadeout,th
 
 ```
 
-para habilitar el splash usando un _framebuffer_ en modo VESA de 1024x768\. Para otras resoluciones de pantalla vea [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)").
+para habilitar el splash usando un *framebuffer* en modo VESA de 1024x768\. Para otras resoluciones de pantalla vea [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)").
 
 Si está usando KMS, agregue algo así:
 
@@ -72,7 +72,7 @@ SPLASH_THEMES=(
 
 # Ejecutando Fbsplash temprano en el initcpio
 
-Agregue _fbsplash_ a la línea `HOOKS=` en /etc/mkinitcpio.conf :
+Agregue *fbsplash* a la línea `HOOKS=` en /etc/mkinitcpio.conf :
 
 ```
 HOOKS="base udev fbsplash ..."
@@ -88,13 +88,13 @@ HOOKS="base udev ... uresume fbsplash ..."
 
 Recompile su initcpio con mkinitcpio. Vea el artículo [Mkinitcpio](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)").
 
-**Nota:** El gancho **udev** es necesario para detectar cualquier parche Fbcondecor del kernel para evitar ejecutar el asistente Fbcondecor dos veces (re-dibujado de la pantalla _splash_ visible) y también es útil para cargar los modulos del kernel necesarios (KMS, radeonfb, ...). El gancho **uresume** provisto por uswsusp-fbsplash siempre esperará a que termine el asistente Fbcondecor (termine la transición) para evitar interferencia. Es recomendado poner 'fbsplash' detraás de 'uswsusp' o incluso quitar **fadein** si se usa un kernel Fbcondecor para obtener un _resume_ rápido.
+**Nota:** El gancho **udev** es necesario para detectar cualquier parche Fbcondecor del kernel para evitar ejecutar el asistente Fbcondecor dos veces (re-dibujado de la pantalla *splash* visible) y también es útil para cargar los modulos del kernel necesarios (KMS, radeonfb, ...). El gancho **uresume** provisto por uswsusp-fbsplash siempre esperará a que termine el asistente Fbcondecor (termine la transición) para evitar interferencia. Es recomendado poner 'fbsplash' detraás de 'uswsusp' o incluso quitar **fadein** si se usa un kernel Fbcondecor para obtener un *resume* rápido.
 
 # Fondos de Consola
 
-Si tiene un kernel que soporta Fbcondecor, puede configurar una agradable fondo de consola gráfica además de la pantalla _splash_. Busque en el AUR por [fbcondecor](https://aur.archlinux.org/packages.php?O=0&K=fbcondecor&do_Search=Go)
+Si tiene un kernel que soporta Fbcondecor, puede configurar una agradable fondo de consola gráfica además de la pantalla *splash*. Busque en el AUR por [fbcondecor](https://aur.archlinux.org/packages.php?O=0&K=fbcondecor&do_Search=Go)
 
-Después de instalar su kernel parchado y fbsplash, agregue _fbcondecor_ a su arreglo DAEMONS en rc.conf:
+Después de instalar su kernel parchado y fbsplash, agregue *fbcondecor* a su arreglo DAEMONS en rc.conf:
 
 ```
 DAEMONS=(... fbcondecor ...)
@@ -103,7 +103,7 @@ DAEMONS=(... fbcondecor ...)
 
 Ahí hay también un archivo de configuración /etc/conf.d/fbcondecor para configurar los terminales virtuales a ser usados.
 
-Puede incluso arrancar el sistema con un agradable fondo de consola y los mensajes de arranque normales de Arch Linux en vez de una pantalla _splash_. Sólo cambie su línea del kernel en /boot/grub/menu.lst para que use el modo _verbose_:
+Puede incluso arrancar el sistema con un agradable fondo de consola y los mensajes de arranque normales de Arch Linux en vez de una pantalla *splash*. Sólo cambie su línea del kernel en /boot/grub/menu.lst para que use el modo *verbose*:
 
 ```
 quiet console=tty1 splash=verbose,theme:arch-banner-icons

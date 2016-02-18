@@ -26,7 +26,6 @@ If running headless on a server
 If you do not want your entire filesystem to be shown
 
  `Media Locations` 
-
 ```
 folders = /directory.you.want.shared/,/another.directory
 
@@ -35,7 +34,6 @@ folders = /directory.you.want.shared/,/another.directory
 If you run into issues with the wrong audio track playing (example: English desired)
 
  `Audio language priority` 
-
 ```
 mencoder_audiolangs = eng,und
 
@@ -44,7 +42,6 @@ mencoder_audiolangs = eng,und
 Example of english subtitles desired, no subtitles by default on English programs
 
  `Subtitle language priority` 
-
 ```
 mencoder_sublangs = loc,eng,und
 
@@ -59,7 +56,6 @@ A list with all options can be found [here](http://ps3mediaserver.org/forum/view
 Use the following modified daemon script (originally from pms-svn).
 
  `/etc/rc.d/pms` 
-
 ```
 #!/bin/bash
 
@@ -126,7 +122,6 @@ exit 0
 The package ships a systemd unit file by default now (since 1.71.0-2). However, upon bootup the service [will not execute properly](http://www.ps3mediaserver.org/forum/viewtopic.php?f=3&t=17992). This can be resolved by adding a timeout before the service starts the involved script. One only has to edit the file as follows by adding the "ExecStartPre" line.
 
  `/usr/lib/systemd/system/pms@.service` 
-
 ```
 [Unit]
 Description=PS3 Media Server

@@ -14,7 +14,7 @@
 
 Desde [homepage](http://code.google.com/p/ttm/):
 
-_ttm es un panel_ _ttm is a simple panel/barra de tareas creado para openbox3, pero también funciona con otros manejadores de ventanas. Esta bajo desarrollo así que por favor informar errores:)_
+*ttm es un panel* *ttm is a simple panel/barra de tareas creado para openbox3, pero también funciona con otros manejadores de ventanas. Esta bajo desarrollo así que por favor informar errores:)*
 
 ### Características
 
@@ -91,7 +91,7 @@ xscreensaver -no-splash &
 eval `cat $HOME/.fehbg` &
 conky &
 visibility &
-_**tint &**_
+***tint &***
 exec openbox-session
 
 ```

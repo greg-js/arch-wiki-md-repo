@@ -1,6 +1,6 @@
 From the project [home page](http://docs.xfce.org/xfce/thunar/start):
 
-	_Thunar is a new modern file manager for the Xfce Desktop Environment. Thunar has been designed from the ground up to be fast and easy-to-use. Its user interface is clean and intuitive, and does not include any confusing or useless options by default. Thunar is fast and responsive with a good start up time and folder load time._
+	*Thunar is a new modern file manager for the Xfce Desktop Environment. Thunar has been designed from the ground up to be fast and easy-to-use. Its user interface is clean and intuitive, and does not include any confusing or useless options by default. Thunar is fast and responsive with a good start up time and folder load time.*
 
 ## Contents
 
@@ -78,7 +78,7 @@ Thunar Volume Manager can be installed from the package [thunar-volman](https://
 
 It can also be configured to execute certain actions when cameras and audio players are connected. After installing the plugin:
 
-1.  Launch Thunar and go to _Edit > Preferences_
+1.  Launch Thunar and go to *Edit > Preferences*
 2.  Under the 'Advanced' tab, check 'Enable Volume Management'
 3.  Click configure and check the following items:
     *   Mount removable drives when hot-plugged.
@@ -110,7 +110,6 @@ Since Xfce 4.8 (Thunar 1.2) it is possible to browse remote locations (such as F
 There is no URI scheme for [NFS](/index.php/NFS "NFS") shares, but Thunar can issue a `mount` command if you setup your [fstab](/index.php/Fstab "Fstab") properly.
 
  `/etc/fstab` 
-
 ```
 # nas1 server
 nas1:/c/home		/media/nas1/home	nfs	noauto,user,_netdev,bg  0 0
@@ -186,7 +185,7 @@ Name=Dropbox
 
 ### Tumblerd hangs up, uses too much CPU
 
-Tumblerd, the service that watches the file system and notifies the system when a thumbnail needs to be made may get stuck in a loop, using 100% of the system's CPU, see the [bug report](https://bugzilla.xfce.org/show_bug.cgi?id=7384). The following script is a temporary workaround to stop this from happening. Copy, and paste this into a _.sh_ file, save it somewhere in your home directory, mark the file as executable then set up the system to autostart it at system startup.
+Tumblerd, the service that watches the file system and notifies the system when a thumbnail needs to be made may get stuck in a loop, using 100% of the system's CPU, see the [bug report](https://bugzilla.xfce.org/show_bug.cgi?id=7384). The following script is a temporary workaround to stop this from happening. Copy, and paste this into a *.sh* file, save it somewhere in your home directory, mark the file as executable then set up the system to autostart it at system startup.
 
 ```
 #!/bin/bash
@@ -226,12 +225,10 @@ done
 
 ### Trash/network icons disappear randomly
 
-Make sure all Thunar instances start **after** _gvfs_. [[1]](https://bugs.launchpad.net/ubuntu/+source/thunar/+bug/1057610) For `thunar --daemon`, you can create a wrapper that waits until GVFS is active:
+Make sure all Thunar instances start **after** *gvfs*. [[1]](https://bugs.launchpad.net/ubuntu/+source/thunar/+bug/1057610) For `thunar --daemon`, you can create a wrapper that waits until GVFS is active:
 
 **Note:** `/usr/local/bin` should come before `/usr/bin` in `$PATH`.
-
  `/usr/local/bin/Thunar` 
-
 ```
 #!/bin/bash
 if [[ $1 == --daemon ]]; then

@@ -1,4 +1,4 @@
-[Los módulos del núcleo](https://en.wikipedia.org/wiki/Loadable_kernel_module "wikipedia:Loadable kernel module") (también conocido por su nombre inglés, _kernel_) son ​​fragmentos de código que pueden ser cargados y eliminados del núcleo bajo demanda. Extienden la funcionalidad del núcleo sin necesidad de reiniciar el sistema.
+[Los módulos del núcleo](https://en.wikipedia.org/wiki/Loadable_kernel_module "wikipedia:Loadable kernel module") (también conocido por su nombre inglés, *kernel*) son ​​fragmentos de código que pueden ser cargados y eliminados del núcleo bajo demanda. Extienden la funcionalidad del núcleo sin necesidad de reiniciar el sistema.
 
 ## Contents
 
@@ -22,7 +22,7 @@
 
 Para conocer cómo crear un módulo del núcleo, puede leer [esta guía](http://tldp.org/LDP/lkmpg/2.6/html/index.html). Un módulo puede ser configurado para ser compilable (incluso en el núcleo) o cargable (se puede cargar bajo demanda). Para cargar o eliminar dinámicamente un módulo, tiene que estar configurado como un módulo cargable en la configuración del núcleo (la línea relacionada con el módulo, por lo tanto, se mostrará con la letra `M`).
 
-Los módulos se almacenan en `/lib/modules/_nombre_del_kernel_`. Use la orden `uname -r` para obtener su versión actual del núcleo.
+Los módulos se almacenan en `/lib/modules/*nombre_del_kernel*`. Use la orden `uname -r` para obtener su versión actual del núcleo.
 
 **Nota:** Los nombres de los módulos suelen utilizar guiones bajos (`_`) o guiones (`-`), sin embargo, esos símbolos son intercambiables, tanto cuando se utiliza la orden `modprobe` como en los archivos de configuración del directorio `/etc/modprobe.d/`.
 
@@ -38,14 +38,14 @@ Para mostrar los módulos del núcleo cargados actualmente:
 Para mostrar información sobre un módulo:
 
 ```
- $ modinfo _nombre_del_módulo_
+ $ modinfo *nombre_del_módulo*
 
 ```
 
 Para listar las opciones que se establecen para un módulo cargado:
 
 ```
- $ systool -v -m _nombre_del_módulo_
+ $ systool -v -m *nombre_del_módulo*
 
 ```
 
@@ -59,14 +59,14 @@ Para mostrar la configuración completa de todos los módulos:
 Para mostrar la configuración de un módulo en particular:
 
 ```
- $ modprobe -c | grep _nombre_del_módulo_
+ $ modprobe -c | grep *nombre_del_módulo*
 
 ```
 
 Listar las dependencias de un módulo (o alias), incluido el propio módulo:
 
 ```
- $ modprobe --show-depends _nombre_del_módulo_
+ $ modprobe --show-depends *nombre_del_módulo*
 
 ```
 
@@ -76,10 +76,9 @@ Hoy en día, todos los módulos que necesitan ser cargados, son manejados autom�
 
 ### Cargar módulos
 
-Los módulos adicionales del _kernel_ pueden ser cargados durante el arranque configurándolos como una lista estática en los archivos residentes en `/etc/modules-load.d/`. Cada archivo de configuración es nombrado siguiendo el formato: `/etc/modules-load.d/<programa>.conf`. Los archivos de configuración contienen simplemente una lista de los nombres de los módulos del núcleo a cargar, separadas por saltos de líneas. Las líneas vacías y las líneas cuyo primer carácter sea `#` o `;` serán ignoradas.
+Los módulos adicionales del *kernel* pueden ser cargados durante el arranque configurándolos como una lista estática en los archivos residentes en `/etc/modules-load.d/`. Cada archivo de configuración es nombrado siguiendo el formato: `/etc/modules-load.d/<programa>.conf`. Los archivos de configuración contienen simplemente una lista de los nombres de los módulos del núcleo a cargar, separadas por saltos de líneas. Las líneas vacías y las líneas cuyo primer carácter sea `#` o `;` serán ignoradas.
 
  `/etc/modules-load.d/virtio-net.conf` 
-
 ```
 # Carga virtio-net.ko al arranque
 virtio-net
@@ -100,7 +99,6 @@ El directorio `/etc/modprobe.d/` se puede utilizar para pasar la configuración 
 Por ejemplo:
 
  `/etc/modprobe.d/thinkfan.conf` 
-
 ```
 # Thinkpads on, ésto permite que el demonio thinkfan controle la velocidad del ventilador
 options thinkpad_acpi fan_control=1
@@ -110,7 +108,7 @@ options thinkpad_acpi fan_control=1
 
 #### Usar la línea de órdenes de arranque del núcleo
 
-Si el módulo está integrado en el núcleo también puede pasar opciones al módulo a través de la línea de órdenes. Para todos los cargadores de arranque (_bootloader_) más comunes la sintaxis correcta es:
+Si el módulo está integrado en el núcleo también puede pasar opciones al módulo a través de la línea de órdenes. Para todos los cargadores de arranque (*bootloader*) más comunes la sintaxis correcta es:
 
 ```
 nombredelmódulo.nombredelparámetro=valordelparámetro
@@ -135,7 +133,6 @@ Los alias son nombres alternativos para un módulo. Por ejemplo: `alias mi-mod n
 Algunos módulos tienen alias que se utilizan para su carga automática cuando son solicitados por una aplicación. La desactivación de estos alias evitará que se cargue automáticamente, pero permitirá que se puedan cargar manualmente. Ejemplo:
 
  `/etc/modprobe.d/modprobe.conf` 
-
 ```
 # Evita cargar automáticamente el módulo necesario para bluetooth
 alias net-pf-31 off
@@ -143,16 +140,15 @@ alias net-pf-31 off
 
 ### Lista negra
 
-Incluir en la lista negra (_«blacklisting»_), en el contexto de los módulos del núcleo, es un mecanismo que evita que el núcleo cargue dicho módulo. Esto podría ser útil si, por ejemplo, el dispositivo de hardware asociado con el módulo no se utiliza y no desea que funcione, o porque la carga del módulo crea problemas: por ejemplo, puede darse la carga simultánea de dos módulos que intentan controlar el mismo dispositivo o componente del hardware, y cargándolos en conjunto se traduciría en un conflicto.
+Incluir en la lista negra (*«blacklisting»*), en el contexto de los módulos del núcleo, es un mecanismo que evita que el núcleo cargue dicho módulo. Esto podría ser útil si, por ejemplo, el dispositivo de hardware asociado con el módulo no se utiliza y no desea que funcione, o porque la carga del módulo crea problemas: por ejemplo, puede darse la carga simultánea de dos módulos que intentan controlar el mismo dispositivo o componente del hardware, y cargándolos en conjunto se traduciría en un conflicto.
 
-Algunos módulos se cargan como parte de [initramfs](/index.php/Initramfs "Initramfs"). `mkinitcpio -M` mostrará todos los módulos detectados automáticamente: para evitar que initramfs cargue algunos de estos módulos, se utiliza la lista negra (_«blacklist»_) en `/etc/modprobe.d/modprobe.conf`. La ejecución de `mkinitcpio -v` mostrará una lista de todos los módulos insertados en initramfs por los distintos hooks (por ejemplo, hook filesystem, hook SCSI, etc.) Recuerde reconstruir el initramfs una vez haya hecho la lista negra de los módulos y reiniciar el sistema después.
+Algunos módulos se cargan como parte de [initramfs](/index.php/Initramfs "Initramfs"). `mkinitcpio -M` mostrará todos los módulos detectados automáticamente: para evitar que initramfs cargue algunos de estos módulos, se utiliza la lista negra (*«blacklist»*) en `/etc/modprobe.d/modprobe.conf`. La ejecución de `mkinitcpio -v` mostrará una lista de todos los módulos insertados en initramfs por los distintos hooks (por ejemplo, hook filesystem, hook SCSI, etc.) Recuerde reconstruir el initramfs una vez haya hecho la lista negra de los módulos y reiniciar el sistema después.
 
 #### Usar archivos en /etc/modprobe.d/
 
 Crear un archivo `.conf` dentro de `/etc/modprobe.d/` y añadir una línea para cada módulo que desee a la lista negra, usando la palabra clave `blacklist`. Por ejemplo, si desea evitar que el módulo `pcspkr` se cargue:
 
  `/etc/modprobe.d/nobeep.conf` 
-
 ```
 # Esto evitará la carga del módulo pcspkr que controla el altavoz de la placa base
 blacklist pcspkr
@@ -163,13 +159,11 @@ blacklist pcspkr
 Sin embargo, hay una solución para este comportamiento, la orden `install` instruye a modprobe para ejecutar una orden personalizada, en lugar de insertar el módulo en la memoria, con lo que puede forzar que se impida la carga del módulo usando:
 
  `/etc/modprobe.d/blacklist.conf` 
-
 ```
 ...
 install MODULE_NAME /bin/false
 ...
 ```
-
 Esto hace efectivo la inclusión en la «lista negra» de ese módulo y de cualquier otro que dependa de él.
 
 #### Usar la línea de órdenes del núcleo
@@ -189,21 +183,21 @@ Los módulos del núcleo pueden ser manejados con las herramientas proporcionada
 Para cargar un módulo:
 
 ```
-# modprobe _nombre_del_módulo_
+# modprobe *nombre_del_módulo*
 
 ```
 
 Para quitar/retirar un módulo:
 
 ```
-# modprobe -r _nombre_del_módulo_
+# modprobe -r *nombre_del_módulo*
 
 ```
 
 O, alternativamente:
 
 ```
-# rmmod _nombre_del_módulo_
+# rmmod *nombre_del_módulo*
 
 ```
 
@@ -217,13 +211,15 @@ Esta es una función de bash que debe ser ejecutada como root, que mostrará una
 function aa_mod_parameters () 
 { 
     N=/dev/null;
-    C=`tput op` O=$(echo -en "\n`tput setaf 2`>>> `tput op`");
+    C=`tput op` O=$(echo -en "
+`tput setaf 2`>>> `tput op`");
     for mod in $(cat /proc/modules|cut -d" " -f1);
     do
         md=/sys/module/$mod/parameters;
         [[ ! -d $md ]] && continue;
         m=$mod;
-        d=`modinfo -d $m 2>$N | tr "\n" "\t"`;
+        d=`modinfo -d $m 2>$N | tr "
+" "\t"`;
         echo -en "$O$m$C";
         [[ ${#d} -gt 0 ]] && echo -n " - $d";
         echo;
@@ -241,7 +237,6 @@ function aa_mod_parameters ()
 Aquí está un ejemplo de salida.
 
  `# aa_mod_parameters` 
-
 ```
 >>> ehci_hcd - USB 2.0 'Enhanced' Host Controller (EHCI) Driver
         hird=0 - hird:host initiated resume duration, +1 for each 75us (int)
@@ -290,7 +285,8 @@ function show_mod_parameter_info ()
   do
     md=/sys/module/$mod/parameters
     [[ ! -d $md ]] && continue
-    d="$(modinfo -d $mod 2>/dev/null | tr "\n" "\t")"
+    d="$(modinfo -d $mod 2>/dev/null | tr "
+" "\t")"
     echo -en "$green$mod$reset"
     [[ ${#d} -gt 0 ]] && echo -n " - $d"
     echo
@@ -316,7 +312,9 @@ function show_mod_parameter_info ()
     $add_desc && pdescs+=("$pdesc")
     for ((i=0; i<${#pnames[@]}; i++))
     do
-      printf "  $cyan%s$reset = $yellow%s$reset\n%s\n" \
+      printf "  $cyan%s$reset = $yellow%s$reset
+%s
+" \
         ${pnames[i]} \
         "${pvals[i]}" \
         "${pdescs[i]}"

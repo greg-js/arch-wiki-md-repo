@@ -53,7 +53,7 @@
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:BitTorrent "wikipedia:es:BitTorrent")
 
-	_«BitTorrent es un protocolo diseñado para el intercambio de archivos peer-to-peer en Internet. (...) El protocolo BitTorrent puede ser usado para reducir el impacto que tiene la distribución de archivos grandes en los servidores. En lugar de descargar el archivo desde un único servidor, el protocolo BitTorrent permite a los usuarios unirse entre ellos en un "enjambre" (swarm) para descargar y subir el archivo de forma simultánea.»_
+	*«BitTorrent es un protocolo diseñado para el intercambio de archivos peer-to-peer en Internet. (...) El protocolo BitTorrent puede ser usado para reducir el impacto que tiene la distribución de archivos grandes en los servidores. En lugar de descargar el archivo desde un único servidor, el protocolo BitTorrent permite a los usuarios unirse entre ellos en un "enjambre" (swarm) para descargar y subir el archivo de forma simultánea.»*
 
 [Comparativa de clientes BitTorrent](https://en.wikipedia.org/wiki/es:Anexo:Comparativa_de_clientes_BitTorrent "wikipedia:es:Anexo:Comparativa de clientes BitTorrent")
 
@@ -113,7 +113,7 @@
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:EDonkey "wikipedia:es:EDonkey")
 
-	_«eDonkey es el nombre de una red de intercambio de archivos P2P, su nombre deriva del programa original creado para la misma. (...) El sistema de intercambio de archivos eDonkey se puede clasificar como una red semicentralizada. Si bien existen servidores que manejan la información que transita por dicha red, no existe ninguno que sea principal. De esta forma, si un servidor deja de funcionar, otro puede emerger de la nada para suplantarlo. Incluso los usuarios puede levantar sus propios servidores.»_
+	*«eDonkey es el nombre de una red de intercambio de archivos P2P, su nombre deriva del programa original creado para la misma. (...) El sistema de intercambio de archivos eDonkey se puede clasificar como una red semicentralizada. Si bien existen servidores que manejan la información que transita por dicha red, no existe ninguno que sea principal. De esta forma, si un servidor deja de funcionar, otro puede emerger de la nada para suplantarlo. Incluso los usuarios puede levantar sus propios servidores.»*
 
 eDonkey es la segunda red p2p más grande (véase [Internet Study 2008/2009](http://ipoque.com/en/resources/internet-studies)).
 
@@ -133,7 +133,7 @@ eDonkey es la segunda red p2p más grande (véase [Internet Study 2008/2009](htt
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Bitcoin "wikipedia:es:Bitcoin")
 
-	_«Bitcoin es una moneda electrónica descentralizada concebida en 2009 por Satoshi Nakamoto. El nombre se aplica también al protocolo diseñado por el mismo autor y a la red P2P que lo sustenta.»_
+	*«Bitcoin es una moneda electrónica descentralizada concebida en 2009 por Satoshi Nakamoto. El nombre se aplica también al protocolo diseñado por el mismo autor y a la red P2P que lo sustenta.»*
 
 [Bitcoin](/index.php/Bitcoin "Bitcoin")
 
@@ -239,7 +239,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Extensible_Messaging_and_Presence_Protocol "wikipedia:es:Extensible Messaging and Presence Protocol")
 
-	_«(...) es un protocolo abierto y extensible basado en XML, originalmente ideado para mensajería instantánea. Con el protocolo XMPP queda establecida una plataforma para el intercambio de datos XML que puede ser usada en aplicaciones de mensajería instantánea.»_
+	*«(...) es un protocolo abierto y extensible basado en XML, originalmente ideado para mensajería instantánea. Con el protocolo XMPP queda establecida una plataforma para el intercambio de datos XML que puede ser usada en aplicaciones de mensajería instantánea.»*
 
 [Protocolo extensible de mensajería y comunicación de presencia](https://en.wikipedia.org/wiki/es:Extensible_Messaging_and_Presence_Protocol "wikipedia:es:Extensible Messaging and Presence Protocol")
 
@@ -307,7 +307,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:IRC "wikipedia:es:IRC")
 
-	_«IRC (Internet Relay Chat) es un protocolo de comunicación en tiempo real basado en texto, que permite debates entre dos o más personas. Se diferencia de la mensajería instantánea en que los usuarios no deben acceder a establecer la comunicación de antemano, de tal forma que todos los usuarios que se encuentran en un canal pueden comunicarse entre sí, aunque no hayan tenido ningún contacto anterior.»_
+	*«IRC (Internet Relay Chat) es un protocolo de comunicación en tiempo real basado en texto, que permite debates entre dos o más personas. Se diferencia de la mensajería instantánea en que los usuarios no deben acceder a establecer la comunicación de antemano, de tal forma que todos los usuarios que se encuentran en un canal pueden comunicarse entre sí, aunque no hayan tenido ningún contacto anterior.»*
 
 [IRC](https://en.wikipedia.org/wiki/es:Irc "wikipedia:es:Irc") y [Comparison of Internet Relay Chat clients](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients "wikipedia:Comparison of Internet Relay Chat clients")
 
@@ -547,7 +547,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 	[http://gnus.org/](http://gnus.org/) || [emacs-gnus-git](https://aur.archlinux.org/packages/emacs-gnus-git/)
 
-*   **S-nail** — Un sistema de procesamiento de correo electrónico con una sintaxis de órdenes _ed_ con líneas reemplazadas por mensajes. Proporciona la funcionalidad de [mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx") y mucho más.
+*   **S-nail** — Un sistema de procesamiento de correo electrónico con una sintaxis de órdenes *ed* con líneas reemplazadas por mensajes. Proporciona la funcionalidad de [mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx") y mucho más.
 
 	[http://sourceforge.net/projects/s-nail/](http://sourceforge.net/projects/s-nail/) || [s-nail](https://www.archlinux.org/packages/?name=s-nail)
 
@@ -559,7 +559,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 	[http://www.mutt.org/](http://www.mutt.org/) || [mutt](https://www.archlinux.org/packages/?name=mutt)
 
-*   **[Sup](/index.php/Sup "Sup")** — Cliente de email CLI (_«intérprete de línea de órdenes»_) con rápido buscador, marcador, enhebrador y operaciones similares a GMail.
+*   **[Sup](/index.php/Sup "Sup")** — Cliente de email CLI (*«intérprete de línea de órdenes»*) con rápido buscador, marcador, enhebrador y operaciones similares a GMail.
 
 	[http://sup.rubyforge.org/](http://sup.rubyforge.org/) || [sup](https://aur.archlinux.org/packages/sup/)
 
@@ -627,7 +627,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Agregador "wikipedia:es:Agregador")
 
-	_«Un lector o recopilador de contenidos (también conocido como agregador, agregador de noticias o lector de RSS) es un tipo de software para suscribirse a fuentes de noticias en formatos RSS, Atom y otros derivados de XML como RDF/XML. El agregador reúne las noticias o historias publicadas en los sitios con redifusión web elegidos, y muestra las novedades o modificaciones que se han producido en esas fuentes web.»_
+	*«Un lector o recopilador de contenidos (también conocido como agregador, agregador de noticias o lector de RSS) es un tipo de software para suscribirse a fuentes de noticias en formatos RSS, Atom y otros derivados de XML como RDF/XML. El agregador reúne las noticias o historias publicadas en los sitios con redifusión web elegidos, y muestra las novedades o modificaciones que se han producido en esas fuentes web.»*
 
 [Comparison of feed aggregators](https://en.wikipedia.org/wiki/Comparison_of_feed_aggregators "wikipedia:Comparison of feed aggregators")
 
@@ -645,7 +645,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 	[http://newsbeuter.org](http://newsbeuter.org) || [newsbeuter](https://www.archlinux.org/packages/?name=newsbeuter)
 
-*   **Rawdog** — «RSS Aggregator Without Delusions Of Grandeur» (_Agregador RSS sin delirios de grandeza_) que pasa RSS/CDF/Atom a una página HTML estática de artículos ordenados cronológicamente.
+*   **Rawdog** — «RSS Aggregator Without Delusions Of Grandeur» (*Agregador RSS sin delirios de grandeza*) que pasa RSS/CDF/Atom a una página HTML estática de artículos ordenados cronológicamente.
 
 	[http://offog.org/code/rawdog.html](http://offog.org/code/rawdog.html) || [rawdog](https://www.archlinux.org/packages/?name=rawdog)
 

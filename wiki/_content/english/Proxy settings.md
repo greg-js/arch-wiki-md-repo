@@ -16,7 +16,7 @@ A proxy is "an interface for a service, especially for one that is remote, resou
 
 ## Environment variables
 
-Some programs, such as [wget](/index.php/Wget "Wget") and (used by [pacman](/index.php/Pacman "Pacman")) _curl_, use environment variables of the form "protocol_proxy" to determine the proxy for a given protocol (e.g. HTTP, FTP, ...).
+Some programs, such as [wget](/index.php/Wget "Wget") and (used by [pacman](/index.php/Pacman "Pacman")) *curl*, use environment variables of the form "protocol_proxy" to determine the proxy for a given protocol (e.g. HTTP, FTP, ...).
 
 Below is an example on how to set these variables in a shell:
 
@@ -172,14 +172,14 @@ There are two cases:
 
 In Firefox, you can use the SOCKS proxy in the menu Preferences > Network > Settings. Choose "Manual Proxy Configuration", and set the SOCKS Host (and only this one, make sure the other fields, such as HTTP Proxy or SSL Proxy are left empty). For example, if a SOCKS5 proxy is running on localhost port 8080, put "127.0.0.1" in the SOCKS Host field, "8080" in the Port field, and validate.
 
-If using _proxychains-ng_, the configuration takes place in `/etc/proxychains.conf`. You may have to uncomment the last line (set by default to use [Tor](/index.php/Tor "Tor")), and replace it with the parameters of the SOCKS proxy. For example, if you are using the same SOCKS5 proxy as above, you will have to replace the last line by:
+If using *proxychains-ng*, the configuration takes place in `/etc/proxychains.conf`. You may have to uncomment the last line (set by default to use [Tor](/index.php/Tor "Tor")), and replace it with the parameters of the SOCKS proxy. For example, if you are using the same SOCKS5 proxy as above, you will have to replace the last line by:
 
 ```
 socks5 127.0.0.1 8080
 
 ```
 
-Then, _proxychains-ng_ can be launched with
+Then, *proxychains-ng* can be launched with
 
 ```
 proxychains <program>
@@ -188,10 +188,9 @@ proxychains <program>
 
 Where <program> can be any program already installed on your system (e.g. xterm, gnome-terminal, etc).
 
-If using _tsocks_, the configuration takes place in `/etc/tsocks.conf`. See `man 5 tsocks.conf` for the options. An example minimum configuration looks like this:
+If using *tsocks*, the configuration takes place in `/etc/tsocks.conf`. See `man 5 tsocks.conf` for the options. An example minimum configuration looks like this:
 
  `/etc/tsocks.conf` 
-
 ```
 server = 127.0.0.1
 server_port = 8080

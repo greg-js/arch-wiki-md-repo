@@ -43,7 +43,6 @@ When the detection is finished, a summary of the probes is presented.
 Example:
 
  `# sensors-detect` 
-
 ```
 This program will help you determine which kernel modules you need
 to load to use lm_sensors most effectively. It is generally safe
@@ -86,7 +85,6 @@ Unloading cpuid... OK
 Example running `sensors`:
 
  `$ sensors` 
-
 ```
 coretemp-isa-0000
 Adapter: ISA adapter
@@ -116,7 +114,6 @@ Finally, view memory information with `decode-dimms`.
 Here is partial output from one machine:
 
  `# decode-dimms` 
-
 ```
 Memory Serial Presence Detect Decoder
 By Philip Edelbrock, Christian Zuckschwerdt, Burkart Lingner,
@@ -219,7 +216,6 @@ All of the above (and more) can be adjusted by overriding the package provides s
 This is a real example on a Zotac ION-ITX-A-U motherboard. The coretemp values are off by 20 °C (too high) and are adjusted down to Intel specs.
 
  `$ sensors` 
-
 ```
 coretemp-isa-0000
 Adapter: ISA adapter
@@ -232,7 +228,6 @@ Core 1:       +55.0°C  (crit = +125.0°C)
 Run `sensors` with the `-u` switch to see what options are available for each physical chip (raw mode):
 
  `$ sensors -u` 
-
 ```
 coretemp-isa-0000
 Adapter: ISA adapter
@@ -251,7 +246,6 @@ Core 1:
 Create the following file overriding the default values:
 
  `/etc/sensors.d/Zotac-IONITX-A-U` 
-
 ```
 chip "coretemp-isa-0000"
   label temp2 "Core 0"
@@ -265,7 +259,6 @@ chip "coretemp-isa-0000"
 Now invoking `sensors` shows the adjust values:
 
  `$ sensors` 
-
 ```
 coretemp-isa-0000
 Adapter: ISA adapter
@@ -280,7 +273,6 @@ Core 1:       +35.0°C  (crit = +105.0°C)
 This is a real example on an Asus A7M266\. The user wishes more verbose names for the temperature labels 'temp1' and 'temp2':
 
  `$ sensors` 
-
 ```
 as99127f-i2c-0-2d
 Adapter: SMBus Via Pro adapter at e800
@@ -294,7 +286,6 @@ temp2:        +47.5°C  (high = +100.0°C, hyst = +75.0°C)
 Create the following file to override the default values:
 
  `/etc/sensors.d/Asus_A7M266` 
-
 ```
 chip "as99127f-*"
   label temp1 "Mobo Temp"
@@ -305,7 +296,6 @@ chip "as99127f-*"
 Now invoking `sensors` shows the adjust values:
 
  `$ sensors` 
-
 ```
 as99127f-i2c-0-2d
 Adapter: SMBus Via Pro adapter at e800
@@ -321,7 +311,6 @@ CPU0 Temp:        +47.5°C  (high = +100.0°C, hyst = +75.0°C)
 This is a real example on an HP Z600 workstation with dual Xeons. The actual numbering of physical cores is incorrect: numbered 0, 1, 9, 10 which is repeated into the second CPU. Most users expect the core temperatures to report out in sequential order, i.e. 0,1,2,3,4,5,6,7.
 
  `$ sensors` 
-
 ```
 coretemp-isa-0000
 Adapter: ISA adapter
@@ -343,7 +332,6 @@ Core 10:      +61.0°C  (high = +85.0°C, crit = +95.0°C)
 Again, run `sensors` with the `-u` switch to see what options are available for each physical chip:
 
  `$ sensors -u coretemp-isa-0000` 
-
 ```
 coretemp-isa-0000
 Adapter: ISA adapter
@@ -367,9 +355,7 @@ Core 10:
   temp12_crit: 95.000
 
 ```
-
  `$ sensors -u coretemp-isa-0004` 
-
 ```
 coretemp-isa-0004
 Adapter: ISA adapter
@@ -398,7 +384,6 @@ Core 10:
 Create the following file overriding the default values:
 
  `/etc/sensors.d/HP_Z600` 
-
 ```
 chip "coretemp-isa-0000"
   label temp2 "Core 0"
@@ -416,7 +401,6 @@ chip "coretemp-isa-0004"
 Now invoking `sensors` shows the adjust values:
 
  `$ sensors` 
-
 ```
 coretemp-isa-0000
 Adapter: ISA adapter
@@ -459,9 +443,9 @@ If users wishing to deploy lm_sensors on multiple machines can use either of the
 
 Some K10 processors have issues with their temperature sensor. From the kernel documentation (`linux-<version>/Documentation/hwmon/k10temp`):
 
-	_All these processors have a sensor, but on those for Socket F or AM2+, the sensor may return inconsistent values (erratum 319). The driver will refuse to load on these revisions unless users specify the `force=1` module parameter._
+	*All these processors have a sensor, but on those for Socket F or AM2+, the sensor may return inconsistent values (erratum 319). The driver will refuse to load on these revisions unless users specify the `force=1` module parameter.*
 
-	_Due to technical reasons, the driver can detect only the mainboard's socket type, not the processor's actual capabilities. Therefore, users of an AM3 processor on an AM2+ mainboard, can safely use the `force=1` parameter._
+	*Due to technical reasons, the driver can detect only the mainboard's socket type, not the processor's actual capabilities. Therefore, users of an AM3 processor on an AM2+ mainboard, can safely use the `force=1` parameter.*
 
 On affected machines the module will report "unreliable CPU thermal sensor; monitoring disabled". Users which to force it can:
 
@@ -508,7 +492,7 @@ Or you can [load the module](/index.php/Kernel_modules#Loading "Kernel modules")
 
  `/etc/modules-load.d/it87.conf`  `it87`  `/etc/modprobe.d/it87.conf`  `options it87 force_id=0x8603` 
 
-Once the module is loaded you can use the _sensors_ tool to probe the chip.
+Once the module is loaded you can use the *sensors* tool to probe the chip.
 
 Now you can also use [fancontrol](/index.php/Fancontrol "Fancontrol") to control the speedsteps of your case fan.
 

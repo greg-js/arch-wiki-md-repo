@@ -2,7 +2,7 @@
 | Intel | **Working** | xf86-video-intel |
 | nVdia | **Working** | nvidia |
 | Ethernet | **Working** | r8169 |
-| Wireless | **Working** | iwlwifi _or_ rt2800pci |
+| Wireless | **Working** | iwlwifi *or* rt2800pci |
 | Audio | **Working** | snd_hda_intel |
 | Touchpad | **Working** | synaptics |
 | Camera | **Working** | uvcvideo |
@@ -14,12 +14,12 @@
 
 *   [1 Hardware](#Hardware)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Video -- _j013sg and j082sf_](#Video_--_j013sg_and_j082sf)
-    *   [2.2 Audio -- _j013sg and j082sf_](#Audio_--_j013sg_and_j082sf)
-    *   [2.3 WIFI Button -- _j082sf_](#WIFI_Button_--_j082sf)
-    *   [2.4 Fingerprint Reader -- _j082sf_](#Fingerprint_Reader_--_j082sf)
-    *   [2.5 Wifi -- _j013sg and j082sf_](#Wifi_--_j013sg_and_j082sf)
-    *   [2.6 Bluetooth -- _j082sf_](#Bluetooth_--_j082sf)
+    *   [2.1 Video -- *j013sg and j082sf*](#Video_--_j013sg_and_j082sf)
+    *   [2.2 Audio -- *j013sg and j082sf*](#Audio_--_j013sg_and_j082sf)
+    *   [2.3 WIFI Button -- *j082sf*](#WIFI_Button_--_j082sf)
+    *   [2.4 Fingerprint Reader -- *j082sf*](#Fingerprint_Reader_--_j082sf)
+    *   [2.5 Wifi -- *j013sg and j082sf*](#Wifi_--_j013sg_and_j082sf)
+    *   [2.6 Bluetooth -- *j082sf*](#Bluetooth_--_j082sf)
 
 # Hardware
 
@@ -43,26 +43,26 @@
 
 This is based on the HP Envy 15 j013sg (E8N68EA) and HP Envy j082sf
 
-## Video -- _j013sg and j082sf_
+## Video -- *j013sg and j082sf*
 
 xf86-video-modesetting and bumblebee setups work. nouveau untested Works by folllowing [https://wiki.archlinux.org/index.php/Optimus](https://wiki.archlinux.org/index.php/Optimus)
 
-## Audio -- _j013sg and j082sf_
+## Audio -- *j013sg and j082sf*
 
 `hdajackretask` in the package `extra/alsa-tools` can be used to remap the unconnected 0x0f pin to Internal Speaker, and the 0x10 pin to the subwoofer (Internal Speaker LFE).
 
-## WIFI Button -- _j082sf_
+## WIFI Button -- *j082sf*
 
 The `hp-wireless` module landed in kernel version 3.14\. This button will not work with [rt3290sta-dkms](https://aur.archlinux.org/packages/rt3290sta-dkms/) AUR package.
 
-## Fingerprint Reader -- _j082sf_
+## Fingerprint Reader -- *j082sf*
 
 Works fine with this package : [https://github.com/payden/libfprint](https://github.com/payden/libfprint)
 
-## Wifi -- _j013sg and j082sf_
+## Wifi -- *j013sg and j082sf*
 
 Works out of the box for both of them. If you have issues with j082sf, you can use [rt3290sta-dkms](https://aur.archlinux.org/packages/rt3290sta-dkms/) AUR package
 
-## Bluetooth -- _j082sf_
+## Bluetooth -- *j082sf*
 
 Works fine with [rtbth-dkms](https://aur.archlinux.org/packages/rtbth-dkms/) AUR package.

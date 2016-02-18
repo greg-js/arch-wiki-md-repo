@@ -35,7 +35,7 @@ Pre príklad zvoľme [Some Page](/index.php?title=Some_Page&action=edit&redlink=
 
 ```
 
-*   Navštívte zvolenú stránku a hornom menu vyberte _upraviť_.
+*   Navštívte zvolenú stránku a hornom menu vyberte *upraviť*.
 *   Skopírujte zdrojový kód stránky.
 *   Prejdite na [Some Page](/index.php?title=Some_Page_(Slovensk%C3%BD)&action=edit&redlink=1 "Some Page (Slovenský) (page does not exist)") zadaním nasledujúceho URL.
 
@@ -44,7 +44,7 @@ Pre príklad zvoľme [Some Page](/index.php?title=Some_Page&action=edit&redlink=
 
 ```
 
-*   Keďže stránka neexistuje, vytvorte ju pomocou _vytvoriť_ v hornom menu.
+*   Keďže stránka neexistuje, vytvorte ju pomocou *vytvoriť* v hornom menu.
 *   Zobrazí sa vám jednoduchý WYSIVIG editor - sem vložte skopírovaný zdrojový kód.
 *   Po preložení textu stránku uložte.
 *   Nakoniec vytvorte druhú stránku z lokalizovaným názvom [Nejaká_Stránka](/index.php?title=Nejak%C3%A1_Str%C3%A1nka&action=edit&redlink=1 "Nejaká Stránka (page does not exist)"). Prejdite na

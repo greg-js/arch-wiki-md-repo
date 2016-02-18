@@ -160,7 +160,6 @@ Tuttavia, tenere presente che questa operazione potrebbe cancellare alcuni file,
 1.  Se si sta installando da Ubuntu 9.10 LiveCD (o forse anche da altre versioni), saranno necessari non solo i file di pacman (shared libs) per usarlo. Usare lo script di Lucky descritto in [[questo thread](https://bbs.archlinux.org/viewtopic.php?pid=759166)] per scaricarli!
 
 2.  n alternativa, si possono trasformare questi archivi in pacchetti per la propria distribuzione con il tool [alien](http://kitenet.net/~joey/code/alien/). Vedere la man page dello strumento per le istruzioni. I pacchetti creati in questo modo possono essere installati nella distribuzione host utilizzando i soliti strumenti di gestione dei pacchetti disponibili. Questo approccio offre una migliore integrazione nell'ambiente Linux host. Per un sistema basato pacchetto debian questo è fatto con i seguenti comandi:
-
     ```
     cd /tmp/archlinux
     alien -d pacman-3.3.3-1-i686.pkg.tar.gz
@@ -192,7 +191,7 @@ Se si sta installando da un LiveCD, e si dispone di un sistema con una bassa qua
 
 ### Preparare una partizione per Arch
 
-Non è _necessario_ installare Arch su una partizione separata. Si potrebbe invece creare un filesystem di root in una directory normale, e quindi creare una tarball master da questa, o trasferirla attraverso la rete.
+Non è *necessario* installare Arch su una partizione separata. Si potrebbe invece creare un filesystem di root in una directory normale, e quindi creare una tarball master da questa, o trasferirla attraverso la rete.
 
 Tuttavia, la maggior parte degli utenti preferiranno l'installazione di Arch nella propria partizione.
 
@@ -481,7 +480,7 @@ Scegliere un bootloader. Si possono trovare le istruzioni di installazione nelle
 
 **Ricorda:** C'è ancora bisogno di fare la configurazioni finali come in una normale installazione Arch.
 
-_Si ringrazia il sito turco: [Raptiye](http://raptiye.org/blog/2011/3/27/hetznerde-arch-linux-kurulumu/) per la guida originale._
+*Si ringrazia il sito turco: [Raptiye](http://raptiye.org/blog/2011/3/27/hetznerde-arch-linux-kurulumu/) per la guida originale.*
 
 ## Risoluzione dei problemi
 

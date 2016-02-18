@@ -23,7 +23,6 @@ The [modprobed-db](https://aur.archlinux.org/packages/modprobed-db/) package is 
 **Optionally:** add modules in the ignore array that you do NOT want counted, for example modules that get built or that are provided by another package. Some common ones are included by default:
 
  `$ cat ~/.config/modprobed-db.conf` 
-
 ```
 IGNORE=(nvidia vboxdrv vboxnetflt vboxnetadp vboxpci lirc_dev lirc_i2c
 osscore oss_hdaudio oss_usb tp_smapi thinkpad_ec

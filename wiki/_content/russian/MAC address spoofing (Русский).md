@@ -26,11 +26,11 @@
 Сперва проверьте ваш текущий MAC-адрес при помощи команды:
 
 ```
-# ip link show _интерфейс_
+# ip link show *интерфейс*
 
 ```
 
-где `_интерфейс_` — имя вашего [сетевого интерфейса](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D0.B5_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D1.8B "Network configuration (Русский)").
+где `*интерфейс*` — имя вашего [сетевого интерфейса](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D0.B5_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D1.8B "Network configuration (Русский)").
 
 Необходимая нам в данный момент информация расположена в строке, начинающейся со слов "link/ether", за которыми следует 6-битный номер. Скорее всего, у вас это будет выглядеть примерно так:
 
@@ -42,7 +42,7 @@ link/ether 00:1d:98:5a:d1:3a
 Первый шаг для подмены MAC-адреса — отключить интерфейс. Это можно сделать, выполнив команду:
 
 ```
-# ip link set dev _интерфейс_ down
+# ip link set dev *интерфейс* down
 
 ```
 
@@ -51,20 +51,20 @@ link/ether 00:1d:98:5a:d1:3a
 Чтобы сменить MAC, необходимо выполнить команду:
 
 ```
-# ip link set dev _интерфейс_ address _XX:XX:XX:XX:XX:XX_
+# ip link set dev *интерфейс* address *XX:XX:XX:XX:XX:XX*
 
 ```
 
-где вместо `_XX:XX:XX:XX:XX:XX_` необходимо указать любое 6-битное значение.
+где вместо `*XX:XX:XX:XX:XX:XX*` необходимо указать любое 6-битное значение.
 
 Последний шаг — включить интерфейс обратно. Это можно сделать, выполнив команду:
 
 ```
-# ip link set dev _интерфейс_ up
+# ip link set dev *интерфейс* up
 
 ```
 
-Если вы хотите проверить, произошла ли подмена MAC-адреса, просто еще раз запустите `ip link show _интерфейс_` и проверьте значение "link/ether". Если подмена сработала, "link/ether" будет иметь то значение, которое вы ему присвоили.
+Если вы хотите проверить, произошла ли подмена MAC-адреса, просто еще раз запустите `ip link show *интерфейс*` и проверьте значение "link/ether". Если подмена сработала, "link/ether" будет иметь то значение, которое вы ему присвоили.
 
 ### Способ 2: macchanger
 
@@ -72,35 +72,35 @@ link/ether 00:1d:98:5a:d1:3a
 
 [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [macchanger](https://www.archlinux.org/packages/?name=macchanger) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
 
-Подмена осуществляется для конкретного интерфейса: в каждой из следующих команд заменяйте `_интерфейс_` на имя вашего [сетевого интерфейса](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D0.B5_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D1.8B "Network configuration (Русский)").
+Подмена осуществляется для конкретного интерфейса: в каждой из следующих команд заменяйте `*интерфейс*` на имя вашего [сетевого интерфейса](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D0.B5_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D1.8B "Network configuration (Русский)").
 
 Вы можете сгенерировать полностью случайный адрес:
 
 ```
-# macchanger -r _интерфейс_
+# macchanger -r *интерфейс*
 
 ```
 
 А чтобы изменить только байты, которые являются уникальными для конкретного устройства (благодаря чему при проверке MAC-адрес будет по-прежнему считаться принадлежащим тому же производителю), необходимо выполнить:
 
 ```
-# macchanger -e _интерфейс_
+# macchanger -e *интерфейс*
 
 ```
 
 Для установки конкретного MAC-адреса выполните:
 
 ```
-# macchanger --mac=_XX:XX:XX:XX:XX:XX_ _интерфейс_
+# macchanger --mac=*XX:XX:XX:XX:XX:XX* *интерфейс*
 
 ```
 
-где `_XX:XX:XX:XX:XX:XX_` — MAC, который вы хотите присвоить.
+где `*XX:XX:XX:XX:XX:XX*` — MAC, который вы хотите присвоить.
 
 Наконец, для восстановления исходного значения MAC-адреса:
 
 ```
-# macchanger -p _интерфейс_
+# macchanger -p *интерфейс*
 
 ```
 
@@ -113,13 +113,12 @@ link/ether 00:1d:98:5a:d1:3a
 [systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") поддерживает подмену MAC-адреса при помощи [файлов link](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A4.D0.B0.D0.B9.D0.BB.D1.8B_link "Systemd-networkd (Русский)"):
 
  `/etc/systemd/network/00-default.link` 
-
 ```
 [Match]
-MACAddress=_постоянный MAC_
+MACAddress=*постоянный MAC*
 
 [Link]
-MACAddress=_новый MAC_
+MACAddress=*новый MAC*
 NamePolicy=kernel database onboard slot path
 ```
 
@@ -137,14 +136,13 @@ NamePolicy=kernel database onboard slot path
 
 #### Создание юнита
 
-Ниже вы найдете пару примеров юнитов [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") для изменения MAC-адреса при загрузе системы: первый устанавливает указанный MAC, используя утилиту _ip_, а второй использует _macchanger_ для присвоения случайного адреса. Зависимость `network-pre.target` используется для того, чтобы смена MAC происходила перед тем, как запустятся сетевые программы вроде [netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)"), [NetworkManager](/index.php/NetworkManager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NetworkManager (Русский)"), [systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") или [dhcpcd](/index.php/Dhcpcd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dhcpcd (Русский)").
+Ниже вы найдете пару примеров юнитов [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") для изменения MAC-адреса при загрузе системы: первый устанавливает указанный MAC, используя утилиту *ip*, а второй использует *macchanger* для присвоения случайного адреса. Зависимость `network-pre.target` используется для того, чтобы смена MAC происходила перед тем, как запустятся сетевые программы вроде [netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)"), [NetworkManager](/index.php/NetworkManager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NetworkManager (Русский)"), [systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") или [dhcpcd](/index.php/Dhcpcd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dhcpcd (Русский)").
 
 ##### iproute2
 
 Юнит [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), устанавливающий указанный MAC-адрес:
 
  `/etc/systemd/system/macspoof@.service` 
-
 ```
 [Unit]
 Description=MAC Address Change %I
@@ -168,7 +166,6 @@ WantedBy=multi-user.target
 Юнит [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), устанавливающий случайный адрес (префикс производителя остается тем же). Удостоверьтесь, что у вас [установлен](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") пакет [macchanger](https://www.archlinux.org/packages/?name=macchanger)):
 
  `/etc/systemd/system/macspoof@.service` 
-
 ```
 [Unit]
 Description=macchanger on %I
@@ -208,4 +205,4 @@ WantedBy=multi-user.target
 ## Смотрите также
 
 *   [Страница Macchanger на GitHub](https://github.com/alobbs/macchanger)
-*   [Статья на debianadmin.com](http://www.debianadmin.com/change-your-network-card-mac-media-access-control-address.html) с большим количеством опций для _macchanger_
+*   [Статья на debianadmin.com](http://www.debianadmin.com/change-your-network-card-mac-media-access-control-address.html) с большим количеством опций для *macchanger*

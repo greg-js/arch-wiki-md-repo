@@ -73,7 +73,7 @@ Configuring wireless is a two-part process; the first part is to identify and en
 
 ## Device driver
 
-The default Arch Linux kernel is _modular_, meaning many of the drivers for machine hardware reside on the hard drive and are available as [modules](/index.php/Kernel_modules "Kernel modules"). At boot, [udev](/index.php/Udev "Udev") takes an inventory of your hardware and loads appropriate modules (drivers) for your corresponding hardware, which will in turn allow creation of a network _interface_.
+The default Arch Linux kernel is *modular*, meaning many of the drivers for machine hardware reside on the hard drive and are available as [modules](/index.php/Kernel_modules "Kernel modules"). At boot, [udev](/index.php/Udev "Udev") takes an inventory of your hardware and loads appropriate modules (drivers) for your corresponding hardware, which will in turn allow creation of a network *interface*.
 
 Some wireless chipsets also require firmware, in addition to a corresponding driver. Many firmware images are provided by the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package which is installed by default, however, proprietary firmware images are not included and have to be installed separately. This is described in [#Installing driver/firmware](#Installing_driver.2Ffirmware).
 
@@ -86,7 +86,6 @@ Some wireless chipsets also require firmware, in addition to a corresponding dri
 To check if the driver for your card has been loaded, check the output of the `lspci -k` or `lsusb -v` command, depending on if the card is connected by PCI(e) or USB. You should see that some kernel driver is in use, for example:
 
  `$ lspci -k` 
-
 ```
 06:00.0 Network controller: Intel Corporation WiFi Link 5100
 	Subsystem: Intel Corporation WiFi Link 5100 AGN
@@ -97,7 +96,7 @@ To check if the driver for your card has been loaded, check the output of the `l
 
 **Note:** If the card is a USB device, running `dmesg | grep usbcore` should give something like `usbcore: registered new interface driver rtl8187` as output.
 
-Also check the output of `ip link` command to see if a wireless interface ([usually](/index.php/Network_configuration#Device_names "Network configuration") it starts with the letter "w", e.g. `wlp2s1`) was created. Then bring the interface up with `ip link set _interface_ up`. For example, assuming the interface is `wlan0`:
+Also check the output of `ip link` command to see if a wireless interface ([usually](/index.php/Network_configuration#Device_names "Network configuration") it starts with the letter "w", e.g. `wlp2s1`) was created. Then bring the interface up with `ip link set *interface* up`. For example, assuming the interface is `wlan0`:
 
 ```
 # ip link set wlan0 up
@@ -109,7 +108,6 @@ If you get this error message: `SIOCSIFFLAGS: No such file or directory`, it mos
 Check kernel messages for firmware being loaded:
 
  `$ dmesg | grep firmware` 
-
 ```
 [   7.148259] iwlwifi 0000:02:00.0: loaded firmware version 39.30.4.1 build 35138 op_mode iwldvm
 
@@ -118,7 +116,6 @@ Check kernel messages for firmware being loaded:
 If there is no relevant output, check the messages for the full output for the module you identified earlier (`iwlwifi` in this example) to identify the relevant message or further issues:
 
  `$ dmesg | grep iwlwifi` 
-
 ```
 [   12.342694] iwlwifi 0000:02:00.0: irq 44 for MSI/MSI-X
 [   12.353466] iwlwifi 0000:02:00.0: loaded firmware version 39.31.5.1 build 35138 op_mode iwldvm
@@ -178,11 +175,11 @@ These tools pull in the required dependencies from the list of packages in the m
 
 ### Manual setup
 
-Just like other network interfaces, the wireless ones are controlled with _ip_ from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
+Just like other network interfaces, the wireless ones are controlled with *ip* from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
 
 You will need to install a basic set of tools for managing the wireless connection. Either:
 
-*   [iw](https://www.archlinux.org/packages/?name=iw) - only supports the nl80211 (netlink) standard. It does not support the older WEXT (Wireless EXTentions) standard. If _iw_ does not see your card, this may be the reason.
+*   [iw](https://www.archlinux.org/packages/?name=iw) - only supports the nl80211 (netlink) standard. It does not support the older WEXT (Wireless EXTentions) standard. If *iw* does not see your card, this may be the reason.
 
 	or
 
@@ -192,34 +189,33 @@ For WPA/WPA2 encryption, you will also need:
 
 *   [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) - works with both WEXT and nl80211.
 
-The table below gives an overview of comparable commands for _iw_ and _wireless_tools_ (see [iw replaces iwconfig](http://wireless.kernel.org/en/users/Documentation/iw/replace-iwconfig) for more examples). These user-space tools work extremely well and allow complete manual control of wireless connection.
+The table below gives an overview of comparable commands for *iw* and *wireless_tools* (see [iw replaces iwconfig](http://wireless.kernel.org/en/users/Documentation/iw/replace-iwconfig) for more examples). These user-space tools work extremely well and allow complete manual control of wireless connection.
 
 **Note:**
 
 *   [iw](https://www.archlinux.org/packages/?name=iw) and [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) are provided on the installation medium.
-*   Examples in this section assume that your wireless device interface is `wlan0` and that you are connecting to `_your_essid_` wifi access point. Replace both accordingly. To find your wireless device interface, see [#Getting some useful information](#Getting_some_useful_information).
-*   Note that most of the commands have to be executed with [root permissions](/index.php/Users_and_groups "Users and groups"). Executed with normal user rights, some of the commands (e.g. _iwlist_), will exit without error but not produce the correct output either, which can be confusing.
+*   Examples in this section assume that your wireless device interface is `wlan0` and that you are connecting to `*your_essid*` wifi access point. Replace both accordingly. To find your wireless device interface, see [#Getting some useful information](#Getting_some_useful_information).
+*   Note that most of the commands have to be executed with [root permissions](/index.php/Users_and_groups "Users and groups"). Executed with normal user rights, some of the commands (e.g. *iwlist*), will exit without error but not produce the correct output either, which can be confusing.
 
-| _iw_ command | _wireless_tools_ command | Description |
+| *iw* command | *wireless_tools* command | Description |
 | iw dev wlan0 link | iwconfig wlan0 | Getting link status. |
 | iw dev wlan0 scan | iwlist wlan0 scan | Scanning for available access points. |
-| iw dev wlan0 set type ibss | iwconfig wlan0 mode ad-hoc | Setting the operation mode to _ad-hoc_. |
-| iw dev wlan0 connect _your_essid_ | iwconfig wlan0 essid _your_essid_ | Connecting to open network. |
-| iw dev wlan0 connect _your_essid_ 2432 | iwconfig wlan0 essid _your_essid_ freq 2432M | Connecting to open network specifying channel. |
-| iw dev wlan0 connect _your_essid_ key 0:_your_key_ | iwconfig wlan0 essid _your_essid_ key _your_key_ | Connecting to WEP encrypted network using hexadecimal key. |
-| iw dev wlan0 connect _your_essid_ key 0:_your_key_ | iwconfig wlan0 essid _your_essid_ key s:_your_key_ | Connecting to WEP encrypted network using ASCII key. |
+| iw dev wlan0 set type ibss | iwconfig wlan0 mode ad-hoc | Setting the operation mode to *ad-hoc*. |
+| iw dev wlan0 connect *your_essid* | iwconfig wlan0 essid *your_essid* | Connecting to open network. |
+| iw dev wlan0 connect *your_essid* 2432 | iwconfig wlan0 essid *your_essid* freq 2432M | Connecting to open network specifying channel. |
+| iw dev wlan0 connect *your_essid* key 0:*your_key* | iwconfig wlan0 essid *your_essid* key *your_key* | Connecting to WEP encrypted network using hexadecimal key. |
+| iw dev wlan0 connect *your_essid* key 0:*your_key* | iwconfig wlan0 essid *your_essid* key s:*your_key* | Connecting to WEP encrypted network using ASCII key. |
 | iw dev wlan0 set power_save on | iwconfig wlan0 power on | Enabling power save. |
 
 **Note:** Depending on your hardware and encryption type, some of these steps may not be necessary. Some cards are known to require interface activation and/or access point scanning before being associated to an access point and being given an IP address. Some experimentation may be required. For instance, WPA/WPA2 users may try to directly activate their wireless network from step [#Association](#Association).
 
 #### Getting some useful information
 
-**Tip:** See [official documentation](http://wireless.kernel.org/en/users/Documentation/iw) of the _iw_ tool for more examples.
+**Tip:** See [official documentation](http://wireless.kernel.org/en/users/Documentation/iw) of the *iw* tool for more examples.
 
 *   First you need to find the name of wireless interface. You can do it with following command:
 
  `$ iw dev` 
-
 ```
 phy#0
 	Interface **wlan0**
@@ -234,7 +230,6 @@ phy#0
 *   To check link status, use following command. Example output when not connected to an AP:
 
  `$ iw dev wlan0 link` 
-
 ```
 Not connected.
 
@@ -243,7 +238,6 @@ Not connected.
 When connected to an AP, you will see something like:
 
  `$ iw dev wlan0 link` 
-
 ```
 Connected to 12:34:56:78:9a:bc (on wlan0)
 	SSID: MyESSID
@@ -262,7 +256,6 @@ Connected to 12:34:56:78:9a:bc (on wlan0)
 *   You can get statistic information, such as the amount of tx/rx bytes, signal strength etc., with following command:
 
  `$ iw dev wlan0 station dump` 
-
 ```
 Station 12:34:56:78:9a:bc (on wlan0)
 	inactive time:	1450 ms
@@ -288,19 +281,18 @@ Station 12:34:56:78:9a:bc (on wlan0)
 
 **Tip:** Usually this step is not required.
 
-Some cards require that the kernel interface be activated before you can use _iw_ or _wireless_tools_:
+Some cards require that the kernel interface be activated before you can use *iw* or *wireless_tools*:
 
 ```
 # ip link set wlan0 up
 
 ```
 
-**Note:** If you get errors like `RTNETLINK answers: Operation not possible due to RF-kill`, make sure that hardware switch is _on_. See [#Rfkill caveat](#Rfkill_caveat) for details.
+**Note:** If you get errors like `RTNETLINK answers: Operation not possible due to RF-kill`, make sure that hardware switch is *on*. See [#Rfkill caveat](#Rfkill_caveat) for details.
 
 To verify that the interface is up, inspect the output of the following command:
 
  `# ip link show wlan0` 
-
 ```
 3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state DOWN mode DORMANT group default qlen 1000
     link/ether 12:34:56:78:9a:bc brd ff:ff:ff:ff:ff:ff
@@ -318,7 +310,7 @@ See what access points are available:
 
 ```
 
-**Note:** If it displays `Interface does not support scanning`, then you probably forgot to install the firmware. In some cases this message is also displayed when not running _iw_ as root.
+**Note:** If it displays `Interface does not support scanning`, then you probably forgot to install the firmware. In some cases this message is also displayed when not running *iw* as root.
 
 **Tip:** Depending on your location, you might need to set the correct [regulatory domain](#Respecting_the_regulatory_domain) in order to see all available networks.
 
@@ -332,7 +324,7 @@ The important points to check:
     *   In the `RSN` and `WPA` blocks you may find the following information:
         *   **Group cipher:** value in TKIP, CCMP, both, others.
         *   **Pairwise ciphers:** value in TKIP, CCMP, both, others. Not necessarily the same value than Group cipher.
-        *   **Authentication suites:** value in PSK, 802.1x, others. For home router, you will usually find PSK (_i.e._ passphrase). In universities, you are more likely to find 802.1x suite which requires login and password. Then you will need to know which key management is in use (e.g. EAP), and what encapsulation it uses (e.g. PEAP). Find more details at [Wikipedia:Authentication protocol](https://en.wikipedia.org/wiki/Authentication_protocol "wikipedia:Authentication protocol") and the sub-articles.
+        *   **Authentication suites:** value in PSK, 802.1x, others. For home router, you will usually find PSK (*i.e.* passphrase). In universities, you are more likely to find 802.1x suite which requires login and password. Then you will need to know which key management is in use (e.g. EAP), and what encapsulation it uses (e.g. PEAP). Find more details at [Wikipedia:Authentication protocol](https://en.wikipedia.org/wiki/Authentication_protocol "wikipedia:Authentication protocol") and the sub-articles.
     *   If you do not see neither `RSN` nor `WPA` blocks but there is `Privacy`, then WEP is used.
 
 #### Operating mode
@@ -344,17 +336,17 @@ You might need to set the proper operating mode of the wireless card. More speci
 
 ```
 
-**Note:** Changing the operating mode on some cards might require the wireless interface to be _down_ (`ip link set wlan0 down`).
+**Note:** Changing the operating mode on some cards might require the wireless interface to be *down* (`ip link set wlan0 down`).
 
 #### Association
 
 Depending on the encryption, you need to associate your wireless device with the access point to use and pass the encryption key:
 
-*   **No encryption** `# iw dev wlan0 connect "_your_essid_"` 
+*   **No encryption** `# iw dev wlan0 connect "*your_essid*"` 
 *   **WEP**
-    *   using a hexadecimal or ASCII key (the format is distinguished automatically, because a WEP key has a fixed length): `# iw dev wlan0 connect "_your_essid_" key 0:_your_key_` 
-    *   using a hexadecimal or ASCII key, specifying the third set up key as default (keys are counted from zero, four are possible): `# iw dev wlan0 connect "_your_essid_" key d:2:_your_key_` 
-*   **WPA/WPA2** According to what you got from [#Access point discovery](#Access_point_discovery), issue this command: `# wpa_supplicant -D nl80211,wext -i wlan0 -c <(wpa_passphrase "_your_SSID_" "_your_key_")` 
+    *   using a hexadecimal or ASCII key (the format is distinguished automatically, because a WEP key has a fixed length): `# iw dev wlan0 connect "*your_essid*" key 0:*your_key*` 
+    *   using a hexadecimal or ASCII key, specifying the third set up key as default (keys are counted from zero, four are possible): `# iw dev wlan0 connect "*your_essid*" key d:2:*your_key*` 
+*   **WPA/WPA2** According to what you got from [#Access point discovery](#Access_point_discovery), issue this command: `# wpa_supplicant -D nl80211,wext -i wlan0 -c <(wpa_passphrase "*your_SSID*" "*your_key*")` 
 
 If this does not work, you may need to adjust the options. If connected successfully, continue in a new terminal (or quit `wpa_supplicant` with `Ctrl+c` and add the `-B` switch to the above command to run it in the background). [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") contains more information on options and on how to create a permanent configuration file for the wireless access point.
 
@@ -441,31 +433,31 @@ GUI | Console tools |
 
 #### Connman
 
-_ConnMan_ is an alternative to _NetworkManager_ and _Wicd_, designed to be light on resources making it ideal for netbooks, and other mobile devices. It is modular in design takes advandage of the dbus API and provides proper abstraction on top of _wpa_supplicant_.
+*ConnMan* is an alternative to *NetworkManager* and *Wicd*, designed to be light on resources making it ideal for netbooks, and other mobile devices. It is modular in design takes advandage of the dbus API and provides proper abstraction on top of *wpa_supplicant*.
 
 See [Connman](/index.php/Connman "Connman").
 
 #### netctl
 
-_netctl_ is a replacement for _netcfg_ designed to work with _systemd_. It uses a profile based setup and is capable of detection and connection to a wide range of network types. This is no harder than using graphical tools.
+*netctl* is a replacement for *netcfg* designed to work with *systemd*. It uses a profile based setup and is capable of detection and connection to a wide range of network types. This is no harder than using graphical tools.
 
 See [netctl](/index.php/Netctl "Netctl").
 
 #### Wicd
 
-_Wicd_ is a network manager that can handle both wireless and wired connections. It is written in Python and Gtk with fewer dependencies than _NetworkManager_.
+*Wicd* is a network manager that can handle both wireless and wired connections. It is written in Python and Gtk with fewer dependencies than *NetworkManager*.
 
 See [Wicd](/index.php/Wicd "Wicd").
 
 #### NetworkManager
 
-_NetworkManager_ is an advanced network management tool that is enabled by default in most popular GNU/Linux distributions. In addition to managing wired connections, _NetworkManager_ provides worry-free wireless roaming with an easy-to-use GUI program for selecting your desired network.
+*NetworkManager* is an advanced network management tool that is enabled by default in most popular GNU/Linux distributions. In addition to managing wired connections, *NetworkManager* provides worry-free wireless roaming with an easy-to-use GUI program for selecting your desired network.
 
 See [NetworkManager](/index.php/NetworkManager "NetworkManager").
 
 #### WiFi Radar
 
-_WiFi Radar_ is a Python/PyGTK2 utility for managing wireless (and **only** wireless) profiles. It enables you to scan for available networks and create profiles for your preferred networks.
+*WiFi Radar* is a Python/PyGTK2 utility for managing wireless (and **only** wireless) profiles. It enables you to scan for available networks and create profiles for your preferred networks.
 
 See [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar").
 
@@ -479,10 +471,9 @@ If you have problematic hardware and need internet access to, for example, downl
 
 ### Rfkill caveat
 
-Many laptops have a hardware button (or switch) to turn off wireless card, however, the card can also be blocked by kernel. This can be handled by [rfkill](https://www.archlinux.org/packages/?name=rfkill). Use _rfkill_ to show the current status:
+Many laptops have a hardware button (or switch) to turn off wireless card, however, the card can also be blocked by kernel. This can be handled by [rfkill](https://www.archlinux.org/packages/?name=rfkill). Use *rfkill* to show the current status:
 
  `# rfkill list` 
-
 ```
 0: phy0: Wireless LAN
 	Soft blocked: yes
@@ -490,14 +481,14 @@ Many laptops have a hardware button (or switch) to turn off wireless card, howev
 
 ```
 
-If the card is _hard-blocked_, use the hardware button (switch) to unblock it. If the card is not _hard-blocked_ but _soft-blocked_, use the following command:
+If the card is *hard-blocked*, use the hardware button (switch) to unblock it. If the card is not *hard-blocked* but *soft-blocked*, use the following command:
 
 ```
 # rfkill unblock wifi
 
 ```
 
-**Note:** It is possible that the card will go from _hard-blocked_ and _soft-unblocked_ state into _hard-unblocked_ and _soft-blocked_ state by pressing the hardware button (i.e. the _soft-blocked_ bit is just switched no matter what). This can be adjusted by tuning some options of the `rfkill` [kernel module](/index.php/Kernel_module "Kernel module").
+**Note:** It is possible that the card will go from *hard-blocked* and *soft-unblocked* state into *hard-unblocked* and *soft-blocked* state by pressing the hardware button (i.e. the *soft-blocked* bit is just switched no matter what). This can be adjusted by tuning some options of the `rfkill` [kernel module](/index.php/Kernel_module "Kernel module").
 
 More info: [http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill)
 
@@ -593,11 +584,11 @@ See [Power saving#Network interfaces](/index.php/Power_saving#Network_interfaces
 
 ### Failed to get IP address
 
-*   If getting an IP address repeatedly fails using the default [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) client, try installing and using [dhclient](https://www.archlinux.org/packages/?name=dhclient) instead. Do not forget to select _dhclient_ as the primary DHCP client in your [connection manager](#Automatic_setup)!
+*   If getting an IP address repeatedly fails using the default [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) client, try installing and using [dhclient](https://www.archlinux.org/packages/?name=dhclient) instead. Do not forget to select *dhclient* as the primary DHCP client in your [connection manager](#Automatic_setup)!
 
 *   If you can get an IP address for a wired interface and not for a wireless interface, try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
 
-*   If you get a timeout error due to a _waiting for carrier_ problem, then you might have to set the channel mode to `auto` for the specific device:
+*   If you get a timeout error due to a *waiting for carrier* problem, then you might have to set the channel mode to `auto` for the specific device:
 
 ```
 # iwconfig wlan0 channel auto
@@ -695,7 +686,7 @@ If that works, enable WPA/WPA2 again but choose fixed and/or limited router sett
 
 ## Troubleshooting drivers and firmware
 
-This section covers methods and procedures for installing kernel modules and _firmware_ for specific chipsets, that differ from generic method.
+This section covers methods and procedures for installing kernel modules and *firmware* for specific chipsets, that differ from generic method.
 
 See [Kernel modules](/index.php/Kernel_modules "Kernel modules") for general informations on operations with modules.
 
@@ -837,7 +828,6 @@ Although [Linux Wireless](http://wireless.kernel.org/en/users/Documentation/dyna
 On some devices (e.g. AR9285), enabling the power saving might result in the following error:
 
  `# iw dev wlan0 set power_save on` 
-
 ```
 command failed: Operation not supported (-95)
 
@@ -886,7 +876,6 @@ If you have problems connecting to networks in general or your link quality is v
 If you have problems connecting to networks in general or your link quality is very poor, try to disable 802.11n, and perhaps also enable software encryption:
 
  `/etc/modprobe.d/iwlwifi.conf` 
-
 ```
 options iwlwifi 11n_disable=1
 options iwlwifi swcrypto=1
@@ -900,7 +889,7 @@ Do not be confused with the option name, when the value is set to `8` it does no
 
 In case this does not work for you, you may try disabling power saving for your wireless adapter. For a permanent solution, add a new udev rule:
 
- `/etc/udev/rules.d/80-iwlwifi.rules`  `ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="_your_mac_address_", RUN+="/usr/bin/iw dev %k set power_save off"` 
+ `/etc/udev/rules.d/80-iwlwifi.rules`  `ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="*your_mac_address*", RUN+="/usr/bin/iw dev %k set power_save off"` 
 
 [Some](http://ubuntuforums.org/showthread.php?t=2183486&p=12845473#post12845473) have never gotten this to work. [Others](http://ubuntuforums.org/showthread.php?t=2205733&p=12935783#post12935783) found salvation by disabling N in their router settings after trying everything. This is known to have be the only solution on more than one occasion. The second link there mentions a 5ghz option that might be worth exploring.
 
@@ -913,7 +902,6 @@ In case this does not work for you, you may try disabling power saving for your 
 The default settings on the module are to have the LED blink on activity. Some people find this extremely annoying. To have the LED on solid when Wi-Fi is active, you can use the [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd"):
 
  `/etc/tmpfiles.d/phy0-led.conf` 
-
 ```
 w /sys/class/leds/phy0-led/trigger - - - - phy0radio
 
@@ -1014,13 +1002,13 @@ The important part is making sure that ndiswrapper exists on this line, so just 
 
 ```
 
-and _wlan0_ should now exist. If you have problems, some help is available at: [ndiswrapper howto](http://sourceforge.net/p/ndiswrapper/ndiswrapper/HowTos/) and [ndiswrapper FAQ](http://sourceforge.net/p/ndiswrapper/ndiswrapper/FAQ/).
+and *wlan0* should now exist. If you have problems, some help is available at: [ndiswrapper howto](http://sourceforge.net/p/ndiswrapper/ndiswrapper/HowTos/) and [ndiswrapper FAQ](http://sourceforge.net/p/ndiswrapper/ndiswrapper/FAQ/).
 
 ### compat-drivers-patched
 
 Patched compat wireless drivers correct the "fixed-channel -1" issue, whilst providing better injection. Install the [compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/) package.
 
-[compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/) does not conflict with any other package and the modules built reside in `/usr/lib/modules/_your_kernel_version_/updates`.
+[compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/) does not conflict with any other package and the modules built reside in `/usr/lib/modules/*your_kernel_version*/updates`.
 
 These patched drivers come from the [Linux Wireless project](http://wireless.kernel.org/) and support many of the above mentioned chips such as:
 

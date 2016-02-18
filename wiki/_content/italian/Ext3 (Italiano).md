@@ -104,11 +104,11 @@ Ora per cambiare lo spazio riservato all '1% del disco, che è accettabile per i
 Dopo aver creato e formattato una partizione, è possibile assegnare un'etichetta utilizzando il comando e2label. Questo permette di aggiungere la partizione a /etc/fstab usando un'etichetta invece di utilizzare il percorso del dispositivo (utile per un drive USB). Per aggiungere un'etichetta a una partizione, digitare il seguente comando come root:
 
 ```
-   e2label /dev/sdXY _new-label_
+   e2label /dev/sdXY *new-label*
 
 ```
 
-Se l'argomento opzionale _new-label_ non è presente, e2label visualizzerà semplicemente l'etichetta del filesystem corrente. Se invece _new-label_ è presente, e2label imposterà l'etichetta del filesystem a _new-label_q. Le etichette per filesystem ext2 e ext3 possono essere al massimo 16 caratteri, in caso la nuova etichetta sia più lunga, e2label la troncherà e stamperà un messaggio di avviso.
+Se l'argomento opzionale *new-label* non è presente, e2label visualizzerà semplicemente l'etichetta del filesystem corrente. Se invece *new-label* è presente, e2label imposterà l'etichetta del filesystem a *new-label*q. Le etichette per filesystem ext2 e ext3 possono essere al massimo 16 caratteri, in caso la nuova etichetta sia più lunga, e2label la troncherà e stamperà un messaggio di avviso.
 
 ## Esperienze utenti
 

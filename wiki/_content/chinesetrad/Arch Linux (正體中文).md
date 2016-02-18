@@ -30,9 +30,9 @@ Arch 內含 GNU/Linux 下很多嶄新的功能可供使用，像是 [systemd](/i
 
 ## 軟體打包
 
-使用 Arch 不得不知 [Pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)")，這是一套容易使用的[軟體包管理員](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager")，升級整個系統只需一項指令。Pacman 是以 _C_ 語言從頭開始撰寫，不僅輕量、簡潔，執行也十分快速。Arch 也提供了與 ports 類似的 [Arch 組建系統 (ABS)](/index.php/Arch_Build_System_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Build System (正體中文)")，從下載程式原始碼、編譯到安裝都十分簡單，同步也只需一項指令。您甚至可以用一條指令重建整台系統。
+使用 Arch 不得不知 [Pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)")，這是一套容易使用的[軟體包管理員](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager")，升級整個系統只需一項指令。Pacman 是以 *C* 語言從頭開始撰寫，不僅輕量、簡潔，執行也十分快速。Arch 也提供了與 ports 類似的 [Arch 組建系統 (ABS)](/index.php/Arch_Build_System_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Build System (正體中文)")，從下載程式原始碼、編譯到安裝都十分簡單，同步也只需一項指令。您甚至可以用一條指令重建整台系統。
 
-Arch 的[官方倉庫](/index.php/Official_Repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official Repositories (正體中文)")提供了上千種高品質的軟體包，並同時支援 i686 與 x86-64 架構，相信能夠滿足您的軟體需求。另外，Arch 為了鼓勵社群的成長與貢獻，也提供 [Arch 使用者倉庫](/index.php/Arch_User_Repository_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch User Repository (正體中文)")，裡頭包含了數千種由使用者自行維護的 PKGBUILD 腳本，只要使用 _makepkg_ 程式，從下載源碼、編譯到打包軟體一氣呵成。使用者也可以輕鬆組建、維護他們自己的客製倉庫。
+Arch 的[官方倉庫](/index.php/Official_Repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official Repositories (正體中文)")提供了上千種高品質的軟體包，並同時支援 i686 與 x86-64 架構，相信能夠滿足您的軟體需求。另外，Arch 為了鼓勵社群的成長與貢獻，也提供 [Arch 使用者倉庫](/index.php/Arch_User_Repository_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch User Repository (正體中文)")，裡頭包含了數千種由使用者自行維護的 PKGBUILD 腳本，只要使用 *makepkg* 程式，從下載源碼、編譯到打包軟體一氣呵成。使用者也可以輕鬆組建、維護他們自己的客製倉庫。
 
 ## 來源完整性
 
@@ -40,7 +40,7 @@ Arch 提供最乾淨的軟體，不加任何修補程式；所有軟體包都純
 
 ## 社群
 
-Arch 社群非常可靠活躍，也十分歡迎各位的加入。我們鼓勵每位 _Archer_ 都能夠參與其中、付出貢獻：幫忙開發核心軟體、維護軟體包、回報/修復[臭蟲](https://bugs.archlinux.org/)、撰寫/潤飾 [ArchWiki 文件](/index.php/Main_page "Main page")，或是到[論壇](https://bbs.archlinux.org/)、[郵遞清單](https://mailman.archlinux.org/mailman/listinfo/)、[IRC 頻道](/index.php/IRC_channels "IRC channels")幫忙解決問題、交換意見、分享知識，甚至自行研發新程式！Arch Linux 已經成為全球許多使用者的首選作業系統，有數個[國際社群](/index.php/International_communities "International communities")提供幫助並以多國語言撰寫文件。
+Arch 社群非常可靠活躍，也十分歡迎各位的加入。我們鼓勵每位 *Archer* 都能夠參與其中、付出貢獻：幫忙開發核心軟體、維護軟體包、回報/修復[臭蟲](https://bugs.archlinux.org/)、撰寫/潤飾 [ArchWiki 文件](/index.php/Main_page "Main page")，或是到[論壇](https://bbs.archlinux.org/)、[郵遞清單](https://mailman.archlinux.org/mailman/listinfo/)、[IRC 頻道](/index.php/IRC_channels "IRC channels")幫忙解決問題、交換意見、分享知識，甚至自行研發新程式！Arch Linux 已經成為全球許多使用者的首選作業系統，有數個[國際社群](/index.php/International_communities "International communities")提供幫助並以多國語言撰寫文件。
 
 想要成為社群中活躍的一分子嗎？請參閱[加入我們](/index.php/Getting_involved "Getting involved")。
 

@@ -1,4 +1,4 @@
-This document will guide you through the process of installing [Arch Linux](/index.php/Arch_Linux "Arch Linux") on the 2013 Sony Vaio Pro [Haswell](https://en.wikipedia.org/wiki/Haswell_(microarchitecture) "wikipedia:Haswell (microarchitecture)") based [Ultrabook](https://en.wikipedia.org/wiki/Ultrabook "wikipedia:Ultrabook"). 1.1kg for the 13" model
+This document will guide you through the process of installing [Arch Linux](/index.php/Arch_Linux "Arch Linux") on the 2013 Sony Vaio Pro [Haswell](https://en.wikipedia.org/wiki/Haswell_(microarchitecture) based [Ultrabook](https://en.wikipedia.org/wiki/Ultrabook "wikipedia:Ultrabook"). 1.1kg for the 13" model
 
 ## Contents
 
@@ -27,7 +27,7 @@ This document will guide you through the process of installing [Arch Linux](/ind
 
 ### BIOS Configuration
 
-Get into the BIOS by pushing the assist button when the system is shut off and then hitting _Start BIOS Setup_. **Do not** try to boot from your usb key using _recovery mode_, instead change the boot order in the BIOS. Make the following changes:
+Get into the BIOS by pushing the assist button when the system is shut off and then hitting *Start BIOS Setup*. **Do not** try to boot from your usb key using *recovery mode*, instead change the boot order in the BIOS. Make the following changes:
 
 ```
 Intel(R) AT Support System	[Disabled]
@@ -107,7 +107,6 @@ Select 1st Boot Priority	[Internal Drive]
 As the [Installation guide](/index.php/Installation_guide "Installation guide") suggests, install [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) and follow [this](/index.php/Advanced_Linux_Sound_Architecture#Unmuting_the_channels "Advanced Linux Sound Architecture") guide to get started. Works out of the box, although main sound card may have index 1, making it non-default (index 0 is taken by Intel HDMI). To fix this, edit **/usr/share/alsa/alsa.conf** (near line 68):
 
  `/usr/share/alsa/alsa.conf` 
-
 ```
 defaults.ctl.card 1
 defaults.pcm.card 1
@@ -166,16 +165,13 @@ Works great with the [xf86-input-synaptics](https://www.archlinux.org/packages/?
 The hotkey that toggles the TouchPad can be configured using [acpid](/index.php/Acpid "Acpid"). Create the following two files to do so:
 
  `/etc/acpi/events/toggle-touchpad` 
-
 ```
 event=button.fnf1 FNF1
 action=/etc/acpi/actions/toggle-touchpad.sh "%e"
 ```
 
 **Note:** This file must be marked as executable.
-
  `/etc/acpi/actions/toggle-touchpad.sh` 
-
 ```
 #! /bin/sh
 PATH="/bin:/usr/bin:/sbin:/usr/sbin"

@@ -15,7 +15,7 @@ Revisa [LAMP](/index.php/LAMP "LAMP") Para instalar y configurar Apache, MySQL, 
 
 ## Instalación
 
-Para instalar [phpMyAdmin](http://www.phpmyadmin.net/), instala los paquetes _phpmyadmin_ y _php-mcrypt_ con
+Para instalar [phpMyAdmin](http://www.phpmyadmin.net/), instala los paquetes *phpmyadmin* y *php-mcrypt* con
 
 ```
 pacman -S phpmyadmin php-mcrypt
@@ -49,11 +49,12 @@ Include conf/extra/httpd-phpmyadmin.conf
 Puedes ingresar esto en la terminal y obtendrás el mismo efecto:
 
 ```
-echo -e "\nInclude conf/extra/httpd-phpmyadmin.conf" >> /etc/httpd/conf/httpd.conf
+echo -e "
+Include conf/extra/httpd-phpmyadmin.conf" >> /etc/httpd/conf/httpd.conf
 
 ```
 
-En el archivo `/usr/share/webapps/phpMyAdmin/.htaccess`, comenta _deny from all_. La línea se debería ver como esto:
+En el archivo `/usr/share/webapps/phpMyAdmin/.htaccess`, comenta *deny from all*. La línea se debería ver como esto:
 
 ```
 #deny from all
@@ -75,7 +76,7 @@ Tu `/etc/httpd/conf/extra/httpd-phpmyadmin.conf` debería tener la siguiente inf
 
 ```
 
-Abre tu `/etc/php/php.ini` y ve a la línea que contiene _open_basedir_ y añade la ruta(s) a tu instalación de phpMyAdmin algo como lo siguiente:
+Abre tu `/etc/php/php.ini` y ve a la línea que contiene *open_basedir* y añade la ruta(s) a tu instalación de phpMyAdmin algo como lo siguiente:
 
 ```
 :/usr/share/webapps/:/etc/webapps
@@ -117,11 +118,11 @@ ERROR: The configuration file now needs a secret passphrase (blowfish_secret)
 Tú necesitas añadir una contraseña de blowfish a el archivo de configuración de phpMyAdmin. Edita `/etc/webapps/phpmyadmin/config.inc.php` e inserta una contraseña aleatoria para blowfissh en la línea
 
 ```
-$cfg['blowfish_secret'] = _; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */_
+$cfg['blowfish_secret'] = *; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */*
 
 ```
 
-e [aquí](http://www.question-defense.com/tools/phpmyadmin-blowfish-secret-generator) para obetener un blowfish_secret muy bien generado y pégalo entre las comillas _. Ahora se debería ver algo como esto:_
+e [aquí](http://www.question-defense.com/tools/phpmyadmin-blowfish-secret-generator) para obetener un blowfish_secret muy bien generado y pégalo entre las comillas *. Ahora se debería ver algo como esto:*
 
 ```
 $cfg['blowfish_secret'] = 'qtdRoGmbc9{8IZr323xYcSN]0s)r$9b_JUnb{~Xz'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */

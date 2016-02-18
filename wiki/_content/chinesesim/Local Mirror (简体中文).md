@@ -64,7 +64,7 @@ pool/*/*-x86_64.pkg.tar.gz
         *   在 ${repo}/os/${arch} 中应该有确切的软件包，而不是符号链接
 *   排除那些你不需要的顶极目录
 
-例如： `rsync _$rsync_arguments_ --exclude="/path/to/exclude.txt" _rsync://example.com/_ /path/to/destination`
+例如： `rsync *$rsync_arguments* --exclude="/path/to/exclude.txt" *rsync://example.com/* /path/to/destination`
 
 #### 示例脚本
 
@@ -159,4 +159,4 @@ mirror -cve -x '.*i686.*' packages &
 ### 客户端配置
 
 *   在 /etc/pacman.d/mirrorlist 添加合适的 Server = variable
-*   对于物理媒介 (例如闪存)，可以输入如下内容： Server = file:///mnt/media/repo/$repo/os/$arch (_/mnt/media/repo 是本地镜像位于的目录_)
+*   对于物理媒介 (例如闪存)，可以输入如下内容： Server = file:///mnt/media/repo/$repo/os/$arch (*/mnt/media/repo 是本地镜像位于的目录*)

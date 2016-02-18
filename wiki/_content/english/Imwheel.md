@@ -1,4 +1,4 @@
-_imwheel_ is a tool for tweaking mouse wheel behavior, on a per-program basis. It can map mousewheel input to keyboard input, increase mousewheel speed, and has support for modifier keys.
+*imwheel* is a tool for tweaking mouse wheel behavior, on a per-program basis. It can map mousewheel input to keyboard input, increase mousewheel speed, and has support for modifier keys.
 
 ## Contents
 
@@ -20,14 +20,14 @@ imwheel matches window class strings with regular expressions for deciding which
 
 ### Getting the window class string
 
-Run _xprop_ to get the class string. The program will exit when a window is clicked.
+Run *xprop* to get the class string. The program will exit when a window is clicked.
 
 ```
 xprop WM_CLASS | grep -o '"[^"]*"' | head -n 1
 
 ```
 
-So for the document viewer _zathura_, this will return the following:
+So for the document viewer *zathura*, this will return the following:
 
 ```
 "zathura"
@@ -36,7 +36,7 @@ So for the document viewer _zathura_, this will return the following:
 
 ### Edit your configuration file
 
-Create or edit `~/.imwheelrc`. In this configuration file lines can be added for each program you want to tweak mousewheel behavior for. The following example will increase the mousewheel speed for the document viewer _zathura_:
+Create or edit `~/.imwheelrc`. In this configuration file lines can be added for each program you want to tweak mousewheel behavior for. The following example will increase the mousewheel speed for the document viewer *zathura*:
 
 ```
 # Speed up scrolling for the document viewer

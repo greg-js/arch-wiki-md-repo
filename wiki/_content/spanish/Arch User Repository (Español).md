@@ -51,7 +51,7 @@ Los siguientes instrumentos se listan con fines ilustrativos solamente. Desde en
 
 Al principio, existía `ftp://ftp.archlinux.org/incoming`, y se contribuía únicamente subiendo el PKGBUILD, los archivos adicionales necesarios y el mismo paquete compilado al servidor. El paquete y los archivos asociados se mantenían allí hasta que un [Package Maintainer](/index.php/Package_Maintainer "Package Maintainer") veía el programa y lo adoptaba.
 
-Posteriormente, surgieron los Trusted User Repositories (_«repositorios de usuarios de confianza»_). A algunas personas de la comunidad se les permitía alojar sus propios repositorios para que cualquiera los utilizase. AUR se amplió sobre esta base, con el objetivo de hacerlo más flexible y usable. De hecho, a los responsables de AUR todavía se les conoce como TUs (Trusted Users -_«Usuarios de Confianza»_-).
+Posteriormente, surgieron los Trusted User Repositories (*«repositorios de usuarios de confianza»*). A algunas personas de la comunidad se les permitía alojar sus propios repositorios para que cualquiera los utilizase. AUR se amplió sobre esta base, con el objetivo de hacerlo más flexible y usable. De hecho, a los responsables de AUR todavía se les conoce como TUs (Trusted Users -*«Usuarios de Confianza»*-).
 
 ## Buscar
 
@@ -73,7 +73,7 @@ La instalación de paquetes desde AUR es un proceso relativamente simple. En ese
 
 Los [AUR helpers](/index.php/AUR_helpers "AUR helpers") añaden un acceso transparente para AUR. Los mismos varían en sus características, pero pueden facilitar la búsqueda, descarga, compilación e instalación de los PKGBUILD que se encuentran en AUR. Todos estos scripts se pueden encontrar en AUR.
 
-**Nota:** Nunca habrá un mecanismo _oficial_ para la instalación del material precompilado de AUR. Por tanto, **todos los usuarios deben estar familiarizados con el proceso de compilación.**
+**Nota:** Nunca habrá un mecanismo *oficial* para la instalación del material precompilado de AUR. Por tanto, **todos los usuarios deben estar familiarizados con el proceso de compilación.**
 
 Lo que sigue es un ejemplo detallado de la instalación de un paquete llamado «foo».
 
@@ -108,7 +108,7 @@ Para obtener más información sobre ABS, léase el artículo sobre [Arch Build 
 
 Localice el paquete en AUR. Esto se realiza utilizando la función de búsqueda (esto es, el recuadro de texto de la parte superior de la [página principal de AUR](https://aur.archlinux.org/)). Al pulsar sobre el nombre de la aplicación en la lista de búsqueda, nos llevará a una página de información sobre el paquete. Lea la descripción para confirmar que este es el paquete deseado, observe si el paquete ha sido actualizado y lea los comentarios.
 
-Descargue los archivos necesarios de compilación. Desde la página de información del paquete, descargue los archivos de compilación pulsando el «tarball» que aparece en el lado izquierdo, cerca del final de los detalles del paquete. Este archivo debe ser guardado en el directorio de compilación o una copia del archivo en dicho directorio después de la descarga. En este ejemplo, el archivo se llama «foo.tar.gz» (el formato estándar es _nombredelpaquete_.tar.gz, si ha sido debidamente enviado).
+Descargue los archivos necesarios de compilación. Desde la página de información del paquete, descargue los archivos de compilación pulsando el «tarball» que aparece en el lado izquierdo, cerca del final de los detalles del paquete. Este archivo debe ser guardado en el directorio de compilación o una copia del archivo en dicho directorio después de la descarga. En este ejemplo, el archivo se llama «foo.tar.gz» (el formato estándar es *nombredelpaquete*.tar.gz, si ha sido debidamente enviado).
 
 Otra posibilidad consistiría en descargar el archivo tar desde el terminal, cambiando los directorios al primer archivo de compilación:
 
@@ -130,7 +130,7 @@ $ tar -xvzf foo.tar.gz
 
 Esto debería crear una nueva carpeta llamada «foo» en el directorio de compilación.
 
-**Advertencia:** **Revise cuidadosamente todos los archivos.** Ejecute la orden `cd` para desplazarse a la carpeta (foo) recién creada y revise con cuidado el`PKGBUILD` y cualquier archivo `.install` para advertir órdenes maliciosas. Los `PKGBUILD` son scripts de bash que contienen funciones para ser ejecutadas por `makepkg`: estas funciones pueden contener _cualquier_ orden válida o con la sintaxis que interpreta Bash, por lo que es totalmente posible que un `PKGBUILD` pueda contener órdenes peligrosas introducidas por malicia o ignorancia del autor. Use `makepkg` en un entorno fakeroot (y no lo ejecute nunca como root), lo cual le da un cierto nivel de protección, pero nunca se debe confiar del todo con ello. En caso de duda, no compile el paquete y consulte en los foros o listas de correo.
+**Advertencia:** **Revise cuidadosamente todos los archivos.** Ejecute la orden `cd` para desplazarse a la carpeta (foo) recién creada y revise con cuidado el`PKGBUILD` y cualquier archivo `.install` para advertir órdenes maliciosas. Los `PKGBUILD` son scripts de bash que contienen funciones para ser ejecutadas por `makepkg`: estas funciones pueden contener *cualquier* orden válida o con la sintaxis que interpreta Bash, por lo que es totalmente posible que un `PKGBUILD` pueda contener órdenes peligrosas introducidas por malicia o ignorancia del autor. Use `makepkg` en un entorno fakeroot (y no lo ejecute nunca como root), lo cual le da un cierto nivel de protección, pero nunca se debe confiar del todo con ello. En caso de duda, no compile el paquete y consulte en los foros o listas de correo.
 
 ```
 $ cd foo
@@ -153,7 +153,7 @@ La opción `-s` utilizará [sudo](/index.php/Sudo "Sudo") para instalar eventual
 Instale el paquete con pacman. Un tarball bien creado debería mostrar un nombre siguiendo este esquema:
 
 ```
-<_application name_>-<_application version number_>-<_package revision number_>-<_architecture_>.pkg.tar.xz
+<*application name*>-<*application version number*>-<*package revision number*>-<*architecture*>.pkg.tar.xz
 
 ```
 
@@ -164,7 +164,7 @@ Este paquete puede ser instalado usando la orden «upgrade» de pacman:
 
 ```
 
-Estos paquetes instalados manualmente se denominan paquetes foráneos (_«foreign packages»_) —es decir, aquellos paquetes que no se han originado desde cualquier repositorio conocido por pacman—. Para listar todos los paquetes foráneos, escriba:
+Estos paquetes instalados manualmente se denominan paquetes foráneos (*«foreign packages»*) —es decir, aquellos paquetes que no se han originado desde cualquier repositorio conocido por pacman—. Para listar todos los paquetes foráneos, escriba:
 
 ```
 $ pacman -Qm 
@@ -177,7 +177,7 @@ $ pacman -Qm
 
 La [Interfaz Web de AUR](https://aur.archlinux.org) facilita hacer comentarios que permite a los usuarios proporcionar sugerencias y feedback para contribuir a mejorar el PKGBUILD. Evite pegar parches o PKGBUILD en la sección de comentarios: se vuelven rápidamente obsoletos y acaban ocupando innecesariamente mucho espacio. En su lugar, envie los archivos al mantenedor, o incluso utilice un [pastebin](/index.php/Pastebin_Clients "Pastebin Clients").
 
-Una de las actividades más fáciles para _todos_ los usuarios de Arch es navegar por AUR y **votar** por sus paquetes favoritos utilizando la interfaz web. Todos los paquetes son elegibles para ser adoptados por un TU para su inclusión en [community], y el recuento de votos es uno de los factores considerados en este proceso, ¡por lo que votar es un interés de todos!
+Una de las actividades más fáciles para *todos* los usuarios de Arch es navegar por AUR y **votar** por sus paquetes favoritos utilizando la interfaz web. Todos los paquetes son elegibles para ser adoptados por un TU para su inclusión en [community], y el recuento de votos es uno de los factores considerados en este proceso, ¡por lo que votar es un interés de todos!
 
 ## Compartir y mantener los paquetes
 
@@ -196,10 +196,9 @@ $ makepkg --source
 
 ```
 
-Tenga en cuenta que se trata de un archivo .tar comprimido con gzip, de modo que, suponiendo que está subiendo un paquete llamado _libfoo_, la creación del archivo comprimido debería dar como resultado algo similar a esto:
+Tenga en cuenta que se trata de un archivo .tar comprimido con gzip, de modo que, suponiendo que está subiendo un paquete llamado *libfoo*, la creación del archivo comprimido debería dar como resultado algo similar a esto:
 
  `$ tar tf libfoo-0.1-1.src.tar.gz` 
-
 ```
 libfoo/
 libfoo/PKGBUILD
@@ -244,7 +243,6 @@ Las solicitudes de abandono pueden ser rechazadas, en cuyo caso es probable que 
 El repositorio [community], mantenido por los [Trusted Users](/index.php/Trusted_Users "Trusted Users"), contiene los paquetes más populares de AUR. Está habilitado de forma predeterminada en `/etc/pacman.conf`. Si [community] se ha deshabilitado o eliminado, se puede activar descomentándolo, o añadiendo estas dos líneas, respectivamente:
 
  `/etc/pacman.conf` 
-
 ```
 ...
 [community]
@@ -329,4 +327,4 @@ Véase [#Installing packages](#Installing_packages)
 
 ### ¿Puedo subir archivos a AUR sin usar la interfaz web?
 
-Puede usar [burp](https://www.archlinux.org/packages/?name=burp), _aurploader_ ([python3-aur](https://aur.archlinux.org/packages/python3-aur/)) o [aurup](https://aur.archlinux.org/packages/aurup/) —se trata de programas de línea de órdenes—.
+Puede usar [burp](https://www.archlinux.org/packages/?name=burp), *aurploader* ([python3-aur](https://aur.archlinux.org/packages/python3-aur/)) o [aurup](https://aur.archlinux.org/packages/aurup/) —se trata de programas de línea de órdenes—.

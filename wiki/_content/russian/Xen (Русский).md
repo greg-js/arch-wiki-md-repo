@@ -253,7 +253,7 @@ The "Virtual Machine Manager" application is a desktop user interface for managi
 
 ## Полезные Пакеты
 
-Поскольку в AUR много разных пакетов, и Вы можете потратить много времени, понимая, какие из них нужны, вот маленький набор самых (интересных) пакетов _xen_:
+Поскольку в AUR много разных пакетов, и Вы можете потратить много времени, понимая, какие из них нужны, вот маленький набор самых (интересных) пакетов *xen*:
 
 *   Мультиплатформенный клон интерфейса XenCenter с открытым кодом: [openxencenter](https://aur.archlinux.org/packages/openxencenter/)
 *   Мультиплатформенный клон интерфейса XenCenter с открытым кодом (версия [svn](/index.php/Svn "Svn")): [openxencenter-svn](https://aur.archlinux.org/packages.php?ID=36074)

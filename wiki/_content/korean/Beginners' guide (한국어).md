@@ -2,7 +2,7 @@
 
 이 문서는 [아치 설치 스크립트](https://github.com/falconindy/arch-install-scripts)를 사용하여 [Arch Linux](/index.php/Arch_Linux "Arch Linux")를 설치하는 과정을 안내합니다. 설치하기에 앞서 [FAQ](/index.php/FAQ "FAQ")를 읽어 보세요.
 
-아치리눅스 커뮤니티가 관리하는 [Arch wiki](/index.php/Main_page "Main page")는 아주 좋은 자료로 문제가 생기면 가장 먼저 찾아봐야 합니다. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") 채널([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux), [irc://irc.freenode.net/#archlinux-ko](irc://irc.freenode.net/#archlinux-ko) )과 [포럼](https://bbs.archlinux.org/) 또한 문제를 해결할 때 이용할 수 있습니다. 특정 명령어에 대한 도움말을 원하신다면 `man` 항목을 읽어보십시오. `man` 항목은 보통 `man _명령어_`로 볼 수 있습니다.
+아치리눅스 커뮤니티가 관리하는 [Arch wiki](/index.php/Main_page "Main page")는 아주 좋은 자료로 문제가 생기면 가장 먼저 찾아봐야 합니다. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") 채널([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux), [irc://irc.freenode.net/#archlinux-ko](irc://irc.freenode.net/#archlinux-ko) )과 [포럼](https://bbs.archlinux.org/) 또한 문제를 해결할 때 이용할 수 있습니다. 특정 명령어에 대한 도움말을 원하신다면 `man` 항목을 읽어보십시오. `man` 항목은 보통 `man *명령어*`로 볼 수 있습니다.
 
 ## Contents
 
@@ -69,12 +69,12 @@
 
 **도움말:** [archboot](https://downloads.archlinux.de/iso/archboot/latest) 설치 매체를 사용할 경우, 이 가이드에서 설명하는 몇 가지 단계를 [대화형으로 진행](/index.php/Archboot#Interactive_setup_features "Archboot")할 수 있습니다. [Archboot](/index.php/Archboot "Archboot") 문서에서 더 자세한 내용을 읽으실 수 있습니다.
 
-*   아치리눅스 설치 매체는 전자 서명이 되어 있으며, 설치하기 전에 서명을 확인하는 것이 좋습니다. 다운로드 페이지나 사용하신 미러에서 _.sig_ 파일을 같이 다운로드하십시오. 아치리눅스 환경에서는 루트 권한으로 `pacman-key -v _설치매체_파일_.sig` 를 실행하면 됩니다. 다른 환경에서는 루트 권한으로 gpg2를 이용하여 서명을 확인할 수 있습니다. 루트 권한으로 `gpg2 --verify _설치매체_파일_.sig`을 실행하십시오. 파일 무결성 확인을 위한 md5, sha1 체크섬 역시 제공되고 있습니다.
+*   아치리눅스 설치 매체는 전자 서명이 되어 있으며, 설치하기 전에 서명을 확인하는 것이 좋습니다. 다운로드 페이지나 사용하신 미러에서 *.sig* 파일을 같이 다운로드하십시오. 아치리눅스 환경에서는 루트 권한으로 `pacman-key -v *설치매체_파일*.sig` 를 실행하면 됩니다. 다른 환경에서는 루트 권한으로 gpg2를 이용하여 서명을 확인할 수 있습니다. 루트 권한으로 `gpg2 --verify *설치매체_파일*.sig`을 실행하십시오. 파일 무결성 확인을 위한 md5, sha1 체크섬 역시 제공되고 있습니다.
     **참고:** 서명에 사용된 RSA 키에 해당하는 공개키를 다운로드하지 않고 gpg2를 이용할 경우, 확인 절차가 실패합니다. [http://sparewotw.wordpress.com/2012/10/31/how-to-verify-signature-using-sig-file/](http://sparewotw.wordpress.com/2012/10/31/how-to-verify-signature-using-sig-file/) 에서 더 상세한 설명을 읽을 수 있습니다
 
 *   적절한 소프트웨어를 이용해서 .iso 파일을 CD나 DVD에 구우십시오. 아치리눅스 환경에서 구울 경우 [Optical disc drive#Burning](/index.php/Optical_disc_drive#Burning "Optical disc drive") 문서를 참고하십시오.
 
-**참고:** CD 미디어나 광학 드라이브의 질은 매우 편차가 큽니다. 일반적으로 오류를 최대한 줄이기 위해 느리게 기록하는 것을 추천합니다. 몇몇 사용자들은 _**2배속 또는 4배속 정도까지 느린**_ 속도를 추천합니다. 만약 CD로부터 오류가 발생한다면, 가능한 한 가장 느린 속도로 기록하시기 바랍니다.
+**참고:** CD 미디어나 광학 드라이브의 질은 매우 편차가 큽니다. 일반적으로 오류를 최대한 줄이기 위해 느리게 기록하는 것을 추천합니다. 몇몇 사용자들은 ***2배속 또는 4배속 정도까지 느린*** 속도를 추천합니다. 만약 CD로부터 오류가 발생한다면, 가능한 한 가장 느린 속도로 기록하시기 바랍니다.
 
 *   혹은 .iso이미지를 USB 드라이브에 기록하실수도 있습니다. [USB Installation Media](/index.php/USB_Installation_Media "USB Installation Media")에서 상세한 설명을 보십시오.
 
@@ -135,13 +135,13 @@ EFI Default Loader
 
 ```
 
-명령을 내리십시오. _efivar_이 UEFI 변수들을 정확하게 나열했다면, UEFI 모드로 부팅한 것입니다. 만일 _efivar_이 UEFI 변수들을 정확히 나열하지 않았다면, [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_Variables_support_to_work_properly "Unified Extensible Firmware Interface")에 나와있는 요구 사항을 만족시켰는지 확인하십시오.
+명령을 내리십시오. *efivar*이 UEFI 변수들을 정확하게 나열했다면, UEFI 모드로 부팅한 것입니다. 만일 *efivar*이 UEFI 변수들을 정확히 나열하지 않았다면, [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_Variables_support_to_work_properly "Unified Extensible Firmware Interface")에 나와있는 요구 사항을 만족시켰는지 확인하십시오.
 
 #### 부팅 문제 해결
 
 *   인텔 비디오 칩셋을 사용하며, 부팅 과정에서 화면에 아무것도 나오지 않는다면, 아마 커널 모드 세팅([KMS](/index.php/Kernel_Mode_Setting "Kernel Mode Setting"))의 문제일 것입니다. 해결을 위해서는 재부팅을 하고, 메뉴에서 부팅하기를 원하는 항목(i686이나 x86_64)을 선택하고 `Tab`을 누릅니다. 화면에 나오는 문자열의 끝에 `nomodset`을 추가하고 `Enter`를 누릅니다. `nomodset` 대신 `video=SVIDEO-1:d`를 추가하셔도 됩니다. `video=SVIDEO-1:d`는 커널 모드 세팅을 비활성화하지 않습니다. `i915.modeset=0`를 추가하는 것도 가능합니다. 관련 내용은 [Intel](/index.php/Intel "Intel")항목을 참고하십시오.
 
-*   만약 화면이 공백 상태로 가지 _않고_ 커널을 로딩하는 중에 부팅이 멈춘다면, 메뉴 항목을 선택한 상테에서 `Tab`키를 눌러 다음 내용을 추가해 준 다음 `Enter`키를 눌러주십시오.
+*   만약 화면이 공백 상태로 가지 *않고* 커널을 로딩하는 중에 부팅이 멈춘다면, 메뉴 항목을 선택한 상테에서 `Tab`키를 눌러 다음 내용을 추가해 준 다음 `Enter`키를 눌러주십시오.
 
 ```
 `acpi=off`
@@ -150,7 +150,7 @@ EFI Default Loader
 
 ## 설치하기
 
-이제 자동으로 루트 사용자로 로그인 된 쉘 프롬프트가 제공됩니다. [Zsh](/index.php/Zsh "Zsh")가 기본 쉘입니다. [Zsh](/index.php/Zsh "Zsh")는 편리한 탭 자동완성 기능을 비롯하여 [grml config](http://grml.org/zsh/)에 나와있는 다양한 기능들을 제공합니다. 텍스트 파일 편집을 위해서는 터미널 내에서 사용할 수 있는 _nano_를 추천합니다. nano에 익숙하지 않다면, [nano#nano usage](/index.php/Nano#nano_usage "Nano")를 참고하십시오. 윈도우와 듀얼부팅을 할 것이라면, [Windows and Arch Dual Boot](/index.php/Windows_and_Arch_Dual_Boot "Windows and Arch Dual Boot")항목을 참고하십시오.
+이제 자동으로 루트 사용자로 로그인 된 쉘 프롬프트가 제공됩니다. [Zsh](/index.php/Zsh "Zsh")가 기본 쉘입니다. [Zsh](/index.php/Zsh "Zsh")는 편리한 탭 자동완성 기능을 비롯하여 [grml config](http://grml.org/zsh/)에 나와있는 다양한 기능들을 제공합니다. 텍스트 파일 편집을 위해서는 터미널 내에서 사용할 수 있는 *nano*를 추천합니다. nano에 익숙하지 않다면, [nano#nano usage](/index.php/Nano#nano_usage "Nano")를 참고하십시오. 윈도우와 듀얼부팅을 할 것이라면, [Windows and Arch Dual Boot](/index.php/Windows_and_Arch_Dual_Boot "Windows and Arch Dual Boot")항목을 참고하십시오.
 
 ### 언어 변경하기
 
@@ -158,9 +158,9 @@ EFI Default Loader
 
 기본적으로, 키보드 레이아웃은 `us`로 설정되어 있습니다. [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg")가 아닌 키보드 레이아웃을 사용할 경우 다음 명령어를 실행하십시오.
 
- `# loadkeys _layout_` 
+ `# loadkeys *layout*` 
 
-_layout_ 대신 `fr`, `uk` 혹은 `be-latin1`등을 넣으시면 됩니다. [여기](/index.php/KEYMAP#Keyboard_layouts "KEYMAP")에서 사용 가능한 국가 코드 목록을 보십시오.
+*layout* 대신 `fr`, `uk` 혹은 `be-latin1`등을 넣으시면 됩니다. [여기](/index.php/KEYMAP#Keyboard_layouts "KEYMAP")에서 사용 가능한 국가 코드 목록을 보십시오.
 
 몇몇 글자가 이상하게 표시되거나 아예 나오지 않더라도 걱정하지 마십시오. 폰트에 해당 글자가 존재하지 않기 때문일 것입니다. 해당 글자는 정상적으로 입력되는것이며 나중에 그래픽 환경을 설치한 뒤에 제대로 표시될 것입니다. 콘솔에서 사용되는 폰트를 바꾸고 싶다면 `/usr/share/kbd/consolefonts/`에 들어있는 글꼴들 중에서 선택할 수 있습니다. 폰트 변경을 위해서는
 
@@ -174,7 +174,6 @@ _layout_ 대신 `fr`, `uk` 혹은 `be-latin1`등을 넣으시면 됩니다. [여
 기본 언어는 미국 영어로 설정되어 있습니다. 언어를 바꾸고 싶으면 `/etc/locale.gen`에서 en_US와 함께 사용할 언어인 한국어 ko_KR 앞의 `#`을 제거하세요. 그리고 `Ctrl+X`를 누른 후 `Y`를 누르고 `Enter`를 눌러 같은 파일이름으로 저장하세요. (ko_KR.EUC_KR 보다는 ko_KR.UTF-8을 선택하는 것이 좋습니다)
 
  `# nano /etc/locale.gen` 
-
 ```
 en_US.UTF-8 UTF-8
 ko_KR.UTF-8 UTF-8
@@ -199,7 +198,6 @@ systemd-197부터 udev는 안정적으로 예층 가능한 인터페이스 이�
 `dhcpcd` 네트워크 데몬이 부팅시에 자동적으로 시작될 것이며 유선 인터넷에 연결하려고 시도할 것입니다. 제대로 연결되었는지 확인을 위해서는 다음과 같이 `ping`를 이용해서 시험해 보십시오.
 
  `# ping -c 3 www.google.com` 
-
 ```
 PING www.l.google.com (74.125.132.105) 56(84) bytes of data.
 64 bytes from wb-in-f105.1e100.net (74.125.132.105): icmp_req=1 ttl=50 time=17.0 ms
@@ -228,7 +226,6 @@ rtt min/avg/max/mdev = 16.660/17.320/18.254/0.678 ms
 이더넷 인터페이스의 이름을 확인합니다.
 
  `# ip link` 
-
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -242,7 +239,6 @@ rtt min/avg/max/mdev = 16.660/17.320/18.254/0.678 ms
 이 경우에 이더넷 인터페이스는 enp2s0f0입니다. 잘 모르겠으면 이더넷 인터페이스는 보통 "e"로 시작하며 "lo"나 "w"로 시작할 가능성은 매우 낮습니다. 또한 iwconfig를 사용해 어떤 인터페이스가 이더넷 인터페이스인지 확인할 수 있습니다.
 
  `# iwconfig` 
-
 ```
 enp2s0f0  no wireless extensions.
 wlp3s0    IEEE 802.11bgn  ESSID:"NETGEAR97"  
@@ -273,7 +269,7 @@ lo        no wireless extensions.
 다음과 같이 주소를 추가하십시오.
 
 ```
-# ip addr add _IP 주소_/_서브넷 마스크_ dev _인터페이스_명칭_
+# ip addr add *IP 주소*/*서브넷 마스크* dev *인터페이스_명칭*
 
 ```
 
@@ -289,7 +285,7 @@ lo        no wireless extensions.
 다음과 같이 게이트웨이를 추가하십시오.
 
 ```
-# ip route add default via _IP 주소_
+# ip route add default via *IP 주소*
 
 ```
 
@@ -303,7 +299,6 @@ lo        no wireless extensions.
 사용하고 있는 네임 서버의 IP 주소와 로컬 도메인 이름을 다음과 같이 `resolv.conf`에 추가하십시오.
 
  `# nano /etc/resolv.conf` 
-
 ```
 nameserver 61.23.173.5
 nameserver 61.95.849.8
@@ -321,7 +316,7 @@ search example.com
 
 다른 배포판을 사용하다 왔거나 명명 방식이 바뀐 후에 처음으로 아치를 설치한다면 첫 번째 무선 인터페이스 가 "wlan0"아니라서 놀랐을 것입니다. 겁먹지 마세요. 간단하게 `iwconfig`를 실행해 무선 인터페이스 이름을 확인하세요.
 
-무선 드라이버와 유틸리티는 설치 미디어의 라이브 환경에서 사용하실 수 있습니다. 무선 하드웨어에 대해 잘 알고 있을수록 설정을 쉽게 끝낼 수 있을 것입니다. _지금 시점에서 실행하는_ 간단 설정 내용은 무선 장치를 _설치 매체의 라이브 환경에서만_ 사용할 수 있게 만들 것입니다. 이 단계(혹은 다른 형태의 무선 관리)는 **설치가 끝난 뒤 다시 한번 설정해 주어야 합니다**.
+무선 드라이버와 유틸리티는 설치 미디어의 라이브 환경에서 사용하실 수 있습니다. 무선 하드웨어에 대해 잘 알고 있을수록 설정을 쉽게 끝낼 수 있을 것입니다. *지금 시점에서 실행하는* 간단 설정 내용은 무선 장치를 *설치 매체의 라이브 환경에서만* 사용할 수 있게 만들 것입니다. 이 단계(혹은 다른 형태의 무선 관리)는 **설치가 끝난 뒤 다시 한번 설정해 주어야 합니다**.
 
 또한 이 시점에서의 무선 연결은 꼭 필요하지만은 않다는 것을 알아두십시오; 무선 네트워크는 나중에라도 언제든지 연결할 수 있습니다.
 
@@ -332,7 +327,6 @@ search example.com
 *   무선 인터페이스를 알아냅니다.
 
  `# iw dev` 
-
 ```
 phy#0
         Interface wlp3s0
@@ -367,7 +361,6 @@ phy#0
 인터페이스가 작동하고 있는지 확인하려면, 다음 명령의 출력을 검사하면 됩니다.
 
  `# ip link show wlp3s0` 
-
 ```
 3: wlp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state DOWN mode DORMANT group default qlen 1000
     link/ether 00:11:22:33:44:55 brd ff:ff:ff:ff:ff:ff
@@ -379,7 +372,6 @@ phy#0
 대부분의 무선 칩셋은 드라이버 뿐 아니라 알맞는 펌웨어를 필요로 합니다. 커널은 자동으로 알맞는 드라이버와 펌웨어를 로드하려 할 것입니다. 만일 `SIOCSIFFLAGS: No such file or directory`과 같은 오류가 출력되었다면, 펌웨어를 수동으로 로드해야 합니다. 잘 모르겠다면 `dmesg` 명령어로 커널 로그를 보면서 해당 칩셋에 대한 펌웨어 요청이 있는지 확인하십시오. 예를 들어, 펌웨어 가 필요한 인텔 칩셋을 사용하고 있다면,
 
  `# dmesg | grep firmware` 
-
 ```
 firmware: requesting iwlwifi-5000-1.ucode
 
@@ -392,11 +384,11 @@ firmware: requesting iwlwifi-5000-1.ucode
 그 다음, `iw dev wlp3s0 scan | grep SSID` 명령으로 사용할 수 있는 와이파이 네트워크를 검색합니다. 네트워크에 연결하려면 다음과 같은 명령을 이용합니다.
 
 ```
-# wpa_supplicant -B -i wlp3s0 -c <(wpa_passphrase "_ssid_" "_psk_")
+# wpa_supplicant -B -i wlp3s0 -c <(wpa_passphrase "*ssid*" "*psk*")
 
 ```
 
-_ssid_에 원하는 네트워크의 이름을 넣고, _psk_에 비밀번호를 넣으면 됩니다. 단, 명령을 내릴 때 **네트워크 이름과 비밀번호에 각각 따옴표 표시를 해야 합니다.**
+*ssid*에 원하는 네트워크의 이름을 넣고, *psk*에 비밀번호를 넣으면 됩니다. 단, 명령을 내릴 때 **네트워크 이름과 비밀번호에 각각 따옴표 표시를 해야 합니다.**
 
 마지막으로, 무선 인터페이스에 IP 주소를 부여해야 합니다. 수동으로 하거나 dhcp를 이용하여 자동으로 부여받을 수 있습니다. dhcp를 이용하려면 다음 명령을 내립니다.
 
@@ -409,19 +401,19 @@ _ssid_에 원하는 네트워크의 이름을 넣고, _psk_에 비밀번호를 �
 
 ```
 # echo 'ctrl_interface=DIR=/run/wpa_supplicant' > /etc/wpa_supplicant.conf
-# wpa_passphrase _ssid_ _passphrase_ >> /etc/wpa_supplicant.conf
-# ip link set _interface_ up
-# wpa_supplicant -B -D nl80211 -c /etc/wpa_supplicant.conf -i _interface_
-# dhcpcd -A _interface_
+# wpa_passphrase *ssid* *passphrase* >> /etc/wpa_supplicant.conf
+# ip link set *interface* up
+# wpa_supplicant -B -D nl80211 -c /etc/wpa_supplicant.conf -i *interface*
+# dhcpcd -A *interface*
 
 ```
 
-3단계에서 ip link set _interface_ up 명령은 불필요할 수도 있으나, 확인 차원에서 실행하는 것이 좋습니다.
+3단계에서 ip link set *interface* up 명령은 불필요할 수도 있으나, 확인 차원에서 실행하는 것이 좋습니다.
 
-4단계에서 _wpa_supplicant_가 unsupported driver(지원되지 않는 드라이버) 등의 오류를 출력한다면, `-D nl80211` 파라미터를 빼고 다시 명령을 내리십시오.
+4단계에서 *wpa_supplicant*가 unsupported driver(지원되지 않는 드라이버) 등의 오류를 출력한다면, `-D nl80211` 파라미터를 빼고 다시 명령을 내리십시오.
 
 ```
-# wpa_supplicant -B -c /etc/wpa_supplicant.conf -i _interface_
+# wpa_supplicant -B -c /etc/wpa_supplicant.conf -i *interface*
 
 ```
 
@@ -496,7 +488,7 @@ GParted는 사용하기 쉽지만, 그냥 새로운 디스크에 파티션 몇 �
 
 ##### cgdisk로 GPT 파티션 만들기
 
-다음 명령으로 _cgdisk_를 실행하십시오.
+다음 명령으로 *cgdisk*를 실행하십시오.
 
 ```
 # cgdisk /dev/sda
@@ -504,16 +496,15 @@ GParted는 사용하기 쉽지만, 그냥 새로운 디스크에 파티션 몇 �
 ```
 
 **도움말:** cgdisk가 디스크를 GPT로 변환할 수 없다면, [parted](https://www.archlinux.org/packages/?name=parted)를 사용하십시오.
-
 **root:**
 **참고:** 이 파티션은 `/root` 이 아니라 `/` 로 마운트 될 파티션입니다.
 
-*   _New_를 선택(`N`을 눌러도 됩니다)하고 `Enter`를 누릅니다. 첫 섹터 (2048)에는 `15G`를 입력하고 `Enter`를 누릅니다. 기본 hex 코드는 (8300)을 입력하고 `Enter`를 누르면 빈 이름을 가진 파티션이 만들어집니다.
+*   *New*를 선택(`N`을 눌러도 됩니다)하고 `Enter`를 누릅니다. 첫 섹터 (2048)에는 `15G`를 입력하고 `Enter`를 누릅니다. 기본 hex 코드는 (8300)을 입력하고 `Enter`를 누르면 빈 이름을 가진 파티션이 만들어집니다.
 
 **Home:**
 
 *   아래 방향키를 몇 번 눌러 더 큰 빈 공간으로 이동합니다.
-*   _New_를 선택하거나 `N`을 누르고 `Enter`를 칩니다. 빈 공간을 모두 이용하려면 다시 `Enter`를 누릅니다. 만일 다른 크기로 파티션을 만들고 싶다면 원하는 크기를 입력하고(예: 30G) `Enter`를 누릅니다. 기본 hex 코드는 (8300)을 넣고 `Enter`를 눌러 빈 이름을 가진 파티션을 만듭니다.
+*   *New*를 선택하거나 `N`을 누르고 `Enter`를 칩니다. 빈 공간을 모두 이용하려면 다시 `Enter`를 누릅니다. 만일 다른 크기로 파티션을 만들고 싶다면 원하는 크기를 입력하고(예: 30G) `Enter`를 누릅니다. 기본 hex 코드는 (8300)을 넣고 `Enter`를 눌러 빈 이름을 가진 파티션을 만듭니다.
 
 이렇게 했다면 아래와 같은 출력을 볼 수 있을 것입니다.
 
@@ -528,15 +519,15 @@ Part. #     Size        Partition Type            Partition Name
 
 파티션이 원하는 크기로 만들어졌는지, 파티션 테이블 레이아웃이 마음에 드는지 다시 한번 확인하십시오.
 
-만일 중간에 다시 시작하고 싶다면 그냥 _Quit_ 을 선택하거나 `Q`를 누르면 저장하지 않고 나올 수 있습니다. 다시 _cgdisk_를 실행해서 새로 파티션 구성을 하면 됩니다.
+만일 중간에 다시 시작하고 싶다면 그냥 *Quit* 을 선택하거나 `Q`를 누르면 저장하지 않고 나올 수 있습니다. 다시 *cgdisk*를 실행해서 새로 파티션 구성을 하면 됩니다.
 
-파티션 구성이 마음에 든다면, "Write"를 선택하거나 `Shift+W`를 눌러 파티션 구성을 디스크에 기록합니다. `yes`를 입력해 최종 확인을 한 후, "Quit"을 선택하거나 `Q`를 눌러 _cgdisk_에서 빠져나옵니다.
+파티션 구성이 마음에 든다면, "Write"를 선택하거나 `Shift+W`를 눌러 파티션 구성을 디스크에 기록합니다. `yes`를 입력해 최종 확인을 한 후, "Quit"을 선택하거나 `Q`를 눌러 *cgdisk*에서 빠져나옵니다.
 
 ##### fdisk로 MBR 파티션 만들기
 
-**참고:** MBR 파티션을 만들 때에는 _cfdisk_역시 사용할 수 있습니다. _cfdisk_는 _cgdisk_와 비슷한 인터페이스를 가지고 있습니다. 하지만 현재에는 _cfdisk_에 첫 파티션을 자동으로 정확하게 정렬하지 않는 버그가 존재하기 때문에, 여기에서는 _fdisk_를 사용하였습니다.
+**참고:** MBR 파티션을 만들 때에는 *cfdisk*역시 사용할 수 있습니다. *cfdisk*는 *cgdisk*와 비슷한 인터페이스를 가지고 있습니다. 하지만 현재에는 *cfdisk*에 첫 파티션을 자동으로 정확하게 정렬하지 않는 버그가 존재하기 때문에, 여기에서는 *fdisk*를 사용하였습니다.
 
-_fdisk_를 실행시킵니다:
+*fdisk*를 실행시킵니다:
 
 ```
 # fdisk /dev/sda 
@@ -594,7 +585,7 @@ Syncing disks.
 
 ```
 
-만일 에러 메시지를 출력하며 이 과정이 실패한다면, `q` 키를 눌러 _fdisk_를 종료할 수 있습니다.
+만일 에러 메시지를 출력하며 이 과정이 실패한다면, `q` 키를 눌러 *fdisk*를 종료할 수 있습니다.
 
 #### 파일시스템 만들기
 
@@ -611,15 +602,15 @@ Syncing disks.
 스왑 파티션을 만들고 싶다면 (코드 82), 다음과 같이 그 파티션을 활성화하십시오.
 
 ```
-# mkswap /dev/sda_X_
-# swapon /dev/sda_X_
+# mkswap /dev/sda*X*
+# swapon /dev/sda*X*
 
 ```
 
-UEFI를 사용하고 있다면, EFI 시스템 파티션을 다음과 같이 포맷해주십시오. (아래의 예시에서는 /dev/sd_xy_입니다)
+UEFI를 사용하고 있다면, EFI 시스템 파티션을 다음과 같이 포맷해주십시오. (아래의 예시에서는 /dev/sd*xy*입니다)
 
 ```
-# mkfs.fat -F32 /dev/sd_XY_
+# mkfs.fat -F32 /dev/sd*XY*
 
 ```
 
@@ -651,7 +642,7 @@ UEFI를 사용하고 있다면, EFI 시스템 파티션을 다음과 같이 포�
 # mkdir /mnt/home
 # mount /dev/sda3 /mnt/home
 # mkdir /mnt/boot
-# mount /dev/sda_x_ /mnt/boot
+# mount /dev/sda*x* /mnt/boot
 
 ```
 
@@ -662,9 +653,7 @@ UEFI 마더보드를 사용하고 있다면, EFI 시스템 파티션을 `/boot`�
 설치하기 전에, 선호하는 미러 사이트가 먼저 오도록 `mirrorlist`를 편집하는 것이 좋습니다. mirrorlist의 사본이 pacstrap에 의해서 새 시스템에도 복사될 것이므로 지금 설정해 두는 것이 좋습니다.
 
 **참고:** ftp.archlinux.org의 속도는 50KB/s로 낮춰져 있습니다.
-
  `# nano /etc/pacman.d/mirrorlist` 
-
 ```
 ##
 ## Arch Linux repository mirrorlist
@@ -690,7 +679,7 @@ Server = http://mirror.example.xyz/archlinux/$repo/os/$arch
 
 *   `mirrorlist`에 변화를 가할 때마다 `pacman -Syyu` 커맨드를 이용하여 패치키 리스트와 mirrorlist가 일치하도록 하는 것이 좋습니다. [Mirrors](/index.php/Mirrors "Mirrors")를 참고하십시오.
 *   최신 버전이 아닌 설치 매체를 사용하고 있을 경우, mirrorlist가 오래되어 업데이트시 문제가 생길 수 있습니다([FS#22510](https://bugs.archlinux.org/task/22510)를 참고하십시오). 그러므로 항상 최신 버전의 미러 정보를 사용하는 것이 좋습니다.
-*   [아치리눅스 포럼](https://bbs.archlinux.org/)에서 _pacman_이 저장소를 업데이트하거나 동기화하는 데에 문제를 일으키는 몇가지 네트워크 문제들이 발견되었습니다([[3]](https://bbs.archlinux.org/viewtopic.php?id=68944)와 [[4]](https://bbs.archlinux.org/viewtopic.php?id=65728)를 참고하십시오). 아치 리눅스를 실제 하드웨어에 설치하고 있다면, _pacman_의 파일 다운로더를 다른 다운로더로 대체하여 문제를 해결할 수 있습니다([Improve pacman performance](/index.php/Improve_pacman_performance "Improve pacman performance")문서를 확인하십시오). 만약 [VirtualBox](/index.php/VirtualBox "VirtualBox") 등을 이용하여 가상 머신에 아치리눅스를 설치하고 있다면, 네트워크 인터페이스를 "NAT"에서 "호스트 인터페이스(Host interface)로 바꾸어 문제를 해결할 수 있습니다.
+*   [아치리눅스 포럼](https://bbs.archlinux.org/)에서 *pacman*이 저장소를 업데이트하거나 동기화하는 데에 문제를 일으키는 몇가지 네트워크 문제들이 발견되었습니다([[3]](https://bbs.archlinux.org/viewtopic.php?id=68944)와 [[4]](https://bbs.archlinux.org/viewtopic.php?id=65728)를 참고하십시오). 아치 리눅스를 실제 하드웨어에 설치하고 있다면, *pacman*의 파일 다운로더를 다른 다운로더로 대체하여 문제를 해결할 수 있습니다([Improve pacman performance](/index.php/Improve_pacman_performance "Improve pacman performance")문서를 확인하십시오). 만약 [VirtualBox](/index.php/VirtualBox "VirtualBox") 등을 이용하여 가상 머신에 아치리눅스를 설치하고 있다면, 네트워크 인터페이스를 "NAT"에서 "호스트 인터페이스(Host interface)로 바꾸어 문제를 해결할 수 있습니다.
 
 ### 기반 시스템 설치하기
 
@@ -706,10 +695,10 @@ Server = http://mirror.example.xyz/archlinux/$repo/os/$arch
 
 **참고:**
 
-*   미러를 정확하게 설정했음에도 _pacstrap_이 `error: failed retrieving file 'core.db' from mirror... : Connection time-out`라는 오류를 출력하며 멈춘다면, [네임 서버](/index.php/Resolv.conf "Resolv.conf")를 바꾸어 보십시오.
+*   미러를 정확하게 설정했음에도 *pacstrap*이 `error: failed retrieving file 'core.db' from mirror... : Connection time-out`라는 오류를 출력하며 멈춘다면, [네임 서버](/index.php/Resolv.conf "Resolv.conf")를 바꾸어 보십시오.
 *   base 패키지를 설치하다가 pgp키를 import해야 한다는 메시지가 출력되면, 동의하고 계속하십시오. 이 문제는 사용하고 있는 아치 설치 매체가 최신 버전이 아닌 경우 발생할 수 있습니다. pgp 키를 추가하는 데에 실패한다면, [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring)을 `pacman -S archlinux-keyring`명령을 통해 업그레이드하십시오.
 *   만약 pacman이 패키지의 무결성을 검사하는 데 실패하면, 시스템의 시계를 확인해 보십시오. 만약 시스템 날짜가 2010년으로 설정돼 있는 등 잘못 설정되어 있다면 서명 키를 만료된 것으로(혹은 무효인 것으로) 판단하게 되어 서명 체크가 실패하고, 설치가 중단될 것입니다. 시스템의 시간을 `ntpd -qg`명령을 사용하거나 수동으로 맞춘 후에 pacstrap 명령을 다시 실행해 보십시오. [Time](/index.php/Time "Time") 페이지에서 시스템 시간을 맞추는 데 더 많은 정보를 볼 수 있습니다.
-*   _pacman_이 `error: failed to commit transaction (invalid or corrupted package)`라는 오류를 출력하면, 다음 명령을 내린 후에 다시 pacstrap 명령을 실행하십시오.
+*   *pacman*이 `error: failed to commit transaction (invalid or corrupted package)`라는 오류를 출력하면, 다음 명령을 내린 후에 다시 pacstrap 명령을 실행하십시오.
 
 ```
 # pacman-key --init && pacman-key --populate archlinux
@@ -733,7 +722,7 @@ Server = http://mirror.example.xyz/archlinux/$repo/os/$arch
 고려할 사항이 몇가지 있습니다:
 
 *   fstab의 각 파티션에 해당하는 줄에서 마지막 칸은 부팅시 파티션을 확인하는 순서를 결정합니다. 루트 파티션에 Btrfs를 사용하지 않는다면, 루트 파티션에는 `1`를 사용하십시오. 확인되기를 바라는 다른 파티션들에는 `2`를 사용하십시오. `0`는 그 파티션을 확인하지 않는다는 뜻입니다. ([fstab#Field definitions](/index.php/Fstab#Field_definitions "Fstab")에서 더 자세한 정보를 얻으실 수 있습니다.)
-*   모든 [Btrfs](/index.php/Btrfs "Btrfs")파일 시스템으로 포맷된 파티션은 `0`를 사용해야 합니다. _스왑(swap)_ 파티션에도 `0`을 적용하는 것이 일반적입니다.
+*   모든 [Btrfs](/index.php/Btrfs "Btrfs")파일 시스템으로 포맷된 파티션은 `0`를 사용해야 합니다. *스왑(swap)* 파티션에도 `0`을 적용하는 것이 일반적입니다.
 
 ### 시스템에 chroot로 들어가기
 
@@ -759,7 +748,6 @@ Server = http://mirror.example.xyz/archlinux/$repo/os/$arch
 `en_US.UTF-8`를 활성화시키세요. 다른 로케일이 필요하다면 필요한 로케일 앞의 `#`표시를 지우세요.
 
  `# nano /etc/locale.gen` 
-
 ```
 ...
 #en_SG ISO-8859-1
@@ -801,10 +789,9 @@ en_US.UTF-8 UTF-8
 
 ##### 영어가 아닌 언어에 대한 예시
 
-만약 설치 과정 및 재부팅 이후에 영어가 아닌 언어_(이 예제에서는 한국어)_를 보고 싶으시다면, 다음과 같이 진행하시면 됩니다.
+만약 설치 과정 및 재부팅 이후에 영어가 아닌 언어*(이 예제에서는 한국어)*를 보고 싶으시다면, 다음과 같이 진행하시면 됩니다.
 
  `# nano /etc/locale.gen` 
-
 ```
 en_US.UTF-8 UTF-8
 ko_KR.UTF-8 UTF-8
@@ -826,13 +813,12 @@ ko_KR.UTF-8 UTF-8
 [#언어 변경하기](#.EC.96.B8.EC.96.B4_.EB.B3.80.EA.B2.BD.ED.95.98.EA.B8.B0)에서 콘솔 키맵과 폰트를 변경했다면, 변경했던 설정값과 동일하게 `/etc/vconsole.conf`를 편집해야 합니다. 그렇게 해야 설치된 시스템으로 재부팅했을 때에도 변경된 설정값이 유지됩니다. 예를 들어,
 
  `# nano /etc/vconsole.conf` 
-
 ```
 KEYMAP=de-latin1
 FONT=lat9w-16
 ```
 
-**경고:** `KEYMAP` 변수와 처음에 _loadkeys_를 이용하여 설정한 키맵이 다를 경우, 비밀번호 설정 후에 설치된 시스템을 재부팅 한 후 로그인하는 데에 문제가 생길 수 있습니다. 키들이 다르게 매핑되었을 수 있기 때문입니다.
+**경고:** `KEYMAP` 변수와 처음에 *loadkeys*를 이용하여 설정한 키맵이 다를 경우, 비밀번호 설정 후에 설치된 시스템을 재부팅 한 후 로그인하는 데에 문제가 생길 수 있습니다. 키들이 다르게 매핑되었을 수 있기 때문입니다.
 
 이 설정값들은 콘솔에서만 유효하다는 사실에 유의하십시오. [Xorg](/index.php/Xorg "Xorg")에는 이 설정값들이 적용되지 않습니다. [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts") 문서에서 더 자세한 내용을 찾을 수 있습니다.
 
@@ -878,11 +864,9 @@ zone과 subzone은 `/usr/share/zoneinfo/<Zone>/<SubZone>` 디렉토리 내에 �
 
 *   **UTC** (권장):
     **참고:** [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time "wikipedia:Coordinated Universal Time")를 하드웨어 시계로 사용한다고 해서 소프트웨어 시계가 UTC에 맞춰지는 것은 아닙니다.
-
      `# hwclock --systohc --utc` 
 *   **localtime** (비추천, Windows의 기본값):
-    **Warning:** _localtime_을 사용하는 것은 몇가지 고칠 수 없는 버그를 일으킵니다. 그러나 _localtime_은 계속해서 지원될 것입니다.
-
+    **Warning:** *localtime*을 사용하는 것은 몇가지 고칠 수 없는 버그를 일으킵니다. 그러나 *localtime*은 계속해서 지원될 것입니다.
      `# hwclock --systohc --localtime` 
 
 #### 커널 모듈
@@ -892,7 +876,6 @@ zone과 subzone은 `/usr/share/zoneinfo/<Zone>/<SubZone>` 디렉토리 내에 �
 특정 커널 모듈을 부팅시에 로드하려면 `/etc/modules-load.d` 안에 `*.conf` 파일을 넣으십시오. .conf 파일의 이름은 그 모듈의 이름을 사용하는 것이 좋습니다.
 
  `# nano /etc/modules-load.d/virtio-net.conf` 
-
 ```
 # Load 'virtio-net.ko' at boot.
 
@@ -904,25 +887,24 @@ virtio-net
 
 #### 호스트 네임
 
-원하는 [호스트 네임](/index.php/Network_configuration#Set_the_hostname "Network configuration")((예:_arch_)을 다음과 같이 설정하십시오.
+원하는 [호스트 네임](/index.php/Network_configuration#Set_the_hostname "Network configuration")((예:*arch*)을 다음과 같이 설정하십시오.
 
 ```
-# echo _원하는_호스트_네임_ > /etc/hostname
+# echo *원하는_호스트_네임* > /etc/hostname
 
 ```
 
 `/etc/hosts`파일에도 같은 호스트네임을 추가하십시오.
 
  `# nano /etc/hosts` 
-
 ```
 #
 # /etc/hosts: static lookup table for host names
 #
 
 #<ip-address>	<hostname.domain.org>	<hostname>
-127.0.0.1	localhost.localdomain	localhost _원하는_호스트_네임_	
-::1		localhost.localdomain	localhost _원하는_호스트_네임_
+127.0.0.1	localhost.localdomain	localhost *원하는_호스트_네임*	
+::1		localhost.localdomain	localhost *원하는_호스트_네임*
 
 # End of file
 
@@ -948,7 +930,7 @@ virtio-net
 하나의 유선 네트워크 연결만을 사용한다면, 네트워크 관리 서비스가 필요하지 않습니다. `dhcpcd` 서비스를 해당 인터페이스에 대해 활성화하기만 하면 됩니다.
 
 ```
-# systemctl enable dhcpcd@_인터페이스_이름_.service
+# systemctl enable dhcpcd@*인터페이스_이름*.service
 
 ```
 
@@ -994,7 +976,7 @@ virtio-net
 이제 원하는 인터페이스에 대하여 활성화시킵니다.
 
 ```
-# systemctl enable netctl-ifplugd@_인터페이스_이름_.service
+# systemctl enable netctl-ifplugd@*인터페이스_이름*.service
 
 ```
 
@@ -1054,10 +1036,10 @@ virtio-net
 
 ```
 
-시스템 설치가 끝난 후, 설치한 시스템으로 재부팅을 한 후에 다음 명령으로 무선 네트워크에 연결할 수 있습니다. (_인터페이스_이름_을 실제 무선 인터페이스 이름으로 바꾸세요)
+시스템 설치가 끝난 후, 설치한 시스템으로 재부팅을 한 후에 다음 명령으로 무선 네트워크에 연결할 수 있습니다. (*인터페이스_이름*을 실제 무선 인터페이스 이름으로 바꾸세요)
 
 ```
-# wifi-menu _인터페이스_이름_
+# wifi-menu *인터페이스_이름*
 
 ```
 
@@ -1089,7 +1071,7 @@ virtio-net
 
 ##### 알고 있는 네트워크에 자동으로 연결
 
-**경고:** 이 방법은 `netctl enable _profile_`과 같은 명령으로 직접 프로파일을 설정하는 방법과 같이 사용될 수 없습니다.
+**경고:** 이 방법은 `netctl enable *profile*`과 같은 명령으로 직접 프로파일을 설정하는 방법과 같이 사용될 수 없습니다.
 
 `netctl-auto`를 사용하기 위해 필요한 패키지[wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond)를 설치합니다.
 
@@ -1101,7 +1083,7 @@ virtio-net
 `netctl-auto`서비스를 활성화합니다. `netctl-auto`는 자동으로 알려진 네트워크에 연결하고, 연결이 끊기는 상황이나 로밍 등을 처리합니다.
 
 ```
-# systemctl enable netctl-auto@_인터페이스_이름_.service
+# systemctl enable netctl-auto@*인터페이스_이름*.service
 
 ```
 
@@ -1121,7 +1103,6 @@ UEFI 펌웨어는 `**$esp**/EFI/boot`에 생성된 Gummiboot의 `bootx64.efi` st
 우선, `**$esp**/loader/entries/arch.conf` 파일을 만듭니다. `/dev/sdaX`를 새로 설치한 아치리눅스 시스템의 **루트** 파티션으로 바꾸어 아래의 내용을 arch.conf 안에 추가합니다.
 
  `# nano **$esp**/loader/entries/arch.conf` 
-
 ```
 title          Arch Linux
 linux          /vmlinuz-linux
@@ -1132,7 +1113,6 @@ options        root=**/dev/sdaX** rw
 그 다음, `**$esp**/loader/loader.conf` 파일을 만들고 아래 내용을 추가합니다. 단, timeout(gummiboot 메뉴가 보이는 시간) 값은 초 단위로 자신이 원하는 시간을 넣어주세요.
 
  `# nano **$esp**/loader/loader.conf` 
-
 ```
 default  arch
 timeout  5
@@ -1168,7 +1148,7 @@ chroot 환경에서 빠져나오십시오.
 
 ```
 
-**참고:** 컴퓨터를 끌 때에 _systemd_가 자동으로 파티션을 언마운트하지만, 안전을 위해 `umount -R /mnt` 명령으로 파티션을 직접 언마운트해도 됩니다. 만약 `umount`가 partition is busy와 같은 오류 메시지를 출력하며 실패한다면, [fuser](https://en.wikipedia.org/wiki/fuser_(Unix) "wikipedia:fuser (Unix)")에서 그 이유를 찾아보십시오.
+**참고:** 컴퓨터를 끌 때에 *systemd*가 자동으로 파티션을 언마운트하지만, 안전을 위해 `umount -R /mnt` 명령으로 파티션을 직접 언마운트해도 됩니다. 만약 `umount`가 partition is busy와 같은 오류 메시지를 출력하며 실패한다면, [fuser](https://en.wikipedia.org/wiki/fuser_(Unix) "wikipedia:fuser (Unix)")에서 그 이유를 찾아보십시오.
 
 컴퓨터를 재부팅합니다.
 

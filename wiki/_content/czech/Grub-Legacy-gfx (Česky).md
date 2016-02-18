@@ -52,7 +52,6 @@ splashimage /boot/grub/arch.xpm.gz
 Pokud tedy chceš použít svůj starý `menu.lst`, přidej do něj řádek s splashimage.
 
 **Note:** Pokud máš `/boot` v samotném oddílu, pak použij:
-
 ```
 splashimage /grub/arch.xpm.gz
 

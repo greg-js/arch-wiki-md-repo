@@ -78,7 +78,7 @@ El cielo es el límite. Si la intención es simplemente instalar Arch desde el s
 
 ¿Quiere [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") o la capacidad de utilizar discos duros con [GPT](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)")?
 
-*   Particione manualmente el HDD/SDD de destino mediante la utilidad **gdisk** instalándola con _pacman -S gdisk_ antes de iniciar el programa de instalación de Arch y, cuando se le presente la opción de instalar un gestor de arranque en el marco de la instalación, simplemente no lo haga, y vuelva de nuevo al prompt de root del entorno live.
+*   Particione manualmente el HDD/SDD de destino mediante la utilidad **gdisk** instalándola con *pacman -S gdisk* antes de iniciar el programa de instalación de Arch y, cuando se le presente la opción de instalar un gestor de arranque en el marco de la instalación, simplemente no lo haga, y vuelva de nuevo al prompt de root del entorno live.
 *   La instalación de grub(2) es trivial en este punto. Simplemente efectúe chroot en el recién instalado sistema Arch (por defecto premontado si saliera del programa de instalación) y, después, instale y configure grub2:
 
 ```

@@ -121,7 +121,7 @@ Hidden=false
 
 ### Prevent flickering
 
-Conky needs Double Buffer Extension (DBE) support from the X server to prevent flickering because it cannot update the window fast enough without it. It can be enabled in `/etc/X11/xorg.conf` with `Load "dbe"` line in `Section "Module"`. The xorg.conf file has been replaced (1.8.x patch upwards) by `/etc/X11/xorg.conf.d` which contains the particular configuration files. _DBE_ is loaded automatically.
+Conky needs Double Buffer Extension (DBE) support from the X server to prevent flickering because it cannot update the window fast enough without it. It can be enabled in `/etc/X11/xorg.conf` with `Load "dbe"` line in `Section "Module"`. The xorg.conf file has been replaced (1.8.x patch upwards) by `/etc/X11/xorg.conf.d` which contains the particular configuration files. *DBE* is loaded automatically.
 
 To enable double-buffer check to have in `~/.conkyrc`:
 
@@ -289,7 +289,6 @@ ${exec feh --bg-scale $(dcop kdesktop KBackgroundIface currentWallpaper 1)}
 当使用Conky的默认配置时, conky的界面可能会因点击桌面而消失. 请加入以下字段到`.conkyrc`中:
 
  `~/.conkyrc` 
-
 ```
 own_window yes
 own_window_class Conky
@@ -347,7 +346,6 @@ This can be achieved by using the in python written extension named [ConkyPress]
 Create a file named `gmail.py` in a convenient location (this example uses `~/.scripts/`) with the following [Python](/index.php/Python "Python") code:
 
  `gmail.py` 
-
 ```
 #!/usr/bin/env python
 
@@ -375,7 +373,6 @@ print(fullcount + ' new')
 You can also use Python's urllib as follows.
 
  `gmail.py` 
-
 ```
 #! /usr/bin/env python
 
@@ -452,7 +449,7 @@ Inbox: ${imap_unseen}/${imap_messages}
 
 ```
 
-Here I used * as the password for Conky to ask for it at start, but you do not _have_ to do it.
+Here I used * as the password for Conky to ask for it at start, but you do not *have* to do it.
 
 ### Display new emails (IMAP + SSL)
 
@@ -491,7 +488,8 @@ if ($client->IsAuthenticated()) {
 
    $client->select("INBOX");
    $msgct = $client->unseen_count||'0';
-   print "$msgct\n";
+   print "$msgct
+";
 }
 
 $client->logout();

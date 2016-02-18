@@ -23,19 +23,19 @@
 
 ### 通过 bridge-utils
 
-本节讲述用 [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils) 软件包里面的 _brctl_ 工具管理网桥。该软件包已进入官方仓库（[official repositories](/index.php/Official_repositories "Official repositories")）。_brctl_ 的完整选项清单请参阅 `man brctl`。
+本节讲述用 [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils) 软件包里面的 *brctl* 工具管理网桥。该软件包已进入官方仓库（[official repositories](/index.php/Official_repositories "Official repositories")）。*brctl* 的完整选项清单请参阅 `man brctl`。
 
 新建一个网桥：
 
 ```
-# brctl addbr _bridge_name_
+# brctl addbr *bridge_name*
 
 ```
 
 添加一个设备（例如`eth0`）到网桥：
 
 ```
-# brctl addif _bridge_name_ eth0
+# brctl addif *bridge_name* eth0
 
 ```
 
@@ -49,27 +49,27 @@ $ brctl show
 启动网桥：
 
 ```
-# ip link set up dev _bridge_name_
+# ip link set up dev *bridge_name*
 
 ```
 
 删除网桥，需要先关闭它：
 
 ```
-# ip link set dev _bridge_name_ down
-# brctl delbr _bridge_name_
+# ip link set dev *bridge_name* down
+# brctl delbr *bridge_name*
 
 ```
 
 ### 通过 iproute2
 
-本节讲述用 [iproute2](https://www.archlinux.org/packages/?name=iproute2) 软件包里面的 _ip_ 工具管理网桥。该软件包包含在 [base](https://www.archlinux.org/groups/x86_64/base/) 包组中。
+本节讲述用 [iproute2](https://www.archlinux.org/packages/?name=iproute2) 软件包里面的 *ip* 工具管理网桥。该软件包包含在 [base](https://www.archlinux.org/groups/x86_64/base/) 包组中。
 
 创建一个网桥并设置其状态为已启动：
 
 ```
-# ip link add name _bridge_name_ type bridge
-# ip link set dev _bridge_name_ up
+# ip link add name *bridge_name* type bridge
+# ip link set dev *bridge_name* up
 
 ```
 
@@ -81,14 +81,14 @@ $ brctl show
 
 ```
 
-把该端口添加到网桥中，再将其所有者设置为 `_bridge_name_` 就完成了配置：
+把该端口添加到网桥中，再将其所有者设置为 `*bridge_name*` 就完成了配置：
 
 ```
-# ip link set dev eth0 master _bridge_name_
+# ip link set dev eth0 master *bridge_name*
 
 ```
 
-要显示现存的网桥及其关联的端口，可以用 _bridge_ 工具（它也是 [iproute2](https://www.archlinux.org/packages/?name=iproute2) 的组成部分）。详阅 `man bridge`。
+要显示现存的网桥及其关联的端口，可以用 *bridge* 工具（它也是 [iproute2](https://www.archlinux.org/packages/?name=iproute2) 的组成部分）。详阅 `man bridge`。
 
 ```
 # bridge link show
@@ -107,7 +107,7 @@ $ brctl show
 当网桥的配置清空后就可以将其删除：
 
 ```
-# ip link delete _bridge_name_ type bridge
+# ip link delete *bridge_name* type bridge
 
 ```
 
@@ -144,7 +144,7 @@ If NetworkManager's default interface for the device you added to the bridge con
 When the bridge is fully set up, it can be assigned an IP address:
 
 ```
-# ip addr add dev _bridge_name_ 192.168.66.66/24
+# ip addr add dev *bridge_name* 192.168.66.66/24
 
 ```
 

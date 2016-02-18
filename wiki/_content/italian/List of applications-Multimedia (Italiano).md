@@ -434,7 +434,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 	[http://guayadeque.org/](http://guayadeque.org/) || [guayadeque](https://aur.archlinux.org/packages/guayadeque/)
 
-*   **[Nightingale](https://en.wikipedia.org/wiki/Nightingale_(software) "wikipedia:Nightingale (software)")** — Clone open source di iTunes basato su [Songbird](https://en.wikipedia.org/wiki/Songbird_(software) "wikipedia:Songbird (software)") che utilizza la tecnologia Mozilla e si appoggia a Gstreamer.
+*   **[Nightingale](https://en.wikipedia.org/wiki/Nightingale_(software) che utilizza la tecnologia Mozilla e si appoggia a Gstreamer.
 
 	[http://getnightingale.com/](http://getnightingale.com/) || [nightingale-git](https://aur.archlinux.org/packages/nightingale-git/)
 

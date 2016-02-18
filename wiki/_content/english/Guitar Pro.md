@@ -17,7 +17,7 @@ This article covers how to start using the outdated Guitar Pro 5.2 with Linux. N
 
 As a prerequisite, you need [Wine](/index.php/Wine "Wine") and [Timidity](/index.php/Timidity "Timidity") installed. Consult respective wikis on how to install them.
 
-The directory _~/wine_ is suggested for Wine installations. After downloading Guitar Pro installer (either [demo versions](http://www.guitar-pro.com/en/index.php?pg=download) or [full versions](http://www.guitar-pro.com/en/index.php?pg=support-customers-area)), cd to the download folder and run these commands:
+The directory *~/wine* is suggested for Wine installations. After downloading Guitar Pro installer (either [demo versions](http://www.guitar-pro.com/en/index.php?pg=download) or [full versions](http://www.guitar-pro.com/en/index.php?pg=support-customers-area)), cd to the download folder and run these commands:
 
 ```
 $ WINEPREFIX="$HOME/wine/guitar_pro_5"
@@ -33,7 +33,6 @@ What happens is a similar to standard Windows install procedure that leaves you 
 Configuration of Timidity is covered in it's wiki. Once it's running, run Guitar Pro. You can use a little convenience script to launch Guitar Pro from command line/prompt box if you do not want to use Timidity as a daemon:
 
  `~/bin/GP5.EXE` 
-
 ```
 #!/bin/bash
 # script GP5.EXE
@@ -56,11 +55,11 @@ You may also want to turn off the splash screen and the intro jingle under menu 
 
 ### MIDI doesn't play
 
-Check Timidity settings in _/etc/timidity++/timidity.cfg_. You may have this issue if you forget to include soundpatches there :).
+Check Timidity settings in */etc/timidity++/timidity.cfg*. You may have this issue if you forget to include soundpatches there :).
 
 ### Missing note heads and other symbols
 
-Sometimes you will see just whitespaces instead of note heads and some other symbols. One of the solutions is to link font files from Guitar Pro directory in Wine folders to _/usr/shared/fonts/TTF_ or _~/.fonts_. For more info, check [Guitar Pro 5.x at WineHQ](http://appdb.winehq.org/objectManager.php?sClass=version&iId=3782) or use [Google](http://www.google.com/).
+Sometimes you will see just whitespaces instead of note heads and some other symbols. One of the solutions is to link font files from Guitar Pro directory in Wine folders to */usr/shared/fonts/TTF* or *~/.fonts*. For more info, check [Guitar Pro 5.x at WineHQ](http://appdb.winehq.org/objectManager.php?sClass=version&iId=3782) or use [Google](http://www.google.com/).
 
 ## See also
 

@@ -49,7 +49,7 @@
 
 KDE es un proyecto de software que comprende actualmente de un entorno de escritorio [desktop environment (Español)](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") conocido como plasma (o Plasma Workspaces), una colección de bibliotecas y framework o módulos de software concretos (KDE framework) y varias aplicaciones (aplicaciones de KDE) también. KDE tiene una buena base de conocimiento [y wiki](http://userbase.kde.org/). La información detallada sobre la mayoría de las aplicaciones de KDE se puede encontrar allí.
 
-**Nota:** En 2014, el proyecto KDE cambió la forma en que nombra y se organiza. El más viejo término _KDE Software Compilation_ se suspendió y las versiones y ciclos desarrollo del los framework y las aplicaciones se desliga del escritorio Plasma.
+**Nota:** En 2014, el proyecto KDE cambió la forma en que nombra y se organiza. El más viejo término *KDE Software Compilation* se suspendió y las versiones y ciclos desarrollo del los framework y las aplicaciones se desliga del escritorio Plasma.
 
 ## Instalación
 
@@ -82,7 +82,7 @@ Para instalar el conjunto de complemento de aplicaciones de KDE, por ejemplo ins
 
 Y puede dejar por defecto todos,
 
-Si necesita instalar el archivos de idioma, instale `kde-l10n - _'yourlanguagehere'_ `(por ejemplo, [kde-l10n-es](https://www.archlinux.org/packages/?name=kde-l10n-es) para el idioma español). Para obtener una lista completa de los idiomas disponibles ver [este enlace](https://www.archlinux.org/packages/extra/any/kde-l10n/).
+Si necesita instalar el archivos de idioma, instale `kde-l10n - *'yourlanguagehere'* `(por ejemplo, [kde-l10n-es](https://www.archlinux.org/packages/?name=kde-l10n-es) para el idioma español). Para obtener una lista completa de los idiomas disponibles ver [este enlace](https://www.archlinux.org/packages/extra/any/kde-l10n/).
 
 ```
 # pacman -S  kde-l10n-es 
@@ -112,22 +112,22 @@ Activarlo con
 
 Y reiniciar el sistema
 
-Para iniciar una sesión de plasma 5, elija _plasma_ en el menú del gestor de pantalla o inicio. Ya que tiene otras opciones.
+Para iniciar una sesión de plasma 5, elija *plasma* en el menú del gestor de pantalla o inicio. Ya que tiene otras opciones.
 
 ### Usando xinitrc
 
-Alternativamente, puede iniciar plasma con _startx_ (desde la consola o terminal), añadiendo `exec startkde` a su {archivo {ic | .xinitrc}}. Si quieres iniciar sesión desde la consola, por favor ver [Start X at login](/index.php/Start_X_at_login "Start X at login").
+Alternativamente, puede iniciar plasma con *startx* (desde la consola o terminal), añadiendo `exec startkde` a su {archivo {ic | .xinitrc}}. Si quieres iniciar sesión desde la consola, por favor ver [Start X at login](/index.php/Start_X_at_login "Start X at login").
 
-_El significado y el uso de**xinitrc** está muy bien descrito[aquí](/index.php/Xinitrc "Xinitrc")._
+*El significado y el uso de**xinitrc** está muy bien descrito[aquí](/index.php/Xinitrc "Xinitrc").*
 
-Edita **`/home/`**`_tu-nombre_`**`/.xinitrc`**. Despues descomenta:
+Edita **`/home/`**`*tu-nombre*`**`/.xinitrc`**. Despues descomenta:
 
 ```
 exec startkde 
 
 ```
 
-Después de reiniciar el sistema y / o iniciar sesión, cada ejecución de Xorg ('_startx **o** _xinit') iniciará KDE automáticamente.
+Después de reiniciar el sistema y / o iniciar sesión, cada ejecución de Xorg ('*startx **o** *xinit') iniciará KDE automáticamente.
 
 **Advertencia:** De este modo pueden tener las funciones de reinicio/apagado deshabilitadas en el menú de KDE.
 
@@ -135,7 +135,7 @@ Después de reiniciar el sistema y / o iniciar sesión, cada ejecución de Xorg 
 
 ## Configuración
 
-La mayoría de las configuraciones para las aplicaciones de KDE 4 se almacenan en la carpeta oculta `~/.kde4` y otras también en la carpeta oculta, `~/.config` Sin embargo, la configuración de KDE se realiza principalmente a través de la _'aplicación' Configuración del sistema_ . Se puede iniciar desde un terminal ejecutando _systemsettings_ .
+La mayoría de las configuraciones para las aplicaciones de KDE 4 se almacenan en la carpeta oculta `~/.kde4` y otras también en la carpeta oculta, `~/.config` Sin embargo, la configuración de KDE se realiza principalmente a través de la *'aplicación' Configuración del sistema* . Se puede iniciar desde un terminal ejecutando *systemsettings* .
 
 **Nota:** La configuración de KDE se realiza principalmente en ' **Configuración del sistema '**. Hay también algunas otras opciones disponibles para el escritorio en 'Preferencias de escritorio' cuando haces click derecho en el escritorio.
 
@@ -170,7 +170,6 @@ Tome nota que [SDDM](/index.php/SDDM "SDDM") gestor de inicio de sesión no es p
 ###### Qt y GTK+ Aplicaciones y Apariencias
 
 **Tip:** Para que Qt y GTK tengan consistencia con el tema, ver [Uniform Look for Qt and GTK Applications (Español)](/index.php/Uniform_Look_for_Qt_and_GTK_Applications_(Espa%C3%B1ol) "Uniform Look for Qt and GTK Applications (Español)").
-
 , y/o en ingles en caso de estar des-actualizada
 
 	Qt4
@@ -316,11 +315,11 @@ Tenga en cuenta también que las preferencias de fuente de gnome también lo har
 
 KDE es a menudo**criticado**por estar hinchado.
 
-El usuario puede obtener esta percepción de ver ' _muchas barras de herramientas y los iconos con escalados muy grandes en las aplicaciones **. Esta situación se mejoró con el nuevo tema de Kwin que viene con KDE SC 4.4\. * con botones más elegantes que puedes cambiar de tamaño.** Las aplicaciones de KDE permiten ocultar muchas barras de herramientas, barras de menús y barras de estado_.
+El usuario puede obtener esta percepción de ver ' *muchas barras de herramientas y los iconos con escalados muy grandes en las aplicaciones **. Esta situación se mejoró con el nuevo tema de Kwin que viene con KDE SC 4.4\. * con botones más elegantes que puedes cambiar de tamaño.** Las aplicaciones de KDE permiten ocultar muchas barras de herramientas, barras de menús y barras de estado*.
 
 ##### Todo tipo de * barras
 
-La mayoría de las barras de herramientas de un programa se puede quitar de la barra, en el menú de "Configuración'_**". Ahí a menudo se pueden ocultar la barra de estado y todas las barras de herramientas. Por último tambien se puede la propia barra de menú a través de**Ctrl + M'_.
+La mayoría de las barras de herramientas de un programa se puede quitar de la barra, en el menú de "Configuración'***". Ahí a menudo se pueden ocultar la barra de estado y todas las barras de herramientas. Por último tambien se puede la propia barra de menú a través de**Ctrl + M'*.
 
 Si no desea quitar las barras puede hacerlas más pequeñas o eliminar el texto de esta forma:
 
@@ -335,7 +334,7 @@ También hay algunos ajustes y modificaciones que se pueden aplicar a sus plasmo
 
 Por ejemplo, el "Reloj Digital" desperdicia más espacio que el "reloj analógico". El pequeño icono de plasma ("Cashew") que se puede ver en el panel se puede ocultar mediante el bloqueo de los widgets haciendo click derecho en el panel.
 
-Si tienes muchas tareas en el administrador de tareas puedes utilizar _Smooth-tasks_ para ganar espacio.
+Si tienes muchas tareas en el administrador de tareas puedes utilizar *Smooth-tasks* para ganar espacio.
 
 Este administrador de tareas alternativo permite mostrar los iconos de una tarea usando menos espacio pero manteniendo la capacidad del usuario para distinguir las diferentes tareas.
 
@@ -403,7 +402,7 @@ A continuación, puede configurar sus acciones de Samba a través de:
 
 ### Powersaving
 
-KDE ha integrado el servicio de Ahorro de energía llamado " _'Powerdevil_ '" que puede ajustar el perfil de energía del sistema o / y el brillo de la pantalla (si es compatible).
+KDE ha integrado el servicio de Ahorro de energía llamado " *'Powerdevil* '" que puede ajustar el perfil de energía del sistema o / y el brillo de la pantalla (si es compatible).
 
 #### Como habilitar Cpufreq
 

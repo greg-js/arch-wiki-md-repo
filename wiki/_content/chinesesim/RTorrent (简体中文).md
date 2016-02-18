@@ -1,4 +1,4 @@
-[rTorrent](http://libtorrent.rakshasa.no/) 是一个非常简洁、优秀、非常轻量的BT客户端. 它使用了 [ncurses](https://en.wikipedia.org/wiki/ncurses "wikipedia:ncurses") 库以 C++ 编写, 因此它完全基于文本并在终端中运行. 将 rTorrent 用在安装有 [GNU Screen](/index.php/GNU_Screen "GNU Screen") 和 [Secure Shell](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Secure Shell (简体中文)") 的低端系统上作为远程的 BT 客户端是非常理想的。
+[rTorrent](http://libtorrent.rakshasa.no/) 是一个非常简洁、优秀、非常轻量的BT客户端. 它使用了 [ncurses](https://en.wikipedia.org/wiki/ncurses 的低端系统上作为远程的 BT 客户端是非常理想的。
 
 ## Contents
 
@@ -183,7 +183,6 @@ rTorrent依靠用户输入的专有的快捷键.可在官方网站上查看完�
 `Ctrl-s` is often used for terminal control to stop screen output while `Ctrl-q` is used to start it. These mappings may interfere with rTorrent. Check to see if these terminal options are bound to a mapping:
 
  `$ stty -a` 
-
 ```
 ...
 swtch = <undef>; start = ^Q; stop = ^S; susp = ^Z; rprnt = ^R; werase = ^W; lnext = ^V;
@@ -226,7 +225,7 @@ screen -t rtorrent rtorrent
 
 ```
 
-要运行screen和rTorrent, 只要简单的在终端运行_screen_就可以了. Control-a followed by d will detach screen, and running _screen -r_ will open screen again.
+要运行screen和rTorrent, 只要简单的在终端运行*screen*就可以了. Control-a followed by d will detach screen, and running *screen -r* will open screen again.
 
 ### On a remote machine
 
@@ -240,7 +239,7 @@ If you want immediate access on startup, you will need to [upload a key](http://
 
 ### Screen后台运行rTorrent
 
-I use this on my home server to run rtorrent w/ screen as a daemon. With the username _rtorrent_ Just create an _rtorrent_ file in your _/etc/rc.d/_ and add the following code.
+I use this on my home server to run rtorrent w/ screen as a daemon. With the username *rtorrent* Just create an *rtorrent* file in your */etc/rc.d/* and add the following code.
 
 ```
 #!/bin/bash

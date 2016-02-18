@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Touchpad_Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-11-04，点击[这里](https://wiki.archlinux.org/index.php?title=Touchpad_Synaptics&diff=0&oldid=280563)可以查看翻译后英文页面的改动。
 
-本文描述了 _**Synaptics 输入驱动**_ 的安装和配置过程，适用于大多数笔记本电脑上的Synaptics(或ALPS)触摸板
+本文描述了 ***Synaptics 输入驱动*** 的安装和配置过程，适用于大多数笔记本电脑上的Synaptics(或ALPS)触摸板
 
 ## Contents
 
@@ -62,7 +62,6 @@ Synaptics 驱动当前被打包为[xf86-input-synaptics](https://www.archlinux.o
 下面列举了大多数用户希望进行配置的选项。请注意，所有的这些选项都可以直接被添加到主配置文件 `/etc/X11/xorg.conf.d/10-synaptics.conf` 中，比如，下面的例子里，我们启用了水平，垂直和环形滚动:
 
  `/etc/X11/xorg.conf.d/10-synaptics.conf` 
-
 ```
  Section "InputClass"
        Identifier "touchpad"
@@ -149,9 +148,9 @@ Synaptics 驱动当前被打包为[xf86-input-synaptics](https://www.archlinux.o
 
 当在**Gnome 3**下想要修改这些设定时:
 
-1.  打开 _System Settings_.
-2.  点击 _Mouse and Touchpad_.
-3.  在 _Touchpad_ 选项卡里对这些配置进行更改.
+1.  打开 *System Settings*.
+2.  点击 *Mouse and Touchpad*.
+3.  在 *Touchpad* 选项卡里对这些配置进行更改.
 
 Gnome的配置监控程序可能会覆盖现存设定(比如在 `xorg.conf.d` 中进行的预设),而那些设定可能和您的配置完全不一样。不过，我们可以完全停止Gnome在鼠标设定上的监控:
 
@@ -268,11 +267,11 @@ $ synclient TouchpadOff=1 (disable the touchpad)
 [evtest](/index.php/Evdev "Evdev")工具能够实时的显示触摸板上的压力和位置信息,允许对默认的Synaptics设定进行精校.可以通过如下方式启动evtest
 
 ```
-$ evtest /dev/input/event_X_
+$ evtest /dev/input/event*X*
 
 ```
 
-_X_代表触摸板的ID,可以通过查看`cat /proc/bus/input/devices`的输出来获取它. evtest需要对设备进行排他访问,因此,evtest不能和X Server的实例共存.你可以通过杀死X Server进程或者在虚拟终端上运行evtest来解决这个问题(例如,通过`CTRL+ALT+2`来切换到2号虚拟终端)
+*X*代表触摸板的ID,可以通过查看`cat /proc/bus/input/devices`的输出来获取它. evtest需要对设备进行排他访问,因此,evtest不能和X Server的实例共存.你可以通过杀死X Server进程或者在虚拟终端上运行evtest来解决这个问题(例如,通过`CTRL+ALT+2`来切换到2号虚拟终端)
 
 ### 环状滚动
 
@@ -281,7 +280,6 @@ Synaptics提供和ipod触控方式类似的环状滚动功能。您可以在触�
 添加下面几行到`/etc/X11/xorg.conf.d/10-synaptics.conf`中以启用环状滚动：
 
  `/etc/X11/xorg.conf.d/10-synaptics.conf` 
-
 ```
  Section "InputDevice"
          ...
@@ -316,7 +314,6 @@ Synaptics提供和ipod触控方式类似的环状滚动功能。您可以在触�
 可以在synaptics上启用自然滚动(触摸屏那种滚动).只要将`VertScrollDelta`和`HorizScrollDelta`的值设定为负就行(翻转滚动方向):
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
 Section "InputClass"
     ...
@@ -336,7 +333,6 @@ EndSection
 将下面的脚本保存到`/sbin/trackpad-toggle.sh`中：
 
  `/sbin/trackpad-toggle.sh` 
-
 ```
  #!/bin/bash
 
@@ -347,7 +343,6 @@ EndSection
 最后绑定一个快捷键来运行这段脚本，如果采用xbindkeys(配置文件为`~/.xbindkeysrc`),那么修改如下：
 
  `~/.xbindkeysrc` 
-
 ```
  "/sbin/trackpad-toggle.sh"
      m:0x5 + c:65
@@ -459,7 +454,6 @@ Option "PalmMinZ" "200"
 对于ALPS触摸板，如果采用以上的配置不能正常工作，请尝试下面的配置：
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
   Section "ServerLayout"
     ...
@@ -502,7 +496,6 @@ Option "PalmMinZ" "200"
 一般这是因为在系统上设置synaptics的方法不对:同时载入了两个synaptics模块.我们可以通过查看xorg log(`/var/log/Xorg.0.log`)来识别这种情况:
 
  `/var/log/Xorg.0.log` 
-
 ```
  [ 9304.803] (**) SynPS/2 Synaptics TouchPad: Applying InputClass "evdev touchpad catchall"
  [ 9304.803] (**) SynPS/2 Synaptics TouchPad: Applying InputClass "touchpad catchall"
@@ -514,7 +507,6 @@ Option "PalmMinZ" "200"
 我们可以通过将 `MatchDevicePath "/dev/input/event*"` 添加到 `/etc/X11/xorg.conf.d/10-synaptics.conf` 中来防止这种双重载入:
 
  `/etc/X11/xorg.conf.d/10-synaptics.conf` 
-
 ```
  Section "InputClass"
        Identifier "touchpad catchall"
@@ -564,7 +556,6 @@ Option "PalmMinZ" "200"
 在[udev](/index.php/Udev "Udev")的协助下，可以实现当外置鼠标插入后自动禁用触摸板的功能。添加以下udev规则到`/etc/udev/rules.d/01-touchpad.rules`来实现这一点：
 
  `/etc/udev/rules.d/01-touchpad.rules` 
-
 ```
 ACTION=="add", SUBSYSTEM=="input", KERNEL=="mouse[0-9]", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/<your username>/.Xauthority", ENV{ID_CLASS}="mouse", ENV{REMOVE_CMD}="/usr/bin/synclient TouchpadOff=0", RUN+="/usr/bin/synclient TouchpadOff=1"
 
@@ -596,7 +587,7 @@ ACTION=="add", KERNEL=="mouse[0-9]", SUBSYSTEM=="input", PROGRAM="/usr/bin/find 
 
 某些用户会发现鼠标指针奇怪地在屏幕上“跳跃”，当前没有有效的办法来解决这个问题，但是有开发者正在关注这个BUG.
 
-另一个可能是你遇到了和i8042控制器有关的_IRQ losses_问题(很多笔记本用这个i8042来控制键盘,触摸板).你有两个选择: 1.重新加载psmouse模组(rmmod&&insmod) 2.将i8042.nomux=1加入到启动行里,然后重启电脑
+另一个可能是你遇到了和i8042控制器有关的*IRQ losses*问题(很多笔记本用这个i8042来控制键盘,触摸板).你有两个选择: 1.重新加载psmouse模组(rmmod&&insmod) 2.将i8042.nomux=1加入到启动行里,然后重启电脑
 
 ### 在`/dev/input/*`中没有触摸板设备}
 
@@ -609,7 +600,6 @@ ACTION=="add", KERNEL=="mouse[0-9]", SUBSYSTEM=="input", PROGRAM="/usr/bin/find 
 **样例输出**
 
  `$ cat /proc/bus/input/devices` 
-
 ```
  I: Bus=0011 Vendor=0002 Product=0007 Version=0000
  N: Name="SynPS/2 Synaptics TouchPad"
@@ -710,7 +700,6 @@ To build the package after downloading the tarball and unpacking it, execute:
 将**Option "FastTaps" "1"** 添加到`/etc/X11/xorg.conf.d/10-synaptics.conf` 中:
 
  `/etc/X11/xorg.conf.d/10-synaptics.conf` 
-
 ```
  Section "InputClass"
       Identifier "Synaptics Touchpad"
@@ -731,13 +720,13 @@ To build the package after downloading the tarball and unpacking it, execute:
 ```
 Section "InputDevice"
        ...
-       Option "GrabEventDevice" "_boolean_"
+       Option "GrabEventDevice" "*boolean*"
        ...
 EndSection
 
 ```
 
-_boolean_部分可以是yes或者false，分别代表启用和禁止此功能。
+*boolean*部分可以是yes或者false，分别代表启用和禁止此功能。
 
 当然你也可以使用synclient来调整，不过不能马上生效，只有触摸板驱动被禁用然后重新启用才能有效果。你可以通过切换到控制台然后切换回X来实现。
 
@@ -747,12 +736,11 @@ _boolean_部分可以是yes或者false，分别代表启用和禁止此功能。
 
 ### 一体化触摸板 (也被称为 ClickPads)
 
-一些笔记本使用按键与触摸板面一体的触摸板.比如HP 4500系列笔记本,ThinkPad X220,X1 系列笔记本.默认情况下所有按键都被识别为左键,这样就不能使用右键中键,Click-Drag手势等功能. 在synaptics 1.6.0版驱动之前,一般使用第三方补丁来支持此类设备.但从1.6.0开始,Synaptics使用_mtdev_库实现了对多点触控的原生支持. 请注意,尽管支持多点触控,但是Synaptics驱动不会识别是不是不同的手指(至少到1.7.1都是这样),这样的话,当使用物理按键或者拖放手势时会有一些奇怪的现象出现.xf86-input-mtrack驱动对多点触控有更好的支持.
+一些笔记本使用按键与触摸板面一体的触摸板.比如HP 4500系列笔记本,ThinkPad X220,X1 系列笔记本.默认情况下所有按键都被识别为左键,这样就不能使用右键中键,Click-Drag手势等功能. 在synaptics 1.6.0版驱动之前,一般使用第三方补丁来支持此类设备.但从1.6.0开始,Synaptics使用*mtdev*库实现了对多点触控的原生支持. 请注意,尽管支持多点触控,但是Synaptics驱动不会识别是不是不同的手指(至少到1.7.1都是这样),这样的话,当使用物理按键或者拖放手势时会有一些奇怪的现象出现.xf86-input-mtrack驱动对多点触控有更好的支持.
 
 可以修改`/etc/X11/xorg.conf.d/50-synaptics.conf`来启用其他按键(或者给自定义的synaptics配置文件赋一个更高的优先级(前缀号更高),比如55-synaptics.conf):
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
 ...
 Option "ClickPad"         "true"
@@ -787,7 +775,6 @@ Option     "SoftButtonAreas"  "60% 0 82% 0 40% 59% 82% 0"
 可以使用`synclient`来检查新的软按键区域设置:
 
  `$ synclient -l | grep -i ButtonArea` 
-
 ```
         RightButtonAreaLeft     = 3914
         RightButtonAreaRight    = 0

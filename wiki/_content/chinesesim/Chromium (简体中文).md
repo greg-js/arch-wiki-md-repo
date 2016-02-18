@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Chromium](/index.php/Chromium "Chromium") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-03-10，点击[这里](https://wiki.archlinux.org/index.php?title=Chromium&diff=0&oldid=362695)可以查看翻译后英文页面的改动。
 
-[Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser) "wikipedia:Chromium (web browser)") 是一款来自Google的开源图形网络浏览器，基于 [WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebKit")渲染引擎。
+[Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser) 是一款来自Google的开源图形网络浏览器，基于 [WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebKit")渲染引擎。
 
 ## Contents
 
@@ -107,7 +107,7 @@ chrome 及 chromium 在中文环境下使用可能会极其卡顿，原因在于
 
 **Warning:** Disabling the rendering list may cause unstable behaviour, including crashes of the host. See the bug reports in `chrome://gpu`.
 
-First, make sure you have all the required packages as explained in [VDPAU](/index.php/VDPAU "VDPAU"). Then, to force 3D rendering _enable_ the flag "Override software rendering list" in `chrome://flags`. Check if it is working in `chrome://gpu`. This may also alleviate tearing issues with the [radeon](/index.php/Radeon "Radeon") driver.
+First, make sure you have all the required packages as explained in [VDPAU](/index.php/VDPAU "VDPAU"). Then, to force 3D rendering *enable* the flag "Override software rendering list" in `chrome://flags`. Check if it is working in `chrome://gpu`. This may also alleviate tearing issues with the [radeon](/index.php/Radeon "Radeon") driver.
 
 ### 代理设置
 
@@ -117,7 +117,7 @@ First, make sure you have all the required packages as explained in [VDPAU](/ind
 
 有时 Chromium 会在某些显卡配置中禁用 WebGL，可以通过URL中输入`about:flags`，然后启用 WebGL. 通过命令行 `--enable-webgl` 选项也能启用它。
 
-有可能 Chromium 把你的显卡列入了黑名单，如果是这样，可以通过`--ignore-gpu-blacklist`选项禁用黑名单。或者在`about:flags` 中启用 _Override software rendering list_.
+有可能 Chromium 把你的显卡列入了黑名单，如果是这样，可以通过`--ignore-gpu-blacklist`选项禁用黑名单。或者在`about:flags` 中启用 *Override software rendering list*.
 
 ### Google Play and Flash
 
@@ -125,7 +125,7 @@ DRM content on Flash still requires HAL to play. This is readily apparent with G
 
 ### Force 3D acceleration in Pepper Flash Player and i.g. the browser with radeon driver
 
-First, make sure you have all the required packages as explained in [VDPAU](/index.php/VDPAU "VDPAU"). Then, to force 3D rendering _enable_ the flag "Override software rendering list" in `chrome://flags`. Check if it is working in `chrome://gpu`.
+First, make sure you have all the required packages as explained in [VDPAU](/index.php/VDPAU "VDPAU"). Then, to force 3D rendering *enable* the flag "Override software rendering list" in `chrome://flags`. Check if it is working in `chrome://gpu`.
 
 ### Asian characters not displayed with language set to English
 

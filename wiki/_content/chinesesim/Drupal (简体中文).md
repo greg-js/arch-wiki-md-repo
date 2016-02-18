@@ -1,6 +1,6 @@
 **编译中，请稍后再访问。。。。**
 
-_“Drupal 是一个自由开源的内容管理系统，以PHP语言写成。在网页编程界中，Drupal经常被视为一套内容管理框架，而不单纯作为一般意义上的内容系统。”_ --- 摘自[维基百科](http://zh.wikipedia.org/wiki/Drupal)
+*“Drupal 是一个自由开源的内容管理系统，以PHP语言写成。在网页编程界中，Drupal经常被视为一套内容管理框架，而不单纯作为一般意义上的内容系统。”* --- 摘自[维基百科](http://zh.wikipedia.org/wiki/Drupal)
 
 这篇文章主要描述了怎样安装Drupal以及配置[Apache](/index.php/Apache "Apache")，[MySQL](/index.php/MySQL "MySQL")和[PostgreSQL](/index.php/PostgreSQL "PostgreSQL")，[PHP](/index.php/PHP "PHP")，[Postfix](/index.php/Postfix "Postfix")，以便使它们构建一套完整的，可以正常工作的web服务系统。这篇文章假定你有一定的[LAMP](/index.php/LAMP "LAMP")（Apache，MySQL，PHP）和[LAPP](/index.php/LAPP "LAPP")（Apache，PostgreSQL，PHP）的安装经验。
 

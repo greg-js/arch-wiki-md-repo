@@ -1,4 +1,4 @@
-Este artículo detalla el proceso de instalación y configuración de _**Synaptics input driver**_ para los touchpads Synaptics (y ALPS) que se encuentra en la mayoría de portátiles.
+Este artículo detalla el proceso de instalación y configuración de ***Synaptics input driver*** para los touchpads Synaptics (y ALPS) que se encuentra en la mayoría de portátiles.
 
 ## Contents
 
@@ -49,7 +49,7 @@ El controlador Synaptics puede ser [instalado](/index.php/Pacman_(Espa%C3%B1ol) 
 
 ## Configuración
 
-El método principal de configuración del touchpad (en adelante, _«panel táctil»_), es a través de un archivo de configuración del servidor [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)"). Después de la instalación de `xf86-input-synaptics`, se crea un archivo de configuración predefinido en `/etc/X11/xorg.conf.d/50-synaptics.conf`.
+El método principal de configuración del touchpad (en adelante, *«panel táctil»*), es a través de un archivo de configuración del servidor [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)"). Después de la instalación de `xf86-input-synaptics`, se crea un archivo de configuración predefinido en `/etc/X11/xorg.conf.d/50-synaptics.conf`.
 
 Se puede editar este archivo para configurar las diversas opciones disponibles del controlador. Para obtener una lista completa de todas las opciones disponibles, los usuarios deben consultar las páginas del manual de synaptics:
 
@@ -60,7 +60,6 @@ Se puede editar este archivo para configurar las diversas opciones disponibles d
 El controlador Synaptic permite ser modificado con un amplio número de opciones. Tenga en cuenta que todas estas opciones simplemente se añaden en el archivo de configuración principal `/etc/X11/xorg.conf.d/50-synaptics.conf`, como se muestra en el siguiente ejemplo de archivo de configuración, en el que se han activado los desplazamientos verticales, horizontales y circulares:
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
  Section "InputClass"
        Identifier "touchpad"
@@ -151,15 +150,15 @@ Para cambiar esta configuración en **Gnome 2**:
 
 Para cambiar esta configuración en **Gnome 3**:
 
-1.  Abra _Configuración del sistema_.
-2.  Seleccione _Ratón y «touchpad»_.
-3.  Cambie la configuración del _Touchpad_.
+1.  Abra *Configuración del sistema*.
+2.  Seleccione *Ratón y «touchpad»*.
+3.  Cambie la configuración del *Touchpad*.
 
 Para cambiar esta configuración en **Cinnamon**:
 
-1.  Abra _Configuración del sistema_.
-2.  Seleccione _Ratón y «touchpad»_.
-3.  Cambie la configuración del _Touchpad_.
+1.  Abra *Configuración del sistema*.
+2.  Seleccione *Ratón y «touchpad»*.
+3.  Cambie la configuración del *Touchpad*.
 
 El demonio de configuración de gnome puede sobreescribir la configuración existente (por ejemplo, las que figuran en `xorg.conf.d`) para las cuales no existe un equivalente en cualquiera de las utilidades gráficas de configuración. Es posible hacer que gnome no modifique la configuración del ratón en absoluto, haciendo lo siguiente:
 
@@ -189,11 +188,11 @@ Para evitar que el demonio de configuración de Mate redefina los valores existe
 
 Junto al método tradicional de configuración, el controlador Synaptics también soporta la configuración al vuelo. Esto significa que los usuarios pueden configurar ciertas opciones a través de una aplicación de software, la cual aplica estas opciones inmediatamente sin necesidad de reiniciar X. Esto es útil para probar las opciones de configuración antes de incluirlos en el archivo de configuración.
 
-**Advertencia:** La configuración al vuelo (_«on-the-fly»_) no es permanente y no se mantendrá después de un reinicio del sistema, ni después de suspender/reanudar o reiniciar udev. Esto solo se debe utilizar para funciones de prueba, afinamiento o configuración del script.
+**Advertencia:** La configuración al vuelo (*«on-the-fly»*) no es permanente y no se mantendrá después de un reinicio del sistema, ni después de suspender/reanudar o reiniciar udev. Esto solo se debe utilizar para funciones de prueba, afinamiento o configuración del script.
 
 #### Herramientas de consola
 
-*   **[Synclient](/index.php/Touchpad_Synaptics#Synclient "Touchpad Synaptics") (Recomendado)** — utilidad de línea de órdenes para configurar y buscar ajustes del controlador Synaptics en un sistema _live_, la herramienta es desarrollada por los mantenedores del controlador Synaptics y se proporciona con el controlador synaptics.
+*   **[Synclient](/index.php/Touchpad_Synaptics#Synclient "Touchpad Synaptics") (Recomendado)** — utilidad de línea de órdenes para configurar y buscar ajustes del controlador Synaptics en un sistema *live*, la herramienta es desarrollada por los mantenedores del controlador Synaptics y se proporciona con el controlador synaptics.
 
 	[http://xorg.freedesktop.org/](http://xorg.freedesktop.org/) || [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics)
 
@@ -244,8 +243,8 @@ De izquierda a derecha, esto muestra:
 *   (1) el dispositivo tiene un botón izquierdo físico
 *   (0) el dispositivo no tiene un botón central físico
 *   (1) el dispositivo tiene un botón físico derecho
-*   (0) el dispositivo no es compatible con la detección de dos dedos (_two-finger_)
-*   (0) el dispositivo no es compatible con la detección de tres dedos (_three-finger_)
+*   (0) el dispositivo no es compatible con la detección de dos dedos (*two-finger*)
+*   (0) el dispositivo no es compatible con la detección de tres dedos (*three-finger*)
 *   (1) el dispositivo puede configurar la resolución vertical
 *   (1) el dispositivo puede configurar la resolución horizontal
 
@@ -283,7 +282,6 @@ evtest necesita acceso exclusivo al dispositivo, lo que significa que no se pued
 El desplazamiento circular es una característica que Synaptics ofrece y que recuerda mucho el comportamiento de los iPod. En lugar de (o junto con) desplazamiento horizontal o vertical, puede desplazarse circularmente. Algunos usuarios encuentran esto más rápido y más preciso. Para habilitar el desplazamiento circular, agregue las siguientes opciones en la sección device del archivo del panel táctil en `/etc/X11/xorg.conf.d/50-synaptics.conf`:
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
  Section "InputClass"
          ...
@@ -318,7 +316,6 @@ Para desplazarse rápidamente, dibuje pequeños círculos en el centro de su pan
 Es posible activar el desplazamiento natural a través de Synaptics. Solo tenemos que utilizar valores negativos para `VertScrollDelta` y `HorizScrollDelta` como sigue:
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
  Section "InputClass"
          ...
@@ -338,7 +335,6 @@ Si va a probar este método, debe instalar [xbindkeys](/index.php/Xbindkeys "Xbi
 A continuación, guarde este script en algo como `/sbin/trackpad-toggle.sh`:
 
  `/sbin/trackpad-toggle.sh` 
-
 ```
  #!/bin/bash
 
@@ -349,7 +345,6 @@ A continuación, guarde este script en algo como `/sbin/trackpad-toggle.sh`:
 Y por último, añada una combinación de teclas para usar el script. Lo mejor es iniciarlo con xbindkeys así, (en el archivo `~/.xbindkeysrc`):
 
  `~/.xbindkeysrc` 
-
 ```
  "/sbin/trackpad-toggle.sh"
      m:0x5 + c:65
@@ -436,10 +431,9 @@ La opción «-d» es necesaria para iniciar syndaemon como un proceso en segundo
 Para activar syndaemon es necesario utilizar el programa de preferencias para el inicio de las aplicaciones de Gnome . Inicie sesión para Gnome y vaya a **Sistema> Preferencias> Aplicaciones de Inicio**. En la pestaña Programas de inicio, haga clic en el botón **Añadir**. Denomine como quiera al programa de inicio e introduzca cualquier comentario que desee (o deje este campo en blanco). En el campo para «comando» añada:
 
 ```
-En Gnome 3 ejecute _gnome-session-properties_ (en un terminal, como usuario root) para acceder a las aplicaciones de inicio.
+En Gnome 3 ejecute *gnome-session-properties* (en un terminal, como usuario root) para acceder a las aplicaciones de inicio.
 
 ```
-
  `$ syndaemon -t -k -i 2 -d &` 
 
 Cuando haya terminado, pulse el botón **Añadir** para **agregar el programa al iniciar**. Asegúrese de que la casilla de verificación, situada junto al programa de arranque, ha sido creada, en la lista de nuevos programas de inicio. Cierre la ventana de las **Preferencias de Aplicaciones de Inicio** y listo.
@@ -457,26 +451,24 @@ A continuación, seleccione **Ejecutar en terminal**.
 Con la ayuda de [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)"), es posible deshabilitar automáticamente el panel táctil, para el caso de que un ratón externo se conecte. Para ello, agregue las siguientes reglas udev al archivo siguiente:
 
  `/etc/udev/rules.d/01-touchpad.rules` 
-
 ```
-SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="add", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/_username_/.Xauthority", RUN+="/usr/bin/synclient TouchpadOff=1"
-SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="remove", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/_username_/.Xauthority", RUN+="/usr/bin/synclient TouchpadOff=0"
+SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="add", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/*username*/.Xauthority", RUN+="/usr/bin/synclient TouchpadOff=1"
+SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="remove", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/*username*/.Xauthority", RUN+="/usr/bin/synclient TouchpadOff=0"
 ```
 
 GDM conserva los archivos Xauthority en `/var/run/gdm` en un directorio con nombre aleatorio. De modo que las reglas udev se mostrarán de esta forma:
 
  `/etc/udev/rules.d/01-touchpad.rules` 
-
 ```
-SUBSYSTEM=="input", KERNEL=="mouse[0-9]", ACTION=="add", PROGRAM="/usr/bin/find /var/run/gdm -name _username_ -print -quit", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="$result/database", RUN+="/usr/bin/synclient TouchpadOff=1"
-SUBSYSTEM=="input", KERNEL=="mouse[0-9]", ACTION=="remove", PROGRAM="/usr/bin/find /var/run/gdm -name _username_ -print -quit", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="$result/database", RUN+="/usr/bin/synclient TouchpadOff=0"
+SUBSYSTEM=="input", KERNEL=="mouse[0-9]", ACTION=="add", PROGRAM="/usr/bin/find /var/run/gdm -name *username* -print -quit", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="$result/database", RUN+="/usr/bin/synclient TouchpadOff=1"
+SUBSYSTEM=="input", KERNEL=="mouse[0-9]", ACTION=="remove", PROGRAM="/usr/bin/find /var/run/gdm -name *username* -print -quit", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="$result/database", RUN+="/usr/bin/synclient TouchpadOff=0"
 ```
 
 Sin embargo, las reglas udev pueden entrar en conflicto con [syndaemon](#Usar_.xinitrc). Para desactivar el panel táctil y, al mismo tiempo, terminar syndaemon, puede usar una regla como esta:
 
- `/etc/udev/rules.d/01-touchpad.rules`  `SUBSYSTEM=="input", KERNEL=="mouse[0-9]", ACTION=="add", PROGRAM="/usr/bin/find /var/run/gdm -name _username_ -print -quit", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="$result/database", RUN+="/bin/sh -c '/usr/bin/synclient TouchpadOff=1 ; sleep 1; /bin/killall syndaemon; '"` 
+ `/etc/udev/rules.d/01-touchpad.rules`  `SUBSYSTEM=="input", KERNEL=="mouse[0-9]", ACTION=="add", PROGRAM="/usr/bin/find /var/run/gdm -name *username* -print -quit", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="$result/database", RUN+="/bin/sh -c '/usr/bin/synclient TouchpadOff=1 ; sleep 1; /bin/killall syndaemon; '"` 
 
-Si _syndaemon_ se inicia automáticamente con la omisión del ratón, entonces se puede combinar esto con la anterior regla de desactivación. Si se necesita para iniciar el propio _syndaemon_, entonces altere adecuadamente la orden con las opciones de _syndaemon_ preferidas.
+Si *syndaemon* se inicia automáticamente con la omisión del ratón, entonces se puede combinar esto con la anterior regla de desactivación. Si se necesita para iniciar el propio *syndaemon*, entonces altere adecuadamente la orden con las opciones de *syndaemon* preferidas.
 
 ## Solución de problemas
 
@@ -491,7 +483,6 @@ Si _syndaemon_ se inicia automáticamente con la omisión del ratón, entonces s
 Para los panéles táctiles ALPS, si la configuración anterior no proporciona los resultados deseados, pruebe la siguiente configuración, en su lugar:
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
   Section "ServerLayout"
    ...
@@ -535,7 +526,6 @@ Para los panéles táctiles ALPS, si la configuración anterior no proporciona l
 Debido a la forma en que synaptic está configurado actualmente, se cargan dos instancias del módulo synaptics. Podemos reconocer esta situación, abriendo el archivo de registro de xorg (`/var/log/Xorg.0.log`) y observando esto:
 
  `/var/log/Xorg.0.log` 
-
 ```
  [ 9304.803] (**) SynPS/2 Synaptics TouchPad: Applying InputClass "evdev touchpad catchall"
  [ 9304.803] (**) SynPS/2 Synaptics TouchPad: Applying InputClass "touchpad catchall"
@@ -547,7 +537,6 @@ Observe cómo dos instancias del módulo, con nombres diferentes, se cargan. En 
 Podemos evitar esta doble carga añadiendo `MatchDevicePath "/dev/input/event *"` al archivo `/etc/X11/xorg.conf.d/50-synaptics.conf`:
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
  Section "InputClass"
        Identifier      "touchpad catchall"
@@ -572,7 +561,7 @@ Temas relacionados con el foro:
 
 ### Panel táctil detectado como ratón «PS/2 Generic» o «Logitech PS/2»
 
-Esto es causado por un [error del kernel](https://bugzilla.kernel.org/show_bug.cgi?id=27442) corregido a partir de la versión 3.3 del kernel. El panel táctil detectado erróneamente no se podía configurar por el controlador de entrada Synaptic (_«Synaptic input driver»_). Para solucionar este problema, basta con instalar el paquete [psmouse-elantech](https://aur.archlinux.org/packages/psmouse-elantech/) de [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)").
+Esto es causado por un [error del kernel](https://bugzilla.kernel.org/show_bug.cgi?id=27442) corregido a partir de la versión 3.3 del kernel. El panel táctil detectado erróneamente no se podía configurar por el controlador de entrada Synaptic (*«Synaptic input driver»*). Para solucionar este problema, basta con instalar el paquete [psmouse-elantech](https://aur.archlinux.org/packages/psmouse-elantech/) de [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)").
 
 Entre los portátiles afectados están los siguientes modelos:
 
@@ -596,9 +585,9 @@ Si al cliquear, tanto con 2 dedos como con 3 dedos, se interpreta como un clic d
 
 ### El cursor salta
 
-Algunos usuarios tienen un cursor que, inexplicablemente, _salta_ por toda la pantalla. En este momento no hay un parche para este problema, pero los desarrolladores son conscientes del problema y están trabajando en ello.
+Algunos usuarios tienen un cursor que, inexplicablemente, *salta* por toda la pantalla. En este momento no hay un parche para este problema, pero los desarrolladores son conscientes del problema y están trabajando en ello.
 
-Otra posibilidad para explicar este comportamiento es que se están experimentando _pérdidas de IRQ_ relacionadas con el controlador i8042 (este dispositivo maneja el teclado y el panel táctil de muchos ordenadores portátiles), así que tiene dos posibilidades aquí:
+Otra posibilidad para explicar este comportamiento es que se están experimentando *pérdidas de IRQ* relacionadas con el controlador i8042 (este dispositivo maneja el teclado y el panel táctil de muchos ordenadores portátiles), así que tiene dos posibilidades aquí:
 
 1.  rmmod && insmod para el módulo psmouse.
 2.  agregar i8042.nomux=1 a la línea de arranque y reiniciar el equipo.
@@ -614,7 +603,6 @@ Se busca un dispositivo de entrada que tenga el nombre "SynPS/2 Synaptics TouchP
 **Ejemplo de salida:**
 
  `$ cat /proc/bus/input/devices` 
-
 ```
  I: Bus=0011 Vendor=0002 Product=0007 Version=0000
  N: Name="SynPS/2 Synaptics TouchPad"
@@ -718,7 +706,6 @@ Si se experimenta un retraso entre el golpecito en el panel táctil y el clic re
 Para ello, se debe añadir **Option "FastTaps" "1"** a `/etc/X11/xorg.conf.d/50-synaptics.conf` de modo que quede como sigue:
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
  Section "InputClass"
       Identifier "Synaptics Touchpad"
@@ -739,10 +726,9 @@ Registrar el evento del dispositivo significa que ningún programa, ni por parte
 Si desea controlar, añadir o modificar la variable Option "GrabEventDevice" en la sección touchpad en `/etc/X11/xorg.conf.d/50-synaptics.conf`, añada:
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
 ...
-Option "GrabEventDevice" "_boolean_"
+Option "GrabEventDevice" "*boolean*"
 ...
 ```
 
@@ -754,12 +740,11 @@ Muchos controladores contienen un firmware que se carga en la memoria flash cuan
 
 ### Panel táctil sin botones (o ClickPads)
 
-Algunos ordenadores portátiles tienen un tipo especial de panel táctil que tiene los botones del ratón como parte de la placa de seguimiento, en vez de ser botones externos. Por ejemplo, HP series 4500 ProBooks, ThinkPad X220 y la serie X1 de ThinkPad tienen este tipo de panel táctil. Por defecto, el área del botón se detecta como una pulsación a la izquierda, con el resultado de que el segundo botón es de hecho inutilizable y que el arrastre no va a funcionar. Anteriormente, el soporte para tales dispositivos se logró mediante el uso de parches de terceros, pero desde la versión 1.6.0 el controlador Synaptics tiene soporte multitouch nativo (usando la biblioteca _mtdev_). Tenga en cuenta que aunque el controlador registra varios toques, no hace un seguimiento de los dedos individuales (a partir de la versión 1.7.1), lo que da como resultado un comportamiento confuso al utilizar los botones físicos de un Clickpad para arrastrar y soltar, y otros gestos. Puede mirar el controlador [xf86-input-mtrack](https://aur.archlinux.org/packages/xf86-input-mtrack/) para un mejor soporte multitoque.
+Algunos ordenadores portátiles tienen un tipo especial de panel táctil que tiene los botones del ratón como parte de la placa de seguimiento, en vez de ser botones externos. Por ejemplo, HP series 4500 ProBooks, ThinkPad X220 y la serie X1 de ThinkPad tienen este tipo de panel táctil. Por defecto, el área del botón se detecta como una pulsación a la izquierda, con el resultado de que el segundo botón es de hecho inutilizable y que el arrastre no va a funcionar. Anteriormente, el soporte para tales dispositivos se logró mediante el uso de parches de terceros, pero desde la versión 1.6.0 el controlador Synaptics tiene soporte multitouch nativo (usando la biblioteca *mtdev*). Tenga en cuenta que aunque el controlador registra varios toques, no hace un seguimiento de los dedos individuales (a partir de la versión 1.7.1), lo que da como resultado un comportamiento confuso al utilizar los botones físicos de un Clickpad para arrastrar y soltar, y otros gestos. Puede mirar el controlador [xf86-input-mtrack](https://aur.archlinux.org/packages/xf86-input-mtrack/) para un mejor soporte multitoque.
 
 Para habilitar otras pulsaciones modifique la sección touchpad en `/etc/X11/xorg.conf.d/50-synaptics.conf` (o mejor, de su archivo de configuración personalizada de synaptics, el cual debe ir precedido de un número superior a 10):
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
 ...
 Option "ClickPad"             "true"

@@ -21,7 +21,6 @@ Using **kernel 3.14.4-1-ARCH**.
 Version: 2.1.28.
 
  `inxi -F -M` 
-
 ```
 System:    Host: arch Kernel: 3.14.4-1-ARCH x86_64 (64 bit) Desktop: i3 4.7.2-177-gf41e81b Distro: Arch Linux 
 Machine:   System: LENOVO product: VIUS3 v: Lenovo IdeaPad S400U

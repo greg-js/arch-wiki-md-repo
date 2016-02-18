@@ -31,7 +31,7 @@ GNU Screen можно установить из репозитория extra:
 
 ## Основы
 
-Команды вводятся после нажатия Ctrl+A. Данная комбинация настраивается опцией _escape_ в ~/.screenrc. Пример:
+Команды вводятся после нажатия Ctrl+A. Данная комбинация настраивается опцией *escape* в ~/.screenrc. Пример:
 
 ```
 escape ``
@@ -215,7 +215,7 @@ Set inittab/mingetty to automaically log in to vc/3 on runlevel 5 and you're set
 
 ## Исправляем зависание Midnight Commander при запуске в screen
 
-In some cases (need deeper inspection) [old gpm bug](https://bugzilla.redhat.com/show_bug.cgi?id=168076) gets alive. So, then you try to run mc inside screen, you get a frozen screen's window. Try to kill gpm daemon before starting mc and/or disable it in _/etc/rc.conf_.
+In some cases (need deeper inspection) [old gpm bug](https://bugzilla.redhat.com/show_bug.cgi?id=168076) gets alive. So, then you try to run mc inside screen, you get a frozen screen's window. Try to kill gpm daemon before starting mc and/or disable it in */etc/rc.conf*.
 
 ## См. также
 

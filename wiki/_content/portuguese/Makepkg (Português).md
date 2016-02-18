@@ -26,9 +26,7 @@ O Makepkg é fornecido pelos pacotes do [pacman](https://www.archlinux.org/packa
 As opções `MAKEFLAGS`, `CFLAGS`, e `CXXFLAGS` são usadas pelo [make](https://www.archlinux.org/packages/?name=make), [gcc](https://www.archlinux.org/packages/?name=gcc), e `g++` enquanto a compilação de programa é com makepkg. Por padrão, essas opções de gerar pacotes genéricos podem ser instalados em uma ampla variedade de máquinas. Um ganho de desempenho pode ser alcançado por compilação de ajuste para o computador. A desvantagem é que os pacotes compilados especificamente para o processador do computador podem não funcionar em outras máquinas.
 
 **Nota:** Tenha em mente que nem todos os sistemas de compilação de pacote usarão suas variáveis ​​exportadas. Algumas as substituem no makefile original ou [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
-
  `/etc/makepkg.conf` 
-
 ```
 [...]
 
@@ -67,7 +65,6 @@ CXXFLAGS="${CFLAGS}"
 ```
 
 **Dica:** Para ver quais flags o `march=native` define, execute:
-
 ```
 $ gcc -march=native -E -v - </dev/null 2>&1 | sed -n 's/.* -v - //p'
 
@@ -81,7 +78,7 @@ Veja a página de manual do GCC para uma lista completa de opções disponíveis
 
 #### MAKEFLAGS
 
-A opção `MAKEFLAGS` pode ser usada para especificar opções adicionais a fazer. Usuários com sistemas multi-core/multi-processador podem especificar o número de tarefas para executar simultaneamente. Isto pode ser feito com o uso do `nproc` para determinar o número de processadores disponíveis, e.x. `-j4` _(onde 4 é a saída de `nproc`)_. Alguns especificamente do [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") substituem isso com `-j1`, por causa de corriqueira condições em determinadas versões ou simplesmente porque isso não é suportado, em primeiro lugar. Os pacotes que falham ao construir por causa disso devem ser [reportados](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") no bug tracker depois de ter certeza que o erro é de fato causado por sua MAKEFLAGS.
+A opção `MAKEFLAGS` pode ser usada para especificar opções adicionais a fazer. Usuários com sistemas multi-core/multi-processador podem especificar o número de tarefas para executar simultaneamente. Isto pode ser feito com o uso do `nproc` para determinar o número de processadores disponíveis, e.x. `-j4` *(onde 4 é a saída de `nproc`)*. Alguns especificamente do [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") substituem isso com `-j1`, por causa de corriqueira condições em determinadas versões ou simplesmente porque isso não é suportado, em primeiro lugar. Os pacotes que falham ao construir por causa disso devem ser [reportados](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") no bug tracker depois de ter certeza que o erro é de fato causado por sua MAKEFLAGS.
 
 Consulte `man make` para obter uma lista completa das opções disponíveis.
 
@@ -90,7 +87,6 @@ Consulte `man make` para obter uma lista completa das opções disponíveis.
 Em seguida, pode-se configurar onde os arquivos de origem e pacotes deverão ser colocados e identificá-los como empacotadores. Esta etapa é opcional, pacotes serão criados no diretório de trabalho, onde o makepkg é executado por padrão.
 
  `/etc/makepkg.conf` 
-
 ```
 [...]
 
@@ -125,7 +121,6 @@ Então modifique a variável `PKGDEST` em `/etc/makepkg.conf` adequadamente.
 A variável `PACKAGER` definirá o valor `packager` dentro dos arquivos de pacotes compilados metadata' `.PKGINFO`. Por padrão, usuários-pacotes compilados exibirão:
 
  `pacman -Qi package` 
-
 ```
 [...]
 Packager       : Unknown Packager
@@ -136,7 +131,6 @@ Packager       : Unknown Packager
 Depois:
 
  `pacman -Qi package` 
-
 ```
 [...]
 Packager       : John Doe <john@doe.com>
@@ -155,7 +149,6 @@ O procedimento a seguir não é necessário para compilar com makepkg, para a su
 As chaves GPG devem ser armazenados no arquivo de usuário `~/.gnupg/pubring.gpg`. No caso de não conter a assinatura determinada, makepkg mostra um aviso.
 
  `makepkg` 
-
 ```
 [...]
 ==> Verifying source file signatures with gpg...
@@ -173,7 +166,6 @@ Para mostrar a lista atual de chaves GPG use o comando gpg.
 Se não existe o arquivo pubring.gpg, ele será criado para você imediatamente. Agora você pode prosseguir com a configuração gpg para permitir a compilação de pacotes AUR submetidos pelos desenvolvedores do Arch Linux com verificação com sucesso de assinatura. Adicione a seguinte linha no final do arquivo de configuração gpg para incluir conjunto de chaves pacman no conjunto de chaves pessoal do usuário.
 
  `~/.gnupg/gpg.conf` 
-
 ```
 [...]
 keyring /etc/pacman.d/gnupg/pubring.gpg

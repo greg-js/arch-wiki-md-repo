@@ -79,7 +79,7 @@ $ createlang plpgsql template_postgis
 
 ```
 
-*   Load the PostGIS spatial types for PostgreSQL and spatial reference systems. "postgis.sql" and "spatial_ref_sys.sql" are part of the installation of PostGIS, and may reside somewhere else besides "/usr/sharepostgresql/contrib/postgis-2.1/" depending on the installation. _(Below is for default postgis 2.1 installation)_
+*   Load the PostGIS spatial types for PostgreSQL and spatial reference systems. "postgis.sql" and "spatial_ref_sys.sql" are part of the installation of PostGIS, and may reside somewhere else besides "/usr/sharepostgresql/contrib/postgis-2.1/" depending on the installation. *(Below is for default postgis 2.1 installation)*
 
 ```
 $ psql -d template_postgis -f /usr/share/postgresql/contrib/postgis-2.1/postgis.sql

@@ -61,7 +61,7 @@ Outstanding Issues:
 
 ## fsck
 
-To hide fsck messages during boot, let systemd check the root filesystem. For this, remove _fsck_ from:
+To hide fsck messages during boot, let systemd check the root filesystem. For this, remove *fsck* from:
 
 ```
 HOOKS=(...) 
@@ -75,7 +75,7 @@ mkinitcpio -p linux
 
 ```
 
-Now copy the files `systemd-fsck-root.service` and `systemd-fsck@.service` located at `/usr/lib/systemd/system/` to `/etc/systemd/system/` and edit them, configuring _StandardOutput_ and _StandardError_ like this:
+Now copy the files `systemd-fsck-root.service` and `systemd-fsck@.service` located at `/usr/lib/systemd/system/` to `/etc/systemd/system/` and edit them, configuring *StandardOutput* and *StandardError* like this:
 
 ```
 (...)

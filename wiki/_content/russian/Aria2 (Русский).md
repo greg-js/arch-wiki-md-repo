@@ -1,6 +1,6 @@
 С домашней страницы [проекта](http://aria2.sourceforge.net/):
 
-	_aria2 - это легкая мультипротокольная и многопоточная консольная утилита. Она поддерживает [HTTP](https://en.wikipedia.org/wiki/ru:HTTP "wikipedia:ru:HTTP")/[HTTPS](https://en.wikipedia.org/wiki/ru:HTTPS "wikipedia:ru:HTTPS"), [FTP](https://en.wikipedia.org/wiki/ru:FTP "wikipedia:ru:FTP"), [BitTorrent](https://en.wikipedia.org/wiki/ru:BitTorrent_(%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB) "wikipedia:ru:BitTorrent (протокол)") и [Metalink](https://en.wikipedia.org/wiki/ru:Metalink "wikipedia:ru:Metalink")._ aria2 _можно управлять с помощью встроенных интерфейсов [JSON-RPC](https://en.wikipedia.org/wiki/ru:JSON-RPC "wikipedia:ru:JSON-RPC") и [XML-RPC](https://en.wikipedia.org/wiki/ru:XML-RPC "wikipedia:ru:XML-RPC")._
+	*aria2 - это легкая мультипротокольная и многопоточная консольная утилита. Она поддерживает [HTTP](https://en.wikipedia.org/wiki/ru:HTTP и [Metalink](https://en.wikipedia.org/wiki/ru:Metalink "wikipedia:ru:Metalink").* aria2 *можно управлять с помощью встроенных интерфейсов [JSON-RPC](https://en.wikipedia.org/wiki/ru:JSON-RPC "wikipedia:ru:JSON-RPC") и [XML-RPC](https://en.wikipedia.org/wiki/ru:XML-RPC "wikipedia:ru:XML-RPC").*
 
 ## Contents
 
@@ -189,7 +189,7 @@ summary-interval=120
 
 	`http-user=USER_NAME`
 
-	Установите HTTP [имя пользователя](https://en.wikipedia.org/wiki/User_(computing) "wikipedia:User (computing)") как USER_NAME для входа в систему защищённого паролем. Это влияет на все [URIs](https://en.wikipedia.org/wiki/ru:Uniform_Resource_Identifier "wikipedia:ru:Uniform Resource Identifier").
+	Установите HTTP [имя пользователя](https://en.wikipedia.org/wiki/User_(computing) как USER_NAME для входа в систему защищённого паролем. Это влияет на все [URIs](https://en.wikipedia.org/wiki/ru:Uniform_Resource_Identifier "wikipedia:ru:Uniform Resource Identifier").
 
 	`http-passwd=PASSWORD`
 
@@ -394,7 +394,6 @@ aria2 может быть использован в качестве менед�
 Save the following [systemd](/index.php/Systemd "Systemd") service file, adjust username and config path according to your setup. Ensure your config is set to deamonize (use `daemon=true`).
 
  `/etc/systemd/system/aria2c.service` 
-
 ```
 [Unit]
 Description=Aria2c download manager
@@ -428,7 +427,6 @@ $ aria2c -UWget http://some-url-to-download/file.xyz
 Вы можете использовать [Aria2](/index.php/Aria2 "Aria2") вместо curl для скачивания файлов-исходников, просто измените переменную `DLAGENTS` следующим образом:
 
  `/etc/makepkg.conf` 
-
 ```
 [...]
 DLAGENTS=('ftp::/usr/bin/aria2c -UWget -s4 %u -o %o'
@@ -440,7 +438,6 @@ DLAGENTS=('ftp::/usr/bin/aria2c -UWget -s4 %u -o %o'
 ```
 
 **Обратите внимание:** Используйте параметр `-UWget` для изменения пользовательского агента на Wget. Это может предотвратить проблемы при загрузке с сайтов, которые фильтрует запросы, основанные на агенте пользователя (user agent), чтобы избежать проблемы доступа к URL-адресу. Смотрите [#Изменение User Agent](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_User_Agent)
-
 .
 
 ## Смотрите также

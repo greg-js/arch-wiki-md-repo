@@ -19,7 +19,7 @@ In spite of their scope, man pages are designed to be self-contained documents, 
 man 문서를 읽으려면 아래에 적힌 대로 입력한다.
 
 ```
-$ man _page_name_
+$ man *page_name*
 
 ```
 
@@ -178,7 +178,7 @@ setkey edit "v"
 
 ### Second method: using 'less'
 
-	<small>_Source: [nion's blog - less colors for man pages](http://nion.modprobe.de/blog/archives/572-less-colors-for-man-pages.html)_</small>
+	<small>*Source: [nion's blog - less colors for man pages](http://nion.modprobe.de/blog/archives/572-less-colors-for-man-pages.html)*</small>
 
 Alternatively, getting an approximate coloured result in manual pages with `less` is also a possibility. This method has the advantage that `less` has a bigger feature set than `most`, and that might be the preference for advanced users.
 
@@ -241,22 +241,22 @@ This will read your `BROWSER` environment variable to determine the browser. You
 
 There are several online databases of man pages, many of them listed on [Wikipedia:Man_page#Repositories_of_manual_pages](https://en.wikipedia.org/wiki/Man_page#Repositories_of_manual_pages "wikipedia:Man page"), including:
 
-*   [_Debian GNU/Linux man pages_](http://manpages.debian.net/)
-*   [_DragonFlyBSD manual pages_](http://leaf.dragonflybsd.org/cgi/web-man)
-*   [_FreeBSD Hypertext Man Pages_](http://www.freebsd.org/cgi/man.cgi)
-*   [_Linux and Solaris 10 Man Pages_](http://www.manpages.spotlynx.com/)
-*   [_Linux/FreeBSD Man Pages_](http://manpagehelp.net) with user comments
-*   [_Linux man pages at die.net_](http://linux.die.net/man/)
+*   [*Debian GNU/Linux man pages*](http://manpages.debian.net/)
+*   [*DragonFlyBSD manual pages*](http://leaf.dragonflybsd.org/cgi/web-man)
+*   [*FreeBSD Hypertext Man Pages*](http://www.freebsd.org/cgi/man.cgi)
+*   [*Linux and Solaris 10 Man Pages*](http://www.manpages.spotlynx.com/)
+*   [*Linux/FreeBSD Man Pages*](http://manpagehelp.net) with user comments
+*   [*Linux man pages at die.net*](http://linux.die.net/man/)
 *   [The Linux man-pages project at kernel.org](http://www.kernel.org/doc/man-pages/)
-*   [Man-Wiki: _Linux / Solaris / UNIX / BSD_](http://man-wiki.net/index.php/Main_Page)
-*   [_NetBSD manual pages_](http://netbsd.gw.com/cgi-bin/man-cgi)
-*   [_Mac OS X Manual Pages_](http://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
-*   [_On-line UNIX manual pages_](http://unixhelp.ed.ac.uk/alphabetical/index.html)
-*   [_OpenBSD manual pages_](http://www.openbsd.org/cgi-bin/man.cgi)
-*   [_Plan 9 Manual — Volume 1_](http://man.cat-v.org/plan_9/)
-*   [_Inferno Manual — Volume 1_](http://man.cat-v.org/inferno/)
-*   [_Storage Foundation Man Pages_](http://sfdoccentral.symantec.com/sf/5.0MP3/linux/manpages/index.html)
-*   [_The Missing Man Project_](http://markhobley.yi.org/manpages/missingman.html) [dead link as of 9 July 2010]
-*   [_Gobuntu Manual Pages_](http://en.linuxpages.info/index.php?title=Main_Page) [dead link as of 9 July 2010]
-*   [_The UNIX and Linux Forums Man Page Repository_](http://www.unix.com/man-page/OpenSolaris/1/man/)
-*   [_Ubuntu Manpage Repository_](http://manpages.ubuntu.com/)
+*   [Man-Wiki: *Linux / Solaris / UNIX / BSD*](http://man-wiki.net/index.php/Main_Page)
+*   [*NetBSD manual pages*](http://netbsd.gw.com/cgi-bin/man-cgi)
+*   [*Mac OS X Manual Pages*](http://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
+*   [*On-line UNIX manual pages*](http://unixhelp.ed.ac.uk/alphabetical/index.html)
+*   [*OpenBSD manual pages*](http://www.openbsd.org/cgi-bin/man.cgi)
+*   [*Plan 9 Manual — Volume 1*](http://man.cat-v.org/plan_9/)
+*   [*Inferno Manual — Volume 1*](http://man.cat-v.org/inferno/)
+*   [*Storage Foundation Man Pages*](http://sfdoccentral.symantec.com/sf/5.0MP3/linux/manpages/index.html)
+*   [*The Missing Man Project*](http://markhobley.yi.org/manpages/missingman.html) [dead link as of 9 July 2010]
+*   [*Gobuntu Manual Pages*](http://en.linuxpages.info/index.php?title=Main_Page) [dead link as of 9 July 2010]
+*   [*The UNIX and Linux Forums Man Page Repository*](http://www.unix.com/man-page/OpenSolaris/1/man/)
+*   [*Ubuntu Manpage Repository*](http://manpages.ubuntu.com/)

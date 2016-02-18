@@ -133,7 +133,6 @@ You may also need to add `".css" => "text/css"` to the `mimetype.assign` line fo
 Consider you have symlinked `ln -s /usr/share/gitweb /srv/http`, append this location to your nginx configuration:
 
  `/etc/nginx/nginx.conf` 
-
 ```
 location /gitweb/ {
         index gitweb.cgi;
@@ -152,7 +151,6 @@ If you follow [Nginx#CGI implementation](/index.php/Nginx#CGI_implementation "Ng
 Additionally, we have to install [fcgiwrap](https://www.archlinux.org/packages/?name=fcgiwrap) and [spawn-fcgi](https://www.archlinux.org/packages/?name=spawn-fcgi) and modify the fcgiwrap service file:
 
  `/usr/lib/systemd/system/fcgiwrap.service` 
-
 ```
 [Unit]
 Description=Simple server for running CGI applications over FastCGI
@@ -182,7 +180,6 @@ systemctl start nginx fcgiwrap
 Next we need to make a gitweb config file. Open (or create if it does not exist) the file `/etc/conf.d/gitweb.conf` and place this in it:
 
  `/etc/conf.d/gitweb.conf` 
-
 ```
 our $git_temp = "/tmp";
 
@@ -259,7 +256,6 @@ That is all for making a repository. You can now see it on your [http://localhos
 When browsing [http://localhost/gitweb](http://localhost/gitweb), there is only a one-line message as title. By running `gitweb.cgi` in command line as follows, we can get the complete error message (assuming you have symlinked `ln -s /usr/share/gitweb /srv/http`):
 
  `$ perl /srv/http/gitweb/gitweb.cgi` 
-
 ```
 Can't locate CGI.pm in @INC (you may need to install the CGI module) (@INC contains: /usr/lib/perl5/site_perl
  /usr/share/perl5/site_perl /usr/lib/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib/perl5/core_perl 

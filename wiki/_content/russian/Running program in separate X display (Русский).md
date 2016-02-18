@@ -80,4 +80,4 @@ startx ~/.config/bin/nexuiz.sh -- :1
 
 Наслаждайтесь.
 
-_Strafer_
+*Strafer*

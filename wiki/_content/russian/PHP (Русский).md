@@ -59,7 +59,7 @@ display_errors=On
 
 ```
 
-*   Не забудьте добавить файл индекса с расширением _.phtml_ (если вам это нужно) в `/etc/httpd/conf/extra/php5_module.conf`:
+*   Не забудьте добавить файл индекса с расширением *.phtml* (если вам это нужно) в `/etc/httpd/conf/extra/php5_module.conf`:
 
 ```
 DirectoryIndex index.php index.phtml index.html
@@ -86,7 +86,7 @@ extension=gd.so
 
 ### imagemagick
 
-Для [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) запустите `# pecl install imagick`. Утилита _pecl_ доступна из пакета [php-pear](https://aur.archlinux.org/packages/php-pear/). Затем добавьте
+Для [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) запустите `# pecl install imagick`. Утилита *pecl* доступна из пакета [php-pear](https://aur.archlinux.org/packages/php-pear/). Затем добавьте
 
 ```
 extension=imagick.so
@@ -97,7 +97,7 @@ extension=imagick.so
 
 ### pthreads
 
-Если вы хотите иметь поддержку POSIX-многопоточности, вам нужно добавить расширение pthreads. Для установки расширения ([http://pecl.php.net/package/pthreads](http://pecl.php.net/package/pthreads)) используя _pecl_ вам нужно использовать потокобезопасную версию PHP (собранную с флагом `--enable-maintainer-zts`). В настоящий момент это проще всего сделать, пересобрав основной пакет с этим флагом.
+Если вы хотите иметь поддержку POSIX-многопоточности, вам нужно добавить расширение pthreads. Для установки расширения ([http://pecl.php.net/package/pthreads](http://pecl.php.net/package/pthreads)) используя *pecl* вам нужно использовать потокобезопасную версию PHP (собранную с флагом `--enable-maintainer-zts`). В настоящий момент это проще всего сделать, пересобрав основной пакет с этим флагом.
 
 Инструкцию по сборке вы найдете на странице [PHP pthreads extension](/index.php/PHP_pthreads_extension "PHP pthreads extension").
 
@@ -140,7 +140,7 @@ Zend Core is the official PHP distribution provided by [zend.com](http://www.zen
 *   Install Zend Core (official PHP distribution)
     *   Uninstall the [php](https://www.archlinux.org/packages/?name=php) package.
     *   Download and install zend core from [[1]](http://www.zend.com/products/zend_core) ; **don't** install the bundle apache or tell it to setup your web server. It always installs to `/usr/local/Zend/Core` due to hard-coded path.
-    *   Create a script `/usr/local/bin/zendcore` and create symlinks to _php_, _php-cgi_, _pear_, _phpize_ under _/usr/local/bin_
+    *   Create a script `/usr/local/bin/zendcore` and create symlinks to *php*, *php-cgi*, *pear*, *phpize* under */usr/local/bin*
         `#!/bin/bash
         export LD_LIBRARY_PATH="/usr/local/Zend/Core/lib"
         exec /usr/local/Zend/Core/bin/`basename $0` "$@"`
@@ -162,7 +162,7 @@ Zend Core is the official PHP distribution provided by [zend.com](http://www.zen
 
 *   Install APC (Alternative PHP Cache):
     *   Run `pear install pecl.php.net/apc` as superuser.
-    *   Edit `/etc/php.ini`, add the line after _"; Zend Core extensions..."_ (line 1205):
+    *   Edit `/etc/php.ini`, add the line after *"; Zend Core extensions..."* (line 1205):
         `extension=apc.so`
 *   Update Zend Core and/or install other components
     *   Just run `/usr/local/Zend/Core/setup`
@@ -177,7 +177,7 @@ Good integration for PHP+HTML+JavaScript. Lacks code formatting and unicode supp
 
 Add custom encodings:
 
-*   Edit `_KOMODO_INSTALL_DIR_/lib/mozilla/components/koEncodingServices.py`, line 84, add:
+*   Edit `*KOMODO_INSTALL_DIR*/lib/mozilla/components/koEncodingServices.py`, line 84, add:
 
 ```
  ('cp950', 'Chinese(CP-950/Big5)', 'CP950', '', 1,'cp950'),
@@ -187,7 +187,7 @@ Add custom encodings:
 
 ```
 
-The format is (_encoding name in python_, _description_, _short description_, BOM, _is ASCII-superset?_, _font encoding_)
+The format is (*encoding name in python*, *description*, *short description*, BOM, *is ASCII-superset?*, *font encoding*)
 
 ### Netbeans
 
@@ -230,25 +230,25 @@ autocmd FileType php setlocal errorformat=%f(line\ %l):\ %m
 
 #### Eclipse Integration
 
-_Error Link_ plugin:
+*Error Link* plugin:
 
-*   Symlink _zca_ to _build.zca_ (so Error Link can recognize it)
+*   Symlink *zca* to *build.zca* (so Error Link can recognize it)
 *   Install [Sunshade](http://sunshade.sourceforge.net/) plugin suite;
-*   Preference -> Sunshade -> Error Link -> Add: _`^(.*\.php)\(line (\d+)\): ()(.*)`_
+*   Preference -> Sunshade -> Error Link -> Add: *`^(.*\.php)\(line (\d+)\): ()(.*)`*
 *   Run -> External Tools -> Open External Tools Dialog -> Select "Program" -> Clicn on "New":
     Name: Zend Code Analyzer
-    Location: _/usr/local/bin/build.zca_
-    Working Directory: _${container_loc}_
-    Arguments: _--recursive ${resource_name}_
+    Location: */usr/local/bin/build.zca*
+    Working Directory: *${container_loc}*
+    Arguments: *--recursive ${resource_name}*
 
 #### Komodo Integration
 
 Toolbox -> Add -> New Command:
 
-*   Command: _zca --recursive %F_
+*   Command: *zca --recursive %F*
 *   Run in: Command Output Tab
-*   Parse output with: _`^(?P<file>.+?)\(line (?P<line>\d+)\): (?P<content>.*)$`_
-*   Select _Show parsed output as a list_
+*   Parse output with: *`^(?P<file>.+?)\(line (?P<line>\d+)\): (?P<content>.*)$`*
+*   Select *Show parsed output as a list*
 
 ## Решение проблем
 

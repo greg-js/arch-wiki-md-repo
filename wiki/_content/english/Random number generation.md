@@ -37,7 +37,7 @@ While Linux kernel 2.4 did have writable `/proc` entries for controlling the ent
 
 The kernel's pool size is given by `INPUT_POOL_WORDS * OUTPUT_POOL_WORDS` which makes, as already stated, 4096 bits.
 
-**Warning:** Do not use even `/dev/random` to generate _critical_ cryptographic keys on a system you do not [control](http://everything2.com/title/Compromising+%252Fdev%252Frandom). If in doubt, for example in shared server environments, rather choose to create the keys on another system and transfer them. The cryptographer D. J. Bernstein illustrates the control problem with a [Mark Twain quotation](http://blog.cr.yp.to/20140205-entropy.html).
+**Warning:** Do not use even `/dev/random` to generate *critical* cryptographic keys on a system you do not [control](http://everything2.com/title/Compromising+%252Fdev%252Frandom). If in doubt, for example in shared server environments, rather choose to create the keys on another system and transfer them. The cryptographer D. J. Bernstein illustrates the control problem with a [Mark Twain quotation](http://blog.cr.yp.to/20140205-entropy.html).
 
 ### /dev/urandom
 
@@ -53,7 +53,7 @@ For applications other than the generation of long-term cryptographic keys, a pr
 *   [Frandom](/index.php/Frandom "Frandom")
 *   [rng-tools](/index.php/Rng-tools "Rng-tools")
 
-There are also [cryptographically secure pseudorandom number generators](https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator "wikipedia:Cryptographically secure pseudorandom number generator") like [Yarrow](https://en.wikipedia.org/wiki/Yarrow_algorithm "wikipedia:Yarrow algorithm") (FreeBSD/OS-X) or [Fortuna](https://en.wikipedia.org/wiki/Fortuna_(PRNG) "wikipedia:Fortuna (PRNG)") (the intended successor of Yarrow).
+There are also [cryptographically secure pseudorandom number generators](https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator (the intended successor of Yarrow).
 
 ## See also
 

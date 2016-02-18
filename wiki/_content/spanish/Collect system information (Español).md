@@ -53,7 +53,7 @@
 
 En este sencillo <u>tutorial</u>, vamos a ver cómo encontrar información acerca del sistema en una máquina con una distribución de GNU/Linux. Se usará más que nada la consola y se utilizará medios disponibles para usuarios normales cuando sea posible, para determinar información acerca de nuestra distro, kernel, hardware, software, etc.
 
-Saber cómo obtener esta información es muy útil en el mundo del software libre, pues forma parte de la [ netiqueta] en muchos foros de GNU/Linux el _saber cómo hacer preguntas_ para evitar ser ignorado o (peor) _flameado_.
+Saber cómo obtener esta información es muy útil en el mundo del software libre, pues forma parte de la [ netiqueta] en muchos foros de GNU/Linux el *saber cómo hacer preguntas* para evitar ser ignorado o (peor) *flameado*.
 
 --[Ryan.chappelle](/index.php?title=Usuario:Ryan.chappelle&action=edit&redlink=1 "Usuario:Ryan.chappelle (page does not exist)") 16:01 4 feb 2010 (UTC)
 
@@ -69,7 +69,7 @@ Para este tutorial se utilizarán las siguientes herramientas:
 
 ¿Quieres saber qué **distribución** de GNU/Linux estás usando?
 
-Una de las maneras más fáciles es consultar el archivo _issue_:
+Una de las maneras más fáciles es consultar el archivo *issue*:
 
 ```
 cat /etc/issue
@@ -88,7 +88,7 @@ De aquí obtenemos la información importante: nombre de la distribución, versi
 
 En una máquina con Trisquel (una distribución sólo-software-libre derivativa de Debian), el resultado es el siguiente:
 
-_POR HACER_
+*POR HACER*
 
 *   Más información: `man issue`.
 
@@ -108,9 +108,9 @@ Esto entrega el siguiente resultado:
 
 De aquí podemos obtener la siguiente información:
 
-*   La versión _major_ o principal del Kernel es la <tt>2.6</tt>. Esto es indicativo de qué rama de desarrollo y tecnologías tienes disponibles este kernel.
-*   La versión _minor_ es la <tt>.31</tt>.
-*   El kernel está compilado para la arquitectura y máquina _Intel 686_ o mejor conocido como Intel Pentium Pro (6), lo que equivale a las familias de procesadores Core y M, y a todos los procesadores Intel posteriores a Pentium II y AMD Athlon y posteriores. En términos básicos esto significa que el kernel está optimizado para correr en hardware Intel "moderno".
+*   La versión *major* o principal del Kernel es la <tt>2.6</tt>. Esto es indicativo de qué rama de desarrollo y tecnologías tienes disponibles este kernel.
+*   La versión *minor* es la <tt>.31</tt>.
+*   El kernel está compilado para la arquitectura y máquina *Intel 686* o mejor conocido como Intel Pentium Pro (6), lo que equivale a las familias de procesadores Core y M, y a todos los procesadores Intel posteriores a Pentium II y AMD Athlon y posteriores. En términos básicos esto significa que el kernel está optimizado para correr en hardware Intel "moderno".
 *   El kernel soporta la capacidad <tt>PAE</tt> o [Extensión de Dirección Física](http://es.wikipedia.org/wiki/Extensión_de_dirección_física) del procesador, que permite a procesadores de 32-bit obtener más de 4GiB de memoria RAM cuando esté disponible, además de habilitar el llamado "bit NX".
 
 *   Más información: `man uname`.
@@ -153,7 +153,7 @@ Aquí podemos encontrar información bastante interesante sobre nuestro procesad
 *   apic: el procesador soporta los controladores de interrupción programables
 *   mmx: el procesador soporta multimedia por MMX
 *   3dnow: el procesador soporta la tecnología 3DNow! de AMD.
-*   _otros_...
+*   *otros*...
 
 #### Temperatura del procesador
 
@@ -186,7 +186,7 @@ free -m # ver la información de memoria disponible, en MegaBytes.
 
 ```
 
-La salida de _free_ es una tabla con información de la memoria física y virtual, tanto libre como ocupada:
+La salida de *free* es una tabla con información de la memoria física y virtual, tanto libre como ocupada:
 
 ```
              total       used       free     shared    buffers     cached
@@ -322,7 +322,7 @@ $cat /proc/partitions
 
 ### Interface Humana
 
-Se entiende usualmente por _inteface humana_ a todos los dispositivos que pueden recibir y enviar información de/a un ser humano. En el sistema de eventos del kernel de Linux el significado está más acotado a aquellos dispositivos que cambian de estado cuando reciben interacción de un humano: teclado, mouse, joystick, etc.
+Se entiende usualmente por *inteface humana* a todos los dispositivos que pueden recibir y enviar información de/a un ser humano. En el sistema de eventos del kernel de Linux el significado está más acotado a aquellos dispositivos que cambian de estado cuando reciben interacción de un humano: teclado, mouse, joystick, etc.
 
 La información de estado está almacenada en un árbol de directorios en <tt>/etc/input.d/</tt> para los kernels 2.6 en adelante.
 
@@ -447,7 +447,7 @@ En donde 60 es el brillo actual (**current**)
 
 ### Bateria
 
-La información de la batería de un notebook está disponible en más de un lugar dependiendo de la versión del kernel, en kernels antiguos se encuentra en los archivos del directorio /proc/acpi/battery/BAT_n_, sin embargo, en kernels actuales se encuentra en /sys/class/power_supply/BAT_n_ (en donde n es el numero de la batería)
+La información de la batería de un notebook está disponible en más de un lugar dependiendo de la versión del kernel, en kernels antiguos se encuentra en los archivos del directorio /proc/acpi/battery/BAT*n*, sin embargo, en kernels actuales se encuentra en /sys/class/power_supply/BAT*n* (en donde n es el numero de la batería)
 
 #### Carga actual de la bateria
 
@@ -941,7 +941,7 @@ dalacost pts/1    :0.0             17:52    0.00s  0.25s  0.01s w
 
 ### Mensaje de bienvenida en sesión de texto
 
-El archivo **motd** contiene el _Message of The Day_ o Mensaje del Día, una tradición de los sistemas UNIX de mostrar un mensaje a un usuario al iniciar su sesión.
+El archivo **motd** contiene el *Message of The Day* o Mensaje del Día, una tradición de los sistemas UNIX de mostrar un mensaje a un usuario al iniciar su sesión.
 
 ```
 cat /etc/motd

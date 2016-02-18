@@ -1,4 +1,4 @@
-_R is a free software environment for statistical computing and graphics_ ([http://www.r-project.org/](http://www.r-project.org/)).
+*R is a free software environment for statistical computing and graphics* ([http://www.r-project.org/](http://www.r-project.org/)).
 
 ## Contents
 
@@ -54,7 +54,7 @@ $ R
 
 Run `??Startup` to read the documentation about system file configuration, `help()` for the on-line help,`help.start()` for the HTML browser interface to help, `demo()` for some demos and `q()` to close the session and quit.
 
-When closing the session, you will be prompted : `Save workspace Image ?[y/n/c]`. The _workspace_ is your current working environment and include any user-defined objects, functions. The saved image is stored in `.RData` format and will be automatically reloaded the next time `R` is started. You can manually save the workspace at any time in the session with the `save.image(image.RData)` command, save as many images as you want (eg : _image1.RData_, _image2.RData_). You can load image with the `load.image(image.RData)` command at any time of your session.
+When closing the session, you will be prompted : `Save workspace Image ?[y/n/c]`. The *workspace* is your current working environment and include any user-defined objects, functions. The saved image is stored in `.RData` format and will be automatically reloaded the next time `R` is started. You can manually save the workspace at any time in the session with the `save.image(image.RData)` command, save as many images as you want (eg : *image1.RData*, *image2.RData*). You can load image with the `load.image(image.RData)` command at any time of your session.
 
 **Tip:**
 
@@ -84,7 +84,7 @@ Save workspace image? [y/n/c]: y
 
 ### Variables
 
-`R` can be confusing when it comes to [environment variables](/index.php/Environment_variables "Environment variables"), as they are large and duplicated following the **site** or **user** sides. There are two sorts of files used in startup: _environment files_, defined by `$R_ENVIRON` and _profile files_, defined by `$R_PROFILE`.
+`R` can be confusing when it comes to [environment variables](/index.php/Environment_variables "Environment variables"), as they are large and duplicated following the **site** or **user** sides. There are two sorts of files used in startup: *environment files*, defined by `$R_ENVIRON` and *profile files*, defined by `$R_PROFILE`.
 
 Most important variables can be found on [Environment Variables R Documentation](http://stat.ethz.ch/R-manual/R-devel/library/base/html/EnvVar.html).
 
@@ -108,7 +108,7 @@ Within your `R` session, run this command to check that your user library exists
 
 Installation within your `R` session is the safest way and will not conflict with the [pacman](/index.php/Pacman "Pacman") package management, but there is another method to install packages. Run the following command in your terminal:
 
- `$ R CMD INSTALL -l $R_LIBS_USER _pkg1 pkg2 ..._` 
+ `$ R CMD INSTALL -l $R_LIBS_USER *pkg1 pkg2 ...*` 
 
 ### Upgrading R packages
 
@@ -126,7 +126,7 @@ Or when you also need to rebuild packages which were built for an older version:
 
 ```
 
-**Tip:** upgrading packages from your **R** session can quickly be a pain if you have too many loaded packages at start up. For packages to be upgraded, they need to be _not loaded_. Best practice is to start a new clean R session this way: `R --vanilla` then run the upgrade.
+**Tip:** upgrading packages from your **R** session can quickly be a pain if you have too many loaded packages at start up. For packages to be upgraded, they need to be *not loaded*. Best practice is to start a new clean R session this way: `R --vanilla` then run the upgrade.
 
 #### Within a shell
 
@@ -156,10 +156,9 @@ The two user configuration files you want in your home folder are `.Renviron` an
 
 ### .Renviron
 
-Lines in `Renviron` file should be either comment lines starting with **#** or lines of the form _name=value_.Here is a very basic `.Renviron` you can start with:
+Lines in `Renviron` file should be either comment lines starting with **#** or lines of the form *name=value*.Here is a very basic `.Renviron` you can start with:
 
  `.Renviron` 
-
 ```
 
 R_HOME_USER = /path/to/your/r/directory
@@ -178,12 +177,12 @@ For convenient reasons, you can put a specific `Rprofile.r` in each of your usua
 Here is a very short list of useful options and code:
 
  `Rprofile.r` 
-
 ```
 setwd("path/to/startup/directory")                                                                   # define a start up working directory
 .First <- function(){
 #welcome message
-message("Welcome back ", Sys.getenv("USER"),"!\n","working directory is:", getwd())
+message("Welcome back ", Sys.getenv("USER"),"!
+","working directory is:", getwd())
 }                                                       
 options(prompt = paste(paste (Sys.info () [c ("user", "nodename")], collapse = "@"),"[R] "))         # customize your R prompt with username and hostname in this format: **user@hostname [R]**
 options(digits = 12)                                                                                 # number of digits to print. Default is 7, max is 15
@@ -235,7 +234,7 @@ The R library path is often configured with the R_LIBS environment variable. RSt
 
 RStudio Server enables you to provide a browser based interface to a version of R running on a remote Linux server.
 
-Install [rstudio-server-git](https://aur.archlinux.org/packages/rstudio-server-git/). The two main configuration files are `/etc/rstudio/rserver.conf` and `/etc/rstudio/rsession.conf`. They are not created during the install, so you will need to _create_ and _edit_ them. For information about configure options, please refer to [rstudio getting started](https://support.rstudio.com/hc/en-us/articles/200552306-Getting-Started) documentation.
+Install [rstudio-server-git](https://aur.archlinux.org/packages/rstudio-server-git/). The two main configuration files are `/etc/rstudio/rserver.conf` and `/etc/rstudio/rsession.conf`. They are not created during the install, so you will need to *create* and *edit* them. For information about configure options, please refer to [rstudio getting started](https://support.rstudio.com/hc/en-us/articles/200552306-Getting-Started) documentation.
 
 To start the server, please [enable and start](/index.php/Systemd#Using_units "Systemd") the `rstudio-server.service` unit file provided with the package.
 
@@ -267,7 +266,7 @@ Please first [Install](/index.php/Install "Install") the [intel-mkl](https://aur
 
 `> update.packages(checkBuilt=TRUE)`
 
-*   here are elapsed time in sec from computing 15 tests with default GCC build and icc/MKL build: _274.93 sec_ for GCC build, _21.01 sec_ for icc/MKL build. See [this post](https://stat.ethz.ch/pipermail/r-help/2014-September/421574.html) for more information.
+*   here are elapsed time in sec from computing 15 tests with default GCC build and icc/MKL build: *274.93 sec* for GCC build, *21.01 sec* for icc/MKL build. See [this post](https://stat.ethz.ch/pipermail/r-help/2014-September/421574.html) for more information.
 
 ### intel-advisor-xe
 

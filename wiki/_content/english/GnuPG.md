@@ -54,7 +54,7 @@ According to the [official website](http://www.gnupg.org):
 
 [Install](/index.php/Install "Install") the [gnupg](https://www.archlinux.org/packages/?name=gnupg) package.
 
-This will also install [pinentry](https://www.archlinux.org/packages/?name=pinentry), a collection of simple PIN or passphrase entry dialogs which GnuPG uses for passphrase entry. Which _pinentry_ dialog is used is determined by the symbolic link `/usr/bin/pinentry`, which by default points to `/usr/bin/pinentry-gtk-2`.
+This will also install [pinentry](https://www.archlinux.org/packages/?name=pinentry), a collection of simple PIN or passphrase entry dialogs which GnuPG uses for passphrase entry. Which *pinentry* dialog is used is determined by the symbolic link `/usr/bin/pinentry`, which by default points to `/usr/bin/pinentry-gtk-2`.
 
 If you want to use a graphical frontend or program that integrates with GnuPG, see [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security").
 
@@ -64,17 +64,17 @@ If you want to use a graphical frontend or program that integrates with GnuPG, s
 
 `$GNUPGHOME` is used by GnuPG to point to the directory where its configuration files are stored. By default `$GNUPGHOME` is not set and your `$HOME` is used instead, thus you will find a `~/.gnupg` directory right after installation. You may change this default by setting `GNUPGHOME` in one of your regular [startup files](/index.php/Startup_files "Startup files").
 
-**Note:** By default, the gnupg directory has its [Permissions](/index.php/Permissions "Permissions") set to _700_ and the files it contains have their permissions set to _600_. Only the owner of the directory has permission to read, write and access the files (_r_,_w_,_x_). This is for security purposes and should not be changed. In case this directory or any file inside it does not follow this security measure, you will get warnings about unsafe file and home directory permissions.
+**Note:** By default, the gnupg directory has its [Permissions](/index.php/Permissions "Permissions") set to *700* and the files it contains have their permissions set to *600*. Only the owner of the directory has permission to read, write and access the files (*r*,*w*,*x*). This is for security purposes and should not be changed. In case this directory or any file inside it does not follow this security measure, you will get warnings about unsafe file and home directory permissions.
 
 ## Configuration files
 
-The default configuration files are `~/.gnupg/gpg.conf` and `~/.gnupg/dirmngr.conf`. To change the default location, either run gpg this way `$ gpg --homedir _path/to/file_` or use the `$GNUPGHOME` environment variable. Append to these files any long options you want. Do not write the two dashes, but simply the name of the option and required arguments. You will find skeleton files in `/usr/share/gnupg`. These files are copied to `~/.gnupg` the first time gpg is run if they do not exist there. Other examples are found in [#See_also](#See_also).
+The default configuration files are `~/.gnupg/gpg.conf` and `~/.gnupg/dirmngr.conf`. To change the default location, either run gpg this way `$ gpg --homedir *path/to/file*` or use the `$GNUPGHOME` environment variable. Append to these files any long options you want. Do not write the two dashes, but simply the name of the option and required arguments. You will find skeleton files in `/usr/share/gnupg`. These files are copied to `~/.gnupg` the first time gpg is run if they do not exist there. Other examples are found in [#See_also](#See_also).
 
 ## Usage
 
 **Note:**
 
-*   Whenever a _`<user-id>`_ is required in a command, it can be specified with your key ID, fingerprint, a part of your name or email address, etc. GnuPG is flexible on this.
+*   Whenever a *`<user-id>`* is required in a command, it can be specified with your key ID, fingerprint, a part of your name or email address, etc. GnuPG is flexible on this.
 *   Some of these steps may be provided by an external program depending on your usage, such as an [email client](/index.php/List_of_applications/Internet#Email_clients "List of applications/Internet"). See also [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security").
 
 ### Create key pair
@@ -93,8 +93,8 @@ The command will prompt for answers to several questions. For general use most p
 *   the RSA (sign only) and a RSA (encrypt only) key.
 *   a keysize of the default value (2048). A larger keysize of 4096 "gives us almost nothing, while costing us quite a lot"[[1]](https://www.gnupg.org/faq/gnupg-faq.html#no_default_of_rsa4096).
 *   an expiration date. A period of a year is good enough for the average user. This way even if access is lost to the keyring, it will allow others to know that it is no longer valid. Later, if necessary, the expiration date can be extended without having to re-issue a new key.
-*   your name and email address. You can add multiple identities to the same key later (_e.g._, if you have multiple email addresses you want to associate with this key).
-*   _no_ optional comment. They only serve to confuse people. Leave the comment empty.
+*   your name and email address. You can add multiple identities to the same key later (*e.g.*, if you have multiple email addresses you want to associate with this key).
+*   *no* optional comment. They only serve to confuse people. Leave the comment empty.
 *   [a secure passphrase](/index.php/Security#Choosing_secure_passwords "Security").
 
 **Note:** The name and email address you enter here will be seen by anybody who imports your key.
@@ -104,13 +104,13 @@ The command will prompt for answers to several questions. For general use most p
 To backup your private key do the following:
 
 ```
-$ gpg --export-secret-keys --armor _<user-id>_ > privkey.asc
+$ gpg --export-secret-keys --armor *<user-id>* > privkey.asc
 
 ```
 
 Place the private key in a safe place, such as a locked container or encrypted drive.
 
-**Warning:** Anyone who gains access to the above exported file will be able to encrypt and sign documents as if they were you _without_ needing to know your passphrase.
+**Warning:** Anyone who gains access to the above exported file will be able to encrypt and sign documents as if they were you *without* needing to know your passphrase.
 
 ### Export your public key
 
@@ -119,7 +119,7 @@ In order for others to send encrypted messages to you, they need your public key
 To generate an ASCII version of your public key (e.g. to distribute it by e-mail):
 
 ```
-$ gpg --armor --output public.key --export _<user-id>_
+$ gpg --armor --output public.key --export *<user-id>*
 
 ```
 
@@ -143,14 +143,14 @@ Alternatively, find a public key [on a keyserver](#Use_a_keyserver).
 You can register your key with a public PGP key server, so that others can retrieve your key without having to contact you directly:
 
 ```
-$ gpg --send-keys _<key-id>_
+$ gpg --send-keys *<key-id>*
 
 ```
 
 To import a key from a key server:
 
 ```
-$ gpg --recv-keys _<key-id>_
+$ gpg --recv-keys *<key-id>*
 
 ```
 
@@ -163,7 +163,7 @@ $ gpg --recv-keys _<key-id>_
 
 ### Encrypt and decrypt
 
-When encrypting or decrypting it is possible to have more than one private key in use. If this occurs you need to select the active key. This can be done by using the option `-u _<user-id>_` or by using the option `--local-user _<user-id>_`. This causes the default key to use to be replaced by wanted key.
+When encrypting or decrypting it is possible to have more than one private key in use. If this occurs you need to select the active key. This can be done by using the option `-u *<user-id>*` or by using the option `--local-user *<user-id>*`. This causes the default key to use to be replaced by wanted key.
 
 To encrypt a file using ASCII armor (suitable for copying and pasting a message in text format), use:
 
@@ -176,8 +176,8 @@ If you want to just encrypt a file, exclude `--armor`.
 
 **Tip:**
 
-*   If you want to change recipient this can be done by the option `-r _<user-id>_` (or `--recipient _<user-id>_`).
-*   Add `-R _<user-id>_` or `--hidden-recipient _<user-id>_` instead of `--recipient` to not put the recipient key IDs in the encrypted message. This helps to hide the receivers of the message and is a limited countermeasure against traffic analysis.
+*   If you want to change recipient this can be done by the option `-r *<user-id>*` (or `--recipient *<user-id>*`).
+*   Add `-R *<user-id>*` or `--hidden-recipient *<user-id>*` instead of `--recipient` to not put the recipient key IDs in the encrypted message. This helps to hide the receivers of the message and is a limited countermeasure against traffic analysis.
 *   Add `--no-emit-version` to avoid printing the version number, or add the corresponding setting to your configuration file.
 
 **Note:** You can use gnupg to encrypt your sensitive documents, but only individual files at a time. If you want to encrypt directories or a whole file-system you should consider using [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") or [EncFS](/index.php/EncFS "EncFS"), though you can always tarball various files and then encrypt them.
@@ -195,7 +195,7 @@ You will be prompted to enter your passphrase. You will need to have already imp
 
 ### Edit your key
 
-Running the `gpg --edit-key _<user-id>_` command will present a menu which enables you to do most of your key management related tasks.
+Running the `gpg --edit-key *<user-id>*` command will present a menu which enables you to do most of your key management related tasks.
 
 Some useful commands in the edit key sub menu:
 
@@ -236,7 +236,7 @@ At this point you could stop, but it is most likely a good idea to change the pa
 
 ```
 $ gpg --homedir /tmp/gpg --import /tmp/subkey.gpg
-$ gpg --homedir /tmp/gpg --edit-key _<user-id>_
+$ gpg --homedir /tmp/gpg --edit-key *<user-id>*
 > passwd
 > save
 $ gpg --homedir /tmp/gpg -a --export-secret-subkeys [subkey id]! > /tmp/subkey.altpass.gpg
@@ -258,7 +258,7 @@ If you have set your subkeys to expire after a set time, you can create new ones
 Create new subkey (repeat for both signing and encrypting key)
 
 ```
-$ gpg --edit-key _<user-id>_
+$ gpg --edit-key *<user-id>*
 > addkey
 
 ```
@@ -275,7 +275,7 @@ Save changes
 Update it to a keyserver.
 
 ```
-$ gpg --keyserver pgp.mit.edu --send-keys _<user-id>_
+$ gpg --keyserver pgp.mit.edu --send-keys *<user-id>*
 
 ```
 
@@ -299,14 +299,13 @@ $ gpg --list-secret-keys
 
 ## gpg-agent
 
-_gpg-agent_ is mostly used as daemon to request and cache the password for the keychain. This is useful if GnuPG is used from an external program like a mail client. It can be activated by adding following line in `gpg.conf`:
+*gpg-agent* is mostly used as daemon to request and cache the password for the keychain. This is useful if GnuPG is used from an external program like a mail client. It can be activated by adding following line in `gpg.conf`:
 
  `~/.gnupg/gpg.conf`  `use-agent` 
 
 This tells GnuPG to use the agent whenever it needs the password. However, the agent needs to be already running. To autostart it, add the following entry to your `.xinitrc` or `.bash_profile`. Remember to change the envfile path if you changed your `$GNUPGHOME`.
 
  `~/.bash_profile` 
-
 ```
 envfile="$HOME/.gnupg/gpg-agent.env"
 if [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2>/dev/null; then
@@ -319,7 +318,7 @@ export SSH_AUTH_SOCK   # enable gpg-agent for ssh
 
 ```
 
-Log out of the session and log back in. Check if _gpg-agent_ is activated:
+Log out of the session and log back in. Check if *gpg-agent* is activated:
 
 ```
 $ pgrep gpg-agent
@@ -331,14 +330,12 @@ $ pgrep gpg-agent
 gpg-agent can be configured via `~/.gnupg/gpg-agent.conf` file. The configuration options are listed in `man gpg-agent`. For example you can change cache ttl for unused keys:
 
  `~/.gnupg/gpg-agent.conf` 
-
 ```
 default-cache-ttl 3600
 
 ```
 
 **Tip:** To cache your passphrase for the whole session, please run the following command:
-
 ```
 $ /usr/lib/gnupg/gpg-preset-passphrase --preset XXXXXX
 
@@ -364,7 +361,6 @@ Finally, the agent needs to know how to ask the user for the password. This can 
 The default uses a gtk dialog. There are other options - see `info pinentry`. To change the dialog implementation set `pinentry-program` configuration option:
 
  `~/.gnupg/gpg-agent.conf` 
-
 ```
 
 # PIN entry program
@@ -387,7 +383,6 @@ It is possible to use the [Systemd/User](/index.php/Systemd/User "Systemd/User")
 Create a systemd unit file:
 
  `~/.config/systemd/user/gpg-agent.service` 
-
 ```
 [Unit]
 Description=GnuPG private key agent
@@ -412,13 +407,13 @@ WantedBy=default.target
 
 **Tip:**
 
-To ensure your gpg-agent is running and listening to connection, simply run this command: `$ gpg-connect-agent`. If your settings are valid, you will be on a prompt (enter _bye_ and _quit_ to close connection and leave)
+To ensure your gpg-agent is running and listening to connection, simply run this command: `$ gpg-connect-agent`. If your settings are valid, you will be on a prompt (enter *bye* and *quit* to close connection and leave)
 
 ### Unattended passphrase
 
 Starting with GnuPG 2.1.0 the use of gpg-agent and pinentry is required; this may break backwards compatibility for passphrases piped in from STDIN using the `--passphrase-fd 0` commandline option. In order to have the same type of functionality as the older releases two things must be done:
 
-First, edit the gpg-agent configuration to allow _loopback_ pinentry mode:
+First, edit the gpg-agent configuration to allow *loopback* pinentry mode:
 
  `~/.gnupg/gpg-agent.conf`  `allow-loopback-pinentry` 
 
@@ -434,13 +429,13 @@ $ gpg --pinentry-mode loopback ...
 ...or if this is not possible, add the option to the configuration:
 
  `~/.gnupg/gpg.conf`  `pinentry-mode loopback` 
-**Note:** The upstream author indicates setting **pinentry-mode loopback** in _gpg.conf_ may break other usage, using the commandline option should be preferred if at all possible. [[2]](https://bugs.g10code.com/gnupg/issue1772)
+**Note:** The upstream author indicates setting **pinentry-mode loopback** in *gpg.conf* may break other usage, using the commandline option should be preferred if at all possible. [[2]](https://bugs.g10code.com/gnupg/issue1772)
 
 ## Smartcards
 
 **Note:** [pcsclite](https://www.archlinux.org/packages/?name=pcsclite) and [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat) have to be installed, and the contained [systemd](/index.php/Systemd#Using_units "Systemd") service `pcscd.service` has to be running.
 
-GnuPG uses _scdaemon_ as an interface to your smartcard reader, please refer to the [man page](/index.php/Man_page "Man page") for details.
+GnuPG uses *scdaemon* as an interface to your smartcard reader, please refer to the [man page](/index.php/Man_page "Man page") for details.
 
 ### GnuPG only setups
 
@@ -458,7 +453,6 @@ gpg: selecting openpgp failed: ec=6.108
 By default, scdaemon will try to connect directly to the device. This connection will fail if the reader is being used by another process. For example: the pcscd daemon used by OpenSC. To cope with this situation we should use the same underlying driver as opensc so they can work well together. In order to point scdaemon to use pcscd you should remove `reader-port` from `~/.gnupg/scdaemon.conf`, specify the location to `libpcsclite.so` library and disable ccid so we make sure that we use pcscd:
 
  `~/.gnupg/scdaemon.conf` 
-
 ```
 pcsc-driver /usr/lib/libpcsclite.so
 card-timeout 5
@@ -475,7 +469,6 @@ Please check `man scdaemon` if you do not use OpenSC.
 You may want to use stronger algorithms:
 
  `~/.gnupg/gpg.conf` 
-
 ```
 ...
 
@@ -497,17 +490,17 @@ First create a file with your password. You **need** to leave **one** empty line
 Then run:
 
 ```
-$ gpg -e -a -r _<user-id>_ _your_password_file_
+$ gpg -e -a -r *<user-id>* *your_password_file*
 
 ```
 
 `-e` is for encrypt, `-a` for armor (ASCII output), `-r` for recipient user ID.
 
-You will be left with a new `_your_password_file_.asc` file.
+You will be left with a new `*your_password_file*.asc` file.
 
 ### Default options for new users
 
-If you want to setup some default options for new users, put configuration files in `/etc/skel/.gnupg/`. When the new user is added in system, files from here will be copied to its GnuPG home directory. There is also a simple script called _addgnupghome_ which you can use to create new GnuPG home directories for existing users:
+If you want to setup some default options for new users, put configuration files in `/etc/skel/.gnupg/`. When the new user is added in system, files from here will be copied to its GnuPG home directory. There is also a simple script called *addgnupghome* which you can use to create new GnuPG home directories for existing users:
 
 ```
 # addgnupghome user1 user2
@@ -528,14 +521,14 @@ Revocation certificates are automatically generated for newly generated keys, al
 To revoke your key, simply import the revocation certificate:
 
 ```
-$ gpg --import _<fingerprint>_.rev
+$ gpg --import *<fingerprint>*.rev
 
 ```
 
 Now update the keyserver:
 
 ```
-$ gpg --keyserver subkeys.pgp.net --send _<userid>_
+$ gpg --keyserver subkeys.pgp.net --send *<userid>*
 
 ```
 
@@ -545,13 +538,13 @@ By default GnuPG uses the [Web of Trust](https://en.wikipedia.org/wiki/Web_of_Tr
 
 ### Hide all recipient id's
 
-By default the recipient's key ID is in the encrypted message. This can be removed at encryption time for a recipient by using `hidden-recipient _<user-id>_`. To remove it for all recipients add `throw-keyids` to your configuration file. This helps to hide the receivers of the message and is a limited countermeasure against traffic analysis. (Using a little social engineering anyone who is able to decrypt the message can check whether one of the other recipients is the one he suspects.) On the receiving side, it may slow down the decryption process because all available secret keys must be tried (_e.g._ with `--try-secret-key _<user-id>_`).
+By default the recipient's key ID is in the encrypted message. This can be removed at encryption time for a recipient by using `hidden-recipient *<user-id>*`. To remove it for all recipients add `throw-keyids` to your configuration file. This helps to hide the receivers of the message and is a limited countermeasure against traffic analysis. (Using a little social engineering anyone who is able to decrypt the message can check whether one of the other recipients is the one he suspects.) On the receiving side, it may slow down the decryption process because all available secret keys must be tried (*e.g.* with `--try-secret-key *<user-id>*`).
 
 ### Using caff for keysigning parties
 
 To allow users to validate keys on the keyservers and in their keyrings (i.e. make sure they are from whom they claim to be), PGP/GPG uses he [Web of Trust](https://en.wikipedia.org/wiki/Web_of_Trust "wikipedia:Web of Trust"). Keysigning parties allow users to get together in physical location to validate keys. The [Zimmermann-Sassaman](https://en.wikipedia.org/wiki/Zimmermann%E2%80%93Sassaman_key-signing_protocol "wikipedia:Zimmermann–Sassaman key-signing protocol") key-signing protocol is a way of making these very effective. [Here](http://www.cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html) you will find a how-to article.
 
-For an easier process of signing keys and sending signatures to the owners after a keysigning party, you can use the tool _caff_. It can be installed from the AUR with the package [caff-svn](https://aur.archlinux.org/packages/caff-svn/) or bundled together with other useful tools in the package [signing-party-svn](https://aur.archlinux.org/packages/signing-party-svn/). Either way, there will be a lot of dependencies installing from the AUR. Alternatively you can install them from CPAN with
+For an easier process of signing keys and sending signatures to the owners after a keysigning party, you can use the tool *caff*. It can be installed from the AUR with the package [caff-svn](https://aur.archlinux.org/packages/caff-svn/) or bundled together with other useful tools in the package [signing-party-svn](https://aur.archlinux.org/packages/signing-party-svn/). Either way, there will be a lot of dependencies installing from the AUR. Alternatively you can install them from CPAN with
 
 ```
 cpanm Any::Moose
@@ -600,7 +593,7 @@ To solve it, remember you do not often need to create keys and best just do what
 
 ### su
 
-When using `pinentry`, you must have the proper permissions of the terminal device (e.g. `/dev/tty1`) in use. However, with _su_ (or _sudo_), the ownership stays with the original user, not the new one. This means that pinentry will fail, even as root. The fix is to change the permissions of the device at some point before the use of pinentry (i.e. using gpg with an agent). If doing gpg as root, simply change the ownership to root right before using gpg:
+When using `pinentry`, you must have the proper permissions of the terminal device (e.g. `/dev/tty1`) in use. However, with *su* (or *sudo*), the ownership stays with the original user, not the new one. This means that pinentry will fail, even as root. The fix is to change the permissions of the device at some point before the use of pinentry (i.e. using gpg with an agent). If doing gpg as root, simply change the ownership to root right before using gpg:
 
 ```
 chown root /dev/ttyN  # where N is the current tty
@@ -609,7 +602,7 @@ chown root /dev/ttyN  # where N is the current tty
 
 and then change it back after using gpg the first time. The equivalent is likely to be true with `/dev/pts/`.
 
-**Note:** The owner of tty _must_ match with the user for which pinentry is running. Being part of the group `tty` **is not** enough.
+**Note:** The owner of tty *must* match with the user for which pinentry is running. Being part of the group `tty` **is not** enough.
 
 ### Agent complains end of file
 
@@ -619,9 +612,9 @@ Alternatively, you can use `pinentry-qt`. See [#pinentry](#pinentry).
 
 ### KGpg configuration permissions
 
-There have been issues with [kdeutils-kgpg](https://www.archlinux.org/packages/?name=kdeutils-kgpg) being able to access the `~/.gnupg/` options. One issue might be a result of a deprecated _options_ file, see the [bug](https://bugs.kde.org/show_bug.cgi?id=290221) report.
+There have been issues with [kdeutils-kgpg](https://www.archlinux.org/packages/?name=kdeutils-kgpg) being able to access the `~/.gnupg/` options. One issue might be a result of a deprecated *options* file, see the [bug](https://bugs.kde.org/show_bug.cgi?id=290221) report.
 
-Another user reported that _KGpg_ failed to start until the `~/.gnupg` folder is set to `drwxr-xr-x` permissions. If you require this work-around, ensure that the directory contents retain `-rw-------` permissions! Further, report it as a bug to the [developers](https://bugs.kde.org/buglist.cgi?quicksearch=kgpg).
+Another user reported that *KGpg* failed to start until the `~/.gnupg` folder is set to `drwxr-xr-x` permissions. If you require this work-around, ensure that the directory contents retain `-rw-------` permissions! Further, report it as a bug to the [developers](https://bugs.kde.org/buglist.cgi?quicksearch=kgpg).
 
 ### Conflicts between gnome-keyring and gpg-agent
 
@@ -671,7 +664,6 @@ One possible solution is to add a new group `scard` including the users who need
 Then use an [udev](/index.php/Udev#Writing_udev_rules "Udev") rule, similar to the following:
 
  `/etc/udev/rules.d/71-gnupg-ccid.rules` 
-
 ```
 ACTION=="add", SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="1050", ENV{ID_MODEL_ID}=="0116|0111", MODE="664", GROUP="scard"
 

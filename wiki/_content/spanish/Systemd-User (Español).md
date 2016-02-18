@@ -32,12 +32,11 @@ Desde la versión 206, el mecanismo para instancias de usuario de systemd ha cam
 Pasos para utilizar las unidades de instancia de usuario:
 
 1\. Asegúrese de que la instancia de usuario de systemd se inicia correctamente. Puede comprobar esto con: `systemctl --user status` Desde systemd 206 debe haber una instancia de usuario ejecutando systemd por defecto, que se inicia en el módulo pam `pam_systemd.so` para la primera sesión de un usuario.
-**Nota:** system-login necesita para comenzar de pam_systemd: este debe contener `-session optional pam_systemd.so`; compruebe si existe el archivo _.pacnew_.
+**Nota:** system-login necesita para comenzar de pam_systemd: este debe contener `-session optional pam_systemd.so`; compruebe si existe el archivo *.pacnew*.
 
 2\. Agregue las variables de entorno que necesita, en un párrafo en el archivo de configuración para `user@.service`. Al menos, debe contener lo siguiente:
 
  `/etc/systemd/system/user@.service.d/environment.conf` 
-
 ```
 [Service]
 Environment=DISPLAY=:0
@@ -51,7 +50,6 @@ Environment=DISPLAY=:0
 Para utilizar [dbus](/index.php/D-Bus_(Espa%C3%B1ol) "D-Bus (Español)") en unidades de usuario, cree los siguientes archivos:
 
  `/etc/systemd/user/dbus.socket` 
-
 ```
 [Unit]
 Description=D-Bus Message Bus Socket
@@ -64,9 +62,7 @@ ListenStream=/run/user/%U/dbus/user_bus_socket
 WantedBy=default.target
 
 ```
-
  `/etc/systemd/user/dbus.service` 
-
 ```
 [Unit]
 Description=D-Bus Message Bus
@@ -103,7 +99,6 @@ Configure [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") desd
 La sesión utilizará su propio demonio dbus, pero varias utilidades systemd necesitarán la instancia `dbus.service`. Una posible solución a esto es crear alias para estas órdenes:
 
  `~/.bashrc` 
-
 ```
 for sd_cmd in systemctl systemd-analyze systemd-run; do
     alias $sd_cmd='DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket" '$sd_cmd
@@ -111,10 +106,10 @@ done
 
 ```
 
-Por último, active (**como root**) el servicio _xlogin_ para iniciar automáticamente sesión al arrancar:
+Por último, active (**como root**) el servicio *xlogin* para iniciar automáticamente sesión al arrancar:
 
 ```
-# systemctl enable xlogin@_nombredeusuario_
+# systemctl enable xlogin@*nombredeusuario*
 
 ```
 
@@ -124,12 +119,12 @@ La sesión de usuario se desarrolla enteramente dentro de un espacio systemd y t
 
 La instancia de usuario de systemd es, por defecto, ejecutada después del primer inicio de sesión de un usuario, pero, a veces, puede ser útil empezar aquella después del arranque. Lingering se utiliza para generar la instancia de usuario systemd en el arranque y que siga funcionando después del cierre de sesión.
 
-**Advertencia:** Los servicios de systemd **no** son sesiones, se ejecutan fuera de _logind_. No utilice lingering para permitir el inicio de sesión automática, ya que [rompe la sesión](/index.php/General_troubleshooting#Session_permissions "General troubleshooting").
+**Advertencia:** Los servicios de systemd **no** son sesiones, se ejecutan fuera de *logind*. No utilice lingering para permitir el inicio de sesión automática, ya que [rompe la sesión](/index.php/General_troubleshooting#Session_permissions "General troubleshooting").
 
 Utilice la siguiente orden para activar lingering para el usuario específico:
 
 ```
-# loginctl enable-linger _nombredeusuario_
+# loginctl enable-linger *nombredeusuario*
 
 ```
 
@@ -143,10 +138,9 @@ Todas las unidades de usuario de systemd residirán en `$HOME/.config/systemd/us
 
 Necesitamos dos paquetes para conseguir este trabajo, por un lado, el disponible actualmente desde [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)"): [systemd-xorg-launch-helper-git](https://aur.archlinux.org/packages/systemd-xorg-launch-helper-git/) y, opcionalmente, por otro lado, [systemd-user-session-units-git](https://aur.archlinux.org/packages/systemd-user-session-units-git/) si desea trabajar con autologin.
 
-Lo siguiente será crear los targets (_«objetivos»_). Configuraremos dos: uno para el gestor de ventanas, y otro como un target por defecto. El target del gestor de ventanas debe ser similar a lo siguiente:
+Lo siguiente será crear los targets (*«objetivos»*). Configuraremos dos: uno para el gestor de ventanas, y otro como un target por defecto. El target del gestor de ventanas debe ser similar a lo siguiente:
 
  `$HOME/.config/systemd/user/wm.target` 
-
 ```
 [Unit]
 Description=Window manager target
@@ -165,7 +159,6 @@ Este será el target de su interfaz gráfica.
 Crearemos un segundo target llamado `mystuff.target`. Valdrá para todos los servicios, pero debe contener el gestor de ventanas elegido en la línea `WantedBy`, bajo `[Install]`, señalando a esta unidad.
 
  `$HOME/.config/systemd/user/mystuff.target` 
-
 ```
 [Unit]
 Description=Xinitrc Stuff
@@ -181,7 +174,6 @@ Crearemos un enlace simbólico de nombre `default.target`. Cuando se inicie `/us
 Por último, nececitamos escribir varios archivos de servicios correspondientes a los servicios que deben comenzar. Para ello, asociaremos un servicio al gestor de ventanas.
 
  `$HOME/.config/systemd/user/YOUR_WM.service` 
-
 ```
 [Unit]
 Description=your window manager service
@@ -321,7 +313,6 @@ Como se detalla en `man systemd.unit`, la variable `%h` es reemplazada por la ca
 La mayoría de las aplicaciones X necesita una variable `DISPLAY` para ser iniciada (si el propio servicio no se ha iniciado, con lo cual es la primera cosa a controlar), así que hay que asegurarse de incluir lo siguiente:
 
  `$HOME/.config/systemd/user/parcellite.service` 
-
 ```
 [Unit]
 Description=Parcellite clipboard manager
@@ -340,7 +331,6 @@ Una manera más simple, si se utiliza [user-session-units](https://aur.archlinux
 Sin embargo, será preferible **no** insertar directamente el valor de la variable DISPLAY en el servicio (especialmente si se ejecuta más de una respecto a la pantalla):
 
  `$HOME/.config/systemd/user/x-app-template@.service` 
-
 ```
 [Unit]
 Description=Your amazing and original description
@@ -364,7 +354,6 @@ systemctl --user {start|enable} x-app@your-desired-display.service # <= :0 in m
 Algunas aplicaciones X pueden no ponerse en marcha porque el socket de la pantalla aún no está disponible. Esto se puede solucionarlo mediante la adición de algo así:
 
  `$HOME/.config/systemd/user/x-app-template@.service` 
-
 ```
 [Unit]
 After=xorg.target

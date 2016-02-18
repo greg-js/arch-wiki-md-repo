@@ -1,6 +1,6 @@
 Из [Википедии](https://en.wikipedia.org/wiki/ru:%D0%9E%D0%BF%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BF%D1%80%D0%B8%D0%B2%D0%BE%D0%B4 "wikipedia:ru:Оптический привод"):
 
-	_"Опти́ческий при́вод — устройство, имеющее механическую составляющую, управляемую электронной схемой и предназначенное для считывания и (в большинстве современных моделей) записи информации с оптических носителей информации в виде пластикового диска с отверстием в центре (компакт-диск, DVD и т. д.); процесс считывания/записи информации с диска осуществляется при помощи лазера."_
+	*"Опти́ческий при́вод — устройство, имеющее механическую составляющую, управляемую электронной схемой и предназначенное для считывания и (в большинстве современных моделей) записи информации с оптических носителей информации в виде пластикового диска с отверстием в центре (компакт-диск, DVD и т. д.); процесс считывания/записи информации с диска осуществляется при помощи лазера."*
 
 ## Contents
 
@@ -54,7 +54,7 @@
 
 **Важно:** Качество оптических приводов и самих дисков очень сильно варьируется. Главным образом, для получения надёжной записи рекомендуется производить ее на низкой скорости. Если появляются странные проблемы с записанными вами компакт-дисками, попробуйте производить запись на самой низкой скорости, которую поддерживает ваш привод.
 
-Процесс прожига (записи данных на диск) состоит из получения файла образа и последующей его записи на оптический носитель. В принципе, образом может быть любой файл данных. Если вы хотите смонтировать записанный диск, то, как правило, следует указывать файловую систему ISO 9660\. Audio CD и мультимедийные CD обычно прожигаются из файла _.bin_ с использованием файла _.toc_ или _.cue_, который содержит информацию о расположении треков.
+Процесс прожига (записи данных на диск) состоит из получения файла образа и последующей его записи на оптический носитель. В принципе, образом может быть любой файл данных. Если вы хотите смонтировать записанный диск, то, как правило, следует указывать файловую систему ISO 9660\. Audio CD и мультимедийные CD обычно прожигаются из файла *.bin* с использованием файла *.toc* или *.cue*, который содержит информацию о расположении треков.
 
 ### Установка утилит для записи
 
@@ -66,42 +66,42 @@
 
 Доступные программы для создания образа ISO 9660:
 
-*   _genisoimage_ из пакета [cdrkit](https://www.archlinux.org/packages/?name=cdrkit)
-*   _mkisofs_ из пакета [cdrtools](https://www.archlinux.org/packages/?name=cdrtools)
-*   _xorriso_ и _xorrisofs_ из пакета [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
+*   *genisoimage* из пакета [cdrkit](https://www.archlinux.org/packages/?name=cdrkit)
+*   *mkisofs* из пакета [cdrtools](https://www.archlinux.org/packages/?name=cdrtools)
+*   *xorriso* и *xorrisofs* из пакета [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
 
-Как правило, используется _genisoimage_.
+Как правило, используется *genisoimage*.
 
 Доступные программы для записи на носители:
 
-*   _cdrdao_ из пакета [cdrdao](https://www.archlinux.org/packages/?name=cdrdao) (только для CD и только TOC/CUE/BIN)
-*   _cdrecord_ из пакета [cdrtools](https://www.archlinux.org/packages/?name=cdrtools)
-*   _cdrskin_ из пакета [libburn](https://www.archlinux.org/packages/?name=libburn)
-*   _growisofs_ из пакета [dvd+rw-tools](https://www.archlinux.org/packages/?name=dvd%2Brw-tools) (только для DVD и BD)
-*   _wodim_ из пакета [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) (только для CD, для DVD устарела)
-*   _xorriso_ и _xorrecord_ из пакета [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
+*   *cdrdao* из пакета [cdrdao](https://www.archlinux.org/packages/?name=cdrdao) (только для CD и только TOC/CUE/BIN)
+*   *cdrecord* из пакета [cdrtools](https://www.archlinux.org/packages/?name=cdrtools)
+*   *cdrskin* из пакета [libburn](https://www.archlinux.org/packages/?name=libburn)
+*   *growisofs* из пакета [dvd+rw-tools](https://www.archlinux.org/packages/?name=dvd%2Brw-tools) (только для DVD и BD)
+*   *wodim* из пакета [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) (только для CD, для DVD устарела)
+*   *xorriso* и *xorrecord* из пакета [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
 
-Обычно используют _wodim_ для CD и _growisofs_ для DVD и Blu-ray дисков. Как обойти баг _growisofs_ с BD-R смотрите ниже. Для записи TOC/CUE/BIN файлов на CD, установите [cdrdao](https://www.archlinux.org/packages/?name=cdrdao).
+Обычно используют *wodim* для CD и *growisofs* для DVD и Blu-ray дисков. Как обойти баг *growisofs* с BD-R смотрите ниже. Для записи TOC/CUE/BIN файлов на CD, установите [cdrdao](https://www.archlinux.org/packages/?name=cdrdao).
 
 Свободные графические программы для записи CD, DVD или BD используют как минимум один из перечисленных выше пакетов.
 
-Программы 'mkisofs _и_ xorrisofs _поддерживают опции_ genisoimage_, описанные в этой статье._
+Программы 'mkisofs *и* xorrisofs *поддерживают опции* genisoimage*, описанные в этой статье.*
 
-Программы _cdrecord_ и _cdrskin_ поддерживают описанные опции _wodim_; _xorrecord_ также поддерживает их за исключением тех, которые предназначены для Audio CD.
+Программы *cdrecord* и *cdrskin* поддерживают описанные опции *wodim*; *xorrecord* также поддерживает их за исключением тех, которые предназначены для Audio CD.
 
 **Обратите внимание:**
 
 *   Файлы, устанавливаемые пакетами [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) и [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) конфликтуют. Устанавливайте только один из пакетов.
-*   Если вы хотите установить [cdrtools](https://en.wikipedia.org/wiki/ru:Cdrtools "wikipedia:ru:Cdrtools") убедитесь, что вы собрали пакет с помощью [makepkg](/index.php/Makepkg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Makepkg (Русский)") и установили его напрямую с помощью [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") — фронтенды pacman могут решить установить cdrkit вместо него.
+*   Если вы хотите установить [cdrtools](https://en.wikipedia.org/wiki/ru:Cdrtools и установили его напрямую с помощью [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") — фронтенды pacman могут решить установить cdrkit вместо него.
 
 ### Создание ISO-образа из существующих файлов на жёстком диске
 
 Чтобы упростить создание ISO-образа, скопируйте все файлы для записи в один каталог, например `./for_iso`.
 
-Затем сгенерируйте образ с _genisoimage_:
+Затем сгенерируйте образ с *genisoimage*:
 
 ```
-$ genisoimage -V "_ARCHIVE_2013_07_27_" -J -r -o _isoimage.iso_ _./for_iso_
+$ genisoimage -V "*ARCHIVE_2013_07_27*" -J -r -o *isoimage.iso* *./for_iso*
 
 ```
 
@@ -131,12 +131,12 @@ $ genisoimage -V "_ARCHIVE_2013_07_27_" -J -r -o _isoimage.iso_ _./for_iso_
 
 #### graft-points
 
-Также вы можете указать для _genisoimage_ сразу несколько файлов и каталогов, которые будут добавлены в образ:
+Также вы можете указать для *genisoimage* сразу несколько файлов и каталогов, которые будут добавлены в образ:
 
 ```
-$ genisoimage -V "_BACKUP_2013_07_27_" -J -r -o _backup_2013_07_27.iso_ \
+$ genisoimage -V "*BACKUP_2013_07_27*" -J -r -o *backup_2013_07_27.iso* \
   -graft-points \
-  _/photos=/home/user/photos \_
+  */photos=/home/user/photos \*
         /mail=/home/user/mail \
         /photos/holidays=/home/user/holidays/photos
 
@@ -144,11 +144,11 @@ $ genisoimage -V "_BACKUP_2013_07_27_" -J -r -o _backup_2013_07_27.iso_ \
 
 	`-graft-points`
 
-	Позволяет задавать _определения путей_, которые состоят из целевого адреса на файловой системе ISO (например, `/photos`) и адреса источника на жёстком диске (например `/home/user/photos`). Эти адреса разделены символом "=".
+	Позволяет задавать *определения путей*, которые состоят из целевого адреса на файловой системе ISO (например, `/photos`) и адреса источника на жёстком диске (например `/home/user/photos`). Эти адреса разделены символом "=".
 
 В этом примере, содержимое каталогов `/home/user/photos`, `/home/user/mail` и `/home/user/holidays/photos` будет помещено в каталоги `/photos`, `/mail` и `/photos/holidays` на ISO образе, соответственно.
 
-Программы _mkisofs_ и _xorrisofs_ принимают такие же опции. Для создания резервных копий важных данных рекомендуется использовать _xorrisofs_ с опцией `--for_backup`, которая создаст список контроля доступа и посчитает хеш-суммы MD5 для каждого файла с данными.
+Программы *mkisofs* и *xorrisofs* принимают такие же опции. Для создания резервных копий важных данных рекомендуется использовать *xorrisofs* с опцией `--for_backup`, которая создаст список контроля доступа и посчитает хеш-суммы MD5 для каждого файла с данными.
 
 О дополнительных возможностях программ вы можете узнать из их руководств:
 
@@ -168,7 +168,7 @@ $ genisoimage -V "_BACKUP_2013_07_27_" -J -r -o _backup_2013_07_27.iso_ \
 Теперь, чтобы смонтировать образ:
 
 ```
-# mount -t iso9660 -o ro,loop=/dev/loop0 _/путь/к/файлу.iso_ _/точка/монтирования_
+# mount -t iso9660 -o ro,loop=/dev/loop0 */путь/к/файлу.iso* */точка/монтирования*
 
 ```
 
@@ -186,7 +186,7 @@ $ genisoimage -V "_BACKUP_2013_07_27_" -J -r -o _backup_2013_07_27.iso_ \
 Чтобы сконвертировать образ `img`/`ccd`, воспользуйтесь утилитой [ccd2iso](https://www.archlinux.org/packages/?name=ccd2iso):
 
 ```
-$ ccd2iso _~/image.img_ _~/image.iso_
+$ ccd2iso *~/image.img* *~/image.iso*
 
 ```
 
@@ -197,7 +197,7 @@ $ ccd2iso _~/image.img_ _~/image.iso_
 Проверьте оптический привод командой
 
 ```
-$ wodim dev=_/dev/sr0_ -checkdrive
+$ wodim dev=*/dev/sr0* -checkdrive
 
 ```
 
@@ -212,10 +212,10 @@ $ wodim dev=_/dev/sr0_ -checkdrive
 
 ### Определение метки тома CD или DVD
 
-Если вы хотите получить название/метку носителя, воспользуйтесь _dd_:
+Если вы хотите получить название/метку носителя, воспользуйтесь *dd*:
 
 ```
-$ dd if=_/dev/sr0_ bs=1 skip=32808 count=32
+$ dd if=*/dev/sr0* bs=1 skip=32808 count=32
 
 ```
 
@@ -223,17 +223,16 @@ $ dd if=_/dev/sr0_ bs=1 skip=32808 count=32
 
 Следует определить размер файловой системы ISO перед тем, как копировать её на жёсткий диск. Большинство типов накопителей предоставляют больше данных, чем на них было записано во время самого последнего прожига.
 
-Чтобы посчитать реальное количество блоков, воспользуйтесь программой _isosize_ из пакета [util-linux](https://www.archlinux.org/packages/?name=util-linux):
+Чтобы посчитать реальное количество блоков, воспользуйтесь программой *isosize* из пакета [util-linux](https://www.archlinux.org/packages/?name=util-linux):
 
 ```
-$ blocks=$(isosize -d 2048 _/dev/sr0_)
+$ blocks=$(isosize -d 2048 */dev/sr0*)
 
 ```
 
 Проверьте, выглядит ли полученное число блоков правдоподобно:
 
  `$ echo "That would be $(expr $blocks / 512) MB"` 
-
 ```
 That would be 589 MB
 
@@ -242,7 +241,7 @@ That would be 589 MB
 Затем скопируйте полученное количество данных с носителя на жёсткий диск:
 
 ```
-$ dd if=_/dev/sr0_ of=_isoimage.iso_ bs=2048 count=$blocks
+$ dd if=*/dev/sr0* of=*isoimage.iso* bs=2048 count=$blocks
 
 ```
 
@@ -255,7 +254,7 @@ $ dd if=_/dev/sr0_ of=_isoimage.iso_ bs=2048 count=$blocks
 Перед тем, как записать новую информацию на уже использованный CD-RW, необходимо стереть с него старую. Это можно выполнить командой
 
 ```
-$ wodim -v dev=_/dev/sr0_ blank=fast
+$ wodim -v dev=*/dev/sr0* blank=fast
 
 ```
 
@@ -264,31 +263,31 @@ $ wodim -v dev=_/dev/sr0_ blank=fast
 Вы также можете использовать другие программы:
 
 ```
-$ cdrecord -v dev=_/dev/sr0_ blank=all
-$ cdrskin -v dev=_/dev/sr0_ blank=all
-$ xorriso -outdev _/dev/sr0_ -blank as_needed
+$ cdrecord -v dev=*/dev/sr0* blank=all
+$ cdrskin -v dev=*/dev/sr0* blank=all
+$ xorriso -outdev */dev/sr0* -blank as_needed
 
 ```
 
-Для стирания DVD-RW вы можете использовать утилиту _dvd+rw-format_ из пакета [dvd+rw-tools](https://www.archlinux.org/packages/?name=dvd%2Brw-tools):
+Для стирания DVD-RW вы можете использовать утилиту *dvd+rw-format* из пакета [dvd+rw-tools](https://www.archlinux.org/packages/?name=dvd%2Brw-tools):
 
 ```
-$ dvd+rw-format -blank=fast _/dev/sr0_
+$ dvd+rw-format -blank=fast */dev/sr0*
 
 ```
 
 Вы также можете использовать другие программы:
 
 ```
-$ cdrskin -v dev=_/dev/sr0_ blank=format_overwrite
-$ xorriso -outdev _/dev/sr0_ -format as_needed
+$ cdrskin -v dev=*/dev/sr0* blank=format_overwrite
+$ xorriso -outdev */dev/sr0* -format as_needed
 
 ```
 
 Отформатированный DVD+RW (обратите внимание на `+`!) носитель может быть перезаписан без такой процедуры стирания. Поэтому необходимо лишь разово выполнить первичное форматирование командой:
 
 ```
-$ dvd+rw-format -force _/dev/sr0_
+$ dvd+rw-format -force */dev/sr0*
 
 ```
 
@@ -301,18 +300,18 @@ $ dvd+rw-format -force _/dev/sr0_
 Для CD выполните:
 
 ```
-$ wodim -v -sao dev=_/dev/sr0_ _isoimage.iso_
+$ wodim -v -sao dev=*/dev/sr0* *isoimage.iso*
 
 ```
 
 и в случае DVD или BD:
 
 ```
-$ growisofs -dvd-compat -Z _/dev/sr0_=_isoimage.iso_
+$ growisofs -dvd-compat -Z */dev/sr0*=*isoimage.iso*
 
 ```
 
-Программы _cdrecord_, _cdrskin_ и _xorrecord_ могут быть использованы со всеми видами носителей с опциями, показанными на примере _wodim_.
+Программы *cdrecord*, *cdrskin* и *xorrecord* могут быть использованы со всеми видами носителей с опциями, показанными на примере *wodim*.
 
 **Обратите внимание:**
 
@@ -325,12 +324,12 @@ $ growisofs -dvd-compat -Z _/dev/sr0_=_isoimage.iso_
 
 ```
 
-*   В программе _growisofs_ есть небольшая ошибка, касающаяся пустых BD-R носителей. Она выдаёт сообщение об ошибке после того, как прожиг завершён. Из-за этого такие программы, как _k3b_ думают, что весь процесс прожига был неудачным.
+*   В программе *growisofs* есть небольшая ошибка, касающаяся пустых BD-R носителей. Она выдаёт сообщение об ошибке после того, как прожиг завершён. Из-за этого такие программы, как *k3b* думают, что весь процесс прожига был неудачным.
 
 Чтобы исправить это, либо
 
-*   *   отформатируйте пустой BD-R с помощью `dvd+rw-format _/dev/sr0_` перед тем как с ним будет работать _growisofs_
-    *   либо используйте опцию _growisofs_ `-use-the-force-luke=spare:none`
+*   *   отформатируйте пустой BD-R с помощью `dvd+rw-format */dev/sr0*` перед тем как с ним будет работать *growisofs*
+    *   либо используйте опцию *growisofs* `-use-the-force-luke=spare:none`
 
 ### Проверка записанного диска
 
@@ -338,8 +337,7 @@ $ growisofs -dvd-compat -Z _/dev/sr0_=_isoimage.iso_
 
 Сначала вычислите контрольную сумму MD5 исходного образа:
 
- `$ md5sum _isoimage.iso_` 
-
+ `$ md5sum *isoimage.iso*` 
 ```
  e5643e18e05f5646046bb2e4236986d8 isoimage.iso
 
@@ -348,12 +346,10 @@ $ growisofs -dvd-compat -Z _/dev/sr0_=_isoimage.iso_
 Затем вычислите контрольную сумму файловой системы на носителе. Несмотря на то, что при чтении некоторых типов носителей выдаётся абсолютно такое же количество данных, какое было передано записывающей программе, при чтении многие других типов носителей к этим данным добавляется находящийся дальше мусор. Поэтому вы должны ограничить чтение размером файла ISO образа, вычислив точное количество блоков для чтения:
 
 ```
-$ blocks=$(expr $(du -b _isoimage.iso_ | awk '{print $1}') / 2048)
+$ blocks=$(expr $(du -b *isoimage.iso* | awk '{print $1}') / 2048)
 
 ```
-
  `$ dd if=''/dev/sr0'' bs=2048 count=$blocks | md5sum` 
-
 ```
  43992+0 records in
  43992+0 records out
@@ -362,27 +358,27 @@ $ blocks=$(expr $(du -b _isoimage.iso_ | awk '{print $1}') / 2048)
 
 ```
 
-В обоих случаях должна быть вычислена та же самая контрольная сумма (в нашем примере `e5643e18e05f5646046bb2e4236986d8`). Если они не совпали, вероятно, вы также получите ошибку ввода/вывода при работе _dd_. При этом _dmesg_ может сообщать об ошибках SCSI и номерах блоков, если вам это интересно.
+В обоих случаях должна быть вычислена та же самая контрольная сумма (в нашем примере `e5643e18e05f5646046bb2e4236986d8`). Если они не совпали, вероятно, вы также получите ошибку ввода/вывода при работе *dd*. При этом *dmesg* может сообщать об ошибках SCSI и номерах блоков, если вам это интересно.
 
 ### ISO 9660 и запись "на лету"
 
 Не обязательно сохранять образ на жесткий диск перед тем, как производить запись на оптический носитель. Только очень старые CD приводы на очень старых компьютерах могли испытывать проблемы с записью из-за пустого буфера привода.
 
-Если вы опустите опцию `-o` команды _genisoimage_, то выходной поток будет направлен в стандартный вывод. Он может быть перенаправлен на стандартный ввод записывающих программ.
+Если вы опустите опцию `-o` команды *genisoimage*, то выходной поток будет направлен в стандартный вывод. Он может быть перенаправлен на стандартный ввод записывающих программ.
 
 ```
-$ genisoimage -V "_ARCHIVE_2013_07_27_" -J -r _./for_iso_ | \
-  wodim -v dev=_/dev/sr0_ -waiti -
+$ genisoimage -V "*ARCHIVE_2013_07_27*" -J -r *./for_iso* | \
+  wodim -v dev=*/dev/sr0* -waiti -
 
 ```
 
-Опция `-waiti` здесь не обязательна. Она предотвращает `wodim` от начала записи на носитель до того, как _genisoimage_ начнёт выводить данные. Это позволит _genisoimage_ читать носитель, не мешая уже начатому процессу прожига. Смотрите следующий раздел про мультисессии.
+Опция `-waiti` здесь не обязательна. Она предотвращает `wodim` от начала записи на носитель до того, как *genisoimage* начнёт выводить данные. Это позволит *genisoimage* читать носитель, не мешая уже начатому процессу прожига. Смотрите следующий раздел про мультисессии.
 
-В случае DVD и BD вы можете использовать _growisofs_ для прожига "на лету", чтобы при этом она сама запускала _genisoimage_, следующим образом:
+В случае DVD и BD вы можете использовать *growisofs* для прожига "на лету", чтобы при этом она сама запускала *genisoimage*, следующим образом:
 
 ```
 $ export MKISOFS="genisoimage"
-$ growisofs -Z _/dev/sr0_ -V "_ARCHIVE_2013_07_27_" -r -J _./for_iso_
+$ growisofs -Z */dev/sr0* -V "*ARCHIVE_2013_07_27*" -r -J *./for_iso*
 
 ```
 
@@ -392,17 +388,17 @@ $ growisofs -Z _/dev/sr0_ -V "_ARCHIVE_2013_07_27_" -r -J _./for_iso_
 
 #### Мультисессия с помощью wodim
 
-После записи CD-R и CD-RW все еще остаются дозаписываемыми, если при записи с _wodim_ была использована опция `-multi`:
+После записи CD-R и CD-RW все еще остаются дозаписываемыми, если при записи с *wodim* была использована опция `-multi`:
 
 ```
-$ wodim -v -multi dev=_/dev/sr0_ _isoimage.iso_
+$ wodim -v -multi dev=*/dev/sr0* *isoimage.iso*
 
 ```
 
 Чтобы выполнить новую сессию записи, необходимо запросить параметры сессии командой
 
 ```
-$ m=$(wodim dev=_/dev/sr0_ -msinfo)
+$ m=$(wodim dev=*/dev/sr0* -msinfo)
 
 ```
 
@@ -410,26 +406,26 @@ $ m=$(wodim dev=_/dev/sr0_ -msinfo)
 
 ```
 $ genisoimage -M /dev/sr0 -C "$m" \
-   -V "_ARCHIVE_2013_07_28_" -J -r -o _session2.iso_ _./more_for_iso_
+   -V "*ARCHIVE_2013_07_28*" -J -r -o *session2.iso* *./more_for_iso*
 
 ```
 
 Наконец, запишите полученный образ на носитель. Вы снова можете разрешить мультисессию опцией `-multi`:
 
 ```
-$ wodim -v -multi dev=_/dev/sr0_ _session2.iso_
+$ wodim -v -multi dev=*/dev/sr0* *session2.iso*
 
 ```
 
-Программы _cdrskin_ и _xorrecord_ также разрешают мультисессию для DVD-R, DVD+R, BD-R и неформатированных DVD-RW. Программа _cdrecord_ разрешает мультисессию как минимум для DVD-R и DVD-RW. Разумеется, все они разрешают её с CD-R и CD-RW.
+Программы *cdrskin* и *xorrecord* также разрешают мультисессию для DVD-R, DVD+R, BD-R и неформатированных DVD-RW. Программа *cdrecord* разрешает мультисессию как минимум для DVD-R и DVD-RW. Разумеется, все они разрешают её с CD-R и CD-RW.
 
 Большинство перезаписываемых носителей не записывают историю сессий, которая могла бы быть распознана монтирующим ядром. Но с помощью ISO 9660 можно добиться эффекта мультисессии даже на таких носителях.
 
-_growisofs_ и _xorriso_ позволяют делать все то же самое без лишних действий.
+*growisofs* и *xorriso* позволяют делать все то же самое без лишних действий.
 
 #### Мультисессия с помощью growisofs
 
-По умолчанию, _growisofs_ использует _mkisofs_ в качестве бекенда для генерирования ISO-образа, которой она передаёт большинство своих аргументов. Смотрите примеры с _genisoimage_, приведённые выше. Она запрещает опцию `-o` и объявляет устаревшей опцию `-C`. Вы можете сделать так, чтобы она работала с любой другой совместимой программой, установив переменную окружения `MKISOFS`:
+По умолчанию, *growisofs* использует *mkisofs* в качестве бекенда для генерирования ISO-образа, которой она передаёт большинство своих аргументов. Смотрите примеры с *genisoimage*, приведённые выше. Она запрещает опцию `-o` и объявляет устаревшей опцию `-C`. Вы можете сделать так, чтобы она работала с любой другой совместимой программой, установив переменную окружения `MKISOFS`:
 
 ```
 $ export MKISOFS="genisoimage"
@@ -440,34 +436,34 @@ $ export MKISOFS="xorrisofs"
 Для создания новой файловой системы на оптическом носителе используется опция `-Z`:
 
 ```
-$ growisofs -Z _/dev/sr0_ -V "_ARCHIVE_2013_07_27_" -r -J _./for_iso_
+$ growisofs -Z */dev/sr0* -V "*ARCHIVE_2013_07_27*" -r -J *./for_iso*
 
 ```
 
 Для добавления новых файлов в режиме мультисессии, запускайте программу с опцией `-M`:
 
 ```
-$ growisofs -M _/dev/sr0_ -V "_ARCHIVE_2013_07_28_" -r -J _./more_for_iso_
+$ growisofs -M */dev/sr0* -V "*ARCHIVE_2013_07_28*" -r -J *./more_for_iso*
 
 ```
 
-Для получения дополнительной информации смотрите [инструкцию по growisofs](http://linux.die.net/man/1/growisofs), а также инструкции по _genisoimage_, _mkisofs_ и _xorrisofs_.
+Для получения дополнительной информации смотрите [инструкцию по growisofs](http://linux.die.net/man/1/growisofs), а также инструкции по *genisoimage*, *mkisofs* и *xorrisofs*.
 
 #### Мультисессия с помощью xorriso
 
 `xorriso` самостоятельно проверяет, пуст ли накопитель и доступна ли дозапись на него в режиме мультисессии. Если диск не подходит для дозаписи, его следует сначала очистить. Для этого используется опция `-blank as_needed`, при указании которой диск будет очищен только в случае необходимости:
 
 ```
-$ xorriso -outdev _/dev/sr0_ -blank as_needed \
-          -volid "_ARCHIVE_2013_07_27_" -joliet on -add _./for_iso_ --
+$ xorriso -outdev */dev/sr0* -blank as_needed \
+          -volid "*ARCHIVE_2013_07_27*" -joliet on -add *./for_iso* --
 
 ```
 
-Если на диск уже были записаны данные, и дозапись возможна, _xorriso_ добавит указанные файлы на диск в случае, если вместо `-outdev` указана опция `-dev`. Разумеется, здесь не надо давать команду `-blank`
+Если на диск уже были записаны данные, и дозапись возможна, *xorriso* добавит указанные файлы на диск в случае, если вместо `-outdev` указана опция `-dev`. Разумеется, здесь не надо давать команду `-blank`
 
 ```
-$ xorriso -dev _/dev/sr0_ \
-          -volid "_ARCHIVE_2013_07_28_" -joliet on -add _./more_for_iso_ --
+$ xorriso -dev */dev/sr0* \
+          -volid "*ARCHIVE_2013_07_28*" -joliet on -add *./more_for_iso* --
 
 ```
 
@@ -475,19 +471,19 @@ $ xorriso -dev _/dev/sr0_ \
 
 ### BD Defect Management
 
-Обычно запись на носители BD-RE и форматированные BD-R производится с включенной функцией Defect Management (_управление дефектами_). При записи сразу же происходит чтение записанных блоков и их проверка. В случае несовпадения эти блоки записываются заново или перенаправляются в резервную область (_Spare Area_), где располагаются запасные блоки.
+Обычно запись на носители BD-RE и форматированные BD-R производится с включенной функцией Defect Management (*управление дефектами*). При записи сразу же происходит чтение записанных блоков и их проверка. В случае несовпадения эти блоки записываются заново или перенаправляются в резервную область (*Spare Area*), где располагаются запасные блоки.
 
 Эти проверки чтения снижают скорость записи более чем наполовину от номинальной скорости записи привода и BD-носителя, а иногда даже больше. Активное использование резервной области впоследствии приводит к большим задержкам во время чтения. Поэтому использование Defect Management не всегда бывает желательно.
 
-_cdrecord_ не форматирует BD-R и не умеет отключать Defect Management на носителях BD-RE media.
+*cdrecord* не форматирует BD-R и не умеет отключать Defect Management на носителях BD-RE media.
 
-_growisofs_ форматирует BD-R по умолчанию. Defect Management можно отключить с помощью опции `-use-the-force-luke=spare:none`. Однако, эта опция не работает с носителями BD-RE.
+*growisofs* форматирует BD-R по умолчанию. Defect Management можно отключить с помощью опции `-use-the-force-luke=spare:none`. Однако, эта опция не работает с носителями BD-RE.
 
-_cdrskin_, _xorriso_ и _xorrecord_ не форматируют BD-R по умолчанию. Они делают форматирование с помощью соответствующих опций `cdrskin blank=format_if_needed`, `xorriso -format as_needed`, `xorrecord blank=format_overwrite`. Эти три программы могут отключить Defect Management на BD-RE и на уже отформатированном BD-R с помощью опций `cdrskin stream_recording=on`, `xorriso -stream_recording on`, `xorrecord stream_recording=on`, соответственно.
+*cdrskin*, *xorriso* и *xorrecord* не форматируют BD-R по умолчанию. Они делают форматирование с помощью соответствующих опций `cdrskin blank=format_if_needed`, `xorriso -format as_needed`, `xorrecord blank=format_overwrite`. Эти три программы могут отключить Defect Management на BD-RE и на уже отформатированном BD-R с помощью опций `cdrskin stream_recording=on`, `xorriso -stream_recording on`, `xorrecord stream_recording=on`, соответственно.
 
 ### Запись Audio CD
 
-Сохраните ваши аудиотреки в формате WAV, стерео 16 бит без сжатия. Чтобы переконвертировать MP3 в WAV, убедитесь, что пакет [lame](https://www.archlinux.org/packages/?name=lame) установлен, перейдите с помощью _cd_ в директорию с вашими MP3-файлами и выполните:
+Сохраните ваши аудиотреки в формате WAV, стерео 16 бит без сжатия. Чтобы переконвертировать MP3 в WAV, убедитесь, что пакет [lame](https://www.archlinux.org/packages/?name=lame) установлен, перейдите с помощью *cd* в директорию с вашими MP3-файлами и выполните:
 
 ```
 $ for i in *.mp3; do lame --decode "$i" "$(basename "$i" .mp3)".wav; done
@@ -504,7 +500,7 @@ $ for i in *.mp3; do mpg123 --rate 44100 --stereo --buffer 3072 --resync -w $(ba
 Переименуйте файлы таким образом, чтобы они шли в нужном порядке следования при отображении их по алфавиту, например `01.wav`, `02.wav`, `03.wav` и т.д. Используйте следующую команду чтобы имитировать запись WAV файлов в качестве аудио CD:
 
 ```
-$ wodim **-dummy** -v -pad speed=1 dev=_/dev/sr0_ -dao -swab *.wav
+$ wodim **-dummy** -v -pad speed=1 dev=*/dev/sr0* -dao -swab *.wav
 
 ```
 
@@ -515,9 +511,9 @@ Track 01: audio    0 MB (00:00.00) no preemp pad
 
 ```
 
-попробуйте другой декодер (например _mpg123_) или используйте для записи _cdrecord_ из пакета [cdrtools](https://www.archlinux.org/packages/?name=cdrtools).
+попробуйте другой декодер (например *mpg123*) или используйте для записи *cdrecord* из пакета [cdrtools](https://www.archlinux.org/packages/?name=cdrtools).
 
-Обратите внимание, что [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) также содержит команду _cdrecord_, но это всего лишь символическая ссылка на _wodim_. Если все в порядке, уберите флаг `dummy`, чтобы на самом деле начать запись.
+Обратите внимание, что [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) также содержит команду *cdrecord*, но это всего лишь символическая ссылка на *wodim*. Если все в порядке, уберите флаг `dummy`, чтобы на самом деле начать запись.
 
 Для проверки записанного Audio CD используйте [MPlayer](/index.php/MPlayer_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MPlayer (Русский)"):
 
@@ -531,7 +527,7 @@ $ mplayer cdda://
 Чтобы записать образ BIN/CUE, выполните:
 
 ```
-$ cdrdao write --device _/dev/sr0_ _image.cue_
+$ cdrdao write --device */dev/sr0* *image.cue*
 
 ```
 
@@ -540,14 +536,14 @@ $ cdrdao write --device _/dev/sr0_ _image.cue_
 ISO-образы содержат только одну дорожку данных. Если вы хотите создать образ диска со смешанным содержимым (дорожка данных с несколькими аудиотреками), то вам нужно будет создать пару TOC/BIN:
 
 ```
-$ cdrdao read-cd --read-raw --datafile _image.bin_ --driver generic-mmc:0x20000 --device _/dev/cdrom_ _image.toc_
+$ cdrdao read-cd --read-raw --datafile *image.bin* --driver generic-mmc:0x20000 --device */dev/cdrom* *image.toc*
 
 ```
 
-Некоторые программы умеют работать только с парой CUE/BIN; вы можете создать файл CUE с помощью _toc2cue_ (часть пакета [cdrdao](https://www.archlinux.org/packages/?name=cdrdao)):
+Некоторые программы умеют работать только с парой CUE/BIN; вы можете создать файл CUE с помощью *toc2cue* (часть пакета [cdrdao](https://www.archlinux.org/packages/?name=cdrdao)):
 
 ```
-$ toc2cue _image.toc_ _image.cue_
+$ toc2cue *image.toc* *image.cue*
 
 ```
 
@@ -577,7 +573,7 @@ $ toc2cue _image.toc_ _image.cue_
 
 	[https://wiki.gnome.org/Apps/Brasero](https://wiki.gnome.org/Apps/Brasero) || [brasero](https://www.archlinux.org/packages/?name=brasero)
 
-*   **cdw** — Фронтенд на ncurses над утилитами _cdrecord_, _mkisofs_, _growisofs_, _dvd+rw-mediainfo_, _dvd+rw-format_ и _xorriso_.
+*   **cdw** — Фронтенд на ncurses над утилитами *cdrecord*, *mkisofs*, *growisofs*, *dvd+rw-mediainfo*, *dvd+rw-format* и *xorriso*.
 
 	[http://cdw.sourceforge.net/](http://cdw.sourceforge.net/) || [cdw](https://aur.archlinux.org/packages/cdw/)
 
@@ -597,7 +593,7 @@ $ toc2cue _image.toc_ _image.cue_
 
 	[http://www.k3b.org/](http://www.k3b.org/) || [k3b](https://www.archlinux.org/packages/?name=k3b)
 
-*   **[X-CD-Roast](https://en.wikipedia.org/wiki/ru:X-CD-Roast "wikipedia:ru:X-CD-Roast")** — Легковесная графическая оболочка над _cdrtools_ для записи CD и DVD.
+*   **[X-CD-Roast](https://en.wikipedia.org/wiki/ru:X-CD-Roast "wikipedia:ru:X-CD-Roast")** — Легковесная графическая оболочка над *cdrtools* для записи CD и DVD.
 
 	[http://www.xcdroast.org/](http://www.xcdroast.org/) || [xcdroast](https://aur.archlinux.org/packages/xcdroast/)
 
@@ -605,7 +601,7 @@ $ toc2cue _image.toc_ _image.cue_
 
 	[http://goodies.xfce.org/projects/applications/xfburn](http://goodies.xfce.org/projects/applications/xfburn) || [xfburn](https://www.archlinux.org/packages/?name=xfburn)
 
-*   **xorriso-tcltk** — Графический фронтенд над утилитой _xorriso_ для работы с ISO и записи CD/DVD/BD.
+*   **xorriso-tcltk** — Графический фронтенд над утилитой *xorriso* для работы с ISO и записи CD/DVD/BD.
 
 	[https://www.gnu.org/software/xorriso/xorriso-tcltk-screen.gif](https://www.gnu.org/software/xorriso/xorriso-tcltk-screen.gif) || [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
 
@@ -712,7 +708,7 @@ Nero Linux предоставляет следующие возможности:
 
 	[http://www.pixelbeat.org/programs/dvd-vr/](http://www.pixelbeat.org/programs/dvd-vr/) || [dvd-vr](https://aur.archlinux.org/packages/dvd-vr/)
 
-*   **[dvdbackup](/index.php/Dvdbackup "Dvdbackup")** — Программа, извлекающая данные без перекодирования. Она полезна для создания _физических_ копий зашифрованных DVD в сочетании с **libdvdcss**, а также при расшифровке видео другими утилитами, которые не умеют читать зашифрованные DVD.
+*   **[dvdbackup](/index.php/Dvdbackup "Dvdbackup")** — Программа, извлекающая данные без перекодирования. Она полезна для создания *физических* копий зашифрованных DVD в сочетании с **libdvdcss**, а также при расшифровке видео другими утилитами, которые не умеют читать зашифрованные DVD.
 
 	[http://dvdbackup.sourceforge.net/](http://dvdbackup.sourceforge.net/) || [dvdbackup](https://www.archlinux.org/packages/?name=dvdbackup)
 
@@ -783,10 +779,9 @@ en_US ISO-8859-1
 
 ```
 
-*   Перегенерируйте локали с помощью _locale-gen_:
+*   Перегенерируйте локали с помощью *locale-gen*:
 
  `# locale-gen` 
-
 ```
 Generating locales...
 en_US.UTF-8... done
@@ -807,7 +802,7 @@ Brasero использует [gvfs](https://www.archlinux.org/packages/?name=gvf
 
 Если вы пытаетесь совершить запись, Brasero может остановиться на первом шаге (Normalization).
 
-Чтобы этого избежать, вы можете отключить плагин нормализации в меню _Edit > Plugins_.
+Чтобы этого избежать, вы можете отключить плагин нормализации в меню *Edit > Plugins*.
 
 ### VLC: Ошибка "... не может открыть диск /dev/dvd"
 
@@ -855,7 +850,7 @@ dvd=/dev/sr0
 
 Вот некоторые типичные сообщения о том, что вашему приводу не нравится конкретный носитель. Это можно исправить только используя другой привод или другой носитель. Смена программы вряд ли поможет.
 
-K3b с _wodim_:
+K3b с *wodim*:
 
 ```
 Sense Bytes: 70 00 03 00 00 00 00 12 00 00 00 00 0C 00 00 00
@@ -864,14 +859,14 @@ Sense Code: 0x0C Qual 0x00 (write error) Fru 0x0
 
 ```
 
-Brasero с _growisofs_:
+Brasero с *growisofs*:
 
 ```
 BraseroGrowisofs stderr: :-[ WRITE@LBA=0h failed with SK=3h/ASC=0Ch/ACQ=00h]: Input/output error
 
 ```
 
-Brasero с _libburn_:
+Brasero с *libburn*:
 
 ```
 BraseroLibburn Libburn reported an error SCSI error on write(16976,16): [3 0C 00] Write error

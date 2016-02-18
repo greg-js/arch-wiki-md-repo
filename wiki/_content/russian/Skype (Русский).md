@@ -46,7 +46,7 @@ Include = /etc/pacman.d/mirrorlist
 
 Начиная с версии 4.3, Skype требует [PulseAudio](/index.php/PulseAudio "PulseAudio") для голосовой связи, вероломно отказавшись от поддержки [ALSA](/index.php/ALSA "ALSA").
 
-[apulse](https://aur.archlinux.org/packages/apulse/) (и [lib32-apulse](https://aur.archlinux.org/packages/lib32-apulse/) для пользователей x86_64) из [AUR](/index.php/AUR "AUR") эмулирует _PulseAudio_, не требуя установки PulseAudio. Запустите Skype с:
+[apulse](https://aur.archlinux.org/packages/apulse/) (и [lib32-apulse](https://aur.archlinux.org/packages/lib32-apulse/) для пользователей x86_64) из [AUR](/index.php/AUR "AUR") эмулирует *PulseAudio*, не требуя установки PulseAudio. Запустите Skype с:
 
 ```
 $ apulse skype
@@ -238,7 +238,7 @@ Categories=Network;Application;
 
 ##### Использование OSS-эмуляции oss2jack
 
-Oss2jack - это еще один способ эмуляции OSS без прямого использования ALSA. Вместо этого _oss2jack_ создает устройство OSS, чтобы JACK (Jack Audio Connection Kit) выводил звук на стандартное устройство ALSA. Для получения дополнительной информации по настройке, пожалуйста, обратитесь к статье [Advanced Linux Sound Architecture (Русский)](/index.php/Advanced_Linux_Sound_Architecture_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Advanced Linux Sound Architecture (Русский)").
+Oss2jack - это еще один способ эмуляции OSS без прямого использования ALSA. Вместо этого *oss2jack* создает устройство OSS, чтобы JACK (Jack Audio Connection Kit) выводил звук на стандартное устройство ALSA. Для получения дополнительной информации по настройке, пожалуйста, обратитесь к статье [Advanced Linux Sound Architecture (Русский)](/index.php/Advanced_Linux_Sound_Architecture_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Advanced Linux Sound Architecture (Русский)").
 
 ## Безопасность Skype
 

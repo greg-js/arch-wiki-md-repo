@@ -1,4 +1,4 @@
-Este documento describe el proceso de [bootstrapping](https://en.wikipedia.org/wiki/es:Bootstrapping_(inform%C3%A1tica) "wikipedia:es:Bootstrapping (informática)") necesario para instalar Arch Linux desde un sistema anfitrión de Linux en ejecución. Después del bootstrapping, la instalación continúa como se describe en la [guía de instalación](/index.php/Installation_Guide_(Espa%C3%B1ol) "Installation Guide (Español)").
+Este documento describe el proceso de [bootstrapping](https://en.wikipedia.org/wiki/es:Bootstrapping_(inform%C3%A1tica) necesario para instalar Arch Linux desde un sistema anfitrión de Linux en ejecución. Después del bootstrapping, la instalación continúa como se describe en la [guía de instalación](/index.php/Installation_Guide_(Espa%C3%B1ol) "Installation Guide (Español)").
 
 La instalación de Arch Linux desde un sistema Linux en ejecución es útil para:
 
@@ -87,7 +87,7 @@ Es posible montar la imagen root con el soporte de instalación de Arch Linux m�
 
 **Nota:** Antes de continuar, asegúrese de que la última versión de [squashfs](http://squashfs.sourceforge.net/) está instalada en el sistema anfitrión. De lo contrario, se producirán errores como: `FATAL ERROR aborting: uncompress_inode_table: failed to read block`.
 
-*   La imagen root se puede encontrar en uno de los [servidores de réplica](https://www.archlinux.org/download), disponible tanto para arquitecturas x86_64 como i686, dependiendo de sus necesidades.El formato squashfs no es editable, así que efectuaremos _unsquash_ de la imagen root y luego la monteremos.
+*   La imagen root se puede encontrar en uno de los [servidores de réplica](https://www.archlinux.org/download), disponible tanto para arquitecturas x86_64 como i686, dependiendo de sus necesidades.El formato squashfs no es editable, así que efectuaremos *unsquash* de la imagen root y luego la monteremos.
 
 *   Para efectuar unsquash de la imagen root, ejecute:
 
@@ -121,7 +121,6 @@ Es posible montar la imagen root con el soporte de instalación de Arch Linux m�
 El script crea un directorio llamado `archinstall-pkg` y descarga los paquetes necesarios en él. A continuación, los extrae al directorio `archinstall-chroot`. Por último, prepara los puntos de montaje, configura pacman y enjaula el entorno.
 
  `archinstall-bootstrap.sh` 
-
 ```
 #!/bin/bash
 # last edited 04\. January 2014

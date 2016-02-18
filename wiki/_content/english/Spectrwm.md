@@ -1,6 +1,6 @@
 From [spectrwm website](http://spectrwm.org/):
 
-	_spectrwm is a small dynamic tiling window manager for [Xorg](/index.php/Xorg "Xorg"). It tries to stay out of the way so that valuable screen real estate can be used for much more important stuff. It has sane defaults and does not require one to learn a language to do any configuration. It was written by hackers for hackers and it strives to be small, compact and fast._
+	*spectrwm is a small dynamic tiling window manager for [Xorg](/index.php/Xorg "Xorg"). It tries to stay out of the way so that valuable screen real estate can be used for much more important stuff. It has sane defaults and does not require one to learn a language to do any configuration. It was written by hackers for hackers and it strives to be small, compact and fast.*
 
 Spectrwm is written in C and configured with a text configuration file. It was previously known as scrotwm.
 
@@ -38,7 +38,7 @@ See [Xdefaults](/index.php/Xdefaults "Xdefaults") for details of how to set up f
 
 ## Configuration
 
-_spectrwm_ first tries to open the user specific file, `~/.spectrwm.conf`. If that file is unavailable, it tries to open the global configuration file at `/etc/spectrwm.conf`.
+*spectrwm* first tries to open the user specific file, `~/.spectrwm.conf`. If that file is unavailable, it tries to open the global configuration file at `/etc/spectrwm.conf`.
 
 Optionally, spectrwm can call `baraction.sh` (in the user's path), which should output a text status message to `stdout` for the status bar.
 
@@ -227,7 +227,7 @@ $ cp /usr/share/spectrwm/screenshot.sh ~/bin
 
 ## Screen locking
 
-By default the lock keybinding `Mod+Shift+Delete` executes _xlock_
+By default the lock keybinding `Mod+Shift+Delete` executes *xlock*
 
 ```
 program[lock]      = xlock

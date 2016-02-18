@@ -63,7 +63,7 @@ pool/*/*-x86_64.pkg.tar.gz
         *   There may be actual packages, instead of symlinks, in ${repo}/os/${arch}
 *   Exclude any top-level directories that you do not need
 
-Example: `rsync _$rsync_arguments_ --exclude-from="/path/to/exclude.txt" _rsync://example.com/_ /path/to/destination`
+Example: `rsync *$rsync_arguments* --exclude-from="/path/to/exclude.txt" *rsync://example.com/* /path/to/destination`
 
 #### Example Script
 
@@ -180,4 +180,4 @@ Then to update your partial mirror, simply execute pacman -Syu. Note this doesn'
 ### Client Configuration
 
 *   Add the proper Server= variable in /etc/pacman.d/mirrorlist
-*   For physical media (such as flash drive) the following can be used: Server = file:///mnt/media/repo/$repo/os/$arch (_where /mnt/media/repo is directory where local mirror located_)
+*   For physical media (such as flash drive) the following can be used: Server = file:///mnt/media/repo/$repo/os/$arch (*where /mnt/media/repo is directory where local mirror located*)

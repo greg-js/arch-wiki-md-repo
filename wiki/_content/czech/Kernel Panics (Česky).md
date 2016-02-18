@@ -66,7 +66,7 @@ Pokud si ponecháváte stažené balíčky pacmana, můžete se lehce navrátit 
 Předpokládejme, že jste si předchozí verze ponechali. Nyní nainstalujeme tu poslední funkční.
 
 ```
-# pacman -U /var/cache/pacman/pkg/kernel26-2.6.23._xx-x_.pkg.tar.gz
+# pacman -U /var/cache/pacman/pkg/kernel26-2.6.23.*xx-x*.pkg.tar.gz
 
 ```
 
@@ -76,7 +76,7 @@ V opačném případě se pro balíček poohlédněte na instalačním CD. Např
 
 ## 2\. možnost: Ověřte konfiguraci zavaděče
 
-Další možnost je chyba v konfiguraci zavaděče operačního systému. Například změna oddílů na pevném disku může zapříčinit změnu pořadí oddílů. Uživatelé GRUBu si mohou vzpomenout, zda se změna oddílů stala nedávno a ověřit si, že řádky _root_ a _kernel_ skutečně odpovídají novému schéma oddílů.
+Další možnost je chyba v konfiguraci zavaděče operačního systému. Například změna oddílů na pevném disku může zapříčinit změnu pořadí oddílů. Uživatelé GRUBu si mohou vzpomenout, zda se změna oddílů stala nedávno a ověřit si, že řádky *root* a *kernel* skutečně odpovídají novému schéma oddílů.
 
 ## Restart
 

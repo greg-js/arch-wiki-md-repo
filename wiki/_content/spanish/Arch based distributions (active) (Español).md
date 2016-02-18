@@ -143,7 +143,7 @@ CDN Linux es un sistema basado en Arch GNU/Linux. CDN está diseñado para servi
 
 ### Chakra
 
-_«Nuestro objetivo con Chakra es proporcionar un sistema operativo para equipos de escritorio que sea fácil de usar, pero que siga teniendo toda la funcionalidad, claridad, potencia y rapidez de un sistema operativo con la filosofía KISS. A largo plazo, queremos construir un sistema operativo basado en Arch Linux que cumpla las expectativas que la mayoría de los usuarios de escritorio tienen hoy en día, como una fácil instalación de software, administración gráfica del sistema, configuración de administración de energía en los dispositivos móviles, o compartir conexión a Internet...»_
+*«Nuestro objetivo con Chakra es proporcionar un sistema operativo para equipos de escritorio que sea fácil de usar, pero que siga teniendo toda la funcionalidad, claridad, potencia y rapidez de un sistema operativo con la filosofía KISS. A largo plazo, queremos construir un sistema operativo basado en Arch Linux que cumpla las expectativas que la mayoría de los usuarios de escritorio tienen hoy en día, como una fácil instalación de software, administración gráfica del sistema, configuración de administración de energía en los dispositivos móviles, o compartir conexión a Internet...»*
 
 	<small>Fuente: [The Chakra Project - About](http://chakra-project.org/about.html)</small>
 
@@ -177,7 +177,7 @@ DidJiX es un software Mixxx de DJ digital de código abierto y libre ([http://ww
 
 ### Kahel OS
 
-_«Kahel OS es la primera, y sigue siendo la única, distribución Linux filipina con el modelo rolling release de Arch Linux + GNOME. En la comunidad, es la primera distribución en lanzarse (no beta) como sistema operativo Linux con Arch Linux + GNOME.»_
+*«Kahel OS es la primera, y sigue siendo la única, distribución Linux filipina con el modelo rolling release de Arch Linux + GNOME. En la comunidad, es la primera distribución en lanzarse (no beta) como sistema operativo Linux con Arch Linux + GNOME.»*
 
 	<small>Fuente: [Kahel OS](http://www.kahelos.org/)</small>
 
@@ -274,7 +274,7 @@ Enlisy es una distribución Linux i686 optimizada para procesadores Pentium 2 y 
 
 ### Frugalware
 
-_«Frugalware Linux es una distribución Linux de propósito general diseñada para usuarios intermedios que están familiarizados con las operaciones en la línea de órdenes. Está basada en Slackware, pero utiliza un sistema de gestión de paquetes diferente, Pacman.»_
+*«Frugalware Linux es una distribución Linux de propósito general diseñada para usuarios intermedios que están familiarizados con las operaciones en la línea de órdenes. Está basada en Slackware, pero utiliza un sistema de gestión de paquetes diferente, Pacman.»*
 
 	<small>Source: [Wikipedia](https://en.wikipedia.org/wiki/Frugalware "wikipedia:Frugalware")</small>
 
@@ -288,6 +288,6 @@ _«Frugalware Linux es una distribución Linux de propósito general diseñada p
 
 ### PoliArch
 
-_«PoliArch una distribución italiana y live CD con una serie de herramientas de recuperación de datos y rescate del sistema.»_
+*«PoliArch una distribución italiana y live CD con una serie de herramientas de recuperación de datos y rescate del sistema.»*
 
 *   Página principal: [http://www.poliarch.org](http://www.poliarch.org)

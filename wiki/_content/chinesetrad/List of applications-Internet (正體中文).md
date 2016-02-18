@@ -359,7 +359,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 	[http://gnus.org/](http://gnus.org/) || [emacs-gnus-git](https://aur.archlinux.org/packages/emacs-gnus-git/)
 
-*   **S-nail** — a mail processing system with a command syntax reminiscent of _ed_ with lines replaced by messages. Provides the functionality of [mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx") and much more.
+*   **S-nail** — a mail processing system with a command syntax reminiscent of *ed* with lines replaced by messages. Provides the functionality of [mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx") and much more.
 
 	[http://sourceforge.net/projects/s-nail/](http://sourceforge.net/projects/s-nail/) || [s-nail](https://www.archlinux.org/packages/?name=s-nail)
 
@@ -467,7 +467,7 @@ Many clients listed here (including Pidgin and all it's forks) support multiple 
 
 	[http://emesene.org/](http://emesene.org/) || [emesene](https://aur.archlinux.org/packages/emesene/)
 
-*   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) "wikipedia:Empathy (software)")** — GNOME instant messaging client using the [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)") framework.
+*   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) framework.
 
 	[http://live.gnome.org/Empathy](http://live.gnome.org/Empathy) || [empathy](https://www.archlinux.org/packages/?name=empathy)
 
@@ -483,7 +483,7 @@ Many clients listed here (including Pidgin and all it's forks) support multiple 
 
 	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
 
-*   **[KDE Telepathy](/index.php/Kde#KDE_Telepathy "Kde")** — KDE instant messaging client using the [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)") framework. Meant as a replacement for Kopete.
+*   **[KDE Telepathy](/index.php/Kde#KDE_Telepathy "Kde")** — KDE instant messaging client using the [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) framework. Meant as a replacement for Kopete.
 
 	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [kde-telepathy-meta](https://www.archlinux.org/packages/?name=kde-telepathy-meta)
 
@@ -870,13 +870,11 @@ See also [Wikipedia:Pastebin](https://en.wikipedia.org/wiki/Pastebin "wikipedia:
 Pastebin services are often used to paste information into [IRC channels](/index.php/IRC_Channel "IRC Channel") to help with troubleshooting. There are services for both text (e.g. [bpaste.net](http://bpaste.net/), [pastie.org](http://pastie.org/), [codepad.org](http://codepad.org/)) and images (e.g. [imgur.com](http://imgur.com/), [picpaste.com](http://picpaste.com/)). Pastebin clients allow you to post directy from the cli without using a web browser.
 
 **Tip:** The sprunge and ix pastebins can be accessed directly via curl, which should return a link to the paste:
-
 ```
 <command> | curl -F 'sprunge=<-' http://sprunge.us
 
 <command> 2>&1 | curl -F 'f:1=<-' ix.io
 ```
-
 There is also a [sprunge plugin](https://github.com/robbyrussell/oh-my-zsh/wiki/Usage-of-the-%22sprunge%22-command) for [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/wiki) (a configuration tool for the [Zsh](/index.php/Zsh "Zsh") command shell).
 
 **Warning:** Do not use [pastebin.com](http://pastebin.com/). It appears to be the most popular site but it is slow, full of adverts, formats the text badly (it will mess up your code) and many people can not even open the site due to aggressive spam filters.

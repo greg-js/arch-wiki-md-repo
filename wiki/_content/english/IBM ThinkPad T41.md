@@ -56,7 +56,7 @@ Out of the box, Fn+F4, Fn+F12 and the power button generate ACPI events. The thi
 
 ### Special Modules
 
-The thinkpad_acpi module (which may or may not be loaded by udev) provides support for all hotkeys (see below) and a number of other features. It has a procfs interface at _/proc/acpi/ibm/_ which can be used to read out a number of thermal sensors, fan speed etc. and control volume, brightness, LEDs, beep codes and much more. Control of fan speed is possible if the driver is loaded with the experimental option, but if you use this keep an eye on the thermal sensors.
+The thinkpad_acpi module (which may or may not be loaded by udev) provides support for all hotkeys (see below) and a number of other features. It has a procfs interface at */proc/acpi/ibm/* which can be used to read out a number of thermal sensors, fan speed etc. and control volume, brightness, LEDs, beep codes and much more. Control of fan speed is possible if the driver is loaded with the experimental option, but if you use this keep an eye on the thermal sensors.
 
 The tp_smapi module is available in the AUR. On this model of thinkpad it only provides extra battery information; Battery discharge control is not supported. Note that this module conflicts with the hdaps module in the kernel mainline, they cannot both be loaded at the same time.
 
@@ -102,16 +102,16 @@ $ acpi_listen
 
 ```
 
-Exactly which keys produce an event depends on the mask set in _/proc/acpi/ibm/hotkey_. You can read the mask using cat, and change it with something like:
+Exactly which keys produce an event depends on the mask set in */proc/acpi/ibm/hotkey*. You can read the mask using cat, and change it with something like:
 
 ```
 # echo enable,0x00ffffff > /proc/acpi/ibm/hotkey
 
 ```
 
-The hex value is a mask, which controls which keys are handled by the laptop firmware and which ones are handled by acpid. Exactly which bit affects which key/button is unknown, but 0x00000000 sends all events to the firmware, and 0x00ffffff send all events to acpid. The default is0 x008c7fff, which creates acpi events for most buttons, but not those listed above which are connected directly to the hardware. If you want to set the mask at every boot, just add the above command to _/etc/rc.local_. If unsure, just leave it alone.
+The hex value is a mask, which controls which keys are handled by the laptop firmware and which ones are handled by acpid. Exactly which bit affects which key/button is unknown, but 0x00000000 sends all events to the firmware, and 0x00ffffff send all events to acpid. The default is0 x008c7fff, which creates acpi events for most buttons, but not those listed above which are connected directly to the hardware. If you want to set the mask at every boot, just add the above command to */etc/rc.local*. If unsure, just leave it alone.
 
-You must then set up acpid to handle the acpi events. In Arch this is done through _/etc/acpi/handler.sh_, which is a bash script, and uses case structures to decide what action to take for each event. With a mask of 0x00ffffff the following script handles most of the Fn+Fx keys according to the blue icons on them.
+You must then set up acpid to handle the acpi events. In Arch this is done through */etc/acpi/handler.sh*, which is a bash script, and uses case structures to decide what action to take for each event. With a mask of 0x00ffffff the following script handles most of the Fn+Fx keys according to the blue icons on them.
 
 **FIXME: If you know how to toggle the external display on this laptop (Fn+F7), please update the script**
 

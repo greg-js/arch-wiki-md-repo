@@ -9,7 +9,7 @@
 
 ## Установка из репозитория RetroShare
 
-1\. Добавьте репозиторий пакетов, отредактировав файл _/etc/pacman.conf_:
+1\. Добавьте репозиторий пакетов, отредактировав файл */etc/pacman.conf*:
 
 ```
 [home_AsamK_RetroShare_Arch_Extra]
@@ -30,7 +30,7 @@ Server = [http://download.opensuse.org/repositories/home:/AsamK:/RetroShare/Arch
 
 ## Установка из AUR
 
-Текущая версия RetroShare доступна в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"). Воспользуетесь пакетом [retroshare](https://aur.archlinux.org/packages/retroshare/) для сборки последней _стабильной_ версии исходных текстов. Для этого, под root-пользователем выполните:
+Текущая версия RetroShare доступна в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"). Воспользуетесь пакетом [retroshare](https://aur.archlinux.org/packages/retroshare/) для сборки последней *стабильной* версии исходных текстов. Для этого, под root-пользователем выполните:
 
 ```
 # yaourt -Sa retroshare

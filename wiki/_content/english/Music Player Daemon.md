@@ -50,7 +50,7 @@ MPD is configured in `mpd.conf`. The location of this file depends on how you wa
 
 **Warning:** Users of PulseAudio with a global mpd have to implement a [workaround](/index.php/Music_Player_Daemon/Tips_and_tricks#Local_.28with_separate_mpd_user.29 "Music Player Daemon/Tips and tricks") in order to run mpd as its own user!
 
-The default `/etc/mpd.conf` keeps the setup in `/var/lib/mpd` and uses _mpd_ as default user. However, `/var/lib/mpd` is owned by _root_ by default, we need to change this so _mpd_ can write here:
+The default `/etc/mpd.conf` keeps the setup in `/var/lib/mpd` and uses *mpd* as default user. However, `/var/lib/mpd` is owned by *root* by default, we need to change this so *mpd* can write here:
 
 ```
 # chown -R mpd /var/lib/mpd
@@ -66,7 +66,7 @@ music_directory "/path/to/music"
 
 #### Music directory
 
-MPD needs to have `+x` permissions on _all_ parent directories to the music collection and also read access to all directories containing music files. This conflicts with the default configuration of the user directory where many users store their music.
+MPD needs to have `+x` permissions on *all* parent directories to the music collection and also read access to all directories containing music files. This conflicts with the default configuration of the user directory where many users store their music.
 
 While there are several solutions to this problem one of these should be most practical:
 
@@ -100,7 +100,6 @@ If you prefer to listen on different UNIX sockets or network ports (even multipl
 To change the volume for mpd independent from other programs, uncomment or add this switch in mpd.conf:
 
  `/etc/mpd.conf` 
-
 ```
 mixer_type			"software"
 
@@ -109,7 +108,6 @@ mixer_type			"software"
 Users of [ALSA](/index.php/ALSA "ALSA") will want to have the following device definition, which allows software volume control in the MPD client to control the volume separately from other applications.
 
  `/etc/mpd.conf` 
-
 ```
 audio_output {
         type            "alsa"
@@ -121,7 +119,6 @@ audio_output {
 Users of [PulseAudio](/index.php/PulseAudio "PulseAudio") will need to make the following modification:
 
  `/etc/mpd.conf` 
-
 ```
 audio_output {
         type            "pulse"
@@ -135,7 +132,7 @@ PulseAudio supports multiple advanced operations, e.g. transferring the audio to
 
 Changing the group that MPD runs as may result in errors like `output: Failed to open "My ALSA Device"`, `[alsa]: Failed to open ALSA device "default": No such file or directory` or `player_thread: problems opening audio device while playing "Song Name.mp3"`.
 
-This is because the MPD users need to be part of the _audio_ group to access sound devices under `/dev/snd/`. To fix it add user make the MPD user part of the _audio_ group:
+This is because the MPD users need to be part of the *audio* group to access sound devices under `/dev/snd/`. To fix it add user make the MPD user part of the *audio* group:
 
 ```
 # gpasswd -a **mpd** audio
@@ -173,7 +170,6 @@ $ cp /usr/share/doc/mpd/mpdconf.example ~/.config/mpd/mpd.conf
 Edit `~/.config/mpd/mpd.conf` and specify the required files:
 
  `~/.config/mpd/mpd.conf` 
-
 ```
 # Required files
 db_file            "~/.config/mpd/database"
@@ -199,7 +195,7 @@ $ touch ~/.config/mpd/{database,log,pid,state,sticker.sql}
 When the paths of required files are configured, MPD can be started. To specify custom location of the configuration file:
 
 ```
-$ mpd _config_file_
+$ mpd *config_file*
 
 ```
 
@@ -218,7 +214,6 @@ To start MPD on login add the following to `~/.profile` (or another [autostart f
 If you use a [desktop environment](/index.php/Desktop_environment "Desktop environment"), place the following file in `~/.config/autostart/`:
 
  `~/.config/autostart/mpd.desktop` 
-
 ```
 [Desktop Entry]
 Encoding=UTF-8

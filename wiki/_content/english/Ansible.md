@@ -1,6 +1,6 @@
 From [docs.ansible.com](http://docs.ansible.com/):
 
-	_Ansible is an IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates._
+	*Ansible is an IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates.*
 
 ## Installation
 

@@ -55,7 +55,6 @@
 Измените строку в файле `PKGBUILD`:
 
  `$ nano ./PKGBUILD` 
-
 ```
 ...
 depends=('apache' 'postgresql' 'php' 'php-pgsql' 'php-gd' 'fping' 'net-snmp' 'curl' 'iksemel')
@@ -205,7 +204,6 @@ local   all             all                                     md5
 Измените строку в файле `/var/lib/postgres/data/postgresql.conf` для подключения к базам данных только через протокол Unix:
 
  `$ sudo nano /var/lib/postgres/data/postgresql.conf` 
-
 ```
 ...
 #listen_addresses = 'localhost'         # what IP address(es) to listen on;
@@ -259,7 +257,6 @@ $ createdb --username zabbix -E UTF8 zabbix
 Проверьте успешность создания базы данных `zabbix`:
 
  `$ psql -U postgres -l` 
-
 ```
                                   Список баз данных
     Имя    | Владелец | Кодировка | LC_COLLATE  |  LC_CTYPE   |     Права доступа     
@@ -287,7 +284,6 @@ $ psql -U zabbix zabbix < data.sql
 Измените следующие строки в файле `/etc/zabbix/zabbix_server.conf` для работы Zabbix с [PostgreSQL](/index.php/PostgreSQL_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PostgreSQL (Русский)"):
 
  `$ sudo nano /etc/zabbix/zabbix_server.conf` 
-
 ```
 ...
 # Default:
@@ -455,7 +451,6 @@ $ sudo systemctl restart postgresql.service
 Для включения запуска `vacuumdb` в расписание `cron` пользователя системы `postgres` создайте и измените файл `/var/lib/postgres/.pgpass`:
 
  `$ sudo -u postgres nano /var/lib/postgres/.pgpass` 
-
 ```
 *:*:zabbix:postgres:<PASSWORD>
 
@@ -471,7 +466,6 @@ $ sudo chmod 400 /var/lib/postgres/.pgpass
 Включите запуск `vacuumdb` в расписание `cron` пользователя системы `postgres` ежедневно в заданное время:
 
  `$ sudo -u postgres crontab -e` 
-
 ```
 00 00 * * * vacuumdb -U postgres -w -d zabbix -q -z &
 
@@ -510,7 +504,6 @@ $ sudo systemctl enable postgresql.service
 ### Проверка значений параметров в файле /etc/php/php.ini
 
  `$ sudo nano /etc/php/php.ini` 
-
 ```
 ...
 max_execution_time = 600
@@ -545,7 +538,6 @@ date.timezone = Europe/Moscow
 ### Проверка значений параметров в файле /etc/php/php-fpm.conf
 
  `$ sudo nano /etc/php/php-fpm.conf` 
-
 ```
 ...
 ;listen = 127.0.0.1:9000
@@ -599,7 +591,6 @@ $ sudo chmod 400 /etc/ssl/certs/zabbix.pem
 ### Изменение файла /etc/nginx/nginx.conf
 
  `$ sudo nano /etc/nginx/nginx.conf` 
-
 ```
 worker_processes  4;
 
@@ -712,7 +703,6 @@ $ sudo systemctl enable nginx.service
 ### Проверка значений параметров в файле /etc/zabbix/zabbix_agentd.conf
 
  `$ sudo nano /etc/zabbix/zabbix_agentd.conf` 
-
 ```
 ...
 # Default:
@@ -784,7 +774,6 @@ $ sudo hwclock --systohc --utc
 ### Проверка значений параметров в файле /etc/zabbix/zabbix_server.conf
 
  `$ sudo nano /etc/zabbix/zabbix_server.conf` 
-
 ```
 ...
 # Default:

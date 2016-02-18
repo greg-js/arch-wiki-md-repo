@@ -1,6 +1,6 @@
 **Note:** This article covers only basic configuration without modifying layouts, mapping extra keys etc. See [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") for these advanced topics.
 
-Keyboard mappings (keymaps) for [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console"), console fonts and console maps are provided by the [kbd](https://www.archlinux.org/packages/?name=kbd) package (a dependency of [systemd](/index.php/Systemd "Systemd")), which also provides many low-level tools for managing virtual console. In addition, _systemd_ also provides the _localectl_ tool, which can control both the system [locale](/index.php/Locale "Locale") and keyboard layout settings for both the virtual console and Xorg.
+Keyboard mappings (keymaps) for [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console"), console fonts and console maps are provided by the [kbd](https://www.archlinux.org/packages/?name=kbd) package (a dependency of [systemd](/index.php/Systemd "Systemd")), which also provides many low-level tools for managing virtual console. In addition, *systemd* also provides the *localectl* tool, which can control both the system [locale](/index.php/Locale "Locale") and keyboard layout settings for both the virtual console and Xorg.
 
 ## Contents
 
@@ -17,7 +17,6 @@ Keyboard mappings (keymaps) for [virtual console](https://en.wikipedia.org/wiki/
 You can use the following command to view the current keyboard configurations, amongst other localised settings:
 
  `$ localectl status` 
-
 ```
    System Locale: LANG=en_GB.utf8
                   LC_COLLATE=C
@@ -45,10 +44,10 @@ $ localectl list-keymaps
 
 ```
 
-To search for a keymap, use the following command, replacing `_search_term_` with the code for your language, country, or layout:
+To search for a keymap, use the following command, replacing `*search_term*` with the code for your language, country, or layout:
 
 ```
-$ localectl list-keymaps | grep -i _search_term_
+$ localectl list-keymaps | grep -i *search_term*
 
 ```
 
@@ -64,17 +63,16 @@ $ find /usr/share/kbd/keymaps/ -type f
 A persistent keymap can be set in `/etc/vconsole.conf`, which is read by [systemd](/index.php/Systemd "Systemd") on start-up. The `KEYMAP` variable is used for specifying the keymap. If the variable is empty or not set, the `us` keymap is used as default value. See `man 5 vconsole.conf` for all options. For example:
 
  `/etc/vconsole.conf` 
-
 ```
 KEYMAP=uk
 ...
 
 ```
 
-For convenience, _localectl_ may be used to set console keymap. It will change the `KEYMAP` variable in `/etc/vconsole.conf` and also set the keymap for current session:
+For convenience, *localectl* may be used to set console keymap. It will change the `KEYMAP` variable in `/etc/vconsole.conf` and also set the keymap for current session:
 
 ```
-$ localectl set-keymap --no-convert _keymap_
+$ localectl set-keymap --no-convert *keymap*
 
 ```
 
@@ -84,10 +82,10 @@ The `--no-convert` option can be used to prevent `localectl` from automatically 
 
 Of course it is possible to set a keymap just for current session. This is useful for testing different keymaps, solving problems etc.
 
-The _loadkeys_ tool is used for this purpose, it is used internally by [systemd](/index.php/Systemd "Systemd") when loading the keymap configured in `/etc/vconsole.conf`. It can be used very simply for this purpose:
+The *loadkeys* tool is used for this purpose, it is used internally by [systemd](/index.php/Systemd "Systemd") when loading the keymap configured in `/etc/vconsole.conf`. It can be used very simply for this purpose:
 
 ```
-# loadkeys _keymap_
+# loadkeys *keymap*
 
 ```
 
@@ -95,10 +93,10 @@ See `man 1 loadkeys` details.
 
 ## Adjusting typematic delay and rate
 
-The _typematic delay_ indicates the amount of time (typically in miliseconds) a key needs to be pressed in order for the repeating process to begin. After the repeating process has been triggered, the character will be repeated with a certain frequency (usually given in Hz) specified by the _typematic rate_. These values can be changed using the _kbdrate_ command. Note that the typematic delay in the virtual console is different from the [typematic delay in Xorg](/index.php/Keyboard_configuration_in_Xorg#Adjusting_typematic_delay_and_rate "Keyboard configuration in Xorg").
+The *typematic delay* indicates the amount of time (typically in miliseconds) a key needs to be pressed in order for the repeating process to begin. After the repeating process has been triggered, the character will be repeated with a certain frequency (usually given in Hz) specified by the *typematic rate*. These values can be changed using the *kbdrate* command. Note that the typematic delay in the virtual console is different from the [typematic delay in Xorg](/index.php/Keyboard_configuration_in_Xorg#Adjusting_typematic_delay_and_rate "Keyboard configuration in Xorg").
 
 ```
-# kbdrate [-d _delay_] [-r _rate_]
+# kbdrate [-d *delay*] [-r *rate*]
 
 ```
 
@@ -121,7 +119,6 @@ Issuing the command without specifying the delay and rate will reset the typemat
 A systemd service can be used to set the keyboard rate. For example
 
  `/etc/systemd/system/kbdrate.service` 
-
 ```
 
 [Unit]

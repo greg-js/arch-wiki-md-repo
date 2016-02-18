@@ -66,7 +66,6 @@ Vários getores de display vem empacotados com um arquivo de serviço [systemd](
 Com a mudança para systemd, muitos gerenciadores de display falham no segundo logout. Para resolver este problema, basta adicionar uma linha ao final do arquivo de configuração pam apropriado. O exemplo seguinte é para SDDM:
 
  `/etc/pam.d/sddm` 
-
 ```
 ...
 session 	required 	pam_systemd.so

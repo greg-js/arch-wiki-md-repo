@@ -53,7 +53,7 @@ If it starts from the console, a .xinitrc file is needed. Here is a complete exa
 
 ## Using 2bwm
 
-After the launch of 2bwm, a mouse cursor, a background, and a terminal will be the only thing on the screen (as specified in the _.xinitrc_). To open a terminal, using the default configuration, hit Super+Enter (Super Key aka Windows key/Mod4). Use the terminal as desired, for example to start a program with _program_name &_, however it is easier and more convenient to use a menu to launch programs, for instance [dmenu](/index.php/Dmenu "Dmenu") or [9menu](https://aur.archlinux.org/packages/9menu/) (available in the aur).
+After the launch of 2bwm, a mouse cursor, a background, and a terminal will be the only thing on the screen (as specified in the *.xinitrc*). To open a terminal, using the default configuration, hit Super+Enter (Super Key aka Windows key/Mod4). Use the terminal as desired, for example to start a program with *program_name &*, however it is easier and more convenient to use a menu to launch programs, for instance [dmenu](/index.php/Dmenu "Dmenu") or [9menu](https://aur.archlinux.org/packages/9menu/) (available in the aur).
 
 ### General commands
 
@@ -121,7 +121,7 @@ You may change the keyboard mappings from config.h.
 
 ### Starting 2bwm over a terminal
 
-It is wise, if starting 2bwm like in the later .xinitrc, where we background the wm and _exec_ a terminal emulator (such as [rxvt-unicode](/index.php/Rxvt-unicode "Rxvt-unicode")), to immediately make the terminal that maintain the X session unkillable (Super+a by default). It will diminish the chance of killing this terminal and the X session at the same time. Putting a window in unkillable mode will also change the outer border colour and make it noticeable from other normal window. Beware that with some configurations, in urxvt, the outer border will not appear. A user reported the issue to be related to the following line in his _.Xresources_ (or _.Xdefaults_) file:
+It is wise, if starting 2bwm like in the later .xinitrc, where we background the wm and *exec* a terminal emulator (such as [rxvt-unicode](/index.php/Rxvt-unicode "Rxvt-unicode")), to immediately make the terminal that maintain the X session unkillable (Super+a by default). It will diminish the chance of killing this terminal and the X session at the same time. Putting a window in unkillable mode will also change the outer border colour and make it noticeable from other normal window. Beware that with some configurations, in urxvt, the outer border will not appear. A user reported the issue to be related to the following line in his *.Xresources* (or *.Xdefaults*) file:
 
 ```
 URxvt.depth: 32

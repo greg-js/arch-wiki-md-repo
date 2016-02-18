@@ -1,6 +1,6 @@
 From [ACPI site](http://www.acpi.info/):
 
-	_ACPI (Advanced Configuration and Power Interface) is an open industry specification co-developed by Hewlett-Packard, Intel, Microsoft, Phoenix, and Toshiba._
+	*ACPI (Advanced Configuration and Power Interface) is an open industry specification co-developed by Hewlett-Packard, Intel, Microsoft, Phoenix, and Toshiba.*
 
 ACPI modules are kernel modules for different ACPI parts. They enable special ACPI functions or add information to `/proc` or `/sys`. These information can be parsed by [acpid](/index.php/Acpid "Acpid") for events or other monitoring applications.
 
@@ -37,7 +37,6 @@ This is a small list and summary of ACPI kernel modules:
 complete list of your running kernel:
 
  `$ ls -l /usr/lib/modules/$(uname -r)/kernel/drivers/acpi` 
-
 ```
 total 112
 -rw-r--r-- 1 root root  2808 Aug 29 23:58 ac.ko.gz

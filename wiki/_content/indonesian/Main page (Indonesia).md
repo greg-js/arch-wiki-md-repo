@@ -10,7 +10,7 @@ Berikut adalah daftar artikel yang dapat Anda baca agar lebih paham tentang Arch
 
 	Berisi sebuah ringkasan tentang Archlinux serta hal apa yang akan Anda dapatkan dari Archlinux.
 
-**[Prinsip/Filosofi Arch (_The Arch Way_)](/index.php/The_Arch_Way_(Indonesia) "The Arch Way (Indonesia)")**
+**[Prinsip/Filosofi Arch (*The Arch Way*)](/index.php/The_Arch_Way_(Indonesia) "The Arch Way (Indonesia)")**
 
 	Berisi tentang prinsip-prinsip serta filosofi Archlinux yang harus Anda ikuti dan pahami.
 
@@ -18,7 +18,7 @@ Berikut adalah daftar artikel yang dapat Anda baca agar lebih paham tentang Arch
 
 	Berisi rangkuman tentang persamaan dan perbedaan Archlinux dengan distro/OS lain.
 
-**[Tanya Jawab (_FAQ_)](/index.php/FAQ_(Indonesia) "FAQ (Indonesia)")**
+**[Tanya Jawab (*FAQ*)](/index.php/FAQ_(Indonesia) "FAQ (Indonesia)")**
 
 	Daftar pertanyaan yang paling sering ditanyakan tentang Archlinux.
 
@@ -48,9 +48,9 @@ Berikut adalah daftar artikel yang dapat Anda baca agar lebih paham tentang Arch
 
 ## [Kabar Terbaru Wiki](/index.php/Wiki_News "Wiki News")
 
-Cek halaman _[Wiki News](/index.php/Wiki_News "Wiki News")_ untuk mengetahui pembaruan wiki.
+Cek halaman *[Wiki News](/index.php/Wiki_News "Wiki News")* untuk mengetahui pembaruan wiki.
 
-Jika berminat dan mampu berkontribusi ke wiki, silakan lihat [daftar ini](/index.php/Getting_involved_(Indonesia)#Berkontribusi_untuk_Arch_Wiki "Getting involved (Indonesia)") untuk lebih jelasnya. Khususnya, mereka yang butuh bantuan mengatur ulang kategori non-bahasa Inggris. Silakan koordinasikan aktivitas anda dengan [admin dan _sysops_](/index.php/ContactList "ContactList").
+Jika berminat dan mampu berkontribusi ke wiki, silakan lihat [daftar ini](/index.php/Getting_involved_(Indonesia)#Berkontribusi_untuk_Arch_Wiki "Getting involved (Indonesia)") untuk lebih jelasnya. Khususnya, mereka yang butuh bantuan mengatur ulang kategori non-bahasa Inggris. Silakan koordinasikan aktivitas anda dengan [admin dan *sysops*](/index.php/ContactList "ContactList").
 
 ## [Internasionalisasi](/index.php/Help:I18n "Help:I18n")
 
@@ -58,6 +58,6 @@ Lebih nyaman membaca artikel dalam bahasa Anda sendiri? Klik [di sini](/index.ph
 
 ## [Bantuan](/index.php/Help "Help")
 
-Jika mencari informasi spesifik, coba gunakan kotak telusur di sebelah kiri. Cara lain, gunakan fitur penelusuran _site_ dari [Google](http://www.google.com) dengan akhiran `site:wiki.archlinux.org` terhadap istilah penelusuran (misal [telusuri situs ini dengan kata kunci "Arch Linux"](http://www.lmgtfy.com/?q=Arch+Linux+site%3Awiki.archlinux.org)).
+Jika mencari informasi spesifik, coba gunakan kotak telusur di sebelah kiri. Cara lain, gunakan fitur penelusuran *site* dari [Google](http://www.google.com) dengan akhiran `site:wiki.archlinux.org` terhadap istilah penelusuran (misal [telusuri situs ini dengan kata kunci "Arch Linux"](http://www.lmgtfy.com/?q=Arch+Linux+site%3Awiki.archlinux.org)).
 
-Anda harus membuat sebuah akun untuk mengedit wiki ini. Setelah memilikinya, anda dapat menelusuri _[Sandbox](/index.php/Sandbox "Sandbox")_ atau halaman pengguna anda untuk membiasakan diri dengan penulisan kode (_markup_) ArchWiki. Sintaks yang bisa digunakan ada di [Kategori Bantuan Wiki](/index.php/Category:Help "Category:Help") bersama dengan sumber bermanfaat lain.
+Anda harus membuat sebuah akun untuk mengedit wiki ini. Setelah memilikinya, anda dapat menelusuri *[Sandbox](/index.php/Sandbox "Sandbox")* atau halaman pengguna anda untuk membiasakan diri dengan penulisan kode (*markup*) ArchWiki. Sintaks yang bisa digunakan ada di [Kategori Bantuan Wiki](/index.php/Category:Help "Category:Help") bersama dengan sumber bermanfaat lain.

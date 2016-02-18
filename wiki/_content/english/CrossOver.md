@@ -6,13 +6,13 @@ In this article it is suggested that you want install trial verison of crossover
 
 ## Using CrossOver
 
-If installed by a user in _single user mode_, Crossover binaries will be located in `~/cxoffice`.`` Windows applications and configuration files will be placed in ~/.cxoffice.
+If installed by a user in *single user mode*, Crossover binaries will be located in `~/cxoffice`.`` Windows applications and configuration files will be placed in ~/.cxoffice.
 
-If installed with root privileges in _multi-user shared mode_, Crossover binaries will be located in `/opt/cxoffice`. Each user's bottles will be placed in ~/.cxoffice.
+If installed with root privileges in *multi-user shared mode*, Crossover binaries will be located in `/opt/cxoffice`. Each user's bottles will be placed in ~/.cxoffice.
 
 Some desktop environments like [KDE](/index.php/KDE "KDE") may have automatically placed menu entries as part of the installation process.
 
-Installed programs should be located under a new menu entry called _Window Applications_.
+Installed programs should be located under a new menu entry called *Window Applications*.
 
 **Tip:** If you get a registration failure, try: `# /opt/cxoffice/bin/cxregister`. Registration should then complete and be valid for all users on the system.
 

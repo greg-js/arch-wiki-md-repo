@@ -36,14 +36,14 @@ Disadvantages are that sparse files may become fragmented; file system free spac
 
 ## Creating sparse files
 
-The _truncate_ utility can create sparse files. This command creates a 512 MiB sparse file:
+The *truncate* utility can create sparse files. This command creates a 512 MiB sparse file:
 
 ```
 $ truncate -s 512M file.img
 
 ```
 
-The _dd_ utility can also be used, for example:
+The *dd* utility can also be used, for example:
 
 ```
 $ dd if=/dev/zero of=file.img bs=1 count=0 seek=512M
@@ -53,7 +53,7 @@ $ dd if=/dev/zero of=file.img bs=1 count=0 seek=512M
 
 ```
 
-Sparse files have different _apparent file sizes_ (the maximum size to which they may expand) and _actual file sizes_ (how much space is allocated for data on disk). To check the file's _apparent size_, just run:
+Sparse files have different *apparent file sizes* (the maximum size to which they may expand) and *actual file sizes* (how much space is allocated for data on disk). To check the file's *apparent size*, just run:
 
 ```
 $ du -h --apparent-size file.img
@@ -61,7 +61,7 @@ $ du -h --apparent-size file.img
 
 ```
 
-and, to check the _actual size_ of the file on disk:
+and, to check the *actual size* of the file on disk:
 
 ```
 $ du -h file.img
@@ -101,7 +101,7 @@ As you may have expected, formatting it with the filesystem has increased its ac
 
 ```
 
-Tada! We now have both a file and a folder into which we may store _almost_ 512 MiB worth of information!
+Tada! We now have both a file and a folder into which we may store *almost* 512 MiB worth of information!
 
 ### Mounting the file at boot
 

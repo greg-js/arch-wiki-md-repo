@@ -70,13 +70,11 @@ The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone
 **Note:** This assumes that the user has created an kodi user named kodiuser on the system and that the following file is present as described.
 
 **Note:** [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) creates a user named kodi, which is not permitted to login, thus autologin will fail with this user.
-
  `/etc/X11/Xwrapper.config`  `needs_root_rights = yes` 
 
-To use LightDM with automatic login, see [LightDM#Enabling autologin](/index.php/LightDM#Enabling_autologin "LightDM") and [LightDM#Enabling_interactive_passwordless_login](/index.php/LightDM#Enabling_interactive_passwordless_login "LightDM"). _Kodi_ includes `kodi.desktop` as [xsession](/index.php/Xsession "Xsession").
+To use LightDM with automatic login, see [LightDM#Enabling autologin](/index.php/LightDM#Enabling_autologin "LightDM") and [LightDM#Enabling_interactive_passwordless_login](/index.php/LightDM#Enabling_interactive_passwordless_login "LightDM"). *Kodi* includes `kodi.desktop` as [xsession](/index.php/Xsession "Xsession").
 
  `/etc/lightdm/lightdm.conf` 
-
 ```
 [LightDM]
 minimum-vt=1
@@ -92,12 +90,11 @@ user-session=kodi
 
 #### Socket activation
 
-Socket activation can be used to start Kodi when the user starts a remote control app or on a connection to Kodi's html control port. Start listening with _systemctl start kodi@user.socket_ (replace _user_ with the user running Kodi to be started as).
+Socket activation can be used to start Kodi when the user starts a remote control app or on a connection to Kodi's html control port. Start listening with *systemctl start kodi@user.socket* (replace *user* with the user running Kodi to be started as).
 
-The [kodi-standalone-socket-activation](https://aur.archlinux.org/packages/kodi-standalone-socket-activation/) package provides `kodi@.service` and `kodi@.socket` which can be used to run Kodi in standalone mode listening on port 8082. Depending on the setup, one may want to change the port in _kodi@.socket_. This can be done by manually using the following systemd files.
+The [kodi-standalone-socket-activation](https://aur.archlinux.org/packages/kodi-standalone-socket-activation/) package provides `kodi@.service` and `kodi@.socket` which can be used to run Kodi in standalone mode listening on port 8082. Depending on the setup, one may want to change the port in *kodi@.socket*. This can be done by manually using the following systemd files.
 
  `/etc/systemd/system/kodi@.service` 
-
 ```
 [Unit]
 Description=Launch Kodi on main display
@@ -112,9 +109,7 @@ ExecStartPost=/usr/bin/bash -c "sleep 15 && systemctl start kodi@%i.socket"
 [Install]
 WantedBy=multi-user.target
 ```
-
  `/etc/systemd/system/kodi@.socket` 
-
 ```
 [Unit]
 Conflicts=kodi@%i.service
@@ -139,7 +134,6 @@ You need to have a working setup of [LIRC](/index.php/LIRC "LIRC"), the package 
 Generate the file `/var/lib/kodi/.lircrc` with the following content:
 
  `/var/lib/kodi/.lircrc` 
-
 ```
 
 begin
@@ -302,7 +296,6 @@ Since this example makes use of NFS shares, an optional dependency of Kodi is no
 To tell Kodi to use the common database, insure that Kodi is not running, then create the following file:
 
  `~/.kodi/userdata/advancedsettings.xml` 
-
 ```
 <advancedsettings>
   <videodatabase>
@@ -335,7 +328,7 @@ To tell Kodi to use the common database, insure that Kodi is not running, then c
 
 **Warning:** This only needs to be done once, on only one of the nodes. Once completed, configuration of subsequent nodes is a drop-in operation of ~/.kodi/userdata/advancedsettings.xml; no other configuration is needed!
 
-**Note:** Even if Kodi is running on the same box that is also running the NFS exports and MySQL server, one _MUST_ setup the media using the nfs shares only!
+**Note:** Even if Kodi is running on the same box that is also running the NFS exports and MySQL server, one *MUST* setup the media using the nfs shares only!
 
 Load Kodi and define the network shares that correspond to the exports by browsing to the following within the interface:
 
@@ -508,7 +501,7 @@ Kodi has a webservice that allows interaction through a web-interface. By defaul
 
 ```
 
-[Restart](/index.php/Restart "Restart") `kodi.service` and set port `80` in the configuration menu (_Services->Webserver->Port_).
+[Restart](/index.php/Restart "Restart") `kodi.service` and set port `80` in the configuration menu (*Services->Webserver->Port*).
 
 ### Using ALSA
 
@@ -528,10 +521,10 @@ If your setup doesn't or can't make use of hardware acceleration, disable it and
 
 Kodi runs smoothly on both the Raspberry Pi (RPi) and the RPi 2\. Some helpful tips to consider:
 
-*   [Install](/index.php/Install "Install") the _kodi-rbp_ package instead of _kodi_ from the [Arch Linux ARM repository](http://archlinuxarm.org/packages).
+*   [Install](/index.php/Install "Install") the *kodi-rbp* package instead of *kodi* from the [Arch Linux ARM repository](http://archlinuxarm.org/packages).
 *   This package ships with a systemd service to run in standalone mode.
 *   The memory reserved for GPU is 64 MB by default. This is insufficient for GPU accelerated HD video playback. Users can increase this value via a simple edit to the `gpu_mem` tag in `/boot/config.txt`. A value of at least 128 MB is recommended.
-*   Install _omxplayer-git_, _xorg-xrefresh_ and _xorg-xset_ to get hardware acceleration working.
+*   Install *omxplayer-git*, *xorg-xrefresh* and *xorg-xset* to get hardware acceleration working.
 *   Add the udev rule `SUBSYSTEM=="tty", KERNEL=="tty0", GROUP="tty", MODE="0666"` to `/etc/udev/rules.d/raspberrypi.rules` to enable typing with a physical keyboard.
 
 ## See also

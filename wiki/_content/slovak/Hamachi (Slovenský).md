@@ -1,4 +1,4 @@
-[Hamachi](https://en.wikipedia.org/wiki/Hamachi_(software) "wikipedia:Hamachi (software)") je komerčný (uzavretý) VPN software. Pomocou tohto nástroja môžete prepojiť dva alebo viac počítačov. Využíva sa pri tom ich vlastná virtuálna sieť pre priamu bezpečnú komunikáciu.
+[Hamachi](https://en.wikipedia.org/wiki/Hamachi_(software) je komerčný (uzavretý) VPN software. Pomocou tohto nástroja môžete prepojiť dva alebo viac počítačov. Využíva sa pri tom ich vlastná virtuálna sieť pre priamu bezpečnú komunikáciu.
 
 ## Contents
 

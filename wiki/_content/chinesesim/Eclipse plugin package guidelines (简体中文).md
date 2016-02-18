@@ -6,7 +6,7 @@
 
 [CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
 
-有许多安装有效 [Eclipse](/index.php/Eclipse "Eclipse") 插件的方法。尤其是在 Eclipse 3.4 里引入 _dropins_ 文件夹之后。但其中一些比较凌乱，而且具有标准化和一致的封装方法对于一个干净的系统结构是非常重要的。然而，如果没有一个对 Eclipse 插件如何工作一清二楚的打包者的话，要实现这一切并不简单。本文试图定义一个标准且精简的 Eclipse 插件 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 的结构，如此来在不用麻烦打包者全部重新打包的情况下保持一个干净的文件系统结构。
+有许多安装有效 [Eclipse](/index.php/Eclipse "Eclipse") 插件的方法。尤其是在 Eclipse 3.4 里引入 *dropins* 文件夹之后。但其中一些比较凌乱，而且具有标准化和一致的封装方法对于一个干净的系统结构是非常重要的。然而，如果没有一个对 Eclipse 插件如何工作一清二楚的打包者的话，要实现这一切并不简单。本文试图定义一个标准且精简的 Eclipse 插件 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 的结构，如此来在不用麻烦打包者全部重新打包的情况下保持一个干净的文件系统结构。
 
 ## Contents
 
@@ -34,7 +34,6 @@
 这里是一个样例，稍后我们将介绍如何自定义修改。
 
  `PKGBUILD-eclipse.proto` 
-
 ```
 pkgname=eclipse-mylyn
 pkgver=3.0.3
@@ -89,7 +88,7 @@ package() {
 
 #### 包的命名
 
-包应该命名为 `eclipse-_pluginname_`, 如此能被识别为 Eclipse 相关软件包并且能轻松使用 shell 替代来提取出如 `${pkgname/eclipse-}` 的插件名称，而不用使用不需要的 `${_realname}` 变量。插件名对于清理安装时临时文件并避免冲突是必需的。
+包应该命名为 `eclipse-*pluginname*`, 如此能被识别为 Eclipse 相关软件包并且能轻松使用 shell 替代来提取出如 `${pkgname/eclipse-}` 的插件名称，而不用使用不需要的 `${_realname}` 变量。插件名对于清理安装时临时文件并避免冲突是必需的。
 
 #### 文件
 
@@ -113,7 +112,7 @@ package() {
 
 #### build() 函数
 
-首先要注意的就是 `cd ${srcdir}` 命令。通常源压缩文档直接在 `${srcdir}` 下解压出 `features` 和 `plugins` 文件夹，但并不是所有的都这样。总之，对大多数_(事实上)_非标准的插件这是需要改变的唯一路线。
+首先要注意的就是 `cd ${srcdir}` 命令。通常源压缩文档直接在 `${srcdir}` 下解压出 `features` 和 `plugins` 文件夹，但并不是所有的都这样。总之，对大多数*(事实上)*非标准的插件这是需要改变的唯一路线。
 
 某些特性也随源码发布。对一个普通的释出版来说源码并不需要，可以删除。更多的特性包含 `*.pack.gz` 文件，与 jar 文档相比内容相同。所以这些文件也能删除。
 

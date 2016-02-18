@@ -60,7 +60,7 @@ Btrfs 已经包含在[linux](https://www.archlinux.org/packages/?name=linux)和[
 
 ### 附加软件包
 
-*   [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) 包括 _btrfsck_ 工具，可以修复 Btrfs 文件系统的错误。
+*   [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) 包括 *btrfsck* 工具，可以修复 Btrfs 文件系统的错误。
 *   [btrfs-progs-git](https://aur.archlinux.org/packages/btrfs-progs-git/) 每日构建
 
 **Tip:** 见 [Btrfs Wiki Getting Started](https://btrfs.wiki.kernel.org/index.php/Getting_started) for suggestions regarding running Btrfs effectively.
@@ -83,14 +83,14 @@ Btrfs 已经包含在[linux](https://www.archlinux.org/packages/?name=linux)和[
 使用更大的blocksize数据/元数据,为`nodesize`通过指定一个值`-n`开关使用16kb块如本例所示:
 
 ```
-# mkfs.btrfs -L _mylabel_ -n 16k /dev/_partition_
+# mkfs.btrfs -L *mylabel* -n 16k /dev/*partition*
 
 ```
 
 用户可选择多个设备来创建RAID。支持的RAID级别有 RAID 0、RAID 1和RAID 10。默认情况下，元数据使用镜像，而数据被 strip. See [Using Btrfs with Multiple Devices](https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices) for more information about how to create a Btrfs RAID volume.
 
 ```
-# mkfs.btrfs [_options_] /dev/_part1_ /dev/_part2_ ...
+# mkfs.btrfs [*options*] /dev/*part1* /dev/*part2* ...
 
 ```
 
@@ -99,11 +99,11 @@ Btrfs 已经包含在[linux](https://www.archlinux.org/packages/?name=linux)和[
 从安装 CD 启动，然后转化分区:
 
 ```
-# btrfs-convert /dev/_partition_
+# btrfs-convert /dev/*partition*
 
 ```
 
-挂载转换后的分区并修改`/etc/fstab`文件，指定分区类型(**type** 为 btrfs，**fs_passno** [最后一列] 修改为0，Btrfs在启动时并不进行磁盘检查). 还要注意的是分区的UUID将有改变，所以使用UUID时，更新fstab中相应的。 `chroot` 到系统并重建 GRUB 条目（如果对此过程不熟悉，参考[Install from Existing Linux](/index.php/Install_from_Existing_Linux "Install from Existing Linux")和[GRUB](/index.php/GRUB "GRUB")）。 If converting a root filesystem, while still chrooted run `mkinitcpio -p linux` to regenerate the initramfs or the system will not successfully boot. If you get stuck in grub with 'unknown filesystem' try reinstalling grub with `grub-install /dev/_partition_` and regenerate the config as well `grub-mkconfig -o /boot/grub/grub.cfg`.
+挂载转换后的分区并修改`/etc/fstab`文件，指定分区类型(**type** 为 btrfs，**fs_passno** [最后一列] 修改为0，Btrfs在启动时并不进行磁盘检查). 还要注意的是分区的UUID将有改变，所以使用UUID时，更新fstab中相应的。 `chroot` 到系统并重建 GRUB 条目（如果对此过程不熟悉，参考[Install from Existing Linux](/index.php/Install_from_Existing_Linux "Install from Existing Linux")和[GRUB](/index.php/GRUB "GRUB")）。 If converting a root filesystem, while still chrooted run `mkinitcpio -p linux` to regenerate the initramfs or the system will not successfully boot. If you get stuck in grub with 'unknown filesystem' try reinstalling grub with `grub-install /dev/*partition*` and regenerate the config as well `grub-mkconfig -o /boot/grub/grub.cfg`.
 
 确认没有问题后,完成转换通过删除备份`ext2_saved`子卷，请注意，如果没了它(备份子卷)，你将没办法还原回 ext3/4 文件系统。
 
@@ -140,15 +140,12 @@ Btrfs 已经包含在[linux](https://www.archlinux.org/packages/?name=linux)和[
 General linux userspace tools such as `/usr/bin/df` will inaccurately report free space on a Btrfs partition since it does not take into account space allocated for and used by the metadata. It is recommended to use `/usr/bin/btrfs` to query a Btrfs partition. Below is an illustration of this effect, first querying using `df -h`, and then using `btrfs filesystem df`:
 
  `$ df -h /` 
-
 ```
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/sda3       119G  3.0G  116G   3% /
 
 ```
-
  `$ btrfs filesystem df /` 
-
 ```
 Data: total=3.01GB, used=2.73GB
 System: total=4.00MB, used=16.00KB
@@ -162,7 +159,6 @@ Notice that `df -h` reports 3.0GB used but `btrfs filesystem df` reports 2.73GB 
 Another useful command to show a less verbose readout of used space is `btrfs filesystem show`:
 
  `# btrfs filesystem show /dev/sda3` 
-
 ```
 failed to open /dev/sr0: No medium found
 Label: 'arch64'  uuid: 02ad2ea2-be12-2233-8765-9e0a48e9303a
@@ -193,7 +189,7 @@ Btrfs 不支持交换文件，因为 Btrfs 因为潜在的文件系统损坏风�
 
 ### Linux-rt 内核
 
-在版本 3.14.12_rt9中, [linux-rt](/index.php/Kernel#-rt "Kernel") 内核不能引导Btrfs文件系统，这是因为 _rt_ 补丁集的开发相对缓慢导致的。
+在版本 3.14.12_rt9中, [linux-rt](/index.php/Kernel#-rt "Kernel") 内核不能引导Btrfs文件系统，这是因为 *rt* 补丁集的开发相对缓慢导致的。
 
 ## Btrfs 特性
 
@@ -216,18 +212,18 @@ CoW(写时复制)具有许多优点，但是对大文件的随机小写入有一
 
 #### 多设备文件系统
 
-当创建_btrfs_文件系统时，你可以将任意个分区或磁盘设备传给_mkfs.btrfs_。创建的文件系统将跨这些设备。你可以按这种办法**"**合并**"**多个分区或设备来得到一个大_btrfs_文件系统。
+当创建*btrfs*文件系统时，你可以将任意个分区或磁盘设备传给*mkfs.btrfs*。创建的文件系统将跨这些设备。你可以按这种办法**"**合并**"**多个分区或设备来得到一个大*btrfs*文件系统。
 
 也可从现存的btrfs文件系统中增加或移除设备（务必小心）。
 
-多设备_btrfs_文件系统（也称为一个btrfs卷）需要运行
+多设备*btrfs*文件系统（也称为一个btrfs卷）需要运行
 
 ```
  # btrfs device scan
 
 ```
 
-才能被识别。这就是 _btrfs_ mkinitcpio hook 或 /etc/rc.conf 的 _USEBTRFS_ 变量的用途。
+才能被识别。这就是 *btrfs* mkinitcpio hook 或 /etc/rc.conf 的 *USEBTRFS* 变量的用途。
 
 #### RAID特性
 
@@ -302,14 +298,13 @@ See the following links for more details:
 The default sub-volume is mounted if no `subvol=` mount option is provided.
 
 ```
-# btrfs subvolume set-default _subvolume-id_ /.
+# btrfs subvolume set-default *subvolume-id* /.
 
 ```
 
 **例如:**
 
  `# btrfs subvolume list .` 
-
 ```
 ID 258 gen 9512 top level 5 path root_subvolume
 ID 259 gen 9512 top level 258 path home
@@ -352,7 +347,7 @@ Btrfs支持在线碎片整理。要整理根目录的元数据，只需运行：
 
 ```
 
-这_不会_整理整个文件系统。查看更多信息，参考btrfs wiki上的[this page](https://btrfs.wiki.kernel.org/index.php/Problem_FAQ#Defragmenting_a_directory_doesn.27t_work)。
+这*不会*整理整个文件系统。查看更多信息，参考btrfs wiki上的[this page](https://btrfs.wiki.kernel.org/index.php/Problem_FAQ#Defragmenting_a_directory_doesn.27t_work)。
 
 ### 压缩
 
@@ -387,16 +382,16 @@ Btrfs can occupy an entire data storage device, replacing the [MBR](/index.php/M
 Btrfs覆盖现有的分区表,运行以下命令:
 
 ```
-# mkfs.btrfs /dev/sd_X_
+# mkfs.btrfs /dev/sd*X*
 
 ```
 
-Do not specify `/dev/sda_X_` or it will format an existing partition instead of replacing the entire partitioning scheme.
+Do not specify `/dev/sda*X*` or it will format an existing partition instead of replacing the entire partitioning scheme.
 
 Install the [boot loader](/index.php/Boot_loader "Boot loader") in a like fashion to installing it for a data storage device with a [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"). For example:
 
 ```
-# grub-install --recheck /dev/sd_X_
+# grub-install --recheck /dev/sd*X*
 
 ```
 
@@ -422,7 +417,7 @@ If running the scrub as a systemd service, use `Type=forking`. Alternatively, yo
 
 See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
 
-Since [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)-3.12 _balancing_ is a background process - see `man 8 btrfs-balance` for full description.
+Since [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)-3.12 *balancing* is a background process - see `man 8 btrfs-balance` for full description.
 
 ```
 # btrfs balance start /
@@ -444,7 +439,7 @@ Note that before SATA 3.1, TRIM commands are synchronous and will block all I/O 
 One way to check your SATA version is with:
 
 ```
-# smartctl --info /dev/sd_X_
+# smartctl --info /dev/sd*X*
 
 ```
 
@@ -456,7 +451,7 @@ See the [Btrfs Problem FAQ](https://btrfs.wiki.kernel.org/index.php/Problem_FAQ)
 
 #### 分区偏移
 
-**Note:** The offset problem may happen when you try to embed `core.img` into a partitioned disk. It means that [it is OK](https://wiki.archlinux.org/index.php?title=Talk:Btrfs&diff=319474&oldid=292530) to embed grub's `corg.img` into a Btrfs pool on a partitionless disk (e.g. `/dev/sd_X_`) directly.
+**Note:** The offset problem may happen when you try to embed `core.img` into a partitioned disk. It means that [it is OK](https://wiki.archlinux.org/index.php?title=Talk:Btrfs&diff=319474&oldid=292530) to embed grub's `corg.img` into a Btrfs pool on a partitionless disk (e.g. `/dev/sd*X*`) directly.
 
 [GRUB](/index.php/GRUB "GRUB") can boot Btrfs partitions however the module may be larger than other [file systems](/index.php/File_systems "File systems"). And the `core.img` file made by `grub-install` may not fit in the first 63 sectors (31.5KiB) of the drive between the MBR and the first partition. Up-to-date partitioning tools such as `fdisk` and `gdisk` avoid this issue by offsetting the first partition by roughly 1MiB or 2MiB.
 
@@ -486,7 +481,7 @@ You will get same error if you trying mount raid array without one device. A wor
 
 ### btrfs check
 
-The _[btrfs check](https://btrfs.wiki.kernel.org/index.php/Manpage/btrfs-check)_ command can be used to check or repair an unmounted Btrfs filesystem. However, this repair tool is still immature and not able to repair certain filesystem errors even those that do not render the filesystem unmountable.
+The *[btrfs check](https://btrfs.wiki.kernel.org/index.php/Manpage/btrfs-check)* command can be used to check or repair an unmounted Btrfs filesystem. However, this repair tool is still immature and not able to repair certain filesystem errors even those that do not render the filesystem unmountable.
 
 #### btrfs check example
 

@@ -1,4 +1,4 @@
-"_OpenNebula is the industry standard for on-premise IaaS cloud computing, offering the most feature-rich, flexible solution for the comprehensive management of virtualized data centers to enable private, public and hybrid (cloudbursting) clouds. OpenNebula interoperability makes cloud an evolution by leveraging existing IT infrastructure, protecting your investments, and avoiding vendor lock-in._"
+"*OpenNebula is the industry standard for on-premise IaaS cloud computing, offering the most feature-rich, flexible solution for the comprehensive management of virtualized data centers to enable private, public and hybrid (cloudbursting) clouds. OpenNebula interoperability makes cloud an evolution by leveraging existing IT infrastructure, protecting your investments, and avoiding vendor lock-in.*"
 
 ## Contents
 

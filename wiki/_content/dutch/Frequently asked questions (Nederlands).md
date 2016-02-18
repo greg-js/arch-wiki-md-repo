@@ -11,7 +11,7 @@ Naast de behandelde vragen hieronder, vind je [The Arch Way](/index.php/The_Arch
     *   [1.6 V) Ik ken enkel Nederlands. Waarom is er zo weinig in het Nederlands te vinden?](#V.29_Ik_ken_enkel_Nederlands._Waarom_is_er_zo_weinig_in_het_Nederlands_te_vinden.3F)
     *   [1.7 V) Arch heeft meer documentatie nodig](#V.29_Arch_heeft_meer_documentatie_nodig)
     *   [1.8 V) Is Arch ontworpen om gebruikt te worden als server, desktop of workstation?](#V.29_Is_Arch_ontworpen_om_gebruikt_te_worden_als_server.2C_desktop_of_workstation.3F)
-    *   [1.9 V) Ik vind Arch echt leuk, maar de ontwikkelaars moet echt _"functie X"_ implementeren](#V.29_Ik_vind_Arch_echt_leuk.2C_maar_de_ontwikkelaars_moet_echt_.22functie_X.22_implementeren)
+    *   [1.9 V) Ik vind Arch echt leuk, maar de ontwikkelaars moet echt *"functie X"* implementeren](#V.29_Ik_vind_Arch_echt_leuk.2C_maar_de_ontwikkelaars_moet_echt_.22functie_X.22_implementeren)
     *   [1.10 V) Wanneer wordt er een nieuwe uitgave van Arch uitgebracht?](#V.29_Wanneer_wordt_er_een_nieuwe_uitgave_van_Arch_uitgebracht.3F)
     *   [1.11 V) Is Arch Linux een stabiele distributie? Gaan er vaak dingen kapot?](#V.29_Is_Arch_Linux_een_stabiele_distributie.3F_Gaan_er_vaak_dingen_kapot.3F)
     *   [1.12 V) Arch heeft meer persaandacht nodig, zoals advertenties.](#V.29_Arch_heeft_meer_persaandacht_nodig.2C_zoals_advertenties.)
@@ -59,7 +59,7 @@ Naast de behandelde vragen hieronder, vind je [The Arch Way](/index.php/The_Arch
 
 ## V) I ben helemaal nieuw op het gebied van GNU/Linux, is Arch dan iets voor mij?
 
-**A)** Er is een discussie rond deze vraag. De doelgroep voor Arch is voor meer gevorderde GNU/Linux gebruikers, maar andere vinden dat "Arch een goede plek is om te beginnen". Als je een beginner bent en Arch wilt gebruiken, wees dan gewaarschuwd dat je bereid moet zijn om te leren. Ook moet je er vrede mee hebben dat Arch met name een 'doe-het-zelf' distributie is. De gebruiker moet zelf het systeem assembleren, en heeft volledige controle over hoe dat dan word. Het is belangrijk dat je bij vragen eerst zelf 'googled' en op het forum en wiki zoekt. Wees ervan bewust dat je jezelf blootstelt aan een group mensen die niet keer op keer dezelfde basis vragen willen beantwoorden. _Er is niet voor niets een wiki en forum, waar duizenden vrijwilligers vele uren aan besteed hebben, om jou van informatie te voorzien_.
+**A)** Er is een discussie rond deze vraag. De doelgroep voor Arch is voor meer gevorderde GNU/Linux gebruikers, maar andere vinden dat "Arch een goede plek is om te beginnen". Als je een beginner bent en Arch wilt gebruiken, wees dan gewaarschuwd dat je bereid moet zijn om te leren. Ook moet je er vrede mee hebben dat Arch met name een 'doe-het-zelf' distributie is. De gebruiker moet zelf het systeem assembleren, en heeft volledige controle over hoe dat dan word. Het is belangrijk dat je bij vragen eerst zelf 'googled' en op het forum en wiki zoekt. Wees ervan bewust dat je jezelf blootstelt aan een group mensen die niet keer op keer dezelfde basis vragen willen beantwoorden. *Er is niet voor niets een wiki en forum, waar duizenden vrijwilligers vele uren aan besteed hebben, om jou van informatie te voorzien*.
 
 Aanbevolen artikel: De Arch Linux [Beginners' Guide](/index.php/Beginners%27_Guide_(Nederlands) "Beginners' Guide (Nederlands)")
 
@@ -73,11 +73,11 @@ Aanbevolen artikel: De Arch Linux [Beginners' Guide](/index.php/Beginners%27_Gui
 
 ## V) Is Arch ontworpen om gebruikt te worden als server, desktop of workstation?
 
-**A)** Arch is niet voor een specifiek doel ontworpen. Het is ontworpen voor een specifieke _gebruiker_. Arch richt zich op competente gebruikers die houden van een 'doe-het-zelf' aanpak, zodat zij de vorm van het systeem in de hand hebben en dit voor hun eigen doelen kunnen configureren. Daarom kan Arch gebruikt worden voor een breed scala aan doelen. Gebruikers van Arch doen dit vooral voor hun desktop of workstation, maar archlinux.org draait natuurlijk ook op Arch.
+**A)** Arch is niet voor een specifiek doel ontworpen. Het is ontworpen voor een specifieke *gebruiker*. Arch richt zich op competente gebruikers die houden van een 'doe-het-zelf' aanpak, zodat zij de vorm van het systeem in de hand hebben en dit voor hun eigen doelen kunnen configureren. Daarom kan Arch gebruikt worden voor een breed scala aan doelen. Gebruikers van Arch doen dit vooral voor hun desktop of workstation, maar archlinux.org draait natuurlijk ook op Arch.
 
-## V) Ik vind Arch echt leuk, maar de ontwikkelaars moet echt _"functie X"_ implementeren
+## V) Ik vind Arch echt leuk, maar de ontwikkelaars moet echt *"functie X"* implementeren
 
-**A)** Heb je [The Arch Way](/index.php/The_Arch_Way_(Nederlands) "The Arch Way (Nederlands)"), [Arch Linux](/index.php/Arch_Linux_(Nederlands) "Arch Linux (Nederlands)") gelezen? Heb je de functie of oplossing al gemaakt? En is deze conform de Arch filosofie van _minimalism_ en _code-correctheid over gemakzucht_? In dat geval kun je je idee delen met de community. Als het goed wordt ontvangen wordt het misschien wel gebruikt.
+**A)** Heb je [The Arch Way](/index.php/The_Arch_Way_(Nederlands) "The Arch Way (Nederlands)"), [Arch Linux](/index.php/Arch_Linux_(Nederlands) "Arch Linux (Nederlands)") gelezen? Heb je de functie of oplossing al gemaakt? En is deze conform de Arch filosofie van *minimalism* en *code-correctheid over gemakzucht*? In dat geval kun je je idee delen met de community. Als het goed wordt ontvangen wordt het misschien wel gebruikt.
 
 ## V) Wanneer wordt er een nieuwe uitgave van Arch uitgebracht?
 
@@ -87,11 +87,11 @@ Om deze reden zijn releases niet erg belangrijk in Arch, omdat een release al ve
 
 ## V) Is Arch Linux een stabiele distributie? Gaan er vaak dingen kapot?
 
-**A)** Het systeem is zo stabiel als _jij_ het maakt.
+**A)** Het systeem is zo stabiel als *jij* het maakt.
 
-_Jij_ stelt je eigen Arch systeem samen, bovenop de simpele basis omgeving, en _jij_ bent in controle van de systeem upgrades. (Uiteraard heeft een groter, gecompliceerder systeem met een breed scala aan pakketten, toolkits en desktop omgevingen eerder configuratie problemen door hogerop gemaakte veranderingen dan een simpel systeem zou hebben.) Arch is bedoelt voor competente en actieve gebruikers. Algemene UNIX kennis, goed systeem onderhoud en upgrade praktijken spelen een grote rol in de stabiliteit van je systeem. Wees je er ook van bewust dat Arch pakketten vooral "un-patched" zijn, dus de meeste problemen liggen bij de ontwikkelaars van het desbetreffende pakket.
+*Jij* stelt je eigen Arch systeem samen, bovenop de simpele basis omgeving, en *jij* bent in controle van de systeem upgrades. (Uiteraard heeft een groter, gecompliceerder systeem met een breed scala aan pakketten, toolkits en desktop omgevingen eerder configuratie problemen door hogerop gemaakte veranderingen dan een simpel systeem zou hebben.) Arch is bedoelt voor competente en actieve gebruikers. Algemene UNIX kennis, goed systeem onderhoud en upgrade praktijken spelen een grote rol in de stabiliteit van je systeem. Wees je er ook van bewust dat Arch pakketten vooral "un-patched" zijn, dus de meeste problemen liggen bij de ontwikkelaars van het desbetreffende pakket.
 
-Daarom is de _gebruiker_ uiteindelijk verantwoordelijk voor de stabiliteit van zijn systeem. De gebruiker bepaalt wanneer, welke upgrades worden uitgevoerd. Het verschil tussen Arch en andere GNU/Linux distributies is dat Arch echt een 'doe-het-zelf' distributie is; klachten betreft gebroken systemen zijn vaak misleid en niet productief omdat veranderingen hogerop niet onder de verantwoordelijkheid valt van de Arch ontwikkelaars.
+Daarom is de *gebruiker* uiteindelijk verantwoordelijk voor de stabiliteit van zijn systeem. De gebruiker bepaalt wanneer, welke upgrades worden uitgevoerd. Het verschil tussen Arch en andere GNU/Linux distributies is dat Arch echt een 'doe-het-zelf' distributie is; klachten betreft gebroken systemen zijn vaak misleid en niet productief omdat veranderingen hogerop niet onder de verantwoordelijkheid valt van de Arch ontwikkelaars.
 
 ==V) Ik lees vanalles over een 'BSD-stijl' aanpak. Wat is dit? **A)** Onderdeel van de 'BSD erfenis' is het simpele init framework dat het heeft opgenomen. Het grootste verschil tussen BSD init en sysV init is dat Arch zijn BSD-stijl init gebruik maakt van één regel uit één bestand, `/etc/rc.conf`, om te wijzen naar de scripts in één bestandsmap, `/etc/rc.d/`, voor alle systeem diensten ongeacht het 'runlevel'.
 
@@ -126,7 +126,6 @@ Veel nieuwe gebruikers zien dat de Linux kernel geheugen anders gebruikt dan dat
 Waarschijnlijk is het `free` commando de grootste schuldige voor deze verwarring:
 
  `$ free -m` 
-
 ```
              total       used       free     shared    buffers     cached
 Mem:          1009        741        267          0        104        359
@@ -152,7 +151,7 @@ Voorbeeld:
 
 ## V) Ik heb een fout gevonden in pakket X. Wat moet ik nu doen?
 
-**A)** Eerst moet je proberen nagaan of het iets is wat het Arch team kan maken. Soms is dat niet (Als Firefox crasht, kan het bijvoorbeeld een fout zijn van het Mozilla team) - Dit is een zgn. _upstream error_. Als het daadwerkelijk een Arch probleem is, kan je verschillende stappen doorlopen:
+**A)** Eerst moet je proberen nagaan of het iets is wat het Arch team kan maken. Soms is dat niet (Als Firefox crasht, kan het bijvoorbeeld een fout zijn van het Mozilla team) - Dit is een zgn. *upstream error*. Als het daadwerkelijk een Arch probleem is, kan je verschillende stappen doorlopen:
 
 1.  Zoek eens op het forum. Misschien hebben andere gebruikers het reeds ontdekt (en is er al een oplossing voor).
 2.  Waarschuw de aanbieder van het pakket. Probeer `pacman -Qi <pakketnaam>` voor deze info.
@@ -179,7 +178,7 @@ Voorbeeld:
 
 ## V) Arch heeft een betere installer nodig. Misschien iets met een GUI?
 
-**A)** Het punt "betere" is subjectief, en de beste manier om dit aan te pakken is door de installer aan de passen aan "De Arch Filosofie". Als deze mening is onderbouwd met grondige argumenten, laat het weten, dan kan het misschien in rekening worden gebracht bij verdere ontwikkeling van de installer. _Windows uses a text based installer, FWIW_
+**A)** Het punt "betere" is subjectief, en de beste manier om dit aan te pakken is door de installer aan de passen aan "De Arch Filosofie". Als deze mening is onderbouwd met grondige argumenten, laat het weten, dan kan het misschien in rekening worden gebracht bij verdere ontwikkeling van de installer. *Windows uses a text based installer, FWIW*
 
 ## V) Ik heb Arch geïnstalleerd en zit nu in een bash login! Wat nu?
 

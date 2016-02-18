@@ -25,7 +25,6 @@ Se [openssh](https://www.archlinux.org/packages/?name=openssh) non è già insta
 Le chiavi possono essere generate eseguendo il comando `ssh-keygen` come utente:
 
  `$ ssh-keygen -b 521 -t ecdsa -C"$(id -un)@$(hostname)-$(date --rfc-3339=date)"` 
-
 ```
 Generating public/private ecdsa key pair.
 Enter file in which to save the key (/home/mith/.ssh/id_ecdsa):
@@ -130,7 +129,6 @@ $ chmod go-w ~/.ssh
 Impostare le chiavi SSH non basta per garantire maggiore sicurezza. Sarà necessario disabilitare i login tramite password:
 
  `/etc/ssh/sshd_config` 
-
 ```
 PasswordAuthentication no
 ChallengeResponseAuthentication no
@@ -189,7 +187,6 @@ L'agente [GnuPG](/index.php/GnuPG "GnuPG"), distribuito con il pacchetto [gnupg2
 Per iniziare a utilizzare l'agente GPG per le proprie chiavi SSH si deve prima iniziare la gpg-agent con l'opzione `--enable-ssh-support`. Esempi(non dimenticare di rendere eseguibile il file):
 
  `/etc/profile.d/gpg-agent.sh` 
-
 ```
 #!/bin/sh
 
@@ -252,7 +249,6 @@ Chiudere la shell ed avviarla di nuovo. Dovrebbe apparire il portachiavi e se è
 **Metodo alternativo**
 
  `/etc/profile.d/keychain.sh` 
-
 ```
 /usr/bin/keychain -Q -q --nogui ~/.ssh/id_ecdsa
 [[ -f $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh

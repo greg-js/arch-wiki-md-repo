@@ -75,7 +75,7 @@ If you do not know your country code, enter the following to get a list of codes
 
 ```
 
-More advanced scanning options can be found under [DVB-S#Scanning channels](/index.php/DVB-S#Scanning_channels "DVB-S"). See also _w_scan'_s [man page](http://dev.man-online.org/man2/w_scan/) and [documentation](http://linuxtv.org/wiki/index.php/W_scan).
+More advanced scanning options can be found under [DVB-S#Scanning channels](/index.php/DVB-S#Scanning_channels "DVB-S"). See also *w_scan'*s [man page](http://dev.man-online.org/man2/w_scan/) and [documentation](http://linuxtv.org/wiki/index.php/W_scan).
 
 ## Clients
 
@@ -123,10 +123,9 @@ with a valid `STREAM NAME` from the channels configuration file.
 
 #### Channel selector
 
-Here is a [lstv](https://aur.archlinux.org/packages/lstv/) script that will show a numbered list of channels by reading data from a `~/.mplayer/channels.conf` file. You will be able to watch a channel by using a number associated to it by the script instead of having to type the whole channel name on the command line, e.g. `lstv 3`. The channel number associated by the script equals to the line number with tuning configuration for it. The script disables display power saving and a screen saver before starting _mplayer_ and enables both again after you close it to disable screensaver management in this script remove `xset ...;` before and after [MPlayer](/index.php/MPlayer "MPlayer").
+Here is a [lstv](https://aur.archlinux.org/packages/lstv/) script that will show a numbered list of channels by reading data from a `~/.mplayer/channels.conf` file. You will be able to watch a channel by using a number associated to it by the script instead of having to type the whole channel name on the command line, e.g. `lstv 3`. The channel number associated by the script equals to the line number with tuning configuration for it. The script disables display power saving and a screen saver before starting *mplayer* and enables both again after you close it to disable screensaver management in this script remove `xset ...;` before and after [MPlayer](/index.php/MPlayer "MPlayer").
 
  `/usr/local/bin/lstv` 
-
 ```
 #!/bin/bash
 if [ "$1" ];then
@@ -136,22 +135,24 @@ CC='^[0-9]+$';
 ##
     awk -F':' -v AA="$1" '//{ZZ++;
      if(AA == ZZ)system("xset -dpms s off;mplayer dvb://""\""$1"\";xset +dpms s on")}
-     END{if(AA > ZZ)printf "The highest channel number is: "ZZ"\n"}' "$HOME/.mplayer/channels.conf"
+     END{if(AA > ZZ)printf "The highest channel number is: "ZZ"
+"}' "$HOME/.mplayer/channels.conf"
 ##
   fi;
 else
-awk -F':' '// { ZZ++; printf  ZZ " | " $1 "\n"}' "$HOME/.mplayer/channels.conf"
+awk -F':' '// { ZZ++; printf  ZZ " | " $1 "
+"}' "$HOME/.mplayer/channels.conf"
 fi;
 
 ```
 
 **Note:**
 
-*   It is assumed that the `channels.conf` file has been created with: `w_scan -ft -c _country_code_ -C UTF-8 -M -E 0 -O 0 > ~/.mplayer/channels.conf`
+*   It is assumed that the `channels.conf` file has been created with: `w_scan -ft -c *country_code* -C UTF-8 -M -E 0 -O 0 > ~/.mplayer/channels.conf`
 *   If the list of channels is too long then you can use something like `lstv | less` and search for channels name by pressing `/` and writing its name. When found press `q` for exiting of [less](http://unixhelp.ed.ac.uk/CGI/man-cgi?less) and use the channel associated number with [lstv](https://aur.archlinux.org/packages/lstv/).
 *   If you have a problem with playing of video see [Arch Linux Forum](https://bbs.archlinux.org/viewtopic.php?id=57650).
 
-**Warning:** If there is more than one channel with the same name, _mplayer_ will play only the closest one in the list.
+**Warning:** If there is more than one channel with the same name, *mplayer* will play only the closest one in the list.
 
 ### ffmpeg
 

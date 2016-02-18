@@ -1,4 +1,4 @@
-The _LI_nux _LO_ader, or **LILO** for short, is a legacy multi-boot loader for Linux systems. In spite of being the standard choice over the course of several years, it has been slowly phased out thanks to the advent of [GRUB](/index.php/GRUB "GRUB"), an alternative boot loader offering easier configuration and less chance of rendering systems unbootable. LILO is no longer actively developed.
+The *LI*nux *LO*ader, or **LILO** for short, is a legacy multi-boot loader for Linux systems. In spite of being the standard choice over the course of several years, it has been slowly phased out thanks to the advent of [GRUB](/index.php/GRUB "GRUB"), an alternative boot loader offering easier configuration and less chance of rendering systems unbootable. LILO is no longer actively developed.
 
 ## Contents
 
@@ -21,7 +21,7 @@ Running the command `lilo` (as root) will install LILO to the MBR. Before runnin
 
 LILO is configured by editing the `/etc/lilo.conf` file and running `lilo` afterwards to apply the new configuration.
 
-As a reminder, consider that LILO _needs_ to be run after every kernel upgrade, otherwise the system is likely to be left in an unbootable state.
+As a reminder, consider that LILO *needs* to be run after every kernel upgrade, otherwise the system is likely to be left in an unbootable state.
 
 More help on setting up LILO can be found in the [LILO-mini-HOWTO](http://www.tldp.org/HOWTO/LILO.html).
 
@@ -30,9 +30,7 @@ More help on setting up LILO can be found in the [LILO-mini-HOWTO](http://www.tl
 A typical LILO setup:
 
 **Tip:** If LILO is really slow while loading the bzImage, try adding `compact` to `/etc/lilo.conf`'s global section, as shown below.
-
  `/etc/lilo.conf` 
-
 ```
 #
 # /etc/lilo.conf
@@ -66,7 +64,7 @@ other=/dev/hda1
 # End of file
 ```
 
-You can use _hwinfo --framebuffer_ to determine what vga modes you can use.
+You can use *hwinfo --framebuffer* to determine what vga modes you can use.
 
 ### Using an image as background
 
@@ -116,4 +114,4 @@ It is possible that running the `lilo` command after a kernel upgrade results in
 ## See also
 
 *   [List of kernel parameters that can be used at boot time](http://www.mjmwired.net/kernel/Documentation/kernel-parameters.txt)
-*   [List of kernel paramaters with further explanation and grouped by like options ('Kernel Boot Command-Line Parameter Reference', _Linux Kernel In A Nutshell_)](http://www.kernel.org/pub/linux/kernel/people/gregkh/lkn/lkn_pdf/ch09.pdf)
+*   [List of kernel paramaters with further explanation and grouped by like options ('Kernel Boot Command-Line Parameter Reference', *Linux Kernel In A Nutshell*)](http://www.kernel.org/pub/linux/kernel/people/gregkh/lkn/lkn_pdf/ch09.pdf)

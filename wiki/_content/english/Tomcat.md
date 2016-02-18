@@ -63,7 +63,6 @@ Uncomment the "role and user" XML declaration and modify it to enable roles `tom
 Here is a bare configuration file that declares some of these roles along with usernames and passwords (Be sure to change the following [CHANGE_ME] passwords to something secure):
 
  `/etc/tomcat7/tomcat-users.xml` 
-
 ```
 <?xml version='1.0' encoding='utf-8'?>
 <tomcat-users>
@@ -134,7 +133,6 @@ Probably the easiest way is to use the manager webapp [http://localhost:8080/man
 One can also just copy the WAR file of the application to directory `/usr/share/tomcat7/webapps`. For that later, be sure that the `autoDeploy` option is still set for the right host as shown here:
 
  `/etc/tomcat7/server.xml` 
-
 ```
 ...
 <Host name="localhost"  appBase="webapps"
@@ -174,8 +172,8 @@ Apart from installing the desired JRE/JDK, the only requirement is to set the TO
 
 The variable can be overridden by a custom configuration, as described in [Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd"):
 
-1.  create the directory _/etc/systemd/system/tomcat7.service.d_
-2.  in that directory, save a _start.conf_ file with this content (this is the configuration for Oracle JDK installed with the AUR package):
+1.  create the directory */etc/systemd/system/tomcat7.service.d*
+2.  in that directory, save a *start.conf* file with this content (this is the configuration for Oracle JDK installed with the AUR package):
 
 ```
 [Service]
@@ -183,7 +181,7 @@ Environment=TOMCAT_JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 
 ```
 
-Alternatively, the service file is _/usr/lib/systemd/system/tomcat7.service_, copy it to _/etc/systemd/system/_ and replace this line:
+Alternatively, the service file is */usr/lib/systemd/system/tomcat7.service*, copy it to */etc/systemd/system/* and replace this line:
 
 ```
 Environment=TOMCAT_JAVA_HOME=/usr/lib/jvm/java-7-openjdk
@@ -209,7 +207,6 @@ For more security you could even remove the host-manager and manager web applica
 *   Disable the WAR auto-deploy option. This would prevent someone who gained restricted access to the server to copy a WAR into the `/usr/share/java/webapps` directory to get it running. Edit `server.xml` and set the `autoDeploy` to `false`:
 
  `/etc/tomcat7/server.xml` 
-
 ```
 ...
 <Host name="localhost"  appBase="webapps"
@@ -229,7 +226,6 @@ To anonymize this, edit/open the following JAR (Editors like `vim` can edit zips
 And edit the following file
 
  `org/apache/catalina/util/ServerInfo.properties` 
-
 ```
 ...
 server.info=
@@ -260,7 +256,6 @@ NEW_PASSWORD:b7bbb48a5b7749f1f908eb3c0c021200c72738ce
 Paste the hashed part in place of the clear password in `tomcat-users.xml` and add the following to `server.xml`:
 
  `/etc/tomcat7/server.xml` 
-
 ```
 <Host
   ...

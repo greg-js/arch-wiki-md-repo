@@ -13,7 +13,6 @@ Install [sonerezh-git](https://aur.archlinux.org/packages/sonerezh-git/). Furthe
 Make sure to adjust following variables to these minimal values in your `php.ini`:
 
  `/etc/php/php.ini` 
-
 ```
 extension=gd.so
 
@@ -37,7 +36,6 @@ sed -i 's/pydio.example.com/localhost/g' /etc/webapps/pydio/nginx.conf
 and reference this configuration file in the main nginx.conf:
 
  `/etc/nginx/nginx.conf` 
-
 ```
 
 http {

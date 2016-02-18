@@ -49,7 +49,6 @@ $ gsymcheck -vv mysymbol.sym
 #### Schematic Search Path
 
 Do not forget to place your symbol within the search path of gschem. It may also be helpful to extend this path to a folder in your own project by creating a file named `gafrc` in the project folder with the following content
-
 ```
 (component-library "./symbols")
 

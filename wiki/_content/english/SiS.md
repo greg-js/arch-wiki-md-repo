@@ -30,13 +30,13 @@ There are couple of modules related to SiS video cards:
 ```
 $ lsmod | grep sis | sed -re 's#^([a-zA-Z0-9_-]*) *.*#\1#g' | xargs modinfo | grep 'filename:'
 ...
-filename:       /usr/lib/modules/_{kernel-version}_/kernel/drivers/char/agp/sis-agp.ko.gz
-filename:       /usr/lib/modules/_{kernel-version}_/kernel/drivers/char/agp/agpgart.ko.gz
+filename:       /usr/lib/modules/*{kernel-version}*/kernel/drivers/char/agp/sis-agp.ko.gz
+filename:       /usr/lib/modules/*{kernel-version}*/kernel/drivers/char/agp/agpgart.ko.gz
 ...
 
 ```
 
-_whereas **{kernel-version}** is the kernel version currently installed on your system. For example kernel 3.7.1.1_
+*whereas **{kernel-version}** is the kernel version currently installed on your system. For example kernel 3.7.1.1*
 
 You will probably need to load only **sis-agp** (it will probably load the other sis modules as required by your hardware) as first and then the other modules. So the beginning of MODULES array in your `/etc/rc.conf` should look like this:
 

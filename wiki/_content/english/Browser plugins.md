@@ -63,7 +63,7 @@ The package you will need to install depends on the browser you use.
 **Note:**
 
 *   Some Flash apps may require the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) package in order to properly render text.
-*   The [freshplayerplugin-git](https://aur.archlinux.org/packages/freshplayerplugin-git/) package provides an _experimental_ adapter to use [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) with NPAPI based browsers like Firefox.
+*   The [freshplayerplugin-git](https://aur.archlinux.org/packages/freshplayerplugin-git/) package provides an *experimental* adapter to use [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) with NPAPI based browsers like Firefox.
 
 #### Upgrade
 
@@ -71,7 +71,7 @@ If you are using [Firefox](/index.php/Firefox "Firefox"), please make sure to fo
 
 #### Configuration
 
-To change the preferences (privacy settings, resource usage, etc.) of Flash Player, right click on any embedded Flash content (for instance the one on [this page](https://helpx.adobe.com/flash-player.html)) and choose _Settings_ from the menu.
+To change the preferences (privacy settings, resource usage, etc.) of Flash Player, right click on any embedded Flash content (for instance the one on [this page](https://helpx.adobe.com/flash-player.html)) and choose *Settings* from the menu.
 
 You can also use the Flash settings file `/etc/adobe/mms.cfg`. Gentoo has an extensively commented [example mms.cfg](http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/www-plugins/adobe-flash/files/mms.cfg).
 
@@ -107,7 +107,7 @@ Then, patch `libflashplayer.so`:
 
 ```
 
-If you use Firefox and want to remove the message _Press ESC to exit full screen mode in HTML5 videos_ too, go to about:config and set `full-screen-api.warning.timeout` to `0`.
+If you use Firefox and want to remove the message *Press ESC to exit full screen mode in HTML5 videos* too, go to about:config and set `full-screen-api.warning.timeout` to `0`.
 
 Alternatively, install Firefox extension [Disable HTML5 Fullscreen Alert](https://addons.mozilla.org/en-gb/firefox/addon/disable-html5-fullscreen-alert/), which will suppress full screen warnings for HTML5 content.
 
@@ -178,13 +178,13 @@ Lightspark can be [installed](/index.php/Install "Install") with the [lightspark
 #### Open-with Firefox extension
 
 1.  Install [Open-with](https://addons.mozilla.org/en-US/firefox/addon/open-with/) add-on.
-2.  Open `about:openwith`, select _Add..._
+2.  Open `about:openwith`, select *Add...*
 3.  In the dialog select a video streaming capable player (e.g. [/usr/bin/mpv](/index.php/Mpv "Mpv")).
-4.  (Optional step) Add needed arguments to the player (e.g. you may want `--force-window --ytdl` for _mpv_)
+4.  (Optional step) Add needed arguments to the player (e.g. you may want `--force-window --ytdl` for *mpv*)
 5.  (Optional step) Choose how to display the dialogs using the left panel.
 6.  Right click on links or visit pages containing videos. If the site is supported, the player will open as expected.
 
-The same procedure can be used to associate video downloaders such as _youtube-dl_.
+The same procedure can be used to associate video downloaders such as *youtube-dl*.
 
 ## PDF viewer
 
@@ -211,7 +211,7 @@ repeat noisy swallow(evince) fill: evince "$file"
 
 If this is not enough, you may need to change 2 values in `about:config`:
 
-*   Change `pdfjs.disabled`'s value to _true_;
+*   Change `pdfjs.disabled`'s value to *true*;
 *   Change `plugin.disable_full_page_plugin_for_types`'s value to an empty value.
 
 Restart and it should work like a charm!
@@ -232,7 +232,7 @@ There is no 64-bit version of Adobe Reader available. To use it in a 64-bit envi
 
 *   Follow [this guide](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64") originally posted in the forums. It involves creating a chrooted environment that could be reused for other 32-bit only applications.
 
-*   Install the [acroread](https://aur.archlinux.org/packages/acroread/) package (with all its 32-bit dependencies). Be advised that the [Firefox](/index.php/Firefox "Firefox") plugin cannot be used _directly_ with this binary -- it will not load in the 64-bit browser. To load it install the [nspluginwrapper](https://www.archlinux.org/packages/?name=nspluginwrapper) package from the official [[multilib]](/index.php/Multilib "Multilib") repository and run:
+*   Install the [acroread](https://aur.archlinux.org/packages/acroread/) package (with all its 32-bit dependencies). Be advised that the [Firefox](/index.php/Firefox "Firefox") plugin cannot be used *directly* with this binary -- it will not load in the 64-bit browser. To load it install the [nspluginwrapper](https://www.archlinux.org/packages/?name=nspluginwrapper) package from the official [[multilib]](/index.php/Multilib "Multilib") repository and run:
 
 ```
 $ nspluginwrapper -v -a -i
@@ -300,7 +300,6 @@ MozPlugger can be installed with the [mozplugger](https://aur.archlinux.org/pack
 For example, MozPlugger uses OpenOffice by default to open `doc` files. To change it to use LibreOffice instead, look for the OpenOffice section:
 
  `/etc/mozpluggerrc` 
-
 ```
 ...
 ### OpenOffice
@@ -314,7 +313,6 @@ define([OO],[swallow(VCLSalFrame) fill: ooffice2.0 -nologo -norestore -view $1 "
 and add LibreOffice at the beginning of the list:
 
  `/etc/mozpluggerrc` 
-
 ```
 ...
 ### LibreOffice/OpenOffice
@@ -331,7 +329,6 @@ define([OO],[swallow(VCLSalFrame) fill: libreoffice --nologo --norestore --view 
 As another simple example, if you want to open `cpp` files with your favorite text editor (we will use Kate) to get syntax highlighting, just add a new section to your `mozpluggerrc` file:
 
  `/etc/mozpluggerrc` 
-
 ```
 text/x-c++:cpp:C++ Source File
 text/x-c++:hpp:C++ Header File
@@ -342,7 +339,6 @@ text/x-c++:hpp:C++ Header File
 To change the default of MPlayer so that [mpv](/index.php/Mpv "Mpv") is used instead, change the appropriate lines such that:
 
  `/etc/mozpluggerrc` 
-
 ```
 ...
 ### MPlayer
@@ -383,7 +379,6 @@ Flash Player outputs its sound only through the default [ALSA](/index.php/ALSA "
 For a list of available devices with their respective numbers, run:
 
  `$ aplay -l` 
-
 ```
  **** List of PLAYBACK Hardware Devices ****
  card 0: Generic [HD-Audio Generic], device 3: HDMI 0 [HDMI 0]
@@ -401,7 +396,6 @@ For a list of available devices with their respective numbers, run:
 In this case, the HDMI output is `card 0` and the sound card is `card 1`. To make your sound card the default for ALSA, create the file `.asoundrc` in your home directory, with the following content:
 
  `~/.asoundrc` 
-
 ```
 pcm.!default {
     type hw

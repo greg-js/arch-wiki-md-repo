@@ -23,7 +23,6 @@ This article describes how to set up and run Chrony, an alternative NTP client a
 The smallest useful configuration file (using IP addresses instead of a hostname) would look something like:
 
  `/etc/chrony.conf` 
-
 ```
 server 1.2.3.4 offline
 server 5.6.7.8 offline
@@ -36,7 +35,7 @@ rtcsync
 
 ### NTP Servers
 
-The first thing you define in your `/etc/chrony.conf` is the servers your machine will synchronize to. NTP servers are classified in a hierarchical system with many levels called _strata_: the devices which are considered independent time sources are classified as _stratum 0_ sources; the servers directly connected to _stratum 0_ devices are classified as _stratum 1_ sources; servers connected to _stratum 1_ sources are then classified as _stratum 2_ sources and so on.
+The first thing you define in your `/etc/chrony.conf` is the servers your machine will synchronize to. NTP servers are classified in a hierarchical system with many levels called *strata*: the devices which are considered independent time sources are classified as *stratum 0* sources; the servers directly connected to *stratum 0* devices are classified as *stratum 1* sources; servers connected to *stratum 1* sources are then classified as *stratum 2* sources and so on.
 
 It has to be understood that a server's stratum cannot be taken as an indication of its accuracy or reliability. Typically, stratum 2 servers are used for general synchronization purposes: if you do not already know the servers you are going to connect to, you should use the [pool.ntp.org](http://www.pool.ntp.org/) servers ([alternate link](http://support.ntp.org/bin/view/Servers/NTPPoolServers)) and choose the server pool that is closest to your location.
 
@@ -50,7 +49,7 @@ server 3.pool.ntp.org iburst
 
 ```
 
-If your computer is not connected to the internet on startup, it is recommended to use the _offline_ option, to tell Chrony not to try and connect to the servers, until it has been given the go:
+If your computer is not connected to the internet on startup, it is recommended to use the *offline* option, to tell Chrony not to try and connect to the servers, until it has been given the go:
 
 ```
 server 0.pool.ntp.org offline
@@ -131,13 +130,13 @@ Then exit from chronyc and the RTC and system time should be within a few micros
 
 ## Notifying network state
 
-If you have specified your pools as offline in `chrony.conf`, you need to tell _chrony_ that the network status has changed.
+If you have specified your pools as offline in `chrony.conf`, you need to tell *chrony* that the network status has changed.
 
-You can either use _chronyc_ to notify _chrony_ that your network configuration has changed, or you can use a dispatcher for your relevant network configuration manager.
+You can either use *chronyc* to notify *chrony* that your network configuration has changed, or you can use a dispatcher for your relevant network configuration manager.
 
 ### NetworkManager
 
-_chronyd_ can be go into online/offline mode along with a network connection through the use of [NetworkManager's dispatcher scripts](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager"). You can install [networkmanager-dispatcher-chrony](https://aur.archlinux.org/packages/networkmanager-dispatcher-chrony/) from the AUR.
+*chronyd* can be go into online/offline mode along with a network connection through the use of [NetworkManager's dispatcher scripts](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager"). You can install [networkmanager-dispatcher-chrony](https://aur.archlinux.org/packages/networkmanager-dispatcher-chrony/) from the AUR.
 
 ### netctl
 

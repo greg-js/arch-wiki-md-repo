@@ -1,6 +1,6 @@
 [GNS3](http://www.gns3.net/) is a **G**raphical **N**etwork **S**imulator. It allows you to simulate a network on your computer. From the webpage:
 
-	_GNS3 is an open source software that simulate complex networks while being as close as possible to the way real networks perform. All of this without having dedicated network hardware such as routers and switches._
+	*GNS3 is an open source software that simulate complex networks while being as close as possible to the way real networks perform. All of this without having dedicated network hardware such as routers and switches.*
 
 ## Contents
 

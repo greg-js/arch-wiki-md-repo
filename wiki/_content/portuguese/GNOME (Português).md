@@ -1,7 +1,7 @@
 | **Summary**  |
 | GNOME 3 provê um ambiente moderno, reescrito do zero, usando o GTK3+ toolkit. |
 | **Overview** |
-| The [Xorg](/index.php/Xorg "Xorg") project provides an open source implementation of the X Window System – the foundation for a graphical user interface. [Desktop environments](/index.php/Desktop_environment "Desktop environment") such as [Enlightenment](/index.php/Enlightenment "Enlightenment"), [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), and [Xfce](/index.php/Xfce "Xfce") provide a complete graphical environment. Various [window managers](/index.php/Window_manager "Window manager") offer alternative and novel environments, and may be used _standalone_ to conserve system resources. [Display managers](/index.php/Display_manager "Display manager") provide a graphical login prompt. |
+| The [Xorg](/index.php/Xorg "Xorg") project provides an open source implementation of the X Window System – the foundation for a graphical user interface. [Desktop environments](/index.php/Desktop_environment "Desktop environment") such as [Enlightenment](/index.php/Enlightenment "Enlightenment"), [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), and [Xfce](/index.php/Xfce "Xfce") provide a complete graphical environment. Various [window managers](/index.php/Window_manager "Window manager") offer alternative and novel environments, and may be used *standalone* to conserve system resources. [Display managers](/index.php/Display_manager "Display manager") provide a graphical login prompt. |
 
 Para o GNOME 3, os desenvolvedores começaram do zero e criaram um novo complemento, um ambiente de trabalho moderno para os usuários e as tecnologias recentes. Algumas das características implementadas:
 
@@ -34,7 +34,7 @@ Para o GNOME 3, os desenvolvedores começaram do zero e criaram um novo compleme
 
 ## Introdução
 
-O GNOME 3 vem com **duas** interfaces, **gnome-shell**, o novo layout padrão, e o modo **fallback**. _Gnome-session_ detectará se o computador é capaz de rodar o _gnome-shell_, do contrário iniciará no modo _fallback_.
+O GNOME 3 vem com **duas** interfaces, **gnome-shell**, o novo layout padrão, e o modo **fallback**. *Gnome-session* detectará se o computador é capaz de rodar o *gnome-shell*, do contrário iniciará no modo *fallback*.
 
 O modo **fallback** é muito similar ao layout do GNOME 2.x (enquanto usa o gnome-panel e metacity, alternativas ao gnome-shell e Mutter).
 
@@ -119,7 +119,7 @@ Para o melhor integrar no desktop **GDM** é recomendado (mas outros gerenciador
 
 Confira o [Display manager](/index.php/Display_manager "Display manager") para iniciá-lo corretamente.
 
-Se você preferir iniciar pelo console, adicione a linha no seu diretório `~/.xinitrc`, certifique-se a última linha e inicia com _exec_ (veja [xinitrc](/index.php/Xinitrc "Xinitrc")):
+Se você preferir iniciar pelo console, adicione a linha no seu diretório `~/.xinitrc`, certifique-se a última linha e inicia com *exec* (veja [xinitrc](/index.php/Xinitrc "Xinitrc")):
 
 ```
 exec gnome-session
@@ -203,7 +203,7 @@ Pode ser necessário reiniciar o DE ou WM para aplicar as configurações.
 
 ```
 
-`Alt` + `F2` e _reiniciar_ seguido de `Enter`
+`Alt` + `F2` e *reiniciar* seguido de `Enter`
 
 Isso vai alterar o title_vertical_pad para de 14 para 0 colocando mas elegância nas janelas.
 
@@ -228,7 +228,6 @@ $ cp -R /home/user/Desktop/my_new_icon_theme ~/.icons
 The new icon theme 'my_new_icon_theme' will now be selectable using the gnome-tweak-tool (under 'Interface'), otherwise it can be set with no need of gnome-tweak-tool by adding the gtk-icon-theme-name entry inside ${XDG_CONFIG_HOME}/gtk-3.0/settings.ini.
 
  `${XDG_CONFIG_HOME}/gtk-3.0/settings.ini` 
-
 ```
 .....
 gtk-icon-theme-name = my_new_icon_theme

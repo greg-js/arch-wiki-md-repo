@@ -37,7 +37,6 @@ AutoFS uses template files for configuration which are located in `/etc/autofs` 
 The first value on each line determines the base directory under which all the media in a template are mounted, the second value is which template to use. The default base path is `/media`, but you can change this to any other location you prefer. For instance:
 
  `/etc/autofs/auto.master` 
-
 ```
 /media/misc     /etc/autofs/auto.misc     --timeout=5
 /media/net      /etc/autofs/auto.net      --timeout=60
@@ -59,7 +58,6 @@ If you still want to automount to a target non-empty directory and want to have 
 Alternatively, you can have autofs mount your media to a specific folder, rather than inside a common folder.
 
  `/etc/autofs/auto.master`  `/-     /etc/autofs/auto.template`  `/etc/autofs/auto.template` 
-
 ```
 /path/to/folder     -options :/device/path
 /home/user/usbstick  -fstype=auto,async,nodev,nosuid,umask=000  :/dev/sdb1
@@ -95,7 +93,6 @@ Devices are now automatically mounted when they are accessed, they will remain m
 *   Open `/etc/autofs/auto.misc` to add, remove or edit miscellaneous devices. For instance:
 
  `/etc/autofs/auto.misc` 
-
 ```
 #kernel   -ro                                        ftp.kernel.org:/pub/linux
 #boot     -fstype=ext2                               :/dev/hda1
@@ -118,14 +115,14 @@ AutoFS provides a new way of automatically discovering and mounting [NFS](/index
 
 **Each host name needs to be resolveable, e.g. the name an IP address in `/etc/hosts` or via [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") and please make sure you have at least [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) installed and working. You also have to enable RPC (systemctl start|enable rpcbind) to browse shared Folders.**
 
-For instance, if you have a remote server _fileserver_ with an NFS share named _/home/share_, you can just access the share by typing:
+For instance, if you have a remote server *fileserver* with an NFS share named */home/share*, you can just access the share by typing:
 
 ```
 # cd /net/fileserver/home/share
 
 ```
 
-**Note:** Please note that _ghosting_, i.e. automatically creating directory placeholders before mounting shares is enabled by default, although AutoFS installation notes claim to remove that option from `/etc/conf.d/autofs` in order to start the AutoFS daemon.
+**Note:** Please note that *ghosting*, i.e. automatically creating directory placeholders before mounting shares is enabled by default, although AutoFS installation notes claim to remove that option from `/etc/conf.d/autofs` in order to start the AutoFS daemon.
 
 The `-hosts` option uses a similar mechanism as the `showmount` command to detect remote shares. You can see the exported shares by typing:
 
@@ -134,7 +131,7 @@ The `-hosts` option uses a similar mechanism as the `showmount` command to detec
 
 ```
 
-Replacing _<servername>_ with the name of your own server.
+Replacing *<servername>* with the name of your own server.
 
 ### Samba
 
@@ -213,7 +210,6 @@ servername -fstype=curl,allow_other    :ftp\://remoteserver
 Create the file `/sbin/mount.curl` with this code:
 
  `/sbin/mount.curl` 
-
 ```
  #! /bin/sh
  curlftpfs $1 $2 -o $5,disable_eprt
@@ -223,7 +219,6 @@ Create the file `/sbin/mount.curl` with this code:
 Create the file `/sbin/umount.curl` with this code:
 
  `/sbin/umount.curl` 
-
 ```
  #! /bin/sh
  fusermount -u $1

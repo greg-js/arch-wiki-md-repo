@@ -2,7 +2,7 @@
 
 Del [artículo de Wikipedia](https://en.wikipedia.org/wiki/Udev "wikipedia:Udev"):
 
-	_«Udev es el gestor de dispositivos que usa el kernel de Linux. Principalmente, su función es controlar los archivos de dispositivo en `/dev`. Es el sucesor de devfs y de hotplug, lo que significa que maneja el directorio `/dev` y todas las acciones del espacio de usuario al agregar o quitar dispositivos, incluyendo la carga de firmware»_.
+	*«Udev es el gestor de dispositivos que usa el kernel de Linux. Principalmente, su función es controlar los archivos de dispositivo en `/dev`. Es el sucesor de devfs y de hotplug, lo que significa que maneja el directorio `/dev` y todas las acciones del espacio de usuario al agregar o quitar dispositivos, incluyendo la carga de firmware»*.
 
 Udev carga los módulos del kernel en paralelo (simultáneamente) para proveer una potencial ventaja de rendimiento, en vez de cargar los módulos secuencialmente (uno después de otro). Los módulos son, por lo tanto, cargados asíncronamente. La desventaja inherente de este método es que udev no siempre carga los módulos en el mismo orden en cada arranque del sistema. Si la máquina posee múltiples dispositivos de bloque, esto se puede manifestar en que los nodos de los dispositivos cambian su designación aleatoriamente. Por ejemplo, si la máquina tiene dos discos duros, `/dev/sda` puede convertirse aleatoriamente en `/dev/sdb`. Continue leyendo más abajo para mayor información.
 
@@ -58,7 +58,6 @@ Las reglas de udev escritas por el administrador del sistema se encuentran en el
 Este es un ejemplo de una regla que coloca un enlace simbólico /dev/video-cam1 cuando una cámara web está conectada. En primer lugar, hemos averiguado que dicha cámara se conecta y se carga como el dispositivo /dev/video2\. La razón para escribir esta regla es que en el siguiente arranque el dispositivo bien podría aparecer bajo otro nombre, como por ejemplo /dev/video0.
 
  `# udevadm info -a -p $(udevadm info -q path -n /dev/video2)` 
-
 ```
 Udevadm info starts with the device specified by the devpath and then
 walks up the chain of parent devices. It prints for every device
@@ -92,7 +91,6 @@ and the attributes from one single parent device.
 Desde el dipositivo video4linux usamos `KERNEL=="video2"` y `SUBSYSTEM=="video4linux"`, entoces hacemos que coincida con la webcam del usb principal usando los ID del proveedor y del producto `SUBSYSTEMS=="usb"`, `ATTRS{idVendor}=="05a9"` y `ATTRS{idProduct}=="4519"`.
 
  `/etc/udev/rules.d/83-webcam.rules` 
-
 ```
 KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", \
         ATTRS{idVendor}=="05a9", ATTRS{idProduct}=="4519", SYMLINK+="video-cam1"
@@ -111,7 +109,6 @@ Sin embargo, si tiene la intención de escribir una regla para que actúe cuando
 En la salida de esta orden, verá pares de valores tales como ID_VENDOR_ID and ID_MODEL_ID, que se corresponden a los atributos utilizados anteriormente "idVendor" y "idProduct". Una regla que utilice variables de entorno del dispositivo puede tener este aspecto:
 
  `/etc/udev/rules.d/83-webcam-removed.rules` 
-
 ```
 ACTION=="remove", SUBSYSTEM=="usb", \
         ENV{ID_VENDOR_ID}=="05a9", ENV{ID_MODEL_ID}=="4519", RUN+="/path/to/your/script"
@@ -180,9 +177,9 @@ No hay necesidad de cualquier regla adicional. Como elemento adicional, se puede
 
 ### Montaje automático de wrappers de udisks
 
-Los soportes de udisks (_«udisks wrapper»_) tienen la ventaja de ser muy fácil de instalar y sin necesidad de configuración (o mínima). Con wrapper se montarán automáticamente elementos como CDs y memorias flash.
+Los soportes de udisks (*«udisks wrapper»*) tienen la ventaja de ser muy fácil de instalar y sin necesidad de configuración (o mínima). Con wrapper se montarán automáticamente elementos como CDs y memorias flash.
 
-*   [udevil](http://ignorantguru.github.com/udevil/) - [udevil](https://www.archlinux.org/packages/?name=udevil) _«Monta y desmonta dispositivos extraíbles sin necesidad de una contraseña, muestra información del dispositivo, y monitorea los cambios de los dispositivos»_. Está escrito en C y puede sustituir a udisks e incluye [devmon](http://igurublog.wordpress.com/downloads/script-devmon/), que se puede instalar por separado desde AUR ([devmon](https://aur.archlinux.org/packages/devmon/)). También puede iniciar aplicaciones automáticamente de forma selectiva o ejecutar órdenes después del montaje, hacer caso omiso de dispositivos especificados y volúmenes etiquetados, y desmontar las unidades extraíbles.
+*   [udevil](http://ignorantguru.github.com/udevil/) - [udevil](https://www.archlinux.org/packages/?name=udevil) *«Monta y desmonta dispositivos extraíbles sin necesidad de una contraseña, muestra información del dispositivo, y monitorea los cambios de los dispositivos»*. Está escrito en C y puede sustituir a udisks e incluye [devmon](http://igurublog.wordpress.com/downloads/script-devmon/), que se puede instalar por separado desde AUR ([devmon](https://aur.archlinux.org/packages/devmon/)). También puede iniciar aplicaciones automáticamente de forma selectiva o ejecutar órdenes después del montaje, hacer caso omiso de dispositivos especificados y volúmenes etiquetados, y desmontar las unidades extraíbles.
 *   [ldm](https://aur.archlinux.org/packages/ldm/) - Un demonio ligero que monta automáticamente unidades usb, cd, dvd o floppys. [[1]](https://bbs.archlinux.org/viewtopic.php?id=125918)
 *   [udiskie](/index.php/Udiskie "Udiskie") - Escrito en Python. Permite el montaje y desmontaje automático por otros usuarios.
 *   [udisksevt](https://aur.archlinux.org/packages/udisksevt/) - Escrito en Haskell. Permite el montaje automático por cualquier usuario. Diseñado para ser integrado con [traydevice](https://aur.archlinux.org/packages/traydevice/).
@@ -202,7 +199,6 @@ Mientras udisks incluye un método simple de montaje (y desmontaje) de los dispo
 Por defecto, udisks2 monta unidades extraibles en `/run/media/$USER/`, en lugar de `/media/`. Si no le gusta este comportamiento, utilice esta regla:
 
  `/etc/udev/rules.d/99-udisks2.rules` 
-
 ```
 ENV{ID_FS_USAGE}=="filesystem|other|crypto", ENV{UDISKS_FILESYSTEM_SHARED}="1"
 
@@ -215,7 +211,6 @@ ENV{ID_FS_USAGE}=="filesystem|other|crypto", ENV{UDISKS_FILESYSTEM_SHARED}="1"
 El siguiente conjunto de reglas permite a los usuarios normales (en el grupo «users») acceder al programador USB [USBtinyISP](http://www.ladyada.net/make/usbtinyisp/) para microcontroladores AVR y al USB genérico (SiLabs [CP2102](http://www.silabs.com/products/interface/usbtouart)) para el adaptador UART y para el programador [Atmel AVR Dragon](http://www.atmel.com/tools/AVRDRAGON.aspx?tab=overview) y [Atmel AVR ISP mkII](http://www.atmel.com/tools/AVRISPMKII.aspx) . Ajuste los permiso de acuerdo al caso. Verificado al 31-10-2012.
 
  `/etc/udev/rules.d/50-embedded_devices.rules` 
-
 ```
 # USBtinyISP Programmer rules
 SUBSYSTEMS=="usb", ATTRS{idVendor}=="1781", ATTRS{idProduct}=="0c9f", GROUP="users", MODE="0666"
@@ -271,14 +266,12 @@ para ver qué está sucediendo realmente.
 Si ha conectado un puerto eSATA u otro adaptador eSATA, el sistema todavía reconocerá este puerto como un disco duro SATA interno. GNOME y KDE le preguntará por su contraseña de root todo el tiempo. La siguiente regla marcará el SATA-Port especificado como un eSATA-Port externo. Con esto, un usuario normal de GNOME pueden conectar sus unidades de disco eSATA al puerto como una unidad USB, sin ningún tipo de contraseña de root y así sucesivamente.
 
  `/etc/udev/rules.d/10-esata.rules` 
-
 ```
 DEVPATH=="/devices/pci0000:00/0000:00:1f.2/host4/*", ENV{UDISKS_SYSTEM}="0"
 
 ```
 
 **Nota:** el DEVPATH (ruta del dispositivo) se puede encontrar después de la conexión de la unidad de disco eSATA con la siguiente orden (sustituya sdb según su caso):
-
 ```
 # udevadm info -q path -n /dev/sdb
 /devices/pci0000:00/0000:00:1f.2/host4/target4:0:0/4:0:0:0/block/sdb
@@ -307,9 +300,7 @@ Compruebe la salida de scsi_id:
 3600601607db11e0013ab5a8e371ce111
 
 ```
-
  `/etc/udev/rules.d/75-iscsi.rules` 
-
 ```
 #The iscsi device rules.
 #This will create an iscsi device for each of the targets.
@@ -325,7 +316,6 @@ Para configurar la cámara web, en primer lugar, consulte [Webcam configuration]
 Si utilizamos múltiples cámaras web, útil por ejemplo con [motion](https://www.archlinux.org/packages/?name=motion) (software detector de movimiento que toma imágenes de los dispositivos video4linux y/o de webcams), asignará los dispositivos de vídeo como /dev/video0..n al azar en el arranque. La solución recomendada es crear enlaces simbólicos que utilicen una regla udev (como en el ejemplo de la [sección anterior](/index.php/Udev_(Espa%C3%B1ol)#Escribir_reglas_udev "Udev (Español)")).
 
  `/etc/udev/rules.d/83-webcam.rules` 
-
 ```
 KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{idVendor}=="05a9", ATTRS{idProduct}=="4519", SYMLINK+="video-cam1"
 KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="08f6", SYMLINK+="video-cam2"
@@ -342,7 +332,6 @@ Si utiliza varias impresoras, los dispositivos `/dev/lp[0-9]` serán asignados a
 Puede crear la siguiente regla, que creará enlaces simbólicos en `/dev/lp/by-id` y `/dev/lp/by-path`, similar al esquema [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming"):
 
  `/etc/udev/rules.d/60-persistent-printer.rules` 
-
 ```
 ACTION=="remove", GOTO="persistent_printer_end"
 
@@ -370,7 +359,6 @@ En primer lugar, encuentre el ID del proveedor y del producto del dispositivo, p
 Ahora cambie el atributo `power/wakeup` del dispositivo y del controlador USB al que está conectado, que en este caso es `driver/usb7/power/wakeup`. Utilice la siguiente regla:
 
  `/etc/udev/rules.d/50-wake-on-device.rules` 
-
 ```
 ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c52b", ATTR{power/wakeup}="enabled", ATTR{driver/usb7/power/wakeup}="enabled"
 
@@ -382,7 +370,7 @@ ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c52
 
 ### Blacklisting de Módulos
 
-En casos extraños, udev puede cometer un error y cargar los módulos incorrectos. Para prevenir este comportamiento, se pueden introducir los módulos afectados en lista negra (_«blacklist»_). Udev nunca cargará los módulos que estén listados (_«blacklisted»_). Consulte [Blacklisting](/index.php/Kernel_modules_(Espa%C3%B1ol)#Blacklisting "Kernel modules (Español)"). Ni al momento del arranque del sistema ni después cuando se produce un evento de conexión sobre la marcha es recibido (por ejemplo, conectando una unidad flash USB).
+En casos extraños, udev puede cometer un error y cargar los módulos incorrectos. Para prevenir este comportamiento, se pueden introducir los módulos afectados en lista negra (*«blacklist»*). Udev nunca cargará los módulos que estén listados (*«blacklisted»*). Consulte [Blacklisting](/index.php/Kernel_modules_(Espa%C3%B1ol)#Blacklisting "Kernel modules (Español)"). Ni al momento del arranque del sistema ni después cuando se produce un evento de conexión sobre la marcha es recibido (por ejemplo, conectando una unidad flash USB).
 
 ### udevd falla al inicio
 
@@ -461,10 +449,9 @@ Un motivo por el cual el módulo ide_cd_mod se carga antes que otros, como sr_mo
 
 ### Dispositivos ópticos con ID de grupo ajustado a «disk»
 
-Si el ID de grupo de la unidad de disco óptico está ajustado a _disk_ y desea que esté configurado para _optical_ tiene que crear una regla udev personalizada:
+Si el ID de grupo de la unidad de disco óptico está ajustado a *disk* y desea que esté configurado para *optical* tiene que crear una regla udev personalizada:
 
  `/etc/udev/rules.d` 
-
 ```
 # permissions for IDE CD devices
 SUBSYSTEMS=="ide", KERNEL=="hd[a-z]", ATTR{removable}=="1", ATTRS{media}=="cdrom*", GROUP="optical"

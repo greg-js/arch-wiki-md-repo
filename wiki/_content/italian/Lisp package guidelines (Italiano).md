@@ -74,13 +74,13 @@ popd
 
 ```
 
-...dove _$_lispdir_ è **${startdir}/pkg/usr/share/common-lisp**. Creando un link con un path relativo piuttosto che assoluto, è possibile garantire che il link rimanga valido anche dopo l'installazione.
+...dove *$_lispdir* è **${startdir}/pkg/usr/share/common-lisp**. Creando un link con un path relativo piuttosto che assoluto, è possibile garantire che il link rimanga valido anche dopo l'installazione.
 
 ## Packaging per versioni specifiche di Lisp
 
 Quando possibile, non creare pacchetti relativi ad una singola implementazione di lisp, cercare di essere indipendenti dall piattaforma per quanto il pacchetto lo permetta. Se, nonostante tutto, il pacchetto è specificatamente pensato per una singola implementazione di lisp (ad esempio, gli sviluppatori non hanno ancora aggiunto il supporto per altre implementazioni, o il pacchetto è stato sviluppato per fornire una funzionalità già presente in altre implementazioni), è corretto fare il proprio pacchetto Arch specifico per una particolare implementazione di lisp.
 
-Per evitare di creare pacchetti specifici per una particolare implementazione, idealmente i pacchetti relativi a tutte le implementazioni (SBCL, cmucl, clisp) dovrebbero essere creati con il campo del PKGBUILD **common-lisp**. Comunque, non è il caso (e questo potrebbe creare problemi alla persone che preferiscono avere implementazioni multiple di lisp a portata di mano). Allo stesso tempo, si potrebbe (a) non rendere il proprio pacchetto dipendente da nessun lisp e includere nel package.install un messaggio che richieda l'installazione di lisp (non ottimale) opppure (b) seguire l'esempio del PKGBUILD di _sbcl_ e includere un controllo condizionale per capire quale lisp è necessario (che è una soluzione complessa e, ancora, non ottimale). Altre idee sono le benvenute.
+Per evitare di creare pacchetti specifici per una particolare implementazione, idealmente i pacchetti relativi a tutte le implementazioni (SBCL, cmucl, clisp) dovrebbero essere creati con il campo del PKGBUILD **common-lisp**. Comunque, non è il caso (e questo potrebbe creare problemi alla persone che preferiscono avere implementazioni multiple di lisp a portata di mano). Allo stesso tempo, si potrebbe (a) non rendere il proprio pacchetto dipendente da nessun lisp e includere nel package.install un messaggio che richieda l'installazione di lisp (non ottimale) opppure (b) seguire l'esempio del PKGBUILD di *sbcl* e includere un controllo condizionale per capire quale lisp è necessario (che è una soluzione complessa e, ancora, non ottimale). Altre idee sono le benvenute.
 
 C'è anche da notare che se ASDF è necessario per installare/compilare/caricare il pacchetto le cose possono potenzialmente diventare più complicate a causa delle dipendenze, dal momento che SBCL viene fornito con asdf, clisp no ma c'è un pacchetto in AUR, e CMUCL potrebbe o meno fornirlo. (Purtroppo l'autore di questa pagina non conosce praticamente niente di CMUCL; mi dispiace).
 

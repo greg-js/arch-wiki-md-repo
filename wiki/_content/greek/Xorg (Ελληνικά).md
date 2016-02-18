@@ -362,11 +362,11 @@ The default X environment is rather bare, and you will typically seek to install
 Για να τεστάρετε το αρχείο ρυθμίσεων που έχετε κάνει,δείτε το παρακάτω:
 
 ```
-$ X -config _<your config file>_
+$ X -config *<your config file>*
 
 ```
 
-If a problem occurs, then view the log at <tt>/var/log/Xorg.0.log</tt>. Be on the lookout for any lines beginning with _(EE)_ which represent errors, and also _(WW)_ which are warnings that could indicate other issues.
+If a problem occurs, then view the log at <tt>/var/log/Xorg.0.log</tt>. Be on the lookout for any lines beginning with *(EE)* which represent errors, and also *(WW)* which are warnings that could indicate other issues.
 
 **Note:** Using startx requires a [~/.xinitrc](/index.php/Xinitrc "Xinitrc") file, so that X knows what to run when it starts.
 
@@ -440,12 +440,12 @@ When pacman installs an application that needs mesa, it will install one of thes
 
 Modular X.Org 7 installs everything in `/usr`, where the older versions installed in `/usr/X11R6`. Several configuration files need updates:
 
-*   _/etc/X11/xorg.conf_
+*   */etc/X11/xorg.conf*
     *   Fontpaths live in /usr/share/fonts now
     *   RGB database is in /usr/share/X11/rgb
     *   module path is /usr/lib/xorg/modules
 
-Also note that some X configuration tools might stop working. The easiest way to configure X.org is by installing the correct driver packages and running _Xorg -configure_, which results in a `/root/xorg.conf.new` which only needs modification in the resolutions, mouse configuration and keyboard layouts.
+Also note that some X configuration tools might stop working. The easiest way to configure X.org is by installing the correct driver packages and running *Xorg -configure*, which results in a `/root/xorg.conf.new` which only needs modification in the resolutions, mouse configuration and keyboard layouts.
 
 Some packages have hard-coded references to `/usr/X11R6`. These packages need fixing. In the meantime, look what packages install files in `/usr/X11R6`, uninstall those, make a symlink from `/usr` to `/usr/X11R6` and reinstall the affected packages. Another option is to move the contents of `/usr/X11R6` to `/usr` and make the symlink.
 
@@ -564,7 +564,7 @@ and the side buttons on a 7-button Intellimouse will work like they used to, wit
 *   I wasn't able to Ctrl+Alt+Fx to switch to console
 *   I wasn't able to use layouts
 
-The problem was that the _sk_qwerty_ layout doesn't exist anymore. I had to replace
+The problem was that the *sk_qwerty* layout doesn't exist anymore. I had to replace
 
 ```
 Option         "XkbLayout" "us,sk_qwerty"

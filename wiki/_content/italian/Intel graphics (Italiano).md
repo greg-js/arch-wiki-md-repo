@@ -93,7 +93,6 @@ $ modinfo i915 | grep parm
 La seguente serie di opzioni dovrebbe essere generalmente sicura da consentire :
 
  `/etc/modprobe.d/i915.conf` 
-
 ```
  options i915 i915_enable_rc6=7 i915_enable_fbc=1 lvds_downclock=1
 
@@ -118,7 +117,6 @@ Il metodo predefinito è SNA(dal 2013-08-05 [[2]](https://projects.archlinux.org
 Per utilizzare il vecchio metodo UXA, creare il file `/etc/X11/xorg.conf.d/20-intel.conf` con il seguente contenuto:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
  Section "Device"
     Identifier  "Intel Graphics"
@@ -130,7 +128,6 @@ Per utilizzare il vecchio metodo UXA, creare il file `/etc/X11/xorg.conf.d/20-in
 Si può anche voler testare la nuova modalità di Glamor che accelera la grafica 2D con OpenGL . Per usarlo , creare `/etc/X11/xorg.conf.d/20-intel.conf` con il seguente contenuto :
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
    Identifier  "Intel Graphics"
@@ -144,7 +141,6 @@ EndSection
 Il driver Intel utilizza il [Triple Buffering](http://www.intel.com/support/graphics/sb/CS-004527.htm) per la sincronizzazione verticale, e questo permette prestazioni migliori ed evita il tearing. Per disattivare la sincronizzazione verticale (ad esempio per l'analisi comparativa) usare questo file .drirc nella vostra directory home:
 
  `~/.drirc` 
-
 ```
 <device screen="0" driver="dri2">
 	<application name="Default">
@@ -241,7 +237,6 @@ video=VGA-1:1280x800
 Il metodo di accelerazione SNA causa il problema del tearing a molti utenti. Per risolvere questo problema abilitare l'opzione `"Tearfree"` del drive:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
    Identifier  "Intel Graphics"
@@ -265,7 +260,6 @@ Si veda l'[originale bug report](https://bugs.freedesktop.org/show_bug.cgi?id=37
 Problemi con il server X che termina inaspettatamente, o che sembra bloccarsi, o la GPU non risponde correttamente, possono essere risolti disabilitando l'uso GPU con l'opzione `NoAccel`:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
  Section "Device"
    Identifier "Intel Graphics"
@@ -277,7 +271,6 @@ Problemi con il server X che termina inaspettatamente, o che sembra bloccarsi, o
 In alternativa, si provare a disabilitare l'accelerazione 3D solo con tramite l'opzione `DRI`:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
    Identifier "Intel Graphics"
@@ -352,7 +345,6 @@ video.use_native_backlight=1
 Se nessuna di quelle risolvere il tuo problema, è necessario modificare o creare il file `/etc/X11/xorg.conf.d/20-intel.conf`, aggiungendo quanto segue:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
         Identifier  "card0"
@@ -365,7 +357,6 @@ EndSection
 se si utilizza l'accelerazione SNA, come detto sopra, create il file come segue :
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
         Identifier  "card0"

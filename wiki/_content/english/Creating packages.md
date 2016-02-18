@@ -39,7 +39,7 @@ An Arch package is no more than a tar archive, or 'tarball', compressed using xz
 
 A package group is a set of related packages, defined by the packager, which can be installed or uninstalled simultaneously by using the group name as a substitute for each individual package name. Whilst a group is not a package, it can be installed in a similar fashion to a package, see [Pacman#Installing package groups](/index.php/Pacman#Installing_package_groups "Pacman") and [PKGBUILD#groups](/index.php/PKGBUILD#groups "PKGBUILD").
 
-A meta package, often (though not always) titled with the _-meta_ suffix, provides similar functionality to a package group in that it enables multiple related packages to be installed or uninstalled simultaneously. Meta packages can be installed just like any other package, see [Pacman#Installing specific packages](/index.php/Pacman#Installing_specific_packages "Pacman"). The only difference between a meta package and a regular package is that a meta package is empty and exists purely to link related packages together via dependencies.
+A meta package, often (though not always) titled with the *-meta* suffix, provides similar functionality to a package group in that it enables multiple related packages to be installed or uninstalled simultaneously. Meta packages can be installed just like any other package, see [Pacman#Installing specific packages](/index.php/Pacman#Installing_specific_packages "Pacman"). The only difference between a meta package and a regular package is that a meta package is empty and exists purely to link related packages together via dependencies.
 
 The advantage of a meta package, compared to a group, is that any new member packages will be installed when the meta package itself is updated with a new set of dependencies. This is in contrast to a group where new group members will not be automatically installed. The disadvantage of a meta package is that it is not as flexible as a group - you can choose which group members you wish to install but you cannot choose which meta package dependencies you wish to install. Likewise you can uninstall group members without having to remove the entire group however you cannot remove meta package dependencies without having to uninstall the meta package itself.
 
@@ -62,7 +62,7 @@ One of the key tools for building packages is [makepkg](/index.php/Makepkg "Make
 
 ### Download and test the installation
 
-Download the source tarball of the software you want to package, extract it, and follow the author's steps to install the program. Make a note of all commands and/or steps needed to compile and install it. You will be repeating those same commands in the _PKGBUILD_ file.
+Download the source tarball of the software you want to package, extract it, and follow the author's steps to install the program. Make a note of all commands and/or steps needed to compile and install it. You will be repeating those same commands in the *PKGBUILD* file.
 
 Most software authors stick to the 3-step build cycle:
 
@@ -77,7 +77,7 @@ This is a good time to make sure the program is working correctly.
 
 ## Creating a PKGBUILD
 
-When you run `makepkg`, it will look for a `PKGBUILD` file in the present working directory. If a `PKGBUILD` file is found it will download the software's source code and compile it according to the instructions specified in the `PKGBUILD` file. The instructions must be fully interpretable by the [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) "wikipedia:Bash (Unix shell)") shell. After successful completion, the resulting binaries and metadata of the package, i.e. package version and dependencies, are packed in a `pkgname.pkg.tar.xz` package file that can be installed with `pacman -U _<package file>_`.
+When you run `makepkg`, it will look for a `PKGBUILD` file in the present working directory. If a `PKGBUILD` file is found it will download the software's source code and compile it according to the instructions specified in the `PKGBUILD` file. The instructions must be fully interpretable by the [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) shell. After successful completion, the resulting binaries and metadata of the package, i.e. package version and dependencies, are packed in a `pkgname.pkg.tar.xz` package file that can be installed with `pacman -U *<package file>*`.
 
 To begin with a new package, you should first create an empty working directory, (preferably `~/abs/**pkgname**`), change into that directory, and create a `PKGBUILD` file. You can either copy the prototype PKGBUILD `/usr/share/pacman/PKGBUILD.proto` to your working directory or copy a `PKGBUILD` from a similar package. The latter may be useful if you only need to change a few options.
 
@@ -87,19 +87,19 @@ To begin with a new package, you should first create an empty working directory,
 
 Example PKGBUILDs are located in `/usr/share/pacman/`. An explanation of possible `PKGBUILD` variables can be found in the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") article.
 
-_makepkg_ defines two variables that you should use as part of the build and install process:
+*makepkg* defines two variables that you should use as part of the build and install process:
 
 	`srcdir`
 
-	This points to the directory where _makepkg_ extracts or symlinks all files in the source array.
+	This points to the directory where *makepkg* extracts or symlinks all files in the source array.
 
 	`pkgdir`
 
-	This points to the directory where _makepkg_ bundles the installed package, which becomes the root directory of your built package.
+	This points to the directory where *makepkg* bundles the installed package, which becomes the root directory of your built package.
 
-All of them contain _absolute_ paths, which means, you do not have to worry about your working directory if you use these variables properly.
+All of them contain *absolute* paths, which means, you do not have to worry about your working directory if you use these variables properly.
 
-**Note:** _makepkg_, and thus the `build()` and `package()` functions, are intended to be non-interactive. Interactive utilities or scripts called in those functions may break _makepkg_, particularly if it is invoked with build-logging enabled (`-L`). (See [FS#13214](https://bugs.archlinux.org/task/13214).)
+**Note:** *makepkg*, and thus the `build()` and `package()` functions, are intended to be non-interactive. Interactive utilities or scripts called in those functions may break *makepkg*, particularly if it is invoked with build-logging enabled (`-L`). (See [FS#13214](https://bugs.archlinux.org/task/13214).)
 
 **Note:** Apart from the current package Maintainer, there may be previous maintainers listed above as Contributors.
 
@@ -125,9 +125,9 @@ Pacman 4.1 introduces the `prepare()` function. In this function, commands that 
 
 #### build()
 
-Now you need to implement the `build()` function in the `PKGBUILD` file. This function uses common shell commands in [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) "wikipedia:Bash (Unix shell)") syntax to automatically compile software and create a `pkg` directory to install the software to. This allows _makepkg_ to package files without having to sift through your file system.
+Now you need to implement the `build()` function in the `PKGBUILD` file. This function uses common shell commands in [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) syntax to automatically compile software and create a `pkg` directory to install the software to. This allows *makepkg* to package files without having to sift through your file system.
 
-The first step in the `build()` function is to change into the directory created by uncompressing the source tarball. _makepkg_ will change the current directory to `$srcdir` before executing the `build()` function. Therefore, in most cases, like suggested in `/usr/share/pacman/PKGBUILD.proto`, the first command will look like this:
+The first step in the `build()` function is to change into the directory created by uncompressing the source tarball. *makepkg* will change the current directory to `$srcdir` before executing the `build()` function. Therefore, in most cases, like suggested in `/usr/share/pacman/PKGBUILD.proto`, the first command will look like this:
 
 ```
 cd "$pkgname-$pkgver"
@@ -152,20 +152,20 @@ Users who do not need it (and occasionally maintainers who can not fix a package
 
 #### package()
 
-The final step is to put the compiled files in a directory where _makepkg_ can retrieve them to create a package. This by default is the `pkg` directory—a simple fakeroot environment. The `pkg` directory replicates the hierarchy of the root file system of the software's installation paths. If you have to manually place files under the root of your filesystem, you should install them in the `pkg` directory under the same directory structure. For example, if you want to install a file to `/usr/bin`, it should instead be placed under `$pkgdir/usr/bin`. Very few install procedures require the user to copy dozens of files manually. Instead, for most software, calling `make install` will do so. The final line should look like the following in order to correctly install the software in the `pkg` directory:
+The final step is to put the compiled files in a directory where *makepkg* can retrieve them to create a package. This by default is the `pkg` directory—a simple fakeroot environment. The `pkg` directory replicates the hierarchy of the root file system of the software's installation paths. If you have to manually place files under the root of your filesystem, you should install them in the `pkg` directory under the same directory structure. For example, if you want to install a file to `/usr/bin`, it should instead be placed under `$pkgdir/usr/bin`. Very few install procedures require the user to copy dozens of files manually. Instead, for most software, calling `make install` will do so. The final line should look like the following in order to correctly install the software in the `pkg` directory:
 
 ```
 make DESTDIR="$pkgdir/" install
 
 ```
 
-**Note:** It is sometimes the case where `DESTDIR` is not used in the `Makefile`; you may need to use `prefix` instead. If the package is built with _autoconf_ / _automake_, use `DESTDIR`; this is what is [documented](https://www.gnu.org/software/automake/manual/automake.html#Install) in the manuals. If `DESTDIR` does not work, try building with `make prefix="$pkgdir/usr/" install`. If that does not work, you will have to look further into the install commands that are executed by "`make <...> install`".
+**Note:** It is sometimes the case where `DESTDIR` is not used in the `Makefile`; you may need to use `prefix` instead. If the package is built with *autoconf* / *automake*, use `DESTDIR`; this is what is [documented](https://www.gnu.org/software/automake/manual/automake.html#Install) in the manuals. If `DESTDIR` does not work, try building with `make prefix="$pkgdir/usr/" install`. If that does not work, you will have to look further into the install commands that are executed by "`make <...> install`".
 
 In some odd cases, the software expects to be run from a single directory. In such cases, it is wise to simply copy these to `$pkgdir/opt`.
 
-More often than not, the installation process of the software will create sub-directories below the `pkg` directory. If it does not, however, _makepkg_ will generate a lot of errors and you will need to manually create sub-directories by adding the appropriate `mkdir -p` commands in the `build()` function before the installation procedure is run.
+More often than not, the installation process of the software will create sub-directories below the `pkg` directory. If it does not, however, *makepkg* will generate a lot of errors and you will need to manually create sub-directories by adding the appropriate `mkdir -p` commands in the `build()` function before the installation procedure is run.
 
-In old packages, there was no `package()` function. So, files were put into the _pkg_ directory at the end of the `build()` function. If `package()` is not present, `build()` runs via _fakeroot_. In new packages, `package()` is required and runs via _fakeroot_ instead, and `build()` runs without any special privileges.
+In old packages, there was no `package()` function. So, files were put into the *pkg* directory at the end of the `build()` function. If `package()` is not present, `build()` runs via *fakeroot*. In new packages, `package()` is required and runs via *fakeroot* instead, and `build()` runs without any special privileges.
 
 `makepkg --repackage` runs only the `package()` function, so it creates a `*.pkg.*` file without compiling the package. This may save time e.g. if you just have changed the `depends` variable of the package.
 
@@ -181,7 +181,7 @@ If makepkg finishes successfully, it will place a file named `pkgname-pkgver.pkg
 
 If the package looks sane, then you are done! However, if you plan on releasing the `PKGBUILD` file, it is imperative that you check and double-check the contents of the `depends` array.
 
-Also ensure that the package binaries actually _run_ flawlessly! It is annoying to release a package that contains all necessary files, but crashes because of some obscure configuration option that does not quite work well with the rest of the system. If you are only going to compile packages for your own system, though, you do not need to worry too much about this quality assurance step, as you are the only person suffering from mistakes, after all.
+Also ensure that the package binaries actually *run* flawlessly! It is annoying to release a package that contains all necessary files, but crashes because of some obscure configuration option that does not quite work well with the rest of the system. If you are only going to compile packages for your own system, though, you do not need to worry too much about this quality assurance step, as you are the only person suffering from mistakes, after all.
 
 ### Checking package sanity
 
@@ -189,7 +189,7 @@ After testing package functionality check it for errors using [namcap](/index.ph
 
 ```
 $ namcap PKGBUILD
-$ namcap _<package file name>_.pkg.tar.xz
+$ namcap *<package file name>*.pkg.tar.xz
 
 ```
 
@@ -216,7 +216,7 @@ Please read [AUR User Guidelines#Submitting packages](/index.php/AUR_User_Guidel
 
 ### Warnings
 
-*   Before you can automate the package building process, you should have done it manually at least once unless you know _exactly_ what you are doing _in advance_, in which case you would not be reading this in the first place. Unfortunately, although a good bunch of program authors stick to the 3-step build cycle of "`./configure`; `make`; `make install`", this is not always the case, and things can get real ugly if you have to apply patches to make everything work at all. Rule of thumb: If you cannot get the program to compile from the source tarball, and make it install itself to a defined, temporary subdirectory, you do not even need to try packaging it. There is not any magic pixie dust in `makepkg` that makes source problems go away.
+*   Before you can automate the package building process, you should have done it manually at least once unless you know *exactly* what you are doing *in advance*, in which case you would not be reading this in the first place. Unfortunately, although a good bunch of program authors stick to the 3-step build cycle of "`./configure`; `make`; `make install`", this is not always the case, and things can get real ugly if you have to apply patches to make everything work at all. Rule of thumb: If you cannot get the program to compile from the source tarball, and make it install itself to a defined, temporary subdirectory, you do not even need to try packaging it. There is not any magic pixie dust in `makepkg` that makes source problems go away.
 *   In a few cases, the packages are not even available as source and you have to use something like `sh installer.run` to get it to work. You will have to do quite a bit of research (read READMEs, INSTALL instructions, man pages, perhaps ebuilds from Gentoo or other package installers, possibly even the MAKEFILEs or source code) to get it working. In some really bad cases, you have to edit the source files to get it to work at all. However, `makepkg` needs to be completely autonomous, with no user input. Therefore if you need to edit the makefiles, you may have to bundle a custom patch with the `PKGBUILD` and install it from inside the `prepare()` function, or you might have to issue some `sed` commands from inside the `prepare()` function.
 
 ## More detailed guidelines

@@ -1,4 +1,4 @@
-_sway_ (SirCmpwn's Wayland window manager) is an attempt to create a [Wayland](/index.php/Wayland "Wayland") version of [i3](/index.php/I3 "I3").
+*sway* (SirCmpwn's Wayland window manager) is an attempt to create a [Wayland](/index.php/Wayland "Wayland") version of [i3](/index.php/I3 "I3").
 
 **Note:** This is still a work in progress so caution is advised. However, it is deemed ready for regular use by the creator.
 
@@ -15,7 +15,7 @@ _sway_ (SirCmpwn's Wayland window manager) is an attempt to create a [Wayland](/
 
 ## Installation
 
-_sway_ can be [installed](/index.php/Installed "Installed") with the [sway-git](https://aur.archlinux.org/packages/sway-git/) package. If you already use i3, then copy your i3 configuration to `~/.config/sway/config` and it will work out of the box. Otherwise, copy the sample configuration file to `~/.config/sway/config`. It is located at `/etc/sway/config`, unless the `DFALLBACK_CONFIG_DIR` flag has been set. See the sway(5) [man page](/index.php/Man_page "Man page") for information on the configuration.
+*sway* can be [installed](/index.php/Installed "Installed") with the [sway-git](https://aur.archlinux.org/packages/sway-git/) package. If you already use i3, then copy your i3 configuration to `~/.config/sway/config` and it will work out of the box. Otherwise, copy the sample configuration file to `~/.config/sway/config`. It is located at `/etc/sway/config`, unless the `DFALLBACK_CONFIG_DIR` flag has been set. See the sway(5) [man page](/index.php/Man_page "Man page") for information on the configuration.
 
 ## Configuration examples
 
@@ -24,7 +24,6 @@ _sway_ can be [installed](/index.php/Installed "Installed") with the [sway-git](
 Installing the program [i3status](https://www.archlinux.org/packages/?name=i3status) is an easy way to get a practical, default statusbar. All one has to do is add following snippet at the end of your sway config:
 
  `~/.config/sway/config` 
-
 ```
  bar {
   status_command i3status
@@ -35,7 +34,6 @@ Installing the program [i3status](https://www.archlinux.org/packages/?name=i3sta
 If you want to achieve colored output of i3status, you can adjust following part in the i3status configuration:
 
  `~/.config/i3status/config` 
-
 ```
 general {
         colors = true
@@ -51,7 +49,6 @@ In both examples, the system-wide installed configuration files has been copied 
 This line, which can be appended at the end of your sway configuration, sets a background image on all displays (output matches all with name `"*"`):
 
  `~/.config/sway/config` 
-
 ```
  output "*" background /home/onny/pictures/fredwang_norway.jpg fill
 
@@ -64,7 +61,6 @@ Of course you have to replace the file name and path according to your wallpaper
 Its possible to tweak specific input device configurations. For example to enable tap-to-click for a touchpad, add an input block:
 
  `~/.config/sway/config` 
-
 ```
  input "2:14:ETPS/2_Elantech_Touchpad" {
      tap enabled
@@ -84,7 +80,6 @@ swaymsg -t get_inputs
 Special keys on your keyboard can be used to execute commands, for example to control your volume or your monitor brightness:
 
  `~/.config/sway/config` 
-
 ```
  bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +15%
  bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -15%
@@ -96,14 +91,14 @@ Special keys on your keyboard can be used to execute commands, for example to co
 
 ## Usage
 
-To actually use _sway_, you can type in a tty:
+To actually use *sway*, you can type in a tty:
 
 ```
 $ sway
 
 ```
 
-However, if you want to start _sway_ in an X session for testing purposes it is possible to start it as a regular program or even from a [Display manager](/index.php/Display_manager "Display manager").
+However, if you want to start *sway* in an X session for testing purposes it is possible to start it as a regular program or even from a [Display manager](/index.php/Display_manager "Display manager").
 
 ## See also
 

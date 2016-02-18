@@ -30,9 +30,9 @@ The purpose of this page is to maintain a list of the currently reported problem
 
 ## NOTE : PKGBUILDs calling pacman -Q
 
-The following PKGBUILDs call _pacman -Q_, so the result depends on the system where the PKGBUILD is parsed:
+The following PKGBUILDs call *pacman -Q*, so the result depends on the system where the PKGBUILD is parsed:
 
-_find /var/abs -name PKGBUILD | xargs grep 'pacman.*-Q' | sed 's#/var/abs/# #'_
+*find /var/abs -name PKGBUILD | xargs grep 'pacman.*-Q' | sed 's#/var/abs/# #'*
 
 ```
  community/sk1/PKGBUILD:  local _tclver=`pacman -Q tcl`

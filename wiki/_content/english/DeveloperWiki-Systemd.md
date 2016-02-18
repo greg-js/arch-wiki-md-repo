@@ -40,7 +40,6 @@ If you want to get fancy, you should know what you are doing.
 #### Example of a simple conversion
 
 |  `rc script` 
-
 ```
 #!/bin/bash
 
@@ -76,9 +75,7 @@ case "$1" in
   *)
     echo "usage: $0 {start
 ```
-
  |  `systemd service file` 
-
 ```
 [Unit]
 Description=NIS/YP (Network Information Service) Server
@@ -93,7 +90,6 @@ ExecStart=/usr/sbin/ypserv
 [Install]
 WantedBy=multi-user.target
 ```
-
  |
 
 **Note:** Keep in mind that values to keys such as ExecStart and ExecStop are **not** run within a shell, but only passed to `execv`

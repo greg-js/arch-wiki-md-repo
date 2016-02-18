@@ -45,7 +45,7 @@ $ ~/.cabal/bin/bluetile
 
 ### At start-up
 
-If you wish to have bluetile launch automatically after logging in, you must set the correct PATH evironment label and then add _bluetile_ to your start-up applications.
+If you wish to have bluetile launch automatically after logging in, you must set the correct PATH evironment label and then add *bluetile* to your start-up applications.
 
 1\. Edit `~/.bashrc` and add the following line to the end:
 

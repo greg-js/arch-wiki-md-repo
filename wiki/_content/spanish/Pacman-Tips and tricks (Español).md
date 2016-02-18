@@ -226,7 +226,8 @@ class RepoSearch:
     def preformat(self,header,a,b):
         self.buffer = cut_html('<table class=\"' + header + '\"[^>]*>','</table',self.search_results)
         self.buffer = strip_html(self.buffer)
-        self.buffer = self.buffer.split('\n')
+        self.buffer = self.buffer.split('
+')
         self.buffer = [line for line in self.buffer if line]
         del self.buffer[a:b]
 
@@ -245,7 +246,8 @@ class RepoSearch:
 
         elif name == 'aur':
             p = re.compile('<td class=.data[^>]*>')
-            self.buffer = self.search_results.split('\n')
+            self.buffer = self.search_results.split('
+')
             self.buffer = [strip_html(line) for line in self.buffer if p.search(line)]
 
         l = len(self.buffer)/6
@@ -257,7 +259,9 @@ class RepoSearch:
             parsed_buf += self.buffer[i*6+2]
             if name == "official":
                 parsed_buf += ' ' + self.buffer[i*6+3]
-            parsed_buf += '\n' + self.buffer[i*6+4] + '\n'
+            parsed_buf += '
+' + self.buffer[i*6+4] + '
+'
 
         self.results += parsed_buf
 

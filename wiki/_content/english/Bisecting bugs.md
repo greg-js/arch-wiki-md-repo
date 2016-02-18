@@ -18,14 +18,14 @@ It might be useful to confirm that it is the new package release that is causing
 
 ## Building package from git
 
-In order to bisect we are going to need to build a version of package from [git](/index.php/Git "Git"). This can be accomplished by building the _-git_ package from the [AUR](/index.php/AUR "AUR").
+In order to bisect we are going to need to build a version of package from [git](/index.php/Git "Git"). This can be accomplished by building the *-git* package from the [AUR](/index.php/AUR "AUR").
 
 ## Setting up the Bisect
 
-Once package is successfully built you need to change into the git root directory in the `src/` directory. The name of the git root directory is often the same as `_pkgname_` (or without the `-git` suffix):
+Once package is successfully built you need to change into the git root directory in the `src/` directory. The name of the git root directory is often the same as `*pkgname*` (or without the `-git` suffix):
 
 ```
-$ cd src/_git_root_
+$ cd src/*git_root*
 
 ```
 
@@ -43,11 +43,11 @@ $ git tag
 
 ```
 
-Following on from the earlier example, we will assume that the version _oldver_ worked for us while _newver_ did not:
+Following on from the earlier example, we will assume that the version *oldver* worked for us while *newver* did not:
 
 ```
-$ git bisect good _oldver_
-$ git bisect bad _newver_
+$ git bisect good *oldver*
+$ git bisect bad *newver*
 
 ```
 
@@ -74,7 +74,7 @@ $ makepkg -efsi
 Once the new package is installed you can test for your previously discovered error. Return to the directory you were in the previous section:
 
 ```
-$ cd src/_git_root_
+$ cd src/*git_root*
 
 ```
 

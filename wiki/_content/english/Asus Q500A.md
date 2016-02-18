@@ -42,7 +42,6 @@ DPI is not automatically detected on the 1920x1080 15.6 inch display. This might
 An example [Xorg configuration file](/index.php/Xorg#Display_size_and_DPI "Xorg"):
 
  `/etc/X11/xorg.conf.d/90-monitor.conf` 
-
 ```
 Section "Monitor"
         Identifier      "Monitor0"

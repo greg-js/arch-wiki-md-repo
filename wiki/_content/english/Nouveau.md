@@ -56,7 +56,7 @@ If you are using a custom EDID file, you should embed it into initramfs as well:
 Re-generate the initial ramdisk image:
 
 ```
-# mkinitcpio -p <kernel preset; e.g. _linux_>
+# mkinitcpio -p <kernel preset; e.g. *linux*>
 
 ```
 
@@ -259,4 +259,4 @@ Source: [http://gentoo-en.vfose.ru/wiki/Nouveau#Phantom_and_unpopulated_output_c
 
 #### Random lockups with kernel error messages
 
-Specific Nvidia chips with Nouveau may give random system lockups and more commonly throw many kernel messages, seen with _dmesg_. Try adding the `nouveau.noaccel=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). See [[2]](https://fedoraproject.org/wiki/Common_kernel_problems#Systems_with_nVidia_adapters_using_the_nouveau_driver_lock_up_randomly) for more information.
+Specific Nvidia chips with Nouveau may give random system lockups and more commonly throw many kernel messages, seen with *dmesg*. Try adding the `nouveau.noaccel=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). See [[2]](https://fedoraproject.org/wiki/Common_kernel_problems#Systems_with_nVidia_adapters_using_the_nouveau_driver_lock_up_randomly) for more information.

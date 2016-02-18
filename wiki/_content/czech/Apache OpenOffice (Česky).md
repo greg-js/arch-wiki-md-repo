@@ -190,7 +190,7 @@ V nastavení OOo jsou dvě důležité obrazovky, Vzhled a Písma:
 
 *   Písma
     *   vybrat "Použít tabulku náhrad"
-    *   změnit "Andale Sans UI" (_musíte_ to přepsat -- není na to nabídka) za jiný font (váš KDE systémový font nebo jiný, pokud nevypadá dobře)
+    *   změnit "Andale Sans UI" (*musíte* to přepsat -- není na to nabídka) za jiný font (váš KDE systémový font nebo jiný, pokud nevypadá dobře)
     *   zatrhnout fajfku, aby se seznam aktualizoval
     *   vybrat "vždy" a "pouze obrazovka"
     *   stisknout OK
@@ -252,20 +252,20 @@ Administrace tiskáren (doporučeno spustit jako root)
 
 ## Zrychlení OpenOffice
 
-Některá nastavení mohou zlepšit rychlost spouštění a odezvy OpenOffice. Nicméně mohou zvýšit nároky na paměť RAM, takže je používejte opatrně. Všechny jsou dostupné v menu _Nástroje > Volby_.
+Některá nastavení mohou zlepšit rychlost spouštění a odezvy OpenOffice. Nicméně mohou zvýšit nároky na paměť RAM, takže je používejte opatrně. Všechny jsou dostupné v menu *Nástroje > Volby*.
 
-*   V menu _Paměť_:
+*   V menu *Paměť*:
     *   Redukovat počet kroků Zpět na méně než 100, na 20 až 30 kroků.
     *   V Grafická vyrovnávací paměť nastavte Použít pro OpenOffice.org na 128 MB (navýšit z původních 20MB).
     *   Nastavit Paměť na objekt na 20MB (navýšit z původních 5MB).
     *   Pokud používáte OpenOffice často, zvolte OpenOffice.org Quickstarter.
-*   V menu _Java_, odtrhněte Použít běhové prostředí jazyka Java (JRE).
+*   V menu *Java*, odtrhněte Použít běhové prostředí jazyka Java (JRE).
 
 ## Problémy
 
 ### Náhrada fontů
 
-Toto lze změnit v nastavení OpenOffice.org. Z menu vyberte _Nástroje > Volby > OpenOffice.org > Písma_. Zatrhněte volbu _Použít tabulku náhrad_. Napište `Andale Sans UI` do řádky fontů a vyberte žádaný font pro položku _Zaměnit za_. Když je hotovo, klikněte na _zatržítko_. Pak zvolte _Vždy_ a _Pouze obrazovka_ v boxu níže. Klikněte na OK. Potom jděte do _Nástroje > Volby > OpenOffice.org > Vzhled_ a odškrtněte "Použít systémový font pro uživatelské rozhraní". Pokud použijete nevyhlazovaný font, např. Arial, musíte dále odškrtnout "Vyhlazování fontu obrazovky", aby se font menu zobrazoval korektně.
+Toto lze změnit v nastavení OpenOffice.org. Z menu vyberte *Nástroje > Volby > OpenOffice.org > Písma*. Zatrhněte volbu *Použít tabulku náhrad*. Napište `Andale Sans UI` do řádky fontů a vyberte žádaný font pro položku *Zaměnit za*. Když je hotovo, klikněte na *zatržítko*. Pak zvolte *Vždy* a *Pouze obrazovka* v boxu níže. Klikněte na OK. Potom jděte do *Nástroje > Volby > OpenOffice.org > Vzhled* a odškrtněte "Použít systémový font pro uživatelské rozhraní". Pokud použijete nevyhlazovaný font, např. Arial, musíte dále odškrtnout "Vyhlazování fontu obrazovky", aby se font menu zobrazoval korektně.
 
 ### Vyhlazování
 

@@ -42,9 +42,9 @@ $ cat /sys/devices/pci0000:00/0000:00:1f.1/modalias
 
 ```
 
-*   **pci0000:00** es la id para el primer bus PCI. En la mayoría de los casos será el único bus PCI que tenga, pero es posible que se pueda extender a **pci0000:01** o **pci0000:02** - los datos exactos no son importantes, ya que es una apuesta bastante segura lo de que sólo tenga un bus PCI (_PISTA:_ ejecute ls /sys/devices/pci* para comprobarlo)
+*   **pci0000:00** es la id para el primer bus PCI. En la mayoría de los casos será el único bus PCI que tenga, pero es posible que se pueda extender a **pci0000:01** o **pci0000:02** - los datos exactos no son importantes, ya que es una apuesta bastante segura lo de que sólo tenga un bus PCI (*PISTA:* ejecute ls /sys/devices/pci* para comprobarlo)
 *   **0000:00:1f.1** es el índice del dispositivo dado en el bus PCI. Específicamente, se trata del bus 0000:00 y tiene un índice **1f.1**
-*   Todo esto es muy poco importante, a menos que quiera saber de donde vienen todos esos números. Por completar, si analiza la salida de _lspci_ verá la misma información:
+*   Todo esto es muy poco importante, a menos que quiera saber de donde vienen todos esos números. Por completar, si analiza la salida de *lspci* verá la misma información:
 
 ```
 $ lspci
@@ -72,7 +72,7 @@ i  8A
 
 ```
 
-Cada uno de estos identificadores, y sus correspondientes números hexadecimales representan parte de la información que un dispositivo dado expone. Para empezar, **v** es la _id del fabricante_ y **d** es la _id del dispositivo_ - estos son números muy estandarizados, y son esos mismos números los que utilizan **hwd** y otras herramientas similares para consultar un dispositivo. Incluso puede encontrar sitios web para hacer consultas sobre hardware específico basadas en las id del fabricante y del dispositivo, por ejemplo [http://www.pcidatabase.com/](http://www.pcidatabase.com/)
+Cada uno de estos identificadores, y sus correspondientes números hexadecimales representan parte de la información que un dispositivo dado expone. Para empezar, **v** es la *id del fabricante* y **d** es la *id del dispositivo* - estos son números muy estandarizados, y son esos mismos números los que utilizan **hwd** y otras herramientas similares para consultar un dispositivo. Incluso puede encontrar sitios web para hacer consultas sobre hardware específico basadas en las id del fabricante y del dispositivo, por ejemplo [http://www.pcidatabase.com/](http://www.pcidatabase.com/)
 
 También se pueden ver estos números aquí:
 
@@ -82,7 +82,7 @@ $ lspci -n
 
 ```
 
-¿Ve cómo 8086:24db coincide con los _v_ y _d_ anteriores?
+¿Ve cómo 8086:24db coincide con los *v* y *d* anteriores?
 
 Para más exactitud, **sv** y **sd** son las versiones de "subsistema" de tanto el fabricante como del dispositivo. La mayor parte de las veces estos son ignorados. Se utilizan principalmente por los desarrolladores de hardware para distinguir pequeñas diferencias en el funcionamiento interno que no suponen cambios en el dispositivo entendido como un todo.
 
@@ -120,13 +120,13 @@ $ grep snd_intel8x0m /lib/modules/`uname -r`/modules.alias
 
 Sí, así es. Es un formato bastante sencillo "alias <algo> <modulo real>". De hecho, puede crear alias para todo lo que quiera. Se puede añadir "alias boogabooga snd_intel8x0m" y hacer después "modprobe boogabooga" con seguridad.
 
-El "*" indica que coincidirá con cualquier cosa, de forma muy parecida a la expansión de nombres de archivo (_ls somedir/*_). Como se dijo antes, la mayor parte de los alias ignoran sv, sd, bc, sc, e i usando la coincidencia con "*".
+El "*" indica que coincidirá con cualquier cosa, de forma muy parecida a la expansión de nombres de archivo (*ls somedir/**). Como se dijo antes, la mayor parte de los alias ignoran sv, sd, bc, sc, e i usando la coincidencia con "*".
 
 ## ¿De dónde viene este archivo modules.alias?
 
 Vale, ahora puede estar pensando "Bien, hwd consulta las cosas basándose en una tabla de dispositivos, ¿qué hace diferente a esto?"
 
-La diferencia estriba en que esta tabla de consulta no es estática. No se mantiene a mano. De hecho, se construye dinámicamente cuando ejecuta depmod. "De dónde viene esta información?", preguntará? Pues desde los **propios módulos**. Si lo piensa, cada módulo específico debería saber cuál es el hardware que conoce, ya que ha sido programado específicamente para dicho hardware. Esto es, los desarrolladores del módulo _nvidia_ saben que su módulo sólo funciona para las tarjetas gráficas ("clase") de Nvidia ("fabricante"). De hecho, exporta en realidad esta información. Dice "Hey, yo puedo trabajar con esto:".
+La diferencia estriba en que esta tabla de consulta no es estática. No se mantiene a mano. De hecho, se construye dinámicamente cuando ejecuta depmod. "De dónde viene esta información?", preguntará? Pues desde los **propios módulos**. Si lo piensa, cada módulo específico debería saber cuál es el hardware que conoce, ya que ha sido programado específicamente para dicho hardware. Esto es, los desarrolladores del módulo *nvidia* saben que su módulo sólo funciona para las tarjetas gráficas ("clase") de Nvidia ("fabricante"). De hecho, exporta en realidad esta información. Dice "Hey, yo puedo trabajar con esto:".
 
 ```
 $ modinfo nvidia

@@ -2,7 +2,7 @@
 
 [处理器微指令](https://en.wikipedia.org/wiki/Microcode "wikipedia:Microcode") 和处理器固件是同一概念。内核有能力不通过 BIOS 来更新处理器固件。
 
-	_微指令数据文件包含所有 Intel 处理器的最新微指令定义。Intel 发布微指令更新来修正处理器行为，修正内容登在处理器相关更新文档中。常规的更新方法时通过 BIOS 升级，而 Intel 意识到这会是一个管理争端（administrative hassle）。Linux 操作系统和 VMware ESX 产品拥有一个机制，可以在引导完毕后更新微指令。比如，将这个文件放在 Linux 系统的 /etc/firmware 目录下之后，这个文件就会被该操作系统机制使用。_ ——[Intel](https://downloadcenter.intel.com/Detail_Desc.aspx?DwnldID=23082)
+	*微指令数据文件包含所有 Intel 处理器的最新微指令定义。Intel 发布微指令更新来修正处理器行为，修正内容登在处理器相关更新文档中。常规的更新方法时通过 BIOS 升级，而 Intel 意识到这会是一个管理争端（administrative hassle）。Linux 操作系统和 VMware ESX 产品拥有一个机制，可以在引导完毕后更新微指令。比如，将这个文件放在 Linux 系统的 /etc/firmware 目录下之后，这个文件就会被该操作系统机制使用。* ——[Intel](https://downloadcenter.intel.com/Detail_Desc.aspx?DwnldID=23082)
 
 ## Contents
 
@@ -138,4 +138,4 @@ LABEL arch
 *   `# modprobe cpuid`
 *   `# bsdtar -Oxf /boot/intel-ucode.img | iucode_tool -tb -lS -`
     （解开微指令映像，并根据你的 cpuid 搜索是否适用）
-*   如果有更新可用，它应该会在 _selected microcodes_ 之下显示
+*   如果有更新可用，它应该会在 *selected microcodes* 之下显示

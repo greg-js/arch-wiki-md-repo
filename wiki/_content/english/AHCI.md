@@ -1,4 +1,4 @@
-**AHCI**, abbreviation for _a_dvanced _h_ost _c_ontroller _i_nterface, is the native work mode for SATA drives. AHCI has two main benefits: support for hot pluggable SATA drives (mimicking USB drives' behavior) and NCQ, or _n_ative _c_ommand _q_ueuing. It has been present in the Linux kernel since version 2.6.19 and will be loaded automatically in current Arch kernel.
+**AHCI**, abbreviation for *a*dvanced *h*ost *c*ontroller *i*nterface, is the native work mode for SATA drives. AHCI has two main benefits: support for hot pluggable SATA drives (mimicking USB drives' behavior) and NCQ, or *n*ative *c*ommand *q*ueuing. It has been present in the Linux kernel since version 2.6.19 and will be loaded automatically in current Arch kernel.
 
 ## Configure from BIOS
 

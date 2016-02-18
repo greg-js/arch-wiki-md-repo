@@ -70,7 +70,7 @@ The following are EFL-based applications, most in an early stage of development 
 
 ### Starting Enlightenment
 
-Simply choose _Enlightenment_ session from your favourite [display manager](/index.php/Display_manager "Display manager") or configure [xinitrc](/index.php/Xinitrc "Xinitrc") to start it from the console.
+Simply choose *Enlightenment* session from your favourite [display manager](/index.php/Display_manager "Display manager") or configure [xinitrc](/index.php/Xinitrc "Xinitrc") to start it from the console.
 
 #### Entrance
 
@@ -83,7 +83,6 @@ Enlightenment has a new display manager called Entrance, which is provided by th
 If you prefer to start Enlightenment manually from the console, add the following line to your `~/.xinitrc` file:
 
  `~/.xinitrc` 
-
 ```
 exec enlightenment_start
 
@@ -107,17 +106,17 @@ For extended configuration, you may also install Econnman (available in AUR as [
 
 You can also use [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) to manage your network connections. Follow the instructions on [NetworkManager](/index.php/NetworkManager "NetworkManager") to do the configuration.
 
-You probably also need [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) to help with your settings. You may want to add it to the start up programs so every time Enlightenment starts it appears on systray. For that you should go to _Settings Panel > Apps > Startup Applications > System_ and activate _Network_.
+You probably also need [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) to help with your settings. You may want to add it to the start up programs so every time Enlightenment starts it appears on systray. For that you should go to *Settings Panel > Apps > Startup Applications > System* and activate *Network*.
 
 Whilst network connectivity will work, the applet itself will not be visible unless you have enabled the system tray, see [#Enabling the system tray](#Enabling_the_system_tray).
 
 #### Polkit agent
 
-Enlightenment does not ship with a [graphical polkit authentication agent](/index.php/Polkit#Authentication_agents "Polkit"). If you want to access some privileged actions (e.g. mount a filesystem on a system device), you have to install one and autostart it. For that you should go to _Settings Panel > Apps > Startup Applications > System_ and activate it. There is an EFL based authentication agent available in the AUR, [polkit-efl-git](https://aur.archlinux.org/packages/polkit-efl-git/).
+Enlightenment does not ship with a [graphical polkit authentication agent](/index.php/Polkit#Authentication_agents "Polkit"). If you want to access some privileged actions (e.g. mount a filesystem on a system device), you have to install one and autostart it. For that you should go to *Settings Panel > Apps > Startup Applications > System* and activate it. There is an EFL based authentication agent available in the AUR, [polkit-efl-git](https://aur.archlinux.org/packages/polkit-efl-git/).
 
 #### GNOME Keyring integration
 
-It is possible to use gnome-keyring in Enlightenment. However, at the time of writing, you need a small hack to make it work in full. First, you must tell Enlightenment to autostart gnome-keyring. For that you should go to _Settings Panel > Apps > Startup Applications > System_ and activate _Certificate and Key Storage_, _GPG Password Agent_, _SSH Key Agent_ and "Secret Storage Service". After this, you should edit your `~/.profile` and add the following:
+It is possible to use gnome-keyring in Enlightenment. However, at the time of writing, you need a small hack to make it work in full. First, you must tell Enlightenment to autostart gnome-keyring. For that you should go to *Settings Panel > Apps > Startup Applications > System* and activate *Certificate and Key Storage*, *GPG Password Agent*, *SSH Key Agent* and "Secret Storage Service". After this, you should edit your `~/.profile` and add the following:
 
 ```
        #Set gnome-keyring as the ssh authentication agent
@@ -133,7 +132,7 @@ More information on this topic in the [GNOME Keyring](/index.php/GNOME_Keyring "
 
 **Note:** Since Enlightenment 20, Xembed support has been removed [[1]](https://twitter.com/_enlightenment_/status/538000507315314688) meaning that many 'legacy' applets can no longer be displayed in the Systray. To use these applets, you will need to use a standalone system tray application such as [stalonetray](https://www.archlinux.org/packages/?name=stalonetray) instead.
 
-Enlightenment has support for a system tray but it is disabled by default. To enable the system tray, open the Enlightenment main menu, navigate to the _Settings_ submenu and click on the _Modules_ option. Scroll down until you see the _Systray_ option. Highlight that option and click the _Load_ button. Now that the module has been loaded, it can be added to the shelf. Right click on the shelf you wish to add the Systray to, hightlight the _Shelf_ submenu and click on the _Contents_ option. Scroll down until you see _Systray_. Highlight that option and click the _Add_ button.
+Enlightenment has support for a system tray but it is disabled by default. To enable the system tray, open the Enlightenment main menu, navigate to the *Settings* submenu and click on the *Modules* option. Scroll down until you see the *Systray* option. Highlight that option and click the *Load* button. Now that the module has been loaded, it can be added to the shelf. Right click on the shelf you wish to add the Systray to, hightlight the *Shelf* submenu and click on the *Contents* option. Scroll down until you see *Systray*. Highlight that option and click the *Add* button.
 
 #### Notifications
 
@@ -163,7 +162,7 @@ You can install the themes (coming in .edj format) using the theme configuration
 
 #### GTK+
 
-To alter the GTK+ theme, go to _Settings > All > Look > Application Theme_.
+To alter the GTK+ theme, go to *Settings > All > Look > Application Theme*.
 
 ### Modules and Gadgets
 
@@ -193,11 +192,11 @@ Available from [places-git](https://aur.archlinux.org/packages/places-git/).
 
 **Scale Windows**
 
-The _Scale Windows_ module, which requires compositing to be enabled, adds several features. The scale windows effect shrinks all open windows and brings them all into view. This is known in Mac OS X as "Exposé". The scale pager effect zooms out and shows all desktops as a wall, like the compiz expo plugin. Both can be added to the desktop as a gadget or bound to a key binding, mouse binding or screen edge binding.
+The *Scale Windows* module, which requires compositing to be enabled, adds several features. The scale windows effect shrinks all open windows and brings them all into view. This is known in Mac OS X as "Exposé". The scale pager effect zooms out and shows all desktops as a wall, like the compiz expo plugin. Both can be added to the desktop as a gadget or bound to a key binding, mouse binding or screen edge binding.
 
-Some people like to change the standard window selection key binding `ALT + Tab` to use Scale Windows to select windows. To change this setting, you navigate to _Menu > Settings > Settings Panel > Input > Keys_. From here, you can set any key binding you would like.
+Some people like to change the standard window selection key binding `ALT + Tab` to use Scale Windows to select windows. To change this setting, you navigate to *Menu > Settings > Settings Panel > Input > Keys*. From here, you can set any key binding you would like.
 
-To replace the window selection key binding functionality with Scale Windows, scroll through the left panel until you find the _ALT_ section and then find and select `ALT + Tab`. Then, scroll through the right panel looking for the "Scale Windows" section and choose either _Select Next_ or _Select Next (All)_ depending on whether you would like to see windows from only the current desktop or from all desktops and click _Apply_ to save the binding.
+To replace the window selection key binding functionality with Scale Windows, scroll through the left panel until you find the *ALT* section and then find and select `ALT + Tab`. Then, scroll through the right panel looking for the "Scale Windows" section and choose either *Select Next* or *Select Next (All)* depending on whether you would like to see windows from only the current desktop or from all desktops and click *Apply* to save the binding.
 
 Available from [comp-scale-git](https://aur.archlinux.org/packages/comp-scale-git/).
 
@@ -219,15 +218,15 @@ When the configuration is messed up and the settings windows can no longer be ap
 
 If fonts are too small and your screen is unreadable, be sure the right font packages are installed. [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) and [ttf-bitstream-vera](https://www.archlinux.org/packages/?name=ttf-bitstream-vera) are valid candidates.
 
-You can set scaling under _Settings > Settings Panel > Look > Scaling_.
+You can set scaling under *Settings > Settings Panel > Look > Scaling*.
 
 #### Backlight always dimmed
 
-You may find that Enlightenment routinely dims the backlight to 30% on logout and will only restore it to 100% when you log into another Enlightenment session. This is especially problematic when using another desktop environment alongside Enlightenment as the backlight will not automatically be restored to its normal level when using that desktop environment. To fix this issue, open the Enlightenment _Settings Panel_ and, under the _Look_ tab, click on the _Composite_ option. Tick the _Don't fade backlight_ box and click _OK_.
+You may find that Enlightenment routinely dims the backlight to 30% on logout and will only restore it to 100% when you log into another Enlightenment session. This is especially problematic when using another desktop environment alongside Enlightenment as the backlight will not automatically be restored to its normal level when using that desktop environment. To fix this issue, open the Enlightenment *Settings Panel* and, under the *Look* tab, click on the *Composite* option. Tick the *Don't fade backlight* box and click *OK*.
 
 #### Inconsistent cursor theme
 
-You may find that the cursor theme for the desktop is different to the one used in applications such as [Firefox](/index.php/Firefox "Firefox"). This is because desktop applications are using X cursor themes whilst Enlightenment has its own set of cursor themes. For consistency, you can set Enlightenment to always use the X cursor theme. To do this, open the Enlightenment _Settings Panel_ and click on the _Input_ tab. Click on the _Mouse_ option. Change the theme from _Enlightenment_ to _X_ and click _OK_. You should now find that the same cursor theme is used everywhere. If the X cursor theme itself is not always consistent, see [Cursor themes#XDG specification](/index.php/Cursor_themes#XDG_specification "Cursor themes").
+You may find that the cursor theme for the desktop is different to the one used in applications such as [Firefox](/index.php/Firefox "Firefox"). This is because desktop applications are using X cursor themes whilst Enlightenment has its own set of cursor themes. For consistency, you can set Enlightenment to always use the X cursor theme. To do this, open the Enlightenment *Settings Panel* and click on the *Input* tab. Click on the *Mouse* option. Change the theme from *Enlightenment* to *X* and click *OK*. You should now find that the same cursor theme is used everywhere. If the X cursor theme itself is not always consistent, see [Cursor themes#XDG specification](/index.php/Cursor_themes#XDG_specification "Cursor themes").
 
 ## Enlightenment DR16
 
@@ -259,7 +258,7 @@ Create an Init, a Start and a Stop folder in your `~/.e16` folder: any .sh scrip
 
 #### Compositor
 
-Shadows, Transparent effects _et all_ can be found in MMB or RMB /Settings, under Composite .
+Shadows, Transparent effects *et all* can be found in MMB or RMB /Settings, under Composite .
 
 ## See also
 

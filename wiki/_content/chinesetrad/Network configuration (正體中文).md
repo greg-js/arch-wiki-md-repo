@@ -47,7 +47,7 @@
         *   [8.3.2 Method 2 - Rollback/change Windows driver](#Method_2_-_Rollback.2Fchange_Windows_driver)
         *   [8.3.3 Method 3 - Enable WOL in Windows driver](#Method_3_-_Enable_WOL_in_Windows_driver)
         *   [8.3.4 Method 4 - Newer Realtek Linux driver](#Method_4_-_Newer_Realtek_Linux_driver)
-        *   [8.3.5 Method 5 - Enable _LAN Boot ROM_ in BIOS/CMOS](#Method_5_-_Enable_LAN_Boot_ROM_in_BIOS.2FCMOS)
+        *   [8.3.5 Method 5 - Enable *LAN Boot ROM* in BIOS/CMOS](#Method_5_-_Enable_LAN_Boot_ROM_in_BIOS.2FCMOS)
     *   [8.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
     *   [8.5 Broadcom BCM57780](#Broadcom_BCM57780)
 
@@ -60,9 +60,7 @@
 **註記:** `-c 3` 選項表示將會呼叫三次。詳細請參閱 `man ping` 。
 
 **提示:** 您也可以嘗試使用其他的 Domain ，如 www.hinet.net 。
-
  `$ ping -c 3 www.google.com` 
-
 ```
 PING www.l.google.com (74.125.224.146) 56(84) bytes of data.
 64 bytes from 74.125.224.146: icmp_req=1 ttl=50 time=437 ms
@@ -80,9 +78,7 @@ rtt min/avg/max/mdev = 298.107/373.642/437.202/57.415 ms
 若剛才的指令出現了 unknown hosts 之類的訊息，代表您的機器無法解析網域。這可能是因為您的網路服務提供商/閘道造成的。您可以嘗試 ping 一個靜態 IP 以實驗您的機器能否存取網際網路。
 
 **提示:** 您也可以嘗試使用其他的 IP ，如 168.95.1.1 。
-
  `$ ping -c 3 8.8.8.8` 
-
 ```
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 64 bytes from 8.8.8.8: icmp_req=1 ttl=53 time=52.9 ms
@@ -108,26 +104,25 @@ rtt min/avg/max/mdev = 52.975/65.375/72.543/8.803 ms
 
 ```
 
-這樣會將 `_myhostname_` 寫入 `/etc/hostname` 檔案中。
+這樣會將 `*myhostname*` 寫入 `/etc/hostname` 檔案中。
 
 詳細請參閱 `man 5 hostname` 與 `man 1 hostnamectl` 。
 
 在 `/etc/hosts` 中加入相同的主機名稱：
 
  `/etc/hosts` 
-
 ```
 
 #<ip-address> <hostname.domain.org> <hostname>
-127.0.0.1 localhost.localdomain localhost _myhostname_
+127.0.0.1 localhost.localdomain localhost *myhostname*
 ::1 localhost.localdomain localhost
 
 ```
 
-使用來自 [inetutils](https://www.archlinux.org/packages/?name=inetutils) 的 _hostname_ 以設定臨時主機名稱（直到重新啟動）：
+使用來自 [inetutils](https://www.archlinux.org/packages/?name=inetutils) 的 *hostname* 以設定臨時主機名稱（直到重新啟動）：
 
 ```
-# hostname _myhostname_
+# hostname *myhostname*
 
 ```
 
@@ -138,7 +133,6 @@ rtt min/avg/max/mdev = 52.975/65.375/72.543/8.803 ms
 [udev](/index.php/Udev "Udev") 應該會檢測您的網路介面卡（[NIC](https://en.wikipedia.org/wiki/Network_interface_controller "wikipedia:Network interface controller")）並自動於啟動時載入必要的模組。檢查 `lspci -v` 輸出內容中的「Ethernet controller」 項目（或類似的）。這應該會告訴您哪些核心模組包含了網路設備的驅動程式。舉例來說：
 
  `$ lspci -v` 
-
 ```
 02:00.0 Ethernet controller: Attansic Technology Corp. L1 Gigabit Ethernet Adapter (rev b0)
  	...
@@ -147,7 +141,7 @@ rtt min/avg/max/mdev = 52.975/65.375/72.543/8.803 ms
 
 ```
 
-接下來，確認該驅動程式已經通過 `dmesg | grep _module_name_` 載入了。舉例來說：
+接下來，確認該驅動程式已經通過 `dmesg | grep *module_name*` 載入了。舉例來說：
 
 ```
 $ dmesg | grep atl1
@@ -176,14 +170,13 @@ $ dmesg | grep atl1
 
 **提示:** 您可以執行 `ip link` 或是 `ls /sys/class/net` 以列出所有可用的介面。
 
-**註記:** 當您更改了介面名稱規則後，別忘了更新所有跟網路有關的組態檔案與自定的 systemd unit 檔案以因應該更改。特別是當您啟用了 [netctl 靜態設定檔](/index.php/Netctl#Basic_method "Netctl") ，請執行 `netctl reenable _profile_` 以更新所有產生的服務檔案。
+**註記:** 當您更改了介面名稱規則後，別忘了更新所有跟網路有關的組態檔案與自定的 systemd unit 檔案以因應該更改。特別是當您啟用了 [netctl 靜態設定檔](/index.php/Netctl#Basic_method "Netctl") ，請執行 `netctl reenable *profile*` 以更新所有產生的服務檔案。
 
 #### 更改裝置名稱
 
 您可以使用 udev-rule 來手動定義裝置名稱。舉例來說：
 
  `/etc/udev/rules.d/10-network.rules` 
-
 ```
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="aa:bb:cc:dd:ee:ff", NAME="net1"
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="ff:ee:dd:cc:bb:aa", NAME="net0"
@@ -192,26 +185,24 @@ SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="ff:ee:dd:cc:bb:aa", NAME="net0"
 
 請注意這兩點：
 
-*   使用這個指令以取得 MAC 位置：`cat /sys/class/net/_設備名稱_/address`。
+*   使用這個指令以取得 MAC 位置：`cat /sys/class/net/*設備名稱*/address`。
 *   請確定 udev 規則中使用的是小寫的十六進位數值而不是大寫。
 
 若該網路卡為動態 MAC ，您可以使用 DEVPATH ，例如：
 
  `/etc/udev/rules.d/10-network.rules` 
-
 ```
 SUBSYSTEM=="net", DEVPATH=="/devices/platform/wemac.*", NAME="int"
 
 ```
 
-**註記:** 當使用了靜態的名稱時，**應該要避免使用類似 "eth_X_" 與 "wlan_X_"** 這樣的名稱，因為這可能會導致核心與 udev 在開機時發生衝突。而剛好相反地，最好使用核心預設不會使用的介面名稱，如 `net0` 、 `net1` 、 `wifi0` 、 `wifi1` 。詳細說明請參閱 [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) 文件。
+**註記:** 當使用了靜態的名稱時，**應該要避免使用類似 "eth*X*" 與 "wlan*X*"** 這樣的名稱，因為這可能會導致核心與 udev 在開機時發生衝突。而剛好相反地，最好使用核心預設不會使用的介面名稱，如 `net0` 、 `net1` 、 `wifi0` 、 `wifi1` 。詳細說明請參閱 [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) 文件。
 
 ### 設定裝置的 MTU 與佇列長度
 
 您可以手動定義 udev 規則來更改裝置的 MTU 與佇列長度。舉例來說：
 
  `/etc/udev/rules.d/10-network.rules` 
-
 ```
 ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_len}="2000"
 
@@ -222,7 +213,6 @@ ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_
 目前的 NIC 名稱可以通過 sysfs 找到
 
  `$ ls /sys/class/net` 
-
 ```
 lo eth0 eth1 firewire0
 
@@ -241,7 +231,6 @@ lo eth0 eth1 firewire0
 要確認結果，請執行：
 
  `$ ip link show dev eth0` 
-
 ```
 2: eth0: <BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master br0 state UP mode DEFAULT qlen 1000
 ...
@@ -256,7 +245,7 @@ lo eth0 eth1 firewire0
 
 #### dhcpcd
 
-最簡單的方式就是使用 [dhcpcd](/index.php/Dhcpcd "Dhcpcd")，它包含在 [base](https://www.archlinux.org/groups/x86_64/base/) 群組中。無論是使用提供服務檔案 `dhcpcd@.service` ，以參數方式傳入介面卡名稱，或是手動通過 `dhcpcd _interface_` 將其執行。
+最簡單的方式就是使用 [dhcpcd](/index.php/Dhcpcd "Dhcpcd")，它包含在 [base](https://www.archlinux.org/groups/x86_64/base/) 群組中。無論是使用提供服務檔案 `dhcpcd@.service` ，以參數方式傳入介面卡名稱，或是手動通過 `dhcpcd *interface*` 將其執行。
 
 ### 靜態 IP 位址
 
@@ -280,7 +269,7 @@ lo eth0 eth1 firewire0
 您可於控制台中指派一靜態 IP 位址：
 
 ```
-# ip addr add _IP位址_/_子網路遮罩_ broadcast _廣播_ dev _介面_
+# ip addr add *IP位址*/*子網路遮罩* broadcast *廣播* dev *介面*
 
 ```
 
@@ -298,7 +287,7 @@ lo eth0 eth1 firewire0
 以類似下列的方法加上您的 IP 位址：
 
 ```
-# ip route add default via _預設閘道IP位址_
+# ip route add default via *預設閘道IP位址*
 
 ```
 
@@ -313,10 +302,9 @@ lo eth0 eth1 firewire0
 
 #### 永久於啟動時通過 systemd 進行組態設定與 udev 規則
 
-首先先為 [systemd](/index.php/Systemd "Systemd") 服務建立一個組態設定檔，請以網路介面卡名稱取代下列的 `_interface_`：
+首先先為 [systemd](/index.php/Systemd "Systemd") 服務建立一個組態設定檔，請以網路介面卡名稱取代下列的 `*interface*`：
 
- `/etc/conf.d/network@_interface_` 
-
+ `/etc/conf.d/network@*interface*` 
 ```
 address=192.168.0.15
 netmask=24
@@ -328,7 +316,6 @@ gateway=192.168.0.1
 建立 systemd unit 檔案：
 
  `/etc/systemd/system/network@.service` 
-
 ```
 [Unit]
 Description=Network connectivity (%i)
@@ -357,8 +344,8 @@ WantedBy=multi-user.target
 啟用該 unit 並將其啟動，傳入介面名稱：
 
 ```
-# systemctl enable network@_介面名稱_.service
-# systemctl start network@_介面名稱_.service
+# systemctl enable network@*介面名稱*.service
+# systemctl start network@*介面名稱*.service
 
 ```
 
@@ -367,7 +354,6 @@ WantedBy=multi-user.target
 您可以使用 [ipcalc](https://www.archlinux.org/packages/?name=ipcalc) 提供的 `ipcalc` 來計算 IP 廣播、網域、子網路遮罩與主機範圍等進階設定舉例來說，我使用了位於防火牆後的乙太網路來連線 Windows 機器至 Arch。為了安全性與網路組織，我將他們放置於各自獨立的網路，接著組態設定子網路遮罩與廣播位址，如此一來網路中就只有兩台機器。為了找出子網路遮罩跟廣播位址，我使用了 ipcalc ，提供其 Arch firewire nic 的 IP 位址 10.66.66.1 ，並指定 ipcalc 要建立一個只有兩台主機的網路。
 
  `$ ipcalc -nb 10.66.66.1 -s 1` 
-
 ```
 Address:   10.66.66.1
 
@@ -420,7 +406,6 @@ IP 別名為讓同一個網路介面有多個 IP 位址。如此一來，單個�
 準備組態設定檔：
 
  `/etc/netctl/mynetwork` 
-
 ```
 Connection='ethernet'
 Description='Five different addresses on the same NIC.'
@@ -456,7 +441,6 @@ $ netctl start mynetwork
 先決條件為[設定主機名稱](#.E8.A8.AD.E5.AE.9A.E4.B8.BB.E6.A9.9F.E5.90.8D.E7.A8.B1)之後，主機名稱可在本機系統上解析：
 
  `$ ping hostname` 
-
 ```
 PING hostname (192.168.1.2) 56(84) bytes of data.
 64 bytes from hostname (192.168.1.2): icmp_seq=1 ttl=64 time=0.043 ms
@@ -475,7 +459,6 @@ PING hostname (192.168.1.2) 56(84) bytes of data.
 Toggling [promiscuous mode](https://en.wikipedia.org/wiki/Promiscuous_mode) will make a (wireless) NIC forward all traffic it receives to the OS for further processing. This is opposite to "normal mode" where a NIC will drop frames it is not intended to receive. It is most often used for advanced network troubleshooting and [packet sniffing](https://en.wikipedia.org/wiki/Packet_sniffing).
 
  `/etc/systemd/system/promiscuous@.service` 
-
 ```
 [Unit]
 Description=Set %i interface in promiscuous mode
@@ -608,15 +591,15 @@ Right click my computer
 
 ```
 
-**Note:** Newer Realtek Windows drivers (tested with _Realtek 8111/8169 LAN Driver v5.708.1030.2008_, dated 2009/01/22, available from GIGABYTE) may refer to this option slightly differently, like _Shutdown Wake-On-LAN --> Enable_. It seems that switching it to `Disable` has no effect (you will notice the Link light still turns off upon Windows shutdown). One rather dirty workaround is to boot to Windows and just reset the system (perform an ungraceful restart/shutdown) thus not giving the Windows driver a chance to disable LAN. The Link light will remain on and the LAN adapter will remain accessible after POST - that is until you boot back to Windows and shut it down properly again.
+**Note:** Newer Realtek Windows drivers (tested with *Realtek 8111/8169 LAN Driver v5.708.1030.2008*, dated 2009/01/22, available from GIGABYTE) may refer to this option slightly differently, like *Shutdown Wake-On-LAN --> Enable*. It seems that switching it to `Disable` has no effect (you will notice the Link light still turns off upon Windows shutdown). One rather dirty workaround is to boot to Windows and just reset the system (perform an ungraceful restart/shutdown) thus not giving the Windows driver a chance to disable LAN. The Link light will remain on and the LAN adapter will remain accessible after POST - that is until you boot back to Windows and shut it down properly again.
 
 #### Method 4 - Newer Realtek Linux driver
 
 Any newer driver for these Realtek cards can be found for Linux on the realtek site. (untested but believed to also solve the problem).
 
-#### Method 5 - Enable _LAN Boot ROM_ in BIOS/CMOS
+#### Method 5 - Enable *LAN Boot ROM* in BIOS/CMOS
 
-It appears that setting _Integrated Peripherals --> Onboard LAN Boot ROM --> Enabled_ in BIOS/CMOS reactivates the Realtek LAN chip on system boot-up, despite the Windows driver disabling it on OS shutdown.
+It appears that setting *Integrated Peripherals --> Onboard LAN Boot ROM --> Enabled* in BIOS/CMOS reactivates the Realtek LAN chip on system boot-up, despite the Windows driver disabling it on OS shutdown.
 
 **Note:** This was tested successfully multiple times with GIGABYTE system board GA-G31M-ES2L with BIOS version F8 released on 2009/02/05\. YMMV.
 

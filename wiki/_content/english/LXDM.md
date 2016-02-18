@@ -98,14 +98,13 @@ To log in to one account automatically on startup, without providing a password,
 
 ```
 
-Uncomment it, substituting the target user instead of _dgod_.
+Uncomment it, substituting the target user instead of *dgod*.
 
 ### Last used options
 
 It stores information about last used options in the:
 
  `/var/lib/lxdm/lxdm.conf` 
-
 ```
 [base]
 last_session=/usr/share/xsessions/LXDE.desktop
@@ -138,7 +137,7 @@ $ lxdm -c USER_SWITCH
 
 **Note:** When the new user logs in, his/her session is now on the NEXT tty from tty7\. For example, user1 logs in and issues the USER_SWITCH command. Now user2 logs in. User2 will be on tty7 while user1 will be on tty1.
 
-If you use the [Xfce](/index.php/Xfce "Xfce") desktop, the Switch User functionality of its Action Button panel item specifically looks for the _gdmflexiserver_ executable in order to enable itself. If you provide it with an executable shell script `/usr/bin/gdmflexiserver` consisting of
+If you use the [Xfce](/index.php/Xfce "Xfce") desktop, the Switch User functionality of its Action Button panel item specifically looks for the *gdmflexiserver* executable in order to enable itself. If you provide it with an executable shell script `/usr/bin/gdmflexiserver` consisting of
 
 ```
 #!/bin/sh

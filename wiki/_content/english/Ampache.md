@@ -122,7 +122,7 @@ log_path = "/var/log/ampache"
 
 ### Transcoding
 
-If you want to use Ampache's on the fly transcoding you need the packages specified in `config/ampache.cfg`, the packages needed for transcoding the most common audio file formats are listed in Ampache stable's _.install_ file. You also need to configure the specific lines in `ampache.cfg`.
+If you want to use Ampache's on the fly transcoding you need the packages specified in `config/ampache.cfg`, the packages needed for transcoding the most common audio file formats are listed in Ampache stable's *.install* file. You also need to configure the specific lines in `ampache.cfg`.
 
 The following example enables M4A transcoding to MP3.
 
@@ -156,7 +156,7 @@ min_bit_rate = 48
 
 Using the Ampache web interface, we need to allow API access to Ampache from our local network. To do this go to the Admin tab and then click on Show Acls. Find Add API / RPC Host and click on it. Name your ACL Entry, ("My Network" for ex). If you want API + Streaming + Web Interface access pick RPC + All under type.
 
-In Amarok, go to _Settings > Services_. Make sure the Ampache Service is enabled and then click _Settings_ button on Ampache plugin.
+In Amarok, go to *Settings > Services*. Make sure the Ampache Service is enabled and then click *Settings* button on Ampache plugin.
 
 *   Name : This is an internal name for Amarok, up to you.
 *   Server : This is the fully qualified address for your Ampache server including the http://.

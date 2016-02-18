@@ -20,11 +20,11 @@ I moduli del [kernel](https://en.wikipedia.org/wiki/it:Kernel "wikipedia:it:Kern
 
 ## Panoramica
 
-La creazione di un modulo del kernel è descritta in [questa guida](http://tldp.org/LDP/lkmpg/2.6/html/index.html). Un modulo può essere configurato per essere _build-in_ (incluso nel kernel) o _loadable_ (caricabile a richiesta). Per caricare o rimuovere dinamicamente un modulo, esso deve essere configurato come _loadable_ nella configurazione del kernel (la riga relativa al modulo mostrerà perciò la lettera `M`).
+La creazione di un modulo del kernel è descritta in [questa guida](http://tldp.org/LDP/lkmpg/2.6/html/index.html). Un modulo può essere configurato per essere *build-in* (incluso nel kernel) o *loadable* (caricabile a richiesta). Per caricare o rimuovere dinamicamente un modulo, esso deve essere configurato come *loadable* nella configurazione del kernel (la riga relativa al modulo mostrerà perciò la lettera `M`).
 
-I moduli vengono archiviati nel percorso `/usr/lib/modules/_versione_del_kernel_` (per ottenere la versione del kernel usare il comando `uname -r`).
+I moduli vengono archiviati nel percorso `/usr/lib/modules/*versione_del_kernel*` (per ottenere la versione del kernel usare il comando `uname -r`).
 
-**Nota:** Nella nomenclatura dei moduli spesso compare il simbolo di _underscore_ (`_`) o il _dash_ (`-`), però nell'uso del comando `modprobe` oppure all'interno dei file di configurazione nella cartella `/etc/modprobe.d/` questi simboli sono perfettamente intercambiabili.
+**Nota:** Nella nomenclatura dei moduli spesso compare il simbolo di *underscore* (`_`) o il *dash* (`-`), però nell'uso del comando `modprobe` oppure all'interno dei file di configurazione nella cartella `/etc/modprobe.d/` questi simboli sono perfettamente intercambiabili.
 
 ## Ottenere informazioni
 
@@ -38,14 +38,14 @@ $ lsmod
 Per ottenere informazioni riguardo ad un modulo:
 
 ```
-$ modinfo _nome_modulo_
+$ modinfo *nome_modulo*
 
 ```
 
 Per elencare le opzioni configurate per un modulo caricato:
 
 ```
-$ systool -v -m _nome_modulo_
+$ systool -v -m *nome_modulo*
 
 ```
 
@@ -59,14 +59,14 @@ $ modprobe -c | less
 Per controllare la configurazione di uno specifico modulo:
 
 ```
-$ modprobe -c | grep _nome_modulo_
+$ modprobe -c | grep *nome_modulo*
 
 ```
 
 Per elencare le dipendenze di un modulo (o un alias), incluso il modulo stesso:
 
 ```
-$ modprobe --show-depends _nome_modulo_
+$ modprobe --show-depends *nome_modulo*
 
 ```
 
@@ -76,10 +76,9 @@ Ad oggi, tutti i moduli necessari da caricare sono gestiti automaticamente da [u
 
 ### Caricamento
 
-I moduli extra al kernel da caricare durante il boot sono configurati in una lista statica in `/etc/modules-load.d/`. Ogni file di configurazione ha il nome nello stile di `/etc/modules-load.d/_programma_.conf/`. I files di configurazione dovrebbero semplicemente contenere una lista con i nomi dei moduli da caricare, separati da ritorni a capo. Le linee vuote o quelle il cui primo carattere non è né uno spazio né `#` né `;` sono ignorate. Ad esempio:
+I moduli extra al kernel da caricare durante il boot sono configurati in una lista statica in `/etc/modules-load.d/`. Ogni file di configurazione ha il nome nello stile di `/etc/modules-load.d/*programma*.conf/`. I files di configurazione dovrebbero semplicemente contenere una lista con i nomi dei moduli da caricare, separati da ritorni a capo. Le linee vuote o quelle il cui primo carattere non è né uno spazio né `#` né `;` sono ignorate. Ad esempio:
 
  `/etc/modules-load.d/virtio-net.conf` 
-
 ```
 # Carica virtio-net.ko al boot
 virtio-net
@@ -100,13 +99,12 @@ La directory `/etc/modprobe.d/` può essere usata per passare la configurazione 
 Ad esempio:
 
  `/etc/modprobe.d/thinkfan.conf` 
-
 ```
 #Sui Thinkpad, questo permette al demone 'thinkfan' di controllare la velocità delle ventole.
 options thinkpad_acpi fan_control=1
 ```
 
-**Nota:** Se qualcuno dei moduli coinvolti è caricato dal ramdisk di init, si dovranno aggiungere i necessari file _.conf_ all'array `FILES` in [mkinitcpio.conf](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)"), o usare l'[hook](/index.php/Mkinitcpio_(Italiano)#HOOKS "Mkinitcpio (Italiano)") `modconf`, in maniera che i moduli siano inclusi nel ramdisk.
+**Nota:** Se qualcuno dei moduli coinvolti è caricato dal ramdisk di init, si dovranno aggiungere i necessari file *.conf* all'array `FILES` in [mkinitcpio.conf](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)"), o usare l'[hook](/index.php/Mkinitcpio_(Italiano)#HOOKS "Mkinitcpio (Italiano)") `modconf`, in maniera che i moduli siano inclusi nel ramdisk.
 
 #### Usando la riga di comando del kernel
 
@@ -135,7 +133,6 @@ Gli alias sono nomi alternativi per un modulo. Ad esempio `alias mio-mod lunghis
 Alcuni moduli hanno alias che vengono utilizzati per il loro caricamento automatico quando vengono richiesti da una applicazione. Disabilitando questi alias verrà impedito il caricamento automatico, ma sarà comunque possibile caricarli manualmente.
 
  `/etc/modprobe.d/modprobe.conf` 
-
 ```
 #Impedisci il caricamento automatico di Bluetooth.
 
@@ -153,7 +150,6 @@ Alcuni moduli vengono caricati in quanto parte dell'[initramfs](/index.php/Mkini
 Creare un file `.conf` all'interno della cartella `/etc/modprobe.d/` ed inserire all'interno una riga per ogni modulo che si desidera mettere in blacklist, usando la parola chiave `blacklist`. Ad esempio se si desidera impedire il caricamento del modulo `pcspkr`:
 
  `/etc/modprobe.d/nobeep.conf` 
-
 ```
 # Non caricare il modulo pcspkr all'avvio
 blacklist pcspkr
@@ -164,13 +160,11 @@ blacklist pcspkr
 Esiste comunque un modo di evitare questo inconveniente; utilizzando l'opzione `install` sarà possibile eseguire un comando personalizzato invece di inserire il modulo in memoria, si potrà quindi forzare il fallimento nel caricamento del modulo usando:
 
  `etc/modprobe.d/blacklist.conf` 
-
 ```
 ...
-install _nome_modulo_ /bin/false
+install *nome_modulo* /bin/false
 ...
 ```
-
 Questo impedirà il caricamento del modulo e di tutti quelli che da esso dipendono.
 
 #### Uso della riga di comando del kernel
@@ -188,21 +182,21 @@ I moduli del kernel sono gestiti per mezzo di applicazioni fornite dal pacchetto
 Per caricare un modulo:
 
 ```
-# modprobe _nome_modulo_
+# modprobe *nome_modulo*
 
 ```
 
 Per rimuovere un modulo:
 
 ```
-# modprobe -r _nome_modulo_
+# modprobe -r *nome_modulo*
 
 ```
 
 O, in alternativa:
 
 ```
-# rmmod _nome_modulo_
+# rmmod *nome_modulo*
 
 ```
 
@@ -216,13 +210,15 @@ Qui sotto è presentata una funzione bash, da usare come root, che mostra una li
 function aa_mod_parameters () 
 { 
     N=/dev/null;
-    C=`tput op` O=$(echo -en "\n`tput setaf 2`>>> `tput op`");
+    C=`tput op` O=$(echo -en "
+`tput setaf 2`>>> `tput op`");
     for mod in $(cat /proc/modules|cut -d" " -f1);
     do
         md=/sys/module/$mod/parameters;
         [[ ! -d $md ]] && continue;
         m=$mod;
-        d=`modinfo -d $m 2>$N | tr "\n" "\t"`;
+        d=`modinfo -d $m 2>$N | tr "
+" "\t"`;
         echo -en "$O$m$C";
         [[ ${#d} -gt 0 ]] && echo -n " - $d";
         echo;
@@ -240,7 +236,6 @@ function aa_mod_parameters ()
 Ed ecco un esempio di output:
 
  `# aa_mod_parameters` 
-
 ```
 >>> ehci_hcd - USB 2.0 'Enhanced' Host Controller (EHCI) Driver
         hird=0 - hird:host initiated resume duration, +1 for each 75us (int)
@@ -289,7 +284,8 @@ function show_mod_parameter_info ()
   do
     md=/sys/module/$mod/parameters
     [[ ! -d $md ]] && continue
-    d="$(modinfo -d $mod 2>/dev/null | tr "\n" "\t")"
+    d="$(modinfo -d $mod 2>/dev/null | tr "
+" "\t")"
     echo -en "$green$mod$reset"
     [[ ${#d} -gt 0 ]] && echo -n " - $d"
     echo
@@ -315,7 +311,9 @@ function show_mod_parameter_info ()
     $add_desc && pdescs+=("$pdesc")
     for ((i=0; i<${#pnames[@]}; i++))
     do
-      printf "  $cyan%s$reset = $yellow%s$reset\n%s\n" \
+      printf "  $cyan%s$reset = $yellow%s$reset
+%s
+" \
         ${pnames[i]} \
         "${pvals[i]}" \
         "${pdescs[i]}"

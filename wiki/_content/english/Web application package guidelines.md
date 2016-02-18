@@ -17,17 +17,17 @@ This page describes how to package web application which tends to install into `
 
 Layout example:
 
-*   `/etc/webapps/_$pkgname_`
-*   `/usr/share/webapps/_$pkgname_`
+*   `/etc/webapps/*$pkgname*`
+*   `/usr/share/webapps/*$pkgname*`
 *   `/var/...` (according to generic FHS conventions)
 
-`/usr/share/webapps/_$pkgname_` files and/or directories should be symlinked into `/var` and `/etc/`.
+`/usr/share/webapps/*$pkgname*` files and/or directories should be symlinked into `/var` and `/etc/`.
 
-`/etc/webapps/_$pkgname_` should contain some examples which helps to setup web-server to run this web application:
+`/etc/webapps/*$pkgname*` should contain some examples which helps to setup web-server to run this web application:
 
-*   `/etc/webapps/_$pkgname_/apache.example.conf`
-*   `/etc/webapps/_$pkgname_/nginx.example.conf`
-*   `/etc/webapps/_$pkgname_/other-web-server.example.conf`
+*   `/etc/webapps/*$pkgname*/apache.example.conf`
+*   `/etc/webapps/*$pkgname*/nginx.example.conf`
+*   `/etc/webapps/*$pkgname*/other-web-server.example.conf`
 
 ## Install web application package
 

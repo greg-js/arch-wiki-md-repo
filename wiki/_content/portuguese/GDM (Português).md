@@ -1,6 +1,6 @@
 Dá página do [GDM - GNOME Display Manager](http://projects.gnome.org/gdm/about.html):
 
-	_GDM é sigla para GNOME Display Manager (Gerenciador de Display do GNOME, numa tradução para o português). É um o pequeno programa que roda em segundo plano, carrega suas sessões do X, se apresenta a você como uma tela de login e lhe impede o acesso caso tenha esquecido sua senha. Ele faz praticamente tudo que você gostaria de ver no xdm, mas sem os problemas do mesmo. O GDM não utiliza nenhum código do XDM. Suporta o XDMCP e na verdade, estende-o um pouco a lugares que faltavam no xdm(mas ainda compatível com o XDMCP do xdm)._
+	*GDM é sigla para GNOME Display Manager (Gerenciador de Display do GNOME, numa tradução para o português). É um o pequeno programa que roda em segundo plano, carrega suas sessões do X, se apresenta a você como uma tela de login e lhe impede o acesso caso tenha esquecido sua senha. Ele faz praticamente tudo que você gostaria de ver no xdm, mas sem os problemas do mesmo. O GDM não utiliza nenhum código do XDM. Suporta o XDMCP e na verdade, estende-o um pouco a lugares que faltavam no xdm(mas ainda compatível com o XDMCP do xdm).*
 
 [Display managers](/index.php/Display_manager "Display manager") fornece [X Window System](/index.php/X_Window_System "X Window System") para usuários no login no prompt.
 
@@ -28,7 +28,6 @@ Para criar o login gráfico o metódo tradicional de logar no sistema, edite seu
 Se está acostumado a usar o arquivo `~/.xinitrc` para passar o argumento do servidor X quando é iniciado, por exemplo **xmodmap** ou **xsetroot**, você pode observar que pode adicionar o comando para [xprofile](/index.php/Xprofile "Xprofile"). Exemplo:
 
  `~/.xprofile` 
-
 ```
 #!/bin/sh
 
@@ -88,7 +87,6 @@ Nota-se que está com a versão 1.6.1 do xorg-server `Ctrl`+`Alt`+`Backspace` n�
 Para habilitar o login automático com GDM, adicione o seguinte na /etc/gdm/custom.conf (substituição do usuário que vai auto-logar):
 
  `/etc/gdm/custom.conf` 
-
 ```
 # Enable automatic login for user
 [daemon]
@@ -100,7 +98,6 @@ AutomaticLoginEnable=True
 Ou atraso no login automática:
 
  `/etc/gdm/custom.conf` 
-
 ```
 [daemon]
 # for login with delay
@@ -125,7 +122,7 @@ Depois, adicione o grupo **nopasswdlogin** no seu sistema. Você pode realizar p
 
 Agora, quando acessar em Sitemas > Administração > Usuários e Grupos (como root) e definir seu usuário para "Senha: não pediu no login" (você criou a opção "Nâo perguntar mas a senha de login"), seu usuário adicionou automaticamente no grupo "nopasswdlogin", agora simplesmente terá que clicar no seu nome de usuário e registrará a senha que vai ser ignorada totalmente!
 
-**Warning:** <u>NÃO FAÇA</u> COM A CONTA DE _**ROOT**_!
+**Warning:** <u>NÃO FAÇA</u> COM A CONTA DE ***ROOT***!
 
 ### GDM legacy
 

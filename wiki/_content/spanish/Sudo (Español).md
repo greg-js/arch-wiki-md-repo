@@ -173,7 +173,6 @@ Defaults:USER_NAME timestamp_timeout=20
 Este ejemplo es especialmente útil para aquellos que utilizan multiplexores de terminales como screen, tmux o ratpoison, y los que usan sudo desde scripts/cronjobs:
 
  `/etc/sudoers` 
-
 ```
 Cmnd_Alias WHEELER = /usr/sbin/lsof, /bin/nice, /bin/ps, /usr/bin/top, /usr/local/bin/nano, /usr/sbin/ss, /usr/bin/locate, /usr/bin/find, /usr/bin/rsync
 Cmnd_Alias PROCESSES = /bin/nice, /bin/kill, /usr/bin/nice, /usr/bin/ionice, /usr/bin/top, /usr/bin/kill, /usr/bin/killall, /usr/bin/ps, /usr/bin/pkill
@@ -263,7 +262,6 @@ $ sudo -E pacman -Syu
 La forma recomendada de preservar las variables de entorno es añadiendo a `env_keep`:
 
  `/etc/sudoers` 
-
 ```
 Defaults env_keep += "ftp_proxy http_proxy https_proxy no_proxy"
 
@@ -280,7 +278,7 @@ alias sudo='sudo '
 
 ### Avisos
 
-Los usuarios pueden configurar sudo para mostrar _«avisos ingeniosos»»_ cuando se introduce una contraseña incorrecta, en lugar de mostrar el mensaje predeterminado «contraseña incorrecta» (_wrong password_) . Busque la línea Defaults en `/etc/sudoers` y añada el parámetro «insults», separándolo con una coma de las opciones existentes. El resultado final podría verse así:
+Los usuarios pueden configurar sudo para mostrar *«avisos ingeniosos»»* cuando se introduce una contraseña incorrecta, en lugar de mostrar el mensaje predeterminado «contraseña incorrecta» (*wrong password*) . Busque la línea Defaults en `/etc/sudoers` y añada el parámetro «insults», separándolo con una coma de las opciones existentes. El resultado final podría verse así:
 
 ```
 #Defaults specification
@@ -303,9 +301,9 @@ Defaults timestamp_timeout=0,rootpw
 
 **Advertencia:** Arch Linux no viene ajustado para funcionar con una cuenta de root desactivada. Los usuarios pueden encontrar problemas con este método.
 
-Con sudo instalado y configurado, el usuario puede deshabilitar el inicio de sesión de root. Sin root, los _«attackers»_, primero, deben adivinar un nombre de usuario configurado como un sudoer y, luego, la contraseña de usuario.
+Con sudo instalado y configurado, el usuario puede deshabilitar el inicio de sesión de root. Sin root, los *«attackers»*, primero, deben adivinar un nombre de usuario configurado como un sudoer y, luego, la contraseña de usuario.
 
-**Advertencia:** Asegúrese de que un usuario está correctamente configurado como un sudoer _antes_ de desactivar la cuenta de root.
+**Advertencia:** Asegúrese de que un usuario está correctamente configurado como un sudoer *antes* de desactivar la cuenta de root.
 
 La cuenta puede ser bloqueada mediante `passwd`:
 
@@ -337,7 +335,7 @@ $ sudo passwd root
 
 #### kdesu
 
-kdesu puede ser utilizado bajo KDE para lanzar aplicaciones gráficas con privilegios de root. Es posible que, por defecto, kdesu trate de usar _«su»_, incluso si la cuenta de root está desactivada. Afortunadamente se puede invocar kdesu para usar «sudo» en lugar de «su». Cree/modifique el archivo `~/.kde4/share/config/kdesurc`:
+kdesu puede ser utilizado bajo KDE para lanzar aplicaciones gráficas con privilegios de root. Es posible que, por defecto, kdesu trate de usar *«su»*, incluso si la cuenta de root está desactivada. Afortunadamente se puede invocar kdesu para usar «sudo» en lugar de «su». Cree/modifique el archivo `~/.kde4/share/config/kdesurc`:
 
 ```
 [super-user-command]
@@ -483,7 +481,7 @@ admin% screen
 
 ### Problemas de SSH con TTY
 
-SSH no asigna una tty de forma predeterminada cuando se ejecuta un comando remoto. Sin una tty, sudo no puede desactivar _«echo»_ cuando pida la contraseña. Puede utilizar la opción `-tt` para obligar a SSH a asignar una tty (utilice `-tt` dos veces).
+SSH no asigna una tty de forma predeterminada cuando se ejecuta un comando remoto. Sin una tty, sudo no puede desactivar *«echo»* cuando pida la contraseña. Puede utilizar la opción `-tt` para obligar a SSH a asignar una tty (utilice `-tt` dos veces).
 
 La opción `requiretty` de `Defaults` solo permite al usuario ejecutar sudo si tiene una tty.
 
@@ -506,7 +504,6 @@ $ sudo -lU sunombredeusuario
 O vea su cuenta con:
 
  `$ sudo -l` 
-
 ```
 Matching Defaults entries for yourusename on this host:
 (''«Juego de entradas Defaults para sunombredeusuario en este host:»'')
@@ -540,7 +537,7 @@ Esto establece la umask de sudo para la umask por defecto de root (0022) y sobre
 
 En [este enlace](http://www.gratisoft.us/sudo/sudoers.man.html#sudoers_options) se puede encontrar una lista de todas las opciones disponibles para su uso con la orden `Defaults` en el archivo `/etc/sudoers`.
 
-La lista completa de opciones _(analizada a partir del código fuente de la versión 1.8.7)_ se reproduce justo debajo en un formato optimizado para copiar y pegar en los archivos sudoers y luego hacer los cambios.
+La lista completa de opciones *(analizada a partir del código fuente de la versión 1.8.7)* se reproduce justo debajo en un formato optimizado para copiar y pegar en los archivos sudoers y luego hacer los cambios.
 
 ```
 #Defaults always_set_home

@@ -1,6 +1,6 @@
 **MPD** (music player daemon) è un player audio con struttura client-server. MPD lavora in background come demone, gestisce le playlist e il database della musica e utilizza pochissime risorse. Per interfacciarsi con il demone è necessario un client. Maggiori informazioni possono essere reperite [sul sito di MPD](http://www.musicpd.org/).
 
-_Attenzione_ leggere anche la pagina ufficiale per l'installazione e la risoluzione dei problemi, lo sviluppatore principale ha indicato la nostra pagina wiki al suo stato attuale come piena di problemi (_"full of symptom killers"_), per cui la pagina ufficiale dovrebbe contenere informazioni più complete.
+*Attenzione* leggere anche la pagina ufficiale per l'installazione e la risoluzione dei problemi, lo sviluppatore principale ha indicato la nostra pagina wiki al suo stato attuale come piena di problemi (*"full of symptom killers"*), per cui la pagina ufficiale dovrebbe contenere informazioni più complete.
 
 ## Contents
 
@@ -85,7 +85,7 @@ MPD crea un file di configurazione di esempio, situato in `/usr/share/doc/mpd/mp
 
 (`/usr/share/doc/mpd/mpd.conf.example` è un ottimo punto di partenza per una orientata al singolo utente)
 
-Mai mettere questo file nella home dell'utente come suggerito in altri tutorial. Questo complicherrebe le cose e molte volte è anche inutile (notare come si stia leggendo una guida per l'installazione veloce). Se è stato precedentemente creato un file `.mpdconf` nella propria home, cancellarlo adesso. Questo è importante per evitare conflitti di configurazione. Copiandolo in `/etc`, come fatto in questa guida, MPD sarà in grado di operare come demone all'avvio. Altrimenti sarebbe necessario uno script per lanciare MPD _dopo_ il login dell'utente (ad esempio in kdm o `~/.fluxbox/startup`) oppure un avviamento manuale. Per una singola collezione musicale, il metodo qui descritto è semplicemente migliore, anche se la collezione è condivisa con più utenti. Inoltre, non bisogna preoccuparsi dei privilegi di root: anche quando MPD opera come demone, non opererà mai completamente come root in quanto automaticamente scarica i suoi privilegi di root dopo l'esecuzione.
+Mai mettere questo file nella home dell'utente come suggerito in altri tutorial. Questo complicherrebe le cose e molte volte è anche inutile (notare come si stia leggendo una guida per l'installazione veloce). Se è stato precedentemente creato un file `.mpdconf` nella propria home, cancellarlo adesso. Questo è importante per evitare conflitti di configurazione. Copiandolo in `/etc`, come fatto in questa guida, MPD sarà in grado di operare come demone all'avvio. Altrimenti sarebbe necessario uno script per lanciare MPD *dopo* il login dell'utente (ad esempio in kdm o `~/.fluxbox/startup`) oppure un avviamento manuale. Per una singola collezione musicale, il metodo qui descritto è semplicemente migliore, anche se la collezione è condivisa con più utenti. Inoltre, non bisogna preoccuparsi dei privilegi di root: anche quando MPD opera come demone, non opererà mai completamente come root in quanto automaticamente scarica i suoi privilegi di root dopo l'esecuzione.
 
 ### Configurare correttamente il suono
 
@@ -98,7 +98,6 @@ Assicurarsi che la propria scheda audio possa effettuare il mixing hardware (mol
 Per cambiare il volume dell'audio di MPD indipendentemente da altri programmi, decommentare o aggiungere in mpd.conf:
 
  `/etc/mpd.conf` 
-
 ```
 mixer_type			"software"
 
@@ -111,7 +110,6 @@ mixer_type			"software"
 Modificare `/etc/mpd.conf` nel seguente modo.
 
  `/etc/mpd.conf` 
-
 ```
 music_directory       "/home/user/music"         # La directory della collezione musicale.
 playlist_directory    "/var/lib/mpd/playlists"
@@ -325,7 +323,7 @@ lastfmproxy è uno script python che riproduce uno stream last.fm su un altro me
 
 **Nota:** Visto che viene installato in una directory di sola lettura ma richiede permessi di lettura/scrittura per funzioni quali la memorizzazione delle stazioni precedentemente ascoltate, sarebbe saggio copiare `/usr/share/lastfmproxy` nella propria home.
 
-Avviare lastfmproxy con `lastfmproxy` e visitare [http://localhost:1881/](http://localhost:1881/) nel proprio browser. Per aggiungere una stazione last.fm station navigare in [http://localhost:1881/](http://localhost:1881/) seguito da lastfm:// url. Esempio: [http://localhost:1881/lastfm://globaltags/punk](http://localhost:1881/lastfm://globaltags/punk) . Tornare in [http://localhost:1881/](http://localhost:1881/) e scaricare il file m3u selezionando il link _Start Listening_. Semplicemente aggiungere questo file alle playlist.
+Avviare lastfmproxy con `lastfmproxy` e visitare [http://localhost:1881/](http://localhost:1881/) nel proprio browser. Per aggiungere una stazione last.fm station navigare in [http://localhost:1881/](http://localhost:1881/) seguito da lastfm:// url. Esempio: [http://localhost:1881/lastfm://globaltags/punk](http://localhost:1881/lastfm://globaltags/punk) . Tornare in [http://localhost:1881/](http://localhost:1881/) e scaricare il file m3u selezionando il link *Start Listening*. Semplicemente aggiungere questo file alle playlist.
 
 ### Non riprodurre all'avvio
 
@@ -334,8 +332,8 @@ Avviare lastfmproxy con `lastfmproxy` e visitare [http://localhost:1881/](http:/
 Se non si desidera che MPD riproduca la playlist all'avvio del demone, ma si desidera preservare le altre informazioni di stato, aggiungere le righe seguenti al file `/etc/rc.d/mpd`:
 
 ```
- _..._
- _stat_busy "Avvio di Music Player Daemon"_
+ *...*
+ *stat_busy "Avvio di Music Player Daemon"*
 
 ```
 
@@ -358,8 +356,8 @@ Se non si desidera che MPD riproduca la playlist all'avvio del demone, ma si des
 ```
 
 ```
- _/usr/bin/mpd /etc/mpd.conf &> /dev/null_
- _..._
+ */usr/bin/mpd /etc/mpd.conf &> /dev/null*
+ *...*
 
 ```
 

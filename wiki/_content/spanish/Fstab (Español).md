@@ -30,7 +30,6 @@ El archivo es leído por la orden `mount`, a la cual le basta con encontrar cual
 He aquí una muestra de archivo `/etc/fstab`, utilizando nombres descriptivos del kernel:
 
  `/etc/fstab` 
-
 ```
 # <file system>        <dir>         <type>    <options>             <dump> <pass>
 /dev/sda1              /             ext4      defaults,noatime      0      1
@@ -48,8 +47,8 @@ El archivo `/etc/fstab` contiene los siguientes campos separados por un espacio 
 ```
 
 *   **<file system>** - Define la partición o dispositivo de almacenamiento para ser montado.
-*   **<dir>** - Indica a la orden mount el punto de montaje donde la partición (_<file system>_) será montada.
-*   **<type>** - Indica el tipo de sistema de archivos de la partición o dispositivo de almacenamiento para ser montado. Hay muchos sistemas de archivos diferentes que son compatibles como, por ejemplo: `ext2`, `ext3`, `ext4`, `reiserfs`, `xfs`, `jfs`, `smbfs`, `iso9660`, `vfat`, `ntfs`, `swap` y `auto`. El _type_ `auto` permite a la orden _mount_ determinar qué tipo de sistema de archivos se utiliza. Esta opción es útil para proporcionar soporte a unidades ópticas (CD/DVD).
+*   **<dir>** - Indica a la orden mount el punto de montaje donde la partición (*<file system>*) será montada.
+*   **<type>** - Indica el tipo de sistema de archivos de la partición o dispositivo de almacenamiento para ser montado. Hay muchos sistemas de archivos diferentes que son compatibles como, por ejemplo: `ext2`, `ext3`, `ext4`, `reiserfs`, `xfs`, `jfs`, `smbfs`, `iso9660`, `vfat`, `ntfs`, `swap` y `auto`. El *type* `auto` permite a la orden *mount* determinar qué tipo de sistema de archivos se utiliza. Esta opción es útil para proporcionar soporte a unidades ópticas (CD/DVD).
 *   **<options>** - Indica las opciones de montaje que la orden mount utilizará para montar el sistema de archivos. Tenga en cuenta que algunas [opciones de montaje](http://linux.die.net/man/8/mount) son para ​​sistema de archivos específicos. Algunas de las opciones más comunes son:
 
 *   `auto` - El sistema de archivos será montado automáticamente durante el arranque, o cuando la orden `mount -a` se invoque.
@@ -76,9 +75,9 @@ El archivo `/etc/fstab` contiene los siguientes campos separados por un espacio 
 *   `nofail` - Monta el dispositivo cuando está presente, pero ignora su ausencia. Esto evita que se cometan errores durante el arranque para los medios extraíbles.
 *   `defaults` - Asigna las opciones de montaje predeterminadas que serán utilizadas para el sistema de archivos. Las opciones predeterminadas para `ext4` son: `rw`, `suid`, `dev`, `exec`, `auto`, `nouser`, `async`.
 
-*   **<dump>** - Utilizado por el programa dump (_«volcado»_) para decidir cuándo hacer una copia de seguridad. Dump comprueba la entrada en el archivo fstab y el número de la misma le indica si un sistema de archivos debe ser respaldado o no. La entradas posibles son 0 y 1\. Si es 0, dump ignorará el sistema de archivos, mientras que si el valor es 1, dump hará una copia de seguridad. La mayoría de los usuarios no tendrán dump instalado, por lo que deben poner el valor 0 para la entrada <dump>.
+*   **<dump>** - Utilizado por el programa dump (*«volcado»*) para decidir cuándo hacer una copia de seguridad. Dump comprueba la entrada en el archivo fstab y el número de la misma le indica si un sistema de archivos debe ser respaldado o no. La entradas posibles son 0 y 1\. Si es 0, dump ignorará el sistema de archivos, mientras que si el valor es 1, dump hará una copia de seguridad. La mayoría de los usuarios no tendrán dump instalado, por lo que deben poner el valor 0 para la entrada <dump>.
 
-*   **<pass>** -Utilizado por [fsck](/index.php/Fsck "Fsck") para decidir el orden en el que los sistemas de archivos serán comprobados. Las entradas posibles son 0, 1 y 2\. El sistema de archivos raíz (_«root»_) debe tener la más alta prioridad: 1 -todos los demás sistemas de archivos que desea comprobar deben tener un 2-. La utilidad fsck no comprobará los sistemas de archivos que vengan ajustados con un valor 0 en <pass>.
+*   **<pass>** -Utilizado por [fsck](/index.php/Fsck "Fsck") para decidir el orden en el que los sistemas de archivos serán comprobados. Las entradas posibles son 0, 1 y 2\. El sistema de archivos raíz (*«root»*) debe tener la más alta prioridad: 1 -todos los demás sistemas de archivos que desea comprobar deben tener un 2-. La utilidad fsck no comprobará los sistemas de archivos que vengan ajustados con un valor 0 en <pass>.
 
 ## Identificación de los sistemas de archivos
 
@@ -87,7 +86,6 @@ Hay tres maneras de identificar una partición o un dispositivo de almacenamient
 Para mostrar información básica acerca de las particiones, ejecute:
 
  `$ lsblk -f` 
-
 ```
 NAME   FSTYPE LABEL      UUID                                 MOUNTPOINT
 sda                                                           
@@ -109,14 +107,13 @@ Véase el [ejemplo](#Ejemplo_de_archivo) anterior.
 
 ### Etiqueta
 
-**Nota:** Cada etiqueta (_«label»_) debe ser única, para evitar posibles conflictos.
+**Nota:** Cada etiqueta (*«label»*) debe ser única, para evitar posibles conflictos.
 
 Para etiquetar un dispositivo o partición, véase [este artículo](/index.php/Persistent_block_device_naming "Persistent block device naming"). También puede instalar y usar [gparted](https://www.archlinux.org/packages/?name=gparted), pero para cambiar el nombre de la partición raíz tendrá que hacerse desde una distribución Linux «live» (Parted Magic, Ubuntu, etc.), ya que la partición se debe desmontar primero.
 
 Ejecute `lsblk -f` para mostrar la lista de las particiones, y coloque la etiqueta visualizada precedida del prefijo `LABEL=`:
 
  `/etc/fstab` 
-
 ```
 # <file system>        <dir>         <type>    <options>             <dump> <pass> 
 LABEL=Arch_Linux       /             ext4      defaults,noatime      0      1
@@ -130,14 +127,12 @@ Todas las particiones y dispositivos tienen un UUID único. Los UUID son generad
 Ejecute `lsblk -f` para mostrar la lista de las particiones, y coloque el número identifidor de la unidad visualizado precedido del prefijo `UUID=` :
 
 **Sugerencia:** Si desea conocer solo el UUID de una partición específica, escriba:
-
 ```
 $ lsblk -no UUID /dev/sda2
 
 ```
 
  `/etc/fstab` 
-
 ```
 # <file system>                            <dir>     <type>    <options>             <dump> <pass>
 UUID=24f28fc6-717e-4bcd-a5f7-32b959024e26  /         ext4      defaults,noatime      0      1
@@ -162,7 +157,7 @@ Esto comprobará el sistema de archivos y montará `/home` cuando se acceda a la
 
 Lo mismo se aplica a los montajes del sistema de archivos remoto. Si quiere que se monte solo cuando se acceda, tendrá que usar el parámetro `noauto,x-systemd.automount`. Además, puede utilizar la opción `x-systemd.device-timeout=#` para especificar un tiempo de espera para el caso de que el recurso de red no esté disponible.
 
-Si tiene sistemas de archivos cifrados con keyfiles, también puede añadir el parámetro `noauto` para las entradas correspondientes de `/etc/crypttab`. _systemd_ no abrirá el dispositivo cifrado en el arranque, sino que esperará hasta que realmente se acceda al mismo y entonces lo abrirá automáticamente con el archivo de claves (_«keyfiles»_) especificado antes de montarlo. Esto podría ahorrar unos segundos en el arranque si se está usando, por ejemplo, un dispositivo RAID cifrado, porque _systemd_ no tiene que esperar a que el dispositivo esté disponible. Por ejemplo:
+Si tiene sistemas de archivos cifrados con keyfiles, también puede añadir el parámetro `noauto` para las entradas correspondientes de `/etc/crypttab`. *systemd* no abrirá el dispositivo cifrado en el arranque, sino que esperará hasta que realmente se acceda al mismo y entonces lo abrirá automáticamente con el archivo de claves (*«keyfiles»*) especificado antes de montarlo. Esto podría ahorrar unos segundos en el arranque si se está usando, por ejemplo, un dispositivo RAID cifrado, porque *systemd* no tiene que esperar a que el dispositivo esté disponible. Por ejemplo:
 
  `/etc/crypttab`  `data /dev/md0 /root/key noauto` 
 
@@ -203,7 +198,6 @@ Active nuevamente swap:
 Si algún punto de montaje contiene espacios en el nombre, use el carácter de la barra invertida `\` seguido por el código de 3 dígitos `040` para emular el espacio:
 
  `/etc/fstab` 
-
 ```
 UUID=47FA-4071     /home/username/Camera<font color="grey">\040</font>Pictures   vfat  defaults,noatime       0  0
 /dev/sda7          /media/100<font color="grey">\040</font>GB<font color="grey">\040</font>(Storage)       ext4  defaults,noatime,user  0  2
@@ -250,7 +244,6 @@ Reinicie para que los cambios surtan efecto. Tenga en cuenta que si bien puede s
 Después de aplicar los cambios, es posible que desee verificar que todo es correcto, comprobando `/proc/mounts` con la orden `findmnt`:
 
  `$ findmnt --target /tmp` 
-
 ```
 TARGET SOURCE FSTYPE OPTIONS
 /tmp   tmpfs  tmpfs  rw,nosuid,nodev,relatime

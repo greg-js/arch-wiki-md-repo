@@ -32,7 +32,6 @@ MATE è attualmente sviluppato [qui](https://github.com/Perberos/Mate-Desktop-En
 I pacchetti non ancora stabili sono disponibili anche su ([mate-desktop-environment](https://aur.archlinux.org/packages/mate-desktop-environment/)).
 
 **Attenzione:** È disponibile nei repository una nuova serie di pacchetti del 10 Febbraio 2012 con una diversa numerazione basata sulla versione. Per un aggiornamento sicuro del sistema è necessario digitare da terminale:
-
 ```
 # pacman -Syuu
 
@@ -173,7 +172,7 @@ Se si usa NetworkManager per la connessione, è possibile installare [network-ma
 
 ## Usare Compiz Fusion sans Emerald
 
-Se si volesse usare Marco con [Compiz (Italiano)](/index.php/Compiz_(Italiano) "Compiz (Italiano)"), installare e lanciare Compiz Fusion normalmente,installare il pacchetto _gtk-window-decorator_ e digitare il seguente comando per creare un symlink:
+Se si volesse usare Marco con [Compiz (Italiano)](/index.php/Compiz_(Italiano) "Compiz (Italiano)"), installare e lanciare Compiz Fusion normalmente,installare il pacchetto *gtk-window-decorator* e digitare il seguente comando per creare un symlink:
 
 ```
 # ln -s /usr/lib/libmarco-private.so.0 /usr/lib/libmetacity-private.so.0

@@ -29,7 +29,7 @@
     *   [5.3 Desactivada la gestión de red](#Desactivada_la_gesti.C3.B3n_de_red)
     *   [5.4 Personalizar resolv.conf](#Personalizar_resolv.conf)
     *   [5.5 Problemas con DHCP](#Problemas_con_DHCP)
-    *   [5.6 Problemas con hostname (_«nombre del equipo»_)](#Problemas_con_hostname_.28.C2.ABnombre_del_equipo.C2.BB.29)
+    *   [5.6 Problemas con hostname (*«nombre del equipo»*)](#Problemas_con_hostname_.28.C2.ABnombre_del_equipo.C2.BB.29)
         *   [5.6.1 Opción 1: modificar keyfil en NetworkManager.conf](#Opci.C3.B3n_1:_modificar_keyfil_en_NetworkManager.conf)
         *   [5.6.2 Opción 2: configurar dhclient para poner el nombre del equipo en el servidor DHCP](#Opci.C3.B3n_2:_configurar_dhclient_para_poner_el_nombre_del_equipo_en_el_servidor_DHCP)
         *   [5.6.3 Opción 3: configurar NetworkManager para utilizar dhcpcd](#Opci.C3.B3n_3:_configurar_NetworkManager_para_utilizar_dhcpcd)
@@ -94,7 +94,7 @@ Véase [Userbase page](http://userbase.kde.org/NetworkManagement) para obtener m
 
 ### XFCE
 
-El paquete [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) no tendrá ningún problema en XFCE, pero para ver las notificaciones, _incluidos los mensajes de error_, necesitará `nm-applet`, una específica implementación de Freedesktop (consulte [Proyecto Galapago](http://www.galago-project.org/specs/notification/0.9/index.html)) para mostrar las notificaciones. Para activar las notificaciones, instale [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd), un paquete que proporciona una implementación de la especificación.
+El paquete [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) no tendrá ningún problema en XFCE, pero para ver las notificaciones, *incluidos los mensajes de error*, necesitará `nm-applet`, una específica implementación de Freedesktop (consulte [Proyecto Galapago](http://www.galago-project.org/specs/notification/0.9/index.html)) para mostrar las notificaciones. Para activar las notificaciones, instale [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd), un paquete que proporciona una implementación de la especificación.
 
 Sin un demonio de notificación, `nm-applet` generará los siguientes errores en stdout/stderr:
 
@@ -132,7 +132,6 @@ Para guardar información confidencial sobre las conexiones instale y configure 
 Para ejecutar `nm-applet` en un entorno sin una bandeja de sistema, puede utilizar [trayer](https://www.archlinux.org/packages/?name=trayer) o [stalonetray](https://www.archlinux.org/packages/?name=stalonetray). Por ejemplo, puede agregar un script como este a su propia ruta:
 
  `nmgui` 
-
 ```
  #!/bin/sh
  nm-applet    > /dev/null 2>/dev/null &
@@ -154,7 +153,6 @@ NetworkManager requiere algunos pasos adicionales para ser capaz de ejecutarse c
 Antes de comenzar, compruebe que `/etc/hosts` está configurado correctamente. Si ya ha intentado conectarse antes de realizar este paso, NetworkManager puede haberlo modificado. He aquí un ejemplo de línea hostname en `/etc/hosts`:
 
  `/etc/hosts` 
-
 ```
 127.0.0.1 localhost
 ::1       localhost
@@ -164,7 +162,6 @@ Antes de comenzar, compruebe que `/etc/hosts` está configurado correctamente. S
 En caso de tener nss-myhostname apagado, la línea sería:
 
  `/etc/hosts` 
-
 ```
 127.0.0.1 my-laptop localhost
 ::1       my-laptop localhost
@@ -218,14 +215,13 @@ Véase [General troubleshooting#Session permissions](/index.php/General_troubles
 
 Con una sesión de trabajo, tiene varias opciones para la concesión de los privilegios necesarios para NetworkManager:
 
-_Opción 1._ Ejecute un agente de autenticación [PolicyKit](/index.php/PolicyKit "PolicyKit") cuando se conecte, como `/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1` (es parte del paquete [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome)). Se le pedirá la contraseña cada vez que agregue o quite una conexión de red.
+*Opción 1.* Ejecute un agente de autenticación [PolicyKit](/index.php/PolicyKit "PolicyKit") cuando se conecte, como `/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1` (es parte del paquete [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome)). Se le pedirá la contraseña cada vez que agregue o quite una conexión de red.
 
-_Opción 2._ Añada su usuario al grupo `wheel`. No tendrá que introducir su contraseña, pero necesitará garantizar los permisos particulares a los usuarios tales como la capacidad de usar [sudo](/index.php/Sudo "Sudo") sin introducir la contraseña de root.
+*Opción 2.* Añada su usuario al grupo `wheel`. No tendrá que introducir su contraseña, pero necesitará garantizar los permisos particulares a los usuarios tales como la capacidad de usar [sudo](/index.php/Sudo "Sudo") sin introducir la contraseña de root.
 
-_Opción 3._ Añádase al grupo `network` y cree el siguiente archivo
+*Opción 3.* Añádase al grupo `network` y cree el siguiente archivo
 
  `/etc/polkit-1/rules.d/50-org.freedesktop.NetworkManager.rules` 
-
 ```
 polkit.addRule(function(action, subject) {
   if (action.id.indexOf("org.freedesktop.NetworkManager.") == 0 && subject.isInGroup("network")) {
@@ -242,7 +238,7 @@ Hay algunos servicios de red que no se desean ejecutar hasta que NetworkManager 
 
 Una vez que la función está activa, se pueden añadir los scripts apropiados a la carpeta `/etc/NetworkManager/dispatcher.d`. Estos scripts necesitan los permisos de ejecución del usuario. Por seguridad, es una buena práctica que sean propiedad de **root:root** y con permisos de escritura únicamente por el propietario.
 
-Los scripts se ejecutan en orden alfabético durante la fase de conexión, y en orden alfabético inverso durante la fase de desconexión. Reciben dos argumentos: el nombre de la interfaz (por ejemplo, _eth0_) y el estado (_up_ o _down_ para las interfaces y vpn-up o vpn-down para las conexiones vpn). A fin de garantizar el orden en que vayan surgiendo, es común el uso de caracteres numéricos puestos como prefijos delante del nombre del script (por ejemplo, `10_portmap` o `30_netfs` (que asegura que el mapeador de puertos se levante antes de que se intente montar NFS).
+Los scripts se ejecutan en orden alfabético durante la fase de conexión, y en orden alfabético inverso durante la fase de desconexión. Reciben dos argumentos: el nombre de la interfaz (por ejemplo, *eth0*) y el estado (*up* o *down* para las interfaces y vpn-up o vpn-down para las conexiones vpn). A fin de garantizar el orden en que vayan surgiendo, es común el uso de caracteres numéricos puestos como prefijos delante del nombre del script (por ejemplo, `10_portmap` o `30_netfs` (que asegura que el mapeador de puertos se levante antes de que se intente montar NFS).
 
 **Advertencia:**
 
@@ -294,7 +290,7 @@ REMOTE='user@host:/remote/path'
 LOCAL='/local/path'
 
 interface=$1 status=$2
-if [ "$CONNECTION_UUID" = "_uuid_" ]; then
+if [ "$CONNECTION_UUID" = "*uuid*" ]; then
   case $status in
     up)
       export SSH_AUTH_SOCK=$(find /tmp -maxdepth 1 -type s -user "$USER" -name 'ssh')
@@ -315,7 +311,6 @@ En este ejemplo, conectaremos automáticamente a una conexión VPN, previamente 
 	1\. Cree el script dispatcher:
 
  `/etc/NetworkManager/dispatcher.d/vpn-up` 
-
 ```
 #!/bin/sh
 VPN_NAME="name of VPN connection defined in NetworkManager"
@@ -374,7 +369,7 @@ Consulte: [Proxy settings](/index.php/Proxy_settings "Proxy settings")
 
 ## Comprobación
 
-Los applets de NetworkManager están diseñados para cargarse al iniciar sesión, por lo que no debería ser objeto de configuración adicional para la mayoría de los casos. Si ya ha desactivado la configuración de red existente y ha desconectado la red, ahora puede comprobar si NetworkManager funciona. El primer paso es [iniciar](/index.php/Daemon "Daemon") el demonio _networkmanager_.
+Los applets de NetworkManager están diseñados para cargarse al iniciar sesión, por lo que no debería ser objeto de configuración adicional para la mayoría de los casos. Si ya ha desactivado la configuración de red existente y ha desconectado la red, ahora puede comprobar si NetworkManager funciona. El primer paso es [iniciar](/index.php/Daemon "Daemon") el demonio *networkmanager*.
 
 Algunos applets proveen un archivo `.desktop` para que el applet de NetworkManager se puede cargar a través del menú de la aplicación. Si no lo hace, tendrá que descubrir la orden para iniciarlo o reiniciar sesión otra vez para iniciar el applet. Una vez que el applet se inicia, es probable que comience a interrogar y ordenar conexiones de red, para después autoconfigurarse con un servidor DHCP.
 
@@ -443,7 +438,7 @@ require dhcp_server_identifier
 
 en `/etc/dhcpcd.conf` (advierta que este archivo es un archivo distinto de `dhcpd.conf`). Esto no debería causar problemas a menos que tenga varios servidores DHCP en la red (no habitual); consulte [esta página](http://technet.microsoft.com/en-us/library/cc977442.aspx) para obtener más información.
 
-### Problemas con hostname (_«nombre del equipo»_)
+### Problemas con hostname (*«nombre del equipo»*)
 
 Dependerá de los plugins utilizados por NetworkManager, los cuales determinarán si el nombre del equipo se envía o no a un router para conectarse. El plugin genérico «keyfil» no envía, por defecto, el nombre del equipo en la configuración.
 
@@ -452,22 +447,20 @@ Dependerá de los plugins utilizados por NetworkManager, los cuales determinará
 Para hacer que transmita el nombre del equipo, agregue lo siguiente al archivo:
 
  `/etc/NetworkManager/NetworkManager.conf` 
-
 ```
 [keyfile]
-hostname=_su_nombre-del-equipo_
+hostname=*su_nombre-del-equipo*
 ```
 
 Las opciones en `[keyfile]` se aplicarán a las conexiones de red en la ruta predeterminada `/etc/NetworkManager/system-connections`.
 
 #### Opción 2: configurar dhclient para poner el nombre del equipo en el servidor DHCP
 
-Otra opción es configurar el cliente DHCP, que NetworkManager iniciará automáticamente, para que envíe el nombre del equipo. NetworkManager utiliza [dhclient](https://www.archlinux.org/packages/?name=dhclient) si está instalado y, en su defecto, recurre a [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd). Para hacer que _dhclient_ envíe el nombre del equipo hay que establecer una opción non-default, que permita que _dhcpcd_ envíe el nombre del equipo por defecto.
+Otra opción es configurar el cliente DHCP, que NetworkManager iniciará automáticamente, para que envíe el nombre del equipo. NetworkManager utiliza [dhclient](https://www.archlinux.org/packages/?name=dhclient) si está instalado y, en su defecto, recurre a [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd). Para hacer que *dhclient* envíe el nombre del equipo hay que establecer una opción non-default, que permita que *dhcpcd* envíe el nombre del equipo por defecto.
 
-*   En primer lugar, compruebe qué cliente DHCP está utilizando (_dhclient_ en este ejemplo):
+*   En primer lugar, compruebe qué cliente DHCP está utilizando (*dhclient* en este ejemplo):
 
  `# journalctl -b | egrep "dhclient|dhcpcd"` 
-
 ```
 ...
 Nov 17 21:03:20 zenbook dhclient[2949]: Nov 17 21:03:20 zenbook dhclient[2949]: Bound to *:546
@@ -529,7 +522,7 @@ Debido a un error aún no solucionado, al cambiar las conexiones por defecto par
 
 Para solucionar este problema hay que editar la conexión por defecto (por ejemplo, «Auto eth0») en `nm-applet`, cambiar el nombre de la conexión (por ejemplo, «mi eth0»), desactivar la casilla «Disponible para todos los usuarios», modificar la configuración de IP estáticas como se desee, y pulsar en **Aplicar**. Esto guardará la nueva conexión con el nombre dado.
 
-A continuación, tendrá que asegurarse que la conexión por defecto no se conecte automáticamente. Para ello, ejecute `nm-connection-editor` (_no_ como root). En el editor de conexión, modifique la conexión por defecto (por ejemplo, «Auto eth0») y desmarque la opción «Conectar automáticamente». Pulse **Aplicar** y cierre el editor de conexión.
+A continuación, tendrá que asegurarse que la conexión por defecto no se conecte automáticamente. Para ello, ejecute `nm-connection-editor` (*no* como root). En el editor de conexión, modifique la conexión por defecto (por ejemplo, «Auto eth0») y desmarque la opción «Conectar automáticamente». Pulse **Aplicar** y cierre el editor de conexión.
 
 ### No se pueden editar las conexiones como usuario normal
 
@@ -604,15 +597,15 @@ fi
 
 ```
 
-Es útil para un script `cron.hourly` que ejecuta `fpupdate` para la actualización del escáner de firmas del antivirus F-Prot, por ejemplo. Otra forma de ser útil, con una pequeña modificación, podría ser diferenciar entre redes que utilizan diferentes partes de la salida `nm-tool`, por ejemplo, en cuanto que la red inalámbrica activa se indica con un asterisco, es posible, con la utilización de _grep_, cambiar el nombre de la red orientando la busqueda de _grep_ a la red del asterisco.
+Es útil para un script `cron.hourly` que ejecuta `fpupdate` para la actualización del escáner de firmas del antivirus F-Prot, por ejemplo. Otra forma de ser útil, con una pequeña modificación, podría ser diferenciar entre redes que utilizan diferentes partes de la salida `nm-tool`, por ejemplo, en cuanto que la red inalámbrica activa se indica con un asterisco, es posible, con la utilización de *grep*, cambiar el nombre de la red orientando la busqueda de *grep* a la red del asterisco.
 
 ### Desbloquear automáticamente keyring después del login
 
 #### GNOME
 
-1.  Haga clic con el botón derecho en el icono `nm-applet` del panel y seleccione _«Configuración de la red»_ y abra la pestaña _«Inalámbrica»_.
-2.  Seleccione la conexión que desee y haga clic en el botón _«Configuración»_.
-3.  Marque las casillas _«Conectar automáticamente»_ y _«Disponible para todos los usuarios»_.
+1.  Haga clic con el botón derecho en el icono `nm-applet` del panel y seleccione *«Configuración de la red»* y abra la pestaña *«Inalámbrica»*.
+2.  Seleccione la conexión que desee y haga clic en el botón *«Configuración»*.
+3.  Marque las casillas *«Conectar automáticamente»* y *«Disponible para todos los usuarios»*.
 
 Cierre la sesión y vuelva a entrar para completar el proceso.
 
@@ -714,7 +707,6 @@ nameserver 8.8.4.4
 Y, de este modo, tiene el dispatcher que reemplaza los servidores DHCP descubiertos con los de OpenDNS:
 
  `/etc/NetworkManager/dispatcher.d/dns-servers-opendns` 
-
 ```
 #!/bin/bash
 # Use OpenDNS servers over DHCP discovered servers

@@ -50,7 +50,7 @@
 
 ## 命名规范
 
-[Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon")品牌遵循这样的命名规则:每个产品关联与某个市场分段.这篇文章中读者将会见到_产品_名(比如 HD 4850, X1900)与_代码_或者_核心_名(比如 RV770, R580). 传统地, 一个_产品系列_将匹配一个_核心系列_ (比如产品系列 "X1000" 包含 X1300, X1600, X1800, 和 X1900 ,他们的核心系列是"R500" – 包含 RV515, RV530, R520, 和 R580 核心).
+[Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon")品牌遵循这样的命名规则:每个产品关联与某个市场分段.这篇文章中读者将会见到*产品*名(比如 HD 4850, X1900)与*代码*或者*核心*名(比如 RV770, R580). 传统地, 一个*产品系列*将匹配一个*核心系列* (比如产品系列 "X1000" 包含 X1300, X1600, X1800, 和 X1900 ,他们的核心系列是"R500" – 包含 RV515, RV530, R520, 和 R580 核心).
 
 具体对应关系可以查看维基百科： [Wikipedia:Comparison of AMD graphics processing units](https://en.wikipedia.org/wiki/Comparison_of_AMD_graphics_processing_units "wikipedia:Comparison of AMD graphics processing units").
 
@@ -183,7 +183,6 @@ EndSection
 使用 `systool` 来调试模块参数，参阅 [Kernel_modules#Obtaining_information](/index.php/Kernel_modules#Obtaining_information "Kernel modules")：
 
  `$ systool -v -m radeon` 
-
 ```
   Parameters:
     agpmode             = "0"
@@ -301,7 +300,6 @@ EndSection
 上述方法不是永久性的，系统重启后将丢失。为了让它一直有效，你可以使用[systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd") (例如 [#Dynamic frequency switching](#Dynamic_frequency_switching)):
 
  `/etc/tmpfiles.d/radeon-pm.conf` 
-
 ```
 w /sys/class/drm/card0/device/power_method - - - - dynpm
 
@@ -310,7 +308,6 @@ w /sys/class/drm/card0/device/power_method - - - - dynpm
 你也可以使用[udev](/index.php/Udev "Udev")规则替代 (例如 [#Profile-based frequency switching](#Profile-based_frequency_switching)):
 
  `/etc/udev/rules.d/30-radeon-pm.rules` 
-
 ```
 KERNEL=="dri/card0", SUBSYSTEM=="drm", DRIVERS=="radeon", ATTR{device/power_method}="profile", ATTR{device/power_profile}="low"
 
@@ -369,7 +366,6 @@ dpm有3种模式可选:
 要查看当前GPU频率，可以运行如下命令，你可以看到类似如下输出：
 
  `# cat /sys/kernel/debug/dri/0/radeon_pm_info` 
-
 ```
   state: PM_STATE_ENABLED
   default engine clock: 300000 kHz
@@ -529,7 +525,6 @@ HDMI音频输出在 [xf86-video-ati](https://www.archlinux.org/packages/?name=xf
 要是它不会自动使用的话,你也可以通过声明环境变量 `LIBVA_DRIVER_NAME` 为 `vdpau` 和 `VDPAU_DRIVER` 为对应驱动来强制启用，例如：
 
  `~/.bashrc` 
-
 ```
 export LIBVA_DRIVER_NAME=vdpau
 export VDPAU_DRIVER=r600
@@ -544,7 +539,6 @@ export VDPAU_DRIVER=r600
 使用 `vainfo` 来验证新设置：
 
  `$ vainfo` 
-
 ```
 libva info: VA-API version 0.38.0
 libva info: va_getDriverName() returns 0
@@ -570,7 +564,6 @@ vainfo: Supported profile and entrypoints
 radeon驱动默认启用垂直同步刷新，除了跑分外各种情况下工作良好。要关闭它，可以创建 `~/.drirc` （如果已存在请修改），加入以下部分 :
 
  `~/.drirc` 
-
 ```
 <driconf>
     <device screen="0" driver="dri2">

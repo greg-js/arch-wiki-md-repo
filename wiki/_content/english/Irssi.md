@@ -1,4 +1,4 @@
-[irssi](http://www.irssi.org/) is a modular, ncurses based IRC (Internet Relay Chat) client. It also supports [SILC](https://en.wikipedia.org/wiki/SILC_(protocol) "wikipedia:SILC (protocol)") and [ICB](http://www.icb.net/_jrudd/icb/protocol.html) protocols via plugins.
+[irssi](http://www.irssi.org/) is a modular, ncurses based IRC (Internet Relay Chat) client. It also supports [SILC](https://en.wikipedia.org/wiki/SILC_(protocol) and [ICB](http://www.icb.net/_jrudd/icb/protocol.html) protocols via plugins.
 
 ## Contents
 
@@ -76,7 +76,7 @@ Then open irssi and run the SASL script and enter your SASL settings. Please use
 
 ```
 /script load autorun/cap_sasl.pl
-/sasl set Freenode _primary-nick_ _password_ _auth_
+/sasl set Freenode *primary-nick* *password* *auth*
 /sasl save
 /save
 
@@ -86,7 +86,7 @@ Then open irssi and run the SASL script and enter your SASL settings. Please use
 
 *   Make sure to use the correct capitalization for the network name.
 *   Your password will be visible when you type it and can also be seen in `~/.irssi/sasl.auth`
-*   If your password contains `$`, you have to prefix it with another `$` for _irssi_ to properly parse it.
+*   If your password contains `$`, you have to prefix it with another `$` for *irssi* to properly parse it.
 
 Restart irssi and look for "Irssi: SASL authentication successful".
 
@@ -199,7 +199,7 @@ See [smartfilter](https://github.com/lifeforms/irssi-smartfilter) to restrict jo
 
 ### HTTP Proxy
 
-To use _irssi_ behind a HTTP proxy, the following commands are required:
+To use *irssi* behind a HTTP proxy, the following commands are required:
 
 ```
 /SET use_proxy ON
@@ -207,11 +207,12 @@ To use _irssi_ behind a HTTP proxy, the following commands are required:
 /SET proxy_port <Proxy port>
 /SET -clear proxy_string
 /SET proxy_string_after conn %s %d
-/EVAL SET proxy_string CONNECT %s:%d HTTP/1.0\n\n
+/EVAL SET proxy_string CONNECT %s:%d HTTP/1.0
+
 
 ```
 
-_irssi_ should then alter its config file correspondingly; if the proxy is not required, just set use_proxy to OFF.
+*irssi* should then alter its config file correspondingly; if the proxy is not required, just set use_proxy to OFF.
 
 Should the proxy require a password, try:
 
@@ -231,22 +232,22 @@ Otherwise:
 
 ### irssi with nicklist in tmux
 
-The _irssi_ plugin '[nicklist](http://scripts.irssi.org/scripts/nicklist.pl)' offers to add a pane listing the users on the channel currently viewed. It has two methods to do this:
+The *irssi* plugin '[nicklist](http://scripts.irssi.org/scripts/nicklist.pl)' offers to add a pane listing the users on the channel currently viewed. It has two methods to do this:
 
-*   **screen**, which simply adds the list to the right of _irssi_, but brings the disadvantage that the entire window gets redrawn every time _irssi_ prints a line.
+*   **screen**, which simply adds the list to the right of *irssi*, but brings the disadvantage that the entire window gets redrawn every time *irssi* prints a line.
 
-*   **fifo**, which like the name suggests writes the list into a fifo that can then be continuously read with e. g. _cat ~/.irssi/nicklistfifo_.
+*   **fifo**, which like the name suggests writes the list into a fifo that can then be continuously read with e. g. *cat ~/.irssi/nicklistfifo*.
 
-nicklist will use the more efficient _fifo_ with:
+nicklist will use the more efficient *fifo* with:
 
 ```
 /NICKLIST FIFO
 
 ```
 
-This fifo can be used in a [tmux](/index.php/Tmux "Tmux") window split vertically with _irssi_ in its left pane and the _cat_ from above in a small one in its right. Since the pane is dependent on its creating tmux session's geometry, a subsequent session with a different one needs to recreate it (which also implies a switch in _irssi_ windows to refill the fifo).
+This fifo can be used in a [tmux](/index.php/Tmux "Tmux") window split vertically with *irssi* in its left pane and the *cat* from above in a small one in its right. Since the pane is dependent on its creating tmux session's geometry, a subsequent session with a different one needs to recreate it (which also implies a switch in *irssi* windows to refill the fifo).
 
-E. g., the following script first checks for a running _irssi_, presumed to have been run by a previous execution of itself. Unless found it creates a new tmux session, a window named after and running _irssi_ and then the pane with _cat_. If however _irssi_ was found it merely attaches to the session and recreates the _cat_ pane.
+E. g., the following script first checks for a running *irssi*, presumed to have been run by a previous execution of itself. Unless found it creates a new tmux session, a window named after and running *irssi* and then the pane with *cat*. If however *irssi* was found it merely attaches to the session and recreates the *cat* pane.
 
 ```
 #!/bin/bash
@@ -302,17 +303,17 @@ Keep in mind that not every IRC-server supports the use of vhost. This might be 
 
 irssi supports using a vhost as long as the required configurations has been set. This includes especially that your host supports [Recursive DNS Lookup (rDNS)](https://en.wikipedia.org/wiki/Reverse_DNS_lookup "wikipedia:Reverse DNS lookup") using [Pointer record (PTR)](https://en.wikipedia.org/wiki/List_of_DNS_record_types "wikipedia:List of DNS record types"). Additionally you should add an appropriate line to your `/etc/hosts` file.
 
-To see if this is working, test with the 'host' DNS lookup utility included in [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) like so (where _ip_ is a normal IPv4 address):
+To see if this is working, test with the 'host' DNS lookup utility included in [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) like so (where *ip* is a normal IPv4 address):
 
 ```
-host _ip_
+host *ip*
 
 ```
 
 If this returns something in the lines of this then you know that your rDNS is working.
 
 ```
-_ip_.in-addr.arpa domain name pointer example.com
+*ip*.in-addr.arpa domain name pointer example.com
 
 ```
 

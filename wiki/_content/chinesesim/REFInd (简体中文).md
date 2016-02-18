@@ -35,7 +35,6 @@ rEFInd 是一个 [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE
 
 1.  在 ESP 中创建一个目录来存放 rEFInd 的文件。此处假定您的 ESP 分区被挂载到 `/boot/efi` 并且您希望将 rEFInd 存放在 `/boot/efi/EFI/refind`。
 2.  将可执行文件、配置文件和资源文件复制到 ESP
-
     ```
     # cp /usr/share/refind/refind_x64.efi /boot/efi/EFI/refind/refind_x64.efi
     # cp /usr/share/refind/refind.conf-sample /boot/efi/EFI/refind/refind.conf
@@ -45,7 +44,6 @@ rEFInd 是一个 [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE
 
 3.  编辑刚才复制的配置文件。该文件有详细的注释。默认情况下，rEFInd 会在您的驱动器中寻找 EFISTUB 内核，所以您可能不需要做任何更改就能启动。
 4.  如果需要定制内核引导选项，复制示例配置文件到你的内核的目录。编辑该文件并为您的根分区输入正确的 `PARTUUID` 和 `rootfstype` （可以使用 `blkid` 和 `lsblk -f`）.
-
     ```
     # cp /usr/share/refind/refind_linux.conf-sample /boot/refind_linux.conf
 
@@ -54,7 +52,6 @@ rEFInd 是一个 [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE
     **Tip:** `refind_linux.conf` 的每一行都会被显示为一个子菜单项。按下 + 、 Insert 或 F2 来展开子菜单.
 
 5.  使用 `efibootmgr` 创建一条 UEFI 启动项（更改 X 、Y 使其指向您的 ESP 分区）。 参见 `efibootmgr` 的 man 手册.
-
     ```
     # efibootmgr -c -d /dev/sdX -p Y -l /EFI/refind/refind_x64.efi -L "rEFInd"
 
@@ -67,7 +64,6 @@ rEFInd 是一个 [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE
 您可以使用 `refind.conf` 中的小节手动创建启动条目。 确保 `scanfor` 包括 `manual` 否则条目将不会出现。
 
  `refind.conf` 
-
 ```
 menuentry "Arch Linux" {
         icon     /EFI/refind/icons/os_arch.icns
@@ -94,9 +90,7 @@ Pacman 只更新在 `/usr/share/refind` 中的文件，不会将新文件复制�
 如果需要自动复制 rEFInd 文件和更新 NVRAM（如果需要），可以使用下面的脚本。
 
 **Note:** 如果您想更改 rEFInd 的安装目录，在脚本中修改 $refind_dir。
-
  `/usr/lib/systemd/scripts/refind_name_patchv2` 
-
 ```
 #!/usr/bin/env bash
 ## COPYRIGHT 2013 : MARK E. LEE (BLUERIDER) : mlee24@binghamton.edu; mark@markelee.com
@@ -151,9 +145,7 @@ function update-efi-nvram () { ## update the nvram with efibootmgr
 main;  ## run the main insertion function
 
 ```
-
  `/usr/lib/systemd/system/refind_update.path` 
-
 ```
 [Unit]
 Description=Update rEFInd bootloader files
@@ -166,9 +158,7 @@ Unit=refind_update.service
 WantedBy=multi-user.target
 
 ```
-
  `/usr/lib/systemd/system/refind_update.service` 
-
 ```
 [Unit]
 Description=Update rEFInd directories, binaries, and nvram

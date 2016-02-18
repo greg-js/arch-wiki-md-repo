@@ -30,7 +30,7 @@ primary_hostname = myhostname          # change to your hostname
 At the end of the Routers Configuration section add:
 
 ```
-pass_on_to_isp:
+pass*on*to_isp:
   driver = manualroute
   domains = !+local_domains
   transport = remote_smtp
@@ -51,11 +51,11 @@ If you have a laptop, or a machine in a smarthost configuration, where you do no
 In the Rewriting section you should have something like:
 
 ```
-*@_machine_._mydomain_ $1@_mydomain_
+*@*machine*.*mydomain* $1@*mydomain*
 
 ```
 
-where `_machine_` is the hostname of your laptop or PC and `_mydomain_` is the domain name of the machine and the outgoing mail.
+where `*machine*` is the hostname of your laptop or PC and `*mydomain*` is the domain name of the machine and the outgoing mail.
 
 ## Update: 11-Feb-05
 
@@ -83,26 +83,26 @@ I think the dynamic dns entry might be optional (since I never really deliver an
 *   `localhost` was necessary in order to allow fetchmail to deliver all the messages that it fetched. Without that entry there, Exim would fail to deliver them, and then generate a bounce message in response. Even worse, most of my fetched messages were spam, and so it would try to send the bounce back to the return address on the spam which 1) often was forged, and thus a bad thing to do, and 2) often would get rejected either due to an invalid email address or because I was trying to initiate email from a residential dynamic IP address and thus was also a bad thing to do. In the latter case, those messages wound up frozen on the queue, and I had to spend some time manually purging them from the queue. Just a bad situation all around until I got this piece right.
 *   I also wanted to allow other boxes on my LAN to relay messages through this exim server. By default, though, that is blocked. You can enable it by changing this:
 
- `hostlist   relay_from_hosts = 127.0.0.1` 
+ `hostlist   relay*from*hosts = 127.0.0.1` 
 
 to this:
 
- `hostlist   relay_from_hosts = 127.0.0.1 : 192.168.0.0/24` 
+ `hostlist   relay*from*hosts = 127.0.0.1 : 192.168.0.0/24` 
 
 While, you are at it, it actually could not hurt to make it this:
 
- `hostlist   relay_from_hosts = 127.0.0.1 : ::::1 : 192.168.0.0/24` 
+ `hostlist   relay*from*hosts = 127.0.0.1 : ::::1 : 192.168.0.0/24` 
 
 (The `::::1` is just the ipv6 equivalent of 127.0.0.1)
 
-Despite what was written by the other person, I found that that the `pass_on_to_isp` router should NOT go at the end of the Routers Configuration section. Since it is at the end, it will not get executed if some other router gets executed first, and that is exactly what was happening to me. This router, which appears before it was getting executed instead:
+Despite what was written by the other person, I found that that the `pass*on*to_isp` router should NOT go at the end of the Routers Configuration section. Since it is at the end, it will not get executed if some other router gets executed first, and that is exactly what was happening to me. This router, which appears before it was getting executed instead:
 
 ```
 dnslookup:
   driver = dnslookup
   domains = ! +local_domains
   transport = remote_smtp
-  ignore_target_hosts = 0.0.0.0 : 127.0.0.0/8
+  ignore*target*hosts = 0.0.0.0 : 127.0.0.0/8
   no_more
 ```
 
@@ -113,10 +113,10 @@ That router might be desired in some configurations, but not this one. That will
 #  driver = dnslookup
 #  domains = ! +local_domains
 #  transport = remote_smtp
-#  ignore_target_hosts = 0.0.0.0 : 127.0.0.0/8
+#  ignore*target*hosts = 0.0.0.0 : 127.0.0.0/8
 #  no_more
 
-pass_on_to_isp:
+pass*on*to_isp:
   driver = manualroute
   domains = !+local_domains
   transport = remote_smtp
@@ -144,7 +144,7 @@ Hope this all spares someone some hair-pulling and lost sleep down the road. I w
 ## Update: 10-Feb-08
 
 ```
-pass_on_to_isp:
+pass*on*to_isp:
   driver = manualroute
   domains = !+local_domains
   transport = remote_smtp

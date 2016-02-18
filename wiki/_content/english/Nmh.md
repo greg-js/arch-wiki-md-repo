@@ -20,11 +20,11 @@ Also optionally install [msmtp](https://www.archlinux.org/packages/?name=msmtp) 
 
 ## Configuring
 
-_nmh_ is extensively configurable in a variety of ways. The primary of these is the `~/.mh_profile` file.
+*nmh* is extensively configurable in a variety of ways. The primary of these is the `~/.mh_profile` file.
 
 The syntax for .mh_profile is unusual. For example, nmh will refuse to run if there are blank lines in the file. Read the mh_profile (5) man page for more.
 
-By default, _nmh_ uses `~/Mail` as your mail folder. To change this, set `Path`:
+By default, *nmh* uses `~/Mail` as your mail folder. To change this, set `Path`:
 
 ```
  Path: path/to/mail/folder
@@ -59,9 +59,9 @@ or set inc:
 
 ```
 
-**Note:** For each _nmh_ command (see list below) the user can set default flags with a line of the form `command: -flag` format in mh_profile. These work much like bash aliases.
+**Note:** For each *nmh* command (see list below) the user can set default flags with a line of the form `command: -flag` format in mh_profile. These work much like bash aliases.
 
-_Nmh_ is also capable of retrieving mail via POP. A basic POP setup (see inc (1) man page for more):
+*Nmh* is also capable of retrieving mail via POP. A basic POP setup (see inc (1) man page for more):
 
 ```
  inc: -host example.com -user username -sasl
@@ -83,18 +83,18 @@ To become familiar with basic nmh usage, learn and practice the following comman
 
 ## Frontends
 
-While _nmh_ is fully usable from the command-line, several console-based and graphical user interfaces exist. Also, some common mail tools interact smoothly with the _mh_ format.
+While *nmh* is fully usable from the command-line, several console-based and graphical user interfaces exist. Also, some common mail tools interact smoothly with the *mh* format.
 
 ### MH-specific Frontends
 
-*   [MH-V](http://www.hep.wisc.edu/~rader/mh-v/), a console interface to _mh/nmh_ with vi- keybindings.
-*   [MH-E](http://www.beedub.com/exmh/), a console interface to _mh/nmh_ with Emacs keybindings.
+*   [MH-V](http://www.hep.wisc.edu/~rader/mh-v/), a console interface to *mh/nmh* with vi- keybindings.
+*   [MH-E](http://www.beedub.com/exmh/), a console interface to *mh/nmh* with Emacs keybindings.
 *   [exmh](http://mh-e.sourceforge.net/), a TK-based mh GUI.
 
 ### MH-compatible Frontends
 
 *   Popular MUA [mutt](/index.php/Mutt "Mutt") understands mh format. (Use `set mbox_type = mh` in your muttrc.)
-*   Full-text mail indexer and search utility [mairix](http://www.rpcurnow.force9.co.uk/mairix/) can read and write in _mh_ format. (Use `mh=path/to/mh/folder` and `mformat=mh` in .mairixrc)
+*   Full-text mail indexer and search utility [mairix](http://www.rpcurnow.force9.co.uk/mairix/) can read and write in *mh* format. (Use `mh=path/to/mh/folder` and `mformat=mh` in .mairixrc)
 
 ## See also
 

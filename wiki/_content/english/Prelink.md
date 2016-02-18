@@ -42,7 +42,6 @@ The following command prelinks all the binaries in the directories given by /etc
 Taken from the [discussion page](/index.php/Talk:Prelink#Exclude_list "Talk:Prelink"):
 
  `/etc/prelink.conf` 
-
 ```
 # Skype
 -b /usr/lib32/skype/skype
@@ -91,7 +90,6 @@ Remove prelinking from all binaries:
 This is recommended (and included in other distros packages) as it has to be done in order to get speed benefits from updates. Save as `/etc/cron.daily/prelink`
 
  `/etc/cron.daily/prelink` 
-
 ```
 #!/bin/bash
 [[ -x /usr/bin/prelink ]] && /usr/bin/prelink -amR &>/dev/null

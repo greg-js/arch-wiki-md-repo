@@ -94,7 +94,7 @@ ArchPwn дистрибутив, во главу угла ставящий без
 
 ### Chakra
 
-"_Our goal with Chakra is to provide an operating system for desktops that is easy to use, but still has all the functionality, clarity, power and speediness of a KISS operating system. In the long term, we want to build an operating system based on Arch Linux that meets most requirements desktop users have today, like easy installation of software, graphical system administration, configuring power management on mobile devices, or sharing an internet connection._"
+"*Our goal with Chakra is to provide an operating system for desktops that is easy to use, but still has all the functionality, clarity, power and speediness of a KISS operating system. In the long term, we want to build an operating system based on Arch Linux that meets most requirements desktop users have today, like easy installation of software, graphical system administration, configuring power management on mobile devices, or sharing an internet connection.*"
 
 	<small>источник: [The Chakra Project — About](http://chakra-project.org/about.html)</small>
 
@@ -108,7 +108,7 @@ ArchPwn дистрибутив, во главу угла ставящий без
 
 ### ConnochaetOS
 
-"_ConnochaetOS will be a free operating system for the desktop with old computers in mind but with modern software. ConnochaetOS will contain only free software, according to the GNU Guidelines for Free System Distributions, follow the KISS principle (Keep it small and simple), need as few resources as possible, be modern, but stable. We aim for minimal hardware requirements, as low as a Pentium I processor and 64 MB RAM for a graphical desktop. We decided to base ConnochaetOS on Arch Linux, but completely rebuild, since we want to support i586, and replace some packages with our own ones, because of footprint, stability or freedom._"
+"*ConnochaetOS will be a free operating system for the desktop with old computers in mind but with modern software. ConnochaetOS will contain only free software, according to the GNU Guidelines for Free System Distributions, follow the KISS principle (Keep it small and simple), need as few resources as possible, be modern, but stable. We aim for minimal hardware requirements, as low as a Pentium I processor and 64 MB RAM for a graphical desktop. We decided to base ConnochaetOS on Arch Linux, but completely rebuild, since we want to support i586, and replace some packages with our own ones, because of footprint, stability or freedom.*"
 
 	<small>источник: [ConnochaetOS Website](http://www.connochaetos.org/wiki/doku.php?id=connochaetos)</small>
 
@@ -122,7 +122,7 @@ ArchPwn дистрибутив, во главу угла ставящий без
 
 ### CTKarchLive
 
-_"Un seul mot d'ordre : simple & léger. (et complet, dans la mesure du possible)_ Il est désormais installable !"
+*"Un seul mot d'ordre : simple & léger. (et complet, dans la mesure du possible)* Il est désormais installable !"
 
 Легковесный дистрибутив, использующий c²DE (модификация [Openbox](http://ru.wikipedia.org/wiki/Openbox)). Полностью на французком, есть [патч](http://calimeroteknik.free.fr/ctkarchlive/0.5/addons/officiels/locale-en/) для добавления английского.
 
@@ -138,7 +138,7 @@ _"Un seul mot d'ordre : simple & léger. (et complet, dans la mesure du possibl
 
 ### Kahel OS
 
-_"Kahel OS is the first and remains to be the only Filipino Linux Distro with the rolling release model on Arch Linux + GNOME. In the community, it is the first to release (non-beta) such Linux OS on Arch Linux + GNOME."_
+*"Kahel OS is the first and remains to be the only Filipino Linux Distro with the rolling release model on Arch Linux + GNOME. In the community, it is the first to release (non-beta) such Linux OS on Arch Linux + GNOME."*
 
 Дистрибутив включает в себя среду рабочего стола [GNOME](http://ru.wikipedia.org/wiki/GNOME), и базовый пакет программ.
 
@@ -229,7 +229,7 @@ Archiso-live форк от [archiso](/index.php/Archiso_(%D0%A0%D1%83%D1%81%D1%8
 
 ### Frugalware
 
-_"Frugalware Linux — дистрибутив Linux общего назначения, спроектированный для пользователя, знакомого с командной строкой. Он основан на Slackware, но использует другой менеджер пакетов — Pacman. Frugalware — один из тех дистрибутивов, в которых обновлённые пакеты и обновления безопасности появляются ежедневно."_
+*"Frugalware Linux — дистрибутив Linux общего назначения, спроектированный для пользователя, знакомого с командной строкой. Он основан на Slackware, но использует другой менеджер пакетов — Pacman. Frugalware — один из тех дистрибутивов, в которых обновлённые пакеты и обновления безопасности появляются ежедневно."*
 
 	<small>источник: [Википедия](http://ru.wikipedia.org/wiki/Frugalware)</small>
 

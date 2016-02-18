@@ -36,7 +36,7 @@ Wiping a disk is done by writing new data over every single bit.
 
 The most common usecase for completely and irrevocably wiping a device will be when the device is going to be given away or sold. There may be (unencrypted) data left on the device and you want to protect against simple forensic investigation that is mere child's play with for example [File recovery](/index.php/File_recovery "File recovery") software.
 
-If you want to quickly wipe everything from the disk `/dev/zero` or simple patterns allow maximum performance while adequate randomness can be advantageous in some cases that should be covered up in [#Data remanence](#Data_remanence).
+If you want to quickly wipe everything from the disk, `/dev/zero` or simple patterns allow maximum performance while adequate randomness can be advantageous in some cases that should be covered up in [#Data remanence](#Data_remanence).
 
 Every overwritten bit means to provide a level of data erasure not allowing recovery with normal system functions (like standard ATA/SCSI commands) and hardware interfaces. Any file recovery software mentioned above then would need to be specialized on proprietary storage-hardware features.
 
@@ -106,7 +106,6 @@ Check the output for lines that start with devices such as `/dev/sd"X"`.
 This is an example for a HDD formatted to boot a linux system:
 
  `# fdisk -l` 
-
 ```
 Disk /dev/sda: 250.1 GB, 250059350016 bytes, 488397168 sectors
 Units = sectors of 1 * 512 = 512 bytes
@@ -122,7 +121,6 @@ Disk identifier: 0x00ff784a
 Or the Arch Install Medium written to a 4GB USB thumb drive:
 
  `# fdisk -l` 
-
 ```
 Disk /dev/sdb: 4075 MB, 4075290624 bytes, 7959552 sectors
 Units = sectors of 1 * 512 = 512 bytes
@@ -140,9 +138,9 @@ If you are worried about unintentional damage of important data on the primary c
 
 See also [Wikipedia:Dd (Unix)#Block size](https://en.wikipedia.org/wiki/Dd_(Unix)#Block_size "wikipedia:Dd (Unix)"), [blocksize io-limits](http://people.redhat.com/msnitzer/docs/io-limits.txt).
 
-If you have an [Advanced Format](https://en.wikipedia.org/wiki/Advanced_Format "wikipedia:Advanced Format") hard drive it is recommended that you specify a block size larger than the default 512 bytes. To speed up the overwriting process choose a block size matching your drive's physical geometry by appending the block size option to the _dd_ command (i.e. `bs=4096` for 4KB).
+If you have an [Advanced Format](https://en.wikipedia.org/wiki/Advanced_Format "wikipedia:Advanced Format") hard drive it is recommended that you specify a block size larger than the default 512 bytes. To speed up the overwriting process choose a block size matching your drive's physical geometry by appending the block size option to the *dd* command (i.e. `bs=4096` for 4KB).
 
-_fdisk_ prints physical and logical sector size for every disk.
+*fdisk* prints physical and logical sector size for every disk.
 
 Alternatively sysfs does expose information:
 
@@ -162,10 +160,10 @@ In the following the determination of the data area to wipe is done in an exampl
 
 A block storage devices contains sectors and a size of a single sector that can be used to calculate the whole size of device in bytes. You can do it by multiplying sectors with size of the sector.
 
-As an example we use the parameters with the _dd_ command to wipe a partition:
+As an example we use the parameters with the *dd* command to wipe a partition:
 
 ```
-# dd if=_data_source_ of=/dev/sd"X" bs=_sector_size_ count=_sector_number_ seek=_partitions_start_sector_
+# dd if=*data_source* of=/dev/sd"X" bs=*sector_size* count=*sector_number* seek=*partitions_start_sector*
 
 ```
 
@@ -178,14 +176,14 @@ Device     Boot      Start        End         Sectors     Size  Id Type
 
 ```
 
-The first line of the _fdisk_ output shows the disk size in bytes and logical sectors:
+The first line of the *fdisk* output shows the disk size in bytes and logical sectors:
 
 ```
 Disk /dev/sd"X": 1,8 TiB, 2000398934016 bytes, 3907029168 sectors
 
 ```
 
-To calculate size of a single logical sector use `echo $((2000398934016 / 3907029168))` or use data from the second line of _fdisk_ output:
+To calculate size of a single logical sector use `echo $((2000398934016 / 3907029168))` or use data from the second line of *fdisk* output:
 
 ```
 Units: sectors of 1 * 512 = 512 bytes
@@ -217,16 +215,15 @@ BytesInSector=512
 By using the starting address of the partition on the device by defining it in the `seek=` option
 
 ```
-# dd if=_data_source_ of=/dev/sd"X" bs=${BytesInSector} count=${End} seek=${Start}
+# dd if=*data_source* of=/dev/sd"X" bs=${BytesInSector} count=${End} seek=${Start}
 
 ```
 
 By using the partitions name
 
  `LogicalSectors=3839709184` 
-
 ```
-# dd if=_data_source_ of=/dev/sd"XA" bs=${BytesInSector} count=${LogicalSectors}
+# dd if=*data_source* of=/dev/sd"XA" bs=${BytesInSector} count=${LogicalSectors}
 
 ```
 
@@ -238,7 +235,7 @@ PhysicalSectorSizeBytes=4096
 ```
 
 ```
-# dd if=_data_source_ of=/dev/sd"X" bs=${PhysicalSectorSizeBytes} count=${AllDiskPhysicalSectors} seek=0
+# dd if=*data_source* of=/dev/sd"X" bs=${PhysicalSectorSizeBytes} count=${AllDiskPhysicalSectors} seek=0
 
 ```
 
@@ -285,7 +282,6 @@ The redirected output can be used both for creation of the files to rewrite free
 In the following are examples that can be used to rewrite the partition or a block device by redirecting [stdout](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-3.html) from other utilities:
 
  `$ cat /dev/urandom > /dev/sd"XY"`  `cat: write error: No space left on device`  `$ xz -z0 /dev/urandom -c > /dev/sd"XY"`  `xz: (stdout): Write error: No space left on device`  `$ dd if=/dev/urandom > /dev/sd"XY"` 
-
 ```
 dd: writing to ‘standard output’: No space left on device
 20481+0 records in
@@ -296,7 +292,6 @@ dd: writing to ‘standard output’: No space left on device
 The file copy command `cp` can also be used to rewrite the device, because it ignores the type of the destination:
 
  `$ cp /dev/urandom /dev/sd"XY"` 
-
 ```
  cp: error writing ‘/dev/sd"XY"’: No space left on device
  cp: failed to extend ‘/dev/sd"XY"’: No space left on device
@@ -360,19 +355,19 @@ See also: [man page](http://linux.die.net/man/1/wipe).
 
 ### shred
 
-[_shred_](https://www.gnu.org/software/coreutils/manual/html_node/shred-invocation.html) is a Unix command that can be used to securely delete [individual files](#Overwrite_the_target) or full devices so that they can be recovered only with great difficulty with specialised hardware, if at all. _shred_ uses three passes, writing [pseudo-random data](/index.php/Random_number_generation "Random number generation") to the device during each pass. This can be reduced or increased.
+[*shred*](https://www.gnu.org/software/coreutils/manual/html_node/shred-invocation.html) is a Unix command that can be used to securely delete [individual files](#Overwrite_the_target) or full devices so that they can be recovered only with great difficulty with specialised hardware, if at all. *shred* uses three passes, writing [pseudo-random data](/index.php/Random_number_generation "Random number generation") to the device during each pass. This can be reduced or increased.
 
 The following command invokes shred with its default settings and displays the progress.
 
 ```
-# shred -v /dev/sd_X_
+# shred -v /dev/sd*X*
 
 ```
 
 Alternatively, shred can be instructed to do only one pass, with entropy from e.g. `/dev/urandom`.
 
 ```
-# shred --verbose --random-source=/dev/urandom -n1 /dev/sd_X_
+# shred --verbose --random-source=/dev/urandom -n1 /dev/sd*X*
 
 ```
 

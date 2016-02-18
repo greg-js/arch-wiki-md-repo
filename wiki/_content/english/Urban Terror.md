@@ -1,4 +1,4 @@
-"_[Urban Terror](http://www.urbanterror.net)™ is a free multiplayer first person shooter, it can be described as a Hollywood tactical shooter; somewhat realism based, but the motto is "fun over realism". This results in a very unique, enjoyable and addictive game._" <small>[[1]](http://www.urbanterror.net)</small>
+"*[Urban Terror](http://www.urbanterror.net)™ is a free multiplayer first person shooter, it can be described as a Hollywood tactical shooter; somewhat realism based, but the motto is "fun over realism". This results in a very unique, enjoyable and addictive game.*" <small>[[1]](http://www.urbanterror.net)</small>
 
 ## Contents
 
@@ -30,7 +30,6 @@ Urban Terror is now supported in the [official repositories](/index.php/Official
 You might want to run this game in an extra X server. To do that, create a new Bash script with that content and mark it as executable:
 
  `~/xstart/urbanterror.sh` 
-
 ```
 #!/bin/bash 
 DISPLAY=:1.0
@@ -71,7 +70,7 @@ bsdtar -x -f /opt/urbanterror/q3ut4/zpak000.pk3
 GTKradiant creates a few own files inside game directory on creating a game profile. This means that you can own to the Urban Terror folder temporarily until these are created:
 
 ```
-chown _yourusername_ -R /opt/urbanterror
+chown *yourusername* -R /opt/urbanterror
 
 ```
 
@@ -92,7 +91,7 @@ It might be possible to create Urban Terror maps with other level editors, such 
 
 Build and install both [gtkradiant-svn](https://aur.archlinux.org/packages.php?ID=31795) and [gtkradiant-gamepack-urt-svn](https://aur.archlinux.org/packages/gtkradiant-gamepack-urt-svn/) from the AUR.
 
-Start gtkradiant by either typing its name in a terminal or clicking the new menu entry. You will see a dialog, choose _Urban Terror (standalone)_ in the drop-down list and `/home/you/urtmapping` as engine directory (_not_ q3ut4). Click OK in the next window and the editor should pop up.
+Start gtkradiant by either typing its name in a terminal or clicking the new menu entry. You will see a dialog, choose *Urban Terror (standalone)* in the drop-down list and `/home/you/urtmapping` as engine directory (*not* q3ut4). Click OK in the next window and the editor should pop up.
 
 [Here](http://daffy.nerius.com/radiant/#first-map) is a nice guide that explains how to create your first map as well as some Urban Terror specific things you need to watch out for.
 
@@ -101,7 +100,7 @@ Start gtkradiant by either typing its name in a terminal or clicking the new men
 Copy your compiled .bsp mapfile to `~/.urbanterror/q3ut4/maps` and run:
 
 ```
-urbanterror +set fs_game iourtmap +set sv_pure 0 +map _ut4_yourmap_
+urbanterror +set fs_game iourtmap +set sv_pure 0 +map *ut4_yourmap*
 
 ```
 
@@ -155,4 +154,4 @@ cat /proc/asound/card*/id
 
 [Debian + GTKRadiant + Urban Terror HOW-TO](http://daffy.nerius.com/radiant/)
 
-[UT-Forums: Urban Terror GTKRadiant Tutorial](http://forums.urbanterror.info/topic/13539-complete-linux-gtkradiant-urt-mapping-how-to/page__hl__urtpack__fromsearch__1__s__0bed93b96b8f19a3707143f46acfb964) _Please note_ that the example from this guide has no light and Urban Terror will just display black walls.
+[UT-Forums: Urban Terror GTKRadiant Tutorial](http://forums.urbanterror.info/topic/13539-complete-linux-gtkradiant-urt-mapping-how-to/page__hl__urtpack__fromsearch__1__s__0bed93b96b8f19a3707143f46acfb964) *Please note* that the example from this guide has no light and Urban Terror will just display black walls.

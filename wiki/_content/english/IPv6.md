@@ -36,7 +36,7 @@ $ ping6 ff02::1%eth0
 
 With a ping to the multicast address `ff02::2` only routers will respond.
 
-If you add an option `-I _your-global-ipv6_`, link-local hosts will respond with their link-global scope addresses. The interface can be omitted in this case:
+If you add an option `-I *your-global-ipv6*`, link-local hosts will respond with their link-global scope addresses. The interface can be omitted in this case:
 
 ```
 $ ping6 -I 2001:4f8:fff6::21 ff02::1
@@ -45,7 +45,7 @@ $ ping6 -I 2001:4f8:fff6::21 ff02::1
 
 ## Stateless autoconfiguration (SLAAC)
 
-The easiest way to acquire an IPv6 address as long as your network is configured is through _Stateless address autoconfiguration_ (SLAAC for short). The address is automatically inferred from the prefix that your router advertises and requires neither further configuration nor specialized software such as a DHCP client.
+The easiest way to acquire an IPv6 address as long as your network is configured is through *Stateless address autoconfiguration* (SLAAC for short). The address is automatically inferred from the prefix that your router advertises and requires neither further configuration nor specialized software such as a DHCP client.
 
 ### For clients
 
@@ -86,7 +86,7 @@ interface LAN {
 
 ```
 
-The above configuration will tell clients to autoconfigure themselves using addresses from the advertised /64 block. Please note that the above configuration advertises _all available prefixes_ assigned to the LAN facing interface. If you want to limit the advertised prefixes instead of `::/64` use the desired prefix, eg `2001:DB8::/64`. The `prefix` block can be repeated many times for more prefixes.
+The above configuration will tell clients to autoconfigure themselves using addresses from the advertised /64 block. Please note that the above configuration advertises *all available prefixes* assigned to the LAN facing interface. If you want to limit the advertised prefixes instead of `::/64` use the desired prefix, eg `2001:DB8::/64`. The `prefix` block can be repeated many times for more prefixes.
 
 The gateway must also allow the traffic of `ipv6-icmp` packets on all basic chains. For the [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall")/[iptables](/index.php/Iptables "Iptables") add:
 
@@ -101,7 +101,7 @@ Adjust accordingly for other firewall frontends and do not forget to enable `rad
 
 ## Privacy extensions
 
-When a client acquires an address through SLAAC its IPv6 address is derived from the advertised prefix and the MAC address of the network interface of the client. This may raise security concerns as the MAC address of the computer can be easily derived by the IPv6 address. In order to tackle this problem the _IPv6 Privacy Extensions_ standard ([RFC 4941](https://tools.ietf.org/html/rfc4941)) has been developed. With privacy extensions the kernel generates a _temporary_ address that is mangled from the original autoconfigured address. Private addresses are preferred when connecting to a remote server so the original address is hidden. To enable Privacy Extensions reproduce the following steps:
+When a client acquires an address through SLAAC its IPv6 address is derived from the advertised prefix and the MAC address of the network interface of the client. This may raise security concerns as the MAC address of the computer can be easily derived by the IPv6 address. In order to tackle this problem the *IPv6 Privacy Extensions* standard ([RFC 4941](https://tools.ietf.org/html/rfc4941)) has been developed. With privacy extensions the kernel generates a *temporary* address that is mangled from the original autoconfigured address. Private addresses are preferred when connecting to a remote server so the original address is hidden. To enable Privacy Extensions reproduce the following steps:
 
 Add these lines to `/etc/sysctl.d/40-ipv6.conf`:
 
@@ -109,9 +109,9 @@ Add these lines to `/etc/sysctl.d/40-ipv6.conf`:
 # Enable IPv6 Privacy Extensions
 net.ipv6.conf.all.use_tempaddr = 2
 net.ipv6.conf.default.use_tempaddr = 2
-net.ipv6.conf._nic0_.use_tempaddr = 2
+net.ipv6.conf.*nic0*.use_tempaddr = 2
 ...
-net.ipv6.conf._nicN_.use_tempaddr = 2
+net.ipv6.conf.*nicN*.use_tempaddr = 2
 
 ```
 
@@ -125,12 +125,11 @@ After a reboot, at the latest, Privacy Extensions should be enabled.
 
 ### NetworkManager
 
-NetworkManager does not honour the settings placed in `/etc/sysctl.d/40-ipv6.conf`. This can be verified by running `$ ip -6 addr show _interface_` after rebooting: no `scope global **temporary**` address appears besides the regular one.
+NetworkManager does not honour the settings placed in `/etc/sysctl.d/40-ipv6.conf`. This can be verified by running `$ ip -6 addr show *interface*` after rebooting: no `scope global **temporary**` address appears besides the regular one.
 
 To enable IPv6 Privacy Extensions by default, add these lines to `/etc/NetworkManager/NetworkManager.conf`
 
  `/etc/NetworkManager/NetworkManager.conf` 
-
 ```
 ...
 **[connection]**
@@ -139,8 +138,7 @@ To enable IPv6 Privacy Extensions by default, add these lines to `/etc/NetworkMa
 
 In order to enable IPv6 Privacy Extensions for individual NetworkManager-managed connections, edit the desired connection keyfile in `/etc/NetworkManager/system-connections/` and append to its `[ipv6]` section the key-value pair `ip6-privacy=2`:
 
- `/etc/NetworkManager/system-connections/_example_connection_` 
-
+ `/etc/NetworkManager/system-connections/*example_connection*` 
 ```
 ...
 [ipv6]
@@ -175,12 +173,10 @@ Gateway6='1234:0:123::abcd'
 ```
 
 **Note:** If you are connected IPv6-only, than you need to determine ipv6 dns server. For example
-
 ```
 DNS=('6666:6666::1' '6666:6666::2')
 
 ```
-
 If your provider did not give you ipv6 dns and you are not running your own, you can choose from [resolv.conf](/index.php/Resolv.conf "Resolv.conf") article.
 
 ## IPv6 and PPPoE
@@ -331,9 +327,9 @@ One can also avoid assigning IPv6 addresses to specific network interfaces by ad
 ```
 # Disable IPv6
 net.ipv6.conf.all.disable_ipv6 = 1
-net.ipv6.conf._nic0_.disable_ipv6 = 1
+net.ipv6.conf.*nic0*.disable_ipv6 = 1
 ...
-net.ipv6.conf._nicN_.disable_ipv6 = 1
+net.ipv6.conf.*nicN*.disable_ipv6 = 1
 
 ```
 
@@ -356,7 +352,7 @@ Disabling IPv6 functionality in the kernel does not prevent other programs from 
 
 #### dhcpcd
 
-_dhcpcd_ will continue to harmlessly attempt to perform IPv6 router solicitation. To disable this, as stated in the `dhcpcd.conf (5)` [man page](/index.php/Man_page "Man page"), add the following to `/etc/dhcpcd.conf`:
+*dhcpcd* will continue to harmlessly attempt to perform IPv6 router solicitation. To disable this, as stated in the `dhcpcd.conf (5)` [man page](/index.php/Man_page "Man page"), add the following to `/etc/dhcpcd.conf`:
 
 ```
 noipv6rs
@@ -366,7 +362,7 @@ noipv6
 
 #### NetworkManager
 
-To disable IPv6 in NetworkManager, right click the network status icon, and select _Edit Connections > Wired >_ Network name _> Edit > IPv6 Settings > Method > Ignore/Disabled_
+To disable IPv6 in NetworkManager, right click the network status icon, and select *Edit Connections > Wired >* Network name *> Edit > IPv6 Settings > Method > Ignore/Disabled*
 
 Then click "Save".
 

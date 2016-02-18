@@ -1,6 +1,6 @@
 [GNU GRUB (Legacy)](http://www.gnu.org/software/grub/grub-legacy.html) è un bootloader [multiboot](http://www.gnu.org/software/grub/manual/multiboot/) mantenuto dal [GNU Project](/index.php/GNU_Project "GNU Project"). Deriva da GRUB, il GRand Unified Bootloader, che è stato originariamente progettato e realizzato da Erich Stefan Boleyn.
 
-Brevemente, il _bootloader_ è il primo programma che si avvia quando si accende il computer. È il responsabile del controllo di caricamento e di trasferimento al kernel Linux. Il kernel, a sua volta, inizializza il resto del sistema operativo.
+Brevemente, il *bootloader* è il primo programma che si avvia quando si accende il computer. È il responsabile del controllo di caricamento e di trasferimento al kernel Linux. Il kernel, a sua volta, inizializza il resto del sistema operativo.
 
 **Nota:** GRUB Legacy è completamente deprecato e rimpiazzato da [GRUB 2.x](/index.php/GRUB2_(Italiano) "GRUB2 (Italiano)"). Si consiglia di prendere visione di [questa](http://www.archlinux.it/forum/viewtopic.php?f=15&t=15043) news. Si raccomanda l'utilizzo di [GRUB2](/index.php/GRUB2_(Italiano) "GRUB2 (Italiano)") o [Syslinux](/index.php/Syslinux "Syslinux").
 
@@ -166,7 +166,6 @@ Questo valore deve essere inserito nella linea `root` nel proprio file di config
 Si aggiunga ciò che segue alla fine del file `/boot/grub/menu.lst` (presupponendo che la partizione di Windows si trovi sulla prima partizione del primo dispositivo d'archiviazione):
 
  `/boot/grub/menu.lst` 
-
 ```
  title Windows
  rootnoverify (hd0,0)
@@ -181,7 +180,6 @@ Si aggiunga ciò che segue alla fine del file `/boot/grub/menu.lst` (presupponen
 Nel caso in cui Windows si trovi su un'altro hard disk, occorre usare il comando `map`. Ciò farà si che l'installatore di Windows pensi di trovarsi sul primo dispositivo. Supponendo che la partizione di Windows si trovi sulla prima partizione del secondo dispositivo d'archiviazione:
 
  `/boot/grub/menu.lst` 
-
 ```
  title Windows
  map (hd0) (hd1)
@@ -199,7 +197,6 @@ Nel caso in cui Windows si trovi su un'altro hard disk, occorre usare il comando
 Ciò può essere fatto nella stessa maniera in cui viene definita un'installazione di Arch Linux. Ad esempio:
 
  `/boot/grub/menu.lst` 
-
 ```
  title Other Linux
  root (hd0,2)
@@ -266,7 +263,6 @@ chainloader +1
 Se l'altra distribuzione Linux utilizza Grub2 (es. Ubuntu 9.10+), e si ha installato il relativo boot loader per la relativa partizione di root, è possibile aggiungere una voce come questa nel `/boot/grub/menu.lst`:
 
  `/boot/grub/menu.lst` 
-
 ```
  # Altra distribuzione Linux che usa Grub2
  title Ubuntu
@@ -290,12 +286,12 @@ Copiare manualmente le librerie grub così:
 
 ### Note generali di installazione del bootloader
 
-GRUB può essere installato da un supporto separato (ad esempio un live CD), o direttamente da un'installazione di arch in esecuzione. È _raramente_ necessario che il bootloader GRUB debba essere reinstallato, e l'installazione _non_ è necessaria quando:
+GRUB può essere installato da un supporto separato (ad esempio un live CD), o direttamente da un'installazione di arch in esecuzione. È *raramente* necessario che il bootloader GRUB debba essere reinstallato, e l'installazione *non* è necessaria quando:
 
 *   Il file di configurazione viene aggiornato.
 *   Il pacchetto [grub](https://www.archlinux.org/packages/?name=grub) è aggiornato.
 
-L'installazione è _necessaria_ quando:
+L'installazione è *necessaria* quando:
 
 *   Un bootloader non è già installato.
 *   Un altro sistema operativo sovrascrive il bootloader di Linux.
@@ -402,7 +398,7 @@ kernel /vmlinuz-linux root=/dev/sda1 ro **vga=0x0365**
 
 ```
 
-**Note:** _vbetest_ dà la modalità VESA a cui si deve aggiungere 512 per ottenere il valore corretto da utilizzare nella riga del kernel, mentre _hwinfo_ dà direttamente il valore corretto necessario al kernel.
+**Note:** *vbetest* dà la modalità VESA a cui si deve aggiungere 512 per ottenere il valore corretto da utilizzare nella riga del kernel, mentre *hwinfo* dà direttamente il valore corretto necessario al kernel.
 
 #### vbetest
 
@@ -478,7 +474,7 @@ Quando appare il menù di GRUB, selezionare la voce che si desidera e premere il
 
 ```
 
-ed eseguire il boot. Questo farà partire (solo per questa sessione) il kernel in _sigle-user mode_ (init 1). Alla fine del processo di boot ci si troverà in un prompt di root senza che venga richiesta alcuna password.
+ed eseguire il boot. Questo farà partire (solo per questa sessione) il kernel in *sigle-user mode* (init 1). Alla fine del processo di boot ci si troverà in un prompt di root senza che venga richiesta alcuna password.
 
 Questo procedimento può essere utile ad esempio per cambiare la password di root. Tuttavia è una notevole "falla nella sicurezza" se non si ha impostato una [password a GRUB](#Protezione_con_password).
 

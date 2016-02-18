@@ -52,7 +52,7 @@ blacklist viafb
 
 ```
 Section "Device"
-    Identifier "_My Device Name_"
+    Identifier "*My Device Name*"
     Driver "openchrome"
 EndSection
 

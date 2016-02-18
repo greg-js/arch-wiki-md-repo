@@ -1,4 +1,4 @@
-This guide was started for _USB_ based Wacom tablets, so much of the info in here focuses on that. Usually it is recommended to rely on [Xorg](/index.php/Xorg "Xorg")'s auto-detection or to use a **dynamic** setup. However for an _internal_ tablet device one might consider a **static** Xorg setup in case autodetection does not work. A static [Xorg](/index.php/Xorg "Xorg") setup is usually not able to recognize your Wacom tablet when it is connected to a different _USB_ port or even after unplugging and replugging it into the same port, and as such it should be considered as deprecated.
+This guide was started for *USB* based Wacom tablets, so much of the info in here focuses on that. Usually it is recommended to rely on [Xorg](/index.php/Xorg "Xorg")'s auto-detection or to use a **dynamic** setup. However for an *internal* tablet device one might consider a **static** Xorg setup in case autodetection does not work. A static [Xorg](/index.php/Xorg "Xorg") setup is usually not able to recognize your Wacom tablet when it is connected to a different *USB* port or even after unplugging and replugging it into the same port, and as such it should be considered as deprecated.
 
 ## Contents
 
@@ -53,7 +53,7 @@ In case it is not recognized, it might happen for new devices not to be supporte
 
 Thanks to [The Linux Wacom Project](http://linuxwacom.sourceforge.net), you only need to install the [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) package, which contains everything needed to use a Wacom tablet on Linux.
 
-**Note:** There is also [xf86-input-wacom-git](https://aur.archlinux.org/packages/xf86-input-wacom-git/) in AUR which provides git version of _xf86-input-wacom_, but you might encounter some troubles. For me the buttons for example did only work with the stable release, not with the git version. So it is recommended to try _xf86-input-wacom_ first.
+**Note:** There is also [xf86-input-wacom-git](https://aur.archlinux.org/packages/xf86-input-wacom-git/) in AUR which provides git version of *xf86-input-wacom*, but you might encounter some troubles. For me the buttons for example did only work with the stable release, not with the git version. So it is recommended to try *xf86-input-wacom* first.
 
 ### Automatic setup
 
@@ -80,21 +80,21 @@ For this to work you do not need any `xorg.conf` file, any configurations are ma
 
 With the arrival of Xorg 1.8 support for HAL was dropped in favor of [udev](/index.php/Udev "Udev") which might break auto-detection for some tablets as fitting udev rules might not exist yet, so you may need to write your own.
 
-If you have installed [libwacom](https://www.archlinux.org/packages/?name=libwacom) or associated packages like [libwacom-fedora](https://aur.archlinux.org/packages/libwacom-fedora/) remove those packages first. They are known to cause problems with newer version of X. _xf86-input-wacom_ is the only package you need to install the X11 drivers.
+If you have installed [libwacom](https://www.archlinux.org/packages/?name=libwacom) or associated packages like [libwacom-fedora](https://aur.archlinux.org/packages/libwacom-fedora/) remove those packages first. They are known to cause problems with newer version of X. *xf86-input-wacom* is the only package you need to install the X11 drivers.
 
 ### Manual setup
 
-A manual configuration is done in `/etc/X11/xorg.conf` or in a separate file in the `/etc/X11/xorg.conf.d/` directory. The Wacom tablet device is accessed using a input event interface in `/dev/input/` which is provided by the kernel driver. The interface number `event??` is likely to change when unplugging and replugging into the same or especially a different _USB_ port. Therefore it is wise to not refer to the device using its concrete `event??` interface (**static** configuration) but by letting _udev_ dynamically create a symbolic link to the correct `event` file (**dynamic** configuration).
+A manual configuration is done in `/etc/X11/xorg.conf` or in a separate file in the `/etc/X11/xorg.conf.d/` directory. The Wacom tablet device is accessed using a input event interface in `/dev/input/` which is provided by the kernel driver. The interface number `event??` is likely to change when unplugging and replugging into the same or especially a different *USB* port. Therefore it is wise to not refer to the device using its concrete `event??` interface (**static** configuration) but by letting *udev* dynamically create a symbolic link to the correct `event` file (**dynamic** configuration).
 
 #### Dynamic with udev
 
 **Note:** In AUR there is wacom-udev package, which includes udev-rules-file. You might skip this part and move on to the `xorg.conf` configuration if you are using the wacom-udev package from AUR.
 
-Assuming _udev_ is already installed you simply need to install [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/) from the [AUR](/index.php/AUR "AUR").
+Assuming *udev* is already installed you simply need to install [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/) from the [AUR](/index.php/AUR "AUR").
 
 ##### USB-devices
 
-After (re-)plugging in your _USB_-tablet (or at least after rebooting) some symbolic links should appear in `/dev/input` referring to your tablet device.
+After (re-)plugging in your *USB*-tablet (or at least after rebooting) some symbolic links should appear in `/dev/input` referring to your tablet device.
 
 ```
  $ ls /dev/input/wacom* 
@@ -102,9 +102,9 @@ After (re-)plugging in your _USB_-tablet (or at least after rebooting) some symb
 
 ```
 
-If not, your device is likely to be not yet included in the _udev_ configuration from _wacom-udev_ which resides in `/usr/lib/udev/rules.d/10-wacom.rules`. It is a good idea to copy the file e.g. to `10-my-wacom.rules` before modifying it, else it might be reverted by a package upgrade.
+If not, your device is likely to be not yet included in the *udev* configuration from *wacom-udev* which resides in `/usr/lib/udev/rules.d/10-wacom.rules`. It is a good idea to copy the file e.g. to `10-my-wacom.rules` before modifying it, else it might be reverted by a package upgrade.
 
-Add your device to the file by duplicating some line of another device and adapting _idVendor_,_idProduct_ and the symlink name to your device. The two id's can by determined using
+Add your device to the file by duplicating some line of another device and adapting *idVendor*,*idProduct* and the symlink name to your device. The two id's can by determined using
 
 ```
 $ lsusb | grep -i wacom
@@ -114,9 +114,9 @@ Bus 002 Device 007: ID 056a:0062 Wacom Co., Ltd
 
 In this example idVendor is 056a and idProduct 0062. In case you have device with touch (e.g. Bamboo Pen&Touch) you might need to add a second line for the touch input interface. For details check the linuxwacom wiki [Fixed device files with udev](http://sourceforge.net/apps/mediawiki/linuxwacom/index.php?title=Fixed_device_files_with_udev).
 
-Save the file and reload udev's configuration profile using the command _udevadm control --reload-rules_ Check again the content of _/dev/input_ to make sure that the _wacom_ symlinks appeared. Note that you may need to plug-in the tablet again for the device to appear.
+Save the file and reload udev's configuration profile using the command *udevadm control --reload-rules* Check again the content of */dev/input* to make sure that the *wacom* symlinks appeared. Note that you may need to plug-in the tablet again for the device to appear.
 
-The files of further interest for the _Xorg_ configuration are `/dev/input/wacom` and for a touch-device also `/dev/input/wacom_touch`.
+The files of further interest for the *Xorg* configuration are `/dev/input/wacom` and for a touch-device also `/dev/input/wacom_touch`.
 
 ##### Serial devices
 
@@ -127,17 +127,17 @@ The [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/) should also inc
 
 ```
 
-See _man inputattach_ for help about available options. As for USB devices one should end up with a file `/dev/input/wacom` and proceed with the _Xorg_ configuration.
+See *man inputattach* for help about available options. As for USB devices one should end up with a file `/dev/input/wacom` and proceed with the *Xorg* configuration.
 
 #### Static setup
 
-If you insist in using a static setup just refer to your tablet in the _Xorg_ configuration in the next section using the correct `/dev/input/event??` files as one can find out by looking into `/proc/bus/input/devices`.
+If you insist in using a static setup just refer to your tablet in the *Xorg* configuration in the next section using the correct `/dev/input/event??` files as one can find out by looking into `/proc/bus/input/devices`.
 
 #### Xorg configuration
 
-In either case, dynamic or static setup you got now one or two files in `/dev/input/` which refer to the correct input event devices of your tablet. All that is left to do is add the relevant information to `/etc/X11/xorg.conf`, or a dedicated file under `/etc/X11/xorg.conf.d/`. The exact configuration depends on your tablet's features of course. `xsetwacom --list devices` might give helpful information on what _InputDevice_ sections are needed for your tablet.
+In either case, dynamic or static setup you got now one or two files in `/dev/input/` which refer to the correct input event devices of your tablet. All that is left to do is add the relevant information to `/etc/X11/xorg.conf`, or a dedicated file under `/etc/X11/xorg.conf.d/`. The exact configuration depends on your tablet's features of course. `xsetwacom --list devices` might give helpful information on what *InputDevice* sections are needed for your tablet.
 
-An example configuration for a _Volito2_ might look like this
+An example configuration for a *Volito2* might look like this
 
 ```
 Section "InputDevice"
@@ -190,7 +190,7 @@ EndSection
 
 ```
 
-Add this to the _ServerLayout_ section
+Add this to the *ServerLayout* section
 
 ```
 InputDevice "cursor" "SendCoreEvents" 
@@ -199,7 +199,7 @@ InputDevice "eraser" "SendCoreEvents"
 
 ```
 
-And finally make sure to update the identifier of your mouse in the _ServerLayout_ section – as mine went from
+And finally make sure to update the identifier of your mouse in the *ServerLayout* section – as mine went from
 
 ```
 InputDevice    "Mouse0" "CorePointer"
@@ -217,7 +217,7 @@ InputDevice    "Mouse1" "CorePointer"
 
 ### General concepts
 
-The configuration can be done in two ways temporary using the `xsetwacom` tool, which is included in _xf86-input-wacom_ or permanent in `xorg.conf` or better in a extra file in `/etc/X11/xorg.conf.d`. The possible options are identical so it is recommended to first use `xsetwacom` for testing and later add the final config to the _Xorg_ configuration files.
+The configuration can be done in two ways temporary using the `xsetwacom` tool, which is included in *xf86-input-wacom* or permanent in `xorg.conf` or better in a extra file in `/etc/X11/xorg.conf.d`. The possible options are identical so it is recommended to first use `xsetwacom` for testing and later add the final config to the *Xorg* configuration files.
 
 #### Temporary configuration
 
@@ -253,10 +253,9 @@ For further configuration tips and tricks see below in [#Specific configuration 
 
 #### Permanent configuration
 
-To make a permanent configuration the preferred way for _Xorg_>1.8 is to create a new file in `/etc/X11/xorg.conf.d` e.g. `52-wacom-options.conf` with the following content.
+To make a permanent configuration the preferred way for *Xorg*>1.8 is to create a new file in `/etc/X11/xorg.conf.d` e.g. `52-wacom-options.conf` with the following content.
 
  `/etc/X11/xorg.conf.d/52-wacom-options.conf` 
-
 ```
 Section "InputClass"
     Identifier "Wacom Bamboo stylus options"
@@ -322,7 +321,6 @@ If you want to use your tablet in a different orientation you have to tell this 
 or use the following script like this `./wacomrot.sh half`
 
  `wacomrot.sh` 
-
 ```
 #!/bin/bash
 device="Wacom Bamboo 16FG 4x5"
@@ -341,7 +339,7 @@ xsetwacom --set "$pad"    Rotate $1
 
 It is possible to remap the buttons with hotkeys.
 
-*   Check [Simple web-based GUI for xsetwacom](http://planetedessonges.org:8010/wakey/), supports _bamboo small_ but more models may come.
+*   Check [Simple web-based GUI for xsetwacom](http://planetedessonges.org:8010/wakey/), supports *bamboo small* but more models may come.
 
 ##### Finding out the button IDs
 
@@ -406,8 +404,7 @@ even little macros are possible
 
 ```
 
-**Note:** There seems to be a bug in the _xf86-input-wacom_ driver version 0.17.0, at least for my _Wacom Bamboo Pen & Touch_, but I guess this holds in general. It causes the keystrokes not to be overwritten correctly.
-
+**Note:** There seems to be a bug in the *xf86-input-wacom* driver version 0.17.0, at least for my *Wacom Bamboo Pen & Touch*, but I guess this holds in general. It causes the keystrokes not to be overwritten correctly.
 ```
  $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 "key a b c" # press button 1 -> abc
  $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 "key d"     # press button 1 -> dbc  WRONG!
@@ -439,7 +436,7 @@ To get well defined button codes add the following to your permanent configurati
 
 ```
 
-Then restart your _Xorg_ server and verify the buttons using `xev` or `xbindkeys -mk`.
+Then restart your *Xorg* server and verify the buttons using `xev` or `xbindkeys -mk`.
 
 Now set up your xbindkeys configuration, if you do not already have one you might want to create a default configuration
 
@@ -467,7 +464,6 @@ Then add your custom key mapping to `~/.xbindkeysrc`, for example
 See the [sysfs-driver-wacom](https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-driver-wacom) documentation. To make changes without requiring root permissions you will likely want to create a [udev](/index.php/Udev "Udev") rule like so:
 
  `/etc/udev/rules.d/99-wacom.rules` 
-
 ```
 # Give the users group permissions to set Wacom device LEDs.
 ACTION=="add", SUBSYSTEM=="hid", DRIVERS=="wacom", RUN+="/usr/bin/sh -c 'chown :users /sys/%p/wacom_led/*'"
@@ -555,7 +551,6 @@ You can immediately test your desired values for your device (eg. "Wacom Intuos4
 Later you can apply them in `/etc/X11/xorg.conf` as shown below or you use the above shell commands in any startup script
 
  `/etc/X11/xorg.conf` 
-
 ```
   Option        "PressCurve"    "50,0,100,80"         # Custom preference
   Option        "Threshold"     "27"                  # sensitivity to do a "click"
@@ -606,25 +601,25 @@ Provided example (for Bamboo fun) adapted to **Sculpt** mode: [blender_sculpt.sh
 
 It remaps
 
-*   Left tablet buttons to **Shift** and **Control** _(pan/tilt/zoom/smooth/invert)_
-*   Right tablet buttons to **F** _(brush size/strenght)_ and **Control-z** _(undo)_
-*   Top pen button ton **m** _(mask control)_
+*   Left tablet buttons to **Shift** and **Control** *(pan/tilt/zoom/smooth/invert)*
+*   Right tablet buttons to **F** *(brush size/strenght)* and **Control-z** *(undo)*
+*   Top pen button ton **m** *(mask control)*
 
 ### GIMP
 
-To enabled proper usage, and pressure sensitive painting in [GIMP](http://www.gimp.org), just go to _Edit → Input Devices_. Now for each of your _eraser_, _stylus_, and _cursor_ **devices**, set the **mode** to _Screen_, and remember to save.
+To enabled proper usage, and pressure sensitive painting in [GIMP](http://www.gimp.org), just go to *Edit → Input Devices*. Now for each of your *eraser*, *stylus*, and *cursor* **devices**, set the **mode** to *Screen*, and remember to save.
 
-*   Please take note that if present, the _pad_ **device** should be kept disabled as I do not think The GIMP supports such things. Alternatively, to use such features of your tablet you should map them to keyboard commands with a program such as [Wacom ExpressKeys](http://hem.bredband.net/devel/wacom/).
+*   Please take note that if present, the *pad* **device** should be kept disabled as I do not think The GIMP supports such things. Alternatively, to use such features of your tablet you should map them to keyboard commands with a program such as [Wacom ExpressKeys](http://hem.bredband.net/devel/wacom/).
 
-*   You should also take note that the tool selected for the _stylus_ is independent to that of the _eraser_. This can actually be quite handy, as you can have the _eraser_ set to be used as any tool you like.
+*   You should also take note that the tool selected for the *stylus* is independent to that of the *eraser*. This can actually be quite handy, as you can have the *eraser* set to be used as any tool you like.
 
-For more information checkout the _Setting up GIMP_ section of [GIMP Talk - Community - Install Guide: Getting Wacom Drawing Tablets To Work In Gimp](http://www.gimptalk.com/forum/topic.php?t=17992&start=1).
+For more information checkout the *Setting up GIMP* section of [GIMP Talk - Community - Install Guide: Getting Wacom Drawing Tablets To Work In Gimp](http://www.gimptalk.com/forum/topic.php?t=17992&start=1).
 
 If the above was not enough, you may want to try setting up the tablet's stylus (and eraser) as a second mouse pointer (separating it from your mouse) by using the `xinput create-master` and `xinput reattach` commands. It can help when GIMP does not start painting even if the stylus touches the tablet.
 
 ### Inkscape
 
-As in GIMP, to do the same simply got to _Edit → Input Devices..._. Now for each of your _eraser_, _stylus_, and _cursor_ **devices**, set the **mode** to _Screen_, and remember to save.
+As in GIMP, to do the same simply got to *Edit → Input Devices...*. Now for each of your *eraser*, *stylus*, and *cursor* **devices**, set the **mode** to *Screen*, and remember to save.
 
 ### Krita
 

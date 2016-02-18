@@ -113,7 +113,7 @@ Dare un'occhiata a `/sys/power/tuxonice/resume` per vedere cosa passare al kerne
 
 ## Sospensione e Resuming
 
-Con gli hibernate-script, il metodo di ibernazione preferito può essere configurato nel file `/etc/hibernate/hibernate.conf`. Se si elencano diversi metodi, il primo sarà quello utilizzato. Notare che _hibernate_ può essere anche usato con [Suspend to RAM](/index.php/Suspend_to_RAM "Suspend to RAM") o vanilla swsusp, ma questo non è parte della guida.
+Con gli hibernate-script, il metodo di ibernazione preferito può essere configurato nel file `/etc/hibernate/hibernate.conf`. Se si elencano diversi metodi, il primo sarà quello utilizzato. Notare che *hibernate* può essere anche usato con [Suspend to RAM](/index.php/Suspend_to_RAM "Suspend to RAM") o vanilla swsusp, ma questo non è parte della guida.
 
 Per TuxOnIce usare:
 
@@ -145,7 +145,7 @@ Se tutto è andato bene, dovresti essere in grado di effettuare il resuming usan
 
 **Attenzione:** Non usare mai un kernel differente per effettuare il resume da quello che hai usato per l'ibernazione! Se pacman aggiorna il tuo kernel, non ibernare prima che tu abbia riavviato la macchina e avviato il nuovo kernel.
 
-Si può rendere questa pratica più sicura aggiungendo il demone _hibernate-cleanup_ nella stringa DAEMONS in `/etc/rc.conf`. Questo script verifica che qualsiasi vecchia immagine per il resume sia cancellata della partizione di swap durante l'avvio. Questo dovrebbe rendere più sicuro il sistema anche nel caso si scelga il kernel sbagliato dal menù di Grub. Il demone hibernate-cleanup è incluso nel pacchetto hibernate-script.
+Si può rendere questa pratica più sicura aggiungendo il demone *hibernate-cleanup* nella stringa DAEMONS in `/etc/rc.conf`. Questo script verifica che qualsiasi vecchia immagine per il resume sia cancellata della partizione di swap durante l'avvio. Questo dovrebbe rendere più sicuro il sistema anche nel caso si scelga il kernel sbagliato dal menù di Grub. Il demone hibernate-cleanup è incluso nel pacchetto hibernate-script.
 
 ## Configurazioni addizionali di pm-utils
 

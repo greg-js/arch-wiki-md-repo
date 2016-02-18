@@ -62,7 +62,6 @@ In the following we construct an `/etc/iptables/iptables.rules` file to handle p
 First we define the default filter policies and chains for this sample script. The OUTPUT ACCEPT is necessary in this example, because otherwise the SSH port could be opened, but traffic would be dropped - which defeats the purpose. The last three chains we require for the port knocking in the following rules.
 
  `# Filter definition` 
-
 ```
 *filter
 :INPUT DROP [0:0]
@@ -77,7 +76,6 @@ First we define the default filter policies and chains for this sample script. T
 Now we add the rules for the main chain, `TRAFFIC`. The concept of port knocking is based on sending singular connect requests to the right ports in a sequence. We need ICMP for some network traffic control and to allow an established connection, e.g. to SSH.
 
  `# INPUT definition` 
-
 ```
 -A INPUT -j TRAFFIC
 -A TRAFFIC -m state --state ESTABLISHED,RELATED -j ACCEPT
@@ -108,7 +106,7 @@ The same procedure is followed for the next port to be knocked. The ordering of 
 -A TRAFFIC -m state --state NEW -m tcp -p tcp -m recent --name SSH0 --remove -j DROP
 ```
 
-In the final block of rules, the magic of setting the connection attempt for the IP to the respective _recent_ list of allowed IPs for the next step of the knocking sequence is done.
+In the final block of rules, the magic of setting the connection attempt for the IP to the respective *recent* list of allowed IPs for the next step of the knocking sequence is done.
 
 The first is the one for the first knock in sequence, which is checked as part of the main chain `TRAFFIC` since any new connection attempt may be the start of a port knocking. On success (correct port) it sets the knock to the first list, `SSH0`. This in turn one can see in the last block of rules to be checked against, where the rule for checking the second knock (7777) requires a recent knock on the first port and only then may set the next recent list (`SSH1`). This switch brings the sequencing of the lists.
 
@@ -163,7 +161,6 @@ COMMIT
 Now that configuration is done, to do the port knocking you will need a tool. [nmap](https://www.archlinux.org/packages/?name=nmap) is used here. A simple shell script (`knock.sh`) automates the port knocking:
 
  `knock.sh` 
-
 ```
 #!/bin/bash
 HOST=$1
@@ -199,7 +196,7 @@ user@host's password:
 Last login: Tue Aug 20 23:00:27 2013 from host
 ```
 
-The first connection attempt has to be stopped, because the DROP of the connection sends no reply. For testing purposes one can change the last rules' DROP to REJECT, which will return a `$ connection refused` instead. Finally, right after the successful login, one can see the successful knocks in the kernel's _recent_ lists:
+The first connection attempt has to be stopped, because the DROP of the connection sends no reply. For testing purposes one can change the last rules' DROP to REJECT, which will return a `$ connection refused` instead. Finally, right after the successful login, one can see the successful knocks in the kernel's *recent* lists:
 
 ```
 [user@host ~]$ cat /proc/net/xt_recent/SSH*

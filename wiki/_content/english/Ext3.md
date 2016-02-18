@@ -97,11 +97,11 @@ Now to change your reserved space to 1% of the drive, which is fair for non-root
 Once you have created and formated a partition, you can assign it a label using the e2label command. This allows you to add the partition to /etc/fstab using a label instead of using a device path (usefull for an USB drive). To add a label to a partition, type the following command as root:
 
 ```
-# e2label /dev/sdXY _new-label_
+# e2label /dev/sdXY *new-label*
 
 ```
 
-If the optional argument _new-label_ is not present, e2label will simply display the current filesystem label. If the optional argument _new-label_ is present, then e2label will set the filesystem label to be _new-label_q. Ext2 and ext3 filesystem labels can be at most 16 characters long; if new-label is longer than 16 characters, e2label will truncate it and print a warning message.
+If the optional argument *new-label* is not present, e2label will simply display the current filesystem label. If the optional argument *new-label* is present, then e2label will set the filesystem label to be *new-label*q. Ext2 and ext3 filesystem labels can be at most 16 characters long; if new-label is longer than 16 characters, e2label will truncate it and print a warning message.
 
 ## User experiences
 

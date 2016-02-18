@@ -94,7 +94,6 @@ For convenience I'll be using /service as the service directory in these example
 Listing running services
 
  `# sv s /service/*` 
-
 ```
    run: /service/agetty-2: (pid 4120) 7998s
    run: /service/agetty-3: (pid 4119) 7998s
@@ -163,7 +162,6 @@ Create /etc/sv/homes/joeuser/run with the following:
      sudo -H -u joeuser runsvdir -P /home/joeuser/service 'log:...................................................................................................................................' # Requires sudo, of course
 
 ```
-
  `# chmod 700 /etc/sv/homes/joeuser/run` 
 
 Then symlink /etc/sv/homes/joeuser to /service and any service joe puts in ~/service will start, as him, with his environment.
@@ -182,7 +180,6 @@ Create the /etc/sv/joeuserX/run script with the following
      su -c xinit - joeuser
 
 ```
-
  `# chmod 700 /etc/sv/joeuserX/run` 
 
 Then symlink /etc/sv/joeuserX to /service. joe's X session will now always run (in this runlevel). To protect it using joe's ssh passphrase, use the following in your .xinitrc:

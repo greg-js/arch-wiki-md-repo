@@ -1,4 +1,4 @@
-In biologia, il [mutualismo](https://en.wikipedia.org/wiki/it:Mutualismo "wikipedia:it:Mutualismo") è l'interazione tra due organismi dalla quale entrambi ricavano un beneficio. Questo principio si può anche applicare ai membri volenterosi e motivati della comunità di Arch che vogliono essere coinvolti e contribuire alla loro distribuzione GNU/Linux preferita. Da questa partecipazione traggono vantaggio non solo i membri della comunità e i loro compagni _Arcieri_ (da _Archers_), ma potenzialmente tutti i fan del [software libero ed open source](https://en.wikipedia.org/wiki/it:Free_and_open_source_software "wikipedia:it:Free and open source software").
+In biologia, il [mutualismo](https://en.wikipedia.org/wiki/it:Mutualismo "wikipedia:it:Mutualismo") è l'interazione tra due organismi dalla quale entrambi ricavano un beneficio. Questo principio si può anche applicare ai membri volenterosi e motivati della comunità di Arch che vogliono essere coinvolti e contribuire alla loro distribuzione GNU/Linux preferita. Da questa partecipazione traggono vantaggio non solo i membri della comunità e i loro compagni *Arcieri* (da *Archers*), ma potenzialmente tutti i fan del [software libero ed open source](https://en.wikipedia.org/wiki/it:Free_and_open_source_software "wikipedia:it:Free and open source software").
 
 Quest'articolo descrive vari modi in cui gli utenti di Arch (sia nuovi che veterani) possono contribuire a questa comunità. Notare che questa non è una lista esaustiva.
 
@@ -36,7 +36,7 @@ Una delle maniere più facili per contribuire, è partecipare al [Forum di Arch 
 
 I wiki, per loro natura, si basano sulla collaborazione.
 
-[ArchWiki](/index.php/AboutWiki_(Italiano) "AboutWiki (Italiano)") è una raccolta di pagine di documentazione sviluppate dalla comunità. I contenuti sono creati _dalla_ comunità _per_ la comunità. Tutti i collaboratori mettono volontariamente a disposizione il loro tempo e le loro energie per condividere le loro conoscenze e le loro abilità con la comunità. _Tutti_ gli utenti sono incoraggiati a dare il proprio contributo. Le attività su ArchWiki possono essere approssimativamente suddivise nelle seguenti:
+[ArchWiki](/index.php/AboutWiki_(Italiano) "AboutWiki (Italiano)") è una raccolta di pagine di documentazione sviluppate dalla comunità. I contenuti sono creati *dalla* comunità *per* la comunità. Tutti i collaboratori mettono volontariamente a disposizione il loro tempo e le loro energie per condividere le loro conoscenze e le loro abilità con la comunità. *Tutti* gli utenti sono incoraggiati a dare il proprio contributo. Le attività su ArchWiki possono essere approssimativamente suddivise nelle seguenti:
 
 *   Manutenzione tecnica
 *   Gestione dei contenuti
@@ -46,7 +46,7 @@ I wiki, per loro natura, si basano sulla collaborazione.
 Se ci si sente in grado di [editare pagine wiki](/index.php/Help:Editing_(Italiano) "Help:Editing (Italiano)"), è possibile provare a svolgere alcune delle attività elencate in questa sezione.
 
 1.  Marcare gli articoli con gli appropriati [template di stato dell'articolo](/index.php/Help:Template#Article_status_templates "Help:Template") (ad esempio `{{Deletion}}`, `{{Out of date}}`, `{{Translateme}}`, ecc.)
-2.  Aggiungere contenuto alle [bozze (_stubs_)](/index.php/Special:WhatLinksHere/Template:Stub "Special:WhatLinksHere/Template:Stub") e [espandere](/index.php/Special:WhatLinksHere/Template:Expansion "Special:WhatLinksHere/Template:Expansion") articoli incompleti o mal scritti.
+2.  Aggiungere contenuto alle [bozze (*stubs*)](/index.php/Special:WhatLinksHere/Template:Stub "Special:WhatLinksHere/Template:Stub") e [espandere](/index.php/Special:WhatLinksHere/Template:Expansion "Special:WhatLinksHere/Template:Expansion") articoli incompleti o mal scritti.
 3.  [Aggiungere](/index.php/Special:WhatLinksHere/Template:Translateme "Special:WhatLinksHere/Template:Translateme") o [migliorare](/index.php/Special:WhatLinksHere/Template:Bad_translation "Special:WhatLinksHere/Template:Bad translation") traduzioni; assicurarsi che ogni traduzione sia aggiornata rispetto alle altre dello stesso articolo.
 4.  Ridurre e [unificare](/index.php/Special:WhatLinksHere/Template:Merge "Special:WhatLinksHere/Template:Merge") le pagine che trattano dello stesso argomento.
 5.  Correggere contenuti [imprecisi](/index.php/Special:WhatLinksHere/Template:Accuracy "Special:WhatLinksHere/Template:Accuracy") o [obsoleti](/index.php/Special:WhatLinksHere/Template:Out_of_date "Special:WhatLinksHere/Template:Out of date"), ortografia, grammatica, tono e [stile](/index.php/Help:Style_(Italiano) "Help:Style (Italiano)").
@@ -87,7 +87,7 @@ Qui si può trovare la lista dei repository git per i [Progetti ufficiali di Arc
 
 Arch ha una vivace ed attiva comunità di sviluppatori software e progetti collaborativi. Se si ha un progetto da mostrare e condividere, questo è un ottimo posto per farlo. Basta fornire un link al proprio progetto, la data in cui è cominciato ed una sua breve descrizione (una o due frasi).
 
-**Nota:** Tutti i progetti qui elencati sono considerati della comunità. Nessuno di questi è retenuto un progetto _**ufficiale**_ di Arch.
+**Nota:** Tutti i progetti qui elencati sono considerati della comunità. Nessuno di questi è retenuto un progetto ***ufficiale*** di Arch.
 
 #### [Distribuzioni basate su Arch](/index.php/Arch_Based_Distributions "Arch Based Distributions")
 
@@ -155,7 +155,7 @@ Arch ha una vivace ed attiva comunità di sviluppatori software e progetti colla
 
 ## Collaborare
 
-Anzitutto bisogna tenere a mente che la principale motivazione del proprio lavoro per Arch dovrebbe essere aiutare l'intera comunità, e assolutamente non cercare di diventare un _"developer di Arch"_. In secondo luogo bisogna che chi contribuisce si ricordi che è lui stesso parte della comunità: dare aiuto agli altri significa anche aiutare sé stessi.
+Anzitutto bisogna tenere a mente che la principale motivazione del proprio lavoro per Arch dovrebbe essere aiutare l'intera comunità, e assolutamente non cercare di diventare un *"developer di Arch"*. In secondo luogo bisogna che chi contribuisce si ricordi che è lui stesso parte della comunità: dare aiuto agli altri significa anche aiutare sé stessi.
 
 ### Come posso aiutare da sviluppatore?
 

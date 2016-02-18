@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Iptables](/index.php/Iptables "Iptables") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-10-17，点击[这里](https://wiki.archlinux.org/index.php?title=Iptables&diff=0&oldid=266924)可以查看翻译后英文页面的改动。
 
-_iptables_ 是一个配置 Linux 内核 [防火墙](/index.php/Firewall "Firewall") 的命令行工具，是 [netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") 项目的一部分。术语 _iptables_ 也经常代指该内核级防火墙。iptables 可以直接配置，也可以通过许多 [前端](/index.php/Firewalls#iptables_front-ends "Firewalls") 和 [图形界面](/index.php/Firewall#iptables_GUIs "Firewall") 配置。iptables 用于 [ipv4](https://en.wikipedia.org/wiki/Ipv4 "wikipedia:Ipv4")，_ip6tables_ 用于 [ipv6](https://en.wikipedia.org/wiki/Ipv6 "wikipedia:Ipv6")。
+*iptables* 是一个配置 Linux 内核 [防火墙](/index.php/Firewall "Firewall") 的命令行工具，是 [netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") 项目的一部分。术语 *iptables* 也经常代指该内核级防火墙。iptables 可以直接配置，也可以通过许多 [前端](/index.php/Firewalls#iptables_front-ends "Firewalls") 和 [图形界面](/index.php/Firewall#iptables_GUIs "Firewall") 配置。iptables 用于 [ipv4](https://en.wikipedia.org/wiki/Ipv4 "wikipedia:Ipv4")，*ip6tables* 用于 [ipv6](https://en.wikipedia.org/wiki/Ipv6 "wikipedia:Ipv6")。
 
 [nftables](/index.php/Nftables "Nftables") 已经包含在 [Linux kernel 3.13](http://www.phoronix.com/scan.php?page=news_item&px=MTQ5MDU) 中，以后会取代 iptables 成为主要的 Linux 防火墙工具。
 
@@ -101,9 +101,9 @@ iptables 包含 5 张表（tables）:
 
 ### 规则 （Rules）
 
-数据包的过滤基于 **规则**。**规则**由一个_目标_（数据包包匹配所有条件后的动作）和很多_匹配_（导致该规则可以应用的数据包所满足的条件）指定。一个规则的典型匹配事项是数据包进入的端口（例如：eth0 或者 eth1）、数据包的类型（ICMP, TCP, 或者 UDP）和数据包的目的端口。
+数据包的过滤基于 **规则**。**规则**由一个*目标*（数据包包匹配所有条件后的动作）和很多*匹配*（导致该规则可以应用的数据包所满足的条件）指定。一个规则的典型匹配事项是数据包进入的端口（例如：eth0 或者 eth1）、数据包的类型（ICMP, TCP, 或者 UDP）和数据包的目的端口。
 
-目标使用 `-j` 或者 `--jump` 选项指定。目标可以是用户定义的链（例如，如果条件匹配，跳转到之后的用户定义的链，继续处理）、一个内置的特定目标或者是一个目标扩展。内置目标是 `ACCEPT`， `DROP`， `QUEUE` 和 `RETURN`，目标扩展是 `REJECT` and `LOG`。如果目标是内置目标，数据包的命运会立刻被决定并且在当前表的数据包的处理过程会停止。如果目标是用户定义的链，并且数据包成功穿过第二条链，目标将移动到原始链中的下一个规则。目标扩展可以被_终止_（像内置目标一样）或者_不终止_（像用户定义链一样）。详细信息参阅 `man 8 iptables-extensions`。
+目标使用 `-j` 或者 `--jump` 选项指定。目标可以是用户定义的链（例如，如果条件匹配，跳转到之后的用户定义的链，继续处理）、一个内置的特定目标或者是一个目标扩展。内置目标是 `ACCEPT`， `DROP`， `QUEUE` 和 `RETURN`，目标扩展是 `REJECT` and `LOG`。如果目标是内置目标，数据包的命运会立刻被决定并且在当前表的数据包的处理过程会停止。如果目标是用户定义的链，并且数据包成功穿过第二条链，目标将移动到原始链中的下一个规则。目标扩展可以被*终止*（像内置目标一样）或者*不终止*（像用户定义链一样）。详细信息参阅 `man 8 iptables-extensions`。
 
 ### 遍历链 （Traversing Chains）
 
@@ -152,7 +152,6 @@ iptables 是一个 [Systemd](/index.php/Systemd "Systemd") 服务，因此可以
 使用以下命令查看当前规则和匹配数：
 
  `# iptables -nvL` 
-
 ```
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
  pkts bytes target     prot opt in     out     source               destination   
@@ -206,7 +205,7 @@ Chain OUTPUT (policy ACCEPT 0K packets, 0 bytes)
 
 **警告:** 本章节其余部分主要讲解 iptables 规则的语法和其背后的思想，而不是作为一种保护服务器的手段，如果想要提高系统的安全性，参考 [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall") 来获得一个最低限度的 iptables 安全配置，参考 [Security](/index.php/Security "Security") 来提高 Arch Linux 的安全性。
 
-[Dropbox](https://en.wikipedia.org/wiki/Dropbox_(service) "wikipedia:Dropbox (service)") 的局域网同步特性 — [每30秒广播数据包](https://isc.sans.edu/port.html?port=17500)到所有可视的计算机，如果我们碰巧在一个拥有 Dropbox 客户端的局域网中，但是我们不想使用这个特性，那么我们希望拒绝这些数据包。
+[Dropbox](https://en.wikipedia.org/wiki/Dropbox_(service) 的局域网同步特性 — [每30秒广播数据包](https://isc.sans.edu/port.html?port=17500)到所有可视的计算机，如果我们碰巧在一个拥有 Dropbox 客户端的局域网中，但是我们不想使用这个特性，那么我们希望拒绝这些数据包。
 
 ```
 # iptables -A INPUT -p tcp --dport 17500 -j REJECT --reject-with icmp-port-unreachable
@@ -327,7 +326,6 @@ num   pkts bytes target     prot opt in     out     source               destina
 ipv6 规则默认保存在 `/etc/iptables/ip6tables.rules`,`ip6tables.service` 服务会使用这个规则，可以用类似的方式启动服务。
 
 **注意:** iptables 1.4.21-1 包中的 `iptables.service` 和 `ip6tables.service` 文件已经过期了。因为安全原因，自 systemd 214 起推荐防火墙在 `network-pre.target` 目标之前启动，这样防火墙就可以在任何网络配置之前运行。等待 iptables 数据包更新，创建深层目录 `/etc/systemd/system/iptables.service.d`，创建 `00-pre-network.conf` 文件，添加如下片段：
-
 ```
 [Unit]
 Before=network-pre.target
@@ -335,7 +333,6 @@ Before=network-pre.target
 RequiredBy=network-pre.target
 
 ```
-
 如果系统使用 `ip6tables.service`，那么在 `/etc/systemd/system/ip6tables.service.d` 目录中做同样的配置。更多细节参考 [systemd bug report](https://bugs.freedesktop.org/show_bug.cgi?id=79600)，[systemd release announcement](http://lists.freedesktop.org/archives/systemd-devel/2014-June/019925.html) 和 [FS#33478](https://bugs.archlinux.org/task/33478)
 
 通过命令行添加规则，配置文件不会自动改变，所以必须手动保存：
@@ -394,7 +391,7 @@ LOG 目标可以用来记录匹配某个规则的数据包。和 ACCEPT 或 DROP
 
 ### 限制日志级别
 
-上述 `logdrop` 链使用限制（limit）模式来防止 _iptables_ 日志来过大或者造成不必要的硬盘读写。没有限制的话，一个试图链接的错误配置服务、或者一个攻击者，都会使 iptables 日志写满整个硬盘（或者至少是 `/var` 分区）。
+上述 `logdrop` 链使用限制（limit）模式来防止 *iptables* 日志来过大或者造成不必要的硬盘读写。没有限制的话，一个试图链接的错误配置服务、或者一个攻击者，都会使 iptables 日志写满整个硬盘（或者至少是 `/var` 分区）。
 
 限制模式使用 `-m limit`，可以使用 `--limit` 来设置平均速率或者使用 `--limit-burst` 来设置起始触发速率。在上述 `logdrop` 例子中：
 

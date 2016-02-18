@@ -28,7 +28,7 @@ $ gsettings set org.gnome.gedit.preferences.editor ensure-trailing-newline false
 
 If desired, gedit can create a backup copy of an edited file - the contents of the backup file will be the same as the contents of the original file before the edit was made and then saved. The backup file's name will be the same as original file's name but suffixed with a ~ symbol. Hence, for the file called `file1` the backup copy would have the name `file1~`. Backup files are hidden by default.
 
-To enable this behaviour, access gedit's Preferences panel (for GNOME Shell users, this can be found in gedit's global menu). In the preferences panel, click on the _Editor_ tab and tick the option _Create a backup copy of files before saving._
+To enable this behaviour, access gedit's Preferences panel (for GNOME Shell users, this can be found in gedit's global menu). In the preferences panel, click on the *Editor* tab and tick the option *Create a backup copy of files before saving.*
 
 ## Spell Checking
 

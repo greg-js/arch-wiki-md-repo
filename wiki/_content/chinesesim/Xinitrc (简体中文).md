@@ -17,11 +17,11 @@
 
 ## 安装
 
-[安装](/index.php/Install "Install") 软件包 [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit). 此软件包提供了 _xinit_ 和 _startx_。
+[安装](/index.php/Install "Install") 软件包 [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit). 此软件包提供了 *xinit* 和 *startx*。
 
 ## 配置
 
-如果用户主目录中存在 `.xinitrc`，_startx_ 和 _xinit_ 会执行此文件。如果不存在，_startx_ 会执行 `/etc/X11/xinit/xinitrc`。这个文件默认启动 [Twm](/index.php/Twm "Twm") 和 [Xterm](/index.php/Xterm "Xterm") (_xinit_ 的默认行为不一样，请参阅 `man 1 xinit`). 所以要设置窗口管理器或桌面环境，先通过复制创建默认文件：
+如果用户主目录中存在 `.xinitrc`，*startx* 和 *xinit* 会执行此文件。如果不存在，*startx* 会执行 `/etc/X11/xinit/xinitrc`。这个文件默认启动 [Twm](/index.php/Twm "Twm") 和 [Xterm](/index.php/Xterm "Xterm") (*xinit* 的默认行为不一样，请参阅 `man 1 xinit`). 所以要设置窗口管理器或桌面环境，先通过复制创建默认文件：
 
 ```
 $ cp /etc/X11/xinit/xinitrc ~/.xinitrc
@@ -81,7 +81,7 @@ $ xinit -- :1 -nolisten tcp vt$XDG_VTNR
 
 *   上面命令在用户登录的虚拟终端执行 [Xorg](/index.php/Xorg "Xorg")，[[1]](http://blog.falconindy.com/articles/back-to-basics-with-x-and-systemd.html) 这样 `logind` 就可以保持认证会话，而且切换虚拟终端也无法跳过屏保。
 *   在 xinit 命令中必须使用 `vt$XDG_VTNR` 才能 [保持会话权限](/index.php/General_troubleshooting#Session_permissions "General troubleshooting").
-*   _xinit_ 在登录了不同的虚拟终端是不会处理多个会话。所以必须通过`-- :_session_no_` 指定会话。如果 X 已经在运行，需要指定 :1 或更高。
+*   *xinit* 在登录了不同的虚拟终端是不会处理多个会话。所以必须通过`-- :*session_no*` 指定会话。如果 X 已经在运行，需要指定 :1 或更高。
 
 ## 在启动的时候自动启用X
 
@@ -149,7 +149,6 @@ If you are frequently switching between different DEs/WMs, it is recommended to 
 The following example `~/.xinitrc` shows how to start a particular DE/WM with an argument:
 
  `~/.xinitrc` 
-
 ```
 ...
 
@@ -216,7 +215,6 @@ $ startx ~/.xinitrc wmaker
 It is possible to start only specific applications without a window manager, although most likely this is only useful with a single application shown in full-screen mode. For example:
 
  `~/.xinitrc` 
-
 ```
 ...
 

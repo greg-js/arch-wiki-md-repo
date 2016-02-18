@@ -13,25 +13,26 @@ An environment variable is a named object that contains data used by one or more
 
 ## Utilities
 
-The [coreutils](https://www.archlinux.org/packages/?name=coreutils) package contains the programs _printenv_ and _env_. To list the current environmental variables with values:
+The [coreutils](https://www.archlinux.org/packages/?name=coreutils) package contains the programs *printenv* and *env*. To list the current environmental variables with values:
 
 ```
 $ printenv
 
 ```
 
-**Note:** Some environment variables are user-specific. Check by comparing the outputs of _printenv_ as an unprivileged user and as _root_.
+**Note:** Some environment variables are user-specific. Check by comparing the outputs of *printenv* as an unprivileged user and as *root*.
 
-The `env` utility can be used to run a command under a modified environment. The following example will launch _xterm_ with the environment variable `EDITOR` set to `vim`. This will not affect the global environment variable `EDITOR`.
+The `env` utility can be used to run a command under a modified environment. The following example will launch *xterm* with the environment variable `EDITOR` set to `vim`. This will not affect the global environment variable `EDITOR`.
 
 ```
 $ env EDITOR=vim xterm
 
 ```
 
-The [Bash](/index.php/Bash "Bash") builtin _set_ allows you to change the values of shell options and set the positional parameters, or to display the names and values of shell variables. For more information, see the _set_ documentation: [[1]](http://www.gnu.org/software/bash/manual/bash.html#The-Set-Builtin).
+The [Bash](/index.php/Bash "Bash") builtin *set* allows you to change the values of shell options and set the positional parameters, or to display the names and values of shell variables. For more information, see the *set* documentation: [[1]](http://www.gnu.org/software/bash/manual/bash.html#The-Set-Builtin).
 
-Each process stores their environment in the `/proc/$PID/environ` file. This file contained each key value pair delimited by a nul character (`\x0`). A more human readable format can be obtained with [sed](/index.php/Sed "Sed"), e.g. `sed 's:\x0:\n:g' /proc/$PID/environ`.
+Each process stores their environment in the `/proc/$PID/environ` file. This file contained each key value pair delimited by a nul character (`\x0`). A more human readable format can be obtained with [sed](/index.php/Sed "Sed"), e.g. `sed 's:\x0:
+:g' /proc/$PID/environ`.
 
 ## Defining variables
 
@@ -41,9 +42,9 @@ Most Linux distributions tell you to change or add environment variable definiti
 
 The following files should be used for defining global environment variables on your system: `/etc/profile`, `/etc/bash.bashrc` and `/etc/environment`. Each of these files has different limitations, so you should carefully select the appropriate one for your purposes.
 
-*   `/etc/profile` initializes variables for login shells _only_. It does, however, run scripts and can be used by all [Bourne shell](https://en.wikipedia.org/wiki/Bourne_shell "wikipedia:Bourne shell") compatible shells.
-*   `/etc/bash.bashrc` initializes variables for interactive shells _only_. It also runs scripts but (as its name implies) is Bash specific.
-*   `/etc/environment` is used by the PAM-env module and is agnostic to login/non-login, interactive/non-interactive and also Bash/non-Bash, so scripting or glob expansion cannot be used. The file only accepts `_variable=value_` pairs.
+*   `/etc/profile` initializes variables for login shells *only*. It does, however, run scripts and can be used by all [Bourne shell](https://en.wikipedia.org/wiki/Bourne_shell "wikipedia:Bourne shell") compatible shells.
+*   `/etc/bash.bashrc` initializes variables for interactive shells *only*. It also runs scripts but (as its name implies) is Bash specific.
+*   `/etc/environment` is used by the PAM-env module and is agnostic to login/non-login, interactive/non-interactive and also Bash/non-Bash, so scripting or glob expansion cannot be used. The file only accepts `*variable=value*` pairs.
 
 In this example, we add `~/bin` directory to the `PATH` for respective user. To do this, just put this in your preferred global environment variable config file (`/etc/profile` or `/etc/bash.bashrc`):
 
@@ -74,14 +75,13 @@ export PATH="${PATH}:/home/my_user/bin"
 
 ```
 
-To update the variable, re-login or _source_ the file: `$ source ~/.bash_profile`.
+To update the variable, re-login or *source* the file: `$ source ~/.bash_profile`.
 
 #### Graphical applications
 
 To set environment variables for GUI applications, you can put your variables in [xinitrc](/index.php/Xinitrc "Xinitrc") (or [xprofile](/index.php/Xprofile "Xprofile") when using a [display manager](/index.php/Display_manager "Display manager")), for example:
 
  `~/.xinitrc` 
-
 ```
 export PATH="${PATH}:~/scripts"
 export GUIVAR=value
@@ -91,7 +91,7 @@ export GUIVAR=value
 
 Sometimes even stricter definitions are required. One might want to temporarily run executables from a specific directory created without having to type the absolute path to each one, or editing `~/.bash_profile` for the short time needed to run them.
 
-In this case, you can define the `PATH` variable in your current session, combined with the _export_ command. As long as you do not log out, the `PATH` variable will be using the temporary settings. To add a session-specific directory to `PATH`, issue:
+In this case, you can define the `PATH` variable in your current session, combined with the *export* command. As long as you do not log out, the `PATH` variable will be using the temporary settings. To add a session-specific directory to `PATH`, issue:
 
 ```
 $ export PATH="${PATH}:/home/my_user/tmp/usr/bin"
@@ -102,22 +102,21 @@ $ export PATH="${PATH}:/home/my_user/tmp/usr/bin"
 
 The following section lists a number of common environment variables used by a Linux system and describes their values.
 
-*   `DE` indicates the _D_esktop _E_nvironment being used. [xdg-open](/index.php/Xdg-open "Xdg-open") will use it to choose more user-friendly file-opener application that desktop environment provides. Some packages need to be installed to use this feature. For [GNOME](/index.php/GNOME "GNOME"), that would be [libgnome](https://www.archlinux.org/packages/?name=libgnome); for [Xfce](/index.php/Xfce "Xfce") this is [exo](https://www.archlinux.org/packages/?name=exo). Recognised values of `DE` variable are: `gnome`, `kde`, `xfce`, `lxde` and `mate`.
+*   `DE` indicates the *D*esktop *E*nvironment being used. [xdg-open](/index.php/Xdg-open "Xdg-open") will use it to choose more user-friendly file-opener application that desktop environment provides. Some packages need to be installed to use this feature. For [GNOME](/index.php/GNOME "GNOME"), that would be [libgnome](https://www.archlinux.org/packages/?name=libgnome); for [Xfce](/index.php/Xfce "Xfce") this is [exo](https://www.archlinux.org/packages/?name=exo). Recognised values of `DE` variable are: `gnome`, `kde`, `xfce`, `lxde` and `mate`.
 
 	The `DE` environment variable needs to be exported before starting the window manager. For example:
 
  `~/.xinitrc` 
-
 ```
 export DE="xfce"
 exec openbox
 ```
 
-	This will make _xdg-open_ use the more user-friendly _exo-open_, because it assumes it is running inside Xfce. Use _exo-preferred-applications_ for configuring.
+	This will make *xdg-open* use the more user-friendly *exo-open*, because it assumes it is running inside Xfce. Use *exo-preferred-applications* for configuring.
 
-*   `DESKTOP_SESSION` is similar to `DE`, but used in [LXDE](/index.php/LXDE "LXDE") desktop enviroment: when `DESKTOP_SESSION` is set to `LXDE`, _xdg-open_ will use _pcmanfm_ file associations.
+*   `DESKTOP_SESSION` is similar to `DE`, but used in [LXDE](/index.php/LXDE "LXDE") desktop enviroment: when `DESKTOP_SESSION` is set to `LXDE`, *xdg-open* will use *pcmanfm* file associations.
 
-*   `PATH` contains a colon-separated list of directories in which your system looks for executable files. When a regular command (e.g., _ls_, _rc-update_ or _ic|emerge_) is interpreted by the shell (e.g., _bash_ or _zsh_), the shell looks for an executable file with the same name as your command in the listed directories, and executes it. To run executables that are not listed in `PATH`, the absoute path to the executable must be given: `/bin/ls`.
+*   `PATH` contains a colon-separated list of directories in which your system looks for executable files. When a regular command (e.g., *ls*, *rc-update* or *ic|emerge*) is interpreted by the shell (e.g., *bash* or *zsh*), the shell looks for an executable file with the same name as your command in the listed directories, and executes it. To run executables that are not listed in `PATH`, the absoute path to the executable must be given: `/bin/ls`.
 
 **Note:** It is advised not to include the current working directory (`.`) into your `PATH` for security reasons, as it may trick the user to execute vicious commands.
 
@@ -125,7 +124,7 @@ exec openbox
 
 *   `PWD` contains the path to your working directory.
 
-*   `OLDPWD` contains the path to your previous working directory, that is, the value of `PWD` before last _cd_ was executed.
+*   `OLDPWD` contains the path to your previous working directory, that is, the value of `PWD` before last *cd* was executed.
 
 *   `SHELL` contains the name of the running, interactive shell, e.g., `bash`
 
@@ -133,7 +132,7 @@ exec openbox
 
 *   `PAGER` contains command to run the program used to list the contents of files, e.g., `/bin/less`.
 
-*   `EDITOR` contains the command to run the lightweight program used for editing files, e.g., `/usr/bin/nano`. For example, you can write an interactive switch between _gedit_ under [X](/index.php/X "X") or _nano_ in this example):
+*   `EDITOR` contains the command to run the lightweight program used for editing files, e.g., `/usr/bin/nano`. For example, you can write an interactive switch between *gedit* under [X](/index.php/X "X") or *nano* in this example):
 
 ```
 export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'gedit'; else echo 'nano'; fi)"
@@ -163,7 +162,7 @@ http_proxy="http://192.168.0.1:80"
 
 ```
 
-*   `MANPATH` contains a colon-separated list of directories in which _man_ searches for the man pages.
+*   `MANPATH` contains a colon-separated list of directories in which *man* searches for the man pages.
 
 **Note:** In `/etc/profile`, there is a comment that states "Man is much better than us at figuring this out", so this variable should generally be left as default, i.e. `/usr/share/man:/usr/local/share/man`
 

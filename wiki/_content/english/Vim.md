@@ -1,4 +1,4 @@
-[Vim](https://en.wikipedia.org/wiki/Vim_(text_editor) "wikipedia:Vim (text editor)") is a [terminal](https://en.wikipedia.org/wiki/Computer_terminal#Text_terminals "wikipedia:Computer terminal") text editor, an extended version of [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") with additional features. To primarily help with editing source code some of Vim's added features include syntax highlighting, a comprehensive help system, native scripting (vimscript), a visual mode for text selection, and comparison of files (vimdiff).
+[Vim](https://en.wikipedia.org/wiki/Vim_(text_editor) is a [terminal](https://en.wikipedia.org/wiki/Computer_terminal#Text_terminals "wikipedia:Computer terminal") text editor, an extended version of [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") with additional features. To primarily help with editing source code some of Vim's added features include syntax highlighting, a comprehensive help system, native scripting (vimscript), a visual mode for text selection, and comparison of files (vimdiff).
 
 Vim's focus is keyboard-centric and is not a simple text editor like nano or pico—it requires time to learn, and a lifetime to master.
 
@@ -42,14 +42,14 @@ Vim's focus is keyboard-centric and is not a simple text editor like nano or pic
 
 **Note:**
 
-*   The [vim](https://www.archlinux.org/packages/?name=vim) package is built without [Xorg](/index.php/Xorg "Xorg") support; specifically the `+clipboard` feature is missing, so Vim will not be able to operate with the _primary_ and _clipboard_ [selection buffers](/index.php/Clipboard "Clipboard"). The [gvim](https://www.archlinux.org/packages/?name=gvim) package provides also the CLI version of Vim with the `+clipboard` feature.
+*   The [vim](https://www.archlinux.org/packages/?name=vim) package is built without [Xorg](/index.php/Xorg "Xorg") support; specifically the `+clipboard` feature is missing, so Vim will not be able to operate with the *primary* and *clipboard* [selection buffers](/index.php/Clipboard "Clipboard"). The [gvim](https://www.archlinux.org/packages/?name=gvim) package provides also the CLI version of Vim with the `+clipboard` feature.
 *   The unofficial repository [herecura](/index.php/Unofficial_user_repositories#herecura "Unofficial user repositories") also provides a number of Vim/gVim variants: `vim-cli`, `vim-gvim-common`, `vim-gvim-gtk`, `vim-gvim-qt`, `vim-rt` and `vim-tiny`.
 
 ## Usage
 
-For a basic overview on how to use Vim, follow the vim tutorial by running either _vimtutor_ (for the terminal version) or _gvimtutor_ (for the graphical version).
+For a basic overview on how to use Vim, follow the vim tutorial by running either *vimtutor* (for the terminal version) or *gvimtutor* (for the graphical version).
 
-Vim includes a broad help system that can be accessed with the `:h _subject_` command. Subjects include commands, configuration options, key bindings, plugins etc. Use the `:h` command (without any subject) for information about the help system and jumping between subjects.
+Vim includes a broad help system that can be accessed with the `:h *subject*` command. Subjects include commands, configuration options, key bindings, plugins etc. Use the `:h` command (without any subject) for information about the help system and jumping between subjects.
 
 ## Configuration
 
@@ -58,7 +58,6 @@ Vim's user-specific configuration file is located in the home directory: `~/.vim
 To get some commonly expected behaviors (such as syntax highlighting), add the Vim example configuration to `/etc/vimrc`:
 
  `/etc/vimrc/` 
-
 ```
 ...
 
@@ -113,7 +112,7 @@ The default behavior can be changed by adding `set whichwrap=b,s,<,>,[,]` to you
 
 ## Merging files
 
-Vim includes a diff editor (a program that shows differences between two or more files and aids to conveniently merge them). Use _vimdiff_ to run the diff editor — just specify some couple of files to it: `vimdiff _file1_ _file2_`. Here is the list of _vimdiff_-specific commands.
+Vim includes a diff editor (a program that shows differences between two or more files and aids to conveniently merge them). Use *vimdiff* to run the diff editor — just specify some couple of files to it: `vimdiff *file1* *file2*`. Here is the list of *vimdiff*-specific commands.
 
 | Action | Shortcut |
 | next change | `]c` |
@@ -131,7 +130,7 @@ Vim includes a diff editor (a program that shows differences between two or more
 
 To show the line number column, use `:set number`. By default absolute line numbers are shown, relative numbers can be enabled with `:set relativenumber`.
 
-Jumping to a specific line is possible with `:_line number_` or `_line number_gg`. Jumps are remembered in a jump list, see `:h jump-motions` for details.
+Jumping to a specific line is possible with `:*line number*` or `*line number*gg`. Jumps are remembered in a jump list, see `:h jump-motions` for details.
 
 ### Spell checking
 
@@ -142,7 +141,7 @@ set spell
 
 ```
 
-By default, only English language dictionaries are installed. More dictionaries can be found in the [official repositories](/index.php/Official_repositories "Official repositories") by searching for `vim-spell`. Additional dictionaries can be found in the [Vim's FTP archive](http://ftp.vim.org/vim/runtime/spell/). Additional dictionaries can be put in the folder `~/.vim/spell/` and enabled with the command: `:setlocal spell spelllang=_en_us_` (replacing the `_en_us_` with the name of the needed dictionary).
+By default, only English language dictionaries are installed. More dictionaries can be found in the [official repositories](/index.php/Official_repositories "Official repositories") by searching for `vim-spell`. Additional dictionaries can be found in the [Vim's FTP archive](http://ftp.vim.org/vim/runtime/spell/). Additional dictionaries can be put in the folder `~/.vim/spell/` and enabled with the command: `:setlocal spell spelllang=*en_us*` (replacing the `*en_us*` with the name of the needed dictionary).
 
 | Action | Shortcut |
 | next spelling | `]s` |
@@ -156,9 +155,9 @@ By default, only English language dictionaries are installed. More dictionaries 
 
 **Tip:**
 
-*   To enable spelling in two languages (for instance English and German), add `set spelllang=_en,de_` into your `~/.vimrc` or `/etc/vimrc`, and then restart Vim.
-*   You can enable spell checking for arbitrary file types (e.g. _.txt_) by using the FileType plugin and a custom rule for file type detection. To enable spell checking for any file ending with _.txt_, create the file `/usr/share/vim/vimfiles/ftdetect/plaintext.vim`, and insert the line `autocmd BufRead,BufNewFile *.txt setfiletype plaintext` into that file. Next, insert the line `autocmd FileType plaintext setlocal spell spelllang=_en_us_` into your `~/.vimrc` or `/etc/vimrc`, and then restart Vim.
-*   To enable spell checking for LaTeX (or TeX) documents only, add `autocmd FileType **tex** setlocal spell spelllang=_en_us_` into your `~/.vimrc` or `/etc/vimrc`, and then restart Vim.
+*   To enable spelling in two languages (for instance English and German), add `set spelllang=*en,de*` into your `~/.vimrc` or `/etc/vimrc`, and then restart Vim.
+*   You can enable spell checking for arbitrary file types (e.g. *.txt*) by using the FileType plugin and a custom rule for file type detection. To enable spell checking for any file ending with *.txt*, create the file `/usr/share/vim/vimfiles/ftdetect/plaintext.vim`, and insert the line `autocmd BufRead,BufNewFile *.txt setfiletype plaintext` into that file. Next, insert the line `autocmd FileType plaintext setlocal spell spelllang=*en_us*` into your `~/.vimrc` or `/etc/vimrc`, and then restart Vim.
+*   To enable spell checking for LaTeX (or TeX) documents only, add `autocmd FileType **tex** setlocal spell spelllang=*en_us*` into your `~/.vimrc` or `/etc/vimrc`, and then restart Vim.
 
 ### Save cursor position
 
@@ -191,7 +190,7 @@ To remove all carriage returns from a file do:
 
 Note that there `^` is a control letter. To enter the control sequence `^M` press `Ctrl+v,Ctrl+m`.
 
-Alternatively install the package [dos2unix](https://www.archlinux.org/packages/?name=dos2unix) and run `dos2unix _file_` to fix the file.
+Alternatively install the package [dos2unix](https://www.archlinux.org/packages/?name=dos2unix) and run `dos2unix *file*` to fix the file.
 
 ### Empty space at the bottom of gVim windows
 
@@ -241,16 +240,15 @@ wget -P ~/.vim/plugin [http://cscope.sourceforge.net/cscope_maps.vim](http://csc
 ```
 
 **Note:** You will probably need to uncomment these lines in `~/.vim/plugin/cscope_maps.vim` in order to enable cscope shortcuts in Vim 7.x:
-
 ```
 set timeoutlen=4000
 set ttimeout
 ```
 
-Create a file which contains the list of files you wish cscope to index (cscope can handle many languages but this example finds _.c_, _.cpp_ and _.h_ files, specific for C/C++ project):
+Create a file which contains the list of files you wish cscope to index (cscope can handle many languages but this example finds *.c*, *.cpp* and *.h* files, specific for C/C++ project):
 
 ```
-cd _/path/to/project/dir_
+cd */path/to/project/dir*
 find . -type f -print | grep -E '\.(c(pp)?|h)$' > cscope.files
 
 ```
@@ -327,7 +325,7 @@ nnoremap <C-l> :TlistToggle<CR>
 
 #### Videos
 
-*   [Vimcasts](http://vimcasts.org/) — screencasts in _.ogg_ format.
+*   [Vimcasts](http://vimcasts.org/) — screencasts in *.ogg* format.
 *   [Vim Tutorial Videos](http://derekwyatt.org/vim/tutorials/) — covering the basics up to advanced topics.
 
 #### Games

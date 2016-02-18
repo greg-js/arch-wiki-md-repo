@@ -96,7 +96,7 @@ chown root:disk ubd0
 
 6.) Now unmount the file system.
 
-**Warning:** If you change _anything_ inside your mounted file system (e.g. `/mnt`) while it is _running_, it may lead to significant file system corruption inside your virtual machine and _kill_ it!
+**Warning:** If you change *anything* inside your mounted file system (e.g. `/mnt`) while it is *running*, it may lead to significant file system corruption inside your virtual machine and *kill* it!
 
 ```
 umount /mnt

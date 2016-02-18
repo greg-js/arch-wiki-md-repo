@@ -70,7 +70,6 @@ To make the touchpad work, edit your xorg.conf following this howto: [Touchpad S
 To use all the keyboard's special keys, I've installed [keytouch](/index.php/Keytouch "Keytouch").
 
  `/usr/share/keytouch/keyboards/Aspire 1690.Acer` 
-
 ```
 <keyboard>
  <file-info>

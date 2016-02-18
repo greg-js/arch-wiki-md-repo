@@ -19,6 +19,7 @@ Open Database Connectivity, commonly ODBC, is an open specification for providin
         *   [3.2.1 Create A Test Database](#Create_A_Test_Database)
         *   [3.2.2 Testing the ODBC](#Testing_the_ODBC)
         *   [3.2.3 A Couple Useful Websites](#A_Couple_Useful_Websites)
+    *   [3.3 Virtuoso / SPARQL](#Virtuoso_.2F_SPARQL)
 
 ## ODBC engines
 
@@ -189,3 +190,33 @@ This website got me going on ODBC with MySQL but left out some things that were 
 [http://mail.easysoft.com/pipermail/unixodbc-support/2004-August/000111.html](http://mail.easysoft.com/pipermail/unixodbc-support/2004-August/000111.html)
 
 To work around error messages this URL proved helpful so here it is as well.
+
+### Virtuoso / SPARQL
+
+/etc/odbc.ini
+
+```
+[ODBC Data Sources]
+VOS = Virtuoso
+
+[VOS]
+Driver = virtuoso-odbc
+Description = Virtuoso Open-Source Edition
+Address = localhost:1111
+
+```
+
+/etc/odbcinst.ini
+
+```
+[virtuoso-odbc]
+Driver = /usr/lib/virtodbc.so
+
+```
+
+Opening a connection using the default credentials (username: "dba", password: "dba"):
+
+```
+isql VOS dba dba
+
+```

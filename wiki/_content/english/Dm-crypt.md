@@ -14,15 +14,15 @@ From the cryptsetup project's [wiki](https://gitlab.com/cryptsetup/cryptsetup/wi
 
 ## Common scenarios
 
-This part introduces common scenarios to employ _dm-crypt_ to encrypt a system or individual filesystem mount points. It is meant as starting point to familiarize with different practical encryption procedures. The scenarios cross-link to the other subpages where needed.
+This part introduces common scenarios to employ *dm-crypt* to encrypt a system or individual filesystem mount points. It is meant as starting point to familiarize with different practical encryption procedures. The scenarios cross-link to the other subpages where needed.
 
 See [Dm-crypt/Encrypting a non-root file system](/index.php/Dm-crypt/Encrypting_a_non-root_file_system "Dm-crypt/Encrypting a non-root file system") if you need to encrypt a device that is not used for booting a system, like a [partition](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system") or a [loop device](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Loop_device "Dm-crypt/Encrypting a non-root file system").
 
-See [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system") if you want to encrypt an entire system, in particular a root partition. Several scenarios are covered, including the use of _dm-crypt_ with the _LUKS_ extension, _plain_ mode encryption and encryption and _LVM_.
+See [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system") if you want to encrypt an entire system, in particular a root partition. Several scenarios are covered, including the use of *dm-crypt* with the *LUKS* extension, *plain* mode encryption and encryption and *LVM*.
 
 ## Drive preparation
 
-[Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation") deals with operations like [securely erasing the drive](/index.php/Dm-crypt/Drive_preparation#Secure_erasure_of_the_hard_disk_drive "Dm-crypt/Drive preparation") and _dm-crypt_ specific points for [partitioning it](/index.php/Dm-crypt/Drive_preparation#Partitioning "Dm-crypt/Drive preparation").
+[Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation") deals with operations like [securely erasing the drive](/index.php/Dm-crypt/Drive_preparation#Secure_erasure_of_the_hard_disk_drive "Dm-crypt/Drive preparation") and *dm-crypt* specific points for [partitioning it](/index.php/Dm-crypt/Drive_preparation#Partitioning "Dm-crypt/Drive preparation").
 
 ## Device encryption
 

@@ -88,7 +88,7 @@ Thunderbolt Ethernet adapters and USB-to-Ethernet adapters should be picked up a
 
 #### Wireless
 
-As mentioned below, `broadcom-wl` is sufficient if you are using the Linux mainline kernel. For custom kernels, you need to use `broadcom-wl-dkms`. Both are available from the [AUR](/index.php/AUR "AUR"). The easiest way to get Wi-Fi connectivity during install is to build the package driver on a separate system. Note that it does have to be built against the exact same kernel version as used by the installer, and this may differ from the latest version. If built against the wrong kernel you may encounter an error _(ERROR: could not insert 'wl': Invalid argument)_ upon modprobe. Build the package as follows:
+As mentioned below, `broadcom-wl` is sufficient if you are using the Linux mainline kernel. For custom kernels, you need to use `broadcom-wl-dkms`. Both are available from the [AUR](/index.php/AUR "AUR"). The easiest way to get Wi-Fi connectivity during install is to build the package driver on a separate system. Note that it does have to be built against the exact same kernel version as used by the installer, and this may differ from the latest version. If built against the wrong kernel you may encounter an error *(ERROR: could not insert 'wl': Invalid argument)* upon modprobe. Build the package as follows:
 
 ```
 $ curl -O [https://aur.archlinux.org/cgit/aur.git/snapshot/broadcom-wl-dkms.tar.gz](https://aur.archlinux.org/cgit/aur.git/snapshot/broadcom-wl-dkms.tar.gz)
@@ -169,7 +169,7 @@ where `diskXsy` is the disk your partition is on (e.g. disk0s1). You can use `di
 Copy the `boot.efi` file to the `<Path to extra partition>/System/Library/CoreServices/` directory. Using your editor of choice, create a `SystemVersion.plist` file in the CoreServices directory, which is located here:
 
 ```
-_<path to extra partition>_/System/Library/CoreServices/SystemVersion.plist
+*<path to extra partition>*/System/Library/CoreServices/SystemVersion.plist
 
 ```
 
@@ -513,7 +513,6 @@ After=upower.service
 Disabling the internal cardreader and bluetooth controller may save battery life. When not using them, create the following [udev](/index.php/Udev "Udev") rules:
 
  `/etc/udev/rules.d/99-apple_cardreader.rules`  `SUBSYSTEMS=="usb", ATTRS{idVendor}=="05ac", ATTRS{idProduct}=="8406", RUN+="/usr/local/sbin/remove_ignore_usb-device.sh 05ac 8406"`  `/etc/udev/rules.d/99-apple_broadcom_bcm2046_bluetooth.rules` 
-
 ```
 SUBSYSTEMS=="usb", ATTRS{idVendor}=="05ac", ATTRS{idProduct}=="8289", RUN+="/usr/local/sbin/remove_ignore_usb-device.sh 05ac 8289"
 SUBSYSTEMS=="usb", ATTRS{idVendor}=="0a5c", ATTRS{idProduct}=="4500", RUN+="/usr/local/sbin/remove_ignore_usb-device.sh 0a5c 4500"

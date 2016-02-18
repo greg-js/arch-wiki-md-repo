@@ -116,7 +116,7 @@
 
 Дополнительную информацию смотрите в [Википедии](https://en.wikipedia.org/wiki/ru:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0 "wikipedia:ru:Заглавная страница"): [Сравнение языков разметки документов](https://en.wikipedia.org/wiki/ru:%D0%A1%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%8F%D0%B7%D1%8B%D0%BA%D0%BE%D0%B2_%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B8_%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2 "wikipedia:ru:Сравнение языков разметки документов").
 
-*   **[asciidoc](https://en.wikipedia.org/wiki/AsciiDoc "wikipedia:AsciiDoc")** — Удобный для чтения человеком формат текстовых документов. Используется в Arch для генерации страниц справочного руководства (man) _pacman_ [[1]](https://www.archlinux.org/pacman/pacman.8.html)
+*   **[asciidoc](https://en.wikipedia.org/wiki/AsciiDoc "wikipedia:AsciiDoc")** — Удобный для чтения человеком формат текстовых документов. Используется в Arch для генерации страниц справочного руководства (man) *pacman* [[1]](https://www.archlinux.org/pacman/pacman.8.html)
 
 	[http://asciidoc.org/](http://asciidoc.org/) || [asciidoc](https://www.archlinux.org/packages/?name=asciidoc)
 
@@ -128,7 +128,7 @@
 
 	[http://johnmacfarlane.net/pandoc](http://johnmacfarlane.net/pandoc) || [haskell-pandoc](https://www.archlinux.org/packages/?name=haskell-pandoc) [pandoc-static](https://aur.archlinux.org/packages/pandoc-static/)
 
-**Совет:** Зависимости обоих пакетов _pandoc_ собираются довольно долго, и это, в свою очередь, требует много места на жестком диске. В качестве альтернативы вы можете скачать двоичный файл _pandoc-static_ напрямую из репозитория Parabola GNU Linux ([64-bit](https://repo.parabolagnulinux.org/pcr/os/x86_64/) или [32-bit](https://repo.parabolagnulinux.org/pcr/os/i686/)), который, тем не менее, также имеет внушительный объем зависимостей. В качестве главного источника для установки пакетов Haskell [рекомендуется](/index.php/Haskell#cabal-install "Haskell") использовать пакет [cabal-install](https://www.archlinux.org/packages/?name=cabal-install)
+**Совет:** Зависимости обоих пакетов *pandoc* собираются довольно долго, и это, в свою очередь, требует много места на жестком диске. В качестве альтернативы вы можете скачать двоичный файл *pandoc-static* напрямую из репозитория Parabola GNU Linux ([64-bit](https://repo.parabolagnulinux.org/pcr/os/x86_64/) или [32-bit](https://repo.parabolagnulinux.org/pcr/os/i686/)), который, тем не менее, также имеет внушительный объем зависимостей. В качестве главного источника для установки пакетов Haskell [рекомендуется](/index.php/Haskell#cabal-install "Haskell") использовать пакет [cabal-install](https://www.archlinux.org/packages/?name=cabal-install)
 
 *   **[Sphinx](https://en.wikipedia.org/wiki/ru:Sphinx_(%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80_%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8) "wikipedia:ru:Sphinx (генератор документации)")** — Система генерирования документации, использующая [reStructuredText](https://en.wikipedia.org/wiki/ru:ReStructuredText "wikipedia:ru:ReStructuredText") для генерации в нескольких форматах (основная система документации в проекте Python)
 
@@ -204,11 +204,11 @@
 
 	[http://apertium.org/](http://apertium.org/) || [apertium](https://aur.archlinux.org/packages/apertium/)
 
-*   **[Gtranslator](https://en.wikipedia.org/wiki/Gtranslator "wikipedia:Gtranslator")** — Расширенный редактор файлов gettext _.po_ для [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)"). Он обрабатывает все формы файлов gettext _.po_ и включает в себя очень полезные возможности
+*   **[Gtranslator](https://en.wikipedia.org/wiki/Gtranslator "wikipedia:Gtranslator")** — Расширенный редактор файлов gettext *.po* для [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)"). Он обрабатывает все формы файлов gettext *.po* и включает в себя очень полезные возможности
 
 	[https://projects.gnome.org/gtranslator/](https://projects.gnome.org/gtranslator/) || [gtranslator](https://www.archlinux.org/packages/?name=gtranslator)
 
-*   **[Lokalize](https://en.wikipedia.org/wiki/Lokalize "wikipedia:Lokalize")** — Стандартный инструмент в [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)") для перевода. Включает в себя базовое редактирование файлов _.po_, поддержку словарей, память переводов, управление проектами и т.д. Входит в группу [kdesdk](https://www.archlinux.org/groups/x86_64/kdesdk/)
+*   **[Lokalize](https://en.wikipedia.org/wiki/Lokalize для перевода. Включает в себя базовое редактирование файлов *.po*, поддержку словарей, память переводов, управление проектами и т.д. Входит в группу [kdesdk](https://www.archlinux.org/groups/x86_64/kdesdk/)
 
 	[http://userbase.kde.org/Lokalize/ru](http://userbase.kde.org/Lokalize/ru) || [kdesdk-lokalize](https://www.archlinux.org/packages/?name=kdesdk-lokalize)
 
@@ -228,7 +228,7 @@
 
 	[http://techbase.kde.org/Localization/Tools/Pology](http://techbase.kde.org/Localization/Tools/Pology) || [pology](https://aur.archlinux.org/packages/pology/)
 
-*   **[Virtaal](https://en.wikipedia.org/wiki/Virtaal "wikipedia:Virtaal")** — Редактор для перевода программ и другого текста, основанный на [Translate Toolkit](https://en.wikipedia.org/wiki/Translate_Toolkit "wikipedia:Translate Toolkit"). Поддерживает следующие форматы: [gettext](https://en.wikipedia.org/wiki/ru:gettext "wikipedia:ru:gettext"), [XLIFF](https://en.wikipedia.org/wiki/ru:XLIFF "wikipedia:ru:XLIFF") , TMX, TBX, [Wordfast](https://en.wikipedia.org/wiki/ru:Wordfast "wikipedia:ru:Wordfast"), Qt Linguist , Qt Phrase Book, [OmegaT glossary](https://en.wikipedia.org/wiki/ru:OmegaT "wikipedia:ru:OmegaT") и др. Он также может давать подсказки из [Apertium](https://en.wikipedia.org/wiki/ru:Apertium "wikipedia:ru:Apertium"), [Google Translate](https://en.wikipedia.org/wiki/ru:Google_%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA "wikipedia:ru:Google Переводчик"), [Bing Translator](https://en.wikipedia.org/wiki/Bing_Translator "wikipedia:Bing Translator"), [Moses](https://en.wikipedia.org/wiki/Moses_(machine_translation) "wikipedia:Moses (machine translation)") и др.
+*   **[Virtaal](https://en.wikipedia.org/wiki/Virtaal и др.
 
 	[http://translate.sourceforge.net/wiki/virtaal](http://translate.sourceforge.net/wiki/virtaal) || [virtaal](https://aur.archlinux.org/packages/virtaal/)
 
@@ -280,7 +280,7 @@
 
 	[http://ne.di.unimi.it/](http://ne.di.unimi.it/) || [ne](https://aur.archlinux.org/packages/ne/)
 
-*   **[vile](https://en.wikipedia.org/wiki/Vile_(editor) "wikipedia:Vile (editor)")** — Легковесный клон Emacs c горячими клавишами в стиле _vi_
+*   **[vile](https://en.wikipedia.org/wiki/Vile_(editor) "wikipedia:Vile (editor)")** — Легковесный клон Emacs c горячими клавишами в стиле *vi*
 
 	[http://invisible-island.net/vile/vile.html](http://invisible-island.net/vile/vile.html) || [vile](https://www.archlinux.org/packages/?name=vile)
 
@@ -290,7 +290,7 @@
 
 ##### Текстовые редакторы Vi
 
-*   **Neovim** — Возрожденный в XXI веке _Vim_
+*   **Neovim** — Возрожденный в XXI веке *Vim*
 
 	[http://neovim.org/](http://neovim.org/) || [neovim-git](https://aur.archlinux.org/packages/neovim-git/)
 
@@ -298,7 +298,7 @@
 
 	[http://ex-vi.sourceforge.net/](http://ex-vi.sourceforge.net/) || [vi](https://www.archlinux.org/packages/?name=vi)
 
-*   **[Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") (Vi IMproved)** — Продвинутый текстовый редактор, который стремится предоставить силу редактора _vi_ с более полным списком возможностей
+*   **[Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") (Vi IMproved)** — Продвинутый текстовый редактор, который стремится предоставить силу редактора *vi* с более полным списком возможностей
 
 	[http://www.vim.org/](http://www.vim.org/) || [vim](https://www.archlinux.org/packages/?name=vim)
 
@@ -472,7 +472,7 @@
 
 	[http://repo.or.cz/w/fbpdf.git](http://repo.or.cz/w/fbpdf.git) || [fbpdf-git](https://aur.archlinux.org/packages/fbpdf-git/)
 
-*   **jfbview** — Framebuffer-программа просмотра PDF и изображений. Среди ее возможностей: управление в стиле Vim, масштабирование под размер окна, вид TOC (контур), быстрый многопоточный рендеринг и асинхронное предварительное кэширование. Изначально форк _fbpdf_ был назван _jfbpdf_, теперь он полностью переписан
+*   **jfbview** — Framebuffer-программа просмотра PDF и изображений. Среди ее возможностей: управление в стиле Vim, масштабирование под размер окна, вид TOC (контур), быстрый многопоточный рендеринг и асинхронное предварительное кэширование. Изначально форк *fbpdf* был назван *jfbpdf*, теперь он полностью переписан
 
 	[http://seasonofcode.com/pages/jfbview.html](http://seasonofcode.com/pages/jfbview.html) || [jfbview](https://aur.archlinux.org/packages/jfbview/)
 
@@ -545,7 +545,7 @@
 Дополнительную информацию смотрите в [Википедии](https://en.wikipedia.org/wiki/ru:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0 "wikipedia:ru:Заглавная страница"): [Консольные утилиты постраничного просмотра](https://en.wikipedia.org/wiki/Terminal_pager "wikipedia:Terminal pager").
 
 *   [more](https://en.wikipedia.org/wiki/ru:more "wikipedia:ru:more") — Простая утилита постраничного просмотра. Является частью пакета [util-linux](https://www.archlinux.org/packages/?name=util-linux)
-*   **[less](https://en.wikipedia.org/wiki/ru:less "wikipedia:ru:less")** — Программа, похожая на _more_, но с поддержкой прокрутки как вперед, так и назад, а также частичной загрузки файлов
+*   **[less](https://en.wikipedia.org/wiki/ru:less "wikipedia:ru:less")** — Программа, похожая на *more*, но с поддержкой прокрутки как вперед, так и назад, а также частичной загрузки файлов
 
 	[http://www.gnu.org/software/less](http://www.gnu.org/software/less) || [less](https://www.archlinux.org/packages/?name=less)
 
@@ -632,7 +632,7 @@
 
 	[http://wiki.gnome.org/OCRFeeder](http://wiki.gnome.org/OCRFeeder) || [ocrfeeder](https://www.archlinux.org/packages/?name=ocrfeeder)
 
-*   **OCRopus** — _Платформа_ OCR, существуют модули для анализа используемого в документе языка, движков OCR (можно использовать Tesseract или ее собственный движок), естественного моделирования языка и т.д.
+*   **OCRopus** — *Платформа* OCR, существуют модули для анализа используемого в документе языка, движков OCR (можно использовать Tesseract или ее собственный движок), естественного моделирования языка и т.д.
 
 	[http://code.google.com/p/ocropus/](http://code.google.com/p/ocropus/) || [ocropus](https://aur.archlinux.org/packages/ocropus/)
 

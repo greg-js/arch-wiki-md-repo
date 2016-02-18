@@ -126,7 +126,6 @@ Arch's wiki 上有一个 [轻量级软件清单](/index.php/Lightweight_Applicat
 #### 面板
 
 | 
-
 ```
  [Avant window navigator](/index.php/Avant_Window_Navigator "Avant Window Navigator")                 
 
@@ -139,9 +138,7 @@ Arch's wiki 上有一个 [轻量级软件清单](/index.php/Lightweight_Applicat
  [Fspanel](http://freshmeat.net/projects/fspanel/)
 
 ```
-
  | 
-
 ```
    [Gnome-panel](http://live.gnome.org/GnomePanel/)                 
 
@@ -154,9 +151,7 @@ Arch's wiki 上有一个 [轻量级软件清单](/index.php/Lightweight_Applicat
   [ PyPanel](/index.php/PyPanel "PyPanel")
 
 ```
-
  | 
-
 ```
      [Screenlets](http://www.screenlets.org/)                       
 
@@ -167,7 +162,6 @@ Arch's wiki 上有一个 [轻量级软件清单](/index.php/Lightweight_Applicat
      [Xfce4-panel](http://www.xfce.org/projects/xfce4-panel/)       
 
 ```
-
  |
 
 #### 托盘

@@ -18,7 +18,7 @@ KDM (KDE Display Manager) je přihlašovací manažer pro KDE. Podporuje témata
 
 # Instalace
 
-_Instalační instrukce viz [Display manager](/index.php/Display_manager "Display manager")._
+*Instalační instrukce viz [Display manager](/index.php/Display_manager "Display manager").*
 
 # Konfigurace
 
@@ -95,4 +95,4 @@ A pak editujte požadovaným způsobem Xsession.custom
 
 Klávesnice v KDM je závislá na Xorg. Změnu je třeba nastavit v souboru xorg.conf.
 
-_Viz instrukce [v článku Xorg](/index.php/Xorg#Keyboard_settings "Xorg")._
+*Viz instrukce [v článku Xorg](/index.php/Xorg#Keyboard_settings "Xorg").*

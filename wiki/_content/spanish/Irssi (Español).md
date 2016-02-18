@@ -1,4 +1,4 @@
-[irssi](http://www.irssi.org) es un cliente IRC (_Internet Relay Chat_) modular cuya interfaz gráfica está basada en la biblioteca `ncurses`.
+[irssi](http://www.irssi.org) es un cliente IRC (*Internet Relay Chat*) modular cuya interfaz gráfica está basada en la biblioteca `ncurses`.
 
 ## Contents
 
@@ -9,13 +9,13 @@
 
 ## Instalación
 
-irssi se encuentra disponible en los repositorios de Arch; simplemente ejecute, como _root_:
+irssi se encuentra disponible en los repositorios de Arch; simplemente ejecute, como *root*:
 
  `# pacman -S irssi` 
 
 ## Configuración
 
-Puede configurarlo editando cualquiera de estos dos ficheros (vea la _man page_, `man irssi`, para más información):
+Puede configurarlo editando cualquiera de estos dos ficheros (vea la *man page*, `man irssi`, para más información):
 
 *   `/etc/irssi.conf`
     Los cambios que realice en este fichero afectarán a todas las instancias de irssi.
@@ -24,7 +24,7 @@ Puede configurarlo editando cualquiera de estos dos ficheros (vea la _man page_,
 
 ## Instalando Scripts
 
-El ejemplo que sigue muestra cómo instalar el _script_ para verificar la escritura (_spell checking_). En una terminal, ejecute:
+El ejemplo que sigue muestra cómo instalar el *script* para verificar la escritura (*spell checking*). En una terminal, ejecute:
 
 ```
 # pacman -S ispell
@@ -36,7 +36,7 @@ $ irssi
 
 ```
 
-**Nota:** Recuerde que los comandos marcados con el caracter **#** deberán ser ejecutados como _root_.
+**Nota:** Recuerde que los comandos marcados con el caracter **#** deberán ser ejecutados como *root*.
 
 Si no desea utilizar CPAN, vea: [http://search.cpan.org/~jdporter/Lingua-Ispell-0.07/lib/Lingua/Ispell.pm](http://search.cpan.org/~jdporter/Lingua-Ispell-0.07/lib/Lingua/Ispell.pm)
 
@@ -52,9 +52,9 @@ Si funcionó, deberá aprecer algo como lo siguiente:
 
 ```
 
-**Nota:** Podrá verificar la escritura de la línea actual utilizando la combinación **meta-s**, siendo _meta_ normalmente _Alt_.
+**Nota:** Podrá verificar la escritura de la línea actual utilizando la combinación **meta-s**, siendo *meta* normalmente *Alt*.
 
-Si desea que el _script_ se ejecute automáticamente al correr irssi, puede hacer lo siguiente:
+Si desea que el *script* se ejecute automáticamente al correr irssi, puede hacer lo siguiente:
 
 ```
 $ cd ~/.irssi/scripts/autorun

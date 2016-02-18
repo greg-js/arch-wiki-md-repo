@@ -41,7 +41,7 @@ procps
 psmisc
 texinfo
 util-linux-ng
-vi  _(Requires gettext)_
+vi  *(Requires gettext)*
 
 ```
 
@@ -64,10 +64,10 @@ Packages in [extra]:
 
 ```
 aalib
-abiword-plugins  _(Requires aspell, gnutls, smbclient, postgresql-libs, unixodbc, sqlite3, libgda)_
+abiword-plugins  *(Requires aspell, gnutls, smbclient, postgresql-libs, unixodbc, sqlite3, libgda)*
 abook
-achessclock  _(Source location unknown - remove on next update)_
-afterstep  _(Requires gnutls, libxml2)_
+achessclock  *(Source location unknown - remove on next update)*
+afterstep  *(Requires gnutls, libxml2)*
 alpine
 alsa-utils
 aspell
@@ -81,38 +81,38 @@ centerim
 clisp
 cmake
 cmatrix
-cmus  _(Requires lame)_
+cmus  *(Requires lame)*
 cscope
 darcs
 ddd
 dopewars
 duhdraw
 elinks
-emacs  _(Requires gnutls)_
+emacs  *(Requires gnutls)*
 enigma
 erlang
 ethstatus
 ettercap
-ettercap-gtk  _(Requires ettercap)_
+ettercap-gtk  *(Requires ettercap)*
 evms
 fortunelock
-freeciv  _(Requires gnutls)_
+freeciv  *(Requires gnutls)*
 fvwm
 fvwm-devel
 gdb
 gftp
-ghc  _(Requires bootstraping)_
+ghc  *(Requires bootstraping)*
 gnuchess
 giftcurs
 gnome-terminal
 gnugo
-gnuplot  _(Requires gnutls)_
+gnuplot  *(Requires gnutls)*
 gnutls
 gphoto2
-gstreamer-good-plugins  _(Requires aalib, gnutls, libxml2)_
+gstreamer-good-plugins  *(Requires aalib, gnutls, libxml2)*
 guile
-gutenprint  _(Requires gnutls)_
-gvim  _(Requires vim, gnutls)_
+gutenprint  *(Requires gnutls)*
+gvim  *(Requires vim, gnutls)*
 hexcurse
 hexedit
 htop
@@ -122,27 +122,27 @@ irssi
 ispell
 jack-audio-connection-kit
 joe
-kismet  _(Requires gnutls)_
+kismet  *(Requires gnutls)*
 lame
 lexter
 lftp
 libcaca
 libcdio
-libgda  _(Requires sqlite3, postgresql-libs, unixodbc, libxml2)_
+libgda  *(Requires sqlite3, postgresql-libs, unixodbc, libxml2)*
 libnjb
-libqalculate  _(Requires libxml2)_
+libqalculate  *(Requires libxml2)*
 librep
 libxml2
 lua
 lynx
-maxima  _(Requires clisp)_
+maxima  *(Requires clisp)*
 mc
 minicom
-moc _(Requores jack-audio-connection-kit, lame)_
-mplayer  _(Requires aalib, gnutls, jack-audio-connection-kit, lame, smbclient)_
+moc *(Requores jack-audio-connection-kit, lame)*
+mplayer  *(Requires aalib, gnutls, jack-audio-connection-kit, lame, smbclient)*
 mp3blaster
 moon-buggy
-mtr  _(Requires gnutls)_
+mtr  *(Requires gnutls)*
 multitail
 mysql-clients
 naim
@@ -152,7 +152,7 @@ ne
 nethack
 netkit-ftp
 netris
-nph  _(Requires termcap-compat)_
+nph  *(Requires termcap-compat)*
 nppangband
 ntp
 ocaml
@@ -161,7 +161,7 @@ openupsmart
 pal
 parted
 pente
-php  _(Requires sqlite3)_
+php  *(Requires sqlite3)*
 pilot-link
 pinentry
 proftpd
@@ -169,7 +169,7 @@ postgresql-libs
 python
 r
 ratpoison
-ruby  _(Requires termcap-compat)_
+ruby  *(Requires termcap-compat)*
 screen
 socat
 sqlite2
@@ -178,21 +178,21 @@ smbclient
 swi-prolog
 tcsh
 termcap-compat
-terminal  _(Requires vte)_
-timidity++  _(Requires jack-audio-connection-kit, gnutls)_
+terminal  *(Requires vte)*
+timidity++  *(Requires jack-audio-connection-kit, gnutls)*
 tin
 uml_utilities
 unixodbc
 vice
-vim  _(Requires ruby)_
-vte  _(Requires gnutls, libxml2)_
+vim  *(Requires ruby)*
+vte  *(Requires gnutls, libxml2)*
 w3m
 wvstreams
-xaos  _(Requires aalib)_
-xawtv _(Requires aalib)_
+xaos  *(Requires aalib)*
+xawtv *(Requires aalib)*
 xemacs
 xfsdump
-xine-ui  _(Requires lame)_
+xine-ui  *(Requires lame)*
 xorg-server
 xterm
 yabasic

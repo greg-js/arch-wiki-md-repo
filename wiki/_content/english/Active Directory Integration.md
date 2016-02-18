@@ -4,7 +4,7 @@ A key challenge for system administrators of any datacenter is trying to coexist
 
 [Active Directory](https://en.wikipedia.org/wiki/Active_Directory "wikipedia:Active Directory") serves as a central location for network administration and security. It is responsible for authenticating and authorizing all users and computers within a network of Windows domain type, assigning and enforcing security policies for all computers in a network and installing or updating software on network computers. For example, when a user logs into a computer that is part of a Windows domain, it is Active Directory that verifies his or her password and specifies whether he or she is a system administrator or normal user.
 
-Active Directory uses [Lightweight Directory Access Protocol (LDAP)](https://en.wikipedia.org/wiki/Ldap "wikipedia:Ldap") versions 2 and 3, [Kerberos](https://en.wikipedia.org/wiki/Kerberos_(protocol) "wikipedia:Kerberos (protocol)") and DNS. These same standards are available as linux, but piecing them together is not an easy task. Following these steps will help you configure an ArchLinux host to authenticate against an AD domain.
+Active Directory uses [Lightweight Directory Access Protocol (LDAP)](https://en.wikipedia.org/wiki/Ldap and DNS. These same standards are available as linux, but piecing them together is not an easy task. Following these steps will help you configure an ArchLinux host to authenticate against an AD domain.
 
 This guide explains how to integrate an Arch Linux host with an existing Windows Active Directory domain. Before continuing, you must have an existing Active Directory domain, and have a user with the appropriate rights within the domain to: query users and add computer accounts (Domain Join).
 
@@ -70,11 +70,11 @@ If you are not familiar with Active Directory, there are a few keywords that are
 
 #### Updating the GPO
 
-It may be necessary to disable _Digital Sign Communication (Always)_ in the AD group policies. Dive into:
+It may be necessary to disable *Digital Sign Communication (Always)* in the AD group policies. Dive into:
 
 `Local policies` -> `Security policies` -> `Microsoft Network Server` -> `Digital sign communication (Always)` -> activate `define this policy` and use the `disable` radio button.
 
-If you use Windows Server 2008 R2, you need to modify that in GPO for Default Domain Controller Policy -> Computer Setting -> Policies -> Windows Setting -> Security Setting -> Local Policies -> Security Option -> _Microsoft network client: Digitally sign communications (always)_
+If you use Windows Server 2008 R2, you need to modify that in GPO for Default Domain Controller Policy -> Computer Setting -> Policies -> Windows Setting -> Security Setting -> Local Policies -> Security Option -> *Microsoft network client: Digitally sign communications (always)*
 
 ### Linux Host Configuration
 
@@ -93,7 +93,6 @@ The next few steps will begin the process of configuring the Host. You will need
 Active Directory is heavily dependent upon DNS. You will need to update `/etc/resolv.conf` to use one or more of the Active Directory domain controllers:
 
  `/etc/resolv.conf` 
-
 ```
 nameserver <IP1>
 nameserver <IP2>
@@ -117,7 +116,6 @@ Ensure that the service is configured to sync the time automatically very early 
 Let us assume that your AD is named example.com. Let us further assume your AD is ruled by two domain controllers, the primary and secondary one, which are named PDC and BDC, pdc.example.com and bdc.example.com respectively. Their IP adresses will be 192.168.1.2 and 192.168.1.3 in this example. Take care to watch your syntax; upper-case is very important here.
 
  `/etc/krb5.conf` 
-
 ```
 [libdefaults]
         default_realm 	= 	EXAMPLE.COM
@@ -174,7 +172,6 @@ You can use any username that has rights as a Domain Administrator.
 Run **klist** to verify you did receive the token. You should see something similar to:
 
  `# klist` 
-
 ```
  Ticket cache: FILE:/tmp/krb5cc_0
  Default principal: administrator@EXAMPLE.COM
@@ -190,7 +187,6 @@ Run **klist** to verify you did receive the token. You should see something simi
 If you get errors stating that /etc/security/pam_winbind.conf was not found, create the file and add the following:
 
  `/etc/security/pam_winbind.conf` 
-
 ```
 [global]
   debug = no
@@ -213,7 +209,6 @@ Samba is a free software re-implementation of the SMB/CIFS networking protocol. 
 In this section, we will focus on getting Authentication to work first by editing the 'Global' section first. Later, we will go back and add shares.
 
  `/etc/samba/smb.conf` 
-
 ```
 [Global]
   netbios name = MYARCHLINUX
@@ -259,7 +254,6 @@ In this section, we will focus on getting Authentication to work first by editin
 You need an AD Administrator account to do this. Let us assume this is named Administrator. The command is 'net ads join'
 
  `# net ads join -U Administrator` 
-
 ```
 Administrator's password: xxx
 Using short domain name -- EXAMPLE
@@ -280,7 +274,6 @@ Enable and start the individual Samba deamons `smbd.service`, `nmbd.service`, an
 Next we'll need to modify the NSSwitch configuration, which tells the Linux host how to retrieve information from various sources and in which order to do so. In this case, we are appending Active Directory as additional sources for Users, Groups, and Hosts.
 
  `/etc/nsswitch.conf` 
-
 ```
  passwd:            files winbind
  shadow:            files winbind
@@ -295,7 +288,6 @@ Next we'll need to modify the NSSwitch configuration, which tells the Linux host
 Let us check if winbind is able to query the AD. The following command should return a list of AD users:
 
  `# wbinfo -u` 
-
 ```
 administrator
 guest
@@ -309,7 +301,6 @@ test.user
 We can do the same for AD groups:
 
  `# wbinfo -g` 
-
 ```
 domain computers
 domain controllers
@@ -335,7 +326,6 @@ dnsupdateproxy
 To ensure that our host is able to query the domain for users and groups, we test nsswitch settings by issuing the 'getent' command. The following output shows what a stock ArchLinux install looks like:
 
  `# getent passwd` 
-
 ```
 root:x:0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/bin:/bin/false
@@ -357,7 +347,6 @@ test.user:*:10000:10006:Test User:/home/EXAMPLE/test.user:/bin/bash
 And for groups:
 
  `# getent group` 
-
 ```
 root:x:0:root
 bin:x:1:root,bin,daemon
@@ -417,7 +406,6 @@ dnsupdateproxy:x:10021:
 Try out some net commands to see if Samba can communicate with AD:
 
  `# net ads info` 
-
 ```
 [2012/02/05 20:21:36.473559,  0] param/loadparm.c:7599(lp_do_parameter)
   Ignoring unknown parameter "idmapd backend"
@@ -431,9 +419,7 @@ KDC server: 192.168.1.2
 Server time offset: -3
 
 ```
-
  `# net ads lookup` 
-
 ```
 [2012/02/05 20:22:39.298823,  0] param/loadparm.c:7599(lp_do_parameter)
   Ignoring unknown parameter "idmapd backend"
@@ -466,9 +452,7 @@ LMNT Token: ffff
 LM20 Token: ffff
 
 ```
-
  `# net ads status -U administrator | less` 
-
 ```
 objectClass: top
 objectClass: person
@@ -605,7 +589,6 @@ Both should work. You should notice that `/home/example/test.user` will be autom
 Earlier we skipped configuration of the shares. Now that things are working, go back to `/etc/smb.conf`, and add the exports for the host that you want available on the windows network.
 
  `/etc/smb.conf` 
-
 ```
 [MyShare]
   comment = Example Share
@@ -631,7 +614,6 @@ run 'net ads keytab create -U administrator' as root to create a machine keytab 
 verify the content of your keytab by running:
 
  `# klist -k /etc/krb5.keytab` 
-
 ```
 Keytab name: FILE:/etc/krb5.keytab
 KVNO Principal
@@ -667,7 +649,6 @@ Now you need to tell winbind to use the file by adding these lines to the /etc/s
 It should look sth. like this:
 
  `/etc/samba/smb.conf` 
-
 ```
 [Global]
   netbios name = MYARCHLINUX
@@ -719,7 +700,6 @@ Check if everything works by getting a machine ticket for your system by running
 This should not give you any feedback but running 'klist' should show you sth like:
 
  `# klist` 
-
 ```
  Ticket cache: FILE:/tmp/krb5cc_0
  Default principal: MYARCHLINUX$@EXAMPLE.COM
@@ -739,7 +719,6 @@ All we need to do is add some options to our sshd_config and restart the sshd.se
 Edit /etc/ssh/sshd_config to look like this in the appropriate places:
 
  `# /etc/ssh/sshd_config` 
-
 ```
 
 ...

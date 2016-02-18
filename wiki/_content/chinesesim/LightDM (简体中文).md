@@ -61,7 +61,6 @@
 你可以通过更改默认配置文件 `[SeatDefaults]` 部分下的内容来更改默认 greeter:
 
  `/etc/lightdm/lightdm.conf` 
-
 ```
 [SeatDefaults]
 ...
@@ -158,7 +157,7 @@ background=/usr/share/pixmaps/black_and_white_photography-wallpaper-1920x1080.jp
 
 #### KDE greeter
 
-转到 _系统设置 > 登录界面 (LightDM)_ 设置你的主题与背景图片。
+转到 *系统设置 > 登录界面 (LightDM)* 设置你的主题与背景图片。
 
 ### 改变你的头像
 
@@ -170,17 +169,17 @@ background=/usr/share/pixmaps/black_and_white_photography-wallpaper-1920x1080.jp
 
 #### AccountsService 方法
 
-.face 方法会导致一些问题，幸运的是 LightDM 能够自动使用 AccountsService. 首先确保已安装 [accountsservice](https://www.archlinux.org/packages/?name=accountsservice) 软件包，然后如下设置，把 `_username_` 替换为目标用户的登录名。使用 _.png_ 文件插件必然就成了可选选项了。如果你使用 KDE, 你也可通过 KDE 系统设置更改图片。
+.face 方法会导致一些问题，幸运的是 LightDM 能够自动使用 AccountsService. 首先确保已安装 [accountsservice](https://www.archlinux.org/packages/?name=accountsservice) 软件包，然后如下设置，把 `*username*` 替换为目标用户的登录名。使用 *.png* 文件插件必然就成了可选选项了。如果你使用 KDE, 你也可通过 KDE 系统设置更改图片。
 
-*   编辑或创建 `/var/lib/AccountsService/users/_username_`, 添加如下内容:
+*   编辑或创建 `/var/lib/AccountsService/users/*username*`, 添加如下内容:
 
 ```
 [User]
-Icon=/var/lib/AccountsService/icons/_username_.png
+Icon=/var/lib/AccountsService/icons/*username*.png
 
 ```
 
-*   使用 96x96 PNG 图表文件来创建 `/var/lib/AccountsService/icons/_username_.png`.
+*   使用 96x96 PNG 图表文件来创建 `/var/lib/AccountsService/icons/*username*.png`.
 
 **注意:** 确保创建的文件都是 644 权限，使用 [chmod](/index.php/Chmod "Chmod") 来更正。
 
@@ -200,11 +199,10 @@ Icon=/var/lib/AccountsService/icons/_username_.png
 编辑 LightDM 配置文件并确保以下内容已经取消注释并配置正确:
 
  `/etc/lightdm/lightdm.conf` 
-
 ```
 [SeatDefaults]
 pam-service=lightdm-autologin
-autologin-user=_username_
+autologin-user=*username*
 autologin-user-timeout=0
 session-wrapper=/etc/lightdm/Xsession
 ```
@@ -213,7 +211,7 @@ LightDM 能通过 PAM 即使 `autologin` 已启用。你必须是 `autologin` �
 
 ```
 # groupadd autologin
-# gpasswd -a _username_ autologin
+# gpasswd -a *username* autologin
 
 ```
 
@@ -238,7 +236,7 @@ greeter-setup-script=/usr/bin/numlockx on
 
 ### Xfce4 下多用户切换
 
-如果您使用 [Xfce](/index.php/Xfce "Xfce") 桌面，在应用程序启动器/Whisker Menu 的活动按钮的多用户切换功能会特别关注 _gdmflexiserver_ 可执行程序以启用自身。如果你提供了一个可执行 Shell 脚本 `/usr/bin/gdmflexiserver` 并且它包含
+如果您使用 [Xfce](/index.php/Xfce "Xfce") 桌面，在应用程序启动器/Whisker Menu 的活动按钮的多用户切换功能会特别关注 *gdmflexiserver* 可执行程序以启用自身。如果你提供了一个可执行 Shell 脚本 `/usr/bin/gdmflexiserver` 并且它包含
 
 ```
 #!/bin/sh
@@ -299,7 +297,6 @@ xrdb -merge "$file"
 如果你把 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) 作为 greeter 并且它把占位符图像显示为图标，确保已安装和正确配置有效的图标主题和主题。检查如下文件:
 
  `/etc/lightdm/lightdm-gtk-greeter.conf` 
-
 ```
 [greeter]
 theme-name=mate      # this should be the name of a directory under /usr/share/themes/
@@ -318,11 +315,11 @@ icon-theme-name=mate # this should be the name of a fully featured icons set dir
 
 ### LigthDM 显示在错误的显示器上
 
-如果你使用的多显示器，LightDM 可能会显示在不该出现的那一个上 (例如: 主显示器在左边). 为强制 LightDM 登录界面显示在特定的显示器上，编辑 `/etc/lightdm/lightdm.conf` 更改 _display-setup-script_ 参数如下:
+如果你使用的多显示器，LightDM 可能会显示在不该出现的那一个上 (例如: 主显示器在左边). 为强制 LightDM 登录界面显示在特定的显示器上，编辑 `/etc/lightdm/lightdm.conf` 更改 *display-setup-script* 参数如下:
 
- `/etc/lightdm/lightdm.conf`  `display-setup-script=xrandr --output _HDMI1_ --primary` 
+ `/etc/lightdm/lightdm.conf`  `display-setup-script=xrandr --output *HDMI1* --primary` 
 
-替换 _HDMI1_ 为你的正确的显示器 ID, 可从 **xrandr** 命令输出获取。
+替换 *HDMI1* 为你的正确的显示器 ID, 可从 **xrandr** 命令输出获取。
 
 ### Pulseaudio 不自动启动
 

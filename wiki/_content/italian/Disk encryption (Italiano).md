@@ -1,6 +1,6 @@
 Questo articolo discute le comuni tecniche disponibili in Arch Linux per proteggere in modo crittografico una parte di un disco dati (cartella, partizione, un intero disco, quindi tutti i dati che sono scritti in esso sono automaticamente criptati, e decriptati "al volo" quando sono letti.
 
-"Dischi dati" in questo contesto possono essere hard disk di computer, dispositivi esterni come pen drive USB oppure DVD, così come dischi dati _virtuali_ come dispositivi loop-back o cloud _(finché Arch Linux può riconoscerli come dispositivi a blocchi o filesystem)_
+"Dischi dati" in questo contesto possono essere hard disk di computer, dispositivi esterni come pen drive USB oppure DVD, così come dischi dati *virtuali* come dispositivi loop-back o cloud *(finché Arch Linux può riconoscerli come dispositivi a blocchi o filesystem)*
 
 ## Contents
 
@@ -10,15 +10,15 @@ Questo articolo discute le comuni tecniche disponibili in Arch Linux per protegg
     *   [2.1 Cifratura stacked filesystem](#Cifratura_stacked_filesystem)
     *   [2.2 Cifratura dei dispositivi a blocchi](#Cifratura_dei_dispositivi_a_blocchi)
     *   [2.3 Tabella di confronto](#Tabella_di_confronto)
-        *   [2.3.1 _sommario_](#sommario)
-        *   [2.3.2 _classificazione di base_](#classificazione_di_base)
-        *   [2.3.3 _applicazioni pratiche_](#applicazioni_pratiche)
-        *   [2.3.4 _caratteristiche di fruibilità_](#caratteristiche_di_fruibilit.C3.A0)
-        *   [2.3.5 _caratteristiche di sicurezza_](#caratteristiche_di_sicurezza)
-        *   [2.3.6 _caratteristiche di performance_](#caratteristiche_di_performance)
-        *   [2.3.7 _specifiche della cifratura dei dispositivi a blocchi_](#specifiche_della_cifratura_dei_dispositivi_a_blocchi)
-        *   [2.3.8 _specifiche della cifratura del filesystem stacked_](#specifiche_della_cifratura_del_filesystem_stacked)
-        *   [2.3.9 _compatibilità & popolarità_](#compatibilit.C3.A0_.26_popolarit.C3.A0)
+        *   [2.3.1 *sommario*](#sommario)
+        *   [2.3.2 *classificazione di base*](#classificazione_di_base)
+        *   [2.3.3 *applicazioni pratiche*](#applicazioni_pratiche)
+        *   [2.3.4 *caratteristiche di fruibilità*](#caratteristiche_di_fruibilit.C3.A0)
+        *   [2.3.5 *caratteristiche di sicurezza*](#caratteristiche_di_sicurezza)
+        *   [2.3.6 *caratteristiche di performance*](#caratteristiche_di_performance)
+        *   [2.3.7 *specifiche della cifratura dei dispositivi a blocchi*](#specifiche_della_cifratura_dei_dispositivi_a_blocchi)
+        *   [2.3.8 *specifiche della cifratura del filesystem stacked*](#specifiche_della_cifratura_del_filesystem_stacked)
+        *   [2.3.9 *compatibilità & popolarità*](#compatibilit.C3.A0_.26_popolarit.C3.A0)
 *   [3 Preparazione](#Preparazione)
     *   [3.1 Scegliere un setup](#Scegliere_un_setup)
     *   [3.2 Scegliere una buona password](#Scegliere_una_buona_password)
@@ -62,18 +62,18 @@ Un'impostazione di crittografia molto forte (es. crittografia di sistema complet
 [Wikipedia:Disk encryption](https://en.wikipedia.org/wiki/Disk_encryption "wikipedia:Disk encryption") **Crittografia dei dati**, definita come crittografia solo dei dati dell'utente (spesso situati in `/home`, o in un dispositivo rimovibile come un DVD dati) è il metodo più semplice e meno intrusivo di crittografare i dati, ma ha alcuni inconvenienti. Nei moderni sistemi di computer, ci sono molto processi in background che potrebbero immagazzinare informazioni sui dati dell'utente in aree non protette del disco, come:
 
 *   partizioni di swap
-    *   _(rimedio: disabilitare la partizione di swap)_
+    *   *(rimedio: disabilitare la partizione di swap)*
 *   `/tmp` (file temporanei creati dalle applicazioni dell'utente)
-    *   _(rimedio: evitare queste applicazioni; montare `/tmp` in un [ramdisk](/index.php/Ramdisk "Ramdisk"))_
+    *   *(rimedio: evitare queste applicazioni; montare `/tmp` in un [ramdisk](/index.php/Ramdisk "Ramdisk"))*
 *   `/var` (file di log e database; per esempio mlocate immagazzina un catalogo di tutti i file in `/var/lib/mlocate/mlocate.db`)
 
-In aggiunta, una crittografia dei dati pura lascerà il sistema vulnerabile agli attacchi offline _(guarda sopra)_.
+In aggiunta, una crittografia dei dati pura lascerà il sistema vulnerabile agli attacchi offline *(guarda sopra)*.
 
 **Crittografia di sistema**, definita come crittografia del sistema operativo e dei dati dell'utente, aiuta a indirizzare alcune incapacità della crittografia dei dati.
 
 Vantaggi:
 
-*   Previene accessi fisici non autorizzati ai file del sistema operativo _(guarda sopra)_.
+*   Previene accessi fisici non autorizzati ai file del sistema operativo *(guarda sopra)*.
 *   Previene accessi fisici non autorizzati ai dati privati che potrebbero essere immagazzinati dal sistema.
 
 Svantaggi:
@@ -104,11 +104,11 @@ Le soluzioni disponibili in questa categoria sono:
 
 	[eCryptfs](/index.php/System_Encryption_with_eCryptfs "System Encryption with eCryptfs")
 
-	_..._
+	*...*
 
 	[EncFS](/index.php/EncFS "EncFS")
 
-	_..._
+	*...*
 
 ### Cifratura dei dispositivi a blocchi
 
@@ -118,19 +118,19 @@ Le seguenti soluzioni di cifratura di un dispositivo a blocchi sono disponibili 
 
 	[loop-AES](/index.php?title=Loop-AES&action=edit&redlink=1 "Loop-AES (page does not exist)")
 
-	_loop-AES è un discendente di cryptoloop ed è una soluzione sicura e veloce per i sistemi di crittografia._
+	*loop-AES è un discendente di cryptoloop ed è una soluzione sicura e veloce per i sistemi di crittografia.*
 
-	_Tuttavia loop-AES è considerato meno user-friendly rispetto alle altre soluzioni e richiede un supporto kernel non-standard._
+	*Tuttavia loop-AES è considerato meno user-friendly rispetto alle altre soluzioni e richiede un supporto kernel non-standard.*
 
 	[dm-crypt + LUKS](/index.php/System_Encryption_with_LUKS "System Encryption with LUKS")
 
-	_dm-crypt è la funzionalità standard per cifrare fornita dal kernel Linux. Esso può essere usato direttamente da chi vuole avere il completo controllo di tutti gli aspetti di partizioni e amministrazione delle chiavi._
+	*dm-crypt è la funzionalità standard per cifrare fornita dal kernel Linux. Esso può essere usato direttamente da chi vuole avere il completo controllo di tutti gli aspetti di partizioni e amministrazione delle chiavi.*
 
-	_LUKS è uno strato ulteriore di comodità che memorizza tutti i dati di configurazione necessari per dm-crypt sul disco stesso e riassume l'amministrazione delle partizioni e delle chiavi per migliorare la facilità d'uso._
+	*LUKS è uno strato ulteriore di comodità che memorizza tutti i dati di configurazione necessari per dm-crypt sul disco stesso e riassume l'amministrazione delle partizioni e delle chiavi per migliorare la facilità d'uso.*
 
 	[TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
 
-	_..._
+	*...*
 
 Per le implicazioni pratiche del livello di operazione scelto vedi la seguente [tabella di confronto](#practical_implications) così come [[1]](http://ecryptfs.sourceforge.net/ecryptfs-faq.html#compare).
 
@@ -138,7 +138,7 @@ Per le implicazioni pratiche del livello di operazione scelto vedi la seguente [
 
 | 
 
-##### _sommario_
+##### *sommario*
 
  | Loop-AES | dm-crypt + LUKS | Truecrypt | eCryptfs | EncFs |
 
@@ -152,14 +152,14 @@ principali punti di forza
 
 disponibilità in Arch Linux
 
- | bisogna ricompilare il kernel | _moduli kernel:_ già caricati con il kernel di default; _strumenti:_ [device-mapper](https://www.archlinux.org/packages/?name=device-mapper), [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) [core] | [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) [extra] | _moduli kernel:_ già caricati con il kernel di default; _strumenti:_ [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) [community] | [encfs](https://www.archlinux.org/packages/?name=encfs) [community] |
+ | bisogna ricompilare il kernel | *moduli kernel:* già caricati con il kernel di default; *strumenti:* [device-mapper](https://www.archlinux.org/packages/?name=device-mapper), [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) [core] | [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) [extra] | *moduli kernel:* già caricati con il kernel di default; *strumenti:* [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) [community] | [encfs](https://www.archlinux.org/packages/?name=encfs) [community] |
 
 license
 
  | GPL | GPL | custom | GPL | GPL |
 | 
 
-##### _classificazione di base_
+##### *classificazione di base*
 
  | Loop-AES | dm-crypt + LUKS | Truecrypt | eCryptfs | EncFs |
 
@@ -187,7 +187,7 @@ relazione con il filesystem
 cifratura implementata nel...
 
  | kernelspace | kernelspace | kernelspace | kernelspace | userspace
-_(usando FUSE)_ |
+*(usando FUSE)* |
 
 metadati cifrati memorizzati in...
 
@@ -198,14 +198,14 @@ chiave di cifratura memorizzata in...
  |  ? |  ? |  ? | la chiave può essere posizionata ovunque | nel file di controllo all'inizio di ogni contenitore EncFS |
 | 
 
-##### _applicazioni pratiche_
+##### *applicazioni pratiche*
 
  | Loop-AES | dm-crypt + LUKS | Truecrypt | eCryptfs | EncFs |
 
 metadati (numero di file, struttura delle cartelle, dimensioni dei file, permessi mtimes, etc.) cifrati
 
  | ✔ | ✖
-_(è possibile anche cifrare i nomi dei file e delle cartelle)_ |
+*(è possibile anche cifrare i nomi dei file e delle cartelle)* |
 
 può essere usato per cifrare interi dischi rigidi (incluse tabelle di partizioni)
 
@@ -228,7 +228,7 @@ permette backup dei file cifrati offline
  | ✖ | ✔ |
 | 
 
-##### _caratteristiche di fruibilità_
+##### *caratteristiche di fruibilità*
 
  | Loop-AES | dm-crypt + LUKS | Truecrypt | eCryptfs | EncFs |
 
@@ -249,7 +249,7 @@ fornisce una GUI
  | ✖ | ✖ | ✔ | ✖ | ✖ |
 | 
 
-##### _caratteristiche di sicurezza_
+##### *caratteristiche di sicurezza*
 
  | Loop-AES | dm-crypt + LUKS | Truecrypt | eCryptfs | EncFs |
 
@@ -281,7 +281,7 @@ supporto per chiavi multiple usate sugli stessi dati
 (with LUKS) |  ? |  ? | ✖ |
 | 
 
-##### _caratteristiche di performance_
+##### *caratteristiche di performance*
 
  | Loop-AES | dm-crypt + LUKS | Truecrypt | eCryptfs | EncFs |
 
@@ -298,7 +298,7 @@ ottimizzato per il trattamento di file sparsi
  |  ? |  ? |  ? | ✖ |  ? |
 | 
 
-##### _specifiche della cifratura dei dispositivi a blocchi_
+##### *specifiche della cifratura dei dispositivi a blocchi*
 
  | Loop-AES | dm-crypt + LUKS | Truecrypt |
 
@@ -307,7 +307,7 @@ supporto per il ridimensionamento manuale del dispositivo a blocchi cifrato
  |  ? | ✔ | ✖ |
 | 
 
-##### _specifiche della cifratura del filesystem stacked_
+##### *specifiche della cifratura del filesystem stacked*
 
  | eCryptfs | EncFs |
 
@@ -319,12 +319,12 @@ capacità di cifrare i nomi dei file
 
  | ✔ | ✔ |
 
-capacità di _non_ cifrare i nomi dei file
+capacità di *non* cifrare i nomi dei file
 
  | ✔ | ✔ |
 | 
 
-##### _compatibilità & popolarità_
+##### *compatibilità & popolarità*
 
  | Loop-AES | dm-crypt + LUKS | Truecrypt | eCryptfs | EncFs |
 
@@ -339,13 +339,13 @@ usato da
 
  |  ? | 
 
-*   _Arch Linux installer_ (system encryption)
-*   _Ubuntu alternate installer_ (system encryption)
+*   *Arch Linux installer* (system encryption)
+*   *Ubuntu alternate installer* (system encryption)
 
  |  ? | 
 
-*   _Ubuntu installer_ (home dir encryption)
-*   _Chromium OS_ (encryption of cached user data)
+*   *Ubuntu installer* (home dir encryption)
+*   *Chromium OS* (encryption of cached user data)
 
  |  ? |
 
@@ -368,18 +368,18 @@ Tra le altre cose, dovrai rispondere alle seguenti domande:
     *   Come ci si potrebbe occupare dello swap? `/tmp`?
         *   lo ignoro, e spero che nessun dato sia stato rubato
         *   Swap disabilitato, oppure montato come ramdisk
-        *   Swap cifrato _(come parte di una completa cifratura del disco)_
+        *   Swap cifrato *(come parte di una completa cifratura del disco)*
 
 *   Come dovrebbero essere sbloccati le parti del disco cifrate?
-    *   password _(la stessa del login, o diversa)_
-    *   file con la chiave _(es. dentro a una pen drive USB, che bisogna tenere in posto sicuro)_
+    *   password *(la stessa del login, o diversa)*
+    *   file con la chiave *(es. dentro a una pen drive USB, che bisogna tenere in posto sicuro)*
     *   Tutti e due
 
-*   _Quando_ le parti cifrate del disco dovrebbero essere sbloccare?
+*   *Quando* le parti cifrate del disco dovrebbero essere sbloccare?
     *   prima dell'avvio
     *   durante l'avvio
     *   al login
-    *   manualmente _(after login)_
+    *   manualmente *(after login)*
 
 *   Come sarebbero sistemati gli utenti multipli?
     *   non ci sono
@@ -398,31 +398,31 @@ Dopo puoi fare le scelte tecniche richieste (vedi [#Metodi_disponibili](#Metodi_
 
 In pratica, puoi scegliere qualcosa di simile a questo:
 
-	_**Esempio 1:**_ cifratura dei dati semplice (hard disk interno)
+	***Esempio 1:*** cifratura dei dati semplice (hard disk interno)
 
-	ve) • **una cartella chiamata "~/Private"** nella cartella home dell'utente cifrata con _EncFS_ _├──> versioni cifrate dei file dentro ~/.Private_ _└──> sbloccate al momento con una password dedicata_
+	ve) • **una cartella chiamata "~/Private"** nella cartella home dell'utente cifrata con *EncFS* *├──> versioni cifrate dei file dentro ~/.Private* *└──> sbloccate al momento con una password dedicata*
 
-	_**Esempio 2:**_ cifratura dei dati semplice (disco rimobivile)
+	***Esempio 2:*** cifratura dei dati semplice (disco rimobivile)
 
-	• **intero disco USBw** cifrato con _TrueCrypt_ _└──> sbloccato quando collegato al computer_ _(usando una password dedicata + un file .jpg che sarebbe un keyfile_
+	• **intero disco USBw** cifrato con *TrueCrypt* *└──> sbloccato quando collegato al computer* *(usando una password dedicata + un file .jpg che sarebbe un keyfile*
 
-	_**Esempio 3:**_ cifratura del sistema parziale
+	***Esempio 3:*** cifratura del sistema parziale
 
-	• ogni **cartella home** dell'utente cifrata con _eCryptfs_ _└──> sbloccata al login, usando la password di login_ • le partizioni **swap** e **/tmp** cifrate con _dm-crypt+LUKS_ _└──> usando un chiave portabile automaticamente generata per sessione_ • indicizzazione/cache dei contenuti di /home da slocate (e applicazioni simili) non cifrate
+	• ogni **cartella home** dell'utente cifrata con *eCryptfs* *└──> sbloccata al login, usando la password di login* • le partizioni **swap** e **/tmp** cifrate con *dm-crypt+LUKS* *└──> usando un chiave portabile automaticamente generata per sessione* • indicizzazione/cache dei contenuti di /home da slocate (e applicazioni simili) non cifrate
 
-	_**Example 4:**_ cifratura del sistema
+	***Example 4:*** cifratura del sistema
 
-	• **intero hard disk eccetto la partizione di boot** cifrato con _dm-crypt+LUKS_ _└──> sbloccato durante l'avvio, usando una pen drive USB con keyfile (condiviso da tutti gli utenti)_
+	• **intero hard disk eccetto la partizione di boot** cifrato con *dm-crypt+LUKS* *└──> sbloccato durante l'avvio, usando una pen drive USB con keyfile (condiviso da tutti gli utenti)*
 
-	_**Example 5:**_ cifratura del sistema paranoica
+	***Example 5:*** cifratura del sistema paranoica
 
-	• **intero hard disk** cifrato con _dm-crypt+LUKS_ _└──> sbloccato prima dell'avvio usando una password dedicata più un keyfile dentro a una pen drive USB_ _(differente per ogni utente - indipendentemente revocabile_ • **partizione di /boot** posizionata sulla pen drive USB usata prima
+	• **intero hard disk** cifrato con *dm-crypt+LUKS* *└──> sbloccato prima dell'avvio usando una password dedicata più un keyfile dentro a una pen drive USB* *(differente per ogni utente - indipendentemente revocabile* • **partizione di /boot** posizionata sulla pen drive USB usata prima
 
 Molte e molte altre combinazioni sono possibili. Dovresti pianificare che tipo di setup sarà appropriato per il tuo sistema.
 
 ### Scegliere una buona password
 
-Quando fai affidamento a una password, essa deve essere completa abbastanza da non essere facile da indovinare o scavalcare usando attacchi brute-force. I princìpi di una buona password sono basati sulla _lunghezza_ e _casualità d'ordine_
+Quando fai affidamento a una password, essa deve essere completa abbastanza da non essere facile da indovinare o scavalcare usando attacchi brute-force. I princìpi di una buona password sono basati sulla *lunghezza* e *casualità d'ordine*
 Vedi [The passphrase FAQ](http://www.iusmentis.com/security/passphrasefaq/) e considera di usare il metodo [Diceware Passphrase](http://world.std.com/~reinhold/diceware.html).
 
 Un altro aspetto della forza di una password è che non deve essere facilmente recuperabile da altri posti. Se si usa la stessa password per la cifratura del disco e per il login (utile per esempio auto montare la partizione o la cartella cifrata al login), assicurati che `/etc/shadow` non finisca su una partizione cifrata, oppure usa un buon algoritmo hash (cioè sha512/bcrypt, non md5) per la password memorizzata (vedi [SHA_password_hashes](/index.php/SHA_password_hashes "SHA password hashes") per altre info).
@@ -485,11 +485,11 @@ Prima di cifrare/decifrare i dati, il sistema di cifratura del disco deve conosc
 
 Ogni volta che il dispositivo a blocchi o la cartella cifrata in questione deve essere montata, la sua chiave corrispondente (chiamata d'ora in avanti "master key") deve essere ripresa - di solito da una delle seguenti posizioni:
 
-*   _**memorizzata in un keyfile**_
+*   ***memorizzata in un keyfile***
 
     Semplicemente memorizzando la master key in un file (in forma leggibile), è l'opzione più semplice. Il file - chiamato keyfile - può essere posizionato su una pen drive USB riposta in una posizione sicura e essere usato soltanto quando bisogna montare una parte cifrata del disco (es. durante il boot o il login).
 
-*   _**memorizzata in un keyfile o nel disco stesso in modalità cifrata con password**_
+*   ***memorizzata in un keyfile o nel disco stesso in modalità cifrata con password***
 
     La master key (e quindi i dati cifrati) può essere protetta con una password segreta, che bisogna ricordare ed immettere ogni volta che si vuole montare il dispositivo a blocchi o cartella cifrato.
 
@@ -513,13 +513,13 @@ Ogni volta che il dispositivo a blocchi o la cartella cifrata in questione deve 
 
     The **encrypted master key** can be stored on disk together with the encrypted data. This way, the confidentiality of the encrypted data depends completely on the secret passphrase.
 
-    Additional security can be attained by instead storing the encrypted master key in a keyfile on e.g. a USB stick. This provides **two-factor authentication**: Accessing the encrypted data now requires something only you _know_ (the passphrase), and additionally something only you _have_ (the keyfile).
+    Additional security can be attained by instead storing the encrypted master key in a keyfile on e.g. a USB stick. This provides **two-factor authentication**: Accessing the encrypted data now requires something only you *know* (the passphrase), and additionally something only you *have* (the keyfile).
 
     Another way of achieving two-factor authentication is to augment the above key retrieval scheme to mathematically "combine" the passphrase with byte data read from one or more external files (located on a USB stick or similar), before passing it to the key derivation function.
     The files in question can be anything, e.g. normal JPEG images, which can be beneficial for [#Plausible Deniability](#Plausible_Deniability). They are still called "keyfiles" in this context, though.
-*   _**randomly generated on-the-fly for each session**_
+*   ***randomly generated on-the-fly for each session***
 
-    In some cases, e.g. when encrypting swap space or a `/tmp` partition, it is not necessary to keep a persistent master key at all. A new throwaway key can be randomly generated for each session, without requiring any user interaction. This means that once unmounted, all files written to the partition in question can never be decrypted again by _anyone_ - which in those particular use-cases is perfectly fine.
+    In some cases, e.g. when encrypting swap space or a `/tmp` partition, it is not necessary to keep a persistent master key at all. A new throwaway key can be randomly generated for each session, without requiring any user interaction. This means that once unmounted, all files written to the partition in question can never be decrypted again by *anyone* - which in those particular use-cases is perfectly fine.
 
 After is has been derived, the master key is securely stored in memory (e.g. in a kernel keyring), for as long as the encrypted block device or folder is mounted.
 
@@ -528,7 +528,7 @@ It is usually not used for de/encrypting the disk data directly, though. For exa
 ```
                           ╭┈┈┈┈┈┈┈┈┈┈┈┈╮
                           ┊ master key ┊
-  _file on disk:_           ╰┈┈┈┈┈┬┈┈┈┈┈┈╯
+  *file on disk:*           ╰┈┈┈┈┈┬┈┈┈┈┈┈╯
  ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┐        │
  ╎╭───────────────────╮╎        ▼          ╭┈┈┈┈┈┈┈┈┈┈╮
  ╎│ encrypted file key│━━━━(decryption)━━━▶┊ file key ┊
@@ -545,7 +545,7 @@ In a similar manner, a separate key (e.g. one per folder) may be used for the en
 
 In the case of block device encryption, ...
 
-_Further reading:_
+*Further reading:*
 
 *   [Wikipedia:Passphrase](https://en.wikipedia.org/wiki/Passphrase "wikipedia:Passphrase")
 *   [Wikipedia:Key_(cryptography)](https://en.wikipedia.org/wiki/Key_(cryptography) "wikipedia:Key (cryptography)")
@@ -559,15 +559,15 @@ The actual algorithm used for translating between pieces of unencrypted and encr
 Disk encryption employs "block ciphers", which operate on fixed-length blocks of data, e.g. 16 bytes (128 bits). At the time of this writing, the predominantly used ones are:
 
  block size | key size | comment |
-| [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard "wikipedia:Advanced Encryption Standard") | 128 bits | 128, 192 or 256 bits | _approved by the NSA for protecting "SECRET" and "TOP SECRET" classified US-government information (when used with a key size of 192 or 256 bits)_ |
-| [Blowfish](https://en.wikipedia.org/wiki/Blowfish_(cipher) "wikipedia:Blowfish (cipher)") | 64 bits | 32–448 bits | _one of the first patent-free secure ciphers that became publicly available, hence very well established on Linux_ |
-| [Twofish](https://en.wikipedia.org/wiki/Twofish "wikipedia:Twofish") | 128 bits | 128, 192 or 256 bits | _developed as successor of Blowfish, but has not attained as much widespread usage_ |
+| [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard "wikipedia:Advanced Encryption Standard") | 128 bits | 128, 192 or 256 bits | *approved by the NSA for protecting "SECRET" and "TOP SECRET" classified US-government information (when used with a key size of 192 or 256 bits)* |
+| [Blowfish](https://en.wikipedia.org/wiki/Blowfish_(cipher) | 64 bits | 32–448 bits | *one of the first patent-free secure ciphers that became publicly available, hence very well established on Linux* |
+| [Twofish](https://en.wikipedia.org/wiki/Twofish "wikipedia:Twofish") | 128 bits | 128, 192 or 256 bits | *developed as successor of Blowfish, but has not attained as much widespread usage* |
 
 Encrypting/decrypting a sector ([see above](#Basic_principle)) is achieved by dividing it into small blocks matching the cipher's block-size, and following a certain rule-set (a so-called "**mode of operation**") for how to consecutively apply the cipher to the individual blocks.
 
-Simply applying it to each block separately without modification (dubbed the "_electronic codebook (ECB)_" mode) would not be secure, because if the same 16 bytes of plaintext always produce the same 16 bytes of ciphertext, an attacker could easily recognize patterns in the ciphertext that is stored on disk.
+Simply applying it to each block separately without modification (dubbed the "*electronic codebook (ECB)*" mode) would not be secure, because if the same 16 bytes of plaintext always produce the same 16 bytes of ciphertext, an attacker could easily recognize patterns in the ciphertext that is stored on disk.
 
-The most basic (and common) mode of operation used in practice is "_cipher-block chaining (CBC)_". When encrypting a sector with this mode, each block of plaintext data is combined in a mathematical way with the ciphertext of the previous block, before encrypting it using the cipher. For the first block, since it has no previous ciphertext to use, a special pre-generated data block stored with the sector's cryptographic metadata and called an "**initialization vector (IV)**" is used:
+The most basic (and common) mode of operation used in practice is "*cipher-block chaining (CBC)*". When encrypting a sector with this mode, each block of plaintext data is combined in a mathematical way with the ciphertext of the previous block, before encrypting it using the cipher. For the first block, since it has no previous ciphertext to use, a special pre-generated data block stored with the sector's cryptographic metadata and called an "**initialization vector (IV)**" is used:
 
 ```
                                   ╭──────────────╮
@@ -599,7 +599,7 @@ One thing worth noting is the generation of the unique initialization vector for
 
 There are also a number of other, more complicated modes of operation available for disk encryption, which already provide built-in security agains such attacks. Some can also additionally guarantee authenticity ([see below](#Data_integrity.2Fauthenticity)) of the encrypted data.
 
-_Further reading:_
+*Further reading:*
 
 *   [Wikipedia:Disk_encryption_theory](https://en.wikipedia.org/wiki/Disk_encryption_theory "wikipedia:Disk encryption theory")
 *   [Wikipedia:Block_cipher](https://en.wikipedia.org/wiki/Block_cipher "wikipedia:Block cipher")
@@ -609,7 +609,7 @@ _Further reading:_
 
 ### Data integrity/authenticity
 
-_Further reading:_
+*Further reading:*
 
 *   [Wikipedia:Authenticated_encryption](https://en.wikipedia.org/wiki/Authenticated_encryption "wikipedia:Authenticated encryption")
 

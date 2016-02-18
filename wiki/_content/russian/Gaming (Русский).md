@@ -100,7 +100,8 @@ if [ $# -ge 1 ]; then
   openbox="`which openbox`"
   tmpgame="/tmp/tmpgame.sh"
   DISPLAY=:1.0
-  echo -e "${openbox} &\n${game}" > ${tmpgame}
+  echo -e "${openbox} &
+${game}" > ${tmpgame}
   echo "starting ${game}"
   xinit ${tmpgame} -- :1 -xf86config xorg-game.conf || exit 1
 else
@@ -145,3 +146,4 @@ hrtf = true
 *   [SIG/Games](https://fedoraproject.org/wiki/SIGs/Games#Gaming_News_sites) - Новостной сайт об играх в OS/Linux и списки в Fedora wiki
 *   [live.linux-gamers](http://live.linux-gamers.net) - Основанный на Arch игровой live-дистрибутив
 *   [Games on Linux](http://www.gamesonlinux.com) - Коммерческие игры для Linux
+*   [Игры для Linux Q&A](https://unixgames.ru) - Сервис вопросов и ответов по играм для Linux (и другим UNIX-like ОС)

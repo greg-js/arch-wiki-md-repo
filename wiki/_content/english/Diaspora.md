@@ -87,7 +87,7 @@ Switch to the diaspora user and start the Rails console:
 
 ```
 
-Then run the following command, replacing _user_ with your username:
+Then run the following command, replacing *user* with your username:
 
 ```
  Role.add_admin User.where(username: "user").first.person

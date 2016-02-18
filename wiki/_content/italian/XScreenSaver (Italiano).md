@@ -27,7 +27,7 @@ Il pacchetto [xscreensaver](https://www.archlinux.org/packages/?name=xscreensave
 
 In alternativa, esiste una versione patchata con il logo Archlinux su [AUR](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)") che si chiama [xscreensaver-arch-logo](https://aur.archlinux.org/packages/xscreensaver-arch-logo/). L'utilizzo di questo pacchetto al posto della versione del repository **extra** è vantaggioso per diversi motivi:
 
-1.  Dal momento che makepkg compila da codice sorgente, il pacchetto risultante conterrà ottimizzazioni specifiche uniche per il _proprio_ sistema, supponendo che si configuri il [makepkg.conf](/index.php/Makepkg_(Italiano) "Makepkg (Italiano)") con le apposite [CFLAGS](http://wiki.gentoo.org/wiki/Safe_CFLAGS) e CXXFLAGS.
+1.  Dal momento che makepkg compila da codice sorgente, il pacchetto risultante conterrà ottimizzazioni specifiche uniche per il *proprio* sistema, supponendo che si configuri il [makepkg.conf](/index.php/Makepkg_(Italiano) "Makepkg (Italiano)") con le apposite [CFLAGS](http://wiki.gentoo.org/wiki/Safe_CFLAGS) e CXXFLAGS.
 2.  Questo pacchetto è marchiato Arch (screensaver, schermata di blocco, ecc.)
 3.  Se si utilizza [Gnome](/index.php/GNOME_(Italiano) "GNOME (Italiano)"), questo pacchetto fornirà un'icona per accedere alle preferenze di xscreensaver da Sistema>Preferenze>Screensaver, a differenza del pacchetto del [repository ufficiale](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
 
@@ -75,7 +75,6 @@ La sola [installazione](/index.php/Pacman_(Italiano) "Pacman (Italiano)") del pa
 La e commerciale `&` fa eseguire xscreensaver in background, ed è quindi necessaria.
 
 **Note:** Xscreensaver viene avviato automaticamente da [Xfce](/index.php/Xfce_(Italiano) "Xfce (Italiano)") per mezzo di `/etc/xdg/xfce4/xinitrc`: assicurarsi che venga eseguito con `startxfce4` e non `xfce4-session`.
-
 ```
 exec startxfce4
 

@@ -1,6 +1,6 @@
 Según [Wikipedia](https://en.wikipedia.org/wiki/es:Unidad_de_disco_%C3%B3ptico "wikipedia:es:Unidad de disco óptico")
 
-	_En informática, una unidad de disco óptico es una unidad de disco que usa una luz láser u ondas electromagnéticas cercanas al espectro de la luz como parte del proceso de lectura o escritura de datos desde un archivo a discos ópticos. Algunas unidades solo pueden leer discos, pero las unidades más recientes usualmente son tanto lectoras como grabadoras. Para referirse a las unidades con ambas capacidades se suele usar el término lectograbadora. Los discos compactos (CD), DVD (Disco versátil digital) , y Blu-ray Disc (también conocido como Blu-ray o BD) son los tipos de soportes ópticos más comunes que pueden ser leídos y grabados por estas unidades._
+	*En informática, una unidad de disco óptico es una unidad de disco que usa una luz láser u ondas electromagnéticas cercanas al espectro de la luz como parte del proceso de lectura o escritura de datos desde un archivo a discos ópticos. Algunas unidades solo pueden leer discos, pero las unidades más recientes usualmente son tanto lectoras como grabadoras. Para referirse a las unidades con ambas capacidades se suele usar el término lectograbadora. Los discos compactos (CD), DVD (Disco versátil digital) , y Blu-ray Disc (también conocido como Blu-ray o BD) son los tipos de soportes ópticos más comunes que pueden ser leídos y grabados por estas unidades.*
 
 ## Contents
 
@@ -16,7 +16,7 @@ Según [Wikipedia](https://en.wikipedia.org/wiki/es:Unidad_de_disco_%C3%B3ptico 
     *   [1.7 Borrar CD-RW y DVD-RW](#Borrar_CD-RW_y_DVD-RW)
     *   [1.8 Grabar una imagen ISO al CD, DVD o BD](#Grabar_una_imagen_ISO_al_CD.2C_DVD_o_BD)
     *   [1.9 Verificar la imagen ISO grabada](#Verificar_la_imagen_ISO_grabada)
-    *   [1.10 ISO 9660 y grabación al vuelo (_On-The-Fly_)](#ISO_9660_y_grabaci.C3.B3n_al_vuelo_.28On-The-Fly.29)
+    *   [1.10 ISO 9660 y grabación al vuelo (*On-The-Fly*)](#ISO_9660_y_grabaci.C3.B3n_al_vuelo_.28On-The-Fly.29)
     *   [1.11 Multisesión](#Multisesi.C3.B3n)
         *   [1.11.1 Multisesión con wodim](#Multisesi.C3.B3n_con_wodim)
         *   [1.11.2 Multisesión con growisofs](#Multisesi.C3.B3n_con_growisofs)
@@ -88,7 +88,7 @@ Los programas `cdrecord`, `cdrskin` y `wodim` son compatibles con las opciones w
 
 ### Crear una imagen ISO con archivos presentes en el disco duro
 
-Esto se puede lograr mediante el uso tanto de _mkisofs_ o su fork _cdrkit_ de _genisoimage_.
+Esto se puede lograr mediante el uso tanto de *mkisofs* o su fork *cdrkit* de *genisoimage*.
 
 La manera más simple de crear una imagen ISO es copiar los archivos necesarios a una carpeta, por ejemplo `./for_iso`.
 
@@ -138,7 +138,7 @@ $ genisoimage -V "BACKUP_2013_07_27" -J -r -o backup_2013_07_27.iso \
 
 	-graft-points
 
-	Activa el reconocimiento de _pathspecs_ que contiene una dirección de destino en el sistema de archivos ISO (por ejemplo '`/photos`) y una dirección de origen en el disco duro (por ejemplo `/home/user/photos`). Ambas están separadas por un carácter «=».
+	Activa el reconocimiento de *pathspecs* que contiene una dirección de destino en el sistema de archivos ISO (por ejemplo '`/photos`) y una dirección de origen en el disco duro (por ejemplo `/home/user/photos`). Ambas están separadas por un carácter «=».
 
 En el siguiente ejemplo se ponen los directorios del disco `/home/user/photos`, `/home/user/mail` y `/home/user/holidays/photos`, en la imagen ISO como `/photos`, `/mail` y `/photos/holidays`, respectivamente.
 
@@ -155,7 +155,7 @@ Consulte los manuales de los programas ISO 9660 para obtener más información a
 **Nota:** Este proceso se puede considerar desde una doble perspectiva:
 
 *   por un lado, como crear un archivo (que no es tan distinto, salvando las diferencias, de la creación de un archivo comprimido ZIP o TAR —por ejemplo, `.tar.gz`—);
-*   por otro, como crear y _poblar_ un sistema de archivos para el volumen, que se articula en forma de una imagen de «disco» (archivo) y que conserva, tanto como sea posible, el contenido, nombre, estructura/jerarquía/colocación relativa a los directorios, y, posiblemente, otros metadatos/propiedades (aspectos) generales del sistema de archivos tales como marca de tiempo, propietarios, permisos.
+*   por otro, como crear y *poblar* un sistema de archivos para el volumen, que se articula en forma de una imagen de «disco» (archivo) y que conserva, tanto como sea posible, el contenido, nombre, estructura/jerarquía/colocación relativa a los directorios, y, posiblemente, otros metadatos/propiedades (aspectos) generales del sistema de archivos tales como marca de tiempo, propietarios, permisos.
 
 ### Montar una imagen ISO
 
@@ -225,7 +225,6 @@ $ blocks=$(expr $(isosize /dev/sr0) / 2048)
 Echa un vistazo al número obtenido de bloques para determinar si es aceptable:
 
  `$ echo "That would be $(expr $blocks / 512) MB"` 
-
 ```
 That would be 589 MB
 
@@ -325,7 +324,6 @@ Puede verificar la integridad del soporte grabado para asegurarse de que no cont
 Calcule primero la suma md5 de la imagen ISO original:
 
  `$ md5sum isoimage.iso` 
-
 ```
  e5643e18e05f5646046bb2e4236986d8 isoimage.iso
 
@@ -339,9 +337,7 @@ Hay que tener en cuenta que, aunque algunos tipos de soportes contienen exactame
 $ blocks=$(expr $(du -b isoimage.iso | awk '{print $1}') / 2048)
 
 ```
-
  `$ dd if=/dev/sr0 bs=2048 count=$blocks | md5sum` 
-
 ```
  43992+0 records in
  43992+0 records out
@@ -352,7 +348,7 @@ $ blocks=$(expr $(du -b isoimage.iso | awk '{print $1}') / 2048)
 
 Ambas salidas deben producir la misma suma MD5 (aquí: `e5643e18e05f5646046bb2e4236986d8`). Si no coinciden, probablemente también reciba un mensaje de error de entrada/salida al ejecutar `dd`. `dmesg` podría ayudarle a contar respecto a los errores SCSI y a los números de bloques, si está interesado.
 
-### ISO 9660 y grabación al vuelo (_On-The-Fly_)
+### ISO 9660 y grabación al vuelo (*On-The-Fly*)
 
 No es necesario almacenar un sistema de archivos ISO emergente en el disco duro antes de escribirlo en un soporte óptico. Solo las unidades de CD muy antiguas en ordenadores viejos podrían sufrir errores de grabación debido al búfer vacío.
 
@@ -382,7 +378,7 @@ Linux y muchos otros sistemas operativos montan el árbol de directorios en el �
 
 #### Multisesión con wodim
 
-Los CD-R y CD-RW pueden permanecer abiertos para escribirse (conocido como _«appendable»_ -con capacidad para ampliarse, ampliable-) si utilizan la opción `-multi` de wodim:
+Los CD-R y CD-RW pueden permanecer abiertos para escribirse (conocido como *«appendable»* -con capacidad para ampliarse, ampliable-) si utilizan la opción `-multi` de wodim:
 
 ```
 $ wodim -v -multi dev=/dev/sr0 isoimage.iso
@@ -465,15 +461,15 @@ Para más detalles vea la [página del manual](http://www.gnu.org/software/xorri
 
 ### Defect Management en BD (Blu-ray disc)
 
-BD-RE y el soporte BD-R formateado se escriben normalmente con _Defect Management_ activado. Esta función lee los bloques escritos, durante su almacenamiento en el búfer. En caso de mala calidad de lectura de los bloques, estos se escriben de nuevo o son redirigidos a la _Spare Area_ donde los datos se almacenan en bloques de repuesto.
+BD-RE y el soporte BD-R formateado se escriben normalmente con *Defect Management* activado. Esta función lee los bloques escritos, durante su almacenamiento en el búfer. En caso de mala calidad de lectura de los bloques, estos se escriben de nuevo o son redirigidos a la *Spare Area* donde los datos se almacenan en bloques de repuesto.
 
-Esta comprobación de lectura reduce la velocidad de escritura a la mitad como máximo de la velocidad nominal que puede alcanzar la unidad y el soporte BD. A veces incluso más. El uso intensivo de la «Zona de Repuesto» provoca grandes retrasos durante las operaciones de lectura. De modo que la activación de _Defect Management_ no siempre es deseable.
+Esta comprobación de lectura reduce la velocidad de escritura a la mitad como máximo de la velocidad nominal que puede alcanzar la unidad y el soporte BD. A veces incluso más. El uso intensivo de la «Zona de Repuesto» provoca grandes retrasos durante las operaciones de lectura. De modo que la activación de *Defect Management* no siempre es deseable.
 
-`cdrecord` no formatea BD-R. Sin embargo, no tiene medios para evitar _Defect Management_ en soportes BD-RE.
+`cdrecord` no formatea BD-R. Sin embargo, no tiene medios para evitar *Defect Management* en soportes BD-RE.
 
-`growisofs` formatea BD-R por defecto. Esto se puede evitar mediante la opción `-use-the-force-luke=spare:none`. Sin embargo, ello no evita _Defect Management_ en los soportes BD-RE.
+`growisofs` formatea BD-R por defecto. Esto se puede evitar mediante la opción `-use-the-force-luke=spare:none`. Sin embargo, ello no evita *Defect Management* en los soportes BD-RE.
 
-`cdrskin`, `xorriso`, y `xorrecord` no formatean BD-R por defecto. Lo hacen con `cdrskin blank=format_if_needed`, `xorriso -format as_needed` y `xorrecord blank=format_overwrite`, respectivamente. Estos tres programas pueden desactivar _Defect Management_ en BD-RE y en BD-R ya formateada con `cdrskin stream_recording=on`, `xorriso -stream_recording on` y `xorrecord stream_recording=on`, respectivamente.
+`cdrskin`, `xorriso`, y `xorrecord` no formatean BD-R por defecto. Lo hacen con `cdrskin blank=format_if_needed`, `xorriso -format as_needed` y `xorrecord blank=format_overwrite`, respectivamente. Estos tres programas pueden desactivar *Defect Management* en BD-RE y en BD-R ya formateada con `cdrskin stream_recording=on`, `xorriso -stream_recording on` y `xorrecord stream_recording=on`, respectivamente.
 
 ### Grabar un CD de audio
 
@@ -507,7 +503,7 @@ Track 01: audio    0 MB (00:00.00) no preemp pad
 
 pruebe con otro decodificador (por ejemplo, mpg123) o pruebe utilizando cdrecord del paquete [cdrtools](https://www.archlinux.org/packages/?name=cdrtools).
 
-Tenga en cuenta que [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) también contiene una orden cdrecord, pero es solo un enlace simbólico a _wodim_. Si funcionó todo puede quitar la etiqueta dummy para grabar el CD real:
+Tenga en cuenta que [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) también contiene una orden cdrecord, pero es solo un enlace simbólico a *wodim*. Si funcionó todo puede quitar la etiqueta dummy para grabar el CD real:
 
 Para probar el nuevo CD de audio, utilice [MPlayer](/index.php/MPlayer "MPlayer"):
 
@@ -614,12 +610,10 @@ Nero Linux ofrece algunas características, como:
 *   Grabación avanzada con Nero Burning ROM y cliente de línea de órdenes.
 
 **Nota:** Para Nero Linux poder funcionar necesita cargar el módulo `sg` en el arranque. Ponga un archivo con nombre homónimo en `/etc/modules-load.d`: `/etc/modules-load.d/sg.config` 
-
 ```
 sg
 
 ```
-
 Hay algunas actualizaciones del módulo `sg` que hacen que no se cargue automáticamente y Nero lo necesita.
 
 ## Reproducir DVD
@@ -635,12 +629,10 @@ Si desea reproducir DVD encriptados, debe instalar los paquetes libdvd*:
 Además, debe instalar el software reproductor. Los reproductores más populares de DVD son [MPlayer](/index.php/MPlayer "MPlayer"), [xine](https://en.wikipedia.org/wiki/Xine "wikipedia:Xine") y [VLC](/index.php/VLC "VLC"). Véase el listado de [reproductores de vídeo](/index.php/List_of_Applications/Multimedia#Video_players "List of Applications/Multimedia") y las instrucciones específicas para [MPlayer](/index.php/MPlayer#DVD_playing "MPlayer").
 
 **Sugerencia:** Los usuarios pueden necesitar pertener al [grupo](/index.php/Users_and_groups "Users and groups") `optical` para poder acceder a la unidad de DVD. Para añadir `NOMBREDEUSUARIO` al grupo `optical`, ejecute:
-
 ```
 # gpasswd -a NOMBREDEUSUARIO optical
 
 ```
-
 No se olvide reiniciar sesión para que los cambios surtan efecto. Puede ver a qué grupos actuales pertenece su usuario con la orden `groups`.
 
 ## Ripear DVD
@@ -658,7 +650,7 @@ Algunas utilidades realizan ambas tareas, mientras que otras se centran en uno u
 
 	[http://www.pixelbeat.org/programs/dvd-vr/](http://www.pixelbeat.org/programs/dvd-vr/) || [dvd-vr](https://aur.archlinux.org/packages/dvd-vr/)
 
-*   **[dvdbackup](/index.php/Dvdbackup "Dvdbackup")** — Herramienta para la extracción pura de datos pero no los transcodifica. Es útil para crear copias _exactas_ de DVD encriptados en combinación con **libdvdcss** o para descifrar vídeos de otras utilidades que no pueden leer DVD encriptados.
+*   **[dvdbackup](/index.php/Dvdbackup "Dvdbackup")** — Herramienta para la extracción pura de datos pero no los transcodifica. Es útil para crear copias *exactas* de DVD encriptados en combinación con **libdvdcss** o para descifrar vídeos de otras utilidades que no pueden leer DVD encriptados.
 
 	[http://dvdbackup.sourceforge.net/](http://dvdbackup.sourceforge.net/) || [dvdbackup](https://www.archlinux.org/packages/?name=dvdbackup)
 
@@ -731,7 +723,6 @@ es_ES ISO-8859-1
 *   Reconstruya los perfiles con `locale-gen`:
 
  `# locale-gen` 
-
 ```
 Generating locales...
 en_US.UTF-8... done
@@ -752,7 +743,7 @@ Brasero utiliza [gvfs](https://www.archlinux.org/packages/?name=gvfs) para gesti
 
 Al intentar grabar puede pararse en el primer paso llamado Normalización.
 
-Como solución alternativa se puede deshabilitar el plugin de normalización mediante el menú _Editar > Plugins_
+Como solución alternativa se puede deshabilitar el plugin de normalización mediante el menú *Editar > Plugins*
 
 ### VLC: Error «... could not open the disc /dev/dvd»
 

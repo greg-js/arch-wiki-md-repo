@@ -96,7 +96,7 @@ At this point a generic MythTV installation is present that must be refined into
 
 ### Backend setup
 
-Before setting up your backend, make sure you have a functioning _video capture card_ or a _firewire input from a STB_. Unfortunately, that part of setup is outside the scope of this article. If you are in the United States, get an account at [Schedules Direct](http://www.schedulesdirect.org) (this service provides TV listings at a minimal cost). Users outside the United States will need to use screen scrapers ([xmltv](http://wiki.xmltv.org/index.php/Main_Page/)) to do the same job.
+Before setting up your backend, make sure you have a functioning *video capture card* or a *firewire input from a STB*. Unfortunately, that part of setup is outside the scope of this article. If you are in the United States, get an account at [Schedules Direct](http://www.schedulesdirect.org) (this service provides TV listings at a minimal cost). Users outside the United States will need to use screen scrapers ([xmltv](http://wiki.xmltv.org/index.php/Main_Page/)) to do the same job.
 
 #### Setting up the database
 
@@ -150,7 +150,7 @@ Query OK, 0 rows affected (0.00 sec)
 ```
 
 *   Replace **user** with the user name running on the frontend (default: mythtv).
-*   Replace **host.net** with the host name or IP address of the remote box needing access. Other common values are _%.local_ and _192.168.1.%_.
+*   Replace **host.net** with the host name or IP address of the remote box needing access. Other common values are *%.local* and *192.168.1.%*.
 *   Replace **password** with a suitable password (default: mythtv).
 
 **Note:** MySQL / MariaDB treats a "user@host.net" and "user@192.168.1.1" as completely separate users, therefore you may need to use both types
@@ -179,7 +179,7 @@ $ mythtv-setup
 
 ```
 
-If your backend runs on a headless server, _mythtv-setup_ can be run via [Secure Shell#X11 forwarding](/index.php/Secure_Shell#X11_forwarding "Secure Shell") by running:
+If your backend runs on a headless server, *mythtv-setup* can be run via [Secure Shell#X11 forwarding](/index.php/Secure_Shell#X11_forwarding "Secure Shell") by running:
 
 ```
 $ ssh -X user@backend '. /etc/profile.d/perlbin.sh && LANG=C mythtv-setup'

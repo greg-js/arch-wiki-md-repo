@@ -53,7 +53,7 @@ Los siguientes paquetes permiten una interfaz gráfica para personalizar el Blue
 
 ```
 
-Asegúrese de que el demonio _bluetooth_ se está ejecutando según lo descrito anteriormente y despues ejecute_blueman-applet_. Para hacer que el applet se ejecute en el inicio de sesión ay que añadir _blueman-applet_ a el menú_,_ Xfce Menu -> Settings -> Session and Startup _en(Xfce)._
+Asegúrese de que el demonio *bluetooth* se está ejecutando según lo descrito anteriormente y despues ejecute*blueman-applet*. Para hacer que el applet se ejecute en el inicio de sesión ay que añadir *blueman-applet* a el menú*,* Xfce Menu -> Settings -> Session and Startup *en(Xfce).*
 
 Nota: si está ejecutando blueman fuera de Gnome/GDM, por ejemplo, en Xfce usando el comando "startx" debe agregar ". /etc/X11/xinit/xinitrc.d/*" en la parte superior de su archivo ~/.xinitrc para que nautilus sea capaz de navegar por los dispositivos.
 

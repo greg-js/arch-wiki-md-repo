@@ -25,13 +25,13 @@
 
 [Install](/index.php/Install "Install") the [acpid](https://www.archlinux.org/packages/?name=acpid) package.
 
-To have _acpid_ started on boot, [enable](/index.php/Enable "Enable") `acpid.service`.
+To have *acpid* started on boot, [enable](/index.php/Enable "Enable") `acpid.service`.
 
 ## Configuration
 
 [acpid](https://www.archlinux.org/packages/?name=acpid) comes with a number of predefined actions for triggered events, such as what should happen when you press the Power button on your machine. By default, these actions are defined in `/etc/acpi/handler.sh`, which is executed after any ACPI events are detected (as determined by `/etc/acpi/events/anything`).
 
-The following is a brief example of one such action. In this case, when the Sleep button is pressed, acpid runs the command `echo -n mem >/sys/power/state` which _should_ place the computer into a sleep (suspend) state:
+The following is a brief example of one such action. In this case, when the Sleep button is pressed, acpid runs the command `echo -n mem >/sys/power/state` which *should* place the computer into a sleep (suspend) state:
 
 ```
 button/sleep)
@@ -43,7 +43,7 @@ button/sleep)
 
 ```
 
-Unfortunately, not every computer labels ACPI events in the same way. For example, the Sleep button may be identified on one machine as _SLPB_ and on another as _SBTN_.
+Unfortunately, not every computer labels ACPI events in the same way. For example, the Sleep button may be identified on one machine as *SLPB* and on another as *SBTN*.
 
 To determine how your buttons or `Fn` shortcuts are recognized, run the following command:
 
@@ -91,7 +91,7 @@ $4 00000b31
 
 ```
 
-As you might have noticed, the Sleep button in the sample output is actually recognized as _SBTN_, rather than the _SLPB_ label specified in the default `/etc/acpi/handler.sh`. In order for Sleep function to work properly on this machine, we would need to replace _SLPB)_ with _SBTN)_.
+As you might have noticed, the Sleep button in the sample output is actually recognized as *SBTN*, rather than the *SLPB* label specified in the default `/etc/acpi/handler.sh`. In order for Sleep function to work properly on this machine, we would need to replace *SLPB)* with *SBTN)*.
 
 Using this information as a base, you can easily customize the `/etc/acpi/handler.sh` file to execute a variety of commands depending on which event is triggered. See the [Tips & Tricks](#Tips_.26_Tricks) section below for other commonly used commands.
 
@@ -111,7 +111,6 @@ While this works just fine as it is, some users may prefer to define event rules
 As root, create the following file:
 
  `/etc/acpi/events/sleep-button` 
-
 ```
 event=button sleep.*
 action=/etc/acpi/actions/sleep-button.sh %e
@@ -120,7 +119,6 @@ action=/etc/acpi/actions/sleep-button.sh %e
 Now create the following file:
 
  `/etc/acpi/actions/sleep-button.sh` 
-
 ```
 #!/bin/sh
 case "$3" in
@@ -168,21 +166,16 @@ ac_adapter)
 Find out the acpi identity of the volume buttons (see above) and susbtitute it for the acpi events in the files below.
 
  `/etc/acpi/events/vol-d` 
-
 ```
 event=button/volumedown
 action=amixer set Master 5-
 ```
-
  `/etc/acpi/events/vol-m` 
-
 ```
 event=button/mute
 action=amixer set Master toggle
 ```
-
  `/etc/acpi/events/vol-u` 
-
 ```
 event=button/volumeup
 action=amixer set Master 5+
@@ -199,7 +192,6 @@ See also [Fixing volume change in Linux](http://blog.lastlog.de/posts/fixing_vol
 Similar to volume control, acpid also enables you to control screen backlight. To achieve this you write some handler, like this:
 
  `/etc/acpi/handlers/bl` 
-
 ```
 #!/bin/sh
 bl_dev=/sys/class/backlight/acpi_video0
@@ -214,14 +206,11 @@ esac
 and again, connect keys to ACPI events:
 
  `/etc/acpi/events/bl_d` 
-
 ```
 event=video/brightnessdown
 action=/etc/acpi/handlers/bl -
 ```
-
  `/etc/acpi/events/bl_u` 
-
 ```
 event=video/brightnessup
 action=/etc/acpi/handlers/bl +
@@ -232,7 +221,6 @@ action=/etc/acpi/handlers/bl +
 You can also create a simple wireless-power switch by pressing the WLAN button. Example of event:
 
  `/etc/acpi/events/wlan` 
-
 ```
 event=button/wlan
 action=/etc/acpi/handlers/wlan
@@ -241,7 +229,6 @@ action=/etc/acpi/handlers/wlan
 and its handler:
 
  `/etc/acpi/handlers/wlan` 
-
 ```
 #!/bin/sh
 rf=/sys/class/rfkill/rfkill0
@@ -261,7 +248,7 @@ See [[1]](https://gist.githubusercontent.com/anonymous/a1f8537740aec26ebd8f/raw/
 **Note:**
 
 *   If the LCD backlight is not turned off when the lid is closed, you may do so manually by running `getXuser xset dpms force off` and `getXuser xset dpms force on` respectively on lid close and lid open events. Should the display be blanked, but the backlight left on, instead use [vbetool](https://www.archlinux.org/packages/?name=vbetool) with `vbetool dpms off` and `vbetool dpms on`. See also [XScreenSaver#DPMS settings](/index.php/XScreenSaver#DPMS_settings "XScreenSaver").
-*   When using _who_ or _w_, make sure `/run/utmp` is created at boot-time. See `man utmp` for details.
+*   When using *who* or *w*, make sure `/run/utmp` is created at boot-time. See `man utmp` for details.
 
 #### Connect to acpid socket
 
@@ -271,12 +258,12 @@ In addition to rule files, acpid accepts connections on a UNIX domain socket, by
 #!/bin/bash
 coproc acpi_listen
 while read -u ${COPROC[0]} -a event; do
-    _handler.sh_ ${event[@]}
+    *handler.sh* ${event[@]}
 done
 
 ```
 
-Where _handler.sh_ can be a script similar to `/etc/acpi/handler.sh`.
+Where *handler.sh* can be a script similar to `/etc/acpi/handler.sh`.
 
 ## See also
 

@@ -1,13 +1,13 @@
 **Note:** This page assumes that you have read [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys"), which provides wider context to the problem.
 
-Mapping _scancodes_ to _keycodes_ is universal and not specific to Linux console or Xorg, which means that changes to this mapping will be effective in both.
+Mapping *scancodes* to *keycodes* is universal and not specific to Linux console or Xorg, which means that changes to this mapping will be effective in both.
 
-There are two ways of mapping _scancodes_ to _keycodes_:
+There are two ways of mapping *scancodes* to *keycodes*:
 
 *   Using [udev](/index.php/Udev "Udev")
-*   Using _setkeycodes_
+*   Using *setkeycodes*
 
-The preferred method is to use _udev_ because it uses hardware information (which is a quite reliable source) to choose the keyboard model in a database. It means that if your keyboard model has been found in the database, your keys are recognized _out of the box_.
+The preferred method is to use *udev* because it uses hardware information (which is a quite reliable source) to choose the keyboard model in a database. It means that if your keyboard model has been found in the database, your keys are recognized *out of the box*.
 
 ## Contents
 
@@ -21,28 +21,27 @@ The preferred method is to use _udev_ because it uses hardware information (whic
 
 ## Identifying scancodes
 
-You need to know the _scancodes_ of keys you wish to remap. See [Extra keyboard keys#Scancodes](/index.php/Extra_keyboard_keys#Scancodes "Extra keyboard keys") for details.
+You need to know the *scancodes* of keys you wish to remap. See [Extra keyboard keys#Scancodes](/index.php/Extra_keyboard_keys#Scancodes "Extra keyboard keys") for details.
 
 ## Using udev
 
-[udev](/index.php/Udev "Udev") provides a builtin function called _hwdb_ to maintain the hardware database index in `/etc/udev/hwdb.bin`. The database is compiled from files with _.hwdb_ extension located in directories `/usr/lib/udev/hwdb.d/`, `/run/udev/hwdb.d/` and `/etc/udev/hwdb.d/`. The default _scancodes-to-keycodes_ mapping file is `/usr/lib/udev/hwdb.d/60-keyboard.hwdb`. See `man udev` for details.
+[udev](/index.php/Udev "Udev") provides a builtin function called *hwdb* to maintain the hardware database index in `/etc/udev/hwdb.bin`. The database is compiled from files with *.hwdb* extension located in directories `/usr/lib/udev/hwdb.d/`, `/run/udev/hwdb.d/` and `/etc/udev/hwdb.d/`. The default *scancodes-to-keycodes* mapping file is `/usr/lib/udev/hwdb.d/60-keyboard.hwdb`. See `man udev` for details.
 
 **Note:** From systemd 220 the udev ABI changed. Users using custom udev hwdb rules should update them according to the new ABI
 
-The _.hwdb_ file can contain multiple blocks of mappings for different keyboards, or one block can be applied to multiple keyboards. The `evdev:` prefix is used to match a block against a hardware, the following hardware matches are supported:
+The *.hwdb* file can contain multiple blocks of mappings for different keyboards, or one block can be applied to multiple keyboards. The `evdev:` prefix is used to match a block against a hardware, the following hardware matches are supported:
 
-*   Generic input devices (also USB keyboards) identified by the usb kernel modalias: `evdev:input:b_<bus_id>_v_<vendor_id>_p_<product_id>_e_<version_id>_-_<modalias>_` where `_<vendor_id>_`, `_<product_id>_` and `_<version_id>_` are the 4-digit hex uppercase vendor, product and version IDs (you can find those by running the `lsusb` command) and `_<modalias>_` is an arbitrary length input-modalias describing the device capabilities. `_<bus_id>_` is the 4-digit hex bus id and should be 0003 for usb devices. The possible `_<bus_id>_` values are defined in `/usr/include/linux/input.h` (you can use the following command to get a list `awk '/BUS_/ {print $2, $3}' /usr/include/linux/input.h`).
-*   AT keyboard DMI data matches: `evdev:atkbd:dmi:bvn*:bvr*:bd*:svn_<vendor>_:pn_<product>_:pvr*` where `_<vendor>_` and `_<product>_` are the firmware-provided strings exported by the kernel DMI modalias.
-*   Input driver device name and DMI data match: `evdev:name:_<input device name>_:dmi:bvn*:bvr*:bd*:svn_<vendor>_:pn*` where `_<input_device_name>_` is the name device specified by the driver and `_<vendor>_` is the firmware-provided string exported by the kernel DMI modalias.
+*   Generic input devices (also USB keyboards) identified by the usb kernel modalias: `evdev:input:b*<bus_id>*v*<vendor_id>*p*<product_id>*e*<version_id>*-*<modalias>*` where `*<vendor_id>*`, `*<product_id>*` and `*<version_id>*` are the 4-digit hex uppercase vendor, product and version IDs (you can find those by running the `lsusb` command) and `*<modalias>*` is an arbitrary length input-modalias describing the device capabilities. `*<bus_id>*` is the 4-digit hex bus id and should be 0003 for usb devices. The possible `*<bus_id>*` values are defined in `/usr/include/linux/input.h` (you can use the following command to get a list `awk '/BUS_/ {print $2, $3}' /usr/include/linux/input.h`).
+*   AT keyboard DMI data matches: `evdev:atkbd:dmi:bvn*:bvr*:bd*:svn*<vendor>*:pn*<product>*:pvr*` where `*<vendor>*` and `*<product>*` are the firmware-provided strings exported by the kernel DMI modalias.
+*   Input driver device name and DMI data match: `evdev:name:*<input device name>*:dmi:bvn*:bvr*:bd*:svn*<vendor>*:pn*` where `*<input_device_name>*` is the name device specified by the driver and `*<vendor>*` is the firmware-provided string exported by the kernel DMI modalias.
 
-The format of each line in the block body is `KEYBOARD_KEY__<scancode>_=_<keycode>_`. The value of `_<scancode>_` is hexadecimal, but without the leading `0x` (i.e. specify `a0` instead of `0xa0`), whereas the value of `_<keycode>_` is the lower-case keycode name string as listed in `/usr/include/linux/input.h` (see the `KEY__<KEYCODE>_` variables), a sorted list is available at [[1]](http://hal.freedesktop.org/quirk/quirk-keymap-list.txt). It is not possible to specify decimal value in `_<keycode>_`.
+The format of each line in the block body is `KEYBOARD_KEY_*<scancode>*=*<keycode>*`. The value of `*<scancode>*` is hexadecimal, but without the leading `0x` (i.e. specify `a0` instead of `0xa0`), whereas the value of `*<keycode>*` is the lower-case keycode name string as listed in `/usr/include/linux/input.h` (see the `KEY_*<KEYCODE>*` variables), a sorted list is available at [[1]](http://hal.freedesktop.org/quirk/quirk-keymap-list.txt). It is not possible to specify decimal value in `*<keycode>*`.
 
 ### Example for custom hwdb
 
 The example hwdb file will match all AT keyboards:
 
  `/etc/udev/hwdb.d/90-custom-keyboard.hwdb` 
-
 ```
 evdev:atkbd:dmi:bvn*:bvr*:bd*:svn*:pn*:pvr*
  KEYBOARD_KEY_10=suspend
@@ -53,7 +52,6 @@ evdev:atkbd:dmi:bvn*:bvr*:bd*:svn*:pn*:pvr*
 Here is an example of rebinding modifiers on a laptop and USB keyboard:
 
  `/etc/udev/hwdb.d/10-my-modifiers.hwdb` 
-
 ```
 evdev:input:b0003v05AFp8277* # was tested on Kensington Slim Type USB (with old ABI)
  KEYBOARD_KEY_70039=leftalt  # bind capslock to leftalt
@@ -79,7 +77,6 @@ After changing the configuration files, the hardware database index, `hwdb.bin`,
 *   Update automatically on each reboot by commenting out `ConditionNeedsUpdate` in `systemd-udev-hwdb-update.service`.
 
  `/usr/lib/systemd/system/systemd-udev-hwdb-update.service` 
-
 ```
 #  This file is part of systemd.
 .
@@ -122,17 +119,16 @@ E: KEYBOARD_KEY_700e2=leftctrl
 
 ## Using setkeycodes
 
-_setkeycodes_ is a tool to load _scancodes_-to-_keycodes_ mapping table into Linux kernel. Its usage is:
+*setkeycodes* is a tool to load *scancodes*-to-*keycodes* mapping table into Linux kernel. Its usage is:
 
 ```
-# setkeycodes _scancode_ _keycode_ ...
+# setkeycodes *scancode* *keycode* ...
 
 ```
 
-It is possible to specify multiple pairs at once. _Scancodes_ are given in hexadecimal, _keycodes_ in decimal.
+It is possible to specify multiple pairs at once. *Scancodes* are given in hexadecimal, *keycodes* in decimal.
 
-**Note:** Apparently _setkeycodes_ does not work with USB keyboards (Linux 3.14.44-1-lts):
-
+**Note:** Apparently *setkeycodes* does not work with USB keyboards (Linux 3.14.44-1-lts):
 ```
 # setkeycodes 45 30     # bind NumLock (0x45) to KEY_A (30) on AT keyboard
 (successful)

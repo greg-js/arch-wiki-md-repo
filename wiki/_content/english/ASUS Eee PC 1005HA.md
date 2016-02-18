@@ -294,7 +294,6 @@ Source: [[1]](https://bbs.archlinux.org/viewtopic.php?pid=495168#p495168)
 Note that this is the 1005HA-M version.
 
  `$ lspci` 
-
 ```
 00:00.0 Host bridge: Intel Corporation Mobile 945GME Express Memory Controller Hub (rev 03)
 00:02.0 VGA compatible controller: Intel Corporation Mobile 945GME Express Integrated Graphics Controller (rev 03)

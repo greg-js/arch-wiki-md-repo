@@ -27,7 +27,6 @@ However, it is recommended to also install [deepin-extra](https://www.archlinux.
 To use the default DDE's lightdm greeter you have to modify the configuration file under the `[SeatDefaults]` section, to state:.
 
  `/etc/lightdm/lightdm.conf` 
-
 ```
 [SeatDefaults]
 ...
@@ -36,10 +35,9 @@ greeter-session=lightdm-deepin-greeter
 
 ### Using xinitrc
 
-_See the [xinitrc](/index.php/Xinitrc "Xinitrc") page for more information._
+*See the [xinitrc](/index.php/Xinitrc "Xinitrc") page for more information.*
 
  `~/.xinitrc` 
-
 ```
 exec startdde
 

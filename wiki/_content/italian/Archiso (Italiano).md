@@ -311,7 +311,7 @@ Dentro l'ambiente chroot e dentro la cartella da cui lavori (/tmp se hai seguito
 
 ### Installare i pacchetti
 
-Vorrai anche creare una lista di pacchetti che vuoi installare sul tuo live CD. Un file pieno di nomi di pacchetti, uno per riga, è il formato per fare questo. Questo è _**grandioso**_ per live CD di particolare interesse, dovrai solo specificare i pacchetti che vuoi e scrivere l'immagine. Modifica il file packages.i686 o packages.x86_64 per creare un'immagine, rispettivamente, a 32bit o a 64bit.
+Vorrai anche creare una lista di pacchetti che vuoi installare sul tuo live CD. Un file pieno di nomi di pacchetti, uno per riga, è il formato per fare questo. Questo è ***grandioso*** per live CD di particolare interesse, dovrai solo specificare i pacchetti che vuoi e scrivere l'immagine. Modifica il file packages.i686 o packages.x86_64 per creare un'immagine, rispettivamente, a 32bit o a 64bit.
 
 **Suggerimento:** Puoi anche creare un **[custom local repository](/index.php/Custom_local_repository "Custom local repository")** allo scopo di preparare pacchetti personalizzati o pacchetti da [AUR](/index.php/AUR "AUR")/[ABS](/index.php/ABS "ABS"). Aggiungi il tuo repository locale alla prima posizione (per la massima priorità) del file **/etc/pacman.conf** in chroot.
 
@@ -372,7 +372,7 @@ su -c "cp -r /etc/skel/.[a-zA-Z0-9]* /home/**nomeutente**/" **nomeutente**
 
 ### mkinitcpio.conf
 
-Un _initcpio_ è essenziale per creare un sistema che possa avviarsi da CD/DVD/USB, il file predefinito dovrebbe funzionare bene, quindi non dovresti aver bisogno di toccarlo.
+Un *initcpio* è essenziale per creare un sistema che possa avviarsi da CD/DVD/USB, il file predefinito dovrebbe funzionare bene, quindi non dovresti aver bisogno di toccarlo.
 
 Dovrai dunque creare un mkinitcpio.conf che contenga una lista dei tuoi hook:
 
@@ -388,7 +388,7 @@ HOOKS="base udev memdisk archiso archiso_pxe_nbd archiso_loop_mnt pata scsi sata
 
 ```
 
-Questa lista ti permetterà di avere un sistema che può essere avviato da un dispositivo CD/DVD o USB. Ovviamente auto-rilevamento dell'hardware ed altre cose della stessa natura non sono presenti. Solo il necessario a mettere in piedi il sistema e, a parte l'_initcpio_, il resto potrà comunque essere fatto a sistema avviato.
+Questa lista ti permetterà di avere un sistema che può essere avviato da un dispositivo CD/DVD o USB. Ovviamente auto-rilevamento dell'hardware ed altre cose della stessa natura non sono presenti. Solo il necessario a mettere in piedi il sistema e, a parte l'*initcpio*, il resto potrà comunque essere fatto a sistema avviato.
 
 ### aitab
 
@@ -451,11 +451,11 @@ Data la natura modulare di isolinux, puoi usare diversi addon dal momento che tu
 
 Alcuni consigli che non saranno affrontati in quest'articolo perchè ci sono già altri articoli su questa wiki che lo fanno, ma sentiti pure libero di aggiungerne altri qui.
 
-*   Configurare _inittab_ per far partire X all'avvio
-*   Configurare il fiel _hosts_
-*   Configurare _rc.conf_ (non sono richiesti moduli particolari)
-*   Configurare _sudoers_
-*   Configurare _rc.local_
+*   Configurare *inittab* per far partire X all'avvio
+*   Configurare il fiel *hosts*
+*   Configurare *rc.conf* (non sono richiesti moduli particolari)
+*   Configurare *sudoers*
+*   Configurare *rc.local*
 *   Mettere artwork aggiuntivi sul media
 *   Mettere altri file binari in opt/
 

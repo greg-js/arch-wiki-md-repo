@@ -30,13 +30,13 @@ La mayoría de la ayuda se puede encontrar en la wiki o a través de las [págin
 ### Distribución del teclado en el entorno live
 
 *   La distribución del teclado por defecto es la de EE.UU.
-*   Hay disponibles distribuciones de teclado alternativas que se pueden cargar con la orden `loadkeys _archivo_keymap_`: los archivos de mapas de teclas se pueden encontrar en la carpeta `/usr/share/kbd/keymaps/` (no es necesario especificar la ruta ni la extensión del archivo cuando se usa «loadkeys»).
+*   Hay disponibles distribuciones de teclado alternativas que se pueden cargar con la orden `loadkeys *archivo_keymap*`: los archivos de mapas de teclas se pueden encontrar en la carpeta `/usr/share/kbd/keymaps/` (no es necesario especificar la ruta ni la extensión del archivo cuando se usa «loadkeys»).
 
 ### Conectarse a Internet
 
 *   El servicio de Internet a través de DHCP está activado en el arranque para los dispositivos cableados compatibles; leer más en [Network configuration (Español)](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)").
 *   Para los dispositivos inalámbricos compatibles ejecute `wifi-menu`, para configurar la conexión de red; leer más en [Wireless network configuration (Español)](/index.php/Wireless_network_configuration_(Espa%C3%B1ol) "Wireless network configuration (Español)").
-*   Si se necesita configurar una dirección IP estática o utilizar herramientas de gestión de redes, hay que detener el servicio DHCP con la orden `systemctl stop dhcpcd@_eth0_.service`, y consultar [Netctl (Español)](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)").
+*   Si se necesita configurar una dirección IP estática o utilizar herramientas de gestión de redes, hay que detener el servicio DHCP con la orden `systemctl stop dhcpcd@*eth0*.service`, y consultar [Netctl (Español)](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)").
 
 ### Actualizar el reloj del sistema
 
@@ -56,7 +56,7 @@ La mayoría de la ayuda se puede encontrar en la wiki o a través de las [págin
 
 *   El siguiente paso es montar la partición del sistema —root— en `/mnt`.
 *   Después de esto, hay que crear tantos directorios como particiones haya realizado y montarlas (`/mnt/boot`, `/mnt/home`, ...).
-*   También hay que activar la partición _swap_, si se dispone de una, para que pueda ser detectada más tarde cuando ejecute _genfstab_.
+*   También hay que activar la partición *swap*, si se dispone de una, para que pueda ser detectada más tarde cuando ejecute *genfstab*.
 
 ## Instalación
 
@@ -64,7 +64,7 @@ La mayoría de la ayuda se puede encontrar en la wiki o a través de las [págin
 
 *   Editar `/etc/pacman.d/mirrorlist` y seleccionar uno o varios servidores de descarga.
 *   Los servidores de réplica regionales, por lo general, funcionan mejor; sin embargo, la cercanía no es el único criterio para discernir sobre la calidad de los mirrors, leer más sobre ello en [Mirrors (Español)](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)").
-*   Una copia del archivo `mirrorlist` se realizará, más tarde, en el nuevo sistema por _pacstrap_, por lo que vale la pena hacerlo bien en esta fase.
+*   Una copia del archivo `mirrorlist` se realizará, más tarde, en el nuevo sistema por *pacstrap*, por lo que vale la pena hacerlo bien en esta fase.
 
 ### Instalar los paquetes del sistema base
 
@@ -78,13 +78,13 @@ La mayoría de la ayuda se puede encontrar en la wiki o a través de las [págin
 
 *   Entrar en el nuevo sistema como [Change root (Español)](/index.php/Change_root_(Espa%C3%B1ol) "Change root (Español)"): `# arch-chroot /mnt` 
 
-*   Configurar el [nombre del equipo](/index.php/Configuring_Network_(Espa%C3%B1ol)#Establecer_el_nombre_del_equipo "Configuring Network (Español)"): `# echo _nombre_equipo_ > /etc/hostname` 
+*   Configurar el [nombre del equipo](/index.php/Configuring_Network_(Espa%C3%B1ol)#Establecer_el_nombre_del_equipo "Configuring Network (Español)"): `# echo *nombre_equipo* > /etc/hostname` 
 
-*   Configurar el [uso horario](/index.php/Time_(Espa%C3%B1ol)#Uso_horario "Time (Español)"): `# ln -sf /usr/share/zoneinfo/_zone_/_subzone_ /etc/localtime` 
+*   Configurar el [uso horario](/index.php/Time_(Espa%C3%B1ol)#Uso_horario "Time (Español)"): `# ln -sf /usr/share/zoneinfo/*zone*/*subzone* /etc/localtime` 
 
 *   Configurar el [idioma del sistema](/index.php/Locale_(Espa%C3%B1ol) "Locale (Español)") descomentando el locale necesario en el archivo `/etc/locale.gen`, y después generarlo con la orden: `# locale-gen` 
 
-*   Configurar las preferencias del idioma en `/etc/locale.conf` y, quizás también, en `$HOME/.config/locale.conf`: `# echo LANG=_nuestro_locale_ > /etc/locale.conf` 
+*   Configurar las preferencias del idioma en `/etc/locale.conf` y, quizás también, en `$HOME/.config/locale.conf`: `# echo LANG=*nuestro_locale* > /etc/locale.conf` 
 
 *   Configurar la [distribución del teclado](/index.php/Keyboard_configuration_in_console_(Espa%C3%B1ol) "Keyboard configuration in console (Español)") para la consola y las preferencias del [tipo de letra](/index.php/Fonts#Console_fonts "Fonts") de la misma en `/etc/vconsole.conf`.
 
@@ -104,7 +104,7 @@ La mayoría de la ayuda se puede encontrar en la wiki o a través de las [págin
 
 *   Opcionalmente, desmontar manualmente todas las particiones con `umount -R /mnt`: esto permite advertir cualquier partición «ocupada», y buscar su causa con [fuser](https://en.wikipedia.org/wiki/fuser_(Unix) "wikipedia:fuser (Unix)").
 
-*   Por último, reiniciar el equipo escribiendo `reboot`: cualquier partición que todavía siga montada será desmontada automáticamente por _systemd_. Recuerde que debe retirar el soporte de instalación y, luego, iniciar sesión en el nuevo sistema con la cuenta de root.
+*   Por último, reiniciar el equipo escribiendo `reboot`: cualquier partición que todavía siga montada será desmontada automáticamente por *systemd*. Recuerde que debe retirar el soporte de instalación y, luego, iniciar sesión en el nuevo sistema con la cuenta de root.
 
 ## Posinstalación
 

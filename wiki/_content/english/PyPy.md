@@ -74,14 +74,14 @@ EasyInstall is located at /opt/pypy/bin/easy_install
 
 ### Installing EasyInstall Packages
 
-To install EasyInstall package _package_name_ into PyPy enter
+To install EasyInstall package *package_name* into PyPy enter
 
 ```
 # /opt/pypy/bin/easy_install package_name
 
 ```
 
-Packages Will be Located at /opt/pypy/site-packages Installed libraries and applications will be at /opt/pypy/bin Programs installed through EasyInstall on PyPy can usually be ran with `/opt/pypy/bin/program_name` where _program_name_ is the name of the PyPy program.
+Packages Will be Located at /opt/pypy/site-packages Installed libraries and applications will be at /opt/pypy/bin Programs installed through EasyInstall on PyPy can usually be ran with `/opt/pypy/bin/program_name` where *program_name* is the name of the PyPy program.
 
 ### EasyInstall Package Example
 

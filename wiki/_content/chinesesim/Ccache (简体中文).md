@@ -54,7 +54,6 @@ export CCACHE_PATH="/usr/bin"                 # Tell ccache to only use compiler
 colorgcc 需要调用 ccache 而不是真正的编译器。编辑`/etc/colorgcc/colorgccrc` 修改所有`/usr/bin` 路径为`/usr/lib/ccache/bin`：
 
  `/etc/colorgcc/colorgccrc` 
-
 ```
 g++: /usr/lib/ccache/bin/g++
 gcc: /usr/lib/ccache/bin/gcc

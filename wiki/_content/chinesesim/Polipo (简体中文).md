@@ -1,6 +1,6 @@
 来自[Polipo's site](http://www.pps.jussieu.fr/~jch/software/polipo/):
 
-	"_Polipo 是一个小而快速的缓存 web 代理程序(web 缓存, HTTP 代理, 代理服务器)。尽管 Polipo 是为一个人或一小群人使用而设计的，但并不妨碍它为一大群人所使用。_"
+	"*Polipo 是一个小而快速的缓存 web 代理程序(web 缓存, HTTP 代理, 代理服务器)。尽管 Polipo 是为一个人或一小群人使用而设计的，但并不妨碍它为一大群人所使用。*"
 
 下面包括了 Polipo 的安装和设置：
 
@@ -134,7 +134,7 @@ $ polipo -c ~/.poliporc
 
 ```
 
-必须要提到的 Polipo 配置中的一个要素是 polipo 的默认行为是通过端口屏蔽外部连接。Polipo 的配置文件有两个变量控制允许的外部端口。`allowedPorts` 制定外部HTTP连接的端口。默认是 80-100 和 1024-65535\. `tunnelAllowedPorts` 制定 Polipo 隧道流量允许的端口，以及 HTTPS 流量的端口。默认它是更严格的限制的："_它默认允许 ssh, HTTP, https, rsync, IMAP, imaps, POP, pops, Jabber, CVS 和 Git 流量。_"
+必须要提到的 Polipo 配置中的一个要素是 polipo 的默认行为是通过端口屏蔽外部连接。Polipo 的配置文件有两个变量控制允许的外部端口。`allowedPorts` 制定外部HTTP连接的端口。默认是 80-100 和 1024-65535\. `tunnelAllowedPorts` 制定 Polipo 隧道流量允许的端口，以及 HTTPS 流量的端口。默认它是更严格的限制的："*它默认允许 ssh, HTTP, https, rsync, IMAP, imaps, POP, pops, Jabber, CVS 和 Git 流量。*"
 
 如果你看到来自 Polipo 的 "403 Forbidden Port" 错误信息，你需要配置polipo接收更多 HTTP 或 HTTPS的端口。要设定全都允许，添加下面的几行到 `/etc/polipo/config`:
 
@@ -165,8 +165,8 @@ tunnelAllowedPorts = 1-65535
 :PREROUTING ACCEPT [0:0]
 :POSTROUTING ACCEPT [0:0]
 :OUTPUT ACCEPT [0:0]
-_-A OUTPUT -p tcp --dport 80 -m owner ! --uid-owner polipo -j ACCEPT_
-_-A OUTPUT -p tcp --dport 80 -j REDIRECT --to-ports 8123_
+*-A OUTPUT -p tcp --dport 80 -m owner ! --uid-owner polipo -j ACCEPT*
+*-A OUTPUT -p tcp --dport 80 -j REDIRECT --to-ports 8123*
 COMMIT
 
 ```

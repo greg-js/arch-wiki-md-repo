@@ -113,7 +113,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 See also [Wikipedia:Comparison of document markup languages](https://en.wikipedia.org/wiki/Comparison_of_document_markup_languages "wikipedia:Comparison of document markup languages").
 
-*   **[asciidoc](https://en.wikipedia.org/wiki/AsciiDoc "wikipedia:AsciiDoc")** — Human-readable text document format. Used by Arch for generating _pacman_ 's man pages[[1]](https://www.archlinux.org/pacman/pacman.8.html).
+*   **[asciidoc](https://en.wikipedia.org/wiki/AsciiDoc "wikipedia:AsciiDoc")** — Human-readable text document format. Used by Arch for generating *pacman* 's man pages[[1]](https://www.archlinux.org/pacman/pacman.8.html).
 
 	[http://asciidoc.org/](http://asciidoc.org/) || [asciidoc](https://www.archlinux.org/packages/?name=asciidoc)
 
@@ -128,7 +128,7 @@ See also [Wikipedia:Comparison of document markup languages](https://en.wikipedi
 *   **Pandoc** — Swiss-army knife for converting one markup format into another (supports Markdown).
 
 	[http://johnmacfarlane.net/pandoc](http://johnmacfarlane.net/pandoc) || [haskell-pandoc](https://www.archlinux.org/packages/?name=haskell-pandoc) [pandoc-static](https://aur.archlinux.org/packages/pandoc-static/)
-**Tip:** Both _pandoc_ packages have large build-time dependencies that require significant hard disk space. Alternatively, you can download the _pandoc-static_ binary directly from the Parabola GNU Linux repo ([64-bit](https://repo.parabolagnulinux.org/pcr/os/x86_64/), [32-bit](https://repo.parabolagnulinux.org/pcr/os/i686/)), or install _haskell-pandoc_ from the binary [haskell-core](/index.php/Unofficial_user_repositories#haskell-core "Unofficial user repositories") repository, which however also has massive dependencies size. It is [recommended against](/index.php/Haskell#cabal-install "Haskell") to use [cabal-install](https://www.archlinux.org/packages/?name=cabal-install) as the primary source of installation of Haskell packages even though it may appear more straightforward.
+**Tip:** Both *pandoc* packages have large build-time dependencies that require significant hard disk space. Alternatively, you can download the *pandoc-static* binary directly from the Parabola GNU Linux repo ([64-bit](https://repo.parabolagnulinux.org/pcr/os/x86_64/), [32-bit](https://repo.parabolagnulinux.org/pcr/os/i686/)), or install *haskell-pandoc* from the binary [haskell-core](/index.php/Unofficial_user_repositories#haskell-core "Unofficial user repositories") repository, which however also has massive dependencies size. It is [recommended against](/index.php/Haskell#cabal-install "Haskell") to use [cabal-install](https://www.archlinux.org/packages/?name=cabal-install) as the primary source of installation of Haskell packages even though it may appear more straightforward.
 
 *   **[Sphinx](https://en.wikipedia.org/wiki/Sphinx_(documentation_generator) "wikipedia:Sphinx (documentation generator)")** — A documentation generation system using [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText "wikipedia:ReStructuredText") to generate output in multiple formats (primary documentation system for the Python project).
 
@@ -230,7 +230,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 	[http://techbase.kde.org/Localization/Tools/Pology](http://techbase.kde.org/Localization/Tools/Pology) || [pology](https://aur.archlinux.org/packages/pology/)
 
-*   **[Virtaal](https://en.wikipedia.org/wiki/Virtaal "wikipedia:Virtaal")** — Editor for translation of both software and other text, based on [Translate Toolkit](https://en.wikipedia.org/wiki/Translate_Toolkit "wikipedia:Translate Toolkit"). It supports the following formats: [gettext](https://en.wikipedia.org/wiki/gettext "wikipedia:gettext"), [XLIFF](https://en.wikipedia.org/wiki/XLIFF "wikipedia:XLIFF") , TMX, TBX, [Wordfast](https://en.wikipedia.org/wiki/Wordfast "wikipedia:Wordfast"), Qt Linguist , Qt Phrase Book, [OmegaT glossary](https://en.wikipedia.org/wiki/OmegaT "wikipedia:OmegaT") and others. It can also show suggestions from [Apertium](https://en.wikipedia.org/wiki/Apertium "wikipedia:Apertium"), [Google Translate](https://en.wikipedia.org/wiki/Google_Translate "wikipedia:Google Translate"), [Bing Translator](https://en.wikipedia.org/wiki/Bing_Translator "wikipedia:Bing Translator"), [Moses](https://en.wikipedia.org/wiki/Moses_(machine_translation) "wikipedia:Moses (machine translation)") and others.
+*   **[Virtaal](https://en.wikipedia.org/wiki/Virtaal and others.
 
 	[http://translate.sourceforge.net/wiki/virtaal](http://translate.sourceforge.net/wiki/virtaal) || [virtaal](https://aur.archlinux.org/packages/virtaal/)
 
@@ -465,7 +465,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 	[http://repo.or.cz/w/fbpdf.git](http://repo.or.cz/w/fbpdf.git) || [fbpdf-git](https://aur.archlinux.org/packages/fbpdf-git/)
 
-*   **jfbview** — Framebuffer PDF and image viewer. Features include Vim-like controls, zoom-to-fit, a TOC (outline) view, fast multi-threaded rendering and asynchronous pre-caching. Originally a fork of _fbpdf_ called _jfbpdf_, now completely rewritten.
+*   **jfbview** — Framebuffer PDF and image viewer. Features include Vim-like controls, zoom-to-fit, a TOC (outline) view, fast multi-threaded rendering and asynchronous pre-caching. Originally a fork of *fbpdf* called *jfbpdf*, now completely rewritten.
 
 	[http://seasonofcode.com/pages/jfbview.html](http://seasonofcode.com/pages/jfbview.html) || [jfbview](https://aur.archlinux.org/packages/jfbview/)
 
@@ -541,7 +541,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 See also [Wikipedia:Terminal pager](https://en.wikipedia.org/wiki/Terminal_pager "wikipedia:Terminal pager").
 
-*   [more](https://en.wikipedia.org/wiki/More_(command) "wikipedia:More (command)") — A simple and feature-light pager. It is a part of the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package.
+*   [more](https://en.wikipedia.org/wiki/More_(command) — A simple and feature-light pager. It is a part of the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package.
 *   **[less](/index.php/Core_utilities#less "Core utilities")** — A program similar to more, but with support for both forward and backward scrolling, as well as partial loading of files.
 
 	[http://www.gnu.org/software/less](http://www.gnu.org/software/less) || [less](https://www.archlinux.org/packages/?name=less)
@@ -633,7 +633,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 	[https://wiki.gnome.org/Apps/OCRFeeder](https://wiki.gnome.org/Apps/OCRFeeder) || [ocrfeeder](https://www.archlinux.org/packages/?name=ocrfeeder)
 
-*   **OCRopy** — OCR _platform_, modules exist for document layout analysis, OCR engines (it can use Tesseract or its own engine), natural language modeling, etc.
+*   **OCRopy** — OCR *platform*, modules exist for document layout analysis, OCR engines (it can use Tesseract or its own engine), natural language modeling, etc.
 
 	[https://github.com/tmbdev/ocropy](https://github.com/tmbdev/ocropy) || [ocropy](https://aur.archlinux.org/packages/ocropy/)
 

@@ -2,7 +2,7 @@
 
 本文将引导您从用官方安装镜像启动的 Live 系统安装 [Arch Linux](/index.php/Arch_Linux "Arch Linux")。安装之前请先阅读 [FAQ (简体中文)](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。如需更丰富更详细的安装指导，请参考 [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")。 [Category:Getting and installing Arch (简体中文)](/index.php/Category:Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Getting and installing Arch (简体中文)") 包含了更多针对特殊情况的安装指南。
 
-[Arch wiki](/index.php/Main_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Main page (简体中文)") 是由社区维护的优秀资源，当您遇到各种问题，这是您的首选参考资料。如需要交互帮助，还可以通过 [IRC channel](/index.php/IRC_channel "IRC channel") 频道和 [论坛](https://bbs.archlinux.org/) 。此外，在使用您不熟悉的命令之前，请务必首先阅读该命令对应的 `man` 文件。查看该文件的方法很简单，通常只需要 `man _要查看的命令_` 即可。
+[Arch wiki](/index.php/Main_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Main page (简体中文)") 是由社区维护的优秀资源，当您遇到各种问题，这是您的首选参考资料。如需要交互帮助，还可以通过 [IRC channel](/index.php/IRC_channel "IRC channel") 频道和 [论坛](https://bbs.archlinux.org/) 。此外，在使用您不熟悉的命令之前，请务必首先阅读该命令对应的 `man` 文件。查看该文件的方法很简单，通常只需要 `man *要查看的命令*` 即可。
 
 ## Contents
 
@@ -51,7 +51,7 @@
 
 ### 挂载分区
 
-将分区挂载到`/mnt`，如果使用多个分区，还需要为其他分区创建目录并挂载它们（`/mnt/boot`、`/mnt/home`、……）。激活 _swap_ 分区，这样 `genfstab` 才能自动检测到它们。
+将分区挂载到`/mnt`，如果使用多个分区，还需要为其他分区创建目录并挂载它们（`/mnt/boot`、`/mnt/home`、……）。激活 *swap* 分区，这样 `genfstab` 才能自动检测到它们。
 
 ## 安装
 
@@ -89,14 +89,14 @@
 设置 [主机名](/index.php/Hostname "Hostname"):
 
 ```
-# echo _computer_name_ > /etc/hostname
+# echo *computer_name* > /etc/hostname
 
 ```
 
 设置 [时区](/index.php/Time_zone "Time zone"):
 
 ```
-# ln -s /usr/share/zoneinfo/_zone_/_subzone_ /etc/localtime
+# ln -s /usr/share/zoneinfo/*zone*/*subzone* /etc/localtime
 
 ```
 
@@ -112,7 +112,7 @@
 在 `/etc/locale.conf` 里设置系统[locale](/index.php/Locale#Setting_system-wide_locale "Locale")偏好；单个用户请设置`$HOME/.config/locale.conf`:
 
 ```
-# echo LANG=_your_locale_ > /etc/locale.conf
+# echo LANG=*your_locale* > /etc/locale.conf
 
 ```
 

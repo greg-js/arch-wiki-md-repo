@@ -2,7 +2,7 @@ Az az oldal a cserehely és a lapozás használatához nyújt bevezetőt GNU/Lin
 
 A [All about Linux swap space (Mindent a Linux cserehelyről)](http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space):
 
-	_A Linux a fizikai RAM (random access memory) darabokra osztja, melyeket lapnak nevezünk. A virtuális memória használata, azaz "swapping" az a folyamat, amikor egy memórialap a merevlemez előre meghatározott részére kerül, melynek neve cserehely, hogy ezáltal memória szabaduljon fel- A fizikai memória és a cserehely nagyságának összege nem más, mint a virtuális memória._
+	*A Linux a fizikai RAM (random access memory) darabokra osztja, melyeket lapnak nevezünk. A virtuális memória használata, azaz "swapping" az a folyamat, amikor egy memórialap a merevlemez előre meghatározott részére kerül, melynek neve cserehely, hogy ezáltal memória szabaduljon fel- A fizikai memória és a cserehely nagyságának összege nem más, mint a virtuális memória.*
 
 ## Contents
 
@@ -49,10 +49,10 @@ Hogy efféle partíción cserehelyet hozzunk létre (mintha fájlrendszert form�
 
 **Figyelem:** A partíció minden adata el fog veszni.
 
-A _mkswap_ eszköz alapértelmezetten UUID-t is létrehoz, de ha saját UUID-t akarunk adni neki, használjuk a `-U` zászlót.:
+A *mkswap* eszköz alapértelmezetten UUID-t is létrehoz, de ha saját UUID-t akarunk adni neki, használjuk a `-U` zászlót.:
 
 ```
-# mkswap -U _saját_UUID_ /dev/sda2
+# mkswap -U *saját_UUID* /dev/sda2
 
 ```
 
@@ -70,7 +70,7 @@ Hogy rendszerindításkor hasznájuk ezt a partíciót, jegyezzük be az [fstab]
 
 ```
 
-**Megjegyzés:** Ha TRIM támogatású SSD-t használunk, a cserehelyet jelölő sorban inkább használjuk a `defaults,discard` csatolási opciókat az [fstab](/index.php/Fstab "Fstab")-ban. Ha manuálisan aktiváljuk a _swapon_ paranccsal, a `-d` vagy `--discard` paraméterrel ugyanerre jutunk. Lásd a `man 8 swapon`-t a részletekért.
+**Megjegyzés:** Ha TRIM támogatású SSD-t használunk, a cserehelyet jelölő sorban inkább használjuk a `defaults,discard` csatolási opciókat az [fstab](/index.php/Fstab "Fstab")-ban. Ha manuálisan aktiváljuk a *swapon* paranccsal, a `-d` vagy `--discard` paraméterrel ugyanerre jutunk. Lásd a `man 8 swapon`-t a részletekért.
 
 ## Cserefájl
 
@@ -176,7 +176,7 @@ pri=0
 
 ```
 
-paramétert az _eredeti_ swap bejegyzés mögé, hogy az fstab megtanulja: csak akkor kell használni a merevlemez eredeti cserehelyét, ha az USB eszköz megtelt.
+paramétert az *eredeti* swap bejegyzés mögé, hogy az fstab megtanulja: csak akkor kell használni a merevlemez eredeti cserehelyét, ha az USB eszköz megtelt.
 
 Ez az útmutató másfajta memóriakártyákkal is működik, mint például az SD kártyák, etc.
 
@@ -186,10 +186,9 @@ A cserehely értékeit hangolhatjuk, hogy nagyobb teljesítményre tegyünk szer
 
 ### Swappiness (lapozhatóság)
 
-A _swappiness_ [sysctl](/index.php/Sysctl "Sysctl") paraméter jelképezi a rendszermag hajlandóságát, hogy használja, vagy épp kerülje a cserehelyet. Ennek értéke 0 és 100 közötti lehet. Ha alacsonyra állítjuk, csökkenti a lapozás használatát, ezzel sokszor reaktívabbá a rendszert.
+A *swappiness* [sysctl](/index.php/Sysctl "Sysctl") paraméter jelképezi a rendszermag hajlandóságát, hogy használja, vagy épp kerülje a cserehelyet. Ennek értéke 0 és 100 közötti lehet. Ha alacsonyra állítjuk, csökkenti a lapozás használatát, ezzel sokszor reaktívabbá a rendszert.
 
  `/etc/sysctl.d/99-sysctl.conf` 
-
 ```
 vm.swappiness=1
 vm.vfs_cache_pressure=50
@@ -209,7 +208,7 @@ Ha több mint egy cserefájllal vagy partícióval dolgozunk, jobb, ha mindegyik
 
 ```
 
-Vagy a `-p` (vagy `--priority`) paraméterrel, amikor a _swapon_ parancsot használjuk:
+Vagy a `-p` (vagy `--priority`) paraméterrel, amikor a *swapon* parancsot használjuk:
 
 ```
 # swapon -p 100 /dev/sda1

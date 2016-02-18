@@ -1,4 +1,4 @@
-The _umask_ utility is used to control the file-creation mode mask, which determines the initial value of file permission bits for newly created files. The behaviour of this utility is standardized by [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") and described in the [POSIX Programmer's Manual](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/umask.html). Because _umask_ affects the current shell execution environment, it is usually implemented as built-in command of a shell.
+The *umask* utility is used to control the file-creation mode mask, which determines the initial value of file permission bits for newly created files. The behaviour of this utility is standardized by [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") and described in the [POSIX Programmer's Manual](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/umask.html). Because *umask* affects the current shell execution environment, it is usually implemented as built-in command of a shell.
 
 ## Contents
 
@@ -27,9 +27,9 @@ That is, the resulting permissions `R` are the result of [bitwise conjunction](h
 
 For example, let us assume that the file-creation mode mask is 027\. Here the bitwise representation of each digit represents:
 
-*   0 stands for the _user_ permission bits not set on a newly created file
-*   2 stands for the _group_ permission bits not set on a newly created file
-*   7 stands for the _other_ permission bits not set on a newly created file
+*   0 stands for the *user* permission bits not set on a newly created file
+*   2 stands for the *group* permission bits not set on a newly created file
+*   7 stands for the *other* permission bits not set on a newly created file
 
 With the information provided by the table below this means that for a newly created file, for example owned by `User1` user and `Group1` group, `User1` has all the possible permissions (octal value 7) for the newly created file, other users of the `Group1` group do not have write permissions (octal value 5), and any other user does not have any permissions (octal value 0) to the newly created file. So with the 027 mask taken for this example, files will be created with 750 permissions.
 
@@ -46,7 +46,7 @@ With the information provided by the table below this means that for a newly cre
 
 ## Display the current mask value
 
-To display the current mask, simply invoke _umask_ without specifying any arguments. The default output style depends on implementation, but it is usually octal:
+To display the current mask, simply invoke *umask* without specifying any arguments. The default output style depends on implementation, but it is usually octal:
 
  `$ umask`  `0027` 
 
@@ -58,11 +58,11 @@ When the `-S` option, standardized by POSIX, is used, the mask will be displayed
 
 **Note:** Umask values can be set on a case-by-case basis. For example, desktop users may find the restricted permissions on their home folder (`chmod 700`, as applied by `useradd -m`) sufficient, as they make all files within unaccessible to other users. Should this not be practical (for example when using [Apache](/index.php/Apache "Apache")), and public files are stored amongst private ones, then consider restricting the umask instead.
 
-You can set the umask value through the _umask_ command. The string specifying the mode mask follows the same syntactic rules as the mode argument of [chmod](/index.php/Chmod "Chmod") (see the [POSIX Programmer's Manual](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/chmod.html#tag_20_17_13) for details).
+You can set the umask value through the *umask* command. The string specifying the mode mask follows the same syntactic rules as the mode argument of [chmod](/index.php/Chmod "Chmod") (see the [POSIX Programmer's Manual](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/chmod.html#tag_20_17_13) for details).
 
 Most Linux distributions set a default value of `022`, including Arch[[2]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/profile?h=packages/filesystem) or `002` in `/etc/profile` or in the default [shell](/index.php/Shell "Shell") configuration files, e.g. `/etc/bashrc`.
 
-If you need to set a different value, you can either directly edit such file, thus affecting all users, or call _umask_ from your shell's user configuration file, e.g. `~/.bashrc` to only change your umask, however these changes will only take effect after the next login. To change your umask during your current session only, simply run _umask_ and type your desired value. For example, running `umask 077` will give you read and write permissions for new files, and read, write and execute permissions for new folders.
+If you need to set a different value, you can either directly edit such file, thus affecting all users, or call *umask* from your shell's user configuration file, e.g. `~/.bashrc` to only change your umask, however these changes will only take effect after the next login. To change your umask during your current session only, simply run *umask* and type your desired value. For example, running `umask 077` will give you read and write permissions for new files, and read, write and execute permissions for new folders.
 
 ## See also
 

@@ -104,9 +104,9 @@
 
 Этот пункт поделит диск со следующими параметрами:
 
-*   Загрузочный раздел с ФС ext2; точка монтирования: /boot; размер по умолчанию: 32MB. _Вам будет предложено изменить размер по своему усмотрению._
-*   Раздел подкачки swap, размер по умолчанию: 256MB. _Вам будет предложено изменить размер по своему усмотрению._
-*   Отдельные корневой(/) и /home разделы, (размеры тоже можно указать вручную). Возможные файловые системы: ext2, ext3, ext4, reiserfs, xfs and jfs, однако, обратите внимание, что при выборе опции Auto Prepare, файловые системы _/ и /home будут одного типа_.
+*   Загрузочный раздел с ФС ext2; точка монтирования: /boot; размер по умолчанию: 32MB. *Вам будет предложено изменить размер по своему усмотрению.*
+*   Раздел подкачки swap, размер по умолчанию: 256MB. *Вам будет предложено изменить размер по своему усмотрению.*
+*   Отдельные корневой(/) и /home разделы, (размеры тоже можно указать вручную). Возможные файловые системы: ext2, ext3, ext4, reiserfs, xfs and jfs, однако, обратите внимание, что при выборе опции Auto Prepare, файловые системы */ и /home будут одного типа*.
 
 Будьте внимательны, опция Auto-prepare полностью сотрёт выбранный жёсткий диск. Внимательно прочитайте <font color="red">предупреждение</font>, предоставленное установщиком, и убедитесь,что действия производятся над нужным разделом.
 
@@ -114,7 +114,7 @@
 
 Эта опция предоставит наиболее надёжный и настраиваемый способ разбивки, отвечающий вашим персональным нуждам.
 
-_Здесь более продвинутые пользователи GNU/Linux, хорошо знакомые с ручной разбивкой диска, могут сразу перейти к разделу **[D: Select Packages](#D:_Select_Packages)**._
+*Здесь более продвинутые пользователи GNU/Linux, хорошо знакомые с ручной разбивкой диска, могут сразу перейти к разделу **[D: Select Packages](#D:_Select_Packages)**.*
 
 **Обратите внимание:** Если вы устанавливаете систему на USB flash носитель, смотрите "[Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key")".
 
@@ -150,21 +150,21 @@ Swap раздел - это место на жестком диске, где п�
 
 Файловые системы, претендующие на разбиение по разделам:
 
-**/** (root) _Корневая файловая система (корень, рут) является первичной файловой системой и главенствующей, от которой происходят остальные. Все файлы и каталоги принадлежат корневому каталогу "/", даже если физически они расположены на разных устройствах. Содержимое корня должно загружаться, откатываться, восстанавливаться и/или исправляться. Поэтому не все каталоги в корневой директории могут быть отдельными разделами. Подробнее в предупреждении ниже._
+**/** (root) *Корневая файловая система (корень, рут) является первичной файловой системой и главенствующей, от которой происходят остальные. Все файлы и каталоги принадлежат корневому каталогу "/", даже если физически они расположены на разных устройствах. Содержимое корня должно загружаться, откатываться, восстанавливаться и/или исправляться. Поэтому не все каталоги в корневой директории могут быть отдельными разделами. Подробнее в предупреждении ниже.*
 
-**/boot** _Этот каталог содержит ядро, ramdisk, конфигурационные файлы загрузки и т.д. /boot также хранит информацию, использованную до загрузки пользовательских программ. Он может включать главную загрузочную запись. /boot важен для загрузки системы и, если необходимо, может быть на отдельном разделе._
+**/boot** *Этот каталог содержит ядро, ramdisk, конфигурационные файлы загрузки и т.д. /boot также хранит информацию, использованную до загрузки пользовательских программ. Он может включать главную загрузочную запись. /boot важен для загрузки системы и, если необходимо, может быть на отдельном разделе.*
 
-**/home** _Хранит подкаталоги, названные в соответствии с пользователями, где хранятся личные данные и персональные настройки для приложений._
+**/home** *Хранит подкаталоги, названные в соответствии с пользователями, где хранятся личные данные и персональные настройки для приложений.*
 
-**/usr** _Если "/" находится вверху иерархии, то второе место по праву занимает каталог /usr, который хранит большинство общедоступных утилит и программ. /usr содержит общую (доступную всем системным пользователям) информацию в режиме только для чтения. Это означает, что /usr доступен с разных хостов, но запрещен для записи, за исключением системных обновлений и апгрейдов. Любая персонифицированная, изменяемая информация должна содержаться в другом месте._
+**/usr** *Если "/" находится вверху иерархии, то второе место по праву занимает каталог /usr, который хранит большинство общедоступных утилит и программ. /usr содержит общую (доступную всем системным пользователям) информацию в режиме только для чтения. Это означает, что /usr доступен с разных хостов, но запрещен для записи, за исключением системных обновлений и апгрейдов. Любая персонифицированная, изменяемая информация должна содержаться в другом месте.*
 
-**/tmp** _каталог, созданный для хранения временных файлов программ. Пример: файлы с расширением '.lck', которые используются для предотвращения размножения процессов, пока выполняется задача(выполняет роль семафора). Каталог /tmp чаще всего очищается при каждой перезагрузке и не предназначен для постоянного хранения данных и других подобных задач._
+**/tmp** *каталог, созданный для хранения временных файлов программ. Пример: файлы с расширением '.lck', которые используются для предотвращения размножения процессов, пока выполняется задача(выполняет роль семафора). Каталог /tmp чаще всего очищается при каждой перезагрузке и не предназначен для постоянного хранения данных и других подобных задач.*
 
-**/var** _содержит самую различную информацию; файлы в процессе обработки, всевозможные логи(журналирование приложений), кэш pacman, ABS дерево, и т.д. /var, в свою очередь, осуществляет возможность оставаться /usr защищенным от записи. Все, что исторически попало в /usr и отвечает за текущую работу системы (в отличии от установки и работы программ) должно находиться в /var_
+**/var** *содержит самую различную информацию; файлы в процессе обработки, всевозможные логи(журналирование приложений), кэш pacman, ABS дерево, и т.д. /var, в свою очередь, осуществляет возможность оставаться /usr защищенным от записи. Все, что исторически попало в /usr и отвечает за текущую работу системы (в отличии от установки и работы программ) должно находиться в /var*
 
-**Важно:** Помимо /boot, каталоги важные для загрузки: '_**/bin', '/etc', '/lib', and '/sbin'. Разница в том, что они не могут быть в разных разделах с корневым каталогом /.**_
+**Важно:** Помимо /boot, каталоги важные для загрузки: '***/bin', '/etc', '/lib', and '/sbin'. Разница в том, что они не могут быть в разных разделах с корневым каталогом /.***
 
-_**Здесь перечислены несколько преимуществ разбиения файловой системы на разделы, по сравнению с единственным разделом**_:
+***Здесь перечислены несколько преимуществ разбиения файловой системы на разделы, по сравнению с единственным разделом***:
 
 *   Безопасность: Каждая файловая система может быть сконфигурирована в /etc/fstab как 'nosuid', 'nodev', 'noexec', 'readonly', и т.д.
 *   Стабильность: Пользователь или программы способны захламить файловую системы, вызвать сбои в работе приложений. Но важные для работы системы модули и утилиты всегда будут работать, так как отделены на другом разделе.
@@ -188,7 +188,7 @@ _**Здесь перечислены несколько преимуществ �
 
 *   Добавление по 25% к размерам разделов обеспечат вам комфорт и спокойствие.
 
-_**К делу, пример: ~15Гбайт корневой (/) раздел, ~10Гбайт /var, 1Гбайт swap, и /home с местом для непредвиденных ситуаций.**_
+***К делу, пример: ~15Гбайт корневой (/) раздел, ~10Гбайт /var, 1Гбайт swap, и /home с местом для непредвиденных ситуаций.***
 
 ##### Create Partition:cfdisk
 
@@ -220,7 +220,7 @@ sda4               Primary     Linux                             140480 #/home
 
 Choose **W**rite and type '**yes'**. Beware that this operation may destroy data on your disk. Choose **Q**uit to leave the partitioner. Choose Done to leave this menu and continue with "Set Filesystem Mountpoints".
 
-**Обратите внимание:** Since the latest developments of the Linux kernel which include the libata and PATA modules, all IDE, SATA and SCSI drives have adopted the sd_x_ naming scheme. This is perfectly normal and should not be a concern.
+**Обратите внимание:** Since the latest developments of the Linux kernel which include the libata and PATA modules, all IDE, SATA and SCSI drives have adopted the sd*x* naming scheme. This is perfectly normal and should not be a concern.
 
 #### Set Filesystem Mountpoints
 
@@ -230,13 +230,13 @@ Specify each partition and corresponding mountpoint to your requirements. (Recal
 
 Again, a filesystem type is a very subjective matter which comes down to personal preference. Each has its own advantages, disadvantages, and unique idiosyncrasies. Here is a very brief overview of supported filesystems:
 
-1\. **ext2** _Second Extended Filesystem_- Old, reliable GNU/Linux filesystem. Very stable, but _without journaling support_. May be inconvenient for root (/) and /home, due to very long fsck's. _An ext2 filesystem can easily be converted to ext3._ Generally regarded as a good choice for /boot/.
+1\. **ext2** *Second Extended Filesystem*- Old, reliable GNU/Linux filesystem. Very stable, but *without journaling support*. May be inconvenient for root (/) and /home, due to very long fsck's. *An ext2 filesystem can easily be converted to ext3.* Generally regarded as a good choice for /boot/.
 
-2\. **ext3** _Third Extended Filesystem_- Essentially the ext2 system, but with journaling support. ext3 is backward compatible with ext2\. Extremely stable, mature, and by far the most widely used, supported and developed GNU/Linux FS.
+2\. **ext3** *Third Extended Filesystem*- Essentially the ext2 system, but with journaling support. ext3 is backward compatible with ext2\. Extremely stable, mature, and by far the most widely used, supported and developed GNU/Linux FS.
 
 **High Performance Filesystems:**
 
-3\. **ext4** _Fourth Extended Filesystem_- Backward compatible with ext2 and ext3\. Introduces support for volumes with sizes up to 1 exabyte and files with sizes up to 16 terabytes. Increases the 32,000 subdirectory limit in ext3 to 64,000\. Offers online defragmentation ability.
+3\. **ext4** *Fourth Extended Filesystem*- Backward compatible with ext2 and ext3\. Introduces support for volumes with sizes up to 1 exabyte and files with sizes up to 16 terabytes. Increases the 32,000 subdirectory limit in ext3 to 64,000\. Offers online defragmentation ability.
 
 4\. **ReiserFS** (V3)- Hans Reiser's high-performance journaling FS uses a very interesting method of data throughput based on an unconventional and creative algorithm. ReiserFS is touted as very fast, especially when dealing with many small files. ReiserFS is fast at formatting, yet comparatively slow at mounting. Quite mature and stable. ReiserFS is not actively developed at this time (Reiser4 is the new Reiser filesystem). Generally regarded as a good choice for /var/.
 
@@ -244,16 +244,15 @@ Again, a filesystem type is a very subjective matter which comes down to persona
 
 6\. **XFS** - Another early journaling filesystem originally developed by Silicon Graphics for the IRIX OS and ported to GNU/Linux. XFS offers very fast throughput on large files and large filesystems. Very fast at formatting and mounting. Generally benchmarked as slower with many small files, in comparison to other filesystems. XFS is very mature and offers online defragmentation ability.
 
-*   JFS and XFS filesystems cannot be _shrunk_ by disk utilities (such as gparted or parted magic)
+*   JFS and XFS filesystems cannot be *shrunk* by disk utilities (such as gparted or parted magic)
 
 ##### A note on Journaling
 
-All above filesystems, except ext2, utilize [journaling](http://en.wikipedia.org/wiki/Journaling_file_system). Journaling file systems are fault-resilient file systems that use a journal to log changes before they are committed to the file system to avoid metadata corruption in the event of a crash. Note that not all journaling techniques are alike; specifically, only ext3 and ext4 offer _data-mode journaling_, (though, not by default), which journals _both_ data _and_ meta-data (but with a significant speed penalty). The others only offer _ordered-mode journaling_, which journals meta-data only. While all will return your filesystem to a valid state after recovering from a crash, _data-mode journaling_ offers the greatest protection against file system corruption and data loss but can suffer from performance degradation, as all data is written twice (first to the journal, then to the disk). Depending upon how important your data is, this may be a consideration in choosing your filesystem type.
+All above filesystems, except ext2, utilize [journaling](http://en.wikipedia.org/wiki/Journaling_file_system). Journaling file systems are fault-resilient file systems that use a journal to log changes before they are committed to the file system to avoid metadata corruption in the event of a crash. Note that not all journaling techniques are alike; specifically, only ext3 and ext4 offer *data-mode journaling*, (though, not by default), which journals *both* data *and* meta-data (but with a significant speed penalty). The others only offer *ordered-mode journaling*, which journals meta-data only. While all will return your filesystem to a valid state after recovering from a crash, *data-mode journaling* offers the greatest protection against file system corruption and data loss but can suffer from performance degradation, as all data is written twice (first to the journal, then to the disk). Depending upon how important your data is, this may be a consideration in choosing your filesystem type.
 
-_**Moving on...**_
+***Moving on...***
 
 Choose and create the filesystem (format the partition) for / by selecting **yes**. You will now be prompted to add any additional partitions. In our example, sda2 and sda4 remain. For sda2, choose a filesystem type and mount it as /var. Finally, choose the filesystem type for sda4, and mount it as /home.
 
 **Обратите внимание:** If you have not created and do not need a separate /boot partition, you may safely ignore the warning that it does not exist.
-
 Return to the main menu.

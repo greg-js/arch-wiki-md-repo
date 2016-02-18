@@ -12,7 +12,7 @@ Arch Linux è una distribuzione indipendente sviluppata per [i686](https://en.wi
 
 ## Storia
 
-	_Articolo principale: [Storia di Arch Linux](/index.php?title=History_of_Arch_Linux_(Italiano)&action=edit&redlink=1 "History of Arch Linux (Italiano) (page does not exist)")_
+	*Articolo principale: [Storia di Arch Linux](/index.php?title=History_of_Arch_Linux_(Italiano)&action=edit&redlink=1 "History of Arch Linux (Italiano) (page does not exist)")*
 
 Arch Linux è stata fondata dal programmatore canadese Judd Vinet. Il suo primo rilascio formale, Arch Linux 0.1, avvenne l'11 marzo 2002\. Anche se Arch è completamente indipendente, trae ispirazione dalla semplicità di altre distribuzioni, tra cui [Slackware](http://slackware.com), [CRUX](http://www.crux.nu) e [BSD](http://en.wikipedia.org/wiki/Berkeley_Software_Distribution). Nel 2007, Judd Vinet si è dimesso da Project Lead per perseguire altri interessi ed è stato sostituito dal programmatore Americano Aaron Griffin, che oggi continua a portare avanti il progetto.
 
@@ -20,7 +20,7 @@ Arch Linux è stata fondata dal programmatore canadese Judd Vinet. Il suo primo 
 
 Seguendo [Il Metodo Arch](/index.php/The_Arch_Way_(Italiano) "The Arch Way (Italiano)"), Arch Linux è leggera, flessibile, semplice e mira ad essere molto simile a UNIX. Al momento dell'installazione viene fornito un ambiente minimale (senza GUI) compilato per architetture i686/x86-64: invece di andare a rimuovere i pacchetti non necessari e non desiderati, all'utente corrente viene offerta la possibilità di costruire tutto dalle fondamenta, senza alcun modello di default scelto preventivamente. La sua filosofia di progettazione e realizzazione la rendono facilmente estendibile ed adattabile a qualsiasi sistema si vuole ottenere, da una console minimalista al più grandioso degli ambienti desktop disponibili: è l’utente che decide cosa diventerà il suo sistema Arch.
 
-Il semplice sistema di init di Arch è fortemente ispirato dal metodo *BSD, incorporando tutti i riferimenti in un solo file _single file_ ([rc.conf](/index.php/Rc.conf_(Italiano) "Rc.conf (Italiano)")) piuttosto che in una struttura di directory SysVinit che contengono dozzine di link simbolici per ogni runlevel. La configurazione del sistema è ottenuta attraverso la modifica di semplici file di testo.
+Il semplice sistema di init di Arch è fortemente ispirato dal metodo *BSD, incorporando tutti i riferimenti in un solo file *single file* ([rc.conf](/index.php/Rc.conf_(Italiano) "Rc.conf (Italiano)")) piuttosto che in una struttura di directory SysVinit che contengono dozzine di link simbolici per ogni runlevel. La configurazione del sistema è ottenuta attraverso la modifica di semplici file di testo.
 
 ## Modernità
 
@@ -30,13 +30,13 @@ Arch include molte delle tecnologie più recenti disponibili per gli utenti GNU/
 
 ## Gestore Pacchetti
 
-Arch è sostenuto da [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)"), un semplice [gestore di pacchetti](https://en.wikipedia.org/wiki/it:Package_manager "wikipedia:it:Package manager") binari, che permette di aggiornare l'intero sistema con un solo comando. Pacman è scritto in _C_ e progettato da zero per essere leggero, semplice e molto veloce. Arch offre anche la [Arch Build System](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)"), un porte-like per rendere più facile la compilazione e l'installazione dei pacchetti da sorgenti, che può anche essere sincronizzato con un unico comando. È anche possibile ricompilare l'intero sistema soltanto con un comando.
+Arch è sostenuto da [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)"), un semplice [gestore di pacchetti](https://en.wikipedia.org/wiki/it:Package_manager "wikipedia:it:Package manager") binari, che permette di aggiornare l'intero sistema con un solo comando. Pacman è scritto in *C* e progettato da zero per essere leggero, semplice e molto veloce. Arch offre anche la [Arch Build System](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)"), un porte-like per rendere più facile la compilazione e l'installazione dei pacchetti da sorgenti, che può anche essere sincronizzato con un unico comando. È anche possibile ricompilare l'intero sistema soltanto con un comando.
 
-Supportando architetture i686 e x86-64,i [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") forniscono diverse migliaia di pacchetti di alta qualità per soddisfare le varie esigenze software. Inoltre, Arch incoraggia la crescita della comunità ed il contributo, offrendo l'[Arch User Repository](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)"), che contiene molte migliaia di utenti manteiner di script PKGBUILD, la compilazione e l'installazione dei pacchetti da sorgenti, utilizzando l'applicazione _makepkg_. È anche possibile, per tutti gli utenti, creare e gestire facilmente i propri repository personalizzati.
+Supportando architetture i686 e x86-64,i [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)") forniscono diverse migliaia di pacchetti di alta qualità per soddisfare le varie esigenze software. Inoltre, Arch incoraggia la crescita della comunità ed il contributo, offrendo l'[Arch User Repository](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)"), che contiene molte migliaia di utenti manteiner di script PKGBUILD, la compilazione e l'installazione dei pacchetti da sorgenti, utilizzando l'applicazione *makepkg*. È anche possibile, per tutti gli utenti, creare e gestire facilmente i propri repository personalizzati.
 
 ## Integrità Sorgenti
 
-Arch fornisce software vanilla senza patch; i pacchetti fanno riferimento a sorgenti [upstream](https://en.wikipedia.org/wiki/upstream_(software_development) "wikipedia:upstream (software development)") puri, come l’autore originario intendeva distribuirli. Solo in rari casi i pacchetti vengono patchati, per evitare errori gravi in caso di disallineamenti di versioni che possono verificarsi in un modello rolling-release.
+Arch fornisce software vanilla senza patch; i pacchetti fanno riferimento a sorgenti [upstream](https://en.wikipedia.org/wiki/upstream_(software_development) puri, come l’autore originario intendeva distribuirli. Solo in rari casi i pacchetti vengono patchati, per evitare errori gravi in caso di disallineamenti di versioni che possono verificarsi in un modello rolling-release.
 
 ## Comunità
 

@@ -64,7 +64,7 @@ Následující balíčky vám umožní využívat grafické prostředí k nastav
 
 [blueman](/index.php/Blueman "Blueman") je program pro správu Bluetooth. Je naprogramován v GTK a používá se hlavně v [GNOME](/index.php/GNOME "GNOME") nebo [Xfce](/index.php/Xfce "Xfce"). Nainstalujte [blueman](https://www.archlinux.org/packages/?name=blueman) nebo [blueman-git](https://aur.archlinux.org/packages/blueman-git/) z [AUR](/index.php/AUR_(%C4%8Cesky) "AUR (Česky)").
 
-Ujistěte se, že _bluetooth_ daemon běží a spusťte příkaz _blueman-applet_. Pokud chcete, aby se applet spouštěl automaticky při přihlášení přidejte _blueman-applet_ do _System -> Preferences -> Startup Applications_ (GNOME) nebo v _Xfce Menu -> Settings -> Session and Startup_ (Xfce).
+Ujistěte se, že *bluetooth* daemon běží a spusťte příkaz *blueman-applet*. Pokud chcete, aby se applet spouštěl automaticky při přihlášení přidejte *blueman-applet* do *System -> Preferences -> Startup Applications* (GNOME) nebo v *Xfce Menu -> Settings -> Session and Startup* (Xfce).
 
 Pozn.: Pokud nepoužíváte nautilus, může vám být užitečné toto:
 
@@ -89,14 +89,14 @@ Jako poslední věc byste měli změnit řádek v Local Services > Transfer > Ad
 
 ### gnome-bluetooth
 
-[gnome-bluetooth](https://www.archlinux.org/packages/?name=gnome-bluetooth) je odnož starého _bluez-gnome_ a je zameřeno na integraci s desktopovým prostředím GNOME. Nejdříve nainstalujte gnome-bluetooth:
+[gnome-bluetooth](https://www.archlinux.org/packages/?name=gnome-bluetooth) je odnož starého *bluez-gnome* a je zameřeno na integraci s desktopovým prostředím GNOME. Nejdříve nainstalujte gnome-bluetooth:
 
 ```
 # pacman -S gnome-bluetooth gnome-user-share
 
 ```
 
-Spusťte příkaz _bluetooth-applet_. Měla by se vám objevit malá ikonka bluetooth v tray. Kliknutím pravým tlačítkem na ikonu je možné přidávat a spravovat nová zařízení nebo posílat soubory. Pokud chcete, aby se applet spouštěl po přihlášení, přidejte ho do _System -> Preferences -> Startup Applications_.
+Spusťte příkaz *bluetooth-applet*. Měla by se vám objevit malá ikonka bluetooth v tray. Kliknutím pravým tlačítkem na ikonu je možné přidávat a spravovat nová zařízení nebo posílat soubory. Pokud chcete, aby se applet spouštěl po přihlášení, přidejte ho do *System -> Preferences -> Startup Applications*.
 
 ### bluedevil
 
@@ -168,16 +168,16 @@ Pro skenování okolních zařízení proveďte příkaz
 
 ```
 
-Pro spárování zařízení bez použití grafického rozhraní balíku gnome-bluez budete muset použít nástroj zvaný _bluez-simple-agent_, který je součástí balíku bluez. Dále budete potřebovat několik souvisejících python balíčků - [python2-dbus](https://www.archlinux.org/packages/?name=python2-dbus) a [python2-gobject2](https://www.archlinux.org/packages/?name=python2-gobject2). Pokud máte vše připraveno, můžete spustit program pro párování (musí být spušten pod uživatelem root).
+Pro spárování zařízení bez použití grafického rozhraní balíku gnome-bluez budete muset použít nástroj zvaný *bluez-simple-agent*, který je součástí balíku bluez. Dále budete potřebovat několik souvisejících python balíčků - [python2-dbus](https://www.archlinux.org/packages/?name=python2-dbus) a [python2-gobject2](https://www.archlinux.org/packages/?name=python2-gobject2). Pokud máte vše připraveno, můžete spustit program pro párování (musí být spušten pod uživatelem root).
 
 ```
  $ bluez-simple-agent
 
 ```
 
-Pokud se vše zdařilo, měla by se vám v konzoli zobrazit hlaška "Agent registered". Následně můžete začít párování ze svého mobilního telefonu. Skript se vás v konzoli zeptá na tzv. passcode, vložte ho a potvrďte enterem - voalá, povedlo se. Teď už můžete ukončit agenta použitím klávesy _Ctrl+C_ (^C-c). Agenta jsme použili pouze pro párování, nebudeme ho potřebovat při každém připojení zařízení. Pokud váš telefon nemuže naleznout počítač, pokračujte do [řešení problémů](/index.php/Bluetooth_(%C4%8Cesky)#Nelze_nal.C3.A9zt_po.C4.8D.C3.ADta.C4.8D "Bluetooth (Česky)").
+Pokud se vše zdařilo, měla by se vám v konzoli zobrazit hlaška "Agent registered". Následně můžete začít párování ze svého mobilního telefonu. Skript se vás v konzoli zeptá na tzv. passcode, vložte ho a potvrďte enterem - voalá, povedlo se. Teď už můžete ukončit agenta použitím klávesy *Ctrl+C* (^C-c). Agenta jsme použili pouze pro párování, nebudeme ho potřebovat při každém připojení zařízení. Pokud váš telefon nemuže naleznout počítač, pokračujte do [řešení problémů](/index.php/Bluetooth_(%C4%8Cesky)#Nelze_nal.C3.A9zt_po.C4.8D.C3.ADta.C4.8D "Bluetooth (Česky)").
 
-Pro příklad spárování přejděte do sekce _příklady_.
+Pro příklad spárování přejděte do sekce *příklady*.
 
 ## Použití Obex pro posílání a příjímání souborů
 
@@ -498,7 +498,7 @@ Zkuste spustit <tt>hciconfig hc0 up</tt>
 
 ### Blueman
 
-Jeslitliže blueman-applet skončí s chybou, zkuste odstranit veškerý obsah adresáře _/var/lib/bluetooth_ a restartovat systém (nebo pouze daemony hal, dbus a bluetooth).
+Jeslitliže blueman-applet skončí s chybou, zkuste odstranit veškerý obsah adresáře */var/lib/bluetooth* a restartovat systém (nebo pouze daemony hal, dbus a bluetooth).
 
 ```
 # rm -rf /var/lib/bluetooth
@@ -632,7 +632,7 @@ hci0:   Type: USB
 
 **Note:** Zkontrolujte volbu DiscoverableTimeout a PairableTimeout v souboru /etc/bluetooth/main.conf
 
-Nebo můžete zkusit změnit nastavení _Class_ v souboru `/etc/bluetooth/main.conf` následovně
+Nebo můžete zkusit změnit nastavení *Class* v souboru `/etc/bluetooth/main.conf` následovně
 
 ```
 # Default device class. Only the major and minor device class bits are

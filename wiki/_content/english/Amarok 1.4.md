@@ -54,7 +54,7 @@ Build and install [amarok1](https://aur.archlinux.org/packages/amarok1/) from th
 
 ### Integration with KDE4
 
-**Note:** You can make the colors precisely match your KDE4 color scheme by obtaining the three RGB values from the color selection dialogs in _System Settings > General > Appearance > Colors > Colors_
+**Note:** You can make the colors precisely match your KDE4 color scheme by obtaining the three RGB values from the color selection dialogs in *System Settings > General > Appearance > Colors > Colors*
 
 In KDE4, you can set up the colors and fonts for KDE3 applications (such as Amarok 1.4 and Kaffeine <1.0) without kcontrol by editing the file `~/.kde/share/config/kdeglobals`.
 
@@ -92,11 +92,11 @@ Oxygen icons to make Amarok version 1.4 fit better with KDE4 can be found at [kd
 
 Also set the colours and fonts in
 
-_Settings > Configure Amarok > Appearance_
+*Settings > Configure Amarok > Appearance*
 
 and
 
-_Settings > Configure Amarok > OSD_.
+*Settings > Configure Amarok > OSD*.
 
 ### Integration with Gnome
 
@@ -104,7 +104,7 @@ See [here](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for
 
 ### Scripts
 
-Scripts can be found either directly from within Amarok (_Tools/Scripts/Get new scripts_) or from [kde-apps.org](http://kde-apps.org/content/search.php) in the [Multimedia/Amarok Scripts](http://kde-apps.org/?xcontentmode=56) section, or by using the kde-apps.org search function and selecting _Amarok Script_ as the type.
+Scripts can be found either directly from within Amarok (*Tools/Scripts/Get new scripts*) or from [kde-apps.org](http://kde-apps.org/content/search.php) in the [Multimedia/Amarok Scripts](http://kde-apps.org/?xcontentmode=56) section, or by using the kde-apps.org search function and selecting *Amarok Script* as the type.
 
 #### transKode
 
@@ -170,4 +170,4 @@ For [reasons](/index.php/Amarok_2#SHOUTcast "Amarok 2") which have not been adeq
 
 Amarok version 1.4 as well as [VLC](/index.php/VLC "VLC") continue to support the Shoutcast internet radio station index and streaming as before. The index is at
 
-_Playlists > Radio Streams > Shoutcast Streams_
+*Playlists > Radio Streams > Shoutcast Streams*

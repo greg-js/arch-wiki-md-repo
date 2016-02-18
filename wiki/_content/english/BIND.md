@@ -116,7 +116,7 @@ The latter option will keep your nameserver available while still allowing the c
 
 ### 3\. Setting this to be your default DNS server
 
-If you are running your own DNS server, you might as well use it for all DNS lookups. This will require the ability to do _recursive_ lookups. In order to prevent [DNS Amplification Attacks](https://www.us-cert.gov/ncas/alerts/TA13-088A), recursion is turned off by default for most resolvers. The default Arch `/etc/named.conf` file allows for recursion only on the loopback interface:
+If you are running your own DNS server, you might as well use it for all DNS lookups. This will require the ability to do *recursive* lookups. In order to prevent [DNS Amplification Attacks](https://www.us-cert.gov/ncas/alerts/TA13-088A), recursion is turned off by default for most resolvers. The default Arch `/etc/named.conf` file allows for recursion only on the loopback interface:
 
 ```
 allow-recursion { 127.0.0.1; };
@@ -199,12 +199,10 @@ Next we need to create the new service file which will allow force bind into the
 we need to edit how the service calls bind.
 
  `/etc/systemd/system/named-chroot.service` 
-
 ```
   ExecStart=/usr/bin/named '''-4''' -f -u named '''-t "/srv/named"'''
 
 ```
-
 }
 
 Now, reload systemd `systemctl daemon-reload`, then start the service `systemctl start named-chroot.service`

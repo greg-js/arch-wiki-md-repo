@@ -87,7 +87,6 @@ NoExtract=usr/lib/systemd/system/*
 En esta sección se define qué [repositorios](/index.php/Official_Repositories_(Espa%C3%B1ol) "Official Repositories (Español)") utilizar, como se especifican en `/etc/pacman.conf`. Se puede especificar aquí directamente o incluirlo desde otro archivo (por ejemplo `/etc/pacman.d/mirrorlist`), siendo necesario mantener una sola lista.
 
  `/etc/pacman.conf` 
-
 ```
 #[testing]
 #SigLevel = PackageRequired
@@ -144,14 +143,14 @@ Lo que sigue es solo una pequeña muestra de las operaciones que se pueden reali
 Para instalar o actualizar un solo paquete o lista de paquetes (incluyendo las dependencias), ejecute la orden siguiente:
 
 ```
-# pacman -S _nombre_paquete1_ _nombre_paquete2_ ...
+# pacman -S *nombre_paquete1* *nombre_paquete2* ...
 
 ```
 
 A veces hay varias versiones de un paquete en diferentes repositorios, por ejemplo, [extra] y [testing]. Para instalar la versión precedente necesita especificar el nombre del repositorio:
 
 ```
-# pacman -S extra/_nombre_paquete_
+# pacman -S extra/*nombre_paquete*
 
 ```
 
@@ -193,21 +192,21 @@ Visite también [https://www.archlinux.org/groups/](https://www.archlinux.org/gr
 
 **Nota:** Si un paquete en la lista ya está instalado en el sistema, éste se volverá a reinstalar, incluso si ya está actualizado, a menos que se utilice la opción `--needed`.
 
-**Advertencia:** Al instalar paquetes, **no** actualice la lista de paquetes sin [actualizar](#Upgrading_packages) al mismo tiempo el sistema (es decir, `pacman -Sy _nombre_paquete_`); de lo contrario, se pueden producir problemas de dependencia. Véase [#Partial upgrades are unsupported](#Partial_upgrades_are_unsupported) y [https://bbs.archlinux.org/viewtopic.php?id=89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
+**Advertencia:** Al instalar paquetes, **no** actualice la lista de paquetes sin [actualizar](#Upgrading_packages) al mismo tiempo el sistema (es decir, `pacman -Sy *nombre_paquete*`); de lo contrario, se pueden producir problemas de dependencia. Véase [#Partial upgrades are unsupported](#Partial_upgrades_are_unsupported) y [https://bbs.archlinux.org/viewtopic.php?id=89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
 
 ### Desinstalar paquetes
 
 Para eliminar un solo paquete, dejando todas sus dependencias instaladas:
 
 ```
-# pacman -R _nombre_paquete_
+# pacman -R *nombre_paquete*
 
 ```
 
 Para eliminar un paquete y sus dependencias que no son usadas por ningún otro paquete instalado:
 
 ```
-# pacman -Rs _nombre_paquete_
+# pacman -Rs *nombre_paquete*
 
 ```
 
@@ -216,21 +215,21 @@ Para eliminar un paquete, sus dependencias y todos los paquetes que dependen de 
 **Advertencia:** Esta operación es recursiva, y debe utilizarse con precaución, ya que puede eliminar muchos paquetes potencialmente necesarios.
 
 ```
-# pacman -Rsc _nombre_paquete_
+# pacman -Rsc *nombre_paquete*
 
 ```
 
 Para eliminar un paquete, el cual es requerido por otro paquete, sin quitar el paquete dependiente:
 
 ```
-# pacman -Rdd _nombre_paquete_
+# pacman -Rdd *nombre_paquete*
 
 ```
 
 Pacman guarda los archivos de configuración importantes al quitar ciertas aplicaciones y los renombra con la extensión: `.pacsave`. Para evitar la creación de estos archivos de backup utilice la opción `-n`:
 
 ```
-# pacman -Rn _nombre_paquete_
+# pacman -Rn *nombre_paquete*
 
 ```
 
@@ -238,7 +237,7 @@ Pacman guarda los archivos de configuración importantes al quitar ciertas aplic
 
 ### Actualizar paquetes
 
-Pacman puede actualizar todos los paquetes del sistema con una sola orden. Esto proceso puede durar bastante tiempo dependiendo de cuánto tiempo haya estados sin actualizar el sistema. Esta orden puede sincronizar las bases de datos de los repositorios _y_ actualizar los paquetes del sistema (excluyendo paquetes "locales" que no están en los repositorios configurados):
+Pacman puede actualizar todos los paquetes del sistema con una sola orden. Esto proceso puede durar bastante tiempo dependiendo de cuánto tiempo haya estados sin actualizar el sistema. Esta orden puede sincronizar las bases de datos de los repositorios *y* actualizar los paquetes del sistema (excluyendo paquetes "locales" que no están en los repositorios configurados):
 
 ```
 # pacman -Syu
@@ -274,42 +273,42 @@ $ pacman -S --help
 Pacman puede buscar paquetes en la base de datos, la búsqueda se realiza tanto por los nombres como por las descripciones de los paquetes:
 
 ```
-$ pacman -Ss _cadena1_ _cadena2_ ...
+$ pacman -Ss *cadena1* *cadena2* ...
 
 ```
 
 Para buscar paquetes ya instalados:
 
 ```
-$ pacman -Qs _cadena1_ _cadena2_ ...
+$ pacman -Qs *cadena1* *cadena2* ...
 
 ```
 
 Para mostrar información detallada acerca de un determinado paquete:
 
 ```
-$ pacman -Si _nombre_paquete_
+$ pacman -Si *nombre_paquete*
 
 ```
 
 Para los paquetes instalados localmente:
 
 ```
-$ pacman -Qi _nombre_paquete_
+$ pacman -Qi *nombre_paquete*
 
 ```
 
 Pasando la doble opción `-i` también se mostrará la lista de archivos de backup y sus estados de modificación:
 
 ```
-$ pacman -Qii _nombre_paquete_
+$ pacman -Qii *nombre_paquete*
 
 ```
 
 Para obtener una lista de los archivos instalados por un paquete:
 
 ```
-$ pacman -Ql _nombre_paquete_
+$ pacman -Ql *nombre_paquete*
 
 ```
 
@@ -318,7 +317,7 @@ Para los paquetes no instalados, utilice [pkgfile](/index.php/Pkgfile "Pkgfile")
 También se puede consultar la base de datos para saber qué paquete pertenece a un determinado archivo del sistema:
 
 ```
-$ pacman -Qo _/ruta/al/nombre_del_archivo_
+$ pacman -Qo */ruta/al/nombre_del_archivo*
 
 ```
 
@@ -332,14 +331,14 @@ $ pacman -Qdt
 Para listar el árbol de dependencias de un paquete:
 
 ```
-$ pactree _nombre_paquete_
+$ pactree *nombre_paquete*
 
 ```
 
 Para listar todos los paquetes que dependen de un específico paquete, utilice `whoneeds` de [pkgtools](/index.php/Pkgtools "Pkgtools"):
 
 ```
-$ whoneeds _nombre_paquete_
+$ whoneeds *nombre_paquete*
 
 ```
 
@@ -348,14 +347,14 @@ $ whoneeds _nombre_paquete_
 Actualizar el sistema e instalar una lista de paquetes (una sola línea):
 
 ```
-# pacman -Syu _nombre_paquete1_ _nombre_paquete2_ ...
+# pacman -Syu *nombre_paquete1* *nombre_paquete2* ...
 
 ```
 
 Descargar un paquete sin instalarlo:
 
 ```
-# pacman -Sw _nombre_paquete_
+# pacman -Sw *nombre_paquete*
 
 ```
 
@@ -367,7 +366,6 @@ Instale un paquete 'local' que no proviene de un repositorio remoto (por ejemplo
 ```
 
 **Sugerencia:** Para mantener una copia del paquete local en la caché de pacman, use:
-
 ```
 # pacman -U file://path/to/package/package_name-version.pkg.tar.xz
 
@@ -402,7 +400,7 @@ Limpie completamente la caché de todos los paquetes:
 
 ### Las actualizaciones parciales no son soportadas
 
-Arch Linux es rolling release, y las nuevas versiones de [bibliotecas](https://en.wikipedia.org/wiki/Library_(computing) "wikipedia:Library (computing)") serán añadidas a los repositorios. Los Desarrolladores y los Trusted Users recompilarán consecuentemente todos los paquetes de los repositorios. Si el sistema se ha instalado con paquetes locales (como paquetes de [AUR](/index.php/Arch_User_Repository "Arch User Repository")), los usuarios necesitarán recompilar sus dependencias cuando modifiquen a nivel [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname").
+Arch Linux es rolling release, y las nuevas versiones de [bibliotecas](https://en.wikipedia.org/wiki/Library_(computing) serán añadidas a los repositorios. Los Desarrolladores y los Trusted Users recompilarán consecuentemente todos los paquetes de los repositorios. Si el sistema se ha instalado con paquetes locales (como paquetes de [AUR](/index.php/Arch_User_Repository "Arch User Repository")), los usuarios necesitarán recompilar sus dependencias cuando modifiquen a nivel [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname").
 
 Esto significa que las actualizaciones parciales **no están soportadas**. No utilice `pacman -Sy paquete` o cualquier equivalente como `pacman -Sy` y luego `pacman -S paquete`. Actualice siempre el sistema antes de instalar un paquete, especialmente si previamente se ha ejecutado una sincronización con los repositorios. Tenga mucho cuidado al usar `IgnorePkg` y `IgnoreGroup` por la misma razón.
 
@@ -410,7 +408,7 @@ Si se ha ejecutado una actualización y los binarios están rotos porque no pued
 
 ### Nota general
 
-**Advertencia:** Tenga cuidado al utilizar el parámetro `--force` ya que puede causar serios problemas si se usa incorrectamente. Es muy recomendable que _únicamente_ se utilice esta opción cuando Arch news indica expresamente que lo haga.
+**Advertencia:** Tenga cuidado al utilizar el parámetro `--force` ya que puede causar serios problemas si se usa incorrectamente. Es muy recomendable que *únicamente* se utilice esta opción cuando Arch news indica expresamente que lo haga.
 
 ## Solución de problemas
 
@@ -430,7 +428,7 @@ Los mirrors de pacman no se sincronizan inmediatamente. Pueden tardar más de 24
 
 ### Me sale el siguiente error en la actualización: "file exists in filesystem"!
 
-ASIDE: _Tomado de [https://bbs.archlinux.org/viewtopic.php?id=56373](https://bbs.archlinux.org/viewtopic.php?id=56373) por Misfit138._
+ASIDE: *Tomado de [https://bbs.archlinux.org/viewtopic.php?id=56373](https://bbs.archlinux.org/viewtopic.php?id=56373) por Misfit138.*
 
 ```
 error: could not prepare transaction
@@ -457,7 +455,7 @@ En primer lugar, asegúrese de que el paquete existe realmente (¡y cuidado con 
 ### Obtengo un error cuando se instala un paquete: "target not found"
 
 En primer lugar, asegúrese de que el paquete existe realmente (¡y cuidado con los errores de ortografía!). Si el paquete realmente existe, la lista de paquetes puede estar desacctualizada o los repositorios estar configurados de forma incorrecta. Pruebe ejecutando `pacman -Syy` para forzar una actualización de todas las listas de paquetes.
-ambién podría ser que el repositorio que contiene el paquete no está habilitada en el sistema, por ejemplo, el paquete podría estar en el repositorio _multilib_, pero _multilib_ no esté activado en el archivo _pacman.conf_.
+ambién podría ser que el repositorio que contiene el paquete no está habilitada en el sistema, por ejemplo, el paquete podría estar en el repositorio *multilib*, pero *multilib* no esté activado en el archivo *pacman.conf*.
 
 ### ¡Pacman me pregunta repetidamente por la actualización del mismo paquete!
 
@@ -478,7 +476,7 @@ En el caso de que pacman falle al "escribir la base de datos" mientras eliminaba
 
 ### He instalado software usando "make install"; ¡estos archivos no pertenece a ningún paquete!
 
-Si recibe el mensaje de error "conflicting files" , tenga en cuenta que pacman sobreescribe el software que se instaló de forma manual si se ejecuta combinado con la opción `--force` (por ejemplo (`pacman -S --force`). Véase [Pacman tips#Identify files not owned by any package](/index.php/Pacman_tips#Identify_files_not_owned_by_any_package "Pacman tips") para un script que busca en el sistema de archivos archivos _huérfanos_.
+Si recibe el mensaje de error "conflicting files" , tenga en cuenta que pacman sobreescribe el software que se instaló de forma manual si se ejecuta combinado con la opción `--force` (por ejemplo (`pacman -S --force`). Véase [Pacman tips#Identify files not owned by any package](/index.php/Pacman_tips#Identify_files_not_owned_by_any_package "Pacman tips") para un script que busca en el sistema de archivos archivos *huérfanos*.
 
 **Advertencia:** Tenga cuidado al usar la opción `--force` ya que puede causar graves problemas si se usa incorrectamente.
 
@@ -494,7 +492,7 @@ En el caso de que pacman se rompa sin remedio, descargue manualmente los paquete
 
 Muy probablemente su initramfs se rompió durante una actualización del kernel (el uso indebido de la opción `--force` de pacman puede ser una causa). Usted tiene dos opciones:
 
-**1.** Pruebe la entrada _Fallback_.
+**1.** Pruebe la entrada *Fallback*.
 
 **Sugerencia:** En el caso de que haya eliminado esta entrada por el motivo que sea, siempre puede pulsar la tecla `Tab` cuando el menú del gestor de arranque aparece (para Syslinux) o `e` (para GRUB), cambiarle el nombre `initramfs-linux-fallback.img` y presionar `Intro` o `b` (en función de su gestor de arranque) para arrancar con los nuevos parámetros.
 
@@ -531,7 +529,6 @@ error: failed to commit transaction (invalid or corrupted package (PGP signature
 Errors occured, no packages were upgraded. 
 
 ```
-
 Esto ocurre cuando el reloj del sistema está mal. Ajuste el [horario](/index.php/Time_(Espa%C3%B1ol) "Time (Español)") y ejecute: `# hwclock -w` antes de tratar de instalar/actualizar un paquete nuevo.
 
 ### Sigo recibiendo un error de "failed to commit transaction (invalid or corrupted package)"

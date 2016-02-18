@@ -237,7 +237,6 @@ Linux 内核通过两个接口来把 EFI 变量数据传递给用户空间:
 如下通过 `/etc/fstab` 来自动挂载 `efivarfs` 也是极好的:
 
  `/etc/fstab` 
-
 ```
 efivarfs    /sys/firmware/efi/efivars    efivarfs    defaults    0    0
 
@@ -311,7 +310,7 @@ EFI 系统分区(也称为 ESP 或者 EFISYS)是一个 FAT32 格式的物理分�
 
 ### GPT 磁盘分区
 
-*   **fdisk**/**gdisk**: 创建类型为 EFI System (`EFI System` (在 _fdisk_ 中) 或 `ef00` (在 _gdisk_ 中)的分区。然后运行 `mkfs.fat -F32 /dev/<THAT_PARTITION>` 格式化为 FAT32 格式。
+*   **fdisk**/**gdisk**: 创建类型为 EFI System (`EFI System` (在 *fdisk* 中) 或 `ef00` (在 *gdisk* 中)的分区。然后运行 `mkfs.fat -F32 /dev/<THAT_PARTITION>` 格式化为 FAT32 格式。
 
 (或)
 
@@ -321,7 +320,7 @@ EFI 系统分区(也称为 ESP 或者 EFISYS)是一个 FAT32 格式的物理分�
 
 ### MBR 磁盘分区
 
-*   **fdisk**: 使用 fdisk 创建类型为 _EFI System_ 的分区，然后运行 `mkfs.fat -F32 /dev/<THAT_PARTITION>` 格式化为 FAT32.
+*   **fdisk**: 使用 fdisk 创建类型为 *EFI System* 的分区，然后运行 `mkfs.fat -F32 /dev/<THAT_PARTITION>` 格式化为 FAT32.
 
 ### RAID 上的 ESP
 
@@ -444,7 +443,7 @@ FS0:\EFI\arch\refind\> edit refind.conf
 *   挂载官方安装介质并如前所述获取 `archisolabel` .
 
 ```
-# mount -o loop _input.iso_ /mnt/iso
+# mount -o loop *input.iso* /mnt/iso
 
 ```
 
@@ -453,7 +452,7 @@ FS0:\EFI\arch\refind\> edit refind.conf
 ```
 $ xorriso -as mkisofs -iso-level 3 \
     -full-iso9660-filenames\
-    -volid "_archisolabel_" \
+    -volid "*archisolabel*" \
     -appid "Arch Linux CD" \
     -publisher "Arch Linux <[https://www.archlinux.org](https://www.archlinux.org)>" \
     -preparer "prepared by $USER" \
@@ -461,10 +460,10 @@ $ xorriso -as mkisofs -iso-level 3 \
     -eltorito-catalog isolinux/boot.cat \
     -no-emul-boot -boot-load-size 4 -boot-info-table \
     -isohybrid-mbr "/mnt/iso/isolinux/isohdpfx.bin" \
-    -output _output.iso_ /mnt/iso/
+    -output *output.iso* /mnt/iso/
 ```
 
-*   把 `_output.iso_` 烧制进光学介质并照常完成安装。
+*   把 `*output.iso*` 烧制进光学介质并照常完成安装。
 
 ## 原生无支持情况下测试 UEFI
 
@@ -523,7 +522,6 @@ bcdedit /set {bootmgr} path \EFI\boot_app_dir\boot_app.efi
 *   按如下内容创建 `<USB>/EFI/boot/grub.cfg` (替换 `ARCH_YYYYMM` 为 USB 盘，例如 `ARCH_201404`):
 
  `grub.cfg for Official ISO` 
-
 ```
 insmod part_gpt
 insmod part_msdos
@@ -561,9 +559,7 @@ menuentry "UEFI Shell x86_64 v1" {
 }
 
 ```
-
  `grub.cfg for Archboot ISO` 
-
 ```
 insmod part_gpt
 insmod part_msdos

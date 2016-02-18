@@ -30,10 +30,9 @@ To install the Lumina Desktop environment, simply install [lumina-desktop](https
 
 ### Via .xinitrc
 
-_For information visit the [xinitrc](/index.php/Xinitrc "Xinitrc") wiki page_
+*For information visit the [xinitrc](/index.php/Xinitrc "Xinitrc") wiki page*
 
  ` ~/.xinitrc` 
-
 ```
 exec Lumina-DE
 

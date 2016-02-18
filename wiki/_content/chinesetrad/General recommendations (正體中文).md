@@ -238,7 +238,7 @@ Num Lock 是多數鍵盤都有的切換鍵。若要在系統開機時啟用 Num 
 
 ### Arch 建置系統
 
-_Ports_ 是最初由 BSD 發行版本採用的建置腳本系統，本身為系統內部的目錄樹。每個 port 包含一個腳本，每個腳本存放的目錄直觀地以這些可安裝的第三方應用程式的名稱命名。
+*Ports* 是最初由 BSD 發行版本採用的建置腳本系統，本身為系統內部的目錄樹。每個 port 包含一個腳本，每個腳本存放的目錄直觀地以這些可安裝的第三方應用程式的名稱命名。
 
 [ABS](/index.php/ABS "ABS") 樹也提供了相同的功能。它依靠 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 建置腳本，裡頭包含了給定軟體的資訊：完整性雜湊值、專案 URL、版本；授權與建置步驟。這些 PKGBUILD 腳本之後交給 [makepkg](/index.php/Makepkg "Makepkg") 解析，並產生 pacman 可無瑕疵管理的軟體包。
 
@@ -324,7 +324,7 @@ Arch 是無縫升級的系統，軟體包更迭相當快速，因此使用者得
 
 ### 顯示驅動
 
-預設的顯示驅動 _vesa_ 能夠驅動大部分的顯示卡，不過為對應的 [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel "Intel") 或 [NVIDIA](/index.php/NVIDIA "NVIDIA") 產品安裝適當的驅動，可以增進效能並獲得額外的功能。
+預設的顯示驅動 *vesa* 能夠驅動大部分的顯示卡，不過為對應的 [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel "Intel") 或 [NVIDIA](/index.php/NVIDIA "NVIDIA") 產品安裝適當的驅動，可以增進效能並獲得額外的功能。
 
 ### 視窗管理員
 

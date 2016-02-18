@@ -26,9 +26,9 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support "wi
 
 ## Effects
 
-The _positive effect_ of using DKMS is that modules are often able to be rebuilt when the kernel is upgrading. This means that a user does not have to wait for a company, project, or package maintainer to release a new version of the module.
+The *positive effect* of using DKMS is that modules are often able to be rebuilt when the kernel is upgrading. This means that a user does not have to wait for a company, project, or package maintainer to release a new version of the module.
 
-The _negative effect_ of using DKMS is that DKMS breaks the Pacman database. The problem is that the resulting modules do not belong to the package anymore, so Pacman cannot track them. Theoretically though, support could be added through hooks (see: [FS#2985](https://bugs.archlinux.org/task/2985)).
+The *negative effect* of using DKMS is that DKMS breaks the Pacman database. The problem is that the resulting modules do not belong to the package anymore, so Pacman cannot track them. Theoretically though, support could be added through hooks (see: [FS#2985](https://bugs.archlinux.org/task/2985)).
 
 ## Installation
 
@@ -87,7 +87,7 @@ or for a specific kernel:
 
 ```
 
-To build a _specific_ module for the currently running kernel:
+To build a *specific* module for the currently running kernel:
 
 ```
 # dkms install -m nvidia -v 334.21
@@ -101,7 +101,7 @@ or simply:
 
 ```
 
-To build a module for _all_ kernels:
+To build a module for *all* kernels:
 
 ```
 # dkms install nvidia/334.21 --all
@@ -132,20 +132,20 @@ Here are some guidelines to follow when creating a DKMS package.
 
 ### Package name
 
-DKMS packages are named by appending "_-dkms_" to the original package name.
+DKMS packages are named by appending "*-dkms*" to the original package name.
 
-The variable `$_pkgname` is often used below `$pkgname` to describe the package name minus the "_-dkms_" suffix (e.g. `_pkgname=${pkgname%-*}`). This is useful to help keep similarities between the original package PKGBUILD and the DKMS variant.
+The variable `$_pkgname` is often used below `$pkgname` to describe the package name minus the "*-dkms*" suffix (e.g. `_pkgname=${pkgname%-*}`). This is useful to help keep similarities between the original package PKGBUILD and the DKMS variant.
 
 ### Dependencies
 
-Dependencies should be inherited from the original version with [dkms](https://www.archlinux.org/packages/?name=dkms) added and [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) removed (as it is listed by the dkms pacakge as _optional_).
+Dependencies should be inherited from the original version with [dkms](https://www.archlinux.org/packages/?name=dkms) added and [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) removed (as it is listed by the dkms pacakge as *optional*).
 
 ### Build source location
 
 Build sources should go into (this is the default build directory for DKMS):
 
 ```
-/usr/src/_PACKAGE_NAME_-_PACKAGE_VERSION_
+/usr/src/*PACKAGE_NAME*-*PACKAGE_VERSION*
 
 ```
 
@@ -164,7 +164,7 @@ Loading and unloading modules should be left to the user. Consider the possibili
 
 ### namcap output
 
-[namcap](/index.php/Namcap "Namcap") (which attempts to check for common mistakes and non-standard decisions in a package) is good practice to use at least once on _any_ package; however, it has not yet been updated for DKMS specific guidelines.
+[namcap](/index.php/Namcap "Namcap") (which attempts to check for common mistakes and non-standard decisions in a package) is good practice to use at least once on *any* package; however, it has not yet been updated for DKMS specific guidelines.
 
 For example, DKMS uses `/usr/src/` by default, but Namcap believes this to be a non-standard directory, a little contrary to its [reference](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard "wikipedia:Filesystem Hierarchy Standard").
 
@@ -175,7 +175,6 @@ Here is an example package that edits `dkms.conf` according to the package name 
 #### PKGBUILD
 
  `PKGBUILD` 
-
 ```
 # Maintainer: foo <foo(at)gmail(dot)com>
 # Contributor: bar <bar(at)gmai(dot)com>
@@ -194,7 +193,7 @@ install=${pkgname}.install
 source=("${url}/files/tarball.tar.gz"
         'dkms.conf'
         'linux-3.14.patch')
-md5sums=(_use 'updpkgsums'_)
+md5sums=(*use 'updpkgsums'*)
 
 build() {
   cd ${_pkgbase}-${pkgver}
@@ -231,7 +230,6 @@ package() {
 #### dkms.conf
 
  `dkms.conf` 
-
 ```
 PACKAGE_NAME="@_PKGBASE@"
 PACKAGE_VERSION="@PKGVER@"
@@ -247,13 +245,12 @@ AUTOINSTALL="yes"
 Instead of `depmod` now `dkms install` can be used (it depends on `dkms build`, which depends on `dkms add`):
 
  `amazing-dkms.install` 
-
 ```
 # old version (without -$pkgrel): ${1%%-*}
 # new version (without -$pkgrel): ${2%%-*}
 
 post_install() {
-    dkms install _amazing_/${1%%-*}
+    dkms install *amazing*/${1%%-*}
 }
 
 pre_upgrade() {
@@ -265,7 +262,7 @@ post_upgrade() {
 }
 
 pre_remove() {
-    dkms remove _amazing_/${1%%-*} --all
+    dkms remove *amazing*/${1%%-*} --all
 }
 
 ```

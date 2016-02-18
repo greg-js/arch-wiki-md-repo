@@ -26,7 +26,7 @@ Najprv si prečítajte [The Arch Way](/index.php/The_Arch_Way "The Arch Way") a 
 
 ## Q) Našiel som chybu v balíčku X, čo by som mal urobiť?
 
-**A)** Najprv potrebujete zistiť, či táto chyba je niečo, čo môže tím Archu opraviť. Niekedy nie je (to že padá firefox môže byť dôsledkom chyby tímu Mozilla) - toto sa nazýva _upstream error_ (protiprúdová chyba). Ak to je problém Archu, je séria krokov ktoré môžete vykonať:
+**A)** Najprv potrebujete zistiť, či táto chyba je niečo, čo môže tím Archu opraviť. Niekedy nie je (to že padá firefox môže byť dôsledkom chyby tímu Mozilla) - toto sa nazýva *upstream error* (protiprúdová chyba). Ak to je problém Archu, je séria krokov ktoré môžete vykonať:
 
 1.  Hľadajte informácie na fórach. Pozrite, či si to nevšimol aj niekto iný.
 2.  Oznámte to udržiavateľovi balíčka. Pre túto informáciu skúste `pacman -Qi <názov balíčka>`.
@@ -61,7 +61,7 @@ Od verzie 2.9.6, balíček pacman obsahuje bash skript s názvom `pacman-optimiz
 
 ## Q) Arch potrebuje lepší inštalátor. Možno grafický (GUI) inštalátor.
 
-**A)** Diskusia o "lepšom" inštalátorovi je subjektívny názor. Najlepším spôsobom ako sa vysporiadať s týmito otázkami je prispôsobiť insštalátor "spôsobu archu". Ak tento názor na lepší inštalátor bude podložený konkrétnejšími argumentami, možno že sa bude brať do úvahy pri ďalšom vývoji inštalátora. _Windows používa textovo založený inštalátor, FWIW_
+**A)** Diskusia o "lepšom" inštalátorovi je subjektívny názor. Najlepším spôsobom ako sa vysporiadať s týmito otázkami je prispôsobiť insštalátor "spôsobu archu". Ak tento názor na lepší inštalátor bude podložený konkrétnejšími argumentami, možno že sa bude brať do úvahy pri ďalšom vývoji inštalátora. *Windows používa textovo založený inštalátor, FWIW*
 
 ## Q) Arch potrebuje viac tlače (t.j. reklamy)
 

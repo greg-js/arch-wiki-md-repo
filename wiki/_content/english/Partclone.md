@@ -15,7 +15,7 @@ Install [partclone](https://www.archlinux.org/packages/?name=partclone) from the
 
 ### Without compression
 
-To backup _without_ compression:
+To backup *without* compression:
 
 ```
 $ partclone.ext4 -c -s /dev/sda1 -o ~/image_sda1.pcl
@@ -31,7 +31,7 @@ $ partclone.ext4 -r -s ~/image_sda1.pcl -o /dev/sda1
 
 ### With compression
 
-To backup _with_ compression:
+To backup *with* compression:
 
 ```
 $ partclone.ext4 -c -s /dev/sda1 | gzip -c > ~/image_sda1.pcl.gz

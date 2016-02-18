@@ -62,7 +62,7 @@ Finally, [reload](/index.php/Reload "Reload") the `sshd` service.
 
 **Tip:** Install [qrencode](https://www.archlinux.org/packages/?name=qrencode) to generate a scannable QR. Scan the QR with the authenticator app to automatically configure the key.
 
-Every user who wants to use two-pass authentication needs to generate a secret key file in his home folder. This can very easily be done using _google-authenticator_:
+Every user who wants to use two-pass authentication needs to generate a secret key file in his home folder. This can very easily be done using *google-authenticator*:
 
 ```
    $ google-authenticator

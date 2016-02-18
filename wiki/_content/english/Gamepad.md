@@ -173,7 +173,6 @@ Note that inside the kernel, the value is called `flatness` and is set using the
 Default configuration will look like similar to this:
 
  `$ ./G25manage --showcalibration /dev/input/by-id/usb-Madcatz_Saitek_Pro_Flight_X-55_Rhino_Stick_G0000090-event-joystick` 
-
 ```
 Supported Absolute axes:
    Absolute axis 0x00 (0) (X Axis) (min: 0, max: 65535, flatness: 4095 (=6.25%), fuzz: 255)
@@ -186,7 +185,6 @@ Supported Absolute axes:
 While a more reasonable setting would be achieved with something like this (repeat for other axes):
 
  `$ ./G25manage --evdev /dev/input/by-id/usb-Madcatz_Saitek_Pro_Flight_X-55_Rhino_Stick_G0000090-event-joystick --axis 0 --deadzone 512` 
-
 ```
 Event device file: /dev/input/by-id/usb-Madcatz_Saitek_Pro_Flight_X-55_Rhino_Stick_G0000090-event-joystick
  Axis index to deal with: 0
@@ -234,7 +232,6 @@ Nice thing about xboxdrv is that it exports resulting device as both old Joystic
 If you want to play games with your controller, you might want to disable joystick control over mouse cursor. To do this, edit /etc/X11/xorg.conf.d/50-joystick.conf so that it looks like this:
 
  `/etc/X11/xorg.conf.d/50-joystick.conf ` 
-
 ```
 Section "InputClass"
         Identifier "joystick catchall"
@@ -267,7 +264,7 @@ First, make sure you have [xf86-input-joystick](https://www.archlinux.org/packag
 
 ```
 
-**Note:** The _MatchIsJoystick "on"_ line doesn't seem to be required for this to work but you may want to uncomment it.
+**Note:** The *MatchIsJoystick "on"* line doesn't seem to be required for this to work but you may want to uncomment it.
 
 ## Specific devices
 
@@ -312,7 +309,7 @@ Steam properly recognizes it as a PS3 pad and Big Picture can be launched with t
 
 ##### Connecting via Bluetooth
 
-Install the [bluez-plugins](https://www.archlinux.org/packages/?name=bluez-plugins) and [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) packages, which includes the _sixaxis_ plugin. Then [start](/index.php/Start "Start") `bluetooth.service`, plug the controller in via USB, and the plugin should program your PC's bluetooth address into the controller automatically.
+Install the [bluez-plugins](https://www.archlinux.org/packages/?name=bluez-plugins) and [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) packages, which includes the *sixaxis* plugin. Then [start](/index.php/Start "Start") `bluetooth.service`, plug the controller in via USB, and the plugin should program your PC's bluetooth address into the controller automatically.
 
 You can now disconnect your controller. The next time you hit the PlayStation button it will connect without asking anything else.
 
@@ -331,7 +328,6 @@ Alternatively you can install [python-steamcontroller-git](https://aur.archlinux
 [python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/) can also be used to make the Steam Controller work for games running under Wine. You need to find and download the file `xbox360cemu.v.3.0.rar` (e.g. from here: [Download Link from 2shared](http://www.2shared.com/file/wcq8xuPf/xbox360cemuv30.html)). Then copy the files `dinput8.dll`, `xbox360cemu.ini`, `xinput1_3.dll` and `xinput_9_1_0.dll` to the directory that contains your game executable. Edit `xbox360cemu.ini` and only change the following values under `[PAD1]` to remap the Steam Controller correctly to a XBox Controller.
 
  `xbox360cemu.ini` 
-
 ```
 Right Analog X=4
 Right Analog Y=-5
@@ -351,7 +347,7 @@ Now start python-steamcontroller in Xbox360 mode (`sc-xbox.py start`). You might
 
 ### Xbox 360 controller
 
-Both the wired and wireless (with the _Xbox 360 Wireless Receiver for Windows_) controllers are supported by the `xpad` kernel module and should work without additional packages.
+Both the wired and wireless (with the *Xbox 360 Wireless Receiver for Windows*) controllers are supported by the `xpad` kernel module and should work without additional packages.
 
 It has been reported that the default xpad driver has some issues with a few newer wired and wireless controllers, such as:
 
@@ -565,7 +561,6 @@ As an alternative and for older versions of FNA or for SDL you can generate a ma
 Some software, Steam for example, will only recognize the first joystick it encounters. Due to a bug in the driver for Microsoft wireless periphery devices this can in fact be the bluetooth dongle. If you find you have a `/dev/input/js*` and `/dev/input/event*` belonging to you keyboard's bluetooth transceiver you can get automatically get rid of it by creating according udev rules. Create a `/`:
 
  `/etc/udev/rules.d/99-btcleanup.rules` 
-
 ```
 ACTION=="add", KERNEL=="js[0-9]*", SUBSYSTEM=="input", KERNELS=="...", ATTRS{bInterfaceSubClass}=="00", ATTRS{bInterfaceProtocol}=="00", ATTRS{bInterfaceNumber}=="02", RUN+="/usr/bin/rm /dev/input/js%n"
 ACTION=="add", KERNEL=="event*", SUBSYSTEM=="input", KERNELS=="...", ATTRS{bInterfaceSubClass}=="00", ATTRS{bInterfaceProtocol}=="00", ATTRS{bInterfaceNumber}=="02", RUN+="/usr/bin/rm /dev/input/event%n"

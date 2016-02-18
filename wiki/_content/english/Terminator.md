@@ -16,7 +16,7 @@
 
 ## Configuration
 
-See the [man page](https://en.wikipedia.org/wiki/man_page "wikipedia:man page") or right click Terminator and then click _Preferences_.
+See the [man page](https://en.wikipedia.org/wiki/man_page "wikipedia:man page") or right click Terminator and then click *Preferences*.
 
 ```
 man terminator_config

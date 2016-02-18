@@ -106,7 +106,7 @@ export LC_CTYPE=en_US.UTF-8
 
 ```
 
-**注意:** 若欲将此三行放至`~/.xinitrc`中，请注意将其放在`exec __example_WM_or_DE__`行之前；此为常见错误；
+**注意:** 若欲将此三行放至`~/.xinitrc`中，请注意将其放在`exec *_example_WM_or_DE_*`行之前；此为常见错误；
 
 **注意:** 该方法适用于slim或者无登陆管理器的用户，GDM和KDM用户可以在Gnome或KDE设置中选择语言。
 

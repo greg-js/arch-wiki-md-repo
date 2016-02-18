@@ -1,4 +1,4 @@
-**ppp** (Paul's PPP Package) is an open source package which implements the [point-to-point protocol](https://en.wikipedia.org/wiki/point-to-point_protocol "wikipedia:point-to-point protocol") (PPP) on Linux and Solaris systems. It is implemented as single _pppd_ daemon and acts as backend for [xl2tpd](https://www.archlinux.org/packages/?name=xl2tpd), [pptpd](https://www.archlinux.org/packages/?name=pptpd) and [netctl](/index.php/Netctl "Netctl"). [3G](https://en.wikipedia.org/wiki/3G "wikipedia:3G"), [L2TP](https://en.wikipedia.org/wiki/L2TP "wikipedia:L2TP") and [PPPoE](https://en.wikipedia.org/wiki/PPPoE "wikipedia:PPPoE") connections are internally based on PPP protocol and therefore can be managed by ppp.
+**ppp** (Paul's PPP Package) is an open source package which implements the [point-to-point protocol](https://en.wikipedia.org/wiki/point-to-point_protocol "wikipedia:point-to-point protocol") (PPP) on Linux and Solaris systems. It is implemented as single *pppd* daemon and acts as backend for [xl2tpd](https://www.archlinux.org/packages/?name=xl2tpd), [pptpd](https://www.archlinux.org/packages/?name=pptpd) and [netctl](/index.php/Netctl "Netctl"). [3G](https://en.wikipedia.org/wiki/3G "wikipedia:3G"), [L2TP](https://en.wikipedia.org/wiki/L2TP "wikipedia:L2TP") and [PPPoE](https://en.wikipedia.org/wiki/PPPoE "wikipedia:PPPoE") connections are internally based on PPP protocol and therefore can be managed by ppp.
 
 ## Contents
 
@@ -30,8 +30,7 @@ Make sure that your kernel is compiled with PPPoE support (present in default ke
 
 Create the connection configuration file:
 
- `/etc/ppp/peers/_your_provider_` 
-
+ `/etc/ppp/peers/*your_provider*` 
 ```
 plugin rp-pppoe.so
 # rp_pppoe_ac 'your ac name'
@@ -40,7 +39,7 @@ plugin rp-pppoe.so
 # network interface
 eth0
 # login name
-name "_someloginname_"
+name "*someloginname*"
 usepeerdns
 persist
 # Uncomment this if you want to enable dial on demand
@@ -51,32 +50,32 @@ hide-password
 noauth
 ```
 
-If `usepeerdns` option is used, _pppd_ will create the `/etc/ppp/resolv.conf` file with obtained DNS addresses while establishing a connection. By default, the `/etc/ppp/ip-up.d/00_dns` hook script moves this file to `/etc/resolv.conf`, allowing the system to use these name servers. If this is undesirable (e.g. you are using a local caching DNS), edit the `/etc/ppp/ip-up.d/00_dns.sh` as you need.
+If `usepeerdns` option is used, *pppd* will create the `/etc/ppp/resolv.conf` file with obtained DNS addresses while establishing a connection. By default, the `/etc/ppp/ip-up.d/00_dns` hook script moves this file to `/etc/resolv.conf`, allowing the system to use these name servers. If this is undesirable (e.g. you are using a local caching DNS), edit the `/etc/ppp/ip-up.d/00_dns.sh` as you need.
 
-Put a line like this in `/etc/ppp/pap-secrets` or `/etc/ppp/chap-secrets` as required by the authentication method used by your ISP. It is OK to write these two files at the same time, _pppd_ will automatically use the appropriate one:
+Put a line like this in `/etc/ppp/pap-secrets` or `/etc/ppp/chap-secrets` as required by the authentication method used by your ISP. It is OK to write these two files at the same time, *pppd* will automatically use the appropriate one:
 
 ```
-_someloginname_ * _yourpassword_
+*someloginname* * *yourpassword*
 
 ```
 
 You can now start the link using the command:
 
 ```
-# pppd call _your_provider_
+# pppd call *your_provider*
 
 ```
 
 Alternatively, you can use this
 
 ```
-# pon _your_provider_
+# pon *your_provider*
 
 ```
 
-where _your_provider_ is the exact name of your options file in `/etc/ppp/peers`.
+where *your_provider* is the exact name of your options file in `/etc/ppp/peers`.
 
-To see whether your PPPoE connection is started correctly, check the _pppd_ output in system logs:
+To see whether your PPPoE connection is started correctly, check the *pppd* output in system logs:
 
 ```
 # journalctl -b --no-pager | grep pppd
@@ -108,7 +107,7 @@ Jul 09 22:42:39 localhost pppd[239]: secondary DNS address 210.21.196.6
 By default the configuration in `/etc/ppp/peers/provider` is treated as the default, so if you want to make "your_provider" the default, you can create a link like this
 
 ```
-# ln -s /etc/ppp/peers/_your_provider_ /etc/ppp/peers/provider
+# ln -s /etc/ppp/peers/*your_provider* /etc/ppp/peers/provider
 
 ```
 
@@ -122,20 +121,20 @@ Now you can start the link by simply running:
 To close a connection, use this
 
 ```
-# poff _your_provider_
+# poff *your_provider*
 
 ```
 
 ### Starting pppd on boot
 
 *   Configure the `ppp_generic` module to load on boot. See [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules") for more information.
-*   [Enable](/index.php/Enable "Enable") the systemd service `ppp@_your_provider_.service`.
+*   [Enable](/index.php/Enable "Enable") the systemd service `ppp@*your_provider*.service`.
 
 ## Tips and tricks
 
 ### Do an auto redial
 
-If _pppd_ is running, you can force a connection reset by sending the `SIGHUP` signal to the process:
+If *pppd* is running, you can force a connection reset by sending the `SIGHUP` signal to the process:
 
 ```
 # export PPPD_PID=$(pidof pppd)
@@ -185,10 +184,9 @@ Save and exit. Your PPPoE connection will now restart every day at 4AM.
 
 #### Using a systemd timer
 
-An alternative way to force a reconnect is using a [systemd](/index.php/Systemd "Systemd") timer and the _poff_ script (in particular its `-r` option). Simply create a _.service_ and _.timer_ files with the same name:
+An alternative way to force a reconnect is using a [systemd](/index.php/Systemd "Systemd") timer and the *poff* script (in particular its `-r` option). Simply create a *.service* and *.timer* files with the same name:
 
  `ppp-redial.timer` 
-
 ```
 [Unit]
 Description=Reconnect PPP connections daily
@@ -200,9 +198,7 @@ OnCalendar=*-*-* 05:00:00
 WantedBy=multi-user.target
 
 ```
-
  `ppp-redial.service` 
-
 ```
 [Unit]
 Description=Reconnect PPP connections
@@ -219,10 +215,10 @@ Now just [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Star
 
 ### Default route
 
-If you have a preconfigured default route before the _pppd_ is started, the default route is kept, so take a look in `/var/log/errors.log` and if you have something like:
+If you have a preconfigured default route before the *pppd* is started, the default route is kept, so take a look in `/var/log/errors.log` and if you have something like:
 
 ```
-pppd[nnnn]: not replacing existing default route via _xxx.xxx.xxx.xxx_
+pppd[nnnn]: not replacing existing default route via *xxx.xxx.xxx.xxx*
 
 ```
 
@@ -231,7 +227,6 @@ and `xxx.xxx.xxx.xxx` is not the correct route for you
 *   Create a new script in `/etc/ppp/ip-pre-up.d` with this content:
 
  `/etc/ppp/ip-pre-up.d/10-route-del-default.sh` 
-
 ```
 #!/bin/sh
 /usr/bin/route del default
@@ -253,10 +248,9 @@ iptables -I FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
 
 ```
 
-Now, for some reason, just trying to save the resulting iptables configuration with _iptables-save_ and restoring it later, does not work. It has to be executed after the other iptables configuration had been loaded. So, here is a systemd unit to solve it:
+Now, for some reason, just trying to save the resulting iptables configuration with *iptables-save* and restoring it later, does not work. It has to be executed after the other iptables configuration had been loaded. So, here is a systemd unit to solve it:
 
  `pmtu-clamping.service` 
-
 ```
 [Unit]
 Description=PMTU clamping for pppoe
@@ -276,7 +270,7 @@ And [enable](/index.php/Enable "Enable") it.
 
 ### pppd cannot load kernel module ppp_generic
 
-When starting PPTP client, the _pppd_ process cannot locate the appropriate module:
+When starting PPTP client, the *pppd* process cannot locate the appropriate module:
 
 ```
 Couldn't open the /dev/ppp device: No such device or address

@@ -25,7 +25,7 @@ Various patched variants exist which extend dmenu's default functionality. Consi
 *   [dmenu-xft-mouse-height](https://aur.archlinux.org/packages/dmenu-xft-mouse-height/): XFT font support, custom height, and mouse support
 *   [dmenu2](https://aur.archlinux.org/packages/dmenu2/): dmenu fork with many useful patches applied and additional capabilities added including dimming, specifying a custom opacity, and underlining.
 
-You may run _dmenu_ with:
+You may run *dmenu* with:
 
 ```
 $ dmenu_run
@@ -34,31 +34,33 @@ $ dmenu_run
 
 ## Configuration
 
-Now, you will want to attach the `dmenu_run` command to a keystroke combination. This can be done either via your window manager or desktop environment configuration, or with a program like [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys). See the [Hotkeys](/index.php/Hotkeys "Hotkeys") article for more information. Also, it is helpful to [Prelink](/index.php/Prelink "Prelink") _dmenu_.
+Now, you will want to attach the `dmenu_run` command to a keystroke combination. This can be done either via your window manager or desktop environment configuration, or with a program like [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys). See the [Hotkeys](/index.php/Hotkeys "Hotkeys") article for more information. Also, it is helpful to [Prelink](/index.php/Prelink "Prelink") *dmenu*.
 
 ### Displaying Custom Items
 
-Custom items may be shown by piping them into _dmenu_. For example:
+Custom items may be shown by piping them into *dmenu*. For example:
 
 ```
-$ echo -e "first\nsecond\nthird" | dmenu
+$ echo -e "first
+second
+third" | dmenu
 
 ```
 
 ### Manually Adding Items
 
-_dmenu_ will look for executables in the directories defined in your `$PATH`. See the following article for information on modifying your `$PATH`: [Environment variables](/index.php/Environment_variables "Environment variables")
+*dmenu* will look for executables in the directories defined in your `$PATH`. See the following article for information on modifying your `$PATH`: [Environment variables](/index.php/Environment_variables "Environment variables")
 
 ### Fonts
 
-_dmenu_ can display fonts using the [X logical font description](https://en.wikipedia.org/wiki/XLFD "wikipedia:XLFD") as found using the tool _xfontsel_, which is provided by [xorg-xfontsel](https://www.archlinux.org/packages/?name=xorg-xfontsel). This example will run dmenu using the [terminus-font](https://www.archlinux.org/packages/?name=terminus-font):
+*dmenu* can display fonts using the [X logical font description](https://en.wikipedia.org/wiki/XLFD "wikipedia:XLFD") as found using the tool *xfontsel*, which is provided by [xorg-xfontsel](https://www.archlinux.org/packages/?name=xorg-xfontsel). This example will run dmenu using the [terminus-font](https://www.archlinux.org/packages/?name=terminus-font):
 
 ```
 $ dmenu_run -fn "-xos4-terminus-medium-r-*-*-14-*"
 
 ```
 
-The syntax is similar if using a _dmenu_ variant patched with XFT support.
+The syntax is similar if using a *dmenu* variant patched with XFT support.
 
 ```
 $ dmenu_run -fn 'Droid Sans Mono-9'
@@ -67,16 +69,15 @@ $ dmenu_run -fn 'Droid Sans Mono-9'
 
 ### Support for shell aliases
 
-_dmenu_ does not support [shell aliases](/index.php/Bash#Aliases "Bash"). To have _dmenu_ recognize your aliases, [install](/index.php/Install "Install") the [dmenu-recent-aliases](https://aur.archlinux.org/packages/dmenu-recent-aliases/) package from the [AUR](/index.php/AUR "AUR") and run `dmenu_run_aliases`. Your aliases must be in either `~/.bash_aliases` or `~/.zsh_aliases` to be recognized by _dmenu_run_aliases_.
+*dmenu* does not support [shell aliases](/index.php/Bash#Aliases "Bash"). To have *dmenu* recognize your aliases, [install](/index.php/Install "Install") the [dmenu-recent-aliases](https://aur.archlinux.org/packages/dmenu-recent-aliases/) package from the [AUR](/index.php/AUR "AUR") and run `dmenu_run_aliases`. Your aliases must be in either `~/.bash_aliases` or `~/.zsh_aliases` to be recognized by *dmenu_run_aliases*.
 
 ## Troubleshooting
 
 ### No locale support
 
-Running _dmenu_run_ results in the following error message:
+Running *dmenu_run* results in the following error message:
 
  `$ dmenu_run` 
-
 ```
 no locale support
 
@@ -86,7 +87,7 @@ Make sure that the environment variable `LANG` is correctly set. See the followi
 
 ### Missing menu entries
 
-If certain entries are missing from _dmenu_, the cache may be malformed. Delete it and restart _dmenu_.
+If certain entries are missing from *dmenu*, the cache may be malformed. Delete it and restart *dmenu*.
 
 ```
 $ rm ~/.dmenu_cache

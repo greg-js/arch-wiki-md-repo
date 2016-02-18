@@ -44,7 +44,7 @@ Nos centraremos en los dispositivos siguientes:
 
 ### Video
 
-La configuración de este chip no suele dar problemas en Arch Linux, después de pasar por el apartado de la instalación de las _X_ en la [La Guía de Principiantes](https://wiki.archlinux.org/index.php/Beginners%27_Guide_(Espa%C3%B1ol)#Instalar_X), instale el driver correspondiente:
+La configuración de este chip no suele dar problemas en Arch Linux, después de pasar por el apartado de la instalación de las *X* en la [La Guía de Principiantes](https://wiki.archlinux.org/index.php/Beginners%27_Guide_(Espa%C3%B1ol)#Instalar_X), instale el driver correspondiente:
 
 ```
 # pacman -S xf86-video-intel
@@ -60,7 +60,7 @@ $ alsamixer
 
 ```
 
-Utilizando las teclas de cursor, seleccione **PCM** y aumente el valor a 100, seguido de la tecla _Esc_. Para finalizar guarde la configuración anterior con el siguiente comando:
+Utilizando las teclas de cursor, seleccione **PCM** y aumente el valor a 100, seguido de la tecla *Esc*. Para finalizar guarde la configuración anterior con el siguiente comando:
 
 ```
 # alsactl store
@@ -69,7 +69,7 @@ Utilizando las teclas de cursor, seleccione **PCM** y aumente el valor a 100, se
 
 ### Tarjeta Inalámbrica
 
-El dispositivo siguiente es el que demanda más tiempo, preparar la configuración correcta puede resultar confusa pues hay demasiada información referente al mismo procedimiento y no siémpre concuerda. Aquí presentamos un método bastante sencillo y claro. Como información general, este dispositivo es propiciado por Dell bajo el nombre _1397 WLAN 802.11g Half Mini-Card_. Es conveniente leer el artículo relacionado a la [Configuración Wifi](https://wiki.archlinux.org/index.php/Wireless_Setup_(Espa%C3%B1ol)), para después continuar con las siguientes líneas.
+El dispositivo siguiente es el que demanda más tiempo, preparar la configuración correcta puede resultar confusa pues hay demasiada información referente al mismo procedimiento y no siémpre concuerda. Aquí presentamos un método bastante sencillo y claro. Como información general, este dispositivo es propiciado por Dell bajo el nombre *1397 WLAN 802.11g Half Mini-Card*. Es conveniente leer el artículo relacionado a la [Configuración Wifi](https://wiki.archlinux.org/index.php/Wireless_Setup_(Espa%C3%B1ol)), para después continuar con las siguientes líneas.
 
 El driver necesario se encuentra en [AUR](https://aur.archlinux.org/packages.php?ID=21690) y requerimos tener instalado [Yaourt](https://wiki.archlinux.org/index.php/Yaourt_(Espa%C3%B1ol)). Asegúrese de contar con un kernel mayor a 2.6.33, ya que en versiones anteriores presenta conflictos con dicho driver. Puede comprobar esto con un simple:
 
@@ -87,9 +87,9 @@ $ yaourt -S b43-firmware
 
 Con esto descargamos e instalamos el driver desde la página de [Broadcom](http://www.broadcom.com/support/802.11/linux_sta.php).
 
-**Tip:** Cuando use _yaourt_, evite hacerlo como **root** o superusuario. Siempre es una mala idea.
+**Tip:** Cuando use *yaourt*, evite hacerlo como **root** o superusuario. Siempre es una mala idea.
 
-Ahora cargaremos los módulos correspondientes para el correcto funcionamiento de nuestra tarjeta, para esto abrimos el archivo _/etc/rc.local_ con el editor de su elección, por ejemplo [Nano](/index.php/Nano "Nano"):
+Ahora cargaremos los módulos correspondientes para el correcto funcionamiento de nuestra tarjeta, para esto abrimos el archivo */etc/rc.local* con el editor de su elección, por ejemplo [Nano](/index.php/Nano "Nano"):
 
 ```
 # nano /etc/rc.local
@@ -125,7 +125,7 @@ Para el funcionamiento básico del touchpad requerimos instalar el [Touchpad Syn
 
 ```
 
-Notaremos que el _Scroll_ y el _Tapping_ no funciona, esto requiere la edición del archivo _/etc/X11/xorg.conf.d/10-synaptics.conf_. A partir de la línea 8 justo debajo del Tapbutton3, agregue las siguientes líneas respetando la indentación:
+Notaremos que el *Scroll* y el *Tapping* no funciona, esto requiere la edición del archivo */etc/X11/xorg.conf.d/10-synaptics.conf*. A partir de la línea 8 justo debajo del Tapbutton3, agregue las siguientes líneas respetando la indentación:
 
 ```
 Option "JumpyCursorThreshold" "90"

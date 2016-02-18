@@ -79,7 +79,7 @@ dd if=$my_boot_part of=/media/win/linux.bin bs=512 count=1
 
 ```
 
-*   Boot to Windows and open up and you should be able to see the FAT32 partition. Copy the linux.bin file to `C:\`. Now run **cmd** with administrator privileges (navigate to _Start > All Programs > Accessories_, right-click on _Command Prompt_ and select _Run as administrator_):
+*   Boot to Windows and open up and you should be able to see the FAT32 partition. Copy the linux.bin file to `C:\`. Now run **cmd** with administrator privileges (navigate to *Start > All Programs > Accessories*, right-click on *Command Prompt* and select *Run as administrator*):
 
 ```
 bcdedit /create /d “Linux” /application BOOTSECTOR
@@ -114,9 +114,9 @@ Computers that come with newer versions of Windows often have [secure boot](/ind
 
 ## 时间标准
 
-*   建议：将 Arch Linux 和 Windows 皆设置为UTC。需要[修改Windows注册表](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Windows_.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_UTC "Time (简体中文)")。另：记得关闭Windows的在线时间校准以防硬件时间被设为_localtime_。若需同步网络时间(NTP sync)，请在Arch Linux上安装[ntpd](/index.php/Ntpd "Ntpd")。
+*   建议：将 Arch Linux 和 Windows 皆设置为UTC。需要[修改Windows注册表](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Windows_.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_UTC "Time (简体中文)")。另：记得关闭Windows的在线时间校准以防硬件时间被设为*localtime*。若需同步网络时间(NTP sync)，请在Arch Linux上安装[ntpd](/index.php/Ntpd "Ntpd")。
 
-*   不建议：将Arch Linux的硬件时钟模式设为_localtime_并禁用任何时钟同步服务（如`ntpd.service`）。这将会使Windows检查硬件时间的正确性，并且你需要在一年中至少启动Windows两次(分别在春季与秋季)以正确应用[夏令时](https://en.wikipedia.org/wiki/Daylight_savings_time "wikipedia:Daylight savings time")。So please **don't** ask on the forums why the clock is one hour behind or ahead if you usually go for days or weeks without booting into Windows（所以请不要忘记启动Windows而在论坛问为什麼时钟会快/慢一个小时）。}}
+*   不建议：将Arch Linux的硬件时钟模式设为*localtime*并禁用任何时钟同步服务（如`ntpd.service`）。这将会使Windows检查硬件时间的正确性，并且你需要在一年中至少启动Windows两次(分别在春季与秋季)以正确应用[夏令时](https://en.wikipedia.org/wiki/Daylight_savings_time "wikipedia:Daylight savings time")。So please **don't** ask on the forums why the clock is one hour behind or ahead if you usually go for days or weeks without booting into Windows（所以请不要忘记启动Windows而在论坛问为什麼时钟会快/慢一个小时）。}}
 
 ## See also
 

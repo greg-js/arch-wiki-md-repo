@@ -67,7 +67,6 @@ To idenitfy your model, see `/sys/class/dmi/id/product_name`
 #### PCI devices
 
  `lspci` 
-
 ```
 00:00.0 Host bridge: Intel Corporation Mobile 4 Series Chipset Memory Controller Hub (rev 07)
 00:02.0 VGA compatible controller: Intel Corporation Mobile 4 Series Chipset Integrated Graphics Controller (rev 07)
@@ -100,7 +99,6 @@ To idenitfy your model, see `/sys/class/dmi/id/product_name`
 #### USB devices
 
  `lsusb` 
-
 ```
 Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
 Bus 007 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
@@ -122,7 +120,6 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 #### CPU architecture
 
  `lscpu` 
-
 ```
 Architecture:          x86_64
 CPU op-mode(s):        32-bit, 64-bit
@@ -150,7 +147,6 @@ NUMA node0 CPU(s):     0,1
 #### PCI devices
 
  `lspci` 
-
 ```
 00:00.0 Host bridge: Intel Corporation Mobile 4 Series Chipset Memory Controller Hub (rev 07)
 00:02.0 VGA compatible controller: Intel Corporation Mobile 4 Series Chipset Integrated Graphics Controller (rev 07)
@@ -183,7 +179,6 @@ NUMA node0 CPU(s):     0,1
 #### USB devices
 
  `lsusb` 
-
 ```
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub

@@ -92,7 +92,6 @@ Open `/etc/X11/xorg.conf.d/10-evdev.conf` and comment out every line in the sect
 Next, you'll want to create a configuration file for your trackpad. The following is a good starting point.
 
  `/etc/X11/xorg.conf.d/10-synaptics.conf` 
-
 ```
 Section "InputClass"
    Driver      "synaptics"

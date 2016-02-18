@@ -2,7 +2,7 @@ Fontconfig è una libreria progettata per fornire un elenco di [fonts](/index.ph
 
 Anche se Fontconfig è l'attuale standard in Linux, alcune applicazioni si basano ancora sul metodo originale di categorizzazione dei font: la configurazione di Xorg server.
 
-I pacchetti rendering dei font su Arch Linux includono il supporto per _freetype2_ con l'interprete bytecode (BCI) abilitato. Esistono dei pacchetti patchati per migliorare il rendering dei fonts, specialmente con monitor LCD. Vedere la sezione [#Pacchetti con patch](#Pacchetti_con_patch) riportata più avanti. Il pacchetto [#Infinality](#Infinality) consente sia l'auto-hinting che il subpixel rendering, permette la regolazione dei filtri LCD senza ricompilare e migliora l'auto-hinting dei caratteri in grassetto.
+I pacchetti rendering dei font su Arch Linux includono il supporto per *freetype2* con l'interprete bytecode (BCI) abilitato. Esistono dei pacchetti patchati per migliorare il rendering dei fonts, specialmente con monitor LCD. Vedere la sezione [#Pacchetti con patch](#Pacchetti_con_patch) riportata più avanti. Il pacchetto [#Infinality](#Infinality) consente sia l'auto-hinting che il subpixel rendering, permette la regolazione dei filtri LCD senza ricompilare e migliora l'auto-hinting dei caratteri in grassetto.
 
 ## Contents
 
@@ -87,7 +87,7 @@ La configurazione può essere effettuata sia per il singolo utente attraverso `$
 
 Fontconfig raccoglie tutte le configurazioni in un file centrale (`/etc/fonts/fonts.conf`). Questo è un file temporaneo e non deve essere modificato in quanto viene sostituito durante gli aggiornamenti di fontconfig. Fontconfig informa le applicazioni di attingere a questo file per conoscere i font disponibili e come devono venir randerizzati. Questo file è un insieme di regole dalle varie configurazioni di fontconfig (la configurazione globale (`/etc/fonts/local.conf`), i preset configurati in `/etc/fonts/conf.d/`, e il file di configurazione utente (`$XDG_CONFIG_HOME/fontconfig/fonts.conf`).
 
-**Nota:** Per alcuni ambienti desktop (come [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") e [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)")) utilizzando il _Font Control Panel_ si creerà o sovrascriverà automaticamente il file di configurazione font dell'utente. Per questi ambienti desktop, è meglio far corrispondere le configurazioni già definite dei font per ottenere il comportamento previsto.
+**Nota:** Per alcuni ambienti desktop (come [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") e [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)")) utilizzando il *Font Control Panel* si creerà o sovrascriverà automaticamente il file di configurazione font dell'utente. Per questi ambienti desktop, è meglio far corrispondere le configurazioni già definite dei font per ottenere il comportamento previsto.
 
 I file di configurazione di Fontconfig utilizzano il formato [XML](https://en.wikipedia.org/wiki/XML "wikipedia:XML") e necessitano di questi headers:
 
@@ -192,7 +192,7 @@ Subpixel rendering effettivamente triplica la risoluzione orizzontale (o vertica
 
 La maggior parte dei monitor attuali usano specifiche per il rosso, il verde e il blu (RGB). Fontconfig avrà bisogno di conoscere il tipo di monitor per poter visualizzare correttamente i font.
 
-_RGB (molto comune), BGR, V-RGB (verticale), o V-BGR_
+*RGB (molto comune), BGR, V-RGB (verticale), o V-BGR*
 
 Per abilitare il subpixel rendering:
 
@@ -284,7 +284,7 @@ L'auto-hinter utilizza sofisticati metodi per il rendering dei font, ma spesso r
 
 ### Abilitare l'anti-aliasing solo per i caratteri grandi
 
-_Consultare anche [sharpfonts.co.cc](http://sharpfonts.co.cc/) per ulteriori informazioni_
+*Consultare anche [sharpfonts.co.cc](http://sharpfonts.co.cc/) per ulteriori informazioni*
 
 Alcuni utenti preferiscono una visualizzazione più nitida non ottenibile con l'anti-aliasing:
 
@@ -335,7 +335,7 @@ Il modo più sicuro per farlo è di aggiungere del codice XML simile a quello qu
 
 ```
 
-Un approccio alternativo è quello di impostare il font "preferito", ma _questo funziona solo se il font originale non è presente sul sistema_, nel qual caso quello specificato verrà quindi sostituito:
+Un approccio alternativo è quello di impostare il font "preferito", ma *questo funziona solo se il font originale non è presente sul sistema*, nel qual caso quello specificato verrà quindi sostituito:
 
 ```
 ...
@@ -383,21 +383,21 @@ Per disabilitare i caratteri bitmap incorporati per un carattere specifico:
 
 ### Creare stili grassetto e corsivo per i font incompleti
 
-Freetype ha la capacità di creare automaticamente gli stili _corsivo_ e **grassetto** per i font che non li hanno, ma solo se esplicitamente richiesto dall'applicazione. Dato che di rado i programmi inviano tali richieste, in questa sezione verrà trattata la creazione manuale forzata degli stili mancanti.
+Freetype ha la capacità di creare automaticamente gli stili *corsivo* e **grassetto** per i font che non li hanno, ma solo se esplicitamente richiesto dall'applicazione. Dato che di rado i programmi inviano tali richieste, in questa sezione verrà trattata la creazione manuale forzata degli stili mancanti.
 
 Iniziare modificando `/usr/share/fonts/fonts.cache-1` come spiegato di seguito. Conservare una copia delle modifiche su un altro file, poiché un aggiornamento font eseguito con `fc-cache` sovrascriverà `/usr/share/fonts/fonts.cache-1`.
 
 Supponendo che il font Dupree sia installato:
 
 ```
-"dupree.ttf" 0 "Dupree:style=Regular:slant=0:weight=80:width=100:foundry=unknown:index=0:outline=True:_etc..._
+"dupree.ttf" 0 "Dupree:style=Regular:slant=0:weight=80:width=100:foundry=unknown:index=0:outline=True:*etc...*
 
 ```
 
-Duplicare la riga, e cambiare `style=Regular` con `style=Bold` o qualsiasi altro stile. Modificare inoltre `slant=0` con `slant=100` per corsivo, `weight=80` con `weight=200` per grassetto, o entrambi per _**grassetto corsivo**_:
+Duplicare la riga, e cambiare `style=Regular` con `style=Bold` o qualsiasi altro stile. Modificare inoltre `slant=0` con `slant=100` per corsivo, `weight=80` con `weight=200` per grassetto, o entrambi per ***grassetto corsivo***:
 
 ```
-"dupree.ttf" 0 "Dupree:style=Bold Italic:slant=100:weight=200:width=100:foundry=unknown:index=0:outline=True:_etc..._
+"dupree.ttf" 0 "Dupree:style=Bold Italic:slant=100:weight=200:width=100:foundry=unknown:index=0:outline=True:*etc...*
 
 ```
 
@@ -457,7 +457,6 @@ Esempi di configurazioni fontconfig possono essere trovati in questa [pagina](/i
 Un semplice punto di partenza:
 
  `/etc/fonts/local.conf` 
-
 ```
 <?xml version='1.0'?>
 <!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
@@ -537,7 +536,7 @@ Se si imposta, ad esempio win7 oppure osx è necessario avere installato i relat
 
 **Nota:** Le impostazioni predefinite di infinality possono far si che alcuni programmi visualizzino caratteri a 72 DPI anzichè a 96\. Se si riscontra il suddetto problema, aprire il file /etc/fonts/infinality/infinality.conf, cercare la sezione DPI e cambiare il valore da 72 a 96\. Questo problema è frequente in particolare su conky, i cui caratteri appariranno più piccoli di quanto dovrebbero. Questo causerà il disallineamento con le immagini.
 
-**Nota:** _Il file README per [freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/) vers. 2.4.8-5 dice: /etc/fonts/local.conf non esiste, o non contiene configurazioni legate ad infinality. Il file local.conf è ora obsoleto e completamente sostituito da questa configurazione._
+**Nota:** *Il file README per [freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/) vers. 2.4.8-5 dice: /etc/fonts/local.conf non esiste, o non contiene configurazioni legate ad infinality. Il file local.conf è ora obsoleto e completamente sostituito da questa configurazione.*
 
 per maggiori informazioni vedere questo articolo: [http://www.infinality.net/forum/viewtopic.php?f=2&t=77](http://www.infinality.net/forum/viewtopic.php?f=2&t=77)
 
@@ -563,7 +562,6 @@ Per ripristinare i pacchetti senza patch, reinstallare gli originali:
 Alcune applicazioni come [URxvt](/index.php/URxvt "URxvt") ignoreranno le impostazioni di fontconfig. Questo è molto evidente quando si utilizzano le patch infinality, per le quali è molto importante una corretta configurazione. È possibile aggirare questo problema utilizzando `~/.Xresources` , ma non è così flessibile come fontconfig. Esempio (vedere [#Fontconfig configuration](#Fontconfig_configuration) per chiarimenti sulle opzioni):
 
  `~/.Xresources` 
-
 ```
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
@@ -587,7 +585,7 @@ Se, inaspettatamente, i caratteri continuano ad essere grandi o piccoli, spropor
 Fontconfig dovrebbe essere in grado di rilevare i parametri DPI, come rilevato dal server Xorg. E' possibile controllare l'auto-rilevazione dei DPI con `xdpyinfo`:
 
  `$ xdpyinfo | grep dots`  `  resolution:    102x102 dots per inch` 
-**Nota:** Per utilizzare il comando _xdpyinfo_, è necessario installare il pacchetto [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo).
+**Nota:** Per utilizzare il comando *xdpyinfo*, è necessario installare il pacchetto [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo).
 
 Se i DPI non sono correttamente rilevati (di solito a causa di un errato EDID monitor), è possibile specificarli manualmente nella configurazione di Xorg, vedere [Dimensione dello schermo e DPI](https://wiki.archlinux.org/index.php/Xorg_%28Italiano%29#Dimensione_dello_schermo_e_DPI). Questa è la soluzione raccomandata, ma potrebbe non funzionare con alcuni driver.
 

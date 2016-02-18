@@ -23,7 +23,7 @@
 
 	[https://github.com/ghost1227/cdm](https://github.com/ghost1227/cdm) || [cdm-git](https://aur.archlinux.org/packages/cdm-git/)
 
-*   **[Console TDM](/index.php/Console_TDM "Console TDM")** — _xinit_ 的擴充，以純 Bash 撰寫。
+*   **[Console TDM](/index.php/Console_TDM "Console TDM")** — *xinit* 的擴充，以純 Bash 撰寫。
 
 	[http://code.google.com/p/t-display-manager/](http://code.google.com/p/t-display-manager/) || [console-tdm](https://aur.archlinux.org/packages/console-tdm/)
 
@@ -78,18 +78,18 @@
 
 ```
 
-這樣就可以馬上使用了。如果不行，可能是因為 _default.target_ (手動設置或之前安裝的遺留物)：
+這樣就可以馬上使用了。如果不行，可能是因為 *default.target* (手動設置或之前安裝的遺留物)：
 
  `$ ls -l /etc/systemd/system/default.target`  `[...] /etc/systemd/system/default.target -> /usr/lib/systemd/system/graphical.target` 
 
-直接刪除這個軟連結，_systemd_ 將會使用它貯存的 _default.target_ (也就是 _graphical.target_)。
+直接刪除這個軟連結，*systemd* 將會使用它貯存的 *default.target* (也就是 *graphical.target*)。
 
 ```
 # rm /etc/systemd/system/default.target
 
 ```
 
-啟用 KDM 之後，軟連結 _display-manager.service_ 就會設定到 `/etc/systemd/system/` 目錄下：
+啟用 KDM 之後，軟連結 *display-manager.service* 就會設定到 `/etc/systemd/system/` 目錄下：
 
  `$ ls -l /etc/systemd/system/display-manager.service`  `[...] /etc/systemd/system/display-manager.service -> /usr/lib/systemd/system/kdm.service` 
 
@@ -108,7 +108,7 @@ $ loginctl show-session $XDG_SESSION_ID
 
 許多顯示管理員會從 `/usr/share/xsessions/` 目錄讀取是否有可用的作業階段。該目錄包含了各桌面環境 (DM) 或視窗管理員 (WM) 的正規[桌面項目檔](http://standards.freedesktop.org/desktop-entry-spec/latest/)。
 
-若要在顯示管理員的作業階段清單內新增或移除項目，直接在 `/usr/share/xsessions/` 目錄下建立或移除 _.desktop_ 檔案。以下為一個典型 _.desktop_ 檔案範例：
+若要在顯示管理員的作業階段清單內新增或移除項目，直接在 `/usr/share/xsessions/` 目錄下建立或移除 *.desktop* 檔案。以下為一個典型 *.desktop* 檔案範例：
 
 ```
 [Desktop Entry]

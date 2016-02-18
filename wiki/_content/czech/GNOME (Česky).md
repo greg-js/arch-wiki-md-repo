@@ -88,7 +88,7 @@ Další informace najdete na [oficiálních stránkách GNOME 3.](http://www.gno
 
 ## Úvod
 
-GNOME 3 má _dvě_ prostředí: **GNOME Shell** (nový standardní layout) a **nouzový režim** (fallback mode). Sezení GNOME automaticky rozpozná, kdy počítač není schopen spustit Gnome Shell a v případě nutnosti spustí nouzový režim.
+GNOME 3 má *dvě* prostředí: **GNOME Shell** (nový standardní layout) a **nouzový režim** (fallback mode). Sezení GNOME automaticky rozpozná, kdy počítač není schopen spustit Gnome Shell a v případě nutnosti spustí nouzový režim.
 
 **Nouzový režim** se podobá GNOME 2\. (Používá gnome-panel/Metacity místo gnome-shell/Mutter.)
 
@@ -105,7 +105,7 @@ Aktualizaci je doporučeno spouštět z konzole nebo z jiného pracovního prost
 
 ```
 
-Touto aktualizací jsme nainstalovali pouze _nouzový režim_ GNOME 3.x. Pro instaci nového GNOME shellu:
+Touto aktualizací jsme nainstalovali pouze *nouzový režim* GNOME 3.x. Pro instaci nového GNOME shellu:
 
 ```
 # pacman -S gnome-shell
@@ -149,7 +149,6 @@ Pro nejlepší integraci prostředí je doporučen správce přihlášení **GDM
 Pokud GNOME radši spouštíte ručně z konzole, přidejte následující **jediný** řádek začínající slovem `exec` do souboru `~/.xinitrc`. Pro více informací viz [článek o xinitrc](/index.php/Xinitrc "Xinitrc").
 
  `~/.xinitrc` 
-
 ```
  #POUZE TENTO ŘÁDEK:
  exec gnome-session
@@ -172,7 +171,7 @@ Po úpravách vzhledu je často vyžadováno restartovat GNOME shell. Mohli bych
 
 ### Celkový vzhled
 
-GNOME 3 sice začalo "od píky", to s sebou ale nese i některé nepříjemnosti. Jednou z nich je zatím nepříliš obsáhlý konfigurační nástroj. Pokročilejší volby tady stále jsou, akorát nejsou uživateli tolik na očích. Nové _Nastavení systému_ je sice přehledné, každopádně nejspíš zatoužíte po více možnostech přizpůsobení vzhledu.
+GNOME 3 sice začalo "od píky", to s sebou ale nese i některé nepříjemnosti. Jednou z nich je zatím nepříliš obsáhlý konfigurační nástroj. Pokročilejší volby tady stále jsou, akorát nejsou uživateli tolik na očích. Nové *Nastavení systému* je sice přehledné, každopádně nejspíš zatoužíte po více možnostech přizpůsobení vzhledu.
 
 #### Gsettings
 
@@ -193,10 +192,9 @@ Podobně jako v **`~/.gtkrc-2.0`** u GTK2+, je i u GTK3 možné přizpůsobit vz
 
 Proměnná `$XDG_CONFIG_HOME` je obvykle nastavená na **~/.config**.
 
-_Adwaita,_ výchozí motiv GNOME 3, je součástí **gnome-themes-standard.** Další GTK3 motivy najdete třeba na [stránkách Deviantart.](http://browse.deviantart.com/customization/skins/linuxutil/desktopenv/gnome/gtk3/) Příklad:
+*Adwaita,* výchozí motiv GNOME 3, je součástí **gnome-themes-standard.** Další GTK3 motivy najdete třeba na [stránkách Deviantart.](http://browse.deviantart.com/customization/skins/linuxutil/desktopenv/gnome/gtk3/) Příklad:
 
  `${XDG_CONFIG_HOME}/gtk-3.0/settings.ini` 
-
 ```
   [Settings]
   gtk-theme-name = Adwaita
@@ -219,7 +217,7 @@ $ cp -R /home/user/Desktop/muj_motiv_ikon ~/.icons
 
 ```
 
-Nový motiv _muj_motiv_ikon_ si můžete aktivovat v **gnome-tweak-tool** v sekci _**Motiv**_.
+Nový motiv *muj_motiv_ikon* si můžete aktivovat v **gnome-tweak-tool** v sekci ***Motiv***.
 
 Jinak můžete motiv nastavit také ručně bez gnome-tweak-tool v **`${XDG_CONFIG_HOME}/gtk-3.0/settings.ini`**.
 
@@ -266,7 +264,6 @@ Deactivate bluetooth as startup-service if that is your intent. Refer to section
 Create a folder named **`nobluetooth.icon@panel.ui`** in **`~/.local/share/gnome-shell/extensions`**. Create two new files:
 
  `~/.local/share/gnome-shell/extensions/nobluetooth.icon@panel.ui/extension.js` 
-
 ```
 const Panel = imports.ui.panel;
 
@@ -275,9 +272,7 @@ function main() {
 }
 
 ```
-
  `~/.local/share/gnome-shell/extensions/nobluetooth.icon@panel.ui/metadata.json` 
-
 ```
 {
   "shell-version": ["3.0"],
@@ -312,7 +307,7 @@ Nainstalujte Gnome Shell rozšíření [alternative status menu](#Roz.C5.A1.C3.A
 
 The following tweak removes the confirmation dialog and sixty second delay for logging out.
 
-This dialog normally appears when you log out with the status menu. This tweak affects the _**Power Off**_ dialog as well. This is not a system-wide change; it affects only the user who enters this command. The change takes effect immediately after entering the command.
+This dialog normally appears when you log out with the status menu. This tweak affects the ***Power Off*** dialog as well. This is not a system-wide change; it affects only the user who enters this command. The change takes effect immediately after entering the command.
 
 ```
 $ gsettings set org.gnome.SessionManager logout-prompt 'false'
@@ -339,7 +334,7 @@ Like other desktop environments, GNOME uses .desktop files to populate its Appli
 
 ```
 
-For system wide changes, edit files in **`/usr/share/applications`**. For local changes, make a copy of _foo.desktop_ in your home folder.
+For system wide changes, edit files in **`/usr/share/applications`**. For local changes, make a copy of *foo.desktop* in your home folder.
 
 ```
 $ cp /usr/share/applications/foo.desktop ~/.local/share/applications/
@@ -363,10 +358,9 @@ Edit system files directly (make a backup first) or copy theme files to your loc
 
 For user themes, edit **`/usr/share/themes/<UserTheme>/gnome-shell/gnome-shell.css`**
 
-Edit _gnome-shell.css_ and replace the following values. Afterward, [restart the GNOME shell.](#Restartov.C3.A1n.C3.AD_shellu)
+Edit *gnome-shell.css* and replace the following values. Afterward, [restart the GNOME shell.](#Restartov.C3.A1n.C3.AD_shellu)
 
  `gnome-shell.css` 
-
 ```
  .icon-grid {
      spacing: 18px;
@@ -403,7 +397,7 @@ $ sudo pacman -S gnome-themes-standard
 
 At present this setting is changeable only through **gconf-editor.**
 
-For example, we move the close and minimize buttons to the left side of the titlebar. Open **gconf-editor** and locate the _**desktop.gnome.shell.windows.button_layout**_ key. Change its value to **`close,minimize:`** (Colon symbol designates the spacer between left side and right side of the titlebar.) Use whichever buttons in whatever order you prefer. You cannot use a button more than once. Also, keep in mind that certain buttons are deprecated. [Restart the shell](#Restartov.C3.A1n.C3.AD_shellu) to see your new button arrangement.
+For example, we move the close and minimize buttons to the left side of the titlebar. Open **gconf-editor** and locate the ***desktop.gnome.shell.windows.button_layout*** key. Change its value to **`close,minimize:`** (Colon symbol designates the spacer between left side and right side of the titlebar.) Use whichever buttons in whatever order you prefer. You cannot use a button more than once. Also, keep in mind that certain buttons are deprecated. [Restart the shell](#Restartov.C3.A1n.C3.AD_shellu) to see your new button arrangement.
 
 #### Skrytí záhlaví při maximalizaci
 
@@ -419,7 +413,6 @@ With suitable keybindings, you should be able to use `Alt` + `F5`, `Alt` + `F10`
 To prevent **`metacity-theme-3.xml`** from being overwritten each time package "gnome-themes-standard" is upgraded, add its name to **`/etc/pacman.conf`** with `NoUpgrade`.
 
  `/etc/pacman.conf` 
-
 ```
 ... previous lines ...
 
@@ -469,7 +462,7 @@ An alternative graphical interface to changing themes (gtk3, icons and cursor), 
 
 #### Větší písmo pro přihlášení
 
-This tweak enlarges the login font with a scaling factor. It is the same method employed by _Accessibility Manager_ on the desktop.
+This tweak enlarges the login font with a scaling factor. It is the same method employed by *Accessibility Manager* on the desktop.
 
 You must [export the GDM session variables](#Login_screen) before performing this tweak.
 
@@ -491,7 +484,7 @@ If the above tweak does not work for you or you are unable to export the GDM ses
 
 #### Make the power button interactive
 
-The default installation sets the power button to suspend the system. _**Power off**_ or _**Show dialog**_ is a better choice. You must first export the GDM session variables as [outlined previously.](#Login_screen)
+The default installation sets the power button to suspend the system. ***Power off*** or ***Show dialog*** is a better choice. You must first export the GDM session variables as [outlined previously.](#Login_screen)
 
 ```
  $ GSETTINGS_BACKEND=dconf gsettings set org.gnome.settings-daemon.plugins.power button-power 'interactive'
@@ -529,11 +522,11 @@ $ gnome-session-properties
 
 ```
 
-Výše uvedený příkaz otevře nabídku **Předvolby aplikací spouštěných při přihlášení**. Zvolte _**Přidat**_ and vyplňte následovně:
+Výše uvedený příkaz otevře nabídku **Předvolby aplikací spouštěných při přihlášení**. Zvolte ***Přidat*** and vyplňte následovně:
 
-| Název: | _Numlockx_ |
-| Příkaz: | _/usr/bin/numlockx on_ |
-| Komentář: | _Turns on numlock._ |
+| Název: | *Numlockx* |
+| Příkaz: | */usr/bin/numlockx on* |
+| Komentář: | *Turns on numlock.* |
 
 Toto nastavení bude platné pouze pro aktuálního uživatele. Pokud budete chtít toto nastavit i pro jiné uživatele, postupujte stejným způsobem.
 
@@ -550,16 +543,16 @@ $ pacman -Ss gnome-shell-extension
 
 Other useful extensions provided in the AUR:
 
-| _[Presentation Mode](https://aur.archlinux.org/packages.php?ID=49368)_ | Adds option to inhibit screensaver in the power menu (battery icon). |
-| _[Weather](https://aur.archlinux.org/packages.php?ID=49409)_ | Displays weather notifications. |
-| _[Alternative Status Menu](https://aur.archlinux.org/packages.php?ID=48607)_ | Adds "Hibernate" and "Power Off" to the status menu. |
-| _[Theme selector](https://aur.archlinux.org/packages.php?ID=51102)_ | Select a theme in the activities overview. To install a custom theme with Gnome Tweak Tool you need to install the _[User theme extension](https://www.archlinux.org/packages/extra/any/gnome-shell-extension-user-theme)_ |
+| *[Presentation Mode](https://aur.archlinux.org/packages.php?ID=49368)* | Adds option to inhibit screensaver in the power menu (battery icon). |
+| *[Weather](https://aur.archlinux.org/packages.php?ID=49409)* | Displays weather notifications. |
+| *[Alternative Status Menu](https://aur.archlinux.org/packages.php?ID=48607)* | Adds "Hibernate" and "Power Off" to the status menu. |
+| *[Theme selector](https://aur.archlinux.org/packages.php?ID=51102)* | Select a theme in the activities overview. To install a custom theme with Gnome Tweak Tool you need to install the *[User theme extension](https://www.archlinux.org/packages/extra/any/gnome-shell-extension-user-theme)* |
 
 [Restart the GNOME Shell](#Restartov.C3.A1n.C3.AD_shellu) after installing an extension. See [when an extension breaks GNOME](#When_an_extension_breaks_GNOME) for troubleshooting information.
 
 ### Výchozí terminál
 
-`gsettings`, which replaces `gconftool-2` in GNOME 3, is used to set e. g. the default terminal manually. The setting is relevant for _nautilus-open-terminal_. The commands for [urxvt](/index.php/Rxvt-unicode "Rxvt-unicode") run as daemon:
+`gsettings`, which replaces `gconftool-2` in GNOME 3, is used to set e. g. the default terminal manually. The setting is relevant for *nautilus-open-terminal*. The commands for [urxvt](/index.php/Rxvt-unicode "Rxvt-unicode") run as daemon:
 
 ```
 gsettings set org.gnome.desktop.default-applications.terminal exec urxvtc
@@ -567,7 +560,7 @@ gsettings set org.gnome.desktop.default-applications.terminal exec-arg "'-e'"
 
 ```
 
-**Note:** For _nautilus-open-terminal_, you may need a flag (e.g. `-e`) to indicate that a command will follow: _nautilus-open-terminal_ passes a `cd` command in order to change directories to the appropriate location.
+**Note:** For *nautilus-open-terminal*, you may need a flag (e.g. `-e`) to indicate that a command will follow: *nautilus-open-terminal* passes a `cd` command in order to change directories to the appropriate location.
 
 ### Prostřední tlačítko myši
 
@@ -606,7 +599,7 @@ Exec=gnome-session --session=xmonad
 Type=XSession
 ```
 
-The next time you log in, you should have the ability to choose _Xmonad GNOME_ as your session.
+The next time you log in, you should have the ability to choose *Xmonad GNOME* as your session.
 
 ### wmii
 
@@ -647,7 +640,7 @@ DefaultProvider-windowmanager=wmii
 DefaultProvider-notifications=notification-daemon
 ```
 
-The next time you log in, you should have the ability to choose _Gnome-wmii_ as your session.
+The next time you log in, you should have the ability to choose *Gnome-wmii* as your session.
 
 The original info was taken from [running-the-awesome-window-manager-within-gnome](http://makandra.com/notes/1367-running-the-awesome-window-manager-within-gnome), go there for info on awesome-gnome.
 
@@ -669,27 +662,27 @@ GNOME 3 ukrývá spoustu užitečných voleb, které lze upravit pomocí **dconf
 
 ### Úprava klávesových zkratek
 
-Firstly, use **dconf-editor** to place a checkmark next to `can-change-accels` in the key named _org.gnome.desktop.interface._
+Firstly, use **dconf-editor** to place a checkmark next to `can-change-accels` in the key named *org.gnome.desktop.interface.*
 
 We will replace the hotkey — a.k.a. keyboard shortcut, keyboard accelerator — used by Nautilus to move files to the trash folder.
 
 The default assignment is a somewhat-awkward `Ctrl` + `Delete`.
 
 *   Open Nautilus, select any file, and click **Edit** on the menu bar.
-*   Hover over the _Move to Trash_ menu item.
+*   Hover over the *Move to Trash* menu item.
 *   While hovering, press `Delete`. The current accelerator is now unset.
 *   Press the key that you wish to become the new keyboard accelerator.
 *   Press `Delete` to make the new accelerator be the Delete key.
 
-Unless you select a file or folder, _Move to Trash_ will be grayed-out. Finally, disable `can-change-accels` to prevent accidental hotkey changes.
+Unless you select a file or folder, *Move to Trash* will be grayed-out. Finally, disable `can-change-accels` to prevent accidental hotkey changes.
 
 ### Shutdown via the status menu
 
-Presently, GNOME designers have hidden the Shutdown option inside the status menu. To shut down your system with the status menu, click the menu and hold down the **Alt** key so that the _**Suspend**_ item changes to _**Power Off.**_ The subsequent dialog allows you to shut down or restart your system.
+Presently, GNOME designers have hidden the Shutdown option inside the status menu. To shut down your system with the status menu, click the menu and hold down the **Alt** key so that the ***Suspend*** item changes to ***Power Off.*** The subsequent dialog allows you to shut down or restart your system.
 
 If you disable the Suspend menu item system-wide as described [elsewhere in this document](#Disable_.22Suspend.22_in_the_status_menu) you do not have to go through these motions.
 
-Another option is to install the _Alternative Status Menu_ extension. See the section on shell extensions. The alternative menu extension installs a new status menu with a non-hidden _**Power Off**_ entry.
+Another option is to install the *Alternative Status Menu* extension. See the section on shell extensions. The alternative menu extension installs a new status menu with a non-hidden ***Power Off*** entry.
 
 ## Integrated messaging (Empathy)
 
@@ -712,9 +705,9 @@ Your session automatically starts in fallback mode when **gnome-shell** is not p
 
 If you wish to enable fallback mode while still having **gnome-shell** installed, make the following system change:
 
-Open **gnome-control-center.** Click the _System Info_ icon. Click Graphics. Change _Forced Fallback Mode_ to `ON.`
+Open **gnome-control-center.** Click the *System Info* icon. Click Graphics. Change *Forced Fallback Mode* to `ON.`
 
-You can alternatively choose the type of session from a terminal with a _gsettings_ command:
+You can alternatively choose the type of session from a terminal with a *gsettings* command:
 
 ```
 $ gsettings set org.gnome.desktop.session session-name 'gnome-fallback'
@@ -729,7 +722,7 @@ To disable forced-fallback mode (that is, launch the normal GNOME Shell) use a v
 
 ### GNOME login takes a very long time
 
-See if you enabled _PulseAudio Network_ settings in **paprefs**. When any network audio settings are enabled, GNOME hangs about a minute after login.
+See if you enabled *PulseAudio Network* settings in **paprefs**. When any network audio settings are enabled, GNOME hangs about a minute after login.
 
 One solution is to create a new user account and login to that account. Another solution is to move your **~/.gconf**, **~/.gconfd** and **~/.conf/dconf** folders to a holding area. Login again to see if the delay is gone.
 
@@ -737,7 +730,7 @@ If the excessive delay is gone, determine which setting causes the delay using t
 
 ### When an extension breaks GNOME
 
-When enabling shell extensions causes GNOME breakage, you should first remove the _user-theme_ and _auto-move-windows_ extensions from their installation directory.
+When enabling shell extensions causes GNOME breakage, you should first remove the *user-theme* and *auto-move-windows* extensions from their installation directory.
 
 The installation directory could be one of **`~/.local/share/gnome‑shell/extensions,`** **`/usr/share/gnome‑shell/extensions,`** or **`/usr/local/share/gnome‑shell/extensions`**. Removing these two extension-containing folders may fix the breakage. Otherwise, isolate the problem extension with trial‑and‑error.
 
@@ -753,13 +746,13 @@ Edit each occurrence of **`metadata.json`** which appears in each extension sub-
 | Instead of (for example): | **`"shell-version": ["3.0.1"]`** |
 | You might instead use: | **`"shell-version": ["3.0.0", "3.0.1", "3.0.2"]`** |
 
-**"3.0"** is the best solution. It indicates the extension works with every _**3.0.x**_ GNOME Shell version.
+**"3.0"** is the best solution. It indicates the extension works with every ***3.0.x*** GNOME Shell version.
 
 ### Screen is not locked after resume
 
 Screen lock only works when you suspend through GNOME's status menu. If you suspend or hibernate using the power button, your screen is not locked after resume. The problem is a configuration failure in dconf.
 
-Open _dconf-editor_ and uncheck **`lock-use-screensaver`** in the key named _org.gnome.power-manager._
+Open *dconf-editor* and uncheck **`lock-use-screensaver`** in the key named *org.gnome.power-manager.*
 
 ```
 # gsettings set org.gnome.power-manager lock-use-screensaver 'false'
@@ -837,8 +830,8 @@ System Settings --> Keyboard --> Shortcuts --> Windows --> Hide all normal windo
 
 1.  Press `ALT`+`F2`
 2.  Enter `gnome-tweak-tool`
-3.  Select the _File Manager_ tab.
-4.  Locate option _Have file manager handle the desktop_ and assure it is toggled **off**.
+3.  Select the *File Manager* tab.
+4.  Locate option *Have file manager handle the desktop* and assure it is toggled **off**.
 
 ### Epiphany does not play flash videos
 
@@ -870,7 +863,6 @@ $ xinput set-prop "SynPS/2 Synaptics TouchPad" "Device Enabled" 1
 If you are affected by this issue, edit `~/.gnome2/accels/nautilus` where you can find two lines for Ctrl+V :
 
  `~/.gnome2/accels/nautilus` 
-
 ```
 (gtk_accel_path "<Actions>/DirViewActions/Paste" "<Control>v")
 ...

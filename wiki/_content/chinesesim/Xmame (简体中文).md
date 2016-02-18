@@ -38,7 +38,7 @@ $xmame -showconfig > ~/.xmame/xmamerc
 
 ### 配置xmame
 
-其实 _~/.xmame/xmamerc_ 里已经有了简单的配置信息了。如果您把游戏 ROM 放在了别处，就需要给 rompath 加一条~/mygames/roms。
+其实 *~/.xmame/xmamerc* 里已经有了简单的配置信息了。如果您把游戏 ROM 放在了别处，就需要给 rompath 加一条~/mygames/roms。
 
 ```
 rompath                 /usr/share/xmame/roms:~/mygames/roms

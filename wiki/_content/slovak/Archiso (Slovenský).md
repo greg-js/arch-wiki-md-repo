@@ -50,11 +50,11 @@ $ mkdir ~/archlive
 
 Archiso skripty, ktoré sa skôr nainštalovali do hostiteľského systému, je teraz potrepné prekopírovať do novovytvoreného adresára, v ktorom sa bude pracovať.
 
-Archiso prichádza s dvoma "profilmi": _releng_ a _baseline_.
+Archiso prichádza s dvoma "profilmi": *releng* a *baseline*.
 
-Ak si želáte vytvoriť plne prispôsobenú live verziu Arch Linuxu predinštalovanú so všetkými vašimi obľúbenými programami a konfiguráciami, použite _releng_.
+Ak si želáte vytvoriť plne prispôsobenú live verziu Arch Linuxu predinštalovanú so všetkými vašimi obľúbenými programami a konfiguráciami, použite *releng*.
 
-Ak len chcete vytvoriť čo najzákladnejšie live médium so žiadnymi predinštalovanými balíčkami a minimalistickou konfiguráciu, použite _baseline_.
+Ak len chcete vytvoriť čo najzákladnejšie live médium so žiadnymi predinštalovanými balíčkami a minimalistickou konfiguráciu, použite *baseline*.
 
 Vzhľadom na váš výber, spustite nasledovný príkaz, pričom nahraďte 'PROFILE' reťazcom **releng** alebo **baseline**.
 
@@ -63,9 +63,9 @@ Vzhľadom na váš výber, spustite nasledovný príkaz, pričom nahraďte 'PROF
 
 ```
 
-Ak používate profil _releng_ k vytvoreniu plne prispôsobeného obrazu, potom pokračujte sekciou [#Konfigurácia nášho live média](#Konfigur.C3.A1cia_n.C3.A1.C5.A1ho_live_m.C3.A9dia)
+Ak používate profil *releng* k vytvoreniu plne prispôsobeného obrazu, potom pokračujte sekciou [#Konfigurácia nášho live média](#Konfigur.C3.A1cia_n.C3.A1.C5.A1ho_live_m.C3.A9dia)
 
-Ak používate profil _baseline_ k vytvoreniu okliešteného obrazu, potom nebudete potrebovať robiť žiadne prispôsobenia a môžete pokračovať sekciou [#Budovanie ISO obrazu](#Budovanie_ISO_obrazu).
+Ak používate profil *baseline* k vytvoreniu okliešteného obrazu, potom nebudete potrebovať robiť žiadne prispôsobenia a môžete pokračovať sekciou [#Budovanie ISO obrazu](#Budovanie_ISO_obrazu).
 
 ## Konfigurácia nášho live média
 
@@ -77,7 +77,7 @@ Vo všeobecnosti každá administratívna úloha, ktorú by ste normálne spravi
 
 ### Inštalácia balíčkov
 
-Budete chcieť vytvoriť zoznam balíčkov, ktoré budú obsiahnuté vo vašom live systéme. Do súboru sa napíšu riadok za riadkom názvy baličkov. Je to _**skvelé**_ pre špeciálne zamerané live CD. Stačí špecifikovať balíčky v súbore packages.both a vytvoriť image. Súbory packages.i686 a packages.x84_64 umožnia inštalovať software pre 32bitový systém, resp. pre 64 bitový.
+Budete chcieť vytvoriť zoznam balíčkov, ktoré budú obsiahnuté vo vašom live systéme. Do súboru sa napíšu riadok za riadkom názvy baličkov. Je to ***skvelé*** pre špeciálne zamerané live CD. Stačí špecifikovať balíčky v súbore packages.both a vytvoriť image. Súbory packages.i686 a packages.x84_64 umožnia inštalovať software pre 32bitový systém, resp. pre 64 bitový.
 
 Ak budete chcieť neskôr nainštalovať systém v prostredí bez internetového pripojenia, alebo budete chcieť preskočiť opätovné sťahovanie súborov, odporúčam nainštalovať "rsync".
 
@@ -264,7 +264,7 @@ Tak si prosím najprv prečítajte [začiatočnícku príručku](/index.php/Begi
 
 ### Inštalácia archisa do nového koreňového adresára
 
-Miesto inštalácie balíčkov za pomoci utilitky `pacstrap`(ktorá sťahuje všetky balíčky zo vzdialených repozitárov a my teraz nemáme na internet prístup) skopírujte prosím _všetko_ v Live prostredí do nového koreňového adresára:
+Miesto inštalácie balíčkov za pomoci utilitky `pacstrap`(ktorá sťahuje všetky balíčky zo vzdialených repozitárov a my teraz nemáme na internet prístup) skopírujte prosím *všetko* v Live prostredí do nového koreňového adresára:
 
 ```
 # time (cp -ax /{usr,bin,lib,lib64,sbin,etc,home,opt,root,srv,var} /mnt)
@@ -310,7 +310,6 @@ Prosím majte na pamäti, že skôr než budete konfigurovať locale, keymap, ..
 [Táto konfigurácia pam-u](https://projects.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/pam.d/su) síce zničí bezpečnosť vášho nového systému, ale odporúča sa použiť predvolenú konfiguráciu:
 
  `# nano /etc/pam.d/su` 
-
 ```
 #%PAM-1.0
 auth            sufficient      pam_rootok.so

@@ -40,14 +40,14 @@ Multiple tools are available to help create audiobook files.
 
 The audio source file(s) will either need to be extracted, if a disc media, or to be decoded, if an encoded file.
 
-If the audiobook is a _disc media_, various [digital audio extraction utilities](/index.php/Optical_disc_drive#Ripping "Optical disc drive") are available. A common way to extract audio from a CD to WAV-formatted files is:
+If the audiobook is a *disc media*, various [digital audio extraction utilities](/index.php/Optical_disc_drive#Ripping "Optical disc drive") are available. A common way to extract audio from a CD to WAV-formatted files is:
 
 ```
 cdparanoia -B
 
 ```
 
-If the audiobook is a _audio file_, various programs can decode it. For example, for MP3s:
+If the audiobook is a *audio file*, various programs can decode it. For example, for MP3s:
 
 ```
 lame --decode part-01.mp3
@@ -60,7 +60,7 @@ lame --decode part-01.mp3
 
 Audiobooks parts are typically saved in about one hour, ten minute segments (usually the time extent of a audio CD). They can be concatenated or split as desired.
 
-Join _WAV_ files:
+Join *WAV* files:
 
 ```
 sndfile-concat track-01.wav track-02.wav… disc-1.wav  # or more easily
@@ -68,7 +68,7 @@ sndfile-concat track*.wav disc-1.wav
 
 ```
 
-Join _MPEG-4 compatible audio_ files (AAC, AVI, MP3…):
+Join *MPEG-4 compatible audio* files (AAC, AVI, MP3…):
 
 ```
 MP4Box -cat track-01.aac -cat track-02.aac… disc-1.aac
@@ -77,21 +77,21 @@ MP4Box -cat track-01.aac -cat track-02.aac… disc-1.aac
 
 Split a wav file ([wavsplit](https://aur.archlinux.org/packages/wavsplit/) can do this (untested)).
 
-Split a _MP3_ files into 10 minute intervals:
+Split a *MP3* files into 10 minute intervals:
 
 ```
 mp3splt -f -t 10.0 part-01.mp3 -o @n
 
 ```
 
-Split a _MP3_ by chapters/tracks (this method scans for silence and assumes them to be chapter/track marks, splitting them on those marks — these settings are generalized and will likely required further adjusting to work):
+Split a *MP3* by chapters/tracks (this method scans for silence and assumes them to be chapter/track marks, splitting them on those marks — these settings are generalized and will likely required further adjusting to work):
 
 ```
 mp3splt -f -s -p -min=3 part-01.mp3
 
 ```
 
-Split _MPEG 4 compatible audio_ files (metadata repair will likely be necessary) into 10 minute intervals.
+Split *MPEG 4 compatible audio* files (metadata repair will likely be necessary) into 10 minute intervals.
 
 ```
 MP4Box -split 600 target.mp4
@@ -117,13 +117,13 @@ neroAacEnc -q 0.7 -of part-01.aac -if part-01.wav
 
 ```
 
-**Note:** The FAAC quantizer quality setting of 55 (~64kbps) is recommended when encoding from an audiobook CD. This setting is for an audio source that is already an encoded file. The FAAC setting of 80 should reasonably accommodate sound quality while preserving file size close to the original file. _Whenever converting from one lossy format to another, there will always be some amount of information lost._
+**Note:** The FAAC quantizer quality setting of 55 (~64kbps) is recommended when encoding from an audiobook CD. This setting is for an audio source that is already an encoded file. The FAAC setting of 80 should reasonably accommodate sound quality while preserving file size close to the original file. *Whenever converting from one lossy format to another, there will always be some amount of information lost.*
 
 **Warning:** Though `ffmpeg` can convert MP3 to an AAC encoding in one step (`ffmpeg -i track1.mp3 -acodec aac -strict -2 track1.aac`), support for AAC is experimental.
 
 ### Chapter index merging
 
-To merge a chapter index into a audio file it must be decided what type of index to use: one, _recurring intervals_ with periodic chapter times; or two, _particular intervals_ with definitive chapter times and names.
+To merge a chapter index into a audio file it must be decided what type of index to use: one, *recurring intervals* with periodic chapter times; or two, *particular intervals* with definitive chapter times and names.
 
 Add a MPEG-4 container to the audio file:
 
@@ -145,7 +145,7 @@ mp4chaps --every 600 disc-1.m4b
 
 The method requires writing a chapter index as a text file and merging it into the audio file.
 
-**Note:** `mp4chaps` will complain about _not_ seeing a video stream when attempting to merge the chapter index with the `--import` option (a bug should probably be filed). An alternate method is to use `MP4Box`. Though MP4Box is typically seen used for video files it has the ability to add chapters while not introducing a video stream. Because of this the resulting media will be able to play on iPods and iTunes as expected.
+**Note:** `mp4chaps` will complain about *not* seeing a video stream when attempting to merge the chapter index with the `--import` option (a bug should probably be filed). An alternate method is to use `MP4Box`. Though MP4Box is typically seen used for video files it has the ability to add chapters while not introducing a video stream. Because of this the resulting media will be able to play on iPods and iTunes as expected.
 
 The chapter index will need to be written as a text file before being merged into audio file. There are two standards for chapter indexes: one, the Quicktime standard; and two, the Nero standard. Either can be initially merged.
 

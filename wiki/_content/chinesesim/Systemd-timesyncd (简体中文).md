@@ -2,11 +2,11 @@
 
 来自于 [systemd mailing list](http://lists.freedesktop.org/archives/systemd-devel/2014-May/019537.html):
 
-	_systemd-timesyncd_ 是一个用于跨网络同步系统时钟的守护服务。它实现了一个 SNTP 客户端。与NTP的复杂实现相比，这个服务简单的多，它只专注于从远程服务器查询然后同步到本地时钟。除非你打算为客户端提供 NTP 服务器或者连接本地硬件时钟，否则这个简单的NTP客户端应该更适合大多数人。守护进程运行只需要尽可能小特权，并且会跟网络服务 networkd 挂钩，仅在网络连接可用时才工作。每次收到一个新的NTP同步请求时，后台服务就把当前时间保存到磁盘，并尽可能在系统启动时修正系统时间，这样处理的目的是为了适应像Raspberry Pi和嵌入式设备这种缺少 RTC 的系统，并确保这些系统时单点处理（即使它并不是总是正确的）。如果要使用这个守护进程，需要在安装系统时创建一个新的系统用户和组"systemd-timesync"。
+	*systemd-timesyncd* 是一个用于跨网络同步系统时钟的守护服务。它实现了一个 SNTP 客户端。与NTP的复杂实现相比，这个服务简单的多，它只专注于从远程服务器查询然后同步到本地时钟。除非你打算为客户端提供 NTP 服务器或者连接本地硬件时钟，否则这个简单的NTP客户端应该更适合大多数人。守护进程运行只需要尽可能小特权，并且会跟网络服务 networkd 挂钩，仅在网络连接可用时才工作。每次收到一个新的NTP同步请求时，后台服务就把当前时间保存到磁盘，并尽可能在系统启动时修正系统时间，这样处理的目的是为了适应像Raspberry Pi和嵌入式设备这种缺少 RTC 的系统，并确保这些系统时单点处理（即使它并不是总是正确的）。如果要使用这个守护进程，需要在安装系统时创建一个新的系统用户和组"systemd-timesync"。
 
 ## 安装
 
-_systemd-timesyncd_ 服务可以通过 [systemd](https://www.archlinux.org/packages/?name=systemd) >= 213 获取。 启动服务:
+*systemd-timesyncd* 服务可以通过 [systemd](https://www.archlinux.org/packages/?name=systemd) >= 213 获取。 启动服务:
 
 ```
 # timedatectl set-ntp true 
@@ -16,7 +16,6 @@ _systemd-timesyncd_ 服务可以通过 [systemd](https://www.archlinux.org/packa
 使用 `timedatectl status`检查服务状态：
 
  `$ timedatectl status` 
-
 ```
 Local time: Thu 2015-07-09 18:21:33 CEST
 Universal time: Thu 2015-07-09 16:21:33 UTC
@@ -27,14 +26,13 @@ NTP synchronized: yes
 RTC in local TZ: no
 ```
 
-**Note:** systemd 216 之前 _systemd-timesyncd_ 需要 [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") 才能支持 (不需要额外配置) 接收网络开启/关闭事件的通知。 这个问题报告并不通用，比如它现在也接受来自于 [dhcpcd](/index.php/Dhcpcd "Dhcpcd") 和 [NetworkManager](/index.php/NetworkManager "NetworkManager") 的通知, 不过时网络配置或者网络管理工具的差异，可能还是需要上面的服务。
+**Note:** systemd 216 之前 *systemd-timesyncd* 需要 [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") 才能支持 (不需要额外配置) 接收网络开启/关闭事件的通知。 这个问题报告并不通用，比如它现在也接受来自于 [dhcpcd](/index.php/Dhcpcd "Dhcpcd") 和 [NetworkManager](/index.php/NetworkManager "NetworkManager") 的通知, 不过时网络配置或者网络管理工具的差异，可能还是需要上面的服务。
 
 ## 配置
 
-_systemd-timesyncd_ 启动时会读取 `/etc/systemd/timesyncd.conf` 配置文件。 在 [systemd](/index.php/Systemd "Systemd") 217 中，配置内容如下:
+*systemd-timesyncd* 启动时会读取 `/etc/systemd/timesyncd.conf` 配置文件。 在 [systemd](/index.php/Systemd "Systemd") 217 中，配置内容如下:
 
  `/etc/systemd/timesyncd.conf` 
-
 ```
 [Time]
 #NTP=
@@ -44,14 +42,13 @@ _systemd-timesyncd_ 启动时会读取 `/etc/systemd/timesyncd.conf` 配置文�
 要增加或者更改 [时间同步服务器](/index.php/Network_Time_Protocol_daemon#Connection_to_NTP_servers "Network Time Protocol daemon"), 取消上文的注释。例如，你可以使用 [NTP 项目](http://www.pool.ntp.org/) 或者 [Arch默认](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/ntp&id=1b485f87c9e1384eaf069d031e415515e8ead92d) (NTP 也有这个站点) 提供的任何时间服务器：
 
  `/etc/systemd/timesyncd.conf` 
-
 ```
 [Time]
 NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org
 FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
 ```
 
-进一步讲, NTP 服务器也可以通过 [systemd-networkd](/index.php/Systemd-networkd#.5BNetwork.5D_section "Systemd-networkd") 提供，通过 `NTP=` 选项启用, 或者通过DHCP 服务动态加载 (_systemd_ 216 起支持).
+进一步讲, NTP 服务器也可以通过 [systemd-networkd](/index.php/Systemd-networkd#.5BNetwork.5D_section "Systemd-networkd") 提供，通过 `NTP=` 选项启用, 或者通过DHCP 服务动态加载 (*systemd* 216 起支持).
 
 NTP 服务器使用规则:
 

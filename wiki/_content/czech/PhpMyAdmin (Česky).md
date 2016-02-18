@@ -9,7 +9,7 @@
 
 ## Instalace
 
-Pro instalaci programu [phpMyAdmin](http://www.phpmyadmin.net/) nainstalujte balíčky _phpmyadmin_ a _php-mcrypt_ spuštěním:
+Pro instalaci programu [phpMyAdmin](http://www.phpmyadmin.net/) nainstalujte balíčky *phpmyadmin* a *php-mcrypt* spuštěním:
 
 ```
 # pacman -S phpmyadmin php-mcrypt
@@ -40,7 +40,7 @@ Include conf/extra/httpd-phpmyadmin.conf
 
 ```
 
-V souboru `/usr/share/webapps/phpMyAdmin/.htaccess`, zakomentujte _deny from all_. Řádek by měl potom vypadat takto:
+V souboru `/usr/share/webapps/phpMyAdmin/.htaccess`, zakomentujte *deny from all*. Řádek by měl potom vypadat takto:
 
 ```
 #deny from all
@@ -62,7 +62,7 @@ Ve vašem souboru `/etc/httpd/conf/extra/httpd-phpmyadmin.conf` byste měli mít
 
 ```
 
-Otevřete soubor `/etc/php/php.ini`, běžte na řádek začínající na _open_basedir_ a přidejte cestu ke složce s instalací phpMyAdmin následovně:
+Otevřete soubor `/etc/php/php.ini`, běžte na řádek začínající na *open_basedir* a přidejte cestu ke složce s instalací phpMyAdmin následovně:
 
 ```
 :/usr/share/webapps/:/etc/webapps/
@@ -106,11 +106,11 @@ ERROR: The configuration file now needs a secret passphrase (blowfish_secret)
 Je potřeba přidat tzv. blowfish heslo do konfiguračního souboru phpMyAdmina. Upravte `/etc/webapps/phpmyadmin/config.inc.php` a vložte náhodnou kombinaci znaků do pole **blowfish_secret**:
 
 ```
-$cfg['blowfish_secret'] = _; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */_
+$cfg['blowfish_secret'] = *; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */*
 
 ```
 
-Pokud si chcete svůj blowfish jednoduše vygenerovat, běžte na [generátor](http://www.question-defense.com/tools/phpmyadmin-blowfish-secret-generator). Potom ho už jen stačí vložit mezi znaky _. Mělo by to vypadat následovně:_
+Pokud si chcete svůj blowfish jednoduše vygenerovat, běžte na [generátor](http://www.question-defense.com/tools/phpmyadmin-blowfish-secret-generator). Potom ho už jen stačí vložit mezi znaky *. Mělo by to vypadat následovně:*
 
 ```
 $cfg['blowfish_secret'] = 'qtdRoGmbc9{8IZr323xYcSN]0s)r$9b_JUnb{~Xz'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
@@ -223,9 +223,9 @@ v phpMyAdmin verze 3.2.2-3 se nezobrazuje v /srv/http/, proto vytvořte symlink:
 
 **Věci, které byste měli změnit**
 
-Proměnná _controluser_ musí být nastavena na **controluser**
-Proměnná _controlpass_ musí být nastavena na **heslo**
-Proměnná _verbose_ je nastavena na jmeno_serveru
+Proměnná *controluser* musí být nastavena na **controluser**
+Proměnná *controlpass* musí být nastavena na **heslo**
+Proměnná *verbose* je nastavena na jmeno_serveru
 
 **Příklad konfiguračního souboru 'config.inc.php'**
 

@@ -53,7 +53,7 @@ See [Wireless network configuration#iwlegacy](/index.php/Wireless_network_config
 
 ### SD/MMC
 
-This requires the _tifm_ [kernel module](/index.php/Kernel_module "Kernel module").
+This requires the *tifm* [kernel module](/index.php/Kernel_module "Kernel module").
 
 ```
 # modprobe tifm_core

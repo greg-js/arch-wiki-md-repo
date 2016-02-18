@@ -1,6 +1,6 @@
 From the project [home page](http://www.pidgin.im/):
 
-	_Pidgin is an easy to use and free chat client used by millions. Connect to AIM, MSN, Yahoo, and more chat networks all at once._
+	*Pidgin is an easy to use and free chat client used by millions. Connect to AIM, MSN, Yahoo, and more chat networks all at once.*
 
 ## Contents
 
@@ -96,7 +96,7 @@ There is another bug in character encoding when communicating between Pidgin and
 You can change encoding for ICQ account if encoding in Buddy Information is not correct:
 
 ```
-Account > _your ICQ account_ > Edit account > Advanced tab
+Account > *your ICQ account* > Edit account > Advanced tab
 
 ```
 
@@ -106,15 +106,15 @@ Select `Encoding: CP1251` (for Cyrillic).
 
 This is a small tutorial for connecting to Freenode. It should work for other IRC networks as long as you substitute the port numbers and other specific settings.
 
-Go to _Accounts > Manage Accounts > Add_. Fill/select the following options:
+Go to *Accounts > Manage Accounts > Add*. Fill/select the following options:
 
 ```
 Protocol: IRC
-Username: _your username_
+Username: *your username*
 
 ```
 
-Now go to _Buddies > New instant message_ (or hit `Ctrl+m`), fill 'freenode.net' in the textbox and _username_@irc.freenode.net, then click 'Ok'. Type:
+Now go to *Buddies > New instant message* (or hit `Ctrl+m`), fill 'freenode.net' in the textbox and *username*@irc.freenode.net, then click 'Ok'. Type:
 
 ```
 /join #archlinux
@@ -126,7 +126,7 @@ The channel is irrelevant.
 In order to register your nick, type:
 
 ```
-/msg nickserv register _password_ _email-addres_
+/msg nickserv register *password* *email-addres*
 
 ```
 
@@ -134,11 +134,11 @@ Follow the instructions from the registration mail. For further help type:
 
 ```
 /msg nickserv help
-/msg nickserv help _command_
+/msg nickserv help *command*
 
 ```
 
-This final step will add your channel to 'Buddies': go to _Buddies > Add chat_, fill the correct channel in the textbox named channel (#archlinux).
+This final step will add your channel to 'Buddies': go to *Buddies > Add chat*, fill the correct channel in the textbox named channel (#archlinux).
 
 ## Xfire
 
@@ -169,7 +169,7 @@ This is a plugin that brings Off-The-Record (OTR) messaging to Pidgin. OTR is a 
 
 First you need to install [pidgin-otr](https://www.archlinux.org/packages/?name=pidgin-otr) from the official repositories. Once this has been done, OTR has been added to Pidgin.
 
-1.  To enable OTR, start Pidgin and go to _Tools > Plugins_ or press `Ctrl+u`. Scroll down to the entry entitled "Off-The-Record Messaging". If the checkbox beside it is not checked, check it.
+1.  To enable OTR, start Pidgin and go to *Tools > Plugins* or press `Ctrl+u`. Scroll down to the entry entitled "Off-The-Record Messaging". If the checkbox beside it is not checked, check it.
 2.  Next, click on the plugin entry and select "Configure plugin" at the bottom. Select which account you wish to generate a key for, then click "Generate". You will have now generated a private key. If you are not sure what the other options do, leave them, the default options will work fine.
 3.  The next step is to contact a buddy who also has OTR installed. In the chat window, a new icon should appear to the top right of your text input box. Click on it, and select "Start private conversation". This will start an 'Unverified' session. Unverified sessions are encrypted, but not verified - that is, you have started a private conversation with someone using your buddy's account who has OTR, but who might not be your buddy. The steps for verification of a buddy are beyond the scope of this section; however, they might be added in the future.
 
@@ -217,7 +217,7 @@ Install the [skype4pidgin-git](https://aur.archlinux.org/packages/skype4pidgin-g
 
 If you suspend your computer pidgin seems to stay connected for about 15 minutes. To prevent message loss, it is needed to set your status offline before suspending or hibernating. The status message won't be changed.
 
-Therefore create a new systemd unit `pidgin-suspend` in `/etc/systemd/system` Take the following snippet and replace _myuser_ with your user.
+Therefore create a new systemd unit `pidgin-suspend` in `/etc/systemd/system` Take the following snippet and replace *myuser* with your user.
 
 ```
 [Unit]
@@ -227,7 +227,7 @@ StopWhenUnneeded=yes
 
 [Service]
 Type=oneshot
-User=_myuser_
+User=*myuser*
 RemainAfterExit=yes
 Environment=DISPLAY=:0
 ExecStart=-/usr/bin/purple-remote setstatus?status=offline
@@ -262,7 +262,7 @@ esac
 
 ### Installing Pidgin after a Carrier installation
 
-If you previously installed [carrier](https://aur.archlinux.org/packages/carrier/) (aka [FunPidgin](http://funpidgin.sourceforge.net/)), follow these steps _before_ installing Pidgin:
+If you previously installed [carrier](https://aur.archlinux.org/packages/carrier/) (aka [FunPidgin](http://funpidgin.sourceforge.net/)), follow these steps *before* installing Pidgin:
 
 *   Quit Carrier
 *   Delete your `~/.purple` directory.
@@ -341,7 +341,7 @@ chmod +x ~/bin/history_import_kopete2pidgin.sh
         <xsl:value-of select="translate(substring-after(@time,' '),':',',')"/>
         <xsl:text>) </xsl:text>
         <xsl:value-of select="@nick"/>
-        <xsl:if test="not(@nick) or @nick = _">_
+        <xsl:if test="not(@nick) or @nick = *">*
             <xsl:value-of select="@from"/>
         </xsl:if>
         <xsl:text>: </xsl:text>

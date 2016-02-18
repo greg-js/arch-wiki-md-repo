@@ -29,7 +29,6 @@ Also, you have to install a sound theme in order to hear any event sound:
 By default, the GTK+ module is loaded automatically, when a GTK+ application launched. You can overwrite default settings in user's GtkSettings file:
 
  `$HOME/.gtkrc-2.0 and $XDG_CONFIG_HOME/gtk-3.0/settings.ini` 
-
 ```
 gtk-enable-event-sounds=true
 gtk-enable-input-feedback-sounds=true
@@ -53,7 +52,6 @@ You can write your own libcanberra sound events easily in some programming langu
 *   Dependency: [libcanberra](https://www.archlinux.org/packages/?name=libcanberra)
 
  `hello_world.sh` 
-
 ```
 #!/bin/bash
 canberra-gtk-play -i phone-incoming-call -d "hello world"
@@ -65,7 +63,6 @@ canberra-gtk-play -i phone-incoming-call -d "hello world"
 *   Build with: `gcc hello_world.c -o hello_world `pkg-config --cflags --libs glib-2.0 libcanberra``
 
  `hello_world.c` 
-
 ```
 #include <glib.h>
 #include <canberra.h>
@@ -87,7 +84,6 @@ void main () {
 *   Build with: `valac --pkg libcanberra hello_world.gs`
 
  `hello_world.gs` 
-
 ```
 uses
 	Canberra
@@ -107,7 +103,6 @@ init
 *   Build with: `valac --pkg libcanberra hello_world.vala`
 
  `hello_world.vala` 
-
 ```
 using Canberra;
 public class HelloWorld {

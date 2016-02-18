@@ -40,35 +40,35 @@ To interact with iOS devices with thunar or GNOME Files, install [gvfs-afc](http
 
 Traditional iPods are accessed just like a normal USB storage device containing a vfat file system (in rare cases `hfsplus`), and can be [accessed as such](/index.php/USB_storage_devices "USB storage devices"). See the [USB storage devices](/index.php/USB_storage_devices "USB storage devices") article for detailed instructions.
 
-If udisks2 is running, it will mount an attached iPod to `/run/media/_$USER_/_iPod name_` (the older udisks will use `/media/_<iPod name>_`).
+If udisks2 is running, it will mount an attached iPod to `/run/media/*$USER*/*iPod name*` (the older udisks will use `/media/*<iPod name>*`).
 
 If the volume label of your iPod is long, or contains a mixture of spaces, and/or lower-case and capital letters, it may present an inconvenience. You may easily change the volume label for more expedient access using `dosfslabel` from the [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) package:
 
 *   Get and confirm the current volume label:
 
 ```
-# dosfslabel /dev/sd_XY_
+# dosfslabel /dev/sd*XY*
 
 ```
 
 *   Set the new volume label:
 
 ```
-# dosfslabel /dev/sd_XY_ ArchPod
+# dosfslabel /dev/sd*XY* ArchPod
 
 ```
 
 *   Unmount the device:
 
 ```
-$ udisksctl unmount -b /dev/sd_XY_
+$ udisksctl unmount -b /dev/sd*XY*
 
 ```
 
 *   Mount it again:
 
 ```
-$ udisksctl mount -b /dev/sd_XY_
+$ udisksctl mount -b /dev/sd*XY*
 
 ```
 
@@ -76,7 +76,7 @@ where `/dev/sdxx` is the current device node of your iPod.
 
 ## Importing videos and pictures
 
-Both videos and photos can be found in typically in `_<mountpoint>_/DCIM/100APPLE`.
+Both videos and photos can be found in typically in `*<mountpoint>*/DCIM/100APPLE`.
 
 ### HTML5 videos
 
@@ -102,7 +102,7 @@ And use `cp -a` or `rsync -t` in order to preserve the file's date & time.
 
 ### Importing pictures and deleting them
 
-You can move photos and videos out of `_<mountpoint>_/DCIM/100APPLE`, however you need to trigger a rebuild of the "Camera Roll" database by deleting the old databases.
+You can move photos and videos out of `*<mountpoint>*/DCIM/100APPLE`, however you need to trigger a rebuild of the "Camera Roll" database by deleting the old databases.
 
 ```
    PhotoData$ sudo rm Photos* com.apple.photos.caches_metadata.plist
@@ -147,7 +147,7 @@ This can convert to mp4 files. If you enforce a hard max of bit rate @ 700ish an
 
 [Install](/index.php/Install "Install") the [mplayer](https://www.archlinux.org/packages/?name=mplayer) package from the official repositories.
 
-Has _extremely_ comprehensive configuration support, which will be able to spit out iPod-compatible video files. Check out `man mencoder`; a lot of MPlayer opts will also affect encoding.
+Has *extremely* comprehensive configuration support, which will be able to spit out iPod-compatible video files. Check out `man mencoder`; a lot of MPlayer opts will also affect encoding.
 
 A basic guide is also available at [MEncoder](/index.php/MEncoder "MEncoder").
 
@@ -313,7 +313,7 @@ You will still need to reload the MobileMusicPlayer process. If your device is n
 
 ### The iFuse Way - iPhone OS 3.x and 4.x
 
-_Warning: this software is considered unstable and should probably not be used in a productive environment_
+*Warning: this software is considered unstable and should probably not be used in a productive environment*
 
 Make sure you already installed base-devel, which contains several programs needed to compile your new components. If you did not, just run:
 

@@ -77,21 +77,21 @@ See [Foremost](/index.php/Foremost "Foremost") article.
 
 ### Usage
 
-_Derived from the post on [Linux Poison](http://linuxpoison.blogspot.com/2010/09/utility-to-recover-deleted-files-from.html)._
+*Derived from the post on [Linux Poison](http://linuxpoison.blogspot.com/2010/09/utility-to-recover-deleted-files-from.html).*
 
-To recover data from a specific partition, the device name for the partition, which will be in the format `/dev/sd_XN_` (_X_ is a letter and _N_ is a number.), must be known. The example used here is `/dev/sda4`, but your system might use something different (For example, MMC card readers use `/dev/mmcblkNpN` as their naming scheme.) depending on your filesystem and device configuration. If you are unsure, run `df`, which prints currently mounted partitions.
+To recover data from a specific partition, the device name for the partition, which will be in the format `/dev/sd*XN*` (*X* is a letter and *N* is a number.), must be known. The example used here is `/dev/sda4`, but your system might use something different (For example, MMC card readers use `/dev/mmcblkNpN` as their naming scheme.) depending on your filesystem and device configuration. If you are unsure, run `df`, which prints currently mounted partitions.
 
 Once which partition data is to be recovered from has been determined, simply run:
 
 ```
-# extundelete /dev/sda4 --restore-file _directory_/_file_
+# extundelete /dev/sda4 --restore-file *directory*/*file*
 
 ```
 
-Any subdirectories must be specified, and the command runs from the highest level of the partition, so, to recover a file in `/home/_SomeUserName_/`, assuming `/home` is on its own partition, run:
+Any subdirectories must be specified, and the command runs from the highest level of the partition, so, to recover a file in `/home/*SomeUserName*/`, assuming `/home` is on its own partition, run:
 
 ```
-# extundelete /dev/sda4 --restore-file _SomeUserName_/_SomeFile_
+# extundelete /dev/sda4 --restore-file *SomeUserName*/*SomeFile*
 
 ```
 
@@ -100,18 +100,18 @@ To speed up multi-file recovery, extundelete has a `--restore-files` option as w
 To recover an entire directory, run:
 
 ```
-# extundelete /dev/sda4 --restore-directory _SomeUserName_/_SomeDirectory_
+# extundelete /dev/sda4 --restore-directory *SomeUserName*/*SomeDirectory*
 
 ```
 
 For advanced users, to manually recover blocks or inodes with extundelete, debugfs can be used to find the inode to be recovered; then, run:
 
 ```
-# extundelete --restore-inode _inode_
+# extundelete --restore-inode *inode*
 
 ```
 
-_inode_ stands for any valid inode. Additional inodes to recover can be listed in an unspaced, comma-separated fashion.
+*inode* stands for any valid inode. Additional inodes to recover can be listed in an unspaced, comma-separated fashion.
 
 Finally, to recover all deleted files from an entire partition, run:
 
@@ -149,7 +149,7 @@ The photorec utility stores recovered files with a random names(for most of the 
 
 To determine where the superblocks are, run `dumpe2fs -h` on the target, unmounted partition. Superblocks are spaced differently depending on the filesystem's blocksize, which is set when the filesystem is created.
 
-An alternate method to determine the locations of superblocks is to use the -n option with mke2fs. Be **sure** to use the `-n` flag, which, according to the `mke2fs` manpage, "_Causes mke2fs to not actually create a filesystem, but display what it would do if it were to create a filesystem. This can be used to determine the location of the backup superblocks for a particular filesystem, so long as the mke2fs parameters that were passed when the filesystem was originally created are used again. (With the -n option added, of course!)_".
+An alternate method to determine the locations of superblocks is to use the -n option with mke2fs. Be **sure** to use the `-n` flag, which, according to the `mke2fs` manpage, "*Causes mke2fs to not actually create a filesystem, but display what it would do if it were to create a filesystem. This can be used to determine the location of the backup superblocks for a particular filesystem, so long as the mke2fs parameters that were passed when the filesystem was originally created are used again. (With the -n option added, of course!)*".
 
 ### Installation
 
@@ -202,11 +202,11 @@ Once the entire disk image has been mounted as a loopback device, its drive layo
 With a disk image that contains one or more NTFS partitions that need to be `chkdsk`ed by Windows since no good NTFS filesystem checker for Linux exists, QEMU can use a raw disk image as a real hard disk inside a virtual machine:
 
 ```
-# qemu -hda _/path/to/primary_.img -hdb _/path/to/DamagedDisk_.img
+# qemu -hda */path/to/primary*.img -hdb */path/to/DamagedDisk*.img
 
 ```
 
-Then, assuming Windows is installed on `_primary_.img`, it can be used to check partitions on `_/path/to/DamagedDisk_.img`.
+Then, assuming Windows is installed on `*primary*.img`, it can be used to check partitions on `*/path/to/DamagedDisk*.img`.
 
 **Warning:** Do not use lower version of Windows to check NTFS partitions create by higher version of it, e.g. Windows XP can do damage to NTFS partitions created by Windows 8 by "fixing" [metadata](https://en.wikipedia.org/wiki/NTFS#Metafiles "wikipedia:NTFS") configuration that has support for, not supported entries will be removed or miss-configured.
 
@@ -217,11 +217,11 @@ It is possible to find deleted plain text files on a hard drive by directly sear
 Use `grep` to search for fixed strings (`-F`) directly on the partition:
 
 ```
-$ grep -a -C 200 -F 'Unique string in text file' /dev/sd_XN_ > _OutputFile_
+$ grep -a -C 200 -F 'Unique string in text file' /dev/sd*XN* > *OutputFile*
 
 ```
 
-Hopefully, the content of the deleted file is now in _OutputFile_, which can be extracted from the surrounding context manually.
+Hopefully, the content of the deleted file is now in *OutputFile*, which can be extracted from the surrounding context manually.
 
 **Note:** The `-C 200` option tells grep to print 200 lines of context from before and after each match of the string. You may need to adjust this if the file you are looking for is very long.
 

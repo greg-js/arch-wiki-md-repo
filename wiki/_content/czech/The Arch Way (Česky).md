@@ -1,4 +1,4 @@
-Následujících pět principů obsahuje to, co se obvykle označuje jako _Cesta Arch Linuxu_ (z ang. _The Arch Way_), nebo _Filozofie Arch Linuxu_, nejlépe jsou shrnuty zkratkou KISS (_Keep It Simple, Stupid_ čili _Udělej to jednoduché, hlupáku_).
+Následujících pět principů obsahuje to, co se obvykle označuje jako *Cesta Arch Linuxu* (z ang. *The Arch Way*), nebo *Filozofie Arch Linuxu*, nejlépe jsou shrnuty zkratkou KISS (*Keep It Simple, Stupid* čili *Udělej to jednoduché, hlupáku*).
 
 ## Contents
 
@@ -10,11 +10,11 @@ Následujících pět principů obsahuje to, co se obvykle označuje jako _Cesta
 
 ## Jednoduchost
 
-_Jednoduchost je nejvyšší formou dokonalosti._ — Leonardo da Vinci
+*Jednoduchost je nejvyšší formou dokonalosti.* — Leonardo da Vinci
 
 Jednoduchost je naprosto základním cílem vývoje Archu. Mnoho distribucí GNU/Linuxu definuje sebe sama jako "jednoduché". Ovšem jednoduchost může být definována různě.
 
-**Arch Linux definuje jednoduchost jako _bez zbytečných přídavků, změn nebo komplikací_, a poskytuje odlehčenou základní `UNIX`-like strukturu umožňující uživatelům utvářet systém podle svých vlastních potřeb. Krátce: elegantní, minimalistický přístup.**
+**Arch Linux definuje jednoduchost jako *bez zbytečných přídavků, změn nebo komplikací*, a poskytuje odlehčenou základní `UNIX`-like strukturu umožňující uživatelům utvářet systém podle svých vlastních potřeb. Krátce: elegantní, minimalistický přístup.**
 
 Odlehčená základní struktura splňující vysoké programátorské standardy bude mít nižší požadavky na systémové zdroje. Základní systém je zbaven veškeré veškeré přeplácanosti, která by mohla zamlžit důležité součásti systému, nebo způsobit, že přístup k nim je složitý. Arch má zmodernizované, stručně komentované a čisté konfigurační soubory, které jsou přizpůsobeny pro rychlý přístup a editaci, bez neohrabaných grafických konfiguračních nástrojů skrývjících možnosti před uživateli. Systém Arch Linuxu je tedy snadno konfigurovatelný do nejmenšího detailu.
 
@@ -24,19 +24,19 @@ Arch Linux ponechává nezbytné složitosti systému GNU/Linux, udržuje je dob
 
 ## Správnost kódu před pohodlím
 
-_Správnost je jasně základní kvalitou. Pokud systém nedělá to co by měl, pak na všem ostatním záleží velmi málo._ — Bertrand Meyer
+*Správnost je jasně základní kvalitou. Pokud systém nedělá to co by měl, pak na všem ostatním záleží velmi málo.* — Bertrand Meyer
 
 Arch Linux klade upřednostňuje eleganci návrhu a čistotu, správnost a jednoduchost kódu před zbytečným záplatováním, automatizací, líbivostí nebo přivětivostí pro nováčky. Softwarové záplaty jsou proto používány naprosto minimálně; v ideálním případě nikdy. Jednoduchý návrh a implementace vždy předčí jednoduché uživatelské rozhraní.
 
-**Jednoduchost _implementace_, elegance kódu a minimalismus vždy budou hlavními prioritami vývoje Arch Linuxu.**
+**Jednoduchost *implementace*, elegance kódu a minimalismus vždy budou hlavními prioritami vývoje Arch Linuxu.**
 
 Koncepty, návrhy a funkce jsou generované a implementované užitím principů Arch Way, externí vlivy jsou drženy stranou. Vývojový tým Archu je pevný ve svém oddání filozofii Arch Way. Pokud sdílíte jejich vizi, jste vítání používat Arch.
 
 ## Zaměření na uživatele
 
-Zatímco mnohé distribuce GNU/Linuxu se snaží být _uživatelsky přátelské_ (z ang. _user-friendly_), Arch Linux vždy byl a bude _zaměřený na uživatele_ (z ang. _user-centric_).
+Zatímco mnohé distribuce GNU/Linuxu se snaží být *uživatelsky přátelské* (z ang. *user-friendly*), Arch Linux vždy byl a bude *zaměřený na uživatele* (z ang. *user-centric*).
 
-**Arch Linux se zaměřuje na schopné uživatele GNU/Linuxu, uživatele činí středem systému a dává jim plnou kontrolu a _odpovědnost_ nad systémem.**
+**Arch Linux se zaměřuje na schopné uživatele GNU/Linuxu, uživatele činí středem systému a dává jim plnou kontrolu a *odpovědnost* nad systémem.**
 
 Uživatelé Arch Linuxu si systém spravují naprosto sami. Systém nabízí pouze velmi malou asistenci, kromě jednoduchých nástrojů pro správu, které jsou vytvořeny tak, že přesně předávají uživatelovy příkazy systému. Vývojáři Archu neplýtvají energií na vytváření zcela nových grafických nástrojů pro správu systému; Arch je založen na rozumném návrhu a excelentní dokumentaci.
 
@@ -62,6 +62,6 @@ Dalším principem Arch Linuxu je svoboda. Uživatelé nejen činí všechna roz
 
 Čerstvě nainstalovaný Arch Linux poskytuje pouze základní komponenty bez automatické konfigurace. Uživatelé jsou schopni konfigurovat systém podle svých přání z příkazové řádky. Od začátku instalace je možno každou komponentu odstranit nebo nahradit jinou alternativou.
 
-Velké množství balíčků a sestavovacích skriptů v různých repozitářích Arch Linuxu také podporuje svobodu volby, poskytují svobodný a otevřený software pro ty, kteří ho preferují, a proprietární software pro ty, kteří preferují _funkčnost před ideologií_. Uživatel je ten, kdo činí rozhodnutí.
+Velké množství balíčků a sestavovacích skriptů v různých repozitářích Arch Linuxu také podporuje svobodu volby, poskytují svobodný a otevřený software pro ty, kteří ho preferují, a proprietární software pro ty, kteří preferují *funkčnost před ideologií*. Uživatel je ten, kdo činí rozhodnutí.
 
-Jak řekl Judd Vinet, zakladatel Arch Linuxu: "[Arch Linux] je takový, jakým si ho _vy_ uděláte".
+Jak řekl Judd Vinet, zakladatel Arch Linuxu: "[Arch Linux] je takový, jakým si ho *vy* uděláte".

@@ -1,4 +1,4 @@
-O FAM (File Alteration Monitor) no daemon é usado para ambientes desktop, como [GNOME](/index.php/GNOME "GNOME") e [Xfce](/index.php/Xfce "Xfce") para o monitor e reportar as mudaças no filesystem. FAM é também é usando no servidor Samba no daemon. Note que o [KDE](/index.php/KDE "KDE") usa muito o FAM, tem movido no kernel-based _inotify_ um requerimento especial na configuração.
+O FAM (File Alteration Monitor) no daemon é usado para ambientes desktop, como [GNOME](/index.php/GNOME "GNOME") e [Xfce](/index.php/Xfce "Xfce") para o monitor e reportar as mudaças no filesystem. FAM é também é usando no servidor Samba no daemon. Note que o [KDE](/index.php/KDE "KDE") usa muito o FAM, tem movido no kernel-based *inotify* um requerimento especial na configuração.
 
 **Atenção** | FAM é absoluto; usa como alternativa o [Gamin](/index.php/Gamin "Gamin"), se possível. Gamin é a implementação da especificação do FAM. Este é o mais novo e mantido ativamente, é muito simples para configurar.
 

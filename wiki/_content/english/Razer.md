@@ -20,7 +20,7 @@ There are currently no official drivers for any Razer peripherals in Linux. Howe
 
 ### Compatibility
 
-_razercfg_ lists the following mice models as stable:
+*razercfg* lists the following mice models as stable:
 
 *   Razer DeathAdder Classic
 *   Razer DeathAdder 3500 DPI
@@ -47,7 +47,6 @@ Download and install [razercfg](https://aur.archlinux.org/packages/razercfg/) or
 You also need to edit your `/etc/X11/xorg.conf` file to disable the current mouse settings by commenting them out as in the following example, where also some defaults are set as suggested by the author:
 
  `/etc/X11/xorg.conf` 
-
 ```
  Section "InputDevice"
     Identifier  "Mouse"
@@ -69,7 +68,7 @@ Then [start](/index.php/Start "Start") the `razerd` daemon and possibly enable i
 
 ### Using the Razer Configuration Tool
 
-There are two commands you can use, one for the command line tool _razercfg_ or the Qt-based GUI tool _qrazercfg_.
+There are two commands you can use, one for the command line tool *razercfg* or the Qt-based GUI tool *qrazercfg*.
 
 From the tool you can use the 5 profiles, change the DPI, change mouse frequency, enable and disable the scroll and logo lights and configure the buttons.
 

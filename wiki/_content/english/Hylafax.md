@@ -1,6 +1,6 @@
 From [HylaFAX home page](http://www.hylafax.org/content/Main_Page):
 
-	_HylaFAX is an enterprise-class system for sending and receiving facsimiles as well as for sending alpha-numeric pages. The software is designed around a client-server architecture. Fax modems may reside on a single machine on a network and clients can submit an outbound job from any other machine on the network. Client software is designed to be lightweight and easy to port. HylaFAX is designed to be very robust and reliable. The fax server is designed to guard against unexpected failures in the software, in the configuration, in the hardware and in general use. HylaFAX can support multiple modems and a heavy traffic load. If you expect to send more than a few facsimiles a day, then HylaFAX is the fax package for you!_
+	*HylaFAX is an enterprise-class system for sending and receiving facsimiles as well as for sending alpha-numeric pages. The software is designed around a client-server architecture. Fax modems may reside on a single machine on a network and clients can submit an outbound job from any other machine on the network. Client software is designed to be lightweight and easy to port. HylaFAX is designed to be very robust and reliable. The fax server is designed to guard against unexpected failures in the software, in the configuration, in the hardware and in general use. HylaFAX can support multiple modems and a heavy traffic load. If you expect to send more than a few facsimiles a day, then HylaFAX is the fax package for you!*
 
 ## Contents
 
@@ -67,11 +67,11 @@ default         A4      9920    14030   9240    13200   472     345
 If you need a special number to get the Dialtone add this to:
 
 ```
-/var/spool/hylafax/etc/config._yourdevicename_
+/var/spool/hylafax/etc/config.*yourdevicename*
 
 ```
 
-Uncomment the `ModemDialCmd` line, and change `ATDT%s` to `ATDT_yournumber_%s`
+Uncomment the `ModemDialCmd` line, and change `ATDT%s` to `ATDT*yournumber*%s`
 
 ### For laptop users it might be helpfull to deactivate the dialtone check
 
@@ -82,7 +82,7 @@ Uncomment the `ModemDialCmd` line, and change `ATDT%s` to `ATX3DT%s`
 Add this to `/var/spool/hylafax/bin/faxrcvd` at the end:
 
 ```
-/usr/bin/tiff2ps -a -h 11.1082 -w 7.8543 $FILE | /usr/bin/lpr -P _yourprintername_
+/usr/bin/tiff2ps -a -h 11.1082 -w 7.8543 $FILE | /usr/bin/lpr -P *yourprintername*
 
 ```
 
@@ -110,8 +110,8 @@ Remember to add your changed file to pacmans NoUpgrade list else your changes mi
 faxstat (shows you the status of HylaFAX)
 faxstat -s (shows you the send status)
 faxstat -r (shows received faxes)
-faxalter -a now _jobid_ (forces send retry now)
-faxrm _jobid_ (deletes fax from sendqueue)
+faxalter -a now *jobid* (forces send retry now)
+faxrm *jobid* (deletes fax from sendqueue)
 
 ```
 

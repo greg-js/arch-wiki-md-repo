@@ -1,6 +1,6 @@
 dhcpd is the [Internet Systems Consortium](http://www.isc.org/downloads/dhcp/) DHCP Server. It is useful for instance on a machine acting as a router on a LAN.
 
-**Note:** _dhcpd_ (DHCP **(server)** daemon) is not the same as [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (DHCP **client** daemon).
+**Note:** *dhcpd* (DHCP **(server)** daemon) is not the same as [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (DHCP **client** daemon).
 
 ## Contents
 
@@ -18,7 +18,7 @@ dhcpd is the [Internet Systems Consortium](http://www.isc.org/downloads/dhcp/) D
 
 ## Usage
 
-_dhcpd_ includes a unit file `dhcpd4.service`, which can be used to [control](/index.php/Enable "Enable") the daemon. It starts the daemon for _all_ [network interfaces](/index.php/Network_configuration#Network_Interfaces "Network configuration"). See [#Listening on only one interface](#Listening_on_only_one_interface) for alternative.
+*dhcpd* includes a unit file `dhcpd4.service`, which can be used to [control](/index.php/Enable "Enable") the daemon. It starts the daemon for *all* [network interfaces](/index.php/Network_configuration#Network_Interfaces "Network configuration"). See [#Listening on only one interface](#Listening_on_only_one_interface) for alternative.
 
 ## Configuration
 
@@ -50,7 +50,6 @@ The default `dhcpd.conf` contains many uncommented examples, so relocate it:
 The minimal configuration file may look like:
 
  `/etc/dhcpd.conf` 
-
 ```
 option domain-name-servers 8.8.8.8, 8.8.4.4;
 option subnet-mask 255.255.255.0;
@@ -64,7 +63,6 @@ subnet 139.96.30.0 netmask 255.255.255.0 {
 If you need to provide a fixed IP address for a single specific device, you can use the following syntax
 
  `/etc/dhcpd.conf` 
-
 ```
 option domain-name-servers 8.8.8.8, 8.8.4.4;
 option subnet-mask 255.255.255.0;
@@ -84,7 +82,7 @@ subnet 139.96.30.0 netmask 255.255.255.0 {
 
 `subnet-mask` and `routers` defines a subnet mask and a list of available routers on the subnet. In most cases for small networks you can use `255.255.255.0` as a mask and specify an IP address of the machine on which you're configuring DHCP server as a router.
 
-`subnet` blocks defines options for separate subnets, which are mapped to the network interfaces on which _dhcpd_ is running. In our example this is one subnet `139.96.30.0/24` for single interface `eth0`, for which we defined the range of available IP addresses. Addresses from this range will be assigned to the connecting clients.
+`subnet` blocks defines options for separate subnets, which are mapped to the network interfaces on which *dhcpd* is running. In our example this is one subnet `139.96.30.0/24` for single interface `eth0`, for which we defined the range of available IP addresses. Addresses from this range will be assigned to the connecting clients.
 
 ### Listening on only one interface
 
@@ -97,7 +95,6 @@ In order to exclude an interface, you must create an empty declaration for the s
 This is done by editing the configuration file (for example):
 
  `/etc/dhcpd.conf` 
-
 ```
 # No DHCP service in DMZ network (192.168.2.0/24)
 subnet 192.168.2.0 netmask 255.255.255.0 {
@@ -107,10 +104,9 @@ subnet 192.168.2.0 netmask 255.255.255.0 {
 
 #### Service file
 
-There is no service files provided by default to use _dhcpd_ only on one interface so you need to create one:
+There is no service files provided by default to use *dhcpd* only on one interface so you need to create one:
 
  `/etc/systemd/system/dhcpd4@.service` 
-
 ```
 [Unit]
 Description=IPv4 DHCP server on %I
@@ -128,14 +124,13 @@ WantedBy=multi-user.target
 
 ```
 
-This is a template unit, which binds it to a particular interface, for example `dhcpd4@_eth0_.service` where _eth0_ is an interface shown with `ip link`.
+This is a template unit, which binds it to a particular interface, for example `dhcpd4@*eth0*.service` where *eth0* is an interface shown with `ip link`.
 
 ### Use for PXE
 
 PXE Configuration is done with the following two options:
 
  `/etc/dhcpd.conf` 
-
 ```
 next-server 192.168.0.2;
 filename "/pxelinux.0";

@@ -16,41 +16,41 @@
 
 ## Hardware
 
-*   _CPU:_ Intel Core Duo T8300 (2,4GHz, 3MB cache L2, FSB 800MHz)
-*   _Chipset:_ Mobile Intel® 965PM + ICH8M
-*   _RAM:_ 3072MB (1 x 1024MB) (1 x 2048MB) DDR2 SDRAM 667 Mhz
-*   _Hard Disk:_ SATA 250GB 4200 rpm
-*   _DVD Burner:_ TSS-CORP TS-632d
-*   _Display:_
-    *   _TFT 17.1" WXGA (1440x900)_ WXGA+/WUXGA Wide Screen,Color-Shine (Glare-type),Asus Splendid Video Intelligent Technology
-*   _Video:_ NVIDIA® GeForce® 9500M GS, 256MB VRAM (GDDR III type VRAM support)
-*   _Audio:_ Scheda Intel High Definition Audio
-*   _Wi-Fi:_ Intel® Wireless WiFi Link 4965ABN 802.11a/b/g/n
-*   _Bluetooth:_ 2.0+EDR
-*   _Webcam:_ 1.3 Mpixel
-*   _Modem:_ 56 Kbps V.90
-*   _LAN Gigabit Ethernet:_ 10/100/1000
-*   _Connectors:_
-    *   _1 x Microphone-in jack_
-    *   _1 x Headphone-out jack (S/PDIF)_
-    *   _1 x Express card_
-    *   _1 x Line-in jack_
-    *   _1 x VGA port_
-    *   _1 x TV Out (S-Video composite)_
-    *   _5 x USB 2.0 ports_
-    *   _1 x e-Sata port (USB combo)_
-    *   _1 x IEEE 1394 port_
-    *   _1 x RJ11 Modem jack for phone line_
-    *   _1 x RJ45 LAN Jack for LAN insert_
-    *   _1 x TV-out(S-Video)_
-    *   _1 x SIR-115.2Kbps supported_
-    *   _1 x CIR for remote controller_
-    *   _1 x AV-in_
-*   _Card Reader:_ MMC, SD, MS, MS-Pro
-*   _Dimension and Weight:_
-    *   _40.5 x 31.4 x 3.82 cm (W x D x H)_
-    *   _4.1 kg with 8 cell battery pack_
-*   _Pointer:_ Touch pad
+*   *CPU:* Intel Core Duo T8300 (2,4GHz, 3MB cache L2, FSB 800MHz)
+*   *Chipset:* Mobile Intel® 965PM + ICH8M
+*   *RAM:* 3072MB (1 x 1024MB) (1 x 2048MB) DDR2 SDRAM 667 Mhz
+*   *Hard Disk:* SATA 250GB 4200 rpm
+*   *DVD Burner:* TSS-CORP TS-632d
+*   *Display:*
+    *   *TFT 17.1" WXGA (1440x900)* WXGA+/WUXGA Wide Screen,Color-Shine (Glare-type),Asus Splendid Video Intelligent Technology
+*   *Video:* NVIDIA® GeForce® 9500M GS, 256MB VRAM (GDDR III type VRAM support)
+*   *Audio:* Scheda Intel High Definition Audio
+*   *Wi-Fi:* Intel® Wireless WiFi Link 4965ABN 802.11a/b/g/n
+*   *Bluetooth:* 2.0+EDR
+*   *Webcam:* 1.3 Mpixel
+*   *Modem:* 56 Kbps V.90
+*   *LAN Gigabit Ethernet:* 10/100/1000
+*   *Connectors:*
+    *   *1 x Microphone-in jack*
+    *   *1 x Headphone-out jack (S/PDIF)*
+    *   *1 x Express card*
+    *   *1 x Line-in jack*
+    *   *1 x VGA port*
+    *   *1 x TV Out (S-Video composite)*
+    *   *5 x USB 2.0 ports*
+    *   *1 x e-Sata port (USB combo)*
+    *   *1 x IEEE 1394 port*
+    *   *1 x RJ11 Modem jack for phone line*
+    *   *1 x RJ45 LAN Jack for LAN insert*
+    *   *1 x TV-out(S-Video)*
+    *   *1 x SIR-115.2Kbps supported*
+    *   *1 x CIR for remote controller*
+    *   *1 x AV-in*
+*   *Card Reader:* MMC, SD, MS, MS-Pro
+*   *Dimension and Weight:*
+    *   *40.5 x 31.4 x 3.82 cm (W x D x H)*
+    *   *4.1 kg with 8 cell battery pack*
+*   *Pointer:* Touch pad
 
 ## Configuration
 

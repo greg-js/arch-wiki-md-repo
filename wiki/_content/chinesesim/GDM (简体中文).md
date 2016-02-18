@@ -2,7 +2,7 @@
 
 来自 [GDM - GNOME显示管理器](http://projects.gnome.org/gdm/about.html):
 
-	_GDM是一种GNOME显示环境的管理器, 它是一个运行在后台的小程序（脚本）, runs your X sessions,显示一个登录界面并在你忘记密码的时候告诉你无法登录.GDM比xdm在任何方面都做的更好,也没有xdm那么多的漏洞. 它没有使用任何来自xdm的代码. 它支持 XDMCP, and in fact extends XDMCP a little bit in places where I thought xdm was lacking (but is still compatible with xdm's XDMCP)._
+	*GDM是一种GNOME显示环境的管理器, 它是一个运行在后台的小程序（脚本）, runs your X sessions,显示一个登录界面并在你忘记密码的时候告诉你无法登录.GDM比xdm在任何方面都做的更好,也没有xdm那么多的漏洞. 它没有使用任何来自xdm的代码. 它支持 XDMCP, and in fact extends XDMCP a little bit in places where I thought xdm was lacking (but is still compatible with xdm's XDMCP).*
 
 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")为[Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")用户们提供了图形化登录提示。
 
@@ -75,7 +75,6 @@ GDM 软件包提供了`gdm.service`。开机自动启动：
 要使用`~/.xinitrc`文件将参数传递给 X 服务（当它启动时），例如 **xmodmap** 或 **xsetroot**，可以向[xprofile](/index.php/Xprofile "Xprofile")添加同样命令，例如：
 
  `~/.xprofile` 
-
 ```
 #!/bin/sh
 
@@ -137,7 +136,6 @@ xsetroot -solid black              # sets the background to black
 Firstly, you need to extract the existing GNOME Shell theme to a folder in your home directory. You can do this using the following script:
 
  `extractgst.sh` 
-
 ```
 #!/bin/sh
 
@@ -157,7 +155,6 @@ Navigate to the created directory. You should find that the theme files have bee
 Next, you need to create a file in the directory with the following content:
 
  `gnome-shell-theme.gresource.xml` 
-
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
@@ -332,7 +329,7 @@ Update dconf:
 
 ### Make the power button interactive
 
-The default installation sets the power button to suspend the system. _**Power off**_ or _**Show dialog**_ is a better choice.
+The default installation sets the power button to suspend the system. ***Power off*** or ***Show dialog*** is a better choice.
 
 Create the necessary configuration file:
 
@@ -381,7 +378,6 @@ Users of legacy GDM may need to follow the instructions below:
 Edit `~/.dmrc`:
 
  `~/.dmrc` 
-
 ```
 [Desktop]
 Language=de_DE.UTF-8   # change to your default lang
@@ -393,7 +389,6 @@ Layout=de   nodeadkeys # change to your keyboard layout
 To change the GDM language, edit the file `/var/lib/AccountsService/users/gdm` and change the language line using the correct UTF-8 value for your language. You should see something similar to the text below:
 
  `/var/lib/AccountsService/users/gdm` 
-
 ```
 [User]
 Language=fr_FR.UTF-8
@@ -410,7 +405,6 @@ Once you have rebooted, if you look at the `/var/lib/AccountsService/users/gdm` 
 想要以GDM自动登录，将以下添加到`/etc/gdm/custom.conf`（将username替换成你想要自动登录的用户):
 
  `/etc/gdm/custom.conf` 
-
 ```
 # Enable automatic login for user
 [daemon]
@@ -422,7 +416,6 @@ AutomaticLoginEnable=True
 或以delay自动登录：
 
  `/etc/gdm/custom.conf` 
-
 ```
 [daemon]
 # for login with delay
@@ -449,14 +442,13 @@ auth sufficient pam_succeed_if.so user ingroup nopasswdlogin
 
 **注意:** 在GNOME 3中，users-admin和系统菜单似乎已被移除
 
-**警告:** <u>不要</u>对_**ROOT**_账户这样做!
+**警告:** <u>不要</u>对***ROOT***账户这样做!
 
 ### Passwordless shutdown for multiple sessions
 
 GDM uses polkit and logind to gain permissions for shutdown. You can shutdown the system when multiple users are logged in by setting:
 
  `/etc/polkit-1/localauthority.conf.d/org.freedesktop.logind.policy` 
-
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE policyconfig PUBLIC
@@ -531,7 +523,6 @@ auth            required        pam_deny.so
 The users for the gdm user list are gathered by accountsservice. It will automatically hide system users (UID < 1000). To hide ordinary users from the login list create or edit a file named after the user to hide in `/var/lib/AccountsService/users/` to contain at least:
 
  `/var/lib/AccountsService/users/<username>` 
-
 ```
 [User]
 SystemAccount=true
@@ -670,7 +661,6 @@ Layout=de   nodeadkeys # change to your keyboard layout
 将下面内容加入`/etc/X11/xorg.conf.d/10-evdev.conf`,将 fr 替换为您要使用的键盘
 
  `/etc/X11/xorg.conf.d/10-evdev.conf` 
-
 ```
 Section "InputClass"
         Identifier "evdev keyboard catchall"

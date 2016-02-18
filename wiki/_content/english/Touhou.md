@@ -61,7 +61,6 @@ If you are using the trial edition, they only include MIDI files. To play them, 
 Now add the following lines to Timidity++ configuration file:
 
  `/etc/timidity++/timidity.cfg` 
-
 ```
 dir /usr/share/timidity/freepats
 source /etc/timidity++/freepats/freepats.cfg

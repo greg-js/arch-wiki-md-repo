@@ -1,14 +1,14 @@
 来自 [ROX Desktop | ROX Desktop](http://roscidus.com/desktop/):
 
-	_ROX 是一个快速,广泛使用拖放的友好的桌面. 文件管理器或接口, following the traditional Unix view that '所有的东西都是一个文件' rather than trying to hide the filesystem beneath start menus, wizards, or druids. The aim is to make a system that is well designed and clearly presented. The ROX style favors using several small programs together instead of creating all-in-one mega-applications._
+	*ROX 是一个快速,广泛使用拖放的友好的桌面. 文件管理器或接口, following the traditional Unix view that '所有的东西都是一个文件' rather than trying to hide the filesystem beneath start menus, wizards, or druids. The aim is to make a system that is well designed and clearly presented. The ROX style favors using several small programs together instead of creating all-in-one mega-applications.*
 
 来自 [About ROX | ROX Desktop](http://roscidus.com/desktop/about_rox):
 
-	_Traditionally, Unix users have always based their activities around the filesystem. Just about everything that's anything appears as a file: regular files, hardware devices, and even processes on many systems (for example, inside the `/proc` filesystem on Linux)._
+	*Traditionally, Unix users have always based their activities around the filesystem. Just about everything that's anything appears as a file: regular files, hardware devices, and even processes on many systems (for example, inside the `/proc` filesystem on Linux).*
 
-	_However, recent desktop efforts (such as KDE and GNOME) seem to be following the Windows approach of trying to hide the filesystem and get users to do things via a Start-menu or similar. Modern desktop users, on Windows or Unix, often have no idea where their programs are installed, or even where their data files are saved. This leads to a feeling of not being in control, and a poor understanding of how the system works._
+	*However, recent desktop efforts (such as KDE and GNOME) seem to be following the Windows approach of trying to hide the filesystem and get users to do things via a Start-menu or similar. Modern desktop users, on Windows or Unix, often have no idea where their programs are installed, or even where their data files are saved. This leads to a feeling of not being in control, and a poor understanding of how the system works.*
 
-	_The ROX Desktop, however, is based around the filesystem. Its core component is ROX-Filer, a powerful graphical file manager which, in addition to being a popular filer in its own right, provides a couple of extra features which allow it to solve the above problems..._
+	*The ROX Desktop, however, is based around the filesystem. Its core component is ROX-Filer, a powerful graphical file manager which, in addition to being a popular filer in its own right, provides a couple of extra features which allow it to solve the above problems...*
 
 ## Contents
 

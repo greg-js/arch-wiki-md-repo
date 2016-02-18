@@ -83,7 +83,7 @@
 
 ## مقدمة
 
-*   اسم _GRUB_ يشير رسميا إلى الإصدار _2_ من البرنامج ، انظر [[2]](https://www.gnu.org/software/grub/).
+*   اسم *GRUB* يشير رسميا إلى الإصدار *2* من البرنامج ، انظر [[2]](https://www.gnu.org/software/grub/).
 
 إذا كنت تبحث عن مقال مخصص للإصدار القديم ، انظر [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy").
 
@@ -96,7 +96,7 @@
 
 قم بالتعود [على أوامر جروب](https://www.gnu.org/software/grub/manual/grub.html#Commands) قبل قبل الشروع في العمل. (مثلا تم وضع "search" بدلا من "find" ).
 
-*   أصبح GRUB _مرنا_ ولم يعد يحتاج إلى "stage 1.5". ونتيجة لذلك أصبح محمل الإقلاع نفسه عبارة عن وحدات يتم تحميلها من القرص الصلب كم بقدر الحاجة لتوسيع الوظائف مثل دعم (مثل دعم [LVM](/index.php/LVM "LVM") أو RAID ).
+*   أصبح GRUB *مرنا* ولم يعد يحتاج إلى "stage 1.5". ونتيجة لذلك أصبح محمل الإقلاع نفسه عبارة عن وحدات يتم تحميلها من القرص الصلب كم بقدر الحاجة لتوسيع الوظائف مثل دعم (مثل دعم [LVM](/index.php/LVM "LVM") أو RAID ).
 *   تم تغيير طريقة تسمية الأجهزة ما بين الإصدار القديم من GRUB والإصدار الحالي . تم ترقيم أقسام القرص الصلب بدءا من 1 بدلا م0 بينما الأقراص الصلبة ما زال ترقيمها يبدأ من 0 ، مسبوقة بنوع جدولة الأقسام. على سبيل المثال `/dev/sda1` يجب أن يشار إليه ب `(hd0,msdos1)` (لنظام MBR) أو `(hd0,gpt1)` لنظام (GPT).
 
 #### النسخ الاحتياطي للبيانات المهمة
@@ -130,7 +130,7 @@
 
 ##### إرشادات خاصة بجدول أقسام [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") (GPT)
 
-يحتاج تهيئة جروب إلى [قسم إقلاع بنظام بيوس](http://www.gnu.org/software/grub/manual/html_node/BIOS-installation.html) لتضمين `core.img` الخاصة بجروب في حالة عدم وجود فجوة ما بعد MBR في أنظمة تقسيم GPT (والتي يتم الاستيلاء عليها من قبل رأس الجدول والقسم الأساسي لجدول GPT). _هذا القسم يستخدم من قِبَل_ جروب فقط في إعدادات BIOS-GPT. لا يوجد نوع للأقسام في حالة تقسيم MBR (على الأقل ليس ل GRUB) كما أنه لا يتطلب هذا القسم إذا كان النظام يعتمد UEFI ، كما أنه لا يتضمن قطاعات للإقلاع ولا تحجز مكانا في هذه الحالة. لإعداد نظام تقسيم BIOS-GPT ، قم بإنشاء قسم بسعة 1007 كب في بداية القرص الصلب ، باستخدام اﻷداة cgdisk او GNU Parted دون تحديد نظام ملفات له. هذا الحجم 1007 كب سيتيح للقسم التالي أن يقسم صحيحا بقطاعات حجمها 1024 كب . إذا كان من الضروري يمكن لهذا القسم أن يوجد ويمكن أيضا أن يكون موجودا في مكان آخر على القرص، لكن يجب أن يكون داخل مساحة ال 2 تيرا بايت الأولى. اضبط القسم ليكون بنوع `0xEF02` في gdisk ، وبنوع `EF02` في cgdisk أو `set <BOOT_PART_NUM> bios_grub on` في GNU Parted.
+يحتاج تهيئة جروب إلى [قسم إقلاع بنظام بيوس](http://www.gnu.org/software/grub/manual/html_node/BIOS-installation.html) لتضمين `core.img` الخاصة بجروب في حالة عدم وجود فجوة ما بعد MBR في أنظمة تقسيم GPT (والتي يتم الاستيلاء عليها من قبل رأس الجدول والقسم الأساسي لجدول GPT). *هذا القسم يستخدم من قِبَل* جروب فقط في إعدادات BIOS-GPT. لا يوجد نوع للأقسام في حالة تقسيم MBR (على الأقل ليس ل GRUB) كما أنه لا يتطلب هذا القسم إذا كان النظام يعتمد UEFI ، كما أنه لا يتضمن قطاعات للإقلاع ولا تحجز مكانا في هذه الحالة. لإعداد نظام تقسيم BIOS-GPT ، قم بإنشاء قسم بسعة 1007 كب في بداية القرص الصلب ، باستخدام اﻷداة cgdisk او GNU Parted دون تحديد نظام ملفات له. هذا الحجم 1007 كب سيتيح للقسم التالي أن يقسم صحيحا بقطاعات حجمها 1024 كب . إذا كان من الضروري يمكن لهذا القسم أن يوجد ويمكن أيضا أن يكون موجودا في مكان آخر على القرص، لكن يجب أن يكون داخل مساحة ال 2 تيرا بايت الأولى. اضبط القسم ليكون بنوع `0xEF02` في gdisk ، وبنوع `EF02` في cgdisk أو `set <BOOT_PART_NUM> bios_grub on` في GNU Parted.
 
 **ملاحظة:** يجب إنشاء هذا القسم قبل تنفيذ الأمر `grub-install` أو اﻷمر `grub-setup`
 
@@ -300,7 +300,6 @@ Installation finished. No error reported.
 كمثال:
 
  `/boot/grub/menu.lst` 
-
 ```
 default=0
 timeout=5
@@ -316,9 +315,7 @@ kernel /vmlinuz-linux root=/dev/sda2 ro
 initrd /initramfs-linux-fallback.img
 
 ```
-
  `/boot/grub/grub.cfg` 
-
 ```
 set default='0'; if [ x"$default" = xsaved ]; then load_env; set default="$saved_entry"; fi
 set timeout=5
@@ -636,7 +633,7 @@ Afterwards remake `/boot/grub/grub.cfg`
 
 ### إنشاء ملف grub.cfg يدويا
 
-**تحذير:** يوصى بشدة _بعدم تعديل هذا الملف._ يتم توليد هذا الملف بالأمر `grub-mkconfig` ، ومن الأفضل تحرير الملف `/etc/default/grub` أو واحدا من السكربتات في المجلد`/etc/grub.d` .
+**تحذير:** يوصى بشدة *بعدم تعديل هذا الملف.* يتم توليد هذا الملف بالأمر `grub-mkconfig` ، ومن الأفضل تحرير الملف `/etc/default/grub` أو واحدا من السكربتات في المجلد`/etc/grub.d` .
 
 ملف الإعداد الأساسي لجروب يستخدم الخيارات التالية:
 
@@ -801,7 +798,6 @@ GRUB_GFXPAYLOAD_LINUX=keep
 في البداية عليك أن تجد نمط الفيديو الذي ستقوم بتعديله لاحقا. ولذلك تحتاج إلى أحد أوامر صدفة GRUB :
 
  `sh:grub> 915resolution -l` 
-
 ```
 Intel 800/900 Series VBIOS Hack : version 0.5.3
 [...]
@@ -813,7 +809,6 @@ Intel 800/900 Series VBIOS Hack : version 0.5.3
 Next, we overwrite the `Mode 30` with `1440x900` resolution:
 
  `/etc/grub.d/00_header` 
-
 ```
 [...]
 **915resolution 30 1440 900  # Inserted line**
@@ -965,7 +960,7 @@ insmod lvm
 and specify your root in the menuentry as:
 
 ```
-set root=lvm/_lvm_group_name_-_lvm_logical_boot_partition_name_
+set root=lvm/*lvm_group_name*-*lvm_logical_boot_partition_name*
 
 ```
 
@@ -1058,7 +1053,6 @@ GRUB_SAVEDEFAULT=true
 If you want to secure GRUB so it is not possible for anyone to change boot parameters or use the command line, you can add a user/password combination to GRUB's configuration files. To do this, run the command `grub-mkpasswd-pbkdf2`. Enter a password and confirm it:
 
  `grub-mkpasswd-pbkdf2` 
-
 ```
 [...]
 Your PBKDF2 is grub.pbkdf2.sha512.10000.C8ABD3E93C4DFC83138B0C7A3D719BC650E6234310DA069E6FDB0DD4156313DA3D0D9BFFC2846C21D5A2DDA515114CF6378F8A064C94198D0618E70D23717E82.509BFA8A4217EAD0B33C87432524C0B6B64B34FBAD22D3E6E6874D9B101996C5F98AB1746FE7C7199147ECF4ABD8661C222EEEDB7D14A843261FFF2C07B1269A
@@ -1068,7 +1062,6 @@ Your PBKDF2 is grub.pbkdf2.sha512.10000.C8ABD3E93C4DFC83138B0C7A3D719BC650E62343
 Then, add the following to `/etc/grub.d/00_header`:
 
  `/etc/grub.d/00_header` 
-
 ```
 cat << EOF
 
@@ -1432,7 +1425,6 @@ If GRUB loads but drops you into the rescue shell with no errors, it may be beca
 An example of a working EFI:
 
  `# efibootmgr -v` 
-
 ```
 BootCurrent: 0000
 Timeout: 3 seconds

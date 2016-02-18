@@ -90,11 +90,11 @@ The logical sector size is the sector size used for data transfer. This value mu
 
 ## How to determine if HDD employ a 4k sector
 
-The physical and logical sector size of hard disk /dev/sd_X_ can be determined by reading the following sysfs entries:
+The physical and logical sector size of hard disk /dev/sd*X* can be determined by reading the following sysfs entries:
 
 ```
-$ cat /sys/class/block/sd_X_/queue/physical_block_size
-$ cat /sys/class/block/sd_X_/queue/logical_block_size
+$ cat /sys/class/block/sd*X*/queue/physical_block_size
+$ cat /sys/class/block/sd*X*/queue/logical_block_size
 
 ```
 
@@ -152,7 +152,6 @@ FYI - this section has nothing to do with Advanced Format technology, but this i
 Use hdparm in `/etc/systemd/system/lcc_fix.service` to disable this 'feature' and likely add life to your hdd:
 
  `/etc/systemd/system/lcc_fix.service ` 
-
 ```
 [Unit]
 Description=WDIDLE3
@@ -231,16 +230,16 @@ to get the raw idle3 timer value. You can disable the IntelliPark feature comple
 
 ```
 
-or set it to a different value (_0_-_255_) with (e.g. 10 seconds):
+or set it to a different value (*0*-*255*) with (e.g. 10 seconds):
 
 ```
 # idle3ctl -s 100 /dev/your_wd_hd
 
 ```
 
-The range _0_-_128_ is in 0.1s and _129-255_ in 30s. For the changes to take effect, the drive needs to go through one powercycle, meaning powering it off and on again (on internal drives, a reboot is not sufficient).
+The range *0*-*128* is in 0.1s and *129-255* in 30s. For the changes to take effect, the drive needs to go through one powercycle, meaning powering it off and on again (on internal drives, a reboot is not sufficient).
 
-If your WD hard drive is not recognized, you can use the _--force_ option. For more options see:
+If your WD hard drive is not recognized, you can use the *--force* option. For more options see:
 
 ```
 $ idle3ctl -h

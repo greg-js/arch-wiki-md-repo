@@ -153,7 +153,6 @@ Attivare l'avvio automatico al boot:
 ```
 
 **Nota:** I servizi senza una sezione `[Install]`, sono solitamente evocati automaticamente da altri servizi. Ma se occorre installarli manualmente usare il seguente comando rimpiazzando `foo` con il nome del servizio.
-
 ```
 # ln -s /usr/lib/systemd/system/"foo".service /etc/systemd/system/graphical.target.wants/
 
@@ -266,7 +265,6 @@ See `man 5 hostname` e `man 1 hostnamectl` per dettagli.
 Esempio di file:
 
  `/etc/hostname` 
-
 ```
 myhostname
 
@@ -290,7 +288,6 @@ Per ulteriori informazioni vedere [Locale](/index.php/Locale_(Italiano) "Locale 
 Esempio di file:
 
  `/etc/locale.conf` 
-
 ```
 LANG=it_IT.utf8
 
@@ -301,7 +298,6 @@ LANG=it_IT.utf8
 La console virtuale (la mappatura della tastiera, i caratteri della console e la mappatura della console) è configurata in `/etc/vconsole.conf`:
 
  `/etc/vconsole.conf` 
-
 ```
 KEYMAP=it
 FONT=
@@ -365,7 +361,6 @@ Ad oggi, tutti i moduli necessari da caricare sono gestiti automaticamente da [u
 I moduli extra al kernel da caricare durante il boot sono configurati in una lista statica in `/etc/modules-load.d/`. Ogni file di configurazione ha il nome nello stile di `/etc/modules-load.d/<programma>.conf/`. I files di configurazione dovrebbero semplicemente contenere una lista con i nomi dei moduli da caricare, separati dal tasto INVIO. Le linee vuote o quelle dove il primo carattere che non è uno spazio è # oppure ; sono ignorate. Ad esempio:
 
  `/etc/modules-load.d/virtio-net.conf` 
-
 ```
 # Carica virtio-net.ko al boot
 virtio-net
@@ -446,7 +441,7 @@ Nell'attuale versione di systemd, le opzioni `Handle*` saranno applicate al sist
 
 **Attenzione:** Attualmente, i gestori di alimentazione delle versioni più recenti di [KDE](/index.php/KDE "KDE") e [GNOME](/index.php/GNOME "GNOME") sono gli unici che possiedono i necessari comandi inibitori. Quando li avranno anche gli altri, occorrerà settare l'opzione `Handle` a `ignore` se si voglio gestire gli eventi ACPI con [Xfce](/index.php/Xfce "Xfce"), [acpid](/index.php/Acpid "Acpid") o qualsiasi altro programma.
 
-**Nota:** Systemd può anche usare altri backends per la sospensione (come [Uswsusp](/index.php/Uswsusp "Uswsusp") o [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")), in aggiunta al backend di default del _kernel_, al fine di mettere il computer in uno stato di sleep o ibernazione.
+**Nota:** Systemd può anche usare altri backends per la sospensione (come [Uswsusp](/index.php/Uswsusp "Uswsusp") o [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")), in aggiunta al backend di default del *kernel*, al fine di mettere il computer in uno stato di sleep o ibernazione.
 
 For `systemctl hibernate` to work on your system you need to follow instructions at [Hibernation](/index.php/Pm-utils#Hibernation_.28suspend2disk.29 "Pm-utils") and possibly at [Mkinitcpio Resume Hook](/index.php/Pm-utils#Mkinitcpio_Resume_Hook "Pm-utils") (`pm-utils` does not need to be installed).
 
@@ -459,7 +454,6 @@ Systemd non usa [pm-utils](/index.php/Pm-utils "Pm-utils") per mettere la macchi
 Dei service files possono essere agganciati a suspend.target, hibernate.target e sleep.target per eseguire azioni prima o dopo la sospensione lo l'ibernazione. Files separati dovrebbero essere creati per azioni degli utenti e azioni di sistema (root). Per attivare i servizi degli utenti, `# systemctl enable suspend@<user> && systemctl enable resume@<user>`. Esempi:
 
  `/etc/systemd/system/suspend@.service` 
-
 ```
 [Unit]
 Description=User suspend actions
@@ -475,9 +469,7 @@ ExecStart=/usr/bin/sflock
 [Install]
 WantedBy=sleep.target
 ```
-
  `/etc/systemd/system/resume@.service` 
-
 ```
 [Unit]
 Description=User resume actions
@@ -496,7 +488,6 @@ WantedBy=suspend.target
 Per azioni di sistema o root (attivare con `# systemctl enable root-suspend`):
 
  `/etc/systemd/system/root-resume.service` 
-
 ```
 [Unit]
 Description=Local system resume actions
@@ -509,9 +500,7 @@ ExecStart=/usr/bin/systemctl restart mnt-media.automount
 [Install]
 WantedBy=suspend.target
 ```
-
  `/etc/systemd/system/root-suspend.service` 
-
 ```
 [Unit]
 Description=Local system suspend actions
@@ -538,7 +527,6 @@ Con il servizio combinato suspend/resume, un singolo collegamento fa tutto il la
 Esempi e spiegazioni:
 
  `/etc/systemd/system/wicd-sleep.service` 
-
 ```
 [Unit]
 Description=Wicd sleep hook
@@ -580,7 +568,6 @@ Nota che è possibile usare anche `sleep.target`, `suspend.target`, `hibernate.t
 Un esempio di script personalizzato:
 
  `/usr/lib/systemd/system-sleep/example.sh` 
-
 ```
 #!/bin/sh
 case $1/$2 in
@@ -647,7 +634,6 @@ Ci sono parecchi tipi differenti di avvio da considerare quando si scrive un ser
 Per editare il file unit fornito da un pacchetto, si può creare una cartella chiamata `/etc/systemd/system/<unit>.d/` per esempio `/etc/systemd/system/httpd.service.d/` e mettere i files `*.conf` in essa per sovrascrivere e aggiungere nuove opzioni. Systemd controllerà questi files `*.conf` e li applicherà al di sopra degli originali. Per esempio, se si vuole semplicemente aggiungere un dipendenza all'unità si può creare il seguente file:
 
  `/etc/systemd/system/<unit>.d/customdependency.conf` 
-
 ```
 [Unit]
 Requires=<new dependency>
@@ -665,7 +651,6 @@ Poi eseguire i comandi seguenti perché le modifiche abbiano effetto:
 In alternativa si può copiare la vecchia unità da `/usr/lib/systemd/system/` in `/etc/systemd/system/` e fare qui le modifiche. Una unità in `/etc/systemd/system/` sovrascriverà sempre la stessa unità in `/usr/lib/systemd/system/`. Da notare che quando l'unità originale in `/usr/lib/` cambia a causa di un aggiornamento, le modifiche non si rifletteranno automaticamente sulla propria unità personalizzata in `/etc/`. In aggiunta occorre riattivarla manualmente con `systemctl reenable <unit>`. E' raccomandato usare il metodo con il `*.conf` descritto sopra.
 
 **Suggerimento:** Si può usare `systemd-delta` per vedere quali unità sono state sovrascritte e quali esattamente sono state modificate.
-
 Siccome le unità saranno aggiornate di volta in volta , usare systemd-delta per la manutenzione del sistema.
 
 ### Evidenziazione della sintassi per le unità di systemd con Vim
@@ -674,7 +659,7 @@ L'evidenziazione della sintassi per le unità di systemd con [Vim](/index.php/Vi
 
 ## Targets
 
-Quello dei "runlevels" è un concetto superato in systemd. Systemd ha il concetto di _target_ (lett. "bersagli") che adempiono uno scopo simile a quello dei runlevel, ma che hanno un comportamento leggermente differente. Ogni _target_ ha un nome anziché un numero ed è usato per raggiungere uno specifico scopo con la possibilità di averne più di uno attivo nello stesso momento. Alcuni _targets_ sono attivati ereditando tutto dei servizi di un altro _target_ e implementandolo di servizi addizionali. Ci sono _target_ che simulano i runlevel di SystemVinit, è così possibile passare da un _target_ all'altro utilizzando il comando `telinit RUNLEVEL`.
+Quello dei "runlevels" è un concetto superato in systemd. Systemd ha il concetto di *target* (lett. "bersagli") che adempiono uno scopo simile a quello dei runlevel, ma che hanno un comportamento leggermente differente. Ogni *target* ha un nome anziché un numero ed è usato per raggiungere uno specifico scopo con la possibilità di averne più di uno attivo nello stesso momento. Alcuni *targets* sono attivati ereditando tutto dei servizi di un altro *target* e implementandolo di servizi addizionali. Ci sono *target* che simulano i runlevel di SystemVinit, è così possibile passare da un *target* all'altro utilizzando il comando `telinit RUNLEVEL`.
 
 ### Conoscere il target attuale
 
@@ -687,7 +672,7 @@ $ systemctl list-units --type=target
 
 ### Creare un target personalizzato
 
-I runlevels sono assegnati ad uno specifico scopo su l'installazione vanilla di Fedora; 0, 1, 3, 5, e 6; hanno una mappatura 1:1 con uno specifico _target_ di systemd. Sfortunatamente non c'è un altrettanto buon metodo per i runlevels definiti dall'utente come 2 e 4\. Se si fa uso di questi, si suggerisce di dare un nuovo nome al _target_ di systemd come `/etc/systemd/system/<your target>` che prenda come base une dei runlevels esistenti (vedi `/usr/lib/systemd/system/graphical.target` come esempio), creare una cartella `/etc/systemd/system/<your target>.wants`, e fare un collegamento ai servizi addizionali da `/usr/lib/systemd/system/` che si intendono attivare.
+I runlevels sono assegnati ad uno specifico scopo su l'installazione vanilla di Fedora; 0, 1, 3, 5, e 6; hanno una mappatura 1:1 con uno specifico *target* di systemd. Sfortunatamente non c'è un altrettanto buon metodo per i runlevels definiti dall'utente come 2 e 4\. Se si fa uso di questi, si suggerisce di dare un nuovo nome al *target* di systemd come `/etc/systemd/system/<your target>` che prenda come base une dei runlevels esistenti (vedi `/usr/lib/systemd/system/graphical.target` come esempio), creare una cartella `/etc/systemd/system/<your target>.wants`, e fare un collegamento ai servizi addizionali da `/usr/lib/systemd/system/` che si intendono attivare.
 
 ### Targets table
 
@@ -852,7 +837,7 @@ Avviare il sistema con questi parametri sulla linea di comando del kernel:
 *   [systemd per amministratori (PDF)](http://0pointer.de/public/systemd-ebook-psankar.pdf)
 *   [Systemd su Fedora Project](http://fedoraproject.org/wiki/Systemd)
 *   [Come correggere i problemi di systemd](http://fedoraproject.org/wiki/How_to_debug_Systemd_problems)
-*   [Two](http://www.h-online.com/open/features/Control-Centre-The-systemd-Linux-init-system-1565543.html) [part](http://www.h-online.com/open/features/Booting-up-Tools-and-tips-for-systemd-1570630.html) articolo introduttivo nella rivista _The H Open_.
+*   [Two](http://www.h-online.com/open/features/Control-Centre-The-systemd-Linux-init-system-1565543.html) [part](http://www.h-online.com/open/features/Booting-up-Tools-and-tips-for-systemd-1570630.html) articolo introduttivo nella rivista *The H Open*.
 *   [Lennart's blog story](http://0pointer.de/blog/projects/systemd.html)
 *   [status update](http://0pointer.de/blog/projects/systemd-update.html)
 *   [status update2](http://0pointer.de/blog/projects/systemd-update-2.html)

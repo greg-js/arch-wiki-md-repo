@@ -4,7 +4,7 @@
 
 ## 256 color support
 
-_Settings > Connection > Data : Terminal-type string = xterm-256color_
+*Settings > Connection > Data : Terminal-type string = xterm-256color*
 
 To test color support, execute the following command: [reference](http://www.commandlinefu.com/commands/view/5879/show-numerical-values-for-each-of-the-256-colors-in-bash)
 

@@ -17,11 +17,11 @@ Booting is a multi-stage process. Most PCs today initialize system devices with 
 
 ## History
 
-The MBR consists of a short piece of assembly code (the initial bootloader – 446 bytes), a partition table for the 4 primary partitions (16 bytes each) and a _sentinel_ (0xAA55).
+The MBR consists of a short piece of assembly code (the initial bootloader – 446 bytes), a partition table for the 4 primary partitions (16 bytes each) and a *sentinel* (0xAA55).
 
-The "Conventional" Windows/DOS MBR bootloader code will check the partition table for one and only one _active_ partition, read X sectors from this partition and then transfer control to the operating system. The Windows/DOS bootloader can _not_ boot an Arch Linux partition because it is not designed to load the Linux kernel, and it can only cater for an _active_, _primary_ partition (which GRUB safely ignores).
+The "Conventional" Windows/DOS MBR bootloader code will check the partition table for one and only one *active* partition, read X sectors from this partition and then transfer control to the operating system. The Windows/DOS bootloader can *not* boot an Arch Linux partition because it is not designed to load the Linux kernel, and it can only cater for an *active*, *primary* partition (which GRUB safely ignores).
 
-The [GRand Unified Bootloader (GRUB)](/index.php/GRUB "GRUB") is the de facto standard bootloader for GNU/Linux, and users are recommended to install it on the MBR to allow booting from _any_ partition, whether it be primary or logical.
+The [GRand Unified Bootloader (GRUB)](/index.php/GRUB "GRUB") is the de facto standard bootloader for GNU/Linux, and users are recommended to install it on the MBR to allow booting from *any* partition, whether it be primary or logical.
 
 ## Backup and restoration
 

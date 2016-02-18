@@ -15,10 +15,10 @@
 
 ## Adding feeds
 
-First, tell _rss2email_ where it should send feeds by running the command:
+First, tell *rss2email* where it should send feeds by running the command:
 
 ```
-$ r2e new _user@example.com_
+$ r2e new *user@example.com*
 
 ```
 
@@ -31,7 +31,7 @@ $ r2e add https://www.archlinux.org/feeds/packages/ ''e-mail address''
 
 Note that an e-mail address only has to be given if the feed is to be delivered to an address other than the default one; otherwise, leaving off the e-mail address is acceptable.
 
-After a new feed is added, _rss2email_ will e-mail every post it hasn't previously e-mailed. The first time it is run, therefore, it will e-mail every post. To avoid this behavior, after adding a new feed, run:
+After a new feed is added, *rss2email* will e-mail every post it hasn't previously e-mailed. The first time it is run, therefore, it will e-mail every post. To avoid this behavior, after adding a new feed, run:
 
 ```
 $ r2e run --no-send
@@ -47,7 +47,7 @@ $ r2e run
 
 ```
 
-To automate this process and have _rss2email_ check for new feeds every 30 minutes, users should add the following to their `[crontab](/index.php/Crontab "Crontab")` by running the command `crontab -e` and appending to the file:
+To automate this process and have *rss2email* check for new feeds every 30 minutes, users should add the following to their `[crontab](/index.php/Crontab "Crontab")` by running the command `crontab -e` and appending to the file:
 
 ```
 */30 * * * * /usr/bin/r2e run
@@ -66,16 +66,16 @@ r2e list
 This will output a numbered list of feeds. To delete a feed, run:
 
 ```
-r2e delete _number_
+r2e delete *number*
 
 ```
 
-where _number_ is the number of the feed to be deleted.
+where *number* is the number of the feed to be deleted.
 
 To change the default e-mail address, run:
 
 ```
-r2e email _new_address@example.net_
+r2e email *new_address@example.net*
 
 ```
 
@@ -131,7 +131,7 @@ To send mail using an SMTP server rather than the local machine, use:
 
 ```
 SMTP_SEND = 1
-SMTP_SERVER = _smtp.example.com:25_
+SMTP_SERVER = *smtp.example.com:25*
 
 ```
 
@@ -139,8 +139,8 @@ If the SMTP server requires authentication, set:
 
 ```
 AUTHREQUIRED = 1
-SMTP_USER = _user@example.com_
-SMTP_PASS = _password_
+SMTP_USER = *user@example.com*
+SMTP_PASS = *password*
 
 ```
 

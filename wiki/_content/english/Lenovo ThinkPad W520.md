@@ -59,7 +59,6 @@ $ intel-virtual-output -f
 *   for the nvidia card to recognize external monitors, some lines have to be commented out of the default config file at `/etc/bumblebee/xorg.conf.nvidia`
 
  `xorg.conf.nvidia` 
-
 ```
 ...
  #   Option "UseEDID" "false"
@@ -84,7 +83,6 @@ Trackpoint and Touchpad will work out of the box, but some tweaking is required 
 *   Set up trackpoint scrolling by adding a new config in `xorg.conf.d`.
 
  `20-trackpoint.conf` 
-
 ```
 Section "InputClass"
          Identifier      "Trackpoint Wheel Emulation"
@@ -101,7 +99,6 @@ EndSection
 *   Trackpoint sensitivity and speed can be set up using an udev rule in `/etc/udev/rules.d/` (the add-rule will work around the configuration not being applied when the trackpoint hasnt been loaded, alternatively a wait-for can be used, which comes with the added drawback of added unresponsiveness of the trackpoint some time after boot)
 
  `82-trackpoint.rules` 
-
 ```
 # Set the trackpoint speed and sensitivity
 ACTION=="add",SUBSYSTEM=="input",ATTR{name}=="TPPS/2 IBM TrackPoint",ATTR{device/sensitivity}="240"

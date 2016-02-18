@@ -31,7 +31,7 @@
 
 	[http://www.viewizard.com/download.php](http://www.viewizard.com/download.php) || [astromenace](https://www.archlinux.org/packages/?name=astromenace).
 
-*   **Barrage** — Violento gioco sparatutto _punta-e-clicca"_ con gradevoli effetti
+*   **Barrage** — Violento gioco sparatutto *punta-e-clicca"* con gradevoli effetti
 
 	[http://lgames.sourceforge.net/index.php?project=Barrage](http://lgames.sourceforge.net/index.php?project=Barrage) || [barrage](https://www.archlinux.org/packages/?name=barrage)
 
@@ -397,7 +397,7 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 *   **[VVVVVV](https://en.wikipedia.org/wiki/VVVVVV "wikipedia:VVVVVV")** — Puzzle indie plattform 2D molto apprezzato con un tema retrò C64, con una grande colonna sonora chiptune. È possibile acquistare la versione completa per £1.67, o giocare una [demo](http://www.kongregate.com/games/TerryCavanagh/vvvvvv-demo/) in un browser.
 
-**Suggerimento:** Si consiglia di eseguire il backup del file di salvataggio, che si trovano in `~/.macromedia/Flash_Player/#SharedObjects/_string_/localhost...`.
+**Suggerimento:** Si consiglia di eseguire il backup del file di salvataggio, che si trovano in `~/.macromedia/Flash_Player/#SharedObjects/*string*/localhost...`.
 
 	[http://thelettervsixtim.es/](http://thelettervsixtim.es/) || [vvvvvv](https://aur.archlinux.org/packages/vvvvvv/)
 
@@ -662,11 +662,11 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://zerowing.idsoftware.com/linux/etqw/](http://zerowing.idsoftware.com/linux/etqw/) || [etqw](https://aur.archlinux.org/packages/etqw/)
 
-*   **Half-Life** — FPS di fantascienza. Le due estensioni , _Opposing force_ e _Blue Shift_, sono inoltre disponibili.
+*   **Half-Life** — FPS di fantascienza. Le due estensioni , *Opposing force* e *Blue Shift*, sono inoltre disponibili.
 
 	[http://store.steampowered.com/app/70/](http://store.steampowered.com/app/70/) || Steam
 
-*   **Half-Life 2** — FPS di fantascienza. Sono inoltre disponibili le espansioni _Lost Coast_, _Episode One_ and _Episode Two_. In fase beta a partire dal luglio 2013.
+*   **Half-Life 2** — FPS di fantascienza. Sono inoltre disponibili le espansioni *Lost Coast*, *Episode One* and *Episode Two*. In fase beta a partire dal luglio 2013.
 
 	[http://store.steampowered.com/app/220/](http://store.steampowered.com/app/220/) || Steam
 
@@ -881,7 +881,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://dark-oberon.sourceforge.net/](http://dark-oberon.sourceforge.net/) || [dark-oberon](https://aur.archlinux.org/packages/dark-oberon/)
 
-*   **Dota 2** — Il sequel del famosa mappa _Defense of the Ancient_ di WarCraft III, che a sua volta si basava sulla popolare mappa _Aeon of Strife_ per StarCraft.
+*   **Dota 2** — Il sequel del famosa mappa *Defense of the Ancient* di WarCraft III, che a sua volta si basava sulla popolare mappa *Aeon of Strife* per StarCraft.
 
 	[http://store.steampowered.com/app/570/](http://store.steampowered.com/app/570/) || Steam
 
@@ -921,7 +921,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://www.netpanzer.org/](http://www.netpanzer.org/) || [netpanzer](https://aur.archlinux.org/packages/netpanzer/)
 
-*   **Spring** — Motore di gioco RTS ispirato al gioco _Total Annihilation_ .
+*   **Spring** — Motore di gioco RTS ispirato al gioco *Total Annihilation* .
 
 	[http://springrts.com/wiki/Games](http://springrts.com/wiki/Games) || [spring](https://www.archlinux.org/packages/?name=spring)
 

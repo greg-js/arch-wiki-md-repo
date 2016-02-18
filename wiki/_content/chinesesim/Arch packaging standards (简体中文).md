@@ -71,7 +71,6 @@ package() {
 *   在包信息文件中的`packager`字段可以通过修改`/etc/makepkg.conf`文件由编译者自定义编译选项。使用 `~/.makepkg.conf`也可以达到此目的。
 *   所有安装过程中所需输出的重要的信息，都可以放到**.install 文件中**.比如说如果某软件包需要扩展的安装步骤才能正常运行，你可以将这些步骤的介绍包含在.install文件中。
 *   任何运行该软件包不需要，或者该软件包的通用功能不需要的**可选的依赖**不要加入到depends中，这些信息应该加入**optdepends** 数组，例如：
-
     ```
     optdepends=('cups: printing support'
                 'sane: scanners support'
@@ -146,7 +145,7 @@ package() {
 
 ### 架构
 
-_arch_ 数组应该包含 _i686_ 和/或 _x86_64_ ，取决于软件可以构建的目标架构。也可以使用 _any_ 生成那些架构无关的包。
+*arch* 数组应该包含 *i686* 和/或 *x86_64* ，取决于软件可以构建的目标架构。也可以使用 *any* 生成那些架构无关的包。
 
 #### 软件包授权
 
@@ -175,9 +174,8 @@ license数组用于官方仓库中说明软件包的使用授权协议。当然�
 3.  请在`PKGBUILD`文件顶部按照下列格式**添加一行注释**，注意修饰一下你的 email 地址避免被 spam 骚扰： `# Contributor: Your Name <your.email>` 
 4.  核实软件包的**依赖关系** (例如运行`ldd`以检测软件包调用的动态链接库). TU团队**强烈**建议使用[Jason Chu](https://www.archlinux.org/fellows/#jason)所写的`namcap`工具集，来分析你的软件包. `namcap`将会告诉你错误的权限、缺失/多余的依赖和其他常规错误。你可以使用`pacman`安装`namcap`。 记住`namcap`可以既可以用来检测 pkg.tar.gz 文件，也可以用于PKGBUILDs。
 5.  **依赖**问题是最常见的打包错误。 Namcap可以协助检测他们,但不一定全对。最好的方法还是查看源代码里面的文档以及程序的发布网站
-6.  在你的PKGBUILD中**不要使用<tt>replaces</tt>**，除非你希望重命名你的软件包（比如_Ethereal_ 更名为_Wireshark_）。 如果你仅仅是提供一个已有版本的更迭版， 使用<tt>conflicts</tt> (如果该软件包还被其他包依赖的话还有<tt>provides</tt> )。 主要的不同是：在同步(-Sy)数据库后,pacman如果遇到含有replace字段的软件包，就会立刻取代已安装的符合replase变量值的软件包，不管他是哪个仓库的； 另一方面，<tt>conflicts</tt>仅仅在你真正安装的时候才会去取代相应的包，这种行为通常是用户所期望的因为它具有更少的侵入性。
+6.  在你的PKGBUILD中**不要使用<tt>replaces</tt>**，除非你希望重命名你的软件包（比如*Ethereal* 更名为*Wireshark*）。 如果你仅仅是提供一个已有版本的更迭版， 使用<tt>conflicts</tt> (如果该软件包还被其他包依赖的话还有<tt>provides</tt> )。 主要的不同是：在同步(-Sy)数据库后,pacman如果遇到含有replace字段的软件包，就会立刻取代已安装的符合replase变量值的软件包，不管他是哪个仓库的； 另一方面，<tt>conflicts</tt>仅仅在你真正安装的时候才会去取代相应的包，这种行为通常是用户所期望的因为它具有更少的侵入性。
 7.  所有上传到AUR的文件应该打包到 **压缩的tar包文件**中，里面是一个目录，包含着**`PKGBUILD`**文件的目录和其他**编译所需的添加文件** (补丁,安装文件等)。例如：
-
     ```
     foo/PKGBUILD
     foo/foo.install

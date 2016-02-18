@@ -63,7 +63,6 @@ The following files are also available as [netcfg-ppp-mobile-git](https://aur.ar
 Create this file:
 
  `/etc/ppp/options-mobile` 
-
 ```
 ttyUSB0
 921600
@@ -102,7 +101,6 @@ lrwxrwxrwx 1 root root  13 Jun 20 19:30 provider -> mobile-noauth
 The **provider** symlink defines the default peer for pppd, and as you see it points to the **mobile-noauth** file. It is possible to setup a different file with user/password for each carrier (with **mobile-auth** being a example) but it seems that this is not necessary (at least, not for Vodafone or Simyo in Spain).
 
  `/etc/ppp/peers/mobile-auth` 
-
 ```
 file /etc/ppp/options-mobile
 user "your_usr"
@@ -110,9 +108,7 @@ password "your_pass"
 connect "/usr/sbin/chat -v -t15 -f /etc/ppp/chatscripts/mobile-modem.chat"
 
 ```
-
  `/etc/ppp/peers/mobile-noauth` 
-
 ```
 file /etc/ppp/options-mobile
 connect "/usr/sbin/chat -v -t15 -f /etc/ppp/chatscripts/mobile-modem.chat"
@@ -149,7 +145,6 @@ If you exchange the SIM card, to select the new carrier you only need to update 
 The other files consist in a single line, which in some cases you may need to modify in order to customize it.
 
  `/etc/ppp/chatscripts/mobile-modem.chat` 
-
 ```
 ABORT 'BUSY'
 ABORT 'NO CARRIER'
@@ -173,15 +168,13 @@ TIMEOUT 3
 TIMEOUT 30
 CONNECT ''
 ```
-
  `/etc/ppp/chatscripts/apn.es.vodafone`  `AT+CGDCONT=1,"IP","ac.vodafone.es"`  `/etc/ppp/chatscripts/apn.es.simyo`  `AT+CGDCONT=1,"IP","gprs-service.com"`  `/etc/ppp/chatscripts/apn.no.telenor`  `AT+CGDCONT=1,"IP","Telenor"` 
 
-(of course, you'll have to create your own apn files, replacing _"ac.vodafone.es"_ or _"gprs-service.com"_ by your own APN strings on them).
+(of course, you'll have to create your own apn files, replacing *"ac.vodafone.es"* or *"gprs-service.com"* by your own APN strings on them).
 
 For Telenor, use your mobile phone number (without country code) for both user and password in /etc/ppp/peers/mobile-noauth.
 
  `/etc/ppp/chatscripts/pin.CODE`  `AT+CPIN=1234`  `/etc/ppp/chatscripts/pin.NONE` 
-
 ```
 AT
 
@@ -190,7 +183,6 @@ AT
 If your SIM card has the PIN code disabled, you should symlink **pin** to **pin.NONE** to avoid sending it. When a SIM card has the PIN code enabled, it is only required to be sent the first time after power on. There is a modem command to query about this, but since I didn't find a reliable way to use it in the chat script, the PIN, when enabled, is always sent. This has no drawbacks, other than a little additional delay also due to the chat script limitations while recovering from the modem error response (if the PIN was no longer required).
 
  `/etc/ppp/chatscripts/mode.3G-only`  `AT\^SYSCFG=14,2,3fffffff,0,1`  `/etc/ppp/chatscripts/mode.3G-pref`  `AT\^SYSCFG=2,2,3fffffff,0,1`  `/etc/ppp/chatscripts/mode.GPRS-only`  `AT\^SYSCFG=13,1,3fffffff,0,0`  `/etc/ppp/chatscripts/mode.GPRS-pref`  `AT\^SYSCFG=2,1,3fffffff,0,0`  `/etc/ppp/chatscripts/mode.NONE` 
-
 ```
 AT
 
@@ -210,10 +202,9 @@ With the above proposed setup, while the new ppp0 interface is up, pppd will aut
 
 If you automate the pppd start, it may occur that the modem device does not exists at the moment of the pppd lauch during the computer boot. This may occur even when the USB modem module load is manually setup in rc.conf: that helps, but the device may be still not always available when pppd comes into scene. The pppd daemon rejects to start when the configured device does not exists, and it doesn't seems to have an option to force it to start (note that in case the device dissapears once pppd is already running, for example by momentarily disconnecting the external 3G USB modem, pppd will continue running and will reconnect once it appears again).
 
-The following script may be useful to wait until the hardware is ready. It will typically wait for 0-2 seconds. The modem device is assumed to be the first line on **/etc/ppp/options-mobile**. It takes an argument with the maximum wait (in seconds). Optionally admits a second argument with a profile name (from _/etc/ppp/peers_) which will be used to re-run pppd. Do not forget to make the script executable:
+The following script may be useful to wait until the hardware is ready. It will typically wait for 0-2 seconds. The modem device is assumed to be the first line on **/etc/ppp/options-mobile**. It takes an argument with the maximum wait (in seconds). Optionally admits a second argument with a profile name (from */etc/ppp/peers*) which will be used to re-run pppd. Do not forget to make the script executable:
 
  `/etc/ppp/wait-dialup-hardware` 
-
 ```
 #!/bin/bash
 INTERFACE="/dev/$(head -1 /etc/ppp/options-mobile)"
@@ -252,7 +243,6 @@ Jun  1 22:52:08 parsec logger: /etc/ppp/wait-dialup-hardware: OK existing requir
 To use the above script, netcfg users could add the following profile:
 
  `/etc/network.d/ppp` 
-
 ```
 CONNECTION='ppp'
 INTERFACE='ignore'
@@ -263,17 +253,16 @@ PRE_UP='/etc/ppp/wait-dialup-hardware 10'
 
 ### network hook
 
-Users of traditional network setup (instead of netcfg) can use the following trick to launch the _wait-dialup-hardware_ script from the standard /etc/rc.d/ppp service. The example is intended to run the mobile-noauth profile:
+Users of traditional network setup (instead of netcfg) can use the following trick to launch the *wait-dialup-hardware* script from the standard /etc/rc.d/ppp service. The example is intended to run the mobile-noauth profile:
 
  `/etc/ppp/peers/mobile-noauth.wait` 
-
 ```
 noauth
 pty "/etc/ppp/wait-dialup-hardware 10 mobile-noauth"
 
 ```
 
-Updating the default **provider** symlink to point to the new intermediate (fake) **mobile-noauth.wait** profile, it will simply run the wait-dialup-hardware script from within pppd and, in turn, will restart pppd with the final (non fake) **mobile-noauth** profile once the hardware is ready. Note that the _noauth_ option in the first line of the fake profile is necessary (even if the final profile does requires authentication).
+Updating the default **provider** symlink to point to the new intermediate (fake) **mobile-noauth.wait** profile, it will simply run the wait-dialup-hardware script from within pppd and, in turn, will restart pppd with the final (non fake) **mobile-noauth** profile once the hardware is ready. Note that the *noauth* option in the first line of the fake profile is necessary (even if the final profile does requires authentication).
 
 ## Troubleshooting
 

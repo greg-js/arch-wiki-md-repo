@@ -43,7 +43,7 @@ Esta página explica como configurar uma conexão **cabeada**. Se você deseja c
         *   [8.3.1 Method 1 - Rollback/change Windows driver](#Method_1_-_Rollback.2Fchange_Windows_driver)
         *   [8.3.2 Method 2 - Enable WOL in Windows driver](#Method_2_-_Enable_WOL_in_Windows_driver)
         *   [8.3.3 Method 3 - Newer Realtek Linux driver](#Method_3_-_Newer_Realtek_Linux_driver)
-        *   [8.3.4 Method 4 - Enable _LAN Boot ROM_ in BIOS/CMOS](#Method_4_-_Enable_LAN_Boot_ROM_in_BIOS.2FCMOS)
+        *   [8.3.4 Method 4 - Enable *LAN Boot ROM* in BIOS/CMOS](#Method_4_-_Enable_LAN_Boot_ROM_in_BIOS.2FCMOS)
     *   [8.4 DLink G604T/DLink G502T DNS problem](#DLink_G604T.2FDLink_G502T_DNS_problem)
         *   [8.4.1 How to diagnose the problem](#How_to_diagnose_the_problem_2)
         *   [8.4.2 How to fix it](#How_to_fix_it)
@@ -62,9 +62,7 @@ Esta página explica como configurar uma conexão **cabeada**. Se você deseja c
 Muitas vezes, o procedimento básico de instalação cria uma configuração de rede cabeada. Para verificar se há configuração, utilize o seguinte comando:
 
 **Note:** A opção `-c 3` chama 3 vezes a ação de envio de pacotes icmp. Veja `man ping` para maiores informações.
-
  `$ ping -c 3 www.google.com` 
-
 ```
 PING www.l.google.com (74.125.224.146) 56(84) bytes of data.
 64 bytes from 74.125.224.146: icmp_req=1 ttl=50 time=437 ms
@@ -81,7 +79,6 @@ Caso funcione, você precisará apenas personalizar algumas das opções abaixo.
 Se o comando acima reclamar de unknown hosts(host desconhecido), significa que seu computador não pôde resolver nomes de domínios. Pode ser relacionado ao seu provedor de internet ou gateway/roteador. Tente pingar um endereço IP para provar que sua máquina possui acesso a internet.
 
  `$ ping -c 3 8.8.8.8` 
-
 ```
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 64 bytes from 8.8.8.8: icmp_req=1 ttl=53 time=52.9 ms
@@ -118,7 +115,7 @@ Veja `man 5 hostname` e `man 1 hostnamectl` para maiores detalhes.
 Para alterar o hostname temporariamente(até o próximo restart), utilize o comando `hostname` do pacote [inetutils](https://www.archlinux.org/packages/?name=inetutils):
 
 ```
-# hostname _meunome_
+# hostname *meunome*
 
 ```
 
@@ -129,7 +126,6 @@ Para alterar o hostname temporariamente(até o próximo restart), utilize o coma
 O [udev](/index.php/Udev "Udev") deverá detectar sua interface de rede([NIC](http://pt.wikipedia.org/wiki/Placa_de_rede)) e carregará automaticamente o módulo necessário. Busque pela entrada "Ethernet controller"(ou similar) no resultado do comando `lspci -v`. Este comando dirá qual módulo do kernel é necessário para o funcionamento do dispositivo. Por exemplo:
 
  `$ lspci -v` 
-
 ```
  02:00.0 Ethernet controller: Attansic Technology Corp. L1 Gigabit Ethernet Adapter (rev b0)
  	...
@@ -137,7 +133,7 @@ O [udev](/index.php/Udev "Udev") deverá detectar sua interface de rede([NIC](ht
  	Kernel modules: atl1
 ```
 
-Após, veja se o driver foi carregado através de um `dmesg | grep _module_name_`. Exemplo:
+Após, veja se o driver foi carregado através de um `dmesg | grep *module_name*`. Exemplo:
 
 ```
 $ dmesg | grep atl1
@@ -178,7 +174,6 @@ Usuários atualizando de uma versão mais antiga do systemd terão arquivos de r
 Você pode alterar o nome de um dispositivo definindo o nome em uma regra do udev. Exemplo:
 
  `/etc/udev/rules.d/10-network.rules` 
-
 ```
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="aa:bb:cc:dd:ee:ff", NAME="net1"
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="ff:ee:dd:cc:bb:aa", NAME="net0"
@@ -189,7 +184,7 @@ Alguns detalhes devem ser ressaltados:
 *   Para obter o endereço MAC de cada interface, utilize o comando `cat /sys/class/net/**device-name**/address`
 *   Certifique-se de utilizar valores em caixa baixa para valores hexadecimais em regras do udev. Ele não gosta de caixa alta.
 
-**Note:** Quando escolher nomes estáticos **nomes no formato "eth_X_" and "wlan_X_" devem ser evitados**, pois podem causar race conditions entre o kernel e o udev durante o boot. É melhor utilizar nomes que não são os padrões do kernel como: `net0`, `net1`, `wifi0`, `wifi1`. Para maiores detalhes, veja a documentação do [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames).
+**Note:** Quando escolher nomes estáticos **nomes no formato "eth*X*" and "wlan*X*" devem ser evitados**, pois podem causar race conditions entre o kernel e o udev durante o boot. É melhor utilizar nomes que não são os padrões do kernel como: `net0`, `net1`, `wifi0`, `wifi1`. Para maiores detalhes, veja a documentação do [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames).
 
 ### Alterando MTU e tamanho da fila
 
@@ -218,7 +213,6 @@ Você pode ativar e desabilitar interfaces de rede através dos comandos:
 Prova real:
 
  `$ ip link show dev eth0` 
-
 ```
 2: eth0: <BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master br0 state UP mode DEFAULT qlen 1000
 [...]
@@ -235,7 +229,6 @@ Você possui duas opções: Endereços dinâmicos através de [DHCP](http://pt.w
 Note que `dhcpcd` não é `dhcpd`.
 
  `# dhcpcd eth0` 
-
 ```
  dhcpcd: version 5.1.1 starting
  dhcpcd: eth0: broadcasting for a lease
@@ -338,7 +331,6 @@ Caso ocorra o erro No such process", significa que o dispositivo está desabilit
 Primeiro, crie um arquivo de configuração de serviço do [systemd](/index.php/Systemd "Systemd"), trocando a palavra `<interface>` pela sua interface em questão:
 
  `/etc/conf.d/network@<interface>` 
-
 ```
 address=192.168.0.15
 netmask=24
@@ -350,7 +342,6 @@ gateway=192.168.0.1
 Crie um arquivo de unidade do systemd:
 
  `/etc/systemd/system/network@.service` 
-
 ```
 [Unit]
 Description=Network connectivity (%i)
@@ -388,7 +379,6 @@ Habilite a unidade e inicie, passando o nome da interface:
 Você pode utilizar a ferramenta `ipcalc`(pacote [ipcalc](https://www.archlinux.org/packages/?name=ipcalc)) para calcular endereços de broadcast, rede, máscara de rede e escopo para configurações mais avançadas. Por exemplo, eu utilizo ethernet over firewire para conectar uma máquina Windows ao arch. Por razões de segurança e organização, criei uma rede configurando broadcast e máscara de rede de formas que apenas dois computadores caibam em tal endereçamento. Para descobrir a mascara de rede e endereço broadcast, utilizei o ipcalc, provendo o ip do arch com a interface firewire(10.66.66.1) e especificando ao ipcalc que desejava apenas 2 hosts na rede.
 
  `$ ipcalc -nb 10.66.66.1 -s 1` 
-
 ```
 Address:   10.66.66.1
 
@@ -441,7 +431,6 @@ Você precisará do pacote [netctl](https://www.archlinux.org/packages/?name=net
 Configuração:
 
  `/etc/netctl/minharede` 
-
 ```
 Connection='ethernet'
 Description='Cinco IPs em uma conexão ethernet'
@@ -556,15 +545,15 @@ Right click my computer
 
 ```
 
-**Note:** Newer Realtek Windows drivers (tested with _Realtek 8111/8169 LAN Driver v5.708.1030.2008_, dated 2009/01/22, available from GIGABYTE) may refer to this option slightly differently, like _Shutdown Wake-On-LAN --> Enable_. It seems that switching it to `Disable` has no effect (you will notice the Link light still turns off upon Windows shutdown). One rather dirty workaround is to boot to Windows and just reset the system (perform an ungraceful restart/shutdown) thus not giving the Windows driver a chance to disable LAN. The Link light will remain on and the LAN adapter will remain accessible after POST - that is until you boot back to Windows and shut it down properly again.
+**Note:** Newer Realtek Windows drivers (tested with *Realtek 8111/8169 LAN Driver v5.708.1030.2008*, dated 2009/01/22, available from GIGABYTE) may refer to this option slightly differently, like *Shutdown Wake-On-LAN --> Enable*. It seems that switching it to `Disable` has no effect (you will notice the Link light still turns off upon Windows shutdown). One rather dirty workaround is to boot to Windows and just reset the system (perform an ungraceful restart/shutdown) thus not giving the Windows driver a chance to disable LAN. The Link light will remain on and the LAN adapter will remain accessible after POST - that is until you boot back to Windows and shut it down properly again.
 
 #### Method 3 - Newer Realtek Linux driver
 
 Any newer driver for these Realtek cards can be found for Linux on the realtek site. (untested but believed to also solve the problem).
 
-#### Method 4 - Enable _LAN Boot ROM_ in BIOS/CMOS
+#### Method 4 - Enable *LAN Boot ROM* in BIOS/CMOS
 
-It appears that setting _Integrated Peripherals --> Onboard LAN Boot ROM --> Enabled_ in BIOS/CMOS reactivates the Realtek LAN chip on system boot-up, despite the Windows driver disabling it on OS shutdown.
+It appears that setting *Integrated Peripherals --> Onboard LAN Boot ROM --> Enabled* in BIOS/CMOS reactivates the Realtek LAN chip on system boot-up, despite the Windows driver disabling it on OS shutdown.
 <small>This was tested successfully multiple times with GIGABYTE system board GA-G31M-ES2L with BIOS version F8 released on 2009/02/05\. YMMV.</small>
 
 ### DLink G604T/DLink G502T DNS problem

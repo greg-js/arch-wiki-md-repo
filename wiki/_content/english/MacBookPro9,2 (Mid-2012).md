@@ -1,6 +1,6 @@
 This guide outlines special information on installing and configuring Arch on the more recent Macbook 9,x (Mid-2012) hardware alongside a pre-existing OSX operating system. This requires adequate free disk space, install media (such as a USB or CD), and a wired connection for the initial steps of the install procedure.
 
-This article is written with a dual-boot setup in mind, and does _not_ cover how to replace OSX with Arch.
+This article is written with a dual-boot setup in mind, and does *not* cover how to replace OSX with Arch.
 
 For general help on the install preocedure see the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
 
@@ -37,7 +37,7 @@ If you want to access your OSX user directories from Linux, write down the UID a
 
 **Note:** OSX begins with the first user's UID at 501 while Arch defaults to 1000.
 
-**Warning:** Never, _ever_ change any file permissions in your OSX partition from Linux. Doing so can and will lead to serious repercussions.
+**Warning:** Never, *ever* change any file permissions in your OSX partition from Linux. Doing so can and will lead to serious repercussions.
 
 ### Install Boot Manager
 
@@ -157,7 +157,7 @@ Install [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) from [A
 
 #### wl
 
-_more to come._
+*more to come.*
 
 Download, extract, and install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) from [AUR](/index.php/AUR "AUR") and reboot.
 
@@ -194,7 +194,6 @@ To make settings permanent, just modify `/etc/X11/xorg.conf.d/10-synaptics.conf`
 [touchegg](https://aur.archlinux.org/packages/touchegg/) from the [AUR](/index.php/AUR "AUR") is an application which can recognize additional gestures. To use this you'll need to replace the synaptics driver with [xf86-input-synaptics-mtpatch](https://aur.archlinux.org/packages/xf86-input-synaptics-mtpatch/). See however [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1502743#p1502743).
 
  `$(HOME)/.config/touchegg/touchegg.conf` 
-
 ```
 ...
 <application name="All">

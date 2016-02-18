@@ -79,21 +79,21 @@ See [Foremost](/index.php/Foremost "Foremost") article.
 
 ### Usage
 
-_Derived from the post on [Linux Poison](http://linuxpoison.blogspot.com/2010/09/utility-to-recover-deleted-files-from.html)._
+*Derived from the post on [Linux Poison](http://linuxpoison.blogspot.com/2010/09/utility-to-recover-deleted-files-from.html).*
 
-To recover data from a specific partition, the device name for the partition, which will be in the format `/dev/sd_XN_` (_X_ is a letter and _N_ is a number.), must be known. The example used here is `/dev/sda4`, but your system might use something different (For example, MMC card readers use `/dev/mmcblkNpN` as their naming scheme.) depending on your filesystem and device configuration. If you are unsure, run `df`, which prints currently mounted partitions.
+To recover data from a specific partition, the device name for the partition, which will be in the format `/dev/sd*XN*` (*X* is a letter and *N* is a number.), must be known. The example used here is `/dev/sda4`, but your system might use something different (For example, MMC card readers use `/dev/mmcblkNpN` as their naming scheme.) depending on your filesystem and device configuration. If you are unsure, run `df`, which prints currently mounted partitions.
 
 Once which partition data is to be recovered from has been determined, simply run:
 
 ```
-# extundelete /dev/sda4 --restore-file _directory_/_file_
+# extundelete /dev/sda4 --restore-file *directory*/*file*
 
 ```
 
-Any subdirectories must be specified, and the command runs from the highest level of the partition, so, to recover a file in `/home/_SomeUserName_/`, assuming `/home` is on its own partition, run:
+Any subdirectories must be specified, and the command runs from the highest level of the partition, so, to recover a file in `/home/*SomeUserName*/`, assuming `/home` is on its own partition, run:
 
 ```
-# extundelete /dev/sda4 restore-file _SomeUserName_/_SomeFile_
+# extundelete /dev/sda4 restore-file *SomeUserName*/*SomeFile*
 
 ```
 
@@ -102,18 +102,18 @@ To speed up multi-file recovery, extundelete has a `--restore-files` option as w
 To recover an entire directory, run:
 
 ```
-# extundelete /dev/sda4 --restore-directory _SomeUserName_/_SomeDirectory_
+# extundelete /dev/sda4 --restore-directory *SomeUserName*/*SomeDirectory*
 
 ```
 
 For advanced users, to manually recover blocks or inodes with extundelete, debugfs can be used to find the inode to be recovered; then, run:
 
 ```
-# extundelete --restore-inode _inode_
+# extundelete --restore-inode *inode*
 
 ```
 
-_inode_ stands for any valid inode. Additional inodes to recover can be listed in an unspaced, comma-separated fashion.
+*inode* stands for any valid inode. Additional inodes to recover can be listed in an unspaced, comma-separated fashion.
 
 Finally, to recover all deleted files from an entire partition, run:
 
@@ -153,7 +153,7 @@ The photorec utility stores recovered files with a random names(for most of the 
 
 To determine where the superblocks are, run `dumpe2fs -h` on the target, unmounted partition. Superblocks are spaced differently depending on the filesystem's blocksize, which is set when the filesystem is created.
 
-An alternate method to determine the locations of superblocks is to use the -n option with mke2fs. Be **sure** to use the `-n` flag, which, according to the `mke2fs` manpage, "_Causes mke2fs to not actually create a filesystem, but display what it would do if it were to create a filesystem. This can be used to determine the location of the backup superblocks for a particular filesystem, so long as the mke2fs parameters that were passed when the filesystem was originally created are used again. (With the -n option added, of course!)_".
+An alternate method to determine the locations of superblocks is to use the -n option with mke2fs. Be **sure** to use the `-n` flag, which, according to the `mke2fs` manpage, "*Causes mke2fs to not actually create a filesystem, but display what it would do if it were to create a filesystem. This can be used to determine the location of the backup superblocks for a particular filesystem, so long as the mke2fs parameters that were passed when the filesystem was originally created are used again. (With the -n option added, of course!)*".
 
 ### Installation
 
@@ -204,11 +204,11 @@ Once the entire disk image has been mounted as a loopback device, its drive layo
 对于包含有不少于一个那些需要在Windows下 `chkdsk`一下的NTFS分区的镜像(为什么是Windows?因为Linux下没有优秀的NTFS检查器), QEMU可以把原始镜像在虚拟中当做物理硬盘来操作:
 
 ```
-# qemu -hda _/path/to/primary_.img -hdb _/path/to/DamagedDisk_.img
+# qemu -hda */path/to/primary*.img -hdb */path/to/DamagedDisk*.img
 
 ```
 
-然后, 假设Windows被安装在 `_primary_.img`, 它就可以用来检查 `_/path/to/DamagedDisk_.img`上的分区.
+然后, 假设Windows被安装在 `*primary*.img`, 它就可以用来检查 `*/path/to/DamagedDisk*.img`上的分区.
 
 ## 文本文件恢复
 
@@ -217,20 +217,20 @@ Once the entire disk image has been mounted as a loopback device, its drive layo
 首先, 使用 `strings` 命令来搞到一个分区中的所有文本：
 
 ```
-# strings /dev/sd_XN_ > _BigStringsFile_
+# strings /dev/sd*XN* > *BigStringsFile*
 
 ```
 
-然后, 使用 `grep` 来筛选 _BigStringsFile_中的内容:
+然后, 使用 `grep` 来筛选 *BigStringsFile*中的内容:
 
 ```
-$ grep -i -200 "Unique string in text file" _BigStringsFile_ > _GrepOutputFile_
+$ grep -i -200 "Unique string in text file" *BigStringsFile* > *GrepOutputFile*
 
 ```
 
 **Note:** `-200` 选项告诉grep打印每个匹配字符串的前后200行. 如果你在寻找的文本很长, 也许你会需要调整下.
 
-如果运气好的话, 你删掉的文本就在 _GrepOutputFile_里.
+如果运气好的话, 你删掉的文本就在 *GrepOutputFile*里.
 
 ## 参阅
 

@@ -82,7 +82,7 @@ Print a document and watch `error_log` to get a more detailed and correct image 
 
 ## Problems resulting from upgrades
 
-_Issues that appeared after CUPS and related program packages underwent a version increment_
+*Issues that appeared after CUPS and related program packages underwent a version increment*
 
 ### CUPS stops working
 
@@ -94,7 +94,7 @@ To use the new configuration, copy `/etc/cups/cupsd.conf.default` to `/etc/cups/
 
 If all jobs sent to the printer become "stopped", delete the printer and add it again. Using the [CUPS web interface](http://localhost:631), go to Printers > Delete Printer.
 
-To check the printer's settings go to _Printers_, then _Modify Printer_. Copy down the information displayed, click 'Modify Printer' to proceed to the next page(s), and so on.
+To check the printer's settings go to *Printers*, then *Modify Printer*. Copy down the information displayed, click 'Modify Printer' to proceed to the next page(s), and so on.
 
 ### All jobs are "The printer is not responding"
 
@@ -124,14 +124,14 @@ And restart CUPS (as pointed out in gutenprint's post-install message)
 
 Enable debug logging. If you see `Executing backend "/usr/lib/cups/backend/dnssd"...` over and over switch from dnssd to socket in the printer configuration.
 
-Example: `socket://192.168.11.6:9100`. The port number can be confirmed via [nmap](/index.php/Nmap "Nmap") or `telnet _your-printer-ip_ 9100`.
+Example: `socket://192.168.11.6:9100`. The port number can be confirmed via [nmap](/index.php/Nmap "Nmap") or `telnet *your-printer-ip* 9100`.
 
 ### Finding URIs for Windows print servers
 
 Sometimes Windows is a little less than forthcoming about exact device URIs (device locations). If having trouble specifying the correct device location in CUPS, run the following command to list all shares available to a certain windows username:
 
 ```
-$ smbtree -U _windowsusername_
+$ smbtree -U *windowsusername*
 
 ```
 
@@ -181,7 +181,6 @@ USB printers can be accessed using two methods: The usblp kernel module and libu
 If you have problems getting your USB printer to work, you can try [blacklisting](/index.php/Blacklisting "Blacklisting") the `usblp` [kernel module](/index.php/Kernel_module "Kernel module"):
 
  `/etc/modprobe.d/blacklistusblp.conf` 
-
 ```
 blacklist usblp
 
@@ -223,6 +222,8 @@ usb 3-2: configuration #1 chosen from 1 choice
 
 ## HP issues
 
+See also [CUPS/Printer-specific problems#HP](/index.php/CUPS/Printer-specific_problems#HP "CUPS/Printer-specific problems").
+
 ### HPLIP printer sends "/usr/lib/cups/backend/hp failed" error
 
 Make sure dbus is installed and running. If the error persists, try starting avahi-daemon.
@@ -260,7 +261,7 @@ If running hp-toolbox as a regular user results in:
 
 ```
 # hp-toolbox
-# error: Unable to communicate with device (code=12): hp:/usb/_printer id_
+# error: Unable to communicate with device (code=12): hp:/usb/*printer id*
 
 ```
 
@@ -268,14 +269,14 @@ or, "`Unable to communicate with device"`", then it may be needed to [add the us
 
 This can also be caused by printers such as the P1102 that provide a virtual CD-ROM drive for MS Windows drivers. The lp dev appears and then disappears. In that case, try the **usb-modeswitch** and **usb-modeswitch-data** packages, that lets one switch off the "Smart Drive" (udev rules included in said packages).
 
-This can also occur with network attached printers if the [avahi-daemon](/index.php/Avahi "Avahi") is not running. Another possibility is the specification of the printer's IP address in _hp-setup_ fails to locate the printer because the IP address of the the printer changed due to DHCP. If this is the case, consider adding a DHCP reservation for the printer in the DHCP server's configuration.
+This can also occur with network attached printers if the [avahi-daemon](/index.php/Avahi "Avahi") is not running. Another possibility is the specification of the printer's IP address in *hp-setup* fails to locate the printer because the IP address of the the printer changed due to DHCP. If this is the case, consider adding a DHCP reservation for the printer in the DHCP server's configuration.
 
 ### CUPS returns '"foomatic-rip" not available/stopped with status 3' with a HP printer
 
 If receiving any of the following error messages in `/var/log/cups/error_log` while using a HP printer, with jobs appearing to be processed while they all end up not being completed with their status set to 'stopped':
 
 ```
-Filter "foomatic-rip" for printer _printer_name_ not available: No such file or director
+Filter "foomatic-rip" for printer *printer_name* not available: No such file or director
 
 ```
 
@@ -340,7 +341,7 @@ There is a bug that causes CUPS to fail when printing images on HP LaserJet (in 
 In order to fix the issue, run the following command as root:
 
 ```
-# lpadmin -p _printer_ -o pdftops-renderer-default=pdftops
+# lpadmin -p *printer* -o pdftops-renderer-default=pdftops
 
 ```
 
@@ -490,7 +491,6 @@ If you are also running [SANE](/index.php/SANE "SANE"), it's possible that it is
 To fix this create the following file:
 
  `/etc/udev/rules.d/99-printer.rules` 
-
 ```
 # idProduct and idVendor needs to match your printer
 ATTRS{idVendor}=="04e8", ATTRS{idProduct}=="341b", MODE="0664", GROUP="lp", ENV{libsane_matched}="yes"

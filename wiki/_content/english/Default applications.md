@@ -43,7 +43,7 @@ mimetype1=default1.desktop;default2.desktop
 
 The applications are written as a semicolon-separated list of [desktop file IDs](http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#desktop-file-id).
 
-In the absence of such an entry, the next `mimeapps.list` in the path hierarchy will be checked. Once all levels have been checked, if no entry could be found, then programs can pick any of the _.desktop_ files associated with the MIME-type, taking into account added and removed associations as per these other groups which may be specified in `mimeapps.list` files:
+In the absence of such an entry, the next `mimeapps.list` in the path hierarchy will be checked. Once all levels have been checked, if no entry could be found, then programs can pick any of the *.desktop* files associated with the MIME-type, taking into account added and removed associations as per these other groups which may be specified in `mimeapps.list` files:
 
 ```
 [Added Associations]
@@ -54,14 +54,14 @@ mimetype1=foo5.desktop
 
 ```
 
-The `[Added Associations]` group defines additional associations of applications with MIME-types, as if the _.desktop_ file was listing this MIME-type in the first place. The `[Removed Associations]` group removes associations of applications with MIME-types, as if the _.desktop_ file was **not** listing this MIME-type in the first place. The entries in `[Default Applications]` should also be considered to add an association between application and MIME-type in the same manner.
+The `[Added Associations]` group defines additional associations of applications with MIME-types, as if the *.desktop* file was listing this MIME-type in the first place. The `[Removed Associations]` group removes associations of applications with MIME-types, as if the *.desktop* file was **not** listing this MIME-type in the first place. The entries in `[Default Applications]` should also be considered to add an association between application and MIME-type in the same manner.
 
 **Note:**
 
 *   Arch Linux itself does not provide any system-wide preferences for associations, but other distributions and specific desktop environments may do so via `mimeapps.list` or the older but deprecated `defaults.list` files.
 *   As the standards for setting default applications have been recently changed, not all programs will comply with them yet. Indeed, the programs provided by freedesktop.org's [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) package do not fully follow their own standards!
 *   Your choice of desktop environment, or none, will also affect how your default applications are stored.
-*   When the program `update-desktop-database` is run (usually as root during the (un)installation of a package), it updates files called `mimeinfo.cache` in the `/usr/local/share/applications` and `/usr/share/applications` directories. These files keep track of which MIME-types are associated with which _.desktop_ files overall. This file should not be edited by the user.
+*   When the program `update-desktop-database` is run (usually as root during the (un)installation of a package), it updates files called `mimeinfo.cache` in the `/usr/local/share/applications` and `/usr/share/applications` directories. These files keep track of which MIME-types are associated with which *.desktop* files overall. This file should not be edited by the user.
 
 ### File managers
 
@@ -157,7 +157,6 @@ The `OnlyShowIn` field of a .desktop file may be useful; see [this page](http://
 Most non-graphical programs use [Environment variables](/index.php/Environment_variables "Environment variables"), such as `EDITOR` or `BROWSER`. These can be set in your terminal's autostart file (e.g. `~/.bashrc`):
 
  `~/.bashrc` 
-
 ```
 export EDITOR="nano"
 export BROWSER="firefox"
@@ -168,6 +167,6 @@ export BROWSER="firefox"
 
 ### Applications do not appear in the Open With... context menu (of a file manager)
 
-Sometimes, a certain application will not appear in the right-click _Open With..._ dialog. To fix this problem, locate the `.desktop` file in `/usr/share/applications`, edit it as root, and add `%U` to the end of the `Exec=` line. For example, Kile currently has this problem; you need to edit `/usr/share/applications/kde4/kile.desktop` and change the line reading `Exec=kile` to read `Exec=kile %U`. Also, please file a bug against the upstream project if you notice this problem.
+Sometimes, a certain application will not appear in the right-click *Open With...* dialog. To fix this problem, locate the `.desktop` file in `/usr/share/applications`, edit it as root, and add `%U` to the end of the `Exec=` line. For example, Kile currently has this problem; you need to edit `/usr/share/applications/kde4/kile.desktop` and change the line reading `Exec=kile` to read `Exec=kile %U`. Also, please file a bug against the upstream project if you notice this problem.
 
 You may also have to edit the `MimeType` list in the `.desktop` file if you install extensions that allow an application to handle additional MIME types.

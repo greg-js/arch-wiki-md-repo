@@ -54,23 +54,23 @@ backup=('etc/pulse/client.conf' 'etc/pulse/daemon.conf' 'etc/pulse/default.pa')
 
 更细一步来说，3路MD5值校验结果为下述输出之一：
 
-	original = _X_, current = _X_, new = _X_ 
+	original = *X*, current = *X*, new = *X* 
 
 	三个版本的文件具有相同的内容，因此覆盖不会产生问题。pacman 将用新版本覆盖当前版本而不通知用户。（尽管文件内容相同，覆盖操作会更新文件系统中和文件创建，修改和访问时间有关的信息，也确保了任何文件权限的修改被实施。）
 
-	original = _X_, current = _X_, new = _Y_ 
+	original = *X*, current = *X*, new = *Y* 
 
 	当前版本文件的内容和原始版本的相同，但与新版本不同。既然用户没有修改过当前版本文件，且新版本可能包含改进和 bug 修正，pacman 用新版本覆盖当前版本，而不通知用户。这是 pacman 有能力执行的唯一一个新改动的自动合并。
 
-	original = _X_, current = _Y_, new = _X_ 
+	original = *X*, current = *Y*, new = *X* 
 
 	原始软件包和新软件包都包含版本完全相同的文件，但当前文件系统中的版本是被修改过的。此时 pacman 保留当前版本，忽略新版本，且不通知用户。
 
-	original = _X_, current = _Y_, new = _Y_ 
+	original = *X*, current = *Y*, new = *Y* 
 
 	新版本和当前版本相同。此时 pacman 将用新版本覆盖当前版本且不通知用户。（尽管文件内容相同，覆盖操作会更新文件系统中和文件创建，修改和访问时间有关的信息，也确保了任何文件权限的修改被实施。）
 
-	original = _X_, current = _Y_, new = _Z_ 
+	original = *X*, current = *Y*, new = *Z* 
 
 	三个版本的文件都不相同，所以保留当前版本，以扩展名 `.pacnew` 创建新版本，且警告用户创建了新版本。希望用户手动将需要的更改由新版本合并至当前版本。
 
@@ -129,7 +129,7 @@ $ egrep "pac(new|orig|save)" /var/log/pacman.log
 
 ## .管理 .pacnew 文件
 
-There are various tools to help resolve _.pacnew_ and _.pacsave_ file issues. The standard _(s)diff_ (from [diffutils](https://www.archlinux.org/packages/?name=diffutils)) provides an easy way to compare these files. See [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison.2C_diff.2C_merge "List of applications/Utilities") for other common comparison tools.
+There are various tools to help resolve *.pacnew* and *.pacsave* file issues. The standard *(s)diff* (from [diffutils](https://www.archlinux.org/packages/?name=diffutils)) provides an easy way to compare these files. See [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison.2C_diff.2C_merge "List of applications/Utilities") for other common comparison tools.
 
 A few third-party utilities providing various levels of automation for these tasks are available from the [AUR](/index.php/Arch_User_Repository "Arch User Repository").
 
@@ -143,15 +143,15 @@ You can use one of the following tools:
 
 	|| [dotpac](https://aur.archlinux.org/packages/dotpac/)
 
-*   **etc-update** — Arch port of Gentoo's _etc-update_ utility, providing a simple CLI to view, merge and interactively edit changes. Trivial changes (such as comments) can be merged automatically.
+*   **etc-update** — Arch port of Gentoo's *etc-update* utility, providing a simple CLI to view, merge and interactively edit changes. Trivial changes (such as comments) can be merged automatically.
 
 	[http://www.gentoo.org/doc/en/handbook/handbook-amd64.xml?part=3&chap=4#doc_chap2](http://www.gentoo.org/doc/en/handbook/handbook-amd64.xml?part=3&chap=4#doc_chap2) || [etc-update](https://aur.archlinux.org/packages/etc-update/)
 
-*   **pacdiff** — A minimal CLI script from _pacman_ using [vimdiff](/index.php/Vim#Merging_files_.28vimdiff.29 "Vim"). It will search all `pacnew` and `pacsave` files and ask for any actions on them.
+*   **pacdiff** — A minimal CLI script from *pacman* using [vimdiff](/index.php/Vim#Merging_files_.28vimdiff.29 "Vim"). It will search all `pacnew` and `pacsave` files and ask for any actions on them.
 
 	[https://www.archlinux.org/pacman/](https://www.archlinux.org/pacman/) || [pacman](https://www.archlinux.org/packages/?name=pacman)
 
-*   **pacdiffviewer** — Fully-featured interactive CLI script with automatic merging. Part of _yaourt_.
+*   **pacdiffviewer** — Fully-featured interactive CLI script with automatic merging. Part of *yaourt*.
 
 	[http://archlinux.fr/yaourt-en](http://archlinux.fr/yaourt-en) || [yaourt](https://aur.archlinux.org/packages/yaourt/)
 
@@ -159,11 +159,11 @@ You can use one of the following tools:
 
 	[https://gitorious.org/pacmerge](https://gitorious.org/pacmerge) || [pacmerge-git](https://aur.archlinux.org/packages/pacmerge-git/)
 
-*   **pacnews-git** — A simple script aimed at finding all _.pacnew_ files, then editing them with [vimdiff](/index.php/Vim#Merging_files_.28vimdiff.29 "Vim").
+*   **pacnews-git** — A simple script aimed at finding all *.pacnew* files, then editing them with [vimdiff](/index.php/Vim#Merging_files_.28vimdiff.29 "Vim").
 
 	[https://github.com/pbrisbin/scripts/blob/master/pacnews](https://github.com/pbrisbin/scripts/blob/master/pacnews) || [pacnews-git](https://aur.archlinux.org/packages/pacnews-git/)
 
-*   **[Yaourt](/index.php/Yaourt "Yaourt")** — _pacman_ wrapper with extended features and [AUR](/index.php/AUR "AUR") support. Use `yaourt -C` to compare, replace and merge configuration files.
+*   **[Yaourt](/index.php/Yaourt "Yaourt")** — *pacman* wrapper with extended features and [AUR](/index.php/AUR "AUR") support. Use `yaourt -C` to compare, replace and merge configuration files.
 
 	[http://archlinux.fr/yaourt-en](http://archlinux.fr/yaourt-en) || [yaourt](https://aur.archlinux.org/packages/yaourt/)
 

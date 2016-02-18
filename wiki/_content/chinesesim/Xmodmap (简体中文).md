@@ -22,7 +22,7 @@
 
  `$ xmodmap -pke`  `keycode  57 = n N` 
 
-每条 Keymap 之后都跟随要被映射的 `keysyms`。 下面的例子表明 keycode `57` 被映射到小写 _n_, 同时大写 _N_ 映射于 `57` + `Shift`
+每条 Keymap 之后都跟随要被映射的 `keysyms`。 下面的例子表明 keycode `57` 被映射到小写 *n*, 同时大写 *N* 映射于 `57` + `Shift`
 
 每个 keysym列 都对应指定的键组合：
 
@@ -58,7 +58,6 @@ xmodmap ~/.Xmodmap
 To activate your custom table when starting Xorg add the following:
 
  `~/.xinitrc` 
-
 ```
 if [ -f $HOME/.Xmodmap ]; then
     /usr/bin/xmodmap $HOME/.Xmodmap

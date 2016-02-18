@@ -32,7 +32,6 @@ pacman -S nginx php-fpm
 This is a minimal configuration for nginx:
 
  `/etc/nginx/nginx.conf` 
-
 ```
 events {
   worker_connections  1024;

@@ -11,7 +11,7 @@
 
 Ваш ноутбук поставляется без дисковода, и не позволяет загружаться с USB-накопителя? Не бойтесь, вы можете загрузиться с помощью PXE.
 
-**PXE** сокращение от **P**reboot e**X**ecution **E**nvironment (произносится _пикси_) - это часть BIOS для загрузки компьютера с помощью сетевой карты. Для того, чтобы загрузиться через PXE, проверьте опции загрузки в BIOS. Обычно используется Ethernet порт.
+**PXE** сокращение от **P**reboot e**X**ecution **E**nvironment (произносится *пикси*) - это часть BIOS для загрузки компьютера с помощью сетевой карты. Для того, чтобы загрузиться через PXE, проверьте опции загрузки в BIOS. Обычно используется Ethernet порт.
 
 ### Как это работает
 
@@ -62,7 +62,7 @@ If a router is between the server and the client disabling DHCP on the router mi
 Alternatively, if your router has dnsmasq installed (like the *WRT family) you can configure it in the router with the following option:
 
 ```
-dhcp-boot=pxelinux.0,_<hostname-of-the-tftd-server>_,_<ip-of-the-tftd-server>_
+dhcp-boot=pxelinux.0,*<hostname-of-the-tftd-server>*,*<ip-of-the-tftd-server>*
 
 ```
 

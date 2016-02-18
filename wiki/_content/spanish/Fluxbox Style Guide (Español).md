@@ -1,10 +1,10 @@
 **Warning:** Esta documentación esta en proceso de traducción por lo que habrá partes sin terminar de traducir
 
-	_Esta es una guia de las distintas etiquetas para editar un fichero theme.cfg_
+	*Esta es una guia de las distintas etiquetas para editar un fichero theme.cfg*
 
-	_Este archivo consta de dos partes: la primera explica cada uno de los elementos y la segunda es una lista completa que puede ser pegada en un archivo theme.cfg para que puedas comenzar._
+	*Este archivo consta de dos partes: la primera explica cada uno de los elementos y la segunda es una lista completa que puede ser pegada en un archivo theme.cfg para que puedas comenzar.*
 
-	_Esta estructurado para explicar los elementos mas relevantes_
+	*Esta estructurado para explicar los elementos mas relevantes*
 
 ## Contents
 
@@ -57,7 +57,7 @@
 
 ## Como trabajan los elementos
 
-Cada elemento se divide en main_object.sub_object.item: valor p.e. toolbar.clock.pixmap: valor
+Cada elemento se divide en main*object.sub*object.item: valor p.e. toolbar.clock.pixmap: valor
 
 El valor depende del elemento p.e. .pixmap: {archivo}
 

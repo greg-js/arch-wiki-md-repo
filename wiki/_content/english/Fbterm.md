@@ -15,18 +15,18 @@
 
 From [http://code.google.com/p/fbterm/](http://code.google.com/p/fbterm/):
 
-	_FbTerm is a fast terminal emulator for linux with frame buffer device or VESA video card. Features include:_
+	*FbTerm is a fast terminal emulator for linux with frame buffer device or VESA video card. Features include:*
 
-*   _mostly as fast as terminal of linux kernel while accelerated scrolling is enabled_
-*   _select font with fontconfig and draw text with freetype2, same as Qt/Gtk+ based GUI apps_
-*   _dynamically create/destroy up to 10 windows initially running default shell_
-*   _record scroll-back history for every window_
-*   _auto-detect text encoding with current locale, support double width scripts like Chinese, Japanese etc_
-*   _switch between configurable additional text encodings with hot keys on the fly_
-*   _copy/past selected text between windows with mouse when gpm server is running_
-*   _change the orientation of screen display, a.k.a. screen rotation_
-*   _lightweight input method framework with client-server architecture_
-*   _background image for eye candy_
+*   *mostly as fast as terminal of linux kernel while accelerated scrolling is enabled*
+*   *select font with fontconfig and draw text with freetype2, same as Qt/Gtk+ based GUI apps*
+*   *dynamically create/destroy up to 10 windows initially running default shell*
+*   *record scroll-back history for every window*
+*   *auto-detect text encoding with current locale, support double width scripts like Chinese, Japanese etc*
+*   *switch between configurable additional text encodings with hot keys on the fly*
+*   *copy/past selected text between windows with mouse when gpm server is running*
+*   *change the orientation of screen display, a.k.a. screen rotation*
+*   *lightweight input method framework with client-server architecture*
+*   *background image for eye candy*
 
 ## Installation
 

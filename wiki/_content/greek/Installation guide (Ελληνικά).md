@@ -1,6 +1,6 @@
 Το παρόν άρθρο θα σας οδηγήσει στην διαδικασία εγκατάστασης του [Arch Linux](/index.php/Arch_Linux "Arch Linux") χρησιμοποιώντας τα [Arch Install Scripts](https://github.com/falconindy/arch-install-scripts). Πριν την εγκατάσταση, προτείνεται να συμβουλευτείτε το [FAQ](/index.php/FAQ "FAQ").
 
-Το [Arch wiki](/index.php/Main_page "Main page") το οποίο διατηρείται από την κοινότητα είναι μία πολύ καλή πηγή και θα πρέπει να είναι το πρώτο που συμβουλεύεστε. Το κανάλι στο [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), και τα [forums](https://bbs.archlinux.org/) είναι επίσης διαθέσιμα αν η απάντηση δεν μπορεί να βρεθεί αλλού. Επίσης, καλό είναι να βλέπετε και τις `man` σελίδες για όποια εντολή δεν ξέρετε καλά· αυτό μπορεί να γίνει καλώντας την `man _εντολή_`.
+Το [Arch wiki](/index.php/Main_page "Main page") το οποίο διατηρείται από την κοινότητα είναι μία πολύ καλή πηγή και θα πρέπει να είναι το πρώτο που συμβουλεύεστε. Το κανάλι στο [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), και τα [forums](https://bbs.archlinux.org/) είναι επίσης διαθέσιμα αν η απάντηση δεν μπορεί να βρεθεί αλλού. Επίσης, καλό είναι να βλέπετε και τις `man` σελίδες για όποια εντολή δεν ξέρετε καλά· αυτό μπορεί να γίνει καλώντας την `man *εντολή*`.
 
 ## Contents
 

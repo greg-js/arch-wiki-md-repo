@@ -138,9 +138,9 @@ pacman -S ndiswrapper ndiswrapper-utils
 
 ```
 
-_คำเตือน:_ หากคุณใช้ Kernel ArchCK และ Beyond คุณต้องใช้ package ชื่อ ndiswrapper-archck และ ndiswrapper-beyond
+*คำเตือน:* หากคุณใช้ Kernel ArchCK และ Beyond คุณต้องใช้ package ชื่อ ndiswrapper-archck และ ndiswrapper-beyond
 
-_คำแนะนำ:_ ถ้าคุณไม่ได้เชื่อมต่อกับอินเตอร์เน็ทบนเครื่องที่ใช้งาน Arch คุณสามารถที่จะ Download package ใส่ไว้ใน diskette ได้จาก Mirror เช่น [http://www2.cddc.vt.edu/linux/distributions/archlinux/extra/os/i686/](http://www2.cddc.vt.edu/linux/distributions/archlinux/extra/os/i686/) คุณต้องการ ndiswrapper (หรือ ndiswrapper-archck หรือ ndiswrapper-beyond) และ ndiswrapper-utils และคุณอาจจะอยากต้องการ download package ชื่อ kernel26 ที่เป็น kernel ที่ทันสมัยที่สุด เนื่องจาก kernel ที่มากับ CD นั้นมักจะไม่ใช่รุ่นที่ทันสมัย
+*คำแนะนำ:* ถ้าคุณไม่ได้เชื่อมต่อกับอินเตอร์เน็ทบนเครื่องที่ใช้งาน Arch คุณสามารถที่จะ Download package ใส่ไว้ใน diskette ได้จาก Mirror เช่น [http://www2.cddc.vt.edu/linux/distributions/archlinux/extra/os/i686/](http://www2.cddc.vt.edu/linux/distributions/archlinux/extra/os/i686/) คุณต้องการ ndiswrapper (หรือ ndiswrapper-archck หรือ ndiswrapper-beyond) และ ndiswrapper-utils และคุณอาจจะอยากต้องการ download package ชื่อ kernel26 ที่เป็น kernel ที่ทันสมัยที่สุด เนื่องจาก kernel ที่มากับ CD นั้นมักจะไม่ใช่รุ่นที่ทันสมัย
 
 หลังจากติดตั้งเสร็จเรียบร้อยแล้ว ให้ทำตามขั้นตอนดังนี้
 
@@ -222,7 +222,7 @@ INTERFACES=(lo eth0 wlan0)
 
 ```
 
-*   นอกเหนือไปกว่านี้ networking script ต้องการบางวิธีเพื่อที่จะตรวจสอบว่า wlan0 เป็น wireless network interfcace (เนื่องจาก wireless interface ทั้งหมดไม่ได้มีแค่ชื่อ wlan*) การตั้งค่าส่วนนี้จะอยู่ในไฟล์ /etc/conf.d/wireless การตั้งค่านั้นสามารถทำได้ง่ายมาก สำหรับแต่ละ wireless interface คุณเพียงแค่ประกาศค่า wlan_<ชื่อ interface> เช่น ถ้า wireless interface ของคุณชื่อ "wlan0" ก็ให้ประกาศค่า wlan_wlan0 หรือหาก interface ของคุณชื่อ eth0 ก็จะเป็น wlan_eth0 เป็นต้น ค่าต่างๆ ในการตั้งค่านี้จะถูกใช้เป็นตัวแปรในการตั้งค่า iwconfig (ใช้คำสั่ง man iwconfig สำหรับข้อมูลเพิ่มเติม) _ต้องใส่ชื่อ interface name ด้วย_
+*   นอกเหนือไปกว่านี้ networking script ต้องการบางวิธีเพื่อที่จะตรวจสอบว่า wlan0 เป็น wireless network interfcace (เนื่องจาก wireless interface ทั้งหมดไม่ได้มีแค่ชื่อ wlan*) การตั้งค่าส่วนนี้จะอยู่ในไฟล์ /etc/conf.d/wireless การตั้งค่านั้นสามารถทำได้ง่ายมาก สำหรับแต่ละ wireless interface คุณเพียงแค่ประกาศค่า wlan_<ชื่อ interface> เช่น ถ้า wireless interface ของคุณชื่อ "wlan0" ก็ให้ประกาศค่า wlan_wlan0 หรือหาก interface ของคุณชื่อ eth0 ก็จะเป็น wlan_eth0 เป็นต้น ค่าต่างๆ ในการตั้งค่านี้จะถูกใช้เป็นตัวแปรในการตั้งค่า iwconfig (ใช้คำสั่ง man iwconfig สำหรับข้อมูลเพิ่มเติม) *ต้องใส่ชื่อ interface name ด้วย*
 *   ตัวอย่างง่ายๆ ของการตั้งค่าตามคำแนะนำด้านบน
 
 ```

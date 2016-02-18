@@ -308,7 +308,7 @@ $ sudo passwd root
 
 #### gksu
 
-要设置 _gksu_ 使用 sudo 而不是 root:
+要设置 *gksu* 使用 sudo 而不是 root:
 
 ```
 $ gconftool-2 --set --type boolean /apps/gksu/sudo-mode true
@@ -327,7 +327,7 @@ super-user-command=sudo
 
 ### 让 sudo 使用 /etc/sudoers.d 中的文件
 
-_sudo_ 可以解析 `/etc/sudoers.d/` 目录中的文件，这样就不需要编辑单一的 `/etc/sudoers` 文件，可以单独修改一个设置然后放入此目录。目录中配置的格式和 `/etc/sudoers`一样, 优点包括：
+*sudo* 可以解析 `/etc/sudoers.d/` 目录中的文件，这样就不需要编辑单一的 `/etc/sudoers` 文件，可以单独修改一个设置然后放入此目录。目录中配置的格式和 `/etc/sudoers`一样, 优点包括：
 
 *   不需要编辑 {ic|sudoers.pacnew}} 文件;
 *   如果新配置有问题，可以删除这个文件而不用编辑 `/etc/sudoers`.

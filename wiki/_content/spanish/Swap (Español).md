@@ -1,6 +1,6 @@
 Definición de swap dada por el artículo [«Todo sobre el espacio swap de Linux»](http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space):
 
-	_Linux divide su memoria física RAM (memoria de acceso aleatorio) en capas de memoria llamadas páginas. El swapping es el proceso por el que una página de memoria se copia en un espacio del disco configurado previamente para ello, llamado espacio de swap (o de intercambio), para liberar esa memoria RAM. Los tamaños combinados de la memoria física y del espacio swap determinan la cantidad de memoria virtual disponible._
+	*Linux divide su memoria física RAM (memoria de acceso aleatorio) en capas de memoria llamadas páginas. El swapping es el proceso por el que una página de memoria se copia en un espacio del disco configurado previamente para ello, llamado espacio de swap (o de intercambio), para liberar esa memoria RAM. Los tamaños combinados de la memoria física y del espacio swap determinan la cantidad de memoria virtual disponible.*
 
 El soporte para swap es proporcionado por el kernel de Linux y utilidades en el espacio de usuario por el paquete [util-linux](https://www.archlinux.org/packages/?name=util-linux).
 
@@ -50,10 +50,10 @@ Para configurar un área swap Linux, se utiliza la orden `mkswap`. Por ejemplo:
 
 **Advertencia:** Todos los datos en la partición especificada se perderán.
 
-La utilidad _mkswap_ genera un UUID de la partición por defecto, utilice la etiqueta `-U` en el caso de que quiera especificar una UUID personalizada:
+La utilidad *mkswap* genera un UUID de la partición por defecto, utilice la etiqueta `-U` en el caso de que quiera especificar una UUID personalizada:
 
 ```
-# mkswap -U _custom_UUID_ /dev/sda2
+# mkswap -U *custom_UUID* /dev/sda2
 
 ```
 
@@ -70,7 +70,7 @@ Para activar esta partición swap en el arranque, añada la entrada siguiente al
 **Nota:**
 
 *   Añadir una entrada a fstab is optional es opcional en la mayoría de los casos con systemd. Vea la sección siguiente.
-*   Si utiliza un SSD con soporte TRIM, considere usar `defaults,discard` en la línea swap de [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)"). Si activa manualmente swap con _swapon_, utilizar el parámetro `-d` o `--discard` producenel mismo efecto. Vea `man 8 swapon` para más detalles.
+*   Si utiliza un SSD con soporte TRIM, considere usar `defaults,discard` en la línea swap de [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)"). Si activa manualmente swap con *swapon*, utilizar el parámetro `-d` o `--discard` producenel mismo efecto. Vea `man 8 swapon` para más detalles.
 
 ### Activación por systemd
 
@@ -79,7 +79,7 @@ systemd activa particiones de intercambio basándose en dos mecanismos diferente
 Esto puede ser resuelto por una de las siguientes opciones:
 
 *   eliminar la entrada swap de `/etc/fstab`;
-*   cambiar el código tipo de la partición de intercambio de '_82'_ a un código de tipo arbitrario;
+*   cambiar el código tipo de la partición de intercambio de '*82'* a un código de tipo arbitrario;
 *   establecer el atributo de la partición swap a «**63**: no se monta automáticamente».
 
 ## Archivo swap
@@ -188,7 +188,7 @@ pri=0
 
 ```
 
-en la entrada swap _originaria_ para indicarle que use el archivo swap del disco duro solo cuando la partición swap del USB está llena.
+en la entrada swap *originaria* para indicarle que use el archivo swap del disco duro solo cuando la partición swap del USB está llena.
 
 Esta guía se puede aplicar a otras memorias, como tarjetas SD, etc.
 
@@ -198,7 +198,7 @@ Los valores de swap se pueden ajustar para mejorar el rendimiento.
 
 ### Swappiness
 
-El parámetro _swappiness_ de [sysctl](/index.php/Sysctl "Sysctl") representa la preferencia del kernel (inhibiéndose) de utilización del espacio swap. Swappiness puede tener un valor entre 0 y 100\. Si se establece un valor bajo reducirá el intercambio desde RAM, y se sabe que mejora la capacidad de respuesta en muchos sistemas.
+El parámetro *swappiness* de [sysctl](/index.php/Sysctl "Sysctl") representa la preferencia del kernel (inhibiéndose) de utilización del espacio swap. Swappiness puede tener un valor entre 0 y 100\. Si se establece un valor bajo reducirá el intercambio desde RAM, y se sabe que mejora la capacidad de respuesta en muchos sistemas.
 
 Para comprobar el valor actual de swappiness:
 
@@ -214,13 +214,13 @@ Para ajustar temporalmente el valor swappiness:
 
 ```
 
-Para establecer de manera permanente el valor swappiness, editar un archivo de configuración _sysctl_:
+Para establecer de manera permanente el valor swappiness, editar un archivo de configuración *sysctl*:
 
  `/etc/sysctl.d/99-sysctl.conf`  `vm.swappiness=10` 
 
 Para comprobar que esto puede funciona, eche un vistazo a [este artículo](http://rudd-o.com/en/linux-and-free-software/tales-from-responsivenessland-why-linux-feels-slow-and-how-to-fix-that).
 
-Otro parámetro _sysctl_ que afecta al rendimiento de swap es `vm.vfs_cache_pressure`, que controla la tendencia del kernel para reclamar la memoria que se utiliza para el almacenamiento de la caché VFS, frente a la pagecache y swap. Al aumentar este valor, aumenta la velocidad a la que la caché de VFS es demandada. [[1]](http://doc.opensuse.org/products/draft/SLES/SLES-tuning_sd_draft/cha.tuning.memory.html#cha.tuning.memory.vm.reclaim) Para más información, véase [Linux kernel documentation](https://www.kernel.org/doc/Documentation/sysctl/vm.txt).
+Otro parámetro *sysctl* que afecta al rendimiento de swap es `vm.vfs_cache_pressure`, que controla la tendencia del kernel para reclamar la memoria que se utiliza para el almacenamiento de la caché VFS, frente a la pagecache y swap. Al aumentar este valor, aumenta la velocidad a la que la caché de VFS es demandada. [[1]](http://doc.opensuse.org/products/draft/SLES/SLES-tuning_sd_draft/cha.tuning.memory.html#cha.tuning.memory.vm.reclaim) Para más información, véase [Linux kernel documentation](https://www.kernel.org/doc/Documentation/sysctl/vm.txt).
 
 ### Prioridad
 
@@ -239,4 +239,4 @@ O mediante los parámetros `−p` (o `−−priority`) de la orden swapon:
 
 ```
 
-Si dos o más áreas tienen la misma prioridad, y tienen asignada la más alta disponible, las páginas se distribuirá de forma _round-robin_ entre ellas.
+Si dos o más áreas tienen la misma prioridad, y tienen asignada la más alta disponible, las páginas se distribuirá de forma *round-robin* entre ellas.

@@ -21,7 +21,7 @@ This article explains how to share the internet connection from one machine to o
 
 ## Configuration
 
-This section assumes, that the network device connected to the client computer(s) is named _**net0**_ and the network device connected to the internet as _**internet0**_.
+This section assumes, that the network device connected to the client computer(s) is named ***net0*** and the network device connected to the internet as ***internet0***.
 
 **Tip:** You can rename your devices to this scheme using [Udev#Setting static device names](/index.php/Udev#Setting_static_device_names "Udev").
 
@@ -57,12 +57,11 @@ Enter this command to temporarily enable packet forwarding at runtime:
 
 ```
 
-**Tip:** To enable packet forwarding selectively for a specific interface, use `sysctl net.ipv4.conf._interface_name_.forwarding=1` instead.
+**Tip:** To enable packet forwarding selectively for a specific interface, use `sysctl net.ipv4.conf.*interface_name*.forwarding=1` instead.
 
 Edit `/etc/sysctl.d/30-ipforward.conf` to make the previous change persistent after a reboot for all interfaces:
 
  `/etc/sysctl.d/30-ipforward.conf` 
-
 ```
 net.ipv4.ip_forward=1
 net.ipv6.conf.default.forwarding=1

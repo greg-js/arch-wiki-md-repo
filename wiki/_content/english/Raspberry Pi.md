@@ -1,6 +1,6 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/Raspberry_Pi "wikipedia:Raspberry Pi"):
 
-	"_The Raspberry Pi is a series of credit card-sized single-board computers developed in the UK by the Raspberry Pi Foundation with the intention of promoting the teaching of basic computer science in schools._"
+	"*The Raspberry Pi is a series of credit card-sized single-board computers developed in the UK by the Raspberry Pi Foundation with the intention of promoting the teaching of basic computer science in schools.*"
 
 The original models, released in 2012, are based on the Broadcom SoC BCM2835 ([ARM11 architecture](https://en.wikipedia.org/wiki/ARM11 "wikipedia:ARM11")). The Raspberry Pi 2, released in 2015, is shipped with a BCM2836 SoC (quad-core [ARM Cortex-A7 architecture](https://en.wikipedia.org/wiki/ARM_Cortex-A7 "wikipedia:ARM Cortex-A7")).
 
@@ -42,7 +42,7 @@ This article is not meant to be an exhaustive setup guide and assumes that the r
 
 ## System architecture
 
-The Raspberry Pi is an ARM-based device and therefore needs binaries compiled for this architecture. These binaries are provided by the [Arch Linux ARM project](http://archlinuxarm.org/about) which ports Arch Linux to ARM-based devices. They also have a separate community and forum on their website, while original forum does _not_ support ARM specific issues. With the introduction of the Raspberry Pi 2 the packages needed now depend on which architecture the devices has:
+The Raspberry Pi is an ARM-based device and therefore needs binaries compiled for this architecture. These binaries are provided by the [Arch Linux ARM project](http://archlinuxarm.org/about) which ports Arch Linux to ARM-based devices. They also have a separate community and forum on their website, while original forum does *not* support ARM specific issues. With the introduction of the Raspberry Pi 2 the packages needed now depend on which architecture the devices has:
 
 *   ARMv6 (BCM2835): Raspberry Pi Model A, A+, B, B+, Zero
 *   ARMv7 (BCM2836): Raspberry Pi 2 (based on Model B+)
@@ -78,11 +78,11 @@ Users needing to establish a wireless internet connection will need to use a wir
 Select an audio source for output:
 
 ```
-$ amixer cset numid=3 _x_
+$ amixer cset numid=3 *x*
 
 ```
 
-Where `_x_` corresponds to:
+Where `*x*` corresponds to:
 
 *   0 for Auto
 *   1 for Analog out
@@ -110,7 +110,7 @@ To turn the HDMI or analog TV-Out on or off, have a look at
 
 ```
 
-Use the _-s_ parameter to check the status; the _-o_ parameter to turn the display off and _-p_ parameter to power on HDMI with preferred settings.
+Use the *-s* parameter to check the status; the *-o* parameter to turn the display off and *-p* parameter to power on HDMI with preferred settings.
 
 Adjustments are likely required to correct proper overscan/underscan and are easily achieved in `boot/config.txt` in which many tweaks are set. To fix, simply uncomment the corresponding lines and setup per the commented instructions:
 
@@ -134,13 +134,13 @@ Since Raspberry Pi 1 Model B+ and Raspberry Pi 2 Model B, the composite video so
 
 ### X.org driver
 
-The X.org driver for Raspberry Pi can be [installed](/index.php/Installed "Installed") with the _xf86-video-fbdev_ or _xf86-video-fbturbo-git_ package.
+The X.org driver for Raspberry Pi can be [installed](/index.php/Installed "Installed") with the *xf86-video-fbdev* or *xf86-video-fbturbo-git* package.
 
 ## Onboard hardware sensors
 
 ### Temperature
 
-Temperatures sensors can be queried with utils in the _raspberrypi-firmware-tools_ package. The RPi offers a sensor on the BCM2835 SoC (CPU/GPU):
+Temperatures sensors can be queried with utils in the *raspberrypi-firmware-tools* package. The RPi offers a sensor on the BCM2835 SoC (CPU/GPU):
 
  `$ /opt/vc/bin/vcgencmd measure_temp`  `temp=49.8'C` 
 
@@ -150,18 +150,19 @@ Alternatively, simply read from the file system:
 
 For human readable output:
 
- `$ awk '{printf "%3.1f°C\n", $1/1000}' /sys/class/thermal/thermal_zone0/temp`  `54.1°C` 
+ `$ awk '{printf "%3.1f°C
+", $1/1000}' /sys/class/thermal/thermal_zone0/temp`  `54.1°C` 
 
 ### Voltage
 
 Four different voltages can be monitored via `/opt/vc/bin/vcgencmd` as well:
 
 ```
-$ /opt/vc/bin/vcgencmd measure_volts _<id>_
+$ /opt/vc/bin/vcgencmd measure_volts *<id>*
 
 ```
 
-Where `_<id>_` is:
+Where `*<id>*` is:
 
 *   core for core voltage
 *   sdram_c for sdram Core voltage
@@ -200,7 +201,6 @@ $ cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
 See [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling") for details on scaling governors.
 
 **Tip:** The following script will show all frequencies set on the RPi:
-
 ```
 #/bin/bash
 for src in arm core h264 isp v3d uart pwm emmc pixel vec hdmi dpi ; do
@@ -255,7 +255,7 @@ From a PC, connect:
 
 ## Raspberry Pi camera module
 
-The commands for the camera module are included as part of the _raspberrypi-firmware-tools_ package - which is installed by default.
+The commands for the camera module are included as part of the *raspberrypi-firmware-tools* package - which is installed by default.
 
 ```
 $ /opt/vc/bin/raspistill
@@ -322,7 +322,7 @@ In order to use standard applications (those that look for `/dev/video0`) the V4
 
 ## Hardware random number generator
 
-Arch Linux ARM for the Raspberry Pi has the `bcm2708-rng` module set to load at boot (see [this](http://archlinuxarm.org/forum/viewtopic.php?f=31&t=4993#p27708)), but install the _rng-tools_ and tell the Hardware RNG Entropy Gatherer Daemon (_rngd_) where to find the hardware random number generator.
+Arch Linux ARM for the Raspberry Pi has the `bcm2708-rng` module set to load at boot (see [this](http://archlinuxarm.org/forum/viewtopic.php?f=31&t=4993#p27708)), but install the *rng-tools* and tell the Hardware RNG Entropy Gatherer Daemon (*rngd*) where to find the hardware random number generator.
 
 This can be done by editing `/etc/conf.d/rngd`:
 
@@ -331,9 +331,9 @@ RNGD_OPTS="-o /dev/random -r /dev/hwrng"
 
 ```
 
-and enabling and [starting](/index.php/Start "Start") the _rngd_ service.
+and enabling and [starting](/index.php/Start "Start") the *rngd* service.
 
-If [haveged](/index.php/Haveged "Haveged") is running, it should be stopped and disabled, as it might compete with _rngd_ and is only preferred when there is no hardware random number generator available.
+If [haveged](/index.php/Haveged "Haveged") is running, it should be stopped and disabled, as it might compete with *rngd* and is only preferred when there is no hardware random number generator available.
 
 Once completed, this change ensures that data from the hardware random number generator is fed into the kernel's entropy pool at `/dev/random`. To check the available entropy, run:
 
@@ -342,7 +342,7 @@ Once completed, this change ensures that data from the hardware random number ge
 
 ```
 
-The number it reports should be around 3000, whereas before setting up _rngd_ it would have been closer to 1000.
+The number it reports should be around 3000, whereas before setting up *rngd* it would have been closer to 1000.
 
 ## GPIO
 
@@ -358,7 +358,7 @@ To be able to use the GPIO pins from Python, use the [RPi.GPIO](https://pypi.pyt
 
 ## I2C
 
-Install _i2c-tools_ and _lm_sensors_ packages.
+Install *i2c-tools* and *lm_sensors* packages.
 
 Configure the bootloader to enable the i2c hardware by appending `/boot/config.txt`:
 
@@ -370,7 +370,6 @@ Configure the bootloader to enable the i2c hardware by appending `/boot/config.t
 Configure the `i2c-dev` and `i2c-bcm2708` (if you did not blacklist it for the camera) modules to be loaded at boot:
 
  `/etc/modules-load.d/raspberrypi.conf` 
-
 ```
 i2c-dev
 i2c-bcm2708
@@ -406,7 +405,7 @@ Finally, read the sensor output:
 
 ## QEMU chroot
 
-Sometimes it is easier to work directly on a disk image instead of the real Raspberry Pi. This can be achieved by mounting an SD card containing the RPi root partition and chrooting into it. From the chroot it should be possible to run _pacman_ and install more packages, compile large libraries etc. Since the executables are for the ARM architecture, the translation to x86 needs to be performed by [QEMU](/index.php/QEMU "QEMU").
+Sometimes it is easier to work directly on a disk image instead of the real Raspberry Pi. This can be achieved by mounting an SD card containing the RPi root partition and chrooting into it. From the chroot it should be possible to run *pacman* and install more packages, compile large libraries etc. Since the executables are for the ARM architecture, the translation to x86 needs to be performed by [QEMU](/index.php/QEMU "QEMU").
 
 **Note:** As of January 2016, [make](https://www.archlinux.org/packages/?name=make) won't run in QEMU for ARM so it is not possible to build packages this way. Follow the [guide on the Arch Linux ARM website](http://archlinuxarm.org/developers/distcc-cross-compiling) to build a cross-compiler if building ARM packages is needed.
 

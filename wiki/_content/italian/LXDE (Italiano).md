@@ -1,6 +1,6 @@
 From [LXDE.org | Lightweight X11 Desktop Environment](http://lxde.org/):
 
-	_Il 'Lightweight X11 Desktop Environment' è un ambiente desktop estremamente veloce , performante e con un buon risparmio energetico. Gestito da una comunità internazionale di sviluppatori, si presenta con una bella interfaccia, supporto multi-lingua, tasti di scelta rapida standard e funzionalità aggiuntive come la navigazione a schede dei file. LXDE utilizza meno CPU e RAM di altri ambienti desktop. E 'progettato appositamente per i computer cloud con basse specifiche hardware, come i netbook, i dispositivi MID (Mobile ad esempio) o computer datati._
+	*Il 'Lightweight X11 Desktop Environment' è un ambiente desktop estremamente veloce , performante e con un buon risparmio energetico. Gestito da una comunità internazionale di sviluppatori, si presenta con una bella interfaccia, supporto multi-lingua, tasti di scelta rapida standard e funzionalità aggiuntive come la navigazione a schede dei file. LXDE utilizza meno CPU e RAM di altri ambienti desktop. E 'progettato appositamente per i computer cloud con basse specifiche hardware, come i netbook, i dispositivi MID (Mobile ad esempio) o computer datati.*
 
 ## Contents
 
@@ -163,7 +163,6 @@ Una volta che i file `.desktop` sono stati aggiunti è possibile manipolarli con
 Il secondo metodo è usare il file `~/.config/lxsession/LXDE/autostart`. Questo file non è uno script della shell, ma ogni riga rappresenta un comando da eseguire. Se la linea inizia con @, il comando che segue verrà automaticamente rieseguito in caso di crash. Ad esempio per eseguire lxterminal e leafpad automaticamente all'avvio:
 
  `~/.config/lxsession/LXDE/autostart` 
-
 ```
 @lxterminal
 @leafpad
@@ -188,7 +187,6 @@ Una maniera diretta per farlo è aggiungere il cursore ai temi predefiniti. Per 
 Poi si potrà specificare di aggiungere ai temi delle icone il cursore. Così si metterà in uso il tema cursore [xcursor-bluecurve](https://www.archlinux.org/packages/?name=xcursor-bluecurve):
 
  `/usr/share/icons/default/index.theme` 
-
 ```
 [icon theme]
 Inherits=Bluecurve
@@ -463,7 +461,6 @@ Se si vuole utilizzare un disco removibile con un filesystem NTFS, deve essere i
 *   Creare un nuovo `/sbin/mount.ntfs-3g` contenente il seguente script bash:
 
  `/sbin/mount.ntfs-3g` 
-
 ```
 #!/bin/bash
  /bin/ntfs-3g $1 $2 -o locale=en_US.UTF-8
@@ -521,7 +518,7 @@ In alternativa, è anche possibile usare lxappearance dai repository community p
 
 ### LXsession completo
 
-È noto che esistono alcuni bug in lxsession in relazione allla gestione delle sessioni. _**lxsession-lite**_ è una versione di lxsession che non ha capacità di gestione delle sessioni. La stabilità di lxsession-lite è migliore di quella di lxsession, tuttavia non è in grado di salvare e ripristinare le sessioni. Quindi sarebbe raccomandabile adoperare _**lxsession-lite**_ fino a che i problemi in lxsession non saranno risolti.
+È noto che esistono alcuni bug in lxsession in relazione allla gestione delle sessioni. ***lxsession-lite*** è una versione di lxsession che non ha capacità di gestione delle sessioni. La stabilità di lxsession-lite è migliore di quella di lxsession, tuttavia non è in grado di salvare e ripristinare le sessioni. Quindi sarebbe raccomandabile adoperare ***lxsession-lite*** fino a che i problemi in lxsession non saranno risolti.
 
 ### Usare applicazioni KDEmod3 sotto LXDE
 
@@ -535,7 +532,6 @@ Poichè versioni più datate diKDEmod3[-legacy] vengono installate sotto `/opt/k
 o aggiungere il seguente script a `/etc/profile.d/kde3path.sh`:
 
  `/etc/profile.d/kde3path.sh` 
-
 ```
 #!/bin/sh
  PATH=$PATH:/opt/kde/bin

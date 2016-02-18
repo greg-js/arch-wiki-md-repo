@@ -38,7 +38,6 @@ Besides the configuration files that are installed (and checked during upgrade),
 Netatalk 3.x uses a single configuration file, `/etc/afp.conf`. See `man afp.conf` and the following example (make sure processes have write access to `afpd.log`):
 
  `/etc/afp.conf` 
-
 ```
 [Global]
  mimic model = TimeCapsule6,106
@@ -69,7 +68,6 @@ Netatalk 3.x uses a single configuration file, `/etc/afp.conf`. See `man afp.con
 Edit the afpd configuration file (`/etc/netatalk/afpd.conf`), and add a line similar to
 
  `/etc/netatalk/afpd.conf` 
-
 ```
 ...
 - -mimicmodel TimeCapsule6,106 -setuplog "default log_warn /var/log/afpd.log"
@@ -82,7 +80,6 @@ This tells netatalk to use the system's hostname, mimic a TimeCapsule, and log w
 Edit the volumes configuration file `/etc/netatalk/AppleVolumes.default`, and append the following to add a TimeMachine-like share
 
  `/etc/netatalk/AppleVolumes.default` 
-
 ```
 ...
 <path_to_share> <sharename> allow:<username> options:usedots,upriv,tm
@@ -98,23 +95,18 @@ Edit the volumes configuration file `/etc/netatalk/AppleVolumes.default`, and ap
 If you use the iptables package for firewall services, consider adding the following: (replace `-I` with `-A` as necessary)
 
  `Bonjour/Zeroconf` 
-
 ```
 iptables -I INPUT -p udp --dport mdns -d 224.0.0.251 -j ACCEPT
 iptables -I OUTPUT -p udp --dport mdns -d 224.0.0.251 -j ACCEPT
 ```
-
  `AFP`  `iptables -I INPUT -p tcp --dport afpovertcp -j ACCEPT`  `SLP` 
-
 ```
 iptables -I INPUT -p tcp --dport slp -j ACCEPT
 iptables -I OUTPUT -p tcp --dport slp -j ACCEPT
 iptables -I INPUT -p udp --dport slp -j ACCEPT
 iptables -I OUTPUT -p udp --dport slp -j ACCEPT
 ```
-
  `AppleTalk` 
-
 ```
 iptables -I INPUT -p tcp -m multiport --dport at-rtmp,at-nbp,at-echo,at-zis -j ACCEPT
 iptables -I OUTPUT -p tcp -m multiport --dport at-rtmp,at-nbp,at-echo,at-zis -j ACCEPT

@@ -17,7 +17,7 @@ udev carica i moduli del kernel simultaneamente, ciò può quindi comportare una
         *   [3.2.2 Mount in /media; usando l'etichetta della partizione se presente; con supporto alla cifratura LUKS](#Mount_in_.2Fmedia.3B_usando_l.27etichetta_della_partizione_se_presente.3B_con_supporto_alla_cifratura_LUKS)
         *   [3.2.3 Mount in /media; usando l'etichetta della partizione se presente; consentire agli utenti lo smontaggio](#Mount_in_.2Fmedia.3B_usando_l.27etichetta_della_partizione_se_presente.3B_consentire_agli_utenti_lo_smontaggio)
         *   [3.2.4 Mount in /mnt; creando un link simbolico in /media](#Mount_in_.2Fmnt.3B_creando_un_link_simbolico_in_.2Fmedia)
-        *   [3.2.5 Mount in /media _solo_ se la partizione ha una etichetta](#Mount_in_.2Fmedia_solo_se_la_partizione_ha_una_etichetta)
+        *   [3.2.5 Mount in /media *solo* se la partizione ha una etichetta](#Mount_in_.2Fmedia_solo_se_la_partizione_ha_una_etichetta)
         *   [3.2.6 Mount in /media; usando l'etichetta della partizione se presente; usando ntfs-3g](#Mount_in_.2Fmedia.3B_usando_l.27etichetta_della_partizione_se_presente.3B_usando_ntfs-3g)
         *   [3.2.7 Mount delle SD card](#Mount_delle_SD_card)
         *   [3.2.8 Mount dei CD](#Mount_dei_CD)
@@ -98,7 +98,6 @@ Mentre UDisks include dei semplici metodi di mount(ed umount) delle periferiche 
 La seguente regola imposta il mount automatico delle partizioni/periferiche identificate come `/dev/sd*` (pendrive USB, hard disk esterni ed in alcuni casi SD card). Se esiste una etichetta, allora il mount sarà effettuato in `/media/<etichetta>`, altrimenti in `/media/usbhd-sd*` (esempio: /media/usbhd-sdb1):
 
  `/etc/udev/rules.d/11-media-by-label-auto-mount.rules` 
-
 ```
 KERNEL!="sd[a-z][0-9]", GOTO="media_by_label_auto_mount_end"
 
@@ -130,9 +129,7 @@ LABEL="media_by_label_auto_mount_end"
 Come nella regola precedente, ma in questo caso nella periferica risiede una partizione con un filesystem criptato con LUKS, verrà aperto una finestra di `xterm` dove si dovrà inserire la passphrase(supponendo che xterm sia già installato). Consultare anche [questo post sul forum internazionale](https://bbs.archlinux.org/viewtopic.php?pid=696239#p696239).
 
 **Nota:** Può essere necessario modificare il percorso di `cryptsetup`, a seconda della versione (es: < 1.1.1_rc2-1).
-
  `/etc/udev/rules.d/11-media-by-label-auto-mount.rules` 
-
 ```
 KERNEL!="sd[a-z]*", GOTO="media_by_label_auto_mount_end"
 ACTION=="add", PROGRAM!="/sbin/blkid %N", GOTO="media_by_label_auto_mount_end"
@@ -175,7 +172,6 @@ LABEL="media_by_label_auto_mount_end"
 Questa è una variante della regola precedente. Utilizza `pmount` (che dovrà essere già installato) anziché `mount`, consentendo agli utenti senza privilegi di root di smontare le periferiche montate da udev, e di rimuovere automaticamente il punto di mount. Sarà necessario specificare nel comando `RUN` della regola il nome utente(nell'esempio 'tomk'), rendendo questa regola non adatta a sistemi multi utente. Il supporto a LUKS è stato rimosso dal seguente esempio ma può essere reinserito come nel precedente esempio. Si dovrà modificare l'uso del comando `/bin/su` in modo da essere eseguito dall'utente giusto per il proprio sistema. Notare che il punto di mount rimarrà se la periferica è montata, ed il sistema, avente la cartella `/media` persistente, viene spento, dato che lo script `rc.shutdown` userà `umount`, che non rimuoverà il punto di mount. Per impedire che nella cartella `/media` rimangano i vecchi punti di mount, una soluzione è quella di effettuare il mount della cartella `/media` come `tmpfs`.
 
  `/etc/udev/rules.d/11-media-by-label-with-pmount.rules` 
-
 ```
 KERNEL!="sd[a-z]*", GOTO="media_by_label_auto_mount_end"
 ACTION=="add", PROGRAM!="/sbin/blkid %N", GOTO="media_by_label_auto_mount_end"
@@ -197,7 +193,6 @@ LABEL="media_by_label_auto_mount_end"
 La seguente regola non utilizza l'etichetta per la creazione del punto di mount; invece effettua il mount delle periferiche come usbhd-sdXY in `/mnt` (esempio: /mnt/usbhd-sdb1) e crea un link simbolico in `/media`.
 
  `/etc/udev/rules.d/11-mnt-auto-mount.rules` 
-
 ```
 KERNEL!="sd[a-z][0-9]", GOTO="mnt_auto_mount_end"
 
@@ -218,10 +213,9 @@ LABEL="mnt_auto_mount_end"
 
 ```
 
-#### Mount in /media _solo_ se la partizione ha una etichetta
+#### Mount in /media *solo* se la partizione ha una etichetta
 
  `/etc/udev/rules.d/11-media-by-label-only-auto-mount.rules` 
-
 ```
 KERNEL!="sd[a-z][0-9]", GOTO="media_by_label_only_auto_mount_end"
 
@@ -250,7 +244,6 @@ LABEL="media_by_label_only_auto_mount_end"
 Ecco un altro esempio, in questo caso viene usato `ntfs-3g` per accedere in lettura e scrittura sui filesystem NTFS:
 
  `/etc/udev/rules.d/10-my-media-automount.rules` 
-
 ```
 # vim:enc=utf-8:nu:ai:si:et:ts=4:sw=4:ft=udevrules:
 #
@@ -293,7 +286,6 @@ LABEL="my_media_automount_end"
 Le regole sopra possono essere usate anche per il mount automatico delle schede SD, basterà sostituire `sd[a-z][0-9]` con `mmcblk[0-9]p[0-9]`:
 
  `/etc/udev/rules.d/11-sd-cards-auto-mount.rules` 
-
 ```
 KERNEL!="mmcblk[0-9]p[0-9]", GOTO="sd_cards_auto_mount_end"
 
@@ -320,7 +312,6 @@ Per effettuare l’auto mount dei cd basterà avere installato e configurato uno
 La seguente regola consente a normali utenti (appartenenti al gruppo "users") la possibilità di accedere ad [USBtinyISP](http://www.ladyada.net/make/usbtinyisp/) programmatori per micro controllori AVR ed a generici (SiLabs [CP2102](http://www.silabs.com/products/interface/usbtouart)) adattatori da USB a UART. Modificare i permessi secondo le esigenze. Verificato il 11-02-2010.
 
  `/etc/udev/rules.d/50-embedded_devices.rules` 
-
 ```
 # USBtinyISP Programmer
 SUBSYSTEMS=="usb", ATTRS{idVendor}=="1781", ATTRS{idProduct}=="0c9f", GROUP="users", MODE="0666"
@@ -343,7 +334,6 @@ Consultare la guida riguardante l'[esecuzione di programmi all'inserimento di un
 Se si vuole effettuare il mount di periferiche interne in KDE oppure in GNOME (ma anche in altri Desktop Environment) come utente non privilegiato(senza necessità di inserire la password per elevare i privilegi), basterà creare il seguente file in [PolicyKit](/index.php/PolicyKit "PolicyKit") Local Autority:
 
  `/etc/polkit-1/localauthority/50-local.d/50-filesystem-mount-system-internal.pkla` 
-
 ```
 [Mount a system-internal device]
 Identity=*
@@ -357,14 +347,12 @@ ResultActive=yes
 Se si connette una dock eSATA oppure un qualsiasi adattatore eSATA il sistema riconoscerà queste porte come SATA interne. GNOME e KDE richiederanno quindi la password di root per effettuarne il mount. La seguente regola marchia come eSATA la porta SATA interna specificata. In questo modo un utente normale su GNOME potrà quindi connettere i propri dischi eSata che verranno trattati come dischi USB, senza bisogno di inserire la password di root.
 
  `/etc/udev/rules.d/10-esata.rules` 
-
 ```
 DEVPATH=="/devices/pci0000:00/0000:00:1f.2/host4/*", ENV{UDISKS_SYSTEM_INTERNAL}="0"
 
 ```
 
 **Nota:** Il valore di DEVPATH può essere ottenuto dopo la connessione del disco eSATA mediante il seguente comando(sostituire `sdb` a seconda delle proprie esigenze):
-
 ```
 # find /sys/devices/ -name sdb
 /sys/devices/pci0000:00/0000:00:1f.2/host4/target4:0:0/4:0:0:0/block/sdb
@@ -375,7 +363,7 @@ DEVPATH=="/devices/pci0000:00/0000:00:1f.2/host4/*", ENV{UDISKS_SYSTEM_INTERNAL}
 
 ### Inserire i moduli in blacklist
 
-In rari casi, udev può sbagliarsi e caricare il modulo sbagliato. Per prevenire ciò il modulo in questione può essere inserito in una blacklist.Consultare [blacklisting](/index.php/Blacklisting_(Italiano) "Blacklisting (Italiano)") per maggiori informazioni. Una volta inserito nella blacklist udev non caricherà questo modulo, ne durante la fase di avvio _ne_ in caso di inserimento di periferiche hotplug(durante l'inserimento di una pennina USB).
+In rari casi, udev può sbagliarsi e caricare il modulo sbagliato. Per prevenire ciò il modulo in questione può essere inserito in una blacklist.Consultare [blacklisting](/index.php/Blacklisting_(Italiano) "Blacklisting (Italiano)") per maggiori informazioni. Una volta inserito nella blacklist udev non caricherà questo modulo, ne durante la fase di avvio *ne* in caso di inserimento di periferiche hotplug(durante l'inserimento di una pennina USB).
 
 ### udevd fallisce all’avvio
 
@@ -451,7 +439,6 @@ Dato che udev carica i moduli in modo asincrono, questi vengono inizializzati in
 Un metodo per ordinare le schede di rete è quello di usare una regola che imposti staticamente il nome ad ogni interfaccia di rete. Creare il seguente file per associare al MAC adresss di ogni scheda di rete un determinato nome di interfaccia:
 
  `/etc/udev/rules.d/10-network.rules` 
-
 ```
 SUBSYSTEM=="net", ATTR{address}=="aa:bb:cc:dd:ee:ff", NAME="lan0"
 SUBSYSTEM=="net", ATTR{address}=="ff:ee:dd:cc:bb:aa", NAME="wlan0"
@@ -487,7 +474,6 @@ Un motivo per cui il modulo `ide_cd_mod` viene caricato piuttosto che altri, com
 Se l'ID delle periferiche ottiche è impostato su `disk` e si vuole cambiare in `optical` sarà necessario creare una regola personalizzata di udev:
 
  `/etc/udev/rules.d` 
-
 ```
 # permissions for IDE CD devices
 SUBSYSTEMS=="ide", KERNEL=="hd[a-z]", ATTR{removable}=="1", ATTRS{media}=="cdrom*", GROUP="optical"

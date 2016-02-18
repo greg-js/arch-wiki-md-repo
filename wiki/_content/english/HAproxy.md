@@ -31,7 +31,6 @@ An example configuration is available in `/etc/haproxy/haproxy.cfg`. Edit it to 
 HAProxy supports ACLs, which can be used to test conditions and perform a given action based on the results of those tests. A typical ACL would be written as follows:
 
  `/etc/haproxy/haproxy.cfg` 
-
 ```
 acl photo_page path_beg /photos
 
@@ -50,7 +49,6 @@ In HAProxy terminology, **backends** are a server or set of servers that will re
 An example backend may be written as follows:
 
  `/etc/haproxy/haproxy.cfg` 
-
 ```
 backend http-in
    balance roundrobin
@@ -65,7 +63,7 @@ backend http-in
 
 *   IP addresses and ports
 *   ACLs
-*   _use_backend_ rules
+*   *use_backend* rules
 
 #### Health checks
 

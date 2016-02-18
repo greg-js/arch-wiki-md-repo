@@ -59,7 +59,7 @@ If `/query` happens to not work in your client you can try using either `/quote 
 	[#archlinux channel guidelines](#.23archlinux_guidelines)
 
 *   **Client settings and bots**
-    *   If you want to bring a bot into the channel, then ask an operator _before_ you do so.
+    *   If you want to bring a bot into the channel, then ask an operator *before* you do so.
     *   Auto-response in channel or in pm is not allowed (the only exception is 'away' responses at nick highlight in pm).
 *   **Channelbot usage**
     *   There is only one official channel bot. 'phrik!~archbot@archlinux/bot/phrik'

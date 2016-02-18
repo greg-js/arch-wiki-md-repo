@@ -9,14 +9,13 @@ This is basic management that applies to most terminal emulators, including virt
 *   Press `Ctrl+S` to pause the output
 *   And `Ctrl+Q` to resume it
 
-**Note:** This pauses not only the output, but also programs which try to print to the terminal, since they'll block on the write() calls for as long as the output is paused. If your _init_ appears frozen, make sure the system console is not paused.
+**Note:** This pauses not only the output, but also programs which try to print to the terminal, since they'll block on the write() calls for as long as the output is paused. If your *init* appears frozen, make sure the system console is not paused.
 
 ## Have boot messages stay on tty1
 
 By default, arch has the `getty@tty1` service enabled. The service file already passes `--noclear`, which stops agetty from clearing the screen. However [systemd](/index.php/Systemd "Systemd") clears the screen before starting it. To disable this behavior, create a drop-in directory `/etc/systemd/system/getty@tty1.service.d/` and create a `noclear.conf` file in it:
 
  `/etc/systemd/system/getty@tty1.service.d/noclear.conf` 
-
 ```
 [Service]
 TTYVTDisallocate=no

@@ -41,7 +41,7 @@ You can use the [festival-ims](https://aur.archlinux.org/packages/festival-ims/)
 
 The [IMS of the University Stuttgart](http://www.ims.uni-stuttgart.de) developed an extension to festival especially for German language. It uses German voices with [mbrola](https://aur.archlinux.org/packages/mbrola/). To install it, the extension needs to be downloaded from the university's servers (follow the Instructions [here](http://www.ims.uni-stuttgart.de/institut/arbeitsgruppen/phonetik/synthesis/festival_opensource.html)) and the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") needs to be modified -- use [abs](https://www.archlinux.org/packages/?name=abs) to get it and the patches necessary to install festival under arch linux.
 
-Add these two files downloaded from the IMS (do NOT use the third file, _ims_german_1.3-os.fix.tgz_)
+Add these two files downloaded from the IMS (do NOT use the third file, *ims_german_1.3-os.fix.tgz*)
 
 ```
  ims_german_1.3-os.tgz
@@ -49,11 +49,12 @@ Add these two files downloaded from the IMS (do NOT use the third file, _ims_ger
 
 ```
 
-with their md5sums to the _source_ variable and place them in the same folder as the PKGBUILD. In the `prepare()` section, include the following lines (at the end of the section):
+with their md5sums to the *source* variable and place them in the same folder as the PKGBUILD. In the `prepare()` section, include the following lines (at the end of the section):
 
 ```
    # add ims config
-   sed -i 's/ALSO_INCLUDE +=$/# IMS module for German\nALSO_INCLUDE += ims_german_text/' "$srcdir/festival/config/config.in"
+   sed -i 's/ALSO_INCLUDE +=$/# IMS module for German
+ALSO_INCLUDE += ims_german_text/' "$srcdir/festival/config/config.in"
    cat<<EOF >> "$srcdir/festival/lib/sitevars.scm"
  (set! mbrola-path "/usr/share/mbrola/")
  (set! mbrola_progname "/usr/bin/mbrola -e")
@@ -70,7 +71,7 @@ This should install support for the german voices de1 through de4\. Install at l
 
 ```
 
-from the prompt or use it in _text2wave_ via
+from the prompt or use it in *text2wave* via
 
 ```
  text2wave -o spoken.wav -eval '(voice_german_de2_os)' inputfile.txt

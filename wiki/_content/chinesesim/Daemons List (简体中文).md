@@ -21,12 +21,12 @@ freshclamd.service
 | [bitlbee](/index.php/Bitlbee "Bitlbee") | bitlbee.service | BitlBee IRC/IM 网关. |
 | [cpupower](/index.php/CPU_frequency_scaling "CPU frequency scaling") | cpupower.service | 内核 cpufreq 子系统的用户空间工具 |
 | craftbukkit | 未实现 | CraftBukkit Minecraft 服务 |
-| [crond](/index.php/Cron "Cron") | cronie.service | 预定日程和时间触发事件的守护进程。 [cronie](https://www.archlinux.org/packages/?name=cronie) 和 [dcron](https://aur.archlinux.org/packages/dcron/) 都会使用 _crond_ 这个名字。 |
+| [crond](/index.php/Cron "Cron") | cronie.service | 预定日程和时间触发事件的守护进程。 [cronie](https://www.archlinux.org/packages/?name=cronie) 和 [dcron](https://aur.archlinux.org/packages/dcron/) 都会使用 *crond* 这个名字。 |
 | [cupsd](/index.php/CUPS "CUPS") | org.cups.cupsd.service | 通用UNIX打印系统守护进程. |
 | [dovecot](/index.php/Dovecot "Dovecot") | dovecot.service | IMAP 和 POP3 服务器. |
 | [dropboxd](/index.php/Dropbox "Dropbox") | 未实现 | 带版本控制的跨平台文件同步. |
 | [dbus](/index.php/D-Bus "D-Bus") | dbus.service | 用于软件通信的消息总线系统。 |
-| [dcron](/index.php/Cron "Cron") | dcron.service | 定时执行任务的守护进程，两个软件包 [cronie](https://www.archlinux.org/packages/?name=cronie) 和 [dcron](https://aur.archlinux.org/packages/dcron/) 都提供了 _crond_。[cronie](https://www.archlinux.org/packages/?name=cronie)是Arch的默认 cron 程序。 |
+| [dcron](/index.php/Cron "Cron") | dcron.service | 定时执行任务的守护进程，两个软件包 [cronie](https://www.archlinux.org/packages/?name=cronie) 和 [dcron](https://aur.archlinux.org/packages/dcron/) 都提供了 *crond*。[cronie](https://www.archlinux.org/packages/?name=cronie)是Arch的默认 cron 程序。 |
 | sockd | sockd.service | 电路级 SOCKS 客户端/服务器。 |
 | [deluged](/index.php/Deluge "Deluge") | deluged.service | 跨平台的全功能 BitTorrent 客户端。 |
 | [deluge-web](/index.php/Deluge "Deluge") | deluge-web.service | 跨平台的全功能 BitTorrent 客户端网页界面。 |

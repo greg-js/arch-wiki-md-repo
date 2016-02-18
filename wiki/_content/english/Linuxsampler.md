@@ -156,11 +156,11 @@ If you use this setup, you will have to change the piano part MIDI output in you
 
 ## Troubleshooting
 
-If you get the message : _Engine: WARNING, CONFIG_EG_MIN_RELEASE_TIME too big for current audio fragment size & sampling rate!_ and eventually a crash after that, then it's time to reconsider latency for your soundcard.Raise the samples/period setting in qjackctl and retry. As an indication, on an M-audio delta 44, a setup of samples/period=128, periods in buffer=2 and sampling rate=44100 gives a working setup with LS.Latency = 5.8ms which is already quite low.
+If you get the message : *Engine: WARNING, CONFIG_EG_MIN_RELEASE_TIME too big for current audio fragment size & sampling rate!* and eventually a crash after that, then it's time to reconsider latency for your soundcard.Raise the samples/period setting in qjackctl and retry. As an indication, on an M-audio delta 44, a setup of samples/period=128, periods in buffer=2 and sampling rate=44100 gives a working setup with LS.Latency = 5.8ms which is already quite low.
 
 ### Port conflict with BitTorrent Sync
 
-BitTorrent Sync and linuxsampler by default use the same port, 8888\. If you attempt to run linuxsampler at the same time as BitTorrent Sync this message will be displayed. _Starting LSCP network server (0.0.0.0:8888)...LSCPServer: Could not bind server socket_ To avoid this issue start linuxsapler with the command _linuxsampler --lscp-port 8889_ You may also have to adjust the server port on your Gui frontend.
+BitTorrent Sync and linuxsampler by default use the same port, 8888\. If you attempt to run linuxsampler at the same time as BitTorrent Sync this message will be displayed. *Starting LSCP network server (0.0.0.0:8888)...LSCPServer: Could not bind server socket* To avoid this issue start linuxsapler with the command *linuxsampler --lscp-port 8889* You may also have to adjust the server port on your Gui frontend.
 
 ## External Resources
 

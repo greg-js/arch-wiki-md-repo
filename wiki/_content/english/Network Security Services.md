@@ -18,7 +18,7 @@ Applications built with NSS can support [SSL](https://en.wikipedia.org/wiki/SSL 
 
 ## Certificate management
 
-Use _certutil_ utility provided with NSS to manage your certificates.
+Use *certutil* utility provided with NSS to manage your certificates.
 
 ### List certificate DB
 
@@ -32,7 +32,7 @@ $ certutil -d sql:$HOME/.pki/nssdb -L
 To get details about certificate:
 
 ```
-$ certutil -d sql:$HOME/.pki/nssdb -L -n _certificate_nickname_
+$ certutil -d sql:$HOME/.pki/nssdb -L -n *certificate_nickname*
 
 ```
 
@@ -41,7 +41,7 @@ $ certutil -d sql:$HOME/.pki/nssdb -L -n _certificate_nickname_
 To add a certificate specify the `-A` option:
 
 ```
-$ certutil -d sql:$HOME/.pki/nssdb -A -t "_TRUSTARGS_" -n _certificate_nickname_ -i _/path/to/cert/filename_
+$ certutil -d sql:$HOME/.pki/nssdb -A -t "*TRUSTARGS*" -n *certificate_nickname* -i */path/to/cert/filename*
 
 ```
 
@@ -50,7 +50,7 @@ The `TRUSTARGS` are three strings of zero or more alphabetic characters, separat
 To add a personal certificate and private key for SSL client authentication use the command:
 
 ```
-$ pk12util -d sql:$HOME/.pki/nssdb -i _/path/to/PKCS12/cert/filename.p12_
+$ pk12util -d sql:$HOME/.pki/nssdb -i */path/to/PKCS12/cert/filename.p12*
 
 ```
 
@@ -58,10 +58,10 @@ This will import a personal certificate and private key stored in a PKCS #12 fil
 
 ### Edit certificate
 
-Call _certutil_ with `-M` option to edit the certificate. For example, to edit the `TRUSTARGS`:
+Call *certutil* with `-M` option to edit the certificate. For example, to edit the `TRUSTARGS`:
 
 ```
-$ certutil -d sql:$HOME/.pki/nssdb -M -t "_TRUSTARGS_" -n _certificate_nickname_
+$ certutil -d sql:$HOME/.pki/nssdb -M -t "*TRUSTARGS*" -n *certificate_nickname*
 
 ```
 
@@ -70,7 +70,7 @@ $ certutil -d sql:$HOME/.pki/nssdb -M -t "_TRUSTARGS_" -n _certificate_nickname_
 Use `-D` option to remove the certificate:
 
 ```
-$ certutil -d sql:$HOME/.pki/nssdb -D -n _certificate_nickname_
+$ certutil -d sql:$HOME/.pki/nssdb -D -n *certificate_nickname*
 
 ```
 

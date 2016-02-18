@@ -41,7 +41,7 @@ Apache часто используется вместе с языком сцен
 
 ### Дополнительные опции
 
-Следующие опции (_директивы_) в `/etc/httpd/conf/httpd.conf` могут быть вам интересны:
+Следующие опции (*директивы*) в `/etc/httpd/conf/httpd.conf` могут быть вам интересны:
 
 ```
 User http
@@ -134,11 +134,11 @@ $ chmod o+x ~/public_html
 
 ```
 
-После этого назначьте права на _чтение_ и _исполнение_ для каталогов `~/`, `~/public_html` и, рекурсивно, на остальные подкаталоги для `~/public_html` для членов группы (в нашем примере для членов группы **piter**). Опираясь на нижеприведенный шаблон, осуществите эти мероприятия:
+После этого назначьте права на *чтение* и *исполнение* для каталогов `~/`, `~/public_html` и, рекурсивно, на остальные подкаталоги для `~/public_html` для членов группы (в нашем примере для членов группы **piter**). Опираясь на нижеприведенный шаблон, осуществите эти мероприятия:
 
 ```
-$ chmod g+xr-w /home/_yourusername_
-$ chmod -R g+xr-w /home/_yourusername_/public_html
+$ chmod g+xr-w /home/*yourusername*
+$ chmod -R g+xr-w /home/*yourusername*/public_html
 
 ```
 
@@ -232,7 +232,6 @@ Include conf/vhosts/domainname2.dom
 Очень простой файл виртуального хоста будет выглядеть следующим образом:
 
  `/etc/httpd/conf/vhosts/domainname1.dom` 
-
 ```
 <VirtualHost domainname1.dom:80>
     ServerAdmin webmaster@domainname1.dom
@@ -272,7 +271,6 @@ Include conf/vhosts/domainname2.dom
 [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [PHP](/index.php/PHP "PHP") с пакетами [php](https://www.archlinux.org/packages/?name=php) и [php-apache](https://www.archlinux.org/packages/?name=php-apache), доступными в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
 
 **Обратите внимание:** `libphp5.so` входящий в [php-apache](https://www.archlinux.org/packages/?name=php-apache), не работает с `mod_mpm_event` ([FS#39218](https://bugs.archlinux.org/task/39218)). Вместо него следует использовать `mod_mpm_prefork`. В противном случае, вы получите следующее сообщение об ошибке:
-
 ```
 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.  You need to recompile PHP.
 AH00013: Pre-configuration failed
@@ -308,7 +306,7 @@ httpd.service: control process exited, code=exited status=1
 Если ваш корневой каталог `DocumentRoot` не `/srv/http`, добавьте его в список `open_basedir` в `/etc/php/php.ini`:
 
 ```
- open_basedir=/srv/http/:/home/:/tmp/:/usr/share/pear/:_/путь/до/корневого/каталога_
+ open_basedir=/srv/http/:/home/:/tmp/:/usr/share/pear/:*/путь/до/корневого/каталога*
 
 ```
 
@@ -435,7 +433,6 @@ Include conf/extra/httpd-mpm.conf
 *   Создайте файл `/etc/httpd/conf/extra/php5_fcgid.conf` со следующим содержимым:
 
  `/etc/httpd/conf/extra/php5_fcgid.conf` 
-
 ```
 # Required modules: fcgid_module
 
@@ -463,7 +460,7 @@ Include conf/extra/httpd-mpm.conf
 
 ```
 
-*   Создайте каталог и символическую ссылку в нем на _php-cgi_:
+*   Создайте каталог и символическую ссылку в нем на *php-cgi*:
 
 ```
 # mkdir /srv/http/fcgid-bin
@@ -529,7 +526,6 @@ Apache is running a threaded MPM, but your PHP Module is not compiled to be thre
 Это значит, что Apache работает c поточным MPM, но используется не потокобезопасная версия PHP. В этом случае, следует заменить `mpm_event_module` на `mpm_prefork_module`:
 
  `/etc/httpd/conf/httpd.conf` 
-
 ```
 # LoadModule mpm_event_module modules/mod_mpm_event.so
 LoadModule mpm_prefork_module modules/mod_mpm_prefork.so

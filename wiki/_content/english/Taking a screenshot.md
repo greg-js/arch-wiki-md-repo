@@ -176,7 +176,7 @@ $ import -window "$(xdotool getwindowfocus -f)" /tmp/$(date +%F_%H%M%S_%N).png
 
 ### GIMP
 
-You also can take screenshots with GIMP (_File > Create > Screenshot_...).
+You also can take screenshots with GIMP (*File > Create > Screenshot*...).
 
 ### xwd
 
@@ -242,19 +242,19 @@ Takes screenshots of your desktop using imlib2 and [slop](https://github.com/nae
 
 [FFmpeg](/index.php/FFmpeg "FFmpeg") provides an x11grab device that allows the screen to be captured in X11.
 
-Take a screenshot on a _width_ x _height_ display:
+Take a screenshot on a *width* x *height* display:
 
 ```
-$ ffmpeg -f x11grab -video_size _width_x_height_ -i $DISPLAY -vframes 1 screen.png
+$ ffmpeg -f x11grab -video_size *width*x*height* -i $DISPLAY -vframes 1 screen.png
 
 ```
 
 Here, the PNG codec is used as it's lossless and suitable for screenshots, but any image codec can be used.
 
-The same device allows for screencasting (on a display with a refresh rate of _rate_ HZ):
+The same device allows for screencasting (on a display with a refresh rate of *rate* HZ):
 
 ```
-$ ffmpeg -f x11grab -video_size _width_x_height_ -framerate _rate_ -i $DISPLAY -c:v libx264 -preset ultrafast cast.mkv
+$ ffmpeg -f x11grab -video_size *width*x*height* -framerate *rate* -i $DISPLAY -c:v libx264 -preset ultrafast cast.mkv
 
 ```
 
@@ -276,17 +276,17 @@ Spectacle is provided by the [spectacle](https://www.archlinux.org/packages/?nam
 
 If you use [Xfce](/index.php/Xfce "Xfce") you can install [xfce4-screenshooter](https://www.archlinux.org/packages/?name=xfce4-screenshooter) and then add a keyboard binding:
 
-_Xfce Menu > Settings > Keyboard > Application Shortcuts_
+*Xfce Menu > Settings > Keyboard > Application Shortcuts*
 
 If you want to skip the Screenshot prompt, type `$ xfce4-screenshooter -h` in terminal for the options.
 
 ### GNOME
 
-[GNOME](/index.php/GNOME "GNOME") users can press `Prnt Scr` or _Apps > Accessories > Take Screenshot_. You may need to install [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot).
+[GNOME](/index.php/GNOME "GNOME") users can press `Prnt Scr` or *Apps > Accessories > Take Screenshot*. You may need to install [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot).
 
 ### Cinnamon
 
-The default installation of [Cinnamon](/index.php/Cinnamon "Cinnamon") does not provide a screenshot utility. Installing [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot) will enable screenshots through the _Menu > Accessories > Screenshot_ or by pressing `Prnt Scr`.
+The default installation of [Cinnamon](/index.php/Cinnamon "Cinnamon") does not provide a screenshot utility. Installing [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot) will enable screenshots through the *Menu > Accessories > Screenshot* or by pressing `Prnt Scr`.
 
 ### Other desktop environments or window managers
 
@@ -300,7 +300,6 @@ $ import -window root ~/Pictures/$(date '+%Y%m%d-%H%M%S').png
 Adding the above command to the `Prnt Scr` key to Compiz allows to take the screenshot to the Pictures folder according to date and time. Notice that the `rc.xml` file in Openbox does not understand commas; so, in order to bind that command to the `Prnt Scr` key in Openbox, you need to add the following to the keyboard section of your `rc.xml` file:
 
  `rc.xml` 
-
 ```
 <!-- Screenshot -->
     <keybind key="Print">
@@ -311,7 +310,7 @@ Adding the above command to the `Prnt Scr` key to Compiz allows to take the scre
 
 ```
 
-If the `Print` above does not work, see [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") and use different _keysym_ or _keycode_.
+If the `Print` above does not work, see [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") and use different *keysym* or *keycode*.
 
 ## Terminal
 

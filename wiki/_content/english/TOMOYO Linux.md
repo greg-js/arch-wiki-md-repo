@@ -51,7 +51,7 @@ This [table](http://tomoyo.sourceforge.jp/wiki-e/?WhatIs#comparison) provides a 
 
 Implementing TOMOYO Linux 1.x using a kernel patched with ccs-patch provides the full functionality obtainable from the TOMOYO Linux project. However, implementation of this branch requires the most hurdles to be overcome, as the kernel must be patched with [ccs-patch](http://sourceforge.jp/projects/tomoyo/) and subsequently recompiled.
 
-Both _linux-ccs_ and the userspace tools must be installed. A package for [linux-ccs](https://aur.archlinux.org/packages.php?ID=51669) and a package for [ccs-tools](https://aur.archlinux.org/packages.php?ID=42606) are available on the AUR.
+Both *linux-ccs* and the userspace tools must be installed. A package for [linux-ccs](https://aur.archlinux.org/packages.php?ID=51669) and a package for [ccs-tools](https://aur.archlinux.org/packages.php?ID=42606) are available on the AUR.
 
 ### Initializing configuration
 
@@ -178,7 +178,6 @@ Next, check whether the activation was successful. You should have the following
 For first time, you may want to auto-save in-memory policies to filesystem when computer goes to shutdown/reboot. If yes, write `/usr/lib/systemd/system/tomoyo-savepolicy.service` script:
 
  `/usr/lib/systemd/system/tomoyo-savepolicy.service` 
-
 ```
 [Unit]                                                                                        
 Description=Tomoyo savepolicy
@@ -242,14 +241,14 @@ It is important to consult the relevant documentation in order to use TOMOYO Lin
 *   [TOMOYO Linux documentation](http://tomoyo.sourceforge.jp/documentation.html.en)
 *   [AKARI documentation](http://akari.sourceforge.jp/index.html.en)
 
-Run the policy editor to begin editing. If using TOMOYO Linux 1.x or AKARI, then _ccs-tools_ should be used:
+Run the policy editor to begin editing. If using TOMOYO Linux 1.x or AKARI, then *ccs-tools* should be used:
 
 ```
 # /usr/sbin/ccs-editpolicy
 
 ```
 
-If using TOMOYO Linux 2.x, then _tomoyo-tools_ should be used:
+If using TOMOYO Linux 2.x, then *tomoyo-tools* should be used:
 
 ```
 # /usr/sbin/tomoyo-editpolicy

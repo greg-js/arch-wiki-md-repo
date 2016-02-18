@@ -49,23 +49,23 @@ Pro každý `backup` soubor, který je v právě upgradovaném balíčku, pacman
 
 Pokud zajdeme více do detailů, toto trojcestné srovnání součtů MD5 může skončit s jedním z následujících výsledků:
 
-	původní = _X_, současný = _X_, nový = _X_ 
+	původní = *X*, současný = *X*, nový = *X* 
 
 	Všechny tři verze souboru mají shodný obsah, přepsání tedy není problém. Přepsat současnou verzi novou verzí a neoznamovat nic uživateli. (I když je obsah souboru shodný, toto přepsání zaktualizuje v souborovém systému informace ohledně času instalace, změny a přístupu k souboru. Zajistí též jakoukoliv změnu přístupových práv souboru.)
 
-	původní = _X_, současný = _X_, nový = _Y_ 
+	původní = *X*, současný = *X*, nový = *Y* 
 
 	Obsah současné verze je shodný s původní, ale nová verze je rozdílná. Jelikož uživatel v minulosti neupravil současnou verzi a nová verze může obsahovat vylepšení nebo opravy, přepsat současnou verzi novou verzí a neoznamovat nic uživateli. Toto je jediné automatické slučování změn, které pacman dokáže vykonávat.
 
-	původní = _X_, současný = _Y_, nový = _X_ 
+	původní = *X*, současný = *Y*, nový = *X* 
 
 	Původní balíček a nový balíček oba obsahují shodnou verzi souboru, ale verze momentálně sídlící v souborovém systému byla změněna. Ponechat současnou verzi, jak je, a zahodit novou verzi bez oznámení uživateli.
 
-	původní = _X_, současný = _Y_, nový = _Y_ 
+	původní = *X*, současný = *Y*, nový = *Y* 
 
 	Nová verze je shodná se současnou. Přepsat současnou verzi novou verzí a neoznamovat nic uživateli. (I když je obsah souboru shodný, toto přepsání zaktualizuje v souborovém systému informace ohledně času instalace, změny a přístupu k souboru. Zajistí též jakoukoliv změnu přístupových práv souboru.)
 
-	původní = _X_, současný = _Y_, nový = _Z_ 
+	původní = *X*, současný = *Y*, nový = *Z* 
 
 	Všechny tři verze jsou rozdílné. Ponechat současnou verzi, nainstalovat novou verzi s příponou `.pacnew` a varovat uživatele ohledně nové verze. Od uživatele se očekává, že ručně sloučí jakékoliv nutné změny z nové verze do té současné.
 
@@ -73,7 +73,7 @@ Pokud zajdeme více do detailů, toto trojcestné srovnání součtů MD5 může
 
 Pokud uživatel změnil některý ze souborů jmenovaných v `backup`, pak bude k tomuto souboru přidána přípona `.pacsave` a zůstane v souborovém systému i poté, co bude odstraněn zbytek balíčku.
 
-**Note:** Použití volby `-n` spolu s `pacman -R` způsobí kompletní odstranění _všech_ souborů v zadaném balíčku. Žádné `.pacsave` soubory tedy vytvořeny nebudou.
+**Note:** Použití volby `-n` spolu s `pacman -R` způsobí kompletní odstranění *všech* souborů v zadaném balíčku. Žádné `.pacsave` soubory tedy vytvořeny nebudou.
 
 ### .pacorig
 

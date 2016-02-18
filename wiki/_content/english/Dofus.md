@@ -4,7 +4,7 @@
 
 Installation can be automated with the [AUR](/index.php/AUR "AUR") package [dofus](https://aur.archlinux.org/packages/dofus/), which depends on [ankama-transition](https://aur.archlinux.org/packages/ankama-transition/), the updater.
 
-Currently the game files are installed under the "games" group with group writability. You can add your user to the group (<tt>usermod -a -G games _username_</tt>) to take advantage of this. Otherwise, you may need to enter your password in order to update the game files.
+Currently the game files are installed under the "games" group with group writability. You can add your user to the group (<tt>usermod -a -G games *username*</tt>) to take advantage of this. Otherwise, you may need to enter your password in order to update the game files.
 
 ## Manual Installation
 

@@ -64,7 +64,6 @@ Login with the root account. We will configure pacman and update the system as r
 If you properly configured your system, you should have a working network. Try to `ping example.com` to verify:
 
  `$ ping -c 3 example.com ` 
-
 ```
 PING example.com (192.0.43.10) 56(84) bytes of data.
 64 bytes from 43-10.any.icann.org (192.0.43.10): icmp_req=1 ttl=248 time=25.6 ms
@@ -139,7 +138,6 @@ Now we will update the system using [pacman](/index.php/Pacman "Pacman"). [Pacma
 pacman will attempt to read `/etc/pacman.conf` each time it is invoked. This configuration file is divided into sections, or repositories. Each section defines a package [repository](/index.php/Official_repositories "Official repositories") that pacman can use when searching for packages. The exception to this is the `options` section, which defines global options.
 
 **Note:** The defaults should work, so modifying at this point may be unnecessary, but verification is always recommended. Further info available in the [Mirrors](/index.php/Mirrors "Mirrors") article.
-
  `# nano /etc/pacman.conf` 
 
 Repositories are described below; enable all desired repositories by removing the # in front of the 'Include =' and '[repository]' lines.
@@ -178,7 +176,7 @@ Open `/etc/pacman.d/mirrorlist` in an editor and uncomment (remove the '#' in fr
 
  `# pacman -Syy` 
 
-Passing two `--refresh` or `-y` flags forces pacman to refresh all package lists even if they are considered to be up to date. Issuing `pacman -Syy` _whenever a mirror is changed_, is good practice and will avoid possible headaches.
+Passing two `--refresh` or `-y` flags forces pacman to refresh all package lists even if they are considered to be up to date. Issuing `pacman -Syy` *whenever a mirror is changed*, is good practice and will avoid possible headaches.
 
 #### rankmirrors
 
@@ -188,7 +186,7 @@ Issue the following command to completely refresh package database, upgrade and 
 
  `# pacman -Syyu curl` 
 
-*   _If you get an error at this step, use the command `nano /etc/pacman.d/mirrorlist` and uncomment a server that suits you._
+*   *If you get an error at this step, use the command `nano /etc/pacman.d/mirrorlist` and uncomment a server that suits you.*
 
 `cd` to the `/etc/pacman.d/` directory:
 
@@ -267,7 +265,7 @@ Linux is a multi-user environment. You should not do your everyday work using th
 
  `# adduser` 
 
-You will be asked to enter some information in an interactive way. In the following example we are creating the user _archie_:
+You will be asked to enter some information in an interactive way. In the following example we are creating the user *archie*:
 
 ```
 Login name for new user []: **archie**
@@ -286,9 +284,9 @@ Expiry date (YYYY-MM-DD) []:
 
 ```
 
-As showed in the example, you are advised to enter values only for the _Login name_ and the _Additional groups_, and leave empty all the other fields.
+As showed in the example, you are advised to enter values only for the *Login name* and the *Additional groups*, and leave empty all the other fields.
 
-The list of _Additional groups_ in the example is a typical choice for a desktop system, hence it is recommended especially for beginners:
+The list of *Additional groups* in the example is a typical choice for a desktop system, hence it is recommended especially for beginners:
 
 *   **audio** - for tasks involving sound card and related software
 *   **lp** - for managing printing tasks
@@ -364,7 +362,7 @@ If you are comfortable using vi, issue the visudo command without the EDITOR=nan
 
 This will open the file `/etc/sudoers` in a special session of vi. visudo copies the file to be edited to a temporary file, edits it with an editor, (vi by default), and subsequently runs a sanity check. If it passes, the temporary file overwrites the original with the correct permissions.
 
-**Warning:** Do not edit `/etc/sudoers` directly with an editor; errors in syntax can cause annoyances (like rendering the root account unusable). You **must** use the _visudo_ command to edit `/etc/sudoers`.
+**Warning:** Do not edit `/etc/sudoers` directly with an editor; errors in syntax can cause annoyances (like rendering the root account unusable). You **must** use the *visudo* command to edit `/etc/sudoers`.
 
 In the previous section we added your user to the "wheel" group. To give users in the wheel group full root privileges when they precede a command with "sudo", uncomment the following line:
 
@@ -401,7 +399,7 @@ Install the base packages:
 
  `# pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils` 
 
-Install [mesa](https://en.wikipedia.org/wiki/Mesa_3D_(OpenGL) "wikipedia:Mesa 3D (OpenGL)") for 3D support:
+Install [mesa](https://en.wikipedia.org/wiki/Mesa_3D_(OpenGL) for 3D support:
 
  `# pacman -S mesa` 
 
@@ -416,7 +414,7 @@ Next, you should install a driver for your graphics card.
 You will need knowledge of which video chipset your machine has. If you do not know, use the `/usr/sbin/lspci` program:
 
  `$ lspci` 
-**Note:** The **vesa** driver is the most generic, and should work with almost any modern video chipset. If you cannot find a suitable driver for your video chipset, vesa _should_ work with any video card, but it offers only unaccelerated 2D performance.
+**Note:** The **vesa** driver is the most generic, and should work with almost any modern video chipset. If you cannot find a suitable driver for your video chipset, vesa *should* work with any video card, but it offers only unaccelerated 2D performance.
 
 For a complete list of all **open-source** video drivers, search the package database:
 
@@ -612,7 +610,7 @@ Install with:
 
 The X Window System provides the basic framework for building a graphical user interface (GUI).
 
-**Note:** Choosing your DE or WM is a very subjective and personal decision. Choose the best environment for _your_ needs.
+**Note:** Choosing your DE or WM is a very subjective and personal decision. Choose the best environment for *your* needs.
 
 	Window Manager (WM) 
 

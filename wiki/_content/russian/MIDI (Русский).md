@@ -21,10 +21,10 @@ Without going into the details of what the format is composed of, you just need 
 ```
 **# FOOBAR.MID**
 Note ON
-  _Use Instrument #1_
-  _Play Note C1_
-  _Set Volume at 100_
-  _Set Pitch at 50_
+  *Use Instrument #1*
+  *Play Note C1*
+  *Set Volume at 100*
+  *Set Pitch at 50*
 
 ```
 
@@ -41,7 +41,7 @@ So up to this point, you should be able to understand that:
 
 ## GM Bank
 
-General MIDI (GM) is a specification to standardise numerous MIDI-related matters, particularly that of instruments layout in a collection of sounds. A "soundbank" which is GM-compatible means that it meets the criteria of General MIDI, and as long as the MIDI file is also GM-compatible (as in nothing extraordinary is defined - such as introducing a new instrument or having one in a different location of the bank), the playback will be as intended since the bank has the correct instrument/handler for the MIDI message/event. One of the most popular soundbank formats is that of **SoundFont**, particularly _SF2_.
+General MIDI (GM) is a specification to standardise numerous MIDI-related matters, particularly that of instruments layout in a collection of sounds. A "soundbank" which is GM-compatible means that it meets the criteria of General MIDI, and as long as the MIDI file is also GM-compatible (as in nothing extraordinary is defined - such as introducing a new instrument or having one in a different location of the bank), the playback will be as intended since the bank has the correct instrument/handler for the MIDI message/event. One of the most popular soundbank formats is that of **SoundFont**, particularly *SF2*.
 
 *   If you have a soundcard which can make use of soundfonts, you can load a **.sf2** file onto it.
 

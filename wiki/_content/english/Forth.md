@@ -6,4 +6,4 @@ Forth has been a recognized programming language since the 1970's. ColorForth is
 
 [gforth](https://aur.archlinux.org/packages/gforth/) is a forth that runs on an OS, and is ANSI Forth.
 
-_Starting Forth_ is a good book to learn forth by Leo Brodie: [http://home.iae.nl/users/mhx/sf.html](http://home.iae.nl/users/mhx/sf.html)
+*Starting Forth* is a good book to learn forth by Leo Brodie: [http://home.iae.nl/users/mhx/sf.html](http://home.iae.nl/users/mhx/sf.html)

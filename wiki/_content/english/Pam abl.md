@@ -104,7 +104,6 @@ As root, simply run:
 ```
 
 **Note:** As pam_abl does not run as a daemon, it performs "lazy purging" of the blacklist. In other words, it does not remove users/hosts from the blacklist until an authentication attempt occurs. This does not affect functionality, although it will frequently cause extra failures to show up when running the above command. To force a purge, run:
-
 ```
 # pam_abl -p
 

@@ -111,7 +111,7 @@
 
 ### 屏蔽进入/退出房间等提示
 
-[_Disabling Join/Part messages in various Mac IRC clients_ by Clint Ecker](http://clintecker.com/disable-irc-msgs.html)
+[*Disabling Join/Part messages in various Mac IRC clients* by Clint Ecker](http://clintecker.com/disable-irc-msgs.html)
 
 ```
 /ignore #archlinux QUITS JOINS
@@ -122,4 +122,4 @@
 
 ## 更多内容
 
-[_Advanced Irssi Usage_ by Sam Kleinman1](http://library.linode.com/communications/irc/advanced-irssi-print)
+[*Advanced Irssi Usage* by Sam Kleinman1](http://library.linode.com/communications/irc/advanced-irssi-print)

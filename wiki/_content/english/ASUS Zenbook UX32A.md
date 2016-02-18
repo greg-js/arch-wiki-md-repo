@@ -32,7 +32,6 @@ The other keys are recognised and yield the specific signal, with the exception 
 For the i3 window manager you can use the following in your configuration to make some of the keys work:
 
  `~/.i3/config` 
-
 ```
 
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5-

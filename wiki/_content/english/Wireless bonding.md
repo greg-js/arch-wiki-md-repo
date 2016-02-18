@@ -16,7 +16,6 @@ Note also that systemd "template" Unit File names allow exactly one variable to 
 ## DHCP configuration
 
  `/etc/dhclient.conf` 
-
 ```
 # These time-outs are aggressively short, supposing a sparsely populated network.
 initial-interval 2;
@@ -31,7 +30,6 @@ send dhcp-client-identifier 00:02:00:02:2e:2d:01:bd:c3:92:9a:44:2a:c4 ;
 Make sure that the DHCP Client Identifier and the DHCPv6 Client Identifier are the same DUID. See `xxd -g1 -s2 /var/lib/dhcpv6/dhcp6c_duid`. The DHCP Server, [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) for instance, can be configured to give fixed IP addresses based upon multiple MAC addresses, or provided hostname, or provided Client Identifier.
 
  `/etc/systemd/system/dhclient@.service` 
-
 ```
 [Unit]
 Description=ISC dhclient on interface %I
@@ -49,9 +47,7 @@ Restart=on-abnormal
 [Install]
 WantedBy=sys-subsystem-net-devices-%i.device
 ```
-
  `/etc/wide-dhcpv6/dhcp6c.conf` 
-
 ```
 profile default {                       # generic interface using a profile named "default"
         send ia-na 1;                   # a corresponding identity association statement must exist with the same ID.
@@ -80,7 +76,6 @@ id-assoc na 1 {                         # Identity Association for Non-temporary
 A simple example configuration file, with no Prefix Delegation being requested. Here, the "Profile" statement is used instead of the "Interface" statement, since the same configuration is to be applied to whatever interface is provided on the dhcp6c command line.
 
  `/etc/systemd/system/dhcp6c@.service` 
-
 ```
 [Unit]
 Description=WIDE-DHCPv6 dhcp6c on interface %I
@@ -102,7 +97,6 @@ WantedBy=sys-subsystem-net-devices-%i.device
 ## wpa_supplicant
 
  `/etc/wpa_supplicant/wpa_supplicant.conf` 
-
 ```
 update_config=1
 ctrl_interface=/var/run/wpa_supplicant
@@ -129,7 +123,6 @@ Be careful with the actual protocol configuration in the [wpa_supplicant](/index
 ## Bonding configuration
 
  `/etc/modprobe.d/bonding.conf` 
-
 ```
 # The primary slave will be configured in the systemd unit file.
 # Currently, the kernel bonding module supports link detection methods only one at a time, and
@@ -138,7 +131,7 @@ Be careful with the actual protocol configuration in the [wpa_supplicant](/index
 options bonding max_bonds=0 miimon=100 mode=active-backup fail_over_mac=active
 ```
 
-There is one more issue to address. When _starting_ bond0-supplicant@.service, where the only working interface is the _non_-primary slave - for instance, starting with only a wireless interface available when the wired interface is the primary - then dhclient will quickly start and adopt the MAC address of the initial primary slave, and use that MAC address when attempting to communicate with the DHCP server. When the wireless interface, some short time later, authenticates and associates with the access point/base station, establishing a connection to the network, the bonding driver will make the wireless interface the new active interface, and change the active MAC address on the bond0 interface, to match the wireless MAC address. Because dhclient will continue to use the MAC address from the wired interface, and that MAC address is no longer accepted by the bond0 interface, all DHCP communication will fail. If there is no saved lease file in /var/lib/dhclient/dhclient.leases, then no IPv4 address will be configured, and no IPv4 traffic will be possible. It can also be seen that when dhclient starts quickly, it can read the primary slave's firmware MAC address, rather than any MAC address assigned to the device interface. If the firmware MAC address is "null", then dhclient assigns a random MAC address. BOOTP/DHCP packets using these firmware or random MAC addresses may "succeed" in gaining a reply on the primary slave device and fail on the non-primary slave device. That can be confusing and annoying.
+There is one more issue to address. When *starting* bond0-supplicant@.service, where the only working interface is the *non*-primary slave - for instance, starting with only a wireless interface available when the wired interface is the primary - then dhclient will quickly start and adopt the MAC address of the initial primary slave, and use that MAC address when attempting to communicate with the DHCP server. When the wireless interface, some short time later, authenticates and associates with the access point/base station, establishing a connection to the network, the bonding driver will make the wireless interface the new active interface, and change the active MAC address on the bond0 interface, to match the wireless MAC address. Because dhclient will continue to use the MAC address from the wired interface, and that MAC address is no longer accepted by the bond0 interface, all DHCP communication will fail. If there is no saved lease file in /var/lib/dhclient/dhclient.leases, then no IPv4 address will be configured, and no IPv4 traffic will be possible. It can also be seen that when dhclient starts quickly, it can read the primary slave's firmware MAC address, rather than any MAC address assigned to the device interface. If the firmware MAC address is "null", then dhclient assigns a random MAC address. BOOTP/DHCP packets using these firmware or random MAC addresses may "succeed" in gaining a reply on the primary slave device and fail on the non-primary slave device. That can be confusing and annoying.
 
 These are only issues with dhclient and IPv4\. Fortunately, on a dhclient DHCP request, after the lease expires, dhclient "does the right thing". dhclient will function properly no matter on which slave interface it was started.
 
@@ -147,7 +140,6 @@ This problem **cannot** be solved by configuring the bonding driver with the def
 Ideally, dhclient would re-determine the bond0 MAC address each time it initially retried contacting the DHCP server. Without that, a different approach is to simply delay the start of dhclient until after the kernel bonding driver has configured an active slave. If the active slave is to be the wireless interface, then wpa_supplicant will first have authenticated and associated with the access point/base station, and dhclient will adopt the correct MAC address. If the active slave is the primary slave, again dhclient will adopt the correct MAC address. This delay is imposed with a systemd Timer Unit File.
 
  `/etc/systemd/system/dhclient@.timer` 
-
 ```
 [Unit]
 Description=service-start-delay
@@ -164,7 +156,6 @@ WantedBy=sys-subsystem-net-devices-%i.device
 With those preliminaries, here is the systemd Unit File which configures the virtual interface, bond0, and applies wpa_supplicant to the wireless interface, specified as a systemd template instance. Remember to set the "ETH" variable to the correct wired interface name.
 
  `/etc/systemd/system/bond0-supplicant@.service` 
-
 ```
 [Unit]
 Description=bond0-%I-wpa_supplicant-nl80211
@@ -266,11 +257,11 @@ The "activation" of the DHCP servers is to be conditioned upon the "appearance" 
 
 ```
 
-Then, [Enable](/index.php/Enable "Enable") and start `bond0-supplicant@_wlp3s0_.service`, replacing _wlp3s0_ with the desired wireless interface.
+Then, [Enable](/index.php/Enable "Enable") and start `bond0-supplicant@*wlp3s0*.service`, replacing *wlp3s0* with the desired wireless interface.
 
 ```
-# systemctl enable bond0-supplicant@_wlp3s0_.service
-# systemctl start bond0-supplicant@_wlp3s0_.service
+# systemctl enable bond0-supplicant@*wlp3s0*.service
+# systemctl start bond0-supplicant@*wlp3s0*.service
 
 ```
 
@@ -282,9 +273,7 @@ $ ip a
 $ ps wax
 
 ```
-
  `$ systemctl list-units '*bond0*'` 
-
 ```
 UNIT                                   LOAD   ACTIVE   SUB     DESCRIPTION
 sys-devices-virtual-net-bond0.device   loaded active   plugged /sys/devices/virtual/net/bond0
@@ -306,7 +295,6 @@ To show all installed unit files use 'systemctl list-unit-files'.
 Using the wired ethernet interface,
 
  `$ cat /proc/net/bonding/bond0` 
-
 ```
 Ethernet Channel Bonding Driver: v3.7.1 (April 27, 2011)
 
@@ -339,7 +327,6 @@ Slave queue ID: 0
 Using the wireless interface,
 
  `$ cat /proc/net/bonding/bond0` 
-
 ```
 Ethernet Channel Bonding Driver: v3.7.1 (April 27, 2011)
 

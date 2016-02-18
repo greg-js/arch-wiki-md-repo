@@ -16,38 +16,38 @@
 
 ## Hardware
 
-*   _CPU:_ Intel Core 2 Duo T7200 (2.00GHz, 4MB cache L2, FSB 667MHz)
-*   _Chipset:_ Mobile Intel® 945 PM Express Chipset + ICH7M
-*   _RAM:_ 2048MB (2 x 1024MB) DDR2 SDRAM 667 Mhz
-*   _Hard Disk:_ SATA 160GB 5400 rpm - SATA 120GB 5400 rpm
-*   _DVD Burner:_ SUPER MULTI DOUBLE LAYER
-*   _Display:_
-    *   _TFT 15.4" WXGA (1280x800)_ ColorShine TFT-LCD, Asus Splendid Video Intelligent Technology
-    *   _TFT 15.4" WSXGA+ (1680x1050)_ ColorShine TFT-LCD, Asus Splendid Video Intelligent Technology
-*   _Video:_ NVIDIA GeForce Go 7700 512MB
-*   _Audio:_ Scheda Intel High Definition Audio
-*   _Wi-Fi:_ 802.11a/b/g
-*   _Bluetooth:_ 2.0+EDR
-*   _Webcam:_ 1.3 Mpixel
-*   _Modem:_ 56 Kbps V.90
-*   _LAN Gigabit Ethernet:_ 10/100/1000
-*   _Connectors:_
-    *   _1 x Microphone-in jack_
-    *   _1 x Headphone-out jack (S/PDIF)_
-    *   _1 x TypeII PCMCIA slot_
-    *   _1 x Line-in jack_
-    *   _1 x VGA port_
-    *   _1 x DVI-D port_
-    *   _4 x USB 2.0 ports_
-    *   _1 x IEEE 1394 port_
-    *   _1 x RJ11 Modem jack for phone line_
-    *   _1 x RJ45 LAN Jack for LAN insert_
-    *   _1 x TV-out(S-Video)_
-*   _Card Reader:_ MMC, SD, MS, MS-Pro
-*   _Dimension and Weight:_
-    *   _324mm * 284mm * 37.4 mm(W x D x H)_
-    *   _3.1 Kg (8-cell)_
-*   _Pointer:_ Touch pad
+*   *CPU:* Intel Core 2 Duo T7200 (2.00GHz, 4MB cache L2, FSB 667MHz)
+*   *Chipset:* Mobile Intel® 945 PM Express Chipset + ICH7M
+*   *RAM:* 2048MB (2 x 1024MB) DDR2 SDRAM 667 Mhz
+*   *Hard Disk:* SATA 160GB 5400 rpm - SATA 120GB 5400 rpm
+*   *DVD Burner:* SUPER MULTI DOUBLE LAYER
+*   *Display:*
+    *   *TFT 15.4" WXGA (1280x800)* ColorShine TFT-LCD, Asus Splendid Video Intelligent Technology
+    *   *TFT 15.4" WSXGA+ (1680x1050)* ColorShine TFT-LCD, Asus Splendid Video Intelligent Technology
+*   *Video:* NVIDIA GeForce Go 7700 512MB
+*   *Audio:* Scheda Intel High Definition Audio
+*   *Wi-Fi:* 802.11a/b/g
+*   *Bluetooth:* 2.0+EDR
+*   *Webcam:* 1.3 Mpixel
+*   *Modem:* 56 Kbps V.90
+*   *LAN Gigabit Ethernet:* 10/100/1000
+*   *Connectors:*
+    *   *1 x Microphone-in jack*
+    *   *1 x Headphone-out jack (S/PDIF)*
+    *   *1 x TypeII PCMCIA slot*
+    *   *1 x Line-in jack*
+    *   *1 x VGA port*
+    *   *1 x DVI-D port*
+    *   *4 x USB 2.0 ports*
+    *   *1 x IEEE 1394 port*
+    *   *1 x RJ11 Modem jack for phone line*
+    *   *1 x RJ45 LAN Jack for LAN insert*
+    *   *1 x TV-out(S-Video)*
+*   *Card Reader:* MMC, SD, MS, MS-Pro
+*   *Dimension and Weight:*
+    *   *324mm * 284mm * 37.4 mm(W x D x H)*
+    *   *3.1 Kg (8-cell)*
+*   *Pointer:* Touch pad
 
 ## Configuration
 
@@ -99,7 +99,7 @@ To enable the pointer follow this guide: [Touchpad Synaptics](/index.php/Touchpa
 
 ### Leds & ACPI upgrade
 
-_**Note:**_ With recent kernels, compiling acpi4asus is no longer necessary. Skip to editing rc.conf below.
+***Note:*** With recent kernels, compiling acpi4asus is no longer necessary. Skip to editing rc.conf below.
 
 To enable every led (the ones on the LCD too) the first thing needed is upgrading the acpi module with the one provided by [acpi4asus](http://acpi4asus.sourceforge.net/).
 

@@ -1,4 +1,4 @@
-[Git](https://en.wikipedia.org/wiki/Git_(software) "wikipedia:Git (software)") is the version control system (VCS) designed and developed by Linus Torvalds, the creator of the Linux kernel. Git is now used to maintain sources for the Linux kernel, as well as many other projects, including a number of Arch Linux projects.
+[Git](https://en.wikipedia.org/wiki/Git_(software) is the version control system (VCS) designed and developed by Linus Torvalds, the creator of the Linux kernel. Git is now used to maintain sources for the Linux kernel, as well as many other projects, including a number of Arch Linux projects.
 
 ## Contents
 
@@ -40,17 +40,17 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [git](https://www.archlinux.org/packages/?name=git) package. For the development version, install [git-git](https://aur.archlinux.org/packages/git-git/) from the AUR. Check the optional dependencies when using tools such as _git svn_, _git gui_ and _gitk_.
+[Install](/index.php/Install "Install") the [git](https://www.archlinux.org/packages/?name=git) package. For the development version, install [git-git](https://aur.archlinux.org/packages/git-git/) from the AUR. Check the optional dependencies when using tools such as *git svn*, *git gui* and *gitk*.
 
-**Note:** To enable spell checking in _git-gui_, [aspell](https://www.archlinux.org/packages/?name=aspell) is required, along with the dictionary corresponding to the `LC_MESSAGES` [environment variable](/index.php/Environment_variable "Environment variable"). See [FS#28181](https://bugs.archlinux.org/task/28181).
+**Note:** To enable spell checking in *git-gui*, [aspell](https://www.archlinux.org/packages/?name=aspell) is required, along with the dictionary corresponding to the `LC_MESSAGES` [environment variable](/index.php/Environment_variable "Environment variable"). See [FS#28181](https://bugs.archlinux.org/task/28181).
 
 ## Configuration
 
 In order to use Git you need to set at least a name and email:
 
 ```
-$ git config --global user.name  "_John Doe_"
-$ git config --global user.email "_johndoe@foobar.com_"
+$ git config --global user.name  "*John Doe*"
+$ git config --global user.email "*johndoe@foobar.com*"
 
 ```
 
@@ -60,7 +60,7 @@ See [#Tips and tricks](#Tips_and_tricks) for more settings.
 
 This tutorial teaches how to use Git for basic distributed revision control of a project.
 
-Git is a distributed version control system, which means that the entire history of changes to a repository is stored locally, in a directory called `./.git` in the project directory. The project files which are visible to the user constitute the _working tree_. These files can be updated to match revisions stored in `./.git` using `git` commands (e.g. `git checkout`), and new revisions can be created in turn by editing these files and running the appropriate `git` commands (e.g. `git commit`).
+Git is a distributed version control system, which means that the entire history of changes to a repository is stored locally, in a directory called `./.git` in the project directory. The project files which are visible to the user constitute the *working tree*. These files can be updated to match revisions stored in `./.git` using `git` commands (e.g. `git checkout`), and new revisions can be created in turn by editing these files and running the appropriate `git` commands (e.g. `git commit`).
 
 See gitglossary(7) for more complete definitions of the terms used in this tutorial.
 
@@ -84,14 +84,14 @@ $ git init
 
 ```
 
-To record the changes to the repository, they must first be added to the _index_, or _staging area_, with an operation often also referred to as _staging_. When you commit changes using `git commit`, it is the contents of the index which are committed to the current branch, not the contents of the working tree.
+To record the changes to the repository, they must first be added to the *index*, or *staging area*, with an operation often also referred to as *staging*. When you commit changes using `git commit`, it is the contents of the index which are committed to the current branch, not the contents of the working tree.
 
 **Note:** The index is actually a binary file `.git/index`, which can be queried with `git ls-files --stage`.
 
 To **add files** to the index from the working tree:
 
 ```
-$ git add _file1_ _file2_
+$ git add *file1* *file2*
 
 ```
 
@@ -105,7 +105,6 @@ $ git add .
 ```
 
 **Tip:** To **ignore** some files from, e.g. `git add .`, create a `.gitignore` file (or files): `.gitignore` 
-
 ```
 # File I'll likely delete
 test-script
@@ -124,7 +123,7 @@ See [gitignore(5)](http://git-scm.com/docs/gitignore) for details.
 **Remove** a file from staging (`--cached` preserves the actual file(s)):
 
 ```
-$ git rm _(--cached)_ _file_
+$ git rm *(--cached)* *file*
 
 ```
 
@@ -147,7 +146,7 @@ Here, `HEAD` is a "symbolic reference" to the current revision.
 **Rename** a file:
 
 ```
-$ git mv _file1_ _file2_
+$ git mv *file1* *file2*
 
 ```
 
@@ -164,14 +163,14 @@ By default this shows files in the staging area (`--cached` files).
 
 #### Commit changes
 
-Once the content to be recorded is _staged_, **commit** them with:
+Once the content to be recorded is *staged*, **commit** them with:
 
 ```
-$ git commit -m "_First commit._"
+$ git commit -m "*First commit.*"
 
 ```
 
-The `-m (_--message)_` option is for a short message: if omitted, the preset editor will be spawned to allow entering a longer message.
+The `-m (*--message)*` option is for a short message: if omitted, the preset editor will be spawned to allow entering a longer message.
 
 **Tip:**
 
@@ -179,14 +178,14 @@ The `-m (_--message)_` option is for a short message: if omitted, the preset edi
 *   To **add** all the modified files to the index, **and commit** them in a single command (`-a` stands for `--all`):
 
 ```
-$ git commit -am "_First commit._"
+$ git commit -am "*First commit.*"
 
 ```
 
 **Edit** the commit message for the last commit. This also amends the commit with any files which have been newly staged:
 
 ```
-$ git commit --amend -m "_Message._"
+$ git commit --amend -m "*Message.*"
 
 ```
 
@@ -194,7 +193,7 @@ Many of the commands in this article take commits as arguments. A commit can be 
 
 *   Its 40-digit SHA-1 hash (the first 7 digits are usually sufficient to identify it uniquely)
 *   Any commit label such as a branch or tag name
-*   The label `HEAD` always refers to the currently checked-out commit (usually the head of the branch, unless you used _git checkout_ to jump back in history to an old commit)
+*   The label `HEAD` always refers to the currently checked-out commit (usually the head of the branch, unless you used *git checkout* to jump back in history to an old commit)
 *   Any of the above plus `~` to refer to previous commits. For example, `HEAD~` refers to one commit before `HEAD` and `HEAD~5` refers to five commits before `HEAD`.
 
 #### View changes
@@ -220,10 +219,10 @@ $ git status
 
 ```
 
-**View history** of changes (where "_-N_" is the number of latest commits):
+**View history** of changes (where "*-N*" is the number of latest commits):
 
 ```
-$ git log -p _(-N)_
+$ git log -p *(-N)*
 
 ```
 
@@ -232,7 +231,7 @@ $ git log -p _(-N)_
 Fixes and new features are usually tested in branches. When changes are satisfactory they can merged back into the default (master) branch. **Create** a branch, whose name accurately reflects its purpose:
 
 ```
-$ git branch _help-section-addition_
+$ git branch *help-section-addition*
 
 ```
 
@@ -246,14 +245,14 @@ $ git branch
 **Switch** branches:
 
 ```
-$ git checkout _branch_
+$ git checkout *branch*
 
 ```
 
 **Create and switch**:
 
 ```
-$ git checkout -b _branch_
+$ git checkout -b *branch*
 
 ```
 
@@ -261,7 +260,7 @@ $ git checkout -b _branch_
 
 ```
 $ git checkout master
-$ git merge _branch_
+$ git merge *branch*
 
 ```
 
@@ -270,7 +269,7 @@ The changes will be merged if they do not conflict. Otherwise, Git will print an
 When done with a branch, **delete** it with:
 
 ```
-$ git branch -d _branch_
+$ git branch -d *branch*
 
 ```
 
@@ -288,52 +287,52 @@ $ git branch -d _branch_
 To begin contributing to a project, **clone** its repository:
 
 ```
-$ git clone _location_ _folder_
+$ git clone *location* *folder*
 
 ```
 
-`_location_` can be either a path or network address. Also, when cloning is done, the location is recorded so just a `git pull` will be needed later.
+`*location*` can be either a path or network address. Also, when cloning is done, the location is recorded so just a `git pull` will be needed later.
 
 #### Pull requests
 
-After making and committing some changes, the contributor can ask the original author to merge them. This is called a _pull request_. To **pull**:
+After making and committing some changes, the contributor can ask the original author to merge them. This is called a *pull request*. To **pull**:
 
 ```
-$ git pull _location_ master
+$ git pull *location* master
 
 ```
 
-The _pull_ command combines both _fetching_ and _merging_. If there are conflicts (e.g. the original author made changes in the same time span), then it will be necessary to manually fix them.
+The *pull* command combines both *fetching* and *merging*. If there are conflicts (e.g. the original author made changes in the same time span), then it will be necessary to manually fix them.
 
-Alternatively, the original author can **pick** the **changes** wanting to be incorporated. Using the _fetch_ option (and _log_ option with a special `FETCH_HEAD` symbol), the contents of the pull request can be viewed before deciding what to do:
+Alternatively, the original author can **pick** the **changes** wanting to be incorporated. Using the *fetch* option (and *log* option with a special `FETCH_HEAD` symbol), the contents of the pull request can be viewed before deciding what to do:
 
 ```
-$ git fetch _location_ master
+$ git fetch *location* master
 $ git log -p HEAD..FETCH_HEAD
-$ git merge _location_ master
+$ git merge *location* master
 
 ```
 
 #### Using remotes
 
-Remotes are aliases for tracked remote repositories. A _label_ is created defining a location. These labels are used to identify frequently accessed repositories. **Create** a remote:
+Remotes are aliases for tracked remote repositories. A *label* is created defining a location. These labels are used to identify frequently accessed repositories. **Create** a remote:
 
 ```
-$ git remote add _label_ _location_
+$ git remote add *label* *location*
 
 ```
 
 **Fetch** a remote:
 
 ```
-$ git fetch _label_
+$ git fetch *label*
 
 ```
 
 **Show differences** between master and a remote master:
 
 ```
-$ git log -p master.._label_/master
+$ git log -p master..*label*/master
 
 ```
 
@@ -344,18 +343,18 @@ $ git remote -v
 
 ```
 
-When defining a remote that is a parent of the fork (the project lead), it is defined as _upstream_.
+When defining a remote that is a parent of the fork (the project lead), it is defined as *upstream*.
 
 #### Push to a repository
 
 After being given rights from the original authors, **push** changes with:
 
 ```
-$ git push _location_ _branch_
+$ git push *location* *branch*
 
 ```
 
-When _git clone_ is performed, it records the original location and gives it a remote name of `origin`. So what **typically** is done is this:
+When *git clone* is performed, it records the original location and gives it a remote name of `origin`. So what **typically** is done is this:
 
 ```
 $ git push origin master
@@ -377,19 +376,19 @@ Make sure you have configured you username and e-mail address, see [#Configurati
 **Configure** your **e-mail** settings:
 
 ```
-$ git config --global sendemail.smtpserver _smtp.gmail.com_
-$ git config --global sendemail.smtpserverport _587_
-$ git config --global sendemail.smtpencryption _tls_
-$ git config --global sendemail.smtpuser _foobar@gmail.com_
+$ git config --global sendemail.smtpserver *smtp.gmail.com*
+$ git config --global sendemail.smtpserverport *587*
+$ git config --global sendemail.smtpencryption *tls*
+$ git config --global sendemail.smtpuser *foobar@gmail.com*
 
 ```
 
 Now you should be able to **send** the **patch** to the mailing list (see also [OpenEmbedded:How to submit a patch to OpenEmbedded#Sending patches](http://www.openembedded.org/wiki/How_to_submit_a_patch_to_OpenEmbedded#Sending_patches)):
 
 ```
-$ git add _filename_
+$ git add *filename*
 $ git commit -s
-$ git send-email --to=_openembedded-core@lists.openembedded.org_ --confirm=always -M -1
+$ git send-email --to=*openembedded-core@lists.openembedded.org* --confirm=always -M -1
 
 ```
 
@@ -397,24 +396,24 @@ $ git send-email --to=_openembedded-core@lists.openembedded.org_ --confirm=alway
 
 #### Searching the history
 
-`git log` will give the history with a commit checksum, author, date, and the short message. The _checksum_ is the "object name" of a commit object, typically a 40-character SHA-1 hash. For **history** with a **long message** (where the "_checksum_" can be truncated, as long as it is unique):
+`git log` will give the history with a commit checksum, author, date, and the short message. The *checksum* is the "object name" of a commit object, typically a 40-character SHA-1 hash. For **history** with a **long message** (where the "*checksum*" can be truncated, as long as it is unique):
 
 ```
-$ git show (_checksum_)
+$ git show (*checksum*)
 
 ```
 
-**Search** for _pattern_ in tracked files:
+**Search** for *pattern* in tracked files:
 
 ```
-$ git grep _pattern_
+$ git grep *pattern*
 
 ```
 
 **Search** in **`.c`** and **`.h`** files:
 
 ```
-$ git grep _pattern_ -- '*.[ch]'
+$ git grep *pattern* -- '*.[ch]'
 
 ```
 
@@ -423,11 +422,11 @@ $ git grep _pattern_ -- '*.[ch]'
 **Tag** commits for versioning:
 
 ```
-$ git tag 2.14 _checksum_
+$ git tag 2.14 *checksum*
 
 ```
 
-_Tagging_ is generally done for [releasing/versioning](https://www.drupal.org/node/1066342) but it can be any string. Generally annotated tags are used, because they get added to the Git database. **Tag** the **current** commit with:
+*Tagging* is generally done for [releasing/versioning](https://www.drupal.org/node/1066342) but it can be any string. Generally annotated tags are used, because they get added to the Git database. **Tag** the **current** commit with:
 
 ```
 $ git tag -a 2.14 -m "Version 2.14"
@@ -457,14 +456,14 @@ $ git push --tags
 
 #### Organizing commits
 
-Before submitting a pull request it may be desirable to **consolidate/organize** the commits. This is done with the _git rebase_ `--interactive` option:
+Before submitting a pull request it may be desirable to **consolidate/organize** the commits. This is done with the *git rebase* `--interactive` option:
 
 ```
-$ git rebase -i _checksum_
+$ git rebase -i *checksum*
 
 ```
 
-This will open the editor with a summary of all the commits in the range specified; in this case including the newest (`HEAD`) back to, but excluding, commit `_checksum_`. Or to use a number notation, use for example `HEAD~3`, which will rebase the last three commits:
+This will open the editor with a summary of all the commits in the range specified; in this case including the newest (`HEAD`) back to, but excluding, commit `*checksum*`. Or to use a number notation, use for example `HEAD~3`, which will rebase the last three commits:
 
 ```
 pick d146cc7 Mountpoint test.
@@ -495,7 +494,7 @@ Git reads its configuration from a few INI-type configuration files:
 *   Each user has a `$HOME/.gitconfig` file for fallback values.
 *   `/etc/gitconfig` is used for system-wide defaults.
 
-These files can be edited directly, but the usual method is to use _git config_, as shown in the examples below.
+These files can be edited directly, but the usual method is to use *git config*, as shown in the examples below.
 
 List the currently set variables:
 
@@ -518,7 +517,7 @@ $ git config --global push.default simple
 
 ```
 
-Set a different tool for _git difftool_ (_meld_ by default):
+Set a different tool for *git difftool* (*meld* by default):
 
 ```
 $ git config --global diff.tool vimdiff
@@ -539,7 +538,6 @@ You may wish to avoid the hassle of authenticating interactively at every push t
 If you are running a multiplexed SSH connection as shown above, Git over SSH might be faster than HTTPS. Also, some servers (like the AUR) only allow pushing via SSH. For example, the following config will set Git over SSH for any repository hosted on the AUR.
 
  `~/.gitconfig` 
-
 ```
 [url "ssh://aur@aur.archlinux.org/"]
 	insteadOf = https://aur.archlinux.org/
@@ -581,14 +579,14 @@ $ git diff --stat
 
 ```
 
-_git log_ with forking representation:
+*git log* with forking representation:
 
 ```
 $ git log --graph --oneline --decorate
 
 ```
 
-_git log_ graph alias (i.e. _git graph_ will show a decorated version):
+*git log* graph alias (i.e. *git graph* will show a decorated version):
 
 ```
 $ git config --global alias.graph 'log --graph --oneline --decorate'
@@ -607,7 +605,7 @@ $ git reset --hard HEAD^
 If a repository address gets changed, its remote location will need to be updated:
 
 ```
-$ git remote set-url origin git@_address_:_user_/_repo_.git
+$ git remote set-url origin git@*address*:*user*/*repo*.git
 
 ```
 
@@ -618,7 +616,7 @@ Signed-off-by line append (a name-email signature is added to the commit which i
 
 ```
 
-Signed-off-by automatically append to patches (when using `git format-patch _commit_`):
+Signed-off-by automatically append to patches (when using `git format-patch *commit*`):
 
 ```
 $ git config --local format.signoff true
@@ -636,10 +634,10 @@ $ git add -p
 
 Occasionally a maintainer will ask that work be done on a branch. These branches are often called `devel` or `testing`. Begin by cloning the repository.
 
-To enter another branch beside master (_git clone_ only shows master branch but others still exist, `git branch -a` to show):
+To enter another branch beside master (*git clone* only shows master branch but others still exist, `git branch -a` to show):
 
 ```
-$ git checkout -b _branch_ origin/_branch_
+$ git checkout -b *branch* origin/*branch*
 
 ```
 
@@ -662,7 +660,7 @@ To use the SSH protocol, first set up a public SSH key; for that follow the guid
 With SSH working and a key generated, paste the contents of `~/.ssh/id_rsa.pub` to `~/.ssh/authorized_keys` (be sure it is all on one line). Now the Git repository can be accessed with SSH by doing:
 
 ```
-$ git clone _user_@_foobar.com_:_my_repository_.git
+$ git clone *user*@*foobar.com*:*my_repository*.git
 
 ```
 
@@ -671,17 +669,16 @@ You should now get an SSH yes/no question, if you have the SSH client setting `S
 To modify an existing repository to use SSH, the remote location will need to be redefined:
 
 ```
-$ git remote set-url origin git@localhost:_my_repository_.git
+$ git remote set-url origin git@localhost:*my_repository*.git
 
 ```
 
 Connecting on a port other than 22 can be configured on a per-host basis in `/etc/ssh/ssh_config` or `~/.ssh/config`. To set up ports for a repository, if the repository is in `~/` and using 443 for the port:
 
  `~/.git/config` 
-
 ```
 [remote "origin"]
-    url = ssh://_user_@_foobar_.com:443/~_my_repository_/repo.git
+    url = ssh://*user*@*foobar*.com:443/~*my_repository*/repo.git
 ```
 
 ### Smart HTTP
@@ -693,7 +690,6 @@ The setup for this is rather simple as all you need to have installed is the Apa
 Once you have your basic setup running, add the following to your Apache configuration file, which is usually located at:
 
  `/etc/httpd/conf/httpd.conf` 
-
 ```
 <Directory "/usr/lib/git-core*">
     Require all granted
@@ -730,7 +726,7 @@ ExecStart=-/usr/lib/git-core/git-daemon --inetd --export-all --base-path=/srv/gi
 Repositories placed in `/srv/git/` will be recognized by the daemon. Clients can connect with something similar to:
 
 ```
-$ git clone git://_location_/_repository_.git
+$ git clone git://*location*/*repository*.git
 
 ```
 

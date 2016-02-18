@@ -44,19 +44,19 @@
 Любой файловый дескриптор может быть перенаправлен в другой файл механизмом называемым перенаправлением:
 
 ```
-_Перенаправление стандартного ввода:_
+*Перенаправление стандартного ввода:*
 $ команда < исходный файл
 
-_Перенаправление стандартного вывода:_
+*Перенаправление стандартного вывода:*
 $ команда > назначение
 
-_Добавление стандартного вывода в существующий файл:_
+*Добавление стандартного вывода в существующий файл:*
 $ команда >> назначение
 
-_Перенаправление стандартной ошибки:_
+*Перенаправление стандартной ошибки:*
 $ команда ^ назначение
 
-_Добавить стандартную ошибку в существующий файл:_
+*Добавить стандартную ошибку в существующий файл:*
 $ команда ^^ назначение
 ```
 
@@ -69,13 +69,13 @@ $ команда ^^ назначение
 Примеры:
 
 ```
-_Перенаправление стандартного выхода в файл:_
+*Перенаправление стандартного выхода в файл:*
 $ команда > файл_назначения.txt
 
-_Перенаправление стандартного вывода и стандартной ошибки в тот же файл:_
+*Перенаправление стандартного вывода и стандартной ошибки в тот же файл:*
 $ команда > файл_назначения.txt ^ &1
 
-_Отключение стандартного вывода:_
+*Отключение стандартного вывода:*
 $ команда > &-
 ```
 
@@ -152,7 +152,7 @@ fish_update_completions
 
 You can also define your own completions in `~/.config/fish/completions/`. See `/usr/share/fish/completions/` for a few examples.
 
-Context-aware completions for Arch Linux-specific commands like _pacman_, _pacman-key_, _makepkg_, _cower_, _pbget_, _pacmatic_ are built into fish, since the policy of the fish development is to include all the existent completions in the upstream tarball. The memory management is clever enough to avoid any negative impact on resources.
+Context-aware completions for Arch Linux-specific commands like *pacman*, *pacman-key*, *makepkg*, *cower*, *pbget*, *pacmatic* are built into fish, since the policy of the fish development is to include all the existent completions in the upstream tarball. The memory management is clever enough to avoid any negative impact on resources.
 
 ### Совмещение /etc/profile и ~/.profile
 
@@ -218,7 +218,7 @@ end
 
 ### su запускает Bash
 
-Если _su_ запускается с Bash (потому что Bash оболочка по умолчания), определите функцию в fish:
+Если *su* запускается с Bash (потому что Bash оболочка по умолчания), определите функцию в fish:
 
 ```
 $ funced su

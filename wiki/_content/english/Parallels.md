@@ -100,7 +100,6 @@ Now you can proceed to install Parallels tools using the installation script as 
 The Parallels tools daemon should be started at boot, so create a service file like the following:
 
  `/usr/lib/systemd/system/parallels-tools.service` 
-
 ```
 [Unit]
 Description=Parallels Tools
@@ -121,7 +120,7 @@ WantedBy=multi-user.target
 
 You can specify which folders on your hosts system you would like to share with your guests under "virtual machine > configuration > sharing". Then you mount a shared folder like this:
 
- `# mount -t prl_fs _name_of_share_ _/mnt/name_of_share_` 
+ `# mount -t prl_fs *name_of_share* */mnt/name_of_share*` 
 
 #### Dynamic Display Resolution
 

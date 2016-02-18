@@ -29,7 +29,7 @@ eCryptfs входит в ядро с версии 2.6.19, но для работ
 
 ```
 
-Пакет ecryptfs-utils нужен для управления ключами для доступа к зашифрованым данным. Некоторые скрипы из этого пакета помогут автоматизировать весь процесс (_ecryptfs-setup-private_) или помут в комбинировании eCryptfs и dm-crypt для шифрования раздела swap. Мы не будем использовать эти скрипты, а сделаем всё в ручном режиме для лучшего понимания принципа работы данного метода.
+Пакет ecryptfs-utils нужен для управления ключами для доступа к зашифрованым данным. Некоторые скрипы из этого пакета помогут автоматизировать весь процесс (*ecryptfs-setup-private*) или помут в комбинировании eCryptfs и dm-crypt для шифрования раздела swap. Мы не будем использовать эти скрипты, а сделаем всё в ручном режиме для лучшего понимания принципа работы данного метода.
 
 Прежде чем мы начнём, я советую вам прочитать документацию по eCryptfs(man).
 
@@ -115,8 +115,8 @@ $ sudo mount -t ecryptfs /home/username/.Private /home/username/Private -o ecryp
 ПРИМЕЧАНИЕ:
 
 *   Параметр **user** позволяет монтирование с ограничеными правами
-*   В параметре **ecryptfs_sig** замените строку _XY_ значением сигнатуры (можно взять из **mtab** или `sig-cache.txt`)
-*   Если было разрешено шифрование имён файлов, то нужно поставить дополнительный параметр монтирования **ecryptfs_fnek_sig**=_XY_, где _XY_ тоже значение сигнатуры, что и в параметре **ecryptfs_sig**
+*   В параметре **ecryptfs_sig** замените строку *XY* значением сигнатуры (можно взять из **mtab** или `sig-cache.txt`)
+*   Если было разрешено шифрование имён файлов, то нужно поставить дополнительный параметр монтирования **ecryptfs_fnek_sig**=*XY*, где *XY* тоже значение сигнатуры, что и в параметре **ecryptfs_sig**
 *   Последний параметр **ecrypfs_unlink_sigs** говорит о том, что при размонтировании ключ из брелка будет удалён
 
 Поскольку в процессе размонтирования ключ удаляется из брелка ядра, то для последующего монтировании там необходимо заново создать ключ. Для этого используется утилиты **ecryptfs-add-passphrase** или **ecryptfs-manager**:
@@ -132,7 +132,7 @@ $ mount -i /home/username/Private
 
 Обратите внимание на параметр **`-i`**. Он предотвращает вызов помощника монтирования. Это означает, что при использовании параметра `-i` по умолчанию при монтировании будут применены параметры **nosuid, noexec** and **nodev**. Если в шифрованой папке необходимо иметь также и исполняемые файлы, то можно добавить параметр **exec** в файле fstab в строке команды.
 
-Не лишне также будет вспомнить об утилите **keyctl**, входящую в состав пакета _keyutils_, установленного ранее. Она может быть использована для более продвинутого управления ключами. Нижеследующий пример демонстрирует команду для отображения списка имеющихся ключей и команду для очистки этого списка:
+Не лишне также будет вспомнить об утилите **keyctl**, входящую в состав пакета *keyutils*, установленного ранее. Она может быть использована для более продвинутого управления ключами. Нижеследующий пример демонстрирует команду для отображения списка имеющихся ключей и команду для очистки этого списка:
 
 ```
 $ keyctl list @u
@@ -142,7 +142,7 @@ $ keyctl clear @u
 
 ## Применение
 
-Помимо использования шифрованой папки для хранения критичных файлов и прочих данных не для чужих глаз, можно так же хранить и данные приложений. К примеру _Firefox_ имеет не только встроеный менеждер паролей, но и историю посещений и кэш страниц, что может представлять уязвимость. Меры защиты очень просты:
+Помимо использования шифрованой папки для хранения критичных файлов и прочих данных не для чужих глаз, можно так же хранить и данные приложений. К примеру *Firefox* имеет не только встроеный менеждер паролей, но и историю посещений и кэш страниц, что может представлять уязвимость. Меры защиты очень просты:
 
 ```
  $ mv ~/.mozilla ~/Private/mozilla
@@ -156,7 +156,7 @@ $ keyctl clear @u
 
 ## Backup
 
-Setup explained here separates the directory with encrypted data from the mount point, so the encrypted data is available for backup at any time. With an overlay mount (i.e. _~/Secret_ mounted over _~/Secret_) the lower, encrypted, data is harder to get to. Today when cronjobs and other automation software do automatic backups the risk of leaking your sensitive data is higher.
+Setup explained here separates the directory with encrypted data from the mount point, so the encrypted data is available for backup at any time. With an overlay mount (i.e. *~/Secret* mounted over *~/Secret*) the lower, encrypted, data is harder to get to. Today when cronjobs and other automation software do automatic backups the risk of leaking your sensitive data is higher.
 
 We explained earlier that all cryptographic metadata is stored in the headers of files. You can easily do backups, or incremental backups, of your **~/.Private** directory, treating it like any other directory.
 
@@ -173,7 +173,7 @@ Article: [eCryptfs and $HOME](http://sysphere.org/~anrxc/j/articles/ecryptfs/ind
 
 ## PAM Mount
 
-The above "_eCryptfs and $HOME_" article uses a shell init file to mount the home directory. The same can be done using [pam_mount](https://www.archlinux.org/packages/?name=pam_mount) with the added benefit that home is un-mounted when all sessions are logged out. As eCryptfs needs the `-i` switch, the _lclmount_ setting will need to be changed. I use the following in `/etc/security/pam_mount.conf.xml`:
+The above "*eCryptfs and $HOME*" article uses a shell init file to mount the home directory. The same can be done using [pam_mount](https://www.archlinux.org/packages/?name=pam_mount) with the added benefit that home is un-mounted when all sessions are logged out. As eCryptfs needs the `-i` switch, the *lclmount* setting will need to be changed. I use the following in `/etc/security/pam_mount.conf.xml`:
 
 ```
 <lclmount>mount -i %(VOLUME) "%(before=\"-o\" OPTIONS)"</lclmount>
@@ -189,9 +189,9 @@ Remember to also set the volume definition (preferably to `~/.pam_mount.conf.xml
 
 ```
 
-_noroot_ is needed (at least in my configuration) because the encryption key will be added to the user's keyring.
+*noroot* is needed (at least in my configuration) because the encryption key will be added to the user's keyring.
 
-To avoid wasting time needlessly unwrapping the passphrase you can create a script that will check _pmvarrun_ to see the number of open sessions:
+To avoid wasting time needlessly unwrapping the passphrase you can create a script that will check *pmvarrun* to see the number of open sessions:
 
 ```
 #!/bin/sh

@@ -1,4 +1,4 @@
-Un [Desktop environment](https://en.wikipedia.org/wiki/it:Desktop_environment "wikipedia:it:Desktop environment") fornisce una _completa_ interfaccia Grafica Utente (GUI) per un sistema, abbinando insieme una serie di client [X](https://en.wikipedia.org/wiki/it:X_Window_System "wikipedia:it:X Window System") scritti utilizzando widget-toolkit ed insiemi di librerie comuni.
+Un [Desktop environment](https://en.wikipedia.org/wiki/it:Desktop_environment "wikipedia:it:Desktop environment") fornisce una *completa* interfaccia Grafica Utente (GUI) per un sistema, abbinando insieme una serie di client [X](https://en.wikipedia.org/wiki/it:X_Window_System "wikipedia:it:X Window System") scritti utilizzando widget-toolkit ed insiemi di librerie comuni.
 
 ## Contents
 
@@ -14,9 +14,9 @@ Un [Desktop environment](https://en.wikipedia.org/wiki/it:Desktop_environment "w
 
 ## X Window System
 
-Il sistema [X Window](https://en.wikipedia.org/wiki/it:X_Window_System "wikipedia:it:X Window System") fornisce le basi per una Interfaccia Grafica Utente. Prima di installare un ambiente desktop, è necessaria una installazione funzionale del server X. Vedere [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)") per ulteriori informazioni.
+Il sistema [X Window](https://en.wikipedia.org/wiki/it:X_Window_System per ulteriori informazioni.
 
-	_X fornisce il framework basico, o primitive, per costruire ambienti GUI: spazi di interazione con un mouse, una tastiera o altri input per finestre sullo schermo. X non controlla l'interfaccia utente per ciascuna applicazione, ogni programma ha un suo client se ne occupa. Come tale, lo stile visivo di ambienti basati su X varia molto; diversi programmi possono presentare interfacce radicalmente diverse. X è costruito come un ulteriore (applicazione) livello di astrazione sopra il kernel del sistema operativo._
+	*X fornisce il framework basico, o primitive, per costruire ambienti GUI: spazi di interazione con un mouse, una tastiera o altri input per finestre sullo schermo. X non controlla l'interfaccia utente per ciascuna applicazione, ogni programma ha un suo client se ne occupa. Come tale, lo stile visivo di ambienti basati su X varia molto; diversi programmi possono presentare interfacce radicalmente diverse. X è costruito come un ulteriore (applicazione) livello di astrazione sopra il kernel del sistema operativo.*
 
 L'utente è libero di configurare l'aspetto grafico del proprio ambiente in molti modi. Gli ambienti desktop, semplicemente, forniscono uno strumento completo e conveniente per svolgere tale compito.
 
@@ -26,7 +26,7 @@ Un **ambiente desktop** di serie, insieme ad una serie di client X, forniscono e
 
 Si noti che gli utenti sono liberi di creare un mix di applicazioni provenienti da diversi ambienti desktop. Ad esempio, un utente KDE può installare ed eseguire applicazioni di GNOME, come il browser web Epiphany, se lo si preferisce al browser web Konqueror installato di default con KDE. Uno svantaggio di questo approccio è che molte applicazioni, offerte dai diversi ambienti desktop, dipendono in larga misura alla base, dalle rispettive librerie di sviluppo. Come risultato, l'installazione di applicazioni da una vasta gamma di ambienti desktop richiederà l'installazione di un maggior numero di dipendenze. Gli utenti che cercano di risparmiare spazio su disco ed evitare di [gonfiare il software](https://en.wikipedia.org/wiki/it:software_bloat "wikipedia:it:software bloat"), spesso evitano questo tipo di approccio, oppure ricercano soluzioni alternative più leggere ed indipendenti.
 
-Inoltre, le applicazioni condizionate al DE, tendono a integrarsi meglio con i loro ambienti nativi. Superficialmente l'utilizzo di _ambienti misti_, che utilizzano diversi librerie di sviluppo, si tradurrà in discrepanze visive (cioè, le interfacce useranno icone e stili diversi). In termini di esperienza utente, applicazioni provenienti da ambienti misti, non possono comportarsi in modo simile causando potenzialmente confusione o un comportamento imprevisto (ad esempio il comportamento del singolo clic rispetto al doppio clic sulle icone, o la funzionalità drag-and-drop).
+Inoltre, le applicazioni condizionate al DE, tendono a integrarsi meglio con i loro ambienti nativi. Superficialmente l'utilizzo di *ambienti misti*, che utilizzano diversi librerie di sviluppo, si tradurrà in discrepanze visive (cioè, le interfacce useranno icone e stili diversi). In termini di esperienza utente, applicazioni provenienti da ambienti misti, non possono comportarsi in modo simile causando potenzialmente confusione o un comportamento imprevisto (ad esempio il comportamento del singolo clic rispetto al doppio clic sulle icone, o la funzionalità drag-and-drop).
 
 ### Lista degli Ambienti Desktop
 
@@ -52,7 +52,7 @@ Inoltre, le applicazioni condizionate al DE, tendono a integrarsi meglio con i l
 
 	[http://www.kde.org/](http://www.kde.org/) || [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/)
 
-*   **[LXDE](/index.php/LXDE_(Italiano) "LXDE (Italiano)")** — _Il **L**ightweight **X**11 **D**esktop **E**nvironment_ è un ambiente desktop estremamente veloce, performante e con un buon risparmio energetico. Gestito da una comunità internazionale di sviluppatori, si presenta con una bella interfaccia, supporto multi-lingua, tasti di scelta rapida standard e funzionalità aggiuntive come la navigazione a schede dei file. LXDE utilizza meno CPU e RAM di altri ambienti desktop. È progettato appositamente per i computer cloud con basse specifiche hardware, come i netbook, i dispositivi MID (Mobile ad esempio) o computer datati.
+*   **[LXDE](/index.php/LXDE_(Italiano) "LXDE (Italiano)")** — *Il **L**ightweight **X**11 **D**esktop **E**nvironment* è un ambiente desktop estremamente veloce, performante e con un buon risparmio energetico. Gestito da una comunità internazionale di sviluppatori, si presenta con una bella interfaccia, supporto multi-lingua, tasti di scelta rapida standard e funzionalità aggiuntive come la navigazione a schede dei file. LXDE utilizza meno CPU e RAM di altri ambienti desktop. È progettato appositamente per i computer cloud con basse specifiche hardware, come i netbook, i dispositivi MID (Mobile ad esempio) o computer datati.
 
 	[http://lxde.org/](http://lxde.org/) || [lxde](https://www.archlinux.org/groups/x86_64/lxde/)
 
@@ -112,7 +112,7 @@ Inoltre, le applicazioni condizionate al DE, tendono a integrarsi meglio con i l
 
 ### Comparazione tra i vari Ambienti Desktop
 
-_Questa sezione cerca di tracciare un confronto tra i più diffusi ambienti desktop. Si noti che l'esperienza in prima persona è l'unico modo efficace per valutare se davvero un ambiente desktop più adatta alle vostre esigenze._
+*Questa sezione cerca di tracciare un confronto tra i più diffusi ambienti desktop. Si noti che l'esperienza in prima persona è l'unico modo efficace per valutare se davvero un ambiente desktop più adatta alle vostre esigenze.*
 
 [confronto fra i vari Ambienti Desktop](https://en.wikipedia.org/wiki/it:Comparison_of_X_Window_System_desktop_environments "wikipedia:it:Comparison of X Window System desktop environments")
 
@@ -328,14 +328,14 @@ _Questa sezione cerca di tracciare un confronto tra i più diffusi ambienti desk
 
 #### Peso delle risorse di sistema
 
-In termini di risorse di sistema, GNOME e KDE sono ambienti desktop più _pesanti_. Non solo installazioni complete consumano più spazio su disco rispetto alle alternative leggere (Enlightenment, LXDE, Xfce e Razor-qt), ma anche più risorse di CPU e memoria durante il loro utilizzo. Questo perché GNOME e KDE sono da considerarsi come ambienti _full-optional'_: ovvero offrono un contesto più completo e ben integrato.
+In termini di risorse di sistema, GNOME e KDE sono ambienti desktop più *pesanti*. Non solo installazioni complete consumano più spazio su disco rispetto alle alternative leggere (Enlightenment, LXDE, Xfce e Razor-qt), ma anche più risorse di CPU e memoria durante il loro utilizzo. Questo perché GNOME e KDE sono da considerarsi come ambienti *full-optional'*: ovvero offrono un contesto più completo e ben integrato.
 
-D'altro canto Enlightenment, LXDE,Xfce e Razor-qt, sono mabienti desktop più _leggeri_. Sono progettati per lavorare bene su hardware di età superiore o basso consumo e generalmente consumano meno risorse di sistema durante l'uso. Ciò si ottiene non includendo le caratteristiche _extra_ (che si potrebbero definire una _gonfiatura_, o comunque superflui).
+D'altro canto Enlightenment, LXDE,Xfce e Razor-qt, sono mabienti desktop più *leggeri*. Sono progettati per lavorare bene su hardware di età superiore o basso consumo e generalmente consumano meno risorse di sistema durante l'uso. Ciò si ottiene non includendo le caratteristiche *extra* (che si potrebbero definire una *gonfiatura*, o comunque superflui).
 
 #### Familiarità degli Ambienti Desktop
 
-Molti utenti descrivono KDE come ambiente _simile a Windows_ e GNOME come _Simile a Mac_. Questo paragone è molto soggettivo e non corrisponde allo stato reale, dal momento che entrambi gli ambienti desktop possono essere personalizzati per emulare i sistemi operativi Windows o Mac. Vedere _[É KDE più simile a Windows rispetto a Gnome?](http://www.psychocats.net/ubuntucat/is-kde-more-windows-like-than-gnome/)_ e _[KDE vs Gnome](http://www.jeffwu.net/?p=71)_ per ulteriori informazioni. ([Linux non è Windows](http://linux.oneandoneis2.org/LNW.htm) è un'altra interessante risorsa da consultare.)
+Molti utenti descrivono KDE come ambiente *simile a Windows* e GNOME come *Simile a Mac*. Questo paragone è molto soggettivo e non corrisponde allo stato reale, dal momento che entrambi gli ambienti desktop possono essere personalizzati per emulare i sistemi operativi Windows o Mac. Vedere *[É KDE più simile a Windows rispetto a Gnome?](http://www.psychocats.net/ubuntucat/is-kde-more-windows-like-than-gnome/)* e *[KDE vs Gnome](http://www.jeffwu.net/?p=71)* per ulteriori informazioni. ([Linux non è Windows](http://linux.oneandoneis2.org/LNW.htm) è un'altra interessante risorsa da consultare.)
 
 ## Ambienti Personalizzati
 
-Gli ambienti desktop rappresentano il mezzo più semplice di installare un_ambiente_grafico completo. Tuttavia, gli utenti sono liberi di costruire e personalizzare il proprio ambiente grafico in molti modi, se nessuno dei più diffusi ambienti desktop soddisfano le proprie esigenze. In generale, la costruzione di un ambiente personalizzato comporta la selezione di un idoneo [Window Manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") un [List of Applications#Taskbars / Panels / Docks|taskbar]], e un numero di applicazioni leggere (una scelta minimalista di solito comprende un [emulatore di terminale](/index.php/List_of_Applications_(Italiano)#Emulatori_di_terminale "List of Applications (Italiano)"), un [file manager](/index.php/List_of_Applications_(Italiano)#File_manager "List of Applications (Italiano)") e un [editor di testi](/index.php/List_of_Applications_(Italiano)#Editor_di_Testi "List of Applications (Italiano)")).
+Gli ambienti desktop rappresentano il mezzo più semplice di installare un*ambiente*grafico completo. Tuttavia, gli utenti sono liberi di costruire e personalizzare il proprio ambiente grafico in molti modi, se nessuno dei più diffusi ambienti desktop soddisfano le proprie esigenze. In generale, la costruzione di un ambiente personalizzato comporta la selezione di un idoneo [Window Manager](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)") un [List of Applications#Taskbars / Panels / Docks|taskbar]], e un numero di applicazioni leggere (una scelta minimalista di solito comprende un [emulatore di terminale](/index.php/List_of_Applications_(Italiano)#Emulatori_di_terminale "List of Applications (Italiano)"), un [file manager](/index.php/List_of_Applications_(Italiano)#File_manager "List of Applications (Italiano)") e un [editor di testi](/index.php/List_of_Applications_(Italiano)#Editor_di_Testi "List of Applications (Italiano)")).

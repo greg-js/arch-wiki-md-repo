@@ -1,4 +1,4 @@
-[Wine](https://en.wikipedia.org/wiki/Wine_(software) "wikipedia:Wine (software)") is a compatibility layer capable of running Microsoft Windows applications on Unix-like operating systems. Windows programs running in Wine act as native programs would, running without the performance or memory usage penalties of an emulator, with a similar look and feel to other applications on your desktop environment.
+[Wine](https://en.wikipedia.org/wiki/Wine_(software) is a compatibility layer capable of running Microsoft Windows applications on Unix-like operating systems. Windows programs running in Wine act as native programs would, running without the performance or memory usage penalties of an emulator, with a similar look and feel to other applications on your desktop environment.
 
 ## Contents
 
@@ -171,7 +171,7 @@ For x86-64 systems, additional 32-bit [multilib] or [AUR](/index.php/AUR "AUR") 
 
 ### Sound
 
-By default sound issues may arise when running Wine applications. Ensure only one sound device is selected in _winecfg_. Currently, the [Alsa](/index.php/Alsa "Alsa") driver is the most supported.
+By default sound issues may arise when running Wine applications. Ensure only one sound device is selected in *winecfg*. Currently, the [Alsa](/index.php/Alsa "Alsa") driver is the most supported.
 
 If you want to use [OSS](/index.php/OSS "OSS") in Wine, you will need to install the **oss** package. The OSS driver in the kernel will not suffice.
 
@@ -193,7 +193,7 @@ If the fonts look somehow smeared, import the following text file into the Wine 
 
 By default, installation of Wine does not create desktop menus/icons for the software which comes with Wine (e.g. for winecfg, winebrowser, etc). However, installing Windows programs with Wine, in most cases, should result in the appropriate menu/desktop icons being created. For example, if the installation program (e.g. setup.exe) would normally add an icon to your Desktop or "Start Menu" on Windows, then Wine should create corresponding freedesktop.org style .desktop files for launching your programs with Wine.
 
-**Tip:** If menu items were _not_ created while installing software or have been lost, [winemenubuilder](http://wiki.winehq.org/winemenubuilder) may be of some use.
+**Tip:** If menu items were *not* created while installing software or have been lost, [winemenubuilder](http://wiki.winehq.org/winemenubuilder) may be of some use.
 
 If you wish to add on to the menu to create an Ubuntu-like Wine sub-menu, then follow these instructions:
 
@@ -225,7 +225,7 @@ First, install a Windows program using Wine to create the base menu. After the b
 
 ```
 
-Now that you have these three launchers on your desktop, it is time to put them into the menu. But, first you should change the launchers to dynamically change icons when a new icon set is installed. To do this, open the launchers that you just made in your favorite text editor. Change the following settings to these new values: _Configuration_ launcher:
+Now that you have these three launchers on your desktop, it is time to put them into the menu. But, first you should change the launchers to dynamically change icons when a new icon set is installed. To do this, open the launchers that you just made in your favorite text editor. Change the following settings to these new values: *Configuration* launcher:
 
 ```
 Icon[en_US]=wine-winecfg
@@ -233,7 +233,7 @@ Icon=wine-winecfg
 
 ```
 
-_Uninstall Programs_ launcher:
+*Uninstall Programs* launcher:
 
 ```
 Icon[en_US]=wine-uninstaller
@@ -241,7 +241,7 @@ Icon=wine-uninstaller
 
 ```
 
-_Browse C:\ Drive_ launcher:
+*Browse C:\ Drive* launcher:
 
 ```
 Icon[en_US]=wine-winefile
@@ -254,7 +254,6 @@ If these settings produce a ugly/non-existent icon, it means that there are no i
 Now that you have the launchers fully configured, now it is time to put them in the menu. Copy them into `~/.local/share/applications/wine/`.
 
 Wait a second, they aren't in the menu yet! There is one last step. Create the following text file `~/.config/menus/applications-merged/wine-utilities.menu` 
-
 ```
  <!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
  "http://www.freedesktop.org/standards/menu-spec/menu-1.0.dtd">
@@ -339,7 +338,7 @@ $ msiexec installername.msi
 
 *   [The official FAQ](http://wiki.winehq.org/FAQ) - General information about Wine and Frequently Asked Questions
 *   [The Wine Application Database (AppDB)](http://appdb.winehq.org/) - Information about running specific Windows applications (Known issues, ratings, guides, etc tailored to specific applications)
-*   [The WineHQ Forums](http://forum.winehq.org/) - A great place to ask questions _after_ you have looked through the FAQ and AppDB
+*   [The WineHQ Forums](http://forum.winehq.org/) - A great place to ask questions *after* you have looked through the FAQ and AppDB
 
 If it does not "just work," these resources will often be your first stops toward getting your Windows software working.
 
@@ -363,7 +362,7 @@ For additional info, see the [WineHQ](http://appdb.winehq.org/appview.php?iVersi
 
 ### OpenGL Modes
 
-Many games have an OpenGL mode which _may_ preform better than their default DirectX mode. While the steps to enable OpenGL rendering is _application specific_, many games accept the `-opengl` parameter.
+Many games have an OpenGL mode which *may* preform better than their default DirectX mode. While the steps to enable OpenGL rendering is *application specific*, many games accept the `-opengl` parameter.
 
 ```
 $ wine /path/to/3d_game.exe -opengl

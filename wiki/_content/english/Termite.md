@@ -1,4 +1,4 @@
-[Termite](https://www.github.com/thestinger/termite) is a minimal [terminal emulator](/index.php/Category:Terminal_emulators "Category:Terminal emulators") designed for use with tiling [window managers](/index.php/Window_manager "Window manager"). It is a _modal_ application, similar to [Vim](/index.php/Vim "Vim"), with an insert mode and command mode where keybindings have different functions. Termite is based on the [VTE](https://developer.gnome.org/vte/unstable/) library.
+[Termite](https://www.github.com/thestinger/termite) is a minimal [terminal emulator](/index.php/Category:Terminal_emulators "Category:Terminal emulators") designed for use with tiling [window managers](/index.php/Window_manager "Window manager"). It is a *modal* application, similar to [Vim](/index.php/Vim "Vim"), with an insert mode and command mode where keybindings have different functions. Termite is based on the [VTE](https://developer.gnome.org/vte/unstable/) library.
 
 The configuration file allows to change colors and set some options. Termite supports transparency along with both the 256 color and true color (16 million colors) palettes. It has a similar look and feel to [urxvt](/index.php/Urxvt "Urxvt").
 
@@ -27,14 +27,13 @@ Termite starts in insert mode by default. Text may be selected using the mouse, 
 
 ## Configuration
 
-Termite looks for configuration files in `$XDG_CONFIG_HOME/termite/config`, `~/.config/termite/config`, `$XDG_CONFIG_DIRS/termite/config` and `/etc/xdg/termite.cfg`. The configuration file is used to change options such as font, colors, window hints, etc. The configuration file is in _ini_ format, with three sections: _options_, _colors_, and _hints_.
+Termite looks for configuration files in `$XDG_CONFIG_HOME/termite/config`, `~/.config/termite/config`, `$XDG_CONFIG_DIRS/termite/config` and `/etc/xdg/termite.cfg`. The configuration file is used to change options such as font, colors, window hints, etc. The configuration file is in *ini* format, with three sections: *options*, *colors*, and *hints*.
 
 ### Font
 
-Fonts are specified in the format `font=<font_name> <font_size>` under the _options_ section. `<font_name>` is specified according to [fontconfig](/index.php/Fontconfig "Fontconfig"), not [Xft](/index.php/X_Logical_Font_Description "X Logical Font Description"). Use `fc-list` to see which fonts are available on the system (see also [Font configuration#Font paths](/index.php/Font_configuration#Font_paths "Font configuration")).
+Fonts are specified in the format `font=<font_name> <font_size>` under the *options* section. `<font_name>` is specified according to [fontconfig](/index.php/Fontconfig "Fontconfig"), not [Xft](/index.php/X_Logical_Font_Description "X Logical Font Description"). Use `fc-list` to see which fonts are available on the system (see also [Font configuration#Font paths](/index.php/Font_configuration#Font_paths "Font configuration")).
 
  `~/.config/termite/config` 
-
 ```
 [options]
 font = Monospace 9
@@ -47,7 +46,6 @@ font = Droid Sans Mono 8
 Colors consist of either a 24-bit hex value (e.g. `#4a32b1`), or an rgba vector (e.g. `rgba(16, 32, 64, 0.5)`). Valid properties for colors are `foreground`, `foreground_bold`, `foreground_dim`, `background`, `cursor`, and `colorN` (where N is an integer from zero through 254; used to assign a 24-bit color value to terminal colorN).
 
  `~/.config/termite/config` 
-
 ```
 [colors]
 foreground = #dcdccc
@@ -59,14 +57,12 @@ background  = #3f3f3f
 As of version 9, Termite supports true transparency via color definitions that specify an alpha channel value [[1]](https://github.com/thestinger/termite/issues/191). This requires a compositor to be running, such as [Compton](/index.php/Compton "Compton") or [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr). Most compositors do not require special configuration for Termite to use transparency.
 
  `~/.config/termite/config` 
-
 ```
 [colors]
 background = rgba(63, 63, 63, 0.8)
 ```
 
 **Note:** In [i3](/index.php/I3 "I3"), in stacked/tabbed layout, this shows all windows "stacked" on top of each other, in the order they were most recently in the foreground, rather than showing the desktop (the root window) directly behind Termite. This is due to i3 reordering windows rather than hiding invisible windows in tiling mode. You can configure your compositor to make windows with `_NET_WM_STATE=_NET_WM_STATE_HIDDEN` fully transparent to solve this. For example, for compton use `~/.compton.conf` 
-
 ```
 opacity-rule = [
   "0:_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"

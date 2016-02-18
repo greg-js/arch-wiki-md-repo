@@ -50,7 +50,7 @@ exec [session-command]
 
 ```
 
-将_**[session-command]**_替换为适当的会话命令。例如：
+将***[session-command]***替换为适当的会话命令。例如：
 
 ```
 exec awesome
@@ -271,7 +271,7 @@ By default, Slim fails to log logins to utmp and wtmp which causes who, last, et
 这个列表显示了所有的参数变量以及其默认值。
 
 **Note:** welcome_msg 允许2个变量**%host** 与 **%domain**
-sessionstart_cmd 读取 **%user** _(execd right before login_cmd)_ 并且它也会读取 sessionstop_cmd
+sessionstart_cmd 读取 **%user** *(execd right before login_cmd)* 并且它也会读取 sessionstop_cmd
 login_cmd allows **%session** and **%theme**
 
 | Option Name | Default Value |

@@ -1,6 +1,6 @@
 A [Wikipédiából](https://en.wikipedia.org/wiki/File_system "wikipedia:File system"):
 
-	_A számítástechnika egy fájlrendszer alatt a számítógépes fájlok tárolásának és rendszerezésének a módszerét érti, ideértve a tárolt adatokhoz való hozzáférést és az adatok egyszerű megtalálását is...Precízebben meghatározva: egy fájlrendszer absztrakt adattípusok halmaza, amelyeket adatok tárolására, hierarchikus rendezésére, kezelésére, megtalálására illetve navigálásra, hozzáférésre, és visszakeresésére valósítottak meg._
+	*A számítástechnika egy fájlrendszer alatt a számítógépes fájlok tárolásának és rendszerezésének a módszerét érti, ideértve a tárolt adatokhoz való hozzáférést és az adatok egyszerű megtalálását is...Precízebben meghatározva: egy fájlrendszer absztrakt adattípusok halmaza, amelyeket adatok tárolására, hierarchikus rendezésére, kezelésére, megtalálására illetve navigálásra, hozzáférésre, és visszakeresésére valósítottak meg.*
 
 Különálló partícióink mindegyikén a sok különböző fájlrendszer valamelyikét használhatjuk. Mindegyiknek megvan a maga előnyi, hátrányai és egyedülálló bogarasságai. Itt egy gyors áttekintést közlünk a támogatott fájlrendszerekről; a Wikipédia oldalaira mutató linkek sokkal több információval kecsegtethetnek.
 
@@ -24,10 +24,10 @@ Mielőtt formázunk, az adathordozónkat [particionálnunk](/index.php/Partition
 *   [ext3](https://en.wikipedia.org/wiki/ext3 "wikipedia:ext3") - A **Harmadik bővített fájlrendszer** lényegében az ext2 naplózással és írási sorompóval ellátva. Visszafelé kompatibilis az ext2-vel, alaposan tesztelt és rendkívül stabil.
 *   [ext4](https://en.wikipedia.org/wiki/ext4 "wikipedia:ext4") - A **Negyedik bővített fájlrendszer** újabb fájlrendszer, mely az ext2-vel és az ext3-mal is kompatibilis. Egészen 1 exabyte (értsd 1,048,576 terabyte-ig) méretig támogatja a tárolóeszközöket, a fájlok nagyságát pedig 16 terabyte-ig. Megemeli az ext3 32,000-es alkönyvtár-korlátozását 64,000-re. Mindemellett online töredezettségmentesítésre is képes.
 *   [F2FS](https://en.wikipedia.org/wiki/F2FS "wikipedia:F2FS") - **Flash-Barát Fájlrendszer** egy Kim Jaegeuk (koreaiul: 김재극) által kreált flash fájlrendszer, melyet a Samsung-nál készített kifejezetten a Linux rendszermag számára. Az alapötlet az volt, hogy olyan fájlrendszert alkosson, mely a kezdetektől számításba veszi a NAND flash memória alapú tárolóeszközök (tehát SSD-k, eMMC-k, SD kártyák) karakterisztikáit, melyek egyre gyakrabban fordulnak elő, mobilkészülékektől a szerverekig mindenhol.
-*   [JFS](https://en.wikipedia.org/wiki/JFS_(file_system) "wikipedia:JFS (file system)") - Az IBM **Journaled File System**-e (naplózott fájlrendszer) volt az első, mellyel lehetővé vált a naplózás. Sok évig fejlesztették az IBM AIX® operációs rendszeren, mielőtt GNU/Linux-ra is megjelent. A JFS veszi a legkevésbé igénybe a processzor erőforrásait az összes GNU/Linux fájlrendszer közül. Formázáskor nagyon gyors, akárcsak csatoláskor és a fájlrendszer ellenőrzésekor (fsck). A JFS nagyon jó általános teljesítményt biztosít, leginkább a deadline I/O ütemező használatával együtt. Nem annyira jól támogatott, mint az ext sorozat vagy a ReiserFS, de nagyon érett és stabil.
+*   [JFS](https://en.wikipedia.org/wiki/JFS_(file_system) - Az IBM **Journaled File System**-e (naplózott fájlrendszer) volt az első, mellyel lehetővé vált a naplózás. Sok évig fejlesztették az IBM AIX® operációs rendszeren, mielőtt GNU/Linux-ra is megjelent. A JFS veszi a legkevésbé igénybe a processzor erőforrásait az összes GNU/Linux fájlrendszer közül. Formázáskor nagyon gyors, akárcsak csatoláskor és a fájlrendszer ellenőrzésekor (fsck). A JFS nagyon jó általános teljesítményt biztosít, leginkább a deadline I/O ütemező használatával együtt. Nem annyira jól támogatott, mint az ext sorozat vagy a ReiserFS, de nagyon érett és stabil.
 *   [NILFS2](https://en.wikipedia.org/wiki/NILFS "wikipedia:NILFS") - A **New Implementation of a Log-structured File System**-et (naplózott struktúrájú fájlrendszer új kivitelben) az NTT fejlesztette ki. Minden adatot egy megszakítatlan naplószerű formátumban tárol, melyhez a rendszer csak "hozzáír" de sosem írja felül. Ezáltal csökken a keresési idő és minimalizálódik az a fajta adatvesztés, mely a hagyományos Linux fájlrendszerek összeomlásakor fordulhat elő.
 *   [NTFS](https://en.wikipedia.org/wiki/NTFS "wikipedia:NTFS") - **File system used by Windows** (A Windows által használt fájlrendszer). Az NTFS-nek számos technikai előnye van a FAT és HPFS (High Performance File System, magas teljesítményű fájlrendszer) felett, úgy mint a metaadatok támogatása, fejlettebb adatstruktúrák használata, melyekkel növekszik a teljesítmény, a megbízhatóság, a lemez kihasználhatósága; illetve olyan kiterjesztéseket tartalmaz, mint a biztonsági jogosultságok kezelését (ACL) és a naplózást.
-*   [Reiser4](https://en.wikipedia.org/wiki/Reiser4 "wikipedia:Reiser4") - **A ReiserFS fájlrendszer utódja.**, melyet a Namesys épített fel "from scratch", iletve a DARPA és a Linspire szponzorálja, kiegyensúlyozott fa adatszerkezeti megközelítést használ, melyben az alacsony kihasználtságú _node_ blokkokat nem vonják össze, míg nem kerülnek írásra, kivéve memória-nyomás hatására vagy míg egy tranzakció végbe nem megy. Ez teszi lehetővé, hogy a Reiser4 állományokat vagy könyvtárakat hozzon létre anélkül, hogy fix blokkokra pazarolná az idejét.
+*   [Reiser4](https://en.wikipedia.org/wiki/Reiser4 "wikipedia:Reiser4") - **A ReiserFS fájlrendszer utódja.**, melyet a Namesys épített fel "from scratch", iletve a DARPA és a Linspire szponzorálja, kiegyensúlyozott fa adatszerkezeti megközelítést használ, melyben az alacsony kihasználtságú *node* blokkokat nem vonják össze, míg nem kerülnek írásra, kivéve memória-nyomás hatására vagy míg egy tranzakció végbe nem megy. Ez teszi lehetővé, hogy a Reiser4 állományokat vagy könyvtárakat hozzon létre anélkül, hogy fix blokkokra pazarolná az idejét.
 *   [ReiserFS](https://en.wikipedia.org/wiki/ReiserFS "wikipedia:ReiserFS") - A **Hans Reiser nagy teljesítményű naplózó fájlrendszere (v3)** egy roppant szokatlan és kreatív algoritmust használ az adat átmenő teljesítményének növelésére. Elismerten rendkívül gyors, legfőképp, ha sok kisméretű állományt kell kezelni. A ReiserFS formázáskor nagyon gyors, de a többiekhez képest csatoláskor lassú. Bár érett és stabil rendszer, a ReiserFSv3-at jelenleg nem fejlesztik tovább. Általában nagyon jó választás a `/var` számára.
 *   [Swap](https://en.wikipedia.org/wiki/Paging "wikipedia:Paging") - Fájlrendszer, mely cserehelyként használatos.
 *   [VFAT](https://en.wikipedia.org/wiki/File_Allocation_Table#VFAT "wikipedia:File Allocation Table") - A **Virtual File Allocation Table (virtuális fájl-allokációs tábla)** technikailag egyszerű és gyakorlatilag minden operációs rendszer támogatja. Ezért nagyon hasznos szilárd memóriakártyák számára, s jó módja az operációs rendszerek közti adatmegosztásnak. A VFAT támogatja a hosszú fájlneveket.
@@ -110,9 +110,9 @@ A naplózó-technikák nem egyformák. Csak az ext3 és ext4 használ adatmódú
 
 ### Feltételek
 
-Mielőtt nekiindulunk a feladatnak, tudnunk kell, hogy a Linux milyen nevet adott az eszköznek. A merevlemezek és pendrive-ok `/dev/sd_x_`-ként jelennek meg, ahol az _x_ egy kisbetű, míg a partícciók a `/dev/sd_xY_` formátumot használják,ahol _Y_ egy szám.
+Mielőtt nekiindulunk a feladatnak, tudnunk kell, hogy a Linux milyen nevet adott az eszköznek. A merevlemezek és pendrive-ok `/dev/sd*x*`-ként jelennek meg, ahol az *x* egy kisbetű, míg a partícciók a `/dev/sd*xY*` formátumot használják,ahol *Y* egy szám.
 
-Ha a formázandó eszközt már csatolta a rendszer, a következő parancs _MOUNTPOINT_ oszlopában meg fog jelenni:
+Ha a formázandó eszközt már csatolta a rendszer, a következő parancs *MOUNTPOINT* oszlopában meg fog jelenni:
 
 ```
 $ lsblk
@@ -122,11 +122,11 @@ $ lsblk
 Ha még nem csatolta a rendszer, tegyük meg mi:
 
 ```
-# mount /dev/sd_xY_ /valamely/könyvtár
+# mount /dev/sd*xY* /valamely/könyvtár
 
 ```
 
-Leválasztásához az _umount_ parancsot használjuk azon a könyvtáron, ahova csatoltuk:
+Leválasztásához az *umount* parancsot használjuk azon a könyvtáron, ahova csatoltuk:
 
 ```
 # umount /valamely/könyvtár
@@ -141,17 +141,17 @@ Változtassuk meg tetszésünk szerint a partíciós táblát. Ehhez MBR esetén
 
 ### Eszközök konzolban
 
-Egy partíció létrehozásához a **mkfs** parancsot használjuk, mely csak egy egységes front-end különféle `mkfs._fájlrendszertípus_` eszközök számára. Így például egy ext4 fájlrendszer létrehozása ezzel a paranccsal történik:
+Egy partíció létrehozásához a **mkfs** parancsot használjuk, mely csak egy egységes front-end különféle `mkfs.*fájlrendszertípus*` eszközök számára. Így például egy ext4 fájlrendszer létrehozása ezzel a paranccsal történik:
 
 ```
-# mkfs -t ext4 /dev/_partíció_
+# mkfs -t ext4 /dev/*partíció*
 
 ```
 
 Ha cserehelyet akarunk létrehozni, a **mkswap**-t használjuk:
 
 ```
-# mkswap /dev/_partíció_
+# mkswap /dev/*partíció*
 
 ```
 

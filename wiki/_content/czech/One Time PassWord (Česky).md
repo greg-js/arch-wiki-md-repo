@@ -20,7 +20,6 @@ Instalujte [otpw](https://aur.archlinux.org/packages/otpw/) balíček z AUR.
 Vytvořte PAM konfigurační soubor pro otpw:
 
  `/etc/pam.d/ssh-otpw` 
-
 ```
 auth sufficient pam_otpw.so
 session optional pam_otpw.so
@@ -30,7 +29,6 @@ session optional pam_otpw.so
 Dále upravte PAM kofigurační soubor pro ssh aby zahrnul otpw. Pokud chcete zakázat statické heslo zakomentujte druhý tučný řádek.Zde je upravená verze `/etc/pam.d/sshd` jako vzor:
 
  `/etc/pam.d/sshd` 
-
 ```
 #%PAM-1.0
 #auth     required  pam_securetty.so     #zakázat vzdálený root

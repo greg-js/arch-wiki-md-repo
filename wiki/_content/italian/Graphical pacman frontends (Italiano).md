@@ -1,4 +1,4 @@
-Quella qui riportata è una lista di interfacce grafiche per Pacman, progettate per costituire una versione grafica dello strumento di gestione pacchetti CLI (_Command Line Interface_) pacman. La lista include software basato su Gtk2, Qt, e una varietà di indicatori per pannelli di sistema. **Nessuno di questi software è ufficialmente supportato dal team di Archlinux**.
+Quella qui riportata è una lista di interfacce grafiche per Pacman, progettate per costituire una versione grafica dello strumento di gestione pacchetti CLI (*Command Line Interface*) pacman. La lista include software basato su Gtk2, Qt, e una varietà di indicatori per pannelli di sistema. **Nessuno di questi software è ufficialmente supportato dal team di Archlinux**.
 
 ## Contents
 
@@ -33,7 +33,7 @@ GtkPacman è un'interfaccia semplice ma potente per il gestore di pacchetti di A
 
 ### Shaman
 
-Shaman è una GUI (_Graphical User Interface_) per la gestione dei pacchetti per Archlinux. È basato su libalpm. Ciò rappresenta un grande vantaggio, dall'integrazione nel sistema alla velocità. Inoltre, le richieste e le ricerche sono più rapide di pacman, il tutto con un alto livello di personalizzazione. Shaman soddisfa tutte le necessità di qualsiasi manager di pacchetti, come:
+Shaman è una GUI (*Graphical User Interface*) per la gestione dei pacchetti per Archlinux. È basato su libalpm. Ciò rappresenta un grande vantaggio, dall'integrazione nel sistema alla velocità. Inoltre, le richieste e le ricerche sono più rapide di pacman, il tutto con un alto livello di personalizzazione. Shaman soddisfa tutte le necessità di qualsiasi manager di pacchetti, come:
 
 	Installazione/rimozione/aggiornamento dei pacchetti
 

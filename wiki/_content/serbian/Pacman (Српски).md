@@ -145,18 +145,18 @@ pacman cuva vazne konfiguracione fajlove kada uklanja odredjene aplikacije i ime
 
 ### Osvezavanje paketa
 
-pacman moze da osvezi sve pakete na sistemu sa samo jednom komandom. To moze da potraje u zavisnosti od toga u koliko meri je Vas sistem neosvezen, tj. kada ste ga zadnji put osvezili. Ova komanda moze da sinhronizuje baze repozitorijuma _i_ osvezi pakete sistema:
+pacman moze da osvezi sve pakete na sistemu sa samo jednom komandom. To moze da potraje u zavisnosti od toga u koliko meri je Vas sistem neosvezen, tj. kada ste ga zadnji put osvezili. Ova komanda moze da sinhronizuje baze repozitorijuma *i* osvezi pakete sistema:
 
 ```
 # pacman -Syu
 
 ```
 
-**Note:** Kao _rolling-release_ distribucija, osvezavanje Vaseg Arch Linux sistema nije uvek jednostavno kao sa drugim distribucijama koje imaju fiksna izdanja. Pored toga, pacman nije "upali-i-zaboravi" paket menadzer. Kao rezultat toga, ispravno odrzavanje Arch Linux sistema sa pacman-om tezi da zbuni nove korsnike (kao sto i povremene diskusije na forumu ukazuju). Molim Vas procitajte sledecu sekciju _temeljno_ pre nego sto nastavite.
+**Note:** Kao *rolling-release* distribucija, osvezavanje Vaseg Arch Linux sistema nije uvek jednostavno kao sa drugim distribucijama koje imaju fiksna izdanja. Pored toga, pacman nije "upali-i-zaboravi" paket menadzer. Kao rezultat toga, ispravno odrzavanje Arch Linux sistema sa pacman-om tezi da zbuni nove korsnike (kao sto i povremene diskusije na forumu ukazuju). Molim Vas procitajte sledecu sekciju *temeljno* pre nego sto nastavite.
 
 pacman je mocni paket menadzer, ali ne pokusava da "ucini sve". Procitajte [The Arch Way (Српски)](/index.php/The_Arch_Way_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "The Arch Way (Српски)") ako Vas ovo zbunjuje. Pre svega, korisnici moraju biti na oprezu i preuzeti odgovornost za odrzavanje njihovih sistema. Kada obavljate osvezavanje sistema (`pacman -Syu`), naprimer, **od kljucnog znacaja je da korisnik procita sav izlaz od pacman-a i koristi se zdravim razumom.**
 
-Umesto da odmah osvezi sistem cim su novi paketi dostupni, korisnik mora da shvati da jedno osvezenje za _kriticni_ paket moze imati nepredvidjene posledice. Ovo znaci da nije pametno osveziti `xorg-server` ako on trenutno isporucuje vaznu prezentaciju, naprimer. Umesto toga, osvezite tokom slobodnog vremena i pripremite se za razresavanje eventualnih problema koji se mogu pojaviti prilikom samog procesa.
+Umesto da odmah osvezi sistem cim su novi paketi dostupni, korisnik mora da shvati da jedno osvezenje za *kriticni* paket moze imati nepredvidjene posledice. Ovo znaci da nije pametno osveziti `xorg-server` ako on trenutno isporucuje vaznu prezentaciju, naprimer. Umesto toga, osvezite tokom slobodnog vremena i pripremite se za razresavanje eventualnih problema koji se mogu pojaviti prilikom samog procesa.
 
 Sledece, posecivanje [Arch Linux home stranicu](https://archlinux.org/) se uvek preporucuje. Cesto kada osvezenja zahtevaju intervenciju korisnika, odgovarajuci post na [https://archlinux.org](https://archlinux.org) ce se pojaviti. Obicno postoje i postovi na forumu koji opisuju isti problem i to ukratko nakon sto zakrpa postane dostupna preko mirora, detaljisuci resenje za taj problem.
 
@@ -290,7 +290,7 @@ Jedina opcija je da budete strpljivi ili da koristite drugi miror. [Stanje miror
 
 ### Dobijam gresku prilikom osvezavanja: "fajl postoji u fajlsistemu"!
 
-ASIDE: _Preuzeto sa [https://bbs.archlinux.org/viewtopic.php?id=56373](https://bbs.archlinux.org/viewtopic.php?id=56373) by Misfit138._
+ASIDE: *Preuzeto sa [https://bbs.archlinux.org/viewtopic.php?id=56373](https://bbs.archlinux.org/viewtopic.php?id=56373) by Misfit138.*
 
 ```
 error: could not prepare transaction
@@ -331,7 +331,7 @@ U slucaju da pacman puca sa "database error" greskom dok uklanjate pakete, i rei
 
 Ako dobijate "conflicting files" gresku, imajte na umu da ce pacman prepisati rucno instalirani softver ako zadate komandu sa `--force` prekidacem (`pacman -S --force`).
 
-Pogledajte [preuzimanje liste fajlova koje nisu u posedu ni jednog paketa](/index.php/Pacman_tips#Getting_a_list_of_files_not_owned_by_any_package "Pacman tips") za skriptu koja vrsi pretragu fajlsistema za fajlove koji _nisu u posedu_.
+Pogledajte [preuzimanje liste fajlova koje nisu u posedu ni jednog paketa](/index.php/Pacman_tips#Getting_a_list_of_files_not_owned_by_any_package "Pacman tips") za skriptu koja vrsi pretragu fajlsistema za fajlove koji *nisu u posedu*.
 
 ### pacman je potpuno slomljen! Kako da ga instaliram?
 

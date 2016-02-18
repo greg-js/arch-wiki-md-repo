@@ -35,7 +35,6 @@ The suggested build order is specified in the [How to Build TDE](https://wiki.tr
 Set up your chroot for building by referencing [DeveloperWiki:Building in a Clean Chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot"). Make sure you configure your `local` repository in `$CHROOT/root/repo` and add each package built to the repository as outlined in the [DeveloperWiki](/index.php/DeveloperWiki "DeveloperWiki").
 
  `Example` 
-
 ```
  # mkarchroot -u $CHROOT/root
  # makechrootpkg -c -r $CHROOT

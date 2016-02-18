@@ -1,6 +1,6 @@
 The [Trusted Users](https://www.archlinux.org/trustedusers/) serve the following purposes:
 
-1.  Maintain the _community_ repository as an intermediary between Arch Linux's [official repositories](/index.php/Official_repositories "Official repositories") and the unsupported package collection in the [AUR](/index.php/AUR "AUR").
+1.  Maintain the *community* repository as an intermediary between Arch Linux's [official repositories](/index.php/Official_repositories "Official repositories") and the unsupported package collection in the [AUR](/index.php/AUR "AUR").
 2.  Maintain, manage, and watch over the operation of the [AUR](/index.php/AUR "AUR").
 
 ## Contents
@@ -12,7 +12,7 @@ The [Trusted Users](https://www.archlinux.org/trustedusers/) serve the following
 
 ## How to become TU?
 
-The _minimum_ requirements to becoming a TU are as follows:
+The *minimum* requirements to becoming a TU are as follows:
 
 *   know basic shell scripting
 *   maintain a few packages in AUR with clean, high-quality PKGBUILDs
@@ -60,7 +60,7 @@ For more information, please see [Trusted User Bylaws](https://aur.archlinux.org
 | [gtmanfred](https://aur.archlinux.org/packages.php?K=gtmanfred&SeB=m) | Daniel Wallace | danielwallace gtmanfred com |
 | [heftig](https://aur.archlinux.org/packages.php?K=heftig&SeB=m) | Jan Steffens | jan.steffens@student.kit.edu |
 | [jelly](https://aur.archlinux.org/packages.php?K=jelly&SeB=m) | Jelle van der Waa | jelle vdwaa nl |
-| [jleclanche](https://aur.archlinux.org/packages.php?K=jleclanche&SeB=m) | [Jerome Leclanche](/index.php/User:Jleclanche "User:Jleclanche") | jerome_@_leclan_._ch |
+| [jleclanche](https://aur.archlinux.org/packages.php?K=jleclanche&SeB=m) | [Jerome Leclanche](/index.php/User:Jleclanche "User:Jleclanche") | jerome*@*leclan*.*ch |
 | [jsteel](https://aur.archlinux.org/packages.php?K=jsteel&SeB=m) | Jonathan Steel | jsteel at aur.archlinux.org |
 | [keenerd](https://aur.archlinux.org/packages.php?K=keenerd&SeB=m) | Kyle Keen | keenerd@gmail.com |
 | [Kyrias](https://aur.archlinux.org/packages.php?K=Kyrias&SeB=m) | [Johannes Löthberg](/index.php/User:Kyrias "User:Kyrias") | johannes@kyriasis.com |
@@ -69,7 +69,7 @@ For more information, please see [Trusted User Bylaws](https://aur.archlinux.org
 | [Muflone](https://aur.archlinux.org/packages.php?K=Muflone&SeB=m) | Fabio Castelli | webreg (at) vbsimple.net |
 | [schivmeister](https://aur.archlinux.org/packages.php?K=schivmeister&SeB=m) | [Ray Rashif](/index.php/User:Schivmeister "User:Schivmeister") | schiv archlinux org |
 | [schuay](https://aur.archlinux.org/packages.php?K=schuay&SeB=m) | Jakob Gruber | jakob.gruber@gmail.com |
-| [seblu](https://aur.archlinux.org/packages.php?K=seblu&SeB=m) | Sébastien Luttringer | s е b l u _at_ a r c h l і n ux _dot_ o r g |
+| [seblu](https://aur.archlinux.org/packages.php?K=seblu&SeB=m) | Sébastien Luttringer | s е b l u *at* a r c h l і n ux *dot* o r g |
 | [sergej](https://aur.archlinux.org/packages.php?K=sergej&SeB=m) | [Sergej Pupykin](/index.php/User:Sergej "User:Sergej") | pupykin.s+arch@gmail.com |
 | [speps](https://aur.archlinux.org/packages.php?K=speps&SeB=m) | SpepS | dreamspepser at yahoo dot it |
 | [stativ](https://aur.archlinux.org/packages.php?K=stativ&SeB=m) | Lukas Jirkovsky | l.jirkovsky strange_curved_character gmail.com |

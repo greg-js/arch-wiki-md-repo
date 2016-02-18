@@ -49,4 +49,4 @@ In Xorg, specify `es` as `XkbLayout` and `dvorak` as `XkbVariant`.
 
 	WEB
 
-*   [http://typeyourway.com/](http://typeyourway.com/) - _Your keyboard, Your Words, Your Rules, Learn to Type Your Way_
+*   [http://typeyourway.com/](http://typeyourway.com/) - *Your keyboard, Your Words, Your Rules, Learn to Type Your Way*

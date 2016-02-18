@@ -65,9 +65,9 @@ All of the other SELinux-related packages may be included without changes nor ri
 
 **Note:** This section is meant for beginners. If you know what SELinux does and how it works, feel free to skip ahead to the installation.
 
-Before you enable SELinux, it is worth understanding what it does. Simply and succinctly, SELinux enforces _Mandatory Access Controls (MACs)_ on Linux. In contrast to SELinux, the traditional user/group/rwx permissions are a form of _Discretionary Access Control (DAC)_. MACs are different from DACs because security policy and its execution are completely separated.
+Before you enable SELinux, it is worth understanding what it does. Simply and succinctly, SELinux enforces *Mandatory Access Controls (MACs)* on Linux. In contrast to SELinux, the traditional user/group/rwx permissions are a form of *Discretionary Access Control (DAC)*. MACs are different from DACs because security policy and its execution are completely separated.
 
-An example would be the use of the _sudo_ command. When DACs are enforced, sudo allows temporary privilege escalation to root, giving the process so spawned unrestricted systemwide access. However, when using MACs, if the security administrator deems the process to have access only to a certain set of files, then no matter what the kind of privilege escalation used, unless the security policy itself is changed, the process will remain constrained to simply that set of files. So if _sudo_ is tried on a machine with SELinux running in order for a process to gain access to files its policy does not allow, it will fail.
+An example would be the use of the *sudo* command. When DACs are enforced, sudo allows temporary privilege escalation to root, giving the process so spawned unrestricted systemwide access. However, when using MACs, if the security administrator deems the process to have access only to a certain set of files, then no matter what the kind of privilege escalation used, unless the security policy itself is changed, the process will remain constrained to simply that set of files. So if *sudo* is tried on a machine with SELinux running in order for a process to gain access to files its policy does not allow, it will fail.
 
 Another set of examples are the traditional (-rwxr-xr-x) type permissions given to files. When under DAC, these are user-modifiable. However, under MAC, a security administrator can choose to freeze the permissions of a certain file by which it would become impossible for any user to change these permissions until the policy regarding that file is changed.
 
@@ -79,7 +79,7 @@ For further information, visit [wikipedia:Mandatory access control](https://en.w
 
 ### Package description
 
-All SELinux related packages belong to the _selinux_ group in the AUR as well as in [Siosm's unofficial repository](/index.php/Unofficial_user_repositories#siosm-selinux "Unofficial user repositories").
+All SELinux related packages belong to the *selinux* group in the AUR as well as in [Siosm's unofficial repository](/index.php/Unofficial_user_repositories#siosm-selinux "Unofficial user repositories").
 
 #### SELinux aware system utilities
 
@@ -147,11 +147,11 @@ All SELinux related packages belong to the _selinux_ group in the AUR as well as
 
 	[libselinux](https://aur.archlinux.org/packages/libselinux/)
 
-	Library for security-aware applications. Python bindings needed for _semanage_ and _setools_ now included.
+	Library for security-aware applications. Python bindings needed for *semanage* and *setools* now included.
 
 	[libsemanage](https://aur.archlinux.org/packages/libsemanage/)
 
-	Library for policy management. Python bindings needed for _semanage_ and _setools_ now included.
+	Library for policy management. Python bindings needed for *semanage* and *setools* now included.
 
 	[libsepol](https://aur.archlinux.org/packages/libsepol/)
 
@@ -190,7 +190,6 @@ Only ext2, ext3, ext4, JFS, XFS and BtrFS filesystems are supported to use SELin
 Here is the complete list of options which need to be enabled on Linux 4.3.3 to use SELinux :
 
  `config.selinux-custom` 
-
 ```
 CONFIG_AUDIT=y
 CONFIG_AUDITSYSCALL=y
@@ -223,7 +222,7 @@ There are two methods to install the requisite SELinux packages.
 
 #### Via AUR
 
-*   First, install SELinux userspace tools and libraries, in this order (because of the dependencies): [libsepol](https://aur.archlinux.org/packages/libsepol/), [libselinux](https://aur.archlinux.org/packages/libselinux/), [checkpolicy](https://aur.archlinux.org/packages/checkpolicy/), [setools](https://aur.archlinux.org/packages/setools/), [ustr-selinux](https://aur.archlinux.org/packages/ustr-selinux/), [libsemanage](https://aur.archlinux.org/packages/libsemanage/) (which needs [python2-ipy](https://www.archlinux.org/packages/?name=python2-ipy) from the _community_ repository) and [sepolgen](https://aur.archlinux.org/packages/sepolgen/).
+*   First, install SELinux userspace tools and libraries, in this order (because of the dependencies): [libsepol](https://aur.archlinux.org/packages/libsepol/), [libselinux](https://aur.archlinux.org/packages/libselinux/), [checkpolicy](https://aur.archlinux.org/packages/checkpolicy/), [setools](https://aur.archlinux.org/packages/setools/), [ustr-selinux](https://aur.archlinux.org/packages/ustr-selinux/), [libsemanage](https://aur.archlinux.org/packages/libsemanage/) (which needs [python2-ipy](https://www.archlinux.org/packages/?name=python2-ipy) from the *community* repository) and [sepolgen](https://aur.archlinux.org/packages/sepolgen/).
 *   Then install [pambase-selinux](https://aur.archlinux.org/packages/pambase-selinux/) and [pam-selinux](https://aur.archlinux.org/packages/pam-selinux/) and make sure you can login again after the installation completed , because files in `/etc/pam.d/` got removed and created when [pambase](https://www.archlinux.org/packages/?name=pambase) got replaced with [pambase-selinux](https://aur.archlinux.org/packages/pambase-selinux/).
 *   Next you can install [libcgroup](https://aur.archlinux.org/packages/libcgroup/) and [policycoreutils](https://aur.archlinux.org/packages/policycoreutils/), before recompiling some core packages by installing: [coreutils-selinux](https://aur.archlinux.org/packages/coreutils-selinux/), [findutils-selinux](https://aur.archlinux.org/packages/findutils-selinux/), [iproute2-selinux](https://aur.archlinux.org/packages/iproute2-selinux/), [logrotate-selinux](https://aur.archlinux.org/packages/logrotate-selinux/), [openssh-selinux](https://aur.archlinux.org/packages/openssh-selinux/), [psmisc-selinux](https://aur.archlinux.org/packages/psmisc-selinux/), [shadow-selinux](https://aur.archlinux.org/packages/shadow-selinux/), [cronie-selinux](https://aur.archlinux.org/packages/cronie-selinux/)
 *   Next, backup your `/etc/sudoers` file. Install [sudo-selinux](https://aur.archlinux.org/packages/sudo-selinux/) and restore your `/etc/sudoers` (it is overridden when this package is installed as a replacement of [sudo](https://www.archlinux.org/packages/?name=sudo)).
@@ -264,7 +263,6 @@ Add "security=selinux selinux=1" GRUB_CMDLINE_LINUX_DEFAULT variable in /etc/def
 Change your syslinux.cfg file by adding:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 LABEL arch-selinux
          LINUX ../vmlinuz-linux-selinux
@@ -279,7 +277,6 @@ at the end. Change "linux-selinux" to whatever kernel you are using.
 Create a new loader entry, for example in /boot/loader/entries/arch-selinux.conf:
 
  `/boot/loader/entries/arch-selinux.conf` 
-
 ```
 title Arch Linux SELinux
 linux /vmlinuz-linux-selinux
@@ -325,7 +322,6 @@ To load the reference policy run:
 Then, make the file `/etc/selinux/config` with the following contents (Only works if you used the defaults as mentioned above. If you decided to change the name of the policy, you need to tweak the file):
 
  `/etc/selinux/config` 
-
 ```
 # This file controls the state of SELinux on the system.
 # SELINUX= can take one of these three values:
@@ -355,7 +351,6 @@ to label your filesystem.
 Now, make a file `requiredmod.te` with the contents:
 
  `requiredmod.te` 
-
 ```
 module requiredmod 1.0;
 
@@ -431,7 +426,7 @@ Policy deny_unknown status:     allowed
 Max kernel policy version:      28
 ```
 
-To maintain correct context, you can use _restorecond_:
+To maintain correct context, you can use *restorecond*:
 
 ```
 # systemctl enable restorecond

@@ -150,12 +150,10 @@ o creare un link simbolico con:
 **11.** Ora aprire VMware Workstation (`vmware` nel terminale) o VMware Player (`vmplayer` nel terminale) per configurarli e usarli!
 
 **Attenzione:** Quando viene aggiornato il kernel **bisogna** ricompilare i moduli di vmware con i seguenti comandi:
-
 ```
 # vmware-modconfig --console --install-all
 
 ```
-
 Il fallimento di questa operazione potrebbe risolversi in un crash di sistema quando si aprono le macchine virtuali.
 
 ## Treucchi e Consigli

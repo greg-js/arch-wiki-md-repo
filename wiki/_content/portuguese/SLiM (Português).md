@@ -296,7 +296,7 @@ Use a variável current_theme como uma lista separada por vírgulas para especif
 Esta é uma lista de todas as opções de configuração do slim e os seus valores padrões.
 
 **Note:** welcome_msg permite 2 variáveis **%host** e **%domain**
-sessionstart_cmd allows **%user** _(execd right before login_cmd)_ e também é permitido em sessionstop_cmd
+sessionstart_cmd allows **%user** *(execd right before login_cmd)* e também é permitido em sessionstop_cmd
 login_cmd permite **%session** e **%theme**
 
 | Nome da Opção | Valor padrão |

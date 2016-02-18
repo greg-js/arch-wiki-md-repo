@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Beginners'_Guide](/index.php/Beginners%27_Guide "Beginners' Guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-1-17，点击[这里](https://wiki.archlinux.org/index.php?title=Beginners'_Guide&diff=0&oldid=415601)可以查看翻译后英文页面的改动。
 
-欢迎，本向导写给 Arch 新用户，但是会尽量做到成为所有用户的参考和信息库。 本文档指导您使用[Arch安装脚本](https://projects.archlinux.org/arch-install-scripts.git/)来安装[Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")：一个简单、轻量级、适合计算机水平较高用户使用的发行版。建议在安装前先浏览一下[FAQ](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。 社区维护的 [ArchWiki](/index.php/Main_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Main page (简体中文)")应该有办法解决遇到的疑难。若在其它地方找不到解决办法，[IRC 频道](/index.php/IRC_channel "IRC channel")([irc://irc.freenode.net/#archlinux-cn](irc://irc.freenode.net/#archlinux-cn)) 和[论坛](https://bbs.archlinux.org/)都是求助的好地方。为了贯彻[Arch之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")，如遇陌生的命令，可输入`man _command_`以查询相关`man`手册页。
+欢迎，本向导写给 Arch 新用户，但是会尽量做到成为所有用户的参考和信息库。 本文档指导您使用[Arch安装脚本](https://projects.archlinux.org/arch-install-scripts.git/)来安装[Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")：一个简单、轻量级、适合计算机水平较高用户使用的发行版。建议在安装前先浏览一下[FAQ](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。 社区维护的 [ArchWiki](/index.php/Main_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Main page (简体中文)")应该有办法解决遇到的疑难。若在其它地方找不到解决办法，[IRC 频道](/index.php/IRC_channel "IRC channel")([irc://irc.freenode.net/#archlinux-cn](irc://irc.freenode.net/#archlinux-cn)) 和[论坛](https://bbs.archlinux.org/)都是求助的好地方。为了贯彻[Arch之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")，如遇陌生的命令，可输入`man *command*`以查询相关`man`手册页。
 
 ## Contents
 
@@ -73,9 +73,9 @@
 
 [控制台键盘布局](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") 默认为`us`（美式键盘映射）。如果您正在使用非[美式](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg")键盘布局，通过以下的命令选择相应的键盘映射表：
 
- `# loadkeys _layout_` 
+ `# loadkeys *layout*` 
 
-将 _layout_ 转换为您的键盘布局，如`fr`，`uk`，`dvorak`或`be-latin1`。[这里](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements "wikipedia:ISO 3166-1 alpha-2")有国家的二位字母编码表。使用命令`localectl list-keymaps`列出所有可用的键盘布局。
+将 *layout* 转换为您的键盘布局，如`fr`，`uk`，`dvorak`或`be-latin1`。[这里](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements "wikipedia:ISO 3166-1 alpha-2")有国家的二位字母编码表。使用命令`localectl list-keymaps`列出所有可用的键盘布局。
 
 要修改终端字体，请阅读 [Fonts (简体中文)](/index.php/Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fonts (简体中文)").
 
@@ -87,10 +87,10 @@
 
 可以用 [ping 命令检查网络是否正常](/index.php/Network_configuration#Check_the_connection "Network configuration")，如果网络不可用，需要 [手动配置网络](/index.php/Network_Configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Configuration (简体中文)")。下面用 [netctl](/index.php/Netctl "Netctl") 做示例。
 
-为了防止冲突，首先停用 _dhcpcd_ 服务，将 `enp0s25` 替换为正确的有线接口：
+为了防止冲突，首先停用 *dhcpcd* 服务，将 `enp0s25` 替换为正确的有线接口：
 
 ```
-# systemctl stop dhcpcd@_enp0s25_.service
+# systemctl stop dhcpcd@*enp0s25*.service
 
 ```
 
@@ -100,10 +100,10 @@
 
 	无线网络连接
 
-使用 [netctl](/index.php/Netctl "Netctl") 的 _wifi-menu_ 连接到[无线网络](/index.php/Wireless_network_configuration "Wireless network configuration"):
+使用 [netctl](/index.php/Netctl "Netctl") 的 *wifi-menu* 连接到[无线网络](/index.php/Wireless_network_configuration "Wireless network configuration"):
 
 ```
-# wifi-menu -o _wlp2s0_
+# wifi-menu -o *wlp2s0*
 
 ```
 
@@ -113,7 +113,7 @@
 
 	其它
 
-有其它配置示例， [静态 IP 地址](/index.php/Network_configuration#Static_IP_address "Network configuration")，将 _netctl_ 示例文件复制到 `/etc/netctl`：
+有其它配置示例， [静态 IP 地址](/index.php/Network_configuration#Static_IP_address "Network configuration")，将 *netctl* 示例文件复制到 `/etc/netctl`：
 
 ```
 # cp /etc/netctl/examples/ethernet-static /etc/netctl
@@ -146,7 +146,7 @@
 
 *   如果您打算安装在 USB 上，请阅读 [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key").
 *   如果您打算为 [LVM](/index.php/LVM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LVM (简体中文)")、[磁盘加密](/index.php/Disk_encryption "Disk encryption") 或 [RAID](/index.php/RAID "RAID") 创建堆栈式块设备，请在此部分加入需要的步骤。
-*   如果您想实现与 Windows 共存的双启动，在 UEFI/GPT 系统上不要格式化 UEFI 分区，因为这个分区包含 Windows _.efi_ 启动文件。而且 Arch 应该按照同样的固件启动模式和本区组合。详见[Dual boot with Windows#Important information](/index.php/Dual_boot_with_Windows#Important_information "Dual boot with Windows").
+*   如果您想实现与 Windows 共存的双启动，在 UEFI/GPT 系统上不要格式化 UEFI 分区，因为这个分区包含 Windows *.efi* 启动文件。而且 Arch 应该按照同样的固件启动模式和本区组合。详见[Dual boot with Windows#Important information](/index.php/Dual_boot_with_Windows#Important_information "Dual boot with Windows").
 
 ### 识别设备
 
@@ -159,7 +159,7 @@
 
 结果中会包含 Arch 安装设备(例如 USB 安装盘)，不是所有设备都适合安装。磁盘设备名一般以 sda, sdb 的形式出现，如果设备上有分区，会以 sda1,sda2 的名称出现。`rom`, `loop` 或 `airoot` 格式的分区可以忽略。
 
-文章后面会用 `sd_xY_` 表示磁盘和分区，请按照您系统的实际状况修改命令。不要直接复制和执行。如果不需要重新分区，可以跳到 [#创建文件系统](#.E5.88.9B.E5.BB.BA.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)，否则继续。
+文章后面会用 `sd*xY*` 表示磁盘和分区，请按照您系统的实际状况修改命令。不要直接复制和执行。如果不需要重新分区，可以跳到 [#创建文件系统](#.E5.88.9B.E5.BB.BA.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)，否则继续。
 
 ### 分区工具
 
@@ -178,7 +178,7 @@ Arch 安装盘中包含了多种分区工具，可以根据分区表的类型进
 
 **警告:** 如果使用不兼容分区表格式的工具，会造成分区表损坏和所有数据丢失。
 
-下面例子里面使用 _parted_，它同时支持 BIOS/MBR 和 UEFI/GPT. 以交互模式启动，可以用 `(parted) help` 查看帮助，用 `(parted) quit` 退出。
+下面例子里面使用 *parted*，它同时支持 BIOS/MBR 和 UEFI/GPT. 以交互模式启动，可以用 `(parted) help` 查看帮助，用 `(parted) quit` 退出。
 
 可以在启动 Arch 安装之前先用 Live 分区系统进行分区，[GParted](/index.php/GParted "GParted") 就很不错，它就有现成的 [Live CD](http://gparted.sourceforge.net/livecd.php).
 
@@ -189,7 +189,7 @@ Arch 安装盘中包含了多种分区工具，可以根据分区表的类型进
 打开需要新建分区表的设备：
 
 ```
-# parted /dev/sd_x_
+# parted /dev/sd*x*
 
 ```
 
@@ -211,7 +211,7 @@ Arch 安装盘中包含了多种分区工具，可以根据分区表的类型进
 
 您可以决定磁盘应该分为多少个区，每个分区又挂载在系统的哪个目录。将分区如何映射至目录（一般称此为挂载点），取决于您的[分区方案](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.86.E5.8C.BA.E6.96.B9.E6.A1.88 "Partitioning (简体中文)")。
 
-*   至少需要创建一个 `/` (_root_) 目录，有些分区类型和 [启动加载器](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")组合有额外的分区要求：
+*   至少需要创建一个 `/` (*root*) 目录，有些分区类型和 [启动加载器](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")组合有额外的分区要求：
 *   BIOS/GPT + [GRUB](/index.php/GRUB "GRUB"): 需要按照 [BIOS 启动分区设置](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") 的方式创建一个 1M 或 2M 的 `EF02` 类型分区.
 *   UEFI 的主板，需要一个 [EFI 系统分区](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface").
 *   如果您需要[加密磁盘](/index.php/Disk_encryption "Disk encryption")，则必须加以调整分区方案。系统安装后，也可以再配置加密文件夹，容器或 home 目录。
@@ -223,21 +223,21 @@ Arch 安装盘中包含了多种分区工具，可以根据分区表的类型进
 用下面命令打开 parted 交互模式：
 
 ```
-# parted /dev/sd_x_
+# parted /dev/sd*x*
 
 ```
 
 用下面命令创建分区：
 
 ```
-(parted) mkpart _part-type_ _fs-type_ _start_ _end_
+(parted) mkpart *part-type* *fs-type* *start* *end*
 
 ```
 
-*   `_part-type_` 是分区类型，可以选择 `primary`, `extended` 或 `logical`，仅用于 MBR 分区表.
-*   `_fs-type_` 是文件系统类型，所有支持的类型列表 [这里](http://www.gnu.org/software/parted/manual/parted.html#mkpart). 这里并不会实际创建文件系统，而是把分区的编码类型写入到磁盘供启动管理器使用。参阅 [Wikipedia:Disk partitioning#PC partition types](https://en.wikipedia.org/wiki/Disk_partitioning#PC_partition_types "wikipedia:Disk partitioning").
-*   `_start_` 是分区的起始位置，可以带[单位](http://www.gnu.org/software/parted/manual/parted.html#unit), 例如 `1M` 指 1MiB.
-*   `_end_` 是设备的结束位置(**不是** 与 `_start_` 值的差)，同样可以带单位，也可以用百分比，例如 `100%` 表示到设备的末尾。
+*   `*part-type*` 是分区类型，可以选择 `primary`, `extended` 或 `logical`，仅用于 MBR 分区表.
+*   `*fs-type*` 是文件系统类型，所有支持的类型列表 [这里](http://www.gnu.org/software/parted/manual/parted.html#mkpart). 这里并不会实际创建文件系统，而是把分区的编码类型写入到磁盘供启动管理器使用。参阅 [Wikipedia:Disk partitioning#PC partition types](https://en.wikipedia.org/wiki/Disk_partitioning#PC_partition_types "wikipedia:Disk partitioning").
+*   `*start*` 是分区的起始位置，可以带[单位](http://www.gnu.org/software/parted/manual/parted.html#unit), 例如 `1M` 指 1MiB.
+*   `*end*` 是设备的结束位置(**不是** 与 `*start*` 值的差)，同样可以带单位，也可以用百分比，例如 `100%` 表示到设备的末尾。
 *   为了不留空隙，分区的开始和结束应该首尾相连。
 
 如果看到下面警告：
@@ -253,11 +253,11 @@ Ignore/Cancel?
 下面命令设置 `/boot` 为启动目录：
 
 ```
-(parted) set _partition_ boot on
+(parted) set *partition* boot on
 
 ```
 
-*   `_partition_` 是分区的编号，从 `print` 命令获取。
+*   `*partition*` 是分区的编号，从 `print` 命令获取。
 
 #### UEFI/GPT 示例
 
@@ -332,36 +332,36 @@ Ignore/Cancel?
 先查看所有分区：
 
 ```
-# lsblk /dev/sd_x_
+# lsblk /dev/sd*x*
 
 ```
 
 如果新创建了 UEFI 系统分区，需要格式化成 `fat32` 或 `vfat32` 文件系统，否则无法启动。Windows 双启动系统不要再格式化。
 
 ```
-# mkfs.vfat -F32 /dev/sd_xY_
+# mkfs.vfat -F32 /dev/sd*xY*
 
 ```
 
 建议用 `ext4` 文件系统格式化其它分区：
 
 ```
-# mkfs.ext4 /dev/sd_xY_
+# mkfs.ext4 /dev/sd*xY*
 
 ```
 
 若您分了一个 [swap](/index.php/Swap_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Swap (简体中文)") 区，也不要忘了格式化并启用它：
 
 ```
-# mkswap /dev/sda_X_
-# swapon /dev/sda_X_
+# mkswap /dev/sda*X*
+# swapon /dev/sda*X*
 
 ```
 
 先挂载 `/` (root) 分区，其它目录都要在 / 分区中创建然后再挂载。在安装环境中用 `/mnt` 目录挂载 root：
 
 ```
-# mount /dev/sd_xR_ /mnt
+# mount /dev/sd*xR* /mnt
 
 ```
 
@@ -377,7 +377,7 @@ Ignore/Cancel?
 
 ```
 # mkdir -p /mnt/boot
-# mount /dev/sd_XY_ /mnt/boot
+# mount /dev/sd*XY* /mnt/boot
 
 ```
 
@@ -394,7 +394,6 @@ Ignore/Cancel?
 mirrorlist 文件也会被 `pacstrap` 复制到新系统，所以最好现在就设置，以中科大源为例：
 
  `# nano /etc/pacman.d/mirrorlist` 
-
 ```
 Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
 ...
@@ -424,7 +423,7 @@ Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
 
 ```
 
-**强烈建议** 在执行完以上命令后，后检查一下生成的 `/mnt/etc/fstab` 文件是否正确。若在运行 _genfstab_ 或是之后发生错误，后续修改请直接手动编辑 `fstab` 文件。详见 [fstab](/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fstab (简体中文)")。
+**强烈建议** 在执行完以上命令后，后检查一下生成的 `/mnt/etc/fstab` 文件是否正确。若在运行 *genfstab* 或是之后发生错误，后续修改请直接手动编辑 `fstab` 文件。详见 [fstab](/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fstab (简体中文)")。
 
 ### chroot
 
@@ -442,7 +441,6 @@ Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
 `/etc/locale.gen`是一个仅包含注释文档的文本文件。指定您需要的本地化类型，只需移除对应行前面的注释符号（`＃`）即可，建议选择帶`UTF-8`的項：
 
  `# nano /etc/locale.gen` 
-
 ```
 en_US.UTF-8 UTF-8
 zh_CN.UTF-8 UTF-8
@@ -477,26 +475,25 @@ zh_TW.UTF-8 UTF-8
 如果您在[#设置键盘布局](#.E8.AE.BE.E7.BD.AE.E9.94.AE.E7.9B.98.E5.B8.83.E5.B1.80) 时就已修改键盘布局和字体过，您就得再相应地编辑 `/etc/vconsole.conf` 以使该变动对新系统生效，比如：
 
  `/etc/vconsole.conf` 
-
 ```
 KEYMAP=de-latin1
 FONT=lat9w-16
 ```
 
-**警告:** 如果您设置的 `KEYMAP` 与 _loadkeys_ 变量并不一样，那当您 [#Set the root password](#Set_the_root_password) 并重启后，可能没法再正常登录新系统了，因为一些键在两种布局的映射下并不一致。
+**警告:** 如果您设置的 `KEYMAP` 与 *loadkeys* 变量并不一样，那当您 [#Set the root password](#Set_the_root_password) 并重启后，可能没法再正常登录新系统了，因为一些键在两种布局的映射下并不一致。
 
 此章节只对您的虚拟终端生效，即对 [Xorg](/index.php/Xorg "Xorg") 无效，详见 [Console fonts](/index.php/Fonts#Console_fonts "Fonts").
 
 ### 时间
 
-可用的时区全集中在 `/usr/share/_Zone_/_SubZone_` 目录里了。选择时区：
+可用的时区全集中在 `/usr/share/*Zone*/*SubZone*` 目录里了。选择时区：
 
 ```
  # tzselect
 
 ```
 
-将 `/etc/localtime` 软链接到 `/usr/share/zoneinfo/_Zone_/_SubZone_`，以上海为例：
+将 `/etc/localtime` 软链接到 `/usr/share/zoneinfo/*Zone*/*SubZone*`，以上海为例：
 
 ```
 # ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
@@ -514,7 +511,7 @@ FONT=lat9w-16
 
 ### 创建初始 ramdisk 环境
 
-在您用 _pacstrap_ 安装 {[linux](https://www.archlinux.org/packages/?name=linux) 时就会自动运行 [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")，大部分用户都可以使用 `mkinitcpio.conf` 默认设置，如果有定制需求，请阅读[re-generate the initramfs image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio")。然后运行：
+在您用 *pacstrap* 安装 {[linux](https://www.archlinux.org/packages/?name=linux) 时就会自动运行 [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")，大部分用户都可以使用 `mkinitcpio.conf` 默认设置，如果有定制需求，请阅读[re-generate the initramfs image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio")。然后运行：
 
 ```
 # mkinitcpio -p linux
@@ -577,7 +574,7 @@ FONT=lat9w-16
 设置个您喜欢的[主机名](/index.php/Network_configuration#Set_the_hostname "Network configuration")，例如：
 
 ```
-# echo _**myhostname**_ > /etc/hostname
+# echo ***myhostname*** > /etc/hostname
 
 ```
 
@@ -585,17 +582,17 @@ FONT=lat9w-16
 
 ```
 #<ip-address>	<hostname.domain.org>	<hostname>
-127.0.0.1	localhost.localdomain	localhost	_myhostname_
-::1		localhost.localdomain	localhost	_myhostname_
+127.0.0.1	localhost.localdomain	localhost	*myhostname*
+::1		localhost.localdomain	localhost	*myhostname*
 
 ```
 
 #### 有线网络
 
-如果您只用单一且固定的有线网络连接，启动 [dhcpcd](/index.php?title=Ic&action=edit&redlink=1 "Ic (page does not exist)") 服务，`_interface_` 是您的网络接口名：
+如果您只用单一且固定的有线网络连接，启动 [dhcpcd](/index.php?title=Ic&action=edit&redlink=1 "Ic (page does not exist)") 服务，`*interface*` 是您的网络接口名：
 
 ```
-# systemctl enable dhcpcd@_interface_.service
+# systemctl enable dhcpcd@*interface*.service
 
 ```
 
@@ -610,7 +607,7 @@ FONT=lat9w-16
 
 可能还需要[安装固件](/index.php/Wireless_network_configuration#Installing_driver.2Ffirmware "Wireless network configuration")。
 
-如果使用_wifi-menu_ 配置网络，在执行完所有设置之后、重启然后再进行设置，以避免进程间冲突。详情请阅读 [Netctl](/index.php/Netctl "Netctl")。
+如果使用*wifi-menu* 配置网络，在执行完所有设置之后、重启然后再进行设置，以避免进程间冲突。详情请阅读 [Netctl](/index.php/Netctl "Netctl")。
 
 ### 卸载分区并重启系统
 
@@ -628,7 +625,7 @@ FONT=lat9w-16
 
 ```
 
-_systemd_ 在关机时会自动卸载分区，为了确保安全，可以用 `umount -R /mnt` 手动卸载分区。如果分区被占用，可以用 [fuser](https://en.wikipedia.org/wiki/fuser_(Unix) "wikipedia:fuser (Unix)")检查原因。
+*systemd* 在关机时会自动卸载分区，为了确保安全，可以用 `umount -R /mnt` 手动卸载分区。如果分区被占用，可以用 [fuser](https://en.wikipedia.org/wiki/fuser_(Unix) "wikipedia:fuser (Unix)")检查原因。
 
 重启计算机：
 
@@ -641,7 +638,7 @@ _systemd_ 在关机时会自动卸载分区，为了确保安全，可以用 `um
 
 ## 安装之后
 
-您现在应该有了一个完全可用的 Arch 系统，以此为起点，您可以将这些优雅的工具加以改造成理想的样子。_强烈_建议您阅读 [General recommendations (简体中文)](/index.php/General_recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "General recommendations (简体中文)")，特别是前两个部分.
+您现在应该有了一个完全可用的 Arch 系统，以此为起点，您可以将这些优雅的工具加以改造成理想的样子。*强烈*建议您阅读 [General recommendations (简体中文)](/index.php/General_recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "General recommendations (简体中文)")，特别是前两个部分.
 
 请继续阅读 [General recommendations (简体中文)](/index.php/General_recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "General recommendations (简体中文)") 的剩余页面，它包含了安装后的众多教程，包括设置图形用户界面，声卡和触摸板等等。
 

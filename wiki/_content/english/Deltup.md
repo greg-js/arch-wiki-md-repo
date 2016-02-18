@@ -16,7 +16,6 @@ Delta updates save time and size in downloading and updating the system. Package
 Edit `/etc/pacman.d/mirrorlist` and add the proper repository:
 
  `/etc/pacman.d/mirrorlist` 
-
 ```
 ##
 ## Arch Linux repository mirrorlist
@@ -31,7 +30,6 @@ Server = http://delta.archlinux.fr/$repo/os/$arch
 Then edit `/etc/pacman.conf` uncommenting (removing `#`) the option `UseDelta`:
 
  `/etc/pacman.conf` 
-
 ```
 .....
 # Misc options (all disabled by default)
@@ -47,7 +45,6 @@ TotalDownload
 Check before activating the `UseDelta` option how much we need to download to full update the system.
 
  `#  pacman -Syu` 
-
 ```
 
  ...
@@ -63,7 +60,6 @@ Choose `n` and not confirm the update. As shown the package to be downloaded now
 After enabling delta, check again for the updates available (now the option `UseDelta` is enabled):
 
  `# pacman -Syu` 
-
 ```
 
  ...

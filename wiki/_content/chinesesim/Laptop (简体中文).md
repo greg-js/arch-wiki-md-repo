@@ -94,7 +94,7 @@ Install [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") wi
 ```
 
 *   The configuration files can be found in /etc/laptop-mode/laptop-mode.conf and /etc/laptop-mode/conf.d/*
-*   Be sure to add _laptop-mode_ to the DAEMONS array in /etc/rc.conf
+*   Be sure to add *laptop-mode* to the DAEMONS array in /etc/rc.conf
 *   Be sure to go through the config files, as many powersaving features are not enabled by default.
 
 See [this thread](https://bbs.archlinux.org/viewtopic.php?id=39258) for more information.
@@ -111,11 +111,11 @@ It seems like the option is going to be enabled by default in kernel 2.6.36; if 
 
 ### Suggestions for saving power
 
-_Note:_ Not only are these not needed if using laptop-mode-tools, but using laptopmode also gives you the benefit of applying them only when desired (ie, while the AC cable is unplugged).
+*Note:* Not only are these not needed if using laptop-mode-tools, but using laptopmode also gives you the benefit of applying them only when desired (ie, while the AC cable is unplugged).
 
 #### Disk-related tweaks
 
-Disable file access time: every time you access (read) a file the filesystem writes an access time to the file metadata. You can disable this on individual files by using the chattr command, or you can enable it on an entire disk by setting the _noatime_ option in your fstab, as follows:
+Disable file access time: every time you access (read) a file the filesystem writes an access time to the file metadata. You can disable this on individual files by using the chattr command, or you can enable it on an entire disk by setting the *noatime* option in your fstab, as follows:
 
 ```
 /dev/sda1          /          ext3          defaults,noatime          1  2
@@ -124,7 +124,7 @@ Disable file access time: every time you access (read) a file the filesystem wri
 
 [Source](http://www.faqs.org/docs/securing/chap6sec73.html)
 
-	_Note_: disabling atime causes troubles with [mutt](/index.php/Mutt "Mutt") and other applications that make use of file timestamps. Consider compromising between performance and compatibility by using mount option relatime instead, or look into [mutt work-around for noatime](http://wiki.mutt.org/?MaildirFormat).
+	*Note*: disabling atime causes troubles with [mutt](/index.php/Mutt "Mutt") and other applications that make use of file timestamps. Consider compromising between performance and compatibility by using mount option relatime instead, or look into [mutt work-around for noatime](http://wiki.mutt.org/?MaildirFormat).
 
 To allow the CD/DVD rom to spin down after a while, run the following:
 
@@ -139,16 +139,16 @@ Documented [here](https://bugs.launchpad.net/ubuntu/+source/acpi-support/+bug/59
 
 To prevent your laptop hard drive from spinning down too often (result of too aggressive APM defaults) do the following:
 
-Add the following to _/etc/rc.local_
+Add the following to */etc/rc.local*
 
 ```
-hdparm -B 254 /dev/sdX _where X is your hard drive device_
+hdparm -B 254 /dev/sdX *where X is your hard drive device*
 
 ```
 
 You can also set it to 255 to completely disable spinning down. You may wish to set a lower value if you move your laptop around as lower values park the heads more often and reduce the chance of damage to your hard disk while it is being moved. If you don't move your laptop at all when you are using it, then 255 or 254 is probably best. If you do, then you might want to try a lower value. A value like 128 might be a good middle-ground.
 
-Add the following to _/etc/pm/sleep.d/50-hdparm_pm_
+Add the following to */etc/pm/sleep.d/50-hdparm_pm*
 
 ```
 #!/bin/sh

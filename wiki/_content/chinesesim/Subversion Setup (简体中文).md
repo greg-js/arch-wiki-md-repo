@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Subversion_Setup](/index.php/Subversion_Setup "Subversion Setup") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-03-04，点击[这里](https://wiki.archlinux.org/index.php?title=Subversion_Setup&diff=0&oldid=248377)可以查看翻译后英文页面的改动。
 
-_"[Apache Subversion](http://subversion.apache.org/features.html) 是一套功能全面的版本控制系统，最初被设计为[CVS](/index.php/CVS "CVS")的改进版本。其后Subversion的发展大大超出了取代CVS的原始目标，但它的基本模型、设计和接口仍然受到了这一目标的深刻影响。"_
+*"[Apache Subversion](http://subversion.apache.org/features.html) 是一套功能全面的版本控制系统，最初被设计为[CVS](/index.php/CVS "CVS")的改进版本。其后Subversion的发展大大超出了取代CVS的原始目标，但它的基本模型、设计和接口仍然受到了这一目标的深刻影响。"*
 
 本文主要介绍架设svn服务器的方法。有两种流行的svn服务器，内建的`svnserve`以及更高级的选择——结合了svn插件的 [Apache](/index.php/LAMP "LAMP")。
 
@@ -64,7 +64,6 @@ _"[Apache Subversion](http://subversion.apache.org/features.html) 是一套功�
 请确认下列模块加载指令在文件中列出。如果没有请添加它们(通常你只需要添加后两行)，保持先后顺序：
 
  `/etc/httpd/conf/httpd.conf` 
-
 ```
 LoadModule dav_module           modules/mod_dav.so
  LoadModule dav_fs_module        modules/mod_dav_fs.so
@@ -159,7 +158,7 @@ USER_NAME = rw
 创建 `branches` `tags` `trunk` 目录结构：
 
 ```
-$ cd /path/to/directory_of_choice
+$ cd /path/to/directory*of*choice
 $ mkdir branches tags trunk
 
 ```
@@ -252,7 +251,6 @@ sally = barpassword
 在启动服务器之前，编辑配置文件
 
  `/etc/conf.d/svnserve` 
-
 ```
 SVNSERVE_ARGS="-r /path/to/repos --listen-port=4711"
  SVNSERVE_USER="user"

@@ -84,7 +84,7 @@ Note that we set upload_tmp_dir to a folder that is outside the document root of
 
 ## "Disabling" default DocumentRoot
 
-To further harden your setup you can disable the default _DocumentRoot_ in order to not have Apache execute anything as the superuser itself runs as. This procedure does not really disable it, rather points it somewhere where it's not remotely accessible anymore. It can be easily achieved by replacing your default _ServerName_ with the following:
+To further harden your setup you can disable the default *DocumentRoot* in order to not have Apache execute anything as the superuser itself runs as. This procedure does not really disable it, rather points it somewhere where it's not remotely accessible anymore. It can be easily achieved by replacing your default *ServerName* with the following:
 
 ```
 ServerName localhost:80

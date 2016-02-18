@@ -35,7 +35,7 @@ To enable any of the following options to fix issues, first create a new file `1
 
 ```
 Section "Device"
-    Identifier "_My Device Name_"
+    Identifier "*My Device Name*"
     Driver "openchrome"
 EndSection
 

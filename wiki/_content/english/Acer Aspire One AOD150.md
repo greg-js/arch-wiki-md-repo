@@ -35,7 +35,7 @@ The AOD150 series netbook is known to be available in the following configuratio
 *   External VGA Port
 *   Integrated Digital Microphone
 
-*   _Red items have yet to be covered in detail and require a wiki entry_
+*   *Red items have yet to be covered in detail and require a wiki entry*
 
 ## Arch Installation
 
@@ -45,7 +45,7 @@ The obvious consideration for netbooks in general is the lack of CD/DVD drives. 
 
 The following tips are specific to the Acer Aspire One (also referred as the AAO or AA1) and may be of some help during installation.
 
-If a broadband Internet connection is available it is highly recommended that Arch be installed with the smaller FTP image. If you plan to have a desktop environment (KDE, GNOME, etc) then the majority of the packages you require will come from the Internet repositories and _not_ the Arch USB itself. This method will get you up and running in the shortest amount of time. Simply download the FTP USB image, write to a USB drive and restart your computer.
+If a broadband Internet connection is available it is highly recommended that Arch be installed with the smaller FTP image. If you plan to have a desktop environment (KDE, GNOME, etc) then the majority of the packages you require will come from the Internet repositories and *not* the Arch USB itself. This method will get you up and running in the shortest amount of time. Simply download the FTP USB image, write to a USB drive and restart your computer.
 
 The following steps assume you are connected to the Internet with a wired Ethernet connection.
 

@@ -10,7 +10,7 @@
         *   [2.2.1 Head of the script](#Head_of_the_script)
         *   [2.2.2 Start variables](#Start_variables)
         *   [2.2.3 Populate an array](#Populate_an_array)
-            *   [2.2.3.1 With a _While_ loop](#With_a_While_loop)
+            *   [2.2.3.1 With a *While* loop](#With_a_While_loop)
         *   [2.2.4 Loops for restoration](#Loops_for_restoration)
 *   [3 Enough if files are few](#Enough_if_files_are_few)
 
@@ -18,8 +18,8 @@
 
 **Note:**
 
-*   To list only files where _photorec_ could restore original names you can add `if(index(A,"_") != 0)` before `print` in _awk_. You can also use the _awk_ as stand alone command on an already created file to list only file names or extensions you need.
-*   To list only extensions you can use `D=B;gsub(/[^*\.]*\./,"",D)` in _awk_ that will cut everything until the last `.` dot that will show only _gz_ even from _tar.gz_ extension or you can use _sub_ instead of _gsub_ that will cut only until the first dot in the filename.
+*   To list only files where *photorec* could restore original names you can add `if(index(A,"_") != 0)` before `print` in *awk*. You can also use the *awk* as stand alone command on an already created file to list only file names or extensions you need.
+*   To list only extensions you can use `D=B;gsub(/[^*\.]*\./,"",D)` in *awk* that will cut everything until the last `.` dot that will show only *gz* even from *tar.gz* extension or you can use *sub* instead of *gsub* that will cut only until the first dot in the filename.
 
 When files are restored it might be that many of them have the same [hash sum](https://en.wikipedia.org/wiki/Checksum "wikipedia:Checksum") and by making a list of the unique files including only one of the found duplicate files you will speed up gathering extra information about files with other utilities by using stored file names and path in it.
 
@@ -43,10 +43,9 @@ See also [crctk-git](https://aur.archlinux.org/packages/crctk-git/) for working 
 
 ### Clean up and sort file names
 
-To make destination file names more _bash_ friendly you can remove special symbols, spaces and sort by second column for a better overview of duplicate names with different checksums. To the duplicate file names will be added a number with `¤` as a separator in front of the _restored_filename_. The script will use file created by script from above and print result to _stdout_.
+To make destination file names more *bash* friendly you can remove special symbols, spaces and sort by second column for a better overview of duplicate names with different checksums. To the duplicate file names will be added a number with `¤` as a separator in front of the *restored_filename*. The script will use file created by script from above and print result to *stdout*.
 
  `clean_and_sort.sh` 
-
 ```
 if [ ! -z "$1" ];then
   awk -F"|" '{B=$2;
@@ -74,10 +73,9 @@ File names with special symbols especially if file names begins with them are ha
 
 ### Creation of a file with data for arrays
 
-In this example the [xdg-mime](/index.php/Xdg-open#get_mime_type "Xdg-open") is used to gather information about the mime types but the `file --mime-type -b` and `file -i -b` commands does the same output as the `xdg-mime query filetype` command, with more or less details. This script will collect a lot of more additional information about the files into the **info-mime-size-db.txt**. Put the script in the destination directory that you used in _photorec_, make it executable and use path to files from the list with unique checksums described from above. e.g. `awk -F" | " '{system("start-collect-file-info.sh "$3" "$1" "$2)}' _file_list-unique_checksums_`.
+In this example the [xdg-mime](/index.php/Xdg-open#get_mime_type "Xdg-open") is used to gather information about the mime types but the `file --mime-type -b` and `file -i -b` commands does the same output as the `xdg-mime query filetype` command, with more or less details. This script will collect a lot of more additional information about the files into the **info-mime-size-db.txt**. Put the script in the destination directory that you used in *photorec*, make it executable and use path to files from the list with unique checksums described from above. e.g. `awk -F" | " '{system("start-collect-file-info.sh "$3" "$1" "$2)}' *file_list-unique_checksums*`.
 
  `start-collect-file-info.sh` 
-
 ```
 #!/bin/bash
 if [ ! -z "$1" ] && [ ! -z "$2" ] && [ ! -z "$3" ]; then
@@ -99,7 +97,7 @@ This will help you more to understand the script and make your own scripts base 
 **Warning:**
 
 *   Remove the `echo` command in front of the `cp` and `mkdir` otherwise the script will only show what is gonna to be done without restoring anything to a destination, do a dry run. To use `echo` command is good for verify that settings for filenames and destinations looks correctly.
-*   Those scripts are only examples for restoration of files from folders created by _photorec_, be careful!
+*   Those scripts are only examples for restoration of files from folders created by *photorec*, be careful!
 
 #### Head of the script
 
@@ -129,9 +127,9 @@ CountToLimit="0"
 
 **Warning:** Arrays become populated by reading data from a `info-mime-size-db.txt` file. Otherwise the script will not work correctly!
 
-##### With a _While_ loop
+##### With a *While* loop
 
-Here will be a short examples about how to speed up population of the array from a file with patterns by using [bash standard expressions](http://tldp.org/LDP/abs/html/string-manipulation.html) instead of _awk_, _grep_ and _sed_. The `ArrayOfFiles` array will contain full path to the file and the `ArrayOfsorted` will contain original names restored by _photorec_ but without random generated part.
+Here will be a short examples about how to speed up population of the array from a file with patterns by using [bash standard expressions](http://tldp.org/LDP/abs/html/string-manipulation.html) instead of *awk*, *grep* and *sed*. The `ArrayOfFiles` array will contain full path to the file and the `ArrayOfsorted` will contain original names restored by *photorec* but without random generated part.
 
 ```
 WhileArray=0;
@@ -174,5 +172,5 @@ done
 
 ## Enough if files are few
 
-If it is not so many files with the same extension then it will be enough to use something like `find -name *.xcf -exec copy "{}" $HOME/Desktop \;` to avoid the _overload_ of a destination folder you can calculate how many files are found `find -type f -name *xcf | wc -l`.
+If it is not so many files with the same extension then it will be enough to use something like `find -name *.xcf -exec copy "{}" $HOME/Desktop \;` to avoid the *overload* of a destination folder you can calculate how many files are found `find -type f -name *xcf | wc -l`.
 **Note:** The photorec utility stores up to 500 recovered files in a single folder.

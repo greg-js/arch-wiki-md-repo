@@ -66,7 +66,7 @@
 
 GRUB legacy的配置文件`menu.lst` 应该大致如下进行编辑:
 
-使用固定的`/dev/sda_X_`:
+使用固定的`/dev/sda*X*`:
 
 ```
 root (hd0,0)
@@ -126,7 +126,7 @@ initrd /boot/initramfs-linux.img
 
 ### Syslinux
 
-使用固定的`/dev/sda_X_`:
+使用固定的`/dev/sda*X*`:
 
 ```
 LABEL Arch
@@ -193,14 +193,13 @@ i686 架构可以在 32位和 64位系统上使用，而且 32位二进制软件
 *   你也许希望[journald](/index.php/Systemd#Journal "Systemd")将日志储存到内存中,例如新建这样的配置文件来实现 :
 
  `/etc/systemd/journald.conf.d/usbstick.conf` 
-
 ```
 [Journal]
 Storage=volatile
 RuntimeMaxUse=30M
 ```
 
-*   要在web浏览器或者其他应用没有写入关键数据时停用`fsync`和相关的系统调用,可以使用来自[libeatmydata](https://aur.archlinux.org/packages/libeatmydata/)的_eatmydata_来避免过多的系统调用:
+*   要在web浏览器或者其他应用没有写入关键数据时停用`fsync`和相关的系统调用,可以使用来自[libeatmydata](https://aur.archlinux.org/packages/libeatmydata/)的*eatmydata*来避免过多的系统调用:
 
 ```
 $ eatmydata firefox

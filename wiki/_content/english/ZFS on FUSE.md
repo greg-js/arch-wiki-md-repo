@@ -46,7 +46,7 @@ Briefly, you will want to create a pool (as root):
 **Warning:** Always try to use id names instead when working with ZFS, otherwise import errors will occur.
 
 ```
-# zpool create mypool /dev/disk/by-id/_id-to-partition_
+# zpool create mypool /dev/disk/by-id/*id-to-partition*
 
 ```
 
@@ -120,7 +120,7 @@ The exported shares and their options can be listed as follows:
 *   It does not work to use only `zfs set sharenfs=on mypool/my1stdataset` - it is not possible to mount such a share from other computers.
 *   Only NFS version 3 seems to be supported for readonly (`ro`) shares (use `mount servername:/mypool/my1stdataset /mnt -o vers&#613,defaults` to force that version)
 *   It does not work to use "*" as shortcut for any host name. Use the actual IP address/mask of NFS clients list.
-*   Running subsequent `zfs set sharenfs="10.1.0.3:rw" mypool/my1stdataset` will _add_ the extra host to the existing exports.
+*   Running subsequent `zfs set sharenfs="10.1.0.3:rw" mypool/my1stdataset` will *add* the extra host to the existing exports.
 *   To remove existing exports, run `zfs set sharenfs=off mypool/my1stdataset`.
 *   To enable sharing after reboot, put `zfs share -a" to your /etc/rc.local`.
 *   It is possible to use also the regular way of exporting NFS shares via `/etc/exports`, however, do not set it up for the shares, which are exported by ZFS directly!

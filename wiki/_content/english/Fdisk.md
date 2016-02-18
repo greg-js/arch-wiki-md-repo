@@ -11,19 +11,19 @@
 
 ### Gdisk usage summary
 
-Using GPT, the utility for editing the partition table is called _gdisk_. It can perform partition alignment automatically on a 2048 sector (or 1024KiB) block size base which should be compatible with the vast majority of SSDs if not all. GNU parted also supports GPT, but is [less user-friendly](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) for aligning partitions. The environment provided by the Arch install ISO includes the _gdisk_ command. If you need it later on in the installed system, _gdisk_ is available in the [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package.
+Using GPT, the utility for editing the partition table is called *gdisk*. It can perform partition alignment automatically on a 2048 sector (or 1024KiB) block size base which should be compatible with the vast majority of SSDs if not all. GNU parted also supports GPT, but is [less user-friendly](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) for aligning partitions. The environment provided by the Arch install ISO includes the *gdisk* command. If you need it later on in the installed system, *gdisk* is available in the [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package.
 
-A summary of the typical usage of _gdisk_:
+A summary of the typical usage of *gdisk*:
 
-*   Start _gdisk_ against your drive as root (_disk-device_ may be e.g. `/dev/sda`):
+*   Start *gdisk* against your drive as root (*disk-device* may be e.g. `/dev/sda`):
 
-	 `# gdisk _disk-device_` 
+	 `# gdisk *disk-device*` 
 
 *   If the drive is brand new or if you are wanting to start over, create a new empty GUID partition table with the `o` command.
 *   Create a new partition with the `n` command (primary type/1st partition).
-*   Assuming the partition is new, _gdisk_ will pick the highest possible alignment. Otherwise, it will pick the largest power of two that divides all partition offsets.
-*   If choosing to start on a sector before the 2048th _gdisk_ will automatically shift the partition start to the 2048th disk sector. This is to ensure a 2048-sectors alignment (as a sector is 512B, this is a 1024KiB alignment which should fit any SSD NAND erase block).
-*   Use the `+_x_{M,G}` format to extend the partition _x_ mebibytes or gibibytes, if choosing a size that is not a multiple of the alignment size (1024kiB), _gdisk_ will shrink the partition to the nearest inferior multiple. For example, if you want to create a 15GiB partition, you would enter `+15G`. To take all of the remaining space, press enter right away, or enter `+0` instead.
+*   Assuming the partition is new, *gdisk* will pick the highest possible alignment. Otherwise, it will pick the largest power of two that divides all partition offsets.
+*   If choosing to start on a sector before the 2048th *gdisk* will automatically shift the partition start to the 2048th disk sector. This is to ensure a 2048-sectors alignment (as a sector is 512B, this is a 1024KiB alignment which should fit any SSD NAND erase block).
+*   Use the `+*x*{M,G}` format to extend the partition *x* mebibytes or gibibytes, if choosing a size that is not a multiple of the alignment size (1024kiB), *gdisk* will shrink the partition to the nearest inferior multiple. For example, if you want to create a 15GiB partition, you would enter `+15G`. To take all of the remaining space, press enter right away, or enter `+0` instead.
 *   Select the partition's type id, the default, `Linux filesystem` (code `8300`), should be fine for most use. Press `L` to show the codes list. If planning to use LVM select `Linux LVM` (`8e00`).
 *   Assign other partitions in a like fashion.
 *   Write the table to disk and exit via the `w` command.
@@ -31,26 +31,26 @@ A summary of the typical usage of _gdisk_:
 
 ## Using MBR - legacy method
 
-Using MBR, the utility for editing the partition table is called _fdisk_. Recent versions of _fdisk_ have abandoned the deprecated system of using cylinders as the default display unit, as well as MS-DOS compatibility by default. The latest _fdisk_ automatically aligns all partitions to 2048 sectors, or 1024 KiB, which should work for all EBS sizes that are known to be used by SSD manufacturers. This means that the default settings will give you proper alignment.
+Using MBR, the utility for editing the partition table is called *fdisk*. Recent versions of *fdisk* have abandoned the deprecated system of using cylinders as the default display unit, as well as MS-DOS compatibility by default. The latest *fdisk* automatically aligns all partitions to 2048 sectors, or 1024 KiB, which should work for all EBS sizes that are known to be used by SSD manufacturers. This means that the default settings will give you proper alignment.
 
-Note that in the olden days, _fdisk_ used cylinders as the default display unit, and retained an MS-DOS compatibility quirk that messed with SSD alignment. Therefore one will find many guides around the internet from around 2008-2009 making a big deal out of getting everything correct. With the latest _fdisk_, things are much simpler, as reflected in this guide.
+Note that in the olden days, *fdisk* used cylinders as the default display unit, and retained an MS-DOS compatibility quirk that messed with SSD alignment. Therefore one will find many guides around the internet from around 2008-2009 making a big deal out of getting everything correct. With the latest *fdisk*, things are much simpler, as reflected in this guide.
 
 ### Fdisk usage summary
 
-*   Start _fdisk_ against your drive as root (_disk-device_ may be e.g. `/dev/sda`):
+*   Start *fdisk* against your drive as root (*disk-device* may be e.g. `/dev/sda`):
 
-	 `# fdisk _disk-device_` 
+	 `# fdisk *disk-device*` 
 
 *   If the drive is brand new or if you are wanting to start over, create a new empty DOS partition table with the `o` command.
 *   Create a new partition with the `n` command (primary type/1st partition).
-*   Use the `+_x_G` format to extend the partition _x_ gibibytes. For example, if you want to create a 15GiB partition, you would enter `+15G`
+*   Use the `+*x*G` format to extend the partition *x* gibibytes. For example, if you want to create a 15GiB partition, you would enter `+15G`
 *   Change the partition's system id from the default type of Linux (`type 83`) to the desired type via the `t` command. This is an optional step should the user wish to create another type of partition for example, swap, NTFS, LVM, etc. Note that a complete listing of all valid partition types is available via the `l` command.
 *   Assign other partitions in a like fashion.
 *   Write the table to disk and exit via the `w` command.
 
 ## Using cgdisk to create GPT partitions
 
-Launch _cgdisk_ with:
+Launch *cgdisk* with:
 
 ```
 # cgdisk /dev/sda
@@ -61,12 +61,12 @@ Launch _cgdisk_ with:
 
 **Root:**
 
-*   Choose _New_ (or press `N`) – `Enter` for the first sector (2048) – type in `15G` – `Enter` for the default hex code (8300) – `Enter` for a blank partition name.
+*   Choose *New* (or press `N`) – `Enter` for the first sector (2048) – type in `15G` – `Enter` for the default hex code (8300) – `Enter` for a blank partition name.
 
 **Home:**
 
 *   Press the down arrow a couple of times to move to the larger free space area.
-*   Choose _New_ (or press `N`) – `Enter` for the first sector – `Enter` to use the rest of the drive (or you could type in the desired size; for example `30G`) – `Enter` for the default hex code (8300) – `Enter` for a blank partition name.
+*   Choose *New* (or press `N`) – `Enter` for the first sector – `Enter` to use the rest of the drive (or you could type in the desired size; for example `30G`) – `Enter` for the default hex code (8300) – `Enter` for a blank partition name.
 
 Here is what it should look like:
 
@@ -81,13 +81,13 @@ Part. #     Size        Partition Type            Partition Name
 
 Double check and make sure that you are happy with the partition sizes as well as the partition table layout before continuing.
 
-If you would like to start over, you can simply select _Quit_ (or press `Q`) to exit without saving changes and then restart _cgdisk_.
+If you would like to start over, you can simply select *Quit* (or press `Q`) to exit without saving changes and then restart *cgdisk*.
 
-If you are satisfied, choose _Write_ (or press `Shift+W`) to finalize and to write the partition table to the drive. Type `yes` and choose _Quit_ (or press `Q`) to exit without making any more changes.
+If you are satisfied, choose *Write* (or press `Shift+W`) to finalize and to write the partition table to the drive. Type `yes` and choose *Quit* (or press `Q`) to exit without making any more changes.
 
 ## Using fdisk to create MBR partitions
 
-Launch _fdisk_ with:
+Launch *fdisk* with:
 
 ```
 # fdisk /dev/sda
@@ -145,4 +145,4 @@ Syncing disks.
 
 ```
 
-In case this does not work because _fdisk_ encountered an error, you can use the `q` command to exit.
+In case this does not work because *fdisk* encountered an error, you can use the `q` command to exit.

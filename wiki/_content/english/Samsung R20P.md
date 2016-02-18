@@ -12,7 +12,7 @@
 *   [6 Troubleshooting](#Troubleshooting_2)
     *   [6.1 Yet untested](#Yet_untested)
 *   [7 Resources](#Resources)
-    *   [7.1 Output of _lscpi -nn_](#Output_of_lscpi_-nn)
+    *   [7.1 Output of *lscpi -nn*](#Output_of_lscpi_-nn)
 
 ### Hardware specification
 
@@ -57,7 +57,7 @@ This laptop requires a bit tweaking to make it work without glitches on Arch Lin
 
 ### Troubleshooting
 
-If you get **hda-intel: Invalid position buffer, using LPIB read method instead** message from _dmesg_ or _/var/log/everything.log_ edit your _/etc/modprobe.d/modprobe.conf_ as root and write :
+If you get **hda-intel: Invalid position buffer, using LPIB read method instead** message from *dmesg* or */var/log/everything.log* edit your */etc/modprobe.d/modprobe.conf* as root and write :
 
 ```
 options snd-hda-intel enable=1 index=0 position_fix=1
@@ -66,7 +66,7 @@ options snd-hda-intel enable=1 index=0 position_fix=1
 
 ## Touchpad
 
-See the [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") page for instructions. Currently there are some issues with the touchpad which causes enormus CPU usage, freezes and lock-ups. To fix that open, again as root, _/boot/grub/menu.lst_ and in the end of _kernel_ section write :
+See the [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") page for instructions. Currently there are some issues with the touchpad which causes enormus CPU usage, freezes and lock-ups. To fix that open, again as root, */boot/grub/menu.lst* and in the end of *kernel* section write :
 
 ```
 i8042.nomux=1 hpet=disable
@@ -75,7 +75,7 @@ i8042.nomux=1 hpet=disable
 
 ## Wireless
 
-**Note:** Kernel 2.6.27 contains an updated _ath5k_ driver, wireless works out of the box. (wlan0)
+**Note:** Kernel 2.6.27 contains an updated *ath5k* driver, wireless works out of the box. (wlan0)
 
 # VGA Out
 
@@ -85,7 +85,7 @@ Proper resolution of the secondary monitor is detected after an X server restart
 
 *   Suspend and Hibernation doesn't work with gnome-power-utils, but they work with [pm-utils](/index.php/Pm-utils "Pm-utils").
 
-*   Fn keys currently do not work with _radeonhd_ driver, but they work with _fglrx_ , but not all of them.
+*   Fn keys currently do not work with *radeonhd* driver, but they work with *fglrx* , but not all of them.
 
 ## Yet untested
 
@@ -94,7 +94,7 @@ Proper resolution of the secondary monitor is detected after an X server restart
 
 # Resources
 
-### Output of _lscpi -nn_
+### Output of *lscpi -nn*
 
 ```
  00:00.0 Host bridge [0600]: ATI Technologies Inc Radeon Xpress 7930 Host Bridge [1002:7930]

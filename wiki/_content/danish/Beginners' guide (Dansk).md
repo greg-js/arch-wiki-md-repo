@@ -85,7 +85,7 @@
         *   [5.3.2 /etc/pacman.conf](#.2Fetc.2Fpacman.conf)
         *   [5.3.3 /etc/pacman.d/mirrorlist](#.2Fetc.2Fpacman.d.2Fmirrorlist)
 *   [6 Opdatere systemet](#Opdatere_systemet)
-    *   [6.1 _Læg mærke til, om der sker en større kerneopdatering._](#L.C3.A6g_m.C3.A6rke_til.2C_om_der_sker_en_st.C3.B8rre_kerneopdatering.)
+    *   [6.1 *Læg mærke til, om der sker en større kerneopdatering.*](#L.C3.A6g_m.C3.A6rke_til.2C_om_der_sker_en_st.C3.B8rre_kerneopdatering.)
     *   [6.2 Det gode ved 'Rolling Release'](#Det_gode_ved_.27Rolling_Release.27)
     *   [6.3 Lær Pacman at kende](#L.C3.A6r_Pacman_at_kende)
     *   [6.4 Tilføj en bruger og sæt grupper op](#Tilf.C3.B8j_en_bruger_og_s.C3.A6t_grupper_op)
@@ -178,7 +178,7 @@ Dette dokument vil guide dig igennem installation og konfiguration af [Arch Linu
 *   [BSD stil](/index.php?title=Arch_Boot_Process_(Dansk)&action=edit&redlink=1 "Arch Boot Process (Dansk) (page does not exist)") opstartsscripts, med en centraliseret konfigurationsfil
 *   [mkinitcpio](/index.php/Mkinitcpio_(Dansk) "Mkinitcpio (Dansk)"): En simpel og dynamisk initramfs-skaber
 *   [Pacman](/index.php/Pacman_(Dansk) "Pacman (Dansk)") pakkehåndtering er letvægt og hurtigt, med et minimalt hukommelsesforbrug
-*   [Arch byggesystem](/index.php/Arch_Build_System_(Dansk) "Arch Build System (Dansk)"): Et _ports_-lignende pakkebygningssystem; giver en simpel metode til at skabe pakker til Arch Linux
+*   [Arch byggesystem](/index.php/Arch_Build_System_(Dansk) "Arch Build System (Dansk)"): Et *ports*-lignende pakkebygningssystem; giver en simpel metode til at skabe pakker til Arch Linux
 *   [Arch brugerpakkelager](/index.php/Arch_User_Repository_(Dansk) "Arch User Repository (Dansk)"): Tilbyder tusindvis af brugerbidragede pakkescripts samt muligheden for at dele dine egne
 
 ### Licens
@@ -187,13 +187,13 @@ Arch Linux, Pacman, dokumentationen og scripts er copyrightede ©2002-2007 Judd 
 
 ### Arch principper og filosofi
 
-_**Princippet bag Arch Linux' design er at holde det [enkelt](/index.php/The_Arch_Way_(Dansk) "The Arch Way (Dansk)").**_
+***Princippet bag Arch Linux' design er at holde det [enkelt](/index.php/The_Arch_Way_(Dansk) "The Arch Way (Dansk)").***
 
 Bemærk at 'enkelt' i denne kontekst ikke betyder, at det er let eller begyndervenligt, men nærmere at det er uden unødvendige tillæg, ændringer eller komplikationer. Kort sagt er det en elegant og minimalistisk tilnærmelse.
 
-_"Enkelt' defineres ud fra et teknisk standpunkt og ikke i brugsøjemed. Det er bedre at bære teknisk elegant med en højere indlæringskurve, end at være let anvendeligt og teknisk noget juks." -Aaron Griffin_
+*"Enkelt' defineres ud fra et teknisk standpunkt og ikke i brugsøjemed. Det er bedre at bære teknisk elegant med en højere indlæringskurve, end at være let anvendeligt og teknisk noget juks." -Aaron Griffin*
 
-Occam's barberblad : _Entia non sunt multiplicanda praeter necessitatem_ eller "Entiteten bør ikke multiplikeres unødvendigt." Med udtrykket 'barberblad' menes: Handlingen at barbere unødvendige forudsætninger og komplikationer væk for at opnå den enkleste forklaring, metode eller teori.
+Occam's barberblad : *Entia non sunt multiplicanda praeter necessitatem* eller "Entiteten bør ikke multiplikeres unødvendigt." Med udtrykket 'barberblad' menes: Handlingen at barbere unødvendige forudsætninger og komplikationer væk for at opnå den enkleste forklaring, metode eller teori.
 
 *   Du vil måske printe guiden ud (ca. 52 sider). Den kan være nyttig som brugerreference.
 *   Hvis du vil føje noget til denne wiki, så inkludér venligst såvel 'hvorfor' som 'hvordan', hvor det er passende. Den bedste dokumentation lærer os både 'hvordan' og 'hvorfor'!
@@ -220,7 +220,7 @@ Vær klar over, at Arch Linux' installationprocedure, sikkert er noget forskelli
 
 Systemet i Arch Linux konfigureres ved at redigere tekstfiler. Det tilbyder ingen grafiske værktøjer og vil ikke "holde dig i hånden" under opsætning og tilpasning. Det er heller ikke designet til at stille dig hindringer i vejen. Husk også at Arch Linux er rettet mod kompetente brugere af GNU/Linux, ligesom det er rettet mod brugere, der er villige til at investere den fornødne tid til at lære om systemet mekanismer.
 
-_Formålet med Arch Linux' designprincipper er at holde det enkelt._
+*Formålet med Arch Linux' designprincipper er at holde det enkelt.*
 
 Bemærk at ordet 'enkelt' i denne kontekst ikke nødvendigvis er ensbetydende med hverken let eller brugervenligt, men nærmere 'uden unødvendige tillæg, ændringer eller komplikationer'. Kort sagt er Arch Linux en elegant og minimalistisk tilnærmelse.
 
@@ -232,7 +232,7 @@ Bemærk at ordet 'enkelt' i denne kontekst ikke nødvendigvis er ensbetydende me
 
 Du kan finde Arch's officielle installationsmedie [her](https://archlinux.org/download/) fra. Denne guide er lavet til version 2011.08.19.
 
-*   Både **Core** og **Netinstall** images indeholder kun de nødvendige pakker for at oprette et **Arch Linux grundsystem**. _Bemærk at grundsystemet ikke inkluderer et GUI. Det indeholder stort set kun GNU-værktøjer (compiler, assembler, linker, libraries, shell og utilities), Linux-kernen, pacman (Arch's pakkemanager) og nogle få ekstra libraries og moduler._
+*   Både **Core** og **Netinstall** images indeholder kun de nødvendige pakker for at oprette et **Arch Linux grundsystem**. *Bemærk at grundsystemet ikke inkluderer et GUI. Det indeholder stort set kun GNU-værktøjer (compiler, assembler, linker, libraries, shell og utilities), Linux-kernen, pacman (Arch's pakkemanager) og nogle få ekstra libraries og moduler.*
 *   **Core** images tilbyder både installation fra CD og net.
 *   **Netinstall** images er mindre og indeholder ingen pakker i sig selv; hele systemet hentes via nettet.
 *   [Arch64 FAQen](/index.php/Arch64_FAQ "Arch64 FAQ") kan hjælpe dig med at vælge mellem 32- og 64-bit versionerne. **Dual Architecture** image har pakker til begge arkitekturer, så du kan bruge en CD til at installere på både 32- og 64-bit computere.
@@ -254,7 +254,7 @@ md5sum check virker på samme måde.
 
 Brænd .iso image-filen til en CD- eller DVD-skive med dit foretrukne CD/DVD-brænder-drev og -software og fortsæt med [Boot Arch Linux installer](#Boot_Arch_Linux_installer).
 
-**Note:** Kvaliteten af optiske drev og CD-medier varierer meget. Generelt anbefales det at brænde med langsom hastighed for at få en god brænding; nogle brugere anbefaler hastigheder _**helt ned til 4x eller 2x.**_ Hvis du oplever uventet opførsel fra CD'en, så prøv at brænde ved den mindste hastighed understøttet af dit system.
+**Note:** Kvaliteten af optiske drev og CD-medier varierer meget. Generelt anbefales det at brænde med langsom hastighed for at få en god brænding; nogle brugere anbefaler hastigheder ***helt ned til 4x eller 2x.*** Hvis du oplever uventet opførsel fra CD'en, så prøv at brænde ved den mindste hastighed understøttet af dit system.
 
 #### Flash memory device eller USB stick
 
@@ -283,7 +283,6 @@ Den md5sum der returneres skal matche [md5sum'en fra den downloadede archlinux i
 Skriv ISO-filen til drevet
 
  `# dd if=archlinux-2011.08.19-core-i686.iso of=/dev/sdc` 
-
 ```
  744973+0 records in
  744973+0 records out
@@ -294,7 +293,6 @@ Skriv ISO-filen til drevet
 Verificer integriteten:
 
  `# dd if=/dev/sdc count=744973 status=noxfer | md5sum` 
-
 ```
  4850d533ddd343b80507543536258229  -
  744973+0 records in
@@ -373,7 +371,7 @@ som (hvis det virker) ikke disabler kerne-mode-settings.
 
 Se [Intel](/index.php/Intel "Intel")-artiklen for mere information.
 
-Hvis skærmen _ikke_ bliver blank og boot-processen hænger når den prøver at loade kernen, tryk `Tab` for at ændre i kerne-linjen og tilføj følgende:
+Hvis skærmen *ikke* bliver blank og boot-processen hænger når den prøver at loade kernen, tryk `Tab` for at ændre i kerne-linjen og tilføj følgende:
 
 ```
 acpi=off
@@ -390,9 +388,9 @@ Hvis du har et ikke-US keyboard kan du selv vælge at din keymap/console font me
 
 eller brug loadkeys-kommandoen:
 
- `# loadkeys _layout_` 
+ `# loadkeys *layout*` 
 
-hvor _layout_ er dit keyboard-layout, som f.eks. `fr` or `be-latin1`
+hvor *layout* er dit keyboard-layout, som f.eks. `fr` or `be-latin1`
 
 #### Dokumentation
 
@@ -406,8 +404,7 @@ Skift tilbage til tty1 med `Alt+F1` for at følge resten af installtionsprocesse
 
 ## Installation
 
-**Note:** Hvis du tilgår internettet gennem en HTTP og/eller FTP proxy _og_ bruger DHCP til at configurere dit netkort, skal du måske sætte environment variables `http_proxy` og/eller `ftp_proxy` i shellen før du kører `/arch/setup` som vist nedensfor:
-
+**Note:** Hvis du tilgår internettet gennem en HTTP og/eller FTP proxy *og* bruger DHCP til at configurere dit netkort, skal du måske sætte environment variables `http_proxy` og/eller `ftp_proxy` i shellen før du kører `/arch/setup` som vist nedensfor:
 ```
 export http_proxy=http://<http_proxy_address>:<proxy_port>
 export ftp_proxy=ftp://<ftp_proxy_address>:<proxy_port>
@@ -449,13 +446,13 @@ Du får en liste over yderligere FTP-og HTTP-mirrors.
 
 Hvis du valgte **core-local** og samtidig **remote** repositories, vil du nu få muligheden for at vælge enten kun at gå til remote sources hvis den ønskede pakke ikke er tilgængelig lokalt, eller omvendt.
 
-På den næste skærm vælges _Yes_ til at sætte netværket op. Du får tilbudt selv at indlæse netkortsdrivere manuelt hvis du ønsker det. UDev er ganske effektiv til at indlæse de nødvendige moduler, så du kan gå ud fra at det allerede er i orden. Du kan verificere det ved at trykke `Alt+F3` og skrive `ip addr`. Når du er færdig returnerer du til tty1 ved at trykke `Alt+F1`.
+På den næste skærm vælges *Yes* til at sætte netværket op. Du får tilbudt selv at indlæse netkortsdrivere manuelt hvis du ønsker det. UDev er ganske effektiv til at indlæse de nødvendige moduler, så du kan gå ud fra at det allerede er i orden. Du kan verificere det ved at trykke `Alt+F3` og skrive `ip addr`. Når du er færdig returnerer du til tty1 ved at trykke `Alt+F1`.
 
 Tilgængelige netkort vil blive vist. Hvis et netkort og HWaddr (**H**ard**W**are **addr**ess) vises, så er de rette moduler allerede indlæst. Hvis dit netkort ikke vises, kan installeren søge efter det eller du kan gøre det manuelt fra en anden konsol. Vælg dit netkort for at fortsætte.
 
 Installeren spørger så om du ønsker at benytte DHCP. Vælger du "Yes" vil den køre `dhcpcd` for at finde en tilgængelige gateway og efterspørger en IP-adresse; vælger du "No", bliver du bedt om at indtaste en statisk IP-adress, netmaske, broadcast (valgfri), gateway, DNS server, HTTP proxy (valgfri), og FTP proxy (valgfri).
 
-Efterfølgende vil du returneres til hovedmenuen _Main Menu_
+Efterfølgende vil du returneres til hovedmenuen *Main Menu*
 
 ##### Setup ADSL bridging i live-miljøet (valgfri)
 
@@ -475,7 +472,7 @@ Returner til den første virtuelle konsol (`Alt+F1`) og fortsæt med [Vælg edit
 
 (Hvis du har brug for trådløs forbindelse under installationsprocessen)
 
-De trådløse drivere og værktøjer er nu tilgængelige i live-miljøet på installationesmediet. Et godt kendskab til dit trådløse hardware er vigtigt for at opnå en successfuld konfiguration. Bemærk at følgende quick-start procedure _udført på dette tidspunkt i installationen_ vil aktivere dit trådløse hardware til brug _i live-miljøet på installationsmediet_. Disse trin (eller en anden form for aktivering af trådløst udstyr **skal gentages i det egentlige installerede system efter at du er bootet til det**.
+De trådløse drivere og værktøjer er nu tilgængelige i live-miljøet på installationesmediet. Et godt kendskab til dit trådløse hardware er vigtigt for at opnå en successfuld konfiguration. Bemærk at følgende quick-start procedure *udført på dette tidspunkt i installationen* vil aktivere dit trådløse hardware til brug *i live-miljøet på installationsmediet*. Disse trin (eller en anden form for aktivering af trådløst udstyr **skal gentages i det egentlige installerede system efter at du er bootet til det**.
 
 Bemærk også at disse trin er valgfrie hvis du ikke er afhængig af trådløs forbindelse på dette sted i installationen; trådløs adgang kan også aktiveres senere.
 
@@ -492,7 +489,6 @@ Proceduren er som følger:
 *   Sikr dig at udev har indlæst driveren og at driveren har oprettet et brugbart trådløs-kerne-interface med `/usr/sbin/iwconfig`:
 
  `# iwconfig` 
-
 ```
  lo no wireless extensions.
  eth0 no wireless extensions.
@@ -530,7 +526,6 @@ Hvis der ikke er noget output, kan det sluttes at systemets trådløse chipsæt 
 *   Hvis ESSID er glemt eller ukendt, kan du bruge `/sbin/iwlist <interface> scan` for at scanne nærliggende netværk:
 
  `# iwlist wlan0 scan` 
-
 ```
 Cell 01 - Address: 04:25:10:6B:7F:9D
                     Channel:2
@@ -586,7 +581,6 @@ Output skal indikere at der er forbindelse til det trådløse netværk.
 *   Endelig, sikr dig at du kan route vha. `/bin/ping`:
 
  `# ping -c 3 www.google.com` 
-
 ```
 PING www.l.google.com (74.125.224.146) 56(84) bytes of data.
 64 bytes from 74.125.224.146: icmp_req=1 ttl=49 time=87.7 ms
@@ -623,7 +617,7 @@ Indstil hardwareklokkens mode. Hvis dette ikke matcher indstillingen for dine ø
 
 *   **localtime** (frarådes) - Bruges default i Windows. Hvis tiden sættes til localtime, vil sommer/vintertid ikke virke i Linux.
 
-**Warning:** Brug af _localtime_ kan føre til flere kendte og uløselige fejl. På trods af det er der ikke planer om at droppe supporten på _localtime_.
+**Warning:** Brug af *localtime* kan føre til flere kendte og uløselige fejl. På trods af det er der ikke planer om at droppe supporten på *localtime*.
 
 **Note:** Alle andre værdier resulterer i at der ikke ændres på hardwaretiden (nyttig for virtualisering).
 
@@ -631,9 +625,9 @@ Indstil hardwareklokkens mode. Hvis dette ikke matcher indstillingen for dine ø
 
 Hvis du sætter dual-boot med Windows op på dit system, har du to valgmuligheder:
 
-*   Anbefalet: Sæt Arch Linux til UTC og få Windows til også at bruge UTC (Det gøres med en lille hurtig registry-ændring, se [this page](https://help.ubuntu.com/community/UbuntuTime#Make_Windows_use_UTC) for instruktioner). Du skal også sørge for at Windows ikke synkroniserer tiden med internettet, da det igen vil sætte hardwaretiden til _localtime_. Hvis du ønsker en sådan funktionalitet (NTP sync), bør du bruge [ntpd](/index.php/Ntpd "Ntpd") på din Arch Linux installation istedet.
+*   Anbefalet: Sæt Arch Linux til UTC og få Windows til også at bruge UTC (Det gøres med en lille hurtig registry-ændring, se [this page](https://help.ubuntu.com/community/UbuntuTime#Make_Windows_use_UTC) for instruktioner). Du skal også sørge for at Windows ikke synkroniserer tiden med internettet, da det igen vil sætte hardwaretiden til *localtime*. Hvis du ønsker en sådan funktionalitet (NTP sync), bør du bruge [ntpd](/index.php/Ntpd "Ntpd") på din Arch Linux installation istedet.
 
-*   Ikke anbefalet: Sæt Arch Linux til _localtime_ og senere (i [Configure the system](#Configure_the_system)) fjernes `hwclock` fra `DAEMONS` arrayet i `/etc/rc.conf` (Windows vil tage sig af korrektioner af hardwaretiden).
+*   Ikke anbefalet: Sæt Arch Linux til *localtime* og senere (i [Configure the system](#Configure_the_system)) fjernes `hwclock` fra `DAEMONS` arrayet i `/etc/rc.conf` (Windows vil tage sig af korrektioner af hardwaretiden).
 
 ### Forbered harddisken
 
@@ -705,7 +699,7 @@ Følgende monteringspunkter er mulige valg til separate partitioner:
 
 	`/` (root)
 
-	root-biblioteket/mappen er toppen af hierarkiet, stedet hvor det primære filsystem monteres og hvorfra alle andre filsystemer stammer. Alle filer og mapper ligger under root-mappen _`/`_, også selvom de er gemt på forskellige fysiske drev. Indholdet af root-filsystemet skal være tilstrækkelig til at boote, genskabe og/eller reparere systemet. Derfor er det ikke alle mapper under _`/`_ , som kan ligge på separate partitioner (se nedenstående advarsel).
+	root-biblioteket/mappen er toppen af hierarkiet, stedet hvor det primære filsystem monteres og hvorfra alle andre filsystemer stammer. Alle filer og mapper ligger under root-mappen *`/`*, også selvom de er gemt på forskellige fysiske drev. Indholdet af root-filsystemet skal være tilstrækkelig til at boote, genskabe og/eller reparere systemet. Derfor er det ikke alle mapper under *`/`* , som kan ligge på separate partitioner (se nedenstående advarsel).
 
 	`/boot`
 
@@ -719,11 +713,11 @@ Følgende monteringspunkter er mulige valg til separate partitioner:
 
 	`/tmp`
 
-	Mappen er til programmer, som benytter midlertidig lagerplads til filer, som f.eks. _`.lck`_ , som kan bruges til at forhindre flere samtidige brugere af et program. Når programmet afsluttes, slettes _`.lck`_ filen automatisk. Programmer kan ikke antage at filer eller mapper i _`/tmp`_ bliver bevaret imellem at et givet program afvikles. Filer og mapper under _`/tmp`_ vil typisk blive slettet når systemet genstartes.
+	Mappen er til programmer, som benytter midlertidig lagerplads til filer, som f.eks. *`.lck`* , som kan bruges til at forhindre flere samtidige brugere af et program. Når programmet afsluttes, slettes *`.lck`* filen automatisk. Programmer kan ikke antage at filer eller mapper i *`/tmp`* bliver bevaret imellem at et givet program afvikles. Filer og mapper under *`/tmp`* vil typisk blive slettet når systemet genstartes.
 
 	`/var`
 
-	Indeholder forskellige data såsom spool-mapper og filer, log-filer, [pacman](/index.php/Pacman "Pacman")'s cache, [ABS](/index.php/Arch_Build_System "Arch Build System") træet, osv. Mappen er der for at gøre det muligt at mounte _`/usr`_ som read-only. Alt som tidligere lå under _`/usr`_ , som bliver skrevet til under almindelig kørsel (i modsætning til installation og softwarevedligeholdelse) skal ligge under _`/var`_.
+	Indeholder forskellige data såsom spool-mapper og filer, log-filer, [pacman](/index.php/Pacman "Pacman")'s cache, [ABS](/index.php/Arch_Build_System "Arch Build System") træet, osv. Mappen er der for at gøre det muligt at mounte *`/usr`* som read-only. Alt som tidligere lå under *`/usr`* , som bliver skrevet til under almindelig kørsel (i modsætning til installation og softwarevedligeholdelse) skal ligge under *`/var`*.
 
 **Note:** `/var` indeholder mange små filer. Ved valget af filsystemtype (se nedenfor) bør man tage højde for det, hvis man ønsker at bruge en separat partition.
 
@@ -756,7 +750,7 @@ Individuelle drev-partitioner kan sættes op med et af de mange tilgængelige fi
 2.  [ext3](https://en.wikipedia.org/wiki/ext3 "wikipedia:ext3") **Third Extended Filesystem** er i bund og grund ext2-systemet med journaliseringsunderstøttelse og skrive-barrierer. Det er bagudkompatibelt med ext2, godt testet og ekstremt stabilt.
 3.  [ext4](https://en.wikipedia.org/wiki/ext4 "wikipedia:ext4") **Fourth Extended Filesystem** er et nyere filsystem, som også er kompatibelt med ext2 og ext3\. Det giver support for drev-størrelser op til 1 exabyte (dvs. 1,048,576 terabytes) og filstørresler op til 16 terabytes. Den øger grænsen på 32.000 undermapper for ext3 til 64.000\. Den har også mulighed for online defragmentering.
 4.  [ReiserFS](https://en.wikipedia.org/wiki/ReiserFS "wikipedia:ReiserFS") (V3) Hans Reiser's højtydende journaliseringsfilsystem bruger en meget interessant metode med datagennemgang baseret på en ukonventionel og kreativ algoritme. ReiserFS er kendetegnet ved at være meget hurtigt, især når der er mange små filer invovleret. ReiserFS er hurtig til at formattere, men tilsvarende langsom til at mounte. Ganske moden og stabil. ReiserFS (V3) bliver ikke aktivt udviklet for tiden. Generelt anset for at være et godt valg til `/var`.
-5.  [JFS](https://en.wikipedia.org/wiki/JFS_(file_system) "wikipedia:JFS (file system)") IBM's **Journaled File System** var det første filsystem der tilbød journalisering. Det blev udviklet i mange år i IBM AIX® styresystem før det blev overført til GNU/Linux. JFS er det GNU/Linux filsystem der kræver mindst CPU-ressourcer. Det er meget hurtigt til at formatere, mounte og filsystem-check (fsck). JFS tilbyder meget god all-around ydelse især i forbindelse med deadline I/O scheduler. Det er ikke så udbredt som ext-serien eller ReiserFS, men stadig meget modent og stabilt.
+5.  [JFS](https://en.wikipedia.org/wiki/JFS_(file_system) IBM's **Journaled File System** var det første filsystem der tilbød journalisering. Det blev udviklet i mange år i IBM AIX® styresystem før det blev overført til GNU/Linux. JFS er det GNU/Linux filsystem der kræver mindst CPU-ressourcer. Det er meget hurtigt til at formatere, mounte og filsystem-check (fsck). JFS tilbyder meget god all-around ydelse især i forbindelse med deadline I/O scheduler. Det er ikke så udbredt som ext-serien eller ReiserFS, men stadig meget modent og stabilt.
     **Note:** JFS filsystemet kan ikke formindskes af disk-værktøjer som f.eks. **gparted** eller **parted magic**.
 
 6.  [XFS](https://en.wikipedia.org/wiki/XFS "wikipedia:XFS") er endnu et journaliserings filsystem, som oprindeligt udviklet af Silicon Graphics for IRIX operativsystemet og oversat til GNU/Linux. Det leverer meget hurtig adgang til store filer og filsystemer og er meget hurtigt til at formatere og mounte. Sammenlignende benchmark-tests har vist at det er langsommere når det skal håndtere mange små filer. XFS er meget modent og tilbyder online defragmentering.
@@ -794,7 +788,7 @@ Vælg **N**ew -> 'Primary' og tast den ønskede størrelse (15.44 GB i dette eks
 
 På tilsvarende vis oprettes en anden primær partition med en størrelse på 10.256 GB til `/var` med **T**ype `83 Linux`. Den oprettede `/var` partition vil optræde som `sda2`.
 
-Nu oprettes en tredje partition til _swap_. Vælg en passende størrelse (~1 GB her) og vælg **T**ype til `82 (Linux swap / Solaris)`. Den oprettede swap-partition vil optræde som `sda3`.
+Nu oprettes en tredje partition til *swap*. Vælg en passende størrelse (~1 GB her) og vælg **T**ype til `82 (Linux swap / Solaris)`. Den oprettede swap-partition vil optræde som `sda3`.
 
 Den resterende plads bruges til at oprette en fjerde partition til `/home`. Sæt den som primær partition vælg størrelsen. Vælg **T**ype som `83 Linux`. Den oprettede `/home` partition vil optræde som `sda4`.
 
@@ -814,7 +808,7 @@ Vælg **W**rite og skriv `yes`. Vær opmærksom på at denne operation kan destr
 
 Gør dig bekendt med de forskellige filsystemer, som blev diskutteret ovenfor og fortsæt til Mulighed 3.
 
-**Note:** Siden den seneste udvikling af Linux-kernen, som indeholder libata og PATA moduler, er alle IDE, SATA og SCSI drev gået over til navngivningen sd_x_. Det er meningen at det skal være sådan, så det skal ikke vække bekymring.
+**Note:** Siden den seneste udvikling af Linux-kernen, som indeholder libata og PATA moduler, er alle IDE, SATA og SCSI drev gået over til navngivningen sd*x*. Det er meningen at det skal være sådan, så det skal ikke vække bekymring.
 
 #### Mulighed 3: Manually configure block devices, filesystems, and mountpoints
 
@@ -840,8 +834,8 @@ Nu skal du vælge pakkekategori:
 
 **Note:** Af praktiske hensyn er alle pakker i **base** valgt på forhånd. Brug mellemrums-tasten til at vælge eller fravælge pakker.
 
-*   **base:** Softwarepakker fra [core]-arkivet, som giver et minimal basesystem. Vælg altid dette og lad være med at fravælge nogen af dem, da alle pakker i Arch Linux antager at _base_ er installeret.
-*   **base-devel:** Ekstra værktøjer fra [core] såsom `make` og `automake`. De fleste nybegyndere bør vælge at installere den, da det sikkert skal bruges til at udvide dit nye system. _base-devel_-gruppen skal bruges for at kunne installere software fra [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+*   **base:** Softwarepakker fra [core]-arkivet, som giver et minimal basesystem. Vælg altid dette og lad være med at fravælge nogen af dem, da alle pakker i Arch Linux antager at *base* er installeret.
+*   **base-devel:** Ekstra værktøjer fra [core] såsom `make` og `automake`. De fleste nybegyndere bør vælge at installere den, da det sikkert skal bruges til at udvide dit nye system. *base-devel*-gruppen skal bruges for at kunne installere software fra [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 Efter valg af kategori vil du få vist en liste af tilgængelige pakker, så du kan finjustere dine valg. Brug mellemrums-tasten til at vælge og fravælge. Hvis du usikker på hvilke yderligere pakker du skal installere på dette tidspunkt, kan du bare springe det over og tilføje dem senere med [pacman](/index.php/Pacman "Pacman").
 
@@ -851,7 +845,7 @@ Efter at have valgt de ønskede pakker, fortsætter du til næste trin, **Instal
 
 ### Installér pakker
 
-_Install Packages_ vil installere de valgte pakker på dit nye system. Hvis du vælger lokale kilder, vil pakkeversionerne fra CD-ROM/USB blive installeret.
+*Install Packages* vil installere de valgte pakker på dit nye system. Hvis du vælger lokale kilder, vil pakkeversionerne fra CD-ROM/USB blive installeret.
 
 Hvis du valgte fjern-kilder vil du få den nyeste tilgængelige pakke downloadet og installeret af [pacman](/index.php/Pacman "Pacman").
 
@@ -877,7 +871,7 @@ At skjule processen med systemkonfiguration er direkte i strid med **[The Arch W
 
 hardware-registrerings-værktøjer yder god hardwaresupport og auto-konfiguration, vil Arch vise brugeren alle vigtige konfigurationsfiler under installationen
 
-af hensyn til _gennemsigtighed og system resource kontrol_. Når du er færdig med at modificere disse filer, vil du have lært den simple måde man manuelt
+af hensyn til *gennemsigtighed og system resource kontrol*. Når du er færdig med at modificere disse filer, vil du have lært den simple måde man manuelt
 
 konfigurerer Arch Linux systemet og blevet mere bekendt med grundsystemet, så du er bedre rustet til produktivt at vedligeholde din nye installation.
 
@@ -899,7 +893,7 @@ tegn erstattes af firkanter, skal du evt. ændre "en_US.UTF-8" til "en_US". (Til
 
 	DAEMON_LOCALE
 
-	Sættes til _yes_ for at bruge daemon locale med environmentvariablen $LOCALE. Sættes til _no_ for at bruge C locale (default).
+	Sættes til *yes* for at bruge daemon locale med environmentvariablen $LOCALE. Sættes til *no* for at bruge C locale (default).
 
 	HARDWARECLOCK
 
@@ -984,7 +978,7 @@ HOSTNAME="arch"
 
 	netmask
 
-	Valgfri, default er _255.255.255.0_. Hvis du øsnker en selvvalgt netmaske, skrives den her. **Lad det være blank for DHCP.**
+	Valgfri, default er *255.255.255.0*. Hvis du øsnker en selvvalgt netmaske, skrives den her. **Lad det være blank for DHCP.**
 
 	broadcast
 
@@ -1004,7 +998,7 @@ eller slukket. Dette er krævet hvis root-drevet er på NFS.
 
 	NETWORKS
 
-	Dette er en valgfri indstilling, som kun skal bruges hvis du bruger [netcfg](/index.php/Netcfg "Netcfg") pakken evt med pakken _dialog_. Den slår disse netcfg-profiler
+	Dette er en valgfri indstilling, som kun skal bruges hvis du bruger [netcfg](/index.php/Netcfg "Netcfg") pakken evt med pakken *dialog*. Den slår disse netcfg-profiler
 
 til ved boot-op. Det er nyttigt hvis du har brug for mere avancerede netværksfunktioner end den simple netværksservice tilbyder, som f.eks. flere
 
@@ -1072,7 +1066,7 @@ Linjen med [daemons](/index.php/Daemons "Daemons") behøver ikke blive redigeret
 
 denne guide.
 
-En [daemon](https://en.wikipedia.org/wiki/Daemon_(computing) "wikipedia:Daemon (computing)") er et program, som kører i baggrunden og venter på bestemte begivenheder og reagerer på disse. Et godt eksempel er
+En [daemon](https://en.wikipedia.org/wiki/Daemon_(computing) er et program, som kører i baggrunden og venter på bestemte begivenheder og reagerer på disse. Et godt eksempel er
 
 en webserver der venter på en forespørgsel på en hjemmeside (f.eks. httpd) eller en SSH-server venter på et brugerlogin (f.eks. sshd). Disse er fuldstændige
 
@@ -1088,7 +1082,7 @@ booter. Nyttige daemons bliver præsenteret i løbet af denne guide.
 
 Filen [fstab](https://en.wikipedia.org/wiki/fstab "wikipedia:fstab") (for **f**ile **s**ystems **tab**le) er en del af systemkonfigurationen, der viser en liste over alle tilgængelige diske og partitioner, og samtidig indikerer den, hvordan disse skal initialiseres og på anden måde integreres i filsystemet i systemet. Filen `/etc/fstab` bruges almindeligvis af monteringskommandoen **mount**. Mount kommandoen tager filsystemet på en partition/drev og tilføjer det til hovedsystemet, som du ser når du bruger systemet. **mount -a** kaldes fra `/etc/rc.sysinit`, omkring 3/4 inde i boot-processen og læser `/etc/fstab` for at se hvilke options der skal bruges ved montering. Hvis der står **noauto** ved et filsystem i `/etc/fstab`, vil **mount -a** ikke montere den ved boot.
 
-_Et eksempel på en `/etc/fstab`_
+*Et eksempel på en `/etc/fstab`*
 
 ```
 # <file system>                            <dir>     <type>  <options>            <dump> <pass>
@@ -1105,7 +1099,7 @@ UUID=95783956-c4c6-4fe7-9de6-1883a92c2cc8  /home     ext4    defaults           
 	<file system>
 
 	Beskriver en block-device eller fjern-filsystem der skal monteres. Ved almindelige mounteringer vil dette felt indeholde et link til et blok-device-punkt (som oprettes af mknod der bliver kaldt af udev under boot) for det device der skal monteres; for eksempel, `/dev/cdrom` eller `/dev/sda1`.
-**Note:** Hvis dit system har mere end en harddisk, vil installeren bruge UUID frem for sd_x_-navngivningen, for at opnå en konsistent mapning. **[Brugen af UUID](/index.php/Persistent_block_device_naming "Persistent block device naming") har flere fordele og bør bruges for at undgå problemer hvis der tilføjes en harddisk på et senere tidspunkt.** Pga. aktiv udvikling af kernen og udev, kan den rækkefølge driverne til disk-kontrollerne indlæses ændres og resultere i et system der ikke kan boote/kernel panic. Nærmest alle bundkort har flere controllere (onboard SATA, onboard IDE) og pga. den omtalte udvikling kan `/dev/sda` blive til `/dev/sdb` ved næste reboot. For mere information, se [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
+**Note:** Hvis dit system har mere end en harddisk, vil installeren bruge UUID frem for sd*x*-navngivningen, for at opnå en konsistent mapning. **[Brugen af UUID](/index.php/Persistent_block_device_naming "Persistent block device naming") har flere fordele og bør bruges for at undgå problemer hvis der tilføjes en harddisk på et senere tidspunkt.** Pga. aktiv udvikling af kernen og udev, kan den rækkefølge driverne til disk-kontrollerne indlæses ændres og resultere i et system der ikke kan boote/kernel panic. Nærmest alle bundkort har flere controllere (onboard SATA, onboard IDE) og pga. den omtalte udvikling kan `/dev/sda` blive til `/dev/sdb` ved næste reboot. For mere information, se [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
 
 	<dir>
 
@@ -1121,7 +1115,7 @@ UUID=95783956-c4c6-4fe7-9de6-1883a92c2cc8  /home     ext4    defaults           
 
 	<dump>
 
-	Bruges af dump(8) kommandoen til at afgøre hvilket filsystem der skal droppes. dump er et backup-værktøj. Hvis det femte felt ikke er der, returneres værdien nul og dump vil antage at filsystemet ikke skal backes up. _Bemærk at dump ikke installeres pr. default._
+	Bruges af dump(8) kommandoen til at afgøre hvilket filsystem der skal droppes. dump er et backup-værktøj. Hvis det femte felt ikke er der, returneres værdien nul og dump vil antage at filsystemet ikke skal backes up. *Bemærk at dump ikke installeres pr. default.*
 
 	<pass>
 
@@ -1162,7 +1156,7 @@ Denne fil kan bruges til at sætte specielle konfigurationer på kernemoduler. D
 
 **Note:** Hvis du bruger DHCP, kan du roligt ignorere denne fil, da den som standard bliver dynamisk oprettet og slettet af dhcpcd-dæmonen. Du kan ændre denne opførsel hvis du ønsker det. Se [netwærk](/index.php/Network#For_DHCP_IP "Network") og [resolv.conf](/index.php/Resolv.conf "Resolv.conf") sider for mere information.
 
-_resolver_ er en mængde af routiner i C-biblioteket som giver adgang til the Internet Domain Name System (DNS). En af hoved-funktionerne for DNS er at oversætte domænenavne til IP addreser for at gøre nettet til et venligere sted. Resolve konfigurationsfilen eller `/etc/resolv.conf`, indeholder information som læses af resolver-rutinerne første gang de bliver kaldt af en process.
+*resolver* er en mængde af routiner i C-biblioteket som giver adgang til the Internet Domain Name System (DNS). En af hoved-funktionerne for DNS er at oversætte domænenavne til IP addreser for at gøre nettet til et venligere sted. Resolve konfigurationsfilen eller `/etc/resolv.conf`, indeholder information som læses af resolver-rutinerne første gang de bliver kaldt af en process.
 
 Hvis du bruger en statisk IP skal du sætte dine DNS servere i `/etc/resolv.conf` (nameserver <ip-address>). Du kan have så mange som du ønsker.
 
@@ -1192,7 +1186,7 @@ Denne fil kobler IP-adresser med hostnavne og aliaser. Hver host er repræsenter
 
 ```
 
-Tilføj dit _hostname_, som er det samme som specificeret i `/etc/rc.conf`, som en alias, så det ser ud som:
+Tilføj dit *hostname*, som er det samme som specificeret i `/etc/rc.conf`, som en alias, så det ser ud som:
 
 ```
 127.0.0.1   localhost.localdomain   localhost **yourhostname**
@@ -1227,13 +1221,11 @@ f.eks.:
 ```
 
 **Tip:** Du kan med fordel også bruge `/etc/hosts` aliases til hosts på dit netværk og/eller på internettet f.eks.:
-
 ```
 192.168.1.90 media
 192.168.1.88 data
 
 ```
-
 Ovenstående eksempel vil at du kan tilgå en media- og data-server på dit netværk vha. navnet uden at skulle skrive deres IP-adresse.
 
 #### /etc/locale.gen
@@ -1270,7 +1262,7 @@ Tilsidst angiver du en 'root'-adgangskode, som du absolut ikke må glemme senere
 
 Vælg en spejl-kilde til Pacman. Husk at archlinux.org er indskrænket, så download begrænses til 50KB/s.
 
-*   _Hvis du ikke kender de præsenterede spejle og deres respektive placeringer, kan du vælge et hvilket som helst spejl. Du får lejlighed til at køre scriptet **rankmirrors** senere i denne guide, for automatisk at konfigurere de nærmeste spejle._
+*   *Hvis du ikke kender de præsenterede spejle og deres respektive placeringer, kan du vælge et hvilket som helst spejl. Du får lejlighed til at køre scriptet **rankmirrors** senere i denne guide, for automatisk at konfigurere de nærmeste spejle.*
 
 Gå tilbage til hovedmenuen.
 
@@ -1285,14 +1277,14 @@ For BIOS systems, several boot loaders are available, see [Boot loaders](/index.
 
 ##### Syslinux
 
-If you opted for a GUID partition table (GPT) for your hard drive earlier, you need to install the [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package now for the installation of _syslinux_ to work:
+If you opted for a GUID partition table (GPT) for your hard drive earlier, you need to install the [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package now for the installation of *syslinux* to work:
 
 ```
 # pacman -S gptfdisk
 
 ```
 
-Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package and then use the `syslinux-install_update` script to automatically _install_ the bootloader (`-i`), mark the partition _active_ by setting the boot flag (`-a`), and install the _MBR_ boot code (`-m`):
+Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package and then use the `syslinux-install_update` script to automatically *install* the bootloader (`-i`), mark the partition *active* by setting the boot flag (`-a`), and install the *MBR* boot code (`-m`):
 
 ```
 # pacman -S syslinux
@@ -1303,7 +1295,6 @@ Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) packag
 After installing Syslinux, configure `syslinux.cfg` to point to the right root partition. This step is vital. If it points to the wrong partition, Arch Linux will not boot. Change `/dev/sda3` to reflect your root partition (if you partitioned your drive as in [the example](#Prepare_the_storage_drive), your root partition is `/dev/sda1`).
 
  `# nano /boot/syslinux/syslinux.cfg` 
-
 ```
 ...
 LABEL arch
@@ -1312,7 +1303,7 @@ LABEL arch
         ...
 ```
 
-If adding [UUID](/index.php/UUID "UUID") rather than partition number the syntax is `APPEND root=UUID=_partition_uuid_ rw`.
+If adding [UUID](/index.php/UUID "UUID") rather than partition number the syntax is `APPEND root=UUID=*partition_uuid* rw`.
 
 Do the same for the fallback entry.
 
@@ -1330,7 +1321,7 @@ Install the [grub](https://www.archlinux.org/packages/?name=grub) package and th
 
 **Note:**
 
-*   Change `/dev/sda` to reflect the drive you installed Arch on. Do not append a partition number (do not use `sda_X_`).
+*   Change `/dev/sda` to reflect the drive you installed Arch on. Do not append a partition number (do not use `sda*X*`).
 *   For GPT-partitioned drives on BIOS motherboards, you also need a "BIOS Boot Partition". See [GPT-specific instructions](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") in the GRUB page.
 *   A sample `/boot/grub/grub.cfg` gets installed as part of the [grub](https://www.archlinux.org/packages/?name=grub) package, and subsequent `grub-*` commands may not over-write it. Ensure that your intended changes are in `grub.cfg`, rather than in `grub.cfg.new` or some such file.
 
@@ -1378,7 +1369,6 @@ Install the [gummiboot](https://www.archlinux.org/packages/?name=gummiboot) pack
 You will need to manually create a configuration file to add an entry for Arch Linux to the gummiboot manager. Create `/boot/loader/entries/arch.conf` and add the following contents, replacing `/dev/sdaX` with your **root** partition, usually `/dev/sda2`:
 
  `# nano /boot/loader/entries/arch.conf` 
-
 ```
 title          Arch Linux
 linux          /vmlinuz-linux
@@ -1400,7 +1390,7 @@ Install the [grub](https://www.archlinux.org/packages/?name=grub) and [efibootmg
 
 Next, while using a manually created `grub.cfg` is absolutely fine, it is recommended that beginners automatically generate one:
 
-**Tip:** To automatically search for other operating systems on your computer, install [os-prober](https://www.archlinux.org/packages/?name=os-prober) before running the next command. However _os-prober_ is not known to properly detect UEFI OSes.
+**Tip:** To automatically search for other operating systems on your computer, install [os-prober](https://www.archlinux.org/packages/?name=os-prober) before running the next command. However *os-prober* is not known to properly detect UEFI OSes.
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
@@ -1421,7 +1411,7 @@ Log ind med din root-konto. Vi vil konfigurere 'Pacman' og opdatere systemet som
 
 ### Netværkskonfiguration (hvis nødvendigt)
 
-*   _Dette afsnit hjælper dig med at konfigurere de fleste typer netværk, hvis installations-scriptets autokonfiguration ikke virker for dig._
+*   *Dette afsnit hjælper dig med at konfigurere de fleste typer netværk, hvis installations-scriptets autokonfiguration ikke virker for dig.*
 
 * * *
 
@@ -1432,7 +1422,7 @@ ping -c 3 www.google.com
 
 ```
 
-_Hvis det lykkedes at etablere en netværksforbindelse, kan du gå videre til_ [_Opdatering, Synkronisering og opgradering med Pacman_](/index.php/Dansk_Begynderguide#Opdatering_synkronisering_og_opgradering_med_Pacman "Dansk Begynderguide")
+*Hvis det lykkedes at etablere en netværksforbindelse, kan du gå videre til* [*Opdatering, Synkronisering og opgradering med Pacman*](/index.php/Dansk_Begynderguide#Opdatering_synkronisering_og_opgradering_med_Pacman "Dansk Begynderguide")
 
 Hvis du, efter at have prøvet at pinge www.google.com, får en "unknown host"-fejlmelding, kan du konkludere, at dit netværk ikke er konfigureret ordentligt. Du kan vælge at dobbelttjekke indstillingerne og integriteten i følgende filer:
 
@@ -1571,9 +1561,9 @@ pacman -Syu
 
 Lad Pacman opdatere sig selv. Der kan forekomme konfigurationsændringer, så læs derfor uddata fra opgraderingen.
 
-*   _**Bemærk: Vær sikker på, at du benytter kommandoen 'pacman -Syu' på dette punkt, da det ellers kan forårsage utallige problemer for førstegangsbrugere.**_
+*   ***Bemærk: Vær sikker på, at du benytter kommandoen 'pacman -Syu' på dette punkt, da det ellers kan forårsage utallige problemer for førstegangsbrugere.***
 
-_**Konfigurationsændringer forekommer, der kræver en indsats af brugeren under opdateringer. Læs derfor uddata fra 'Pacman' for relevant information.**_
+***Konfigurationsændringer forekommer, der kræver en indsats af brugeren under opdateringer. Læs derfor uddata fra 'Pacman' for relevant information.***
 
 ### Konfigurering af Pacman
 
@@ -1625,7 +1615,7 @@ Aktivér alle de ønskede software-kilder (fjern # foran linjerne "Include = /et
 *   Hvis linjerne "Server =" er afkommenterede, tvinges søgning på den angivne server først og fremmest. Yderligere konfiguration af kilder er under /etc/pacman.d/
 *   **VINK:** Du kan roligt inkludere software-kilden [Unstable], da pakkerne på dit system fra alle de andre software-kilder kan sameksistere med pakkerne fra [Unstable].
 
-*** _Bemærk: Husk at afkommentere både overskriftlinjen i firkantede paranteser '[ ]' og_ Include=_-linjerne, når du vælger software-kilder. Hvis du ikke gør dette, udelades de valgte software-kilder. Dette er en meget almindelig fejl._**
+*** *Bemærk: Husk at afkommentere både overskriftlinjen i firkantede paranteser '[ ]' og* Include=*-linjerne, når du vælger software-kilder. Hvis du ikke gør dette, udelades de valgte software-kilder. Dette er en meget almindelig fejl.***
 
 #### /etc/pacman.d/mirrorlist
 
@@ -1647,7 +1637,7 @@ pacman -S python
 
 ```
 
-Sæt så _rankmirrors_ til at vælge spejl efter hastighed med:
+Sæt så *rankmirrors* til at vælge spejl efter hastighed med:
 
 ```
 rankmirrors -v /etc/pacman.d/mirrorlist
@@ -1698,9 +1688,9 @@ pacman -Syu
 
 Pacman henter nu den seneste information om tilgængelige pakker og udfører alle tilgængelige opdateringer. (Du kan også blive promptet for at opgradere selve Pacman. Hvis det sker så acceptér og gentag kommandoen 'pacman -Syu', når den er færdig.)
 
-##### _Læg mærke til, om der sker en større kerneopdatering._
+##### *Læg mærke til, om der sker en større kerneopdatering.*
 
-_Hvis (Linux-)kernen gennemgår en større opgradering, sættes moduler som f.eks **nvidia** og **madwifi** (som installeres senere i denne guide, hvis det er nødvendigt) ud af funktion, da de opgraderede pakkeversioner af disse moduler er bygget til den nye kerne, og dit system stadig bruger den ældre kerne. Det vil være nødvendigt at genstarte._
+*Hvis (Linux-)kernen gennemgår en større opgradering, sættes moduler som f.eks **nvidia** og **madwifi** (som installeres senere i denne guide, hvis det er nødvendigt) ud af funktion, da de opgraderede pakkeversioner af disse moduler er bygget til den nye kerne, og dit system stadig bruger den ældre kerne. Det vil være nødvendigt at genstarte.*
 
 ##### Det gode ved 'Rolling Release'
 
@@ -1758,7 +1748,7 @@ Den avancerede linux lydarkitektur ALSA (**A**dvanced **L**inux **S**ound **A**r
 
 * * *
 
-Enhedshåndteringen _udev_ undersøger automatisk dit hardware under boot, og indlæser det korresponderende modul for dit lydkort. Din lyd burde allerede virke, men du kan sikkert ikke høre noget, da det - som standard - er lydløst.
+Enhedshåndteringen *udev* undersøger automatisk dit hardware under boot, og indlæser det korresponderende modul for dit lydkort. Din lyd burde allerede virke, men du kan sikkert ikke høre noget, da det - som standard - er lydløst.
 
 Installér pakken 'alsa-utils':
 
@@ -1816,7 +1806,7 @@ DAEMONS=(syslog-ng network crond **alsa**)
 
 ```
 
-_Bemærk: Dæmonen 'alsa' genopretter kun dine lydindstillinger under opstart. Den er adskilt fra lydbiblioteket i 'Alsa' (og API på kerneniveau)._
+*Bemærk: Dæmonen 'alsa' genopretter kun dine lydindstillinger under opstart. Den er adskilt fra lydbiblioteket i 'Alsa' (og API på kerneniveau).*
 
 Yderliger information findes i [ALSA](/index.php/ALSA "ALSA") wiki-en.
 
@@ -1826,7 +1816,7 @@ See [Xorg](/index.php/Xorg "Xorg").
 
 ## **TRIN 3:** Installation og konfiguration af dit skrivebord
 
-Hvis du spørger to mennesker om, hvilket skrivebordsmiljø - eller vindueshåndtering - er det bedste, vil du få seks forskellige svar. Vælg det miljø, der passer bedst til _dine_ behov.
+Hvis du spørger to mennesker om, hvilket skrivebordsmiljø - eller vindueshåndtering - er det bedste, vil du få seks forskellige svar. Vælg det miljø, der passer bedst til *dine* behov.
 
 *   Hvis du vil have et 'fuldblods', der svarer til Windows eller Mac OSX er **KDE** et godt valg.
 *   Hvis du vil have et lidt mere minimalistisk, der bedre følger K.I.S.S.-princippet, er **GNOME** sikkert det rigtige.
@@ -1850,7 +1840,7 @@ Denne konfigurationsfil kontrollerer, hvad der sker, når du skriver 'startx'.
 Skift til 'normal bruger' med:
 
 ```
-su _dit-brugernavn_
+su *dit-brugernavn*
 
 ```
 
@@ -1917,9 +1907,9 @@ Længere oppe i guiden blev det beskrevet, at en dæmon er et program, der køre
 *   **hal** automatiserer bl.a. montering af diske, optiske drev og USB-drev/sticks til brug i den grafiske brugerflade.
 *   **fam** tillader realtidsvisning af filændringer i den grafiske brugerflade, ved straksat tillade adgang til nyinstallerede programmer eller ændringer i filsystemet.
 
-Både **hal** og **fam** gør livet lettere for GNOME-brugeren. Pakkerne _hal_ og _fam_ installeres, når du installerer GNOME, men de skal kaldes, før de kan benyttes.
+Både **hal** og **fam** gør livet lettere for GNOME-brugeren. Pakkerne *hal* og *fam* installeres, når du installerer GNOME, men de skal kaldes, før de kan benyttes.
 
-Du vil sikkert også have en grafisk login-håndtering. Til GNOME er dæmonen **gdm** et godt valg. Installér _gdm_ with
+Du vil sikkert også have en grafisk login-håndtering. Til GNOME er dæmonen **gdm** et godt valg. Installér *gdm* with
 
 ```
 pacman -S gdm
@@ -2017,7 +2007,7 @@ Længere oppe i guiden blev det beskrevet, at en dæmon er et program, der køre
 *   **hal** automatiserer bl.a. montering af diske, optiske drev og USB-drev/sticks til brug i den grafiske brugerflade.
 *   **fam** tillader realtidsvisning af filændringer i den grafiske brugerflade, ved straksat tillade adgang til nyinstallerede programmer eller ændringer i filsystemet.
 
-Både **hal** og **fam** gør livet lettere for KDE-brugeren. Pakkerne _hal_, _fam_ og _kdm_ installeres, når du installerer KDE, men de skal kaldes, før de kan benyttes.
+Både **hal** og **fam** gør livet lettere for KDE-brugeren. Pakkerne *hal*, *fam* og *kdm* installeres, når du installerer KDE, men de skal kaldes, før de kan benyttes.
 
 * * *
 
@@ -2033,7 +2023,7 @@ Start hal og fam:
 
 ```
 
-*   **BEMÆRK:** _Dæmonen 'hal' afhænger af og starter automatisk dæmonen 'dbus'._
+*   **BEMÆRK:** *Dæmonen 'hal' afhænger af og starter automatisk dæmonen 'dbus'.*
 
 Redigér sektionen DAEMONS i din /etc/rc.conf:
 
@@ -2312,7 +2302,7 @@ governor="conservative"
 
 ```
 
-der dynamisk øger CPU-frekvensen, når det er nødvendigt, hvilket også er en fordel på stationære systemer. Ret 'min_freq' og 'max_freq' så det matcher CPU-specifikationerne på dit system. Hvis du ikke kender frekvenserne, kan du køre _cpufreq-info_, når du har indlæst et af modulerne for frekvensskalering. Du kan også slette eller udkommentere linjerne 'min_freq' og 'max_freq', hvorefter tingene fungerer automatisk. Føj modulet til modullinjen i din /etc/rc.conf. De fleste moderne bærbare og stationære computere er i stand til ganske enkelt at anvende driveren _acpi-cpufreq_. Andre valgmuligheder inkluderer driverne _p4-clockmod, powernow-k6, powernow-k7, powernow-k8_ og _speedstep-centrino_. Indlæs modulet med
+der dynamisk øger CPU-frekvensen, når det er nødvendigt, hvilket også er en fordel på stationære systemer. Ret 'min_freq' og 'max_freq' så det matcher CPU-specifikationerne på dit system. Hvis du ikke kender frekvenserne, kan du køre *cpufreq-info*, når du har indlæst et af modulerne for frekvensskalering. Du kan også slette eller udkommentere linjerne 'min_freq' og 'max_freq', hvorefter tingene fungerer automatisk. Føj modulet til modullinjen i din /etc/rc.conf. De fleste moderne bærbare og stationære computere er i stand til ganske enkelt at anvende driveren *acpi-cpufreq*. Andre valgmuligheder inkluderer driverne *p4-clockmod, powernow-k6, powernow-k7, powernow-k8* og *speedstep-centrino*. Indlæs modulet med
 
 ```
 modprobe <modulnavn> 
@@ -2409,7 +2399,7 @@ pacman -S xine-ui
 
 ```
 
-Biblioteket 'libdvdcss' afkoder krypterede DVD-er. _Vær sikker på, at det ikke er i strid med loven, hvor du bor, før du installerer!_
+Biblioteket 'libdvdcss' afkoder krypterede DVD-er. *Vær sikker på, at det ikke er i strid med loven, hvor du bor, før du installerer!*
 
 ```
 pacman -S libdvdcss

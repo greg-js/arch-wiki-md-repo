@@ -121,10 +121,10 @@ Prije instalacije bi bilo dobro proletjeti kroz [često postavljena pitanja](/in
 **Istaknimo neke značajke distribucije Arch Linuxa:**
 
 *   [Jednostavan](/index.php/The_Arch_Way_(Hrvatski) "The Arch Way (Hrvatski)") dizajn i filozofija
-*   [Svi paketi](https://www.archlinux.org/packages/?q=) su kompilirani i za [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "wikipedia:P6 (microarchitecture)") i za [x86_64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64") arhitekture
+*   [Svi paketi](https://www.archlinux.org/packages/?q=) su kompilirani i za [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) i za [x86_64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64") arhitekture
 *   Inicijalizacijske skripte u [BSD stilu](/index.php?title=Arch_Boot_Process_(Hrvatski)&action=edit&redlink=1 "Arch Boot Process (Hrvatski) (page does not exist)"), koristeći jednu centraliziranu konfiguracijsku datoteku
 *   [mkinitcpio (Hrvatski)](/index.php?title=Mkinitcpio_(Hrvatski)&action=edit&redlink=1 "Mkinitcpio (Hrvatski) (page does not exist)") je jednostavan i dinamičan stvaraoc [initramfsa](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd")
-*   [Upravitelj paketima](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager") imena [Pacman (Hrvatski)](/index.php?title=Pacman_(Hrvatski)&action=edit&redlink=1 "Pacman (Hrvatski) (page does not exist)") je agilan i lak kao perce, s vrlo skromnim zauzećem memorije
+*   [Upravitelj paketima](https://en.wikipedia.org/wiki/Package_manager je agilan i lak kao perce, s vrlo skromnim zauzećem memorije
 *   [Paketni sustav Archa](/index.php?title=Arch_Build_System_(Hrvatski)&action=edit&redlink=1 "Arch Build System (Hrvatski) (page does not exist)"): sustav stvaranja paketa koji pruža jednostavnu okolinu za stvaranje instalacijskih Arch paketa putem izvornog koda
 *   [Korisnički repozitorij Archa](/index.php?title=Arch_User_Repository_(Hrvatski)&action=edit&redlink=1 "Arch User Repository (Hrvatski) (page does not exist)"): pruža tisuće i tisuće korisničkih instalacijskih skripti te priliku za dijeljenje vlastitih
 
@@ -134,19 +134,19 @@ Arch Linux, pacman, documentation, and scripts are Copyright © 2002-2007 by Jud
 
 ### Put Archa
 
-_**Principi dizajna Archa su tu da ga održe [jednostavnim](/index.php/The_Arch_Way_(Hrvatski) "The Arch Way (Hrvatski)").**_
+***Principi dizajna Archa su tu da ga održe [jednostavnim](/index.php/The_Arch_Way_(Hrvatski) "The Arch Way (Hrvatski)").***
 
 'Jednostavan', u ovom kontekstu, znači 'bez nepotrebnih dodataka, modifikacija ili komplikacija'. Ukratko: elegantan, minimalistički pristup.
 
 **Tijekom razmišljanja o jednostavnosti valja imati na umu:**
 
-*   _" 'Jednostavnost' je definirana iz tehničkog gledišta, a ne korisničkog. Bolje je biti tehnički elegantan uz veće zahtjeve znanja nego biti jednostavan za koristiti i tehnički [inferioran]." -Aaron Griffin_
-*   _Entia non sunt multiplicanda praeter necessitatem_ ili "Entiteti se ne bi smjeli nepotrebno množiti." -Occamova oštrica. Pojam _oštrica_ odnosi se na čin uklanjanja nepotrebnih komplikacija da bi se stiglo do najjednostavnijeg objašnjenja, metode ili teorije.
-*   _"Nevjerojatnost [moje metode] leži u njenoj jednostavnosti. Visine uglađenosti uvijek vode ka jednostavnosti."_ - Bruce Lee
+*   *" 'Jednostavnost' je definirana iz tehničkog gledišta, a ne korisničkog. Bolje je biti tehnički elegantan uz veće zahtjeve znanja nego biti jednostavan za koristiti i tehnički [inferioran]." -Aaron Griffin*
+*   *Entia non sunt multiplicanda praeter necessitatem* ili "Entiteti se ne bi smjeli nepotrebno množiti." -Occamova oštrica. Pojam *oštrica* odnosi se na čin uklanjanja nepotrebnih komplikacija da bi se stiglo do najjednostavnijeg objašnjenja, metode ili teorije.
+*   *"Nevjerojatnost [moje metode] leži u njenoj jednostavnosti. Visine uglađenosti uvijek vode ka jednostavnosti."* - Bruce Lee
 
 ### O ovom vodiču
 
-[Arch wiki](/index.php/Main_Page_(Hrvatski) "Main Page (Hrvatski)") je održavan putem zajednice te je odličan izvor s kojim se uvijek može pokušati konzultirati pri prvim suočavanjem s nekim problemom. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanal ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) i [forumi](https://bbs.archlinux.org/) su isto dostupni ukoliko se traženi odgovor ne može naći igdje drugdje. Svakako provjeri i `man` stranice bilo koje naredbe s kojom imaš problema; to se obično može učiniti pozivanjem `man _naredbe_`.
+[Arch wiki](/index.php/Main_Page_(Hrvatski) "Main Page (Hrvatski)") je održavan putem zajednice te je odličan izvor s kojim se uvijek može pokušati konzultirati pri prvim suočavanjem s nekim problemom. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanal ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) i [forumi](https://bbs.archlinux.org/) su isto dostupni ukoliko se traženi odgovor ne može naći igdje drugdje. Svakako provjeri i `man` stranice bilo koje naredbe s kojom imaš problema; to se obično može učiniti pozivanjem `man *naredbe*`.
 
 **Note:** Usko pratiti ovaj vodič od ključne je važnosti kako bi se moglo doći do ispravno konfiguriranog sustava Arch Linux, tako da ga valja pročitati temeljito. Preporuča se pročitati svaki sekciju u potpunosti <u>prije</u> implementacije koraka navedenih u njoj.
 
@@ -158,7 +158,7 @@ _**Principi dizajna Archa su tu da ga održe [jednostavnim](/index.php/The_Arch_
 
 Može dohvatiti službeni instalacijski medij Arch Linuxa [ovdje](https://archlinux.org/download/).
 
-*   I jezgrena (lokalna, Core) i mrežna (Netinstall) CD-slika pruža samo pakete potrebne za stvaranje **osnovnog sustava Arch Linux**. _Primijeti da osnovni sustav ne sadrži grafičko sučelje, već se sastoji samo od niza GNU-alata (kompilator, asembler, linker, biblioteke, ljuska i korisnički programi), Linux-kernela, pacmana (Archevog upravitelja paketima) i nekoliko dodatnih biblioteka i modula._
+*   I jezgrena (lokalna, Core) i mrežna (Netinstall) CD-slika pruža samo pakete potrebne za stvaranje **osnovnog sustava Arch Linux**. *Primijeti da osnovni sustav ne sadrži grafičko sučelje, već se sastoji samo od niza GNU-alata (kompilator, asembler, linker, biblioteke, ljuska i korisnički programi), Linux-kernela, pacmana (Archevog upravitelja paketima) i nekoliko dodatnih biblioteka i modula.*
 *   Jezgrene slike se mogu koristiti i za lokalnu i mrežnu instalaciju.
 *   Mrežne slike su manje i ne sadrže ikakve pakete; cijeli se sustav dohvaća putem Interneta.
 *   [Često postavljena pitanja o Arch64](/index.php?title=Arch64_FAQ_(Hrvatski)&action=edit&redlink=1 "Arch64 FAQ (Hrvatski) (page does not exist)") ti mogu pomoći da se odlučiš između 32 i 64-bitnih verzija. CD s dualnom arhitekturom sadrži pakete za obje arhitekture tako da ga možeš koristiti za instalaciju Archa i na 32 i na 64-bitnim računalima.
@@ -200,7 +200,6 @@ Vraćeni md5sum bi trebao biti identičan [md5sumi skinute archlinux slike (2011
 Zapiši ISO na uređaj:
 
  `$ [sudo] dd if=archlinux-2011.08.19-core-i686.iso of=/dev/sdc` 
-
 ```
  744973+0 records in
  744973+0 records out
@@ -211,7 +210,6 @@ Zapiši ISO na uređaj:
 Provjeri je li sve uspješno zapisano:
 
  `$ [sudo] dd if=/dev/sdc count=744973 status=noxfer | md5sum` 
-
 ```
  4850d533ddd343b80507543536258229  -
  744973+0 records in
@@ -234,7 +232,7 @@ Ubaci pripremljeni CD ili flash-medij i bootaj s njega. Možda ćeš trebati pro
 
 #### Dizanje operacijskog sustava
 
-Odaberi "Boot Arch Linux" iz glavnog menija i pritisni [Enter] kako bi instalacija započela. Sustav će sada učitati i prikazati naredbeni redak ljuske. Automatski ćeš biti u ulozi administratorskog korisnika _root_.
+Odaberi "Boot Arch Linux" iz glavnog menija i pritisni [Enter] kako bi instalacija započela. Sustav će sada učitati i prikazati naredbeni redak ljuske. Automatski ćeš biti u ulozi administratorskog korisnika *root*.
 
 **Note:** Korisnici koji žele instalaciju Arch Linuxa napraviti putem SSH-konekcije s udaljenog računala sada mogu napraviti neke male izmjene kako bi omogućili direktne SSH-konekcije u interaktivno CD-okruženje. Ako te to zanima, pogledaj [ovaj članak](/index.php?title=Install_from_SSH_(Hrvatski)&action=edit&redlink=1 "Install from SSH (Hrvatski) (page does not exist)").
 
@@ -264,9 +262,9 @@ Ako želiš koristiti hrvatski raspored tipaka (ili neki drugi koji nije SAD-ov)
 
 ili možeš koristiti loadkey naredbu:
 
- `# loadkeys _raspored_` 
+ `# loadkeys *raspored*` 
 
-gdje je _raspored_ raspored tvoje tipkovnice poput `hr` ili `be-latin1`.
+gdje je *raspored* raspored tvoje tipkovnice poput `hr` ili `be-latin1`.
 
 #### Dokumentacija
 
@@ -283,7 +281,6 @@ Promijeni natrag na tty1 s <ALT>+F1 da bi pratio ostatak instalacijskog procesa.
 ## Instalacija
 
 **Note:** Ukoliko pristupaš Internetu putem HTTP ili FTP posrednika te istovremeno želiš koristiti DHCP za konfiguraciju mrežnog sučelja, možda ćeš unutar ljuske morati postaviti varijable okruženja `http_proxy` i/ili `ftp_proxy` prije pokretanja `/arch/setup` kao što je navedeno niže:
-
 ```
 export http_proxy=http://<http_adresa_posrednika>:<port_posrednika>
 export ftp_proxy=ftp://<ftp_adresa_posrednika>:<port_posrednika>
@@ -310,11 +307,11 @@ Dijalog odabira izvora će te zatražiti da odabereš repozitorije koje želiš 
 
 Imat ćeš priliku ručno učitati mrežne drivere, ukoliko to želiš. UDev je sposoban učitati potrebne module, pa možeš prepostaviti da je to već učinio. Možeš to provjeriti pritiskanjem <Alt>+F3 i pokretanjem **ip addr**. Kada je to gotovo, vrati se na početnu virtualnu konzolu tty1 pritiskom na <Alt>+F1.
 
-Na idućem ekranu odaberi postavljanje mrežnih opcija _Setup Network_. Bit će prikazana dostupna sučelja. Ukoliko je navedeno sučelje i HWaddr (**H**ard**W**are **addr**ess), tada je tvoj modul već učitan. Ukoliko sučelje nije navedeno, možeš ga pokrenuti unutar instalacije ili ručno putem druge virtualne konzole. Odaberi svoje sučelje za nastavak.
+Na idućem ekranu odaberi postavljanje mrežnih opcija *Setup Network*. Bit će prikazana dostupna sučelja. Ukoliko je navedeno sučelje i HWaddr (**H**ard**W**are **addr**ess), tada je tvoj modul već učitan. Ukoliko sučelje nije navedeno, možeš ga pokrenuti unutar instalacije ili ručno putem druge virtualne konzole. Odaberi svoje sučelje za nastavak.
 
-Instalacija će te zatim upitati želiš li koristiti DHCP. Odabiranjem "Yes" će se pokrenuti **dhcpcd** da otkrije dostupan gateway i zatraži IP-adresu; odabiranjem "No" ćeš morati ručno upisati mrežne postavke poput IP-adrese, maske i DNS-servera. Nakon toga se vraćaš u instalacijski meni mrežne instalacije _Net Installation Menu_.
+Instalacija će te zatim upitati želiš li koristiti DHCP. Odabiranjem "Yes" će se pokrenuti **dhcpcd** da otkrije dostupan gateway i zatraži IP-adresu; odabiranjem "No" ćeš morati ručno upisati mrežne postavke poput IP-adrese, maske i DNS-servera. Nakon toga se vraćaš u instalacijski meni mrežne instalacije *Net Installation Menu*.
 
-Odaberi _Choose Mirror_ te odaberi FTP ili HTTP zrcalni repozitorij. Zatim se vrati na glavni meni.
+Odaberi *Choose Mirror* te odaberi FTP ili HTTP zrcalni repozitorij. Zatim se vrati na glavni meni.
 
 **Tip:** Za postizanje najvećih brzina skidanja podataka, valja odabrati zrcalne repozitorije koji su unutar zemlje u kojoj se nalaziš i koji se serviraju putem poslužitelja za koje znaš da su pouzdani (poput sveučilišta).
 
@@ -338,7 +335,7 @@ Vrati se na prvu virtualnu konzolu (<ALT>+F1) te nastavi s [postavljanjem vremen
 
 (Samo ukoliko ti je potrebna bežična mreža za nastavak instalacijskog procesa.)
 
-Driveri i uslužni programi za bežičnu mrežu su sada dostupni unutar interaktivnog okruženja instalacijskog medija. Dobro poznavanje bežičnog hardvera će biti ključno za uspješnu konfiguraciju. Primijeti da će iduća brzinska procedura, pokrenuta _na ovoj točci instalacije_, inicijalizirati tvoj bežični hardver samo tako da bude mogao biti korišten _tijekom instalacijskog procesa_. Čitavu ćeš proceduru (ili neku sličnu njoj) morati ponoviti jednom kada zaista instaliraš i pokreneš lokalni sustav.
+Driveri i uslužni programi za bežičnu mrežu su sada dostupni unutar interaktivnog okruženja instalacijskog medija. Dobro poznavanje bežičnog hardvera će biti ključno za uspješnu konfiguraciju. Primijeti da će iduća brzinska procedura, pokrenuta *na ovoj točci instalacije*, inicijalizirati tvoj bežični hardver samo tako da bude mogao biti korišten *tijekom instalacijskog procesa*. Čitavu ćeš proceduru (ili neku sličnu njoj) morati ponoviti jednom kada zaista instaliraš i pokreneš lokalni sustav.
 
 Primijeti i da su ovi koraci neobavezni ukoliko bežična konekcija nije potrebna: bežičnu funkcionalnost uvijek možeš uključiti kasnije.
 
@@ -358,7 +355,6 @@ Osnovna je procedura ovakva:
 *   Pobrini se da je udev učitao driver i da je driver stvorio iskoristivo bežično kernel-sučelje `/usr/sbin/iwconfig`:
 
  `# iwconfig` 
-
 ```
  lo no wireless extensions.
  eth0 no wireless extensions.
@@ -396,7 +392,6 @@ Ako nema takvog ispisa, može se zaključiti da bežični čipset sustava ne zah
 *   Ako je ESSID zaboravljen ili nepoznat, iskoristi `/sbin/iwlist <interface> scan` da bi pretražio obližnje mreže:
 
  `# iwlist wlan0 scan` 
-
 ```
 Cell 01 - Address: 04:25:10:6B:7F:9D
                     Channel:2
@@ -451,7 +446,6 @@ Ispis bi trebao pokazati bežičnu mrežu asociranu sa sučeljem.
 *   Za kraj, pobrini se da možeš komunicirati s ostatkom Interneta koristeći `/bin/ping`:
 
  `$ ping -c 3 www.google.com` 
-
 ```
 PING www.l.google.com (74.125.224.146) 56(84) bytes of data.
 64 bytes from 74.125.224.146: icmp_req=1 ttl=49 time=87.7 ms
@@ -478,7 +472,7 @@ Postavi mod rada harverskog sata. Ako odabrani mod ne odgovara postavci drugih p
 
 *   **localtime** (ne preporuča se) - Korišteno u Windowsima. Ako je vrijeme postavljeno na localtime, Linux neće primijetiti periode ljetnog računanja vremena.
 
-**Warning:** Ako koristiš _localtime_, postoji šansa pojavljivanja nekih poznatih i nepopravljivih bugova.
+**Warning:** Ako koristiš *localtime*, postoji šansa pojavljivanja nekih poznatih i nepopravljivih bugova.
 
 **Note:** Bilo koja druga vrijednost rezultirat će u ostavljanju hardverskog sata onakvim kakav jest (što je korisno za virtualizaciju).
 
@@ -486,8 +480,8 @@ Postavi mod rada harverskog sata. Ako odabrani mod ne odgovara postavci drugih p
 
 Ako dual-bootaš Windowse na svom računalu, imaš dvije opcije:
 
-*   Postavi Arch Linux na _localtime_, a zatim kasnije (u [konfiguraciji sustava](#Konfiguriraj_sustav)) izbaci `hwclock` iz `DAEMONS` liste u `/etc/rc.conf` (Windowsi će se pobrinuti o izmjenama hardverskog sata). Ne preporuča se.
-*   Postavi Arch Linux na UTC i natjeraj Windowse da isto koriste UTC (potreban je brza izmjena registryja, pogledaj [ovu stranicu](https://help.ubuntu.com/community/UbuntuTime#Make%20Windows%20use%20UTC) za upute). Također, ne dozvoli Windowsima da sinkroniziraju svoje vrijeme s Internetom, jer će to ponovno promijeniti hardverski sat u _localtime_ mod. Ako želiš takvu funkcionalnost (sinkronizaciju s NTP-serverima), možeš koristiti **openntpd** na svom Arch-sustavu. Preporučeno.
+*   Postavi Arch Linux na *localtime*, a zatim kasnije (u [konfiguraciji sustava](#Konfiguriraj_sustav)) izbaci `hwclock` iz `DAEMONS` liste u `/etc/rc.conf` (Windowsi će se pobrinuti o izmjenama hardverskog sata). Ne preporuča se.
+*   Postavi Arch Linux na UTC i natjeraj Windowse da isto koriste UTC (potreban je brza izmjena registryja, pogledaj [ovu stranicu](https://help.ubuntu.com/community/UbuntuTime#Make%20Windows%20use%20UTC) za upute). Također, ne dozvoli Windowsima da sinkroniziraju svoje vrijeme s Internetom, jer će to ponovno promijeniti hardverski sat u *localtime* mod. Ako želiš takvu funkcionalnost (sinkronizaciju s NTP-serverima), možeš koristiti **openntpd** na svom Arch-sustavu. Preporučeno.
 
 ### Pripremi tvrdi disk
 
@@ -527,7 +521,7 @@ Ako je ovo odabrtano, sustav će ispisati koje je datotečne sustave i montažne
 
 *   Opcija 4: Obrat zadnjih promjena datotečnog sustava
 
-_Na ovoj točci, napredniji korisnici GNU/Linuxa koji su upoznati s ručnim particioniranjem mogu preskočiti niže na [odabir paketa](#Odaberi_pakete)._
+*Na ovoj točci, napredniji korisnici GNU/Linuxa koji su upoznati s ručnim particioniranjem mogu preskočiti niže na [odabir paketa](#Odaberi_pakete).*
 
 **Note:** Ako instaliraš sustav na USB-memoriju, pogledaj [ovu stranicu](/index.php?title=Installing_Arch_Linux_on_a_USB_key_(Hrvatski)&action=edit&redlink=1 "Installing Arch Linux on a USB key (Hrvatski) (page does not exist)").
 
@@ -563,23 +557,23 @@ Raspored particija na disku je jedna vrlo osobna stvar koja varira od jednog nap
 
 Kandidati za posebne particije:
 
-**/** (root) _Korijenska particija je primarna particija koja sadrži sve ostale; vrh hijerarhije. Svi direktoriji i datoteke se nalaze unutar korijenskog direktorija "/", čak ako se nalaze na drugačijim fizičkim uređajima. Sadržaj korijenske particije mora biti dovoljan da bi se sustav bootao, obnovio i/ili popravio. Neki direktoriji pod / su sami kandidati za posebne particije. (Pogledaj upozorenje niže.)_
+**/** (root) *Korijenska particija je primarna particija koja sadrži sve ostale; vrh hijerarhije. Svi direktoriji i datoteke se nalaze unutar korijenskog direktorija "/", čak ako se nalaze na drugačijim fizičkim uređajima. Sadržaj korijenske particije mora biti dovoljan da bi se sustav bootao, obnovio i/ili popravio. Neki direktoriji pod / su sami kandidati za posebne particije. (Pogledaj upozorenje niže.)*
 
-**/boot** _Ovaj direktorij sadrži kernel, ramdisk slike, bootloader konfiguracijsku datoteku i bootloader razine. /boot sadrži i podatke koji se koriste prije nego kernel krene pokretati korisničke programe. To može uključivati sačuvane master boot sektore i datoteke rasporeda sektora._
+**/boot** *Ovaj direktorij sadrži kernel, ramdisk slike, bootloader konfiguracijsku datoteku i bootloader razine. /boot sadrži i podatke koji se koriste prije nego kernel krene pokretati korisničke programe. To može uključivati sačuvane master boot sektore i datoteke rasporeda sektora.*
 
-**Warning:** Osim /boot, direktoriji važni za bootanje su: '_**/bin', '/etc', '/lib', i '/sbin'. Zato se ne smiju nalaziti na particijama na kojima se ne nalazi /.**_
+**Warning:** Osim /boot, direktoriji važni za bootanje su: '***/bin', '/etc', '/lib', i '/sbin'. Zato se ne smiju nalaziti na particijama na kojima se ne nalazi /.***
 
-**/home** _Sadrži poddirektorije, svaki imenovan po jednom korisniku, za pohranu raznih osobnih podataka kao i konfiguracijskih datoteka specifičnih za svakog korisnika._
+**/home** *Sadrži poddirektorije, svaki imenovan po jednom korisniku, za pohranu raznih osobnih podataka kao i konfiguracijskih datoteka specifičnih za svakog korisnika.*
 
-**/usr** _Dok je root primarna particija, /usr je sekundarna hijerarhija za podatke svih korisnika sustava, što uključuje većinu višekorisničkih aplikacija. /usr sadrži dijeljene podatke koji se mogu samo čitati i ne smiju prebrisivati (osim u slučaju nadogradnje sustava)._
+**/usr** *Dok je root primarna particija, /usr je sekundarna hijerarhija za podatke svih korisnika sustava, što uključuje većinu višekorisničkih aplikacija. /usr sadrži dijeljene podatke koji se mogu samo čitati i ne smiju prebrisivati (osim u slučaju nadogradnje sustava).*
 
 **Warning:** Zasebna /usr particija će uzrokovati neke probleme s udevom i pokvarit će [systemd](/index.php?title=Systemd_(Hrvatski)&action=edit&redlink=1 "Systemd (Hrvatski) (page does not exist)"). [izvor](http://freedesktop.org/wiki/Software/systemd/separate-usr-is-broken)
 
-**/tmp** _direktorij za programe koji zahtijevaju privremene datoteke poput '.lck' datoteke, koje se mogu koristiti da bi spriječile postojanje više instanci istog programa sve dok neki zadatak ne bude gotov, nakon čega se '.lck' datoteka briše. Programi ne smiju pretpostavljati da se sadržaj direktorija /tmp očuva između pokretanja tih programa; sadržaj tog direktorija se obično obriše prilikom svakog bootanja sustava._
+**/tmp** *direktorij za programe koji zahtijevaju privremene datoteke poput '.lck' datoteke, koje se mogu koristiti da bi spriječile postojanje više instanci istog programa sve dok neki zadatak ne bude gotov, nakon čega se '.lck' datoteka briše. Programi ne smiju pretpostavljati da se sadržaj direktorija /tmp očuva između pokretanja tih programa; sadržaj tog direktorija se obično obriše prilikom svakog bootanja sustava.*
 
-**/var** _sadrži podatke koji variraju: administratorske zapise, pacmanov cache i slično. Sve što se inače zapisivalo u /usr tijekom rada sustava danas se zapisuje unutar /var._
+**/var** *sadrži podatke koji variraju: administratorske zapise, pacmanov cache i slično. Sve što se inače zapisivalo u /usr tijekom rada sustava danas se zapisuje unutar /var.*
 
-_**Postoji nekoliko prednosti ukoliko se koristi više particija umjesto jedne jedine:**_:
+***Postoji nekoliko prednosti ukoliko se koristi više particija umjesto jedne jedine:***:
 
 *   Sigurnost: Svaka particija može biti konfigurirana u `/etc/fstab` kao 'nosuid', 'nodev', 'noexec', 'readonly', itd.
 *   Stabilnost: Korisnik ili pokvareni program može potpuno prebrisati particiju smećem ako imaju dozvolu da to očine. Kritični programi koji se nalaze na drugačijim particijama, ostaju neoštećeni.
@@ -599,7 +593,7 @@ Dati odgovor na to pitanje znači poznavati individualne potrebe osobe koja pita
 *   /home je tipično mjesto gdje leže korisnički podaci, podaci skinuti s Interneta i multimedija. Upravo zato je /home tipično najveći direktorij na disku. Nemoj zaboraviti kako će svi podatci na /home particiji ostati netaknuti ukoliko odlučiš reinstalirati Arch Linux (dokle god imaš posebnu /home particiju).
 *   Dodatnih 25% prostora dodanih svakoj particiji je dobra praksa, radi neočekivanih slučajeva ili oprezne mjere protiv fragmentacije.
 
-_Ako pratiš gornja pravila, jedan tipični sustav će imati korijensku particiju / veličine 15 GB, /var particiju veličine 10 GB, swap particiju veličine 1 GB i /home particiju veličine preostalog dijela diska._
+*Ako pratiš gornja pravila, jedan tipični sustav će imati korijensku particiju / veličine 15 GB, /var particiju veličine 10 GB, swap particiju veličine 1 GB i /home particiju veličine preostalog dijela diska.*
 
 #### Ručno particioniranje tvrdog diska (pomoću cfdisk)
 
@@ -631,7 +625,7 @@ sda4               Primary     Linux                             140480 #/home
 
 Choose **W**rite and type '**yes'**. Beware that this operation may destroy data on your disk. Choose **Q**uit to leave the partitioner. Choose 'Done' to leave this menu and continue with "Set Filesystem Mountpoints".
 
-**Note:** Since the latest developments of the Linux kernel which include the libata and PATA modules, all IDE, SATA and SCSI drives have adopted the sd_x_ naming scheme. This is perfectly normal and should not be a concern.
+**Note:** Since the latest developments of the Linux kernel which include the libata and PATA modules, all IDE, SATA and SCSI drives have adopted the sd*x* naming scheme. This is perfectly normal and should not be a concern.
 
 #### Creating filesystems (general information)
 
@@ -639,21 +633,21 @@ Choose **W**rite and type '**yes'**. Beware that this operation may destroy data
 
 Again, a filesystem type is a very subjective matter which comes down to personal preference. Each has its own advantages, disadvantages, and unique idiosyncrasies. Here is a very brief overview of supported filesystems:
 
-1.  [ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2") _Second Extended Filesystem_- Old, mature GNU/Linux filesystem. Very stable, but _without journaling support_ or barriers, which can result in data loss in a power loss or system crash. May be inconvenient for root (/) and /home, due to very long fsck's. _An ext2 filesystem can easily be converted to ext3._
-2.  [ext3](https://en.wikipedia.org/wiki/ext3 "wikipedia:ext3") _Third Extended Filesystem_- Essentially the ext2 system, but with journaling support and write barriers. ext3 is backward compatible with ext2\. Extremely stable and mature.
-3.  [ext4](https://en.wikipedia.org/wiki/ext4 "wikipedia:ext4") _Fourth Extended Filesystem_- Backward compatible with ext2 and ext3\. Introduces support for volumes with sizes up to 1 exabyte and files with sizes up to 16 terabytes. Increases the 32,000 subdirectory limit in ext3 to 64,000\. Offers online defragmentation ability.
+1.  [ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2") *Second Extended Filesystem*- Old, mature GNU/Linux filesystem. Very stable, but *without journaling support* or barriers, which can result in data loss in a power loss or system crash. May be inconvenient for root (/) and /home, due to very long fsck's. *An ext2 filesystem can easily be converted to ext3.*
+2.  [ext3](https://en.wikipedia.org/wiki/ext3 "wikipedia:ext3") *Third Extended Filesystem*- Essentially the ext2 system, but with journaling support and write barriers. ext3 is backward compatible with ext2\. Extremely stable and mature.
+3.  [ext4](https://en.wikipedia.org/wiki/ext4 "wikipedia:ext4") *Fourth Extended Filesystem*- Backward compatible with ext2 and ext3\. Introduces support for volumes with sizes up to 1 exabyte and files with sizes up to 16 terabytes. Increases the 32,000 subdirectory limit in ext3 to 64,000\. Offers online defragmentation ability.
 4.  [ReiserFS](https://en.wikipedia.org/wiki/ReiserFS "wikipedia:ReiserFS") (V3)- Hans Reiser's high-performance journaling FS uses a very interesting method of data throughput based on an unconventional and creative algorithm. ReiserFS is touted as very fast, especially when dealing with many small files. ReiserFS is fast at formatting, yet comparatively slow at mounting. Quite mature and stable. ReiserFS (V3) is not actively developed at this time. Generally regarded as a good choice for /var.
-5.  [JFS](https://en.wikipedia.org/wiki/JFS_(file_system) "wikipedia:JFS (file system)") - IBM's **J**ournaled **F**ile**S**ystem- The first filesystem to offer journaling. JFS had many years of use in the IBM AIX® OS before being ported to GNU/Linux. JFS currently uses the least CPU resources of any GNU/Linux filesystem. Very fast at formatting, mounting and fsck's, and very good all-around performance, especially in conjunction with the deadline I/O scheduler. (See [JFS](/index.php/JFS "JFS").) Not as widely supported as ext or ReiserFS, but very mature and stable.
+5.  [JFS](https://en.wikipedia.org/wiki/JFS_(file_system) - IBM's **J**ournaled **F**ile**S**ystem- The first filesystem to offer journaling. JFS had many years of use in the IBM AIX® OS before being ported to GNU/Linux. JFS currently uses the least CPU resources of any GNU/Linux filesystem. Very fast at formatting, mounting and fsck's, and very good all-around performance, especially in conjunction with the deadline I/O scheduler. (See [JFS](/index.php/JFS "JFS").) Not as widely supported as ext or ReiserFS, but very mature and stable.
 6.  [XFS](https://en.wikipedia.org/wiki/XFS "wikipedia:XFS") - Another early journaling filesystem originally developed by Silicon Graphics for the IRIX OS and ported to GNU/Linux. XFS offers very fast throughput on large files and large filesystems. Very fast at formatting and mounting. Generally benchmarked as slower with many small files, in comparison to other filesystems. XFS is very mature and offers online defragmentation ability.
 7.  [Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs") - Also known as "Better FS" is a new filesystem with substantial new and powerful features similar to Sun/Oracle's excellent [ZFS](https://en.wikipedia.org/wiki/ZFS "wikipedia:ZFS"). These include snapshots, multi-disk striping and mirroring (basically software raid without mdadm), checksums, incremental backup, and on-the-fly compression (which can give a significant performance boost as well as save space), and more. It is still considered "unstable" as of January 2011, but has been merged into the mainline kernel under experimental status. Btrfs looks to be the future of linux filesystems, and is now offered as a root filesystem choice in all major distribution installers.
 
 **Warning:** Btrfs has no fsck utility yet, so if any corruption occurs you cannot repair the filesystem.
 
-*   JFS and XFS filesystems cannot be _shrunk_ by disk utilities (such as _gparted_ or _parted magic_)
+*   JFS and XFS filesystems cannot be *shrunk* by disk utilities (such as *gparted* or *parted magic*)
 
 ##### A note on journaling
 
-All above filesystems, except ext2, utilize [journaling](http://en.wikipedia.org/wiki/Journaling_file_system). Journaling file systems are fault-resilient file systems that use a journal to log changes before they are committed to the file system to avoid metadata corruption in the event of a crash. Note that not all journaling techniques are alike; specifically, only ext3 and ext4 offer _data-mode journaling_, (though, not by default), which journals _both_ data _and_ meta-data (but with a significant speed penalty). The others only offer _ordered-mode journaling_, which journals meta-data only. While all will return your filesystem to a valid state after recovering from a crash, _data-mode journaling_ offers the greatest protection against file system corruption and data loss but can suffer from performance degradation, as all data is written twice (first to the journal, then to the disk). Depending upon how important your data is, this may be a consideration in choosing your filesystem type.
+All above filesystems, except ext2, utilize [journaling](http://en.wikipedia.org/wiki/Journaling_file_system). Journaling file systems are fault-resilient file systems that use a journal to log changes before they are committed to the file system to avoid metadata corruption in the event of a crash. Note that not all journaling techniques are alike; specifically, only ext3 and ext4 offer *data-mode journaling*, (though, not by default), which journals *both* data *and* meta-data (but with a significant speed penalty). The others only offer *ordered-mode journaling*, which journals meta-data only. While all will return your filesystem to a valid state after recovering from a crash, *data-mode journaling* offers the greatest protection against file system corruption and data loss but can suffer from performance degradation, as all data is written twice (first to the journal, then to the disk). Depending upon how important your data is, this may be a consideration in choosing your filesystem type.
 
 #### Manually configure block devices, filesystems and mountpoints
 
@@ -673,7 +667,7 @@ First, select the package category:
 
 **Note:** For expedience, all packages in **base** are selected by default. Use the space-bar to select and de-select packages.
 
-*   base: Packages from the [core] repo to provide the minimal base environment. Always select this and do not remove any packages from it, as all packages in Arch Linux assume that _base_ is always installed.
+*   base: Packages from the [core] repo to provide the minimal base environment. Always select this and do not remove any packages from it, as all packages in Arch Linux assume that *base* is always installed.
 *   base-devel: Extra tools from [core] such as `make`, and `automake`. Most beginners should choose to install it, as many will probably need it later.
 
 After category selection, you will be presented with the full lists of packages, allowing you to fine-tune your selections. Use the space bar to select and unselect.
@@ -684,7 +678,7 @@ After selecting the needed packages, leave the selection screen and continue to 
 
 ### Install Packages
 
-_Install Packages_ will install the selected packages to your new system. If you selected a CD-ROM/USB as the source, package versions from the CD-ROM/USB will be installed. If you opted for a netinstall, fresh packages will be downloaded from the Internet and installed.
+*Install Packages* will install the selected packages to your new system. If you selected a CD-ROM/USB as the source, package versions from the CD-ROM/USB will be installed. If you opted for a netinstall, fresh packages will be downloaded from the Internet and installed.
 
 **Note:** In some installers, you will be asked if you wish to keep the packages in the pacman cache. If you choose "yes", you will have the flexibility to [downgrade](/index.php/Downgrade "Downgrade") packages to previous versions in the future, so this is recommended (you can always clear the cache in the future).
 
@@ -700,11 +694,11 @@ Now you will be asked which text editor you want to use; choose [nano](/index.ph
 
 #### Can the installer handle this more automatically?
 
-Hiding the process of system configuration is in direct opposition to **[The Arch Way](/index.php/The_Arch_Way "The Arch Way")**. While it is true that recent versions of the kernel and hardware probing tools offer excellent hardware support and auto-configuration, Arch presents the user all pertinent configuration files during installation for the purposes of _transparency and system resource control_. By the time you have finished modifying these files to your specifications, you will have learned the simple method of manual Arch Linux system configuration and become more familiar with the base structure, leaving you better prepared to use and maintain your new installation productively.
+Hiding the process of system configuration is in direct opposition to **[The Arch Way](/index.php/The_Arch_Way "The Arch Way")**. While it is true that recent versions of the kernel and hardware probing tools offer excellent hardware support and auto-configuration, Arch presents the user all pertinent configuration files during installation for the purposes of *transparency and system resource control*. By the time you have finished modifying these files to your specifications, you will have learned the simple method of manual Arch Linux system configuration and become more familiar with the base structure, leaving you better prepared to use and maintain your new installation productively.
 
 #### /etc/rc.conf
 
-Arch Linux uses the file `/etc/rc.conf` as the principal location for system configuration. This one file contains a wide range of configuration information, principally used at system startup. As its name directly implies, it also contains settings for and invokes the `/etc/rc*` files, and is, of course, sourced _by_ these files.
+Arch Linux uses the file `/etc/rc.conf` as the principal location for system configuration. This one file contains a wide range of configuration information, principally used at system startup. As its name directly implies, it also contains settings for and invokes the `/etc/rc*` files, and is, of course, sourced *by* these files.
 
 ##### LOCALIZATION section
 
@@ -791,7 +785,7 @@ HOSTNAME="arch"
 
 	netmask
 
-	Optional, defaults to _255.255.255.0_. If you want to use a custom netmask, specify it here. **Leave this blank for DHCP.**
+	Optional, defaults to *255.255.255.0*. If you want to use a custom netmask, specify it here. **Leave this blank for DHCP.**
 
 	broadcast
 
@@ -807,7 +801,7 @@ HOSTNAME="arch"
 
 	NETWORKS
 
-	This is an optional setting to be enabled only if using the [netcfg](/index.php/Netcfg "Netcfg") package with optional _dialog_ package. Enable these netcfg profiles at boot-up. These are useful if you happen to need more advanced network features than the simple network service supports, such as multiple network configurations (ie, laptop users).
+	This is an optional setting to be enabled only if using the [netcfg](/index.php/Netcfg "Netcfg") package with optional *dialog* package. Enable these netcfg profiles at boot-up. These are useful if you happen to need more advanced network features than the simple network service supports, such as multiple network configurations (ie, laptop users).
 
 **Example with Static IP:**
 
@@ -860,7 +854,7 @@ DAEMONS=(network @syslog-ng netfs @crond)
 
 The [daemons](/index.php/Daemons "Daemons") line need not be changed at this time, but it is useful to explain what daemons are, as they will be addressed later in this guide.
 
-A [daemon](https://en.wikipedia.org/wiki/Daemon_(computing) "wikipedia:Daemon (computing)") is a program that runs in the background, waiting for events to occur and offering services. A good example is a web server that waits for a request to deliver a page (e.g.: httpd) or an SSH server waiting for a user login (e.g.: sshd). While these are full-featured applications, there are also daemons whose work is not that visible. Examples are a daemon which writes messages into a log file (e.g. syslog, metalog), and a daemon which provides a graphical login (e.g.: gdm, kdm). All these programs can be added to the daemons line and will be started when the system boots. Useful daemons will be presented during this guide.
+A [daemon](https://en.wikipedia.org/wiki/Daemon_(computing) is a program that runs in the background, waiting for events to occur and offering services. A good example is a web server that waits for a request to deliver a page (e.g.: httpd) or an SSH server waiting for a user login (e.g.: sshd). While these are full-featured applications, there are also daemons whose work is not that visible. Examples are a daemon which writes messages into a log file (e.g. syslog, metalog), and a daemon which provides a graphical login (e.g.: gdm, kdm). All these programs can be added to the daemons line and will be started when the system boots. Useful daemons will be presented during this guide.
 
 **Tip:** All Arch daemon scripts reside under /etc/rc.d/
 
@@ -868,7 +862,7 @@ A [daemon](https://en.wikipedia.org/wiki/Daemon_(computing) "wikipedia:Daemon (c
 
 The [fstab](https://en.wikipedia.org/wiki/fstab "wikipedia:fstab") (for **f**ile **s**ystems **tab**le) is part of the system configuration listing all available disks and disk partitions, and indicating how they are to be initialized or otherwise integrated into the overall system's filesystem. The `/etc/fstab` file is most commonly used by the **mount** command. The mount command takes a filesystem on a device, and adds it to the main system hierarchy that you see when you use your system. **mount -a** is called from `/etc/rc.sysinit`, about 3/4 of the way through the boot process, and reads `/etc/fstab` to determine which options should be used when mounting the specified devices therein. If **noauto** is appended to a filesystem in `/etc/fstab`, **mount -a** will not mount it at boot.
 
-_An example of `/etc/fstab`_
+*An example of `/etc/fstab`*
 
 ```
 # <file system>                            <dir>     <type>  <options>            <dump> <pass>
@@ -886,7 +880,7 @@ UUID=95783956-c4c6-4fe7-9de6-1883a92c2cc8  /home     ext4    defaults           
 	<file system>
 
 	Describes the block device or remote filesystem to be mounted. For regular mounts, this field will contain a link to a block device node (as created by mknod which is called by udev at boot) for the device to be mounted; for instance, `/dev/cdrom` or `/dev/sda1`.
-**Note:** If your system has more than one hard drive, the installer will default to using UUID rather than the sd_x_ naming scheme, for consistent device mapping. **[Utilizing UUID](/index.php/Persistent_block_device_naming "Persistent block device naming") has several advantages and may also be preferred to avoid issues if hard disks are added to the system in the future.** Due to active developments in the kernel and also udev, the ordering in which drivers for storage controllers are loaded may change randomly, yielding an unbootable system/kernel panic. Nearly every motherboard has several controllers (onboard SATA, onboard IDE), and due to the aforementioned development updates, `/dev/sda` may become `/dev/sdb` on the next reboot. For more information, see [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
+**Note:** If your system has more than one hard drive, the installer will default to using UUID rather than the sd*x* naming scheme, for consistent device mapping. **[Utilizing UUID](/index.php/Persistent_block_device_naming "Persistent block device naming") has several advantages and may also be preferred to avoid issues if hard disks are added to the system in the future.** Due to active developments in the kernel and also udev, the ordering in which drivers for storage controllers are loaded may change randomly, yielding an unbootable system/kernel panic. Nearly every motherboard has several controllers (onboard SATA, onboard IDE), and due to the aforementioned development updates, `/dev/sda` may become `/dev/sdb` on the next reboot. For more information, see [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
 
 	<dir>
 
@@ -902,7 +896,7 @@ UUID=95783956-c4c6-4fe7-9de6-1883a92c2cc8  /home     ext4    defaults           
 
 	<dump>
 
-	Used by the dump(8) command to determine which filesystems are to be dumped. dump is a backup utility. If the fifth field is not present, a value of zero is returned and dump will assume that the filesystem does not need to be backed up. _Note that dump is not installed by default._
+	Used by the dump(8) command to determine which filesystems are to be dumped. dump is a backup utility. If the fifth field is not present, a value of zero is returned and dump will assume that the filesystem does not need to be backed up. *Note that dump is not installed by default.*
 
 	<pass>
 
@@ -943,7 +937,7 @@ This file can be used to set special configuration options for the kernel module
 
 **Note:** If you are using DHCP, you may safely ignore this file, as by default, it will be dynamically created and destroyed by the dhcpcd daemon. You may change this default behavior if you wish. See the [network](/index.php/Network#For_DHCP_IP "Network") and [resolv.conf](/index.php/Resolv.conf "Resolv.conf") pages for more information.
 
-The _resolver_ is a set of routines in the C library that provide access to the Internet Domain Name System (DNS). One of the main functions of DNS is to translate domain names into IP addresses, to make the Web a friendlier place. The resolver configuration file, or `/etc/resolv.conf`, contains information that is read by the resolver routines the first time they are invoked by a process.
+The *resolver* is a set of routines in the C library that provide access to the Internet Domain Name System (DNS). One of the main functions of DNS is to translate domain names into IP addresses, to make the Web a friendlier place. The resolver configuration file, or `/etc/resolv.conf`, contains information that is read by the resolver routines the first time they are invoked by a process.
 
 If you use a static IP, set your DNS servers in `/etc/resolv.conf` (nameserver <ip-address>). You may have as many as you wish.
 
@@ -973,7 +967,7 @@ This file associates IP addresses with hostnames and aliases, one line per IP ad
 
 ```
 
-Add your _hostname_, coinciding with the one specified in `/etc/rc.conf`, as an alias, so that it looks like this:
+Add your *hostname*, coinciding with the one specified in `/etc/rc.conf`, as an alias, so that it looks like this:
 
 ```
 127.0.0.1   localhost.localdomain   localhost **yourhostname**
@@ -981,12 +975,10 @@ Add your _hostname_, coinciding with the one specified in `/etc/rc.conf`, as an 
 ```
 
 **Warning:** This format, **including the "localhost" and your actual host name**, is required for program compatibility! So, if you have named your computer "arch", then that line above should look like this:
-
 ```
 127.0.0.1   localhost.localdomain   localhost arch
 
 ```
-
 Errors in this entry may cause poor network performance and/or certain programs to open very slowly, or not work at all. This is a very common error for beginners.
 
 **Note:** Recent versions of the Arch Linux Installer automatically add your hostname to this file once you edit `/etc/rc.conf` with such information. If, for whatever reason, this is not the case, you may add it yourself with the given instructions.
@@ -999,13 +991,11 @@ If you use a static IP, add another line using the syntax: <static-IP> <hostname
 ```
 
 **Tip:** For convenience, you may also use `/etc/hosts` aliases for hosts on your network, and/or on the Web, e.g.:
-
 ```
 192.168.1.90 media
 192.168.1.88 data
 
 ```
-
 The above example would allow you access a media and data server on your network by name and without the need for typing out their respective IP addresses.
 
 #### /etc/locale.gen
@@ -1052,14 +1042,14 @@ The provided **GRUB** configuration (`/boot/grub/menu.lst`) should be sufficient
 
 	root
 
-	**GRUB'**s root; the drive and partition where the kernel (/boot) resides, according to system BIOS. (More accurately, where GRUB's stage2 file resides). **NOT necessarily the root (/) file system**, as they can reside on separate partitions. GRUB's numbering scheme starts at 0, and uses an hd_x,x_ format regardless of IDE or SATA, and enclosed within parentheses. The example indicates that /boot is on the first partition of the first drive, according to the BIOS, so (hd0,0).
+	**GRUB'**s root; the drive and partition where the kernel (/boot) resides, according to system BIOS. (More accurately, where GRUB's stage2 file resides). **NOT necessarily the root (/) file system**, as they can reside on separate partitions. GRUB's numbering scheme starts at 0, and uses an hd*x,x* format regardless of IDE or SATA, and enclosed within parentheses. The example indicates that /boot is on the first partition of the first drive, according to the BIOS, so (hd0,0).
 
 	kernel
 
 	This line specifies:
 
-*   The path and filename of the kernel _**relative to GRUB's root**_. In the example, /boot is merely a directory residing on the same partition as / and **vmlinuz-linux** is the kernel filename; `/boot/vmlinuz-linux`. If /boot were on a separate partition, the path and filename would be simply `/vmlinuz-linux`, being relative to **GRUB'**s root.
-*   The `root=` argument to the kernel statement specifies the partition containing the root (/) directory in the booted system, (more accurately, the partition containing `/sbin/init`). An easy way to distinguish the 2 appearances of "root" in `/boot/grub/menu.lst` is to remember that the first root statement _informs GRUB where the kernel resides_, whereas the second `root=` kernel argument _tells the kernel where the root filesystem (/) resides_.
+*   The path and filename of the kernel ***relative to GRUB's root***. In the example, /boot is merely a directory residing on the same partition as / and **vmlinuz-linux** is the kernel filename; `/boot/vmlinuz-linux`. If /boot were on a separate partition, the path and filename would be simply `/vmlinuz-linux`, being relative to **GRUB'**s root.
+*   The `root=` argument to the kernel statement specifies the partition containing the root (/) directory in the booted system, (more accurately, the partition containing `/sbin/init`). An easy way to distinguish the 2 appearances of "root" in `/boot/grub/menu.lst` is to remember that the first root statement *informs GRUB where the kernel resides*, whereas the second `root=` kernel argument *tells the kernel where the root filesystem (/) resides*.
 *   Kernel options: In our example, **ro** mounts the filesystem as read-only during startup, which is usually a safe default; you may wish to change this in case it causes problems booting. **quiet** sets the default kernel log level so that all messages during boot are suppressed except serious ones. Depending on hardware, **rootdelay=8** may need to be added to the kernel options in order to be able to boot from an external usb hard drive.
 
 	initrd
@@ -1088,7 +1078,7 @@ initrd /initramfs-linux.img
 
 Install the [GRUB](/index.php/GRUB "GRUB") bootloader to the **Master Boot Record** (/dev/sda in our example).
 
-**Warning:** Make sure to install GRUB on **/dev/sdX** and **not /dev/sdX_#_**! This is a common mistake.
+**Warning:** Make sure to install GRUB on **/dev/sdX** and **not /dev/sdX*#***! This is a common mistake.
 
 **Tip:** For more details, see the [GRUB](/index.php/GRUB "GRUB") wiki page.
 
@@ -1118,7 +1108,6 @@ Login with the root account. We will configure pacman and update the system as r
 If you properly configured your system, you should have a working network. Try to `ping example.com` to verify:
 
  `$ ping -c 3 example.com ` 
-
 ```
 PING example.com (192.0.43.10) 56(84) bytes of data.
 64 bytes from 43-10.any.icann.org (192.0.43.10): icmp_req=1 ttl=248 time=25.6 ms
@@ -1193,7 +1182,6 @@ Now we will update the system using [pacman](/index.php/Pacman "Pacman"). [Pacma
 pacman will attempt to read `/etc/pacman.conf` each time it is invoked. This configuration file is divided into sections, or repositories. Each section defines a package [repository](/index.php/Official_repositories "Official repositories") that pacman can use when searching for packages. The exception to this is the `options` section, which defines global options.
 
 **Note:** The defaults should work, so modifying at this point may be unnecessary, but verification is always recommended. Further info available in the [Mirrors](/index.php/Mirrors "Mirrors") article.
-
  `# nano /etc/pacman.conf` 
 
 Repositories are described below; enable all desired repositories by removing the # in front of the 'Include =' and '[repository]' lines.
@@ -1232,7 +1220,7 @@ Open `/etc/pacman.d/mirrorlist` in an editor and uncomment (remove the '#' in fr
 
  `# pacman -Syy` 
 
-Passing two `--refresh` or `-y` flags forces pacman to refresh all package lists even if they are considered to be up to date. Issuing `pacman -Syy` _whenever a mirror is changed_, is good practice and will avoid possible headaches.
+Passing two `--refresh` or `-y` flags forces pacman to refresh all package lists even if they are considered to be up to date. Issuing `pacman -Syy` *whenever a mirror is changed*, is good practice and will avoid possible headaches.
 
 #### rankmirrors
 
@@ -1242,7 +1230,7 @@ Issue the following command to completely refresh package database, upgrade and 
 
  `# pacman -Syyu curl` 
 
-*   _If you get an error at this step, use the command `nano /etc/pacman.d/mirrorlist` and uncomment a server that suits you._
+*   *If you get an error at this step, use the command `nano /etc/pacman.d/mirrorlist` and uncomment a server that suits you.*
 
 `cd` to the `/etc/pacman.d/` directory:
 
@@ -1321,7 +1309,7 @@ Linux is a multi-user environment. You should not do your everyday work using th
 
  `# adduser` 
 
-You will be asked to enter some information in an interactive way. In the following example we are creating the user _archie_:
+You will be asked to enter some information in an interactive way. In the following example we are creating the user *archie*:
 
 ```
 Login name for new user []: **archie**
@@ -1340,9 +1328,9 @@ Expiry date (YYYY-MM-DD) []:
 
 ```
 
-As showed in the example, you are advised to enter values only for the _Login name_ and the _Additional groups_, and leave empty all the other fields.
+As showed in the example, you are advised to enter values only for the *Login name* and the *Additional groups*, and leave empty all the other fields.
 
-The list of _Additional groups_ in the example is a typical choice for a desktop system, hence it is recommended especially for beginners:
+The list of *Additional groups* in the example is a typical choice for a desktop system, hence it is recommended especially for beginners:
 
 *   **audio** - for tasks involving sound card and related software
 *   **lp** - for managing printing tasks
@@ -1418,7 +1406,7 @@ If you are comfortable using vi, issue the visudo command without the EDITOR=nan
 
 This will open the file `/etc/sudoers` in a special session of vi. visudo copies the file to be edited to a temporary file, edits it with an editor, (vi by default), and subsequently runs a sanity check. If it passes, the temporary file overwrites the original with the correct permissions.
 
-**Warning:** Do not edit `/etc/sudoers` directly with an editor; errors in syntax can cause annoyances (like rendering the root account unusable). You **must** use the _visudo_ command to edit `/etc/sudoers`.
+**Warning:** Do not edit `/etc/sudoers` directly with an editor; errors in syntax can cause annoyances (like rendering the root account unusable). You **must** use the *visudo* command to edit `/etc/sudoers`.
 
 In the previous section we added your user to the "wheel" group. To give users in the wheel group full root privileges when they precede a command with "sudo", uncomment the following line:
 
@@ -1455,7 +1443,7 @@ Install the base packages:
 
  `# pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils` 
 
-Install [mesa](https://en.wikipedia.org/wiki/Mesa_3D_(OpenGL) "wikipedia:Mesa 3D (OpenGL)") for 3D support:
+Install [mesa](https://en.wikipedia.org/wiki/Mesa_3D_(OpenGL) for 3D support:
 
  `# pacman -S mesa` 
 
@@ -1470,7 +1458,7 @@ Next, you should install a driver for your graphics card.
 You will need knowledge of which video chipset your machine has. If you do not know, use the `/usr/sbin/lspci` program:
 
  `$ lspci` 
-**Note:** The **vesa** driver is the most generic, and should work with almost any modern video chipset. If you cannot find a suitable driver for your video chipset, vesa _should_ work with any video card, but it offers only unaccelerated 2D performance.
+**Note:** The **vesa** driver is the most generic, and should work with almost any modern video chipset. If you cannot find a suitable driver for your video chipset, vesa *should* work with any video card, but it offers only unaccelerated 2D performance.
 
 For a complete list of all **open-source** video drivers, search the package database:
 
@@ -1666,7 +1654,7 @@ Install with:
 
 The X Window System provides the basic framework for building a graphical user interface (GUI).
 
-**Note:** Choosing your DE or WM is a very subjective and personal decision. Choose the best environment for _your_ needs.
+**Note:** Choosing your DE or WM is a very subjective and personal decision. Choose the best environment for *your* needs.
 
 	Window Manager (WM) 
 

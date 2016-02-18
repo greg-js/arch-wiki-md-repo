@@ -118,7 +118,7 @@ NotShowIn=KDE
 
 ### XFCE
 
-nm-applet 可以在 XFCE 下正常工作，但是为了可以显示通知信息，_包括错误信息_， nm-applet 需要一个 Freedesktop 桌面通知扩展（查阅 [[1]](http://www.galago-project.org/specs/notification/0.9/index.html)）。xfce4-notifyd 就是这么一个扩展。
+nm-applet 可以在 XFCE 下正常工作，但是为了可以显示通知信息，*包括错误信息*， nm-applet 需要一个 Freedesktop 桌面通知扩展（查阅 [[1]](http://www.galago-project.org/specs/notification/0.9/index.html)）。xfce4-notifyd 就是这么一个扩展。
 
 ```
 # pacman -S network-manager-applet xfce4-notifyd
@@ -179,7 +179,6 @@ GNOME applet 和 xfce4-notifyd 结合可以很好的工作:
 不使用系统托盘，可以使用 [trayer](https://www.archlinux.org/packages/?name=trayer) 或 [stalonetray](https://www.archlinux.org/packages/?name=stalonetray)。例如，在路径中加入 "nmgui" 脚本：
 
  `nmgui` 
-
 ```
 #!/bin/sh
 nm-applet    2>&1 /dev/null &
@@ -212,7 +211,7 @@ killall nm-applet
 
 #### nmcli-dmenu
 
-[networkmanager-dmenu-git](https://aur.archlinux.org/packages/networkmanager-dmenu-git/) 是一个通过 _dmenu_ 而不是 `nm-applet` 来管理 NetworkManager 连接的脚本。它提供了所有必要的特性, 例如连接到已有的 WiFi 或有线网络, 连接到新的 WiFi 网络, 在需要的时候询问密码, 连接到已有的 VPN, 启用或停用网络连接, 运行 _nm-connection-editor_ 的图形界面。
+[networkmanager-dmenu-git](https://aur.archlinux.org/packages/networkmanager-dmenu-git/) 是一个通过 *dmenu* 而不是 `nm-applet` 来管理 NetworkManager 连接的脚本。它提供了所有必要的特性, 例如连接到已有的 WiFi 或有线网络, 连接到新的 WiFi 网络, 在需要的时候询问密码, 连接到已有的 VPN, 启用或停用网络连接, 运行 *nm-connection-editor* 的图形界面。
 
 ## 配置
 
@@ -221,7 +220,6 @@ NetworkManager 需要做这么几步保证正常运行。
 先验证 `/etc/hosts` 配置正确，如果配置不正确，网络管理器可能修改它。示例：
 
  `/etc/hosts` 
-
 ```
 127.0.0.1 localhost
 ::1       localhost
@@ -254,14 +252,13 @@ NetworkManager 守护进程启动后，会自动连接到已经配置的**系统
 
 参照[General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting")建立一个工作会话. 在工作会话中,你有三种方式授予NetworkManager工作所必须的权限.
 
-_方式 1._ 登录后运行[PolicyKit](/index.php/PolicyKit "PolicyKit")认证代理,比如 `/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1` ([polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome) 的一部分). 当你添加和删除一个网络链接时会提示输入密码.
+*方式 1.* 登录后运行[PolicyKit](/index.php/PolicyKit "PolicyKit")认证代理,比如 `/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1` ([polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome) 的一部分). 当你添加和删除一个网络链接时会提示输入密码.
 
-_方式 2._ 将你的账户加入`wheel`账户组. 管理网络时你将不需要输入密码,但注意你的账户同时被赋予了此账户组的其他权限,比如运行[sudo](/index.php/Sudo "Sudo")命令是无需密码.
+*方式 2.* 将你的账户加入`wheel`账户组. 管理网络时你将不需要输入密码,但注意你的账户同时被赋予了此账户组的其他权限,比如运行[sudo](/index.php/Sudo "Sudo")命令是无需密码.
 
-_方式 3._ 将你的账户加入`network`账户组,同时创建以下文件:
+*方式 3.* 将你的账户加入`network`账户组,同时创建以下文件:
 
  `/etc/polkit-1/rules.d/50-org.freedesktop.NetworkManager.rules` 
-
 ```
 polkit.addRule(function(action, subject) {
   if (action.id.indexOf("org.freedesktop.NetworkManager.") == 0 && subject.isInGroup("network")) {
@@ -278,14 +275,14 @@ polkit.addRule(function(action, subject) {
 有些服务只有联网时才有意义，例如 [OpenNTPD](/index.php/OpenNTPD "OpenNTPD") 和 网络文件系统挂载(**netfs**)。dispatcher 可以在连接网络后启动这些服务，并在网络关闭时停止它们。要使用这一功能, 需要启动 `NetworkManager-dispatcher.service`。 并且将脚本加到 `/etc/NetworkManager/dispatcher.d` 目录。这些脚本必须属于 root, 否则不会被执行。为了安全起见, 用户组也设置为 root:
 
 ```
-# chown root:root _scriptname_
+# chown root:root *scriptname*
 
 ```
 
 而且脚本必须只能是拥有者可写, 否则不会被执行:
 
 ```
-# chmod 755 _scriptname_
+# chmod 755 *scriptname*
 
 ```
 
@@ -298,7 +295,6 @@ polkit.addRule(function(action, subject) {
 如果一切运行良好, 那么这一节就可以跳过了。 However, there is a general problem related to running dispatcher scripts which take longer to be executed. Initially an internal timeout of three seconds only was used. If the called script did not complete in time, it was killed. Later the timeout was extended to about 20 seconds (see the [Bugtracker](https://bugzilla.redhat.com/show_bug.cgi?id=982734) for more information). If the timeout still creates the problem, a work around may be to modify the dispatcher service file `/usr/lib/systemd/system/NetworkManager-dispatcher.service` to remain active after exit:
 
  `/etc/systemd/system/NetworkManager-dispatcher.service` 
-
 ```
 .include /usr/lib/systemd/system/NetworkManager-dispatcher.service
 [Service]
@@ -315,7 +311,7 @@ RemainAfterExit=yes
 
 #### 使用sshfs挂载远程文件夹
 
-由于该脚本在一个非常受限制的环境中运行, 为了连接上SSH agent, 你必须 export `SSH_AUTH_SOCK`。 这里有几种不同方式, 参照 [here](https://bbs.archlinux.org/viewtopic.php?pid=1042030#p1042030) 获取更多详细信息. 以下示例需要 gnome-keyring , 如果 gnome-keyring 没解锁,将需要你输入密码. 如果 NetworkManager 设置为登录后自动连接, 很有可能因为 _gnome-keyring_ 还没启动导致失败(转入睡眠). 对应的 UUID 可以通过命令 `nmcli con status` 或 `nmcli con list` 查得。
+由于该脚本在一个非常受限制的环境中运行, 为了连接上SSH agent, 你必须 export `SSH_AUTH_SOCK`。 这里有几种不同方式, 参照 [here](https://bbs.archlinux.org/viewtopic.php?pid=1042030#p1042030) 获取更多详细信息. 以下示例需要 gnome-keyring , 如果 gnome-keyring 没解锁,将需要你输入密码. 如果 NetworkManager 设置为登录后自动连接, 很有可能因为 *gnome-keyring* 还没启动导致失败(转入睡眠). 对应的 UUID 可以通过命令 `nmcli con status` 或 `nmcli con list` 查得。
 
 ```
 #!/bin/sh
@@ -324,7 +320,7 @@ REMOTE='user@host:/remote/path'
 LOCAL='/local/path'
 
 interface=$1 status=$2
-if [ "$CONNECTION_UUID" = "_uuid_" ]; then
+if [ "$CONNECTION_UUID" = "*uuid*" ]; then
   case $status in
     up)
       export SSH_AUTH_SOCK=$(find /tmp -maxdepth 1 -type s -user "$USER" -name 'ssh')
@@ -345,7 +341,6 @@ fi
 	1\. 创建调度脚本
 
  `/etc/NetworkManager/dispatcher.d/vpn-up` 
-
 ```
 #!/bin/sh
 VPN_NAME="name of VPN connection defined in NetworkManager"
@@ -371,9 +366,9 @@ esac
 
 如果想在任意 Wi-Fi 网络都可以自动连接 VPN, 你可以用这样给 ESSID 赋值: `ESSID=$(iwgetid -r)`。记住要给脚本设置相应的权限, 参见 [上文](#.E7.BD.91.E7.BB.9C.E5.88.86.E9.85.8D.E5.99.A8)。
 
-如果想任意用户都能使用 VPN, 即使已经在 `nm-applet` 中勾选了 _Make the VPN connection available to all users_ 选项, 由于 [VPN secrets 保管方式的原因](http://developer.gnome.org/NetworkManager/0.9/secrets-flags.html), 连接依然可能会失败并且 NetworkManager 会报错 'no valid VPN secrets'。这样就需要执行步骤2:
+如果想任意用户都能使用 VPN, 即使已经在 `nm-applet` 中勾选了 *Make the VPN connection available to all users* 选项, 由于 [VPN secrets 保管方式的原因](http://developer.gnome.org/NetworkManager/0.9/secrets-flags.html), 连接依然可能会失败并且 NetworkManager 会报错 'no valid VPN secrets'。这样就需要执行步骤2:
 
-	2\. 可以选择编辑 VPN 连接的配置文件让 NetworkManager 自己储存 secrets 而不是把 secrets 保存在 [不能被root访问的](https://bugzilla.redhat.com/show_bug.cgi?id=710552) keyring 中: 打开 `/etc/NetworkManager/system-connections/_name of your VPN connection_`, 把 `password-flags` 以及 `secret-flags` 从 `1` 改为 `0`。
+	2\. 可以选择编辑 VPN 连接的配置文件让 NetworkManager 自己储存 secrets 而不是把 secrets 保存在 [不能被root访问的](https://bugzilla.redhat.com/show_bug.cgi?id=710552) keyring 中: 打开 `/etc/NetworkManager/system-connections/*name of your VPN connection*`, 把 `password-flags` 以及 `secret-flags` 从 `1` 改为 `0`。
 
 或者直接在 VPN 配置文件中加入 `vpn-secrets` 并写入密码:
 
@@ -383,7 +378,7 @@ esac
  password-flags=0
 
  [vpn-secrets]
- password=_your_password_
+ password=*your_password*
 
 ```
 
@@ -404,7 +399,7 @@ xhost +si:localuser:your_username
 
 ### 禁用 NetworkManager
 
-由于服务是通过 _dbus_ 自动启动的, 所以要完全禁用可以用 _systemctl_ 来屏蔽:
+由于服务是通过 *dbus* 自动启动的, 所以要完全禁用可以用 *systemctl* 来屏蔽:
 
 ```
 systemctl mask NetworkManager
@@ -499,18 +494,17 @@ require dhcp_server_identifier
 
 ```
 [keyfile]
-hostname=_your_hostname_
+hostname=*your_hostname*
 
 ```
 
 默认路径`/etc/NetworkManager/system-connections`的网络链接将应用`[密钥文件]`的选择。
 
-另一种选择是配置NetworkManager自动启动配置DHCP客户端去转发主机名。 NetworkManager utilizes [dhclient](https://www.archlinux.org/packages/?name=dhclient) in default and falls back to [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), if the former is not installed. To make _dhclient_ forward the hostname requires to set a non-default option, _dhcpcd_ forwards the hostname by default.
+另一种选择是配置NetworkManager自动启动配置DHCP客户端去转发主机名。 NetworkManager utilizes [dhclient](https://www.archlinux.org/packages/?name=dhclient) in default and falls back to [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), if the former is not installed. To make *dhclient* forward the hostname requires to set a non-default option, *dhcpcd* forwards the hostname by default.
 
-首先，核对使用哪一个DHCP客户端(_dhclient_ in this example):
+首先，核对使用哪一个DHCP客户端(*dhclient* in this example):
 
  `# journalctl -b | egrep "dhclient|dhcpcd"` 
-
 ```
 ...
 Nov 17 21:03:20 zenbook dhclient[2949]: Nov 17 21:03:20 zenbook dhclient[2949]: Bound to *:546
@@ -546,7 +540,7 @@ source [https://bbs.archlinux.org/viewtopic.php?id=152376](https://bbs.archlinux
 
 对于这个问题，你不得不在首先在`nm-applet`改变连接的名称（比如将"Auto eth0"变成“my eth0”）,去掉“Available to all users”的勾号。输入你的配置IP地址，然后点击“Apply”，这样就能保存你的配置
 
-如果你不希望默认链接自动连接网络，运行 `nm-connection-editor` (_not_ as root). 在链接配置窗口，选中默认配置(eg "Auto eth0") 去掉"Connect automatically". 点击 **Apply**.
+如果你不希望默认链接自动连接网络，运行 `nm-connection-editor` (*not* as root). 在链接配置窗口，选中默认配置(eg "Auto eth0") 去掉"Connect automatically". 点击 **Apply**.
 
 ### 普通用户无法编辑链接
 
@@ -790,7 +784,8 @@ unmanaged-devices=mac:00:22:68:1c:59:b1;mac:00:1E:65:30:D1:C4
           echo -n ";$i" >> $TARGET_FILE
       fi
   done
-  printf "\n" >> $TARGET_FILE
+  printf "
+" >> $TARGET_FILE
 
 ```
 
@@ -835,7 +830,6 @@ nameserver 208.67.220.220
 And have the dispatcher replace the discovered DHCP servers with the OpenDNS ones:
 
  `/etc/NetworkManager/dispatcher.d/dns-servers-opendns` 
-
 ```
 #!/bin/bash
 # Use OpenDNS servers over DHCP discovered servers

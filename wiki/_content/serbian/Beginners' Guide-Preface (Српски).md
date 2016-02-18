@@ -19,7 +19,7 @@ Preporucujemo vam da predjete [Cesto postavljana pitanja](/index.php?title=FAQ_(
 **Prednosti Arch Linux distribucije:**
 
 *   [Jednostavan](/index.php/The_Arch_Way_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "The Arch Way (Српски)") dizajn i filozofija
-*   [Svi paketi](https://www.archlinux.org/packages/?q=) su kompajlirani za [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "wikipedia:P6 (microarchitecture)") i [x86_64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64") arhitekture
+*   [Svi paketi](https://www.archlinux.org/packages/?q=) su kompajlirani za [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) i [x86_64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64") arhitekture
 *   [Rolling-release](https://en.wikipedia.org/wiki/Rolling_release "wikipedia:Rolling release") model, koji omogucava da samo jednom instalirate sistem, a zatim ga azurirate u kontinuitetu i na taj nacin uvek imate najskorije stabilne verzije instaliranog softvera
 *   [BSD stil](/index.php?title=Arch_Boot_Process_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8)&action=edit&redlink=1 "Arch Boot Process (Српски) (page does not exist)") init skripti koji zastupa jedan centralizovani fajl za podesavanja
 *   [mkinitcpio (Српски)](/index.php?title=Mkinitcpio_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8)&action=edit&redlink=1 "Mkinitcpio (Српски) (page does not exist)") je jednostavan i dinamicki [initramfs](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd") kreator
@@ -33,19 +33,19 @@ Arch Linux, pacman, dokumentacija i skripte su Copyright © 2002-2007 by Judd Vi
 
 ### Arch nacin
 
-_**Dizajn principi iza Arch-a imaju za cilj da ga ucine [jednostavnim](/index.php/The_Arch_Way_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "The Arch Way (Српски)").**_
+***Dizajn principi iza Arch-a imaju za cilj da ga ucine [jednostavnim](/index.php/The_Arch_Way_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "The Arch Way (Српски)").***
 
 'Jednostavan', u ovom kontekstu, bi znacilo 'bez bespotrebnih dodataka, modifikacija ili komplikacija'. Ukratko; elegantan, minimalisticki pristup.
 
 **Kada razmatrate jednostavnost, imajte sledece na umu:**
 
-*   _" 'Jednostavno' je definisano sa tehnicke tacke gledista, a ne sa tacke gledista upotrebljivosti. Bolje je biti tehnicki elegantan sa visom krivom ucenja, nego biti lak za koriscenje i tehnicki [inferioran]." -Aaron Griffin_
-*   _Entia non sunt multiplicanda praeter necessitatem_ ili "Entitete ne bi trebalo umnozavati bespotrebno." -Occam's razor. Termin _razor_ se odnosi na cin uklanjanja (brijanja) bespotrebnih komplikacija da se dodje do najjednostavnijeg objasnjenja, metode ili teorije.
-*   _"Izuzetni deo [moje metode] lezi u jednostavnosti.. Visina kultivacije uvek tezi ka jednostavnosti."_ - Bruce Lee
+*   *" 'Jednostavno' je definisano sa tehnicke tacke gledista, a ne sa tacke gledista upotrebljivosti. Bolje je biti tehnicki elegantan sa visom krivom ucenja, nego biti lak za koriscenje i tehnicki [inferioran]." -Aaron Griffin*
+*   *Entia non sunt multiplicanda praeter necessitatem* ili "Entitete ne bi trebalo umnozavati bespotrebno." -Occam's razor. Termin *razor* se odnosi na cin uklanjanja (brijanja) bespotrebnih komplikacija da se dodje do najjednostavnijeg objasnjenja, metode ili teorije.
+*   *"Izuzetni deo [moje metode] lezi u jednostavnosti.. Visina kultivacije uvek tezi ka jednostavnosti."* - Bruce Lee
 
 ### O ovom uputstvu
 
-Odrzavan od strane zajednice, [Arch wiki](/index.php/Main_Page_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Main Page (Српски)") je odlican izvor za resavanje problema. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanali ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) i ([irc://irc.freenode.net/#archlinux-rs](irc://irc.freenode.net/#archlinux-rs)), i [forumi](https://bbs.archlinux.org/) su takodje na raspolaganju ukoliko ne mozete da pronadjete odgovor. Posetite i `man` stranice za komande sa kojima niste upoznati; to mozete uciniti sa `man "komandom`_._
+Odrzavan od strane zajednice, [Arch wiki](/index.php/Main_Page_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Main Page (Српски)") je odlican izvor za resavanje problema. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanali ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) i ([irc://irc.freenode.net/#archlinux-rs](irc://irc.freenode.net/#archlinux-rs)), i [forumi](https://bbs.archlinux.org/) su takodje na raspolaganju ukoliko ne mozete da pronadjete odgovor. Posetite i `man` stranice za komande sa kojima niste upoznati; to mozete uciniti sa `man "komandom`*.*
 
 **Note:** Pazljivo pracenje ovog uputstva je od kljucnog znacaja kako bi ste uspesno instalirali i podesili Arch Linux sistem, pa vas "molimo" da ga detaljno procitate. Jako je preporucljivo da procitate svaku sekciju u celosti <u>pre</u> obavljanja posla koji sekcija opisuje.
 

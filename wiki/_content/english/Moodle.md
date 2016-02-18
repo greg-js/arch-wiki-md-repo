@@ -119,7 +119,7 @@ Go to `[http://localhost/moodle/install.php](http://localhost/moodle/install.php
 
 *   The remainder of the install should be automatic. It takes 2 or 3 minutes on my computer to set up all the SQL Databases and so on.
 
-*   The final page allows you to set up the administrator user for Moodle. You need to enter a password, name and set the country as a bare minimum. _Don't_ forget the password !
+*   The final page allows you to set up the administrator user for Moodle. You need to enter a password, name and set the country as a bare minimum. *Don't* forget the password !
 
 Happy Moodling !
 

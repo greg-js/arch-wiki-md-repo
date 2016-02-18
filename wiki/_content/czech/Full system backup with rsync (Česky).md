@@ -26,7 +26,6 @@ Tento skript je velmi jednoduchý; používá rsync v archivním režimu, přič
 Uložte ho jako `rbackup.sh` a nastavte mu atribut spustitelnosti:
 
  `rbackup.sh` 
-
 ```
 #!/bin/sh
 # rsync backup script
@@ -56,7 +55,6 @@ Jelikož může být obtížné určit, které soubory budou v tomto seznamu, uv
 Uložte následující jako `backup.lst`:
 
  `backup.lst` 
-
 ```
 # Zahrnout
 + /dev/console
@@ -76,7 +74,7 @@ Uložte následující jako `backup.lst`:
 
 	Vyloučit
 
-	Obsah systémových adresářů; `/dev`, `/proc`, `/sys` a `/tmp` je vyloučen, protože je vytvářen systémem při startu, zatímco tyto adresáře je třeba zachovat, jelikož _nejsou_ vytvářeny při startu. Nakonec, všechny `lost+found` instance jsou vynechány, protože jsou specifické pro oddíl. Pro Archlinux `/var/lib/pacman/sync/*` mohou být rovněž vynechány. To může ušetřit dost času při každém zálohování, jelikož adresář obsahuje hodně malých souborů, které mají tendenci se často měnit. Toto jsou "popisovací" soubory pro každý balíček z repozitářů. Tyto soubory lze vygenerovat znovu pomocí `pacman -Syu`.
+	Obsah systémových adresářů; `/dev`, `/proc`, `/sys` a `/tmp` je vyloučen, protože je vytvářen systémem při startu, zatímco tyto adresáře je třeba zachovat, jelikož *nejsou* vytvářeny při startu. Nakonec, všechny `lost+found` instance jsou vynechány, protože jsou specifické pro oddíl. Pro Archlinux `/var/lib/pacman/sync/*` mohou být rovněž vynechány. To může ušetřit dost času při každém zálohování, jelikož adresář obsahuje hodně malých souborů, které mají tendenci se často měnit. Toto jsou "popisovací" soubory pro každý balíček z repozitářů. Tyto soubory lze vygenerovat znovu pomocí `pacman -Syu`.
 
 **Warning:** nezapomeňte rovněž vynechat připojený adresář, kam budete zálohovat, vyvarujete se tak nekonečné smyčky (v tomto příkladu `**/media/backup/**`).
 
@@ -111,24 +109,22 @@ Poté co synchronizace skončila, cílový `/etc/fstab` je třeba upravit a mus�
 Upravte cílovou fstab:
 
  `$ nano /media/backup/etc/fstab` 
-
 ```
 none         /dev/pts      devpts    defaults      0 0
 none         /dev/shm      tmpfs     defaults      0 0
 
-_/dev/sda1    /boot         ext4      defaults      0 1
+*/dev/sda1    /boot         ext4      defaults      0 1
 /dev/sda5    /var          ext4      defaults      0 1
 /dev/sda6    /usr          ext4      defaults      0 1
 /dev/sda7    /             ext4      defaults      0 1
 /dev/sda8    /home         ext4      defaults      0 1
-/dev/sda9    swap          swap      defaults      0 0_
+/dev/sda9    swap          swap      defaults      0 0*
 
 ```
 
-Protože rsync vykonal rekurzivní kopii _celého_ kořenového systému, všechny `sda` body připojení jsou problematické a mohou způsobit, že bootování ze zálohy skončí s chybou. V tomto příkladu, všechny problematické položky jsou nahrazeny jednou jedinou:
+Protože rsync vykonal rekurzivní kopii *celého* kořenového systému, všechny `sda` body připojení jsou problematické a mohou způsobit, že bootování ze zálohy skončí s chybou. V tomto příkladu, všechny problematické položky jsou nahrazeny jednou jedinou:
 
  `$ nano /media/backup/etc/fstab` 
-
 ```
 none         /dev/pts      devpts    defaults      0 0
 none         /dev/shm      tmpfs     defaults      0 0
@@ -160,7 +156,7 @@ setup (hd**1**)
 
 	root; `hd 1,0`
 
-	Mělo by odkazovat na umístění souborů Grubu -- v tomto případě, "`hd 1`" znamená druhé uložné zařízení (`/dev/sdb`) a "`0`" je první oddíl (`/dev/sdb_1_`).
+	Mělo by odkazovat na umístění souborů Grubu -- v tomto případě, "`hd 1`" znamená druhé uložné zařízení (`/dev/sdb`) a "`0`" je první oddíl (`/dev/sdb*1*`).
 
 	setup; `hd 1`
 
@@ -173,7 +169,6 @@ I když se boot manažer nainstaluje korektně, jeho položky menu jsou pro hlav
 Toto je možné řešit uživatelským `/boot/grub/menu.lst`. Abyste mohli toto udělat, upravte `rbackup.sh` tak aby zkopíroval uživatelský `menu.lst`:
 
  `rbackup.sh` 
-
 ```
 #!/bin/sh
 # rsync backup script

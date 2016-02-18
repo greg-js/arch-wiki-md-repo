@@ -47,7 +47,6 @@ LXCs support different virtual network types. A bridge device on the host is req
 [netctl](https://www.archlinux.org/packages/?name=netctl) is available from the [official repositories](/index.php/Official_repositories "Official repositories"). A bridge template can be found in `/etc/netctl/examples` which needs to be edited to match the host network hardware specs and IP ranges of the host network. Below are two example bridge configs, one using a dhcp setup and the other using a static IP setup.
 
  `/etc/netctl/lxcbridge` 
-
 ```
 Description="LXC bridge"
 Interface=br0
@@ -56,9 +55,7 @@ BindsToInterfaces=('eno1')
 IP=dhcp
 SkipForwardingDelay=yes
 ```
-
  `/etc/netctl/lxcbridge` 
-
 ```
 Description="LXC bridge"
 Interface=br0
@@ -94,13 +91,13 @@ Wireless networks cannot be bridged directly; a different method must be used in
 The host must be configured to perform NAT using [iptables](/index.php/Iptables "Iptables"):
 
 ```
-# iptables -t nat -A POSTROUTING -o _wlp3s0_ -j MASQUERADE
+# iptables -t nat -A POSTROUTING -o *wlp3s0* -j MASQUERADE
 
 ```
 
-where `_wlp3s0_` is the name of the wireless interface. [Enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing"), which is disabled by default.
+where `*wlp3s0*` is the name of the wireless interface. [Enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing"), which is disabled by default.
 
-The remaining steps are similar, except for one thing: for the container, the gateway must be configured to be the IP address of the host (in this example, it was 192.168.0.2). This is specified in `/var/lib/lxc/_container_name_/config` (see the following sections).
+The remaining steps are similar, except for one thing: for the container, the gateway must be configured to be the IP address of the host (in this example, it was 192.168.0.2). This is specified in `/var/lib/lxc/*container_name*/config` (see the following sections).
 
 ### Container creation
 
@@ -129,7 +126,6 @@ Run `lxc-create` to create the container, which installs the root filesystem of 
 System resources to be virtualized/isolated when a process is using the container are defined in `/var/lib/lxc/CONTAINER_NAME/config`. By default, the creation process will make a minimum setup without networking support. Below is an example config with networking:
 
  `/var/lib/lxc/playtime/config` 
-
 ```
 # Template used to create this container: /usr/share/lxc/templates/lxc-archlinux
 # Parameters passed to the template:
@@ -165,7 +161,6 @@ lxc.network.name = eth0
 The following sections explain some quirks that should be addressed. A small bash script is required for this to work, which users should create:
 
  `/var/lib/lxc/playtime/autodev` 
-
 ```
 #!/bin/bash
 cd ${LXC_ROOTFS_MOUNT}/dev
@@ -195,9 +190,9 @@ lxc.hook.autodev=/var/lib/lxc/playtime/autodev
 
 ##### Systemd conflicts in the /dev tree
 
-To avoid conflicts of systemd and lxc in the `/dev` tree. It is **highly recommended** to enable the _autodev_ mode. This will cause LXC to create its own device tree. This also means that the traditional way of manually creating device nodes in the container rootfs `/dev` tree will not work because `/dev` is overmounted by LXC.
+To avoid conflicts of systemd and lxc in the `/dev` tree. It is **highly recommended** to enable the *autodev* mode. This will cause LXC to create its own device tree. This also means that the traditional way of manually creating device nodes in the container rootfs `/dev` tree will not work because `/dev` is overmounted by LXC.
 
-**Warning:** Any device nodes required that are not created by LXC by default must be created by the _autodev hook_ script!
+**Warning:** Any device nodes required that are not created by LXC by default must be created by the *autodev hook* script!
 
 It is also important to disable services that are not supported inside a container. Either attach to the running LXC, or [chroot](/index.php/Chroot "Chroot") into the container rootfs, and mask those services:
 
@@ -347,7 +342,7 @@ Alternatively, create a new user in lxc-attach and use it for logging in to the 
 
 ### no network-connection with veth in container config
 
-If you can't access your LAN or WAN with a networking interface configured as **veth** and setup through `/etc/lxc/_containername_/config`. If the virtual interface gets the ip assigned and should be connected to the network correctly.
+If you can't access your LAN or WAN with a networking interface configured as **veth** and setup through `/etc/lxc/*containername*/config`. If the virtual interface gets the ip assigned and should be connected to the network correctly.
 
 ```
 ip addr show veth0 
@@ -357,7 +352,7 @@ inet 192.168.1.111/24
 
 You may disable all the relevant static ip formulas and try setting the ip through the booted container-os like you would normaly do.
 
-Example `_container_/config`
+Example `*container*/config`
 
 ```
 ...

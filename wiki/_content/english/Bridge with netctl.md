@@ -5,7 +5,6 @@ Copy `/etc/netctl/examples/bridge` to `/etc/netctl/bridge`.
 In this example, we create a bridge called `br0` which has real Ethernet adapter `eth0` and (optionally) a tap device `tap0` connected to it. Of course, edit `br0`, `eth0` and `tap0` to your needs.
 
  `/etc/netctl/bridge` 
-
 ```
 Description="Example Bridge connection"
 Interface=br0
@@ -18,7 +17,6 @@ IP=dhcp
 This example creates a statically assigned bridge called `br0` which has real Ethernet adapter `eth0` connected to it. Edit `Interface`, `BindsToInterfaces`, `Address`, and `Gateway` to your needs.
 
  ` /etc/netctl/bridge` 
-
 ```
 Description="Example Bridge connection"
 Interface=br0
@@ -37,7 +35,6 @@ SkipForwardingDelay=yes
 This example ensures that the bridge gets assigned the MAC address of the ethernet device (reference [https://github.com/joukewitteveen/netctl/issues/111](https://github.com/joukewitteveen/netctl/issues/111) )
 
  `/etc/netctl/bridge` 
-
 ```
 Description="Bridge eth0-tap0"
 Interface=br0

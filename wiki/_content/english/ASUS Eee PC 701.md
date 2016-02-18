@@ -135,7 +135,7 @@ CPU scaling with p4_clockmod has been dropped from Arch's kernel builds, due to 
 
 **Warning:** You can break your system, do not update if you are not sure of what you are doing!
 
-First, you need to download the _.rom_ file.
+First, you need to download the *.rom* file.
 
 *   [Asus' official BIOS](http://update.eeepc.asus.com/bios/)
 *   [EeeUser's topic](http://forum.eeeuser.com/viewtopic.php?id=3485)
@@ -156,7 +156,7 @@ NOTE to EEE PC 900 owners and possibly others: Using this method will require a 
 
 ```
 
-Now just copy the _.rom_ on the USBStick :
+Now just copy the *.rom* on the USBStick :
 
 ```
 $ cp /somewhere/blabla/.../thecurrentnameofthefile.ROM /path/to/mounted/usb_stick/701.rom

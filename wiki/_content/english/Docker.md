@@ -39,7 +39,7 @@ If you want to be able to run docker as a regular user, add yourself to the dock
 **Warning:** Anyone added to the 'docker' group is root equivalent. More information [here](https://github.com/docker/docker/issues/9976) and [here](http://docs.docker.com/engine/articles/security/).
 
 ```
-# gpasswd -a _user_ docker
+# gpasswd -a *user* docker
 
 ```
 
@@ -96,7 +96,7 @@ The settings in the `docker.service` file will not translate into containers. To
 
 ### Daemon Socket Configuration
 
-The _docker_ daemon listens to a [Unix socket](https://en.wikipedia.org/wiki/Unix_domain_socket "wikipedia:Unix domain socket") by default. To listen on a specified port instead, edit `/etc/systemd/system/docker.socket`, where `ListenStream` is the used port:
+The *docker* daemon listens to a [Unix socket](https://en.wikipedia.org/wiki/Unix_domain_socket "wikipedia:Unix domain socket") by default. To listen on a specified port instead, edit `/etc/systemd/system/docker.socket`, where `ListenStream` is the used port:
 
 ```
 [Socket]
@@ -106,7 +106,7 @@ ListenStream=0.0.0.0:2375
 
 ## Docker 0.9.0 -- 1.2.x and LXC
 
-Since version 0.9.0 Docker provides a new way to start containers without relying on a LXC library called _libcontainer_.
+Since version 0.9.0 Docker provides a new way to start containers without relying on a LXC library called *libcontainer*.
 
 The lxc exec driver and the -lxc-conf option may also be removed in the near future, [[1]](https://github.com/docker/docker/pull/5797)
 

@@ -106,7 +106,7 @@ zabbix_agentd -t hdd.smart[sda,Temperature_Celsius]
 On the server/monitoring site, try this:
 
 ```
-zabbix_get -s _host_ -k hdd.smart[sda,Temperature_Celsius]
+zabbix_get -s *host* -k hdd.smart[sda,Temperature_Celsius]
 
 ```
 

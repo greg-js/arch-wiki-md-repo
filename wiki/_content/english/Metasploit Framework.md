@@ -1,6 +1,6 @@
 From [the official site](http://www.offensive-security.com/metasploit-unleashed/Introduction):
 
-	_Consider the MSF to be one of the single most useful auditing tools freely available to security professionals today. From a wide array of commercial grade exploits and an extensive exploit development environment, all the way to network information gathering tools and web vulnerability plugins. The Metasploit Framework provides a truly impressive work environment. The MSF is far more than just a collection of exploits, it's an infrastructure that you can build upon and utilize for your custom needs. This allows you to concentrate on your unique environment, and not have to reinvent the wheel._
+	*Consider the MSF to be one of the single most useful auditing tools freely available to security professionals today. From a wide array of commercial grade exploits and an extensive exploit development environment, all the way to network information gathering tools and web vulnerability plugins. The Metasploit Framework provides a truly impressive work environment. The MSF is far more than just a collection of exploits, it's an infrastructure that you can build upon and utilize for your custom needs. This allows you to concentrate on your unique environment, and not have to reinvent the wheel.*
 
 Currently, Metasploit requires to setup and configure Postgresql on target system to work. This wiki will show how to get metasploit working with a Postgresql database.
 
@@ -64,18 +64,18 @@ $ bundle install
 
 **Note:** Commands which must be run from `msfconsole` will be prefixed with `msf >` in this article.
 
-Metasploit can be used without a database, but cache operations like searching would be very slow. This section shows how to set up Metasploit with _Postgresql_ database server.
+Metasploit can be used without a database, but cache operations like searching would be very slow. This section shows how to set up Metasploit with *Postgresql* database server.
 
 Follow the [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") article and create a new database called `msf`. Any database name can be used, but this article will follow `msf`.
 
 Start `msfconsole` and type:
 
 ```
-msf > db_connect _user_@msf
+msf > db_connect *user*@msf
 
 ```
 
-where _user_ is the database owner's name (usually your linux user's name).
+where *user* is the database owner's name (usually your linux user's name).
 
 Rebuild the database cache:
 
@@ -100,7 +100,6 @@ where the `quiet` option will [#Disable the ASCII banner on startup](#Disable_th
 Another workaround for this is to create a `database.yml` file in the `.msf4` directory. For example:
 
  `~/.msf4/database.yml` 
-
 ```
 production:
  adapter: postgresql
@@ -119,7 +118,6 @@ production:
 Run `db_status` to verify that database connection is properly established:
 
  `msf > db_status` 
-
 ```
 [*] postgresql connected to msf
 
@@ -142,7 +140,7 @@ Everything (scripts, files, programs etc) in Metasploit is a module. There are 6
 *   `payload` - The thing that has to be done right after a successful exploit, like establishing a remote connection, starting a meterpreter session or executing some shell commands
 *   `post` - Various programs that can be run after successful exploitation and remote connection, like collecting passwords, setting up keyloggers or downloading files
 *   `encoder` - Programs for performing encryption
-*   `nop` - _NOP_ generators. _NOP_ is an assembly language instruction which simply does nothing. The machine code of this instruction is different on each hardware architecture. _NOP_ instructions are useful for filling the void in executables.
+*   `nop` - *NOP* generators. *NOP* is an assembly language instruction which simply does nothing. The machine code of this instruction is different on each hardware architecture. *NOP* instructions are useful for filling the void in executables.
 
 ### Searching for exploits
 
@@ -195,7 +193,6 @@ Running `info` without arguments will show info about currently selected module.
 To view the selected exploit's options, run:
 
  `msf exploit(ms08_067_netapi) > show options` 
-
 ```
 Module options (exploit/windows/smb/ms08_067_netapi):
 
@@ -228,7 +225,6 @@ msf exploit(ms08_067_netapi) > set PAYLOAD windows/meterpreter/reverse_tcp
 Choosing a payload (actually, choosing modules in general) will add more options. Run `show optons` again:
 
  `msf exploit(ms08_067_netapi) > show options` 
-
 ```
 Module options (exploit/windows/smb/ms08_067_netapi):
 
@@ -289,15 +285,15 @@ The information about modules is stored in 8 tables:
 
 | Table Name | Contents |
 | `module_details` | The "main" table, describes various details of each module |
-| `module_actions` | The action names of _auxiliary_ modules |
+| `module_actions` | The action names of *auxiliary* modules |
 | `module_archs` | The target hardware architecture or software platform |
 | `module_authors` | Names and emails of module author |
 | `module_mixins` | Empty (???) |
 | `module_platforms` | The target operating system. See also [#Popularity of a platform by number of exploits](#Popularity_of_a_platform_by_number_of_exploits) |
 | `module_refs` | References to various online exploit databases and reports |
-| `module_targets` | The target program name and version of the _exploit_ |
+| `module_targets` | The target program name and version of the *exploit* |
 
-**Tip:** To see what type of details (columns) a table contains, run `\d+ _table_name_`. For example: `\d+ module_details`.
+**Tip:** To see what type of details (columns) a table contains, run `\d+ *table_name*`. For example: `\d+ module_details`.
 
 Almost all tables have 3 columns: `id`, `detail_id` and `name`, except for `module_details` table which has 16 columns.
 
@@ -306,7 +302,7 @@ The `detail_id` values are pointers to the rows of `module_details` table.
 To see the all the contents of a table, run:
 
 ```
-SELECT * FROM _table_name_;
+SELECT * FROM *table_name*;
 
 ```
 
@@ -451,7 +447,6 @@ If you get an error like this:
 This happens because the file `robots.rb` has incorrect permissions and can be read only by the root user (see [the bug report](https://github.com/fizx/robots/issues/6)):
 
  `$ ls -l /opt/ruby1.9/lib/ruby/gems/1.9.1/gems/robots-0.10.1/lib` 
-
 ```
 total 4
 -rw-r----- 1 root root 3174 Oct 19 16:47 robots.rb

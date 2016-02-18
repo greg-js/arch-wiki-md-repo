@@ -1,8 +1,8 @@
 Dalla pagina di manuale [resolv.conf(5)](http://www.kernel.org/doc/man-pages/online/pages/man5/resolv.conf.5.html):
 
-	_"Il resolver è una serie di routine della libreria C, che consentono l'accesso al DNS(Domain Name System). Il file di configurazione contiene le informazioni che verranno lette dalle suddette routine(resolver) ogni volta che un processo le richiama. Il file è strutturato in modo che sia di facile comprensione, esso contiene una lista di parole chiave e di valori che verranno passate al resolver._
+	*"Il resolver è una serie di routine della libreria C, che consentono l'accesso al DNS(Domain Name System). Il file di configurazione contiene le informazioni che verranno lette dalle suddette routine(resolver) ogni volta che un processo le richiama. Il file è strutturato in modo che sia di facile comprensione, esso contiene una lista di parole chiave e di valori che verranno passate al resolver.*
 
-	_In un sistema correttamente configurato questo file potrebbe non essere necessario. L'unico server dei nomi(DNS) che verrà interrogato sarà la macchina stessa; il nome dominio(domain name) è determinato dal nome macchina ed il percorso del dominio di ricerca è costruito dal nome dominio."_
+	*In un sistema correttamente configurato questo file potrebbe non essere necessario. L'unico server dei nomi(DNS) che verrà interrogato sarà la macchina stessa; il nome dominio(domain name) è determinato dal nome macchina ed il percorso del dominio di ricerca è costruito dal nome dominio."*
 
 ## Contents
 

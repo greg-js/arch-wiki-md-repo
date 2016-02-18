@@ -1,6 +1,6 @@
 From the [official website](http://www.mathworks.com/products/matlab/):
 
-	_MATLAB is a high-level language and interactive environment for numerical computation, visualization, and programming. Using MATLAB, you can analyze data, develop algorithms, and create models and applications. The language, tools, and built-in math functions enable you to explore multiple approaches and reach a solution faster than with spreadsheets or traditional programming languages, such as C/C++ or Java._
+	*MATLAB is a high-level language and interactive environment for numerical computation, visualization, and programming. Using MATLAB, you can analyze data, develop algorithms, and create models and applications. The language, tools, and built-in math functions enable you to explore multiple approaches and reach a solution faster than with spreadsheets or traditional programming languages, such as C/C++ or Java.*
 
 ## Contents
 
@@ -61,7 +61,6 @@ To create a menu item, we need to get a icon first:
 Then create a new `.desktop` file in `/usr/share/applications` with following lines:
 
  `/usr/share/applications/matlab.desktop` 
-
 ```
 #!/usr/bin/env xdg-open
 [Desktop Entry]
@@ -105,7 +104,6 @@ Up to and including R2013b the license file was linked to the MAC address of eth
 It is also possible to [change the name of a device](/index.php/Network_configuration#Change_device_name "Network configuration"), but changing the name to eth0 can result in race conditions between the kernel and udev during boot. Another solution is to create a dummy network interface named eth0 with the MAC address linked to the license file. First, get that MAC address using `ip link`. Next, create the following file:
 
  `/etc/systemd/system/matlab.licensing.service` 
-
 ```
 [Unit]
 Description=Dummy network interface for MATLAB
@@ -283,7 +281,7 @@ export J2D_D3D=false
 
 ### Corrupted text and fonts in menus and fields
 
-If you notice that the menus or the input fields are corrupted or not appearing correctly then you can try to activate the _"**Use antialiasing to smooth desktop fonts**"_ option in Matlab preferences, it seems to solve the problem. Go to _**Preferences -> Matlab -> Fonts**_ and activate it. You will need to restart Matlab in order to take affect.
+If you notice that the menus or the input fields are corrupted or not appearing correctly then you can try to activate the *"**Use antialiasing to smooth desktop fonts**"* option in Matlab preferences, it seems to solve the problem. Go to ***Preferences -> Matlab -> Fonts*** and activate it. You will need to restart Matlab in order to take affect.
 
 ### Installation
 

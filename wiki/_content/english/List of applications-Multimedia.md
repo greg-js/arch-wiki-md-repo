@@ -367,7 +367,7 @@ See the main article: [Sound system](/index.php/Sound_system "Sound system").
 
 See also [Wikipedia:Sound server](https://en.wikipedia.org/wiki/Sound_server "wikipedia:Sound server").
 
-*   **wineasio** — Provides an ASIO to JACK driver for _wine_. ASIO is the most common Windows low-latency driver, so is commonly used in audio workstation programs.
+*   **wineasio** — Provides an ASIO to JACK driver for *wine*. ASIO is the most common Windows low-latency driver, so is commonly used in audio workstation programs.
 
 	[http://sourceforge.net/projects/wineasio/](http://sourceforge.net/projects/wineasio/) || [wineasio](https://aur.archlinux.org/packages/wineasio/)
 

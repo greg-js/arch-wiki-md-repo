@@ -74,8 +74,8 @@ Cieľom bolo navrhnúť systém URL tak, aby umožňovali rollback celého syst�
 
 V najhoršom prípade, ak nieje možné obstarať pôvodný balíček, je nutné ho znovu skompilovať. K tomu je potrebné upraviť súbor PKGBUILD požadovaného balíčku tak aby používal staršie verzie zdrojov. Tiež je možné vyhľadať balíček na [https://www.archlinux.org/packages/](https://www.archlinux.org/packages/).
 
-*   V detailoch balíčkov kliknite na _SVN Entries_ a zvoľte _log_.
-*   Vyhľadajte požadovanú verziu, kliknite na _path_.
+*   V detailoch balíčkov kliknite na *SVN Entries* a zvoľte *log*.
+*   Vyhľadajte požadovanú verziu, kliknite na *path*.
 *   Stiahnite súbory z tohto adresára.
 *   Zostavte balíček pomocou makepkg.
 

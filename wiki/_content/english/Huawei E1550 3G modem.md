@@ -106,7 +106,8 @@ There are some useful commands:
 Encode "*100#" to PDU format:
 
 ```
- perl -e '@a=split(//,unpack("b*","*100#")); for ($i=7; $i < $#a; $i+=8) { $a[$i]="" } print uc(unpack("H*", pack("b*", join("", @a))))."\n"'
+ perl -e '@a=split(//,unpack("b*","*100#")); for ($i=7; $i < $#a; $i+=8) { $a[$i]="" } print uc(unpack("H*", pack("b*", join("", @a))))."
+"'
 
 ```
 

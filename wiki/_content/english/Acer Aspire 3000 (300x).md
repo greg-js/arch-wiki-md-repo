@@ -65,7 +65,7 @@ If you want have nicer screen resolutin in [framebuffer](/index.php/Framebuffer 
 
 #### sisfb
 
-If you want to specify your own resolution using custom video driver, then you have to replace _vga_ option with _video_ option. For example if you want to user resolution 1280x800 with 32-bit color depth at 76Hz (which is recommended for [Acer Aspire 3000](/index.php/Acer_Aspire_3000 "Acer Aspire 3000")) then you can use this option:
+If you want to specify your own resolution using custom video driver, then you have to replace *vga* option with *video* option. For example if you want to user resolution 1280x800 with 32-bit color depth at 76Hz (which is recommended for [Acer Aspire 3000](/index.php/Acer_Aspire_3000 "Acer Aspire 3000")) then you can use this option:
 
 ```
 video=sisfb:mode:1280x800x32,rate:76
@@ -81,7 +81,7 @@ video=sisfb:mode:1280x800x24,mem:12288,rate:76
 
 #### vga
 
-Basically you can append this option to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). This should work on any VGA compliant graphical adapter if it will have enough resources. But it will look ugly on widescreens, LCDs and similar, if they do not match the exact VGA resolution and it is better to use _video=..._ option.
+Basically you can append this option to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). This should work on any VGA compliant graphical adapter if it will have enough resources. But it will look ugly on widescreens, LCDs and similar, if they do not match the exact VGA resolution and it is better to use *video=...* option.
 
 ```
 vga=791

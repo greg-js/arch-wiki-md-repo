@@ -34,7 +34,7 @@ To add your own user, run:
 
 ```
 
-add `-c` after _htpasswd_ if you deleted the `htpasswd` file.
+add `-c` after *htpasswd* if you deleted the `htpasswd` file.
 
 ### Carddav server
 

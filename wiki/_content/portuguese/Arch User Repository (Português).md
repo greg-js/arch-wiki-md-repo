@@ -72,7 +72,7 @@ A instalação de pacotes do AUR é um processo relativamente simples. Essencial
 
 [AUR helpers](/index.php/AUR_helpers "AUR helpers") (Auxiliares do AUR) adicionam um acesso transparente ao AUR. Suas funcionalidades pode variar, mas eles podem facilitar a pesquisa, aquisição, compilação e instalação de PKGBUILDs encontrados no AUR. Todos esses scripts podem ser encontrados no AUR.
 
-**Nota:** Não há e nunca haverá um mecanismo _oficial_ para instalação do material compilado do AUR. Todos os usuários devem estar familiarizados com o processo de compilação.
+**Nota:** Não há e nunca haverá um mecanismo *oficial* para instalação do material compilado do AUR. Todos os usuários devem estar familiarizados com o processo de compilação.
 
 O que segue abaixo é um exemplo detalhado da instalação de um pacote chamado "foo".
 
@@ -121,7 +121,7 @@ $ tar -xvzf foo.tar.gz
 
 Isto deve criar um novo diretório chamado "foo" no diretório de construção.
 
-**Atenção:** **Verifique com atenção todos os arquivos.** Entre no diretório recém-criado, e procure cuidadosamente por comandos maliciosos no `PKGBUILD` e em qualquer arquivo `.install`. `PKGBUILD`s são scripts em bash contendo funções para serem executadas pelo `makepkg`: essas funções podem conter _qualquer_ comando válido ou sintaxe Bash válida. Então, é totalmente possível que um `PKGBUILD` contenha comandos perigosos por malícia ou por ignorância por parte do autor. Já que o `makepkg` usa fakeroot (e nunca deveria ser executado como root), ainda há um certo nível de proteção, mas você nunca deveria contar somente nisso. Em caso de dúvida, NÃO compile o pacote e procure ajuda nos fóruns ou na lista de discussão.
+**Atenção:** **Verifique com atenção todos os arquivos.** Entre no diretório recém-criado, e procure cuidadosamente por comandos maliciosos no `PKGBUILD` e em qualquer arquivo `.install`. `PKGBUILD`s são scripts em bash contendo funções para serem executadas pelo `makepkg`: essas funções podem conter *qualquer* comando válido ou sintaxe Bash válida. Então, é totalmente possível que um `PKGBUILD` contenha comandos perigosos por malícia ou por ignorância por parte do autor. Já que o `makepkg` usa fakeroot (e nunca deveria ser executado como root), ainda há um certo nível de proteção, mas você nunca deveria contar somente nisso. Em caso de dúvida, NÃO compile o pacote e procure ajuda nos fóruns ou na lista de discussão.
 
 ```
 $ cd foo
@@ -144,7 +144,7 @@ A opção `-s` usará o [sudo](/index.php/Sudo "Sudo") para instalar qualquer de
 Instale o pacote usando o pacman. Um tarball deve ter sido criado, chamado:
 
 ```
-<_nome da aplicação_>-<_número da versão_>-<'architecture_>.pkg.tar.gz_
+<*nome da aplicação*>-<*número da versão*>-<'architecture*>.pkg.tar.gz*
 
 ```
 
@@ -178,7 +178,7 @@ Usuários podem **compartilhar** PKGBUILDs usando o Arch User Repository, o qual
 
 ### Enviando pacotes
 
-Depois de se conectar à interface web do AUR, o usuário pode [enviar](https://aur.archlinux.org/pkgsubmit.php) um tarball em gzip (`.tar.gz`) de um diretório contendo arquivos de compilação para um pacote. O diretório dentro do tarball deve conter um `PKGBUILD`, quaisquer arquivos `.install`, patches, etc. (_absolutamente_ nenhum binário). Exemplos do que um diretório deve conter pode ser visto dentro de `/var/abs` se [Arch Build System](/index.php/Arch_Build_System "Arch Build System") tiver sido instalado.
+Depois de se conectar à interface web do AUR, o usuário pode [enviar](https://aur.archlinux.org/pkgsubmit.php) um tarball em gzip (`.tar.gz`) de um diretório contendo arquivos de compilação para um pacote. O diretório dentro do tarball deve conter um `PKGBUILD`, quaisquer arquivos `.install`, patches, etc. (*absolutamente* nenhum binário). Exemplos do que um diretório deve conter pode ser visto dentro de `/var/abs` se [Arch Build System](/index.php/Arch_Build_System "Arch Build System") tiver sido instalado.
 
 O tarball pode ser criado com o seguinte comando:
 
@@ -187,10 +187,9 @@ $ makepkg --source
 
 ```
 
-Note que esse é um tarball em gzip; supondo que você está submetendo ao AUR um pacote chamado _libfoo_, quando você criar o arquivo, ele deve parecer com:
+Note que esse é um tarball em gzip; supondo que você está submetendo ao AUR um pacote chamado *libfoo*, quando você criar o arquivo, ele deve parecer com:
 
  `# Lista do conteúdo de um tarball.` 
-
 ```
  $ tar tf libfoo-0.1-1.src.tar.gz
  libfoo/
@@ -324,4 +323,4 @@ Veja [#Instalando pacotes](#Instalando_pacotes)
 
 ### Como é que eu faço upload para o AUR sem usar a interface web?
 
-Você pode usar [burp](https://www.archlinux.org/packages/?name=burp), _aurploader_ ([python3-aur](https://aur.archlinux.org/packages/python3-aur/)) ou [aurup](https://aur.archlinux.org/packages/aurup/) — eles são programas de linah de comando.
+Você pode usar [burp](https://www.archlinux.org/packages/?name=burp), *aurploader* ([python3-aur](https://aur.archlinux.org/packages/python3-aur/)) ou [aurup](https://aur.archlinux.org/packages/aurup/) — eles são programas de linah de comando.

@@ -33,22 +33,22 @@
 
 ## cat
 
-[cat](https://en.wikipedia.org/wiki/cat_(Unix) "wikipedia:cat (Unix)") (_catenate_)是一件能够连接并显示多文件的标准Unix工具。
+[cat](https://en.wikipedia.org/wiki/cat_(Unix) (*catenate*)是一件能够连接并显示多文件的标准Unix工具。
 
-*   **cat** 并不内置于 shell ，不过若您追求高性能，您会发现在很多情况下改用[重定向](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)")就很方便得许多，例如编写脚本。事实上，`$ < _file_`的效果就如同`$ cat _file_`一样。
+*   **cat** 并不内置于 shell ，不过若您追求高性能，您会发现在很多情况下改用[重定向](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)")就很方便得许多，例如编写脚本。事实上，`$ < *file*`的效果就如同`$ cat *file*`一样。
 
 *   按照以下结构可直接在某文件添加多行文字：
 
 ```
-$  cat << EOF >> _path/file_
- _first line_
+$  cat << EOF >> *path/file*
+ *first line*
  ...
- _last line_
+ *last line*
  EOF
 
 ```
 
-*   如果您希望能以倒读顺序显示文件内容，有个工具叫 [tac](https://en.wikipedia.org/wiki/tac_(Unix) "wikipedia:tac (Unix)") (_cat_ reversed).
+*   如果您希望能以倒读顺序显示文件内容，有个工具叫 [tac](https://en.wikipedia.org/wiki/tac_(Unix) (*cat* reversed).
 
 ## cron
 
@@ -56,29 +56,29 @@ $  cat << EOF >> _path/file_
 
 参见 [cron](/index.php/Cron "Cron")。
 
-**Note:** _systemd_ 可以处理许多 _cron_ 用例. 参阅 [related article](/index.php/Systemd/Timers "Systemd/Timers").
+**Note:** *systemd* 可以处理许多 *cron* 用例. 参阅 [related article](/index.php/Systemd/Timers "Systemd/Timers").
 
 ## dd
 
-[dd](https://en.wikipedia.org/wiki/dd_(Unix) "wikipedia:dd (Unix)") 是在 unix 和 类unix 系统中主要用于转换和拷贝文件的命令
+[dd](https://en.wikipedia.org/wiki/dd_(Unix) 是在 unix 和 类unix 系统中主要用于转换和拷贝文件的命令
 
-**Note:** _cp_ 等同于不带操作数的 _dd_ ，但其并非被设计用于通用的磁盘擦除程序.
+**Note:** *cp* 等同于不带操作数的 *dd* ，但其并非被设计用于通用的磁盘擦除程序.
 
 ### 检查 dd 运行时的进度
 
-默认情况下在任务完成前 dd 都没有输出，使用 _kill_ 和 `USR1` 信号可以在不结束进程的情况下强制状态输出，打开第二个 root 终端并输入以下命令
+默认情况下在任务完成前 dd 都没有输出，使用 *kill* 和 `USR1` 信号可以在不结束进程的情况下强制状态输出，打开第二个 root 终端并输入以下命令
 
 ```
 # killall -USR1 dd
 
 ```
 
-**Note:** 这也将影响到其他运行 _dd_ 的进程.
+**Note:** 这也将影响到其他运行 *dd* 的进程.
 
 或者:
 
 ```
-# kill -USR1 _pid_of_dd_command_
+# kill -USR1 *pid_of_dd_command*
 
 ```
 
@@ -89,7 +89,7 @@ $  cat << EOF >> _path/file_
 
 ```
 
-这将使 _dd_ 立即输出进度到终端，例如:
+这将使 *dd* 立即输出进度到终端，例如:
 
 ```
 605+0 records in
@@ -112,9 +112,9 @@ $  cat << EOF >> _path/file_
 
 ## grep
 
-[grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") (来自 [ed](https://en.wikipedia.org/wiki/ed "wikipedia:ed")的 _g/re/p_，全局／正则 表达式／打印） 是最初给 Unix 写的命令行文字搜索工具，`grep`命令在文件或标准输入里搜索符合指定正则表达式模式的行，并把结果打印到标准输出。
+[grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") (来自 [ed](https://en.wikipedia.org/wiki/ed "wikipedia:ed")的 *g/re/p*，全局／正则 表达式／打印） 是最初给 Unix 写的命令行文字搜索工具，`grep`命令在文件或标准输入里搜索符合指定正则表达式模式的行，并把结果打印到标准输出。
 
-*   记住，_grep_ 能直接处理文件，所以用`$ grep _pattern_ _file_`结构代替`$ cat _file_ | grep _pattern_`即可。
+*   记住，*grep* 能直接处理文件，所以用`$ grep *pattern* *file*`结构代替`$ cat *file* | grep *pattern*`即可。
 
 *   若要 grep 集群服务器（VCS）的源代码，请使用专门的 Perl 工具[ack](https://www.archlinux.org/packages/?name=ack)。可访问[official web site](http://beyondgrep.com/)。
 
@@ -133,7 +133,7 @@ export GREP_OPTIONS='--color=auto'
 
 ```
 
-如果要显示行数，添加"_-n_"参数即可：
+如果要显示行数，添加"*-n*"参数即可：
 
 ```
 alias grep='grep -n --color=auto'
@@ -159,7 +159,7 @@ $ iconv -f ISO-8859-15 -t UTF-8 foo >foo.utf
 
 [ip](https://en.wikipedia.org/wiki/Iproute2 "wikipedia:Iproute2") 显示关于网络设备, IP 地址, 路由表, 和其他Linux [IP](https://en.wikipedia.org/wiki/Internet_Protocol "wikipedia:Internet Protocol") 软件栈的对象信息.通过附加各种命令, 你可以操纵或配置大多数对象.
 
-**Note:** _ip_ 命令在[iproute2](https://www.archlinux.org/packages/?name=iproute2)包中提供, 包含在[base](https://www.archlinux.org/groups/x86_64/base/)组.
+**Note:** *ip* 命令在[iproute2](https://www.archlinux.org/packages/?name=iproute2)包中提供, 包含在[base](https://www.archlinux.org/groups/x86_64/base/)组.
 
 | 对象 | 作用 | 手册页名称 |
 | ip addr | 协议地址管理 | ip-address |
@@ -182,20 +182,19 @@ $ iconv -f ISO-8859-15 -t UTF-8 foo >foo.utf
 
 `help` 帮助命令可用于所有对象. 例如, 输入 `ip addr help` 将显示地址的命令语法. 高级用法参见 [iproute2 documentation](http://www.policyrouting.org/iproute2.doc.html).
 
-The [Network configuration](/index.php/Network_configuration "Network configuration") 显示 _ip_ 命令的多种常见任务中的使用方式.
+The [Network configuration](/index.php/Network_configuration "Network configuration") 显示 *ip* 命令的多种常见任务中的使用方式.
 
-**Note:** 您也许很熟悉 [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") 命令, 它用于旧版linux的接口配置. 在 archlinx 中现已不赞成使用; 您应当用 _ip_ 替代之.
+**Note:** 您也许很熟悉 [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") 命令, 它用于旧版linux的接口配置. 在 archlinx 中现已不赞成使用; 您应当用 *ip* 替代之.
 
 ## less
 
-[less](https://en.wikipedia.org/wiki/less_(Unix) "wikipedia:less (Unix)") 是一个对文本文件内容进行分页显示的终端程序，它和其他的分页显示程序如`more`和`pg`相似，但`less`提供了更高级的界面和更多的功能。[[4]](http://www.greenwoodsoftware.com/less/faq.html)
+[less](https://en.wikipedia.org/wiki/less_(Unix) 是一个对文本文件内容进行分页显示的终端程序，它和其他的分页显示程序如`more`和`pg`相似，但`less`提供了更高级的界面和更多的功能。[[4]](http://www.greenwoodsoftware.com/less/faq.html)
 
 ### 通过环境变量设置的彩色化输出
 
 请在您的 shell 配置文件添加：
 
  `~/.bashrc` 
-
 ```
 export LESS=-R
 export LESS_TERMCAP_me=$(printf '\e[0m')
@@ -214,7 +213,6 @@ export LESS_TERMCAP_so=$(printf '\e[1;44;1m')
 您可直接开启**less**内置的代码高亮。先安装好[source-highlight](https://www.archlinux.org/packages/?name=source-highlight)再在您的Shell配置文件里添加以下：
 
  `~/.bashrc` 
-
 ```
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS='-R '
@@ -254,26 +252,25 @@ source `/etc/profile.d/lesspipe.sh`
 
 ### 用Vim代替
 
-[Vim](/index.php/Vim "Vim") (_visual editor improved_)有内置了某脚本，可直接查看文本文件、压缩包或目录的内容。在您的shell配置文件添加以下即可：
+[Vim](/index.php/Vim "Vim") (*visual editor improved*)有内置了某脚本，可直接查看文本文件、压缩包或目录的内容。在您的shell配置文件添加以下即可：
 
  `~/.bashrc`  `alias less='/usr/share/vim/vim73/macros/less.sh'` 
 
-除了_less.sh_宏外还有另外一种用法, 依赖于 `PAGER`　环境变量. 安装 [vimpager](https://www.archlinux.org/packages/?name=vimpager) 并添加以下内容至shell配置文件:
+除了*less.sh*宏外还有另外一种用法, 依赖于 `PAGER`　环境变量. 安装 [vimpager](https://www.archlinux.org/packages/?name=vimpager) 并添加以下内容至shell配置文件:
 
  `~/.bashrc` 
-
 ```
 export PAGER='vimpager'
 alias less=$PAGER
 ```
 
-所有使用 `PAGER` 环境变量的程序, 如 [git](/index.php/Git "Git"), 将使用 _vim_ 作为分页程序.
+所有使用 `PAGER` 环境变量的程序, 如 [git](/index.php/Git "Git"), 将使用 *vim* 作为分页程序.
 
 ### 读取标准输入时彩色化输出
 
 **Note:** 建议将这些 [环境变量](#Colored_output_through_environment_variables) 添加到 `~/.bashrc` or `~/.zshrc`. 因为本节完全基于: `export LESS=R` 写成
 
-当你运行一个命令和使用管道连接 [标准输出](https://en.wikipedia.org/wiki/Standard_output "wikipedia:Standard output") (_stdout_) 到 _less_ 作为分页视图 (e.g. `yaourt -Qe --date | less`), 你也许会发现输出不再是彩色化的. 这通常是因为该程序试图检测如果其 _stdout_ 是交互式终端, 在这种情况下将输出彩色化文本,否则输出未着色文本. 当你想重定向 _stdout_ 到一个文件中，这是一个很好的行为, e.g. `yaourt -Qe --date > pkglst-backup.txt`. 但是，当你想在 `less` 浏览输出时这将不是很好的行为.
+当你运行一个命令和使用管道连接 [标准输出](https://en.wikipedia.org/wiki/Standard_output "wikipedia:Standard output") (*stdout*) 到 *less* 作为分页视图 (e.g. `yaourt -Qe --date | less`), 你也许会发现输出不再是彩色化的. 这通常是因为该程序试图检测如果其 *stdout* 是交互式终端, 在这种情况下将输出彩色化文本,否则输出未着色文本. 当你想重定向 *stdout* 到一个文件中，这是一个很好的行为, e.g. `yaourt -Qe --date > pkglst-backup.txt`. 但是，当你想在 `less` 浏览输出时这将不是很好的行为.
 
 一些程序提供禁用交互式 tty 检测的选项:
 
@@ -282,7 +279,7 @@ alias less=$PAGER
 
 ```
 
-如果程序不提供任何类似选项，可以欺骗程序相信_stdout_ 是交互式终端，有几种可行方式:
+如果程序不提供任何类似选项，可以欺骗程序相信*stdout* 是交互式终端，有几种可行方式:
 
 1\. [stdoutisatty](https://github.com/lilydjwg/stdoutisatty) 是一个用c写成的小程序, 它可以调用 "fake interactive tty". 你可以通过 [AUR](/index.php/AUR "AUR"): [stdoutisatty](https://aur.archlinux.org/packages/stdoutisatty/)安装. 用法示例:
 
@@ -306,13 +303,12 @@ $ script -fqc 'yaourt -Qe --date' | less
 ```
 
 **Tip:** Perhaps this helper function from [stackoverflow](http://stackoverflow.com/questions/1401002/trick-an-application-into-thinking-its-stdin-is-interactive-not-a-pipe/20401674#20401674) will be useful:
-
 ```
 function faketty {script -qfc "$(printf "'%s' " "$@")"}
 
 ```
 
-4\. [unbuffer](http://expect.sourceforge.net/example/unbuffer.man.html) 是一个基于 _sh_ 和 [Tcl](http://tcl.tk/) 的很好的 (手册比程序本身还要长), 古老的脚本. _unbuffer_ 附带 [expect](https://www.archlinux.org/packages/?name=expect). 我们只需要这样使用:
+4\. [unbuffer](http://expect.sourceforge.net/example/unbuffer.man.html) 是一个基于 *sh* 和 [Tcl](http://tcl.tk/) 的很好的 (手册比程序本身还要长), 古老的脚本. *unbuffer* 附带 [expect](https://www.archlinux.org/packages/?name=expect). 我们只需要这样使用:
 
 ```
 $ unbuffer yaourt -Qe --date | less
@@ -342,7 +338,7 @@ $ ptyless yaourt -Qe --date | less
 
 ## locate
 
-[locate](https://en.wikipedia.org/wiki/locate_(Unix) "wikipedia:locate (Unix)") 用于在文件系统中查找文件. 它通过由 _updatedb_ 预生成的或者由守护进程和增量编码压缩过的文件数据库搜索. 它要快于 _find_, 但需要经常更新数据库.
+[locate](https://en.wikipedia.org/wiki/locate_(Unix) 用于在文件系统中查找文件. 它通过由 *updatedb* 预生成的或者由守护进程和增量编码压缩过的文件数据库搜索. 它要快于 *find*, 但需要经常更新数据库.
 
 参见 [main article](/index.php/Locate "Locate").
 
@@ -350,7 +346,7 @@ $ ptyless yaourt -Qe --date | less
 
 [ls](https://en.wikipedia.org/wiki/ls "wikipedia:ls")是一个Unix和类Unix系统中列出目录里的文件的一个命令。
 
-*   _ls_ 可以列出 [file permissions](/index.php/File_permissions_and_attributes#Viewing_permissions "File permissions and attributes").
+*   *ls* 可以列出 [file permissions](/index.php/File_permissions_and_attributes#Viewing_permissions "File permissions and attributes").
 
 *   可以使用一个简单的命令别名启用彩色输出功能，`~/.bashrc`文件应该已经有一句从`/etc/skel/.bashrc`复制过来的指定别名命令：
 
@@ -362,25 +358,25 @@ $ ptyless yaourt -Qe --date | less
 
 ## man
 
-[man](https://en.wikipedia.org/wiki/Man_page "wikipedia:Man page") (_manual page_)是常见于Unix-like操作系统的一种在线软件文档的格式，内容涉及了计算机程序（包括库或系统调用），常见标准或惯例，甚至还有抽象概念。请阅读[Man Pages](/index.php/Man_Pages "Man Pages")。
+[man](https://en.wikipedia.org/wiki/Man_page "wikipedia:Man page") (*manual page*)是常见于Unix-like操作系统的一种在线软件文档的格式，内容涉及了计算机程序（包括库或系统调用），常见标准或惯例，甚至还有抽象概念。请阅读[Man Pages](/index.php/Man_Pages "Man Pages")。
 
 ## mkdir
 
-[mkdir](https://en.wikipedia.org/wiki/mkdir_(Unix) "wikipedia:mkdir (Unix)") (_make directory_)是一条创建目录的命令。
+[mkdir](https://en.wikipedia.org/wiki/mkdir_(Unix) (*make directory*)是一条创建目录的命令。
 
-*   若需递归地创建一系列目录，就要用到 _-p_参数了。已经十分熟悉这原理的高级用户也可直接设为内置参数：
+*   若需递归地创建一系列目录，就要用到 *-p*参数了。已经十分熟悉这原理的高级用户也可直接设为内置参数：
 
 	 `alias mkdir='mkdir -p -v'` 
 
 	`-v`参数可以使创建目录的消息更为详细。
 
-*   不必使用 _chmod_ 更改权限模式, 用 `-m`选项可直接定义新建目录的访问权限
+*   不必使用 *chmod* 更改权限模式, 用 `-m`选项可直接定义新建目录的访问权限
 
-**Note:** 如果您仅仅只是想建个临时目录，也许用**mktemp** (_make termporary_)更好: `$ mktemp -p`.
+**Note:** 如果您仅仅只是想建个临时目录，也许用**mktemp** (*make termporary*)更好: `$ mktemp -p`.
 
 ## mv
 
-[mv](https://en.wikipedia.org/wiki/mv_(Unix) "wikipedia:mv (Unix)") (_move_)是一条移动或重命名文件和目录的命令。使用这命令的风险可不小，请务必小心。
+[mv](https://en.wikipedia.org/wiki/mv_(Unix) (*move*)是一条移动或重命名文件和目录的命令。使用这命令的风险可不小，请务必小心。
 
 ```
 alias mv=' timeout 8 mv -iv'
@@ -391,7 +387,7 @@ alias mv=' timeout 8 mv -iv'
 
 ## rm
 
-[rm](https://en.wikipedia.org/wiki/rm_(Unix) "wikipedia:rm (Unix)") (_remove_)是一条删除文件或目录的命令。
+[rm](https://en.wikipedia.org/wiki/rm_(Unix) (*remove*)是一条删除文件或目录的命令。
 
 *   它同样十分危险，使用时请提高警觉：
 
@@ -403,11 +399,11 @@ alias mv=' timeout 8 mv -iv'
 
 	Zsh 的使用者可在 `timeout` 前加上 `noglob`，避免隐式扩展。
 
-*   若要移除空目錄，使用 _rmdir_,　若内含文件则命令失败。
+*   若要移除空目錄，使用 *rmdir*,　若内含文件则命令失败。
 
 ## sed
 
-[sed](https://en.wikipedia.org/wiki/sed "wikipedia:sed") (_stream editor_)是一条专门解析或替换文本的命令。
+[sed](https://en.wikipedia.org/wiki/sed "wikipedia:sed") (*stream editor*)是一条专门解析或替换文本的命令。
 
 这里有一系列现成的[示范](http://sed.sourceforge.net/sed1line.txt)
 
@@ -415,7 +411,7 @@ alias mv=' timeout 8 mv -iv'
 
 ## seq
 
-**seq** (_sequence_)是一条专门排列数字的命令。可以按照[Wikipedia](https://en.wikipedia.org/wiki/seq "wikipedia:seq")上进行练习。
+**seq** (*sequence*)是一条专门排列数字的命令。可以按照[Wikipedia](https://en.wikipedia.org/wiki/seq "wikipedia:seq")上进行练习。
 
 ## shred
 
@@ -430,17 +426,17 @@ alias shred=' timeout 3 shred -v'
 
 ## sudo
 
-[Sudo](https://en.wikipedia.org/wiki/Sudo "wikipedia:Sudo") (_as superuser do_)是Unix-like操作系统上的一件允许用户以其他用户的权限（一般是超级用户或root）来运行用户的程序，请阅读[Sudo](/index.php/Sudo "Sudo")。
+[Sudo](https://en.wikipedia.org/wiki/Sudo "wikipedia:Sudo") (*as superuser do*)是Unix-like操作系统上的一件允许用户以其他用户的权限（一般是超级用户或root）来运行用户的程序，请阅读[Sudo](/index.php/Sudo "Sudo")。
 
 ## 权限相关工具
 
-*   [chmod](https://en.wikipedia.org/wiki/chmod "wikipedia:chmod") (_change mode_) 是一个 Unix shell 命令和系统调用名称, 用于修改文件系统对象的访问权限（包括文件和目录）, 也用于指定特殊flags.
+*   [chmod](https://en.wikipedia.org/wiki/chmod "wikipedia:chmod") (*change mode*) 是一个 Unix shell 命令和系统调用名称, 用于修改文件系统对象的访问权限（包括文件和目录）, 也用于指定特殊flags.
 
-*   [chown](https://en.wikipedia.org/wiki/chown "wikipedia:chown") (_change owner_) 用于 Unix-like 系统改变文件拥有者.
+*   [chown](https://en.wikipedia.org/wiki/chown "wikipedia:chown") (*change owner*) 用于 Unix-like 系统改变文件拥有者.
 
-*   [chattr](https://en.wikipedia.org/wiki/chattr "wikipedia:chattr") (_change attributes_) 允许用户设置 linux 系统中文件的某些属性.
+*   [chattr](https://en.wikipedia.org/wiki/chattr "wikipedia:chattr") (*change attributes*) 允许用户设置 linux 系统中文件的某些属性.
 
-*   [lsattr](https://en.wikipedia.org/wiki/lsattr "wikipedia:lsattr") (_list attributes_) 列出 linux 扩展文件系统上的属性.
+*   [lsattr](https://en.wikipedia.org/wiki/lsattr "wikipedia:lsattr") (*list attributes*) 列出 linux 扩展文件系统上的属性.
 
 *   `ls -l` 列出文件属性.
 

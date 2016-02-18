@@ -12,11 +12,11 @@
 
 ## 6in4-tunnel rc.d script
 
-Arch Linux uses a BSD-style network interface configuration located in _/etc/rc.conf_, which can make exotic network configurations interesting, to say the least. The following rc.d script is meant to help remedy the situation by providing a configurable wrapper to sanely manage a 6in4 link interface.
+Arch Linux uses a BSD-style network interface configuration located in */etc/rc.conf*, which can make exotic network configurations interesting, to say the least. The following rc.d script is meant to help remedy the situation by providing a configurable wrapper to sanely manage a 6in4 link interface.
 
-*   This script uses the _route2_ method; make sure that the **iproute2** package is installed.
+*   This script uses the *route2* method; make sure that the **iproute2** package is installed.
 
-As _root_, write the following rc.d init script to _/etc/rc.d/6in4-tunnel_:
+As *root*, write the following rc.d init script to */etc/rc.d/6in4-tunnel*:
 
 ```
 #!/bin/bash
@@ -100,7 +100,7 @@ exit 0
 
 ### 6in4-tunnel configuration
 
-You will need to provide your 6in4 link configuration between the following sections of _/etc/rc.d/6in4-tunnel_:
+You will need to provide your 6in4 link configuration between the following sections of */etc/rc.d/6in4-tunnel*:
 
 ```
 ### begin user configuration
@@ -112,7 +112,7 @@ You will need to provide your 6in4 link configuration between the following sect
 
 ```
 
-Once _/etc/rc.d/6in4-tunnel_ has been configured properly, give it permission to be executed:
+Once */etc/rc.d/6in4-tunnel* has been configured properly, give it permission to be executed:
 
 ```
 # chmod +x /etc/rc.d/6in4-tunnel
@@ -137,13 +137,13 @@ To delete the 6in4 tunnel link and remove the interface:
 
 ### Boot-time configuration
 
-The following method allows _/etc/rc.d/6in4-tunnel_ to start automatically at system startup.
+The following method allows */etc/rc.d/6in4-tunnel* to start automatically at system startup.
 
 *   Verify that the 6in4 tunnel link is configured and working properly before doing this!
 
-As _root_, insert _6in4-tunnel_ right after _network_ in the **DAEMONS** line of _/etc/rc.conf_.
+As *root*, insert *6in4-tunnel* right after *network* in the **DAEMONS** line of */etc/rc.conf*.
 
-After this addition, the **DAEMONS** line in _/etc/rc.conf_ should look something like this:
+After this addition, the **DAEMONS** line in */etc/rc.conf* should look something like this:
 
 ```
 ...

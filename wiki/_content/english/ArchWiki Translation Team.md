@@ -12,7 +12,7 @@
 10.  Since the new page does not exist, create it by clicking on "create" in the horizontal menu.
 11.  You will be shown a simple text editor. Paste here the source code of the page you copied earlier.
 12.  Change the "Category" links to their localized versions. For example, change `[[Category:ArchWiki]]` to `[[Category:ArchWiki (Language)]]`. See [Help:Category](/index.php/Help:Category "Help:Category") for more information.
-13.  Change the interlanguage link that you created earlier to point to the article _from_ which you are translating.
+13.  Change the interlanguage link that you created earlier to point to the article *from* which you are translating.
 14.  Translate the copied page text and save everything, also adding a proper [edit summary](/index.php/Help:Style#Edit_summary "Help:Style") such as `translate [[ArchWiki Translation Team]]`.
 15.  Update the interlanguage link lists of all the other translations of the article (if any) to include the interlanguage link of the newly-created translation.
 16.  At the bottom of the translated page, there is a list of categories the page is included in. Check that all these categories exist, i.e. the links should not be red. Otherwise create all missing categories following the red links - categories are created the same way as regular pages.

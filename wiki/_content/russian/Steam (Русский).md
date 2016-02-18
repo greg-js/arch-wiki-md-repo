@@ -7,21 +7,27 @@
 *   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
 *   [2 Запуск Steam](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_Steam)
     *   [2.1 Режим Big Picture (из Display Manager)](#.D0.A0.D0.B5.D0.B6.D0.B8.D0.BC_Big_Picture_.28.D0.B8.D0.B7_Display_Manager.29)
-    *   [2.2 Не показывать окно при запуске](#.D0.9D.D0.B5_.D0.BF.D0.BE.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D1.82.D1.8C_.D0.BE.D0.BA.D0.BD.D0.BE_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B5)
+    *   [2.2 Запуск Steam свернутым в области уведомлений (silent mode)](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_Steam_.D1.81.D0.B2.D0.B5.D1.80.D0.BD.D1.83.D1.82.D1.8B.D0.BC_.D0.B2_.D0.BE.D0.B1.D0.BB.D0.B0.D1.81.D1.82.D0.B8_.D1.83.D0.B2.D0.B5.D0.B4.D0.BE.D0.BC.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9_.28silent_mode.29)
 *   [3 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [3.1 Кнопка закрытия только сворачивает окно](#.D0.9A.D0.BD.D0.BE.D0.BF.D0.BA.D0.B0_.D0.B7.D0.B0.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D1.8F_.D1.82.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D1.81.D0.B2.D0.BE.D1.80.D0.B0.D1.87.D0.B8.D0.B2.D0.B0.D0.B5.D1.82_.D0.BE.D0.BA.D0.BD.D0.BE)
-    *   [3.2 Flash не работает на 64-битных системах](#Flash_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.BD.D0.B0_64-.D0.B1.D0.B8.D1.82.D0.BD.D1.8B.D1.85_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0.D1.85)
-    *   [3.3 Текст повреждён или не отображается](#.D0.A2.D0.B5.D0.BA.D1.81.D1.82_.D0.BF.D0.BE.D0.B2.D1.80.D0.B5.D0.B6.D0.B4.D1.91.D0.BD_.D0.B8.D0.BB.D0.B8_.D0.BD.D0.B5_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D0.B5.D1.82.D1.81.D1.8F)
-    *   [3.4 SetLocale('en_US.UTF-8') не срабатывает при запуске игры](#SetLocale.28.27en_US.UTF-8.27.29_.D0.BD.D0.B5_.D1.81.D1.80.D0.B0.D0.B1.D0.B0.D1.82.D1.8B.D0.B2.D0.B0.D0.B5.D1.82_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B5_.D0.B8.D0.B3.D1.80.D1.8B)
-    *   [3.5 Игра вылетает немедленно после запуска](#.D0.98.D0.B3.D1.80.D0.B0_.D0.B2.D1.8B.D0.BB.D0.B5.D1.82.D0.B0.D0.B5.D1.82_.D0.BD.D0.B5.D0.BC.D0.B5.D0.B4.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0)
-    *   [3.6 OpenGL не использует прямой рендеринг](#OpenGL_.D0.BD.D0.B5_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D1.82_.D0.BF.D1.80.D1.8F.D0.BC.D0.BE.D0.B9_.D1.80.D0.B5.D0.BD.D0.B4.D0.B5.D1.80.D0.B8.D0.BD.D0.B3)
-    *   [3.7 Ошибка libGL при запуске некоторых игр](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_libGL_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B5_.D0.BD.D0.B5.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D1.85_.D0.B8.D0.B3.D1.80)
-    *   [3.8 OpenGL GLX context не использует прямой рендеринг, из-за чего происходят проблемы с производительностью или Steam вешает Xorg](#OpenGL_GLX_context_.D0.BD.D0.B5_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D1.82_.D0.BF.D1.80.D1.8F.D0.BC.D0.BE.D0.B9_.D1.80.D0.B5.D0.BD.D0.B4.D0.B5.D1.80.D0.B8.D0.BD.D0.B3.2C_.D0.B8.D0.B7-.D0.B7.D0.B0_.D1.87.D0.B5.D0.B3.D0.BE_.D0.BF.D1.80.D0.BE.D0.B8.D1.81.D1.85.D0.BE.D0.B4.D1.8F.D1.82_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C.D1.8E_.D0.B8.D0.BB.D0.B8_Steam_.D0.B2.D0.B5.D1.88.D0.B0.D0.B5.D1.82_Xorg)
-    *   [3.9 Проблемы с 64-битными играми, таких как XCOM](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_64-.D0.B1.D0.B8.D1.82.D0.BD.D1.8B.D0.BC.D0.B8_.D0.B8.D0.B3.D1.80.D0.B0.D0.BC.D0.B8.2C_.D1.82.D0.B0.D0.BA.D0.B8.D1.85_.D0.BA.D0.B0.D0.BA_XCOM)
-    *   [3.10 Нет звука в некоторых играх](#.D0.9D.D0.B5.D1.82_.D0.B7.D0.B2.D1.83.D0.BA.D0.B0_.D0.B2_.D0.BD.D0.B5.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D1.85_.D0.B8.D0.B3.D1.80.D0.B0.D1.85)
-    *   [3.11 Ошибка "You are missing the following 32-bit libraries, and Steam may not run: libGL.so.1"](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_.22You_are_missing_the_following_32-bit_libraries.2C_and_Steam_may_not_run:_libGL.so.1.22)
-    *   [3.12 Игры не запускаются на старом оборудовании Intel](#.D0.98.D0.B3.D1.80.D1.8B_.D0.BD.D0.B5_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D1.8E.D1.82.D1.81.D1.8F_.D0.BD.D0.B0_.D1.81.D1.82.D0.B0.D1.80.D0.BE.D0.BC_.D0.BE.D0.B1.D0.BE.D1.80.D1.83.D0.B4.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8_Intel)
-    *   [3.13 Некоторые игры не запускаются](#.D0.9D.D0.B5.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D0.B5_.D0.B8.D0.B3.D1.80.D1.8B_.D0.BD.D0.B5_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D1.8E.D1.82.D1.81.D1.8F)
+    *   [3.1 Проблемы с драйверами nvidia версии 361.28](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0.D0.BC.D0.B8_nvidia_.D0.B2.D0.B5.D1.80.D1.81.D0.B8.D0.B8_361.28)
+    *   [3.2 Проблемы среды выполнения Steam](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81.D1.80.D0.B5.D0.B4.D1.8B_.D0.B2.D1.8B.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F_Steam)
+        *   [3.2.1 Возможные симптомы](#.D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.B8.D0.BC.D0.BF.D1.82.D0.BE.D0.BC.D1.8B)
+        *   [3.2.2 Временные решения](#.D0.92.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F)
+            *   [3.2.2.1 Использование динамического компоновщика](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B4.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B3.D0.BE_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BE.D0.BD.D0.BE.D0.B2.D1.89.D0.B8.D0.BA.D0.B0)
+            *   [3.2.2.2 Удаление библиотек среды выполнения Steam](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA_.D1.81.D1.80.D0.B5.D0.B4.D1.8B_.D0.B2.D1.8B.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F_Steam)
+    *   [3.3 Кнопка закрытия только сворачивает окно](#.D0.9A.D0.BD.D0.BE.D0.BF.D0.BA.D0.B0_.D0.B7.D0.B0.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D1.8F_.D1.82.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D1.81.D0.B2.D0.BE.D1.80.D0.B0.D1.87.D0.B8.D0.B2.D0.B0.D0.B5.D1.82_.D0.BE.D0.BA.D0.BD.D0.BE)
+    *   [3.4 Flash не работает на 64-битных системах](#Flash_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.BD.D0.B0_64-.D0.B1.D0.B8.D1.82.D0.BD.D1.8B.D1.85_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0.D1.85)
+    *   [3.5 Текст повреждён или не отображается](#.D0.A2.D0.B5.D0.BA.D1.81.D1.82_.D0.BF.D0.BE.D0.B2.D1.80.D0.B5.D0.B6.D0.B4.D1.91.D0.BD_.D0.B8.D0.BB.D0.B8_.D0.BD.D0.B5_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D0.B5.D1.82.D1.81.D1.8F)
+    *   [3.6 SetLocale('en_US.UTF-8') не срабатывает при запуске игры](#SetLocale.28.27en_US.UTF-8.27.29_.D0.BD.D0.B5_.D1.81.D1.80.D0.B0.D0.B1.D0.B0.D1.82.D1.8B.D0.B2.D0.B0.D0.B5.D1.82_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B5_.D0.B8.D0.B3.D1.80.D1.8B)
+    *   [3.7 Игра вылетает немедленно после запуска](#.D0.98.D0.B3.D1.80.D0.B0_.D0.B2.D1.8B.D0.BB.D0.B5.D1.82.D0.B0.D0.B5.D1.82_.D0.BD.D0.B5.D0.BC.D0.B5.D0.B4.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0)
+    *   [3.8 OpenGL не использует прямой рендеринг](#OpenGL_.D0.BD.D0.B5_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D1.82_.D0.BF.D1.80.D1.8F.D0.BC.D0.BE.D0.B9_.D1.80.D0.B5.D0.BD.D0.B4.D0.B5.D1.80.D0.B8.D0.BD.D0.B3)
+    *   [3.9 Ошибка libGL при запуске некоторых игр](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_libGL_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B5_.D0.BD.D0.B5.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D1.85_.D0.B8.D0.B3.D1.80)
+    *   [3.10 OpenGL GLX context не использует прямой рендеринг, из-за чего происходят проблемы с производительностью или Steam вешает Xorg](#OpenGL_GLX_context_.D0.BD.D0.B5_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D1.82_.D0.BF.D1.80.D1.8F.D0.BC.D0.BE.D0.B9_.D1.80.D0.B5.D0.BD.D0.B4.D0.B5.D1.80.D0.B8.D0.BD.D0.B3.2C_.D0.B8.D0.B7-.D0.B7.D0.B0_.D1.87.D0.B5.D0.B3.D0.BE_.D0.BF.D1.80.D0.BE.D0.B8.D1.81.D1.85.D0.BE.D0.B4.D1.8F.D1.82_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C.D1.8E_.D0.B8.D0.BB.D0.B8_Steam_.D0.B2.D0.B5.D1.88.D0.B0.D0.B5.D1.82_Xorg)
+    *   [3.11 Проблемы с 64-битными играми, таких как XCOM](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_64-.D0.B1.D0.B8.D1.82.D0.BD.D1.8B.D0.BC.D0.B8_.D0.B8.D0.B3.D1.80.D0.B0.D0.BC.D0.B8.2C_.D1.82.D0.B0.D0.BA.D0.B8.D1.85_.D0.BA.D0.B0.D0.BA_XCOM)
+    *   [3.12 Нет звука в некоторых играх](#.D0.9D.D0.B5.D1.82_.D0.B7.D0.B2.D1.83.D0.BA.D0.B0_.D0.B2_.D0.BD.D0.B5.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D1.85_.D0.B8.D0.B3.D1.80.D0.B0.D1.85)
+    *   [3.13 Ошибка "You are missing the following 32-bit libraries, and Steam may not run: libGL.so.1"](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_.22You_are_missing_the_following_32-bit_libraries.2C_and_Steam_may_not_run:_libGL.so.1.22)
+    *   [3.14 Игры не запускаются на старом оборудовании Intel](#.D0.98.D0.B3.D1.80.D1.8B_.D0.BD.D0.B5_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D1.8E.D1.82.D1.81.D1.8F_.D0.BD.D0.B0_.D1.81.D1.82.D0.B0.D1.80.D0.BE.D0.BC_.D0.BE.D0.B1.D0.BE.D1.80.D1.83.D0.B4.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8_Intel)
+    *   [3.15 Некоторые игры не запускаются](#.D0.9D.D0.B5.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D0.B5_.D0.B8.D0.B3.D1.80.D1.8B_.D0.BD.D0.B5_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D1.8E.D1.82.D1.81.D1.8F)
 *   [4 Запуск игр с дополнительными параметрами, такими как Bumblebee/Primus](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.B8.D0.B3.D1.80_.D1.81_.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.BC.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D0.B0.D0.BC.D0.B8.2C_.D1.82.D0.B0.D0.BA.D0.B8.D0.BC.D0.B8_.D0.BA.D0.B0.D0.BA_Bumblebee.2FPrimus)
     *   [4.1 Отключение отдельных композиторов при запуске игр](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D1.82.D0.B4.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D1.85_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B5_.D0.B8.D0.B3.D1.80)
 *   [5 Using native runtime](#Using_native_runtime)
@@ -45,7 +51,7 @@ Steam не сопровождается для этого дистрибутив
 
 *   Steam интенсивно использует шрифт Arial. Для замены шрифта Arial воспользуйтесьпакетом [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) или [шрифтами, предоставленными Steam'ом](#.D0.A2.D0.B5.D0.BA.D1.81.D1.82_.D0.BF.D0.BE.D0.B2.D1.80.D0.B5.D0.B6.D0.B4.D1.91.D0.BD_.D0.B8.D0.BB.D0.B8_.D0.BD.D0.B5_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D0.B5.D1.82.D1.81.D1.8F). Чтобы корректно отображались азиатские языки, установите [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei).
 
-*   Если у вас 64-битная система, вы должны установить [32-битную версию графического драйвера](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0 "Xorg (Русский)") (пакет из столбца _Multilib_ в таблице), чтобы запускать 32-битные игры.
+*   Если у вас 64-битная система, вы должны установить [32-битную версию графического драйвера](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0 "Xorg (Русский)") (пакет из столбца *Multilib* в таблице), чтобы запускать 32-битные игры.
 
 *   Если у вас 64-битная система, вам нужно установить [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins), чтобы работал звук в 32-битных играх.
 
@@ -58,7 +64,6 @@ Steam не сопровождается для этого дистрибутив
 Чтобы запустить Steam в режиме Big Picture из менеджера дисплеев (таких как LightDM), создайте файл `/usr/share/xsessions/steam-big-picture.desktop` со следующим содержимым:
 
  `/usr/share/xsessions/steam-big-picture.desktop` 
-
 ```
 [Desktop Entry]
 Name=Steam Big Picture Mode
@@ -71,7 +76,7 @@ Type=Application
 
 Также это можно сделать из Steam > Настройки > Интерфейс, отметьте галочкой 'Запускать Steam в режиме Big Picture' и запускайте Steam обычным образом. С некоторыми оконными менеджерами такой способ работает лучше, чем вариант с командной строкой.
 
-### Не показывать окно при запуске
+### Запуск Steam свернутым в области уведомлений (silent mode)
 
 Если при старте появляется главное окно Steam, вы можете добавить параметр `-silent` к команде запуска, чтобы окно не отображалось:
 
@@ -80,10 +85,9 @@ Type=Application
 
 ```
 
-либо же вы можете отредактировать следующий .desktop файл, добавив этот параметр вручную:
+либо же вы можете отредактировать следующий [.desktop файл](/index.php/Desktop_entries "Desktop entries"), добавив этот параметр вручную:
 
  `~/.config/autostart/steam.desktop` 
-
 ```
 [Desktop Entry]
 Name=Steam
@@ -100,7 +104,108 @@ Actions=Store;Community;Library;Servers;Screenshots;News;Settings;BigPicture;Fri
 
 ## Решение проблем
 
+**Совет:** Скрипт `/usr/bin/steam` перенаправляет стандартный вывод из stdout и stderr Steam в файл `/tmp/dumps/${USER}_stdout.txt`. Это означает, что вам не обязательно запускать Steam в терминале для ознакомления с данным выводом.
+
 **Обратите внимание:** В дополнение к описанию здесь, любой баг/исправление/ошибка должны быть (если ещё не) сообщены в баг-трекер компании Valve на их [странице GitHub](https://github.com/ValveSoftware/steam-for-linux).
+
+### Проблемы с драйверами nvidia версии 361.28
+
+При запуске некоторых игр возникает ошибка, появившаяся в драйверах nvidia версии 361.28
+
+ `"Missing basic OpenGL v1.0 -> v2.0 required OpenGL functionality."` 
+
+До исправления NVIDIA данной ошибки вы можете использовать следующий параметр для запуска для проблемной игры:
+
+ `__GLVND_DISALLOW_PATCHING=1 %command%` 
+
+либо же вы можете откатить версию драйверов nvidia до 361.16
+
+### Проблемы среды выполнения Steam
+
+Steam устанавливает собственные, часто устаревшие версии библиотек, также называемые "Steam Runtime" (среда выполнения Steam). Данные библиотеки, вероятно, будут часто конфликтовать с теми, которые включены в Arch Linux.
+
+#### Возможные симптомы
+
+Некоторые из возможных симптомов данных проблем проявляются в зависании или сбоях при запуске клиента Steam, а также в виде следующих ошибок:
+
+```
+libGL error: unable to load driver: some_driver_dri.so
+libGL error: driver pointer missing
+libGL error: failed to load driver: some_driver
+libGL error: unable to load driver: swrast_dri.so
+libGL error: failed to load driver: swrast
+```
+
+```
+Failed to load libGL: undefined symbol: xcb_send_fd
+
+```
+
+```
+ERROR: ld.so: object '~/.local/share/Steam/ubuntu12_32/gameoverlayrenderer.so' from LD_PRELOAD cannot be preloaded (wrong ELF class: ELFCLASS32): ignored.
+
+```
+
+```
+OpenGL GLX context is not using direct rendering, which may cause performance problems. [(смотри ниже)](#OpenGL_.D0.BD.D0.B5_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D1.82_.D0.BF.D1.80.D1.8F.D0.BC.D0.BE.D0.B9_.D1.80.D0.B5.D0.BD.D0.B4.D0.B5.D1.80.D0.B8.D0.BD.D0.B3)
+
+```
+
+```
+Could not find required OpenGL entry point 'glGetError'! Either your video card is unsupported or your OpenGL driver needs to be updated.
+
+```
+
+**Обратите внимание:** Неправильно настроенный firewall (брандмауэр) также может вызывать проблемы в работе Steam, которые схожи с симптомами проблем среды выполнения, вследствие того, что у Steam происходит сбой всякий раз, когда клиент не может установить соединение со стимовскими серверами, а также большинство игр просто не запускаются из-за того, что Steam API не загружается.
+
+#### Временные решения
+
+Вы можете решить данную проблему заставив Steam принудительно использовать актуальные версии библиотек (установленные с помощью [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)")) следующими двумя способами.
+
+##### Использование динамического компоновщика
+
+Динамический компоновщик (`man 8 ld.so`) может загружать определённые библиотеки с помощью [переменной окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `LD_PRELOAD`.
+
+```
+LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1' steam
+
+```
+
+При использовании .desktop файла вы можете использовать команду в строке **Exec=**
+
+```
+env LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1' /usr/bin/steam %U
+
+```
+
+**Обратите внимание:** Указанное выше значение '$LIB' не является переменной, а выступает как указание компоновщику использовать соответствующую архитектуру для библиотеки. Одиночные кавычки необходимы для предотвращения определения командной оболочки значения $LIB как переменной.
+
+##### Удаление библиотек среды выполнения Steam
+
+Запустите следующую команду для удаления конфликтных библиотек среды выполнения Steam, вызывающих проблемы в Arch Linux:
+
+```
+find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete
+
+```
+
+Если указанная выше команда не сработала, то запустите её ещё раз, а затем запустите следующую команду.
+
+```
+find ~/.local/share/Steam/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete
+
+```
+
+**Обратите внимание:** Во время обновления Steam часто восстанавливает собственные библиотеки среды выполнения, поэтому до окончательного решения проблемы вам следует после окончания обновления Steam закрыть клиент, удалить библиотеки и запустить Steam опять.
+
+Если вы хотите восстановить файлы, которые были удалены указанной выше командой, то вы можете воспользоваться встроенной функцией сброса Steam.
+
+**Важно:** `--reset` также удалит игры (каталог по умолчанию SteamApps).
+
+```
+bc|steam --reset
+
+```
 
 ### Кнопка закрытия только сворачивает окно
 
@@ -150,7 +255,7 @@ $ ln -s /usr/lib32/mozilla/plugins/libflashplayer.so ~/.steam/bin32/plugins/
 
 ### Игра вылетает немедленно после запуска
 
-Если игра сразу же вылетает, попробуйте отключить: _"Enable the Steam Overlay while in-game"_ в _Properties_ игры.
+Если игра сразу же вылетает, попробуйте отключить: *"Enable the Steam Overlay while in-game"* в *Properties* игры.
 
 ### OpenGL не использует прямой рендеринг
 
@@ -229,7 +334,7 @@ primusrun %command% -w 1920 -h 1080
 Если вы используете ядро [Linux-ck](/index.php/Linux-ck "Linux-ck"), вы можете уменьшить задержки и увеличить производительность, запустив игру в SCHED_ISO (низкие задержки, избежание перегрузки CPU) с помощью [schedtool](https://www.archlinux.org/packages/?name=schedtool)
 
 ```
-# schedtool -I -e %command% _other arguments_
+# schedtool -I -e %command% *other arguments*
 
 ```
 

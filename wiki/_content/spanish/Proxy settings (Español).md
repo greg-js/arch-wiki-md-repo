@@ -15,7 +15,7 @@
 
 ## Introducción
 
-Un proxy es _una interfaz para un servicio, especialmente para uno que está a distancia, utilización intensiva de recursos o, de otra manera, difícil de usar directamente_. Fuente: [Proxy - Wiktionary](http://en.wiktionary.org/wiki/proxy).
+Un proxy es *una interfaz para un servicio, especialmente para uno que está a distancia, utilización intensiva de recursos o, de otra manera, difícil de usar directamente*. Fuente: [Proxy - Wiktionary](http://en.wiktionary.org/wiki/proxy).
 
 ## Variables de entorno
 
@@ -175,14 +175,14 @@ Hay dos casos:
 
 En Firefox, puede utilizar el proxy SOCKS en las Preferencias del menú> Avanzado> Red> Configuración de conexión. Seleccione la opción «Configuración manual del proxy», y establezca el Servidor SOCKS (y solo este, asegúrese de que los otros campos, como el proxy HTTP o SSL queden vacíos). Por ejemplo, si un proxy SOCKS5 se ejecuta en el puerto 8080 de localhost, escriba «127.0.0.1» en el campo Servidor SOCKS, «8080» en el campo Puerto, y Aceptar. localhost, 127.0.0.1
 
-Si usa _proxychains-ng_, la configuración se realiza en `/etc/proxychains.conf`. Puede que tenga que anular el comentario de la última línea (establecido por defecto para utilizar [Tor](/index.php/Tor "Tor")), y reemplazarlo con los parámetros del proxy SOCKS. Por ejemplo, si está utilizando el mismo proxy SOCKS5 que el anterior, tendrá que reemplazar la última línea por:
+Si usa *proxychains-ng*, la configuración se realiza en `/etc/proxychains.conf`. Puede que tenga que anular el comentario de la última línea (establecido por defecto para utilizar [Tor](/index.php/Tor "Tor")), y reemplazarlo con los parámetros del proxy SOCKS. Por ejemplo, si está utilizando el mismo proxy SOCKS5 que el anterior, tendrá que reemplazar la última línea por:
 
 ```
 socks5 127.0.0.1 8080
 
 ```
 
-Entonces, _proxychains-ng_ puede ser lanzado con:
+Entonces, *proxychains-ng* puede ser lanzado con:
 
 ```
 proxychains <programa>

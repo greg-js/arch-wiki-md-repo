@@ -118,7 +118,6 @@ Openbox può essere utilizzato per rimpiazzare il gestore di finestre di un Desk
 Creare questo file
 
  `/usr/share/applications/openbox.desktop` 
-
 ```
 [Desktop Entry]
  Type=Application
@@ -142,7 +141,7 @@ Se dopo l'installazione di openbox falliscono i tentativi di log in nella sessio
 
 1.  Effettuare l'accesso solamente nella sessione di Gnome (che userà metacity quale unico window manager) per preparare quanto segue.
 2.  Installare openbox se non è ancora stato fatto.
-3.  Esplorare il menu verso _System → Preferences → Startup Applications_ (probabilmente chiamato 'Session' per versioni meno recenti di Gnome)
+3.  Esplorare il menu verso *System → Preferences → Startup Applications* (probabilmente chiamato 'Session' per versioni meno recenti di Gnome)
 4.  Selezionare "Applicazioni d'avvio", poi "Aggiungi" ed immettere il testo contenuto nel box sotto, omettendo quello preceduto da #.
 5.  Premere "Aggiungi" per completare l'aggiunta della nuova voce ed assicurarsi che sia spuntata nella lista delle applicazioni d'avvio.
 6.  Terminare la sessione di Gnome, rieffettuare l'accesso, e si dovrebbe finalmente essere nella nuova sessione di openbox.
@@ -159,11 +158,11 @@ Sarà creata una nuova voce di avvio che verrà eseguita da gnome ogni volta che
 
 ### GNOME 2.26 Redux
 
-_**Se la guida precedente non dovesse funzionare**_ Ecco un altro modo per utilizzare Openbox all'interno della sessione Gnome:
+***Se la guida precedente non dovesse funzionare*** Ecco un altro modo per utilizzare Openbox all'interno della sessione Gnome:
 
 1.  Effettuare il login all'interno della sessione Gnome (dovrebbe usare metacity come wm)
 2.  Installare Openbox se non lo si ha ancora fatto.
-3.  Navigare fino al menu _System → Preferences → Startup Applications_ (potrebbe essere chiamato 'Session' in versioni precedenti di Gnome.
+3.  Navigare fino al menu *System → Preferences → Startup Applications* (potrebbe essere chiamato 'Session' in versioni precedenti di Gnome.
 4.  Aprire Startup Application, selezionare '+add' ed inserire il testo mostrato di seguito. Omettere le righe che iniziano con un cancelletto #.
 5.  Effettuare il logout dalla sessione Gnome, e ri-effettuare il login.
 6.  Si dovrebbe ora stare eseguendo Openbox come window manager.
@@ -213,7 +212,7 @@ e modificarla così:
 
 Altrimenti usando la voce "Exit" dal menu si termina l'esecuzione di Openbox, rimanendo senza window manager.
 
-Se c'è qualche problema a cambiare tra desktops virtuali con la rotella del mouse (salta qualche desktop), aprire il file `~/.config/openbox/rc.xml` e spostare i binding delmouse del mouse relativi alle azioni "DesktopPrevious" e "DesktopNext" dal contesto "Desktop" al contesto "Root" (si potrebbe dover definire il contesto _Root_).
+Se c'è qualche problema a cambiare tra desktops virtuali con la rotella del mouse (salta qualche desktop), aprire il file `~/.config/openbox/rc.xml` e spostare i binding delmouse del mouse relativi alle azioni "DesktopPrevious" e "DesktopNext" dal contesto "Desktop" al contesto "Root" (si potrebbe dover definire il contesto *Root*).
 
 Volendo usare il root-menu di Openbox invece di quello di Xfce, è possibile terminare Xfdesktop dando il seguente comando in un terminale:
 
@@ -415,8 +414,8 @@ Openbox supporta l'esecuzione automatica di programmi all'avvio. Questa funzione
 
 Ci sono due modi per abilitare l'esecuzione automatica:
 
-1.  Se si usa startx/xinit per accedere alla sessione X, modificare ``./xinitrc` in modo che la riga che esegue _**openbox**_ esegua invece _**openbox-session**_ .
-2.  Se si usa GDM/KDM, selezionare la sessione _Openbox_ e questa utilizzerà l'esecuzione automatica.
+1.  Se si usa startx/xinit per accedere alla sessione X, modificare ``./xinitrc` in modo che la riga che esegue ***openbox*** esegua invece ***openbox-session*** .
+2.  Se si usa GDM/KDM, selezionare la sessione *Openbox* e questa utilizzerà l'esecuzione automatica.
 
 ### Script d'esecuzione automatica
 
@@ -456,7 +455,6 @@ Una volta aperto il file con il proprio editor di testo preferito, sarà necessa
 Un altro modo è usare il pacchetto [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) dai repository, e richiamare il comando `mimeopen` in questo modo:
 
  `$ mimeopen -d /percorso/del/file` 
-
 ```
 Please choose a default application for files of type text/plain
        1) notepad  (wine-extension-txt)
@@ -467,7 +465,7 @@ Please choose a default application for files of type text/plain
 
 ```
 
-Verrà chiesto quale applicazione da utilizzare durante l'apertura di _/percorso/del/file_: La vostra risposta sarà impostata come gestore predefinito per quel tipo di file. Se non si riesce a trovare `mimeopen`, il suo percorso è:
+Verrà chiesto quale applicazione da utilizzare durante l'apertura di */percorso/del/file*: La vostra risposta sarà impostata come gestore predefinito per quel tipo di file. Se non si riesce a trovare `mimeopen`, il suo percorso è:
 
 ```
 /usr/bin/perlbin/vendor/mimetype
@@ -487,7 +485,6 @@ Utilizzando il programma [transset-df](https://www.archlinux.org/packages/?name=
 è possibile abilitare la transparenza delle finestre in modo veloce. Ad esempio modificando quanto segue in `~/.config/openbox/rc.xml` si otterrà che con il movimento della rotella del mouse quando il cursore è sulla barra del titolo (osservare la sezione <mouse>), si faccia variare la trasparenza della finestra.:
 
  `~/.config/openbox/rc.xml` 
-
 ```
 <context name="Titlebar">
    . . .
@@ -516,7 +513,6 @@ Utilizzando impostazioni personalizzate a seconda del tipo di applicazione, potr
 Per usarlo eseguire **`xp`** e fare click sul programma in esecuzione di cui si vogliono definire le configurazioni per-app. Il risultato visualizzerà solo le informazioni richieste da Openbox, in pratica i valori WM_WINDOW_ROLE e WM_CLASS (nome e tipo):
 
  `[thayer@dublin:~] $ xp` 
-
 ```
 WM_WINDOW_ROLE(STRING) = "roster"
 WM_CLASS(STRING) = "gajim.py", "Gajim.py"
@@ -532,7 +528,6 @@ Per diversi motivi, Firefox e i suoi equivalenti ignorano le regole delle applic
 Ad alcuni utenti piace associare il menu pricipale di Openbox, o qualsiasi altro, ad un tasto. Potrebbe essere utile, ad esempio, per creare un menu a bottone in un pannello. Sebbene ciò non sia supportato da Openbox, un semplice script reperibile su [AUR], [xdotool](https://www.archlinux.org/packages/?name=xdotool), basta a simulare la pressione di un tasto. Per usarlo, aggiungere semplicemente alla sezione <keyboard> del proprio `rc.xml`:
 
  `~/.config/openbox/rc.xml` 
-
 ```
 <keybind key="A-C-q">
   <action name="ShowMenu">
@@ -555,7 +550,6 @@ Con Openbox, eseguire un terminale come sfondo del desktop è facile. Non avete 
 Innanzitutto sarà necessario abilitare la trasparenza, aprendo il proprio file `.Xdefaults` (in caso non esistesse, andrà creato nella propria /home).
 
  `~/.Xdefaults` 
-
 ```
 URxvt*transparent:true
 URxvt*scrollBar:false
@@ -568,7 +562,6 @@ URxvt*foreground:Black #Colore dei font. Da impostare su White in caso di utiliz
 Infine, bisognerà modificare il proprio file `~/.config/openbox/rc.xml`:
 
  `~/.config/openbox/rc.xml` 
-
 ```
 <application name="urxvt">
   <decor>no</decor>
@@ -585,9 +578,9 @@ Infine, bisognerà modificare il proprio file `~/.config/openbox/rc.xml`:
 
 ```
 
-La _magia_ viene dalla riga `<layer>below</layer>`, che piazzerà il terminale sotto tutte le altre. In questo caso, URxvt sarà visualizzato su tutti i desktop, ovviamente è possibile cambiare questo comportamento.
+La *magia* viene dalla riga `<layer>below</layer>`, che piazzerà il terminale sotto tutte le altre. In questo caso, URxvt sarà visualizzato su tutti i desktop, ovviamente è possibile cambiare questo comportamento.
 
-Notare che, invece di usare `<application name="URxvt">` nella prima riga, è possibile usare un altro nome (_URxvt-bg_ ad esempio), e utilizzare l'opzione -name al lancio di uxrvt. In questo modo, solo i terminali che lancerete con l'opzione saranno impostati con le regole scelte nel file rc.xml. Ad esempio:
+Notare che, invece di usare `<application name="URxvt">` nella prima riga, è possibile usare un altro nome (*URxvt-bg* ad esempio), e utilizzare l'opzione -name al lancio di uxrvt. In questo modo, solo i terminali che lancerete con l'opzione saranno impostati con le regole scelte nel file rc.xml. Ad esempio:
 
  `urxvt -name URxvt-bg` 
 
@@ -606,7 +599,6 @@ Se si utilizza MostraDesktop per minimizzare tutte le applicazioni aperte, quest
 Impostazioni della finestra:
 
  `~/.config/openbox/rc.xml` 
-
 ```
 <application name="RootTerm">
       <decor>no</decor>
@@ -626,7 +618,6 @@ Impostazioni della finestra:
 Binding dei tasti:
 
  `~/.config/openbox/rc.xml` 
-
 ```
 <keybind key="W-d">
   <action name="Execute"> <command>~/.config/openbox/toggle_shell.sh</command> </action>
@@ -636,7 +627,6 @@ Binding dei tasti:
 E lo script:
 
  `~/.config/openbox/toggle_shell.sh` 
-
 ```
  wc -l)
 	if [ $wind_num -ne 0 ]
@@ -655,7 +645,6 @@ fi
 Le righe seguenti avviano urxvt al login. Ciò previene la chiusura involontaria di urxvt.
 
  `~/.config/openbox/autostart` 
-
 ```
 ...
 (while :; do urxvt -name RootTerm; done;) &
@@ -667,7 +656,6 @@ Le righe seguenti avviano urxvt al login. Ciò previene la chiusura involontaria
 Se si usa ALSA per l'audio, è possibile usare il programma amixer per regolare il volume dell'audio. Inoltre è possibile usare le associazioni dei tasti di Openbox in modo che si comportino come tasti multimediali. (Alternativamente, si potrebberero cercare i nomi dei tasti multimediali che si hanno e mapparli.) Per esempio, nella sezione `<keyboard>` di rc.xml:
 
  `~/.config/openbox/rc.xml` 
-
 ```
 <keybind key="W-Up">
   <action name="Execute">
@@ -680,7 +668,6 @@ Se si usa ALSA per l'audio, è possibile usare il programma amixer per regolare 
 Questo vincola i tasti Windows + Freccia Su ad alzare il proprio volume Master ALSA del 5%. La corrispondente associazione per abbassare il volume:
 
  `~/.config/openbox/rc.xml` 
-
 ```
 <keybind key="W-Down">
   <action name="Execute">
@@ -693,7 +680,6 @@ Questo vincola i tasti Windows + Freccia Su ad alzare il proprio volume Master A
 In un altro esempio, è possibile anche usare l'associazione dei tasti per XF86Audio:
 
  `~/.config/openbox/rc.xml` 
-
 ```
 <keybind key="XF86AudioRaiseVolume">
   <action name="Execute">
@@ -723,7 +709,6 @@ Quest'ultimo esempio dovrebbe funzionare per la maggior parte delle tastiere mul
 Se si utilizza Pulseaudio con ALSA come backend, il precedente keybinding deve essere modificato per istruire amixer ad utilizzare pulse
 
  `~/.config/openbox/rc.xml` 
-
 ```
 <keybind key="XF86AudioRaiseVolume">
   <action name="Execute">
@@ -774,7 +759,6 @@ Se si riscontra l'avvio automatico di applicazioni non volute, e che quindi non 
 Mentre fino alla versione 3.4.x di Openbox, era possibile eseguire un agente SSH da `~/.config/openbox/autostart.sh`, dalla versione 3.5 questo sembra non funzionare più. È necessario inserire il proprio codice all'interno di `~/.config/openbox/environment`, ad esempio
 
  `~/.config/openbox/environment` 
-
 ```
 SSHAGENT="/usr/bin/ssh-agent"
 SSHAGENTARGS="-s"

@@ -26,7 +26,6 @@ xprofile 和 [xinitrc](/index.php/Xinitrc "Xinitrc") 文件在原生情况下会
 执行以上程序，不管是直接还是间接，`~/.xinitrc` (如果不存在的话，通常是复制自 `/etc/skel/.xinitrc`) 或 `/etc/X11/xinit/xinitrc`. 这就是为什么我们要从以下文件引用 xprofile.
 
  `~/.xinitrc 和 /etc/X11/xinit/xinitrc 和 /etc/skel/.xinitrc` 
-
 ```
 #!/bin/sh
 
@@ -45,7 +44,6 @@ xprofile 和 [xinitrc](/index.php/Xinitrc "Xinitrc") 文件在原生情况下会
 首先，如果文件不存在的话创建 `~/.xprofile`. 然后只需加入你想要随会话一同启动的程序的命令。见以下:
 
  `~/.xprofile` 
-
 ```
 tint2 &
 nm-applet &

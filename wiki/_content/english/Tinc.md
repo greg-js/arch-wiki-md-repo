@@ -1,6 +1,6 @@
 This article describes a basic installation and configuration of tinc. For further details see the [tinc.conf man page](http://www.tinc-vpn.org/documentation/tinc.conf.5) and the [tinc documentation](http://tinc-vpn.org/docs/).
 
-_**tinc** is a Virtual Private Network (VPN) daemon that uses tunnelling and encryption to create a secure private network between hosts on the Internet._[[1]](http://tinc-vpn.org/)
+***tinc** is a Virtual Private Network (VPN) daemon that uses tunnelling and encryption to create a secure private network between hosts on the Internet.*[[1]](http://tinc-vpn.org/)
 
 ## Contents
 
@@ -21,27 +21,27 @@ _**tinc** is a Virtual Private Network (VPN) daemon that uses tunnelling and enc
 
 ## Configuring a private network
 
-In this example, we will create a virtual private network _vpnname_ between two hosts _alpha_ and _beta_, where the former is the entry point for the latter, so that beta tries to connect to alpha on startup.
+In this example, we will create a virtual private network *vpnname* between two hosts *alpha* and *beta*, where the former is the entry point for the latter, so that beta tries to connect to alpha on startup.
 
 For each virtual private network you have to create a separate directory in /etc/tinc, e.g.
 
 ```
-# mkdir /etc/tinc/_vpnname_
+# mkdir /etc/tinc/*vpnname*
 
 ```
 
 You can also start by copying the sample configuration
 
 ```
-# cp -r /usr/share/tinc/examples/sample-config/* /etc/tinc/_vpnname_
+# cp -r /usr/share/tinc/examples/sample-config/* /etc/tinc/*vpnname*
 
 ```
 
-In /etc/tinc/_vpnname_/tinc.conf you specify the name of the hostmachine (which can differ from the actual hostname of the system) and the location of the tun/tap device.
+In /etc/tinc/*vpnname*/tinc.conf you specify the name of the hostmachine (which can differ from the actual hostname of the system) and the location of the tun/tap device.
 
 ### Configuration of alpha
 
-/etc/tinc/_vpnname_/tinc.conf
+/etc/tinc/*vpnname*/tinc.conf
 
 ```
 Name = alpha
@@ -49,7 +49,7 @@ Device = /dev/net/tun
 
 ```
 
-/etc/tinc/_vpnname_/tinc-up
+/etc/tinc/*vpnname*/tinc-up
 
 ```
 #!/bin/sh
@@ -59,7 +59,7 @@ ip route add 192.168.0.0/24 dev $INTERFACE
 
 ```
 
-/etc/tinc/_vpnname_/tinc-down
+/etc/tinc/*vpnname*/tinc-down
 
 ```
 #!/bin/sh
@@ -71,7 +71,7 @@ ip link set $INTERFACE down
 
 ### Configuration of beta
 
-/etc/tinc/_vpnname_/tinc.conf
+/etc/tinc/*vpnname*/tinc.conf
 
 ```
 Name = beta
@@ -80,7 +80,7 @@ ConnectTo = alpha
 
 ```
 
-/etc/tinc/_vpnname_/tinc-up
+/etc/tinc/*vpnname*/tinc-up
 
 ```
 #!/bin/sh
@@ -90,7 +90,7 @@ ip route add 192.168.0.0/24 dev $INTERFACE
 
 ```
 
-/etc/tinc/_vpnname_/tinc-down
+/etc/tinc/*vpnname*/tinc-down
 
 ```
 #!/bin/sh
@@ -102,9 +102,9 @@ ip link set $INTERFACE down
 
 ### Setting up the hosts
 
-The configuration files for the different hosts are stored in /etc/tinc/_vpnname_/hosts/ directory. In this example we need the two files on each machine.
+The configuration files for the different hosts are stored in /etc/tinc/*vpnname*/hosts/ directory. In this example we need the two files on each machine.
 
-/etc/tinc/_vpnname_/hosts/alpha
+/etc/tinc/*vpnname*/hosts/alpha
 
 ```
 Address = 10.0.0.1
@@ -113,7 +113,7 @@ Subnet = 192.168.0.1/32
 
 ```
 
-/etc/tinc/_vpnname_/hosts/beta
+/etc/tinc/*vpnname*/hosts/beta
 
 ```
 Port = 655
@@ -124,27 +124,27 @@ Subnet = 192.168.0.2/32
 After creating a file for each host, you have to generate a key pair using
 
 ```
-# tincd -n _vpnname_ -K
+# tincd -n *vpnname* -K
 
 ```
 
-which creates the private key in /etc/tinc/_vpnname_/tinc.rsa_key.priv and the public key in the corresponding host-file.
+which creates the private key in /etc/tinc/*vpnname*/tinc.rsa_key.priv and the public key in the corresponding host-file.
 
-In the last step you need to exchange the host configuration files, so that you have both alpha and beta in /etc/tinc/_vpnname_/hosts/ on each host.
+In the last step you need to exchange the host configuration files, so that you have both alpha and beta in /etc/tinc/*vpnname*/hosts/ on each host.
 
 ## Starting a private network
 
-After having created the appropriate configuration in /etc/tinc/_vpnname_, you can test the the new private network with
+After having created the appropriate configuration in /etc/tinc/*vpnname*, you can test the the new private network with
 
 ```
-# tincd -n _vpnname_
+# tincd -n *vpnname*
 
 ```
 
 If you want to enable it at startup you have to enable the appropriate service
 
 ```
-# systemctl enable tincd@_vpnname_
+# systemctl enable tincd@*vpnname*
 
 ```
 
@@ -152,32 +152,32 @@ If you want to enable it at startup you have to enable the appropriate service
 
 Sometimes it is reasonable to use TAP devices instead of TUN devices. For example if you want to add the tinc device to an already existing bridge. Just add the "Mode" option to your tinc.conf.
 
-Remember to do that on **every** host. /etc/tinc/_vpnname_/tinc.conf
+Remember to do that on **every** host. /etc/tinc/*vpnname*/tinc.conf
 
 ```
-Name = _node_
+Name = *node*
 Mode = switch
 Device = /dev/net/tun
-ConnectTo = _other_
+ConnectTo = *other*
 
 ```
 
 Possible tinc-up/down files could look like that:
 
-/etc/tinc/_vpnname_/tinc-up
+/etc/tinc/*vpnname*/tinc-up
 
 ```
 #!/bin/sh
 ip link set $INTERFACE up
-brctl addif _br0_ $INTERFACE
+brctl addif *br0* $INTERFACE
 
 ```
 
-/etc/tinc/_vpnname_/tinc-down
+/etc/tinc/*vpnname*/tinc-down
 
 ```
 #!/bin/sh
-brctl delif _br0_ $INTERFACE
+brctl delif *br0* $INTERFACE
 ip link set $INTERFACE down
 
 ```
@@ -185,7 +185,7 @@ ip link set $INTERFACE down
 And finally restart your tinc daemon:
 
 ```
-# systemctl restart tincd@_vpnname_
+# systemctl restart tincd@*vpnname*
 
 ```
 

@@ -49,7 +49,6 @@ After that, you can [start/enable](/index.php/Start/enable "Start/enable") the f
 The following will give you an output software MIDI port (in addition of hardware MIDI ports on your system, if any):
 
  `$ aconnect -o` 
-
 ```
 client 128: 'FLUID Synth (5117)' [type=user]
    0 'Synth input port (5117:0)'

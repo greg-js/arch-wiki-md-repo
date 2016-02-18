@@ -1,6 +1,6 @@
 From the project [home page](http://suricata-ids.org/):
 
-	_Suricata is a high performance Network IDS, IPS and Network Security Monitoring engine. Open Source and owned by a community run non-profit foundation, the Open Information Security Foundation (OISF). Suricata is developed by the OISF and its supporting vendors._
+	*Suricata is a high performance Network IDS, IPS and Network Security Monitoring engine. Open Source and owned by a community run non-profit foundation, the Open Information Security Foundation (OISF). Suricata is developed by the OISF and its supporting vendors.*
 
 ## Contents
 
@@ -43,7 +43,7 @@ You may start the suricata service manually with: `# /usr/bin/suricata -c /etc/s
 
 ### Systemd service configuration
 
-To start suricata automatically at system boot, [enable](/index.php/Daemon "Daemon") `suricata@_<interface>_.service`.
+To start suricata automatically at system boot, [enable](/index.php/Daemon "Daemon") `suricata@*<interface>*.service`.
 
 For example, if the network interface is `eth0` , the service name is `suricata@eth0.service`.
 

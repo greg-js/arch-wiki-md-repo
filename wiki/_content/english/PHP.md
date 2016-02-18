@@ -40,7 +40,7 @@
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 PHP Fatal error: Class 'ZipArchive' not found](#PHP_Fatal_error:_Class_.27ZipArchive.27_not_found)
     *   [8.2 /etc/php/php.ini not parsed](#.2Fetc.2Fphp.2Fphp.ini_not_parsed)
-    *   [8.3 PHP Warning: PHP Startup: _<module>_: Unable to initialize module](#PHP_Warning:_PHP_Startup:_.3Cmodule.3E:_Unable_to_initialize_module)
+    *   [8.3 PHP Warning: PHP Startup: *<module>*: Unable to initialize module](#PHP_Warning:_PHP_Startup:_.3Cmodule.3E:_Unable_to_initialize_module)
 *   [9 See also](#See_also)
 
 ## Installation
@@ -104,7 +104,7 @@ extension=gd.so
 
 ### imagemagick
 
-For [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) run `# pecl install imagick`. The _pecl_ binary is included in the [php-pear](https://aur.archlinux.org/packages/php-pear/) package. Then add
+For [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) run `# pecl install imagick`. The *pecl* binary is included in the [php-pear](https://aur.archlinux.org/packages/php-pear/) package. Then add
 
 ```
 extension=imagick.so
@@ -172,12 +172,12 @@ extension=sqlite3.so
 
 ## Caching
 
-There are two kinds of caching in PHP: _opcode_/_bytecode_ caching and _userland_/_user data_ caching. Both allow for substantial gains in applications speed, and therefore should be enabled wherever possible.
+There are two kinds of caching in PHP: *opcode*/*bytecode* caching and *userland*/*user data* caching. Both allow for substantial gains in applications speed, and therefore should be enabled wherever possible.
 
-*   [Zend OPCache](https://en.wikipedia.org/wiki/Zend_Opcache "wikipedia:Zend Opcache") provides only _opcode_ caching.
-*   [APCu](https://github.com/krakjoe/apcu/) provides only _userland_ caching.
+*   [Zend OPCache](https://en.wikipedia.org/wiki/Zend_Opcache "wikipedia:Zend Opcache") provides only *opcode* caching.
+*   [APCu](https://github.com/krakjoe/apcu/) provides only *userland* caching.
 
-For optimal caching, you should enable **both**. To do this, follow _both_ [#OPCache](#OPCache) _and_ [#APCu](#APCu).
+For optimal caching, you should enable **both**. To do this, follow *both* [#OPCache](#OPCache) *and* [#APCu](#APCu).
 
 ### OPCache
 
@@ -296,7 +296,7 @@ Ensure the zip extension is enabled.
 
 If your `php.ini` is not parsed, the ini file is named after the sapi it is using. For instance, if you are using uwsgi, the file would be called `/etc/php/php-uwsgi.ini`. If you are using cli, it is `/etc/php/php-cli.ini`.
 
-### PHP Warning: PHP Startup: _<module>_: Unable to initialize module
+### PHP Warning: PHP Startup: *<module>*: Unable to initialize module
 
 When running `php`, this error indicates that the aforementioned module is out of date. This will rarely happen in Arch Linux, since maintainers make sure core PHP and all modules be only available in compatible versions.
 
@@ -304,7 +304,7 @@ This might happen in conjunction with a module compiled from the [AUR](/index.ph
 
 To fix, find a compatible update for your module, probably by looking up the [AUR](/index.php/AUR "AUR") using its common name.
 
-If it applies, flag the outdated [AUR](/index.php/AUR "AUR") package as _outdated_.
+If it applies, flag the outdated [AUR](/index.php/AUR "AUR") package as *outdated*.
 
 ## See also
 

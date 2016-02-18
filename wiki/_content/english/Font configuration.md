@@ -2,7 +2,7 @@
 
 Though Fontconfig is the standard in modern Linux, some applications rely on the original method of font selection and display, the [X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description").
 
-The font rendering packages on Arch Linux includes support for _freetype2_ with the bytecode interpreter (BCI) enabled. For better font rendering, especially with an LCD monitor, see [#Fontconfig configuration](#Fontconfig_configuration) and [Font configuration/Examples](/index.php/Font_configuration/Examples "Font configuration/Examples").
+The font rendering packages on Arch Linux includes support for *freetype2* with the bytecode interpreter (BCI) enabled. For better font rendering, especially with an LCD monitor, see [#Fontconfig configuration](#Fontconfig_configuration) and [Font configuration/Examples](/index.php/Font_configuration/Examples "Font configuration/Examples").
 
 ## Contents
 
@@ -91,7 +91,7 @@ Configuration can be done per-user through `$XDG_CONFIG_HOME/fontconfig/fonts.co
 
 Fontconfig gathers all its configurations in a central file (`/etc/fonts/fonts.conf`). This file is replaced during fontconfig updates and should not be edited. Fontconfig-aware applications source this file to know available fonts and how they get rendered. This file is a conglomeration of rules from the global configuration (`/etc/fonts/local.conf`), the configured presets in `/etc/fonts/conf.d/`, and the user configuration file (`$XDG_CONFIG_HOME/fontconfig/fonts.conf`). `fc-cache` can be used to rebuild fontconfig's configuration, although changes will only be visible in newly launched applications.
 
-**Note:** For some desktop environments (such as [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE")) using the _Font Control Panel_ will automatically create or overwrite the user font configuration file. For these desktop environments, it is best to match your already defined font configurations to get the expected behavior.
+**Note:** For some desktop environments (such as [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE")) using the *Font Control Panel* will automatically create or overwrite the user font configuration file. For these desktop environments, it is best to match your already defined font configurations to get the expected behavior.
 
 Fontconfig configuration files use [XML](https://en.wikipedia.org/wiki/XML "wikipedia:XML") format and need these headers:
 
@@ -282,7 +282,7 @@ The auto-hinter uses sophisticated methods for font rendering, but often makes b
 
 ### Replace or set default fonts
 
-The most reliable way to do this is to add an XML fragment similar to the one below. _Using the "binding" attribute will give you better results_, for example, in Firefox where you may not want to change properties of font being replaced. This will cause Ubuntu to be used in place of Georgia:
+The most reliable way to do this is to add an XML fragment similar to the one below. *Using the "binding" attribute will give you better results*, for example, in Firefox where you may not want to change properties of font being replaced. This will cause Ubuntu to be used in place of Georgia:
 
 ```
 ...
@@ -294,7 +294,7 @@ The most reliable way to do this is to add an XML fragment similar to the one be
 
 ```
 
-An alternate approach is to set the "preferred" font, but _this only works if the original font is not on the system_, in which case the one specified will be substituted:
+An alternate approach is to set the "preferred" font, but *this only works if the original font is not on the system*, in which case the one specified will be substituted:
 
 ```
 ...
@@ -315,7 +315,8 @@ The element `<selectfont>` is used in conjunction with the `<acceptfont>` and `<
 
 First obtain the Family name as listed in the font itself:
 
- `$ fc-scan .fonts/lklug.ttf --format='%{family}\n'`  `LKLUG` 
+ `$ fc-scan .fonts/lklug.ttf --format='%{family}
+'`  `LKLUG` 
 
 Then use that Family name in a `<rejectfont>` stanza:
 
@@ -356,7 +357,6 @@ Bitmap fonts are sometimes used as fallbacks for missing fonts, which may cause 
 
 To disable embedded bitmap for all fonts:
  `~/.config/fontconfig/conf.d/20-no-embedded.conf` 
-
 ```
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
@@ -388,21 +388,21 @@ To disable scaling of bitmap fonts (which often makes them blurry), remove `/etc
 
 ### Create bold and italic styles for incomplete fonts
 
-FreeType has the ability to automatically create _italic_ and **bold** styles for fonts that do not have them, but only if explicitly required by the application. Given programs rarely send these requests, this section covers manually forcing generation of missing styles.
+FreeType has the ability to automatically create *italic* and **bold** styles for fonts that do not have them, but only if explicitly required by the application. Given programs rarely send these requests, this section covers manually forcing generation of missing styles.
 
 Start by editing `/usr/share/fonts/fonts.cache-1` as explained below. Store a copy of the modifications on another file, because a font update with `fc-cache` will overwrite `/usr/share/fonts/fonts.cache-1`.
 
 Assuming the Dupree font is installed:
 
 ```
-"dupree.ttf" 0 "Dupree:style=Regular:slant=0:weight=80:width=100:foundry=unknown:index=0:outline=True:_etc..._
+"dupree.ttf" 0 "Dupree:style=Regular:slant=0:weight=80:width=100:foundry=unknown:index=0:outline=True:*etc...*
 
 ```
 
-Duplicate the line, change `style=Regular` to `style=Bold` or any other style. Also change `slant=0` to `slant=100` for italic, `weight=80` to `weight=200` for bold, or combine them for _**bold italic**_:
+Duplicate the line, change `style=Regular` to `style=Bold` or any other style. Also change `slant=0` to `slant=100` for italic, `weight=80` to `weight=200` for bold, or combine them for ***bold italic***:
 
 ```
-"dupree.ttf" 0 "Dupree:style=Bold Italic:slant=100:weight=200:width=100:foundry=unknown:index=0:outline=True:_etc..._
+"dupree.ttf" 0 "Dupree:style=Bold Italic:slant=100:weight=200:width=100:foundry=unknown:index=0:outline=True:*etc...*
 
 ```
 
@@ -475,7 +475,6 @@ Look up the meaning of the numbers at [http://www.freedesktop.org/software/fontc
 Some applications like [URxvt](/index.php/URxvt "URxvt") will ignore fontconfig settings. You can work around this by using `~/.Xresources`, but it is as flexible as fontconfig. Example (see [#Fontconfig configuration](#Fontconfig_configuration) for explanations of the options):
 
  `~/.Xresources` 
-
 ```
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
@@ -499,7 +498,6 @@ If fonts are still unexpectedly large or small, poorly proportioned or simply re
 Fontconfig should be able to detect DPI parameters as discovered by the Xorg server. You can check the automatically discovered DPI with `xdpyinfo` (provided by the [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo) package):
 
  `$ xdpyinfo | grep dots` 
-
 ```
   resolution:    102x102 dots per inch
 
@@ -510,7 +508,6 @@ If the DPI is detected incorrectly (usually due to an incorrect monitor [EDID](h
 Fontconfig will default to the Xft.dpi variable if it is set. Xft.dpi is usually set by desktop environments (usually to Xorg's DPI setting) or manually in `~/.Xdefaults` or `~/.Xresources`. Use xrdb to query for the value:
 
  `$ xrdb -query | grep dpi` 
-
 ```
 Xft.dpi:	102
 
@@ -561,7 +558,6 @@ In this example, hinting is set to "grayscale".
 A simple solution is using [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/) as a replacement for gnome-settings-daemon to provide the configuration, for example:
 
  `~/.xsettingsd` 
-
 ```
 Xft/Hinting 1
 Xft/RGBA "rgb"

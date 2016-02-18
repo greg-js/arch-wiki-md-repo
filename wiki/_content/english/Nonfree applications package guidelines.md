@@ -31,9 +31,9 @@ There are multiple reasons for packaging even non-packageable software:
 
 	This is applicable even to the simplest of apps, which consist of a single script to be installed into `/usr/bin`. Instead of issuing:
 
-	 `$ chmod +x _filename_` 
+	 `$ chmod +x *filename*` 
 
-	 `# cp _filename_ /usr/bin/` 
+	 `# cp *filename* /usr/bin/` 
 
 	you can type just
 
@@ -86,7 +86,7 @@ For most commercial games there is no way to (legally) download game files, whic
 
 	Add the required file to `sources` array:
 
-	 `sources=(... "_originalname_::**file://**_originalname_")` 
+	 `sources=(... "*originalname*::**file://***originalname*")` 
 
 	This way the link to file in AUR web interface will look different from names of files included in source tarball.
 
@@ -143,7 +143,7 @@ Many proprietary programs are shipped in nasty installers which sometimes do not
 *   [upx](https://www.archlinux.org/packages/?name=upx) is sometimes used to encrypt above-listed executables and can be used for decryption as well
 *   [innoextract](https://aur.archlinux.org/packages/innoextract/) can unpack `.exe` installers created with [Inno Setup](https://en.wikipedia.org/wiki/Inno_Setup "wikipedia:Inno Setup") (used for example by GOG.com games)
 
-In order to determine exact type of file run `file _file_of_unknown_type_`.
+In order to determine exact type of file run `file *file_of_unknown_type*`.
 
 ### Getting icons for .desktop files
 

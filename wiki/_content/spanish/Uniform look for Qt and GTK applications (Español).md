@@ -1,6 +1,6 @@
 Los programas basados en [Qt](http://en.wikipedia.org/wiki/Qt_(toolkit)) y [GTK+](/index.php/GTK%2B "GTK+") utilizan diferentes conjuntos de "widgets" para conformar sus interfaces gráficas de usuario. Cada uno presenta entre otras cosas, diferentes temas, estilos y juegos de íconos por defecto, así que su "aspecto y tacto" difieren significativamente. Este artículo le ayudará a conseguir que tanto sus aplicaciones Qt como las GTK+ sean parecidas para lograr una experiencia de escritorio más uniforme e "integrada".
 
-_"Qt (pronunciado "cute" en inglés) es un marco de trabajo para desarrollo de aplicaciones multiplataforma, ampliamente usado para el desarrollo de programas con interfaz gráfica (en cuyo caso se le conoce como un conjunto de "widgets"), aunque también es utilizado para desarrollar programas no gráficos tales como herramientas de consola y servidores."_
+*"Qt (pronunciado "cute" en inglés) es un marco de trabajo para desarrollo de aplicaciones multiplataforma, ampliamente usado para el desarrollo de programas con interfaz gráfica (en cuyo caso se le conoce como un conjunto de "widgets"), aunque también es utilizado para desarrollar programas no gráficos tales como herramientas de consola y servidores."*
 
 *   **Tema** - Colección de un estilo, un tema de íconos y un tema de colores.
 *   **Estilo** - Disposición gráfica; aspecto.
@@ -31,7 +31,7 @@ Están disponibles conjuntos de "widgets" con el propósito de integración, con
 
 ## QtCurve
 
-Está disponible para _qt4_ (kde4), _qt3_ (kde3), _gtk2_, y _gtk1_ en el repositorio **[community]**, este estilo, que es altamente configurable, es el más popular de todos. Tiene muchos controles para las diferentes opciones, abarcando desde la apariencia de los botones hasta la forma de las barras de desplazamiento. Puede instalarlos todos.
+Está disponible para *qt4* (kde4), *qt3* (kde3), *gtk2*, y *gtk1* en el repositorio **[community]**, este estilo, que es altamente configurable, es el más popular de todos. Tiene muchos controles para las diferentes opciones, abarcando desde la apariencia de los botones hasta la forma de las barras de desplazamiento. Puede instalarlos todos.
 
 ```
 pacman -S qtcurve-gtk1 qtcurve-gtk2 qtcurve-kde3 qtcurve-kde4

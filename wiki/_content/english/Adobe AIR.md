@@ -38,7 +38,7 @@ The app might need parameters (voddler) so then the script can look like:
 
 ```
 
-Then _chmod_ the file so that it can execute:
+Then *chmod* the file so that it can execute:
 
 ```
 $ chmod +x filename

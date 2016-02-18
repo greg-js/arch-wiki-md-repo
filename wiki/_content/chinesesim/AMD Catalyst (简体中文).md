@@ -6,7 +6,7 @@ AMD曾经将“catalyst”驱动命名为“fglrx” (**F**ire**GL** and **R**ad
 
 **官方仓库不再提供Catalyst。** Catalyst [曾被移出Arch官方支持](https://www.archlinux.org/news/ati-catalyst-support-dropped/)，原因是对质量与开发速度的不满。该项目于2013年4月被再次丢弃,截止现在还没有进一步的消息.
 
-与开源驱动相比, Catalyst 在2D,3D渲染和电源管理上更胜一筹,但缺乏高效的多显支持.支持设备为 [ATI/AMD Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon")显卡，芯片组 R600 及以上(Radeon HD 2xxx或者更新). _model_名称 (如X1900, HD4850) 与 _chip_名称 (分别是R580, RV770)间的对照请参见Xorg [decoder ring](http://www.x.org/wiki/RadeonFeature/#index5h2)或者[这个表格](https://en.wikipedia.org/wiki/Comparison_of_AMD_graphics_processing_units "wikipedia:Comparison of AMD graphics processing units").
+与开源驱动相比, Catalyst 在2D,3D渲染和电源管理上更胜一筹,但缺乏高效的多显支持.支持设备为 [ATI/AMD Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon")显卡，芯片组 R600 及以上(Radeon HD 2xxx或者更新). *model*名称 (如X1900, HD4850) 与 *chip*名称 (分别是R580, RV770)间的对照请参见Xorg [decoder ring](http://www.x.org/wiki/RadeonFeature/#index5h2)或者[这个表格](https://en.wikipedia.org/wiki/Comparison_of_AMD_graphics_processing_units "wikipedia:Comparison of AMD graphics processing units").
 
 ## Contents
 
@@ -96,12 +96,12 @@ AMD曾经将“catalyst”驱动命名为“fglrx” (**F**ire**GL** and **R**ad
 Vi0L0有三个不同的Catalyst软件库:
 
 *   [catalyst](/index.php/Unofficial_user_repositories#catalyst "Unofficial user repositories"):Radeon HD 5xxx及更新的显卡使用的普通Catalyst驱动。包含了最新的 (稳定版或者beta版) Catalyst.
-*   _catalyst-stable_:Radeon HD 5xxx及更新的显卡使用的普通Catalyst驱动。包含了最新的稳定版 Catalyst.
+*   *catalyst-stable*:Radeon HD 5xxx及更新的显卡使用的普通Catalyst驱动。包含了最新的稳定版 Catalyst.
 *   [catalyst-hd234k](/index.php/Unofficial_user_repositories#catalyst-hd234k "Unofficial user repositories"):Radeon HD 2xxx, 3xxx and 4xxx显卡使用的legacy Catalyst驱动.
 
 要启用上述软件库的话,参见[Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")中所述方法. 记得在`pacman.conf`中的**其他软件库之前**添加相应软件库.
 
-**注意:** _catalyst_和_catalyst-stable_软件库的URL相同.若要启用_catalyst-stable_,步骤与启用_catalyst_相同,并在`pacman.conf`中将`[catalyst]`替换成`[catalyst-stable]`.如果你需要某个旧版本,这儿也有并且URL也相同,比如_catalyst-stable-13.4_.
+**注意:** *catalyst*和*catalyst-stable*软件库的URL相同.若要启用*catalyst-stable*,步骤与启用*catalyst*相同,并在`pacman.conf`中将`[catalyst]`替换成`[catalyst-stable]`.如果你需要某个旧版本,这儿也有并且URL也相同,比如*catalyst-stable-13.4*.
 
 **警告:**
 
@@ -113,19 +113,19 @@ Repository mirroring can be easily achieved using `rsync://mirror.rts-informatiq
 
 完成后更新pacman数据库并[安装](/index.php/Pacman "Pacman")这些软件包(更多信息参见[#工具](#.E5.B7.A5.E5.85.B7)):
 
-*   _catalyst-hook_
-*   _catalyst-utils_
-*   _catalyst-libgl_
-*   _opencl-catalyst_ - 可选,OpenCL支持
-*   _lib32-catalyst-utils_ - 可选,64-bit系统上32-bit的OpenGL支持
-*   _lib32-catalyst-libgl_ - 可选,64-bit系统上32-bit的OpenGL支持
-*   _lib32-opencl-catalyst_ - 可选,64-bit系统上32-bit的OpenCL支持
+*   *catalyst-hook*
+*   *catalyst-utils*
+*   *catalyst-libgl*
+*   *opencl-catalyst* - 可选,OpenCL支持
+*   *lib32-catalyst-utils* - 可选,64-bit系统上32-bit的OpenGL支持
+*   *lib32-catalyst-libgl* - 可选,64-bit系统上32-bit的OpenGL支持
+*   *lib32-opencl-catalyst* - 可选,64-bit系统上32-bit的OpenCL支持
 
 如果你是一台Intel/AMD双显卡笔记本,参考下这个:
 
-*   _catalyst-hook_
-*   _catalyst-utils-pxp_
-*   _lib32-catalyst-utils-pxp_ - 可选,64-bit系统上32-bit的OpenGL支持
+*   *catalyst-hook*
+*   *catalyst-utils-pxp*
+*   *lib32-catalyst-utils-pxp* - 可选,64-bit系统上32-bit的OpenGL支持
 
 **注意:** 如果pacman询问是否移除**libgl**,尽管回答"是".
 
@@ -145,7 +145,7 @@ Repository mirroring can be easily achieved using `rsync://mirror.rts-informatiq
 *   [Catalyst-utils](https://aur.archlinux.org/packages/Catalyst-utils/)
 *   [Lib32-catalyst-utils](https://aur.archlinux.org/packages/Lib32-catalyst-utils/)
 
-AUR还提供些独家软件包。它含有被称为 _Catalyst-total_的包和一些beta阶段的软件:
+AUR还提供些独家软件包。它含有被称为 *Catalyst-total*的包和一些beta阶段的软件:
 
 *   [Catalyst-total](https://aur.archlinux.org/packages/Catalyst-total/)
 *   [Catalyst-total-pxp](https://aur.archlinux.org/packages/Catalyst-total-pxp/)
@@ -198,7 +198,6 @@ AUR还提供些独家软件包。它含有被称为 _Catalyst-total_的包和一
 给一个示例配置 (注意) **仅供参考**. 标`#`必须有,标`##`很可能会用到:
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "ServerLayout"
         Identifier     "Arch"
@@ -238,11 +237,11 @@ EndSection
 
 **注意:** 一旦升级Catalyst就要通过后面的方法删除`amdpcsdb`文件: 关闭X，删除`/etc/ati/amdpcsdb`，启动X然后运行`amdcccle` -否则`amdcccle`将会显示错误的Catalyst版本号
 
-_更多信息参考[这里](https://bbs.archlinux.org/viewtopic.php?id=57084)._
+*更多信息参考[这里](https://bbs.archlinux.org/viewtopic.php?id=57084).*
 
 #### 启动时加载模块
 
-禁用`radeon`以防其自动加载. 在`/etc/modprobe.d/modprobe.conf`里禁用_radeon_,同时保证它不被`/etc/modules-load.d/`里的文件加载. 详见[kernel modules#Blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules").
+禁用`radeon`以防其自动加载. 在`/etc/modprobe.d/modprobe.conf`里禁用*radeon*,同时保证它不被`/etc/modules-load.d/`里的文件加载. 详见[kernel modules#Blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules").
 
 接下来,使模块`fglrx`自动加载. 添加`fglrx`到`/etc/modules-load.d/`下已有的模块文件的新一行,或者创建一个新的模块文件并添加`fglrx`.
 
@@ -282,7 +281,6 @@ $ glxinfo | grep direct
 若显示`"direct rendering: yes"`，恭喜你，到位了! 若无`$ glxinfo`命令，安装[mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos) package。
 
 **注意:** 对于`glxgears`,你也可以使用:
-
 ```
 $ fgl_glxgears
 
@@ -353,7 +351,6 @@ Usage:
 如果你试图在装有intel驱动的设备上运行X图形界面时遇到问题，你可以尝试强制开启"UXA" acceleration: 在`xorg.conf`中写`Option "AccelMethod" "uxa"`,就象这样：
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "Device"
         Identifier  "Intel Graphics"
@@ -531,7 +528,6 @@ Catalyst-generator 是最安全的,最符合KISS原则的,因为:
 4.  你需要做的只是,记得去使用它
 
 **注意:** 在构建 `catalyst-{kernver}` 时，若看到下列警告，乃正常情况，不必莫名惊诧:
-
 ```
 **WARNING:** Package contains reference to $srcdir
 
@@ -582,7 +578,7 @@ CodeXL 是一个带有静态OpenCl内核分析器的OpenCL and OpenGL调试器�
 
 ### Tear Free Rendering
 
-在**Catalyst 11.1**中，很可能是添加了三重缓存和v-sync，_Tear Free Desktop_减少了2D，3D视频应用的屏幕撕裂毛病。但这需要额外的GPU处理。
+在**Catalyst 11.1**中，很可能是添加了三重缓存和v-sync，*Tear Free Desktop*减少了2D，3D视频应用的屏幕撕裂毛病。但这需要额外的GPU处理。
 
 要启用'Tear Free Desktop'，运行`amdcccle`，然后设置`Display Options` → `Tear Free`。
 
@@ -628,7 +624,6 @@ Options → Preferences → Performance → Threads for decoding: **1** (to turn
 ```
 
 **注意:** 如果启用了Tear Free Desktop，则按下列步骤:
-
 ```
 Options -> Preferences -> General -> Video (tab) -> Output driver: vaapi
 
@@ -656,7 +651,6 @@ Tools → Preferences → Input & Codecs → Use GPU accelerated decoding
 ```
 
 **注意:** 若使用**Compiz/KWin**，消除**画面抖动**的唯一方法就是切换至**全屏**并且 **关闭Redirected Fullscreen**。 使用**compiz**，需在ccsm的General Options中设置**Redirected Direct Rendering**。若此举无效，则将其关闭。**KWin**默认关闭此功能，若出现画面抖动则通过`System Settings` → `Desktop Effects` → `Advanced`.
-
 将"Suspend desktop effects for fullscreen windows"开启或关闭。}}
 
 ### 显卡/显存频率, 温度, 风扇转速, 超频工具
@@ -696,7 +690,7 @@ $ {kdesu/gksu} amdcccle
 
 ```
 
-**警告:** **千万不要**直接使用sudo。 Sudo虽能给予管理员权限，却使用用户账户的信息（如环境变量）。GNOME下使用_gksu_，KDE下使用_kdesu_。
+**警告:** **千万不要**直接使用sudo。 Sudo虽能给予管理员权限，却使用用户账户的信息（如环境变量）。GNOME下使用*gksu*，KDE下使用*kdesu*。
 
 #### 安装
 
@@ -744,7 +738,7 @@ $ {kdesu/gksu} amdcccle
 
 **警告:**
 
-*   你也许需要使用 `# pacman -Rdd` 来移除 [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/) (和/或 [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/)) 因为它(们)包含了 _gl_ 相关文件,许多包会依赖他们. 这些依赖关系将在安装[xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)时被满足.
+*   你也许需要使用 `# pacman -Rdd` 来移除 [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/) (和/或 [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/)) 因为它(们)包含了 *gl* 相关文件,许多包会依赖他们. 这些依赖关系将在安装[xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)时被满足.
 *   你也许会需要移除 `/etc/profile.d/ati-flgrx.sh` 和 `/etc/profile.d/lib32-catalyst` (如果他们存在), 否则 `r600_dri.so` 将会载入失败,你将得不到3D支持.
 
 **注意:** 你应该从 `/etc/pacman.conf` 移除非官方仓库,然后运行 `# pacman -Syu`, 因为那些仓库包含过时的Xorg包(为了兼容`catalyst`),而 [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) 包需要来自[官方仓库](/index.php/Official_repositories "Official repositories")的最新的Xorg包.
@@ -802,7 +796,7 @@ $ grep '(WW)' /var/log/Xorg.0.log
 
 ```
 
-或以root身份打开`/etc/X11/xorg.conf`，在_Device_段添加`Option "UseFastTLS" "off"`。
+或以root身份打开`/etc/X11/xorg.conf`，在*Device*段添加`Option "UseFastTLS" "off"`。
 
 只需来个二选一，然后重启X让其生效。
 
@@ -894,7 +888,6 @@ fglrx: libGL version undetermined - OpenGL module is using glapi fallback
 可能是因为系统装了多个版本的`libGL.so`.下面的命令应该得到这样的回显:
 
  `$ locate libGL.s` 
-
 ```
 
 /usr/lib/libGL.so
@@ -931,7 +924,6 @@ fglrx: libGL version undetermined - OpenGL module is using glapi fallback
 当和某些版本的nForce3芯片组一起使用时，Radeon不能3D加速。目前虽还未找到具体原因，但有资料表明： indicate that it may be possible to get acceleration with this combination of hardware by booting with the drivers from 先用nVIDIA驱动启动到Windows然后再重启系统就可能获得3D加速。在root控制台使用下列命令可识别此问题(会得到与下列相似(使用基于nForce3系统)的输出:)：
 
  `$ dmesg | grep agp` 
-
 ```
      agpgart: Detected AGP bridge 0
      agpgart: Setting up Nforce3 AGP.
@@ -956,7 +948,6 @@ fglrx: libGL version undetermined - OpenGL module is using glapi fallback
 当用mplayer，若不定时出现几秒到几分钟的死机。查看日志，若有与下面相似的信息：
 
  `/var/log/messages.log` 
-
 ```
 Nov 28 18:31:56 pandemonium [<c01c64a6>] ? proc_get_sb+0xc6/0x160
 Nov 28 18:31:56 pandemonium [<c01c64a6>] ? proc_get_sb+0xc6/0x160
@@ -977,7 +968,6 @@ Nov 28 18:31:56 pandemonium =======================
 若得到：
 
  `# aticonfig --initial` 
-
 ```
 aticonfig: No supported adapters detected
 
@@ -990,7 +980,6 @@ aticonfig: No supported adapters detected
 设置型号的方法:在`/etc/X11/xorg.conf`将device段设置为:
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "Device"
         Identifier "ATI radeon ********"
@@ -1025,7 +1014,6 @@ done
 编辑:
 
  `/etc/adobe/mms.cfg` 
-
 ```
 #EnableLinuxHWVideoDecode=1
 OverrideGPUValidation=true

@@ -24,7 +24,7 @@ The easiest way to install aura without having to worry about Haskell dependenci
 
 ### Source Package
 
-The [aura](https://aur.archlinux.org/packages/aura/) source package requires Haskell packages which may be not available in the [official repositories](/index.php/Official_repositories "Official repositories") or [AUR](/index.php/AUR "AUR"). All of Aura's dependencies are however available in the _haskell-core_ repository. See [ArchHaskell#haskell-core](/index.php/ArchHaskell#haskell-core "ArchHaskell") on how to add _haskell-core_ as a repository.
+The [aura](https://aur.archlinux.org/packages/aura/) source package requires Haskell packages which may be not available in the [official repositories](/index.php/Official_repositories "Official repositories") or [AUR](/index.php/AUR "AUR"). All of Aura's dependencies are however available in the *haskell-core* repository. See [ArchHaskell#haskell-core](/index.php/ArchHaskell#haskell-core "ArchHaskell") on how to add *haskell-core* as a repository.
 
 ## Troubleshooting
 

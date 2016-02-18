@@ -182,7 +182,6 @@ Now, we will need to create the database that the Redmine will use to store your
 To create the database, the user and set privileges (MariaDB and MySQL >= 5.0.2):
 
  `# mysql -u root -p` 
-
 ```
 CREATE DATABASE redmine CHARACTER SET UTF8;
 CREATE USER 'redmine'@'localhost' IDENTIFIED BY 'my_password';
@@ -192,7 +191,6 @@ GRANT ALL PRIVILEGES ON redmine.* TO 'redmine'@'localhost';
 For versions of MariaDB and MySQL prior to 5.0.2:
 
  `# mysql -u root -p` 
-
 ```
 CREATE DATABASE redmine CHARACTER SET UTF8;
 GRANT ALL PRIVILEGES ON redmine.* TO'redmine'@'localhost' IDENTIFIED BY 'my_password';
@@ -230,7 +228,7 @@ EXEC sp_addrolemember N'db_datawriter', N'REDMINE'
 GO
 ```
 
-**Note:** If you want to use additional environments, you must create separate databases for each one (for example: _development_ and _test_).
+**Note:** If you want to use additional environments, you must create separate databases for each one (for example: *development* and *test*).
 
 #### Database Access Configuration
 
@@ -247,7 +245,6 @@ And then edit this file in order to configure your database settings for "produc
 Example for MariaDB and MySQL database:
 
  `nano database.yml` 
-
 ```
 production:
   adapter: mysql2
@@ -263,7 +260,6 @@ production:
 Example for PostgreSQL database:
 
  `nano database.yml` 
-
 ```
 production:
   adapter: postgresql
@@ -278,7 +274,6 @@ production:
 Example for a SQL Server database:
 
  `nano database.yml` 
-
 ```
 production:
   adapter: sqlserver
@@ -304,7 +299,7 @@ Redmine requires some [RubyGems](/index.php/Ruby#RubyGems "Ruby") to be installe
 *   net-ldap
 *   rack-openid
 
-Obviously, if you choose a different database-server, or want to use a different application-server you should replace _mysql2_ and _unicorn_ to your liking.
+Obviously, if you choose a different database-server, or want to use a different application-server you should replace *mysql2* and *unicorn* to your liking.
 
 #### Adding Additional Gems (Optional)
 
@@ -342,7 +337,7 @@ Then you can install all the gems required by Redmine using the following comman
 
 ```
 
-To install without the ruby _development_ and _test_ environments use this instead of the last command:
+To install without the ruby *development* and *test* environments use this instead of the last command:
 
 ```
 # bundle install --without development test
@@ -358,7 +353,7 @@ Although [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) is 
 
 ```
 
-**Note:** Only the gems that are needed by the adapters you have specified in your database configuration file are actually installed (eg. if your `config/database.yml` uses the _mysql2_ adapter, then only the mysql2 gem will be installed). Do not forget to re-run `bundle install` when you change or add adapters in this file.
+**Note:** Only the gems that are needed by the adapters you have specified in your database configuration file are actually installed (eg. if your `config/database.yml` uses the *mysql2* adapter, then only the mysql2 gem will be installed). Do not forget to re-run `bundle install` when you change or add adapters in this file.
 
 ### Session Store Secret Generation
 
@@ -432,7 +427,7 @@ To test your new installation using WEBrick web server run the following in the 
 
 ```
 
-Once WEBrick has started, point your browser to **[http://localhost:3000/](http://localhost:3000/)**. You should now see the application welcome page. Use default administrator account to log in: _**admin**_/_**admin**_. You can go to Administration menu and choose Settings to modify most of the application settings.
+Once WEBrick has started, point your browser to **[http://localhost:3000/](http://localhost:3000/)**. You should now see the application welcome page. Use default administrator account to log in: ***admin***/***admin***. You can go to Administration menu and choose Settings to modify most of the application settings.
 
 **Warning:** Webrick is not suitable for production use, please only use webrick for testing that the installation up to this point is functional. Use one of the many other guides in this wiki to setup redmine to use either Passenger (aka mod_rails), FCGI or a Rack server (Unicorn, Thin, Puma or hellip) to serve up your redmine.
 
@@ -651,7 +646,6 @@ If no success, you can manually install the database gem by:
 In last case, as suggested by [Bobdog](/index.php?title=User:Bobdog&action=edit&redlink=1 "User:Bobdog (page does not exist)"), you can try to comment the line of the database gem and add a new one as bellow:
 
  `<path-to-mysql2-gem-directory>/lib/mysql2/mysql2.rb` 
-
 ```
 
  # require 'mysql2/mysql2'
@@ -713,9 +707,7 @@ bundle update && bundle exec rake generate_secret_token db:migrate redmine:plugi
 If you want to automatic run you application server when system starts, you need to create a systemd unit file.
 
 **Note:** This is not needed if you use [apache](https://www.archlinux.org/packages/?name=apache) or [nginx](https://www.archlinux.org/packages/?name=nginx) with Passenger gem. Those servers already have their own unit file, so you have only to enable it.
-
  `/etc/systemd/system/redmine.service` 
-
 ```
 [Unit]
 Description=Redmine server

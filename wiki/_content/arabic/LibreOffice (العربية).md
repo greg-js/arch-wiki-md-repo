@@ -2,7 +2,7 @@
 
 من [Home - LibreOffice](http://www.libreoffice.org/):
 
-	_LibreOffice is the free power-packed Open Source personal productivity suite for Windows, Macintosh and Linux, that gives you six feature-rich applications for all your document production and data processing needs: Writer, Calc, Impress, Draw, Math and Base. [Support](http://www.libreoffice.org/get-help/) and [documentation](http://www.libreoffice.org/get-help/documentation/) is free from our large, dedicated community of users, contributors and developers. [You, too, can also get involved!](http://www.libreoffice.org/get-involved/)_
+	*LibreOffice is the free power-packed Open Source personal productivity suite for Windows, Macintosh and Linux, that gives you six feature-rich applications for all your document production and data processing needs: Writer, Calc, Impress, Draw, Math and Base. [Support](http://www.libreoffice.org/get-help/) and [documentation](http://www.libreoffice.org/get-help/documentation/) is free from our large, dedicated community of users, contributors and developers. [You, too, can also get involved!](http://www.libreoffice.org/get-involved/)*
 
 ## Contents
 
@@ -149,7 +149,7 @@ It is convenient to save `SAL_USE_VCLPLUGIN` variable in your shell configuratio
 
 *   تحت "الذاكرة":
     *   قلّل عدد خطوات التراجع لأقل من 100، شيءٌ كـ 20 أو 30 خطوة.
-    *   تحت _ذاكرة تخزين الرسومات المؤقّتة_، عيّن استخدام ليبر أوفيس إلى 128 م.بايت (أعلى من الأصلية، 20 م.بايت).
+    *   تحت *ذاكرة تخزين الرسومات المؤقّتة*، عيّن استخدام ليبر أوفيس إلى 128 م.بايت (أعلى من الأصلية، 20 م.بايت).
     *   عيّن "ذاكرة لكل كائن" إلى 20 م.بايت (أعلى من الأصلية، 5 م.بايت).
     *   إن كان ليبر أوفيس يُستخدَم مرارًا، علّم "تمكين صينية التشغيل السريع".
 

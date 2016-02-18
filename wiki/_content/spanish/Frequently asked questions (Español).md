@@ -12,7 +12,7 @@ Además de las preguntas tratadas más abajo, es posible que encuentre interesan
     *   [1.7 Soy un completo principiante en GNU/Linux. ¿Debo usar Arch?](#Soy_un_completo_principiante_en_GNU.2FLinux._.C2.BFDebo_usar_Arch.3F)
     *   [1.8 Arch requiere mucho tiempo y esfuerzo para instalar y usar. Además, la comunidad sigue diciéndome: «lee la wiki» (o RTFM)](#Arch_requiere_mucho_tiempo_y_esfuerzo_para_instalar_y_usar._Adem.C3.A1s.2C_la_comunidad_sigue_dici.C3.A9ndome:_.C2.ABlee_la_wiki.C2.BB_.28o_RTFM.29)
     *   [1.9 ¿Arch está diseñado para ser utilizado como un servidor?, ¿un escritorio?, ¿una estación de trabajo?](#.C2.BFArch_est.C3.A1_dise.C3.B1ado_para_ser_utilizado_como_un_servidor.3F.2C_.C2.BFun_escritorio.3F.2C_.C2.BFuna_estaci.C3.B3n_de_trabajo.3F)
-    *   [1.10 A mí me gusta Arch, excepto que el equipo de desarrollo debería implementar la _«funcionalidad X»_](#A_m.C3.AD_me_gusta_Arch.2C_excepto_que_el_equipo_de_desarrollo_deber.C3.ADa_implementar_la_.C2.ABfuncionalidad_X.C2.BB)
+    *   [1.10 A mí me gusta Arch, excepto que el equipo de desarrollo debería implementar la *«funcionalidad X»*](#A_m.C3.AD_me_gusta_Arch.2C_excepto_que_el_equipo_de_desarrollo_deber.C3.ADa_implementar_la_.C2.ABfuncionalidad_X.C2.BB)
     *   [1.11 ¿Para cuándo la nueva versión disponible?](#.C2.BFPara_cu.C3.A1ndo_la_nueva_versi.C3.B3n_disponible.3F)
     *   [1.12 ¿Es Arch Linux una distribución estable? ¿Tiene problemas con frecuencia?](#.C2.BFEs_Arch_Linux_una_distribuci.C3.B3n_estable.3F_.C2.BFTiene_problemas_con_frecuencia.3F)
     *   [1.13 Arch necesita más prensa (es decir, publicidad)](#Arch_necesita_m.C3.A1s_prensa_.28es_decir.2C_publicidad.29)
@@ -26,7 +26,7 @@ Además de las preguntas tratadas más abajo, es posible que encuentre interesan
     *   [2.3 Los paquetes que Arch deberían usar una única extensión. «.pkg.tar.gz» y «.pkg.tar.xz» son demasiado largos y/o confusos](#Los_paquetes_que_Arch_deber.C3.ADan_usar_una_.C3.BAnica_extensi.C3.B3n._.C2.AB.pkg.tar.gz.C2.BB_y_.C2.AB.pkg.tar.xz.C2.BB_son_demasiado_largos_y.2Fo_confusos)
     *   [2.4 Pacman necesita una biblioteca para que otras aplicaciones puedan acceder fácilmente a la información del paquete](#Pacman_necesita_una_biblioteca_para_que_otras_aplicaciones_puedan_acceder_f.C3.A1cilmente_a_la_informaci.C3.B3n_del_paquete)
     *   [2.5 ¿Por qué pacman no tiene un front-end gráfico (GUI) oficial?](#.C2.BFPor_qu.C3.A9_pacman_no_tiene_un_front-end_gr.C3.A1fico_.28GUI.29_oficial.3F)
-    *   [2.6 Pacman necesita la _«característica X»_](#Pacman_necesita_la_.C2.ABcaracter.C3.ADstica_X.C2.BB)
+    *   [2.6 Pacman necesita la *«característica X»*](#Pacman_necesita_la_.C2.ABcaracter.C3.ADstica_X.C2.BB)
     *   [2.7 ¿Cuál es la diferencia entre los distintos repositorios?](#.C2.BFCu.C3.A1l_es_la_diferencia_entre_los_distintos_repositorios.3F)
     *   [2.8 Acabo de instalar el paquete X. ¿Cómo empiezó?](#Acabo_de_instalar_el_paquete_X._.C2.BFC.C3.B3mo_empiez.C3.B3.3F)
     *   [2.9 ¿Por qué hay solo una única versión de cada biblioteca compartida en los repositorios oficiales?](#.C2.BFPor_qu.C3.A9_hay_solo_una_.C3.BAnica_versi.C3.B3n_de_cada_biblioteca_compartida_en_los_repositorios_oficiales.3F)
@@ -52,14 +52,14 @@ Consulte el artículo [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1o
 
 ### ¿Por qué puedo preferir usar Arch?
 
-Si, después de leer acerca de la filosofía [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)"), desea abrazar el enfoque _«do-it-yourself»_ («hágalo usted mismo») y quiere o desea una distribución GNU/Linux de propósito general, simple, elegante, altamente personalizable y vanguardista, quizás le pueda gustar Arch.
+Si, después de leer acerca de la filosofía [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)"), desea abrazar el enfoque *«do-it-yourself»* («hágalo usted mismo») y quiere o desea una distribución GNU/Linux de propósito general, simple, elegante, altamente personalizable y vanguardista, quizás le pueda gustar Arch.
 
 ### ¿Por qué podría no preferir usar Arch?
 
 Usted puede **no** querer usar Arch, si:
 
 *   Después de la lectura de [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)"), no está de acuerdo con su filosofía.
-*   No tiene la capacidad/tiempo/ganas de usar una distribución GNU/Linux basada en _do-it-yourself_ («hazlo tú mismo»).
+*   No tiene la capacidad/tiempo/ganas de usar una distribución GNU/Linux basada en *do-it-yourself* («hazlo tú mismo»).
 *   Necesita compatibilidad con una arquitectura que no sea x86_64 o i686.
 *   Tiene una postura firme sobre el uso de una distribución que solo proporcione software libre, según la definición de GNU.
 *   Cree que un sistema operativo debería configurarse por sí solo, funcionar inmediatamente una vez instalado, e incluir por defecto un completo conjunto de software y entornos de escritorios en el soporte de instalación.
@@ -82,7 +82,7 @@ No, pero el proyecto [Arch Linux ARM](http://archlinuxarm.org/) proporciona un p
 
 ### Soy un completo principiante en GNU/Linux. ¿Debo usar Arch?
 
-Esta cuestión ha tenido mucho debate. Arch está dirigida más hacia usuarios avanzados de GNU/Linux, pero algunas personas sienten que Arch es un buen punto de partida para el principiante motivado. Si es un principiante y quiere usar Arch, tenga en cuanta únicamente que debe estar dispuesto a invertir un tiempo considerable en el aprendizaje de un nuevo sistema, así como aceptar el hecho de que Arch está diseñado fundamentalmente como una distribución DIY (_Do-It-Yourself_, Hágalo usted mismo). Es el usuario quien monta el sistema y controla en lo que se convertirá. Antes de pedir ayuda, haga su propia investigación independiente buscando en Google, indagando en el foro (y leyendo el resto de estas preguntas frecuentes) y buscando en la excelente documentación proporcionada por la wiki de Arch. _Hay una razón por la que estos recursos se ponen a disposición del usuario en primer lugar._ Son muchos los _voluntarios_ que dedican miles de horas compilando esta información excelente.
+Esta cuestión ha tenido mucho debate. Arch está dirigida más hacia usuarios avanzados de GNU/Linux, pero algunas personas sienten que Arch es un buen punto de partida para el principiante motivado. Si es un principiante y quiere usar Arch, tenga en cuanta únicamente que debe estar dispuesto a invertir un tiempo considerable en el aprendizaje de un nuevo sistema, así como aceptar el hecho de que Arch está diseñado fundamentalmente como una distribución DIY (*Do-It-Yourself*, Hágalo usted mismo). Es el usuario quien monta el sistema y controla en lo que se convertirá. Antes de pedir ayuda, haga su propia investigación independiente buscando en Google, indagando en el foro (y leyendo el resto de estas preguntas frecuentes) y buscando en la excelente documentación proporcionada por la wiki de Arch. *Hay una razón por la que estos recursos se ponen a disposición del usuario en primer lugar.* Son muchos los *voluntarios* que dedican miles de horas compilando esta información excelente.
 
 Lectura recomendada: La [Guía para principiantes](/index.php/Beginners%27_Guide_(Espa%C3%B1ol) "Beginners' Guide (Español)") de Arch Linux.
 
@@ -92,11 +92,11 @@ Arch está diseñado y utilizado por y para una base de usuarios específicament
 
 ### ¿Arch está diseñado para ser utilizado como un servidor?, ¿un escritorio?, ¿una estación de trabajo?
 
-Arch no está diseñado para un tipo de uso particular. Más bien, está diseñado para un tipo particular de _usuario_. Arch está dirigido a usuarios competentes que disfrutan de su naturaleza do-it-yourself, y que además la aprovechan para moldear el sistema para satisfacer sus peculiares necesidades. Por lo tanto, moldeado según los propósitos del usuario, Arch se puede utilizar para virtualmente cualquier propósito. Muchos utilizan Arch tanto en los equipos de sobremesa como en estaciones de trabajo. Y por supuesto, archlinux.org se ejecuta en Arch.
+Arch no está diseñado para un tipo de uso particular. Más bien, está diseñado para un tipo particular de *usuario*. Arch está dirigido a usuarios competentes que disfrutan de su naturaleza do-it-yourself, y que además la aprovechan para moldear el sistema para satisfacer sus peculiares necesidades. Por lo tanto, moldeado según los propósitos del usuario, Arch se puede utilizar para virtualmente cualquier propósito. Muchos utilizan Arch tanto en los equipos de sobremesa como en estaciones de trabajo. Y por supuesto, archlinux.org se ejecuta en Arch.
 
-### A mí me gusta Arch, excepto que el equipo de desarrollo debería implementar la _«funcionalidad X»_
+### A mí me gusta Arch, excepto que el equipo de desarrollo debería implementar la *«funcionalidad X»*
 
-Antes de seguir adelante, ¿leyó [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)")? ¿Ha proporcionado la característica/solución? ¿Se ajusta a la filosofía de Arch sobre _minimalismo_ y _exactitud de código_ por encima de la comodidad? Involúcrese, contribuya con el código/solución a la comunidad. Si está bien considerado por el equipo de la comunidad y de desarrollo, tal vez sea integrado en Arch. La comunidad de Arch se nutre de la contribución y del intercambio del código y de las herramientas propias.
+Antes de seguir adelante, ¿leyó [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)")? ¿Ha proporcionado la característica/solución? ¿Se ajusta a la filosofía de Arch sobre *minimalismo* y *exactitud de código* por encima de la comodidad? Involúcrese, contribuya con el código/solución a la comunidad. Si está bien considerado por el equipo de la comunidad y de desarrollo, tal vez sea integrado en Arch. La comunidad de Arch se nutre de la contribución y del intercambio del código y de las herramientas propias.
 
 ### ¿Para cuándo la nueva versión disponible?
 
@@ -106,11 +106,11 @@ El modelo rolling release mantiene cada sistema Arch Linux actualizado y en la v
 
 ### ¿Es Arch Linux una distribución estable? ¿Tiene problemas con frecuencia?
 
-La respuesta corta es: Es en gran parte tan estable como _el usuario_ la haga.
+La respuesta corta es: Es en gran parte tan estable como *el usuario* la haga.
 
-_Usted_ ensambla su propio sistema Arch, sobre el entorno proporcionado por la base simple, y _usted_ tiene el control de las actualizaciones del sistema. Obviamente, un sistema más grande, más complejo, que incorpora una multitud de paquetes personalizados, y una gran cantidad de herramientas y entornos de escritorio, sería más propenso a tener problemas de configuración debido a los cambios de los desarrolladores en las implementaciones de las aplicaciones, que uno más liviano, donde el sistema sería más simple. Arch está dirigido a usuarios capaces y proactivos. Competencias generales en UNIX y buenas prácticas en el mantenimiento y actualización del sistema también juegan un papel importante en la estabilidad del sistema. También cabe recordar que los paquetes de Arch vienen en su mayoría sin parches, por lo que la mayoría de los problemas de las aplicaciones son inherentes a los desarrolladores de las mismas.
+*Usted* ensambla su propio sistema Arch, sobre el entorno proporcionado por la base simple, y *usted* tiene el control de las actualizaciones del sistema. Obviamente, un sistema más grande, más complejo, que incorpora una multitud de paquetes personalizados, y una gran cantidad de herramientas y entornos de escritorio, sería más propenso a tener problemas de configuración debido a los cambios de los desarrolladores en las implementaciones de las aplicaciones, que uno más liviano, donde el sistema sería más simple. Arch está dirigido a usuarios capaces y proactivos. Competencias generales en UNIX y buenas prácticas en el mantenimiento y actualización del sistema también juegan un papel importante en la estabilidad del sistema. También cabe recordar que los paquetes de Arch vienen en su mayoría sin parches, por lo que la mayoría de los problemas de las aplicaciones son inherentes a los desarrolladores de las mismas.
 
-Por lo tanto, _el usuario_ es, en última instancia, el responsable de la estabilidad de su propio sistema rolling release. El usuario decide el momento de actualizar, e integra los cambios necesarios cuando se requiere. Si el usuario accede a la comunidad en busca de ayuda, a menudo se le presta de manera oportuna. La diferencia entre Arch y otras distribuciones, a este respecto, es que Arch es verdaderamente una distribución «do-it-yourself» ; las denuncias de ruptura son equivocadas e improductivas, cuando se debe a los cambios en las aplicaciones por los desarrolladores de las mismas, los cuales no son responsabilidad de los desarrolladores de Arch.
+Por lo tanto, *el usuario* es, en última instancia, el responsable de la estabilidad de su propio sistema rolling release. El usuario decide el momento de actualizar, e integra los cambios necesarios cuando se requiere. Si el usuario accede a la comunidad en busca de ayuda, a menudo se le presta de manera oportuna. La diferencia entre Arch y otras distribuciones, a este respecto, es que Arch es verdaderamente una distribución «do-it-yourself» ; las denuncias de ruptura son equivocadas e improductivas, cuando se debe a los cambios en las aplicaciones por los desarrolladores de las mismas, los cuales no son responsabilidad de los desarrolladores de Arch.
 
 Vea el artículo [Enhance system stability](/index.php/Enhance_system_stability "Enhance system stability") para obtener consejos sobre cómo hacer que un sistema Arch Linux sea lo más estable posible.
 
@@ -120,7 +120,7 @@ Arch obtiene mucha publicidad tal como es. El objetivo de Arch Linux no es ser g
 
 ### Arch necesita más programadores
 
-Posiblemente sea así. ¡No dude en ofrecer su tiempo! Visite los [foros](https://bbs.archlinux.org), [canales IRC](/index.php/IRC_Channel "IRC Channel"), y [listas de correo](https://mailman.archlinux.org/mailman/listinfo/), y vea lo que hay pendiente por hacer. Comenzar a involucarse en el subforo de la _Community Contributions_ es una buena manera de empezar.
+Posiblemente sea así. ¡No dude en ofrecer su tiempo! Visite los [foros](https://bbs.archlinux.org), [canales IRC](/index.php/IRC_Channel "IRC Channel"), y [listas de correo](https://mailman.archlinux.org/mailman/listinfo/), y vea lo que hay pendiente por hacer. Comenzar a involucarse en el subforo de la *Community Contributions* es una buena manera de empezar.
 
 ### ¿Por qué va mi internet tan lento en comparación con otros sistemas operativos?
 
@@ -137,7 +137,6 @@ Muchos usuarios han observado cómo el kernel de Linux maneja la memoria de mane
 Quizás la causa más común de esta confusión es la orden `free`:
 
  `$ free -m` 
-
 ```
              total       used       free     shared    buffers     cached
 Mem:          1009        741        267          0        104        359
@@ -166,13 +165,13 @@ Puede averiguarlo con [pkgfile](/index.php/Pkgfile "Pkgfile").
 Por ejemplo:
 
 ```
-$ pkgfile _nombre_del_archivo_
+$ pkgfile *nombre_del_archivo*
 
 ```
 
 ### He encontrado un error con el paquete X. ¿Qué debo hacer?
 
-En primer lugar, es necesario averiguar si el error es algo que el equipo de Arch puede arreglar. A veces no lo es (por ejemplo, los fallos de Firefox pueden ser responsabilidad del equipo de Mozilla), lo que se llama un error _upstream_. Si se trata de un problema de Arch, hay una serie de pasos que puede seguir:
+En primer lugar, es necesario averiguar si el error es algo que el equipo de Arch puede arreglar. A veces no lo es (por ejemplo, los fallos de Firefox pueden ser responsabilidad del equipo de Mozilla), lo que se llama un error *upstream*. Si se trata de un problema de Arch, hay una serie de pasos que puede seguir:
 
 1.  Busque en los foros para obtener información. Compruebe si alguien más lo ha notado.
 2.  Publique un [bug report](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") con información detallada en [https://bugs.archlinux.org](https://bugs.archlinux.org).
@@ -180,7 +179,7 @@ En primer lugar, es necesario averiguar si el error es algo que el equipo de Arc
 
 ### Los paquetes que Arch deberían usar una única extensión. «.pkg.tar.gz» y «.pkg.tar.xz» son demasiado largos y/o confusos
 
-Esto ha sido discutido en _Arch mailing list_. Algunos propusieron archivos con la extensión `.pac`. Por lo que se sabe actualmente, no existe un plan para cambiar la extensión de los paquetes. Como dijo Tobias Kieslich, uno de los desarrolladores de Arch: «_¡Un paquete **es** un tarball comprimido con_ gzip _[xz]!. Y se puede abrir, investigar y manipular por cualquier aplicación que gestione los *.tar. Por otra parte, el mime-type es detectado automática y correctamente por la mayoría de las aplicaciones._»
+Esto ha sido discutido en *Arch mailing list*. Algunos propusieron archivos con la extensión `.pac`. Por lo que se sabe actualmente, no existe un plan para cambiar la extensión de los paquetes. Como dijo Tobias Kieslich, uno de los desarrolladores de Arch: «*¡Un paquete **es** un tarball comprimido con* gzip *[xz]!. Y se puede abrir, investigar y manipular por cualquier aplicación que gestione los *.tar. Por otra parte, el mime-type es detectado automática y correctamente por la mayoría de las aplicaciones.*»
 
 ### Pacman necesita una biblioteca para que otras aplicaciones puedan acceder fácilmente a la información del paquete
 
@@ -190,9 +189,9 @@ Desde la versión 3.0.0, Pacman ha sido el front-end para libalpm, la biblioteca
 
 Por favor, lea [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)") y [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)"). Básicamente, la respuesta es que el equipo de desarrollo de Arch no proporcionará uno. Siéntase libre de utilizar el desarrollado por otros usuarios. Una lista selectiva puede encontrarse en [Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends").
 
-### Pacman necesita la _«característica X»_
+### Pacman necesita la *«característica X»*
 
-Por favor, lea [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)") y [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)"). La filosofía de Arch es _«Keep It Simple»_. Si piensa que su idea tiene interés y no vulnera el principio de simplicidad, entonces puede optar por debatirla en el foro ([aquí](https://bbs.archlinux.org/)). También le recomendamos que compruebe [esto](https://bugs.archlinux.org); es un lugar para proponer peticiones de características si encuentra que es importante.
+Por favor, lea [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)") y [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)"). La filosofía de Arch es *«Keep It Simple»*. Si piensa que su idea tiene interés y no vulnera el principio de simplicidad, entonces puede optar por debatirla en el foro ([aquí](https://bbs.archlinux.org/)). También le recomendamos que compruebe [esto](https://bugs.archlinux.org); es un lugar para proponer peticiones de características si encuentra que es importante.
 
 Sin embargo, la mejor manera de obtener una característica adicional a pacman o a Arch Linux es implementarla por si mismo. El parche o código puede o no ser admitido oficialmente, pero quizás otros apreciarán, probarán y contribuirán a su esfuerzo.
 
@@ -205,7 +204,7 @@ Consulte [Repositorios Oficiales](/index.php/Official_Repositories_(Espa%C3%B1ol
 Si está utilizando un entorno de escritorio como [KDE](/index.php/KDE "KDE") o [GNOME](/index.php/GNOME "GNOME"), el programa automáticamente debería aparecer en el menú. Si está tratando de ejecutar el programa desde un terminal y no sabe el nombre del archivo binario, utilice:
 
 ```
-$ pacman -Qlq _nombre_del_paquete_ | grep /usr/bin/
+$ pacman -Qlq *nombre_del_paquete* | grep /usr/bin/
 
 ```
 
@@ -217,13 +216,13 @@ A diferencia de Debian, Arch es una distribución rolling-release de vanguardia.
 
 ### ¿Qué pasa si ejecuto «pacman -Syu» y hay una actualización de una biblioteca compartida, pero no para las aplicaciones que dependen de ella?
 
-Este escenario no debería ocurrir en absoluto. Suponiendo que una aplicación llamada `foobaz`, que está en uno de los repositorios oficiales, ha sido compilada con la biblioteca denominada `libbaz`, una actualización de `libbaz` conllevará una recompilación de foobaz, y pacman actualizará libbaz sin problemas. En caso contrario, si no se compila con éxito, el paquete `foobaz` tendrá una dependencia a una versión distinta (por ejemplo, _libbaz 1.5_), la cual se eliminó por pacman durante la actualización de `libbaz`, debido a un conflicto entre ambas.
+Este escenario no debería ocurrir en absoluto. Suponiendo que una aplicación llamada `foobaz`, que está en uno de los repositorios oficiales, ha sido compilada con la biblioteca denominada `libbaz`, una actualización de `libbaz` conllevará una recompilación de foobaz, y pacman actualizará libbaz sin problemas. En caso contrario, si no se compila con éxito, el paquete `foobaz` tendrá una dependencia a una versión distinta (por ejemplo, *libbaz 1.5*), la cual se eliminó por pacman durante la actualización de `libbaz`, debido a un conflicto entre ambas.
 
 Si `foobaz` es un paquete que se compiló e instaló desde AUR, debe tratar de recompilar `foobaz` con la nueva versión de `libbaz`. Si la compilación falla, informe del problema a los desarrolladores de `foobaz`.
 
 ### ¿Es posible que haya una actualización del kernel principal, sin que se actualicen al mismo tiempo algunos de los paquetes de controladores?
 
-No, eso no es posible. Las principales actualizaciones del kernel (por ejemplo, _linux 3.5.0-1_ a _linux 3.6.0-1_) siempre van acompañados de recompilaciones con todos los paquetes de controladores compatibles con el kernel. Por otro lado, si tiene un paquete de un controlador sin soporte oficial instalado en el sistema, como [catalyst](https://aur.archlinux.org/packages/catalyst/), y después de una actualización del kernel no recompila dicho controlador para el nuevo kernel, puede romperse el sistema. Los usuarios son responsables de actualizar los paquetes de controladores sin soporte que han instalado.
+No, eso no es posible. Las principales actualizaciones del kernel (por ejemplo, *linux 3.5.0-1* a *linux 3.6.0-1*) siempre van acompañados de recompilaciones con todos los paquetes de controladores compatibles con el kernel. Por otro lado, si tiene un paquete de un controlador sin soporte oficial instalado en el sistema, como [catalyst](https://aur.archlinux.org/packages/catalyst/), y después de una actualización del kernel no recompila dicho controlador para el nuevo kernel, puede romperse el sistema. Los usuarios son responsables de actualizar los paquetes de controladores sin soporte que han instalado.
 
 ### ¿Arch utiliza paquetes firmados?
 
@@ -231,13 +230,13 @@ Si. La firma de paquetes en [pacman (Español)](/index.php/Pacman_(Espa%C3%B1ol)
 
 ### ¿Qué hacer antes de actualizar?
 
-En Arch Linux, es importante que, antes de actualizar, «compruebe las páginas principales de [las noticias de Arch](https://www.archlinux.org/), [las listas de anuncios](https://mailman.archlinux.org/mailman/listinfo/arch-announce/), y, opcionalmente, [el fórum](https://bbs.archlinux.org/) y [las listas de correos](https://mailman.archlinux.org/mailman/listinfo/), antes de oprimir la tecla _intro_.» Cualquier intrucción especial se publicarán en esos sitios.
+En Arch Linux, es importante que, antes de actualizar, «compruebe las páginas principales de [las noticias de Arch](https://www.archlinux.org/), [las listas de anuncios](https://mailman.archlinux.org/mailman/listinfo/arch-announce/), y, opcionalmente, [el fórum](https://bbs.archlinux.org/) y [las listas de correos](https://mailman.archlinux.org/mailman/listinfo/), antes de oprimir la tecla *intro*.» Cualquier intrucción especial se publicarán en esos sitios.
 
 ## Instalación
 
 ### Arch necesita un instalador. Tal vez una instalación a través de GUI
 
-Dado que la instalación no se produce con frecuencia (léase el resto de este artículo para saber más acerca de lo que significa _rolling release_), no es una alta prioridad para los desarrolladores o usuarios. La [Guía de instalación](/index.php/Installation_Guide_(Espa%C3%B1ol) "Installation Guide (Español)") y la [Guía para principiantes](/index.php/Beginners%27_Guide_(Espa%C3%B1ol) "Beginners' Guide (Español)") han sido completamente actualizadas para utilizar el método de línea de comandos. Si todavía está interesado en usar un instalador, considere el uso de [Archboot](/index.php/Archboot "Archboot").
+Dado que la instalación no se produce con frecuencia (léase el resto de este artículo para saber más acerca de lo que significa *rolling release*), no es una alta prioridad para los desarrolladores o usuarios. La [Guía de instalación](/index.php/Installation_Guide_(Espa%C3%B1ol) "Installation Guide (Español)") y la [Guía para principiantes](/index.php/Beginners%27_Guide_(Espa%C3%B1ol) "Beginners' Guide (Español)") han sido completamente actualizadas para utilizar el método de línea de comandos. Si todavía está interesado en usar un instalador, considere el uso de [Archboot](/index.php/Archboot "Archboot").
 
 ### He instalado Arch, ¡y estoy en una shell! ¿Y ahora qué?
 
@@ -251,11 +250,11 @@ Ya que hay una gran variedad disponibles, use el que más se ajuste a sus necesi
 
 Algunas distribuciones pueden proporcionar métodos mínimos de instalación, que comparten algunas similitudes con el proceso de instalación de Arch. Sin embargo, algunos puntos deben tenerse en cuenta:
 
-1.  Arch ha sido _diseñada fundamentalmente_ como un entorno ligero, de base mínima, sobre la cual construir.
-2.  El _único_ camino para instalar Arch es compilando a partir de esta base mínima.
+1.  Arch ha sido *diseñada fundamentalmente* como un entorno ligero, de base mínima, sobre la cual construir.
+2.  El *único* camino para instalar Arch es compilando a partir de esta base mínima.
 3.  El sistema base y toda la distribución asumen un enfoque de diseño K.I.S.S., lo que la hace especialmente adecuada para una determinada base de usuarios.
 4.  La instalación de servicios y paquetes requiere participación manual, la configuración interactiva del usuario. A diferencia de otras distribuciones que automáticamente configuran los servicios y el comportamiento inicial, la filosofía de Arch pone énfasis en la competencia del usuario para controlar y manejar con responsabilidad el sistema.
-5.  El empaquetado de Arch está diseñado para ser mínimo, y las dependencias entre paquetes son _opcionales_, no instalándose nunca automáticamente. Más bien, al usuario simplemente se le notifica de su existencia durante la instalación del paquete, lo que se traduce en un sistema más ligero.
+5.  El empaquetado de Arch está diseñado para ser mínimo, y las dependencias entre paquetes son *opcionales*, no instalándose nunca automáticamente. Más bien, al usuario simplemente se le notifica de su existencia durante la instalación del paquete, lo que se traduce en un sistema más ligero.
 6.  Arch ofrece una excelente y completa documentación, para ayudarle en el proceso de montaje del sistema.
 
 ## Otras
@@ -275,7 +274,6 @@ La profundidad del color está mal configurada. Es posible que tenga que ser 24 
 Si instalando los archivos de diccionarios no resuelve el problema, lo más probable es que se trate de un problema con `enchant`. Compruebe si hay archivos de diccionarios conocidos:
 
  `$ aspell dicts` 
-
 ```
 es
 es_ES

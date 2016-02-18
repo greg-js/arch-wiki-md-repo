@@ -88,11 +88,11 @@ Linux-ck大致跟随官方Arch内核的发布周期。 但受以下要求的限�
 
 这个源为用户提供了在通用的 linux-ck 包和针对 CPU 优化过的包之间的选择：
 
-_通用的_
+*通用的*
 
 *   **ck-generic** ==> 使用通用的优化选项编译，适合**任何**兼容的 CPU，与官方的 ARCH linux 包一样。这对于 Intel 和 AMD 芯片都是适用的。
 
-_针对 CPU 优化的_
+*针对 CPU 优化的*
 
 *   **ck-atom** ==> Intel Atom 平台针对性优化。 Intel Atom CPUs 有一个按顺序的流水线架构，因此会从据此优化过的代码获益。
 *   **ck-corex** ==> Intel Core 2 系列，包括 Dual 和 Quads (Core 2/新 Xeon/基于 Core2 的 Mobile Celeron) 以及 Core i3/i5/i7 系列针对性的优化 (Gulftown, Bloomfield, Lynnfield, Clarksfield, Arrendale, 和 Sandy/Ivybridge CPU).
@@ -122,7 +122,7 @@ Server = [http://repo-ck.com/$arch](http://repo-ck.com/$arch)
 
 ```
 
-3) 通过 _pacman -Syy_ 刷新
+3) 通过 *pacman -Syy* 刷新
 
 完成了。想查看这个源的内容，这样搜索：
 
@@ -168,7 +168,7 @@ Enter a selection (default=all):
 
 ```
 
-想验证一下，只需要 _cat_ 同一个文件：
+想验证一下，只需要 *cat* 同一个文件：
 
 ```
 # cat /sys/block/sda/queue/scheduler
@@ -184,7 +184,7 @@ noop deadline cfq [bfq]
 
 ### 与 Linux-ck 运行 Virtualbox
 
-Virtualbox works just fine with custom kernels such as Linux-ck _without_ the need to keep any of the official ARCH kernel packages on the system (i.e. linux and linux-headers from [core]). The trick to keeping pacman from bringing down the ARCH kernel packages is to install virtualbox with the virtualbox-source package. Why? Wonder kindly responded to [FS#26721](https://bugs.archlinux.org/task/26721).
+Virtualbox works just fine with custom kernels such as Linux-ck *without* the need to keep any of the official ARCH kernel packages on the system (i.e. linux and linux-headers from [core]). The trick to keeping pacman from bringing down the ARCH kernel packages is to install virtualbox with the virtualbox-source package. Why? Wonder kindly responded to [FS#26721](https://bugs.archlinux.org/task/26721).
 
 ```
 # pacman -S virtualbox virtualbox-source

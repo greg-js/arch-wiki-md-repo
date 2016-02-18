@@ -108,7 +108,7 @@ You can find a full list of supported UVC devices [here](http://linux-uvc.berlio
 
 自从 kernel 2.6.26 开始，linux-uvc 已经是kernel的一部分。只需要加载模块 uvcvideo 即可。
 
-_**Note:** 但此驱动不支持V4L1。_
+***Note:** 但此驱动不支持V4L1。*
 
 ### ov51x-jpeg
 
@@ -157,10 +157,9 @@ Just install this [AUR package](https://aur.archlinux.org/packages.php?do_Detail
 
 将网络摄像头的[内核模块](/index.php/Kernel_modules#Loading "Kernel modules") 加入 `/etc/modules-load.d/webcam.conf`。这样一来，当系统启动时，你的网络摄像机模块就会加载到内核中。
 
-如果你的摄像头是使用USB接口，系统 _应该会_自动加载合适的驱动。 如果成功，可以在你插入摄像头之后检查dmesg，应该可以看到如下面的信息.
+如果你的摄像头是使用USB接口，系统 *应该会*自动加载合适的驱动。 如果成功，可以在你插入摄像头之后检查dmesg，应该可以看到如下面的信息.
 
  `$ dmesg | tail` 
-
 ```
 sn9c102: V4L2 driver for SN9C10x PC Camera Controllers v1:1.24a
 usb 1-1: SN9C10[12] PC Camera Controller detected (vid/pid 0x0C45/0x600D)

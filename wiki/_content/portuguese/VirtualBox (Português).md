@@ -6,7 +6,7 @@
     *   [1.1 Extension Pack](#Extension_Pack)
 *   [2 Configuração](#Configura.C3.A7.C3.A3o)
     *   [2.1 Adicionar usuário ao grupo vboxusers](#Adicionar_usu.C3.A1rio_ao_grupo_vboxusers)
-    *   [2.2 Habilitando a interface de rede _Host-Only_](#Habilitando_a_interface_de_rede_Host-Only)
+    *   [2.2 Habilitando a interface de rede *Host-Only*](#Habilitando_a_interface_de_rede_Host-Only)
     *   [2.3 Adicionais para convidado](#Adicionais_para_convidado)
     *   [2.4 Iniciando máquinas virtuais como serviço](#Iniciando_m.C3.A1quinas_virtuais_como_servi.C3.A7o)
 *   [3 Máquinas Virtuais](#M.C3.A1quinas_Virtuais)
@@ -36,7 +36,7 @@ O VirtualBox, lincenciado sob GPL, pode ser [instalado](/index.php/Pacman_(Portu
 
 ### Extension Pack
 
-Para fornecer suporte a RDP, USB e PXE para boot em placas de rede Intel, além de outras funcionalidades, o VirtualBox precisa do _Extension Pack_, que pode ser baixado neste link: [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads). Este pacote de expansão, com licença PUEL, é livre para uso pessoal.
+Para fornecer suporte a RDP, USB e PXE para boot em placas de rede Intel, além de outras funcionalidades, o VirtualBox precisa do *Extension Pack*, que pode ser baixado neste link: [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads). Este pacote de expansão, com licença PUEL, é livre para uso pessoal.
 
 Para instalar o Extension Pack, baixe e salve-o em seu disco rígido e, em seguida, abra o VirtualBox. Vá em **Arquivo → Preferências → Extensões** e clique no ícone "Acrescentar extensões", em seguida abra a pasta que contém a extensão e selecione-a para instalar.
 
@@ -66,7 +66,7 @@ Adicione os usuários desejados ao grupo **vboxusers**. O novo grupo não se apl
 
 **Nota:** Terá que reiniciar a sua sessão (Log-Out/Log-In) para que as alterações tenham efeito
 
-_=== Carregando os módulos ===_
+*=== Carregando os módulos ===*
 
 Após a instalação você poderá gerenciar suas máquinas virtuais, porém não poderá iniciá-las até carregar o módulo **vboxdrv**. Para carregar o módulo manualmente (como root):
 
@@ -78,16 +78,15 @@ Após a instalação você poderá gerenciar suas máquinas virtuais, porém nã
 Para carregar os módulos do VirtualBox automaticamente na inicialização do Arch Linux, crie um arquivo `*.conf` (e.g. `virtualbox.conf`) em `/etc/[modules-load.d](/index.php/Kernel_modules#Loading "Kernel modules")`, que conterá todos os módulos que deverão ser carregados.
 
  `/etc/modules-load.d/virtualbox.conf`  `vboxdrv` 
-**Nota:** Se ao rodar o comando `modprobe -a vboxdrv` (ou qualquer outro módulo do virtualbox) você se deparar com a mensagem "_modprobe: WARNING: Module vboxdrv not found._" ou "_no such file or directory_" será preciso atualizar a base de dados dos módulos rodando o comando `depmod -a`.
+**Nota:** Se ao rodar o comando `modprobe -a vboxdrv` (ou qualquer outro módulo do virtualbox) você se deparar com a mensagem "*modprobe: WARNING: Module vboxdrv not found.*" ou "*no such file or directory*" será preciso atualizar a base de dados dos módulos rodando o comando `depmod -a`.
 
 **Nota:** Este módulo costumava ser adicionado à matriz `MODULES` em `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")`, que agora está obsoleto.
 
-### Habilitando a interface de rede _Host-Only_
+### Habilitando a interface de rede *Host-Only*
 
 Pra que seja possível utilizar a opção Host-Only na interface de rede do VirtualBox, é preciso carregar os módulos **vboxnetadp** e **vboxnetflt** ou acrescentá-los ao arquivo `virtualbox.conf` em `/etc/[modules-load.d](/index.php/Kernel_modules#Loading "Kernel modules")` para que sejam carregados automaticamente na inicialização do Arch Linux:
 
  `/etc/modules-load.d/virtualbox.conf` 
-
 ```
 vboxdrv
 **vboxnetadp**
@@ -101,7 +100,7 @@ Para carregar os módulos manualmente, utilize o seguinte comando como root:
 
 ```
 
-Feito isso, abra a interface gráfica do VirtualBox e vá até **Arquivo → Preferências → Rede** e acrescente uma nova interface de rede _host-only_ antes de poder habilitá-la em sua máquina virtual.
+Feito isso, abra a interface gráfica do VirtualBox e vá até **Arquivo → Preferências → Rede** e acrescente uma nova interface de rede *host-only* antes de poder habilitá-la em sua máquina virtual.
 
 **Nota:** Estes módulos costumavam ser adicionados à matriz `MODULES` em `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")`, que agora está obsoleto.
 
@@ -119,7 +118,6 @@ O VirtualBox sugere a instalação do [virtualbox-guest-iso](https://www.archlin
 Para iniciar máquinas virtuais como serviço no Arch Linux você deve criar o arquivo `vboxvmservice@.service` em `/etc/[systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)")/system` da seguinte forma:
 
  `/etc/systemd/system/vboxvmservice@.service` 
-
 ```
 [Unit]
 Description=VBox Virtual Machine %i Service
@@ -142,8 +140,8 @@ WantedBy=multi-user.target
 *   Cada máquina virtual tem seu próprio serviço. Substitua USUARIO com um usuário que seja membro do grupo **vboxusers**:
 
 ```
-# systemctl enable vboxvmservice@_nome_da_maquina_virtual_
-# systemctl start vboxvmservice@_nome_da_maquina_virtual_
+# systemctl enable vboxvmservice@*nome_da_maquina_virtual*
+# systemctl start vboxvmservice@*nome_da_maquina_virtual*
 
 ```
 
@@ -174,7 +172,6 @@ Instale o pacote [virtualbox-guest-utils](https://www.archlinux.org/packages/?na
 Ou crie um arquivo `*.conf` em (e.g. `virtualbox.conf`) em `/etc/modules-load.d/` para que o Arch carregue os módulos automaticamente na inicialização do sistema com as seguintes linhas:
 
  `/etc/modules-load.d/virtualbox.conf` 
-
 ```
 vboxguest
 vboxsf
@@ -184,7 +181,7 @@ vboxvideo
 adicione a seguinte linha para o topo de `~/.xinitrc` acima de quaisquer opções `exec`. (crie um novo arquivo se este não existir):
 
  `~/.xinitrc`  `/usr/bin/VBoxClient-all` 
-**Nota:** Se você está criando um novo arquivo `~/.xinitrc` você _deve_ também incluir um [Gerenciador de Janelas (Documentação em Inglês)](/index.php/Window_manager "Window manager") ou [Ambiente de Trabalho (Documentação em Inglês)](/index.php/Desktop_environment "Desktop environment").
+**Nota:** Se você está criando um novo arquivo `~/.xinitrc` você *deve* também incluir um [Gerenciador de Janelas (Documentação em Inglês)](/index.php/Window_manager "Window manager") ou [Ambiente de Trabalho (Documentação em Inglês)](/index.php/Desktop_environment "Desktop environment").
 
 #### Iniciando serviços compartilhados
 
@@ -203,9 +200,9 @@ Após instalar o [virtualbox-guest-utils](https://www.archlinux.org/packages/?na
 **Nota:** Você deve ter instalado o [VirtualBox Extension Pack](#Extension_Pack) antes de seguir os passos abaixo.
 
 *   Certifique-se de que a máquina virtual não está sendo executada e seu microfone/webcam não está sendo utilizado;
-*   Abra a janela do VirtualBox, selecione a máquina virtual do Arch Linux e clique em _Configurações_, em seguida selecione a seção _USB_;
-*   Marque a caixa _Habilitar controladora USB_ e também _Habilitar controladora USB 2.0 (EHCI)_;
-*   Clique no botão _Adicionar filtro do dispositivo_ (O cabo com sinal de +);
+*   Abra a janela do VirtualBox, selecione a máquina virtual do Arch Linux e clique em *Configurações*, em seguida selecione a seção *USB*;
+*   Marque a caixa *Habilitar controladora USB* e também *Habilitar controladora USB 2.0 (EHCI)*;
+*   Clique no botão *Adicionar filtro do dispositivo* (O cabo com sinal de +);
 *   Selecione o seu dispositivo de webcam/microfone na lista;
 *   Inicie sua máquina virtual Arch.
 
@@ -231,7 +228,7 @@ Você também deve utilizar este daemon afim de usar o recurso de pastas compart
 
 Pastas compartilhadas são gerenciadas através do programa VirtualBox na máquina real. Elas podem ser adicionadas, automontadas e feita somente leitura.
 
-Se a _automontagem_ está habilitada e o _vboxservice_ está habilitado, criando uma pasta compartilhada do programa VirtualBox com a máquina real, irá montar esta pasta em `/media/sf_NOMEDAPASTACOMPARTILHADA` na máquina virtual. Para ter esta pasta criada na máquina virtual Arch, após instalar os [adicionais para convidado](#Adicionais_para_Convidado_2), você precisa adicionar seu nome de usuário ao grupo `vboxsf`.
+Se a *automontagem* está habilitada e o *vboxservice* está habilitado, criando uma pasta compartilhada do programa VirtualBox com a máquina real, irá montar esta pasta em `/media/sf_NOMEDAPASTACOMPARTILHADA` na máquina virtual. Para ter esta pasta criada na máquina virtual Arch, após instalar os [adicionais para convidado](#Adicionais_para_Convidado_2), você precisa adicionar seu nome de usuário ao grupo `vboxsf`.
 
 ```
 # groupadd vboxsf
@@ -327,7 +324,7 @@ Header: offBlocks=4096 offData=69632
 
 ```
 
-Agora, acrescente ao seu _offData_ **32256** (Ex.: `32256 + 69632 = 101888`) Monte a sua imagem VDI:
+Agora, acrescente ao seu *offData* **32256** (Ex.: `32256 + 69632 = 101888`) Monte a sua imagem VDI:
 
 ```
 # mount -t ext4 -o rw,noatime,noexec,loop,offset=101888 Arch_64min.vdi /mnt/

@@ -22,7 +22,7 @@ Amateur radio enthusiasts (sometimes called ham radio operators or "hams") have 
 Many of the following programs will need to access a serial port to key the transmitter (eg. /dev/ttyS0). This requires that the user belong to the uucp group. To add the user to the uucp group issue the following command as root:
 
 ```
-# gpasswd -a _username_ uucp
+# gpasswd -a *username* uucp
 
 ```
 
@@ -110,7 +110,7 @@ then logoff and logon.
 
 ### WSJT
 
-**[WSJT](https://en.wikipedia.org/wiki/WSJT_(Amateur_radio_software) "wikipedia:WSJT (Amateur radio software)") (Weak Signal Communication by K1JT)** — offers offers a rich variety of features, including specific digital protocols optimized for meteor scatter, ionospheric scatter, and EME (moonbounce) at VHF/UHF, as well as HF skywave propagation. WSJT was developed by Nobel Prize winning physicist Joe Taylor, who has the amateur radio callsign K1JT. The program can decode fraction-of-a-second signals reflected from ionized meteor trails and steady signals 10 dB below the audible threshold.
+**[WSJT](https://en.wikipedia.org/wiki/WSJT_(Amateur_radio_software) (Weak Signal Communication by K1JT)** — offers offers a rich variety of features, including specific digital protocols optimized for meteor scatter, ionospheric scatter, and EME (moonbounce) at VHF/UHF, as well as HF skywave propagation. WSJT was developed by Nobel Prize winning physicist Joe Taylor, who has the amateur radio callsign K1JT. The program can decode fraction-of-a-second signals reflected from ionized meteor trails and steady signals 10 dB below the audible threshold.
 WSJT is in ongoing, active development by a team of programmers led by K1JT. WSJT (and the related program WSPR) has the option of being configured with
 
  `$ ./configure --enable-g95` 
@@ -126,7 +126,7 @@ WSJT requires access to the serial port; see the note in the Interfacing section
 
 ### WSPR
 
-**[WSPR](https://en.wikipedia.org/wiki/WSPR_(amateur_radio_software) "wikipedia:WSPR (amateur radio software)") (Weak Signal Propagation Reporter, pronounced whisper)** — enables the probing of propagation paths on the amateur radio bands using low power transmissions. It was introduced in 2008 by K1JT following the success and widespread adoption of WSJT by the amateur radio community. Stations with Internet access can automatically upload their reception reports to a central database called [WSPRnet](http://wsprnet.org/drupal/), which includes a [mapping facility](http://wsprnet.org/drupal/wsprnet/map)
+**[WSPR](https://en.wikipedia.org/wiki/WSPR_(amateur_radio_software) (Weak Signal Propagation Reporter, pronounced whisper)** — enables the probing of propagation paths on the amateur radio bands using low power transmissions. It was introduced in 2008 by K1JT following the success and widespread adoption of WSJT by the amateur radio community. Stations with Internet access can automatically upload their reception reports to a central database called [WSPRnet](http://wsprnet.org/drupal/), which includes a [mapping facility](http://wsprnet.org/drupal/wsprnet/map)
 
 	[http://physics.princeton.edu/pulsar/K1JT/wspr.html](http://physics.princeton.edu/pulsar/K1JT/wspr.html) || [wspr-svn](https://aur.archlinux.org/packages/wspr-svn/)
 

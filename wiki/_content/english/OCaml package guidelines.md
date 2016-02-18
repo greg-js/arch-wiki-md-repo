@@ -17,7 +17,7 @@ Writing [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for software written in [OCa
 
 ## Package naming
 
-For libraries, use `ocaml-_modulename_`. For applications, use the program name. In either case, the name should be entirely lowercase.
+For libraries, use `ocaml-*modulename*`. For applications, use the program name. In either case, the name should be entirely lowercase.
 
 ## File placement
 
@@ -59,7 +59,7 @@ options=('!strip')
 
 If the package does not contain bytecode and only distributes a binary, then `ocaml` is not needed as a dependency, but it of course is required as a makedepends since the `ocaml` package provides the OCaml compiler. If the package contains both native code and bytecode then `ocaml` should be a dependency and a makedepends.
 
-OCaml code is rarely (if ever) distributed as bytecode only and will almost always include native code: the only case where using _any_ as the _arch_ is advisable is when only un-compiled source code is distributed, usually with a library, though many libraries still distribute native code.
+OCaml code is rarely (if ever) distributed as bytecode only and will almost always include native code: the only case where using *any* as the *arch* is advisable is when only un-compiled source code is distributed, usually with a library, though many libraries still distribute native code.
 
 The moral of the story here is to be aware of what it is you are distributing, chances are your package contains both native machine code and bytecode.
 
@@ -71,7 +71,7 @@ The moral of the story here is to be aware of what it is you are distributing, c
 pkgname=ocaml-<package name>
 pkgver=4.2
 pkgrel=1
-license=(_)_
+license=(*)*
 arch=('i686' 'x86_64')
 pkgdesc="An OCaml Package"
 url=""
@@ -98,4 +98,4 @@ package() {
 }
 ```
 
-Keep in mind that many OCaml Packages will often need extra parameters passed to make and make install. Also remember to remove the _'!strip'_ option and change the architecture if the package does not produce bytecode.
+Keep in mind that many OCaml Packages will often need extra parameters passed to make and make install. Also remember to remove the *'!strip'* option and change the architecture if the package does not produce bytecode.

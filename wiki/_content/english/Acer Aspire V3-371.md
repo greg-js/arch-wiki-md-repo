@@ -28,7 +28,6 @@ Information for the Acer Aspire V3-371 53L5 (Core i5-5200U, 4GiB RAM, 240GB SSD)
 ## Partitions
 
  `# lsblk` 
-
 ```
 NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 sda      8:0    0 223.6G  0 disk 
@@ -42,7 +41,6 @@ sda      8:0    0 223.6G  0 disk
 ## Devices
 
  `# lspci` 
-
 ```
 00:00.0 Host bridge: Intel Corporation Broadwell-U Host Bridge -OPI (rev 09)
 00:02.0 VGA compatible controller: Intel Corporation Broadwell-U Integrated Graphics (rev 09)

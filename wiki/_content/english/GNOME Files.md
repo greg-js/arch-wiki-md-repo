@@ -1,6 +1,6 @@
-Files is the default file manager for [GNOME](https://live.gnome.org/). Files attempts to provide a streamlined method to manage both files and applications.
+Files is the default file manager for [GNOME](https://wiki.gnome.org/). Files attempts to provide a streamlined method to manage both files and applications.
 
-**Note:** Files was known as [Nautilus](http://live.gnome.org/Nautilus) prior to version 3.6\. The application was given new descriptive names, one for each supported language. The name _Nautilus_ is still used in numerous places such as the executable name, some package names, some desktop entries, and some GSettings schemas.
+**Note:** Files was known as [Nautilus](https://wiki.gnome.org/Apps/Nautilus) prior to version 3.6\. The application was given new descriptive names, one for each supported language. The name *Nautilus* is still used in numerous places such as the executable name, some package names, some desktop entries, and some GSettings schemas.
 
 ## Contents
 
@@ -67,13 +67,13 @@ Some programs can add extra functionality to Files. Here are a few packages in t
 
 ## Configuration
 
-Files is simple to configure graphically, but not all options are available in the preferences menu. More options are available with _dconf-editor_ under `org.gnome.nautilus`.
+Files is simple to configure graphically, but not all options are available in the preferences menu. More options are available with *dconf-editor* under `org.gnome.nautilus`.
 
 ### Desktop Icons
 
 Files, by default, no longer manages the desktop window in GNOME Shell. However, Files does have the ability to provide desktop icons if they are desired. Files achieves this by drawing a transparent window (containing the icons) which sits on top of the desktop window.
 
-To enable desktop icons, in [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool), choose: _Desktop > Icons on Desktop > ON_. You may have to restart Files by running `killall nautilus; nautilus` or if you are running [GNOME](/index.php/GNOME "GNOME"), press `ALT+F2`, type `r`, and press `Enter` (this restarts GNOME Shell).
+To enable desktop icons, in [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool), choose: *Desktop > Icons on Desktop > ON*. You may have to restart Files by running `killall nautilus; nautilus` or if you are running [GNOME](/index.php/GNOME "GNOME"), press `ALT+F2`, type `r`, and press `Enter` (this restarts GNOME Shell).
 
 Alternatively, run the following command which will achieve the same effect:
 
@@ -82,7 +82,7 @@ $ gsettings set org.gnome.desktop.background show-desktop-icons true
 
 ```
 
-**Note:** Sessions such as GNOME Classic call the _nautilus-classic_ desktop entry which will ensure that desktop icons are always enabled.
+**Note:** Sessions such as GNOME Classic call the *nautilus-classic* desktop entry which will ensure that desktop icons are always enabled.
 
 ### Change default item view
 
@@ -99,9 +99,9 @@ The displayed folders are specified in `~/.config/user-dirs.dirs` and can be alt
 
 ### Always show text-entry location
 
-The standard Files toolbar shows a button bar interface for path navigation. To enter path locations using the _keyboard_, you must expose the location text-entry field. This is done by pressing `Ctrl+l`
+The standard Files toolbar shows a button bar interface for path navigation. To enter path locations using the *keyboard*, you must expose the location text-entry field. This is done by pressing `Ctrl+l`
 
-To make the location text-entry field always present, use _gsettings_ as shown below:
+To make the location text-entry field always present, use *gsettings* as shown below:
 
 ```
 $ gsettings set org.gnome.nautilus.preferences always-use-location-entry true

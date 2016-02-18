@@ -30,7 +30,7 @@
 
 ## Installing Arch
 
-This wiki page supplements these pages: **[Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")**, the **[Official Install Guide](/index.php/Installation_guide "Installation guide")**, and **[Installing Arch Linux on the Asus EEE PC](/index.php/Installing_Arch_Linux_on_the_Asus_EEE_PC "Installing Arch Linux on the Asus EEE PC")**. Please refer to those guides _first_ before following the eeepc-specific pointers on this page.
+This wiki page supplements these pages: **[Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")**, the **[Official Install Guide](/index.php/Installation_guide "Installation guide")**, and **[Installing Arch Linux on the Asus EEE PC](/index.php/Installing_Arch_Linux_on_the_Asus_EEE_PC "Installing Arch Linux on the Asus EEE PC")**. Please refer to those guides *first* before following the eeepc-specific pointers on this page.
 
 ### Following the Beginners Guide
 
@@ -382,7 +382,6 @@ The 80 represents the highest brightness level in hexadecimal, which can be repl
 This is not perminent, so it can be added to rc.local:
 
  `/etc/rc.d/rc.local` 
-
 ```
 #!/bin/sh
 

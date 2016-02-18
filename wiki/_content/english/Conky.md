@@ -1,4 +1,4 @@
-_Conky_ is a system monitor software for the X Window System. It is available for GNU/Linux and FreeBSD. It is free software released under the terms of the GPL license. Conky is able to monitor many system variables including CPU, memory, swap, disk space, temperature, top, upload, download, system messages, and much more. It is extremely configurable, however, the configuration can be a little hard to understand. _Conky_ is a fork of torsmo.
+*Conky* is a system monitor software for the X Window System. It is available for GNU/Linux and FreeBSD. It is free software released under the terms of the GPL license. Conky is able to monitor many system variables including CPU, memory, swap, disk space, temperature, top, upload, download, system messages, and much more. It is extremely configurable, however, the configuration can be a little hard to understand. *Conky* is a fork of torsmo.
 
 ## Contents
 
@@ -52,32 +52,32 @@ $ conky -C > ~/.config/conky/conky.conf
 
 Now you can edit `~/.config/conky/conky.conf` to customize conky as you wish. For a few example configuration files, see [this page](https://github.com/brndnmtthws/conky/wiki/User-Configs).
 
-When editing your config file, you will see immediately the effect of any change as soon as you save it. There is no need to log out/log in your X session. So best is to test all kind of options, one by one, save the configuration file and see the change on your _conky_ window, and correct if your change is inappropriate.
+When editing your config file, you will see immediately the effect of any change as soon as you save it. There is no need to log out/log in your X session. So best is to test all kind of options, one by one, save the configuration file and see the change on your *conky* window, and correct if your change is inappropriate.
 
-One of the nice features of _conky_ is to pipe to your desktop some `/var/log/` files to read all kinds of log messages. Most of these files can only be read by `root`, but running _conky_ as `root` is not recommended, so you will need to add `_username_` to the `log` group:
+One of the nice features of *conky* is to pipe to your desktop some `/var/log/` files to read all kinds of log messages. Most of these files can only be read by `root`, but running *conky* as `root` is not recommended, so you will need to add `*username*` to the `log` group:
 
 ```
-# usermod -aG log _username_
+# usermod -aG log *username*
 
 ```
 
 ### AUR packages
 
-In addition to the basic _conky_ package, there are various [AUR](/index.php/AUR "AUR") packages available with extra compile options enabled:
+In addition to the basic *conky* package, there are various [AUR](/index.php/AUR "AUR") packages available with extra compile options enabled:
 
-*   **conky-cli** — _Conky_ without X11 dependencies
+*   **conky-cli** — *Conky* without X11 dependencies
 
 	|| [conky-cli](https://aur.archlinux.org/packages/conky-cli/)
 
-*   **conky-lua** — _Conky_ with Lua support
+*   **conky-lua** — *Conky* with Lua support
 
 	|| [conky-lua](https://aur.archlinux.org/packages/conky-lua/)
 
-*   **conky-lua-nv** — _Conky_ with both Lua and Nvidia support
+*   **conky-lua-nv** — *Conky* with both Lua and Nvidia support
 
 	|| [conky-lua-nv](https://aur.archlinux.org/packages/conky-lua-nv/)
 
-*   **conky-nvidia** — _Conky_ with Nvidia support
+*   **conky-nvidia** — *Conky* with Nvidia support
 
 	|| [conky-nvidia](https://aur.archlinux.org/packages/conky-nvidia/)
 
@@ -93,7 +93,7 @@ For example: own_window_transparent = true.
 
 ### Enable real transparency in KDE4 and Xfce4
 
-Since version 1.8.0 _conky_ supports real transparency. To enable it add this line to `conky.conf`:
+Since version 1.8.0 *conky* supports real transparency. To enable it add this line to `conky.conf`:
 
 ```
 own_window_transparent yes
@@ -113,7 +113,7 @@ background yes
 
 ```
 
-This variable will fork _conky_ to your background. If you want to make your window always visible on your desktop, sticky across all workspaces and not showing in your taskbar, add these arguments:
+This variable will fork *conky* to your background. If you want to make your window always visible on your desktop, sticky across all workspaces and not showing in your taskbar, add these arguments:
 
 ```
 own_window yes
@@ -141,7 +141,7 @@ Hidden=false
 
 ### Prevent flickering
 
-_Conky_ needs Double Buffer Extension (DBE) support from the X server to prevent flickering because it cannot update the window fast enough without it. It can be enabled in `/etc/X11/xorg.conf` with `Load "dbe"` line in `"Module"` section. The `xorg.conf` file has been replaced (1.8.x patch upwards) by `/etc/X11/xorg.conf.d` which contains the particular configuration files. _DBE_ is loaded automatically.
+*Conky* needs Double Buffer Extension (DBE) support from the X server to prevent flickering because it cannot update the window fast enough without it. It can be enabled in `/etc/X11/xorg.conf` with `Load "dbe"` line in `"Module"` section. The `xorg.conf` file has been replaced (1.8.x patch upwards) by `/etc/X11/xorg.conf.d` which contains the particular configuration files. *DBE* is loaded automatically.
 
 To enable double buffering add `double_buffer yes` option to your `conky.conf`.
 
@@ -160,7 +160,7 @@ Then, when editing the `TEXT` section, use custom color number previously define
 
 ### Dual Screen
 
-When using a dual screen configuration, you will need to play with two options to place your _conky_ window. Let's say you are running a 1680X1050 pixels resolution, and you want the window on middle top of your left monitor, you will use this:
+When using a dual screen configuration, you will need to play with two options to place your *conky* window. Let's say you are running a 1680X1050 pixels resolution, and you want the window on middle top of your left monitor, you will use this:
 
 ```
 alignment top_left
@@ -188,11 +188,11 @@ own_window_type desktop
 
 ```
 
-Refer to _conky_s man page for the exact differences. But the latter option enables you to snap windows to _conky_s border using resize key-binds in e.g. Openbox, which the first one does not.
+Refer to *conky*s man page for the exact differences. But the latter option enables you to snap windows to *conky*s border using resize key-binds in e.g. Openbox, which the first one does not.
 
 ### Integrate with GNOME
 
-Some have experienced problems with _conky_ showing up under [GNOME](/index.php/GNOME "GNOME").
+Some have experienced problems with *conky* showing up under [GNOME](/index.php/GNOME "GNOME").
 
 *   Add these lines to `conky.conf`:
 
@@ -214,7 +214,7 @@ own_window_argb_value 255
 
 ### Integrate with KDE 4
 
-_Conky_ with screenshot configuration generate problems with icons visualization. So there are some steps to follow:
+*Conky* with screenshot configuration generate problems with icons visualization. So there are some steps to follow:
 
 *   Add these lines to `conky.conf`:
 
@@ -233,7 +233,7 @@ minimum_size
 
 ```
 
-*   To automatically start _conky_, create this symlink:
+*   To automatically start *conky*, create this symlink:
 
 ```
 $ ln -s /usr/bin/conky ~/.kde4/Autostart/conkylink
@@ -245,7 +245,6 @@ $ ln -s /usr/bin/conky ~/.kde4/Autostart/conkylink
 *   Make a script to allow transparency with the desktop:
 
  `~/.kde4/Autostart/fehconky` 
-
 ```
 #!/bin/bash
 feh --bg-scale "$(sed -n 's/wallpaper=//p' ~/.kde4/share/config/plasma-desktop-appletsrc)"
@@ -269,10 +268,9 @@ ${exec feh --bg-scale "$(sed -n 's/wallpaper=//p' ~/.kde4/share/config/plasma-de
 
 ### Integrate with Razor-qt
 
-With _conky'_s default configuration, its window might disappear from the desktop when you click on the latter. Add these lines to:
+With *conky'*s default configuration, its window might disappear from the desktop when you click on the latter. Add these lines to:
 
  `conky.conf` 
-
 ```
 own_window yes
 own_window_class Conky
@@ -286,8 +284,8 @@ own_window_transparent yes
 
 *   [Pacman](/index.php/Pacman "Pacman") provides an own script called `checkupdates` which displays package updates from the official repos. Use `${execpi 3600 checkupdates | wc -l}` to display the total number of packages.
 *   [Paconky](https://bbs.archlinux.org/viewtopic.php?id=68104) - Displays package update information in a user-defined format. The output of this program can be included in Conky with the `${execpi}` command.
-*   [Scrolling Notifications](https://bbs.archlinux.org/viewtopic.php?id=53761) - Prints scrolling update notifications. From the author of _paconky_.
-*   [Perl Script](https://bbs.archlinux.org/viewtopic.php?id=57291) - Simpler and earlier script from the author of _paconky_. Prints only the number of packages needing an update.
+*   [Scrolling Notifications](https://bbs.archlinux.org/viewtopic.php?id=53761) - Prints scrolling update notifications. From the author of *paconky*.
+*   [Perl Script](https://bbs.archlinux.org/viewtopic.php?id=57291) - Simpler and earlier script from the author of *paconky*. Prints only the number of packages needing an update.
 *   [Python Script](https://bbs.archlinux.org/viewtopic.php?id=37284) - Fairly configurable update notification program in [Python](/index.php/Python "Python").
 *   [Bash Script](https://bbs.archlinux.org/viewtopic.php?pid=483742#p483742) - [Bash](/index.php/Bash "Bash") script for users that have enabled ShowSize.
 
@@ -303,7 +301,7 @@ Start the timer using `conkytimer "<task description>" <min>`.
 
 ### Display RSS feeds
 
-_Conky_ has the ability to display RSS feeds natively without the need for an outside script to run and output into Conky. For example, to display the titles of the ten most recent Planet Arch updates and refresh the feed every minute, you would put this into your `conky.conf` in the `TEXT` section:
+*Conky* has the ability to display RSS feeds natively without the need for an outside script to run and output into Conky. For example, to display the titles of the ten most recent Planet Arch updates and refresh the feed every minute, you would put this into your `conky.conf` in the `TEXT` section:
 
 ```
 ${rss [https://planet.archlinux.org/rss20.xml](https://planet.archlinux.org/rss20.xml) 1 item_titles 10 }
@@ -336,7 +334,6 @@ This can be achieved by using the in python written extension named [ConkyPress]
 Create a file named `gmail.py` in a convenient location (this example uses `~/.scripts/`) with the following [Python](/index.php/Python "Python") code:
 
  `gmail.py` 
-
 ```
 #!/usr/bin/env python
 
@@ -366,7 +363,6 @@ print(fullcount + ' new')
 The following script does less "by hand", and uses more of the capabilities of Python.
 
  `gmail.py` 
-
 ```
 #! /usr/bin/env python
 
@@ -410,7 +406,7 @@ $ curl -s -u '''email''':'''password''' https://mail.google.com/mail/feed/atom |
 
 ```
 
-replace _email_ and _password_ with your data.
+replace *email* and *password* with your data.
 
 ##### method 4
 
@@ -445,13 +441,13 @@ Inbox: ${imap_unseen}/${imap_messages}
 
 ```
 
-Here I used `*` as the password for _conky_ to ask for it at start, but you do **not** have to do it.
+Here I used `*` as the password for *conky* to ask for it at start, but you do **not** have to do it.
 
 #### IMAP + SSL using Perl
 
-_Conky_ has built in support for IMAP accounts but does not support SSL. This can be provided using this script from [this forum post](http://www.unix.com/shell-programming-scripting/115322-perl-conky-gmail-imap-unread-message-count.html). This requires the Perl/CPAN Modules Mail::IMAPClient and IO::Socket::SSL which are in the [perl-mail-imapclient](https://aur.archlinux.org/packages/perl-mail-imapclient/) and [perl-io-socket-ssl](https://www.archlinux.org/packages/?name=perl-io-socket-ssl) packages
+*Conky* has built in support for IMAP accounts but does not support SSL. This can be provided using this script from [this forum post](http://www.unix.com/shell-programming-scripting/115322-perl-conky-gmail-imap-unread-message-count.html). This requires the Perl/CPAN Modules Mail::IMAPClient and IO::Socket::SSL which are in the [perl-mail-imapclient](https://aur.archlinux.org/packages/perl-mail-imapclient/) and [perl-io-socket-ssl](https://www.archlinux.org/packages/?name=perl-io-socket-ssl) packages
 
-Create a file named `imap.pl` in a location to be read by _conky_. In this file, add (with the appropriate changes):
+Create a file named `imap.pl` in a location to be read by *conky*. In this file, add (with the appropriate changes):
 
 ```
 #!/usr/bin/perl
@@ -484,7 +480,8 @@ if ($client->IsAuthenticated()) {
 
    $client->select("INBOX");
    $msgct = $client->unseen_count||'0';
-   print "$msgct\n";
+   print "$msgct
+";
 }
 
 $client->logout();
@@ -508,7 +505,7 @@ Alternatively, you can use stunnel as shown above: [#Display number of new email
 
 Another alternative using PHP. PHP needs to be installed and `extension=imap.so` must be uncommented in `/etc/php/php.ini`.
 
-Then create a file named `imap.php` in a location to be read by _conky_. Make the file executable:
+Then create a file named `imap.php` in a location to be read by *conky*. Make the file executable:
 
 ```
 $ chmod +x imap.php
@@ -574,7 +571,7 @@ This is the expected result :
 
 ### Fix scrolling with UTF-8 multibyte characters
 
-The current version of _conky_ (1.9.0) suffers from a [bug](https://github.com/brndnmtthws/conky/issues/129) where scrolling text increments by byte, not by character, resulting in text containing multibyte characters to disappear and reappear while scrolling. A package with a patch fixing this bug can be found in the AUR: [conky-utfscroll](https://aur.archlinux.org/packages/conky-utfscroll/)
+The current version of *conky* (1.9.0) suffers from a [bug](https://github.com/brndnmtthws/conky/issues/129) where scrolling text increments by byte, not by character, resulting in text containing multibyte characters to disappear and reappear while scrolling. A package with a patch fixing this bug can be found in the AUR: [conky-utfscroll](https://aur.archlinux.org/packages/conky-utfscroll/)
 
 ## User-contributed configuration examples
 
@@ -588,42 +585,42 @@ Many of the more decorated `conky.conf`'s use the fonts PizzaDude Bullets and Pi
 
 ## Fonts appear smaller than they should with Infinality
 
-If you notice that your _conky_ fonts appear smaller than they should, or they do not align properly, it could be caused by a default setting in the infinality freetype2 patch. This setting can cause some programs to display fonts at 72 DPI instead of 96 even if the rest of your system is set to 96\. If you notice a problem open `/etc/fonts/infinality/infinality.conf` search for the section on DPI and change 72 to 96.
+If you notice that your *conky* fonts appear smaller than they should, or they do not align properly, it could be caused by a default setting in the infinality freetype2 patch. This setting can cause some programs to display fonts at 72 DPI instead of 96 even if the rest of your system is set to 96\. If you notice a problem open `/etc/fonts/infinality/infinality.conf` search for the section on DPI and change 72 to 96.
 
 ## Universal method to enable true transparency
 
-Transparency is a strange beast in _conky_, but there is a way to universally apply true transparency with any environment or window manager by using _xcompmgr_ and _transset-df_. [Install](/index.php/Pacman#Installing_specific_packages "Pacman") [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr) and [transset-df](https://www.archlinux.org/packages/?name=transset-df).
+Transparency is a strange beast in *conky*, but there is a way to universally apply true transparency with any environment or window manager by using *xcompmgr* and *transset-df*. [Install](/index.php/Pacman#Installing_specific_packages "Pacman") [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr) and [transset-df](https://www.archlinux.org/packages/?name=transset-df).
 
 **Note:** This may conflict with any other compositing manager you are already using.
 
-Check _xcompmgr_ documentation to help you decide which compositing options you would like to enable. The following is a common standard command.
+Check *xcompmgr* documentation to help you decide which compositing options you would like to enable. The following is a common standard command.
 
 ```
 $ xcompmgr -c -t-5 -l-5 -r4.2 -o.55 &
 
 ```
 
-Make sure _conky_ is running with `conky &`. Use _transset-df_ to enable transparency on the _conky_ window. Set '.5' to any value in the range 0 - 1.
+Make sure *conky* is running with `conky &`. Use *transset-df* to enable transparency on the *conky* window. Set '.5' to any value in the range 0 - 1.
 
 ```
 $ transset-df .5 -n Conky
 
 ```
 
-This should give your _conky_ window true transparency. If you get an error like:
+This should give your *conky* window true transparency. If you get an error like:
 
 ```
 No Window matching Conky exists!
 
 ```
 
-verify that _conky_ is running, and use _xprop_ and click on the _conky_ window to find the name you should pass to `transset-df`.
+verify that *conky* is running, and use *xprop* and click on the *conky* window to find the name you should pass to `transset-df`.
 
  `$ xprop | grep WM_NAME`  `WM_NAME(STRING) = "Conky (ArchitectLinux)"` 
 
-In this case, _conky_ is right, but for you it may be different, so be sure to use your output instead. If `conky.conf` has an option `own_window_type` set to `panel`, then this _xprop_ invocation may show no output. Try using `dock`, `normal`, `override` or `desktop` instead.
+In this case, *conky* is right, but for you it may be different, so be sure to use your output instead. If `conky.conf` has an option `own_window_type` set to `panel`, then this *xprop* invocation may show no output. Try using `dock`, `normal`, `override` or `desktop` instead.
 
-Use this in `~/.xinitrc` to have transparent _conky_ after [X](/index.php/X "X") starts up:
+Use this in `~/.xinitrc` to have transparent *conky* after [X](/index.php/X "X") starts up:
 
 ```
 xcompmgr -c -t-5 -l-5 -r4.2 -o.55 &

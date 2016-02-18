@@ -1,6 +1,6 @@
 Da [Wikipedia](https://en.wikipedia.org/wiki/Kernel_(computing) "wikipedia:Kernel (computing)"):
 
-	_il kernel è la componente più importante del sistema operativo; è un ponte tra le applicazioni e l'elaborazione dei dati eseguita a livello hardware. Le responsabilità del kernel comprendono la gestione delle risorse del sistema (la comunicazione tra le componenti hardware e software)._
+	*il kernel è la componente più importante del sistema operativo; è un ponte tra le applicazioni e l'elaborazione dei dati eseguita a livello hardware. Le responsabilità del kernel comprendono la gestione delle risorse del sistema (la comunicazione tra le componenti hardware e software).*
 
 Esistono diversi kernel alternativi per Arch Linux oltre a quello principale. Questo articolo elenca alcune delle opzioni disponibili nei repository con una breve descrizione per ognuna. È anche presente una descrizione delle patch che possono essere applicate al kernel del sistema. L'articolo termina con una panoramica sulla compilazione dei kernel personalizzati con link ai vari metodi.
 

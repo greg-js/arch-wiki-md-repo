@@ -156,7 +156,6 @@ Go to `/etc/netctl` and copy the tuntap example file to the directory:
 Now edit openvpn_tap to create a tap interface. It may look like this:
 
  `/etc/netctl/openvpn_tap` 
-
 ```
 Description='tuntap connection'
 Interface=tap0
@@ -178,7 +177,6 @@ To create the bridge profile, copy the example file:
 Now edit openvpn_bridge. It may look like this:
 
  `/etc/netctl/openvpn_bridge` 
-
 ```
 Description="Bridge connection"
 Interface=br0

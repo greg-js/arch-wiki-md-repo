@@ -1,6 +1,6 @@
 From [GnomeKeyring](https://live.gnome.org/GnomeKeyring/):
 
-	_GNOME Keyring is a collection of components in GNOME that store secrets, passwords, keys, certificates and make them available to applications._
+	*GNOME Keyring is a collection of components in GNOME that store secrets, passwords, keys, certificates and make them available to applications.*
 
 **Note:** As of July 10, 2015, GNOME Keyring does not handle ECDSA[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=641082) and Ed25519[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=723274) keys. You can turn to other [SSH agents](/index.php/SSH_keys#SSH_agents "SSH keys") if you need support for those.
 
@@ -69,7 +69,6 @@ Start the gnome-keyring-daemon from `/etc/pam.d/login`:
 Add `auth optional pam_gnome_keyring.so` at the end of the `auth` section and `session optional pam_gnome_keyring.so auto_start` at the end of the `session` section.
 
  `/etc/pam.d/login` 
-
 ```
 #%PAM-1.0
 
@@ -85,7 +84,6 @@ Add `auth optional pam_gnome_keyring.so` at the end of the `auth` section and `s
 Next, add `password optional pam_gnome_keyring.so` to the end of `/etc/pam.d/passwd`.
 
  `/etc/pam.d/passwd` 
-
 ```
 #%PAM-1.0
 
@@ -105,7 +103,6 @@ Next, add `password optional pam_gnome_keyring.so` to the end of `/etc/pam.d/pas
 Start the gnome-keyring-daemon from [xinitrc](/index.php/Xinitrc "Xinitrc"):
 
  `~/.xinitrc` 
-
 ```
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
@@ -131,7 +128,6 @@ For SDDM, follow the KDM guidelines, but modify `/etc/pam.d/sddm` instead of `/e
 To enable the keyring for applications run through the terminal, such as SSH, add the following to your `~/.bash_profile`, `~/.zshenv`, or similar:
 
  `~/.zshenv` 
-
 ```
 if [ -n "$DESKTOP_SESSION" ];then
     eval $(gnome-keyring-daemon --start)
@@ -223,7 +219,7 @@ $ git config --global credential.helper /usr/lib/git-core/git-credential-gnome-k
 
 ```
 
-Next time you do a _git push_, you are asked to unlock your keyring, if not unlocked already.
+Next time you do a *git push*, you are asked to unlock your keyring, if not unlocked already.
 
 ## Troubleshooting
 
@@ -231,4 +227,4 @@ Next time you do a _git push_, you are asked to unlock your keyring, if not unlo
 
 If you get a password prompt every time you login, and you find that passwords are not saved, you might need to create/set a default keyring.
 
-Ensure that the [seahorse](https://www.archlinux.org/packages/?name=seahorse) package is installed, open it ("Passwords and Keys" in system settings) and select _View_ > _By Keyring_ If there is no keyring in the left column (it will be marked with a lock icon), go to _File_ > _New_ > _Password Keyring_ and give it a name. You will be asked to enter a password. If you do not give the keyring a password it will be unlocked automatically, even when using autologin, but passwords will not be stored securely. Finally, right-click on the keyring you just created and select "Set as default".
+Ensure that the [seahorse](https://www.archlinux.org/packages/?name=seahorse) package is installed, open it ("Passwords and Keys" in system settings) and select *View* > *By Keyring* If there is no keyring in the left column (it will be marked with a lock icon), go to *File* > *New* > *Password Keyring* and give it a name. You will be asked to enter a password. If you do not give the keyring a password it will be unlocked automatically, even when using autologin, but passwords will not be stored securely. Finally, right-click on the keyring you just created and select "Set as default".

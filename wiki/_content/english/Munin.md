@@ -1,6 +1,6 @@
 From the [project web page](http://munin-monitoring.org/):
 
-	_Munin_ the monitoring tool surveys all your computers and remembers what it saw. It presents all the information in graphs through a web interface. Its emphasis is on plug and play capabilities. After completing a installation a high number of monitoring plugins will be playing with no more effort.
+	*Munin* the monitoring tool surveys all your computers and remembers what it saw. It presents all the information in graphs through a web interface. Its emphasis is on plug and play capabilities. After completing a installation a high number of monitoring plugins will be playing with no more effort.
 
 	Using Munin you can easily monitor the performance of your computers, networks, SANs, applications, weather measurements and whatever comes to mind. It makes it easy to determine "what's different today" when a performance problem crops up. It makes it easy to see how you're doing capacity-wise on any resources.
 
@@ -38,9 +38,9 @@ Simply put, Munin allows you to make graphs about system statistics. You can che
 
 ## Installation
 
-_Munin_ relies on a client-server model. The client is _munin-node_, and the server is _munin_ (referred as to "munin-master" in the documentation).
+*Munin* relies on a client-server model. The client is *munin-node*, and the server is *munin* (referred as to "munin-master" in the documentation).
 
-You will only need to install _munin_ on a single machine, but _munin-node_ will need to be installed on all machines you wish to monitor. This article will focus on a single-machine installation. Further documentation may be found on the [Munin documentation wiki](http://munin-monitoring.org/wiki/Documentation).
+You will only need to install *munin* on a single machine, but *munin-node* will need to be installed on all machines you wish to monitor. This article will focus on a single-machine installation. Further documentation may be found on the [Munin documentation wiki](http://munin-monitoring.org/wiki/Documentation).
 
 ### munin and munin-node
 
@@ -58,10 +58,9 @@ Or one of the other servers found in the [web server](/index.php/Category:Web_se
 
 ### IPv6
 
-For IPv6 support on _munin-node_, using:
+For IPv6 support on *munin-node*, using:
 
  `/etc/munin/munin-node.conf` 
-
 ```
 host :::1
 
@@ -76,7 +75,7 @@ Install:
 
 ### Daemon
 
-[Enable](/index.php/Enable "Enable") the `munin.service`, so _Munin_ will be started at boot.
+[Enable](/index.php/Enable "Enable") the `munin.service`, so *Munin* will be started at boot.
 
 ### Plugins
 
@@ -96,7 +95,7 @@ If there is a suggestion for a plugin you want to use, follow that suggestion an
 
 ### Directories
 
-Create a directory where the _munin-master_ will write the generated HTML and graph images. The munin user must have write permission to this directory.
+Create a directory where the *munin-master* will write the generated HTML and graph images. The munin user must have write permission to this directory.
 
 The following example uses `/srv/http/munin`, so the generated output can be viewed at [http://localhost/munin/](http://localhost/munin/), provided that a web server is installed and running:
 
@@ -115,7 +114,7 @@ htmldir /srv/http/munin
 
 ### Customization
 
-Before running munin, you might want to setup the hostname of your system. In `/etc/munin/munin.conf`, the default hostname is `myhostname`. This can be altered to any preferred hostname. The hostname will be used to group and name the `.rrd` files in `/var/lib/munin` and further, used to group the html files and graphs in your selected _munin-master_ directory.
+Before running munin, you might want to setup the hostname of your system. In `/etc/munin/munin.conf`, the default hostname is `myhostname`. This can be altered to any preferred hostname. The hostname will be used to group and name the `.rrd` files in `/var/lib/munin` and further, used to group the html files and graphs in your selected *munin-master* directory.
 
 ### Cron
 
@@ -126,10 +125,9 @@ Run the following to have Munin collect data and update the generated HTML and g
 
 ```
 
-Configure the email server to send mails to the _munin_ user. If using postfix, add the following:
+Configure the email server to send mails to the *munin* user. If using postfix, add the following:
 
  `/etc/postfix/aliases` 
-
 ```
 munin:    root
 
@@ -149,7 +147,6 @@ Instead of a cron job a systemd timer can be used.
 This needs a service unit configuration:
 
  `/etc/systemd/system/munin-cron.service` 
-
 ```
 [Unit]
 Description=Survey monitored computers
@@ -163,7 +160,6 @@ ExecStart=/usr/bin/munin-cron
 And a timer unit configuration:
 
  `/etc/systemd/system/munin-cron.timer` 
-
 ```
 [Unit]
 Description=Survey monitored computers every five minutes
@@ -229,14 +225,14 @@ Basically all plugins are added in the following manner (although there are exce
 Download a plugin, then copy or move it to `/usr/lib/munin/plugins`:
 
 ```
-# cp _plugin_ /usr/lib/munin/plugins/
+# cp *plugin* /usr/lib/munin/plugins/
 
 ```
 
 Then link the plugin to `/etc/munin/plugins`:
 
 ```
-# ln -s /usr/lib/munin/plugins/_plugin_ /etc/munin/plugins/
+# ln -s /usr/lib/munin/plugins/*plugin* /etc/munin/plugins/
 
 ```
 
@@ -245,7 +241,7 @@ Then link the plugin to `/etc/munin/plugins`:
 Now test your plugin. You do not need to use the full path to the plugin, `munin-run` should be able to figure it out:
 
 ```
-# munin-run _plugin_
+# munin-run *plugin*
 
 ```
 
@@ -256,7 +252,7 @@ And [restart](/index.php/Restart "Restart") `munin-node.servce`. Finally, refres
 If you want to remove a plugin, simply delete the linked file in `/etc/munin/plugins` - there is no need to remove the plugin from `/usr/lib/munin/plugins`.
 
 ```
-# rm /etc/munin/plugins/_plugin_
+# rm /etc/munin/plugins/*plugin*
 
 ```
 
@@ -417,7 +413,6 @@ MariaDB> FLUSH PRIVILEGES;
 To configure Munin to use this new user, create:
 
  `/etc/munin/plugin-conf.d/mysql_` 
-
 ```
 [mysql_*]
      env.mysqlconnection DBI:mysql:mysql;host=127.0.0.1;port=3306
@@ -430,13 +425,11 @@ To configure Munin to use this new user, create:
 To enable monitoring of S.M.A.R.T. data, install the [smartmontools](https://www.archlinux.org/packages/?name=smartmontools) package, and use:
 
  `/etc/munin/plugin-conf.d/munin-node` 
-
 ```
 [smart_*]
     user root
     group disk
 ```
-
 Then create the appropriate symlink for each disk to be monitored. As an example for `sda`: `# ln -s /usr/lib/munin/plugins/smart_ /etc/munin/plugins/smart_**sda**` 
 
 ### lm_sensors

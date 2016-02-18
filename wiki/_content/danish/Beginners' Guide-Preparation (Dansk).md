@@ -24,9 +24,9 @@
 
 Du kan få Arch's officielle installationsmedier [herfra](https://archlinux.org/download/). Den nyeste er 2010.05.
 
-*   Både _core_ og _netinstall_ diskaftrykkene har kun pakker til at installere et **Arch Linux grundsystem**. _Bemærk at grundsystemet ikke indeholder nogen grafisk brugerflade. Det indeholder overvejende GNU værktøjskæden, Linuxkernen, og få ekstra softwarebiblioteker og moduler._
-*   _Core_ aftrykket kan både installere fra CD og fra internettet.
-*   _Netinstall_ aftryk er mindre, og indeholder ingen pakker selv, hele systemet hentes fra internettet.
+*   Både *core* og *netinstall* diskaftrykkene har kun pakker til at installere et **Arch Linux grundsystem**. *Bemærk at grundsystemet ikke indeholder nogen grafisk brugerflade. Det indeholder overvejende GNU værktøjskæden, Linuxkernen, og få ekstra softwarebiblioteker og moduler.*
+*   *Core* aftrykket kan både installere fra CD og fra internettet.
+*   *Netinstall* aftryk er mindre, og indeholder ingen pakker selv, hele systemet hentes fra internettet.
 *   [OSS til Arch64](/index.php?title=Arch64_FAQ_(Dansk)&action=edit&redlink=1 "Arch64 FAQ (Dansk) (page does not exist)") kan hjælpe dig med at vælge mellem i686, x86_64 og dualversionerne.
 *   Glem ikke at hente checksum tekstfilen sammen med din valgte ISO.
 
@@ -49,7 +49,7 @@ I stedet for at skrive opstartsmediet til en skive eller et USB-drev, kan du sta
 
 Brænd ISO-filen til en CD eller DVD med dit foretrukne CD/DVD-brænderdrev og software, og fortsætte med [Boot Arch Linux installationen](#Boot_Arch_Linux_installationen).
 
-**Bemærk:** Kvaliteten af optiske drev, såvel som CD'erne selv, varierer meget. Generelt anbefales det at anvende langsomme brændehastigheder for at opnå pålidelige brændinger; nogle brugere anbefaler hastigheder _**så langsomme som 4x eller 2x**_. Hvis du oplever uforventet opførsel fra CD'en, forsøg da at brænde ved den langsomste hastighed understøttet af dit system.
+**Bemærk:** Kvaliteten af optiske drev, såvel som CD'erne selv, varierer meget. Generelt anbefales det at anvende langsomme brændehastigheder for at opnå pålidelige brændinger; nogle brugere anbefaler hastigheder ***så langsomme som 4x eller 2x***. Hvis du oplever uforventet opførsel fra CD'en, forsøg da at brænde ved den langsomste hastighed understøttet af dit system.
 
 #### Flash-hukommelse eller USB-pen
 
@@ -64,7 +64,7 @@ Denne metode vil virke for enhver slags USB-medie som din BIOS vil lade dig star
 Indsæt en tom eller ligegyldig flashenhed, bestem dens sti, og skriv ISO-filen til enheden med programmet `dd`:
 
 ```
-$ dd if=archlinux-2010.05-_{core|netinstall}_-_{i686|x86_64|dual}_.iso of=/dev/sd_x_
+$ dd if=archlinux-2010.05-*{core|netinstall}*-*{i686|x86_64|dual}*.iso of=/dev/sd*x*
 
 ```
 
@@ -80,16 +80,13 @@ $ dd if=/dev/sdx count=antal_blokke status=noxfer | md5sum
 Den returnerede md5sum skulle matche den til den hentede aftryksfil. Udskriften i konsollen vil typisk være således:
 
  `$ [sudo] dd if=archlinux-2010.05-core-i686.iso of=/dev/sdc #Write .iso to drive` 
-
 ```
  744973+0 records in
  744973+0 records out
  381426176 bytes (381 MB) copied, 106.611 s, 3.6 MB/s
 
 ```
-
  `$ [sudo] dd if=/dev/sdc count=744973 status=noxfer | md5sum #Verify integrity` 
-
 ```
  4850d533ddd343b80507543536258229  -
  744973+0 records in
@@ -122,7 +119,7 @@ Insæt CD'en eller flashdrevet du har forberedt, og boot fra det. Du skal måske
 
 Systemet vil nu indlæses og fremvise en login-prompt. Log ind som root.
 
-Hvis du benytter et Intel chipsæt og din skærm bliver sort i bootprocessen, er det sandsynligvis et problem med _kernel mode setting_ (KMS), eller skærmopsætning i kernen. En mulig løsning er at genstarte, og ved GRUB-menuen, taste <Tab>, og dernæst for enden af linjen med kernen skrive:
+Hvis du benytter et Intel chipsæt og din skærm bliver sort i bootprocessen, er det sandsynligvis et problem med *kernel mode setting* (KMS), eller skærmopsætning i kernen. En mulig løsning er at genstarte, og ved GRUB-menuen, taste <Tab>, og dernæst for enden af linjen med kernen skrive:
 
 ```
 i915.modeset=0
@@ -154,11 +151,11 @@ Hvis du ikke har et tastatur med amerikansk layout, kan du interaktivt vælge di
 eller benytte 'loadkeys' kommandoen:
 
 ```
-# loadkeys _layout_
+# loadkeys *layout*
 
 ```
 
-hvor _layout_ er dit tastaturlayout som f.eks. "`dk`".
+hvor *layout* er dit tastaturlayout som f.eks. "`dk`".
 
 #### Dokumentation
 

@@ -105,7 +105,6 @@ $ ssh-keygen -f ~/.ssh/id_rsa -p
 您可以创建 `~/.ssh/config` 来管理多组密钥对，每一个 SSH 服务器对应一组密钥对。或者，您甚至可以对所有的 SSH 服务器使用同一组密钥对。不过如果您觉得这样不合适，还是编辑配置文件：
 
  `~/.ssh/config` 
-
 ```
 Host SERVERNAME1
   IdentitiesOnly yes
@@ -228,7 +227,6 @@ $ chmod 400 ~/.ssh/authorized_keys
 将公钥上传到 SSH 服务器上之后，您就不再需要输入 SSH 账户密码来登录了。直接使用账户密码登录容易受到暴力破解的攻击。倘若您没有提供 SSH 私钥，默认情况下，SSH 服务器就会让您直接使用密码登录，这就有可能让不法之徒来猜测您的密码，有一定的安全隐患。要禁用这一行为，您需要编辑 SSH 服务器上的 `/etc/ssh/sshd_config`：
 
  `/etc/ssh/sshd_config` 
-
 ```
 PasswordAuthentication no
 ChallengeResponseAuthentication no
@@ -243,25 +241,21 @@ ChallengeResponseAuthentication no
 如果您使用 PAM (Pluggable Authentication Module，插入式验证模块)，编辑下面这几行：
 
  `/etc/ssh/sshd_config` 
-
 ```
 ChallengeResponseAuthentication yes
 AuthenticationMethods publickey,keyboard-interactive:pam
 
 ```
-
  `/etc/pam.d/sshd` 
-
 ```
 #%PAM-1.0
 auth required pam_google_authenticator.so
 
 ```
 
-如果您设置 PAM 仅使用 `pam_google_authenticator.so`，则 `sshd` 则会采用双因素认证，而无需密码。如果双因素认证失败，即使有有效的公钥，_sshd_ 也不允许登录。您可以加上 `nullok` 选项来允许用户使用公钥登录：
+如果您设置 PAM 仅使用 `pam_google_authenticator.so`，则 `sshd` 则会采用双因素认证，而无需密码。如果双因素认证失败，即使有有效的公钥，*sshd* 也不允许登录。您可以加上 `nullok` 选项来允许用户使用公钥登录：
 
  `/etc/pam.d/sshd` 
-
 ```
 #%PAM-1.0
 auth required pam_google_authenticator.so nullok
@@ -363,10 +357,9 @@ alias startx='ssh-agent startx'
 
 {注意|如果您使用 KDE 作为桌面环境，且安装了 [kde-agent](https://www.archlinux.org/packages/?name=kde-agent) 的话，您只需在 `~/.gnupg/gpg-agent.conf` 中设置 `enable-ssh-support`。否则，请继续阅读。}
 
-要使用 GnuPG agent，您首先要启动 _gpg-agent_，并加上 `--enable-ssh-support` 选项。比如，记得给脚本加上可执行权限：
+要使用 GnuPG agent，您首先要启动 *gpg-agent*，并加上 `--enable-ssh-support` 选项。比如，记得给脚本加上可执行权限：
 
  `/etc/profile.d/gpg-agent.sh` 
-
 ```
 #!/bin/sh
 
@@ -385,7 +378,6 @@ fi
 `gpg-agent` 运行起来之后，您就可以使用 `ssh-add` 命令来认证密钥对，正如上文中 `ssh-agent` 做的那样。已认证的密钥对列表保存在 `~/.gnupg/sshcontrol` 文件中。此后，在需要使用您的私钥密码短语是，GnuPG 会显示一个对话框让您输入。您可以通过配置文件 `~/.gnupg/gpg-agent.conf` 来管理您的密码短语缓存。比如，下面这个例子说明如何使用 `gpg-agent` 来缓存您的密钥 3 小时：
 
  `~/.gnupg/gpg-agent.conf` 
-
 ```
   # Cache settings
   default-cache-ttl 10800
@@ -396,9 +388,7 @@ fi
 您还可以在此文件中设置 PIN 输入框 (GTK、QT 或者 ncurses 版本) 等内容。
 
 **注意:** 您必须创建一个 `gpg-agent.conf` 文件，`write-env-file` 变量必须设置好，以便允许 `gpg-agent` 在 SSH 登录过程中的使用。
-
  `~/.gnupg/gpg-agent.conf` 
-
 ```
   # Environment file
   write-env-file /home/username/.gpg-agent-info
@@ -417,7 +407,6 @@ fi
 要使用 `gpg-agent` 作为 SSH agent，您需要 source & export `gpg-agent` 写入 `~/.gpg-agent-info` 文件的环境变量，也就是 `write-env-file` 所指的文件。
 
  `~/.bashrc` 
-
 ```
 ...
 
@@ -438,7 +427,6 @@ fi
 将下列内容加入到 `~/.bash_profile`：
 
  `~/.bash_profile` 
-
 ```
 eval $(keychain --eval --agents ssh -Q --quiet id_ecdsa)
 
@@ -455,7 +443,6 @@ eval $(keychain --eval --agents ssh -Q --quiet id_ecdsa)
 这里我们介绍其中一种不错的方法，以 `root` 身份创建 `/etc/profile.d/keychain.sh`，并添加下列内容：
 
  `/etc/profile.d/keychain.sh` 
-
 ```
 /usr/bin/keychain -Q -q --nogui ~/.ssh/id_ecdsa
 [[ -f $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh
@@ -492,12 +479,12 @@ alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_ecd
 加入您的外壳 rc 文件：
 
 ```
- envoy -t ssh-agent -a _ssh_key_
+ envoy -t ssh-agent -a *ssh_key*
  source <(envoy -p)
 
 ```
 
-如果您的私钥为 `~/.ssh/id_rsa`, `~/.ssh/id_dsa`, `~/.ssh/id_ecdsa`，或者 `~/.ssh/identity`，则不需要 `-a _ssh_key_` 参数。
+如果您的私钥为 `~/.ssh/id_rsa`, `~/.ssh/id_dsa`, `~/.ssh/id_ecdsa`，或者 `~/.ssh/identity`，则不需要 `-a *ssh_key*` 参数。
 
 #### 利用 KDE 电子钱包存储密码短语并和 envoy 配合工作
 
@@ -508,10 +495,9 @@ alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_ecd
 添加一个脚本到 `~/.kde4/Autostart/`，输入以下内容：
 
  `~/.kde4/Autostart/ssh-agent.sh` 
-
 ```
 #!/bin/sh
-envoy -t ssh-agent -a _ssh_key_
+envoy -t ssh-agent -a *ssh_key*
 
 ```
 
@@ -525,7 +511,6 @@ $ chmod +x ~/.kde4/Autostart/ssh-agent.sh
 添加一个脚本到 `~/.kde4/env/`，加入以下内容：
 
  `~/.kde4/env/ssh-agent.sh` 
-
 ```
 #!/bin/sh
 eval $(envoy -p)
@@ -562,9 +547,7 @@ $ ln -s ../id_rsa
 编辑 `/etc/pam.d/login`，将下面例子中高亮加粗的那几行加进去。请注意配置内容的顺序会影响到登录行为，应当按照例子中的来。
 
 **警告:** PAM 配置丢失会导致系统中所有的用户被锁定。因此，您必须在保存任何 PAM 配置并生效之前，做好配置文件的备份，准备好一份 live CD，以防万一用户被锁定时还有办法恢复原样。您可以参阅 IBM 的 [这篇文章](http://www.ibm.com/developerworks/linux/library/l-pam/index.html) 详细了解一下 PAM 的配置。
-
  `/etc/pam.d/login` 
-
 ```
 #%PAM-1.0
 
@@ -634,8 +617,10 @@ KDM 并不能直接启动 `ssh-agent`，KDM 要用 [kde-agent](https://www.archl
 为了让 KDE 启动时启动 `ssh-agent`，您可以创建一个脚本用于登录时启动 `ssh-agent`，还有一个脚本用于注销时杀死进程：
 
 ```
-echo -e '#!/bin/sh\n[ -n "$SSH_AGENT_PID" ] || eval "$(ssh-agent -s)"' > ~/.kde4/env/ssh-agent-startup.sh
-echo -e '#!/bin/sh\n[ -z "$SSH_AGENT_PID" ] || eval "$(ssh-agent -k)"' > ~/.kde4/shutdown/ssh-agent-shutdown.sh
+echo -e '#!/bin/sh
+[ -n "$SSH_AGENT_PID" ] || eval "$(ssh-agent -s)"' > ~/.kde4/env/ssh-agent-startup.sh
+echo -e '#!/bin/sh
+[ -z "$SSH_AGENT_PID" ] || eval "$(ssh-agent -k)"' > ~/.kde4/shutdown/ssh-agent-shutdown.sh
 chmod 755 ~/.kde4/env/ssh-agent-startup.sh ~/.kde4/shutdown/ssh-agent-shutdown.sh
 
 ```

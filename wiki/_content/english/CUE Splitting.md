@@ -18,14 +18,14 @@ To tag audio files you need extra tools, such as [cuetools](https://www.archlinu
 
 ## Splitting
 
-To split an audio file accompanied by a CUE sheet into tracks in _.wav_ format, use the _shnsplit_ command:
+To split an audio file accompanied by a CUE sheet into tracks in *.wav* format, use the *shnsplit* command:
 
 ```
 $ shnsplit -f file.cue file.ape
 
 ```
 
-To split _.bin_ file with CUE sheet into tracks in _.wav_ format:
+To split *.bin* file with CUE sheet into tracks in *.wav* format:
 
 ```
 $ bchunk -v -w file.bin file.cue out
@@ -39,7 +39,7 @@ $ shnsplit -f file.cue -t "%n %t" file.ape
 
 ```
 
-_shnsplit_ supports on-the-fly encoding to many lossless formats (see `shntool(1)` for the full list). For example to encode split tracks in the FLAC format:
+*shnsplit* supports on-the-fly encoding to many lossless formats (see `shntool(1)` for the full list). For example to encode split tracks in the FLAC format:
 
 ```
 $ shnsplit -f file.cue -o flac file.ape
@@ -53,7 +53,7 @@ $ shnsplit -f file.cue -o "flac flac -s -8 -o %f -" file.ape
 
 ```
 
-The formats supported by _shntool_ and default encoder options can be view with the `shntool -a` command. If the desired format is not supported by _shntool_, it can be specified manually. For example, to encode split tracks directly into the Ogg Vorbis format:
+The formats supported by *shntool* and default encoder options can be view with the `shntool -a` command. If the desired format is not supported by *shntool*, it can be specified manually. For example, to encode split tracks directly into the Ogg Vorbis format:
 
 ```
 $ shnsplit -f file.cue -o "cust ext=ogg oggenc -b 192 -o %f -" file.ape
@@ -62,7 +62,7 @@ $ shnsplit -f file.cue -o "cust ext=ogg oggenc -b 192 -o %f -" file.ape
 
 ## Tagging
 
-You will need [cuetools](https://www.archlinux.org/packages/?name=cuetools) to use _cuetag.sh_.
+You will need [cuetools](https://www.archlinux.org/packages/?name=cuetools) to use *cuetag.sh*.
 
 To copy the metadata from a CUE sheet to the split files you can use:
 
@@ -78,7 +78,7 @@ $ cuetag.sh file.cue track01.mp3 track02.mp3 track03.mp3 track04.mp3
 
 ```
 
-_cuetag.sh_ supports id3 tags for _.mp3_ files and vorbis tags for _.ogg_ and _.flac_ files.
+*cuetag.sh* supports id3 tags for *.mp3* files and vorbis tags for *.ogg* and *.flac* files.
 
 ## Alternatives
 

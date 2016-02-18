@@ -385,7 +385,7 @@ Instead of using AppArmor or TOMOYO, one may prefer to add a special user. This 
 
 An AUR package, [skype-restricted](https://aur.archlinux.org/packages/skype-restricted/) exists that will run skype as a separate user ("_skype") cleanly. It is heavily based on the information in this section. Alternatively, one can use [skype-secure](https://aur.archlinux.org/packages/skype-secure/), a package that works similarly to skype-restricted, but wraps around already installed Skype binary.
 
-Optionally, we first add a default group for the skype user. The security advantage in keeping the _skype_ user in its separate group is that it can be restricted from accessing places other users are allowed in.
+Optionally, we first add a default group for the skype user. The security advantage in keeping the *skype* user in its separate group is that it can be restricted from accessing places other users are allowed in.
 
 ```
 # groupadd skype
@@ -469,7 +469,7 @@ When one clicks URL in chat window, skype execute [xdg-open](/index.php/Xdg-open
 
 *   [Sudo](/index.php/Sudo "Sudo") should be installed and properly configured.
 *   Current example uses [firefox](/index.php/Firefox "Firefox") as preferred browser.
-*   Do not forget to adjust _your_user_ to proper value.
+*   Do not forget to adjust *your_user* to proper value.
 
 Log in as skype user:
 
@@ -512,11 +512,11 @@ $ xdg-mime default firefox-sudo.desktop x-scheme-handler/ftp
 
 ```
 
-Create `/home/skype/firefox-wrapper` script (adjust _your_user_):
+Create `/home/skype/firefox-wrapper` script (adjust *your_user*):
 
 ```
 #!/bin/bash
-DISPLAY=:0.0 HOME=/home/_your_user_ sudo -u _your_user_ /usr/lib/firefox/firefox -new-tab $1
+DISPLAY=:0.0 HOME=/home/*your_user* sudo -u *your_user* /usr/lib/firefox/firefox -new-tab $1
 
 ```
 
@@ -534,10 +534,10 @@ Now as root user open `/etc/sudoers`:
 
 ```
 
-And add permission for skype user to exec user's browser (adjust _your_user_):
+And add permission for skype user to exec user's browser (adjust *your_user*):
 
 ```
-skype ALL=(_your_user_) NOPASSWD: /usr/lib/firefox/firefox -new-tab http*, /usr/lib/firefox/firefox -new-tab ftp*
+skype ALL=(*your_user*) NOPASSWD: /usr/lib/firefox/firefox -new-tab http*, /usr/lib/firefox/firefox -new-tab ftp*
 
 ```
 
@@ -668,11 +668,11 @@ LD_PRELOAD=/usr/lib32/libv4l/v4l1compat.so skype
 To make it running from DE menus and independent of Skype updates, you can add alias (e.g. in `~/.bashrc`):
 
 ```
-alias skype='LD_PRELOAD=/usr/_libxx_/libv4l/v4l1compat.so skype'
+alias skype='LD_PRELOAD=/usr/*libxx*/libv4l/v4l1compat.so skype'
 
 ```
 
-where _libxx_ should be edited as appropriate.
+where *libxx* should be edited as appropriate.
 
 ### No video with Compiz
 
@@ -687,16 +687,16 @@ $ XLIB_SKIP_ARGB_VISUALS=1 skype
 
 Recent versions of Skype allow you to change the theme via the Options menu. However, selecting the GTK+ option may not work properly. This is probably because you do not have a 32-bit theme engine installed. Try to find the engine your theme uses in the multilib repository or the [AUR](/index.php/AUR "AUR"). If you have no idea which engine your theme is using, the easiest fix is to install [lib32-gtk-engines](https://aur.archlinux.org/packages/lib32-gtk-engines/). This does however contain quite a lot of packages, so the best would be to find and install only the needed package.
 
-**Note:** You may not have to install [lib32-gtk-engines](https://aur.archlinux.org/packages/lib32-gtk-engines/). First try if the following steps work for you if you only install _lib32-gtk2_ and a GTK+2 theme respectively. See also the [forums](https://bbs.archlinux.org/viewtopic.php?pid=1200975#p1200975).
+**Note:** You may not have to install [lib32-gtk-engines](https://aur.archlinux.org/packages/lib32-gtk-engines/). First try if the following steps work for you if you only install *lib32-gtk2* and a GTK+2 theme respectively. See also the [forums](https://bbs.archlinux.org/viewtopic.php?pid=1200975#p1200975).
 
 Once installed, it will still not work unless you have a 32-bit version of GConf installed. You could build and install [lib32-gconf](https://aur.archlinux.org/packages/lib32-gconf/) if desired, but there is an easier workaround. First, create or edit `~/.gtkrc-2.0` so that it contains the following line:
 
 ```
-$ gtk-theme-name = "_My theme_"
+$ gtk-theme-name = "*My theme*"
 
 ```
 
-Replace _My theme by_ the name of your theme, but leave the quotes. Second, run Skype like this:
+Replace *My theme by* the name of your theme, but leave the quotes. Second, run Skype like this:
 
 ```
 $ export GTK2_RC_FILES="/etc/gtk-2.0/gtkrc:$HOME/.gtkrc-2.0"
@@ -731,7 +731,7 @@ export XLIB_SKIP_ARGB_VISUALS=1 && skype
 
 ```
 
-Another possible workaround is to preload _v4l1compat.so_:
+Another possible workaround is to preload *v4l1compat.so*:
 
 ```
 LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so skype
@@ -849,6 +849,6 @@ $ rm ~/.Skype/shared_dynco/dc.lock
 If you get a white empty window when launching skype, try to autologin like this instead:
 
 ```
-$ echo _username_ _password_ | skype --pipelogin
+$ echo *username* *password* | skype --pipelogin
 
 ```

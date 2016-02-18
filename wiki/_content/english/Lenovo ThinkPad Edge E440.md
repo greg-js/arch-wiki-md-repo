@@ -22,10 +22,10 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [2.4 Audio](#Audio)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Freezing on resume](#Freezing_on_resume)
-    *   [3.2 With Fn and Ctrl_L keys swapped, Ctrl_L+s hotkey is mapped into Alt_L](#With_Fn_and_Ctrl_L_keys_swapped.2C_Ctrl_L.2Bs_hotkey_is_mapped_into_Alt_L)
+    *   [3.2 With Fn and Ctrl_L keys swapped, Ctrl_L+s hotkey is mapped to Alt_L](#With_Fn_and_Ctrl_L_keys_swapped.2C_Ctrl_L.2Bs_hotkey_is_mapped_to_Alt_L)
     *   [3.3 Blinking power LED after resume from suspend](#Blinking_power_LED_after_resume_from_suspend)
 *   [4 BIOS Update](#BIOS_Update)
-*   [5 lspci](#lspci)
+*   [5 Tested configurations](#Tested_configurations_2)
 
 ## Hardware
 
@@ -80,11 +80,11 @@ Simple solution is to disable USB 3.0 in BIOS. Better solution is to update BIOS
 
 Even with new BIOS version (2.18), hibernation still does not fully work. Use the LTS kernel to fix issues.
 
-### With Fn and Ctrl_L keys swapped, Ctrl_L+s hotkey is mapped into Alt_L
+### With Fn and Ctrl_L keys swapped, Ctrl_L+s hotkey is mapped to Alt_L
 
 [Lenovo Forums topic](http://forums.lenovo.com/t5/ThinkPad-Edge-S-series/ThinkPad-E440-Ctrl-L-S-maps-as-Alt-L/td-p/1772489)
 
-Issue can be meet on notebook with BIOS older than v2.16. Problem can be solved with BIOS update up to v2.16 or newer. [BIOS v2.16 update changelog](http://download.lenovo.com/ibmdl/pub/pc/pccbbs/mobiles/j9uj16ww.txt).
+Issue is present on notebooks with BIOS versions older than v2.16. Problem can be solved with a BIOS update up to v2.16 or newer. [BIOS v2.16 update changelog](http://download.lenovo.com/ibmdl/pub/pc/pccbbs/mobiles/j9uj16ww.txt).
 
 ### Blinking power LED after resume from suspend
 
@@ -99,7 +99,7 @@ For automation, create a script depending on the used [power management](/index.
 
 ## BIOS Update
 
-Steps below were tested by contributors of this page and work perfectly. **Always, do it at your own risk!**
+Steps below were tested by contributors of this page and work perfectly. **However, do the following procedure at your own risk!**
 
 To update the BIOS from a USB drive, follow these steps (alternatively, you can download the iso, burn it to a CD, and then boot from the CD):
 
@@ -107,12 +107,14 @@ To update the BIOS from a USB drive, follow these steps (alternatively, you can 
 2.  Install the [geteltorito](https://aur.archlinux.org/packages/geteltorito/) utility.
 3.  Convert ISO image (change 'XX' to match the filename of downloaded .iso): `geteltorito.pl -o bios.img j9ujXXwd.iso` 
 4.  Write the image to the USB drive. Suppose, your drive is `/dev/sdb`. **Warning:** all information on USB stick will be lost!
-    1.  Unmount the drive: `sudo umount /dev/sdb` 
+    1.  Unmount all partitions associated to the drive (perform for every existing 'X'): `sudo umount /dev/sdbX` 
     2.  Write image: `sudo dd if=bios.img of=/dev/sdb bs=1M` 
 5.  Reboot you PC and boot from your USB drive.
 6.  **FOLLOW ALL INSTRUCTIONS** written in the update utility!
 
-## lspci
+## Tested configurations
+
+Below is the list of the tested configurations with corresponding **lspci** outputs.
 
 **Note:** Model: E440 20C500FBRT
 

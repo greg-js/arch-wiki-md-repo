@@ -1,4 +1,4 @@
-Arch Linux su di un server ? E perchè no ? La sua semplicità di gestione unita al fatto che _solo i servizi necessari_ saranno installati e configurati, secondo me fanno di Arch una ottima soluzione lato server. In questa serie di articoli installeremo e configureremo un piccolo (ma neanche tanto) server tuttofare basandoci sulla nostra ditribuzione preferita. Mettiamoci comodi ed iniziamo con le operazioni preliminari.
+Arch Linux su di un server ? E perchè no ? La sua semplicità di gestione unita al fatto che *solo i servizi necessari* saranno installati e configurati, secondo me fanno di Arch una ottima soluzione lato server. In questa serie di articoli installeremo e configureremo un piccolo (ma neanche tanto) server tuttofare basandoci sulla nostra ditribuzione preferita. Mettiamoci comodi ed iniziamo con le operazioni preliminari.
 
 ## Contents
 
@@ -32,11 +32,11 @@ Iniziamo la configurazione del nostro Arch Linux SBS con delle operazioni prelim
 *   eth1 sarà la scheda ethernet collegata a internet (o alla WAN). Avrà un indirizzo IP statico (se disponibile) o assegnato dal provider con DHCP. Attenzione: se volessi configurare la mia box come server VPN un indirizzo statico è consigliato.
 *   192.168.20.0/24 è la mia rete interna
 *   192.168.20.1 è l'indirizzo IP statico assegnato a eth0
-*   il nostro server si chiama _archi_ (che fantasia!)
-*   il nostro dominio sarà _mede.it_
-*   il nostro utente amministrativo sarà _admin_
+*   il nostro server si chiama *archi* (che fantasia!)
+*   il nostro dominio sarà *mede.it*
+*   il nostro utente amministrativo sarà *admin*
 
-Iniziamo a preparare il nostro _**archi.mede.it** _ :)
+Iniziamo a preparare il nostro ***archi.mede.it** * :)
 
 # Preparare il sistema
 
@@ -53,14 +53,14 @@ pacman -Syu
 
 #### cpan4pacman
 
-Questo non è che è indispensabile, ma molto utile sì. Questo pacchetto fà qualcosa di simpatico: _scarica i moduli perl che gli indichiamo da CPAM e li trasforma in pacchetti per Arch_. Il che, ripeto, non è che sia proprio indispensabile, ma molto utile per mantenere solo software pacchettizzato sulla nostra box questo sì.
+Questo non è che è indispensabile, ma molto utile sì. Questo pacchetto fà qualcosa di simpatico: *scarica i moduli perl che gli indichiamo da CPAM e li trasforma in pacchetti per Arch*. Il che, ripeto, non è che sia proprio indispensabile, ma molto utile per mantenere solo software pacchettizzato sulla nostra box questo sì.
 
 ```
 pacman -S perl-cpanplus-pacman
 
 ```
 
-Appena finito di installare dobbiamo aggiornare il nostro albero _ABS_ :
+Appena finito di installare dobbiamo aggiornare il nostro albero *ABS* :
 
 ```
 pacman -S cvsup abs
@@ -213,7 +213,7 @@ DAEMONS=(... ... ... ... ... sshd ... ... ...)
 
 ## Configurazione schede di rete
 
-Anche se non c'entra con OpenSSH, preparamo le schede di rete con la configurazione che ci servirà: editiamo ancora una volta il nostro /etc/rc.conf e nella sezione _network config_ impostiamo gli indirizzi IP. Ne nostro esempio per la rete interna connessa a eth0 la classe C completa :
+Anche se non c'entra con OpenSSH, preparamo le schede di rete con la configurazione che ci servirà: editiamo ancora una volta il nostro /etc/rc.conf e nella sezione *network config* impostiamo gli indirizzi IP. Ne nostro esempio per la rete interna connessa a eth0 la classe C completa :
 
 *   network address : 192.168.20.0
 *   gateway : 192.168.20.1
@@ -265,7 +265,7 @@ Con sudo l'amministratore del sistema può assegnare privilegi particolari a qua
 
 ## Creazione di un utente amministrativo
 
-A me piacciono i sistemi _"rootless"_, cioè privi dell' utente _"root"_ che tanti problemi di sicurezza può causare. Quindi creiamo un utente amministrativo con una solida password. In seguito a questo utente assegneremo privilegi particolari per poter disabilitare root e amministrare il sistema. Siccome sono a corto di idee chiamo questo utente "admin"
+A me piacciono i sistemi *"rootless"*, cioè privi dell' utente *"root"* che tanti problemi di sicurezza può causare. Quindi creiamo un utente amministrativo con una solida password. In seguito a questo utente assegneremo privilegi particolari per poter disabilitare root e amministrare il sistema. Siccome sono a corto di idee chiamo questo utente "admin"
 
 ```
 adduser admin

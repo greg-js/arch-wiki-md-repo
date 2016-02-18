@@ -1,4 +1,4 @@
-Un [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_type) "wikipedia:X display manager (program type)"), detto anche login manager, è solitamente un'interfaccia grafica che viene visualizzata alla fine del processo di boot, al posto della shell di default. Esistono diverse implementazioni di display managers, così come sono disponibili diversi [ambienti desktop](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)") e [gestori di finestre](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)"). Solitamente è possibile, entro certi limiti, personalizzare il loro aspetto.
+Un [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_type) e [gestori di finestre](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)"). Solitamente è possibile, entro certi limiti, personalizzare il loro aspetto.
 
 ## Contents
 
@@ -81,7 +81,7 @@ Il comando di cui sopra dovrebbe funzionare senza problemi. Se così non fosse, 
 
  `# ls -l /etc/systemd/system/default.target`  `/etc/systemd/system/default.target -> /usr/lib/systemd/system/graphical.target` 
 
-Si elimini semplicemente il link simbolico e _systemd_ utilizzerà il proprio `default.target` di default (nella fattispecie, `graphical.target`)
+Si elimini semplicemente il link simbolico e *systemd* utilizzerà il proprio `default.target` di default (nella fattispecie, `graphical.target`)
 
 ```
 # rm /etc/systemd/system/default.target
@@ -123,7 +123,6 @@ Type=XSession
 È possibile avviare applicazioni senza decorazioni o gestori di finestre attivi. ad esempio, per lanciare [google-chrome](https://aur.archlinux.org/packages/google-chrome/), si crei un file `web-browser.desktop` nella directory `/usr/share/xsessions`, in questo modo:
 
  `/usr/share/xsessions/web-browser.desktop` 
-
 ```
 [Desktop Entry]
 Encoding=UTF-8
@@ -151,11 +150,11 @@ Per i Display Manager che utilizzano [AccountsService](http://freedesktop.org/wi
 
 ```
 [User]
-Language=_locale_scelto_
+Language=*locale_scelto*
 
 ```
 
-Dove _locale_scelto_ è un valore come `it_IT.UTF-8"`.
+Dove *locale_scelto* è un valore come `it_IT.UTF-8"`.
 
 Si riavvii il Display Manager in uso per rendere effettive le modifiche.
 
@@ -163,7 +162,7 @@ Si riavvii il Display Manager in uso per rendere effettive le modifiche.
 
 ### Incompatibilità con systemd
 
-_Display Manager colpiti: Entrance, MDM._
+*Display Manager colpiti: Entrance, MDM.*
 
 Alcuni display manager non sono pienamente compatibili con systemd, dal momento che riutilizzano la sessione di PAM. Questo comportamento causa diversi problemi come:
 

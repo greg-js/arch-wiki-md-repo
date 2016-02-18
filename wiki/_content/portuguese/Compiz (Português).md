@@ -32,14 +32,14 @@ Após [habilitar o repositório no arquivo /etc/pacman.conf](/index.php/Pacman#R
 ### Pacotes GTK
 
 ```
-<tt># pacman -S compiz-fusion-_**gtk**_</tt>
+<tt># pacman -S compiz-fusion-***gtk***</tt>
 
 ```
 
 ### Pacotes KDE
 
 ```
-<tt># pacman -S compiz-fusion-_**kde**_</tt>
+<tt># pacman -S compiz-fusion-***kde***</tt>
 
 ```
 
@@ -107,7 +107,7 @@ Crie um link do fusion-icon na pasta $HOME/.kde/Autostart:
 ##### Método 2 = Manualmente criar um arquivo de inicialização automática
 
 ```
-<tt>$ kate $HOME/.kde/Autostart/compiz.desktop _OU_ $ nano $HOME/.kde/Autostart/compiz.desktop
+<tt>$ kate $HOME/.kde/Autostart/compiz.desktop *OU* $ nano $HOME/.kde/Autostart/compiz.desktop
 [Desktop Entry]
 Encoding=UTF-8
 Exec=compiz --replace ccp

@@ -30,53 +30,53 @@ De standaard mappen structuur van Arch Linux is als volgt:
 (Items die **vet** zijn afgedrukt worden automatisch gemaakt.)
 
 *   root partitie
-    *   bin — _syteem utilities_
-    *   boot — _kernel boot images en configuratie_
-    *   **dev** — _apparaten_
-    *   etc — _systeem configuratie bestanden_
-        *   rc.d — _daemon start/stop scripts_
-        *   conf.d — _daemon configuratie_
-        *   profile.d — _globale shell configuratie_
-    *   home — _persoonlijke informatie van gebruikers_
+    *   bin — *syteem utilities*
+    *   boot — *kernel boot images en configuratie*
+    *   **dev** — *apparaten*
+    *   etc — *systeem configuratie bestanden*
+        *   rc.d — *daemon start/stop scripts*
+        *   conf.d — *daemon configuratie*
+        *   profile.d — *globale shell configuratie*
+    *   home — *persoonlijke informatie van gebruikers*
     *   lib
-        *   firmware — _firmware voor kernel modules_
-        *   modules — _kernel modules_
-        *   security — _authencatie modules_
-        *   tls — _glibc modules_
-        *   udev — _udev scripts_
-    *   mnt — _gemounte media_
-    *   opt — _grote groepen applicaties_
-    *   **proc** — _process informatie_
-    *   root — _root's persoonlijke bestanden_
-    *   sbin — _systeem utilities (alleen toegang voor root)_
-    *   **sys** — _system informatie_
-    *   **tmp** — _tijdelijke bestanden_
+        *   firmware — *firmware voor kernel modules*
+        *   modules — *kernel modules*
+        *   security — *authencatie modules*
+        *   tls — *glibc modules*
+        *   udev — *udev scripts*
+    *   mnt — *gemounte media*
+    *   opt — *grote groepen applicaties*
+    *   **proc** — *process informatie*
+    *   root — *root's persoonlijke bestanden*
+    *   sbin — *systeem utilities (alleen toegang voor root)*
+    *   **sys** — *system informatie*
+    *   **tmp** — *tijdelijke bestanden*
     *   usr
-        *   bin — _uitvoerbare applicaties_
-        *   include — _applicatie headers_
-        *   lib — _applicatie bibliotheken_
-        *   man — _man pages_
-        *   sbin — _uitvoerbare applicaties (alleen toegang voor root)_
-        *   src — _kernel broncode_
-        *   share — _gedeelde bestanden voor applicaties_
+        *   bin — *uitvoerbare applicaties*
+        *   include — *applicatie headers*
+        *   lib — *applicatie bibliotheken*
+        *   man — *man pages*
+        *   sbin — *uitvoerbare applicaties (alleen toegang voor root)*
+        *   src — *kernel broncode*
+        *   share — *gedeelde bestanden voor applicaties*
     *   var
-        *   abs — _Arch ABS bestanden_
-        *   cache — _tijdelijke opslag (cache bestanden)_
-            *   pacman — _pacman cache van pakketten en broncode-bestanden_
-        *   lib — _informatiedatabase_
-            *   pacman — _pacman repository databases_
-        *   log — _log bestanden_
-        *   spool — _inkomende mail_
+        *   abs — *Arch ABS bestanden*
+        *   cache — *tijdelijke opslag (cache bestanden)*
+            *   pacman — *pacman cache van pakketten en broncode-bestanden*
+        *   lib — *informatiedatabase*
+            *   pacman — *pacman repository databases*
+        *   log — *log bestanden*
+        *   spool — *inkomende mail*
 
 ### Partitie Layout
 
 Er zijn verschillende manieren om de harde schijf te partitioneren. Dit zijn enkele voorbeelden van gebruikers. **Richtlijnen:**
 
 ```
-*root_partition &mdash; **size** _(filesystem)_
-**partition &mdash; **size** _(filesystem)_
-***sub_partition &mdash; **size** _(filesystem)_
-**partition &mdash; **size** _(filesystem)_
+*root_partition &mdash; **size** *(filesystem)*
+**partition &mdash; **size** *(filesystem)*
+***sub_partition &mdash; **size** *(filesystem)*
+**partition &mdash; **size** *(filesystem)*
 
 Verklaring en details (optioneel)
 
@@ -84,22 +84,22 @@ Verklaring en details (optioneel)
 
 #### Shadowhands's Layout
 
-*   root — **8G** _(ext3)_
-    *   boot — **1G** _(ext3)_
-    *   home — **30G** _(jfs)_
-    *   var — **4G** _(reiserfs)_
-    *   media — **140G** _(ext3)_
+*   root — **8G** *(ext3)*
+    *   boot — **1G** *(ext3)*
+    *   home — **30G** *(jfs)*
+    *   var — **4G** *(reiserfs)*
+    *   media — **140G** *(ext3)*
 
 Alle ext3 partities gebruiken ook <tt>dir_index</tt> ([Details](https://bbs.archlinux.org/viewtopic.php?p=124880#124880)). Ik verkies ext3 over ext2 voor <tt>/boot<tt> omdat ext3 ook als ext2 gemount kan worden en het biedt betere opties voor data recovery. Ik gebruik reiserfs voor <tt>/var</tt> omdat reiserfs goed is met kleine bestanden (<16K), waaruit <tt>/var</tt> voor het meeste bestaat. Ik sla al mijn muziek, spellen, films etc. in <tt>/media</tt> op, omdat ik mijn home-map alleen gebruik voor persoonlijke bestanden.
 
 #### Romashka's Layout
 
-*   root — **1G** _(ext3)_
-    *   boot — **64M** _(ext3)_
-    *   usr — **8G** _(ext3)_
-    *   var — **4G** _(ext3)_
-    *   home — **32G** _(ext3)_
-    *   storage — **120G** _(xfs)_
+*   root — **1G** *(ext3)*
+    *   boot — **64M** *(ext3)*
+    *   usr — **8G** *(ext3)*
+    *   var — **4G** *(ext3)*
+    *   home — **32G** *(ext3)*
+    *   storage — **120G** *(xfs)*
 
 ## Apparaat namen
 

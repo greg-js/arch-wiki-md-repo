@@ -2,7 +2,7 @@
 
 来自 [项目网站](http://support.google.com/earth/bin/answer.py?hl=en&answer=176145)：:
 
-_"Google Earth可以让您在一个虚拟的地球上随意的旅行并观看卫星影像,地形,地图,3D建筑等元素. 随着Google earth中地理内容的丰富, 您将能探索更真实的世界，并能够飞到您最喜欢的地方, 搜索商户或者只是用于导航。"_
+*"Google Earth可以让您在一个虚拟的地球上随意的旅行并观看卫星影像,地形,地图,3D建筑等元素. 随着Google earth中地理内容的丰富, 您将能探索更真实的世界，并能够飞到您最喜欢的地方, 搜索商户或者只是用于导航。"*
 
 ## Contents
 
@@ -69,7 +69,7 @@ $ rm -f ~/.googleearth/Cache/cookies ~/.googleearth/instance-running-lock
 
 ### 占用的内存过多
 
-您可以在 _Tools > Options > Cache_中调整最大缓存限制来控制内存的使用大小，或者您可以在_3D View_页面中通过降低画面质量来降低内存负荷。
+您可以在 *Tools > Options > Cache*中调整最大缓存限制来控制内存的使用大小，或者您可以在*3D View*页面中通过降低画面质量来降低内存负荷。
 
 ### Panoramio上的照片无法使用
 

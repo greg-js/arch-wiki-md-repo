@@ -89,7 +89,7 @@ Install [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/) or [zfs-dkms-gi
 
 ## Experimenting with ZFS
 
-Users wishing to experiment with ZFS on _virtual block devices_ (known in ZFS terms as VDEVs) which can be simple files like `~/zfs0.img` `~/zfs1.img` `~/zfs2.img` etc. with no possibility of real data loss are encouraged to see the [Experimenting with ZFS](/index.php/Experimenting_with_ZFS "Experimenting with ZFS") article. Common tasks like building a RAIDZ array, purposefully corrupting data and recovering it, snapshotting datasets, etc. are covered.
+Users wishing to experiment with ZFS on *virtual block devices* (known in ZFS terms as VDEVs) which can be simple files like `~/zfs0.img` `~/zfs1.img` `~/zfs2.img` etc. with no possibility of real data loss are encouraged to see the [Experimenting with ZFS](/index.php/Experimenting_with_ZFS "Experimenting with ZFS") article. Common tasks like building a RAIDZ array, purposefully corrupting data and recovering it, snapshotting datasets, etc. are covered.
 
 ## Configuration
 
@@ -217,7 +217,6 @@ In case Advanced Format disks are used which have a native sector size of 4096 b
 If the command is successful, there will be no output. Using the `$ mount` command will show that the pool is mounted. Using `# zpool status` will show that the pool has been created.
 
  `# zpool status` 
-
 ```
   pool: bigdata
  state: ONLINE
@@ -240,7 +239,7 @@ At this point it would be good to reboot the machine to ensure that the ZFS pool
 
 ### GRUB-compatible pool creation
 
-By default, _zpool_ will enable all features on a pool. If `/boot` resides on ZFS and when using [GRUB](/index.php/GRUB "GRUB"), you must only enable read-only, or non-read-only features supported by GRUB (`lz4_compress` as of version 2.02.beta2). Otherwise GRUB will not be able to read the pool.
+By default, *zpool* will enable all features on a pool. If `/boot` resides on ZFS and when using [GRUB](/index.php/GRUB "GRUB"), you must only enable read-only, or non-read-only features supported by GRUB (`lz4_compress` as of version 2.02.beta2). Otherwise GRUB will not be able to read the pool.
 
 ```
  # zpool create -d \
@@ -286,7 +285,7 @@ Atime is enabled by default but for most users, it represents superfluous writes
 
 ```
 
-As an alternative to turning off atime completely, **relatime** is available. This brings the default ext4/xfs atime semantics to ZFS, where access time is only updated if the modified time or changed time changes, or if the existing access time has not been updated within the past 24 hours. It is a compromise between atime=off and atime=on. This property _only_ takes effect if **atime** is **on**:
+As an alternative to turning off atime completely, **relatime** is available. This brings the default ext4/xfs atime semantics to ZFS, where access time is only updated if the modified time or changed time changes, or if the existing access time has not been updated within the past 24 hours. It is a compromise between atime=off and atime=on. This property *only* takes effect if **atime** is **on**:
 
 ```
 # zfs set relatime=on <pool>
@@ -311,7 +310,7 @@ Other options for zfs can be displayed again, using the zfs command:
 
 ZFS, unlike most other file systems, has a variable record size, or what is commonly referred to as a block size. By default, the recordsize on ZFS is 128KiB, which means it will dynamically allocate blocks of any size from 512B to 128KiB depending on the size of file being written. This can often help fragmentation and file access, at the cost that ZFS would have to allocate new 128KiB blocks each time only a few bytes are written to.
 
-Most RDBMSes work in 8KiB-sized blocks by default. Although the block size is tunable for [MySQL/MariaDB](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), and [Oracle](/index.php/Oracle "Oracle"), all three of them use an 8KiB block size _by default_. For both performance concerns and keeping snapshot differences to a minimum (for backup purposes, this is helpful), it is usually desirable to tune ZFS instead to accommodate the databases, using a command such as:
+Most RDBMSes work in 8KiB-sized blocks by default. Although the block size is tunable for [MySQL/MariaDB](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), and [Oracle](/index.php/Oracle "Oracle"), all three of them use an 8KiB block size *by default*. For both performance concerns and keeping snapshot differences to a minimum (for backup purposes, this is helpful), it is usually desirable to tune ZFS instead to accommodate the databases, using a command such as:
 
 ```
 # zfs set recordsize=8K <pool>/postgres
@@ -325,7 +324,7 @@ These RDBMSes also tend to implement their own caching algorithm, often similar 
 
 ```
 
-If your pool has no configured log devices, ZFS reserves space on the pool's data disks for its intent log (the ZIL). ZFS uses this for crash recovery, but databases are often syncing their data files to the file system on their own transaction commits anyway. The end result of this is that ZFS will be committing data **twice** to the data disks, and it can severely impact performance. You can tell ZFS to prefer to not use the ZIL, and in which case, data is only committed to the file system once. Setting this for non-database file systems, or for pools with configured log devices, can actually _negatively_ impact the performance, so beware:
+If your pool has no configured log devices, ZFS reserves space on the pool's data disks for its intent log (the ZIL). ZFS uses this for crash recovery, but databases are often syncing their data files to the file system on their own transaction commits anyway. The end result of this is that ZFS will be committing data **twice** to the data disks, and it can severely impact performance. You can tell ZFS to prefer to not use the ZIL, and in which case, data is only committed to the file system once. Setting this for non-database file systems, or for pools with configured log devices, can actually *negatively* impact the performance, so beware:
 
 ```
 # zfs set logbias=throughput <pool>/postgres
@@ -343,11 +342,11 @@ These can also be done at file system creation time, for example:
 
 ```
 
-Please note: these kinds of tuning parameters are ideal for specialized applications like RDBMSes. You can easily _hurt_ ZFS's performance by setting these on a general-purpose file system such as your /home directory.
+Please note: these kinds of tuning parameters are ideal for specialized applications like RDBMSes. You can easily *hurt* ZFS's performance by setting these on a general-purpose file system such as your /home directory.
 
 ### /tmp
 
-If you would like to use ZFS to store your /tmp directory, which may be useful for storing arbitrarily-large sets of files or simply keeping your RAM free of idle data, you can generally improve performance of certain applications writing to /tmp by disabling file system sync. This causes ZFS to ignore an application's sync requests (eg, with `fsync` or `O_SYNC`) and return immediately. While this has severe application-side data consistency consequences (never disable sync for a database!), files in /tmp are less likely to be important and affected. Please note this does _not_ affect the integrity of ZFS itself, only the possibility that data an application expects on-disk may not have actually been written out following a crash.
+If you would like to use ZFS to store your /tmp directory, which may be useful for storing arbitrarily-large sets of files or simply keeping your RAM free of idle data, you can generally improve performance of certain applications writing to /tmp by disabling file system sync. This causes ZFS to ignore an application's sync requests (eg, with `fsync` or `O_SYNC`) and return immediately. While this has severe application-side data consistency consequences (never disable sync for a database!), files in /tmp are less likely to be important and affected. Please note this does *not* affect the integrity of ZFS itself, only the possibility that data an application expects on-disk may not have actually been written out following a crash.
 
 ```
 # zfs set sync=disabled <pool>/tmp
@@ -428,7 +427,6 @@ ZFS pools should be scrubbed at least once a week. To scrub the pool:
 To do automatic scrubbing once a week, set the following line in the root crontab:
 
  `# crontab -e` 
-
 ```
 ...
 30 19 * * 5 zpool scrub <pool>
@@ -709,7 +707,6 @@ Use zdb to find the ashift of the zpool: `zdb` , then use the `-o` argument to s
 Check the zpool status for confirmation:
 
  `# zpool status -v` 
-
 ```
 pool: bigdata
 state: DEGRADED
@@ -743,7 +740,6 @@ Follow the [Archiso](/index.php/Archiso "Archiso") steps for creating a fully fu
 Enable the [demz-repo-core](/index.php/Unofficial_user_repositories#demz-repo-core "Unofficial user repositories") repository:
 
  `~/archlive/pacman.conf` 
-
 ```
 ...
 [demz-repo-core]
@@ -754,7 +750,6 @@ Server = http://demizerone.com/$repo/$arch
 Add the `archzfs-git` group to the list of packages to be installed:
 
  `~/archlive/packages.both` 
-
 ```
 ...
 archzfs-git
@@ -810,7 +805,7 @@ For example to have an encrypted home: (the two passwords, encryption and login,
 To get into the ZFS filesystem from live system for maintenance, there are two options:
 
 1.  Build custom archiso with ZFS as described in [#Embed the archzfs packages into an archiso](#Embed_the_archzfs_packages_into_an_archiso).
-2.  Boot the latest official archiso and bring up the network. Then enable [demz-repo-archiso](/index.php/Unofficial_user_repositories#demz-repo-archiso "Unofficial user repositories") repository inside the live system as usual, sync the pacman package database and install the _archzfs-git_ package.
+2.  Boot the latest official archiso and bring up the network. Then enable [demz-repo-archiso](/index.php/Unofficial_user_repositories#demz-repo-archiso "Unofficial user repositories") repository inside the live system as usual, sync the pacman package database and install the *archzfs-git* package.
 
 To start the recovery, load the ZFS kernel modules:
 
@@ -876,7 +871,6 @@ Here a bind mount from /mnt/zfspool to /srv/nfs4/music is created. The configura
 See [systemd.mount](http://www.freedesktop.org/software/systemd/man/systemd.mount.html) for more information on how systemd converts fstab into mount unit files with [systemd-fstab-generator](http://www.freedesktop.org/software/systemd/man/systemd-fstab-generator.html).
 
  `/etc/fstab` 
-
 ```
 /mnt/zfspool		/srv/nfs4/music		none	bind,defaults,nofail,x-systemd.requires=zfs-mount.service	0 0
 
@@ -887,7 +881,6 @@ See [systemd.mount](http://www.freedesktop.org/software/systemd/man/systemd.moun
 If it is not possible to bindmount a directory residing on zfs onto another directory using fstab, because the fstab is read before the zfs pool is ready, you can overcome this limitation with a systemd mount unit can be used for the bind mount. The name of the mount unit must be equal to the directory mentioned after "Where", replace slashes with minuses. See [[[2]](http://utcc.utoronto.ca/~cks/space/blog/linux/SystemdAndBindMounts)] and [[[3]](http://utcc.utoronto.ca/~cks/space/blog/linux/SystemdBindMountUnits)] for more details.
 
  `srv-nfs4-music.mount` 
-
 ```
 [Mount]
 What=/mnt/zfspool

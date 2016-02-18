@@ -91,7 +91,7 @@ ConnMan will automatically handle wired connections.
 
 The commands in this section show how to run `connmanctl` in command mode.
 
-To scan the network `connmanctl` accepts simple names called _technologies_. To scan for nearby Wi-Fi networks:
+To scan the network `connmanctl` accepts simple names called *technologies*. To scan for nearby Wi-Fi networks:
 
 ```
 $ connmanctl scan wifi
@@ -101,7 +101,6 @@ $ connmanctl scan wifi
 To list the available networks found after a scan run (example output):
 
  `$ connmanctl services` 
-
 ```
 *AO MyNetwork               wifi_dc85de828967_68756773616d_managed_psk
     OtherNET                wifi_dc85de828967_38303944616e69656c73_managed_psk 
@@ -131,7 +130,7 @@ $ connmanctl
 
 ```
 
-You then proceed almost as above, first scan for any Wi-Fi _technologies_:
+You then proceed almost as above, first scan for any Wi-Fi *technologies*:
 
 ```
 connmanctl> scan wifi
@@ -190,9 +189,9 @@ Settings and profiles are automatically created for networks the user connects t
 
 ### Technologies
 
-Various hardware interfaces are referred to as _Technologies_ by ConnMan.
+Various hardware interfaces are referred to as *Technologies* by ConnMan.
 
-To list available _technologies_ run:
+To list available *technologies* run:
 
 ```
 $ connmanctl technologies
@@ -208,17 +207,17 @@ $ connmanctl technologies | awk '/Type/ { print $NF }'
 
 **Note:** The field `Type = tech_name` provides the technology type used with `connmanctl` commands
 
-To interact with them one must refer to the technology by type. _Technologies_ can be toggled on/off with:
+To interact with them one must refer to the technology by type. *Technologies* can be toggled on/off with:
 
 ```
-$ connmanctl enable _technology_type_
+$ connmanctl enable *technology_type*
 
 ```
 
 and:
 
 ```
-$ connmanctl disable _technology_type_
+$ connmanctl disable *technology_type*
 
 ```
 

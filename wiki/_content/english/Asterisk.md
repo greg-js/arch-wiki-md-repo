@@ -292,7 +292,7 @@ exten => 999,1,MeetMe(1000|M)
 
 Now dial 999 to get into conference 1000\. The enables music on hold if no one is in there. It will automatically go away when someone joins the conference.
 
-**Note:** You _must_ have the zaptel package in order for MeetMe to work. Install it and run `modprobe ztdummy` before running asterisk. This provides digium timing for us without cards so we can utilize TDM.
+**Note:** You *must* have the zaptel package in order for MeetMe to work. Install it and run `modprobe ztdummy` before running asterisk. This provides digium timing for us without cards so we can utilize TDM.
 
 ## Asterisk Console And Softphones
 

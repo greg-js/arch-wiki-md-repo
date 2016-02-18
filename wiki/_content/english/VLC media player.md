@@ -1,6 +1,6 @@
 From the project [home page](http://www.videolan.org/vlc/):
 
-	_VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols._
+	*VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols.*
 
 ## Contents
 
@@ -37,7 +37,7 @@ If you want to play audio CDs, you should also install [libcddb](https://www.arc
 
 ## Language
 
-It seems VLC does not offer an option to change language in its _Preferences_ menu. But you can use the _LANGUAGE=_ prefix. For instance, modify the `/usr/share/applications/vlc.desktop` line:
+It seems VLC does not offer an option to change language in its *Preferences* menu. But you can use the *LANGUAGE=* prefix. For instance, modify the `/usr/share/applications/vlc.desktop` line:
 
 ```
 Exec=/usr/bin/vlc %U
@@ -64,7 +64,7 @@ Installation of skins is simple just download the skin you wish to use and copy 
 
 ```
 
-Open up VLC, click _Tools > Preferences_. When the preferences window opens up you should be in the "Interface" tab
+Open up VLC, click *Tools > Preferences*. When the preferences window opens up you should be in the "Interface" tab
 
 Choose the "Use custom skin" radio button, and browse to the location of the downloaded skin.
 
@@ -81,7 +81,7 @@ Run VLC with the parameter `--extraintf=http` to use both the desktop and web in
 
 ```
 
-Or you can enable this feature in the UI by navigating to _View > Add Interface > Web Interface_.
+Or you can enable this feature in the UI by navigating to *View > Add Interface > Web Interface*.
 
 VLC defaults to port 8080: [http://127.0.0.1:8080](http://127.0.0.1:8080)
 
@@ -105,7 +105,7 @@ sed -i 's|^Mimetype.*$|MimeType=video/dv;video/mpeg;video/x-mpeg;video/msvideo;v
 
 ```
 
-Then in _System Settings > Details > Default Applications_ and on the _Video_ drop-down menu, select _Open VLC media player_.
+Then in *System Settings > Details > Default Applications* and on the *Video* drop-down menu, select *Open VLC media player*.
 
 ### Twitch.tv streaming over VLC
 
@@ -113,7 +113,7 @@ See [Livestreamer#Twitch](/index.php/Livestreamer#Twitch "Livestreamer").
 
 ### Playing streamed content from a local DLNA server
 
-If you find that trying to play uPNP/DLNA content (by going to _View > Playlist > Local Network > Universal Plug'n'Play_), that vlc fails to see the DLNA server on the local network, then make sure that the firewall is not blocking port 1900 UDP. It is essential that this port is open in order to play local uPNP/DLNA content.
+If you find that trying to play uPNP/DLNA content (by going to *View > Playlist > Local Network > Universal Plug'n'Play*), that vlc fails to see the DLNA server on the local network, then make sure that the firewall is not blocking port 1900 UDP. It is essential that this port is open in order to play local uPNP/DLNA content.
 
 ### Control using hotkeys or cli
 
@@ -134,22 +134,21 @@ $ dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.vlc /org/mpris
 
 ### Preventing multiple instances
 
-The default settings for VLC is to open a new instance of the program for each file that is opened. This can be annoying if you are using VLC for something like playing your music collection. You can disable this in _Tools > Preferences > Interface > Instances > Allow only one instance_. Optionally. tick _Enqueue files when in one instance mode_ which keeps current file playing and adds any newly opened files to the current playlist.
+The default settings for VLC is to open a new instance of the program for each file that is opened. This can be annoying if you are using VLC for something like playing your music collection. You can disable this in *Tools > Preferences > Interface > Instances > Allow only one instance*. Optionally. tick *Enqueue files when in one instance mode* which keeps current file playing and adds any newly opened files to the current playlist.
 
 ### Hardware acceleration support
 
-To enable hardware acceleration since version 2.1.x: _Tools > Preferences > Input & Codecs_, then choose under _Hardware-accelerated decoding_ the suitable item, e.g. `Video Acceleration (VA) API` or `Video Decode and Presentation API for Unix (VDPAU)`.
+To enable hardware acceleration since version 2.1.x: *Tools > Preferences > Input & Codecs*, then choose under *Hardware-accelerated decoding* the suitable item, e.g. `Video Acceleration (VA) API` or `Video Decode and Presentation API for Unix (VDPAU)`.
 
-To enable hardware acceleration in previous versions: _Tools > Preferences > Input & Codecs_, then check `Use GPU accelerated decoding`.
+To enable hardware acceleration in previous versions: *Tools > Preferences > Input & Codecs*, then check `Use GPU accelerated decoding`.
 
 ### systemd service
 
-**Note:** _cvlc_ is the _Console VLC Player_, or VLC without graphical interface.
+**Note:** *cvlc* is the *Console VLC Player*, or VLC without graphical interface.
 
 Change the `User=` parameter.
 
  `/etc/systemd/system/vlc.service` 
-
 ```
 [Unit]
 Description=VideoOnLAN Service
@@ -212,11 +211,11 @@ Failed to open VDPAU backend libvdpau_i965.so: cannot open shared object file: N
 
 ```
 
-In _Tools_, _Preferences_, _Video_ tab (v2.2.0 menu) select "OpenGL video output (experimental)" for _Output_ and, in _Input/Codecs_, "VA-API video decoder via X11/DRM" (both are OK) in _Hardware-accelerated decoding_ (_Codecs_ group).[[1]](https://bugs.archlinux.org/task/44569)
+In *Tools*, *Preferences*, *Video* tab (v2.2.0 menu) select "OpenGL video output (experimental)" for *Output* and, in *Input/Codecs*, "VA-API video decoder via X11/DRM" (both are OK) in *Hardware-accelerated decoding* (*Codecs* group).[[1]](https://bugs.archlinux.org/task/44569)
 
 ### Video output overlaps the desktop, does not scale nor position properly
 
-This happens at least on Intel cards, and a fix that reportedly solves the problem is setting the output in the video settings to _OpenGL GLX (XCB)_ and the _Input/Codecs_ decoding to _VA-API_ (any of them).
+This happens at least on Intel cards, and a fix that reportedly solves the problem is setting the output in the video settings to *OpenGL GLX (XCB)* and the *Input/Codecs* decoding to *VA-API* (any of them).
 
 ### No playback via SFTP of media files names containing spaces
 

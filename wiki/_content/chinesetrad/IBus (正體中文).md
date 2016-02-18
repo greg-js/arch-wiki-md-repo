@@ -47,7 +47,6 @@ $ cd ~/.config/ibus/rime
 在此目錄下建立 `default.custom.yaml`，加入以下：
 
  `default.custom.yaml` 
-
 ```
 patch:
   schema_list:

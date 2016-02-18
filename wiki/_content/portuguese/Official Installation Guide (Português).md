@@ -205,7 +205,7 @@ Quando as correções do modulos forem carregadas e sua placa de rede for listad
 
 Escolha da fonte será habilitada para você escolher as fontes de sua preferência que instalarão os pacotes de seu sistema Arch Linux. Você deve escolher uma fonte situada próxima a sua localidade, para que os arquivos sejam baixados com maior velocidade. Em outros momentos da instalação você poderá alterar a fonte padrão de download de suas fontes.
 
-_*Nota: *_ ftp.archlinux.org é limitada a 50 KB/s.
+**Nota: ** ftp.archlinux.org é limitada a 50 KB/s.
 
 As entradas no menu estão disponíveis apenas na escolha da instalação por FTP. Após a preparação bem sucedida, volte ao menu principal.
 

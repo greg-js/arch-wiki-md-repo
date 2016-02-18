@@ -48,7 +48,6 @@ This will load the `hisax` module for my ELSA Quickstep 1000PCI, being used in G
 Once you have confirmed that your card works with certain settings, you can add the [module](/index.php/Kernel_modules "Kernel modules") to `/etc/modprobe.d/` so it will be loaded at startup:
 
  `/etc/modprobe.d/isdn.conf` 
-
 ```
 alias ippp0 hisax
 options hisax type=18 protocol=2

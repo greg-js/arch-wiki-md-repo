@@ -36,12 +36,11 @@ Plymouth primarily uses to display graphics. Plymouth依靠 [KMS](/index.php/KMS
 把Plymouth添加到`/etc/[mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf")`的HOOKS一行，且"必须"在"base","udev"之后"：
 
  `/etc/mkinitcpio.conf`  `HOOKS="base udev plymouth[...] "` 
-**警告:** 如果你使用 **encrypt** hook[硬盘加密](/index.php/System_Encryption_with_LUKS_for_dm-crypt "System Encryption with LUKS for dm-crypt")，你_必须_ 使用**plymouth-encrypt** 替代以便提示输入TTY 密码
+**警告:** 如果你使用 **encrypt** hook[硬盘加密](/index.php/System_Encryption_with_LUKS_for_dm-crypt "System Encryption with LUKS for dm-crypt")，你*必须* 使用**plymouth-encrypt** 替代以便提示输入TTY 密码
 
 对于早期KMS，需要添加模块到 `/etc/mkinitcpio.conf`中的MODULES 行， [radeon](/index.php/Radeon "Radeon") (ATI显卡), [i915](/index.php/Intel "Intel") (Intel显卡) or [nouveau](/index.php/Nouveau "Nouveau") (nvidia显卡)：
 
  `/etc/mkinitcpio.conf` 
-
 ```
 MODULES="i915"
 **or**
@@ -66,7 +65,6 @@ MODULES="nouveau"
 自0.9.0版 plymouth 在/etc/plymouth/plymouthd.conf有一个新选项
 
  `/etc/plymouth/plymouthd.conf` 
-
 ```
 [Daemon]
 Theme=spinner
@@ -91,7 +89,6 @@ Plymouth自带了一些主题：
 默认选择**spinner**.你可以修改`/etc/plymouth/plymouthd.conf`文件来更改主题, 例如:
 
  `/etc/plymouth/plymouthd.conf` 
-
 ```
 [Daemon]
 Theme=spinner

@@ -19,7 +19,7 @@
 
 ## Configuration
 
-Firejail uses profiles for the applications executed inside of it - you can find the default profiles in /etc/firejail/_application_.profile. Should you require custom profiles for applications not included, or wish to modify the defaults, you may place new rules or copies of the defaults in ~/.config/firejail.
+Firejail uses profiles for the applications executed inside of it - you can find the default profiles in /etc/firejail/*application*.profile. Should you require custom profiles for applications not included, or wish to modify the defaults, you may place new rules or copies of the defaults in ~/.config/firejail.
 
 ### Paths With Spaces
 

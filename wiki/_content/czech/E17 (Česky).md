@@ -56,7 +56,7 @@ pacman -S artwiz-fonts ttf-ms-fonts
 
 *   Pokud potřebujete balíček e17, který ještě není dostupný v repozitáři [community], podívejte se, zda není dostupný v repozitáři [AUR](https://aur.archlinux.org/).
 
-Nyní v souboru **~/.xinitrc** povolte spuštění prostředí _enlightenment_:
+Nyní v souboru **~/.xinitrc** povolte spuštění prostředí *enlightenment*:
 
 ```
 ...
@@ -68,7 +68,7 @@ exec enlightenment_start
 
 ```
 
-Pokud jako přihlašovací manažer chcete použít _entrance_ (náhradou za [KDM](/index.php/KDM "KDM")/[GDM](/index.php/GDM "GDM")), lze to nastavit v souboru:
+Pokud jako přihlašovací manažer chcete použít *entrance* (náhradou za [KDM](/index.php/KDM "KDM")/[GDM](/index.php/GDM "GDM")), lze to nastavit v souboru:
 
 *   **/etc/rc.conf** - přihlašovací manažer bude dostupný pouze po startu systému, nikoliv po stisku kláves CTRL+ALT+BACKSPACE
 
@@ -153,7 +153,7 @@ easy_e17.sh -i
 K instalaci jedné nebo více aplikací z repozitáře E17 svn jednoduše odstraňte jméno programu ze souboru /etc/easy_e17.conf a potom spusťte jako root příkaz (nahraďte jméno a jméno2 jménem programu, který jste odstranili ze souboru easy_e17.conf):
 
 ```
-easy_e17.sh -i --only=_jméno_,_jméno2_
+easy_e17.sh -i --only=*jméno*,*jméno2*
 
 ```
 
@@ -187,7 +187,7 @@ Další dva odstavce jsou **jen doplňující informace**, pokud spěcháte, kli
 
 Nyní probíha spouštění i ověřování uživatelů korektně. Jak jste si všimli, po ověření entrance zmizí a vrátí se zpět. Důvod je ten, že entrance neví, co po ověření spustit. Toto se nastaví pomocí souboru `/etc/X11/Xsession` (lze nastavit během kompilace pomocí ENTRANCE_XSESSION) a pomocí souborů .desktop v adresářích xsessions. Adresáře xsessions, které entrance prochází: `/opt/e17/etc/xsessions/` (lze nastavit během kompilace pomocí ENTRANCE_SESSIONS_DIR), `$XDG_DATA_HOME/xsessions/` a všechny další `xsessions` adresáře ve vašem $XDG_DATA_DIRS.
 
-Entrance umožňuje výběr z více sezení, která jsou definována pomocí souborů .desktop v adresářích xsessions. Po úspěšném ověření uživatele entrance spustí soubor `/etc/X11/Xsession` a jako parametr přidá řetězec podle zvoleného sezení. Pokud jako sezení zvolíte _Default_, je to sekce "default" nebo jen prázdný řetězec, zatímco _Failsafe_ provede sekci "failsafe". Pro ostatní sezení je to řádek _exec_ v souboru .desktop.
+Entrance umožňuje výběr z více sezení, která jsou definována pomocí souborů .desktop v adresářích xsessions. Po úspěšném ověření uživatele entrance spustí soubor `/etc/X11/Xsession` a jako parametr přidá řetězec podle zvoleného sezení. Pokud jako sezení zvolíte *Default*, je to sekce "default" nebo jen prázdný řetězec, zatímco *Failsafe* provede sekci "failsafe". Pro ostatní sezení je to řádek *exec* v souboru .desktop.
 
 Nyní musíme **konfigurovat sezení X11**. Vytvoříme soubor `/etc/X11/Xsession` a nastavíme jej jako spustitelný
 
@@ -200,7 +200,6 @@ chmod +x /etc/X11/Xsession  # toto je důležité!
 Lze použít modifikovanou verzi skriptu Xsession pro KDM (základní verze je v [gentoo bug trackeru](http://bugs.gentoo.org/show_bug.cgi?id=301051)):
 
  `/etc/X11/Xsession` 
-
 ```
  #! /bin/sh
  # Xsession - run as user
@@ -281,7 +280,7 @@ Lze použít modifikovanou verzi skriptu Xsession pro KDM (základní verze je v
 
 ```
 
-Po restartu je vše připraveno a po ověření uživatele volba sezení _Default_ spustí E.
+Po restartu je vše připraveno a po ověření uživatele volba sezení *Default* spustí E.
 
 ## Instalace témat
 

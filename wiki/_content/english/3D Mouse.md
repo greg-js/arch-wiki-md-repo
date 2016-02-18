@@ -1,4 +1,4 @@
-_Also known as bats, flying mice, or wands, these devices generally function through ultrasound and provide at least three degrees of freedom. Probably the best known example would be 3DConnexion/Logitech's SpaceMouse from the early 1990s._ - Wikipedia
+*Also known as bats, flying mice, or wands, these devices generally function through ultrasound and provide at least three degrees of freedom. Probably the best known example would be 3DConnexion/Logitech's SpaceMouse from the early 1990s.* - Wikipedia
 
 For more information: [http://www.3dconnexion.com/products/what-is-a-3d-mouse.html](http://www.3dconnexion.com/products/what-is-a-3d-mouse.html)
 
@@ -37,7 +37,6 @@ $> sudo mv libXm.so.4 /usr/lib/libXm.so.4
 To fix this problem compile the following program. It appends the given username to `/var/run/utmp` in such a way that the driver can read it.
 
  `3dmouse.c` 
-
 ```
 /* source: http://forums.gentoo.org/viewtopic-t-609224.html
  *         http://www.3dconnexion.com/forum/viewtopic.php?t=1039
@@ -49,7 +48,8 @@ To fix this problem compile the following program. It appends the given username
 
 int main(int argc, char ** argv) {
   if (argc != 2) {
-    fprintf(stderr, "Need a name to put in the structure\n");
+    fprintf(stderr, "Need a name to put in the structure
+");
     exit(1);
   }
   struct utmpx u;
@@ -189,7 +189,6 @@ trying to open X11 display ":0"
 If it works you can simply shut down the daemon by hitting CTRL-C and run it using `sudo /etc/rc.d/spacenavd start`. On a systemd-only system the following service script can be used to start the daemon with `sudo systemctl start spacenavd.service`
 
  `/etc/systemd/system/spacenavd.service` 
-
 ```
 [Unit]
 Description=Userspace Daemon of the spacenav driver.

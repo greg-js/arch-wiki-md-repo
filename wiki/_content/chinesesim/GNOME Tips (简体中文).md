@@ -49,7 +49,7 @@ Some users report that, if they move the player window while playing a video fil
 
 ### 添加或编辑 GDM 会话
 
-GDM 的会话配置文件存放在 /etc/X11/sessions 文件夹下，以_.desktop_为后缀。你可以新建一个会话配置文件或编辑现有的会话配置文件，**下面以添加一个名叫mysession的新会话为例**。 复制一个已存在的 *.desktop 文件来新建会话：
+GDM 的会话配置文件存放在 /etc/X11/sessions 文件夹下，以*.desktop*为后缀。你可以新建一个会话配置文件或编辑现有的会话配置文件，**下面以添加一个名叫mysession的新会话为例**。 复制一个已存在的 *.desktop 文件来新建会话：
 
 ```
 cd /etc/X11/sessions
@@ -75,7 +75,7 @@ nano mysession.desktop
 
 ```
 
-注意到最后面的 _YOURHOSTNAME_ 吗？你需要在这添加上你的主机名，主机名可以通过运行 /bin/hostname 命令查看。
+注意到最后面的 *YOURHOSTNAME* 吗？你需要在这添加上你的主机名，主机名可以通过运行 /bin/hostname 命令查看。
 
 更多的信息可以查看： [Configuring_network](/index.php/Configuring_network "Configuring network")
 
@@ -141,22 +141,22 @@ control + L
 #### 改变浏览模式 (Spatial View)
 
 1.  确保已经安装了gconf-editor（配置编辑器），打开它
-2.  定位到 _apps/nautilus/preferences_
-3.  在 _always_use_browser_ 值后面打勾
+2.  定位到 *apps/nautilus/preferences*
+3.  在 *always_use_browser* 值后面打勾
 
 **或者：**
 
-1.  点击 _Files_ 的 _编辑_ >> _首选项_
-2.  定位到 _行为_ 标签
-3.  在 _总是在浏览器窗口中打开_ 前打勾
+1.  点击 *Files* 的 *编辑* >> *首选项*
+2.  定位到 *行为* 标签
+3.  在 *总是在浏览器窗口中打开* 前打勾
 
 ### 加速面板的自动隐藏
 
-如果你使用面板功能里的 _自动隐藏_ 功能，但发现需要太长的时间来出现/消失，可以试试这个：
+如果你使用面板功能里的 *自动隐藏* 功能，但发现需要太长的时间来出现/消失，可以试试这个：
 
 1.  打开 gconf-editor（配置编辑器）
-2.  定位到 _/apps/panel/global_
-3.  设置 _panel_hide_delay_ 和 _panel_show_delay_ 到一个合适的数值，数值越低速度越快，数值的单位为毫秒。
+2.  定位到 */apps/panel/global*
+3.  设置 *panel_hide_delay* 和 *panel_show_delay* 到一个合适的数值，数值越低速度越快，数值的单位为毫秒。
 
 ### GNOME Menu Tips
 
@@ -169,7 +169,7 @@ echo "gtk-menu-popup-delay = 0" >> ~/.gtkrc-2.0
 
 ```
 
-或者添加值 _gtk-menu-popup-delay = 0_ 到 _~/.gtkrc-2.0_ 文件下
+或者添加值 *gtk-menu-popup-delay = 0* 到 *~/.gtkrc-2.0* 文件下
 
 #### 编辑菜单
 
@@ -243,7 +243,7 @@ See the [FAM Wiki](/index.php/FAM "FAM") for instructions on how to install it.
 
 ### GNOME系统监视器
 
-安装后会出现一个 _系统监视器_ 程序，用于显示处理器/内存/交换分区和所有正在运行的应用程序等信息。它并不会在默认安装桌面时安装，所以必须单独安装来使用它：
+安装后会出现一个 *系统监视器* 程序，用于显示处理器/内存/交换分区和所有正在运行的应用程序等信息。它并不会在默认安装桌面时安装，所以必须单独安装来使用它：
 
 ```
 pacman -Sy gnome-system-monitor
@@ -259,14 +259,14 @@ pacman -Sy nautilus-cd-burner
 
 ### GNOME系统工具
 
-这将增加了若干个菜单项到 _系统_ => _系统管理_ 下，有 _用户管理_，_日期和时间_，_网络_，_服务_，_共享文件夹_。更多的可以查看： [Gnome documentation](http://www.gnome.org/projects/gst/).
+这将增加了若干个菜单项到 *系统* => *系统管理* 下，有 *用户管理*，*日期和时间*，*网络*，*服务*，*共享文件夹*。更多的可以查看： [Gnome documentation](http://www.gnome.org/projects/gst/).
 
 ```
 pacman -Sy gnome-system-tools
 
 ```
 
-需要注意 pacman 安装完成时返回的信息。要使用这些功能，需要将你的用户加入到 _stb-admin_ 组中：
+需要注意 pacman 安装完成时返回的信息。要使用这些功能，需要将你的用户加入到 *stb-admin* 组中：
 
 ```
 gpasswd -a USER_NAME stb-admin
@@ -316,7 +316,7 @@ Eye-of-Gnome，一个轻量级、快速和小巧的图像浏览器，可以调�
 
 ### file-roller
 
-归档管理器，支持许多格式。需要安装 _unrar_，_unzip_，_p7zip_ 来分别支持rar，zip和7z格式。
+归档管理器，支持许多格式。需要安装 *unrar*，*unzip*，*p7zip* 来分别支持rar，zip和7z格式。
 
 ```
 pacman -Sy unrar unzip p7zip
@@ -335,7 +335,7 @@ pacman -Sy unrar unzip p7zip
 
 CD Ripper, integrates with rhythmbox.
 
-_To enable default mp3 profiles in preferences menu:_
+*To enable default mp3 profiles in preferences menu:*
 
 ```
 pacman -S gstreamer0.10-lame gstreamer0.10-taglib
@@ -344,7 +344,7 @@ pacman -S gstreamer0.10-lame gstreamer0.10-taglib
 
 Note: This should not be necessary anymore, since these packages now are included in gstreamer0.10-ugly-plugins and gstreamer0.10-good-plugins.
 
-_If you're having other problems with SoundJuicer , click [here](/index.php/User:Munk3h "User:Munk3h")_
+*If you're having other problems with SoundJuicer , click [here](/index.php/User:Munk3h "User:Munk3h")*
 
 ### totem
 

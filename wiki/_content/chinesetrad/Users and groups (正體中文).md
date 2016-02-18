@@ -32,18 +32,17 @@ GNU/Linux 利用使用者和群組的概念來[控制存取](https://en.wikipedi
 
 摘錄自 [In UNIX Everything is a File](http://ph7spot.com/musings/in-unix-everything-is-a-file)：
 
-	_The UNIX operating system crystallizes a couple of unifying ideas and concepts that shaped its design, user interface, culture and evolution. One of the most important of these is probably the mantra: "everything is a file," widely regarded as one of the defining points of UNIX._
+	*The UNIX operating system crystallizes a couple of unifying ideas and concepts that shaped its design, user interface, culture and evolution. One of the most important of these is probably the mantra: "everything is a file," widely regarded as one of the defining points of UNIX.*
 
-	_This key design principle consists of providing a unified paradigm for accessing a wide range of input/output resources: documents, directories, hard-drives, CD-ROMs, modems, keyboards, printers, monitors, terminals and even some inter-process and network communications. The trick is to provide a common abstraction for all of these resources, each of which the UNIX fathers called a "file." Since every "file" is exposed through the same API, you can use the same set of basic commands to read/write to a disk, keyboard, document or network device._
+	*This key design principle consists of providing a unified paradigm for accessing a wide range of input/output resources: documents, directories, hard-drives, CD-ROMs, modems, keyboards, printers, monitors, terminals and even some inter-process and network communications. The trick is to provide a common abstraction for all of these resources, each of which the UNIX fathers called a "file." Since every "file" is exposed through the same API, you can use the same set of basic commands to read/write to a disk, keyboard, document or network device.*
 
 摘錄自 [Extending UNIX File Abstraction for General-Purpose Networking](http://www.intel-research.net/Publications/Pittsburgh/101220041324_277.pdf)：
 
-	_A fundamental and very powerful, consistent abstraction provided in UNIX and compatible operating systems is the file abstraction. Many OS services and device interfaces are implemented to provide a file or file system metaphor to applications. This enables new uses for, and greatly increases the power of, existing applications — simple tools designed with specific uses in mind can, with UNIX file abstractions, be used in novel ways. A simple tool, such as cat, designed to read one or more files and output the contents to standard output, can be used to read from I/O devices through special device files, typically found under the `/dev` directory. On many systems, audio recording and playback can be done simply with the commands, "`cat /dev/audio > myfile`" and "`cat myfile > /dev/audio`," respectively._
+	*A fundamental and very powerful, consistent abstraction provided in UNIX and compatible operating systems is the file abstraction. Many OS services and device interfaces are implemented to provide a file or file system metaphor to applications. This enables new uses for, and greatly increases the power of, existing applications — simple tools designed with specific uses in mind can, with UNIX file abstractions, be used in novel ways. A simple tool, such as cat, designed to read one or more files and output the contents to standard output, can be used to read from I/O devices through special device files, typically found under the `/dev` directory. On many systems, audio recording and playback can be done simply with the commands, "`cat /dev/audio > myfile`" and "`cat myfile > /dev/audio`," respectively.*
 
 在 GNU/Linux 系統下，所有檔案都歸屬於一位使用者和一個群組。另外還有三種存取權限：讀取、寫入與執行。檔案的擁有者、檔案的所屬群組和其他人 (無擁有權) 分別套用不同的存取權限。透過 `ls -l` 指令可以看出誰擁有這個檔案，權限又怎麼設定：
 
  `$ ls -l /boot/` 
-
 ```
 total 13740
 drwxr-xr-x 2 root root    4096 Jan 12 00:33 grub
@@ -53,16 +52,15 @@ drwxr-xr-x 2 root root    4096 Jan 12 00:33 grub
 -rw-r--r-- 1 root root 2209920 Jan  8 08:19 vmlinuz-linux
 ```
 
-第一行顯示檔案的權限 (以 `vmlinuz-linux` 為例，其權限設定為 `-rw-r--r--`)。第三行與第四行分別顯示檔案的擁有者和所屬群組。上面範例中，所有檔案都屬於 _root_ 使用者，以及 _root_ 群組。
+第一行顯示檔案的權限 (以 `vmlinuz-linux` 為例，其權限設定為 `-rw-r--r--`)。第三行與第四行分別顯示檔案的擁有者和所屬群組。上面範例中，所有檔案都屬於 *root* 使用者，以及 *root* 群組。
 
  `$ ls -l /media/` 
-
 ```
 total 16
 drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
 ```
 
-在這個範例，`sf_Shared` 目錄屬於 _root_ 使用者以及 _vboxsf_ 群組。使用 stat 指令可以得知檔案的擁有者和權限：
+在這個範例，`sf_Shared` 目錄屬於 *root* 使用者以及 *vboxsf* 群組。使用 stat 指令可以得知檔案的擁有者和權限：
 
 擁有者：
 
@@ -124,7 +122,7 @@ drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
 
 **警告:** 登入 shell 應為 `/etc/shells` 有列出的 shell。使用 PAM 的程式會藉由 `pam_shells` 模組檢查。
 
-一個典型桌面系統下的範例：新增 _archie_ 這個使用者，並指定登入用 Shell 為 bash：
+一個典型桌面系統下的範例：新增 *archie* 這個使用者，並指定登入用 Shell 為 bash：
 
 ```
 # useradd -m -g users -G wheel -s /bin/bash archie
@@ -147,7 +145,7 @@ drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
 
 **警告:** 若從上面的 `usermod` 指令拿掉 `-a` 選項，該使用者將會被踢出所有未列於 `[額外群組]` 的群組 (也就是說，使用者將只有 `[額外群組]` 所列舉群組的成員身分)。
 
-若要在 _GECOS_ 欄位 (例如，使用者的全名) 輸入使用者資訊：
+若要在 *GECOS* 欄位 (例如，使用者的全名) 輸入使用者資訊：
 
 ```
 # chfn [使用者名稱]
@@ -270,7 +268,7 @@ $ cat /etc/group
 
 **註記:**
 
-*   只要 _logind_ 階段沒有損毀，正常的桌面權限如音效、3D、列印、掛載等都能直接獲得，不必加入這些群組。(若要檢查，詳見[一般疑難排解#階段權限](/index.php/General_troubleshooting#Session_permissions "General troubleshooting"))。
+*   只要 *logind* 階段沒有損毀，正常的桌面權限如音效、3D、列印、掛載等都能直接獲得，不必加入這些群組。(若要檢查，詳見[一般疑難排解#階段權限](/index.php/General_troubleshooting#Session_permissions "General troubleshooting"))。
 
 工作站/桌面使用者通常會將他們的非 root 使用者帳號加入以下某些群組，對周邊設備與其它硬體的存取才會被允許，以便進行系統管理：
 

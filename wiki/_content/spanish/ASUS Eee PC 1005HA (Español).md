@@ -1,9 +1,9 @@
 | **Dispositivo** | **Estado** | **Módulos** |
-| Intel 945GME | **OK** | _xf86-video-intel_ |
+| Intel 945GME | **OK** | *xf86-video-intel* |
 | Red Cableada (ethernet) | **OK** |
 | Red Inalámbrica (wireless) | **OK** |
-| Audio | **OK** | _snd_hda_intel_ |
-| Camara Web | **OK** | _uvcvideo_ |
+| Audio | **OK** | *snd_hda_intel* |
+| Camara Web | **OK** | *uvcvideo* |
 | Tarjeta SD | **OK** |
 | Teclas de función | **OK** |
 
@@ -178,7 +178,7 @@ xinput set-int-prop "SynPS/2 Synaptics TouchPad" "Synaptics Jumpy Cursor Thresho
 Hágalo ejecutable con:
 
 ```
-chmod +x _<script-name>_
+chmod +x *<script-name>*
 
 ```
 
@@ -255,7 +255,7 @@ acpi_osi=Linux
 
 ```
 
-_Ejemplo:_
+*Ejemplo:*
 
 ```
 # (0) Arch Linux
@@ -305,7 +305,7 @@ COMMANDS_WIFI_TOGGLE=()
 
 ### Teclas de Volumen
 
-Para hacer funcionar las teclas de _Mudo_, _Aumentar_ y _Disminuir_ el volumen, edite el archivo **/etc/conf.d/acpi-eeepc-generic.conf** y reemplace las lineas:
+Para hacer funcionar las teclas de *Mudo*, *Aumentar* y *Disminuir* el volumen, edite el archivo **/etc/conf.d/acpi-eeepc-generic.conf** y reemplace las lineas:
 
 ```
 COMMANDS_MUTE=("alsa_toggle_mute")
@@ -323,7 +323,7 @@ COMMANDS_VOLUME_UP=("amixer set Master 10%+")
 
 ```
 
-Note que el valor 10% puede ser reemplazado por cualquiera que usted prefiera, vea la pagina de manual del [amixer](/index.php/ALSA_(Espa%C3%B1ol) "ALSA (Español)") (_man amixer_).
+Note que el valor 10% puede ser reemplazado por cualquiera que usted prefiera, vea la pagina de manual del [amixer](/index.php/ALSA_(Espa%C3%B1ol) "ALSA (Español)") (*man amixer*).
 
 ### Suspender
 
@@ -399,7 +399,7 @@ alsamixer
 
 ```
 
-Presione <F4> para ir a la sección 'Capture' (Capturar). Navegue hasta el item 'Capture' (Capturar) utilizando las flechas de la derecha y la izquierda y revise que aparezca 'LR Capture'. De no ser así, presione la barra espaciadora. Los valores de 'Capturar' y 'Digital' son un balanceo entre la estática y el incremento. Se recomienda fijar el valor entre 70 y 75 (usando las flechas de arriba y abajo) respectivamente, aunque esto puede ser configurado a su gusto. Salga de _alsamixer_ presionando <ESC> y pruebelo:
+Presione <F4> para ir a la sección 'Capture' (Capturar). Navegue hasta el item 'Capture' (Capturar) utilizando las flechas de la derecha y la izquierda y revise que aparezca 'LR Capture'. De no ser así, presione la barra espaciadora. Los valores de 'Capturar' y 'Digital' son un balanceo entre la estática y el incremento. Se recomienda fijar el valor entre 70 y 75 (usando las flechas de arriba y abajo) respectivamente, aunque esto puede ser configurado a su gusto. Salga de *alsamixer* presionando <ESC> y pruebelo:
 
 ```
 arecord /tmp/record.wav

@@ -125,16 +125,16 @@ Siccome gli script `pm-utils` devono essere eseguiti da root, si consiglia di re
 Aggiungere le seguenti linee, sostituire `username` con il vostro nome utente, successivamente salvare ed uscire da `visudo`:
 
 ```
-_username_  ALL = NOPASSWD: /usr/sbin/pm-hibernate
-_username_  ALL = NOPASSWD: /usr/sbin/pm-suspend
+*username*  ALL = NOPASSWD: /usr/sbin/pm-hibernate
+*username*  ALL = NOPASSWD: /usr/sbin/pm-suspend
 
 ```
 
 In alternativa si può abilitare un intero gruppo utilizzando le seguenti linee, anche in questo caso sostituire `group` con il vostro:
 
 ```
-_%group_   ALL = NOPASSWD: /usr/sbin/pm-hibernate
-_%group_   ALL = NOPASSWD: /usr/sbin/pm-suspend
+*%group*   ALL = NOPASSWD: /usr/sbin/pm-hibernate
+*%group*   ALL = NOPASSWD: /usr/sbin/pm-suspend
 
 ```
 
@@ -156,7 +156,7 @@ $ sudo pm-suspend
 
 Inoltre, aggiungere il proprio utente al [gruppo](/index.php/Users_and_Groups_(Italiano) "Users and Groups (Italiano)") `power` permette di utilizzare molti applet che si occupano della sospensione. Non non si effettua questa procedura quando si tenterà di utilizzare un applet integrato, come ad esempio [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") shutdown, per sospendere o ibernare il proprio computer, esso non funzionerà correttamente ottenendo solo il blocco dello schermo.
 
- ` # gpasswd -a _username_ power` 
+ ` # gpasswd -a *username* power` 
 
 Ora dovreste essere in grado di utilizzare gli strumenti di gestione energetica del vostro [ambiente desktop](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)"), ad esempio per sospendere o ibernare il sistema alla chiusura del coperchio del portatile, o quando si sta esaurendo la batteria, etc...
 
@@ -333,12 +333,11 @@ export METHOD="$(echo ${0##*pm-} |tr - _)"
 
 ```
 
-La variabile `METHOD` viene estratta dal nome del file eseguibile, _suspend_ da `pm-suspend` e _hibernate_ da `pm-hibernate`.
+La variabile `METHOD` viene estratta dal nome del file eseguibile, *suspend* da `pm-suspend` e *hibernate* da `pm-hibernate`.
 
-La posizione dei parametri di configurazione di runtime è definito in `/usr/lib/pm-utils/pm-functions` come `PM_UTILS_RUNDIR="/var/run/pm-utils"` e `STORAGEDIR="${PM_UTILS_RUNDIR}/${STASHNAME}/storage"`. Pertanto `STORAGEDIR="/var/run/pm-utils/pm-suspend/storage"` è dove `pm-suspend` posiziona la cache della sua configurazione. Gli hooks disabilitati sono memorizzati in un file di testo contentente il nome dell'hook preceduto da "_disable_hook:_". I parametri di configurazione vengono aggiunti al file _parameters_:
+La posizione dei parametri di configurazione di runtime è definito in `/usr/lib/pm-utils/pm-functions` come `PM_UTILS_RUNDIR="/var/run/pm-utils"` e `STORAGEDIR="${PM_UTILS_RUNDIR}/${STASHNAME}/storage"`. Pertanto `STORAGEDIR="/var/run/pm-utils/pm-suspend/storage"` è dove `pm-suspend` posiziona la cache della sua configurazione. Gli hooks disabilitati sono memorizzati in un file di testo contentente il nome dell'hook preceduto da "*disable_hook:*". I parametri di configurazione vengono aggiunti al file *parameters*:
 
  `$  ls -lah /var/run/pm-utils/pm-suspend/storage/ ` 
-
 ```
 -rw-r--r-- 1 root root  20 May 19 09:57 disable_hook:99video
 -rw-r--r-- 1 root root   0 May 19 02:59 parameters
@@ -358,7 +357,7 @@ done
 
 ```
 
-Altrimenti, se **$SLEEP_MODULE** risulta vuoto, `do_suspend()` sarà impostato dal backend _kernel_, come descritto sopra:
+Altrimenti, se **$SLEEP_MODULE** risulta vuoto, `do_suspend()` sarà impostato dal backend *kernel*, come descritto sopra:
 
 ```
 if [ -z "$SUSPEND_MODULE" ]; then
@@ -401,7 +400,7 @@ add_module_help uswsusp_help
 
 ```
 
-La prioma funzione, _add_before_hook_, disabilita gli hook **pm-utils** e **99video**, in quanto questa funzionalità viene sostituita da **s2ram**. La seconda funzione, _add_module_help_, aggiunge in aiuto uswsusp-module-specific, che in sostanza sostituisce la funzione di aiuto fornito da **99video**.
+La prioma funzione, *add_before_hook*, disabilita gli hook **pm-utils** e **99video**, in quanto questa funzionalità viene sostituita da **s2ram**. La seconda funzione, *add_module_help*, aggiunge in aiuto uswsusp-module-specific, che in sostanza sostituisce la funzione di aiuto fornito da **99video**.
 
 Ritornare a `pm-suspend`:
 
@@ -411,14 +410,14 @@ command_exists "check_$METHOD" && command_exists "do_$METHOD"
 
 ```
 
-Questo verifica che i metodi _check_suspend_ e _do_suspend_ siano stati definiti. Il metodo _check_suspend_ verifica semplicemente che la variabile $SUSPEND_MODULE non sia vuota:
+Questo verifica che i metodi *check_suspend* e *do_suspend* siano stati definiti. Il metodo *check_suspend* verifica semplicemente che la variabile $SUSPEND_MODULE non sia vuota:
 
 ```
 check_suspend() { [ -n "$SUSPEND_MODULE" ]; }
 
 ```
 
-Infine, `pm-suspend` deve eseguire tutti gli hook che non sono stati disabilitati, sincronizza il buffer del file-system, ed esegue _do_suspend_:
+Infine, `pm-suspend` deve eseguire tutti gli hook che non sono stati disabilitati, sincronizza il buffer del file-system, ed esegue *do_suspend*:
 
 ```
 if run_hooks sleep "$ACTION $METHOD"; then
@@ -430,7 +429,7 @@ if run_hooks sleep "$ACTION $METHOD"; then
 
 ```
 
-Il metodo _run_hooks_ è un wrapper per __run_hooks_, nel casi che `pm-suspend` sia chiamato come _run_hooks sleep "suspend suspend"_. Premesso che:
+Il metodo *run_hooks* è un wrapper per *_run_hooks*, nel casi che `pm-suspend` sia chiamato come *run_hooks sleep "suspend suspend"*. Premesso che:
 
 ```
 PARAMETERS="${STORAGEDIR}/parameters"
@@ -439,7 +438,7 @@ PM_UTILS_ETCDIR="/etc/pm"
 
 ```
 
-Il metodo __run_hooks_, sarà valido per ogni hook presente in `${PM_UTILS_LIBDIR}/$1.d` e `${PM_UTILS_ETCDIR}/$1.d`, verificando che la sospensione non li abbi inibiti e aggiornando i parametri di runtime memorizzati in `$PARAMETERS`, prima che venga eseguito ogni hook tramite `run_hook $hook $2`. Nel caso della sospensione in ram (Suspend-to-RAM), tutti gli hook presenti in `/usr/lib/pm-utils/sleep.d/,/etc/pm/sleep.d/` verranno enumerati, e _run_hook_ passerà i parametri _$hook_ e "_suspend suspend_". Il metodo _run_hook_ utilizza la funzione _hook_ok_ per verificare che l'hook non sia stato disattivato, prima di eseguire l'hook con il parametro "_suspend suspend_".
+Il metodo *_run_hooks*, sarà valido per ogni hook presente in `${PM_UTILS_LIBDIR}/$1.d` e `${PM_UTILS_ETCDIR}/$1.d`, verificando che la sospensione non li abbi inibiti e aggiornando i parametri di runtime memorizzati in `$PARAMETERS`, prima che venga eseguito ogni hook tramite `run_hook $hook $2`. Nel caso della sospensione in ram (Suspend-to-RAM), tutti gli hook presenti in `/usr/lib/pm-utils/sleep.d/,/etc/pm/sleep.d/` verranno enumerati, e *run_hook* passerà i parametri *$hook* e "*suspend suspend*". Il metodo *run_hook* utilizza la funzione *hook_ok* per verificare che l'hook non sia stato disattivato, prima di eseguire l'hook con il parametro "*suspend suspend*".
 
 ## Risoluzione dei problemi
 
@@ -536,7 +535,7 @@ $ Sudo pm-suspend
 
 controllare il file `/var/log/pm-suspend.log` e si cerchi "ehci" o "xhci". Alcuni dei nomi che si possono leggere potrebbero essere "ehci_hd", "xhci_hd" o "ehci_hcd".
 
-In seguito come root creare il file `/etc/pm/config.d/modules` e inserire questo codice con il nome esatto del modulo _ehci_ o _xhci_ che avete trovato. Ad esempio:
+In seguito come root creare il file `/etc/pm/config.d/modules` e inserire questo codice con il nome esatto del modulo *ehci* o *xhci* che avete trovato. Ad esempio:
 
 ```
 SUSPEND_MODULES = "ehci_hcd"
@@ -562,7 +561,6 @@ Alcuna combinazioni di scheda madre/bios (nello specifico, conosciute, ci sono a
 Si può procedere come segue:
 
  `/etc/pm/sleep.d/50-hdparm_pm` 
-
 ```
 
  #!/bin/dash
@@ -583,7 +581,6 @@ $ sudo chmod +x /etc/pm/sleep.d/50-hdparm_pm
 Se lo script in [BASH](/index.php/Bash_(Italiano) "Bash (Italiano)") precedente non funziona, provare il seguente al suo posto:
 
  `/etc/pm/sleep.d/50-hdparm_pm` 
-
 ```
  #!/bin/sh
 
@@ -623,8 +620,8 @@ Gli utenti che utilizzano Openbox possono aggiungere nuovi script come opzioni a
 	<item label="Logout"> <action name="Exit"/> </item>
 	<item label="Reboot"> <action name="Execute"> <execute>sudo shutdown -r now</execute> </action> </item>
 	<item label="Poweroff"> <action name="Execute"> <execute>sudo shutdown -h now </execute> </action> </item>
-	_**<item label="Hibernate"> <action name="Execute"> <execute>sudo pm-hibernate</execute> </action> </item>**_
-	_**<item label="Suspend"> <action name="Execute"> <execute>sudo pm-suspend</execute> </action> </item>**_
+	***<item label="Hibernate"> <action name="Execute"> <execute>sudo pm-hibernate</execute> </action> </item>***
+	***<item label="Suspend"> <action name="Execute"> <execute>sudo pm-suspend</execute> </action> </item>***
 </menu>
 
 ```
@@ -640,7 +637,6 @@ Si potrebbe desiderare che venga eseguito un lock screen prima della sospensione
 Un semplice script di esempio è:
 
  `/etc/pm/sleep.d/00screensaver-lock` 
-
 ```
  #!/bin/sh
  #
@@ -667,7 +663,6 @@ Modifica `/usr/bin/slimlock` col percorso del tuo screen lock.
 Se non si desidera scrivere il proprio username nello script (ad esempio se si hanno più utenti), allora è necessario determinare il nome utente e il display della corrente sessione X. Per i sistemi che usano [systemd](/index.php/Systemd "Systemd"), esiste [xuserrun](https://github.com/rephorm/xuserrun) e il seguente script (modificare il percorso a xuserrun e il lock screen desiderato):
 
  `/etc/pm/sleep.d/00screensaver-lock` 
-
 ```
  #!/bin/sh
  #
@@ -690,7 +685,6 @@ Se non si desidera scrivere il proprio username nello script (ad esempio se si h
 Per disabilitare l'ibernazione, creare un nuovo file in /etc/polkit-1/ called 99-disable-hibernate.rules. Aggiungere poi le seguenti linee:
 
  `99-disable-hibernate.rules` 
-
 ```
 polkit.addRule(function(action, subject) {
    if ((action.id == "org.freedesktop.login1.hibernate")) {

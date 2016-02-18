@@ -1,4 +1,4 @@
-[DNSCrypt](http://dnscrypt.org/) é um software que criptografa o tráfico DNS entre o usuário e o provedor DNS reverso e previne ataques de espionagem, falsificação ou _man-in-the-middle_.
+[DNSCrypt](http://dnscrypt.org/) é um software que criptografa o tráfico DNS entre o usuário e o provedor DNS reverso e previne ataques de espionagem, falsificação ou *man-in-the-middle*.
 
 ## Contents
 
@@ -20,16 +20,16 @@ Instale [dnscrypt-proxy](https://www.archlinux.org/packages/?name=dnscrypt-proxy
 
 **Dica:** Para configurar e escolher um provedor DNS reverso automaticamente use [dnscrypt-autoinstall](https://aur.archlinux.org/packages/dnscrypt-autoinstall/) do [AUR](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)").
 
-Por padrão, _dnscrypt-proxy_ é pré-configurado em `/etc/conf.d/dnscrypt-proxy` e serve de parâmetro de configuração para `dnscrypt-proxy.service` para aceitar requisições em `127.0.0.1` para um servidor [OpenDNS](https://opendns.com). Veja esta [lista de servidores DNS reverso](https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv) para alternativas.
+Por padrão, *dnscrypt-proxy* é pré-configurado em `/etc/conf.d/dnscrypt-proxy` e serve de parâmetro de configuração para `dnscrypt-proxy.service` para aceitar requisições em `127.0.0.1` para um servidor [OpenDNS](https://opendns.com). Veja esta [lista de servidores DNS reverso](https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv) para alternativas.
 
-Com esta configuração será necessário alterar seu arquivo `resolv.conf` e alterar sua atual lista de DNS reverso por _localhost_:
+Com esta configuração será necessário alterar seu arquivo `resolv.conf` e alterar sua atual lista de DNS reverso por *localhost*:
 
 ```
 nameserver 127.0.0.1
 
 ```
 
-Você deve prevenir que outros programas reescrevam-no, veja [resolv.conf#Preserve DNS settings](/index.php/Resolv.conf#Preserve_DNS_settings "Resolv.conf") (_em inglês_) para detalhes.
+Você deve prevenir que outros programas reescrevam-no, veja [resolv.conf#Preserve DNS settings](/index.php/Resolv.conf#Preserve_DNS_settings "Resolv.conf") (*em inglês*) para detalhes.
 
 ## Iniciando
 
@@ -72,7 +72,6 @@ Reinicie `dnscrypt-proxy.service` e `unbound.service` para que as modificações
 Configure dnsmasq como [cache local DNS](/index.php/Dnsmasq_(Portugu%C3%AAs)#Configura.C3.A7.C3.A3o_do_cache_DNS "Dnsmasq (Português)"). Segue configuração básica:
 
  `/etc/dnsmasq.conf` 
-
 ```
 no-resolv
 server=127.0.0.2#2053
@@ -86,7 +85,6 @@ Se você configurou DNSCrypt para usar DNS reverso com validação DNSSEC habili
 Configure DNSCrypt `DNSCRYPT_LOCALIP` apontando para o servidor dnsmasq `127.0.0.2` e `DNSCRYPT_LOCALPORT` para sua respectiva porta (também no servidor dnsmasq) `#2053`:
 
  `/etc/conf.d/dnscrypt-proxy` 
-
 ```
 DNSCRYPT_LOCALIP=127.0.0.2
 DNSCRYPT_LOCALPORT=2053
@@ -96,7 +94,7 @@ Reinicie `dnscrypt-proxy.service` e `dnsmasq.service` para que as modificações
 
 ### Enable EDNS0
 
-[Extension Mechanisms for DNS](https://en.wikipedia.org/wiki/Extension_mechanisms_for_DNS "wikipedia:Extension mechanisms for DNS") (_inglês_) que, dentre outras coisas, permite a um cliente especificar o tamanho de um pacote de resposta sobre UDP.
+[Extension Mechanisms for DNS](https://en.wikipedia.org/wiki/Extension_mechanisms_for_DNS "wikipedia:Extension mechanisms for DNS") (*inglês*) que, dentre outras coisas, permite a um cliente especificar o tamanho de um pacote de resposta sobre UDP.
 
 Adicione o que se segue ao seu arquivo `/etc/resolv.conf`:
 
@@ -105,7 +103,7 @@ options edns0
 
 ```
 
-Você talvez deseje adicionar o seguinte argumento a _dnscrypt-proxy_:
+Você talvez deseje adicionar o seguinte argumento a *dnscrypt-proxy*:
 
 ```
 --edns-payload-size=<bytes>
@@ -116,7 +114,7 @@ O tamanho padrão seria **1252** bytes, com valores até **4096** bytes com supo
 
 #### Teste EDNS0
 
-Faça uso da ferramenta [_DNS Reply Size Test Server_](https://www.dns-oarc.net/oarc/services/replysizetest%7C), use _dig_, uma ferramenta de linha de comando disponível com o pacote [dnsutils](https://www.archlinux.org/packages/?name=dnsutils) dos [repositórios oficiais](/index.php/Official_repositories "Official repositories"), para emitir uma consulta TXT para o nome _rs.dns-oarc.net_:
+Faça uso da ferramenta [*DNS Reply Size Test Server*](https://www.dns-oarc.net/oarc/services/replysizetest%7C), use *dig*, uma ferramenta de linha de comando disponível com o pacote [dnsutils](https://www.archlinux.org/packages/?name=dnsutils) dos [repositórios oficiais](/index.php/Official_repositories "Official repositories"), para emitir uma consulta TXT para o nome *rs.dns-oarc.net*:
 
 ```
 $ dig +short rs.dns-oarc.net txt

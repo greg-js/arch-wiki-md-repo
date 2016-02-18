@@ -27,7 +27,6 @@
 **ملاحظة:** ضع في بالك أنه ليس كل أنضمة بناء الحزم ستستعمل هذه المتغيرات. فبعضها قد تتجاوزها من خلال ملفات Makefiles الأصلية أو [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
 
  `/etc/makepkg.conf` 
-
 ```
 [...]
 
@@ -66,7 +65,6 @@ CXXFLAGS="${CFLAGS}"
 ```
 
 **تلميحة:** لمعاينة خيارات `march=native` , نفذ:
-
 ```
  $ gcc -march=native -E -v - </dev/null 2>&1 | sed -n 's/.* -v - //p'
 
@@ -80,7 +78,7 @@ See the GCC man page for a complete list of available options. The Gentoo [Compi
 
 #### MAKEFLAGS
 
-يمكن إستعمال خيار `MAKEFLAGS` لتعين خيارات إضافية لـ make. المستخدمون ذوي الأنضمة متعددة-الأنوية/متعددة-المعالجات بإستطاعتهم تحديد عدد المهام الممكن تشغيلها بالتوازي. ويمكن تحقيق ذلك مع استخدام `nproc` لتحديد عدد المعالجات المتاحة, مثلاً. `-j4` حيث _4 هي خارج `nproc`_. بعض ملفات [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") تتجاوز هذا بإستعمال `-j1`, وذلك بسبب التعارض في بعض الإصدارات أو ببساطة لأنها غير مدعومة أصلاً. الحزم التي تفشل في البناء لمثل هذا السبب ينبغي [التبليغ](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") عنها على متتبع العلل وذلك طبعا بعد التأكد فعلا أن العلة تسببب بها MAKEFLAGS الخاص بك.
+يمكن إستعمال خيار `MAKEFLAGS` لتعين خيارات إضافية لـ make. المستخدمون ذوي الأنضمة متعددة-الأنوية/متعددة-المعالجات بإستطاعتهم تحديد عدد المهام الممكن تشغيلها بالتوازي. ويمكن تحقيق ذلك مع استخدام `nproc` لتحديد عدد المعالجات المتاحة, مثلاً. `-j4` حيث *4 هي خارج `nproc`*. بعض ملفات [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") تتجاوز هذا بإستعمال `-j1`, وذلك بسبب التعارض في بعض الإصدارات أو ببساطة لأنها غير مدعومة أصلاً. الحزم التي تفشل في البناء لمثل هذا السبب ينبغي [التبليغ](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") عنها على متتبع العلل وذلك طبعا بعد التأكد فعلا أن العلة تسببب بها MAKEFLAGS الخاص بك.
 
 راجع `man make` للحصول على اللائحة الكاملة للخيارات المتاحة.
 
@@ -89,7 +87,6 @@ See the GCC man page for a complete list of available options. The Gentoo [Compi
 بالإمكان تحديد مكان وضع الملفات المصدرية و الحزم أثناء البناء, هذا إختياري, فالحزم ستبق إفتراضياً ضمن دليل العمل حيث نفد الأمر makepkg.
 
  `/etc/makepkg.conf` 
-
 ```
 [...]
 
@@ -124,7 +121,6 @@ $ mkdir /home/$USER/packages
 المتغير `PACKAGER` سيحدد قيمة المحزم `packager` ضمن ملف .`.PKGINFO` للحزمة المجمعة . إفتراضياً , الحزمة المجمعة ستعرض :
 
  `pacman -Qi package` 
-
 ```
 [...]
 Packager       : Unknown Packager
@@ -135,7 +131,6 @@ Packager       : Unknown Packager
 بعد القيام بالتعديل :
 
  `pacman -Qi package` 
-
 ```
 [...]
 Packager       : John Doe <john@doe.com>
@@ -154,7 +149,6 @@ The following procedure is not necessary for compiling with makepkg, for your in
 The gpg keys are expected to be stored in the user's `~/.gnupg/pubring.gpg` file. In case it does not contain the given signature, makepkg shows a warning.
 
  `makepkg` 
-
 ```
 [...]
 ==> Verifying source file signatures with gpg...
@@ -172,7 +166,6 @@ pkgname-pkgver.tar.gz ... FAILED (unknown public key 1234567890)
 إن لم يكن الملف pubring.gpg موجود فسيتم إنشاءه في الحال. يمكنك الآن متابعة إعداد GPG من أجل السماح بتجميع حزم AUR المقدمة من طرف مطوري آرش لينكس مع التحقق من التوقيع بنجاح. أضف السطر التالي إلى نهاية ملف إعداد GPG الخاص بك لضم مفاتيح pacman للمفاتيح الشخصية للمستخدم الخاصة بك.
 
  `~/.gnupg/gpg.conf` 
-
 ```
 [...]
 keyring /etc/pacman.d/gnupg/pubring.gpg

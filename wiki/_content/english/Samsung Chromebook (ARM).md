@@ -40,7 +40,7 @@ To install to SD or USB, follow the instructions linked above. To install to eMM
 
 **Installation to the eMMC can be removed via the USB Restore method that is a part of all Chromebook devices, when installing with official method.**
 
-**Flashing of non-verified uboot is _not required_ for eMMC install.**
+**Flashing of non-verified uboot is *not required* for eMMC install.**
 
 ## Flashing non-verified U-boot
 
@@ -153,7 +153,7 @@ This is a shortened URL for:
 
 ```
 
-*   _Mine is mmcblk1_, now zero/clean it out:
+*   *Mine is mmcblk1*, now zero/clean it out:
 
 ```
 # sgdisk -Z /dev/mmcblk1

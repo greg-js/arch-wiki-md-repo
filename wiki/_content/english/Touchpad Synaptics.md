@@ -1,4 +1,4 @@
-This article details the installation and configuration process of the _**Synaptics input driver**_ for Synaptics (and ALPS) touchpads found on most notebooks.
+This article details the installation and configuration process of the ***Synaptics input driver*** for Synaptics (and ALPS) touchpads found on most notebooks.
 
 ## Contents
 
@@ -69,7 +69,6 @@ The primary method of configuration for the touchpad is through an [Xorg](/index
 The following lists options that many users may wish to configure. This example configuration file enables vertical, horizontal and circular scrolling as well as touchpad tap to click:
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
 Section "InputClass"
     Identifier "touchpad"
@@ -184,15 +183,15 @@ Users of [GNOME](/index.php/GNOME "GNOME") may have to edit its configuration as
 
 To change these settings in **GNOME 3**:
 
-1.  Open _System Settings_.
-2.  Click _Mouse and Touchpad_.
-3.  Change the settings on the _Touchpad_ tab.
+1.  Open *System Settings*.
+2.  Click *Mouse and Touchpad*.
+3.  Change the settings on the *Touchpad* tab.
 
 To change these settings in **Cinnamon**:
 
-1.  Open _Cinnamon System Settings_.
-2.  Click _Mouse and Touchpad_.
-3.  Change the settings on the _Touchpad_ tab.
+1.  Open *Cinnamon System Settings*.
+2.  Click *Mouse and Touchpad*.
+3.  Change the settings on the *Touchpad* tab.
 
 GNOME settings daemon may override existing settings (for example ones set in `xorg.conf.d`) for which there is no equivalent in any of the graphical configuration utilities. It is possible to stop GNOME from touching mouse settings at all:
 
@@ -202,7 +201,7 @@ GNOME settings daemon may override existing settings (for example ones set in `x
 
 It will now respect your system's existing synaptics configuration.
 
-**Remember**: Since GNOME works on a user by user basis, when you run _dconf-editor_ this should be done in your current user session. Repeat this procedure for each and every user you have for this computer.
+**Remember**: Since GNOME works on a user by user basis, when you run *dconf-editor* this should be done in your current user session. Repeat this procedure for each and every user you have for this computer.
 
 ### MATE
 
@@ -278,11 +277,11 @@ After you have successfully tried and tested your options through synclient, you
 The tool [evtest](https://www.archlinux.org/packages/?name=evtest) can display pressure and placement on the touchpad in real-time, allowing further refinement of the default Synaptics settings. The evtest monitoring can be started with:
 
 ```
-$ evtest /dev/input/event_X_
+$ evtest /dev/input/event*X*
 
 ```
 
-_X_ denotes the touchpad's ID. It can be found by looking at the output of `cat /proc/bus/input/devices`.
+*X* denotes the touchpad's ID. It can be found by looking at the output of `cat /proc/bus/input/devices`.
 
 evtest needs exclusive access to the device which means it cannot be run together with an X server instance. You can either kill the X server or run evtest from a different virtual terminal (e.g., by pressing `Ctrl+Alt+2`).
 
@@ -295,7 +294,6 @@ The tool [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev) can displ
 Circular scrolling is a feature that Synaptics offers which closely resembles the behaviour of iPods. Instead of (or additional to) scrolling horizontally or vertically, you can scroll circularly. Some users find this faster and more precise. To enable circular scrolling, add the following options to the touchpad device section of `/etc/X11/xorg.conf.d/50-synaptics.conf`:
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
 Section "InputClass"
     ...
@@ -330,7 +328,6 @@ To scroll fast, draw small circles in the center of your touchpad. To scroll slo
 It is possible to enable natural scrolling through synaptics. Simply use negative values for `VertScrollDelta` and `HorizScrollDelta` like so:
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
 Section "InputClass"
     ...
@@ -343,10 +340,9 @@ EndSection
 
 ### Software toggle
 
-You might want to turn the touchpad on and off with a simple button click or shortcut. This can be done by binding the following _xinput_-based script to a keyboard event as explained in [Extra keyboard keys in Xorg](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg"):
+You might want to turn the touchpad on and off with a simple button click or shortcut. This can be done by binding the following *xinput*-based script to a keyboard event as explained in [Extra keyboard keys in Xorg](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg"):
 
  `/usr/local/bin/touchpad_toggle.sh` 
-
 ```
 #!/bin/bash
 
@@ -370,7 +366,6 @@ fi
 Alternatively, `synclient` can be used to toggle the touchpad. However, it can only turn off touch events but not physical clickpad button usage:
 
  `/usr/local/bin/touchpad.sh` 
-
 ```
 #!/bin/bash
 
@@ -445,10 +440,9 @@ With the assistance of [udev](/index.php/Udev "Udev"), it is possible to automat
 This is a basic rule generally for non-"desktop environment" sessions:
 
  `/etc/udev/rules.d/01-touchpad.rules` 
-
 ```
-SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="add", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/_username_/.Xauthority", RUN+="/usr/bin/synclient TouchpadOff=1"
-SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="remove", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/_username_/.Xauthority", RUN+="/usr/bin/synclient TouchpadOff=0"
+SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="add", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/*username*/.Xauthority", RUN+="/usr/bin/synclient TouchpadOff=1"
+SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="remove", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/*username*/.Xauthority", RUN+="/usr/bin/synclient TouchpadOff=0"
 ```
 
 #### GDM
@@ -456,10 +450,9 @@ SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="remove", ENV{DISPLAY}=":0", 
 GDM usually stores the Xauthority files in `/var/run/gdm` in a randomly-named directory. You should find your actual path to the Xauthority file which can be done using `ps ax`. For some reason multiple authority files may appear for a user, so a rule like will be necessary:
 
  `/etc/udev/rules.d/01-touchpad.rules` 
-
 ```
-SUBSYSTEM=="input", KERNEL=="mouse[0-9]", ACTION=="add", PROGRAM="/usr/bin/find /var/run/gdm -name _username_ -print0 -quit", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="$result/database", RUN+="/usr/bin/synclient TouchpadOff=1"
-SUBSYSTEM=="input", KERNEL=="mouse[0-9]", ACTION=="remove", PROGRAM="/usr/bin/find /var/run/gdm -name _username_ -print0 -quit", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="$result/database", RUN+="/usr/bin/synclient TouchpadOff=0"
+SUBSYSTEM=="input", KERNEL=="mouse[0-9]", ACTION=="add", PROGRAM="/usr/bin/find /var/run/gdm -name *username* -print0 -quit", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="$result/database", RUN+="/usr/bin/synclient TouchpadOff=1"
+SUBSYSTEM=="input", KERNEL=="mouse[0-9]", ACTION=="remove", PROGRAM="/usr/bin/find /var/run/gdm -name *username* -print0 -quit", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="$result/database", RUN+="/usr/bin/synclient TouchpadOff=0"
 ```
 
 Furthermore, you should validate that your udev script is running properly! You can check for the conditions using `udevadm monitor -p` which must be run as root.
@@ -468,7 +461,7 @@ Furthermore, you should validate that your udev script is running properly! You 
 
 `syndaemon` whether started by the [user](#Using_syndaemon) or the desktop environment can conflict with synclient and will need to be disabled. A rule like this will be needed:
 
- `/etc/udev/rules.d/01-touchpad.rules`  `SUBSYSTEM=="input", KERNEL=="mouse[0-9]", ACTION=="add", PROGRAM="/usr/bin/find /var/run/gdm -name _username_ -print -quit", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="$result/database", RUN+="/bin/sh -c '/usr/bin/synclient TouchpadOff=1 ; sleep 1; /bin/killall syndaemon; '"` 
+ `/etc/udev/rules.d/01-touchpad.rules`  `SUBSYSTEM=="input", KERNEL=="mouse[0-9]", ACTION=="add", PROGRAM="/usr/bin/find /var/run/gdm -name *username* -print -quit", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="$result/database", RUN+="/bin/sh -c '/usr/bin/synclient TouchpadOff=1 ; sleep 1; /bin/killall syndaemon; '"` 
 
 ##### touchpad-state
 
@@ -490,7 +483,6 @@ If using Plasma, the package [kcm-touchpad-frameworks](https://www.archlinux.org
 For an environment where multiple users are present, a slightly different approach is needed to detect the current users X environment. This script will help achieving this:
 
  `/usr/bin/mouse-pnp-event-handler.sh` 
-
 ```
 #!/bin/sh
 ## $1 = "add" / "remove"
@@ -546,7 +538,6 @@ Update the `TRACKPAD_NAME` variable for your system configuration. Run `find /sy
 Then have udev run this script when USB mices are plugged in or out, with these udev rules:
 
  `/etc/udev/rules.d/01-touchpad.rules` 
-
 ```
 SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="add", RUN+="/usr/bin/mouse-pnp-event-handler.sh add %k"
 SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="remove", RUN+="/usr/bin/mouse-pnp-event-handler.sh remove %k"
@@ -559,7 +550,6 @@ Ever more laptops have a special kind of touchpad which has a single mouse butto
 Some desktop environments (KDE and GNOME at least) define sane and useful default configurations for clickpads, providing a right button at the bottom right of the pad, recognising two and three-finger clicks anywhere on the pad as right and middle clicks, and providing configuration options to define two and three-finger taps as right and middle clicks. If your desktop does not do this, or if you want more control, you can modify the touchpad section in `/etc/X11/xorg.conf.d/50-synaptics.conf` (or better, of your custom synaptics configuration file prefixed with a higher number). For example:
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
 Section "InputClass"
     Identifier "touchpad"
@@ -593,7 +583,6 @@ Option     "SoftButtonAreas"  "60% 0 82% 0 40% 59% 82% 0"
 You can use `synclient` to check the soft button areas:
 
  `$ synclient -l | grep -i ButtonArea` 
-
 ```
         RightButtonAreaLeft     = 3914
         RightButtonAreaRight    = 0
@@ -636,7 +625,6 @@ $ synclient AreaBottomEdge=4000
 when a good value has been found make it a fixed correction with
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
 ...
 Option "AreaBottomEdge"         "4000"
@@ -677,7 +665,6 @@ Now switch back to the tty that X is running on. If you chose the right module, 
 Due to the way synaptics is currently set-up, 2 instances of the synaptics module are loaded. We can recognize this situation by opening the xorg log file (`/var/log/Xorg.0.log`) and noticing this:
 
  `/var/log/Xorg.0.log` 
-
 ```
  [ 9304.803] (**) SynPS/2 Synaptics TouchPad: Applying InputClass "evdev touchpad catchall"
  [ 9304.803] (**) SynPS/2 Synaptics TouchPad: Applying InputClass "touchpad catchall"
@@ -689,7 +676,6 @@ Notice how 2 differently named instances of the module are being loaded. In some
 We can prevent this double loading by adding `MatchDevicePath "/dev/input/event*"` to our `/etc/X11/xorg.conf.d/50-synaptics.conf` file:
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
 Section "InputClass"
     Identifier "touchpad catchall"
@@ -738,9 +724,9 @@ If clicking with either 2 or 3 fingers is interpreted as a right-click, so you c
 
 ### Cursor jump
 
-Some users have their cursor inexplicably _jump_ around the screen. There currently no patch for this, but the developers are aware of the problem and are working on it.
+Some users have their cursor inexplicably *jump* around the screen. There currently no patch for this, but the developers are aware of the problem and are working on it.
 
-Another posibility is that you are experiencing _IRQ losses_ related to the i8042 controller (this device handles the keyboard and the touchpad of many laptops), so you have two posibilities here:
+Another posibility is that you are experiencing *IRQ losses* related to the i8042 controller (this device handles the keyboard and the touchpad of many laptops), so you have two posibilities here:
 
 1\. rmmod && insmod the psmouse module. 2\. append i8042.nomux=1 to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") and reboot your machine.
 
@@ -758,7 +744,6 @@ Search for an input device which has the name "SynPS/2 Synaptics TouchPad". The 
 **Example output:**
 
  `$ cat /proc/bus/input/devices` 
-
 ```
  I: Bus=0011 Vendor=0002 Product=0007 Version=0000
  N: Name="SynPS/2 Synaptics TouchPad"
@@ -796,7 +781,7 @@ The optimum value will depend on your touchpad and how you use it, try starting 
 
 ### Opera: horizontal scrolling issues
 
-Same as above. To fix it, go to _Tools > Preferences > Advanced > Shortcuts_. Select "Opera Standard" mouse setup and click "Edit". In "Application" section:
+Same as above. To fix it, go to *Tools > Preferences > Advanced > Shortcuts*. Select "Opera Standard" mouse setup and click "Edit". In "Application" section:
 
 *   assign key "Button 6" to command "Scroll left"
 *   assign key "Button 7" to command "Scroll right"
@@ -867,10 +852,9 @@ Grabbing the event device means that no other user space or kernel space program
 If you want to control it, add or modify the "GrabEventDevice" option in you touchpad section in `/etc/X11/xorg.conf.d/50-synaptics.conf`:
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
 ...
-Option "GrabEventDevice" "_boolean_"
+Option "GrabEventDevice" "*boolean*"
 ...
 ```
 

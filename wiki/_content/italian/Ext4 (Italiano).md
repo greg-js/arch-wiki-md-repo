@@ -142,7 +142,7 @@ find /home -xdev -type d -print0 | xargs -0 chattr +e
 
 Si raccomanda di provare questo comando prima su una piccola quantità di file, e controllare che tutto sia andato per il verso giusto. Potrebbe essere anche utile controllare il filesystem dopo la conversione.
 
-Usando il comando _lsattr_, è possibile controllare che i file ora utilizzino l'"estensione". La lettera "e" dovrebbe apparire nella lista attributi dei file elencati.
+Usando il comando *lsattr*, è possibile controllare che i file ora utilizzino l'"estensione". La lettera "e" dovrebbe apparire nella lista attributi dei file elencati.
 
 ## Suggerimenti
 
@@ -195,9 +195,9 @@ Per le versioni di kernel precedenti alla 2.6.30, si consideri di poter aggiunge
 
 A partire dal kernel 2.6.30, le performance di ext4 sono diminuite a causa di cambiamenti atti a migliorare l'integrità dei dati [[1]](http://www.phoronix.com/scan.php?page=article&item=ext4_then_now&num=1).
 
-_La maggior parte dei filesystem (XFS, ext3, ext4, reiserfs) inviano al disco delle barriere in scrittura dopo l'fsync o durante i transaction commits. Le barriere in scrittura inducono ad un corretto ordinamento delle stesse, rendendo sicure all'uso le scritture sulla cache del disco (ad un certo calo delle prestazioni). Se i dischi hanno un qualche vincolo alla batteria, disabilitare le barriere può migliorare le prestazioni._
+*La maggior parte dei filesystem (XFS, ext3, ext4, reiserfs) inviano al disco delle barriere in scrittura dopo l'fsync o durante i transaction commits. Le barriere in scrittura inducono ad un corretto ordinamento delle stesse, rendendo sicure all'uso le scritture sulla cache del disco (ad un certo calo delle prestazioni). Se i dischi hanno un qualche vincolo alla batteria, disabilitare le barriere può migliorare le prestazioni.*
 
-_L'invio di barriere in scrittura può essere disabilitato utilizzando l'opzione di mount barrier=0 (per ext3, ext4, e reiserfs), o usando l'opzione di mount nobarrier mount (per XFS)_ [[2]](http://doc.opensuse.org/products/draft/SLES/SLES-tuning_sd_draft/cha.tuning.io.html).
+*L'invio di barriere in scrittura può essere disabilitato utilizzando l'opzione di mount barrier=0 (per ext3, ext4, e reiserfs), o usando l'opzione di mount nobarrier mount (per XFS)* [[2]](http://doc.opensuse.org/products/draft/SLES/SLES-tuning_sd_draft/cha.tuning.io.html).
 
 **Warning:** Disabilitando le barriere quando i dischi non garantiscono che la cache scriva in caso di mancanza di alimentazione può portare a una grave corruzione del file system e perdita di dati.
 

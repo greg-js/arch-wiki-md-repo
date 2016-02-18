@@ -176,7 +176,7 @@
 
 	[http://www.darhon.com/syncbackup](http://www.darhon.com/syncbackup) || [syncbackup](https://aur.archlinux.org/packages/syncbackup/)
 
-*   **TimeShift** — TimeShift это утилита системного восстановления, которая принимает дополнительные снимки системы с помощью _rsync_ и жёстких ссылок. Эти снимки могут быть восстановлены на более поздний срок, чтобы отменить все изменения, внесенные в систему после создания снимка.
+*   **TimeShift** — TimeShift это утилита системного восстановления, которая принимает дополнительные снимки системы с помощью *rsync* и жёстких ссылок. Эти снимки могут быть восстановлены на более поздний срок, чтобы отменить все изменения, внесенные в систему после создания снимка.
 
 Снимки могут быть сделаны вручную или через равные промежутки времени с использованием запланированных заданий.
 
@@ -245,7 +245,7 @@
     *   Serialization through pipes (and only one file per backup)
     *   Can be extracted or checked with gnutar
     *   Differential backups of multiple levels
-    *   Optional encoding of big files with _rsync_-differences
+    *   Optional encoding of big files with *rsync*-differences
 
 	[http://viric.name/cgi-bin/btar](http://viric.name/cgi-bin/btar) || [btar](https://aur.archlinux.org/packages/btar/)
 
@@ -271,7 +271,7 @@
 *   **System Tar & Restore** — Backup and Restore your system using tar or Transfer it with rsync
     *   CLI and Dialog interfaces
     *   Easy backup and restore wizards
-    *   Creates _.tar.gz_, _.tar.bz2_, _.tar.xz_ or _.tar_ archives
+    *   Creates *.tar.gz*, *.tar.bz2*, *.tar.xz* or *.tar* archives
     *   Supports openssl / gpg encryption
     *   Uses rsync to transfer a running system
     *   Supports Grub2 and Syslinux
@@ -299,7 +299,7 @@
 
 	[http://www.snebu.com](http://www.snebu.com) || [snebu](https://aur.archlinux.org/packages/snebu/)
 
-*   **ZBackup** — A globally-deduplicating backup tool, based on the ideas found in _rsync_.
+*   **ZBackup** — A globally-deduplicating backup tool, based on the ideas found in *rsync*.
     *   Parallel LZMA or LZO compression of the stored data
     *   Built-in AES encryption of the stored data
     *   Possibility to delete old backup data
@@ -317,7 +317,7 @@
 
 	[http://sourceforge.net/projects/backerupper/](http://sourceforge.net/projects/backerupper/) || [backerupper](https://aur.archlinux.org/packages/backerupper/)
 
-*   **[Déjà Dup](/index.php/Duplicity "Duplicity")** — Простая [GTK+](/index.php/GTK%2B_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GTK+ (Русский)") программа резервного копирования. It hides the complexity of doing backups the 'right way' (encrypted, off-site, and regular) and uses _duplicity_ as the backend.
+*   **[Déjà Dup](/index.php/Duplicity "Duplicity")** — Простая [GTK+](/index.php/GTK%2B_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GTK+ (Русский)") программа резервного копирования. It hides the complexity of doing backups the 'right way' (encrypted, off-site, and regular) and uses *duplicity* as the backend.
     *   Automatic, timed backup configurable in GUI.
     *   Restore wizard.
     *   Integrated into the GNOME Files file manager.
@@ -598,7 +598,7 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
 	[https://github.com/pangloss/gibak](https://github.com/pangloss/gibak) || [gibak](https://aur.archlinux.org/packages/gibak/)
 
 *   **bup** — A fledgling Git-based backup solution written in [python](/index.php/Python_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Python (Русский)") and C.
-    *   Uses a rolling checksum algorithm (similar to _rsync_) to split large files into chunks.
+    *   Uses a rolling checksum algorithm (similar to *rsync*) to split large files into chunks.
     *   Can back up directly to a remote bup server.
     *   Has an improved index format to allow you to track many files.
 

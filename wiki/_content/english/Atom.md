@@ -10,14 +10,14 @@ The following packages provide Atom:
 *   [atom-editor-beta](https://aur.archlinux.org/packages/atom-editor-beta/)
 *   [atom-editor-beta-bin](https://aur.archlinux.org/packages/atom-editor-beta-bin/)
 *   **atom** from the unofficial [atom](/index.php/Unofficial_user_repositories#atom "Unofficial user repositories") repository.
-    **Note:** Bugs regarding binary packages from the _atom_ repository can be reported on [Github](https://github.com/tensor5/arch-atom/issues). Bugs regarding Atom itself should be reported upstream.
+    **Note:** Bugs regarding binary packages from the *atom* repository can be reported on [Github](https://github.com/tensor5/arch-atom/issues). Bugs regarding Atom itself should be reported upstream.
 
 ## Packages
 
 Its packages can be installed from within Atom itself or from the command-line using the apm command. The correct syntax of apm is:
 
 ```
-$ apm install _package_name1_ _package_name2_ _package_name3_ ...
+$ apm install *package_name1* *package_name2* *package_name3* ...
 
 ```
 

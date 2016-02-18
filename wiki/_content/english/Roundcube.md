@@ -27,7 +27,6 @@ Install the [roundcubemail](https://www.archlinux.org/packages/?name=roundcubema
 Here's an example on how you could setup a database for Roundcube with [MariaDB](/index.php/MariaDB "MariaDB") called `roundcubemail` for the user `roundcube` identified by the password `password`:
 
  `$ mysql -u root -p` 
-
 ```
 CREATE DATABASE roundcubemail;
 GRANT ALL PRIVILEGES ON roundcubemail.* TO 'roundcube'@'localhost' IDENTIFIED BY 'password';
@@ -53,7 +52,6 @@ Copy the example configuration file and adjust it to your configuration:
 Set your mail server settings, and set `enable_installer` to enable the setup wizard:
 
  `/etc/webapps/roundcubemail/config/config.inc.php` 
-
 ```
 $config['db_dsnw'] = 'mysql://roundcube:****@localhost/roundcubemail';
 $config['default_host'] = 'tls://localhost';
@@ -67,7 +65,6 @@ $config['enable_installer'] = true;
 Make sure to adjust following variables to these minimal values in your PHP config:
 
  `/etc/php/php.ini` 
-
 ```
 date.timezone = "UTC"
 
@@ -100,7 +97,6 @@ Copy the configuration file for Apache to its configuration directory:
 And include it at the bottom of
 
  `/etc/httpd/conf/httpd.conf` 
-
 ```
 Include conf/extra/roundcube.conf
 
@@ -117,7 +113,6 @@ Restart Apache (`httpd.service`).
 Add a location block for RoundCube
 
  `/etc/nginx.conf` 
-
 ```
 location /webmail {
         alias /usr/share/webapps/roundcubemail;
@@ -181,7 +176,6 @@ For security reasons, you should **disable the installer when you have completed
 Because the `~/roundcube/config` directory contains sensitive information about your server, it's also a good idea to disallow access to this directory by adding these lines, too.
 
  `/etc/httpd/conf/extra/roundcube.conf` 
-
 ```
   <Directory /usr/share/webapps/roundcubemail/config>
      Options -FollowSymLinks
@@ -224,7 +218,6 @@ A complete list of PHP SSL configuration options [can be found here](http://php.
 Following Roundcube extensions enables you to preview PDF or OpenDocument file attachements. Install [roundcubemail-plugins-kolab](https://aur.archlinux.org/packages/roundcubemail-plugins-kolab/) from the [AUR](/index.php/AUR "AUR") and adjust following configuration file to enable the extensions:
 
  `/etc/webapps/roundcubemail/config/config.inc.php` 
-
 ```
 $config['plugins'] = array(
     'pdfviewer',
@@ -242,7 +235,6 @@ If you encounter any file permission issues, than try this command:
 It's useful to use the Roundcube address book to have auto-completion features for address fields etc. If you have your contacts stored somewhere else and the remote application offers a CardDav server for synchronization, then you can use the [roundcube-rcmcarddav](https://aur.archlinux.org/packages/roundcube-rcmcarddav/) extension from the [AUR](/index.php/AUR "AUR") to access your remote address book in Roundcube. To enable it, adjust following lines in your config file:
 
  `/etc/webapps/roundcubemail/config/config.inc.php` 
-
 ```
 $config['plugins'] = array(
     'carddav'

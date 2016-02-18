@@ -41,7 +41,6 @@ Scaricare ed eseguire [l'installatore più recente](http://synergy-foss.org/down
 Anzitutto scaricare e compilare il codice sorgente per creare i binari synergyc e synergys dal [repo svn](http://synergy-foss.org/pm/projects/synergy/tabs/source).
 
  `$ svn co http://synergy-plus.googlecode.com/svn/trunk/ synergy-trunk && cd synergy-trunk && cmake . && make` 
-
 ```
 ...
 [  0%] Built target gtest
@@ -56,7 +55,6 @@ Linking CXX executable synergys
 Poi cambiare l'owner;group a `root:root` e copiare i binari creati nel proprio `$PATH`, ad esempio `/usr/local/bin`.
 
  `$ sudo chown root:root synergyc synergys && sudo cp -v synerygyc synergys /usr/local/bin` 
-
 ```
 changed ownership of `synergyc' to root:root
 changed ownership of `synergys' to root:root
@@ -77,7 +75,6 @@ Determinare gli indirizzi IP e gli [hostname](/index.php/Configuring_Network_(It
 *   Mac OS X - [Come aggiungere degli host al file hosts locale](http://support.apple.com/kb/TA27291?viewlocale=en_US).
 
  `/etc/hosts` 
-
 ```
 10.10.66.1        archserver.localdomain       archserver
 10.10.66.100      archleft.localdomain         archleft
@@ -113,7 +110,6 @@ Se si verificano dei problemi e si desidera eseguire il server in foreground (mo
 Se si vuole avviare il demone server di Synergy ad ogni avvio di Arch Linux, si può aggiungere `synergys` all'array dei demoni in `/etc/rc.conf`:
 
  `/etc/rc.conf` 
-
 ```
 ...
 DAEMONS=(... synergys ...)
@@ -122,15 +118,15 @@ DAEMONS=(... synergys ...)
 ### Windows
 
 1.  Aprire il programma Synergy
-2.  Selezionare l'opzione _Server (share this computer's mouse and keyboard)_
-3.  Selezionare _Configure interactively_
-4.  Cliccare il pulsante _Configure Server..._
+2.  Selezionare l'opzione *Server (share this computer's mouse and keyboard)*
+3.  Selezionare *Configure interactively*
+4.  Cliccare il pulsante *Configure Server...*
 5.  Questo apre una finestra nella quale si possono aggiungere schermi a seconda di quanti computer/schermi si hanno: basta trascinare l'icona dello schermo dall'angolo in alto a destra fino nell'area degli schermi, e poi farci doppio click per modificare la sua configurazione
-6.  Cliccare su _OK_ per chiudere la finestra degli schermi quando si è pronti, poi cliccare su _Start_ per avviare il client
+6.  Cliccare su *OK* per chiudere la finestra degli schermi quando si è pronti, poi cliccare su *Start* per avviare il client
 
 Su Windows, la configurazione viene salvata per default in un file `synergy.sgc`, ma il suo nome e il percorso possono essere modificati a piacere.
 
-Se si vuole avviare il server ad ogni avvio di Windows bisogna lanciare Synergy **come amministratore**, poi andare se _Edit -> Services_ e selezionare _Install_ nella sezione _Server_; notare che al riavvio seguente Synergy sarà sì autoavviato, ma l'icona nell'area notifiche non si mostrerà automaticamente (almeno nella versione 1.4.2 beta su Windows 7). Per disinstallare il servizio bisogna fare la stessa cosa ma ovviamente selezionando _Uninstall_.
+Se si vuole avviare il server ad ogni avvio di Windows bisogna lanciare Synergy **come amministratore**, poi andare se *Edit -> Services* e selezionare *Install* nella sezione *Server*; notare che al riavvio seguente Synergy sarà sì autoavviato, ma l'icona nell'area notifiche non si mostrerà automaticamente (almeno nella versione 1.4.2 beta su Windows 7). Per disinstallare il servizio bisogna fare la stessa cosa ma ovviamente selezionando *Uninstall*.
 
 Se si vuole avviare il server dalla linea di comando, questa è una linea che si può mettere in un file `.bat` o semplicemente eseguirla da `cmd.exe`:
 
@@ -147,7 +143,6 @@ Mac OS X ha una configurazione simile a Unix: consultare [la documentazione uffi
 Questo è un esempio per una configurazione a 3 computer:
 
  `/etc/synergy.conf` 
-
 ```
 section: screens
 	server-fire:
@@ -170,7 +165,6 @@ end
 Questo dovrebbe essere l'esempio fornito insieme al pacchetto di Arch Linux:
 
  `/etc/synergy.conf` 
-
 ```
 section: screens
         # three hosts named:  moe, larry, and curly
@@ -209,7 +203,6 @@ end
 Il seguente è un esempio più personalizzato:
 
  `synergy.sgc` 
-
 ```
 section: screens
 	leftpc:
@@ -283,7 +276,6 @@ Esistono vari modi per autoavviare il client per Synergy, ed effettivamente sono
 *   Si può aggiungere la seguente linea al proprio [`~/.xinitrc`](/index.php/Xinitrc "Xinitrc"):
 
  `~/.xinitrc` 
-
 ```
 ...
 
@@ -296,7 +288,6 @@ synergyc server-host-name
 Il seguente codice è un'alternativa:
 
  `~/.xinitrc` 
-
 ```
 XINIT_CMD='/usr/bin/synergyc -d FATAL -n galileo-fire 10.66.66.2:24800'
 /usr/bin/pgrep -lxf "$XINIT_CMD" || ( ( $XINIT_CMD ) & )
@@ -309,7 +300,7 @@ synergyc server-host-name
 
 ```
 
-o, nel caso si sia creato il demone _synergyc_ daemon (leggere più sotto):
+o, nel caso si sia creato il demone *synergyc* daemon (leggere più sotto):
 
 ```
 /etc/rc.d/synergyc stop   #verify synergy is closed
@@ -317,12 +308,11 @@ o, nel caso si sia creato il demone _synergyc_ daemon (leggere più sotto):
 
 ```
 
-Ad esempio, se si usa _kdm_ si dovrebbe modificare `/usr/share/config/kdm/Xsetup`.
+Ad esempio, se si usa *kdm* si dovrebbe modificare `/usr/share/config/kdm/Xsetup`.
 
-*   Si può anche avviare _synergyc_ direttamente nella init chain aggiungendo le righe seguenti a `/etc/rc.local`:
+*   Si può anche avviare *synergyc* direttamente nella init chain aggiungendo le righe seguenti a `/etc/rc.local`:
 
  `/etc/rc.local` 
-
 ```
 ...
 
@@ -334,7 +324,6 @@ synergyc server-host-name
 *   Un risultato simile può essere ottenuto creando un demone e aggiungendolo all'array dei demoni in `/etc/rc.conf`; basta creare un file `/etc/rc.d/synergyc` con il contenuto seguente, assicurandosi di settare i suoi permessi con `chmod 755`:
 
  `/etc/rc.d/synergyc` 
-
 ```
 #!/bin/bash
 . /etc/rc.conf
@@ -381,11 +370,11 @@ L'autoavvio di Synergy è documentato anche nella sua [pagina ufficiale di rifer
 
 ### Windows
 
-Dopo l'installazione, aprire il programma Synergy, selezionare l'opzione _Client (use another computer's keyboard and mouse)_ e digitare l'hostname del server nella casella di testo, poi cliccare su _Start_ per avviare il client.
+Dopo l'installazione, aprire il programma Synergy, selezionare l'opzione *Client (use another computer's keyboard and mouse)* e digitare l'hostname del server nella casella di testo, poi cliccare su *Start* per avviare il client.
 
 **Nota:** Per terminare il client si può usare l'icona nell'area notifiche.
 
-Se si vuole avviare il client ad ogni avvio di Windows bisogna lanciare Synergy **come amministratore**, poi andare su _Edit -> Services_ e selezionare _Install_ nella sezione _Client_.
+Se si vuole avviare il client ad ogni avvio di Windows bisogna lanciare Synergy **come amministratore**, poi andare su *Edit -> Services* e selezionare *Install* nella sezione *Client*.
 
 Se si vuole avviare il client dalla linea di comando, questa è una linea che si può mettere in un file `.bat` o semplicemente eseguirla da `cmd.exe`. Questa punta ad un file di configurazione in `C:\synergy.sgc` e viene eseguita in background come un servizio.
 
@@ -428,7 +417,7 @@ Se si hanno problemi con la mappatura della tastiera usando la tastiera del serv
 
 ### messages.log viene spammato da synergyc
 
-Se si esegue _synergyc_ come descritto sopra, il proprio file `/var/log/messages.log` sarà spammato con messagi del genere:
+Se si esegue *synergyc* come descritto sopra, il proprio file `/var/log/messages.log` sarà spammato con messagi del genere:
 
 ```
  May 26 22:30:46 localhost Synergy 1.4.6: 2012-05-26T22:30:46 INFO: entering screen
@@ -438,14 +427,14 @@ Se si esegue _synergyc_ come descritto sopra, il proprio file `/var/log/messages
 
 ```
 
-Per evitare ciò eseguire _synergyc_ con l'opzione `-d WARNING`. Quest'opzione del _livello di debug_ istruisce synergy a loggare solamente i messaggi che sono del livello _WARNING_ o superiore.
+Per evitare ciò eseguire *synergyc* con l'opzione `-d WARNING`. Quest'opzione del *livello di debug* istruisce synergy a loggare solamente i messaggi che sono del livello *WARNING* o superiore.
 
 ```
  synergyc -d WARNING server-host-name
 
 ```
 
-È anche possibile editare la linea che lancia _synergyc_ se si usa un file `/etc/rc.d/synergyc`.
+È anche possibile editare la linea che lancia *synergyc* se si usa un file `/etc/rc.d/synergyc`.
 
 ```
     [ -z "$PID" ] && /usr/bin/synergyc -d WARNING "$SERVERALIAS"

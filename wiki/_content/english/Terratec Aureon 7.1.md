@@ -21,7 +21,6 @@ Rebooting or restarting the ALSA (sudo /etc/rd.d/alsa restart) may be required f
 This card doesn't have hardware volume control, so you need to create software Master control. Create the following file in your home folder
 
  `.asoundrc` 
-
 ```
 pcm.softvol {
         type softvol
@@ -48,7 +47,6 @@ Again, restart alsa, then open a music player, play a file and close the player.
 The sound card has external hotkeys for volume change and mute. You can capture the button presses by installing [Xbindkeys](/index.php/Xbindkeys "Xbindkeys") and using the following config:
 
  `.xbindkeysrc` 
-
 ```
 #Volume up
 "amixer set 'Master' 5+"
@@ -90,7 +88,6 @@ fi
 Add the following codec settings for mplayer
 
  `.mplayer/config` 
-
 ```
 ac=hwac3,hwdts,a52,dts,
 ao=alsa

@@ -23,7 +23,6 @@ The container's config should be modified to include several key sections in ord
 For the example, the lxc is named "playtime" and a full config is shown:
 
  `/var/lib/lxc/playtime/config` 
-
 ```
 # Template used to create this container: /usr/share/lxc/templates/lxc-archlinux
 # Parameters passed to the template:
@@ -69,9 +68,7 @@ lxc.cgroup.devices.allow = c 10:200 rwm
 ```
 
 **Note:** This example requires the use of the **autodev** hook which calls the corresponding `/var/lib/lxc/playtime/autodev` script which users need to create and make executable. For the sake of completeness, this script is provided below. Refer to [Linux Containers](/index.php/Linux_Containers "Linux Containers") for additional discussion if needed.
-
  `/var/lib/lxc/playtime/autodev` 
-
 ```
 #!/bin/bash
 cd ${LXC_ROOTFS_MOUNT}/dev
@@ -83,7 +80,7 @@ chmod 0666 net/tun
 
 ### Needed packages within the container
 
-In addition to the base system, [openvpn](https://www.archlinux.org/packages/?name=openvpn) is required and available from the [official repositories](/index.php/Official_repositories "Official repositories"). A properly configured [firewall](/index.php/Firewall "Firewall") to run within the container is _highly_ recommended. The role of the firewall within the container is two fold:
+In addition to the base system, [openvpn](https://www.archlinux.org/packages/?name=openvpn) is required and available from the [official repositories](/index.php/Official_repositories "Official repositories"). A properly configured [firewall](/index.php/Firewall "Firewall") to run within the container is *highly* recommended. The role of the firewall within the container is two fold:
 
 1.  Provide a functional "kill switch" to maintain privacy should the connection to the VPN fail.
 2.  Keep nasty stuff out.

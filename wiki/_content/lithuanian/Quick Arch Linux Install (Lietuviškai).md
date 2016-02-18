@@ -75,7 +75,7 @@ cfdisk
 *   Failų sistemą [ext3](http://en.wikipedia.org/wiki/Ext3)
 *   Pasirinkite atlikta (done)
 
-_Nepamirškite pasirinkt atlikta (done), nes kitaip nebūs atlikti jokie pakeitimai._
+*Nepamirškite pasirinkt atlikta (done), nes kitaip nebūs atlikti jokie pakeitimai.*
 
 ### Pasirinkite programas
 

@@ -1,4 +1,4 @@
-Iptables es un poderoso [firewall](/index.php/Firewalls_(Espa%C3%B1ol) "Firewalls (Español)") integrado en el kernel de Linux y que forma parte del proyecto [netfilter](https://en.wikipedia.org/wiki/es:Netfilter "wikipedia:es:Netfilter"). Iptables puede ser configurado directamente, como también por medio de un [frontend](/index.php/Firewalls_(Espa%C3%B1ol)#Front-ends_para_iptables "Firewalls (Español)") o una [GUI](/index.php/Firewalls_(Espa%C3%B1ol)#GUI_para_iptables "Firewalls (Español)"). iptables es usado por [IPv4](https://en.wikipedia.org/wiki/es:IPv4 "wikipedia:es:IPv4"), en tanto que ip6tables es usado para [IPv6](https://en.wikipedia.org/wiki/es:IPv6 "wikipedia:es:IPv6").
+Iptables es un poderoso [firewall](/index.php/Firewalls_(Espa%C3%B1ol) "Firewalls (Español)") integrado en el kernel de Linux y que forma parte del proyecto [netfilter](https://en.wikipedia.org/wiki/es:Netfilter o una [GUI](/index.php/Firewalls_(Espa%C3%B1ol)#GUI_para_iptables "Firewalls (Español)"). iptables es usado por [IPv4](https://en.wikipedia.org/wiki/es:IPv4 "wikipedia:es:IPv4"), en tanto que ip6tables es usado para [IPv6](https://en.wikipedia.org/wiki/es:IPv6 "wikipedia:es:IPv6").
 
 [nftables](http://netfilter.org/projects/nftables/) está programada para [ser liberada con el kernel de Linux 3.13](http://www.phoronix.com/scan.php?page=news_item&px=MTQ5MDU), y vendrá a sustituir definitivamente iptables como la principal utilidad de cortafuegos de Linux. Por ahora, un howto está disponible [aquí](https://home.regit.org/netfilter-en/nftables-quick-howto/).
 
@@ -31,7 +31,7 @@ Todos los kernels de serie de Arch Linux son compatibles con iptables. Solo nece
 
 ### Tablas
 
-iptables cuenta con cinco _tablas_, que son zonas en las que una cadena de reglas se puede aplicar:
+iptables cuenta con cinco *tablas*, que son zonas en las que una cadena de reglas se puede aplicar:
 
 1.  `raw` filtra los paquetes antes que cualquier otra tabla. Se utiliza principalmente para configurar exenciones de seguimiento de conexiones en combinación con el target `NOTRACK`.
 2.  `filter` es la tabla por defecto (si no se pasa la opción `-t`).
@@ -41,7 +41,7 @@ iptables cuenta con cinco _tablas_, que son zonas en las que una cadena de regla
 
 ### Cadenas
 
-Las tablas contienen _cadenas_, que son listas de reglas que ordenan los [paquete de red](https://en.wikipedia.org/wiki/es:Paquete_de_red "wikipedia:es:Paquete de red"). Por defecto, la tabla `filter` contiene tres cadenas integradas: `INPUT`, `OUTPUT` y `FORWARD`.
+Las tablas contienen *cadenas*, que son listas de reglas que ordenan los [paquete de red](https://en.wikipedia.org/wiki/es:Paquete_de_red "wikipedia:es:Paquete de red"). Por defecto, la tabla `filter` contiene tres cadenas integradas: `INPUT`, `OUTPUT` y `FORWARD`.
 
 1.  Todo el tráfico entrante, dirigido a la máquina, se hace pasar a través de la cadena `INPUT`.
 2.  Todo el tráfico saliente, generado localmente, pasa a través de la cadena `OUTPUT`
@@ -55,9 +55,9 @@ Las cadenas compiladas tienen un target predefinido, que se utiliza si no hay re
 
 ### Reglas
 
-El filtrado de los paquetes de red se basa en _rules_ -_reglas_-, que se especifican por diversos _matches_ -_«coincidencias»_- (condiciones que el paquete debe satisfacer para que la regla se puede aplicar), y un _target_ -_«objetivo»_ (acción a tomar cuando el paquete coincide con la condición plenamente). Si bien las condiciones individuales suelen ser muy simples, la especificación de la regla completa puede ser muy compleja.
+El filtrado de los paquetes de red se basa en *rules* -*reglas*-, que se especifican por diversos *matches* -*«coincidencias»*- (condiciones que el paquete debe satisfacer para que la regla se puede aplicar), y un *target* -*«objetivo»* (acción a tomar cuando el paquete coincide con la condición plenamente). Si bien las condiciones individuales suelen ser muy simples, la especificación de la regla completa puede ser muy compleja.
 
-Los targets se especifican mediante la opción `-j` o `--jump`. Los targets pueden ser tanto las cadenas definidas por el usuario, como uno de los targets integrados especiales, o una extensión de target. Los targets integrados son `ACCEPT`, `DROP`, `QUEUE` y `RETURN`; las extensiones de target son, por ejemplo, `REJECT` y `LOG`. Si el target es un target integrado, el destino del paquete es decidido inmediatamente y el procesamiento del paquete red en la tabla actual se detiene. Si el target es una cadena definida por el usuario y el paquete supera con éxito esta segunda cadena, se moverá a la siguiente regla de la cadena inicial. Las extensiones de target pueden ser tanto _terminating_ (como los targets integrados) como _non-terminating_ (como las cadenas especificadas por el usuario), Véase `man 8 iptables-extensions` para obtener más detalles
+Los targets se especifican mediante la opción `-j` o `--jump`. Los targets pueden ser tanto las cadenas definidas por el usuario, como uno de los targets integrados especiales, o una extensión de target. Los targets integrados son `ACCEPT`, `DROP`, `QUEUE` y `RETURN`; las extensiones de target son, por ejemplo, `REJECT` y `LOG`. Si el target es un target integrado, el destino del paquete es decidido inmediatamente y el procesamiento del paquete red en la tabla actual se detiene. Si el target es una cadena definida por el usuario y el paquete supera con éxito esta segunda cadena, se moverá a la siguiente regla de la cadena inicial. Las extensiones de target pueden ser tanto *terminating* (como los targets integrados) como *non-terminating* (como las cadenas especificadas por el usuario), Véase `man 8 iptables-extensions` para obtener más detalles
 
 ### Módulos
 
@@ -69,10 +69,9 @@ Hay muchos módulos que pueden ser utilizados para reforzar iptables, como connl
 
 #### Mostrar las reglas vigentes
 
-Puede comprobar el _ruleset_ en uso y el número de paquetes de red que ha satisfecho cada regla usando la orden:
+Puede comprobar el *ruleset* en uso y el número de paquetes de red que ha satisfecho cada regla usando la orden:
 
  `# iptables -nvL` 
-
 ```
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
  pkts bytes target     prot opt in     out     source               destination   
@@ -305,9 +304,9 @@ Después, defínala:
 
 ### Limitar el tamaño del registro
 
-El módulo _limit_ se debe usar para prevenir que el registro de iptables se haga demasiado grande o haga que el disco duro se escriba innecesariamente. Sin limitación, un atacante podría llenar el disco (o al menos la partición `/var`) causando la saturación del registro de iptables.
+El módulo *limit* se debe usar para prevenir que el registro de iptables se haga demasiado grande o haga que el disco duro se escriba innecesariamente. Sin limitación, un atacante podría llenar el disco (o al menos la partición `/var`) causando la saturación del registro de iptables.
 
-`-m limit` se utiliza para llamar al módulo limit. Puede usar `--limit` para utilizar una tasa promedio y `--limit-burst` para establecer una tasa de ráfaga (_«limit burst»_) inicial. Por ejemplo:
+`-m limit` se utiliza para llamar al módulo limit. Puede usar `--limit` para utilizar una tasa promedio y `--limit-burst` para establecer una tasa de ráfaga (*«limit burst»*) inicial. Por ejemplo:
 
 ```
 -A LOGDROP -m limit --limit 5/m --limit-burst 10 -j LOG

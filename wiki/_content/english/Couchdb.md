@@ -1,4 +1,4 @@
-_"Apache CouchDB is a document-oriented database that can be queried and indexed in a MapReduce fashion using JavaScript."_ - [CouchDB homepage](http://couchdb.apache.org/)
+*"Apache CouchDB is a document-oriented database that can be queried and indexed in a MapReduce fashion using JavaScript."* - [CouchDB homepage](http://couchdb.apache.org/)
 
 ## Contents
 
@@ -54,7 +54,6 @@ If you would like to use ssl with a self-signed certificate you can create one l
 Then uncomment httpsd and update the paths in `[daemons]` and `[ssl]` sections:
 
  `/etc/couchdb/local.ini` 
-
 ```
 [daemons]
 httpsd = {couch_httpd, start_link, [https]}

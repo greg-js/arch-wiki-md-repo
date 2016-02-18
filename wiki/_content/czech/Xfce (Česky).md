@@ -120,7 +120,7 @@ Počínaje verzí Xfce 4.2.0 balíčky v Archu obsahují náležité soubory sez
 
 ## Jak vypínat a restartovat z Xfce
 
-Ujistěte se, že jsou aktivováni DBus a HAL (v řádku DAEMONS v /etc/[rc.conf](/index.php/Rc.conf "Rc.conf")). Poté přidejte svého běžného uživatele do skupiny _power_:
+Ujistěte se, že jsou aktivováni DBus a HAL (v řádku DAEMONS v /etc/[rc.conf](/index.php/Rc.conf "Rc.conf")). Poté přidejte svého běžného uživatele do skupiny *power*:
 
 ```
 # gpasswd -a UŽIVATEL power
@@ -133,7 +133,7 @@ Ujistěte se, že jsou aktivováni DBus a HAL (v řádku DAEMONS v /etc/[rc.conf
 
 ### Příkazy pro správce nastavení
 
-Pro spouštěné příkazy není žádná oficiální dokumentace. Je třeba se podívat na soubory .desktop v adresáři _/usr/share/applications/_. Pro ušetření úsilí je zde pro lidi, kteří chtějí vědět, co se přesně děje, praktický seznam:
+Pro spouštěné příkazy není žádná oficiální dokumentace. Je třeba se podívat na soubory .desktop v adresáři */usr/share/applications/*. Pro ušetření úsilí je zde pro lidi, kteří chtějí vědět, co se přesně děje, praktický seznam:
 
 ```
 xfce-setting-show backdrop
@@ -176,9 +176,9 @@ nainstaluje tildu, vysouvací konzoli podobnou yakuake ve KDE. Používá celkem
 
 Xfce 4.4 přichází s vestavěným kompozitorem, jenž umožňuje ozdobné efekty oken, stíny, průhlednost a tak dále.
 
-Můžete ho najít v _Settings -> Window manager tweaks_. Pokud tam nicméně není, učiňte následující kroky:
+Můžete ho najít v *Settings -> Window manager tweaks*. Pokud tam nicméně není, učiňte následující kroky:
 
-*   Otevřete $HOME/.config/xfce4/mcs_settings/wmtweaks.xml a ujistěte se, že je v souboru přítomné _<option name="Xfwm/UseCompositing" type="int" value="1"/>_. Pokud tam není soubor wmtweaks, otevřete _Settings->Window manager tweaks_ a změňte pár věcí, pak dialog zavřete a soubor by se měl objevit.
+*   Otevřete $HOME/.config/xfce4/mcs_settings/wmtweaks.xml a ujistěte se, že je v souboru přítomné *<option name="Xfwm/UseCompositing" type="int" value="1"/>*. Pokud tam není soubor wmtweaks, otevřete *Settings->Window manager tweaks* a změňte pár věcí, pak dialog zavřete a soubor by se měl objevit.
 *   Ujistěte se, že ve vašem souboru /etc/X11/xorg.conf jsou následující řádky:
 
 ```
@@ -248,11 +248,11 @@ urxvtd -q -o -f
 
 ```
 
-1.  Jděte na [xfce-look.org](http://xfce-look.org) a klikněte v levém navigačním pruhu na _"Themes"_. Porozhlédněte se po nějakém téma, které se vám bude líbit, a klikněte na _"Download"_.
+1.  Jděte na [xfce-look.org](http://xfce-look.org) a klikněte v levém navigačním pruhu na *"Themes"*. Porozhlédněte se po nějakém téma, které se vám bude líbit, a klikněte na *"Download"*.
 2.  Jděte do adresáře, kam jste stáhli ten soubor/tarball a rozbalte ho pomocí Squeeze/Xarchiver/CLI.
 3.  Přesuňte rozbalenou složku do /usr/share/themes (pro všechny uživatele) nebo ~/.themes (jen pro vás). Uvnitř /usr/share/themes/abc je složka se jménem xfwm4, jenž bude obsahovat všechny soubory zahrnuté v daném téma.
-4.  GTK téma je dostupné zde: _Menu --> Settings --> User Interface Settings_
-    Téma xfwm vybíráte v: _Menu --> Settings --> Window Manager Settings_
+4.  GTK téma je dostupné zde: *Menu --> Settings --> User Interface Settings*
+    Téma xfwm vybíráte v: *Menu --> Settings --> Window Manager Settings*
 
 ### Jak odstranit položky ze systémového menu
 

@@ -41,7 +41,6 @@ If you intend to "print" into a PDF document, also install the [cups-pdf](https:
 To see if your USB printer is detected:
 
  `lsusb` 
-
 ```
 (...)
 Bus 001 Device 007: ID 03f0:1004 Hewlett-Packard DeskJet 970c/970cse
@@ -53,7 +52,6 @@ Bus 001 Device 007: ID 03f0:1004 Hewlett-Packard DeskJet 970c/970cse
 To use a parallel port printer, the `lp`, `parport` and `parport_pc` [kernel modules](/index.php/Kernel_modules "Kernel modules") are required.
 
  `dmesg | grep -i print` 
-
 ```
  parport0: Printer, Hewlett-Packard HP LaserJet 2100 Series
  lp0: using parport0 (polling)
@@ -115,13 +113,13 @@ The CUPS server configuration located in `/etc/cups/cupsd.conf`. After editing, 
 
 To have the printer installed on the system, fire up a browser and point it to [http://localhost:631](http://localhost:631). The CUPS web interface should be displayed from which all administrative tasks can be performed.
 
-**Note:** If an HTTPS connection to CUPS is used the first time the interface is accessed it _may_ take a very long time before the page appears. This is because the first request triggers the generation of CUPS SSL certificates which can be a time-consuming job.
+**Note:** If an HTTPS connection to CUPS is used the first time the interface is accessed it *may* take a very long time before the page appears. This is because the first request triggers the generation of CUPS SSL certificates which can be a time-consuming job.
 
 Go to Administration and enter the root login and password information your GNU/Linux system. Then, when the administrative interface has been reached, click on Add Printer. A new screen will be displayed allowing the following information to be entered:
 
-*   The _spooler name_, a short but descriptive name used on the system to identify the printer. This name should not contain spaces or any special characters. For instance, for the HP LaserJet 5P could be titled `hpljet5p`.
-*   The _location_, a description where the printer is physically located (for instance "bedroom", or "in the kitchen right next to the dish washer", etc.). This is to aid in maintaining several printers.
-*   The _description_ should contain a full description of the printer. A common use is the full printer name (like "HP LaserJet 5P").
+*   The *spooler name*, a short but descriptive name used on the system to identify the printer. This name should not contain spaces or any special characters. For instance, for the HP LaserJet 5P could be titled `hpljet5p`.
+*   The *location*, a description where the printer is physically located (for instance "bedroom", or "in the kitchen right next to the dish washer", etc.). This is to aid in maintaining several printers.
+*   The *description* should contain a full description of the printer. A common use is the full printer name (like "HP LaserJet 5P").
 
 The next screen requests the device the printer listens to. The choice of several devices will be presented. The next table covers a few possible devices, but the list is not exhaustive.
 
@@ -183,9 +181,7 @@ CUPS_SERVER=printserver.mydomain:port firefox
 The second method involves editing `/etc/cups/client.conf` and setting the `ServerName` directive:
 
 **Warning:** `/etc/cups/client.conf` is [deprecated](http://www.cups.org/documentation.php/doc-2.1/man-client.conf.html)
-
  `/etc/cups/client.conf` 
-
 ```
 # (Substitute printserver.mydomain with your print server name)
 ServerName printserver.mydomain
@@ -274,7 +270,7 @@ If your user does not have sufficient privileges to administer the cups schedule
 
 ## Usage
 
-CUPS can be fully controlled from command-line with nice tools, _i.e._ the lp* and the cups* command families. Here follows a crash-course. See [CUPS local documentation](http://localhost:631/help/options.html) for more tips on command-line tools.
+CUPS can be fully controlled from command-line with nice tools, *i.e.* the lp* and the cups* command families. Here follows a crash-course. See [CUPS local documentation](http://localhost:631/help/options.html) for more tips on command-line tools.
 
 On Arch Linux, most commands support auto-completion with common shells. Also note that command-line switches cannot be grouped.
 
@@ -295,30 +291,30 @@ On Arch Linux, most commands support auto-completion with common shells. Also no
 	Add a new printer
 
 ```
-# lpadmin -p _printer_ -E -v _device_ -P _ppd_
+# lpadmin -p *printer* -E -v *device* -P *ppd*
 
 ```
 
-The _printer_ is up to you. The device can be retrieved from the 'lpinfo -v' command. Example:
+The *printer* is up to you. The device can be retrieved from the 'lpinfo -v' command. Example:
 
 ```
 # lpadmin -p HP_DESKJET_940C -E -v "usb://HP/DESKJET%20940C?serial=CN16E6C364BH" -P /usr/share/ppd/HP/hp-deskjet_940c.ppd.gz
 
 ```
 
-In the following, the _printer_ references the name you have used here to set up the printer.
+In the following, the *printer* references the name you have used here to set up the printer.
 
 	Make the printer use the raw driver
 
 ```
-# lpadmin -p _printer_ -m raw
+# lpadmin -p *printer* -m raw
 
 ```
 
 	Set the default printer
 
 ```
-$ lpoptions -d _printer_
+$ lpoptions -d *printer*
 
 ```
 
@@ -326,21 +322,21 @@ $ lpoptions -d _printer_
 
 ```
 $ lpstat -s
-$ lpstat -p _printer_
+$ lpstat -p *printer*
 
 ```
 
 	Deactivate a printer
 
 ```
-# cupsdisable _printer_
+# cupsdisable *printer*
 
 ```
 
 	Activate a printer
 
 ```
-# cupsenable _printer_
+# cupsenable *printer*
 
 ```
 
@@ -349,29 +345,29 @@ $ lpstat -p _printer_
 First set it to reject all incoming entries:
 
 ```
-# cupsreject _printer_
+# cupsreject *printer*
 
 ```
 
 Then disable it.
 
 ```
-# cupsdisable _printer_
+# cupsdisable *printer*
 
 ```
 
 Finally remove it.
 
 ```
-# lpadmin -x _printer_
+# lpadmin -x *printer*
 
 ```
 
 	Print a file
 
 ```
-$ lpr _file_
-$ lpr -# 17 _file_            # print the file 17 times
+$ lpr *file*
+$ lpr -# 17 *file*            # print the file 17 times
 $ echo "Hello, world!" | lpr -p # print the result of a command. The -p switch adds a header.
 
 ```
@@ -398,7 +394,7 @@ See [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting
 
 ## See also
 
-*   [Official CUPS documentation](http://localhost:631/help), _locally installed_
+*   [Official CUPS documentation](http://localhost:631/help), *locally installed*
 *   [Official CUPS website](http://www.cups.org/)
 *   [OpenPrinting homepage](http://www.linuxfoundation.org/collaborate/workgroups/openprinting)
 *   [Gentoo's printing guide](https://wiki.gentoo.org/wiki/Printing)

@@ -35,7 +35,6 @@
 当前正在使用的内核支持的acpi模块列表可以用下面命令查看：
 
  `# ls -l /usr/lib/modules/$(uname -r)/kernel/drivers/acpi` 
-
 ```
 total 112
 -rw-r--r-- 1 root root  2808 Aug 29 23:58 ac.ko.gz

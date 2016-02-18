@@ -4,7 +4,7 @@ Fontconfig 是一个为应用程序提供可用 [字体](/index.php/Fonts_(%E7%A
 
 尽管 Fontconfig 已经是当今 Linux 字体界的标准，但是仍有一部分应用使用更加原始的字体显示方法，[X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description")。
 
-Arch Linux 上的字体渲染包支持有字节码解释器(BCI)的_freetype2_。为了更好的字体渲染，特别是在 LCD 显示器上，一些补丁包也添加到库中，参见下面的 [#补丁包](#.E8.A1.A5.E4.B8.81.E5.8C.85)。[#Infinality](#Infinality) 包同时支持自动微调和亚像素渲染，允许在无须重新编译的情况下微调LCD滤光器，而且在粗体字下自动微调仍然表现良好。
+Arch Linux 上的字体渲染包支持有字节码解释器(BCI)的*freetype2*。为了更好的字体渲染，特别是在 LCD 显示器上，一些补丁包也添加到库中，参见下面的 [#补丁包](#.E8.A1.A5.E4.B8.81.E5.8C.85)。[#Infinality](#Infinality) 包同时支持自动微调和亚像素渲染，允许在无须重新编译的情况下微调LCD滤光器，而且在粗体字下自动微调仍然表现良好。
 
 ## Contents
 
@@ -88,7 +88,7 @@ xset -fp /usr/share/fonts/sucky_fonts/     # Remove the specified font path from
 
 Fontconfig 把所有的配置都放在一个中心文件中 (`/etc/fonts/fonts.conf`). 这个文件会在fontconfig更新时被替换，注意你不应该编辑这个文件. 字体设置重要的程序会引用这个文件以获得当前字体配置和渲染配置．这个文件是一系列配置规则的集合包括全局配置文件(`/etc/fonts/local.conf`), 预设的配置 `/etc/fonts/conf.d/`, 和用户的配置文件 (`$XDG_CONFIG_HOME/fontconfig/fonts.conf`).
 
-**Note:** 有一些桌面环境 (比如说 [GNOME](/index.php/GNOME "GNOME") 和 [KDE](/index.php/KDE "KDE")) 使用 _Font Control Panel_ 会自动生成和重写用户字体配置文件. 对于这些桌面环境, 最好配合已定义的字体配置来得到需要的显示效果．
+**Note:** 有一些桌面环境 (比如说 [GNOME](/index.php/GNOME "GNOME") 和 [KDE](/index.php/KDE "KDE")) 使用 *Font Control Panel* 会自动生成和重写用户字体配置文件. 对于这些桌面环境, 最好配合已定义的字体配置来得到需要的显示效果．
 
 配置文件使用[XML](https://en.wikipedia.org/wiki/XML "wikipedia:XML")格式并且需要一些格式头:
 
@@ -316,7 +316,7 @@ $ sudo pacman -U freetype2-VERSION-ARCH.pkg.tar.xz
 
 ### 字体替换
 
-最可靠的方法是添加像下面那样的一个XML片段。关键点在于_使用“binding”属性可以有更好的效果_，例如在Firefox你可能只想替换字体但并不想改变被替换字体的属性。下面的例子演示的是Georgia如何被Ubuntu字体替换掉的：
+最可靠的方法是添加像下面那样的一个XML片段。关键点在于*使用“binding”属性可以有更好的效果*，例如在Firefox你可能只想替换字体但并不想改变被替换字体的属性。下面的例子演示的是Georgia如何被Ubuntu字体替换掉的：
 
 ```
 ...
@@ -328,7 +328,7 @@ $ sudo pacman -U freetype2-VERSION-ARCH.pkg.tar.xz
 
 ```
 
-另外一种方法是设置“优先”字体，但是_这只有在原字体系统缺失的情况下才有效_，这种情况真发生了的话，设定的字体就会把它换了：
+另外一种方法是设置“优先”字体，但是*这只有在原字体系统缺失的情况下才有效*，这种情况真发生了的话，设定的字体就会把它换了：
 
 ```
 ...
@@ -364,7 +364,6 @@ $ sudo pacman -U freetype2-VERSION-ARCH.pkg.tar.xz
 可能你并没有`70-yes-bitmaps.conf`这个文件，所以也就无须什么删除了。 利用下面这个配置文件，你就可以决定用什么字体来替换点阵字体了：
 
  `~/.config/fontconfig/conf.d/29-replace-bitmap-fonts.conf` 
-
 ```
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
@@ -406,7 +405,6 @@ $ sudo pacman -U freetype2-VERSION-ARCH.pkg.tar.xz
 
 禁用所有字体里的点阵字型：
  `~/.config/fontconfig/conf.d/20-no-embedded.conf` 
-
 ```
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
@@ -438,21 +436,21 @@ $ sudo pacman -U freetype2-VERSION-ARCH.pkg.tar.xz
 
 ### 为不完善的字体构建粗体风格和斜体风格
 
-Freetype字体可以自动为没有_斜体_和**粗体**的字体创建_斜体_和**粗体**，但这只会在应用程序明确地提出这样请求下生效。但现有的程序很少会发出这样的请求，这版讲述如何手动强制生成缺少的字体风格。
+Freetype字体可以自动为没有*斜体*和**粗体**的字体创建*斜体*和**粗体**，但这只会在应用程序明确地提出这样请求下生效。但现有的程序很少会发出这样的请求，这版讲述如何手动强制生成缺少的字体风格。
 
 按照如下描述编辑`/usr/share/fonts/fonts.cache-1`。因为执行`fc-cache`时会覆盖`/usr/share/fonts/fonts.cache-1`，所以编辑前请先备份`/usr/share/fonts/fonts.cache-1`到其他地方。
 
 假设已经安装了Dupree字体：
 
 ```
-"dupree.ttf" 0 "Dupree:style=Regular:slant=0:weight=80:width=100:foundry=unknown:index=0:outline=True:_etc..._
+"dupree.ttf" 0 "Dupree:style=Regular:slant=0:weight=80:width=100:foundry=unknown:index=0:outline=True:*etc...*
 
 ```
 
-复制上面一行，并将`style=Regular`改为`style=Bold`或者其他你想要的字体风格（粗体用Bold，斜体用Italic）。同时，若需要斜体的将`slant=0`改为`slant=100`，需要粗体的将`weight=80` 改为`weight=200`，或者你可以将两句组合起来来生成_**粗体和斜体**_的风格，其中一个示例如下:
+复制上面一行，并将`style=Regular`改为`style=Bold`或者其他你想要的字体风格（粗体用Bold，斜体用Italic）。同时，若需要斜体的将`slant=0`改为`slant=100`，需要粗体的将`weight=80` 改为`weight=200`，或者你可以将两句组合起来来生成***粗体和斜体***的风格，其中一个示例如下:
 
 ```
-"dupree.ttf" 0 "Dupree:style=Bold Italic:slant=100:weight=200:width=100:foundry=unknown:index=0:outline=True:_etc..._
+"dupree.ttf" 0 "Dupree:style=Bold Italic:slant=100:weight=200:width=100:foundry=unknown:index=0:outline=True:*etc...*
 
 ```
 
@@ -512,7 +510,6 @@ Fongconfig的配置文件示例请参考这个[页面](/index.php/Font_configura
 下面是一个简单的上手例子：
 
  `/etc/fonts/local.conf` 
-
 ```
 <?xml version='1.0'?>
 <!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
@@ -587,7 +584,7 @@ If you set e.g. win7 or osx you need the corresponding fonts installed.
 
 **Note:** Default infinality settings can cause some programs to display fonts at 72 DPI instead of 96\. If you notice a problem open /etc/fonts/infinality/infinality.conf search for the section on DPI and change 72 to 96\. This problem can specifically affect conky causing the fonts to appear smaller than they should. Thus not aligning properly with images.
 
-**Note:** _The README for [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/) says that /etc/fonts/local.conf should either not exist, or have no infinality-related configurations in it. The local.conf is now obsolete and completely replaced by this configuration._
+**Note:** *The README for [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/) says that /etc/fonts/local.conf should either not exist, or have no infinality-related configurations in it. The local.conf is now obsolete and completely replaced by this configuration.*
 
 for more information see this article: [http://www.infinality.net/forum/viewtopic.php?f=2&t=77](http://www.infinality.net/forum/viewtopic.php?f=2&t=77)
 
@@ -613,7 +610,6 @@ To restore the unpatched packages, reinstall the originals:
 Some applications like [URxvt](/index.php/URxvt "URxvt") will ignore fontconfig settings. This is very apparent when using the infinality patches which are heavily reliant on proper configuration. You can work around this by using `~/.Xresources`, but it is not nearly as flexible as fontconfig. Example (see [#Fontconfig configuration](#Fontconfig_configuration) for explanations of the options):
 
  `~/.Xresources` 
-
 ```
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
@@ -637,7 +633,7 @@ If fonts are still unexpectedly large or small, poorly proportioned or simply re
 Fontconfig should be able to detect DPI parameters as discovered by the Xorg server. You can check the automatically discovered DPI with `xdpyinfo`:
 
  `$ xdpyinfo | grep dots`  `  resolution:    102x102 dots per inch` 
-**Note:** To use the _xdpyinfo_ command, you must install the package [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo).
+**Note:** To use the *xdpyinfo* command, you must install the package [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo).
 
 If the DPI is detected incorrectly (usually due to an incorrect monitor EDID), you can specify it manually in the Xorg configuration, see [Xorg#Display size and DPI](/index.php/Xorg#Display_size_and_DPI "Xorg"). This is the recommended solution, but it may not work with buggy drivers.
 

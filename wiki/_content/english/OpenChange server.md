@@ -136,10 +136,10 @@ Restart `samba`.
 
 At this point, verify that all samba services are working as expected. Use the tests in the [Samba 4 Active Directory domain controller](/index.php/Samba_4_Active_Directory_domain_controller#Testing_the_installation "Samba 4 Active Directory domain controller") guide in addition to testing RPC from a windows client (simply connect with RSAT tools or something similar). If all is well, then continue. If not, restore the backup of the `smb.conf` until you can track down the problem.
 
-Finally, verify that user properties can be edited using ldbedit. Relevant attributes are mail and proxyAddresses. The proxyAddress attribute labeled SMTP (as opposed to smtp) is the default mail address. If using internal and external domains, you will need to set SMTP to external address as this will be the SMTP from address and envelope sender in outgoing messages. Replace _vim_ in the following command with your preferred editor:
+Finally, verify that user properties can be edited using ldbedit. Relevant attributes are mail and proxyAddresses. The proxyAddress attribute labeled SMTP (as opposed to smtp) is the default mail address. If using internal and external domains, you will need to set SMTP to external address as this will be the SMTP from address and envelope sender in outgoing messages. Replace *vim* in the following command with your preferred editor:
 
 ```
-# LDB_MODULES_PATH="/usr/lib/samba/ldb" ldbedit -e _vim_ -H /var/lib/samba/private/sam.ldb '(samaccountname=administrator)'
+# LDB_MODULES_PATH="/usr/lib/samba/ldb" ldbedit -e *vim* -H /var/lib/samba/private/sam.ldb '(samaccountname=administrator)'
 
 ```
 
@@ -354,10 +354,13 @@ Edit the access configuration for the openchange DB:
 ```
 # cp /var/lib/postgres/data/pg_hba.conf{,.bak}
 # sed \
-      's/D$/D\n\n#Configuration for OpenChange/' \
+      's/D$/D
+
+#Configuration for OpenChange/' \
       -i /var/lib/postgres/data/pg_hba.conf
 # sed \
-      's/ange$/ange\nhost\topenchange\topenchange\t127.0.0.1\/32\t\tmd5/' \
+      's/ange$/ange
+host\topenchange\topenchange\t127.0.0.1\/32\t\tmd5/' \
       -i /var/lib/postgres/data/pg_hba.conf
 # chown postgres:postgres /var/lib/postgres/data/pg_hba.conf{,.bak}
 
@@ -649,7 +652,7 @@ Reload Dovecot for the configuration to take effect:
 
 #### Testing Dovecot authentication
 
-Open a _telnet_ session and test (commands you enter are in bold, replace _xxxxxxxx_ with your real password):
+Open a *telnet* session and test (commands you enter are in bold, replace *xxxxxxxx* with your real password):
 
 ```
 **telnet localhost 143**
@@ -902,7 +905,7 @@ AEFkbWluaXN0cmF0b3IAeHh4eHh4eHg=
 
 ```
 
-Now, open a _telnet_ session and test (commands you enter are in bold, replace **host.domain.tld** with the real external FQDN and **AEFkbWluaXN0cmF0b3IAeHh4eHh4eHg=** with the result of the previous command):
+Now, open a *telnet* session and test (commands you enter are in bold, replace **host.domain.tld** with the real external FQDN and **AEFkbWluaXN0cmF0b3IAeHh4eHh4eHg=** with the result of the previous command):
 
 ```
 $ **telnet localhost 25**

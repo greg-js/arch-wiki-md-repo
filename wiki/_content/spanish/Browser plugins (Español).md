@@ -7,7 +7,7 @@ pacman -S flashplugin jre
 
 ```
 
-_Tal vez necesite instalar ttf-ms-fonts_ (pacman -S ttf-ms-fonts) _para que el reproductor de flash enseñe el texto de forma apropiada._
+*Tal vez necesite instalar ttf-ms-fonts* (pacman -S ttf-ms-fonts) *para que el reproductor de flash enseñe el texto de forma apropiada.*
 
 ## Adobe Reader
 

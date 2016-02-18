@@ -27,14 +27,13 @@ In the install process, the config file is created. It is recommended you make a
 
 ```
 
-The `/etc/rsnapshot.conf` file is well commented and much of it should be fairly self-explanatory. For a full reference of all the various options, please consult the _rsnapshot_ man page.
+The `/etc/rsnapshot.conf` file is well commented and much of it should be fairly self-explanatory. For a full reference of all the various options, please consult the *rsnapshot* man page.
 
 ### Root Directory
 
 Choose the directory where you want to store the file system back ups, in this case I will store the back ups in `/mnt/backups/`
 
  `/etc/rsnapshot.conf` 
-
 ```
 # All snapshots will be stored under this root directory.
 #
@@ -49,7 +48,6 @@ snapshot_root   /mnt/backups/
 Uncomment the lines refering to the unix commands `cp`, `du`, `ssh` (if you want to do remote back ups) and `rsnapshot-diff`, etc. This section of the file should look like this:
 
  `/etc/rsnapshot.conf` 
-
 ```
 # LINUX USERS:   Be sure to uncomment "cmd_cp". This gives you extra features.
 # EVERYONE ELSE: Leave "cmd_cp" commented out for compatibility.
@@ -108,7 +106,6 @@ When configuring these, note that the first in the list will be the only one tha
 Replace the default "BACKUP LEVELS / INTERVALS" section in the rsnapshot config file:
 
  `/etc/rsnapshot.conf` 
-
 ```
 retain  hourly  24
 retain  daily   7
@@ -139,10 +136,9 @@ If you just wanted to run this same config, but only backup daily, you would nee
 
 ### Back up
 
-This is the section where you tell _rsnapshot_ which files you actually want to back up. You put a `backup` parameter first, followed by the full path to the directory or network path you're backing up. The third column is the relative path you want to back up to inside the snapshot root.
+This is the section where you tell *rsnapshot* which files you actually want to back up. You put a `backup` parameter first, followed by the full path to the directory or network path you're backing up. The third column is the relative path you want to back up to inside the snapshot root.
 
  `/etc/rsnapshot.conf` 
-
 ```
 ###############################
 ### BACKUP POINTS / SCRIPTS ###
@@ -157,10 +153,9 @@ In this example, backup tells us it's a backup point. `/home/` is the full path 
 
 ### Remote Systems
 
-In addition to full paths on the local filesystem, you can also backup remote systems using [rsync](/index.php/Rsync "Rsync") over [ssh](/index.php/Ssh "Ssh"). If you have _ssh_ installed and enabled - via the `cmd_ssh` parameter - you can specify a path like:
+In addition to full paths on the local filesystem, you can also backup remote systems using [rsync](/index.php/Rsync "Rsync") over [ssh](/index.php/Ssh "Ssh"). If you have *ssh* installed and enabled - via the `cmd_ssh` parameter - you can specify a path like:
 
  `/etc/rsnapshot.conf` 
-
 ```
 ###############################
 ### BACKUP POINTS / SCRIPTS ###
@@ -179,25 +174,23 @@ This behaves fundamentally the same way, but you must take a few extra things in
 
 *   You must have key-based logins enabled for the root user at example.com, without passphrases. If you wanted to perform backups as another user, you could specify the other user instead of root for the source (i.e. user@domain.com). Please note that allowing remote logins with no passphrase is a security risk that may or may not be acceptable in your situation. Make sure you guard access to the backup server very carefully! For more information on how to set this up, please consult the ssh man page, or a tutorial on using ssh public and private keys. You will find that the key based logins are better in many ways, not just for rsnapshot but for convenience and security in general. One thing you can do to mitigate the potential damage from a backup server breach is to create alternate users on the client machines with uid and gid set to 0, but with a more restrictive shell such as scponly.
 
-*   This backup occurs over the network, so it may be slower. Since this uses _rsync_, this is most noticeable during the first backup. Depending on how much your data changes, subsequent backups should go much, much faster since _rsync_ only sends the differences between files.
+*   This backup occurs over the network, so it may be slower. Since this uses *rsync*, this is most noticeable during the first backup. Depending on how much your data changes, subsequent backups should go much, much faster since *rsync* only sends the differences between files.
 
 ### Extra Scripts
 
 There is an extra `backup_script` line. With this parameter, the second column is the full path to an executable backup script, and the third column is the local path you want to store it in (just like with the `backup` parameter). For example:
 
  `/etc/rsnapshot.conf` 
-
 ```
 backup_script      /usr/local/bin/backup_mysql.sh       localhost/mysql/
 
 ```
 
-In this example, _rsnapshot_ will run the script `/usr/local/bin/backup_mysql.sh` in a temp directory, then sync the results into the `localhost/mysql/` directory under the snapshot root.
+In this example, *rsnapshot* will run the script `/usr/local/bin/backup_mysql.sh` in a temp directory, then sync the results into the `localhost/mysql/` directory under the snapshot root.
 
-Your backup script simply needs to dump out the contents of whatever it does into its current working directory. It can create as many files and/or directories as necessary, but it should not put its files in any pre-determined path. The reason for this is that _rsnapshot_ creates a temp directory, changes to that directory, runs the backup script, and then syncs the contents of the temp directory to the local path you specified in the third column. A typical backup script would be one that archives the contents of a database. It might look like this:
+Your backup script simply needs to dump out the contents of whatever it does into its current working directory. It can create as many files and/or directories as necessary, but it should not put its files in any pre-determined path. The reason for this is that *rsnapshot* creates a temp directory, changes to that directory, runs the backup script, and then syncs the contents of the temp directory to the local path you specified in the third column. A typical backup script would be one that archives the contents of a database. It might look like this:
 
  `backup_mysql.sh` 
-
 ```
 #!/bin/sh
 
@@ -212,7 +205,7 @@ Your backup script simply needs to dump out the contents of whatever it does int
 
 ### Testing the configuration
 
-When you have made all your changes, you should verify that the config file is syntactically valid, and that all the supporting programs are where you think they are. To do this, run _rsnapshot_ with the **configtest** argument:
+When you have made all your changes, you should verify that the config file is syntactically valid, and that all the supporting programs are where you think they are. To do this, run *rsnapshot* with the **configtest** argument:
 
 ```
 # rsnapshot configtest
@@ -221,25 +214,24 @@ When you have made all your changes, you should verify that the config file is s
 
 If all is well, it should say Syntax OK. If there's a problem, it should tell you exactly what it is. Make sure your config file is using tabs and not spaces, etc.
 
-The final step to test your configuration is to run _rsnapshot_ in test mode. This will print out a verbose list of the things it will do, without actually doing them. To do a test run, run this command:
+The final step to test your configuration is to run *rsnapshot* in test mode. This will print out a verbose list of the things it will do, without actually doing them. To do a test run, run this command:
 
 ```
 # rsnapshot -t hourly
 
 ```
 
-This tells _rsnapshot_ to simulate an "hourly" backup. It should print out the commands it will perform when it runs for real.
+This tells *rsnapshot* to simulate an "hourly" backup. It should print out the commands it will perform when it runs for real.
 
 **Note:** Please note that the test output might be slightly different than the real execution, but only because the test doesn't actually do things that may be checked for later in the program. For example, if the program will create a directory and then later test to see if that directory exists, the test run might claim that it would create the directory twice, since it didn't actually get created during the test. This should be the only type of difference you will see while running a test.
 
 # Automation
 
-Now that you have your config file set up, it's time to set up _rsnapshot_ to be run automatically.
+Now that you have your config file set up, it's time to set up *rsnapshot* to be run automatically.
 
 First create a service file:
 
  `/etc/systemd/system/rsnapshot@.service` 
-
 ```
 [Unit]
 Description=rsnapshot (%I) backup
@@ -254,7 +246,6 @@ ExecStart=/usr/bin/rsnapshot %I
 Then create a timer unit for it:
 
  `/etc/systemd/system/rsnapshot-daily.timer` 
-
 ```
 [Unit]
 Description=rsnapshot daily backup
@@ -288,7 +279,7 @@ To manually run the service, you can simply execute:
 
 # How it works
 
-We have a snapshot root under which all backups are stored. In this example, this is the directory `/mnt/backups/`. Within this directory, other directories are created for the various intervals that have been defined. In the beginning it will be empty, but once _rsnapshot_ has been running for a week, it should look something like this:
+We have a snapshot root under which all backups are stored. In this example, this is the directory `/mnt/backups/`. Within this directory, other directories are created for the various intervals that have been defined. In the beginning it will be empty, but once *rsnapshot* has been running for a week, it should look something like this:
 
 ```
 [root@localhost]# ls -l /mnt/backups/
@@ -317,10 +308,10 @@ backup          /etc/           localhost/
 
 The `/etc/` directory will initially get backed up into `/mnt/backups/hourly.0/localhost/etc/`
 
-Each subsequent time _rsnapshot_ is run with the _hourly_ command, it will rotate the **hourly.X** directories, and then copy the contents of the **hourly.0** directory (using hard links) into **hourly.1**.
+Each subsequent time *rsnapshot* is run with the *hourly* command, it will rotate the **hourly.X** directories, and then copy the contents of the **hourly.0** directory (using hard links) into **hourly.1**.
 
-When _rsnapshot daily_ is run, it will rotate all the **daily.X** directories, then copy the contents of **hourly.5** into **daily.0**.
+When *rsnapshot daily* is run, it will rotate all the **daily.X** directories, then copy the contents of **hourly.5** into **daily.0**.
 
-**hourly.0** will always contain the most recent snapshot, and **daily.6** will always contain a snapshot from a week ago. Unless the files change between snapshots, the _full_ backups are really just multiple hard links to the same files. Thus, if your `/etc/passwd` file doesn't change in a week, `hourly.0/localhost/etc/passwd` and `daily.6/localhost/etc/passwd` will literally be the same exact file. This is how _rsnapshot_ can be so efficient on space. If the file changes at any point, the next backup will unlink the hard link in **hourly.0**, and replace it with a brand new file. This will now take double the disk space it did before, but it is still considerably less than it would be to have full unique copies of this file 13 times over.
+**hourly.0** will always contain the most recent snapshot, and **daily.6** will always contain a snapshot from a week ago. Unless the files change between snapshots, the *full* backups are really just multiple hard links to the same files. Thus, if your `/etc/passwd` file doesn't change in a week, `hourly.0/localhost/etc/passwd` and `daily.6/localhost/etc/passwd` will literally be the same exact file. This is how *rsnapshot* can be so efficient on space. If the file changes at any point, the next backup will unlink the hard link in **hourly.0**, and replace it with a brand new file. This will now take double the disk space it did before, but it is still considerably less than it would be to have full unique copies of this file 13 times over.
 
 Remember that if you are using different intervals than the ones in this example, the first interval listed is the one that gets updates directly from the main filesystem. All subsequently listed intervals pull from the previous intervals. For example, if you had weekly, monthly, and yearly intervals defined (in that order), the weekly ones would get updated directly from the filesystem, the monthly ones would get updated from weekly, and the yearly ones would get updated from monthly.

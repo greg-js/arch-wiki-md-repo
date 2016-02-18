@@ -55,7 +55,6 @@ The PCI address is the first 7 characters of the line that mentions NVIDIA. It w
 If X.Org X server version 1.17.2 or higher is installed ([[1]](http://us.download.nvidia.com/XFree86/Linux-x86/358.16/README/randr14.html))
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "Module"
     Load "modesetting"
@@ -73,7 +72,6 @@ EndSection
 For older X servers
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "ServerLayout"
     Identifier "layout"
@@ -112,7 +110,6 @@ EndSection
 Next, add the following two lines to the beginning of your `~/.xinitrc`:
 
  `~/.xinitrc` 
-
 ```
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
@@ -137,7 +134,6 @@ If the black screen persists, see the [#Alternative configuration](#Alternative_
 If you experience Xorg-server crashes since release 1.17.1 with above configuration, modify the section for the Intel device in `/etc/X11/xorg.conf` as follows:
 
  `# nano /etc/X11/xorg.conf` 
-
 ```
 Section "Device"
     Identifier  "intel"
@@ -150,7 +146,7 @@ Section "Device"
 EndSection
 ```
 
-As above, the `BusID` must match for the output of the _lspci_ command. Search for the line with "VGA compatible controller", that contains something Intel. For example:
+As above, the `BusID` must match for the output of the *lspci* command. Search for the line with "VGA compatible controller", that contains something Intel. For example:
 
 ```
 $ lspci |grep VGA
@@ -163,7 +159,6 @@ $ lspci |grep VGA
 If X starts but nothing appears on the screen, check if `/var/log/xorg.conf` contains a following line or similar:
 
  `/var/log/xorg.conf` 
-
 ```
 [ 16112.937] (EE) Screen 1 deleted because of no matching config section.
 
@@ -172,7 +167,6 @@ If X starts but nothing appears on the screen, check if `/var/log/xorg.conf` con
 If so, the problem may disappear when you change your ServerLayout section of `/etc/X11/xorg.conf`:
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "ServerLayout"
     Identifier "layout"
@@ -191,7 +185,6 @@ If you are using a display manager then you will need to create or edit a displa
 For the [LightDM](/index.php/LightDM "LightDM") display manager:
 
  `/etc/lightdm/display_setup.sh` 
-
 ```
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
@@ -208,7 +201,6 @@ Make the script executable:
 Now configure lightdm to run the script by editing the `[SeatDefaults]` section in `/etc/lightdm/lightdm.conf`:
 
  `/etc/lightdm/lightdm.conf` 
-
 ```
 [SeatDefaults]
 display-setup-script=/etc/lightdm/display_setup.sh
@@ -221,7 +213,6 @@ Now reboot and your display manager should start.
 For the [SDDM](/index.php/SDDM "SDDM") display manager:
 
  `/usr/share/sddm/scripts/Xsetup` 
-
 ```
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
@@ -233,7 +224,6 @@ xrandr --auto
 For the [GDM](/index.php/GDM "GDM") display manager create a new .desktop file:
 
  `/usr/share/gdm/greeter/autostart/display_setup.desktop` 
-
 ```
 [Desktop Entry]
 Type=Application
@@ -247,7 +237,6 @@ X-GNOME-AutoRestart=true
 If it is not working, you must add a script to `/etc/X11/xinit/xinitrc.d` directory, as below:
 
  `/etc/X11/xinit/xinitrc.d/nvidia-optimus.sh` 
-
 ```
 #!/bin/sh
 xrandr --setprovideroutputsource modesetting NVIDIA-0
@@ -298,7 +287,6 @@ This is due to the NVIDIA driver not detecting the EDID for the display. You nee
 To provide the path to the EDID file edit the Device Section for the NVIDIA card in Xorg.conf, adding these lines and changing parts to reflect your own system:
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "Device"
        	Option		"ConnectedMonitor" "CRT-0"

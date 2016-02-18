@@ -69,7 +69,7 @@ To use this quite old modem, you need to blacklist qmi_wwan and cdc_wdm modules 
 
 ### wvdial
 
-_See main article: [wvdial](/index.php/Wvdial "Wvdial")_
+*See main article: [wvdial](/index.php/Wvdial "Wvdial")*
 
 The general procedure is to switch the device into modem mode, make sure the ttyUSB device(s) are recognized by the qcserial kernel module, and then to run wvdial to dial, connect and start pppd.
 

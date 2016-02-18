@@ -14,7 +14,7 @@
 
 ## Installation
 
-Jinzora can run in two modes, _streaming_ and using _mpd_. If you have not installed MPD already, follow the wiki guide: [mpd](/index.php/Mpd "Mpd") (It is not required for the streaming mode to operate)
+Jinzora can run in two modes, *streaming* and using *mpd*. If you have not installed MPD already, follow the wiki guide: [mpd](/index.php/Mpd "Mpd") (It is not required for the streaming mode to operate)
 
 ### Setup the webserver
 
@@ -93,7 +93,7 @@ If you wish to use Jinzora's streaming functionality, simply go back to your web
 
 *   If you cannot get any sound despite all of the above, try testing mpd with another GUI client (Glurp is a nice simple one located in the [glurp](https://www.archlinux.org/packages/?name=glurp) package. Add a track to its playlist and try to play it). If you have no sound in this either, you need to further edit `/etc/mpd.conf`. Try uncommenting some of the ALSA settings in this file (assuming you use ALSA).
 
-*   If you know that MPD _is_ working, then try to match up the settings in Jinzora as closely to those in `/etc/mpd.conf` as possible (the settings in Jinzora are accessed from the 4th small green button on the upper left of the 'Slick' interface).
+*   If you know that MPD *is* working, then try to match up the settings in Jinzora as closely to those in `/etc/mpd.conf` as possible (the settings in Jinzora are accessed from the 4th small green button on the upper left of the 'Slick' interface).
 
 *   If changes to your playlist are ignored, go to System Tools -> Settings Manager -> Main Settings/Playlist and set 'use_ext_playlists' to 'false'.
 

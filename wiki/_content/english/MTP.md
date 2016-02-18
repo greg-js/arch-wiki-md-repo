@@ -1,4 +1,4 @@
-[MTP](https://en.wikipedia.org/wiki/Media_Transfer_Protocol "wikipedia:Media Transfer Protocol"), or the _Media Transfer Protocol_, is a USB device class which is used by many mobile phones (e.g. Samsung Galaxy S4) and media players (e.g. Creative Zen).
+[MTP](https://en.wikipedia.org/wiki/Media_Transfer_Protocol "wikipedia:Media Transfer Protocol"), or the *Media Transfer Protocol*, is a USB device class which is used by many mobile phones (e.g. Samsung Galaxy S4) and media players (e.g. Creative Zen).
 
 ## Contents
 
@@ -73,7 +73,7 @@ Connect to your device:
 
 ```
 
-If connection is successful, there are several switch options to use in conjunction with _mtp-connect_ to access data on the device. You might want to use some stand alone commands:
+If connection is successful, there are several switch options to use in conjunction with *mtp-connect* to access data on the device. You might want to use some stand alone commands:
 
 ```
  mtp-albumart        mtp-emptyfolders    mtp-getplaylist     mtp-reset           mtp-trexist
@@ -159,7 +159,7 @@ Now mount the device and see if the options "took"
 
 **Note:** Mounting with `go-mtpfs` might fail if an external SD Card is present. If you try to access your device while having an SD card and go-mtpfs complains, try removing the SD card and mounting again.
 
-Install [android-udev](https://www.archlinux.org/packages/?name=android-udev), which will allow you to edit `/etc/udev/rules.d/51-android.rules` and apply to your `idVendor` and `idProduct`, which you can see after running _mtp-detect_. To the end of the line, add your user `OWNER="<user>"`. First, create the `fuse` group if it does not exist:
+Install [android-udev](https://www.archlinux.org/packages/?name=android-udev), which will allow you to edit `/etc/udev/rules.d/51-android.rules` and apply to your `idVendor` and `idProduct`, which you can see after running *mtp-detect*. To the end of the line, add your user `OWNER="<user>"`. First, create the `fuse` group if it does not exist:
 
 ```
 # groupadd fuse
@@ -226,7 +226,7 @@ If you want album art to be displayed, it must be named `albumart.xxx` and place
 
 	Qt user interface
 
-Start the application, choose a destination folder and click any button on the toolbar. Available options are: _Upload Album_, _Upload Directory_ and _Upload Files_. The latter two are self-explanatory. _Upload album_ searches the source directory for album covers, and sets the best available cover.
+Start the application, choose a destination folder and click any button on the toolbar. Available options are: *Upload Album*, *Upload Directory* and *Upload Files*. The latter two are self-explanatory. *Upload album* searches the source directory for album covers, and sets the best available cover.
 
 ### Media players
 
@@ -333,7 +333,7 @@ Bus 001 Device 007: ID 0421:0661 Nokia Mobile Phones Lumia 920
 
 ```
 
-The two numbers after ID are _vendorId_ : _productID_
+The two numbers after ID are *vendorId* : *productID*
 
 Then make a udev rule, e.g.
 

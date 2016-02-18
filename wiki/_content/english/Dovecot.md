@@ -43,7 +43,6 @@ The certificate/key pair is created as `/etc/ssl/certs/dovecot.pem` and `/etc/ss
 Run `cp /etc/ssl/certs/dovecot.pem /etc/ca-certificates/trust-source/anchors/dovecot.crt` and then `# trust extract-compat` whenever you have changed your certificate.
 
 **Warning:** If you plan on implementing SSL/TLS, please respond safely to [POODLE](http://disablessl3.com/) and [FREAK/Logjam](https://weakdh.org/sysadmin.html) by adding the following to your [configuration](#Dovecot_configuration):
-
 ```
 ssl_protocols = !SSLv2 !SSLv3
 ssl_cipher_list = ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA
@@ -70,7 +69,6 @@ By default dovecot will try to detect what mail storage system is in use on the 
 *   To configure PAM for dovecot, create `/etc/pam.d/dovecot` with the following content:
 
  `/etc/pam.d/dovecot` 
-
 ```
 auth    required        pam_unix.so nullok
 account required        pam_unix.so 
@@ -84,7 +82,6 @@ account required        pam_unix.so
 You can then write the following in `/etc/pam.d/dovecot` remembering that the entries order is very important:
 
  `/etc/pam.d/dovecot` 
-
 ```
 auth    sufficient      pam_ldap.so
 auth    required        pam_unix.so     nullok

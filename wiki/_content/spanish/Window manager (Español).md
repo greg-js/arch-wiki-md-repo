@@ -1,4 +1,4 @@
-Un [gestor de ventanas](https://en.wikipedia.org/wiki/es:Gestor_de_ventanas "wikipedia:es:Gestor de ventanas") (siglas en inglés WM) es un componente del sistema que proporciona al usuario una interfaz gráfica del propio sistema (GUI). Muchos usuarios prefieren instalar un [entorno de escritorio](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)") (siglas en inglés DE), que proporciona una interfaz gráfica de usuario completa, incluyendo iconos, ventanas, barras de herramientas, fondos de pantalla y widgets de escritorio.
+Un [gestor de ventanas](https://en.wikipedia.org/wiki/es:Gestor_de_ventanas (siglas en inglés DE), que proporciona una interfaz gráfica de usuario completa, incluyendo iconos, ventanas, barras de herramientas, fondos de pantalla y widgets de escritorio.
 
 ## Contents
 
@@ -13,9 +13,9 @@ Un [gestor de ventanas](https://en.wikipedia.org/wiki/es:Gestor_de_ventanas "wik
 
 ## X Window System
 
-El [sistema de ventanas X](https://en.wikipedia.org/wiki/es:X_Window_System "wikipedia:es:X Window System") proporciona la base para una interfaz gráfica de usuario. Antes de instalar un gestor de ventanas, es necesaria la instalación previa de un servidor X funcional. Consulte [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") para obtener información detallada.
+El [sistema de ventanas X](https://en.wikipedia.org/wiki/es:X_Window_System para obtener información detallada.
 
-	_X proporciona el marco básico, o primigenio, para la construcción de estos entornos GUI: permite dibujar y mover ventanas en la pantalla e interactuar con el ratón y el teclado. X no proporciona la interfaz de usuario —otros programas clientes individuales conocidos como gestores de ventanas proporcionan dicha interfaz—. En consecuencia, el estilo visual de los entornos que corren en X ​​varía mucho; diferentes tipos de programas pueden presentar interfaces radicalmente diferentes. X está construido como una capa de abstracción adicional (a modo de aplicación) que emerge después del kernel del sistema operativo._
+	*X proporciona el marco básico, o primigenio, para la construcción de estos entornos GUI: permite dibujar y mover ventanas en la pantalla e interactuar con el ratón y el teclado. X no proporciona la interfaz de usuario —otros programas clientes individuales conocidos como gestores de ventanas proporcionan dicha interfaz—. En consecuencia, el estilo visual de los entornos que corren en X ​​varía mucho; diferentes tipos de programas pueden presentar interfaces radicalmente diferentes. X está construido como una capa de abstracción adicional (a modo de aplicación) que emerge después del kernel del sistema operativo.*
 
 El usuario tiene la libertad de configurar su entorno gráfico de muchas maneras.
 
@@ -23,9 +23,9 @@ El usuario tiene la libertad de configurar su entorno gráfico de muchas maneras
 
 Los gestores de ventanas (WMs) son clientes de X que proporcionan la interacción del usuario con el sistema a través de una ventana. El gestor de ventanas controla la apariencia de una aplicación y cómo se gestiona: el borde, barra de título, el tamaño y la capacidad de cambiar el tamaño de una ventana son manejadas por los gestores de ventanas. Muchos gestores de ventanas proporcionan otras funcionalidades, tales como lugares para pegar [dockapps](http://dockapps.windowmaker.org/), como [Window Maker](/index.php/Window_Maker "Window Maker"), un menú para iniciar programas, menús para configurar el WM y otras cosas útiles. [Fluxbox](/index.php/Fluxbox "Fluxbox"), por ejemplo, tiene la capacidad de abrir "pestañas" para las ventanas.
 
-Los gestores de ventanas generalmente no proporcionan _extras_, como los iconos del escritorio, que son comúnmente vistos en los [entornos de escritorio](/index.php/Desktop_environment "Desktop environment") (aunque es posible añadir iconos en un WM con otro programa).
+Los gestores de ventanas generalmente no proporcionan *extras*, como los iconos del escritorio, que son comúnmente vistos en los [entornos de escritorio](/index.php/Desktop_environment "Desktop environment") (aunque es posible añadir iconos en un WM con otro programa).
 
-Debido a la falta de _extras_, los WMs son mucho más ligeros en cuanto al uso de recursos del sistema.
+Debido a la falta de *extras*, los WMs son mucho más ligeros en cuanto al uso de recursos del sistema.
 
 ### Tipos
 
@@ -67,7 +67,7 @@ Consulte [Comparison of tiling window managers](/index.php/Comparison_of_tiling_
 
 	[http://www.enlightenment.org/](http://www.enlightenment.org/) || [enlightenment](https://www.archlinux.org/packages/?name=enlightenment)
 
-*   **[evilwm](/index.php/Evilwm "Evilwm")** — Un gestor de ventanas minimalista para el sistema de ventanas X. 'Minimalista' aquí no significa que sea demasiado desnudo para ser útil, solo significa que omite muchas de las cosas que hacen que otros gestores de ventanas sean más _usables_.
+*   **[evilwm](/index.php/Evilwm "Evilwm")** — Un gestor de ventanas minimalista para el sistema de ventanas X. 'Minimalista' aquí no significa que sea demasiado desnudo para ser útil, solo significa que omite muchas de las cosas que hacen que otros gestores de ventanas sean más *usables*.
 
 	[http://www.6809.org.uk/evilwm/](http://www.6809.org.uk/evilwm/) || [evilwm](https://aur.archlinux.org/packages/evilwm/)
 

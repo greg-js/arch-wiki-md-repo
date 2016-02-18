@@ -60,9 +60,9 @@ Start the `bluetoothctl` interactive command. There one can input `help` to get 
 *   Enter `devices` to get the MAC Address of the device with which to pair.
 *   Enter device discovery mode with `scan on` command if device is not yet on the list.
 *   Turn the agent on with `agent on`.
-*   Enter `pair _MAC Address_` to do the pairing (tab completion works).
-*   If using a device without a PIN, one may need to manually trust the device before it can reconnect successfully. Enter `trust _MAC Address_` to do so.
-*   Finally, use `connect _MAC_address_` to establish a connection.
+*   Enter `pair *MAC Address*` to do the pairing (tab completion works).
+*   If using a device without a PIN, one may need to manually trust the device before it can reconnect successfully. Enter `trust *MAC Address*` to do so.
+*   Finally, use `connect *MAC_address*` to establish a connection.
 
 An example session may look this way:
 
@@ -94,16 +94,14 @@ Pairing successful
 In order to have the device active after a reboot, a udev rule is needed:
 
  `/etc/udev/rules.d/10-local.rules` 
-
 ```
 # Set bluetooth power up
 ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 up"
 ```
 
-After a suspend/resume-cycle, the device can be powered on automatically using a custom _systemd_ service:
+After a suspend/resume-cycle, the device can be powered on automatically using a custom *systemd* service:
 
  `/etc/systemd/system/bluetooth-auto-power@.service` 
-
 ```
 [Unit]
 Description=Bluetooth auto power on
@@ -129,9 +127,9 @@ The following packages allow for a graphical interface to customize Bluetooth.
 
 [GNOME Bluetooth](https://wiki.gnome.org/Projects/GnomeBluetooth) is [GNOME](/index.php/GNOME "GNOME")'s Bluetooth tool. The [gnome-bluetooth](https://www.archlinux.org/packages/?name=gnome-bluetooth) package provides the back-end, [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) provides the status monitor applet, and [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) provides the configuration front-end GUI that can be accessed by typing Bluetooth on the Activities overview, or with the `gnome-control-center bluetooth` command. You can also launch the `bluetooth-sendto` command directly to send files to a remote device.
 
-To receive files, you must install the [gnome-user-share](https://www.archlinux.org/packages/?name=gnome-user-share) package. You can then go to _Settings -> Sharing_ to authorize receiving files from paired devices over Bluetooth.
+To receive files, you must install the [gnome-user-share](https://www.archlinux.org/packages/?name=gnome-user-share) package. You can then go to *Settings -> Sharing* to authorize receiving files from paired devices over Bluetooth.
 
-**Tip:** To add a Bluetooth entry to the _Send To_ menu in Thunar's file properties menu, see instructions [here](http://docs.xfce.org/xfce/thunar/send-to). (The command that needs to be configured is `bluetooth-sendto %F`).
+**Tip:** To add a Bluetooth entry to the *Send To* menu in Thunar's file properties menu, see instructions [here](http://docs.xfce.org/xfce/thunar/send-to). (The command that needs to be configured is `bluetooth-sendto %F`).
 
 ### Bluedevil
 
@@ -141,7 +139,7 @@ If there is no Bluetooth icon visible in Dolphin and in the system tray, enable 
 
 ### Blueberry
 
-_Blueberry_ is an alternative front-end for GNOME Bluetooth, which works in all desktop environments. It can be installed with the [blueberry](https://www.archlinux.org/packages/?name=blueberry) package. It provides a configuration tool (_blueberry_) and a system tray applet (_blueberry-tray_).
+*Blueberry* is an alternative front-end for GNOME Bluetooth, which works in all desktop environments. It can be installed with the [blueberry](https://www.archlinux.org/packages/?name=blueberry) package. It provides a configuration tool (*blueberry*) and a system tray applet (*blueberry-tray*).
 
 ### Blueman
 
@@ -158,7 +156,7 @@ Another option, rather than using KDE or Gnome Bluetooth packages, is ObexFS whi
 Install [obexfs](https://www.archlinux.org/packages/?name=obexfs) and mount supported phones by running:
 
 ```
-$ obexfs -b _MAC_address_of_device_ /mountpoint
+$ obexfs -b *MAC_address_of_device* /mountpoint
 
 ```
 
@@ -171,7 +169,7 @@ $ fusermount -u /mountpoint
 
 For more mounting options see [http://dev.zuckschwerdt.org/openobex/wiki/ObexFs](http://dev.zuckschwerdt.org/openobex/wiki/ObexFs)
 
-**Note:** Ensure that the bluetooth device you are mounting is **not** set to mount _read-only_. You should be able to do this from the device's settings. If the device is mounted _read-only_ you may encounter a permissions error when trying to transfer files to the device.
+**Note:** Ensure that the bluetooth device you are mounting is **not** set to mount *read-only*. You should be able to do this from the device's settings. If the device is mounted *read-only* you may encounter a permissions error when trying to transfer files to the device.
 
 ### ObexFTP transfers
 
@@ -180,32 +178,32 @@ If your device supports the Obex FTP service but you do not wish to mount the de
 To send a file to a device run the command:
 
 ```
-$ obexftp -b _MAC_address_of_device_ -p /path/to/file
+$ obexftp -b *MAC_address_of_device* -p /path/to/file
 
 ```
 
 To retrieve a file from a device run the command:
 
 ```
-$ obexftp -b _MAC_address_of_device_ -g filename
+$ obexftp -b *MAC_address_of_device* -g filename
 
 ```
 
-**Note:** Ensure that the file you are retrieving is in the device's _exchange folder_. If the file is in a subfolder of the exchange folder then provide the correct path in the command.
+**Note:** Ensure that the file you are retrieving is in the device's *exchange folder*. If the file is in a subfolder of the exchange folder then provide the correct path in the command.
 
 ### Obex Object Push
 
 For devices that do not support Obex FTP service, check if Obex Object Push is supported.
 
 ```
-# sdptool browse _XX:XX:XX:XX:XX:XX_
+# sdptool browse *XX:XX:XX:XX:XX:XX*
 
 ```
 
 Read the output, look for Obex Object Push, remember the channel for this service. If supported, one can use [ussp-push](https://www.archlinux.org/packages/?name=ussp-push) to send files to this device:
 
 ```
-# ussp-push _XX:XX:XX:XX:XX:XX_@_CHANNEL_ _file_ _wanted_file_name_on_phone_
+# ussp-push *XX:XX:XX:XX:XX:XX*@*CHANNEL* *file* *wanted_file_name_on_phone*
 
 ```
 
@@ -281,7 +279,6 @@ Feb 20 15:00:25 hostname bluetoothd[4568]: Adapter /org/bluez/4568/hci0 has been
 If you only get the first two lines, you may see that it found the device but you need to bring it up. Example:
 
  `hciconfig -a hci0` 
-
 ```
 hci0:	Type: USB
 	BD Address: 00:00:00:00:00:00 ACL MTU: 0:0 SCO MTU: 0:0
@@ -295,9 +292,7 @@ hci0:	Type: USB
 # hciconfig hci0 up
 
 ```
-
  `hciconfig -a hci0` 
-
 ```
 hci0:	Type: USB
 	BD Address: 00:02:72:C4:7C:06 ACL MTU: 377:10 SCO MTU: 64:8
@@ -326,7 +321,6 @@ or, it could simply be the hardware switch of the computer. The hardware bluetoo
 To verify that the device was detected you can use `hcitool` which is part of the `bluez-utils`. You can get a list of available devices and their identifiers and their MAC address by issuing:
 
  `$ hcitool dev` 
-
 ```
 Devices:
         hci0	00:1B:DC:0F:DB:40
@@ -336,7 +330,6 @@ Devices:
 More detailed information about the device can be retrieved by using `hciconfig`.
 
  `$ hciconfig -a hci0` 
-
 ```
 hci0:   Type: USB
         BD Address: 00:1B:DC:0F:DB:40 ACL MTU: 310:10 SCO MTU: 64:8
@@ -401,9 +394,7 @@ $ hciconfig hci0 piscan
 # check it worked
 
 ```
-
  `$ hciconfig` 
-
 ```
 hci0:   Type: USB
         BD Address: 00:12:34:56:78:9A ACL MTU: 192:8 SCO MTU: 64:8
@@ -456,9 +447,9 @@ If you are experiencing that your Thinkpad Bluetooth Laser Mouse rapidly connect
 
 ### Foxconn / Hon Hai / Lite-On Broadcom device
 
-Some of these devices require the firmware to be flashed into the device at boot. The firmware is not provided but can converted from a Microsoft Windows _.hex_ file into a _.hcd_ using [hex2hcd](https://github.com/jessesung/hex2hcd) (which is installed with [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils)).
+Some of these devices require the firmware to be flashed into the device at boot. The firmware is not provided but can converted from a Microsoft Windows *.hex* file into a *.hcd* using [hex2hcd](https://github.com/jessesung/hex2hcd) (which is installed with [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils)).
 
-In order to get the right _.hex_ file, try searching the device vendor:product code obtained with _lsusb_, for example:
+In order to get the right *.hex* file, try searching the device vendor:product code obtained with *lsusb*, for example:
 
 ```
    ...
@@ -474,11 +465,11 @@ or
 
 ```
 
-Alternatively, boot into Windows (a virtual machine installation will suffice) and get the firmware name from the Device Manager utility. If you want to know the model of your device but cannot see it in _lsusb_, you might see it in _lsusb -v_ as `iProduct`.
+Alternatively, boot into Windows (a virtual machine installation will suffice) and get the firmware name from the Device Manager utility. If you want to know the model of your device but cannot see it in *lsusb*, you might see it in *lsusb -v* as `iProduct`.
 
-The _.hex_ file can be extracted from the downloaded Windows driver without having to run Windows for it. Download the right driver, for example [Bluetooth Widcomm](http://www.fujitsupc.com/downloads/mobile/BLUETOOTH_WIDCOMM_V6.5.0.3100_WIN7-32_FPC46-1771-01.EXE) (listed among the drivers for [Lifebook P771](http://support.fujitsupc.com/CS/Portal/supportsearch.do?srch=DOWNLOADS&Series=P%20Series&Model=P771&ProductType=Notebook%20PC)), which contains the drivers for many Broadcomm devices. In case of Bluetooth Widcomm, the driver is a self-extracting RAR archive, so it can be extracted using _[unrar](https://www.archlinux.org/packages/?name=unrar) x_. To find out which of the many _.hex_ files is the right one for you, look in the file `Win32/bcbtums-win7x86-brcm.inf` and search for `[RAMUSB**E031**.CopyList]`, where `E031` should be replaced with the product code (the second hex number in _lsusb_) of your device in upper-case. Underneath you should see the file name of the right _.hex_ file.
+The *.hex* file can be extracted from the downloaded Windows driver without having to run Windows for it. Download the right driver, for example [Bluetooth Widcomm](http://www.fujitsupc.com/downloads/mobile/BLUETOOTH_WIDCOMM_V6.5.0.3100_WIN7-32_FPC46-1771-01.EXE) (listed among the drivers for [Lifebook P771](http://support.fujitsupc.com/CS/Portal/supportsearch.do?srch=DOWNLOADS&Series=P%20Series&Model=P771&ProductType=Notebook%20PC)), which contains the drivers for many Broadcomm devices. In case of Bluetooth Widcomm, the driver is a self-extracting RAR archive, so it can be extracted using *[unrar](https://www.archlinux.org/packages/?name=unrar) x*. To find out which of the many *.hex* files is the right one for you, look in the file `Win32/bcbtums-win7x86-brcm.inf` and search for `[RAMUSB**E031**.CopyList]`, where `E031` should be replaced with the product code (the second hex number in *lsusb*) of your device in upper-case. Underneath you should see the file name of the right *.hex* file.
 
-Once you have the _.hcd_ file, copy it into `/lib/firmware/brcm/BCM.hcd` - this filename is suggested by `dmesg` and it may change in your case so check your _dmesg_ output in order to verify. Then reload the _btusb_ module:
+Once you have the *.hcd* file, copy it into `/lib/firmware/brcm/BCM.hcd` - this filename is suggested by `dmesg` and it may change in your case so check your *dmesg* output in order to verify. Then reload the *btusb* module:
 
 ```
 # rmmod btusb
@@ -486,7 +477,7 @@ Once you have the _.hcd_ file, copy it into `/lib/firmware/brcm/BCM.hcd` - this 
 
 ```
 
-In some cases (with older kernels?), you have to flash the _.hcd_ file with the _brcm_patchram_plus_ utility, provided by [brcm_patchram_plus-git](https://aur.archlinux.org/packages/brcm_patchram_plus-git/). First, make sure in _dmesg_ that the device is recognized by _btusb_ as a bluetooth device. Then, run the following (replace _04ca 2006_ with your vendor product pair):
+In some cases (with older kernels?), you have to flash the *.hcd* file with the *brcm_patchram_plus* utility, provided by [brcm_patchram_plus-git](https://aur.archlinux.org/packages/brcm_patchram_plus-git/). First, make sure in *dmesg* that the device is recognized by *btusb* as a bluetooth device. Then, run the following (replace *04ca 2006* with your vendor product pair):
 
 ```
 # echo '04ca 2006' > /sys/bus/usb/drivers/btusb/new_id

@@ -119,7 +119,7 @@ Currently, the following browsers are auto-detected and managed:
 
 ### Preview (parse) mode
 
-The 'parse' option can be called to show users exactly what _psd_ will do/is doing based on `$XDG_CONFIG_HOME/psd/psd.conf` as well printout useful information such as profile size, paths, and if any recovery snapshots have been created.
+The 'parse' option can be called to show users exactly what *psd* will do/is doing based on `$XDG_CONFIG_HOME/psd/psd.conf` as well printout useful information such as profile size, paths, and if any recovery snapshots have been created.
 
 ```
 $ psd p
@@ -151,7 +151,7 @@ Psd will manage the following per /home/facade/.config/psd/psd.conf settings:
 
 ```
 
-As shown in the output and as stated above, if no specific browser or subset of browsers are defined in the BROWSERS array, _psd_ will sync ALL supported profiles that it finds for the given user(s).
+As shown in the output and as stated above, if no specific browser or subset of browsers are defined in the BROWSERS array, *psd* will sync ALL supported profiles that it finds for the given user(s).
 
 ### Clean mode
 
@@ -190,7 +190,6 @@ Since psd is just a bash script with a systemd service, it should run on any fla
 The package provided re-sync timer triggers once per hour. Users may optionally redefine this behavior simply by [extending the systemd unit](/index.php/Systemd#Editing_provided_units "Systemd"). The example below changes the timer to sync once every ten minutes:
 
  `~/.config/systemd/user/psd-resync.timer.d/frequency.conf` 
-
 ```
 --------------------------------------------------------
 [Unit]
@@ -231,7 +230,7 @@ The way overlayfs works is to mount a read-only base copy (so-called lower dir) 
 
 ### My system crashed and did not sync back. What do I do?
 
-Odds are the "last good" backup of your browser profiles is just fine still sitting happily on your filesystem. Upon restarting `psd` (on a reboot for example), a check is preformed to see if the symlink to the tmpfs copy of your profile is invalid. If it is invalid, _psd_ will snapshot the "last good" backup before it rotates it back into place. This is more for a sanity check that _psd_ did no harm and that any data loss was a function of something else.
+Odds are the "last good" backup of your browser profiles is just fine still sitting happily on your filesystem. Upon restarting `psd` (on a reboot for example), a check is preformed to see if the symlink to the tmpfs copy of your profile is invalid. If it is invalid, *psd* will snapshot the "last good" backup before it rotates it back into place. This is more for a sanity check that *psd* did no harm and that any data loss was a function of something else.
 
 **Note:** Users can disable the snapshot/backup feature entirely by uncommenting and setting the USE_BACKUPS variable to 'no' in `$XDG_CONFIG_HOME/psd/psd.conf` if desired.
 
@@ -242,7 +241,7 @@ It depends on the browser. You will find the snapshot in the same directory as t
 ### How can I restore the snapshot?
 
 *   Stop `psd`.
-*   Confirm that there is no symlink to the tmpfs browser profile directory. If there is, _psd_ did not stop correctly for other reasons.
+*   Confirm that there is no symlink to the tmpfs browser profile directory. If there is, *psd* did not stop correctly for other reasons.
 *   Move the "bad" copy of the profile to a backup (do not blindly delete anything).
 *   Copy the snapshot directory to the name that browser expects.
 
@@ -266,7 +265,7 @@ Post in the [discussion thread](https://bbs.archlinux.org/viewtopic.php?pid=1026
 
 ## psd on other distros
 
-_psd_ is a bash script and should therefore run on any Linux distro. Around a dozen distros provide an official package or user-maintained option to install psd. See the [official website](https://github.com/graysky2/profile-sync-daemon#installation-from-distro-packages) for available packages and installation instructions.
+*psd* is a bash script and should therefore run on any Linux distro. Around a dozen distros provide an official package or user-maintained option to install psd. See the [official website](https://github.com/graysky2/profile-sync-daemon#installation-from-distro-packages) for available packages and installation instructions.
 
 ## See also
 

@@ -116,7 +116,7 @@ Nainstalujte PHP a ostatní potřebné moduly,
 
 ```
 
-Zkontrolujte, jestli [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) běží tak, jak má _php-cgi --version_
+Zkontrolujte, jestli [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) běží tak, jak má *php-cgi --version*
 
 ```
 PHP 5.3.1 with Suhosin-Patch (cgi-fcgi) (built: Nov 23 2009 21:12:29)
@@ -127,7 +127,7 @@ Zend Engine v2.3.0, Copyright (c) 1998-2009 Zend Technologies
 
 Pokud dostanete podobný výstup, máte PHP nainstalováno správně.
 
-**Poznámka**: Mějte prosím na paměti, že pokud se vám zobrazí chyby jako _No input file found_ po zobrazení vašich PHP souborů, ujistěte se, že máte v `/etc/php/php.ini` zapnuty tyto direktivy:
+**Poznámka**: Mějte prosím na paměti, že pokud se vám zobrazí chyby jako *No input file found* po zobrazení vašich PHP souborů, ujistěte se, že máte v `/etc/php/php.ini` zapnuty tyto direktivy:
 
 ```
 cgi.fix_pathinfo=1
@@ -171,9 +171,7 @@ $ sudo gem install rails --include-dependencies
 $ sudo gem install fcgi --include-dependencies
 
 ```
-
 Pokud výsledek skončí chybou, spusťte `# pacman -S fcgi` nebo si stáhněte [zdrojové kódy](http://fastcgi.com/dist/fcgi.tar.gz) a vše si zkompilujte sami.
-
 ```
 $ wget [http://fastcgi.com/dist/fcgi.tar.gz](http://fastcgi.com/dist/fcgi.tar.gz)
 $ tar zxvf fcgi.tar.gz

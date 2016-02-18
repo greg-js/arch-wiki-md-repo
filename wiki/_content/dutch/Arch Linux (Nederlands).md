@@ -34,4 +34,4 @@ Arch Linux streeft er naar om Linux gebruikers de nieuwste stabiele software te 
 
 ## Verder lezen
 
-Arch' website is te vinden op [https://www.archlinux.org](https://www.archlinux.org). Hier kan men ook een forum, officiële documentatie en andere informatie over Arch gerelateerde onderwerpen vinden. Ook kan men _The Arch Way_ lezen voor meer inzicht over de filosofie achter Arch Linux.
+Arch' website is te vinden op [https://www.archlinux.org](https://www.archlinux.org). Hier kan men ook een forum, officiële documentatie en andere informatie over Arch gerelateerde onderwerpen vinden. Ook kan men *The Arch Way* lezen voor meer inzicht over de filosofie achter Arch Linux.

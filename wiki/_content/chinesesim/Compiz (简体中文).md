@@ -2,7 +2,7 @@
 
 来源于维基百科[Compiz条目](http://zh.wikipedia.org/wiki/Compiz)的解释:
 
-	_Compiz 是第一个由 [OpenGL](http://zh.wikipedia.org/wiki/OpenGL) 驱动的运行于 [X Window System](http://zh.wikipedia.org/wiki/X_Window_System) 上的混合窗口管理器 。Compiz的混合渲染能力使其可以在窗口管理过程中实现多种视觉效果，比如在矩形虚拟桌面上的窗口最小化。_
+	*Compiz 是第一个由 [OpenGL](http://zh.wikipedia.org/wiki/OpenGL) 驱动的运行于 [X Window System](http://zh.wikipedia.org/wiki/X_Window_System) 上的混合窗口管理器 。Compiz的混合渲染能力使其可以在窗口管理过程中实现多种视觉效果，比如在矩形虚拟桌面上的窗口最小化。*
 
 ## Contents
 
@@ -47,7 +47,7 @@
         *   [4.2.1 GNOME Panel](#GNOME_Panel)
         *   [4.2.2 MATE Panel](#MATE_Panel)
         *   [4.2.3 LXDE Panel](#LXDE_Panel)
-        *   [4.2.4 Xfce 程序查看器（_Appfinder_）](#Xfce_.E7.A8.8B.E5.BA.8F.E6.9F.A5.E7.9C.8B.E5.99.A8.EF.BC.88Appfinder.EF.BC.89)
+        *   [4.2.4 Xfce 程序查看器（*Appfinder*）](#Xfce_.E7.A8.8B.E5.BA.8F.E6.9F.A5.E7.9C.8B.E5.99.A8.EF.BC.88Appfinder.EF.BC.89)
         *   [4.2.5 其他的运行对话框功能](#.E5.85.B6.E4.BB.96.E7.9A.84.E8.BF.90.E8.A1.8C.E5.AF.B9.E8.AF.9D.E6.A1.86.E5.8A.9F.E8.83.BD)
 *   [5 疑难排解](#.E7.96.91.E9.9A.BE.E6.8E.92.E8.A7.A3)
     *   [5.1 Missing GLX_EXT_texture_from_pixmaps](#Missing_GLX_EXT_texture_from_pixmaps)
@@ -108,7 +108,7 @@ Emerald窗口装饰器可以从 [emerald](https://aur.archlinux.org/packages/eme
 
 设置它可以按照如下步骤：
 
-首先，确定你已经安装了你想要在Compiz中使用的装饰器。然后，打开 CCSM （_Compiz Config Setting Manager ，Compiz设置管理器_）。 你可以找到它的图标或者在终端中运行命令： `ccsm`。在设置界面中，找到“效果”部分，并保证“Window Decoration”（_”窗口装饰“_）已经勾选了。 现在，点击“Window Decoration”（_”窗口装饰“_）按钮，并且在”命令“框中输入跟你需要的装饰器相关的命令：
+首先，确定你已经安装了你想要在Compiz中使用的装饰器。然后，打开 CCSM （*Compiz Config Setting Manager ，Compiz设置管理器*）。 你可以找到它的图标或者在终端中运行命令： `ccsm`。在设置界面中，找到“效果”部分，并保证“Window Decoration”（*”窗口装饰“*）已经勾选了。 现在，点击“Window Decoration”（*”窗口装饰“*）按钮，并且在”命令“框中输入跟你需要的装饰器相关的命令：
 
 *   `emerald`
 
@@ -126,23 +126,23 @@ Emerald窗口装饰器可以从 [emerald](https://aur.archlinux.org/packages/eme
 
 重要的插件列在了下面：
 
-**提示:** _译者注_ 为了大家看得方便，我把插件的名字保留了英文。因为有时候CCSM里面也会显示英文的插件名称。
+**提示:** *译者注* 为了大家看得方便，我把插件的名字保留了英文。因为有时候CCSM里面也会显示英文的插件名称。
 
-**提示:** _译者注_ 插件的中文名称可能翻译得不准确。
+**提示:** *译者注* 插件的中文名称可能翻译得不准确。
 
-*   窗口装饰（_Window Decoration_） —— 提供窗口边框（上一节咱已经讨论过了）
-*   窗口移动（_Move Window_）
-*   窗口缩放（_Resize Window_）
-*   窗口放置（_Place Windows_） —— 设置关于窗口在屏幕上放置的选项
-*   程序切换器（_Application Switcher_） —— 提供 Alt+Tab 开启的程序切换器（另外也有一些插件可以实现这个功能，而且具有不同的效果，比如 'Shift Switcher,' 'Static Application Switcher' 等等。并不是所有的切换器都是用 Alt+Tab 快捷键）。
+*   窗口装饰（*Window Decoration*） —— 提供窗口边框（上一节咱已经讨论过了）
+*   窗口移动（*Move Window*）
+*   窗口缩放（*Resize Window*）
+*   窗口放置（*Place Windows*） —— 设置关于窗口在屏幕上放置的选项
+*   程序切换器（*Application Switcher*） —— 提供 Alt+Tab 开启的程序切换器（另外也有一些插件可以实现这个功能，而且具有不同的效果，比如 'Shift Switcher,' 'Static Application Switcher' 等等。并不是所有的切换器都是用 Alt+Tab 快捷键）。
 *   OpenGL —— （只在CCSM 0.9版本中可见）。
-*   合成（_Composite_） —— （只在CCSM 0.9版本中可见）。
+*   合成（*Composite*） —— （只在CCSM 0.9版本中可见）。
 
 想要在不同的”视口“（[viewports](/index.php/Compiz_configuration#Workspaces_and_Viewports "Compiz configuration")）之间切换，你需要激活以下其中一个插件：
 
-*   桌面立方(_Desktop Cube_）和旋转立方体（_Rotate Cube_） —— 提供一个可以浮空的立方体，每个面都是一个视口（_虚拟桌面_）。
-*   桌面墙壁（_Desktop Wall_） —— 视口全部并排陈列在一起（非常类似于[Cinnamon](/index.php/Cinnamon "Cinnamon") 和 [GNOME Shell](/index.php/GNOME_Shell "GNOME Shell") 中的窗口切换效果）。
-*   Expo —— 当鼠标移动到屏幕左上角的时候，显示出全部的视口和窗口（_就是Ubuntu Unity里面那种！！_）。这个插件可以单独激活，或者是和前两个一起用不会冲突。
+*   桌面立方(*Desktop Cube*）和旋转立方体（*Rotate Cube*） —— 提供一个可以浮空的立方体，每个面都是一个视口（*虚拟桌面*）。
+*   桌面墙壁（*Desktop Wall*） —— 视口全部并排陈列在一起（非常类似于[Cinnamon](/index.php/Cinnamon "Cinnamon") 和 [GNOME Shell](/index.php/GNOME_Shell "GNOME Shell") 中的窗口切换效果）。
+*   Expo —— 当鼠标移动到屏幕左上角的时候，显示出全部的视口和窗口（*就是Ubuntu Unity里面那种！！*）。这个插件可以单独激活，或者是和前两个一起用不会冲突。
 
 ### 启动 Compiz
 
@@ -161,7 +161,7 @@ $ compiz --replace &
 
 *   `--indirect-rendering`: 使用间接渲染 (AIGLX)
 *   `--loose-binding`: 可以解决一些性能问题 (NVIDIA?)
-*   `--replace`: 取代现有的窗口管理器（_window-manager_）
+*   `--replace`: 取代现有的窗口管理器（*window-manager*）
 *   `--keep-window-hints`: 在可用的视口中保留Gnome窗口管理器的 gconf-settings 设置
 *   `--sm-disable`: 禁用会话管理功能
 
@@ -191,7 +191,6 @@ $ fusion-icon
 如果你需要让Compiz使用你自己设定的选项启动的话，就选择“Compiz custom”，然后新建一个叫做`compiz-kde-launcher` 的脚本，并且在其中添加你希望启动Compiz的命令。 下面是一个例子：
 
  `/usr/local/bin/compiz-kde-launcher` 
-
 ```
 #!/bin/bash
 LIBGL_ALWAYS_INDIRECT=1
@@ -214,10 +213,9 @@ $ chmod +x /usr/local/bin/compiz-kde-launcher
 *   如果你想安装 gtk-window-decorator，就不要新建 `compiz.desktop` 文件，因为这回产生一些问题。
 *   如果 `compiz.desktop` 已经有了，那你可能需要在 `Exec` 之后添加 `--replace` 。
 
-在KDE自动启动（_Autostart_）目录中添加一个项目。如果它不存在，就新建一个：
+在KDE自动启动（*Autostart*）目录中添加一个项目。如果它不存在，就新建一个：
 
  `~/.kde4/Autostart/compiz.desktop` 
-
 ```
 [Desktop Entry]
 Type=Application
@@ -243,13 +241,12 @@ X-GnomeWMSettingsLibrary=compiz
 新建一个文件，里面输入启动Compiz的命令，再加上你希望附加的设置。下面是一个例子：
 
  `/usr/bin/startcompiz` 
-
 ```
 compiz --replace &
 
 ```
 
-**注意:** 你不一定非要把这个脚本叫做 _startcompiz_。只要保证你的脚本的名字不会和系统已有的命令（在`/usr/bin`目录中）弄混就行了。
+**注意:** 你不一定非要把这个脚本叫做 *startcompiz*。只要保证你的脚本的名字不会和系统已有的命令（在`/usr/bin`目录中）弄混就行了。
 
 保证你的脚本可执行：
 
@@ -431,7 +428,6 @@ A standalone Compiz session can be started from a [display manager](/index.php/D
 Firstly, create the `/usr/share/xsessions` directory if it does not already exist. Then create the .desktop file. A basic example is provided below:
 
  `/usr/share/xsessions/compiz.desktop` 
-
 ```
 [Desktop Entry]
 Version=1.0
@@ -457,7 +453,6 @@ Alternatively, you could use Compiz's 'Session Management' plugin. This plugin w
 To start Compiz with the `startx` command, add the following line to your `~/.xinitrc` file:
 
  `~/.xinitrc` 
-
 ```
 exec compiz
 
@@ -466,7 +461,6 @@ exec compiz
 You can also use fusion icon as shown below:
 
  `~/.xinitrc` 
-
 ```
 exec fusion-icon
 
@@ -475,7 +469,6 @@ exec fusion-icon
 You can autostart additional programs (such as a panel) by adding the relevant command to your `~/.xinitrc` file. Below is an example of a `~/.xinitrc` file which starts Compiz, the tint2 panel and the Cairo dock.
 
  `~/.xinitrc` 
-
 ```
 tint2 &
 cairo-dock &
@@ -492,8 +485,8 @@ To add a root menu similar to that in [Openbox](/index.php/Openbox "Openbox") an
 After installing the [compiz-boxmenu](https://aur.archlinux.org/packages/compiz-boxmenu/) package, copy the config files to your home directory as shown below:
 
 ```
-# cp -R /etc/xdg/compiz /home/_username_/.config
-# chown -R _username_:_group_ /home/_username_/.config/compiz
+# cp -R /etc/xdg/compiz /home/*username*/.config
+# chown -R *username*:*group* /home/*username*/.config/compiz
 
 ```
 
@@ -549,7 +542,7 @@ In each case, simply map the command to `Alt+F2` (or a key combination of your c
 你可以用下面的命令把Compiz改回你桌面环境原生的窗口管理器：
 
 ```
-_wm_name_ --replace
+*wm_name* --replace
 
 ```
 
@@ -566,7 +559,7 @@ _wm_name_ --replace
 有两种方法在Compiz中启动 MATE Panel 中的运行对话框，你自己选吧：
 
 *   在CCSM中启用 'Gnome Compatibility' 插件
-*   使用“命令”（_Commands_）插件，设置 `Alt+F2` 快捷键的绑定如下：
+*   使用“命令”（*Commands*）插件，设置 `Alt+F2` 快捷键的绑定如下：
 
 ```
 mate-panel --run-dialog
@@ -575,14 +568,14 @@ mate-panel --run-dialog
 
 #### LXDE Panel
 
-使用“命令”（_Commands_）插件，设置 `Alt+F2` 快捷键的绑定如下：
+使用“命令”（*Commands*）插件，设置 `Alt+F2` 快捷键的绑定如下：
 
 ```
 lxpanelctl run
 
 ```
 
-#### Xfce 程序查看器（_Appfinder_）
+#### Xfce 程序查看器（*Appfinder*）
 
 当在Xfce会话中使用Compiz时，运行对话框（由[xfce4-appfinder](https://www.archlinux.org/packages/?name=xfce4-appfinder)提供）无需任何干预应该管用。
 
@@ -643,7 +636,7 @@ LIBGL_ALWAYS_INDIRECT=true compiz --replace --sm-disable &
 
 ### Compiz starts without window borders with NVIDIA binary drivers
 
-Firstly, ensure that your window decorator settings are configured correctly - see the following: [Compiz#Starting the window decorator](/index.php/Compiz#Starting_the_window_decorator "Compiz"). If window borders still do not start try adding _Option "AddARGBGLXVisuals" "True"_ and _Option "DisableGLXRootClipping" "True"_ to your "Screen" section in `/etc/X11/xorg.conf.d/20-nvidia.conf`. If window borders still do not load and you have used other Options elsewhere in `/etc/X11/xorg.conf.d/` try commenting them out and using only the aformentioned ARGBGLXVisuals and GLXRootClipping Options.
+Firstly, ensure that your window decorator settings are configured correctly - see the following: [Compiz#Starting the window decorator](/index.php/Compiz#Starting_the_window_decorator "Compiz"). If window borders still do not start try adding *Option "AddARGBGLXVisuals" "True"* and *Option "DisableGLXRootClipping" "True"* to your "Screen" section in `/etc/X11/xorg.conf.d/20-nvidia.conf`. If window borders still do not load and you have used other Options elsewhere in `/etc/X11/xorg.conf.d/` try commenting them out and using only the aformentioned ARGBGLXVisuals and GLXRootClipping Options.
 
 ### Blank screen on resume from suspend-to-ram using the NVIDIA binary drivers
 
@@ -651,7 +644,7 @@ If you receive a blank screen with a responsive cursor upon resume, try disablin
 
 ### Poor performance from capable graphics cards
 
-**NVIDIA and Intel chips**: If everything is configured correctly but you still have poor performance with some effects, try disabling _CCSM > General Options > Display Settings > Detect Refresh Rate_ and instead choose a value manually.
+**NVIDIA and Intel chips**: If everything is configured correctly but you still have poor performance with some effects, try disabling *CCSM > General Options > Display Settings > Detect Refresh Rate* and instead choose a value manually.
 
 **NVIDIA chips only**: The inadequate refresh rate with 'Detect Refresh Rate' may be due to an option called 'DynamicTwinView' being enabled by default which plays a factor in accurately reporting the maximum refresh rate that your card and display support. You can disable 'DynamicTwinView' by adding the following line to the "Device" or "Screen" section of your `/etc/X11/xorg.conf.d/20-nvidia.conf`, and then restarting your computer:
 
@@ -687,7 +680,6 @@ $ gconftool-2 --install-schema-file=/usr/share/gconf/schemas/compiz-decorator-gt
 If you get an output like this from the command line:
 
  `$ fusion-icon` 
-
 ```
 * Detected Session: gnome
 * Searching for installed applications...
@@ -709,7 +701,7 @@ OSError: [Errno 13] Permission denied: '/home/andy/.config/compiz'
 the problem is with the permission on `~/.config/compiz/`. To fix it, use:
 
 ```
-# chown -R _username_ /home/_username_/.config/compiz/
+# chown -R *username* /home/*username*/.config/compiz/
 
 ```
 

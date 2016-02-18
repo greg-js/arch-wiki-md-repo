@@ -92,7 +92,6 @@ It will put the backup in a timestamped subdirectory of /data/backups/ by defaul
 ```
 
 **Note:** There is a lot of output, but you need to make sure you see this at the end of the backup. If you do not see this output, then your backup failed:
-
 ```
 # 100313 02:43:07  innobackupex: completed OK!
 
@@ -167,7 +166,6 @@ Seconds_Behind_Master: 1643
 ```
 
 **Note:** You can use this procedure to add new slaves to a master. Use the same commands to clone an instance already configured as a slave. Just before setting the master for the slave ('CHANGE MASTER TO') run:
-
 ```
 mysql> STOP SLAVE;
 

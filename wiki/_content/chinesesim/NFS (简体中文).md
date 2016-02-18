@@ -36,7 +36,6 @@
 编辑 `/etc/idmapd.conf` 设置 `Domain` 字段为你的域名。
 
  `/etc/idmapd.conf` 
-
 ```
 [General]
 
@@ -68,7 +67,6 @@ Nobody-Group = nobody
 为使服务器重启后仍然有效， 增加绑定到 `fstab` 文件:
 
  `/etc/fstab` 
-
 ```
 /mnt/music /srv/nfs4/music  none   bind   0   0
 
@@ -79,7 +77,6 @@ Nobody-Group = nobody
 增加允许被挂载的目录和主机到`exports`:
 
  `/etc/exports` 
-
 ```
 /srv/nfs4/ 192.168.0.1/24(rw,fsid=0,no_subtree_check)
 /srv/nfs4/music 192.168.0.1/24(rw,no_subtree_check,nohide) # note the nohide option which is applied to mounted directories on the file system.
@@ -123,7 +120,6 @@ NFS 服务包括 `rpc-idmapd.service` 和 `rpc-mountd.service`
 在启动时自动挂载。编辑 `/etc/fstab` 文件，增加一行。
 
  `/etc/fstab` 
-
 ```
 servername:/music   /mountpoint/on/client   nfs4   rsize=8192,wsize=8192,timeo=14,intr	0 0
 
@@ -172,4 +168,4 @@ Or, mount the share using a secure port using the terminal:
 
 ## Troubleshooting
 
-_There is a dedicated article [NFS Troubleshooting](/index.php/NFS_Troubleshooting "NFS Troubleshooting")._
+*There is a dedicated article [NFS Troubleshooting](/index.php/NFS_Troubleshooting "NFS Troubleshooting").*

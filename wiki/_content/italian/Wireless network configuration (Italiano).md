@@ -71,7 +71,7 @@ La configurazione dei dispositivi wireless è un processo suddiviso in due parti
 
 ## Drivers
 
-Il kernel di Arch è _modulare_, il che significa che la maggior parte dei driver per l'hardware della macchina risiedono sull'hard disk e sono disponibili come _[moduli](/index.php/Kernel_modules_(Italiano) "Kernel modules (Italiano)")_. All'avvio, [udev](/index.php/Udev_(Italiano) "Udev (Italiano)") fa un inventario dell'hardware presente. Lo stesso udev carica quindi i moduli (i driver) per l'hardware corrispondente, e il driver, di contro, permette la creazione di una _kernel interface_.
+Il kernel di Arch è *modulare*, il che significa che la maggior parte dei driver per l'hardware della macchina risiedono sull'hard disk e sono disponibili come *[moduli](/index.php/Kernel_modules_(Italiano) "Kernel modules (Italiano)")*. All'avvio, [udev](/index.php/Udev_(Italiano) "Udev (Italiano)") fa un inventario dell'hardware presente. Lo stesso udev carica quindi i moduli (i driver) per l'hardware corrispondente, e il driver, di contro, permette la creazione di una *kernel interface*.
 
 Alcuni chipset wireless richiedono oltre al driver l'installazione di un firmware, alcuni dei quali sono contenuti nel pacchetto [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware), installato di default. Tuttavia, alcuni firmware sono proprietari e dovranno essere installati separatamente, come spiegato in [#Installazione drivers/firmware](#Installazione_drivers.2Ffirmware)
 
@@ -89,7 +89,6 @@ Per verificare che il driver per la propria scheda di rete wireless sia stato ca
 Ad esempio:
 
  `$ lspci -k` 
-
 ```
 06:00.0 Network controller: Intel Corporation WiFi Link 5100
 	Subsystem: Intel Corporation WiFi Link 5100 AGN
@@ -115,7 +114,6 @@ Se si ottiene un messaggio d'errore simile al seguente: `SIOCSIFFLAGS: No such f
 Si controllino eventuali messaggi del kernel relativi al caricamento del firmware:
 
  `$ dmesg | grep firmware` 
-
 ```
 [   7.148259] iwlwifi 0000:02:00.0: loaded firmware version 39.30.4.1 build 35138 op_mode iwldvm
 
@@ -133,7 +131,7 @@ Se il modulo del kernel è stato correttamente caricato e l'interfaccia è attiv
 
 Se la propria scheda di rete wireless compare in uno degli elenchi di cui sopra, si consulti la sezione [#Risoluzione dei problemi di drivers e firmware](#Risoluzione_dei_problemi_di_drivers_e_firmware), che contiene informazioni sull'installazione di drivers e firmware per schede specifiche. Si effettuino quindi nuovamente le operazioni descritte in [#Verificare se il driver per la propria periferica è stato caricato](#Verificare_se_il_driver_per_la_propria_periferica_.C3.A8_stato_caricato).
 
-Se la scheda wireless non è elencata sopra, è probabile che sia supportata solo da Windows (come alcune Broadcom, 3com, ecc). Per queste schede è possibile provare ad utilizzare _ndiswrapper_. Si consulti la sezione [#ndiswrapper](#ndiswrapper) per ulteriori informazioni.
+Se la scheda wireless non è elencata sopra, è probabile che sia supportata solo da Windows (come alcune Broadcom, 3com, ecc). Per queste schede è possibile provare ad utilizzare *ndiswrapper*. Si consulti la sezione [#ndiswrapper](#ndiswrapper) per ulteriori informazioni.
 
 ## Gestione Wireless
 
@@ -176,14 +174,14 @@ Il pacchetto [wireless_tools](https://www.archlinux.org/packages/?name=wireless_
 *   Negli esempi seguenti, si presume che la periferica wireless sia `wlan0` e che ci si stia connettendo all'access point `"your_essid"`. Si sostituiscano i due valori di conseguenza.
 *   Si noti inoltre che la maggior parte dei comandi proposti dovrà essere eseguita con [i permessi di root](/index.php/Users_and_Groups_(Italiano) "Users and Groups (Italiano)"). In caso contrario, alcuni comandi come `iwlist` potrebbero terminare correttamente ma senza produrre l'output corretto, creando confusione.
 
-| Comando _iw_ | Comando _wireless_tools_ | Descrizione |
+| Comando *iw* | Comando *wireless_tools* | Descrizione |
 | iw dev wlan0 link | iwconfig wlan0 | Informazioni sullo stato del collegamento. |
 | iw dev wlan0 scan | iwlist wlan0 scan | Scansione degli access points disponibili. |
-| iw wlan0 set type ibss | iwconfig wlan0 mode ad-hoc | Attiva la modalità _ad-hoc_. |
-| iw wlan0 connect _your_essid_ | iwconfig wlan0 essid _your_essid_ | Connessione ad una rete senza password. |
-| iw wlan0 connect _your_essid_ 2432 | iwconfig wlan0 essid _your_essid_ freq 2432M | Connessione ad una rete senza password specificando il canale. |
-| iw wlan0 connect _your_essid_ key 0:_your_key_ | iwconfig wlan0 essid _your_essid_ key _your_key_ | Connessione ad una rete protetta tramite WEP con una chiave esadecimale. |
-| iw wlan0 connect _your_essid_ key 0:_your_key_ | iwconfig wlan0 essid _your_essid_ key s:_your_key_ | Connessione ad una rete protetta tramite WEP con una chiave ASCII. |
+| iw wlan0 set type ibss | iwconfig wlan0 mode ad-hoc | Attiva la modalità *ad-hoc*. |
+| iw wlan0 connect *your_essid* | iwconfig wlan0 essid *your_essid* | Connessione ad una rete senza password. |
+| iw wlan0 connect *your_essid* 2432 | iwconfig wlan0 essid *your_essid* freq 2432M | Connessione ad una rete senza password specificando il canale. |
+| iw wlan0 connect *your_essid* key 0:*your_key* | iwconfig wlan0 essid *your_essid* key *your_key* | Connessione ad una rete protetta tramite WEP con una chiave esadecimale. |
+| iw wlan0 connect *your_essid* key 0:*your_key* | iwconfig wlan0 essid *your_essid* key s:*your_key* | Connessione ad una rete protetta tramite WEP con una chiave ASCII. |
 | iw dev wlan0 set power_save on | iwconfig wlan0 power on | Abilita il risparmio energetico. |
 
 **Nota:** A seconda del vostro hardware e del metodo di protezione scelto, alcuni dei passi seguenti potrebbero non essere necessari. Alcune schede sono famose per necessitare dell'attivazione dell'interfaccia e/o della rilevazione degli access points prima di essere associate ad un access point ed a un indirizzo IP. Potrebbe dunque essere necessario qualche tentativo. Ad esempio, chi utilizza WPA/WPA2, può direttamente seguire i passi a partire dalla sezione [#Associazione](#Associazione).
@@ -195,7 +193,6 @@ Il pacchetto [wireless_tools](https://www.archlinux.org/packages/?name=wireless_
 *   La prima cosa da fare è trovare il nome della propria scheda di rete wireless. È possibile farlo con il seguente comando:
 
  `$ iw dev` 
-
 ```
 Connected to 12:34:56:78:9a:bc (on wlan0)
 	SSID: MyESSID
@@ -214,7 +211,6 @@ Connected to 12:34:56:78:9a:bc (on wlan0)
 *   Per verificare lo stato del collegamento, utilizzare il seguente comando. Se si è associati ad un Access Point, l'output sarà il seguente:
 
  `$ iw dev wlan0 link` 
-
 ```
 Not connected.
 
@@ -223,7 +219,6 @@ Not connected.
 Quando si è associati, l'output diventa:
 
  `$ iw dev wlan0 link` 
-
 ```
 Connected to 12:34:56:78:9a:bc (on wlan0)
 	SSID: MyESSID
@@ -242,7 +237,6 @@ Connected to 12:34:56:78:9a:bc (on wlan0)
 *   È possibile visualizzare varie statistiche, come il numero di byte trasmessi/ricevuti, la potenza del segnale e altro. con il seguente comando:
 
  `$ iw dev wlan0 station dump` 
-
 ```
 Station 12:34:56:78:9a:bc (on wlan0)
 	inactive time:	1450 ms
@@ -266,7 +260,7 @@ Station 12:34:56:78:9a:bc (on wlan0)
 
 #### Attivazione dell'interfaccia
 
-_(Opzionale, ma può essere richiesto)_
+*(Opzionale, ma può essere richiesto)*
 
 Molte schede necessitano che l'interfaccia del kernel venga attivata prima di poter utilizzare i `wireless_tools`:
 
@@ -307,9 +301,9 @@ Voci importanti:
 
 #### Modalità di funzionamento
 
-_(Opzionale, ma può essere richiesto)_
+*(Opzionale, ma può essere richiesto)*
 
-A questo punto potrebbe essere necessario impostare la corretta modalità di funzionamento della scheda wireless. Più specificamente, se avete intenzione di collegarvi ad una rete ad-hoc, potrebbe essere necessario impostare la modalità di funzionamento a _ad-hoc:_
+A questo punto potrebbe essere necessario impostare la corretta modalità di funzionamento della scheda wireless. Più specificamente, se avete intenzione di collegarvi ad una rete ad-hoc, potrebbe essere necessario impostare la modalità di funzionamento a *ad-hoc:*
 
 ```
 # iw wlan0 set type ibss
@@ -334,14 +328,14 @@ A seconda del tipo di crittazione, sarà necessario associare la vostra scheda w
 con una chiave esadecimale:
 
 ```
-# iw wlan0 connect your_essid key 0:_your_key_
+# iw wlan0 connect your_essid key 0:*your_key*
 
 ```
 
 con una chiave ASCII, specificando la terza chiave come default (le chiavi sono contate a partire da 0):
 
 ```
-# iw wlan0 connect your_essid key d:2:_your_key_
+# iw wlan0 connect your_essid key d:2:*your_key*
 
 ```
 
@@ -368,7 +362,6 @@ Indipendentemente dal metodo utilizzato, è possibile verificare l'avvenuta asso
 #### Ottenere un indirizzo IP
 
 **Nota:** Si legga la pagina [Configuring Network (Italiano)# Configurare l'indirizzo IP](/index.php/Configuring_Network_(Italiano)#_Configurare_l.27indirizzo_IP "Configuring Network (Italiano)") per ulteriori esempi.
-
 .
 
 Infine, associate la vostra interfaccia di rete ad un indirizzo IP. Alcuni semplici esempi:
@@ -388,13 +381,11 @@ per il DHCP, oppure
 
 per un indirizzo IP statico.
 
-**Nota:** Se si verifica un errore di timeout a causa di un errore _waiting for carrier_ allora potrebbe essere necessario impostare la modalità del canale a `auto` per il dispositivo specifico.
-
+**Nota:** Se si verifica un errore di timeout a causa di un errore *waiting for carrier* allora potrebbe essere necessario impostare la modalità del canale a `auto` per il dispositivo specifico.
 ```
 # iwconfig wlan0 channel auto
 
 ```
-
 Prima di impostare il canale su `auto`, assicurarsi che la propria scheda di rete wireless sia disattivata. Una volta effettuato il cambiamento, sarà possibile riattivarla.
 
 #### Script di configurazione/avvio personalizzati
@@ -410,7 +401,6 @@ Questo esempio utilizza [systemd](/index.php/Systemd_(Italiano) "Systemd (Italia
 Si crei un servizio per systemd, ad esempio `/etc/systemd/system/network@.service`:
 
  `/etc/systemd/system/network@.service` 
-
 ```
 [Unit]
 Description=Network Connectivity (%i)
@@ -445,7 +435,6 @@ Si abiliti il servizio e lo si avvii, passandogli il nome dell'interfaccia:
 Si crei il file `/etc/conf.d/network`:
 
  `/etc/conf.d/network` 
-
 ```
 address=192.168.0.10
 netmask=24
@@ -457,7 +446,6 @@ gateway=192.168.0.1
 Assicurarsi che [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) sia installato e creare il file `/etc/wpa_supplicant.conf`. Si faccia riferimento a [WPA Supplicant](/index.php/WPA_Supplicant_(Italiano) "WPA Supplicant (Italiano)").
 
  `/etc/wpa_supplicant.conf` 
-
 ```
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=network
 update_config=1
@@ -471,7 +459,6 @@ network={
 Si crei un servizio di systemd:
 
  `/etc/systemd/system/network@.service` 
-
 ```
 [Unit]
 Description=Network Connectivity (%i)
@@ -530,7 +517,7 @@ Si veda [NetworkManager](/index.php/NetworkManager_(Italiano) "NetworkManager (I
 
 #### Wifi Radar
 
-WiFi Radar è una utility Python/PyGTK2 per gestire diversi profili wireless (e _solo_ wireless). E' in grado di effettuare lo scan delle reti wireless disponibili e di creare profili per le vostre reti preferite.
+WiFi Radar è una utility Python/PyGTK2 per gestire diversi profili wireless (e *solo* wireless). E' in grado di effettuare lo scan delle reti wireless disponibili e di creare profili per le vostre reti preferite.
 
 Si veda [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar").
 
@@ -706,7 +693,7 @@ e ricaricarlo (dopo una pausa):
 
 ##### rtl8192s
 
-Il driver è parte del kernel attuale. Può essere necessario aggiungere manualmente il firmware in caso `/usr/lib/firmware/RTL8192SU/rtl8192sfw.bin` non esista. (`dmesg` riporterebbe _"rtl819xU:FirmwareRequest92S(): failed"_ se mancasse il firmware)
+Il driver è parte del kernel attuale. Può essere necessario aggiungere manualmente il firmware in caso `/usr/lib/firmware/RTL8192SU/rtl8192sfw.bin` non esista. (`dmesg` riporterebbe *"rtl819xU:FirmwareRequest92S(): failed"* se mancasse il firmware)
 
 Per scaricare e installare il firmware:
 
@@ -779,7 +766,7 @@ wlan_xauth
 
 ```
 
-Poi caricare il modulo manualmente con `modprobe ath5k` o riavviare. _wlan0_ (o _wlanX_) dovrebbe apparire ed essere pronta all'uso in modalità STA.
+Poi caricare il modulo manualmente con `modprobe ath5k` o riavviare. *wlan0* (o *wlanX*) dovrebbe apparire ed essere pronta all'uso in modalità STA.
 
 Se il dispositivo non è in grado di ottenere un indirizzo IP dopo essere stato avviato, si provi a caricare il modulo con `modprobe ath5k nohwcrypt=1`. Si veda sotto per ulteriori dettagli sul parametro `nohwcrypt`.
 
@@ -789,17 +776,14 @@ Info:
 *   [http://wiki.debian.org/ath5k](http://wiki.debian.org/ath5k)
 
 **Nota:** Alcuni portatili hanno dei problemi con il led Wireless che lampeggia rosso e blu. Per risolvere questo problema:
-
 ```
 echo none > "/sys/class/leds/ath5k-phy0::tx/trigger"
 echo none > "/sys/class/leds/ath5k-phy0::rx/trigger"
 
 ```
-
 Per ricerche alternative consultare [qui](https://bugzilla.redhat.com/show_bug.cgi?id=618232).
 
 **Nota:** Se le pagine vengono caricate molto lentamente su Firefox/Opera/Chromium, oppure se il dispositivo ha problemi nell'ottenere un indirizzo IP, si provi ad utilizzare la crittografia software in luogo di quella hardware:
-
 ```
 rmmod ath5k
 modprobe ath5k nohwcrypt
@@ -812,7 +796,6 @@ E si riavvii la connessione. Se il problema è risolto, si renda la modifica per
 options ath5k nohwcrypt
 
 ```
-
 Ulteriori informazioni sulle opzioni di `modprobe` sono disponibili [qui](/index.php/Modprobe_(Italiano)#Opzioni "Modprobe (Italiano)").
 
 ##### ath9k
@@ -1028,13 +1011,13 @@ iwconfig
 
 ```
 
-dovremmo vedere presente il device _wlan0_. Se avete problemi, consultate il [wiki d'installazione Ndiswrapper](http://ndiswrapper.sourceforge.net/joomla/index.php?/component/option,com_openwiki/Itemid,33/id,installation/).
+dovremmo vedere presente il device *wlan0*. Se avete problemi, consultate il [wiki d'installazione Ndiswrapper](http://ndiswrapper.sourceforge.net/joomla/index.php?/component/option,com_openwiki/Itemid,33/id,installation/).
 
 #### compat-drivers-patched
 
 Il pacchetto "compat-drivers-patched" corregge il problema del "canale fisso -1", fornendo al contempo una migliore funzionalità. Installare il pacchetto [compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/) da AUR.
 
-[compat-wireless-patched](https://aur.archlinux.org/packages/compat-wireless-patched/) non va in conflitto con nessun altro pacchetto e i moduli compilati risiedono in `/usr/lib/modules/_versione-kernel_/updates`.
+[compat-wireless-patched](https://aur.archlinux.org/packages/compat-wireless-patched/) non va in conflitto con nessun altro pacchetto e i moduli compilati risiedono in `/usr/lib/modules/*versione-kernel*/updates`.
 
 Questi driver con patch incluse provengono da [Linux Wireless project](http://wireless.kernel.org/) e supportano molti dei chip menzionati sopra, tra i quali:
 

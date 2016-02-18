@@ -17,7 +17,6 @@ Install [wallpapoz](https://aur.archlinux.org/packages/wallpapoz/) from the [Arc
 The configuration is done using an XML file that can look like the following:
 
  `.wallpapoz/wallpapoz.xml` 
-
 ```
 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE Wallpapoz><wallpapoz interval="60" random="1" style="1" type="desktop">
     <file>/path/to/picture1.jpg</file>

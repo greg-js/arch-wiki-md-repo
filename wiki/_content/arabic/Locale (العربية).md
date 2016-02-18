@@ -72,13 +72,11 @@ en_US.UTF-8 UTF-8
 **ملاحظة:** `/etc/locale.conf` غير موجود افتراضيًّا ويجب إنشاءه يدويًّا .
 
 **Tip:** إن كان مَخرج `locale` is to your liking during installation, تستطيع توفير الوقت بعمل: `# locale > /etc/locale.conf` وأنت chrooted.
-
  `/etc/locale.conf`  `LANG="en_US.UTF-8"` 
 
 يمكن لهذا أن يكون مثال ضبط متقدّم:
 
  `/etc/locale.conf` 
-
 ```
 # Enable UTF-8 with Australian settings.
 LANG="en_AU.UTF-8"
@@ -111,7 +109,6 @@ LC_TIME="en_DK.UTF-8"
 أو على مستوى النظام
 
  `/etc/locale.conf` 
-
 ```
 LANG="en_AU"
 LANGUAGE="en_AU:en_GB:en"
@@ -198,5 +195,5 @@ xterm تدعم UTF-8 فقط إن شُغِّل كـ `uxterm` أو `xterm -u8`.
 *   [Gentoo Wiki Archives: Locales](http://www.gentoo-wiki.info/Locales)
 *   [ICU's interactive collation testing](http://demo.icu-project.org/icu-bin/locexp?_=en_US&x=col)
 *   [Free Standards Group Open Internationalisation Initiative](http://www.openi18n.org/)
-*   [_The Single UNIX Specification_ definition of Locale](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) by The Open Group
+*   [*The Single UNIX Specification* definition of Locale](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) by The Open Group
 *   [Locale environment variables](https://help.ubuntu.com/community/EnvironmentVariables#Locale_setting_variables)

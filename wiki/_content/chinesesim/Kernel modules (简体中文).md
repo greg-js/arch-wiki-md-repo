@@ -25,7 +25,7 @@
 
 要创建内核模块，请阅读[此指南](http://tldp.org/LDP/lkmpg/2.6/html/index.html)。模块可以设置成内置或者动态加载，要编译成可动态加载，需要在内核配置时将模块配置为 `M` (模块)。
 
-模块保存在 `/lib/modules/_kernel_release_` (使用 `uname -r` 命令显示当前内核版本)。
+模块保存在 `/lib/modules/*kernel_release*` (使用 `uname -r` 命令显示当前内核版本)。
 
 **注意:** 模块名通常使用 (`_`) 或 `-` 连接，但是这些符号在 `modprobe` 命令和 `/etc/modprobe.d/` 配置文件中都是可以相互替换的。
 
@@ -41,7 +41,7 @@ $ lsmod
 显示模块信息：
 
 ```
-$ modinfo _module_name_
+$ modinfo *module_name*
 
 ```
 
@@ -55,21 +55,21 @@ $ modprobe -c | less
 显示某个模块的配置信息：
 
 ```
-$ modprobe -c | grep _module_name_
+$ modprobe -c | grep *module_name*
 
 ```
 
 显示一个装入模块使用的选项：
 
 ```
-$ systool -v -m _module_name_
+$ systool -v -m *module_name*
 
 ```
 
 显示模块的依赖关系：
 
 ```
-$ modprobe --show-depends _module_name_
+$ modprobe --show-depends *module_name*
 
 ```
 
@@ -78,21 +78,21 @@ $ modprobe --show-depends _module_name_
 控制内核模块载入/移除的命令是[kmod](https://www.archlinux.org/packages/?name=kmod) 软件包提供的, 要手动装入模块的话，执行:
 
 ```
-# modprobe _module_name_
+# modprobe *module_name*
 
 ```
 
 如果要移除一个模块：
 
 ```
-# modprobe -r _module_name_
+# modprobe -r *module_name*
 
 ```
 
 或者:
 
 ```
-# rmmod _module_name_
+# rmmod *module_name*
 
 ```
 
@@ -105,7 +105,6 @@ $ modprobe --show-depends _module_name_
 systemd 读取 `/etc/modules-load.d/` 中的配置加载额外的内核模块。配置文件名称通常为 `/etc/modules-load.d/<program>.conf`。格式很简单，一行一个要读取的模块名，而空行以及第一个非空格字符为`#`或`;`的行会被忽略，如：
 
  `/etc/modules-load.d/virtio-net.conf` 
-
 ```
 # Load virtio-net.ko at boot
 virtio-net
@@ -124,7 +123,6 @@ virtio-net
 例如
 
  `/etc/modprobe.d/thinkfan.conf` 
-
 ```
 # On thinkpads, this lets the thinkfan daemon control fan speed
 options thinkpad_acpi fan_control=1
@@ -151,7 +149,6 @@ thinkpad_acpi.fan_control=1
 ## 别名
 
  `/etc/modprobe.d/myalias.conf` 
-
 ```
 # Lets you use 'mymod' in MODULES, instead of 'really_long_module_name'
 alias mymod really_long_module_name
@@ -160,7 +157,6 @@ alias mymod really_long_module_name
 有些模块具有别名，以方便其它程序自动装入模块。禁用这些别名可以阻止自动装入，但是仍然可以手动装入。
 
  `/etc/modprobe.d/modprobe.conf` 
-
 ```
 # Prevent autoload of bluetooth
 alias net-pf-31 off
@@ -186,7 +182,6 @@ alias net-pf-10 off
 在 `/etc/modprobe.d/` 中创建 `.conf` 文件，使用 `blacklist` 关键字屏蔽不需要的模块，例如如果不想装入 `pcspkr` 模块：
 
  `/etc/modprobe.d/nobeep.conf` 
-
 ```
 # Do not load the pcspkr module on boot
 blacklist pcspkr
@@ -197,7 +192,6 @@ blacklist pcspkr
 要避免这个行为，可以让 modprobe 使用自定义的 `install` 命令，直接返回导入失败：
 
  `/etc/modprobe.d/blacklist.conf` 
-
 ```
 ...
 install MODULE /bin/false
@@ -229,13 +223,15 @@ modprobe.blacklist=modname1,modname2,modname3
 function aa_mod_parameters () 
 { 
     N=/dev/null;
-    C=`tput op` O=$(echo -en "\n`tput setaf 2`>>> `tput op`");
+    C=`tput op` O=$(echo -en "
+`tput setaf 2`>>> `tput op`");
     for mod in $(cat /proc/modules|cut -d" " -f1);
     do
         md=/sys/module/$mod/parameters;
         [[ ! -d $md ]] && continue;
         m=$mod;
-        d=`modinfo -d $m 2>$N | tr "\n" "\t"`;
+        d=`modinfo -d $m 2>$N | tr "
+" "\t"`;
         echo -en "$O$m$C";
         [[ ${#d} -gt 0 ]] && echo -n " - $d";
         echo;
@@ -253,7 +249,6 @@ function aa_mod_parameters ()
 示例输出：
 
  `# aa_mod_parameters` 
-
 ```
 >>> ehci_hcd - USB 2.0 'Enhanced' Host Controller (EHCI) Driver
         hird=0 - hird:host initiated resume duration, +1 for each 75us (int)

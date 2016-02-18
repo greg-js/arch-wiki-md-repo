@@ -13,7 +13,7 @@ dd if=./Bios-Update-Stick-V2.img of=/dev/sdx
 
 The text file in the zip describes how to boot the USB Stick, this one is a non-literal translation:
 
-*   Have the WeTab turned on. _Also, have the WeTab connected with the charger, the USB Stick and a Keyboard._
+*   Have the WeTab turned on. *Also, have the WeTab connected with the charger, the USB Stick and a Keyboard.*
 *   Turn it off while holding down the "Hotkey" (Upper-left, that touch-sensitive circle)
 *   It should reboot after approximately five seconds.
 *   Hold down the "Hotkey" and smash on F11 like it's the last thing you could do before death.

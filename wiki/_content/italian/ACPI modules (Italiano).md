@@ -34,7 +34,6 @@ Quella che segue è una lista dei moduli ACPI che abilitano funzioni speciali o 
 lista completa per il kernel in uso:
 
  `# ls -l /lib/modules/$(uname -r)/kernel/drivers/acpi` 
-
 ```
 total 112
 -rw-r--r-- 1 root root  2808 Aug 29 23:58 ac.ko.gz

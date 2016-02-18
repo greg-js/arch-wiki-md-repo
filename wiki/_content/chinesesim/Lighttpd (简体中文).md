@@ -172,7 +172,6 @@ Zend Engine v2.4.0, Copyright (c) 1998-2012 Zend Technologies
 创建一份新的配置文件:
 
  `/etc/lighttpd/conf.d/fastcgi.conf` 
-
 ```
 # Make sure to install php and php-cgi. See:                                                             
 # https://wiki.archlinux.org/index.php/Fastcgi_and_lighttpd#PHP
@@ -212,13 +211,12 @@ fastcgi.server = (
 在/etc/lighttpd/lighttpd.conf中添加以下内容使新配置能够应用:
 
  `/etc/lighttpd/lighttpd.conf` 
-
 ```
 include "conf.d/fastcgi.conf"
 
 ```
 
-**注意:** 模块顺序十分重要, 正确地模块加载顺序位于 `/usr/share/doc/lighttpd/config/modules.conf`. 任何错误配置都可能导致 _lighttpd_ 崩溃。
+**注意:** 模块顺序十分重要, 正确地模块加载顺序位于 `/usr/share/doc/lighttpd/config/modules.conf`. 任何错误配置都可能导致 *lighttpd* 崩溃。
 
 重新加载 lighttpd：
 
@@ -226,7 +224,7 @@ include "conf.d/fastcgi.conf"
 
 **注意:**
 
-*   如果你在访问php文件时遇到诸如 _No input file found_ 的错误, 有很多原因可以导致这个错误，请参阅 [this FAQ](http://redmine.lighttpd.net/projects/1/wiki/frequentlyaskedquestions#I-get-the-error-No-input-file-specified-when-trying-to-use-PHP) 。
+*   如果你在访问php文件时遇到诸如 *No input file found* 的错误, 有很多原因可以导致这个错误，请参阅 [this FAQ](http://redmine.lighttpd.net/projects/1/wiki/frequentlyaskedquestions#I-get-the-error-No-input-file-specified-when-trying-to-use-PHP) 。
 *   确认没有其他模块 (如 `mod_cgi`) 负责处理php文件。
 
 ##### Using php-fpm
@@ -239,7 +237,7 @@ There is no adaptive spawning anymore in recent lighttpd releases. For dynamic m
 
 ```
 
-**Note:** You can configure the number of servers in the pool and tweak other configuration options by editing the file `/etc/php/php-fpm.conf`. More details on _php-fpm_ can be found on the [php-fpm website](http://php-fpm.anight.org/). You should also note that when you make changes to /etc/php/php.ini you will need to restart php-fpm
+**Note:** You can configure the number of servers in the pool and tweak other configuration options by editing the file `/etc/php/php-fpm.conf`. More details on *php-fpm* can be found on the [php-fpm website](http://php-fpm.anight.org/). You should also note that when you make changes to /etc/php/php.ini you will need to restart php-fpm
 
 In `/etc/lighttpd/conf.d/fastcgi.conf` add:
 
@@ -265,7 +263,6 @@ Install [eaccelerator](https://aur.archlinux.org/packages/eaccelerator/) from th
 Add own config file for eaccelerator:
 
  `/etc/php/conf.d/eaccelerator-own.ini` 
-
 ```
 zlib.output_compression = On
 cgi.fix_pathinfo=1

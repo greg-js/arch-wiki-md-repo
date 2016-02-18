@@ -25,14 +25,13 @@
 
 查找哪个包包含名为 "makepkg" 的文件:
 
- `$ pkgfile _makepkg_`  `core/pacman           #搜索的文件在 [core] 源的 [pacman](https://www.archlinux.org/packages/?name=pacman) 包中。` 
+ `$ pkgfile *makepkg*`  `core/pacman           #搜索的文件在 [core] 源的 [pacman](https://www.archlinux.org/packages/?name=pacman) 包中。` 
 
 ## 其它示例
 
 列出 [core] 源中 [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) 包包含的文件：
 
- `$ pkgfile --list _core/archlinux-keyring_` 
-
+ `$ pkgfile --list *core/archlinux-keyring*` 
 ```
 core/archlinux-keyring usr/
 core/archlinux-keyring usr/share/

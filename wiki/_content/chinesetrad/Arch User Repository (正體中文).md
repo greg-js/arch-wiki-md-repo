@@ -1,6 +1,6 @@
 Arch 使用者軟體倉庫 (AUR) 是由社群推動的使用者軟體庫。它包含了軟體包描述單 ([PKGBUILD](/index.php/PKGBUILD "PKGBUILD"))，可以用 [makepkg](/index.php/Makepkg "Makepkg") 從原始碼編譯軟體包，並透過 [Pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") 安裝。 透過 AUR 可以在社群間分享、組織新進軟體包，熱門的軟體包有機會被收錄進 [community](#community) 軟體庫。這份文件將解釋如何存取、使用 AUR。
 
-官方軟體庫中有不少發跡於 AUR 的新軟體包。在 AUR 下，使用者可以貢獻自己的軟體包組建資料 (PKGBUILD 與相關檔案)。AUR 社群可以投票支持/反對 AUR 的軟體包。若一個軟體包變得熱門 — 加上授權相容和優良的打包技術 — 就有機會被收錄進 _community_ 軟體庫 (可直接透過 [Pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") 或 [ABS](/index.php/Arch_Build_System_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Build System (正體中文)") 存取)。
+官方軟體庫中有不少發跡於 AUR 的新軟體包。在 AUR 下，使用者可以貢獻自己的軟體包組建資料 (PKGBUILD 與相關檔案)。AUR 社群可以投票支持/反對 AUR 的軟體包。若一個軟體包變得熱門 — 加上授權相容和優良的打包技術 — 就有機會被收錄進 *community* 軟體庫 (可直接透過 [Pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") 或 [ABS](/index.php/Arch_Build_System_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Build System (正體中文)") 存取)。
 
 ## Contents
 
@@ -24,10 +24,10 @@ Arch 使用者軟體倉庫 (AUR) 是由社群推動的使用者軟體庫。它�
     *   [9.2 AUR 許可什麼類型的軟體包？](#AUR_.E8.A8.B1.E5.8F.AF.E4.BB.80.E9.BA.BC.E9.A1.9E.E5.9E.8B.E7.9A.84.E8.BB.9F.E9.AB.94.E5.8C.85.EF.BC.9F)
     *   [9.3 我要如何投票給 AUR 軟體包？](#.E6.88.91.E8.A6.81.E5.A6.82.E4.BD.95.E6.8A.95.E7.A5.A8.E7.B5.A6_AUR_.E8.BB.9F.E9.AB.94.E5.8C.85.EF.BC.9F)
     *   [9.4 什麼是 TU？](#.E4.BB.80.E9.BA.BC.E6.98.AF_TU.EF.BC.9F)
-    *   [9.5 Arch 使用者倉庫和 _community_ 的不同？](#Arch_.E4.BD.BF.E7.94.A8.E8.80.85.E5.80.89.E5.BA.AB.E5.92.8C_community_.E7.9A.84.E4.B8.8D.E5.90.8C.EF.BC.9F)
-    *   [9.6 要多少個投票推薦才會讓 PKGBUILD 進入 _community_？](#.E8.A6.81.E5.A4.9A.E5.B0.91.E5.80.8B.E6.8A.95.E7.A5.A8.E6.8E.A8.E8.96.A6.E6.89.8D.E6.9C.83.E8.AE.93_PKGBUILD_.E9.80.B2.E5.85.A5_community.EF.BC.9F)
+    *   [9.5 Arch 使用者倉庫和 *community* 的不同？](#Arch_.E4.BD.BF.E7.94.A8.E8.80.85.E5.80.89.E5.BA.AB.E5.92.8C_community_.E7.9A.84.E4.B8.8D.E5.90.8C.EF.BC.9F)
+    *   [9.6 要多少個投票推薦才會讓 PKGBUILD 進入 *community*？](#.E8.A6.81.E5.A4.9A.E5.B0.91.E5.80.8B.E6.8A.95.E7.A5.A8.E6.8E.A8.E8.96.A6.E6.89.8D.E6.9C.83.E8.AE.93_PKGBUILD_.E9.80.B2.E5.85.A5_community.EF.BC.9F)
     *   [9.7 如何建立一份 PKGBUILD？](#.E5.A6.82.E4.BD.95.E5.BB.BA.E7.AB.8B.E4.B8.80.E4.BB.BD_PKGBUILD.EF.BC.9F)
-    *   [9.8 我確定 "foo" 在 _community_ 庫，可是執行 "pacman -S foo" 卻失敗了。](#.E6.88.91.E7.A2.BA.E5.AE.9A_.22foo.22_.E5.9C.A8_community_.E5.BA.AB.EF.BC.8C.E5.8F.AF.E6.98.AF.E5.9F.B7.E8.A1.8C_.22pacman_-S_foo.22_.E5.8D.BB.E5.A4.B1.E6.95.97.E4.BA.86.E3.80.82)
+    *   [9.8 我確定 "foo" 在 *community* 庫，可是執行 "pacman -S foo" 卻失敗了。](#.E6.88.91.E7.A2.BA.E5.AE.9A_.22foo.22_.E5.9C.A8_community_.E5.BA.AB.EF.BC.8C.E5.8F.AF.E6.98.AF.E5.9F.B7.E8.A1.8C_.22pacman_-S_foo.22_.E5.8D.BB.E5.A4.B1.E6.95.97.E4.BA.86.E3.80.82)
     *   [9.9 AUR 的某個軟體已經過期，我該怎麼做？](#AUR_.E7.9A.84.E6.9F.90.E5.80.8B.E8.BB.9F.E9.AB.94.E5.B7.B2.E7.B6.93.E9.81.8E.E6.9C.9F.EF.BC.8C.E6.88.91.E8.A9.B2.E6.80.8E.E9.BA.BC.E5.81.9A.EF.BC.9F)
     *   [9.10 我打算提交一份 PKGBUILD，有沒有好心人可以幫忙檢查有沒有錯誤？](#.E6.88.91.E6.89.93.E7.AE.97.E6.8F.90.E4.BA.A4.E4.B8.80.E4.BB.BD_PKGBUILD.EF.BC.8C.E6.9C.89.E6.B2.92.E6.9C.89.E5.A5.BD.E5.BF.83.E4.BA.BA.E5.8F.AF.E4.BB.A5.E5.B9.AB.E5.BF.99.E6.AA.A2.E6.9F.A5.E6.9C.89.E6.B2.92.E6.9C.89.E9.8C.AF.E8.AA.A4.EF.BC.9F)
     *   [9.11 我從 AUR 下載某個軟體，執行 makepkg 卻無法編譯；我該怎麼做？](#.E6.88.91.E5.BE.9E_AUR_.E4.B8.8B.E8.BC.89.E6.9F.90.E5.80.8B.E8.BB.9F.E9.AB.94.EF.BC.8C.E5.9F.B7.E8.A1.8C_makepkg_.E5.8D.BB.E7.84.A1.E6.B3.95.E7.B7.A8.E8.AD.AF.EF.BC.9B.E6.88.91.E8.A9.B2.E6.80.8E.E9.BA.BC.E5.81.9A.EF.BC.9F)
@@ -195,10 +195,9 @@ $ makepkg --source
 
 ```
 
-注意，這是以 gzip 壓縮的封存檔；假設您要上傳名為 _libfoo_ 的軟體包，建立的封存檔應該會像這樣：
+注意，這是以 gzip 壓縮的封存檔；假設您要上傳名為 *libfoo* 的軟體包，建立的封存檔應該會像這樣：
 
  `$ tar tf libfoo-0.1-1.src.tar.gz` 
-
 ```
 libfoo/
 libfoo/PKGBUILD
@@ -240,10 +239,9 @@ Removal requests can be disapproved, in which case you will likely be advised to
 
 ## community 軟體庫
 
-_community_ 軟體庫由[受信任使用者](/index.php/Trusted_Users "Trusted Users")維護，包含來自 AUR 的熱門軟體包。預設 `/etc/pacman.conf` 已經啟用該庫。若 _community_被停用或移除，可以將這兩行取消註解/加入：
+*community* 軟體庫由[受信任使用者](/index.php/Trusted_Users "Trusted Users")維護，包含來自 AUR 的熱門軟體包。預設 `/etc/pacman.conf` 已經啟用該庫。若 *community*被停用或移除，可以將這兩行取消註解/加入：
 
  `/etc/pacman.conf` 
-
 ```
 ...
 [community]
@@ -251,9 +249,9 @@ Include = /etc/pacman.d/mirrorlist
 ...
 ```
 
-這個軟體庫和 AUR 不同，它內含二進位軟體包，可以用 [pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") 直接安裝，其組建檔案也可以透過 [ABS](/index.php/Arch_Build_System_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Build System (正體中文)") 存取。如果開發者認為某些軟體包對發行版具有重要性，它們甚至會被移到 _core_ 或 _extra_ 庫。
+這個軟體庫和 AUR 不同，它內含二進位軟體包，可以用 [pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") 直接安裝，其組建檔案也可以透過 [ABS](/index.php/Arch_Build_System_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Build System (正體中文)") 存取。如果開發者認為某些軟體包對發行版具有重要性，它們甚至會被移到 *core* 或 *extra* 庫。
 
-使用者也可以編輯 `/etc/abs.conf` 存取 _community_ 組建檔案，在 `REPOS` 一行啟用 _community_ 庫。
+使用者也可以編輯 `/etc/abs.conf` 存取 *community* 組建檔案，在 `REPOS` 一行啟用 *community* 庫。
 
 ## Git 軟體庫
 
@@ -270,7 +268,7 @@ $ git clone git://pkgbuild.com/aur-mirror.git
 
 ### 什麼是 AUR？
 
-AUR (Arch 使用者倉庫) 是 Arch Linux 社群可以上傳應用程式、函式庫等等的 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 並與整個社群分享的地方。成員可以為自己喜歡的軟體投下一票，讓這些軟體有機會被移進 _community_ 軟體庫，讓所有 Arch Linux 使用者都可以取得二進位形式的軟體包。
+AUR (Arch 使用者倉庫) 是 Arch Linux 社群可以上傳應用程式、函式庫等等的 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 並與整個社群分享的地方。成員可以為自己喜歡的軟體投下一票，讓這些軟體有機會被移進 *community* 軟體庫，讓所有 Arch Linux 使用者都可以取得二進位形式的軟體包。
 
 ### AUR 許可什麼類型的軟體包？
 
@@ -282,23 +280,23 @@ AUR 上的軟體包就是「組建腳本」，上面記載如何建立可讓 pac
 
 ### 什麼是 TU？
 
-[TU (受信任使用者)](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") 是獲選管理 AUR 和 _community_ 軟體庫的人士。他們管理 _community_ 下的熱門 PKGBUILD，並保持 AUR 的運作。
+[TU (受信任使用者)](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") 是獲選管理 AUR 和 *community* 軟體庫的人士。他們管理 *community* 下的熱門 PKGBUILD，並保持 AUR 的運作。
 
-### Arch 使用者倉庫和 _community_ 的不同？
+### Arch 使用者倉庫和 *community* 的不同？
 
-Arch 使用者倉庫是存放使用者所提交的 PKGBUILD，必須手動以 [makepkg](/index.php/Makepkg "Makepkg") 組建。當 PKGBUILD 得到足夠的社群喜好與 TU 的支持，就會被移進 _community_ 軟體庫 (由 TU 維護)，裡頭的軟體包為二進位格式，可用 [pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") 安裝。
+Arch 使用者倉庫是存放使用者所提交的 PKGBUILD，必須手動以 [makepkg](/index.php/Makepkg "Makepkg") 組建。當 PKGBUILD 得到足夠的社群喜好與 TU 的支持，就會被移進 *community* 軟體庫 (由 TU 維護)，裡頭的軟體包為二進位格式，可用 [pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") 安裝。
 
-### 要多少個投票推薦才會讓 PKGBUILD 進入 _community_？
+### 要多少個投票推薦才會讓 PKGBUILD 進入 *community*？
 
-通常要至少 10 票以上，軟體才有機會被移進 _community_。不過，如果有一位 TU 打算支援某軟體包，該軟體包就有可能會出現在軟體庫內。
+通常要至少 10 票以上，軟體才有機會被移進 *community*。不過，如果有一位 TU 打算支援某軟體包，該軟體包就有可能會出現在軟體庫內。
 
 ### 如何建立一份 PKGBUILD？
 
 [建立軟體包](/index.php/Creating_packages "Creating packages")是最好的來源。在建立 PKGBUILD 之前，記得到 AUR 查看是否有類似項目，避免重複勞動。
 
-### 我確定 "foo" 在 _community_ 庫，可是執行 "pacman -S foo" 卻失敗了。
+### 我確定 "foo" 在 *community* 庫，可是執行 "pacman -S foo" 卻失敗了。
 
-您可能沒有在 `/etc/pacman.conf` 啟用 _community_。將相關的行取消註解即可。 如果您的 `/etc/pacman.conf` 已經啟用了 _community_，先執行 `pacman -Syu` 同步快取並更新系統，再嘗試安裝 _foo_。
+您可能沒有在 `/etc/pacman.conf` 啟用 *community*。將相關的行取消註解即可。 如果您的 `/etc/pacman.conf` 已經啟用了 *community*，先執行 `pacman -Syu` 同步快取並更新系統，再嘗試安裝 *foo*。
 
 ### AUR 的某個軟體已經過期，我該怎麼做？
 
@@ -328,7 +326,7 @@ Arch 使用者倉庫是存放使用者所提交的 PKGBUILD，必須手動以 [m
 
 ### 如何在不使用網頁介面的情況下上傳資料至 AUR？
 
-您可以使用 [burp](https://www.archlinux.org/packages/?name=burp), _aurploader_ ([python3-aur](https://aur.archlinux.org/packages/python3-aur/)) 或 [aurup](https://aur.archlinux.org/packages/aurup/) — 它們是命令列下的程式。
+您可以使用 [burp](https://www.archlinux.org/packages/?name=burp), *aurploader* ([python3-aur](https://aur.archlinux.org/packages/python3-aur/)) 或 [aurup](https://aur.archlinux.org/packages/aurup/) — 它們是命令列下的程式。
 
 ## 另請參閱
 

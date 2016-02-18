@@ -39,9 +39,7 @@ And an empty redundant disk mounted at:
 Let us create a configuration file! Lines begining with "content" designate the path to a content file that stores SnapRAID metadata.
 
 **Warning:** SnapRAID will need a content file to build a recovery. Multiple copies of this file are essential for maximum data safety. It would be wise to have this file on all disks and make backups elsewhere.
-
  `/etc/snapraid.conf` 
-
 ```
 disk d1 /mnt/sda
 disk d2 /mnt/sdb
@@ -58,7 +56,7 @@ exclude /lost+found/
 
 **Warning:** The order of disks is relevant for parity.
 
-**Tip:** The exclude line means the path to exclude. It is relative to _all_ mount point
+**Tip:** The exclude line means the path to exclude. It is relative to *all* mount point
 
 ### Backup
 

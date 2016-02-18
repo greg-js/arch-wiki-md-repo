@@ -12,7 +12,6 @@ Questa opzione per ArchLinux supporta sia l'architettura i686 che x86_64.
 2\. Modificare il file `/etc/pacman.d/mirrorlist` ed aggiungere l'apposito repositroy:
 
  `/etc/pacman.d/mirrorlist` 
-
 ```
 ##
 ## Arch Linux repository mirrorlist
@@ -117,7 +116,6 @@ Premere `**N**` per non confermare l'aggiornamento. Notare bene ora le dimension
 4\. Nel file `/etc/pacman.conf` decommentare (rimuovendo il simbolo `#`) l'opzione `UseDelta`:
 
  `/etc/pacman.conf` 
-
 ```
 .....
 # Misc options (all disabled by default)

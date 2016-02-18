@@ -94,7 +94,6 @@ $ mysql -p -u root
 以下是创建一个密码为'some_pass'的'monty'用户的示例。
 
  `$ mysql -u root -p` 
-
 ```
 MariaDB> CREATE USER 'monty'@'localhost' IDENTIFIED BY 'some_pass';
 MariaDB> GRANT ALL PRIVILEGES ON *.* TO 'monty'@'localhost'
@@ -104,7 +103,7 @@ MariaDB> quit
 
 ### 配置文件
 
-_MariaDB_ 会按照以下顺序读取配置文件 (根据 `mysqld --help --verbose` 的输出):
+*MariaDB* 会按照以下顺序读取配置文件 (根据 `mysqld --help --verbose` 的输出):
 
 ```
 /etc/my.cnf /etc/mysql/my.cnf ~/.my.cnf
@@ -145,7 +144,7 @@ character_set_server        = utf8
 
 ### 使用内存作为临时文件存放点
 
-MySQL 存储临时文件的目录名是 _tmpdir_。
+MySQL 存储临时文件的目录名是 *tmpdir*。
 
 创建一个临时目录:
 
@@ -264,7 +263,7 @@ Fatal error: Can’t open and lock privilege tables: Table ‘mysql.host’ does
 
 ### 重置 root 密码
 
-停止 _mysqld_ [守护进程](/index.php/Daemon "Daemon")，再执行以下命令：
+停止 *mysqld* [守护进程](/index.php/Daemon "Daemon")，再执行以下命令：
 
 ```
 # mysqld_safe --skip-grant-tables &
@@ -287,7 +286,7 @@ mysql> exit
 
 ```
 
-再启动 _mysqld_ 守护进程。
+再启动 *mysqld* 守护进程。
 
 ### 检查并修复所有数据表
 
@@ -350,7 +349,6 @@ Password:
 不妨考虑更换一个长度短一点的密码。
 
 **注意:** 您依然可以通过在命令行参数中指定密码来登陆
-
 ```
 $ mysql -u <user> -p"<some-veryveryveryveryveryveryveryveryveryveryveryveryveryveryvery-long-and-veryveryveryveryveryveryveryveryveryvery-strong-password>"
 

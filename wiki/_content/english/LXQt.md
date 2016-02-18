@@ -19,7 +19,7 @@ The result is [LXQt](http://lxqt.org), a desktop built on Qt which partly uses R
 
 [Install](/index.php/Install "Install") the [lxqt](https://www.archlinux.org/groups/x86_64/lxqt/) group.
 
-You also need an icon theme to be installed. The default one is _Oxygen_, which can be installed with the [oxygen-icons](https://www.archlinux.org/packages/?name=oxygen-icons) package.
+You also need an icon theme to be installed. The default one is *Oxygen*, which can be installed with the [oxygen-icons](https://www.archlinux.org/packages/?name=oxygen-icons) package.
 
 For additional functionality, you may wish to install the following:
 
@@ -66,7 +66,7 @@ exec startlxqt
 
 ### Graphical login
 
-Choose _LXQt Desktop_ from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
+Choose *LXQt Desktop* from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
 
 ## Configuration
 
@@ -74,7 +74,7 @@ LXQt in general tries to provide GUI applications to change its settings. Config
 
 ### Replace Openbox
 
-While [Openbox](/index.php/Openbox "Openbox") is the default [window manager](/index.php/Window_manager "Window manager") for LXQt, you can specify a different window manager to use with LXQt via _Session Settings_, `lxqt-config-session`; or by editing `~/.config/lxqt/session.conf`. Change the following line:
+While [Openbox](/index.php/Openbox "Openbox") is the default [window manager](/index.php/Window_manager "Window manager") for LXQt, you can specify a different window manager to use with LXQt via *Session Settings*, `lxqt-config-session`; or by editing `~/.config/lxqt/session.conf`. Change the following line:
 
 ```
 window_manager=openbox
@@ -84,7 +84,7 @@ window_manager=openbox
 to a [window manager](/index.php/Window_manager "Window manager") of choice:
 
 ```
-window_manager=_your_window_manager_
+window_manager=*your_window_manager*
 
 ```
 

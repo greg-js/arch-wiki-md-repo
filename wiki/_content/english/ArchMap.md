@@ -31,7 +31,7 @@ Here are some screenshots of how it used to look:
 
 ## archmap
 
-`[archmap](https://github.com/maelstrom59/ArchMap/blob/master/archmap.py)` is a python script that can generate _GeoJSON_, _KML_ and _CSV_ files by parsing [this list](/index.php/ArchMap/List#List "ArchMap/List") of Arch Linux users.
+`[archmap](https://github.com/maelstrom59/ArchMap/blob/master/archmap.py)` is a python script that can generate *GeoJSON*, *KML* and *CSV* files by parsing [this list](/index.php/ArchMap/List#List "ArchMap/List") of Arch Linux users.
 
 **Note:** ArchMap is currently under development on [GitHub](https://github.com/maelstrom59/ArchMap). If you have any suggestions, please [post them](https://bbs.archlinux.org/viewtopic.php?id=22518&p=2) in the forums or [create an issue](https://github.com/maelstrom59/ArchMap/issues) in the repository.
 
@@ -39,27 +39,27 @@ The documentation is hosted by [readthedocs.org](http://archmap.readthedocs.org)
 
 ## Maps
 
-[Arch Women](https://archwomen.org/wiki/aw-tech:archmap) host pre-generated _[GeoJSON](https://archwomen.org/media/archmap/archmap.geojson)_, _[KML](https://archwomen.org/media/archmap/archmap.kml)_ and _[CSV](https://archwomen.org/media/archmap/archmap.csv)_ files that are made by `archmap`, these files are updated daily and are used to make the maps below.
+[Arch Women](https://archwomen.org/wiki/aw-tech:archmap) host pre-generated *[GeoJSON](https://archwomen.org/media/archmap/archmap.geojson)*, *[KML](https://archwomen.org/media/archmap/archmap.kml)* and *[CSV](https://archwomen.org/media/archmap/archmap.csv)* files that are made by `archmap`, these files are updated daily and are used to make the maps below.
 
 ### OpenStreetMap
 
-geojson.io is _"a fast, simple tool to create, change, and publish maps"_, it uses OpenStreetMap as a base-layer. [This link](http://geojson.io/#data=data:text/x-url,https://archwomen.org/media/archmap/archmap.geojson) will pull the _GeoJSON_ file from the Arch Women server and open it up for editing on the site.
+geojson.io is *"a fast, simple tool to create, change, and publish maps"*, it uses OpenStreetMap as a base-layer. [This link](http://geojson.io/#data=data:text/x-url,https://archwomen.org/media/archmap/archmap.geojson) will pull the *GeoJSON* file from the Arch Women server and open it up for editing on the site.
 
-Some other renderings of the data are hosted by [CartoDB](https://alux.cartodb.com/viz/c1cd0e2a-5af7-11e4-afcd-0e9d821ea90d/embed_map) and [MapBox](https://a.tiles.mapbox.com/v3/alux.hclg4eg0/page.html?secure=1#4/39.63/-104.91). However, these may be out of date as they have to be updated manually by [alux](/index.php/User:Alux "User:Alux") importing the _GeoJSON_ file.
+Some other renderings of the data are hosted by [CartoDB](https://alux.cartodb.com/viz/c1cd0e2a-5af7-11e4-afcd-0e9d821ea90d/embed_map) and [MapBox](https://a.tiles.mapbox.com/v3/alux.hclg4eg0/page.html?secure=1#4/39.63/-104.91). However, these may be out of date as they have to be updated manually by [alux](/index.php/User:Alux "User:Alux") importing the *GeoJSON* file.
 
 ### Google Maps
 
-To display the coordinates in Google Maps, enter [this link](https://archwomen.org/media/archmap/archmap.kml) to the _KML_ file into the search bar, here is [that search](https://maps.google.com/maps?hl=en&q=https%3A%2F%2Farchwomen.org%2Fmedia%2Farchmap%2Farchmap.kml).
+To display the coordinates in Google Maps, enter [this link](https://archwomen.org/media/archmap/archmap.kml) to the *KML* file into the search bar, here is [that search](https://maps.google.com/maps?hl=en&q=https%3A%2F%2Farchwomen.org%2Fmedia%2Farchmap%2Farchmap.kml).
 
 ### Google Earth
 
 You can add the coordinates to Google Earth permanently:
 
-*   Right click on _My Places_
-*   Go to _Add_ -> _Network Link_
-*   Enter "ArchMap" into the _Name_ field and put `[https://archwomen.org/media/archmap/archmap.kml](https://archwomen.org/media/archmap/archmap.kml)` into the _Link_ field, then press _OK_.
+*   Right click on *My Places*
+*   Go to *Add* -> *Network Link*
+*   Enter "ArchMap" into the *Name* field and put `[https://archwomen.org/media/archmap/archmap.kml](https://archwomen.org/media/archmap/archmap.kml)` into the *Link* field, then press *OK*.
 
-You can refresh the data by right-clicking the ArchMap folder and selecting _Refresh_.
+You can refresh the data by right-clicking the ArchMap folder and selecting *Refresh*.
 
 ## List yourself
 

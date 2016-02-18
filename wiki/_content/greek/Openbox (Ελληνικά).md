@@ -1,4 +1,4 @@
-Ο Openbox είναι ένας ελαφρύς, ισχυρός και πλήρως παραμετροποιήσιμος _stacking_ [διαχειριστής παραθύρων (αγγλικά)](/index.php/Window_manager "Window manager") με εκτεταμένη υποστήριξη προτύπων. Μπορεί να χτιστεί και να τρέξει ανεξάρτητα ως βάση για κάποιο [περιβάλλον εργασίας (αγγλικά)](/index.php/Desktop_environment "Desktop environment"), ή να ενσωματωθεί σε άλλα περιβάλλοντα εργασίας όπως το [KDE](/index.php/KDE "KDE") ή το [Xfce](/index.php/Xfce "Xfce"), ως μια εναλλακτική έναντι των διαχειριστών παραθύρων που αυτά παρέχουν. Το περιβάλλον εργασίας [LXDE](/index.php/LXDE "LXDE") είναι το ίδιο χτισμένο γυρώ από τον Οpenbox. Μια περιεκτική λίστα των χαρακτηριστικών του καταγράφεται στο [επίσημο site του Openbox](http://openbox.org/). Το συγκεκριμένο άρθρο αναφέρεται ειδικά στον τρόπο εγκατάστασης του Openbox στο Arch Linux.
+Ο Openbox είναι ένας ελαφρύς, ισχυρός και πλήρως παραμετροποιήσιμος *stacking* [διαχειριστής παραθύρων (αγγλικά)](/index.php/Window_manager "Window manager") με εκτεταμένη υποστήριξη προτύπων. Μπορεί να χτιστεί και να τρέξει ανεξάρτητα ως βάση για κάποιο [περιβάλλον εργασίας (αγγλικά)](/index.php/Desktop_environment "Desktop environment"), ή να ενσωματωθεί σε άλλα περιβάλλοντα εργασίας όπως το [KDE](/index.php/KDE "KDE") ή το [Xfce](/index.php/Xfce "Xfce"), ως μια εναλλακτική έναντι των διαχειριστών παραθύρων που αυτά παρέχουν. Το περιβάλλον εργασίας [LXDE](/index.php/LXDE "LXDE") είναι το ίδιο χτισμένο γυρώ από τον Οpenbox. Μια περιεκτική λίστα των χαρακτηριστικών του καταγράφεται στο [επίσημο site του Openbox](http://openbox.org/). Το συγκεκριμένο άρθρο αναφέρεται ειδικά στον τρόπο εγκατάστασης του Openbox στο Arch Linux.
 
 ## Contents
 
@@ -495,7 +495,7 @@ The `xbacklight` program is used to control screen brightness, which is part of 
 
 ### Window snapping
 
-Many desktop environments and window managers support _window snapping_ (e.g. Windows 7 Aero snap), whereby they will automatically snap into place when moved to the edge of the screen. This effect can also be simulated in Openbox through the use of keybinds on focused windows.
+Many desktop environments and window managers support *window snapping* (e.g. Windows 7 Aero snap), whereby they will automatically snap into place when moved to the edge of the screen. This effect can also be simulated in Openbox through the use of keybinds on focused windows.
 
 As illustrated in the example below, percentages must be used to determine window sizes (see [openbox.org](http://openbox.org/wiki/Help:Actions) for further information). In this instance, The `super` key is used in conjunction with the `navigation` keys:
 
@@ -736,7 +736,7 @@ xdotool key control+m
 How this command may be used as a panel launcher / icon is largely dependent on the features of panel used. While some panels will allow the above command to be executed directly in the process of creating a new launcher, others may require the use of an executable script. As an example, a custom executable script called `obpanelmenu.sh` will be created in the `~/.config` folder:
 
 ```
-$ _text editor_ ~/.config/obpanelmenu.sh
+$ *text editor* ~/.config/obpanelmenu.sh
 
 ```
 
@@ -760,7 +760,7 @@ Executing it will bring up the Openbox desktop menu. Consequently, where using a
 
 **Tip:** It is **strongly advised** to install the [obconf](https://www.archlinux.org/packages/?name=obconf) and [lxappearance-obconf](https://www.archlinux.org/packages/?name=lxappearance-obconf) GUI applications to configure visual settings and theming. The latter is particularly important as it is responsible for generating the `~/.gtkrc-2.0` file.
 
-It is important to note that a substantial range of both **Openbox-specific** and generalised, **Openbox-compatible** [GTK](/index.php/GTK "GTK") themes are available to change the look of window decorations and the desktop menu. _Generalised_ themes are designed to be simultaneously compatible with a range of popular desktop environments and/or window managers, commonly including Openbox. For example, [gtk-theme-numix-blue](https://aur.archlinux.org/packages/gtk-theme-numix-blue/) supports both Openbox and [Xfce](/index.php/Xfce "Xfce").
+It is important to note that a substantial range of both **Openbox-specific** and generalised, **Openbox-compatible** [GTK](/index.php/GTK "GTK") themes are available to change the look of window decorations and the desktop menu. *Generalised* themes are designed to be simultaneously compatible with a range of popular desktop environments and/or window managers, commonly including Openbox. For example, [gtk-theme-numix-blue](https://aur.archlinux.org/packages/gtk-theme-numix-blue/) supports both Openbox and [Xfce](/index.php/Xfce "Xfce").
 
 ### Configuration
 
@@ -897,7 +897,7 @@ nitrogen --restore &
 [Feh](/index.php/Feh "Feh") is a popular image viewer that may also be used to set wallpapers. In this instance, it will be necessary to add the full directory path and name of the image to be used as the wallpaper. To use Feh as the background provider, add the following command to the `~/.config/openbox/autostart` file:
 
 ```
-feh --bg-scale _/path/to/image.file_ &
+feh --bg-scale */path/to/image.file* &
 
 ```
 
@@ -906,7 +906,7 @@ feh --bg-scale _/path/to/image.file_ &
 [hsetroot](https://www.archlinux.org/packages/?name=hsetroot) is a command-line tool specifically designed to set wallpapers. As with Feh, it will be necessary to add the full directory path and name of the image to be used as the wallpaper. To use HSetRoot as the background provider, add the following command to the `~/.config/openbox/autostart` file:
 
 ```
-hsetroot -fill _/path/to/image.file_ &
+hsetroot -fill */path/to/image.file* &
 
 ```
 
@@ -972,7 +972,7 @@ A downside to using Openbox Multihead is that it breaks the EWMH assumption that
 
 Finally, a new version of [PyTyle](/index.php/PyTyle "PyTyle") that will work with Openbox Multihead can also be found in the [AUR](/index.php/AUR "AUR"): [pytyle3-git](https://aur.archlinux.org/packages/pytyle3-git/).
 
-Both _pytyle3_ and _pager-multihead-git_ will work without Openbox Multihead if only one monitor is active.
+Both *pytyle3* and *pager-multihead-git* will work without Openbox Multihead if only one monitor is active.
 
 ## Tips and tricks
 
@@ -1167,7 +1167,7 @@ WM_CLASS(STRING) = "NAME", "CLASS"
 
 #### Firefox
 
-For whatever reason, Firefox and like-minded equivalents ignore application rules (e.g. _<desktop>_) unless `class="Firefox*"` is used. This applies irrespective of whatever values **xprop** may report for the program's `WM_CLASS`.
+For whatever reason, Firefox and like-minded equivalents ignore application rules (e.g. *<desktop>*) unless `class="Firefox*"` is used. This applies irrespective of whatever values **xprop** may report for the program's `WM_CLASS`.
 
 ### Switching between keyboard layouts
 

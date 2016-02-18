@@ -43,7 +43,6 @@ Ensure that the [php FastCGI interface](/index.php/Nginx#PHP_configuration "Ngin
 Then add the following `server` block to your `/etc/nginx/nginx.conf` or place it in a file under `/etc/nginx/servers-available/` and [enable](/index.php/Nginx#Managing_server_entries "Nginx") it:
 
  `/etc/nginx/nginx.conf` 
-
 ```
 server {
         listen 80;
@@ -81,7 +80,6 @@ Ensure that the [php FastCGI interface](/index.php/Hiawatha#PHP "Hiawatha") is c
 Then add the following `VirtualHost` block to your `/etc/hiawatha/hiawatha.conf`.
 
  `/etc/hiawatha/hiawatha.conf` 
-
 ```
 VirtualHost {
 

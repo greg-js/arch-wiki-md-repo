@@ -43,7 +43,7 @@ There are several options you can set in your [X resources](/index.php/X_resourc
 
 #### TERM Environmental Variable
 
-Allow xterm to report the **TERM** variable correctly. **Do not** set the TERM variable from your _~/.bashrc_ or _~/.bash_profile_ or similar file. The terminal itself should report the correct TERM to the system so that the proper _terminfo_ file will be used. Two usable terminfo files are _xterm,_ and _xterm-256color._
+Allow xterm to report the **TERM** variable correctly. **Do not** set the TERM variable from your *~/.bashrc* or *~/.bash_profile* or similar file. The terminal itself should report the correct TERM to the system so that the proper *terminfo* file will be used. Two usable terminfo files are *xterm,* and *xterm-256color.*
 
 Without setting TERM explicitly, xterm should report `$TERM` as `xterm`. You can check this from within xterm using either of these commands:
 
@@ -53,7 +53,7 @@ $ tset -q
 
 ```
 
-When TERM is not set explicitly, color schemes for some programs, such as _vim,_ may not appear until a key is pressed or some other input occurs. This can be remedied with this resource setting:
+When TERM is not set explicitly, color schemes for some programs, such as *vim,* may not appear until a key is pressed or some other input occurs. This can be remedied with this resource setting:
 
 ```
 xterm*termName: xterm-256color
@@ -101,35 +101,35 @@ The scrollbar operates differently from what you may be accustomed to using.
 
 	– Click on the scrollbar with the left mouse button.
 
-	– Click on the scrollbar below the _thumb_ with the middle mouse button.
+	– Click on the scrollbar below the *thumb* with the middle mouse button.
 
 *   To scroll up:
 
 	– Click on the scrollbar with the right mouse button.
 
-	– Click on the scrollbar above the _thumb_ with the middle mouse button.
+	– Click on the scrollbar above the *thumb* with the middle mouse button.
 
 *   To position text, moving in either direction:
 
-	– Grab the _thumb_ and use "click-and-drag" with the middle mouse button.
+	– Grab the *thumb* and use "click-and-drag" with the middle mouse button.
 
 ### Menus
 
-The Archlinux version of xterm is compiled with the _toolbar,_ or _menubar,_ disabled. The menus are still available as _popups_ when you press `Ctrl+MouseButton` within the xterm window. The actions invoked by the menu items can often be accomplished using command line options or by setting resource values.
+The Archlinux version of xterm is compiled with the *toolbar,* or *menubar,* disabled. The menus are still available as *popups* when you press `Ctrl+MouseButton` within the xterm window. The actions invoked by the menu items can often be accomplished using command line options or by setting resource values.
 
-**Tip:** If the popup menu windows show only as small boxes, it is probably because you have a line similar to this, `xterm*geometry: 80x32`, in your resources file. This _does_ start xterm in an 80 column by 32 row main window, but it also forces the menu windows to be 80 pixels by 32 pixels! Replace the incorrect line with this: `xterm*VT100.geometry: 80x32` 
+**Tip:** If the popup menu windows show only as small boxes, it is probably because you have a line similar to this, `xterm*geometry: 80x32`, in your resources file. This *does* start xterm in an 80 column by 32 row main window, but it also forces the menu windows to be 80 pixels by 32 pixels! Replace the incorrect line with this: `xterm*VT100.geometry: 80x32` 
 
 Some of the menu options are discussed below.
 
 #### Main Options menu
 
-_**Ctrl + LeftMouse**_
+***Ctrl + LeftMouse***
 
-*   `Secure Keyboard` attempts to ensure only the xterm window, and no other application, receives your keystrokes. The display changes to reverse video when it is invoked. If the display is not in reverse video, the _Secure Keyboard_ mode is not in effect. Please read the "SECURITY" section of the xterm man page for this option's limitations.
+*   `Secure Keyboard` attempts to ensure only the xterm window, and no other application, receives your keystrokes. The display changes to reverse video when it is invoked. If the display is not in reverse video, the *Secure Keyboard* mode is not in effect. Please read the "SECURITY" section of the xterm man page for this option's limitations.
 
 *   `Allow SendEvents` allows other processes to send keypress and mouse events to the xterm window. Because of the security risk, do not enable this unless you are very sure you know what you are doing.
 
-*   `Log to File` – The log file will be named `Xterm.log.hostname.yyyy.mm.dd.hh.mm.ss.XXXXXX`. This file will contain all the printed output _and all cursor movements._ Logging may be a security risk.
+*   `Log to File` – The log file will be named `Xterm.log.hostname.yyyy.mm.dd.hh.mm.ss.XXXXXX`. This file will contain all the printed output *and all cursor movements.* Logging may be a security risk.
 
 *   The six `Send *** Signal` menu items are not often useful, except when your keyboard fails. `HUP`, `TERM` and `KILL` will close the xterm window. `KILL` should be avoided, as it does not allow any cleanup code to run.
 
@@ -137,19 +137,19 @@ _**Ctrl + LeftMouse**_
 
 #### VT Options menu
 
-_**Ctrl + MiddleMouse**_
+***Ctrl + MiddleMouse***
 
-*   `Select to Clipboard` – Normally, selected text is stored in PRIMARY, to be pasted with `Shift+Insert` or by using the middle mouse button. By toggling this option to _on,_ selected text will use CLIPBOARD, allowing you to paste the text selected in an xterm window into a GUI application using `Ctrl+v`. The corresponding XTerm resource is `selectToClipboard`.
+*   `Select to Clipboard` – Normally, selected text is stored in PRIMARY, to be pasted with `Shift+Insert` or by using the middle mouse button. By toggling this option to *on,* selected text will use CLIPBOARD, allowing you to paste the text selected in an xterm window into a GUI application using `Ctrl+v`. The corresponding XTerm resource is `selectToClipboard`.
 
-*   `Show Alternate Screen` – When you use an a terminal application such as _vim,_ or _less,_ the alternate screen is opened. The main VT window, now hidden, remains in memory. You can view this main window, but not issue any commands in it, by toggling this menu option. You are able to select and copy text from this main window.
+*   `Show Alternate Screen` – When you use an a terminal application such as *vim,* or *less,* the alternate screen is opened. The main VT window, now hidden, remains in memory. You can view this main window, but not issue any commands in it, by toggling this menu option. You are able to select and copy text from this main window.
 
-**Tip:** Suspending the process running in the Alternate Screen and then resuming it provides more functionality than using `Show Alternate Screen`. With a _bash_ shell, pressing `Ctrl+z` suspends the process; issuing the command `fg` then resumes it.
+**Tip:** Suspending the process running in the Alternate Screen and then resuming it provides more functionality than using `Show Alternate Screen`. With a *bash* shell, pressing `Ctrl+z` suspends the process; issuing the command `fg` then resumes it.
 
 *   `Show Tek Window` and `Switch to Tek Mode` – The [Tektronix 4014](https://en.wikipedia.org/wiki/Tektronix_4010 "wikipedia:Tektronix 4010") was a graphics terminal from the 1970s used for CAD and plotting applications. The command line program `graph`, from [plotutils](https://www.archlinux.org/packages/?name=plotutils), and the application [gnuplot](https://www.archlinux.org/packages/?name=gnuplot) can be made to use xterm's Tek emulation; most people will prefer more modern display options for charting data. See the [#Tek 4014 demonstration](#Tek_4014_demonstration), below.
 
 #### VT Fonts menu
 
-_**Ctrl + RightMouse**_
+***Ctrl + RightMouse***
 
 *   When using XLFD fonts, the first seven menu items will change the font face and the font size used in the current xterm window. If you are using an Xft font, only the font size will change, the font face will not change with the different selections, .
 
@@ -159,9 +159,9 @@ _**Ctrl + RightMouse**_
 
 #### Tek Options menu
 
-From the **Tek Window,** _**Ctrl + MiddleMouse**_
+From the **Tek Window,** ***Ctrl + MiddleMouse***
 
-The first section's options allow you to change the Tek window font size. The second set of options are used to move the focus between the Tek emulation window and the main, or _VT,_ window and to close or hide the Tek window.
+The first section's options allow you to change the Tek window font size. The second set of options are used to move the focus between the Tek emulation window and the main, or *VT,* window and to close or hide the Tek window.
 
 ### Copy and paste
 
@@ -200,7 +200,7 @@ You can clear any selected text by left-clicking once, anywhere within the xterm
 
 ## Colors
 
-Xterm defaults to black text, the _foreground_ color, on a white _background._ The foreground and background colors can be reversed using the [VT Options menu](#VT_Options_menu) or with the `-rv` command line option.
+Xterm defaults to black text, the *foreground* color, on a white *background.* The foreground and background colors can be reversed using the [VT Options menu](#VT_Options_menu) or with the `-rv` command line option.
 
 ```
 $ xterm -rv
@@ -244,13 +244,11 @@ See **man(7) X,** from [xorg-docs](https://www.archlinux.org/packages/?name=xorg
 Many suggestions for color schemes can be viewed in the forum thread, [Terminal Colour Scheme Screenshots](https://bbs.archlinux.org/viewtopic.php?id=51818&p=1).
 
 **Tip:** Many people specify colors in their X resources files without specifying an application class or application instance:
-
 ```
 *foreground: rgb:b2/b2/b2
 *background: rgb:08/08/08
 ```
-
-The above example sets the foreground and background color values for all _Xlib_ applications (xclock, xfontsel, and others) that use these resources. This is a nice, easy way to achieve a unified color scheme.
+The above example sets the foreground and background color values for all *Xlib* applications (xclock, xfontsel, and others) that use these resources. This is a nice, easy way to achieve a unified color scheme.
 
 ## Fonts
 
@@ -263,7 +261,7 @@ Xterm's default font is the bitmap font named by the [X Logical Font Description
 
 ```
 
-This font, also aliased to the name `6x13`, has remakably wide coverage for unicode glyphs. The default "TrueType" font is the 14‑point font matched by the name `mono`. The _FreeType_ font that will be used can be found with this command:
+This font, also aliased to the name `6x13`, has remakably wide coverage for unicode glyphs. The default "TrueType" font is the 14‑point font matched by the name `mono`. The *FreeType* font that will be used can be found with this command:
 
 ```
 $ fc-match mono
@@ -282,12 +280,10 @@ xterm*font: 7x13
 ```
 
 **Note:** There is a long-standing bug in xterm that prevents the command line option `-fn` working correctly when `faceName` has been set in a resource file. One solution is to set the resource `renderFont` to `false` on the command line.
-
 ```
 $ xterm -fn 8x13                             # If this command does not set the font,
 $ xterm -fn 8x13 -xrm "*renderFont:false"    # set the 'renderFont' resource to 'false'.
 ```
-
 Perhaps easier, you can just toggle `TrueType Fonts` from the [#VT Fonts menu](#VT_Fonts_menu) in the terminal window.
 
 ### Bold and underlined fonts
@@ -300,7 +296,7 @@ If you do not specify a bold font at the command line, `-fb`, or through the `bo
 
 Many fonts do not contain glyphs for the double width Chinese, Japanese and Korean languages. Other terminal emulators such as [urxvt](/index.php/Urxvt "Urxvt") may be better suited if you frequently work with these languages.
 
-Using bitmapped XLFD fonts with CJK has many pitfalls in xterm. It is much easier to use TrueType fonts for CJK display, using the `faceNameDoublesize` resource. This example uses _DejaVu Sans Mono_ as the normal font and _WenQuanYi Bitmap Song_ as the double width font:
+Using bitmapped XLFD fonts with CJK has many pitfalls in xterm. It is much easier to use TrueType fonts for CJK display, using the `faceNameDoublesize` resource. This example uses *DejaVu Sans Mono* as the normal font and *WenQuanYi Bitmap Song* as the double width font:
 
 ```
 xterm*faceName: DejaVu Sans Mono:style=Book:antialias=false
@@ -349,7 +345,7 @@ XTerm*colorUL: rgb:e4/e4/e4
 
 #### Adjust line spacing
 
-Lines of text can sometimes be too close together, or they may appear to be too widely spaced. For one example, using _DejaVu Sans Mono,_ the low underscore glyph may butt against CJK glyphs or the cursor block in the line below. Line spacing, called _leading_ by typographers, can be adjusted using the `scaleHeight` resource. Here, the line spacing is widened:
+Lines of text can sometimes be too close together, or they may appear to be too widely spaced. For one example, using *DejaVu Sans Mono,* the low underscore glyph may butt against CJK glyphs or the cursor block in the line below. Line spacing, called *leading* by typographers, can be adjusted using the `scaleHeight` resource. Here, the line spacing is widened:
 
 ```
 XTerm*scaleHeight: 1.01

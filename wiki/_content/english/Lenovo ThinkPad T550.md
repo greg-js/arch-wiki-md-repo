@@ -27,7 +27,7 @@ acpi_osi=Linux acpi_backlight=vendor video.use_native_backlight=1
 
 ### Fn Keys
 
-Function/Fn keys do not work without the FnLock on. To enable the FnLock, press `Fn+Esc`. The green light on the `Fn` key should turn on. Now you can use the `Fn` key like normal (_i.e._, with FnLock on `Fn+F1` would equate to a `XF86AudioMute` to be handled by X/WM/whathaveyou).
+Function/Fn keys do not work without the FnLock on. To enable the FnLock, press `Fn+Esc`. The green light on the `Fn` key should turn on. Now you can use the `Fn` key like normal (*i.e.*, with FnLock on `Fn+F1` would equate to a `XF86AudioMute` to be handled by X/WM/whathaveyou).
 
 ### Suspend
 

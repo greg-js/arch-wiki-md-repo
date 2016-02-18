@@ -1,4 +1,4 @@
-"_Java è un linguaggio di programmazione originariamente sviluppato da Sun Microsystems e rilasciato nel 1995 come componente centrale della piattaforma Java della Sun Microsystems. Il linguaggio deriva gran parte della sua sintassi dal C e dal C++ ma ha un modello a oggetti più semplice e una minore quantità di ottimizzazioni a basso livello. Le applicazioni Java sono tipicamente compilate in bytecode che può essere eseguito su qualsiasi Java Virtual Machine (JVM) indipendentemente dall'architettura hardware._" — [Wikipedia article](https://en.wikipedia.org/wiki/Java_(programming_language) "wikipedia:Java (programming language)")
+"*Java è un linguaggio di programmazione originariamente sviluppato da Sun Microsystems e rilasciato nel 1995 come componente centrale della piattaforma Java della Sun Microsystems. Il linguaggio deriva gran parte della sua sintassi dal C e dal C++ ma ha un modello a oggetti più semplice e una minore quantità di ottimizzazioni a basso livello. Le applicazioni Java sono tipicamente compilate in bytecode che può essere eseguito su qualsiasi Java Virtual Machine (JVM) indipendentemente dall'architettura hardware.*" — [Wikipedia article](https://en.wikipedia.org/wiki/Java_(programming_language) "wikipedia:Java (programming language)")
 
 ## Contents
 
@@ -36,8 +36,8 @@ Se si desidera utilizzare le funzionalità Java negli web browsers ([Java applet
 
 #### Segnalare i pacchetti come out-of-date
 
-*   [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk), [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) e [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) vanno segnalati come out-of-date in base alla loro [versione _IcedTea_](http://icedtea.wildebeest.org/download/source) (es. `2.4.3`) e non in base alla loro versione Oracle (es. `u45`).
-*   [icedtea-web-java7](https://www.archlinux.org/packages/?name=icedtea-web-java7) va segnalato come out-of-date in base alla [versione di _IcedTea Web_](http://icedtea.wildebeest.org/download/source) (es. `1.4.1`), che è completamente indipendente dalla versione di _IcedTea_.
+*   [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk), [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) e [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) vanno segnalati come out-of-date in base alla loro [versione *IcedTea*](http://icedtea.wildebeest.org/download/source) (es. `2.4.3`) e non in base alla loro versione Oracle (es. `u45`).
+*   [icedtea-web-java7](https://www.archlinux.org/packages/?name=icedtea-web-java7) va segnalato come out-of-date in base alla [versione di *IcedTea Web*](http://icedtea.wildebeest.org/download/source) (es. `1.4.1`), che è completamente indipendente dalla versione di *IcedTea*.
 
 ### Oracle Java SE
 
@@ -119,13 +119,13 @@ Nonostante l'applicazione dei consigli più in basso ([#Miglioramento del font r
 
 ### Dipendenze mancanti
 
-Installando Java da AUR, si può riscontrare una dipendenza mancante di _java-runtime_. In questo caso potrebbe essere necessario installare uno dei JDK citati in precedenza.
+Installando Java da AUR, si può riscontrare una dipendenza mancante di *java-runtime*. In questo caso potrebbe essere necessario installare uno dei JDK citati in precedenza.
 
 ## Trucchi e consigli
 
 **Nota:** I suggerimenti in questa sezione sono applicabili a tutte le applicazioni che usano un JRE esplicitamente installato (esterno all'applicazione). Alcune applicazioni vengono impacchettate con il proprio runtime o usano delle meccaniche proprie per l'interfaccia grafica, il rendering dei font, ecc. Quindi non è garantito che i suggerimenti funzionino sempre.
 
-Il comportamento di molte applicazioni Java può essere controllato fornendo delle variabili predefinite al JRE. Da [questo post](https://bbs.archlinux.org/viewtopic.php?id=72892) del forum, si può vedere che un modo di fare questo consiste nell'aggiungere le seguenti linee nel proprio `~/.bashrc` (oppure in `/etc/profile.d/jre.sh` per avere influenza su tutti i programmi che non sono eseguiti utilizzando come source `~/.bashrc`, come ad esempio le applicazioni lanciate dalla _Vista Applicazioni_ di GNOME):
+Il comportamento di molte applicazioni Java può essere controllato fornendo delle variabili predefinite al JRE. Da [questo post](https://bbs.archlinux.org/viewtopic.php?id=72892) del forum, si può vedere che un modo di fare questo consiste nell'aggiungere le seguenti linee nel proprio `~/.bashrc` (oppure in `/etc/profile.d/jre.sh` per avere influenza su tutti i programmi che non sono eseguiti utilizzando come source `~/.bashrc`, come ad esempio le applicazioni lanciate dalla *Vista Applicazioni* di GNOME):
 
 ```
 export _JAVA_OPTIONS="-D**<option 1>** -D**<option 2>**..."

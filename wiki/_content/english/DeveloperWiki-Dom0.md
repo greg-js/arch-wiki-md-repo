@@ -20,7 +20,7 @@
 
 ## Firewall
 
-The firewall script is in _/usr/sbin/firewall.sh_. It is being maintained in a git repository. Clone it using
+The firewall script is in */usr/sbin/firewall.sh*. It is being maintained in a git repository. Clone it using
 
 ```
 git clone file:///srv/firewall.git
@@ -33,7 +33,7 @@ The firewall divides traffic into seven groups:
 
 ### Incoming traffic to dom0 (INPUT chain)
 
-The only allowed incoming traffic to dom0 is _ssh_ access from a small set of hosts.
+The only allowed incoming traffic to dom0 is *ssh* access from a small set of hosts.
 
 ### Outgoing traffoc from dom0 (OUTPUT chain)
 
@@ -41,15 +41,15 @@ All outgoing traffic is allowed.
 
 ### Incoming traffic to gerolde (FORWARD chain)
 
-Limited to _ssh_, _rsync_, _smtp(s)_, developer package access and munin monitoring from Dan's server.
+Limited to *ssh*, *rsync*, *smtp(s)*, developer package access and munin monitoring from Dan's server.
 
 ### Incoming traffic to gudrun (FORWARD chain)
 
-Limited to _http(s)_, _svnserve_, _git_ and munin monitoring from Dan's server.
+Limited to *http(s)*, *svnserve*, *git* and munin monitoring from Dan's server.
 
 ### Traffic from gudrun to gerolde (FORWARD chain)
 
-Only _smtp(s)_, package access and NFS/portmap are allowed. All NFS server services on gerolde must use fixed ports.
+Only *smtp(s)*, package access and NFS/portmap are allowed. All NFS server services on gerolde must use fixed ports.
 
 ### Outgoing traffic from gerolde (FORWARD chain)
 

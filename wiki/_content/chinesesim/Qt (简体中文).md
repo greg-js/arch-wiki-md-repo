@@ -64,7 +64,7 @@ Qt 框架正在成为主要的开发平台，同时是 [KDE](/index.php/KDE "KDE
 
 Qt 应用程序会尝试模仿所运行的桌面环境的行为，除非碰到了某些问题或者硬编码的配置。要修改 Qt 程序的外观，可以使用 Qt 配置工具(`qtconfig-qt4` 或 `qt3config`).
 
-尽管不是 Qt 的一部分，_KDE 系统设置_ 提供了许多定制设置，Qt 程序也会使用这些设置。
+尽管不是 Qt 的一部分，*KDE 系统设置* 提供了许多定制设置，Qt 程序也会使用这些设置。
 
 #### 主题
 
@@ -92,11 +92,11 @@ Qt 已经包含数种样式，例如 GTK+ 样式、Windows 样式、CDE 样式�
 
 #### 字体
 
-Qt fonts can be configured from _QtConfig_ under _Fonts > Default Font_.
+Qt fonts can be configured from *QtConfig* under *Fonts > Default Font*.
 
 #### 图标
 
-There is no way of setting the icon theme from _QtConfig_, but since Qt follows the [Freedesktop.org Icon Specification](http://standards.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html), any theme set for X is picked up by Qt.
+There is no way of setting the icon theme from *QtConfig*, but since Qt follows the [Freedesktop.org Icon Specification](http://standards.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html), any theme set for X is picked up by Qt.
 
 ### 手动配置
 
@@ -105,7 +105,6 @@ Qt keeps all its configuration information in `~/.config/Trolltech.conf`. The fi
 For example, to change the theme to QtCurve, add:
 
  `~/.config/Trolltech.conf` 
-
 ```
 ...
 [Qt]
@@ -148,7 +147,7 @@ Qt supports most platforms that are available today, even some of the more obscu
 
 	[http://qt-project.org/doc/qt-4.8/linguist-manual.html](http://qt-project.org/doc/qt-4.8/linguist-manual.html) || [qt](https://www.archlinux.org/groups/x86_64/qt/)
 
-*   **Qt Assistant** — A configurable and redistributable documentation reader for Qt _qch_ files.
+*   **Qt Assistant** — A configurable and redistributable documentation reader for Qt *qch* files.
 
 	[http://qt-project.org/doc/qt-4.8/assistant-manual.html](http://qt-project.org/doc/qt-4.8/assistant-manual.html) || [qt](https://www.archlinux.org/groups/x86_64/qt/)
 
@@ -168,7 +167,7 @@ Qt supports most platforms that are available today, even some of the more obscu
 
 	[https://qt-project.org/doc/qt-4.8/qmake-manual.html](https://qt-project.org/doc/qt-4.8/qmake-manual.html) || [qt](https://www.archlinux.org/groups/x86_64/qt/)
 
-*   **uic** — A tool that reads _*.ui_ XML files and generates the corresponding C++ files.
+*   **uic** — A tool that reads **.ui* XML files and generates the corresponding C++ files.
 
 	[http://qt-project.org/doc/qt-4.8/uic.html](http://qt-project.org/doc/qt-4.8/uic.html) || [qt](https://www.archlinux.org/groups/x86_64/qt/)
 
@@ -194,7 +193,6 @@ Qt has bindings for all of the more popular languages, for a full list see [this
 *   Run with: `./hello`
 
  `hello.cpp` 
-
 ```
 #include <QApplication>
 #include <QLabel>
@@ -217,7 +215,6 @@ int main(int argc, char **argv)
 *   Run with: `qmlviewer hello.qml`
 
  `hello.qml` 
-
 ```
 import QtQuick 1.0
 
@@ -246,7 +243,6 @@ Rectangle {
 *   Run with: `python hello-pyqt.py` or `python2 hello-pyqt.py`
 
  `hello-pyqt.py` 
-
 ```
 import sys
 from PyQt4 import QtGui
@@ -266,7 +262,6 @@ sys.exit(app.exec_())
 *   Run with: `python hello-pyside.py` or `python2 hello-pyside.py`
 
  `hello-pyside.py` 
-
 ```
 import sys
 from PySide.QtCore import *
@@ -288,7 +283,6 @@ sys.exit(app.exec_())
 *   Run with: `mono hello.exe`
 
  `hello.cs` 
-
 ```
 using System;
 using Qyoto;
@@ -311,7 +305,6 @@ public class Hello {
 *   Run with: `ruby hello.rb`
 
  `hello.rb` 
-
 ```
 require 'Qt4'
 
@@ -329,7 +322,6 @@ app.exec
 *   Website: [http://qt-jambi.org/](http://qt-jambi.org/)
 
  `Hello.java` 
-
 ```
 import com.trolltech.qt.gui.*;
 
@@ -354,7 +346,6 @@ public class Hello
 *   Run with: `perl hello.pl`
 
  `hello.pl` 
-
 ```
 use QtGui4;
 
@@ -373,7 +364,6 @@ exit $a->exec;
 *   Run with: `qtlua hello.lua`
 
  `hello.lua` 
-
 ```
 label = qt.new_widget("QLabel")
 

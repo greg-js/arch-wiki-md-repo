@@ -84,7 +84,7 @@ For at fjerne en pakke **uden** at tjekke afhængigheder:
 ### Opgradering af systemet
 
 **Pacman** kan opdatere alle pakker i systemet med kun én kommando.
-_Dette kan tage et stykke tid, afhængigt af hvor up-to-date dit system er:_
+*Dette kan tage et stykke tid, afhængigt af hvor up-to-date dit system er:*
 
 ```
 # pacman -Su
@@ -98,11 +98,11 @@ Den bedste valgmulighed er imidlertid at synkronisere databaserne **og** opdater
 
 ```
 
-**Note:** Da Arch er en distribution med en rullende udgivelse, er det ikke altid så ligetil at opdatere systemet som ved punktudgivne distributioner. Desforuden er pacman ikke en "skyd-og-glem" pakkehåndtering. Derfor er det ofte forvirrende for nye brugere at vedligeholde et Arch-system (som gentagne forumdiskussioner indikerer.) Læs venligst den følgende sektion _grundigt_ inden du fortsætter.
+**Note:** Da Arch er en distribution med en rullende udgivelse, er det ikke altid så ligetil at opdatere systemet som ved punktudgivne distributioner. Desforuden er pacman ikke en "skyd-og-glem" pakkehåndtering. Derfor er det ofte forvirrende for nye brugere at vedligeholde et Arch-system (som gentagne forumdiskussioner indikerer.) Læs venligst den følgende sektion *grundigt* inden du fortsætter.
 
 Pacman er et stærkt pakkehåndteringsværktøj, men forsøger ikke at "gøre alting". Læs [Arch-metoden](/index.php/The_Arch_Way "The Arch Way") hvis dette forvirrer dig. Istedet bør brugere være agtpågivende og tage ansvar for at vedligeholde deres eget system. Når man udfører en systemopdatering (`pacman -Syu`), for eksempel, **er det yderst vigtigt at brugere læser al den information som pacman giver og bruge almindelig fornuft.**
 
-I stedet for at opdatere så snart en opdatering er tilgængelig, bør brugere indse at en opdatering til en _nødvendig_ pakke kan have uforudsete konsekvenser. Dette betyder at det ikke er klogt at opdatere `xorg-server` hvis man f.eks. skal lave en vigtig præsentation. Man bør hellere opdatere i sin fritid og være forberedt på at håndtere ethvert problem som opstår som følge af opdateringen.
+I stedet for at opdatere så snart en opdatering er tilgængelig, bør brugere indse at en opdatering til en *nødvendig* pakke kan have uforudsete konsekvenser. Dette betyder at det ikke er klogt at opdatere `xorg-server` hvis man f.eks. skal lave en vigtig præsentation. Man bør hellere opdatere i sin fritid og være forberedt på at håndtere ethvert problem som opstår som følge af opdateringen.
 
 Derefter er et besøg af [Arch Linux' hjemmeside](https://archlinux.org/) altid på sin plads. Når en opdatering kræver brugerindblanding er der ofte et indlæg på hjemmesiden. Normalt vil der også være folk i forum som skriver kort efter pakkerne når deres filspejle, med detajler om løsninger til problemerne.
 
@@ -126,7 +126,7 @@ $ pacman -Qs pakke
 
 ```
 
-Hvis du kender navnet på den pakke, du søger efter, kan du hente information om pakken. Bemærk at kommandoen _-Qi_ (Query info = forespørgselsinformation) giver mere information end _-Si_ (sync info = synkroniseringsinformation), hvis pakken er installeret.
+Hvis du kender navnet på den pakke, du søger efter, kan du hente information om pakken. Bemærk at kommandoen *-Qi* (Query info = forespørgselsinformation) giver mere information end *-Si* (sync info = synkroniseringsinformation), hvis pakken er installeret.
 
 ```
 $ pacman -Si pakke

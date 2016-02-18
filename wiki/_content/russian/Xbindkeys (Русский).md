@@ -73,7 +73,7 @@ xbindkeys -k
 
 ```
 
-**Tip:** Use _xbindkeys -mk_ to keep the key prompt open for multiple keypresses. Press _q_ to quit.
+**Tip:** Use *xbindkeys -mk* to keep the key prompt open for multiple keypresses. Press *q* to quit.
 
 ### Настройка с помощью графической оболочки
 
@@ -131,7 +131,7 @@ These instructions are valid for pretty much any one of the XF86 multimedia keys
 
 ## Troubleshooting
 
-If, for any reason, a hotkey you _already_ set in `~/.xbindkeysrc` doesn't work, open up a terminal and type the following:
+If, for any reason, a hotkey you *already* set in `~/.xbindkeysrc` doesn't work, open up a terminal and type the following:
 
 ```
 xbindkeys -n

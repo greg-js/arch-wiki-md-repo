@@ -108,7 +108,8 @@ set postponed = "+draft"
 set header_cache=~/Mail/.hcache
 #設置郵件頭的暫存目錄
 
-macro index G "!/usr/bin/offlineimap \n" "Checking mails......"
+macro index G "!/usr/bin/offlineimap 
+" "Checking mails......"
 #設置一個快捷鍵：G ，來調用 offlineimap 查閱新電郵
 ```
 

@@ -160,7 +160,7 @@ In caso di errori del genere durante la connessione al server:
 
 ```
 
-Sarà necessario aggiungere il modulo _capability_ nella stringa MODULES in `/etc/rc.conf`.
+Sarà necessario aggiungere il modulo *capability* nella stringa MODULES in `/etc/rc.conf`.
 
 Durante l'aggiornamento alla versione 2.1.0 si potrebbe ottenere un errore come questo quando ci si connette al server da un client:
 

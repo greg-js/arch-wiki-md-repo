@@ -33,7 +33,6 @@ Currently, fail2ban must be run as root. Therefore, you may wish to consider har
 For added security, consider limiting fail2ban capabilities by specifying `CapabilityBoundingSet` in the [drop-in configuration file](/index.php/Systemd#Editing_provided_units "Systemd") for the provided `fail2ban.service`:
 
  `/etc/systemd/system/fail2ban.service.d/capabilities.conf` 
-
 ```
 [Service]
 CapabilityBoundingSet=CAP_DAC_READ_SEARCH CAP_NET_ADMIN CAP_NET_RAW
@@ -43,7 +42,7 @@ In the example above, `CAP_DAC_READ_SEARCH` will allow fail2ban full read access
 
 ### Filesystem Access
 
-Consider limiting file system read and write access by using _ReadOnlyDirectories_ and _ReadWriteDirectories_, under the `[Service]` section. For example:
+Consider limiting file system read and write access by using *ReadOnlyDirectories* and *ReadWriteDirectories*, under the `[Service]` section. For example:
 
 ```
 ReadOnlyDirectories=/
@@ -57,7 +56,7 @@ In the example above, this limits the file system to read-only, except for `/var
 
 Edit `/etc/fail2ban/jail.conf` and modify the ssh-iptables section to enable it and configure the action.
 
-**Note:** Due to the possibility of the `jail.conf` file being overwritten or improved during a distribution update, it is recommended to provide customizations in a `jail.local` file, or separate _.conf_ files under the `jail.d/` directory, e.g. `jail.d/ssh-iptables.conf`.
+**Note:** Due to the possibility of the `jail.conf` file being overwritten or improved during a distribution update, it is recommended to provide customizations in a `jail.local` file, or separate *.conf* files under the `jail.d/` directory, e.g. `jail.d/ssh-iptables.conf`.
 
 If your firewall is iptables:
 

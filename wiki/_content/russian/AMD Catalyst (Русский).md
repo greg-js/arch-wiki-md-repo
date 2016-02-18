@@ -1,10 +1,10 @@
 Владельцы видеокарт ATI/AMD имеют выбор между проприетарным ([catalyst](https://aur.archlinux.org/packages/catalyst/)) и [открытым драйвером](/index.php/ATI_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ATI (Русский)") ([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)). Эта статья описывает проприетарный драйвер.
 
-Пакет с драйвером AMD для Linux, _catalyst_, раньше назывался _fglrx_ (**F**ire**GL** и **R**adeon **X**). Было изменено только имя пакета, в то время как модуль ядра сохраняет исходное имя _fglrx.ko_. Таким образом, любое упоминание о fglrx ниже, является отсылкой к _модулю ядра_, а **не к пакету**.
+Пакет с драйвером AMD для Linux, *catalyst*, раньше назывался *fglrx* (**F**ire**GL** и **R**adeon **X**). Было изменено только имя пакета, в то время как модуль ядра сохраняет исходное имя *fglrx.ko*. Таким образом, любое упоминание о fglrx ниже, является отсылкой к *модулю ядра*, а **не к пакету**.
 
 **Пакет Catalyst больше не размещается в официальных репозиториях.** В прошлом, поддержка Catalyst была [прекращена](https://www.archlinux.org/news/ati-catalyst-support-dropped/), в связи с неудовлетвореностью качеством и скоростью разработки. После короткого возвращения, поддержка снова была прекращена в апреле 2013 и ее не вернули до сих пор.
 
-В сравнении с открытым драйвером, Catalyst лучше выполняет визуализацию 2D и 3D, а также имеет лучшее управление энергопотреблением, но он неэфективен в поддержке нескольких экранов. Поддерживаемые устройства [ATI/AMD Radeon](https://en.wikipedia.org/wiki/ru:Radeon "wikipedia:ru:Radeon") - это видео карты с чипсетом R600 и новее (Radeon HD 2xxx и новее). Смотрите [кольцо декодирования Xorg](http://www.x.org/wiki/RadeonFeature/#index5h2) или [эту таблицу](https://en.wikipedia.org/wiki/Comparison_of_AMD_graphics_processing_units "wikipedia:Comparison of AMD graphics processing units"), переводите имя _модели_ (X1900, HD4850) в/из имя _чипа_ (R580, RV770 соответственно).
+В сравнении с открытым драйвером, Catalyst лучше выполняет визуализацию 2D и 3D, а также имеет лучшее управление энергопотреблением, но он неэфективен в поддержке нескольких экранов. Поддерживаемые устройства [ATI/AMD Radeon](https://en.wikipedia.org/wiki/ru:Radeon "wikipedia:ru:Radeon") - это видео карты с чипсетом R600 и новее (Radeon HD 2xxx и новее). Смотрите [кольцо декодирования Xorg](http://www.x.org/wiki/RadeonFeature/#index5h2) или [эту таблицу](https://en.wikipedia.org/wiki/Comparison_of_AMD_graphics_processing_units "wikipedia:Comparison of AMD graphics processing units"), переводите имя *модели* (X1900, HD4850) в/из имя *чипа* (R580, RV770 соответственно).
 
 ## Contents
 
@@ -94,12 +94,12 @@
 У Vi0L0 есть три репозитория Catalyst, каждый из которых содержит уникальный драйвер:
 
 *   [catalyst](/index.php/Unofficial_user_repositories#catalyst "Unofficial user repositories") - репозиторий с последними (стабильными и бета) выпусками Catalyst для видеокарт Radeon HD 5xxx и выше.
-*   _catalyst-stable_ - репозиторий со стабильными выпусками Catalyst для видеокарт Radeon HD 5xxx и выше.
+*   *catalyst-stable* - репозиторий со стабильными выпусками Catalyst для видеокарт Radeon HD 5xxx и выше.
 *   [catalyst-hd234k](/index.php/Unofficial_user_repositories#catalyst-hd234k "Unofficial user repositories") - репозиторий с драйвером Catalyst legacy для видеокарт Radeon HD 2xxx, 3xxx и 4xxx.
 
 Чтобы добавить один из репозиториев следуйте инструкциям в этой [статье](/index.php/Unofficial_user_repositories "Unofficial user repositories"). Добавьте выбранный репозиторий **выше всех других репозиториев** в `pacman.conf`.
 
-**Обратите внимание:** Репозитории _catalyst_ и _catalyst-stable_ предоставляют один и тот же URL. Чтобы включить _catalyst-stable_, следуйте тем же инструкциям, что и для _catalyst_, но замените `[catalyst]` на `[catalyst-stable]` в `pacman.conf`. Если вам нужно придерживаться старой версии, есть несколько репозиториев, которые используют один и тот же URL (например, _catalyst-stable-13.4_).
+**Обратите внимание:** Репозитории *catalyst* и *catalyst-stable* предоставляют один и тот же URL. Чтобы включить *catalyst-stable*, следуйте тем же инструкциям, что и для *catalyst*, но замените `[catalyst]` на `[catalyst-stable]` в `pacman.conf`. Если вам нужно придерживаться старой версии, есть несколько репозиториев, которые используют один и тот же URL (например, *catalyst-stable-13.4*).
 
 **Важно:**
 
@@ -111,19 +111,19 @@
 
 После добавления репозитория Catalyst, обновите базу данных pacman и [установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") эти пакеты (смотрите [#Инструменты](#.D0.98.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B) для большей информации):
 
-*   _catalyst-hook_
-*   _catalyst-utils_
-*   _catalyst-libgl_
-*   _opencl-catalyst_ - необязательный, нужен для поддержки OpenCL
-*   _lib32-catalyst-utils_ - необязательный, нужен для поддержки 32-битного OpenGL на 64-битных системах
-*   _lib32-catalyst-libgl_ - необязательный, нужен для поддержки 32-битного OpenGL на 64-битных системах
-*   _lib32-opencl-catalyst_ - необязательный, нужен для поддержки 32-битного OpenCL на 64-битных системах
+*   *catalyst-hook*
+*   *catalyst-utils*
+*   *catalyst-libgl*
+*   *opencl-catalyst* - необязательный, нужен для поддержки OpenCL
+*   *lib32-catalyst-utils* - необязательный, нужен для поддержки 32-битного OpenGL на 64-битных системах
+*   *lib32-catalyst-libgl* - необязательный, нужен для поддержки 32-битного OpenGL на 64-битных системах
+*   *lib32-opencl-catalyst* - необязательный, нужен для поддержки 32-битного OpenCL на 64-битных системах
 
 Если вы используете ноутбук с гибридной графикой Intel/AMD, набор пакетов будет немного отличаться:
 
-*   _catalyst-hook_
-*   _catalyst-utils-pxp_
-*   _lib32-catalyst-utils-pxp_ - необязательный, нужен для поддержки 32-битного OpenGL на 64-битных системах
+*   *catalyst-hook*
+*   *catalyst-utils-pxp*
+*   *lib32-catalyst-utils-pxp* - необязательный, нужен для поддержки 32-битного OpenGL на 64-битных системах
 
 **Обратите внимание:** Если pacman спросит вас про удаление **libgl**, вы можете смело соглашаться.
 
@@ -143,7 +143,7 @@
 *   [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/)
 *   [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/)
 
-Также, AUR содержит пакеты, которых **нет** в других репозиториях. Эти пакеты содержат так называемые _Catalyst-total_ пакеты и бета версии:
+Также, AUR содержит пакеты, которых **нет** в других репозиториях. Эти пакеты содержат так называемые *Catalyst-total* пакеты и бета версии:
 
 *   [catalyst-total](https://aur.archlinux.org/packages/catalyst-total/)
 *   [catalyst-total-pxp](https://aur.archlinux.org/packages/catalyst-total-pxp/)
@@ -195,10 +195,9 @@
 
 Хотя текущие версии Xorg автоматически обнаруживают большинство параметров при запуске, вы можете указать некоторые параметры по умолчанию в случае изменения между версиями.
 
-Вот пример (с заметками) _'для справки'_ . Записи с `#` должны присутствовать в файле, записи с `##` добавляйте по необходимости:
+Вот пример (с заметками) *'для справки'* . Записи с `#` должны присутствовать в файле, записи с `##` добавляйте по необходимости:
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "ServerLayout"
         Identifier     "Arch"
@@ -238,11 +237,11 @@ EndSection
 
 **Обратите внимание:** C **каждым** обновлением Catalyst этим способом вы должны удалять файл `amdpcsdb`: убейте X, удалите `/etc/ati/amdpcsdb`, запустите X и запустите`amdcccle` - иначе, версия Catalyst может не правильно отображаться в`amdcccle`.
 
-_Если вам нужна дополнительная информация о Catalyst, посетите [эту тему](https://bbs.archlinux.org/viewtopic.php?id=57084)._
+*Если вам нужна дополнительная информация о Catalyst, посетите [эту тему](https://bbs.archlinux.org/viewtopic.php?id=57084).*
 
 #### Загрузка модуля при загрузе
 
-Мы должны запретить загрузку модуля `radeon`. Для этого, добавьте _radeon_ в `/etc/modprobe.d/modprobe.conf`. Также, убедитесь, что он не загружается каким - либо файлом в `/etc/modules-load.d/`. Для большей информации, смотрите [kernel modules#Запрет загрузки](/index.php/Kernel_modules_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.97.D0.B0.D0.BF.D1.80.D0.B5.D1.82_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8 "Kernel modules (Русский)").
+Мы должны запретить загрузку модуля `radeon`. Для этого, добавьте *radeon* в `/etc/modprobe.d/modprobe.conf`. Также, убедитесь, что он не загружается каким - либо файлом в `/etc/modules-load.d/`. Для большей информации, смотрите [kernel modules#Запрет загрузки](/index.php/Kernel_modules_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.97.D0.B0.D0.BF.D1.80.D0.B5.D1.82_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8 "Kernel modules (Русский)").
 
 Далее, мы должны убедиться, что модуль `fglrx` автоматически загружается. Также добавьте `fglrx` в существующий файл модуля в `/etc/modules-load.d/` или создайте новый файл и добавьте туда `fglrx`.
 
@@ -274,7 +273,6 @@ $ glxinfo | grep "direct rendering"
 Если ответ `"direct rendering: yes"`, то это хорошо! Если команда `$ glxinfo` не найдена, установите пакет [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos).
 
 **Обратите внимание:** Вы также можете использовать:
-
 ```
 $ fgl_glxgears
 
@@ -340,7 +338,6 @@ $ fgl_glxgears
 Если у вас проблемы при запуске X на драйвере Intel, вы можете попробовать принудительно использовать ускорение "UXA". Просто убедитесь, что у вас есть строка `Option "AccelMethod" "uxa"` в `xorg.conf`:
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "Device"
         Identifier  "Intel Graphics"
@@ -373,7 +370,7 @@ EndSection
 
 Catalyst славится своим медленным обновлением. Поэтому новые версии Xorg несовместимы с Catalyst. Это значит, что вам нужно собрать свои пакеты Xorg или использовать репозиторий. Vi0L0 занялся этой задачей и сделал несколько репозиториев.
 
-Чтобы включить один из репозиториев, следуйте инструкциям в [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") (используйте тот же PGP ключ для репозитория [catalyst](/index.php/Unofficial_user_repositories#catalyst "Unofficial user repositories")). Не забудьте добавит выбранный репозиторий **выше других репозиториев** в `pacman.conf`, даже выше репозитория _catalyst_.
+Чтобы включить один из репозиториев, следуйте инструкциям в [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") (используйте тот же PGP ключ для репозитория [catalyst](/index.php/Unofficial_user_repositories#catalyst "Unofficial user repositories")). Не забудьте добавит выбранный репозиторий **выше других репозиториев** в `pacman.conf`, даже выше репозитория *catalyst*.
 
 ### xorg117
 
@@ -518,7 +515,6 @@ Catalyst-generator - это самое безопасное и просто ре
 4.  все что вам нужно запомнить, это не забыть использовать catalyst-generator
 
 **Обратите внимание:** Если вы видите эти предупреждения:
-
 ```
 **WARNING:** Package contains reference to $srcdir
 
@@ -528,7 +524,6 @@ Catalyst-generator - это самое безопасное и просто ре
 **WARNING:** '.pkg' is not a valid archive extension.
 
 ```
-
 во время сборки пакета `catalyst-{kernver}`, не беспокойтесь, это нормально.
 
 ### Разработка OpenCL и OpenGL
@@ -571,7 +566,7 @@ CodeXL - это Отладчик и Профилировщик для OpenCL и 
 
 ### Tear Free Rendering
 
-Технология, представленная в **Catalyst 11.1**, называемая _Tear Free Desktop_, которая уменьшает разрывы между изображениями на экране, в 2D, 3D и видео приложениях. Скорее всего, она добавляет тройную буферизацию и вертикальную синхронизацию. Обратите внимание, включение данной технологии создает дополнительную нагрузку на видеокарту.
+Технология, представленная в **Catalyst 11.1**, называемая *Tear Free Desktop*, которая уменьшает разрывы между изображениями на экране, в 2D, 3D и видео приложениях. Скорее всего, она добавляет тройную буферизацию и вертикальную синхронизацию. Обратите внимание, включение данной технологии создает дополнительную нагрузку на видеокарту.
 
 Чтобы включить 'Tear Free Desktop' запустите `amdcccle` и перейдите в: `Display Options` → `Tear Free`.
 
@@ -617,7 +612,6 @@ $ mplayer -vo vaapi:gl movie.avi
 ```
 
 **Обратите внимание:** Если технология Tear Free Desktop включена, лучше использовать:
-
 ```
 Настройки → Настройки → Основные → Видео (вкладка) → Устройство вывода: vaapi
 
@@ -683,7 +677,7 @@ $ {kdesu/gksu} amdcccle
 
 ```
 
-**Важно:** Использовать sudo напрямую в графическом интерфейсе **не стоит**. Sudo дает административные привилегия вместе с информацией об учетной записи пользователя. Вместо него используйте _gksu_ (GNOME) или _kdesu_ (KDE).
+**Важно:** Использовать sudo напрямую в графическом интерфейсе **не стоит**. Sudo дает административные привилегия вместе с информацией об учетной записи пользователя. Вместо него используйте *gksu* (GNOME) или *kdesu* (KDE).
 
 #### Установка
 
@@ -733,7 +727,7 @@ From now on, instead of editing the `xorg.conf` file manually, let us use the AT
 
 **Важно:**
 
-*   Вам, возможно, придется использовать `# pacman -Rdd` чтобы удалить [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/) (и/или [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/)), потому что этот пакет содержит связанные файлы _gl_ и много ваших пакетов зависят от них. Эти зависимости снова удовлетворятся когда вы установите [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati).
+*   Вам, возможно, придется использовать `# pacman -Rdd` чтобы удалить [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/) (и/или [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/)), потому что этот пакет содержит связанные файлы *gl* и много ваших пакетов зависят от них. Эти зависимости снова удовлетворятся когда вы установите [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati).
 *   Вам, возможно, придется удалить `/etc/profile.d/ati-flgrx.sh` и `/etc/profile.d/lib32-catalyst` (если они существуют в вашей системе), в противном случае `r600_dri.so` не сможет загрузится и у вас скорее всего не будет 3D поддержки.
 
 **Обратите внимание:** Вам следует удалить неофициальный репозиторий из вашего `/etc/pacman.conf` и запустить `# pacman -Syu`, потому что они содержат пакеты с устаревшими версиями Xorg, которые позволяют использовать `catalyst`, а пакету [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) нужна самая свежая версия пакета Xorg из [Официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
@@ -790,7 +784,7 @@ $ grep '(WW)' /var/log/Xorg.0.log
 
 ```
 
-Или, отредактировать файл `/etc/X11/xorg.conf`; сначала, откройте файл в редакторе с привилегиями root, а затем добавьте `Option "UseFastTLS" "off"` в раздел _Device_ этого файла.
+Или, отредактировать файл `/etc/X11/xorg.conf`; сначала, откройте файл в редакторе с привилегиями root, а затем добавьте `Option "UseFastTLS" "off"` в раздел *Device* этого файла.
 
 После выполнения любого из решений, перезапустите X для того, чтобы изменения вступили в силу.
 
@@ -890,7 +884,6 @@ fglrx: libGL version undetermined - OpenGL module is using glapi fallback
 вызваны тем, что у вас в системе несколько версий `libGL.so`. Команда ниже должна вернуть следующее:
 
  `$ locate libGL.s` 
-
 ```
 /usr/lib/libGL.so
 /usr/lib/libGL.so.1
@@ -926,7 +919,6 @@ fglrx: libGL version undetermined - OpenGL module is using glapi fallback
 Видеокарты Radeon в сочетании с некоторыми версиями чипсетов nForce3 (например, nForce 3 250Gb) не будут иметь 3D-ускорения. В настоящее время причина этой проблемы неизвестна, но некоторые источники указывают, что можно включить 3D-ускорение с таким сочетанием оборудования. Нужно загрузиться в Windows с драйверами от Nvidia, а затем перезагрузить систему. Работоспособность можно проверить получив сообщения похожие на эти (с использованием системы, основанной на nForce3):
 
  `$ dmesg | grep agp` 
-
 ```
 agpgart: Detected AGP bridge 0
 agpgart: Setting up Nforce3 AGP.
@@ -951,7 +943,6 @@ agpgart: aperture base > 4G
 Если у вас возникают временные зависания продолжительностью от нескольких секунд до нескольких минут, происходящее случайным образом во время воспроизведения в mplayer, проверьте системные логи и вывод должен быть примерно таким:
 
  `/var/log/messages.log` 
-
 ```
 Nov 28 18:31:56 pandemonium [<c01c64a6>] ? proc_get_sb+0xc6/0x160
 Nov 28 18:31:56 pandemonium [<c01c64a6>] ? proc_get_sb+0xc6/0x160
@@ -972,7 +963,6 @@ Nov 28 18:31:56 pandemonium =======================
 If you get the following:
 
  `# aticonfig --initial` 
-
 ```
 aticonfig: No supported adapters detected
 
@@ -985,7 +975,6 @@ To get an older control file, download a previous version of fglrx from AMD and 
 To set your model in `xorg.conf`, edit the device section of `/etc/X11/xorg.conf` to:
 
  `/etc/X11/xorg.conf` 
-
 ```
 Section "Device"
         Identifier "ATI radeon ********"
@@ -1020,7 +1009,6 @@ Google has blacklisted Linux's Catalyst driver from supporting webGL in their Ch
 Edit:
 
  `/etc/adobe/mms.cfg` 
-
 ```
 #EnableLinuxHWVideoDecode=1
 OverrideGPUValidation=true

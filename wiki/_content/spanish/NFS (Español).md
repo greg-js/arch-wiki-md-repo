@@ -1,6 +1,6 @@
 Según la [Wikipedia](https://en.wikipedia.org/wiki/es:Network_File_System "wikipedia:es:Network File System"):
 
-	_El Network File System (Sistema de archivos de red), o NFS, es un protocolo de nivel de aplicación, desarrollado originariamente por Sun Microsystems en 1984, que permite a un usuario de un equipo cliente acceder a archivos remotos a través de una red, de una manera similar a como se accede a los archivos almacenados localmente._
+	*El Network File System (Sistema de archivos de red), o NFS, es un protocolo de nivel de aplicación, desarrollado originariamente por Sun Microsystems en 1984, que permite a un usuario de un equipo cliente acceder a archivos remotos a través de una red, de una manera similar a como se accede a los archivos almacenados localmente.*
 
 ## Contents
 
@@ -41,7 +41,6 @@ Tanto el cliente como el servidor necesitan únicamente de la [instalación](/in
 Edite `/etc/idmapd.conf` y establezca el campo `Domain` con su nombre de dominio.
 
  `/etc/idmapd.conf` 
-
 ```
 [General]
 
@@ -73,7 +72,6 @@ Ahora monte el directorio que desea compartir, en este caso `/mnt/music`, en el 
 Para hacer que los cambios sean permanentes en cada reinicio del servidor, añada el enlace de montaje a `fstab`:
 
  `/etc/fstab` 
-
 ```
 /mnt/music /srv/nfs4/music  none   bind   0   0
 
@@ -84,7 +82,6 @@ Para hacer que los cambios sean permanentes en cada reinicio del servidor, añad
 Añada los directorios que se compartirán y la dirección IP o nombre de servidor de las máquinas cliente a las que les estará permitido montarlas en `exports`:
 
  `/etc/exports` 
-
 ```
 /srv/nfs4/ 192.168.0.1/24(rw,fsid=root,no_subtree_check)
 /srv/nfs4/music 192.168.0.1/24(rw,no_subtree_check,nohide) # note the nohide option which is applied to mounted directories on the file system.
@@ -115,7 +112,6 @@ Observe que esas unidades requieren de otros servicios, que serán lanzados auto
 Para activar el acceso a través de un cortafuegos, necesita abrir los puertos 111, 2049, y 20048 para tcp y udp. Para configurar dichos puertos para [iptables](/index.php/Iptables_(Espa%C3%B1ol) "Iptables (Español)"), edite `/etc/iptables/iptables.rules` para incluir las líneas siguientes:
 
  `/etc/iptables/iptables.rules` 
-
 ```
 -A INPUT -p tcp -m tcp --dport 111 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 2049 -j ACCEPT
@@ -149,7 +145,6 @@ A continuación móntelos omitiendo la raíz de exportación del servidor NFS:
 El uso de [fstab](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)") es útil para un servidor que siempre esté operativo, y los recursos compartidos a través de NFS estén disponible en cualquier lugar que arranque el cliente. Edite el archivo `/etc/fstab`, y añada la línea de configuración apropiada. De nuevo, deberá omitir la ruta de la raíz de exportación del servidor NFS.
 
  `/etc/fstab` 
-
 ```
 servername:/music   /mountpoint/on/client   nfs4   rsize=8192,wsize=8192,timeo=14,intr,_netdev	0 0
 
@@ -218,7 +213,6 @@ Este consejo es muy útil para los portátiles que requieren compartir NFS desde
 Asegúrese de que los puntos de montaje NFS están indicados correctamente en `/etc/fstab`:
 
  `$ cat /etc/fstab` 
-
 ```
 lithium:/mnt/data           /mnt/data	        nfs noauto,noatime,rsize=32768,wsize=32768,intr,hard 0 0
 lithium:/var/cache/pacman   /var/cache/pacman	nfs noauto,noatime,rsize=32768,wsize=32768,intr,hard 0 0
@@ -229,10 +223,9 @@ La opción de montaje `noauto` le dice a systemd que no monte automáticamente l
 
 Con el fin de poder montar el recurso compartido NFS por un usuario normal, puede ser necesario añadir la opción `user` a la entrada fstab. También le posibilitará que active rpc-statd.service.
 
-Cree el script `auto_share`, que será utilizado por _cron_ para comprobar si el equipo NFS está accesible:
+Cree el script `auto_share`, que será utilizado por *cron* para comprobar si el equipo NFS está accesible:
 
  `/root/bin/auto_share` 
-
 ```
 #!/bin/bash
 
@@ -264,7 +257,6 @@ fi
 Cree la entrada cron de root para ejecutar `auto_share` en todo momento:
 
  `# crontab -e` 
-
 ```
 * * * * * /root/bin/auto_share
 
@@ -273,7 +265,6 @@ Cree la entrada cron de root para ejecutar `auto_share` en todo momento:
 Un archivo de unidad de systemd también puede ser utilizado para montar los recursos compartidos NFS en el arranque. El archivo de unidad no es necesario si NetworkManager está instalado y configurado en el sistema cliente. Véase [#NetworkManager dispatch](#NetworkManager_dispatch).
 
  `/etc/systemd/system/auto_share.service` 
-
 ```
 [Unit]
 Description=NFS automount
@@ -306,7 +297,6 @@ El método más fácil para montar recursos compartidos al cambiar el estado de 
 O, usando el script de montaje siguiente, que comprueba la disponibilidad de la red:
 
  `/etc/NetworkManager/dispatcher.d/30_nfs.sh` 
-
 ```
 #!/bin/bash
 
@@ -337,7 +327,6 @@ Ahora, cuando el SSID inalámbrico "CHANGE_ME" se encienda o se apaque, el scrip
 Si tiene un [cortafuegos](/index.php/Firewalls_(Espa%C3%B1ol) "Firewalls (Español)") configurado a través de un puerto, es posible que desee establecer puertos fijos. Para `rpc.statd` y `rpc.mountd` debe configurar los ajustes siguientes en `/etc/conf.d/nfs-common` y `/etc/conf.d/nfs-server` (los puertos pueden ser diferentes):
 
  `/etc/conf.d/nfs-common`  `STATD_OPTS="-p 4000 -o 4003"`  `/etc/conf.d/nfs-server`  `MOUNTD_OPTS="--no-nfs-version 2 -p 4002"`  `/etc/modprobe.d/lockd.conf` 
-
 ```
 # Static ports for NFS lockd
 options lockd nlm_udpport=4001 nlm_tcpport=4001
@@ -346,7 +335,6 @@ options lockd nlm_udpport=4001 nlm_tcpport=4001
 Después de reiniciar los demonios `nfs-common`, `nfs-server` y recargar los módulos `lockd`, puede comprobar los puertos utilizados con la siguiente orden:
 
  `$ rpcinfo -p` 
-
 ```
    program vers proto   port  service
     100000    4   tcp    111  portmapper
@@ -378,7 +366,7 @@ A continuación, es necesario abrir los puertos 111-2049-4000-4001-4002-4003 TCP
 
 ## Solución de problemas
 
-_Hay un artículo dedicado a la solución de problemas: [NFS Troubleshooting](/index.php/NFS_Troubleshooting "NFS Troubleshooting")._
+*Hay un artículo dedicado a la solución de problemas: [NFS Troubleshooting](/index.php/NFS_Troubleshooting "NFS Troubleshooting").*
 
 ## Véase también
 

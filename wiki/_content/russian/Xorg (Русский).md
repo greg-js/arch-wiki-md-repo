@@ -89,7 +89,7 @@ $ pacman -Ss xf86-video
 
 ```
 
-The default graphics driver is [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa), which handles a large number of chipsets but does not include any 2D or 3D acceleration. If a better driver cannot be found or fails to load, Xorg will fall back to _vesa_.
+The default graphics driver is [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa), which handles a large number of chipsets but does not include any 2D or 3D acceleration. If a better driver cannot be found or fails to load, Xorg will fall back to *vesa*.
 
 In order for video acceleration to work, and often to expose all the modes that the GPU can set, a proper video driver is required:
 
@@ -110,7 +110,7 @@ Xorg should run smoothly without closed source drivers, which are typically need
 
 ## Запуск
 
-_См. также: [Запуск X при загрузке](/index.php/Start_X_at_Boot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Start X at Boot (Русский)")_
+*См. также: [Запуск X при загрузке](/index.php/Start_X_at_Boot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Start X at Boot (Русский)")*
 
 **Совет:** Самый простой способ запустить X — воспользоваться [экранным менеджером](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display manager (Русский)"), например [GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM "KDM") или [SLiM](/index.php/SLiM "SLiM").
 
@@ -123,7 +123,7 @@ _См. также: [Запуск X при загрузке](/index.php/Start_X_a
 **Обратите внимание:**
 
 *   Если возникают проблемы, почитайте журнал в `/var/log/Xorg.0.log`. Строчки, начинающиеся с `(EE)` сообщают об ошибках, `(WW)` — предупреждения.
-*   Если файл `~/.xinitrc` _пустой_, нужно удалить или [отредактировать его](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)"), чтобы запустить X правильно. Если этого не сделать, X покажет пустой экран без ошибок в `Xorg.0.log`. Удаление этого файла запустит среду по умолчанию.
+*   Если файл `~/.xinitrc` *пустой*, нужно удалить или [отредактировать его](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)"), чтобы запустить X правильно. Если этого не сделать, X покажет пустой экран без ошибок в `Xorg.0.log`. Удаление этого файла запустит среду по умолчанию.
 
 ## Настройка
 
@@ -135,7 +135,7 @@ Xorg можно настроить через `/etc/X11/xorg.conf`, `/etc/xorg.c
 
 #### Synaptics Touchpad
 
-_Основная статья: [Touchpad Synaptics](/index.php/Touchpad_Synaptics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Touchpad Synaptics (Русский)")_
+*Основная статья: [Touchpad Synaptics](/index.php/Touchpad_Synaptics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Touchpad Synaptics (Русский)")*
 
 Если у вас ноутбук, [установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") драйвер тачпада из пакета [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics), доступного в [официальном репозитории](/index.php/Official_Repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official Repositories (Русский)").
 
@@ -174,7 +174,6 @@ Xorg может определить клавиатуру неправильно
 #### Просмотр настроек клавиатуры
 
  `$ setxkbmap -print -verbose 10` 
-
 ```
 
  Setting verbose level to 10
@@ -244,7 +243,6 @@ setxkbmap -layout "us,ru" -option "grp:caps_toggle,grp_led:scroll"
 [Mouse keys](https://en.wikipedia.org/wiki/Mouse_keys "wikipedia:Mouse keys") теперь по умолчанию отключены, и их нужно включать вручную:
 
  `/etc/X11/xorg.conf.d/20-enable-pointerkeys.conf` 
-
 ```
 Section "InputClass"
     Identifier             "Keyboard Defaults"
@@ -342,7 +340,7 @@ EndSection
 
 ##### NVIDIA
 
-_См. [NVIDIA#Multiple monitors](/index.php/NVIDIA#Multiple_monitors "NVIDIA")_
+*См. [NVIDIA#Multiple monitors](/index.php/NVIDIA#Multiple_monitors "NVIDIA")*
 
 ##### Более одной видеокарты
 
@@ -751,7 +749,7 @@ Option      "ButtonMapping" "1 2 3 6 7"
 *   переключаться по раскладкам
 *   использовать знак £ для локали gb
 
-Проблема заключается в том, что некоторые раскладки (например, _sk_qwerty_, _uk_) перестали существовать. Следует заменить
+Проблема заключается в том, что некоторые раскладки (например, *sk_qwerty*, *uk*) перестали существовать. Следует заменить
 
 ```
 Option         "XkbLayout" "us,sk_qwerty"

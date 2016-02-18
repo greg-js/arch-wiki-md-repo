@@ -31,25 +31,25 @@
 
 # Hardware
 
-_CPU_ Intel Core i7 i7-2630QM (2 GHz Quad-core, 6 MB Cache, hyperthreading, Turbo Boost (2.9 GHz))
+*CPU* Intel Core i7 i7-2630QM (2 GHz Quad-core, 6 MB Cache, hyperthreading, Turbo Boost (2.9 GHz))
 
-_Mainboard_ Intel HM65
+*Mainboard* Intel HM65
 
-_RAM_ 8 GB (2x4GB)
+*RAM* 8 GB (2x4GB)
 
-_Display_ 14.5" HD LED (1366x768)
+*Display* 14.5" HD LED (1366x768)
 
-_Graphics adapter_ AMD Radeon HD 6630M, 1GB memory
+*Graphics adapter* AMD Radeon HD 6630M, 1GB memory
 
-_Soundcard_ Intel HD Audio
+*Soundcard* Intel HD Audio
 
-_Network_ Atheros Communications AR8151 v2.0 Gigabit Ethernet, Intel Corporation Centrino Advanced-N 6230 Wireless
+*Network* Atheros Communications AR8151 v2.0 Gigabit Ethernet, Intel Corporation Centrino Advanced-N 6230 Wireless
 
-_Hard disk_ 750 GB 7200rpm SATA
+*Hard disk* 750 GB 7200rpm SATA
 
-_Webcam_ Quanta Computer, Inc.
+*Webcam* Quanta Computer, Inc.
 
-_Touchpad_ Synaptics ClickPad
+*Touchpad* Synaptics ClickPad
 
 # Configuration
 

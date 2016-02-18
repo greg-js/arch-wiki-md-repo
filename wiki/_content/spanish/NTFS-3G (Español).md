@@ -88,7 +88,7 @@ Ejemplos:
 
 	users
 
-	permite a todo el mundo mountar y desmontar las particiones NTFS siempre y cuando el binario ntfs-3g tenga establecido el permiso SUID para root _(Orden: `chmod u+s /bin/ntfs-3g`)_. Dese cuenta de que tiene que utilizar `users` en vez de `user`.
+	permite a todo el mundo mountar y desmontar las particiones NTFS siempre y cuando el binario ntfs-3g tenga establecido el permiso SUID para root *(Orden: `chmod u+s /bin/ntfs-3g`)*. Dese cuenta de que tiene que utilizar `users` en vez de `user`.
 
 	noauto
 

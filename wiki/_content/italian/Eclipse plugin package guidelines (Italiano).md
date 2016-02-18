@@ -32,7 +32,6 @@ Questo metodo di installazione è ancora supportato in Eclipse 3.4, ma quello pr
 Qui c'è un esempio, discuteremo più avanti su come personalizzarlo.
 
  `PKGBUILD-eclipse.proto` 
-
 ```
 pkgname=eclipse-mylyn
 pkgver=3.0.3
@@ -80,7 +79,7 @@ Si legga avanti per le istruzioni sulla parte interna del PKGBUILD, che aiutano 
 
 #### Nome del pacchetto
 
-I pacchetti dovrebbero sempre chiamarsi `eclipse-_nomedelplugin_`, così da renderli riconoscibili come pacchetti relativi a Eclipse e rendere facile il riconoscimento del nome del plugin con una semplice sostituzione tramite shell come `${pkgname/eclipse-}`, senza dover ricorrere ad una variabile `${_nomereale}` non necessaria. Il nome del plugin è necessario per ordinare ogni cosa durante l'installazione ed evitare conflitti.
+I pacchetti dovrebbero sempre chiamarsi `eclipse-*nomedelplugin*`, così da renderli riconoscibili come pacchetti relativi a Eclipse e rendere facile il riconoscimento del nome del plugin con una semplice sostituzione tramite shell come `${pkgname/eclipse-}`, senza dover ricorrere ad una variabile `${_nomereale}` non necessaria. Il nome del plugin è necessario per ordinare ogni cosa durante l'installazione ed evitare conflitti.
 
 #### File
 
@@ -104,4 +103,4 @@ Questa struttura permette di mescolare diverse versioni di librerie che potrebbe
 
 #### La funzione build()
 
-La prima cosa da notare è il comando `cd ${srcdir}`. Solitamente gli archivi sorgente estraggono le cartelle `features` e `plugins` direttamente sotto `${srcdir}`, ma questo non è sempre vero. Ad ogni modo, per la maggior parte dei plugin non-_(de facto)_-standard questa è l'unica linea che dev'essere cambiata. La prossima è la sezione `features`. Essa crea le cartelle necessarie, una per ogni file jar, ed estrae il file nella cartella corrispondente. Alla stessa maniera, la sezione `plugins` installa i file jar nelle relative cartelle. Un ciclo while viene nel frattempo usato per evitare strani nomi di file.
+La prima cosa da notare è il comando `cd ${srcdir}`. Solitamente gli archivi sorgente estraggono le cartelle `features` e `plugins` direttamente sotto `${srcdir}`, ma questo non è sempre vero. Ad ogni modo, per la maggior parte dei plugin non-*(de facto)*-standard questa è l'unica linea che dev'essere cambiata. La prossima è la sezione `features`. Essa crea le cartelle necessarie, una per ogni file jar, ed estrae il file nella cartella corrispondente. Alla stessa maniera, la sezione `plugins` installa i file jar nelle relative cartelle. Un ciclo while viene nel frattempo usato per evitare strani nomi di file.

@@ -27,7 +27,7 @@ Mezi ty běžnější GPU a jejich korespondující čipsety patří:
 *   Intel GMA 900 (910, 915)
 *   Intel GMA 950 (945)
 
-Čipset "i810" (opět, na základní desce; ne GPU) je opravdu velmi starý a byl vyráběn dlouho před řadou produktů 9xx, u níž začalo označování integrované grafiky pomocí GMA. Podobně mohou alternativně jména pro čipy 910, 915 a 945 obsahovat předponu _i_.
+Čipset "i810" (opět, na základní desce; ne GPU) je opravdu velmi starý a byl vyráběn dlouho před řadou produktů 9xx, u níž začalo označování integrované grafiky pomocí GMA. Podobně mohou alternativně jména pro čipy 910, 915 a 945 obsahovat předponu *i*.
 
 Viz [tento seznam](https://en.wikipedia.org/wiki/Intel_GMA#Table_of_GMA_graphics_cores_and_chipsets "wikipedia:Intel GMA").
 
@@ -59,7 +59,7 @@ Jediná věc, kterou byste měli udělat již na začátku (netýká se přímo 
 
 [KMS](/index.php/KMS "KMS") je podporován těmi čipsety od Intelu, které používají DRM ovladač i915, a od verze jádra 2.6.32 je povolen ve výchozím nastavení. Od xf86-video-intel 2.10 je použití KMS [povinné](https://www.archlinux.org/news/484/). KMS se typicky inicializuje po bootstrapu jádra. Je nicméně možné zapnout KMS během samotného bootstrapu, v tom případě poběží celý proces bootování v nativním rozlišení.
 
-**Note:** Pokud používáte KMS, _musíte_ z `/boot/grub/menu.lst` v řádku "kernel" odstranit jakoukoliv zmínku o "vga" nebo "video".
+**Note:** Pokud používáte KMS, *musíte* z `/boot/grub/menu.lst` v řádku "kernel" odstranit jakoukoliv zmínku o "vga" nebo "video".
 
 Přidejte moduly `intel_agp` a `i915` do řádku MODULES v `/etc/mkinitcpio.conf`:
 

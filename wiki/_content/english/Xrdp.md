@@ -26,7 +26,7 @@ could not open default font 'fixed'
 
 you must create a symlink at `/usr/X11R6/lib/X11/fonts` pointing to `/usr/share/fonts`.
 
-_xrdp_ will just fail without giving you that error. You can only see the error message when you try to start Xvnc manually for a test.
+*xrdp* will just fail without giving you that error. You can only see the error message when you try to start Xvnc manually for a test.
 
 To fix the message `Couldn't open RGB_DB '/usr/X11R6/lib/X11/rgb'` copy `/usr/share/X11/rgb.txt` to `/usr/X11R6/lib/X11/rgb.txt` or create a symlink. If this file is missing, standard X11 colors are wrong (pink or blue instead of black) and Xterm is broken.
 
@@ -67,13 +67,13 @@ Remember to restart the xrdp server, and one should be able to connect to the vi
 
 ## Usage
 
-After starting xrdp you can point any RDP client to localhost (on standard RDP port 3389) _xrdp_ will give a small message window.
+After starting xrdp you can point any RDP client to localhost (on standard RDP port 3389) *xrdp* will give a small message window.
 
-When you choose _sessman-Xvnc_ you can give a username and password for any account on your host and _xrdp_ will start another _Xvnc_ instance for you. Opening a window manager out of a _SESSION_ list provided in `/etc/xrdp/startwm.sh`.
+When you choose *sessman-Xvnc* you can give a username and password for any account on your host and *xrdp* will start another *Xvnc* instance for you. Opening a window manager out of a *SESSION* list provided in `/etc/xrdp/startwm.sh`.
 
 When you just close the session window and RDP connection, you can access the same session again next time you connect with RDP. When you exit the window manager or desktop environment from the session window, the session will close and a new session will be opened the next time.
 
-_xrdp_ checks only if a session with the same geometry is already opened. It will start a new session if the geometry/resolution doesn't match.
+*xrdp* checks only if a session with the same geometry is already opened. It will start a new session if the geometry/resolution doesn't match.
 
 ## See also
 

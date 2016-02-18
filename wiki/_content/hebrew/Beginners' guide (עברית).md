@@ -153,30 +153,30 @@
 
 ##### הדרך של Arch
 
-**_העיקרון המעצב מאחורי ארצ' לינוקס הוא להשאיר את הדברים [פשוטים](/index.php/The_Arch_Way "The Arch Way")._**
+***העיקרון המעצב מאחורי ארצ' לינוקס הוא להשאיר את הדברים [פשוטים](/index.php/The_Arch_Way "The Arch Way").***
 
 'פשוט', בהקשר הזה, משמעותו ללא תוספות לא הכרחיות, שינויים וכד' בקיצור - גישה אלגנטית.
 
 **כמה נקודות לתשומת ליבכם, כאשר מדברים על פשטות:**
 
-*   _" 'פשטות' מוגדרת מנקודת מבט טכנית, ולא מנקודת המבט של השמישות. עדיף להיות בעלי אלגנטיות טכנית ועקומת למידה גבוה, מאשר להיות קל לשימוש ונחות בשימוש." -אארון גריפין_
-*   _Entia non sunt multiplicanda praeter necessitatem_ or "יש להניח את ההנחות הפשוטות ביותר." - התער של אוקום.
+*   *" 'פשטות' מוגדרת מנקודת מבט טכנית, ולא מנקודת המבט של השמישות. עדיף להיות בעלי אלגנטיות טכנית ועקומת למידה גבוה, מאשר להיות קל לשימוש ונחות בשימוש." -אארון גריפין*
+*   *Entia non sunt multiplicanda praeter necessitatem* or "יש להניח את ההנחות הפשוטות ביותר." - התער של אוקום.
 
-המונח _תער_ מתיחס לכך שיש לגלח החוצה כל דרך מיותרת
+המונח *תער* מתיחס לכך שיש לגלח החוצה כל דרך מיותרת
 
-*   _"החלק היוצא דופן של השיטה שלי טמון בפשטות..הדרגה הגבוה ביותר של טיפוח תמיד מגיעה לפשטות."_ - ברוס לי
+*   *"החלק היוצא דופן של השיטה שלי טמון בפשטות..הדרגה הגבוה ביותר של טיפוח תמיד מגיעה לפשטות."* - ברוס לי
 
 ##### על המדריך הזה
 
 הוויקי של ארצ' הוא מקור מעולה למידע, ולכן יש קודם כל להתיעץ [איתו](/index.php/Main_page "Main page"). חדר הIRC (בשרת freenode #archlinux), וה[פורומים](https://bbs.archlinux.org/) גם יכולים לשמש לעזרה, מבמקרה ולא נמצאה תשובה במקום אחר..
 
-**Note:** מעקב אחר המדריך הזה באופן המדויק ביותר היא הנוסחה להצלחה בהתקנה של ארצ' כראוי, לכן, _אנא_ קראו את הכל כראוי. מומלץ מאוד לקרוא <u>קודם כל</u> את הפרק העוסק במה שיש לעשות ורק אחרי כן לבצע אותו..
+**Note:** מעקב אחר המדריך הזה באופן המדויק ביותר היא הנוסחה להצלחה בהתקנה של ארצ' כראוי, לכן, *אנא* קראו את הכל כראוי. מומלץ מאוד לקרוא <u>קודם כל</u> את הפרק העוסק במה שיש לעשות ורק אחרי כן לבצע אותו..
 
 מאחר והפצות גנו\לינוקס הן 'מודלריות' בהגדרתן, מדריך זה מחולק לארבעה שלבים, כפי שמורכבת מערכת לשולחן העבודה של תחנות דמויות <tt>UNIX</tt>:
 
 **[חלק I: התקנה של מערכת הבסיס](#Part_I:_Install_the_Base_System)**
 
-**[חלק II: קינפוג ועידכון של מערכת ארצ _בסיסית_](#Part_II:_Configure_.26_Update_the_New_Arch_Linux_base_system)**
+**[חלק II: קינפוג ועידכון של מערכת ארצ *בסיסית*](#Part_II:_Configure_.26_Update_the_New_Arch_Linux_base_system)**
 
 **[חלק III: התקנת שרת X וקינפוג של ALSA](#Part_III:_Install_X_and_configure_ALSA)**
 
@@ -188,20 +188,20 @@
 
 You can obtain Arch's official installation media from [here](https://archlinux.org/download/). The latest version is 2010.05
 
-*   Both the Core and the Netinstall images provide only the necessary packages to create an **Arch Linux base system**. _Note that the Base System does not include a GUI. It is mainly comprised of the GNU toolchain (compiler, assembler, linker, libraries, shell, and utilities), the Linux kernel, and a few extra libraries and modules._
+*   Both the Core and the Netinstall images provide only the necessary packages to create an **Arch Linux base system**. *Note that the Base System does not include a GUI. It is mainly comprised of the GNU toolchain (compiler, assembler, linker, libraries, shell, and utilities), the Linux kernel, and a few extra libraries and modules.*
 *   Core images facilitate both installing from CD and Net.
 *   Netinstall images are smaller and provide no packages themselves; the entire system is retrieved via internet.
 *   [The Arch64 FAQ](/index.php/Arch64_FAQ "Arch64 FAQ") can help you choose between the 32- and 64-bit versions.
 
 #### Install from an Existing GNU/Linux Distro
 
-Arch is flexible enough to be installed to another partition _from within_ an existing distro or Live CD. See [this wiki article](/index.php/Install_from_Existing_Linux "Install from Existing Linux") for steps to do this. This can be useful particularly if you plan to install Arch via vnc or ssh remotely.
+Arch is flexible enough to be installed to another partition *from within* an existing distro or Live CD. See [this wiki article](/index.php/Install_from_Existing_Linux "Install from Existing Linux") for steps to do this. This can be useful particularly if you plan to install Arch via vnc or ssh remotely.
 
 #### CD installer
 
 Burn the .iso image file to a CD with your preferred CD burner drive and software, and continue with [Step 2: Boot Arch Linux Installer](#Step_2:_Boot_Arch_Linux_Installer)
 
-**Note:** The quality of optical drives, as well as the CD media itself, vary greatly. Generally, using a slow burn speed is recommended for reliable burns; Some users recommend speeds _**as low as 4x or 2x.**_ If you are experiencing unexpected behavior from the CD, try burning at the minimum speed supported by your system.
+**Note:** The quality of optical drives, as well as the CD media itself, vary greatly. Generally, using a slow burn speed is recommended for reliable burns; Some users recommend speeds ***as low as 4x or 2x.*** If you are experiencing unexpected behavior from the CD, try burning at the minimum speed supported by your system.
 
 #### USB stick
 
@@ -212,7 +212,7 @@ Burn the .iso image file to a CD with your preferred CD burner drive and softwar
 Insert an empty or expendable USB stick, determine its path, and write the .iso to the USB stick with the `/bin/dd` program:
 
 ```
-dd if=archlinux-2010.05-_{core|netinstall}_-_{i686|x86_64|dual}_.iso of=/dev/sd_x_
+dd if=archlinux-2010.05-*{core|netinstall}*-*{i686|x86_64|dual}*.iso of=/dev/sd*x*
 
 ```
 
@@ -223,7 +223,7 @@ where `if=` is the path to the img file and `of=` is your USB device. Make sure 
 Make a note of the number of records (blocks) read in and written out, then perform the following check:
 
 ```
-dd if=/dev/sd_x_ count=_number_of_records_ status=noxfer | md5sum
+dd if=/dev/sd*x* count=*number_of_records* status=noxfer | md5sum
 
 ```
 
@@ -285,11 +285,11 @@ If you have a non-US keyboard layout you can interactively choose your keymap/co
 or use the loadkeys command:
 
 ```
-# loadkeys _layout_
+# loadkeys *layout*
 
 ```
 
-(replace _layout_ with your keyboard layout such as "`fr`" or "`be-latin1`")
+(replace *layout* with your keyboard layout such as "`fr`" or "`be-latin1`")
 
 #### Documentation
 
@@ -326,7 +326,7 @@ After a welcome screen, you will be prompted for an installation source. Choose 
 
 Available Interfaces will be presented. If an interface and HWaddr (**H**ard**W**are **addr**ess) is listed, then your module has already been loaded. If your interface is not listed, you may probe it from the installer, or manually do so from another virtual console.
 
-The following screen will prompt you to _Select the interface, Probe,_ or _Cancel_. Choose the appropriate interface and continue.
+The following screen will prompt you to *Select the interface, Probe,* or *Cancel*. Choose the appropriate interface and continue.
 
 The installer will then ask if you wish to use DHCP. Choosing Yes will run **dhcpcd** to discover an available gateway and request an IP address; Choosing No will prompt you for your static IP, netmask, broadcast, gateway DNS IP, HTTP proxy, and FTP proxy. Lastly, you will be presented with an overview to ensure your entries are correct.
 
@@ -350,7 +350,7 @@ Return to first virtual console with <ALT>+F1\. Continue with [B: Set Clock](#B:
 
 ##### Wireless Quickstart For the Live Environment (If you need wireless connectivity during the installation process)
 
-The wireless drivers and utilities are now available to you in the live environment of the installation media. A good knowledge of your wireless hardware will be of key importance to successful configuration. Note that the following quickstart procedure _executed at this point in the installation_ will initialize your wireless hardware for use _in the live environment_. These steps (or some other form of wireless management) must be repeated from the actual installed system after booting into it.
+The wireless drivers and utilities are now available to you in the live environment of the installation media. A good knowledge of your wireless hardware will be of key importance to successful configuration. Note that the following quickstart procedure *executed at this point in the installation* will initialize your wireless hardware for use *in the live environment*. These steps (or some other form of wireless management) must be repeated from the actual installed system after booting into it.
 
 Also note that these steps are optional if wireless connectivity is unnecessary at this point in the installation; wireless functionality may always be established later.
 
@@ -409,28 +409,28 @@ An example using the wlan0 interface:
 ```
 
 *   Associate your wireless device with the access point you want to use. Depending on the encryption (none, WEP, or WPA), the procedure may differ. You need to know the name of the chosen wireless network (ESSID), e.g. 'linksys' in the following examples:
-*   An example using a _non-encrypted_ network:
+*   An example using a *non-encrypted* network:
 
 ```
 # iwconfig wlan0 essid "linksys"
 
 ```
 
-*   An example using _WEP and a hexadecimal key_:
+*   An example using *WEP and a hexadecimal key*:
 
 ```
 # iwconfig wlan0 essid "linksys" key 0241baf34c
 
 ```
 
-*   An example using _WEP and an ASCII passphrase_:
+*   An example using *WEP and an ASCII passphrase*:
 
 ```
 # iwconfig wlan0 essid "linksys" key s:pass1
 
 ```
 
-*   Using _WPA_, the procedure requires a bit more work. Check [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") for more information and troubleshooting (or try using [netcfg](/index.php/Netcfg "Netcfg") instead):
+*   Using *WPA*, the procedure requires a bit more work. Check [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") for more information and troubleshooting (or try using [netcfg](/index.php/Netcfg "Netcfg") instead):
 
 ```
 # wpa_passphrase linksys "secretpassphrase" > /etc/wpa_supplicant.conf
@@ -479,7 +479,7 @@ firmware: requesting iwlwifi-5000-1.ucode
 
 If there is no output, it may be concluded that the system's wireless chipset does not require firmware.
 
-**Note:** **Wireless chipset firmware packages (for cards which require them) are pre-installed under /lib/firmware in the live environment, (on CD/USB stick) _but must be explicitly installed to your actual system to provide wireless functionality after you reboot into it!_ Package selection and installation is covered below. Ensure installation of both your wireless module and firmware during the package selection step! See [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") if you are unsure about the requirement of corresponding firmware installation for your particular chipset. This is a very common error.**
+**Note:** **Wireless chipset firmware packages (for cards which require them) are pre-installed under /lib/firmware in the live environment, (on CD/USB stick) *but must be explicitly installed to your actual system to provide wireless functionality after you reboot into it!* Package selection and installation is covered below. Ensure installation of both your wireless module and firmware during the package selection step! See [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") if you are unsure about the requirement of corresponding firmware installation for your particular chipset. This is a very common error.**
 
 After the initial Arch installation is complete, you may wish to refer to [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") to ensure a permanent configuration solution for your installed system.
 
@@ -516,9 +516,9 @@ Select the first menu entry "Prepare Hard Drive".
 
 Auto-Prepare divides the disk into the following configuration:
 
-*   ext2 /boot partition, default size 32MB. _You will be prompted to modify the size to your requirement._
-*   swap partition, default size 256MB. _You will be prompted to modify the size to your requirement._
-*   A Separate / and /home partition, (sizes can also be specified). Available filesystems include ext2, ext3, ext4, reiserfs, xfs and jfs, but note that _both / and /home shall share the same fs type_ if choosing the Auto Prepare option.
+*   ext2 /boot partition, default size 32MB. *You will be prompted to modify the size to your requirement.*
+*   swap partition, default size 256MB. *You will be prompted to modify the size to your requirement.*
+*   A Separate / and /home partition, (sizes can also be specified). Available filesystems include ext2, ext3, ext4, reiserfs, xfs and jfs, but note that *both / and /home shall share the same fs type* if choosing the Auto Prepare option.
 
 Be warned that Auto-prepare will completely erase the chosen hard drive. Read the <font color="red">warning</font> presented by the installer very carefully, and make sure the correct device is about to be partitioned.
 
@@ -526,7 +526,7 @@ Be warned that Auto-prepare will completely erase the chosen hard drive. Read th
 
 This option will allow for the most robust and customized partitioning solution for your personal needs.
 
-_At this point, more advanced GNU/Linux users who are familiar and comfortable with manually partitioning may wish to skip down to **[D: Select Packages](#D:_Select_Packages)** below._
+*At this point, more advanced GNU/Linux users who are familiar and comfortable with manually partitioning may wish to skip down to **[D: Select Packages](#D:_Select_Packages)** below.*
 
 **Note:** If you are installing to a USB flash key, see "[Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key")".
 
@@ -562,21 +562,21 @@ A disk partitioning scheme is a very personalized preference. Each user's choice
 
 Filesystem candidates for separate partitions include:
 
-**/** (root) _The root filesystem is the primary filesystem from which all other filesystems stem; the top of the hierarchy. All files and directories appear under the root directory "/", even if they are stored on different physical devices. The contents of the root filesystem must be adequate to boot, restore, recover, and/or repair the system. Therefore, certain directories under / are not themselves candidates for separate partitions. (See warning below)._
+**/** (root) *The root filesystem is the primary filesystem from which all other filesystems stem; the top of the hierarchy. All files and directories appear under the root directory "/", even if they are stored on different physical devices. The contents of the root filesystem must be adequate to boot, restore, recover, and/or repair the system. Therefore, certain directories under / are not themselves candidates for separate partitions. (See warning below).*
 
-**/boot** _This directory contains the kernel and ramdisk images as well as the bootloader configuration file, and bootloader stages. /boot also stores data that is used before the kernel begins executing userspace programs. This may include saved master boot sectors and sector map files. /boot is essential for booting, but is unique in that it may still be kept on its own separate partition (if required)._
+**/boot** *This directory contains the kernel and ramdisk images as well as the bootloader configuration file, and bootloader stages. /boot also stores data that is used before the kernel begins executing userspace programs. This may include saved master boot sectors and sector map files. /boot is essential for booting, but is unique in that it may still be kept on its own separate partition (if required).*
 
-**/home** _Provides subdirectories, each named for a system user, for miscellaneous personal data storage as well as user-specific configuration files for applications._
+**/home** *Provides subdirectories, each named for a system user, for miscellaneous personal data storage as well as user-specific configuration files for applications.*
 
-**/usr** _While root is the primary filesystem, /usr is the secondary hierarchy for all system users' data, including the majority of multi-user utilities and applications. /usr is shareable, read-only data. This means that /usr shall be shareable between various hosts and must not be written to, except in the case of system update/upgrade. Any information that is host-specific or varies with time is stored elsewhere._
+**/usr** *While root is the primary filesystem, /usr is the secondary hierarchy for all system users' data, including the majority of multi-user utilities and applications. /usr is shareable, read-only data. This means that /usr shall be shareable between various hosts and must not be written to, except in the case of system update/upgrade. Any information that is host-specific or varies with time is stored elsewhere.*
 
-**/tmp** _directory for programs that require temporary files such as '.lck' files, which can be used to prevent multiple instances of their respective program until a task is completed, at which point the '.lck' file will be removed. Programs must not assume that any files or directories in /tmp are preserved between invocations of the program and files and directories located under /tmp will typically be deleted whenever the system is booted._
+**/tmp** *directory for programs that require temporary files such as '.lck' files, which can be used to prevent multiple instances of their respective program until a task is completed, at which point the '.lck' file will be removed. Programs must not assume that any files or directories in /tmp are preserved between invocations of the program and files and directories located under /tmp will typically be deleted whenever the system is booted.*
 
-**/var** _contains variable data; spool directories and files, administrative and logging data, pacman's cache, the ABS tree, etc. /var exists in order to make it possible to mount /usr as read-only. Everything that historically went into /usr that is written to during system operation (as opposed to installation and software maintenance) must reside under /var._
+**/var** *contains variable data; spool directories and files, administrative and logging data, pacman's cache, the ABS tree, etc. /var exists in order to make it possible to mount /usr as read-only. Everything that historically went into /usr that is written to during system operation (as opposed to installation and software maintenance) must reside under /var.*
 
-**Warning:** Besides /boot, directories essential for booting are: '_**/bin', '/etc', '/lib', and '/sbin'. Therefore, they must not reside on a separate partition from /.**_
+**Warning:** Besides /boot, directories essential for booting are: '***/bin', '/etc', '/lib', and '/sbin'. Therefore, they must not reside on a separate partition from /.***
 
-_**There are several advantages for using discrete filesystems, rather than combining all into one partition**_:
+***There are several advantages for using discrete filesystems, rather than combining all into one partition***:
 
 *   Security: Each filesystem may be configured in /etc/fstab as 'nosuid', 'nodev', 'noexec', 'readonly', etc.
 *   Stability: A user, or malfunctioning program can completely fill a filesystem with garbage if they have write permissions for it. Critical programs, which reside on a different filesystem remain unaffected.
@@ -600,7 +600,7 @@ This question is best answered based upon individual needs. You may wish to simp
 
 *   An extra 25% of space added to each filesystem will provide a cushion for unforeseen occurrence, expansion, and serve as a preventive against fragmentation.
 
-_**From the guidelines above, the example system shall contain a ~15GB root (/) partition, ~10GB /var, 1GB swap, and a /home containing the remaining disk space.**_
+***From the guidelines above, the example system shall contain a ~15GB root (/) partition, ~10GB /var, 1GB swap, and a /home containing the remaining disk space.***
 
 ##### Create Partition:cfdisk
 
@@ -632,7 +632,7 @@ sda4               Primary     Linux                             140480 #/home
 
 Choose **W**rite and type '**yes'**. Beware that this operation may destroy data on your disk. Choose **Q**uit to leave the partitioner. Choose Done to leave this menu and continue with "Set Filesystem Mountpoints".
 
-**Note:** Since the latest developments of the Linux kernel which include the libata and PATA modules, all IDE, SATA and SCSI drives have adopted the sd_x_ naming scheme. This is perfectly normal and should not be a concern.
+**Note:** Since the latest developments of the Linux kernel which include the libata and PATA modules, all IDE, SATA and SCSI drives have adopted the sd*x* naming scheme. This is perfectly normal and should not be a concern.
 
 #### Set Filesystem Mountpoints
 
@@ -642,13 +642,13 @@ First you will be asked for your swap partition. Choose the appropriate partitio
 
 Again, a filesystem type is a very subjective matter which comes down to personal preference. Each has its own advantages, disadvantages, and unique idiosyncrasies. Here is a very brief overview of supported filesystems:
 
-1\. **ext2** _Second Extended Filesystem_- Old, reliable GNU/Linux filesystem. Very stable, but _without journaling support_. May be inconvenient for root (/) and /home, due to very long fsck's. _An ext2 filesystem can easily be converted to ext3._ Generally regarded as a good choice for /boot/.
+1\. **ext2** *Second Extended Filesystem*- Old, reliable GNU/Linux filesystem. Very stable, but *without journaling support*. May be inconvenient for root (/) and /home, due to very long fsck's. *An ext2 filesystem can easily be converted to ext3.* Generally regarded as a good choice for /boot/.
 
-2\. **ext3** _Third Extended Filesystem_- Essentially the ext2 system, but with journaling support. ext3 is backward compatible with ext2\. Extremely stable, mature, and by far the most widely used, supported and developed GNU/Linux FS.
+2\. **ext3** *Third Extended Filesystem*- Essentially the ext2 system, but with journaling support. ext3 is backward compatible with ext2\. Extremely stable, mature, and by far the most widely used, supported and developed GNU/Linux FS.
 
 **High Performance Filesystems:**
 
-3\. **ext4** _Fourth Extended Filesystem_- Backward compatible with ext2 and ext3\. Introduces support for volumes with sizes up to 1 exabyte and files with sizes up to 16 terabytes. Increases the 32,000 subdirectory limit in ext3 to 64,000\. Offers online defragmentation ability.
+3\. **ext4** *Fourth Extended Filesystem*- Backward compatible with ext2 and ext3\. Introduces support for volumes with sizes up to 1 exabyte and files with sizes up to 16 terabytes. Increases the 32,000 subdirectory limit in ext3 to 64,000\. Offers online defragmentation ability.
 
 4\. **ReiserFS** (V3)- Hans Reiser's high-performance journaling FS uses a very interesting method of data throughput based on an unconventional and creative algorithm. ReiserFS is touted as very fast, especially when dealing with many small files. ReiserFS is fast at formatting, yet comparatively slow at mounting. Quite mature and stable. ReiserFS is not actively developed at this time (Reiser4 is the new Reiser filesystem). Generally regarded as a good choice for /var/.
 
@@ -656,24 +656,23 @@ Again, a filesystem type is a very subjective matter which comes down to persona
 
 6\. **XFS** - Another early journaling filesystem originally developed by Silicon Graphics for the IRIX OS and ported to GNU/Linux. XFS offers very fast throughput on large files and large filesystems. Very fast at formatting and mounting. Generally benchmarked as slower with many small files, in comparison to other filesystems. XFS is very mature and offers online defragmentation ability.
 
-*   JFS and XFS filesystems cannot be _shrunk_ by disk utilities (such as gparted or parted magic)
+*   JFS and XFS filesystems cannot be *shrunk* by disk utilities (such as gparted or parted magic)
 
 ##### A note on Journaling
 
-All above filesystems, except ext2, utilize [journaling](https://en.wikipedia.org/wiki/Journaling_file_system "wikipedia:Journaling file system"). Journaling file systems are fault-resilient file systems that use a journal to log changes before they are committed to the file system to avoid metadata corruption in the event of a crash. Note that not all journaling techniques are alike; specifically, only ext3 and ext4 offer _data-mode journaling_, (though, not by default), which journals _both_ data _and_ meta-data (but with a significant speed penalty). The others only offer _ordered-mode journaling_, which journals meta-data only. While all will return your filesystem to a valid state after recovering from a crash, _data-mode journaling_ offers the greatest protection against file system corruption and data loss but can suffer from performance degradation, as all data is written twice (first to the journal, then to the disk). Depending upon how important your data is, this may be a consideration in choosing your filesystem type.
+All above filesystems, except ext2, utilize [journaling](https://en.wikipedia.org/wiki/Journaling_file_system "wikipedia:Journaling file system"). Journaling file systems are fault-resilient file systems that use a journal to log changes before they are committed to the file system to avoid metadata corruption in the event of a crash. Note that not all journaling techniques are alike; specifically, only ext3 and ext4 offer *data-mode journaling*, (though, not by default), which journals *both* data *and* meta-data (but with a significant speed penalty). The others only offer *ordered-mode journaling*, which journals meta-data only. While all will return your filesystem to a valid state after recovering from a crash, *data-mode journaling* offers the greatest protection against file system corruption and data loss but can suffer from performance degradation, as all data is written twice (first to the journal, then to the disk). Depending upon how important your data is, this may be a consideration in choosing your filesystem type.
 
-_**Moving on...**_
+***Moving on...***
 
 Choose and create the filesystem (format the partition) for / by selecting **yes**. You will now be prompted to add any additional partitions. In our example, sda2 and sda4 remain. For sda2, choose a filesystem type and mount it as /var. Finally, choose the filesystem type for sda4, and mount it as /home.
 
 **Note:** If you have not created and do not need a separate /boot partition, you may safely ignore the warning that it does not exist.
-
 Return to the main menu.
 
 ### D: Select Packages
 
 *   Core ISO: Choose CD as source and select the appropriate CD drive if more than one exist on the installation machine.
-*   Netinstall: Select an FTP/HTTP [mirror](https://www.archlinux.de/?page=MirrorStatus). _Note that archlinux.org is throttled to 50KB/s_.
+*   Netinstall: Select an FTP/HTTP [mirror](https://www.archlinux.de/?page=MirrorStatus). *Note that archlinux.org is throttled to 50KB/s*.
 *   All packages during installation are from the [core] repository. They are further divided into **Base**, and **Base-devel**.
 *   Package information and brief descriptions are available [here](https://www.archlinux.org/packages/?repo=Core&arch=i686&limit=all&sort=pkgname).
 
@@ -681,8 +680,8 @@ Package selection is split into two stages. First, select the package category:
 
 **Note:** For expedience, all packages in **base** are selected by default. Use the space-bar to select and de-select packages.
 
-*   **Base**: Packages from the [core] repo to provide the minimal base environment. _Always select it and only remove packages that will not be used._
-*   **Base-devel**: Extra tools from [core] such as **make**, and **automake**. _Most beginners should choose to install it, and will probably need it later._
+*   **Base**: Packages from the [core] repo to provide the minimal base environment. *Always select it and only remove packages that will not be used.*
+*   **Base-devel**: Extra tools from [core] such as **make**, and **automake**. *Most beginners should choose to install it, and will probably need it later.*
 
 After category selection, you will be presented with the full lists of packages, allowing you to fine-tune your selections. Use the space bar to select and unselect.
 
@@ -699,7 +698,7 @@ Next, choose 'Install Packages'. You will be asked if you wish to keep the packa
 
 ### F: Configure the System
 
-_Closely following and understanding these steps is of key importance to ensure a properly configured system._
+*Closely following and understanding these steps is of key importance to ensure a properly configured system.*
 
 *   At this stage of the installation, you will configure the primary configuration files of your Arch Linux base system.
 
@@ -707,17 +706,17 @@ _Closely following and understanding these steps is of key importance to ensure 
 
 Now you will be asked which text editor you want to use; choose [nano](/index.php/Nano "Nano"), [joe](http://joe-editor.sourceforge.net/) or [vi](/index.php/Vim "Vim"), (**nano** is generally considered easiest of the 3). You will be presented with a menu including the main configuration files for your system.
 
-**Note:** _It is very important at this point to edit, or at least verify by opening, every configuration file._ The installer script relies on your input to create these files on your installation. A common error is to skip over these critical steps of configuration.
+**Note:** *It is very important at this point to edit, or at least verify by opening, every configuration file.* The installer script relies on your input to create these files on your installation. A common error is to skip over these critical steps of configuration.
 
 ##### Can the installer handle this more automatically?
 
-Hiding the process of system configuration is in direct opposition to _**[The Arch Way](/index.php/The_Arch_Way "The Arch Way")**_. While it is true that recent versions of the kernel and hardware probing tools offer excellent hardware support and auto-configuration, Arch presents the user all pertinent configuration files during installation for the purposes of _transparency and system resource control_. By the time you have finished modifying these files to your specifications, you will have learned the simple method of manual Arch Linux system configuration and become more familiar with the base structure, leaving you better prepared to use and maintain your new installation productively.
+Hiding the process of system configuration is in direct opposition to ***[The Arch Way](/index.php/The_Arch_Way "The Arch Way")***. While it is true that recent versions of the kernel and hardware probing tools offer excellent hardware support and auto-configuration, Arch presents the user all pertinent configuration files during installation for the purposes of *transparency and system resource control*. By the time you have finished modifying these files to your specifications, you will have learned the simple method of manual Arch Linux system configuration and become more familiar with the base structure, leaving you better prepared to use and maintain your new installation productively.
 
-_**Moving on...**_
+***Moving on...***
 
 #### /etc/rc.conf
 
-Arch Linux uses the file `/etc/rc.conf` as the principal location for system configuration. This one file contains a wide range of configuration information, principally used at system startup. As its name directly implies, it also contains settings for and invokes the /etc/rc* files, and is, of course, sourced _by_ these files.
+Arch Linux uses the file `/etc/rc.conf` as the principal location for system configuration. This one file contains a wide range of configuration information, principally used at system startup. As its name directly implies, it also contains settings for and invokes the /etc/rc* files, and is, of course, sourced *by* these files.
 
 ##### LOCALIZATION section
 
@@ -761,7 +760,7 @@ MODULES=(!net-pf-10 !snd_pcsp !pcspkr loop)
 ##### NETWORKING Section
 
 *   **HOSTNAME**=:Set your HOSTNAME to your liking.
-*   **eth0**=: 'Ethernet, card 0'. Adjust the interface IP address, netmask and broadcast address _if_ you are using **static IP**. Set eth0="dhcp" if you want to use **DHCP**
+*   **eth0**=: 'Ethernet, card 0'. Adjust the interface IP address, netmask and broadcast address *if* you are using **static IP**. Set eth0="dhcp" if you want to use **DHCP**
 *   **INTERFACES**=: Specify all interfaces here. Multiple interfaces should be separated with a space as in:
 
 ```
@@ -831,9 +830,9 @@ DAEMONS=(network @syslog-ng netfs @crond)
 
 ###### About DAEMONS
 
-The [daemons](/index.php/Daemons "Daemons") line need not be changed at this time, but it is useful to explain what daemons are, as they will be addressed later in this guide. A _daemon_ is a program that runs in the background, waiting for events to occur and offering services. A good example is a webserver that waits for a request to deliver a page (e.g.:httpd) or an SSH server waiting for a user login (e.g.:sshd). While these are full-featured applications, there are also daemons whose work is not that visible. Examples are a daemon which writes messages into a log file (e.g. syslog, metalog), a daemon which lowers the CPU frequency if the system has nothing to do (e.g.:cpufreq), and a daemon which provides a graphical login (e.g.: gdm, kdm). All these programs can be added to the daemons line and will be started when the system boots. Useful daemons will be presented during this guide.
+The [daemons](/index.php/Daemons "Daemons") line need not be changed at this time, but it is useful to explain what daemons are, as they will be addressed later in this guide. A *daemon* is a program that runs in the background, waiting for events to occur and offering services. A good example is a webserver that waits for a request to deliver a page (e.g.:httpd) or an SSH server waiting for a user login (e.g.:sshd). While these are full-featured applications, there are also daemons whose work is not that visible. Examples are a daemon which writes messages into a log file (e.g. syslog, metalog), a daemon which lowers the CPU frequency if the system has nothing to do (e.g.:cpufreq), and a daemon which provides a graphical login (e.g.: gdm, kdm). All these programs can be added to the daemons line and will be started when the system boots. Useful daemons will be presented during this guide.
 
-Historically, the term _daemon_ was coined by the programmers of MIT's Project MAC. They took the name from _Maxwell's demon_, an imaginary being from a famous thought experiment that constantly works in the background, sorting molecules. <tt>UNIX</tt> systems inherited this terminology and created the backronym **d**isk **a**nd **e**xecution **mon**itor.
+Historically, the term *daemon* was coined by the programmers of MIT's Project MAC. They took the name from *Maxwell's demon*, an imaginary being from a famous thought experiment that constantly works in the background, sorting molecules. <tt>UNIX</tt> systems inherited this terminology and created the backronym **d**isk **a**nd **e**xecution **mon**itor.
 
 **Tip:** All Arch daemons reside under /etc/rc.d/
 
@@ -861,7 +860,7 @@ none                   /dev/shm     tmpfs         defaults                      
 
 *   **<file system>**: describes the block device or remote filesystem to be mounted. For regular mounts, this field will contain a link to a block device node (as created by mknod which is called by udev at boot) for the device to be mounted; for instance, '/dev/cdrom' or '/dev/sda1'.
 
-**Note:** If your system has more than one hard drive, the installer will default to using UUID rather than the sd_x_ naming scheme, for consistent device mapping. Due to active developments in the kernel and also udev, the ordering in which drivers for storage controllers are loaded may change randomly, yielding an unbootable system/kernel panic. Nearly every motherboard has several controllers (onboard SATA, onboard IDE), and due to the aforementioned development updates, /dev/sda may become /dev/sdb on the next reboot. (See [this wiki article](/index.php/Persistent_block_device_naming "Persistent block device naming") for more information on persistent block device naming. )
+**Note:** If your system has more than one hard drive, the installer will default to using UUID rather than the sd*x* naming scheme, for consistent device mapping. Due to active developments in the kernel and also udev, the ordering in which drivers for storage controllers are loaded may change randomly, yielding an unbootable system/kernel panic. Nearly every motherboard has several controllers (onboard SATA, onboard IDE), and due to the aforementioned development updates, /dev/sda may become /dev/sdb on the next reboot. (See [this wiki article](/index.php/Persistent_block_device_naming "Persistent block device naming") for more information on persistent block device naming. )
 
 *   **<dir>**: describes the mount point for the filesystem. For swap partitions, this field should be specified as 'swap'; (Swap partitions are not actually mounted.)
 
@@ -869,7 +868,7 @@ none                   /dev/shm     tmpfs         defaults                      
 
 *   **<options>**: describes the mount options associated with the filesystem. It is formatted as a comma separated list of options with no intervening spaces. It contains at least the type of mount plus any additional options appropriate to the filesystem type. For documentation on the available options for non-nfs file systems, see mount(8).
 
-*   **<dump>**: used by the dump(8) command to determine which filesystems are to be dumped. dump is a backup utility. If the fifth field is not present, a value of zero is returned and dump will assume that the filesystem does not need to be backed up. _Note that dump is not installed by default._
+*   **<dump>**: used by the dump(8) command to determine which filesystems are to be dumped. dump is a backup utility. If the fifth field is not present, a value of zero is returned and dump will assume that the filesystem does not need to be backed up. *Note that dump is not installed by default.*
 
 *   **<pass>**: used by the fsck(8) program to determine the order in which filesystem checks are done at boot time. The root filesystem should be specified with a <pass> of 1, and other filesystems should have a <pass> of 2 or 0\. Filesystems within a drive will be checked sequentially, but filesystems on different drives will be checked at the same time to utilize parallelism available in the hardware. If the sixth field is not present or zero, a value of zero is returned and fsck will assume that the filesystem does not need to be checked.
 
@@ -879,7 +878,7 @@ Expanded information available in the [Fstab](/index.php/Fstab "Fstab") wiki ent
 
 #### **[/etc/mkinitcpio](/index.php/Configuring_mkinitcpio "Configuring mkinitcpio").conf**
 
-_Most users will not need to modify this file at this time, but please read the following explanatory information._
+*Most users will not need to modify this file at this time, but please read the following explanatory information.*
 
 This file allows further fine-tuning of the initial ram filesystem, or initramfs, (also historically referred to as the initial ramdisk or "initrd") for your system. The initramfs is a gzipped image that is read by the kernel during boot. The purpose of the initramfs is to bootstrap the system to the point where it can access the root filesystem. This means it has to load any modules that are required for devices like IDE, SCSI, or SATA drives (or USB/FW, if you are booting from a USB/FW drive). Once the initrramfs loads the proper modules, either manually or through udev, it passes control to the kernel and your boot continues. For this reason, the initramfs only needs to contain the modules necessary to access the root filesystem. It does not need to contain every module you would ever want to use. The majority of common kernel modules will be loaded later on by udev, during the init process.
 
@@ -906,15 +905,15 @@ If you need support for booting from USB devices, FireWire devices, PCMCIA devic
 
 If doing a CF or SD card install, you may need to add the `usbinput` HOOK for your system to boot properly.
 
-_If you are using a US keyboard, and have no need for any of the above HOOKS, editing this configuration should be unnecessary at this point._
+*If you are using a US keyboard, and have no need for any of the above HOOKS, editing this configuration should be unnecessary at this point.*
 
 **mkinitcpio** is an Arch innovation developed by Aaron Griffin and Tobias Powalowski with some help from the community.
 
 #### /etc/resolv.conf (for Static IP)
 
-The _resolver_ is a set of routines in the C library that provide access to the Internet Domain Name System (DNS). One of the main functions of DNS is to translate domain names into IP addresses, to make the Web a friendlier place. The resolver configuration file, or /etc/resolv.conf, contains information that is read by the resolver routines the first time they are invoked by a process.
+The *resolver* is a set of routines in the C library that provide access to the Internet Domain Name System (DNS). One of the main functions of DNS is to translate domain names into IP addresses, to make the Web a friendlier place. The resolver configuration file, or /etc/resolv.conf, contains information that is read by the resolver routines the first time they are invoked by a process.
 
-*   _If you are using DHCP, you may safely ignore this file, as by default, it will be dynamically created and destroyed by the dhcpcd daemon. You may change this default behavior if you wish. (See [Network](/index.php/Network#For_DHCP_IP "Network")])._
+*   *If you are using DHCP, you may safely ignore this file, as by default, it will be dynamically created and destroyed by the dhcpcd daemon. You may change this default behavior if you wish. (See [Network](/index.php/Network#For_DHCP_IP "Network")]).*
 
 If you use a static IP, set your DNS servers in /etc/resolv.conf (nameserver <ip-address>). You may have as many as you wish. An example, using OpenDNS:
 
@@ -942,38 +941,34 @@ This file associates IP addresses with hostnames and aliases, one line per IP ad
 
 ```
 
-Add your _hostname_, coinciding with the one specified in /etc/rc.conf, as an alias, so that it looks like this:
+Add your *hostname*, coinciding with the one specified in /etc/rc.conf, as an alias, so that it looks like this:
 
 ```
-127.0.0.1   localhost.localdomain   localhost _**yourhostname**_
+127.0.0.1   localhost.localdomain   localhost ***yourhostname***
 
 ```
 
-**Note:** _This format, **including the 'localhost' and your actual host name**, is required for program compatibility! So, if you have named your computer "arch", then that line above should look like this:_
-
+**Note:** *This format, **including the 'localhost' and your actual host name**, is required for program compatibility! So, if you have named your computer "arch", then that line above should look like this:*
 ```
 127.0.0.1   localhost.localdomain   localhost arch
 
 ```
-
 Errors in this entry may cause poor network performance and/or certain programs to open very slowly, or not work at all. This is a very common error for beginners.
 
 If you use a static IP, add another line using the syntax: <static-IP> <hostname.domainname.org> <hostname> e.g.:
 
 ```
-192.168.1.100 _**yourhostname**_.domain.org  _**yourhostname**_
+192.168.1.100 ***yourhostname***.domain.org  ***yourhostname***
 
 ```
 
 **Tip:** For convenience, you may also use /etc/hosts aliases for hosts on your network, and/or on the Web, e.g.:
-
 ```
 64.233.169.103   www.google.com   g
 192.168.1.90   media
 192.168.1.88   data
 
 ```
-
 The above example would allow you to access google simply by typing 'g' into your browser, and access to a media and data server on your network by name and without the need for typing out their respective IP addresses.
 
 #### /etc/hosts.deny and /etc/hosts.allow
@@ -1026,13 +1021,13 @@ en_US.UTF-8
 
 The installer will now run the locale-gen script, which will generate the locales you specified. You may change your locale in the future by editing /etc/locale.gen and subsequently running 'locale-gen' as root.
 
-**Note:** _**If you fail to choose your locale, this will lead to a "The current locale is invalid..." error. This is perhaps the most common mistake by new Arch users, and also leads to the most commonly asked questions on the forum.**_
+**Note:** ***If you fail to choose your locale, this will lead to a "The current locale is invalid..." error. This is perhaps the most common mistake by new Arch users, and also leads to the most commonly asked questions on the forum.***
 
 #### Pacman-Mirror
 
 Choose a mirror repository for **pacman**.
 
-*   _archlinux.org is throttled, limiting downloads to 50KB/s_
+*   *archlinux.org is throttled, limiting downloads to 50KB/s*
 
 #### Root password
 
@@ -1049,14 +1044,14 @@ For BIOS systems, several boot loaders are available, see [Boot loaders](/index.
 
 ##### Syslinux
 
-If you opted for a GUID partition table (GPT) for your hard drive earlier, you need to install the [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package now for the installation of _syslinux_ to work:
+If you opted for a GUID partition table (GPT) for your hard drive earlier, you need to install the [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package now for the installation of *syslinux* to work:
 
 ```
 # pacman -S gptfdisk
 
 ```
 
-Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package and then use the `syslinux-install_update` script to automatically _install_ the bootloader (`-i`), mark the partition _active_ by setting the boot flag (`-a`), and install the _MBR_ boot code (`-m`):
+Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package and then use the `syslinux-install_update` script to automatically *install* the bootloader (`-i`), mark the partition *active* by setting the boot flag (`-a`), and install the *MBR* boot code (`-m`):
 
 ```
 # pacman -S syslinux
@@ -1067,7 +1062,6 @@ Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) packag
 After installing Syslinux, configure `syslinux.cfg` to point to the right root partition. This step is vital. If it points to the wrong partition, Arch Linux will not boot. Change `/dev/sda3` to reflect your root partition (if you partitioned your drive as in [the example](#Prepare_the_storage_drive), your root partition is `/dev/sda1`).
 
  `# nano /boot/syslinux/syslinux.cfg` 
-
 ```
 ...
 LABEL arch
@@ -1076,7 +1070,7 @@ LABEL arch
         ...
 ```
 
-If adding [UUID](/index.php/UUID "UUID") rather than partition number the syntax is `APPEND root=UUID=_partition_uuid_ rw`.
+If adding [UUID](/index.php/UUID "UUID") rather than partition number the syntax is `APPEND root=UUID=*partition_uuid* rw`.
 
 Do the same for the fallback entry.
 
@@ -1094,7 +1088,7 @@ Install the [grub](https://www.archlinux.org/packages/?name=grub) package and th
 
 **Note:**
 
-*   Change `/dev/sda` to reflect the drive you installed Arch on. Do not append a partition number (do not use `sda_X_`).
+*   Change `/dev/sda` to reflect the drive you installed Arch on. Do not append a partition number (do not use `sda*X*`).
 *   For GPT-partitioned drives on BIOS motherboards, you also need a "BIOS Boot Partition". See [GPT-specific instructions](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") in the GRUB page.
 *   A sample `/boot/grub/grub.cfg` gets installed as part of the [grub](https://www.archlinux.org/packages/?name=grub) package, and subsequent `grub-*` commands may not over-write it. Ensure that your intended changes are in `grub.cfg`, rather than in `grub.cfg.new` or some such file.
 
@@ -1142,7 +1136,6 @@ Install the [gummiboot](https://www.archlinux.org/packages/?name=gummiboot) pack
 You will need to manually create a configuration file to add an entry for Arch Linux to the gummiboot manager. Create `/boot/loader/entries/arch.conf` and add the following contents, replacing `/dev/sdaX` with your **root** partition, usually `/dev/sda2`:
 
  `# nano /boot/loader/entries/arch.conf` 
-
 ```
 title          Arch Linux
 linux          /vmlinuz-linux
@@ -1164,7 +1157,7 @@ Install the [grub](https://www.archlinux.org/packages/?name=grub) and [efibootmg
 
 Next, while using a manually created `grub.cfg` is absolutely fine, it is recommended that beginners automatically generate one:
 
-**Tip:** To automatically search for other operating systems on your computer, install [os-prober](https://www.archlinux.org/packages/?name=os-prober) before running the next command. However _os-prober_ is not known to properly detect UEFI OSes.
+**Tip:** To automatically search for other operating systems on your computer, install [os-prober](https://www.archlinux.org/packages/?name=os-prober) before running the next command. However *os-prober* is not known to properly detect UEFI OSes.
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
@@ -1198,7 +1191,7 @@ Login with the root account. We will configure pacman and update the system as r
 
 ### Step 1: Configuring the network (if necessary)
 
-*   _This section will assist you in configuring most types of networks, if your network configuration is not working for you._
+*   *This section will assist you in configuring most types of networks, if your network configuration is not working for you.*
 
 If you properly configured your system, you should have a working network. Try to ping www.google.com to verify this.
 
@@ -1207,7 +1200,7 @@ If you properly configured your system, you should have a working network. Try t
 
 ```
 
-_If you have successfully established a network connection, continue with **[Update, Sync, and Upgrade the system with pacman](#Step_2:_Update.2C_Sync.2C_and_Upgrade_the_system_with_pacman)**._
+*If you have successfully established a network connection, continue with **[Update, Sync, and Upgrade the system with pacman](#Step_2:_Update.2C_Sync.2C_and_Upgrade_the_system_with_pacman)**.*
 
 If, after trying to ping www.google.com, an "unknown host" error is received, you may conclude that your network is not properly configured. You may choose to double-check the following files for integrity and proper settings:
 
@@ -1278,28 +1271,28 @@ If this is working, adjust /etc/rc.conf as described above, for dynamic IP.
 **Note:** If you get this error message: `SIOCSIFFLAGS: No such file or directory` it most certainly means your wireless chipset requires a firmware to function, which you forgot to install during package selection. See [Does the Wireless Chipset require Firmware?](/index.php/Beginners%27_guide#Does_the_Wireless_Chipset_require_Firmware.3F "Beginners' guide") and [Select Packages](/index.php/Beginners%27_guide#D:_Select_Packages "Beginners' guide").
 
 *   Associate your wireless device with the access point you want to use. Depending on the encryption (none, WEP, or WPA), the procedure may differ. You need to know the name of the chosen wireless network (ESSID), e.g. 'linksys' in the following examples:
-*   An example using a _non-encrypted_ network:
+*   An example using a *non-encrypted* network:
 
 ```
 # iwconfig wlan0 essid "linksys"
 
 ```
 
-*   An example using _WEP and a hexadecimal key_:
+*   An example using *WEP and a hexadecimal key*:
 
 ```
 # iwconfig wlan0 essid "linksys" key 0241baf34c
 
 ```
 
-*   An example using _WEP and an ASCII passphrase_:
+*   An example using *WEP and an ASCII passphrase*:
 
 ```
 # iwconfig wlan0 essid "linksys" key s:pass1
 
 ```
 
-*   Using _WPA_, the procedure requires a bit more work. Check [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") for more information and troubleshooting:
+*   Using *WPA*, the procedure requires a bit more work. Check [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") for more information and troubleshooting:
 
 ```
 # wpa_passphrase linksys "secretpassphrase" > /etc/wpa_supplicant.conf
@@ -1406,7 +1399,7 @@ Now we will update the system using [pacman](/index.php/Pacman "Pacman").
 
 #### What is pacman ?
 
-[Pacman](/index.php/Pacman "Pacman") is the **pac**kage **man**ager of Arch Linux. Pacman is written in _C_ and is designed from the ground up to be lightweight, to occupy a very modest memory footprint, and to be fast, simple, and versatile. It manages your entire package system and handles installation, removal, package downgrade (through cache), custom compiled package handling, automatic dependency resolution, remote and local searches and much more. Pacman's output is streamlined, very readable and provides ETA for each package download. Arch uses pkg.tar.gz tarballs and is in the process of moving to the pkg.tar.xz format.
+[Pacman](/index.php/Pacman "Pacman") is the **pac**kage **man**ager of Arch Linux. Pacman is written in *C* and is designed from the ground up to be lightweight, to occupy a very modest memory footprint, and to be fast, simple, and versatile. It manages your entire package system and handles installation, removal, package downgrade (through cache), custom compiled package handling, automatic dependency resolution, remote and local searches and much more. Pacman's output is streamlined, very readable and provides ETA for each package download. Arch uses pkg.tar.gz tarballs and is in the process of moving to the pkg.tar.xz format.
 
 Pacman will now be used to download software packages from remote repositories and install them onto your system.
 
@@ -1421,7 +1414,7 @@ The simple principle behind [core] is to provide only one of each necessary tool
 *   Developer maintained
 *   All binary packages
 *   pacman accessible
-*   _The Core installation media simply contains an installer script, and a snapshot of the core repository at the time of release._
+*   *The Core installation media simply contains an installer script, and a snapshot of the core repository at the time of release.*
 
 **[extra]**
 
@@ -1449,7 +1442,7 @@ The [testing] repository contains packages that are candidates for the [core] or
 
 **[community]**
 
-The [community] repository is maintained by the _Trusted Users (TUs)_ and is simply the binary branch of the _Arch User Repository ([AUR](/index.php/AUR "AUR"))_. It contains binary packages which originated as PKGBUILDs from _AUR_ [unsupported] that have acquired enough votes and were adopted by a _TU_. Like all repos listed above, [community] may be readily accessed by pacman.
+The [community] repository is maintained by the *Trusted Users (TUs)* and is simply the binary branch of the *Arch User Repository ([AUR](/index.php/AUR "AUR"))*. It contains binary packages which originated as PKGBUILDs from *AUR* [unsupported] that have acquired enough votes and were adopted by a *TU*. Like all repos listed above, [community] may be readily accessed by pacman.
 
 *   TU maintained
 *   All binary packages
@@ -1461,9 +1454,9 @@ The **[AUR](/index.php/AUR "AUR")** also contains the **unsupported** branch, wh
 
 *   TU maintained
 *   All PKGBUILD bash build scripts
-*   _**Not**_ pacman accessible by default
+*   ***Not*** pacman accessible by default
 
-* pacman wrappers (_**[AUR helpers](/index.php/AUR_helpers "AUR helpers")**_) can help you seamlessly access AUR.
+* pacman wrappers (***[AUR helpers](/index.php/AUR_helpers "AUR helpers")***) can help you seamlessly access AUR.
 
 **/etc/pacman.conf**
 
@@ -1558,7 +1551,7 @@ Include = /etc/pacman.d/mirrorlist
 
 Enable all desired repositories (remove the # in front of the 'Include =' and '[repository]' lines).
 
-*   **_When choosing repos, be sure to uncomment both the repository header lines in [brackets] as well as the 'Include =' lines. Failure to do so will result in the selected repository being omitted! This is a very common error._**
+*   ***When choosing repos, be sure to uncomment both the repository header lines in [brackets] as well as the 'Include =' lines. Failure to do so will result in the selected repository being omitted! This is a very common error.***
 
 #### /etc/pacman.d/mirrorlist
 
@@ -1577,7 +1570,7 @@ Issue the following command:
 
 ```
 
-Passing two --refresh or -y flags forces pacman to refresh all package lists even if they are considered to be up to date. Issuing pacman -Syy _whenever a mirror is changed_, is good practice and will avoid possible headaches.
+Passing two --refresh or -y flags forces pacman to refresh all package lists even if they are considered to be up to date. Issuing pacman -Syy *whenever a mirror is changed*, is good practice and will avoid possible headaches.
 
 Use pacman to install python:
 
@@ -1586,7 +1579,7 @@ Use pacman to install python:
 
 ```
 
-*   **_If you get an error at this step, use the command "nano /etc/pacman.d/mirrorlist" and uncomment a server that suits you._**
+*   ***If you get an error at this step, use the command "nano /etc/pacman.d/mirrorlist" and uncomment a server that suits you.***
 
 **cd** to the /etc/pacman.d/ directory:
 
@@ -1707,7 +1700,7 @@ For more information see the [Network Time Protocol](/index.php/Network_Time_Pro
 
 ### Step 4: Add a user and setup groups
 
-<tt>UNIX</tt> is a multi-user environment. You should not do your everyday work using the root account. It is more than poor practice; it is dangerous. Root is for administrative tasks. Instead, add a normal, non-root user account using the `/usr/sbin/adduser` program, an interactive user adding program which will prompt you for the relevant data (see details below) _(recommended for beginners)_:
+<tt>UNIX</tt> is a multi-user environment. You should not do your everyday work using the root account. It is more than poor practice; it is dangerous. Root is for administrative tasks. Instead, add a normal, non-root user account using the `/usr/sbin/adduser` program, an interactive user adding program which will prompt you for the relevant data (see details below) *(recommended for beginners)*:
 
 ```
 # adduser
@@ -1723,8 +1716,8 @@ Alternatively, you may use `useradd`
 
 ```
 
-*   **-m** Creates user home directory as /home/**username**. Within their home directory, a user can write files, delete them, install programs, etc. Users' home directories shall contain their data and personal configuration files, the so-called 'dot files' (their name is preceded by a dot), which are 'hidden'. (To view dotfiles, enable the appropriate option in your file manager or run ls with the -a switch.) If there is a conflict between _user_ (under /home/username) and _global_ configuration files, (usually under /etc/) the settings in the _user_ file will prevail. Dotfiles likely to be altered by the end user include .xinitrc and .bashrc files. The configuration files for xinit and Bash respectively. They allow the user the ability to change the window manager to be started upon login and also aliases, user-specified commands and environment variables respectively. When a user is created, their dotfiles shall be taken from the /etc/skel directory where system sample files reside.
-*   **-G** A list of supplementary groups which the user is also a member of. _Each group is separated from the next by a comma, with no intervening spaces_. The default is for the user to belong only to the initial group (users).
+*   **-m** Creates user home directory as /home/**username**. Within their home directory, a user can write files, delete them, install programs, etc. Users' home directories shall contain their data and personal configuration files, the so-called 'dot files' (their name is preceded by a dot), which are 'hidden'. (To view dotfiles, enable the appropriate option in your file manager or run ls with the -a switch.) If there is a conflict between *user* (under /home/username) and *global* configuration files, (usually under /etc/) the settings in the *user* file will prevail. Dotfiles likely to be altered by the end user include .xinitrc and .bashrc files. The configuration files for xinit and Bash respectively. They allow the user the ability to change the window manager to be started upon login and also aliases, user-specified commands and environment variables respectively. When a user is created, their dotfiles shall be taken from the /etc/skel directory where system sample files reside.
+*   **-G** A list of supplementary groups which the user is also a member of. *Each group is separated from the next by a comma, with no intervening spaces*. The default is for the user to belong only to the initial group (users).
 *   **-s** The path and filename of the user´s default login shell. Arch Linux init scripts use Bash. After the boot process is complete, the default login shell is user-specified. (Ensure the chosen shell package is installed if choosing something other than Bash).
 
 Useful groups for your non-root user include:
@@ -1800,7 +1793,7 @@ If you are comfortable using vi, issue the visudo command without the EDITOR=nan
 
 This will open the file /etc/sudoers in a special session of vi. visudo copies the file to be edited to a temporary file, edits it with an editor, (vi by default), and subsequently runs a sanity check. If it passes, the temporary file overwrites the original with the correct permissions.
 
-**Warning:** Do not edit /etc/sudoers directly with an editor; Errors in syntax can cause annoyances (like rendering the root account unusable). You must use the _visudo_ command to edit /etc/sudoers.
+**Warning:** Do not edit /etc/sudoers directly with an editor; Errors in syntax can cause annoyances (like rendering the root account unusable). You must use the *visudo* command to edit /etc/sudoers.
 
 To give the user full root privileges when he/she precedes a command with "sudo", add the following line:
 
@@ -1860,14 +1853,14 @@ Also, you may want to install the alsa-oss package, which wraps applications wri
 Did you add your normal user to the audio group? If not, use `/usr/bin/gpasswd`. As root do:
 
 ```
-# gpasswd -a _yourusername_ audio
+# gpasswd -a *yourusername* audio
 
 ```
 
-As _**normal, non-root**_ user, invoke `/usr/bin/alsamixer`:
+As ***normal, non-root*** user, invoke `/usr/bin/alsamixer`:
 
 ```
-# su - _yourusername_ 
+# su - *yourusername* 
 **$** alsamixer
 
 ```
@@ -1896,7 +1889,7 @@ Switch back to root user and store these settings using `/usr/sbin/alsactl` :
 
 This will create the file '/etc/asound.state', saving the alsamixer settings.
 
-Also, add the alsa _daemon_ to your DAEMONS section in /etc/rc.conf to automatically restore the mixer settings at boot.
+Also, add the alsa *daemon* to your DAEMONS section in /etc/rc.conf to automatically restore the mixer settings at boot.
 
 ```
 # nano /etc/rc.conf
@@ -1914,7 +1907,7 @@ See [Xorg](/index.php/Xorg "Xorg").
 
 ### Step 3: Configure X (Optional)
 
-**Note:** Since X11R7.2 the X.Org X Server features autoconfiguration. Therefore, it can function without an xorg.conf file in many cases. _If_ the autoconfiguration _works satisfactorily_ and you do not need to specify special features such as aiglx, compositing and so forth, you may forgo creating an xorg.conf file and continue below with [Input hotplugging](#B:_Input_hotplugging).
+**Note:** Since X11R7.2 the X.Org X Server features autoconfiguration. Therefore, it can function without an xorg.conf file in many cases. *If* the autoconfiguration *works satisfactorily* and you do not need to specify special features such as aiglx, compositing and so forth, you may forgo creating an xorg.conf file and continue below with [Input hotplugging](#B:_Input_hotplugging).
 
 #### B: Input hotplugging
 
@@ -2010,16 +2003,16 @@ First, read the warning about input hotplugging in the previous section. At this
 
 ##### Prepare for the test by configuring ~/.xinitrc
 
-One of the main functions of this file is to dictate what **X** Window client is invoked with the **/usr/bin/startx** and/or **/usr/bin/xinit** program _on a per-user basis_. (The **startx** script is merely a front end to the more versatile **xinit** command.) There are vast amounts of additional configurable specifications and commands that may also be added to ~/[.xinitrc](/index.php/.xinitrc ".xinitrc") as you further customize your system.
+One of the main functions of this file is to dictate what **X** Window client is invoked with the **/usr/bin/startx** and/or **/usr/bin/xinit** program *on a per-user basis*. (The **startx** script is merely a front end to the more versatile **xinit** command.) There are vast amounts of additional configurable specifications and commands that may also be added to ~/[.xinitrc](/index.php/.xinitrc ".xinitrc") as you further customize your system.
 
-**Note:** **[.xinitrc](/index.php/.xinitrc ".xinitrc")** is a so-called 'dot' (.) file. Files in a UNIX filesystem which are preceded with a dot (.) are 'hidden', and will not show up with a regular 'ls' command, usually for the sake of keeping directories tidy. Dot files may be seen by issuing **ls -a**. The 'rc' denotes _Run Commands_ and simply indicates that it is a configuration file. Since it controls how a program runs, it is (although historically incorrect) also said to stand for "Run Control".
+**Note:** **[.xinitrc](/index.php/.xinitrc ".xinitrc")** is a so-called 'dot' (.) file. Files in a UNIX filesystem which are preceded with a dot (.) are 'hidden', and will not show up with a regular 'ls' command, usually for the sake of keeping directories tidy. Dot files may be seen by issuing **ls -a**. The 'rc' denotes *Run Commands* and simply indicates that it is a configuration file. Since it controls how a program runs, it is (although historically incorrect) also said to stand for "Run Control".
 
 **startx/xinit** will start the **X** server and clients. To determine the client to run, **startx/xinit** will first look to parse a [.xinitrc](/index.php/.xinitrc ".xinitrc") file in the user's home directory. In the absence of file ~/[.xinitrc](/index.php/.xinitrc ".xinitrc"), it defaults to the global xinitrc in the xinit library directory; /etc/X11/xinit/xinitrc, which defaults to using the TWM window manager. (Hence, if you invoke startx without a ~/[.xinitrc](/index.php/.xinitrc ".xinitrc") file, a TWM session will start.) Further details in the [.xinitrc](/index.php/.xinitrc ".xinitrc") wiki entry.
 
-Switch to your _**normal, non-root**_ user:
+Switch to your ***normal, non-root*** user:
 
 ```
-# su - _yourusername_
+# su - *yourusername*
 
 ```
 
@@ -2063,7 +2056,7 @@ exec xterm
 
 ```
 
-**Note:** _Be sure to have only **one** uncommented **exec** line in ~/.xinitrc_ for now.
+**Note:** *Be sure to have only **one** uncommented **exec** line in ~/.xinitrc* for now.
 
 Below, we shall edit this file again to specify the appropriate desktop environment/window manager of your choice.
 
@@ -2208,7 +2201,7 @@ or
 
 ```
 
-_**Still having trouble? Detailed instructions are in the [Xorg](/index.php/Xorg "Xorg") article.**_
+***Still having trouble? Detailed instructions are in the [Xorg](/index.php/Xorg "Xorg") article.***
 
 ##### Need Help?
 
@@ -2235,11 +2228,11 @@ $ wgetpaste </path/to/file>
 
 Post the corresponding links given within your forum post. Be sure to provide appropriate hardware and driver information as well.
 
-**Warning:** _**It is very important to provide detail when troubleshooting X. Please provide all pertinent information as detailed above when asking for assistance on the Arch forums.**_
+**Warning:** ***It is very important to provide detail when troubleshooting X. Please provide all pertinent information as detailed above when asking for assistance on the Arch forums.***
 
 ## Part IV: Installing and configuring a Desktop Environment
 
-While The **X** Window System provides the basic framework for building a _graphical user interface_ (GUI), a **Desktop Environment** (DE), works atop and in conjunction with **X**, to provide a completely functional and dynamic GUI. A DE typically provides a window manager, icons, applets, windows, toolbars, folders, wallpapers, a suite of applications and abilities like drag and drop. The particular functionalities and designs of each DE will uniquely affect your overall environment and experience. Therefore, choosing a DE is a very subjective and personal decision. Choose the best environment for _your_ needs.
+While The **X** Window System provides the basic framework for building a *graphical user interface* (GUI), a **Desktop Environment** (DE), works atop and in conjunction with **X**, to provide a completely functional and dynamic GUI. A DE typically provides a window manager, icons, applets, windows, toolbars, folders, wallpapers, a suite of applications and abilities like drag and drop. The particular functionalities and designs of each DE will uniquely affect your overall environment and experience. Therefore, choosing a DE is a very subjective and personal decision. Choose the best environment for *your* needs.
 
 If you desire a lighter, less demanding GUI to configure manually, you may choose to simply install a **Window Manager**, or WM. A WM controls the placement and appearance of application windows in conjunction with the X Window System but does NOT include such features as panels, applets, icons, applications, etc., by default.
 
@@ -2346,7 +2339,6 @@ Recall from above that a daemon is a program that runs in the background, waitin
 Some users prefer to use the **hal** daemon. The **hal** daemon, among other things, will assist in automating the mounting of disks, optical drives, and USB drives/thumbdrives for use in the GUI. The hal package is installed as a dependency along with GNOME, but must be invoked to become useful.
 
 **Warning:** The FAM (File Alteration Monitor) daemon is obsolete; use [Gamin](/index.php/Gamin "Gamin") instead, if possible. Gamin is a re-implementation of the FAM specification. It is newer, more actively maintained, and simpler to utilize:
-
 ```
 # pacman -S gamin
 
@@ -2368,7 +2360,7 @@ Start hal:
 
 ```
 
-Add the desired daemons to your /etc/rc.conf DAEMONS section, so they will be invoked at boot (Note that gamin is _not_ to be added to the DAEMONS array):
+Add the desired daemons to your /etc/rc.conf DAEMONS section, so they will be invoked at boot (Note that gamin is *not* to be added to the DAEMONS array):
 
 ```
 # nano /etc/rc.conf
@@ -2471,7 +2463,7 @@ Install the whole Desktop Environment:
 
 ```
 
-_or_
+*or*
 
 ```
 # pacman -S kde-meta
@@ -2641,7 +2633,7 @@ If you wish to install one, see [Display manager](/index.php/Display_manager "Di
 
 ##### About LXDE
 
-LXDE, (for _L_ightweight _X_11 _D_esktop _E_nvironment), is a new project focused on providing a modern desktop environment which aims to be lightweight, fast, intuitive and functional while keeping system resource usage low. LXDE is quite different from other desktop environments, since each component of LXDE is a discrete and independent application, and each can be easily substituted by other programs. This modular design eliminates all unnecessary dependencies and provides more flexibility. Details and screenshots available at: [http://lxde.org/](http://lxde.org/)
+LXDE, (for *L*ightweight *X*11 *D*esktop *E*nvironment), is a new project focused on providing a modern desktop environment which aims to be lightweight, fast, intuitive and functional while keeping system resource usage low. LXDE is quite different from other desktop environments, since each component of LXDE is a discrete and independent application, and each can be easily substituted by other programs. This modular design eliminates all unnecessary dependencies and provides more flexibility. Details and screenshots available at: [http://lxde.org/](http://lxde.org/)
 
 LXDE provides:
 
@@ -2675,7 +2667,7 @@ exec startlxde
 
 ```
 
-to your ~/.xinitrc and start with _startx_ or _xinit_
+to your ~/.xinitrc and start with *startx* or *xinit*
 
 **Tip:** Further information available at the [LXDE](/index.php/LXDE "LXDE") wiki article.
 
@@ -2728,7 +2720,7 @@ Additional configuration tools are also available, if desired:
 Once openbox is installed you will get a message to move menu.xml & rc.xml to ~/.config/openbox/ in your home directory:
 
 ```
-# su - _yourusername_
+# su - *yourusername*
 $ mkdir -p ~/.config/openbox/
 $ cp /etc/xdg/openbox/rc.xml ~/.config/openbox/
 $ cp /etc/xdg/openbox/menu.xml ~/.config/openbox/

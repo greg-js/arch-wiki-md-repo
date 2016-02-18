@@ -21,11 +21,11 @@
 
 ## 配置
 
-When `dnscrypt-proxy.socket` is [enabled](/index.php/Enable "Enable"), _dnscrypt-proxy_ accepts incoming requests on `127.0.0.1:53` to a DNS resolver. The default DNS resolver for `dnscrypt-proxy.service` is _dnscrypt.eu-nl_. Compatible resolver names are visible in the first column of `/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv`.
+When `dnscrypt-proxy.socket` is [enabled](/index.php/Enable "Enable"), *dnscrypt-proxy* accepts incoming requests on `127.0.0.1:53` to a DNS resolver. The default DNS resolver for `dnscrypt-proxy.service` is *dnscrypt.eu-nl*. Compatible resolver names are visible in the first column of `/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv`.
 
 To change the default, [edit](/index.php/Systemd#Editing_provided_unit_files "Systemd") `dnscrypt-proxy.service`. It is recommended to choose a provider close to your location.
 
-Modify the [resolv.conf](/index.php/Resolv.conf "Resolv.conf") file and replace the current set of resolver addresses with _localhost_:
+Modify the [resolv.conf](/index.php/Resolv.conf "Resolv.conf") file and replace the current set of resolver addresses with *localhost*:
 
 ```
 nameserver 127.0.0.1
@@ -40,10 +40,9 @@ Other programs may overwrite this setting; 参阅 [resolv.conf#Preserve DNS sett
 
 It is recommended to run DNSCrypt as a forwarder for a local DNS cache, otherwise every single query will make a round-trip to the upstream resolver. Any local DNS caching program should work, examples below show configuration for [Unbound](/index.php/Unbound "Unbound"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), and [pdnsd](/index.php/Pdnsd "Pdnsd").
 
-First configure _dnscrypt-proxy_ to listen on a port different from the default `53`, since the DNS cache needs to listen on `53` and query _dnscrypt-proxy_ on a different port. Port number `40` is used as an example in this section:
+First configure *dnscrypt-proxy* to listen on a port different from the default `53`, since the DNS cache needs to listen on `53` and query *dnscrypt-proxy* on a different port. Port number `40` is used as an example in this section:
 
  `# systemctl edit dnscrypt-proxy.socket` 
-
 ```
 [Socket]
 ListenStream=
@@ -52,9 +51,9 @@ ListenStream=127.0.0.1:40
 ListenDatagram=127.0.0.1:40
 ```
 
-**Note:** The `ListenStream` and `ListenDatagram` options need to be cleared with empty assignment before overriding, otherwise the new address would be _added_ to the list of sockets. See [systemd#Editing provided unit files](/index.php/Systemd#Editing_provided_unit_files "Systemd") for details.
+**Note:** The `ListenStream` and `ListenDatagram` options need to be cleared with empty assignment before overriding, otherwise the new address would be *added* to the list of sockets. See [systemd#Editing provided unit files](/index.php/Systemd#Editing_provided_unit_files "Systemd") for details.
 
-Then restart `dnscrypt-proxy.socket` and _stop_ `dnscrypt-proxy.service` if already running to let it be started by the _.socket_ unit.
+Then restart `dnscrypt-proxy.socket` and *stop* `dnscrypt-proxy.service` if already running to let it be started by the *.socket* unit.
 
 #### 示例: 配置 Unbound
 
@@ -68,7 +67,7 @@ forward-zone:
 
 ```
 
-**Tip:** If you are setting up a server, add `interface: 0.0.0.0@53` and `access-control: _your-network_/_subnet-mask_ allow` inside the `server:` section so that the other computers can connect to the server. A client must be configured with `nameserver _address-of-your-server_` in `/etc/resolv.conf`.
+**Tip:** If you are setting up a server, add `interface: 0.0.0.0@53` and `access-control: *your-network*/*subnet-mask* allow` inside the `server:` section so that the other computers can connect to the server. A client must be configured with `nameserver *address-of-your-server*` in `/etc/resolv.conf`.
 
 重启 `unbound.service` 以应用更改。
 
@@ -77,7 +76,6 @@ forward-zone:
 配置 dnsmasq作为 [本地DNS缓存](/index.php/Dnsmasq#DNS_Cache_Setup "Dnsmasq"), 基本配置工作在DNSCrypt:
 
  `/etc/dnsmasq.conf` 
-
 ```
 no-resolv
 server=127.0.0.1#40
@@ -95,7 +93,6 @@ listen-address=127.0.0.1
 安装[pdnsd](/index.php/Pdnsd "Pdnsd"). 基本配置工作在DNSCrypt:
 
  `/etc/pdnsd.conf` 
-
 ```
 global {
 	perm_cache=16384;
@@ -149,7 +146,7 @@ options edns0
 
 ```
 
-You may also wish to add the following argument to _dnscrypt-proxy_:
+You may also wish to add the following argument to *dnscrypt-proxy*:
 
 ```
 --edns-payload-size=<bytes>
@@ -160,7 +157,7 @@ The default size being **1252** bytes, with values up to **4096** bytes being pu
 
 #### 测试 EDNS0
 
-Make use of the [DNS Reply Size Test Server](https://www.dns-oarc.net/oarc/services/replysizetest), use the _dig_ command line tool from the [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) package to issue a TXT query for the name _rs.dns-oarc.net_:
+Make use of the [DNS Reply Size Test Server](https://www.dns-oarc.net/oarc/services/replysizetest), use the *dig* command line tool from the [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) package to issue a TXT query for the name *rs.dns-oarc.net*:
 
 ```
 $ dig +short rs.dns-oarc.net txt

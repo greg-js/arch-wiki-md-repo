@@ -34,7 +34,6 @@ Main configuration file is `/etc/opendkim.conf`
 *   Copy/move the sample configuration file `/etc/opendkim/opendkim.conf.sample` to `/etc/opendkim/opendkim.conf` and change the following options:
 
  `/etc/opendkim/opendkim.conf` 
-
 ```
 Domain                  example.com
 KeyFile                 /path/to/keys/server1.private
@@ -101,7 +100,6 @@ submission inet n       -       n       -       -       smtpd
 Edit the `sendmail.mc` file and add the following line, **after the last line** starting with `FEATURE`:
 
  `/etc/mail/sendmail.mc` 
-
 ```
 
 INPUT_MAIL_FILTER(`opendkim', `S=inet:8891@localhost')
@@ -181,14 +179,11 @@ The default configuration for the OpenDKIM daemon is less than ideal from a secu
 The following configurations files will fix most of those issues (assuming you're using Postfix) and drop some unnecessary options in the systemd service unit:
 
  `/etc/tmpfiles.d/opendkim.conf` 
-
 ```
 D /run/opendkim 0750 opendkim postfix
 
 ```
-
  `/etc/opendkim/opendkim.conf` 
-
 ```
 BaseDirectory           /var/lib/opendkim
 Domain                  example.com
@@ -200,9 +195,7 @@ TemporaryDirectory      /run/opendkim
 UMask                   002
 
 ```
-
  `/etc/systemd/system/opendkim.service` 
-
 ```
 [Unit]
 Description=OpenDKIM daemon
@@ -222,7 +215,6 @@ WantedBy=multi-user.target
 Edit `/etc/postfix/main.cf` accordingly to make Postfix listen to this unix socket:
 
  `/etc/postfix/main.cf` 
-
 ```
 smtpd_milters = unix:/run/opendkim/opendkim.sock
 non_smtpd_milters = unix:/run/opendkim/opendkim.sock

@@ -28,11 +28,11 @@ The exported storage entity is the **target** and the importing entity is the **
 
 LIO target is included in the kernel since 2.6.38\. However, the iSCSI target fabric is included since linux 3.1.
 
-The important kernel modules are _target_core_mod_ and _iscsi_target_mod_, which should be in the kernel and loaded automatically.
+The important kernel modules are *target_core_mod* and *iscsi_target_mod*, which should be in the kernel and loaded automatically.
 
-It is highly recommended to use the free branch versions of the packages: [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/), [python-rtslib-fb](https://aur.archlinux.org/packages/python-rtslib-fb/) and [python-configshell-fb](https://aur.archlinux.org/packages/python-configshell-fb/). The original [targetcli](https://aur.archlinux.org/packages/targetcli/) is also available but has a different way of saving the configuration using the deprecated _lio-utils_ and depends on _epydoc_.
+It is highly recommended to use the free branch versions of the packages: [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/), [python-rtslib-fb](https://aur.archlinux.org/packages/python-rtslib-fb/) and [python-configshell-fb](https://aur.archlinux.org/packages/python-configshell-fb/). The original [targetcli](https://aur.archlinux.org/packages/targetcli/) is also available but has a different way of saving the configuration using the deprecated *lio-utils* and depends on *epydoc*.
 
-A systemd `target.service` is included in [python-rtslib-fb](https://aur.archlinux.org/packages/python-rtslib-fb/) when you use the free branch and a `/etc/rc.d/target` in [lio-utils](https://aur.archlinux.org/packages/lio-utils/) when you use the original _targetcli_ or _lio-utils_ directly.
+A systemd `target.service` is included in [python-rtslib-fb](https://aur.archlinux.org/packages/python-rtslib-fb/) when you use the free branch and a `/etc/rc.d/target` in [lio-utils](https://aur.archlinux.org/packages/lio-utils/) when you use the original *targetcli* or *lio-utils* directly.
 
 You start LIO target with `# systemctl start target` 
 
@@ -44,14 +44,13 @@ You can use **targetcli** to create the whole configuration or you can alternati
 
 ### Using targetcli
 
-The external manual is only available in the _free branch_. [targetd](https://github.com/agrover/targetd) is not in AUR yet, but this depends on the free branch.
+The external manual is only available in the *free branch*. [targetd](https://github.com/agrover/targetd) is not in AUR yet, but this depends on the free branch.
 
 The config shell creates most names and numbers for you automatically, but you can also provide your own settings. At any point in the shell you can type `help` in order to see what commands you can issue here.
 
 **Tip:** You can use tab-completion in this shell
 
 **Tip:** You can type `cd` in this shell to view & select paths
-
 After starting the target (see above) you enter the configuration shell with `# targetcli` 
 
 In this shell you include a block device (here: `/dev/disk/by-id/md-name-nas:iscsi`) to use with
@@ -62,9 +61,7 @@ In this shell you include a block device (here: `/dev/disk/by-id/md-name-nas:isc
 ```
 
 **Note:** You can use any block device, also raid and lvm devices. You can also use files when you go to fileio instead of block.
-
 You then create an iSCSI Qualified Name (iqn) and a target portal group (tpg) with
-
 ```
 ...> cd /iscsi
 /iscsi> create
@@ -72,7 +69,7 @@ You then create an iSCSI Qualified Name (iqn) and a target portal group (tpg) wi
 
 **Note:** With appending an iqn of your choice to `create` you can keep targetcli from automatically creating an iqn
 
-In order to tell LIO that your block device should get used as _backstore_ for the target you issue
+In order to tell LIO that your block device should get used as *backstore* for the target you issue
 
 **Note:** Remember that you can type `cd` to select the path of your <iqn>/tpg1
 
@@ -81,7 +78,7 @@ In order to tell LIO that your block device should get used as _backstore_ for t
 .../tpg1/luns> create /backstores/block/md_block0
 ```
 
-Then you need to create a _portal_, making a daemon listen for incoming connections:
+Then you need to create a *portal*, making a daemon listen for incoming connections:
 
 ```
 .../luns/lun0> cd ../../portals
@@ -155,13 +152,13 @@ You have to install [lio-utils](https://aur.archlinux.org/packages/lio-utils/) f
 
 ### Tips & Tricks
 
-*   With `targetcli sessions` you can list the current open sessions. This command is included in the [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/) package, but not in _lio-utils_ or the original _targetcli_.
+*   With `targetcli sessions` you can list the current open sessions. This command is included in the [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/) package, but not in *lio-utils* or the original *targetcli*.
 
 ### Upstream Documentation
 
 *   [targetcli](http://www.linux-iscsi.org/wiki/Targetcli)
 *   [LIO utils](http://www.linux-iscsi.org/wiki/Lio-utils_HOWTO)
-*   You can also use `man targetcli` when you installed the _free branch_ version [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/).
+*   You can also use `man targetcli` when you installed the *free branch* version [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/).
 
 ## Setup with SCSI Target Framework (STGT/TGT)
 

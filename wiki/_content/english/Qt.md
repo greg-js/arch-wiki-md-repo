@@ -1,4 +1,4 @@
-[Qt](http://qt-project.org/) is a cross-platform application and widget toolkit that uses standard C++ but makes extensive use of a special code generator (called the [Meta Object Compiler](http://qt-project.org/doc/qt-4.8/moc.html), or _moc_) together with several macros to enrich the language. Some of its more important features include:
+[Qt](http://qt-project.org/) is a cross-platform application and widget toolkit that uses standard C++ but makes extensive use of a special code generator (called the [Meta Object Compiler](http://qt-project.org/doc/qt-4.8/moc.html), or *moc*) together with several macros to enrich the language. Some of its more important features include:
 
 *   Running on the major desktop platforms and some of the mobile platforms.
 *   Extensive internationalization support.
@@ -46,7 +46,7 @@ Two versions of Qt are currently available in the [official repositories](/index
 *   **Qt 4.x** is available in the [qt4](https://www.archlinux.org/packages/?name=qt4) package, with documentation on AUR in the [qt4-doc](https://aur.archlinux.org/packages/qt4-doc/) package.
 *   **Qt 3.x** is available from the AUR in the [qt3](https://aur.archlinux.org/packages/qt3/) package, with documentation on AUR in the [qt3-doc](https://aur.archlinux.org/packages/qt3-doc/) package.
 
-**Warning:** Qt packages do not provide the usual bins (e.g. _qmake_) in `/usr/bin` anymore. Instead `-qt5`, `-qt4` and `-qt3` symlinks are provided (e.g. `qmake-qt5`, `qmake-qt4`, `qmake-qt3`). This may cause compilation failures in Qt3/4 applications. To install usual bins, see [#Default Qt toolkit](#Default_Qt_toolkit) section.
+**Warning:** Qt packages do not provide the usual bins (e.g. *qmake*) in `/usr/bin` anymore. Instead `-qt5`, `-qt4` and `-qt3` symlinks are provided (e.g. `qmake-qt5`, `qmake-qt4`, `qmake-qt3`). This may cause compilation failures in Qt3/4 applications. To install usual bins, see [#Default Qt toolkit](#Default_Qt_toolkit) section.
 
 ### Qt5 Platform Plugins and Missing Dependencies
 
@@ -63,7 +63,7 @@ The Qt5 page proposes a [list of packages](http://doc.qt.io/qt-5/linux-requireme
 
 ## Default Qt toolkit
 
-By installing [qtchooser](https://www.archlinux.org/packages/?name=qtchooser) you can restore the usual bins (e.g. _qmake_) in `/usr/bin` and setup the Qt toolkit to use. By default Qt5 is used.
+By installing [qtchooser](https://www.archlinux.org/packages/?name=qtchooser) you can restore the usual bins (e.g. *qmake*) in `/usr/bin` and setup the Qt toolkit to use. By default Qt5 is used.
 
 ### Using environment variables
 
@@ -71,7 +71,7 @@ To define default Qt toolkit, you can create `QT_SELECT` [environment variable](
 
 ### Using configuration files
 
-You can set default Qt toolkit by creating a symlink `~/.config/qtchooser/default.conf` to one of _.conf_ files in `/etc/xdg/qtchooser/` directory. For example, to set Qt4 symlink `/etc/xdg/qtchooser/4.conf` to `~/.config/qtchooser/default.conf`:
+You can set default Qt toolkit by creating a symlink `~/.config/qtchooser/default.conf` to one of *.conf* files in `/etc/xdg/qtchooser/` directory. For example, to set Qt4 symlink `/etc/xdg/qtchooser/4.conf` to `~/.config/qtchooser/default.conf`:
 
 ```
 $ ln -s `/etc/xdg/qtchooser/4.conf` `~/.config/qtchooser/default.conf`
@@ -84,20 +84,19 @@ $ ln -s `/etc/xdg/qtchooser/4.conf` `~/.config/qtchooser/default.conf`
 
 Qt4 application will try to mimic the behavior of the desktop environment they are running on, unless they run into some problems or hard-coded settings.
 
-*   In KDE Plasma, it uses the actually selected Qt style. It can be configured using _KDE System Settings_ (_systemsettings5_), the settings can be found in _Appearance > Application Style > Widget Style_.
+*   In KDE Plasma, it uses the actually selected Qt style. It can be configured using *KDE System Settings* (*systemsettings5*), the settings can be found in *Appearance > Application Style > Widget Style*.
 *   In Cinnamon, GNOME, Xfce, it uses GTK+ ([QGtkStyle](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications")).
 *   In other desktop environments, it uses Windows.
 
-For those who want to change the look and feel of Qt4 application, the _Qt Configuration_ (_qtconfig-qt4_) GUI tool is available. It offers a very simple configuration for the appearance of Qt4 applications that gives the user easy access to the current Qt Style, colors, fonts and other more advanced options.
+For those who want to change the look and feel of Qt4 application, the *Qt Configuration* (*qtconfig-qt4*) GUI tool is available. It offers a very simple configuration for the appearance of Qt4 applications that gives the user easy access to the current Qt Style, colors, fonts and other more advanced options.
 
-**Note:** If you use _GTK+_ style, then color and font settings will be ignored, and inherited from GTK+ 2.
+**Note:** If you use *GTK+* style, then color and font settings will be ignored, and inherited from GTK+ 2.
 
 Qt keeps all its configuration information in `/etc/xdg/Trolltech.conf` (system-wide) or `~/.config/Trolltech.conf` (user-specific). The file is rather difficult to navigate because it contains a lot of information not related to appearance, but for any changes you can just add to the end of the file and overwrite any previous values (make sure to add your modification under the [Qt] header).
 
 For example, to change the theme to QtCurve, add:
 
  `~/.config/Trolltech.conf` 
-
 ```
 ...
 [Qt]
@@ -105,7 +104,7 @@ style=QtCurve
 
 ```
 
-The following styles are included in Qt4: _CDE_, _Cleanlooks_, _GTK+_, _Motif_, _Plastique_, _Windows_. Others can be installed from the official repositories or the [AUR](/index.php/AUR "AUR") (most are written for KDE Plasma Desktop):
+The following styles are included in Qt4: *CDE*, *Cleanlooks*, *GTK+*, *Motif*, *Plastique*, *Windows*. Others can be installed from the official repositories or the [AUR](/index.php/AUR "AUR") (most are written for KDE Plasma Desktop):
 
 *   **Breeze** — Artwork, styles and assets for the Breeze visual style for the Plasma Desktop.
 
@@ -127,13 +126,13 @@ The following styles are included in Qt4: _CDE_, _Cleanlooks_, _GTK+_, _Motif_, 
 
 Qt5 decides the style to use based on what desktop environment is used:
 
-*   In KDE Plasma, it uses the actually selected Qt style. It can be configured using _KDE System Settings_ (_systemsettings5_), the settings can be found in _Appearance > Application Style > Widget Style_.
+*   In KDE Plasma, it uses the actually selected Qt style. It can be configured using *KDE System Settings* (*systemsettings5*), the settings can be found in *Appearance > Application Style > Widget Style*.
 *   In Cinnamon, GNOME, MATE, LXDE, Xfce, it uses GTK+ ([QGtkStyle](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications")).
 *   In other desktop environments, it uses Fusion.
 
 To force a specific style, you can set the `QT_STYLE_OVERRIDE` environment variable. Specifically, set it to `GTK+` if you want to use the gtk theme. Qt5 applications also support the `-style` flag, which you can use to launch a Qt5 application with a specific style.
 
-The following styles are included in Qt5: _GTK+_, _Fusion_, _Windows_. Others can be installed from the official repositories:
+The following styles are included in Qt5: *GTK+*, *Fusion*, *Windows*. Others can be installed from the official repositories:
 
 *   **Breeze** — Artwork, styles and assets for the Breeze visual style for the Plasma Desktop.
 
@@ -160,7 +159,7 @@ An interesting way of customizing the look and feel of a Qt application is using
 To run an application with a different style just execute:
 
 ```
-$ qt_application -stylesheet _style.qss_
+$ qt_application -stylesheet *style.qss*
 
 ```
 
@@ -198,7 +197,7 @@ The following are official Qt tools:
 
 	[http://qt-project.org/doc/qt-4.8/linguist-manual.html](http://qt-project.org/doc/qt-4.8/linguist-manual.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
 
-*   **Qt Assistant** — A configurable and redistributable documentation reader for Qt _qch_ files.
+*   **Qt Assistant** — A configurable and redistributable documentation reader for Qt *qch* files.
 
 	[http://qt-project.org/doc/qt-4.8/assistant-manual.html](http://qt-project.org/doc/qt-4.8/assistant-manual.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
 
@@ -218,7 +217,7 @@ The following are official Qt tools:
 
 	[https://qt-project.org/doc/qt-4.8/qmake-manual.html](https://qt-project.org/doc/qt-4.8/qmake-manual.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
 
-*   **uic** — A tool that reads _*.ui_ XML files and generates the corresponding C++ files.
+*   **uic** — A tool that reads **.ui* XML files and generates the corresponding C++ files.
 
 	[http://qt-project.org/doc/qt-4.8/uic.html](http://qt-project.org/doc/qt-4.8/uic.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
 
@@ -248,7 +247,6 @@ The following examples display a small 'Hello world!' message in a window.
 *   Run with: `./hello`
 
  `hello.cpp` 
-
 ```
 #include <QApplication>
 #include <QLabel>
@@ -271,7 +269,6 @@ int main(int argc, char **argv)
 *   Run with: `qmlviewer-qt4 hello.qml` or `qmlscene-qt5 hello.qml`
 
  `hello.qml` 
-
 ```
 import QtQuick 1.0
 
@@ -305,7 +302,6 @@ Rectangle {
 *   Run with: `python hello-pyqt.py` or `python2 hello-pyqt.py`.
 
  `hello-pyqt.py` 
-
 ```
 import sys
 from PyQt4 import QtGui
@@ -321,7 +317,6 @@ sys.exit(app.exec_())
 The Qt 5.x version is slighly different:
 
  `hello-pyqt.py` 
-
 ```
 import sys
 from PyQt5 import QtWidgets
@@ -343,7 +338,6 @@ sys.exit(app.exec_())
 *   Run with: `python hello-pyside.py` or `python2 hello-pyside.py`
 
  `hello-pyside.py` 
-
 ```
 import sys
 from PySide.QtCore import *
@@ -365,7 +359,6 @@ sys.exit(app.exec_())
 *   Run with: `mono hello.exe`
 
  `hello.cs` 
-
 ```
 using System;
 using Qyoto;
@@ -388,7 +381,6 @@ public class Hello {
 *   Run with: `ruby hello.rb`
 
  `hello.rb` 
-
 ```
 require 'Qt4'
 
@@ -408,7 +400,6 @@ app.exec
 *   Run with: `java -cp /opt/qtjambi-beta/qtjambi-linux64-community-4.7.0/qtjambi-4.7.0.jar:. Hello`.
 
  `Hello.java` 
-
 ```
 import com.trolltech.qt.gui.*;
 
@@ -435,7 +426,6 @@ public class Hello
 *   Run with: `perl hello.pl`
 
  `hello.pl` 
-
 ```
 use QtGui4;
 
@@ -454,7 +444,6 @@ exit $a->exec;
 *   Run with: `qtlua hello.lua`
 
  `hello.lua` 
-
 ```
 label = qt.new_widget("QLabel")
 

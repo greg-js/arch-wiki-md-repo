@@ -2,7 +2,7 @@ LXDE є відкритим середовищем робочого столу, �
 
 З [LXDE.org | Легке середовище робочого столу X11 (LXDE)](http://lxde.org/):
 
-	_The "Lightweight X11 Desktop Environment" is an extremely fast-performing and energy-saving desktop environment. Maintained by an international community of developers, it comes with a beautiful interface, multi-language support, standard keyboard short cuts and additional features like tabbed file browsing. LXDE uses less CPU and less RAM than other environments. It is especially designed for cloud computers with low hardware specifications, such as, netbooks, mobile devices (e.g. MIDs) or older computers._
+	*The "Lightweight X11 Desktop Environment" is an extremely fast-performing and energy-saving desktop environment. Maintained by an international community of developers, it comes with a beautiful interface, multi-language support, standard keyboard short cuts and additional features like tabbed file browsing. LXDE uses less CPU and less RAM than other environments. It is especially designed for cloud computers with low hardware specifications, such as, netbooks, mobile devices (e.g. MIDs) or older computers.*
 
 ## Contents
 
@@ -166,7 +166,6 @@ $ ln -s /usr/share/applications/lxterminal.desktop ~/.config/autostart/
 Наступний метод полягає у використанні файлу `~/.config/lxsession/LXDE/autostart`. Цей файл не є shell-скриптом, однак в кожній стрічці вказана команда для запуску, якщо ж команда починається з символу @, то тоді вона буде перезапущена у випадку краху. Наприклад, для запуску lxterminal і leafpad автоматично при запуску сесії:
 
  `~/.config/lxsession/LXDE/autostart` 
-
 ```
 @lxterminal
 @leafpad
@@ -204,7 +203,6 @@ A basic way is to add the cursor to the default theme. First you will need to ma
 Then you can specify to add to the icon theme the cursor. This will use the [xcursor-bluecurve](https://www.archlinux.org/packages/?name=xcursor-bluecurve) pointer theme:
 
  `/usr/share/icons/default/index.theme` 
-
 ```
 [icon theme]
 Inherits=Bluecurve

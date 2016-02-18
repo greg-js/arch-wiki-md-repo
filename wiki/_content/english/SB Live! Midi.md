@@ -1,4 +1,4 @@
-_SB Live!_ uses a wavetable synthesizer for its MIDI output. Therefore, in order to get MIDI output you need to load the SoundFont banks into the card. This is done by the `asfxload` utility from `awesfx` package.
+*SB Live!* uses a wavetable synthesizer for its MIDI output. Therefore, in order to get MIDI output you need to load the SoundFont banks into the card. This is done by the `asfxload` utility from `awesfx` package.
 
 ## Contents
 
@@ -13,7 +13,7 @@ _SB Live!_ uses a wavetable synthesizer for its MIDI output. Therefore, in order
 
 Copy the SoundFont files from your SB Live driver CD somewhere on your hdd. On the SB Live! Value CD, they are named: `2GMGSMT.SF2`, `4GMGSMT.SF2` and `8MBGMSFX.SF2`.
 
-Load the bank by executing `asfxload _bankfile_`. See `man sfxload` for more advanced options. Some users have reported that `snd_emu10k1_synth` needs to be preloaded in order for this to work.
+Load the bank by executing `asfxload *bankfile*`. See `man sfxload` for more advanced options. Some users have reported that `snd_emu10k1_synth` needs to be preloaded in order for this to work.
 
 ## Configuration
 
@@ -23,13 +23,13 @@ The bank names (at least for SB Live! Value) correspond to their respective size
 
 ### Automating
 
-Put `asfxload _fullbankfilepathname_` into `/etc/rc.local`.
+Put `asfxload *fullbankfilepathname*` into `/etc/rc.local`.
 
 It should be sfxload, not asfxload. You might also need to modprobe snd-seq-oss. The line to put in /etc/rc.local that I have is:
 
 ```
-sfxload -D _n_ /usr/share/sounds/sf2/CT4MGM.SF2
+sfxload -D *n* /usr/share/sounds/sf2/CT4MGM.SF2
 
 ```
 
-_n_ is the number of sound cards. 0 is first sound card, 1 second and so on.
+*n* is the number of sound cards. 0 is first sound card, 1 second and so on.

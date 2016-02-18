@@ -29,7 +29,7 @@ Most of the article can also be applied to eeepc-models which are similar to the
 
 ## Install tips for the Asus Eee PC
 
-This wiki page supplements these pages: **[Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")**, the **[Official Install Guide](/index.php/Installation_guide "Installation guide")**, and **[Installing Arch Linux on the Asus EEE PC](/index.php/Installing_Arch_Linux_on_the_Asus_EEE_PC "Installing Arch Linux on the Asus EEE PC")**. Please refer to those guides _first_ before following the eeepc-specific pointers on this page.
+This wiki page supplements these pages: **[Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")**, the **[Official Install Guide](/index.php/Installation_guide "Installation guide")**, and **[Installing Arch Linux on the Asus EEE PC](/index.php/Installing_Arch_Linux_on_the_Asus_EEE_PC "Installing Arch Linux on the Asus EEE PC")**. Please refer to those guides *first* before following the eeepc-specific pointers on this page.
 
 Most of this information is from the Arch Forum EEE 901 [thread](https://bbs.archlinux.org/viewtopic.php?id=53464). Consult this thread, and other resources on the Arch forum, for more details and discussion.
 
@@ -97,7 +97,6 @@ For more general information about building custom Arch Linux kernels, see [Kern
 To support the devices listed below, make sure the module `eeepc_laptop` is loaded on boot using `modules.d` directory:
 
  `/etc/modules-load.d/eeepc_laptop` 
-
 ```
 eeepc_laptop
 
@@ -170,9 +169,9 @@ This will enable all the `Fn + xx` keys and the four silver hotkey buttons butto
 
 #### Option 2: configure the stock kernel ACPI features
 
-Enable the ASUS_LAPTOP (_Device Drivers > Misc Devices_) switch in your kernel config and turn off ACPI_ASUS switch (_Power managment options > ACPI_).
+Enable the ASUS_LAPTOP (*Device Drivers > Misc Devices*) switch in your kernel config and turn off ACPI_ASUS switch (*Power managment options > ACPI*).
 
-To enable the FN keys, the WLAN and Camera on/off toggles, etc., activate the EEEPC_LAPTOP switch also (_Device Drivers > Misc Devices_).
+To enable the FN keys, the WLAN and Camera on/off toggles, etc., activate the EEEPC_LAPTOP switch also (*Device Drivers > Misc Devices*).
 
 You can use Robertek's PKGBUILD and files for **acpi-www901** at [http://robertek.brevnov.net/files/linux/arch/acpi-eee901/](http://robertek.brevnov.net/files/linux/arch/acpi-eee901/) as a base to incorporate the stock kernel modules and ASUS OSD into the ACPI system.
 
@@ -414,7 +413,6 @@ Speedstep is included by default in the Linux 2.6.x kernel.
 The **zen-eee901** kernels contain the Speedstep modules. Create a proper module file in `/etc/module.d` to load `acpi-cpufreq` at boot:
 
  `/etc/module.d/acpi-cpufreq.conf` 
-
 ```
 acpi-cpufreq
 

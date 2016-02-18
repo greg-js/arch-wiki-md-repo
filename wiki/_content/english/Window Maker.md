@@ -48,7 +48,7 @@ Run the Window Maker settings installation program to setup the default settings
 
 ### Graphically
 
-Select the _windowmaker_ session from the display manager's session menu.
+Select the *windowmaker* session from the display manager's session menu.
 
 ### Manually
 
@@ -125,13 +125,13 @@ Styles can also be edited by using the Preferences Utility application.
 
 Window maker allows keyboard shortcuts to be assigned both to window manager actions and to menu entries.
 
-To assign a keyboard shortcut to a window manager action, start the WPrefs application and navigate to the _Keyboard Shortcut Preferences_ tab. Choose an action, click the _Capture_ button and hit the desired keyboard combination. Then hit _Save_.
+To assign a keyboard shortcut to a window manager action, start the WPrefs application and navigate to the *Keyboard Shortcut Preferences* tab. Choose an action, click the *Capture* button and hit the desired keyboard combination. Then hit *Save*.
 
-You can also assign keyboard shortcuts to menu entries. For instance, if one were using GNOME Screensaver to lock the screen, one could create a Lock Screen menu entry with the command `gnome-screensaver-command --lock`. To then assign a keyboard shortcut to this menu entry, start the WPrefs application and navigate to the _Application Menu Definition_ tab. In the root menu that appears on screen, click on the Lock Screen entry. In the Wprefs window, click the _Capture_ button, hit the desired keyboard combination and then click _Save_.
+You can also assign keyboard shortcuts to menu entries. For instance, if one were using GNOME Screensaver to lock the screen, one could create a Lock Screen menu entry with the command `gnome-screensaver-command --lock`. To then assign a keyboard shortcut to this menu entry, start the WPrefs application and navigate to the *Application Menu Definition* tab. In the root menu that appears on screen, click on the Lock Screen entry. In the Wprefs window, click the *Capture* button, hit the desired keyboard combination and then click *Save*.
 
 ### Background
 
-To use an image as a background in Window Maker, copy the image to the `~/GNUstep/Library/WindowMaker/Backgrounds` directory. Then, from the root menu, select _Appearance_ -> _Background_ -> _Images_ -> _image-name_.
+To use an image as a background in Window Maker, copy the image to the `~/GNUstep/Library/WindowMaker/Backgrounds` directory. Then, from the root menu, select *Appearance* -> *Background* -> *Images* -> *image-name*.
 
 Alternatively, you could use a standalone background setter such as [Nitrogen](/index.php/Nitrogen "Nitrogen").
 
@@ -174,7 +174,7 @@ But also there are some easy ways, too:
 
 *   [wmsystray](https://aur.archlinux.org/packages/wmsystray/) : which practically do the job for you.
 *   [wmsystemtray](https://aur.archlinux.org/packages/wmsystemtray/) : The same but with no border and it suppose to work nicely on other desktops too.
-*   [Peksystray](https://aur.archlinux.org/packages/Peksystray/) : which is a small system tray (also called notification tray) designed for all the light window managers _supporting docking_.
+*   [Peksystray](https://aur.archlinux.org/packages/Peksystray/) : which is a small system tray (also called notification tray) designed for all the light window managers *supporting docking*.
 
 Peksystray provides a window where icons will automatically add up depending on the requests from the applications. Both the size of the window and the size of the icons can be selected by the user. If the window is full, it can automatically display another window in order to display more icons.
 
@@ -182,7 +182,7 @@ Peksystray provides a window where icons will automatically add up depending on 
 
 ### Removing unwanted application icons
 
-For some applications, you may not want Window Maker to display an application icon or appicon. To disable the appicon for an application, right click on the application's titlebar and choose _Attributes..._ and from the drop down menu choose _Application Specific_. Tick the _No application icon_ option and then hit _Apply_ and _Save_.
+For some applications, you may not want Window Maker to display an application icon or appicon. To disable the appicon for an application, right click on the application's titlebar and choose *Attributes...* and from the drop down menu choose *Application Specific*. Tick the *No application icon* option and then hit *Apply* and *Save*.
 
 ## Troubleshooting
 
@@ -192,7 +192,7 @@ Delete (but keep a backup) the `~/.fontconfig/` directory and `~/.fonts.conf` fi
 
 ### The dock is not covered by fullscreen windows
 
-To correct this issue, right click on any pinned application and, from the _Dock position_ submenu, choose _Normal_. Then start the WPrefs tool. Under the _Window Handling Preferences_ tab, tick the _...do not cover dock_ option. This will ensure that maximised applications do not cover the dock but that fullscreen applications do.
+To correct this issue, right click on any pinned application and, from the *Dock position* submenu, choose *Normal*. Then start the WPrefs tool. Under the *Window Handling Preferences* tab, tick the *...do not cover dock* option. This will ensure that maximised applications do not cover the dock but that fullscreen applications do.
 
 ### No application icons for some applications
 

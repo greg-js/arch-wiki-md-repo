@@ -1,4 +1,4 @@
-Iptables è un potente [firewall](/index.php/Firewalls_(Italiano) "Firewalls (Italiano)") integrato nel kernel Linux ed è una parte del progetto [netfilter](https://en.wikipedia.org/wiki/it:Netfilter "wikipedia:it:Netfilter"). Può essere configurato direttamente, oppure usando uno dei vari [frontends](/index.php/Firewalls_(Italiano)#iptables_front-ends "Firewalls (Italiano)") oppure una delle [GUI](/index.php/Firewalls_(Italiano)#iptables_GUIs "Firewalls (Italiano)"). iptables è utilizzato per gli [IPv4](https://en.wikipedia.org/wiki/it:IPv4 "wikipedia:it:IPv4") mentre ip6tables è usato per gli [IPv6](https://en.wikipedia.org/wiki/it:IPv6 "wikipedia:it:IPv6").
+Iptables è un potente [firewall](/index.php/Firewalls_(Italiano) "Firewalls (Italiano)") integrato nel kernel Linux ed è una parte del progetto [netfilter](https://en.wikipedia.org/wiki/it:Netfilter oppure una delle [GUI](/index.php/Firewalls_(Italiano)#iptables_GUIs "Firewalls (Italiano)"). iptables è utilizzato per gli [IPv4](https://en.wikipedia.org/wiki/it:IPv4 "wikipedia:it:IPv4") mentre ip6tables è usato per gli [IPv6](https://en.wikipedia.org/wiki/it:IPv6 "wikipedia:it:IPv6").
 
 ## Contents
 
@@ -65,7 +65,6 @@ Esistono diversi moduli che possono essere usati per rafforzare iptables, come c
 Sarà possibile controllare le regole in uso ed il numero di pacchetti che hanno soddisfatto le regole usando il comando:
 
  `# iptables -nvL` 
-
 ```
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
  pkts bytes target     prot opt in     out     source               destination   

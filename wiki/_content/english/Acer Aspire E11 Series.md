@@ -30,7 +30,7 @@
 
 ## Installation
 
-**Warning:** Should you wish to return to _Windows 8.1 with Bing_, it is imperative to [#Create a recovery drive](#Create_a_recovery_drive). The correct installation medium is only available to system manufacturers, and you will have to either use this recovery drive, or send the device back for repair to return to the original state.
+**Warning:** Should you wish to return to *Windows 8.1 with Bing*, it is imperative to [#Create a recovery drive](#Create_a_recovery_drive). The correct installation medium is only available to system manufacturers, and you will have to either use this recovery drive, or send the device back for repair to return to the original state.
 
 **Warning:** The BIOS firmware in Legacy mode (including latest versions) has several bugs (inability to turn off or suspend the computer, kernel panics, etc). Use UEFI instead.
 
@@ -47,15 +47,15 @@ Note that this key is tied to the particular laptop model and [unusable elsewher
 
 ### Create a recovery drive
 
-A recovery drive can made with the preinstalled _Acer eRecovery Management_ application. This requires a USB-attached flash drive or hard disk with at least 16 GB free space available, and presence of the `C:/OEM` directory. All present data on the target drive will be lost.
+A recovery drive can made with the preinstalled *Acer eRecovery Management* application. This requires a USB-attached flash drive or hard disk with at least 16 GB free space available, and presence of the `C:/OEM` directory. All present data on the target drive will be lost.
 
-Choose the option _Create Factory Default Backup_, select the partition Windows is installed on, and click _start_. Remove the drive afterwards - booting from the device will now start the recovery software. See [[2]](http://acer--uk.custhelp.com/app/answers/detail/a_id/14303/~/create-a-recovery-usb-flash-drive-with-acer-erecovery-management-5.x) for more information.
+Choose the option *Create Factory Default Backup*, select the partition Windows is installed on, and click *start*. Remove the drive afterwards - booting from the device will now start the recovery software. See [[2]](http://acer--uk.custhelp.com/app/answers/detail/a_id/14303/~/create-a-recovery-usb-flash-drive-with-acer-erecovery-management-5.x) for more information.
 
 ### Booting
 
 The Acer E3-111 does not have an optical drive. See [Beginners' guide#Prepare the latest installation medium](/index.php/Beginners%27_guide#Prepare_the_latest_installation_medium "Beginners' guide") for alternative methods.
 
-Both [UEFI](/index.php/UEFI "UEFI") and Legacy (BIOS) boot are supported. To switch modes, press `F2` at the boot splash screen to enter the EFI setup, then select the _Boot_ tab. Alternatively, access the EFI setup by [rebooting in Windows](http://acer-au.custhelp.com/app/answers/detail/a_id/32048/~/accessing-uefi-in-windows-8.1).
+Both [UEFI](/index.php/UEFI "UEFI") and Legacy (BIOS) boot are supported. To switch modes, press `F2` at the boot splash screen to enter the EFI setup, then select the *Boot* tab. Alternatively, access the EFI setup by [rebooting in Windows](http://acer-au.custhelp.com/app/answers/detail/a_id/32048/~/accessing-uefi-in-windows-8.1).
 
 Follow the [installation guide](/index.php/Installation_guide "Installation guide"). An Ethernet connection is recommended, as the needed [wireless drivers](#Wireless) are not included in the installation medium.
 
@@ -104,7 +104,7 @@ The E11 series include a [Precision Touchpad](http://windows.microsoft.com/en-us
 
 ### Power Management
 
-Install the [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) package
+You may need to use the linux-lst kernel for full support.
 
 #### Suspend and Hibernate
 

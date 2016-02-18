@@ -26,7 +26,7 @@ Catwm is a small, light weight window manager created by pyknite. It was first a
 
 If for some reason method one fails, try this one. Visit the [official github page](https://github.com/pyknite/catwm) and download each file.
 
-Before you compile catwm, you may want to skip to the _Configuration_ section to configure it.
+Before you compile catwm, you may want to skip to the *Configuration* section to configure it.
 
 Then, while in the directory as the downloaded files, run the following as a non-root user:
 
@@ -71,20 +71,20 @@ Catwm uses it's config.h file for configuration. By default, some hotkeys are al
 
 To add custom keybindings, you must edit config.h and recompile catwm. That's why it is important to set them up on the initial installation to avoid having to do this again. I'll show you a scenario in which you would need to add a keybinding to open the thunar filemanager with MOD+t.
 
-First, you must add a line such as the following underneath the already-defined _const char*_s (Note: You can name it whatever you want. In this case, I named it _thunarcmd_):
+First, you must add a line such as the following underneath the already-defined *const char**s (Note: You can name it whatever you want. In this case, I named it *thunarcmd*):
 
  `const char* thunarcmd[] = {"thunar", NULL};` 
 
-I'll explain this a little more in detail. The part after the _const char*_ and before the [] is the title, which is _thunarcmd_. Inside the curly brackets is where you enter the command to be executed. Each command fragment that is seperated by a space is it's own value. What I mean by that is that the command sequence _ncmpcpp next_ would be entered as _{"ncmpcpp", "next", NULL}_. The NULL value must be included at the end of each hotkey.
+I'll explain this a little more in detail. The part after the *const char** and before the [] is the title, which is *thunarcmd*. Inside the curly brackets is where you enter the command to be executed. Each command fragment that is seperated by a space is it's own value. What I mean by that is that the command sequence *ncmpcpp next* would be entered as *{"ncmpcpp", "next", NULL}*. The NULL value must be included at the end of each hotkey.
 
-To actually register the hotkey with the window manager, you must look below that at the struct named _keys_[]. This is where catwm stores all of it's keybindings. An example entry for the _thunarcmd_[] we made above would be:
+To actually register the hotkey with the window manager, you must look below that at the struct named *keys*[]. This is where catwm stores all of it's keybindings. An example entry for the *thunarcmd*[] we made above would be:
 
  `{ MOD,     XK_t,     spawn,     {.com = thunarcmd}},` 
 
 *   The first element specifies the first sequence that is pressed (MOD for the modkey only, MOD|ShiftMask for the modkey and then the shiftkey).
 *   The second element specifies the actual key that is pressed to differenciate it from other similar hotkeys. In this case, we set it to **t**, which has "XK_" in front of it because that's how Xorg reads key presses. Just remember to include "XK_" in front of it and you'll be fine. Some examples of these include XK_a for the **a key**, XK_Space for the **space bar**, and XK_1 for the **1 key**. Note that these are case-sensitive, so XK_a is not the same as XK_A. So for this example, the entire hotkey senquence that needs to be pressed is MOD+t.
 *   The third element just specifies the function spawn(), which has been written to pass the command to the shell for execution. You do not really need to know what spawn is for, so simply include it for things like this.
-*   The final element inside the brackets specifies which _char_ that was previously defined to use. In our case, it was _thunarcmd_[]. so we would do {.com = thunarcmd}. The .com stands for command.
+*   The final element inside the brackets specifies which *char* that was previously defined to use. In our case, it was *thunarcmd*[]. so we would do {.com = thunarcmd}. The .com stands for command.
 
 After this, recompile, hope for no errors, and install.
 
@@ -137,6 +137,6 @@ const char* voldown[] = {"amixer","set","PCM","5\%-",NULL};
 const char* volup[] = {"amixer","set","PCM","5\%+",NULL};
 ```
 
-If both of those do not work, try to use one of the devices outputted by the _amixer_ command. Also make sure you have the alsa-utils package installed.
+If both of those do not work, try to use one of the devices outputted by the *amixer* command. Also make sure you have the alsa-utils package installed.
 
-_alsamixer_
+*alsamixer*

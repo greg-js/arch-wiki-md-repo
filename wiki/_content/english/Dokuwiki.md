@@ -42,7 +42,6 @@ Alternatively, if you would like to install from tarball, you can read from [htt
 If you are using [lighttpd](/index.php/Lighttpd "Lighttpd") or [nginx](/index.php/Nginx "Nginx") you need to adjust the `open_basedir` in `/etc/php/php.ini` to include the dokuwiki directories (php forbids following symbolic links outside of the allowed scope):
 
  `/etc/php/php.ini` 
-
 ```
 open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/:/etc/webapps/dokuwiki/:/var/lib/dokuwiki/
 
@@ -51,7 +50,6 @@ open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/:/etc
 Also uncomment the following line.
 
  `/etc/php/php.ini` 
-
 ```
 extension=gd.so
 
@@ -106,7 +104,7 @@ Afterwards restart Apache:
 
 ```
 
-Then finish the installation by running the _dokuwiki/install.php_ script in your browser.
+Then finish the installation by running the *dokuwiki/install.php* script in your browser.
 
 ### lighttpd Specific Configuration
 
@@ -146,7 +144,7 @@ $HTTP["url"] =~ "/(\.|_)ht" { url.access-deny = ( "" ) }
 $HTTP["url"] =~ "^" + var.dokudir + "/(bin|data|inc|conf)/"  { url.access-deny = ( "" ) }
 ```
 
-_These entries give some basic security to DokuWiki._ lighttpd does not use .htaccess files like Apache. You CAN install with out this, but I would NEVER recommend it.
+*These entries give some basic security to DokuWiki.* lighttpd does not use .htaccess files like Apache. You CAN install with out this, but I would NEVER recommend it.
 
 Add alias somewhere in lighttpd or fastcgi conf file:
 

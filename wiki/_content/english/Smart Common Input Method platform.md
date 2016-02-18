@@ -61,7 +61,6 @@ Configuring SCIM correctly requires the following three steps:
 If you just need SCIM to work urgently in any Desktop Environment or Window Manager, put these lines into `/etc/xprofile` or `~/.xprofile` and then reboot:
 
  `~/.xprofile` 
-
 ```
 export XMODIFIERS=@im=SCIM
 export GTK_IM_MODULE="scim"
@@ -81,14 +80,13 @@ This is a very basic example for configuring XIM (X Input Method) to work with S
 If you use [GNOME](/index.php/GNOME "GNOME"), edit `/etc/gtk-2.0/gtk.immodules` by adding follow content at the end:
 
  `/etc/gtk-2.0/gtk.immodules` 
-
 ```
 "/usr/lib/gtk-2.0/immodules/im-scim.so"
 "scim" "SCIM Input Method" "scim" "/usr/share/locale" "ja:ko:zh"
 
 ```
 
-If your `LC_CTYPE` or `LANG` is _en_US.UTF-8_, change `ja:ko:zh` to `en:ja:ko:zh`.
+If your `LC_CTYPE` or `LANG` is *en_US.UTF-8*, change `ja:ko:zh` to `en:ja:ko:zh`.
 
 After making those changes, be sure to reboot. You can find out what input method modules are available on your system by executing `gtk-query-immodules-2.0`.
 
@@ -104,7 +102,7 @@ export GTK_IM_MODULE_FILE=~/.immodules
 
 #### Note for GNOME, Xfce, LXDE
 
-If you are using GNOME, Xfce or LXDE and Qt applications do not pick up the `export QT_IM_MODULE="scim"` variable, you can use scim-bridge. To use _scim-bridge_ instead, export the following:
+If you are using GNOME, Xfce or LXDE and Qt applications do not pick up the `export QT_IM_MODULE="scim"` variable, you can use scim-bridge. To use *scim-bridge* instead, export the following:
 
 ```
 export QT_IM_MODULE="scim-bridge"
@@ -113,7 +111,7 @@ export QT_IM_MODULE="scim-bridge"
 
 #### Note for KDE3
 
-For KDE3 you should `export QT_IM_MODULE="xim"` instead of _scim_ and also install [qtimm](http://www.scim-im.org/projects/scim_qtimm)] for Qt3.
+For KDE3 you should `export QT_IM_MODULE="xim"` instead of *scim* and also install [qtimm](http://www.scim-im.org/projects/scim_qtimm)] for Qt3.
 
 ### Locale-related files
 
@@ -126,7 +124,7 @@ If your keyboard locale is not `en_US.UTF-8` (or `en_US.utf8`), you have to modi
 
 and replace your `de_CH.UTF-8` with your locale.
 
-**Note:** Your locale has to be active (i.e. you have to uncomment it in `/etc/locale-gen` and then execute `locale-gen` as root) _and_ has to be supported by SCIM (most *.UTF-8 locales are).
+**Note:** Your locale has to be active (i.e. you have to uncomment it in `/etc/locale-gen` and then execute `locale-gen` as root) *and* has to be supported by SCIM (most *.UTF-8 locales are).
 
 If you do not know which locales you have active at the moment, you can check it:
 
@@ -192,7 +190,6 @@ See [these](http://www.scim-im.org/forums#nabble-td2499750) [two](http://ubuntuf
 Edit the .xinitrc or .xsession file.
 
  `~/.xprofile` 
-
 ```
 export XMODIFIERS=@im=SCIM
 export GTK_IM_MODULE="xim"

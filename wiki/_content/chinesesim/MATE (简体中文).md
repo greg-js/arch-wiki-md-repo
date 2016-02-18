@@ -116,7 +116,7 @@ Not all of the GNOME extra applications (built for GTK2) have been forked yet. ä
 
 ## Using Compiz Fusion sans Emerald
 
-If you would like to use Marco with [Compiz Fusion](/index.php/Compiz_Fusion "Compiz Fusion"), install and start Compiz Fusion as you would normally and install the package _gtk-window-decorator_ and run the following command to create a symlink:
+If you would like to use Marco with [Compiz Fusion](/index.php/Compiz_Fusion "Compiz Fusion"), install and start Compiz Fusion as you would normally and install the package *gtk-window-decorator* and run the following command to create a symlink:
 
 ```
 # ln -s /usr/lib/libmarco-private.so.0 /usr/lib/libmetacity-private.so.0

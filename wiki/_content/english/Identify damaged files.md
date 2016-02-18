@@ -81,18 +81,18 @@ i.e. block number 100 with a block size of 1024 bytes becomes block number 25 at
 Now the entire point of running this program (for the purpose of this article) is to get the inode number. To do this run the command:
 
 ```
-d _blocknumber_ 0 i
+d *blocknumber* 0 i
 
 ```
 
 The syntax is the d command for display, the block number, the offset (just set it to 0), and the display format i for inode.
 
-_Note_: If you get an error then that means the block is not allocated and is being used as free space. In that case this is a good thing as it means nothing important was damaged.
+*Note*: If you get an error then that means the block is not allocated and is being used as free space. In that case this is a good thing as it means nothing important was damaged.
 
 The decimal number that di_number is set to is the one we want. From here you type x to exit out of the display mode. Repeat the display command for each bad block that you have and note all of their inode numbers. For more info on the inode such as permissions and filetype type:
 
 ```
-i _inodenumber_
+i *inodenumber*
 
 ```
 
@@ -103,7 +103,7 @@ When you have all the inode numbers type q to quit.
 Finally to find the damaged file you can simply use the gnu find utility. Mount your filesystem and run:
 
 ```
-find / -inum _inodenumber_
+find / -inum *inodenumber*
 
 ```
 
@@ -150,16 +150,16 @@ debugfs:  open /dev/sdxy
 Finally, use the testb command to get information about the block in question (in this example block 1000):
 
 ```
-debugfs:  testb _blocknumber_
+debugfs:  testb *blocknumber*
 
 ```
 
-_Note_: If debugfs says that block isn't in use then that means the block is not allocated and is being used as free space. In that case this is a good thing as it means nothing important was damaged.
+*Note*: If debugfs says that block isn't in use then that means the block is not allocated and is being used as free space. In that case this is a good thing as it means nothing important was damaged.
 
 If the block is in use then run this command to get the inode number
 
 ```
-icheck _blocknumber_
+icheck *blocknumber*
 
 ```
 
@@ -170,7 +170,7 @@ This will return two numbers. The block number and the inode number.
 Use the inode number (second number from the icheck command) with the ncheck command:
 
 ```
-ncheck _inodenumber_
+ncheck *inodenumber*
 
 ```
 

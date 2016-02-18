@@ -39,7 +39,7 @@ Zapamätajte si, že balíček 'alsa-driver' zahŕňa potrebné moduly založen�
 
 ## Konfigurácia
 
-_Poznámka: Ak hotplug detekuje vašu zvukovú kartu správne, nemusíte nahrávať moduly manuálne. Ak je toto váš prípad, potrebujete spraviť iba krok 3 (a 4). Ak si nie ste istí, či vaša zvuková karta bola detekovaná správne, ako root napíšte "lsmod". Mali bzy ste vidieť niekoľko nahratých modulov začínajúcich sa na "snd-"._
+*Poznámka: Ak hotplug detekuje vašu zvukovú kartu správne, nemusíte nahrávať moduly manuálne. Ak je toto váš prípad, potrebujete spraviť iba krok 3 (a 4). Ak si nie ste istí, či vaša zvuková karta bola detekovaná správne, ako root napíšte "lsmod". Mali bzy ste vidieť niekoľko nahratých modulov začínajúcich sa na "snd-".*
 
 *   Nájdite modul pre svoju zvukovú kartu: [http://www.alsa-project.org/alsa-doc/](http://www.alsa-project.org/alsa-doc/) Modul bude s prefixom 'snd-' (Napríklad: 'snd-via82xx'). Taktiež môžte spustiť 'alsaconf' ako root.
 

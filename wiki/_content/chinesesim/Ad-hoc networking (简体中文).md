@@ -35,21 +35,21 @@ See [Wireless network configuration#Manual setup](/index.php/Wireless_network_co
 Set the operation mode to ibss:
 
 ```
-# iw _interface_ set type ibss
+# iw *interface* set type ibss
 
 ```
 
 Bring the interface up (an additional step like `rfkill unblock wifi` might be needed):
 
 ```
-# ip link set _interface_ up
+# ip link set *interface* up
 
 ```
 
-Now you can create an ad-hoc network. Replace _your_ssid_ with the name of the network and _frequency_ with the frequency in MHz, depending on which channel you want to use. See the Wikipedia page [List of WLAN channels](https://en.wikipedia.org/wiki/List_of_WLAN_channels#Interference_Concerns "wikipedia:List of WLAN channels") for a table showing frequencies of individual channels.
+Now you can create an ad-hoc network. Replace *your_ssid* with the name of the network and *frequency* with the frequency in MHz, depending on which channel you want to use. See the Wikipedia page [List of WLAN channels](https://en.wikipedia.org/wiki/List_of_WLAN_channels#Interference_Concerns "wikipedia:List of WLAN channels") for a table showing frequencies of individual channels.
 
 ```
-# iw _interface_ ibss join _your_ssid_ _frequency_
+# iw *interface* ibss join *your_ssid* *frequency*
 
 ```
 
@@ -60,7 +60,6 @@ Now you can create an ad-hoc network. Replace _your_ssid_ with the name of the n
 Ensure that [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) is [installed](/index.php/Pacman "Pacman"), and create a configuration file for it (see [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") for details).
 
  `/etc/wpa_supplicant-adhoc.conf` 
-
 ```
 ctrl_interface=DIR=/run/wpa_supplicant GROUP=wheel
 
@@ -80,10 +79,10 @@ network={
 
 ```
 
-Run _wpa_supplicant_ on all devices connected to the network with the following command:
+Run *wpa_supplicant* on all devices connected to the network with the following command:
 
 ```
-# wpa_supplicant -B -i _interface_ -c /etc/wpa_supplicant-adhoc.conf -D nl80211,wext
+# wpa_supplicant -B -i *interface* -c /etc/wpa_supplicant-adhoc.conf -D nl80211,wext
 
 ```
 
@@ -93,7 +92,7 @@ The final step is to assign an IP address to all devices in the network. There a
 
 *   Assign static IP addresses. See [Network configuration#Static IP address](/index.php/Network_configuration#Static_IP_address "Network configuration") for details.
 *   Running DHCP server on one device. See [dhcpd](/index.php/Dhcpd "Dhcpd") or [dnsmasq](/index.php/Dnsmasq "Dnsmasq") for details.
-*   Running _avahi-autoipd_. See [Avahi#Obtaining IPv4LL IP address](/index.php/Avahi#Obtaining_IPv4LL_IP_address "Avahi") for details.
+*   Running *avahi-autoipd*. See [Avahi#Obtaining IPv4LL IP address](/index.php/Avahi#Obtaining_IPv4LL_IP_address "Avahi") for details.
 
 If you want to share an internet connection to the ad-hoc network, see [Internet sharing](/index.php/Internet_sharing "Internet sharing").
 
@@ -101,7 +100,7 @@ If you want to share an internet connection to the ad-hoc network, see [Internet
 
 ### Using NetworkManager
 
-If you use [NetworkManager](/index.php/NetworkManager "NetworkManager"), you can use _nm-applet_ for ad-hoc network configuration instead of the manual method described above. See [NetworkManager#Ad-hoc](/index.php/NetworkManager#Ad-hoc "NetworkManager") for details.
+If you use [NetworkManager](/index.php/NetworkManager "NetworkManager"), you can use *nm-applet* for ad-hoc network configuration instead of the manual method described above. See [NetworkManager#Ad-hoc](/index.php/NetworkManager#Ad-hoc "NetworkManager") for details.
 
 **Note:** NetworkManager does not support WPA encryption in ad-hoc mode.
 
@@ -110,15 +109,12 @@ If you use [NetworkManager](/index.php/NetworkManager "NetworkManager"), you can
 You can use the following templates to enable wireless ad-hoc networking:
 
  `/etc/conf.d/network-wireless-adhoc@<interface>` 
-
 ```
 addr=192.168.0.2
 mask=24
 
 ```
-
  `/etc/systemd/system/network-wireless-adhoc@.service` 
-
 ```
 [Unit]
 Description=Ad-hoc wireless network connectivity (%i)

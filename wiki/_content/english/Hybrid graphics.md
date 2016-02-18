@@ -1,4 +1,4 @@
-_Hybrid-graphics is a concept involving two graphics cards on same computer, it was first designed to control power consumption in laptops and is extending to desktop computers as well_.
+*Hybrid-graphics is a concept involving two graphics cards on same computer, it was first designed to control power consumption in laptops and is extending to desktop computers as well*.
 
 ## Contents
 
@@ -33,7 +33,7 @@ This switch is somewhat rough and adds some blinks and black screens in laptops 
 
 ## The New Dynamic Switching Model
 
-Most of the new Hybrid-graphics technologies involves two graphic cards as the basic switching but now the DGP and IGP are plugged to a framebuffer and there is no hardware multiplexer. The IGP is always on and the DGP is switched on/off when there is a need in power-save or performance-rendering. In most cases there is no way to use _only_ the DGP and all the switching and rendering is controlled by software. At startup, the Linux kernel starts using a video mode and setting up low-level graphic drivers which will be used by the applications. Most of the Linux distributions then use X.org to create a graphical environment. Finally, a few other softwares are launched, first a login manager and then a window manager, and so on. This hierarchical system has been designed to be used in most of cases on a single graphic card.
+Most of the new Hybrid-graphics technologies involves two graphic cards as the basic switching but now the DGP and IGP are plugged to a framebuffer and there is no hardware multiplexer. The IGP is always on and the DGP is switched on/off when there is a need in power-save or performance-rendering. In most cases there is no way to use *only* the DGP and all the switching and rendering is controlled by software. At startup, the Linux kernel starts using a video mode and setting up low-level graphic drivers which will be used by the applications. Most of the Linux distributions then use X.org to create a graphical environment. Finally, a few other softwares are launched, first a login manager and then a window manager, and so on. This hierarchical system has been designed to be used in most of cases on a single graphic card.
 
 ### Nvidia Optimus
 
@@ -132,7 +132,6 @@ See the "works"? This means the script found a bus which your GPU sits on and it
 Add the kernel module to the array of modules to load at boot:
 
  `/etc/modules-load.d/acpi_call.conf` 
-
 ```
 #Load 'acpi_call.ko' at boot.
 
@@ -142,7 +141,6 @@ acpi_call
 To turn off the GPU at boot we could just run the above script but honestly that is not very elegant so instead lets make use of systemd's tmpfiles.
 
  `/etc/tmpfiles.d/acpi_call.conf` 
-
 ```
 
 w /proc/acpi/call - - - - \\_SB.PCI0.PEG0.PEGP._OFF

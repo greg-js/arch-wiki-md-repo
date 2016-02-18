@@ -87,7 +87,7 @@ There is another bug in character encoding when communicating between Pidgin and
 You can change encoding for ICQ account if encoding in Buddy Information is not correct:
 
 ```
-Account > _your ICQ account_ > Edit account > Advanced tab
+Account > *your ICQ account* > Edit account > Advanced tab
 
 ```
 
@@ -97,25 +97,25 @@ Select `Encoding: CP1251` (for Cyrillic).
 
 有一辅助功能用于链接 Freenode。它应该也可以用于链接其他 IRC 网络，如果你变更其端口和域名。
 
-选择 _账户 > 管理账户 > 添加_. 设置以下选项:
+选择 *账户 > 管理账户 > 添加*. 设置以下选项:
 
 ```
 协议: IRC
-用户名: _your username_
+用户名: *your username*
 
 ```
 
-选择 _好友 > 加入聊天_ (或者按下 `Ctrl+m`), 在 'freenode.net' 文本框中选择 _username_@irc.freenode.net, 然后点击 '确定'，或者输入：
+选择 *好友 > 加入聊天* (或者按下 `Ctrl+m`), 在 'freenode.net' 文本框中选择 *username*@irc.freenode.net, 然后点击 '确定'，或者输入：
 
 ```
-/join #_你的聊天室名称_
+/join #*你的聊天室名称*
 
 ```
 
 如果要注册你的账户，输入：
 
 ```
-/msg nickserv register _password_ _email-addres_
+/msg nickserv register *password* *email-addres*
 
 ```
 
@@ -123,11 +123,11 @@ Select `Encoding: CP1251` (for Cyrillic).
 
 ```
 /msg nickserv help
-/msg nickserv help _command_
+/msg nickserv help *command*
 
 ```
 
-最后一部是把你的聊天室加入 '好友'：选择 _好友 > 加入聊天_，填入正确的聊天室 (#archlinux)。
+最后一部是把你的聊天室加入 '好友'：选择 *好友 > 加入聊天*，填入正确的聊天室 (#archlinux)。
 
 ## Xfire
 
@@ -143,7 +143,7 @@ Simply install [pidgin-gfire](https://www.archlinux.org/packages/?name=pidgin-gf
 
 Since Facebook Chat supports XMPP, you can use Pidgin without extra plugins. See this article for more information: [Facebook Chat Now Available Everywhere](http://blog.facebook.com/blog.php?post=297991732130)
 
-**Note:** In order to utilise Facebook chat through XMPP and pidgin, you will require a Facebook "username". This is located in _Facebook > Account settings > username_ (below real name)
+**Note:** In order to utilise Facebook chat through XMPP and pidgin, you will require a Facebook "username". This is located in *Facebook > Account settings > username* (below real name)
 
 1\. Go to "Accounts" and select "Manage Accounts."
 
@@ -151,15 +151,15 @@ Since Facebook Chat supports XMPP, you can use Pidgin without extra plugins. See
 
 	Protocol: XMPP
 
-	Username: _Your FacebookID_ (without e-mail domain, e.g. @yahoo.com, etc)
+	Username: *Your FacebookID* (without e-mail domain, e.g. @yahoo.com, etc)
 
 	Domain: chat.facebook.com (make sure you haven't typed any extra space)
 
 	Resource: Pidgin (leave this empty if you get "username@chat.facebook.com/Pidgin Not Authorized" error message)
 
-	Password: _Your Password_
+	Password: *Your Password*
 
-	Local alias: _Your Name_
+	Local alias: *Your Name*
 
 3\. Click the Advanced tab, then enter the following info:
 
@@ -173,7 +173,7 @@ Since Facebook Chat supports XMPP, you can use Pidgin without extra plugins. See
 
 *   Newer versions of Pidgin do not have a "Require SSL/TLS" box. Instead, select "Use encryption if available" from the Connection Security dropdown in Advanced
 *   Changing your Facebook privacy settings to "Turn off all apps" (under Apps and Websites), will disable your ability to send messages via jabber (see [Why can't Pidgin seem to send Facebook messages](https://developer.pidgin.im/wiki/Protocol%20Specific%20Questions?version=123#WhycantPidginseemtosendFacebookmessages)).
-*   You may notice that all Facebook contacts are in a separate group every time you login with your XMPP account even though you moved them to other groups or created meta-contacts. If you want to be able to group contacts and create meta-contacts you can use the plugin [pidgin-xmpp-ignore-groups](https://aur.archlinux.org/packages/pidgin-xmpp-ignore-groups/) (after installing the plugin activate the option _Ignore server-sent groups_ on the Advanced tab in your XMPP account settings). It essentially ignores the group data sent by the server roaster and preserves your local changes. It is easier to enable this plugin on your account _before_ logging in the first time, so your contacts are put into the default group instead of a group called "Facebook Friends". Enabling it afterward won't move the contacts out of this group.
+*   You may notice that all Facebook contacts are in a separate group every time you login with your XMPP account even though you moved them to other groups or created meta-contacts. If you want to be able to group contacts and create meta-contacts you can use the plugin [pidgin-xmpp-ignore-groups](https://aur.archlinux.org/packages/pidgin-xmpp-ignore-groups/) (after installing the plugin activate the option *Ignore server-sent groups* on the Advanced tab in your XMPP account settings). It essentially ignores the group data sent by the server roaster and preserves your local changes. It is easier to enable this plugin on your account *before* logging in the first time, so your contacts are put into the default group instead of a group called "Facebook Friends". Enabling it afterward won't move the contacts out of this group.
 
 ## Privacy
 
@@ -190,7 +190,7 @@ This is a plugin that brings Off-The-Record (OTR) messaging to Pidgin. OTR is a 
 
 First you need to install [pidgin-otr](https://www.archlinux.org/packages/?name=pidgin-otr) from the official repositories. Once this has been done, OTR has been added to Pidgin.
 
-1.  To enable OTR, start Pidgin and go to _Tools > Plugins_ or press `Ctrl+u`. Scroll down to the entry entitled "Off-The-Record Messaging". If the checkbox beside it is not checked, check it.
+1.  To enable OTR, start Pidgin and go to *Tools > Plugins* or press `Ctrl+u`. Scroll down to the entry entitled "Off-The-Record Messaging". If the checkbox beside it is not checked, check it.
 2.  Next, click on the plugin entry and select "Configure plugin" at the bottom. Select which account you wish to generate a key for, then click "Generate". You will have now generated a private key. If you are not sure what the other options do, leave them, the default options will work fine.
 3.  The next step is to contact a buddy who also has OTR installed. In the chat window, a new icon should appear to the top right of your text input box. Click on it, and select "Start private conversation". This will start an 'Unverified' session. Unverified sessions are encrypted, but not verified - that is, you have started a private conversation with someone using your buddy's account who has OTR, but who might not be your buddy. The steps for verification of a buddy are beyond the scope of this section; however, they might be added in the future.
 
@@ -238,7 +238,7 @@ Install [skype4pidgin-svn](https://aur.archlinux.org/packages/skype4pidgin-svn/)
 
 If you suspend your computer pidgin seems to stay connected for about 15 minutes. To prevent message loss, it is needed to set your status offline before suspending or hibernating. The status message won't be changed.
 
-Therefore create a new systemd unit `pidgin-suspend` in `/etc/systemd/system` Take the following snippet and replace _myuser_ with your user.
+Therefore create a new systemd unit `pidgin-suspend` in `/etc/systemd/system` Take the following snippet and replace *myuser* with your user.
 
 ```
 [Unit]
@@ -248,7 +248,7 @@ StopWhenUnneeded=yes
 
 [Service]
 Type=oneshot
-User=_myuser_
+User=*myuser*
 RemainAfterExit=yes
 Environment=DISPLAY=:0
 ExecStart=-/usr/bin/purple-remote setstatus?status=offline
@@ -287,7 +287,7 @@ esac
 
 ### Installing Pidgin after a Carrier installation
 
-If you previously installed [carrier](https://aur.archlinux.org/packages/carrier/) (aka [FunPidgin](http://funpidgin.sourceforge.net/)), follow these steps _before_ installing Pidgin:
+If you previously installed [carrier](https://aur.archlinux.org/packages/carrier/) (aka [FunPidgin](http://funpidgin.sourceforge.net/)), follow these steps *before* installing Pidgin:
 
 *   Quit Carrier
 *   Delete your `~/.purple` directory.
@@ -366,7 +366,7 @@ chmod +x ~/bin/history_import_kopete2pidgin.sh
         <xsl:value-of select="translate(substring-after(@time,' '),':',',')"/>
         <xsl:text>) </xsl:text>
         <xsl:value-of select="@nick"/>
-        <xsl:if test="not(@nick) or @nick = _">_
+        <xsl:if test="not(@nick) or @nick = *">*
             <xsl:value-of select="@from"/>
         </xsl:if>
         <xsl:text>: </xsl:text>

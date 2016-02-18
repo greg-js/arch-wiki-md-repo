@@ -5,7 +5,7 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
 ## Contents
 
 *   [1 Hinted fonts](#Hinted_fonts)
-*   [2 No hinting for _italic_ or **bold**](#No_hinting_for_italic_or_bold)
+*   [2 No hinting for *italic* or **bold**](#No_hinting_for_italic_or_bold)
 *   [3 Sharp fonts](#Sharp_fonts)
 *   [4 Liberation fonts](#Liberation_fonts)
 *   [5 Enable anti-aliasing only for bigger fonts](#Enable_anti-aliasing_only_for_bigger_fonts)
@@ -16,7 +16,6 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
 ## Hinted fonts
 
  `$XDG_CONFIG_HOME/fontconfig/fonts.conf` 
-
 ```
 <?xml version='1.0'?>
 <!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
@@ -45,7 +44,7 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
 
 ```
 
-## No hinting for _italic_ or **bold**
+## No hinting for *italic* or **bold**
 
 ```
 <?xml version='1.0'?>

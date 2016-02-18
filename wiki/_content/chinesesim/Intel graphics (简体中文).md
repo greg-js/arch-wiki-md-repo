@@ -45,7 +45,6 @@ Intel显卡和相应芯片组、cpu的完整型号参考[this comparison on wiki
 However, to take advantage of some driver options, you will need to create a Xorg configuration file similar to the one below:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
    Identifier  "Intel Graphics"
@@ -122,7 +121,6 @@ You will note that the `i915.powersave` option which "enable[s] powersavings, fb
 The following set of options should be generally safe to enable:
 
  `/etc/modprobe.d/i915.conf` 
-
 ```
 options i915 enable_rc6=1 enable_fbc=1 lvds_downclock=1 semaphores=1
 
@@ -151,7 +149,6 @@ DDX驱动可重设你需要的加速方式。Phoronix的基准测试在 [[3]](ht
 要使用旧的UXA加速方式, 创建包含下列内容的`/etc/X11/xorg.conf.d/20-intel.conf` 就可使用UXA:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
    Identifier  "Intel Graphics"
@@ -245,7 +242,6 @@ $ xrandr --output VGA1 --brightness 1.0
 在 `~/.drirc` 中将 `vblank_mode` 设为 `0` 并且将 `driver` 设为 `dri2` 也可达到上述效果:
 
  `~/.drirc` 
-
 ```
 <device screen="0" driver="dri2">
    <application name="Default">
@@ -279,7 +275,6 @@ Option "TearFree" "true"
 使用 `NoAccel` 选项可能对 X 冻结／崩溃或显卡停止工作有效。
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
    Identifier "Intel Graphics"
@@ -291,7 +286,6 @@ EndSection
 此外， 也可尝试 `DRI` 选项来禁用 3D 加速:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
    Identifier "Intel Graphics"

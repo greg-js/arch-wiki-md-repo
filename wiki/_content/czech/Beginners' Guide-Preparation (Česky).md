@@ -1,8 +1,8 @@
-**Tip:** Tato stránka je součástí několikastránkového článku _Beginners' Guide (Česky)_. **[Klikněte zde](/index.php/Beginners%27_guide "Beginners' guide")**, pokud byste raději chtěli číst celý článek vcelku.
+**Tip:** Tato stránka je součástí několikastránkového článku *Beginners' Guide (Česky)*. **[Klikněte zde](/index.php/Beginners%27_guide "Beginners' guide")**, pokud byste raději chtěli číst celý článek vcelku.
 
 Tento článek Vás provede procesem instalace [Arch Linuxu](/index.php/Arch_Linux_(%C4%8Cesky) "Arch Linux (Česky)") pomocí [Arch Install Scripts](https://github.com/falconindy/arch-install-scripts). Před instalací si prosím pročtěte [často kladené otázky](/index.php/FAQ_(%C4%8Cesky) "FAQ (Česky)").
 
-Komunitou spravovaná [ArchWiki](/index.php/Main_Page_(%C4%8Cesky) "Main Page (Česky)") je primárním zdrojem, na který byste se měli obrátit v případě problémů. [IRC kanál](/index.php/IRC_channel "IRC channel") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) a [fórum](https://bbs.archlinux.org/) jsou také výbornými zdroji, pokud odpověď nelze najít jinde. V souladu s [Arch Way](/index.php/The_Arch_Way_(%C4%8Cesky) "The Arch Way (Česky)") Vás nabádáme, abyste použili příkaz `man _příkaz_` pro přečtení manuálové stránky jakéhokoliv příkazu, se kterým nejste obeznámeni.
+Komunitou spravovaná [ArchWiki](/index.php/Main_Page_(%C4%8Cesky) "Main Page (Česky)") je primárním zdrojem, na který byste se měli obrátit v případě problémů. [IRC kanál](/index.php/IRC_channel "IRC channel") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) a [fórum](https://bbs.archlinux.org/) jsou také výbornými zdroji, pokud odpověď nelze najít jinde. V souladu s [Arch Way](/index.php/The_Arch_Way_(%C4%8Cesky) "The Arch Way (Česky)") Vás nabádáme, abyste použili příkaz `man *příkaz*` pro přečtení manuálové stránky jakéhokoliv příkazu, se kterým nejste obeznámeni.
 
 ## Contents
 
@@ -59,9 +59,9 @@ Následující články (anglicky) mohou být užitečné:
 
 ### Bootování instalačního média
 
-Nejprve musíte změnit pořadí bootování v BIOSu Vašeho počítače. Během [POST](https://en.wikipedia.org/wiki/Power-on_self_test "wikipedia:Power-on self test") fáze musíte zmáčknout určitou klávesu (obvykle `Delete`, `F1`, `F2`, `F11` nebo `F12`). Poté v menu vyberte _Boot Arch Linux_ a zmáčkněte `Enter`.
+Nejprve musíte změnit pořadí bootování v BIOSu Vašeho počítače. Během [POST](https://en.wikipedia.org/wiki/Power-on_self_test "wikipedia:Power-on self test") fáze musíte zmáčknout určitou klávesu (obvykle `Delete`, `F1`, `F2`, `F11` nebo `F12`). Poté v menu vyberte *Boot Arch Linux* a zmáčkněte `Enter`.
 
-Po nabootování do instalačního prostředí je Váš shell [Zsh](/index.php/Zsh_(%C4%8Cesky) "Zsh (Česky)"), který poskytuje pokročilé Tab doplňování (_Tab completion_) a další funkce jako součást [grml konfigurace](http://grml.org/zsh/).
+Po nabootování do instalačního prostředí je Váš shell [Zsh](/index.php/Zsh_(%C4%8Cesky) "Zsh (Česky)"), který poskytuje pokročilé Tab doplňování (*Tab completion*) a další funkce jako součást [grml konfigurace](http://grml.org/zsh/).
 
 #### Testování, jestli jste nabootovali pomocí UEFI
 
@@ -74,6 +74,6 @@ Pokud Vaše základní deska podporuje [UEFI](/index.php/UEFI "UEFI") a pokud je
 
 #### Problémy při bootování
 
-*   Pokud máte integrovanou grafickou kartu Intel a obrazovka při bootování zčerná, pravděpodobně se jedná o problém s [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). Možným řešením může být rebootování a zmáčknutí `e` nad volbou, kterou chcete bootovat (i686 nebo x86_64). Na konec řetězce přidejte `nomodeset` a zmáčkněte `Enter`. Alternativně můžete zkusit `video=SVIDEO-1:d`, což nezakáže _Kernel Mode Setting_. Také můžete zkusit `i915.modeset=0`. Vizte [Intel (Česky)](/index.php/Intel_(%C4%8Cesky) "Intel (Česky)") pro více informací.
+*   Pokud máte integrovanou grafickou kartu Intel a obrazovka při bootování zčerná, pravděpodobně se jedná o problém s [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). Možným řešením může být rebootování a zmáčknutí `e` nad volbou, kterou chcete bootovat (i686 nebo x86_64). Na konec řetězce přidejte `nomodeset` a zmáčkněte `Enter`. Alternativně můžete zkusit `video=SVIDEO-1:d`, což nezakáže *Kernel Mode Setting*. Také můžete zkusit `i915.modeset=0`. Vizte [Intel (Česky)](/index.php/Intel_(%C4%8Cesky) "Intel (Česky)") pro více informací.
 
 *   Pokud obrazovka nezčerná a bootovací proces se zasekne při zavádění jádra, zmáčněte `Tab` nad volbou v menu, připište `acpi=off` na konec řetězce a zmáčkněte `Enter`.

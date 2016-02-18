@@ -2,7 +2,7 @@
 
 From the [init](http://unixhelp.ed.ac.uk/CGI/man-cgi?init+8) man page:
 
-	_A runlevel is a software configuration of the system which allows only a selected group of processes to exist. The processes spawned by init for each of these runlevels are defined in the /etc/inittab file._
+	*A runlevel is a software configuration of the system which allows only a selected group of processes to exist. The processes spawned by init for each of these runlevels are defined in the /etc/inittab file.*
 
 If something goes wrong with your Arch setup in such way that you are completely helpless when the system boots up, you may need this.
 
@@ -91,7 +91,6 @@ The `/etc/rc.conf` gives the suggestion to put a `!` in front of daemons you wan
 Example:
 
  `/etc/rc.multi` 
-
 ```
  #!/bin/bash
  #

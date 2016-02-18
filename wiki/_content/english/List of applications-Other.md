@@ -290,15 +290,15 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[http://tools.suckless.org/dmenu/](http://tools.suckless.org/dmenu/) || [dmenu](https://www.archlinux.org/packages/?name=dmenu)
 
-*   **dmenu-extended** — An extension to _dmenu_ for quickly opening files and folders.
+*   **dmenu-extended** — An extension to *dmenu* for quickly opening files and folders.
 
 	[https://github.com/markjones112358/dmenu-extended](https://github.com/markjones112358/dmenu-extended) || [dmenu-extended](https://aur.archlinux.org/packages/dmenu-extended/)
 
-*   **dmenu-launch** — Simple _dmenu_-based application launcher. Launches binaries and XDG shortcuts.
+*   **dmenu-launch** — Simple *dmenu*-based application launcher. Launches binaries and XDG shortcuts.
 
 	[https://github.com/Wintervenom/Scripts/blob/master/file/launch/dmenu-launch](https://github.com/Wintervenom/Scripts/blob/master/file/launch/dmenu-launch) || [dmenu-launch](https://aur.archlinux.org/packages/dmenu-launch/)
 
-*   **dswitcher** — _dmenu_-based window switcher that works regardless of workspace or minimization.
+*   **dswitcher** — *dmenu*-based window switcher that works regardless of workspace or minimization.
 
 	[https://github.com/Antithesisx/dswitcher](https://github.com/Antithesisx/dswitcher) || [dswitcher-git](https://aur.archlinux.org/packages/dswitcher-git/)
 
@@ -310,7 +310,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[http://sourceforge.net/projects/gmrun/](http://sourceforge.net/projects/gmrun/) || [gmrun](https://www.archlinux.org/packages/?name=gmrun)
 
-*   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do "wikipedia:GNOME Do")** — Application launcher inspired by [Quicksilver](https://en.wikipedia.org/wiki/Quicksilver_(software) "wikipedia:Quicksilver (software)") with many plugins, originally developed for the GNOME desktop.
+*   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do with many plugins, originally developed for the GNOME desktop.
 
 	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://www.archlinux.org/packages/?name=gnome-do)
 
@@ -346,7 +346,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[http://appstogo.mcfadzean.org.uk/linux.html#whippet](http://appstogo.mcfadzean.org.uk/linux.html#whippet) || [whippet](https://aur.archlinux.org/packages/whippet/)
 
-*   **xboomx** — Light _dmenu_ wrapper that reorders commands based on popularity, written in Python.
+*   **xboomx** — Light *dmenu* wrapper that reorders commands based on popularity, written in Python.
 
 	[https://bitbucket.org/dehun/xboomx](https://bitbucket.org/dehun/xboomx) || [xboomx](https://aur.archlinux.org/packages/xboomx/)
 
@@ -354,7 +354,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[http://docs.xfce.org/xfce/xfce4-appfinder/start](http://docs.xfce.org/xfce/xfce4-appfinder/start) || [xfce4-appfinder](https://www.archlinux.org/packages/?name=xfce4-appfinder)
 
-*   **Yeganesh** — Light _dmenu_ wrapper that reorders commands based on popularity, written in Haskell.
+*   **Yeganesh** — Light *dmenu* wrapper that reorders commands based on popularity, written in Haskell.
 
 	[http://dmwit.com/yeganesh](http://dmwit.com/yeganesh) || [yeganesh](https://aur.archlinux.org/packages/yeganesh/)
 
@@ -426,7 +426,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 	[http://ledger-cli.org/](http://ledger-cli.org/) || [ledger](https://aur.archlinux.org/packages/ledger/)
 
-*   **Moneychanger** — An intuitive QT/C++ system tray client for _Open-Transactions_
+*   **Moneychanger** — An intuitive QT/C++ system tray client for *Open-Transactions*
 
 	[https://github.com/Open-Transactions/Moneychanger](https://github.com/Open-Transactions/Moneychanger) || [moneychanger-git](https://aur.archlinux.org/packages/moneychanger-git/)
 

@@ -14,7 +14,7 @@ Most mature terminal emulators permit users to copy or save their contents.
 
 ## General approach
 
-In graphical terminal emulators, contents are typically selectable by mouse, and can then be copied using the context menu, _Edit_ menu or a key combination such as `Ctrl+Shift+C`.
+In graphical terminal emulators, contents are typically selectable by mouse, and can then be copied using the context menu, *Edit* menu or a key combination such as `Ctrl+Shift+C`.
 
 ### Terminals without CLIPBOARD selection
 
@@ -27,7 +27,7 @@ $ xclip -o | xclip -selection clipboard -i
 
 ### Intercepting commands’s output
 
-Use _tee_ to intercept the output of a command.
+Use *tee* to intercept the output of a command.
 
 ```
 $ command 2>&1 | tee output-file
@@ -80,7 +80,7 @@ Until the "Notes" column states otherwise, the keys combination is `Ctrl+Shift+c
 
 ### putty
 
-The [xclip approach](#Terminals_without_CLIPBOARD_selection) works for _putty_: one just has to remember that the _xclip_ invocation should be done on the local computer (in another terminal), not on the remote machine to which _putty_ is connected.
+The [xclip approach](#Terminals_without_CLIPBOARD_selection) works for *putty*: one just has to remember that the *xclip* invocation should be done on the local computer (in another terminal), not on the remote machine to which *putty* is connected.
 
 ### urxvt
 
@@ -88,4 +88,4 @@ Selecting text to CLIPBOARD requires the `selection-to-clipboard` perl extension
 
 ### xterm
 
-Access to the CLIPBOARD selection in _xterm_ requires [additional steps](/index.php/Xterm#PRIMARY_or_CLIPBOARD "Xterm").
+Access to the CLIPBOARD selection in *xterm* requires [additional steps](/index.php/Xterm#PRIMARY_or_CLIPBOARD "Xterm").

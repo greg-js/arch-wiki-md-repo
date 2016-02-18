@@ -146,7 +146,7 @@ If you have your own repository, please add it to this page, so that all the oth
 
 *   Keep the lists in alphabetical order.
 *   Include some information about the maintainer: include at least a (nick)name and some form of contact information (web site, email address, user page on ArchWiki or the forums, etc.).
-*   If the repository is of the _signed_ variety, please include a key-id, possibly using it as the anchor for a link to its keyserver; if the key is not on a keyserver, include a link to the key file.
+*   If the repository is of the *signed* variety, please include a key-id, possibly using it as the anchor for a link to its keyserver; if the key is not on a keyserver, include a link to the key file.
 *   Include some short description (e.g. the category of packages provided in the repository).
 *   If there is a page (either on ArchWiki or external) containing more information about the repository, include a link to it.
 *   If possible, avoid using comments in code blocks. The formatted description is much more readable. Users who want some comments in their `pacman.conf` can easily create it on their own.
@@ -251,7 +251,7 @@ Server = ftp://repo.arcanis.me/repo/$arch
 *   **Description:** Packages by the Chinese Arch Linux community (mostly signed)
 *   **Git Repo:** [https://github.com/archlinuxcn/repo](https://github.com/archlinuxcn/repo)
 *   **Mirrors:** [https://github.com/archlinuxcn/mirrorlist-repo](https://github.com/archlinuxcn/mirrorlist-repo)
-*   **Key-ID:** Once the repo is added, _archlinuxcn-keyring_ package must be installed before any other.
+*   **Key-ID:** Once the repo is added, *archlinuxcn-keyring* package must be installed before any other.
 
 ```
 [archlinuxcn]
@@ -265,7 +265,7 @@ Server = http://repo.archlinuxcn.org/$arch
 *   **Maintainer:** [Daniel Hillenbrand](https://plus.google.com/u/0/+DanielHillenbrand/about)
 *   **Description:** Packages for Android Development
 *   **Upstream Page:** [http://bbqlinux.org/](http://bbqlinux.org/)
-*   **Key-ID:** Get the _bbqlinux-keyring_ package, as it contains the needed keys.
+*   **Key-ID:** Get the *bbqlinux-keyring* package, as it contains the needed keys.
 
 ```
 [bbqlinux]
@@ -512,7 +512,7 @@ Server = http://pkgbuild.com/~tredaelli/repo/systemd/$arch
 #### herecura
 
 *   **Maintainer:** [Ike Devolder](https://www.archlinux.org/people/trusted-users/#idevolder)
-*   **Description:** additional packages not found in the _community_ repository
+*   **Description:** additional packages not found in the *community* repository
 *   **Key-ID:** Not required, as maintainer is a TU
 
 ```
@@ -524,7 +524,7 @@ Server = http://repo.herecura.be/$repo/$arch
 #### blackeagle-pre-community
 
 *   **Maintainer:** [Ike Devolder](https://www.archlinux.org/people/trusted-users/#idevolder)
-*   **Description:** testing of the by me maintaned packages before moving to _community_ repository
+*   **Description:** testing of the by me maintaned packages before moving to *community* repository
 *   **Key-ID:** Not required, as maintainer is a TU
 
 ```
@@ -643,7 +643,7 @@ Server = http://ede.elderlinux.org/repos/archlinux/$arch
 #### heftig
 
 *   **Maintainer:** [Jan Steffens](https://www.archlinux.org/trustedusers/#heftig)
-*   **Description:** Includes linux-zen and aurora (Firefox development build - works alongside [firefox](https://www.archlinux.org/packages/?name=firefox) in the _extra_ repository).
+*   **Description:** Includes linux-zen and aurora (Firefox development build - works alongside [firefox](https://www.archlinux.org/packages/?name=firefox) in the *extra* repository).
 *   **Upstream page:** [https://bbs.archlinux.org/viewtopic.php?id=117157](https://bbs.archlinux.org/viewtopic.php?id=117157)
 
 ```
@@ -655,7 +655,7 @@ Server = http://pkgbuild.com/~heftig/repo/$arch
 #### mesa-git
 
 *   **Maintainer:** [Laurent Carlier](https://www.archlinux.org/people/trusted-users/#lcarlier)
-*   **Description:** Mesa git builds for the _testing_ and _multilib-testing_ repositories
+*   **Description:** Mesa git builds for the *testing* and *multilib-testing* repositories
 
 ```
 [mesa-git]
@@ -1197,7 +1197,7 @@ Server = http://dl.dropbox.com/u/298301785/arch/linux-tresor/$arch
 *   **Sources:** [http://git.markzz.net/markzz/repositories/markzz.git/tree](http://git.markzz.net/markzz/repositories/markzz.git/tree)
 *   **Key ID:** 3CADDFDD
 
-**Note:** If you want to add the key by installing the _markzz-keyring_ package, temporarily add `SigLevel = Never` into the repository section.
+**Note:** If you want to add the key by installing the *markzz-keyring* package, temporarily add `SigLevel = Never` into the repository section.
 
 ```
 [markzz]

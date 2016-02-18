@@ -26,7 +26,7 @@ Při instalaci systémového zavaděče **grub** jsem provedl první důležitou
  $ # (0) Arch Linux
  $ title  Arch Linux Hi-Res
  $ root   (hd0,1)
- $ kernel /boot/vmlinuz26 root=/dev/disk/by-uid/_uid_disku_ ro **vga=835**
+ $ kernel /boot/vmlinuz26 root=/dev/disk/by-uid/*uid_disku* ro **vga=835**
  $ initrd /boot/kernel26.img
  $ 
  $ # definice dalších možností v nabídce...

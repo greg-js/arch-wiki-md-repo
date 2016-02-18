@@ -1,6 +1,6 @@
 From the [awesome website](https://awesome.naquadah.org/):
 
-	_[awesome](https://en.wikipedia.org/wiki/awesome_(window_manager) "wikipedia:awesome (window manager)") is a highly configurable, next generation framework window manager for X. It is very fast, extensible and licensed under the GNU GPLv2 license. It is primarily targeted at power users, developers and any people dealing with every day computing tasks and who want to have fine-grained control on its graphical environment._
+	*[awesome](https://en.wikipedia.org/wiki/awesome_(window_manager) is a highly configurable, next generation framework window manager for X. It is very fast, extensible and licensed under the GNU GPLv2 license. It is primarily targeted at power users, developers and any people dealing with every day computing tasks and who want to have fine-grained control on its graphical environment.*
 
 ## Contents
 
@@ -54,7 +54,6 @@ To run awesome from [Xinitrc](/index.php/Xinitrc "Xinitrc"), add `exec awesome` 
 Create as root:
 
  `/usr/share/apps/kdm/sessions/awesome.desktop` 
-
 ```
 [Desktop Entry]
 Name=Awesome
@@ -182,7 +181,7 @@ For a random background image, add [[3]](https://gist.github.com/anonymous/37f3b
 
 ### Hide / show wibox
 
-To map Modkey-b to hide/show default statusbar on active screen (as default in awesome 2.3), add to your _globalkeys_ in rc.lua:
+To map Modkey-b to hide/show default statusbar on active screen (as default in awesome 2.3), add to your *globalkeys* in rc.lua:
 
 ```
 awful.key({ modkey }, "b", function ()
@@ -206,7 +205,7 @@ This function saves screenshots inside `~/screenshots/`, edit as needed.
 
 ### Removing window gaps
 
-As of awesome 3.4, it is possible to remove the small gaps between windows; in the _awful.rules.rules_ table there is a _properties_ section, add to it
+As of awesome 3.4, it is possible to remove the small gaps between windows; in the *awful.rules.rules* table there is a *properties* section, add to it
 
 ```
  size_hints_honor = false
@@ -275,7 +274,7 @@ globalkeys = awful.util.table.join(
 
 #### ImageMagick
 
-You may have problems if you set your wallpaper with imagemagick's _display_ command. It does not work well with xcompmgr. Please note that awsetbg may be using _display_ if it does not have any other options. Installing habak, feh, hsetroot or whatever should fix the problem (_grep -A 1 wpsetters /usr/bin/awsetbg_ to see your options).
+You may have problems if you set your wallpaper with imagemagick's *display* command. It does not work well with xcompmgr. Please note that awsetbg may be using *display* if it does not have any other options. Installing habak, feh, hsetroot or whatever should fix the problem (*grep -A 1 wpsetters /usr/bin/awsetbg* to see your options).
 
 ### Passing content to widgets with awesome-client
 
@@ -307,7 +306,7 @@ $ awesome -k rc.lua
 
 ```
 
-You should also change your `_modkey_+R` keybinding, in order to start some other application launcher instead of built in awesome. See [List of applications#Application launchers](/index.php/List_of_applications#Application_launchers "List of applications") for examples. Do not forget to add:
+You should also change your `*modkey*+R` keybinding, in order to start some other application launcher instead of built in awesome. See [List of applications#Application launchers](/index.php/List_of_applications#Application_launchers "List of applications") for examples. Do not forget to add:
 
 ```
       properties = { floating = true } },
@@ -319,9 +318,9 @@ to your `rc.lua`.
 
 ### Application directories in menubar
 
-[awesome](https://www.archlinux.org/packages/?name=awesome) includes [menubar](http://awesome.naquadah.org/wiki/Menubar/3.5). By default, pressing `_Mod_+p` will open a dmenu-like applications menu at the top of the screen. However, this menu only searches for `.desktop` files in `/usr/share/applications` and `/usr/local/share/applications`.
+[awesome](https://www.archlinux.org/packages/?name=awesome) includes [menubar](http://awesome.naquadah.org/wiki/Menubar/3.5). By default, pressing `*Mod*+p` will open a dmenu-like applications menu at the top of the screen. However, this menu only searches for `.desktop` files in `/usr/share/applications` and `/usr/local/share/applications`.
 
-To change this, add the following line to `rc.lua`, ideally, under _Menubar configuration_:
+To change this, add the following line to `rc.lua`, ideally, under *Menubar configuration*:
 
 ```
 app_folders = { "/usr/share/applications/", "~/.local/share/applications/" }
@@ -332,7 +331,7 @@ Note that the `.desktop` files are re-read each time awesome starts, thereby slo
 
 ### Pop-up menus
 
-There is a simple menu by default in awesome 3, simplifying custom menus. [[5]](http://awesome.naquadah.org/wiki/Awful.menu) If you want a freedesktop.org menu, you could take a look at _[awesome-freedesktop](https://github.com/terceiro/awesome-freedesktop)_. See [[6]](https://gist.github.com/anonymous/5a5ea49638662cefdb3b) for an example for awesome3.
+There is a simple menu by default in awesome 3, simplifying custom menus. [[5]](http://awesome.naquadah.org/wiki/Awful.menu) If you want a freedesktop.org menu, you could take a look at *[awesome-freedesktop](https://github.com/terceiro/awesome-freedesktop)*. See [[6]](https://gist.github.com/anonymous/5a5ea49638662cefdb3b) for an example for awesome3.
 
 ### Applications menu
 
@@ -365,7 +364,7 @@ awful.titlebar.hide(c)
 
 ### Battery notification
 
-See [[7]](http://bpdp.blogspot.be/2013/06/battery-warning-notification-for.html) for a simple battery notification to add to `rc.lua`. Note that its needs _naughty_ for the notifications (installed by default in version 3.5). Other examples are available at [awesome wiki](https://awesome.naquadah.org/wiki/Gigamo_Battery_Widget#Simple_modular_version_for_3.4)
+See [[7]](http://bpdp.blogspot.be/2013/06/battery-warning-notification-for.html) for a simple battery notification to add to `rc.lua`. Note that its needs *naughty* for the notifications (installed by default in version 3.5). Other examples are available at [awesome wiki](https://awesome.naquadah.org/wiki/Gigamo_Battery_Widget#Simple_modular_version_for_3.4)
 
 ## Troubleshooting
 
@@ -486,7 +485,7 @@ See [awesome wiki](http://awesome.naquadah.org/wiki/Problems_with_Java) and [[8]
 
 If you get stuck and cannot move or resize the main window (using mod4 + left/right mouse button) edit the `workbench.xml` and set fullscreen/maximized to false (if set) and reduce the width and height to numbers smaller than your single screen desktop area.
 
-`workbench.xml` can be found in `_eclipse_workspace_/.metadata/.plugins/org.eclipse.ui.workbench/`. Edit the line:
+`workbench.xml` can be found in `*eclipse_workspace*/.metadata/.plugins/org.eclipse.ui.workbench/`. Edit the line:
 
 ```
 <window height="xx" maximized="true" width="xx" x="xx" y="xx"

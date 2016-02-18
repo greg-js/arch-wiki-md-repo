@@ -36,7 +36,7 @@ Fluxbox is yet another window manager for X11\. It is based on the (now abandone
 
 **Graphical login**
 
-Just choose the _fluxbox_ option from the session menu of your favourite [display manager](/index.php/Display_manager "Display manager").
+Just choose the *fluxbox* option from the session menu of your favourite [display manager](/index.php/Display_manager "Display manager").
 
 **Manually**
 
@@ -53,13 +53,13 @@ See [xinitrc](/index.php/Xinitrc "Xinitrc") for details, such as preserving the 
 
 System-wide Fluxbox configuration files are in `/usr/share/fluxbox` while user configuration files are in `~/.fluxbox`. The user config files are:
 
-*   _init_ - the main Fluxbox resource configuration file. See [Editing the init file](http://fluxbox-wiki.org/category/howtos/en/Editing_the_init_file.html)
-*   _menu_ - the Fluxbox menu config. See below and [Editing the menu file](http://fluxbox-wiki.org/category/howtos/en/Editing_the_menu.html)
-*   _keys_ - the Fluxbox keyboard shortcuts (hotkeys) file. See below and [here](http://fluxbox-wiki.org/category/howtos/en/Keyboard_shortcuts.html)
-*   _startup_ - where to launch startup apps but see below for .xinitrc and also [here](http://fluxbox-wiki.org/category/howtos/en/Editing_the_startup_file.html)
-*   _overlay_ - a config file to override elements of styles. See [here](http://fluxbox-wiki.org/category/howtos/en/Style_overlay.html).
-*   _apps_ - a config file for remembering the window configuration of specific apps. See [here](http://fluxbox-wiki.org/category/howtos/en/Editing_the_apps_file.html)
-*   _windowmenu_ - a config file for altering the Window Menu itself: [read this](http://fluxbox-wiki.org/category/howtos/en/Editing_the_windowmenu.html)
+*   *init* - the main Fluxbox resource configuration file. See [Editing the init file](http://fluxbox-wiki.org/category/howtos/en/Editing_the_init_file.html)
+*   *menu* - the Fluxbox menu config. See below and [Editing the menu file](http://fluxbox-wiki.org/category/howtos/en/Editing_the_menu.html)
+*   *keys* - the Fluxbox keyboard shortcuts (hotkeys) file. See below and [here](http://fluxbox-wiki.org/category/howtos/en/Keyboard_shortcuts.html)
+*   *startup* - where to launch startup apps but see below for .xinitrc and also [here](http://fluxbox-wiki.org/category/howtos/en/Editing_the_startup_file.html)
+*   *overlay* - a config file to override elements of styles. See [here](http://fluxbox-wiki.org/category/howtos/en/Style_overlay.html).
+*   *apps* - a config file for remembering the window configuration of specific apps. See [here](http://fluxbox-wiki.org/category/howtos/en/Editing_the_apps_file.html)
+*   *windowmenu* - a config file for altering the Window Menu itself: [read this](http://fluxbox-wiki.org/category/howtos/en/Editing_the_windowmenu.html)
 
 There are a couple of other less important config files in the directory. But the main ones to be concerned with are init, menu, keys and perhaps startup.
 
@@ -89,7 +89,7 @@ $ mmaker -f FluxBox
 
 ```
 
-You can avoid populating your menu with terminal based applications such as _alsamixer_ by running the following switches with the mmaker command: `--no-legacy` and `--no-debian`. For example:
+You can avoid populating your menu with terminal based applications such as *alsamixer* by running the following switches with the mmaker command: `--no-legacy` and `--no-debian`. For example:
 
 ```
 $ mmaker -f --no-legacy --no-debian FluxBox
@@ -324,7 +324,7 @@ To enable notifications on-screen for Fluxbox, ensure that a notification server
 
 ### Xorg configuration without a xorg.conf file
 
-Xorg no longer requires an _xorg.conf_ file. Traditionally this is where you would change your keyboard settings and powersave settings. Luckily there are elegant solutions not using _xorg.conf_.
+Xorg no longer requires an *xorg.conf* file. Traditionally this is where you would change your keyboard settings and powersave settings. Luckily there are elegant solutions not using *xorg.conf*.
 
 #### Set the keyboard layout with Fluxbox
 
@@ -335,7 +335,7 @@ setxkbmap us -variant intl & # to have a us keyboard with special characters ena
 
 ```
 
-Instead of 'us' you can also pass your language code and remove the variant option (ex.: 'us_intl', which works like the command above in some setups). See _setxkbmap_ manual page for more options.
+Instead of 'us' you can also pass your language code and remove the variant option (ex.: 'us_intl', which works like the command above in some setups). See *setxkbmap* manual page for more options.
 
 To make a help function in your menu, just add in `~/.fluxbox/menu`:
 

@@ -189,14 +189,14 @@ Privoxy 是一个 HTTP 代理，它使用 SOCKS4a 代理进行 html/cookie 过�
 
 最简单的方法就是使用[Torbutton](https://www.torproject.org/torbutton) 扩展。
 
-或者, 你可以使用[Foxyproxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard)。然后重启Firefox你就会发现一个新的工具条。 点_Add_, 选_Standard proxy type_. 选 你要的_Proxy Label_ , 例如_Tor_。进入“HTTP Proxy”和“SSL Proxy”区域：
+或者, 你可以使用[Foxyproxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard)。然后重启Firefox你就会发现一个新的工具条。 点*Add*, 选*Standard proxy type*. 选 你要的*Proxy Label* , 例如*Tor*。进入“HTTP Proxy”和“SSL Proxy”区域：
 
 ```
 Hostname: 127.0.0.1 Port: 8118
 
 ```
 
-然后Firefox将会用代理连接。你也可以在_No Proxy for_ 添加例外。
+然后Firefox将会用代理连接。你也可以在*No Proxy for* 添加例外。
 
 现在,返回 [http://whatsmyip.net/](http://whatsmyip.net/) 检查你的ip地址是否和以前不同了。
 
@@ -271,7 +271,6 @@ Could not bind to 0.0.0.0:443: Permission denied errors on startup
 Tor 0.2.x系列提供了一个内置的DNS转发器。在Tor配置文件添加如下文件来启动它。
 
  `/etc/tor/torrc` 
-
 ```
  DNSPort 9053
  AutomapHostsOnResolve 1
@@ -333,7 +332,7 @@ $ torify elinks 208.78.69.70
 
 ### User value的问题
 
-如果_tor_ daemon启动失败，你可以在root环境下运行一下命令(或者使用sudo)
+如果*tor* daemon启动失败，你可以在root环境下运行一下命令(或者使用sudo)
 
 ```
 # tor
@@ -366,9 +365,9 @@ drwx------ 2 tor    tor    4096 May 12 21:03 tor
 
 ```
 
-这意味着它被_tor_用户和 _tor_组所拥有
+这意味着它被*tor*用户和 *tor*组所拥有
 
-通过以下命令把拥有者和组改为_root_, _root_
+通过以下命令把拥有者和组改为*root*, *root*
 
 ```
 # chown -R root:root /var/lib/tor
@@ -393,7 +392,7 @@ Group tor
 
 ```
 
-注释掉_User tor_ 和_Group tor_, 所以他应该显示为
+注释掉*User tor* 和*Group tor*, 所以他应该显示为
 
 ```
 ## Uncomment this to start the process in the background... or use
@@ -404,7 +403,7 @@ RunAsDaemon 1
 
 ```
 
-保存更改然后重启_tor_ daemon, 他应该能够工作了
+保存更改然后重启*tor* daemon, 他应该能够工作了
 
 ```
 # /etc/rc.d/tor restart
@@ -416,4 +415,4 @@ RunAsDaemon 1
 *   [Official Website](https://www.torproject.org/)
 *   [Unix-based Tor Articles](https://trac.torproject.org/projects/tor/wiki#Unixish)
 *   [Software commonly integrated with Tor](https://trac.torproject.org/projects/tor/wiki/doc/SupportPrograms)
-*   [How to set up a Tor _Hidden Service_](https://www.torproject.org/docs/tor-hidden-service.html.en)
+*   [How to set up a Tor *Hidden Service*](https://www.torproject.org/docs/tor-hidden-service.html.en)

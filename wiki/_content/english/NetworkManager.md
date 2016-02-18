@@ -69,7 +69,7 @@
 
 ## Installation
 
-NetworkManager can be [installed](/index.php/Install "Install") with the package [networkmanager](https://www.archlinux.org/packages/?name=networkmanager). The package does not include the tray applet _nm-applet_ which is part of the [network-manager-applet](https://www.archlinux.org/packages/extra/i686/network-manager-applet/). Since version 1.0 it gained internal functionality for basic DHCP support. For full featured DHCP and if you require IPv6 support, [dhclient](https://www.archlinux.org/packages/?name=dhclient) integrates it.
+NetworkManager can be [installed](/index.php/Install "Install") with the package [networkmanager](https://www.archlinux.org/packages/?name=networkmanager). The package does not include the tray applet *nm-applet* which is part of the [network-manager-applet](https://www.archlinux.org/packages/extra/i686/network-manager-applet/). Since version 1.0 it gained internal functionality for basic DHCP support. For full featured DHCP and if you require IPv6 support, [dhclient](https://www.archlinux.org/packages/?name=dhclient) integrates it.
 
 **Note:** You must ensure that no other service that wants to configure the network is running; in fact, multiple networking services will conflict. You can find a list of the currently running services with `systemctl --type=service` and then [stop](/index.php/Stop "Stop") them. See [#Configuration](#Configuration) to enable the NetworkManager service.
 
@@ -147,7 +147,6 @@ To store connection secrets install and configure [GNOME Keyring](/index.php/GNO
 In order to run `nm-applet` without a systray, you can use [trayer](https://www.archlinux.org/packages/?name=trayer) or [stalonetray](https://www.archlinux.org/packages/?name=stalonetray). For example, you can add a script like this one in your path:
 
  `nmgui` 
-
 ```
 #!/bin/sh
 nm-applet    2>&1 /dev/null &
@@ -156,7 +155,7 @@ killall nm-applet
 
 ```
 
-When you close the _stalonetray_ window, it closes `nm-applet` too, so no extra memory is used once you are done with network settings.
+When you close the *stalonetray* window, it closes `nm-applet` too, so no extra memory is used once you are done with network settings.
 
 ### Command line
 
@@ -164,7 +163,7 @@ The following applications can be useful for configuring and managing networks w
 
 #### nmcli
 
-A command line frontend, _nmcli_, is included with [networkmanager](https://www.archlinux.org/packages/?name=networkmanager).
+A command line frontend, *nmcli*, is included with [networkmanager](https://www.archlinux.org/packages/?name=networkmanager).
 
 For usage information, see `man nmcli`. Examples:
 
@@ -178,13 +177,13 @@ For usage information, see `man nmcli`. Examples:
 
 #### nmtui
 
-A curses based graphical frontend, _nmtui_, is included with [networkmanager](https://www.archlinux.org/packages/?name=networkmanager).
+A curses based graphical frontend, *nmtui*, is included with [networkmanager](https://www.archlinux.org/packages/?name=networkmanager).
 
 For usage information, see `man nmtui`.
 
 #### nmcli-dmenu
 
-Alternatively there is [networkmanager-dmenu-git](https://aur.archlinux.org/packages/networkmanager-dmenu-git/) which is a small script to manage NetworkManager connections with _dmenu_ instead of `nm-applet`. It provides all essential features such as connect to existing NetworkManager wifi or wired connections, connect to new wifi connections, requests passphrase if required, connect to existing VPN connections, enable/disable networking, launch _nm-connection-editor_ GUI.
+Alternatively there is [networkmanager-dmenu-git](https://aur.archlinux.org/packages/networkmanager-dmenu-git/) which is a small script to manage NetworkManager connections with *dmenu* instead of `nm-applet`. It provides all essential features such as connect to existing NetworkManager wifi or wired connections, connect to new wifi connections, requests passphrase if required, connect to existing VPN connections, enable/disable networking, launch *nm-connection-editor* GUI.
 
 ## Configuration
 
@@ -192,7 +191,7 @@ NetworkManager will require some additional steps to be able run properly. Make 
 
 ### Enable NetworkManager
 
-NetworkManager is [controlled](/index.php/Systemd#Using_units "Systemd") via `NetworkManager.service`. Once the NetworkManager daemon is started, it will automatically connect to any available "system connections" that have already been configured. Any "user connections" or unconfigured connections will need _nmcli_ or an applet to configure and connect.
+NetworkManager is [controlled](/index.php/Systemd#Using_units "Systemd") via `NetworkManager.service`. Once the NetworkManager daemon is started, it will automatically connect to any available "system connections" that have already been configured. Any "user connections" or unconfigured connections will need *nmcli* or an applet to configure and connect.
 
 NetworkManager has a global configuration file at `/etc/NetworkManager/NetworkManager.conf`. Usually no configuration needs to be done to the global defaults.
 
@@ -210,12 +209,11 @@ See [General troubleshooting#Session permissions](/index.php/General_troubleshoo
 
 With a working session, you have several options for granting the necessary privileges to NetworkManager:
 
-*   _Option 1._ Run a [Polkit](/index.php/Polkit "Polkit") authentication agent when you log in, such as `/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1` (part of [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome)). You will be prompted for your password whenever you add or remove a network connection.
-*   _Option 2._ [Add](/index.php/Users_and_groups#Group_management "Users and groups") yourself to the `wheel` group. You will not have to enter your password, but your user account may be granted other permissions as well, such as the ability to use [sudo](/index.php/Sudo "Sudo") without entering the root password.
-*   _Option 3._ [Add](/index.php/Users_and_groups#Group_management "Users and groups") yourself to the `network` group and create the following file:
+*   *Option 1.* Run a [Polkit](/index.php/Polkit "Polkit") authentication agent when you log in, such as `/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1` (part of [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome)). You will be prompted for your password whenever you add or remove a network connection.
+*   *Option 2.* [Add](/index.php/Users_and_groups#Group_management "Users and groups") yourself to the `wheel` group. You will not have to enter your password, but your user account may be granted other permissions as well, such as the ability to use [sudo](/index.php/Sudo "Sudo") without entering the root password.
+*   *Option 3.* [Add](/index.php/Users_and_groups#Group_management "Users and groups") yourself to the `network` group and create the following file:
 
  `/etc/polkit-1/rules.d/50-org.freedesktop.NetworkManager.rules` 
-
 ```
 polkit.addRule(function(action, subject) {
   if (action.id.indexOf("org.freedesktop.NetworkManager.") == 0 && subject.isInGroup("network")) {
@@ -225,7 +223,7 @@ polkit.addRule(function(action, subject) {
 
 ```
 
-	All users in the `network` group will be able to add and remove networks without a password. This will not work under [systemd](/index.php/Systemd "Systemd") if you do not have an active session with _systemd-logind_.
+	All users in the `network` group will be able to add and remove networks without a password. This will not work under [systemd](/index.php/Systemd "Systemd") if you do not have an active session with *systemd-logind*.
 
 ### Network services with NetworkManager dispatcher
 
@@ -234,18 +232,18 @@ There are quite a few network services that you will not want running until Netw
 Once the feature is active, scripts can be added to the `/etc/NetworkManager/dispatcher.d` directory. These scripts must be **owned by root**, otherwise the dispatcher will not execute them. For added security, set group ownership to root as well:
 
 ```
-# chown root:root _scriptname_
+# chown root:root *scriptname*
 
 ```
 
 Also, the script must have **write permission for owner only**, otherwise the dispatcher will not execute them:
 
 ```
-# chmod 755 _scriptname_
+# chmod 755 *scriptname*
 
 ```
 
-The scripts will be run in alphabetical order at connection time, and in reverse alphabetical order at disconnect time. They receive two arguments: the name of the interface (e.g. `eth0`) and the status (_up_ or _down_ for interfaces and _vpn-up_ or _vpn-down_ for vpn connections). To ensure what order they come up in, it is common to use numerical characters prior to the name of the script (e.g. `10_portmap` or `30_netfs` (which ensures that the _portmapper_ is up before NFS mounts are attempted).
+The scripts will be run in alphabetical order at connection time, and in reverse alphabetical order at disconnect time. They receive two arguments: the name of the interface (e.g. `eth0`) and the status (*up* or *down* for interfaces and *vpn-up* or *vpn-down* for vpn connections). To ensure what order they come up in, it is common to use numerical characters prior to the name of the script (e.g. `10_portmap` or `30_netfs` (which ensures that the *portmapper* is up before NFS mounts are attempted).
 
 **Warning:** If you connect to foreign or public networks, be aware of what services you are starting and what servers you expect to be available for them to connect to. You could make a security hole by starting the wrong services while connected to a public network
 
@@ -254,7 +252,6 @@ The scripts will be run in alphabetical order at connection time, and in reverse
 If the above is working, then this section is not relevant. However, there is a general problem related to running dispatcher scripts which take longer to be executed. Initially an internal timeout of three seconds only was used. If the called script did not complete in time, it was killed. Later the timeout was extended to about 20 seconds (see the [Bugtracker](https://bugzilla.redhat.com/show_bug.cgi?id=982734) for more information). If the timeout still creates the problem, a work around may be to modify the dispatcher service file `/usr/lib/systemd/system/NetworkManager-dispatcher.service` to remain active after exit:
 
  `/etc/systemd/system/NetworkManager-dispatcher.service` 
-
 ```
 .include /usr/lib/systemd/system/NetworkManager-dispatcher.service
 [Service]
@@ -271,7 +268,7 @@ Install the [networkmanager-dispatcher-openntpd](https://www.archlinux.org/packa
 
 #### Mount remote folder with sshfs
 
-As the script is run in a very restrictive environment, you have to export `SSH_AUTH_SOCK` in order to connect to your SSH agent. There are different ways to accomplish this, see [this message](https://bbs.archlinux.org/viewtopic.php?pid=1042030#p1042030) for more information. The example below works with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), and will ask you for the password if not unlocked already. In case NetworkManager connects automatically on login, it is likely _gnome-keyring_ has not yet started and the export will fail (hence the sleep). The `UUID` to match can be found with the command `nmcli con status` or `nmcli con list`.
+As the script is run in a very restrictive environment, you have to export `SSH_AUTH_SOCK` in order to connect to your SSH agent. There are different ways to accomplish this, see [this message](https://bbs.archlinux.org/viewtopic.php?pid=1042030#p1042030) for more information. The example below works with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), and will ask you for the password if not unlocked already. In case NetworkManager connects automatically on login, it is likely *gnome-keyring* has not yet started and the export will fail (hence the sleep). The `UUID` to match can be found with the command `nmcli con status` or `nmcli con list`.
 
 ```
 #!/bin/sh
@@ -280,7 +277,7 @@ REMOTE='user@host:/remote/path'
 LOCAL='/local/path'
 
 interface=$1 status=$2
-if [ "$CONNECTION_UUID" = "_uuid_" ]; then
+if [ "$CONNECTION_UUID" = "*uuid*" ]; then
   case $status in
     up)
       export SSH_AUTH_SOCK=$(find /tmp -maxdepth 1 -type s -user "$USER" -name 'ssh')
@@ -301,7 +298,6 @@ In this example we want to connect automatically to a previously defined VPN con
 	1\. Create the dispatcher script:
 
  `/etc/NetworkManager/dispatcher.d/vpn-up` 
-
 ```
 #!/bin/sh
 VPN_NAME="name of VPN connection defined in NetworkManager"
@@ -327,9 +323,9 @@ esac
 
 If you would like to attempt to automatically connect to VPN for all Wi-Fi networks, you can use the following definition of the ESSID: `ESSID=$(iwgetid -r)`. Remember to set the script's permissions [accordingly](#Network_services_with_NetworkManager_dispatcher).
 
-If you require and tick the `nm-applet` option to _Make the VPN connection available to all users_, trying to connect may still fail and NetworkManager will complain about 'no valid VPN secrets', because of [the way VPN secrets are stored](http://developer.gnome.org/NetworkManager/0.9/secrets-flags.html), which brings us to step 2:
+If you require and tick the `nm-applet` option to *Make the VPN connection available to all users*, trying to connect may still fail and NetworkManager will complain about 'no valid VPN secrets', because of [the way VPN secrets are stored](http://developer.gnome.org/NetworkManager/0.9/secrets-flags.html), which brings us to step 2:
 
-	2\. Either edit the VPN connection configuration file to make NetworkManager store the secrets by itself rather than inside a keyring [that will be inaccessible for root](https://bugzilla.redhat.com/show_bug.cgi?id=710552): open up `/etc/NetworkManager/system-connections/_name of your VPN connection_` and change the `password-flags` and `secret-flags` from `1` to `0`.
+	2\. Either edit the VPN connection configuration file to make NetworkManager store the secrets by itself rather than inside a keyring [that will be inaccessible for root](https://bugzilla.redhat.com/show_bug.cgi?id=710552): open up `/etc/NetworkManager/system-connections/*name of your VPN connection*` and change the `password-flags` and `secret-flags` from `1` to `0`.
 
 Alternatively put the password directly in the configuration file adding the section `vpn-secrets`:
 
@@ -339,7 +335,7 @@ Alternatively put the password directly in the configuration file adding the sec
  password-flags=0
 
  [vpn-secrets]
- password=_your_password_
+ password=*your_password*
 
 ```
 
@@ -352,7 +348,6 @@ Some CIFS shares are only available on certain networks or locations (e.g. at ho
 The following script will check if we connected to a specific network and mount shares accordingly:
 
  `/etc/NetworkManager/dispatcher.d/mount_cifs` 
-
 ```
 #!/bin/bash
 if [ "$2" = "up" ]
@@ -369,7 +364,6 @@ fi
 The following script will unmount all CIFS before a disconnect from a specific network:
 
  `/etc/NetworkManager/dispatcher.d/pre-down.d/mount_cifs` 
-
 ```
 #!/bin/bash
 umount -a -l -t cifs
@@ -388,10 +382,10 @@ See also [NFS#NetworkManager dispatcher](/index.php/NFS#NetworkManager_dispatche
 
 NetworkManager does not directly handle proxy settings, but if you are using GNOME or KDE, you could use [proxydriver](http://marin.jb.free.fr/proxydriver/) wich handles proxy settings using NetworkManager's informations. proxydriver is found in the package [proxydriver](https://aur.archlinux.org/packages/proxydriver/).
 
-In order for _proxydriver_ to be able to change the proxy settings, you would need to execute this command, as part of the GNOME startup process (System -> Preferences -> Startup Applications):
+In order for *proxydriver* to be able to change the proxy settings, you would need to execute this command, as part of the GNOME startup process (System -> Preferences -> Startup Applications):
 
 ```
-xhost +si:localuser:_your_username_
+xhost +si:localuser:*your_username*
 
 ```
 
@@ -399,7 +393,7 @@ See: [Proxy settings](/index.php/Proxy_settings "Proxy settings").
 
 ### Disable NetworkManager
 
-It might not be obvious, but the service automatically starts through _dbus_. To completely disable it you can [mask](/index.php/Mask "Mask") the services `NetworkManager` and `NetworkManager-dispatcher`.
+It might not be obvious, but the service automatically starts through *dbus*. To completely disable it you can [mask](/index.php/Mask "Mask") the services `NetworkManager` and `NetworkManager-dispatcher`.
 
 ## Testing
 
@@ -422,7 +416,7 @@ Some fixes to common problems.
 
 ### No prompt for password of secured Wi-Fi networks
 
-When trying to connect to a secured Wi-Fi network, no prompt for a password is shown and no connection is established. This happens when no keyring package is installed. An easy solution is to install [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring). If you want the passwords to be stored in encrypted form, follow [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") to set up the _gnome-keyring-daemon_.
+When trying to connect to a secured Wi-Fi network, no prompt for a password is shown and no connection is established. This happens when no keyring package is installed. An easy solution is to install [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring). If you want the passwords to be stored in encrypted form, follow [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") to set up the *gnome-keyring-daemon*.
 
 ### No traffic via PPTP tunnel
 
@@ -456,7 +450,7 @@ If you have problems with getting an IP address via DHCP, try to add the followi
 
 ```
 
-Where `aa:bb:cc:dd:ee:ff` is the MAC address of this NIC. The MAC address can be found using the `ip link show _interface_` command from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
+Where `aa:bb:cc:dd:ee:ff` is the MAC address of this NIC. The MAC address can be found using the `ip link show *interface*` command from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
 
 ### Hostname problems
 
@@ -464,18 +458,17 @@ It depends on the NetworkManager plugins used, whether the hostname is forwarded
 
 ```
 [keyfile]
-hostname=_your_hostname_
+hostname=*your_hostname*
 
 ```
 
 The options under `[keyfile]` will be applied to network connections in the default `/etc/NetworkManager/system-connections` path.
 
-Another option is to configure the DHCP client, which NetworkManager starts automatically, to forward it. NetworkManager utilizes [dhclient](https://www.archlinux.org/packages/?name=dhclient) in default and falls back to its internal DHCP funtionality, if the former is not installed. To make _dhclient_ forward the hostname requires to set a non-default option, _dhcpcd_ forwards the hostname by default.
+Another option is to configure the DHCP client, which NetworkManager starts automatically, to forward it. NetworkManager utilizes [dhclient](https://www.archlinux.org/packages/?name=dhclient) in default and falls back to its internal DHCP funtionality, if the former is not installed. To make *dhclient* forward the hostname requires to set a non-default option, *dhcpcd* forwards the hostname by default.
 
-First, check which DHCP client is used (_dhclient_ in this example):
+First, check which DHCP client is used (*dhclient* in this example):
 
  `# journalctl -b | egrep "dhc"` 
-
 ```
 ...
 Nov 17 21:03:20 zenbook dhclient[2949]: Nov 17 21:03:20 zenbook dhclient[2949]: Bound to *:546
@@ -495,7 +488,7 @@ Copy the example configuration file:
 
 ```
 
-Take a look at the file - there will only really be one line we want to keep and _dhclient_ will use it's defaults (as it has been using if you did not have this file) for the other options. This is the important line:
+Take a look at the file - there will only really be one line we want to keep and *dhclient* will use it's defaults (as it has been using if you did not have this file) for the other options. This is the important line:
 
  `/etc/dhclient.conf`  `send host-name = pick-first-value(gethostname(), "ISC-dhclient");` 
 
@@ -507,7 +500,6 @@ IPv6 push host name:
 # cp /usr/share/dhclient/dhclient.conf.example /etc/dhclient6.conf
 
 ```
-
  `/etc/dhclient6.conf`  `send fqdn.fqdn = pick-first-value(gethostname(), "ISC-dhclient");` 
 
 #### Configure NetworkManager to use a specific DHCP client
@@ -532,14 +524,14 @@ See [USB 3G Modem#Network Manager](/index.php/USB_3G_Modem#Network_Manager "USB 
 
 ### Switching off WLAN on laptops
 
-Sometimes NetworkManager will not work when you disable your Wi-Fi adapter with a switch on your laptop and try to enable it again afterwards. This is often a problem with _rfkill_. [Install](/index.php/Install "Install") the [rfkill](https://www.archlinux.org/packages/?name=rfkill) package and use:
+Sometimes NetworkManager will not work when you disable your Wi-Fi adapter with a switch on your laptop and try to enable it again afterwards. This is often a problem with *rfkill*. [Install](/index.php/Install "Install") the [rfkill](https://www.archlinux.org/packages/?name=rfkill) package and use:
 
 ```
 $ watch -n1 rfkill list all
 
 ```
 
-to check if the driver notifies _rfkill_ about the wireless adapter's status. If one identifier stays blocked after you switch on the adapter you could try to manually unblock it with (where X is the number of the identifier provided by the above output):
+to check if the driver notifies *rfkill* about the wireless adapter's status. If one identifier stays blocked after you switch on the adapter you could try to manually unblock it with (where X is the number of the identifier provided by the above output):
 
 ```
 # rfkill event unblock X
@@ -563,7 +555,7 @@ See [#Set up PolicyKit permissions](#Set_up_PolicyKit_permissions).
 Since hidden networks are not displayed in the selection list of the Wireless view, they cannot be forgotten (removed) with the GUI. You can delete one with the following command:
 
 ```
-# rm /etc/NetworkManager/system-connections/_SSID_
+# rm /etc/NetworkManager/system-connections/*SSID*
 
 ```
 
@@ -679,7 +671,7 @@ Now you should have a new option "Shared Internet" under the Wired connections i
 
 ### Checking if networking is up inside a cron job or script
 
-Some _cron_ jobs require networking to be up to succeed. You may wish to avoid running these jobs when the network is down. To accomplish this, add an **if** test for networking that queries NetworkManager's _nm-tool_ and checks the state of networking. The test shown here succeeds if any interface is up, and fails if they are all down. This is convenient for laptops that might be hardwired, might be on wireless, or might be off the network.
+Some *cron* jobs require networking to be up to succeed. You may wish to avoid running these jobs when the network is down. To accomplish this, add an **if** test for networking that queries NetworkManager's *nm-tool* and checks the state of networking. The test shown here succeeds if any interface is up, and fails if they are all down. This is convenient for laptops that might be hardwired, might be on wireless, or might be off the network.
 
 ```
 if [ $(nm-tool|grep State|cut -f2 -d' ') == "connected" ]; then
@@ -690,7 +682,7 @@ fi
 
 ```
 
-This useful for a `cron.hourly` script that runs _fpupdate_ for the F-Prot virus scanner signature update, as an example. Another way it might be useful, with a little modification, is to differentiate between networks using various parts of the output from _nm-tool_; for example, since the active wireless network is denoted with an asterisk, you could grep for the network name and then grep for a literal asterisk.
+This useful for a `cron.hourly` script that runs *fpupdate* for the F-Prot virus scanner signature update, as an example. Another way it might be useful, with a little modification, is to differentiate between networks using various parts of the output from *nm-tool*; for example, since the active wireless network is denoted with an asterisk, you could grep for the network name and then grep for a literal asterisk.
 
 ### Automatically unlock keyring after login
 
@@ -733,10 +725,10 @@ See [SLiM#SLiM and Gnome Keyring](/index.php/SLiM#SLiM_and_Gnome_Keyring "SLiM")
 
 While you may type both values at connection time, [kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm) 0.9.3.2-1 and above are capable of retrieving OpenConnect username and password directly from KWallet.
 
-Open "KDE Wallet Manager" and look up your OpenConnect VPN connection under "Network Management|Maps". Click "Show values" and enter your credentials in key "VpnSecrets" in this form (replace _username_ and _password_ accordingly):
+Open "KDE Wallet Manager" and look up your OpenConnect VPN connection under "Network Management|Maps". Click "Show values" and enter your credentials in key "VpnSecrets" in this form (replace *username* and *password* accordingly):
 
 ```
-form:main:username%SEP%_username_%SEP%form:main:password%SEP%_password_
+form:main:username%SEP%*username*%SEP%form:main:password%SEP%*password*
 
 ```
 

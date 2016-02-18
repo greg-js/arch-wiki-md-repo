@@ -94,7 +94,6 @@ This will pull the package you requested into your checkout. From now on, any ti
   i.e. /packages/db-remove core i686 openssh 
 
 ```
-
 And if you want to really kill the package, you will need to `svn rm` the entire package directory after the above steps and commit the deletion.
 
 Sometime the previous command yields:
@@ -128,7 +127,7 @@ Alternatively, the move from testing is so common we have helper scripts:
 
 ```
 
-These scripts only work if the packages on the commandline are either in _core_ or _extra_. If a package is only in testing, you have to use _testing2core_, _testing2core64_, _testing2extra_ or _testing2extra64_.
+These scripts only work if the packages on the commandline are either in *core* or *extra*. If a package is only in testing, you have to use *testing2core*, *testing2core64*, *testing2extra* or *testing2extra64*.
 
 ### "Tagging" releases
 
@@ -260,9 +259,9 @@ Please try to write concise commit messages. If the package is simply an upstrea
 
 ### Avoid having to enter your password all the time
 
-When working with _extrapkg_ and the other devtools, quite a few ssh connections are established, even when using ssh keys and the ssh agent. You can work around that.
+When working with *extrapkg* and the other devtools, quite a few ssh connections are established, even when using ssh keys and the ssh agent. You can work around that.
 
-Add this to your _$HOME/.ssh/config_:
+Add this to your *$HOME/.ssh/config*:
 
 ```
 ControlPath /home/<your username>/.ssh/master-%h-%p-%r

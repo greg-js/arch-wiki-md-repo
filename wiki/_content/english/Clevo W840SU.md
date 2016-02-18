@@ -17,7 +17,7 @@ Installing Archlinux is straightforward and most of the hardware works out of th
 
 ### Airplane Mode
 
-To make use of the flightmode button, install _tuxedo-wmi_ from the AUR and load the tuxedo-wmi module. Use xbindkeys to map the key 255 (NoSymbol) to some script that disables wifi and bluetooth and enables the airplane mode LED.
+To make use of the flightmode button, install *tuxedo-wmi* from the AUR and load the tuxedo-wmi module. Use xbindkeys to map the key 255 (NoSymbol) to some script that disables wifi and bluetooth and enables the airplane mode LED.
 
 ```
 $ cat ~/.xbindkeysrc
@@ -34,7 +34,7 @@ echo 1 > /sys/class/leds/tuxedo::airplane/brightness
 
 ```
 
-You can automate this by installing the AUR package _clevo-airplane-mode_.
+You can automate this by installing the AUR package *clevo-airplane-mode*.
 
 ### Webcam
 
@@ -59,15 +59,15 @@ To do it manually, ensure that `<XF86MonBrightnessUp>` [is mapped](/index.php/Ex
 
 ### Sound
 
-Sound mostly works out of the box. Using _pulseaudio_ simplyfies configuration, switching outputs is possible.
+Sound mostly works out of the box. Using *pulseaudio* simplyfies configuration, switching outputs is possible.
 
 **Microphone**
 
-The volume control for the microphone is mislabeled and reads _Digital_ in ALSA.
+The volume control for the microphone is mislabeled and reads *Digital* in ALSA.
 
 ### Touchpad
 
-The touchpad works out of the box with the _synaptics_ driver. All current features are supported including two finger scroll, two- and three finger click and optional mouse buttons for the edges. Use _synclient_ for configuration. Four finger recognition and three finger swipe gestures do not seem to work, though.
+The touchpad works out of the box with the *synaptics* driver. All current features are supported including two finger scroll, two- and three finger click and optional mouse buttons for the edges. Use *synclient* for configuration. Four finger recognition and three finger swipe gestures do not seem to work, though.
 
 ## Problems
 

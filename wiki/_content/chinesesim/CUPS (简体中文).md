@@ -1,6 +1,6 @@
 来自 [CUPS' site](http://www.cups.org/index.php):
 
-	"_[CUPS](https://en.wikipedia.org/wiki/CUPS "wikipedia:CUPS") 是苹果公司为Mac OS® X 和其他类 UNIX® 的操作系统开发的基于标准的、开源的打印系统_".
+	"*[CUPS](https://en.wikipedia.org/wiki/CUPS "wikipedia:CUPS") 是苹果公司为Mac OS® X 和其他类 UNIX® 的操作系统开发的基于标准的、开源的打印系统*".
 
 虽然有其他的打印程序包例如LPRNG，但CUPS是相当流行和相对容易使用的。它是Arch linux及许多其他Linux发行版缺省的打印系统。
 
@@ -75,13 +75,13 @@ If unsure of what driver package to install or if the current driver is not work
 
 #### 下载PPD文件
 
-取决于你的打印机，不一定需要进行这个步骤，如果没什么问题可以直接跳到下一节进行配置了。因为标准的CUPS安装已经携带了很多PPD(Postscript Printer Description)。 另外，_foomatic-filters_, _gimp-print_ and _hplip_ 已经自带了很多 PPD 文件，CUPS会自动检测他们.
+取决于你的打印机，不一定需要进行这个步骤，如果没什么问题可以直接跳到下一节进行配置了。因为标准的CUPS安装已经携带了很多PPD(Postscript Printer Description)。 另外，*foomatic-filters*, *gimp-print* and *hplip* 已经自带了很多 PPD 文件，CUPS会自动检测他们.
 
 这是一句来自 "Linux 打印网站" 的内容解释什么是 PPD 文件:
 
-	"_For every PostScript printer the manufacturers provide a PPD file which contains all printer-specific information about the particular printer model: Basic printer capabilities as whether the printer is a color printer, fonts, PostScript level, etc., and especially the user-adjustable options, as paper size, resolution, etc._"
+	"*For every PostScript printer the manufacturers provide a PPD file which contains all printer-specific information about the particular printer model: Basic printer capabilities as whether the printer is a color printer, fonts, PostScript level, etc., and especially the user-adjustable options, as paper size, resolution, etc.*"
 
-如果打印机需要的PPD文件 _不_ 在CUPS中, 那么:
+如果打印机需要的PPD文件 *不* 在CUPS中, 那么:
 
 *   去 [AUR](/index.php/AUR "AUR") 寻找为打印机/制造商提供的包。
 *   去这个网站 [OpenPrinting database](http://www.openprinting.org/printers) 选择你需要的制造商和型号。
@@ -197,25 +197,25 @@ MODULES=(!usbserial scsi_mod sd_mod snd-ymfpci snd-pcm-oss **lp parport parport_
 
 ### Web 接口和工具
 
-只要cupsd这个服务在线了, 你就可以打开浏览器前往: [http://localhost:631](http://localhost:631) (_The **localhost** string may need to be replaced with the hostname found in_ `/etc/hostname`).
+只要cupsd这个服务在线了, 你就可以打开浏览器前往: [http://localhost:631](http://localhost:631) (*The **localhost** string may need to be replaced with the hostname found in* `/etc/hostname`).
 
-从这开始，跟着向导就可以一步步地添加打印机了. 一般的步骤是点击 _Adding Printers and Classes_ -> _Add Printer_. 提示需要用户名和密码时，使用root账户。然后让你填写的哪些描述性信息都无关紧要。紧接着，一个列表会提示你选择打印机型号。 Finally, choose the appropriate drivers and the configuration is complete.
+从这开始，跟着向导就可以一步步地添加打印机了. 一般的步骤是点击 *Adding Printers and Classes* -> *Add Printer*. 提示需要用户名和密码时，使用root账户。然后让你填写的哪些描述性信息都无关紧要。紧接着，一个列表会提示你选择打印机型号。 Finally, choose the appropriate drivers and the configuration is complete.
 
-配置好以后，点击 _Maintenance_ 下拉菜单，然后点击 _Print Test Page_ 打印一个测试页。如果打印不正常则说明存在一些配置的问题，问题很可能是选择的驱动不合适。
+配置好以后，点击 *Maintenance* 下拉菜单，然后点击 *Print Test Page* 打印一个测试页。如果打印不正常则说明存在一些配置的问题，问题很可能是选择的驱动不合适。
 
 **Tip:** See: [#Alternative CUPS interfaces](#Alternative_CUPS_interfaces) for other other frontends.
 
-**Note:** When setting up a USB printer, you should see your printer listed on _Add Printer_ page. If you can only see a "SCSI printer" option, it probably means that CUPS has failed to recognize your printer.
+**Note:** When setting up a USB printer, you should see your printer listed on *Add Printer* page. If you can only see a "SCSI printer" option, it probably means that CUPS has failed to recognize your printer.
 
 #### CUPS administration
 
-A user-name and password will be required when administering the printer in the web interface, such as: adding or removing printers, stopping print tasks, etc. The default user-name is the one assigned in the _sys_ group, or root (change this by editing `/etc/cups/cupsd.conf` in the line of _SystemGroup_).
+A user-name and password will be required when administering the printer in the web interface, such as: adding or removing printers, stopping print tasks, etc. The default user-name is the one assigned in the *sys* group, or root (change this by editing `/etc/cups/cupsd.conf` in the line of *SystemGroup*).
 
 If the root account has been locked (i.e. when using sudo), it is not possible to log in the CUPS administration interface with the default user-name and password. In this case, follow [these instructions](http://www.cups.org/articles.php?L237+T+Qprintadmin) on the CUPS FAQ. You might also want to read [this post](https://bbs.archlinux.org/viewtopic.php?id=35567).
 
 #### Remote access to web interface
 
-By default, the CUPS web interface can only be accessed by the _localhost_; i.e. the computer that it is installed on. To remotely access the interface, make the following changes to the `/etc/cups/cupsd.conf` file. Replace the line:
+By default, the CUPS web interface can only be accessed by the *localhost*; i.e. the computer that it is installed on. To remotely access the interface, make the following changes to the `/etc/cups/cupsd.conf` file. Replace the line:
 
 ```
 Listen localhost:631
@@ -335,7 +335,7 @@ I = Information
 
 ### Problems resulting from upgrades
 
-_Issues that appeared after CUPS and related program packages underwent a version increment_
+*Issues that appeared after CUPS and related program packages underwent a version increment*
 
 #### CUPS stops working
 
@@ -372,7 +372,7 @@ After updating, there may be a file named `cupsd.conf.pacnew` in `/etc/cups`. Th
 
 If all jobs sent to the printer become "stopped", delete the printer and add it again. Using the [CUPS web interface](http://localhost:631), go to Printers > Delete Printer.
 
-To check the printer's settings go to _Printers_, then _Modify Printer_. Copy down the information displayed, click 'Modify Printer' to proceed to the next page(s), and so on.
+To check the printer's settings go to *Printers*, then *Modify Printer*. Copy down the information displayed, click 'Modify Printer' to proceed to the next page(s), and so on.
 
 #### All jobs are "The printer is not responding"
 
@@ -477,7 +477,7 @@ Comment it out and restart CUPS.
 
 #### Print button greyed-out in GNOME print dialogs
 
-	_<small>Source: [I can't print from gnome applications. - Arch Forums](https://bbs.archlinux.org/viewtopic.php?id=70418)</small>_
+	*<small>Source: [I can't print from gnome applications. - Arch Forums](https://bbs.archlinux.org/viewtopic.php?id=70418)</small>*
 
 Be sure the package: **libgnomeprint** is installed
 
@@ -518,7 +518,7 @@ in `/etc/cups/mime.types`.
 Sometimes Windows is a little less than forthcoming about exact device URIs (device locations). If having trouble specifying the correct device location in CUPS, run the following command to list all shares available to a certain windows username:
 
 ```
-$ smbtree -U _windowsusername_
+$ smbtree -U *windowsusername*
 
 ```
 
@@ -658,8 +658,8 @@ The CUPS-PDF (Virtual PDF Printer) actually creates a PostScript file and then c
 
 ## Resources
 
-*   [Official CUPS documentation](http://localhost:631/documentation.html), _locally installed_
+*   [Official CUPS documentation](http://localhost:631/documentation.html), *locally installed*
 *   [Official CUPS Website](http://www.cups.org/)
-*   [Linux Printing](http://www.linuxprinting.org/), _[The Linux Foundation](http://www.linuxfoundation.org)_
-*   [Gentoo's Printing Guide](http://www.gentoo.org/doc/en/printing-howto.xml), _[Gentoo Documentation Resources](http://www.gentoo.org/doc/en)_
+*   [Linux Printing](http://www.linuxprinting.org/), *[The Linux Foundation](http://www.linuxfoundation.org)*
+*   [Gentoo's Printing Guide](http://www.gentoo.org/doc/en/printing-howto.xml), *[Gentoo Documentation Resources](http://www.gentoo.org/doc/en)*
 *   [Arch Linux User Forums](https://bbs.archlinux.org/)

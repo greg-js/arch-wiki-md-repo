@@ -80,9 +80,9 @@ To distribute the public key one may upload it to a [keyserver](https://en.wikip
 
 #### Encrypting emails
 
-Encryption does not always work properly with emails containing HTML. It is best to use plain text by choosing _Options > Delivery Format > Plain Text Only_ in the new email window.
+Encryption does not always work properly with emails containing HTML. It is best to use plain text by choosing *Options > Delivery Format > Plain Text Only* in the new email window.
 
-Once the email is finished it can be signed through the _OpenPGP_ menu.
+Once the email is finished it can be signed through the *OpenPGP* menu.
 
 #### Decrypting emails
 
@@ -100,7 +100,7 @@ Enigmail Error - no matching private/secret key found to decrypt message; click 
 or, when you have a "Write" window open you repeatedly see a popup window with:
 
 ```
-The email address or key ID 0x_key_id_ cannot be matched to a valid, not expired OpenPGP key.
+The email address or key ID 0x*key_id* cannot be matched to a valid, not expired OpenPGP key.
 Please ensure that you have a valid OpenPGP key, and that your account settings point to that key.
 
 ```
@@ -139,11 +139,11 @@ It is available in the AUR as [thunderbird-sogo-connector-bin](https://aur.archl
 
 **Note:** Since version 24 the `network.protocol-handler.app.*` keys have no effect and will not be able to set the default browser.
 
-Recent versions of Thunderbird use the default browser as defined by the [system MIME settings](/index.php/Default_applications "Default applications"). This is commonly modified by the Gnome Control Center (_Gnome Control Center > Details > Default Applications > Web_) (available in: [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center)).
+Recent versions of Thunderbird use the default browser as defined by the [system MIME settings](/index.php/Default_applications "Default applications"). This is commonly modified by the Gnome Control Center (*Gnome Control Center > Details > Default Applications > Web*) (available in: [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center)).
 
-This can be overridden in Thunderbird through _Edit > Preferences > Advanced > General > Config Editor_ by searching for `network.protocol-handler.warn-external`.
+This can be overridden in Thunderbird through *Edit > Preferences > Advanced > General > Config Editor* by searching for `network.protocol-handler.warn-external`.
 
-If the following three are all set to **false** (default), turn them to **true**, and Thunderbird will ask you when clicking on links which application to use (remember to also check _"Remember my choice for .. links"_).
+If the following three are all set to **false** (default), turn them to **true**, and Thunderbird will ask you when clicking on links which application to use (remember to also check *"Remember my choice for .. links"*).
 
 ```
 network.protocol-handler.warn-external.ftp
@@ -154,12 +154,11 @@ network.protocol-handler.warn-external.https
 
 ### Plain Text mode and font uniformity
 
-Plain Text mode lets you view all your emails without HTML rendering and is available in _View > Message Body As_. This defaults to the [Monospace](https://en.wikipedia.org/wiki/Monospace_(Unicode) "wikipedia:Monospace (Unicode)") font but the size is still inherited from original system fontconfig settings. The following example will overwrite this with Ubuntu Mono of 10 pixels (available in: [ttf-ubuntu-font-family](https://www.archlinux.org/packages/?name=ttf-ubuntu-font-family)).
+Plain Text mode lets you view all your emails without HTML rendering and is available in *View > Message Body As*. This defaults to the [Monospace](https://en.wikipedia.org/wiki/Monospace_(Unicode) font but the size is still inherited from original system fontconfig settings. The following example will overwrite this with Ubuntu Mono of 10 pixels (available in: [ttf-ubuntu-font-family](https://www.archlinux.org/packages/?name=ttf-ubuntu-font-family)).
 
 Remember to run `fc-cache -fv` to update system font cache. See [Font configuration](/index.php/Font_configuration "Font configuration") for more information.
 
  `~/.config/fontconfig/fonts.conf` 
-
 ```
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
@@ -176,7 +175,7 @@ Remember to run `fc-cache -fv` to update system font cache. See [Font configurat
 
 ### Webmail with Thunderbird
 
-	_See upstream Wiki: [Using webmail with your email client](http://kb.mozillazine.org/Using_webmail_with_your_email_client)._
+	*See upstream Wiki: [Using webmail with your email client](http://kb.mozillazine.org/Using_webmail_with_your_email_client).*
 
 ### Migrate profile to another system
 
@@ -262,7 +261,7 @@ $ cp -R ~/.thunderbird /to/backup/folder/
 
 ```
 
-2\. Export all you Accounts, Calendar and Feeds via an AddOn like it's written in _Export section_ of this Wiki. 3\. Uninstall your current Thunderbird installation
+2\. Export all you Accounts, Calendar and Feeds via an AddOn like it's written in *Export section* of this Wiki. 3\. Uninstall your current Thunderbird installation
 
 ```
 $ pacman -R thunderbird

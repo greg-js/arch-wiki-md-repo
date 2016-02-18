@@ -21,7 +21,7 @@ A [Phonon backend](/index.php/KDE#Phonon "KDE") is installed as a dependency of 
 
 If tooltips within the user interface are either blank (empty rectangles), or unreadable due to a poor foreground and background combination, choose a different widget style:
 
-1.  Navigate to _Settings_ > _Configure digiKam_ > _Miscellaneous_
-2.  Now in _Widget Style_, choose _"Cleanlooks"_
+1.  Navigate to *Settings* > *Configure digiKam* > *Miscellaneous*
+2.  Now in *Widget Style*, choose *"Cleanlooks"*
 
 This will have a simple, readable white text on black background in the tool tip.

@@ -1,6 +1,6 @@
 Из [официальной страницы проекта](http://jonls.dk/redshift/):
 
-	_Redshift adjusts the color temperature of your screen according to your surroundings. This may help your eyes hurt less if you are working in front of the screen at night. This program is inspired by [f.lux](http://justgetflux.com) [...]._
+	*Redshift adjusts the color temperature of your screen according to your surroundings. This may help your eyes hurt less if you are working in front of the screen at night. This program is inspired by [f.lux](http://justgetflux.com) [...].*
 
 Redshift регулирует цветовую температуру экрана в зависимости от вашего окружения. Это может помочь вашим глазам меньше уставать, если вы сидите за экраном в ночное время. Эта программа вдохновлена [f.lux](http://justgetflux.com)
 
@@ -80,7 +80,6 @@ echo "Вы здесь: $lat, $lon и $alt"
 Пример для Витебска/Беларуси:
 
  `~/.config/redshift.conf` 
-
 ```
 ; Общие настройки для redshift
 [redshift]
@@ -160,7 +159,6 @@ Redshift-gtk требует дополнительных зависимосте�
 По умолчанию сконфигурирован geoclue2 без доступа для Redshift. Чтобы открыть доступ, добавьте следующие строки в `/etc/geoclue/geoclue.conf`
 
  `/etc/geoclue/geoclue.conf` 
-
 ```
 [redshift]
 allowed=true

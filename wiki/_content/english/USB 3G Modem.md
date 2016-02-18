@@ -31,7 +31,7 @@ $ lsusb
 
 ```
 
-which will show the vendor and product IDs of the device. Note that some devices will show _two_ different product IDs at different times as explained below.
+which will show the vendor and product IDs of the device. Note that some devices will show *two* different product IDs at different times as explained below.
 
 ## Mode switching
 
@@ -146,7 +146,7 @@ $ newgrp uucp
 
 ```
 
-The _newgrp_ command allows you to take advantage of the new group assignment immediately without having to logout/login.
+The *newgrp* command allows you to take advantage of the new group assignment immediately without having to logout/login.
 
 Then launch gnokii:
 

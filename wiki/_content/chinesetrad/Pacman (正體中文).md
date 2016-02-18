@@ -89,7 +89,6 @@ NoExtract=usr/lib/systemd/system/*
 這一部分定義了要使用哪些[軟體庫](/index.php/Official_Repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official Repositories (正體中文)")，如 `/etc/pacman.conf` 內所述。我們可以直接在檔案內宣告軟體庫的位置，或是從另一個檔案讀取(如 `/etc/pacman.d/mirrorlist`)，這樣就只需要維護一項清單。鏡像站的設定請參閱[這裡](/index.php/Mirrors "Mirrors")。
 
  `/etc/pacman.conf` 
-
 ```
 #[testing]
 #SigLevel = PackageRequired
@@ -129,7 +128,7 @@ Include = /etc/pacman.d/mirrorlist
 #Server = file:///home/custompkgs
 ```
 
-**警告:** 使用 _testing_ 軟體庫的人請留意！該庫的軟體處於密集開發的狀態，隨意更新可能有讓部分軟體無法運作的風險。我們鼓勵使用 _testing_ 軟體庫的人訂閱 [arch-dev-public 郵件論壇](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public)來了解目前開發的資訊。
+**警告:** 使用 *testing* 軟體庫的人請留意！該庫的軟體處於密集開發的狀態，隨意更新可能有讓部分軟體無法運作的風險。我們鼓勵使用 *testing* 軟體庫的人訂閱 [arch-dev-public 郵件論壇](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public)來了解目前開發的資訊。
 
 ### 軟體包的安全性
 
@@ -195,21 +194,21 @@ Enter a selection (default=all): ^5-8 ^2
 
 **註記:** 當指定安裝一項軟體包時，就算該軟體包已被安裝過，也還是會重新安裝一次。可以利用 `--needed` 選項略過已安裝且為最新版本的軟體包。
 
-**警告:** 在系統尚未[升級](#.E5.8D.87.E7.B4.9A.E8.BB.9F.E9.AB.94.E5.8C.85)過的狀況下安裝軟體包時，千萬**不要**重新整理軟體包清單 (即 `pacman -Sy _軟體包名稱_`)；這可能會導致相依性出現問題。請參閱[#不支援部分升級](#.E4.B8.8D.E6.94.AF.E6.8F.B4.E9.83.A8.E5.88.86.E5.8D.87.E7.B4.9A)和 [https://bbs.archlinux.org/viewtopic.php?id=89328。](https://bbs.archlinux.org/viewtopic.php?id=89328。)
+**警告:** 在系統尚未[升級](#.E5.8D.87.E7.B4.9A.E8.BB.9F.E9.AB.94.E5.8C.85)過的狀況下安裝軟體包時，千萬**不要**重新整理軟體包清單 (即 `pacman -Sy *軟體包名稱*`)；這可能會導致相依性出現問題。請參閱[#不支援部分升級](#.E4.B8.8D.E6.94.AF.E6.8F.B4.E9.83.A8.E5.88.86.E5.8D.87.E7.B4.9A)和 [https://bbs.archlinux.org/viewtopic.php?id=89328。](https://bbs.archlinux.org/viewtopic.php?id=89328。)
 
 ### 移除軟體包
 
 移除單一軟體包，但不移除與其一同安裝的相依軟體包：
 
 ```
-# pacman -R _軟體包名稱_
+# pacman -R *軟體包名稱*
 
 ```
 
 移除單一軟體包，以及與其相依且不再被其他軟體需要的軟體包：
 
 ```
-# pacman -Rs _軟體包名稱_
+# pacman -Rs *軟體包名稱*
 
 ```
 
@@ -218,21 +217,21 @@ Enter a selection (default=all): ^5-8 ^2
 **警告:** 這項操作具連帶性，進行之前必須確認不會刪掉您仍然需要的軟體包。
 
 ```
-# pacman -Rsc _軟體包名稱_
+# pacman -Rsc *軟體包名稱*
 
 ```
 
 移除單一軟體包，但不移除依賴該軟體包的其他軟體包：
 
 ```
-# pacman -Rdd _軟體包名稱_
+# pacman -Rdd *軟體包名稱*
 
 ```
 
 Pacman 在移除特定應用程式時，會儲存其重要設定檔，加上副檔名 `.pacsave`。使用 `-n` 選項避免這些備份檔案被建立：
 
 ```
-# pacman -Rn _軟體包名稱_
+# pacman -Rn *軟體包名稱*
 
 ```
 
@@ -240,7 +239,7 @@ Pacman 在移除特定應用程式時，會儲存其重要設定檔，加上副�
 
 ### 升級軟體包
 
-Pacman 只需一個指令即可更新系統所有軟體包。根據系統的軟體包版本狀態，這項操作會花上一段時間。本指令會同步資料庫_並_更新系統的軟體包 (除了不在預定軟體庫內的「本機」軟體包)：
+Pacman 只需一個指令即可更新系統所有軟體包。根據系統的軟體包版本狀態，這項操作會花上一段時間。本指令會同步資料庫*並*更新系統的軟體包 (除了不在預定軟體庫內的「本機」軟體包)：
 
 ```
 # pacman -Syu
@@ -338,7 +337,7 @@ $ pactree **軟體包名稱**
 
 ```
 
-使用 [pkgtools](/index.php/Pkgtools "Pkgtools") 下的 `whoneeds` ，列出需要某個_已安裝_軟體包的所有軟體包：
+使用 [pkgtools](/index.php/Pkgtools "Pkgtools") 下的 `whoneeds` ，列出需要某個*已安裝*軟體包的所有軟體包：
 
 ```
 $ whoneeds **軟體包名稱**
@@ -369,7 +368,6 @@ $ whoneeds **軟體包名稱**
 ```
 
 **提示:** 若要保存一份本機軟體包的副本到 Pacman 的快取，使用：
-
 ```
 # pacman -U file://path/to/package/package_name-version.pkg.tar.xz
 
@@ -404,7 +402,7 @@ $ whoneeds **軟體包名稱**
 
 ### 不支援部分升級
 
-Arch Linux 採用無縫更新，[函式庫](https://en.wikipedia.org/wiki/Library_(computing) "wikipedia:Library (computing)")若有新的版本就會馬上推進軟體庫。開發人員與受信任的使用者會將庫內所有與函式庫相關的軟體包都重新建構過。若系統內有本機安裝的軟體包 (像 [AUR](/index.php/Arch_User_Repository_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch User Repository (正體中文)") 軟體包) 碰到 [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname") bump 時，使用者就必須重新建構它們。
+Arch Linux 採用無縫更新，[函式庫](https://en.wikipedia.org/wiki/Library_(computing) 軟體包) 碰到 [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname") bump 時，使用者就必須重新建構它們。
 
 此時部分升級將**不被支援**。不要使用 `pacman -Sy [軟體包]` 或其他相似指令如 `pacman -Sy` 加 `pacman -S [軟體包]`。在安裝軟體包記得先將系統升級 -- 特別是當 Pacman 重整同步軟體庫之後。基於相同的原因，使用 `IgnorePkg` 和 `IgnoreGroup` 時也請多留意。
 
@@ -459,7 +457,7 @@ Errors occurred, no packages were upgraded.
 ### 安裝軟體包時發生錯誤: "target not found"
 
 請先確認軟體包確實存在 (並檢查拼字正確)。若該軟體包確實存在，代表您的軟體包清單可能過期，或是您的軟體倉庫設定不正確。試著用 `pacman -Syyu` 重整所有軟體包清單後更新。
-這也有可能是該軟體包所屬之軟體倉庫在您的系統上未被啟用，比如說軟體包在 _multilib_ 倉庫，但您的 _pacman.conf_沒有啟用 _multilib_。
+這也有可能是該軟體包所屬之軟體倉庫在您的系統上未被啟用，比如說軟體包在 *multilib* 倉庫，但您的 *pacman.conf*沒有啟用 *multilib*。
 
 ### Pacman 一直重複更新同樣的軟體包！
 
@@ -496,7 +494,7 @@ Errors occurred, no packages were upgraded.
 
 很有可能是核心升級時 initramfs 損壞了 (肇因之一為不正當的使用 pacman 的 `--force` 選項)。有兩條路可走：
 
-**1.** 試試 _Fallback_ 項目。
+**1.** 試試 *Fallback* 項目。
 
 **提示:** 如果這個項目被刪除，在開機載入程式的選單顯示之後，按 `Tab` 鍵 (Syslinux) 或 `e` (GRUB)，重新命名為 `initramfs-linux-fallback.img`，按 `Enter` 或 `b` (視開機載入程式而定) 以新參數開機。
 
@@ -533,7 +531,6 @@ error: failed to commit transaction (invalid or corrupted package (PGP signature
 Errors occured, no packages were upgraded. 
 
 ```
-
 當系統時鐘錯誤時會出現這些錯誤。設定好[時間](/index.php/Time "Time")並執行： `# hwclock -w` ，再嘗試安裝/升級軟體包。
 
 ### 我一直得到 "failed to commit transaction (invalid or corrupted package)" 錯誤

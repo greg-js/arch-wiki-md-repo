@@ -1,6 +1,6 @@
 From [the fprint homepage](http://www.freedesktop.org/wiki/Software/fprint/):
 
-	_The fprint project aims to plug a gap in the Linux desktop: support for consumer fingerprint reader devices._
+	*The fprint project aims to plug a gap in the Linux desktop: support for consumer fingerprint reader devices.*
 
 The idea is to use the built-in fingerprint reader in some notebooks for login using PAM. This article will also explain how to use regular password for backup login method (solely fingerprint scanner is not recommended due to numerous reasons).
 
@@ -31,10 +31,9 @@ Make sure you have one of the supported finger scanners. You can check if your d
 
 **Note:** If you use [GDM](/index.php/GDM "GDM"), the fingerprint-option is already available in the login menu. You can skip this section!
 
-Add `pam_fprintd.so` as _sufficient_ to the top of the auth section of `/etc/pam.d/system-local-login`:
+Add `pam_fprintd.so` as *sufficient* to the top of the auth section of `/etc/pam.d/system-local-login`:
 
  `/etc/pam.d/system-local-login` 
-
 ```
 **auth      sufficient pam_fprintd.so**
 auth      include   system-login

@@ -1,6 +1,6 @@
 [GRUB](http://www.gnu.org/software/grub/) - da non confondere con [GRUB Legacy](/index.php/GRUB_Legacy_(Italiano) "GRUB Legacy (Italiano)") - è la nuova versione del GRand Unified Bootloader. GRUB deriva da [PUPA](http://www.nongnu.org/pupa/), un progetto di ricerca mirato al miglioramento di GRUB Legacy: esso è stato infatti totalmente riscritto, ripulendo il codice assicurando al tempo stesso una maggior modularità e portabilità. [[1]](http://www.gnu.org/software/grub/grub-faq.html#q1)
 
-In sintesi, il _bootloader_ è il primo programma ad essere eseguito quando il computer si avvia. Ha il compito di caricare e trasferire il controllo al Kernel Linux, il quale, di contro, inizializza il resto del sistema operativo.
+In sintesi, il *bootloader* è il primo programma ad essere eseguito quando il computer si avvia. Ha il compito di caricare e trasferire il controllo al Kernel Linux, il quale, di contro, inizializza il resto del sistema operativo.
 
 ## Contents
 
@@ -92,7 +92,7 @@ In sintesi, il _bootloader_ è il primo programma ad essere eseguito quando il c
 
 ## Prefazione
 
-*   Il nome _GRUB_ si riferisce ufficialmente alla versione 2 del software (si veda [[2]](http://www.gnu.org/software/grub/)). Se si sta cercando l'articolo relativo alla versione Legacy, si veda [GRUB Legacy](/index.php/GRUB_Legacy_(Italiano) "GRUB Legacy (Italiano)").
+*   Il nome *GRUB* si riferisce ufficialmente alla versione 2 del software (si veda [[2]](http://www.gnu.org/software/grub/)). Se si sta cercando l'articolo relativo alla versione Legacy, si veda [GRUB Legacy](/index.php/GRUB_Legacy_(Italiano) "GRUB Legacy (Italiano)").
 
 *   E' supportato l'uso del filesystem [Btrfs](/index.php/Btrfs "Btrfs") per la root (eliminando quindi la necessità di una partizione /boot separata con un filesystem diverso). Sono inoltre supportati gli algoritmi di compressione zlib o LZO.
 
@@ -103,7 +103,7 @@ In sintesi, il _bootloader_ è il primo programma ad essere eseguito quando il c
 *   Aggiornare [GRUB Legacy](/index.php/GRUB_Legacy_(Italiano) "GRUB Legacy (Italiano)") a [GRUB](/index.php/GRUB2_(Italiano) "GRUB2 (Italiano)")(2) è un procedimento molto simile ad un installazione ex-novo di GRUB2, argomento trattato [qui](/index.php/GRUB2_(Italiano)#Installazione "GRUB2 (Italiano)").
 
 *   Vi sono differenze nei comandi di GRUB e GRUB2\. Si consiglia di familiarizzare con i [comandi di GRUB2](http://www.gnu.org/software/grub/manual/grub.html#Commands) prima di procedere. (ad esempio, "find" è stato rimpiazzato da "search").
-*   GRUB2 è ora _modulare_ e non richiede più lo "stage 1.5". Di conseguenza, il bootloader dispone di capacità limitate e i moduli sono caricati dal disco rigido in caso di necessità (ad esempio, se si necessita del supporto [LVM](/index.php/LVM_(Italiano) "LVM (Italiano)") o RAID).
+*   GRUB2 è ora *modulare* e non richiede più lo "stage 1.5". Di conseguenza, il bootloader dispone di capacità limitate e i moduli sono caricati dal disco rigido in caso di necessità (ad esempio, se si necessita del supporto [LVM](/index.php/LVM_(Italiano) "LVM (Italiano)") o RAID).
 *   La modalità di nomenclatura dei dispositivi è cambiata da GRUB a GRUB2: gli hard disk sono ancora numerati a partire da 0, mentre le partizioni partono da 1 e sono seguite dal nome del sistema di partizionamento usato. Ad esempio, a `/dev/sda1` corrisponde `(hd0,msdos1)` (per sistemi che usano MBR) o `(hd0,gpt1)` (per sistemi GPT).
 *   GRUB occupa molto più spazio rispetto a GRUB Legacy (circa 13Mb di spazio occupato in `/boot`). Se si effettua il boot da una partizione `/boot` separata con una dimensione inferiore ai 32 Mb si avranno problemi di spazio e pacman si rifiuterà di installare eventuali nuovi kernel, ad esempio.
 
@@ -143,12 +143,12 @@ Su sistemi [GPT](/index.php/GUID_Partition_Table "GUID Partition Table") è nece
 **Nota:**
 
 *   Prima di provare questo metodo si tenga presente che non tutti i sistemi supportano questa configurazione. Ulteriori informazioni sulle [tabelle partizioni GUID](/index.php/GUID_Partition_Table#BIOS_systems "GUID Partition Table").
-*   La partizione in questione è necessaria solo per le combinazioni BIOS/GPT. In precedenza, su schemi di partizionamento BIOS/MBR, GRUB utilizzava il _post-MBR gap_ per inserire il proprio `core.img`. GRUB per GPT non utilizza tale spazio per rispettare le specifiche GPT sull'allineamento tra le partizioni (1 Mebibyte/2048 settori).
-*   Su sistemi [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Italiano) "Unified Extensible Firmware Interface (Italiano)") tale partizione non è richiesta in quanto in questo caso non si verifica l'_embedding_ dei settori di boot.
+*   La partizione in questione è necessaria solo per le combinazioni BIOS/GPT. In precedenza, su schemi di partizionamento BIOS/MBR, GRUB utilizzava il *post-MBR gap* per inserire il proprio `core.img`. GRUB per GPT non utilizza tale spazio per rispettare le specifiche GPT sull'allineamento tra le partizioni (1 Mebibyte/2048 settori).
+*   Su sistemi [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Italiano) "Unified Extensible Firmware Interface (Italiano)") tale partizione non è richiesta in quanto in questo caso non si verifica l'*embedding* dei settori di boot.
 
 Si crei una partizione da un mebibyte (`+1MiB` con `gdisk`) su un disco senza filesystem e le si assegni il tipo `ef02` (oppure `bios_grub` se si utilizza `parted`). Si noti che la partizione può trovare in qualsiasi posizione entro i primi 2 TiB del disco e deve essere creata prima dell'installazione. Una volta creata la aprtizione, si installi il bootloader seguendo le istruzioni sotto e assicurarsi di specificare l'opzione `--target=i386-pc` (altrimentri GRUB potrebbe pensare di trovarsi su un sistema EFI-GPT).
 
-È possibile utilizzare il _post-MBR gap_ come partizione di boot BIOS, anche se tale operazione non rispetta le specifiche GPT sull'allineamento delle partizioni. Dal momento che il contenuto di tale partizione non verrà letto spesso è possibile ignorare l'impatto sulle prestazioni, anche se alcune utility per il partizionamento visualizzeranno un messaggio d'avvertimento. In `gdisk` si crei una **n**uova partizione che inizia al settore 34 e arriva al 2047, e le si assegni il tipo. Per fare in modo che le partizioni visibili partano dall'inizio, si crei questa partizione per ultima.
+È possibile utilizzare il *post-MBR gap* come partizione di boot BIOS, anche se tale operazione non rispetta le specifiche GPT sull'allineamento delle partizioni. Dal momento che il contenuto di tale partizione non verrà letto spesso è possibile ignorare l'impatto sulle prestazioni, anche se alcune utility per il partizionamento visualizzeranno un messaggio d'avvertimento. In `gdisk` si crei una **n**uova partizione che inizia al settore 34 e arriva al 2047, e le si assegni il tipo. Per fare in modo che le partizioni visibili partano dall'inizio, si crei questa partizione per ultima.
 
 ##### Istruzioni specifiche per Master Boot Record (MBR)
 
@@ -160,7 +160,7 @@ Solitamente, il gap dopo il [MBR](/index.php/Master_Boot_Record_(Italiano) "Mast
 
 ##### Controllare se si sta utilizzando GPT ed una partizione EFI di sistema
 
-È necessaria una partizione EFI di sistema (_ESP_) in ogni disco fisso dal quale si desideri effettuare il boot in modalità EFI. GPT non è strettamente necessario, ma ne è raccomandato l'utilizzo, in quanto è l'unico metodo supportato da questo articolo.
+È necessaria una partizione EFI di sistema (*ESP*) in ogni disco fisso dal quale si desideri effettuare il boot in modalità EFI. GPT non è strettamente necessario, ma ne è raccomandato l'utilizzo, in quanto è l'unico metodo supportato da questo articolo.
 
 Se si sta installando Arch Linux su un PC con supporto EFI dove sia già stato installato un altro sistema operativo, è probabile che si disponga già di una ESP. Si controlli utilizzando `parted` per stampare la tabella partizioni del disco dal quale si effettua il boot (nell'esempio si utilizzerà `/dev/sda`):
 
@@ -169,7 +169,7 @@ Se si sta installando Arch Linux su un PC con supporto EFI dove sia già stato i
 
 ```
 
-Se si utilizza GPT, il comando dovrebbe riportare `Partition Table: GPT`. Per EFI, invece, individuare una piccola partizione (512 MiB o meno) con filesystem `vfat` e il flag `boot` attivo contenente una cartella chiamata _EFI_. In caso i criteri di cui sopra vengano soddisfatti, ricordarsi del numero assegnato alla partizione, in quanto sarà necessario per identificare la stessa quando dovrà essere montata per l'installazione di GRUB.
+Se si utilizza GPT, il comando dovrebbe riportare `Partition Table: GPT`. Per EFI, invece, individuare una piccola partizione (512 MiB o meno) con filesystem `vfat` e il flag `boot` attivo contenente una cartella chiamata *EFI*. In caso i criteri di cui sopra vengano soddisfatti, ricordarsi del numero assegnato alla partizione, in quanto sarà necessario per identificare la stessa quando dovrà essere montata per l'installazione di GRUB.
 
 ##### Creazione di una partizione EFI di sistema
 
@@ -203,7 +203,7 @@ Ci sono quattro modi per installare i files di boot di GRUB su sistemi BIOS
 Per installare `grub` nella regione di 440 byte relativa al boot code, chiamata anche Master Boot Record, popolare la directory `/boot/grub`, generare il `/boot/grub/i386-pc/core.img` e inserirlo nel gap di 31KiB (la dimensione varia a seconda dell'allineamento delle partizioni) post-MBR (o nella partizione di boot del BIOS nel caso di sistemi partizionati con GPT, identificata tramite il flag `grub_bios` in parted e con il codice `EF02` in gdisk) si esegua:
 
 ```
-# grub-install --target=i386-pc --recheck --debug /dev/sd_x_
+# grub-install --target=i386-pc --recheck --debug /dev/sd*x*
 # grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
@@ -414,7 +414,7 @@ Dopo l'installazione sarà necessario generare il file di configurazione princip
 
 **Nota:** Si ricordi che sarà necessario rigenerare il file `grub.cfg` dopo ogni cambiamento ad `/etc/default/grub` o ai files in `/etc/grub.d/*`.
 
-Utilizzare il tool _grub-mkconfig_ per generare il `grub.cfg`:
+Utilizzare il tool *grub-mkconfig* per generare il `grub.cfg`:
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
@@ -425,7 +425,7 @@ Utilizzare il tool _grub-mkconfig_ per generare il `grub.cfg`:
 
 *   Il percorso al file di configurazione è `/boot/grub/grub.cfg`, e NON `/boot/grub/i386-pc/grub.cfg`.
 *   Se si sta cercando di effettuare questa operazione da dentro un ambiente di chroot o da un container `systemd-nspawn`, è possibile che `grub-probe` mostri un errore relativo all'impossibilità di ottenere il path di `/dev/sdaX`. In questo caso si provi ad utilizzare `arch-chroot` come spiegato in [questo](https://bbs.archlinux.org/viewtopic.php?pid=1225067#p1225067) thread.
-*   Quando si genera il file di configurazione di GRUB su un sistema LVM dall'interno di un ambiente di chroot (anche _arch-chroot_, utilizzato durante l'installazione), è possibile che vengano visualizzati messaggi come `/run/lvm/lvmetad.socket: connect failed: No such file or directory` o `WARNING: failed to connect to lvmetad: No such file or directory. Falling back to internal scanning.`. Ciò è dovuto alla mancanza di `/run` nell'ambiente di chroot. Tali messaggi non impediranno al sistema di avviarsi, a patto che tutti i passaggi siano stati completati correttamente, quindi è possibile procedere con l'installazione.
+*   Quando si genera il file di configurazione di GRUB su un sistema LVM dall'interno di un ambiente di chroot (anche *arch-chroot*, utilizzato durante l'installazione), è possibile che vengano visualizzati messaggi come `/run/lvm/lvmetad.socket: connect failed: No such file or directory` o `WARNING: failed to connect to lvmetad: No such file or directory. Falling back to internal scanning.`. Ciò è dovuto alla mancanza di `/run` nell'ambiente di chroot. Tali messaggi non impediranno al sistema di avviarsi, a patto che tutti i passaggi siano stati completati correttamente, quindi è possibile procedere con l'installazione.
 
 Di default, lo script di generazione aggiunge automaticamente le voci di menù per Arch Linux a qualsiasi configurazione venga generata, mentre ciò non accade per eventuali voci relative ad altri sistemi operativi. Su sistemi BIOS, si installi il pacchetto [os-prober](https://www.archlinux.org/packages/?name=os-prober), che individua i sistemi operativi installati sulla macchina e li aggiunge al `grub.cfg` durante l'esecuzione di `grub-mkconfig`. Si veda [#Dual-booting](#Dual-booting) per eventuali configurazioni avanzate.
 
@@ -443,7 +443,6 @@ Se `grub-mkconfig` non funziona, si converta il proprio `/boot/grub/menu.lst` ne
 Ad esempio:
 
  `/boot/grub/menu.lst` 
-
 ```
 default=0
 timeout=5
@@ -459,9 +458,7 @@ kernel /vmlinuz-linux root=/dev/sda2 ro
 initrd /initramfs-linux-fallback.img
 
 ```
-
  `/boot/grub/grub.cfg` 
-
 ```
 set default='0'; if [ x"$default" = xsaved ]; then load_env; set default="$saved_entry"; fi
 set timeout=5
@@ -536,7 +533,6 @@ Se si stanno utilizzando schede grafiche Intel, può accadere che nè `# hwinfo 
 Innanzitutto è necessario scegliere una modalità video da modificare più tardi. Si avvii quindi `915resolution` nella shell di GRUB:
 
  `sh:grub> 915resolution -l` 
-
 ```
 Intel 800/900 Series VBIOS Hack : version 0.5.3
 [...]
@@ -548,7 +544,6 @@ Mode 30 : 640x480, 8 bits/pixel
 L'obiettivo è quello di sovrascrivere la modalità 30 con la risoluzione `1440x900`:
 
  `/etc/grub/00_header` 
-
 ```
 [...]
 **915resolution 30 1440 900 # linea aggiunta**
@@ -872,7 +867,6 @@ Un file `/etc/grub.d/40_custom` generico potrebbe avere una struttura simile a q
 Si noti inoltre che la partizione `/dev/sda2` viene identificata da GRUB come `hd0,gpt2` e `ahci0,gpt2`. Si consulti [GRUB#Voce di menù per Windows installato in modalità UEFI-GPT](/index.php/GRUB#Voce_di_men.C3.B9_per_Windows_installato_in_modalit.C3.A0_UEFI-GPT "GRUB") per ulteriori informazioni.
 
  `/etc/grub.d/40_custom` 
-
 ```
 #!/bin/sh
 exec tail -n +3 $0
@@ -1064,7 +1058,6 @@ fi
 **Nota:** `nn` dovrebbe avere un valore superiore a `06` affinchè gli script di sistema siano eseguiti per primi.
 
 **Nota:** In alcuni casi (ad esempio se GRUB viene installato prima di Windows 8), potrebbe verificarsi un errore riguardante `\boot\bcd` (codice errore `0xC000000F`) durante l'avvio di Windows. È possibile risolvere il problema avviando la console di ripristino di Windows (si utilizzi il suo disco di installazione) ed eseguendo:
-
 ```
 x:\>bootrec.exe /fixboot
 x:\>bootrec.exe /rebuildbcd
@@ -1159,7 +1152,7 @@ Dove l'array RAID1 che ospita la partizione `/boot` è formato da `/dev/sda` e `
 È possibile usare le etichette (stringhe che identificano le partizioni in una maniera leggibile dall'utente), usando l'opzione `--label` del comando `search`. Innanzitutto, si apponga un'etichetta alle proprie partizioni:
 
 ```
-# tune2fs -L _ETICHETTA_ _PARTIZIONE_
+# tune2fs -L *ETICHETTA* *PARTIZIONE*
 
 ```
 
@@ -1178,7 +1171,6 @@ menuentry "Arch Linux, session texte" {
 Se si desidera rendere più sicuro GRUB e fare in modo che nessuno possa cambiare i parametri di boot od usare la riga di comando, è possibile aggiungere un nome utente e password ai files di configurazione di GRUB. A tal fine, si esegua `grub-mkpasswd_pbkdf2`. Si inserisca una password e la si confermi.
 
  `grub-mkpasswd-pbkdf2` 
-
 ```
 [...]
 Your PBKDF2 is grub.pbkdf2.sha512.10000.C8ABD3E93C4DFC83138B0C7A3D719BC650E6234310DA069E6FDB0DD4156313DA3D0D9BFFC2846C21D5A2DDA515114CF6378F8A064C94198D0618E70D23717E82.509BFA8A4217EAD0B33C87432524C0B6B64B34FBAD22D3E6E6874D9B101996C5F98AB1746FE7C7199147ECF4ABD8661C222EEEDB7D14A843261FFF2C07B1269A
@@ -1187,7 +1179,6 @@ Your PBKDF2 is grub.pbkdf2.sha512.10000.C8ABD3E93C4DFC83138B0C7A3D719BC650E62343
 Si aggiungano le seguenti stringhe a `/etc/grub.d/40_custom`:
 
  `/etc/grub.d/40_custom` 
-
 ```
 set superusers="**username**"
 password_pbkdf2 **username** **<password>**
@@ -1213,7 +1204,6 @@ GRUB_FORCE_HIDDEN_MENU="true"
 Sarà inoltre necessario creare e rendere eseguibile il seguente file:
 
  `/etc/grub.d/31_hold_shift` 
-
 ```
 #! /bin/sh
 set -e
@@ -1400,7 +1390,7 @@ grub>
 
 È possibile utilizzare la shell di GRUB per avviare altri sistemi operativi, come ad esempio sistemi Windows o Linux installati su partizione e avviarli tramite **chainloading**.
 
-Il _chainloading_ consiste nell'avviare un bootloader, che può trovarsi all'inizio del disco (per sistemi MBR) o all'inizio di una partizione, tramite un altro bootloader.
+Il *chainloading* consiste nell'avviare un bootloader, che può trovarsi all'inizio del disco (per sistemi MBR) o all'inizio di una partizione, tramite un altro bootloader.
 
 #### Effettuare il chainloading di una partizione
 
@@ -1653,7 +1643,6 @@ Se GRUB viene caricato, ma torna alla shell di ripristino senza errori, il `grub
 Esempio di un sistema EFI funzionante:
 
  `# efibootmgr -v` 
-
 ```
 BootCurrent: 0000
 Timeout: 3 seconds

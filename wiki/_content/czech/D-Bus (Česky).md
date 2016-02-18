@@ -11,7 +11,6 @@ Pro ruční spuštění vizte [instrukce v článku o démonech](/index.php/Daem
 [gnome-session](/index.php/GNOME_(%C4%8Cesky) "GNOME (Česky)"), [startkde](/index.php/KDE_(%C4%8Cesky) "KDE (Česky)") a [startxfce4](/index.php/Xfce_(%C4%8Cesky) "Xfce (Česky)") spouští D-Bus sezení automaticky, pokud už neběží. Šablona pro `~/.xinitrc` (`/etc/skel/.xinitrc`) udělá to samé jako skripty v `/etc/X11/xinit/xinitrc.d/`. Ujistěte se, že je tento kód obsažen ve vašem [~/.xinitrc](/index.php/Xinitrc "Xinitrc"):
 
  `~/.xinitrc` 
-
 ```
 #!/bin/sh
 

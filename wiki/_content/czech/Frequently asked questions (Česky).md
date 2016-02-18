@@ -9,7 +9,7 @@ Kromě otázek probíraných níže můžete zkusit články [The Arch Way](/ind
     *   [1.4 Q) Na jaké distribuci je Arch založen?](#Q.29_Na_jak.C3.A9_distribuci_je_Arch_zalo.C5.BEen.3F)
     *   [1.5 Q) Jsem úplný linuxový začátečník. Měl bych používat Arch?](#Q.29_Jsem_.C3.BApln.C3.BD_linuxov.C3.BD_za.C4.8D.C3.A1te.C4.8Dn.C3.ADk._M.C4.9Bl_bych_pou.C5.BE.C3.ADvat_Arch.3F)
     *   [1.6 Q) Je Arch navržen pro použití jako server? Jako desktop? Jako pracovní stanice?](#Q.29_Je_Arch_navr.C5.BEen_pro_pou.C5.BEit.C3.AD_jako_server.3F_Jako_desktop.3F_Jako_pracovn.C3.AD_stanice.3F)
-    *   [1.7 Q) Velmi se mi líbí Arch, ale tým vývojářů musí implementovat _"funkci X"_](#Q.29_Velmi_se_mi_l.C3.ADb.C3.AD_Arch.2C_ale_t.C3.BDm_v.C3.BDvoj.C3.A1.C5.99.C5.AF_mus.C3.AD_implementovat_.22funkci_X.22)
+    *   [1.7 Q) Velmi se mi líbí Arch, ale tým vývojářů musí implementovat *"funkci X"*](#Q.29_Velmi_se_mi_l.C3.ADb.C3.AD_Arch.2C_ale_t.C3.BDm_v.C3.BDvoj.C3.A1.C5.99.C5.AF_mus.C3.AD_implementovat_.22funkci_X.22)
     *   [1.8 Q) Kdy bude uvolněna další verze?](#Q.29_Kdy_bude_uvoln.C4.9Bna_dal.C5.A1.C3.AD_verze.3F)
     *   [1.9 Q) Je Arch stabilní distribucí? Nedojde často k rozbití?](#Q.29_Je_Arch_stabiln.C3.AD_distribuc.C3.AD.3F_Nedojde_.C4.8Dasto_k_rozbit.C3.AD.3F)
     *   [1.10 Q) Arch potřebuje více reklamy](#Q.29_Arch_pot.C5.99ebuje_v.C3.ADce_reklamy)
@@ -64,15 +64,15 @@ Kromě otázek probíraných níže můžete zkusit články [The Arch Way](/ind
 
 ### Q) Jsem úplný linuxový začátečník. Měl bych používat Arch?
 
-**A)** Tato otázka byla dost diskutovaná. Arch je zaměřený spíše na pokročilejší uživatele Linuxu, ale někteří lidé cítí, že Arch je dobré místo pro motivované začátečníky. Pokud jste začátečník a chcete používat Arch, varujeme vás, že **musíte** mít vůli učit se a akceptovat fakt, že Arch je založen na myšlence 'udělej si sám'. Je to právě uživatel, kdo si sestavuje systém a kontroluje jeho vývoj. Dříve, než budete klást jakékoliv otázky, pokuste se odpověď najít na Google, prohledejte Wiki a fórum (a dočtěte zbytek těchto otázek). _Za tímto účelem vám byly tyto zdroje poskytnuty._ Sestavení těchto skvělých informací zabralo mnoho tísíc hodin _dobrovolné_ práce.
+**A)** Tato otázka byla dost diskutovaná. Arch je zaměřený spíše na pokročilejší uživatele Linuxu, ale někteří lidé cítí, že Arch je dobré místo pro motivované začátečníky. Pokud jste začátečník a chcete používat Arch, varujeme vás, že **musíte** mít vůli učit se a akceptovat fakt, že Arch je založen na myšlence 'udělej si sám'. Je to právě uživatel, kdo si sestavuje systém a kontroluje jeho vývoj. Dříve, než budete klást jakékoliv otázky, pokuste se odpověď najít na Google, prohledejte Wiki a fórum (a dočtěte zbytek těchto otázek). *Za tímto účelem vám byly tyto zdroje poskytnuty.* Sestavení těchto skvělých informací zabralo mnoho tísíc hodin *dobrovolné* práce.
 
 Doporučené čtení: [Průvodce začátečníka](/index.php/Beginners%27_Guide_(%C4%8Cesky) "Beginners' Guide (Česky)").
 
 ### Q) Je Arch navržen pro použití jako server? Jako desktop? Jako pracovní stanice?
 
-**A)** Arch není navržen pro žádný speciální způsob použití. Místo toho je navržen pro speciální typ _uživatele_. Arch se zaměřuje na schopné uživatele, kteří oceňují 'udělej si sám' přístup a vytváří si systém tak, aby vyhovoval jejich jedinečným potřebám. Proto v rukou uživatele z cílené skupiny lze Arch použít prakticky pro cokoli. Mnoho Archistů používá svůj systém na desktopech i pracovních stanicích. A samozřejmě archlinux.org běží na Archu.
+**A)** Arch není navržen pro žádný speciální způsob použití. Místo toho je navržen pro speciální typ *uživatele*. Arch se zaměřuje na schopné uživatele, kteří oceňují 'udělej si sám' přístup a vytváří si systém tak, aby vyhovoval jejich jedinečným potřebám. Proto v rukou uživatele z cílené skupiny lze Arch použít prakticky pro cokoli. Mnoho Archistů používá svůj systém na desktopech i pracovních stanicích. A samozřejmě archlinux.org běží na Archu.
 
-### Q) Velmi se mi líbí Arch, ale tým vývojářů musí implementovat _"funkci X"_
+### Q) Velmi se mi líbí Arch, ale tým vývojářů musí implementovat *"funkci X"*
 
 **A)** Než půjdeme dále, četli jste [The Arch Way](/index.php/The_Arch_Way_(%C4%8Cesky) "The Arch Way (Česky)")? Poskytli jste danou funkci/řešení? Splňuje vaše řešení filozofii Archu? Pokud ano, zapojte se, přispějte svým kódem komunitě. Pokud vzbudí kladný ohlas, možná vaše řešení přijmeme. Komunita Archu vzkvétá z přispívání a sdílení kódu a nástrojů.
 
@@ -80,15 +80,15 @@ Doporučené čtení: [Průvodce začátečníka](/index.php/Beginners%27_Guide_
 
 **A)** Vydání Arch Linuxu jsou pouze snapshoty [core] repozitáře a jsou vydávány obvykle v první polovině každého měsíce.
 
-Model průběžných aktualizací udržuje každý Arch Linux systém aktuální a na _krvavé hraně_ (bleeding edge) spuštěním jediného příkazu. Z tohoto důvodu nejsou verze pro Arch důležité, protože by zastaraly s každým uvolněním nové verze libovolného balíčku. Pokud hledáte nejnovější verzi Archu, nemusíte přeinstalovávat. Jednoduše spusťte příkaz `pacman -Syu` a váš systém bude identický tomu, který byste dostali čistou instalací. Z tohoto důvodu také nejsou nová vydání Archu plná vzrušujících novinek. Nové a vzrušující funkce jsou uvolňovány podle potřeby uvolněním nové verze balíčku, mohou tedy být okamžitě nainstalovány pomocí `pacman -Syu`.
+Model průběžných aktualizací udržuje každý Arch Linux systém aktuální a na *krvavé hraně* (bleeding edge) spuštěním jediného příkazu. Z tohoto důvodu nejsou verze pro Arch důležité, protože by zastaraly s každým uvolněním nové verze libovolného balíčku. Pokud hledáte nejnovější verzi Archu, nemusíte přeinstalovávat. Jednoduše spusťte příkaz `pacman -Syu` a váš systém bude identický tomu, který byste dostali čistou instalací. Z tohoto důvodu také nejsou nová vydání Archu plná vzrušujících novinek. Nové a vzrušující funkce jsou uvolňovány podle potřeby uvolněním nové verze balíčku, mohou tedy být okamžitě nainstalovány pomocí `pacman -Syu`.
 
 ### Q) Je Arch stabilní distribucí? Nedojde často k rozbití?
 
-**A)** Krátká odpověď: Arch je tak stabilní, jak si ho _uživatel_ udělá.
+**A)** Krátká odpověď: Arch je tak stabilní, jak si ho *uživatel* udělá.
 
-_Uživatel_ sestavuje svůj vlastní Arch systém z jednoduchého základního prostředí a _uživatel_ kontroluje aktualizace systému. Očividně rozsáhlejší a komplikovanější systém zahrnující množství upravených balíčků a nadbytek toolkitů a desktopových prostředí by byl náchylnější na konfigurační problémy kvůli změnám v softwaru, než je štíhlejší a jednodušší systém. Arch je zaměřen na schopné proaktivní uživatele. Obecná zručnost v UNIXu a dobré praktiky správy systému a aktualizací také hrají důležitou úlohu ve stabilitě systému. Také si uvědomte, že balíčky Archu jsou až na vyjímky bez záplat, tedy za mnoho problémů s aplikacemi mohou vývojáři aplikací a ne vývojáři Archu.
+*Uživatel* sestavuje svůj vlastní Arch systém z jednoduchého základního prostředí a *uživatel* kontroluje aktualizace systému. Očividně rozsáhlejší a komplikovanější systém zahrnující množství upravených balíčků a nadbytek toolkitů a desktopových prostředí by byl náchylnější na konfigurační problémy kvůli změnám v softwaru, než je štíhlejší a jednodušší systém. Arch je zaměřen na schopné proaktivní uživatele. Obecná zručnost v UNIXu a dobré praktiky správy systému a aktualizací také hrají důležitou úlohu ve stabilitě systému. Také si uvědomte, že balíčky Archu jsou až na vyjímky bez záplat, tedy za mnoho problémů s aplikacemi mohou vývojáři aplikací a ne vývojáři Archu.
 
-_Uživatel_ je tedy naprosto odpovědný za stabilitu svého vlastního systému s průběžnými aktualizacemi. Uživatel rozhoduje, kdy aktualizovat a kdy sloučit nezbytné změny, kdykoli je to potřeba. Pokud uživatel potřebuje pomoc komunity, je mu včas poskytnuta. Rozdíl mezi Archem a ostatními distribucemi je v tom, že Arch je opravdovou 'udělej si sám' distribucí; stížnosti na rozbití nejsou na místě.
+*Uživatel* je tedy naprosto odpovědný za stabilitu svého vlastního systému s průběžnými aktualizacemi. Uživatel rozhoduje, kdy aktualizovat a kdy sloučit nezbytné změny, kdykoli je to potřeba. Pokud uživatel potřebuje pomoc komunity, je mu včas poskytnuta. Rozdíl mezi Archem a ostatními distribucemi je v tom, že Arch je opravdovou 'udělej si sám' distribucí; stížnosti na rozbití nejsou na místě.
 
 ### Q) Arch potřebuje více reklamy
 
@@ -113,7 +113,6 @@ Mnoho nových uživatelů si všimne, jak linuxové jádro zachází s pamětí 
 Asi nejběžnějším viníkem tohoto zmatení je příkaz `free`:
 
  `$ free -m` 
-
 ```
              total       used       free     shared    buffers     cached
 Mem:          1009        741        267          0        104        359
@@ -121,9 +120,9 @@ Mem:          1009        741        267          0        104        359
 Swap:         1537          0       1537
 ```
 
-Je důležité zdůraznit řádek `-/+ buffers/cache:` -- reprezentuje totiž množství paměti, která je _aktivně používána_, a množství _dostupné_ paměti namísto _nevyužité_ paměti.
+Je důležité zdůraznit řádek `-/+ buffers/cache:` -- reprezentuje totiž množství paměti, která je *aktivně používána*, a množství *dostupné* paměti namísto *nevyužité* paměti.
 
-V příkladě výše máme notebook s celkově 1G RAM. Na první pohled to vypadá, že je využito 741M, přičemž je spuštěno pouze několik terminálů a webový prohlížeč! Ale po důkladnějším prozkoumání zdůrazněného řádku vidíme, že pouze 278M je _aktivně používáno_ a 731M je _dostupno_. Očividně 104M _použité_ paměti obsahuje data v bufferech a 359M obsahuje cachovaná data, oboje může být uvolněno, pokud by bylo potřeba. Pouze 267M z celkového 1G je opravdu _volno_.
+V příkladě výše máme notebook s celkově 1G RAM. Na první pohled to vypadá, že je využito 741M, přičemž je spuštěno pouze několik terminálů a webový prohlížeč! Ale po důkladnějším prozkoumání zdůrazněného řádku vidíme, že pouze 278M je *aktivně používáno* a 731M je *dostupno*. Očividně 104M *použité* paměti obsahuje data v bufferech a 359M obsahuje cachovaná data, oboje může být uvolněno, pokud by bylo potřeba. Pouze 267M z celkového 1G je opravdu *volno*.
 
 A výsledek tohoto chování? Výkon!
 
@@ -136,13 +135,13 @@ Viz [tento skvělý článek](http://www.linuxjournal.com/article/2770), pokud j
 **A)** Můžete to zjistit pomocí [pkgfile](/index.php/Pkgfile "Pkgfile"), např:
 
 ```
-$ pkgfile _nazev_souboru_
+$ pkgfile *nazev_souboru*
 
 ```
 
 ### Q) Našel jsem chybu v balíčku XY, co bych měl udělat?
 
-**A)** Nejdříve potřebujete zjistit, zda může tuto chybu opravit tým Arch Linuxu. Někdy nemůže (např. padající Firefox může být důsledkem chyby týmu Mozilly). Takováto chyba se nazývá _upstream error_. Pokud je to problém Archu, je posloupnost kroků, které můžete udělat následující:
+**A)** Nejdříve potřebujete zjistit, zda může tuto chybu opravit tým Arch Linuxu. Někdy nemůže (např. padající Firefox může být důsledkem chyby týmu Mozilly). Takováto chyba se nazývá *upstream error*. Pokud je to problém Archu, je posloupnost kroků, které můžete udělat následující:
 
 1.  Hledejte informace na fórech. Podívejte se zda si chyby nevšiml i někdo jiný.
 2.  Odešlete zprávu o chybě s detailními informacemi na [https://bugs.archlinux.org](https://bugs.archlinux.org)
@@ -150,7 +149,7 @@ $ pkgfile _nazev_souboru_
 
 ### Q) Balíčky Archu potřebují jednotnou příponu. ".pkg.tar.gz" a ".pkg.tar.xz" jsou příliš dlouhé a/nebo matoucí
 
-**A)** O tomhle se diskutovalo na emailové konferenci. Byla navržena přípona `.pac`. V současnosti není v plánu změnit současnou příponu balíčků. Jak napsal Tobias Kieslich, jeden z vývojářů Archu, _"Balíček **je** gzipovaný [xz] tarball! A může být otevřen, prozkoumán a manipulován libovolnou aplikací, která umí formát tar. Navíc typ MIME je automaticky většinou aplikací správně rozpoznán."_
+**A)** O tomhle se diskutovalo na emailové konferenci. Byla navržena přípona `.pac`. V současnosti není v plánu změnit současnou příponu balíčků. Jak napsal Tobias Kieslich, jeden z vývojářů Archu, *"Balíček **je** gzipovaný [xz] tarball! A může být otevřen, prozkoumán a manipulován libovolnou aplikací, která umí formát tar. Navíc typ MIME je automaticky většinou aplikací správně rozpoznán."*
 
 ### Q) Pacman potřebuje knihovnu, aby ostatní aplikace mohly mít snadný přístup k informacím o balíčku
 
@@ -179,7 +178,7 @@ Poznamenejme, že nejlepším způsobem, jak přidat do pacmana novou funkci, je
 **A)** Jestliže používáte desktopové prostředí jako KDE nebo Gnome, program by se měl automaticky zobrazit v menu. Pokud se pokoušíte spustit program z terminálu a neznáte název binárního souboru, zkuste následující příkaz:
 
 ```
-$ pacman -Qlq _jmeno_balicku_ | grep bin
+$ pacman -Qlq *jmeno_balicku* | grep bin
 
 ```
 
@@ -191,7 +190,7 @@ $ pacman -Qlq _jmeno_balicku_ | grep bin
 
 ### Q) Arch potřebuje instalátor. Možná grafický (GUI) instalátor.
 
-**A)** Jelikož instalace neprobíhá příliš často (přečtěte si prosím zbytek tohoto článku, abyste pochopili význam _rolling release_ modelu), nemá tato záležitost vysokou prioritu u vývojářů ani u uživatelů. Stránky [Instalační průvodce](/index.php/Installation_Guide_(%C4%8Cesky) "Installation Guide (Česky)") a [Příručka začátečníka](/index.php/Beginners%27_Guide_(%C4%8Cesky) "Beginners' Guide (Česky)") byly plně aktualizovány pro aktuálně používané [instalační skripty](https://projects.archlinux.org/arch-install-scripts.git/). Pokud stále chcete použít instalátor, zvažte použití [Archboot](/index.php/Archboot "Archboot").
+**A)** Jelikož instalace neprobíhá příliš často (přečtěte si prosím zbytek tohoto článku, abyste pochopili význam *rolling release* modelu), nemá tato záležitost vysokou prioritu u vývojářů ani u uživatelů. Stránky [Instalační průvodce](/index.php/Installation_Guide_(%C4%8Cesky) "Installation Guide (Česky)") a [Příručka začátečníka](/index.php/Beginners%27_Guide_(%C4%8Cesky) "Beginners' Guide (Česky)") byly plně aktualizovány pro aktuálně používané [instalační skripty](https://projects.archlinux.org/arch-install-scripts.git/). Pokud stále chcete použít instalátor, zvažte použití [Archboot](/index.php/Archboot "Archboot").
 
 ### Q) Nainstaloval jsem Arch a teď jsem příkazové řádce. Co teď?
 
@@ -205,11 +204,11 @@ $ pacman -Qlq _jmeno_balicku_ | grep bin
 
 **A)** Minimalistické metody instalace podobné instalačnímu procesu Archu může poskytnout několik distribucí. Nicméně musí být zmíněno pár bodů:
 
-1.  Arch byl _od začátku_ navržen jako odlehčené, minimalistické prostředí, na kterém se dále staví.
-2.  _Jediným_ způsobem instalace Arch Linuxu je stavět na tomto minimálním základu.
-3.  Základní systém a celá distribuce se drží _Keep It Simple_ přístupu, což z něj dělá jedinečný systém vhodný pro cílenou skupinu uživatelů.
+1.  Arch byl *od začátku* navržen jako odlehčené, minimalistické prostředí, na kterém se dále staví.
+2.  *Jediným* způsobem instalace Arch Linuxu je stavět na tomto minimálním základu.
+3.  Základní systém a celá distribuce se drží *Keep It Simple* přístupu, což z něj dělá jedinečný systém vhodný pro cílenou skupinu uživatelů.
 4.  Instalace služeb a balíčků vyžaduje od uživatele manuální interaktivní konfiguraci. Na rozdíl od ostatních distribucí, které automaticky konfigurují služby a chování při spouštění, filozofie Archu klade důraz na schopnosti a právo uživatele poradit si s těmito odpovědnostmi.
-5.  Balíčkovací systém Archu je navržen tak, aby byl minimalistický a aby _volitelné_ závislosti nikdy nebyly automaticky instalovány. Místo toho je uživatel během instalace jednoduše upozorněn na jejich existenci, což má za následek štíhlejší systém.
+5.  Balíčkovací systém Archu je navržen tak, aby byl minimalistický a aby *volitelné* závislosti nikdy nebyly automaticky instalovány. Místo toho je uživatel během instalace jednoduše upozorněn na jejich existenci, což má za následek štíhlejší systém.
 6.  Arch poskytuje velmi kompletní dokumentaci, která provádí tímto procesem stavby systému.
 
 ## Ostatní

@@ -59,7 +59,6 @@ La seconda fase consiste nel chiudere Plasma in modo che non interferisca mentre
 Cerchiamo e teniamo nota dei **2 numeri** nel seguente file:
 
  `~/.kde4/share/config/plasma-appletsrc` 
-
 ```
 [Containments][**$desktop_activity_number**]
 ...
@@ -75,7 +74,6 @@ plugin=desktop
 Nel secondo file diremo a Plasma di usare la nuova Attività come Dashboard del nostro Desktop:
 
  `~/.kde4/share/config/plasmarc` 
-
 ```
 [ViewIds]
 ...
@@ -97,7 +95,6 @@ Puoi ora riavviare plasma e premere Ctrl+F12 o qualsiasi scorciatoia tu abbia im
 Se questo non funziona probabilmente questo esempio con numeri veri ti aiuterà a trovare il tuo errore:
 
  `~/.kde4/share/config/plasma-appletsrc` 
-
 ```
 [Containments][**13**]
 ...
@@ -109,9 +106,7 @@ plugin=desktop
 plugin=desktop
 ...
 ```
-
  `~/.kde4/share/config/plasmarc` 
-
 ```
 [ViewIds]
 ...

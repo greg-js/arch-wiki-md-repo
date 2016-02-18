@@ -2,7 +2,7 @@
 
 **Warning:** On 2015/09/26 two critical security issues has been found in **Windows** version of TrueCrypt: CVE-2015-7358 and CVE-2015-7359\. Take this into account if you're planning to use this software to share encrypted volumes between Windows and ArchLinux. More information: [1](https://veracrypt.codeplex.com/SourceControl/changeset/cf4794372e5dea753b6310f1ca6912c6bfa86d45)[2](http://www.theregister.co.uk/2015/09/29/google_flaks_find_admin_elevation_holes_that_gave_truecrypt_audit_the_slip/)
 
-**Note:** [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) 1:7.1a-3 and [veracrypt](https://aur.archlinux.org/packages/veracrypt/) 1.16-5 cannot mount volumes since the [C++ ABI change](https://www.archlinux.org/news/c-abi-change/) on 2015-12-10, see [FS#47325](https://bugs.archlinux.org/task/47325) and the [forum thread](https://bbs.archlinux.org/viewtopic.php?id=206047). [Downgrading](/index.php/Downgrading "Downgrading") to _truecrypt_ 1:7.1a-2 works around the problem.
+**Note:** [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) 1:7.1a-3 and [veracrypt](https://aur.archlinux.org/packages/veracrypt/) 1.16-5 cannot mount volumes since the [C++ ABI change](https://www.archlinux.org/news/c-abi-change/) on 2015-12-10, see [FS#47325](https://bugs.archlinux.org/task/47325) and the [forum thread](https://bbs.archlinux.org/viewtopic.php?id=206047). [Downgrading](/index.php/Downgrading "Downgrading") to *truecrypt* 1:7.1a-2 works around the problem.
 
 TrueCrypt is a free open source on-the-fly encryption (OTFE) program. Some of its features are:
 
@@ -47,7 +47,7 @@ For more details on how TrueCrypt compares to other disk encryption solution, se
 
 [Install](/index.php/Install "Install") [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) from the [official repositories](/index.php/Official_repositories "Official repositories"). If you use any kernel other than [linux](https://www.archlinux.org/packages/?name=linux) install the corresponding kernel module.
 
-If you are using truecrypt to encrypt a virtual filesystem (e.g. a file), the module will be automatically loaded whenever you run the _truecrypt_ command.
+If you are using truecrypt to encrypt a virtual filesystem (e.g. a file), the module will be automatically loaded whenever you run the *truecrypt* command.
 
 If you are using truecrypt to encrypt a physical device (e.g. a hard disk or usb drive), you will likely want to load the module during the boot sequence:
 
@@ -94,22 +94,20 @@ Since version 206, [systemd](/index.php/Systemd "Systemd") supports (auto)mounti
 The following example setup will mount `/dev/sda2` in system encryption mode as soon as `/mnt/truecrypt-volume` is accessed using systemd's automounting logic. The passphrase to open the volume is given in `/etc/volume.password`. Note that the device file given in `/etc/fstab` needs to be the one from `/dev/mapper/` and not, for example, from `/dev/disk/by-uuid/` for automounting logic to kick in. Other than that you can still reliably identify the encrypted volume itself inside of `/etc/crypttab` using device file names from `/dev/disk/`.
 
  `/etc/crypttab` 
-
 ```
 truecrypt-volume    /dev/sda2    /etc/volume.password    tcrypt-system,noauto
 
 ```
 
-For a standard truecrypt volume, use _tcrypt_ instead of _tcrypt-system_. And for a hidden one, use _tcrypt-hidden_.
+For a standard truecrypt volume, use *tcrypt* instead of *tcrypt-system*. And for a hidden one, use *tcrypt-hidden*.
 
  `/etc/fstab` 
-
 ```
 /dev/mapper/truecrypt-volume    /mnt/truecrypt-volume    auto    noauto,x-systemd.automount    0    0
 
 ```
 
-Instead of _auto_, you can put directly your filesystem, and put usual mount options. It is useful with NTFS for mounting as a normal user.
+Instead of *auto*, you can put directly your filesystem, and put usual mount options. It is useful with NTFS for mounting as a normal user.
 
 See `man crypttab` for more details and options supported.
 
@@ -135,7 +133,7 @@ Select [1]: 1
 ```
 
 ```
-Enter file or device path for new volume: /home/user/_EncryptedFile_.tc
+Enter file or device path for new volume: /home/user/*EncryptedFile*.tc
 
 ```
 
@@ -184,7 +182,7 @@ Filesystem:
 Select [2]:
 
 ```
-Enter password for new volume '/home/user/_EncryptedFile_.tc': *****************************
+Enter password for new volume '/home/user/*EncryptedFile*.tc': *****************************
 Re-enter password: *****************************
 
 ```
@@ -208,7 +206,7 @@ Volume created.
 You can now mount the new encrypted file to a previously-created directory:
 
 ```
-$ truecrypt -t /home/user/_EncryptedFile_.tc /home/user/_EncryptedFileFolder_
+$ truecrypt -t /home/user/*EncryptedFile*.tc /home/user/*EncryptedFileFolder*
 
 ```
 
@@ -221,7 +219,7 @@ $ truecrypt -t -d
 
 ```
 
-Again, this will require administrator privileges through the use of **sudo**. After running it check if the files that are to be encrypted are indeed no longer in the directory. (might want to try unimportant data first) If they are still there, note that _rm_ doesn't make the data unrecoverable.
+Again, this will require administrator privileges through the use of **sudo**. After running it check if the files that are to be encrypted are indeed no longer in the directory. (might want to try unimportant data first) If they are still there, note that *rm* doesn't make the data unrecoverable.
 
 For more information about truecrypt in general, run:
 
@@ -345,7 +343,7 @@ truecrypt -P /dev/sda1 /media/disk
 
 **Note:** Current Versions of truecrypt seem to support NTFS write support by default so the `--filesystem` flag no longer seems to be necessary.
 
-In the following example I want to mount a ntfs-volume, but TrueCrypt does not use _ntfs-3g by_ default (so there is no write access; checked in version 6.1). The following command works for me:
+In the following example I want to mount a ntfs-volume, but TrueCrypt does not use *ntfs-3g by* default (so there is no write access; checked in version 6.1). The following command works for me:
 
 ```
 truecrypt --filesystem=ntfs-3g --mount /file/you/want/to/mount
@@ -446,7 +444,7 @@ You can now add your users to the truecrypt group:
 After that, you can mount your device by
 
 ```
-# truecrypt --mount _/path/to/device_ _/path/to/mountpoint_
+# truecrypt --mount */path/to/device* */path/to/mountpoint*
 
 ```
 
@@ -462,7 +460,7 @@ It is definitely reasonable to give truecrypt some permission masks. Otherwise, 
 and add this line to your bash configuration file, `~/.bashrc` as an alias:
 
 ```
-alias tc1='truecrypt --fs-options=users,uid=$(id -u),gid=$(id -g),fmask=0113,dmask=0002 --mount _/path/to/device""_ /path/to/mountpoint'
+alias tc1='truecrypt --fs-options=users,uid=$(id -u),gid=$(id -g),fmask=0113,dmask=0002 --mount */path/to/device""* /path/to/mountpoint'
 
 ```
 
@@ -501,7 +499,7 @@ alternatively, if you make use of the wheel group:
 If you have any difficulties with permissions as a normal user, just add the `-u` flag to the truecrypt mount command, for example:
 
 ```
-$ truecrypt -u /home/user/_EncryptedFile_.tc /home/user/_EncryptedFileFolder_
+$ truecrypt -u /home/user/*EncryptedFile*.tc /home/user/*EncryptedFileFolder*
 
 ```
 
@@ -510,13 +508,13 @@ $ truecrypt -u /home/user/_EncryptedFile_.tc /home/user/_EncryptedFileFolder_
 Simply add:
 
 ```
-$ truecrypt /home/user/_Encrypted File_.tc /home/user/_Encrypted File Folder_ <<EOF
-_password_
+$ truecrypt /home/user/*Encrypted File*.tc /home/user/*Encrypted File Folder* <<EOF
+*password*
 EOF
 
 ```
 
-to your startup procedure. Do not use the `-p` switch, this method is more secure. Otherwise everyone can just look up the password via _ps_ and similar tools, as it is in the process name! [source](http://thoughtyblog.wordpress.com/2009/07/05/truecrypt-linux-hide-password-from-ps/)
+to your startup procedure. Do not use the `-p` switch, this method is more secure. Otherwise everyone can just look up the password via *ps* and similar tools, as it is in the process name! [source](http://thoughtyblog.wordpress.com/2009/07/05/truecrypt-linux-hide-password-from-ps/)
 
 The most recent truecrypt has a couple of followup questions. If you have expect installed, this will work (assuming no keyfile and no desire to protect hidden volume), saved to a file with root-only perms called from /etc/rc.local:
 
@@ -525,11 +523,14 @@ The most recent truecrypt has a couple of followup questions. If you have expect
 expect << EOF
 spawn /usr/bin/truecrypt ''/path/to/EncryptedFile'' ''/mount/point''
 expect "Enter password"
-send "volume password\n"
+send "volume password
+"
 expect "Enter keyfile"
-send "\n"
+send "
+"
 expect "Protect hidden volume"
-send "\n"
+send "
+"
 expect eof;
 EOF
 
@@ -542,7 +543,7 @@ Of course, this isn't as secure as entering your password manually. But for some
 You can unmount a specific device by
 
 ```
-# truecrypt -d _/path/to/mountpoint_
+# truecrypt -d */path/to/mountpoint*
 
 ```
 
@@ -560,13 +561,13 @@ fi
 
 ```
 
-You can also leave away the _sleep_ command, it is just to give the unmounting some time to complete before the actual shutdown.
+You can also leave away the *sleep* command, it is just to give the unmounting some time to complete before the actual shutdown.
 
 ## Errors
 
 ### TrueCrypt is already running
 
-If a messagebox _TrueCrypt is already running_ appears when starting TrueCrypt, check for a hidden file in the home directory of the concerned user called _.TrueCrypt-lock-username_. Substitute _username_ with the individual username. Delete the file and start TrueCrypt again.
+If a messagebox *TrueCrypt is already running* appears when starting TrueCrypt, check for a hidden file in the home directory of the concerned user called *.TrueCrypt-lock-username*. Substitute *username* with the individual username. Delete the file and start TrueCrypt again.
 
 ### Deleted stale lockfile
 
@@ -604,7 +605,7 @@ rw,noatime
 
 ```
 
-amongst other options in the TrueCrypt GUI (_Settings > Preferences > Mount Options_).
+amongst other options in the TrueCrypt GUI (*Settings > Preferences > Mount Options*).
 
 #### FAT
 
@@ -652,14 +653,14 @@ If so, run:
 
 If you get a message "Failed to set up a loop device" when trying to create/mount a TrueCrypt volume, it may be because you updated your kernel recently without rebooting. Rebooting should fix this error.
 
-Otherwise, check if _loop_ has been loaded as kernel module:
+Otherwise, check if *loop* has been loaded as kernel module:
 
 ```
 $ lsmod | grep loop
 
 ```
 
-If not listed, retry the TrueCrypt command after `modprobe loop`. Should it work, consider to add _loop_ to the modules in `/etc/modules-load.d`:
+If not listed, retry the TrueCrypt command after `modprobe loop`. Should it work, consider to add *loop* to the modules in `/etc/modules-load.d`:
 
 ```
 # tee /etc/modules-load.d/truecrypt.conf <<< "loop"

@@ -1,4 +1,4 @@
-이 문서에서는 아치 리눅스 시스템을 향상시키고, 기능을 추가하는 데에 유용하거나 중요한 정보를 다룹니다. 이 문서는 여러분이 [초보자 안내서](/index.php/%EC%B4%88%EB%B3%B4%EC%9E%90_%EC%95%88%EB%82%B4%EC%84%9C "초보자 안내서")나 [설치 안내서](/index.php/%EC%84%A4%EC%B9%98_%EC%95%88%EB%82%B4%EC%84%9C "설치 안내서")를 통해 기본적인 아치 리눅스 설치를 끝낸 뒤라고 가정합니다. [#시스템 관리](#.EC.8B.9C.EC.8A.A4.ED.85.9C_.EA.B4.80.EB.A6.AC)와 [#패키지 관리](#.ED.8C.A8.ED.82.A4.EC.A7.80_.EA.B4.80.EB.A6.AC) 섹션에서 다루는 기본적인 개념들을 _반드시_ 이해하고 나서 나머지 항목들을 읽으십시오.
+이 문서에서는 아치 리눅스 시스템을 향상시키고, 기능을 추가하는 데에 유용하거나 중요한 정보를 다룹니다. 이 문서는 여러분이 [초보자 안내서](/index.php/%EC%B4%88%EB%B3%B4%EC%9E%90_%EC%95%88%EB%82%B4%EC%84%9C "초보자 안내서")나 [설치 안내서](/index.php/%EC%84%A4%EC%B9%98_%EC%95%88%EB%82%B4%EC%84%9C "설치 안내서")를 통해 기본적인 아치 리눅스 설치를 끝낸 뒤라고 가정합니다. [#시스템 관리](#.EC.8B.9C.EC.8A.A4.ED.85.9C_.EA.B4.80.EB.A6.AC)와 [#패키지 관리](#.ED.8C.A8.ED.82.A4.EC.A7.80_.EA.B4.80.EB.A6.AC) 섹션에서 다루는 기본적인 개념들을 *반드시* 이해하고 나서 나머지 항목들을 읽으십시오.
 
 ## Contents
 
@@ -79,7 +79,7 @@
 
 새로 아치 리눅스를 설치했을 경우, 기본적으로 사용자 계정은 슈퍼유저 계정 하나 뿐입니다. 슈퍼유저 계정은 '루트(root)이라고도 부릅니다. 루트 사용자로 지속적으로 로그인하거나 [SSH](/index.php/SSH "SSH")로 루트 로그인을 허용하는 것은 보안 문제를 일으킬 수 있습니다. 그러므로 권한이 제한적인 사용자로 대부분의 작업을 진행하는 것이 권장됩니다. 루트 사용자는 시스템 관리 작업을 할 때에만 사용하십시오. [Users and groups#Example adding a user](/index.php/Users_and_groups#Example_adding_a_user "Users and groups") 항목에서 일반적인 데스크톱 시스템에서의 사용자 설정 예시를 볼 수 있습니다.
 
-사용자와 그룹은 _접근 관리(access control)_에 사용됩니다. 시스템 관리자는 그룹 멤버십과 소유권 등을 세심하게 조정하여 사용자나 서비스들이 어느 시스템 리소스에 접근할 수 있는지 제어할 수 있습니다. [Users and groups](/index.php/Users_and_groups "Users and groups") 문서에서 사용자 및 그룹 관리에 대한 더 자세한 정보를 찾을 수 있습니다.
+사용자와 그룹은 *접근 관리(access control)*에 사용됩니다. 시스템 관리자는 그룹 멤버십과 소유권 등을 세심하게 조정하여 사용자나 서비스들이 어느 시스템 리소스에 접근할 수 있는지 제어할 수 있습니다. [Users and groups](/index.php/Users_and_groups "Users and groups") 문서에서 사용자 및 그룹 관리에 대한 더 자세한 정보를 찾을 수 있습니다.
 
 ### 권한 상승
 
@@ -87,7 +87,7 @@
 
 ### 서비스 관리
 
-아치리눅스는 [systemd](/index.php/Systemd "Systemd")를 init 시스템으로 사용합니다. init 시스템은 리눅스에서 시스템 및 서비스를 관리합니다. 그러므로 아치 리눅스 시스템을 관리하고 유지하기 위해서는 _systemd_의 기본을 알고 있는 것이 좋습니다. systemd와의 상호작용은 주로 _systemctl_ 명령을 통해 이루어집니다. [systemd#Basic systemctl usage](/index.php/Systemd#Basic_systemctl_usage "Systemd") 항목을 참고하십시오.
+아치리눅스는 [systemd](/index.php/Systemd "Systemd")를 init 시스템으로 사용합니다. init 시스템은 리눅스에서 시스템 및 서비스를 관리합니다. 그러므로 아치 리눅스 시스템을 관리하고 유지하기 위해서는 *systemd*의 기본을 알고 있는 것이 좋습니다. systemd와의 상호작용은 주로 *systemctl* 명령을 통해 이루어집니다. [systemd#Basic systemctl usage](/index.php/Systemd#Basic_systemctl_usage "Systemd") 항목을 참고하십시오.
 
 ### 시스템 유지
 
@@ -101,9 +101,9 @@
 
 ### pacman
 
-[pacman](/index.php/Pacman "Pacman")은 아치 리눅스의 패키지 관리자입니다(_pac_kage _man_ager에서 이름을 따왔습니다). 모든 사용자들은 이 위키의 다른 항목을 읽기 전에 반드시 pacman 사용에 익숙해져야 합니다.
+[pacman](/index.php/Pacman "Pacman")은 아치 리눅스의 패키지 관리자입니다(*pac*kage *man*ager에서 이름을 따왔습니다). 모든 사용자들은 이 위키의 다른 항목을 읽기 전에 반드시 pacman 사용에 익숙해져야 합니다.
 
-[pacman tips](/index.php/Pacman_tips "Pacman tips")에서 _pacman_과의 상호작용을 향상시키는 방법과 패키지 관리 전반에 관한 팁을 얻을 수 있습니다.
+[pacman tips](/index.php/Pacman_tips "Pacman tips")에서 *pacman*과의 상호작용을 향상시키는 방법과 패키지 관리 전반에 관한 팁을 얻을 수 있습니다.
 
 ### 저장소
 
@@ -117,7 +117,7 @@
 
 **Ports**는 원래 BSD 배포판들이 사용하던 시스템으로, 수많은 port들을 로컬 시스템 상의 디렉토리 트리(directory tree)구조 안에 포함시키고 관리하는 시스템입니다. Ports 시스템 상에서 각 Port(포트)는 그 포트에 해당하는 서드파티 어플리케이션의 이름을 딴 폴더 안의 설치용 스크립트들을 포함합니다.
 
-아치리눅스의 [ABS](/index.php/ABS "ABS") 트리는 Ports와 같은 기능을 제공합니다. [ABS](/index.php/ABS "ABS")는 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")라는 스크립트들을 사용합니다. 각 PKGBUILD는 파일 체크섬, 프로젝트 URL, 버전, 라이센스, 빌드 정보 등 해당 패키지에 대한 정보들로 채워집니다. [makepkg](/index.php/Makepkg "Makepkg")명령어가 PKGBUILD 스크립트를 해석하여 _pacman_이 관리할 수 있는 패키지를 만듭니다.
+아치리눅스의 [ABS](/index.php/ABS "ABS") 트리는 Ports와 같은 기능을 제공합니다. [ABS](/index.php/ABS "ABS")는 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")라는 스크립트들을 사용합니다. 각 PKGBUILD는 파일 체크섬, 프로젝트 URL, 버전, 라이센스, 빌드 정보 등 해당 패키지에 대한 정보들로 채워집니다. [makepkg](/index.php/Makepkg "Makepkg")명령어가 PKGBUILD 스크립트를 해석하여 *pacman*이 관리할 수 있는 패키지를 만듭니다.
 
 AUR에 들어있는 패키지들 뿐 아니라 아치 저장소에 포함되어 있는 모든 패키지들은 makepkg 명령을 이용하여 직접 재컴파일 할 수 있습니다.
 
@@ -137,7 +137,7 @@ AUR에 들어있는 패키지들 뿐 아니라 아치 저장소에 포함되어 
 
 ### 디스플레이 드라이버
 
-기본으로 포함되어 있는 _vesa_드라이버는 대부분의 비디오 카드와 작동할 것입니다. 하지만 대개의 경우 각 비디오 카드에 맞는 드라이버를 설치하여 성능을 크게 향상시킬 수 있습니다. 사용하고 있는 비디오카드에 따라 [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel_graphics "Intel graphics"), [NVIDIA](/index.php/NVIDIA "NVIDIA") 항목을 참고하십시오.
+기본으로 포함되어 있는 *vesa*드라이버는 대부분의 비디오 카드와 작동할 것입니다. 하지만 대개의 경우 각 비디오 카드에 맞는 드라이버를 설치하여 성능을 크게 향상시킬 수 있습니다. 사용하고 있는 비디오카드에 따라 [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel_graphics "Intel graphics"), [NVIDIA](/index.php/NVIDIA "NVIDIA") 항목을 참고하십시오.
 
 ### 디스플레이 서버
 
@@ -155,7 +155,7 @@ X를 수동으로 시작하기보다는 디스플레이 관리자를 이용하�
 
 ### 데스크탑 환경
 
-Xorg가 GUI 환경 구현을 위한 기본적 프레임워크를 제공하지만, 온전한 GUI 환경을 사용하기 위해서는 몇 가지 추가 요소들이 필요합니다. [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), [Xfce](/index.php/Xfce "Xfce") 등의 [데스크탑 환경](/index.php/Desktop_environments "Desktop environments")들은 창 관리자, 패널, 파일관리자, 터미널 에뮬레이터, 텍스트 편집기, 아이콘 등 다양한 _X 클라이언트_를 포함합니다. 추가적인 정보는 [Category:Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")의 항목들에서 얻을 수 있습니다.
+Xorg가 GUI 환경 구현을 위한 기본적 프레임워크를 제공하지만, 온전한 GUI 환경을 사용하기 위해서는 몇 가지 추가 요소들이 필요합니다. [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), [Xfce](/index.php/Xfce "Xfce") 등의 [데스크탑 환경](/index.php/Desktop_environments "Desktop environments")들은 창 관리자, 패널, 파일관리자, 터미널 에뮬레이터, 텍스트 편집기, 아이콘 등 다양한 *X 클라이언트*를 포함합니다. 추가적인 정보는 [Category:Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments")의 항목들에서 얻을 수 있습니다.
 
 ## 오디오 및 동영상
 
@@ -173,7 +173,7 @@ Xorg가 GUI 환경 구현을 위한 기본적 프레임워크를 제공하지만
 
 ### 브라우저 플러그인
 
-풍부하고 _완전한_ 웹 브라우징을 위하여 아크로뱃 리더, 자바, 플래시 등 몇 가지 [브라우저 플러그인](/index.php/Browser_plugins "Browser plugins")들을 설치할 수 있습니다.
+풍부하고 *완전한* 웹 브라우징을 위하여 아크로뱃 리더, 자바, 플래시 등 몇 가지 [브라우저 플러그인](/index.php/Browser_plugins "Browser plugins")들을 설치할 수 있습니다.
 
 ### 코덱
 
@@ -291,7 +291,7 @@ Trackpoint 장치를 설정하려면 다음 [ThinkWiki](http://www.thinkwiki.org
 
 ### 로컬 메일 배달
 
-기본적인 아치리눅스 시스템은 메일 동기화 기능을 포함하지 않습니다. _Postfix_를 이용하여 간단한 로컬 메일상자 기능을 사용할 수 있습니다. [Postfix](/index.php/Postfix "Postfix")문서를 참조하십시오. Postfix 대신 [SSMTP](/index.php/SSMTP "SSMTP"). [msmtp](/index.php/Msmtp "Msmtp"), [fdm](/index.php/Fdm "Fdm") 등을 사용하는 것도 가능합니다.
+기본적인 아치리눅스 시스템은 메일 동기화 기능을 포함하지 않습니다. *Postfix*를 이용하여 간단한 로컬 메일상자 기능을 사용할 수 있습니다. [Postfix](/index.php/Postfix "Postfix")문서를 참조하십시오. Postfix 대신 [SSMTP](/index.php/SSMTP "SSMTP"). [msmtp](/index.php/Msmtp "Msmtp"), [fdm](/index.php/Fdm "Fdm") 등을 사용하는 것도 가능합니다.
 
 ### 프린터 설정
 

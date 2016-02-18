@@ -68,11 +68,11 @@ per copiare tutti i file nella directory dell'utente.
 
 Nello specifico, i file sono:
 
-*   init: il file principale di fluxbox. Vedere [Editare il file _init_](http://fluxbox-wiki.org/index.php?title=Editing_the_init_file)
-*   menu: file di configurazione del menu di fluxbox. Vedere sotto e [Editare il file _menu_](http://fluxbox-wiki.org/index.php?title=Editing_the_menu)
+*   init: il file principale di fluxbox. Vedere [Editare il file *init*](http://fluxbox-wiki.org/index.php?title=Editing_the_init_file)
+*   menu: file di configurazione del menu di fluxbox. Vedere sotto e [Editare il file *menu*](http://fluxbox-wiki.org/index.php?title=Editing_the_menu)
 *   keys: file di configurazione delle scorciatoie da tastiera di fluxbox (hotkeys). Vedere sotto e [qui](http://fluxbox-wiki.org/index.php?title=Keyboard_shortcuts)
 *   startup: file nel quale è possibile decidere quali programmi si vogliono avviare all'inizio della sessione. Vedere anche [xinitrc](/index.php/Xinitrc_(Italiano) "Xinitrc (Italiano)") e [questo articolo](http://fluxbox-wiki.org/index.php?title=Editing_the_startup_file)
-*   overlay: file di configurazione per gli _elementi di stile_. Vedere anche [qui](http://fluxbox-wiki.org/index.php?title=Style_overlay).
+*   overlay: file di configurazione per gli *elementi di stile*. Vedere anche [qui](http://fluxbox-wiki.org/index.php?title=Style_overlay).
 *   apps: file che permette a fluxbox di ricordare le impostazioni delle singole finestre. Vedere [qui](http://fluxbox-wiki.org/index.php?title=Editing_the_apps_file)
 *   windowmenu: file per modificare la finestra del menu: per maggiori informazioni leggere [leggere questo articolo](http://fluxbox-wiki.org/index.php?title=Editing_the_windowmenu)
 
@@ -134,7 +134,7 @@ $ xdg_menu --help
 
 ```
 
-_Si veda anche: [XdgMenu](/index.php/XdgMenu "XdgMenu")_
+*Si veda anche: [XdgMenu](/index.php/XdgMenu "XdgMenu")*
 
 #### Creare e modificare manualmente il menu
 
@@ -145,7 +145,7 @@ $ nano ~/.fluxbox/menu
 
 ```
 
-**Nota:** non è fondamentale usare _nano_, va bene un qualunque editor.
+**Nota:** non è fondamentale usare *nano*, va bene un qualunque editor.
 
 La sintassi base del file è:
 
@@ -154,14 +154,14 @@ La sintassi base del file è:
 
 ```
 
-dove _name_ è il testo che apparirà sul menu e _command_ è il percorso dei binari, ad esempio:
+dove *name* è il testo che apparirà sul menu e *command* è il percorso dei binari, ad esempio:
 
 ```
 [exec] (Firefox Browser) {/usr/bin/firefox} <percorso esatto all'icona di firefox>
 
 ```
 
-**Nota:** per determinare il percorso dei binari usare _pacman -Ql_
+**Nota:** per determinare il percorso dei binari usare *pacman -Ql*
 
 Notare che "<percorso all'icona>" non è fondamentale. Se si desidera creare un sottomenù usare la seguente sintassi:
 
@@ -177,7 +177,7 @@ Una volta finito, salvare ed uscire. Non è necessario riavviare fluxbox. Per ma
 
 ### Init
 
-Il file `~/.fluxbox/init` è la _base_ di Fluxbox. Da qui si possono cambiare tutte le funzionalità di base come finestre, toolbar, focus ecc... Alcuni di questi parametri sono modificabili anche tramite il _Configuration Menu_. Per maggiori informazioni leggere [editare il file _init_](http://fluxbox-wiki.org/index.php?title=Editing_the_init_file).
+Il file `~/.fluxbox/init` è la *base* di Fluxbox. Da qui si possono cambiare tutte le funzionalità di base come finestre, toolbar, focus ecc... Alcuni di questi parametri sono modificabili anche tramite il *Configuration Menu*. Per maggiori informazioni leggere [editare il file *init*](http://fluxbox-wiki.org/index.php?title=Editing_the_init_file).
 
 ### Scorciatoie da tastiera
 
@@ -190,7 +190,7 @@ Fluxbox offre funzionalità base di scorciatoie da tastiera. Il file dei tasti d
 
 La chiave Control è rappresentata da "Control". Mod1 corrisponde ad Alt e Mod4 corrisponde a Meta (non è una chiave standard ma molti stabiliscono una corrispondenza tra meta e il tasto di windows)
 
-Qui c'è un metodo veloce per controllare il volume del canale _master_ utilizzando i tastiCTRL-ALT+ Freccia su e giù:
+Qui c'è un metodo veloce per controllare il volume del canale *master* utilizzando i tastiCTRL-ALT+ Freccia su e giù:
 
 ```
 Control Mod1 Up :Exec amixer set Master,0 5%+  
@@ -351,7 +351,7 @@ In the "Menu Management" section (above) we were discussing the main "Applicatio
 
 *   Workspaces Menu: click tasto centrale mouse sul desktop.
 *   Configuration Menu: located within the "Fluxbox" section of the "Root" menu.
-*   Window menu: click destro sul bordo di una finestra. Può essere modificato. Vedere la pagina _man_ di fluxbox-menu.
+*   Window menu: click destro sul bordo di una finestra. Può essere modificato. Vedere la pagina *man* di fluxbox-menu.
 *   Toolbar menu: click destro su una parte vuota della toolbar. Modificabile attraverso un sotto-menu in Configuration Menu.
 *   Slit Menu: si trova in una sotto sezione di Configuration Menu.
 

@@ -1,6 +1,6 @@
 **netconsole** 是一个通过网络发送所有内核日志消息（即dmesg）到另一台计算机的内核模块，且无需用户空间（如syslogd的）。 "netconsole" 这个名字不是很恰当，因为它不是一个真正的“控制台”，更像是一个远程日志服务。
 
-它可以内建或者编译成模块使用.内建式的_netconsole_在网卡后立即初始化以尽快建立指定的接口. 模块方式一般用于获取无屏幕系统或用户空间无法工作时的 kernel panic 输出
+它可以内建或者编译成模块使用.内建式的*netconsole*在网卡后立即初始化以尽快建立指定的接口. 模块方式一般用于获取无屏幕系统或用户空间无法工作时的 kernel panic 输出
 
 文档位于内核代码当中：**[Documentation/networking/netconsole.txt](http://lxr.linux.no/linux+v2.6.32/Documentation/networking/netconsole.txt)**
 
@@ -18,14 +18,14 @@ Install [gnu-netcat](https://www.archlinux.org/packages/?name=gnu-netcat) from t
 
 ### 内建配置
 
-_Netconsole_ and other modules' [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") can be passed from a bootloader to kernel at its startup via kernel command line by modifying the bootloader environment, which is type and version specific. Example for Uboot, where 1st address is Plug Computer ArchLinux device's netconsole Out Port & IP, and 2nd address is your PC's netconsole In Port & IP & adapter MAC:
+*Netconsole* and other modules' [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") can be passed from a bootloader to kernel at its startup via kernel command line by modifying the bootloader environment, which is type and version specific. Example for Uboot, where 1st address is Plug Computer ArchLinux device's netconsole Out Port & IP, and 2nd address is your PC's netconsole In Port & IP & adapter MAC:
 
 ```
 fw_setenv usb_custom_params 'loglevel=7 netconsole=6666@192.168.1.28/eth0,6666@192.168.1.19/00:13:32:20:r9:a5'
 
 ```
 
-Logging is done by your ArchLinux set logger like _syslog-ng_, so available loglevels (output details) are defined in that logger docs, and may differ for each log type. One can also pass _netconsole_ string parameters at kernel runtime (no config file required), then start two _netconsole_ instances on the monitoring PC (one to read output, another for input), and restart it on the PC or device you are logging as shown in _Dynamic Configuration_:
+Logging is done by your ArchLinux set logger like *syslog-ng*, so available loglevels (output details) are defined in that logger docs, and may differ for each log type. One can also pass *netconsole* string parameters at kernel runtime (no config file required), then start two *netconsole* instances on the monitoring PC (one to read output, another for input), and restart it on the PC or device you are logging as shown in *Dynamic Configuration*:
 
 ```
 # set log level for kernel messages
@@ -38,11 +38,11 @@ nc -u 192.168.1.28 6666
 
 ```
 
-One may need to switch off PC and router firewall, and setup proper router port forwarding to monitor and input data in _Netconsole_.
+One may need to switch off PC and router firewall, and setup proper router port forwarding to monitor and input data in *Netconsole*.
 
 ### 运行时配置
 
-Netconsole can be loaded as one of _kernel modules_ manually after boot or auto during boot depending on this module config. See [kernel modules](/index.php/Kernel_modules "Kernel modules") for configuring it to load at boot. For loading manually any time after boot:
+Netconsole can be loaded as one of *kernel modules* manually after boot or auto during boot depending on this module config. See [kernel modules](/index.php/Kernel_modules "Kernel modules") for configuring it to load at boot. For loading manually any time after boot:
 
 ```
 # set log level for kernel messages

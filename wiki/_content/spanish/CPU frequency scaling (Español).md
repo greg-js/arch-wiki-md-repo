@@ -42,7 +42,7 @@ Para cargar manualmente el controlador de frecuencia de la UPC:
 Para cargar automáticamente en el arranque, añada el controlador apropiado al array `MODULES` del archivo `/etc/rc.conf`. Por ejemplo:
 
 ```
-MODULES=( _**acpi-cpufreq**_ vboxdrv fuse fglrx iwl3945 ... )
+MODULES=( ***acpi-cpufreq*** vboxdrv fuse fglrx iwl3945 ... )
 
 ```
 
@@ -89,7 +89,7 @@ Reguladores disponibles:
 
 	El regulador de rendimiento esta empotrado en el núcleo y hace que las UCP funcionen a la máxima velocidad de reloj
 
-	cpufreq_ondemand _(recomendado)_
+	cpufreq_ondemand *(recomendado)*
 
 	Incrementa/Decrementa dinámicamente la velocidad de reloj de la UCP en base a la carga del sistema
 
@@ -108,7 +108,7 @@ Reguladores disponibles:
 Añada el regulador (o reguladores) al array `MODULES` en `/etc/rc.conf`:
 
 ```
-MODULES=(acpi-cpufreq _**cpufreq_ondemand cpufreq_powersave**_ vboxdrv fuse fglrx iwl3945 ... )
+MODULES=(acpi-cpufreq ***cpufreq_ondemand cpufreq_powersave*** vboxdrv fuse fglrx iwl3945 ... )
 
 ```
 
@@ -152,7 +152,7 @@ Habiéndose ocupado del archivo de configuración, puede usted ahora arrancar el
 Para arrancar el demonio autómaticamente en el arranque, añada `cpufreq` al array `DAEMONS` en `/etc/rc.conf`, por ejemplo:
 
 ```
-DAEMONS=(syslog-ng hal _**cpufreq**_ network netfs @alsa @crond @cupsd @fam @ntpd @sshd)
+DAEMONS=(syslog-ng hal ***cpufreq*** network netfs @alsa @crond @cupsd @fam @ntpd @sshd)
 
 ```
 

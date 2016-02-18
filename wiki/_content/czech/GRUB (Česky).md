@@ -36,7 +36,7 @@ Upravte konfigurační soubor grub2 podle svého nastavení. "Starý" soubor men
 
 ```
 
-_**Poznámka:** Používejte hd[a-z] pro ide a sd[a-z] pro scsi a sata_
+***Poznámka:** Používejte hd[a-z] pro ide a sd[a-z] pro scsi a sata*
 
 Zde je příklad jednoduchého konfiguračního souboru:
 
@@ -137,13 +137,13 @@ Konfigurace grubu se provádí v tomto souboru:
 
 Tato část zatím není kompletní, můžete sem přidat všechny chybějící konfigurační volby!
 
-*   _(hdn,m)_ – je oddíl _m_ na disku _n_, čísla oddílů začínají od 1, čísla disků začínají od 0
-*   _set default=n_ –je výchozí položka pro zavedení, jenž je automaticky zvolena po časovém limitu pro akce od uživatele
-*   _set timeout=m_ –čas _m_ v sekundách, po který se má čekat na výběr uživatele, než je zavedena výchozí položka
-*   _menuentry "str"{volby položky}_ – titulek _str_ pro položku a základní rozvržení
-*   _set root=(hdn,m)_ –základní diskový oddíl, kde je uloženo jádro
-*   _linux /path ro root=/dev/device initrd /initrd.img_ – volbu root použijte, pokud kernel není umístěn v /
-*   _chainloader +1_ – nastaví root jako aktivní a předá řízení jeho zavaděči (pro Windows, např.)
+*   *(hdn,m)* – je oddíl *m* na disku *n*, čísla oddílů začínají od 1, čísla disků začínají od 0
+*   *set default=n* –je výchozí položka pro zavedení, jenž je automaticky zvolena po časovém limitu pro akce od uživatele
+*   *set timeout=m* –čas *m* v sekundách, po který se má čekat na výběr uživatele, než je zavedena výchozí položka
+*   *menuentry "str"{volby položky}* – titulek *str* pro položku a základní rozvržení
+*   *set root=(hdn,m)* –základní diskový oddíl, kde je uloženo jádro
+*   *linux /path ro root=/dev/device initrd /initrd.img* – volbu root použijte, pokud kernel není umístěn v /
+*   *chainloader +1* – nastaví root jako aktivní a předá řízení jeho zavaděči (pro Windows, např.)
 
 Pro UUID záznamy:
 

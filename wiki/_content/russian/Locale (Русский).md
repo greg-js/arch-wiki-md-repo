@@ -52,27 +52,26 @@ $ locale
 Используемая локаль, выбранная среди сгенерированных в системе, устанавливается в файлах `locale.conf`, каждый из которых должен содержать список переменных окружения, например:
 
  `locale.conf` 
-
 ```
 LANG=en_AU.UTF-8
 LC_COLLATE=C
 LC_TIME=en_DK.UTF-8
 ```
 
-*   Системная локаль устанавливается в файле `/etc/locale.conf`. Вы можете установить ее также при помощи _localectl_:
+*   Системная локаль устанавливается в файле `/etc/locale.conf`. Вы можете установить ее также при помощи *localectl*:
 
 	 `# localectl set-locale LANG=en_US.UTF-8` 
 
 	Подробнее смотрите на [man-странице](/index.php/Man_page_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Man page (Русский)") `localectl(1)`.
 
-**Совет:** Во время установки системы, если вас устраивает вывод команды _locale_, вы можете просто сохранить его в файл командой `locale > /etc/locale.conf` (в сеансе arch-chroot).
+**Совет:** Во время установки системы, если вас устраивает вывод команды *locale*, вы можете просто сохранить его в файл командой `locale > /etc/locale.conf` (в сеансе arch-chroot).
 
 *   Системная локаль может переопределяться в каждом **пользовательском сеансе** с помощью файла `~/.config/locale.conf` (или, в общем случае, `$XDG_CONFIG_HOME/locale.conf` либо `$HOME/.config/locale.conf`).
 
 **Совет:**
 
 *   Это позволяет вести системные логи в `/var/log` на английском, при использовании местного языке в рабочей среде пользователя.
-*   Вы можете создать файл `/etc/skel/.config/locale.conf`, тогда для всех новых пользователей, добавленных командой _useradd_ с опцией `-m` сразу будет автоматически сгенерирован файл `~/.config/locale.conf`.
+*   Вы можете создать файл `/etc/skel/.config/locale.conf`, тогда для всех новых пользователей, добавленных командой *useradd* с опцией `-m` сразу будет автоматически сгенерирован файл `~/.config/locale.conf`.
 
 Приоритет файлов `locale.conf` определяется в `/etc/profile.d/locale.sh`.
 
@@ -124,7 +123,6 @@ $ LANG="en_AU.UTF-8" ./my_application.sh
 Программы, использующие gettext для перевода, учитывают также переменную `LANGUAGE` в дополнение к стандартным переменным. Это позволяет пользователям установить [список](http://www.gnu.org/software/gettext/manual/gettext.html#The-LANGUAGE-variable) локалей, которые будут использоваться в указанном порядке для поиска перевода. Если перевод для более предпочтительной локали (которая идет первее в списке) недоступен, будет произведена попытка получить перевод для следующей, и так далее. Например, пользователь из Австралии может предпочесть британский вариант перевода американскому:
 
  `locale.conf` 
-
 ```
 LANG=en_AU
 LANGUAGE=en_AU:en_GB:en
@@ -140,7 +138,7 @@ LANGUAGE=en_AU:en_GB:en
 
 Эта переменная отвечает за правила определения сравнения наборов символов, которые используются для сортировки и регулярных выражений.
 
-Установка значения `LC_COLLATE=C`, например, приведет к тому, что команда _ls_ будет располагать файлы, имена которых начинаются с точки, первыми, за ними последуют имена, начинающиеся с цифры, затем с заглавной и, наконец, со строчной буквы:
+Установка значения `LC_COLLATE=C`, например, приведет к тому, что команда *ls* будет располагать файлы, имена которых начинаются с точки, первыми, за ними последуют имена, начинающиеся с цифры, затем с заглавной и, наконец, со строчной буквы:
 
  `/etc/locale.conf`  `LC_COLLATE=C` 
 
@@ -164,8 +162,7 @@ LANGUAGE=en_AU:en_GB:en
 
 Во многих странах первый день недели — понедельник. Чтобы изменить первый день недели, добавьте следующие строки в файл настроек локали:
 
- `/usr/share/i18n/locales/_локаль_` 
-
+ `/usr/share/i18n/locales/*локаль*` 
 ```
 LC_TIME
 [...]
@@ -179,7 +176,7 @@ first_workday   2
 
 ### Запуск приложения с другой локалью в терминале
 
-Например, чтобы запустить программу _abiword_ на иврите:
+Например, чтобы запустить программу *abiword* на иврите:
 
 ```
 # env LANG=he_IL.UTF-8 abiword &
@@ -188,7 +185,7 @@ first_workday   2
 
 ### Запуск приложения с другой локалью из меню
 
-Скопируйте файл _.desktop_ в домашний каталог пользователя:
+Скопируйте файл *.desktop* в домашний каталог пользователя:
 
 ```
 $ cp /usr/share/applications/abiword.desktop ~/.local/share/applications/
@@ -211,7 +208,7 @@ $ cp /usr/share/applications/abiword.desktop ~/.local/share/applications/
 *   [rxvt-unicode (Русский)](/index.php/Rxvt-unicode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Rxvt-unicode (Русский)")
 *   [st](/index.php/St "St")
 *   [эмуляторы на основе VTE](/index.php/List_of_applications/Utilities_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0_.D0.BE.D1.81.D0.BD.D0.BE.D0.B2.D0.B5_VTE "List of applications/Utilities (Русский)")
-*   [xterm](/index.php/Xterm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xterm (Русский)") — необходимо запускать с опцией `-u8`. Также вы можете запускать _uxterm_, который предоставляется пакетом [xterm](https://www.archlinux.org/packages/?name=xterm).
+*   [xterm](/index.php/Xterm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xterm (Русский)") — необходимо запускать с опцией `-u8`. Также вы можете запускать *uxterm*, который предоставляется пакетом [xterm](https://www.archlinux.org/packages/?name=xterm).
 
 #### gnome-terminal или rxvt-unicode не поддерживают UTF-8
 
@@ -227,5 +224,5 @@ $ cp /usr/share/applications/abiword.desktop ~/.local/share/applications/
 *   [Статья о локалях на Gentoo Wiki](http://www.gentoo-wiki.info/Locales)
 *   [Интерактивная проверка сортировки от ICU](http://demo.icu-project.org/icu-bin/locexp?_=en_US&x=col)
 *   [Инициатива Free Standards Group создания открытого стандарта интернационализации](http://www.openi18n.org/)
-*   [О локалях в _The Single UNIX Specification_](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) от The Open Group
+*   [О локалях в *The Single UNIX Specification*](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) от The Open Group
 *   [Переменные окружения для настройки локали](https://help.ubuntu.com/community/EnvironmentVariables#Locale_setting_variables) на Ubuntu Help.

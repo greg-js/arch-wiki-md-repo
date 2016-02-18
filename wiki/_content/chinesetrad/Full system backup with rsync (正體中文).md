@@ -107,7 +107,6 @@ $ chmod +x backup.sh
 在重開機之前你必須先修改備份後的系統的 [fstab](/index.php/Fstab "Fstab") 來讓它能夠讀取到變更後的磁區：
 
  `# nano /path/to/backup/etc/fstab` 
-
 ```
 tmpfs        /tmp          tmpfs     nodev,nosuid             0   0
 
@@ -120,7 +119,6 @@ tmpfs        /tmp          tmpfs     nodev,nosuid             0   0
 因為 rsync 將整個磁碟都備份過來，所以所有原本的 `sda` 掛載點，在重開機後會因為找不到開機檔而出錯，所以我們必須將掛載點更改成新的裝置，像是把 /boot 掛載點的 sda 更改成 sdb：
 
  `# nano /path/to/backup/etc/fstab` 
-
 ```
 tmpfs        /tmp          tmpfs     nodev,nosuid             0   0
 

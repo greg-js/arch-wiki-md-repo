@@ -15,7 +15,7 @@ You can also install [fvwm-patched](https://aur.archlinux.org/packages/fvwm-patc
 
 ## Starting FVWM
 
-Select _FVWM_ from the session menu in a [display manager](/index.php/Display_manager "Display manager") of choice. Otherwise, add
+Select *FVWM* from the session menu in a [display manager](/index.php/Display_manager "Display manager") of choice. Otherwise, add
 
 ```
 exec fvwm

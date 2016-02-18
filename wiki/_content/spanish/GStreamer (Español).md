@@ -1,4 +1,4 @@
-GStreamer es una plataforma multimedia basado en tubería (_«pipeline»_), escrito en lenguaje de programación C, con el sistema de tipos basado en GObject.
+GStreamer es una plataforma multimedia basado en tubería (*«pipeline»*), escrito en lenguaje de programación C, con el sistema de tipos basado en GObject.
 
 GStreamer permite a un programador crear una variedad de componentes multimedia manipulables, incluyendo reproducción de audio sencilla, reproducción de audio y vídeo, grabación, transmisión y edición. El diseño de la tubería sirve como base para crear muchos tipos de aplicaciones multimedia como editores de vídeo, emisoras de radiodifusión y reproductores multimedia.
 
@@ -47,11 +47,11 @@ Para hacer a GStreamer más versátil, instale los paquetes de complementos que 
 
 ### PulseAudio
 
-El soporte a [PulseAudio](/index.php/PulseAudio "PulseAudio") es proporcionado por los paquetes de complementos _good_.
+El soporte a [PulseAudio](/index.php/PulseAudio "PulseAudio") es proporcionado por los paquetes de complementos *good*.
 
 ### Escritorios ligeros
 
-Para configurar GStreamer, por ejemplo, para cambiar el dispositivo de salida de audio, use _gstreamer-properties_ del paquete [gnome-media](https://www.archlinux.org/packages/?name=gnome-media). Esto se puede ejecutar por cada usuario normal o, como administrador, para todos los usuarios. Los archivos de configuración de cada usuario están en `$HOME/.gconf/system/gstreamer`, y los archivos globales están en `/etc/gconf/gconf.xml.defaults`.
+Para configurar GStreamer, por ejemplo, para cambiar el dispositivo de salida de audio, use *gstreamer-properties* del paquete [gnome-media](https://www.archlinux.org/packages/?name=gnome-media). Esto se puede ejecutar por cada usuario normal o, como administrador, para todos los usuarios. Los archivos de configuración de cada usuario están en `$HOME/.gconf/system/gstreamer`, y los archivos globales están en `/etc/gconf/gconf.xml.defaults`.
 
 ### Integración en KDE / Phonon
 

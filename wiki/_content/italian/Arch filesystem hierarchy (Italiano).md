@@ -1,8 +1,8 @@
 Tratto dal sito di [FHS](http://www.pathname.com/fhs):
 
-	"_Il filesystem standard è stato progettato per essere utilizzato dagli sviluppatori della distribuzione Unix, gli sviluppatori del pacchetto, e implementatori di sistema. Tuttavia, è principalmente destinato a essere un riferimento e non è un tutorial su come gestire un filesystem Unix o una gerarchia di directory._"
+	"*Il filesystem standard è stato progettato per essere utilizzato dagli sviluppatori della distribuzione Unix, gli sviluppatori del pacchetto, e implementatori di sistema. Tuttavia, è principalmente destinato a essere un riferimento e non è un tutorial su come gestire un filesystem Unix o una gerarchia di directory.*"
 
-Arch Linux è tra le molte distribuzioni che seguono il _f_ilesystem _h_ierarchy _s_tandard. Oltre a spiegare tutte le directory con le loro denominazioni, in questo articolo verranno illustrate anche le modifiche specifiche per Arch.
+Arch Linux è tra le molte distribuzioni che seguono il *f*ilesystem *h*ierarchy *s*tandard. Oltre a spiegare tutte le directory con le loro denominazioni, in questo articolo verranno illustrate anche le modifiche specifiche per Arch.
 
 ## Contents
 
@@ -106,7 +106,7 @@ Contiene i moduli del kernel e le immagini delle librerie condivise essenziali (
 
 ## /lost+found: Dati recuperabili specifici del Filesystem
 
-I sistemi operativi del tipo UNIX devono eseguire una corretta sequenza di arresto. A volte, un sistema può andare in crash, o una mancata alimentazione potrebbe spegnere brutalmente la macchina. In entrambi i casi, al seguente avvio, viene eseguito un controllo del filesystem utilizzando il programma _fsck_. _Fsck_ analizzerà il sistema nel tentativo di recuperare eventuali file danneggiati. I risultati di questa operazione di recupero verranno ubicati in questa directory. I file recuperati non saranno necessariamente completi né perfettamente integri, ma è sempre una possibilità in più che qualche cosa di utile possa essere ripristinato.
+I sistemi operativi del tipo UNIX devono eseguire una corretta sequenza di arresto. A volte, un sistema può andare in crash, o una mancata alimentazione potrebbe spegnere brutalmente la macchina. In entrambi i casi, al seguente avvio, viene eseguito un controllo del filesystem utilizzando il programma *fsck*. *Fsck* analizzerà il sistema nel tentativo di recuperare eventuali file danneggiati. I risultati di questa operazione di recupero verranno ubicati in questa directory. I file recuperati non saranno necessariamente completi né perfettamente integri, ma è sempre una possibilità in più che qualche cosa di utile possa essere ripristinato.
 
 ## /media: Punti di montaggio per i supporti rimovibili
 
@@ -124,7 +124,7 @@ I pacchetti e i file statici di grandi dimensioni che non rientrano perfettament
 
 ## /proc: Informazioni di elaborazione
 
-La directory /proc è molto particolare in quanto è anche un filesystem virtuale. A volte è denominata _process information pseudo-file system_. Non contiene file "reali", ma piuttosto, le informazioni del sistema runtime (ad esempio la memoria di sistema, i dispositivi montati, la configurazione hardware, ecc). Per questa ragione può essere considerata come un centro di controllo e di informazione per il kernel. In realtà, un sacco di utilità di sistema vengono richiamate semplicemente ai file in questa directory. Per esempio, "lsmod" è lo stesso di "cat/proc/modules" mentre "lspci" è sinonimo di "cat/proc/pci". Alterando i file che si trovano in questa directory, i parametri del kernel possono essere letti e/o modificati (sysctl) mentre il sistema è in esecuzione.
+La directory /proc è molto particolare in quanto è anche un filesystem virtuale. A volte è denominata *process information pseudo-file system*. Non contiene file "reali", ma piuttosto, le informazioni del sistema runtime (ad esempio la memoria di sistema, i dispositivi montati, la configurazione hardware, ecc). Per questa ragione può essere considerata come un centro di controllo e di informazione per il kernel. In realtà, un sacco di utilità di sistema vengono richiamate semplicemente ai file in questa directory. Per esempio, "lsmod" è lo stesso di "cat/proc/modules" mentre "lspci" è sinonimo di "cat/proc/pci". Alterando i file che si trovano in questa directory, i parametri del kernel possono essere letti e/o modificati (sysctl) mentre il sistema è in esecuzione.
 
 L'aspetto più distintivo dei file in questa directory è il fatto che tutti hanno una dimensione pari a 0, ad eccezione di **kcore, mounts** e **self**.
 
@@ -148,7 +148,7 @@ Questa directory contiene file che sono necessari solo temporaneamente. Molti pr
 
 Mentre root è il filesystem primario, /usr è la gerarchia secondaria per i dati utente, contenente la maggior parte delle (multi) utility e applicazioni dell'utente. /Usr è condivisibile, in sola lettura dati. Questo significa che /usr è condivisibile tra host diversi e non deve avere permessi di scrittura, tranne nel caso di intervento dell'amministratore di sistema (installazione, aggiornamento, avanzamento). Tutte le informazioni che sono specifiche del computer ospite o varia con il tempo sono memorizzate altrove.
 
-Oltre a /home/, /usr/ contiene in genere la quota maggiore di dati su un sistema. Quindi, questa è una delle directory più importanti del sistema, in quanto contiene tutti i file binari degli utenti, la loro documentazione, librerie, file di intestazione, ecc. X, e relative librerie di supporto, può essere trovato qui. I programmi utente come telnet, ftp, ecc, sono anch'essi posizionati qui. Nelle implementazioni UNIX originali, /usr/ (per _utente_), era il luogo dove le home directory degli utenti del sistema venivano messe (vale a dire, /usr/ _nomeutente_ è stata poi la directory ora nota come /home/ _nomeutente_). Nel corso del tempo, /usr/ è diventato il luogo in cui i programmi userspace e i dati (in contrapposizione ai programmi e dati "kernelspace") risiedono. Il nome non è cambiato, ma il suo significato si è ristretto e allungato da _tutto ciò che è correlato all'utente_ a _dati utente e programmi utilizzabili_. Come tale, venne creato l'acronimo "**U**ser **S**ystem **R**esources".
+Oltre a /home/, /usr/ contiene in genere la quota maggiore di dati su un sistema. Quindi, questa è una delle directory più importanti del sistema, in quanto contiene tutti i file binari degli utenti, la loro documentazione, librerie, file di intestazione, ecc. X, e relative librerie di supporto, può essere trovato qui. I programmi utente come telnet, ftp, ecc, sono anch'essi posizionati qui. Nelle implementazioni UNIX originali, /usr/ (per *utente*), era il luogo dove le home directory degli utenti del sistema venivano messe (vale a dire, /usr/ *nomeutente* è stata poi la directory ora nota come /home/ *nomeutente*). Nel corso del tempo, /usr/ è diventato il luogo in cui i programmi userspace e i dati (in contrapposizione ai programmi e dati "kernelspace") risiedono. Il nome non è cambiato, ma il suo significato si è ristretto e allungato da *tutto ciò che è correlato all'utente* a *dati utente e programmi utilizzabili*. Come tale, venne creato l'acronimo "**U**ser **S**ystem **R**esources".
 
 ### /usr/bin: Binari
 

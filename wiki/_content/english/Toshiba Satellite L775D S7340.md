@@ -11,7 +11,6 @@
 ## Hardware
 
  `# lspci` 
-
 ```
 00:00.0 Host bridge: Advanced Micro Devices [AMD] Device 1705
 00:01.0 VGA compatible controller: ATI Technologies Inc Device 9647
@@ -44,9 +43,7 @@
 05:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8101E/RTL8102E PCI Express Fast Ethernet controller (rev 05) 
 
 ```
-
  `# lsusb` 
-
 ```
 Bus 002 Device 002: ID 04f2:b289 Chicony Electronics Co., Ltd 
 Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
@@ -63,7 +60,7 @@ Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ### Touchpad and keyboard are not working
 
-The solution is to add `i8042.nomux=1 i8042.reset` to the end of the _kernel_ line of the grub menu config at `/boot/grub/menu.lst`.
+The solution is to add `i8042.nomux=1 i8042.reset` to the end of the *kernel* line of the grub menu config at `/boot/grub/menu.lst`.
 
 Example:
 

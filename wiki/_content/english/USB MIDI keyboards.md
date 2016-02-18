@@ -98,7 +98,7 @@ client 65: 'Emu10k1 WaveTable' [type=kernel]
     3 'Emu10k1 Port 3  '
 ```
 
-Here client 65 is the actual MIDI synthesizer. Assuming the soundcard is [set up](/index.php/SB_Live!_Midi "SB Live! Midi") properly, you should be able to **route** the output of the keyboard to the MIDI synthesizer. Assuming _out_ is the output client number (65 in our example) and _in_ is the input client number (72 in our example), type `aconnect _in_ _out_`. Now you can play your keyboard via the MIDI output of your sound card.
+Here client 65 is the actual MIDI synthesizer. Assuming the soundcard is [set up](/index.php/SB_Live!_Midi "SB Live! Midi") properly, you should be able to **route** the output of the keyboard to the MIDI synthesizer. Assuming *out* is the output client number (65 in our example) and *in* is the input client number (72 in our example), type `aconnect *in* *out*`. Now you can play your keyboard via the MIDI output of your sound card.
 
 ### Software synthesizer
 
@@ -107,9 +107,9 @@ Here client 65 is the actual MIDI synthesizer. Assuming the soundcard is [set up
 1.  Install [qsynth](https://www.archlinux.org/packages/?name=qsynth).
 2.  Start QSynth and go to **Setup**, where you need to load soundfont in SF2 format. You can get free SoundFonts from [http://soundfonts.narod.ru/](http://soundfonts.narod.ru/) (in Russian). When QSynth asks you to restart the engine after loading the SoundFont, do so.
 3.  Type `aconnect -o` to list all MIDI output ports. Find the one that contains `FLUID Synth` and note the client number.
-4.  Assuming _out_ is the output client number and _in_ is the input client number (72 in our example), type `aconnect _in_ _out_`. Now you can play your keyboard and QSynth should produce sounds.
+4.  Assuming *out* is the output client number and *in* is the input client number (72 in our example), type `aconnect *in* *out*`. Now you can play your keyboard and QSynth should produce sounds.
 
-**Note:** You need to run `aconnect _in_ _out_` each time you restart Qsynth or change the instrument/SoundFont.
+**Note:** You need to run `aconnect *in* *out*` each time you restart Qsynth or change the instrument/SoundFont.
 
 #### Qsynth using JACK
 

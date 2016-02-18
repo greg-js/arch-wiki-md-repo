@@ -2,7 +2,7 @@
 
 Ĉi tiu dokumento gvidos vin inter la procezo de instalado de [Arch Linux](/index.php?title=Arch_Linux_(Esperanto)&action=edit&redlink=1 "Arch Linux (Esperanto) (page does not exist)") per la [skriptoj de instalado de Arch](https://github.com/falconindy/arch-install-scripts). Antaŭ ol instalado, bonvole legu la [oftajn demandojn](/index.php?title=FAQ_(Esperanto)&action=edit&redlink=1 "FAQ (Esperanto) (page does not exist)").
 
-La komunume prizorgata [Arch-vikio](/index.php/Main_Page_(Esperanto) "Main Page (Esperanto)") estas utila risurco kaj estu rigardata por problemoj unue. La [IRC](https://en.wikipedia.org/wiki/eo:IRC "wikipedia:eo:IRC")-kanalo ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) kaj la [forumoj](https://bbs.archlinux.org/) ankaŭ disponeblas se la respondo ne troveblas aliloke. Aldone, kontolu la paĝojn de `man` por ĉiuj komandoj, kiujn vi ne konas: tio invokeblas kutime per `man _komando_`.
+La komunume prizorgata [Arch-vikio](/index.php/Main_Page_(Esperanto) "Main Page (Esperanto)") estas utila risurco kaj estu rigardata por problemoj unue. La [IRC](https://en.wikipedia.org/wiki/eo:IRC "wikipedia:eo:IRC")-kanalo ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) kaj la [forumoj](https://bbs.archlinux.org/) ankaŭ disponeblas se la respondo ne troveblas aliloke. Aldone, kontolu la paĝojn de `man` por ĉiuj komandoj, kiujn vi ne konas: tio invokeblas kutime per `man *komando*`.
 
 ## Contents
 
@@ -77,7 +77,7 @@ In case you have a [UEFI](/index.php/UEFI "UEFI") motherboard and UEFI Boot mode
 
 *   If you're using an Intel video chipset and the screen goes blank during the boot process, the problem is likely an issue with Kernel Mode Setting ([KMS](/index.php/KMS "KMS")). A possible workaround may be achieved by rebooting and pressing `Tab` over the entry that you're trying to boot (i686 or x86_64). At the end of the string type `nomodeset` and press `Enter`. Alternatively, try `video=SVIDEO-1:d` which, if it works, will not disable kernel mode setting. See the [Intel](/index.php/Intel "Intel") article for more information.
 
-*   If the screen does _not_ go blank and the boot process gets stuck while trying to load the kernel, press `Tab` while hovering over the menu entry, type `acpi=off` at the end of the string and press `Enter`.
+*   If the screen does *not* go blank and the boot process gets stuck while trying to load the kernel, press `Tab` while hovering over the menu entry, type `acpi=off` at the end of the string and press `Enter`.
 
 **[Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")**
 

@@ -59,7 +59,7 @@ You need the following packages to input Japanese.
 
 ### Japanese fonts
 
-_see also [Fonts](/index.php/Fonts "Fonts") and [Font configuration](/index.php/Font_configuration "Font configuration") for configuration or more detail._
+*see also [Fonts](/index.php/Fonts "Fonts") and [Font configuration](/index.php/Font_configuration "Font configuration") for configuration or more detail.*
 
 Recommended Japanese fonts are as follows.
 
@@ -169,7 +169,7 @@ $ anthy-agent --update-base-record
 
 #### Mozc
 
-_See [Mozc](/index.php/Mozc "Mozc")._
+*See [Mozc](/index.php/Mozc "Mozc").*
 
 [Mozc](http://code.google.com/p/mozc/) is a Japanese Input Method Editor (IME) designed for multi-platform such as Chromium OS, Windows, Mac and Linux which originates from [Google Japanese Input](http://www.google.com/intl/ja/ime/).
 
@@ -319,7 +319,6 @@ Or, if you use GNOME, KDE or Xfce, you can use uim-toolbar panel applet (Xfce re
 If you are [using systemd to manage your X session](/index.php/Systemd/User#Using_.2Fusr.2Flib.2Fsystemd.2Fsystemd_--user_To_Manage_Your_Session "Systemd/User"), you'll need to set the environment variables in your systemd session rather than an init script.
 
  `~/.config/systemd/user/uim-env.service` 
-
 ```
 [Unit]
 Description=uim environment initialization
@@ -332,9 +331,7 @@ ExecStart=/usr/bin/systemctl --user set-environment GTK_IM_MODULE=uim
 ExecStart=/usr/bin/systemctl --user set-environment QT_IM_MODULE=uim
 
 ```
-
  `~/.config/systemd/user/uim.service` 
-
 ```
 [Unit]
 Description=uim daemon
@@ -349,9 +346,7 @@ Restart=on-abort
 WantedBy=xorg.target
 
 ```
-
  `~/.config/systemd/user/uim-toolbar.service` 
-
 ```
 [Unit]
 Description=uim toolbar
@@ -496,7 +491,7 @@ In case you already set the GTK_IM_MODULE environmental variable, but uim still 
 
 The default location is `/etc/gtk-2.0/gtk.immodules` for GTK+ 2.
 
-You can do this with either the GTK_IM_MODULE_FILE variable (_not recommended_, it causes GTK+ 3 applications to see incompatible modules) or the im_module_file setting (_recommended_).
+You can do this with either the GTK_IM_MODULE_FILE variable (*not recommended*, it causes GTK+ 3 applications to see incompatible modules) or the im_module_file setting (*recommended*).
 
 Add the following to `/etc/gtk-2.0/gtkrc` or `~/.gtkrc-2.0`:
 

@@ -94,25 +94,25 @@ MODULES=(...vmnet vmmon vmci...)
 
 ### Инструкция:
 
-*   Выполните _**sudo mkdir -p /etc/rc.d/vmware.d/rc{0,1,2,3,4,5,6}.d**_ для создания runlevel-директорий для VMware.
-*   Выполните _**sudo ln -s /bin/lsmod /sbin/**_ для создания символической ссылки на lsmod.
+*   Выполните ***sudo mkdir -p /etc/rc.d/vmware.d/rc{0,1,2,3,4,5,6}.d*** для создания runlevel-директорий для VMware.
+*   Выполните ***sudo ln -s /bin/lsmod /sbin/*** для создания символической ссылки на lsmod.
 *   Извлеките тарбол с VMware Server куда угодно, например в /tmp/.
-*   Выполните _**cd /tmp/vmware-server-distrib;sudo ./vmware-install.pl**_. Я использовал для установки _**/home/vmware/bin**_.
-*   При запросе расположения директорий от _rc0.d_ до _rc6.d_, используйте _**/etc/rc.d/vmware.d**_.
-*   При запросе директории с init скриптами укажите _**/etc/rc.d**_.
+*   Выполните ***cd /tmp/vmware-server-distrib;sudo ./vmware-install.pl***. Я использовал для установки ***/home/vmware/bin***.
+*   При запросе расположения директорий от *rc0.d* до *rc6.d*, используйте ***/etc/rc.d/vmware.d***.
+*   При запросе директории с init скриптами укажите ***/etc/rc.d***.
 *   ***Выйдите***, когда появится запрос о запуске первоначальной конфигурации VMware.
 *   Извлеките куда-нибудь VMware Server any-to-any patch... например /tmp/.
-*   Выполните _**cd /tmp/vmware-any-any-update*REV*;sudo ./runme.pl**_. Это наложит заплатку на модули VMware Server, чтобы позволить ядру Linux 2.6.20 скомпилироваться.
+*   Выполните ***cd /tmp/vmware-any-any-update*REV*;sudo ./runme.pl***. Это наложит заплатку на модули VMware Server, чтобы позволить ядру Linux 2.6.20 скомпилироваться.
 *   Для ядра 2.6.25 дополнительно к предыдущей заплатке patch115a или 116 вам понадобится вручную установить 117_Alpha.
-*   Для 2.6.25 Извлеките 117 в каталог **_tar xzf vmware-any-any-update-117-very-ALPHA.tgz -C /usr/lib/vmware/modules/source/_**
-*   Для наложения заплатки на 2.6.25 _**cd /usr/lib/vmware/modules/source/**_ и запустите _**./vmware-2.6.25.sh**_ и продолжите выполнять следующие шаги.
-*   Выполните _**cd /home/vmware/bin;sudo ./vmware-config.pl**_ для компиляции модулей VMware.
+*   Для 2.6.25 Извлеките 117 в каталог ***tar xzf vmware-any-any-update-117-very-ALPHA.tgz -C /usr/lib/vmware/modules/source/***
+*   Для наложения заплатки на 2.6.25 ***cd /usr/lib/vmware/modules/source/*** и запустите ***./vmware-2.6.25.sh*** и продолжите выполнять следующие шаги.
+*   Выполните ***cd /home/vmware/bin;sudo ./vmware-config.pl*** для компиляции модулей VMware.
 
 ## Запуск
 
-Возможно, что при первом запуске VMware Server вы получите ошибку, которая начинается примерно так "Unable to power virtual machine". Остановите VMware Server и перезапустите xinetd _**/etc/rc.d/vmware stop;wait;/etc/rc.d/xinetd restart**_.
+Возможно, что при первом запуске VMware Server вы получите ошибку, которая начинается примерно так "Unable to power virtual machine". Остановите VMware Server и перезапустите xinetd ***/etc/rc.d/vmware stop;wait;/etc/rc.d/xinetd restart***.
 
-Выполните _**sudo /home/vmware/bin/vmware-config.pl**_ снова. Если ошибка не исчезла, перезапустите свой компьютер и повторите последнее действие снова. Все должно исправиться.
+Выполните ***sudo /home/vmware/bin/vmware-config.pl*** снова. Если ошибка не исчезла, перезапустите свой компьютер и повторите последнее действие снова. Все должно исправиться.
 
 Теперь `vmware` init-скрипт в `/etc/rc.d`. Вы можете добавить его в лист демонов, если захотите. Лично я так не сделал, но если вы намереваетесь использовать сеть vmware, не используя сам vmware, вам это понадобится. Вам нужно запустить этот init-скрипт перед запуском VMware.
 

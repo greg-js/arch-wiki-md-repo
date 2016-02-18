@@ -1,6 +1,6 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [Udisks](/index.php/Udisks "Udisks"). Дата последней синхронизации: 7 октября 2015\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Udisks&diff=0&oldid=403685).
 
-[udisks](http://www.freedesktop.org/wiki/Software/udisks/) предоставляет демон _udisksd_, который реализует интерфейс [D-Bus](/index.php/D-Bus "D-Bus"), используемый для запроса и управления устройств хранения данных и инструмента командной строки _udisksctl_, используемый для запросов и использования в качестве демона.
+[udisks](http://www.freedesktop.org/wiki/Software/udisks/) предоставляет демон *udisksd*, который реализует интерфейс [D-Bus](/index.php/D-Bus "D-Bus"), используемый для запроса и управления устройств хранения данных и инструмента командной строки *udisksctl*, используемый для запросов и использования в качестве демона.
 
 ## Contents
 
@@ -20,16 +20,15 @@
 
 ## Установка
 
-Существует две версии _udisks_ по имени [udisks](https://www.archlinux.org/packages/?name=udisks) и [udisks2](https://www.archlinux.org/packages/?name=udisks2). Разработка _udisks_ прекратилась в пользу _udisks2_. [[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
+Существует две версии *udisks* по имени [udisks](https://www.archlinux.org/packages/?name=udisks) и [udisks2](https://www.archlinux.org/packages/?name=udisks2). Разработка *udisks* прекратилась в пользу *udisks2*. [[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
 
-_udisksd_ ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) и _udisks-демон_ ([udisks](https://www.archlinux.org/packages/?name=udisks)) запускаются по требованию [D-Bus](/index.php/D-Bus "D-Bus") и не должны быть включены явно (см. `man udisksd` и `man udisks-daemon`). Ими можно управлять через командную строку с помощью _udisksctl_ и _udisks_, соответственно. Для получения дополнительной информации смотрите `man udisksctl` и `man udisks`.
+*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) и *udisks-демон* ([udisks](https://www.archlinux.org/packages/?name=udisks)) запускаются по требованию [D-Bus](/index.php/D-Bus "D-Bus") и не должны быть включены явно (см. `man udisksd` и `man udisks-daemon`). Ими можно управлять через командную строку с помощью *udisksctl* и *udisks*, соответственно. Для получения дополнительной информации смотрите `man udisksctl` и `man udisks`.
 
 ## Настройка
 
 Действия пользователя, на выполнение и использование udisks, ограничиваются [Policykit](/index.php/Policykit "Policykit"). Если Вашей [сессии](/index.php/%D0%A3%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%87%D0%B0%D1%81%D1%82%D0%BE_%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%87%D0%B0%D1%8E%D1%89%D0%B8%D1%85%D1%81%D1%8F_%D0%BD%D0%B5%D0%BF%D0%BE%D0%BB%D0%B0%D0%B4%D0%BE%D0%BA#.D0.A0.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81.D0.B5.D1.81.D1.81.D0.B8.D0.B8 "Устранение часто встречающихся неполадок") нет или она не активируется, настройте policykit вручную. Следующий файл устанавливает общие полномочия udisks для группы `storage`. [[2]](https://github.com/coldfix/udiskie#permissions)
 
  `/etc/polkit-1/rules.d/50-udisks.rules` 
-
 ```
 polkit.addRule(function(action, subject) {
   var YES = polkit.Result.YES;
@@ -66,27 +65,27 @@ polkit.addRule(function(action, subject) {
 
 ### Devmon
 
-[udevil](https://www.archlinux.org/packages/?name=udevil) включает [devmon](http://igurublog.wordpress.com/downloads/script-devmon), который совместим с _udisks_ и _udisks2_.Он использует помощников монтирования со следующим приоритетом:
+[udevil](https://www.archlinux.org/packages/?name=udevil) включает [devmon](http://igurublog.wordpress.com/downloads/script-devmon), который совместим с *udisks* и *udisks2*.Он использует помощников монтирования со следующим приоритетом:
 
 1.  [udevil](http://ignorantguru.github.io/udevil/) (SUID)
 2.  pmount (SUID)
 3.  udisks
 4.  udisks2
 
-Для монтирования устройств с _udisks_ или _udisks2_ удалите разрешение SUID из _udevil_:
+Для монтирования устройств с *udisks* или *udisks2* удалите разрешение SUID из *udevil*:
 
 ```
 # chmod-s/usr/bin/udevil
 
 ```
 
-**Обратите внимание:** После запуска этой команды от имени суперпользователя _devmon_ для слежения за устройствами будет использовать _udisks_
+**Обратите внимание:** После запуска этой команды от имени суперпользователя *devmon* для слежения за устройствами будет использовать *udisks*
 
-**Совет:** Чтобы для автоматического монтирования устройств запустить _devmon_ в фоновом режиме, [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") службу `devmon@.service`, используя имя пользователя в качестве аргумента: `devmon@_пользователь_.service`. Следует иметь в виду службы, выполняемые вне [сессии](/index.php/General_troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81.D0.B5.D1.81.D1.81.D0.B8.D0.B8 "General troubleshooting (Русский)"). Скорректируйте правила [Polkit](/index.php/Polkit "Polkit"), где это необходимо, или запускайте _devmon_ из сеанса пользователя (смотрите статью [Автозапуск](/index.php/%D0%90%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA "Автозапуск"))
+**Совет:** Чтобы для автоматического монтирования устройств запустить *devmon* в фоновом режиме, [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") службу `devmon@.service`, используя имя пользователя в качестве аргумента: `devmon@*пользователь*.service`. Следует иметь в виду службы, выполняемые вне [сессии](/index.php/General_troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81.D0.B5.D1.81.D1.81.D0.B8.D0.B8 "General troubleshooting (Русский)"). Скорректируйте правила [Polkit](/index.php/Polkit "Polkit"), где это необходимо, или запускайте *devmon* из сеанса пользователя (смотрите статью [Автозапуск](/index.php/%D0%90%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA "Автозапуск"))
 
 ### inotify
 
-Вы можете использовать [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools), чтобы контролировать `/dev` и монтировать диски, когда создается новое блочное устройство. Устаревшие точки монтирования автоматически удаляются _udisksd_, так, что никаких специальных действий не требуется для удаления.
+Вы можете использовать [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools), чтобы контролировать `/dev` и монтировать диски, когда создается новое блочное устройство. Устаревшие точки монтирования автоматически удаляются *udisksd*, так, что никаких специальных действий не требуется для удаления.
 
 ```
 #!/bin/bash
@@ -128,7 +127,6 @@ done
 По умолчанию, udisks2 монтирует съемные диски в контролируемом каталоге ACL `/run/media/$USER/`. Если Вы хотите вместо этого монтировать в `/media`, используйте это правило:
 
  `/etc/udev/rules.d/99-udisks2.rules ` 
-
 ```
 
 # UDISKS_FILESYSTEM_SHARED
@@ -143,7 +141,7 @@ ENV {ID_FS_USAGE} == «filesystem|other|crypto», ENV {UDISKS_FILESYSTEM_SHARED}
 
 Для простого монтирования ISO-образов, используйте следующую команду:
 
-$ udisksctl loop-setup -r -f _image.iso_
+$ udisksctl loop-setup -r -f *image.iso*
 
 Это создаст циклическое устройство и покажет готовый к монтированию ISO-образ. После размонтирования, циклическое устройство будет завершено [udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)").
 
@@ -169,12 +167,12 @@ KERNEL == «sda2», ENV {UDISKS_IGNORE} = «1»
 
 ### udisks: Устройства не остаются размонтированными
 
-_udisks_ повторно монтирует устройства или _опрашивает_ их после установленного времени. Это может вызвать неожиданное поведение, например при форматировании дисков, совместном использовании их в [виртуальной машине](/index.php/Virtual_machine "Virtual machine"), экономия электроэнергии, или удалении дисков не отсоединенных с помощью `--detach`.
+*udisks* повторно монтирует устройства или *опрашивает* их после установленного времени. Это может вызвать неожиданное поведение, например при форматировании дисков, совместном использовании их в [виртуальной машине](/index.php/Virtual_machine "Virtual machine"), экономия электроэнергии, или удалении дисков не отсоединенных с помощью `--detach`.
 
 Отключить опрос относительно данного устройства, например устройства CD/DVD:
 
 ```
-# udisks --inhibit-polling /dev/sr_0_
+# udisks --inhibit-polling /dev/sr*0*
 
 ```
 

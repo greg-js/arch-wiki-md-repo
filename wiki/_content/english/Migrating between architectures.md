@@ -1,4 +1,4 @@
-This page documents two potential methods of migrating installed systems between i686 (32-bit) and x86_64 (64-bit) architectures, in either direction. The methods avoid a _complete_ reinstall (i.e. wiping the hard drive). One method uses a liveCD, the other modifies the system from within.
+This page documents two potential methods of migrating installed systems between i686 (32-bit) and x86_64 (64-bit) architectures, in either direction. The methods avoid a *complete* reinstall (i.e. wiping the hard drive). One method uses a liveCD, the other modifies the system from within.
 
 **Note:** Technically this process still involves "reinstalling" since every package on the system must be replaced. These methods simply attempt to preserve as much as they can from your existing system.
 
@@ -47,13 +47,13 @@ grep --color -w lm /proc/cpuinfo
 
 ```
 
-For CPUs that support x86_64, this will return the `lm` flag (“long mode”) highlighted. Beware that _lahf_lm_ is a different flag and does not indicate 64-bit capability itself.
+For CPUs that support x86_64, this will return the `lm` flag (“long mode”) highlighted. Beware that *lahf_lm* is a different flag and does not indicate 64-bit capability itself.
 
 ### Disk space
 
 You should be prepared for `/var/cache/pacman/pkg` to grow approximately twice its current size during the migration. This is assumes only packages that are currently installed are in the cache, as if “pacman -Sc” (clean) was recently run. The disk space increase is due to duplication between the i686 and x86_64 versions of each package.
 
-If you have not enough disk, please use [GParted](/index.php/GParted "GParted") to resize the relevant partition, or mount another partition to _/var/cache/pacman_.
+If you have not enough disk, please use [GParted](/index.php/GParted "GParted") to resize the relevant partition, or mount another partition to */var/cache/pacman*.
 
 Please do not remove packages of the old architecture from the cache until the system is fully operating in the new architecture. Removing the packages too early may leave you unable to fall back and revert changes.
 
@@ -67,7 +67,7 @@ If the migration fails halfway through, there are packages that can help sort ou
 
 One package is [busybox](https://www.archlinux.org/packages/?name=busybox), which can be used to revert changes. It is statically linked and does not depend on any libraries. The 32-bit (i686) version should be installed.
 
-Another package is [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc), from the [Multilib](/index.php/Multilib "Multilib") x86_64 repository. It is probably only useful when migrating _away_ from 32 bits; in any case you may safely skip this package. You can use the package to run 32 bit programs by explicitly calling `/lib/ld-linux.so.2`.
+Another package is [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc), from the [Multilib](/index.php/Multilib "Multilib") x86_64 repository. It is probably only useful when migrating *away* from 32 bits; in any case you may safely skip this package. You can use the package to run 32 bit programs by explicitly calling `/lib/ld-linux.so.2`.
 
 ## Method 1: using the Arch LiveCD
 
@@ -137,7 +137,7 @@ If you are migrating from 32 bits to 64 bits, now is the time to install 32-bit 
 
 #### Change Pacman architecture
 
-Edit the _/etc/pacman.conf_ file and change _Architecture_ from `auto` to the new value. These _sed_ commands may be used:
+Edit the */etc/pacman.conf* file and change *Architecture* from `auto` to the new value. These *sed* commands may be used:
 
 For x86_64:
 
@@ -153,7 +153,7 @@ and for i686:
 
 ```
 
-Make sure the server lists in _/etc/pacman.conf_ and _/etc/pacman.d/mirrorlist_ use _$arch_ instead of explicitly specifying _i686_ or _x86_64_. Now force Pacman to synchronize with the new repositories:
+Make sure the server lists in */etc/pacman.conf* and */etc/pacman.d/mirrorlist* use *$arch* instead of explicitly specifying *i686* or *x86_64*. Now force Pacman to synchronize with the new repositories:
 
 ```
 # pacman -Syy                     # force sync new architecture repositories
@@ -171,13 +171,13 @@ Download the new architecture versions of all our currently installed packages:
 
 If migrating to 32 bits, install the 32-bit [busybox](https://www.archlinux.org/packages/?name=busybox) fallback now that Pacman has been configured with the 32-bit architecture.
 
-**Warning:** Do not install the _lib32-glibc_ package now. After a _ldconfig_, when you install _linux_, the generated image will have libraries like _librt.so_ in '`/usr/lib32`, where binaries during boot will not search, resulting in a boot failure.
+**Warning:** Do not install the *lib32-glibc* package now. After a *ldconfig*, when you install *linux*, the generated image will have libraries like *librt.so* in '`/usr/lib32`, where binaries during boot will not search, resulting in a boot failure.
 
 ### Package installation
 
 #### Install kernel (64-bit)
 
-Upgrading the kernel to 64 bits (x86_64) is safe and straightforward: 32 bit and 64 bit applications run equally well under a 64-bit kernel. For migration _away_ from 64 bits, leave the 64-bit kernel installed and running for now and skip this step.
+Upgrading the kernel to 64 bits (x86_64) is safe and straightforward: 32 bit and 64 bit applications run equally well under a 64-bit kernel. For migration *away* from 64 bits, leave the 64-bit kernel installed and running for now and skip this step.
 
 Install the [linux](https://www.archlinux.org/packages/?name=linux) package.
 
@@ -202,7 +202,6 @@ Install the [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) 
 Verify that you are running the x86_64 architecture:
 
  `$ uname -m` 
-
 ```
 x86_64
 
@@ -253,7 +252,7 @@ $ pacman -Qqm
 
 ## Cleanup
 
-You are now free to remove **busybox** and _lib32-glibc_.
+You are now free to remove **busybox** and *lib32-glibc*.
 
 #### Makepkg compiler flags
 

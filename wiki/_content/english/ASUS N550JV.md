@@ -1,6 +1,6 @@
 | **Device** | **Status** | **Modules** |
 | Intel | Working | xf86-video-intel |
-| Nvidia | Working | nouveau _or_ nvidia |
+| Nvidia | Working | nouveau *or* nvidia |
 | Ethernet | Working | r8169 |
 | Wireless | Working | ath9k |
 | Audio | Working | snd_hda_intel |
@@ -40,7 +40,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 #### Drivers
 
-Install [bumblebee along with Nvidia and Intel drivers](/index.php/Bumblebee#Installing_Bumblebee_with_Intel.2FNVIDIA "Bumblebee"). Add the kernel parameter `rcutree.rcu_idle_gp_delay=1` to your bootloader configuration, so that _optirun_ will not fail to start.
+Install [bumblebee along with Nvidia and Intel drivers](/index.php/Bumblebee#Installing_Bumblebee_with_Intel.2FNVIDIA "Bumblebee"). Add the kernel parameter `rcutree.rcu_idle_gp_delay=1` to your bootloader configuration, so that *optirun* will not fail to start.
 
 #### Brightness
 
@@ -50,7 +50,7 @@ Install [bumblebee along with Nvidia and Intel drivers](/index.php/Bumblebee#Ins
 
 Install [PulseAudio](/index.php/PulseAudio "PulseAudio").
 
-After installation, reboot the laptop to ensure all modules are loaded. Check if the fallback device is correctly set to _Build-in Audio Analog Stereo_ with [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol). See [PulseAudio/Troubleshooting#Fallback device is not respected](/index.php/PulseAudio/Troubleshooting#Fallback_device_is_not_respected "PulseAudio/Troubleshooting") for more information. Also check for muted devices:
+After installation, reboot the laptop to ensure all modules are loaded. Check if the fallback device is correctly set to *Build-in Audio Analog Stereo* with [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol). See [PulseAudio/Troubleshooting#Fallback device is not respected](/index.php/PulseAudio/Troubleshooting#Fallback_device_is_not_respected "PulseAudio/Troubleshooting") for more information. Also check for muted devices:
 
 ```
 $ alsamixer -c PCH
@@ -99,7 +99,6 @@ $ xmodmap -pke > ~/.Xmodmap
 Then open it and locate keycode 234:
 
  `~/.Xmodmap` 
-
 ```
 ...
 keycode 233 = XF86MonBrightnessUp NoSymbol XF86MonBrightnessUp
@@ -112,7 +111,6 @@ keycode 235 = XF86Display NoSymbol XF86Display
 Now move `XF86AudioMedia NoSymbol XF86AudioMedia` text on the empty keycode 248 and leave keycode 234 empty:
 
  `~/.Xmodmap` 
-
 ```
 ...
 **keycode 234 =** 
@@ -129,7 +127,6 @@ keycode 249 =
 Optionally, for `FN+F7` give some value on keycode 253.
 
  `~/.Xmodmap` 
-
 ```
 ...
 keycode 252 =
@@ -149,7 +146,6 @@ $ xmodmap ~/.Xmodmap
 Test with `xev` or try to bind something on media button. `FN+F7` should be controlled by hardware and switch display without any additional configuration. Also, if you are satisfied, put the command above to [Xinitrc](/index.php/Xinitrc "Xinitrc").
 
  `~/.xinitrc` 
-
 ```
 { sleep 10; xmodmap ~/.Xmodmap; } &
 
@@ -172,7 +168,6 @@ The internal speakers seems not to play any sound until volume is being increase
 Create new file:
 
  `/etc/systemd/system/beep-disable.service` 
-
 ```
 [Unit]
 Description=Unloads audio module to prevent beep on shutdown
@@ -190,7 +185,6 @@ WantedBy=shutdown.target suspend.target
 and one more:
 
  `/etc/systemd/system/beep-disable-wakeup.service` 
-
 ```
 [Unit]
 Description=Load sound module back on system resume

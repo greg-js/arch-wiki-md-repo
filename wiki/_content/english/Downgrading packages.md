@@ -54,13 +54,13 @@ Exit the chroot (with `exit`), reboot and you should be done.
 
 The [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") is a daily snapshot of the [official repositories](/index.php/Official_repositories "Official repositories").
 
-The _ALA_ can be used to install a previous package version, or restore the system to an earlier date.
+The *ALA* can be used to install a previous package version, or restore the system to an earlier date.
 
 ### Rebuild the package
 
 If the package is unavailable, find the correct [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and rebuild it with [makepkg](/index.php/Makepkg "Makepkg").
 
-For packages from the [official repositories](/index.php/Official_repositories "Official repositories"), retrieve the PKGBUILD with [ABS](/index.php/ABS "ABS") and change the software version. Alternatively, find the package on the [Packages](https://www.archlinux.org/packages) website, click "View Changes", and navigate to the desired version. The files are available through a `.tar.gz` snapshot, and via the _Tree_ view.
+For packages from the [official repositories](/index.php/Official_repositories "Official repositories"), retrieve the PKGBUILD with [ABS](/index.php/ABS "ABS") and change the software version. Alternatively, find the package on the [Packages](https://www.archlinux.org/packages) website, click "View Changes", and navigate to the desired version. The files are available through a `.tar.gz` snapshot, and via the *Tree* view.
 
 See also [Getting PKGBUILDS From SVN#Checkout an older revision of a package](/index.php/Getting_PKGBUILDS_From_SVN#Checkout_an_older_revision_of_a_package "Getting PKGBUILDS From SVN").
 

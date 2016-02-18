@@ -61,7 +61,7 @@ $ zsh
 
 ```
 
-You should now see _zsh-newuser-install_, which will walk you through some basic configuration. If you want to skip this, press `q`. If you did not see it, you can invoke it manually with
+You should now see *zsh-newuser-install*, which will walk you through some basic configuration. If you want to skip this, press `q`. If you did not see it, you can invoke it manually with
 
 ```
 $ zsh /usr/share/zsh/functions/Newuser/zsh-newuser-install -f
@@ -148,7 +148,6 @@ Included below is a sample configuration file, it provides a decent set of defau
 Here is a simple `.zshrc`:
 
  `~/.zshrc` 
-
 ```
 autoload -U compinit promptinit
 compinit
@@ -163,7 +162,6 @@ prompt walters
 In short, put the following in `~/.zshenv`:
 
  `~/.zshenv` 
-
 ```
 typeset -U path
 path=(~/bin /other/things/in/path $path[@])
@@ -176,7 +174,6 @@ See also [A User's Guide to the Z-Shell](http://zsh.sourceforge.net/Guide/zshgui
 Perhaps the most compelling feature of Zsh is its advanced autocompletion abilities. At the very least, enable autocompletion in `.zshrc`. To enable autocompletion, add the following to your `~/.zshrc`:
 
  `~/.zshrc` 
-
 ```
 autoload -U compinit
 compinit
@@ -193,7 +190,7 @@ For autocompletion with an arrow-key driven interface, add the following to:
 
  `~/.zshrc`  `zstyle ':completion:*' menu select` 
 
-	_To activate the menu, press tab twice._
+	*To activate the menu, press tab twice.*
 
 For autocompletion of command line switches for aliases, add the following to:
 
@@ -233,7 +230,6 @@ See also [zshwiki: bindkeys](http://zshwiki.org/home/zle/bindkeys).
 Bind a ncurses application to a keystoke, but it will not accept interaction. Use `BUFFER` variable to make it work. The following example lets users open ncmpcpp using `Alt+\`:
 
  `~/.zshrc` 
-
 ```
 ncmpcppShow() { BUFFER="ncmpcpp"; zle accept-line; }
 zle -N ncmpcppShow
@@ -245,7 +241,6 @@ bindkey '^[\' ncmpcppShow
 This method will keep everything you entered in the line before calling application
 
  `~/.zshrc` 
-
 ```
 ncmpcppShow() { ncmpcpp <$TTY; zle redisplay; }
 zle -N ncmpcppShow
@@ -257,7 +252,6 @@ bindkey '^[\' ncmpcppShow
 Key binds like those used in graphic file managers may come handy. The first comes back in directory history (`Alt+Left`), the second let the user go to the parent directory (`Alt+Up`). They also display the directory content.
 
  `~/.zshrc` 
-
 ```
 cdUndoKey() {
   popd      > /dev/null
@@ -287,7 +281,6 @@ bindkey '^[[1;3D'      cdUndoKey
 Add these lines to .zshrc
 
  `~/.zshrc` 
-
 ```
 [[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"    history-beginning-search-backward
 [[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}"  history-beginning-search-forward
@@ -301,7 +294,6 @@ Doing this, only past commands beginning with the current input would have been 
 There is a quick and easy way to set up a colored prompt in Zsh. Make sure that prompt is set to autoload in `.zshrc`. This can be done by adding these lines to:
 
  `~/.zshrc` 
-
 ```
 autoload -U promptinit
 promptinit
@@ -375,10 +367,9 @@ username@host ~ %                                                         [0]
 
 ### Dirstack
 
-Zsh can be configured to remember the DIRSTACKSIZE last visited folders. This can then be used to _cd_ them very quickly. You need to add some lines to your configuration file:
+Zsh can be configured to remember the DIRSTACKSIZE last visited folders. This can then be used to *cd* them very quickly. You need to add some lines to your configuration file:
 
  `.zshrc` 
-
 ```
 DIRSTACKFILE="$HOME/.cache/zsh/dirs"
 if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
@@ -410,11 +401,11 @@ dirs -v
 
 to print the dirstack. Use `cd -<NUM>` to go back to a visited folder. Use autocompletion after the dash. This proves very handy if using the autocompletion menu.
 
-**Note:** This will not work if you have more than one _zsh_ session open, and attempt to `cd`, due to a conflict in both sessions writing to the same file.
+**Note:** This will not work if you have more than one *zsh* session open, and attempt to `cd`, due to a conflict in both sessions writing to the same file.
 
 ### Help command
 
-Unlike [bash](/index.php/Bash "Bash"), _zsh_ does not enable a built in `help` command. To use `help` in zsh, add following to your `zshrc`:
+Unlike [bash](/index.php/Bash "Bash"), *zsh* does not enable a built in `help` command. To use `help` in zsh, add following to your `zshrc`:
 
 ```
 autoload -U run-help
@@ -454,7 +445,7 @@ Zsh always executes `/etc/zsh/zshenv` and `$ZDOTDIR/.zshenv` so do not bloat the
 
 If the shell is a login shell, commands are read from `/etc/profile` and then `$ZDOTDIR/.zprofile`. Then, if the shell is interactive, commands are read from `/etc/zsh/zshrc` and then `$ZDOTDIR/.zshrc`. Finally, if the shell is a login shell, `/etc/zsh/zlogin` and `$ZDOTDIR/.zlogin` are read.
 
-See also the _STARTUP/SHUTDOWN FILES_ section of `man zsh`.
+See also the *STARTUP/SHUTDOWN FILES* section of `man zsh`.
 
 ### Persistent rehash
 
@@ -479,11 +470,11 @@ Change the default shell before removing the [zsh](https://www.archlinux.org/pac
 Run following command:
 
 ```
-$ chsh -s /bin/bash _user_
+$ chsh -s /bin/bash *user*
 
 ```
 
-Use it for every user with _zsh_ set as their login shell (including root if needed). When completed, the [zsh](https://www.archlinux.org/packages/?name=zsh) package can be removed.
+Use it for every user with *zsh* set as their login shell (including root if needed). When completed, the [zsh](https://www.archlinux.org/packages/?name=zsh) package can be removed.
 
 Alternatively, change the default shell back to Bash by editing `/etc/passwd` as root.
 
@@ -492,14 +483,14 @@ Alternatively, change the default shell back to Bash by editing `/etc/passwd` as
 For example, change the following:
 
 ```
-_username_:x:1000:1000:_Full Name_,,,:/home/_username_:/bin/zsh
+*username*:x:1000:1000:*Full Name*,,,:/home/*username*:/bin/zsh
 
 ```
 
 To this:
 
 ```
-_username_:x:1000:1000:_Full Name_,,,:/home/_username_:/bin/bash
+*username*:x:1000:1000:*Full Name*,,,:/home/*username*:/bin/bash
 
 ```
 

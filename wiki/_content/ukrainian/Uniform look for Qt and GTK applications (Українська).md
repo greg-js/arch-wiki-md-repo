@@ -31,7 +31,7 @@
 
 Програми основані на [Qt](http://uk.wikipedia.org/wiki/Qt)- та [GTK+](/index.php/GTK%2B_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "GTK+ (Українська)") використовують різні інструментарій віджет для відображення графічного інтерфейсу користувача. Між іншим кожен з них іде за замовчуванням з разнити темами, стилями та наборами значків, так що "зовнішній вигляд" істотно відрізняються. Ця стаття допоможе тобі зробити вигляд застосунків Qt та GTK+ подібними для більш раціонального та "інтегрованого" робочого столу.
 
-_"Qt (вимовляється як "кюте") крос-платформний фреймвок для розробки застосунків, який широко використовується для розробки програм GUI (в даному випадку він відомий як інструментарій віджетів), і зазвичай використовується для розробки не-GUI програм таких як консолі інструменти і сервери."_
+*"Qt (вимовляється як "кюте") крос-платформний фреймвок для розробки застосунків, який широко використовується для розробки програм GUI (в даному випадку він відомий як інструментарій віджетів), і зазвичай використовується для розробки не-GUI програм таких як консолі інструменти і сервери."*
 
 *   **Тема** - Колекція стилів, теми значків і теми кольору.
 *   **Стиль** - Графічний макет; вигляд.
@@ -46,19 +46,19 @@ _"Qt (вимовляється як "кюте") крос-платформний 
 
 Для зміни стилю в Qt3 і застосунуках в KDE3:
 
-	_Центр керування (kcontrol) --> Вигляд і Теми --> Стиль_
+	*Центр керування (kcontrol) --> Вигляд і Теми --> Стиль*
 
 Для зміни стилю застосунків Qt3 з зовні KDE3
 
-	_Qt Налаштування (qt3config) --> Вигляд --> Вибір стилю GUI_
+	*Qt Налаштування (qt3config) --> Вигляд --> Вибір стилю GUI*
 
 Для зміни стилю застосунків Qt4 і KDE4 в KDE4:
 
-	_Системне настроювання (systemsettings) --> Вигляд --> Стиль_
+	*Системне настроювання (systemsettings) --> Вигляд --> Стиль*
 
 Для зміни стилю застосунків Qt4 ззовні KDE4
 
-	_Qt Налаштування (qtconfig) --> Вигляд --> Вибір стилю GUI_
+	*Qt Налаштування (qtconfig) --> Вигляд --> Вибір стилю GUI*
 
 Для зміни стилю GTK+ версії 2 в KDE3:
 
@@ -79,7 +79,7 @@ QT4 встановлюється з KDE.
 
 ## QtCurve
 
-Доступно для _qt4_ (kde4), _qt3_ (kde3), і _gtk2_ (gnome) в репозиторії **[extra]**, цей високо-налаштовувальний стиль найбільш відомий округлювач (?)all-rounder). Він має багато управлінь для разних варіантів, починаючи з появи кнопки на формі слайдера. Ви можете встановити його використовуючи pacman.
+Доступно для *qt4* (kde4), *qt3* (kde3), і *gtk2* (gnome) в репозиторії **[extra]**, цей високо-налаштовувальний стиль найбільш відомий округлювач (?)all-rounder). Він має багато управлінь для разних варіантів, починаючи з появи кнопки на формі слайдера. Ви можете встановити його використовуючи pacman.
 
 ```
 # pacman -S qtcurve-gtk2 qtcurve-kde3 qtcurve-kde4
@@ -107,7 +107,7 @@ QT4 встановлюється з KDE.
 
 Ви можете отримати доступ до них тут:
 
-	_Центр управління (kcontrol) --> Зовнішній вигляд і Теми --> Стилі GTK і Шрифти_
+	*Центр управління (kcontrol) --> Зовнішній вигляд і Теми --> Стилі GTK і Шрифти*
 
 Якщо ви хочете видалити його повністю, і всі його файли, видаліть наступне:
 
@@ -134,7 +134,7 @@ This is a Qt style which intends to make applications blend perfectly into the G
 
 ### Having trouble making your Qt applications use QGtkStyle?
 
-Qt won't apply QGtkStyle correctly if GTK is using the [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications"). Qt determines whether the [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications") is in use by reading the GTK configuration files listed in the environmental variable **GTK2_RC_FILES**. If the environmental variable is not set properly, Qt assumes you are using the [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications"), sets QGtkStyle to use the style GTK style _Clearlooks_, and outputs an error message:
+Qt won't apply QGtkStyle correctly if GTK is using the [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications"). Qt determines whether the [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications") is in use by reading the GTK configuration files listed in the environmental variable **GTK2_RC_FILES**. If the environmental variable is not set properly, Qt assumes you are using the [GTK-QT-Engine](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK-QT-Engine "Uniform Look for QT and GTK Applications"), sets QGtkStyle to use the style GTK style *Clearlooks*, and outputs an error message:
 
 ```
 QGtkStyle cannot be used together with the GTK_Qt engine.
@@ -148,7 +148,6 @@ Users of [Openbox](/index.php/Openbox "Openbox") and other non-GNOME environment
     *   The $HOME part will expand to be path to your user's home directory. Using the ~ shortcut won't work.
 
  `.xinitrc` 
-
 ```
 ...
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
@@ -159,7 +158,6 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
     *   This is usually done for you by an [application which sets GTK2 Styles](/index.php/Uniform_Look_for_QT_and_GTK_Applications#GTK2_styles "Uniform Look for QT and GTK Applications")
 
  `.gtkrc-2.0` 
-
 ```
 ...
 gtk-theme-name="Crux"
@@ -169,13 +167,11 @@ gtk-theme-name="Crux"
 However it seems in sume cases those tools insert only an include directive like
 
  `.gtkrc-2.0` 
-
 ```
 ...
 include "/usr/share/themes/SomeTheme/gtk-2.0/gtkrc"
 ...
 ```
-
 which apparently is not recognized by all versions of QGtkStyle. You can hotfix this problem by inserting the gtk-theme-name manually in your .gtkrc-2.0 like above, note however that Gtk2-style-change applications might overwrite that change when you use them.
 
 To choose your GTK theme for QT apps you must run:

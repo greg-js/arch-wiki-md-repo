@@ -14,7 +14,7 @@ There are two Go compilers nowadays, and they can be [installed](/index.php/Inst
 
 *   **gc**: common name for official set of compilers 8g(x86), 6g(amd64), 5g(arm), that can be [installed](/index.php/Install "Install") with [go](https://www.archlinux.org/packages/?name=go)
     *   fast compilation
-*   **gccgo**: frontend for _gcc_, part of its compiler collection, can be [installed](/index.php/Install "Install") with [gcc-go](https://www.archlinux.org/packages/?name=gcc-go)
+*   **gccgo**: frontend for *gcc*, part of its compiler collection, can be [installed](/index.php/Install "Install") with [gcc-go](https://www.archlinux.org/packages/?name=gcc-go)
     *   goroutines becomes full flow
     *   small size of the binary
     *   better optimization
@@ -24,7 +24,6 @@ There are two Go compilers nowadays, and they can be [installed](/index.php/Inst
 Check that Go is installed correctly by building a simple program, as follows:
 
  `hello.go` 
-
 ```
 package main
 
@@ -39,20 +38,19 @@ func main() {
 Then run it with the go tool:
 
  `$ go run hello.go` 
-
 ```
 Hello, Arch!
 
 ```
 
-Compilation with standard _gc_ compiler (same as `go build -compiler=gc test.go`):
+Compilation with standard *gc* compiler (same as `go build -compiler=gc test.go`):
 
 ```
 $ go build test.go
 
 ```
 
-Compilation with _gccgo_ (same as `go build -compiler=gccgo test.go`):
+Compilation with *gccgo* (same as `go build -compiler=gccgo test.go`):
 
 ```
 $ gccgo test.go -o test
@@ -61,7 +59,7 @@ $ gccgo test.go -o test
 
 ### $GOPATH
 
-Go dependencies, when used for example in `import` statements, are searched for in the `$GOPATH` variable, and then - in `$GOROOT` (_go_ installation directory, `/usr/lib/go` by default). If you expect to use external dependencies, not only basic from `$GOROOT`, you must specify workspace area in your `~/.bash_profile` (or equivalent):
+Go dependencies, when used for example in `import` statements, are searched for in the `$GOPATH` variable, and then - in `$GOROOT` (*go* installation directory, `/usr/lib/go` by default). If you expect to use external dependencies, not only basic from `$GOROOT`, you must specify workspace area in your `~/.bash_profile` (or equivalent):
 
 ```
 export GOPATH=~/go

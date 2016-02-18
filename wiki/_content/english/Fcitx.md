@@ -239,8 +239,8 @@ For some reasons, [KDE](/index.php/KDE "KDE") doesn't handle keyboard layouts pr
 1.  Install required packages mentioned [here](#KDE).
 2.  Turn off `fcitx` if it's running in the background.
 3.  Disable stuff related to KDE:
-    1.  At _System settings --> Input devices --> Layouts (tab)_ make sure that "Configure layouts" is unchecked.
-    2.  At _System settings --> Input devices --> Advanced (tab)_ make sure that "Configure keyboard options" is unchecked.
+    1.  At *System settings --> Input devices --> Layouts (tab)* make sure that "Configure layouts" is unchecked.
+    2.  At *System settings --> Input devices --> Advanced (tab)* make sure that "Configure keyboard options" is unchecked.
 4.  Open terminal and type `fcitx` to start it. You can close terminal - `fcitx` will still be running in the background.
 5.  Set up your needed layouts (Right click on the system tray icon, then "Configure").
 6.  Right click on the system tray icon, then "Exit"

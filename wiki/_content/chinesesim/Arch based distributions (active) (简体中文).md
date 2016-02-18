@@ -180,11 +180,11 @@ Arch Linux MIPS 是一款用 Arch Linux 源码编译的发行版，目标在于�
 
 ### MSYS2
 
-_"MSYS2 是一款更新的，现代版本的 MSYS，都使用 Cygwin (POSIX 兼容层) 目标在于更好的本地 Windows软件互操作性。_
+*"MSYS2 是一款更新的，现代版本的 MSYS，都使用 Cygwin (POSIX 兼容层) 目标在于更好的本地 Windows软件互操作性。*
 
-_名字是 Minimal SYStem 2 的缩写，目标是提供方便使用脚本的支持，自动工具，版本控制系统和使用 MinGW-w64 工具组编译本地 Windows 应用软件。_
+*名字是 Minimal SYStem 2 的缩写，目标是提供方便使用脚本的支持，自动工具，版本控制系统和使用 MinGW-w64 工具组编译本地 Windows 应用软件。*
 
-_我们想要一种包管理系统提供简单的软件包安装，并且对接 Arch Linux 的 Pacman。它带来了许多强大的特点，例如依赖性的解决和简单的全面系统升级，以及使用编译（makepkg）系统安装软件包。"_
+*我们想要一种包管理系统提供简单的软件包安装，并且对接 Arch Linux 的 Pacman。它带来了许多强大的特点，例如依赖性的解决和简单的全面系统升级，以及使用编译（makepkg）系统安装软件包。"*
 
 源码: [MSYS2 | SourceForge.net](http://sourceforge.net/projects/msys2/)
 
@@ -270,7 +270,7 @@ Alpine Linux 是运行于 RAM 的 linux 发行版。原来是用作小型设备�
 
 ### Arquetype CRT
 
-_"Our CRT "Continuous Release Term" is a rolling release with pacman as package manager, with a complete software suite ( internet, multimedia files, office, cloud-storage, development... )."_
+*"Our CRT "Continuous Release Term" is a rolling release with pacman as package manager, with a complete software suite ( internet, multimedia files, office, cloud-storage, development... )."*
 
 *   主页: [https://arquetype.org/](https://arquetype.org/)
 *   论坛: [https://arquetype.org/forums/](https://arquetype.org/forums/)
@@ -294,7 +294,7 @@ Enlisy 是针对基于 Pentium 2 及其以上处理器的并对 i686 优化过�
 
 ### Frugalware
 
-_"Frugalware Linux 是为熟悉命令行的中级用户而设计的多用途 Linux 发行版。它基于 Slackware，但使用不同的包管理器系统， Pacman。"_
+*"Frugalware Linux 是为熟悉命令行的中级用户而设计的多用途 Linux 发行版。它基于 Slackware，但使用不同的包管理器系统， Pacman。"*
 
 	源码: [Wikipedia](https://en.wikipedia.org/wiki/Frugalware "wikipedia:Frugalware")
 
@@ -314,7 +314,7 @@ Kademar distribution is a complete desktop Linux operating system based on Arch 
 
 ### KaOS
 
-_"KaOS 背后的理念是一个紧密集成的滚动和透明的现代桌面发行版，以一个非常具体的目标从头编译。重点在一种桌面环境 (KDE)，一种工具包 (Qt)，一种构架(x86_64)，外加评价和选择最适合的工具和应用软件。所有的工作都是揉合各种软件包，而不是开发新的工具和应用软件。"_
+*"KaOS 背后的理念是一个紧密集成的滚动和透明的现代桌面发行版，以一个非常具体的目标从头编译。重点在一种桌面环境 (KDE)，一种工具包 (Qt)，一种构架(x86_64)，外加评价和选择最适合的工具和应用软件。所有的工作都是揉合各种软件包，而不是开发新的工具和应用软件。"*
 
 	源码: [KaOS A lean KDE distribution](http://kaosx.us/)
 

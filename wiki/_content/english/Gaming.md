@@ -141,19 +141,19 @@ $ xinit /usr/bin/xonotic-glx -- :1 -xf86config xorg-game.conf vt$XDG_VTNR
 
 ```
 
-A good reason to provide an alternative _xorg.conf_ here may be that your primary configuration makes use of NVIDIA's Twinview which would render your 3D games like Xonotic in the middle of your multiscreen setup, spanned across all screens. This is undesirable, thus starting a second X with an alternative config where the second screen is disabled is advised.
+A good reason to provide an alternative *xorg.conf* here may be that your primary configuration makes use of NVIDIA's Twinview which would render your 3D games like Xonotic in the middle of your multiscreen setup, spanned across all screens. This is undesirable, thus starting a second X with an alternative config where the second screen is disabled is advised.
 
 A game starting script making use of Openbox for your home directory or `/usr/local/bin` may look like this:
 
  `~/game.sh` 
-
 ```
 if [ $# -ge 1 ]; then
         game="$(which $1)"
         openbox="$(which openbox)"
         tmpgame="/tmp/tmpgame.sh"
         DISPLAY=:1.0
-        echo -e "${openbox} &\n${game}" > ${tmpgame}
+        echo -e "${openbox} &
+${game}" > ${tmpgame}
         echo "starting ${game}"
         xinit ${tmpgame} -- :1 -xf86config xorg-game.conf || exit 1
 else
@@ -248,7 +248,7 @@ Most every game can benefit if given the correct scheduling policies for the ker
 
 ### For everything else
 
-For programs which do not implement scheduling policies on their own, one tool known as **schedtool**, and its associated daemon [schedtoold](https://aur.archlinux.org/packages/schedtoold/) can handle many of these tasks automatically. To edit what programs relieve what policies, simply edit `/etc/schedtoold.conf` and add the program followed by the _schedtool_ arguments desired.
+For programs which do not implement scheduling policies on their own, one tool known as **schedtool**, and its associated daemon [schedtoold](https://aur.archlinux.org/packages/schedtoold/) can handle many of these tasks automatically. To edit what programs relieve what policies, simply edit `/etc/schedtoold.conf` and add the program followed by the *schedtool* arguments desired.
 
 #### Policies
 
@@ -277,7 +277,7 @@ bit.trip.runner -n -4
 
 #### Core affinity
 
-There is some confusion in development as to whether the driver should be multithreading, or the program. In any case where they both attempt it, it causes drops in framerate and crashes. Examples of this include a number of modern games, and any Wine program which is running without [GLSL](https://en.wikipedia.org/wiki/OpenGL_Shading_Language "wikipedia:OpenGL Shading Language") disabled. To select a single core and allow only the driver to handle this process, simply use the `-a 0x_#_` flag, where _#_ is the core number, e.g.:
+There is some confusion in development as to whether the driver should be multithreading, or the program. In any case where they both attempt it, it causes drops in framerate and crashes. Examples of this include a number of modern games, and any Wine program which is running without [GLSL](https://en.wikipedia.org/wiki/OpenGL_Shading_Language "wikipedia:OpenGL Shading Language") disabled. To select a single core and allow only the driver to handle this process, simply use the `-a 0x*#*` flag, where *#* is the core number, e.g.:
 
 ```
 bit.trip.runner -a 0x1
@@ -308,7 +308,7 @@ etc.
 
 #### Optimus, and other helping programs
 
-As a general rule, any other process which the game requires to operate should be reniced to a level above that of the game itself. Strangely, Wine has a problem known as _reverse scheduling_, it can often have benefits when the more important processes are set to a higher nice level. Wineserver also seems unconditionally to benefit from `SCHED_FIFO`, since rarely consumes the whole CPU and needs higher prioritization when possible.
+As a general rule, any other process which the game requires to operate should be reniced to a level above that of the game itself. Strangely, Wine has a problem known as *reverse scheduling*, it can often have benefits when the more important processes are set to a higher nice level. Wineserver also seems unconditionally to benefit from `SCHED_FIFO`, since rarely consumes the whole CPU and needs higher prioritization when possible.
 
 ```
 optirun -I -n -5
@@ -325,7 +325,7 @@ The stock Arch kernel provides a very good baseline for general usage. However, 
 
 ### Using BFQ
 
-BFQ is an io-scheduler that comes as a feature of [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) and [Linux-ck](/index.php/Linux-ck "Linux-ck"), and is optimized to be much more simplistic, but provides better interactivity and throughput for non-server workloads. To enable, simply add the kernel parameter _elevator=bfq_ to your [bootloader](/index.php/Bootloader "Bootloader"). It is important to note that although most guides recommend using either _noop_ or _deadline_ for SSDs for their raw throughput, they are actually detrimental to interactivity when more than one thread is attempting to access the device. It is best to use _bfq_ unless you desperately need the throughput advantage.
+BFQ is an io-scheduler that comes as a feature of [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) and [Linux-ck](/index.php/Linux-ck "Linux-ck"), and is optimized to be much more simplistic, but provides better interactivity and throughput for non-server workloads. To enable, simply add the kernel parameter *elevator=bfq* to your [bootloader](/index.php/Bootloader "Bootloader"). It is important to note that although most guides recommend using either *noop* or *deadline* for SSDs for their raw throughput, they are actually detrimental to interactivity when more than one thread is attempting to access the device. It is best to use *bfq* unless you desperately need the throughput advantage.
 
 ## See also
 
@@ -336,3 +336,4 @@ BFQ is an io-scheduler that comes as a feature of [linux-zen](https://www.archli
 *   [SIG/Games](https://fedoraproject.org/wiki/SIGs/Games#Gaming_News_sites) - OS/Linux gaming news sites and lists at Fedora's wiki
 *   [live.linux-gamers](http://live.linux-gamers.net) - Arch-based live gaming distro
 *   [Gaming on Linux](http://www.gamingonlinux.com/) - Active Linux gaming news and editorial source and community
+*   [Unixgames](https://unixgames.org/) - Q&A service for Linux gamers.

@@ -1,6 +1,6 @@
 Back to [Dm-crypt](/index.php/Dm-crypt "Dm-crypt").
 
-This section covers how to manually utilize _dm-crypt_ from the command line to encrypt a system.
+This section covers how to manually utilize *dm-crypt* from the command line to encrypt a system.
 
 ## Contents
 
@@ -50,7 +50,7 @@ Before using [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup), 
 
 ## Cryptsetup usage
 
-_Cryptsetup_ is the command line tool to interface with _dm-crypt_ for creating, accessing and managing encrypted devices. The tool was later expanded to support different encryption types that rely on the Linux kernel **d**evice-**m**apper and the **crypt**ographic modules. The most notable expansion was for the Linux Unified Key Setup (LUKS) extension, which stores all of the needed setup information for dm-crypt on the disk itself and abstracts partition and key management in an attempt to improve ease of use. Devices accessed via the device-mapper are called blockdevices. For further information see [Disk encryption#Block device encryption](/index.php/Disk_encryption#Block_device_encryption "Disk encryption").
+*Cryptsetup* is the command line tool to interface with *dm-crypt* for creating, accessing and managing encrypted devices. The tool was later expanded to support different encryption types that rely on the Linux kernel **d**evice-**m**apper and the **crypt**ographic modules. The most notable expansion was for the Linux Unified Key Setup (LUKS) extension, which stores all of the needed setup information for dm-crypt on the disk itself and abstracts partition and key management in an attempt to improve ease of use. Devices accessed via the device-mapper are called blockdevices. For further information see [Disk encryption#Block device encryption](/index.php/Disk_encryption#Block_device_encryption "Disk encryption").
 
 The tool is used as follows:
 
@@ -66,7 +66,7 @@ $ cryptsetup --help
 
 ```
 
-which lists options, actions and the default parameters for the encryption modes in that order. A full list of options can be found on the man page. Since different parameters are required or optional, depending on encryption mode and action, the following sections point out differences further. Blockdevice encryption is fast, but speed matters a lot too. Since changing an encryption cipher of a blockdevice after setup is difficult, it is important to check _dm-crypt_ performance for the individual parameters in advance:
+which lists options, actions and the default parameters for the encryption modes in that order. A full list of options can be found on the man page. Since different parameters are required or optional, depending on encryption mode and action, the following sections point out differences further. Blockdevice encryption is fast, but speed matters a lot too. Since changing an encryption cipher of a blockdevice after setup is difficult, it is important to check *dm-crypt* performance for the individual parameters in advance:
 
 ```
 $ cryptsetup benchmark 
@@ -86,11 +86,11 @@ An encrypted blockdevice is protected by a key. A key is either:
 
 Both key types have default maximum sizes: passphrases can be up to 512 characters and keyfiles up to 8192kB.
 
-An important distinction of _LUKS_ to note at this point is that the key is used to unlock the master-key of a LUKS-encrypted device and can be changed with root access. Other encryption modes do not support changing the key after setup, because they do not employ a master-key for the encryption. See [Disk encryption#Block device encryption](/index.php/Disk_encryption#Block_device_encryption "Disk encryption") for details.
+An important distinction of *LUKS* to note at this point is that the key is used to unlock the master-key of a LUKS-encrypted device and can be changed with root access. Other encryption modes do not support changing the key after setup, because they do not employ a master-key for the encryption. See [Disk encryption#Block device encryption](/index.php/Disk_encryption#Block_device_encryption "Disk encryption") for details.
 
 ## Encryption options with dm-crypt
 
-_Cryptsetup_ supports different encryption operating modes to use with _dm-crypt_. The most common (and default) is
+*Cryptsetup* supports different encryption operating modes to use with *dm-crypt*. The most common (and default) is
 
 *   `--type LUKS`
 
@@ -113,7 +113,7 @@ The following introduces encryption options for the first two modes. Note that t
 
 ### Encryption options for LUKS mode
 
-The _cryptsetup_ action to set up a new dm-crypt device in LUKS encryption mode is _luksFormat_. Unlike the name implies, it does not format the device, but sets up the LUKS device header and encrypts the master-key with the desired cryptographic options.
+The *cryptsetup* action to set up a new dm-crypt device in LUKS encryption mode is *luksFormat*. Unlike the name implies, it does not format the device, but sets up the LUKS device header and encrypts the master-key with the desired cryptographic options.
 
 As LUKS is the default encryption mode,
 
@@ -134,16 +134,16 @@ Defaults are compared with a cryptographically higher specification example in t
 | Options | Cryptsetup 1.7.0 defaults | Example | Comment |
 | --cipher, -c | `aes-xts-plain64` | `aes-xts-plain64` | [Release 1.6.0](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.6/v1.6.0-ReleaseNotes) changed the defaults to an AES [cipher](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") in [XTS](https://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_.28XTS.29 "wikipedia:Disk encryption theory") mode (see item 5.16 [of the FAQ](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects)). It is advised against using the previous default `--cipher aes-cbc-essiv` because of its known [issues](https://en.wikipedia.org/wiki/Disk_encryption_theory#Cipher-block_chaining_.28CBC.29) and practical [attacks](http://www.jakoblell.com/blog/2013/12/22/practical-malleability-attack-against-cbc-encrypted-luks-partitions/) against them. |
 | --key-size, -s | `256` | `512` | By default a 256 bit key-size is used. Note however that [XTS splits the supplied key in half](https://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_.28XTS.29 "wikipedia:Disk encryption theory"), so to use AES-256 instead of AES-128 you have to set the XTS key-size to `512`. |
-| --hash, -h | `sha256` | `sha512` | Hash algorithm used for [key derivation](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption"). Release 1.7.0 changed defaults from `sha1` to `sha256` "_not for security reasons [but] mainly to prevent compatibility problems on hardened systems where SHA1 is already [being] phased out_"[[1]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). The former default of `sha1` can still be used for compatibility with older versions of _cryptsetup_ since it is [considered secure](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects) (see item 5.20). |
-| --iter-time, -i | `2000` | `5000` | Number of milliseconds to spend with PBKDF2 passphrase processing. Release 1.7.0 changed defaults from `1000` to `2000` to "_try to keep PBKDF2 iteration count still high enough and also still acceptable for users._"[[2]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). This option is only relevant for LUKS operations that set or change passphrases, such as _luksFormat_ or _luksAddKey_. Specifying 0 as parameter selects the compiled-in default.. |
+| --hash, -h | `sha256` | `sha512` | Hash algorithm used for [key derivation](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption"). Release 1.7.0 changed defaults from `sha1` to `sha256` "*not for security reasons [but] mainly to prevent compatibility problems on hardened systems where SHA1 is already [being] phased out*"[[1]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). The former default of `sha1` can still be used for compatibility with older versions of *cryptsetup* since it is [considered secure](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects) (see item 5.20). |
+| --iter-time, -i | `2000` | `5000` | Number of milliseconds to spend with PBKDF2 passphrase processing. Release 1.7.0 changed defaults from `1000` to `2000` to "*try to keep PBKDF2 iteration count still high enough and also still acceptable for users.*"[[2]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). This option is only relevant for LUKS operations that set or change passphrases, such as *luksFormat* or *luksAddKey*. Specifying 0 as parameter selects the compiled-in default.. |
 | --use-{u,}random | `--use-urandom` | `--use-random` | Selects which [random number generator](/index.php/Random_number_generator "Random number generator") to use. Quoting the cryptsetup manual page: "In a low-entropy situation (e.g. in an embedded system), both selections are problematic. Using /dev/urandom can lead to weak keys. Using /dev/random can block a long time, potentially forever, if not enough entropy can be harvested by the kernel." |
 | --verify-passphrase, -y | Yes | - | Default only for luksFormat and luksAddKey. No need to type for Arch Linux with LUKS mode at the moment. |
 
 ### Encryption options for plain mode
 
-In dm-crypt _plain_ mode, there is no master-key on the device, hence, there is no need to set it up. Instead the encryption options to be employed are used directly to create the mapping between an encrypted disk and a named device. The mapping can be created against a partition or a full device. In the latter case not even a partition table is needed.
+In dm-crypt *plain* mode, there is no master-key on the device, hence, there is no need to set it up. Instead the encryption options to be employed are used directly to create the mapping between an encrypted disk and a named device. The mapping can be created against a partition or a full device. In the latter case not even a partition table is needed.
 
-To create a _plain_ mode mapping with cryptsetup's default parameters:
+To create a *plain* mode mapping with cryptsetup's default parameters:
 
 ```
 # cryptsetup <options> open --type plain <device> <dmname>
@@ -157,15 +157,15 @@ Executing it will prompt for a password, which should have very high entropy. Be
 | **--cipher** | `aes-cbc-essiv:sha256` | `twofish-xts-plain64` | The cipher consists of three parts: cipher-chainmode-IV generator. Please see [Disk encryption#Ciphers and modes of operation](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") for an explanation of these settings, and the [DMCrypt documentation](https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt) for some of the options available. |
 | **--key-size** | `256` | `512` | The key size (in bits). The size will depend on the cipher being used and also the chainmode in use. Xts mode requires twice the key size of cbc. |
 | **--offset** | `0` | `0` | The offset from the beginning of the target disk from which to start the mapping |
-| **--key-file** | default uses a passphrase | `/dev/sd_Z_` (or e.g. /boot/keyfile.enc) | The device or file to be used as a key. See [#Keyfiles](#Keyfiles) for further details. |
-| **--keyfile-offset** | `0` | `0` | Offset from the beginning of the file where the key starts (in bytes). This option is supported from _cryptsetup_ 1.6.7 onwards. |
-| **--keyfile-size** | `8192kB` | - (default applies) | Limits the bytes read from the key file. This option is supported from _cryptsetup_ 1.6.7 onwards. |
+| **--key-file** | default uses a passphrase | `/dev/sd*Z*` (or e.g. /boot/keyfile.enc) | The device or file to be used as a key. See [#Keyfiles](#Keyfiles) for further details. |
+| **--keyfile-offset** | `0` | `0` | Offset from the beginning of the file where the key starts (in bytes). This option is supported from *cryptsetup* 1.6.7 onwards. |
+| **--keyfile-size** | `8192kB` | - (default applies) | Limits the bytes read from the key file. This option is supported from *cryptsetup* 1.6.7 onwards. |
 
-Using the device `/dev/sd_X_`, the above right column example results in:
+Using the device `/dev/sd*X*`, the above right column example results in:
 
- `# cryptsetup --cipher=twofish-xts-plain64 --offset=0 --key-file=/dev/sd_Z_ --key-size=512 open --type=plain /dev/sdX enc` 
+ `# cryptsetup --cipher=twofish-xts-plain64 --offset=0 --key-file=/dev/sd*Z* --key-size=512 open --type=plain /dev/sdX enc` 
 
-Unlike encrypting with LUKS, the above command must be executed _in full_ whenever the mapping needs to be re-established, so it is important to remember the cipher, hash and key file details. We can now check that the mapping has been made:
+Unlike encrypting with LUKS, the above command must be executed *in full* whenever the mapping needs to be re-established, so it is important to remember the cipher, hash and key file details. We can now check that the mapping has been made:
 
 ```
 # fdisk -l
@@ -185,7 +185,6 @@ This section shows how to employ the options for creating new encrypted blockdev
 In order to setup a partition as an encrypted LUKS partition execute:
 
  `# cryptsetup -c <cipher> -y -s <key size> luksFormat /dev/<partition name>` 
-
 ```
 Enter passphrase: <password>
 Verify passphrase: <password>
@@ -226,7 +225,6 @@ The unlocking process will map the partitions to a new device name using the dev
 In order to open an encrypted LUKS partition execute:
 
  `# cryptsetup open --type luks /dev/<partition name> <device-mapper name>` 
-
 ```
 Enter any LUKS passphrase: <password>
 key slot 0 unlocked.
@@ -273,9 +271,9 @@ The mounted blockdevice can then be used like any other partition. Once done, cl
 
 ### Encrypting devices with plain mode
 
-The creation and subsequent access of a _dm-crypt_ plain mode encryption both require not more than using the _cryptsetup_ `open` action with correct [parameters](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption"). The following shows that with two examples of non-root devices, but adds a quirk by stacking both (i.e. the second is created inside the first). Obviously, stacking the encryption doubles overhead. The usecase here is simply to illustrate another example of the cipher option usage.
+The creation and subsequent access of a *dm-crypt* plain mode encryption both require not more than using the *cryptsetup* `open` action with correct [parameters](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption"). The following shows that with two examples of non-root devices, but adds a quirk by stacking both (i.e. the second is created inside the first). Obviously, stacking the encryption doubles overhead. The usecase here is simply to illustrate another example of the cipher option usage.
 
-A first mapper is created with _cryptsetup's_ plain-mode defaults, as described in the table's left column above
+A first mapper is created with *cryptsetup's* plain-mode defaults, as described in the table's left column above
 
 ```
 # cryptsetup --type plain -v open /dev/sdaX plain1 
@@ -321,7 +319,7 @@ mount: wrong fs type, bad option, bad superblock on /dev/mapper/plain2,
 
 ```
 
-Why that did not work? Because the "plain2" starting block (10) is still encrypted with the cipher from "plain1". It can only be accessed via the stacked mapper. The error is arbitrary though, trying a wrong passphrase or wrong options will yield the same. For _dm-crypt_ plain mode, the `open` action will not error out itself.
+Why that did not work? Because the "plain2" starting block (10) is still encrypted with the cipher from "plain1". It can only be accessed via the stacked mapper. The error is arbitrary though, trying a wrong passphrase or wrong options will yield the same. For *dm-crypt* plain mode, the `open` action will not error out itself.
 
 Trying again in correct order:
 
@@ -337,9 +335,9 @@ This is stacked. one passphrase per foot to shoot.
 
 ```
 
-_dm-crypt_ will handle stacked encryption with some mixed modes too. For example LUKS mode could be stacked on the "plain1" mapper. Its header would then be encrypted inside "plain1" when that is closed.
+*dm-crypt* will handle stacked encryption with some mixed modes too. For example LUKS mode could be stacked on the "plain1" mapper. Its header would then be encrypted inside "plain1" when that is closed.
 
-Available for plain mode only is the option `--shared`. With it a single device can be segmented into different non-overlapping mappers. We do that in the next example, using a _loopaes_ compatible cipher mode for "plain2" this time:
+Available for plain mode only is the option `--shared`. With it a single device can be segmented into different non-overlapping mappers. We do that in the next example, using a *loopaes* compatible cipher mode for "plain2" this time:
 
 ```
 # cryptsetup --type plain --offset 0 --size 1000 open /dev/sdaX plain1 
@@ -367,7 +365,6 @@ It is possible to define up to 8 different keys per LUKS partition. This enables
 Once an encrypted partition has been created, the initial keyslot 0 is created (if no other was specified manually). Additional keyslots are numbered from 1 to 7\. Which keyslots are used can be seen by issuing
 
  `# cryptsetup luksDump /dev/<device> |grep BLED` 
-
 ```
 Key Slot 0: ENABLED
 Key Slot 1: ENABLED
@@ -393,7 +390,7 @@ Verify passphrase:
 
 ```
 
-If `/path/to/<additionalkeyfile>` is given, cryptsetup will add a new keyslot for <additionalkeyfile>. Otherwise a new passphrase will be prompted for twice. For using an existing _keyfile_ to authorize the action, the `--key-file` or `-d` option followed by the "old" <keyfile> will try to unlock all available keyfile keyslots:
+If `/path/to/<additionalkeyfile>` is given, cryptsetup will add a new keyslot for <additionalkeyfile>. Otherwise a new passphrase will be prompted for twice. For using an existing *keyfile* to authorize the action, the `--key-file` or `-d` option followed by the "old" <keyfile> will try to unlock all available keyfile keyslots:
 
 ```
 # cryptsetup luksAddKey /dev/<device> (/path/to/<additionalkeyfile>) -d /path/to/<keyfile>
@@ -477,7 +474,7 @@ To re-iterate the warning above: If the same passphrase had been used for key sl
 
 If the header of a LUKS encrypted partition gets destroyed, you will not be able to decrypt your data. It is just as much as a dilemma as forgetting the passphrase or damaging a key-file used to unlock the partition. Damage may occur by your own fault while re-partitioning the disk later or by third-party programs misinterpreting the partition table. Therefore, having a backup of the header and storing it on another disk might be a good idea.
 
-**Note:** If the LUKS-encrypted partitions' master passphrase becomes compromised, you must revoke it on _every_ copy of the cryptheader, even those you have backed up. Otherwise, a copy of the backed-up cryptheader that uses the compromised passphrase can be used to decrypt the associated partition. See [LUKS FAQ](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#6-backup-and-data-recovery) for further details.
+**Note:** If the LUKS-encrypted partitions' master passphrase becomes compromised, you must revoke it on *every* copy of the cryptheader, even those you have backed up. Otherwise, a copy of the backed-up cryptheader that uses the compromised passphrase can be used to decrypt the associated partition. See [LUKS FAQ](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#6-backup-and-data-recovery) for further details.
 
 #### Backup using cryptsetup
 
@@ -505,7 +502,7 @@ where <device> is the partition containing the LUKS volume.
 
 #### Restore using cryptsetup
 
-**Warning:** Restoring the wrong header or restoring to an unencrypted partition will cause data loss! The action can not perform a check whether the header is actually the _correct_ one for that particular device.
+**Warning:** Restoring the wrong header or restoring to an unencrypted partition will cause data loss! The action can not perform a check whether the header is actually the *correct* one for that particular device.
 
 In order to evade restoring a wrong header, you can ensure it does work by using it as a remote `--header` first:
 
@@ -530,7 +527,7 @@ Now that all the keyslot areas are overwritten; only active keyslots from the ba
 
 #### Manual backup and restore
 
-The header always resides at the beginning of the device and a backup can be performed without access to _cryptsetup_ as well. First you have to find out the payload offset of the crypted partition:
+The header always resides at the beginning of the device and a backup can be performed without access to *cryptsetup* as well. First you have to find out the payload offset of the crypted partition:
 
  `# cryptsetup luksDump /dev/<device> | grep "Payload offset"`  ` Payload offset:	4040` 
 
@@ -556,9 +553,9 @@ A restore can then be performed using the same values as when backing up:
 
 ### Re-encrypting devices
 
-The [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) package features the _cryptsetup-reencrypt_ tool. It can be used to convert an existing unencrypted filesystem to a LUKS encrypted one (option `--new`) and permanently remove LUKS encryption (`--decrypt`) from a device. As its name suggests it can also be used to re-encrypt an existing LUKS encrypted device. For re-encryption it is possible to change the [#Encryption options for LUKS mode](#Encryption_options_for_LUKS_mode). _cryptsetup-reencrypt_ actions can be performed to unmounted devices only. See `man cryptsetup-reencrypt` for more information.
+The [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) package features the *cryptsetup-reencrypt* tool. It can be used to convert an existing unencrypted filesystem to a LUKS encrypted one (option `--new`) and permanently remove LUKS encryption (`--decrypt`) from a device. As its name suggests it can also be used to re-encrypt an existing LUKS encrypted device. For re-encryption it is possible to change the [#Encryption options for LUKS mode](#Encryption_options_for_LUKS_mode). *cryptsetup-reencrypt* actions can be performed to unmounted devices only. See `man cryptsetup-reencrypt` for more information.
 
-One application of re-encryption may be to secure the data again after a passphrase or [keyfile](#Keyfiles) has been compromised _and_ one cannot be certain that no copy of the LUKS header has been obtained. For example, if only a passphrase has been shoulder-surfed but no physical/logical access to the device happened, it would be enough to change the respective passphrase/key only ([#Key management](#Key_management)).
+One application of re-encryption may be to secure the data again after a passphrase or [keyfile](#Keyfiles) has been compromised *and* one cannot be certain that no copy of the LUKS header has been obtained. For example, if only a passphrase has been shoulder-surfed but no physical/logical access to the device happened, it would be enough to change the respective passphrase/key only ([#Key management](#Key_management)).
 
 **Warning:** Always make sure a **reliable backup** is available and double-check options you specify before using the tool!
 
@@ -586,7 +583,6 @@ The filesystem on /dev/sdaX is now 26347 (4k) blocks long.
 Now we encrypt it, using the default cipher we do not have to specify it explicitly. Note there is no option (yet) to double-check the passphrase before encryption starts, be careful not to mistype:
 
  `# cryptsetup-reencrypt /dev/sdaX --new  --reduce-device-size 4096S` 
-
 ```
 WARNING: this is experimental code, it can completely break your data.
 Enter new passphrase: 
@@ -612,12 +608,11 @@ and are done.
 
 In this example an existing LUKS device is re-encrypted.
 
-**Warning:** Double-check you specify encryption options for _cryptsetup-reencrypt_ correctly and _never_ re-encrypt without a **reliable backup**! As of September 2015 the tool **does** accept invalid options and damage the LUKS header, if not used correctly!
+**Warning:** Double-check you specify encryption options for *cryptsetup-reencrypt* correctly and *never* re-encrypt without a **reliable backup**! As of September 2015 the tool **does** accept invalid options and damage the LUKS header, if not used correctly!
 
 In order to re-encrypt a device with its existing encryption options, they do not need to be specified. A simple:
 
  `# cryptsetup-reencrypt /dev/sdaX` 
-
 ```
 
 WARNING: this is experimental code, it can completely break your data.
@@ -630,7 +625,6 @@ performs it.
 A possible usecase is to re-encrypt LUKS devices which have non-current encryption options. Apart from above warning on specifying options correctly, the ability to change the LUKS header may also be limited by its size. For example, if the device was initially encrypted using a CBC mode cipher and 128 bit key-size, the LUKS header will be half the size of above mentioned `4096` sectors:
 
  `# cryptsetup luksDump /dev/sdaX |grep -e "mode" -e "Payload" -e "MK bits"` 
-
 ```
 Cipher mode:   	cbc-essiv:sha256
 Payload offset:	**2048**
@@ -722,7 +716,6 @@ The advantage is that it resides in RAM and not on a physical disk, therefore it
 Add a keyslot for the keyfile to the LUKS header:
 
  `# cryptsetup luksAddKey /dev/sda2 /etc/mykeyfile` 
-
 ```
 Enter any LUKS passphrase:
 key slot 0 unlocked.
@@ -776,7 +769,7 @@ Generate a new initramfs image:
 Add the following options to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
 
 ```
-cryptdevice=/dev/_<partition1>_:root cryptkey=/dev/_<partition2>_:<fstype>:<path>
+cryptdevice=/dev/*<partition1>*:root cryptkey=/dev/*<partition2>*:<fstype>:<path>
 
 ```
 
@@ -797,7 +790,7 @@ The naming of device nodes like `/dev/sdb1` is not guaranteed to stay the same a
 
 This method allows to use a specially named keyfile that will be embedded in the [initramfs](/index.php/Initramfs "Initramfs") and picked up by the `encrypt` [hook](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") to unlock the root filesystem (`cryptdevice`) automatically. It may be useful to apply when using the [GRUB early cryptodisk](/index.php/GRUB#Boot_partition "GRUB") feature, in order to avoid entering two passphrases during boot.
 
-The `encrypt` hook lets the user specify a keyfile with the `cryptkey` kernel parameter: in the case of initramfs, the syntax is `rootfs:_path_`, see [Dm-crypt/System configuration#cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration"). Besides, the code defaults to use `/crypto_keyfile.bin`, and if the initramfs contains a valid key with this name, decryption will occur automatically without the need to configure the `cryptkey` parameter.
+The `encrypt` hook lets the user specify a keyfile with the `cryptkey` kernel parameter: in the case of initramfs, the syntax is `rootfs:*path*`, see [Dm-crypt/System configuration#cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration"). Besides, the code defaults to use `/crypto_keyfile.bin`, and if the initramfs contains a valid key with this name, decryption will occur automatically without the need to configure the `cryptkey` parameter.
 
 [Generate the keyfile](#Creating_a_keyfile_with_random_characters), give it suitable permissions and [add it as a LUKS key](#Adding_LUKS_keys):
 

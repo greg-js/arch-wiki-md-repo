@@ -25,7 +25,7 @@
 
 설치 매체 이미지에는 패키지가 포함되어 있지 않습니다. 아치 리눅스를 설치하기 위해서는 네트워크에 연결하여 원격 저장소에서 패키지를 내려받아 설치해야 합니다. 따라서 반드시 인터넷에 연결되어 있어야 합니다.
 
-ISO 이미지를 다운로드받은 후에는 반드시 전자서명 키를 이용하여 파일 무결성 검사를 실행하십시오(`pacman-key -v _설치매체_이미지.iso.sig_`. 혹은 체크섬 파일을 이용하여 파일 무결성을 검사할 수 있습니다`md5sum _설치매체_이미지.iso_`). 체크섬 파일들은 내려받기 페이지에서 설치 매체 이미지와 함께 내려받을 수 있습니다.
+ISO 이미지를 다운로드받은 후에는 반드시 전자서명 키를 이용하여 파일 무결성 검사를 실행하십시오(`pacman-key -v *설치매체_이미지.iso.sig*`. 혹은 체크섬 파일을 이용하여 파일 무결성을 검사할 수 있습니다`md5sum *설치매체_이미지.iso*`). 체크섬 파일들은 내려받기 페이지에서 설치 매체 이미지와 함께 내려받을 수 있습니다.
 
 마지막으로, 설치 매체 이미지는 CD에 굽거나, ISO 파일로서 마운트하거나, [USB 드라이브](/index.php/USB_Installation_Media "USB Installation Media")에 기록할 수 있습니다.
 
@@ -35,7 +35,7 @@ ISO 이미지를 다운로드받은 후에는 반드시 전자서명 키를 이�
 
 ### 키보드 레이아웃 설정
 
-기본 키보드 레이아웃은 US(미국)입니다. `loadkeys _keymap_file_` 명령으로 다른 키보드 레이아웃을 로드할 수 있습니다. 키맵 파일들은 `/usr/share/kbd/keymaps/`에 있습니다. (파일 경로와 파일 확장자는 생략할 수 있습니다.)
+기본 키보드 레이아웃은 US(미국)입니다. `loadkeys *keymap_file*` 명령으로 다른 키보드 레이아웃을 로드할 수 있습니다. 키맵 파일들은 `/usr/share/kbd/keymaps/`에 있습니다. (파일 경로와 파일 확장자는 생략할 수 있습니다.)
 
 ### 디스크 파티션 설정
 
@@ -89,14 +89,14 @@ ISO 이미지를 다운로드받은 후에는 반드시 전자서명 키를 이�
 `/etc/hostname`에 자신의 [호스트 이름](/index.php/Hostname "Hostname")을 적습니다.
 
 ```
-# echo _computer_name_ > /etc/hostname
+# echo *computer_name* > /etc/hostname
 
 ```
 
 시간대를 설정합니다.
 
 ```
-# ln -sf /usr/share/zoneinfo/_zone_/_subzone_ /etc/localtime
+# ln -sf /usr/share/zoneinfo/*zone*/*subzone* /etc/localtime
 
 ```
 
@@ -105,7 +105,7 @@ ISO 이미지를 다운로드받은 후에는 반드시 전자서명 키를 이�
 로캘 설정을 `/etc/locale.conf`에 밝힙니다. 선택적으로 `$HOME/.config/locale.conf`에도 밝힐 수 있습니다.
 
 ```
-# echo LANG=_선택한_로캘_ > /etc/locale.conf
+# echo LANG=*선택한_로캘* > /etc/locale.conf
 
 ```
 
@@ -130,9 +130,9 @@ ISO 이미지를 다운로드받은 후에는 반드시 전자서명 키를 이�
 
 아직 chroot 환경 안에 있다면 `exit`를 입력하거나 `Ctrl+D`를 눌러서 그 환경을 종료하세요.
 
-`umount -R /mnt` 명령으로 선택적으로 앞서 마운트했던 파티션들을 언마운트할 수 있습니다. 이렇게 하면 "바쁜(busy)" 파티션들을 찾아내고, [여기에서](https://en.wikipedia.org/wiki/fuser_(Unix) "wikipedia:fuser (Unix)") 그 원인을 찾아볼 수 있습니다.
+`umount -R /mnt` 명령으로 선택적으로 앞서 마운트했던 파티션들을 언마운트할 수 있습니다. 이렇게 하면 "바쁜(busy)" 파티션들을 찾아내고, [여기에서](https://en.wikipedia.org/wiki/fuser_(Unix) 그 원인을 찾아볼 수 있습니다.
 
-`reboot` 명령을 통해 컴퓨터를 재부팅합니다. 마운트된 파티션이 남아있다면 _systemd_가 자동으로 언마운트시킬 것입니다. 이제 재부팅하여 루트 계정으로 새 시스템에 로그인합니다. 컴퓨터가 꺼진 후에 반드시 설치 매체를 꺼내십시오.
+`reboot` 명령을 통해 컴퓨터를 재부팅합니다. 마운트된 파티션이 남아있다면 *systemd*가 자동으로 언마운트시킬 것입니다. 이제 재부팅하여 루트 계정으로 새 시스템에 로그인합니다. 컴퓨터가 꺼진 후에 반드시 설치 매체를 꺼내십시오.
 
 ## 설치 후
 

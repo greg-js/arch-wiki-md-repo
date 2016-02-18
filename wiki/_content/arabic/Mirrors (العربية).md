@@ -62,7 +62,7 @@
 
 **تلميحة:** قم بتفعيل 5 مرايا مفضلة لديك ثم ضعهم في أعلى ملف قائمة المرايا، بهذه الطريقة يسهل إيجادهم وتغيير ترتيبهم في حال حصلت أي مشكلة للمرآة الأولى، كما أنها تسهل عملية دمج تحديثات قائمة المرايا.
 
-من الممكن أيضاً تعيين مرايا محددة ضمن الملف `/etc/pacman.conf`، لكي تحدد مرآة لمستودع _[core]_ فإن الطريقة الافتراضية هي:
+من الممكن أيضاً تعيين مرايا محددة ضمن الملف `/etc/pacman.conf`، لكي تحدد مرآة لمستودع *[core]* فإن الطريقة الافتراضية هي:
 
 ```
 [core]
@@ -70,7 +70,7 @@ Include = /etc/pacman.d/mirrorlist
 
 ```
 
-لكي تجعل المرآة _HostEurope_ مرآة افتراضية قم بإضافتها قبل سطر `Include`:
+لكي تجعل المرآة *HostEurope* مرآة افتراضية قم بإضافتها قبل سطر `Include`:
 
 ```
 [core]
@@ -79,9 +79,9 @@ Include = /etc/pacman.d/mirrorlist
 
 ```
 
-سيقوم مدير الحزم pacman بالاتصال بهذه المرآة قبل أي مرآة أخرى، يمكنك فعل السابق للمستودعات الأخرى مثل _[testing]_ و _[extra]_ و _[community]_.
+سيقوم مدير الحزم pacman بالاتصال بهذه المرآة قبل أي مرآة أخرى، يمكنك فعل السابق للمستودعات الأخرى مثل *[testing]* و *[extra]* و *[community]*.
 
-**ملاحظة:** إذا قمت بتعيين مرايا في الملف `pacman.conf` بشكل مباشر فتذكر أن تستخدم مرآة واحدة لكل المستودعات، وإلا فقد يتم تثبيت حزم غير متوافقة مع بعضها، مثل linux من مستودع _[core]_ ووحدة نواة قديمة من_[extra]_.
+**ملاحظة:** إذا قمت بتعيين مرايا في الملف `pacman.conf` بشكل مباشر فتذكر أن تستخدم مرآة واحدة لكل المستودعات، وإلا فقد يتم تثبيت حزم غير متوافقة مع بعضها، مثل linux من مستودع *[core]* ووحدة نواة قديمة من*[extra]*.
 
 ### إجبار مدير الحزم pacman على تحديث قوائم الحزم
 
@@ -92,7 +92,7 @@ Include = /etc/pacman.d/mirrorlist
 
 ```
 
-**تلميحة:** تمرير خيار `--refresh` أو `-y` مرتين يجبر pacman على تحديث كل قوائم الحزم حتى تلك التي تم اعتبارها أنها على آخر تحديث up to date، تنفيذ `pacman -Syy` _كلما انتقلت إلى مرايا جديدة_ هو عمل جيد يساعد في تجنب المشاكل المحتملة.
+**تلميحة:** تمرير خيار `--refresh` أو `-y` مرتين يجبر pacman على تحديث كل قوائم الحزم حتى تلك التي تم اعتبارها أنها على آخر تحديث up to date، تنفيذ `pacman -Syy` *كلما انتقلت إلى مرايا جديدة* هو عمل جيد يساعد في تجنب المشاكل المحتملة.
 
 ## حالة المرايا
 
@@ -102,7 +102,7 @@ Include = /etc/pacman.d/mirrorlist
 
 1.  اختيار مُخدم (مرآة) والذهاب إلى المسار "extra/os/" ضمنه.
 2.  الذهاب إلى [https://www.archlinux.org/](https://www.archlinux.org/) في نافذة جديدة أو لسان جديد داخل المتصفح.
-3.  مقارنة تاريخ آخر تعديل last-modified لمجلد `i686` على المرآة وتاريخ آخر تعديل لمستودع _[extra]_ على الصفحة الرئيسية للموقع، في صندوق _مستودعات الحزم Package Repositories_ على الجانب الأيمن.
+3.  مقارنة تاريخ آخر تعديل last-modified لمجلد `i686` على المرآة وتاريخ آخر تعديل لمستودع *[extra]* على الصفحة الرئيسية للموقع، في صندوق *مستودعات الحزم Package Repositories* على الجانب الأيمن.
 
 ## ترتيب المرايا
 
@@ -152,7 +152,6 @@ Include = /etc/pacman.d/mirrorlist
 يمكن استخدام سكربت shell التالي لكي تُحدّث المرايا بناءً على الترتيب الذي يقوم به [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/)، إذا لم تكن تعيش في الولايات المتحدة تستطيع تعديل متغير `country`.
 
  `updatemirrors.sh` 
-
 ```
 #!/bin/sh
 
@@ -229,11 +228,11 @@ Architecture = x86_64
 
 ## المرايا غير الرسمية
 
-هذه المرايا _غير_ مكتوبة في `/etc/pacman.d/mirrorlist`.
+هذه المرايا *غير* مكتوبة في `/etc/pacman.d/mirrorlist`.
 
 ### Global
 
-*   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) - _ISO files only; Does not have any releases since 2006\. Use it only if for getting older ISOs._
+*   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) - *ISO files only; Does not have any releases since 2006\. Use it only if for getting older ISOs.*
 
 ### TOR Network
 
@@ -268,18 +267,18 @@ Architecture = x86_64
 **Cernet**
 
 *   [http://mirrors.zju.edu.cn/archlinux/](http://mirrors.zju.edu.cn/archlinux/) - "Zhejian University"
-*   [http://ftp.sjtu.edu.cn/archlinux/](http://ftp.sjtu.edu.cn/archlinux/) - _Shanghai Jiaotong University_
+*   [http://ftp.sjtu.edu.cn/archlinux/](http://ftp.sjtu.edu.cn/archlinux/) - *Shanghai Jiaotong University*
 *   [ftp://ftp.sjtu.edu.cn/archlinux/](ftp://ftp.sjtu.edu.cn/archlinux/)
-*   [http://mirrors.ustc.edu.cn/archlinux/](http://mirrors.ustc.edu.cn/archlinux/) - _University of Science and Technology of China_
+*   [http://mirrors.ustc.edu.cn/archlinux/](http://mirrors.ustc.edu.cn/archlinux/) - *University of Science and Technology of China*
 *   [ftp://mirrors.ustc.edu.cn/archlinux/](ftp://mirrors.ustc.edu.cn/archlinux/)
-*   [http://mirrors.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.tuna.tsinghua.edu.cn/archlinux/) - _Tsinghua University_
-*   [http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/) _(ipv4 only)_
-*   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) _(ipv6 only)_
-*   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) - _Lanzhou University_
+*   [http://mirrors.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.tuna.tsinghua.edu.cn/archlinux/) - *Tsinghua University*
+*   [http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/) *(ipv4 only)*
+*   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) *(ipv6 only)*
+*   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) - *Lanzhou University*
 
 ### France
 
-*   [http://delta.archlinux.fr/](http://delta.archlinux.fr/) - _With Delta package support. Needs xdelta3 package from extra to run._
+*   [http://delta.archlinux.fr/](http://delta.archlinux.fr/) - *With Delta package support. Needs xdelta3 package from extra to run.*
 *   [http://mirror.soa1.org/archlinux](http://mirror.soa1.org/archlinux)
 *   [ftp://mirror:mirror@mirror.soa1.org/archlinux](ftp://mirror:mirror@mirror.soa1.org/archlinux)
 
@@ -294,7 +293,7 @@ Architecture = x86_64
 
 ### Indonesia
 
-*   [http://mirror.kavalinux.com/archlinux/](http://mirror.kavalinux.com/archlinux/) - _only from Indonesia_
+*   [http://mirror.kavalinux.com/archlinux/](http://mirror.kavalinux.com/archlinux/) - *only from Indonesia*
 *   [http://kambing.ui.ac.id/archlinux/](http://kambing.ui.ac.id/archlinux/)
 *   [http://repo.ukdw.ac.id/archlinux/](http://repo.ukdw.ac.id/archlinux/)
 
@@ -307,12 +306,12 @@ Architecture = x86_64
 ### Malaysia
 
 *   [http://mirror.oscc.org.my/archlinux/](http://mirror.oscc.org.my/archlinux/)
-*   [http://mirrors.inetutils.net/archlinux/](http://mirrors.inetutils.net/archlinux/) - _ISO and Core_
+*   [http://mirrors.inetutils.net/archlinux/](http://mirrors.inetutils.net/archlinux/) - *ISO and Core*
 
 ### New Zealand
 
 *   [http://mirror.ihug.co.nz/archlinux/](http://mirror.ihug.co.nz/archlinux/)
-*   [http://mirror.ece.auckland.ac.nz/archlinux/](http://mirror.ece.auckland.ac.nz/archlinux/) _NZ only_
+*   [http://mirror.ece.auckland.ac.nz/archlinux/](http://mirror.ece.auckland.ac.nz/archlinux/) *NZ only*
 
 ### Poland
 
@@ -322,25 +321,25 @@ Architecture = x86_64
 
 ### Russia
 
-*   [http://hatred.homelinux.net/archlinux/](http://hatred.homelinux.net/archlinux/) - _Vladivostok, without iso, with <sub>[3SPY](http://hatred.homelinux.net/wiki/proekty:3spy:start)</sub> project repos and [**mingw32**](http://hatred.homelinux.net/archlinux/mingw32/os/i686) repo_
-*   [http://mirrors.krasinfo.ru/archlinux/](http://mirrors.krasinfo.ru/archlinux/) - _Krasnoyarsk, Classica-Service Ltd_
+*   [http://hatred.homelinux.net/archlinux/](http://hatred.homelinux.net/archlinux/) - *Vladivostok, without iso, with <sub>[3SPY](http://hatred.homelinux.net/wiki/proekty:3spy:start)</sub> project repos and [**mingw32**](http://hatred.homelinux.net/archlinux/mingw32/os/i686) repo*
+*   [http://mirrors.krasinfo.ru/archlinux/](http://mirrors.krasinfo.ru/archlinux/) - *Krasnoyarsk, Classica-Service Ltd*
 
 ### South Africa
 
-*   [http://ftp.sun.ac.za/ftp/pub/mirrors/archlinux/](http://ftp.sun.ac.za/ftp/pub/mirrors/archlinux/) - _Stellenbosch University_
+*   [http://ftp.sun.ac.za/ftp/pub/mirrors/archlinux/](http://ftp.sun.ac.za/ftp/pub/mirrors/archlinux/) - *Stellenbosch University*
 *   [ftp://ftp.sun.ac.za/pub/mirrors/archlinux/](ftp://ftp.sun.ac.za/pub/mirrors/archlinux/)
-*   [http://ftp.leg.uct.ac.za/pub/linux/arch/](http://ftp.leg.uct.ac.za/pub/linux/arch/) - _University of Cape Town_
+*   [http://ftp.leg.uct.ac.za/pub/linux/arch/](http://ftp.leg.uct.ac.za/pub/linux/arch/) - *University of Cape Town*
 *   [ftp://ftp.leg.uct.ac.za/pub/linux/arch/](ftp://ftp.leg.uct.ac.za/pub/linux/arch/)
-*   [http://mirror.ufs.ac.za/archlinux/](http://mirror.ufs.ac.za/archlinux/) - _University of the Free State_
+*   [http://mirror.ufs.ac.za/archlinux/](http://mirror.ufs.ac.za/archlinux/) - *University of the Free State*
 *   [ftp://mirror.ufs.ac.za/os/linux/distros/archlinux/](ftp://mirror.ufs.ac.za/os/linux/distros/archlinux/)
-*   [http://ftp.wa.co.za/pub/archlinux/](http://ftp.wa.co.za/pub/archlinux/) - _Web Africa Networks_
+*   [http://ftp.wa.co.za/pub/archlinux/](http://ftp.wa.co.za/pub/archlinux/) - *Web Africa Networks*
 *   [ftp://ftp.wa.co.za/pub/archlinux/](ftp://ftp.wa.co.za/pub/archlinux/)
-*   [http://archlinux.mirror.ac.za](http://archlinux.mirror.ac.za) - _TENET - Tertiary Education and Research Network of South Africa_
+*   [http://archlinux.mirror.ac.za](http://archlinux.mirror.ac.za) - *TENET - Tertiary Education and Research Network of South Africa*
 *   [ftp://archlinux.mirror.ac.za](ftp://archlinux.mirror.ac.za)
 
 ### United States
 
-*   [http://archlinux.linuxfreedom.com](http://archlinux.linuxfreedom.com) - _Contains numerous ISO images but does not contain the ISO dated 2011.08.19_
+*   [http://archlinux.linuxfreedom.com](http://archlinux.linuxfreedom.com) - *Contains numerous ISO images but does not contain the ISO dated 2011.08.19*
 *   [http://mirror.pointysoftware.net/archlinux/](http://mirror.pointysoftware.net/archlinux/)
 
 ### Hyperboria
@@ -370,7 +369,6 @@ Architecture = x86_64
 لمحاكاة سلوك `pacman -Su` في التنقل في قائمة المرايا كاملة استخدم هذا السكربت:
 
  `~/bin/pacup` 
-
 ```
 #!/bin/bash
 

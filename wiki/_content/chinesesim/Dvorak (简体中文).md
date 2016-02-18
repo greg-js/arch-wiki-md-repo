@@ -43,4 +43,4 @@ In Xorg, specify `es` as `XkbLayout` and `dvorak` as `XkbVariant`.
 *   终端: [DvorakNG](https://aur.archlinux.org/packages/DvorakNG/)
 *   GUI: [KTouch](https://www.archlinux.org/packages/extra/x86_64/kdeedu-ktouch/) (包含了英语、法语、德语和西班牙语的 Dvorak 课程)
 *   GUI: [klavaro](https://www.archlinux.org/packages/?name=klavaro) Dvorak 课程: (BG; BR; DE_neo2; EO; FR; FR_bépo; TR; UK; US; US_BR; US_ES; US_SE)
-*   网站：[http://typeyourway.com/](http://typeyourway.com/) - _Your keyboard, Your Words, Your Rules, Learn to Type Your Way_
+*   网站：[http://typeyourway.com/](http://typeyourway.com/) - *Your keyboard, Your Words, Your Rules, Learn to Type Your Way*

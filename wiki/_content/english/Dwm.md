@@ -40,7 +40,7 @@
 
 ## Starting dwm
 
-Select _Dwm_ from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
+Select *Dwm* from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
 
 Alternatively, to start dwm with `startx` or the [SLiM](/index.php/SLiM "SLiM") login manager, simply append the following to `~/.xinitrc`:
 
@@ -53,7 +53,7 @@ exec dwm
 
 As mentioned in [#Installation](#Installation), dwm is configured at compile-time by editing some of its source files, namely `config.h` and `config.mk` and also `dwm.c`.
 
-Once changes have been made, update the checksums in the PKGBUILD, see [PKGBUILD#Integrity](/index.php/PKGBUILD#Integrity "PKGBUILD"). Alternatively, you can skip integrity checks by calling _makepkg_ with the `--skipinteg` switch.
+Once changes have been made, update the checksums in the PKGBUILD, see [PKGBUILD#Integrity](/index.php/PKGBUILD#Integrity "PKGBUILD"). Alternatively, you can skip integrity checks by calling *makepkg* with the `--skipinteg` switch.
 
 Then, compile and reinstall dwm:
 
@@ -87,21 +87,21 @@ The `config.h` file is where the general dwm preferences are stored. Most settin
 Two entries are needed in `config.h` to create custom keybinds. One under the `/* commands */` section, and another under the `static Key keys[] = {` section.
 
 ```
-static const char *_keybindname_[]   = { "_command_", "_flags_", "_arguments_", NULL };
+static const char **keybindname*[]   = { "*command*", "*flags*", "*arguments*", NULL };
 
 ```
 
-`_keybindname_` can be anything; `_command_`, `_flags_` and `_arguments_` can be anything but they have to be individually enclosed in `""`.
+`*keybindname*` can be anything; `*command*`, `*flags*` and `*arguments*` can be anything but they have to be individually enclosed in `""`.
 
 Some examples:
 
-`{ MODKEY, XK__key_, spawn, {.v = _keybindname_ } }` would bind `Mod+_key_` to the command defined previously.
+`{ MODKEY, XK_*key*, spawn, {.v = *keybindname* } }` would bind `Mod+*key*` to the command defined previously.
 
-`{ MODKEY|ShiftMask, XK__key_, spawn, {.v = _keybindname_ } }` would bind `Mod+Shift+_key_` Use ControlMask for `Ctrl` key.
+`{ MODKEY|ShiftMask, XK_*key*, spawn, {.v = *keybindname* } }` would bind `Mod+Shift+*key*` Use ControlMask for `Ctrl` key.
 
-Single keys such as `Fn` or multimedia keys have to be bound with the hex codes obtainable from the program _xev_.
+Single keys such as `Fn` or multimedia keys have to be bound with the hex codes obtainable from the program *xev*.
 
-`{ 0, 0xff00, spawn, {.v = _keybindname_ } }` would bind foo key `0xff00` to `_keybindname_`.
+`{ 0, 0xff00, spawn, {.v = *keybindname* } }` would bind foo key `0xff00` to `*keybindname*`.
 
 See [Extra keyboard keys#Keycodes](/index.php/Extra_keyboard_keys#Keycodes "Extra keyboard keys") for information on finding keycodes.
 
@@ -109,7 +109,7 @@ See [Extra keyboard keys#Keycodes](/index.php/Extra_keyboard_keys#Keycodes "Extr
 
 **Warning:** Installing software directly from source without creating a package is **not recommended** as [pacman](/index.php/Pacman "Pacman") will not be able to track the installed files.
 
-The `config.mk` file is included by Makefile. It allows you to configure how GNU _make_ is going to compile and install dwm.
+The `config.mk` file is included by Makefile. It allows you to configure how GNU *make* is going to compile and install dwm.
 
 If you are installing dwm directly from source, without creating a package first, then be sure to alter `config.mk` to set the correct prefixes:
 
@@ -134,7 +134,7 @@ X11LIB = /usr/lib/X11
 
 ```
 
-**Tip:** If you only wish to test configuration changes without affecting systemwide dwm, change `PREFIX` to a local directory such as `${HOME}/.local`. Note that if you are compiling using the [dwm](https://www.archlinux.org/packages/?name=dwm) [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), you should change the `PREFIX` in the PKGBUILD instead as this will take precedence over `config.mk` - see the _package()_ function - and you should also change the `pkgname`.
+**Tip:** If you only wish to test configuration changes without affecting systemwide dwm, change `PREFIX` to a local directory such as `${HOME}/.local`. Note that if you are compiling using the [dwm](https://www.archlinux.org/packages/?name=dwm) [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), you should change the `PREFIX` in the PKGBUILD instead as this will take precedence over `config.mk` - see the *package()* function - and you should also change the `pkgname`.
 
 ### Statusbar configuration
 
@@ -164,7 +164,7 @@ exec dwm
 
 In this case the date is shown in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601 "wikipedia:ISO 8601") format and [PCManFM](/index.php/PCManFM "PCManFM") is launched at startup.
 
-**Note:** It is not recommended to set the update interval equal to zero or remove the "sleep" line entirely since this will cause CPU usage to rise substantially (you can assess the effect with _top_ and [powertop](/index.php/Powertop "Powertop")).
+**Note:** It is not recommended to set the update interval equal to zero or remove the "sleep" line entirely since this will cause CPU usage to rise substantially (you can assess the effect with *top* and [powertop](/index.php/Powertop "Powertop")).
 
 #### Examples of statusbar configuration
 
@@ -315,7 +315,7 @@ To cleanly exit dwm, press `Shift` + `Mod1` + `q`.
 
 ### Restart dwm without logging out or closing programs
 
-For restarting dwm without logging out or closing applications, change or add a startup script so that it loads dwm in a _while_ loop, see below:
+For restarting dwm without logging out or closing applications, change or add a startup script so that it loads dwm in a *while* loop, see below:
 
 ```
 while true; do
@@ -360,7 +360,7 @@ xmodmap -pke | grep Alt_R
 
 ```
 
-Then simply add the following to the startup script (e.g. `~/.xinitrc`), changing the keycode _113_ if necessary to the result gathered by the previous `xmodmap` command:
+Then simply add the following to the startup script (e.g. `~/.xinitrc`), changing the keycode *113* if necessary to the result gathered by the previous `xmodmap` command:
 
 ```
 xmodmap -e "keycode 113 = Super_L"  # reassign Alt_R to Super_L
@@ -401,7 +401,7 @@ For some windows, such as preferences dialogs, it does not make sense for these 
 
 As of JRE 6u20, Java applications may misbehave in dwm because dwm is not a known window manager for [Java](/index.php/Java "Java"). The misbehavior may include menus closing when the mouse is released and other minor issues. Firstly, install the [wmname](https://www.archlinux.org/packages/?name=wmname) package.
 
-Now use _wmname_ to set a WM name that Java recognizes:
+Now use *wmname* to set a WM name that Java recognizes:
 
 ```
 $ wmname LG3D
@@ -422,7 +422,7 @@ When resizing or connecting/disconnecting different monitors there may be a remn
 
 ### Fixing gaps around terminal windows
 
-If there are empty gaps of desktop space outside terminal windows, it is likely due to the terminal's font size. Either adjust the size until finding the ideal scale that closes the gap, or toggle `resizehints` to _False_ in `config.h`:
+If there are empty gaps of desktop space outside terminal windows, it is likely due to the terminal's font size. Either adjust the size until finding the ideal scale that closes the gap, or toggle `resizehints` to *False* in `config.h`:
 
 ```
 static Bool resizehints = False; /* True means respect size hints in tiled resizals */

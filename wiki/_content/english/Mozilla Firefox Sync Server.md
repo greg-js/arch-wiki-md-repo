@@ -1,8 +1,8 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/Firefox_Sync "wikipedia:Firefox Sync"):
 
-	_Firefox Sync, originally branded Mozilla Weave, is a browser synchronization feature that allows users to partially synchronize bookmarks, browsing history, preferences, passwords, filled forms, add-ons and the last 25 opened tabs across multiple computers._
+	*Firefox Sync, originally branded Mozilla Weave, is a browser synchronization feature that allows users to partially synchronize bookmarks, browsing history, preferences, passwords, filled forms, add-ons and the last 25 opened tabs across multiple computers.*
 
-	_It keeps user data on Mozilla servers, but the data is encrypted in such a way that no third party, not even Mozilla, can access user information. It is also possible for the user to host their own Firefox Sync servers, or indeed, for any entity to do so._
+	*It keeps user data on Mozilla servers, but the data is encrypted in such a way that no third party, not even Mozilla, can access user information. It is also possible for the user to host their own Firefox Sync servers, or indeed, for any entity to do so.*
 
 This page details how you should proceed to host your own (Mozilla) Firefox Sync Server (shortened to FFSync), version 1.1 or version 1.5, and how to host your own Firefox Account server.
 
@@ -233,7 +233,6 @@ location /ffsync/ {
 (Outdated) systemd service unit:
 
  `/etc/systemd/system/ffsync.service` 
-
 ```
 [Unit]
 Description=Mozilla Firefox Syn Server

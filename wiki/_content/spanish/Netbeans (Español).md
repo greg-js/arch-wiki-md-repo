@@ -73,7 +73,6 @@ La solución consiste en:
 Si esto ocurriese ejecute NetBeans desde una terminal:
 
  `# netbeans -h` 
-
 ```
   Exception in thread "main" java.lang.UnsatisfiedLinkError: /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libsplashscreen.so: libgif.so.4: cannot open shared object file: No such file or directory
 

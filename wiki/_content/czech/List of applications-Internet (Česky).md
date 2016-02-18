@@ -165,7 +165,7 @@ Mnoho zde uvedených klientů (včetně Pidgina a všech jeho forků) podporuje 
 
 	[http://emesene.org/](http://emesene.org/) || [emesene](https://aur.archlinux.org/packages/emesene/)
 
-*   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) "wikipedia:Empathy (software)")** — IM klient z prostředí GNOME, používá [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)") framework
+*   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) framework
 
 	[http://live.gnome.org/Empathy](http://live.gnome.org/Empathy) || [empathy](https://www.archlinux.org/packages/?name=empathy)
 
@@ -181,7 +181,7 @@ Mnoho zde uvedených klientů (včetně Pidgina a všech jeho forků) podporuje 
 
 	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
 
-*   **[KDE Telepathy](/index.php/Kde#KDE_Telepathy "Kde")** — IM klient z prostředí KDE používající [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)") framework. Míněn jako náhrada za Kopete.
+*   **[KDE Telepathy](/index.php/Kde#KDE_Telepathy "Kde")** — IM klient z prostředí KDE používající [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) framework. Míněn jako náhrada za Kopete.
 
 	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [kde-telepathy-meta](https://www.archlinux.org/packages/?name=kde-telepathy-meta)
 

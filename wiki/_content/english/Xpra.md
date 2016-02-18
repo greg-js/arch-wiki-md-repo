@@ -80,7 +80,6 @@ It is possible to start the xpra server at boot using a [systemd](/index.php/Sys
 Create the unit file:
 
  `/etc/systemd/system/xpra@.service` 
-
 ```
 [Unit]
 Description=xpra display
@@ -99,7 +98,6 @@ WantedBy=multi-user.target
 Now create the configuration, adding a line for each username you want to have an xpra display:
 
  `/etc/conf.d/xpra` 
-
 ```
 myusername=:7
 
@@ -120,7 +118,6 @@ Make sure to add such line **before** the `exec` line.
 For example, on a remote client it could be:
 
  `~/.xinitrc` 
-
 ```
 xpra attach ssh:user@example.com:7 &
 
@@ -135,7 +132,6 @@ Configure your session to use **systemd user session**. Read [Systemd/User](/ind
 Create the following service unit:
 
  `$HOME/.config/systemd/user/xpra-client@.service` 
-
 ```
 [Unit]
 Description=xpra client
@@ -153,13 +149,12 @@ WantedBy=default.target
 Create the configuration file, using the options you want:
 
  `$HOME/.config/conf/xpra_client` 
-
 ```
 OPTS=--encoding=jpeg --quality=90
 
 ```
 
-The service name would be in the format of `xpra-client@_ssh:username@hostname**:<display number>**_.service`.
+The service name would be in the format of `xpra-client@*ssh:username@hostname**:<display number>***.service`.
 
 Example:
 

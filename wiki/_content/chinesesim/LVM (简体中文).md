@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [LVM](/index.php/LVM "LVM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-08-12，点击[这里](https://wiki.archlinux.org/index.php?title=LVM&diff=0&oldid=266713)可以查看翻译后英文页面的改动。
 
-来自 [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux) "wikipedia:Logical Volume Manager (Linux)") 的解释：
+来自 [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux) 的解释：
 
 	LVM 是一种可用在[Linux内核](https://en.wikipedia.org/wiki/Linux_kernel "wikipedia:Linux kernel")的[逻辑分卷管理器](https://en.wikipedia.org/wiki/logical_volume_management "wikipedia:logical volume management")；可用于管理磁盘驱动器或其他类似的大容量存储设备。
 
@@ -140,11 +140,11 @@ LVM的基本组成块（building blocks）如下：
 在列出的设备上创建物理卷：
 
 ```
- # pvcreate _DEVICE_
+ # pvcreate *DEVICE*
 
 ```
 
-该命令在各个设备上创建LVM使用的头部。如[#LVM基本组成](#LVM.E5.9F.BA.E6.9C.AC.E7.BB.84.E6.88.90)所示, _DEVICE_可以是磁盘（如`/dev/sda`），分区（如`/dev/sda2`）或环回设备。例如：
+该命令在各个设备上创建LVM使用的头部。如[#LVM基本组成](#LVM.E5.9F.BA.E6.9C.AC.E7.BB.84.E6.88.90)所示, *DEVICE*可以是磁盘（如`/dev/sda`），分区（如`/dev/sda2`）或环回设备。例如：
 
 ```
 # pvcreate /dev/sda2
@@ -165,7 +165,7 @@ LVM的基本组成块（building blocks）如下：
 创建完成物理卷（PV）之后，下一步就是在该物理卷创建卷组（VG）了。 首先必须先在其中一个物理卷（PV）创建一个卷组
 
 ```
-# vgcreate <_volume_group_> <_physical_volume_>
+# vgcreate <*volume_group*> <*physical_volume*>
 
 ```
 
@@ -179,8 +179,8 @@ LVM的基本组成块（building blocks）如下：
 然后让该卷组扩大到其他所有的物理卷:
 
 ```
-# vgextend <_volume_group_> <_physical_volume_>
-# vgextend <_volume_group_> <_another_physical_volume_>
+# vgextend <*volume_group*> <*physical_volume*>
+# vgextend <*volume_group*> <*another_physical_volume*>
 # ...
 
 ```
@@ -218,7 +218,7 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 创建完卷组（VG）之后，就可以开始创建逻辑卷（LV）了。输入下面命令以指定新逻辑卷的名字、大小及其所在的卷组：
 
 ```
-# lvcreate -L <_size_> <_volume_group_> -n <_logical_volume_>
+# lvcreate -L <*size*> <*volume_group*> -n <*logical_volume*>
 
 ```
 
@@ -241,7 +241,7 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 如果你想让要创建的逻辑卷拥有卷组（VG）的所有未使用空间，请使用以下命令：
 
 ```
-# lvcreate -l +100%FREE  <_volume_group_> -n <_logical_volume_>
+# lvcreate -l +100%FREE  <*volume_group*> -n <*logical_volume*>
 
 ```
 
@@ -252,13 +252,13 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 
 ```
 
-**注意:** 为了使上述命令能正常运行，你可能需要加载_device-mapper_内核模块（请使用命令**modprobe dm-mod**）。
+**注意:** 为了使上述命令能正常运行，你可能需要加载*device-mapper*内核模块（请使用命令**modprobe dm-mod**）。
 
 **小贴士:** 一开始可以创建小一点的逻辑卷，在卷组里留下一部分未使用空间，以后就可以根据需要再作扩展了。
 
 ### 建立文件系统与挂载逻辑卷
 
-现在你的逻辑卷应该已经在`/dev/mapper/`和`/dev/_YourVolumeGroupName_`中了。如果你无法在以上位置找到它，请使用以下命令来加载模块、并扫描与激活卷组：
+现在你的逻辑卷应该已经在`/dev/mapper/`和`/dev/*YourVolumeGroupName*`中了。如果你无法在以上位置找到它，请使用以下命令来加载模块、并扫描与激活卷组：
 
 ```
 # modprobe dm-mod
@@ -270,8 +270,8 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 现在你可以在逻辑卷上创建文件系统并像普通分区一样挂载它了（如果你正在安装Arch linux，需要更详细的信息，请参考[挂载分区](/index.php/Beginners%27_Guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.8C.82.E8.BD.BD.E5.88.86.E5.8C.BA "Beginners' Guide (简体中文)")）：
 
 ```
-# mkfs.<_fstype_> /dev/mapper/<_volume_group_>-<_logical_volume_>
-# mount /dev/mapper/<_volume_group_>-<_logical_volume_> /<_mountpoint_>
+# mkfs.<*fstype*> /dev/mapper/<*volume_group*>-<*logical_volume*>
+# mount /dev/mapper/<*volume_group*>-<*logical_volume*> /<*mountpoint*>
 
 ```
 
@@ -297,7 +297,7 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 
 ### 内核参数
 
-如果你的根文件系统位于逻辑分卷，则`root=` [内核参数](/index.php?title=%E5%86%85%E6%A0%B8%E5%8F%82%E6%95%B0&action=edit&redlink=1 "内核参数 (page does not exist)")必须指向一个映射设备，比如`/dev/mapper/_vg-name_-_lv-name_`。
+如果你的根文件系统位于逻辑分卷，则`root=` [内核参数](/index.php?title=%E5%86%85%E6%A0%B8%E5%8F%82%E6%95%B0&action=edit&redlink=1 "内核参数 (page does not exist)")必须指向一个映射设备，比如`/dev/mapper/*vg-name*-*lv-name*`。
 
 你可能还需要`dolvm`的支持。
 
@@ -328,7 +328,7 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 
 ##### 缩小
 
-在减少某个物理卷所在设备大小之前，需要通过指定`--setphysicalvolumesize _size_`参数缩小物理卷大小，_例如_：
+在减少某个物理卷所在设备大小之前，需要通过指定`--setphysicalvolumesize *size*`参数缩小物理卷大小，*例如*：
 
 ```
 # pvresize --setphysicalvolumesize 40G /dev/sda1
@@ -350,7 +350,6 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 在移动空闲的物理区域到卷尾部之前，需要运行`# pvdisplay -v -m`命令查看物理分段。如下例所示，仅有一个物理卷`/dev/sdd1`, 一个卷组`vg1`和一个逻辑卷`backup`
 
  `# pvdisplay -v -m` 
-
 ```
     Finding all volume groups.
     Using physical volume(s) on command line.
@@ -383,7 +382,6 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 此例中，第一个可用空间在第0至第153600分段共153601个可用区域。我们可以从最后的分段中移动相同数目的物理区域来填补这段空间
 
  `# pvmove --alloc anywhere /dev/sdd1:307201-399668 /dev/sdd1:0-92466` 
-
 ```
 /dev/sdd1: Moved: 0.1 %
 /dev/sdd1: Moved: 0.2 %
@@ -406,14 +404,13 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 之后可以再次运行命令：
 
 ```
-# pvresize --setphysicalvolumesize _size_ _PhysicalVolume_
+# pvresize --setphysicalvolumesize *size* *PhysicalVolume*
 
 ```
 
 结果类似：
 
  `# pvs` 
-
 ```
   PV         VG   Fmt  Attr PSize    PFree 
   /dev/sdd1  vg1  lvm2 a--     1t     500g
@@ -426,39 +423,39 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 
 #### 逻辑卷
 
-**注意:** 虽然`lvextend`和`lvreduce`可以实现_lvresize_特定选项实现的功能，且他们都有一个`-r, --resizefs`选项允许文件系统利用`fsadm(8)`（支持_ext2_, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), _ReiserFS_和[XFS](/index.php/XFS "XFS")）同步调节其大小。但除非你要对整个过程有更加精确的控制，直接使用`lvresize`辅以`--resizefs`选项来完成所有工作比较简便。
+**注意:** 虽然`lvextend`和`lvreduce`可以实现*lvresize*特定选项实现的功能，且他们都有一个`-r, --resizefs`选项允许文件系统利用`fsadm(8)`（支持*ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS*和[XFS](/index.php/XFS "XFS")）同步调节其大小。但除非你要对整个过程有更加精确的控制，直接使用`lvresize`辅以`--resizefs`选项来完成所有工作比较简便。
 
 ##### 使用lvresize增加或缩小容量
 
-**警告:** 虽然即便是对根分区，增加文件系统大小一般都可以在线完成（_即_文件系统已经被挂载），缩小其大小往往要求首先卸载文件系统以避免数据丢失。请首先确定你的文件系统支持相关操作。
+**警告:** 虽然即便是对根分区，增加文件系统大小一般都可以在线完成（*即*文件系统已经被挂载），缩小其大小往往要求首先卸载文件系统以避免数据丢失。请首先确定你的文件系统支持相关操作。
 
-为了向逻辑组_vg1_中的逻辑卷_lv1_增加2GB空间但_并不_修改其文件系统，执行：
+为了向逻辑组*vg1*中的逻辑卷*lv1*增加2GB空间但*并不*修改其文件系统，执行：
 
 ```
 # lvresize -L +2G vg1/lv1
 
 ```
 
-而从逻辑组`vg1/lv1`中减少500MB空间但_并不_修改其文件系统大小（需要确保[文件系统已经缩小过](/index.php/LVM#.E5.8D.95.E7.8B.AC.E8.AE.BE.E7.BD.AE.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E5.A4.A7.E5.B0.8F "LVM")），执行：
+而从逻辑组`vg1/lv1`中减少500MB空间但*并不*修改其文件系统大小（需要确保[文件系统已经缩小过](/index.php/LVM#.E5.8D.95.E7.8B.AC.E8.AE.BE.E7.BD.AE.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E5.A4.A7.E5.B0.8F "LVM")），执行：
 
 ```
 # lvresize -L -500M vg1/lv1
 
 ```
 
-设置`vg1/lv1`为15GB_并同时_更改其文件系统大小：
+设置`vg1/lv1`为15GB*并同时*更改其文件系统大小：
 
 ```
 # lvresize -L 15G -r vg1/lv1
 
 ```
 
-**注意:** 仅支持_ext2_, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), _ReiserFS_ and [XFS](/index.php/XFS "XFS") [file systems](/index.php/File_systems "File systems")。如果使用不同文件系统请使用[合适的组件](/index.php/File_systems#Arch_Linux_support "File systems")。
+**注意:** 仅支持*ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") [file systems](/index.php/File_systems "File systems")。如果使用不同文件系统请使用[合适的组件](/index.php/File_systems#Arch_Linux_support "File systems")。
 
 如果想将所有可用空间都加入一个卷组，可以执行：
 
 ```
-# lvresize -l +100%FREE _vg_/_lv_
+# lvresize -l +100%FREE *vg*/*lv*
 
 ```
 
@@ -473,21 +470,21 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 例如对于ext2/ext3/ext4文件系统：
 
 ```
-# resize2fs _vg_/_lv_
+# resize2fs *vg*/*lv*
 
 ```
 
 会将文件系统大小扩展到逻辑卷支持的最大容量，而
 
 ```
-# resize2fs -M _vg_/_lv_
+# resize2fs -M *vg*/*lv*
 
 ```
 
 会将文件系统减小到其所需的最小容量。也可以指定具体的尺寸：
 
 ```
-# resize2fs _vg_/_lv_ _NewSize_
+# resize2fs *vg*/*lv* *NewSize*
 
 ```
 
@@ -512,14 +509,14 @@ $ lsblk
 并卸载它：
 
 ```
-# umount /<_mountpoint_>
+# umount /<*mountpoint*>
 
 ```
 
 最后，使用以下命令来移除逻辑卷：
 
 ```
-# lvremove <_volume_group_>/<_logical_volume_>
+# lvremove <*volume_group*>/<*logical_volume*>
 
 ```
 
@@ -615,7 +612,7 @@ Also multiple snapshots can be taken and each one can be merged with the origin 
 
 The snapshot can be mounted and backed up with **dd** or **tar**. The size of the backup file done with **dd** will be the size of the files residing on the snapshot volume. To restore just create a snapshot, mount it, and write or extract the backup to it. And then merge it with the origin.
 
-It is important to have the _dm_snapshot_ module listed in the MODULES variable of `/etc/mkinitcpio.conf`, otherwise the system will not boot. If you do this on an already installed system, make sure to rebuild the image with
+It is important to have the *dm_snapshot* module listed in the MODULES variable of `/etc/mkinitcpio.conf`, otherwise the system will not boot. If you do this on an already installed system, make sure to rebuild the image with
 
 ```
 # mkinitcpio -g /boot/initramfs-linux.img
@@ -653,7 +650,7 @@ If you have LVM volumes not activated via the [initramfs](/index.php/Initramfs "
 
 你需要[重建initramfs](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.9B.E5.BB.BA.E5.92.8C.E5.90.AF.E7.94.A8.E9.95.9C.E5.83.8F "Mkinitcpio (简体中文)")来提交你对`/etc/mkinitcpio.conf`的更改。
 
-*   测试以_lvm_开头的命令是否可以被正确执行，例如：
+*   测试以*lvm*开头的命令是否可以被正确执行，例如：
 
 ```
 # lvm pvdisplay
@@ -691,14 +688,14 @@ If you have LVM volumes not activated via the [initramfs](/index.php/Initramfs "
 	在卷组（VG）失活（deactivate）之前就移除掉外部的LVM设备。在你断开连接之前，需要保证以下命令被执行：
 
 ```
-# vgchange -an _volume group name_
+# vgchange -an *volume group name*
 
 ```
 
-解决方案：（假设你已经用`# vgchange -ay _vg_`命令来激活卷组，但仍有_Input/output error_的错误信息。）执行以下命令：
+解决方案：（假设你已经用`# vgchange -ay *vg*`命令来激活卷组，但仍有*Input/output error*的错误信息。）执行以下命令：
 
 ```
-# vgchange -an _volume group name_
+# vgchange -an *volume group name*
 
 ```
 
@@ -706,7 +703,7 @@ If you have LVM volumes not activated via the [initramfs](/index.php/Initramfs "
 
 ```
 # vgscan
-# vgchange -ay _volume group name_
+# vgchange -ay *volume group name*
 
 ```
 

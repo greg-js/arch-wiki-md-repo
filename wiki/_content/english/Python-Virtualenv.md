@@ -1,4 +1,4 @@
-_virtualenv_ is a Python tool written by Ian Bicking and used to create isolated environments for [Python](/index.php/Python "Python") in which you can install packages without interfering with the other virtualenvs nor with the system Python's packages. The present article covers the installation of the _virtualenv_ package and its companion command line utility _virtualenvwrapper_ designed by Doug Hellmann to (greatly) improve your work flow. A quick how-to to help you to begin working inside virtual environment is then provided.
+*virtualenv* is a Python tool written by Ian Bicking and used to create isolated environments for [Python](/index.php/Python "Python") in which you can install packages without interfering with the other virtualenvs nor with the system Python's packages. The present article covers the installation of the *virtualenv* package and its companion command line utility *virtualenvwrapper* designed by Doug Hellmann to (greatly) improve your work flow. A quick how-to to help you to begin working inside virtual environment is then provided.
 
 ## Contents
 
@@ -13,15 +13,15 @@ _virtualenv_ is a Python tool written by Ian Bicking and used to create isolated
 
 ## Virtual Environments at a glance
 
-_virtualenv_ is a tool designated to address the problem of dealing with packages' dependencies while maintaining different versions that suit projects' needs. For example, if you work on two Django web sites, say one that needs Django 1.2 while the other needs the good old 0.96\. You have no way to keep both versions if you install them into /usr/lib/python2/site-packages . Thanks to virtualenv it's possible, by creating two isolated environments, to have the two development environment to play along nicely.
+*virtualenv* is a tool designated to address the problem of dealing with packages' dependencies while maintaining different versions that suit projects' needs. For example, if you work on two Django web sites, say one that needs Django 1.2 while the other needs the good old 0.96\. You have no way to keep both versions if you install them into /usr/lib/python2/site-packages . Thanks to virtualenv it's possible, by creating two isolated environments, to have the two development environment to play along nicely.
 
-_vitualenvwrapper_ takes _virtualenv_ a step further by providing convenient commands you can invoke from your favorite console.
+*vitualenvwrapper* takes *virtualenv* a step further by providing convenient commands you can invoke from your favorite console.
 
-_venv_ is [a built-in module](https://docs.python.org/3/library/venv.html) added in version 3.3, implementing a similar API to _virtualenv_.
+*venv* is [a built-in module](https://docs.python.org/3/library/venv.html) added in version 3.3, implementing a similar API to *virtualenv*.
 
 ## Virtualenv
 
-_virtualenv_ supports Python 2.6+ and Python 3.x. See [Python#Python 3](/index.php/Python#Python_3 "Python") for an overview of the different versions of Python.
+*virtualenv* supports Python 2.6+ and Python 3.x. See [Python#Python 3](/index.php/Python#Python_3 "Python") for an overview of the different versions of Python.
 
 ### Installation
 
@@ -29,7 +29,7 @@ _virtualenv_ supports Python 2.6+ and Python 3.x. See [Python#Python 3](/index.p
 
 ### Basic Usage
 
-An extended tutorial on how use _virtualenv_ for sandboxing can be found [here](http://wiki.pylonshq.com/display/pylonscookbook/Using+a+Virtualenv+Sandbox). If the link does not work, try [the archive link](http://web.archive.org/web/20120304235158/http://wiki.pylonshq.com/display/pylonscookbook/Using+a+Virtualenv+Sandbox). A simple use case is as follows:
+An extended tutorial on how use *virtualenv* for sandboxing can be found [here](http://wiki.pylonshq.com/display/pylonscookbook/Using+a+Virtualenv+Sandbox). If the link does not work, try [the archive link](http://web.archive.org/web/20120304235158/http://wiki.pylonshq.com/display/pylonscookbook/Using+a+Virtualenv+Sandbox). A simple use case is as follows:
 
 *   Create a virtualenv:
 
@@ -62,7 +62,7 @@ $ source my_env/bin/activate
 
 ## Virtualenvwrapper
 
-_virtualenvwrapper_ allows more natural command line interaction with your virtualenvs by exposing several useful commands to create, activate and remove virtualenvs. This package is a wrapper for both [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv) and [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv).
+*virtualenvwrapper* allows more natural command line interaction with your virtualenvs by exposing several useful commands to create, activate and remove virtualenvs. This package is a wrapper for both [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv) and [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv).
 
 ### Installation
 

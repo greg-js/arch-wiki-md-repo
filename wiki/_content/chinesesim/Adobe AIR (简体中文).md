@@ -35,7 +35,7 @@
 
 ```
 
-然后 _chmod_ 这个文件使之可执行：
+然后 *chmod* 这个文件使之可执行：
 
 ```
 $ chmod +x filename

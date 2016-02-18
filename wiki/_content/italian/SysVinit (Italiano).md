@@ -1,8 +1,8 @@
 **Attenzione:** Sysvinit è obsoleto su Arch Linux ed è stato tolto dai [repositorier ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"). È necessario [migrare a systemd](#Migrare_a_Systemd).
 
-Nei sistemi basati su Sysvinit _init_ è il primo processo che viene eseguito una volta che il kernel Linux è stato caricato. Il programma di init del kernel è `/sbin/init` ed è fornito dal pacchetto [sysvinit](https://aur.archlinux.org/packages/sysvinit/) o [systemd-sysvcompact](https://www.archlinux.org/packages/?name=systemd-sysvcompact) (di default sulle nuove installazioni, vedere [systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)")). La parola _init_ in questo articolo si riferirà a sysvinit.
+Nei sistemi basati su Sysvinit *init* è il primo processo che viene eseguito una volta che il kernel Linux è stato caricato. Il programma di init del kernel è `/sbin/init` ed è fornito dal pacchetto [sysvinit](https://aur.archlinux.org/packages/sysvinit/) o [systemd-sysvcompact](https://www.archlinux.org/packages/?name=systemd-sysvcompact) (di default sulle nuove installazioni, vedere [systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)")). La parola *init* in questo articolo si riferirà a sysvinit.
 
-_inittab_ è il file di configurazione dell'avvio per init e si trova in `/etc`. Esso contiene le cartelle per `init` o quali programmi o script eseguire quando si entra in uno specifico runlervel.
+*inittab* è il file di configurazione dell'avvio per init e si trova in `/etc`. Esso contiene le cartelle per `init` o quali programmi o script eseguire quando si entra in uno specifico runlervel.
 
 Quando Arch usava `init`, la maggior parte del lavoro veniva delegato ai [principali script di boot](#Principali_Script_di_Boot). Questo articolo tratterà principalmente init ed inittab.
 
@@ -34,7 +34,7 @@ Quando Arch usava `init`, la maggior parte del lavoro veniva delegato ai [princi
 
 **Note:**
 
-*   [systemd](https://www.archlinux.org/packages/?name=systemd) and [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) are both installed by default on installation media newer than [2012-10-13](https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/). This section is aimed at Arch Linux installations that still rely on _sysvinit_ and _initscripts_.
+*   [systemd](https://www.archlinux.org/packages/?name=systemd) and [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) are both installed by default on installation media newer than [2012-10-13](https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/). This section is aimed at Arch Linux installations that still rely on *sysvinit* and *initscripts*.
 *   If you are running Arch Linux inside a VPS, please see [Virtual Private Server#Moving your VPS from initscripts to systemd](/index.php/Virtual_Private_Server#Moving_your_VPS_from_initscripts_to_systemd "Virtual Private Server").
 
 ### Considerazioni prima di passare a systemd
@@ -49,9 +49,9 @@ Quando Arch usava `init`, la maggior parte del lavoro veniva delegato ai [princi
 1.  [Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") [systemd](https://www.archlinux.org/packages/?name=systemd) dai [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
 2.  Aggiungere il seguente comando ai [parametri del kernel](/index.php/Kernel_line "Kernel line") nel bootloader: `init=/usr/lib/systemd/systemd`
 3.  Una volta fatto è possibile abilitare qualsiasi servizio si desideri per mezzo di `systemctl enable <service_name>` (pari a ciò che si trova nella sezione `DAEMONS`. Nuovi nomi possono essere trovati [qui](/index.php/Daemons_List "Daemons List"). ).
-4.  Riavviare il proprio sistema e verificare che _systemd_ sia attivo utilizzando il seguente comando: `cat /proc/1/comm`. Questo dovrebbe rispondere con la stringa `systemd`.
+4.  Riavviare il proprio sistema e verificare che *systemd* sia attivo utilizzando il seguente comando: `cat /proc/1/comm`. Questo dovrebbe rispondere con la stringa `systemd`.
 5.  Assicurarsi che il proprio hostname sia configurato correttamente in systemd: `hostnamectl set-hostname myhostname`.
-6.  Procedere rimuovendo _initscripts_ e _sysvinit_ dal sistema e installando [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat).
+6.  Procedere rimuovendo *initscripts* e *sysvinit* dal sistema e installando [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat).
 7.  A scelta, rimuovere il parametro `init=/usr/lib/systemd/systemd` in quanto non è più necessario. [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) lo imposta come default.
 
 ### Informazioni supplementari
@@ -65,7 +65,6 @@ Quando Arch usava `init`, la maggior parte del lavoro veniva delegato ai [princi
 `init` è sempre il processo con PID 1 ed all'infuori della gestione dell'area di swap, è il processo genitore per **tutti** gli altri processi. Può essere notato meglio il ruolo che svolge init nella gerarchia dei processi del proprio sistema usando il comando `pstree`:
 
  `$ pstree -Ap` 
-
 ```
 init(1)-+-acpid(3432)
         |-crond(3423)

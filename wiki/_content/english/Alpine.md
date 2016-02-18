@@ -147,17 +147,17 @@ Pressing "W" allows you to quickly search for options. Messages can be listed in
 
 ```
 # Your default printer selection
-printer=_YOURPRINTER_ [] a2ps -q --center-title --footer -P_YOURPRINTER_
+printer=*YOURPRINTER* [] a2ps -q --center-title --footer -P*YOURPRINTER*
 
 # List of special print commands
-personal-print-command=_YOURPRINTER_ [] a2ps -q --center-title --footer -P_YOURPRINTER_
+personal-print-command=*YOURPRINTER* [] a2ps -q --center-title --footer -P*YOURPRINTER*
 
 # Which category default print command is in
 personal-print-category=3
 
 ```
 
-Replace _YOURPRINTER_ with the name of your printer. Note that these settings can also be applied in the setup UI of Alpine. See the manpage of `a2ps` for more configuration options.
+Replace *YOURPRINTER* with the name of your printer. Note that these settings can also be applied in the setup UI of Alpine. See the manpage of `a2ps` for more configuration options.
 
 ## See also
 

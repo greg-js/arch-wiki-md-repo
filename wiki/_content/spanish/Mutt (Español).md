@@ -35,7 +35,7 @@
 
 ## Descripción
 
-Mutt se enfoca en ser un _Mail User Agent_, y fue originalmente escrito sólo para ver correo. Debido a esto, la recuperación de correo, características de envío y filtrado implementadas posteriormente son básicas comparadas con otras aplicaciones. La mayoría de las instalaciones de Mutt dependen de programas externos para estas tareas.
+Mutt se enfoca en ser un *Mail User Agent*, y fue originalmente escrito sólo para ver correo. Debido a esto, la recuperación de correo, características de envío y filtrado implementadas posteriormente son básicas comparadas con otras aplicaciones. La mayoría de las instalaciones de Mutt dependen de programas externos para estas tareas.
 
 De todos modos, el paquete [mutt](https://www.archlinux.org/packages/?name=mutt) de Arch ha sido compilado con soporte para IMAP, POP3 y SMTP, y por tanto no requiere programas externos para tratar con el correo.
 
@@ -78,7 +78,7 @@ Note que Mutt reconecerá dos ubicaciones para su archivo de configuración: `~/
 
 ### IMAP
 
-_Configuraciones nativa y externa_
+*Configuraciones nativa y externa*
 
 #### Usando el soporte nativo de IMAP
 
@@ -86,7 +86,7 @@ La versión pacman de Mutt está compilada con soporte de IMAP. Por lo menos mec
 
 ##### spoolfile
 
-En vez de un _spool_ local de correo, especifique el servidor `imap`.
+En vez de un *spool* local de correo, especifique el servidor `imap`.
 
 ```
 set spoolfile=imap[s]://imap.servidor.dominio[:puerto]/carpeta
@@ -147,7 +147,7 @@ mailboxes imaps://imap.gmail.com/INBOX imaps://imap.gmail.com/familia
 
 ```
 
-Éstas dos versiones son equivalentes, pero la primera es mucho más conveniente. También, Mutt está configurado por defecto para incluir una _macro_ atada a la tecla 'y' que le permitirá cambiarse a cualquiera de las carpetas listadas en _mailboxes_.
+Éstas dos versiones son equivalentes, pero la primera es mucho más conveniente. También, Mutt está configurado por defecto para incluir una *macro* atada a la tecla 'y' que le permitirá cambiarse a cualquiera de las carpetas listadas en *mailboxes*.
 
 ##### Resumen
 
@@ -184,7 +184,7 @@ Considere el uso de aplicaciones como [spamassassin](https://www.archlinux.org/p
 
 ### POP3
 
-_Recuperando y ordenando el correo con aplicaciones externas_
+*Recuperando y ordenando el correo con aplicaciones externas*
 
 #### Recuperando correo
 
@@ -259,7 +259,7 @@ Después de guardar su `.procmailrc`, ejecute getmail y vea si procmail tiene é
 
 ### MailDir
 
-MailDir es un formato genérico y estandarizado. Casi todo _MUA_ es capaz de manejar MailDirs y el soporte de Mutt es excelente. Sólo se requiere realizar algunos pasos simples para hacer que Mutt los use. Abra su muttrc con su editor favorito y agregue las siguientes líneas:
+MailDir es un formato genérico y estandarizado. Casi todo *MUA* es capaz de manejar MailDirs y el soporte de Mutt es excelente. Sólo se requiere realizar algunos pasos simples para hacer que Mutt los use. Abra su muttrc con su editor favorito y agregue las siguientes líneas:
 
 ```
 set mbox_type=Maildir
@@ -268,7 +268,7 @@ set spoolfile=+/INBOX
 set header_cache=~/.hcache
 ```
 
-Esta es la configuración mínima que le permite acceder su MailDir y revisar nuevos correos locales en INBOX. Esta configuración tambien almacena las cabeceras de los correos para acelerar los listados de directorio. Puede que no esté activado en su compilación (pero es seguro que está activado en el paquete de Arch). Note que esto no afecta de ninguna manera a OfflineIMAP. Éste siempre sincroniza todos los directorios en un servidor. `spoolfile` le dice a Mutt qué directorios locales revisar por nuevos correos. Puede querer agregar más _Spoolfiles_ (por ejemplo los directorios de listas de correos) y quizás otras cosas. Pero esto es tema para el manual de Mutt y está fuera del alcance de este documento.
+Esta es la configuración mínima que le permite acceder su MailDir y revisar nuevos correos locales en INBOX. Esta configuración tambien almacena las cabeceras de los correos para acelerar los listados de directorio. Puede que no esté activado en su compilación (pero es seguro que está activado en el paquete de Arch). Note que esto no afecta de ninguna manera a OfflineIMAP. Éste siempre sincroniza todos los directorios en un servidor. `spoolfile` le dice a Mutt qué directorios locales revisar por nuevos correos. Puede querer agregar más *Spoolfiles* (por ejemplo los directorios de listas de correos) y quizás otras cosas. Pero esto es tema para el manual de Mutt y está fuera del alcance de este documento.
 
 ### SMTP
 
@@ -295,7 +295,6 @@ Se puede utilizar un agente SMTP externo como [msmtp](/index.php?title=Msmtp_(Es
 Edite el archivo de configuración de Mutt o creelo si no está presente:
 
  `muttrc` 
-
 ```
 set realname='Canguro Molesto'
 
@@ -416,7 +415,7 @@ pacman -S lynx
 
 ```
 
-Si _~/.mutt/mailcap_ no existe va a necesitar crearlo y guardar lo siguiente en el:
+Si *~/.mutt/mailcap* no existe va a necesitar crearlo y guardar lo siguiente en el:
 
 ```
 text/html; lynx -dump %s; nametemplate=%s.html; copiousoutput

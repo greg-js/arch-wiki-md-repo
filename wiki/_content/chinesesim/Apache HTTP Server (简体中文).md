@@ -103,8 +103,8 @@ Include conf/extra/httpd-userdir.conf
 *   当然了，你还需要开放`~/`目录， `~/public_html`以及他们所有的子目录的‘读’权限和‘写’权限给这个组（在我们的例子中时用户组**piter**）。 如下这样做(**根据自己的情况修改命令**):
 
 ```
- $ chmod g+xr-w /home/_yourusername_
- $ chmod -R g+xr-w /home/_yourusername_/public_html
+ $ chmod g+xr-w /home/*yourusername*
+ $ chmod -R g+xr-w /home/*yourusername*/public_html
 
 ```
 
@@ -353,7 +353,6 @@ Include conf/vhosts/domainname1.dom
 **注意:** 如果你在Apache的模块目录（`/etc/httpd/modules`）中没有看到`libphp5.so`，你可能忘了安装[php-apache](https://www.archlinux.org/packages/?name=php-apache)。
 
 **注意:** [本段来源](/index.php/Apache_HTTP_Server#PHP "Apache HTTP Server") 你可能会碰到这一bug ([FS#39218](https://bugs.archlinux.org/task/39218)) [php-apache](https://www.archlinux.org/packages/?name=php-apache)中的`libphp5.so`无法同`mod_mpm_event`一起使用。 此时应当使用 `mod_mpm_prefork` 作为代替。不然将发生下面的错误:
-
 ```
 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.  You need to recompile PHP.
 AH00013: Pre-configuration failed

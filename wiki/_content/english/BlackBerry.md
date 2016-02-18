@@ -8,16 +8,16 @@ Barry is an application that provides backup and sync support for BlackBerry dev
 
 ### Packages required for Evolution sync
 
-**Note:** _osynctool_ is only required if you wish to sync through the command line.
+**Note:** *osynctool* is only required if you wish to sync through the command line.
 
 *   [evolution](https://www.archlinux.org/packages/?name=evolution)
 *   [osynctool](https://aur.archlinux.org/packages/osynctool/)
-*   _libopensync-plugin-evolution3_
+*   *libopensync-plugin-evolution3*
 *   [barry](https://aur.archlinux.org/packages/barry/)
 
 ### Syncing using the command line
 
-**Note:** These instructions are for syncing via the command line. Syncing can be done graphically using the _barrydesktop_ application.
+**Note:** These instructions are for syncing via the command line. Syncing can be done graphically using the *barrydesktop* application.
 
 Create a sync group called evoberry
 

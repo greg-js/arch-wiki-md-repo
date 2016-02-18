@@ -90,7 +90,6 @@ Using the `-l /path/to/file` option will print the `clamscan` logs to a text fil
 Copy `/etc/clamav/clamav-milter.conf.sample` to `/etc/clamav/clamav-milter.conf` and adjust it to your needs. For example:
 
  `/etc/clamav/clamav-milter.conf` 
-
 ```
 MilterSocket /run/clamav/clamav-milter.sock
 MilterSocketMode 660
@@ -107,7 +106,6 @@ LogInfected Basic
 Create `/etc/systemd/system/clamav-milter.service`:
 
  `/etc/systemd/system/clamav-milter.service` 
-
 ```
 [Unit]
 Description='ClamAV Milter'

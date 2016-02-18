@@ -29,16 +29,16 @@ Then follow [Display manager#Loading the display manager](/index.php/Display_man
 
 The configuration file for KDM can be found at `/usr/share/config/kdm/kdmrc`. See `/usr/share/doc/HTML/en/kdm/kdmrc-ref.docbook` for all options.
 
-You can visit _System Settings > Login Screen_ and make your changes. Whenever you press _Apply_, a _KDE Polkit authorization_ window appears which will ask you to give your root password in order to finish the changes.
+You can visit *System Settings > Login Screen* and make your changes. Whenever you press *Apply*, a *KDE Polkit authorization* window appears which will ask you to give your root password in order to finish the changes.
 
-If you seem not to be able to edit KDM's settings when launching System Settings as user, you can use _kdesu_:
+If you seem not to be able to edit KDM's settings when launching System Settings as user, you can use *kdesu*:
 
 ```
 $ kdesu kcmshell4 kdm
 
 ```
 
-In the pop-up _kdesu_ window, enter your root password and wait for System Settings to be launched. Then go to "Login Screen".
+In the pop-up *kdesu* window, enter your root password and wait for System Settings to be launched. Then go to "Login Screen".
 
 **Note:** Since you have launched it as root, be careful when changing your settings. All settings configuration in root-launched System Settings are saved under `/root/.kde4` and not under `~/.kde4` (your home location).
 
@@ -59,7 +59,6 @@ The theme format is the same one as GDM, a documentation can be found here: [Det
 To force the number of dots per inch of the X server, add a -dpi option to ServerArgsLocal. A commonly used value is 96 dpi.
 
  `/usr/share/config/kdm/kdmrc` 
-
 ```
 [...]
 ServerArgsLocal=-dpi 96 -nolisten tcp
@@ -80,7 +79,6 @@ To allow root login in KDM do:
 This variable stores a list of directories containing session type definitions in `.desktop` format, ordered by falling priority. In Arch Linux some [window managers](/index.php/Window_managers "Window managers") install such files in `/usr/share/xsessions`. Add that to the list in order to be able to select them in KDM:
 
  `/usr/share/config/kdm/kdmrc` 
-
 ```
 [...]
 SessionsDirs=/usr/share/config/kdm/sessions,/usr/share/apps/kdm/sessions,/usr/share/xsessions
@@ -99,7 +97,6 @@ The Session variable is the name of a program which is run as the user who logs 
 In `kdmrc` set:
 
  `/usr/share/config/kdm/kdmrc` 
-
 ```
 [...]
 Session=/usr/share/config/kdm/Xsession.custom
@@ -113,7 +110,6 @@ And then edit `Xsession.custom` as desired.
 To allow users to restart the X server from KDM, edit this option in `kdmrc`:
 
  `/usr/share/config/kdm/kdmrc` 
-
 ```
 [X-:*-Greeter]
 [...]

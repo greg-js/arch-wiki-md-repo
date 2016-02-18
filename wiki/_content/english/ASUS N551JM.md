@@ -1,7 +1,7 @@
 | **Device** | **Status** | **Modules** |
-| Intel | Working | i915 _and_ xf86-video-intel |
-| Nvidia | Working | nouveau _or_ nvidia |
-| Ethernet | Working | r8168 _or_ r8169 |
+| Intel | Working | i915 *and* xf86-video-intel |
+| Nvidia | Working | nouveau *or* nvidia |
+| Ethernet | Working | r8168 *or* r8169 |
 | Wireless | Working | iwlwifi |
 | Audio | Working | snd_hda_intel |
 | Touchpad | Working | xf86-input-synaptics |
@@ -35,7 +35,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 Integrated Intel graphics works out of the box. For the hybrid graphics configuration, see [Bumblebee](/index.php/Bumblebee "Bumblebee").
 
-You could install [bumblebee along with Nvidia and Intel drivers](/index.php/Bumblebee#Installing_Bumblebee_with_Intel.2FNVIDIA "Bumblebee"). Add the kernel parameter `rcutree.rcu_idle_gp_delay=1` to your bootloader configuration, so that _optirun_ will not fail to start (not necessary with the current stock kernel).
+You could install [bumblebee along with Nvidia and Intel drivers](/index.php/Bumblebee#Installing_Bumblebee_with_Intel.2FNVIDIA "Bumblebee"). Add the kernel parameter `rcutree.rcu_idle_gp_delay=1` to your bootloader configuration, so that *optirun* will not fail to start (not necessary with the current stock kernel).
 
 #### Display brightness
 
@@ -52,9 +52,9 @@ It might happen that display brightness adjustment will not work even when the k
 
 Install [PulseAudio](/index.php/PulseAudio "PulseAudio").
 
-To enable the internal microphone and the external subwoofer support, install [asus-n551-hda-fix](https://aur.archlinux.org/packages/asus-n551-hda-fix/) from the [AUR](/index.php/AUR "AUR"). This package installs the [pincfg patch](https://bugs.launchpad.net/ubuntu/+source/alsa-tools/+bug/1405691), and also enables the internal microphone by adding the _asus-mode8_ to the HDA driver options.
+To enable the internal microphone and the external subwoofer support, install [asus-n551-hda-fix](https://aur.archlinux.org/packages/asus-n551-hda-fix/) from the [AUR](/index.php/AUR "AUR"). This package installs the [pincfg patch](https://bugs.launchpad.net/ubuntu/+source/alsa-tools/+bug/1405691), and also enables the internal microphone by adding the *asus-mode8* to the HDA driver options.
 
-After installation, reboot the laptop to ensure all modules are loaded. Check if the fallback device is correctly set to _Build-in Audio Analog Stereo_ with [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol). See [PulseAudio/Troubleshooting#Fallback device is not respected](/index.php/PulseAudio/Troubleshooting#Fallback_device_is_not_respected "PulseAudio/Troubleshooting") for more information. Also check for muted devices:
+After installation, reboot the laptop to ensure all modules are loaded. Check if the fallback device is correctly set to *Build-in Audio Analog Stereo* with [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol). See [PulseAudio/Troubleshooting#Fallback device is not respected](/index.php/PulseAudio/Troubleshooting#Fallback_device_is_not_respected "PulseAudio/Troubleshooting") for more information. Also check for muted devices:
 
 ```
 $ alsamixer -c PCH
@@ -96,7 +96,6 @@ $ asus-kbd-backlight show
 Touchpad works out of the box with the default synaptics drivers. You can tweak its options using the default Xorg configuration files. For example:
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
 Section "InputClass"
     Identifier "touchpad"
@@ -128,7 +127,6 @@ EndSection
 Rich multitouch gestures can be configured with [Touchegg](/index.php/Touchegg "Touchegg"). To use two-finger or three-finger gestures, you should disable the corresponding features in the Xorg config:
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
-
 ```
 Section "InputClass"
     Identifier "touchpad"
@@ -153,7 +151,7 @@ EndSection
 
 ### nouveau problems
 
-Sometimes _nouveau_ driver produces a lot of garbage log lines during boot and even causes a kernel panic. This is a bug in the driver. You can workaround this by disabling _nouveau_:
+Sometimes *nouveau* driver produces a lot of garbage log lines during boot and even causes a kernel panic. This is a bug in the driver. You can workaround this by disabling *nouveau*:
 
  `/etc/modprobe.d/blacklist-nouveau.conf`  `blacklist nouveau` 
 

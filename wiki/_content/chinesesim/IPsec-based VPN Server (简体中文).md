@@ -49,7 +49,6 @@ $ ./configure --enable-eap-identity --enable-eap-md5 \
 可参考以下内容修改`/etc/ipsec.conf`：
 
  `/etc/ipsec.conf ` 
-
 ```
 config setup
 
@@ -73,9 +72,7 @@ config setup
 ### 打开 psk aggressive 模式
 
 **注意:** 这一步只对 strongswan>=5.0.1 有效，没有它的话将不支持在很多客户的上 IKEv1 使用的 aggressive 模式。这意味着很多 CISCO IPsec 客户端将无法登录。
-
  `/etc/strongswan.conf` 
-
 ```
 ...
 charon {
@@ -92,7 +89,6 @@ charon {
 #### 打开虚拟 IP 地址功能
 
  `/etc/strongswan.conf` 
-
 ```
 ...
 charon {
@@ -107,7 +103,6 @@ charon {
 设置 IP 地址池范围：
 
  `/etc/ipsec.conf ` 
-
 ```
 config setup
     ...
@@ -123,7 +118,6 @@ config setup
 设置客户端虚拟 IP 清理策略：
 
  `/etc/ipsec.conf ` 
-
 ```
 config setup
     ...
@@ -139,7 +133,6 @@ config setup
 #### 配置 DNS
 
  `/etc/strongswan.conf` 
-
 ```
 ...
 charon {
@@ -159,7 +152,6 @@ charon {
 修改配置文件，在如下位置添加`duplicheck.enable = no`和`uniqueids=never`：
 
  `/etc/strongswan.conf` 
-
 ```
 ...
 charon {
@@ -168,9 +160,7 @@ charon {
     ...
 
 ```
-
  `/etc/ipsec.conf ` 
-
 ```
 ...
 config setup
@@ -189,7 +179,6 @@ config setup
 ##### 使用 radius 服务
 
  `/etc/strongswan.conf` 
-
 ```
 ...
 charon {
@@ -217,7 +206,6 @@ charon {
 为了支持[IKEv1(Cisco IPsec)](#IKEv1.28Cisco_IPsec.29)，你还需要添加以下内容：
 
  `/etc/strongswan.conf` 
-
 ```
 ...
 charon {
@@ -240,7 +228,6 @@ charon {
 在`/etc/ipsec.conf`中添加下面的内容：
 
  `/etc/ipsec.conf ` 
-
 ```
 ...
     conn %default
@@ -279,7 +266,6 @@ charon {
 在`/etc/ipsec.conf`中添加下面的内容：
 
  `/etc/ipsec.conf` 
-
 ```
 ...
     conn %default
@@ -323,7 +309,6 @@ net.ipv4.ip_forward = 1
 *   下面是一个完成的例子，如果你不需要 ssh 和 IPsec 以外的服务的话，可以直接套用:
 
  `/etc/iptables/iptables.rules` 
-
 ```
 *nat
 :PREROUTING ACCEPT [0:0]
@@ -367,7 +352,6 @@ COMMIT
 在需要的ConnSection中添加 `leftfirewall=yes`:
 
  `/etc/ipsec.conf ` 
-
 ```
 config setup
     ...

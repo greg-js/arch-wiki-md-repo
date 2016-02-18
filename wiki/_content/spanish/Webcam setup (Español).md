@@ -184,10 +184,9 @@ Tan solo instale el paquete de AUR [stk11xx](https://aur.archlinux.org/packages/
 
 Añada el [módulo](/index.php/Kernel_modules_(Espa%C3%B1ol)#Loading "Kernel modules (Español)") de su webcam a `/etc/modules-load.d/webcam.conf` para que sea cargado por el kernel durante la fase de arranque.
 
-Si su webcam es USB, el kernel _debería_ cargar de forma automática el controlador adecuado. Si este es el caso, compruebe el dmesg tras conectar la webcam. Debería ver algo como esto:
+Si su webcam es USB, el kernel *debería* cargar de forma automática el controlador adecuado. Si este es el caso, compruebe el dmesg tras conectar la webcam. Debería ver algo como esto:
 
  `$ dmesg|tail` 
-
 ```
 sn9c102: V4L2 driver for SN9C10x PC Camera Controllers v1:1.24a
 usb 1-1: SN9C10[12] PC Camera Controller detected (vid/pid 0x0C45/0x600D)
@@ -349,7 +348,7 @@ $ mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 15 
 Desde aquí usted deber presionar `s` para tomar una instantánea. La instantánea se guardará en el directorio donde abrió el programa como **shotXXXX.png**. Si desea grabar un video:
 
 ```
-$ mencoder tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:forceaudio:adevice=/dev/dsp -ovc lavc -oac mp3lame -lameopts cbr:br=64:mode=3 -o _filename_.avi
+$ mencoder tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:forceaudio:adevice=/dev/dsp -ovc lavc -oac mp3lame -lameopts cbr:br=64:mode=3 -o *filename*.avi
 
 ```
 
@@ -382,7 +381,7 @@ Puede tanto establecer un alias para skype, o renombrar el binario de skype orig
 
 ### Motion
 
-	_Motion es un programa que monitoriza la señal de video de cámaras. Es capaz de detectar si una parte significativa de la imagen a cambiado; es decir, puede detectar el movimiento._
+	*Motion es un programa que monitoriza la señal de video de cámaras. Es capaz de detectar si una parte significativa de la imagen a cambiado; es decir, puede detectar el movimiento.*
 
 [motion](https://www.archlinux.org/packages/?name=motion) solo maneja dispositivos v4l2, por lo que si su cámara solo está soportada por controladores para v4l1 necesita precargar v4l1compat.so como se mencionó anteriormente. De otra manera le aparecerán muchos errores de motion acerca de no poder encontrar una paleta adecuada.
 
@@ -395,7 +394,6 @@ Puede tanto establecer un alias para skype, o renombrar el binario de skype orig
 Bajo determinadas condiciones, el Microsoft lifecam studio/cinema puede pedir ancho de banda usb en exceso y fallar [vea el FAQ de Uvcvideo](http://www.ideasonboard.org/uvc/#footnote-13). En este caso intente cargar el controlador `uvcvideo` con `quirks=0x80`. Añádalo a `/etc/modprobe.d/uvcvideo.conf` :
 
  `/etc/modprobe.d/uvcvideo.conf` 
-
 ```
 ## Apaño para el problema de ancho de banda para lifecam studio/cinema
 options uvcvideo quirks=0x80

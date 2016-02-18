@@ -1,8 +1,8 @@
-**Note:** _xmodmap_ settings are reset by _setxkbmap_, which not only alters the alphanumeric keys to the values given in the map, but also resets all other keys to the startup default. [[1]](http://wiki.linuxquestions.org/wiki/Configuring_keyboards)
+**Note:** *xmodmap* settings are reset by *setxkbmap*, which not only alters the alphanumeric keys to the values given in the map, but also resets all other keys to the startup default. [[1]](http://wiki.linuxquestions.org/wiki/Configuring_keyboards)
 
-_xmodmap_ is a utility for modifying keymaps and pointer button mappings in [Xorg](/index.php/Xorg "Xorg").
+*xmodmap* is a utility for modifying keymaps and pointer button mappings in [Xorg](/index.php/Xorg "Xorg").
 
-_xmodmap_ is not directly related to [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") (XKB), as it uses different (pre-XKB) ideas on how _keycodes_ are processed within X. Generally, it is only recommended for the simplest tasks. See [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") for advanced layout configuration.
+*xmodmap* is not directly related to [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") (XKB), as it uses different (pre-XKB) ideas on how *keycodes* are processed within X. Generally, it is only recommended for the simplest tasks. See [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") for advanced layout configuration.
 
 ## Contents
 
@@ -22,39 +22,38 @@ _xmodmap_ is not directly related to [X KeyBoard extension](/index.php/X_KeyBoar
 
 ## Introduction
 
-There are two types of keyboard values in [Xorg](/index.php/Xorg "Xorg"): _keycodes_ and _keysyms_.
+There are two types of keyboard values in [Xorg](/index.php/Xorg "Xorg"): *keycodes* and *keysyms*.
 
 	keycode
 
-	The _keycode_ is the numeric representation received by the kernel when a key or a mouse button is pressed.
+	The *keycode* is the numeric representation received by the kernel when a key or a mouse button is pressed.
 
 	keysym
 
-	The _keysym_ is the value assigned to the _keycode_. For example, pressing `A` generates the `keycode 73`, which is mapped to the `keysym 0×61`, which matches `A` in the [ASCII table](https://en.wikipedia.org/wiki/ASCII "wikipedia:ASCII").
+	The *keysym* is the value assigned to the *keycode*. For example, pressing `A` generates the `keycode 73`, which is mapped to the `keysym 0×61`, which matches `A` in the [ASCII table](https://en.wikipedia.org/wiki/ASCII "wikipedia:ASCII").
 
-	The _keysyms_ are managed by [Xorg](/index.php/Xorg "Xorg") in a table of _keycodes_ defining the _keycode_-_keysym_ relations, which is called the [keymap table](#Keymap_table). This can be shown by running `xmodmap`.
+	The *keysyms* are managed by [Xorg](/index.php/Xorg "Xorg") in a table of *keycodes* defining the *keycode*-*keysym* relations, which is called the [keymap table](#Keymap_table). This can be shown by running `xmodmap`.
 
 ## Installation
 
-_xmodmap_ can be [installed](/index.php/Pacman "Pacman") through the [xorg-xmodmap](https://www.archlinux.org/packages/?name=xorg-xmodmap) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+*xmodmap* can be [installed](/index.php/Pacman "Pacman") through the [xorg-xmodmap](https://www.archlinux.org/packages/?name=xorg-xmodmap) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
-Optionally, install [xkeycaps](https://www.archlinux.org/packages/?name=xkeycaps), which is a graphical front-end to _xmodmap_.
+Optionally, install [xkeycaps](https://www.archlinux.org/packages/?name=xkeycaps), which is a graphical front-end to *xmodmap*.
 
 ## Keymap table
 
 Print the current keymap table formatted into expressions:
 
  `$ xmodmap -pke` 
-
 ```
 [...]
 keycode  57 = n N
 [...]
 ```
 
-Each _keycode_ is followed by the _keysym_ it is mapped to. The above example indicates that the _keycode_ `57` is mapped to the lowercase `n`, while the uppercase `N` is mapped to _keycode_ `57` plus `Shift`.
+Each *keycode* is followed by the *keysym* it is mapped to. The above example indicates that the *keycode* `57` is mapped to the lowercase `n`, while the uppercase `N` is mapped to *keycode* `57` plus `Shift`.
 
-Each _keysym_ column in the table corresponds to a particular combination of modifier keys:
+Each *keysym* column in the table corresponds to a particular combination of modifier keys:
 
 1.  `Key`
 2.  `Shift+Key`
@@ -63,13 +62,13 @@ Each _keysym_ column in the table corresponds to a particular combination of mod
 5.  `AltGr+Key`
 6.  `AltGr+Shift+Key`
 
-Not all _keysyms_ have to be set, but to assign only a latter _keysym_, use the `NoSymbol` value.
+Not all *keysyms* have to be set, but to assign only a latter *keysym*, use the `NoSymbol` value.
 
-To see which _keycode_ corresponds to a key, see [Extra keyboard keys#In Xorg](/index.php/Extra_keyboard_keys#In_Xorg "Extra keyboard keys") for details on the _xev_ utility.
+To see which *keycode* corresponds to a key, see [Extra keyboard keys#In Xorg](/index.php/Extra_keyboard_keys#In_Xorg "Extra keyboard keys") for details on the *xev* utility.
 
-**Tip:** There are predefined descriptive _keysyms_ for multimedia keys, e.g. `XF86AudioMute` or `XF86Mail`. These _keysyms_ can be found in `/usr/include/X11/XF86keysym.h`. Many multimedia programs are designed to work with these _keysyms_ out-of-the-box, without the need to configure any third-party application.
+**Tip:** There are predefined descriptive *keysyms* for multimedia keys, e.g. `XF86AudioMute` or `XF86Mail`. These *keysyms* can be found in `/usr/include/X11/XF86keysym.h`. Many multimedia programs are designed to work with these *keysyms* out-of-the-box, without the need to configure any third-party application.
 
-Note that xmodmap is influenced by xkbd settings, so all eight keysym are available for the us(intl) xkbd layout but not for the default us (it is missing the ralt_switch symbol defined in level3). To have all 8 keysyms available you should configure the _(intl)_ variant of the keyboard from xorg.conf or add, using us layout as an example, `setxkbmap -layout 'us(intl)'` before calling xmodmap.
+Note that xmodmap is influenced by xkbd settings, so all eight keysym are available for the us(intl) xkbd layout but not for the default us (it is missing the ralt_switch symbol defined in level3). To have all 8 keysyms available you should configure the *(intl)* variant of the keyboard from xorg.conf or add, using us layout as an example, `setxkbmap -layout 'us(intl)'` before calling xmodmap.
 
 ## Custom table
 
@@ -92,7 +91,6 @@ $ xmodmap ~/.Xmodmap
 With [GDM](/index.php/GDM "GDM"), [XDM](/index.php/XDM "XDM"), [KDM](/index.php/KDM "KDM") or [LightDM](/index.php/LightDM "LightDM") there is no need to source `~/.Xmodmap`. For [startx](/index.php/Startx "Startx"), use:
 
  `~/.xinitrc` 
-
 ```
 if [ -s ~/.Xmodmap ]; then
     xmodmap ~/.Xmodmap
@@ -113,12 +111,11 @@ $ xmodmap -e "keysym a = e E"
 
 ## Modifier keys
 
-_xmodmap_ can also be used to override [modifier keys](https://en.wikipedia.org/wiki/Modifier_key "wikipedia:Modifier key"), e.g. to swap `Control` and `Super` (the [Windows keys](https://en.wikipedia.org/wiki/Windows_key "wikipedia:Windows key")).
+*xmodmap* can also be used to override [modifier keys](https://en.wikipedia.org/wiki/Modifier_key "wikipedia:Modifier key"), e.g. to swap `Control` and `Super` (the [Windows keys](https://en.wikipedia.org/wiki/Windows_key "wikipedia:Windows key")).
 
-Before assignment the modifier keys need to be empty. `!` is a comment, so only the modifiers `Control` and `Mod4` get cleared in the following example. Then the _keysyms_ `Control_L`, `Control_R`, `Super_L` and `Super_R` are assigned to the opposite modifier. Assigning both left and right to the same modifier means that both keys are treated the same way.
+Before assignment the modifier keys need to be empty. `!` is a comment, so only the modifiers `Control` and `Mod4` get cleared in the following example. Then the *keysyms* `Control_L`, `Control_R`, `Super_L` and `Super_R` are assigned to the opposite modifier. Assigning both left and right to the same modifier means that both keys are treated the same way.
 
  `~/.Xmodmap` 
-
 ```
 [...]
 !clear Shift
@@ -144,7 +141,6 @@ add Mod4    = Control_L Control_R
 The following example modifies `CapsLock` to `Control`, and `Shift+CapsLock` to `CapsLock`:
 
  `~/.Xmodmap` 
-
 ```
 clear lock
 clear control
@@ -154,11 +150,11 @@ keycode 66 = Control_L Caps_Lock NoSymbol NoSymbol
 
 ## Reverse scrolling
 
-The [natural scrolling](http://who-t.blogspot.com/2011/09/natural-scrolling-in-synaptics-driver.html) feature available in OS X Lion (mimicking smartphone or tablet scrolling) can be [replicated](https://bbs.archlinux.org/viewtopic.php?id=126258) with _xmodmap_. Since the synaptics driver uses the buttons 4/5/6/7 for up/down/left/right scrolling, you simply need to swap the order of how the buttons are declared in `~/.Xmodmap`:
+The [natural scrolling](http://who-t.blogspot.com/2011/09/natural-scrolling-in-synaptics-driver.html) feature available in OS X Lion (mimicking smartphone or tablet scrolling) can be [replicated](https://bbs.archlinux.org/viewtopic.php?id=126258) with *xmodmap*. Since the synaptics driver uses the buttons 4/5/6/7 for up/down/left/right scrolling, you simply need to swap the order of how the buttons are declared in `~/.Xmodmap`:
 
  `~/.Xmodmap`  `pointer = 1 2 3 **5 4** 7 6 8 9 10 11 12` 
 
-Then update _xmodmap_:
+Then update *xmodmap*:
 
 ```
 $ xmodmap ~/.Xmodmap
@@ -170,7 +166,6 @@ $ xmodmap ~/.Xmodmap
 ### Spanish
 
  `~/.Xmodmap` 
-
 ```
 keycode  24 = a A aacute Aacute ae AE ae
 keycode  26 = e E eacute Eacute EuroSign cent EuroSign
@@ -190,7 +185,6 @@ keycode 64 = Mode_switch
 Laptop users may prefer having `CapsLock` as `Control`. The `Left Hyper` key can be used as a modifier.
 
  `~/.Xmodmap` 
-
 ```
 clear      lock 
 clear   control
@@ -215,7 +209,6 @@ add        mod5 = Mode_switch ISO_Level3_Shift
 Should work fine for layouts similar to Croatian as well.
 
  `~/.Xmodmap` 
-
 ```
 keycode 10 = exclam 1 1 exclam asciitilde dead_tilde asciitilde
 keycode 11 = quotedbl 2 2 quotedbl dead_caron caron dead_caron

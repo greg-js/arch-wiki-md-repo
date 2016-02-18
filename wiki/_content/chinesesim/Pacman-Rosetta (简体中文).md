@@ -35,7 +35,7 @@ modify IgnorePkg array | yum.conf <--”exclude” option (add/amend) | echo "$P
 | 撤销特定改动 | N/A | yum history undo | n/a |
 | 明示要求将之前安装的某包作为依赖 | pacman -D --asexplicit | aptitude unmarkauto | emerge --select |
 | 将某包作为依赖安装且不标记为明确要求安装 | pacman -S --asdeps | emerge -1 |
-| _**Package information management**_ |
+| ***Package information management*** |
 | Get a dump of the whole system information - Prints, Saves or similar the current state of the package management system. Preferred output is text or XML. (Note: Why either-or here? No tool offers the option to choose the output format.) | (see /var/lib/pacman/local) | (see /var/lib/rpm/Packages) | apt-cache stats | n/a | emerge --info |
 | Show all or most information about a package. The tools' verbosity for the default command vary. But with options, the tools are on par with each other. | pacman -[S|Q]i | yum list or info | apt-cache show / apt-cache policy | zypper info zypper if | emerge -S; emerge -pv; eix |
 | Search for package(s) by searching the expression in name, description, short description. What exact fields are being searched by default varies in each tool. Mostly options bring tools on par. | pacman -Ss | yum search | apt-cache search | zypper search zypper se [-s] | emerge -S |
@@ -74,12 +74,12 @@ remove offending line |
 | Prints a list of all installation sources including important information like URI, alias etc. | cat /etc/pacman.d/mirrorlist | cat /etc/yum.repos.d/* | zypper service-list | layman -l |
 | Disable an installation source for an operation | yum --disablerepo=${REPO} | emerge package::repo-to-use |
 | Download packages from a different version of the distribution than the one installed. | yum --releasever=${VERSION} | apt-get install -t release package/ apt-get install package/release (deps not covered) | echo "category/package ~amd64" >> /etc/portage/package.keywords && emerge package |
-| _**Other commands**_ |
+| ***Other commands*** |
 | Start a shell to enter multiple commands in one session | yum shell | apt-config shell | zypper shell |
-| _**Package Verification**_ |
+| ***Package Verification*** |
 | Single package | pacman -Qk[k] <package> | rpm -V <package> | debsums | rpm -V <package> | equery check |
 | All packages | pacman -Qk[k] | rpm -Va | debsums | rpm -Va | equery check |
-| _**Package Querying**_ |
+| ***Package Querying*** |
 | List installed local packages along with version | pacman -Q | rpm -qa | dpkg -l | emerge -e world |
 | Display local package information: Name, version, description, etc. | pacman -Qi | rpm -qi | dpkg -s | emerge -pv and emerge -S |
 | Display remote package information: Name, version, description, etc. | pacman -Si | yum info | apt-cache show / aptitude show | emerge -pv and emerge -S |
@@ -90,7 +90,7 @@ remove offending line |
 | Show the changelog of a package | pacman -Qc | rpm -q --changelog | apt-get changelog | equery changes -f |
 | Search locally installed package for names or descriptions | pacman -Qs | aptitude search '~i(~nexpr|~dexpr)' | eix -S -I |
 | List packages not required by any other package | pacman -Qt | package-cleanup --all --leaves | deborphan -an |
-| _**Building Packages**_ |
+| ***Building Packages*** |
 | Build a package | makepkg -s | rpmbuild -ba (normal) mock (in chroot) | debuild | rpmbuild -ba | ebuild; quickpkg |
 | Check for possible packaging issues | rpmlint | lintian | repoman |
 | List the contents of a package file | pacman -Qpl <file> | rpmls rpm -qpl | dpkg -c | rpm -qpl |

@@ -30,7 +30,6 @@ $ nano ~/.bashrc
 *   Agrega el siguiente indicador verde para usuarios comunes:
 
  `[chiri@zetsubou ~]$ _` 
-
 ```
 PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
 
@@ -46,7 +45,6 @@ PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
 *   Asigna un indicador rojo para root:
 
  `[root@zetsubou ~]# _` 
-
 ```
 PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '
 
@@ -161,7 +159,7 @@ También puede ser deseable editar el archivo `/root/.bashrc` con un conjunto de
 Diferentes opciones pueden ser personalizadas con la secuencia de escape de la forma `\x` (extraidas de las páginas del manual de bash):
 
 ```
-     Bash permite agregar estas cadenas al indicador mediante la inserción de _caracteres especiales escapados con diagonal invertida_ que se decodifican como sigue:
+     Bash permite agregar estas cadenas al indicador mediante la inserción de *caracteres especiales escapados con diagonal invertida* que se decodifican como sigue:
 
 ```
 
@@ -176,7 +174,8 @@ Diferentes opciones pueden ser personalizadas con la secuencia de escape de la f
             \H     el nombre del la máquina completo (FQDN)
             \j     el número de trabajos actualmente gestionados por el interprete
             \l     el nombre base del dispositivo de terminal del interprete
-            \n     carácter de nueva línea
+            
+     carácter de nueva línea
             \r     retorno de carro
             \s     el nombre del interprete, el nombre base de $0 (el fragmento que sigue a la última diagonal)
             \t     la hora actual en formato 24-horas HH:MM:SS
@@ -191,7 +190,8 @@ Diferentes opciones pueden ser personalizadas con la secuencia de escape de la f
             \!     el número del comando actual en el histórico
             \#     el número de comando del comando actual
             \$     si el UID efectivo es 0, un #; en otro caso, $
-            \nnn   el caracter correspondiente al número en octal nnn
+            
+nn   el caracter correspondiente al número en octal nnn
             \\     una diagonal invertida
             \[     inicio de una secuencia de caracteres no imprimibles que pueden usarse para ingresar una secuencia de control
                    en el indicador de la terminal

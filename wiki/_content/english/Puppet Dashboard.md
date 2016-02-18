@@ -2,7 +2,7 @@
 
 From the [Puppet Dashboard website](http://projects.puppetlabs.com/projects/dashboard/):
 
-	_The Puppet Dashboard is a web interface and reporting tool for your Puppet installation. Dashboard facilitates management and configuration tasks, provides a quick visual snapshot of important system information, and delivers valuable reports._
+	*The Puppet Dashboard is a web interface and reporting tool for your Puppet installation. Dashboard facilitates management and configuration tasks, provides a quick visual snapshot of important system information, and delivers valuable reports.*
 
 ## Contents
 

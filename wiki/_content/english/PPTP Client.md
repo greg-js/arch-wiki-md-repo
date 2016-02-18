@@ -4,7 +4,7 @@ pptpclient is a program implementing the Microsoft PPTP protocol. As such, it ca
 
 *   [1 Installing PPTP Client](#Installing_PPTP_Client)
 *   [2 Configure](#Configure)
-    *   [2.1 Configure using _pptpsetup_](#Configure_using_pptpsetup)
+    *   [2.1 Configure using *pptpsetup*](#Configure_using_pptpsetup)
     *   [2.2 Configure by hand](#Configure_by_hand)
         *   [2.2.1 Edit The options File](#Edit_The_options_File)
         *   [2.2.2 Edit The chap-secrets File](#Edit_The_chap-secrets_File)
@@ -23,7 +23,7 @@ pptpclient is a program implementing the Microsoft PPTP protocol. As such, it ca
 
 ## Installing PPTP Client
 
-Install [pptpclient](https://www.archlinux.org/packages/?name=pptpclient) from the [official repositories](/index.php/Official_repositories "Official repositories").
+Install the [pptpclient](https://www.archlinux.org/packages/?name=pptpclient) package.
 
 ## Configure
 
@@ -36,9 +36,9 @@ To configure pptpclient you will need to collect the following information from 
 
 You must also decide what to name the tunnel.
 
-### Configure using _pptpsetup_
+### Configure using *pptpsetup*
 
-You can configure and delete tunnels by running the _pptpsetup_ tool as root. For example:
+You can configure and delete tunnels by running the *pptpsetup* tool as root. For example:
 
 ```
 pptpsetup --create my_tunnel --server vpn.example.com --username alice --password foo --encrypt
@@ -50,14 +50,13 @@ You can [#Connect](#Connect) after a tunnel has been configured.
 
 ### Configure by hand
 
-You can also edit all necessary configuration files by hand, rather than relying on _pptpsetup_.
+You can also edit all necessary configuration files by hand, rather than relying on *pptpsetup*.
 
 #### Edit The options File
 
 The `/etc/ppp/options` file sets security options for your VPN client. If you have trouble connecting to your network, you may need to relax the options. At a minimum, this file should contain the options `lock`, `noauth`, `nobsdcomp` and `nodeflate`.
 
  `/etc/ppp/options` 
-
 ```
 # Lock the port
 lock
@@ -98,7 +97,6 @@ Replace each bracketed term with an appropriate value. Omit `<DOMAIN>\\` if your
 The `/etc/ppp/peers/<TUNNEL>` file contains tunnel-specific configuration options. `<TUNNEL>` is the name you wish to use for your VPN connection. The file should look like this:
 
  `/etc/ppp/peers/<TUNNEL>` 
-
 ```
 pty "pptp <SERVER> --nolaunchpppd"
 name <DOMAIN>\\<USERNAME>
@@ -157,7 +155,7 @@ This will route all the traffic with a destination of 192.168.10.* through your 
 
 #### Route All Traffic
 
-It may be desirable to route _all_ traffic through your VPN connection. You can do this by running:
+It may be desirable to route *all* traffic through your VPN connection. You can do this by running:
 
 ```
 # ip route add default dev ppp0
@@ -169,9 +167,7 @@ It may be desirable to route _all_ traffic through your VPN connection. You can 
 #### Route All Traffic by /etc/ppp/ip-up.d
 
 **Note:** All scripts in `/etc/ppp/ip-up.d/` will called when the VPN connection is established.
-
  `/etc/ppp/ip-up.d/01-routes.sh` 
-
 ```
 #!/bin/bash
 
@@ -193,9 +189,7 @@ Make sure the script is executable.
 #### Split Tunneling based on port by /etc/ppp/ip-up.d
 
 **Note:** All scripts in `/etc/ppp/ip-up.d/` will called when the VPN connection is established.
-
  `/etc/ppp/ip-up.d/01-routebyport.sh` 
-
 ```
 #!/bin/bash
 
@@ -249,7 +243,7 @@ You can create a simple daemon for your VPN connection by creating an appropriat
 
 **Note:** As always, `<TUNNEL>` is the name of your tunnel. `<ROUTING COMMAND>` is the command you use to add the appropriate route to the routing table.
 
-**Note:** The _stop_ functionality of this script **will not work** if the `updetach` and `persist` arguments are passed to `/usr/bin/pon` when pon is started. The reason for this is that the `/usr/bin/poff` script contains a bug when determining the PID of the specified `pppd` process if arguments were passed to `pon`.
+**Note:** The *stop* functionality of this script **will not work** if the `updetach` and `persist` arguments are passed to `/usr/bin/pon` when pon is started. The reason for this is that the `/usr/bin/poff` script contains a bug when determining the PID of the specified `pppd` process if arguments were passed to `pon`.
 
 To resolve this issue, you can patch your `/usr/bin/poff` file by making the following changes on line 93:
 
@@ -259,7 +253,6 @@ To resolve this issue, you can patch your `/usr/bin/poff` file by making the fol
 ```
 
  `/etc/rc.d/name-of-your-vpn` 
-
 ```
 #!/bin/bash
 

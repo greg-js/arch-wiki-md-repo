@@ -22,7 +22,7 @@
 
 Može dohvatiti službeni instalacijski medij Arch Linuxa [ovdje](https://archlinux.org/download/).
 
-*   I jezgrena (lokalna, Core) i mrežna (Netinstall) CD-slika pruža samo pakete potrebne za stvaranje **osnovnog sustava Arch Linux**. _Primijeti da osnovni sustav ne sadrži grafičko sučelje, već se sastoji samo od niza GNU-alata (kompilator, asembler, linker, biblioteke, ljuska i korisnički programi), Linux-kernela, pacmana (Archevog upravitelja paketima) i nekoliko dodatnih biblioteka i modula._
+*   I jezgrena (lokalna, Core) i mrežna (Netinstall) CD-slika pruža samo pakete potrebne za stvaranje **osnovnog sustava Arch Linux**. *Primijeti da osnovni sustav ne sadrži grafičko sučelje, već se sastoji samo od niza GNU-alata (kompilator, asembler, linker, biblioteke, ljuska i korisnički programi), Linux-kernela, pacmana (Archevog upravitelja paketima) i nekoliko dodatnih biblioteka i modula.*
 *   Jezgrene slike se mogu koristiti i za lokalnu i mrežnu instalaciju.
 *   Mrežne slike su manje i ne sadrže ikakve pakete; cijeli se sustav dohvaća putem Interneta.
 *   [Često postavljena pitanja o Arch64](/index.php?title=Arch64_FAQ_(Hrvatski)&action=edit&redlink=1 "Arch64 FAQ (Hrvatski) (page does not exist)") ti mogu pomoći da se odlučiš između 32 i 64-bitnih verzija. CD s dualnom arhitekturom sadrži pakete za obje arhitekture tako da ga možeš koristiti za instalaciju Archa i na 32 i na 64-bitnim računalima.
@@ -64,7 +64,6 @@ Vraćeni md5sum bi trebao biti identičan [md5sumi skinute archlinux slike (2011
 Zapiši ISO na uređaj:
 
  `$ [sudo] dd if=archlinux-2011.08.19-core-i686.iso of=/dev/sdc` 
-
 ```
  744973+0 records in
  744973+0 records out
@@ -75,7 +74,6 @@ Zapiši ISO na uređaj:
 Provjeri je li sve uspješno zapisano:
 
  `$ [sudo] dd if=/dev/sdc count=744973 status=noxfer | md5sum` 
-
 ```
  4850d533ddd343b80507543536258229  -
  744973+0 records in
@@ -98,7 +96,7 @@ Ubaci pripremljeni CD ili flash-medij i bootaj s njega. Možda ćeš trebati pro
 
 #### Dizanje operacijskog sustava
 
-Odaberi "Boot Arch Linux" iz glavnog menija i pritisni [Enter] kako bi instalacija započela. Sustav će sada učitati i prikazati naredbeni redak ljuske. Automatski ćeš biti u ulozi administratorskog korisnika _root_.
+Odaberi "Boot Arch Linux" iz glavnog menija i pritisni [Enter] kako bi instalacija započela. Sustav će sada učitati i prikazati naredbeni redak ljuske. Automatski ćeš biti u ulozi administratorskog korisnika *root*.
 
 **Note:** Korisnici koji žele instalaciju Arch Linuxa napraviti putem SSH-konekcije s udaljenog računala sada mogu napraviti neke male izmjene kako bi omogućili direktne SSH-konekcije u interaktivno CD-okruženje. Ako te to zanima, pogledaj [ovaj članak](/index.php?title=Install_from_SSH_(Hrvatski)&action=edit&redlink=1 "Install from SSH (Hrvatski) (page does not exist)").
 
@@ -128,9 +126,9 @@ Ako želiš koristiti hrvatski raspored tipaka (ili neki drugi koji nije SAD-ov)
 
 ili možeš koristiti loadkey naredbu:
 
- `# loadkeys _raspored_` 
+ `# loadkeys *raspored*` 
 
-gdje je _raspored_ raspored tvoje tipkovnice poput `hr` ili `be-latin1`.
+gdje je *raspored* raspored tvoje tipkovnice poput `hr` ili `be-latin1`.
 
 #### Dokumentacija
 

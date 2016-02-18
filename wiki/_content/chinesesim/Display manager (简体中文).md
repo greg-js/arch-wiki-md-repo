@@ -25,7 +25,7 @@
 ### 控制台
 
 *   [CDM](/index.php/CDM "CDM"): 控制台显示管理器 (available in the [AUR](/index.php/AUR "AUR"): [cdm-git](https://aur.archlinux.org/packages/cdm-git/))
-*   **[Console TDM](/index.php/Console_TDM "Console TDM")** — Extension for _xinit_ written in pure Bash.
+*   **[Console TDM](/index.php/Console_TDM "Console TDM")** — Extension for *xinit* written in pure Bash.
 
 	[http://code.google.com/p/t-display-manager/](http://code.google.com/p/t-display-manager/) || [console-tdm-git](https://aur.archlinux.org/packages/console-tdm-git/)
 
@@ -84,7 +84,7 @@ $ loginctl show-session $XDG_SESSION_ID
 
 多数显示管理器会读取 `/usr/share/xsessions/` 目录已获取可用的会话列表，此目录中包含各个 DM/WM 的标准 [桌面文件](http://standards.freedesktop.org/desktop-entry-spec/latest/)。
 
-要新建会话，可以在 `/usr/share/xsessions/` 中新建 _.desktop_ 后缀的文件，文件示例：
+要新建会话，可以在 `/usr/share/xsessions/` 中新建 *.desktop* 后缀的文件，文件示例：
 
 ```
 [Desktop Entry]
@@ -133,11 +133,11 @@ For display manager's that use [AccountsService](http://freedesktop.org/wiki/Sof
 
 ```
 [User]
-Language=_your_locale_
+Language=*your_locale*
 
 ```
 
-where _your_locale_ is a value such as `en_GB.UTF-8`.
+where *your_locale* is a value such as `en_GB.UTF-8`.
 
 Restart your display manager for the changes to take effect.
 
@@ -145,7 +145,7 @@ Restart your display manager for the changes to take effect.
 
 ### 不兼容在systemd
 
-_Affected DMs: Entrance, MDM_
+*Affected DMs: Entrance, MDM*
 
 Some display managers are not fully compatible with systemd, because they reuse the PAM session process. It causes various problems on second login, e.g.:
 

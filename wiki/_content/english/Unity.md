@@ -37,7 +37,7 @@ Additional packages are available from [Unity-for-Arch-Extra](/index.php/Unoffic
 
 ### From source
 
-All of the PKGBUILDs can be browsed on the [GitHub repository](https://github.com/chenxiaolong/Unity-for-Arch), where [Unity-For-Arch](https://github.com/chenxiaolong/Unity-for-Arch) provides a minimal working Unity shell, and [Unity-For-Arch-Extra](https://github.com/chenxiaolong/Unity-for-Arch-Extra) provides some additional applications, including [lightdm-ubuntu](https://aur.archlinux.org/packages/lightdm-ubuntu/) ([LightDM](/index.php/LightDM "LightDM") with Ubuntu patches), [ubuntu-themes](https://aur.archlinux.org/packages/ubuntu-themes/), _unity-tweak-tool_ (a popular Unity configuration tool) and more.
+All of the PKGBUILDs can be browsed on the [GitHub repository](https://github.com/chenxiaolong/Unity-for-Arch), where [Unity-For-Arch](https://github.com/chenxiaolong/Unity-for-Arch) provides a minimal working Unity shell, and [Unity-For-Arch-Extra](https://github.com/chenxiaolong/Unity-for-Arch-Extra) provides some additional applications, including [lightdm-ubuntu](https://aur.archlinux.org/packages/lightdm-ubuntu/) ([LightDM](/index.php/LightDM "LightDM") with Ubuntu patches), [ubuntu-themes](https://aur.archlinux.org/packages/ubuntu-themes/), *unity-tweak-tool* (a popular Unity configuration tool) and more.
 
 [Install](/index.php/Install "Install") [git](https://www.archlinux.org/packages/?name=git) and navigate to a directory in which the sources can be built, then do:
 
@@ -49,7 +49,7 @@ $ git clone [https://github.com/chenxiaolong/Unity-for-Arch.git](https://github.
 Open the `README` and build the packages according to the ordered list (see: [Makepkg#Usage](/index.php/Makepkg#Usage "Makepkg")):
 
 ```
-$ cd _<package name>_
+$ cd *<package name>*
 $ makepkg -sci
 
 ```
@@ -72,7 +72,7 @@ $ ./"What_can_I_update?.py"
 
 ```
 
-**Note:** Sometimes, if a certain crucial package is updated, those depending on it will also need to be recompiled. For example, if _unity_ is updated, _nux_ might need to be re-compiled as well.
+**Note:** Sometimes, if a certain crucial package is updated, those depending on it will also need to be recompiled. For example, if *unity* is updated, *nux* might need to be re-compiled as well.
 
 ### Standard and extended functionality
 
@@ -80,13 +80,13 @@ The following section lists packages that, whilst not required for the Unity she
 
 | Functionality | Package(s) |
 | Notifications | [notify-osd](https://www.archlinux.org/packages/?name=notify-osd) |
-| Screen locking | _gnome-screensaver-ubuntu_ |
+| Screen locking | *gnome-screensaver-ubuntu* |
 | Online accounts | [signon-keyring-extension](https://aur.archlinux.org/packages/signon-keyring-extension/), [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring), [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/) |
 | SSH | [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) |
 | HUD & menubar integration | [appmenu-qt](https://www.archlinux.org/packages/?name=appmenu-qt), [firefox-ubuntu](https://aur.archlinux.org/packages/firefox-ubuntu/), [thunderbird-ubuntu](https://aur.archlinux.org/packages/thunderbird-ubuntu/) |
-| File and Folder lens | _zeitgeist-ubuntu_ |
-| Configuration | [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool), _unity-tweak-tool_ |
-| Pidgin integration | _pidgin-indicator_ |
+| File and Folder lens | *zeitgeist-ubuntu* |
+| Configuration | [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool), *unity-tweak-tool* |
+| Pidgin integration | *pidgin-indicator* |
 
 ## Tips and tricks
 
@@ -104,7 +104,7 @@ See [GNOME#Startup applications](/index.php/GNOME#Startup_applications "GNOME").
 
 Other issues that this fix addresses:
 
-*   Title bar at the top doesn't display _Arch Linux Desktop_
+*   Title bar at the top doesn't display *Arch Linux Desktop*
 *   Shortcut keys, such as `Super` and `Alt` do not work when there are no active windows
 
 Execute the following: `gsettings set org.gnome.desktop.background show-desktop-icons true`
@@ -120,7 +120,6 @@ If Unity still is not working, report an issue on [github](https://github.com/ch
 This affects the unity default theme and light themes. Use:
 
  `~/.config/gtk3.0/gtk.css` 
-
 ```
 GtkLabel {
   background-color: @transparent;
@@ -130,13 +129,13 @@ GtkLabel {
 
 ### Workspace switcher widget disappeared
 
-In _ccsm_ (the Compiz Configuration Settings Manager), ensure that the following option is checked: _Settings > Appearance > Behaviour > Enable workspaces_.
+In *ccsm* (the Compiz Configuration Settings Manager), ensure that the following option is checked: *Settings > Appearance > Behaviour > Enable workspaces*.
 
 ### No skype or other applications appear in indicator tray
 
-Using Skype as an example; Append _Skype_ to the `systray-whitelist` list in `com.canonical.Unity.Panel` using [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor) or the gsettings command. Reboot or logout afterwards.
+Using Skype as an example; Append *Skype* to the `systray-whitelist` list in `com.canonical.Unity.Panel` using [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor) or the gsettings command. Reboot or logout afterwards.
 
-Alternatively, replace the contents of `systray-whitelist` with _all_.
+Alternatively, replace the contents of `systray-whitelist` with *all*.
 
 ## Known issues
 
@@ -144,11 +143,11 @@ See [Github Issues](https://github.com/chenxiaolong/Unity-for-Arch/issues) for k
 
 ### Indicator-messages does not work properly
 
-Pidgin and a number of other applications can not be integrated into _indicator-messages_ due to its API changes. Users will have to wait for upstream to release software updates for the affected applications.
+Pidgin and a number of other applications can not be integrated into *indicator-messages* due to its API changes. Users will have to wait for upstream to release software updates for the affected applications.
 
 ### Pidgin-libnotify-ubuntu has unresolvable dependency
 
-As of February 2015, the required package _perlxml_ is unavailable, try _pidgin-indicator_.
+As of February 2015, the required package *perlxml* is unavailable, try *pidgin-indicator*.
 
 ## See also
 

@@ -46,7 +46,6 @@ The following script is useful for file browsers. It will display your selected 
 The script assumes the first argument is the filename.
 
  `feh_browser.sh` 
-
 ```
 #!/bin/bash
 
@@ -83,7 +82,6 @@ Invoke the script with the selected image's path, followed by any additional arg
 A simple but less versatile alternative is
 
  `feh_browser.sh` 
-
 ```
 #! /bin/sh
 feh -. "$(dirname "$1")" --start-at "$1"
@@ -145,7 +143,6 @@ To set a different random wallpaper from `~/.wallpaper` each session, add the fo
 Another way to set a random wallpaper on each x.org session is to edit your `.fehbg` as following.
 
  `$HOME/.fehbg` 
-
 ```
  feh --bg-max --randomize --no-fehbg ~/.wallpaper/* 
 
@@ -164,7 +161,6 @@ and call it from `~/.xinitrc`. You can also put the source directly in `~/.xinit
 Change the `~/.wallpaper` directory to fit your setup and the `15m` delay as you please (see `man sleep` for options).
 
  `wallpaper.sh` 
-
 ```
 #!/bin/sh
 
@@ -181,7 +177,6 @@ You may have to change `find ~/.wallpaper` to `find ~/.wallpaper/` to make the a
 This version does not fork as much, but this version does not recurse through directories:
 
  `wallpaper.sh` 
-
 ```
 #!/bin/bash
 
@@ -207,7 +202,6 @@ done
 This script replace the call to **feh** for add a wallpaper on systems with dual screen nvidia twinview (for example).
 
  `wallpaper.sh` 
-
 ```
 #!/bin/sh
 exec feh --bg-max --no-xinerama "$@"
@@ -227,12 +221,11 @@ Just do `$ crontab -e` and add:
 
 #### Using systemd user session
 
-**Note:** This is useful **only** if you are using _systemd user session_. Read [Systemd/User](/index.php/Systemd/User "Systemd/User") for more details.
+**Note:** This is useful **only** if you are using *systemd user session*. Read [Systemd/User](/index.php/Systemd/User "Systemd/User") for more details.
 
 Create the unit service file:
 
  `$HOME/.config/systemd/user/feh-wallpaper.service` 
-
 ```
 [Unit]
 Description=Random wallpaper with feh
@@ -250,13 +243,12 @@ WantedBy=default.target
 Now create the timer file. Change the time as necessary. In this example is `15 seconds`.
 
  `$HOME/.config/systemd/user/feh-wallpaper.timer` 
-
 ```
 [Unit]
 Description=Random wallpaper with feh
 
 [Timer]
-OnUnitActiveSec=_15s_
+OnUnitActiveSec=*15s*
 Unit=feh-wallpaper.service
 
 [Install]
@@ -267,15 +259,14 @@ WantedBy=default.target
 In this example the configuration is one hidden file on the home directory with the path of the directory where the images are stored
 
  `$HOME/.wallpaper` 
-
 ```
-WALLPATH=_/home/user/.wallpaper/_
+WALLPATH=*/home/user/.wallpaper/*
 
 ```
 
 To activate the `feh-wallpaper.timer` see [Systemd/Timers#Management](/index.php/Systemd/Timers#Management "Systemd/Timers").
 
-**Note:** Remember that under _systemd user session_, you should use the `--user` flag on `systemctl`.
+**Note:** Remember that under *systemd user session*, you should use the `--user` flag on `systemctl`.
 
 ## See also
 

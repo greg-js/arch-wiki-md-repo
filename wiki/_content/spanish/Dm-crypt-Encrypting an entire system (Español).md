@@ -2,7 +2,7 @@
 
 Volver a [dm-crypt (Español)](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)").
 
-Los siguientes son ejemplos de escenarios comunes en el cifrado completo de un sistema con _dm-crypt_. Se explican todas las adaptaciones que se necesitan hacer al [proceso de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)"). Todas las herramientas necesarias para ello están presentes en la [imagen de instalación](https://www.archlinux.org/download/).
+Los siguientes son ejemplos de escenarios comunes en el cifrado completo de un sistema con *dm-crypt*. Se explican todas las adaptaciones que se necesitan hacer al [proceso de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)"). Todas las herramientas necesarias para ello están presentes en la [imagen de instalación](https://www.archlinux.org/download/).
 
 ## Contents
 
@@ -46,7 +46,7 @@ Los siguientes son ejemplos de escenarios comunes en el cifrado completo de un s
 
 ## Descripción general
 
-Asegurar un sistema de archivos root es donde _dm-crypt_ sobresale, en cuanto a características y rendimiento. Cuando el sistema de archivos de un sistema (root) está en un dispositivo dm-crypt, prácticamente todos los archivos del sistema están cifrados. A diferencia del cifrado de forma selectiva de los sistemas de archivos no root, un sistema de archivos root cifrado puede ocultar información, tales como qué programas se instalan, los nombres de los usuarios y todas sus cuentas, y los vectores de vuelcos de datos comunes, tales como [mlocate](/index.php/Mlocate "Mlocate") y `/var/log/`. Además, un sistema de archivos root cifrado hace que la manipulación del sistema sea mucho más difícil, al estar todo cifrado, con las excepciones del [gestor de arranque](/index.php/Boot_loader "Boot loader") y (normalmente) el kérnel.
+Asegurar un sistema de archivos root es donde *dm-crypt* sobresale, en cuanto a características y rendimiento. Cuando el sistema de archivos de un sistema (root) está en un dispositivo dm-crypt, prácticamente todos los archivos del sistema están cifrados. A diferencia del cifrado de forma selectiva de los sistemas de archivos no root, un sistema de archivos root cifrado puede ocultar información, tales como qué programas se instalan, los nombres de los usuarios y todas sus cuentas, y los vectores de vuelcos de datos comunes, tales como [mlocate](/index.php/Mlocate "Mlocate") y `/var/log/`. Además, un sistema de archivos root cifrado hace que la manipulación del sistema sea mucho más difícil, al estar todo cifrado, con las excepciones del [gestor de arranque](/index.php/Boot_loader "Boot loader") y (normalmente) el kérnel.
 
 En la siguiente tabla se ilustran las ventajas de todos los escenarios posibles, diferenciando los pros y contras de cada uno:
 
@@ -140,7 +140,7 @@ Si quiere avanzar en la protección de los datos del sistema no solo contra el r
 
 ## Esquema de particionado simple con LUKS
 
-Este ejemplo explica cómo cifrar un sistema completo con _dmcrypt_ + LUKS en un esquema de particionado simple::
+Este ejemplo explica cómo cifrar un sistema completo con *dmcrypt* + LUKS en un esquema de particionado simple::
 
 ```
 +----------------------+--------------------------+------------------------------+
@@ -161,7 +161,7 @@ A continuación, cree las particiones necesarias, al menos una para `/` (por eje
 
 ### Preparar las particiones que no son boot
 
-Las siguientes órdenes crean y montan la partición root cifrada. Se corresponden con el proceso descrito con detalle en [Dm-crypt/Encrypting a non-root file system#Partition](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system") (que, a pesar del título, _se puede_ aplicar a particiones root, siempre y cuando [mkinitcpio](#Configuring_mkinitcpio) y el [gestor de arranque](#Configuring_the_boot_loader) estén configurados correctamente). Si desea utilizar determinadas opciones de cifrado no predeterminadas (por ejemplo, respecto al algoritmo de cifrado, longitud de la clave, etc.), consulte [opciones de cifrado](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") antes de ejecutar la primera orden:
+Las siguientes órdenes crean y montan la partición root cifrada. Se corresponden con el proceso descrito con detalle en [Dm-crypt/Encrypting a non-root file system#Partition](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system") (que, a pesar del título, *se puede* aplicar a particiones root, siempre y cuando [mkinitcpio](#Configuring_mkinitcpio) y el [gestor de arranque](#Configuring_the_boot_loader) estén configurados correctamente). Si desea utilizar determinadas opciones de cifrado no predeterminadas (por ejemplo, respecto al algoritmo de cifrado, longitud de la clave, etc.), consulte [opciones de cifrado](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") antes de ejecutar la primera orden:
 
 ```
 # cryptsetup -y -v luksFormat /dev/sdaX
@@ -181,7 +181,7 @@ Compruebe que el mapeado funciona según lo previsto:
 
 ```
 
-Si ha creado particiones separadas (por ejemplo, `/home`), estos pasos tienen que ser adaptados y repetidos para todas ellas, a _excepción_ de `/boot`. Véase [Dm-crypt/Encrypting_a_non-root_file_system#Automated_unlocking_and_mounting](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Automated_unlocking_and_mounting "Dm-crypt/Encrypting a non-root file system") para saber cómo manejar particiones adicionales en el arranque.
+Si ha creado particiones separadas (por ejemplo, `/home`), estos pasos tienen que ser adaptados y repetidos para todas ellas, a *excepción* de `/boot`. Véase [Dm-crypt/Encrypting_a_non-root_file_system#Automated_unlocking_and_mounting](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Automated_unlocking_and_mounting "Dm-crypt/Encrypting a non-root file system") para saber cómo manejar particiones adicionales en el arranque.
 
 Tenga en cuenta que cada dispositivo de bloque requiere su propia contraseña. Esto puede ser un inconveniente, porque da lugar a una frase de acceso separada para cada uno, que hay que introducir durante el inicio. Una alternativa es utilizar un archivo de claves almacenada en la partición del sistema para desbloquear la partición separada mediante `crypttab`. Vease [Dm-crypt/Device encryption#Using LUKS to Format Partitions_with a Keyfile](/index.php/Dm-crypt/Device_encryption#Using_LUKS_to_Format_Partitions_with_a_Keyfile "Dm-crypt/Device encryption") para obtener instrucciones.
 
@@ -258,7 +258,7 @@ Cree otra partición del tipo `8E00`, en la que luego residirá el contenedor ci
 Cree un contenedor cifrado con LUKS en la partición del «sistema». Introduzca la contraseña elegida dos veces.
 
 ```
-# cryptsetup luksFormat /dev/_sdaX_
+# cryptsetup luksFormat /dev/*sdaX*
 
 ```
 
@@ -267,7 +267,7 @@ Para obtener más información sobre las opciones disponibles de cryptsetup vea 
 Abra el contenedor:
 
 ```
-# cryptsetup open --type luks /dev/_sdaX_ lvm
+# cryptsetup open --type luks /dev/*sdaX* lvm
 
 ```
 
@@ -324,7 +324,7 @@ El gestor de arranque carga el kérnel, [initramfs](/index.php/Initramfs "Initra
 Cree un sistema de archivos Ext2 en la partición destinada a `/boot`. Cualquier sistema de archivos que pueda ser leído por el gestor de arranque vale.
 
 ```
-# mkfs.ext2 /dev/_sdaY_
+# mkfs.ext2 /dev/*sdaY*
 
 ```
 
@@ -338,7 +338,7 @@ Cree el directorio `/mnt/boot`:
 Monte la partición para `/mnt/boot`:
 
 ```
-# mount /dev/_sdaY_ /mnt/boot
+# mount /dev/*sdaY* /mnt/boot
 
 ```
 
@@ -358,7 +358,7 @@ Véase [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_con
 Con el fin de desbloquear en el arranque la partición root cifrada, es necesario pasar los siguientes parámetros del kérnel al gestor de arranque:
 
 ```
-cryptdevice=/dev/_partición_:MyStorage root=/dev/mapper/MyStorage-rootvol
+cryptdevice=/dev/*partición*:MyStorage root=/dev/mapper/MyStorage-rootvol
 
 ```
 
@@ -435,7 +435,6 @@ Véase [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_co
 ### Configurar fstab y crypttab
 
  `/etc/fstab` 
-
 ```
  /dev/mapper/root        /       ext4            defaults        0       1
  /dev/sda1               /boot   ext4            defaults        0       2
@@ -446,7 +445,6 @@ Véase [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_co
 Las siguientes opciones de [crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration") volverán a cifrar los sistemas de archivos temporales en cada reinicio:
 
  `/etc/crypttab` 
-
 ```
  swap	/dev/lvm/swap	/dev/urandom	swap,cipher=aes-xts-plain64,size=256
  tmp	/dev/lvm/tmp	/dev/urandom	tmp,cipher=aes-xts-plain64,size=256
@@ -484,16 +482,16 @@ Si en el futuro desea ampliar el volumen lógico para `/home` (o cualquier otro 
 
 ## Plain dm-crypt
 
-Este escenario configura un sistema en un disco completo sobre dm-crypt con la modalidad de cifrado _plain_. Tenga en cuenta que para la mayoría de los casos al uso, los métodos que utilizan LUKS descritas anteriormente son las mejores opciones para el cifrado del sistema y las particiones cifradas. Características de LUKS como la gestión de claves con múltiples pass-phrases/key-files no están disponibles con la modalidad _plain_.
+Este escenario configura un sistema en un disco completo sobre dm-crypt con la modalidad de cifrado *plain*. Tenga en cuenta que para la mayoría de los casos al uso, los métodos que utilizan LUKS descritas anteriormente son las mejores opciones para el cifrado del sistema y las particiones cifradas. Características de LUKS como la gestión de claves con múltiples pass-phrases/key-files no están disponibles con la modalidad *plain*.
 
-La modalidad _plain_ de dm-crypt no requiere una cabecera en el disco cifrado: esto significa que un disco cifrado sin particionar será indistinguible de un disco lleno con datos aleatorios, que es el atributo deseado para este escenario. Véase también [Wikipedia:Deniable encryption](https://en.wikipedia.org/wiki/Deniable_encryption "wikipedia:Deniable encryption").
+La modalidad *plain* de dm-crypt no requiere una cabecera en el disco cifrado: esto significa que un disco cifrado sin particionar será indistinguible de un disco lleno con datos aleatorios, que es el atributo deseado para este escenario. Véase también [Wikipedia:Deniable encryption](https://en.wikipedia.org/wiki/Deniable_encryption "wikipedia:Deniable encryption").
 
-Los discos cifrados con dm-crypt _plain_ pueden ser más resistentes a los daños que los discos cifrados con LUKS, ya que no se basan en una clave maestra de cifrado la cual constituye un punto único de fallo si se daña. Sin embargo, utilizando el modo _plain_ también se requiere una configuración más manual de las opciones de cifrado para lograr la misma fuerza criptográfica. Véase también [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption").
+Los discos cifrados con dm-crypt *plain* pueden ser más resistentes a los daños que los discos cifrados con LUKS, ya que no se basan en una clave maestra de cifrado la cual constituye un punto único de fallo si se daña. Sin embargo, utilizando el modo *plain* también se requiere una configuración más manual de las opciones de cifrado para lograr la misma fuerza criptográfica. Véase también [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption").
 
-**Tip:** Si el cifrado sin cabeceras es su objetivo, pero no está seguro acerca de la falta de derivación de clave con el modo _plain_, entonces dispone de dos alternativas:
+**Tip:** Si el cifrado sin cabeceras es su objetivo, pero no está seguro acerca de la falta de derivación de clave con el modo *plain*, entonces dispone de dos alternativas:
 
 *   [tcplay](/index.php/Tcplay "Tcplay") que ofrece cifrado sin cabeceras, pero con la función PBKDF2, o
-*   la modalidad LUKS de dm-crypt utilizando la opción `--header` de _cryptsetup_. No se podrá utilizar el hook estándar _encrypt_, pero dicho hook [puede ser modificado](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_remote_LUKS_header "Dm-crypt/Specialties").
+*   la modalidad LUKS de dm-crypt utilizando la opción `--header` de *cryptsetup*. No se podrá utilizar el hook estándar *encrypt*, pero dicho hook [puede ser modificado](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_remote_LUKS_header "Dm-crypt/Specialties").
 
 El escenario utiliza una memoria USB para el dispositivo de arranque y otra para almacenar la clave de cifrado. El esquema de particionado del disco es:
 
@@ -510,7 +508,7 @@ El escenario utiliza una memoria USB para el dispositivo de arranque y otra para
 
 ```
 
-`/boot` y el gestor de arranque no pueden ser guardados en la unidad cifrada, a menos que se anule el propósito de utilizar el modo _plain_ para el cifrado negable. Esto también permite almacenar las opciones necesarias para abrir/desbloquear el dispositivo cifrado plain en la configuración del gestor de arranque, ya que escribiéndolos en cada arranque sería propenso a errores.
+`/boot` y el gestor de arranque no pueden ser guardados en la unidad cifrada, a menos que se anule el propósito de utilizar el modo *plain* para el cifrado negable. Esto también permite almacenar las opciones necesarias para abrir/desbloquear el dispositivo cifrado plain en la configuración del gestor de arranque, ya que escribiéndolos en cada arranque sería propenso a errores.
 
 Este escenario también utiliza un archivo de clave, suponiendo que se almacena como bits sin procesar en una segunda memoria USB, de modo que a los ojos de un atacante este ignorará que está delante de la memoria usb-llave por que la clave de cifrado aparecerá en forma de datos aleatorios en lugar de ser visible como un archivo normal. Véase también [Wikipedia:Security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity "wikipedia:Security through obscurity"), y [Dm-crypt/Device encryption#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") para preparar el archivo de claves.
 
@@ -529,11 +527,11 @@ Véase [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-cr
 
 Véase [Dm-crypt/Device encryption#Encryption options for plain mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption") para más detalles.
 
-Utilizando el dispositivo `/dev/sd_X_`, cifrándolo con [twofish](https://en.wikipedia.org/wiki/es:Twofish "wikipedia:es:Twofish") en modo xts, con un tamaño de clave de 512 bit y el uso de un archivo de claves, se tienen las siguientes opciones para este escenario:
+Utilizando el dispositivo `/dev/sd*X*`, cifrándolo con [twofish](https://en.wikipedia.org/wiki/es:Twofish "wikipedia:es:Twofish") en modo xts, con un tamaño de clave de 512 bit y el uso de un archivo de claves, se tienen las siguientes opciones para este escenario:
 
- `# cryptsetup --hash=sha512 --cipher=twofish-xts-plain64 --offset=0 --key-file=/dev/sd_Z_ --key-size=512 open --type=plain /dev/sdX enc` 
+ `# cryptsetup --hash=sha512 --cipher=twofish-xts-plain64 --offset=0 --key-file=/dev/sd*Z* --key-size=512 open --type=plain /dev/sdX enc` 
 
-A diferencia del cifrado LUKS, la orden anterior debe ejecutarse en _su totalidad_ cada vez que el mapeo tiene que ser reestablecido, por lo que es importante tener en cuenta el cifrado, hash y el archivo de claves detallados.
+A diferencia del cifrado LUKS, la orden anterior debe ejecutarse en *su totalidad* cada vez que el mapeo tiene que ser reestablecido, por lo que es importante tener en cuenta el cifrado, hash y el archivo de claves detallados.
 
 Ahora podemos comprobar que la entrada del mapeado se ha hecho para `/dev/mapper/enc`:
 
@@ -573,9 +571,9 @@ La partición `/boot` se puede instalar en la partición vfat estándar de una m
 Elegimos un sistema de archivos no journalling para preservar la memoria flash de la partición `/boot`, si no está ya formateada como vfat:
 
 ```
-# mkfs.ext2 /dev/sd_Y_1
+# mkfs.ext2 /dev/sd*Y*1
 # mkdir /mnt/boot
-# mount /dev/sd_Y_1 /mnt/boot
+# mount /dev/sd*Y*1 /mnt/boot
 
 ```
 
@@ -592,16 +590,15 @@ Véase [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_con
 Para arrancar la partición de root cifrada, los siguientes parámetros del kérnel son necesarios pasarlos al gestor de arranque:
 
 ```
-cryptdevice=/dev/sd_X_:enc cryptkey=/dev/sd_Z_:0:512 crypto=sha512:twofish-xts-plain64:512:0:
+cryptdevice=/dev/sd*X*:enc cryptkey=/dev/sd*Z*:0:512 crypto=sha512:twofish-xts-plain64:512:0:
 
 ```
 
 Véase [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") para conocer más detalles y otros parámetros que puede necesitar
 
 **Tip:** Si se utiliza GRUB, puede instalarlo en el mismo USB como partición `/boot` con:
-
 ```
-# grub-install --recheck /dev/sd_Y_
+# grub-install --recheck /dev/sd*Y*
 
 ```
 
@@ -610,9 +607,8 @@ Véase [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_co
 Podemos retirar la memoria USB después de arrancar. Ya que la partición `/boot`, generalmente, no se necesita, la opción `noauto` se puede agregar en la línea correspondiente de `/etc/fstab`:
 
  `/etc/fstab` 
-
 ```
-# /dev/sd_Yn_
+# /dev/sd*Yn*
 /dev/sdYn /boot ext2 **noauto**,rw,noatime 0 2
 ```
 
@@ -662,7 +658,7 @@ Cree una partición del tipo `8E00`, que más tarde va a contener el contenedor 
 Cree el contenedor cifrado con LUKS en la partición del «sistema».
 
 ```
-# cryptsetup luksFormat /dev/_sdaZ_
+# cryptsetup luksFormat /dev/*sdaZ*
 
 ```
 
@@ -671,7 +667,6 @@ Para obtener más información sobre las opciones disponibles de cryptsetup vea 
 Su esquema de particinado debería ser similar a esto:
 
  ` gdisk /dev/sda ` 
-
 ```
 Number  Start (sector)    End (sector)  Size       Code  Name
    1            2048         1050623   512.0 MiB   EF00  EFI System
@@ -683,7 +678,7 @@ Number  Start (sector)    End (sector)  Size       Code  Name
 Abra el contenedor:
 
 ```
-# cryptsetup open --type luks /dev/_sdaZ_ lvm
+# cryptsetup open --type luks /dev/*sdaZ* lvm
 
 ```
 
@@ -700,21 +695,21 @@ El gestor de arranque carga el kérnel, [initramfs](/index.php/Initramfs "Initra
 En primer lugar, cree el contenedor LUKS donde estarán ubicados e instalados los archivos:
 
 ```
-# cryptsetup luksFormat /dev/sda_Y_ 
+# cryptsetup luksFormat /dev/sda*Y* 
 
 ```
 
 A continuación, ábralo:
 
 ```
-# cryptsetup open /dev/sda_Y_ cryptboot 
+# cryptsetup open /dev/sda*Y* cryptboot 
 
 ```
 
 Cree un sistema de archivos en la partición destinada a `/boot`. Cualquier sistema de archivos que puede ser leído por el gestor de arranque es elegible:
 
 ```
-# mkfs.ext2 /dev/mapper/_cryptboot_
+# mkfs.ext2 /dev/mapper/*cryptboot*
 
 ```
 
@@ -728,7 +723,7 @@ Cree el directorio `/mnt/boot`:
 Monte la partición para `/mnt/boot`:
 
 ```
-# mount /dev/mapper/_cryptboot_ /mnt/boot
+# mount /dev/mapper/*cryptboot* /mnt/boot
 
 ```
 
@@ -736,14 +731,13 @@ Cree el punto de montaje para la [ESP](/index.php/Unified_Extensible_Firmware_In
 
 ```
 # mkdir /mnt/boot/efi
-# mount /dev/_sdbX_ /mnt/boot/efi
+# mount /dev/*sdbX* /mnt/boot/efi
 
 ```
 
 En este punto, debe tener las siguientes particiones y volúmenes lógicos dentro de `/mnt`:
 
  `lsblk` 
-
 ```
 NAME              	  MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
 sda                       8:0      0   200G  0 disk  
@@ -773,7 +767,7 @@ Véase [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_con
 Con el fin de desbloquear la partición raíz cifrada en el arranque, los siguientes parámetros del kérnel hay que pasarlos al gestor de arranque:
 
 ```
-cryptdevice=/dev/_partition_:MyStorage root=/dev/mapper/MyStorage-rootvol
+cryptdevice=/dev/*partition*:MyStorage root=/dev/mapper/MyStorage-rootvol
 
 ```
 
@@ -803,11 +797,11 @@ Si todo terminó sin errores, GRUB le pedirá la contraseña para desbloquear la
 
 ### Configurar fstab y crypttab
 
-Esta sección trata de la configuración extra para dejar que el sistema _monte_ `/boot` cifrado.
+Esta sección trata de la configuración extra para dejar que el sistema *monte* `/boot` cifrado.
 
 Mientras GRUB pide una contraseña para desbloquear la partición `/boot` cifrada, siguiendo las instrucciones anteriores, el desbloqueo de la partición no se transmite a los initramfs. Por lo tanto, `/boot` no estará disponible después de que el sistema haya re/iniciado, porque el hook `encrypt` solo desbloquea la raíz del sistema.
 
-Si ha utilizado el script _genfstab_ durante la instalación, se habrán generado ya en `/etc/fstab` las entradas para el montaje de `/boot` y `/boot/efi`, pero el sistema no podrá encontrar el mapeador de dispositivos generado por la partición de arranque. Para que esté disponible, agréguelo a [crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration"). Por ejemplo:
+Si ha utilizado el script *genfstab* durante la instalación, se habrán generado ya en `/etc/fstab` las entradas para el montaje de `/boot` y `/boot/efi`, pero el sistema no podrá encontrar el mapeador de dispositivos generado por la partición de arranque. Para que esté disponible, agréguelo a [crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration"). Por ejemplo:
 
  `/etc/crypttab`  `cryptboot  /dev/sdaY      none        luks` 
 

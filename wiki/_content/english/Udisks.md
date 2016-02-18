@@ -1,4 +1,4 @@
-[udisks](http://www.freedesktop.org/wiki/Software/udisks/) provides a daemon _udisksd_, that implements D-Bus interfaces used to query and manipulate storage devices, and a command-line tool _udisksctl_, used to query and use the daemon.
+[udisks](http://www.freedesktop.org/wiki/Software/udisks/) provides a daemon *udisksd*, that implements D-Bus interfaces used to query and manipulate storage devices, and a command-line tool *udisksctl*, used to query and use the daemon.
 
 ## Contents
 
@@ -20,9 +20,9 @@
 
 ## Installation
 
-There are two versions of _udisks_ called [udisks](https://www.archlinux.org/packages/?name=udisks) and [udisks2](https://www.archlinux.org/packages/?name=udisks2). Development of _udisks_ has ceased in favor of _udisks2_. [[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
+There are two versions of *udisks* called [udisks](https://www.archlinux.org/packages/?name=udisks) and [udisks2](https://www.archlinux.org/packages/?name=udisks2). Development of *udisks* has ceased in favor of *udisks2*. [[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
 
-_udisksd_ ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) and _udisks-daemon_ ([udisks](https://www.archlinux.org/packages/?name=udisks)) are started on-demand by [D-Bus](/index.php/D-Bus "D-Bus"), and should not be enabled explicitly (see `man udisksd` and `man udisks-daemon`). They can be controlled through the command-line with _udisksctl_ and _udisks_, respectively. See `man udisksctl` and `man udisks` for more information.
+*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) and *udisks-daemon* ([udisks](https://www.archlinux.org/packages/?name=udisks)) are started on-demand by [D-Bus](/index.php/D-Bus "D-Bus"), and should not be enabled explicitly (see `man udisksd` and `man udisks-daemon`). They can be controlled through the command-line with *udisksctl* and *udisks*, respectively. See `man udisksctl` and `man udisks` for more information.
 
 ## Configuration
 
@@ -36,27 +36,27 @@ Automatic mounting of devices is easily achieved with udisks wrappers. See also 
 
 ### Devmon
 
-[udevil](https://www.archlinux.org/packages/?name=udevil) includes [devmon](http://igurublog.wordpress.com/downloads/script-devmon), which is compatible to _udisks_ and _udisks2_. It uses mount helpers with the following priority:
+[udevil](https://www.archlinux.org/packages/?name=udevil) includes [devmon](http://igurublog.wordpress.com/downloads/script-devmon), which is compatible to *udisks* and *udisks2*. It uses mount helpers with the following priority:
 
 1.  [udevil](http://ignorantguru.github.io/udevil/) (SUID)
 2.  pmount (SUID)
 3.  udisks
 4.  udisks2
 
-To mount devices with _udisks_ or _udisks2_, remove the SUID permission from _udevil_:
+To mount devices with *udisks* or *udisks2*, remove the SUID permission from *udevil*:
 
 ```
 # chmod -s /usr/bin/udevil
 
 ```
 
-**Note:** `chmod -x /usr/bin/udevil` as root causes devmon to use _udisks_ for device monitoring
+**Note:** `chmod -x /usr/bin/udevil` as root causes devmon to use *udisks* for device monitoring
 
-**Tip:** To run devmon in the background and automatically mount devices, [enable](/index.php/Enable "Enable") it with `devmon@.service`, taking the user name as argument: `devmon@_user_.service`. Keep in mind services run outside the [session](/index.php/Session "Session"). Adjust [Polkit](/index.php/Polkit "Polkit") rules where appropriate, or run _devmon_ from the user session (see [Autostart](/index.php/Autostart "Autostart")).
+**Tip:** To run devmon in the background and automatically mount devices, [enable](/index.php/Enable "Enable") it with `devmon@.service`, taking the user name as argument: `devmon@*user*.service`. Keep in mind services run outside the [session](/index.php/Session "Session"). Adjust [Polkit](/index.php/Polkit "Polkit") rules where appropriate, or run *devmon* from the user session (see [Autostart](/index.php/Autostart "Autostart")).
 
 ### inotify
 
-You may use [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools) to monitor `/dev`, and mount drives when a new block device is created. Stale mount points are automatically removed by _udisksd_, such that no special action is required on deletion.
+You may use [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools) to monitor `/dev`, and mount drives when a new block device is created. Stale mount points are automatically removed by *udisksd*, such that no special action is required on deletion.
 
 ```
 #!/bin/bash
@@ -89,7 +89,6 @@ done
 By default, udisks2 mounts removable drives under the ACL controlled directory `/run/media/$USER/`. If you wish to mount to `/media` instead, use this rule:
 
  `/etc/udev/rules.d/99-udisks2.rules` 
-
 ```
 # UDISKS_FILESYSTEM_SHARED
 # ==1: mount filesystem to a shared directory (/media/VolumeName)
@@ -104,7 +103,7 @@ ENV{ID_FS_USAGE}=="filesystem|other|crypto", ENV{UDISKS_FILESYSTEM_SHARED}="1"
 To easily mount ISO images, use the following command:
 
 ```
-$ udisksctl loop-setup -r -f _image.iso_
+$ udisksctl loop-setup -r -f *image.iso*
 
 ```
 
@@ -145,12 +144,12 @@ Udisks2 hides certain devices from the user by default. If this is undesired or 
 
 ### Devices do not remain unmounted (udisks)
 
-_udisks_ remounts devices after a given period, or _polls_ those devices. This can cause unexpected behaviour, for example when formatting drives, sharing them in a [virtual machine](/index.php/Virtual_machine "Virtual machine"), power saving, or removing a drive that was not detached with `--detach` before.
+*udisks* remounts devices after a given period, or *polls* those devices. This can cause unexpected behaviour, for example when formatting drives, sharing them in a [virtual machine](/index.php/Virtual_machine "Virtual machine"), power saving, or removing a drive that was not detached with `--detach` before.
 
 To disable polling for a given device, for example a CD/DVD device:
 
 ```
-# udisks --inhibit-polling /dev/sr_0_
+# udisks --inhibit-polling /dev/sr*0*
 
 ```
 

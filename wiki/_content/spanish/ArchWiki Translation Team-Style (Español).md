@@ -4,7 +4,7 @@
 
 * * *
 
-_«La regla de oro para toda traducción es, a mi juicio, decir todo lo que dice el original, no decir nada que el original no diga, y decirlo todo con la corrección y naturalidad que permita la lengua a la que se traduce»_ — [Valentín García Yebra](https://en.wikipedia.org/wiki/es:Valent%C3%ADn_Garc%C3%ADa_Yebra "wikipedia:es:Valentín García Yebra")
+*«La regla de oro para toda traducción es, a mi juicio, decir todo lo que dice el original, no decir nada que el original no diga, y decirlo todo con la corrección y naturalidad que permita la lengua a la que se traduce»* — [Valentín García Yebra](https://en.wikipedia.org/wiki/es:Valent%C3%ADn_Garc%C3%ADa_Yebra "wikipedia:es:Valentín García Yebra")
 
 ## Contents
 
@@ -26,7 +26,7 @@ Esta página está destinada a proporcionar unas recomendaciones para un uso neu
 
 *   Para conocer las reglas de edición en Archwiki: [Help:Editing (Español)](/index.php/Help:Editing_(Espa%C3%B1ol) "Help:Editing (Español)")
 *   Para conocer la estructura de los artículos: [Help:Style (Español)](/index.php/Help:Style_(Espa%C3%B1ol) "Help:Style (Español)")
-*   Para conocer, _grosso modo_, las reglas de marcado más frecuentemente usadas del lenguaje wikitexto: [Help:Cheatsheet (Español)](/index.php/Help:Cheatsheet_(Espa%C3%B1ol) "Help:Cheatsheet (Español)") y [Help:Template (Español)](/index.php/Help:Template_(Espa%C3%B1ol) "Help:Template (Español)")
+*   Para conocer, *grosso modo*, las reglas de marcado más frecuentemente usadas del lenguaje wikitexto: [Help:Cheatsheet (Español)](/index.php/Help:Cheatsheet_(Espa%C3%B1ol) "Help:Cheatsheet (Español)") y [Help:Template (Español)](/index.php/Help:Template_(Espa%C3%B1ol) "Help:Template (Español)")
 *   En defecto de las convenciones específicas de ArchWiki antes expuestas, se seguirá el [manual de estilo](https://en.wikipedia.org/wiki/es:Manual_de_estilo "wikipedia:es:Manual de estilo") de Wikipedia.
 
 *   **Documentación útil.** Con el fin de que nuestro trabajo esté de acuerdo con las normas que definen [nuestra lengua](https://en.wikipedia.org/wiki/es:Idioma_espa%C3%B1ol "wikipedia:es:Idioma español"), se hace muy recomendable tener a mano las siguientes herramientas de la [RAE](http://www.rae.es/):
@@ -54,11 +54,11 @@ Las reglas contenidas en esta sección siguen las normas y recomendaciones acad�
 	[Signos de puntuación dobles](https://en.wikipedia.org/wiki/es:Corchetes "wikipedia:es:Corchetes")
 
 *   Los signos dobles son aquellos que tienen dos partes, una de apertura y una de cierre, esto es, la [interrogación](http://www.wikilengua.org/index.php/Interrogaci%C3%B3n) (`**¿?**`), [exclamación](http://www.wikilengua.org/index.php/Exclamaci%C3%B3n) (`**¡!**`), [paréntesis (`**()**`), corchetes (`**[]**`) y llaves (`**{}**`)](https://en.wikipedia.org/wiki/es:Corchetes "wikipedia:es:Corchetes"), y deben ponerse **obligatoriamente** los de apertura al igual que los de cierre.
-*   Los signos dobles deben ir pegados al texto que encierran, y separados por un espacio antes del signo de apertura y después del signo de cierre de las palabras que los rodean. Si tras el signo de cierre hay otro signo de puntuación _simple_, no se dejará espacio entre ambos.
+*   Los signos dobles deben ir pegados al texto que encierran, y separados por un espacio antes del signo de apertura y después del signo de cierre de las palabras que los rodean. Si tras el signo de cierre hay otro signo de puntuación *simple*, no se dejará espacio entre ambos.
 *   Los signos de cierre de exclamación (`**!**`) e interrogación (`**?**`), nunca van seguidos de un punto (`**.**`), ya que ellos mismos pueden terminar una frase. En este caso la primera palabra que los siga, debe ir en mayúsculas, al igual que ocurre con el punto.
 *   Respecto a las [comillas](https://en.wikipedia.org/wiki/es:Signo_de_puntuaci%C3%B3n#Las_comillas "wikipedia:es:Signo de puntuación"), existen tres tipos: las latinas o españolas, denominadas angulares (`**« »**`), las inglesas (` **"** `) y las simples (` **'** `).
     *   Se preferirá el uso de las comillas latinas o españolas (`Alt+z` → `**«**` / `Alt+x` → `**»**`) aunque también pueden usarse las comillas inglesas (` **"** `), ambas son válidas. El diccionario panhispánico de dudas (2005), respecto a las comillas dice: «En los textos impresos, se recomienda utilizar en primera instancia las comillas angulares (`« »`), reservando los otros tipos para cuando deban entrecomillarse partes de un texto ya entrecomillado. En este caso, las comillas simples se emplearán en último lugar».
-    *   Deben ir pegadas al texto que encierran, y separadas por un espacio antes y después de las palabras que las rodean. Si tras la comilla de cierre hay otro signo de puntuación _simple_ o de cierre, no se dejará espacio entre ellos.
+    *   Deben ir pegadas al texto que encierran, y separadas por un espacio antes y después de las palabras que las rodean. Si tras la comilla de cierre hay otro signo de puntuación *simple* o de cierre, no se dejará espacio entre ellos.
 
 	[Guión corto](http://www.wikilengua.org/index.php/Guión)
 
@@ -89,7 +89,7 @@ Las reglas contenidas en esta sección siguen las normas y recomendaciones acad�
 	[Palabras compuestas](https://en.wikipedia.org/wiki/es:Composici%C3%B3n_(ling%C3%BC%C3%ADstica) "wikipedia:es:Composición (lingüística)")
 
 *   En español se admiten las palabras compuestas sin necesidad de poner entre ellas un guión. Es muy frecuente que en inglés nos encontremos con términos como «Sub-Categories», «Re-install», etc. En español se deberían traducir por «Subcategorías» y «Reinstalar». Únicamente es admisible el uso del guión en las palabras compuestas en casos muy especiales y que es difícil que se presenten, pues se trata de palabras compuestas de dos adjetivos o dos gentilicios. Por ejemplo: teórico-práctico, hispano-luso, etc.
-*   Los compuestos formados por palabras que terminan en -e antepuestas a otras que comienzan con e-, se pueden escribir tanto con -ee como con -e, aunque el uso del término simplificado resulte minoritario, de momento (por ejemplo, se puede escritir tanto reemplazar, reestructurar, reelegir, como remplazar, restructurar, relegir), salvo con aquellas palabras entre las que existan problemas de diferente significado (por ejemplo, reemitir -«volver a enviar»-, con respecto a remitir -«enviar, diferir, perder intensidad»-). La simplificación es la tendencia histórica, como lo demuestran palabras como _«sobrescribir»_, hoy escritas solo en esta forma.
+*   Los compuestos formados por palabras que terminan en -e antepuestas a otras que comienzan con e-, se pueden escribir tanto con -ee como con -e, aunque el uso del término simplificado resulte minoritario, de momento (por ejemplo, se puede escritir tanto reemplazar, reestructurar, reelegir, como remplazar, restructurar, relegir), salvo con aquellas palabras entre las que existan problemas de diferente significado (por ejemplo, reemitir -«volver a enviar»-, con respecto a remitir -«enviar, diferir, perder intensidad»-). La simplificación es la tendencia histórica, como lo demuestran palabras como *«sobrescribir»*, hoy escritas solo en esta forma.
 
 	[Siglas](http://www.wikilengua.org/index.php/Siglas) y [acrónimos](http://www.wikilengua.org/index.php/Acr%C3%B3nimo)
 
@@ -124,7 +124,7 @@ Con el objeto de unificar el estilo de nuestras traducciones, es conveniente obs
 
 *   Escriba, en la medida de lo posible, en un español formal y objetivo, que pueda ser comprendido por los distintos países hispanohablantes. Tenga en cuenta que el destinatario es la comunidad hispana en su conjunto, por tanto, evite expresiones muy específicas de su zona o región que puedan ser malinterpretadas o incomprendidas por otros usuarios.
 *   Cuide la ortografía y la gramática, y evite especialmente errores en los acentos, leísmos, laísmos, ceceos, seseos, etc.
-*   Trate siempre al lector de usted, y no utilice el [tuteo](https://en.wikipedia.org/wiki/es:Tuteo_(gram%C3%A1tica) "wikipedia:es:Tuteo (gramática)") o [voseo](https://en.wikipedia.org/wiki/es:Voseo "wikipedia:es:Voseo") para dirigirse a él.
+*   Trate siempre al lector de usted, y no utilice el [tuteo](https://en.wikipedia.org/wiki/es:Tuteo_(gram%C3%A1tica) o [voseo](https://en.wikipedia.org/wiki/es:Voseo "wikipedia:es:Voseo") para dirigirse a él.
 *   En la medida de lo posible diríjase al lector de forma genérica. Recuerde que en español el plural utiliza el género masculino para incluir ambos géneros. No obstante, es correcto decir en singular: «el usuario o usuaria tendrá que instalar...».
 *   Evite expresiones coloquiales, de chat o similares (por ejemplo, tod@s, xD, etc.); en general, no utilice la primera persona ni incluya comentarios personales en los artículos, utilice la página de discusión para ese propósito.
 *   En inglés los títulos se suelen escribir con la primera letra de cada palabra en mayúscula. En español solo se escribe con mayúscula la primera letra del título (a no ser que haya un nombre propio, que se escribirá con mayúscula inicial). Los títulos escritos completamente en mayúsculas deben quedarse en mayúsculas.
@@ -147,28 +147,28 @@ Con el objeto de unificar el estilo de nuestras traducciones, es conveniente obs
 
 *   Consideraciones sobre **algunas expresiones inglesas**:
 
-*   Las formas verbales inglesas terminadas en «-ing», que se suele usar en los títulos, epígrafes y opciones, no siempre equivalen a los gerundios españoles. Para _«installing from Hard Disk»_ se debe utilizar el sustantivo (o el verbo infinitivo, que en español funciona como un sustantivo), no el gerundio: «intalación/instalar desde el disco duro». Se puede mantener el gerundio en las expresiones que indican acciones que se están realizando (lo cual se dará raras veces): _«updating»_ → «actualizando».
+*   Las formas verbales inglesas terminadas en «-ing», que se suele usar en los títulos, epígrafes y opciones, no siempre equivalen a los gerundios españoles. Para *«installing from Hard Disk»* se debe utilizar el sustantivo (o el verbo infinitivo, que en español funciona como un sustantivo), no el gerundio: «intalación/instalar desde el disco duro». Se puede mantener el gerundio en las expresiones que indican acciones que se están realizando (lo cual se dará raras veces): *«updating»* → «actualizando».
 *   Hay que tener especial cautela al traducir los infinitivos e imperativos. En inglés ambas formas se expresan igual, lo cual puede llevar a confusión. En español, las órdenes siempre se expresan en imperativo, nunca en infinitivo.
-*   Los pronombres posesivos en inglés no se tienen, necesariamente, que traducir por el correspondiente pronombre posesivo en español. Se entiende, pero un hispanoparlante no hablaría así, por ejemplo, en lugar de «su sistema» para traducir _«your system»_, debería utilizarse «el sistema».
+*   Los pronombres posesivos en inglés no se tienen, necesariamente, que traducir por el correspondiente pronombre posesivo en español. Se entiende, pero un hispanoparlante no hablaría así, por ejemplo, en lugar de «su sistema» para traducir *«your system»*, debería utilizarse «el sistema».
 *   Cuidado con las palabras que se escriben parecido pero que no significan lo mismo, que habitualmente se traducen a [anglicismos](https://en.wikipedia.org/wiki/es:Anglicismo "wikipedia:es:Anglicismo") no admitidos, lo que se conoce como [«falsos amigos»](https://en.wikipedia.org/wiki/es:Falso_amigo "wikipedia:es:Falso amigo") (para conocer más sobre el tema, veáse [lista de falsos amigos](https://en.wikipedia.org/wiki/Anexo:Falsos_amigos#Ingl.C3.A9s "wikipedia:Anexo:Falsos amigos")). He aquí unos breves ejemplos:
 
-	· _actual_: real o verdadero, actual no es correcto.
+	· *actual*: real o verdadero, actual no es correcto.
 
-	· _library_: biblioteca, no librería.
+	· *library*: biblioteca, no librería.
 
-	· _normally_: habitualmente, no normalmente.
+	· *normally*: habitualmente, no normalmente.
 
-	· _to encrypt_: cifrar (no encriptar, que es meter en una cripta).
+	· *to encrypt*: cifrar (no encriptar, que es meter en una cripta).
 
-	· _the interface_: la interfaz (femenino, no masculino).
+	· *the interface*: la interfaz (femenino, no masculino).
 
-*   En inglés es muy frecuente el uso de la voz pasiva. Sin embargo, si se traduce literalmente se obtienen en muchas ocasiones frases impropias en español. Se ha de poner en reflexivo y presente (por ejemplo: _«This list is maintained by the Admin»_ → «Esta lista la mantiene el administrador», en vez de _«Esta lista es mantenida por el administrador»_).
-*   Aunque en inglés no se anteponga el artículo a un nombre, en español sí se hace: _«Display image»_ → «Mostrar la imagen».
-*   El inglés acostumbra a utilizar las formas modales del tipo «debería de», «podría», «asegúrese de», etc., que en español, casi siempre son superfluas. Se debe sustituir dichas expresiones por el imperativo en tercera persona (por ejemplo, _«you should save data...»_ → «guarde los datos...», en vez de _«debe guardar los datos...»_).
+*   En inglés es muy frecuente el uso de la voz pasiva. Sin embargo, si se traduce literalmente se obtienen en muchas ocasiones frases impropias en español. Se ha de poner en reflexivo y presente (por ejemplo: *«This list is maintained by the Admin»* → «Esta lista la mantiene el administrador», en vez de *«Esta lista es mantenida por el administrador»*).
+*   Aunque en inglés no se anteponga el artículo a un nombre, en español sí se hace: *«Display image»* → «Mostrar la imagen».
+*   El inglés acostumbra a utilizar las formas modales del tipo «debería de», «podría», «asegúrese de», etc., que en español, casi siempre son superfluas. Se debe sustituir dichas expresiones por el imperativo en tercera persona (por ejemplo, *«you should save data...»* → «guarde los datos...», en vez de *«debe guardar los datos...»*).
 *   En español, apenas se utiliza el infinitivo, que se debe sustituir por el imperativo en tercera persona, salvo en ocasiones muy determinadas, (menús, cuadros de diálogo, etc.), casi siempre relacionadas con el software y que expresan la ejecución de una acción.
 *   El tiempo futuro tan frecuente en inglés, admite una traducción a tiempo presente, más común en español.
 *   En español se coloca primero el nombre y después el adjetivo, cuando en inglés se hace al revés.
-*   Nombre + to + infinitivo: no se traduce literalmente como «a», sino que a veces se traduce por «que» o «para». _«File to delete»_ → «Archivo que eliminar»
+*   Nombre + to + infinitivo: no se traduce literalmente como «a», sino que a veces se traduce por «que» o «para». *«File to delete»* → «Archivo que eliminar»
 
 ### Reglas de edición
 
@@ -176,7 +176,7 @@ Con el objeto de unificar el estilo de nuestras traducciones, es conveniente obs
 
 1.  Para crear una nueva página (en nuestro caso una traducción) escribiremos en la barra de direcciones del navegador, el título en inglés (de la página a traducir), uniéndole, con un guión bajo, la palabra: Español, entre parentesis. Nos quedaría de la siguiente manera: **http://wiki.archlinux.org/index.php/**`**Título_del_Artículo_en_Inglés_(Español)**`.
 
-2.  Pulsaremos Intro y se nos abrirá una pantalla que nos mostrará el siguiente mensaje: _«En este momento no hay texto en esta página. Puedes buscar el título de esta página en otras páginas, buscar en los registros, o editar esta página»._
+2.  Pulsaremos Intro y se nos abrirá una pantalla que nos mostrará el siguiente mensaje: *«En este momento no hay texto en esta página. Puedes buscar el título de esta página en otras páginas, buscar en los registros, o editar esta página».*
 
 3.  Si pinchamos en **«editar esta página»**, o en las pestañas **«página»** o **«crear»** situadas en la parte superior de dicha pantalla, se nos abrirá el recuadro de edición, donde podremos plasmar la traducción correspondiente.
 
@@ -194,9 +194,9 @@ Con el objeto de unificar el estilo de nuestras traducciones, es conveniente obs
 
 	**Modificación de una página ya existente**
 
-*   Para modificar un artículo ya existente, bien en su totalidad, bien una sección concreta, pulsaremos el enlace _editar_ que se encuentra bien en la parte superior de la página o bien a la derecha del encabezado de la sección en cuestión, según necesitemos editar toda la página o solo una parte, respectivamente.
+*   Para modificar un artículo ya existente, bien en su totalidad, bien una sección concreta, pulsaremos el enlace *editar* que se encuentra bien en la parte superior de la página o bien a la derecha del encabezado de la sección en cuestión, según necesitemos editar toda la página o solo una parte, respectivamente.
 *   Excepto en lo relativo a la creación de una nueva página, en todo lo demás (punto 3 y siguientes), el procedimiento será el mismo que el descrito arriba.
-    **Sugerencia:** Debemos tener muy presente que para que la revisión de una página ya traducida (a los efectos de su actualización) resulte más fácil y eficaz sería muy conveniente que los usuarios interesados en colaborar hagan un esfuerzo para que la traducción sea un reflejo lo más fiel y exacto posible del formato del artículo original (versión inglesa). No tanto del contenido, que, a veces, habrá de recurrirse a «traducciones contextuales» , sino a la forma. Por tanto, las traducciones deben ser **formalmente** iguales, para que, de este modo, al hacer la comparación entre la traducción y el original, **resalten** fácilmente las diferencias y ello permita mantenerlas actualizadas con más eficacia. Los italianos se refieren a esta actividad de modo muy gráfico, denominándola «alineamiento» (_allineamento_).
+    **Sugerencia:** Debemos tener muy presente que para que la revisión de una página ya traducida (a los efectos de su actualización) resulte más fácil y eficaz sería muy conveniente que los usuarios interesados en colaborar hagan un esfuerzo para que la traducción sea un reflejo lo más fiel y exacto posible del formato del artículo original (versión inglesa). No tanto del contenido, que, a veces, habrá de recurrirse a «traducciones contextuales» , sino a la forma. Por tanto, las traducciones deben ser **formalmente** iguales, para que, de este modo, al hacer la comparación entre la traducción y el original, **resalten** fácilmente las diferencias y ello permita mantenerlas actualizadas con más eficacia. Los italianos se refieren a esta actividad de modo muy gráfico, denominándola «alineamiento» (*allineamento*).
 
 **Nota:** Tanto en las traducciones nuevas como en la actualización de las ya existentes, existen una serie de plantillas a modo de enlaces que debemos conocer y respetar en el contenido de las traducciones y que se explican en el apartado siguiente.
 
@@ -240,7 +240,7 @@ En todo artículo que traduzca o actualice deberá prestar atención a los sigui
 
 	**Resumen de la edición**
 
-	Todas las ediciones deben ir acompañadas de un breve resumen descriptivo, que se debe añadir en el campo _Resumen_ localizable en la parte inferior de la pagina editable. Consulte [esta sección](/index.php/Help:Style_(Espa%C3%B1ol)#Resumen_de_edici.C3.B3n "Help:Style (Español)") para ampliar la información.
+	Todas las ediciones deben ir acompañadas de un breve resumen descriptivo, que se debe añadir en el campo *Resumen* localizable en la parte inferior de la pagina editable. Consulte [esta sección](/index.php/Help:Style_(Espa%C3%B1ol)#Resumen_de_edici.C3.B3n "Help:Style (Español)") para ampliar la información.
 
 ## Enlaces externos
 
@@ -255,14 +255,14 @@ En todo artículo que traduzca o actualice deberá prestar atención a los sigui
 
 ## Referencias
 
-1.  [_ArchWiki: Help_](https://wiki.archlinux.org/index.php/Category:Help_%28Espa%C3%B1ol%29)
-2.  [_Diccionario panhispánico de dudas de la RAE_](http://lema.rae.es/dpd/).
-3.  [_Guía de estilo de GNOME_](https://mail.gnome.org/archives/gnome-es-list/2011-October/pdfm6xxph1jsZ.pdf)
-4.  [_Guía de estilo de openSUSE_](http://es.opensuse.org/Traduccion/Guia_de_Estilo)
-5.  [_Normas generales del equipo de traducción de KDE_](http://es.l10n.kde.org/)
-6.  [_Normas correspondientes a las traducciones de GNU_](http://www.gnu.org/server/standards/translations/es/recomendaciones.html#normas)
-7.  [_Ortografía de la lengua española de la RAE (2010)_](http://aplica.rae.es/orweb/cgi-bin/buscar.cgi)
-8.  [_Reglas de estilo para la traducción de ImpressCMS_](http://code.google.com/p/impresscms-hispano/downloads/detail?name=reglas%20de%20estilo.pdf)
-9.  [_Reglas de traducción de la wiki de Mandriva_](http://wiki.mandriva.com/es/Reglas_de_traducci%C3%B3n)
-10.  [_Wikilengua del español de Fundéu BBVA_](http://www.wikilengua.org/index.php/Portada)
-11.  [_Wikipedia: manual de estilo_](http://es.wikipedia.org/wiki/Wikipedia:Manual_de_estilo)
+1.  [*ArchWiki: Help*](https://wiki.archlinux.org/index.php/Category:Help_%28Espa%C3%B1ol%29)
+2.  [*Diccionario panhispánico de dudas de la RAE*](http://lema.rae.es/dpd/).
+3.  [*Guía de estilo de GNOME*](https://mail.gnome.org/archives/gnome-es-list/2011-October/pdfm6xxph1jsZ.pdf)
+4.  [*Guía de estilo de openSUSE*](http://es.opensuse.org/Traduccion/Guia_de_Estilo)
+5.  [*Normas generales del equipo de traducción de KDE*](http://es.l10n.kde.org/)
+6.  [*Normas correspondientes a las traducciones de GNU*](http://www.gnu.org/server/standards/translations/es/recomendaciones.html#normas)
+7.  [*Ortografía de la lengua española de la RAE (2010)*](http://aplica.rae.es/orweb/cgi-bin/buscar.cgi)
+8.  [*Reglas de estilo para la traducción de ImpressCMS*](http://code.google.com/p/impresscms-hispano/downloads/detail?name=reglas%20de%20estilo.pdf)
+9.  [*Reglas de traducción de la wiki de Mandriva*](http://wiki.mandriva.com/es/Reglas_de_traducci%C3%B3n)
+10.  [*Wikilengua del español de Fundéu BBVA*](http://www.wikilengua.org/index.php/Portada)
+11.  [*Wikipedia: manual de estilo*](http://es.wikipedia.org/wiki/Wikipedia:Manual_de_estilo)

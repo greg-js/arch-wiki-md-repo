@@ -1,6 +1,6 @@
 Dal [Sito di GTK+](http://www.gtk.org):
 
-	_GTK+, o The GIMP Toolkit, è un toolkit multi-piattaforma per creare interfacce utente (UI) grafiche. In quanto offre un set completo di strumenti, GTK+ è adatto per ogni progetto, da piccoli strumenti unici a interfacce complete di applicazioni._
+	*GTK+, o The GIMP Toolkit, è un toolkit multi-piattaforma per creare interfacce utente (UI) grafiche. In quanto offre un set completo di strumenti, GTK+ è adatto per ogni progetto, da piccoli strumenti unici a interfacce complete di applicazioni.*
 
 GTK+, The GIMP Toolkit, fu creato inizialmente dal [Progetto GNU](/index.php/GNU_Project "GNU Project") per il [GIMP](/index.php/GIMP "GIMP"), ma ora è un toolkit molto famoso con supporto per molte lingue.
 
@@ -56,13 +56,13 @@ Le vecchia applicazioni GTK+ 1 (come xmms) quasi sempre non hanno un bel look al
 
 Molti temi gradevoli si trovano in [AUR](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)"). Per installarli, si veda [gtk-smooth-engine](https://aur.archlinux.org/packages/gtk-smooth-engine/).
 
-Per cambiare il tema è possibile usare _gtk-theme-switch2_. Per avviarlo basta usare il comando 'switch'.
+Per cambiare il tema è possibile usare *gtk-theme-switch2*. Per avviarlo basta usare il comando 'switch'.
 
 ### GTK+ 2.x
 
 I maggiori [ambienti desktop](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)") muniscono l'utente di strumenti per configurare il tema GTK+, le icone, il font e la sua dimensione. In alternativa, si possono usare programmi come quelli appena menzionati.
 
-È raccomandato anche [installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") alcuni temi GTK+ 2\. Il famoso tema _Clearlooks_ è incluso al pacchetto [gtk-engines](https://www.archlinux.org/packages/?name=gtk-engines).
+È raccomandato anche [installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") alcuni temi GTK+ 2\. Il famoso tema *Clearlooks* è incluso al pacchetto [gtk-engines](https://www.archlinux.org/packages/?name=gtk-engines).
 
 Altri temi si possono trovare in [AUR](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)"):
 
@@ -72,7 +72,6 @@ Altri temi si possono trovare in [AUR](/index.php/Arch_User_Repository_(Italiano
 In alternativa, le impostazioni di GTK+ possono essere configurate manualmente modificando `~/.gtkrc-2.0`. Una lista di impostazioni GTK+ possono essere trovate in [GNOME library](http://library.gnome.org/devel/gtk/stable/GtkSettings.html). Per cambiare manualmente il tema GTK+, le icone, i font e la loro grandezza, basta aggiungere le righe seguenti a `~/.gtkrc-2.0`:
 
  `~/.gtkrc-2.0` 
-
 ```
 gtk-icon-theme-name = "[nome-del-tema-icone]"
 gtk-theme-name = "[nome-del-tema]"
@@ -82,7 +81,6 @@ gtk-font-name = "[nome-del-font] [grandezza]"
 Ad esempio:
 
  `~/.gtkrc-2.0` 
-
 ```
 gtk-icon-theme-name = "Tango"
 gtk-theme-name = "Murrine-Gray"
@@ -100,7 +98,6 @@ Se state usando [Xfce](/index.php/Xfce_(Italiano) "Xfce (Italiano)") 4.8, sia i 
 Se usate DE basati sulle GTK+, come [Xfce](/index.php/Xfce_(Italiano) "Xfce (Italiano)"), [LXDE](/index.php/LXDE_(Italiano) "LXDE (Italiano)"), gnome-tweak-tool non funzionerà; controllate su [FS#23644](https://bugs.archlinux.org/task/23644). Dovrete quindi utilizzare [install](/index.php/Pacman "Pacman") [librsvg](https://www.archlinux.org/packages/?name=librsvg), e selezionare manualmente il vostro tema in `{XDG_CONFIG_HOME}/gtk-3.0/settings.ini` (generalmente `~/.config/gtk-3.0/settings.ini`. Un esempio `settings.ini`:
 
  `{XDG_CONFIG_HOME}/gtk-3.0/settings.ini` 
-
 ```
 [Settings]
 gtk-application-prefer-dark-theme = false
@@ -143,13 +140,13 @@ Se avete applicazioni sia in GTK+ che QT (KDE) allora dovreste sapere che i loro
 
 ## Configuration file
 
-**Note:** Controllate il [_GtkSettings_](http://library.gnome.org/devel/gtk/stable/GtkSettings.html#GtkSettings.properties) nel manuale di riferimento per le GTK+ per la lista completa sulle configurazioni.
+**Note:** Controllate il [*GtkSettings*](http://library.gnome.org/devel/gtk/stable/GtkSettings.html#GtkSettings.properties) nel manuale di riferimento per le GTK+ per la lista completa sulle configurazioni.
 
 Lo scopo di questa sezione è di raccogliere le configurazioni delle applicazioni in GTK, il file da modificare è `~/.gtkrc-2.0`.
 
 ### Attivare scorciatoie da tastiera
 
-Potete modificare le scorciatoie da tastiera per le applicazioni GTK (nel linguaggio GTK vengono definiti _accelerators_)portando il vostro mouse su un elemento di menu e premendo la combinazione di tasti desiderata. L'opzione è disativata di default per abilitarla:
+Potete modificare le scorciatoie da tastiera per le applicazioni GTK (nel linguaggio GTK vengono definiti *accelerators*)portando il vostro mouse su un elemento di menu e premendo la combinazione di tasti desiderata. L'opzione è disativata di default per abilitarla:
 
 ```
 gtk-can-change-accels = 1
@@ -220,7 +217,6 @@ Gli esempi seguenti creano un programma che mostra la scritta "Hello World" in u
 *   Dependency: [zenity](https://www.archlinux.org/packages/?name=zenity)
 
  `hello_world.sh` 
-
 ```
 #!/bin/bash
 zenity --info --title='Hello world!' --text='This is an example dialog.'
@@ -232,7 +228,6 @@ zenity --info --title='Hello world!' --text='This is an example dialog.'
 *   Build with: `gcc -o hello_world `pkg-config --cflags --libs gtk+-3.0` hello_world.c`
 
  `hello_world.c` 
-
 ```
 #include <gtk/gtk.h>
 void main (int argc, char *argv[]) {
@@ -249,7 +244,6 @@ void main (int argc, char *argv[]) {
 *   Build with: `g++ -o hello_world `pkg-config --cflags --libs gtkmm-3.0` hello_world.cc`
 
  `hello_world.cc` 
-
 ```
 #include <gtkmm.h>
 #include <gtkmm/messagedialog.h>
@@ -268,7 +262,6 @@ int main(int argc, char *argv[]) {
 *   Build with: `valac --pkg gtk+-3.0 hello_world.gs`
 
  `hello_world.gs` 
-
 ```
 uses 
 	Gtk
@@ -284,7 +277,6 @@ init
 *   Dependencies: [gtk3](https://www.archlinux.org/packages/?name=gtk3), [gjs](https://www.archlinux.org/packages/?name=gjs) (works also with [seed](https://www.archlinux.org/packages/?name=seed))
 
  `hello_world.js` 
-
 ```
 #!/usr/bin/gjs
 Gtk = imports.gi.Gtk
@@ -301,7 +293,6 @@ Hello.run()
 *   Dependencies: [gtk3](https://www.archlinux.org/packages/?name=gtk3), [python-gobject](https://www.archlinux.org/packages/?name=python-gobject)
 
  `hello_world.py` 
-
 ```
 #!/usr/bin/python
 from gi.repository import Gtk
@@ -318,7 +309,6 @@ Hello.run()
 *   Build with: `valac --pkg gtk+-3.0 hello_world.vala`
 
  `hello_world.vala` 
-
 ```
 using Gtk;
 public class HelloWorld {

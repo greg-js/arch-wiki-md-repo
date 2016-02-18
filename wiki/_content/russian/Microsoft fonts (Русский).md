@@ -16,7 +16,7 @@
 
 Если есть примонтированный раздел с установленной Windows, можно использовать шрифты Windows, ссылаясь на них.
 
-_Например, если раздел Windows C:\ смонтирован в `/windows`:_
+*Например, если раздел Windows C:\ смонтирован в `/windows`:*
 
 ```
 # ln -s /windows/Windows/Fonts /usr/share/fonts/WindowsFonts
@@ -78,7 +78,7 @@ _Например, если раздел Windows C:\ смонтирован в `
 *   [Webdings](https://en.wikipedia.org/wiki/Webdings "wikipedia:Webdings")
 *   [Wingdings](https://en.wikipedia.org/wiki/Wingdings "wikipedia:Wingdings")
 
-**Важно:** Согласно [оригиналу Лицензионного соглашения конечного пользователя от Microsoft](http://web.archive.org/web/20020227054122/www.microsoft.com/typography/fontpack/eula.htm), в нём есть _некоторые_ правовые ограничения при использовании шрифтов.
+**Важно:** Согласно [оригиналу Лицензионного соглашения конечного пользователя от Microsoft](http://web.archive.org/web/20020227054122/www.microsoft.com/typography/fontpack/eula.htm), в нём есть *некоторые* правовые ограничения при использовании шрифтов.
 
 Вы также можете получить [ttf-tahoma](https://aur.archlinux.org/packages/ttf-tahoma/) который, как вы и ожидали, содержит [Tahoma](https://en.wikipedia.org/wiki/ru:%D0%A2%D0%B0%D1%85%D0%BE%D0%BC%D0%B0 "wikipedia:ru:Тахома").
 
@@ -142,7 +142,7 @@ _Например, если раздел Windows C:\ смонтирован в `
 
 **Обратите внимание:** Использование Microsoft шрифтов за пределами работы системы Windows запрещено EULA (хотя в некоторых странах Лицензионное соглашение является недействительным). Пожалуйста, примите во внимание лицензию Microsoft, прежде чем использовать шрифты.
 
-Вы можете приобрести шрифты установленной и полностью обновленной системы Windows 8.1\. Любое издание _Windows 8.1 build **Windows 8.1 6.3.9600.17238**_ будет работать.
+Вы можете приобрести шрифты установленной и полностью обновленной системы Windows 8.1\. Любое издание *Windows 8.1 build **Windows 8.1 6.3.9600.17238*** будет работать.
 
 На установленной системе Windows 8.1 шрифты, как правило, находится в `[%WINDIR%](http://technet.microsoft.com/en-us/library/hh825266.aspx)\Fonts`, и файл лицензии `[%SYSTEM32%](http://technet.microsoft.com/en-us/library/hh825266.aspx)\license.rtf`.
 

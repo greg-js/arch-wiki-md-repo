@@ -1,4 +1,4 @@
-Egy merevlemez _particionálása_ lehetővé teszi a felhasználható hely logikai szakaszokra történő felosztását, melyek ezáltal egymástól függetlenül is kezelhetők lesznek.
+Egy merevlemez *particionálása* lehetővé teszi a felhasználható hely logikai szakaszokra történő felosztását, melyek ezáltal egymástól függetlenül is kezelhetők lesznek.
 
 Egy merevlemez egyetlen partícióvá is alakítható, vagy a felhasználható tárhely akár több partícióra is osztható. Bizonyos helyzetek megkövetelik több partíció létrehozását: a kettős-, vagy multiboot, vagy épp a [cserehely](/index.php/Swap_(Magyar) "Swap (Magyar)") partíció használata. Más esetekben a particionálás egyszerűen csak az adatok logikai "elszigetelésének" eszköze, mint például amikor különböző partíciókat készítünk hang-, és videó állományainknak. Alább részletesen beszélünk majd a leggyakoribb partíciós sémákról.
 
@@ -48,7 +48,7 @@ Az MBR eredetileg legfeljebb 4 partíció létrehozását támogatta. Később -
 
 Az **elsődleges** partíciók indíthatók, és lemezenként vagy RAID tömbönként legfeljebb 4 lehet belőlük. Ha a particionálási séma négynél több partíciót igényelne, **kiterjesztett** partíciót használunk, mely **logikai** partíciókat tartalmaz. A kiterjesztett partíciókra egyfajta, a logikai partíciók számára létrehozott tárolóként kell gondolni. Egy merevlemez legfeljebb egy ilyen kiterjesztett partíciót tartalmazhat. EZ a kiterjesztett partíció a maximális partíciószám szempontjából elsődleges partíciónak számít, így, ha a merevlemezen már van egy kiterjesztett partíció, legfeljebb három elsődleges hozható még létre mellette (tehát három elsődleges és egy kiterjesztett partíciót kaphatunk). Azonban a kiterjesztett partícióban helyet foglaló logikai partíciók számának nincs határa. Az olyan rendszereken, melyeknek Windows-szal közös kettős boot-ot használnak, a Windowst elsődleges partícióra kell telepítenünk.
 
-A hagyományos számozási séma szerint elsődleges partícióink _sda1_-től _sda3_-ig tartanak, majd a kiterjeszett _sda4_ partíció következik. Az _sda4_-ben foglat logikai partíciók számozása _sda5_, _sda6_, stb. lesz.
+A hagyományos számozási séma szerint elsődleges partícióink *sda1*-től *sda3*-ig tartanak, majd a kiterjeszett *sda4* partíció következik. Az *sda4*-ben foglat logikai partíciók számozása *sda5*, *sda6*, stb. lesz.
 
 ### GUID Partíciós Tábla
 
@@ -64,7 +64,7 @@ A Btrfs a teljes adattárolót képes használni és felváltani az [MBR](/index
 
 ### Válasszunk GPT és MBR közül
 
-A [GUID Partíciós tábla](/index.php/GUID_Partition_Table "GUID Partition Table") (GPT) egy alternatív, modern particiónálási típus. A régi [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") (MBR) rendszer felváltására készült. A GPT-nek számos előnye van az MBR-rel szemben, melynek az MS-DOS-os időkből datálódó sallangjai vannak. Az _fdisk_ (MBR) és _gdisk_ (GPT) formázóeszközök legutóbbi fejlesztéseinek hála, egyenlőképp könnyűvé vált a GPT or MBR használata, s emellett a maximális teljesítmény elérése.
+A [GUID Partíciós tábla](/index.php/GUID_Partition_Table "GUID Partition Table") (GPT) egy alternatív, modern particiónálási típus. A régi [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") (MBR) rendszer felváltására készült. A GPT-nek számos előnye van az MBR-rel szemben, melynek az MS-DOS-os időkből datálódó sallangjai vannak. Az *fdisk* (MBR) és *gdisk* (GPT) formázóeszközök legutóbbi fejlesztéseinek hála, egyenlőképp könnyűvé vált a GPT or MBR használata, s emellett a maximális teljesítmény elérése.
 
 Nos, a választásnak az alábbiak alapján illene eldőlnie:
 
@@ -124,11 +124,11 @@ Azért létezik, hogy a `/usr` útvonalat csak olvashatóként is csatolhassuk. 
 
 #### /tmp
 
-Ez egy eleve különálló partíció, hiszen a systemd _tmpfs_-ként fűzi be.
+Ez egy eleve különálló partíció, hiszen a systemd *tmpfs*-ként fűzi be.
 
 #### Cserehely (Swap)
 
-A [cserehely (swap)](/index.php/Swap "Swap") partíció virtuális RAM-ként használható memóriát szolgáltat. A [cserefájl](/index.php/Swap#Swap_file "Swap") használata is megfontolandó lehet, mivel szinte semmiben nem más a teljesítménye, de szükség esetén sokkal könnyebben átméretezhető. A cserehely partítió _elvben_ megosztható operációs rendszereink között, de semmiképpen sem, ha hibernációra használjuk.
+A [cserehely (swap)](/index.php/Swap "Swap") partíció virtuális RAM-ként használható memóriát szolgáltat. A [cserefájl](/index.php/Swap#Swap_file "Swap") használata is megfontolandó lehet, mivel szinte semmiben nem más a teljesítménye, de szükség esetén sokkal könnyebben átméretezhető. A cserehely partítió *elvben* megosztható operációs rendszereink között, de semmiképpen sem, ha hibernációra használjuk.
 
 #### Milyen méretűek legyenek a partíciók?
 
@@ -174,7 +174,7 @@ A partíciók mérete egyéni ízlésünk és szükségleteink szerint alakul, d
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
-**Figyelem:** A _cfdisk_ által létrehozott első partíció a 63-ik szektornál kezdődik, a megszokott 2048-ik helyett. Ez csökkent teljesítményhez vezethet fejlettebb (4k szektoros formátumú) SSD meghajtók esetében. Problémákhoz vezethet a [GRUB2](/index.php/GRUB2#msdos-style_error_message "GRUB2") használatakor. A legacy GRUB és a Syslinux azonban így is működőképes.
+**Figyelem:** A *cfdisk* által létrehozott első partíció a 63-ik szektornál kezdődik, a megszokott 2048-ik helyett. Ez csökkent teljesítményhez vezethet fejlettebb (4k szektoros formátumú) SSD meghajtók esetében. Problémákhoz vezethet a [GRUB2](/index.php/GRUB2#msdos-style_error_message "GRUB2") használatakor. A legacy GRUB és a Syslinux azonban így is működőképes.
 
 *   **gdisk** — Az fdisk [GPT](/index.php/GPT "GPT") változata.
 
@@ -206,28 +206,28 @@ A partíciók mérete egyéni ízlésünk és szükségleteink szerint alakul, d
 
 **Megjegyzés:** Az EBS nagyban a gyártótól függ.
 
-Ha a partíciók nincsenek úgy eltolva, hogy az EBS többszöröseinél (pl. 512 KiB-nál) kezdődjenek, a fájlrendszer eltolása teljesen felesleges, mert minden a partíció eltolásának "résével" megegyező módon tolódik rossz helyre. Hagyományosan a merevlemezeket a _cilinder_, _fej_ és _szektor_ szerint címezték, melyeken aztán az adat olvasásra vagy írásra került. Ezek a sugárirányú helyzetet jelölték, a meghajtó fejének ( = lemez és oldal ), valamint az adatnak az axiális helyzetét. Az LBA (logical block addressing, logika blokk címzés) bevezetésével mindez már nem szükséges. Ehelyett az egész merevlemez egyetlen adatfolyamként címezhető.
+Ha a partíciók nincsenek úgy eltolva, hogy az EBS többszöröseinél (pl. 512 KiB-nál) kezdődjenek, a fájlrendszer eltolása teljesen felesleges, mert minden a partíció eltolásának "résével" megegyező módon tolódik rossz helyre. Hagyományosan a merevlemezeket a *cilinder*, *fej* és *szektor* szerint címezték, melyeken aztán az adat olvasásra vagy írásra került. Ezek a sugárirányú helyzetet jelölték, a meghajtó fejének ( = lemez és oldal ), valamint az adatnak az axiális helyzetét. Az LBA (logical block addressing, logika blokk címzés) bevezetésével mindez már nem szükséges. Ehelyett az egész merevlemez egyetlen adatfolyamként címezhető.
 
 ## GPT használata- a modernebb módszer
 
 ### A gdisk használatának összefoglalása
 
-Ha GPT-t használunk, a megfelelő partíció-szerkesztő eszközünk a _gdisk_ lesz. Ez az eszköz képes a partíciók automatikus, 2048 szektormérethez igazított eltolására (ez 1024 KiB-ot jelent), aminek kompatibilisnek kell lennie az SSD-k túlnyomó többségével, ha nem minddel. A GNU parted program is támogatja a GPT-t, de [kevésbé felhasználóbarát](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813), ha partíciók eltolására kerül sor. Az Arch ISO telepítőkörnyezete magában foglalja a _gdisk_ parancsot. Ha a későbbiekben a telepített rendszeren is szükség van rá, a _gdisk_ a [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) csomagból elérhető.
+Ha GPT-t használunk, a megfelelő partíció-szerkesztő eszközünk a *gdisk* lesz. Ez az eszköz képes a partíciók automatikus, 2048 szektormérethez igazított eltolására (ez 1024 KiB-ot jelent), aminek kompatibilisnek kell lennie az SSD-k túlnyomó többségével, ha nem minddel. A GNU parted program is támogatja a GPT-t, de [kevésbé felhasználóbarát](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813), ha partíciók eltolására kerül sor. Az Arch ISO telepítőkörnyezete magában foglalja a *gdisk* parancsot. Ha a későbbiekben a telepített rendszeren is szükség van rá, a *gdisk* a [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) csomagból elérhető.
 
-Összefoglaló a _gdisk_ általános felhasználásáról:
+Összefoglaló a *gdisk* általános felhasználásáról:
 
-*   A _gdisk_-et indítsuk egy bizonyos lemezen mint root felhasználó (a _merevlemez_ lehet pl. `/dev/sda`):
+*   A *gdisk*-et indítsuk egy bizonyos lemezen mint root felhasználó (a *merevlemez* lehet pl. `/dev/sda`):
 
 ```
-# gdisk _merevlemez_
+# gdisk *merevlemez*
 
 ```
 
 *   Ha a lemez vadonatúj, vagy épp mindent újra akarunk rajta kezdeni, nyissunk új GUID partíciós táblát az `o` paranccsal.
 *   Hozzunk létre új partíciót az `n` paranccsal (elsődleges típusú/első partíció).
-*   Feltételezve, hogy a partíció új, _gdisk_ a lehető legmagasabb eltolást fogja használni. Más esetben a kettő hatványa, ahol a kitevő a partíciók réseinek legnagyobb közös osztója.
-*   Ha egy partíciónak a 2048-ik szektor előtti kezdetet adunk meg, a _gdisk_ automatikusan 2048-ra váltja ezt az értéket. Ezzel biztossá válik a 2048 szektoros eltolás (mivel egy szektor 512B, ez 1024KiB-os eltolás, mely minden SSD NAND törlési blokkhoz illeszkedni fog).
-*   Ezután a `+_x_{M,G}` formátumban adjuk meg, hogy a partíció _x_ mebibyte vagy gibibyte méretig terjeszkedjen; valamint, ha ez a méret nem az eltolási méret (1024 KiB) többszöröse lenne, a _gdisk_ összehúzza a partíciót a legkisebb többszörösig. Ha tehát 15 Gib-os partíciót akarunk létrehozni, `+15G`-t kell beütnünk.
+*   Feltételezve, hogy a partíció új, *gdisk* a lehető legmagasabb eltolást fogja használni. Más esetben a kettő hatványa, ahol a kitevő a partíciók réseinek legnagyobb közös osztója.
+*   Ha egy partíciónak a 2048-ik szektor előtti kezdetet adunk meg, a *gdisk* automatikusan 2048-ra váltja ezt az értéket. Ezzel biztossá válik a 2048 szektoros eltolás (mivel egy szektor 512B, ez 1024KiB-os eltolás, mely minden SSD NAND törlési blokkhoz illeszkedni fog).
+*   Ezután a `+*x*{M,G}` formátumban adjuk meg, hogy a partíció *x* mebibyte vagy gibibyte méretig terjeszkedjen; valamint, ha ez a méret nem az eltolási méret (1024 KiB) többszöröse lenne, a *gdisk* összehúzza a partíciót a legkisebb többszörösig. Ha tehát 15 Gib-os partíciót akarunk létrehozni, `+15G`-t kell beütnünk.
 *   A következő lépés a partíció típusának megjelölése, az alapértelmezett a `Linux filesystem` azaz a Linux fájlrendszer (a kódja `8300`), megfelelő a legtöbb esetben. A kódok listája az `L` billentyűvel hívható elő. Ha LVM-et akarnánk használni, válasszuk ki a `Linux LVM`-et (`8e00`).
 *   Ugyanilyen módon folytassuk a többi partícióval.
 *   Ha végeztünk, a tábát a `w` paranccsal írjuk a lemezre és kilépünk.
@@ -235,29 +235,29 @@ Ha GPT-t használunk, a megfelelő partíció-szerkesztő eszközünk a _gdisk_ 
 
 **Megjegyzés:**
 
-*   A GPT partíciós táblát használó lemezről történő rendszerindításhoz létre kell hozni (lehetőleg a lemez elején) egy [BIOS boot partíciót](/index.php/GRUB2#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB2"), melyen nincs fájlrendszer, s melynek partíció típusa `BIOS boot` vagy `bios_grub` (_gdisk_ a kódja `EF02`) ha a lemez [GRUB](/index.php/GRUB "GRUB")-ot használva indul. A [Syslinux](/index.php/Syslinux "Syslinux")-hoz nincs szükség ennek a `bios_grub` partíciónak létrehozására, de szükség lesz különálló `/boot` partícióra és engedélyezzük a `Legacy BIOS Bootable partition` attrbútumot ezen a partíción a (a _gdisk_ használatával).
+*   A GPT partíciós táblát használó lemezről történő rendszerindításhoz létre kell hozni (lehetőleg a lemez elején) egy [BIOS boot partíciót](/index.php/GRUB2#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB2"), melyen nincs fájlrendszer, s melynek partíció típusa `BIOS boot` vagy `bios_grub` (*gdisk* a kódja `EF02`) ha a lemez [GRUB](/index.php/GRUB "GRUB")-ot használva indul. A [Syslinux](/index.php/Syslinux "Syslinux")-hoz nincs szükség ennek a `bios_grub` partíciónak létrehozására, de szükség lesz különálló `/boot` partícióra és engedélyezzük a `Legacy BIOS Bootable partition` attrbútumot ezen a partíción a (a *gdisk* használatával).
 *   A [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") nem támogatja a GPT-t, a felhsználóknak a [BURG](/index.php/BURG "BURG"), a GRUB vagy a Syslinux közül kell választania.
 
 **Figyelem:** Ha kettős bootolást tervezünk Windows-szal BIOS módban (ez az egyetlen lehetőség 32 bites Windows verziókkal, illetve 64 bites Windows XP-vel), **semmiképp se** használjunk GPT-t mivel a Windows **nem** támogatja a GPT lemezről való indítást BIOS rendszeren. Ilyenkor kénytelenek vagyunk MBR particionálást használni és BIOS módban indítani a rendszert, az alábbi leírás szerint. Ez a korlátozás nem érvényes a modernebb 64 bites Windows rendszerek UEFI módú indítására.
 
 ## MBR használata - régi módszer
 
-Ha MBR-t használunk, a használandó particionáló eszköz az _fdisk_ lesz. Az _fdisk_ újabb verziói már elvetették az elavult cilinderekben történő számítást és kijelzést, akárcsak az MS-DOS kompatibilitást. A legutóbbi _fdisk_ automatikusan tolja el az összes partíciót 2048 szektorral, avagy 1024 Kib-tal, amely az összes mai SSD gyártó által használt EBS méretnél megfelelő. Ez annyit tesz, hogy az alapértelmezett beállításokkal megfelelő lesz a partíciók eltolása.
+Ha MBR-t használunk, a használandó particionáló eszköz az *fdisk* lesz. Az *fdisk* újabb verziói már elvetették az elavult cilinderekben történő számítást és kijelzést, akárcsak az MS-DOS kompatibilitást. A legutóbbi *fdisk* automatikusan tolja el az összes partíciót 2048 szektorral, avagy 1024 Kib-tal, amely az összes mai SSD gyártó által használt EBS méretnél megfelelő. Ez annyit tesz, hogy az alapértelmezett beállításokkal megfelelő lesz a partíciók eltolása.
 
-Jegyezzük meg, hogy régebben az _fdisk_ cilinderekben számolt, és olyan MS-DOS kompatibilitási módot tartalmazott, ami teljesen felborította az SSD eltolást. Épp ezért az interneten még mindig számos olyan, 2008-2009 környéki anyag található, melyek mélyre menően taglalják, hogy mi a particionálás megfelelő menete. A legutóbbi _fdisk_-kel jóval egyszerűbb a dolgunk, miként ez ebből az útmutatóból is kiderül.
+Jegyezzük meg, hogy régebben az *fdisk* cilinderekben számolt, és olyan MS-DOS kompatibilitási módot tartalmazott, ami teljesen felborította az SSD eltolást. Épp ezért az interneten még mindig számos olyan, 2008-2009 környéki anyag található, melyek mélyre menően taglalják, hogy mi a particionálás megfelelő menete. A legutóbbi *fdisk*-kel jóval egyszerűbb a dolgunk, miként ez ebből az útmutatóból is kiderül.
 
 ### Az fdisk használatának összefoglalója
 
-*   Indítsuk root-ként az _fdisk_-et valamely eszközünkön (a _merevlemez_ lehet például `/dev/sda`):
+*   Indítsuk root-ként az *fdisk*-et valamely eszközünkön (a *merevlemez* lehet például `/dev/sda`):
 
 ```
-# fdisk _merevlemez_
+# fdisk *merevlemez*
 
 ```
 
 *   Ha a lemez vadonatúj, vagy mindent újra akarunk kezdeni rajta, készítsünk egy új és üres DOS partíciós táblát az `o` paranccsal.
 *   Az `n` paranccsal készítsünk egy új partíciót (elsődleges típusú/első partíció).
-*   Használjuk a `+_x_G` formátumú parancsot, hogy a partíciót _x_ gibibájtig terjesszük ki. Ha tehát 15GiB méretű partíciót szeretnénk, a parancs `+15G` lesz.
+*   Használjuk a `+*x*G` formátumú parancsot, hogy a partíciót *x* gibibájtig terjesszük ki. Ha tehát 15GiB méretű partíciót szeretnénk, a parancs `+15G` lesz.
 *   Változtassuk a partíció azonosítóját az alapértelmezett Linux-ról (`a kódja 83`) valami másra, ha szükséges, a `t` paranccsal. Ez nem kötelező, csak akkor szükséges, ha valami más partíciótípust akarunk létrehozni, mint például a cserehely, az NTFS vagy az LVM. A partíciótípusok listáját a `l` paranccsal bármikor lekérdezhetjük.
 *   Ugyanilyen módon folytassuk a többi partícióval.
 *   A `w` paranccsal írjuk a lemezre a partíciós táblát.

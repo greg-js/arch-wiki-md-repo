@@ -35,7 +35,7 @@ Bash behaviour can be altered depending on how it is invoked. Some descriptions 
 
 If Bash is spawned by `login` in a TTY, by an [SSH](/index.php/SSH "SSH") daemon, or similar means, it is considered a **login shell**. This mode can also be engaged using the `-l`/`--login` command line option.
 
-Bash is considered an **interactive shell** when its standard input and error are connected to a terminal (for example, when run in a terminal emulator), and it is not started with the `-c` option or [non-option](http://unix.stackexchange.com/a/96805) arguments (for example, `bash **script**`). All interactive shells source `/etc/bash.bashrc` and `~/.bashrc`, while interactive _login_ shells also source `/etc/profile` and `~/.bash_profile`.
+Bash is considered an **interactive shell** when its standard input and error are connected to a terminal (for example, when run in a terminal emulator), and it is not started with the `-c` option or [non-option](http://unix.stackexchange.com/a/96805) arguments (for example, `bash **script**`). All interactive shells source `/etc/bash.bashrc` and `~/.bashrc`, while interactive *login* shells also source `/etc/profile` and `~/.bash_profile`.
 
 **Note:** In Arch `/bin/sh` (which used to be the Bourne shell executable) is symlinked to `/bin/bash`. If Bash is invoked with the name `sh`, it tries to mimic the startup behavior of historical versions of `sh`, including POSIX compability.
 
@@ -43,7 +43,7 @@ Bash is considered an **interactive shell** when its standard input and error ar
 
 See [6.2 Bash Startup Files](http://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files) and [DotFiles](http://mywiki.wooledge.org/DotFiles) for a complete description.
 
-| File | Description | Login shells  | Interactive, _non-login_ shells |
+| File | Description | Login shells  | Interactive, *non-login* shells |
 | `/etc/profile` | [Sources](/index.php/Source "Source") application settings in `/etc/profile.d/*.sh` and `/etc/bash.bashrc`. | Yes | No |
 | `~/.bash_profile` | Per-user, after `/etc/profile`. If this file does not exist, `~/.bash_login` and `~/.profile` are checked in that order. The skeleton file `/etc/skel/.bash_profile` also sources `~/.bashrc`. | Yes | No |
 | `~/.bash_logout` | After exit of a login shell. | Yes | No |
@@ -53,7 +53,7 @@ See [6.2 Bash Startup Files](http://www.gnu.org/software/bash/manual/bash.html#B
 **Note:**
 
 *   Login shells can be non-interactive when called with the `--login` argument.
-*   While interactive, _non-login_ shells do **not** source `~/.bash_profile`, they still inherit the environment from their parent process (which may be a login shell). See [On processes, environments and inheritance](http://mywiki.wooledge.org/ProcessManagement#On_processes.2C_environments_and_inheritance) for details.
+*   While interactive, *non-login* shells do **not** source `~/.bash_profile`, they still inherit the environment from their parent process (which may be a login shell). See [On processes, environments and inheritance](http://mywiki.wooledge.org/ProcessManagement#On_processes.2C_environments_and_inheritance) for details.
 
 ### Shell and environment variables
 
@@ -91,7 +91,6 @@ Bash command line is managed by the separate library called [Readline](/index.ph
 For single press `Tab` results for when a partial or no completion is possible:
 
  `~/.inputrc` 
-
 ```
 set show-all-if-ambiguous on
 
@@ -100,7 +99,6 @@ set show-all-if-ambiguous on
 Alternatively, for results when no completion is possible:
 
  `~/.inputrc` 
-
 ```
 set show-all-if-unmodified on
 
@@ -115,7 +113,6 @@ Bash has native support for tab completion of: commands, filenames, and variable
 For basic completion use lines in the form of `complete -cf your_command` (these will conflict with the [bash-completion](https://www.archlinux.org/packages/?name=bash-completion) settings):
 
  `~/.bashrc` 
-
 ```
 complete -cf sudo
 complete -cf man
@@ -127,7 +124,6 @@ complete -cf man
 History completion bound to arrow keys (down, up) (see: [Readline#History](/index.php/Readline#History "Readline") and [Readline Init File Syntax](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html)):
 
  `~/.bashrc` 
-
 ```
  bind '"\e[A": history-search-backward'
  bind '"\e[B": history-search-forward'
@@ -137,7 +133,6 @@ History completion bound to arrow keys (down, up) (see: [Readline#History](/inde
 or:
 
  `~/.inputrc` 
-
 ```
 "\e[A": history-search-backward
 "\e[B": history-search-forward
@@ -146,12 +141,11 @@ or:
 
 ### Fast word movement with Ctrl
 
-[Xterm](/index.php/Xterm "Xterm") supports moving between words with `Ctrl+Left` and `Ctrl+Right` [by default](http://stackoverflow.com/a/7783928). To achieve this effect with other terminal emulators, find the correct [terminal codes](http://wiki.bash-hackers.org/scripting/terminalcodes), and bind them to `backward-word` and `forward-word` in `~/.inputrc`. The codes can be made visible by first issuing the _cat_ command.
+[Xterm](/index.php/Xterm "Xterm") supports moving between words with `Ctrl+Left` and `Ctrl+Right` [by default](http://stackoverflow.com/a/7783928). To achieve this effect with other terminal emulators, find the correct [terminal codes](http://wiki.bash-hackers.org/scripting/terminalcodes), and bind them to `backward-word` and `forward-word` in `~/.inputrc`. The codes can be made visible by first issuing the *cat* command.
 
 For example, for [urxvt](/index.php/Urxvt "Urxvt"):
 
  `~/.inputrc` 
-
 ```
 "\eOd": backward-word
 "\eOc": forward-word
@@ -162,7 +156,6 @@ For example, for [urxvt](/index.php/Urxvt "Urxvt"):
 Zsh can invoke the manual for the written command pushing `Alt+h`. A similar behaviour is obtained in Bash by appending this line in your `inputrc` file:
 
  `/etc/inputrc` 
-
 ```
 "\eh": "\C-a\eb\ed\C-y\e#man \C-y\C-m\C-p\C-p\C-a\C-d\C-e"
 
@@ -170,7 +163,7 @@ Zsh can invoke the manual for the written command pushing `Alt+h`. A similar beh
 
 ## Aliases
 
-[alias](https://en.wikipedia.org/wiki/Alias_(command) "wikipedia:Alias (command)") is a command, which enables a replacement of a word with another string. It is often used for abbreviating a system command, or for adding default arguments to a regularly used command.
+[alias](https://en.wikipedia.org/wiki/Alias_(command) is a command, which enables a replacement of a word with another string. It is often used for abbreviating a system command, or for adding default arguments to a regularly used command.
 
 Personal aliases are preferably stored in `~/.bashrc`, and system-wide aliases (which affect all users) belong in `/etc/bash.bashrc`. See [[4]](https://gist.github.com/anonymous/a9055e30f97bd19645c2) and [Pacman tips#Shortcuts](/index.php/Pacman_tips#Shortcuts "Pacman tips") for example aliases.
 
@@ -187,7 +180,6 @@ See [Bash/Prompt customization](/index.php/Bash/Prompt_customization "Bash/Promp
 [pkgfile](/index.php/Pkgfile "Pkgfile") includes a "command not found" hook that will automatically search the official repositories, when entering an unrecognized command. An alternative "command not found" hook is provided by [command-not-found](https://aur.archlinux.org/packages/command-not-found/). Usage example:
 
  `$ abiword` 
-
 ```
 The command 'abiword' is been provided by the following packages:
 **abiword** (2.8.6-7) from extra
@@ -201,8 +193,7 @@ The command 'abiword' is been provided by the following packages:
 
 To load it automatically:
 
- `_~/.bashrc_ or _~/.zshrc_` 
-
+ `*~/.bashrc* or *~/.zshrc*` 
 ```
 [ -r /etc/profile.d/cnf.sh ] && . /etc/profile.d/cnf.sh
 
@@ -215,7 +206,7 @@ You can disable the `Ctrl+z` feature (pauses/closes your application) by wrappin
 ```
 #!/bin/bash
 trap "" 20
-_adom_
+*adom*
 
 ```
 
@@ -226,7 +217,6 @@ Now when you accidentally press `Ctrl+z` in [adom](https://aur.archlinux.org/pac
 To clear the screen after logging out on a virtual terminal:
 
  `~/.bash_logout` 
-
 ```
 clear
 reset
@@ -238,7 +228,6 @@ reset
 Bash can automatically prepend `cd` when entering just a path in the shell. For example:
 
  `$ /etc` 
-
 ```
 bash: /etc: Is a directory
 
@@ -247,7 +236,6 @@ bash: /etc: Is a directory
 But after adding one line into `.bashrc` file:
 
  `~/.bashrc` 
-
 ```
 ...
 shopt -s autocd
@@ -277,7 +265,6 @@ After installation, `/etc/profile.d/autojump.bash` must be [sourced](/index.php/
 When resizing a [terminal emulator](/index.php/Terminal_emulator "Terminal emulator"), Bash may not receive the resize signal. This will cause typed text to not wrap correctly and overlap the prompt. The `checkwinsize` shell option checks the window size after each command and, if necessary, updates the values of `LINES` and `COLUMNS`.
 
  `~/.bashrc` 
-
 ```
 shopt -s checkwinsize
 
@@ -301,7 +288,7 @@ For example:
 *   [Bash Reference](https://www.gnu.org/software/bash/manual/bashref.html)
 *   [Bash manual page](https://www.gnu.org/software/bash/manual/bash.html)
 *   [Readline Init File Syntax](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html)
-*   [The Bourne-Again Shell](http://www.aosabook.org/en/bash.html) - The third chapter of _The Architecture of Open Source Applications_
+*   [The Bourne-Again Shell](http://www.aosabook.org/en/bash.html) - The third chapter of *The Architecture of Open Source Applications*
 *   [Shellcheck](http://shellcheck.net) - Check bash scripts for common errors
 
 ### Tutorials

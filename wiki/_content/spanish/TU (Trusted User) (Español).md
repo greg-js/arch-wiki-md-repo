@@ -86,10 +86,9 @@ cvs tag -cFR CURRENT <newpackagebuilddir>
 
 Package changes become available on every full and half of hour. Verify everything was uploaded properly, then select the newly added or updated package in the web interface and set yourself as the maintainer.
 
-_**Nota:** Pasos 5-7 pueden ser ejecutados con communitypkg en un comando como se menciona mas abajo en el [Tutorial de AURtools](/index.php?title=Tutorial_de_AURtools&action=edit&redlink=1 "Tutorial de AURtools (page does not exist)")_
+***Nota:** Pasos 5-7 pueden ser ejecutados con communitypkg en un comando como se menciona mas abajo en el [Tutorial de AURtools](/index.php?title=Tutorial_de_AURtools&action=edit&redlink=1 "Tutorial de AURtools (page does not exist)")*
 
-_
-
+*
 ```
   **Nota:** en algunos casos, especialmente para los paquetes de la comunidad, un TU de x86_64 puede cambiar el
   pkgrel por .1 (y no +1). Esto indica que el **el cambio al PKGBUILD es específico a x86_64** y para   i686 los
@@ -98,8 +97,7 @@ _
   pkgrel=3.1 cuando sea modificado por el TU.
 
 ```
-
-_
+*
 
 #### Subiendo paquetes de la arquitectura x86_64 a community
 

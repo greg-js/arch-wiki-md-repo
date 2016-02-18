@@ -45,7 +45,6 @@ open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/:/etc
 Create the Apache configuration file:
 
  `/etc/httpd/conf/extra/phppgadmin.conf` 
-
 ```
 Alias /phppgadmin "/usr/share/webapps/phppgadmin"
 <Directory "/usr/share/webapps/phppgadmin">
@@ -155,7 +154,7 @@ phpPgAdmin's configuration file is located at `/etc/webapps/phppgadmin/config.in
 If your PostgreSQL server is not on the localhost, edit the following line:
 
 ```
-$conf['servers'][0]['host'] = _;_
+$conf['servers'][0]['host'] = *;*
 
 ```
 
@@ -174,7 +173,7 @@ You can access your phpPgAdmin installation by going to [http://localhost/phppga
 
 ### Login disallowed for security reasons
 
-If extra login security is true, then logins via phpPgAdmin with no password or certain usernames (_pgsql_, _postgres_, _root_, _administrator_) will be denied. Only set this to `false` once you have read the FAQ and understand how to change PostgreSQL's `pg_hba.conf` to enable passworded local connections.
+If extra login security is true, then logins via phpPgAdmin with no password or certain usernames (*pgsql*, *postgres*, *root*, *administrator*) will be denied. Only set this to `false` once you have read the FAQ and understand how to change PostgreSQL's `pg_hba.conf` to enable passworded local connections.
 
 Edit `/etc/webapps/phppgadmin/config.inc.php` and change the following line
 

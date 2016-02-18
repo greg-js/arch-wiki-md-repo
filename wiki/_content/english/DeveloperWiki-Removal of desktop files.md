@@ -22,7 +22,7 @@
 
 ### Relevant quote
 
-_"Patching only occurs in extremely rare cases, to prevent severe breakage in the instance of version mismatches that may occur within a rolling release model."_ - [Arch Linux Source Integrity](https://wiki.archlinux.org/index.php/Arch_Linux#Source_Integrity)
+*"Patching only occurs in extremely rare cases, to prevent severe breakage in the instance of version mismatches that may occur within a rolling release model."* - [Arch Linux Source Integrity](https://wiki.archlinux.org/index.php/Arch_Linux#Source_Integrity)
 
 ### Relevant commands
 
@@ -161,7 +161,7 @@ With wiki formatting:
 
 ### gendesk
 
-_gendesk_ started as an Arch Linux-specific tool for generating .desktop files by fetching the needed information directly from PKGBUILD files. Now it is a general tool that takes command-line arguments. See [Desktop entries#gendesk](/index.php/Desktop_entries#gendesk "Desktop entries") for more information.
+*gendesk* started as an Arch Linux-specific tool for generating .desktop files by fetching the needed information directly from PKGBUILD files. Now it is a general tool that takes command-line arguments. See [Desktop entries#gendesk](/index.php/Desktop_entries#gendesk "Desktop entries") for more information.
 
 ## See also
 

@@ -2,7 +2,7 @@
 
 من [KDE Software Compilation](http://www.kde.org/community/whatiskde/softwarecompilation.php) و [Getting KDE Software](http://www.kde.org/download/):
 
-	_The KDE Software Compilation is the set of frameworks, workspaces, and applications produced by KDE to create a beautiful, functional and free desktop computing environment for Linux and similar operating systems. It consists of a large number of individual applications and a desktop workspace as a shell to run these applications._
+	*The KDE Software Compilation is the set of frameworks, workspaces, and applications produced by KDE to create a beautiful, functional and free desktop computing environment for Linux and similar operating systems. It consists of a large number of individual applications and a desktop workspace as a shell to run these applications.*
 
 The KDE upstream has a well maintained [UserBase wiki](http://userbase.kde.org/). Users can get detailed information about most KDE applications there.
 
@@ -110,7 +110,7 @@ The KDE upstream has a well maintained [UserBase wiki](http://userbase.kde.org/)
 
 #### KDM (مدير عرض كدي)
 
-_طالع صفحة [KDM](/index.php/KDM "KDM") لمعلومات أكثر._
+*طالع صفحة [KDM](/index.php/KDM "KDM") لمعلومات أكثر.*
 
 [مكّن/ابدأ](/index.php/Systemd_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)#.D8.A7.D8.B3.D8.AA.D8.AE.D8.AF.D8.A7.D9.85_.D8.A7.D9.84.D9.88.D8.AD.D8.AF.D8.A7.D8.AA "Systemd (العربية)") `kdm.service` لبدء مدير العرض.
 
@@ -119,7 +119,6 @@ _طالع صفحة [KDM](/index.php/KDM "KDM") لمعلومات أكثر._
 طالع صفحة [xinitrc](/index.php/Xinitrc "Xinitrc") لمعلومات أكثر.
 
  `~/.xinitrc` 
-
 ```
 exec startkde
 
@@ -182,7 +181,7 @@ Plasmoids تطبيقات كدي سكرِبتية (plasmoid scripts) أو ترم�
 
 #### سمات الأيقونات
 
-لا توجد الكثير من سمات الأيقونات لكل النظام في كدي 4\. يمكن فتح _إعدادات النظام > مظهر التطبيقات > الأيقونات_ والتصفّح لسمات جديدة أو تثبيتها يدويًّا. يمكنك العثور على العديد منها من [kde-look.org](http://www.kde-look.org/).
+لا توجد الكثير من سمات الأيقونات لكل النظام في كدي 4\. يمكن فتح *إعدادات النظام > مظهر التطبيقات > الأيقونات* والتصفّح لسمات جديدة أو تثبيتها يدويًّا. يمكنك العثور على العديد منها من [kde-look.org](http://www.kde-look.org/).
 
 الشعارات الرسمية، والأيقونات، ولصاقات أقراص CD والأعمال الفنية لآرتش لينكس مُزوَّدة في حزمة [archlinux-artwork](https://aur.archlinux.org/packages/archlinux-artwork/). بعد تثبيتها يمكنك العثور على الأعمال الفنية من `/usr/share/archlinux/`.
 
@@ -192,15 +191,15 @@ Plasmoids تطبيقات كدي سكرِبتية (plasmoid scripts) أو ترم�
 
 جرّب تثبيت الحزمتان [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) و [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation).
 
-بعد التثبيت، اخرج ولِج مرة أخرى. ليس عليك تعديل أيِّ شيءٍ في _إعدادات النظام > الخطوط_.
+بعد التثبيت، اخرج ولِج مرة أخرى. ليس عليك تعديل أيِّ شيءٍ في *إعدادات النظام > الخطوط*.
 
-إن ضبطت تصيير [الخطوط](/index.php?title=Fonts_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)&action=edit&redlink=1 "Fonts (العربية) (page does not exist)") يدويًّا، اعلم أن النظام قد يغيّر مظهرها. عندما تذهب إلى _إعدادات النظام > المظهر > الخطوط_، سيغيّر إعدادات النظام على الأرجح ملف ضبط الخطوط (`fonts.conf`).
+إن ضبطت تصيير [الخطوط](/index.php?title=Fonts_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)&action=edit&redlink=1 "Fonts (العربية) (page does not exist)") يدويًّا، اعلم أن النظام قد يغيّر مظهرها. عندما تذهب إلى *إعدادات النظام > المظهر > الخطوط*، سيغيّر إعدادات النظام على الأرجح ملف ضبط الخطوط (`fonts.conf`).
 
 لا توجد طريقة لمنع هذا، لكن إن عيّنت القيم التي تتطابق مع ملف `fonts.conf`، تصيير الخط الافتراضي سيرجع (سيتطلب إعادة تشغيل البرنامج أو -في بعض الحالات- إعادة تشغيل سطح المكتب). اعلم أن تفضيلات خطوط جنوم تفعل هذا أيضًا.
 
 ##### الخطوط ضخمة أو تبدو غير متناسبة
 
-جرّب إجبار DPI للخطوط إلى **96** في _إعدادات النظام > مظهر التطبيقات > الخطوط_.
+جرّب إجبار DPI للخطوط إلى **96** في *إعدادات النظام > مظهر التطبيقات > الخطوط*.
 
 إن لم يعمل هذا، حاول إعداد DPI مباشرةً من ضبط Xorg كما وُثِّقَ [هنا](/index.php/Xorg#Setting_DPI_manually "Xorg").
 
@@ -219,7 +218,7 @@ Plasmoids تطبيقات كدي سكرِبتية (plasmoid scripts) أو ترم�
 
 **Tip:** استخدم واجهة الوِب [CUPS](/index.php/CUPS "CUPS") لضبط أسرع. الطابعات المُضبَطة بهذه الطريقة يمكن استخدامها في تطبيقات كدي.
 
-يمكنك أيضًا ضبط الطابعات في _إعدادات النظام > Printer Configuration_. لاستخدام هذه الطريقة، عليك أولًا تثبيت [kdeutils-print-manager](https://www.archlinux.org/packages/?name=kdeutils-print-manager) و [cups](https://www.archlinux.org/packages/?name=cups).
+يمكنك أيضًا ضبط الطابعات في *إعدادات النظام > Printer Configuration*. لاستخدام هذه الطريقة، عليك أولًا تثبيت [kdeutils-print-manager](https://www.archlinux.org/packages/?name=kdeutils-print-manager) و [cups](https://www.archlinux.org/packages/?name=cups).
 
 عفريتا `avahi-daemon` و `cupsd` يجب أن يبدآ أولًا، وإلّا ستحصل على الخطأ التالي:
 
@@ -242,7 +241,6 @@ For CUPS, this is set in `/etc/cups/cupsd.conf`.
 يسمح إضافة `lp` إلى `SystemGroup` أيَّ شخص يمكنه الطباعة أن يضبط الطابعات. بإمكانك -طبعًا- إضافة مجموعة أخرى بدلًا من `lp`.
 
  `/etc/cups/cupsd.conf` 
-
 ```
 # Administrator user group...
 SystemGroup sys root lp
@@ -260,7 +258,7 @@ SystemGroup sys root lp
 
 أنشطة سطح مكتب كدي هي Plasma-based virtual-desktop-like sets of Plasma Widgets حيث يمكنك ضبط الودحات بشكل مستقل إن كان لديك أكثر من شاشة أو سطح مكتب.
 
-على سطح المكتب، انقر على Cashew Plasmoid وانقر -في النافذة المنبثقة- _الأنشطة_.
+على سطح المكتب، انقر على Cashew Plasmoid وانقر -في النافذة المنبثقة- *الأنشطة*.
 
 سيقدّم شريط بلازما أشنطة سطح مكتب الحالية الموجودة والذي سيظهر أسفل الشاشة. يمكنك التنقّل بينها بنقر الأيقونات المُطابِقة.
 
@@ -338,17 +336,17 @@ System Settings > Input Devices > Keyboard > Advanced (tab) > "Key Sequence to k
 
 ## بحث سطح المكتب وسطح المكتب الدلالي (Semantic desktop)
 
-وِفقَ [ويكيبيديا](http://ar.wikipedia.org/wiki/%D8%B3%D8%B7%D8%AD_%D9%85%D9%83%D8%AA%D8%A8_%D8%AF%D9%84%D8%A7%D9%84%D9%8A)، _"سطح المكتب الدلالي هو مصطلح يشير إلى عدة أفكار تهدف إلى تغيير واجهة المستخدم للحاسوب، وتغيير قدرات التعامل مع البيانات، بحيث يمكن مشاركة هذه البيانات بسهولة بين التطبيقات، مما يولد علاقات جديدة بين هذه البيانات لم تكن معروفة للحاسوب من قبل."_
+وِفقَ [ويكيبيديا](http://ar.wikipedia.org/wiki/%D8%B3%D8%B7%D8%AD_%D9%85%D9%83%D8%AA%D8%A8_%D8%AF%D9%84%D8%A7%D9%84%D9%8A)، *"سطح المكتب الدلالي هو مصطلح يشير إلى عدة أفكار تهدف إلى تغيير واجهة المستخدم للحاسوب، وتغيير قدرات التعامل مع البيانات، بحيث يمكن مشاركة هذه البيانات بسهولة بين التطبيقات، مما يولد علاقات جديدة بين هذه البيانات لم تكن معروفة للحاسوب من قبل."*
 
-إنجاز كدي لهذا المفهوم مرتبط بقطعتين برمجيتين رئيسيتين (من كدي 4.10)، أكوندا ونبومك. هذان البرنامجان يبحثان في بياناتك ويصنعا فهرس سهل البحث فيه عنها. الفكرة وراء قطع البرمجيات هذه هي لجعل نظامك _على علمٍ_ ببياناتك وإعطائها سياق باستخدام البيانات الوصفية ووسوم المُستخدم المُورَدة.
+إنجاز كدي لهذا المفهوم مرتبط بقطعتين برمجيتين رئيسيتين (من كدي 4.10)، أكوندا ونبومك. هذان البرنامجان يبحثان في بياناتك ويصنعا فهرس سهل البحث فيه عنها. الفكرة وراء قطع البرمجيات هذه هي لجعل نظامك *على علمٍ* ببياناتك وإعطائها سياق باستخدام البيانات الوصفية ووسوم المُستخدم المُورَدة.
 
 Soprano و Virtuoso اعتماديّتان لسطح مكتب نبومك الدلالي. بما أنّ العلاقة بين المكوّنان الرئيسيّان هذان واعتماديّاتهما غير واضحة، الأقسام التالية ستحاول تسليط الضوء على عملهم الداخليّ.
 
 ### Virtuoso و Soprano
 
-قاعدة البيانات المُستخدَمة لتخزين البيانات الوصفية التي يستخدمها سطح المكتب الدلالي هي قاعدة بيانات _[إطار توصيف الموارد](http://ar.wikipedia.org/wiki/%D8%A5%D8%B7%D8%A7%D8%B1_%D8%AA%D9%88%D8%B5%D9%8A%D9%81_%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%B1%D8%AF)_ وتُدعى Virtuoso. داخليًّا، , Virtuoso يبدو وكأنه قاعدة بيانات علاقيّة. ( [قاعدة البيانات العلاقيّة](https://en.wikipedia.org/wiki/Relational_model "wikipedia:Relational model") تختلف عن قاعدة البيانات مُفرَدة الجدول التقليدية بمعنى أنها تستخدم عدّة جداول مُرتبِطَة بمفتاح واحد لتخزين البيانات.) تُديرها حاليًّا OpenLink وهي متوفّرة تحت رخصة تجارية وأخرى مفتوحة المصدر.
+قاعدة البيانات المُستخدَمة لتخزين البيانات الوصفية التي يستخدمها سطح المكتب الدلالي هي قاعدة بيانات *[إطار توصيف الموارد](http://ar.wikipedia.org/wiki/%D8%A5%D8%B7%D8%A7%D8%B1_%D8%AA%D9%88%D8%B5%D9%8A%D9%81_%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%B1%D8%AF)* وتُدعى Virtuoso. داخليًّا، , Virtuoso يبدو وكأنه قاعدة بيانات علاقيّة. ( [قاعدة البيانات العلاقيّة](https://en.wikipedia.org/wiki/Relational_model "wikipedia:Relational model") تختلف عن قاعدة البيانات مُفرَدة الجدول التقليدية بمعنى أنها تستخدم عدّة جداول مُرتبِطَة بمفتاح واحد لتخزين البيانات.) تُديرها حاليًّا OpenLink وهي متوفّرة تحت رخصة تجارية وأخرى مفتوحة المصدر.
 
-من [قاعدة بيانات كدي التعليميّة](http://techbase.kde.org/Projects/Nepomuk/ComponentOverview#Soprano)، _Soprano is a Qt abstraction over databases. It provides a friendly Qt-based API for accessing different RDF stores. It currently supports 3 database backends - Sesame, Redland and Virtuoso. The KDE Semantic Stack only works with Virtuoso. Soprano also provides additional features such as serializing, parsing RDF data, and a client server architecture that is heavily used in Nepomuk._
+من [قاعدة بيانات كدي التعليميّة](http://techbase.kde.org/Projects/Nepomuk/ComponentOverview#Soprano)، *Soprano is a Qt abstraction over databases. It provides a friendly Qt-based API for accessing different RDF stores. It currently supports 3 database backends - Sesame, Redland and Virtuoso. The KDE Semantic Stack only works with Virtuoso. Soprano also provides additional features such as serializing, parsing RDF data, and a client server architecture that is heavily used in Nepomuk.*
 
 ### نبومك
 
@@ -417,13 +415,13 @@ To do it persistently:
 
 ### ما فونون؟
 
-من [ويكيبيديا](https://en.wikipedia.org/wiki/Phonon_(KDE) "wikipedia:Phonon (KDE)"): _Phonon is the multimedia API for KDE 4\. Phonon was created to allow KDE 4 to be independent of any single multimedia framework such as GStreamer or xine and to provide a stable API for KDE 4's lifetime. It was done for various reasons: to create a simple KDE/Qt style multimedia API, to better support native multimedia frameworks on Windows and Mac OS X, and to fix problems of frameworks becoming unmaintained or having API or ABI instability._
+من [ويكيبيديا](https://en.wikipedia.org/wiki/Phonon_(KDE) "wikipedia:Phonon (KDE)"): *Phonon is the multimedia API for KDE 4\. Phonon was created to allow KDE 4 to be independent of any single multimedia framework such as GStreamer or xine and to provide a stable API for KDE 4's lifetime. It was done for various reasons: to create a simple KDE/Qt style multimedia API, to better support native multimedia frameworks on Windows and Mac OS X, and to fix problems of frameworks becoming unmaintained or having API or ABI instability.*
 
 **فونون** استُخدم على نطاق واسع في كدي، للصوت (مثلًا، إخطارات النظام أو تطبيقات كدي للصوت) والفيديو (مثلًا، مصغّرات الفيديو في دولفين) معًا.
 
 ### أيَّ سند ( backend) عليَّ استخدامه؟
 
-يمكنك الاختيار من بين مختلف الأسناد مثل GStreamer ([phonon-gstreamer](https://www.archlinux.org/packages/?name=phonon-gstreamer)) أو ڤي‌إل‌سي ([phonon-vlc](https://www.archlinux.org/packages/?name=phonon-vlc))، متوفّر في [official repositories](/index.php/Official_repositories "Official repositories")، و مشغّل إم ([phonon-mplayer-git](https://aur.archlinux.org/packages/phonon-mplayer-git/))، ([phonon-quicktime-git](https://aur.archlinux.org/packages/phonon-quicktime-git/))، و ([phonon-avkode-git](https://aur.archlinux.org/packages/phonon-avkode-git/))، متوفّر في [AUR](/index.php/AUR "AUR"). أغلب المستخدمين يودّون GStreamer أو ڤي‌إل‌سي الذان يمتلكان أفضل upstream support. لاحظ أنه يمكن تثبيت عدّة أسناد مع بعضها البعض والاختيار بينها من _System Settings > Multimedia > Phonon > Backend_.
+يمكنك الاختيار من بين مختلف الأسناد مثل GStreamer ([phonon-gstreamer](https://www.archlinux.org/packages/?name=phonon-gstreamer)) أو ڤي‌إل‌سي ([phonon-vlc](https://www.archlinux.org/packages/?name=phonon-vlc))، متوفّر في [official repositories](/index.php/Official_repositories "Official repositories")، و مشغّل إم ([phonon-mplayer-git](https://aur.archlinux.org/packages/phonon-mplayer-git/))، ([phonon-quicktime-git](https://aur.archlinux.org/packages/phonon-quicktime-git/))، و ([phonon-avkode-git](https://aur.archlinux.org/packages/phonon-avkode-git/))، متوفّر في [AUR](/index.php/AUR "AUR"). أغلب المستخدمين يودّون GStreamer أو ڤي‌إل‌سي الذان يمتلكان أفضل upstream support. لاحظ أنه يمكن تثبيت عدّة أسناد مع بعضها البعض والاختيار بينها من *System Settings > Multimedia > Phonon > Backend*.
 
 **ملاحظة:** حسبَ [قاعدة مستخدم كدي](http://userbase.kde.org/Phonon#Backend_libraries)، Phonon-MPlayer لم يعد يُشرَف عليه
 
@@ -476,7 +474,7 @@ exec openbox-kde-session
 
 ### ضبط KWin لاستخدام OpenGL ES
 
-بدءًا بالإصدار 4.8 من KWin أصبح من الممكن استخدام الثنائي **kwin_gles** المبنيّ منفصلًا كبديل عن kwin. It behaves almost the same as the kwin executable in OpenGL2 mode with the slight difference that it uses _egl_ instead of _glx_ as the native platform interface. لاختبار kwin_gles عليك فقط تنفيذ `kwin_gles --replace` في كونسول. إن أردت إبقاء هذا التغيير دائمًا، عليك إنشاء سكرِبت في `$(kde4-config --localprefix)/env/` والذي يصدّر `KDEWM=kwin_gles`.
+بدءًا بالإصدار 4.8 من KWin أصبح من الممكن استخدام الثنائي **kwin_gles** المبنيّ منفصلًا كبديل عن kwin. It behaves almost the same as the kwin executable in OpenGL2 mode with the slight difference that it uses *egl* instead of *glx* as the native platform interface. لاختبار kwin_gles عليك فقط تنفيذ `kwin_gles --replace` في كونسول. إن أردت إبقاء هذا التغيير دائمًا، عليك إنشاء سكرِبت في `$(kde4-config --localprefix)/env/` والذي يصدّر `KDEWM=kwin_gles`.
 
 ### تمكن مصغّرات الصوت مع مديريّ الملفات كنكر/دولفين
 
@@ -495,11 +493,11 @@ $ mkdir -p ~/.compose-cache/
 
 ```
 
-**Note:** لمن لديه حبّ الاستطلاع ويودون معرفة ما الذي يجري هنا، هذا الأمر يمكّن an optimization which Lubos (of general KDE speediness fame) came up with some time ago and was then rewritten and integrated into libx11\. Ordinarily, on startup, applications read input method information from `/usr/share/X11/locale/_your locale_/Compose`. This file is quite long (>5000 lines for the en_US.UTF-8 one) and takes some time to process. libX11 can create a cache of the parsed information which is much quicker to read subsequently, but it will only re-use an existing cache or create a new one in `~/.compose-cache` if the directory already exists.
+**Note:** لمن لديه حبّ الاستطلاع ويودون معرفة ما الذي يجري هنا، هذا الأمر يمكّن an optimization which Lubos (of general KDE speediness fame) came up with some time ago and was then rewritten and integrated into libx11\. Ordinarily, on startup, applications read input method information from `/usr/share/X11/locale/*your locale*/Compose`. This file is quite long (>5000 lines for the en_US.UTF-8 one) and takes some time to process. libX11 can create a cache of the parsed information which is much quicker to read subsequently, but it will only re-use an existing cache or create a new one in `~/.compose-cache` if the directory already exists.
 
 ### إخفاء الأقسام
 
-في دولفين، يكون إخفاء الأقسام بسهولة النقر باليمين على القسم في شريط `الأماكن` الجانبي واختيار `Hide _partition_`. وإلّا...
+في دولفين، يكون إخفاء الأقسام بسهولة النقر باليمين على القسم في شريط `الأماكن` الجانبي واختيار `Hide *partition*`. وإلّا...
 
 إن أردت منع الأقسام الداخلية من الظهور في مدير الملفات، يمكنك إنشاء قاعدة udev، مثلًا:
 
@@ -517,10 +515,9 @@ KERNEL=="sda2", ENV{UDISKS_IGNORE}="1"
 
 #### تعطيل تلميحات المفتاح الذكي (المتصفّح)
 
-لتعطيل تلميحات المفتاح الذكي هذه في كنكر (عند ضغط `Ctrl` في صفحة وِب)، استخدم _Settings > Configure Konqueror > Web Browsing_ وأزل التأشير عن _Enable Access Key activation with Ctrl key_ o
+لتعطيل تلميحات المفتاح الذكي هذه في كنكر (عند ضغط `Ctrl` في صفحة وِب)، استخدم *Settings > Configure Konqueror > Web Browsing* وأزل التأشير عن *Enable Access Key activation with Ctrl key* o
 
  `~/.kde4/share/config/konquerorrc` 
-
 ```
 [Access Keys]
 Enabled=false
@@ -532,7 +529,7 @@ Enabled=false
 
 يمكن استخدام عُدَّة الوِب بدلًا من KHTML. أولًا ثبّت الحزمة [kwebkitpart](https://www.archlinux.org/packages/?name=kwebkitpart).
 
-بعدها -وبعد تنفيذ كنكر- انتقل إلى _Settings > Configure Konqueror > General > Default web browser engine_ وعيّنه إلى `WebKit`.
+بعدها -وبعد تنفيذ كنكر- انتقل إلى *Settings > Configure Konqueror > General > Default web browser engine* وعيّنه إلى `WebKit`.
 
 ### التكامل مع فَيَرفُكس
 
@@ -547,14 +544,13 @@ Enabled=false
 انسخ profile الخفية الحالي كقالب:
 
 ```
-$ cp -r /usr/share/wallpapers/_ExistingWallpaper_ ~/.kde4/share/wallpapers/
+$ cp -r /usr/share/wallpapers/*ExistingWallpaper* ~/.kde4/share/wallpapers/
 
 ```
 
 غيّر اسم الدليل، وحرّر `metadata.desktop`:
 
- `~/.kde4/share/wallpapers/_MyWallpaper_/metadata.desktop` 
-
+ `~/.kde4/share/wallpapers/*MyWallpaper*/metadata.desktop` 
 ```
 [Desktop Entry]
 Name=MyWallpaper
@@ -572,14 +568,13 @@ $ rm ~/.kde4/share/wallpapers/MyWallpaper/contents/images/*
 انسخ الصورة الجديدة إلى:
 
 ```
-$ cp _path/to/MyWallpaper.png_ MyWallpaper/contents/images/1920x1080.png
+$ cp *path/to/MyWallpaper.png* MyWallpaper/contents/images/1920x1080.png
 
 ```
 
 حرّر بيانات profile الوصفية للسمة الحالية:
 
  `~/.kde4/share/apps/desktoptheme/MyTheme/metadata.desktop` 
-
 ```
 [Wallpaper]
 defaultWallpaperTheme=NewWallpaper

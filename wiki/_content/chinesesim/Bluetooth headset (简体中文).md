@@ -36,7 +36,7 @@ PulseAudio 5.x 开始默认支持 A2DP。 确保这些包已经安装[Install](/
 
 ```
 
-现在我们可以使用 _bluetoothctl_ 命令来实现配对和连接。 如果在使用这个命令过程中出现问题或想了解_bluetoothctl_的更多帮助，参见 [Bluetooth](/index.php/Bluetooth "Bluetooth")。运行：
+现在我们可以使用 *bluetoothctl* 命令来实现配对和连接。 如果在使用这个命令过程中出现问题或想了解*bluetoothctl*的更多帮助，参见 [Bluetooth](/index.php/Bluetooth "Bluetooth")。运行：
 
 ```
 # bluetoothctl
@@ -60,7 +60,7 @@ PulseAudio 5.x 开始默认支持 A2DP。 确保这些包已经安装[Install](/
 
 ```
 
-这里发现了一个名字是"Lasmex LBT10"，对应MAC地址是_00:1D:43:6D:03:26_的设备。接下来我们使用这个MAC地址来配对：
+这里发现了一个名字是"Lasmex LBT10"，对应MAC地址是*00:1D:43:6D:03:26*的设备。接下来我们使用这个MAC地址来配对：
 
 ```
 # pair 00:1D:43:6D:03:26
@@ -76,11 +76,11 @@ PulseAudio 5.x 开始默认支持 A2DP。 确保这些包已经安装[Install](/
 
 如果一切正常，你现在可以在[PulseAudio](/index.php/PulseAudio "PulseAudio")看到一个独立的输出设备。
 
-**小贴士:** 设备默认情况下可能是停止的。你可以在[pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)的"Configuration"标签页里选择配置(_OFF_, A2DP, HFP)
+**小贴士:** 设备默认情况下可能是停止的。你可以在[pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)的"Configuration"标签页里选择配置(*OFF*, A2DP, HFP)
 
 你现在可以通过[pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)的"Playback"和"Pecording"标签页重定向音频的输入、输出了。
 
-除了[pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)，这里也可以通过_pacmd_命令来选择配置:
+除了[pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)，这里也可以通过*pacmd*命令来选择配置:
 
 ```
 # pacmd set-card-profile bluez_card.00_1E_7C_30_86_FA a2dp_sink
@@ -94,7 +94,7 @@ off                -- Off (sinks: 0, sources: 0, priority: 0, available: yes)
 
 **小贴士:** 如果shell安装了对应的自动补全包[bash-completion](https://www.archlinux.org/packages/?name=bash-completion)或[zsh-completions](https://www.archlinux.org/packages/?name=zsh-completions)，可以通过tab键快速补全命令
 
-你现在可以停止扫描，并退出_bluetoothctl_命令：
+你现在可以停止扫描，并退出*bluetoothctl*命令：
 
 ```
 # scan off
@@ -123,7 +123,7 @@ off                -- Off (sinks: 0, sources: 0, priority: 0, available: yes)
 
 #### 配对成功, 但连接失败
 
-你可能在 _bluetoothctl_ 里面看到下面的错误:
+你可能在 *bluetoothctl* 里面看到下面的错误:
 
 ```
 [bluetooth]# connect 00:1D:43:6D:03:26
@@ -149,7 +149,7 @@ bluetoothd[5556]: a2dp-sink profile connect failed for 00:1D:43:6D:03:26: Protoc
 
 这是因为没有安装[pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) 包导致的。 如果确实没有安装，安装一下这个包，然后重启一下[pulseaudio](/index.php/Pulseaudio "Pulseaudio")。
 
-如果不是因为缺失包导致的， 很可能是PulseAudio没收到消息，一般重启一下PulseAudio就可以解决问题。 注意_bluetoothctl_和PulseAudio不需要在相同的用户下运行，_bluetooth_在root环境下运行，而PulseAudio在用户环境下运行也可以很好的工作。 重启PulseAudio后，不需要重新配对，直接重连即可。
+如果不是因为缺失包导致的， 很可能是PulseAudio没收到消息，一般重启一下PulseAudio就可以解决问题。 注意*bluetoothctl*和PulseAudio不需要在相同的用户下运行，*bluetooth*在root环境下运行，而PulseAudio在用户环境下运行也可以很好的工作。 重启PulseAudio后，不需要重新配对，直接重连即可。
 
 如果重启PulseAudio后，仍然不能正常工作，你需要重新加载 module-bluetooth-discover 模块。
 
@@ -172,14 +172,13 @@ module-bluez5-discover
 你可以通过加载PulseAudio的 switch-on-connect 模块，使得蓝牙耳机连接后，自动切换到耳机上。添加如下加载语句:
 
  `/etc/pulse/default.pa` 
-
 ```
 # automatically switch to newly-connected devices
 load-module module-switch-on-connect
 
 ```
 
-同时，你需要告诉_bluetoothctl_信任你的蓝牙耳机，否则你将会看到如下报错：
+同时，你需要告诉*bluetoothctl*信任你的蓝牙耳机，否则你将会看到如下报错：
 
 ```
 bluetoothd[487]: Authentication attempt without agent
@@ -195,7 +194,6 @@ bluetoothd[487]: Access denied: org.bluez.Error.Rejected
 重启后，你的蓝牙适配器默认是不会启用的，你需要添加udev规则来启用它：
 
  `/etc/udev/rules.d/10-local.rules` 
-
 ```
 # Set bluetooth power up
 ACTION=="add", SUBSYSTEM=="bluetooth", KERNEL=="hci[0-9]*", RUN+="/usr/bin/hciconfig %k up"
@@ -216,7 +214,6 @@ bluetoothd[5556]: Endpoint registered: sender=:1.83 path=/MediaEndpoint/A2DPSink
 如果使用的是[GDM](/index.php/GDM "GDM")， PulseAudio 的另外一个实例可能已经启动，并捕获了你的蓝牙连接。 这种情况可以通过修改配置文件来解决：
 
  `/var/lib/gdm/.pulse/client.conf` 
-
 ```
 autospawn = no
 daemon-binary = /bin/true
@@ -226,7 +223,7 @@ daemon-binary = /bin/true
 
 #### UUIDs has unsupported type
 
-在配对的时候，你可能会在_bluetoothctl_看到如下信息:
+在配对的时候，你可能会在*bluetoothctl*看到如下信息:
 
 ```
 [CHG] Device 00:1D:43:6D:03:26 UUIDs has unsupported type
@@ -299,7 +296,7 @@ If PulseAudio fails when changing the profile to A2DP with bluez 4.1+ and PulseA
 | **Nokia BH-104** | bluez4 | Yes |
 | **Creative AirwaveHD** | bluez 5.23 | Bluetooth adapter Atheros Communications usb: 0cf3:0036 | Yes |
 | **Creative HITZ WP380** | bluez 5.27, pulseaudio 5.0-1 | A2DP Profile only. Buttons work (Play, Pause, Prev, Next). Volume buttons are hardware-only. Auto-connect works but you should include the bluetooth module in "pulseaudio" to switch to it automatically. Clear HD Music Audio (This device support APTx codec but it isn't supported in linux yet). You may have some latency problems which needs pulseaudio restart. | Yes |
-| **deleyCON Bluetooth Headset** | bluez 5.23 | Adapter: CSL - USB nano Bluetooth-Adapter V4.0\. Tested a2dp profile. Untested microphone. Does not auto-connect (even when paired and trusted), must connect manually. Play/pause button mutes/unmutes the headphones, not the playback. Playback fwd/bwd buttons do not work (nothing visible with _xev_). | Limited |
+| **deleyCON Bluetooth Headset** | bluez 5.23 | Adapter: CSL - USB nano Bluetooth-Adapter V4.0\. Tested a2dp profile. Untested microphone. Does not auto-connect (even when paired and trusted), must connect manually. Play/pause button mutes/unmutes the headphones, not the playback. Playback fwd/bwd buttons do not work (nothing visible with *xev*). | Limited |
 | **UE BOOM** | bluez 5.27, pulseaudio-git 5.99 | Update to latest UE BOOM fw 1.3.58\. Sound latency in video solved by configuring pavucontrol. Works with UE BOOM x2. | Yes |
 | **LG HBS-730** | bluez 5.30, pulseaudio 6.0 | Works out of box with A2DP profile. | Yes |
 | **LG HBS-750** | bluez 5.30, pulseaudio-git 6.0 | Works out of box with A2DP profile. | Yes |

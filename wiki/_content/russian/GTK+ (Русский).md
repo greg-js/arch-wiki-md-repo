@@ -2,7 +2,7 @@
 
 C [сайта GTK+](http://www.gtk.org):
 
-	_GTK+, или GIMP Toolkit - это мультиплатформенный инструментарий для разработки графического пользовательского интерфейса. Offering a complete set of widgets, GTK+ is suitable for projects ranging from small one-off tools to complete application suites._
+	*GTK+, или GIMP Toolkit - это мультиплатформенный инструментарий для разработки графического пользовательского интерфейса. Offering a complete set of widgets, GTK+ is suitable for projects ranging from small one-off tools to complete application suites.*
 
 GTK+, GIMP Toolkit, изначально сделан [проектом GNU](/index.php/GNU_Project "GNU Project") для [GIMP](/index.php/GIMP "GIMP"), но теперь это очень популярный инструмент связанный с многими языками. Эта статья будет исследовать инструменты, используемые для настройки GTK+ тем, стилей, иконок, шрифтов и размеров шрифтов, а также подробную ручную настройку.
 
@@ -44,7 +44,7 @@ GTK+, GIMP Toolkit, изначально сделан [проектом GNU](/in
 
 ## Темы
 
-В GTK+ 2, тема по умолчанию _Raleigh_, но Arch Linux имеет пользовательский файл настроек `/usr/share/gtk-2.0/gtkrc`, который устанавливает тему по умолчанию _Adwaita_. В GTK+ 3, тема по умолчанию _Adwaita_.
+В GTK+ 2, тема по умолчанию *Raleigh*, но Arch Linux имеет пользовательский файл настроек `/usr/share/gtk-2.0/gtkrc`, который устанавливает тему по умолчанию *Adwaita*. В GTK+ 3, тема по умолчанию *Adwaita*.
 
 Чтобы установить определенную тему, вы можете задать переменные среды.
 
@@ -70,7 +70,7 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 
 **С поддержкой обеих GTK+ 2 и GTK+ 3:**
 
-*   **GNOME Standard Themes** — Тема по умолчанию для Рабочего стола GNOME. Включает: _Adwaita_, _HighContrast_
+*   **GNOME Standard Themes** — Тема по умолчанию для Рабочего стола GNOME. Включает: *Adwaita*, *HighContrast*
 
 	[https://github.com/GNOME/gnome-themes-standard](https://github.com/GNOME/gnome-themes-standard) || [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard)
 
@@ -78,11 +78,11 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 
 	[http://deviantart.com/view/281431756](http://deviantart.com/view/281431756) || [gtk-theme-orion](https://aur.archlinux.org/packages/gtk-theme-orion/)
 
-*   **MATE Themes** — Тема по умолчанию для Рабочего стола MATE. Включает: _BlackMATE_, _BlueMenta_, _Blue-Submarine_, _ContrastHigh_, _ContrastHighInverse_, _GreenLaguna_, _Green-Submarine_, _Menta_, _TraditionalGreen_, _TraditionalOk_, _TraditionalOkTest_
+*   **MATE Themes** — Тема по умолчанию для Рабочего стола MATE. Включает: *BlackMATE*, *BlueMenta*, *Blue-Submarine*, *ContrastHigh*, *ContrastHighInverse*, *GreenLaguna*, *Green-Submarine*, *Menta*, *TraditionalGreen*, *TraditionalOk*, *TraditionalOkTest*
 
 	[https://github.com/mate-desktop/mate-themes](https://github.com/mate-desktop/mate-themes) || [mate-themes](https://www.archlinux.org/packages/?name=mate-themes)
 
-*   **MATE Themes Extras** — Коллекция GTK2/3 тем для Рабочего стола MATE. Включает: _DeLorean-Dark_, _DeLorean_, _GnomishBeige_
+*   **MATE Themes Extras** — Коллекция GTK2/3 тем для Рабочего стола MATE. Включает: *DeLorean-Dark*, *DeLorean*, *GnomishBeige*
 
 	[https://github.com/NiceandGently/mate-themes-extras](https://github.com/NiceandGently/mate-themes-extras) || [mate-themes-extras](https://www.archlinux.org/packages/?name=mate-themes-extras)
 
@@ -116,7 +116,7 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 
 **Поддерживается только GTK+ 2:**
 
-*   **GTK+ Engines** — Движок тем для GTK+ 2\. Включает: _Clearlooks_, _Crux_, _Industrial_, _Mist_, _Redmond_, _ThinIce_
+*   **GTK+ Engines** — Движок тем для GTK+ 2\. Включает: *Clearlooks*, *Crux*, *Industrial*, *Mist*, *Redmond*, *ThinIce*
 
 	[https://github.com/GNOME/gtk-engines](https://github.com/GNOME/gtk-engines) || [gtk-engines](https://www.archlinux.org/packages/?name=gtk-engines)
 
@@ -158,12 +158,12 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 
 Большинство крупных [окружений рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") предоставляют инструменты для настройки тем GTK+, иконок, шрифта и размера шрифта, и управляют этими настройками с помощью [XSettings](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html):
 
-*   Если вы используете [Cinnamon](/index.php/Cinnamon "Cinnamon"), используйте Themes tool (_cinnamon-settings themes_): идите в _Параметры > Параметры системы > Оформление_.
-*   Если вы используете [Enlightenment](/index.php/Enlightenment "Enlightenment"): идите в _Settings > All > Look > Application Theme_.
-*   Если вы используете [GNOME](/index.php/GNOME "GNOME"), используйте Gnome Tweak Tool (_gnome-tweak-tool_): установите [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool), идите в _GNOME Tweak Tool > Внешний вид_.
-*   Если вы используете [MATE](/index.php/MATE "MATE"), используйте Appearance Preferences tool (_mate-appearance-properties_): идите в _Система > Параметры > Внешний вид_.
-*   Если вы используете [Xfce](/index.php/Xfce "Xfce"), используйте Appearance tool: идите _Настройки > Внешний вид_.
-*   Если вы используете [Openbox](/index.php/Openbox "Openbox"), идите в _obconf > Тема_ или lxappearance с установленным lxappearance-obconf, тогда _lxappearance-obconf > Рамка окна > Тема_.
+*   Если вы используете [Cinnamon](/index.php/Cinnamon "Cinnamon"), используйте Themes tool (*cinnamon-settings themes*): идите в *Параметры > Параметры системы > Оформление*.
+*   Если вы используете [Enlightenment](/index.php/Enlightenment "Enlightenment"): идите в *Settings > All > Look > Application Theme*.
+*   Если вы используете [GNOME](/index.php/GNOME "GNOME"), используйте Gnome Tweak Tool (*gnome-tweak-tool*): установите [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool), идите в *GNOME Tweak Tool > Внешний вид*.
+*   Если вы используете [MATE](/index.php/MATE "MATE"), используйте Appearance Preferences tool (*mate-appearance-properties*): идите в *Система > Параметры > Внешний вид*.
+*   Если вы используете [Xfce](/index.php/Xfce "Xfce"), используйте Appearance tool: идите *Настройки > Внешний вид*.
+*   Если вы используете [Openbox](/index.php/Openbox "Openbox"), идите в *obconf > Тема* или lxappearance с установленным lxappearance-obconf, тогда *lxappearance-obconf > Рамка окна > Тема*.
 
 Другие графические инструменты, как правило перезаписывают [файлы настроек](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0).
 
@@ -173,7 +173,7 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 
 	[https://projects.kde.org/kde-gtk-config](https://projects.kde.org/kde-gtk-config) || [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config)
 
-	После установки, `kde-gtk-config` также можно найти в _System Settings > Application Appearance > GTK_.
+	После установки, `kde-gtk-config` также можно найти в *System Settings > Application Appearance > GTK*.
 
 *   **LXAppearance** — независимая от Окружения рабочего стола утилита настройки GTK+2 и GTK+3, от проекта LXDE (не требует других частей LXDE).
 
@@ -185,9 +185,9 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 
 	[http://kde-look.org/content/show.php?content=74689](http://kde-look.org/content/show.php?content=74689) || [gtk-kde4](https://aur.archlinux.org/packages/gtk-kde4/)
 
-	После установки, `gtk-kde4` также можно найти в _System Settings > Lost and Found > GTK style_.
+	После установки, `gtk-kde4` также можно найти в *System Settings > Lost and Found > GTK style*.
 
-*   **GTK+ Change Theme** — Маленькая программа, которая позволяет изменять вашу GTK+ 2.0 тему (считается лучшей альтернативой _switch2_).
+*   **GTK+ Change Theme** — Маленькая программа, которая позволяет изменять вашу GTK+ 2.0 тему (считается лучшей альтернативой *switch2*).
 
 	[http://plasmasturm.org/code/gtk-chtheme/](http://plasmasturm.org/code/gtk-chtheme/) || [gtk-chtheme](https://www.archlinux.org/packages/?name=gtk-chtheme)
 
@@ -210,7 +210,7 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 
 **Обратите внимание:**
 
-*   Смотрите [GTK+ 3 свойства _GtkSettings_](http://library.gnome.org/devel/gtk3/stable/GtkSettings.html#GtkSettings.properties) (и [GTK+ 2 свойства](http://library.gnome.org/devel/gtk2/stable/GtkSettings.html#GtkSettings.properties)) в справочном руководстве программирования GTK+, для полного перечня поддерживаемых в настоящее время вариантов настройки GTK+.
+*   Смотрите [GTK+ 3 свойства *GtkSettings*](http://library.gnome.org/devel/gtk3/stable/GtkSettings.html#GtkSettings.properties) (и [GTK+ 2 свойства](http://library.gnome.org/devel/gtk2/stable/GtkSettings.html#GtkSettings.properties)) в справочном руководстве программирования GTK+, для полного перечня поддерживаемых в настоящее время вариантов настройки GTK+.
 *   Некоторые настройки, описанных ниже (например `gtk-icon-sizes`) являются устаревшими и игнорируется с GTK+ 3.10.
 *   При редактировании файлов настроек GTK+, только вновь запущенные приложения будет отображать изменения.
 
@@ -221,7 +221,6 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 **GTK+ 2:**
 
  `~/.gtkrc-2.0` 
-
 ```
 gtk-icon-theme-name = "Adwaita"
 gtk-theme-name = "Adwaita"
@@ -231,7 +230,6 @@ gtk-font-name = "DejaVu Sans 11"
 **GTK+ 3:**
 
  `$XDG_CONFIG_HOME/gtk-3.0/settings.ini` 
-
 ```
 [Settings]
 gtk-icon-theme-name = Adwaita
@@ -239,7 +237,7 @@ gtk-theme-name = Adwaita
 gtk-font-name = DejaVu Sans 11
 ```
 
-**Обратите внимание:** Название темы значков определено в файле индекса темы, а _не_ в имени своего каталога.
+**Обратите внимание:** Название темы значков определено в файле индекса темы, а *не* в имени своего каталога.
 
 ### Вариант тёмной темы
 
@@ -252,7 +250,7 @@ gtk-application-prefer-dark-theme = true
 
 ### Горячие клавиши
 
-Keyboard shortcuts (otherwise known as _accelerators_ in GTK+) may be changed by hovering the mouse over the respective menu item, and pressing the desired key combination. To enable this feature, set:
+Keyboard shortcuts (otherwise known as *accelerators* in GTK+) may be changed by hovering the mouse over the respective menu item, and pressing the desired key combination. To enable this feature, set:
 
 ```
 gtk-can-change-accels = 1
@@ -309,7 +307,7 @@ gtk-menu-images = 0
 
 Для **GTK+ 3**
 
-Измените DConf с _gsettings_:
+Измените DConf с *gsettings*:
 
 ```
 $ gsettings set org.gtk.Settings.FileChooser startup-mode cwd
@@ -331,7 +329,6 @@ $ gsettings set org.gtk.Settings.FileChooser startup-mode cwd
 До GTK+ 3.6, щелчёк в обе стороны от ползунка сдвинет прокрутку в направлении щелчка, примерно на одну страницу. Так GTK+ 3.6, слайдер сразу перейдёт к позиции мыши. Такое поведение можно отменить в некоторых приложениях путем создания файла с содержимым, приведенным ниже:
 
  `~/.config/gtk-3.0/settings.ini` 
-
 ```
 [Settings]
 gtk-primary-button-warps-slider = false
@@ -349,7 +346,6 @@ gtk-primary-button-warps-slider = false
 Позиции наложения прокрутки обозначены тонкими пунктирными линиями в окне приложения. Эти пунктирные линии будут присутствовать, даже если накладка прокрутка отключена с помощью переменной сред, которая обсуждались в предыдущем разделе. Для удаления индикаторных линий, создайте следующий файл:
 
  `~/.config/gtk-3.0/gtk.css` 
-
 ```
 /* Remove dotted lines from GTK+ 3 applications */
 .undershoot.top, .undershoot.right, .undershoot.bottom, .undershoot.left { background-image: none; }
@@ -386,7 +382,7 @@ port = 8080 + ($display_number - 1)
 Запускаемые приложения
 
 ```
-$ GDK_BACKEND=broadway BROADWAY_DISPLAY=$display_number _<<app>>_
+$ GDK_BACKEND=broadway BROADWAY_DISPLAY=$display_number *<<app>>*
 
 ```
 
@@ -438,7 +434,6 @@ find $(find ~/.themes /usr/share/themes/ -wholename "*/gtk-3.0" | sed -e "s/^\(.
 Чтобы удалить тень и зазор вокруг окон (например, в сочетании с тайловым оконным менеджером), создайте следующий файл:
 
  `~/.config/gtk-3.0/gtk.css` 
-
 ```
 .window-frame, .window-frame:backdrop {
  box-shadow: 0 0 0 black;
@@ -487,7 +482,7 @@ WARNING **: Couldn't connect to accessibility bus:
 при запуске GTK+ 3 программы, вы можете подавить предупреждение, выполнив:
 
 ```
-NO_AT_BRIDGE=1 _программа_
+NO_AT_BRIDGE=1 *программа*
 
 ```
 
@@ -498,7 +493,6 @@ NO_AT_BRIDGE=1 _программа_
 Если вы используете [оконный менеджер](/index.php/Window_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Window manager (Русский)") который использует тему декорации окон, которая имитирует цвет темой фона GTK+, вы можете обнаружить, что цвет заголовка окна больше не совпадает полностью с цветом приложений в некоторых приложениях GTK+ 3\. В качестве обходного пути, создайте следующий файл:
 
  `~/.config/gtk-3.0/gtk.css` 
-
 ```
 /* Always use background color */
 GtkWindow {
@@ -532,7 +526,6 @@ NautilusWindow {
 Пример настройки GTK+ 2:
 
  `~/.gtkrc-2.0` 
-
 ```
 # GTK theme
 include "/usr/share/themes/Clearlooks/gtk-2.0/gtkrc"
@@ -554,7 +547,6 @@ gtk-toolbar-style = GTK_TOOLBAR_ICONS
 GTK+ 3 пример настройки конвертации GTK+ 2.x в GTK+ 3.x с [lxappearance](https://www.archlinux.org/packages/?name=lxappearance):
 
  `$XDG_CONFIG_HOME/gtk-3.0/settings.ini` 
-
 ```
 [Settings] 
 gtk-theme-name=TraditionalOk

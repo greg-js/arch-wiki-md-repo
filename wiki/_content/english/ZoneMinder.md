@@ -75,7 +75,6 @@ See [http://php.net/manual/en/timezones.php](http://php.net/manual/en/timezones.
 Create the zm database and user with appropriate permissions and password :
 
  `$ mysql -u root -p` 
-
 ```
 CREATE DATABASE zm;
 CREATE USER 'zmuser'@'localhost' IDENTIFIED BY 'choose_password';
@@ -93,7 +92,6 @@ $ mysql -u root -p zm < /usr/share/zoneminder/db/zm_create.sql
 Update the ZoneMinder config with your new parameters:
 
  `/etc/zm.conf` 
-
 ```
 ZM_DB_HOST=localhost
 ZM_DB_NAME=zm
@@ -120,7 +118,6 @@ This is useful for developers or users that need to wipe all ZoneMinder and star
 Drop the ZoneMinder MySQL database and delete the MySQL user:
 
  `$ mysql -u root -p` 
-
 ```
 DROP DATABASE zm;
 DROP USER 'zmuser'@'localhost';
@@ -130,7 +127,6 @@ DROP USER 'zmuser'@'localhost';
 Recreate the database and user:
 
  `$ mysql -u root -p` 
-
 ```
 CREATE DATABASE zm;
 CREATE USER 'zmuser'@'localhost' IDENTIFIED BY 'choose_password';

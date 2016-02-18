@@ -32,7 +32,6 @@ Option "OffTime" "30"
 ```
 
 **Note:** If the `"OffTime"` option does not work, use screen blanking instead, which will keep the monitor turned on with a black image. Alternatively, change `"blanktime"` to `"0"` to disable screen blanking
-
 ```
 Option         "BlankTime" "30"
 
@@ -58,7 +57,7 @@ EndSection
 
 ## Modifying DPMS and screensaver settings using xset
 
-It is possible to turn off your monitor using the _xset_ tool which is provided by the [xorg-xset](https://www.archlinux.org/packages/?name=xorg-xset) package in the [official repositories](/index.php/Official_repositories "Official repositories").
+It is possible to turn off your monitor using the *xset* tool which is provided by the [xorg-xset](https://www.archlinux.org/packages/?name=xorg-xset) package in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 **Note:** If using this command manually in a shell you may need to prefix it with `sleep 1;` for it to work correctly, for example `sleep 1; xset dpms force off`
 
@@ -76,7 +75,6 @@ Example commands:
 To query the current settings:
 
  `$ xset q` 
-
 ```
 ...
 
@@ -94,11 +92,11 @@ See `xset` for all available commands.
 
 **Note:** If using `xset` in [xinitrc](/index.php/Xinitrc "Xinitrc") does not work, specify settings within a file in `/etc/X11/xorg.conf.d/`. See [#Setting up DPMS in X](#Setting_up_DPMS_in_X) for details.
 
-**Warning:** [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") and [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager) use their own DPMS settings and override _xset_ configuration. See [XScreenSaver#DPMS and blanking settings](/index.php/XScreenSaver#DPMS_and_blanking_settings "XScreenSaver") and [Xfce#Display blanking](/index.php/Xfce#Display_blanking "Xfce") for more information.
+**Warning:** [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") and [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager) use their own DPMS settings and override *xset* configuration. See [XScreenSaver#DPMS and blanking settings](/index.php/XScreenSaver#DPMS_and_blanking_settings "XScreenSaver") and [Xfce#Display blanking](/index.php/Xfce#Display_blanking "Xfce") for more information.
 
 ## DPMS interaction in a Linux console with setterm
 
-The _setterm_ utility issues terminal recognized escape codes to alter the terminal. Essentially it just writes/echos the terminal sequences to the current terminal device, whether that be in screen, a remote ssh terminal, console mode, serial consoles, etc.
+The *setterm* utility issues terminal recognized escape codes to alter the terminal. Essentially it just writes/echos the terminal sequences to the current terminal device, whether that be in screen, a remote ssh terminal, console mode, serial consoles, etc.
 
 setterm Syntax: (0 disables)
 
@@ -141,7 +139,7 @@ $ setterm -powerdown 0 >> /dev/tty3
 
 ```
 
-**Note:** `>>` is used instead of `>`. For permission issues using _sudo_ in a script or something, you can use the **tee** program to append the output of setterm to the tty device, which tty's let appending sometimes but not writing.
+**Note:** `>>` is used instead of `>`. For permission issues using *sudo* in a script or something, you can use the **tee** program to append the output of setterm to the tty device, which tty's let appending sometimes but not writing.
 
 #### Bash loop to set ttys 0-256
 

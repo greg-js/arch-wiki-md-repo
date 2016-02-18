@@ -92,7 +92,6 @@ The screen rotation hardware button does not work by default. To enable it, the 
 Keycodes can be mapped to hardware buttons during the boot process via a [systemd](/index.php/Systemd "Systemd") config file such as the one shown below.
 
  `/etc/systemd/system/setkeycodes.service` 
-
 ```
 [Unit]
 Description=Assign each hardware button to a free keycode on boot
@@ -108,7 +107,6 @@ WantedBy=multi-user.target
 After successfully mapping a keycode to a hardware button, it can then be utilized with a script similar to the one below.
 
  `/usr/local/bin/screen_rotation.sh` 
-
 ```
 #!/bin/sh
 

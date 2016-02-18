@@ -48,7 +48,7 @@ about:plugins
 
 ```
 
-في شريط العنوان، أو بالذهاب الى قيد _Add-ons_ في القوائم ومن ثم قم بتحديد لسان _Plugins_
+في شريط العنوان، أو بالذهاب الى قيد *Add-ons* في القوائم ومن ثم قم بتحديد لسان *Plugins*
 
 ### التكامل مع حافظة مفاتيح GNOME
 
@@ -62,13 +62,13 @@ about:plugins
 
 ### القواميس لتصحيح مدخلات المستخدم
 
-لكي تقوم بتفعيل التدقيق اللغوي للغة مُحددة، قم بالنقر بالزر الأيمن للفأرة على مربع النص وقم بتفعيل خيار _Check Spelling_. لكي تُحدد اللغة التي سيتم التدقيق اللغوي فيها قم بالضغط مرة اخرى بالزر الأيمن وقم بتحديد لغتك من القائمة الفرعية المُعنونة _Languages_. للحصول على لغات غضافية قم بالضغط على _Add Dictionaries..._ و من ثم قم بتحديد اللغة التي تريد تنصيبها من الخيارات.
+لكي تقوم بتفعيل التدقيق اللغوي للغة مُحددة، قم بالنقر بالزر الأيمن للفأرة على مربع النص وقم بتفعيل خيار *Check Spelling*. لكي تُحدد اللغة التي سيتم التدقيق اللغوي فيها قم بالضغط مرة اخرى بالزر الأيمن وقم بتحديد لغتك من القائمة الفرعية المُعنونة *Languages*. للحصول على لغات غضافية قم بالضغط على *Add Dictionaries...* و من ثم قم بتحديد اللغة التي تريد تنصيبها من الخيارات.
 
 بشكل بديل، يمكنك تنصيب حزمة [hunspell](https://www.archlinux.org/packages/?name=hunspell) المتوفرة في المستودعات الرسمية، ويتوجب عليك بعدها تنصيب القواميس الخاصة بلغتك كحزمة [hunspell-ar](https://aur.archlinux.org/packages/hunspell-ar/) للغة العربية و حزمة [hunspell-fr](https://www.archlinux.org/packages/?name=hunspell-fr) للغة الفرنسية. بشكل إفتراضي، fireofx يقوم بإنشاء روابط الى جميع قواميس hunspell الموجودة في `/usr/lib/firefox/dictionaries`. إذا اردت الحصول على قواميس أقل في القائمة المتوفرة في المتصفح، يُمكنك حذف بعض من هذه الروابط. لكن كن مدركًا أن تحديث المتصفح سيقوم بإعادة الروابط التي تم حذفها.
 
 ### إضافة مُحركات بحث الى متصفح firefox
 
-مُحركات البحث يُمكن إضافتها كملحقات عادية، راجع المقال التالي [this page](https://addons.mozilla.org/en-US/firefox/search-tools/) for a list of available search engines. قائمة كبيرة جدًا بمجركات البحث يمكن أيجادها [هنا](http://mycroft.mozdev.org/). أيضًا يُمكنك إستخدام المحلق [add-to-searchbar](https://firefox.maltekraus.de/extensions/add-to-search-bar) لإضافة محركات البحث الموجودة في أي موقع الى شريط البحث الخاص بك عن طريق الضغط عليه بالزر الأيمن للفأرة وتحديد الخيار _Add to Search Bar..._. إذا أردت إضافة مُحركات البحث يدويًا يمكنك إلقاء نظرة على الملف `~/.mozilla/firefox/profile-id.default/searchplugins/` (حيث profile-id هو profile ID الخاص بك).
+مُحركات البحث يُمكن إضافتها كملحقات عادية، راجع المقال التالي [this page](https://addons.mozilla.org/en-US/firefox/search-tools/) for a list of available search engines. قائمة كبيرة جدًا بمجركات البحث يمكن أيجادها [هنا](http://mycroft.mozdev.org/). أيضًا يُمكنك إستخدام المحلق [add-to-searchbar](https://firefox.maltekraus.de/extensions/add-to-search-bar) لإضافة محركات البحث الموجودة في أي موقع الى شريط البحث الخاص بك عن طريق الضغط عليه بالزر الأيمن للفأرة وتحديد الخيار *Add to Search Bar...*. إذا أردت إضافة مُحركات البحث يدويًا يمكنك إلقاء نظرة على الملف `~/.mozilla/firefox/profile-id.default/searchplugins/` (حيث profile-id هو profile ID الخاص بك).
 
 #### حزمة arch-firefox-search
 
@@ -94,7 +94,7 @@ about:plugins
 
 ### تحديد عميل البريد الإلكتروني الخاص بك
 
-يقوم firefox عادةً بفتح روابط `mailto` بإستخدام تطبيقات الويب كتطبيق Gmail أو Yahoo. لتحديد عميل البريد الإلكتروني المُفضل لديك في firefox الذي ستم فتحه عند الضغط على روابط `mailto`، قم بالذهاب الى _Preferences > Applications_ وقم بتعديل حقل _action_ الخاص بنوع المحتوى `mailto`. بالطبع يتوجب عليك تحديد المسار الكامل لعميل البريد الإلكتروني (على سبيل المثال `/usr/bin/kmail` لبرنامج Kmail).
+يقوم firefox عادةً بفتح روابط `mailto` بإستخدام تطبيقات الويب كتطبيق Gmail أو Yahoo. لتحديد عميل البريد الإلكتروني المُفضل لديك في firefox الذي ستم فتحه عند الضغط على روابط `mailto`، قم بالذهاب الى *Preferences > Applications* وقم بتعديل حقل *action* الخاص بنوع المحتوى `mailto`. بالطبع يتوجب عليك تحديد المسار الكامل لعميل البريد الإلكتروني (على سبيل المثال `/usr/bin/kmail` لبرنامج Kmail).
 
 ### مشاكل Open containing folder في واجهة GNOME3
 
@@ -110,7 +110,7 @@ about:plugins
 
 ### مشاكل Open containing folder في واجهة KDE
 
-اذا كنت تتوقع تشغيل متصفح الملفات المُفضل لديك عندما تقوم بالضغط على خيار "Open Containing Folder" في مدير التنزيلات، لكن متصفح ملفات آخر تم تشغيله عوضًا عنه، يمكنك إستخدام متصفح الملفات المفضل لديك وليكن Dolphin في لوحة التحكم الخاصة بكدي تحت _Workspace Appearance and Behavior > Default Applications > File Manager_. إذا كان firefox ما يزال لا يفتح المجلدات بمتصفح الملفات الذي تُفضل قم بتعديل الملف التالي مُضمنًا السطرين التاليين :
+اذا كنت تتوقع تشغيل متصفح الملفات المُفضل لديك عندما تقوم بالضغط على خيار "Open Containing Folder" في مدير التنزيلات، لكن متصفح ملفات آخر تم تشغيله عوضًا عنه، يمكنك إستخدام متصفح الملفات المفضل لديك وليكن Dolphin في لوحة التحكم الخاصة بكدي تحت *Workspace Appearance and Behavior > Default Applications > File Manager*. إذا كان firefox ما يزال لا يفتح المجلدات بمتصفح الملفات الذي تُفضل قم بتعديل الملف التالي مُضمنًا السطرين التاليين :
 
 ```
 x-directory/normal=kde4-dolphin.desktop;kde4-kfmclient_dir.desktop;

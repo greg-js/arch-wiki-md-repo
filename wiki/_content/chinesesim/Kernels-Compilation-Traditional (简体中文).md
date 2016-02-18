@@ -86,9 +86,9 @@ make mrproper
 
 ### 设置内核
 
-**警告:** 如果为了早期的KMS，将较新的显卡的_radeon_驱动编译进内核（>3.3.3），你**必须**包括你的显卡的固件文件。否者加速将失效。参见[这里](http://wiki.x.org/wiki/radeonBuildHowTo#Missing_Extra_Firmware)
+**警告:** 如果为了早期的KMS，将较新的显卡的*radeon*驱动编译进内核（>3.3.3），你**必须**包括你的显卡的固件文件。否者加速将失效。参见[这里](http://wiki.x.org/wiki/radeonBuildHowTo#Missing_Extra_Firmware)
 
-**Tip:** 通过_**简单的配置**_是有可能配置出一个无initramfs的内核的。确保显卡/输入/磁盘/文件系统所需的所有模块都被编译进内核。同时至少支持DEVTMPFS_MOUNT，TMPFS，AUTOFS4_FS。如果有疑问，_在尝试编译之前_，请了解这些选项和其含义。
+**Tip:** 通过***简单的配置***是有可能配置出一个无initramfs的内核的。确保显卡/输入/磁盘/文件系统所需的所有模块都被编译进内核。同时至少支持DEVTMPFS_MOUNT，TMPFS，AUTOFS4_FS。如果有疑问，*在尝试编译之前*，请了解这些选项和其含义。
 
 有两个主流选择:
 

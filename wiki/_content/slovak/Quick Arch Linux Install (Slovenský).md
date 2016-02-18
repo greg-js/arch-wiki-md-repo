@@ -84,7 +84,7 @@ Ak máte úplne prázdny harddisk, môžete tieto kroky preskočiť a zvoliť Au
 *   Zvoľte systém súborov ext3
 *   Zvoľte DONE !!
 
-_Tento posledný krok je veľmi dôležitý, mnoho ľudí tento krok vynechá, ale žiadna činnosť sa nevykoná, kým nezvolíte DONE - ak to neurobíte, bude sa zdať že inštalácia funguje, ale žiadne súbory sa nenainštalujú_
+*Tento posledný krok je veľmi dôležitý, mnoho ľudí tento krok vynechá, ale žiadna činnosť sa nevykoná, kým nezvolíte DONE - ak to neurobíte, bude sa zdať že inštalácia funguje, ale žiadne súbory sa nenainštalujú*
 
 ### Vybrať balíčky
 

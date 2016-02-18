@@ -120,7 +120,7 @@ As of Linux kernel version 3.8 onwards, the following filesystems support TRIM: 
 
 As of [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) version 2015.3.14, TRIM is supported for [NTFS](/index.php/NTFS "NTFS") filesystem too [[5]](http://permalink.gmane.org/gmane.comp.file-systems.ntfs-3g.devel/1101).
 
-VFAT only supports TRIM by the mount option `discard`, not manually with _fstrim_.
+VFAT only supports TRIM by the mount option `discard`, not manually with *fstrim*.
 
 The [Choice of Filesystem](#Choice_of_filesystem) section of this article offers more details.
 
@@ -140,7 +140,7 @@ Note that there are different types of TRIM support defined by the specification
 
 The [util-linux](https://www.archlinux.org/packages/?name=util-linux) package (part of [base](https://www.archlinux.org/groups/x86_64/base/) and [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/)) provides `fstrim.service` and `fstrim.timer` [systemd](/index.php/Systemd "Systemd") unit files. [Enabling](/index.php/Enabling "Enabling") the timer will activate the service weekly, which will then trim all mounted filesystems on devices that support the discard operation.
 
-The timer relies on the timestamp of `/var/lib/systemd/timers/stamp-fstrim.timer` (which it will create upon first invocation) to know whether a week has elapsed since it last ran. Therefore there is no need to worry about too frequent invocations, in an _anacron_-like fashion.
+The timer relies on the timestamp of `/var/lib/systemd/timers/stamp-fstrim.timer` (which it will create upon first invocation) to know whether a week has elapsed since it last ran. Therefore there is no need to worry about too frequent invocations, in an *anacron*-like fashion.
 
 It is also possible to query the units activity and status using standard `journalctl` and `systemctl status` commands:
 
@@ -183,9 +183,9 @@ The main benefit of continuous TRIM is speed; an SSD can perform more efficient 
 
 *   There is no need for the `discard` flag if you run `fstrim` periodically.
 *   Using the `discard` flag for an ext3 root partition will result in it being mounted read-only.
-*   Before SATA 3.1, TRIM commands are synchronous and will block all I/O while running. This may cause short freezes while this happens, for example during a filesystem sync. You may not want to use `discard` in that case but [#Apply periodic TRIM via fstrim](#Apply_periodic_TRIM_via_fstrim) instead. One way to check your SATA version is with `smartctl --info /dev/sd_X_`.
+*   Before SATA 3.1, TRIM commands are synchronous and will block all I/O while running. This may cause short freezes while this happens, for example during a filesystem sync. You may not want to use `discard` in that case but [#Apply periodic TRIM via fstrim](#Apply_periodic_TRIM_via_fstrim) instead. One way to check your SATA version is with `smartctl --info /dev/sd*X*`.
 
-On the ext4 filesystem, the `discard` flag can also be set as a [default mount option](/index.php/Access_Control_Lists#Enabling_ACL "Access Control Lists") using _tune2fs_:
+On the ext4 filesystem, the `discard` flag can also be set as a [default mount option](/index.php/Access_Control_Lists#Enabling_ACL "Access Control Lists") using *tune2fs*:
 
 ```
 # tune2fs -o discard /dev/sd**XY**
@@ -225,7 +225,6 @@ One can place a swap partition on an SSD. A recommended tweak for SSDs using a s
 Some motherboard BIOS' issue a "security freeze" command to attached storage devices on initialization. Likewise some SSD (and HDD) BIOS' are set to "security freeze" in the factory already. Both result in the device's password security settings to be set to **frozen**, as shown in below output:
 
  `:~# hdparm -I /dev/sda` 
-
 ```
 Security: 
  	Master password revision code = 65534
@@ -262,8 +261,7 @@ An overarching theme for SSD usage should be 'simplicity' in terms of locating h
 
 Use [iotop](https://www.archlinux.org/packages/?name=iotop) and sort by disk writes to see how much and how frequently are programs writing to the disk.
 
-**Tip:** _iotop_ can be run in batch mode instead of the default interactive mode using the `-b` option. `-o` is used to show only processes actually doing I/O, and `-qqq` is to suppress column names and I/O summary. See `man iotop` for more options.
-
+**Tip:** *iotop* can be run in batch mode instead of the default interactive mode using the `-b` option. `-o` is used to show only processes actually doing I/O, and `-qqq` is to suppress column names and I/O summary. See `man iotop` for more options.
 ```
 # iotop -boqqq
 
@@ -281,7 +279,7 @@ Use [iotop](https://www.archlinux.org/packages/?name=iotop) and sort by disk wri
 
 #### Browser profiles
 
-One can _easily_ mount browser profile(s) such as chromium, firefox, opera, etc. into RAM via tmpfs and also use rsync to keep them synced with HDD-based backups. In addition to the obvious speed enhancements, users will also save read/write cycles on their SSD by doing so.
+One can *easily* mount browser profile(s) such as chromium, firefox, opera, etc. into RAM via tmpfs and also use rsync to keep them synced with HDD-based backups. In addition to the obvious speed enhancements, users will also save read/write cycles on their SSD by doing so.
 
 The AUR contains several packages to automate this process, for example [profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/).
 
@@ -304,7 +302,7 @@ Using a journaling filesystem such as ext4 on an SSD **without** a journal is an
 | make | 207.6 | 199.4 | 3.95 % |
 | make clean | 6.45 | 3.73 | 42.17 % |
 
-_"What the results show is that metadata-heavy workloads, such as make clean, do result in almost twice the amount data written to disk. This is to be expected, since all changes to metadata blocks are first written to the journal and the journal transaction committed before the metadata is written to their final location on disk. However, for more common workloads where we are writing data as well as modifying filesystem metadata blocks, the difference is much smaller."_
+*"What the results show is that metadata-heavy workloads, such as make clean, do result in almost twice the amount data written to disk. This is to be expected, since all changes to metadata blocks are first written to the journal and the journal transaction committed before the metadata is written to their final location on disk. However, for more common workloads where we are writing data as well as modifying filesystem metadata blocks, the difference is much smaller."*
 
 **Note:** The make clean example from the table above typifies the importance of intentionally doing compiling in tmpfs as recommended in the [preceding section](#Compiling_in_tmpfs) of this article!
 
@@ -319,7 +317,6 @@ ADATA has a utility available for Linux (i686) on their support page [here](http
 Crucial provides an option for updating the firmware with an ISO image. These images can be found after selecting the product [here](http://www.crucial.com/usa/en/support-ssd) and downloading the "Manual Boot File." Owners of an M4 Crucial model, may check if a firmware upgrade is needed with `smartctl`.
 
  `$ smartctl --all /dev/sd**X**` 
-
 ```
 ==> WARNING: This drive may hang after 5184 hours of power-on time:
 [http://www.tomshardware.com/news/Crucial-m4-Firmware-BSOD,14544.html](http://www.tomshardware.com/news/Crucial-m4-Firmware-BSOD,14544.html)
@@ -431,7 +428,7 @@ Finally reboot.
 
 ### SanDisk
 
-SanDisk makes **ISO firmware images** to allow SSD firmware update on operating systems that are unsupported by their SanDisk SSD Toolkit. One must choose the firmware for the right _SSD model_, as well as for the _capacity_ that it has (e.g. 60GB, **or** 256GB). After burning the adequate ISO firmware image, simply restart the PC to boot with the newly created CD/DVD boot disk (may work from a USB stick).
+SanDisk makes **ISO firmware images** to allow SSD firmware update on operating systems that are unsupported by their SanDisk SSD Toolkit. One must choose the firmware for the right *SSD model*, as well as for the *capacity* that it has (e.g. 60GB, **or** 256GB). After burning the adequate ISO firmware image, simply restart the PC to boot with the newly created CD/DVD boot disk (may work from a USB stick).
 
 The iso images just contain a linux kernel and an initrd. Extract them to `/boot` partition and boot them with [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux") to update the firmware.
 

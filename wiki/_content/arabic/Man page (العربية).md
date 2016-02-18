@@ -25,7 +25,7 @@
 لقراءة إحدى الكتيِّبات، أدخل التالي:
 
 ```
-$ man _page_name_
+$ man *page_name*
 
 ```
 
@@ -77,7 +77,7 @@ $ whatis ls
 
 في حين أن أداة `man` تمكن المستخدمين من عرض الكتيٍّب الإرشادي الخاص بأمر ما إلا أن المشكلة تظهر عندما لا يعرف المستخدم الاسم الدقيق للكتيِّب المراد عرضه، من حسن الحظ فإن خيارا `k-` أو `apropos--` يمكنا المستخدم من البحث باستخدام كلمة مفتاحية لوصف الكتيِّب المطلوب.
 
-ميزة البحث هذه تقدمها ملفات مخبأة cache مخصصة، بشكل افتراضي فأنت لا تملك أي ملفات مخبأة cache وكل عمليات البحث التي ستقوم بها سترجع لك _nothing appropriate_، لكنك تستطيع إنشاء ملفات مخبأة cache أو تحديثها عن طريق إدخال:
+ميزة البحث هذه تقدمها ملفات مخبأة cache مخصصة، بشكل افتراضي فأنت لا تملك أي ملفات مخبأة cache وكل عمليات البحث التي ستقوم بها سترجع لك *nothing appropriate*، لكنك تستطيع إنشاء ملفات مخبأة cache أو تحديثها عن طريق إدخال:
 
 ```
 # mandb
@@ -122,14 +122,13 @@ $ man -K password
 
 ### استخدام `less` (ينصح به)
 
-	<small>_المصدر: [nion's blog - less colors for man pages](http://nion.modprobe.de/blog/archives/572-less-colors-for-man-pages.html)_</small>
+	<small>*المصدر: [nion's blog - less colors for man pages](http://nion.modprobe.de/blog/archives/572-less-colors-for-man-pages.html)*</small>
 
 هذه الطريقة لها الأفضلية حيث أن `less` تمتلك مجموعة ميزات أكثر من `most`، كما أنها تستخدم افتراضياً لعرض الكتيِّبات الإرشادية.
 
 أضف التالي لملف تكوين shell ((shell configuration file)) ،باستخدام [Bash](/index.php/Bash "Bash") ستصبح بهذا الشكل:
 
  `~/.bashrc` 
-
 ```
 man() {
     env LESS_TERMCAP_mb=$(printf "\e[1;31m") \
@@ -230,7 +229,7 @@ setkey edit "v"
 
 ### الكُتيِّبات الإرشادية الملونة في xterm أو rxvt-unicode
 
-	<small>_المصدر: [XFree resources file for XTerm program](http://pub.ligatura.org/fs/xfree86/xresources/xterm)_</small>
+	<small>*المصدر: [XFree resources file for XTerm program](http://pub.ligatura.org/fs/xfree86/xresources/xterm)*</small>
 
 الطريقة السريعة لإضافة الألوان للكتيٍّبات المعروضة في [xterm](https://www.archlinux.org/packages/?name=xterm)/`uxterm` أو [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode) تكون بتعديل `.Xresources/~` أو `.Xdefaults/~` .
 
@@ -244,14 +243,14 @@ setkey edit "v"
 
 ```
 
-الأوامر السابقة _تستبدل_ الزخرفة بالألوان، أيضاً قم بإضافة التالي:
+الأوامر السابقة *تستبدل* الزخرفة بالألوان، أيضاً قم بإضافة التالي:
 
 ```
 *VT100.veryBoldColors: 6
 
 ```
 
-إذا كنت تريد الألوان والزخارف (سميك أو تحته خط) _في نفس الوقت_ انظر `man xterm` لشرح مصدر `veryBoldColors`.
+إذا كنت تريد الألوان والزخارف (سميك أو تحته خط) *في نفس الوقت* انظر `man xterm` لشرح مصدر `veryBoldColors`.
 
 #### rxvt-unicode
 
@@ -269,7 +268,7 @@ $ xrdb -load ~/.Xresources
 
 ```
 
-قم بتشغيل `xterm/uxterm` أو `rxvt-unicode` من جديد، يجب أن ترى الكتيِّبات ملونة،هذه المجموعة من الأوامر تجعل اللون **سميك** وتضع<u>خطاً</u> تحت الكلمات في `xterm/uxterm` أو بالإضافة إلى **السُمك** و<u>الخط</u> فهي تجعل الخط _مائلاً_ في `rxvt-unicode`، تستطيع أن تعدل في المجموعات المختلفة من هذه السمات(انظر إلى [مصادر](http://pub.ligatura.org/fs/xfree86/xresources/xterm) لهذا الموضوع).
+قم بتشغيل `xterm/uxterm` أو `rxvt-unicode` من جديد، يجب أن ترى الكتيِّبات ملونة،هذه المجموعة من الأوامر تجعل اللون **سميك** وتضع<u>خطاً</u> تحت الكلمات في `xterm/uxterm` أو بالإضافة إلى **السُمك** و<u>الخط</u> فهي تجعل الخط *مائلاً* في `rxvt-unicode`، تستطيع أن تعدل في المجموعات المختلفة من هذه السمات(انظر إلى [مصادر](http://pub.ligatura.org/fs/xfree86/xresources/xterm) لهذا الموضوع).
 
 ## قراءة الكُتيِّبات الإرشادية المحلية
 
@@ -322,7 +321,6 @@ $ man -H free
 السكربت التالي المكتوب بلغة Perl يقوم بتحويل الكتيِّبات إلى ملفات PDF ويخزن هذه الملفات في المسار `/HOME/.manpdf$` ومن ثم يشغل برنامج لعرض ملفات PDF وعلى وجه التحديد برنامج [mupdf](https://www.archlinux.org/packages/community/x86_64/mupdf/).
 
  `Usage: manpdf [<section>] <manpage>` 
-
 ```
 #!/usr/bin/perl
 use File::stat;
@@ -358,23 +356,23 @@ if (!fork) {
 
 هناك العديد من قواعد البيانات لكتيِّبات إرشادية متوفرة على الإنترنت، من ضمنها:
 
-*   [_Debian GNU/Linux man pages_](http://manpages.debian.net/)
-*   [_DragonFlyBSD manual pages_](http://leaf.dragonflybsd.org/cgi/web-man)
-*   [_FreeBSD Hypertext Man Pages_](http://www.freebsd.org/cgi/man.cgi)
-*   [_Linux and Solaris 10 Man Pages_](http://www.manpages.spotlynx.com/)
-*   [_Linux/FreeBSD Man Pages_](http://manpagehelp.net) with user comments
-*   [_Linux man pages at die.net_](http://linux.die.net/man/)
+*   [*Debian GNU/Linux man pages*](http://manpages.debian.net/)
+*   [*DragonFlyBSD manual pages*](http://leaf.dragonflybsd.org/cgi/web-man)
+*   [*FreeBSD Hypertext Man Pages*](http://www.freebsd.org/cgi/man.cgi)
+*   [*Linux and Solaris 10 Man Pages*](http://www.manpages.spotlynx.com/)
+*   [*Linux/FreeBSD Man Pages*](http://manpagehelp.net) with user comments
+*   [*Linux man pages at die.net*](http://linux.die.net/man/)
 *   [The Linux man-pages project at kernel.org](http://www.kernel.org/doc/man-pages/)
-*   [Man-Wiki: _Linux / Solaris / UNIX / BSD_](http://man-wiki.net/index.php/Main_Page)
-*   [_NetBSD manual pages_](http://netbsd.gw.com/cgi-bin/man-cgi)
-*   [_Mac OS X Manual Pages_](http://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
-*   [_On-line UNIX manual pages_](http://unixhelp.ed.ac.uk/alphabetical/index.html)
-*   [_OpenBSD manual pages_](http://www.openbsd.org/cgi-bin/man.cgi)
-*   [_Plan 9 Manual — Volume 1_](http://man.cat-v.org/plan_9/)
-*   [_Inferno Manual — Volume 1_](http://man.cat-v.org/inferno/)
-*   [_Storage Foundation Man Pages_](http://sfdoccentral.symantec.com/sf/5.0MP3/linux/manpages/index.html)
-*   [_The UNIX and Linux Forums Man Page Repository_](http://www.unix.com/man-page/OpenSolaris/1/man/)
-*   [_Ubuntu Manpage Repository_](http://manpages.ubuntu.com/)
+*   [Man-Wiki: *Linux / Solaris / UNIX / BSD*](http://man-wiki.net/index.php/Main_Page)
+*   [*NetBSD manual pages*](http://netbsd.gw.com/cgi-bin/man-cgi)
+*   [*Mac OS X Manual Pages*](http://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
+*   [*On-line UNIX manual pages*](http://unixhelp.ed.ac.uk/alphabetical/index.html)
+*   [*OpenBSD manual pages*](http://www.openbsd.org/cgi-bin/man.cgi)
+*   [*Plan 9 Manual — Volume 1*](http://man.cat-v.org/plan_9/)
+*   [*Inferno Manual — Volume 1*](http://man.cat-v.org/inferno/)
+*   [*Storage Foundation Man Pages*](http://sfdoccentral.symantec.com/sf/5.0MP3/linux/manpages/index.html)
+*   [*The UNIX and Linux Forums Man Page Repository*](http://www.unix.com/man-page/OpenSolaris/1/man/)
+*   [*Ubuntu Manpage Repository*](http://manpages.ubuntu.com/)
 
 ## كُتيِّبات إرشادية جديرة بالاطلاع
 

@@ -174,7 +174,7 @@ contains_outof="SP55S;SQ45S70S;SX60P;R59P/R60P/R61P;Q310;X05;N120">
 
 Also you can play with xbindkey. As an example, here is how to bind the keys for volume control :
 
-1) install _xbindkeys_ (and _xbacklight_ from package _xorg-server-utils_ for brightness control):
+1) install *xbindkeys* (and *xbacklight* from package *xorg-server-utils* for brightness control):
 
 ```
 pacman -S xbindkeys xorg-server-utils

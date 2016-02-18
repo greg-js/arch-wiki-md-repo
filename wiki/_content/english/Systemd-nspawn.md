@@ -1,8 +1,8 @@
-_systemd-nspawn_ is like the [chroot](/index.php/Chroot "Chroot") command, but it is a _chroot on steroids_.
+*systemd-nspawn* is like the [chroot](/index.php/Chroot "Chroot") command, but it is a *chroot on steroids*.
 
-_systemd-nspawn_ may be used to run a command or OS in a light-weight namespace container. It is more powerful than [chroot](/index.php/Chroot "Chroot") since it fully virtualizes the file system hierarchy, as well as the process tree, the various IPC subsystems and the host and domain name.
+*systemd-nspawn* may be used to run a command or OS in a light-weight namespace container. It is more powerful than [chroot](/index.php/Chroot "Chroot") since it fully virtualizes the file system hierarchy, as well as the process tree, the various IPC subsystems and the host and domain name.
 
-_systemd-nspawn_ limits access to various kernel interfaces in the container to read-only, such as `/sys`, `/proc/sys` or `/sys/fs/selinux`. Network interfaces and the system clock may not be changed from within the container. Device nodes may not be created. The host system cannot be rebooted and kernel modules may not be loaded from within the container.
+*systemd-nspawn* limits access to various kernel interfaces in the container to read-only, such as `/sys`, `/proc/sys` or `/sys/fs/selinux`. Network interfaces and the system clock may not be changed from within the container. Device nodes may not be created. The host system cannot be rebooted and kernel modules may not be loaded from within the container.
 
 This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") or [Libvirt](/index.php/Libvirt "Libvirt")-lxc, as it is a much simpler tool to configure.
 
@@ -31,7 +31,7 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
 
 ## Installation
 
-_systemd-nspawn_ is part of and packaged with [systemd](https://www.archlinux.org/packages/?name=systemd).
+*systemd-nspawn* is part of and packaged with [systemd](https://www.archlinux.org/packages/?name=systemd).
 
 ## Examples
 
@@ -65,7 +65,7 @@ After the container starts, log in as "root" with no password.
 
 The container can be powered off by running `poweroff` from within the container. From the host, containers can be controlled by the [machinectl](#machinectl) tool.
 
-**Note:** To terminate the _session_ from within the container, hold `Ctrl` and rapidly press `]` three times. Non US keyboard will use `%` instead of `]`
+**Note:** To terminate the *session* from within the container, hold `Ctrl` and rapidly press `]` three times. Non US keyboard will use `%` instead of `]`
 
 ### Enable Container on boot
 
@@ -85,18 +85,18 @@ then you can
 
 ```
 
-**Note:** _systemd-nspawn@.service_ is a template unit that expects nspawn containers to be under `/var/lib/machines`.
+**Note:** *systemd-nspawn@.service* is a template unit that expects nspawn containers to be under `/var/lib/machines`.
 
 **Tip:**
 
-*   Instead of moving your container, as above, you can just _symlink_ it to where it is expected to be,
+*   Instead of moving your container, as above, you can just *symlink* it to where it is expected to be,
 
 ```
 # ln -s ~/MyContainer /var/lib/machines/MyContainer
 
 ```
 
-*   To customize the startup of a container, [edit](/index.php/Systemd#Editing_provided_units "Systemd") the `systemd-nspawn@_MyContainer_` unit instance. See `systemd-nspawn(1)` for all options.
+*   To customize the startup of a container, [edit](/index.php/Systemd#Editing_provided_units "Systemd") the `systemd-nspawn@*MyContainer*` unit instance. See `systemd-nspawn(1)` for all options.
 
 ### Building and Testing packages
 
@@ -113,9 +113,9 @@ Examples:
 *   Reboot a container: `$ machinectl reboot MyContainer` 
 *   Poweroff a container: `$ machinectl poweroff MyContainer` 
 
-**Tip:** Poweroff and reboot operations can be performed from within a container session using the _systemctl_ `poweroff` or `reboot` commands.
+**Tip:** Poweroff and reboot operations can be performed from within a container session using the *systemctl* `poweroff` or `reboot` commands.
 
-*   Download an image: `# machinectl pull-tar _URL_ _name_` 
+*   Download an image: `# machinectl pull-tar *URL* *name*` 
 
 ### systemd toolchain
 
@@ -166,7 +166,6 @@ Then, any DNS lookup for hostname `foo` on the host will first consult `/etc/hos
 To disable private networking used by containers started with `machinectl start MyContainer`, [edit](/index.php/Edit "Edit") the configuration of `systemd-nspawn@.service` with `systemctl edit systemd-nspawn@.service` and set the `ExecStart=` option without the `--network-veth` parameter unlike the original service:
 
  `/etc/systemd/system/systemd-nspawn@.service.d/override.conf` 
-
 ```
 [Service]
 ExecStart=

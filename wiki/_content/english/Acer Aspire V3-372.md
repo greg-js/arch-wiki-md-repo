@@ -8,7 +8,7 @@
 | Card Reader | Untested | rtsx_usb |
 | Bluetooth | Working |
 
-Information for the Acer Aspire V3-372 51EK (Core i5-6200U, 4GiB RAM, 128GB SSD). Because the device is rather new many drivers still need to be developed for it (_05\. November 2015_).
+Information for the Acer Aspire V3-372 51EK (Core i5-6200U, 4GiB RAM, 128GB SSD). Because the device is rather new many drivers still need to be developed for it (*05\. November 2015*).
 
 ## Contents
 
@@ -23,7 +23,6 @@ Information for the Acer Aspire V3-372 51EK (Core i5-6200U, 4GiB RAM, 128GB SSD)
 ## Devices
 
  `# lspci` 
-
 ```
 00:00.0 Host bridge: Intel Corporation Sky Lake Host Bridge/DRAM Registers (rev 08)
 00:02.0 VGA compatible controller: Intel Corporation Sky Lake Integrated Graphics (rev 07)
@@ -51,7 +50,7 @@ Information for the Acer Aspire V3-372 51EK (Core i5-6200U, 4GiB RAM, 128GB SSD)
 
 To disable Secure Boot, set the [supervisor password](https://acer.custhelp.com/app/answers/detail/a_id/29349/) in the BIOS settings. Then you should be able to boot Arch.
 
-If you set up your installation media (USB drive) via [Rufus](/index.php/USB_flash_installation_media#Using_Rufus "USB flash installation media") i had the most success by using _GPT_ as partition table (in UEFI mode).
+If you set up your installation media (USB drive) via [Rufus](/index.php/USB_flash_installation_media#Using_Rufus "USB flash installation media") i had the most success by using *GPT* as partition table (in UEFI mode).
 
 ### Video
 
@@ -63,7 +62,7 @@ For tips visit [SSD](/index.php/SSD "SSD").
 
 ### Touchpad
 
-Set the touchpad to basic in the BIOS to get it working. Then enable it by pressing _FN + F7_.
+Set the touchpad to basic in the BIOS to get it working. Then enable it by pressing *FN + F7*.
 
 ### Wireless
 
@@ -72,7 +71,6 @@ Set the touchpad to basic in the BIOS to get it working. Then enable it by press
 By enabling [testing] and updating the linux-firmware package the device is visible:
 
  `# ip link` 
-
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -86,7 +84,6 @@ By enabling [testing] and updating the linux-firmware package the device is visi
 Enabling it doesn't work though and gives the following output
 
  `# ip link set wlp3s0 up` 
-
 ```
 RTNETLINK answers: Resource temporarily unavailable
 

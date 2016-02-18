@@ -137,7 +137,6 @@ Gains in UI response can be gleaned by not using menu icons and by disabling the
 #### Minimal PKGBUILD example
 
  `PKGBUILD` 
-
 ```
 pkgname=jwm
 pkgver=2.1.0

@@ -1,4 +1,4 @@
-El [gestor de pantalla](https://en.wikipedia.org/wiki/es:X_Display_Manager "wikipedia:es:X Display Manager") (siglas en inglés DM) también conocido como gestor de inicio de sesión, es una interfaz gráfica que se muestra al final del proceso de arranque, en lugar de la shell por defecto. Hay varios tipos de gestores de pantalla, al igual que existen diferentes tipos de [gestores de ventanas](/index.php/Window_Manager_(Espa%C3%B1ol) "Window Manager (Español)") y de [entornos de escritorios](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)"). Estos gestores suelen proporcionar un cierto grado de personalización y disponibilidad de temas con cada uno.
+El [gestor de pantalla](https://en.wikipedia.org/wiki/es:X_Display_Manager y de [entornos de escritorios](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)"). Estos gestores suelen proporcionar un cierto grado de personalización y disponibilidad de temas con cada uno.
 
 ## Contents
 
@@ -68,11 +68,11 @@ Para activar el acceso gráfico, ejecute el demonio del [gestor de pantallas](/i
 
 ```
 
-Esto debería funcionar sin configuración adicional. En su defecto, quizás tenga un _default.target_ establecido manualmente o procedente de una instalación antigua
+Esto debería funcionar sin configuración adicional. En su defecto, quizás tenga un *default.target* establecido manualmente o procedente de una instalación antigua
 
  `$ ls -l /etc/systemd/system/default.target`  `/etc/systemd/system/default.target -> /usr/lib/systemd/system/graphical.target` 
 
-Bastaría con eliminar el enlace simbólico y _systemd_ utilizará su _default.target_ existente (es decir, _graphical.target_).
+Bastaría con eliminar el enlace simbólico y *systemd* utilizará su *default.target* existente (es decir, *graphical.target*).
 
 ```
 # rm /etc/systemd/system/default.target
@@ -120,7 +120,7 @@ La mayor parte de las fuentes de los gestores de pantallas son `/etc/xprofile`, 
 
 ### Incompatibilidad con systemd
 
-_Gestores de inicio de sesión afectados: MDM, SDDM, [SLiM](/index.php/SLiM "SLiM")_
+*Gestores de inicio de sesión afectados: MDM, SDDM, [SLiM](/index.php/SLiM "SLiM")*
 
 Algunos gestores de pantallas no son totalmente compatibles con systemd, porque utilizan los procesos de sesión de PAM. Esto provoca diversos problemas, en el segundo inicio de sesión, por ejemplo:
 

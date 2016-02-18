@@ -47,7 +47,6 @@ To generated a list of modules currently not used, run:
 or use the following script:
 
  `modules-not-loaded` 
-
 ```
 eval $(hwdetect --modules)
 for m in ${MODULES[*]}; do

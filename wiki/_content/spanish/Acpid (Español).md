@@ -40,7 +40,7 @@ Para que inicie al arranque :
 
 [acpid](https://www.archlinux.org/packages/?name=acpid) viene con un número de acciones predefinidas para eventos activos, como lo qué debería occurrir cuando apretas el botón de encendido/apagado en tu ordenador. Por defecto, esas acciones están definidas en `/etc/acpi/handler.sh`, que se ejecuta después de que se detecta un evento ACPI (según determine `/etc/acpi/events/anything`).
 
-Lo siguiente es un ejemplo de una acción. En este caso, cuando se apreta el botón de Hibernar, acpid ejecuta el comando `echo -n mem >/sys/power/state`, que _debería_ poner el ordenador en un estado de hibernación (suspendido):
+Lo siguiente es un ejemplo de una acción. En este caso, cuando se apreta el botón de Hibernar, acpid ejecuta el comando `echo -n mem >/sys/power/state`, que *debería* poner el ordenador en un estado de hibernación (suspendido):
 
 ```
 button/sleep)
@@ -52,7 +52,7 @@ button/sleep)
 
 ```
 
-Desafortunadamente, no todos los ordenadores etiquetan los eventos ACPI de la misma forma. Por ejemplo, el botón Hibernar puede identificarse en un PC como _SLPB_ y en otra como _SBTN_.
+Desafortunadamente, no todos los ordenadores etiquetan los eventos ACPI de la misma forma. Por ejemplo, el botón Hibernar puede identificarse en un PC como *SLPB* y en otra como *SBTN*.
 
 Para determinar como son reconocidos tus botones o atajos de `teclado`, ejecuta el diguiente comando en un terminal como root:
 
@@ -93,7 +93,7 @@ $4 00000b31
 
 ```
 
-Como ya te habrás dado cuando, el botón de Hibernar en la salida de ejemplo es reconocido como _SBTN_, en lugar de la etiqueta _SLPB_ especificada en archivo `/etc/acpi/handler.sh` por defecto. Para hacer que el botón de Hibernar funcione correctamente en este PC, necesitaremos reemplazar _SLPB)_ con _SBTN)_.
+Como ya te habrás dado cuando, el botón de Hibernar en la salida de ejemplo es reconocido como *SBTN*, en lugar de la etiqueta *SLPB* especificada en archivo `/etc/acpi/handler.sh` por defecto. Para hacer que el botón de Hibernar funcione correctamente en este PC, necesitaremos reemplazar *SLPB)* con *SBTN)*.
 
 Usando esto como base, puedes personalizar fácilmente el archivo `/etc/acpi/handler.sh` para ejecutar una variedad de comandos dependiendo de que evento es ejecutado. Mira la sección [#Trucos y Sugerencias](#Trucos_y_Sugerencias) a continuación para otros comandos usados comúnmente.
 
@@ -113,7 +113,6 @@ Aunque esto funciona muy bien como está, algunos usuarios pueden preferir defin
 Como superusuario, crea el archivo siguiente:
 
  `/etc/acpi/events/sleep-button` 
-
 ```
 event=button sleep.*
 action=/etc/acpi/actions/sleep-button.sh "%e"
@@ -123,7 +122,6 @@ action=/etc/acpi/actions/sleep-button.sh "%e"
 Ahora crea el siguinte archivo:
 
  `/etc/acpi/actions/sleep-button.sh` 
-
 ```
 #!/bin/sh
 case "$2" in
@@ -216,7 +214,6 @@ ac_adapter)
 Descubre la identificación de acpi de los botones del volunes (mira a continuación) y sustituye los eventos acpi en los archivos a continuación. Creamos un script para controlar el volumen (asumiendo que usas una tarjeta de sonido con [ALSA (Español)](/index.php/ALSA_(Espa%C3%B1ol) "ALSA (Español)")):
 
  `/etc/acpi/handlers/vol` 
-
 ```
 #!/bin/sh
 step=5
@@ -231,15 +228,12 @@ esac
 Y conectalos a nuevos eventos acpi:
 
  `/etc/acpi/events/vol_d` 
-
 ```
 event=button/volumedown
 action=/etc/acpi/handlers/vol -
 
 ```
-
  `/etc/acpi/events/vol_u` 
-
 ```
 event=button/volumeup
 action=/etc/acpi/handlers/vol +
@@ -249,7 +243,6 @@ action=/etc/acpi/handlers/vol +
 También otro evento para silenciar:
 
  `/etc/acpi/events/mute` 
-
 ```
 event=button/mute
 action=/usr/bin/amixer set Master toggle
@@ -261,7 +254,6 @@ action=/usr/bin/amixer set Master toggle
 Parecido al control del volumen, acpid también te permite controlar el brillo de tu pantalla. Para conseguir esto escribe algún script, como este:
 
  `/etc/acpi/handlers/bl` 
-
 ```
 #!/bin/sh
 bl_dev=/sys/class/backlight/acpi_video0
@@ -277,15 +269,12 @@ esac
 y otra vez, conecta las teclas a eventos ACPI:
 
  `/etc/acpi/events/bl_d` 
-
 ```
 event=video/brightnessdown
 action=/etc/acpi/handlers/bl -
 
 ```
-
  `/etc/acpi/events/bl_u` 
-
 ```
 event=video/brightnessup
 action=/etc/acpi/handlers/bl +
@@ -297,7 +286,6 @@ action=/etc/acpi/handlers/bl +
 También puedes crear un sencillo controlador wireless apretando los botones WLAN. Un ejemplo de evento:
 
  `/etc/acpi/events/wlan` 
-
 ```
 event=button/wlan
 action=/etc/acpi/handlers/wlan
@@ -307,7 +295,6 @@ action=/etc/acpi/handlers/wlan
 y su script manejador:
 
  `/etc/acpi/handlers/wlan` 
-
 ```
 #!/bin/sh
 rf=/sys/class/rfkill/rfkill0
@@ -321,7 +308,7 @@ esac
 
 ### Apagar la pantalla del portátil
 
-Adaptado del [de Gentoo](http://en.gentoo-wiki.com/wiki/ACPI/Configuration%7CWiki), viene esta pequeña perla. Añade esto al final de `/etc/acpi/actions/lm_lid.sh` o a la sección _button/lid_ `/etc/acpi/handler.sh`. Esto apagará la luz de la pantalla cuando la tapa esté cerrada, y la encenderá cuando la tapa se abra.
+Adaptado del [de Gentoo](http://en.gentoo-wiki.com/wiki/ACPI/Configuration%7CWiki), viene esta pequeña perla. Añade esto al final de `/etc/acpi/actions/lm_lid.sh` o a la sección *button/lid* `/etc/acpi/handler.sh`. Esto apagará la luz de la pantalla cuando la tapa esté cerrada, y la encenderá cuando la tapa se abra.
 
 ```
 case $(cat /proc/acpi/button/lid/LID0/state | awk '{print $2}') in
@@ -353,7 +340,7 @@ esac
 
 ```
 
-Si el monitor se apaga solo brevemente y después se enciende, seguramente sea el control de energía que viene con xscreensaver, que entra en conflicto con los ajustes manuales de _dpm'._
+Si el monitor se apaga solo brevemente y después se enciende, seguramente sea el control de energía que viene con xscreensaver, que entra en conflicto con los ajustes manuales de *dpm'.*
 
 ### Sacar el nombre de usuario del monitor actual
 

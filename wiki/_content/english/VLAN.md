@@ -81,8 +81,7 @@ Removing a VLAN interface is significantly less convoluted
 
 Use the following configuration files:
 
- `/etc/systemd/network/_eno1_.network` 
-
+ `/etc/systemd/network/*eno1*.network` 
 ```
 [Match]
 Name=eno1
@@ -93,9 +92,7 @@ VLAN=eno1.100
 VLAN=eno1.200
 
 ```
-
- `/etc/systemd/network/_eno1.100_.netdev` 
-
+ `/etc/systemd/network/*eno1.100*.netdev` 
 ```
 [NetDev]
 Name=eno1.100
@@ -105,9 +102,7 @@ Kind=vlan
 Id=100
 
 ```
-
- `/etc/systemd/network/_eno1.200_.netdev` 
-
+ `/etc/systemd/network/*eno1.200*.netdev` 
 ```
 [NetDev]
 Name=eno1.200
@@ -157,7 +152,6 @@ The solution is to edit `/etc/udev/rules.d/network_persistent.rules` and append 
 For example, for the interface **aa:bb:cc:dd:ee:ff** (eth0):
 
  `/etc/udev/rules.d/network_persistent.rules` 
-
 ```
 SUBSYSTEM=="net", ATTR{address}=="aa:bb:cc:dd:ee:ff", NAME="eth0", DRIVERS=="?*"
 

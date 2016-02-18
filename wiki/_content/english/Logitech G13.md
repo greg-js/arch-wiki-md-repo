@@ -44,7 +44,8 @@ Ex, to set the display a purple colour:
 
 g13 can also handle multiple commands at once:
 
- `$ echo -e "rgb 177 13 201\nbind G4 KEY_W" > /tmp/g13-0` 
+ `$ echo -e "rgb 177 13 201
+bind G4 KEY_W" > /tmp/g13-0` 
 **Tip:** g13 can handle multiple commands at once, and will ignore lines starting with `#`. You can use this to make files full of commands and run `cat file > /tmp/g13-0` when you're ready to play.
 
 ### Commands

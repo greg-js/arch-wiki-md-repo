@@ -2,7 +2,7 @@
 
 摘自[项目主页](http://freedesktop.org/wiki/Software/systemd):
 
-_**systemd** 是 Linux 下的一款系统和服务管理器，兼容 SysV 和 LSB 的启动脚本。systemd 的特性有：支持并行化任务；同时采用 socket 式与 [D-Bus](/index.php/D-Bus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "D-Bus (简体中文)") 总线式激活服务；按需启动守护进程（daemon）；利用 Linux 的 [cgroups](/index.php/Cgroups "Cgroups") 监视进程；支持快照和系统恢复；维护挂载点和自动挂载点；各服务间基于依赖关系进行精密控制。_
+***systemd** 是 Linux 下的一款系统和服务管理器，兼容 SysV 和 LSB 的启动脚本。systemd 的特性有：支持并行化任务；同时采用 socket 式与 [D-Bus](/index.php/D-Bus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "D-Bus (简体中文)") 总线式激活服务；按需启动守护进程（daemon）；利用 Linux 的 [cgroups](/index.php/Cgroups "Cgroups") 监视进程；支持快照和系统恢复；维护挂载点和自动挂载点；各服务间基于依赖关系进行精密控制。*
 
 ## Contents
 
@@ -89,15 +89,15 @@ $ systemctl list-unit-files
 *   挂载点会自动转化为相应的 `.mount` 单元。例如 `/home` 等价于 `home.mount`。
 *   设备会自动转化为相应的 `.device` 单元，所以 `/dev/sda2` 等价于 `dev-sda2.device`。
 
-**Note:** 有一些单元的名称包含一个 `@` 标记， (e.g. `name@_string_.service`): 这意味着它是模板单元 `name@.service` 的一个 [实例](http://0pointer.de/blog/projects/instances.html)。 `_string_` 被称作实例标识符, 在 _systemctl_ 调用模板单元时，会将其当作一个参数传给模板单元，模板单元会使用这个传入的参数代替模板中的 `%I` 指示符。
+**Note:** 有一些单元的名称包含一个 `@` 标记， (e.g. `name@*string*.service`): 这意味着它是模板单元 `name@.service` 的一个 [实例](http://0pointer.de/blog/projects/instances.html)。 `*string*` 被称作实例标识符, 在 *systemctl* 调用模板单元时，会将其当作一个参数传给模板单元，模板单元会使用这个传入的参数代替模板中的 `%I` 指示符。
 
-在实例化之前，_systemd_ 会先检查 `name@string.suffix` 文件是否存在（如果存在，应该就是直接使用这个文件，而不是模板实例化了）。大多数情况下，包换 `@` 标记都意味着这个文件是模板。如果一个模板单元没有实例化就调用，该调用会返回失败，因为模板单元中的 `%I` 指示符没有被替换。
+在实例化之前，*systemd* 会先检查 `name@string.suffix` 文件是否存在（如果存在，应该就是直接使用这个文件，而不是模板实例化了）。大多数情况下，包换 `@` 标记都意味着这个文件是模板。如果一个模板单元没有实例化就调用，该调用会返回失败，因为模板单元中的 `%I` 指示符没有被替换。
 
 **Tip:**
 
 *   下面的大部分命令都可以跟多个单元名, 详细信息参见 `man systemctl`。
 *   从[systemd 220版本](https://github.com/systemd/systemd/blob/master/NEWS#L323-L326)开始, `systemctl`命令在`enable`、`disable`和`mask`子命令中增加了`--now`选项，可以实现激活的同时启动服务，取消激活的同时停止服务。
-*   一个软件包可能会提供多个不同的单元。如果你已经安装了软件包，可以通过`pacman -Qql _package_ | grep systemd`命令检查这个软件包提供了哪些单元。
+*   一个软件包可能会提供多个不同的单元。如果你已经安装了软件包，可以通过`pacman -Qql *package* | grep systemd`命令检查这个软件包提供了哪些单元。
 
 立即激活单元：
 
@@ -235,7 +235,7 @@ $ systemctl hybrid-sleep
 
 单元文件的语法，可以参考系统已经安装的单元，也可以参考`man systemd.service`中的[EXAMPLES章节](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples)。
 
-**小贴士:** 以 `#` 开头的注释可能也能用在 unit-files 中, 但是只能在新行中使用。 不要在 _systemd_ 的参数后面使用行末注释， 否则 unit 将会启动失败。
+**小贴士:** 以 `#` 开头的注释可能也能用在 unit-files 中, 但是只能在新行中使用。 不要在 *systemd* 的参数后面使用行末注释， 否则 unit 将会启动失败。
 
 ### 处理依赖关系
 
@@ -261,7 +261,6 @@ $ systemctl hybrid-sleep
 要更改由软件包提供的单元文件，先创建名为 `/etc/systemd/system/<单元名>.d/` 的目录（如 `/etc/systemd/system/httpd.service.d/`），然后放入 `*.conf` 文件，其中可以添加或重置参数。这里设置的参数优先级高于原来的单元文件。例如，如果想添加一个额外的依赖，创建这么一个文件即可：
 
  `/etc/systemd/system/<unit>.d/customdependency.conf` 
-
 ```
 [Unit]
 Requires=<新依赖>
@@ -270,20 +269,18 @@ After=<新依赖>
 
 As another example, in order to replace the `ExecStart` directive for a unit that is not of type `oneshot`, create the following file:
 
- `/etc/systemd/system/_unit_.d/customexec.conf` 
-
+ `/etc/systemd/system/*unit*.d/customexec.conf` 
 ```
 [Service]
 ExecStart=
-ExecStart=_new command_
+ExecStart=*new command*
 ```
 
 想知道为什么修改 `ExecStart` 前必须将其置空，参见 ([[1]](https://bugzilla.redhat.com/show_bug.cgi?id=756787#c9)).
 
 下面是自动重启服务的一个例子:
 
- `/etc/systemd/system/_unit_.d/restart.conf` 
-
+ `/etc/systemd/system/*unit*.d/restart.conf` 
 ```
 [Service]
 Restart=always
@@ -306,7 +303,7 @@ RestartSec=30
 
 ## 目标（target）
 
-启动级别（runlevel）是一个旧的概念。现在，systemd 引入了一个和启动级别功能相似又不同的概念——目标（target）。不像数字表示的启动级别，每个_目标_都有名字和独特的功能，并且能同时启用多个。一些_目标_继承其他_目标_的服务，并启动新服务。systemd 提供了一些模仿 sysvinit 启动级别的_目标_，仍可以使用旧的 `telinit 启动级别` 命令切换。
+启动级别（runlevel）是一个旧的概念。现在，systemd 引入了一个和启动级别功能相似又不同的概念——目标（target）。不像数字表示的启动级别，每个*目标*都有名字和独特的功能，并且能同时启用多个。一些*目标*继承其他*目标*的服务，并启动新服务。systemd 提供了一些模仿 sysvinit 启动级别的*目标*，仍可以使用旧的 `telinit 启动级别` 命令切换。
 
 ### 获取当前目标
 
@@ -319,7 +316,7 @@ $ systemctl list-units --type=target
 
 ### 创建新目标
 
-在 Fedora 中，启动级别 0、1、3、5、6 都被赋予特定用途，并且都对应一个 systemd 的_目标_。然而，没有什么很好的移植用户定义的启动级别（2、4）的方法。要实现类似功能，可以以原有的启动级别为基础，创建一个新的_目标_ `/etc/systemd/system/<新目标>`（可以参考 `/usr/lib/systemd/system/graphical.target`），创建 `/etc/systemd/system/<新目标>.wants` 目录，向其中加入额外服务的链接（指向 `/usr/lib/systemd/system/` 中的单元文件）。
+在 Fedora 中，启动级别 0、1、3、5、6 都被赋予特定用途，并且都对应一个 systemd 的*目标*。然而，没有什么很好的移植用户定义的启动级别（2、4）的方法。要实现类似功能，可以以原有的启动级别为基础，创建一个新的*目标* `/etc/systemd/system/<新目标>`（可以参考 `/usr/lib/systemd/system/graphical.target`），创建 `/etc/systemd/system/<新目标>.wants` 目录，向其中加入额外服务的链接（指向 `/usr/lib/systemd/system/` 中的单元文件）。
 
 ### 目标表
 
@@ -357,7 +354,7 @@ systemd 中，启动级别通过“目标单元”访问。通过如下命令切
 
 ```
 
-要覆盖已经设置的_default.target_，请使用 force:
+要覆盖已经设置的*default.target*，请使用 force:
 
 ```
 # systemctl set-default -f multi-user.target
@@ -373,7 +370,6 @@ systemd 中，启动级别通过“目标单元”访问。通过如下命令切
 临时文件通常和服务文件同时提供，以生成守护进程需要的文件和目录。例如 [Samba](/index.php/Samba_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Samba (简体中文)") 服务需要目录 `/run/samba` 存在并设置正确的权限位，就象这样：
 
  `/usr/lib/tmpfiles.d/samba.conf` 
-
 ```
 D /run/samba 0755 root root
 
@@ -382,7 +378,6 @@ D /run/samba 0755 root root
 此外，临时文件还可以用来在开机时向特定文件写入某些内容。比如，要禁止系统从USB设备唤醒，利用旧的 `/etc/rc.local` 可以用 `echo USBE > /proc/acpi/wakeup`，而现在可以这么做：
 
  `/etc/tmpfiles.d/disable-usb-wake.conf` 
-
 ```
 w /proc/acpi/wakeup - - - - USBE
 
@@ -394,7 +389,7 @@ w /proc/acpi/wakeup - - - - USBE
 
 ## 定时器
 
-定时器是以 _.timer_ 为后缀的配置文件，记录由system的里面由时间触发的动作, 定时器可以替代 _cron_ 的大部分功能。详情参阅 [systemd/Timers (简体中文)](/index.php/Systemd/Timers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd/Timers (简体中文)").
+定时器是以 *.timer* 为后缀的配置文件，记录由system的里面由时间触发的动作, 定时器可以替代 *cron* 的大部分功能。详情参阅 [systemd/Timers (简体中文)](/index.php/Systemd/Timers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd/Timers (简体中文)").
 
 ## 日志
 
@@ -454,7 +449,7 @@ SystemMaxUse=50M
 
 systemd 提供了 socket `/run/systemd/journal/syslog`，以兼容传统日志服务。所有系统信息都会被传入。要使传统日志服务工作，需要让服务链接该 socket，而非 `/dev/log`（[官方说明](http://lwn.net/Articles/474968/)）。Arch 软件仓库中的 [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng) 已经包含了需要的配置。
 
-As of _systemd_ 216 the default `journald.conf` for forwarding to the socket is `no`. This means you will need to set the option `ForwardToSyslog=yes` in `/etc/systemd/journald.conf` to actually use _syslog-ng_ with _journald_. See [Syslog-ng#Overview](/index.php/Syslog-ng#Overview "Syslog-ng") for details.
+As of *systemd* 216 the default `journald.conf` for forwarding to the socket is `no`. This means you will need to set the option `ForwardToSyslog=yes` in `/etc/systemd/journald.conf` to actually use *syslog-ng* with *journald*. See [Syslog-ng#Overview](/index.php/Syslog-ng#Overview "Syslog-ng") for details.
 
 If you use [rsyslog](https://www.archlinux.org/packages/?name=rsyslog) instead, it is not necessary to change the option because [rsyslog](/index.php/Rsyslog "Rsyslog") pulls the messages from the journal by [itself](http://lists.freedesktop.org/archives/systemd-devel/2014-August/022295.html#journald).
 
@@ -491,14 +486,13 @@ Restart journald with:
 
 As an example, we will investigate an error with `systemd-modules-load` service:
 
-**1.** Lets find the _systemd_ services which fail to start:
+**1.** Lets find the *systemd* services which fail to start:
 
  `$ systemctl --state=failed`  `systemd-modules-load.service   loaded **failed failed**  Load Kernel Modules` 
 
 **2.** Ok, we found a problem with `systemd-modules-load` service. We want to know more:
 
  `$ systemctl status systemd-modules-load` 
-
 ```
 systemd-modules-load.service - Load Kernel Modules
    Loaded: loaded (/usr/lib/systemd/system/systemd-modules-load.service; static)
@@ -513,7 +507,6 @@ If the `Process ID` is not listed, just restart the failed service with `systemc
 **3.** Now we have the process id (PID) to investigate this error in depth. Enter the following command with the current `Process ID` (here: 15630):
 
  `$ journalctl -b _PID=15630` 
-
 ```
 -- Logs begin at Sa 2013-05-25 10:31:12 CEST, end at So 2013-08-25 11:51:17 CEST. --
 Aug 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'blacklist usblp'**
@@ -523,7 +516,6 @@ Aug 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'insta
 **4.** We see that some of the kernel module configs have wrong settings. Therefore we have a look at these settings in `/etc/modules-load.d/`:
 
  `$ ls -Al /etc/modules-load.d/` 
-
 ```
 ...
 -rw-r--r--   1 root root    79  1\. Dez 2012  blacklist.conf
@@ -538,7 +530,6 @@ Aug 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'insta
 **5.** The `Failed to find module 'blacklist usblp'` error message might be related to a wrong setting inside of `blacklist.conf`. Lets deactivate it with inserting a trailing **#** before each option we found via step 3:
 
  `/etc/modules-load.d/blacklist.conf` 
-
 ```
 **#** blacklist usblp
 **#** install usblp /bin/false
@@ -557,7 +548,6 @@ If it was successful, this should not prompt anything. If you see any error, go 
 If everything is ok, you can verify that the service was started successfully with:
 
  `$ systemctl status systemd-modules-load` 
-
 ```
 systemd-modules-load.service - Load Kernel Modules
    Loaded: **loaded** (/usr/lib/systemd/system/systemd-modules-load.service; static)
@@ -578,7 +568,7 @@ Often you can solve these kind of problems like shown above. For further investi
 
 ### Diagnosing problems with a specific service
 
-If some _systemd_ service misbehaves and you want to get more information about what is going on, set the `SYSTEMD_LOG_LEVEL` [environment variable](/index.php/Environment_variable "Environment variable") to `debug`. For example, to run the _systemd-networkd_ daemon in debug mode:
+If some *systemd* service misbehaves and you want to get more information about what is going on, set the `SYSTEMD_LOG_LEVEL` [environment variable](/index.php/Environment_variable "Environment variable") to `debug`. For example, to run the *systemd-networkd* daemon in debug mode:
 
 ```
 # systemctl stop systemd-networkd
@@ -589,7 +579,6 @@ If some _systemd_ service misbehaves and you want to get more information about 
 Or, equivalently, modify the service file temporarily for gathering enough output. For example:
 
  `/lib/systemd/system/systemd-networkd.service` 
-
 ```
 [Service]
 ...
@@ -612,7 +601,6 @@ If debug information is required long-term, add the variable the [regular](#Edit
 要使用老的内核转储，创建下面文件:
 
  `/etc/sysctl.d/49-coredump.conf` 
-
 ```
 kernel.core_pattern = core
 kernel.core_uses_pid = 0
@@ -661,7 +649,7 @@ The problem for some users has been due to `/var/log/journal` becoming too large
 *   [systemd for Administrators (PDF)](http://0pointer.de/public/systemd-ebook-psankar.pdf)
 *   [Fedora 项目对 systemd 的介绍](http://fedoraproject.org/wiki/Systemd)
 *   [如何调试 systemd 故障](http://fedoraproject.org/wiki/How_to_debug_Systemd_problems)
-*   _The H Open_ 杂志上的[两](http://www.h-online.com/open/features/Control-Centre-The-systemd-Linux-init-system-1565543.html)[篇](http://www.h-online.com/open/features/Booting-up-Tools-and-tips-for-systemd-1570630.html)科普文章
+*   *The H Open* 杂志上的[两](http://www.h-online.com/open/features/Control-Centre-The-systemd-Linux-init-system-1565543.html)[篇](http://www.h-online.com/open/features/Booting-up-Tools-and-tips-for-systemd-1570630.html)科普文章
 *   [Lennart 的博文](http://0pointer.de/blog/projects/systemd.html)
 *   [更新报告](http://0pointer.de/blog/projects/systemd-update.html)
 *   [更新报告2](http://0pointer.de/blog/projects/systemd-update-2.html)

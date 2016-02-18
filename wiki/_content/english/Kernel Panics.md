@@ -30,7 +30,7 @@ To make troubleshooting easier, ensure that the kernel is not in quiet mode. Rem
 
 ## Option 1: Check bootloader configuration
 
-Another possibility is an error in the [bootloader's configuration](/index.php/Boot_Loader#Configuration_files "Boot Loader"). For example, repartitioning hard drives can change partitions' order. GRUB users may recall whether repartitioning has occurred recently and make sure the _root_ and _kernel_ lines match up with the new partitioning scheme. And examine the file for typos and extraneous characters. An extra space, or a character in the wrong place will cause a kernel panic.
+Another possibility is an error in the [bootloader's configuration](/index.php/Boot_Loader#Configuration_files "Boot Loader"). For example, repartitioning hard drives can change partitions' order. GRUB users may recall whether repartitioning has occurred recently and make sure the *root* and *kernel* lines match up with the new partitioning scheme. And examine the file for typos and extraneous characters. An extra space, or a character in the wrong place will cause a kernel panic.
 
 ## Option 2: Reinstall kernel
 
@@ -38,7 +38,7 @@ Reinstalling the kernel is probably the best bet when no other major system modi
 
 ### Start from the installation CD
 
-The first step is booting the installation CD. Once booted, you are presented with an automatically logged-in virtual console as the _root_ user.
+The first step is booting the installation CD. Once booted, you are presented with an automatically logged-in virtual console as the *root* user.
 
 ### Mount your partitions
 
@@ -98,7 +98,7 @@ First, you need to get the kernel details:
 Now, use the kernel details in the command below.
 
 ```
-# pacman -U /var/cache/pacman/pkg/linux-4._xx-x_.pkg.tar.xz
+# pacman -U /var/cache/pacman/pkg/linux-4.*xx-x*.pkg.tar.xz
 
 ```
 

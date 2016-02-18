@@ -1,6 +1,6 @@
 From the [official website](http://portswigger.net/burp/):
 
-	_Burp Suite is an integrated platform for performing security testing of web applications. Its various tools work seamlessly together to support the entire testing process, from initial mapping and analysis of an application's attack surface, through to finding and exploiting security vulnerabilities._3
+	*Burp Suite is an integrated platform for performing security testing of web applications. Its various tools work seamlessly together to support the entire testing process, from initial mapping and analysis of an application's attack surface, through to finding and exploiting security vulnerabilities.*3
 
 ## Contents
 
@@ -26,11 +26,11 @@ $ burpsuite
 
 ```
 
-and open the _Proxy -> Options_. In the _Proxy Listeners_ section add a new interface. Set _Interface_ to `127.0.0.1:8080` and make sure the _Running_ checkbox is enabled.
+and open the *Proxy -> Options*. In the *Proxy Listeners* section add a new interface. Set *Interface* to `127.0.0.1:8080` and make sure the *Running* checkbox is enabled.
 
-Navigate to `[http://127.0.0.1:8080/](http://127.0.0.1:8080/)` in Firefox, click the _CA Certificate_ link at top right and save the certificate file somewhere.
+Navigate to `[http://127.0.0.1:8080/](http://127.0.0.1:8080/)` in Firefox, click the *CA Certificate* link at top right and save the certificate file somewhere.
 
-In Firefox open the _Preferences_ window and go to _Advanced -> Certificates -> View Certificates_. Click _Import_ and select the file. Check the _Trust this CA to identify websites_ checkbox and click _OK_.
+In Firefox open the *Preferences* window and go to *Advanced -> Certificates -> View Certificates*. Click *Import* and select the file. Check the *Trust this CA to identify websites* checkbox and click *OK*.
 
 ## See also
 

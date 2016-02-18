@@ -26,7 +26,6 @@ msmtp can be [installed](/index.php/Installed "Installed") with the package [msm
 The following is an example of a msmtp configuration (the file is based on the packaged, regular-user, example located at `/usr/share/doc/msmtp/msmtprc-user.example`; the system configuration file belongs at `/etc/msmtprc` and it's example is located at `/usr/share/doc/msmtp/msmtprc-system.example`):
 
  `~/.msmtprc` 
-
 ```
 # Set default values for all following accounts.
 defaults
@@ -39,9 +38,9 @@ logfile        ~/.msmtp.log
 account        gmail
 host           smtp.gmail.com
 port           587
-from           _username_@gmail.com
-user           _username_
-password       _plain-text-password_
+from           *username*@gmail.com
+user           *username*
+password       *plain-text-password*
 
 # A freemail service
 account        freemail
@@ -56,24 +55,23 @@ account default : gmail
 
 **Note:** If you are using SSL/TLS and receive a "Server sent empty reply" error message, see [#Server sent empty reply](#Server_sent_empty_reply).
 
-The _user_ configuration file must be explicitly readable/writeable to only it's owner or msmtp will fail:
+The *user* configuration file must be explicitly readable/writeable to only it's owner or msmtp will fail:
 
 ```
 $ chmod 600 ~/.msmtprc
 
 ```
 
-To avoid saving the password in plain text in the configuration file, use _passwordeval_ to launch an external program. This example using Gnu PG is commonly used to perform decryption of a password:
+To avoid saving the password in plain text in the configuration file, use *passwordeval* to launch an external program. This example using Gnu PG is commonly used to perform decryption of a password:
 
 ```
- echo -e "password\n" | gpg --encrypt -o .msmtp-gmail.gpg # enter id (email...)
+ echo -e "password
+" | gpg --encrypt -o .msmtp-gmail.gpg # enter id (email...)
 
 ```
 
 **Warning:** Most shells save command history(e.g. .bash_history .zhistory). To avoid this, use gpg with shell stdin: `gpg --encrypt -o .msmtp-gmail.gpg -r <email> -`. The ending dash is not a typo, rather it causes gpg to use stdin. After running that snippet of code, type in your password, press enter, and press Control-d so gpg can encrypt your password.
-
  `~/.msmtprc` 
-
 ```
 passwordeval    "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.msmtp-gmail.gpg"
 
@@ -94,7 +92,6 @@ msmtp also understands aliases. Add the following line to the defaults section o
 and create an aliases file in `/etc`
 
  `/etc/aliases` 
-
 ```
 # Example aliases file
 
@@ -110,15 +107,15 @@ default: admin@domain.example
 The account option (`--account=,-a` tells which account to use as sender:
 
 ```
-$ echo "hello there username." | msmtp -a default _username_@domain.com
+$ echo "hello there username." | msmtp -a default *username*@domain.com
 
 ```
 
 Or, with the addresses in a file:
 
 ```
-To: _username_@domain.com
-From: _username_@gmail.com
+To: *username*@domain.com
+From: *username*@gmail.com
 Subject: A test
 
 Hello there.
@@ -130,14 +127,13 @@ $ cat test.mail | msmtp -a default <username>@domain.com
 
 ```
 
-**Tip:** If using Gmail you'll need to allow "Less Secure Apps" in _Settings_ > _Security_. Make sure to sign out of your other Gmail accounts first because the security settings part of Google Accounts can not manage concurrent sessions of more than one account.
+**Tip:** If using Gmail you'll need to allow "Less Secure Apps" in *Settings* > *Security*. Make sure to sign out of your other Gmail accounts first because the security settings part of Google Accounts can not manage concurrent sessions of more than one account.
 
 ## Cronie default email client
 
 To make [cronie](https://www.archlinux.org/packages/?name=cronie) use msmtp rather than sendmail, make sure [msmtp-mta](https://www.archlinux.org/packages/?name=msmtp-mta) is installed, or edit the `cronie.service` systemd unit:
 
  `/etc/systemd/system/cronie.service.d/msmtp.conf` 
-
 ```
 [Service]
 ExecStart=
@@ -201,13 +197,13 @@ The msmtp source distribution includes a `msmtprc` highlighting script for [Vim]
 
 ### Send mail with PHP using msmtp
 
-Look for _sendmail_path_ option in your `php.ini` and edit like this:
+Look for *sendmail_path* option in your `php.ini` and edit like this:
 
  `sendmail_path = "/usr/bin/msmtp -C /path/to/your/config -t"` 
 
 Note that you **can not** use a user configuration file (ie: one under ~/) if you plan on using msmtp as a sendmail replacement with php or something similar. In that case just create /etc/msmtprc, and remove your user configuration (or not if you plan on using it for something else). Also make sure it's readable by whatever you're using it with (php, django, etc...)
 
-From the msmtp manual: _Accounts defined in the user configuration file override accounts from the system configuration file. The user configuration file must have no more permissions than user read/write_
+From the msmtp manual: *Accounts defined in the user configuration file override accounts from the system configuration file. The user configuration file must have no more permissions than user read/write*
 
 So it's impossible to have a conf file under ~/ and have it still be readable by the php user.
 

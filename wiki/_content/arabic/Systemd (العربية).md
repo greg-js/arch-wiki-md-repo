@@ -1,6 +1,6 @@
 جاء تعريفًا من [صفحة المشروع](http://freedesktop.org/wiki/Software/systemd):
 
-_**النظام الرابع Systemd** هو مدير للنظام و الخدمات في لينكس ، متوافق مع المخطوطات الابتدائية بنوعيها SysV و LSB . يعمل **systemd** مقدّمًا قدرات الرد المتوازي ، مستعملًا نشاطي socket و [D-Bus](/index.php/D-Bus "D-Bus") في تشغيل الخدمات ، عارضًا مقدّمات التشغيل مسبقة الطلب من المخدّمات ، محافظًا على قطاع العمليات من خلال [مجموعات التحكم](/index.php/Cgroups "Cgroups") في لينكس ، داعمًا التوقف الفوري لحالة النظام و الاستمرارية فيما بعد ، مديرًا لنقاط الوصل و الوصل التلقائي ، منفّذًا معاملات المنطق الخدمي التحكمي القائمة على التّبعية . Systemd يشكل بديلًا متكاملًا لبرنامج [sysvinit](/index.php/SysVinit "SysVinit") ._
+***النظام الرابع Systemd** هو مدير للنظام و الخدمات في لينكس ، متوافق مع المخطوطات الابتدائية بنوعيها SysV و LSB . يعمل **systemd** مقدّمًا قدرات الرد المتوازي ، مستعملًا نشاطي socket و [D-Bus](/index.php/D-Bus "D-Bus") في تشغيل الخدمات ، عارضًا مقدّمات التشغيل مسبقة الطلب من المخدّمات ، محافظًا على قطاع العمليات من خلال [مجموعات التحكم](/index.php/Cgroups "Cgroups") في لينكس ، داعمًا التوقف الفوري لحالة النظام و الاستمرارية فيما بعد ، مديرًا لنقاط الوصل و الوصل التلقائي ، منفّذًا معاملات المنطق الخدمي التحكمي القائمة على التّبعية . Systemd يشكل بديلًا متكاملًا لبرنامج [sysvinit](/index.php/SysVinit "SysVinit") .*
 
 **ملاحظة: لمعرفة مزيد من التفاصيل عن أسباب انتقال Arch إلى systemd ، انظر [منشور المنتدى](https://bbs.archlinux.org/viewtopic.php?pid=1149530#p1149530).** :
 
@@ -101,14 +101,13 @@ The following section is aimed at Arch Linux installations that still rely on [s
 The virtual console (keyboard mapping, console font and console map) is configured in `/etc/vconsole.conf`:
 
  `/etc/vconsole.conf` 
-
 ```
 KEYMAP=us
 FONT=lat9w-16
 FONT_MAP=8859-1_to_uni
 ```
 
-**Note:** As of [systemd](https://www.archlinux.org/packages/?name=systemd)-194, the built-in _kernel_ font and the _us_ keymap are used if `KEYMAP=` and `FONT=` are empty or not set.
+**Note:** As of [systemd](https://www.archlinux.org/packages/?name=systemd)-194, the built-in *kernel* font and the *us* keymap are used if `KEYMAP=` and `FONT=` are empty or not set.
 
 Another way to set the keyboard mapping (keymap) is doing:
 
@@ -165,7 +164,6 @@ Today, all necessary module loading is handled automatically by [udev](/index.ph
 Extra kernel modules to be loaded during boot are configured as a static list in files under `/etc/modules-load.d/`. Each configuration file is named in the style of `/etc/modules-load.d/<program>.conf`. Configuration files simply contain a list of kernel module names to load, separated by newlines. Empty lines and lines whose first non-whitespace character is `#` or `;` are ignored.
 
  `/etc/modules-load.d/virtio-net.conf` 
-
 ```
 # Load virtio-net.ko at boot
 virtio-net
@@ -246,7 +244,7 @@ In the current version of systemd, the `Handle*` options will apply throughout t
 
 **Warning:** Currently, the power managers in the newest versions of [KDE](/index.php/KDE "KDE") and [GNOME](/index.php/GNOME "GNOME") are the only ones that issue the necessary "inhibited" commands. Until the others do, you will need to set the `Handle` options to `ignore` if you want your ACPI events to be handled by [Xfce](/index.php/Xfce "Xfce"), [acpid](/index.php/Acpid "Acpid") or other programs.
 
-**Note:** Systemd can also use other suspend backends (such as [Uswsusp](/index.php/Uswsusp "Uswsusp") or [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")), in addition to the default _kernel_ backend, in order to put the computer to sleep or hibernate.
+**Note:** Systemd can also use other suspend backends (such as [Uswsusp](/index.php/Uswsusp "Uswsusp") or [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")), in addition to the default *kernel* backend, in order to put the computer to sleep or hibernate.
 
 For `systemctl hibernate` to work on your system you need to follow instructions at [Hibernation](/index.php/Pm-utils#Hibernation_.28suspend2disk.29 "Pm-utils") and possibly at [Mkinitcpio Resume Hook](/index.php/Pm-utils#Mkinitcpio_Resume_Hook "Pm-utils") (`pm-utils` does not need to be installed).
 
@@ -259,7 +257,6 @@ Systemd does not use [pm-utils](/index.php/Pm-utils "Pm-utils") to put the machi
 Service files can be hooked into suspend.target, hibernate.target and sleep.target to execute actions before or after suspend/hibernate. Separate files should be created for user actions and root/system actions. To activate the user service files, `# systemctl enable suspend@<user> && systemctl enable resume@<user>`. Examples:
 
  `/etc/systemd/system/suspend@.service` 
-
 ```
 [Unit]
 Description=User suspend actions
@@ -275,9 +272,7 @@ ExecStart=/usr/bin/sflock
 [Install]
 WantedBy=sleep.target
 ```
-
  `/etc/systemd/system/resume@.service` 
-
 ```
 [Unit]
 Description=User resume actions
@@ -296,7 +291,6 @@ WantedBy=suspend.target
 For root/system actions (activate with `# systemctl enable root-suspend`):
 
  `/etc/systemd/system/root-resume.service` 
-
 ```
 [Unit]
 Description=Local system resume actions
@@ -309,9 +303,7 @@ ExecStart=/usr/bin/systemctl restart mnt-media.automount
 [Install]
 WantedBy=suspend.target
 ```
-
  `/etc/systemd/system/root-suspend.service` 
-
 ```
 [Unit]
 Description=Local system suspend actions
@@ -338,7 +330,6 @@ With the combined suspend/resume service file, a single hook does all the work f
 Example and explanation:
 
  `/etc/systemd/system/wicd-sleep.service` 
-
 ```
 [Unit]
 Description=Wicd sleep hook
@@ -380,7 +371,6 @@ Note that you can also use `sleep.target`, `suspend.target`, `hibernate.target` 
 An example of a custom sleep script:
 
  `/usr/lib/systemd/system-sleep/example.sh` 
-
 ```
 #!/bin/sh
 case $1/$2 in
@@ -524,9 +514,8 @@ Enable a unit to be started on bootup:
 ```
 
 **Note:** Services without an `[Install]` section are usually called automatically by other services. If you need to install them manually, use the following command, replacing `foo` with the name of the service.
-
 ```
-# ln -s /usr/lib/systemd/system/_foo_.service /etc/systemd/system/graphical.target.wants/
+# ln -s /usr/lib/systemd/system/*foo*.service /etc/systemd/system/graphical.target.wants/
 
 ```
 
@@ -621,7 +610,7 @@ $ loginctl show-session $XDG_SESSION_ID
 
 ## كتابة ملفات تخصصية بتنسيق .service
 
-_انظر_
+*انظر*
 
 ### استنباط الاعتماديّات
 
@@ -644,7 +633,6 @@ There are several different start-up types to consider when writing a custom ser
 To edit a unit file provided by a package, you can create a directory called `/etc/systemd/system/<unit>.d/` for example `/etc/systemd/system/httpd.service.d/` and place `*.conf` files in there to override or add new options. Systemd will parse these `*.conf` files and apply them on top of the original unit. For example, if you simply want to add an additional dependency to a unit, you may create the following file:
 
  `/etc/systemd/system/<unit>.d/customdependency.conf` 
-
 ```
 [Unit]
 Requires=<new dependency>
@@ -662,7 +650,6 @@ Then run the following for your changes to take effect:
 Alternatively you can copy the old unit file from `/usr/lib/systemd/system/` to `/etc/systemd/system/` and make your changes there. A unit file in `/etc/systemd/system/` always overrides the same unit in `/usr/lib/systemd/system/`. Note that when the original unit in `/usr/lib/` is changed due to a package upgrade, these changes will not automatically apply to your custom unit file in `/etc/`. Additionally you will have to manually reenable the unit with `systemctl reenable <unit>`. It is therefore recommended to use the `*.conf` method described before instead.
 
 **Tip:** You can use `systemd-delta` to see which unit files have been overridden and what exactly has been changed.
-
 As the provided unit files will be updated from time to time, use systemd-delta for system maintenance.
 
 ### تسليط الضوء على بناء الوحدات بواسطة Vim
@@ -671,7 +658,7 @@ Syntax highlighting for systemd unit files within [Vim](/index.php/Vim "Vim") ca
 
 ## الأهداف
 
-Systemd uses _targets_ which serve a similar purpose as runlevels but act a little different. Each _target_ is named instead of numbered and is intended to serve a specific purpose with the possibility of having multiple ones active at the same time. Some _targets_ are implemented by inheriting all of the services of another _target_ and adding additional services to it. There are systemd _target_s that mimic the common SystemVinit runlevels so you can still switch _target_s using the familiar `telinit RUNLEVEL` command.
+Systemd uses *targets* which serve a similar purpose as runlevels but act a little different. Each *target* is named instead of numbered and is intended to serve a specific purpose with the possibility of having multiple ones active at the same time. Some *targets* are implemented by inheriting all of the services of another *target* and adding additional services to it. There are systemd *target*s that mimic the common SystemVinit runlevels so you can still switch *target*s using the familiar `telinit RUNLEVEL` command.
 
 ### الأهداف الحالية
 
@@ -684,7 +671,7 @@ $ systemctl list-units --type=target
 
 ### إنشاء هدف معيّن
 
-The runlevels that are assigned a specific purpose on vanilla Fedora installs; 0, 1, 3, 5, and 6; have a 1:1 mapping with a specific systemd _target_. Unfortunately, there is no good way to do the same for the user-defined runlevels like 2 and 4\. If you make use of those it is suggested that you make a new named systemd _target_ as `/etc/systemd/system/<your target>` that takes one of the existing runlevels as a base (you can look at `/usr/lib/systemd/system/graphical.target` as an example), make a directory `/etc/systemd/system/<your target>.wants`, and then symlink the additional services from `/usr/lib/systemd/system/` that you wish to enable.
+The runlevels that are assigned a specific purpose on vanilla Fedora installs; 0, 1, 3, 5, and 6; have a 1:1 mapping with a specific systemd *target*. Unfortunately, there is no good way to do the same for the user-defined runlevels like 2 and 4\. If you make use of those it is suggested that you make a new named systemd *target* as `/etc/systemd/system/<your target>` that takes one of the existing runlevels as a base (you can look at `/usr/lib/systemd/system/graphical.target` as an example), make a directory `/etc/systemd/system/<your target>.wants`, and then symlink the additional services from `/usr/lib/systemd/system/` that you wish to enable.
 
 ### جدولة الاهداف
 
@@ -916,7 +903,7 @@ ulimit -c unlimited
 *   [systemd للمُدراء (PDF)](http://0pointer.de/public/systemd-ebook-psankar.pdf)
 *   [مشروع فيدورا و systemd](http://fedoraproject.org/wiki/Systemd)
 *   [كيف تُصلح مشاكل systemd](http://fedoraproject.org/wiki/How_to_debug_Systemd_problems)
-*   [جزء 2](http://www.h-online.com/open/features/Control-Centre-The-systemd-Linux-init-system-1565543.html) [جزء 1](http://www.h-online.com/open/features/Booting-up-Tools-and-tips-for-systemd-1570630.html) المقالات التمهيدية في مجلة _The H Open_.
+*   [جزء 2](http://www.h-online.com/open/features/Control-Centre-The-systemd-Linux-init-system-1565543.html) [جزء 1](http://www.h-online.com/open/features/Booting-up-Tools-and-tips-for-systemd-1570630.html) المقالات التمهيدية في مجلة *The H Open*.
 *   [Lennart's blog story](http://0pointer.de/blog/projects/systemd.html)
 *   [حالة التحديث](http://0pointer.de/blog/projects/systemd-update.html)
 *   [حالة التحديث 2](http://0pointer.de/blog/projects/systemd-update-2.html)

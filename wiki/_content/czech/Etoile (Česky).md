@@ -2,7 +2,7 @@
 
 Převzato z [domovské stránky Étoilé](http://www.etoileos.com)
 
-_Étoilé je uživatelské prostředí, designované od základu k činnostem, které lidé dělají na počítačích: tvorba, spolupráce, učení se._
+*Étoilé je uživatelské prostředí, designované od základu k činnostem, které lidé dělají na počítačích: tvorba, spolupráce, učení se.*
 
 Kromě realizace detailů, jako je práce se soubory a procesy operačního systému, které zbytečně znepřehledňují uživatelské rozhraní počítače, uživatelé Étoilé mohou:
 

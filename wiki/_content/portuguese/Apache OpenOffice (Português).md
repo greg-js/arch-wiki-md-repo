@@ -7,14 +7,14 @@
 
 ```
 
-*   Faça download do pacote _base_ do OpenOffice:
+*   Faça download do pacote *base* do OpenOffice:
 
 ```
 # pacman -S openoffice-base
 
 ```
 
-*   Instale um ou vários pacotes linguísticos. De momento apenas existe o pacote _pt-br_ e não apenas pt.
+*   Instale um ou vários pacotes linguísticos. De momento apenas existe o pacote *pt-br* e não apenas pt.
 
 ```
 # pacman -S openoffice-pt_br

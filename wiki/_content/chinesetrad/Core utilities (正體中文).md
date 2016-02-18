@@ -1,6 +1,6 @@
 **翻譯狀態：** 本文章是 [Core_Utilities](/index.php/Core_Utilities "Core Utilities") 的翻譯版本。最近一次的翻譯時間：2014-01-20。點擊[本連結](https://wiki.archlinux.org/index.php?title=Core_Utilities&diff=0&oldid=293712)查看英文頁面之後的變更。
 
-本文章涉及 GNU/Linux 系統上所謂的「核心」工具，例如 _less_ ，_ls_ 和 _grep_ ，本文聚焦 (但不限於) 在 GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) 軟體包的工具集，並提供各種關於這些工具的建議、技巧與資訊。
+本文章涉及 GNU/Linux 系統上所謂的「核心」工具，例如 *less* ，*ls* 和 *grep* ，本文聚焦 (但不限於) 在 GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) 軟體包的工具集，並提供各種關於這些工具的建議、技巧與資訊。
 
 ## Contents
 
@@ -29,22 +29,22 @@
 
 ## cat
 
-[cat](https://en.wikipedia.org/wiki/cat_(Unix) "wikipedia:cat (Unix)") (_catenate_；連接) 是一個連接並顯示文件的標準 Unix 工具。
+[cat](https://en.wikipedia.org/wiki/cat_(Unix) (*catenate*；連接) 是一個連接並顯示文件的標準 Unix 工具。
 
-*   _cat_ 並非內建於 shell，在多數場合下 (腳本或考慮效能)，使用[重新導向](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)")會更加方便。事實上 `< _file_` 的效果如同 `cat _file_` 。
+*   *cat* 並非內建於 shell，在多數場合下 (腳本或考慮效能)，使用[重新導向](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)")會更加方便。事實上 `< *file*` 的效果如同 `cat *file*` 。
 
 *   按照以下結構可直接在某檔案添加多行文字：
 
 ```
-$ cat << EOF >> _path/file_
-_第一行_
+$ cat << EOF >> *path/file*
+*第一行*
 ...
-_最後一行_
+*最後一行*
 EOF
 
 ```
 
-*   若您需要以倒反順序顯示檔案，有個工具叫 [tac](https://en.wikipedia.org/wiki/tac_(Unix) "wikipedia:tac (Unix)") (_cat_ 倒轉過來)。
+*   若您需要以倒反順序顯示檔案，有個工具叫 [tac](https://en.wikipedia.org/wiki/tac_(Unix) (*cat* 倒轉過來)。
 
 ## cron
 
@@ -52,25 +52,25 @@ EOF
 
 參閱[本文](/index.php/Cron "Cron")。
 
-**註記:** _systemd_ 也有辦法做到不少 _cron_ 的功能。參閱[相關文章](/index.php/Systemd/Timers#As_a_cron_replacement "Systemd/Timers")。
+**註記:** *systemd* 也有辦法做到不少 *cron* 的功能。參閱[相關文章](/index.php/Systemd/Timers#As_a_cron_replacement "Systemd/Timers")。
 
 ## grep
 
-[grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") (來自 [ed](https://en.wikipedia.org/wiki/ed "wikipedia:ed") 的 _g/re/p_, _global/regular expression/print_ (全域、正規表達式、列出)) 是一個最初為 Unix 所寫的命令列文字搜尋工具。_grep_ 指令在檔案或標準輸入內搜尋符合給定正規表達式的行，並將結果列在標準輸出。
+[grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") (來自 [ed](https://en.wikipedia.org/wiki/ed "wikipedia:ed") 的 *g/re/p*, *global/regular expression/print* (全域、正規表達式、列出)) 是一個最初為 Unix 所寫的命令列文字搜尋工具。*grep* 指令在檔案或標準輸入內搜尋符合給定正規表達式的行，並將結果列在標準輸出。
 
-*   記得 _grep_ 可以處理檔案，所以 `cat _file_ | grep _pattern_` 這種架構可以更換成 `grep _pattern_ _file_`
+*   記得 *grep* 可以處理檔案，所以 `cat *file* | grep *pattern*` 這種架構可以更換成 `grep *pattern* *file*`
 
 *   若要抓取 VCS 原始碼，有個以 Perl 寫成的優化工具叫 [ack](https://www.archlinux.org/packages/?name=ack)。參閱[官方網站](http://beyondgrep.com/)。
 
 ### 彩色輸出
 
-_grep_ 的彩色輸出除了美觀以外，也十分有助於學習 [regexp (正規表達式)](https://en.wikipedia.org/wiki/regexp "wikipedia:regexp") 和 _grep_ 功能。
+*grep* 的彩色輸出除了美觀以外，也十分有助於學習 [regexp (正規表達式)](https://en.wikipedia.org/wiki/regexp "wikipedia:regexp") 和 *grep* 功能。
 
-將以下內容寫入您的 shell 設定檔，使用 _grep_ 的預設顏色。以 [Bash](/index.php/Bash "Bash") 為例：
+將以下內容寫入您的 shell 設定檔，使用 *grep* 的預設顏色。以 [Bash](/index.php/Bash "Bash") 為例：
 
  `~/.bashrc`  `alias grep='grep --color=auto'` 
 
-或者設定 `GREP_OPTIONS` [環境變數](/index.php/Environment_variables "Environment variables")，但請留意，這可能會讓某些使用 _grep_ 的腳本無法運作 [[1]](http://brainstorm.ubuntu.com/idea/24141/)：
+或者設定 `GREP_OPTIONS` [環境變數](/index.php/Environment_variables "Environment variables")，但請留意，這可能會讓某些使用 *grep* 的腳本無法運作 [[1]](http://brainstorm.ubuntu.com/idea/24141/)：
 
 ```
 export GREP_OPTIONS='--color=auto'
@@ -124,20 +124,19 @@ $ iconv -f ISO-8859-15 -t UTF-8 foo >foo.utf
 
 help 指令對所有物件有效。舉例來說，輸入 `ip addr help` 將顯示針對位址物件使用的指令語法。
 
-[網路設定](/index.php/Network_Configuration "Network Configuration")文章顯示在各種常見情境下如何在實際使用 _ip_ 指令。
+[網路設定](/index.php/Network_Configuration "Network Configuration")文章顯示在各種常見情境下如何在實際使用 *ip* 指令。
 
-**註記:** 您或許比較熟知的是 [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") 指令，在舊版本的 Linux 上它被用來做介面設定。現在該指令不宜在 Arch Linux 上使用，您應該改使用 _ip_ 。
+**註記:** 您或許比較熟知的是 [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") 指令，在舊版本的 Linux 上它被用來做介面設定。現在該指令不宜在 Arch Linux 上使用，您應該改使用 *ip* 。
 
 ## less
 
-[less](https://en.wikipedia.org/wiki/less_(Unix) "wikipedia:less (Unix)") 是個終端機分頁程式，可一次一頁的檢視文字檔內容。比起其他的分頁程式如 [more](https://en.wikipedia.org/wiki/more_(command) "wikipedia:more (command)")、[pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)")，_less_ 提供更完善的介面與[功能集](http://www.greenwoodsoftware.com/less/faq.html)。
+[less](https://en.wikipedia.org/wiki/less_(Unix) 是個終端機分頁程式，可一次一頁的檢視文字檔內容。比起其他的分頁程式如 [more](https://en.wikipedia.org/wiki/more_(command) "wikipedia:more (command)")、[pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)")，*less* 提供更完善的介面與[功能集](http://www.greenwoodsoftware.com/less/faq.html)。
 
 ### 透過環境變數幫輸出上色
 
 將以下內容加入您的 shell 設定檔：
 
  `~/.bashrc` 
-
 ```
 export LESS=-R
 export LESS_TERMCAP_me=$(printf '\e[0m')
@@ -153,10 +152,9 @@ export LESS_TERMCAP_so=$(printf '\e[1;44;1m')
 
 ### 透過程式幫輸出上色
 
-您可以在 _less_ 啟用語法上色。首先安裝 [source-highlight](https://www.archlinux.org/packages/?name=source-highlight)，接著在您的 shell 設定檔加入以下內容：
+您可以在 *less* 啟用語法上色。首先安裝 [source-highlight](https://www.archlinux.org/packages/?name=source-highlight)，接著在您的 shell 設定檔加入以下內容：
 
  `~/.bashrc` 
-
 ```
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS='-R '
@@ -167,18 +165,17 @@ export LESS='-R '
 
 使用者可以使用分頁程式列舉壓縮檔內的檔案：
 
- `$ less _compressed_file_.tar.gz` 
-
+ `$ less *compressed_file*.tar.gz` 
 ```
 ==> use tar_file:contained_file to view a file in the archive
--rw------- _username_/_group_  695 2008-01-04 19:24 _compressed_file_/_content1_
--rw------- _username_/_group_   43 2007-11-07 11:17 _compressed_file_/_content2_
-_compressed_file_.tar.gz (END)
+-rw------- *username*/*group*  695 2008-01-04 19:24 *compressed_file*/*content1*
+-rw------- *username*/*group*   43 2007-11-07 11:17 *compressed_file*/*content2*
+*compressed_file*.tar.gz (END)
 ```
 
-_lesspipe_ 也提供 _less_ 與檔案互動的能力，讓它不僅可以作文檔檢視，還能夠當作該檔案類型的替代關聯指令使用 (比如說取代 [html2text](https://www.archlinux.org/packages/?name=html2text) 以檢視 HTML)。
+*lesspipe* 也提供 *less* 與檔案互動的能力，讓它不僅可以作文檔檢視，還能夠當作該檔案類型的替代關聯指令使用 (比如說取代 [html2text](https://www.archlinux.org/packages/?name=html2text) 以檢視 HTML)。
 
-安裝 _lesspipe_ 之後，需重新登入才能啟用，或是執行
+安裝 *lesspipe* 之後，需重新登入才能啟用，或是執行
 
 ```
 source /etc/profile.d/lesspipe.sh
@@ -187,48 +184,47 @@ source /etc/profile.d/lesspipe.sh
 
 ### 用 Vim 代替
 
-[Vim](/index.php/Vim "Vim") (_visual editor improved_) 有個腳本可以檢視文字檔、壓縮檔、二進位檔、目錄的內容。將以下內容加入您的 shell 設定檔，將它設定為分頁程式：
+[Vim](/index.php/Vim "Vim") (*visual editor improved*) 有個腳本可以檢視文字檔、壓縮檔、二進位檔、目錄的內容。將以下內容加入您的 shell 設定檔，將它設定為分頁程式：
 
  `~/.bashrc`  `alias less='/usr/share/vim/vim74/macros/less.sh'` 
 
-除了 _less.sh_ 巨集以外還有一種作法，它依靠 `PAGER` 環境變數。安裝 [vimpager-git](https://aur.archlinux.org/packages/vimpager-git/) 並將以下內容加入您的 shell 設定檔：
+除了 *less.sh* 巨集以外還有一種作法，它依靠 `PAGER` 環境變數。安裝 [vimpager-git](https://aur.archlinux.org/packages/vimpager-git/) 並將以下內容加入您的 shell 設定檔：
 
  `~/.bashrc` 
-
 ```
 export PAGER='vimpager'
 alias less=$PAGER
 ```
 
-所有使用 `PAGER` 環境變數的程式 (如 [git](/index.php/Git "Git") ) 將以 _vim_ 作為它們的分頁程式。
+所有使用 `PAGER` 環境變數的程式 (如 [git](/index.php/Git "Git") ) 將以 *vim* 作為它們的分頁程式。
 
 ## locate
 
-[locate](https://en.wikipedia.org/wiki/locate_(Unix) "wikipedia:locate (Unix)") 可用來搜尋檔案系統上的檔案。它會從預先建立的檔案資料庫搜尋，該資料庫由 _updatedb_ 或 daemon 產生，並使用遞增編碼 (incremental encoding) 壓縮。它的操作速度遠快於 _find_，但平常需要更新維護資料庫。
+[locate](https://en.wikipedia.org/wiki/locate_(Unix) 可用來搜尋檔案系統上的檔案。它會從預先建立的檔案資料庫搜尋，該資料庫由 *updatedb* 或 daemon 產生，並使用遞增編碼 (incremental encoding) 壓縮。它的操作速度遠快於 *find*，但平常需要更新維護資料庫。
 
 請參閱[本文](/index.php/Locate "Locate")。
 
 ## ls
 
-[ls](https://en.wikipedia.org/wiki/ls "wikipedia:ls") (_list_；列舉) 是 Unix、類 Unix 作業系統上列舉檔案的指令。
+[ls](https://en.wikipedia.org/wiki/ls "wikipedia:ls") (*list*；列舉) 是 Unix、類 Unix 作業系統上列舉檔案的指令。
 
-*   _ls_ 可以列舉[檔案權限](/index.php/File_permissions_and_attributes#Viewing_permissions "File permissions and attributes")。
+*   *ls* 可以列舉[檔案權限](/index.php/File_permissions_and_attributes#Viewing_permissions "File permissions and attributes")。
 
 *   用簡單的別名來啟用彩色輸出。從 `/etc/skel/.bashrc` 複製過來的 `~/.bashrc` 應已出現以下的內容：
 
 	`alias ls='ls --color=auto'`
 
-	下一步是讓 _ls_ 的彩色輸出更加完整；例如，不正確的 (孤兒) 軟連結將以紅色表示。將以下內容加入您的 shell 設定檔：
+	下一步是讓 *ls* 的彩色輸出更加完整；例如，不正確的 (孤兒) 軟連結將以紅色表示。將以下內容加入您的 shell 設定檔：
 
 	`eval $(dircolors -b)`
 
 ## man
 
-[man](https://en.wikipedia.org/wiki/Man_page "wikipedia:Man page") (_manual page_；手冊頁) 是線上軟體文件的一種格式，常見於 Unix 或類 Unix 作業系統。涵蓋的主題包括電腦程式 (包含函式庫和系統呼叫)，正規標準和慣例，甚至還有抽象概念。請參閱[手冊頁](/index.php/Man_Pages "Man Pages")。
+[man](https://en.wikipedia.org/wiki/Man_page "wikipedia:Man page") (*manual page*；手冊頁) 是線上軟體文件的一種格式，常見於 Unix 或類 Unix 作業系統。涵蓋的主題包括電腦程式 (包含函式庫和系統呼叫)，正規標準和慣例，甚至還有抽象概念。請參閱[手冊頁](/index.php/Man_Pages "Man Pages")。
 
 ## mkdir
 
-[mkdir](https://en.wikipedia.org/wiki/mkdir "wikipedia:mkdir") (_make directory_；建立目錄) 是建立目錄的指令。
+[mkdir](https://en.wikipedia.org/wiki/mkdir "wikipedia:mkdir") (*make directory*；建立目錄) 是建立目錄的指令。
 
 *   要建立一個目錄與其樹狀架構，需要加上 `-p`，若否則出現錯誤。通常使用者都知道自己在做什麼，`-p` 可以設為預設值。
 
@@ -236,73 +232,73 @@ alias less=$PAGER
 
 	`-v` 可以顯示詳盡資訊。
 
-*   不需要先建立目錄再使用 _chmod_ 更改權限模式，用 `-m` 選項可直接定義新建目錄的存取權限。
+*   不需要先建立目錄再使用 *chmod* 更改權限模式，用 `-m` 選項可直接定義新建目錄的存取權限。
 
-**提示:** 若您要建立一個暫存目錄，比較好的替代指令為 [mktemp](https://en.wikipedia.org/wiki/Temporary_file "wikipedia:Temporary file") (_make termporary_；建立暫存): `mktemp -p`。
+**提示:** 若您要建立一個暫存目錄，比較好的替代指令為 [mktemp](https://en.wikipedia.org/wiki/Temporary_file "wikipedia:Temporary file") (*make termporary*；建立暫存): `mktemp -p`。
 
 ## mv
 
-[mv](https://en.wikipedia.org/wiki/mv "wikipedia:mv") (_move_；移動) 是移動、重新命名檔案與目錄的指令。這個指令有潛在危險，謹慎的作法是限縮它的作用：
+[mv](https://en.wikipedia.org/wiki/mv "wikipedia:mv") (*move*；移動) 是移動、重新命名檔案與目錄的指令。這個指令有潛在危險，謹慎的作法是限縮它的作用：
 
 ```
 alias mv=' timeout 8 mv -iv'
 
 ```
 
-這個別名在 _mv_ 運行超過 8 秒後停止、當刪除三個以上檔案時要求確認、列舉操作過程，且若 shell 的歷史記錄設定為忽略以空格開頭的指令時，不記錄該指令到 shell 的歷史記錄檔案。
+這個別名在 *mv* 運行超過 8 秒後停止、當刪除三個以上檔案時要求確認、列舉操作過程，且若 shell 的歷史記錄設定為忽略以空格開頭的指令時，不記錄該指令到 shell 的歷史記錄檔案。
 
 ## rm
 
-[rm](https://en.wikipedia.org/wiki/rm_(Unix) "wikipedia:rm (Unix)") (_remove_；移除) 是刪除檔案與目錄的指令。
+[rm](https://en.wikipedia.org/wiki/rm_(Unix) (*remove*；移除) 是刪除檔案與目錄的指令。
 
 *   這個指令有潛在危險，謹慎的作法是限縮它的作用：
 
 	 `alias rm=' timeout 3 rm -Iv --one-file-system'` 
 
-	這個別名在 _rm_ 運行超過 3 秒後停止、當刪除三個以上檔案時要求確認、列舉操作過程、不涉及超過一個檔案系統，且若 shell 的歷史記錄設定為忽略以空格開頭的指令時，不記錄該指令到 shell 的歷史記錄檔案。若您希望一次確認一個檔案，將 `-I` 替換為 `-i`。
+	這個別名在 *rm* 運行超過 3 秒後停止、當刪除三個以上檔案時要求確認、列舉操作過程、不涉及超過一個檔案系統，且若 shell 的歷史記錄設定為忽略以空格開頭的指令時，不記錄該指令到 shell 的歷史記錄檔案。若您希望一次確認一個檔案，將 `-I` 替換為 `-i`。
 
 	Zsh 的使用者可在 `timeout` 前加上 `noglob`，避免隱性的語法擴大解釋。
 
-*   若要移除空目錄，使用 _rmdir_；若目標內含有檔案，該指令會失敗。
+*   若要移除空目錄，使用 *rmdir*；若目標內含有檔案，該指令會失敗。
 
 ## sed
 
-[sed](https://en.wikipedia.org/wiki/sed "wikipedia:sed") (_stream editor_；串流編輯器) 是解析並轉換文字的 Unix 工具。
+[sed](https://en.wikipedia.org/wiki/sed "wikipedia:sed") (*stream editor*；串流編輯器) 是解析並轉換文字的 Unix 工具。
 
-這裡有份 _sed_ 一行範例的[清單](http://sed.sourceforge.net/sed1line.txt)。
+這裡有份 *sed* 一行範例的[清單](http://sed.sourceforge.net/sed1line.txt)。
 
 **提示:** 功能更為強大的替代品有 [AWK](https://en.wikipedia.org/wiki/AWK "wikipedia:AWK") 和 [Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl") 語言。
 
 ## seq
 
-**seq** (_sequence_；數字序列) 是用來產生連續數字序列的工具。Shell 有內建的替代品，可以像[維基百科](https://en.wikipedia.org/wiki/Seq_(Unix) "wikipedia:Seq (Unix)")所解釋的方法來使用它們。
+**seq** (*sequence*；數字序列) 是用來產生連續數字序列的工具。Shell 有內建的替代品，可以像[維基百科](https://en.wikipedia.org/wiki/Seq_(Unix) "wikipedia:Seq (Unix)")所解釋的方法來使用它們。
 
 ## shred
 
-[shred](https://en.wikipedia.org/wiki/Shred_(Unix) "wikipedia:Shred (Unix)") 是安全刪除檔案與目錄的指令。這個指令有潛在危險，謹慎的作法是限縮它的作用：
+[shred](https://en.wikipedia.org/wiki/Shred_(Unix) 是安全刪除檔案與目錄的指令。這個指令有潛在危險，謹慎的作法是限縮它的作用：
 
 ```
 alias shred=' timeout 3 shred -v'
 
 ```
 
-這個別名在 _shred_ 運行超過 3 秒後停止、列舉操作過程，且若 shell 的歷史記錄設定為忽略以空格開頭的指令時，不記錄該指令到 shell 的歷史記錄檔案。
+這個別名在 *shred* 運行超過 3 秒後停止、列舉操作過程，且若 shell 的歷史記錄設定為忽略以空格開頭的指令時，不記錄該指令到 shell 的歷史記錄檔案。
 
 Zsh 的使用者可在 `timeout` 前加上 `noglob`，避免隱性的語法擴大解釋。
 
 ## sudo
 
-[Sudo](https://en.wikipedia.org/wiki/Sudo "wikipedia:Sudo") (_as superuser do_；以超級使用者身分做...) 在類 Unix 作業系統下，用來允許使用者以其他使用者 (通常為超級使用者或 root) 的安全性權限執行程式。參閱 [Sudo](/index.php/Sudo "Sudo")。
+[Sudo](https://en.wikipedia.org/wiki/Sudo "wikipedia:Sudo") (*as superuser do*；以超級使用者身分做...) 在類 Unix 作業系統下，用來允許使用者以其他使用者 (通常為超級使用者或 root) 的安全性權限執行程式。參閱 [Sudo](/index.php/Sudo "Sudo")。
 
 ## 權限相關工具
 
-*   [chmod](https://en.wikipedia.org/wiki/chmod "wikipedia:chmod") (_change mode_；更改模式) 是一個 Unix shell 指令和一個系統呼叫 (system call) 的名稱。這兩者都用來更改檔案系統物件 (包含檔案與目錄) 的存取權限，以及特定的特殊標籤。
+*   [chmod](https://en.wikipedia.org/wiki/chmod "wikipedia:chmod") (*change mode*；更改模式) 是一個 Unix shell 指令和一個系統呼叫 (system call) 的名稱。這兩者都用來更改檔案系統物件 (包含檔案與目錄) 的存取權限，以及特定的特殊標籤。
 
-*   [chown](https://en.wikipedia.org/wiki/chown "wikipedia:chown") (_change owner_；更改使用者) 在類 Unix 系統下用來更改檔案的擁有者。
+*   [chown](https://en.wikipedia.org/wiki/chown "wikipedia:chown") (*change owner*；更改使用者) 在類 Unix 系統下用來更改檔案的擁有者。
 
-*   [chattr](https://en.wikipedia.org/wiki/chattr "wikipedia:chattr") (_change attributes_；更改屬性) 是 Linux 作業系統下的指令，讓使用者為多種 Linux 檔案系統下的檔案設定特定屬性。
+*   [chattr](https://en.wikipedia.org/wiki/chattr "wikipedia:chattr") (*change attributes*；更改屬性) 是 Linux 作業系統下的指令，讓使用者為多種 Linux 檔案系統下的檔案設定特定屬性。
 
-*   [lsattr](https://en.wikipedia.org/wiki/lsattr "wikipedia:lsattr") (_list attributes_；列舉屬性) 是命令列程式，用來列舉 Linux 延伸檔案系統的屬性。
+*   [lsattr](https://en.wikipedia.org/wiki/lsattr "wikipedia:lsattr") (*list attributes*；列舉屬性) 是命令列程式，用來列舉 Linux 延伸檔案系統的屬性。
 
 *   `ls -l` 列舉檔案屬性。
 

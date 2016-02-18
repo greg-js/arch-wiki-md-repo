@@ -31,7 +31,7 @@
 
 mkinitcpio es un script bash utilizado para generar un ramdisk inicial. En [mkinitcpio man page](https://projects.archlinux.org/mkinitcpio.git/tree/mkinitcpio.8.txt):
 
-	_El ramdisk inicial es básicamente un entorno muy pequeño ("pre-userspace"), que carga varios módulos del kernel y establece los pasos preliminares necesarios antes de entregar el control a init. De esta manera usted puede tener, por ejemplo, sistemas de archivos cifrados y sistemas de archivos en el software RAID. Mkinitcpio también permite extensiones personalizadas con los hooks, la detección automática en tiempo de ejecución, y muchas otras características._
+	*El ramdisk inicial es básicamente un entorno muy pequeño ("pre-userspace"), que carga varios módulos del kernel y establece los pasos preliminares necesarios antes de entregar el control a init. De esta manera usted puede tener, por ejemplo, sistemas de archivos cifrados y sistemas de archivos en el software RAID. Mkinitcpio también permite extensiones personalizadas con los hooks, la detección automática en tiempo de ejecución, y muchas otras características.*
 
 Tradicionalmente, el kernel es el responsable de la detección de hardware y las tareas de inicialización a principios del [proceso de arranque](/index.php/Boot_process "Boot process"), antes de montar el sistema de archivos root y pasar el control a `init`. Sin embargo, con los avances de la tecnología, estas actividades se han vuelto cada vez más complejas.
 
@@ -64,7 +64,7 @@ $ git clone [git://projects.archlinux.org/mkinitcpio.git](git://projects.archlin
 
 ## Creación de la imagen y activación
 
-Por defecto, el script mkinitcpio genera dos imágenes después de instalar o actualizar el kernel: `/boot/initramfs-linux.img` y `/boot/initramfs-linux-fallback.img`. La imagen _fallback_ utiliza el mismo archivo de configuración que la imagen _predeterminada_, con la excepción del hook **autodetect** que se omite durante la creación, incluyendo, por tanto, una amplia gama de módulos. El hook de detección (**autodetect**) detecta automáticamente los módulos necesarios y personaliza la imagen para un hardware específico, lo que reduce el initramfs.
+Por defecto, el script mkinitcpio genera dos imágenes después de instalar o actualizar el kernel: `/boot/initramfs-linux.img` y `/boot/initramfs-linux-fallback.img`. La imagen *fallback* utiliza el mismo archivo de configuración que la imagen *predeterminada*, con la excepción del hook **autodetect** que se omite durante la creación, incluyendo, por tanto, una amplia gama de módulos. El hook de detección (**autodetect**) detecta automáticamente los módulos necesarios y personaliza la imagen para un hardware específico, lo que reduce el initramfs.
 
 Los usuarios pueden crear cuantas imágenes initramfs deseen, con perfiles de configuración diferentes. La imagen deseada se debe especificar para el gestor de arranque, a menudo en su [archivo de configuración.](/index.php/Boot_Loader#Configuration_files "Boot Loader") Después de realizar los cambios en el fichero de configuración, la imagen debe ser regenerada. Para el valor del kernel de Arch Linux, [linux](https://www.archlinux.org/packages/?name=linux), ésto se hace mediante la ejecución de este comando como root:
 
@@ -75,7 +75,7 @@ Los usuarios pueden crear cuantas imágenes initramfs deseen, con perfiles de co
 
 La opción `-p` indica un "preset" para ser utilizado; la mayoría de los paquetes kernel proveen un mkinitcpio predefinido, que se encuentra en `/etc/mkinitcpio.d` (por ejemplo `/etc/mkinitcpio.d/linux.preset` para `linux`). Un preset es una definición por defecto de cómo crear una imagen initramfs en lugar de especificar el archivo de configuración y el archivo de salida en cada ocasión.
 
-**Advertencia:** El archivo _preset_ se utiliza para regenerar el initramfs de forma automática después de una actualización del kernel; tenga cuidado si lo modifica
+**Advertencia:** El archivo *preset* se utiliza para regenerar el initramfs de forma automática después de una actualización del kernel; tenga cuidado si lo modifica
 
 Los usuarios pueden crear manualmente una imagen con un archivo de configuración alternativo. Por ejemplo, la siguiente orden va a generar una imagen initramfs de acuerdo con las instrucciones de `/etc/mkinitcpio-custom.conf` y guardarlo en `/boot/linux-custom.img`.
 
@@ -131,11 +131,11 @@ La matriz MODULES se utiliza para especificar los módulos a cargar antes de eje
 
 Los módulos con el sufijo `?` no devuelven un error si no se les encuentra. Esto puede ser muy útil si está creando un kernel personalizado que compile los módulos escritos explícitamentes en los Hooks, o en el archivo de configuración.
 
-**Nota:** Si utiliza **reiser4**, éste _debe_ ser añadido a la lista de los módulos. Adicionalmente, si va a necesitar un sistema de archivos durante el proceso de arranque, inexistente durante la ejecución de **mkinitcpio**, —como en el caso de una clave de cifrado LUKS en un sistema de archivos **ext2**, pero sin ningún sistema de archivos **ext2** montado cuando se ejecuta mkinitcpio—, el módulo de aquel sistema de archivos se debe añadir a la lista de MODULES. Consulte [aquí](/index.php/System_Encryption_with_LUKS_for_dm-crypt#Storing_the_Key_File "System Encryption with LUKS for dm-crypt") para obtener más detalles
+**Nota:** Si utiliza **reiser4**, éste *debe* ser añadido a la lista de los módulos. Adicionalmente, si va a necesitar un sistema de archivos durante el proceso de arranque, inexistente durante la ejecución de **mkinitcpio**, —como en el caso de una clave de cifrado LUKS en un sistema de archivos **ext2**, pero sin ningún sistema de archivos **ext2** montado cuando se ejecuta mkinitcpio—, el módulo de aquel sistema de archivos se debe añadir a la lista de MODULES. Consulte [aquí](/index.php/System_Encryption_with_LUKS_for_dm-crypt#Storing_the_Key_File "System Encryption with LUKS for dm-crypt") para obtener más detalles
 
 ### BINARIOS y ARCHIVOS
 
-Estas opciones permiten al usuario añadir archivos a la imagen. Tanto `BINARIES` como `FILES` se agregan antes de que los hooks se ejecutan, y se puede usar para sobrescribir los archivos utilizados o suministrados por el hook. Los binarios son auto-localizados, ya que deben ser almacenados en un `PATH` estándar y son analizadores de dependencias, por lo que las necesidades de cada biblioteca y dependencias se sumarán en consecuencia. Los `FILES` se agregarán _como están_. Por ejemplo:
+Estas opciones permiten al usuario añadir archivos a la imagen. Tanto `BINARIES` como `FILES` se agregan antes de que los hooks se ejecutan, y se puede usar para sobrescribir los archivos utilizados o suministrados por el hook. Los binarios son auto-localizados, ya que deben ser almacenados en un `PATH` estándar y son analizadores de dependencias, por lo que las necesidades de cada biblioteca y dependencias se sumarán en consecuencia. Los `FILES` se agregarán *como están*. Por ejemplo:
 
 ```
 FILES="/etc/modprobe.d/modprobe.conf"
@@ -155,7 +155,7 @@ Los ajustes por defecto para los `HOOKS` deberían ser suficientes para la mayor
 
 #### Build hooks
 
-Los hooks compilados (_«build hooks»_) se encuentran en `/usr/lib/initcpio/install`. Estos archivos se obtienen por la shell bash durante el tiempo de ejecución de mkinitcpio y contienen dos funciones: `build` y `help`. La función `build` describe los módulos, archivos y binarios que se añadirán a la imagen. Una API, documentado por mkinitcpio (8), sirve para facilitar la adición de estos elementos. La función `help` genera una descripción de lo que el hook puede conseguir.
+Los hooks compilados (*«build hooks»*) se encuentran en `/usr/lib/initcpio/install`. Estos archivos se obtienen por la shell bash durante el tiempo de ejecución de mkinitcpio y contienen dos funciones: `build` y `help`. La función `build` describe los módulos, archivos y binarios que se añadirán a la imagen. Una API, documentado por mkinitcpio (8), sirve para facilitar la adición de estos elementos. La función `help` genera una descripción de lo que el hook puede conseguir.
 
 Para obtener una lista de todos los hooks disponibles:
 
@@ -173,7 +173,7 @@ $ mkinitcpio -H udev
 
 #### Runtime hooks
 
-Los hooks con temporizador (_«runtime hooks»_) se encuentran en `/usr/lib/initcpio/hooks`. Para cualquier runtime hook, siempre debe haber un build hook del mismo nombre, que llama a la función `add_runscript`, la cual añade runtime hook a la imagen. Estos archivos se obtienen por busybox ash shell durante el espacio de usuario inicial (_«early userspace»_). Con la excepción de los hooks de limpieza (_cleanup hooks_), los demás hooks siempre se ejecutan en el orden configurado en que aparecen en la lista `HOOKS`. Los runtime hooks pueden contener varias funciones:
+Los hooks con temporizador (*«runtime hooks»*) se encuentran en `/usr/lib/initcpio/hooks`. Para cualquier runtime hook, siempre debe haber un build hook del mismo nombre, que llama a la función `add_runscript`, la cual añade runtime hook a la imagen. Estos archivos se obtienen por busybox ash shell durante el espacio de usuario inicial (*«early userspace»*). Con la excepción de los hooks de limpieza (*cleanup hooks*), los demás hooks siempre se ejecutan en el orden configurado en que aparecen en la lista `HOOKS`. Los runtime hooks pueden contener varias funciones:
 
 `run_earlyhook`: Las funciones con este nombre se ejecutarán una vez que los sistemas de archivos API se han montado y la línea de comandos del kernel ha sido analizada. Esta es la fase donde se inician normalmente demonios adicionales, como udev, que se necesitan para el proceso de arranque inicial.
 
@@ -213,7 +213,7 @@ Véase la página del manual de systemd-cryptsetup-generator(8) para conocer las
  | -- |
 | **lvm2** | Agrega el mapeador del dispositivo al módulo del kernel y la herramienta `lvm` a la imagen. Tendrá que tener instalado el paquete [lvm2](https://www.archlinux.org/packages/?name=lvm2) para usar esta opción. | Habilita todos los grupos de los volúmenes LVM2\. Esto es necesario si el sistema de archivos raíz está en [LVM](/index.php/LVM "LVM"). |
 | **fsck** | Añade binarios de fsck y ayudas para el sistema de archivos específico. Si se coloca después del hook **autodetect** sólo se añade la ayuda para el sistema de archivos raiz. Utilizar este hook es **muy** recomendable, y es necesario si tiene una partición `/usr` separada. | Lanza fsck en el dispositivo root (y `/usr` si son distintos) antes del montaje. |
-| **resume** | -- | Pretende volver a restaurar (resume) el sistema desde el estado de "suspensión en disco". Funciona conjuntamente con _swsusp_ y _[suspend2](/index.php/Suspend2 "Suspend2")_. Vea [# Personalizar el tiempo de ejecución](#_Personalizar_el_tiempo_de_ejecuci.C3.B3n) para ajustar configuración. |
+| **resume** | -- | Pretende volver a restaurar (resume) el sistema desde el estado de "suspensión en disco". Funciona conjuntamente con *swsusp* y *[suspend2](/index.php/Suspend2 "Suspend2")*. Vea [# Personalizar el tiempo de ejecución](#_Personalizar_el_tiempo_de_ejecuci.C3.B3n) para ajustar configuración. |
 | **filesystems** | Este incluye los módulos necesarios del sistema de archivos en la imagen. Este hook es **necesario**, a menos que especifique los módulos del filesystem en la línea MODULES. | -- |
 | **shutdown** | Añade soporte al apagado en initramfs. Si se tiene una partición `/usr` separada o root cifrada, este hook es fundamental. | Desmonta y separa los dispositivos en el apagado. |
 | **usr** | Añade soporte para la partición `/usr` separada. | Monta la partición `/usr` después de la partición raiz, para que quede correctamente montada. |
@@ -332,7 +332,7 @@ La especificación de una interfaz puede ser en formato corto, que es sólo el n
 
 ```
 
-_Explicación de los parámetros_:
+*Explicación de los parámetros*:
 
 ```
  <client-ip>   IP del cliente. Si está vacío, la dirección será
@@ -375,7 +375,7 @@ _Explicación de los parámetros_:
 
 ```
 
-_Ejemplos:_
+*Ejemplos:*
 
 ```
  ip=127.0.0.1:::::lo:none     --> Permitir interfaz de bucle invertido.
@@ -388,7 +388,7 @@ _Ejemplos:_
 
 Si tiene varias tarjetas de red, este parámetro puede incluir la dirección MAC de la interfaz que está arrancando. Esto suele ser útil cuando la interfaz puede cambiar de numeración, o en conjunción con pxelinux IPAPPEND 2 o la opción IPAPPEND 3. Si no se da, eth0 va a ser utilizado.
 
-_Ejemplo:_
+*Ejemplo:*
 
 ```
  BOOTIF=01-A1-B2-C3-D4-E5-F6  # Note the prepended "01-" and capital letters.
@@ -404,7 +404,7 @@ Si el parámetro "nfsroot" no se da en la línea de comandos, se utiliza el valo
 
 ```
 
-_Explicación de los parámetros_:
+*Explicación de los parámetros*:
 
 ```
  <server-ip>   Especifica la dirección IP del servidor NFS. Si no se especifica,
@@ -487,7 +487,7 @@ En este caso, `/dev/sda5` es el dispositivo cifrado, y le damos un nombre arbitr
 Si durante la instalación de Arch Linux usted eligió montar `/usr` en una partición separada, debe tener en cuenta varias cosas:
 
 *   Añadir el hook `shutdown`. Apagado, initscripts se basará en una copia guardada de initramfs y permitirá a `/usr` (y a la raíz) ser debidamente desmontada desde el VFS.
-*   Añadir el hook `fsck`. Recomendado para todos, fundamental si quiere un _fsck_ al iniciar la partición `/usr`. Sin este hook, `/etc/rc.sysinit` comenzará _fsck_ con `/usr` montada y en consecuencia fallará.
+*   Añadir el hook `fsck`. Recomendado para todos, fundamental si quiere un *fsck* al iniciar la partición `/usr`. Sin este hook, `/etc/rc.sysinit` comenzará *fsck* con `/usr` montada y en consecuencia fallará.
 *   A partir de mkinitcpio 0.9.0: Agregue el hook `usr`, además de los hooks de arriba. Esto montará la partición `/usr` después de que la partición raíz está montada. Antes de 0.9.0, el montaje de `/usr` sería automática si se encuentra en la raíz real `/etc/fstab`.
 
 ## Solución de problemas

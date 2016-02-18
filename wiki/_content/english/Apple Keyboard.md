@@ -21,7 +21,6 @@ For background information see this page: [https://help.ubuntu.com/community/App
 **Note:** Some of the settings can be made permanent with a configuration file for a [kernel module](/index.php/Kernel_module "Kernel module"). For this to work, the file has to be added to FILES in [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") cause the kernel module will be autoloaded while booting.
 
 **Tip:** If you want to use [sudo](/index.php/Sudo "Sudo") to write into a system directory you can't use shell redirection. Use `tee` like so
-
 ```
 $ echo 0 | sudo tee /sys/module/hid_apple/parameters/iso_layout
 
@@ -54,7 +53,6 @@ If it tells you that the file doesn't exist, you probably have an older kernel a
 Place whatever option worked for you in `/etc/modprobe.d/hid_apple.conf` to make the setting permanent:
 
  `/etc/modprobe.d/hid_apple.conf` 
-
 ```
 options hid_apple fnmode=2
 
@@ -193,7 +191,7 @@ The evdev driver should produce keycodes that map to the appropriate keysyms for
 
 For these keys to have any effect, you will have to assign actions to them. Refer to [Extra keyboard keys in Xorg](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg") for more about that.
 
-If you have confirmed that your media keys are _not_ producing the correct keycodes, create or edit the `~/.Xmodmap` file so that it includes these lines:
+If you have confirmed that your media keys are *not* producing the correct keycodes, create or edit the `~/.Xmodmap` file so that it includes these lines:
 
 ```
 keycode 160 = XF86AudioMute

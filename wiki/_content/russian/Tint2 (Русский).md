@@ -25,15 +25,15 @@
 
 Полное описание параметров tint2 находится [в справочнике проекта](http://code.google.com/p/tint2/wiki/Configure)
 
-Пакет tint2 содержит встроенный графический инструмент для настройки внешнего вида, _tint2conf_. Также существует альтернативный графический инструмент настройки, [tintwizard](https://aur.archlinux.org/packages/tintwizard/).
+Пакет tint2 содержит встроенный графический инструмент для настройки внешнего вида, *tint2conf*. Также существует альтернативный графический инструмент настройки, [tintwizard](https://aur.archlinux.org/packages/tintwizard/).
 
 ### Ярлыки приложений в tint2-svn
 
-Используя ответвление [tint2-svn](https://aur.archlinux.org/packages/tint2-svn/), можно расширить возможности панели. Однако, в таком случае настройку панели придется выполнять вручную: _tint2conf_ в пакете отсутствует, а _tintwizard_ не способен работать с ярлыкaми.
+Используя ответвление [tint2-svn](https://aur.archlinux.org/packages/tint2-svn/), можно расширить возможности панели. Однако, в таком случае настройку панели придется выполнять вручную: *tint2conf* в пакете отсутствует, а *tintwizard* не способен работать с ярлыкaми.
 
-**Важно:** Если вы воспользуетесь _tintwizard_ для изменения панели после ручного добавления ярлыков, все изменения, связанные с ярлыками, будут утрачены
+**Важно:** Если вы воспользуетесь *tintwizard* для изменения панели после ручного добавления ярлыков, все изменения, связанные с ярлыками, будут утрачены
 
-Чтобы добавить ярлыки на панель, необходимо внести изменения в файл конфигурации _tint2_:
+Чтобы добавить ярлыки на панель, необходимо внести изменения в файл конфигурации *tint2*:
 
 *   Добавить следующую строку после `# Panel`:
 
@@ -77,11 +77,11 @@ launcher_item_app = /some/where/anotherapplication.desktop
 
 	Часы
 
-Параметр `launcher_icon_theme` определяет используемый пакет иконок, заранее установленных в системе. Параметры `launcher_item_app` определяют ссылки на файлы _.desktop_, которые будут вызывать запуск программ. Такие файлы можно найти в каталоге `/usr/share/applications`.
+Параметр `launcher_icon_theme` определяет используемый пакет иконок, заранее установленных в системе. Параметры `launcher_item_app` определяют ссылки на файлы *.desktop*, которые будут вызывать запуск программ. Такие файлы можно найти в каталоге `/usr/share/applications`.
 
 ### Меню приложений в OpenBox3
 
-Ни _tint2_, ни его ответвление, _tint2-svn_, не поддерживают вложенные меню. Но с помощью небольшой хитрости можно получить нечто похожее на это. Вам понадобятся пакеты [tint2-svn](https://aur.archlinux.org/packages/tint2-svn/), [openbox](https://www.archlinux.org/packages/?name=openbox) и [xdotool](https://www.archlinux.org/packages/?name=xdotool).
+Ни *tint2*, ни его ответвление, *tint2-svn*, не поддерживают вложенные меню. Но с помощью небольшой хитрости можно получить нечто похожее на это. Вам понадобятся пакеты [tint2-svn](https://aur.archlinux.org/packages/tint2-svn/), [openbox](https://www.archlinux.org/packages/?name=openbox) и [xdotool](https://www.archlinux.org/packages/?name=xdotool).
 
 Задаем комбинацию клавиш для открытия меню OpenBox, создаем следующую запись между тегами `<keyboard>` и `</keyboard>` в файле `~/.config/openbox/rc.xml`:
 
@@ -92,9 +92,9 @@ launcher_item_app = /some/where/anotherapplication.desktop
 
 ```
 
-Вы можете изменить `root-menu` на любое _menu-id_, описанное в файле `~/.config/openbox/menu.xml`.
+Вы можете изменить `root-menu` на любое *menu-id*, описанное в файле `~/.config/openbox/menu.xml`.
 
-Теперь при нажатии `Ctrl-Alt-Spacebar` будет открываться _root-menu_ (которое также открывается при правом клике на рабочем столе). С помощью [xdotool](https://www.archlinux.org/packages/?name=xdotool) проверьте меню (`xdotool key ctrl+alt+space`): оно должно появиться под курсором мыши.
+Теперь при нажатии `Ctrl-Alt-Spacebar` будет открываться *root-menu* (которое также открывается при правом клике на рабочем столе). С помощью [xdotool](https://www.archlinux.org/packages/?name=xdotool) проверьте меню (`xdotool key ctrl+alt+space`): оно должно появиться под курсором мыши.
 
 В каталоге `/usr/share/applications/` создаем файл `tint2.desktop` со следующим содержимым:
 

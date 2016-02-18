@@ -1,6 +1,6 @@
-[VirtualBox](https://www.virtualbox.org) es un [hipervisor](https://en.wikipedia.org/wiki/es:Hypervisor "wikipedia:es:Hypervisor") que se utiliza para ejecutar sistemas operativos en un entorno especial, llamado máquina virtual, corriendo sobre un sistema operativo ya existente. VirtualBox está en constante desarrollo y las nuevas características se implementan continuamente. Viene con una interfaz gráfica basada en [Qt](/index.php/Qt "Qt"), así como herramientas de línea de órdenes [SDL](https://en.wikipedia.org/wiki/Simple_DirectMedia_Layer "wikipedia:Simple DirectMedia Layer") y _headless_ para la gestión y ejecución de máquinas virtuales.
+[VirtualBox](https://www.virtualbox.org) es un [hipervisor](https://en.wikipedia.org/wiki/es:Hypervisor "wikipedia:es:Hypervisor") que se utiliza para ejecutar sistemas operativos en un entorno especial, llamado máquina virtual, corriendo sobre un sistema operativo ya existente. VirtualBox está en constante desarrollo y las nuevas características se implementan continuamente. Viene con una interfaz gráfica basada en [Qt](/index.php/Qt "Qt"), así como herramientas de línea de órdenes [SDL](https://en.wikipedia.org/wiki/Simple_DirectMedia_Layer "wikipedia:Simple DirectMedia Layer") y *headless* para la gestión y ejecución de máquinas virtuales.
 
-Con el fin de integrar las funciones del sistema anfitrión en los sistemas huéspedes, incluyendo carpetas compartidas y portapapeles, aceleración de vídeo y un modo de integración de ventanas fluido, se proporcionan complementos huéspedes (_guest additions_) para algunos sistemas operativos invitados.
+Con el fin de integrar las funciones del sistema anfitrión en los sistemas huéspedes, incluyendo carpetas compartidas y portapapeles, aceleración de vídeo y un modo de integración de ventanas fluido, se proporcionan complementos huéspedes (*guest additions*) para algunos sistemas operativos invitados.
 
 ## Contents
 
@@ -11,7 +11,7 @@ Con el fin de integrar las funciones del sistema anfitrión en los sistemas hué
         *   [1.2.2 Sistema anfitrión corriendo sobre un kernel personalizado](#Sistema_anfitri.C3.B3n_corriendo_sobre_un_kernel_personalizado)
     *   [1.3 Cargar los módulos del kernel de VirtualBox](#Cargar_los_m.C3.B3dulos_del_kernel_de_VirtualBox)
     *   [1.4 Añadir nombres de usuario al grupo vboxusers](#A.C3.B1adir_nombres_de_usuario_al_grupo_vboxusers)
-    *   [1.5 Discos con complementos para el sistema huésped (_guest additions_)](#Discos_con_complementos_para_el_sistema_hu.C3.A9sped_.28guest_additions.29)
+    *   [1.5 Discos con complementos para el sistema huésped (*guest additions*)](#Discos_con_complementos_para_el_sistema_hu.C3.A9sped_.28guest_additions.29)
     *   [1.6 Paquete de extensiones](#Paquete_de_extensiones)
     *   [1.7 Utilizar el front-end adecuado](#Utilizar_el_front-end_adecuado)
 *   [2 Pasos para instalar Arch Linux como sistema huésped](#Pasos_para_instalar_Arch_Linux_como_sistema_hu.C3.A9sped)
@@ -113,21 +113,21 @@ Por lo tanto, hay que distinguir si se está usando un kernel de los [repositori
 
 #### Sistema anfitrión corriendo sobre un kernel personalizado
 
-Si utiliza o pretende utilizar un kernel autocompilado desde las fuentes, tiene que saber que VirtualBox no requiere ningún módulo de virtualización (por ejemplo Virtuo, kvm, ...). Los módulos del kernel de VirtualBox proporcionan todo lo necesario para que VirtualBox funcione correctamente. De este modo se pueden desactivar los archivos _.config_ de virtualización del kernel, siempre que no use otros hipervisores como Xen, KVM o QEMU.
+Si utiliza o pretende utilizar un kernel autocompilado desde las fuentes, tiene que saber que VirtualBox no requiere ningún módulo de virtualización (por ejemplo Virtuo, kvm, ...). Los módulos del kernel de VirtualBox proporcionan todo lo necesario para que VirtualBox funcione correctamente. De este modo se pueden desactivar los archivos *.config* de virtualización del kernel, siempre que no use otros hipervisores como Xen, KVM o QEMU.
 
 El paquete `virtualbox-host-modules` funciona bien con kernels personalizados de la misma versión que el kernel de Arch Linux como [linux-ck](https://aur.archlinux.org/packages/linux-ck/). Dado que `virtualbox-host-modules` viene con el kernel oficial de Arch Linux ([linux](https://www.archlinux.org/packages/?name=linux)) como una dependencia, si no usa ese kernel, instale [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) en su lugar.
 
 Si utiliza un kernel personalizado que no es de la misma versión que el común de Arch Linux, tendrá que instalar el paquete [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) igualmente. Este último viene con la fuente de los módulos del kernel de VirtualBox que se compila para generar estos módulos para el kernel.
 
-En la medida en que el paquete [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) necesita compilación, asegúrese de que tiene las cabeceras del kernel correspondientes a su versión del kernel personalizado para evitar que ocurra este error `Your kernel headers for kernel _your custom kernel version_ cannot be found at /usr/lib/modules/_your custom kernel version_/build or /usr/lib/modules/_your custom kernel version_/source`
+En la medida en que el paquete [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) necesita compilación, asegúrese de que tiene las cabeceras del kernel correspondientes a su versión del kernel personalizado para evitar que ocurra este error `Your kernel headers for kernel *your custom kernel version* cannot be found at /usr/lib/modules/*your custom kernel version*/build or /usr/lib/modules/*your custom kernel version*/source`
 
-*   Si utiliza un kernel autocompilado y ha utilizado `make modules_install` para instalar los módulos, las carpetas `/usr/lib/modules/_your custom kernel version_/build` y `(...)/source` serán un enlace simbólico a las fuentes del kernel. Estos enlaces actuarán como las cabeceras del kernel que necesita. Si no ha eliminado estas fuentes del kernel, sin embargo, no tiene nada que hacer.
+*   Si utiliza un kernel autocompilado y ha utilizado `make modules_install` para instalar los módulos, las carpetas `/usr/lib/modules/*your custom kernel version*/build` y `(...)/source` serán un enlace simbólico a las fuentes del kernel. Estos enlaces actuarán como las cabeceras del kernel que necesita. Si no ha eliminado estas fuentes del kernel, sin embargo, no tiene nada que hacer.
 *   Si utiliza un kernel personalizado desde [AUR](/index.php/AUR "AUR"), asegúrese de que el paquete [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) está instalado.
 
 Una vez que [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) está instalado, simplemente genere los módulos del kernel para su kernel personalizado mediante la ejecución de la siguiente orden que tiene la siguiente estructura:
 
 ```
-# dkms install vboxhost/_virtualbox-host-source version_ -k _your custom kernel version_/_your architecture_
+# dkms install vboxhost/*virtualbox-host-source version* -k *your custom kernel version*/*your architecture*
 
 ```
 
@@ -169,7 +169,7 @@ Los siguientes módulos son opcionales, pero son recomendables si no quiere mole
 
 **Nota:** Si los módulos del kernel de VirtualBox fueron cargados en el kernel durante la actualización de los módulos, necesita recargarlos manualmente para utilizar la nueva versión actualizada. Para hacerlo, ejecute como root `vboxreload`.
 
-Por último, si se utiliza la característica «Host-only networking», asegúrese de que el paquete [net-tools](https://www.archlinux.org/packages/?name=net-tools) está instalado. VirtualBox utiliza realmente `ifconfig` y `route` para asignar la IP y la ruta a la interfaz del sitema anfitrión configurados con `VBoxManage hostonlyif` o mediante la interfaz grática del usuario en _Settings > Network > Host-only Networks > Edit host-only network (space) > Adapter_.
+Por último, si se utiliza la característica «Host-only networking», asegúrese de que el paquete [net-tools](https://www.archlinux.org/packages/?name=net-tools) está instalado. VirtualBox utiliza realmente `ifconfig` y `route` para asignar la IP y la ruta a la interfaz del sitema anfitrión configurados con `VBoxManage hostonlyif` o mediante la interfaz grática del usuario en *Settings > Network > Host-only Networks > Edit host-only network (space) > Adapter*.
 
 ### Añadir nombres de usuario al grupo vboxusers
 
@@ -180,15 +180,15 @@ Para utilizar los puertos USB de la máquina anfitriona en sus máquinas virtual
 
 ```
 
-### Discos con complementos para el sistema huésped (_guest additions_)
+### Discos con complementos para el sistema huésped (*guest additions*)
 
-También se recomienda instalar el paquete [virtualbox-guest-iso](https://www.archlinux.org/packages/?name=virtualbox-guest-iso) en el sistema anfitrión donde se ejecuta VirtualBox. Este paquete actuará como una imagen de disco que se puede utilizar para instalar las aplicaciones huéspedes (guest additions) que no sean de Arch Linux en el sistema invitado. La imagen _.iso_ se encuentra en `/usr/lib/virtualbox/additions/VBoxGuestAdditions.iso`.
+También se recomienda instalar el paquete [virtualbox-guest-iso](https://www.archlinux.org/packages/?name=virtualbox-guest-iso) en el sistema anfitrión donde se ejecuta VirtualBox. Este paquete actuará como una imagen de disco que se puede utilizar para instalar las aplicaciones huéspedes (guest additions) que no sean de Arch Linux en el sistema invitado. La imagen *.iso* se encuentra en `/usr/lib/virtualbox/additions/VBoxGuestAdditions.iso`.
 
 ### Paquete de extensiones
 
 Desde VirtualBox 4.0, los componentes no-GPL se han separado del resto de la aplicación. A pesar de que «Oracle Extension Pack» ha sido liberado bajo una licencia no libre y **está disponible solo para uso personal**, podría estar interesado en instalar dicho paquete el cual proporciona [características adicionales](https://www.virtualbox.org/manual/ch01.html#intro-installing). Para evitar que tenga que manipularlo manualmente, el paquete [virtualbox-ext-oracle](https://aur.archlinux.org/packages/virtualbox-ext-oracle/) está disponible en [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)") y una versión precompilada se puede encontrar en el repositorio [seblu](/index.php/Unofficial_user_repositories#seblu "Unofficial user repositories").
 
-Si prefiere utilizar la forma tradicional y manual: descargue las extensiones e instálelas manualmente a través de la interfaz gráfica de usuario (_Settings > Extensions_) o mediante `VBoxManage extpack install <.vbox-extpack>`, asegurándose de que tiene el conjunto de herramientas adecuadas (como [Polkit](/index.php/Polkit "Polkit"), gksu, etc.) para permitirle el acceso a VirtualBox con privilegios de root. La instalación de esta extensión [requiere acceder como root](https://www.virtualbox.org/ticket/8473).
+Si prefiere utilizar la forma tradicional y manual: descargue las extensiones e instálelas manualmente a través de la interfaz gráfica de usuario (*Settings > Extensions*) o mediante `VBoxManage extpack install <.vbox-extpack>`, asegurándose de que tiene el conjunto de herramientas adecuadas (como [Polkit](/index.php/Polkit "Polkit"), gksu, etc.) para permitirle el acceso a VirtualBox con privilegios de root. La instalación de esta extensión [requiere acceder como root](https://www.virtualbox.org/ticket/8473).
 
 ### Utilizar el front-end adecuado
 
@@ -196,7 +196,7 @@ Si prefiere utilizar la forma tradicional y manual: descargue las extensiones e 
 
 Hay varios front-ends disponibles, de los cuales, dos por defecto:
 
-*   Si desea utilizar VirtualBox únicamente desde la línea de órdenes (solo lanzarlo y cambiar la configuración de las máquinas virtuales existentes), puede utilizar la orden `VBoxSDL`. VBoxSDL solo proporciona una ventana simple que contiene únicamente la máquina virtual _pura_, sin menús ni controles.
+*   Si desea utilizar VirtualBox únicamente desde la línea de órdenes (solo lanzarlo y cambiar la configuración de las máquinas virtuales existentes), puede utilizar la orden `VBoxSDL`. VBoxSDL solo proporciona una ventana simple que contiene únicamente la máquina virtual *pura*, sin menús ni controles.
 *   Si desea utilizar VirtualBox desde la línea de órdenes sin ninguna interfaz gráfica de usuario ejecutándose (por ejemplo, en un servidor) para crear, lanzar y configurar máquinas virtuales, utilice `VBoxHeadless` que no produce ninguna salida visible en el equipo anfitrión, enviando solo los datos VRDP.
 
 Si ha instalado el paquete [qt4](https://www.archlinux.org/packages/?name=qt4) como dependencia opcional, tendrá disponible una bonita interfaz gráfica de usuario con menús que le permitirán usar el ratón.
@@ -217,7 +217,7 @@ Arranque el soporte de instalación de Arch a través de una de las unidades vir
 
 #### Instalación en modo EFI
 
-Si desea instalar Arch Linux en modo EFI en VirtualBox, en la configuración de la máquina virtual, vaya a la pestaña _Settings_, y marque la casilla _Enable EFI (special OSes only)_. Después seleccione el kernel desde el menú del soporte de instalación de Arch Linux, el soporte demorará por un minuto o dos y continuará con el arranque del kernel normalmente después. Sea paciente.
+Si desea instalar Arch Linux en modo EFI en VirtualBox, en la configuración de la máquina virtual, vaya a la pestaña *Settings*, y marque la casilla *Enable EFI (special OSes only)*. Después seleccione el kernel desde el menú del soporte de instalación de Arch Linux, el soporte demorará por un minuto o dos y continuará con el arranque del kernel normalmente después. Sea paciente.
 
 Al arrancar en modo EFI, VirtualBox primero intentará ejecutar `/EFI/BOOT/BOOTX64.EFI` desde la ESP y después el script de la shell de EFI `startup.nsh` desde la raíz de la ESP si la primera opción falla. A menos que desee iniciar manualmente su gestor de arranque desde la shell EFI cada vez, tendrá que mover su gestor de arranque a la ruta predeterminada. No se moleste con el gestor de arranque de VirtualBox (accesible con `F2` en el arranque): añada entradas EFI al mismo manualmente al arrancar o con [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr), las cuales persistirán después de cada reinicio, [sin embargo, se pierden cuando la máquina virtual se apaga](https://www.virtualbox.org/ticket/11177).
 
@@ -265,7 +265,6 @@ Si al ejecutar modprobe se muestra `Module not found` (vea [[1]](http://unix.sta
 Para cargar el módulo de VirtualBox en el arranque, consulte [Kernel modules (Español)#Cargar módulos](/index.php/Kernel_modules_(Espa%C3%B1ol)#Cargar_m.C3.B3dulos "Kernel modules (Español)") y cree un archivo `*.conf` (por ejemplo, `virtualbox.conf`) en `/etc/modules-load.d/` con estas líneas:
 
  `/etc/modules-load.d/virtualbox.conf` 
-
 ```
 vboxguest
 vboxsf
@@ -309,7 +308,7 @@ Para iniciar el script de forma automática cuando se inicia el sistema, ejecute
 
 Si no desea utilizar este servicio systemd, hay dos soluciones alternativas disponibles:
 
-*   si se está usando un [Desktop Environment (Español)](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)"), solo necesita marcar una casilla o añadir la ruta del script `/usr/sbin/VBoxClient-all` en la sección autostart en la configuración del entorno de escritorio (en los entornos de escritorios esto se suele establecer en un archivo _.desktop_ en `~/.config/autostart` —[vea la sección de inicio automático para más detalles](/index.php/Autostarting_(Espa%C3%B1ol)#Entradas_de_Desktop "Autostarting (Español)")—);
+*   si se está usando un [Desktop Environment (Español)](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)"), solo necesita marcar una casilla o añadir la ruta del script `/usr/sbin/VBoxClient-all` en la sección autostart en la configuración del entorno de escritorio (en los entornos de escritorios esto se suele establecer en un archivo *.desktop* en `~/.config/autostart` —[vea la sección de inicio automático para más detalles](/index.php/Autostarting_(Espa%C3%B1ol)#Entradas_de_Desktop "Autostarting (Español)")—);
 *   si no tiene ningún [entorno de escritorio](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)"), agregue la línea siguiente en la parte superior de [~/.xinitrc](/index.php/Xinitrc "Xinitrc") por encima de cualquier opción `exec`:
 
  `~/.xinitrc`  `/usr/bin/VBoxClient-all` 
@@ -320,7 +319,7 @@ Si quiere compartir carpetas entre el sistema anfitrión y su huésped Arch Linu
 
 ### Activar carpetas compartidas
 
-Las carpetas compartidas se gestionan en el sistema anfitrión, en la configuración de la máquina virtual, accesible a través de la interfaz gráfica del usuario de VirtualBox, en la pestaña _Shared Folders_. Ahí se pueden especificar, la _Ruta de la carpeta_, el nombre del punto de montaje identificado por el _Nombre de la carpeta_ , y opciones como _Solo lectura_, _Montaje automático_ y _Hacer permanente_. Estos parámetros se pueden definir con la utilidad de línea de órdenes `VBoxManage`. Vea [esto](https://www.virtualbox.org/manual/ch04.html#sharedfolders) para más detalles.
+Las carpetas compartidas se gestionan en el sistema anfitrión, en la configuración de la máquina virtual, accesible a través de la interfaz gráfica del usuario de VirtualBox, en la pestaña *Shared Folders*. Ahí se pueden especificar, la *Ruta de la carpeta*, el nombre del punto de montaje identificado por el *Nombre de la carpeta* , y opciones como *Solo lectura*, *Montaje automático* y *Hacer permanente*. Estos parámetros se pueden definir con la utilidad de línea de órdenes `VBoxManage`. Vea [esto](https://www.virtualbox.org/manual/ch04.html#sharedfolders) para más detalles.
 
 Independientemente del método que utilice para montar su carpeta, todos los métodos requieren algunos pasos previos.
 
@@ -336,7 +335,7 @@ Se necesitan dos pasos adicionales para que el punto de montaje sea accesible a 
 Utilice la siguiente orden para montar su carpeta en el sistema huésped Arch Linux:
 
 ```
-# mount -t vboxsf _shared_folder_name_ _mount_point_on_guest_system_
+# mount -t vboxsf *shared_folder_name* *mount_point_on_guest_system*
 
 ```
 
@@ -347,14 +346,14 @@ El sistema de archivos vboxsf ofrece otras opciones que se pueden visualizar con
 
 ```
 
-Por ejemplo, si el usuario no estaba en el grupo _vboxsf_, podríamos utilizar esta orden para darle acceso a nuestro punto de montaje:
+Por ejemplo, si el usuario no estaba en el grupo *vboxsf*, podríamos utilizar esta orden para darle acceso a nuestro punto de montaje:
 
 ```
 # mount -t vboxsf -o uid=1000,gid=1000 home /mnt/
 
 ```
 
-Donde _uid_ y _gid_ son los valores correspondientes a los usuarios que queremos dar acceso. Estos valores se obtienen de la orden `id` ejecutada respecto a dichos usuarios.
+Donde *uid* y *gid* son los valores correspondientes a los usuarios que queremos dar acceso. Estos valores se obtienen de la orden `id` ejecutada respecto a dichos usuarios.
 
 #### Montaje automático
 
@@ -363,12 +362,12 @@ Para que la función de montaje automático funcione, se deben cumplir las sigui
 *   vboxservice debe estar cargado en el sistema huésped (hecho en un paso anterior);
 *   debe haber marcado la casilla de montaje automático en la interfaz gráica o usado la opción `--automount` en la orden `VBoxManage sharedfolder`.
 
-La carpeta compartida debe aparecer ahora en `/media/sf__shared_folder_name_`.
+La carpeta compartida debe aparecer ahora en `/media/sf_*shared_folder_name*`.
 
 Puede usar enlaces simbólicos si quiere tener un acceso más cómodo a dicha carpeta y ahorrarse tener que navegar hasta ese directorio, por ejemplo:
 
 ```
-$ ln -s /media/sf__shared_folder_name_ ~/_my_documents_
+$ ln -s /media/sf_*shared_folder_name* ~/*my_documents*
 
 ```
 
@@ -381,7 +380,7 @@ desktop   /media/desktop    vboxsf  uid=user,gid=group,rw,dmode=700,fmode=600,co
 
 ```
 
-A partir de 2012-08-02, mount.vboxsf no admite la opción _nofail_:
+A partir de 2012-08-02, mount.vboxsf no admite la opción *nofail*:
 
 ```
 desktop   /media/desktop    vboxsf  uid=user,gid=group,rw,dmode=700,fmode=600,nofail 0 0
@@ -406,8 +405,8 @@ Este paso dependerá de la capacidad de convertir la imagen de disco virtual dir
 
 Algunos proveedores ofrecen herramientas que dan la posibilidad de crear máquinas virtuales desde un sistema operativo Windows o GNU/Linux ya se encuentre en una máquina virtual o, incluso, en una instalación nativa. Con este tipo de producto, no es necesario aplicar este y los siguientes pasos y puede dejar de leer aquí.
 
-*   _[Parallels Transporter](http://www.parallels.com/products/transporter)_ no es gratis, es un producto de Parallels Inc. Esta solución consiste, básicamente, en una pieza de software llamada _agent_ que será instalado en el sistema huésped que desee importar/convertir. A continuación, Parallels Transporter, <u>que solo funciona en OS X</u>, creará una máquina virtual conectada a través de _agent_ bien por USB o por conexión de red cableada.
-*   _[VMware vCenter Converter](https://www.vmware.com/products/converter/)_ es gratuita, previa inscripción en el sitio web de VMware, funciona casi de la misma manera que Parallels Transporter, con la particularidad de que la pieza de software que hará recopilar los datos para crear la máquina virtual solo funciona en una plataforma Windows.
+*   *[Parallels Transporter](http://www.parallels.com/products/transporter)* no es gratis, es un producto de Parallels Inc. Esta solución consiste, básicamente, en una pieza de software llamada *agent* que será instalado en el sistema huésped que desee importar/convertir. A continuación, Parallels Transporter, <u>que solo funciona en OS X</u>, creará una máquina virtual conectada a través de *agent* bien por USB o por conexión de red cableada.
+*   *[VMware vCenter Converter](https://www.vmware.com/products/converter/)* es gratuita, previa inscripción en el sitio web de VMware, funciona casi de la misma manera que Parallels Transporter, con la particularidad de que la pieza de software que hará recopilar los datos para crear la máquina virtual solo funciona en una plataforma Windows.
 
 #### Conversión manual
 
@@ -426,7 +425,7 @@ En primer lugar, familiarícese con [los formatos soportados por VirtualBox](#Fo
 
 Cada hipervisor tiene su propio archivo de configuración de máquina virtual: `.vbox` para VirtualBox, `.vmx` para VMware, un archivo `config.pvs` ubicado en el paquete de la máquina virtual (archivo `.pvm`), etc. De este modo, tendrá que recrear una nueva máquina virtual en su nuevo hipervisor de destino y especificar su configuración de hardware tan precisa como sea posible, de modo similar a como se hizo en su máquina virtual inicial.
 
-Preste especial atención a la interfaz del firmware (BIOS o UEFI) utilizado para instalar el sistema operativo huésped. Mientras que existe una opción disponible para elegir entre estas 2 interfaces en VirtualBox y Parallels, en VMware, en cambio, tendrá que añadir manualmente la siguiente línea a su archivo _.vmx_.
+Preste especial atención a la interfaz del firmware (BIOS o UEFI) utilizado para instalar el sistema operativo huésped. Mientras que existe una opción disponible para elegir entre estas 2 interfaces en VirtualBox y Parallels, en VMware, en cambio, tendrá que añadir manualmente la siguiente línea a su archivo *.vmx*.
 
  `ArchLinux_vm.vmx`  `firmware = "efi"` 
 
@@ -435,7 +434,7 @@ Por último, indique a su hipervisor el disco virtual a utilizar que ha converti
 **Sugerencia:**
 
 *   En VirtualBox, si no desea navegar por la interfaz gráfica de usuario para encontrar la ubicación adecuada para agregar el nuevo dispositivo de disco virtual, puede [#Reemplazar un disco virtual de forma manual desde el archivo .vbox](#Reemplazar_un_disco_virtual_de_forma_manual_desde_el_archivo_.vbox), o utilizar `VBoxManage storageattach` descrito en [#Aumentar discos virtuales](#Aumentar_discos_virtuales) o en la [página del manual de VirtualBox](https://www.virtualbox.org/manual/ch08.html#vboxmanage-storageattach).
-*   Del mismo modo, en los productos de VMware, puede reemplazar el lugar de la ubicación actual del disco virtual adaptando la ubicación del archivo _.vmdk_ en su archivo de configuración _.vmx_
+*   Del mismo modo, en los productos de VMware, puede reemplazar el lugar de la ubicación actual del disco virtual adaptando la ubicación del archivo *.vmdk* en su archivo de configuración *.vmx*
 
 ## Gestionar discos virtuales
 
@@ -473,14 +472,14 @@ VirtualBox puede manejar la conversión de VDI a VMDK (y viceversa) por sí mism
 VMDK a VDI:
 
 ```
-$ VBoxManage clonehd _source.vmdk_ _destination.vdi_ --format VDI
+$ VBoxManage clonehd *source.vmdk* *destination.vdi* --format VDI
 
 ```
 
 VDI a VMDK:
 
 ```
-$ VBoxManage clonehd _source.vdi_ _destination.vmdk_ --format VMDK
+$ VBoxManage clonehd *source.vdi* *destination.vmdk* --format VMDK
 
 ```
 
@@ -491,47 +490,47 @@ VirtualBox puede manejar la conversión de VHD a VDI (y viceversa) con [`VBoxMan
 VHD a VDI:
 
 ```
-$ VBoxManage clonehd _source.vhd_ _destination.vdi_ --format VDI
+$ VBoxManage clonehd *source.vhd* *destination.vdi* --format VDI
 
 ```
 
 VDI a VHD:
 
 ```
-$ VBoxManage clonehd _source.vdi_ _destination.vhd_ --format VHD
+$ VBoxManage clonehd *source.vdi* *destination.vhd* --format VHD
 
 ```
 
 #### QCOW2 a VDI y VDI a QCOW2
 
 [`VBoxManage clonehd`](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi) no puede manejar la conversión del formato de QEMU; por lo tanto, vamos a confiar en otra herramienta. La orden `qemu-img` de [qemu](https://www.archlinux.org/packages/?name=qemu) se puede utilizar para convertir imágenes de VDI a QCOW2 (y viceversa).
-**Nota:** `qemu-img` puede manejar otros formatos también. De acuerdo con `qemu-img --help`, estos son los formatos soportados que admite: «_vvfat vpc vmdk vhdx vdi ssh sheepdog sheepdog sheepdog raw host_cdrom host_floppy host_device file qed qcow2 qcow parallels nbd nbd nbd iscsi dmg tftp ftps ftp https http cow cloop bochs blkverify blkdebug'»._
+**Nota:** `qemu-img` puede manejar otros formatos también. De acuerdo con `qemu-img --help`, estos son los formatos soportados que admite: «*vvfat vpc vmdk vhdx vdi ssh sheepdog sheepdog sheepdog raw host_cdrom host_floppy host_device file qed qcow2 qcow parallels nbd nbd nbd iscsi dmg tftp ftps ftp https http cow cloop bochs blkverify blkdebug'».*
 
 QCOW2 a VDI:
 
 ```
-$ qemu-img convert -pO vdi _source.qcow2_ _destination.vdi_
+$ qemu-img convert -pO vdi *source.qcow2* *destination.vdi*
 
 ```
 
 VDI a QCOW2:
 
 ```
-$ qemu-img convert -pO qcow2 _source.vdi_ _destination.qcow2_
+$ qemu-img convert -pO qcow2 *source.vdi* *destination.qcow2*
 
 ```
 
 Como qcow2 viene en dos revisiones (vea [#Formats supported by VirtualBox](#Formats_supported_by_VirtualBox), utilice la etiqueta `-o compat=` para especificar la revisión.
 
 ```
-$ qemu-img convert -pO qcow2 _source.vdi_ _destination.qcow2_ -o compat=0.10
+$ qemu-img convert -pO qcow2 *source.vdi* *destination.qcow2* -o compat=0.10
 
 ```
 
 o
 
 ```
-$ qemu-img convert -pO qcow2 _source.vdi_ _destination.qcow2_ -o compat=1.1
+$ qemu-img convert -pO qcow2 *source.vdi* *destination.qcow2* -o compat=1.1
 
 ```
 
@@ -560,7 +559,7 @@ Ahora se puede montar con:
 También puede utilizar el script [mount.vdi](https://github.com/pld-linux/VirtualBox/blob/master/mount.vdi) script that, which you can use as (install script itself to `/usr/bin/`):
 
 ```
-# mount -t vdi -o fstype=ext4,rw,noatime,noexec _vdi_file_location_ _/mnt/_
+# mount -t vdi -o fstype=ext4,rw,noatime,noexec *vdi_file_location* */mnt/*
 
 ```
 
@@ -586,21 +585,21 @@ Arranque su máquina virtual y quite todo el espacio sobrante manualmente o medi
 
 Limpie el espacio libre con ceros que puede lograrse con varias herramientas:
 
-*   Si se estaba utilizando BleachBit, puede seguir usando esta utilidad para esta función, marcando la casilla _System > Free disk space_ de la interfaz, o, en otro caso, utilizando `bleachbit -c system.free_disk_space` en la línea de intérprete de órdenes (CLI);
+*   Si se estaba utilizando BleachBit, puede seguir usando esta utilidad para esta función, marcando la casilla *System > Free disk space* de la interfaz, o, en otro caso, utilizando `bleachbit -c system.free_disk_space` en la línea de intérprete de órdenes (CLI);
 *   En los sistemas basados en UNIX, usando `dd` o, preferiblemente [dcfldd](https://www.archlinux.org/packages/?name=dcfldd) (vea [esto](http://superuser.com/a/355322) para conocer las diferencias):
 
-	 `# dcfldd if=/dev/zero of=_/fillfile_ bs=4M` 
+	 `# dcfldd if=/dev/zero of=*/fillfile* bs=4M` 
 
 	Cuando `fillfile` haya alcanzado el límite de la partición, se recibirá un mensaje como `1280 blocks (5120Mb) written.dcfldd:: No space left on device`. Esto significa que todos los bloques del espacio de usuario y no reservados de la partición se llenarán con ceros. Utilice esta orden como root ya que es importante asegurarse de que todos los bloques libres han sido sobrescritos. De hecho, por defecto, al utilizar particiones con sistema de archivos ext, un porcentaje específico de bloques del sistema de archivos está reservada para el superusuario (vea el argumento `-m` en la página del manual de `mkfs.ext4` o utilice `tune2fs -l` para ver cuánto espacio está reservado para aplicaciones de root).
 
-	Cuando el proceso antes mencionado se ha completado, puede eliminar el archivo `_fillfile_` creado.
+	Cuando el proceso antes mencionado se ha completado, puede eliminar el archivo `*fillfile*` creado.
 
 *   En Windows, hay dos herramientas disponibles:
 
-*   `sdelete` de la [suite Sysinternals](http://technet.microsoft.com/en-us/sysinternals/bb842062.aspx), escriba `sdelete -s _c:_`, necesitará repetir la orden para cada unidad que tenga en su máquina virtual;
+*   `sdelete` de la [suite Sysinternals](http://technet.microsoft.com/en-us/sysinternals/bb842062.aspx), escriba `sdelete -s *c:*`, necesitará repetir la orden para cada unidad que tenga en su máquina virtual;
 *   o, si se prefiere los scripts, hay una [solución PowerShell](http://blog.whatsupduck.net/2012/03/powershell-alternative-to-sdelete.html), pero que aún así necesita ser repetido para todas las unidades.
 
-	 `PS> ./Write-ZeroesToFreeSpace.ps1 -Root _c:\_ -PercentFree 0` 
+	 `PS> ./Write-ZeroesToFreeSpace.ps1 -Root *c:\* -PercentFree 0` 
 
 **Nota:** Este script se debe ejecutar en un entorno de PowerShell con privilegios de administrador. De forma predeterminada, los scripts no se pueden ejecutar, por lo que tendrá que asegurarse que la política de ejecución esté, al menos, en `RemoteSigned` y no en `Restricted`. Esto se puede comprobar con `Get-ExecutionPolicy` y la política requerida se puede establecer con `Set-ExecutionPolicy RemoteSigned`.
 
@@ -614,13 +613,13 @@ La próxima vez que arranque su máquina virtual, es recomendable hacer una veri
 
 *   En los sistemas Windows, puede utilizar:
 
-*   o bien, `chkdsk _c:_ /F` donde `_c:_` necesita ser reemplazado por cada disco que necesita ser analizado y corregir errores;
+*   o bien, `chkdsk *c:* /F` donde `*c:*` necesita ser reemplazado por cada disco que necesita ser analizado y corregir errores;
 *   o, `FsckDskAll` [desde aquí](http://therightstuff.de/2009/02/14/ChkDskAll-ChkDsk-For-All-Drives.aspx), que es básicamente el mismo software que `chkdsk`, pero sin la necesidad de repetir la orden para todas las unidades;
 
 Ahora, hay que quitar los ceros del archivo `vdi` con `[VBoxManage modifyhd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi)`:
 
 ```
-$ VBoxManage modifyhd _your_disk.vdi_ --compact
+$ VBoxManage modifyhd *your_disk.vdi* --compact
 
 ```
 
@@ -634,30 +633,30 @@ En primer lugar, crear un nuevo disco virtual junto al que quiere aumentar:
 
 ```
 $ VBoxManage createhd -filename
-$ VBoxManage createhd -filename _new.vdi_ --size _10000_
+$ VBoxManage createhd -filename *new.vdi* --size *10000*
 
 ```
 
-donde el tamaño es en MiB, en este ejemplo 10000MiB ~= 10GiB, y _new.vdi_ es el nombre del nuevo disco duro que se creará.
+donde el tamaño es en MiB, en este ejemplo 10000MiB ~= 10GiB, y *new.vdi* es el nombre del nuevo disco duro que se creará.
 
 A continuación, el viejo disco virtual necesita ser clonado para el nuevo, lo cual puede tomar algún tiempo:
 
 ```
-$ VBoxManage clonehd _old.vdi_ _new.vdi_ --existing
+$ VBoxManage clonehd *old.vdi* *new.vdi* --existing
 
 ```
 
-**Nota:** Por defecto, esta orden utiliza el _estándard_ de la variante de formato de archivo (correspondiente a la asignación dinámica) y, por lo tanto, no va a utilizar la misma variante de formato de archivo que la del disco virtual de origen. Si su archivo _old.vdi_ tiene un tamaño fijo y desea mantener esta variante, agregue el parámetro `--variant Fixed`.
+**Nota:** Por defecto, esta orden utiliza el *estándard* de la variante de formato de archivo (correspondiente a la asignación dinámica) y, por lo tanto, no va a utilizar la misma variante de formato de archivo que la del disco virtual de origen. Si su archivo *old.vdi* tiene un tamaño fijo y desea mantener esta variante, agregue el parámetro `--variant Fixed`.
 
 Separe el viejo disco duro y adjunte uno nuevo, sustituyendo todos los argumentos en cursiva obligatoriamente, según sus características:
 
 ```
-$ VBoxManage storageattach _VM_name_ --storagectl _SATA_ --port _0_ --medium none
-$ VBoxManage storageattach _VM_name_ --storagectl _SATA_ --port _0_ --medium _new.vdi_ --type hdd
+$ VBoxManage storageattach *VM_name* --storagectl *SATA* --port *0* --medium none
+$ VBoxManage storageattach *VM_name* --storagectl *SATA* --port *0* --medium *new.vdi* --type hdd
 
 ```
 
-Para obtener el nombre del controlador del almacenamiento y el número del puerto, puede utilizar la orden `VBoxManage showvminfo _VM_name_`. De la salida obtendrá tal resultado (lo que busca está en cursiva):
+Para obtener el nombre del controlador del almacenamiento y el número del puerto, puede utilizar la orden `VBoxManage showvminfo *VM_name*`. De la salida obtendrá tal resultado (lo que busca está en cursiva):
 
 ```
 [...]
@@ -674,39 +673,38 @@ Storage Controller Max Port Count (1):  30
 Storage Controller Port Count (1):      1
 Storage Controller Bootable (1):        on
 IDE (1, 0): Empty
-_SATA_ (_0_, 0): /home/wget/IT/Virtual_machines/GNU_Linux_distributions/ArchLinux_x64_EFI/Snapshots/{6bb17af7-e8a2-4bbf-baac-fbba05ebd704}.vdi (UUID: 6bb17af7-e8a2-4bbf-baac-fbba05ebd704)
+*SATA* (*0*, 0): /home/wget/IT/Virtual_machines/GNU_Linux_distributions/ArchLinux_x64_EFI/Snapshots/{6bb17af7-e8a2-4bbf-baac-fbba05ebd704}.vdi (UUID: 6bb17af7-e8a2-4bbf-baac-fbba05ebd704)
 [...]
 ```
 
 Descargue la [imagen de GParted live](http://gparted.org/download.php) y móntela como un archivo de disco CD/DVD virtual, arranque su máquina virtual, aumente/mueva las particiones, desmonte GParted live y reinicie el sistema.
 
-**Nota:** En discos GPT, al aumentar el tamaño del disco dará como resultado una copia de respaldo en la cabecera de GPT, pero dicho respaldo no se verá reflejado al final del dispositivo. GParted le preguntará si desea solucionar este problema, haga clic en _Fix_ en ambas ocasiones. En los discos MBR, no se tiene un problema como este, ya que esta tabla de particiones no cuenta con respaldo al final del disco.
+**Nota:** En discos GPT, al aumentar el tamaño del disco dará como resultado una copia de respaldo en la cabecera de GPT, pero dicho respaldo no se verá reflejado al final del dispositivo. GParted le preguntará si desea solucionar este problema, haga clic en *Fix* en ambas ocasiones. En los discos MBR, no se tiene un problema como este, ya que esta tabla de particiones no cuenta con respaldo al final del disco.
 
 Por último, anule el registro del disco virtual de VirtualBox y elimine el archivo:
 
 ```
-$ VBoxManage closemedium disk _old.vdi_
-$ rm _old.vdi_
+$ VBoxManage closemedium disk *old.vdi*
+$ rm *old.vdi*
 
 ```
 
 ### Reemplazar un disco virtual de forma manual desde el archivo .vbox
 
-Si piensa que la edición de un simple archivo _XML_ es más eficaz que jugar con la interfaz gráfica del usuario o con `VBoxManage` y desea reemplazar (o añadir) un disco virtual a la máquina virtual, basta con reemplazar la GUID en el archivo de configuración _.vbox_ correspondiente a su máquina virtual, con el archivo de ubicación y el formato que necesite:
+Si piensa que la edición de un simple archivo *XML* es más eficaz que jugar con la interfaz gráfica del usuario o con `VBoxManage` y desea reemplazar (o añadir) un disco virtual a la máquina virtual, basta con reemplazar la GUID en el archivo de configuración *.vbox* correspondiente a su máquina virtual, con el archivo de ubicación y el formato que necesite:
 
- `ArchLinux_vm.vbox`  `<HardDisk uuid="_{670157e5-8bd4-4f7b-8b96-9ee412a712b5}_" location="_ArchLinux_vm.vdi_" format="_VDI_" type="Normal"/>` 
+ `ArchLinux_vm.vbox`  `<HardDisk uuid="*{670157e5-8bd4-4f7b-8b96-9ee412a712b5}*" location="*ArchLinux_vm.vdi*" format="*VDI*" type="Normal"/>` 
 
 a continuación, en la subetiqueta `<AttachedDevice>` de `<StorageController>`, sustituya la GUID por la nueva.
 
  `ArchLinux_vm.vbox` 
-
 ```
 <AttachedDevice type="HardDisk" port="0" device="0">
-  <Image uuid="_{670157e5-8bd4-4f7b-8b96-9ee412a712b5}_"/>
+  <Image uuid="*{670157e5-8bd4-4f7b-8b96-9ee412a712b5}*"/>
 </AttachedDevice>
 ```
 
-**Nota:** Si no sabe el GUID de la unidad que desea agregar, puede utilizar el archivo `VBoxManage showhdinfo _file_`. Si ha utilizado previamente `VBoxManage clonehd` para copiar/convertir su disco virtual, esta orden debería haber emitido el GUID justo después de la copia/conversión completada. El uso de un GUID aleatorio no funciona, ya que cada [UUID se almacena en el interior de cada imagen de disco](http://www.virtualbox.org/manual/ch05.html#cloningvdis).
+**Nota:** Si no sabe el GUID de la unidad que desea agregar, puede utilizar el archivo `VBoxManage showhdinfo *file*`. Si ha utilizado previamente `VBoxManage clonehd` para copiar/convertir su disco virtual, esta orden debería haber emitido el GUID justo después de la copia/conversión completada. El uso de un GUID aleatorio no funciona, ya que cada [UUID se almacena en el interior de cada imagen de disco](http://www.virtualbox.org/manual/ch05.html#cloningvdis).
 
 ### Clonar un disco virtual y asignarle un UUID nuevo
 
@@ -717,7 +715,7 @@ Si ha clonado un disco virtual de forma manual copiando el archivo del disco vir
 Puede utilizar esta orden para asignar un nuevo UUID a su disco virtual:
 
 ```
-$ VBoxManage internalcommands sethduuid _/path/to/disk.vdi_
+$ VBoxManage internalcommands sethduuid */path/to/disk.vdi*
 
 ```
 
@@ -734,7 +732,6 @@ $ VBoxManage internalcommands sethduuid _/path/to/disk.vdi_
 He aquí los detalles de la implementación de un servicio de systemd que se utilizará para considerar una máquina virtual como un servicio.
 
  `/etc/systemd/system/vboxvmservice@.service` 
-
 ```
 [Unit]
 Description=VBox Virtual Machine %i Service
@@ -742,7 +739,7 @@ Requires=systemd-modules-load.service
 After=systemd-modules-load.service
 
 [Service]
-User=_username_
+User=*username*
 Group=vboxusers
 ExecStart=/usr/bin/VBoxHeadless -s %i
 ExecStop=/usr/bin/VBoxManage controlvm %i savestate
@@ -753,20 +750,20 @@ WantedBy=multi-user.target
 
 **Nota:**
 
-*   Reemplace `_username_` con un usuario que sea miembro del grupo `vboxusers`. Asegúrese de que el usuario elegido es el mismo usuario que creará/importará las máquinas virtuales, de lo contrario el usuario no verá las aplicaciones de la máquina virtual.
+*   Reemplace `*username*` con un usuario que sea miembro del grupo `vboxusers`. Asegúrese de que el usuario elegido es el mismo usuario que creará/importará las máquinas virtuales, de lo contrario el usuario no verá las aplicaciones de la máquina virtual.
 *   Si tiene varias máquinas virtuales gestionadas por systemd y las mismas no se detienen correctamente, pruebe añadiendo `RemainAfterExit=true` y `KillMode=none` al final de la sección `[Service]`.
 
 Para activar el servicio que pondrá en marcha la máquina virtual en el siguiente inicio, utilice:
 
 ```
-# systemctl enable vboxvmservice@_your_virtual_machine_name_
+# systemctl enable vboxvmservice@*your_virtual_machine_name*
 
 ```
 
 Para iniciar el servicio que lance directamente la máquina virtual, utilice:
 
 ```
-# systemctl start vboxvmservice@_your_virtual_machine_name_
+# systemctl start vboxvmservice@*your_virtual_machine_name*
 
 ```
 
@@ -809,9 +806,9 @@ Asegúrese de filtrar todos los dispositivos que no sean un teclado o un ratón 
 Para acceder a un [servidor Apache](https://en.wikipedia.org/wiki/es:Servidor_HTTP_Apache "wikipedia:es:Servidor HTTP Apache") en una máquina virtual de un **solo** equipo anfitrión, basta con ejecutar la siguientes líneas en el equipo anfitrión:
 
 ```
-$ VBoxManage setextradata GuestName "VBoxInternal/Devices/_pcnet_/0/LUN#0/Config/Apache/HostPort" _8888_
-$ VBoxManage setextradata GuestName "VBoxInternal/Devices/_pcnet_/0/LUN#0/Config/Apache/GuestPort" _80_
-$ VBoxManage setextradata GuestName "VBoxInternal/Devices/_pcnet_/0/LUN#0/Config/Apache/Protocol" TCP
+$ VBoxManage setextradata GuestName "VBoxInternal/Devices/*pcnet*/0/LUN#0/Config/Apache/HostPort" *8888*
+$ VBoxManage setextradata GuestName "VBoxInternal/Devices/*pcnet*/0/LUN#0/Config/Apache/GuestPort" *80*
+$ VBoxManage setextradata GuestName "VBoxInternal/Devices/*pcnet*/0/LUN#0/Config/Apache/Protocol" TCP
 
 ```
 
@@ -823,9 +820,9 @@ Para utilizar un puerto inferior a 1024 en el equipo anfitrión, los cambios tie
 
 ### Aceleración D3D en huéspedes Windows
 
-Las versiones recientes de Virtualbox tienen soporte para la aceleración OpenGL dentro de los sistemas huéspedes. Esto se puede activar marcando una simple casilla en la configuración del equipo, justo debajo de donde se establece la memoria RAM de vídeo y la instalación de las aplicaciones del sistema huésped en VirtualBox. Sin embargo, la mayoría de los juegos de Windows utilizan Direct3D (parte de DirectX), no OpenGL, y, por lo tanto, no son ayudados por este método. No obstante, es posible obtener la aceleración Direct3D en los sistemas huéspedes Windows mediante préstamos de las bibliotecas D3D de wine, que traducen d3d a OpenGL, permitiendo la aceleración. Estas bibliotecas son ahora parte del software _guest additions_ de Virtualbox.
+Las versiones recientes de Virtualbox tienen soporte para la aceleración OpenGL dentro de los sistemas huéspedes. Esto se puede activar marcando una simple casilla en la configuración del equipo, justo debajo de donde se establece la memoria RAM de vídeo y la instalación de las aplicaciones del sistema huésped en VirtualBox. Sin embargo, la mayoría de los juegos de Windows utilizan Direct3D (parte de DirectX), no OpenGL, y, por lo tanto, no son ayudados por este método. No obstante, es posible obtener la aceleración Direct3D en los sistemas huéspedes Windows mediante préstamos de las bibliotecas D3D de wine, que traducen d3d a OpenGL, permitiendo la aceleración. Estas bibliotecas son ahora parte del software *guest additions* de Virtualbox.
 
-Después de activar la aceleración OpenGL como se describió anteriormente, reinicie el sistema huésped en modo seguro (presione F8 antes de que aparezca la pantalla de Windows, pero después de que desaparezca la pantalla de Virtualbox), e instale las _guest additions_ de Virtualbox, durante la instalación active la casilla «Direct3D support». Reinicie en modo normal y ya debería tener aceleración Direct3D.
+Después de activar la aceleración OpenGL como se describió anteriormente, reinicie el sistema huésped en modo seguro (presione F8 antes de que aparezca la pantalla de Windows, pero después de que desaparezca la pantalla de Virtualbox), e instale las *guest additions* de Virtualbox, durante la instalación active la casilla «Direct3D support». Reinicie en modo normal y ya debería tener aceleración Direct3D.
 
 **Nota:**
 
@@ -903,7 +900,7 @@ Si todavía está utilizando el antiguo [GRUB Legacy](/index.php/GRUB_Legacy "GR
 ```
 title  Arch Linux
 root
-kernel /vmlinuz-linux root=_/dev/disk/by-uuid/0a3407de-014b-458b-b5c1-848e92a327a3_ ro vga=773
+kernel /vmlinuz-linux root=*/dev/disk/by-uuid/0a3407de-014b-458b-b5c1-848e92a327a3* ro vga=773
 initrd /initramfs-linux-vbox.img
 
 ```
@@ -924,10 +921,9 @@ Si está ejecutando la versión más reciente de [GRUB](/index.php/GRUB_(Espa%C3
 Asegúrese de que la configuración de su [mkinitcpio](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") utiliza el [HOOK](/index.php/Mkinitcpio_(Espa%C3%B1ol)#HOOKS "Mkinitcpio (Español)") `block`:
 
  `/etc/mkinitcpio.conf` 
-
 ```
 [...]
-HOOKS="base udev autodetect modconf _block_ filesystems keyboard fsck"
+HOOKS="base udev autodetect modconf *block* filesystems keyboard fsck"
 [...]
 ```
 
@@ -946,7 +942,7 @@ Arranque el sistema anfitrión que utilizará la máquina virtual de Arch Linux.
 Hay 3 maneras de lograr esto: iniciando sesión como root, cambiando los derechos de acceso al dispositivo con `chmod` o añadiendo su usuario al grupo `disk`. Esta última forma es la más elegante, así que vamos a proceder de esa manera:
 
 ```
-# gpasswd -a _your_user_ disk
+# gpasswd -a *your_user* disk
 
 ```
 
@@ -960,7 +956,7 @@ $ newgrp
 Ahora, puede utilizar la orden:
 
 ```
-$ VBoxManage internalcommands createrawvmdk -filename _/path/to/file.vmdk_ -rawdisk _/dev/sdb_ -register 
+$ VBoxManage internalcommands createrawvmdk -filename */path/to/file.vmdk* -rawdisk */dev/sdb* -register 
 
 ```
 
@@ -970,9 +966,7 @@ Adaptar la orden anterior a sus características, especialmente la ruta, el nomb
 
 Abra un símbolo del sistema como administrador.
 **Sugerencia:** En Windows, abra la pantalla menú/inicio, escriba `cmd`, y pulse `Ctrl+Mayús+Intro`, esto es un acceso directo para ejecutar el programa seleccionado con derechos de administrador.
-
 En Windows, como la convención de nombres de archivos del disco es diferente de UNIX, utilice esta orden para determinar qué unidades tiene en su sistema Windows y cuál es su ubicación: `# wmic diskdrive get name,size,model` 
-
 ```
 Model                               Name                Size
 WDC WD40EZRX-00SPEB0 ATA Device     \\.\PHYSICALDRIVE1  4000783933440
@@ -1008,10 +1002,10 @@ Hay otras limitaciones en cuanto a la orden antes mencionada cuando se utiliza e
 *   Para hacer uso de la orden VBoxManage en Windows, es necesario primero moverse del directorio actual a la carpeta de instalación de VirtualBox: cd C:\Program Files\Oracle\VirtualBox\.
 *   Windows hace uso de las barras invertidas en lugar de barras normales, de modo que no olvide cambiar las barras normales / a las barras invertidas \ cuando aparezcan en las órdenes que siguen.
 
-Después, tenemos que crear una nueva máquina (sustituir el _VM_NAME_ a su conveniencia) y registrarla en VirtualBox.
+Después, tenemos que crear una nueva máquina (sustituir el *VM_NAME* a su conveniencia) y registrarla en VirtualBox.
 
 ```
-$ VBoxManage createvm -name _VM_name_ -register
+$ VBoxManage createvm -name *VM_name* -register
 
 ```
 
@@ -1020,7 +1014,7 @@ A continuación, el disco recién creado necesita ser asociado a la máquina. Es
 Si necesita una controladora IDE:
 
 ```
-$ VBoxManage storagectl _VM_name_ --name "IDE Controller" --add ide
+$ VBoxManage storagectl *VM_name* --name "IDE Controller" --add ide
 $ VBoxManage storageattach machineA --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium /path/to/file.vmdk
 
 ```
@@ -1028,7 +1022,7 @@ $ VBoxManage storageattach machineA --storagectl "IDE Controller" --port 0 --dev
 de otro modo:
 
 ```
-$ VBoxManage storagectl _VM_name_ --name "SATA Controller" --add sata
+$ VBoxManage storagectl *VM_name* --name "SATA Controller" --add sata
 $ VBoxManage storageattach machineA --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium /path/to/file.vmdk
 
 ```
@@ -1054,7 +1048,7 @@ Ahora, debe tener una configuración de máquina virtual funcional cuyos discos 
 *   Para los sistemas BIOS con un esquema de particionado MBR, no instale un gestor de arranque en su máquina virtual, esto no funcionará ya que el MBR no está vinculado con el MBR de su máquina real y su disco virtual solo se asignaŕa como una partición real sin MBR.
 *   Para los sistemas UEFI sin [Compatibility Support Module (CSM)](https://en.wikipedia.org/wiki/Compatibility_Support_Module#CSM "wikipedia:Compatibility Support Module") y con esquema de particionado GPT, la instalación no funcionará en absoluto, dado que:
 
-*   la partición [EFI System partition (ESP)](https://en.wikipedia.org/wiki/EFI_System_partition "wikipedia:EFI System partition") no está asignada en el disco virtual y Arch Linux requiere tener el kernel de Linux en ella para arrancar como una aplicación EFI (vea [EFISTUB (Español)](/index.php/EFISTUB_(Espa%C3%B1ol) "EFISTUB (Español)") para más detalles);
+*   la partición [EFI System partition (ESP)](https://en.wikipedia.org/wiki/EFI_System_partition para más detalles);
 *   y las variables efivars, si va a instalar Arch Linux usando el modo EFI por intermediación de VirtualBox, no se corresponden con la de su sistema real: por lo tanto, las entradas de su gestor de arranque no serán registradas.
 
 *   Esta razones hacen recomendable crear, primero, las particiones en una instalación nativa, de lo contrario las particiones no serán tomadas en consideración en su tabla de particiones MBR/GPT.
@@ -1075,11 +1069,11 @@ Los primeros tres siguientes puntos vienen de [esta página desactualizada de la
 
 *   Elimine los chequeos de las controladoras de IDE/ATA (solo en Windows XP): Windows memoriza las controladoras de disco IDE/ATA cuando se ha instalado y no arrancará si detecta que estos han cambiado. La solución propuesta por Microsoft es volver a utilizar la misma controladora o utilizar una de la misma serie, lo cual es imposible de lograr ya que estamos utilizando una máquina virtual. Se puede utilizar [MergeIDE](https://www.virtualbox.org/wiki/Migrate_Windows#HardDiskSupport), una herramienta alemana, desarrollada sobre la base de una solución propuesta por Microsoft. Esta solución consiste básicamente en tomar todos los controladores de la controladora ATA/IDE compatibles con Windows XP desde el archivo del controlador inicial (la ubicación está codificada, o especificada como el primer argumento del script `.bat`), instalándolos y registrándolos con la base de datos regedit.
 
-*   Utilice el tipo Hardware Abstraction Layer (versiones de Windows de 32 bits viejas): Microsoft incluye 3 versiones por defecto: `Hal.dll` (Standard PC), `Halacpi.dll` (ACPI HAL) y `Halaacpi.dll` (ACPI HAL con IO APIC). Su instalación de Windows podría venir instalado con la primera o la segunda versión. Si es así [desactive la característica extendida _Enable IO/APIC_ de VirtualBox](https://www.virtualbox.org/manual/ch08.html#idp56927888).
+*   Utilice el tipo Hardware Abstraction Layer (versiones de Windows de 32 bits viejas): Microsoft incluye 3 versiones por defecto: `Hal.dll` (Standard PC), `Halacpi.dll` (ACPI HAL) y `Halaacpi.dll` (ACPI HAL con IO APIC). Su instalación de Windows podría venir instalado con la primera o la segunda versión. Si es así [desactive la característica extendida *Enable IO/APIC* de VirtualBox](https://www.virtualbox.org/manual/ch08.html#idp56927888).
 
 *   Desactive cualquier controlador del dispositivo AGP (solo versiones obsoletas de Windows): si tiene los archivos `agp440.sys` o `intelppm.sys` dentro de la carpeta `C:\Windows\SYSTEM32\drivers\` retírelos. Como VirtualBox utiliza una tarjeta gráfica PCI virtual, esto puede causar problemas cuando se utiliza este controlador AGP.
 
-*   Crear un disco de recuperación de Windows: en los siguientes pasos, si la operación sale mal, tendrá que reparar la instalación de Windows. Asegúrese de tener un soporte de instalación a mano, o cree uno con la utilidad _Crear un disco de recuperación_ de Windows.
+*   Crear un disco de recuperación de Windows: en los siguientes pasos, si la operación sale mal, tendrá que reparar la instalación de Windows. Asegúrese de tener un soporte de instalación a mano, o cree uno con la utilidad *Crear un disco de recuperación* de Windows.
 
 #### Tareas en GNU/Linux
 
@@ -1087,7 +1081,7 @@ Los primeros tres siguientes puntos vienen de [esta página desactualizada de la
 
 	Utilice la opción `--no-action` primero para realizar una prueba:
 
-	 `# ntfsresize --no-action --size _52Gi_ _/dev/sda1_` 
+	 `# ntfsresize --no-action --size *52Gi* */dev/sda1*` 
 
 	Si la prueba anterior tuvo éxito, ejecute la orden de nuevo, pero esta vez sin la opción antes mencionada.
 
@@ -1097,7 +1091,7 @@ Los primeros tres siguientes puntos vienen de [esta página desactualizada de la
 
 	 `# sectnum=$(( $(cat /sys/block/''sda/sda1''/start) + $(cat /sys/block/''sda/sda1''/size) ))` 
 
-	El uso de `cat /sys/block/_sda/sda1_/size` mostrará el número de sectores totales de la primera partición del disco `sda`. Adaptar cuando sea necesario.
+	El uso de `cat /sys/block/*sda/sda1*/size` mostrará el número de sectores totales de la primera partición del disco `sda`. Adaptar cuando sea necesario.
 
 	 `# dd if=''/dev/sda'' bs=512 count=$sectnum | VBoxManage convertfromraw stdin ''windows.vdi'' $(( $sectnum * 512 ))` 
 
@@ -1107,7 +1101,7 @@ Los primeros tres siguientes puntos vienen de [esta página desactualizada de la
 
 *   Trate de arrancar su maquina virtual de Windows, Debería funcionar sin más. Primero, sin embargo, retire y repare los discos desde el proceso de arranque, ya que pueden interferir (y probablemente lo hagan) arrancar en modo seguro.
 
-*   Intente arrancar su máquina virtual Windows en modo seguro (pulse la tecla F8 antes de que el logotipo de Windows aparezca)... si se dan problemas de arranque, lea [#Arreglar_el_MBR_y_el_gestor_de_arranque_de_Microsoft](#Arreglar_el_MBR_y_el_gestor_de_arranque_de_Microsoft). En modo seguro, los controladores se instalarán probablemente por el mecanismo de detección plug-and-play de Windows ([vistas](http://i.imgur.com/hh1RrSp.png)). Adicionalmente, instale los Guest Additions de VirtualBox a través del menú _Devices_ > _Insert Guest Additions CD image..._. Si no aparece un nuevo diálogo para el disco, vaya a la unidad del CD e inicie el instalador manualmente.
+*   Intente arrancar su máquina virtual Windows en modo seguro (pulse la tecla F8 antes de que el logotipo de Windows aparezca)... si se dan problemas de arranque, lea [#Arreglar_el_MBR_y_el_gestor_de_arranque_de_Microsoft](#Arreglar_el_MBR_y_el_gestor_de_arranque_de_Microsoft). En modo seguro, los controladores se instalarán probablemente por el mecanismo de detección plug-and-play de Windows ([vistas](http://i.imgur.com/hh1RrSp.png)). Adicionalmente, instale los Guest Additions de VirtualBox a través del menú *Devices* > *Insert Guest Additions CD image...*. Si no aparece un nuevo diálogo para el disco, vaya a la unidad del CD e inicie el instalador manualmente.
 
 *   Finalmente, debe tener una máquina virtual de Windows funcional. No se olvide de leer las [#Limitaciones_conocidas](#Limitaciones_conocidas).
 
@@ -1129,7 +1123,7 @@ Partition number (''1-3'', default ''3''): ''1''
 
 *   Utilice [testdisk](https://www.archlinux.org/packages/?name=testdisk) (vea [esto](http://www.cgsecurity.org/index.html?testdisk.html) para más detalles) para añadir un MBR genérico:
 
-	 `# testdisk > _Disk /dev/sda...'_ > [Proceed] >  [Intel] Intel/PC partition > [MBR Code] Write TestDisk MBR to first sector > Write a new copy of MBR code to first sector? (Y/n) > Y > Write a new copy of MBR code, confirm? (Y/N) > A new copy of MBR code has been written. You have to reboot for the change to take effect. > [OK]` 
+	 `# testdisk > *Disk /dev/sda...'* > [Proceed] >  [Intel] Intel/PC partition > [MBR Code] Write TestDisk MBR to first sector > Write a new copy of MBR code to first sector? (Y/n) > Y > Write a new copy of MBR code, confirm? (Y/N) > A new copy of MBR code has been written. You have to reboot for the change to take effect. > [OK]` 
 
 *   Con el nuevo MBR y la tabla de particiones actualizada, su máquina virtual Windows debería ser capaz de arrancar. Si todavía encuentra problemas, arranque su disco de recuperación de Windows aconsejado realizar en la etapa anterior y, dentro de su entorno de Windows de recuperación, ejecute las órdenes [descritas aquí](http://support.microsoft.com/kb/927392).
 
@@ -1145,11 +1139,11 @@ Partition number (''1-3'', default ''3''): ''1''
 
 Esto significa que su máquina virtual ha capturado la entrada de su teclado y del ratón. Basta con pulsar la tecla `Ctrl` derecho y su entrada debería volver al control de su sistema anfitrión de nuevo.
 
-Para controlar de forma transparente su máquina virtual con el ratón de modo que pueda pasear entre esta y el equipo anfitrión sin tener que pulsar ninguna tecla y con una integración perfecta, instale las _guest additions_ dentro del sistema huésped. Lea los pasos para [#Instalar complementos para el sistema huésped](#Instalar_complementos_para_el_sistema_hu.C3.A9sped) si su sistema huésped es Arch Linux, en otro caso, lea la ayuda oficial de VirtualBox.
+Para controlar de forma transparente su máquina virtual con el ratón de modo que pueda pasear entre esta y el equipo anfitrión sin tener que pulsar ninguna tecla y con una integración perfecta, instale las *guest additions* dentro del sistema huésped. Lea los pasos para [#Instalar complementos para el sistema huésped](#Instalar_complementos_para_el_sistema_hu.C3.A9sped) si su sistema huésped es Arch Linux, en otro caso, lea la ayuda oficial de VirtualBox.
 
 ### No se pueden usar las teclas CTRL+ALT+Fn en la máquina virtual
 
-Si su sistema operativo huésped es una distribución de GNU/Linux puede abrir una nueva shell TTY con `Ctrl+Alt+F2` o salir de su sesión X actual con `Ctrl+Alt+Retroceso`. No obstante, si escribe estos atajos de teclado sin ninguna adaptación, el sistema huésped no recibirá ninguna entrada y el anfitrión (si se trata de una distribución GNU/Linux, tampoco) no interpretando estas teclas de acceso directo. Para enviar `Ctrl+Alt+F2` al sistema huésped, por ejemplo, basta con pulsar _«Host Key»_, (normalmente la tecla `Ctrl`) y `F2` simultáneamente.
+Si su sistema operativo huésped es una distribución de GNU/Linux puede abrir una nueva shell TTY con `Ctrl+Alt+F2` o salir de su sesión X actual con `Ctrl+Alt+Retroceso`. No obstante, si escribe estos atajos de teclado sin ninguna adaptación, el sistema huésped no recibirá ninguna entrada y el anfitrión (si se trata de una distribución GNU/Linux, tampoco) no interpretando estas teclas de acceso directo. Para enviar `Ctrl+Alt+F2` al sistema huésped, por ejemplo, basta con pulsar *«Host Key»*, (normalmente la tecla `Ctrl`) y `F2` simultáneamente.
 
 ### Arreglar problemas de imágenes ISO
 
@@ -1163,10 +1157,10 @@ Vea [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_an
 
 ### OpenBSD inutilizable cuando las instrucciones de virtualización no están disponibles
 
-Mientras que es sabido que OpenBSD puede funcionar bien en otros hipervisores sin las instrucciones (VT-x AMD-V) de virtualización activadas, una máquina virtual OpenBSD que se ejecuta en VirtualBox sin estas instrucciones no se podrá utilizar, dando lugar a fallos de segmentación. Iniciando VirtualBox con el argumento _-norawr0_ [se puede resolver este problema](https://www.virtualbox.org/ticket/3947). Puede hacerlo de esta manera:
+Mientras que es sabido que OpenBSD puede funcionar bien en otros hipervisores sin las instrucciones (VT-x AMD-V) de virtualización activadas, una máquina virtual OpenBSD que se ejecuta en VirtualBox sin estas instrucciones no se podrá utilizar, dando lugar a fallos de segmentación. Iniciando VirtualBox con el argumento *-norawr0* [se puede resolver este problema](https://www.virtualbox.org/ticket/3947). Puede hacerlo de esta manera:
 
 ```
-$ VBoxSDL -norawr0 -vm _name_of_OpenBSD_VM_
+$ VBoxSDL -norawr0 -vm *name_of_OpenBSD_VM*
 
 ```
 
@@ -1175,7 +1169,7 @@ $ VBoxSDL -norawr0 -vm _name_of_OpenBSD_VM_
 Esto puede ocurrir si una máquina virtual se apaga mal. La solución para desbloquear la máquina virtual es trivial:
 
 ```
-$ VBoxManage controlvm _virtual_machine_name_ poweroff
+$ VBoxManage controlvm *virtual_machine_name* poweroff
 
 ```
 
@@ -1183,7 +1177,7 @@ $ VBoxManage controlvm _virtual_machine_name_ poweroff
 
 Su usuario debe estar en el grupo `vboxusers`, necesario para instalar el [paquete de extensiones](#Paquete_de_extensiones) si desea apoyo de USB 2\. Entonces será capaz de activar USB 2 en la configuración de la máquina virtual y añadir uno o varios filtros para los dispositivos a los que desee acceder desde el sistema operativo huésped.
 
-A veces, en equipos con Linux antiguo, el subsistema USB no se detecta automáticamente lo que da el error `Could not load the Host USB Proxy service: VERR_NOT_FOUND` o la unidad USB no es visible en el equipo, [incluso cuando el usuario está en el grupo **vboxusers**](https://bbs.archlinux.org/viewtopic.php?id=121377). Este problema es debido al hecho de que VirtualBox cambió de _usbfs_ a _sysfs_ en la versión 3.0.8\. Si el sistema anfitrión no entiende este cambio, puede revertir el comportamiento definiendo la siguiente variable de entorno en cualquier archivo fuente de la shell (por ejemplo, su `~/.bashrc` si usa _bash_):
+A veces, en equipos con Linux antiguo, el subsistema USB no se detecta automáticamente lo que da el error `Could not load the Host USB Proxy service: VERR_NOT_FOUND` o la unidad USB no es visible en el equipo, [incluso cuando el usuario está en el grupo **vboxusers**](https://bbs.archlinux.org/viewtopic.php?id=121377). Este problema es debido al hecho de que VirtualBox cambió de *usbfs* a *sysfs* en la versión 3.0.8\. Si el sistema anfitrión no entiende este cambio, puede revertir el comportamiento definiendo la siguiente variable de entorno en cualquier archivo fuente de la shell (por ejemplo, su `~/.bashrc` si usa *bash*):
 
  `~/.bashrc`  `VBOX_USB=usbfs` 
 
@@ -1234,13 +1228,13 @@ y, cierre y abra sesión de nuevo.
 Si recibe este código de error durante el arranque, incluso si elige sistema operativo Tipo Win 8, pruebe a activar la instrucción `CMPXCHG16B` de la CPU:
 
 ```
-$ vboxmanage setextradata _virtual_machine_name_ VBoxInternal/CPUM/CMPXCHG16B 1
+$ vboxmanage setextradata *virtual_machine_name* VBoxInternal/CPUM/CMPXCHG16B 1
 
 ```
 
 ### Fallos de la máquina vitual de Windows 8 al arrancar con el error «ERR_DISK_FULL»
 
-Situación: su máquina virtual Windows 8 se niega a iniciar. VirtualBox lanza un error que indica que el disco virtual está lleno. Sin embargo, está seguro de que el disco no está lleno. Abra la configuración de su máquina virtual en _Settings > Storage > Controller:SATA_ y seleccione «Use Host I/O Cache».
+Situación: su máquina virtual Windows 8 se niega a iniciar. VirtualBox lanza un error que indica que el disco virtual está lleno. Sin embargo, está seguro de que el disco no está lleno. Abra la configuración de su máquina virtual en *Settings > Storage > Controller:SATA* y seleccione «Use Host I/O Cache».
 
 ### El sistema huésped Linux tiene audio lento/distorsionado
 
@@ -1253,7 +1247,7 @@ options snd-intel8x0 ac97_clock=48000
 
 ### El huésped se congela después de iniciar Xorg
 
-Controladores defectuosos o ausentes pueden causar que el sistema huésped se congele después de comenzar Xorg, vea, por ejemplo, [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) y [[4]](https://bbs.archlinux.org/viewtopic.php?id=156079). Pruebe a desactivar la aceleración 3D en _Settings > Display_, y comprobar si se han instalado todos los controladores [Xorg](/index.php/Xorg "Xorg").
+Controladores defectuosos o ausentes pueden causar que el sistema huésped se congele después de comenzar Xorg, vea, por ejemplo, [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) y [[4]](https://bbs.archlinux.org/viewtopic.php?id=156079). Pruebe a desactivar la aceleración 3D en *Settings > Display*, y comprobar si se han instalado todos los controladores [Xorg](/index.php/Xorg "Xorg").
 
 ### «NS_ERROR_FAILURE» y ausencia de elementos del menú
 
@@ -1275,7 +1269,6 @@ Medium
 Salga de VirtualBox, elimine todos los archivos de la nueva máquina y del archivo de configuración de VirtualBox elimine la última línea del menú `MachineRegistry` (o la máquina hostil que lo está creando):
 
  `~/.config/VirtualBox/VirtualBox.xml` 
-
 ```
 ...
 <MachineRegistry>
@@ -1286,7 +1279,7 @@ Salga de VirtualBox, elimine todos los archivos de la nueva máquina y del archi
 ...
 ```
 
-Esto ocurre, a veces, cuando se selecciona el formato de disco _QCOW_/_QCOW2_/_QED_ al crear un disco virtual nuevo.
+Esto ocurre, a veces, cuando se selecciona el formato de disco *QCOW*/*QCOW2*/*QED* al crear un disco virtual nuevo.
 
 ### Error en Windows huésped «The specified path does not exist. Check the path and then try again.»
 

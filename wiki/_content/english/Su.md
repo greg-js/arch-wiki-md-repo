@@ -18,7 +18,7 @@ su is part of [util-linux](https://www.archlinux.org/packages/?name=util-linux) 
 To assume the login of another user, pass the username that you want to become to su, as in:
 
 ```
-# su _username_
+# su *username*
 
 ```
 
@@ -46,7 +46,7 @@ Note the following important contrasting considerations:
 
 Thus, it is advisable that administrative users, as well as any other users that are authorized to use su (and it is suggested that there be very few, if any) acquire the habit of always following the su command with a space and then a hyphen. The hyphen has two effects:
 
-1.  switches from the current directory to the home directory of the new user (e.g., to `/root` in the case of the root user) by _logging in_ as that user
+1.  switches from the current directory to the home directory of the new user (e.g., to `/root` in the case of the root user) by *logging in* as that user
 2.  changes the environmental variables to those of the new user as dictated by their `~/.bashrc`. That is, if the first argument to su is a hyphen, the current directory and environment will be changed to what would be expected if the new user had actually logged on to a new session (rather than just taking over an existing session).
 
 Thus, administrators should generally use su as follows:

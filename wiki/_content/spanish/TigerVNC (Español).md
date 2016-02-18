@@ -1,6 +1,6 @@
 Vncserver es un demonio de visualización remota que permite a usuarios situados a distancia realizar distintas funciones, incluyendo:
 
-1.  Sesiones de X virtuales (sin cabeza) y totalmente en _paralelo_ que se ejecutan en segundo plano (es decir, no en el monitor físico, sino virtualmente) en una máquina. Todas las aplicaciones que se ejecutan en el servidor pueden seguir funcionando, incluso cuando el usuario se desconecta.
+1.  Sesiones de X virtuales (sin cabeza) y totalmente en *paralelo* que se ejecutan en segundo plano (es decir, no en el monitor físico, sino virtualmente) en una máquina. Todas las aplicaciones que se ejecutan en el servidor pueden seguir funcionando, incluso cuando el usuario se desconecta.
 2.  Control directo de la sesión(s) local X (es decir, X se ejecuta en el monitor físico).
 
 ## Contents
@@ -41,7 +41,6 @@ Vncserver es proporcionado por [tigervnc](https://www.archlinux.org/packages/?na
 Vncserver creará el archivo del entorno inicial y el archivo de la contraseña del usuario la primera vez que se ejecute:
 
  `$ vncserver` 
-
 ```
 You will require a password to access your desktops.
 
@@ -160,7 +159,7 @@ $ vncviewer -passwd /ruta/al/archivo-passwd-del-servidor
 
 ### En el servidor
 
-Si se que quiere acceso a vncserver desde fuera de la protección de una LAN, debe preocuparse por las contraseñas en texto plano y el tráfico sin cifrar desde/hacia el cliente y el servidor. Vncserver es fácilmente asegurable por túneles SSH. Además, no se necesita abrir otro puerto hacia el exterior usando este método, ya que el tráfico se canaliza literalmente a través del puerto SSH que el usuario ya tiene abierto en la WAN. Se recomienda utilizar el parámetro -localhost al ejecutar vncserver en este escenario. Este parámetro solo permite conexiones _desde el localhost_ —y, por analogía, solo los usuarios físicamente autenticados y asegurados en el entorno—.
+Si se que quiere acceso a vncserver desde fuera de la protección de una LAN, debe preocuparse por las contraseñas en texto plano y el tráfico sin cifrar desde/hacia el cliente y el servidor. Vncserver es fácilmente asegurable por túneles SSH. Además, no se necesita abrir otro puerto hacia el exterior usando este método, ya que el tráfico se canaliza literalmente a través del puerto SSH que el usuario ya tiene abierto en la WAN. Se recomienda utilizar el parámetro -localhost al ejecutar vncserver en este escenario. Este parámetro solo permite conexiones *desde el localhost* —y, por analogía, solo los usuarios físicamente autenticados y asegurados en el entorno—.
 
 ```
 $ vncserver -geometry 1440x900 -alwaysshared -dpi 96 -localhost :1
@@ -183,11 +182,11 @@ $ vncviewer localhost::8900
 
 ```
 
-Desde la página de manual de ssh: _-L [bind_address:] port:host:hostport_
+Desde la página de manual de ssh: *-L [bind_address:] port:host:hostport*
 
-_Esto especifica que el puerto dado en el equipo (cliente) local se rediccionará al equipo y al puerto dado en el lado remoto. Esto funciona mediante la asignación de un socket para escuchar al puerto en el lado local, opcionalmente unido al bind_address especificado. Cada vez que se realiza una conexión a este puerto, la conexión se envía a través del canal seguro, y se realiza una conexión al hostport de puerto del equipo desde la máquina remota. Las redirecciones de puertos también se pueden especificar en el archivo de configuración. Las direcciones IPv6 se pueden especificar con una sintaxis alternativa:_
+*Esto especifica que el puerto dado en el equipo (cliente) local se rediccionará al equipo y al puerto dado en el lado remoto. Esto funciona mediante la asignación de un socket para escuchar al puerto en el lado local, opcionalmente unido al bind_address especificado. Cada vez que se realiza una conexión a este puerto, la conexión se envía a través del canal seguro, y se realiza una conexión al hostport de puerto del equipo desde la máquina remota. Las redirecciones de puertos también se pueden especificar en el archivo de configuración. Las direcciones IPv6 se pueden especificar con una sintaxis alternativa:*
 
-_[bind_address/] port/host/ hostport o encerrando la dirección entre corchetes._ _Solo el superusuario puede redireccionar puertos privilegiados. Por defecto, el puerto local está condicionado a la configuración de los puertos de la puerta de enlace. Sin embargo, un bind_address explícito se puede utilizar para obligar a realizar la conexión a una dirección específica. El bind_address de ``localhost'' indica que el puerto de escucha está disponible para uso local solamente, mientras que una dirección vacía o `*' indica que el puerto debe estar disponible en todas las interfaces._
+*[bind_address/] port/host/ hostport o encerrando la dirección entre corchetes.* *Solo el superusuario puede redireccionar puertos privilegiados. Por defecto, el puerto local está condicionado a la configuración de los puertos de la puerta de enlace. Sin embargo, un bind_address explícito se puede utilizar para obligar a realizar la conexión a una dirección específica. El bind_address de ``localhost'' indica que el puerto de escucha está disponible para uso local solamente, mientras que una dirección vacía o `*' indica que el puerto debe estar disponible en todas las interfaces.*
 
 ### Conectar a un vncserver desde dispositivos Android a través de SSH
 
@@ -231,7 +230,6 @@ Conectar.
 Cree `/etc/systemd/system/vncserver@:1.service` y modifíquelo definiendo el usuario para ejecutar el servidor. Utilice esto con systemd para gestionarlo.
 
  `/etc/systemd/system/vncserver@:1.service` 
-
 ```
 # Archivo de unidad de servicio de vncserver
 #
@@ -267,7 +265,7 @@ WantedBy=multi-user.target
 
 ```
 
-Cambie las opciones en _ExecStart_, pero mantenga el parámetro -fg para permitir funcionalidades.
+Cambie las opciones en *ExecStart*, pero mantenga el parámetro -fg para permitir funcionalidades.
 
 ### Copiar contenidos del portapapeles desde la máquina remota a la local
 

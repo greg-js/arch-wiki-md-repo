@@ -18,7 +18,6 @@ Edit `/etc/jabberd/c2s.xml` and look for the line starting with `<id register-en
 Example:
 
  `/etc/jabberd/c2s.xml` 
-
 ```
 <id register-enable='mu'>mymachine.com</id>
 
@@ -31,7 +30,6 @@ The `register-enable='mu'` part, allows the registration of accounts, using a st
 Also set your server on `sm.xml`:
 
  `/etc/jabberd/sm.xml` 
-
 ```
 <id>mymachine.com</id>
 

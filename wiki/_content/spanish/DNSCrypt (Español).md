@@ -18,11 +18,11 @@ Instale el paquete [dnscrypt-proxy](https://www.archlinux.org/packages/?name=dns
 
 ## Configuración
 
-Cuando `dnscrypt-proxy.socket` esta activado. Acepta las peticiones entrantes en `127.0.0.1:53` a una resolucion DNS. La resolucion DNS por defecto para `dnscrypt-proxy.service` es _dnscrypt.eu-nl_. Los nombres del _resolver_ compatibles son visibles en la primera columna de `/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv`.
+Cuando `dnscrypt-proxy.socket` esta activado. Acepta las peticiones entrantes en `127.0.0.1:53` a una resolucion DNS. La resolucion DNS por defecto para `dnscrypt-proxy.service` es *dnscrypt.eu-nl*. Los nombres del *resolver* compatibles son visibles en la primera columna de `/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv`.
 
 Para cambiar el valor por defecto editar `dnscrypt-proxy.service`. Se recomienda elegis un proveedor creca de su ubicacion.
 
-Modificar el archivo [Resolv.conf_(Español)](/index.php/Resolv.conf_(Espa%C3%B1ol) "Resolv.conf (Español)") y reemplazar el conjunto actual de direcciones del _resolver_ con _localhost_:
+Modificar el archivo [Resolv.conf_(Español)](/index.php/Resolv.conf_(Espa%C3%B1ol) "Resolv.conf (Español)") y reemplazar el conjunto actual de direcciones del *resolver* con *localhost*:
 
 ```
 nameserver 127.0.0.1
@@ -72,7 +72,6 @@ Reinicie `dnscrypt-proxy.service` y `unbound.service` para aplicar los cambios.
 Configure dnsmasq como una [caché DNS local](/index.php/Dnsmasq_(Espa%C3%B1ol)#Configuraci.C3.B3n_de_la_cach.C3.A9_DNS "Dnsmasq (Español)"). He aquí la configuración básica para trabajar con DNSCrypt:
 
  `/etc/dnsmasq.conf` 
-
 ```
 no-resolv
 server=127.0.0.2#2053
@@ -86,7 +85,6 @@ Si ha configurado DNSCrypt para usar un «resolver» con la validación DNSSEC a
 Configure DNSCrypt para escuchar en `127.0.0.2`, donde dnsmasq realizará la consulta:
 
  `/etc/conf.d/dnscrypt-proxy` 
-
 ```
 DNSCRYPT_LOCALIP=127.0.0.2
 DNSCRYPT_LOCALPORT=2053
@@ -105,7 +103,7 @@ options edns0
 
 ```
 
-También es posible que desee agregar el siguiente argumento a _dnscrypt-proxy_:
+También es posible que desee agregar el siguiente argumento a *dnscrypt-proxy*:
 
 ```
 --edns-payload-size=<bytes>
@@ -116,7 +114,7 @@ El tamaño por defecto es **1252** bytes, con valores de hasta **4096** siguen s
 
 #### Test de EDNS0
 
-Haga uso del [DNS Reply Size Test Server](https://www.dns-oarc.net/oarc/services/replysizetest), utilizando la herramienta de línea de órdenes _dig_, que forma parte del paquete [dnsutils](https://www.archlinux.org/packages/?name=dnsutils) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"), para emitir una consulta TXT para el nombre _rs.dns-oarc.net_:
+Haga uso del [DNS Reply Size Test Server](https://www.dns-oarc.net/oarc/services/replysizetest), utilizando la herramienta de línea de órdenes *dig*, que forma parte del paquete [dnsutils](https://www.archlinux.org/packages/?name=dnsutils) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"), para emitir una consulta TXT para el nombre *rs.dns-oarc.net*:
 
 ```
 $ dig +short rs.dns-oarc.net txt

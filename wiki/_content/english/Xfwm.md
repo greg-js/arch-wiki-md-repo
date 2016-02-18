@@ -42,7 +42,7 @@ Most xfwm settings can be accessed through `xfwm4-settings`, for window behavior
 *   This compositor may cause video tearing in applications, see [#Video tearing](#Video_tearing).
 *   From Xfwm 4.12 onward, the compositor is enabled by default.
 
-To enable or disable the Xfwm compositor and adjust its settings, go to _Window Manager Tweaks_:
+To enable or disable the Xfwm compositor and adjust its settings, go to *Window Manager Tweaks*:
 
 ```
 $ xfwm4-tweaks-settings
@@ -55,7 +55,7 @@ Alternatively, it can be enabled with `--compositor`. For example:
 
 ### Window roll-up
 
-Double clicking the titlebar, or clicking _roll window up_ in the window menu, causes the window contents to disappear leaving only the titlebar. To disable this functionality with `xfconf`, run:
+Double clicking the titlebar, or clicking *roll window up* in the window menu, causes the window contents to disappear leaving only the titlebar. To disable this functionality with `xfconf`, run:
 
 ```
 $ xfconf-query -c xfwm4 -p /general/mousewheel_rollup -s false
@@ -72,7 +72,7 @@ $ xfconf-query -c xfwm4 -p /general/tile_on_move -s true
 
 ```
 
-Alternatively, (un)check _Window Manager Tweaks_ > _Accessibility_ > _Automatically tile windows when moving toward the screen edge_.
+Alternatively, (un)check *Window Manager Tweaks* > *Accessibility* > *Automatically tile windows when moving toward the screen edge*.
 
 ### Extra settings provided by the xfce settings manager
 
@@ -102,14 +102,13 @@ This is fixed by [installing](/index.php/Installing "Installing") [xfce4-setting
 
 ### Number of workspaces changes unexpectedly
 
-Keep in mind _Xfwm_ assigns shortcuts to adding and removing workspaces. By default these are `Alt+Delete` and `Alt+Insert`, respectively.
+Keep in mind *Xfwm* assigns shortcuts to adding and removing workspaces. By default these are `Alt+Delete` and `Alt+Insert`, respectively.
 
 If the number of workspaces resets at login, change the amount **after** Xfwm is started. This is ensured by the `sleep` command. [[1]](https://bugs.launchpad.net/ubuntu/+source/xfwm4/+bug/787934)
 
  `~/.xinitrc` 
-
 ```
-(sleep 3 && xfconf-query -v -c xfwm4 -p /general/workspace_count -s _number_) &
+(sleep 3 && xfconf-query -v -c xfwm4 -p /general/workspace_count -s *number*) &
 exec xfwm4
 
 ```
@@ -117,17 +116,16 @@ exec xfwm4
 or, from [xfce4-session](https://www.archlinux.org/packages/?name=xfce4-session):
 
  `~/.config/autostart/workspace.desktop` 
-
 ```
 [Desktop Entry]
-Exec=sh -c "sleep 3 && xfconf-query -v -c xfwm4 -p /general/workspace_count -s _number_"
+Exec=sh -c "sleep 3 && xfconf-query -v -c xfwm4 -p /general/workspace_count -s *number*"
 ```
 
 See also: [Logout alters workspaces](http://forum.xfce.org/viewtopic.php?id=6056)
 
 ### Video tearing
 
-If you experience video tearing whilst using Xfwm, open _xfwm4-tweaks-settings_, navigate to the compositor tab and tick the _Synchronize drawing to the vertical blank_ option.
+If you experience video tearing whilst using Xfwm, open *xfwm4-tweaks-settings*, navigate to the compositor tab and tick the *Synchronize drawing to the vertical blank* option.
 
 If this does not fix the tearing, consider disabling Xfwm's composite manager and using an alternative [composite manager](/index.php/Composite_manager "Composite manager").
 

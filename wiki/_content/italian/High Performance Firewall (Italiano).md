@@ -36,7 +36,7 @@ First, create sub-network as in page [VLAN](/index.php/VLAN "VLAN").
 
 ## Il firewall
 
-Può essere realizzato un firewall/nat con _iptables_ in maniera semplice e ci sono molte guide su questo...
+Può essere realizzato un firewall/nat con *iptables* in maniera semplice e ci sono molte guide su questo...
 
 Pensate che dovrete lavorare con molto traffico, questo vuol dire un uso massivo di CPU, quindi mantenete poche regole, solo le strette necessarie. Accept all per default per fare NAT. Probabilmente è meglio favorire alcune porte, (80,443,25,110,21,20,53 etc), ricordatevi che ogni pacchetto che passa per il vostro firewall deve attraversare tutte le regole fino a che non ne trova una che lo riguarda, altrimenti cade nella politica di default.
 
@@ -131,7 +131,7 @@ net.ipv4.neigh.default.gc_thresh3 = 2048
 
 ```
 
-e date _sysctl -p_ per portarle al doppio!!! (non serve riavviare) con questi non si dovrebbero avere errori!!!!
+e date *sysctl -p* per portarle al doppio!!! (non serve riavviare) con questi non si dovrebbero avere errori!!!!
 
 La prossima parte richiede una comprensione su buckets e conntracks e hashsize (il modo in cui iptable gestisce le connessione nat). Esiste un buon documento su questo [qui](http://www.wallfire.org/misc/netfilter_conntrack_perf.txt) (in Inglese). L'autore consiglia di leggerlo!!!! Qualcosa è cambiato da quanto IPtables è conosciuto come Netfilter.
 
@@ -145,9 +145,9 @@ MODULES=(8021q 'nf_conntrack hashsize=1048576' nf_conntrack_ftp
 
 L'ultima è solo per evitare alcuni problemi che abbiamo con con le connessioni ftp.
 
-'**nf_conntrack hashsize=1048576'** aumenta il numero dell' hashsize (aumenta la memoria dedicata al NAT) (è necessario riavviare o **ricaricare il modulo** :-) controllate con _dmesg | grep conntrack_)
+'**nf_conntrack hashsize=1048576'** aumenta il numero dell' hashsize (aumenta la memoria dedicata al NAT) (è necessario riavviare o **ricaricare il modulo** :-) controllate con *dmesg | grep conntrack*)
 
-Poi mettiamo qualcosa di simile nel file _/etc/sysctl.d/99-sysctl.conf_
+Poi mettiamo qualcosa di simile nel file */etc/sysctl.d/99-sysctl.conf*
 
 ```
 ...
@@ -180,7 +180,7 @@ Un esempio [qui](http://carlost.890m.com/conntrack.png).
 
 Abbiamo 3 grandi accessi ad Internet!!! Questo perchè abbiamo a che fare con 3 gruppi di IP di classe C. Quindi abbiamo 3 traffici in entrata da gestire, ma solo uno in uscita!!! Il nostro gateway di default.
 
-Per prima cosa dobbiamo mettere delle nuove tabelle nel file _/etc/iproute2/rt_tables_
+Per prima cosa dobbiamo mettere delle nuove tabelle nel file */etc/iproute2/rt_tables*
 
 ```
 # echo 200 PRO_1 >> /etc/iproute2/rt_tables

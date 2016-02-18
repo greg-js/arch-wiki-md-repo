@@ -1,4 +1,4 @@
-Este artículo trata los utilidades de los sistemas GNU/Linux denominadas utilidades _core_, como _less_, _ls_, y _grep_. El ámbito de este artículo incluye, pero no está limitado a, aquellas utilidades incluidas en el paquete de GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils). Lo siguiente son varios trucos y consejos y otras informaciones útiles relacionadas con estas utilidades.
+Este artículo trata los utilidades de los sistemas GNU/Linux denominadas utilidades *core*, como *less*, *ls*, y *grep*. El ámbito de este artículo incluye, pero no está limitado a, aquellas utilidades incluidas en el paquete de GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils). Lo siguiente son varios trucos y consejos y otras informaciones útiles relacionadas con estas utilidades.
 
 ## Contents
 
@@ -29,7 +29,7 @@ Este artículo trata los utilidades de los sistemas GNU/Linux denominadas utilid
 
 ## Comandos básicos
 
-La siguiente tabla lista los comandos de consola básicos que todo usuario linux debería conocer. Comandos en **negrita** son parte de la línea de comandos, otros son programas separados llamados desde la consola. Véase las siguientes secciones y _Artículos relacionados_ para más detalles.
+La siguiente tabla lista los comandos de consola básicos que todo usuario linux debería conocer. Comandos en **negrita** son parte de la línea de comandos, otros son programas separados llamados desde la consola. Véase las siguientes secciones y *Artículos relacionados* para más detalles.
 
 | Comando | Descripción | Ejemplo |
 | man | Muestra la página del manual para ese comando | man ed |
@@ -54,55 +54,55 @@ La siguiente tabla lista los comandos de consola básicos que todo usuario linux
 
 ## cat
 
-[cat](https://en.wikipedia.org/wiki/cat_(Unix) "wikipedia:cat (Unix)") (_catenate_) es una utilidad estándar de unix que concatena y lista ficheros.
+[cat](https://en.wikipedia.org/wiki/cat_(Unix) (*catenate*) es una utilidad estándar de unix que concatena y lista ficheros.
 
-*   Dado que _cat_ no es un comando integrado en la consola, en bastantes ocasiones encontrará más conveniente usar una [redirección (English)](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)"), por ejemplo en scripts, o si le preocupa el rendimiento . De hecho `< _file_` hace lo mismo que `cat _file_`.
+*   Dado que *cat* no es un comando integrado en la consola, en bastantes ocasiones encontrará más conveniente usar una [redirección (English)](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)"), por ejemplo en scripts, o si le preocupa el rendimiento . De hecho `< *file*` hace lo mismo que `cat *file*`.
 
-*   _cat_ es capaz de trabajar con múltiples líneas, aunque esto se ve a veces como una mala práctica.
+*   *cat* es capaz de trabajar con múltiples líneas, aunque esto se ve a veces como una mala práctica.
 
 ```
-$ cat << EOF >> _ruta/al/fichero_
-_primera linea_
+$ cat << EOF >> *ruta/al/fichero*
+*primera linea*
 ...
-_últimalinea_
+*últimalinea*
 EOF
 
 ```
 
-	Una alternativa mejor es el comando _echo_:
+	Una alternativa mejor es el comando *echo*:
 
 ```
 $ echo "\
-_primera línea_
+*primera línea*
 ...
-_última línea_" \
->> _ruta/al/fichero_
+*última línea*" \
+>> *ruta/al/fichero*
 
 ```
 
-*   Si necesita lista las lineas del fichero en orden inverso, existe una utilidad llamada tac [tac](https://en.wikipedia.org/wiki/tac_(Unix) "wikipedia:tac (Unix)") (_cat_ invertido).
+*   Si necesita lista las lineas del fichero en orden inverso, existe una utilidad llamada tac [tac](https://en.wikipedia.org/wiki/tac_(Unix) (*cat* invertido).
 
 ## dd
 
-[dd](https://en.wikipedia.org/wiki/dd_(Unix) "wikipedia:dd (Unix)") es un comando de sistemas operativos Unix y similares cuyo propósito principal es convertir y copiar un fichero.
+[dd](https://en.wikipedia.org/wiki/dd_(Unix) es un comando de sistemas operativos Unix y similares cuyo propósito principal es convertir y copiar un fichero.
 
-**Note:** _cp_ hace lo mismo que _dd_ sin pasarle argumentos pero no esta diseñado para procedimientos de borrado de discos más versátiles.
+**Note:** *cp* hace lo mismo que *dd* sin pasarle argumentos pero no esta diseñado para procedimientos de borrado de discos más versátiles.
 
 ### Comprobar el progreso de dd en ejecución
 
-Por defecto, no hay salida para _dd_ hasta que la tarea ha terminado. Con _kill_ y la señal `USR1` puede forzar a imprimir el estatus sin matar al programa. Habra una segunda terminal como root e introduzca el siguiente comando:
+Por defecto, no hay salida para *dd* hasta que la tarea ha terminado. Con *kill* y la señal `USR1` puede forzar a imprimir el estatus sin matar al programa. Habra una segunda terminal como root e introduzca el siguiente comando:
 
 ```
 # killall -USR1 dd
 
 ```
 
-**Note:** Esto afectará de igual manera a todas las instancias en ejecución de _dd_.
+**Note:** Esto afectará de igual manera a todas las instancias en ejecución de *dd*.
 
 Or:
 
 ```
-# kill -USR1 _pid_del_comando_dd_
+# kill -USR1 *pid_del_comando_dd*
 
 ```
 
@@ -113,7 +113,7 @@ For example:
 
 ```
 
-Esto provoca que _dd_ imprima de forma inmediatael progreso en la terminal. Por ejemplo:
+Esto provoca que *dd* imprima de forma inmediatael progreso en la terminal. Por ejemplo:
 
 ```
 605+0 records in
@@ -127,7 +127,7 @@ Esto provoca que _dd_ imprima de forma inmediatael progreso en la terminal. Por 
 Como alternative puede usar [pv](https://www.archlinux.org/packages/?name=pv) para monitorizar el pipeline de dd:
 
 ```
-# dd if=_/origen/de/flujo_de_archivo_ | pv -_opciones_de_monitorización_ -s _tamaño_del_archivo_ | dd of=_/destino/de/flujo_de_archivo_
+# dd if=*/origen/de/flujo_de_archivo* | pv -*opciones_de_monitorización* -s *tamaño_del_archivo* | dd of=*/destino/de/flujo_de_archivo*
 
 ```
 
@@ -144,13 +144,13 @@ copy() {
 Y usarlo con:
 
 ```
-# copy _/fichero/de/origen_ _/fichero/de/destino_
+# copy */fichero/de/origen* */fichero/de/destino*
 
 ```
 
 ### derivados de dd
 
-Otros programas por el estilo de _dd_ muestra un estatus de salida periódico, p.ej: una simple barra de progreso.
+Otros programas por el estilo de *dd* muestra un estatus de salida periódico, p.ej: una simple barra de progreso.
 
 	dcfldd 
 
@@ -162,17 +162,17 @@ Otros programas por el estilo de _dd_ muestra un estatus de salida periódico, p
 
 ## grep
 
-[grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") (de [ed](https://en.wikipedia.org/wiki/ed "wikipedia:ed") _g/re/p_, _global/regular expression/print_) es una utilidad para busqueda de texto en línea de comandos escrito originalmente para Unix. El comando _grep_ busca ficheros o en la entrada estándar de manera global líneas que coincidan con una expresión regular dada y las imprime a la salida estándar del programa.
+[grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") (de [ed](https://en.wikipedia.org/wiki/ed "wikipedia:ed") *g/re/p*, *global/regular expression/print*) es una utilidad para busqueda de texto en línea de comandos escrito originalmente para Unix. El comando *grep* busca ficheros o en la entrada estándar de manera global líneas que coincidan con una expresión regular dada y las imprime a la salida estándar del programa.
 
-*   Recuerde que _grep_ maneja ficheros files, por lo que un comando como `cat _archivo_ | grep _patrón_` es remplazable por `grep _patrón_ _archivo_`
+*   Recuerde que *grep* maneja ficheros files, por lo que un comando como `cat *archivo* | grep *patrón*` es remplazable por `grep *patrón* *archivo*`
 
-*   Alternativas a _grep_ optimizadas para codigo fuente existe , como [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) y [ack](https://www.archlinux.org/packages/?name=ack).
+*   Alternativas a *grep* optimizadas para codigo fuente existe , como [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) y [ack](https://www.archlinux.org/packages/?name=ack).
 
 ### Salida con colores
 
 La salida con colores de `grep` puede ser muy útil para aprender [expresiones regulares](https://en.wikipedia.org/wiki/regexp "wikipedia:regexp") y características adicionales de `grep`.
 
-Para habilitar el coloreado de _grep_ la siguiente entrada en el archivo de configuración de su terminal (p.ej:. si usa [Bash](/index.php/Bash "Bash")):
+Para habilitar el coloreado de *grep* la siguiente entrada en el archivo de configuración de su terminal (p.ej:. si usa [Bash](/index.php/Bash "Bash")):
 
  `~/.bashrc`  `alias grep='grep --color=auto'` 
 
@@ -192,14 +192,14 @@ export GREP_COLOR="1;32"
 Algunos comandos envían sus resultados a la salida de error estándar, por lo que grep no parece tener efecto aparente. En este caso redirija la salida de error a la salida estándar con:
 
 ```
-$ _comando_ 2>&1 | grep _argumentos_
+$ *comando* 2>&1 | grep *argumentos*
 
 ```
 
 o usando el método abreviado de Bash 4:
 
 ```
-$ _comando_ |& grep _argumentos_
+$ *comando* |& grep *argumentos*
 
 ```
 
@@ -222,7 +222,7 @@ Vea `man iconv` para más detalles.
 
 **Tip:** puede usar [recode](https://www.archlinux.org/packages/?name=recode) en lugar de iconv si no quiere tocar el mtime.
 
-Al contrario que [sed](#sed), _iconv_ no provee una opción para convertir remplazando el propio fichero. Sin embargo, `sponge` puede usarse para tal fin, esta incluido en [moreutils](https://www.archlinux.org/packages/?name=moreutils).
+Al contrario que [sed](#sed), *iconv* no provee una opción para convertir remplazando el propio fichero. Sin embargo, `sponge` puede usarse para tal fin, esta incluido en [moreutils](https://www.archlinux.org/packages/?name=moreutils).
 
 ```
 $ iconv -f WINDOWS-1251 -t UTF-8 foobar.txt | sponge foobar.txt
@@ -235,7 +235,7 @@ Vea `man sponge` para más detalles.
 
 [ip](https://en.wikipedia.org/wiki/Iproute2 "wikipedia:Iproute2") permite mostrar información sobre los dispositivos de red, direcciones IP, tablas de enrutamiento y otros objetos en la pila de procotolos [IP](https://en.wikipedia.org/wiki/Internet_Protocol "wikipedia:Internet Protocol") de Linux. Añadiendo varios comandos, puede manipular y configurar la mayoría de estos objetos.
 
-**Note:** La utilidad _ip_ la provee el paquete [iproute2](https://www.archlinux.org/packages/?name=iproute2), que está incluido en el grupo [base](https://www.archlinux.org/groups/x86_64/base/).
+**Note:** La utilidad *ip* la provee el paquete [iproute2](https://www.archlinux.org/packages/?name=iproute2), que está incluido en el grupo [base](https://www.archlinux.org/groups/x86_64/base/).
 
 | Objecto | Propósito | Nombre de página en el manual |
 | ip addr | manejo de dirección de protocolo | ip-address |
@@ -258,13 +258,13 @@ Vea `man sponge` para más detalles.
 
 El comando `help` está disponible para todos los objetos. Por ejemplo, escribiendo `ip addr help` se mostrará la sintaxis de comando disponible para el objeto address. Para un uso avanzado véase [documentación iproute2](http://www.policyrouting.org/iproute2.doc.html).
 
-El artículo [Configuración de Red](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)") muestra como el comando _ip_ es usado en la práctica para varias tareas típicas.
+El artículo [Configuración de Red](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)") muestra como el comando *ip* es usado en la práctica para varias tareas típicas.
 
-**Nota:** Puede que esté familiarizado con el comando [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") , que era usado versiones anteriores de Linux para la configuración de interfaces. Ahora está obsoleto en Arch Linux; debería usar _ip_ en su lugar.
+**Nota:** Puede que esté familiarizado con el comando [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") , que era usado versiones anteriores de Linux para la configuración de interfaces. Ahora está obsoleto en Arch Linux; debería usar *ip* en su lugar.
 
 ## less
 
-[less](https://en.wikipedia.org/wiki/less_(Unix) "wikipedia:less (Unix)") es un visualizados de archivos de texto en consola. Al contrario que otros visualizadores similares como [more](https://en.wikipedia.org/wiki/more_(command) "wikipedia:more (command)") y [pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)"), _less_ ofrece una interfaz mucho más avanzada y completa [feature-set](http://www.greenwoodsoftware.com/less/faq.html).
+[less](https://en.wikipedia.org/wiki/less_(Unix) es un visualizados de archivos de texto en consola. Al contrario que otros visualizadores similares como [more](https://en.wikipedia.org/wiki/more_(command) y [pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)"), *less* ofrece una interfaz mucho más avanzada y completa [feature-set](http://www.greenwoodsoftware.com/less/faq.html).
 
 Véase [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") para más alternativas.
 
@@ -273,7 +273,6 @@ Véase [List of applications#Terminal pagers](/index.php/List_of_applications#Te
 Añada las siguientes líneas a su archivo de configuración de la terminal:
 
  `~/.bashrc` 
-
 ```
 export LESS=-R
 export LESS_TERMCAP_me=$(printf '\e[0m')
@@ -289,10 +288,9 @@ Cambio los valores a su gusto. Referencias: [ANSI escape code](https://en.wikipe
 
 ### Salida en color mediante wrappers
 
-Puede habilitar el resaltado de sintaxis en _less_. Primero, instale [source-highlight](https://www.archlinux.org/packages/?name=source-highlight), y a continuación añada estás lineas a su archivo de configuración de la terminal:
+Puede habilitar el resaltado de sintaxis en *less*. Primero, instale [source-highlight](https://www.archlinux.org/packages/?name=source-highlight), y a continuación añada estás lineas a su archivo de configuración de la terminal:
 
  `~/.bashrc` 
-
 ```
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS='-R '
@@ -303,41 +301,39 @@ Usuarios asíduos de la línea de comandos pueden querar instalar [lesspipe](htt
 
 Los usarios puede listar archivos comprimidos dentro de un archivador usando su visualizador:
 
- `$ less _compressed_file_.tar.gz` 
-
+ `$ less *compressed_file*.tar.gz` 
 ```
 ==> usa archivo_tar:fichero_contenido para ver un fichero en el archivador
--rw------- _usuario_/_grupo_  695 2008-01-04 19:24 _archivo_comprimido_/_contenido1_
--rw------- _usuario_/_grupo_   43 2007-11-07 11:17 _archivo_comprimido_/_contenido2_
-_archivo_comprimido_.tar.gz (END)
+-rw------- *usuario*/*grupo*  695 2008-01-04 19:24 *archivo_comprimido*/*contenido1*
+-rw------- *usuario*/*grupo*   43 2007-11-07 11:17 *archivo_comprimido*/*contenido2*
+*archivo_comprimido*.tar.gz (END)
 ```
 
-_lesspipe_ también concede a _less_ la capacidad para interactuar con ficheros que no sean archivadores, sirviendo como alternativa para el comando específico asociado a según el tipo de archivo en concreto (como ver HTML mediante [python-html2text](https://www.archlinux.org/packages/?name=python-html2text)).
+*lesspipe* también concede a *less* la capacidad para interactuar con ficheros que no sean archivadores, sirviendo como alternativa para el comando específico asociado a según el tipo de archivo en concreto (como ver HTML mediante [python-html2text](https://www.archlinux.org/packages/?name=python-html2text)).
 
-Vuelva a loguearse tras instalar _lesspipe_ para activarlo, o usando source `/etc/profile.d/lesspipe.sh`.
+Vuelva a loguearse tras instalar *lesspipe* para activarlo, o usando source `/etc/profile.d/lesspipe.sh`.
 
 ### Vim como visualizador alternativo
 
-[Vim](/index.php/Vim "Vim") (_visual editor improved_) tiene un script para ver el contenido de fichero de texto, binarios, directorios. Añada la siguiente línea a su archivo de configuración de la terminal para usarlo como visualizador:
+[Vim](/index.php/Vim "Vim") (*visual editor improved*) tiene un script para ver el contenido de fichero de texto, binarios, directorios. Añada la siguiente línea a su archivo de configuración de la terminal para usarlo como visualizador:
 
  `~/.bashrc`  `alias less='/usr/share/vim/vim74/macros/less.sh'` 
 
-Existe una alternativa a la macro _less.sh_, que puede funcionar como la variable de entorno `PAGER`. Instale [vimpager](https://www.archlinux.org/packages/?name=vimpager) añada lo siguiente a su archivo de configuración de la terminal:
+Existe una alternativa a la macro *less.sh*, que puede funcionar como la variable de entorno `PAGER`. Instale [vimpager](https://www.archlinux.org/packages/?name=vimpager) añada lo siguiente a su archivo de configuración de la terminal:
 
  `~/.bashrc` 
-
 ```
 export PAGER='vimpager'
 alias less=$PAGER
 ```
 
-Ahora los programas que use la variable de entorno `PAGER`, como [git](/index.php/Git "Git"), usarán _vim_ como un visualizador.
+Ahora los programas que use la variable de entorno `PAGER`, como [git](/index.php/Git "Git"), usarán *vim* como un visualizador.
 
 ### Salida coloreada cuando lee de entrada estándar
 
 **Nota:** Se recomienda añadir [#Salida en color mediante variables de entorno](#Salida_en_color_mediante_variables_de_entorno) a su `~/.bashrc` o `~/.zshrc`, ya que lo siguiente esta basado en `export LESS=R`
 
-Cuando ejecuta un comando y redirige su [salida estándar](https://en.wikipedia.org/wiki/Standard_output "wikipedia:Standard output") (_stdout_) a _less_ para visualizarla (p.ej: `pacman -Qe | less`), puede encontrarse con que la salida ya no sale coloreada. Esto suele pasar porque el programa intentar detectar si su _salida estándar_ es un terminal interactivo, en cuyo caso imprime el texto coloreado,y en caso contrario no. Esto es un buen comportamiento cuando quiere redirigir la _salida estándar_ a un fichero, p.ej: `pacman -Qe > pkglst-backup.txt`, pero menos indicado cuando quiere visualizar la salid con `less`.
+Cuando ejecuta un comando y redirige su [salida estándar](https://en.wikipedia.org/wiki/Standard_output "wikipedia:Standard output") (*stdout*) a *less* para visualizarla (p.ej: `pacman -Qe | less`), puede encontrarse con que la salida ya no sale coloreada. Esto suele pasar porque el programa intentar detectar si su *salida estándar* es un terminal interactivo, en cuyo caso imprime el texto coloreado,y en caso contrario no. Esto es un buen comportamiento cuando quiere redirigir la *salida estándar* a un fichero, p.ej: `pacman -Qe > pkglst-backup.txt`, pero menos indicado cuando quiere visualizar la salid con `less`.
 
 Algunos programas proveen una opción para deshabilitar la detección de tty interactiva:
 
@@ -346,36 +342,35 @@ Algunos programas proveen una opción para deshabilitar la detección de tty int
 
 ```
 
-En el caso de que el programa no proporcione una opción similar, es posible engañarlo para que crea que la _salida estándar_ es un terminal interactivo con las siguientes utilidades:
+En el caso de que el programa no proporcione una opción similar, es posible engañarlo para que crea que la *salida estándar* es un terminal interactivo con las siguientes utilidades:
 
 *   **stdoutisatty** — Un pequeño programa que captura la llamada a la función `isatty` .
 
 	[https://github.com/lilydjwg/stdoutisatty](https://github.com/lilydjwg/stdoutisatty). || [stdoutisatty-git](https://aur.archlinux.org/packages/stdoutisatty-git/)
 
-	Ejemplo: `stdoutisatty _program_ | less`
+	Ejemplo: `stdoutisatty *program* | less`
 
 *   **socat** — Un relevo para transferencia de datos bidireccional entre dos canales de datos independientes. Esta basado en el programa de GNU [readline](https://www.archlinux.org/packages/?name=readline).
 
 	[http://www.dest-unreach.org/socat/](http://www.dest-unreach.org/socat/) || [socat](https://www.archlinux.org/packages/?name=socat)
 
-	Ejemplo: `socat EXEC:"_program_",pty STDIO | less`
+	Ejemplo: `socat EXEC:"*program*",pty STDIO | less`
 
 *   **[script](https://en.wikipedia.org/wiki/Script_(Unix) "wikipedia:Script (Unix)")** — Una utilidad que hace typescript de una sesión de terminal.
 
 	[http://man7.org/linux/man-pages/man1/script.1.html](http://man7.org/linux/man-pages/man1/script.1.html) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
-	Ejemplo: `script -fqc "_program_" | less` or [[2]](http://stackoverflow.com/questions/1401002/trick-an-application-into-thinking-its-stdin-is-interactive-not-a-pipe/20401674#20401674)
+	Ejemplo: `script -fqc "*program*" | less` or [[2]](http://stackoverflow.com/questions/1401002/trick-an-application-into-thinking-its-stdin-is-interactive-not-a-pipe/20401674#20401674)
 
-*   **unbuffer** — Un script basado en _sh_ y [Tcl](http://tcl.tk/).
+*   **unbuffer** — Un script basado en *sh* y [Tcl](http://tcl.tk/).
 
 	[http://expect.sourceforge.net/example/unbuffer.man.html](http://expect.sourceforge.net/example/unbuffer.man.html) || [expect](https://www.archlinux.org/packages/?name=expect)
 
-	Ejemplo: `unbuffer _program_ | less`
+	Ejemplo: `unbuffer *program* | less`
 
 De forma alternativa, usando el módulo [zpty](http://zsh.sourceforge.net/Doc/Release/Zsh-Modules.html#The-zsh_002fzpty-Module) de [zsh](/index.php/Zsh "Zsh"): [[3]](http://lilydjwg.is-programmer.com/2011/6/29/using-zpty-module-of-zsh.27677.html)
 
  `~/.zshrc` 
-
 ```
 zmodload zsh/zpty
 
@@ -397,34 +392,34 @@ ptyless() {
 Uso:
 
 ```
-$ ptyless _program_
+$ ptyless *program*
 
 ```
 
 Para redirigirlo a un visualizador (less en este ejemplo):
 
 ```
-$ pty _program_ | less
+$ pty *program* | less
 
 ```
 
 ## ls
 
-[ls](https://en.wikipedia.org/wiki/ls "wikipedia:ls") (_list_) es un comando para lista fichero en sistemas operativos Unix y similares.
+[ls](https://en.wikipedia.org/wiki/ls "wikipedia:ls") (*list*) es un comando para lista fichero en sistemas operativos Unix y similares.
 
-*   _ls_ puede listar [permisos de ficheros](/index.php/File_permissions_and_attributes#Viewing_permissions "File permissions and attributes").
+*   *ls* puede listar [permisos de ficheros](/index.php/File_permissions_and_attributes#Viewing_permissions "File permissions and attributes").
 
 *   Salida coloreada puede ser habilitadac con un simple alias. El fichero `~/.bashrc` debería tener la siguiente entrada copiada de `/etc/skel/.bashrc`:
 
 	`alias ls='ls --color=auto'`
 
-El siguiente paso mejorará aún más la salida coloreada de _ls_; por ejemplo, enlaces simbólicos rotos (huérfanos) se mostrarán en un tono rojo. Añada la siguiente línea a su archivo de configuración de la terminal:
+El siguiente paso mejorará aún más la salida coloreada de *ls*; por ejemplo, enlaces simbólicos rotos (huérfanos) se mostrarán en un tono rojo. Añada la siguiente línea a su archivo de configuración de la terminal:
 
 	`eval $(dircolors -b)`
 
 ## mkdir
 
-[mkdir](https://en.wikipedia.org/wiki/mkdir "wikipedia:mkdir") (_make directory_) es un comando para crear directorios.
+[mkdir](https://en.wikipedia.org/wiki/mkdir "wikipedia:mkdir") (*make directory*) es un comando para crear directorios.
 
 *   Para crear un directorio y toda su jerarquía, es usado el argumento `-p`, de otra forma se monstraría un error. Como se supone que los usuario saben lo que quieren, ,el argumento `-p` puede usarse por defecto:
 
@@ -432,37 +427,37 @@ El siguiente paso mejorará aún más la salida coloreada de _ls_; por ejemplo, 
 
 	El argumento `-v` hace que la salida sea más detallada.
 
-*   Cambiar los permisos con _chmod_ tras crear el directorio no es necesario pues la opción `-m` permite definir los permisos de acceso.
+*   Cambiar los permisos con *chmod* tras crear el directorio no es necesario pues la opción `-m` permite definir los permisos de acceso.
 
-**Sugerencia:** Si tan solo quiere un directorio temporal, una mejor alternativa es [mktemp](https://en.wikipedia.org/wiki/Temporary_file "wikipedia:Temporary file") (_make termporary_): `mktemp -p`.
+**Sugerencia:** Si tan solo quiere un directorio temporal, una mejor alternativa es [mktemp](https://en.wikipedia.org/wiki/Temporary_file "wikipedia:Temporary file") (*make termporary*): `mktemp -p`.
 
 ## mv
 
-[mv](https://en.wikipedia.org/wiki/mv "wikipedia:mv") (_move_) es un comando para renombrar y mover ficheros y directorios.
+[mv](https://en.wikipedia.org/wiki/mv "wikipedia:mv") (*move*) es un comando para renombrar y mover ficheros y directorios.
 
 *   Puede ser muy peligroso, por lo que se recomiendo limitar su ámbito:
 
 	 `alias mv=' timeout 8 mv -iv'` 
 
-	Este alias suspende _mv_ tras ocho segundos, pide confirmación para borrar tres o más ficheros, lista las operaciones en curso y no almacena en el historial de la terminal si la terminal esta configurada para no almacenar aquellos comandos que empiezen por un espacio.
+	Este alias suspende *mv* tras ocho segundos, pide confirmación para borrar tres o más ficheros, lista las operaciones en curso y no almacena en el historial de la terminal si la terminal esta configurada para no almacenar aquellos comandos que empiezen por un espacio.
 
 ## rm
 
-[rm](https://en.wikipedia.org/wiki/rm_(Unix) "wikipedia:rm (Unix)") (_remove_) es un comando que sirve para eliminar ficheros y directorios.
+[rm](https://en.wikipedia.org/wiki/rm_(Unix) (*remove*) es un comando que sirve para eliminar ficheros y directorios.
 
 *   Puede ser muy peligroso, por lo que se recomiendo limitar su ámbito:
 
 	 `alias rm=' timeout 3 rm -Iv --one-file-system'` 
 
-	Este alias suspende _rm_ tras 3 segundos, pide confirmación para borrar tres o más ficheros, lista las operaciones en curso, no involucra mñas de un sistema de ficheros y no almacena en el historial de la terminal si la terminal esta configurada para no almacenar aquellos comandos que empiezen por un espacio. Sustituya `-I` por `-i` si prefiere confirmación por cada fichero.
+	Este alias suspende *rm* tras 3 segundos, pide confirmación para borrar tres o más ficheros, lista las operaciones en curso, no involucra mñas de un sistema de ficheros y no almacena en el historial de la terminal si la terminal esta configurada para no almacenar aquellos comandos que empiezen por un espacio. Sustituya `-I` por `-i` si prefiere confirmación por cada fichero.
 
 	Usuarios de Zsh pueden querer poner `noglob` antes de `timeout` para evitar expansiones implicitas.
 
-*   Para eliminar directorios que estén vacíos, use _rmdir_ ya que falla en cada de que el objetivo contengo ficheros.
+*   Para eliminar directorios que estén vacíos, use *rmdir* ya que falla en cada de que el objetivo contengo ficheros.
 
 ## sed
 
-[sed](https://en.wikipedia.org/wiki/sed "wikipedia:sed") (_stream editor_) is una utilidad de Unix que parsea y transforma texto
+[sed](https://en.wikipedia.org/wiki/sed "wikipedia:sed") (*stream editor*) is una utilidad de Unix que parsea y transforma texto
 
 Aquí hay un puñado [list](http://sed.sourceforge.net/sed1line.txt) de ejemplo de una línea de como usar sed muy útiles.
 
@@ -470,7 +465,7 @@ Aquí hay un puñado [list](http://sed.sourceforge.net/sed1line.txt) de ejemplo 
 
 ## seq
 
-**seq** (_sequence_) es una utilidad para generar secuencias de números. Hay alternativas integradas en la shell disponibles, por lo que es una buena práctica usarlas como se explica en [Wikipedia](https://en.wikipedia.org/wiki/Seq_(Unix) "wikipedia:Seq (Unix)").
+**seq** (*sequence*) es una utilidad para generar secuencias de números. Hay alternativas integradas en la shell disponibles, por lo que es una buena práctica usarlas como se explica en [Wikipedia](https://en.wikipedia.org/wiki/Seq_(Unix) "wikipedia:Seq (Unix)").
 
 ## Véase también
 

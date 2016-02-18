@@ -40,7 +40,7 @@ modify IgnorePkg array | dnf.conf <--”exclude” option (add/amend) | apt-mark
 | Undo a single specified transaction. | N/A | dnf history undo | n/a |
 | Mark a package previously installed as a dependency as explicitly required. | pacman -D --asexplicit | apt-mark manual | emerge --select |
 | Install package(s) as dependency / without marking as explicitly required. | pacman -S --asdeps | aptitude install 'pkg&M' | emerge -1 |
-| _**Package information management**_ |
+| ***Package information management*** |
 | Get a dump of the whole system information - Prints, Saves or similar the current state of the package management system. Preferred output is text or XML. (Note: Why either-or here? No tool offers the option to choose the output format.) | (see /var/lib/pacman/local) | (see /var/lib/rpm/Packages) | apt-cache stats | n/a | emerge --info |
 | Show all or most information about a package. The tools' verbosity for the default command vary. But with options, the tools are on par with each other. | pacman -[S|Q]i | dnf list, dnf info | apt-cache show / apt-cache policy | zypper info zypper if | emerge -S; emerge -pv; eix | xbps-query -RS |
 | Search for package(s) by searching the expression in name, description, short description. What exact fields are being searched by default varies in each tool. Mostly options bring tools on par. | pacman -Ss | dnf search | apt-cache search | zypper search zypper se [-s] | emerge -S | xbps-query -Rs |
@@ -81,12 +81,12 @@ remove offending line |
 | Prints a list of all installation sources including important information like URI, alias etc. | cat /etc/pacman.d/mirrorlist | cat /etc/yum.repos.d/* | apt-cache policy | zypper service-list | layman -l |
 | Disable an installation source for an operation | dnf --disablerepo= | emerge package::repo-to-use |
 | Download packages from a different version of the distribution than the one installed. | dnf --releasever= | apt-get install -t release package/ apt-get install package/release (deps not covered) | echo "category/package ~amd64" >> /etc/portage/package.keywords && emerge package |
-| _**Other commands**_ |
+| ***Other commands*** |
 | Start a shell to enter multiple commands in one session | apt-config shell | zypper shell |
-| _**Package Verification**_ |
+| ***Package Verification*** |
 | Single package | pacman -Qk[k] <package> | rpm -V <package> | debsums | rpm -V <package> | equery check |
 | All packages | pacman -Qk[k] | rpm -Va | debsums | rpm -Va | equery check |
-| _**Package Querying**_ |
+| ***Package Querying*** |
 | List installed local packages along with version | pacman -Q | rpm -qa | dpkg -l | zypper search -s; rpm -qa | emerge -e world |
 | Display local package information: Name, version, description, etc. | pacman -Qi | rpm -qi | dpkg -s / aptitude show | zypper info; rpm -qi | emerge -pv and emerge -S |
 | Display remote package information: Name, version, description, etc. | pacman -Si | dnf info | apt-cache show / aptitude show | zypper info | emerge -pv and emerge -S |
@@ -97,7 +97,7 @@ remove offending line |
 | Show the changelog of a package | pacman -Qc | rpm -q --changelog | apt-get changelog | equery changes -f |
 | Search locally installed package for names or descriptions | pacman -Qs | rpm -qa '*<str>*' | aptitude search '~i(~n name|~d description)' | eix -S -I |
 | List packages not required by any other package | pacman -Qt | package-cleanup --all --leaves | deborphan -anp1 |
-| _**Building Packages**_ |
+| ***Building Packages*** |
 | Build a package | makepkg -s | rpmbuild -ba (normal)
 mock (in chroot) | debuild | rpmbuild -ba; build; osc build | ebuild; quickpkg |
 | Check for possible packaging issues | namcap | rpmlint | lintian | rpmlint | repoman |

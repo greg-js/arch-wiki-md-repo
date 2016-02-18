@@ -91,7 +91,6 @@ Note, you should avoid running this command as root.
 Install the php plugin for uwsgi: [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php)
 
  `/etc/uwsgi/mysite.ini` 
-
 ```
 [uwsgi]
 ; maximum number of worker processes
@@ -147,7 +146,6 @@ location / {
 First create ini file that will point to your application:
 
  `/etc/uwsgi/application1.ini` 
-
 ```
 [uwsgi]
 chroot = /srv/http
@@ -180,7 +178,6 @@ You can try to run following:
 You will need to disable notifications within your service file:
 
  `/etc/systemd/system/multi-user.target.wants/uwsgi\@application1.service` 
-
 ```
 [Unit]
 Description=uWSGI service unit
@@ -227,7 +224,6 @@ Start the service:
 Edit `/srv/http/etc/nginx/nginx.conf` and add new `server` section within it that would contain at least following:
 
  `/srv/http/etc/nginx/nginx.conf` 
-
 ```
 ...
     server

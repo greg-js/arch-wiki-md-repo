@@ -1,18 +1,18 @@
 S-nail is a mail processing system with a command syntax reminiscent of ed with lines replaced by messages. It is intended to provide the functionality of the POSIX mailx command and offers (mostly optional) extensions for line editing, IDNA, MIME, S/MIME, SMTP and POP3 (and IMAP). It is usable as a mail batch language.
 
-This overview page was updated for version **v14.8.6** of S-nail. Excerpt of latest _NEWS_: bug fixes. _NEWS_ of older **v14.8.x** releases: [RFC 2231](//tools.ietf.org/html/rfc2231) support, mailing-list support (_followup-to_, _followup-to-honour_, _reply-to-honour_, **Lreply**, **mlist**, **mlsubscribe**), simple builtin HTML viewer, freely configurable spam-checker hooks, command line and addressee hardening (new **-.** option, _expandargv_ and _expandaddr_ variables), improved -t support, _expandaddr_ fine-tuning, new _smime-sign-message-digest_ variable, _-d_ / _debug_ offers real dry-run send tests, extended **@** message specification, new **source_if** command, many bug fixes and small improvements.
+This overview page was updated for version **v14.8.6** of S-nail. Excerpt of latest *NEWS*: bug fixes. *NEWS* of older **v14.8.x** releases: [RFC 2231](//tools.ietf.org/html/rfc2231) support, mailing-list support (*followup-to*, *followup-to-honour*, *reply-to-honour*, **Lreply**, **mlist**, **mlsubscribe**), simple builtin HTML viewer, freely configurable spam-checker hooks, command line and addressee hardening (new **-.** option, *expandargv* and *expandaddr* variables), improved -t support, *expandaddr* fine-tuning, new *smime-sign-message-digest* variable, *-d* / *debug* offers real dry-run send tests, extended **@** message specification, new **source_if** command, many bug fixes and small improvements.
 
 S-nail is a direct descendant of the BSD Mail program that was introduced in 1978 (itself superseding the simpler UNIX mail program) and used to introduce itself (in the Mail reference manual) as follows:
 
-	_Mail provides a simple and friendly environment for sending and receiving mail._
+	*Mail provides a simple and friendly environment for sending and receiving mail.*
 
-	_It divides incoming mail into its constituent messages and allows the user to deal with them in any order._
+	*It divides incoming mail into its constituent messages and allows the user to deal with them in any order.*
 
-	_In addition, it provides a set of ed‐like commands for manipulating messages and sending mail._
+	*In addition, it provides a set of ed‐like commands for manipulating messages and sending mail.*
 
-	_Mail offers the user simple editing capabilities to ease the composition of outgoing messages, as well as providing the ability to define and send to names which address groups of users._
+	*Mail offers the user simple editing capabilities to ease the composition of outgoing messages, as well as providing the ability to define and send to names which address groups of users.*
 
-S-nail is thus the _user side_ of the Unix mail system, whereas the _system side_ was traditionally taken by [sendmail](/index.php/Sendmail "Sendmail"). In Arch Linux S-nail supports direct mail delivery via SMTP, so that messages can be send directly to external SMTP servers: In this very mode of operation no local mail-transfer-agent (MTA) is necessary on the _system side_. (Note however that S-nail does not (yet) include a mail-queue mechanism and thus simply tries to send the message over SMTP, directly and immediately.)
+S-nail is thus the *user side* of the Unix mail system, whereas the *system side* was traditionally taken by [sendmail](/index.php/Sendmail "Sendmail"). In Arch Linux S-nail supports direct mail delivery via SMTP, so that messages can be send directly to external SMTP servers: In this very mode of operation no local mail-transfer-agent (MTA) is necessary on the *system side*. (Note however that S-nail does not (yet) include a mail-queue mechanism and thus simply tries to send the message over SMTP, directly and immediately.)
 
 ## Contents
 
@@ -35,7 +35,7 @@ Because the systemwide Arch Linux configuration file (`/etc/mail.rc`) brings in 
 
 ```
 
-Using the _-d_ebug flag results in a dry-run that doesn't perform any action for real (including ignorance of the current _save_ and _record_ settings). You can adjust the program which is used as a MTA by setting the variable _sendmail_ (fine-tuning via _sendmail-arguments_, _sendmail-no-default-arguments_, _sendmail-progname_, please see the manual, "Sending mail"):
+Using the *-d*ebug flag results in a dry-run that doesn't perform any action for real (including ignorance of the current *save* and *record* settings). You can adjust the program which is used as a MTA by setting the variable *sendmail* (fine-tuning via *sendmail-arguments*, *sendmail-no-default-arguments*, *sendmail-progname*, please see the manual, "Sending mail"):
 
 ```
 # < /etc/passwd mailx -Ssendmail=/usr/bin/sendmail -Ssendwait -s 'My password file content!' public-foo@bar.example
@@ -43,9 +43,9 @@ Using the _-d_ebug flag results in a dry-run that doesn't perform any action for
 
 ```
 
-By default message delivery is asynchronous, and S-nail will exit as soon as the prepared message has been passed over to the delivery mechanism (the MTA or the builtin SMTP MTA), stating only wether message preparation was successful (or not). If the _sendwait_ option is set, however, S-nail will wait for the started (builtin) MTA instance to exit and (instead) use the MTA exit status as its message delivery "success" or "failure" status.
+By default message delivery is asynchronous, and S-nail will exit as soon as the prepared message has been passed over to the delivery mechanism (the MTA or the builtin SMTP MTA), stating only wether message preparation was successful (or not). If the *sendwait* option is set, however, S-nail will wait for the started (builtin) MTA instance to exit and (instead) use the MTA exit status as its message delivery "success" or "failure" status.
 
-Sending messages to file and command "addresses" (not over the MTA) is possible if the _expandaddr_ option is set:
+Sending messages to file and command "addresses" (not over the MTA) is possible if the *expandaddr* option is set:
 
 ```
 # echo bla | mailx -Sexpandaddr -s test ./mbox.mbox
@@ -53,7 +53,7 @@ Sending messages to file and command "addresses" (not over the MTA) is possible 
 
 ```
 
-To avoid environmental noise scripts can (and should) "detach" from configuration files and use the _-S_ and _-X_ command line flags to create their own setup and run necessary commands, respectively. Also _expandaddr_ can be given a value and be used for address verification (the following for example allows _only_ network addressees), and the _-._ command line option will terminate option processing and turn on message send mode: together these form active barriers to prevent misinterpretation of address arguments as command line options and other injection attacks. E.g., the following example can be used "as is" (except for _-d_), provided that you have a **somefile.pdf**, somewhere; it sets the _record_ variable to the pathname of the folder used to record all outgoing mail, so that we then can look into the generated message:
+To avoid environmental noise scripts can (and should) "detach" from configuration files and use the *-S* and *-X* command line flags to create their own setup and run necessary commands, respectively. Also *expandaddr* can be given a value and be used for address verification (the following for example allows *only* network addressees), and the *-.* command line option will terminate option processing and turn on message send mode: together these form active barriers to prevent misinterpretation of address arguments as command line options and other injection attacks. E.g., the following example can be used "as is" (except for *-d*), provided that you have a **somefile.pdf**, somewhere; it sets the *record* variable to the pathname of the folder used to record all outgoing mail, so that we then can look into the generated message:
 
 ```
 # echo Body |
@@ -75,7 +75,9 @@ It is hoped that the S-nail manual page is helpful, and especially the sections 
 When in the following **USER** and **PASS** informations are specified as part of an URL (other possibilities exist) they must become URL percent encoded; S-nail offers the **urlencode** command which does this for you:
 
 ```
-# printf 'urlencode USER PASS\nx\n' | mailx -#
+# printf 'urlencode USER PASS
+x
+' | mailx -#
 
 ```
 
@@ -83,11 +85,15 @@ Of course: printf as well as S-nail / mailx are subject to your locale settings:
 
 ```
 # # In UTF-8:
-# printf 'urlencode SPAß\nx\n' | mailx -#
+# printf 'urlencode SPAß
+x
+' | mailx -#
   in: <SPAß> (5 bytes)
   out: <SPA%C3%9F> (9 bytes)
 # # In ISO-8859-1:
-# printf 'urlencode SPAß\nx\n' | mailx -#
+# printf 'urlencode SPAß
+x
+' | mailx -#
   in: <SPAß> (4 bytes)
   out: <SPA%DF> (6 bytes)
 
@@ -95,7 +101,7 @@ Of course: printf as well as S-nail / mailx are subject to your locale settings:
 
 ## First configuration adjustments
 
-Configuration files are the user-specific `$HOME/.mailrc` and the systemwide `/etc/mail.rc`, the latter of which is subject to the usual ArchLinux update mechanism. Thus let's leave that alone and place the following in the private user-specific configuration file, adjusting bold strings. By the way, by using the _-n_ command line argument or by setting the _$NAIL_NO_SYSTEM_RC_ environment variable it is possible to avoid that the global configuration file will be loaded, and by pointing the _MAILRC_ environment variable to `/dev/null` the unavoidable per-user configuration file can be turned behaviour neutral; we've used these possibilities in the detached script example above. And note that all the remaining examples in this document are based upon this configuration template, which simply sets some security and send mode basics:
+Configuration files are the user-specific `$HOME/.mailrc` and the systemwide `/etc/mail.rc`, the latter of which is subject to the usual ArchLinux update mechanism. Thus let's leave that alone and place the following in the private user-specific configuration file, adjusting bold strings. By the way, by using the *-n* command line argument or by setting the *$NAIL_NO_SYSTEM_RC* environment variable it is possible to avoid that the global configuration file will be loaded, and by pointing the *MAILRC* environment variable to `/dev/null` the unavoidable per-user configuration file can be turned behaviour neutral; we've used these possibilities in the detached script example above. And note that all the remaining examples in this document are based upon this configuration template, which simply sets some security and send mode basics:
 
 ```
 # All the examples require v15-compat!
@@ -113,7 +119,7 @@ set ssl-no-default-ca
 # Change this only when the remote server doesn't support it:
 # maybe use ssl-protocol-HOST (or -USER@HOST) syntax to define
 # such explicit exceptions, then, e.g.
-#     _ssl-protocol-**USER**@archlinux.org_="-ALL,+TLSv1.2"
+#     *ssl-protocol-**USER**@archlinux.org*="-ALL,+TLSv1.2"
 set ssl-protocol="-ALL,+TLSv1.2"
 
 # Explicitly define the list of ciphers, which may improve security,
@@ -151,8 +157,8 @@ set mimetypes-load-control
 
 # Default directory where we act in (relative to $HOME)
 set folder=mail
-# A leading "+" (often) means: under _folder_
-# _record_ is used to save copies of sent messages
+# A leading "+" (often) means: under *folder*
+# *record* is used to save copies of sent messages
 set MBOX=+mbox.mbox record=+sent.mbox DEAD=+dead.mbox
 
 # Define some shortcuts; now one may say, e.g., **file mymbo**
@@ -183,16 +189,16 @@ To send messages via the builtin SMTP (Simple Mail Transfer Protocol) client to 
 set smtp=smtp://**USER**:**PASS**@**HOST** \
     smtp-use-starttls
 
-# It may be necessary to set _hostname_ and/or _smtp-hostname_
-# if the "SERVER" of _smtp_ and "domain" of _from_ don't match.
-# Reading the "ON URL SYNTAX.." and _smtp_ manual entries may be worthwhile
+# It may be necessary to set *hostname* and/or *smtp-hostname*
+# if the "SERVER" of *smtp* and "domain" of *from* don't match.
+# Reading the "ON URL SYNTAX.." and *smtp* manual entries may be worthwhile
 set smtp=**(smtp[s]/submission)://[USER[:PASS]@]SERVER[:PORT]** \
     smtp-auth=**login[/plain]...** \
     smtp-use-starttls
 
 # E.g. here is a real life example of a very huge free mail provider
-# (Activate this account via _mailx -AXooglX_ from the command line,
-# or use the _? acc[ount] XooglX_ command in interactive mode)
+# (Activate this account via *mailx -AXooglX* from the command line,
+# or use the *? acc[ount] XooglX* command in interactive mode)
 account XooglX {
    # Localize options, forget them when changing the account
    localopts yes
@@ -202,10 +208,10 @@ account XooglX {
 }
 
 # And here is a pretty large one which does not allow sending mails
-# if there is a domain name mismatch _on the SMTP protocol level_,
-# which would bite us if the value of _from_ does not match, e.g.,
+# if there is a domain name mismatch *on the SMTP protocol level*,
+# which would bite us if the value of *from* does not match, e.g.,
 # for people who have a sXXXXeforge project and want to speak
-# with the mailing list under their project account (in _from_),
+# with the mailing list under their project account (in *from*),
 # still sending the message through their normal mail provider
 account XandeX {
    localopts yes
@@ -218,7 +224,7 @@ account XandeX {
 
 **Tip:** If you have enabled two-step authentication in Gmail, and you have added an application specific password for S-nail, you will want to use that password rather than your regular Gmail password, which may work without enabling the otherwise necessary "less secure apps".
 
-Note that, when storing passwords in `$HOME/.mailrc`, you should set appropriate permissions with `chmod 0600`. You can also set the _netrc-lookup_ option and store user credentials in `$HOME/.netrc` (or _$NETRC_) instead; e.g., here is a real life example that sets up SMTP, POP3 as well as IMAP, storing all user credentials in there:
+Note that, when storing passwords in `$HOME/.mailrc`, you should set appropriate permissions with `chmod 0600`. You can also set the *netrc-lookup* option and store user credentials in `$HOME/.netrc` (or *$NETRC*) instead; e.g., here is a real life example that sets up SMTP, POP3 as well as IMAP, storing all user credentials in there:
 
 ```
 account XandeX {
@@ -247,7 +253,7 @@ machine *.yXXXXx.ru login **USER** password **PASS**
 
 ```
 
-(Here **USER** and **PASS** are clear text, not URL encoded.) You can furtherly diversify things and use encrypted password storage, since ArchLinux compiles in password agent support. To adjust the example, simply don't specify the _password **PASS**_ token in `$HOME/.netrc` but instead uncomment the _agent-shell-lookup_ line in the example account above. The encrypted password storage `.pass.gpg` can be created like this:
+(Here **USER** and **PASS** are clear text, not URL encoded.) You can furtherly diversify things and use encrypted password storage, since ArchLinux compiles in password agent support. To adjust the example, simply don't specify the *password **PASS*** token in `$HOME/.netrc` but instead uncomment the *agent-shell-lookup* line in the example account above. The encrypted password storage `.pass.gpg` can be created like this:
 
 ```
 # echo **PASS** > .pass
@@ -256,7 +262,7 @@ machine *.yXXXXx.ru login **USER** password **PASS**
 
 ```
 
-Test the configuration (use the _-d_ command line option for a dry-run):
+Test the configuration (use the *-d* command line option for a dry-run):
 
 ```
 # echo test-body | mailx -vv -A XandeX -s test-subject **some@where**
@@ -276,17 +282,17 @@ The ArchLinux version of S-nail includes the builtin command line editor with hi
 set emptystart
 
 # When composing a message, let period `.' on a line by itself finalize
-# composition, before start directly into _$EDITOR_
+# composition, before start directly into *$EDITOR*
 set dot 
 set editalong
 
-# Start _$PAGER_ when a message is longer than VALUE lines;
-# without VALUE: screen _$LINES_
+# Start *$PAGER* when a message is longer than VALUE lines;
+# without VALUE: screen *$LINES*
 set crt=
 
-# Colourize headers when displaying messages (note that _$PAGER_ may
+# Colourize headers when displaying messages (note that *$PAGER* may
 # require special flags, e.g., less(1) needs the -R option; S-nail will
-# however set the _$LESS_ environment variable accordingly, but only if
+# however set the *$LESS* environment variable accordingly, but only if
 # that was not set before..)
 set colour-pager
 
@@ -331,7 +337,7 @@ The command **from** (**f**) is nice for an overview, e.g., **f '@<@arch linux'*
 *   **newmail** (dependent on the mailbox, checks for new mail and) prints a listing of new messages
 *   **he** (headers) reprints the message list
 *   **z-**, **z+**, **z0**, **z$** scroll through the header display (dependent on the terminal you are using the Home/End/PageUp/PageDown keys will be working aliases)
-*   **folders** shows a listing of mailboxes under the currently set _folder_
+*   **folders** shows a listing of mailboxes under the currently set *folder*
 *   **r** replies to all addressees of the given message(s)
 *   **R** replies to the sender of the given message(s)
 *   **Lreply** "mailing-list" reply to the given message(s)
@@ -345,9 +351,9 @@ The command **from** (**f**) is nice for an overview, e.g., **f '@<@arch linux'*
 
 ### Message composition
 
-Composition is started by typing **mail user@host** or by replying to a message. When you return from _$EDITOR_ (assuming _editalong_ is set) you'll find yourself in the native editor, where many operations can be performed using tilde escapes (short help available via **~?**). Of particular interest is **~@**, which either allows interactive editing of the attachment list, or, when given arguments, to add a(n) (comma-separated list of) additional attachment(s).
+Composition is started by typing **mail user@host** or by replying to a message. When you return from *$EDITOR* (assuming *editalong* is set) you'll find yourself in the native editor, where many operations can be performed using tilde escapes (short help available via **~?**). Of particular interest is **~@**, which either allows interactive editing of the attachment list, or, when given arguments, to add a(n) (comma-separated list of) additional attachment(s).
 
-To send the mail, signal EOT with `Ctrl+d` or type "." on its own line (the latter requires the _dot_ option).
+To send the mail, signal EOT with `Ctrl+d` or type "." on its own line (the latter requires the *dot* option).
 
 ## Using S/MIME
 
@@ -367,11 +373,11 @@ set smime-sign-cert=~/pair.pem \
 
 ```
 
-From now any message that is sent will be signed. The default message digest would be SHA1, as mandated by [RFC 5751](//tools.ietf.org/html/rfc5751). Note that S/MIME always works relative to the setting of the variable _from_, so it seems best to instead place the above settings in an **account**. The **verify** command verifies S/MIME messages, but note that S/MIME decryption and verification is solely based upon OpenSSL for now, which only supports messages with a simplicistic MIME structure. Sorry. By the way, if you miss hyperlinks and a table-of-content to get yourself going, the manual on the projects' website offers this; and the manual that ships with ArchLinux does, too, but needs the mdocmx(7) extension to be visible.
+From now any message that is sent will be signed. The default message digest would be SHA1, as mandated by [RFC 5751](//tools.ietf.org/html/rfc5751). Note that S/MIME always works relative to the setting of the variable *from*, so it seems best to instead place the above settings in an **account**. The **verify** command verifies S/MIME messages, but note that S/MIME decryption and verification is solely based upon OpenSSL for now, which only supports messages with a simplicistic MIME structure. Sorry. By the way, if you miss hyperlinks and a table-of-content to get yourself going, the manual on the projects' website offers this; and the manual that ships with ArchLinux does, too, but needs the mdocmx(7) extension to be visible.
 
 ## Workaround missing OpenPGP support
 
-S-nail doesn't yet support OpenPGP. However, using a macro it is possible to at least automatically verify inline _--clearsign_ed messages, and using command ghosts their usage becomes handy: e.g., use the following in resource file and you will be able to verify a clearsigned message by just typing **V**:
+S-nail doesn't yet support OpenPGP. However, using a macro it is possible to at least automatically verify inline *--clearsign*ed messages, and using command ghosts their usage becomes handy: e.g., use the following in resource file and you will be able to verify a clearsigned message by just typing **V**:
 
 ```
  define V {
@@ -413,7 +419,7 @@ S-nail doesn't yet support OpenPGP. However, using a macro it is possible to at 
 
 ## Using an IMAP mailbox
 
-The following is only a quick hint, it is also possible to define _folder_ to point to an IMAP server folder, for example.
+The following is only a quick hint, it is also possible to define *folder* to point to an IMAP server folder, for example.
 
 ```
 set v15-compat

@@ -77,7 +77,6 @@ $ export DISTCC_HOSTS="192.168.0.3,lzo,cpp 192.168.0.4,lzo,cpp"
 Example for setting the slave addresses in the hosts configuration file:
 
  `~/.distcc/hosts` 
-
 ```
 192.168.0.3,lzo,cpp 192.168.0.4,lzo,cpp
 
@@ -99,8 +98,8 @@ To use distcc-pump mode for a slave, users must start the compilation using the 
 Edit `/etc/makepkg.conf` in the following three sections:
 
 1.  BUILDENV has distcc unbanged i.e. without exclamation point.
-2.  Uncomment the _DISTCC_HOSTS_ line and add the IP addresses of the slaves then a slash and the number of threads they are to use. The subsequent IP address/threads should be separated by a white space. This list is ordered from most powerful to least powerful (processing power).
-3.  Adjust the MAKEFLAGS variable to correspond to the number of sum of the number of individual values specified for the max threads per server. In the example below, this is 5+3+3=11\. If users specify more than this sum, the extra theoretical thread(s) will be blocked by distcc and appear as such in monitoring utils such as _distccmon-text_ described below.
+2.  Uncomment the *DISTCC_HOSTS* line and add the IP addresses of the slaves then a slash and the number of threads they are to use. The subsequent IP address/threads should be separated by a white space. This list is ordered from most powerful to least powerful (processing power).
+3.  Adjust the MAKEFLAGS variable to correspond to the number of sum of the number of individual values specified for the max threads per server. In the example below, this is 5+3+3=11\. If users specify more than this sum, the extra theoretical thread(s) will be blocked by distcc and appear as such in monitoring utils such as *distccmon-text* described below.
 
 **Note:** It is common practice to define the number of threads as the number of physical core+hyperhtreaded cores (if they exist) plus 1\. Do this on a per-server basis, NOT in the MAKEFLAGS!
 
@@ -246,7 +245,6 @@ Make sure that the execute bit is set on all folders in the tree leading to the 
 Normally the executables will have some prefixes for example `gcc` could look like this: `arm-unknown-linux-gnueabihf-gcc`. To make the name consistent with the names distcc expects, execute the following script in the folder where the binary files reside:
 
  `create_links.sh` 
-
 ```
 #!/bin/bash
 for file in `ls`; do
@@ -278,7 +276,6 @@ $ ./create_links.sh arm-cortex_a8-linux-gnueabihf-
 Now adjust the distccd configuration so that the cross compiler will be found first in the path:
 
  `/etc/conf.d/distccd` 
-
 ```
 #
 # Parameters to be passed to distccd
@@ -308,7 +305,6 @@ $ journalctl $(which distccd) -e --since "5 min ago"
 Make sure that the tool chain works for the user account under which the distcc daemon process gets started (default is nobody). The following will test if the tool chain works for user nobody. In `/etc/passwd` change the login for the nobody user to the following:
 
  `$ cat /etc/passwd` 
-
 ```
 ...
 nobody:x:99:99:nobody:/:/bin/bash
@@ -355,7 +351,7 @@ CMake sometimes pass ["response file"](http://gcc.gnu.org/wiki/Response_Files) t
 
 #### Relocate $HOME/.distcc
 
-By default, distcc creates `$HOME/.distcc` which stores transient relevant info as it serves up work for nodes to compile. Create a directory named _.distcc_ in RAM such as /tmp and soft link to it in $HOME. This will avoid needless HDD read/writes and is particularly important for SSDs.
+By default, distcc creates `$HOME/.distcc` which stores transient relevant info as it serves up work for nodes to compile. Create a directory named *.distcc* in RAM such as /tmp and soft link to it in $HOME. This will avoid needless HDD read/writes and is particularly important for SSDs.
 
 ```
 $ mv $HOME/.distcc /tmp
@@ -368,7 +364,6 @@ Use systemd to re-create this directory on a reboot (the soft link will remain u
 Create the following tmpfile.
 
  `/etc/tmpfiles.d/tmpfs-create.conf` 
-
 ```
 d /tmp/.distcc 0755 <username> users -
 

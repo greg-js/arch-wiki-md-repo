@@ -151,4 +151,4 @@ xwd -root -out screenshot.xwd
 
 你可以按<Prt Scr>或者Apps->Accessories->Take Screenshot。
 
-_注意：如果<Prt Scr>提示找不到gnome-screenshot或者没有你的菜单项里没有“Take Screenshot”，那表示你需要安装[gnome-utils](https://www.archlinux.org/packages/?name=gnome-utils)软件包。_
+*注意：如果<Prt Scr>提示找不到gnome-screenshot或者没有你的菜单项里没有“Take Screenshot”，那表示你需要安装[gnome-utils](https://www.archlinux.org/packages/?name=gnome-utils)软件包。*

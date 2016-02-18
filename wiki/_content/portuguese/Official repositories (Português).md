@@ -1,4 +1,4 @@
-_Uma vez que existe uma enorme confusão acerca dos repositórios de Arch, esta wiki tenta explicar o seu significado:_
+*Uma vez que existe uma enorme confusão acerca dos repositórios de Arch, esta wiki tenta explicar o seu significado:*
 
 ## Contents
 
@@ -24,21 +24,21 @@ Isto funcionou por algum tempo, excepto quando os utilizadores de confiança se 
 
 ## [core]
 
-O repositório [core] pode ser encontrado no _core/os/i686_ ou _core/os/x86_64_ no teu mirror favorito. Contém os pacotes principais de Arch e algum software adicional e irá fornecer um sistema básico totalmente funcional.
+O repositório [core] pode ser encontrado no *core/os/i686* ou *core/os/x86_64* no teu mirror favorito. Contém os pacotes principais de Arch e algum software adicional e irá fornecer um sistema básico totalmente funcional.
 
-_O CD de Instalação não é mais do que um script de instalação e uma cópia do repositório [core]_
+*O CD de Instalação não é mais do que um script de instalação e uma cópia do repositório [core]*
 
 ## [extra]
 
-O repositório [extra] pode ser encontrado em _extra/os/i686_ ou _extra/os/x86_64_ no teu mirror favorito. Contém todos os pacotes oficiais de Arch que não foram para o [core]. Por exemplo: X.org, gerenciadores de janela, servidores web, reprodutores de media, línguas como Python, Ruby e Perl, e bastante mais.
+O repositório [extra] pode ser encontrado em *extra/os/i686* ou *extra/os/x86_64* no teu mirror favorito. Contém todos os pacotes oficiais de Arch que não foram para o [core]. Por exemplo: X.org, gerenciadores de janela, servidores web, reprodutores de media, línguas como Python, Ruby e Perl, e bastante mais.
 
 ## [community]
 
-O repositório [community] pode ser encontrado em _community/os/i686_ ou _community/os/x86_64_ no teu mirror favorito. Este é mantido pelos _Utilizadores de Confiança (UC)_ e faz parte do _Arch User Repository (AUR)_. Contém os pacotes do _AUR_ com votos suficientes ou que tenham sido adoptados por um _UC_.
+O repositório [community] pode ser encontrado em *community/os/i686* ou *community/os/x86_64* no teu mirror favorito. Este é mantido pelos *Utilizadores de Confiança (UC)* e faz parte do *Arch User Repository (AUR)*. Contém os pacotes do *AUR* com votos suficientes ou que tenham sido adoptados por um *UC*.
 
 ## [testing]
 
-O repositório [testing] pode ser encontrado em _testing/os/i686_ ou _testing/os/x86_64_ no teu mirror favorito. [testing] é especial. Este contém pacotes que são candidatos ao [core], [extra] ou ao [unstable]. Pacotes novos vão para o [testing] se:
+O repositório [testing] pode ser encontrado em *testing/os/i686* ou *testing/os/x86_64* no teu mirror favorito. [testing] é especial. Este contém pacotes que são candidatos ao [core], [extra] ou ao [unstable]. Pacotes novos vão para o [testing] se:
 
 *   podem danificar alguma coisa após o update e precisam de ser testados primeiro.
 *   exigem outros pacotes para ser reconstruidos. Neste caso, todos os pacotes que precisam de ser reconstruidos são colocados no [testing] primeiro e quando todos estiverem concluidos, são movidos para o repositório respectivo.

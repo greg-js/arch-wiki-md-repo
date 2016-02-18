@@ -1,6 +1,6 @@
 ThinkFinger es un controlador para el lector de huellas digitales SGS de la empresa Thomson Microelectronics que se monta en la mayoría de portátiles IBM/Lenovo ThinkPad.
 
-**Warning:** Las revisiones de ThinkFinger-svn por encima de la 72 requieren que cargue el nódulo _uinput_!
+**Warning:** Las revisiones de ThinkFinger-svn por encima de la 72 requieren que cargue el nódulo *uinput*!
 
 ## Contents
 
@@ -25,7 +25,7 @@ Consiga el paquete desde [aquí](https://aur.archlinux.org/packages.php?do_Detai
 
 ### TF-Tool
 
-Utilice _tf-tool_ para probar ThinkFinger. Tendrá que ejecutar esto como root debido a que se necesita acceso directo a los dispositivos usb. Ejecute _tf-tool --acquire_ para generar un archivo bir y _tf-tool --verify_ para ver si le identifica correctamente. _tf-tool --add-user <nombreusuario>_ adquiere y alamacena su huella digital en _/etc/pam_thinkfinger/nombreusuario.bir_, archivo necesario para una identificación con pam.
+Utilice *tf-tool* para probar ThinkFinger. Tendrá que ejecutar esto como root debido a que se necesita acceso directo a los dispositivos usb. Ejecute *tf-tool --acquire* para generar un archivo bir y *tf-tool --verify* para ver si le identifica correctamente. *tf-tool --add-user <nombreusuario>* adquiere y alamacena su huella digital en */etc/pam_thinkfinger/nombreusuario.bir*, archivo necesario para una identificación con pam.
 
 ## Pam
 
@@ -33,7 +33,7 @@ PAM ("Pluggable Authentication Module") es el módulo insertable de autentificac
 
 ### /etc/pam.d/login
 
-Cambie el archivo _/etc/pam.d/other_ para que se parezca a lo siguiente si quiere utilizar su huella digital para autentificarse a si mismo al ingresar al sistema:
+Cambie el archivo */etc/pam.d/other* para que se parezca a lo siguiente si quiere utilizar su huella digital para autentificarse a si mismo al ingresar al sistema:
 
 ```
 #%PAM-1.0
@@ -47,7 +47,7 @@ session        required        pam_unix.so
 
 ### /etc/pam.d/su
 
-Cambie este archivo para confirmar la orden _su_ con un suave movimiento circular con el dedo.
+Cambie este archivo para confirmar la orden *su* con un suave movimiento circular con el dedo.
 
 ```
 #%PAM-1.0
@@ -59,11 +59,11 @@ session        required        pam_unix.so
 
 ```
 
-**Tip:** No se olvide de Don't forget to do a _tf-tool --add-user root_ para usar esta característica!
+**Tip:** No se olvide de Don't forget to do a *tf-tool --add-user root* para usar esta característica!
 
 ### /etc/pam.d/sudo
 
-Cambie este archivo para confirmar la orden _sudo_ con un suave movimiento circular de su dedo.
+Cambie este archivo para confirmar la orden *sudo* con un suave movimiento circular de su dedo.
 
 ```
 #%PAM-1.0
@@ -158,7 +158,7 @@ Debido a esto, xscreensaver no será capaz de desbloquearse con el lector de hue
 
 [No soy un experto en PAM pero esto funciona, puede que esta sección necesite correcciones]
 
-Edite _/etc/pam.d/gdm_ como se hace en las secciones 3.1 y 3.2
+Edite */etc/pam.d/gdm* como se hace en las secciones 3.1 y 3.2
 
 Añada como primera fila del archivo:
 

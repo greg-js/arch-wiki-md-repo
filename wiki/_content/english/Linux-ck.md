@@ -138,7 +138,6 @@ The [boot loader](/index.php/Boot_loader "Boot loader") configuration needs to f
 This is an example if adding a custom entry if using [REFInd](/index.php/REFInd#Custom_Menu_Entries "REFInd"):
 
  `refind.conf` 
-
 ```
 menuentry Linux {
         icon EFI/refind/icons/os_linux.png
@@ -153,9 +152,9 @@ menuentry Linux {
 
 ### Running VirtualBox with Linux-ck
 
-VirtualBox works just fine with custom kernels such as Linux-ck _without_ the need to keep any of the official ARCH kernel-headers packages on the system!
+VirtualBox works just fine with custom kernels such as Linux-ck *without* the need to keep any of the official ARCH kernel-headers packages on the system!
 
-Do not forget to add users to the _vboxusers_ group:
+Do not forget to add users to the *vboxusers* group:
 
 ```
 # gpasswd -a USERNAME vboxusers

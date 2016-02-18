@@ -31,9 +31,9 @@ Suositeltavaa luettavaa: The Arch Linux [Beginners' guide](/index.php/Beginners%
 
 **A)** Arch Linuxin julkaisut tapahtuvat samaan aikaan isompien kernelpäivitysten kanssa. Ne ovat kuitenkin lähinnä /core-pakettivaraston tilannevedoksia ja asennusskriptin ominaisuuspäivityksiä. Rolling release -mallin ansiosta jokainen Arch Linux -järjestelmä pysyy ajan tasalla ja kehityksen kärjessä yhdellä komennolla.
 
-Tästä syystä uudet julkaisut eivät ole erityisen tärkeitä Arch-maailmassa, sillä rolling release -järjestelmä tekee uusista julkaisuista vanhentuneita heti pakettien päivittyessä uusiin versioihin. Jos etsit tapaa päivittää uusimpaan Arch Linux -julkaisuun, sinun ei tarvitse asentaa mitään uudestaan. Sinun tarvitsee vain ajaa _pacman -Syu_ -komento, ja järjestelmäsi on pian identtinen ihkauuden asennuksen kanssa.
+Tästä syystä uudet julkaisut eivät ole erityisen tärkeitä Arch-maailmassa, sillä rolling release -järjestelmä tekee uusista julkaisuista vanhentuneita heti pakettien päivittyessä uusiin versioihin. Jos etsit tapaa päivittää uusimpaan Arch Linux -julkaisuun, sinun ei tarvitse asentaa mitään uudestaan. Sinun tarvitsee vain ajaa *pacman -Syu* -komento, ja järjestelmäsi on pian identtinen ihkauuden asennuksen kanssa.
 
-Samasta syystä uudet Arch Linux -julkaisut eivät yleensä ole täynnä uusia ja jännittäviä ominaisuuksia. Kaikki uusi ja jännittävä julkaistaan tarvittaessa samalla kun pakettivaraston paketteja päivitetään, ja voidaan asentaa järjestelmään komennolla _pacman -Syu_.
+Samasta syystä uudet Arch Linux -julkaisut eivät yleensä ole täynnä uusia ja jännittäviä ominaisuuksia. Kaikki uusi ja jännittävä julkaistaan tarvittaessa samalla kun pakettivaraston paketteja päivitetään, ja voidaan asentaa järjestelmään komennolla *pacman -Syu*.
 
 ## Q) Arch tarvitsee enemmän/vähemmän julkisuutta (esim. mainontaa)
 

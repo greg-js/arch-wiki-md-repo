@@ -1,6 +1,6 @@
 This document will guide you through the process of installing [Arch Linux](/index.php/Arch_Linux "Arch Linux") using the [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Before installing, you are advised to skim over the [FAQ](/index.php/FAQ "FAQ").
 
-The community-maintained [ArchWiki](/index.php/Main_page "Main page") is the primary resource that should be consulted if issues arise. The [IRC channel](/index.php/IRC_channel "IRC channel") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) and the [forums](https://bbs.archlinux.org/) are also excellent resources if an answer cannot be found elsewhere. In accordance with [the Arch Way](/index.php/The_Arch_Way "The Arch Way"), you are encouraged to type `man _command_` to read the [man page](/index.php/Man_page "Man page") of any command you are unfamiliar with.
+The community-maintained [ArchWiki](/index.php/Main_page "Main page") is the primary resource that should be consulted if issues arise. The [IRC channel](/index.php/IRC_channel "IRC channel") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) and the [forums](https://bbs.archlinux.org/) are also excellent resources if an answer cannot be found elsewhere. In accordance with [the Arch Way](/index.php/The_Arch_Way "The Arch Way"), you are encouraged to type `man *command*` to read the [man page](/index.php/Man_page "Man page") of any command you are unfamiliar with.
 
 ## Contents
 
@@ -41,7 +41,7 @@ The community-maintained [ArchWiki](/index.php/Main_page "Main page") is the pri
 
 ## Preparation
 
-Arch Linux should run on any [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "wikipedia:P6 (microarchitecture)") compatible machine with a minimum of 256 MB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MB of disk space.
+Arch Linux should run on any [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) compatible machine with a minimum of 256 MB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MB of disk space.
 
 See [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") for instructions on downloading the installation medium, and methods for booting it to the target machine(s). This guide assumes you use the latest available version.
 
@@ -49,9 +49,9 @@ See [Category:Getting and installing Arch](/index.php/Category:Getting_and_insta
 
 Point the current boot device to the drive containing the Arch installation media. This is typically achieved by pressing a key during the [POST](https://en.wikipedia.org/wiki/Power-on_self_test "wikipedia:Power-on self test") phase, as indicated on the splash screen. Refer to your motherboard's manual for details.
 
-When the Arch menu appears, select _Boot Arch Linux_ and press `Enter` to enter the installation environment. See [README.bootparams](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams) for a list of [boot parameters](/index.php/Kernel_parameters#Configuration "Kernel parameters").
+When the Arch menu appears, select *Boot Arch Linux* and press `Enter` to enter the installation environment. See [README.bootparams](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams) for a list of [boot parameters](/index.php/Kernel_parameters#Configuration "Kernel parameters").
 
-You will be logged in as the root user and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt. _Zsh_ provides advanced [tab completion](http://zsh.sourceforge.net/Guide/zshguide06.html) and other features as part of the [grml config](http://grml.org/zsh/). For modifying or creating configuration files, typically in `/etc`, [nano](/index.php/Nano#Usage "Nano") and [vim](/index.php/Vim#Usage "Vim") are suggested.
+You will be logged in as the root user and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt. *Zsh* provides advanced [tab completion](http://zsh.sourceforge.net/Guide/zshguide06.html) and other features as part of the [grml config](http://grml.org/zsh/). For modifying or creating configuration files, typically in `/etc`, [nano](/index.php/Nano#Usage "Nano") and [vim](/index.php/Vim#Usage "Vim") are suggested.
 
 ### UEFI mode
 
@@ -73,14 +73,14 @@ The default [console keymap](/index.php/Keyboard_configuration_in_console "Keybo
 For example, to change the layout to `de-latin1`, run:
 
 ```
-# loadkeys _de-latin1_
+# loadkeys *de-latin1*
 
 ```
 
 If certain characters appear as white squares or other symbols, change the [console font](/index.php/Console_fonts "Console fonts"). For example:
 
 ```
-# setfont _lat9w-16_
+# setfont *lat9w-16*
 
 ```
 
@@ -90,10 +90,10 @@ If certain characters appear as white squares or other symbols, change the [cons
 
 The [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon is enabled on boot for wired devices, and will attempt to start a connection. To access captive portal login forms, use the [ELinks](/index.php/ELinks "ELinks") browser.
 
-Verify a connection was established, for example with _ping_. If none is available, proceed to [configure the network](/index.php/Network_configuration "Network configuration"); the examples below use [netctl](/index.php/Netctl "Netctl") to this purpose. To prevent conflicts, [stop](/index.php/Stop "Stop") the _dhcpcd_ service (replacing `enp0s25` with the correct wired interface):
+Verify a connection was established, for example with *ping*. If none is available, proceed to [configure the network](/index.php/Network_configuration "Network configuration"); the examples below use [netctl](/index.php/Netctl "Netctl") to this purpose. To prevent conflicts, [stop](/index.php/Stop "Stop") the *dhcpcd* service (replacing `enp0s25` with the correct wired interface):
 
 ```
-# systemctl stop dhcpcd@_enp0s25_.service
+# systemctl stop dhcpcd@*enp0s25*.service
 
 ```
 
@@ -104,7 +104,7 @@ Verify a connection was established, for example with _ping_. If none is availab
 List [available networks](/index.php/Wireless_network_configuration#Getting_some_useful_information "Wireless network configuration"), and make a connection for a specified interface:
 
 ```
-# wifi-menu -o _wlp2s0_
+# wifi-menu -o *wlp2s0*
 
 ```
 
@@ -115,14 +115,14 @@ The resulting configuration file is stored in `/etc/netctl`. For networks which 
 Several example profiles, such as for configuring a [static IP address](/index.php/Network_configuration#Static_IP_address "Network configuration"), are available. Copy the required one to `/etc/netctl`, for example `ethernet-static`:
 
 ```
-# cp /etc/netctl/examples/_ethernet-static_ /etc/netctl
+# cp /etc/netctl/examples/*ethernet-static* /etc/netctl
 
 ```
 
 Adjust the copy as needed, and enable it:
 
 ```
-# netctl start _ethernet-static_
+# netctl start *ethernet-static*
 
 ```
 
@@ -142,7 +142,7 @@ To check the service status, use `timedatectl status`.
 **Warning:**
 
 *   In general, partitioning or formatting will make existing data inaccessible and subject to being overwritten, i.e. destroyed, by subsequent operations. For this reason, all data that needs to be preserved must be backed up before proceeding.
-*   If dual-booting with an existing installation of Windows on a UEFI/GPT system, avoid reformatting the UEFI partition, as this includes the Windows _.efi_ file required to boot it. Furthermore, Arch must follow the same firmware boot mode and partitioning combination as Windows. See [Dual boot with Windows#Important information](/index.php/Dual_boot_with_Windows#Important_information "Dual boot with Windows").
+*   If dual-booting with an existing installation of Windows on a UEFI/GPT system, avoid reformatting the UEFI partition, as this includes the Windows *.efi* file required to boot it. Furthermore, Arch must follow the same firmware boot mode and partitioning combination as Windows. See [Dual boot with Windows#Important information](/index.php/Dual_boot_with_Windows#Important_information "Dual boot with Windows").
 
 In this step, the storage devices that will be used by the new system will be prepared. Read [Partitioning](/index.php/Partitioning "Partitioning") for a more general overview.
 
@@ -159,7 +159,7 @@ The first step is to identify the devices where the new system will be installed
 
 This will list all devices connected to your system along with their partition schemes, including that used to host and boot live Arch installation media (e.g. a USB drive). Not all devices listed will therefore be viable or appropriate mediums for installation. Results ending in `rom`, `loop` or `airoot` can be ignored.
 
-Devices (e.g. hard disks) will be listed as `sd_x_`, where `_x_` is a lower-case letter starting from `a` for the first device (`sda`), `b` for the second device (`sdb`), and so on. Existing partitions on those devices will be listed as `sd_xY_`, where `_Y_` is a number starting from `1` for the first partition, `2` for the second, and so on. In the example below, only one device is available (`sda`), and that device uses only one partition (`sda1`):
+Devices (e.g. hard disks) will be listed as `sd*x*`, where `*x*` is a lower-case letter starting from `a` for the first device (`sda`), `b` for the second device (`sdb`), and so on. Existing partitions on those devices will be listed as `sd*xY*`, where `*Y*` is a number starting from `1` for the first partition, `2` for the second, and so on. In the example below, only one device is available (`sda`), and that device uses only one partition (`sda1`):
 
 ```
 NAME            MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
@@ -168,7 +168,7 @@ sda               8:0    0    80G  0 disk
 
 ```
 
-The `sd_xY_` convention will be used in the examples provided below for partition tables, partitions, and file systems. As they are just examples, it is important to ensure that any necessary changes to device names, partition numbers, and/or partition sizes (etc.) are made. Do not just blindly copy and paste the commands.
+The `sd*xY*` convention will be used in the examples provided below for partition tables, partitions, and file systems. As they are just examples, it is important to ensure that any necessary changes to device names, partition numbers, and/or partition sizes (etc.) are made. Do not just blindly copy and paste the commands.
 
 If the existing partition scheme does not need to be changed, skip to [#File systems and swap](#File_systems_and_swap), otherwise continue reading the following section.
 
@@ -184,7 +184,7 @@ There are two types of partition table:
 Any existing partition table can be identified with the following command for each device:
 
 ```
-# parted /dev/sd_x_ print
+# parted /dev/sd*x* print
 
 ```
 
@@ -202,12 +202,12 @@ Devices may also be partitioned before booting the installation media, for examp
 
 #### Using parted in interactive mode
 
-All the examples provided below make use of _parted_, as it can be used for both UEFI/GPT and BIOS/MBR. It will be launched in _interactive mode_, which simplifies the partitioning process and reduces unnecessary repetition by automatically applying all partitioning commands to the specified device.
+All the examples provided below make use of *parted*, as it can be used for both UEFI/GPT and BIOS/MBR. It will be launched in *interactive mode*, which simplifies the partitioning process and reduces unnecessary repetition by automatically applying all partitioning commands to the specified device.
 
 In order to start operating on a device, execute:
 
 ```
-# parted /dev/sd_x_
+# parted /dev/sd*x*
 
 ```
 
@@ -236,7 +236,7 @@ You need to (re)create the partition table of a device when it has never been pa
 Open each device whose partition table must be (re)created with:
 
 ```
-# parted /dev/sd_x_
+# parted /dev/sd*x*
 
 ```
 
@@ -256,55 +256,53 @@ To create a new MBR/msdos partition table for BIOS systems instead, use:
 
 ### Partition schemes
 
-You can decide the number and size of the partitions the devices should be split into, and which directories will be used to mount the partitions in the installed system (also known as _mount points_). The mapping from partitions to directories is the [partition scheme](/index.php/Partitioning#Partition_scheme "Partitioning"), which must comply with the following requirements:
+You can decide the number and size of the partitions the devices should be split into, and which directories will be used to mount the partitions in the installed system (also known as *mount points*). The mapping from partitions to directories is the [partition scheme](/index.php/Partitioning#Partition_scheme "Partitioning"), which must comply with the following requirements:
 
-*   At least a partition for the `/` (_root_) directory **must** be created.
+*   At least a partition for the `/` (*root*) directory **must** be created.
 *   When using a UEFI motherboard, one [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") **must** be created.
 
 In the examples below it is assumed that a new and contiguous partitioning scheme is applied to a single device. Some optional partitions will also be created for the `/boot` and `/home` directories: see also [Arch filesystem hierarchy](/index.php/Arch_filesystem_hierarchy "Arch filesystem hierarchy") for an explanation of the purpose of the various directories; if separate partitions for directories like `/boot` or `/home` are not created, these will simply be contained in the `/` partition. Also the creation of an optional partiton for [swap space](/index.php/Swap_space "Swap space") will be illustrated.
 
-If not already open in a _parted_ interactive session, open each device to be partitioned with:
+If not already open in a *parted* interactive session, open each device to be partitioned with:
 
 ```
-# parted /dev/sd_x_
+# parted /dev/sd*x*
 
 ```
 
 The following command will be used to create partitions:
 
 ```
-(parted) mkpart _part-type_ _fs-type_ _start_ _end_
+(parted) mkpart *part-type* *fs-type* *start* *end*
 
 ```
 
-*   `_part-type_` is one of `primary`, `extended` or `logical`, and is meaningful only for MBR partition tables.
-*   `_fs-type_` is an identifier chosen among those listed by entering `help mkpart` as the closest match to the file system that you will use in [#File systems and swap](#File_systems_and_swap). The _mkpart_ command does not actually create the file system: the `_fs-type_` parameter will simply be used by _parted_ to set a 1-byte code that is used by boot loaders to "preview" what kind of data is found in the partition, and act accordingly if necessary. See also [Wikipedia:Disk partitioning#PC partition types](https://en.wikipedia.org/wiki/Disk_partitioning#PC_partition_types "wikipedia:Disk partitioning").
+*   `*part-type*` is one of `primary`, `extended` or `logical`, and is meaningful only for MBR partition tables.
+*   `*fs-type*` is an identifier chosen among those listed by entering `help mkpart` as the closest match to the file system that you will use in [#File systems and swap](#File_systems_and_swap). The *mkpart* command does not actually create the file system: the `*fs-type*` parameter will simply be used by *parted* to set a 1-byte code that is used by boot loaders to "preview" what kind of data is found in the partition, and act accordingly if necessary. See also [Wikipedia:Disk partitioning#PC partition types](https://en.wikipedia.org/wiki/Disk_partitioning#PC_partition_types "wikipedia:Disk partitioning").
 
-**Tip:** Most [Linux native file systems](https://en.wikipedia.org/wiki/File_system#Linux "wikipedia:File system") map to the same partition code ([0x83](https://en.wikipedia.org/wiki/Partition_type#PID_83h "wikipedia:Partition type")), so it is perfectly safe to e.g. use `ext2` for an _ext4_-formatted partition.
+**Tip:** Most [Linux native file systems](https://en.wikipedia.org/wiki/File_system#Linux "wikipedia:File system") map to the same partition code ([0x83](https://en.wikipedia.org/wiki/Partition_type#PID_83h "wikipedia:Partition type")), so it is perfectly safe to e.g. use `ext2` for an *ext4*-formatted partition.
 
-*   `_start_` is the beginning of the partition from the start of the device. It consists of a number followed by a [unit](http://www.gnu.org/software/parted/manual/parted.html#unit), for example `1M` means start at 1MiB.
-*   `_end_` is the end of the partition from the start of the device (_not_ from the `_start_` value). It has the same syntax as `_start_`, for example `100%` means end at the end of the device (use all the remaining space).
+*   `*start*` is the beginning of the partition from the start of the device. It consists of a number followed by a [unit](http://www.gnu.org/software/parted/manual/parted.html#unit), for example `1M` means start at 1MiB.
+*   `*end*` is the end of the partition from the start of the device (*not* from the `*start*` value). It has the same syntax as `*start*`, for example `100%` means end at the end of the device (use all the remaining space).
 
 **Warning:** It is important that the partitions do not overlap each other: if you do not want to leave unused space in the device, make sure that each partition starts where the previous one ends.
 
-**Note:** _parted_ may issue a warning like:
-
+**Note:** *parted* may issue a warning like:
 ```
 Warning: The resulting partition is not properly aligned for best performance.
 Ignore/Cancel?
 
 ```
-
 In this case, read [Partitioning#Partition alignment](/index.php/Partitioning#Partition_alignment "Partitioning") and follow [GNU Parted#Alignment](/index.php/GNU_Parted#Alignment "GNU Parted") to fix it.
 
 The following command will be used to flag the partition that contains the `/boot` directory as bootable:
 
 ```
-(parted) set _partition_ boot on
+(parted) set *partition* boot on
 
 ```
 
-*   `_partition_` is the number of the partition to be flagged (see the output of the `print` command).
+*   `*partition*` is the number of the partition to be flagged (see the output of the `print` command).
 
 #### UEFI/GPT examples
 
@@ -374,47 +372,47 @@ In the final example below, separate `/boot` (100MiB), `/` (20GiB), swap (4GiB),
 
 ### Format the file systems and enable swap
 
-Once the partitions have been created, each **must** be formatted with an appropriate [file system](/index.php/File_system "File system"), _except_ for swap partitions. All available partitions on the intended installation device can be listed with the following command:
+Once the partitions have been created, each **must** be formatted with an appropriate [file system](/index.php/File_system "File system"), *except* for swap partitions. All available partitions on the intended installation device can be listed with the following command:
 
 ```
-# lsblk /dev/sd_x_
+# lsblk /dev/sd*x*
 
 ```
 
 With the exceptions noted below, it is recommended to use the `ext4` file system:
 
 ```
-# mkfs.ext4 /dev/sd_xY_
+# mkfs.ext4 /dev/sd*xY*
 
 ```
 
-_If_ a new UEFI system partition has been created on a UEFI/GPT system, it **must** be formatted with a `fat32` file system:
+*If* a new UEFI system partition has been created on a UEFI/GPT system, it **must** be formatted with a `fat32` file system:
 
 ```
-# mkfs.fat -F32 /dev/sd_xY_
+# mkfs.fat -F32 /dev/sd*xY*
 
 ```
 
-_If_ a swap partition has been created, it must be set up and activated with:
+*If* a swap partition has been created, it must be set up and activated with:
 
 ```
-# mkswap /dev/sd_xY_
-# swapon /dev/sd_xY_
+# mkswap /dev/sd*xY*
+# swapon /dev/sd*xY*
 
 ```
 
 Mount the root partition to the `/mnt` directory of the live system:
 
 ```
-# mount /dev/sd_xY_ /mnt
+# mount /dev/sd*xY* /mnt
 
 ```
 
-Remaining [partitions](/index.php/Partitioning#Partition_scheme "Partitioning") (except _swap_) may be mounted in any order, after creating the respective mount points. For example, when using a `/boot` partition:
+Remaining [partitions](/index.php/Partitioning#Partition_scheme "Partitioning") (except *swap*) may be mounted in any order, after creating the respective mount points. For example, when using a `/boot` partition:
 
 ```
 # mkdir -p /mnt/boot
-# mount /dev/sd_xZ_ /mnt/boot
+# mount /dev/sd*xZ* /mnt/boot
 
 ```
 
@@ -428,13 +426,13 @@ Packages to be installed must be downloaded from mirror servers, which are defin
 
 The higher a mirror is placed in the list, the more priority it is given when downloading a package. You may want to edit the file accordingly, and move the geographically closest mirrors to the top of the list, although other criteria should be taken into account. See [Mirrors](/index.php/Mirrors "Mirrors") for details.
 
-_pacstrap_ will also install a copy of this file to the new system, so it is worth getting right.
+*pacstrap* will also install a copy of this file to the new system, so it is worth getting right.
 
 ### Install the base packages
 
-The _pacstrap_ script installs the base system. To build packages from the [AUR](/index.php/AUR "AUR") or with [ABS](/index.php/ABS "ABS"), the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group is also required.
+The *pacstrap* script installs the base system. To build packages from the [AUR](/index.php/AUR "AUR") or with [ABS](/index.php/ABS "ABS"), the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group is also required.
 
-Not all tools from the live installation (see [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both)) are part of the base group. Packages can later be [installed](/index.php/Install "Install") with _pacman_, or by appending their names to the _pacstrap_ command.
+Not all tools from the live installation (see [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both)) are part of the base group. Packages can later be [installed](/index.php/Install "Install") with *pacman*, or by appending their names to the *pacstrap* command.
 
 ```
 # pacstrap -i /mnt base base-devel
@@ -476,17 +474,16 @@ Possible values are listed in `/etc/locale.gen`. Uncomment `en_US.UTF-8 UTF-8`, 
 
 ```
 
-Create `/etc/locale.conf`, where `LANG` refers to the _first column_ of an uncommented entry in `/etc/locale.gen`:
+Create `/etc/locale.conf`, where `LANG` refers to the *first column* of an uncommented entry in `/etc/locale.gen`:
 
- `/etc/locale.conf`  `LANG=_en_US.UTF-8_` 
+ `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
 
-If you [set the keyboard layout](#Set_the_keyboard_layout), make the changes persistent in `/etc/vconsole.conf`. For example, if `de-latin1` was set with _loadkeys_, and `lat9w-16` with _setfont_, assign the `KEYMAP` and `FONT` variables accordingly:
+If you [set the keyboard layout](#Set_the_keyboard_layout), make the changes persistent in `/etc/vconsole.conf`. For example, if `de-latin1` was set with *loadkeys*, and `lat9w-16` with *setfont*, assign the `KEYMAP` and `FONT` variables accordingly:
 
  `/etc/vconsole.conf` 
-
 ```
-KEYMAP=_de-latin1_
-FONT=_lat9w-16_
+KEYMAP=*de-latin1*
+FONT=*lat9w-16*
 ```
 
 ### Time
@@ -498,10 +495,10 @@ Select a [time zone](/index.php/Time_zone "Time zone"):
 
 ```
 
-Create the symbolic link `/etc/localtime`, where `Zone/Subzone` is the `TZ` value from _tzselect_:
+Create the symbolic link `/etc/localtime`, where `Zone/Subzone` is the `TZ` value from *tzselect*:
 
 ```
-# ln -s /usr/share/zoneinfo/_Zone_/_SubZone_ /etc/localtime
+# ln -s /usr/share/zoneinfo/*Zone*/*SubZone* /etc/localtime
 
 ```
 
@@ -516,7 +513,7 @@ If other operating systems are installed on the machine, they must be configured
 
 ### Initramfs
 
-As [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") was run on installation of [linux](https://www.archlinux.org/packages/?name=linux) with _pacstrap_, most users can use the defaults provided in `mkinitcpio.conf`.
+As [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") was run on installation of [linux](https://www.archlinux.org/packages/?name=linux) with *pacstrap*, most users can use the defaults provided in `mkinitcpio.conf`.
 
 For special configurations, set the correct [hooks](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") in `/etc/mkinitcpio.conf` and [re-generate](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") the initramfs image:
 
@@ -551,10 +548,10 @@ Install the [grub](https://www.archlinux.org/packages/?name=grub) package. To se
 
 ```
 
-Install the bootloader to the _drive_ Arch was installed to:
+Install the bootloader to the *drive* Arch was installed to:
 
 ```
-# grub-install _/dev/sda_
+# grub-install */dev/sda*
 
 ```
 
@@ -575,7 +572,7 @@ The procedure is similar to [#Connect to the Internet](#Connect_to_the_Internet)
 
 Set the [hostname](/index.php/Hostname "Hostname") to your liking:
 
- `/etc/hostname`  `_myhostname_` 
+ `/etc/hostname`  `*myhostname*` 
 
 It is recommended to append the same hostname to `localhost` entries in `/etc/hosts`. See [Network configuration#Set the hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration") for details.
 
@@ -584,17 +581,17 @@ It is recommended to append the same hostname to `localhost` entries in `/etc/ho
 When only requiring a single wired connection, [enable](/index.php/Enable "Enable") the [dhcpcd](/index.php/Dhcpcd "Dhcpcd") service:
 
 ```
-# systemctl enable dhcpcd@_interface_.service
+# systemctl enable dhcpcd@*interface*.service
 
 ```
 
-Where `_interface_` is an ethernet [device name](/index.php/Network_configuration#Device_names "Network configuration").
+Where `*interface*` is an ethernet [device name](/index.php/Network_configuration#Device_names "Network configuration").
 
 See [Network configuration#Configure the IP address](/index.php/Network_configuration#Configure_the_IP_address "Network configuration") for other available methods.
 
 #### Wireless
 
-Install [iw](https://www.archlinux.org/packages/?name=iw), [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), and (for _wifi-menu_) [dialog](https://www.archlinux.org/packages/?name=dialog):
+Install [iw](https://www.archlinux.org/packages/?name=iw), [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), and (for *wifi-menu*) [dialog](https://www.archlinux.org/packages/?name=dialog):
 
 ```
 # pacman -S iw wpa_supplicant dialog
@@ -603,7 +600,7 @@ Install [iw](https://www.archlinux.org/packages/?name=iw), [wpa_supplicant](http
 
 Additional [firmware packages](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless") may also be required.
 
-If you used _wifi-menu_ priorly, repeat the steps **after** finishing the rest of this installation and rebooting, to prevent conflicts with the existing processes.
+If you used *wifi-menu* priorly, repeat the steps **after** finishing the rest of this installation and rebooting, to prevent conflicts with the existing processes.
 
 See [Netctl](/index.php/Netctl "Netctl") and [Wireless#Wireless management](/index.php/Wireless#Wireless_management "Wireless") for more information.
 
@@ -618,7 +615,7 @@ Set the root [password](/index.php/Password "Password") with:
 
 Exit from the chroot environment by running `exit` or pressing `Ctrl+D`.
 
-Partitions will be unmounted automatically by _systemd_ on shutdown. You may however unmount manually as a safety measure:
+Partitions will be unmounted automatically by *systemd* on shutdown. You may however unmount manually as a safety measure:
 
 ```
 # umount -R /mnt
@@ -632,10 +629,10 @@ If the partition is "busy", you can find the cause with [fuser](/index.php/Fuser
 
 ```
 
-Remove the installation media, or you may boot back into it. You can log into your new installation as _root_, using the password you specified with _passwd_.
+Remove the installation media, or you may boot back into it. You can log into your new installation as *root*, using the password you specified with *passwd*.
 
 ## Post-installation
 
-Your new Arch Linux base system is now a functional GNU/Linux environment ready to be built into whatever you wish or require for your purposes. You are now _strongly_ advised to read the [General recommendations](/index.php/General_recommendations "General recommendations") article, especially the first two sections. Its other sections provide links to post-installation tutorials like setting up a graphical user interface, sound or a touchpad.
+Your new Arch Linux base system is now a functional GNU/Linux environment ready to be built into whatever you wish or require for your purposes. You are now *strongly* advised to read the [General recommendations](/index.php/General_recommendations "General recommendations") article, especially the first two sections. Its other sections provide links to post-installation tutorials like setting up a graphical user interface, sound or a touchpad.
 
 For a list of applications that may be of interest, see [List of applications](/index.php/List_of_applications "List of applications").

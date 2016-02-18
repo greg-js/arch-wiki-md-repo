@@ -12,7 +12,6 @@ Mullvad supply their own client but it can also be used with a manual configurat
 In order to use the nameservers supplied by the VPN, a script needs to be called when starting and stopping OpenVPN to update resolvconf with the correct servers.
 
  `/etc/openvpn/update-resolv-conf` 
-
 ```
 #!/bin/bash
 #

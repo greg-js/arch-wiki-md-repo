@@ -17,7 +17,7 @@ Lenovo ThinkPad X1 Carbon, Gen 3\.
 *   No optical drive. There is also a touch version.
 *   [UEFI](/index.php/UEFI "UEFI") with BIOS-legacy fallback mode.
 
-To ensure you have this version, run _dmidecode_:
+To ensure you have this version, run *dmidecode*:
 
 ```
 # dmidecode -t system | grep Version

@@ -110,7 +110,7 @@ emerald --replace
 
 ```
 
-Dal 17-Ott-07 il [Compiz-Fusion Wiki](http://wiki.compiz-fusion.org/Troubleshooting) dichiara: _"Se si sta utilizzando una scheda video Intel GMA con AIGLX, è necessario avviare Compiz Fusion con l'opzione LIBGL_ALWAYS_INDIRECT=1._"
+Dal 17-Ott-07 il [Compiz-Fusion Wiki](http://wiki.compiz-fusion.org/Troubleshooting) dichiara: *"Se si sta utilizzando una scheda video Intel GMA con AIGLX, è necessario avviare Compiz Fusion con l'opzione LIBGL_ALWAYS_INDIRECT=1.*"
 
 ## Fusion-Icon mostra una "X" rossa nella barra di stato e non viene visualizzata l'icona nei menù
 
@@ -182,7 +182,7 @@ Tutto ciò che serve è di modificare il proprio /etc/X11/xorg.conf trovando l'i
 
 * * *
 
-Si potrebbe provare anche ad aggiungere _Option "AddARGBGLXVisuals" "True"_ & _Option "DisableGLXRootClipping" "True"_ alla propria sezione "Screen" nel caso si utilizzino i driver binari di Nvidia. (Quelli radeon, e i driver open 'nv' non funzioneranno con questa opzione per quanto ne sappia). Nel caso si utilizzi qualsiasi altra Options da qualche parte nel xorg.conf per far funzionare compiz ma ancora senza fortuna, si provi a decommentarla e ad usare solamente la suddetta opzione ARGBGLXVisuals e GLXRootClipping.
+Si potrebbe provare anche ad aggiungere *Option "AddARGBGLXVisuals" "True"* & *Option "DisableGLXRootClipping" "True"* alla propria sezione "Screen" nel caso si utilizzino i driver binari di Nvidia. (Quelli radeon, e i driver open 'nv' non funzioneranno con questa opzione per quanto ne sappia). Nel caso si utilizzi qualsiasi altra Options da qualche parte nel xorg.conf per far funzionare compiz ma ancora senza fortuna, si provi a decommentarla e ad usare solamente la suddetta opzione ARGBGLXVisuals e GLXRootClipping.
 
 **Note**: Assicurarsi che i plugin "Window decoration", "Move" e "Resize" siano abilitati con il gestore d'effetti di Compiz o con gconf-editor.
 
@@ -299,10 +299,10 @@ Si crei o modifichi /usr/share/icons/default/index.theme per tutti gli utenti, o
 
 ```
 [Icon Theme]
-#Name=_foo_
-Name=_foo_
-#Inherits=_foo_
-Inherits=_foo_
+#Name=*foo*
+Name=*foo*
+#Inherits=*foo*
+Inherits=*foo*
 [Desktop Entry]
 Name[en_US]=index.theme
 

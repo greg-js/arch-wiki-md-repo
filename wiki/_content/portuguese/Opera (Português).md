@@ -46,7 +46,7 @@ Versões em desenvolvimento podem ser encontradas no [AUR](/index.php/AUR "AUR")
 
 ## Plugins
 
-O navegador Opera pode usar plugins baseados em Netscape que são suportados pela maioria dos principais navegadores, como o Firefox e Chromium. Para obter detalhes sobre plugins diferentes e instruções de instalação veja: [Browser plugins](/index.php/Browser_plugins "Browser plugins"). No Opera, o caminho dos plugins pode ser especificado em _Configurações > Preferências... > Avançado > Conteúdo > Opções de plug-in..._.
+O navegador Opera pode usar plugins baseados em Netscape que são suportados pela maioria dos principais navegadores, como o Firefox e Chromium. Para obter detalhes sobre plugins diferentes e instruções de instalação veja: [Browser plugins](/index.php/Browser_plugins "Browser plugins"). No Opera, o caminho dos plugins pode ser especificado em *Configurações > Preferências... > Avançado > Conteúdo > Opções de plug-in...*.
 
 ### Adobe Flash
 
@@ -70,11 +70,11 @@ Uma das chaves para a maximização de desempenho do aplicativo é desativar car
 
 Alguns recursos normalmente desativados são:
 
-*   **Ícone na área de notificação**: desmarque _**Show Tray Icon**_ em **opera:config#ShowTrayIcon**.
-*   **BitTorrent**: desmarque _**Enable**_ em **opera:config#BitTorrent|Enable**.
-*   **Geolocalização**: desmarque _**Enable geolocation'**_ em **opera:config#Geolocation|Enablegeolocation**.
+*   **Ícone na área de notificação**: desmarque ***Show Tray Icon*** em **opera:config#ShowTrayIcon**.
+*   **BitTorrent**: desmarque ***Enable*** em **opera:config#BitTorrent|Enable**.
+*   **Geolocalização**: desmarque ***Enable geolocation'*** em **opera:config#Geolocation|Enablegeolocation**.
 *   **Multimedia**: desmarque as opções indesejadas em **opera:config#Multimedia**.
-*   **Servidor Web**: desmarque _**Enable**_ em **opera:config#WebServer|Enable**.
+*   **Servidor Web**: desmarque ***Enable*** em **opera:config#WebServer|Enable**.
 
 Para maior facilidade em localizar essas opções, apenas escreva o caminho respectivo (sem espaços) na barra de endereços, por exemplo `opera:config#UserPrefs|ShowTrayIcon` ou use a pesquisa embutida.
 
@@ -87,7 +87,7 @@ $ opera -nomail
 
 ```
 
-Alternativamente, se voce quer desabilitar permanentemente o cliente de e-mail interno voce pode desmarcar a opção _Show E-mail Client_ em **opera:config#UserPrefs**.
+Alternativamente, se voce quer desabilitar permanentemente o cliente de e-mail interno voce pode desmarcar a opção *Show E-mail Client* em **opera:config#UserPrefs**.
 
 #### Desativar ARGB, LIRC e links de Email mailto
 
@@ -120,7 +120,6 @@ Veja o artigo de um blog sobre [Problemas com o flash no linux](http://pelenegra
 #### Exemplo no .xinitrc
 
  `~/.xinitrc` 
-
 ```
 ...
 export OPERAPLUGINWRAPPER_PRIORITY=0
@@ -172,11 +171,11 @@ Já que o Opera é multi-plataforma, ele pode integrar muito bem em vários ambi
 
 ### Modos das Guias
 
-Opera tem suporte nativo para guias em modo cascata e lado a lado. Botões apropriados podem ser encontrados ativando a barra de ferramentas "Principal" ou arrastando e soltando os botões em qualquer lugar desejado, encontrado em _Menu > Aparência > Botões > Navegação_.
+Opera tem suporte nativo para guias em modo cascata e lado a lado. Botões apropriados podem ser encontrados ativando a barra de ferramentas "Principal" ou arrastando e soltando os botões em qualquer lugar desejado, encontrado em *Menu > Aparência > Botões > Navegação*.
 
 ### Fontes de texto
 
-Fontes de texto pode ser configuradas em _Configurações > Preferências... > Avançado > Fontes_.
+Fontes de texto pode ser configuradas em *Configurações > Preferências... > Avançado > Fontes*.
 
 Se o pacote [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) foi instalado antes de executar o Opera pela primeira vez, por padrão o Opera irá usar estas fontes de texto, independentemente do que é especificado nas opções locais do GTK+ pelo gerenciamento de fontes do [GNOME](/index.php/GNOME "GNOME") ou do [KDE](/index.php/KDE "KDE"). Para fazer com que as instalações existentes do Opera usem as opções definidas pelo seu sistema:
 
@@ -207,11 +206,11 @@ $ opera -newprivatetab
 
 Para assegurar que apenas as guias particulares são utilizados ao longo da duração da sessão de navegação:
 
-*   Selecione _Configurações > Preferencias... > Geral > Iniciar > Iniciar com a página inicial OU Iniciar com Speed Dial_.
-*   Limpar as entradas em _Configurações > Preferencias... > Geral > opção Página inicial_.
-*   Habilitar _Configurações > Preferencias... > Avançado > Guias > Opções adicionais de guia... > Permitir janelas sem guias_.
+*   Selecione *Configurações > Preferencias... > Geral > Iniciar > Iniciar com a página inicial OU Iniciar com Speed Dial*.
+*   Limpar as entradas em *Configurações > Preferencias... > Geral > opção Página inicial*.
+*   Habilitar *Configurações > Preferencias... > Avançado > Guias > Opções adicionais de guia... > Permitir janelas sem guias*.
 
-Para abrir uma nova janela de navegação privada quando o Opera já estiver em execução, você pode apenas pressionar `Ctrl+Shift+N` ou ativar em _Menu > Guias e janelas > Nova janela privada_. Todos os separadores abertos subsequentes vão ser separados com as guias privadas numa nova janela.
+Para abrir uma nova janela de navegação privada quando o Opera já estiver em execução, você pode apenas pressionar `Ctrl+Shift+N` ou ativar em *Menu > Guias e janelas > Nova janela privada*. Todos os separadores abertos subsequentes vão ser separados com as guias privadas numa nova janela.
 
 ## Dicas de acessibilidade
 
@@ -233,7 +232,7 @@ opera:config#UserPrefs|ScrollIsPan
 
 ```
 
-Também é possível alterar essa configuração em tempo real, arrastando e soltando o apropriado botão Opera na barra de ferramentas. O botão pode ser encontrado em _Menu > Aparência > Botões > Exibição na nav (navegação)..._.
+Também é possível alterar essa configuração em tempo real, arrastando e soltando o apropriado botão Opera na barra de ferramentas. O botão pode ser encontrado em *Menu > Aparência > Botões > Exibição na nav (navegação)...*.
 
 ### Manter pressionado um link para abrir em uma aba de fundo (extensão)
 
@@ -258,15 +257,15 @@ Em alguns computadores, [http://helion.pl](http://helion.pl) funciona muito lent
 
 ### Roda de rolagem horizontal do mouse
 
-Cheque _Configurações > Preferencias... > Avançado > Atalhos > Mouse > Opções de botão central... > Habilitar panorama horizontal_.
+Cheque *Configurações > Preferencias... > Avançado > Atalhos > Mouse > Opções de botão central... > Habilitar panorama horizontal*.
 
 ou
 
-*   Selecione _Configurações > Preferencias... > Avançado > Atalhos > Mouse > Opera Standard_.
-*   Duplicar _Configurações > Preferencias... > Avançado > Atalhos > Mouse > Opera Standard_.
-*   Editar... _Configurações > Preferencias... > Avançado > Atalhos > Mouse > Copia de Opera Standard_.
+*   Selecione *Configurações > Preferencias... > Avançado > Atalhos > Mouse > Opera Standard*.
+*   Duplicar *Configurações > Preferencias... > Avançado > Atalhos > Mouse > Opera Standard*.
+*   Editar... *Configurações > Preferencias... > Avançado > Atalhos > Mouse > Copia de Opera Standard*.
 *   Procure nos contextos de texto e edite os Atalhos botão apropriado para `Avançado`, `Voltar`, `Vá para a esquerda` e `Vá para a direita`.
-*   Renomear _Configurações > Preferencias... > Avançado > Atalhos > Mouse > Copia de Opera Standard_ como desejado.
+*   Renomear *Configurações > Preferencias... > Avançado > Atalhos > Mouse > Copia de Opera Standard* como desejado.
 
 ### Lançar um navegador externo
 
@@ -297,7 +296,7 @@ Button0, "Chromium"="Executar programa, "chromium --block-nonsandboxed-plugins -
 
 ### Opera trava ao iniciar ou fechar com GTK+ 2.24.7+
 
-Se esse erro acontecer, voce pode contornar o problema mudando a opção _DialogToolkit_ para a opção 4:
+Se esse erro acontecer, voce pode contornar o problema mudando a opção *DialogToolkit* para a opção 4:
 
 ```
 opera:config#FileSelector|DialogToolkit

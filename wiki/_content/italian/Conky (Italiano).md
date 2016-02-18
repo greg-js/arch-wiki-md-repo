@@ -75,7 +75,7 @@ Si rimpiazzerà così il metodo feh descritto in seguito.
 
 ### Prevenire lo sfarfallio
 
-Conky necessita del supporto Double Buffer Extension (DBE) del server X per prevenire lo sfarfallio, perchè non può aggiornarsi abbastanza velocemente senza di esso. Può essere abilitato tramite `/etc/X11/xorg.conf` dalla riga `Load "dbe"` in `Section "Module"`. Il file xorg.conf è stato sostituito (patch 1.8.x) da `/etc/X11/xorg.conf.d` che contiene file di configurazioni particolari. _DBE_ è caricato automaticamente.
+Conky necessita del supporto Double Buffer Extension (DBE) del server X per prevenire lo sfarfallio, perchè non può aggiornarsi abbastanza velocemente senza di esso. Può essere abilitato tramite `/etc/X11/xorg.conf` dalla riga `Load "dbe"` in `Section "Module"`. Il file xorg.conf è stato sostituito (patch 1.8.x) da `/etc/X11/xorg.conf.d` che contiene file di configurazioni particolari. *DBE* è caricato automaticamente.
 
 Per verificarlo:
 
@@ -302,7 +302,7 @@ else:
 
 ```
 
-Per controllare l'arrivo di nuove mail ogni cinque minuti (300 secondi), aggiungere al proprio `.conkyrc` la seguente stringa: _# new_
+Per controllare l'arrivo di nuove mail ogni cinque minuti (300 secondi), aggiungere al proprio `.conkyrc` la seguente stringa: *# new*
 
 ```
 ${execpi 300 python ~/.scripts/gmail.py}
@@ -352,7 +352,7 @@ Inbox: ${imap_unseen}/${imap_messages}
 
 ```
 
-In questo caso si è assunto * come password per l'avvio di conky, ma non è necessario _averne_ una.
+In questo caso si è assunto * come password per l'avvio di conky, ma non è necessario *averne* una.
 
 ### Visualizzazione nuove email (IMAP + SSL)
 
@@ -391,7 +391,8 @@ if ($client->IsAuthenticated()) {
 
    $client->select("INBOX");
    $msgct = $client->unseen_count||'0';
-   print "$msgct\n";
+   print "$msgct
+";
 }
 
 $client->logout();
@@ -526,7 +527,7 @@ In alternativa, è possibile utilizzare stunnel, come indicato sopra: [Conky (It
  22                 -- You can create more rings simply by adding more elements to settings_table.
  23                 -- "name" is the type of stat to display; you can choose from 'cpu', 'memperc', 'fs_used_perc', 'battery_used_perc'.
  24                 name='time',
- 25                 -- "arg" is the argument to the stat type, e.g. if in Conky you would write ${cpu cpu0}, 'cpu0' would be the argument    . If you would not use an argument in the Conky variable, use _._
+ 25                 -- "arg" is the argument to the stat type, e.g. if in Conky you would write ${cpu cpu0}, 'cpu0' would be the argument    . If you would not use an argument in the Conky variable, use *.*
  26                 arg='%I.%M',
  27                 -- "max" is the maximum value of the ring. If the Conky variable outputs a percentage, use 100.
  28                 max=12,
@@ -607,7 +608,7 @@ In alternativa, è possibile utilizzare stunnel, come indicato sopra: [Conky (It
 103         },
 104         {
 105                 name='memperc',
-106                 arg=_,_
+106                 arg=*,*
 107                 max=100,
 108                 bg_colour=0x888888,
 109                 bg_alpha=0.3,
@@ -621,7 +622,7 @@ In alternativa, è possibile utilizzare stunnel, come indicato sopra: [Conky (It
 117         },
 118         {
 119                 name='swapperc',
-120                 arg=_,_
+120                 arg=*,*
 121                 max=100,
 122                 bg_colour=0x888888,
 123                 bg_alpha=0.3,

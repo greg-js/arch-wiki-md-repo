@@ -49,7 +49,7 @@ Initially, I used the free drivers because the prior version of ATI's official d
 
 Visit the [ATI wiki page](/index.php/ATI "ATI") for instructions on how to get the intial set up completed.
 
-You'll want to edit your _/etc/X11/xorg.conf_, because otherwise using accelerated 3D causes rather annoying hard (un-recoverable) kernel locks.
+You'll want to edit your */etc/X11/xorg.conf*, because otherwise using accelerated 3D causes rather annoying hard (un-recoverable) kernel locks.
 
 ```
 cp /etc/X11/xorg.conf /etc/X11/xorg.conf.sav
@@ -198,11 +198,11 @@ nano /home/**username**/.Xmodmap
 and create a file with the following format:
 
 ```
-keycode ### = _function name_
+keycode ### = *function name*
 
 ```
 
-where ### = the numerical keycode from the list above, and _function name_ is one of the functions listed in /usr/share/X11/XKeysymDB
+where ### = the numerical keycode from the list above, and *function name* is one of the functions listed in /usr/share/X11/XKeysymDB
 
 For reference, here's what I used for my .Xmodmap:
 
@@ -253,7 +253,7 @@ modprobe tifm_core
 
 ```
 
-and add tifm_sd, tifm_7xx1, tifm_ms and tifm_core to the modules section of your _/etc/rc.conf_
+and add tifm_sd, tifm_7xx1, tifm_ms and tifm_core to the modules section of your */etc/rc.conf*
 
 I'm not actually sure if things like CompactFlash or MemoryStick are working, SD card is the only thing I have at the moment.
 
@@ -269,4 +269,4 @@ Appears to work flawlessly, although not really speedily. See [Suspend and hiber
 
 ## Webcam
 
-_lsusb_ returns this webcam as a "Chicony USB 2.0" webcam, which is supported via the _uvcvideo_ and snd_usb_audio modules. See [Webcam setup](/index.php/Webcam_setup "Webcam setup") for details.
+*lsusb* returns this webcam as a "Chicony USB 2.0" webcam, which is supported via the *uvcvideo* and snd_usb_audio modules. See [Webcam setup](/index.php/Webcam_setup "Webcam setup") for details.

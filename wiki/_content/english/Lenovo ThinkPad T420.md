@@ -151,7 +151,6 @@ TouchPad and TrackPoint do work out of the box, but the TrackPoint is way too se
 To adjust the speed/sensitivity of the TrackPoint add these lines in a systemd tmpfile:
 
  `/etc/tmpfiles.d/local.conf` 
-
 ```
 w /sys/devices/platform/i8042/serio1/speed - - - - 180
 w /sys/devices/platform/i8042/serio1/sensitivity - - - - 200
@@ -163,7 +162,6 @@ Possible range of values are 1-255.
 Or add an udev rule:
 
  `/etc/udev/rules.d/10-trackpoint.rules` 
-
 ```
 SUBSYSTEM=="serio", DRIVERS=="psmouse", WAIT_FOR="speed", WAIT_FOR="sensitivity", \
 ATTR{sensitivity}="200", ATTR{speed}="180"

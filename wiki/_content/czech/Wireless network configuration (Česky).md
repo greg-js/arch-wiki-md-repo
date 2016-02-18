@@ -1,6 +1,6 @@
 Konfigurace wifi je dvoufázový proces. V první fázi je třeba identifikovat ovladač vhodný pro vaše síťové zařízení a ujistit se, že je ovladač správně nainstalován (ovladače jsou dostupné na instalačním médiu, je vhodné se ujistit, že jsou skutečně nainstalovány) a nastavit síťové rozhraní. V druhé fázi je třeba zvolit způsoby správy bezdrátové síťového připojení. Tento článek obě fáze popisuje a obsahuje odkazy na nástroje pro správu bezdrátových sítí.
 
-**Instalace nového systému Archlinux:** Ovladače síťových karet a nástroje pro správu naleznete v kategorii _base-devel_. Zde je třeba zvolit k instalaci správný ovladač pro vaše zařízení. Udev si pak obvykle načte příslušný jaderný modul, čímž vytvoří bezdrátové rozhraní, které je použitelné už během instalace a samozřejmě také v nově instalovaném systému na pevném disku. Pokud jste nenastavili bezdrátovou síť během instalace a provádíte konfiguraci v již instalovaném systému, ujistěte se, že jste pomocí správce balíků pacman nainstalovali potřebný software (ovladač, případně i firmware, wireless_tools, wpa_supplicant) a dále postupujte podle návodu níže.
+**Instalace nového systému Archlinux:** Ovladače síťových karet a nástroje pro správu naleznete v kategorii *base-devel*. Zde je třeba zvolit k instalaci správný ovladač pro vaše zařízení. Udev si pak obvykle načte příslušný jaderný modul, čímž vytvoří bezdrátové rozhraní, které je použitelné už během instalace a samozřejmě také v nově instalovaném systému na pevném disku. Pokud jste nenastavili bezdrátovou síť během instalace a provádíte konfiguraci v již instalovaném systému, ujistěte se, že jste pomocí správce balíků pacman nainstalovali potřebný software (ovladač, případně i firmware, wireless_tools, wpa_supplicant) a dále postupujte podle návodu níže.
 
 ## Contents
 
@@ -91,7 +91,7 @@ $ lsusb
 
 ### Jak to funguje?
 
-Výchozí jádro linux je _modulární_, to znamená, že ovladače pro různý hardware jsou dostupné na disku jako _moduly_. [Udev (Česky)](/index.php/Udev_(%C4%8Cesky) "Udev (Česky)") má při bootu k dispozici seznam vašeho hardwaru, pomocí kterého načte příslušné jaderné moduly (ovladače), čímž umožní vytvoření rozhraní.
+Výchozí jádro linux je *modulární*, to znamená, že ovladače pro různý hardware jsou dostupné na disku jako *moduly*. [Udev (Česky)](/index.php/Udev_(%C4%8Cesky) "Udev (Česky)") má při bootu k dispozici seznam vašeho hardwaru, pomocí kterého načte příslušné jaderné moduly (ovladače), čímž umožní vytvoření rozhraní.
 
 Rozhraní jednotlivých ovladačů budou různá u jednotlivých typů karet. Např wlan0, eth1, ath0, ...
 
@@ -123,7 +123,7 @@ Nemůžete používat tato bezdrátová zařízení bez uživatelských nástroj
 
 ### Ovladače a firmware
 
-Metody a procedury pro instalaci ovladačů pro různé chip-sety jsou jsou uvedeny níže. Kromě toho, některé čipové sady-vyžadují instalaci odpovídajícího _firmware_(uvedeno také níže).
+Metody a procedury pro instalaci ovladačů pro různé chip-sety jsou jsou uvedeny níže. Kromě toho, některé čipové sady-vyžadují instalaci odpovídajícího *firmware*(uvedeno také níže).
 
 #### wlan-ng (zastaralé)
 
@@ -162,7 +162,7 @@ Plně podporovaná v jádře. Konfigurovatelná se standardními wpa_supplicant 
 
 #### rtl8192s
 
-Driver je součástí jádra. Firmware může být třeba přidat ručně pokud se nenachází v /lib/firmware/RTL8192SU/rtl8192sfw.bin. (dmesg hlásí _"rtl819xU:FirmwareRequest92S(): failed"_ když firmware chybí)
+Driver je součástí jádra. Firmware může být třeba přidat ručně pokud se nenachází v /lib/firmware/RTL8192SU/rtl8192sfw.bin. (dmesg hlásí *"rtl819xU:FirmwareRequest92S(): failed"* když firmware chybí)
 
 Stažení a instalace firmwaru:
 
@@ -284,13 +284,11 @@ Info:
 *   [http://wiki.debian.org/ath5k](http://wiki.debian.org/ath5k)
 
 **Note:** Některé notebooky mají problémy blikajícím bezdrátovým LED indikátorem. Řešení je zde:
-
 ```
 echo none > "/sys/class/leds/ath5k-phy0::tx/trigger"
 echo none > "/sys/class/leds/ath5k-phy0::rx/trigger"
 
 ```
-
 Alternativní řešení {{[zde](https://bugzilla.redhat.com/show_bug.cgi?id=618232)}}
 
 #### ath9k
@@ -433,7 +431,7 @@ iwconfig wlan0(změňte dle potřeby) power v /etc/rc.local.
 
 #### ipw3945 (obsolete)
 
-**Note:** _ipw3945 ovladač není nadále aktivně vyvíjen, a iwlwifi ovladač (popsán níže) funguje perfektně, ale může dojít ke konfliktu s předcházejícím. Proto by měl být nainstalován pouze jeden z nich. I pokud se rozhodnete používat iwlwifi **ipw3945-ucode** balíček je stále vyžadován._
+**Note:** *ipw3945 ovladač není nadále aktivně vyvíjen, a iwlwifi ovladač (popsán níže) funguje perfektně, ale může dojít ke konfliktu s předcházejícím. Proto by měl být nainstalován pouze jeden z nich. I pokud se rozhodnete používat iwlwifi **ipw3945-ucode** balíček je stále vyžadován.*
 
 ```
 # pacman -S ipw3945 ipw3945-ucode ipw3945d
@@ -452,7 +450,7 @@ DAEMONS=(syslog-ng **ipw3945d** network ...)
 
 ```
 
-**Upozornění:** **ipw3945d** démon _musí_ být vložen PŘED všemi ostatními síťovýmí démony v dané sekci.
+**Upozornění:** **ipw3945d** démon *musí* být vložen PŘED všemi ostatními síťovýmí démony v dané sekci.
 
 #### orinoco
 
@@ -463,7 +461,7 @@ Upozornění: Některé čip-sety orinico jsou Hermes I/II. Můžete použít [h
 K použití ovladač zablokujte orinoco_cs v rc.conf (!orinoco_cs v sekci MODULES) a přidejte wlags49_h1_cs. Příklad:
 
 ```
-MODULES=(!eepro100 _!orinoco_cs_ **wlags49_h1_cs**)
+MODULES=(!eepro100 *!orinoco_cs* **wlags49_h1_cs**)
 
 ```
 
@@ -585,7 +583,7 @@ iwconfig
 
 ```
 
-pro ujištění se, že rozhraní (wlan_x_, eth_x_, ath_x_) nyní existuje.
+pro ujištění se, že rozhraní (wlan*x*, eth*x*, ath*x*) nyní existuje.
 
 Pokud se žádné rozhraní nezobrazí, zkuste zavést modul pomocí modprobe. K načtení modulu použijte příkazy **rmmod** a **modprobe**.
 
@@ -648,16 +646,16 @@ These examples assume your wireless device is `wlan0`. Replace `wlan0` with the 
 
 **Note:** Depending on your hardware and encryption type, some of these steps may not be necessary. Some cards are known to require interface activation and/or access point scanning before being associated to an access point and being given an IP address. Some experimentation may be required. For instance, WPA/WPA2 users may directly try to activate their wireless network from step 3.
 
-**Step 0.** _(Optional, may be required)_ At this step you may need to set the proper operating mode of the wireless card. More specifically, if you're going to connect an ad-hoc network, you might need to set the operating mode to _ad-hoc:_
+**Step 0.** *(Optional, may be required)* At this step you may need to set the proper operating mode of the wireless card. More specifically, if you're going to connect an ad-hoc network, you might need to set the operating mode to *ad-hoc:*
 
 ```
  # iwconfig wlan0 mode ad-hoc
 
 ```
 
-**Note:** Ideally, you should a priori know, which type of network you are going to connect. If you don't, scan the network as described in step 2 below, then, if necessary, return back to this step and change the mode. Also, please, bear in mind that changing the operating mode might require the wlan interface to be _down_ (`ifconfig wlan0 down`).
+**Note:** Ideally, you should a priori know, which type of network you are going to connect. If you don't, scan the network as described in step 2 below, then, if necessary, return back to this step and change the mode. Also, please, bear in mind that changing the operating mode might require the wlan interface to be *down* (`ifconfig wlan0 down`).
 
-**Step 1.** _(Also optional, may be required)_ Some cards require that the kernel interface be activated before you can use the wireless_tools:
+**Step 1.** *(Also optional, may be required)* Some cards require that the kernel interface be activated before you can use the wireless_tools:
 
 ```
  # ifconfig wlan0 up
@@ -671,20 +669,20 @@ These examples assume your wireless device is `wlan0`. Replace `wlan0` with the 
 
 ```
 
-**Note:** If it displays "_Interface does not support scanning_" then you probably forgot to install the firmware. You can also try bringing up the interface first as shown in point 1.
+**Note:** If it displays "*Interface does not support scanning*" then you probably forgot to install the firmware. You can also try bringing up the interface first as shown in point 1.
 
 **Step 3.** Depending on the encryption, you need to associate your wireless device with the access point to use and pass the encryption key.
 
 Assuming you want to use the ESSID named `MyEssid`:
 
-*   _No encryption_
+*   *No encryption*
 
 ```
  # iwconfig wlan0 essid "MyEssid"
 
 ```
 
-*   _WEP_
+*   *WEP*
 
 using an hexadecimal key:
 
@@ -700,7 +698,7 @@ using an ascii key:
 
 ```
 
-*   _WPA/WPA2_
+*   *WPA/WPA2*
 
 You need to edit the `/etc/wpa_supplicant.conf` file as described in [WPA_Supplicant](/index.php/WPA_Supplicant "WPA Supplicant"). Then, issue this command:
 
@@ -735,7 +733,7 @@ for DHCP, or
 
 for static IP.
 
-Note: If you get an timeout error due to a _waiting for carrier_ problem then you might have to set channel mode to auto for the specific device.
+Note: If you get an timeout error due to a *waiting for carrier* problem then you might have to set channel mode to auto for the specific device.
 
 ```
 # iwconfig wlan0 channel auto 
@@ -788,7 +786,7 @@ These solutions are limited for a laptop which is always on the move. It would b
 
 ##### Netcfg
 
-**netcfg** provides a _versatile, robust and fast_ solution to networking on Arch.
+**netcfg** provides a *versatile, robust and fast* solution to networking on Arch.
 
 It uses a profile based setup and is capable of detection and connection to a wide range of network types. This is no harder than using graphical tools. Following the directions above, you can get a list of wireless networks. Then, as with graphical tools, you will need a password.
 
@@ -823,7 +821,7 @@ See: [NetworkManager](/index.php/NetworkManager "NetworkManager")
 
 ##### Wifi Radar
 
-WiFi Radar is Python/PyGTK2 utility for managing wireless profiles (and _only_ wireless). It enables you to scan for available networks and create profiles for your preferred networks.
+WiFi Radar is Python/PyGTK2 utility for managing wireless profiles (and *only* wireless). It enables you to scan for available networks and create profiles for your preferred networks.
 
 See: [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar")
 

@@ -85,7 +85,7 @@ audacious2 -i skinned
 
 ## Přidání skinů z programu Winamp
 
-Přidání skinů z programu Winamp do Audacious je velice jednoduché. Zkopírujte váš skin (soubor ve formátu .zip, .wsz, .tgz, .tar.gz, či .tar.bz2) do adresáře **`/usr/share/audacious/Skins`**. Potom jej můžete vybrat z menu _Témata rozhraní_ v _Nastavení_.
+Přidání skinů z programu Winamp do Audacious je velice jednoduché. Zkopírujte váš skin (soubor ve formátu .zip, .wsz, .tgz, .tar.gz, či .tar.bz2) do adresáře **`/usr/share/audacious/Skins`**. Potom jej můžete vybrat z menu *Témata rozhraní* v *Nastavení*.
 
 Skiny jsou dostupné na serverech:
 
@@ -108,4 +108,4 @@ Odkazy: [https://bbs.archlinux.org/viewtopic.php?id=40075](https://bbs.archlinux
 
 # Podpora OSS
 
-Pokud místo ALSA používáte Open Sound System, ověřte si, zda je Audacious korektně nastaven. Zvolte: _Nastavení_-->_Zvuk_-->_Aktuální výstupní modul_-->_**OSS Output Plugin**_.
+Pokud místo ALSA používáte Open Sound System, ověřte si, zda je Audacious korektně nastaven. Zvolte: *Nastavení*-->*Zvuk*-->*Aktuální výstupní modul*-->***OSS Output Plugin***.

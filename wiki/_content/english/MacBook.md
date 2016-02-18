@@ -118,8 +118,8 @@ You will also need the following file for iSight functionality:
 
 The next step in the installation is to re-partition the hard drive. If OS X was installed using the typical procedure, then your drive should have a GPT format and the following partitions:
 
-*   **EFI**: a 200 MB partition at the beginning of the disk. It is often read as **msdos** or **FAT** by some partitioning tools and usually labeled _#1_.
-*   **OS X**: the _(HFS+)_ partition that should take up all of the remaining disk space. Usually labeled _#2_.
+*   **EFI**: a 200 MB partition at the beginning of the disk. It is often read as **msdos** or **FAT** by some partitioning tools and usually labeled *#1*.
+*   **OS X**: the *(HFS+)* partition that should take up all of the remaining disk space. Usually labeled *#2*.
 *   **Recovery**: A recovery partition (only for OS X 10.7+).
 
 **Note:** If your hardware includes a Fusion Drive you might have a look at the [Apple Fusion Drive](/index.php/Apple_Fusion_Drive "Apple Fusion Drive") page.
@@ -127,7 +127,7 @@ The next step in the installation is to re-partition the hard drive. If OS X was
 How to partition depends on how many operating systems you want install. The following options will be explained:
 
 *   Single boot: [#Arch Linux only](#Arch_Linux_only)
-*   Dual boot: [#OS X with Arch Linux](#OS_X_with_Arch_Linux) _(recommended so you can still return to OS X when needed)_
+*   Dual boot: [#OS X with Arch Linux](#OS_X_with_Arch_Linux) *(recommended so you can still return to OS X when needed)*
 *   Triple boot: [#OS X, Windows XP, and Arch Linux triple boot](#OS_X.2C_Windows_XP.2C_and_Arch_Linux_triple_boot)
 
 * * *
@@ -180,7 +180,7 @@ The easiest way to partition your hard drive, so that OS X and Arch Linux will c
 
 **Procedure**:
 
-*   In OS X, run _Disk Utility.app_ (located in `/Applications/Utilities`)
+*   In OS X, run *Disk Utility.app* (located in `/Applications/Utilities`)
 
 *   Select the drive to be partitioned in the left-hand column (not the partitions!). Click on the **partition** tab on the right.
 
@@ -194,21 +194,21 @@ The easiest way to partition your hard drive, so that OS X and Arch Linux will c
 
 *   If the above completed successfully, then you can continue. If not, then you may need to fix your partitions from within OS X first.
 
-**Note:** If you have any problems, try using the [gparted](http://gparted.sourceforge.net/) live CD (i.e. _instead_ of using _Disk Utility_ and/or _cgdisk_). It is capable of shrinking the OS X partition and creating Linux partitions ready for installation.
+**Note:** If you have any problems, try using the [gparted](http://gparted.sourceforge.net/) live CD (i.e. *instead* of using *Disk Utility* and/or *cgdisk*). It is capable of shrinking the OS X partition and creating Linux partitions ready for installation.
 
 *   Boot the Arch installation [LiveCD](/index.php/Beginners%27_guide#Prepare_the_latest_installation_medium "Beginners' guide") or [LiveUSB](/index.php/USB_flash_installation_media "USB flash installation media") by holding down the `Alt` **during boot**. Follow **one** of the procedures below according to your choice of boot method.
 
 #### Option 1: EFI
 
-*   Run _cgdisk_
+*   Run *cgdisk*
 
-*   Delete the partition you made in _Disk Utility.app_ and create the necessary partitions for Arch Linux. OS X likes to see a 128 MiB gap after partitions, so when you create the first partition after the last OS X-partition, type in **+128M** when cgdisk asks for the first sector for the partition. More information about Apple's partitioning policy can be read [here](https://developer.apple.com/library/mac/technotes/tn2166/_index.html#//apple_ref/doc/uid/DTS10003927-CH1-SUBSECTION5). A simple example (no LVM, crypto):
+*   Delete the partition you made in *Disk Utility.app* and create the necessary partitions for Arch Linux. OS X likes to see a 128 MiB gap after partitions, so when you create the first partition after the last OS X-partition, type in **+128M** when cgdisk asks for the first sector for the partition. More information about Apple's partitioning policy can be read [here](https://developer.apple.com/library/mac/technotes/tn2166/_index.html#//apple_ref/doc/uid/DTS10003927-CH1-SUBSECTION5). A simple example (no LVM, crypto):
 
 **Note:**
 
 *   The swap partition is optional on machines with 4GB of RAM or more. A **[swap file](/index.php/Swap#Swap_file "Swap")** can be created later.
-*   The easiest dual-boot option is to install rEFInd from inside OS X, to its root directory (default for `install.sh`). Following that, copy the driver folder from the installation tarball into the new rEFInd location, and uncomment the lines _"scan_all_linux_kernels"_ and _"also_scan_dirs"_ options in `refind.conf`. Configuration of boot options can then be done from a `refind_linux.conf` in Arch's `/boot` directory.
-*   If you want to be able to boot GRUB from the Apple boot loader, you can create a small hfs+ partition (for convenience, use OS X to format it in _Disk Utility.app_ afterwards). Follow the GRUB EFI install procedure, and mount your `/boot/efi` directory to the hfs+ partition you created. Finally, finish up again in OS X by blessing the partition. This will set GRUB as the default boot option (holding alt at startup goes to the mac boot options screen still. See [http://mjg59.dreamwidth.org/7468.html](http://mjg59.dreamwidth.org/7468.html)).,
+*   The easiest dual-boot option is to install rEFInd from inside OS X, to its root directory (default for `install.sh`). Following that, copy the driver folder from the installation tarball into the new rEFInd location, and uncomment the lines *"scan_all_linux_kernels"* and *"also_scan_dirs"* options in `refind.conf`. Configuration of boot options can then be done from a `refind_linux.conf` in Arch's `/boot` directory.
+*   If you want to be able to boot GRUB from the Apple boot loader, you can create a small hfs+ partition (for convenience, use OS X to format it in *Disk Utility.app* afterwards). Follow the GRUB EFI install procedure, and mount your `/boot/efi` directory to the hfs+ partition you created. Finally, finish up again in OS X by blessing the partition. This will set GRUB as the default boot option (holding alt at startup goes to the mac boot options screen still. See [http://mjg59.dreamwidth.org/7468.html](http://mjg59.dreamwidth.org/7468.html)).,
 *   OS X's EFI partition can be shared with Arch Linux, making the creation of an additional EFI partition dedicated to Arch completely optional.
 
 **Note:** For more information on partitioning, see [Partitioning](/index.php/Partitioning "Partitioning")
@@ -230,11 +230,11 @@ partition  mountpoint  size       type  label
 
 #### Option 2: BIOS-compatibility
 
-*   Run _parted_ as root.
+*   Run *parted* as root.
 
 *   Delete the empty space partition and partition the space as you would for any other installation. Note that MBR is limited to 4 primary partitions (including the efi partition). That leaves 2 primary partitions for Arch. One strategy is to have a system and home partition, and use a swap file (I have not tried to use logical partitions). Another is to dedicate one partition to a shared partition (see below).
 
-*   Next, create new filesystems on those partitions which need them, especially the partition which will contain `/boot`. If you are not sure how to do this using `mkfs.ext2` (or whatever), run `/arch/setup` and work through until you get to Prepare Hard Drive and use the _"Manually configure block devices..."_ option, then exit the installer. This is necessary so that rEFIt will set the right partition type in the MBR in the next step (without an existing filesystem, it seems to ignore the partition type set by parted), without which GRUB will refuse to install to the right partition.
+*   Next, create new filesystems on those partitions which need them, especially the partition which will contain `/boot`. If you are not sure how to do this using `mkfs.ext2` (or whatever), run `/arch/setup` and work through until you get to Prepare Hard Drive and use the *"Manually configure block devices..."* option, then exit the installer. This is necessary so that rEFIt will set the right partition type in the MBR in the next step (without an existing filesystem, it seems to ignore the partition type set by parted), without which GRUB will refuse to install to the right partition.
 
 *   At this point you should reboot your computer and have rEFIt fix the partition tables on your hard drive. (If you do not do this, you may have to reinstall GRUB later on in order to have your Mac recognize the Linux partition.) When you are into the rEFIt menu, select **update partition table**, then press `y`. Reboot.
 
@@ -416,7 +416,7 @@ Some models may need EFI_ARCH set to i386.
     *   **(for booting with EFI**) After the [install boot loader](/index.php/Installation_guide#Install_Bootloader "Installation guide") stage, exit the installer and install [GRUB](/index.php/GRUB "GRUB").
     *   **(for booting with BIOS-compatibility)** In the [install boot loader](/index.php/Installation_guide#Install_Bootloader "Installation guide") stage, edit the menu.lst file and add **reboot=pci** to the end of the **kernel** lines, for example: `kernel /vmlinuz26 root=/dev/sda5 ro reboot=pci` This will allow your MacBook to reboot correctly from Arch.
     *   **(for booting with BIOS-compatibility)** Also in the [install boot loader](/index.php/Installation_guide#Install_Bootloader "Installation guide") stage, install GRUB on whatever partition that `/boot` is on.
-        **Warning:** Do not install GRUB onto _/dev/sda_ !!! Doing so is likely to lead to an unstable post-environment.
+        **Warning:** Do not install GRUB onto */dev/sda* !!! Doing so is likely to lead to an unstable post-environment.
 
     *   In the [configure system](/index.php/Installation_guide#Configure_System "Installation guide") stage, edit /etc/mkinitcpio.conf and ensure the **keyboard** hook is in the **HOOKS** line somewhere after the **autodetect** hook. This will load the drivers for your keyboard in case you need to use it before Arch boots (e.g. entering a [LUKS](/index.php/LUKS "LUKS") password or using the troubleshooting shell).
 
@@ -502,7 +502,6 @@ To disable tap-to-click (that is, to press down to click) by default, add the fo
 If you are using [xf86-input-mtrack-git](https://aur.archlinux.org/packages/xf86-input-mtrack-git/), you can simply swap the scroll up and scroll down buttons (along with the scroll left and scroll right):
 
  `/etc/X11/xorg.conf.d/10-mtrack.conf` 
-
 ```
   ...
   Option "ScrollUpButton" "5"
@@ -537,7 +536,7 @@ If you are using [xf86-input-mtrack-git](https://aur.archlinux.org/packages/xf86
 
 ```
 
-**For some users, the two-finger right-click may not work correctly and trackpad may also become less responsive after these settings. For me, removing the 'AreaLeftEdge' and 'AreaRightEdge', solved that problem.** **OS X like MultiTouch Gestures** _currently broken due to newer synaptic drivers!_ For users looking to add more of OS X's multitouch gestures to Arch, [xSwipe](https://github.com/iberianpig/xSwipe) is a highly customisable, light weight perl script, which does just that. Once installed and configured (see xSwipe wiki on Github) I would recommend adding xSwipe as a [start up item](/index.php/Autostarting "Autostarting").
+**For some users, the two-finger right-click may not work correctly and trackpad may also become less responsive after these settings. For me, removing the 'AreaLeftEdge' and 'AreaRightEdge', solved that problem.** **OS X like MultiTouch Gestures** *currently broken due to newer synaptic drivers!* For users looking to add more of OS X's multitouch gestures to Arch, [xSwipe](https://github.com/iberianpig/xSwipe) is a highly customisable, light weight perl script, which does just that. Once installed and configured (see xSwipe wiki on Github) I would recommend adding xSwipe as a [start up item](/index.php/Autostarting "Autostarting").
 
 #### Keyboard
 
@@ -559,7 +558,7 @@ systemctl start pommed
 
 ```
 
-**Tip:** if you are using Gnome or KDE you can easily configure _3rd level functionality_, _multimedia key_, etc. in Keyboard Preferences.
+**Tip:** if you are using Gnome or KDE you can easily configure *3rd level functionality*, *multimedia key*, etc. in Keyboard Preferences.
 
 **Note:** See the [Xorg input hotplugging](/index.php/Xorg_input_hotplugging "Xorg input hotplugging") page for other configuration information.
 
@@ -618,7 +617,6 @@ You can easily check what card do your MacBook have by:
 *   8.1 generation MacBooks have BCM4331, for which support is not present in either Linux (3.0 and 3.1) or the proprietary drivers by Broadcom. There is however preliminary support for it in Linux 3.2\. To run the drivers on earlier kernels, you will need to use [compat-drivers](https://backports.wiki.kernel.org/index.php/Documentation/compat-drivers)
 
 **Note:** If your connection frequently drops, you may have to turn off Wi-Fi power management. If you are running [pm-utils](/index.php/Pm-utils "Pm-utils"), you may override wireless power management by creating an executable file `/etc/pm/wireless` with the lines:
-
 ```
 #!/bin/sh
 iwconfig wlp2s0 power off
@@ -772,7 +770,7 @@ When it's done, check that the firmware has been found:
 
 ```
 
-Once successful, completely **SHUTDOWN** your Mac and start it back up again (to clear the hardware state of the webcam). Do _not_ reboot.
+Once successful, completely **SHUTDOWN** your Mac and start it back up again (to clear the hardware state of the webcam). Do *not* reboot.
 
 It should be automatically loaded at boot; if it isn't you can load the **uvcvideo** module [manually or load it at boot](/index.php/Kernel_modules "Kernel modules").
 
@@ -822,7 +820,7 @@ There are color profile files agree with in MacBook models; select the right one
 *   **Color LCD-4271880.icc** for MacBook with Core2Duo
 *   **Color LCD-4271780.icc** for MacBook (non-Pro) based on CoreDuo or Core2Duo.
 
-**Tip:** Also OS X allows to save current color profile from _Displays > Color_ section of the _Mac OS System Preferences_, in this case file is saved to `/Users/<username>/Library/ColorSync/Profiles`.
+**Tip:** Also OS X allows to save current color profile from *Displays > Color* section of the *Mac OS System Preferences*, in this case file is saved to `/Users/<username>/Library/ColorSync/Profiles`.
 
 Finally you can activate it by running
 
@@ -922,7 +920,7 @@ Create a "mac" folder in /media:
 
 ```
 
-Add at the end of _/etc/fstab_ this line:
+Add at the end of */etc/fstab* this line:
 
 ```
 /dev/sda2    /media/mac     hfsplus auto,user,rw,exec   0 0
@@ -961,7 +959,7 @@ $ diskutil list
 
 ```
 
-In this example we will use _disk0s3_ partition named as _Macintosh HD_. To know if journaling is activate or not you could execute:
+In this example we will use *disk0s3* partition named as *Macintosh HD*. To know if journaling is activate or not you could execute:
 
 ```
 $ diskutil info /dev/disk0s3 | grep -i journal
@@ -992,7 +990,7 @@ If you get noting as output, then jounrnaling is disabled.
 
 ### Home Sharing
 
-_**UID Synchronization**_
+***UID Synchronization***
 
 #### In OS X
 
@@ -1000,18 +998,18 @@ _**UID Synchronization**_
 
 ##### Step 1: change UID and GID(s)
 
-_**Pre-Leopard**_
+***Pre-Leopard***
 
-1.  Open **NetInfo Manager** located in the _/Applications/Utilities_ folder.
+1.  Open **NetInfo Manager** located in the */Applications/Utilities* folder.
 2.  If not done for you already, enable access to user account transactions by clicking on the closed lock at the bottom of the window, and entering your account password, or root password if you have created a root account.
-3.  Navigate to _/users/<new user name>_ where <new user name> is the name of the account that will have read/write access to the folder that will be shared with the primary user in Arch.
+3.  Navigate to */users/<new user name>* where <new user name> is the name of the account that will have read/write access to the folder that will be shared with the primary user in Arch.
 4.  Change the **UID** value to 1000 (the value used by default for first user created in Arch).
 5.  Also change the **GID** value to 1000 (the value used by default for user account creation in Arch).
 6.  Navigate to `/groups/<new user name>`, automatically saving the changes you have made so far.
 
 **Note:** If you get an error message that the transaction is not allowed, log out and log back in.
 
-_**Leopard**_
+***Leopard***
 
 In Leopard, the **NetInfo Manager** application is not present. A different set of steps is required for UID synchronization:
 
@@ -1034,7 +1032,7 @@ In Leopard, the **NetInfo Manager** application is not present. A different set 
 
 #### In Arch
 
-To synchronize your UID in Arch Linux, you are advised to perform this operation _while creating a new user account_. It is therefore recommended that you do this as soon as you install Arch Linux.
+To synchronize your UID in Arch Linux, you are advised to perform this operation *while creating a new user account*. It is therefore recommended that you do this as soon as you install Arch Linux.
 
 Now you must substitute Arch's home with OS X's home, by modify entries of `/etc/fstab`.
 
@@ -1062,14 +1060,14 @@ or
 
 ### Mute startup chime
 
-The startup chime volume is controlled by the EFI variable _SystemAudioVolume-7c436110-ab2a-4bbb-a880-fe41995c9f82_. So it can be muted with
+The startup chime volume is controlled by the EFI variable *SystemAudioVolume-7c436110-ab2a-4bbb-a880-fe41995c9f82*. So it can be muted with
 
 ```
 # printf "\x07\x00\x00\x00\x00" > /sys/firmware/efi/efivars/SystemAudioVolume-7c436110-ab2a-4bbb-a880-fe41995c9f82
 
 ```
 
-Alternatively, you can use a OS X install disk to mute the chime. Boot from it, select language, then click _Utilities > Terminal_, and enter
+Alternatively, you can use a OS X install disk to mute the chime. Boot from it, select language, then click *Utilities > Terminal*, and enter
 
 ```
 # /usr/sbin/nvram SystemAudioVolume=%01
@@ -1291,7 +1289,6 @@ There are several drivers available that provide multitouch support. The followi
 For [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) the following configuration emulates some features from the OS X functionality. For more options see the `libinput` [man page](/index.php/Man_page "Man page").
 
  `/etc/X11/xorg.conf.d/90-libinput.conf` 
-
 ```
 Section "InputClass"
     Identifier "libinput touchpad catchall"
@@ -1305,7 +1302,6 @@ EndSection
 For [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) the following configuration is necessary to make the touchpad work fully.
 
  `/etc/X11/xorg.conf.d/60-magictrackpad.conf` 
-
 ```
 Section "InputClass"
     Identifier "Trackpad"
@@ -1327,7 +1323,7 @@ For Intel-only graphics, install [xf86-video-intel](https://www.archlinux.org/pa
 
 For Dual Graphics see [this section on the 11,3](https://wiki.archlinux.org/index.php/MacBookPro11,x#Graphics).
 
-**Note:** The kernel parameters _acpi_backlight_, _i915.lvds_downclock_, _i915.enable_ips_, and _intel_iommu_ are no longer necessary as of kernel 4.2.
+**Note:** The kernel parameters *acpi_backlight*, *i915.lvds_downclock*, *i915.enable_ips*, and *intel_iommu* are no longer necessary as of kernel 4.2.
 
 #### 2012 - 2014 models
 

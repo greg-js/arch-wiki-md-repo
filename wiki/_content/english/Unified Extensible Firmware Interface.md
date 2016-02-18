@@ -91,7 +91,7 @@ If the command returns EFI32 then it is IA32 (32-bit) EFI firmware. If it return
 
 ### Secure Boot
 
-For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html) article. This section focuses on how to set up Secure Boot in Arch Linux. This section explains the procedure of booting the archiso with Secure Boot enabled. Booting the archiso with Secure Boot enabled is possible since the EFI applications `PreLoader.efi` and `HashTool.efi` have been added to it. A message will show up that says _Failed to Start loader... I will now execute HashTool._ To use HashTool for enrolling the hash of `loader.efi` and `vmlinuz.efi`, follow these steps.
+For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html) article. This section focuses on how to set up Secure Boot in Arch Linux. This section explains the procedure of booting the archiso with Secure Boot enabled. Booting the archiso with Secure Boot enabled is possible since the EFI applications `PreLoader.efi` and `HashTool.efi` have been added to it. A message will show up that says *Failed to Start loader... I will now execute HashTool.* To use HashTool for enrolling the hash of `loader.efi` and `vmlinuz.efi`, follow these steps.
 
 *   Select `OK`
 *   In the HashTool main menu, select `Enroll Hash`, choose `\loader.efi` and confirm with `Yes`. Again, select `Enroll Hash` and `archiso` to enter the archiso directory, then select `vmlinuz.efi` and confirm with `Yes`. Then choose `Exit` to return to the boot device selection menu.
@@ -245,7 +245,7 @@ If EFI Variables support does not work even after the above conditions are satis
 
 #### Mount efivarfs
 
-**Warning:** _efivars_ is mounted writeable by default [[1]](https://github.com/systemd/systemd/issues/2402), which may cause permanent damage to the system. [[2]](https://bbs.archlinux.org/viewtopic.php?id=207549) As such, consider mounting _efivars_ read-only (`-o ro`) as described below. Note that when it is mounted read-only, tools such as _efibootmgr_ and bootloaders will not be able to change boot settings, nor will commands like `systemctl reboot --firmware-setup` work.
+**Warning:** *efivars* is mounted writeable by default [[1]](https://github.com/systemd/systemd/issues/2402), which may cause permanent damage to the system. [[2]](https://bbs.archlinux.org/viewtopic.php?id=207549) As such, consider mounting *efivars* read-only (`-o ro`) as described below. Note that when it is mounted read-only, tools such as *efibootmgr* and bootloaders will not be able to change boot settings, nor will commands like `systemctl reboot --firmware-setup` work.
 
 If `efivarfs` is not automatically mounted at `/sys/firmware/efi/efivars` by [systemd](/index.php/Systemd "Systemd") during boot, then you need to manually mount it to expose UEFI variables to [#Userspace tools](#Userspace_tools) like `efibootmgr`:
 
@@ -335,7 +335,7 @@ It is an OS independent partition that acts as the storage place for the EFI boo
 
 ### GPT partitioned disks
 
-*   **fdisk**/**gdisk**: Create a partition with partition type EFI System (`EFI System` in _fdisk_ or `ef00` in _gdisk_). Then format that partition as FAT32 using `mkfs.fat -F32 /dev/<THAT_PARTITION>`
+*   **fdisk**/**gdisk**: Create a partition with partition type EFI System (`EFI System` in *fdisk* or `ef00` in *gdisk*). Then format that partition as FAT32 using `mkfs.fat -F32 /dev/<THAT_PARTITION>`
 
 (or)
 
@@ -345,7 +345,7 @@ It is an OS independent partition that acts as the storage place for the EFI boo
 
 ### MBR partitioned disks
 
-*   **fdisk**: Create a partition with partition type _EFI System_ using fdisk. Then format that partition as FAT32 using `mkfs.fat -F32 /dev/<THAT_PARTITION>`
+*   **fdisk**: Create a partition with partition type *EFI System* using fdisk. Then format that partition as FAT32 using `mkfs.fat -F32 /dev/<THAT_PARTITION>`
 
 ### ESP on RAID
 
@@ -469,7 +469,7 @@ Most of the 32-bit EFI Macs and some 64-bit EFI Macs refuse to boot from a UEFI(
 *   Mount the official installation media and obtain the `archisolabel` as shown in the previous section.
 
 ```
-# mount -o loop _input.iso_ /mnt/iso
+# mount -o loop *input.iso* /mnt/iso
 
 ```
 
@@ -478,7 +478,7 @@ Most of the 32-bit EFI Macs and some 64-bit EFI Macs refuse to boot from a UEFI(
 ```
 $ xorriso -as mkisofs -iso-level 3 \
     -full-iso9660-filenames\
-    -volid "_archisolabel_" \
+    -volid "*archisolabel*" \
     -appid "Arch Linux CD" \
     -publisher "Arch Linux <[https://www.archlinux.org](https://www.archlinux.org)>" \
     -preparer "prepared by $USER" \
@@ -486,10 +486,10 @@ $ xorriso -as mkisofs -iso-level 3 \
     -eltorito-catalog isolinux/boot.cat \
     -no-emul-boot -boot-load-size 4 -boot-info-table \
     -isohybrid-mbr "/mnt/iso/isolinux/isohdpfx.bin" \
-    -output _output.iso_ /mnt/iso/
+    -output *output.iso* /mnt/iso/
 ```
 
-*   Burn `_output.iso_` to optical media and proceed with installation normally.
+*   Burn `*output.iso*` to optical media and proceed with installation normally.
 
 ## Testing UEFI in systems without native support
 
@@ -549,7 +549,6 @@ bcdedit /set {bootmgr} path \EFI\boot_app_dir\boot_app.efi
 *   Create `EFI/boot/grub.cfg` with the following contents (replace `ARCH_YYYYMM` with the required archiso label e.g. `ARCH_201507`):
 
  `grub.cfg for Official ISO` 
-
 ```
 insmod part_gpt
 insmod part_msdos
@@ -587,9 +586,7 @@ menuentry "UEFI Shell x86_64 v1" {
 }
 
 ```
-
  `grub.cfg for Archboot ISO` 
-
 ```
 insmod part_gpt
 insmod part_msdos

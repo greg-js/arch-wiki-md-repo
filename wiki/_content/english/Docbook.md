@@ -18,7 +18,7 @@
 To validate the XML file use:
 
 ```
-$ xmllint --valid --noout _/path/to/file.xml_
+$ xmllint --valid --noout */path/to/file.xml*
 
 ```
 
@@ -31,7 +31,7 @@ This will generate no output if the file is proper XML.
 To convert into a XHTML file (single file) use:
 
 ```
-$ xsltproc /usr/share/xml/docbook/$(pacman -Q docbook-xsl | cut -d ' ' -f 2 | cut -d '-' -f 1)/xhtml/docbook.xsl _/path/to/file.xml_ > _output.html_
+$ xsltproc /usr/share/xml/docbook/$(pacman -Q docbook-xsl | cut -d ' ' -f 2 | cut -d '-' -f 1)/xhtml/docbook.xsl */path/to/file.xml* > *output.html*
 
 ```
 
@@ -40,7 +40,7 @@ $ xsltproc /usr/share/xml/docbook/$(pacman -Q docbook-xsl | cut -d ' ' -f 2 | cu
 To convert into a a segmented XHTML file (each section in its own file) use:
 
 ```
-$ xsltproc /usr/share/xml/docbook/$(pacman -Q docbook-xsl | cut -d ' ' -f 2 | cut -d '-' -f 1)/xhtml/chunk.xsl _/path/to/file.xml_
+$ xsltproc /usr/share/xml/docbook/$(pacman -Q docbook-xsl | cut -d ' ' -f 2 | cut -d '-' -f 1)/xhtml/chunk.xsl */path/to/file.xml*
 
 ```
 

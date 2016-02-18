@@ -1,10 +1,10 @@
-This page describes how to install Valves _HLDS_ (Half-Life Dedicated Server) for installing and running a game server for classic Half-Life 1 games.
+This page describes how to install Valves *HLDS* (Half-Life Dedicated Server) for installing and running a game server for classic Half-Life 1 games.
 
 ## Installation
 
 First, install [hlds](https://aur.archlinux.org/packages/hlds/) from the [AUR](/index.php/AUR "AUR").
 
-Now we begin download the game files, in this example for _Counter-Strike 1.6_, by executing this command (where username and password is your steam one):
+Now we begin download the game files, in this example for *Counter-Strike 1.6*, by executing this command (where username and password is your steam one):
 
 ```
 $ su hlds -C "/opt/hlds/steam -command update -game cstrike -dir /opt/hlds -username <username> -password <password>"
@@ -13,10 +13,9 @@ $ su hlds -C "/opt/hlds/steam -command update -game cstrike -dir /opt/hlds -user
 
 ## Configuration
 
-Of couse you can define the server settings in the game directory itself, for example by editing /opt/hlds/cstrike/server.cfg. Alternatively you could set the startup parameters in _/etc/conf.d/hlds_:
+Of couse you can define the server settings in the game directory itself, for example by editing /opt/hlds/cstrike/server.cfg. Alternatively you could set the startup parameters in */etc/conf.d/hlds*:
 
  `/etc/conf.d/hlds` 
-
 ```
 user=hlds # this setting won't work yet
 workingdir=/opt/hlds # this setting won't work yet

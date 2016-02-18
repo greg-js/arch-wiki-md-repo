@@ -58,7 +58,6 @@ $ rotate-script.sh invert
 to invert the screen.
 
  `~/.local/bin/rotate-script.sh` 
-
 ```
 #!/bin/bash
 # This is a script that toggles rotation of the screen through xrandr,

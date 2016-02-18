@@ -20,7 +20,7 @@
         *   [1.3.2 Screencast](#Screencast)
     *   [1.4 Sistemas de audio](#Sistemas_de_audio)
     *   [1.5 Reproductores de audio](#Reproductores_de_audio)
-        *   [1.5.1 Demonio y cliente de _«music player»_](#Demonio_y_cliente_de_.C2.ABmusic_player.C2.BB)
+        *   [1.5.1 Demonio y cliente de *«music player»*](#Demonio_y_cliente_de_.C2.ABmusic_player.C2.BB)
         *   [1.5.2 Consola](#Consola_2)
         *   [1.5.3 Interfez gráfica](#Interfez_gr.C3.A1fica)
     *   [1.6 Ripear CD](#Ripear_CD)
@@ -43,7 +43,7 @@
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Visor_de_im%C3%A1genes "wikipedia:es:Visor de imágenes")
 
-	_«Un visor de imágenes es una aplicación informática que permite mostrar imágenes digitales guardadas es un disco local o -también- remotamente, asimismo puede manejar varios formatos de imagénes. Este tipo de software dibuja la imagen de acuerdo a las propiedades disponibles de la pantalla tales como profundidad de color y resolución de pantalla. Además, se pueden usar editores de gráficos rasterizados (tales como GIMP, Krita o Adobe Photoshop) para ver imagénes.»_
+	*«Un visor de imágenes es una aplicación informática que permite mostrar imágenes digitales guardadas es un disco local o -también- remotamente, asimismo puede manejar varios formatos de imagénes. Este tipo de software dibuja la imagen de acuerdo a las propiedades disponibles de la pantalla tales como profundidad de color y resolución de pantalla. Además, se pueden usar editores de gráficos rasterizados (tales como GIMP, Krita o Adobe Photoshop) para ver imagénes.»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of image viewers](https://en.wikipedia.org/wiki/Comparison_of_image_viewers "wikipedia:Comparison of image viewers").
 
@@ -149,7 +149,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Raster "wikipedia:es:Raster")
 
-	_Una imagen en mapa de bits, también conocida como **imagen matricial**, bitmap, raster image o extensión .bmp (estos dos tomados del inglés), o **imagen ráster** (un calco del inglés), es una estructura o fichero de datos que representa una rejilla rectangular de píxeles o puntos de color, denominada matriz, que se puede visualizar en un monitor, papel u otro dispositivo de representación.»_
+	*Una imagen en mapa de bits, también conocida como **imagen matricial**, bitmap, raster image o extensión .bmp (estos dos tomados del inglés), o **imagen ráster** (un calco del inglés), es una estructura o fichero de datos que representa una rejilla rectangular de píxeles o puntos de color, denominada matriz, que se puede visualizar en un monitor, papel u otro dispositivo de representación.»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of raster graphics editors](https://en.wikipedia.org/wiki/Comparison_of_raster_graphics_editors "wikipedia:Comparison of raster graphics editors").
 
@@ -205,7 +205,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://mypaint.intilinux.com](http://mypaint.intilinux.com) || [mypaint](https://www.archlinux.org/packages/?name=mypaint)
 
-*   **Nathive** — _«Usable image editor»_, basada en las bibliotecas de GNOME enfocada a la usabilidad y con una curva de aprendizaje suave.
+*   **Nathive** — *«Usable image editor»*, basada en las bibliotecas de GNOME enfocada a la usabilidad y con una curva de aprendizaje suave.
 
 	[http://www.nathive.org/](http://www.nathive.org/) || [nathive](https://aur.archlinux.org/packages/nathive/)
 
@@ -225,7 +225,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Gr%C3%A1fico_vectorial "wikipedia:es:Gráfico vectorial")
 
-	_«Una imagen vectorial es una imagen digital formada por objetos geométricos independientes (segmentos, polígonos, arcos, etc.), cada uno de ellos definido por distintos atributos matemáticos de forma, de posición, de color, etc. (...) Este formato de imagen es completamente distinto al formato de las imágenes de mapa de bits, también llamados imágenes matriciales, que están formados por píxeles. El interés principal de los gráficos vectoriales es poder ampliar el tamaño de una imagen a voluntad sin sufrir la pérdida de calidad que sufren los mapas de bits.»_
+	*«Una imagen vectorial es una imagen digital formada por objetos geométricos independientes (segmentos, polígonos, arcos, etc.), cada uno de ellos definido por distintos atributos matemáticos de forma, de posición, de color, etc. (...) Este formato de imagen es completamente distinto al formato de las imágenes de mapa de bits, también llamados imágenes matriciales, que están formados por píxeles. El interés principal de los gráficos vectoriales es poder ampliar el tamaño de una imagen a voluntad sin sufrir la pérdida de calidad que sufren los mapas de bits.»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of vector graphics editors](https://en.wikipedia.org/wiki/Comparison_of_vector_graphics_editors "wikipedia:Comparison of vector graphics editors").
 
@@ -233,7 +233,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://live.gnome.org/Dia](http://live.gnome.org/Dia) || [dia](https://www.archlinux.org/packages/?name=dia)
 
-*   **[Inkscape](https://en.wikipedia.org/wiki/Inkscape "wikipedia:Inkscape")** — Editor de gráficos vectoriales, con capacidades similares a [Illustrator](https://en.wikipedia.org/wiki/Adobe_Illustrator "wikipedia:Adobe Illustrator"), [CorelDraw](https://en.wikipedia.org/wiki/CorelDRAW "wikipedia:CorelDRAW"), o [Xara X](https://en.wikipedia.org/wiki/Xara_X "wikipedia:Xara X"), que utiliza el formato de archivo SVG (_Scalable Vector Graphics_). Inkscape soporta muchas características avanzadas de SVG (marcadores, clones, mezcla alfa, etc.) y tiene mucho cuidado en el diseño de una interfaz intuitiva. Hace fácil editar nodos, realizar operaciones complejas, trazar mapas de bits y mucho más. Sus desarrolladores también tienen como objetivo mantener una próspera comunidad de usuarios y desarrolladores para que siga siendo software abierto, en beneficio de la comunidad.
+*   **[Inkscape](https://en.wikipedia.org/wiki/Inkscape "wikipedia:Inkscape")** — Editor de gráficos vectoriales, con capacidades similares a [Illustrator](https://en.wikipedia.org/wiki/Adobe_Illustrator "wikipedia:Adobe Illustrator"), [CorelDraw](https://en.wikipedia.org/wiki/CorelDRAW "wikipedia:CorelDRAW"), o [Xara X](https://en.wikipedia.org/wiki/Xara_X "wikipedia:Xara X"), que utiliza el formato de archivo SVG (*Scalable Vector Graphics*). Inkscape soporta muchas características avanzadas de SVG (marcadores, clones, mezcla alfa, etc.) y tiene mucho cuidado en el diseño de una interfaz intuitiva. Hace fácil editar nodos, realizar operaciones complejas, trazar mapas de bits y mucho más. Sus desarrolladores también tienen como objetivo mantener una próspera comunidad de usuarios y desarrolladores para que siga siendo software abierto, en beneficio de la comunidad.
 
 	[http://inkscape.org/](http://inkscape.org/) || [inkscape](https://www.archlinux.org/packages/?name=inkscape)
 
@@ -253,7 +253,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Dise%C3%B1o_asistido_por_computadora "wikipedia:es:Diseño asistido por computadora")
 
-	_«El diseño asistido por computadora, más conocido por sus siglas inglesas CAD (computer-aided design), es el uso de un amplio rango de herramientas computacionales que asisten a ingenieros, arquitectos y diseñadores. (...) Estas herramientas se pueden dividir básicamente en programas de dibujo 2D y de modelado 3D. Las herramientas de dibujo en 2D se basan en entidades geométricas vectoriales como puntos, líneas, arcos y polígonos, con las que se puede operar a través de una interfaz gráfica. Los modeladores en 3D añaden superficies y sólidos.»_
+	*«El diseño asistido por computadora, más conocido por sus siglas inglesas CAD (computer-aided design), es el uso de un amplio rango de herramientas computacionales que asisten a ingenieros, arquitectos y diseñadores. (...) Estas herramientas se pueden dividir básicamente en programas de dibujo 2D y de modelado 3D. Las herramientas de dibujo en 2D se basan en entidades geométricas vectoriales como puntos, líneas, arcos y polígonos, con las que se puede operar a través de una interfaz gráfica. Los modeladores en 3D añaden superficies y sólidos.»*
 
 Véanse los artículos de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [CAD](https://en.wikipedia.org/wiki/es:Dise%C3%B1o_asistido_por_computadora "wikipedia:es:Diseño asistido por computadora") y [List of computer-aided design editors](https://en.wikipedia.org/wiki/List_of_computer-aided_design_editors "wikipedia:List of computer-aided design editors").
 
@@ -285,9 +285,9 @@ Véanse los artículos de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page"), la creación de gráficos 3D tiene, entre otras fases, la de:
 
-*   [Modelado](https://en.wikipedia.org/wiki/es:Gr%C3%A1ficos_3D_por_computadora#Modelado "wikipedia:es:Gráficos 3D por computadora"): _«que consiste en ir dando forma a objetos individuales que luego serán usados en la escena. Existen diversos tipos de geometría para modelador con NURBS y modelado poligonal o subdivisión de superficies»_, y
+*   [Modelado](https://en.wikipedia.org/wiki/es:Gr%C3%A1ficos_3D_por_computadora#Modelado "wikipedia:es:Gráficos 3D por computadora"): *«que consiste en ir dando forma a objetos individuales que luego serán usados en la escena. Existen diversos tipos de geometría para modelador con NURBS y modelado poligonal o subdivisión de superficies»*, y
 
-*   [Renderizado](https://en.wikipedia.org/wiki/es:Gr%C3%A1ficos_3D_por_computadora#Renderizado "wikipedia:es:Gráficos 3D por computadora"): _«se llama renderización al proceso final de generar la imagen 2D o animación a partir de la escena creada.»_
+*   [Renderizado](https://en.wikipedia.org/wiki/es:Gr%C3%A1ficos_3D_por_computadora#Renderizado "wikipedia:es:Gráficos 3D por computadora"): *«se llama renderización al proceso final de generar la imagen 2D o animación a partir de la escena creada.»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of 3D computer graphics software](https://en.wikipedia.org/wiki/Comparison_of_3D_computer_graphics_software "wikipedia:Comparison of 3D computer graphics software").
 
@@ -317,7 +317,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Captura_de_pantalla "wikipedia:es:Captura de pantalla")
 
-	_«Una captura de pantalla (también llamada **screenshot** del inglés) es una imagen tomada por una computadora o un teléfono inteligente para capturar los elementos vistos en el monitor u otro dispositivo de salida visual.»_
+	*«Una captura de pantalla (también llamada **screenshot** del inglés) es una imagen tomada por una computadora o un teléfono inteligente para capturar los elementos vistos en el monitor u otro dispositivo de salida visual.»*
 
 Véase el artículo de [ArchWiki](/index.php/Main_page "Main page") sobre este asunto para obtener más información: [Taking a screenshot](/index.php/Taking_a_screenshot "Taking a screenshot").
 
@@ -325,11 +325,11 @@ Véase el artículo de [ArchWiki](/index.php/Main_page "Main page") sobre este a
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Screencast "wikipedia:es:Screencast")
 
-	_«Un screencast es una grabación digital de la salida por pantalla de la computadora, a veces conteniendo narración de audio. (...) Un **screenshot** es una imagen de la pantalla de usuario, y un **screencast** es esencialmente una película de lo que el usuario observa en su monitor.»_
+	*«Un screencast es una grabación digital de la salida por pantalla de la computadora, a veces conteniendo narración de audio. (...) Un **screenshot** es una imagen de la pantalla de usuario, y un **screencast** es esencialmente una película de lo que el usuario observa en su monitor.»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of screencasting software](https://en.wikipedia.org/wiki/Comparison_of_screencasting_software "wikipedia:Comparison of screencasting software").
 
-Las utilidades _screencast_ le permiten crear un vídeo del escritorio de su ordenador o de ventanas individuales.
+Las utilidades *screencast* le permiten crear un vídeo del escritorio de su ordenador o de ventanas individuales.
 
 *   **byzanz** — Herramienta de screencast simple que produce animaciones GIF.
 
@@ -373,7 +373,7 @@ Véase el artículo de [ArchWiki](/index.php/Main_page "Main page") sobre este a
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of audio player software](https://en.wikipedia.org/wiki/Comparison_of_audio_player_software "wikipedia:Comparison of audio player software").
 
-#### Demonio y cliente de _«music player»_
+#### Demonio y cliente de *«music player»*
 
 *   **[Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daemon")** — Demonio ligero y versátil para gestionar música.
 
@@ -480,7 +480,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://offog.org/code/potamus.html](http://offog.org/code/potamus.html) || [potamus](https://aur.archlinux.org/packages/potamus/)
 
-*   **Pragha** — Álbum de música basado en GTK+ (fork de _Consonance Music Manager_)
+*   **Pragha** — Álbum de música basado en GTK+ (fork de *Consonance Music Manager*)
 
 	[http://pragha.wikispaces.com/](http://pragha.wikispaces.com/) || [pragha](https://www.archlinux.org/packages/?name=pragha)
 
@@ -516,7 +516,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Ripear "wikipedia:es:Ripear")
 
-	_«Ripear (Ripping) es el proceso de copiar los datos de audio y vídeo de un dispositivo multimedia, (como un CD, DVD, o HD DVD), a otro soporte de datos digital como un Disco Duro, CD, DVD, etc.»_
+	*«Ripear (Ripping) es el proceso de copiar los datos de audio y vídeo de un dispositivo multimedia, (como un CD, DVD, o HD DVD), a otro soporte de datos digital como un Disco Duro, CD, DVD, etc.»*
 
 *   **[Abcde](https://en.wikipedia.org/wiki/ABCDE "wikipedia:ABCDE")** — Herramienta de línea de órdenes completa para ripear CD de audio.
 
@@ -526,7 +526,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://littlesvr.ca/asunder/](http://littlesvr.ca/asunder/) || [asunder](https://www.archlinux.org/packages/?name=asunder)
 
-*   **[cdparanoia](https://en.wikipedia.org/wiki/cdparanoia "wikipedia:cdparanoia")** — Herramienta para CD de Audio Digital (_Compact Disc Digital Audio - CDDA_) y Extracción de Audio Digital (_Digital Audio Extraction - DAE_).
+*   **[cdparanoia](https://en.wikipedia.org/wiki/cdparanoia "wikipedia:cdparanoia")** — Herramienta para CD de Audio Digital (*Compact Disc Digital Audio - CDDA*) y Extracción de Audio Digital (*Digital Audio Extraction - DAE*).
 
 	[http://xiph.org/paranoia/index.html](http://xiph.org/paranoia/index.html) || [cdparanoia](https://www.archlinux.org/packages/?name=cdparanoia)
 
@@ -566,7 +566,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/Music_visualization "wikipedia:Music visualization")
 
-	_«La visualización de música es una característica que se encuentra en visualizadores de música electrónica y software reproductores multimedia que genera imágenes de animación basadas en una pieza musical.»_
+	*«La visualización de música es una característica que se encuentra en visualizadores de música electrónica y software reproductores multimedia que genera imágenes de animación basadas en una pieza musical.»*
 
 *   **[ProjectM](https://en.wikipedia.org/wiki/MilkDrop "wikipedia:MilkDrop")** — Visualizador de música que utiliza aceleración 3D interactiva basada en renderización de imágenes.
 
@@ -618,7 +618,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Editor_de_audio "wikipedia:es:Editor de audio")
 
-	_«Es una aplicación informática usada para editar audio, es decir, manipular audio digital. Los editores de audio son la pieza de software principal en las estaciones de trabajo de audio digital.»_
+	*«Es una aplicación informática usada para editar audio, es decir, manipular audio digital. Los editores de audio son la pieza de software principal en las estaciones de trabajo de audio digital.»*
 
 *   **[Ardour](https://en.wikipedia.org/wiki/Ardour_(software) "wikipedia:Ardour (software)")** — Grabador multicanal de disco duro y estación de trabajo de audio digital.
 
@@ -656,7 +656,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Libro_electr%C3%B3nico "wikipedia:es:Libro electrónico")
 
-	_«Un libro electrónico, libro digital, ciberlibro, también conocido como e-book, eBook, o ecolibro, es una versión electrónica o digital de un libro o un texto. También suele denominarse así al dispositivo usado para leer estos libros, que es conocido también como e-reader o lector de libros electrónicos.»_
+	*«Un libro electrónico, libro digital, ciberlibro, también conocido como e-book, eBook, o ecolibro, es una versión electrónica o digital de un libro o un texto. También suele denominarse así al dispositivo usado para leer estos libros, que es conocido también como e-reader o lector de libros electrónicos.»*
 
 *   **[Calibre](https://en.wikipedia.org/wiki/Calibre_(software) "wikipedia:Calibre (software)")** — Aplicación de gestión de biblioteca de libros electrónicos, que también puede convertir diferentes formatos y sincronizarse con una gran variedad de lectores de libros electrónicos. Los formatos soportados incluyen CBZ, CBR, CBC, CHM, DJVU, EPUB, FictionBook, HTML, HTMLZ, LIT, LRF, Mobipocket, ODT, PDF, PRC, PDB, PML, RB, RTF, SNB, TCR, TXT y TXTZ.
 
@@ -758,7 +758,7 @@ Véanse los artículos de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main P
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Edici%C3%B3n_de_v%C3%ADdeo "wikipedia:es:Edición de vídeo")
 
-	_«Consiste en manipular a través de un programa de edición de video, los distintos medios como archivos de video, fotos, gráficos o animaciones, y donde también es posible manipular audio aunque generalmente de forma muy simple.»_
+	*«Consiste en manipular a través de un programa de edición de video, los distintos medios como archivos de video, fotos, gráficos o animaciones, y donde también es posible manipular audio aunque generalmente de forma muy simple.»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of video editing software](https://en.wikipedia.org/wiki/Comparison_of_video_editing_software "wikipedia:Comparison of video editing software").
 
@@ -824,7 +824,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://www.gcstar.org/](http://www.gcstar.org/) || [gcstar](https://www.archlinux.org/packages/?name=gcstar)
 
-*   **[Koha](https://en.wikipedia.org/wiki/Koha_(software) "wikipedia:Koha (software)")** — Sistema de biblioteca integrado -_integrated Library System (ILS)_- de código abierto, que se utiliza en todo el mundo por el público en general, escuelas y bibliotecas especializadas.
+*   **[Koha](https://en.wikipedia.org/wiki/Koha_(software) "wikipedia:Koha (software)")** — Sistema de biblioteca integrado -*integrated Library System (ILS)*- de código abierto, que se utiliza en todo el mundo por el público en general, escuelas y bibliotecas especializadas.
 
 	[http://koha-community.org/](http://koha-community.org/) || [koha](https://aur.archlinux.org/packages/koha/)
 

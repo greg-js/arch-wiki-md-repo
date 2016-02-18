@@ -17,7 +17,7 @@ Sebelum menginstal, Anda disarankan untuk menuju ke [FAQ](/index.php/FAQ "FAQ").
 **Garis Besar Distribusi Arch Linux:**
 
 *   [Sederhana](/index.php/The_Arch_Way "The Arch Way") secara desain dan filosofi
-*   [Semua paket](https://www.archlinux.org/packages/?q=) dikompilasi untuk arsitektur [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "wikipedia:P6 (microarchitecture)") dan [x86_64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64")
+*   [Semua paket](https://www.archlinux.org/packages/?q=) dikompilasi untuk arsitektur [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) dan [x86_64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64")
 *   [Rolling-release](https://en.wikipedia.org/wiki/Rolling_release "wikipedia:Rolling release") model, memungkinkan instalasi satu kali dan upgrade tanpa batas ke versi stabil yg terbaru dari perangkat lunak yang diinstal
 *   Init script [Gaya BSD](/index.php/Arch_boot_process "Arch boot process"), menampilkan satu file konfigurasi terpusat
 *   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") yang sederhana dan dinamis sebagai pembuat [initramfs](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd")
@@ -31,21 +31,21 @@ Arch Linux, pacman, dokumentasi, dan skrip adalah Hak Cipta © 2002-2007 oleh Ju
 
 ### Cara Arch
 
-_**Prinsip-prinsip desain di balik Arch bertujuan menjaganya tetap [sederhana](/index.php/The_Arch_Way "The Arch Way").**_
+***Prinsip-prinsip desain di balik Arch bertujuan menjaganya tetap [sederhana](/index.php/The_Arch_Way "The Arch Way").***
 
 'Sederhana', dalam konteks ini, berarti 'tanpa tambahan yang tidak perlu, modifikasi, atau komplikasi'. Singkatnya, pendekatan yg elegan dan minimalis.
 
 **Beberapa pemikiran yang perlu diingat ketika Anda mempertimbangkan kesederhanaan:**
 
-*   _" 'Sederhana' didefinisikan dari sudut pandang teknis, bukan sudut pandang kegunaan. Lebih baik secara teknis elegan dengan kurva belajar yang lebih tinggi, daripada menjadi mudah digunakan dan [inferior] secara teknis ." —**Aaron Griffin**_
-*   _Entia non sunt multiplicanda praeter necessitatem_ atau "Entities should not be multiplied unnecessarily." —**Occam's razor**. Dalam hal ini Razor merujuk pada tindakan pemangkasan komplikasi hal yang tak diperlukan demi mencapai penjelasan yang sederhana, baik teori maupun metoda.
-*   _"Bagian luar biasa [metode saya] terletak pada kesederhanaan .. Ketinggian budidaya selalu berarah pada kesederhanaan."_ — **Bruce Lee**
+*   *" 'Sederhana' didefinisikan dari sudut pandang teknis, bukan sudut pandang kegunaan. Lebih baik secara teknis elegan dengan kurva belajar yang lebih tinggi, daripada menjadi mudah digunakan dan [inferior] secara teknis ." —**Aaron Griffin***
+*   *Entia non sunt multiplicanda praeter necessitatem* atau "Entities should not be multiplied unnecessarily." —**Occam's razor**. Dalam hal ini Razor merujuk pada tindakan pemangkasan komplikasi hal yang tak diperlukan demi mencapai penjelasan yang sederhana, baik teori maupun metoda.
+*   *"Bagian luar biasa [metode saya] terletak pada kesederhanaan .. Ketinggian budidaya selalu berarah pada kesederhanaan."* — **Bruce Lee**
 
 ### Tentang Panduan Ini
 
-[Arch wiki](/index.php/Main_page "Main page") yang diasuh oleh komunitas ini adalah sumber pertama yang tepat untuk konsultasi masalah. Kanal [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), dan [forum](https://bbs.archlinux.org/) juga tersedia bila belum menemukan jawaban. Dan jangan lupa untuk merujuk pada halaman `man` untuk setiap perintah yang belum familiar; ini biasanya dapat diakses dengan `man _command_`.
+[Arch wiki](/index.php/Main_page "Main page") yang diasuh oleh komunitas ini adalah sumber pertama yang tepat untuk konsultasi masalah. Kanal [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), dan [forum](https://bbs.archlinux.org/) juga tersedia bila belum menemukan jawaban. Dan jangan lupa untuk merujuk pada halaman `man` untuk setiap perintah yang belum familiar; ini biasanya dapat diakses dengan `man *command*`.
 
-**Catatan:** Panduan berikut merupakan hal penting dalam rangka konfigurasi dan penginstalan sistem Arch Linux yang baik dan benar, jadi _tolong_ baca ini dengan seksama. Sangat disarankan untuk membaca secara menyeluruh <u>sebelum</u> mengeksekusi perintah-perintah yang tertera.
+**Catatan:** Panduan berikut merupakan hal penting dalam rangka konfigurasi dan penginstalan sistem Arch Linux yang baik dan benar, jadi *tolong* baca ini dengan seksama. Sangat disarankan untuk membaca secara menyeluruh <u>sebelum</u> mengeksekusi perintah-perintah yang tertera.
 
 Panduan ini terbagi menjadi tiga komponen utama:
 

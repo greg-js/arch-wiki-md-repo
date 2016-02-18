@@ -99,7 +99,9 @@
 ```
  make() {
    [ "$1" == 'install' ] &&
-     echo -e "WARNING:\nDON'T INSTALL SOFTWARE MANUALLY\nDON'T USE unset make TO OVERRIDE" &&
+     echo -e "WARNING:
+DON'T INSTALL SOFTWARE MANUALLY
+DON'T USE unset make TO OVERRIDE" &&
      echo "Tip: It's easy to make own custom package see: man PKGBUILD makepkg" &&
      return 1;
    /usr/bin/make $@;

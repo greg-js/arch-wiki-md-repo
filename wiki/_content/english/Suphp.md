@@ -1,4 +1,4 @@
-[suPHP](http://www.suphp.org/Home.html) is a tool _for executing PHP scripts with the permissions of their owners_. It consists of an Apache module (mod_suphp) and a setuid root binary (suphp) that is called by the Apache module to change the uid of the process executing the PHP interpreter.
+[suPHP](http://www.suphp.org/Home.html) is a tool *for executing PHP scripts with the permissions of their owners*. It consists of an Apache module (mod_suphp) and a setuid root binary (suphp) that is called by the Apache module to change the uid of the process executing the PHP interpreter.
 
 **Tip:** With suPHP you are able, for example, to manage php applications in user's home directories without worry about permissions problems (when creating directories, files or uploads)
 
@@ -20,7 +20,6 @@ Install suPHP from the [Arch User Repository](/index.php/Arch_User_Repository "A
 To activate **mod_suphp** for the appropriate Virtual Hosts add a line like in your `/etc/http/conf/**http.conf**` file:
 
  `/etc/http/conf/http.conf` 
-
 ```
 #suPHP
 LoadModule suphp_module modules/mod_suphp.so
@@ -30,7 +29,6 @@ LoadModule suphp_module modules/mod_suphp.so
 To use suPHP to parse PHP-Files you must add also this:
 
  `/etc/http/conf/http.conf` 
-
 ```
  AddType application/x-httpd-php .php
 
@@ -39,7 +37,6 @@ To use suPHP to parse PHP-Files you must add also this:
 Then, for actually turn on **mod_suphp** add this line:
 
  `/etc/http/conf/http.conf` 
-
 ```
  suPHP_Engine on
 
@@ -48,7 +45,6 @@ Then, for actually turn on **mod_suphp** add this line:
 Finally, you have to specify at least one **suPHP_AddHandler** directive, because **mod_suphp** by default handles no mime-type.
 
  `/etc/http/conf/http.conf` 
-
 ```
 suPHP_AddHandler application/x-httpd-php
 
@@ -82,7 +78,6 @@ The following instructions intent to show how to configure suPHP just to work in
 First of all, you need to change the suPHP handler name to avoid confilcts with php_module. Change this line in `/etc/suphp/**suphp.conf**`
 
  `/etc/suphp/suphp.conf` 
-
 ```
 [handlers]
 ;Handler for php-scripts
@@ -93,7 +88,6 @@ application/x-httpd-**su**php="php:/usr/bin/php-cgi"
 Add or modify this line in your `/etc/http/conf/**http.conf**` file:
 
  `/etc/http/conf/http.conf` 
-
 ```
 #suPHP
 LoadModule suphp_module modules/mod_suphp.so
@@ -103,7 +97,6 @@ LoadModule suphp_module modules/mod_suphp.so
 Then, in order to set the suPHP module for user directories, add this to your `/etc/http/conf/extra/**http-userdir.conf**` file:
 
  `/etc/httpd/conf/extra/httpd-userdir.conf` 
-
 ```
 <Directory "/home/*/public_html">
 ...

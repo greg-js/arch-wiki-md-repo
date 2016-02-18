@@ -35,9 +35,9 @@
 
 按 ESC, 接着冒号 (:), 然后按 x, 然后按 ENTER 保存并退出。
 
-增加 _wifi-radar_ 到 /etc/rc.conf 中的DAEMONS组。
+增加 *wifi-radar* 到 /etc/rc.conf 中的DAEMONS组。
 
-从你的程序菜单运行wifi-radar。如果你想查看可用的网络连接，执行_sudo wifi-radar_。
+从你的程序菜单运行wifi-radar。如果你想查看可用的网络连接，执行*sudo wifi-radar*。
 
 ## 小技巧
 

@@ -14,29 +14,29 @@ Este artículo explica algunos métodos para solucionar problemas de forma gener
 
 ## Preste atención al detalle
 
-Con el fin de resolver un problema que le ha surgido, es _absolutamente crucial_ comprender bien cómo funciona el sistema específico. Cómo funciona y qué necesita para funcionar sin errores. Si no puede contestar cómodamente estas preguntas, entonces se aconseja encarecidamente que revise el artículo de [Archwiki](/index.php/Table_of_contents "Table of contents") para conocer la función respecto de la que está teniendo problemas. Una vez que considere que ha entendido el sistema específico, será más fácil que pueda precisar la problema.
+Con el fin de resolver un problema que le ha surgido, es *absolutamente crucial* comprender bien cómo funciona el sistema específico. Cómo funciona y qué necesita para funcionar sin errores. Si no puede contestar cómodamente estas preguntas, entonces se aconseja encarecidamente que revise el artículo de [Archwiki](/index.php/Table_of_contents "Table of contents") para conocer la función respecto de la que está teniendo problemas. Una vez que considere que ha entendido el sistema específico, será más fácil que pueda precisar la problema.
 
 ## Interróguese a sí mismo
 
-A continuación se presentan una serie de preguntas de debe hacerse a sí mismo cada vez que surjan problemas en el funcionamiento del sistema. Bajo cada pregunta hay notas que explican el método para dar respuesta a cada pregunta, seguido de algunos ejemplos claros sobre cómo recopilar fácilmente la salida de datos y qué herramientas se pueden utilizar para revisar los registros y el diario (_journal_).
+A continuación se presentan una serie de preguntas de debe hacerse a sí mismo cada vez que surjan problemas en el funcionamiento del sistema. Bajo cada pregunta hay notas que explican el método para dar respuesta a cada pregunta, seguido de algunos ejemplos claros sobre cómo recopilar fácilmente la salida de datos y qué herramientas se pueden utilizar para revisar los registros y el diario (*journal*).
 
 1.  ¿Cuál es el problema?
 
-    	Sea _lo más preciso posible_ . Esto le ayudará a que no se confunda y/o que no siga un camino equivocado cuando se esté buscando información específica.
+    	Sea *lo más preciso posible* . Esto le ayudará a que no se confunda y/o que no siga un camino equivocado cuando se esté buscando información específica.
 
 2.  ¿Hay mensajes de error? (si los hay)
 
-    	Copie las _salidas completas_ que contienen los **mensajes de error** relacionadas con su problema , y péguelas en un archivo separado como `$HOME/issue.log`. Por ejemplo, para enviar la salida de la siguiente orden de [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") a `$HOME/issue.log`:
+    	Copie las *salidas completas* que contienen los **mensajes de error** relacionadas con su problema , y péguelas en un archivo separado como `$HOME/issue.log`. Por ejemplo, para enviar la salida de la siguiente orden de [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") a `$HOME/issue.log`:
 
     	 `$ mkinitcpio -p linux >> $HOME/issue.log` 
 
 3.  ¿Se puede reproducir el problema?
 
-    	Si es así, indique _exactamente_ **paso a paso** las instrucciones/órdenes necesarias para reproducirlo.
+    	Si es así, indique *exactamente* **paso a paso** las instrucciones/órdenes necesarias para reproducirlo.
 
 4.  ¿Cuándo se encontró por primera vez el problema, y qué ha cambiando entre ese momento y antes de que el sistema comenzase a funcionar erróneamente?
 
-    	Si se produjo justo después de una actualización, entonces, liste **todos los paquetes que se han actualizado**. Incluya, también, los _números de versión_, copiando toda la actualización de [pacman](/index.php/Pacman "Pacman").log (`/var/log/pacman.log`). También tome nota de los estados de _cualquier_ servicio(s) que se necesita para dar soporte a la aplicación(s) que está funcionando mal, usando las herramientas systemctl de [systemd](/index.php/Systemd "Systemd"). Por ejemplo, para enviar la salida de la siguiente orden de [systemd](/index.php/Systemd#Basic_systemctl_usage "Systemd") a `$HOME/issue.log`:
+    	Si se produjo justo después de una actualización, entonces, liste **todos los paquetes que se han actualizado**. Incluya, también, los *números de versión*, copiando toda la actualización de [pacman](/index.php/Pacman "Pacman").log (`/var/log/pacman.log`). También tome nota de los estados de *cualquier* servicio(s) que se necesita para dar soporte a la aplicación(s) que está funcionando mal, usando las herramientas systemctl de [systemd](/index.php/Systemd "Systemd"). Por ejemplo, para enviar la salida de la siguiente orden de [systemd](/index.php/Systemd#Basic_systemctl_usage "Systemd") a `$HOME/issue.log`:
 
     	 `$ systemctl status dhcpcd@eth0.service >> $HOME/issue.log` 
 
@@ -46,11 +46,11 @@ A continuación se presentan una serie de preguntas de debe hacerse a sí mismo 
 
 Cuando se trate de resolver un problema, **nunca** se aproxime al mismo con expresiones como:
 
-_Aplicación X no funciona._
+*Aplicación X no funciona.*
 
 En su lugar, mírelo en su totalidad:
 
-_Aplicación X produce error Y al realizar las tareas Z en condiciones A y B._
+*Aplicación X produce error Y al realizar las tareas Z en condiciones A y B.*
 
 ## Obtenga apoyo adicional
 
@@ -90,11 +90,11 @@ Si no puede arrancar debido a los errores causados por un demonio, gestor de pan
 
 ## Ejemplos específicos
 
-_Ejemplo:_ Después de una actualización o de la instalación de un paquete le da el siguiente error:
+*Ejemplo:* Después de una actualización o de la instalación de un paquete le da el siguiente error:
 
 ```
 # file: could not find any magic files!
-<small>_«archivo: no se pudo encontrar ningún archivo mágico»_</small>
+<small>*«archivo: no se pudo encontrar ningún archivo mágico»*</small>
 
 ```
 

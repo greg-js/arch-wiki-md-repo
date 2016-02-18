@@ -70,7 +70,7 @@ $ ln -s /usr/bin/python2-config ~/bin/python-config
 
 ```
 
-最后把新的目录添加到你的 PATH 变量的 _最前面_。
+最后把新的目录添加到你的 PATH 变量的 *最前面*。
 
 ```
 $ export PATH=~/bin:$PATH
@@ -109,7 +109,6 @@ $ source venv/bin/activate
 许多项目的编译脚本认为 `python` 是 Python 2，如果这样编译会导致错误 - 例如 `print 'foo'` 是错误语法。幸运的是，很多编译脚本会使用 `$PATH` 中的`python` 而不是写死 `#!/usr/bin/python`，而且 Python 脚本都位于项目树中。所以，可以不修改脚本就解决此问题，只需创建`/usr/local/bin/python`：
 
  `/usr/local/bin/python` 
-
 ```
 #!/bin/bash
 script=$(readlink -f -- "$1")
@@ -138,7 +137,6 @@ exec python3 "$@"
 把下面的内容复制到 Python Shell 中
 
  `/usr/bin/python` 
-
 ```
 import rlcompleter
 import readline

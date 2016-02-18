@@ -105,13 +105,13 @@ mv ~/.config/autostart ~/.config/autostart-bak
 
 #### GNOME 2.26
 
-_**Follow the next guide for GNOME 2.24\. If it fails try this:**_
+***Follow the next guide for GNOME 2.24\. If it fails try this:***
 
 If after installing openbox and trying to log into the 'Gnome/openbox' session but it always fails then you can do the following as one way to achieve running openbox as your window manager every time you log into the 'Gnome' session from your login manager (xdm, gdm, kdm, entrance, slim, etc.)
 
 1.  Log into your Gnome only session (which would still be using metacity as its window manager) if you aren't already.
 2.  Install openbox if you have not done so already
-3.  Explore your menus to _System → Preferences → Startup Applications_ (possibly named 'Session' for older versions of Gnome)
+3.  Explore your menus to *System → Preferences → Startup Applications* (possibly named 'Session' for older versions of Gnome)
 4.  Open Startup Application, select '+ Add' and enter the text as seen in the box below whilst omitting the text behind the #.
 5.  Now hit the 'Add' button for that data entry window and make sure the checkbox beside your new entry is selected.
 6.  Thus log out of your gnome session and log back in and you should be running openbox as your window manager.
@@ -347,8 +347,8 @@ Openbox features support for running programs at startup. This is provided by th
 
 There are two ways to enable autostart:
 
-1.  If you use startx/xinit to log into your X session, edit `~/.xinitrc` and change the line that executes _openbox_ to execute **openbox-session** instead.
-2.  If you log in with GDM/KDM, then select the _Openbox_ session and it will automatically use autostart.
+1.  If you use startx/xinit to log into your X session, edit `~/.xinitrc` and change the line that executes *openbox* to execute **openbox-session** instead.
+2.  If you log in with GDM/KDM, then select the *Openbox* session and it will automatically use autostart.
 
 Startup programs are managed in `~/.config/openbox/autostart`. Full instructions and best practices for how to do this are available at the [Openbox website](http://openbox.org/wiki/Help:Autostart).
 
@@ -803,7 +803,7 @@ URxvt*foreground:Black   #Font color. My wallpaper is White, you may wish to cha
 
 ```
 
-The _magic_ comes from the `<layer>below</layer>` line, which place the application under all others. Here Urxvt is displayed on all desktops, change it to your convenience.
+The *magic* comes from the `<layer>below</layer>` line, which place the application under all others. Here Urxvt is displayed on all desktops, change it to your convenience.
 
 ## 資源
 

@@ -72,13 +72,11 @@ Per definire il locale a livello di sistema utilizzato sul sistema, impostare la
 **Nota:** `/etc/locale.conf` non esiste per impostazione predefinita e va creato manualmente.
 
 **Suggerimento:** Se l'output del locale è di vostro gradimento durante l'installazione, è possibile salvare un po 'di tempo eseguendo : `# locale > /etc/locale.conf` mentre si è ancora in ambiente chroot.
-
  `/etc/locale.conf`  `LANG="it_IT.UTF-8"` 
 
 Ecco un esempio di configurazione avanzata:
 
  `/etc/locale.conf` 
-
 ```
 # Abilitare UTF-8 con impostazioni Italiane.
 LANG="it_IT.UTF-8"
@@ -111,7 +109,6 @@ Nei programmi che utilizzano gettext per il rispetto delle traduzioni, l'opzione
 oppure a livello di sistema
 
  `/etc/locale.conf` 
-
 ```
 LANG="it_IT"
 export LANGUAGE="it_IT:en_GB:en"
@@ -124,7 +121,6 @@ Come abbiamo accennato in precedenza, alcuni utenti potrebbero voler definire un
 Lo script `etc/profile.d/locale.sh` sostituisce il locale 'a livello di sistema"' con quello riscontrato in `~/.config/locale.conf`. Questo file non esiste per impostazione predefinita.
 
  `~/.config/locale.conf` 
-
 ```
 LANG="it_IT.UTF-8"
 LANGUAGE="it_IT.UTF-8"
@@ -194,5 +190,5 @@ xterm supporta UTF-8 solo se eseguito come `uxterm` o `xterm -u8`.
 *   [Gentoo Wiki Archives: Locales](http://www.gentoo-wiki.info/Locales)
 *   [Test interattivo ICU sull'ordinamento](http://demo.icu-project.org/icu-bin/locexp?_=en_US&x=col)
 *   [Free Standards Group Open Internationalisation Initiative](http://www.openi18n.org/)
-*   [_The Single UNIX Specification_ definizione di locale](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) dell'Open Group
+*   [*The Single UNIX Specification* definizione di locale](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) dell'Open Group
 *   [Variabili d'ambiente Locale](https://help.ubuntu.com/community/EnvironmentVariables#Locale_setting_variables)

@@ -35,7 +35,7 @@ Questo documento presuppone che verranno installati Apache, PHP e MySQL insieme.
 
 Per motivi di sicurezza, non appena Apache viene avviato dall'utente root (direttamente o tramite script di avvio) passa alla UID/GID specificata in `/etc/httpd/conf/httpd.conf`
 
-*   Verificare l'esistenza degli utenti http, cercando _http_ nell'output del seguente comando:
+*   Verificare l'esistenza degli utenti http, cercando *http* nell'output del seguente comando:
 
 ```
  # grep http /etc/passwd
@@ -129,11 +129,11 @@ Include conf/extra/httpd-userdir.conf
 
 ```
 
-*   Naturalmente bisogna assegnare i permessi di _lettura_ ed _esecuzione_ a `~/`, `~/public_html`, e tutte le altre sotto-cartelle in `~/public_html` ai membri del gruppo (gruppo **piter** in questo caso). Provare qualcosa di simile (**modificando i comandi secondo necessità**):
+*   Naturalmente bisogna assegnare i permessi di *lettura* ed *esecuzione* a `~/`, `~/public_html`, e tutte le altre sotto-cartelle in `~/public_html` ai membri del gruppo (gruppo **piter** in questo caso). Provare qualcosa di simile (**modificando i comandi secondo necessità**):
 
 ```
- $ chmod g+xr-w /home/_yourusername_
- $ chmod -R g+xr-w /home/_yourusername_/public_html
+ $ chmod g+xr-w /home/*yourusername*
+ $ chmod -R g+xr-w /home/*yourusername*/public_html
 
 ```
 
@@ -384,7 +384,7 @@ Questa direttiva nella sezione <Directory> è la causa per cui apache ignora com
 
 ```
 
-**Note:** Se non è visibile `libphp5.so` nella cartella dei moduli Apache (`/etc/httpd/modules`), si può aver dimenticato di installare il pacchetto _php-apache_.
+**Note:** Se non è visibile `libphp5.so` nella cartella dei moduli Apache (`/etc/httpd/modules`), si può aver dimenticato di installare il pacchetto *php-apache*.
 
 *   Se il proprio `DocumentRoot` non è `/srv/http`, aggiungerlo a `open_basedir` in `/etc/php/php.ini` così:
 
@@ -474,7 +474,6 @@ a
 ```
 
 **Warning:** In caso di questo tipo di errore:
-
 ```
 [XXX Debug] PHP Notice: in file /index.php on line 86: date(): It is not safe to rely on the system'XXXX
 [XXX Debug] PHP Notice: in file /index.php on line 86: getdate(): It is not safe to rely on the system's timezone settings.XXXX
@@ -588,7 +587,7 @@ Bisognerà riavviare apache:
 
 *   Configurare MySQL come descritto da [MySQL](/index.php/MySQL "MySQL").
 
-*   Editare `/etc/php/php.ini` (reperibile in `/usr/etc` sui sistemi più datati) e decommentare la seguente riga (_Rimuovendo `;`_):
+*   Editare `/etc/php/php.ini` (reperibile in `/usr/etc` sui sistemi più datati) e decommentare la seguente riga (*Rimuovendo `;`*):
 
 ```
  ;extension=mysqli.so
@@ -617,12 +616,12 @@ Bisognerà riavviare apache:
 *   MySQL dovrebbe essere in esecuzione ora. Impostare la password di root e testarlo eseguendo:
 
 ```
- # mysqladmin -u root password _password_
+ # mysqladmin -u root password *password*
  # mysql -u root -p
 
 ```
 
-	Digitare _exit_ per uscire dalla riga di comando del client MySQL
+	Digitare *exit* per uscire dalla riga di comando del client MySQL
 
 *   Editare `/etc/rc.conf` (per avviare MySQL all'avvio):
 

@@ -16,7 +16,6 @@ This document applies in particular to ArchLinux on an HP Pavilion ze5615CA lapt
 The ze5600 has as standard an Intel Celeron 2800MHz CPU, 512MB RAM (of which 446MB are available due to video chip RAM sharing), 40GB IDE hard drive, wireless, modem, DVD ROM optical drive, 2 PCMCIA ports, touchpad, multimedia keys, 15" LCD screen, 3 USB ports, S-video and VGA out ports, parallel port, PS/2 port, IR sensor. Chip details from lspci:
 
 `
-
 ```
 00:00.0 Host bridge: ATI Technologies Inc RS200/RS200M AGP Bridge [IGP 340M] (rev 02)
 00:01.0 PCI bridge: ATI Technologies Inc PCI Bridge [IGP 340M]
@@ -34,7 +33,6 @@ The ze5600 has as standard an Intel Celeron 2800MHz CPU, 512MB RAM (of which 446
 01:05.0 VGA compatible controller: ATI Technologies Inc Radeon IGP 330M/340M/350M
 
 ```
-
 `
 
 ## What Works Without Configuration?
@@ -59,7 +57,7 @@ PCMCIA, Modem, IR Port, S-Video port, parallel port.
 
 **Video:** The older ATI IGP 330M video chip in this laptop requires the xf86-video-ati **radeon** open-source driver. Apparently the latest "catalyst" drivers from ATI do not work with this chip, but have not been tested. The radeon driver, however, works well, but runs a bit hot (see below).
 
-**Kernel boot parameters:** It _might_ make some difference to your power consumption if you add the following kernel parameters to the "kernel" line of your boot manager configuration file (for those using grub this is /boot/grub/menu.lst):
+**Kernel boot parameters:** It *might* make some difference to your power consumption if you add the following kernel parameters to the "kernel" line of your boot manager configuration file (for those using grub this is /boot/grub/menu.lst):
 
 `acpi_enforce_resources=lax pcie_aspm=force`
 

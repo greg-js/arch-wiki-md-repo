@@ -45,7 +45,6 @@ Delete all space from the option list in `/etc/exports`
 If NFS shares mount fine, and are fully accessible to the owner, but not to group members; check the number of groups that user belongs to. NFS has a limit of 16 on the number of groups a user can belong to. If you have users with more than this, you need to enable the `--manage-gids` start-up flag for `rpc.mountd` on the NFS server.
 
  `/etc/conf.d/nfs-server.conf` 
-
 ```
 # Options for rpc.mountd.
 # If you have a port-based firewall, you might want to set up
@@ -104,25 +103,25 @@ OS X's NFS client is optimized for OS X Servers and might present some issues wi
 
 ### Intermittent client freezes when copying large files
 
-If you copy large files from your client machine to the NFS server, the transfer speed is _very_ fast, but after some seconds the speed drops and your client machine intermittently locks up completely for some time until the transfer is finished.
+If you copy large files from your client machine to the NFS server, the transfer speed is *very* fast, but after some seconds the speed drops and your client machine intermittently locks up completely for some time until the transfer is finished.
 
 Try adding <tt>sync</tt> as a mount option on the client (e.g. in <tt>/etc/fstab</tt>) to fix this problem.
 
 ### mount.nfs: Operation not permitted
 
-After updating to _nfs-utils_ 1.2.1-2 or higher, mounting NFS shares stopped working. Henceforth, _nfs-utils_ uses NFSv4 per default instead of NFSv3\. The problem can be solved by using either mount option `'vers=3'` or `'nfsvers=3'` on the command line:
+After updating to *nfs-utils* 1.2.1-2 or higher, mounting NFS shares stopped working. Henceforth, *nfs-utils* uses NFSv4 per default instead of NFSv3\. The problem can be solved by using either mount option `'vers=3'` or `'nfsvers=3'` on the command line:
 
 ```
-# mount.nfs _remote target_ _directory_ -o ...,vers=3,...
-# mount.nfs _remote target_ _directory_ -o ...,nfsvers=3,...
+# mount.nfs *remote target* *directory* -o ...,vers=3,...
+# mount.nfs *remote target* *directory* -o ...,nfsvers=3,...
 
 ```
 
 or in `/etc/fstab`:
 
 ```
-_remote target_ _directory_ nfs ...,vers=3,... 0 0
-_remote target_ _directory_ nfs ...,nfsvers=3,... 0 0
+*remote target* *directory* nfs ...,vers=3,... 0 0
+*remote target* *directory* nfs ...,nfsvers=3,... 0 0
 
 ```
 
@@ -158,7 +157,6 @@ This [NFS Howto page](http://nfs.sourceforge.net/nfs-howto/ar01s05.html) has som
 If your workload involves lots of small reads and writes (or if there are a lot of clients), there may not be enough threads running on the server to handle the quantity of queries. To check if this is the case, run the following command on one or more of the clients:
 
  `# nfsstat -rc` 
-
 ```
 Client rpc stats:
 calls      retrans    authrefrsh
@@ -171,7 +169,6 @@ If the `retrans` column contains a number larger than 0, the server is failing t
 To increase the number of threads on the server, edit the file `/etc/conf.d/nfs-server.conf` and set the value in the `NFSD_OPTS` variable. For example, to set the number of threads to 32:
 
  `/etc/conf.d/nfs-server.conf` 
-
 ```
 NFSD_OPTS="32"
 
@@ -235,7 +232,7 @@ Using `rpcdebug` is the easiest way to manipulate the kernel interfaces in place
 | Option | Description |
 | -c | Clear the given debug flags |
 | -s | Set the given debug flags |
-| -m _module_ | Specify which module's flags to set or clear. |
+| -m *module* | Specify which module's flags to set or clear. |
 | -v | Increase the verbosity of rpcdebug's output |
 | -h | Print a help message and exit. When combined with the -v option, also prints the available debug flags. |
 
@@ -349,7 +346,6 @@ A rundown of `/proc/net/rpc/nfsd` (the userspace tool `nfsstat` pretty-prints th
 ### NFSD debug flags
 
  `/usr/include/linux/nfsd/debug.h` 
-
 ```
 /*
  * knfsd debug flags
@@ -371,7 +367,6 @@ A rundown of `/proc/net/rpc/nfsd` (the userspace tool `nfsstat` pretty-prints th
 ### NFS debug flags
 
  `/usr/include/linux/nfs_fs.h` 
-
 ```
 /*
  * NFS debug flags
@@ -397,7 +392,6 @@ A rundown of `/proc/net/rpc/nfsd` (the userspace tool `nfsstat` pretty-prints th
 ### NLM debug flags
 
  `/usr/include/linux/lockd/debug.h` 
-
 ```
 /*
  * Debug flags
@@ -417,7 +411,6 @@ A rundown of `/proc/net/rpc/nfsd` (the userspace tool `nfsstat` pretty-prints th
 ### RPC debug flags
 
  `/usr/include/linux/sunrpc/debug.h` 
-
 ```
 /*
  * RPC debug facilities
@@ -464,7 +457,6 @@ If all your files are owned by `nobody`, and you are using NFSv4, on both the cl
 On some systems detecting the domain from FQDN minus hostname does not seem to work reliably. If files are still showing as `nobody` after the above changes, edit /etc/idmapd.conf, ensure that `Domain` is set to `FQDN minus hostname`. For example:
 
  `/etc/idmapd.conf` 
-
 ```
 [General]
 

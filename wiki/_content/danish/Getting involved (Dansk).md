@@ -4,7 +4,7 @@
 | [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") |
 | [Help:Editing](/index.php/Help:Editing "Help:Editing") |
 
-I biologi er [mutualisme](https://en.wikipedia.org/wiki/Mutualism_(biology) "wikipedia:Mutualism (biology)") et samarbejde mellem to organismer. Dette princip kan også bruges om proaktive og motiverede medlemmer af Arch-fællesskabet, som er interesserede i at involvere sig i udviklingen af deres yndlingsdistribution af GNU/Linux. Det kommer ikke kun dem og Arch Linux til gode, men potentielt alle fans af [fri og open source software](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software").
+I biologi er [mutualisme](https://en.wikipedia.org/wiki/Mutualism_(biology) et samarbejde mellem to organismer. Dette princip kan også bruges om proaktive og motiverede medlemmer af Arch-fællesskabet, som er interesserede i at involvere sig i udviklingen af deres yndlingsdistribution af GNU/Linux. Det kommer ikke kun dem og Arch Linux til gode, men potentielt alle fans af [fri og open source software](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software").
 
 ## Contents
 
@@ -30,7 +30,7 @@ En af de nemmeste måder at involvere sig på er ved at medvirke i [Arch-foraene
 
 Wikis, by design, thrive on collaboration.
 
-[ArchWiki](/index.php/AboutWiki "AboutWiki") is a _community_ documentation process. The contents are created _by_ the community _for_ the community. Contributors volunteer their time and energy to share their knowledge and skill with the community. _All_ users are encouraged to contribute. Tasks on ArchWiki can roughly be divided into the following:
+[ArchWiki](/index.php/AboutWiki "AboutWiki") is a *community* documentation process. The contents are created *by* the community *for* the community. Contributors volunteer their time and energy to share their knowledge and skill with the community. *All* users are encouraged to contribute. Tasks on ArchWiki can roughly be divided into the following:
 
 *   Technical maintenance
 *   Content management
@@ -73,7 +73,7 @@ The [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository
 
 Arch has a vital and active community of software developers and contributing projects. If you have a project you would like to link to, this is a great place to do it. Include a link to your project, the date your project started, and a brief (one or two sentence) description of your project.
 
-**Note:** All projects listed here are community projects. None of these projects are considered _**official**_ Arch projects.
+**Note:** All projects listed here are community projects. None of these projects are considered ***official*** Arch projects.
 
 #### [Arch Based Distributions](/index.php/Arch_Based_Distributions "Arch Based Distributions")
 
@@ -157,9 +157,9 @@ Arch has a vital and active community of software developers and contributing pr
 
 ## As a developer...
 
-_This entry is mainly based on [this](https://bbs.archlinux.org/viewtopic.php?id=24503) post in Arch's BBS_
+*This entry is mainly based on [this](https://bbs.archlinux.org/viewtopic.php?id=24503) post in Arch's BBS*
 
-Firstly, remember that the main motivation for your work on Arch should be helping the whole community, and not trying to become an _"Arch developer"_ by any means. Secondly, you are also part of the community; to provide help to others means you will also help yourself.
+Firstly, remember that the main motivation for your work on Arch should be helping the whole community, and not trying to become an *"Arch developer"* by any means. Secondly, you are also part of the community; to provide help to others means you will also help yourself.
 
 ### What can I do?
 

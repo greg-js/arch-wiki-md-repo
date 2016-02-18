@@ -30,7 +30,7 @@ Questo articolo tratta dell'installazione e configurazione dei driver proprietar
         *   [3.2.9 Abilitare la modalità SLI](#Abilitare_la_modalit.C3.A0_SLI)
         *   [3.2.10 Forzare il livello di performance Powermizer (per portatili)](#Forzare_il_livello_di_performance_Powermizer_.28per_portatili.29)
             *   [3.2.10.1 Lasciare che la GPU imposti automaticamente il livello di performance (basato sulla temperatura)](#Lasciare_che_la_GPU_imposti_automaticamente_il_livello_di_performance_.28basato_sulla_temperatura.29)
-        *   [3.2.11 Disabilitare i _vblank interrupts_ (per portatili)](#Disabilitare_i_vblank_interrupts_.28per_portatili.29)
+        *   [3.2.11 Disabilitare i *vblank interrupts* (per portatili)](#Disabilitare_i_vblank_interrupts_.28per_portatili.29)
         *   [3.2.12 Abilitare l'overclocking](#Abilitare_l.27overclocking)
             *   [3.2.12.1 Impostare un clock statico 2D/3D](#Impostare_un_clock_statico_2D.2F3D)
 *   [4 Trucchi e consigli](#Trucchi_e_consigli)
@@ -100,7 +100,7 @@ Queste istruzioni sono per gli utenti che usano il pacchetto stock [linux](https
 
 	Per i modelli GPU più recenti, può essere necessario installare [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/) da [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)") , dal momento che i driver stabili potrebbero non supportare le nuove funzionalità introdotte . Provare prima quelli stabili.
 
-	Se siete in ambiente a 64-bit e necessitate del supporto OpenGL a 32-bit, sarà necessario installare il pacchetto _lib32_ equivalente dal deposito [multilib](/index.php/Multilib "Multilib") (per esempio [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) o _lib32-nvidia-{304xx,173xx,96xx}-utils_).}}
+	Se siete in ambiente a 64-bit e necessitate del supporto OpenGL a 32-bit, sarà necessario installare il pacchetto *lib32* equivalente dal deposito [multilib](/index.php/Multilib "Multilib") (per esempio [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) o *lib32-nvidia-{304xx,173xx,96xx}-utils*).}}
 
 **Suggerimento:** I driver legacy nvidia-96xx e nvidia-173xx possono essere anche installati dal deposito non ufficiale [[city]](http://pkgbuild.com/~bgyorgy/city.html).
 
@@ -195,7 +195,6 @@ E' possibile che dopo l'installazione dei driver non sia necessario creare un fi
 Un blocco di configurazione di base in `20-nvidia.conf` (o nel deprecato `xorg.conf`) può essere simile a questo:
 
  `/etc/X11/xorg.conf.d/20-nvidia.conf` 
-
 ```
 Section "Device"
         Identifier "Nvidia Card"
@@ -235,7 +234,7 @@ Controllare che il file `/etc/X11/xorg.conf` appena creato contenga come valori 
 
 ### Monitor multipli
 
-	_Si veda l'articolo [Multimonitor](/index.php/Multihead "Multihead") per maggiori informazioni generali_
+	*Si veda l'articolo [Multimonitor](/index.php/Multihead "Multihead") per maggiori informazioni generali*
 
 **Attenzione:** A partire da agosto 2013, Xinerama non funziona quando si utilizza il driver NVIDIA proprietario dalla versione 319 in su. Gli utenti che desiderano utilizzare Xinerama con il driver NVIDIA devono utilizzare il driver NVIDIA 313 , che funziona solo con kernel Linux precedenti alla versione 3.10\. vedere [this thread](https://bbs.archlinux.org/viewtopic.php?id=163319) per maggiori informazioni.
 
@@ -244,7 +243,6 @@ Per attivare il supporto al doppio schermo, è sufficiente modificare il file `/
 Per ogni monitor fisico, aggiungere una sezione Monitor, Device, and Screen, e poi una sezione ServerLayout per gestirli. Sappiate che quando Xinerama è abilitato, il driver NVIDIA proprietario disattiva automaticamente il compositing. Se desiderate sfruttare il compositing, si dovrebbero commentare la linea `Xinerama` in `ServerLayout` e utilizzare, invece, TwinView (si veda sotto).
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
-
 ```
 Section "ServerLayout"
     Identifier     "DualSreen"
@@ -314,7 +312,6 @@ TwinView funziona solo sulla scheda di base: Se si dispone di più schede, dovre
 Esempio di configurazione:
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
-
 ```
 Section "ServerLayout"
     Identifier    "TwinLayout"
@@ -361,7 +358,6 @@ EndSection
 Se si dispone di più in modalità SLI, è possibile eseguire più di un monitor collegato a schede separate ( per esempio : due schede in SLI con un monitor collegato a ciascuno). L'opzione " MetaModes " in collaborazione con la modalità SLI Mosaic permette questo. Qui di seguito è una configurazione che funziona per l'esempio di cui sopra e corre [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") senza problemi .
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
-
 ```
 Section "Device"
         Identifier      "Card A"
@@ -420,7 +416,7 @@ EndSection
 
 ##### Configurazione manuale in CLI tramite xrandr
 
-Se l'ultima soluzione non dovesse funzionare, è possibile utilizzare il trucco dell'_autostart_ tramite il vostro gestore di finestre per eseguire un comando `xrandr` come questo:
+Se l'ultima soluzione non dovesse funzionare, è possibile utilizzare il trucco dell'*autostart* tramite il vostro gestore di finestre per eseguire un comando `xrandr` come questo:
 
 ```
 xrandr --output DVI-I-0 --auto --primary --left-of DVI-I-1
@@ -453,7 +449,6 @@ Dove:
 Se il driver non rileva un secondo monitor, si può costringerlo a farlo con ConnectedMonitor.
 
  `/etc/X11/xorg.conf` 
-
 ```
 
 Section "Monitor"
@@ -608,7 +603,7 @@ Si usi questa opzione se la scheda video abbonda di RAM (uguale o superiore a 12
 
 #### Usare gli eventi di sistema
 
-Dal file [LEGGIMI](http://http.download.nvidia.com/XFree86/Linux-x86/304.51/README/xconfigoptions.html) dei driver NVIDIA: _"Usa gli eventi di sistema per dare notifica ad X quando un client ha compiuto il direct rendering su una finestra che necessita di essere composta."_ Qualsiasi cosa identifichi, aiuta ad aumentare le prestazioni. Questa opzione è al momento incompatibile con le tecnologie SLI e Multi-GPU.
+Dal file [LEGGIMI](http://http.download.nvidia.com/XFree86/Linux-x86/304.51/README/xconfigoptions.html) dei driver NVIDIA: *"Usa gli eventi di sistema per dare notifica ad X quando un client ha compiuto il direct rendering su una finestra che necessita di essere composta."* Qualsiasi cosa identifichi, aiuta ad aumentare le prestazioni. Questa opzione è al momento incompatibile con le tecnologie SLI e Multi-GPU.
 
 Nella sezione `Device` aggiungete:
 
@@ -643,12 +638,11 @@ Option "RegistryDwords" "EnableBrightnessControl=1"
 
 **Attenzione:** L'abilitazione della modalità SLI, potrebbe causare scarse prestazioni video se si utilizza Gnome3 come ambiente desktop
 
-Tratto dall'appendice del [[README](http://http.download.nvidia.com/XFree86/Linux-x86/304.51/README/xconfigoptions.html) dei driver nVidia: _Questa opzione controlla la configurazione SLI di rendering in configurazioni supportate._ Una _configurazione supportata_ è un computer dotato di una scheda madre SLI-Certified Motherboard e 2 o 3 schede video SLI-Certified GeForce GPUs. Si veda NVIDIA's [SLI Zone](http://www.slizone.com/page/home.html) per ulteriori dettagli.
+Tratto dall'appendice del [[README](http://http.download.nvidia.com/XFree86/Linux-x86/304.51/README/xconfigoptions.html) dei driver nVidia: *Questa opzione controlla la configurazione SLI di rendering in configurazioni supportate.* Una *configurazione supportata* è un computer dotato di una scheda madre SLI-Certified Motherboard e 2 o 3 schede video SLI-Certified GeForce GPUs. Si veda NVIDIA's [SLI Zone](http://www.slizone.com/page/home.html) per ulteriori dettagli.
 
 Per prima cosa individuare il PCI Bus ID delle GPU utilizzando `lspci`:
 
  ` $ lspci | grep VGA` 
-
 ```
  03:00.0 VGA compatible controller: nVidia Corporation G92 [GeForce 8800 GTS 512] (rev a2)
  05:00.0 VGA compatible controller: nVidia Corporation G92 [GeForce 8800 GTS 512] (rev a2)
@@ -690,7 +684,6 @@ In alternativa si può usare l'utilità `nvidia-xconfig` per inserire i cambiame
 Per verificare se la modalità SLI è abilitata, scrivere in un terminale:
 
  `nvidia-settings -q all | grep SLIMode` 
-
 ```
   Attribute 'SLIMode' (arch:0.0): AA 
     'SLIMode' is a string attribute.
@@ -706,7 +699,6 @@ Per verificare se la modalità SLI è abilitata, scrivere in un terminale:
 Nel vostro file xorg.conf, aggiungete le seguenti linee nella sezione `Device`:
 
  `/etc/X11/xorg.conf` 
-
 ```
 .......
 # Force Powermizer to a certain level at all times
@@ -732,7 +724,7 @@ Option "RegistryDwords" "PerfLevelSrc=0x3333"
 
 ```
 
-#### Disabilitare i _vblank interrupts_ (per portatili)
+#### Disabilitare i *vblank interrupts* (per portatili)
 
 Quando l'utility di riconoscimento degli interrupt [powertop](/index.php/Powertop "Powertop") è attiva, è noto che i driver NVIDIA generano un interrupt per ogni vblank. Per evitare questo inconveniente, aggiungere la seguente riga nella sezione `Device`:
 
@@ -765,14 +757,14 @@ $ nvidia-settings
 
 ##### Impostare un clock statico 2D/3D
 
-Aggiungere la seguente stringa alla _Section Device_ per impostare il sistema PowerMizer al livello di _maximum performance_.
+Aggiungere la seguente stringa alla *Section Device* per impostare il sistema PowerMizer al livello di *maximum performance*.
 
 ```
 Option "RegistryDwords" "PerfLevelSrc=0x2222"
 
 ```
 
-Aggiungere le seguenti due stringhe in _Section Device_ per abilitare il controllo manuale della velocità delle ventole tramite `nvidia-settings`.
+Aggiungere le seguenti due stringhe in *Section Device* per abilitare il controllo manuale della velocità delle ventole tramite `nvidia-settings`.
 
 ```
 Option "Coolbits" "4"
@@ -838,7 +830,6 @@ In aggiunta aumentare la cache di MPlayer's editando `~/.mplayer/config` può ai
 ### Evitare screen tearing in KDE (KWin)
 
  `/etc/profile.d/kwin.sh` 
-
 ```
 export __GL_YIELD="USLEEP"
 
@@ -847,7 +838,6 @@ export __GL_YIELD="USLEEP"
 Anche se quanto sopra non aiuta , allora si provi questo :
 
  `/etc/profile.d/kwin.sh` 
-
 ```
 export KWIN_TRIPLE_BUFFER=1
 
@@ -951,7 +941,6 @@ $ nvidia-smi
 Il comando dovrebbe generare un output simile al qui riportato:
 
  `$ nvidia-smi` 
-
 ```
 Fri Jan  6 18:53:54 2012      
 +------------------------------------------------------+                      
@@ -974,7 +963,6 @@ Fri Jan  6 18:53:54 2012
 Per mostrare dati solo sulla temperatura:
 
  `$ nvidia-smi -q -d TEMPERATURE` 
-
 ```
 ==============NVSMI LOG==============
 Timestamp                      : Fri Jan  6 18:50:57 2012
@@ -1011,10 +999,10 @@ Option "Coolbits" "4"
 
 **Nota:** Le schede della serie GTX 4xx/5xx attualmente non possono impostare la velocità della ventola tramite questo metodo all'avvio del sistema. Questo metodo consente solo la regolazione di velocità della ventola all'interno della sessione corrente di X tramite l'uso di nvidia-settings.
 
-Aggiunger ele seguenti stringe nel vostro file [`~/.xinitrc`](/index.php/Xinitrc "Xinitrc") per impostare la velocità desiderata della ventola all'avvio di Xorg. Sostituire `_n_` con un valore percentuale in base alle vostre esigenze.
+Aggiunger ele seguenti stringe nel vostro file [`~/.xinitrc`](/index.php/Xinitrc "Xinitrc") per impostare la velocità desiderata della ventola all'avvio di Xorg. Sostituire `*n*` con un valore percentuale in base alle vostre esigenze.
 
 ```
-nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUCurrentFanSpeed=_n_"
+nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUCurrentFanSpeed=*n*"
 
 ```
 
@@ -1023,17 +1011,17 @@ nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUCurrentFanSpeed
 ```
 nvidia-settings -a "[gpu:0]/GPUFanControlState=1" \ 
 -a "[gpu:1]/GPUFanControlState=1" \
--a "[fan:0]/GPUCurrentFanSpeed=_n_" \
--a  [fan:1]/GPUCurrentFanSpeed=_n_" &
+-a "[fan:0]/GPUCurrentFanSpeed=*n*" \
+-a  [fan:1]/GPUCurrentFanSpeed=*n*" &
 
 ```
 
-Se si sta utilizzando un gestore di accesso come GDM o KDM, si può creare un file .desktop che contiene al suo interno le impostazioni da avviare. Create il file `~/.config/autostart/nvidia-fan-speed.desktop` ed aggiungete al suo interno quanto segue. Anche in questo caso sostituite ad `_n_` un valore percentuale in base alle vostre esigenze.
+Se si sta utilizzando un gestore di accesso come GDM o KDM, si può creare un file .desktop che contiene al suo interno le impostazioni da avviare. Create il file `~/.config/autostart/nvidia-fan-speed.desktop` ed aggiungete al suo interno quanto segue. Anche in questo caso sostituite ad `*n*` un valore percentuale in base alle vostre esigenze.
 
 ```
 [Desktop Entry]
 Type=Application
-Exec=nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUCurrentFanSpeed=_n_"
+Exec=nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUCurrentFanSpeed=*n*"
 X-GNOME-Autostart-enabled=true
 Name=nvidia-fan-speed
 
@@ -1174,7 +1162,7 @@ Option "ModeValidation" "NoTotalSizeCheck"
 
 ### Errore '/dev/nvidia0' Input/Output
 
-Questo errore può verificarsi per diversi motivi, e la soluzione più comune è quella di verificare i permessi per il gruppo/file, anche se in molti casi si _non è_ la soluzione del problema. Nella documentazione di NVIDIA non si accenna nel dettaglio di cosa si dovrebbe fare per correggere questo problema, ma ci sono alcuni metodi che hanno funzionato per diversi utenti. il problema può essere un conflitto con l'IRQ di un'altra periferica oppure un'errata assegnazione da parte del kernel o del tuo BIOS.
+Questo errore può verificarsi per diversi motivi, e la soluzione più comune è quella di verificare i permessi per il gruppo/file, anche se in molti casi si *non è* la soluzione del problema. Nella documentazione di NVIDIA non si accenna nel dettaglio di cosa si dovrebbe fare per correggere questo problema, ma ci sono alcuni metodi che hanno funzionato per diversi utenti. il problema può essere un conflitto con l'IRQ di un'altra periferica oppure un'errata assegnazione da parte del kernel o del tuo BIOS.
 
 La prima cosa da tentare è quella di rimuovere eventuali altri dispositivi video, come schede di acquisizione, e vedere se il problema scompare. Avere troppi processori video sullo stesso sistema può portare nel kernel all'incapacità di avviarli, a causa di problemi di allocazione di memoria con il controller video. In particolare, su sistemi con bassa memoria video, questo problema si può presentare anche in presenza di un solo processore video. In tal caso si dovrebbe capire la quantità di memoria video del sistema (ad esempio con il comando `lspci -v`) e passare i parametri di assegnazione al kernel, ad esempio:
 
@@ -1327,9 +1315,9 @@ Entrare nel BIOS e cambiare l'impostazione grafica di default da 'Optimus' a 'Di
 Passaggi:
 
 1.  Entrare nel BIOS
-2.  Trovare Graphics Settings (in alcuni casi è nella scheda _Config > Display_)
+2.  Trovare Graphics Settings (in alcuni casi è nella scheda *Config > Display*)
 3.  Cambiare 'Graphics Device' in 'Discrete Graphics' (questo disabilita la scheda grafica Intel).
-4.  Cambiare OS Detection di Nvidia Optimus in _Disabled_.
+4.  Cambiare OS Detection di Nvidia Optimus in *Disabled*.
 5.  Salvare ed uscire.
 
 Testato su un Lenovo W520 con una Quadro 1000M e Nvidia Optimus.
@@ -1406,7 +1394,6 @@ esportare `VDPAU_NVIDIA_NO_OVERLAY=1` all'interno del profilo della vostra shell
 Se occasionalmente capita che il sistema si blocca completamente (soltanto il mouse si muove) durante l'utilizzo di flashplugin, e nel log riscontrate:
 
  `/var/log/errors.log` 
-
 ```
   NVRM: Xid (0000:01:00): 31, Ch 00000007, engmask 00000120, intr 10000000
 
@@ -1415,7 +1402,6 @@ Se occasionalmente capita che il sistema si blocca completamente (soltanto il mo
 Una possibile soluzione è quella di disabilitare l'accelerazione hardware di flash, impostando
 
  `/etc/adobe/mms.cfg` 
-
 ```
  EnableLinuxHWVideoDecode=0
 
@@ -1436,10 +1422,9 @@ Se si ottiene una schermata rossa e utilizzate grub2, disabilitare il framebuffe
 
 ### Schermo nero su sistemi con GPU integrate Intel
 
-Se si dispone di una CPU Intel con GPU integrata (ad esempio Intel HD 4000) e ottiene una schermata nera al boot dopo l'installazione del pacchetto [nvidia](https://www.archlinux.org/packages/?name=nvidia), questo può essere causato da un conflitto tra i moduli grafici. Questo è risolto mettendo in blacklist i moduli per la GPU Intel. Creare il file `/etc/modprobe.d/blacklist.conf` e prevenire che i moduli _i915_ e _intel_agp' vengano caricati all'avvio:_
+Se si dispone di una CPU Intel con GPU integrata (ad esempio Intel HD 4000) e ottiene una schermata nera al boot dopo l'installazione del pacchetto [nvidia](https://www.archlinux.org/packages/?name=nvidia), questo può essere causato da un conflitto tra i moduli grafici. Questo è risolto mettendo in blacklist i moduli per la GPU Intel. Creare il file `/etc/modprobe.d/blacklist.conf` e prevenire che i moduli *i915* e *intel_agp' vengano caricati all'avvio:*
 
  `/etc/modprobe.d/blacklist.conf` 
-
 ```
 install i915 /bin/false
 install intel_agp /bin/false
@@ -1448,10 +1433,9 @@ install intel_agp /bin/false
 
 ### Schermo nero su sistemi con GPU integrata VIA
 
-Come sopra, mettere in blacklist il modulo _viafb_ potrebbe risolvere i conflitti con i driver NVIDIA :
+Come sopra, mettere in blacklist il modulo *viafb* potrebbe risolvere i conflitti con i driver NVIDIA :
 
  `/etc/modprobe.d/blacklist.conf` 
-
 ```
 install viafb /usr/bin/false
 
@@ -1471,7 +1455,6 @@ Se avete un processore Intel che integra anche una GPU e X fallisce all'avvio co
 Allora è necessario aggiungere il BusID della scheda nvidia alla propria configurazione di X. Potete trovarlo con questo comando:
 
  `# lspci | grep VGA` 
-
 ```
  00:02.0 VGA compatible controller: Intel Corporation Xeon E3-1200 v2/3rd Gen Core processor Graphics Controller (rev 09)
  01:00.0 VGA compatible controller: NVIDIA Corporation GK107 [GeForce GTX 650] (rev a1)
@@ -1481,7 +1464,6 @@ Allora è necessario aggiungere il BusID della scheda nvidia alla propria config
 Per risolvere il problema si aggiunga la propria scheda nella sezione `Device` nel file di configurazione di X, ad esempio:
 
  `/etc/X11/xorg.conf.d/10-nvidia.conf` 
-
 ```
 Section "Device"
     Identifier     "Device0"
@@ -1499,7 +1481,6 @@ Si noti come `01:00.0` viene scritto come `1:0:0`.
 Sui sistemi boot molto veloci , systemd può tentare di avviare il display manager prima che il driver NVIDIA sia completamente inizializzato. Verrà visualizzato un messaggio simile al seguente nei log solo quando Xorg viene eseguito durante l'avvio .
 
  `/var/log/Xorg.0.log` 
-
 ```
 [     1.807] (EE) NVIDIA(0): Failed to initialize the NVIDIA kernel module. Please see the
 [     1.807] (EE) NVIDIA(0):     system's kernel log for additional error messages and
@@ -1514,7 +1495,6 @@ In questo caso sarà necessario stabilire una dipendenza ordinare dal display ma
 Quindi creare la dipendenza dal display manager al dispositivo(i).
 
  `/etc/systemd/system/display-manager.service.d/10-wait-for-dri-devices.conf` 
-
 ```
 [Unit]
 Wants=dev-dri-card0.device

@@ -122,7 +122,6 @@ Include = /etc/pacman.d/mirrorlist
 *   [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) способен собрать 32- и 64-разрядный код. Вы можете спокойно устанавливать `multilib-devel` на замену пакетов, как показано ниже, но вам все еще необходима группа `base-devel` для других пакетов. Смотри https://bbs.archlinux.org/viewtopic.php?id=102828 для подробной информации.
 
  `# pacman -S gcc-multilib` 
-
 ```
 resolving dependencies...
 warning: dependency cycle detected:

@@ -28,7 +28,7 @@ Berikut adalah langkah-langkah installasi Archlinux :
 Silahkan unduh Archlinux di [disini](https://archlinux.org/download/).Versi terbaru adalah **2015.11.01**.
 
 *   File Archlinux baik yang "Core" maupun "Netinstall" hanyak menyediakan paket yang diperlukan saja guna membentuk **Sistem Dasar Archlinux**.Sebagai catatan,sistem dasar tidak mempunyai tampilan dengan grafis (GUI) dan hanya bersifat text-mode.Sistem dasar tersebut terdiri atas perangkat GNU (compiler, assembler, linker, libraries, shell, dan utilities), kernel linux, pacman (Manajer paket Arch) dan beberapa tambah file library dan modules.
-*   "_Core images_" yang menyediakan penginstallan via CD dan jaringan.
+*   "*Core images*" yang menyediakan penginstallan via CD dan jaringan.
 *   Netinstall berukuran lebih kecil dan tidak mempunyai paket,karena semuanya akan diunduh via internet.
 *   [Pertanyaan tentang Arch64](/index.php/Arch64_FAQ "Arch64 FAQ") akan membantu Anda dalam memilih antara versi 32bit dan 64bit.File installasi Archlinux sudah menyediakan versi 32bit dan 64bit sekaligus sehingga Anda dapat hemat kuota dan waktu.
 *   Jangan lupa untuk mengunduh file checksum.txt bersamaan denan file ISO Archlinux yang sudah Anda unduh.
@@ -82,7 +82,6 @@ Md5sum akan menghasilkan angka yang sama dengan [isi file md5sums.txt](https://w
 Write .iso to drive
 
  `$ [sudo] dd if=archlinux-2011.08.19-core-i686.iso of=/dev/sdc` 
-
 ```
  744973+0 records in
  744973+0 records out
@@ -93,7 +92,6 @@ Write .iso to drive
 Verify integrity:
 
  `$ [sudo] dd if=/dev/sdc count=744973 status=noxfer | md5sum` 
-
 ```
  4850d533ddd343b80507543536258229  -
  744973+0 records in
@@ -156,9 +154,9 @@ Jika Anda memiliki tata letak keyboard non-US Anda dapat memilih keymap / font k
 
 atau menggunakan perintah loadkeys:
 
- `# loadkeys _layout_` 
+ `# loadkeys *layout*` 
 
-dimana _layout_ adalah layout keyboard Anda seperti `id` atau `be-latin1`
+dimana *layout* adalah layout keyboard Anda seperti `id` atau `be-latin1`
 
 ### Dokumentasi
 

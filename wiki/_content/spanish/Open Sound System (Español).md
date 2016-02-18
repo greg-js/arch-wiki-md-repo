@@ -71,7 +71,7 @@ A continuación se relacionan algunas ventajas y desventajas de OSS comparado co
 *   Soporte para el software de modems [AC'97](https://en.wikipedia.org/wiki/AC%2797 "wikipedia:AC'97") y [HD Audio](https://en.wikipedia.org/wiki/Intel_High_Definition_Audio "wikipedia:Intel High Definition Audio").
 *   Mejor soporte para aparatos MIDI.
 *   Soporte para suspender.
-*   Mejor soporte para detección de clavijas (_jack_).
+*   Mejor soporte para detección de clavijas (*jack*).
 
 **Nota:**
 
@@ -88,7 +88,7 @@ Esto instalará OSS, ejecute el script de instalación de OSS (desactivando temp
 
 Después del blacklisting del modulo, puede [activar](/index.php/Daemons_(Espa%C3%B1ol) "Daemons (Español)") el demonio **oss** para que se inicie al arranque.
 
-Si su usuario no forma parte del grupo de _audio_, añádalo, y **reinicie sesión** para que los cambios tengan efecto:
+Si su usuario no forma parte del grupo de *audio*, añádalo, y **reinicie sesión** para que los cambios tengan efecto:
 
 ```
 # gpasswd -a $USER audio
@@ -132,7 +132,7 @@ $ vmixctl attach device
 
 ```
 
-donde _device_ es la tarjeta de audio, por ejemplo, `/dev/oss/oss_envy240/pcm0`.
+donde *device* es la tarjeta de audio, por ejemplo, `/dev/oss/oss_envy240/pcm0`.
 
 Para evitar tener que volver a ejecutar esta orden manualmente en el futuro, puede agregarla en `/usr/lib/oss/soundon.user`, como se sugiere en [este artículo](http://www.opensound.com/wiki/index.php/Tips_And_Tricks#Changing_the_default_sound_output).
 
@@ -145,7 +145,7 @@ $ ossinfo
 
 ```
 
-Debería ver una lista de los dispositivos en _Device Objects_ o _Audio Devices_. Si el dispositivo que desea utilizar no se encuentra en la parte superior de estas secciones, debe editar el archivo `/usr/lib/oss/etc/installed_drivers` y colocar el controlador para el dispositivo en la parte superior. Puede ser necesario hacer un:
+Debería ver una lista de los dispositivos en *Device Objects* o *Audio Devices*. Si el dispositivo que desea utilizar no se encuentra en la parte superior de estas secciones, debe editar el archivo `/usr/lib/oss/etc/installed_drivers` y colocar el controlador para el dispositivo en la parte superior. Puede ser necesario hacer un:
 
 ```
 $ soundoff && soundon
@@ -193,13 +193,13 @@ Los controles primarios de `ossxmix` tendrán el siguiente aspecto:
 ```
 
 1.  Una pestaña por cada tarjeta de sonido.
-2.  La configuración especifica de `vmix` (mixer virtual) aparece abajo. Eso incluye frecuencia de muestreo (_«sampling rate»_) y prioridad del mexclador (_«mixer priority»_).
-3.  Estas son las configuraciones (entrada y salida) de las tomas (_«jack»_) de la tarjeta de sonido. Cada controlador del mixer, que se muestra aquí, lo provee su propia tarjeta de sonido.
+2.  La configuración especifica de `vmix` (mixer virtual) aparece abajo. Eso incluye frecuencia de muestreo (*«sampling rate»*) y prioridad del mexclador (*«mixer priority»*).
+3.  Estas son las configuraciones (entrada y salida) de las tomas (*«jack»*) de la tarjeta de sonido. Cada controlador del mixer, que se muestra aquí, lo provee su propia tarjeta de sonido.
 4.  Los controles del mezclador y los medidores del sonido de la aplicación `vmix`. Si la aplicación no produce ningún sonido será etiquetada como `pcm08, pcm09...`, y, en cuanto reproduzca algún sonido, aparecerá el nombre de la aplicación.
 
 ### Definiciones de los Colores
 
-Para el audio de alta definición (HD), `ossxmix` mostrará la configuración de cada toma (_jack_) coloreada según los siguientes colores predefinidos:
+Para el audio de alta definición (HD), `ossxmix` mostrará la configuración de cada toma (*jack*) coloreada según los siguientes colores predefinidos:
 
 | Color | Tipo | Conector |
 | verde | canal frontal (salida estéreo) | 3.5mm TRS |
@@ -245,7 +245,7 @@ Otras mixer soportados por OSS:
 
 ```
 
-*   Pulse sobre el icono de la bandeja del sistema, eliga _Preferencias_ y cambie:
+*   Pulse sobre el icono de la bandeja del sistema, eliga *Preferencias* y cambie:
     *   Driver: **OSS**.
     *   Default Channel: **vmix0-outvol** (averigue qué canal de salida va a utilizar desde `ossmix`).
     *   Default Mixer: **ossxmix**.
@@ -259,8 +259,8 @@ Si tiene problemas con las aplicaciones que usan Gstreamer para audio, pruebe el
 
 Puede cambiar la configuración de GStreamer a fin de enviar el sonido a OSS, en lugar de a ALSA por defecto, con `gstreamer-properties` (parte del paquete [gnome-media](https://www.archlinux.org/packages/?name=gnome-media) ). Después de iniciar `gstreamer-properties`, se tienen que modificar las opciones de la siguiente manera:
 
-*   en la sección _Default Output_: si OSS no está disponible como un plugin, cambie _Plugin_ por **Custom** y _Pipeline_ por **oss4sink**.
-*   en la sección _Default Input_: si OSS no está disponible, cambie _Plugin_ por **Custom** y _Pipeline_ por **oss4src**.
+*   en la sección *Default Output*: si OSS no está disponible como un plugin, cambie *Plugin* por **Custom** y *Pipeline* por **oss4sink**.
+*   en la sección *Default Input*: si OSS no está disponible, cambie *Plugin* por **Custom** y *Pipeline* por **oss4src**.
 
 **Nota:** También puede usar `osssrc` como una alternativa a `oss4src` si encuentra que reproduce un mejor sonido.
 
@@ -282,7 +282,6 @@ Agregue esta orden al archivo `~/.bashrc` para cargarlo al iniciar sesión.
 Por defecto OpenAL utiliza ALSA. Para cambiar esto, simplemente defina que va a usar OSS en `/etc/openal/alsound.conf`:
 
  `/etc/openal/alsound.conf` 
-
 ```
 drivers=oss
 
@@ -306,7 +305,7 @@ $ ossmix vmix0-enable ON
 
 ### Gajim
 
-Por defecto, [Gajim](http://gajim.org/) usa `aplay -q` para reproducir sonido. Para OSS puede cambiarlo por el equivalente `ossplay -qq`, para lo cual vaya a _Editar > Preferencias > Avanzado_, y abra _Editar Configuración Avanzada_ y modifique la variable `soundplayer` en consecuencia.
+Por defecto, [Gajim](http://gajim.org/) usa `aplay -q` para reproducir sonido. Para OSS puede cambiarlo por el equivalente `ossplay -qq`, para lo cual vaya a *Editar > Preferencias > Avanzado*, y abra *Editar Configuración Avanzada* y modifique la variable `soundplayer` en consecuencia.
 
 ### MOC
 
@@ -317,7 +316,6 @@ Para utilizar [MOC](/index.php/Moc "Moc") con OSS v4.1 debe cambiar la sección 
 [MPD](/index.php/MPD "MPD") se configura a través de `/etc/mpd.conf` o `~/.mpdconf`. Compruebe ambos archivos, en busca de algo que se parezca a:
 
  `/etc/mpd.conf` 
-
 ```
 ...
 audio_output {
@@ -330,7 +328,6 @@ audio_output {
 Si encuentra una configuración de ALSA no comentada (esto es, las líneas que comienzan sin almohadilla `#`) como la de arriba, comente todas las salidas, o bórrelas, y añada lo siguiente:
 
  `/etc/mpd.conf` 
-
 ```
 ...
 audio_output {
@@ -352,7 +349,6 @@ $ ossinfo | grep /dev/dsp
 *   Busque una línea similar a `/dev/dsp -> /dev/oss/<SOME_CARD_IDENTIFIER>/pcm0`. Tome nota de `<SOME_CARD_IDENTIFIER>` y añada las líneas resaltadas en negrita a `audio_output` de OSS en el archivo de configuración MPD:
 
  `/etc/mpd.conf` 
-
 ```
 ...
 audio_output {
@@ -437,7 +433,6 @@ para ver las órdenes disponibles.
 Si desea utilizar las teclas multimedia con `ossvol`, consulte [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") y asegúrese de que están correctamente configuradas. Después puede utilizar, por ejemplo, [Xbindkeys](/index.php/Xbindkeys "Xbindkeys") para asociarlo al script `ossvol`. Añada lo siguiente al archivo `~/.xbindkeysrc`:
 
  `~/.xbindkeysrc` 
-
 ```
 # Toggle mute
 "ossvol -t"
@@ -495,14 +490,13 @@ Si no ve `vmix0-rate` (o `vmix1-rate`, etc.), probablemente significa que `vmix`
 
 Pasos para efectuar el cambio:
 
-1.  Primero, asegúrese de que su tarjeta es capaz de utilizar la nueva frecuencia. Ejecute `ossinfo -v2` y vea si la frecuencia deseada está presente en _Native sample rates_.
+1.  Primero, asegúrese de que su tarjeta es capaz de utilizar la nueva frecuencia. Ejecute `ossinfo -v2` y vea si la frecuencia deseada está presente en *Native sample rates*.
 2.  Como root, ejecute `/usr/lib/oss/scripts/killprocs.sh`. Tenga en cuenta que esto cerrará cualquier programa que actualmente tenga un canal de sonido abierto.
 3.  Después que todos los programas que estaba utilizando `vmix` finalicen, ejecute como root: `vmixctl rate /dev/dsp 96000`, sustituyendo la frecuencia presente por la frecuencia deseada (y `ossmix envy24.rate 96000` si fuera aplicable).
 4.  Ejecute `ossmix | grep rate` y compruebe `vmix0-rate <decimal value> (currently 96000) (Read-only)` para ver si todo ha salido correctamente.
 5.  **Haga que los cambios sean permanentes** añadiendo lo siguiente al archivo `soundon.user`:
 
  `/usr/lib/oss/soundon.user` 
-
 ```
 #!/bin/sh
 
@@ -555,7 +549,6 @@ o:
 Cree un archivo para lanzar aplicaciones con el nombre `ossxmix.desktop` en el directorio local para lanzar aplicaciones (`~/.local/share/applications/` e introduzca:
 
  `~/.local/share/applications/ossxmix.desktop` 
-
 ```
 [Desktop Entry]
 Name=Open Sound System Mixer
@@ -569,14 +562,13 @@ Encoding=UTF-8
 
 ```
 
-Para que se inicie automáticamente con el sistema, añádalo a la lista autostart del sistema en _System Settings > System Administration > Startup and Shutdown > Autostart_.
+Para que se inicie automáticamente con el sistema, añádalo a la lista autostart del sistema en *System Settings > System Administration > Startup and Shutdown > Autostart*.
 
 #### Gnome
 
 Como root, cree el archivo `/usr/local/bin/ossxmix_bg`, con el siguiente contenido:
 
  `/usr/local/bin/ossxmix_bg` 
-
 ```
 #!/bin/sh
 
@@ -584,9 +576,9 @@ exec /usr/bin/ossxmix -b
 
 ```
 
-Vaya a _System > Preferences > Aplicaciones Start Up_ y:
+Vaya a *System > Preferences > Aplicaciones Start Up* y:
 
-*   Pinche en _Agregar_, escriba `OSSMIX` en el campo _Nombre_ y la ruta `/usr/local/bin/ossxmix_bg` en el campo _Comando_; a continuación, pinche en el botón _Agregar_.
+*   Pinche en *Agregar*, escriba `OSSMIX` en el campo *Nombre* y la ruta `/usr/local/bin/ossxmix_bg` en el campo *Comando*; a continuación, pinche en el botón *Agregar*.
 
 *   Reinicie la sesión para ver los cambios.
 
@@ -603,7 +595,6 @@ OSS proporciona `soundon` y `soundOff` para activar y desactivar OSS, aunque tod
 El script siguiente es un método bastante básico para cerrar automáticamente OSS antes de la suspensión y recargarlo después.
 
  `/etc/pm/sleep.d/50osssound` 
-
 ```
 #!/bin/sh
 . "${PM_FUNCTIONS}"
@@ -702,7 +693,7 @@ Para obtener un sonido envolvente (4.0-7.1) seleccione `dsp_multich`, con solo 2
 
 Esta información proviene del [4front-tech foro](http://www.4front-tech.com/forum/viewtopic.php?f=3&t=3423).
 
-Es sorprendente saber que la tarjeta externa no funciona solo a causa de la ausencia del valor de retorno _true_ en la función `write_control_value(...)` en `ossusb_audio.c`.
+Es sorprendente saber que la tarjeta externa no funciona solo a causa de la ausencia del valor de retorno *true* en la función `write_control_value(...)` en `ossusb_audio.c`.
 
 Para solucionar este problema, es necesario una recompilación de OSS, por ahora.
 
@@ -720,7 +711,6 @@ Para solucionar este problema, es necesario una recompilación de OSS, por ahora
     *   Debería quedar así:
 
  `ossusb_audio.c` 
-
 ```
 static int
 write_control_value (ossusb_devc * devc, udi_endpoint_handle_t * endpoint,
@@ -786,7 +776,6 @@ Para solucionarlo:
 *   Averigüe qué controlador se utiliza:
 
  `$ lspci -vnn | grep -i -A 15 audio` 
-
 ```
 00:1e.2 Multimedia audio controller [0401]: Intel Corporation 82801FB/FBM/FR/FW/FRW (ICH6 Family) AC'97 Audio Controller [8086:266e] (rev 03)
 Subsystem: Hewlett-Packard Company NX6110/NC6120 [103c:099c]
@@ -829,15 +818,15 @@ en `oss_ich.conf`, enciende `jack-sense` (que es responsable de reconocer los au
 
 Si se dispone de un dispositivo de sonido HD Audio, es muy probable que tenga que ajustar algunos parámetros del mezclador antes de que el audio funcione correctamente.
 
-Los dispositivos HD Audio son muy potentes en el sentido de que pueden contener una gran variedad de pequeños circuitos (llamados _widgets_) que pueden ser ajustado vía software en cualquier momento. Estos controles están disponibles en el mixer, y se pueden utilizar, por ejemplo, para activar una toma de auriculares reasignándolo como una toma de entrada de sonido en lugar de una toma de salida de sonido.
+Los dispositivos HD Audio son muy potentes en el sentido de que pueden contener una gran variedad de pequeños circuitos (llamados *widgets*) que pueden ser ajustado vía software en cualquier momento. Estos controles están disponibles en el mixer, y se pueden utilizar, por ejemplo, para activar una toma de auriculares reasignándolo como una toma de entrada de sonido en lugar de una toma de salida de sonido.
 
-Sin embargo, esto es un problema secundario, el gran problemas está, sobre todo, en que el estándar HD Audio es más flexible de lo que, tal vez, debería ser, ya que los vendedores, a menudo, solo se preocupan de conseguir el correcto funcionamiento de sus _driver oficiales_.
+Sin embargo, esto es un problema secundario, el gran problemas está, sobre todo, en que el estándar HD Audio es más flexible de lo que, tal vez, debería ser, ya que los vendedores, a menudo, solo se preocupan de conseguir el correcto funcionamiento de sus *driver oficiales*.
 
 Luego, cuando se utilizan dispositivos HD Audio, a menudo se encuentran controles del mezclador desorganizados que no funcionan en absoluto para ninguna de las configuraciones por defecto, siendo necesario probar todas las combinaciones posibles de los controles del mixer hasta alcanzar una configuración que funcione.
 
 #### Cómo resolverlo
 
-Abra `ossxmix` y trate de cambiar todos los controles del mezclador en el **área central** (_«middle area»_), que contiene los controles específicos de las tarjetas de sonido, tal como se explica en la sección anterior [Control de volumen](/index.php/Open_Sound_System_(Espa%C3%B1ol)#Control_del_Volumen_con_el_Mezclador "Open Sound System (Español)").
+Abra `ossxmix` y trate de cambiar todos los controles del mezclador en el **área central** (*«middle area»*), que contiene los controles específicos de las tarjetas de sonido, tal como se explica en la sección anterior [Control de volumen](/index.php/Open_Sound_System_(Espa%C3%B1ol)#Control_del_Volumen_con_el_Mezclador "Open Sound System (Español)").
 
 Probablemente esté interesado en configurar un programa para grabar/reproducir continuamente en segundo plano (por ejemplo, `ossrecord - | ossplay -` para grabar, o `osstest -lV` para reproducir), mientras se está cambiando la configuración del mezclador con `ossxmix` en primer plano.
 
@@ -859,7 +848,7 @@ Si los flujos tienen un sonido distorsionado o producen ruidos extraños en Tote
 
 ### El Micrófono funciona a través de los altavoces
 
-OSS, por defecto, reproduce el micrófono a través de los altavoces. Para deshabilitar esta función busque en `ossxmix` la sección _Misc_. Marque cada `input-mix-mute` para desactivarla.
+OSS, por defecto, reproduce el micrófono a través de los altavoces. Para deshabilitar esta función busque en `ossxmix` la sección *Misc*. Marque cada `input-mix-mute` para desactivarla.
 
 ## Véase también
 

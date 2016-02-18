@@ -406,7 +406,7 @@ Un mixer audio leggero che permette di controllare il volume audio attraverso un
 
 #### gvtray
 
-Un mixer per il canale _master_ nel vassoio di sistema [[2]](https://aur.archlinux.org/packages.php?ID=6362)
+Un mixer per il canale *master* nel vassoio di sistema [[2]](https://aur.archlinux.org/packages.php?ID=6362)
 
 #### obmixer
 

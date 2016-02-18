@@ -7,7 +7,7 @@
 | [Format a device](/index.php/Format_a_device "Format a device") |
 | [File Systems](/index.php/File_Systems "File Systems") |
 
-توفر عملية تقسيم القرص الصلب _Partitioning_ إدارة المساحة المتوفرة وتقسيمها بشكل منطقي إلى عدة أقسام يمكن الوصول إليها كل على حدى، ويتم حفظ معلومات القسم ضمن جدول تقسيم [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") أو سجل الإقلاع الرئيسي [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record").
+توفر عملية تقسيم القرص الصلب *Partitioning* إدارة المساحة المتوفرة وتقسيمها بشكل منطقي إلى عدة أقسام يمكن الوصول إليها كل على حدى، ويتم حفظ معلومات القسم ضمن جدول تقسيم [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") أو سجل الإقلاع الرئيسي [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record").
 
 يمكن ترك مساحة القرص الصلب كاملةً ضمن قسم واحد أو يمكن تقسيم هذه المساحة إلى عدة أقسام حيث أن هناك العديد من الحالات التي تتطلب إنشاء عدة أقسام على القرص الصلب مثل: تثبيت أكثر من نظام تشغيل على القرص نفسه أو إنشاء قرص خاص لـ [swap](/index.php/Swap "Swap")، كما يُستعمل التقسيم في حالات أخرى لفصل الملفات وترتيبها كأن يقوم المستخدم بإنشاء قسم للملفات الصوتية وقسم آخر لملفات الفيديو، وسيتم شرح مخططات التقسيم الشائعة في هذا المقال.
 
@@ -197,7 +197,7 @@
 
 ### الاختيار بين GPT و MBR
 
-جدول تقسيم [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") (GPT) عبارة عن طريقة تقسيم حديثة تهدف إلى استبدال نظام [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") (MBR) القديم، يتفوق GPT بعدة أمور على MBR الذي يحوي على مراوغات يعود تاريخها إلى MS-DOS، ومع التطويرات الجديدة على أدوات التهيئة _fdisk_ (MBR) و _gdisk_ (GPT) فأصبح من السهل الاختيار بين GPT أو MBR والحصول على الأداء الأفضل.
+جدول تقسيم [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") (GPT) عبارة عن طريقة تقسيم حديثة تهدف إلى استبدال نظام [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") (MBR) القديم، يتفوق GPT بعدة أمور على MBR الذي يحوي على مراوغات يعود تاريخها إلى MS-DOS، ومع التطويرات الجديدة على أدوات التهيئة *fdisk* (MBR) و *gdisk* (GPT) فأصبح من السهل الاختيار بين GPT أو MBR والحصول على الأداء الأفضل.
 
 الاختيار محصور بالتالي:
 

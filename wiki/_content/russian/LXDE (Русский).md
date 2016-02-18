@@ -1,4 +1,4 @@
-[LXDE.org|Lightweight X11 Desktop Environment](http://lxde.org/): _"Одно из главных достоинств LXDE - небольшие требования к железу. Философия LXDE - это лёгкость, полезность и практичность."_
+[LXDE.org|Lightweight X11 Desktop Environment](http://lxde.org/): *"Одно из главных достоинств LXDE - небольшие требования к железу. Философия LXDE - это лёгкость, полезность и практичность."*
 
 ## Contents
 
@@ -115,23 +115,22 @@ exec startlxde
 
 ### Автозапуск программ
 
-	файлы _.desktop_
+	файлы *.desktop*
 
-Вы можете скопировать ярлык программы _.desktop_ из `/usr/share/applications/` в `~/.config/autostart/`. Например, добавим в автозапуск _lxterminal_:
+Вы можете скопировать ярлык программы *.desktop* из `/usr/share/applications/` в `~/.config/autostart/`. Например, добавим в автозапуск *lxterminal*:
 
 ```
 $ ln -s /usr/share/applications/lxterminal.desktop ~/.config/autostart/
 
 ```
 
-После добавления файлов _.desktop_ Вы можете упралять ими с помощью [lxsession-edit](https://aur.archlinux.org/packages/lxsession-edit/).
+После добавления файлов *.desktop* Вы можете упралять ими с помощью [lxsession-edit](https://aur.archlinux.org/packages/lxsession-edit/).
 
 	файл autostart
 
-Второй способ - использование файла `~/.config/lxsession/LXDE/autostart`. Этот файл - не скрипт, но каждая строка представляет собой команду, которая будет выполнена, если строка начинается с символа `@`. Команда после `@` будет автоматически повторно выполняться, если она падает. Например, чтобы выполнить _lxterminal_ и _leafpad_ автоматически при запуске:
+Второй способ - использование файла `~/.config/lxsession/LXDE/autostart`. Этот файл - не скрипт, но каждая строка представляет собой команду, которая будет выполнена, если строка начинается с символа `@`. Команда после `@` будет автоматически повторно выполняться, если она падает. Например, чтобы выполнить *lxterminal* и *leafpad* автоматически при запуске:
 
  `~/.config/lxsession/LXDE/autostart` 
-
 ```
 @lxterminal
 @leafpad
@@ -159,12 +158,11 @@ $ obkey ~/.config/openbox/lxde-rc.xml
 
 Основная статья: [Темы курсора](/index.php/%D0%A2%D0%B5%D0%BC%D1%8B_%D0%BA%D1%83%D1%80%D1%81%D0%BE%D1%80%D0%B0 "Темы курсора").
 
-Последний [lxappearance2-git](https://aur.archlinux.org/packages/lxappearance2-git/) предоставляет функциональные возможности для изменения тем курсора. Если Вы не хотите устанавливать экспериментальный _lxappearance2_, можете указать свою тему курсора в файле `~/.Xdefaults`. Смотрите раздел [Темы курсора#Настройка](/index.php/%D0%A2%D0%B5%D0%BC%D1%8B_%D0%BA%D1%83%D1%80%D1%81%D0%BE%D1%80%D0%B0#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0 "Темы курсора").
+Последний [lxappearance2-git](https://aur.archlinux.org/packages/lxappearance2-git/) предоставляет функциональные возможности для изменения тем курсора. Если Вы не хотите устанавливать экспериментальный *lxappearance2*, можете указать свою тему курсора в файле `~/.Xdefaults`. Смотрите раздел [Темы курсора#Настройка](/index.php/%D0%A2%D0%B5%D0%BC%D1%8B_%D0%BA%D1%83%D1%80%D1%81%D0%BE%D1%80%D0%B0#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0 "Темы курсора").
 
 Простым способом является добавление курсора к теме по умолчанию. Сначала нужно создать каталог `/usr/share/icons/default`, then you can specify to add to the icon theme the cursor. This will use the [xcursor-bluecurve](https://www.archlinux.org/packages/?name=xcursor-bluecurve) pointer theme:
 
  `/usr/share/icons/default/index.theme` 
-
 ```
 [icon theme]
 Inherits=Bluecurve
@@ -396,4 +394,4 @@ for i in program1.desktop program2.desktop ...; do cp /usr/share/applications/$i
 
 ```
 
-Это будет работать для всех приложений, исключая KDE. Для них единственный путь удалить их из списка меню - зайти в KDE и использовать собственный редактор меню. Для каждого элемента, который вы не желаете лицезреть, проверьте опцию 'Show only in KDE' (_отображать только в KDE_). Если добавление NoDisplay=True не работает, вы можете добавить ShowOnlyIn=XFCE.
+Это будет работать для всех приложений, исключая KDE. Для них единственный путь удалить их из списка меню - зайти в KDE и использовать собственный редактор меню. Для каждого элемента, который вы не желаете лицезреть, проверьте опцию 'Show only in KDE' (*отображать только в KDE*). Если добавление NoDisplay=True не работает, вы можете добавить ShowOnlyIn=XFCE.

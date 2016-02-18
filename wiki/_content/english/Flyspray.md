@@ -2,7 +2,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [flyspray](https://www.archlinux.org/packages/?name=flyspray) package. Flyspray will essentially require a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle) "wikipedia:LAMP (software bundle)") stack, so that in addition to [PHP](/index.php/PHP "PHP"), you will need an HTTP server such as [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server"), and an SQL server such as [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"). See the [LAMP](/index.php/LAMP "LAMP") wiki article for more information on how to integrate these.
+[Install](/index.php/Install "Install") the [flyspray](https://www.archlinux.org/packages/?name=flyspray) package. Flyspray will essentially require a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle) stack, so that in addition to [PHP](/index.php/PHP "PHP"), you will need an HTTP server such as [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server"), and an SQL server such as [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"). See the [LAMP](/index.php/LAMP "LAMP") wiki article for more information on how to integrate these.
 
 ### Apache Setup
 
@@ -11,7 +11,6 @@
 You will need to create a config file for apache to find your Flyspray install. Create the following file and edit it your favorite text editor:
 
  `# /etc/httpd/conf/extra/flyspray.conf` 
-
 ```
 Alias /flyspray "/usr/share/webapps/flyspray"
 <Directory "/usr/share/webapps/flyspray">

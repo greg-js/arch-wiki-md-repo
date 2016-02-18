@@ -1,4 +1,4 @@
-[rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html) visoko prilagodljivi [terminal emulator](/index.php?title=Terminal_Emulator&action=edit&redlink=1 "Terminal Emulator (page does not exist)") nastao od [rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt"). Poznatiji kao `urxvt`, rxvt-unicode može biti [daemonizovan](/index.php/Daemon "Daemon") tako da pokreće klijente u okviru jednog [procesa](https://en.wikipedia.org/wiki/Process_(computing) "wikipedia:Process (computing)") kako bi smanjio korišćenje sistemskih resursa. Razvijen od strane Marc Lehmann-a, neke od značajnijih odlika rxvt-unicode uključuju internacionalnu podršku jezika kroz [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode"), mogućnost da prikaže različite tipove fonta i podrška za [Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl") ekstenzije.
+[rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html) visoko prilagodljivi [terminal emulator](/index.php?title=Terminal_Emulator&action=edit&redlink=1 "Terminal Emulator (page does not exist)") nastao od [rxvt](https://en.wikipedia.org/wiki/Rxvt kako bi smanjio korišćenje sistemskih resursa. Razvijen od strane Marc Lehmann-a, neke od značajnijih odlika rxvt-unicode uključuju internacionalnu podršku jezika kroz [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode"), mogućnost da prikaže različite tipove fonta i podrška za [Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl") ekstenzije.
 
 ## Contents
 
@@ -64,7 +64,6 @@ $ urxvt -depth 32 -bg rgba:3f00/3f00/3f00/dddd
 Koristeći konfiguracioni fajl:
 
  `~/.Xresources` 
-
 ```
 URxvt.depth:      32
 URxvt.background: rgba:3f00/3f00/3f00/dddd
@@ -280,7 +279,9 @@ Skottish[[5]](https://bbs.archlinux.org/viewtopic.php?pid=506845#p506845) je kre
 
 sub on_sel_grab {
     my $query=quotemeta $_[0]->selection;
-    $query=~ s/\n/\\n/g;
+    $query=~ s/
+/\
+/g;
     $query=~ s/\r/\\r/g;
     system( "echo -en " . $query . " | xsel -i -b -p" );
 }
@@ -424,7 +425,7 @@ URxvt.perl-ext-common: default,matcher,tabbed
 
 <SHIFT>-Dole: Kreiranje novog taba
 
-Možete takođe koristiti vaš miš za kretanju izmedju tabova samo kliknite na onaj koji želite ili kreirati novi tab tako što ćete kliknuti na _[NEW].\\_
+Možete takođe koristiti vaš miš za kretanju izmedju tabova samo kliknite na onaj koji želite ili kreirati novi tab tako što ćete kliknuti na *[NEW].\\*
 
 Za zatvaranje taba samo unesite 'exit' kao kad zatvarate terminal.
 

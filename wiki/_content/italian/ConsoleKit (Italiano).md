@@ -1,6 +1,6 @@
 **Attenzione:** Dal [sito internet](http://www.freedesktop.org/wiki/Software/ConsoleKit) di Consolekit:
 
-	_ConsoleKit non è più sviluppato attivamente. L'attenzione si è spostata sulla funzione integrata seat/user/session del software/systemd chiamato systemd-loginctl._
+	*ConsoleKit non è più sviluppato attivamente. L'attenzione si è spostata sulla funzione integrata seat/user/session del software/systemd chiamato systemd-loginctl.*
 
 ConsoleKit è un framework per gestire i permessi e le sessioni degli utenti. I compiti che più comunemente vengono affidati a ConsoleKit sono: abilitare gli utenti non-root a montare dispositivi usb e permettere loro sospensione e spegnimento del pc (ad esempio [Thunar](/index.php/Thunar_(Italiano) "Thunar (Italiano)"), Nautilus e il menu di spegnimento di [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") fanno uso di ConsoleKit).
 
@@ -59,7 +59,6 @@ Questo lancerà una sessione di [Openbox](/index.php/Openbox_(Italiano) "Openbox
 Se si usa il file [Xinitrc](/index.php/Xinitrc_(Italiano) "Xinitrc (Italiano)") per lanciare delle applicazioni nella propria sessione di X, non è detto che tutte queste vengano eseguite con le variabili d'ambiente appropriate per abilitare correttamente la sessione di ConsoleKit. Nel seguente esempio solo i processi "figli" di Compiz saranno correttamente abilitati all'uso di ConsoleKit, mentre i figli di Xterm non lo saranno.
 
  `~/.xinitrc` 
-
 ```
 xterm &
 exec ck-launch-session compiz ccp
@@ -68,14 +67,11 @@ exec ck-launch-session compiz ccp
 Tipicamente, questo problema riguarda Compiz standalone e alcune altre applicazioni cone i launchers, (gnome-do, kupfer, gmrun, xbindkeys, ecc.) che non saranno quindi abilitati all'uso di ConsoleKit. Il metodo per aggirare questo problema è avviare tutta la sessione in un secondo script, ad esempio `~/.xstart`. Non dimenticare `dbus-launch` se necessario. Esempio:
 
  `~/.xinitrc` 
-
 ```
 exec ck-launch-session dbus-launch $HOME/.xstart
 
 ```
-
  `~/.xstart` 
-
 ```
 compiz ccp &
 Thunar &

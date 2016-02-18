@@ -1,4 +1,4 @@
-This article describes the installation and configuration of 64-bit Arch Linux on the Samsung N150 netbook. Based on the output from _dmidecode_, this material might also be useful for the N210, N220 and NB30 models.
+This article describes the installation and configuration of 64-bit Arch Linux on the Samsung N150 netbook. Based on the output from *dmidecode*, this material might also be useful for the N210, N220 and NB30 models.
 
 ## Contents
 
@@ -33,7 +33,7 @@ Since netbooks lack optical drives, the preferred installation mechanism is via 
 
 This article assumes the entire hard disk will be used for Arch, eliminating the manufacturer-supplied software (including the recovery partitions). It is not entirely clear which partitions are required for the recovery software to function properly: retention of the only first partition, of unknown type, is **not** sufficient. If a recovery mechanism for the factory-supplied software is desired, a set of recovery DVDs should be created using an external DVD burner prior to installing Arch.
 
-Upon the first installation, _cfdisk_ will exit with an error due to the existing partition layout extending beyond the end of the disk (using Linux default geometries). The solution is to run fdisk and create a new, empty partition table.
+Upon the first installation, *cfdisk* will exit with an error due to the existing partition layout extending beyond the end of the disk (using Linux default geometries). The solution is to run fdisk and create a new, empty partition table.
 
 **Warning:** This operation will destroy the current hard disk partitions, effectively causing all data on the hard disk to be lost.
 
@@ -189,7 +189,7 @@ For N210 owners the internal microphone might not work out of the box. You have 
 
 With Gnome 2.28 and the [gnome-power-manager](https://www.archlinux.org/packages/?name=gnome-power-manager) package installed, suspend-to-RAM works out of the box whenever the netbook lid is closed. The suspend process requires up to 30 seconds or so to take effect. Waking from S3 requires activating the power button under the default configuration. Waking upon opening the lid, or pressing a key, can be enabled in the BIOS.
 
-With the realtek wireless card, wireless doesn't always come up again on suspend. Unloading and reloading the _r8192e_pci_ module brings it back. This can also be configured automatically with [Pm-utils](/index.php/Pm-utils "Pm-utils").
+With the realtek wireless card, wireless doesn't always come up again on suspend. Unloading and reloading the *r8192e_pci* module brings it back. This can also be configured automatically with [Pm-utils](/index.php/Pm-utils "Pm-utils").
 
 From kernel 2.6.35 there is a regression that may prevent the system to comming back (experienced on N210 with 2.6.39) from suspend. The solution is, to create a file `/etc/pm/sleep.d/10cpu-disable` with the following content
 
@@ -285,7 +285,7 @@ For n220 owners (these parameters haven't been tested on n150 but it migth work)
 
 ## CPU frequency scaling
 
-To improve power management to some degree, CPU frequency scaling can be enabled. This mechanism requires a few modules, like _acpi-cpufreq_, _cpufreq-ondemand_ and _cpufreq-powersave_, to be loaded at boot time from `/etc/modules-load.d/` as described in [Kernel modules](/index.php/Kernel_modules#Loading "Kernel modules").
+To improve power management to some degree, CPU frequency scaling can be enabled. This mechanism requires a few modules, like *acpi-cpufreq*, *cpufreq-ondemand* and *cpufreq-powersave*, to be loaded at boot time from `/etc/modules-load.d/` as described in [Kernel modules](/index.php/Kernel_modules#Loading "Kernel modules").
 
 Toggling between the performance, ondemand, and powersave governors can be accomplished via the following script, installed to `/usr/local/bin/cpufreq_toggle`
 
@@ -340,7 +340,6 @@ exit 0
 By default, the system will boot with CPU frequency scaling set to use the performance governor. To enable the ondemand governor at the end of the boot process, create a [tmpfile](/index.php/Tmpfile "Tmpfile"):
 
  `/etc/tmpfiles.d/cpu_scaling.conf` 
-
 ```
 w /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor - - - - ondemand
 w /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor - - - - ondemand

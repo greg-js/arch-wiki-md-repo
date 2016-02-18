@@ -36,7 +36,7 @@ While there are many methods how authorization of users for MTA and POP can be i
 
 Courier-MTA is not really simple, but it might be easier than the constructs mentioned above.
 
-The following text describes a setup for two local domains on one physical machine, which is not so uncommon for single users or small companies. We authenticate against a BerkeleyDB-based ".dat" file which is created from a text or multiple textfiles automatically by tools that come with courier. This method is described in the Courier documentation as _authuserdb_, so do not get confused about names. The authentication against other providers happens in an adequate way and is covered in courier-authlibs documentation. There are differences in the handling of SASL methods (such as PLAIN or CRAM-MD5) depending on which authentication backend (_authuserd_, _authpam_, _authmysql_ ...) you like to use. Just do not expect that this setup can be painlessly converted from the described _authuserdb_ to _authmysql_.
+The following text describes a setup for two local domains on one physical machine, which is not so uncommon for single users or small companies. We authenticate against a BerkeleyDB-based ".dat" file which is created from a text or multiple textfiles automatically by tools that come with courier. This method is described in the Courier documentation as *authuserdb*, so do not get confused about names. The authentication against other providers happens in an adequate way and is covered in courier-authlibs documentation. There are differences in the handling of SASL methods (such as PLAIN or CRAM-MD5) depending on which authentication backend (*authuserd*, *authpam*, *authmysql* ...) you like to use. Just do not expect that this setup can be painlessly converted from the described *authuserdb* to *authmysql*.
 
 **Note:** If you would like to test on your local box but have no DNS-server running, the setup fails on some edges because Courier-MTA needs at least an MX entry to work. To work around that you can recompile courier-mta from "abs". Add `--without-tcpddns` to the configure attributes and go make some coffee, since this will take a while. Then make sure, that you add our dummy domains "domain1" and "domain2" to your `/etc/hosts`.
 
@@ -50,7 +50,7 @@ Any other mail transfer agents (like cyrus) or smtp servers (sendmail, postfix, 
 
 Let courier know that we want to authenticate against authuserdb.
 
-In the file `/etc/authlib/authdaemonrc` find `authmodulelist=...` then remove all listed modules except for _authuserdb_:
+In the file `/etc/authlib/authdaemonrc` find `authmodulelist=...` then remove all listed modules except for *authuserdb*:
 
 ```
 authmodulelist="authuserdb"
@@ -80,7 +80,7 @@ There is a place where the virtual users and their attributes will be stored. Th
 
 ```
 
-The attributes of the "vmail"-system user need to be stored here, too, since we allowed only _authuserdb_ in `/etc/authlib/authdaemonrc` . Fortunately, courier comes with a handy script that converts all local users into a file in courier-syntax. This file can be named freely, we call it "system". Later we also create a file for "domain1" and "domain2". Got the idea?
+The attributes of the "vmail"-system user need to be stored here, too, since we allowed only *authuserdb* in `/etc/authlib/authdaemonrc` . Fortunately, courier comes with a handy script that converts all local users into a file in courier-syntax. This file can be named freely, we call it "system". Later we also create a file for "domain1" and "domain2". Got the idea?
 
 ```
 # pw2userdb > /etc/authlib/userdb/system
@@ -215,10 +215,10 @@ Just check if everything is fine:
 
 Now we need to tell courier the who is who on this box -- who we serve e-mail for and who we do not. Courier separates this into these levels:
 
-*   locals: This is _localhost_ for sure and on dedicated servers you are mostly part of a domain like _server234.serverfarm.tld_
-*   hosteddomains: For your hosted domains and subdomains like _my-cool-domain.ca_, _project1.my-cool-domain.ca_
+*   locals: This is *localhost* for sure and on dedicated servers you are mostly part of a domain like *server234.serverfarm.tld*
+*   hosteddomains: For your hosted domains and subdomains like *my-cool-domain.ca*, *project1.my-cool-domain.ca*
 
-For example, lets say you have a server at _blahfarm.com_. Usually they make your server a host on their domain. This is likely something like _server234.blahfarm.com_ . Now, you want your server available from the web by a more meaningful and even cooler name, so you buy (or rent) a domain name like _my-cool-domain.ca_ . In this case the setup looks like this:
+For example, lets say you have a server at *blahfarm.com*. Usually they make your server a host on their domain. This is likely something like *server234.blahfarm.com* . Now, you want your server available from the web by a more meaningful and even cooler name, so you buy (or rent) a domain name like *my-cool-domain.ca* . In this case the setup looks like this:
 
 	locals:
 
@@ -234,7 +234,7 @@ For example, lets say you have a server at _blahfarm.com_. Usually they make you
 
 	smtp.my-cool-domain.ca
 
-**Note:** Any subdomain like _project1.my-cool-domain.ca_ or _smtp.my-cool-domain.ca_ also must also be in `/etc/courier/hosteddomains` if you want to have email addresses like _info@project1.my-cool-domain.ca_
+**Note:** Any subdomain like *project1.my-cool-domain.ca* or *smtp.my-cool-domain.ca* also must also be in `/etc/courier/hosteddomains` if you want to have email addresses like *info@project1.my-cool-domain.ca*
 
 To learn the difference between these specifications, read the manpage for `makehosteddomains`. You will figure that the following suits our approach:
 
@@ -255,7 +255,7 @@ EODOMAIN2HOSTED
 
 ```
 
-**Note:** _[TAB]_ can be inserted by typing 'Ctrl' + V then 'Tab'
+**Note:** *[TAB]* can be inserted by typing 'Ctrl' + V then 'Tab'
 
 Again, these values must be converted into a BerkeleyDB - use the courier command:
 
@@ -271,7 +271,7 @@ Before we go on, one more thing needs to be written -- the domain(s) we accept m
 
 ```
 
-Repeat for _domain2_:
+Repeat for *domain2*:
 
 ```
 # echo domain2 > /etc/courier/esmtpacceptmailfor.dir/domain2
@@ -344,7 +344,7 @@ So far, our operations have been focused on the box which runs the server itself
 
 Now it comes in, that we will have to configure the several server daemons. Courier is already running (from the perftest above) but it doesn't provide services to the network. So we have to configure esmtpd, pop3d and imapd with their respective configuration files in `/etc/courier/<servicename>` .
 
-Since we like to use SMTP_Auth instead if a IP/Domain based SMTP authentication we need to activate the AUTH_REQUIRED option in esmtpd. Also we activate the CRAM-MD5 challenge method for authorization. NOTE: this setup definitely keeps Outlook losers out. For these buggy and old fashioned clients you will need to use way less restrictive settings!
+Since we like to use SMTP*Auth instead if a IP/Domain based SMTP authentication we need to activate the AUTH*REQUIRED option in esmtpd. Also we activate the CRAM-MD5 challenge method for authorization. NOTE: this setup definitely keeps Outlook losers out. For these buggy and old fashioned clients you will need to use way less restrictive settings!
 
 In `/etc/courier/esmtpd`:
 

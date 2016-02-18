@@ -14,8 +14,8 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
 *   [2 Legacy method: ALSA-BTSCO](#Legacy_method:_ALSA-BTSCO)
     *   [2.1 Connecting the headset](#Connecting_the_headset)
         *   [2.1.1 Pairing the headset with your computer](#Pairing_the_headset_with_your_computer)
-            *   [2.1.1.1 Using _bluez-gnome_](#Using_bluez-gnome)
-            *   [2.1.1.2 Using _passkey-agent_](#Using_passkey-agent)
+            *   [2.1.1.1 Using *bluez-gnome*](#Using_bluez-gnome)
+            *   [2.1.1.2 Using *passkey-agent*](#Using_passkey-agent)
     *   [2.2 Headset and ALSA Devices](#Headset_and_ALSA_Devices)
     *   [2.3 Headset's multimedia buttons](#Headset.27s_multimedia_buttons)
 *   [3 Legacy method: PulseAudio](#Legacy_method:_PulseAudio)
@@ -50,7 +50,7 @@ Start the Bluetooth system:
 
 ```
 
-Now we can use the _bluetoothctl_ command line utility to pair and connect. For troubleshooting and more detailed explanations of _bluetoothctl_ see the [Bluetooth](/index.php/Bluetooth "Bluetooth") article. Run
+Now we can use the *bluetoothctl* command line utility to pair and connect. For troubleshooting and more detailed explanations of *bluetoothctl* see the [Bluetooth](/index.php/Bluetooth "Bluetooth") article. Run
 
 ```
 # bluetoothctl
@@ -74,7 +74,7 @@ Now make sure that your headset is in pairing mode. It should be discovered shor
 
 ```
 
-shows a device that calls itself "Lasmex LBT10" and has MAC address _00:1D:43:6D:03:26_. We will now use that MAC address to initiate the pairing:
+shows a device that calls itself "Lasmex LBT10" and has MAC address *00:1D:43:6D:03:26*. We will now use that MAC address to initiate the pairing:
 
 ```
 # pair 00:1D:43:6D:03:26
@@ -90,7 +90,7 @@ After pairing, you also need to explicitly connect the device (every time?):
 
 If everything works correctly, you now have a separate output device in [PulseAudio](/index.php/PulseAudio "PulseAudio").
 
-**Note:** The device may be off by default. Select its audio profile (_OFF_, A2DP, HFP) in the "Configuration" tab of [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol).
+**Note:** The device may be off by default. Select its audio profile (*OFF*, A2DP, HFP) in the "Configuration" tab of [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol).
 
 You can now redirect any audio through that device using the "Playback" and "Recording" tabs of [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol).
 
@@ -123,7 +123,7 @@ If pairing fails, you can try [disabling SSPMode](https://stackoverflow.com/ques
 
 #### Pairing works, but connecting does not
 
-You might see the following error in _bluetoothctl_:
+You might see the following error in *bluetoothctl*:
 
 ```
 [bluetooth]# connect 00:1D:43:6D:03:26
@@ -149,7 +149,7 @@ bluetoothd[5556]: a2dp-sink profile connect failed for 00:1D:43:6D:03:26: Protoc
 
 This may be due to the [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) package not being installed. Install it if it missing, then restart pulseaudio.
 
-If the issue is not due to the missing package, the problem in this case is that PulseAudio is not catching up. A common solution to this problem is to restart PulseAudio. Note that it is perfectly fine to run _bluetoothctl_ as root while PulseAudio runs as user. After restarting PulseAudio, retry to connect. It is not necessary to repeat the pairing.
+If the issue is not due to the missing package, the problem in this case is that PulseAudio is not catching up. A common solution to this problem is to restart PulseAudio. Note that it is perfectly fine to run *bluetoothctl* as root while PulseAudio runs as user. After restarting PulseAudio, retry to connect. It is not necessary to repeat the pairing.
 
 If restarting PulseAudio does not work, you need to load module-bluetooth-discover.
 
@@ -172,14 +172,13 @@ module-bluez5-discover
 To have your headset auto connect you need to enable PulseAudio's switch-on-connect module. Add the following:
 
  `/etc/pulse/default.pa` 
-
 ```
 # automatically switch to newly-connected devices
 load-module module-switch-on-connect
 
 ```
 
-You then need to tell _bluetoothctl_ to trust your Bluetooth headset, or you will see errors like this:
+You then need to tell *bluetoothctl* to trust your Bluetooth headset, or you will see errors like this:
 
 ```
 bluetoothd[487]: Authentication attempt without agent
@@ -195,7 +194,6 @@ bluetoothd[487]: Access denied: org.bluez.Error.Rejected
 After a reboot, your Bluetooth adapter will not power on by default. You need to add a udev rule to power it on:
 
  `/etc/udev/rules.d/10-local.rules` 
-
 ```
 # Set bluetooth power up
 ACTION=="add", SUBSYSTEM=="bluetooth", KERNEL=="hci[0-9]*", RUN+="/usr/bin/hciconfig %k up"
@@ -225,7 +223,7 @@ On next reboot the second instance of PulseAudio will not be started.
 
 #### UUIDs has unsupported type
 
-During pairing you might see this output in _bluetoothctl_:
+During pairing you might see this output in *bluetoothctl*:
 
 ```
 [CHG] Device 00:1D:43:6D:03:26 UUIDs has unsupported type
@@ -238,7 +236,7 @@ This message is a very common one and can be ignored.
 
 It is much easier to set up your bluetooth headset today, with bluez >= 3.16\. You may want to try the out-of-box python script in [this blog](http://fosswire.com/2008/01/11/a2dp-stereo-linux/) (you need edit the script to work with gconftool-2). There is also a piece of equivalent bash script [here](http://lymanrb.blogspot.com/2008/05/linux.html).
 
-You need your headset's bdaddr. It is of the form _12:34:56:78:9A:BC_. Either find it in the documentation of your headset, on the headset itself or with the **hcitool scan** command.
+You need your headset's bdaddr. It is of the form *12:34:56:78:9A:BC*. Either find it in the documentation of your headset, on the headset itself or with the **hcitool scan** command.
 
 Install [btsco](https://aur.archlinux.org/packages/btsco/).
 
@@ -249,7 +247,7 @@ To load the kernel module, type:
 
 ```
 
-There will now be an extra audio device. Use `alsamixer -cN` (where N is most likely 1) to set the volume. You can access the device with any alsa-capable application by choosing the device _BT headset_, or with any OSS application by using `/dev/dspN` as the audio device.
+There will now be an extra audio device. Use `alsamixer -cN` (where N is most likely 1) to set the volume. You can access the device with any alsa-capable application by choosing the device *BT headset*, or with any OSS application by using `/dev/dspN` as the audio device.
 
 But to actually get any sound, you have to connect your headset to the computer first.
 
@@ -275,11 +273,11 @@ The first time you connect the headset, you have to pair it with the computer. T
 
 There are two ways to pair your headset with the computer:
 
-##### Using _bluez-gnome_
+##### Using *bluez-gnome*
 
-Install the _bluez-gnome_ package from the community repository. Then start the **bt-applet** program. Once you try to connect to the headset, a window will open and ask for the PIN.
+Install the *bluez-gnome* package from the community repository. Then start the **bt-applet** program. Once you try to connect to the headset, a window will open and ask for the PIN.
 
-##### Using _passkey-agent_
+##### Using *passkey-agent*
 
 Before connecting to the headset, enter the command
 
@@ -288,7 +286,7 @@ $ passkey-agent --default <pin>
 
 ```
 
-where _<pin>_ is your headset's PIN. Then try to connect to the headset.
+where *<pin>* is your headset's PIN. Then try to connect to the headset.
 
 ### Headset and ALSA Devices
 
@@ -364,7 +362,6 @@ $ mplayer -ao alsa:device=btheadset /path/to/audio/or/video/file
 ```
 
 **Tip:** To find hci# for a usb dongle, type in
-
 ```
 $ hcitool dev
 
@@ -584,7 +581,6 @@ options snd-hda-intel model=laptop
 The settings here seem to be enabled for root only. See the policy user="root" section. However, if a regular user is specified here, the system fails to start. Someone with more knowledge could explain why.
 
  `/etc/dbus-1/system.d/bluetooth.conf` 
-
 ```
 <!-- This configuration file specifies the required security policies for Bluetooth core daemon to work. -->
 
@@ -679,7 +675,7 @@ If PulseAudio fails when changing the profile to A2DP while using GNOME with GDM
 | **Nokia BH-104** | bluez4 | Yes |
 | **Creative AirwaveHD** | bluez 5.23 | Bluetooth adapter Atheros Communications usb: 0cf3:0036 | Yes |
 | **Creative HITZ WP380** | bluez 5.27, pulseaudio 5.0-1 | A2DP Profile only. Buttons work (Play, Pause, Prev, Next). Volume buttons are hardware-only. Auto-connect works but you should include the bluetooth module in "pulseaudio" to switch to it automatically. Clear HD Music Audio (This device support APTx codec but it isn't supported in linux yet). You may have some latency problems which needs pulseaudio restart. | Yes |
-| **deleyCON Bluetooth Headset** | bluez 5.23 | Adapter: CSL - USB nano Bluetooth-Adapter V4.0\. Tested a2dp profile. Untested microphone. Does not auto-connect (even when paired and trusted), must connect manually. Play/pause button mutes/unmutes the headphones, not the playback. Playback fwd/bwd buttons do not work (nothing visible with _xev_). | Limited |
+| **deleyCON Bluetooth Headset** | bluez 5.23 | Adapter: CSL - USB nano Bluetooth-Adapter V4.0\. Tested a2dp profile. Untested microphone. Does not auto-connect (even when paired and trusted), must connect manually. Play/pause button mutes/unmutes the headphones, not the playback. Playback fwd/bwd buttons do not work (nothing visible with *xev*). | Limited |
 | **UE BOOM** | bluez 5.27, pulseaudio-git 5.99 | Update to latest UE BOOM fw 1.3.58\. Sound latency in video solved by configuring pavucontrol. Works with UE BOOM x2. | Yes |
 | **LG HBS-730** | bluez 5.30, pulseaudio 6.0 | Works out of box with A2DP profile. | Yes |
 | **LG HBS-750** | bluez 5.30, pulseaudio-git 6.0 | Works out of box with A2DP profile. | Yes |

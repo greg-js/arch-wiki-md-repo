@@ -200,7 +200,6 @@ Debian 中，/dev/shm 指向 /run/shm。而在基于 Arch 的 chroot 中，/run/
 While installing `archlinux-2015.07.01-x86_64` from a Debian 7 host, the following error prevented both [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) and [arch-chroot](/index.php/Change_root#Using_arch-chroot "Change root") from working:
 
  `# pacstrap -i /mnt` 
-
 ```
 mount: mount point /mnt/dev/pts does not exist
 ==> ERROR: failed to setup chroot /mnt
@@ -209,7 +208,7 @@ mount: mount point /mnt/dev/pts does not exist
 
 Apparently, this is because these two scripts use a common function. `chroot_setup()`[[1]](https://projects.archlinux.org/arch-install-scripts.git/tree/common#n76) relies on newer features of [util-linux](https://www.archlinux.org/packages/?name=util-linux), which are incompatible with Debian 7 userland (see [FS#45737](https://bugs.archlinux.org/task/45737)).
 
-The solution for _pacstrap_ is to manually execute its [various tasks](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in#n77), but use the [regular procedure](/index.php/Change_root#Using_chroot "Change root") to mount the kernel filesystems on the target directory (`"$newroot"`):
+The solution for *pacstrap* is to manually execute its [various tasks](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in#n77), but use the [regular procedure](/index.php/Change_root#Using_chroot "Change root") to mount the kernel filesystems on the target directory (`"$newroot"`):
 
 ```
 # newroot=/mnt
@@ -232,7 +231,6 @@ Instead of using `arch-chroot` for [configuring the base system](/index.php/Begi
 Trying to create [LVM](/index.php/LVM "LVM") [logical volumes](/index.php/LVM#Logical_volumes "LVM") from an `archlinux-bootstrap-2015.07.01-x86_64` environment on a Debian 7 host resulted in the following error:
 
  `# lvcreate -L 20G lvm -n root` 
-
 ```
   /run/lvm/lvmetad.socket: connect failed: No such file or directory
   WARNING: Failed to connect to lvmetad. Falling back to internal scanning.
@@ -247,7 +245,6 @@ This could be easily worked around by creating the logical volumes outside the c
 Also, if the system you are using has lvm, you might have the following output:
 
  `# grub-install --target=i386-pc --recheck /dev/mapper/main-archroot` 
-
 ```
 Installing for i386-pc platform.
   /run/lvm/lvmetad.socket: connect failed: No such file or directory

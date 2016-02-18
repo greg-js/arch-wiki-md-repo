@@ -56,7 +56,7 @@ You should see an item there called 'palm', or 'pilot'. Again, take note of whic
 
 By default J-Pilot uses the `usb:` pseudo device, do not change it.
 
-This setting makes use of the `/dev/bus/usb/` file system. If your user is in the group owning _files_ in this file system that's the only configuration you'll need. (In mine is vboxusers but it's very unlikely it's the default...)
+This setting makes use of the `/dev/bus/usb/` file system. If your user is in the group owning *files* in this file system that's the only configuration you'll need. (In mine is vboxusers but it's very unlikely it's the default...)
 
 Just press Sync button in J-Pilot and then hotsync in your Palm.
 
@@ -196,14 +196,14 @@ To sync the device, if using jpilot, simply specify `usb:` as the serial port in
 If you get a message such as stating that you do not have proper permissions, you probably need to add your user to a group with the proper permissions. This may be 'usb' or 'uucp'.
 
 ```
-   gpasswd -a _username_ usb
+   gpasswd -a *username* usb
 
 ```
 
 or
 
 ```
-   gpasswd -a _username_ uucp
+   gpasswd -a *username* uucp
 
 ```
 

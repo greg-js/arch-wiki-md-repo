@@ -17,7 +17,7 @@ Il Momo design è un 3.5G HSDPA USB modem usato per la navigazione in internet. 
 
 # Hardware
 
-Nel momento della connessione al pc dovremmo vedere con _dmesg_ quanto segue:
+Nel momento della connessione al pc dovremmo vedere con *dmesg* quanto segue:
 
 ```
 cdc_acm 2-1:1.0: ttyACM0: USB ACM device
@@ -46,7 +46,7 @@ MODULES=(nvidia ppp-generic !usblp option)
 
 ```
 
-modificare il file _/etc/resolv.conf_ con i vostri server DNS oppure quelli open come nell'esempio
+modificare il file */etc/resolv.conf* con i vostri server DNS oppure quelli open come nell'esempio
 
 ```
 nameserver 208.67.222.222
@@ -121,7 +121,7 @@ Ora lanciando da root il comando wvdial dovremo effettuare la connessione.
 
 ```
 
-Se non funzione provare da un altro terminale a dare il seguente comando per instradare le richieste verso internet su _ppp0_.
+Se non funzione provare da un altro terminale a dare il seguente comando per instradare le richieste verso internet su *ppp0*.
 
 ```
 # ip route add default dev ppp0
@@ -178,7 +178,7 @@ maxfail 99999        # Retry and retry and retry if failed...
 
 ```
 
-Creiamo o modifichiamo _/etc/ppp/pap-secrets_
+Creiamo o modifichiamo */etc/ppp/pap-secrets*
 
 ```
 # Secrets for authentication using PAP
@@ -189,7 +189,7 @@ tre     *       tre
 
 Sempre presupponendo che la connessione sia fatta al provider 3
 
-Creiamo o modifichiamo il file _/etc/ppp/peers/connect-chat_
+Creiamo o modifichiamo il file */etc/ppp/peers/connect-chat*
 
 ```
 ABORT BUSY
@@ -202,7 +202,7 @@ ABORT VOICE
 ABORT 'NO ANSWER'
 ABORT DELAYED
 ABORT 'SIM PIN'
- _ATZ_
+ *ATZ*
 OK-AT-OK 'ATX3'
 OK-AT-OK 'AT+COPS?'
 OK-AT-OK 'AT+CGDCONT=1,"IP","datacard.tre.it"'
@@ -214,7 +214,7 @@ TIMEOUT 5
 
 ```
 
-Creiamo o modifichiamo il file _/etc/ppp/peers/disconnect-chat_
+Creiamo o modifichiamo il file */etc/ppp/peers/disconnect-chat*
 
 ```
 #!/bin/sh
@@ -222,12 +222,16 @@ Creiamo o modifichiamo il file _/etc/ppp/peers/disconnect-chat_
 ABORT           "BUSY"          \
 ABORT           "ERROR"         \
 ABORT           "NO DIALTONE"   \
-SAY             "\nSending break to the modem\n"        \
+SAY             "
+Sending break to the modem
+"        \
 ""              "\K"            \
 ""              "\K"            \
 ""              "\K"            \
 ""              "\d\d+++\d\dATH"        \
-SAY             "\nPDP context detached\n"
+SAY             "
+PDP context detached
+"
 
 ```
 
@@ -240,7 +244,7 @@ Ora con il comando
 
 ```
 
-la connessione dovrebbe avvenire (controllare con _ifconfig_ se si attiva la rete **ppp0**)
+la connessione dovrebbe avvenire (controllare con *ifconfig* se si attiva la rete **ppp0**)
 
 Per praticità è possibile creare il seguente link simbolico
 
@@ -256,7 +260,7 @@ così sarà possibile connettersi con il semplice comando
 
 ```
 
-Se non funzione provare da un altro terminale a dare il seguente comando per instradare le richieste verso internet su _ppp0_.
+Se non funzione provare da un altro terminale a dare il seguente comando per instradare le richieste verso internet su *ppp0*.
 
 ```
 # ip route add default dev ppp0
@@ -267,7 +271,7 @@ Se non funzione provare da un altro terminale a dare il seguente comando per ins
 
 ## Verifica dello stato della connessione
 
-Per verificare lo stato della connessione suggerisco questo escamotage: Creare un file dove salvare la risposta che da _pppd_ al comando in /etc/ppp/peers/connect-chat OK-AT-OK 'AT+COPS?'
+Per verificare lo stato della connessione suggerisco questo escamotage: Creare un file dove salvare la risposta che da *pppd* al comando in /etc/ppp/peers/connect-chat OK-AT-OK 'AT+COPS?'
 
 ```
 touch /var/log/monitorconn.log
@@ -297,7 +301,7 @@ Ora ogni volta che ci connetteremo il file /var/log/monitorconn.log verrà aggio
 
 ```
 
-Per far apparire il contenuto di /var/log/monitorconn.log in conky aggiungere al file di configurazione nella sezione _TEXT_
+Per far apparire il contenuto di /var/log/monitorconn.log in conky aggiungere al file di configurazione nella sezione *TEXT*
 
 ```
 ${color lightgrey}Network ppp0: ${exec cat "/var/log/monitorconn.log" | head --lines=1}

@@ -35,7 +35,7 @@ To make documentation available through the included `ri` command-line tool, ins
 
 ## RubyGems
 
-RubyGems is a package manager for Ruby modules (called _gems_), somewhat comparable to what [pacman](/index.php/Pacman "Pacman") is to Arch Linux. It is included in the [ruby](https://www.archlinux.org/packages/?name=ruby) package.
+RubyGems is a package manager for Ruby modules (called *gems*), somewhat comparable to what [pacman](/index.php/Pacman "Pacman") is to Arch Linux. It is included in the [ruby](https://www.archlinux.org/packages/?name=ruby) package.
 
 ### Setup
 
@@ -70,11 +70,11 @@ $ gem list
 To get information about a gem:
 
 ```
-$ gem spec _gem_name_
+$ gem spec *gem_name*
 
 ```
 
-By default, `gem list` and `gem spec` use the `--local` option, which forces _gem_ to search only the local system. This can be overridden with the `--remote` flag. Thus, to search for the mysql gem:
+By default, `gem list` and `gem spec` use the `--local` option, which forces *gem* to search only the local system. This can be overridden with the `--remote` flag. Thus, to search for the mysql gem:
 
 ```
 $ gem list --remote mysql
@@ -96,7 +96,6 @@ $ gem install mysql --no-document
 ```
 
 **Note:** This can be made the default option by configuring the following `~/.gemrc` file: `~/.gemrc` 
-
 ```
 gem: --no-document
 
@@ -128,7 +127,7 @@ $ gem install bundler
 
 ```
 
-By default, Bundler installs gems system-wide, which is contrary to the behaviour of _gem_ itself on Arch. To correct this, add the following to your `~/.bashrc`:
+By default, Bundler installs gems system-wide, which is contrary to the behaviour of *gem* itself on Arch. To correct this, add the following to your `~/.bashrc`:
 
 ```
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
@@ -145,7 +144,6 @@ $ bundle init
 Then edit `Gemfile` in the current directory (created by bundle init) and list your required gems:
 
  `Gemfile` 
-
 ```
 gem "rails", "3.2.9"
 gem "mysql"
@@ -182,7 +180,7 @@ require 'bundler/setup'
 Finally, run your program:
 
 ```
-bundle exec _main_executable_name.rb_
+bundle exec *main_executable_name.rb*
 
 ```
 

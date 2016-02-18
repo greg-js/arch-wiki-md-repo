@@ -62,7 +62,7 @@ mount /dev/sda1 /mnt/boot
 
 ```
 
-Incluso se pueden montar los directorios _especiales_. Esto sera necesario si se requiere reinstalar el kernel, por ejemplo.
+Incluso se pueden montar los directorios *especiales*. Esto sera necesario si se requiere reinstalar el kernel, por ejemplo.
 
 ```
 mount --bind /dev/ /mnt/dev

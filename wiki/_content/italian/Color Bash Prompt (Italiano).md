@@ -119,7 +119,9 @@ Questo è per **terminali a 256 colori**, che è da dove provengono gli `escape`
 
 ```
  PROMPT_COMMAND='history -a;echo -en "\033[m\033[38;5;2m"$(( `sed -nu "s/MemFree:[\t ]\+\([0-9]\+\) kB/\1/p" /proc/meminfo`/1024))"\033[38;5;22m/"$((`sed -nu "s/MemTotal:[\t ]\+\([0-9]\+\) kB/\1/Ip" /proc/meminfo`/1024 ))MB"\t\033[m\033[38;5;55m$(< /proc/loadavg)\033[m"'
- PS1='\[\e[m\n\e[1;30m\][$$:$PPID \j:\!\[\e[1;30m\]]\[\e[0;36m\] \T \d \[\e[1;30m\][\[\e[1;34m\]\u@\H\[\e[1;30m\]:\[\e[0;37m\]${SSH_TTY} \[\e[0;32m\]+${SHLVL}\[\e[1;30m\]] \[\e[1;37m\]\w\[\e[0;37m\] \n($SHLVL:\!)\$ '
+ PS1='\[\e[m
+\e[1;30m\][$$:$PPID \j:\!\[\e[1;30m\]]\[\e[0;36m\] \T \d \[\e[1;30m\][\[\e[1;34m\]\u@\H\[\e[1;30m\]:\[\e[0;37m\]${SSH_TTY} \[\e[0;32m\]+${SHLVL}\[\e[1;30m\]] \[\e[1;37m\]\w\[\e[0;37m\] 
+($SHLVL:\!)\$ '
 
 ```
 
@@ -267,7 +269,7 @@ Di seguito i vari comandi di escape elencati nella pagina di manuale di bash:
 
 ```
 Bash permette che queste stringhe di prompt possano essere personalizzate inserendo un
-numero di _backslash-escaped special characters_ che vengono interpretati come segue:
+numero di *backslash-escaped special characters* che vengono interpretati come segue:
 
   \a         il carattere ASCII beep (07)
   \d         la data nel formato "Giorno-della-settimana Mese Data"
@@ -280,7 +282,8 @@ numero di _backslash-escaped special characters_ che vengono interpretati come s
   \H         l'hostname
   \j         the number of jobs currently managed by the shell
   \l         the basename of the shell's terminal device name
-  \n         il carattere "newline"
+  
+         il carattere "newline"
   \r         il carattere "carriage return"
   \s         il nome della shell, il nome base di $0
              (la parte che segue lo slash finale)
@@ -298,7 +301,8 @@ numero di _backslash-escaped special characters_ che vengono interpretati come s
   \!         il numero cronologico (history number) di questo comando
   \#         il numero di questo comando
   \$         se l'UID effettivo è 0, un #, altrimenti un $
-  \nnn       il carattere corrispondente al numero ottale nnn
+  
+nn       il carattere corrispondente al numero ottale nnn
   \\         un backslash
   \[         comincia una sequenza di caratteri non stampabili, che
              potrebbero essere usati per inserire una sequenza di
@@ -347,12 +351,13 @@ PS1=">\[\033[s\]\[\033[1;\$((COLUMNS-4))f\]\$(date +%H:%M)\[\033[u\]"
 
 ```
 
-La variabile d'ambiente _COLUMNS_ contiene il numero di colonne del terminale. L'esempio precedente sottrae 4 dal proprio valore per giustificare i cinque caratteri dell'output largo della "data" sul bordo destro.
+La variabile d'ambiente *COLUMNS* contiene il numero di colonne del terminale. L'esempio precedente sottrae 4 dal proprio valore per giustificare i cinque caratteri dell'output largo della "data" sul bordo destro.
 
 ### Visualizzazione valore di ritorno
 
 ATTENZIONE
-Questo è sembrato non essere esente da bug, vedere la voce aggiunta alla pagina di discussione. È possibile aggiungere un \n dopo la faccina per evitare calcoli sbagliati sulla lunghezza della linea.
+Questo è sembrato non essere esente da bug, vedere la voce aggiunta alla pagina di discussione. È possibile aggiungere un 
+ dopo la faccina per evitare calcoli sbagliati sulla lunghezza della linea.
 
 Aggiungere questa riga se si desidera vedere il valore di ritorno dell'ultimo comando eseguito. Questo dovrebbe funzionare con qualsiasi tipo di prompt fino a quando non ha bisogno di PROMPT_COMMAND:
 
@@ -374,7 +379,7 @@ Zero è verde e non-zero è di colore rosso. C'è anche l'indicazione smiley (so
 
 #### Visualizzazione del valore di ritorno avanzata
 
-Se si vogliono i colori, è necessario impostare i valori _$RED_ e _$GREEN_:
+Se si vogliono i colori, è necessario impostare i valori *$RED* e *$GREEN*:
 
 ```
 RED='\e[0;31m'
@@ -392,7 +397,7 @@ RET_SMILEY='$(if [[ $RET = 0 ]]; then echo -ne "\[$GREEN\];)"; else echo -ne "\[
 
 ```
 
-Quindi è possibile utilizzare le variabili _$RET_VALUE_ e _$RET_SMILEY_ nel prompt. Si noti che è necessario usare le virgolette:
+Quindi è possibile utilizzare le variabili *$RET_VALUE* e *$RET_SMILEY* nel prompt. Si noti che è necessario usare le virgolette:
 
 ```
 #prompt
@@ -409,7 +414,7 @@ Questo darà un prompt di base:
 
 ```
 
-Ma probabilmente si desidera utilizzare _$RET_VALUE_ or _$RET_SMILEY_ nel proprio prompt, così:
+Ma probabilmente si desidera utilizzare *$RET_VALUE* or *$RET_SMILEY* nel proprio prompt, così:
 
  `PS1="\[$WHITE\]$RET_VALUE $RET_SMILEY \[$BLUE\]\u\[$RED\]@\[$EBLUE\]\h\[$WHITE\] \W \[$ERED\]\\$\[$EWHITE\] "` 
 
@@ -417,7 +422,7 @@ Ma probabilmente si desidera utilizzare _$RET_VALUE_ or _$RET_SMILEY_ nel propri
 
 Dopo aver letto la maggior parte dei [Bash Prompt Howto](http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/index.html), l'autore ha sviluppato questo prompt di Bash che mostra gli ultimi 25 caratteri della directory di lavoro attuale. I risultati migliori si ottengono su terminali con sfondo nero. Il codice seguente va inserito nel file `~/.bashrc`.
 
-*   Aggiungere la funzione bash_prompt_command. Se si possiedono alcune directory con nomi lunghi o che iniziano con molte sottodirectory, tale funzione evitera' al prompt dei compandi di riempire lo schermo, mostrando al massimo gli ultimi pwdmaxlen caratteri della PWD (directory corrente). Questo codice è tratto dalla sezione _Bash Prompt Howto_ su [Controlling the Size and Appearance of $PWD](http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x783.html) e modificato per sostituire la directory home dell'utente con una tilde.
+*   Aggiungere la funzione bash_prompt_command. Se si possiedono alcune directory con nomi lunghi o che iniziano con molte sottodirectory, tale funzione evitera' al prompt dei compandi di riempire lo schermo, mostrando al massimo gli ultimi pwdmaxlen caratteri della PWD (directory corrente). Questo codice è tratto dalla sezione *Bash Prompt Howto* su [Controlling the Size and Appearance of $PWD](http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x783.html) e modificato per sostituire la directory home dell'utente con una tilde.
 
 ```
 ##################################################
@@ -521,7 +526,8 @@ Questi `prompt` offrono una maggiore chiarezza visiva e testo lampeggiante. Si n
 **Secondo**, in `~/.bashrc` dopo la riga PS1=, inserire una nuova riga con il seguente:
 
 ```
-PS1='\e[1;33;47m\u \e[1;32;47mon \h \e[1;35;47m\d \@\e[0;0m\n\e[1;34m[dir.= \w] \# > \e[0;0m'
+PS1='\e[1;33;47m\u \e[1;32;47mon \h \e[1;35;47m\d \@\e[0;0m
+\e[1;34m[dir.= \w] \# > \e[0;0m'
 
 ```
 
@@ -530,7 +536,8 @@ E poi mettere un # davanti alla prima riga PS1.
 **Terzo**, per l'utente root, modificare il file `/root/.bashrc` nello stesso modo per includere:
 
 ```
-PS1='\e[1;31;47m\u \e[1;32;47mon \h \e[1;35;47m\d \@\e[0;0m\n\e[1;31m[dir.= \w] \# > \e[0;0m'
+PS1='\e[1;31;47m\u \e[1;32;47mon \h \e[1;35;47m\d \@\e[0;0m
+\e[1;31m[dir.= \w] \# > \e[0;0m'
 
 ```
 
@@ -644,7 +651,9 @@ match_lhs=""
 [[ -z ${match_lhs}    ]] \
 	&& type -P dircolors >/dev/null \
 	&& match_lhs=$(dircolors --print-database)
-[[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && use_color=true
+[[ $'
+'${match_lhs} == *$'
+'"TERM "${safe_term}* ]] && use_color=true
 
 if ${use_color} ; then
 	# Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
@@ -746,7 +755,9 @@ match_lhs=""
 [[ -z ${match_lhs}    ]] \
 	&& type -P dircolors >/dev/null \
 	&& match_lhs=$(dircolors --print-database)
-[[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && use_color=true
+[[ $'
+'${match_lhs} == *$'
+'"TERM "${safe_term}* ]] && use_color=true
 
 if ${use_color} ; then
 	# Enable colors for ls, etc.  Prefer ~/.dir_colors #64489

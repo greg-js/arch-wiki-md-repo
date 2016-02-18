@@ -2,7 +2,7 @@ Several methods exist to protect and limit child activity on a computer.
 
 ## Applications
 
-*   **timekpr** — A program controlling use of user accounts. It can limit by access duration with the daemon _timed_, and configure at what time users can log in. A client in the traybar warns the users about their time running out, while administration is done in a graphical GTK GUI.
+*   **timekpr** — A program controlling use of user accounts. It can limit by access duration with the daemon *timed*, and configure at what time users can log in. A client in the traybar warns the users about their time running out, while administration is done in a graphical GTK GUI.
 
 	[https://launchpad.net/timekpr](https://launchpad.net/timekpr) || [timekpr](https://aur.archlinux.org/packages/timekpr/)
 

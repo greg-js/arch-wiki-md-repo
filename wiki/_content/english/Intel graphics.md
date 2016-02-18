@@ -50,7 +50,6 @@ There is no need for any configuration to run [Xorg](/index.php/Xorg "Xorg").
 However, to take advantage of some driver options, you will need to create a Xorg configuration file similar to the one below:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
    Identifier  "Intel Graphics"
@@ -129,7 +128,6 @@ You will note that the `i915.powersave` option which "enable[s] powersavings, fb
 The following set of options should be generally safe to enable:
 
  `/etc/modprobe.d/i915.conf` 
-
 ```
 options i915 enable_rc6=1 enable_fbc=1 lvds_downclock=1 semaphores=1
 
@@ -190,7 +188,6 @@ See the [original bug report](https://bugs.freedesktop.org/show_bug.cgi?id=37686
 The intel-driver uses [Triple Buffering](http://www.intel.com/support/graphics/sb/CS-004527.htm) for vertical synchronization, this allows for full performance and avoids tearing. To turn vertical synchronization off (e.g. for benchmarking) use this `.drirc` in your home directory:
 
  `~/.drirc` 
-
 ```
 <device screen="0" driver="dri2">
 	<application name="Default">
@@ -245,9 +242,9 @@ See [Backlight](/index.php/Backlight "Backlight").
 
 From `man 4 intel`:
 
-	_There are a couple of backends available for accelerating the DDX. "UXA" (Unified Acceleration Architecture) is the mature backend that was introduced to support the GEM driver model. It is in the process of being superseded by "SNA" (Sandybridge's New Acceleration). Until that process is complete, the ability to choose which backend to use remains for backwards compatibility._
+	*There are a couple of backends available for accelerating the DDX. "UXA" (Unified Acceleration Architecture) is the mature backend that was introduced to support the GEM driver model. It is in the process of being superseded by "SNA" (Sandybridge's New Acceleration). Until that process is complete, the ability to choose which backend to use remains for backwards compatibility.*
 
-_SNA_ is the default acceleration method in [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). If you are experience issues with _SNA_ (e.g. pixelated graphics, corrupt text, etc.), try using _UXA_ instead, which can be done by adding the following line to your [configuration file](#Configuration):
+*SNA* is the default acceleration method in [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). If you are experience issues with *SNA* (e.g. pixelated graphics, corrupt text, etc.), try using *UXA* instead, which can be done by adding the following line to your [configuration file](#Configuration):
 
 ```
 Option      "AccelMethod"  "uxa"
@@ -322,7 +319,7 @@ This issue is covered on the [Xrandr page](/index.php/Xrandr#Adding_undetected_r
 
 Kernel 3.9 contains a new default "Automatic" mode for the "Broadcast RGB" property in the Intel driver. It is almost equivalent to "Limited 16:235" (instead of the old default "Full") whenever an HDMI/DP output is in a [CEA mode](http://raspberrypi.stackexchange.com/questions/7332/what-is-the-difference-between-cea-and-dmt). If a monitor does not support signal in limited color range, it will cause weathered colors.
 
-**Note:** Some monitors/TVs support both color range. In that case an option often known as _Black Level_ may need to be adjusted to make them handle the signal correctly.
+**Note:** Some monitors/TVs support both color range. In that case an option often known as *Black Level* may need to be adjusted to make them handle the signal correctly.
 
 One can force mode e.g. `xrandr --output <HDMI> --set "Broadcast RGB" "Full"` (replace `<HDMI>` with the appropriate output device, verify by running `xrandr`). You can add it into your `.xprofile`, make it executable to run the command before it will start the graphical mode.
 
@@ -409,7 +406,6 @@ For linux kernels older than 4.3.x, `i915.preliminary_hw_support=1` must be adde
 The i915 DRM driver is known to cause various GPU hangs, crashes and even full system freezes. It might be neccesary to disable hardware acceleration to workaround these issues. One solution is to use the following Xorg configuration.
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
-
 ```
 Section "Device"
 	Identifier  "Intel Graphics"

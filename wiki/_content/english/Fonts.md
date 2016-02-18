@@ -1,6 +1,6 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/Computer_font "wikipedia:Computer font"):
 
-	_A computer font (or font) is an electronic data file containing a set of glyphs, characters, or symbols such as dingbats._
+	*A computer font (or font) is an electronic data file containing a set of glyphs, characters, or symbols such as dingbats.*
 
 Note that certain font licenses may impose some legal limitations.
 
@@ -58,32 +58,32 @@ Note that certain font licenses may impose some legal limitations.
 
 ## Font formats
 
-Most computer fonts used today are in either _bitmap_ or _outline_ data formats.
+Most computer fonts used today are in either *bitmap* or *outline* data formats.
 
 	Bitmap fonts
 
 	Consist of a matrix of dots or pixels representing the image of each glyph in each face and size.
 
-	Outline or _vector_ fonts
+	Outline or *vector* fonts
 
 	Use Bézier curves, drawing instructions and mathematical formulae to describe each glyph, which make the character outlines scalable to any size.
 
 ### Common extensions
 
-*   `bdf` and `bdf.gz` – bitmap fonts, _b_itmap _d_istribution _f_ormat and gzip compressed `bdf`
-*   `pcf` and `pcf.gz` – bitmaps, _p_ortable _c_ompiled _f_ont and gzip compressed `pcf`
-*   `psf`, `psfu`, `psf.gz` and `psfu.gz` – bitmaps, _P_C _s_creen _f_ont, _P_C _s_creen _f_ont _U_nicode and the gzipped versions (not compatible with X.Org)
-*   `pfa` and `pfb` – outline fonts, _P_ostScript _f_ont _A_SCII and _P_ostScript _f_ont _b_inary. PostScript fonts carry built-in printer instructions.
-*   `ttf` – outline, _T_rue_T_ype _f_ont. Originally designed as a replacement for the PostScript fonts.
-*   `otf` – outline, _O_pen_T_ype _f_ont. TrueType with PostScript typographic instructions.
+*   `bdf` and `bdf.gz` – bitmap fonts, *b*itmap *d*istribution *f*ormat and gzip compressed `bdf`
+*   `pcf` and `pcf.gz` – bitmaps, *p*ortable *c*ompiled *f*ont and gzip compressed `pcf`
+*   `psf`, `psfu`, `psf.gz` and `psfu.gz` – bitmaps, *P*C *s*creen *f*ont, *P*C *s*creen *f*ont *U*nicode and the gzipped versions (not compatible with X.Org)
+*   `pfa` and `pfb` – outline fonts, *P*ostScript *f*ont *A*SCII and *P*ostScript *f*ont *b*inary. PostScript fonts carry built-in printer instructions.
+*   `ttf` – outline, *T*rue*T*ype *f*ont. Originally designed as a replacement for the PostScript fonts.
+*   `otf` – outline, *O*pen*T*ype *f*ont. TrueType with PostScript typographic instructions.
 
 For most purposes, the technical differences between TrueType and OpenType can be ignored, some fonts with a `ttf` extension are actually OpenType fonts.
 
 ### Other formats
 
-The typesetting application, _TeX,_ and its companion font software, _Metafont,_ render characters using their own methods. Some of the file extensions used for fonts by these two programs are `*pk`, `*gf`, `mf` and `vf`.
+The typesetting application, *TeX,* and its companion font software, *Metafont,* render characters using their own methods. Some of the file extensions used for fonts by these two programs are `*pk`, `*gf`, `mf` and `vf`.
 
-_FontForge,_ a font editing application, can store fonts in its native text-based format, `sfd`, _s_pline _f_ont _d_atabase.
+*FontForge,* a font editing application, can store fonts in its native text-based format, `sfd`, *s*pline *f*ont *d*atabase.
 
 The [SVG](http://www.w3.org/TR/SVG/fonts.html) format also has its own font description method.
 
@@ -111,7 +111,8 @@ $ pacman -Ss ttf
 
 You should give pacman the ability to manage your fonts, which is done by creating an Arch package. These can also be shared with the community in the [AUR](/index.php/AUR "AUR"). Here is an example of how to create a basic package. To learn more about building packages, read [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
 
-The family name of a font file can be aquired with the use of `fc-query` for example: `fc-query -f '%{family[0]}\n' /path/to/file`. The formatting is described in the FcPatternFormat(3) manual.
+The family name of a font file can be aquired with the use of `fc-query` for example: `fc-query -f '%{family[0]}
+' /path/to/file`. The formatting is described in the FcPatternFormat(3) manual.
 
 ```
 pkgname=fontname-fonts
@@ -151,7 +152,7 @@ The recommended way of adding fonts that are not in the repositories to your sys
 
 To install fonts system-wide (available for all users), move the folder to the `/usr/share/fonts/` directory. The files need to be readable by every user, use [chmod](/index.php/Chmod "Chmod") to set the correct permissions (i.e. at least `0444` for files and `0555` for directories). To install fonts for only a single user, use `~/.local/share/fonts` (`~/.fonts/` is now deprecated).
 
-For Xserver to load fonts directly (as opposed to the use of a _font server_) the directory for your newly added font must be added with a FontPath entry. This entry is located in the _Files_ section [of your Xorg configuration file](/index.php/Xorg#Configuration "Xorg") (e.g. `/etc/X11/xorg.conf` or `/etc/xorg.conf`). See [#Older applications](#Older_applications) for more detail.
+For Xserver to load fonts directly (as opposed to the use of a *font server*) the directory for your newly added font must be added with a FontPath entry. This entry is located in the *Files* section [of your Xorg configuration file](/index.php/Xorg#Configuration "Xorg") (e.g. `/etc/X11/xorg.conf` or `/etc/xorg.conf`). See [#Older applications](#Older_applications) for more detail.
 
 Then update the fontconfig font cache: (usually unnecessary as software using the fontconfig library do this.)
 
@@ -259,9 +260,9 @@ LiberationMono-Regular.ttf: "Liberation Mono" "Regular"
 
 By default, the [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") uses the kernel built-in font with a [CP437](https://en.wikipedia.org/wiki/CP437 "wikipedia:CP437") character set, but this can be easily changed.
 
-The [Linux console](https://en.wikipedia.org/wiki/Linux_console "wikipedia:Linux console") uses UTF-8 encoding by default, but because the standard VGA-compatible framebuffer is used, a console font is limited to either a standard 256, or 512 glyphs. If the font has more than 256 glyphs, the number of colours is reduced from 16 to 8\. In order to assign correct symbol to be displayed to the given Unicode value, a special translation map, often called _unimap_, is needed. Nowadays most of the console fonts have the _unimap_ built-in, historically it had to be loaded separately.
+The [Linux console](https://en.wikipedia.org/wiki/Linux_console "wikipedia:Linux console") uses UTF-8 encoding by default, but because the standard VGA-compatible framebuffer is used, a console font is limited to either a standard 256, or 512 glyphs. If the font has more than 256 glyphs, the number of colours is reduced from 16 to 8\. In order to assign correct symbol to be displayed to the given Unicode value, a special translation map, often called *unimap*, is needed. Nowadays most of the console fonts have the *unimap* built-in, historically it had to be loaded separately.
 
-The [kbd](https://www.archlinux.org/packages/?name=kbd) package provides tools to change virtual console font and font mapping. Available fonts are saved in the `/usr/share/kbd/consolefonts/` directory, those ending with _.psfu_ or _.psfu.gz_ have a Unicode translation map built-in.
+The [kbd](https://www.archlinux.org/packages/?name=kbd) package provides tools to change virtual console font and font mapping. Available fonts are saved in the `/usr/share/kbd/consolefonts/` directory, those ending with *.psfu* or *.psfu.gz* have a Unicode translation map built-in.
 
 Keymaps, the connection between the key pressed and the character used by the computer, are found in the subdirectories of `/usr/share/kbd/keymaps/`, see [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") for details.
 
@@ -271,37 +272,36 @@ Keymaps, the connection between the key pressed and the character used by the co
 
 **Tip:** An organized library of images for previewing is available: [Linux console fonts screenshots](http://alexandre.deverteuil.net/pages/consolefonts/).
 
-The available glyphs or letters in the font can also be viewed as a table with using _showconsolefont_:
+The available glyphs or letters in the font can also be viewed as a table with using *showconsolefont*:
 
 ```
 $ showconsolefont
 
 ```
 
-The _setfont_ utility may be used to temporarily change the font, so that the user can consider its permanent use. Just pass the name of the font (they are located in `/usr/share/kbd/consolefonts/`). For example:
+The *setfont* utility may be used to temporarily change the font, so that the user can consider its permanent use. Just pass the name of the font (they are located in `/usr/share/kbd/consolefonts/`). For example:
 
 ```
 $ setfont lat2-16 -m 8859-2
 
 ```
 
-Note that the font name is case-sensitive, so type it _exactly_ as you see it. If the newly changed font is not suitable, a return to the default font with the following command (even if the console display is totally unreadable, this command will still work, just type the command "blindly"):
+Note that the font name is case-sensitive, so type it *exactly* as you see it. If the newly changed font is not suitable, a return to the default font with the following command (even if the console display is totally unreadable, this command will still work, just type the command "blindly"):
 
 ```
 $ setfont
 
 ```
 
-**Note:** _setfont_ only works on the console currently being used. Any other consoles, active or inactive, remain unaffected.
+**Note:** *setfont* only works on the console currently being used. Any other consoles, active or inactive, remain unaffected.
 
 ### Persistent configuration
 
 The `FONT` variable in `/etc/vconsole.conf` is used to set the font at boot, persistently for all consoles. See `man 5 vconsole.conf` for details.
 
-For displaying characters such as _Č, ž, đ, š_ or _Ł, ę, ą, ś_ using the font `lat2-16.psfu.gz`:
+For displaying characters such as *Č, ž, đ, š* or *Ł, ę, ą, ś* using the font `lat2-16.psfu.gz`:
 
  `/etc/vconsole.conf` 
-
 ```
 ...
 FONT=lat2-16
@@ -322,14 +322,14 @@ Github user Ternstor has created a python script that generates HTML documents w
 
 ### Braille
 
-*   [ttf-ubraille](https://www.archlinux.org/packages/?name=ttf-ubraille) - Font containing Unicode symbols for _braille_
+*   [ttf-ubraille](https://www.archlinux.org/packages/?name=ttf-ubraille) - Font containing Unicode symbols for *braille*
 
 ### International users
 
 Applications and browsers select and display fonts depending upon fontconfig preferences and available font glyph for Unicode text. To list installed fonts for a particular language, issue a command `fc-list :lang="two letter language code"`. For instance, to list installed Arabic fonts or fonts supporting Arabic glyph:
 
- `$ fc-list -f '%{file}\n' :lang=ar` 
-
+ `$ fc-list -f '%{file}
+' :lang=ar` 
 ```
 /usr/share/fonts/TTF/FreeMono.ttf
 /usr/share/fonts/TTF/DejaVuSansCondensed.ttf
@@ -377,9 +377,9 @@ To properly render fonts for multilingual websites like Wikipedia or this Arch L
 *   [adobe-source-han-sans-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-tw-fonts) - Traditional Chinese OpenType/CFF fonts
 *   [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) - A Sans-Serif style high quality CJKV outline font.
 *   [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) - Hei Ti Style (sans-serif) Chinese Outline font embedded with bitmapped Song Ti (also supporting Japanese (partial) and Korean characters).
-*   [ttf-arphic-ukai](https://www.archlinux.org/packages/?name=ttf-arphic-ukai) - _Kaiti_ (brush stroke) Unicode font (enabling anti-aliasing is suggested)
-*   [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming) - _Mingti_ (printed) Unicode font
-*   [opendesktop-fonts](https://www.archlinux.org/packages/?name=opendesktop-fonts) - _New Sung_ font, previously is ttf-fireflysung package
+*   [ttf-arphic-ukai](https://www.archlinux.org/packages/?name=ttf-arphic-ukai) - *Kaiti* (brush stroke) Unicode font (enabling anti-aliasing is suggested)
+*   [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming) - *Mingti* (printed) Unicode font
+*   [opendesktop-fonts](https://www.archlinux.org/packages/?name=opendesktop-fonts) - *New Sung* font, previously is ttf-fireflysung package
 *   [wqy-bitmapfont](https://www.archlinux.org/packages/?name=wqy-bitmapfont) - Bitmapped Song Ti (serif) Chinese font
 *   [ttf-hannom](https://www.archlinux.org/packages/?name=ttf-hannom) - Chinese and Vietnamese TrueType font
 *   [ttf-i.bming](https://aur.archlinux.org/packages/ttf-i.bming/) - CJK serif font that emphasis on an old-style typeface
@@ -476,7 +476,7 @@ See [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts").
 
 ### Monospaced
 
-Here are some suggestions. Every user has their own favorite, so experiment to find yours. If you are in a hurry, you read Dan Benjamin's blog post: [_Top 10 Programming Fonts_](http://hivelogic.com/articles/top-10-programming-fonts).
+Here are some suggestions. Every user has their own favorite, so experiment to find yours. If you are in a hurry, you read Dan Benjamin's blog post: [*Top 10 Programming Fonts*](http://hivelogic.com/articles/top-10-programming-fonts).
 
 Here is a long list of fonts by Trevor Lowing: [http://www.lowing.org/fonts/](http://www.lowing.org/fonts/).
 
@@ -493,7 +493,7 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   [Courier New](https://en.wikipedia.org/wiki/Courier_New "wikipedia:Courier New") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 *   Cousine ([ttf-chromeos-fonts](https://aur.archlinux.org/packages/ttf-chromeos-fonts/) or [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - Chrome/Chromium OS replacement for Courier New (metric-compatible)
 *   [DejaVu Sans Mono](https://en.wikipedia.org/wiki/DejaVu_fonts "wikipedia:DejaVu fonts") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) - Unicode
-*   [Droid Sans Mono](https://en.wikipedia.org/wiki/Droid_(font) "wikipedia:Droid (font)") ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
+*   [Droid Sans Mono](https://en.wikipedia.org/wiki/Droid_(font) ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
 *   [Envy Code R](https://damieng.com/blog/2008/05/26/envy-code-r-preview-7-coding-font-released) ([ttf-envy-code-r](https://aur.archlinux.org/packages/ttf-envy-code-r/))
 *   Fantasque Sans Mono ([ttf-fantasque-sans](https://aur.archlinux.org/packages/ttf-fantasque-sans/) or [ttf-fantasque-sans-git](https://aur.archlinux.org/packages/ttf-fantasque-sans-git/))
 *   [FreeMono](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
@@ -501,7 +501,7 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   [Inconsolata-g](https://en.wikipedia.org/wiki/Inconsolata "wikipedia:Inconsolata") ([ttf-inconsolata-g](https://aur.archlinux.org/packages/ttf-inconsolata-g/)) - adds some programmer-friendly modifications
 *   [Liberation Mono](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)) - Replacement for Courier New, based on Cousine (metric-compatible)
 *   [Lucida Typewriter](https://en.wikipedia.org/wiki/Lucida_Typewriter "wikipedia:Lucida Typewriter") (included in package [jre](https://aur.archlinux.org/packages/jre/))
-*   [Monaco](https://en.wikipedia.org/wiki/Monaco_(typeface) "wikipedia:Monaco (typeface)") ([ttf-monaco](https://aur.archlinux.org/packages/ttf-monaco/)) - Popular programming font on OSX/Textmate
+*   [Monaco](https://en.wikipedia.org/wiki/Monaco_(typeface) ([ttf-monaco](https://aur.archlinux.org/packages/ttf-monaco/)) - Popular programming font on OSX/Textmate
 *   Monofur ([ttf-monofur](https://aur.archlinux.org/packages/ttf-monofur/))
 *   [Source Code Pro](https://en.wikipedia.org/wiki/Source_Code_Pro "wikipedia:Source Code Pro") ([adobe-source-code-pro-fonts](https://www.archlinux.org/packages/?name=adobe-source-code-pro-fonts))
 
@@ -526,18 +526,18 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   Arimo ([ttf-chromeos-fonts](https://aur.archlinux.org/packages/ttf-chromeos-fonts/) or [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - Chrome/Chromium OS replacement for Arial (metric-compatible)
 *   [Calibri](https://en.wikipedia.org/wiki/Calibri "wikipedia:Calibri") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
 *   [Candara](https://en.wikipedia.org/wiki/Candara "wikipedia:Candara") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
-*   [Corbel](https://en.wikipedia.org/wiki/Corbel_(typeface) "wikipedia:Corbel (typeface)") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
+*   [Corbel](https://en.wikipedia.org/wiki/Corbel_(typeface) ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
 *   [DejaVu Sans](https://en.wikipedia.org/wiki/DejaVu_fonts "wikipedia:DejaVu fonts") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) - Unicode
-*   [Droid Sans](https://en.wikipedia.org/wiki/Droid_(font) "wikipedia:Droid (font)") ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
+*   [Droid Sans](https://en.wikipedia.org/wiki/Droid_(font) ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
 *   [FreeSans](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
-*   [Impact](https://en.wikipedia.org/wiki/Impact_(typeface) "wikipedia:Impact (typeface)") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
+*   [Impact](https://en.wikipedia.org/wiki/Impact_(typeface) ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 *   [Liberation Sans](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)) Replacement for Arial, based on Arimo (metric-compatible)
 *   [Linux Biolinum](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine))
 *   [Lucida Sans](https://en.wikipedia.org/wiki/Lucida_Sans "wikipedia:Lucida Sans") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 *   [Microsoft Sans Serif](https://en.wikipedia.org/wiki/Microsoft_Sans_Serif "wikipedia:Microsoft Sans Serif") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 *   [PT Sans](https://en.wikipedia.org/wiki/PT_Sans "wikipedia:PT Sans") ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - 3 major variations: normal, narrow, and caption - Unicode: Latin, Cyrillic
 *   [Source Sans Pro](https://en.wikipedia.org/wiki/Source_Sans_Pro "wikipedia:Source Sans Pro") ([adobe-source-sans-pro-fonts](https://www.archlinux.org/packages/?name=adobe-source-sans-pro-fonts))
-*   [Tahoma](https://en.wikipedia.org/wiki/Tahoma_(typeface) "wikipedia:Tahoma (typeface)") ([ttf-tahoma](https://aur.archlinux.org/packages/ttf-tahoma/))
+*   [Tahoma](https://en.wikipedia.org/wiki/Tahoma_(typeface) ([ttf-tahoma](https://aur.archlinux.org/packages/ttf-tahoma/))
 *   [Trebuchet](https://en.wikipedia.org/wiki/Trebuchet_MS "wikipedia:Trebuchet MS") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 *   [Ubuntu Font Family](https://en.wikipedia.org/wiki/Ubuntu_Font_Family "wikipedia:Ubuntu Font Family") ([ttf-ubuntu-font-family](https://www.archlinux.org/packages/?name=ttf-ubuntu-font-family))
 *   [Verdana](https://en.wikipedia.org/wiki/Verdana "wikipedia:Verdana") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
@@ -548,13 +548,13 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 
 ### Serif
 
-*   [Cambria](https://en.wikipedia.org/wiki/Cambria_(typeface) "wikipedia:Cambria (typeface)") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
-*   [Constantia](https://en.wikipedia.org/wiki/Constantia_(typeface) "wikipedia:Constantia (typeface)") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
+*   [Cambria](https://en.wikipedia.org/wiki/Cambria_(typeface) ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
+*   [Constantia](https://en.wikipedia.org/wiki/Constantia_(typeface) ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
 *   [DejaVu Serif](https://en.wikipedia.org/wiki/DejaVu_fonts "wikipedia:DejaVu fonts") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) - Unicode
-*   [Droid Serif](https://en.wikipedia.org/wiki/Droid_(font) "wikipedia:Droid (font)") ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
+*   [Droid Serif](https://en.wikipedia.org/wiki/Droid_(font) ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
 *   [FreeSerif](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
 *   [Gentium](https://en.wikipedia.org/wiki/Gentium "wikipedia:Gentium") ([ttf-gentium](https://www.archlinux.org/packages/?name=ttf-gentium)) - Unicode: Latin, Greek, Cyrillic, Phonetic Alphabet
-*   [Georgia](https://en.wikipedia.org/wiki/Georgia_(typeface) "wikipedia:Georgia (typeface)") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
+*   [Georgia](https://en.wikipedia.org/wiki/Georgia_(typeface) ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 *   [Liberation Serif](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)) - Replacement for Times New Roman, based on Tinos (metric-compatible)
 *   [Linux Libertine](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) - Unicode: Latin, Greek, Cyrillic, Hebrew
 *   [Times New Roman](https://en.wikipedia.org/wiki/Times_New_Roman "wikipedia:Times New Roman") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
@@ -566,7 +566,7 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   [ttf-mph-2b-damase](https://www.archlinux.org/packages/?name=ttf-mph-2b-damase) - Covers full plane 1 and several scripts
 *   [ttf-symbola](https://www.archlinux.org/packages/?name=ttf-symbola) - Provides emoji and many many other symbols
 *   [font-bh-ttf](https://www.archlinux.org/packages/?name=font-bh-ttf) - X.Org Luxi fonts
-*   [ttf-cheapskate](https://www.archlinux.org/packages/?name=ttf-cheapskate) - Font collection from _dustismo.com_
+*   [ttf-cheapskate](https://www.archlinux.org/packages/?name=ttf-cheapskate) - Font collection from *dustismo.com*
 *   [ttf-junicode](https://www.archlinux.org/packages/?name=ttf-junicode) - Junius font containing almost complete medieval latin script glyphs
 *   [xorg-fonts-type1](https://www.archlinux.org/packages/?name=xorg-fonts-type1) - IBM Courier and Adobe Utopia sets of [PostScript fonts](https://en.wikipedia.org/wiki/PostScript_fonts "wikipedia:PostScript fonts")
 *   [all-repository-fonts](https://aur.archlinux.org/packages/all-repository-fonts/) - Meta package for all fonts in the official repositories.
@@ -603,7 +603,6 @@ There are several font aliases which represent other fonts in order that applica
 To reverse an alias and find which font it is representing, run:
 
  `$ fc-match monospace` 
-
 ```
 DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"
 

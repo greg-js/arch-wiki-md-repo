@@ -1,6 +1,6 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/binfmt_misc "wikipedia:binfmt misc"):
 
-	"_binfmt_misc is a capability of the Linux kernel which allows arbitrary executable file formats to be recognized and passed to certain user space applications, such as emulators and virtual machines._"
+	"*binfmt_misc is a capability of the Linux kernel which allows arbitrary executable file formats to be recognized and passed to certain user space applications, such as emulators and virtual machines.*"
 
 In plain language, this allows you to take a [Java](/index.php/Java "Java") jar file that you would ordinarily run via a line such as
 
@@ -229,10 +229,14 @@ and move the executable to /usr/local/bin.
 
 /* Define some commonly used error messages */
 
-#define seek_error() error("%s: Cannot seek\n", program)
-#define corrupt_error() error("%s: Class file corrupt\n", program)
-#define eof_error() error("%s: Unexpected end of file\n", program)
-#define utf8_error() error("%s: Only ASCII 1-255 supported\n", program);
+#define seek_error() error("%s: Cannot seek
+", program)
+#define corrupt_error() error("%s: Class file corrupt
+", program)
+#define eof_error() error("%s: Unexpected end of file
+", program)
+#define utf8_error() error("%s: Only ASCII 1-255 supported
+", program);
 
 char *program;
 
@@ -320,17 +324,20 @@ int main(int argc, char **argv)
 	program = argv[0];
 
 	if(!argv[1])
-		error("%s: Missing input file\n", program);
+		error("%s: Missing input file
+", program);
 	classfile = fopen(argv[1], "rb");
 	if(!classfile)
-		error("%s: Error opening %s\n", program, argv[1]);
+		error("%s: Error opening %s
+", program, argv[1]);
 
 	if(fseek(classfile, 8, SEEK_SET))  /* skip magic and version numbers */
 		seek_error();
 	cp_count = read_16(classfile);
 	pool = calloc(cp_count, sizeof(long));
 	if(!pool)
-		error("%s: Out of memory for constant pool\n", program);
+		error("%s: Out of memory for constant pool
+", program);
 
 	for(i = 1; i < cp_count; ++i)
 		skip_constant(classfile, &i);
@@ -375,7 +382,8 @@ int main(int argc, char **argv)
 		else if(x == '/') putchar('.');
 		else putchar(x);
 	}
-	putchar('\n');
+	putchar('
+');
 	free(pool);
 	fclose(classfile);
 	return 0;

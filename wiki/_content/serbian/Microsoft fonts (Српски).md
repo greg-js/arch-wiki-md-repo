@@ -1,7 +1,7 @@
 | **Summary**  |
 | Installing TrueType web-core (Microsoft) fonts and emulating Windows' font rendering |
 | **Legal** |
-| According to [original Microsoft's End User License Agreement](http://web.archive.org/web/20020227054122/www.microsoft.com/typography/fontpack/eula.htm), there are _some_ legal limitations when using the fonts. |
+| According to [original Microsoft's End User License Agreement](http://web.archive.org/web/20020227054122/www.microsoft.com/typography/fontpack/eula.htm), there are *some* legal limitations when using the fonts. |
 | **Related** |
 | [Fonts](/index.php/Fonts "Fonts"): Information on adding fonts and font recommendations |
 | [Font Configuration](/index.php/Font_Configuration "Font Configuration"): Font setup and beautification |

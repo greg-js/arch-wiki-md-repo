@@ -37,8 +37,8 @@ $cd ~/quartus
 
 *   注意这里安装需要用root权限，安装过程很简单，需要回答三个问题：
 
-1.  安装位置，默认是_/opt/altera9.0/_
-2.  器件仿真库选择，默认是全部库，你可以选择其中一个或者几个，比如_cycii cyciii_代表选择cyclone II和cyclone III
+1.  安装位置，默认是*/opt/altera9.0/*
+2.  器件仿真库选择，默认是全部库，你可以选择其中一个或者几个，比如*cycii cyciii*代表选择cyclone II和cyclone III
 3.  阅读授权文件
 
 到这里，就安装完成了，但是这时还不能立即使用。必须作下一步的处理，如果不处理，就会出现[Quartus_(简体中文)#常见错误 莫名其妙的错误](/index.php/Quartus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.B8.B8.E8.A7.81.E9.94.99.E8.AF.AF_.E8.8E.AB.E5.90.8D.E5.85.B6.E5.A6.99.E7.9A.84.E9.94.99.E8.AF.AF "Quartus (简体中文)")
@@ -48,7 +48,8 @@ $cd ~/quartus
 *   首先，去掉/etc/issue中为inputrc设置的特殊字符（用于agent启动的自动清屏的）：
 
 ```
-echo "Arch Linux  \r  (\n) (\l)" > /etc/issue
+echo "Arch Linux  \r  (
+) (\l)" > /etc/issue
 
 ```
 

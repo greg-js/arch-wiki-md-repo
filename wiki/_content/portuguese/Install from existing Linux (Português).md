@@ -36,15 +36,15 @@ Siga as instruções no [Guia de Instalação](/index.php/Installation_Guide_(Po
 
 ## Configurar o ambiente do Pacman
 
-Você precisa criar um ambiente onde o _pacman_ e os _arch istall scripts_ possam rodar em sua distribuição.(Se você escolher o método 1, apenas o pacman será necessário)
+Você precisa criar um ambiente onde o *pacman* e os *arch istall scripts* possam rodar em sua distribuição.(Se você escolher o método 1, apenas o pacman será necessário)
 
 A princípio, existem dois métodos diferentes de preparar o ambiente: **instalando o pacman nativamente (método 4 abaixo)** em sua distribuição ou criando um **ambiente de chroot**. A segunda opção tende a ser a mais fácil, e será discutida em seguida:
 
-Duas são as formas possíveis de se utilizar o método do _chroot_:
+Duas são as formas possíveis de se utilizar o método do *chroot*:
 
-*   **Utilizando o chroot como um ambiente de instalação**: O ambiente de chroot Archlinux preparado será utilizado temporariamente para criar a instalação do Archlinux através do _arch-install-scripts_. O trabalho inicial pode ser mais demorado, porém, quando o ambiente estiver pronto, vários sistemas Archlinux podem ser criados com uma facilidade e rapidez imensa. Se você deseja fazer uma instalação única, este método pode parecer desperdício. Você configurará duas vezes o mesmo sistema, terá um grande tráfego de rede e utilizara muito mais RAM, por conta deste processo.
+*   **Utilizando o chroot como um ambiente de instalação**: O ambiente de chroot Archlinux preparado será utilizado temporariamente para criar a instalação do Archlinux através do *arch-install-scripts*. O trabalho inicial pode ser mais demorado, porém, quando o ambiente estiver pronto, vários sistemas Archlinux podem ser criados com uma facilidade e rapidez imensa. Se você deseja fazer uma instalação única, este método pode parecer desperdício. Você configurará duas vezes o mesmo sistema, terá um grande tráfego de rede e utilizara muito mais RAM, por conta deste processo.
 
-*   **Instalar o Archlinux diretamente/Bootstrapping direto**: Graças ao script _arch-bootstrap_ criado por tokland, este método é eficiente e muito rápido. Após uma simples linha de código, o sistema base inteiro do Archlinux estará instalado no disco. **Contudo**, se você deseja instalar o Archlinux em diversas máquinas este método será mais demorado, pois requer o re-download de todos os pacotes a cada nova instalação.
+*   **Instalar o Archlinux diretamente/Bootstrapping direto**: Graças ao script *arch-bootstrap* criado por tokland, este método é eficiente e muito rápido. Após uma simples linha de código, o sistema base inteiro do Archlinux estará instalado no disco. **Contudo**, se você deseja instalar o Archlinux em diversas máquinas este método será mais demorado, pois requer o re-download de todos os pacotes a cada nova instalação.
 
 A melhor aplicação do **Bootstrapping direto** é em uma rede com um número reduzido de sistemas. Se você pretende instalar o Archlinux em muitos sistemas, a instalação via **ambiente chroot** ou mesmo o **pacman nativo** pode ser muito mais vantajoso.
 
@@ -109,7 +109,6 @@ O script abaixo criará um diretório chamado `archinstall-pkg` e efetuará o do
 Este chroot é capaz de executar os arch install scripts. **As partições destino deve estar montadas abaixo do diretório `/mnt` para este chroot**. Após esta configuração, vá para o próximo passo que é [#Corrigindo problemas de chaves de assinatura](#Corrigindo_problemas_de_chaves_de_assinatura).
 
  `archinstall-bootstrap.sh` 
-
 ```
 #!/bin/bash
 # This script is inspired on the archbootstrap script.
@@ -205,7 +204,7 @@ Outra opção é utilizar a ferramenta `alien` para converter os pacotes `pacman
 
 ## Corrigindo problemas de chaves de assinatura
 
-É necessário inicializar o chaveiro do _pacman_ para a verificação das assinaturas.
+É necessário inicializar o chaveiro do *pacman* para a verificação das assinaturas.
 
 Execute
 

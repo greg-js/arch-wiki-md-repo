@@ -1,6 +1,6 @@
 MEncoder is part of the [mplayer](https://www.archlinux.org/packages/?name=mplayer) package. See [MPlayer](/index.php/MPlayer "MPlayer") for details. [mplayer2](https://aur.archlinux.org/packages/mplayer2/) [does not include MEncoder](http://www.mplayer2.org/differences/#mencoder-is-no-longer-available).
 
-	_Why another article about this process?_ There is a plethora of articles, man pages, and blog entries about how to convert any movie to a standard DVD Video viewable on any hardware DVD player. However, most of those pages focus on one aspect of this process. The point of this article is to summarize most of the available knowledge in only one place.
+	*Why another article about this process?* There is a plethora of articles, man pages, and blog entries about how to convert any movie to a standard DVD Video viewable on any hardware DVD player. However, most of those pages focus on one aspect of this process. The point of this article is to summarize most of the available knowledge in only one place.
 
 ## Contents
 
@@ -31,7 +31,7 @@ MEncoder is part of the [mplayer](https://www.archlinux.org/packages/?name=mplay
 
 ## The parts of a DVD
 
-For our purposes in this example, every movie on the DVD has one video track, at least one audio track, and possibly includes subtitles. We will begin by creating a simple DVD that autostarts when put in the DVD player, without any menu. If the disk includes more than one movie, you can select one using the _chapter_ function of the DVD player.
+For our purposes in this example, every movie on the DVD has one video track, at least one audio track, and possibly includes subtitles. We will begin by creating a simple DVD that autostarts when put in the DVD player, without any menu. If the disk includes more than one movie, you can select one using the *chapter* function of the DVD player.
 
 ## The Audio
 
@@ -127,7 +127,7 @@ This is fine and good if the input does not have black borders or if the input f
 
 #### Removing the black borders
 
-If the input file has black borders and its aspect ratio is not 4/3 or 16/9 you have to remove the black border and consider the 'real' resolution and the 'real' aspect ratio. **mplayer** has a feature to detect the black borders in order to remove them with ease: the _cropdetect_ video filter. Play the movie with **-vf cropdetect**, seek in the movie a bright scene where the black borders are easily visible. **mplayer** will give you an output with the correct _crop_ values. Example:
+If the input file has black borders and its aspect ratio is not 4/3 or 16/9 you have to remove the black border and consider the 'real' resolution and the 'real' aspect ratio. **mplayer** has a feature to detect the black borders in order to remove them with ease: the *cropdetect* video filter. Play the movie with **-vf cropdetect**, seek in the movie a bright scene where the black borders are easily visible. **mplayer** will give you an output with the correct *crop* values. Example:
 
 ```
 ...
@@ -141,9 +141,9 @@ VO: [xv] 720x480 => 720x480 Planar YV12
 
 ```
 
-This movie have 40 pixels of black border and its aspect ratio is 1.50\. So we found a bright scene and **mplayer** said us the correct values for the _crop_ video filter: in this case **720:400:0:40**.
+This movie have 40 pixels of black border and its aspect ratio is 1.50\. So we found a bright scene and **mplayer** said us the correct values for the *crop* video filter: in this case **720:400:0:40**.
 
-Replaying the movie with **-vf crop=720:400:0:40** we see the _real_ resolution, unfortunately **mplayer** will show the old aspect ratio so we have to calculate the real one by hand:
+Replaying the movie with **-vf crop=720:400:0:40** we see the *real* resolution, unfortunately **mplayer** will show the old aspect ratio so we have to calculate the real one by hand:
 
 ```
 Movie-Aspect is 1.50:1 - prescaling to correct movie aspect.
@@ -166,11 +166,11 @@ mplayer movie.mov -vf crop=720:400:0:40,expand=:::::16/9
 
 #### Reaching a valid resolution
 
-Now we have to decide the resolution we will use. Of course if we selected the 16/9 aspect ratio we will have only one choice (720x576 for Pal or 720x480 for Ntsc), but if we selected the 4/3 aspect ratio we have to decide. Usually the best selection is _the smallest resolution that contains the original movie after removing the black borders_ or the maximum resolution if the input file is larger. For example a 4/3 movie of 640x480 should be put in 704x480 Ntsc or 704x576 Pal. To continue the previous example we will use 720x576 Pal.
+Now we have to decide the resolution we will use. Of course if we selected the 16/9 aspect ratio we will have only one choice (720x576 for Pal or 720x480 for Ntsc), but if we selected the 4/3 aspect ratio we have to decide. Usually the best selection is *the smallest resolution that contains the original movie after removing the black borders* or the maximum resolution if the input file is larger. For example a 4/3 movie of 640x480 should be put in 704x480 Ntsc or 704x576 Pal. To continue the previous example we will use 720x576 Pal.
 
 The video filter chain becomes: **-vf crop=720:400:0:40,expand=:::::16/9,scale=720:576,dsize=1024:576** where we scaled to the correct resolution in **scale** and set the display resolution in **dsize** following the table.
 
-If **mplayer** shows something like **VO: [xv] 720x576 => 1024x576 Planar YV12** where the first pair is the resolution, the second pair is the displayed resolution and the movie _is displayed correctly_ (no oval heads for example) we are done.
+If **mplayer** shows something like **VO: [xv] 720x576 => 1024x576 Planar YV12** where the first pair is the resolution, the second pair is the displayed resolution and the movie *is displayed correctly* (no oval heads for example) we are done.
 
 ### Encoding the video
 
@@ -240,7 +240,7 @@ Things to note:
 
 All the other values are more or less fixed for a high quality DVD compliant conversion, you can (and should) read about in the **mencoder** man page.
 
-Note: the filter chain shown here is _complete_ in the sense we had to make every pass. If you had an input file already of 16/9 ratio for example you would have only **-vf scale=720:576,dsize=1024:576,harddup**; if you had a input file of the wrong ratio but without black borders you would have only something like **-vf expand=:::::4/3,scale=720:576,dsize=768:576,harddup**; the bare minimum is **-vf harddup** if you had a movie of a correct resolution and ratio.
+Note: the filter chain shown here is *complete* in the sense we had to make every pass. If you had an input file already of 16/9 ratio for example you would have only **-vf scale=720:576,dsize=1024:576,harddup**; if you had a input file of the wrong ratio but without black borders you would have only something like **-vf expand=:::::4/3,scale=720:576,dsize=768:576,harddup**; the bare minimum is **-vf harddup** if you had a movie of a correct resolution and ratio.
 
 Save these commands in a text file and in the shell execute **sh filename**, the execution of those two commands might take some time. But once finished you will have a video stream at the correct resolution for DVD video.
 
@@ -257,7 +257,7 @@ mplex -f 8 -o movie.mpg movie_video_track.m2v english_audio.ac3 italian_audio.ac
 
 The output file (**movie.mpg**) will contain both audio tracks and the related video track. The order on the command line matters: the order of the audio tracks will be the same on the DVD. You should note it down as in the final DVD we will include the audio tracks' language tag.
 
-**mplex** is necessary if there is more than one audio track, but if you have only one you can create the mpeg file directly. You have to replace the _second_ command of video encoding. For example, making **movie.mpg** with only the English track in one pass:
+**mplex** is necessary if there is more than one audio track, but if you have only one you can create the mpeg file directly. You have to replace the *second* command of video encoding. For example, making **movie.mpg** with only the English track in one pass:
 
 ```
  nice -19 mencoder -oac lavc -ovc lavc -of mpeg -mpegopts format=dvd:tsaf -vf-clr -vf \
@@ -283,7 +283,7 @@ The second manifests with frames dropped and after a while with global failure: 
 
 ## The Subtitles
 
-The subtitles are merged in the mpeg file and depend uipon the setting displayed if the user selects (normal subtitles) or always (forced subtitles). Forced subtitles are usually used to translate to the main language those parts of the movie in foreign languages, for example the Elves speak in _The Lord of the Ring_.
+The subtitles are merged in the mpeg file and depend uipon the setting displayed if the user selects (normal subtitles) or always (forced subtitles). Forced subtitles are usually used to translate to the main language those parts of the movie in foreign languages, for example the Elves speak in *The Lord of the Ring*.
 
 In DVD video you have 3360 kbps of space for subtitles. Subtitles are actually pictures of at most 4 colors (one being transparency): this is the reason why the subtitles often look crude.
 
@@ -447,7 +447,7 @@ At this point we should have only .mpeg files with the video track, the audio tr
 
 ```
 
-But usually you want to tag the audio and the subtitle tracks, in this second example the **video.mpg** has two audio tracks and two subtitle tracks. We give a linguistic tag, _order matters_ the first tag goes to the first language and so go on.
+But usually you want to tag the audio and the subtitle tracks, in this second example the **video.mpg** has two audio tracks and two subtitle tracks. We give a linguistic tag, *order matters* the first tag goes to the first language and so go on.
 
 ```
 <dvdauthor>
@@ -746,7 +746,7 @@ So a Ntsc movie shown in Pal country most often is about 4% faster than its orig
 In order to change the frame-rate this way you have to:
 
 *   calculate the speed value: (output framerate)/(input framerate);
-*   use **-speed** in _every_ **mplayer** command, including converting audio;
+*   use **-speed** in *every* **mplayer** command, including converting audio;
 *   always set explicitly the output frame-rate.
 
 Here is an example of making a Pal Dvd from an Ntsc input, the 1.042733... is from the division above:

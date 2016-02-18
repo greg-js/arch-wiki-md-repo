@@ -1,4 +1,4 @@
-Para compartir paquetes entre computadoras, simplemente comparte _/var/cache/pacman/_ usando cualquier protocolo de compartición que permita el montaje de archivos; por ejemplo [Samba](/index.php/Samba "Samba") ó [NFS](/index.php/NFS "NFS"). También puedes usar sshfs el cual es mas seguro pero un poco lento. Esta guía muestra como usar shfs ó sshfs para compartir la cache de paquetes y los directorios de librerías entre varias computadoras en la misma red.
+Para compartir paquetes entre computadoras, simplemente comparte */var/cache/pacman/* usando cualquier protocolo de compartición que permita el montaje de archivos; por ejemplo [Samba](/index.php/Samba "Samba") ó [NFS](/index.php/NFS "NFS"). También puedes usar sshfs el cual es mas seguro pero un poco lento. Esta guía muestra como usar shfs ó sshfs para compartir la cache de paquetes y los directorios de librerías entre varias computadoras en la misma red.
 
 ## Contents
 

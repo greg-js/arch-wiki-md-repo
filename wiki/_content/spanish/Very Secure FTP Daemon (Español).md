@@ -84,7 +84,7 @@ Si obtienes errores como
 
 ```
 
-cuando te conectes al servidor, necesitas agregar _capability_ en la línea MODULES= en /etc/rc.conf.
+cuando te conectes al servidor, necesitas agregar *capability* en la línea MODULES= en /etc/rc.conf.
 
 Cuando actualizas a **version 2.1.0** podrías obtener un error como estecuando te estés conectando al servidor desde un cliente:
 
@@ -101,7 +101,7 @@ En versiones anteriores ha sido suficiente con dejar comentadas las siguientes l
 
 ```
 
-En esta nueva versión, y probablemente en las futuras, es necesario configurarlo explícitamente para que _no_ fncione en forma independiente, asi:
+En esta nueva versión, y probablemente en las futuras, es necesario configurarlo explícitamente para que *no* fncione en forma independiente, asi:
 
 ```
 # Use this to use vsftpd in standalone mode, otherwise it runs through (x)inetd

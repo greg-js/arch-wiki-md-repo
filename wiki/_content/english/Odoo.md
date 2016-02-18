@@ -42,10 +42,10 @@ $ su
 
 If the PostgreSQL instance has not been initialized yet, please follow first the [PostgreSQL install process](/index.php/PostgreSQL#Installing_PostgreSQL "PostgreSQL").
 
-Once logged as the 'postgres' user, create the database user (called _role_ in the PostgreSQL ) _odoo_ with the command that follows.
+Once logged as the 'postgres' user, create the database user (called *role* in the PostgreSQL ) *odoo* with the command that follows.
 
-*   where _--interactive_ is used to prompt for missing role name and attributes rather than using defaults
-*   and _--pwprompt'_ is used to assign a password to the new role
+*   where *--interactive* is used to prompt for missing role name and attributes rather than using defaults
+*   and *--pwprompt'* is used to assign a password to the new role
 
 You will first be asked for a password. For highly secure yet easy to remember passwords, consider using a [Diceware Passphrase](http://world.std.com/~reinhold/diceware.html). Re-enter the password as requested. The next three questions should be answered in sequence with n, y, and n.
 
@@ -62,7 +62,7 @@ Shall the new role be allowed to create more new roles? (y/n) n
 You can also use the following command line to specify the options to skip the interactive questions:
 
 ```
-[postgres]$ createuser _odoo_ --createdb --login --no-superuser --no-createrole --pwprompt
+[postgres]$ createuser *odoo* --createdb --login --no-superuser --no-createrole --pwprompt
 
 ```
 
@@ -126,7 +126,6 @@ Refer to [this guide](/index.php/Nginx#Managing_server_entries "Nginx") for how 
 Assuming your local domain is called `mydomain.local`, and odoo is hosted on the same machine as your Nginx server, create a file inside the `servers-available` directory that contains this server block:
 
  `/etc/nginx/servers-available/odoo` 
-
 ```
 upstream odoo {
     server 127.0.0.1:8069;

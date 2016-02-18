@@ -48,7 +48,7 @@ Hlavní [desktopová prostředí](/index.php/Category:Desktop_environments_(%C4%
 
 ```
 
-Je doporučeno nainstalovat též nějaká GTK2 témata. Populární téma _Clearlooks_ je součástí balíčku [gtk-engines](https://www.archlinux.org/packages/?name=gtk-engines):
+Je doporučeno nainstalovat též nějaká GTK2 témata. Populární téma *Clearlooks* je součástí balíčku [gtk-engines](https://www.archlinux.org/packages/?name=gtk-engines):
 
 ```
 # pacman -S gtk-engines
@@ -63,7 +63,6 @@ Další témata můžete nalézt v [AUR](/index.php/AUR_(%C4%8Cesky) "AUR (Česk
 Alternativně může být nastavení GTK konfigurováno ručně úpravami `~/.gtkrc-2.0`. Seznam všech nastavení v GTK můžete nalézt v [knihovně Gnome (anglicky)](http://library.gnome.org/devel/gtk/stable/GtkSettings.html). Pro ruční změnu GTK téma, ikon, fontu a velikosti fontu přidejte do `~/.gtkrc-2.0` následující:
 
  `~/.gtkrc-2.0` 
-
 ```
 gtk-icon-theme-name = "[jméno-téma-ikon]"
 gtk-theme-name = "[jméno-téma]"
@@ -73,7 +72,6 @@ gtk-font-name = "[jméno-fontu] [velikost]"
 Například:
 
  `~/.gtkrc-2.0` 
-
 ```
 gtk-icon-theme-name = "Tango"
 gtk-theme-name = "Murrine-Gray"

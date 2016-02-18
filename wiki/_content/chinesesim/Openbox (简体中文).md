@@ -49,7 +49,7 @@ Openbox 是一个轻量级、可高度定制以及支持大量标准的窗口管
 
 [openbox](https://www.archlinux.org/packages/?name=openbox) 可以从 Arch Linux 的[官方仓库](/index.php/%E5%AE%98%E6%96%B9%E4%BB%93%E5%BA%93 "官方仓库")里[安装](/index.php/%E5%AE%89%E8%A3%85 "安装")得到。
 
-安装完成后, 你应该把默认的配置文件 **`rc.xml`**, **`menu.xml`**, 和 **`autostart`** 和`environment` 复制到 _`~/.config/openbox`_ :
+安装完成后, 你应该把默认的配置文件 **`rc.xml`**, **`menu.xml`**, 和 **`autostart`** 和`environment` 复制到 *`~/.config/openbox`* :
 
 ```
 $ mkdir -p ~/.config/openbox
@@ -147,13 +147,13 @@ $ gconftool-2 -s -t string /desktop/gnome/session/required_components/windowmana
 
 ### GNOME 2.26 Redux
 
-_**如果上面的 GNOME 2.24 失败了:**_
+***如果上面的 GNOME 2.24 失败了:***
 
 当尝试用 "Gnome/Openbox" 会话登录-- 而且始终不能登录, 试试以下内容. 这是一种通过始终把 Openbox 作为 Gnome 会话打开而达到目的的方法:
 
 1.  通过 Gnome-only 会话登录 (这时的 WM 应该是 Metacity).
 2.  安装 Openbox ,如果以前没装的话.
-3.  点击菜单到 _系统 → 首选项 → 启动程序_ (在旧版本的 Gnome 可能是 '会话')
+3.  点击菜单到 *系统 → 首选项 → 启动程序* (在旧版本的 Gnome 可能是 '会话')
 4.  打开启动程序, 选择 '+ Add' 加入以下内容. 忽略以 # 开始的注释.
 5.  点击 'Add' 数据入口窗口的按钮. 保证已输入内容旁边的选择框已选.
 6.  退出 Gnome 会话,重新登录.
@@ -217,7 +217,7 @@ $ killall xfwm4 ; openbox & exit
 
 否则, 使用 root-menu 的 "Exit" 选项会导致 Openbox 结束自身的执行, 使你没有窗口管理器.
 
-如果使用鼠标滚轮切换虚拟桌面遇到问题, 编辑 `~/.config/openbox/rc.xml` . 移动 _mouse binds with_ 动作 "DesktopPrevious" 和 "DesktopNext" 从上下文 "Desktop" 到 "Root" (你可能需要定义 _Root_ 上下文).
+如果使用鼠标滚轮切换虚拟桌面遇到问题, 编辑 `~/.config/openbox/rc.xml` . 移动 *mouse binds with* 动作 "DesktopPrevious" 和 "DesktopNext" 从上下文 "Desktop" 到 "Root" (你可能需要定义 *Root* 上下文).
 
 当使用 Openbox 的 root-menu 代替 Xfce 的菜单,可以使用以下命令退出 Xfdesktop :
 
@@ -324,7 +324,7 @@ MenuMaker创建了一个很全面的 `menu.xml`. 你可以手动编辑 menu.xml�
 
 ```
 
-或者你可以直接产生全部菜单内容（_将会重写menu.xml，谨慎使用_）:
+或者你可以直接产生全部菜单内容（*将会重写menu.xml，谨慎使用*）:
 
 ```
  $ xdg_menu --format openbox3 --root-menu /etc/xdg/menus/arch-applications.menu --fullmenu > .config/openbox/menu.xml
@@ -416,9 +416,9 @@ $ openbox --reconfigure   # 查看你生成的菜单
 
 与其它窗口管理器类似, Openbox 允许脚本动态生成菜单(menus on-the-fly).类似的例子有系统监视器,媒体播放器管理,还有天气监视器. Pipe menu 脚本可以从 Openbox 官网上找到 [Openbox:Pipemenus](http://openbox.org/wiki/Openbox:Pipemenus).
 
-用户 _Xyne_ 创建了一个 pipe menu 的文件浏览器,用户 _brisbin33_ 创建了一个 pipe menu 用于扫描和连接无线热点(用 netcfg).相应的功能可以在论坛找到:[file browser](https://bbs.archlinux.org/viewtopic.php?id=77197&p=1),[wifi](https://bbs.archlinux.org/viewtopic.php?id=78290).
+用户 *Xyne* 创建了一个 pipe menu 的文件浏览器,用户 *brisbin33* 创建了一个 pipe menu 用于扫描和连接无线热点(用 netcfg).相应的功能可以在论坛找到:[file browser](https://bbs.archlinux.org/viewtopic.php?id=77197&p=1),[wifi](https://bbs.archlinux.org/viewtopic.php?id=78290).
 
-用户 _jnguyen_ 用 Udisks 创建了一个用来管理可移动设备的 pipe menu.这个论坛的帖子在这:[obdevicemenu](https://bbs.archlinux.org/viewtopic.php?id=114702).
+用户 *jnguyen* 用 Udisks 创建了一个用来管理可移动设备的 pipe menu.这个论坛的帖子在这:[obdevicemenu](https://bbs.archlinux.org/viewtopic.php?id=114702).
 
 ## 启动程序
 
@@ -428,8 +428,8 @@ Openbox 特性支持在启动时运行程序.由 "openbox-session" 命令提供.
 
 有两种方法实现自启动:
 
-1.  如果用 startx 或 xinit 登陆到 X 会话, 修改 `~/.xinitrc`. 把 execute 行的 _openbox_ 为 **openbox-session**.
-2.  如果用 GDM/KDM , 那么选择 _Openbox_ 会话它会自动执行自启动脚本.
+1.  如果用 startx 或 xinit 登陆到 X 会话, 修改 `~/.xinitrc`. 把 execute 行的 *openbox* 为 **openbox-session**.
+2.  如果用 GDM/KDM , 那么选择 *Openbox* 会话它会自动执行自启动脚本.
 
 ### 自启动脚本
 
@@ -493,7 +493,7 @@ AUR 上一个叫 [gnome-defaults-list](https://aur.archlinux.org/packages.php?ID
 
 用文本编辑器打开这个文件.你可以替换选定的程序.例如, totem <=> vlc 或 eog <=> mirage. 保存文件 `~/.local/share/applications/defaults.list`.
 
-另一种方法是从仓库安装 _perl-file-mimeinfo_ 调用 **mimeopen** 类似这样:
+另一种方法是从仓库安装 *perl-file-mimeinfo* 调用 **mimeopen** 类似这样:
 
 ```
 mimeopen -d /path/to/file
@@ -524,7 +524,7 @@ Please choose a default application for files of type text/plain
 
 ### 窗口透明
 
-程序 transset-df (事实上与 _transset_ 一样) 用 pacman -S transset-df 安装.有了 transset-df 你可以开启 window-transparency on-the-fly.
+程序 transset-df (事实上与 *transset* 一样) 用 pacman -S transset-df 安装.有了 transset-df 你可以开启 window-transparency on-the-fly.
 
 例如把以下内容加入 `~/.config/openbox/rc.xml`, 你就可以用鼠标滚轮在窗口标题栏转动滚轮来调节窗口透明度(在 <mouse> 段):
 
@@ -573,9 +573,9 @@ WM_CLASS(STRING) = "NAME", "CLASS"
 
 ### 链接菜单到按键
 
-有些人想链接 Openbox 菜单 (或其它菜单) 到一个目标.对于想创建一个面板按钮来弹出菜单会非常有用.虽然 Openbox 没有提供这种功能,一个程序名叫**xdotool** 能模拟一个击键动作. Openbox 可以配置绑定这个击键动作到 _ShowMenu_ 动作.
+有些人想链接 Openbox 菜单 (或其它菜单) 到一个目标.对于想创建一个面板按钮来弹出菜单会非常有用.虽然 Openbox 没有提供这种功能,一个程序名叫**xdotool** 能模拟一个击键动作. Openbox 可以配置绑定这个击键动作到 *ShowMenu* 动作.
 
-包 [xdotool](https://aur.archlinux.org/packages.php?do_Details=1&ID=14789&O=0&L=0&C=0&K=xdotool&SB=n&SO=a&PP=25&do_MyPackages=0&do_Orphans=0&SeB=nd) 可以从 AUR 上得到.安装好 _xdotool_ 后, 把以下内容添加到 **`rc.xml`** 的 <keyboard> 段 :
+包 [xdotool](https://aur.archlinux.org/packages.php?do_Details=1&ID=14789&O=0&L=0&C=0&K=xdotool&SB=n&SO=a&PP=25&do_MyPackages=0&do_Orphans=0&SeB=nd) 可以从 AUR 上得到.安装好 *xdotool* 后, 把以下内容添加到 **`rc.xml`** 的 <keyboard> 段 :
 
 ```
  <keybind key="A-C-q">

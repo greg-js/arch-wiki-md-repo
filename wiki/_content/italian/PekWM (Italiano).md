@@ -194,14 +194,14 @@ chmod +x ~/.pekwm/start
 
 ### Variabii
 
-Le file delle _variabili_ contiene le variabili utilizzate in generale da pekwm, la voce di default dovrebbe spiegarlo abbastanza chiaramente:
+Le file delle *variabili* contiene le variabili utilizzate in generale da pekwm, la voce di default dovrebbe spiegarlo abbastanza chiaramente:
 
 ```
 $TERM="xterm -fn fixed +sb -bg white -fg black"
 
 ```
 
-Ogni volta che la variabile $TERM sarà utilizzato in un file di configurazione di PekWM, il comando _xterm -fn fixed +sb -bg white -fg black_ sarà eseguito. Ad esempio , cambiandolo in
+Ogni volta che la variabile $TERM sarà utilizzato in un file di configurazione di PekWM, il comando *xterm -fn fixed +sb -bg white -fg black* sarà eseguito. Ad esempio , cambiandolo in
 
 ```
 $TERM="urxvt"
@@ -256,7 +256,7 @@ e modificarla in
 
 Dalla versione v0.1.11, PekWM non sembra supportare correttamente il compositing. Nonostante xcompmgr sia attivo, la trasparenza delle docks e dei pannelli non funzionano, e l'ombreggiatura delle finestre creano artefatti grafici. Una correzione possibile e settare il valore della trasparenza di ogni finestra a .999 (o qualsiasi altro valore) con devilspie e transset-df, in questo modo l'ombra delle finestre vengono visualizzate correttamente.
 
-Di seguito l'esempio di uno script devilspie che imposta la trasparenza di ogni finestra con un valore di .999 tramite _transset-df_:
+Di seguito l'esempio di uno script devilspie che imposta la trasparenza di ogni finestra con un valore di .999 tramite *transset-df*:
 
 ```
 (spawn_async (str "transset-df -i " (window_xid) " .999" ))

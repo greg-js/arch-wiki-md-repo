@@ -2,7 +2,7 @@
 
 来自 [Wikipedia](https://en.wikipedia.org/wiki/Raspberry_Pi "wikipedia:Raspberry Pi"):
 
-	"_树莓派是有英国树莓派基金会开发的一系列只有信用卡大小的单板计算机，目的是促进校园中基础性计算机教学的发展。_"
+	"*树莓派是有英国树莓派基金会开发的一系列只有信用卡大小的单板计算机，目的是促进校园中基础性计算机教学的发展。*"
 
 树莓派最初的版本于2012年发布，基于博通的BCM2835芯片（[ARM11 架构](https://en.wikipedia.org/wiki/ARM11 "wikipedia:ARM11")）。而最新的树莓派2于1015年发布，基于博通的BCM2836芯片（双核 [ARM Cortex-A7 架构](https://en.wikipedia.org/wiki/ARM_Cortex-A7 "wikipedia:ARM Cortex-A7")）。
 
@@ -70,11 +70,11 @@ System responsiveness, particularly during operations involving disk I/O such as
 选择一个音频输出:
 
 ```
-$ amixer cset numid=3 _x_
+$ amixer cset numid=3 *x*
 
 ```
 
-参数`_x_`应当为：
+参数`*x*`应当为：
 
 *   0 自动
 *   1 模拟输出
@@ -100,7 +100,7 @@ hdmi_drive=2
 
 ```
 
-Use the _-s_ parameter to check the status of your display, the _-o_ parameter to turn your display off and _-p_ parameter to power on HDMI with preferred settings.
+Use the *-s* parameter to check the status of your display, the *-o* parameter to turn your display off and *-p* parameter to power on HDMI with preferred settings.
 
 Adjustments are likely required to correct proper overscan/underscan and are easily achieved in `boot/config.txt` in which many tweaks are set. To fix, simply uncomment the corresponding lines and setup per the commented instructions:
 
@@ -141,18 +141,19 @@ Alternatively, simply read from the file system:
 
 For human readable output:
 
- `awk '{printf "%3.1f°C\n", $1/1000}' /sys/class/thermal/thermal_zone0/temp`  `54.1°C` 
+ `awk '{printf "%3.1f°C
+", $1/1000}' /sys/class/thermal/thermal_zone0/temp`  `54.1°C` 
 
 ### Voltage
 
 Four different voltages can be monitored via `/opt/vc/bin/vcgencmd` as well:
 
 ```
-$ /opt/vc/bin/vcgencmd measure_volts _<id>_
+$ /opt/vc/bin/vcgencmd measure_volts *<id>*
 
 ```
 
-Where `_<id>_` is:
+Where `*<id>*` is:
 
 *   core for core voltage
 *   sdram_c for sdram Core voltage

@@ -59,7 +59,7 @@ ALSA 是核心的組件之一，建議使用。若無法使用，[OSS](/index.ph
 
 ```
 
-安裝 [mesa](https://en.wikipedia.org/wiki/Mesa_(computer_graphics) "wikipedia:Mesa (computer graphics)") (提供 3D 支援)：
+安裝 [mesa](https://en.wikipedia.org/wiki/Mesa_(computer_graphics) (提供 3D 支援)：
 
 ```
 # pacman -S mesa
@@ -123,12 +123,10 @@ Xorg 具備自動偵測，`xorg.conf` 已經不太需要。若您仍希望手動
 **提示:** 以下為選用步驟。若您是第一次安裝 Arch Linux，或是將 Arch 安裝在不熟悉的硬體上時，可以做個測試。
 
 **註記:** 如果您的輸入裝置在測試中不起作用，請從 [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/) 群組安裝需要的驅動後再試一遍。完整的可用輸入驅動清單可從呼叫 Pacman 搜尋得到 (按 `Q` 離開)：
-
 ```
 $ pacman -Ss xf86-input | less
 
 ```
-
 若您不需要[熱插拔](https://en.wikipedia.org/wiki/Hot-plugging "wikipedia:Hot-plugging")功能，只需安裝 [xf86-input-keyboard](https://www.archlinux.org/packages/?name=xf86-input-keyboard) 或 [xf86-input-mouse](https://www.archlinux.org/packages/?name=xf86-input-mouse)，否則 (建議) 使用 `evdev` 做為輸入驅動。
 
 安裝預設環境：

@@ -40,14 +40,13 @@ If you want suspend to disk with [Uswsusp](/index.php/Uswsusp "Uswsusp") using F
 
 You now need to set something like `quiet loglevel=3 logo.nologo gfxpayload=keep console=tty1 splash=silent,fadein,fadeout,theme:arch-banner-icons` as your kernel command line parameters in your bootloader. See [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for more info.
 
-The parameter `loglevel=3` prevents kernel messages from garbling the splash even with funny hardware (as recent initscripts do not set this by default any more). `quiet` is needed additionally for silencing initcpio messages. `logo.nologo` removes the boot logo (not needed with [linux-fbcondecor](https://aur.archlinux.org/packages.php?ID=50924) since it does not have one anyway). `console=tty1` redirects system messages to tty1 and `splash=silent,fadein,fadeout,theme:arch-banner-icons` creates a silent, splash-only boot with fading in/out _arch-banner-icons_ theme.
+The parameter `loglevel=3` prevents kernel messages from garbling the splash even with funny hardware (as recent initscripts do not set this by default any more). `quiet` is needed additionally for silencing initcpio messages. `logo.nologo` removes the boot logo (not needed with [linux-fbcondecor](https://aur.archlinux.org/packages.php?ID=50924) since it does not have one anyway). `console=tty1` redirects system messages to tty1 and `splash=silent,fadein,fadeout,theme:arch-banner-icons` creates a silent, splash-only boot with fading in/out *arch-banner-icons* theme.
 
 ### Configuration Files
 
 Put one or more of the themes you installed into `/etc/conf.d/splash`. You can also specify screen resolutions to save some initcpio space:
 
  `/etc/conf.d/splash` 
-
 ```
 SPLASH_THEMES="
     arch-black
@@ -59,13 +58,13 @@ SPLASH_THEMES="
 
 ## Starting Fbsplash early in the initcpio
 
-If **uresume** and/or **encrypt** HOOKS are used, add **fbsplash** _after_ them in [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"), e.g.:
+If **uresume** and/or **encrypt** HOOKS are used, add **fbsplash** *after* them in [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"), e.g.:
 
  `/etc/mkinitcpio.conf`  `HOOKS="base udev autodetect [...] keymap encrypt uresume fbsplash"` 
 
 Rebuild your initcpio via mkinitcpio. See [mkinitcpio#Image creation and activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") for more info.
 
-**Tip:** For a quick resume, it is recommended to put **uswsusp** _before_ **fbsplash** or even drop `fadein`, if using a Fbcondecor kernel.
+**Tip:** For a quick resume, it is recommended to put **uswsusp** *before* **fbsplash** or even drop `fadein`, if using a Fbcondecor kernel.
 
 If you have trouble getting fbsplash to work and your machine uses KMS (Kernel Mode Setting), try [adding the appropriate driver to mkinitcpio.conf](/index.php/Intel#KMS_.28Kernel_Mode_Setting.29 "Intel").
 

@@ -1,4 +1,4 @@
-_poznamka_ Pouzivam xfce, takze se omlouvam za odlisnosti (jsou-li) v jinem desctopovem prostredi.
+*poznamka* Pouzivam xfce, takze se omlouvam za odlisnosti (jsou-li) v jinem desctopovem prostredi.
 
 # pomoci apletu na panelu
 
@@ -15,7 +15,7 @@ jedna moznost je zadat prikaz
 
 ```
 
-kde _obrazek_ je smeno souboru pod jakym se screenshot ulozi a _png_ format. Pri teto variante se screenshot ulozi do vaseho domovskeho adresare. Chcemeli ho jinam, tak staci zadat cestu.
+kde *obrazek* je smeno souboru pod jakym se screenshot ulozi a *png* format. Pri teto variante se screenshot ulozi do vaseho domovskeho adresare. Chcemeli ho jinam, tak staci zadat cestu.
 
 ```
 # import -window root /home/jirka/screenshot/obrazek.png

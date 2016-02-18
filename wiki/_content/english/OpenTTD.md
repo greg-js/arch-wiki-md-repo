@@ -74,7 +74,7 @@ $ chmod 755 ~/.openttd/playmidi
 
 ```
 
-Run _openttd_, passing the wrapper script filename as an argument to the _extmidi_ driver:
+Run *openttd*, passing the wrapper script filename as an argument to the *extmidi* driver:
 
 ```
  $ PATH=$HOME/.openttd:$PATH openttd -m extmidi:cmd=playmidi

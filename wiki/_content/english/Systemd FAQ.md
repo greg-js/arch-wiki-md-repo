@@ -27,7 +27,7 @@ Currently, only one getty is launched by default. If you switch to another tty, 
 
 By default, the number of auto-activated gettys is capped at six. Thus [F7] through [F12] won't launch a getty.
 
-If you want to change this behavior, then edit `/etc/systemd/logind.conf` and change the value of `NAutoVTs`. If you want all [F_x_] keys to start a getty, increase the value of NAutoVTs to 12\. If you are [forwarding journald to tty12](/index.php/Systemd#Forward_journald_to_.2Fdev.2Ftty12 "Systemd"), increase the value of NAutoVTs to 11 (thus leaving tty12 free).
+If you want to change this behavior, then edit `/etc/systemd/logind.conf` and change the value of `NAutoVTs`. If you want all [F*x*] keys to start a getty, increase the value of NAutoVTs to 12\. If you are [forwarding journald to tty12](/index.php/Systemd#Forward_journald_to_.2Fdev.2Ftty12 "Systemd"), increase the value of NAutoVTs to 11 (thus leaving tty12 free).
 
 You can also pre-activate gettys which will be running from boot.
 
@@ -60,7 +60,6 @@ Any messages are logged to the system log and if you want to find out about the 
 Create a directory called `/etc/systemd/system/getty@.service.d` and place `nodisallocate.conf` in there to [override](/index.php/Systemd#Editing_provided_units "Systemd") the `TTYVTDisallocate` option to `no`.
 
  `/etc/systemd/system/getty@.service.d/nodisallocate.conf` 
-
 ```
 [Service]
 TTYVTDisallocate=no
@@ -99,7 +98,7 @@ Be sure you use:
 
 ### How can I make a script start during the boot process?
 
-Create a new file in `/etc/systemd/system` (e.g. _myscript_.service) and add the following contents:
+Create a new file in `/etc/systemd/system` (e.g. *myscript*.service) and add the following contents:
 
 ```
 [Unit]
@@ -116,7 +115,7 @@ WantedBy=multi-user.target
 Then:
 
 ```
-# systemctl enable _myscript_.service
+# systemctl enable *myscript*.service
 
 ```
 

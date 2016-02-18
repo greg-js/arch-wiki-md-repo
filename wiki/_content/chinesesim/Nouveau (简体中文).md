@@ -78,7 +78,7 @@ MODULES="... nouveau ..."
 重新生成初始ramdisk映像：
 
 ```
-# mkinitcpio -p <kernel preset; e.g. _linux_>
+# mkinitcpio -p <kernel preset; e.g. *linux*>
 
 ```
 
@@ -220,7 +220,7 @@ options nouveau msi=1
 如果使用 [提早启动](#Early_start), 把 `FILES="/etc/modprobe.d/nouveau.conf"` 这行加入到 `/etc/mkinitcpio.conf`中, 然后重建内核镜像:
 
 ```
-# mkinitcpio -p <kernel preset; e.g. _linux_>
+# mkinitcpio -p <kernel preset; e.g. *linux*>
 
 ```
 

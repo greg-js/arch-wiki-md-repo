@@ -56,11 +56,11 @@ This machine running with a vcore of +0.005 (in offset mode) remains stable in b
 
 | Voltage Demand | Program | Description |
 | **Medium** |
-| _Cc/Gcc_ | Both cc/gcc compilation is a great method of stress testing. Both are available in the _base-devel_ group. |
-| _HandBrake-cli_ | [handbrake-cli](https://www.archlinux.org/packages/?name=handbrake-cli) can be used to encode using high quality settings. |
-| _Systester_ | [systester](https://aur.archlinux.org/packages/systester/) Systester is a multithreaded piece of software capable of deriving values of pi out to 128,000,000 decimal places. It has built in check for system stability. |
-| **High** | _mprime_ | [mprime-bin](https://aur.archlinux.org/packages/mprime-bin/) factors large numbers and is an excellent way to stress CPU and memory. |
-| _linpack_ | [linpack](https://aur.archlinux.org/packages/linpack/) - Linpack makes use of the BLAS (Basic Linear Algebra Subprograms) libraries for performing basic vector and matrix operations. and is an excellent way to stress CPUs for stability. |
+| *Cc/Gcc* | Both cc/gcc compilation is a great method of stress testing. Both are available in the *base-devel* group. |
+| *HandBrake-cli* | [handbrake-cli](https://www.archlinux.org/packages/?name=handbrake-cli) can be used to encode using high quality settings. |
+| *Systester* | [systester](https://aur.archlinux.org/packages/systester/) Systester is a multithreaded piece of software capable of deriving values of pi out to 128,000,000 decimal places. It has built in check for system stability. |
+| **High** | *mprime* | [mprime-bin](https://aur.archlinux.org/packages/mprime-bin/) factors large numbers and is an excellent way to stress CPU and memory. |
+| *linpack* | [linpack](https://aur.archlinux.org/packages/linpack/) - Linpack makes use of the BLAS (Basic Linear Algebra Subprograms) libraries for performing basic vector and matrix operations. and is an excellent way to stress CPUs for stability. |
 
 ## Stressing CPU and Memory
 

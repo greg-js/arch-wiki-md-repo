@@ -7,7 +7,7 @@
 
 ## Introducción
 
-File Alteration Monitor (FAM) es un demonio usado por entornos de escritorio como [GNOME](/index.php/GNOME "GNOME") y [Xfce](/index.php/Xfce "Xfce") para monitoreo y reporte de cambios en el sistema de archivos. FAM también es usado por el servidor Samba. KDE ya no utiliza FAM, han migrado al sistema _inotify_ del kernel, el cual no requiere ninguna configuración.
+File Alteration Monitor (FAM) es un demonio usado por entornos de escritorio como [GNOME](/index.php/GNOME "GNOME") y [Xfce](/index.php/Xfce "Xfce") para monitoreo y reporte de cambios en el sistema de archivos. FAM también es usado por el servidor Samba. KDE ya no utiliza FAM, han migrado al sistema *inotify* del kernel, el cual no requiere ninguna configuración.
 
 [Gamin](/index.php/Gamin "Gamin") es una reimplementación de las FAM. Es mas nuevo y su mantenimiento es mas activo que el de FAM, también es mas facíl de configurar.
 
@@ -29,7 +29,7 @@ Se puede inicial FAM manualmente con:
 
 ```
 
-Para iniciar FAM al arrancar, agrega _fam_ en la línea DAEMONS en [rc.conf](/index.php/Rc.conf "Rc.conf"). Sí utilizas [NetworkManager](/index.php/NetworkManager "NetworkManager") _fam_ debe estar **después** de _networkmanager_
+Para iniciar FAM al arrancar, agrega *fam* en la línea DAEMONS en [rc.conf](/index.php/Rc.conf "Rc.conf"). Sí utilizas [NetworkManager](/index.php/NetworkManager "NetworkManager") *fam* debe estar **después** de *networkmanager*
 
 ## Otros recursos
 

@@ -1,4 +1,4 @@
-[Chroot](https://en.wikipedia.org/wiki/Chroot "wikipedia:Chroot") is an operation that changes the apparent root directory for the current running process and their children. A program that is run in such a modified environment cannot access files and commands outside that environmental directory tree. This modified environment is called a _chroot jail_.
+[Chroot](https://en.wikipedia.org/wiki/Chroot "wikipedia:Chroot") is an operation that changes the apparent root directory for the current running process and their children. A program that is run in such a modified environment cannot access files and commands outside that environmental directory tree. This modified environment is called a *chroot jail*.
 
 ## Contents
 
@@ -66,11 +66,11 @@ Next, if there are separate filesystems for other system directories (e.g. `/boo
 
 ```
 
-**Note:** If trying to access an [encrypted](/index.php/Disk_encryption "Disk encryption") filesystem, do not forget to first unlock its container (e.g. with `# cryptsetup open /dev/sdX# _name_` for [dm-crypt/LUKS](/index.php/Disk_encryption#Block_device_encryption "Disk encryption")-based encryption), then mount the device using its previously supplied device-mapper _name_ (under the form `# mount /dev/mapper/_name_ /mnt/arch/...`). More info: [Unlocking/Mapping LUKS partitions with the device mapper](/index.php/Dm-crypt/Device_encryption#Unlocking.2FMapping_LUKS_partitions_with_the_device_mapper "Dm-crypt/Device encryption").
+**Note:** If trying to access an [encrypted](/index.php/Disk_encryption "Disk encryption") filesystem, do not forget to first unlock its container (e.g. with `# cryptsetup open /dev/sdX# *name*` for [dm-crypt/LUKS](/index.php/Disk_encryption#Block_device_encryption "Disk encryption")-based encryption), then mount the device using its previously supplied device-mapper *name* (under the form `# mount /dev/mapper/*name* /mnt/arch/...`). More info: [Unlocking/Mapping LUKS partitions with the device mapper](/index.php/Dm-crypt/Device_encryption#Unlocking.2FMapping_LUKS_partitions_with_the_device_mapper "Dm-crypt/Device encryption").
 
 ## Change root
 
-**Note:** Some [systemd](/index.php/Systemd "Systemd") tools such as _localectl_ and _timedatectl_ do not work inside a chroot, as they require an active [dbus](/index.php/Dbus "Dbus") connection. [[1]](https://github.com/systemd/systemd/issues/798#issuecomment-126568596)
+**Note:** Some [systemd](/index.php/Systemd "Systemd") tools such as *localectl* and *timedatectl* do not work inside a chroot, as they require an active [dbus](/index.php/Dbus "Dbus") connection. [[1]](https://github.com/systemd/systemd/issues/798#issuecomment-126568596)
 
 ### Using arch-chroot
 
@@ -211,7 +211,7 @@ Chroot requires root privileges, which may not be desirable or possible for the 
 
 ### Proot
 
-[Proot](/index.php/Proot "Proot") may be used to change the apparent root directory and use `mount --bind` without root privileges. This is useful for confining applications to a single directory or running programs built for a different CPU architecture, but it has limitations due to the fact that all files are owned by the user on the host system. Proot provides a `--root-id` argument that can be used as a workaround for some of these limitations in a similar (albeit more limited) manner to _fakeroot_.
+[Proot](/index.php/Proot "Proot") may be used to change the apparent root directory and use `mount --bind` without root privileges. This is useful for confining applications to a single directory or running programs built for a different CPU architecture, but it has limitations due to the fact that all files are owned by the user on the host system. Proot provides a `--root-id` argument that can be used as a workaround for some of these limitations in a similar (albeit more limited) manner to *fakeroot*.
 
 ### Fakechroot
 

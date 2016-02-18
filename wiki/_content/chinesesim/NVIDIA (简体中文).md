@@ -1,4 +1,4 @@
-本文包含安装和配置 [NVIDIA](http://www.nvidia.com) _专有_ 显卡驱动的信息。想要了解开源驱动的信息，参见 [Nouveau](/index.php/Nouveau "Nouveau").
+本文包含安装和配置 [NVIDIA](http://www.nvidia.com) *专有* 显卡驱动的信息。想要了解开源驱动的信息，参见 [Nouveau](/index.php/Nouveau "Nouveau").
 
 ## Contents
 
@@ -201,7 +201,6 @@ To activate dual screen support, you just need to edit the `/etc/X11/xorg.conf.d
 Per each physical monitor, add one Monitor, Device, and Screen Section entry, and then a ServerLayout section to manage it. Be advised that when Xinerama is enabled, the NVIDIA proprietary driver automatically disables compositing. If you desire compositing, you should comment out the `Xinerama` line in "`ServerLayout`" and use TwinView (see below) instead.
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
-
 ```
 Section "ServerLayout"
     Identifier     "DualSreen"
@@ -350,7 +349,7 @@ Option "TripleBuffer" "1"
 
 #### 使用系统级事件
 
-这是来自英伟达驱动的[README](http://http.download.nvidia.com/XFree86/Linux-x86/1.0-7182/README/readme.txt)文件： _"[...] 使用系统级事件，可以在当某个客户端进行直接渲染到组合窗口的时候，可以有效地通知X。"_ 它可以帮助您提高性能，但是它如今还不能完全支持SLI和多GPU模式。
+这是来自英伟达驱动的[README](http://http.download.nvidia.com/XFree86/Linux-x86/1.0-7182/README/readme.txt)文件： *"[...] 使用系统级事件，可以在当某个客户端进行直接渲染到组合窗口的时候，可以有效地通知X。"* 它可以帮助您提高性能，但是它如今还不能完全支持SLI和多GPU模式。
 
 在`Device`节下添加：
 
@@ -383,7 +382,7 @@ Option "RegistryDwords" "EnableBrightnessControl=1"
 
 **警告:** 截至2011年5月7日，你可能会遇到SLI在GNOME 3下会遇到视频性能低迷的情况。
 
-根据英伟达驱动的[README](http://http.download.nvidia.com/XFree86/Linux-x86/1.0-8774/README/appendix-d.html) 附录: _这个选项可以在支持的配置中控制 SLI 渲染的配置。_一个_支持的配置_适用于有一块SLI认证的主板以及2或者3个SLI认证的GPU的计算机。在[SLI Zone](http://www.slizone.com/page/home.html)上面有更加详细的信息。
+根据英伟达驱动的[README](http://http.download.nvidia.com/XFree86/Linux-x86/1.0-8774/README/appendix-d.html) 附录: *这个选项可以在支持的配置中控制 SLI 渲染的配置。*一个*支持的配置*适用于有一块SLI认证的主板以及2或者3个SLI认证的GPU的计算机。在[SLI Zone](http://www.slizone.com/page/home.html)上面有更加详细的信息。
 
 您可以用`lspci`查找第一个GPU的PCI总线ID：
 
@@ -892,7 +891,7 @@ EndSection
 
 这个错误可以是由几个不同的原因引发，此错误最常见的解决方案是检查组/文件权限，这也许不能说是一个问题。在英伟达的文档里面并没有详细地告诉您如何解决这个问题但还有一些东西对一些人有用。这个问题可以是IRQ与其它驱动冲突或者是错误的路由，甚至是内核或者BIOS的问题。
 
-首先您得尝试移除视频采集卡或者其它视频设备来解决问题。如果在同一系统中有太多的视频处理器，可能由于视频控制器的内存分配问题导致内核无法启动。特别是显存比较低的系统可能发生这种情况，即使只有一个视频处理器。你应该找出你的系统的显存(例如运行_lspci -v_)并分配参数传递到内核：
+首先您得尝试移除视频采集卡或者其它视频设备来解决问题。如果在同一系统中有太多的视频处理器，可能由于视频控制器的内存分配问题导致内核无法启动。特别是显存比较低的系统可能发生这种情况，即使只有一个视频处理器。你应该找出你的系统的显存(例如运行*lspci -v*)并分配参数传递到内核：
 
 ```
 vmalloc=64M
@@ -908,7 +907,7 @@ PCI=biosirq
 
 ```
 
-_noacpi_的内核参数也可以作为一个建议，但是因为它完全禁用ACPI的，应谨慎使用，毕竟一些硬件很容易因过热损坏。
+*noacpi*的内核参数也可以作为一个建议，但是因为它完全禁用ACPI的，应谨慎使用，毕竟一些硬件很容易因过热损坏。
 
 **注意:** 您可以在内核的命令行或者在启动管理器的配置文件上传输参数。您可以到你的启动管理器的Wiki页面上面了解更详细的信息。
 

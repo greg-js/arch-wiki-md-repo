@@ -79,7 +79,7 @@ The main feature in this example is title 1\. Sometimes a title set will include
 
 ## Ripping the DVD
 
-**Tip:** `dvdbackup` reads the name of the DVD and creates a working directory for it. If `dvdbackup` decides the name of the DVD is too generic (like "MOVIE", for instance), the user must specify a name, as it will refuse to run otherwise. Just use `-n _movie_name_` to specify.
+**Tip:** `dvdbackup` reads the name of the DVD and creates a working directory for it. If `dvdbackup` decides the name of the DVD is too generic (like "MOVIE", for instance), the user must specify a name, as it will refuse to run otherwise. Just use `-n *movie_name*` to specify.
 
 **Note:** If you receive an error such as "`ERR: no video format specified for VMGM`" you must set the video format variable. An easy way to do this is to add `export VIDEO_FORMAT=NTSC` (for NTSC regions) to your `~/.bashrc`.
 
@@ -92,13 +92,13 @@ $ dvdbackup -i /dev/dvd -o ~ -t 1
 
 ```
 
-You will now see a number of VOB files on the hard drive (in `~/_movie_name_/VIDEO_TS`). These files can be played in [MPlayer](/index.php/MPlayer "MPlayer") or [VLC](/index.php/VLC "VLC"), but are insufficient to create a DVD copy. This is where `dvdauthor` is useful.
+You will now see a number of VOB files on the hard drive (in `~/*movie_name*/VIDEO_TS`). These files can be played in [MPlayer](/index.php/MPlayer "MPlayer") or [VLC](/index.php/VLC "VLC"), but are insufficient to create a DVD copy. This is where `dvdauthor` is useful.
 
 A title set must now be created (e.g. `VTS_01_0.IFO` and `VTS_01_0.BUP`). Be aware that the following command will make a copy of the entire movie. The original can be deleted right afterwards.
 
 ```
 $ mkdir ~/dvd
-$ cd ~/_movie_name_/VIDEO_TS
+$ cd ~/*movie_name*/VIDEO_TS
 $ dvdauthor -t -o ~/dvd *.VOB
 
 ```
@@ -125,8 +125,8 @@ $ dvdbackup -i /dev/dvd -o ~ -F
 Now, table of contents files must be created (e.g. `VIDEO_TS.IFO` and `VIDEO_TS.BUP`):
 
 ```
-$ cd ~/_movie_name_/VIDEO_TS
-$ dvdauthor -o ~/_movie_name_ -T
+$ cd ~/*movie_name*/VIDEO_TS
+$ dvdauthor -o ~/*movie_name* -T
 
 ```
 
@@ -155,7 +155,7 @@ $ mkisofs -dvd-video -udf -o ~/dvd.iso ~/dvd # if a single title was extracted
 or the following if the whole DVD was extracted:
 
 ```
-$ mkisofs -dvd-video -udf -o ~/dvd.iso ~/_movie_name_
+$ mkisofs -dvd-video -udf -o ~/dvd.iso ~/*movie_name*
 
 ```
 
@@ -187,6 +187,6 @@ $ growisofs -dvd-video -udf -Z /dev/dvd ~/dvd # if a single title was extracted
 or:
 
 ```
-$ growisofs -dvd-video -udf -Z /dev/dvd ~/_movie_name_
+$ growisofs -dvd-video -udf -Z /dev/dvd ~/*movie_name*
 
 ```

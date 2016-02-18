@@ -123,7 +123,7 @@ This file is meant for the RaspberryPi - because the RPi has no system clock, sy
 
 ### As a Forking Service
 
-**Note:** Change the _After_ condition to match your setup, i.e., ntpd.service or ntpdate.service, etc.
+**Note:** Change the *After* condition to match your setup, i.e., ntpd.service or ntpdate.service, etc.
 
 Create a new file /usr/lib/systemd/system/weewx.service containing:
 

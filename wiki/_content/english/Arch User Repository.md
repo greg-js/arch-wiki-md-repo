@@ -1,6 +1,6 @@
 The Arch User Repository (AUR) is a community-driven repository for Arch users. It contains package descriptions ([PKGBUILDs](/index.php/PKGBUILD "PKGBUILD")) that allow you to compile a package from source with [makepkg](/index.php/Makepkg "Makepkg") and then install it via [pacman](/index.php/Pacman#Additional_commands "Pacman"). The AUR was created to organize and share new packages from the community and to help expedite popular packages' inclusion into the [community](/index.php/Community "Community") repository. This document explains how users can access and utilize the AUR.
 
-A good number of new packages that enter the official repositories start in the AUR. In the AUR, users are able to contribute their own package builds (PKGBUILD and related files). The AUR community has the ability to vote for or against packages in the AUR. If a package becomes popular enough — provided it has a compatible license and good packaging technique — it may be entered into the _community_ repository (directly accessible by [pacman](/index.php/Pacman "Pacman") or [abs](/index.php/Abs "Abs")).
+A good number of new packages that enter the official repositories start in the AUR. In the AUR, users are able to contribute their own package builds (PKGBUILD and related files). The AUR community has the ability to vote for or against packages in the AUR. If a package becomes popular enough — provided it has a compatible license and good packaging technique — it may be entered into the *community* repository (directly accessible by [pacman](/index.php/Pacman "Pacman") or [abs](/index.php/Abs "Abs")).
 
 ## Contents
 
@@ -67,7 +67,7 @@ Queries search package names and descriptions via a MySQL LIKE comparison. This 
 Installing packages from the AUR is a relatively simple process. Essentially:
 
 1.  Acquire the tarball which contains the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and possibly other required files, like [systemd](/index.php/Systemd "Systemd") units and patches (but often not the actual code).
-2.  Extract the tarball (preferably in a directory set aside just for builds from the AUR) with `tar -xvf _pkgname_.tar.gz`.
+2.  Extract the tarball (preferably in a directory set aside just for builds from the AUR) with `tar -xvf *pkgname*.tar.gz`.
 3.  Verify that the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and accompanying files are not malicious or untrustworthy.
 4.  Run `makepkg -sri` in the directory where the files are saved. This will download the code, resolve the dependencies with [pacman](/index.php/Pacman "Pacman"), compile it, package it, install the package, and finally remove the build-time dependencies, which are no longer needed.
 
@@ -92,7 +92,7 @@ Locate the package in the AUR. This is done using the search feature (text field
 
 There are three well-known methods to aquire the build files without the use of an AUR helper:
 
-*   Download the necessary build files by clicking on the "Download snapshot" link under "Package Actions" on the right hand side. This file should be saved to the build directory or otherwise copied to the directory after downloading. In this example, the file is called `foo.tar.gz` (standard format is `_pkgname_.tar.gz`, if it has been properly submitted).
+*   Download the necessary build files by clicking on the "Download snapshot" link under "Package Actions" on the right hand side. This file should be saved to the build directory or otherwise copied to the directory after downloading. In this example, the file is called `foo.tar.gz` (standard format is `*pkgname*.tar.gz`, if it has been properly submitted).
 
 *   Alternatively you can download the tarball from the terminal, changing directories to the build directory first:
 
@@ -124,7 +124,7 @@ This should create a new directory called `foo` in the build directory.
 
 **Note:** In the case of a git clone, the extraction process is unnecessary. The git clone has already created the directory `foo`.
 
-**Warning:** **Carefully check all files.** `cd` to the newly created directory and carefully check the `PKGBUILD` and any `.install` file for malicious commands. `PKGBUILD`s are [bash](/index.php/Bash "Bash") scripts containing functions to be executed by _makepkg_: these functions can contain _any_ valid commands or Bash syntax, so it is totally possible for a `PKGBUILD` to contain dangerous commands through malice or ignorance on the part of the author. Since _makepkg_ uses _fakeroot_ (and should never be run as root), there is some level of protection but you should never count on it. If in doubt, do not build the package and seek advice on the forums or mailing list.
+**Warning:** **Carefully check all files.** `cd` to the newly created directory and carefully check the `PKGBUILD` and any `.install` file for malicious commands. `PKGBUILD`s are [bash](/index.php/Bash "Bash") scripts containing functions to be executed by *makepkg*: these functions can contain *any* valid commands or Bash syntax, so it is totally possible for a `PKGBUILD` to contain dangerous commands through malice or ignorance on the part of the author. Since *makepkg* uses *fakeroot* (and should never be run as root), there is some level of protection but you should never count on it. If in doubt, do not build the package and seek advice on the forums or mailing list.
 
 ```
 $ cd foo
@@ -175,10 +175,9 @@ When submitting a package, observe the following rules:
 
 #### Creating a new package
 
-For write access to the AUR, users need to have an [SSH key pair](/index.php/SSH_keys "SSH keys"). The content of the public key needs to be copied to the user profile in _My Account_, and the corresponding private key configured for the `aur.archlinux.org` host. For example:
+For write access to the AUR, users need to have an [SSH key pair](/index.php/SSH_keys "SSH keys"). The content of the public key needs to be copied to the user profile in *My Account*, and the corresponding private key configured for the `aur.archlinux.org` host. For example:
 
  `~/.ssh/config` 
-
 ```
 Host aur.archlinux.org
   IdentityFile ~/.ssh/aur
@@ -190,7 +189,7 @@ It is recommended that you [create a new key pair](/index.php/SSH_keys#Generatin
 In order to upload a package, simply clone the Git repository with the corresponding name:
 
 ```
-$ git clone ssh://aur@aur.archlinux.org/_foobar_.git
+$ git clone ssh://aur@aur.archlinux.org/*foobar*.git
 
 ```
 
@@ -202,13 +201,13 @@ You can now add the source files to the local copy of the Git repository. When m
 
 #### Updating packages
 
-In order to submit new versions of a package base to the AUR, add the new `PKGBUILD`, `.SRCINFO` and possibly helper files (like `.install` files or local source files like `.patch`) to the _staging area_ with `git add`, commit them to your local tree with a commit message with `git commit`, and finally publish the changes to the AUR with `git push`.
+In order to submit new versions of a package base to the AUR, add the new `PKGBUILD`, `.SRCINFO` and possibly helper files (like `.install` files or local source files like `.patch`) to the *staging area* with `git add`, commit them to your local tree with a commit message with `git commit`, and finally publish the changes to the AUR with `git push`.
 
 For example, to create and submit the initial commit:
 
 ```
 $ mksrcinfo
-$ git add _PKGBUILD .SRCINFO_
+$ git add *PKGBUILD .SRCINFO*
 $ git commit -m 'Initial import'
 $ git push origin master
 
@@ -220,14 +219,14 @@ To update a package, edit the `PKGBUILD` and run the following commands to track
 
 ```
 $ mksrcinfo
-$ git commit -am 'Update to _1.0.0-2'_
+$ git commit -am 'Update to *1.0.0-2'*
 $ git push
 
 ```
 
 See [Git](/index.php/Git "Git") for more information.
 
-**Tip:** If you forget to commit the `.SRCINFO` and add it in a later commit, the AUR will still reject your pushes because the `.SRCINFO` must exist for _every_ commit. To solve this problem you can use [git rebase](https://git-scm.com/docs/git-rebase) with the `--root` option or [git filter-branch](https://git-scm.com/docs/git-filter-branch) with the `--tree-filter` option.
+**Tip:** If you forget to commit the `.SRCINFO` and add it in a later commit, the AUR will still reject your pushes because the `.SRCINFO` must exist for *every* commit. To solve this problem you can use [git rebase](https://git-scm.com/docs/git-rebase) with the `--root` option or [git filter-branch](https://git-scm.com/docs/git-filter-branch) with the `--tree-filter` option.
 
 ### Maintaining packages
 
@@ -275,13 +274,13 @@ By adding a metadata file called `.SRCINFO` to source tarballs to overwrite spec
 
 The `key` is a field name, based on the names of the corresponding [PKGBUILD Variables](/index.php/PKGBUILD_Variables "PKGBUILD Variables"). Some field names may optionally be suffixed with an architecture name. Fields are grouped into sections, each headed by one of the following two field names:
 
-*   pkgbase: This is required by AUR 3, otherwise the infamous “only lowercase letters are allowed” error is reported. (Pacman uses the first _pkgname_ if _pkgbase_ is omitted.) Repeat pkgname if unsure. There is only one _pkgbase_ section. The field values from this section are inherited unless overridden in the _pkgname_ sections that follow it. An empty field value in the _pkgname_ section cancels the inheritance.
-*   pkgname: There may be multiple _pkgname_ sections.
+*   pkgbase: This is required by AUR 3, otherwise the infamous “only lowercase letters are allowed” error is reported. (Pacman uses the first *pkgname* if *pkgbase* is omitted.) Repeat pkgname if unsure. There is only one *pkgbase* section. The field values from this section are inherited unless overridden in the *pkgname* sections that follow it. An empty field value in the *pkgname* section cancels the inheritance.
+*   pkgname: There may be multiple *pkgname* sections.
 
 The following field names are associated with a single value for the section:
 
 *   epoch
-*   pkgver: package version, may be formatted as [_epoch_:]_pkgver_ if the epoch field is not given separately
+*   pkgver: package version, may be formatted as [*epoch*:]*pkgver* if the epoch field is not given separately
 *   pkgrel: release number of the package specific to Arch Linux
 *   pkgdesc
 *   url
@@ -326,7 +325,7 @@ Sign up on the [AUR website](https://aur.archlinux.org/) to get a "Vote for this
 
 ### What is a Trusted User / TU?
 
-A [Trusted User](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"), in short TU, is a person who is chosen to oversee AUR and the [community](/index.php/Community "Community") repository. They are the ones who maintain popular PKGBUILDs in _community_, and overall keep the AUR running.
+A [Trusted User](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"), in short TU, is a person who is chosen to oversee AUR and the [community](/index.php/Community "Community") repository. They are the ones who maintain popular PKGBUILDs in *community*, and overall keep the AUR running.
 
 ### What is the difference between the Arch User Repository and the community repository?
 
@@ -360,7 +359,7 @@ If you would like to have your PKGBUILD critiqued, post it on the [aur-general m
 
 Usually, at least 10 votes are required for something to move into [community](/index.php/Community "Community"). However, if a TU wants to support a package, it will often be found in the repository.
 
-Reaching the required minimum of votes is not the only requirement, there has to be a TU willing to maintain the package. TUs are not required to move a package into the _community_ repository even if it has thousands of votes.
+Reaching the required minimum of votes is not the only requirement, there has to be a TU willing to maintain the package. TUs are not required to move a package into the *community* repository even if it has thousands of votes.
 
 Usually when a very popular package stays in the AUR it is because:
 

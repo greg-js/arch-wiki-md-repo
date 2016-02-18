@@ -14,7 +14,7 @@
 
 [Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [pkgfile](https://www.archlinux.org/packages/?name=pkgfile) desde los repositorios oficiales, o [pkgfile-git](https://aur.archlinux.org/packages/pkgfile-git/) desde [AUR](/index.php/AUR "AUR").
 
-La base de datos de _pkgfile_ puede sincronizarse con:
+La base de datos de *pkgfile* puede sincronizarse con:
 
 ```
 # pkgfile -u
@@ -30,7 +30,6 @@ Para buscar un paquete que contenga el archivo `makepkg`:
 Para listar todos los archivos que provee el paquete [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring):
 
  `$ pkgfile -l archlinux-keyring` 
-
 ```
 core/archlinux-keyring usr/
 core/archlinux-keyring usr/share/
@@ -48,7 +47,6 @@ Lo último se puede comparar con `pacman -Ql` (vea [Consultar la base de datos d
 [pkgfile](https://www.archlinux.org/packages/?name=pkgfile) incluye un hook de "comando no encontrado" para [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") y [Zsh](/index.php/Zsh "Zsh") que buscará automáticamente en los repositorios oficiales, cuando se introduzca un comando desconocido:
 
  `$ abiword` 
-
 ```
 abiword se encuentra en los siguientes paquetes:
   extra/abiword 2.8.6-7 usr/bin/abiword
@@ -70,7 +68,6 @@ Para habilitarlo cada vez que se arranca una consola, tiene que cargar el hook d
 [pkgfile](https://www.archlinux.org/packages/?name=pkgfile) no proporciona un hook específico para [Fish](/index.php/Fish "Fish"), pero es suficiente con definir su propia función `command-not-found`, que se ejecutará cuando Fish encuentre comandos desconocidos:
 
  `~/.config/fish/functions/command-not-found.fish` 
-
 ```
 function command-not-found
         set cmd $argv[2]

@@ -145,7 +145,7 @@ VIRUS=`echo $AV_REPORT|sed '/FOUND/ { s/.*/Yes/; q  };  /FOUND/  !s/.*/No/'`
 
 ### Filtering mail to a different mailbox
 
-If a coworker keeps using _forward_ to send you jokes and other non serious stuff, but at the same time, writes you work related mails, you could save the forwarded mails (most likely not-work-related mails) on a different mailbox.
+If a coworker keeps using *forward* to send you jokes and other non serious stuff, but at the same time, writes you work related mails, you could save the forwarded mails (most likely not-work-related mails) on a different mailbox.
 
 ```
 :0:

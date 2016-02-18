@@ -86,7 +86,7 @@ Oppure è possibile usare [virtualbox-ext-oracle](https://aur.archlinux.org/pack
 
 ## Avviare VirtualBox
 
-A questo punto aggiungere gli utenti a cui si vuol consentire l'esecuzione di VirtualBox al gruppo _vboxusers_:
+A questo punto aggiungere gli utenti a cui si vuol consentire l'esecuzione di VirtualBox al gruppo *vboxusers*:
 
 ```
 # gpasswd -a USERNAME vboxusers
@@ -100,10 +100,10 @@ Compilare i moduli richiesti:
 
 ```
 
-Infine editare `/etc/[rc.conf](/index.php/Rc.conf_(Italiano) "Rc.conf (Italiano)")` ed aggiungere _vboxdrv_ nell'array MODULES per caricare il driver di VirtualBox all'avvio del sistema:
+Infine editare `/etc/[rc.conf](/index.php/Rc.conf_(Italiano) "Rc.conf (Italiano)")` ed aggiungere *vboxdrv* nell'array MODULES per caricare il driver di VirtualBox all'avvio del sistema:
 
 ```
-MODULES=(... _vboxdrv_)
+MODULES=(... *vboxdrv*)
 
 ```
 
@@ -174,9 +174,9 @@ Per usare le modalità host-only e internal network è necessario caricare il mo
 
 Da VirtualBox:
 
-*   accedere al menu _Impostazioni_ della VM;
-*   dalla lista sulla sinistra cliccare su _Rete_; infine,
-*   nel menu a discesa _Connessa a_ selezionare _NAT_.
+*   accedere al menu *Impostazioni* della VM;
+*   dalla lista sulla sinistra cliccare su *Rete*; infine,
+*   nel menu a discesa *Connessa a* selezionare *NAT*.
 
 Il server DHCP incluso in VirtualBox permette al sistema guest di essere configurato tramite DHCP. L'indirizzo IP NAT della prima scheda di rete è 10.0.2.0, quello della seconda scheda 10.0.3.0 e così via.
 
@@ -193,10 +193,10 @@ Prima di continuare caricare i moduli necessari:
 
 Da VirtualBox:
 
-*   accedere al menu _Impostazioni_ della VM;
-*   cliccare su _Rete_ dal menu sulla sinistra;
-*   selezionare _Scheda con bridge_ nel menu a discesa _Connessa a_; infine,
-*   nella lista a discesa _Nome_ selezionare il nome dell'interfaccia host connessa alla rete di cui si vuole faccia parte l'OS guest.
+*   accedere al menu *Impostazioni* della VM;
+*   cliccare su *Rete* dal menu sulla sinistra;
+*   selezionare *Scheda con bridge* nel menu a discesa *Connessa a*; infine,
+*   nella lista a discesa *Nome* selezionare il nome dell'interfaccia host connessa alla rete di cui si vuole faccia parte l'OS guest.
 
 Avviare la macchina virtuale e configurare la rete normalmente; ad es. DHCP o IP statico.
 
@@ -210,7 +210,7 @@ Fare riferimento a [Arch Linux VirtualBox Guest](/index.php/Arch_Linux_VirtualBo
 
 #### Windows Guests
 
-Dopo aver installato Windows (XP, ecc.) sulla macchina virtuale selezionare _Devices → Install Guest Additions..._
+Dopo aver installato Windows (XP, ecc.) sulla macchina virtuale selezionare *Devices → Install Guest Additions...*
 
 Questo monterà l'immagine iso e Windows lancerà l'installer delle Guest Addition automaticamente. A questo punto seguire le istruzioni fino a completare l'installazione. Se si hanno le Guest Additions installate per una macchina virtuale e si vuole installarle per un'altra non è necessario scaricare di nuovo il file .iso. Selezionare "Periferiche → Dispositivi CD/DVD → Selezionare CD/DVD virtuale" e navigare in ~/.VirtualBox dove è situata l'immagine.
 
@@ -281,7 +281,7 @@ Nelle impostazioni della macchina virtuale andare nel tab Cartelle condivise e a
 *   NOTA: è necessario installare le Guest Additions prima di poter usare le cartelle condivise.
 
 ```
-In un host Linux _Dispositivi → Installa Guest Additions_
+In un host Linux *Dispositivi → Installa Guest Additions*
 Si (quando viene chiesto di scaricare l'immagine del CD)
 Mount (quando viene chiesto di registrarsi e ed effettuare il mount)
 
@@ -289,9 +289,9 @@ Mount (quando viene chiesto di registrarsi e ed effettuare il mount)
 
 In un host Linux creare una o più cartelle per condividere i file e impostare queste cartelle come condivise attraverso il menu di VirtualBox.
 
-In una guest Windows a partire da VirtualBox 1.5.0 le cartelle condivise sono esplorabili e visibili da Esplora risorse. Aprire Esplora risorse e cercare le cartelle condivise in _Risorse di rete → Tutta la rete → VirtualBox Shared Folders_
+In una guest Windows a partire da VirtualBox 1.5.0 le cartelle condivise sono esplorabili e visibili da Esplora risorse. Aprire Esplora risorse e cercare le cartelle condivise in *Risorse di rete → Tutta la rete → VirtualBox Shared Folders*
 
-Lanciare Esplora risorse (digitare explorer da esegui) per sfogliare le Risorse di rete -> espandere l'albero tramite il segno (+): Tutta la rete → Virtualbox Shared Folder → **Vboxsvr** → qui è possibile trovare tutte le cartelle condivise e impostare dei collegamenti per essi nella macchina guest. In alternativa è possibile usare "Aggiungi risorsa di rete _e cercare "Vboxsvr"._
+Lanciare Esplora risorse (digitare explorer da esegui) per sfogliare le Risorse di rete -> espandere l'albero tramite il segno (+): Tutta la rete → Virtualbox Shared Folder → **Vboxsvr** → qui è possibile trovare tutte le cartelle condivise e impostare dei collegamenti per essi nella macchina guest. In alternativa è possibile usare "Aggiungi risorsa di rete *e cercare "Vboxsvr".*
 
 In alternativa nel Prompt dei comandi di Windows digitare:
 
@@ -302,7 +302,7 @@ net use x: \\VBOXSVR\sharename
 
 Sostituire `x:` con la lettera del drive che si vuole utilizzare per la condivisione e sharename con il nome specificato in VBoxManage.
 
-In una macchina guest Windows per velocizzare il caricamento e il salvataggio dei file (ad es. per Microsoft Office) nelle cartelle condivise editare il file _c:\windows\system32\drivers\etc\hosts_ come segue:
+In una macchina guest Windows per velocizzare il caricamento e il salvataggio dei file (ad es. per Microsoft Office) nelle cartelle condivise editare il file *c:\windows\system32\drivers\etc\hosts* come segue:
 
 ```
 127.0.0.1 localhost vboxsvr
@@ -351,11 +351,11 @@ Nelle impostazioni della macchina recarsi nel tab audio e selezionare il driver 
 
 ### Impostare la RAM e la memoria video nella macchina guest
 
-E' possibile cambiare le impostazioni di default andando in _Impostazioni → Generale_.
+E' possibile cambiare le impostazioni di default andando in *Impostazioni → Generale*.
 
 ### Impostare il CD-ROM nella macchina guest
 
-E' possibile cambiare le impostazioni di default andando in _Impostazioni → Archiviazione_.
+E' possibile cambiare le impostazioni di default andando in *Impostazioni → Archiviazione*.
 
 Spuntare mount CD/DVD drive e selezionare una delle opzioni successive.
 
@@ -385,14 +385,14 @@ Quando il disco fisso è stato creato cliccare su 'Impostazioni', quindi CD/DVD-
 
 Ogni volta che la versione del kernel cambia (a causa di un aggiornamento, una ricompilazione, ecc.) il modulo vboxdrv deve essere ricompilato.
 
-Assicurarsi che _linux-headers_ sia già installato ed eseguire il seguente comando:
+Assicurarsi che *linux-headers* sia già installato ed eseguire il seguente comando:
 
 ```
 # rc.d setup vboxdrv
 
 ```
 
-Questo compilerà il modulo del kernel di VirtualBox per il _kernel in esecuzione_; se si è appena aggiornato il kernel riavviare il sistema prima di ricompilare il modulo di VirtualBox.
+Questo compilerà il modulo del kernel di VirtualBox per il *kernel in esecuzione*; se si è appena aggiornato il kernel riavviare il sistema prima di ricompilare il modulo di VirtualBox.
 
 Dopo aver ricompilato il modulo non dimenticare di ricaricarlo:
 
@@ -401,7 +401,7 @@ Dopo aver ricompilato il modulo non dimenticare di ricaricarlo:
 
 ```
 
-_vboxdrv_ e vboxnetflt _dovrebbe trovarsi nella sezione MODULES=() del file /etc/rc.conf_
+*vboxdrv* e vboxnetflt *dovrebbe trovarsi nella sezione MODULES=() del file /etc/rc.conf*
 
 Se si sta compilando un vecchio pacchetto virtualbox_bin compilato da AUR eseguire:
 
@@ -526,7 +526,7 @@ Il programma `qemu-img` può essere usato per convertire immagini da un formato 
 
 ### Convertire immagini QEMU
 
-Per convertire immagini QEMU per poterle usare in VirtualBox per prima cosa convertirle in formato _raw_, successivamente usare l'utilità di conversione di VirtualBox per convertire e comprimere l'immagine nel formato nativo.
+Per convertire immagini QEMU per poterle usare in VirtualBox per prima cosa convertirle in formato *raw*, successivamente usare l'utilità di conversione di VirtualBox per convertire e comprimere l'immagine nel formato nativo.
 
 ```
   $ qemu-img convert -O raw test.qcow2 test.raw
@@ -565,7 +565,7 @@ Se il SO guest è una distro Linux e si vorrebbe aprire una nuova tty o uscire d
 Aggiungere la seguente linea in /etc/rc.local
 
 ```
-exec /bin/su -c 'VBoxManage startvm --type headless <_UUID|NAME_>' _PREFERED_USER_ >/dev/null 2>&1
+exec /bin/su -c 'VBoxManage startvm --type headless <*UUID|NAME*>' *PREFERED_USER* >/dev/null 2>&1
 
 ```
 
@@ -603,7 +603,6 @@ Di seguito è elencato un [demone](/index.php/Daemon_(Italiano) "Daemon (Italian
 Il file di configurazione:
 
  `/etc/conf.d/vbox_service` 
-
 ```
 # Guests to manage:
 #VB_GUESTS=('OpenBSD' 'Slackware' 'Windows XP')
@@ -622,7 +621,6 @@ VB_USER='vbox'
 Lo script:
 
  `/etc/rc.d/vbox_service` 
-
 ```
 #!/bin/bash
 
@@ -693,7 +691,8 @@ restart() {
 }
 
 usage() {
- printf '%s\n' "usage: $0 <start|stop|restart> [name|uuid]..." >&2
+ printf '%s
+' "usage: $0 <start|stop|restart> [name|uuid]..." >&2
 }
 
 if [[ ! $1 =~ ^(start|stop|restart)$ ]]; then
@@ -802,7 +801,7 @@ E' richiesta la versione PUEL di VirtualBox.
 
 Una guida di installazione è disponibile qui: [http://code.google.com/p/phpvirtualbox/wiki/Installation](http://code.google.com/p/phpvirtualbox/wiki/Installation)
 
-Gli utenti di Arch Linux dovrebbero decommentare le seguenti 2 estensioni in _/etc/php/php.ini_
+Gli utenti di Arch Linux dovrebbero decommentare le seguenti 2 estensioni in */etc/php/php.ini*
 
 ```
 extension=json.so

@@ -81,10 +81,10 @@ Sestavení potřebných modulů:
 
 ```
 
-Nakonec je záhodno editovat `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")` a pří)idat _vboxrv_ do sekce MODULES, aby se modul ovladače načetl při příštím spuštění:
+Nakonec je záhodno editovat `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")` a pří)idat *vboxrv* do sekce MODULES, aby se modul ovladače načetl při příštím spuštění:
 
 ```
-MODULES=(... _vboxdrv_)
+MODULES=(... *vboxdrv*)
 
 ```
 
@@ -115,8 +115,8 @@ Virtuální počítače ve Virtualboxu mohou být do sítě připojeny různými
 Nastacení ve Virtualboxu:
 
 *   ve volbě "Nastavení" virtuálního počítače
-*   zvolit panel _Síť_ z možností nalevo
-*   jako _Připojena k_ zvolte možnost _NAT_
+*   zvolit panel *Síť* z možností nalevo
+*   jako *Připojena k* zvolte možnost *NAT*
 
 Virtualbox obsahuje DHCP server a umožňuje tak nastavit podřízené systémy pomocí DHCP. IP adresa v NATu první síťového adaptéru je 10.0.2.0, 10.0.3.0 pro další a tak dále.
 
@@ -133,10 +133,10 @@ Před dalším pokračováním je nutné načíst potřebné moduly:
 
 Ve Virtualboxu:
 
-*   v nabídce _Nastavení_ virtuálního počítače
-*   zvolte _Síť_ z levého menu
-*   u _Připojena k_ zvolte _Síťový most_
-*   v _Název_ vyberte síťové rozhraní připojení k síti, které má být využito pro připojení virtuálního počítače
+*   v nabídce *Nastavení* virtuálního počítače
+*   zvolte *Síť* z levého menu
+*   u *Připojena k* zvolte *Síťový most*
+*   v *Název* vyberte síťové rozhraní připojení k síti, které má být využito pro připojení virtuálního počítače
 
 Spusťte virtuální počítač a nastavte jej jako obvykle; za pomocí DHCp nebo staticky.
 
@@ -150,7 +150,7 @@ Více v [Arch Linux VirtualBox Guest](/index.php/Arch_Linux_VirtualBox_Guest "Ar
 
 #### Windows guests
 
-After installing Windows (XP etc.) on your virtual machine, simply select _Devices → Install Guest Additions..._
+After installing Windows (XP etc.) on your virtual machine, simply select *Devices → Install Guest Additions...*
 
 This will mount the iso image and windows should then automatically launch the guest additions installer. Follow the instructions to the end.
 
@@ -221,7 +221,7 @@ In the settings of the virtual machine go to shared folders tab and add the fold
 *   NOTE: You need to install Guest Additions in order to use this feature.
 
 ```
-In a Linux host, _Devices → Install Guest Additions_
+In a Linux host, *Devices → Install Guest Additions*
 Yes (when asked to download the CD image)
 Mount (when asked to register and mount)
 
@@ -229,7 +229,7 @@ Mount (when asked to register and mount)
 
 In a Linux host, create one or more folders for sharing files, then set the shared folders via the virtualbox menu (guest window).
 
-In a Windows guest, starting with VirtualBox 1.5.0, shared folders are browseable and are therefore visible in Windows Explorer. Open Windows Explorer and look for it under _My Networking Places → Entire Network → VirtualBox Shared Folders_.
+In a Windows guest, starting with VirtualBox 1.5.0, shared folders are browseable and are therefore visible in Windows Explorer. Open Windows Explorer and look for it under *My Networking Places → Entire Network → VirtualBox Shared Folders*.
 
 Launch the windows explorer (run explorer command) to browse the network places -> expand with the (+) sign : entire network → VirtualBox shared folders → **\\Vboxsvr** → then you can now expand all your configured shared folders here, and set up shortcuts for linux folders in the guest filesystem. You can alternatively use the "Add network place wizard", and browse to "VBoxsvr".
 
@@ -242,7 +242,7 @@ net use x: \\VBOXSVR\sharename
 
 While `VBOXSVR` is a fixed name, replace `x:` with the drive letter that you want to use for the share, and sharename with the share name specified with VBoxManage.
 
-In a Windows guest, to improve loading and saving files (e.g. MS Office) by VirtualBox Shared Folders edit _c:\windows\system32\drivers\etc\hosts_ as below:
+In a Windows guest, to improve loading and saving files (e.g. MS Office) by VirtualBox Shared Folders edit *c:\windows\system32\drivers\etc\hosts* as below:
 
 ```
 127.0.0.1 localhost vboxsvr
@@ -288,11 +288,11 @@ In the machine settings, go to the audio tab and select the correct driver accor
 
 ### Setting up the RAM and video memory for the guest
 
-You can change the default values by going to _Settings → General_.
+You can change the default values by going to *Settings → General*.
 
 ### Setting up CD-ROM for the guest
 
-You can change the default values by going to _Settings → CD/DVD-ROM_.
+You can change the default values by going to *Settings → CD/DVD-ROM*.
 
 Check mount CD/DVD drive and select one of the following options.
 
@@ -322,14 +322,14 @@ When the new image has been created, click 'Settings', then CD/DVD-ROM, check 'M
 
 Note that any time your kernel version changes (due to an upgrade, recompile, etc.) you must also rebuild the VirtualBox kernel modules.
 
-Ensure that _kernel26-headers_ is still installed, and run the following command:
+Ensure that *kernel26-headers* is still installed, and run the following command:
 
 ```
 # /etc/rc.d/vboxdrv setup
 
 ```
 
-This will build the VirtualBox kernel modules for the _currently running kernel_; if you have just upgraded your kernel package, reboot before trying to rebuild your kernel modules.
+This will build the VirtualBox kernel modules for the *currently running kernel*; if you have just upgraded your kernel package, reboot before trying to rebuild your kernel modules.
 
 After rebuilding the module, do not forget to load it with
 
@@ -338,7 +338,7 @@ After rebuilding the module, do not forget to load it with
 
 ```
 
-_vboxdrv_ and _vboxnetflt_ should be in the MODULES=() section of your /etc/rc.conf
+*vboxdrv* and *vboxnetflt* should be in the MODULES=() section of your /etc/rc.conf
 
 If you are using an old virtualbox_bin package built from AUR, run:
 
@@ -434,7 +434,7 @@ The `qemu-img` program can be used to convert images from one format to another,
 
 ### Converting from QEMU images
 
-To convert a QEMU image for use with VirtualBox, first convert it to _raw_ format, then use VirtualBox's conversion utility to convert and compact it in its native format.
+To convert a QEMU image for use with VirtualBox, first convert it to *raw* format, then use VirtualBox's conversion utility to convert and compact it in its native format.
 
 ```
   $ qemu-img convert -O raw test.qcow2 test.raw
@@ -473,7 +473,7 @@ If your guest O/S is a Linux distro, and you want to open a new tty text shell o
 Add this line to /etc/rc.local
 
 ```
-exec /bin/su -c 'VBoxManage startvm --type headless <_UUID|NAME_>' _PREFERED_USER_ >/dev/null 2>&1
+exec /bin/su -c 'VBoxManage startvm --type headless <*UUID|NAME*>' *PREFERED_USER* >/dev/null 2>&1
 
 ```
 
@@ -500,7 +500,6 @@ Below is a [daemon](/index.php/Daemon "Daemon") for automating guest administrat
 The configuration file:
 
  `/etc/conf.d/vbox_service` 
-
 ```
 # Guests to manage:
 #VB_GUESTS=('OpenBSD' 'Slackware' 'Windows XP')
@@ -519,7 +518,6 @@ VB_USER='vbox'
 The script:
 
  `/etc/rc.d/vbox_service` 
-
 ```
 #!/bin/bash
 
@@ -590,7 +588,8 @@ restart() {
 }
 
 usage() {
- printf '%s\n' "usage: $0 <start|stop|restart> [name|uuid]..." >&2
+ printf '%s
+' "usage: $0 <start|stop|restart> [name|uuid]..." >&2
 }
 
 if [[ ! $1 =~ ^(start|stop|restart)$ ]]; then
@@ -707,7 +706,7 @@ This requires the PUEL edition for VirtualBox.
 
 An installation guide is available here: [http://code.google.com/p/phpvirtualbox/wiki/Installation](http://code.google.com/p/phpvirtualbox/wiki/Installation)
 
-Arch Linux users should uncomment these 2 extensions in _/etc/php/php.ini_
+Arch Linux users should uncomment these 2 extensions in */etc/php/php.ini*
 
 ```
 extension=json.so

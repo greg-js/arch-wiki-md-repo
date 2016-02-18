@@ -27,7 +27,6 @@ A BIOS update is mandatory so that Arch Linux can boot. Otherwise, the supplied 
 ### Technical Specifications
 
 `
-
 ```
 Processor: Intel Core Duo 1.83 GHz T2400
 Memory: 512 MB 
@@ -38,13 +37,11 @@ Display: 1280x800 @ 60Hz
 Audio: Intel ICH7
 
 ```
-
 `
 
 ### lspci (on model PTA83E)
 
 `
-
 ```
 00:00.0 Host bridge: Intel Corporation Mobile 945GM/PM/GMS, 943/940GML and 945GT Express Memory Controller Hub (rev 03)
 00:02.0 VGA compatible controller: Intel Corporation Mobile 945GM/GMS, 943/940GML Express Integrated Graphics Controller (rev 03)
@@ -67,19 +64,17 @@ Audio: Intel ICH7
 03:0b.3 SD Host controller: Texas Instruments PCIxx12 SDA Standard Compliant SD Host Controller
 
 ```
-
 `
 
 ## Installation
 
-I had everything prepartitioned from a previous linux install and as such I cannont give any insight on this matter. The installs is flawless, using the _Don't panic_ install cd.
+I had everything prepartitioned from a previous linux install and as such I cannont give any insight on this matter. The installs is flawless, using the *Don't panic* install cd.
 
 ## State of the drivers
 
 ### What works
 
 `
-
 ```
 Gigabit ethernet controller: out of the box
 USB controller and ports: out of the box
@@ -90,7 +85,6 @@ Cooler stepping: out of the box
 Display at 1280x800: out of the box
 
 ```
-
 `
 
 ### What needs special hacks for getting to work
@@ -111,7 +105,6 @@ It works out of the box but without scrollzone.
 To enable scrollzone use the ideas specified in [touchpad / section ALPS](/index.php/Touchpad_Synaptics "Touchpad Synaptics")
 
 `
-
 ```
  Section "InputDevice"
        Identifier  "Touchpad"
@@ -140,7 +133,6 @@ To enable scrollzone use the ideas specified in [touchpad / section ALPS](/index
 EndSection
 
 ```
-
 `
 
 Do not enable circular scrolling as it will freaze the pointer in the center of the screen.

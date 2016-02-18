@@ -170,15 +170,14 @@ $ xdg-mime query default inode/directory
 To ensure that directories are opened in the file manager, run the following command:
 
 ```
-$ xdg-mime default _my-file-manager.desktop_ inode/directory
+$ xdg-mime default *my-file-manager.desktop* inode/directory
 
 ```
 
-where `_my-file-manager.desktop_` is the desktop entry for your file manager — `_org.gnome.Nautilus.desktop_` for example.
+where `*my-file-manager.desktop*` is the desktop entry for your file manager — `*org.gnome.Nautilus.desktop*` for example.
 
 **Tip:** If you want the change to be system-wide, run the command above as root or create/edit the following file: `/usr/share/applications/mimeapps.list` 
-
 ```
 [Default Applications]
-inode/directory=_my-file-manager.desktop_
+inode/directory=*my-file-manager.desktop*
 ```

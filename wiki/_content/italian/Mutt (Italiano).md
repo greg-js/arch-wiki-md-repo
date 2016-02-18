@@ -67,7 +67,7 @@ Si noti che Mutt riconosce due posizioni per i propri file di configurazione: `~
 
 ### IMAP
 
-_Impostazioni locali ed esterne_
+*Impostazioni locali ed esterne*
 
 #### Utilizzo del supporto nativo IMAP
 
@@ -175,7 +175,7 @@ Considerare l'utilizzo di applicazioni come [spamassassin](https://www.archlinux
 
 ### POP3
 
-_Recupero e smistamento della posta con applicazioni esterne_
+*Recupero e smistamento della posta con applicazioni esterne*
 
 #### Ricevere la posta
 
@@ -221,7 +221,7 @@ Una `maildir` è una cartella con all'interno le cartelle `cur`, `new` e `tmp`.
 
 ```
 
-Avviate getmail. Se funziona, potete creare un _cronjob_ (un comando mandato in esecuzione da `crontab`) per mandare in esecuzione getmail ogni tot ore/minuti. Date da terminale il comando `crontab -e` per editare _cronjob_, e scrivete:
+Avviate getmail. Se funziona, potete creare un *cronjob* (un comando mandato in esecuzione da `crontab`) per mandare in esecuzione getmail ogni tot ore/minuti. Date da terminale il comando `crontab -e` per editare *cronjob*, e scrivete:
 
 ```
  */10 * * * * /usr/bin/getmail
@@ -318,7 +318,6 @@ set ssl_force_tls = yes
 Modificare file di configurazione di Mutt o crealo se non esistente:
 
  `muttrc` 
-
 ```
 set realname='Disgruntled Kangaroo'
 
@@ -462,7 +461,7 @@ pacman -S w3m
 
 ```
 
-Se _~/.mutt/mailcap_ non esiste, sarà necessario crearlo e aggiungere le seguenti righe:
+Se *~/.mutt/mailcap* non esiste, sarà necessario crearlo e aggiungere le seguenti righe:
 
 ```
 text/html; lynx -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput

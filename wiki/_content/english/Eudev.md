@@ -33,11 +33,11 @@ Alternatively, you may rebuild packages linked to libsystemd using [ABS](/index.
 
 ## Replacing the systemd package
 
-The _systemd_ packages include several components besides the init system and systemd-udev:
+The *systemd* packages include several components besides the init system and systemd-udev:
 
 *   systemd libraries [linked](https://en.wikipedia.org/wiki/Dynamic_linker "wikipedia:Dynamic linker") against software such as [Xorg](/index.php/Xorg "Xorg"). See [#libsystemd](#libsystemd).
-*   _systemd-tmpfiles_ to create temporary files on system startup. Some rc scripts reimplement this, for example [tmpfiles.sh](https://github.com/OpenRC/openrc/blob/master/sh/tmpfiles.sh.in).
-*   _systemd-sysusers_ to allocate system users and groups in [pacman](/index.php/Pacman "Pacman") `.install` files
+*   *systemd-tmpfiles* to create temporary files on system startup. Some rc scripts reimplement this, for example [tmpfiles.sh](https://github.com/OpenRC/openrc/blob/master/sh/tmpfiles.sh.in).
+*   *systemd-sysusers* to allocate system users and groups in [pacman](/index.php/Pacman "Pacman") `.install` files
 
 If you have removed systemd without booting to the new init, a reboot is not possible in regular ways. Enable [SysRq keys](https://en.wikipedia.org/wiki/Magic_SysRq_key "wikipedia:Magic SysRq key"):
 

@@ -9,7 +9,7 @@ Twitch.tv is one of the more popular [RTMP](https://en.wikipedia.org/wiki/Real_T
 
 ## Twitch streaming Guidelines
 
-_From_ [Twitch.tv support](http://help.twitch.tv/customer/portal/articles/1253460-broadcast-requirements):
+*From* [Twitch.tv support](http://help.twitch.tv/customer/portal/articles/1253460-broadcast-requirements):
 
 **Video Requirements**
 

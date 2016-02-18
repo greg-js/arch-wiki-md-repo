@@ -149,7 +149,7 @@ Modifikace následující hodnoty by měla vylepšit vzhled fontu ve Firefoxu. D
 
 ### Záměna fontů
 
-Další způsob jak vylepšit vzhled fontů je vyměnit ho za jiný. Přidejte nebo vytvořte _.fonts.conf_ s následujícím obsahem:
+Další způsob jak vylepšit vzhled fontů je vyměnit ho za jiný. Přidejte nebo vytvořte *.fonts.conf* s následujícím obsahem:
 
 ```
 <match target="pattern">

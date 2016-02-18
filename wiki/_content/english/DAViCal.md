@@ -14,7 +14,7 @@ First of all, you should set up PostgreSQL so it can start up by following [this
 
 DAViCal requires two independent accounts to be set up, one for accessing the database from the web application, which will be limited in power, and another that will be used for administrating the DAViCal related tables.
 
-In order to do so, you will need to edit _/var/lib/postgres/data/pg_hba.conf_
+In order to do so, you will need to edit */var/lib/postgres/data/pg_hba.conf*
 
 Add the following lines:
 

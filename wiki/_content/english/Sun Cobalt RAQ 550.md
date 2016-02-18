@@ -67,7 +67,7 @@ Keep these things in mind, they can be confusing:
 *   Another computer
 *   One crazy admin
 
-Firmware requirements: I haven't tested this with the original firmware that normally ships with the RAQ 550, because mine already came with updated (unofficial) firmware. Updating the firmware is beyond the scope of this document. **BIG FAT WARNING:** _If the firmware update process goes wrong and you reboot your system, you just have turned your RAQ 550 into a **piece of junk**_. The only way to fix it would be to desolder the flash chip and have it flashed again with correct firmware. **If your firmware works for you, I recommend not touching it**.
+Firmware requirements: I haven't tested this with the original firmware that normally ships with the RAQ 550, because mine already came with updated (unofficial) firmware. Updating the firmware is beyond the scope of this document. **BIG FAT WARNING:** *If the firmware update process goes wrong and you reboot your system, you just have turned your RAQ 550 into a **piece of junk***. The only way to fix it would be to desolder the flash chip and have it flashed again with correct firmware. **If your firmware works for you, I recommend not touching it**.
 
 ## Setting up your serial port
 
@@ -106,7 +106,7 @@ Select your method of installation (I always use FTP installs) and proceed with 
 
 #### Partitioning
 
-When it's time to partition your harddrive, the partition where the kernel resides _must be supported by the firmware_ (see [#How the RAQ 550 boots](#How_the_RAQ_550_boots)). Unless you're running modified firmware, the built in firmware only supports ext2 (ext3 is backwards compatible). The kernel must also be located on the first partition.
+When it's time to partition your harddrive, the partition where the kernel resides *must be supported by the firmware* (see [#How the RAQ 550 boots](#How_the_RAQ_550_boots)). Unless you're running modified firmware, the built in firmware only supports ext2 (ext3 is backwards compatible). The kernel must also be located on the first partition.
 
 *   Load kernel must be located on the first partition
 *   Filesystem of the first partition must be supported by the firmware
@@ -157,7 +157,7 @@ s0:0123456:respawn:/sbin/agetty -8 -L 115200 ttyS0 vt100
 
 That will spawn agetty vt100 on the first serial port with a linespeed of 115200 bits/s and assume the line is 8 bit clean. You can comment out the virtual consoles (the vc/n) ones if you do not intend on using them.
 
-_Notice that you won't be able to log in as root on the serial_. In order to allow root to login from the serial add that serial port to /etc/securetty
+*Notice that you won't be able to log in as root on the serial*. In order to allow root to login from the serial add that serial port to /etc/securetty
 
 It's useful to already setup sshd. Don't forget to set a password for root (sshd denies passwordless logins by default), and do not forget about hosts.deny.
 

@@ -43,7 +43,7 @@ While one can simply set their prompt to a plain string, there are a variety of 
 
 ### Bash escape sequences
 
-When printing the prompt string, Bash looks for certain backslash-escaped characters and will expand them into special strings. For example, `\u` is expanded into the current username and `\A` is expanded to the current time. So a PS1 of `'\A \u $ '` would be printed like `17:35 _username_ $` .
+When printing the prompt string, Bash looks for certain backslash-escaped characters and will expand them into special strings. For example, `\u` is expanded into the current username and `\A` is expanded to the current time. So a PS1 of `'\A \u $ '` would be printed like `17:35 *username* $` .
 
 Check the "PROMPTING" section of the Bash man page for a complete list of escape sequences.
 
@@ -70,7 +70,6 @@ prints the escape sequence to set the foreground color to green.
 To practically incorporate these capabilities into your prompt, you can use Bash's command substitution and string interpolation. For example
 
  `~/.bashrc` 
-
 ```
 GREEN="\[$(tput setaf 2)\]"
 RESET="\[$(tput sgr0)\]"
@@ -101,7 +100,6 @@ PEACH="$ESC[48;5;209m"
 If you want to add the output of some command to your prompt, you might be tempted to use command substitution. For example, to add the amount of free memory to your prompt you might try:
 
  `export PS1="$(awk '/MemFree/{print $2}' /proc/meminfo) prompt > "` 
-
 ```
 53718 prompt >
 53718 prompt >
@@ -263,7 +261,7 @@ D: >
 It is possible to move the cursor around the screen inside of PS1 to make different parts of the prompt appear in different locations. However, to ensure that Bash positions the cursor and output in the right position, you must move the cursor back to the original position after you are done printing elsewhere. This can be done using the tput capabilities `sc` and `rc` to save and restore the cursor position. The general pattern for a prompt that moves the cursor is
 
 ```
-export PS1="\[$(tput sc; _cursor-moving code_) _positioned prompt stuff_ $(tput rc)\] _normal prompt stuff_"
+export PS1="\[$(tput sc; *cursor-moving code*) *positioned prompt stuff* $(tput rc)\] *normal prompt stuff*"
 
 ```
 
@@ -297,10 +295,10 @@ $ tput cup $((LINES - 11)) $((COLUMNS - 6))
 
 ### Customizing the terminal window title
 
-The terminal window title can be customized in much the same way as the prompt: by printing escape sequences in the shell. Thus it is common for users to include window title customizations in their prompt. Although this is technically a feature of xterm, many modern terminals support it. The escape sequence to use is `**ESC**]2;_new title_**BEL**` where `**ESC**` and `**BEL**` are the escape and bell characters. Using [Bash escape sequences](#Bash_escape_sequences), changing the title in your prompt looks like
+The terminal window title can be customized in much the same way as the prompt: by printing escape sequences in the shell. Thus it is common for users to include window title customizations in their prompt. Although this is technically a feature of xterm, many modern terminals support it. The escape sequence to use is `**ESC**]2;*new title***BEL**` where `**ESC**` and `**BEL**` are the escape and bell characters. Using [Bash escape sequences](#Bash_escape_sequences), changing the title in your prompt looks like
 
 ```
-export PS1='\[\e]2;_new title_\a\]prompt > '
+export PS1='\[\e]2;*new title*\a\]prompt > '
 
 ```
 

@@ -23,8 +23,7 @@ To enable ACL, the filesystem must be mounted with the `acl` option. You can use
 
 There is a possibility that the `acl` option is already active as default mount option on the filesystem. [Btrfs](/index.php/Btrfs "Btrfs") does and possibly ext filesystems do too. Use the following command to check ext* formatted partitions for the option:
 
- `# tune2fs -l /dev/sd_XY_ | grep "Default mount options:"` 
-
+ `# tune2fs -l /dev/sd*XY* | grep "Default mount options:"` 
 ```
 Default mount options:    user_xattr acl
 
@@ -32,10 +31,10 @@ Default mount options:    user_xattr acl
 
 Also check that the default mount option is not overridden, in such case you will see `noacl` in `/proc/mounts` in the relevant line.
 
-You can set the default mount options of a filesystem using the `tune2fs -o _option_ _partition_` command, for example:
+You can set the default mount options of a filesystem using the `tune2fs -o *option* *partition*` command, for example:
 
 ```
-# tune2fs -o acl /dev/sd_XY_
+# tune2fs -o acl /dev/sd*XY*
 
 ```
 
@@ -111,7 +110,6 @@ Set all permissions for user johny to file named "abc":
 Check permissions
 
  `# getfacl abc` 
-
 ```
 # file: abc
 # owner: someone
@@ -134,7 +132,6 @@ Change permissions for user johny:
 Check permissions
 
  `# getfacl abc` 
-
 ```
 # file: abc
 # owner: someone
@@ -157,7 +154,6 @@ Remove all extended ACL entries:
 Check permissions
 
  `# getfacl abc` 
-
 ```
 # file: abc
 # owner: someone
@@ -173,14 +169,11 @@ other::r--
 You will notice that there is an ACL for a given file because it will exhibit a `**+**` (plus sign) after its Unix permissions in the output of `ls -l`.
 
  `$ ls -l /dev/audio` 
-
 ```
 crw-rw----+ 1 root audio 14, 4 nov.   9 12:49 /dev/audio
 
 ```
-
  `$ getfacl /dev/audio` 
-
 ```
 getfacl: Removing leading '/' from absolute path names
 # file: dev/audio
@@ -207,7 +200,7 @@ The first step is granting execution permission to `webserver` so it can access 
 
 ```
 
-_Remember_: Execution permissions to a directory are necessary for a process to list the directory's content.
+*Remember*: Execution permissions to a directory are necessary for a process to list the directory's content.
 
 Since `webserver` is now able to access files in `/home/geoffrey`, `other`s do no longer need access:
 

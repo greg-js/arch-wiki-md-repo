@@ -1,4 +1,4 @@
-[Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser) "wikipedia:Chromium (web browser)") is an open-source graphical web browser from Google, based on the [Blink](https://en.wikipedia.org/wiki/Blink_(layout_engine) "wikipedia:Blink (layout engine)") rendering engine.
+[Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser) is an open-source graphical web browser from Google, based on the [Blink](https://en.wikipedia.org/wiki/Blink_(layout_engine) rendering engine.
 
 ## Contents
 
@@ -51,7 +51,7 @@ This behaviour is related to [xdg-open](/index.php/Xdg-open "Xdg-open"): see [xd
 
 **Note:** Chromium no longer supports the Netscape plugin API (NPAPI), so [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) from the repositories cannot be used.
 
-_Pepper Flash_ is the Flash Player plugin, using the new Pepper plugin API. It is co-developed by Google and Adobe, and distributed bundled with Google Chrome.
+*Pepper Flash* is the Flash Player plugin, using the new Pepper plugin API. It is co-developed by Google and Adobe, and distributed bundled with Google Chrome.
 
 To install Pepper Flash for Chromium, install the [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) package. If you want the development version, install the [chromium-pepper-flash-dev](https://aur.archlinux.org/packages/chromium-pepper-flash-dev/) package instead.
 
@@ -67,9 +67,9 @@ Make sure the plugin is enabled in `chrome://plugins`.
 
 ### PDF viewer plugin
 
-Chromium and Google Chrome are bundled with the _Chromium PDF Viewer_ plugin, so installing a third-party plugin is not required.
+Chromium and Google Chrome are bundled with the *Chromium PDF Viewer* plugin, so installing a third-party plugin is not required.
 
-If you prefer another implementation, disable the _Chromium PDF Viewer_ plugin in `chrome://plugins`, and install one of the following alternatives:
+If you prefer another implementation, disable the *Chromium PDF Viewer* plugin in `chrome://plugins`, and install one of the following alternatives:
 
 #### PDF.js
 
@@ -101,13 +101,13 @@ To fix the font rendering in some PDFs one has to install the [ttf-liberation](h
 
 **Warning:** Disabling the rendering list may cause unstable behaviour, including crashes of the host. See the bug reports in `chrome://gpu`.
 
-First, make sure you have all the required packages as explained in [VDPAU](/index.php/VDPAU "VDPAU"). Then, to force 3D rendering, _enable_ the flag "Override software rendering list" in `chrome://flags`. Check if it is working in `chrome://gpu`. This may also alleviate tearing issues with the [radeon](/index.php/Radeon "Radeon") driver.
+First, make sure you have all the required packages as explained in [VDPAU](/index.php/VDPAU "VDPAU"). Then, to force 3D rendering, *enable* the flag "Override software rendering list" in `chrome://flags`. Check if it is working in `chrome://gpu`. This may also alleviate tearing issues with the [radeon](/index.php/Radeon "Radeon") driver.
 
 ### WebGL
 
 **Warning:** [Catalyst](/index.php/Catalyst "Catalyst") does not support the `GL_ARB_robustness` extension. When using this driver, it is possible that a malicious site could use WebGL to perform a DoS attack on your graphic card.
 
-Chromium will sometimes disable WebGL with certain graphics card configurations. To remedy this, enter `chrome://flags` into the URL bar and _disable_ the _Disable WebGL_ flag. Alternatively, pass the command-line flag `--enable-webgl` to Chromium in the terminal.
+Chromium will sometimes disable WebGL with certain graphics card configurations. To remedy this, enter `chrome://flags` into the URL bar and *disable* the *Disable WebGL* flag. Alternatively, pass the command-line flag `--enable-webgl` to Chromium in the terminal.
 
 There is also the possibility that your graphics card has been blacklisted by Chromium. See [#Force 3D acceleration](#Force_3D_acceleration).
 

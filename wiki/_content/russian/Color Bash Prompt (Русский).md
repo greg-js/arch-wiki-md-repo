@@ -2,7 +2,7 @@
 
 Существуют различные возможности настройки строки приглашения [Bash](/index.php/Bash "Bash")'а (PS1), которые могут сделать работу в командной строке комфортней и продуктивней. Например, можно добавить дополнительную информацию или цвет, чтобы приглашение ввода можно было легко обнаружить среди остального текста.
 
-В этой статье рассказывается как _настроить персональное приглашение для обычного пользователя_.
+В этой статье рассказывается как *настроить персональное приглашение для обычного пользователя*.
 
 ## Contents
 
@@ -43,12 +43,10 @@ $ source ~/.bashrc
 
 ### Обычный пользователь
 
-Зелёное приглашение для _обычных пользователей_:
+Зелёное приглашение для *обычных пользователей*:
 
 [chiri@zetsubou ~]$ _
-
  `~/.bashrc` 
-
 ```
 #PS1='[\u@\h \W]\$ '  # Default
 PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
@@ -56,12 +54,10 @@ PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
 
 ### Root
 
-Красное приглашение для _root_ (скопируйте из `/etc/skel/`, если ещё не сделали этого):
+Красное приглашение для *root* (скопируйте из `/etc/skel/`, если ещё не сделали этого):
 
 [root@zetsubou ~]# _
-
  `/root/.bashrc` 
-
 ```
 #PS1='[\u@\h \W]\$ '  # Default
 PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '
@@ -71,17 +67,16 @@ PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '
 
 ### Обычный пользователь
 
-Зелёное с синим приглашение для _обычных пользователей_:
+Зелёное с синим приглашение для *обычных пользователей*:
 
 chiri ~/docs $ echo "sample output text"
 sample output text
 chiri ~/docs $ _
-
  `PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'` 
 
 Этот пример предоставляет очень приятное цветное приглашение и тему консоли с ярко-белым цветом текста.
 
-Вышеописанная строка содержит управляющие последовательности для цветового набора (начало окраски: `\[\e[_color_\]`, конец окраски: `\[\e[m\]`) и информационные заполнители:
+Вышеописанная строка содержит управляющие последовательности для цветового набора (начало окраски: `\[\e[*color*\]`, конец окраски: `\[\e[m\]`) и информационные заполнители:
 
 *   **\u** - Имя пользователя. Исходное приглашение также содержит **\h**, который печатает имя хоста.
 *   **\w** - Текущий абсолютный путь. Используйте **\W** для текущего относительного пути.
@@ -92,12 +87,11 @@ chiri ~/docs $ _
 
 ### Root
 
-Красное с синим приглашение для _root_:
+Красное с синим приглашение для *root*:
 
 root ~/docs # echo "sample output text"
 sample output text
 root ~/docs # _
-
  `PS1='\[\e[0;31m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[0;31m\]\$ \[\e[m\]\[\e[0;32m\]'` 
 
 Этот пример предоставляет красное выделение и зелёный цвет текста в консоли.
@@ -106,7 +100,7 @@ root ~/docs # _
 
 ### Статус нагрузки/памяти для 256colors
 
-Это даже не предел. Вместо использования `sed` для парсинга загрузки памяти и нагрузки (используя опцию `-u` для non-buffering) и встроенной команды _history_ для сохранения вашей истории в `HISTFILE` после каждой команды, что может быть очень полезно, если у вас проблемы с вылетами оболочек или дочерних оболочек, этот пример по сути заставляет BASH печатать переменные, которые ему уже известны, таким обоазом делая его экстремально быстрым по сравнению с приглашениями, использующими не-встроенные команды.
+Это даже не предел. Вместо использования `sed` для парсинга загрузки памяти и нагрузки (используя опцию `-u` для non-buffering) и встроенной команды *history* для сохранения вашей истории в `HISTFILE` после каждой команды, что может быть очень полезно, если у вас проблемы с вылетами оболочек или дочерних оболочек, этот пример по сути заставляет BASH печатать переменные, которые ему уже известны, таким обоазом делая его экстремально быстрым по сравнению с приглашениями, использующими не-встроенные команды.
 
 Это приглашение из статьи [BASH Power Prompt](http://www.askapache.com/linux-unix/bash-power-prompt.html) с AskApache.com, в которой разбираются подробности. Это особенно полезно для тех, кто хочет понять 256 цветные терминалы, ncurses, termcap и terminfo.
 
@@ -121,7 +115,9 @@ root ~/docs # _
 
 ```
 PROMPT_COMMAND='history -a;echo -en "\033[m\033[38;5;2m"$(( $(sed -nu "s/MemFree:[\t ]\+\([0-9]\+\) kB/\1/p" /proc/meminfo)/1024))"\033[38;5;22m/"$(($(sed -nu "s/MemTotal:[\t ]\+\([0-9]\+\) kB/\1/Ip" /proc/meminfo)/1024 ))MB"\t\033[m\033[38;5;55m$(< /proc/loadavg)\033[m"'
-PS1='\[\e[m\n\e[1;30m\][$$:$PPID \j:\!\[\e[1;30m\]]\[\e[0;36m\] \T \d \[\e[1;30m\][\[\e[1;34m\]\u@\H\[\e[1;30m\]:\[\e[0;37m\]${SSH_TTY} \[\e[0;32m\]+${SHLVL}\[\e[1;30m\]] \[\e[1;37m\]\w\[\e[0;37m\] \n($SHLVL:\!)\$ '
+PS1='\[\e[m
+\e[1;30m\][$$:$PPID \j:\!\[\e[1;30m\]]\[\e[0;36m\] \T \d \[\e[1;30m\][\[\e[1;34m\]\u@\H\[\e[1;30m\]:\[\e[0;37m\]${SSH_TTY} \[\e[0;32m\]+${SHLVL}\[\e[1;30m\]] \[\e[1;37m\]\w\[\e[0;37m\] 
+($SHLVL:\!)\$ '
 ```
 
 ### Список цветов для приглашений и Bash
@@ -253,7 +249,6 @@ $ echo -e "${undblu}test"
 $ echo -e "${bakblu}test"
 **test**
 $ _
-
  `PS1="\[$txtblu\]foo\[$txtred\] bar\[$txtrst\] baz : "` 
 
 Двойные кавычки позволяют разрешить переменную `$color`, а управляющие `\[ \]` вокруг них позволяют не учитывать их при расчёте количества символов, поэтому позиция курсора будет верной.
@@ -266,7 +261,7 @@ $ _
 
 ```
 Bash allows these prompt strings to be customized by inserting a
-number of _backslash-escaped special characters_ that are
+number of *backslash-escaped special characters* that are
 decoded as follows:
 
 	\a		an ASCII bell character (07)
@@ -280,7 +275,8 @@ decoded as follows:
 	\H		the hostname
 	\j		the number of jobs currently managed by the shell
 	\l		the basename of the shell's terminal device name
-	\n		newline
+	
+		newline
 	\r		carriage return
 	\s		the name of the shell, the basename of $0 (the portion following
 			  the final slash)
@@ -297,7 +293,8 @@ decoded as follows:
 	\!		the history number of this command
 	\#		the command number of this command
 	\$		if the effective UID is 0, a #, otherwise a $
-	\nnn		the character corresponding to the octal number nnn
+	
+nn		the character corresponding to the octal number nnn
 	\\		a backslash
 	\[		begin a sequence of non-printing characters, which could be used
 			  to embed a terminal control sequence into the prompt
@@ -333,7 +330,7 @@ decoded as follows:
 
  `PS1=">\[\033[s\]\[\033[1;\$((COLUMNS-5))f\]\$(date +%H:%M)\[\033[u\]"` 
 
-Переменная окружения _COLUMNS_ содержит число столбцов в терминале. В примере выше из этого значения отнимается _5_, чтобы выровнять 5-символьный вывод команды `date` по правому краю.
+Переменная окружения *COLUMNS* содержит число столбцов в терминале. В примере выше из этого значения отнимается *5*, чтобы выровнять 5-символьный вывод команды `date` по правому краю.
 
 ### Отображение кода возврата
 
@@ -348,7 +345,7 @@ decoded as follows:
 PS1="\$? \$(if [[ \$? == 0 ]]; then echo \"\[\033[0;32m\];)\"; else echo \"\[\033[0;31m\];(\"; fi)\[\033[00m\] : "
 ```
 
-_Ноль_ - зелёный смайлик, а _не ноль_ - красный. Таким образом, ваше приглашение будет со смайликом, если последняя операция была успешной.
+*Ноль* - зелёный смайлик, а *не ноль* - красный. Таким образом, ваше приглашение будет со смайликом, если последняя операция была успешной.
 
 Но вы возможно также захотите использовать имя пользователя и хоста, например так:
 
@@ -361,7 +358,7 @@ _Ноль_ - зелёный смайлик, а _не ноль_ - красный.
 PS1="\[\033[01;37m\]\$? \$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\];)\"; else echo \"\[\033[01;31m\];(\"; fi) $(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;32m\]\u@\h'; fi)\[\033[01;34m\] \w \$\[\033[00m\] "
 ```
 
-Или, если вы хотите создать ваш промпт с использованием юникод-символа ✓ для статуса _ноль_ и юникод-символ ✗ для статуса _не ноль_:
+Или, если вы хотите создать ваш промпт с использованием юникод-символа ✓ для статуса *ноль* и юникод-символ ✗ для статуса *не ноль*:
 
 0 ✓ andy@alba ~ $ true
 0 ✓ andy@alba ~ $ false
@@ -410,7 +407,7 @@ set_prompt () {
 PROMPT_COMMAND='set_prompt'
 ```
 
-Вот пример, который показывает статус ошибки только в случае _не нулевого_ статуса:
+Вот пример, который показывает статус ошибки только в случае *не нулевого* статуса:
 
 ```
 PROMPT_COMMAND='es=$?; [[ $es -eq 0 ]] && unset error || error=$(echo -e "\e[1;41m $es \e[40m")'
@@ -430,7 +427,6 @@ PS1="${error} ${PS1}"
 Для коричневого приглашения [Fortune](/index.php/Fortune "Fortune") добавьте:
 
  `~/.bashrc` 
-
 ```
 [[ "$PS1" ]] && echo -e "\e[00;33m$(/usr/bin/fortune)\e[00m"
 
@@ -438,7 +434,7 @@ PS1="${error} ${PS1}"
 
 ### Раскрашенные последние новости Arch при входе
 
-Чтобы читать 10 latestпоследних пунктов новостей с [Arch official website](https://www.archlinux.org/news/), пользователь [grufo](https://aur.archlinux.org/account.php?Action=AccountInfo&ID=33208) [написал](https://bbs.archlinux.org/viewtopic.php?id=146850) маленький и цветной скрипт для извлечения RSS (_scrollable_):
+Чтобы читать 10 latestпоследних пунктов новостей с [Arch official website](https://www.archlinux.org/news/), пользователь [grufo](https://aur.archlinux.org/account.php?Action=AccountInfo&ID=33208) [написал](https://bbs.archlinux.org/viewtopic.php?id=146850) маленький и цветной скрипт для извлечения RSS (*scrollable*):
 
    :: Arch Linux: Recent news updates ::
  [ https://www.archlinux.org/news/ ]
@@ -580,33 +576,44 @@ Note that all these changes only affect the live system and not the base system 
  Pierre Schmitz Sat, 04 Aug 2012 17:24:30 +0000 tag:www.archlinux.org,2012-08-04:/news/install-media-20120804-available/
 
 andy@alba _
-
  `~/.bashrc` 
-
 ```
 # Arch latest news
 if [ "$PS1" ] && [[ $(ping -c1 www.google.com 2>&-) ]]; then
 	# The characters "£, §" are used as metacharacters. They should not be encountered in a feed...
-	echo -e "$(echo $(curl --silent https://www.archlinux.org/feeds/news/ | sed -e ':a;N;$!ba;s/\n/ /g') | \
+	echo -e "$(echo $(curl --silent https://www.archlinux.org/feeds/news/ | sed -e ':a;N;$!ba;s/
+/ /g') | \
 		sed -e 's/&amp;/\&/g
 		s/&lt;\|&#60;/</g
 		s/&gt;\|&#62;/>/g
 		s/<\/a>/£/g
 		s/href\=\"/§/g
-		s/<title>/\\n\\n\\n   :: \\e[01;31m/g; s/<\/title>/\\e[00m ::\\n/g
+		s/<title>/\
+\
+\
+   :: \\e[01;31m/g; s/<\/title>/\\e[00m ::\
+/g
 		s/<link>/ [ \\e[01;36m/g; s/<\/link>/\\e[00m ]/g
-		s/<description>/\\n\\n\\e[00;37m/g; s/<\/description>/\\e[00m\\n\\n/g
-		s/<p\( [^>]*\)\?>\|<br\s*\/\?>/\n/g
+		s/<description>/\
+\
+\\e[00;37m/g; s/<\/description>/\\e[00m\
+\
+/g
+		s/<p\( [^>]*\)\?>\|<br\s*\/\?>/
+/g
 		s/<b\( [^>]*\)\?>\|<strong\( [^>]*\)\?>/\\e[01;30m/g; s/<\/b>\|<\/strong>/\\e[00;37m/g
 		s/<i\( [^>]*\)\?>\|<em\( [^>]*\)\?>/\\e[41;37m/g; s/<\/i>\|<\/em>/\\e[00;37m/g
 		s/<u\( [^>]*\)\?>/\\e[4;37m/g; s/<\/u>/\\e[00;37m/g
 		s/<code\( [^>]*\)\?>/\\e[00m/g; s/<\/code>/\\e[00;37m/g
 		s/<a[^§|t]*§\([^\"]*\)\"[^>]*>\([^£]*\)[^£]*£/\\e[01;31m\2\\e[00;37m \\e[01;34m[\\e[00;37m \\e[04m\1\\e[00;37m\\e[01;34m ]\\e[00;37m/g
-		s/<li\( [^>]*\)\?>/\n \\e[01;34m*\\e[00;37m /g
+		s/<li\( [^>]*\)\?>/
+ \\e[01;34m*\\e[00;37m /g
 		s/<!\[CDATA\[\|\]\]>//g
 		s/\|>\s*<//g
 		s/ *<[^>]\+> */ /g
-		s/[<>£§]//g')\n\n";
+		s/[<>£§]//g')
+
+";
 fi
 ```
 
@@ -616,26 +623,39 @@ fi
 # Arch latest news
 if [ "$PS1" ] && [[ $(ping -c1 www.google.com 2>&-) ]]; then
 	# The characters "£, §" are used as metacharacters. They should not be encountered in a feed...
-	echo -e "$(echo $(curl --silent https://www.archlinux.org/feeds/news/ | awk ' NR == 1 {while ($0 !~ /<\/item>/) {print;getline} sub(/<\/item>.*/,"</item>") ;print}' | sed -e ':a;N;$!ba;s/\n/ /g') | \
+	echo -e "$(echo $(curl --silent https://www.archlinux.org/feeds/news/ | awk ' NR == 1 {while ($0 !~ /<\/item>/) {print;getline} sub(/<\/item>.*/,"</item>") ;print}' | sed -e ':a;N;$!ba;s/
+/ /g') | \
 		sed -e 's/&amp;/\&/g
 		s/&lt;\|&#60;/</g
 		s/&gt;\|&#62;/>/g
 		s/<\/a>/£/g
 		s/href\=\"/§/g
-		s/<title>/\\n\\n\\n   :: \\e[01;31m/g; s/<\/title>/\\e[00m ::\\n/g
+		s/<title>/\
+\
+\
+   :: \\e[01;31m/g; s/<\/title>/\\e[00m ::\
+/g
 		s/<link>/ [ \\e[01;36m/g; s/<\/link>/\\e[00m ]/g
-		s/<description>/\\n\\n\\e[00;37m/g; s/<\/description>/\\e[00m\\n\\n/g
-		s/<p\( [^>]*\)\?>\|<br\s*\/\?>/\n/g
+		s/<description>/\
+\
+\\e[00;37m/g; s/<\/description>/\\e[00m\
+\
+/g
+		s/<p\( [^>]*\)\?>\|<br\s*\/\?>/
+/g
 		s/<b\( [^>]*\)\?>\|<strong\( [^>]*\)\?>/\\e[01;30m/g; s/<\/b>\|<\/strong>/\\e[00;37m/g
 		s/<i\( [^>]*\)\?>\|<em\( [^>]*\)\?>/\\e[41;37m/g; s/<\/i>\|<\/em>/\\e[00;37m/g
 		s/<u\( [^>]*\)\?>/\\e[4;37m/g; s/<\/u>/\\e[00;37m/g
 		s/<code\( [^>]*\)\?>/\\e[00m/g; s/<\/code>/\\e[00;37m/g
 		s/<a[^§|t]*§\([^\"]*\)\"[^>]*>\([^£]*\)[^£]*£/\\e[01;31m\2\\e[00;37m \\e[01;34m[\\e[00;37m \\e[04m\1\\e[00;37m\\e[01;34m ]\\e[00;37m/g
-		s/<li\( [^>]*\)\?>/\n \\e[01;34m*\\e[00;37m /g
+		s/<li\( [^>]*\)\?>/
+ \\e[01;34m*\\e[00;37m /g
 		s/<!\[CDATA\[\|\]\]>//g
 		s/\|>\s*<//g
 		s/ *<[^>]\+> */ /g
-		s/[<>£§]//g')\n\n";
+		s/[<>£§]//g')
+
+";
 fi
 ```
 
@@ -644,15 +664,19 @@ fi
 Страница по адресу [http://ascii-table.com/ansi-escape-sequences.php](http://ascii-table.com/ansi-escape-sequences.php) описывает некоторые доступные цветовые последовательности. Следующая Bash функция отображает таблицу с готовыми к копированию управляющими кодами.
 
  `~/.bashrc` 
-
 ```
 colors() {
 	local fgc bgc vals seq0
 
-	printf "Color escapes are %s\n" '\e[${value};...;${value}m'
-	printf "Values 30..37 are \e[33mforeground colors\e[m\n"
-	printf "Values 40..47 are \e[43mbackground colors\e[m\n"
-	printf "Value  1 gives a  \e[1mbold-faced look\e[m\n\n"
+	printf "Color escapes are %s
+" '\e[${value};...;${value}m'
+	printf "Values 30..37 are \e[33mforeground colors\e[m
+"
+	printf "Values 40..47 are \e[43mbackground colors\e[m
+"
+	printf "Value  1 gives a  \e[1mbold-faced look\e[m
+
+"
 
 	# foreground colors
 	for fgc in {30..37}; do
@@ -680,7 +704,6 @@ colors() {
 Укажите `/usr/share/git/completion/git-prompt.sh` вашему шеллу:
 
  `~/.bashrc` 
-
 ```
 source /usr/share/git/completion/git-prompt.sh
 
@@ -693,7 +716,6 @@ source /usr/share/git/completion/git-prompt.sh
 Добавьте в свой `~/.bashrc`:
 
  `~/.bashrc` 
-
 ```
 # Colorize prompts
 for i in {1..4}; do
@@ -708,7 +730,7 @@ unset i
 ## Смотрите также
 
 *   Community examples and screenshots in the Forum thread: [What's your PS1?](https://bbs.archlinux.org/viewtopic.php?id=50885)
-*   The original _not modified_ Gentoo's `/etc/bash.bashrc` file can be found [here](http://www.jeremysands.com/archlinux/gentoo-bashrc-2008.0). See also the [gentoo-bashrc](https://aur.archlinux.org/packages/gentoo-bashrc/) package from [AUR](/index.php/AUR "AUR").
+*   The original *not modified* Gentoo's `/etc/bash.bashrc` file can be found [here](http://www.jeremysands.com/archlinux/gentoo-bashrc-2008.0). See also the [gentoo-bashrc](https://aur.archlinux.org/packages/gentoo-bashrc/) package from [AUR](/index.php/AUR "AUR").
 *   tput(1)
     *   [tput reference on bash-hackers.org](http://wiki.bash-hackers.org/scripting/terminalcodes)
     *   [Colours and Cursor Movement With tput](http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x405.html)

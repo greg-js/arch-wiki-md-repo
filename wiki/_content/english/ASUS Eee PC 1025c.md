@@ -26,7 +26,6 @@ For BIOS legacy boot, create a [USB stick with dd](/index.php/USB_flash_installa
 In case of missing voices, play all sounds in mono format. Using [ALSA](/index.php/ALSA "ALSA") add to `.asoundrc`:
 
  `~/.asoundrc` 
-
 ```
 pcm.card0 {
   type hw
@@ -78,7 +77,7 @@ To get the master device name. The output of command will look like this:
 
 ```
 
-Put device name (in my case _alsa_output.pci-0000_00_1b.0.analog-stereo_) in field 'master' of the command below:
+Put device name (in my case *alsa_output.pci-0000_00_1b.0.analog-stereo*) in field 'master' of the command below:
 
 ```
  $ pacmd load-module module-remap-sink sink_name=mono master=alsa_output.pci-0000_00_1b.0.analog-stereo channels=2 channel_map=front-right,mono
@@ -108,7 +107,6 @@ You have to change the [video driver](/index.php/Poulsbo "Poulsbo"). If the HDMI
 You need to know the number of your sound card and the the HDMI device number:
 
  `aplay -l` 
-
 ```
 Karte 0: Intel [HDA Intel], Gerät 0: ALC269VB Analog [ALC269VB Analog]
   Sub-Geräte: 1/1
@@ -140,7 +138,6 @@ See [Advanced Linux Sound Architecture#HDMI Output Does Not Work](/index.php/Adv
 The audio device can also be configured with `/etc/asound.conf` So you can create a script that links asound.conf to a configuration depending on the hdmi cable plugged in or not: (for some reason my HDMI device is listed as DVI)
 
  `hdmi_switched.sh` 
-
 ```
 #! /bin/bash
 hdmi_status="$(cat /sys/class/drm/card0-DVI-D-1/status)"
@@ -152,7 +149,6 @@ alsactl restore
 Configuration files:
 
  `hdmi_connected` 
-
 ```
 pcm.!default {
       type hw
@@ -161,9 +157,7 @@ pcm.!default {
 }
 
 ```
-
  `hdmi_disconnected` 
-
 ```
 pcm.!default {
       type hw

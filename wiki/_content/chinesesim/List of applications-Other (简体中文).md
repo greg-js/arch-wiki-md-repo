@@ -306,7 +306,7 @@ See the main article: [Display manager#List of display managers](/index.php/Disp
 
 	[http://sourceforge.net/projects/gmrun/](http://sourceforge.net/projects/gmrun/) || [gmrun](https://www.archlinux.org/packages/?name=gmrun)
 
-*   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do "wikipedia:GNOME Do")** — 灵感源自有不少插件的 [Quicksilver](https://en.wikipedia.org/wiki/Quicksilver_(software) "wikipedia:Quicksilver (software)") 初衷在于为 GNOME 打造快速启动。
+*   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do 初衷在于为 GNOME 打造快速启动。
 
 	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://www.archlinux.org/packages/?name=gnome-do)
 
@@ -330,11 +330,11 @@ See the main article: [Display manager#List of display managers](/index.php/Disp
 
 	[https://launchpad.net/synapse-project](https://launchpad.net/synapse-project) || [synapse](https://www.archlinux.org/packages/?name=synapse)
 
-*   **xboomx** — 支持智能排序的 _dmenu_, 由 Python 编写而成。
+*   **xboomx** — 支持智能排序的 *dmenu*, 由 Python 编写而成。
 
 	[https://bitbucket.org/dehun/xboomx](https://bitbucket.org/dehun/xboomx) || [xboomx](https://aur.archlinux.org/packages/xboomx/)
 
-*   **Yeganesh** — 支持智能排序的 _dmenu_, 由 Haskell 编写而成。
+*   **Yeganesh** — 支持智能排序的 *dmenu*, 由 Haskell 编写而成。
 
 	[http://dmwit.com/yeganesh](http://dmwit.com/yeganesh) || [yeganesh](https://aur.archlinux.org/packages/yeganesh/)
 
@@ -390,7 +390,7 @@ A few simple shutdown managers are available:
 
 	[http://ledger-cli.org/](http://ledger-cli.org/) || [ledger](https://aur.archlinux.org/packages/ledger/)
 
-*   **Moneychanger** — An intuitive QT/C++ system tray client for _Open-Transactions_
+*   **Moneychanger** — An intuitive QT/C++ system tray client for *Open-Transactions*
 
 	[https://github.com/Open-Transactions/Moneychanger](https://github.com/Open-Transactions/Moneychanger) || [moneychanger-git](https://aur.archlinux.org/packages/moneychanger-git/)
 

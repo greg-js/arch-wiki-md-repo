@@ -88,7 +88,7 @@ pacman -A ~/pkgbuild/vmware-player/vmware-player-1.0.3_34682-1.pkg.tar.gz
 
 Также следует добавить vmware в строку загружаемых демонов (DAEMONS) в файле /etc/rc.conf
 
-**->** _для пользователей arch64:_ Если при попытке загрузить файл .vmx возникает следующая ошибка:
+**->** *для пользователей arch64:* Если при попытке загрузить файл .vmx возникает следующая ошибка:
 
 ```
 /usr/lib/vmware/bin/vmware-vmx: error while loading shared libraries: libXtst.so.6: wrong ELF class: ELFCLASS64

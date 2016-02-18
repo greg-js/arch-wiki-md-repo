@@ -27,7 +27,6 @@ PowerTOP suggests a few methods to reduce the power consumption further. However
     *   You can use the `--auto-tune` feature from PowerTOP which sets all tunable options to their GOOD setting. This can be combined with systemd to have the tunables set on boot.
 
  `/etc/systemd/system/powertop.service` 
-
 ```
 [Unit]
 Description=Powertop tunings

@@ -1,6 +1,6 @@
 来自 [wikipedia](https://en.wikipedia.org/wiki/Codec "wikipedia:Codec"):
 
-	_编解码器（codec）指的是一个能够对一个信号或者一个数据流进行变换的设备或者程序。_
+	*编解码器（codec）指的是一个能够对一个信号或者一个数据流进行变换的设备或者程序。*
 
 通常来说，编解码器被多媒体应用程序用来编码或解码音频视频流。为了播放编码过的流媒体，用户必须确保安装了合适的编解码器。
 
@@ -51,9 +51,9 @@
 
 From [http://www.gstreamer.net/](http://www.gstreamer.net/):
 
-	_[GStreamer](/index.php/GStreamer "GStreamer") is a library for constructing graphs of media-handling components. The applications it supports range from simple Ogg/Vorbis playback, audio/video streaming to complex audio (mixing) and video (non-linear editing) processing._
+	*[GStreamer](/index.php/GStreamer "GStreamer") is a library for constructing graphs of media-handling components. The applications it supports range from simple Ogg/Vorbis playback, audio/video streaming to complex audio (mixing) and video (non-linear editing) processing.*
 
-Simply, GStreamer is a _backend_ or _framework_ utilized by many media players.
+Simply, GStreamer is a *backend* or *framework* utilized by many media players.
 
 GStreamer uses a plugin architecture which makes the most of GStreamer's functionality implemented as shared libraries. Since version 0.10 the plugins come grouped into three sets (named after the film The Good, the Bad and the Ugly).[wikipedia:GStreamer](https://en.wikipedia.org/wiki/GStreamer "wikipedia:GStreamer")
 
@@ -74,7 +74,7 @@ For the most complete solution:
 
 From [http://www.xine-project.org/about](http://www.xine-project.org/about):
 
-	_xine is a free (gpl-licensed) high-performance, portable and reusable multimedia playback engine. xine itself is a shared library with an easy to use, yet powerful API which is used by many applications for smooth video playback and video processing purposes._
+	*xine is a free (gpl-licensed) high-performance, portable and reusable multimedia playback engine. xine itself is a shared library with an easy to use, yet powerful API which is used by many applications for smooth video playback and video processing purposes.*
 
 As an alternative to GStreamer, many media players can be configured to utilize the xine backend:
 

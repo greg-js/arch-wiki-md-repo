@@ -208,7 +208,6 @@ vm.dirty_background_ratio = 2
 If you experienced slow copy speed to pendrive (mainly in KDE), then append these three lines in a [systemd](/index.php/Systemd "Systemd") tmpfile:
 
  `/etc/tmpfiles.d/local.conf` 
-
 ```
 w /sys/kernel/mm/transparent_hugepage/enabled - - - - madvise
 w /sys/kernel/mm/transparent_hugepage/defrag - - - - madvise
@@ -226,7 +225,7 @@ See also [#Tuning kernel parameters](#Tuning_kernel_parameters).
 
 ### 使用Verynice服务
 
-[AUR](/index.php/AUR "AUR")中的[verynice](https://aur.archlinux.org/packages/verynice/)是一种可以动态调整程序nice等级的服务。对响应时间敏感的应用程序，如X系统、多媒体程序等，可以在`/etc/verynice.conf`文件中将其标记为_goodexe_，而把那些可以在后台运行的高CPU占用的程序，如make，标记为_badexe_。这样，当系统负荷很重时仍能及时响应用户的指令。
+[AUR](/index.php/AUR "AUR")中的[verynice](https://aur.archlinux.org/packages/verynice/)是一种可以动态调整程序nice等级的服务。对响应时间敏感的应用程序，如X系统、多媒体程序等，可以在`/etc/verynice.conf`文件中将其标记为*goodexe*，而把那些可以在后台运行的高CPU占用的程序，如make，标记为*badexe*。这样，当系统负荷很重时仍能及时响应用户的指令。
 
 ## 显卡
 

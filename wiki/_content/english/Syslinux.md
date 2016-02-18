@@ -83,10 +83,9 @@ The `syslinux-install_update` script will install Syslinux, copy `*.c32` modules
 
 If you use a separate boot partition make sure that it is mounted. Check with `lsblk`; if you do not see a `/boot` mountpoint, mount it before you go any further.
 
-*   Run `syslinux-install_update` with flags: `-i` (install the files), `-a` (mark the partition _active_ with the _boot_ flag), `-m` (install the _MBR_ boot code): `# syslinux-install_update -i -a -m` If this command fails with _Syslinux BIOS install failed_, the problem is likely that the `extlinux` binary could not find the partition containing `/boot`:
+*   Run `syslinux-install_update` with flags: `-i` (install the files), `-a` (mark the partition *active* with the *boot* flag), `-m` (install the *MBR* boot code): `# syslinux-install_update -i -a -m` If this command fails with *Syslinux BIOS install failed*, the problem is likely that the `extlinux` binary could not find the partition containing `/boot`:
 
  `# extlinux --install /boot/syslinux` 
-
 ```
 extlinux: cannot find device for path /boot/syslinux
 extlinux: cannot open device (null)
@@ -139,7 +138,6 @@ See the main article: [Master Boot Record](/index.php/Master_Boot_Record "Master
 Next you need to mark your boot partition active in your partition table. Applications capable of doing this include `fdisk`, `cfdisk`, `sfdisk`, `parted/gparted` ("boot" flag). It should look like this:
 
  `# fdisk -l /dev/sda` 
-
 ```
 [...]
   Device Boot      Start         End      Blocks   Id  System
@@ -155,7 +153,7 @@ Install the MBR:
 
 ```
 
-An alternate MBR which Syslinux provides is: `altmbr.bin`. This MBR does _not_ scan for bootable partitions; instead, the last byte of the MBR is set to a value indicating which partition to boot from. Here is an example of how `altmbr.bin` can be copied into position:
+An alternate MBR which Syslinux provides is: `altmbr.bin`. This MBR does *not* scan for bootable partitions; instead, the last byte of the MBR is set to a value indicating which partition to boot from. Here is an example of how `altmbr.bin` can be copied into position:
 
 ```
 # printf '\x5' | cat /usr/lib/syslinux/bios/altmbr.bin - | dd bs=440 count=1 iflag=fullblock of=/dev/sda
@@ -175,10 +173,9 @@ Bit 2 of the attributes ("legacy_boot" attribute) needs to be set for the `/boot
 
 ```
 
-This would toggle the attribute _legacy BIOS bootable_ on partition 1\. To check:
+This would toggle the attribute *legacy BIOS bootable* on partition 1\. To check:
 
  `# sgdisk /dev/sda --attributes=1:show` 
-
 ```
  1:2:1 (legacy BIOS bootable)
 
@@ -271,7 +268,6 @@ This is a simple configuration file that will show a `boot:` prompt and automati
 Configuration:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
  PROMPT 1
  TIMEOUT 50
@@ -301,7 +297,6 @@ Syslinux also allows you to use a boot menu. To use it, copy the `menu` module t
 Configuration:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
  UI menu.c32
  PROMPT 0
@@ -342,7 +337,6 @@ This configuration uses the same menu design as the Arch Install CD, its config 
 Configuration:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
  UI vesamenu.c32
  DEFAULT arch
@@ -394,7 +388,6 @@ To center the menu and adjust resolution, use `MENU RESOLUTION`, `MENU HSHIFT $N
 To move the menu to the center, add or edit these values:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 MENU RESOLUTION 800 600 # or whatever your screen resolution is
 MENU WIDTH 78           # width of the menu also required to bring the menu box to size
@@ -419,14 +412,14 @@ APPEND root=/dev/sda2
 **If you want to use [UUID](/index.php/UUID "UUID")** for [persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") change the `APPEND` line as follows, substituting `1234` with the `UUID` of your root partition:
 
 ```
-APPEND root=UUID=_1234_ rw
+APPEND root=UUID=*1234* rw
 
 ```
 
 **If you use encryption** [LUKS](/index.php/LUKS "LUKS") change the `APPEND` line to use your encrypted volume:
 
 ```
-APPEND root=/dev/mapper/_group_-_name_ cryptdevice=/dev/sda2:_name_ rw
+APPEND root=/dev/mapper/*group*-*name* cryptdevice=/dev/sda2:*name* rw
 
 ```
 
@@ -484,7 +477,6 @@ The passwd can be either a cleartext password or hashed: [see official documenta
 If you want to chainload other operating systems (such as Windows) or boot loaders, copy the `chain.c32` module to the Syslinux directory (for details, see the instructions in the previous section). Then create a section in the configuration file:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 ...
  LABEL windows
@@ -502,7 +494,6 @@ If you want to chainload other operating systems (such as Windows) or boot loade
 If you are unsure about which drive your BIOS thinks is "first", you can instead use the MBR identifier, or if you are using GPT, the filesystem labels. To use the MBR identifier, run the command
 
  `# fdisk -l /dev/sdb` 
-
 ```
  Disk /dev/sdb: 128.0 GB, 128035676160 bytes 
  255 heads, 63 sectors/track, 15566 cylinders, total 250069680 sectors
@@ -520,7 +511,6 @@ If you are unsure about which drive your BIOS thinks is "first", you can instead
 replacing `/dev/sdb` with the drive you wish to chainload. Using the hexadecimal number under Disk identifier: `0xf00f1fd3` in this case, the syntax in `syslinux.cfg` is
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 ...
  LABEL windows
@@ -536,7 +526,6 @@ For more details about chainloading, see [the Syslinux wiki](http://www.syslinux
 If you have [GRUB](/index.php/GRUB "GRUB") installed on the same partition, you can chainload it by using:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 ...
  LABEL grub2
@@ -550,7 +539,6 @@ If you have [GRUB](/index.php/GRUB "GRUB") installed on the same partition, you 
 Alternatively, it is also possible to load [GRUB](/index.php/GRUB "GRUB") as a linux kernel by prepending `lnxboot.img` to `core.img`. The file `lnxboot.img` is part of `core/grub` and can be found in `/usr/lib/grub/i386-pc`.
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 ...
  LABEL grub2lnx
@@ -565,7 +553,7 @@ This may be required for booting from ISO images.
 
 ### Chainloading other Linux systems
 
-Chainloading another bootloader such as Windows' is pretty obvious, as there is a definite bootloader to chain to. But with Syslinux, it is only able to load files residing on the same partition as the configuration file. Thus, if you have another version of Linux on a separate partition, without a shared `/boot`, it becomes _necessary_ to employ Extlinux rather than the other OS's default bootloader (eg. GRUB2). Essentially, Extlinux can be installed on the partition superblock/[VBR](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record") and be called as a _separate bootloader_ right from the MBR installed by Syslinux. Extlinux is part of the Syslinux project and is included with the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package.
+Chainloading another bootloader such as Windows' is pretty obvious, as there is a definite bootloader to chain to. But with Syslinux, it is only able to load files residing on the same partition as the configuration file. Thus, if you have another version of Linux on a separate partition, without a shared `/boot`, it becomes *necessary* to employ Extlinux rather than the other OS's default bootloader (eg. GRUB2). Essentially, Extlinux can be installed on the partition superblock/[VBR](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record") and be called as a *separate bootloader* right from the MBR installed by Syslinux. Extlinux is part of the Syslinux project and is included with the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package.
 
 The following instructions assume you have Syslinux installed already. These instructions will also assume that the typical Arch Linux configuration path of `/boot/syslinux` is being used and the chainloaded system's `/` is on `/dev/sda3`.
 
@@ -588,7 +576,6 @@ Install Extlinux to the partition VBR, and copy necessary `*.c32` files
 Create `/mnt/boot/syslinux/syslinux.cfg`. You can use the other Linux's bootloader menu file for reference. Below is an example:
 
  `/boot/syslinux/syslinux.cfg **on /dev/sda3**` 
-
 ```
 timeout 10
 
@@ -616,7 +603,6 @@ Install [memtest86+](https://www.archlinux.org/packages/?name=memtest86%2B) from
 Use this `LABEL` section to launch [memtest](https://en.wikipedia.org/wiki/Memtest86 "wikipedia:Memtest86"):
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 ...
  LABEL memtest
@@ -626,14 +612,13 @@ Use this `LABEL` section to launch [memtest](https://en.wikipedia.org/wiki/Memte
 
 ```
 
-**Note:** If you are using pxelinux, change name from _memtest.bin_ to _memtest_ since pxelinux treats the file with .bin extension as a boot sector and loads only 2KB of it.
+**Note:** If you are using pxelinux, change name from *memtest.bin* to *memtest* since pxelinux treats the file with .bin extension as a boot sector and loads only 2KB of it.
 
 ### HDT
 
 [HDT (Hardware Detection Tool)](http://hdt-project.org/) displays hardware information. Like before, the `.c32` file has to be copied from `/boot/syslinux/`. For PCI info, copy `/usr/share/hwdata/pci.ids` to `/boot/syslinux/pci.ids` and add the following to your configuration file:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
  LABEL hdt
          MENU LABEL Hardware Info
@@ -648,7 +633,6 @@ Use this `LABEL` section to launch [memtest](https://en.wikipedia.org/wiki/Memte
 Use the following sections to reboot or power off your machine:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
  LABEL reboot
          MENU LABEL Reboot
@@ -665,7 +649,6 @@ Use the following sections to reboot or power off your machine:
 To clear the screen when exiting the menu, add the following line:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
  MENU CLEAR
 
@@ -702,14 +685,13 @@ Copy `de.ktl` as root to `/boot/syslinux/` and set ownership to root:
 A generic example:
 
 ```
-# keytab-lilo.pl _/path/to/_us.kmap.gz _/path/to/_dvorak.kmap.gz > _/path/to/_dvorak.ktl
+# keytab-lilo.pl */path/to/*us.kmap.gz */path/to/*dvorak.kmap.gz > */path/to/*dvorak.ktl
 
 ```
 
 Now edit `syslinux.conf` and add:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
 KBDMAP de.ktl
 
@@ -720,7 +702,6 @@ KBDMAP de.ktl
 Use the option:
 
  `/boot/syslinux/syslinux.cfg` 
-
 ```
  MENU HIDDEN
 
@@ -746,7 +727,6 @@ Copy the `{l,}pxelinux.0` bootloader (provided by the syslinux package) to the b
 We also created the `pxelinux.cfg` directory, which is where PXELINUX searches for configuration files by default. Because we do not want to discriminate between different host MACs, we then create the `default` configuration.
 
  `# vim "$root/boot/pxelinux.cfg/default"` 
-
 ```
 default linux
 
@@ -776,7 +756,6 @@ Syslinux supports booting from ISO images directly using the [memdisk](http://ww
 To enable Serial Console add the `SERIAL port [baudrate]` to the top of `syslinux.cfg` file. "port" is a number (0 for `/dev/ttyS0`), if "baudrate" is omitted, the baud rate default is 9600 bps. The serial parameters are hardcoded to 8 bits, no parity and 1 stop bit.[[1]](http://www.syslinux.org/wiki/index.php/SYSLINUX#SERIAL_port_.5Bbaudrate_.5Bflowcontrol.5D.5D)
 
  `syslinux.cfg` 
-
 ```
 SERIAL 0 115200
 
@@ -833,7 +812,7 @@ If you do not have access to `boot:` in [ramfs](/index.php/Ramdisk "Ramdisk"), a
 In the case of a badly corrupted root partition (in which the journal is damaged), in the ramfs emergency shell, mount the root file system:
 
 ```
-# mount /dev/_root partition_ /new_root
+# mount /dev/*root partition* /new_root
 
 ```
 
@@ -848,7 +827,7 @@ Follow the instructions at [ext2fs: no external journal](/index.php/Fsck#ext2fs_
 
 ### No Default or UI found on some computers
 
-Certain motherboard manufacturers have less compatibility for booting from USB devices than others. While an ext4 formatted USB drive may boot on a more recent computer, some computers may hang if the boot partition containing the _kernel_ and _initrd_ are not on a FAT16 partition. To prevent an older machine from loading `ldlinux` and failing to read `syslinux.cfg`, use `cfdisk` to create a FAT16 partition (<=2GB) and format using [dosfstools](https://www.archlinux.org/packages/?name=dosfstools):
+Certain motherboard manufacturers have less compatibility for booting from USB devices than others. While an ext4 formatted USB drive may boot on a more recent computer, some computers may hang if the boot partition containing the *kernel* and *initrd* are not on a FAT16 partition. To prevent an older machine from loading `ldlinux` and failing to read `syslinux.cfg`, use `cfdisk` to create a FAT16 partition (<=2GB) and format using [dosfstools](https://www.archlinux.org/packages/?name=dosfstools):
 
 ```
 # mkfs.msdos -F 16 /dev/sda1
@@ -896,7 +875,7 @@ The MBR that comes with Syslinux looks for the first active partition that has t
 
 ### Menu entries do nothing
 
-You select a menu entry and it does nothing, it just _"refreshes"_ the menu. This usually means that you have an error in your `syslinux.cfg` file. Hit `Tab` to edit your boot parameters. Alternatively, press `Esc` and type in the `LABEL` of your boot entry (e.g. _arch_). Another cause could be that you do not have a kernel installed. Find a way to access your file system (through live CD, etc) and make sure that `/mount/vmlinuz-linux` exists and does not have a size of 0\. If this is the case, [reinstall your kernel](/index.php/Kernel_Panics#Option_2:_Reinstall_kernel "Kernel Panics").
+You select a menu entry and it does nothing, it just *"refreshes"* the menu. This usually means that you have an error in your `syslinux.cfg` file. Hit `Tab` to edit your boot parameters. Alternatively, press `Esc` and type in the `LABEL` of your boot entry (e.g. *arch*). Another cause could be that you do not have a kernel installed. Find a way to access your file system (through live CD, etc) and make sure that `/mount/vmlinuz-linux` exists and does not have a size of 0\. If this is the case, [reinstall your kernel](/index.php/Kernel_Panics#Option_2:_Reinstall_kernel "Kernel Panics").
 
 ### Cannot remove ldlinux.sys
 
@@ -910,7 +889,7 @@ The `ldlinux.sys` file has the immutable attribute set, which prevents it from b
 
 ### White block in upper left corner when using vesamenu
 
-Problem: _As of linux-3.0, the modesetting driver tries to keep the current contents of the screen after changing the resolution (at least it does so with my Intel, when having Syslinux in text mode). It seems that this goes wrong when combined with the vesamenu module in Syslinux (the white block is actually an attempt to keep the Syslinux menu, but the driver fails to capture the picture from vesa graphics mode)._
+Problem: *As of linux-3.0, the modesetting driver tries to keep the current contents of the screen after changing the resolution (at least it does so with my Intel, when having Syslinux in text mode). It seems that this goes wrong when combined with the vesamenu module in Syslinux (the white block is actually an attempt to keep the Syslinux menu, but the driver fails to capture the picture from vesa graphics mode).*
 
 If you have a custom resolution and a `vesamenu` with early modesetting, try to append the following in `syslinux.cfg` to remove the white block and continue in graphics mode:
 
@@ -935,7 +914,7 @@ replace the mbr code with the one your windows drive has (details [above](#Chain
 
 ### Read bootloader log
 
-In some cases, e.g. bootloader unable to boot kernel, it is highly desirable to get more information from the boot process. _Syslinux_ prints error messages to screen but menu quickly overwrites the text. To avoid losing the log information one needs to disable `menu UI` in `syslinux.cfg` and use the default "command-line" prompt. It means:
+In some cases, e.g. bootloader unable to boot kernel, it is highly desirable to get more information from the boot process. *Syslinux* prints error messages to screen but menu quickly overwrites the text. To avoid losing the log information one needs to disable `menu UI` in `syslinux.cfg` and use the default "command-line" prompt. It means:
 
 *   avoid the UI directive
 *   avoid ONTIMEOUT

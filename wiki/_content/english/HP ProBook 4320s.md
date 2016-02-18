@@ -148,7 +148,7 @@ Looks good as it should, but **there is no radio activity!** Nothing shows up on
 
 **Note:** Please, fill me in if you know how to get the bluetooth working Bluetooth works only if dualbooted with windows, the hard wireless key is disabled before rebooting, and then already in Linux, you press the key again. This enables back the wireless device along with the bluetooth radio as well.
 
-**Note:** _bccmd enabletx_ as root (or with sudo) works for me in Ubuntu, might apply here too...
+**Note:** *bccmd enabletx* as root (or with sudo) works for me in Ubuntu, might apply here too...
 
 ## Graphics
 
@@ -162,7 +162,7 @@ Not much to say.. Just install the required package with pacman and you are all 
 
 **Note:** All the configs below are NOT needed if yo use Gnome or other DE settings for your mouse/pad. All taps, buttons, scrolls are WORKING if you install synaptics package from AUR
 
-The touchpad -clickpad is a pain. Unless you are already using the **2.6.38 kernel** (as you shoud) and **xf86-input-synaptics 1.4.0-2** package (wich came out pretty much the same day), your clikpad will be jittering and acting annoyingly with the default settings. I managed to get it working somewhat well by tweaking it with the /etc/X11/xorg.d/10-synaptics.conf file _see below_.
+The touchpad -clickpad is a pain. Unless you are already using the **2.6.38 kernel** (as you shoud) and **xf86-input-synaptics 1.4.0-2** package (wich came out pretty much the same day), your clikpad will be jittering and acting annoyingly with the default settings. I managed to get it working somewhat well by tweaking it with the /etc/X11/xorg.d/10-synaptics.conf file *see below*.
 
 Now - with the synaptics package older than "xf86-input-synaptics 1.4.0-2", there are many things to tweak to get your clikpad working somewhat good. You will still miss the right-clik (the real click) button though, but I worked around this problem by making a soft-clik out of a two-finger touch that emulates the right-button click with inserting "Option "RTCornerButton" "2" in the config file.
 

@@ -31,13 +31,13 @@ Here we are adding the parameters `quiet` and `splash` to [Syslinux](/index.php/
 
 *   Press `Tab` when the menu shows up and add them at the end of the string:
 
-	 `linux /boot/vmlinuz-linux root=/dev/sda3 initrd=/boot/initramfs-linux.img _quiet splash_` 
+	 `linux /boot/vmlinuz-linux root=/dev/sda3 initrd=/boot/initramfs-linux.img *quiet splash*` 
 
 	Press `Enter` to boot with these parameters.
 
 *   To make the change persistent after reboot, edit `/boot/syslinux/syslinux.cfg` and add them to the `APPEND` line:
 
-	 `APPEND root=/dev/sda3 _quiet splash_` 
+	 `APPEND root=/dev/sda3 *quiet splash*` 
 
 For more information on configuring Syslinux, see the [Syslinux](/index.php/Syslinux "Syslinux") article.
 
@@ -45,15 +45,15 @@ For more information on configuring Syslinux, see the [Syslinux](/index.php/Sysl
 
 *   Нажмите `e` в момент показа загрузочного меню и добавьте в строку, содержащую `linux`:
 
-	 `linux /boot/vmlinuz-linux root=UUID=978e3e81-8048-4ae1-8a06-aa727458e8ff _quiet splash_` 
+	 `linux /boot/vmlinuz-linux root=UUID=978e3e81-8048-4ae1-8a06-aa727458e8ff *quiet splash*` 
 
 	Нажмите `b` для загрузки с этими параметрами.
 
-*   To make the change persistent after reboot, while you _could_ manually edit `/boot/grub/grub.cfg` with the exact line from above, for beginners it's recommended to:
+*   To make the change persistent after reboot, while you *could* manually edit `/boot/grub/grub.cfg` with the exact line from above, for beginners it's recommended to:
 
 	Edit `/etc/default/grub` and append your kernel options to the `GRUB_CMDLINE_LINUX_DEFAULT` line:
 
-	 `GRUB_CMDLINE_LINUX_DEFAULT="_quiet splash_"` 
+	 `GRUB_CMDLINE_LINUX_DEFAULT="*quiet splash*"` 
 
 	And then automatically re-generate the `grub.cfg` file with:
 
@@ -65,7 +65,7 @@ For more information on configuring Syslinux, see the [Syslinux](/index.php/Sysl
 
 *   Press `e` when the menu shows up and add them on the `kernel` line:
 
-	 `kernel /boot/vmlinuz-linux root=/dev/sda3 _quiet splash_` 
+	 `kernel /boot/vmlinuz-linux root=/dev/sda3 *quiet splash*` 
 
 	Press `b` to boot with these parameters.
 
@@ -93,7 +93,7 @@ boot
 ```
 image=/boot/vmlinuz-linux
         ...
-        _quiet splash_
+        *quiet splash*
 ```
 
 Полная информация по настройке [LILO](/index.php/LILO "LILO").
@@ -102,7 +102,7 @@ image=/boot/vmlinuz-linux
 
 *   Press `e` when the menu appears and add the parameters to the end of the string:
 
-	 `initrd=\initramfs-linux.img root=/dev/sda2 rw _quiet splash_` 
+	 `initrd=\initramfs-linux.img root=/dev/sda2 rw *quiet splash*` 
 
 	Press `Enter` to boot with these parameters.
 
@@ -110,7 +110,7 @@ image=/boot/vmlinuz-linux
 
 *   To make the change persistent after reboot, edit `/boot/loader/entries/arch.conf` (assuming you set up your [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") and configuration files according to the instructions in the [Beginners' Guide](/index.php/Beginners%27_guide#Gummiboot "Beginners' guide")) and add them to the `options` line:
 
-	 `options root=/dev/sda2 rw _quiet splash_` 
+	 `options root=/dev/sda2 rw *quiet splash*` 
 
 Полная информация по настройке [gummiboot (Русский)](/index.php/Gummiboot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Gummiboot (Русский)").
 

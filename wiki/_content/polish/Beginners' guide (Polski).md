@@ -116,11 +116,11 @@ Przed instalacją radzimy przejrzeć [FAQ](/index.php/FAQ "FAQ").
 **Główne cechy dystrybucji Arch Linux:**
 
 *   [Prosta](/index.php/The_Arch_Way_(Polski) "The Arch Way (Polski)") konstrukcja i filozofia
-*   [Wszystkie pakiety](https://www.archlinux.org/packages/?q=) skompilowane dla architektur [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "wikipedia:P6 (microarchitecture)") oraz [x86_64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64")
+*   [Wszystkie pakiety](https://www.archlinux.org/packages/?q=) skompilowane dla architektur [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) oraz [x86_64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64")
 *   Model [ciągłego wydania](https://en.wikipedia.org/wiki/Rolling_release "wikipedia:Rolling release"), pozwalający na jednorazową instalację i łatwą aktualizację zainstalowanego oprogramowania do ostatniej stabilnej wersji
 *   Skrypty startowe w [stylu BSD](/index.php?title=Arch_Boot_Process_(Polski)&action=edit&redlink=1 "Arch Boot Process (Polski) (page does not exist)")
 *   [Mkinitcpio](/index.php?title=Mkinitcpio_(Polski)&action=edit&redlink=1 "Mkinitcpio (Polski) (page does not exist)") to prosty i dynamiczny kreator [initramfs](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd")
-*   [Menedżer pakietów](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager") [Pacman](/index.php/Pacman_(Polski) "Pacman (Polski)") jest lekki i zwinny, zachowując niskie zużycie pamięci
+*   [Menedżer pakietów](https://en.wikipedia.org/wiki/Package_manager jest lekki i zwinny, zachowując niskie zużycie pamięci
 *   [Arch Build System](/index.php/Arch_Build_System_(Polski) "Arch Build System (Polski)"): Podobny do portów system budowania pakietów, dostarczający prostego frameworka do tworzenia binarnych pakietów Archa z kodu źródłowego
 *   [Arch User Repository](/index.php/Arch_User_Repository_(Polski) "Arch User Repository (Polski)"): oferuje wiele tysięcy skryptów do budowania pakietów nadesłanych przez użytkowników i możliwość dzielenia się własnymi
 
@@ -130,7 +130,7 @@ Arch Linux, pacman, dokumentacja i skrypty są objęte licencją [GNU General Pu
 
 ### Droga Archa
 
-_**Główne cele stojące za Archem mają na celu utrzymanie jego [prostoty](/index.php/The_Arch_Way_(Polski) "The Arch Way (Polski)").**_
+***Główne cele stojące za Archem mają na celu utrzymanie jego [prostoty](/index.php/The_Arch_Way_(Polski) "The Arch Way (Polski)").***
 
 'Prostota', w tym kontekście, znaczy 'bez zbędnych dodatków, modyfikacji czy komplikacji'. W skrócie: eleganckie, minimalistyczne podejście.
 
@@ -140,7 +140,7 @@ _**Główne cele stojące za Archem mają na celu utrzymanie jego [prostoty](/in
 
 **Note:** AIF (the Arch Installation Framework) nie jest dołączony do obrazów instalacyjnych ze względu na brak wsparcia (zobacz [https://www.archlinux.org/news/install-media-20120715-released/](https://www.archlinux.org/news/install-media-20120715-released/) po więcej informacji).
 
-Utrzymywana przez społeczność [Arch wiki](/index.php/Main_Page_(Polski) "Main Page (Polski)") to znakomite źródło i w razie problemów należy się do niej odwołać. Kanał [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) i [forum](https://bbs.archlinux.org/) są dostępne, jeśli odpowiedź nie może być znaleziona w innym miejscu. Oprócz tego, sprawdź strony `man` każdej komendy, której nie znasz; zwykle można je wywołać poleceniem `man _komenda_`.
+Utrzymywana przez społeczność [Arch wiki](/index.php/Main_Page_(Polski) "Main Page (Polski)") to znakomite źródło i w razie problemów należy się do niej odwołać. Kanał [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) i [forum](https://bbs.archlinux.org/) są dostępne, jeśli odpowiedź nie może być znaleziona w innym miejscu. Oprócz tego, sprawdź strony `man` każdej komendy, której nie znasz; zwykle można je wywołać poleceniem `man *komenda*`.
 
 **Note:** Dokładne podążanie za tym poradnikiem jest niezbędne, aby zainstalować poprawnie skonfigurowany system Arch Linux, więc przeczytaj go dokładnie. Zaleca się, abyś przeczytał(a) każdą sekcję w całości <u>przed</u> wykonaniem zawartych w niej poleceń.
 
@@ -164,7 +164,7 @@ Oficjalne obrazy instalacyjne Archa możesz znaleźć [tutaj](https://archlinux.
 
 *   Nagraj obraz .iso na CD lub DVD używając wybranego oprogramowania.
 
-**Note:** Jakość napędów optycznych i samych płyt może być bardzo różna. Generalnie, polecane jest nagrywanie z niską prędkością. Niektórzy użytkownicy polecają prędkości _**tak niskie jak 4x lub 2x.**_ Jeśli doświadczasz nieprzewidzianych zachowań w trakcie instalacji, spróbuj nagrać obraz z najniższą możliwą prędkością.
+**Note:** Jakość napędów optycznych i samych płyt może być bardzo różna. Generalnie, polecane jest nagrywanie z niską prędkością. Niektórzy użytkownicy polecają prędkości ***tak niskie jak 4x lub 2x.*** Jeśli doświadczasz nieprzewidzianych zachowań w trakcie instalacji, spróbuj nagrać obraz z najniższą możliwą prędkością.
 
 *   Możesz także nagrać obraz .iso na pendrive. Dokładne instrukcje znajdziesz na stronie [USB Installation Media_(Polski)](/index.php?title=USB_Installation_Media_(Polski)&action=edit&redlink=1 "USB Installation Media (Polski) (page does not exist)").
 
@@ -220,7 +220,7 @@ Jeżeli posiadasz płytę główną z [UEFI](/index.php/UEFI "UEFI"), a tryb UEF
 
 *   Jeśli posiadasz chipset graficzny Intela, a obraz staje się pusty podczas uruchamiania, problemem jest prawdopodobnie Kernel Mode Setting ([KMS](/index.php?title=KMS_(Polski)&action=edit&redlink=1 "KMS (Polski) (page does not exist)")). Możliwym obejściem jest ponowne uruchomienie i naciśnięcie `Tab` nad pozycją, którą chcesz uruchomić (i686 lub x86_64). Na końcu linijki dopisz `nomodeset` i naciśnij `Enter`. Alternatywnie, dopisz `video=SVIDEO-1:d`, jednak ten parametr (jeśli zadziała), nie wyłączy Kernel Mode Setting. Zobacz artykuł [Intel](/index.php/Intel_(Polski) "Intel (Polski)") po więcej informacji.
 
-*   Jeśli obraz _nie_ staje się pusty, a uruchamianie zatrzymuje się podczas próby ładowania jądra, naciśnij `Tab` nad odpowiednią pozycją menu, dopisz `acpi=off` na końcu linijki i naciśnij `Enter`.
+*   Jeśli obraz *nie* staje się pusty, a uruchamianie zatrzymuje się podczas próby ładowania jądra, naciśnij `Tab` nad odpowiednią pozycją menu, dopisz `acpi=off` na końcu linijki i naciśnij `Enter`.
 
 ## Instalacja
 
@@ -233,27 +233,26 @@ Po uruchomieniu, nośnik instalacyjny automatycznie loguje się jako **root** i 
 Domyślnie wybranym układem klawiatury jest `us`. Jeżeli posiadasz klawiaturę z niestandardowym układem klawiszy, uruchom polecenie:
 
 ```
-# loadkeys _układ_
+# loadkeys *układ*
 
 ```
 
-...gdzie w miejsce _układu_ można wstawić `fr`, `uk`, `be-latin1`, etc. "zajrzyj [tutaj](/index.php/KEYMAP#Keyboard_layouts_.28Polski.29 "KEYMAP"), by zobaczyć pełną listę.
+...gdzie w miejsce *układu* można wstawić `fr`, `uk`, `be-latin1`, etc. "zajrzyj [tutaj](/index.php/KEYMAP#Keyboard_layouts_.28Polski.29 "KEYMAP"), by zobaczyć pełną listę.
 
 Mapy klawiszy są dostępne dla wielu krajów i typów klawiatur. Pliki map klawiszy znajdują się w `/usr/share/kbd/keymaps/` (możesz opuścić scieżkę i rozszerzenie pliku używając `loadkeys`).
 
-Czcionka również powinna zostać zmieniona, bo w większości języków używane jest więcej niż standardowe 26 liter obecnych w [angielskim alfabecie](https://en.wikipedia.org/wiki/English_alphabet "wikipedia:English alphabet"). W przeciwnym wypadku niektóre charakterystyczne znaki mogą zostać zastąpione przez białe kwadraciki lub inne symbole. Zauważ, że nazwa układu jest czuła na wielkość liter, więc wpisz _dokładnie_ to, co widzisz:
+Czcionka również powinna zostać zmieniona, bo w większości języków używane jest więcej niż standardowe 26 liter obecnych w [angielskim alfabecie](https://en.wikipedia.org/wiki/English_alphabet "wikipedia:English alphabet"). W przeciwnym wypadku niektóre charakterystyczne znaki mogą zostać zastąpione przez białe kwadraciki lub inne symbole. Zauważ, że nazwa układu jest czuła na wielkość liter, więc wpisz *dokładnie* to, co widzisz:
 
 ```
 # setfont Lat2-Terminus16
 
 ```
 
-Domyślnie wybranym językiem jest angielski (US). Jeżeli chcesz zmienić język na czas procesu instalacji _(w tym przykładzie na polski)_, usuń znak `#` na początku [locale](http://www.greendesktiny.com/support/knowledgebase_detail.php?ref=EUH-483), którego chcesz używać z `/etc/locale.gen`, razem z językiem angielskim (US). Proszę wybierz wpisy `UTF-8`.
+Domyślnie wybranym językiem jest angielski (US). Jeżeli chcesz zmienić język na czas procesu instalacji *(w tym przykładzie na polski)*, usuń znak `#` na początku [locale](http://www.greendesktiny.com/support/knowledgebase_detail.php?ref=EUH-483), którego chcesz używać z `/etc/locale.gen`, razem z językiem angielskim (US). Proszę wybierz wpisy `UTF-8`.
 
 Użyj `Ctrl+X` by wyjść, a gdy zostaniesz zapytany o zachowanie zmian, naciśnij `Y` i `Enter`, by użyć tej samej nazwy pliku.
 
  `# nano /etc/locale.gen` 
-
 ```
 en_US.UTF-8 UTF-8
 pl_PL.UTF-8 UTF-8
@@ -287,7 +286,6 @@ Usługa `dhcpcd` jest uruchamiana podczas startu systemu. Spróbuje ona automaty
 Jeśli wynik polecenia wygląda podobnie do tego:
 
  `# ping -c 3 www.google.com` 
-
 ```
 PING www.l.google.com (74.125.132.105) 56(84) bytes of data.
 64 bytes from wb-in-f105.1e100.net (74.125.132.105): icmp_req=1 ttl=50 time=17.0 ms
@@ -337,7 +335,6 @@ Trzymaj się tej procedury, by ustanowić połączenie z siecią via statyczny a
 Po pierwsze, zidentyfikuj nazwę Twojego interfejsu sieciowego.
 
  `# ip link` 
-
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT 
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -350,7 +347,6 @@ Po pierwsze, zidentyfikuj nazwę Twojego interfejsu sieciowego.
 W tym przypadku, interfejs ethernet nazywa się enp2s0f0\. Jeżeli nie masz pewności, to jego nazwa prawdopodobnie zacznie się literą "e", a prawie na pewno nie będzie się nazywał "lo" lub zaczynała się literą "w". Zawsze możesz użyć iwconfig i zobaczyć, by zobaczyć które interfejsy nie są bezprzewodowe.
 
  `# iwconfig` 
-
 ```
 enp2s0f0  no wireless extensions.
 wlp3s0    IEEE 802.11bgn  ESSID:"NETGEAR97"  
@@ -416,7 +412,6 @@ Np:
 Edytuj plik `/etc/resolv.conf`, podmieniając adresy twoich serwerów DNS:
 
  `# nano /etc/resolv.conf` 
-
 ```
  nameserver 61.23.173.5
  nameserver 61.95.849.8
@@ -437,7 +432,7 @@ Postępuj według tej procedury, jeśli potrzebujesz łączności bezprzewodowej
 
 Jeżeli używałeś wcześniej innej dystrybucji lub instalujesz ponownie system Arch Linux od czasu porzucenia starego modelu nazewnictwa, możesz być zaskoczony faktem, że pierwszy interfejs nie nazywa się "wlan0". Prawdę mówiąc, to żaden interfejs nie będzie już poprzedzany przedrostkiem "wlan". Nie panikuj; po prostu wykonaj polecenie `iwconfig` by dowiedzieć się jaka jest nowa nazwa Twojego interfejsu sieciowego.
 
-Sterowniki do kart bezprzewodowych oraz niezbędne narzędzia są dostępne w środowisku uruchamianym z nośnika instalacyjnego. Wiedza o posiadanym sprzęcie będzie kluczowa dla pomyślnej konfiguracji. Pamiętaj, że następująca procedura _wykonana w tym momencie, podczas instalacji_ uruchomi sieć bezprzewodową _w środowisku instalacyjnym_. Te kroki (lub inny sposób zarządzania połączeniami bezprzewodowymi) **muszą zostać powtórzone z poziomu zainstalowanego systemu po jego uruchomieniu**.
+Sterowniki do kart bezprzewodowych oraz niezbędne narzędzia są dostępne w środowisku uruchamianym z nośnika instalacyjnego. Wiedza o posiadanym sprzęcie będzie kluczowa dla pomyślnej konfiguracji. Pamiętaj, że następująca procedura *wykonana w tym momencie, podczas instalacji* uruchomi sieć bezprzewodową *w środowisku instalacyjnym*. Te kroki (lub inny sposób zarządzania połączeniami bezprzewodowymi) **muszą zostać powtórzone z poziomu zainstalowanego systemu po jego uruchomieniu**.
 
 Pamiętaj także, że te kroki są opcjonalne jeśli połączenie bezprzewodowe jest niepotrzebne w tym momencie instalacji; sieć bezprzewodowa może być skonfigurowana później.
 
@@ -462,9 +457,7 @@ lub jeśli używasz karty USB:
 *   Upewnij się, że udev załadował sterownik i stworzył odpowiedni interfejs używając `iwconfig`:
 
 **Note:** Jeśli nie widzisz wyniku podobnego do tego, twój sterownik bezprzewodowy nie został załadowany. W takim przypadku, musisz załadować sterownik manualnie. Zobacz [Konfiguracja sieci bezprzewodowej](/index.php?title=Wireless_Setup_(Polski)&action=edit&redlink=1 "Wireless Setup (Polski) (page does not exist)") po dokładne instrukcje.
-
  `# iwconfig` 
-
 ```
 enp2s0f0  no wireless extensions.
 wlp3s0    IEEE 802.11bgn  ESSID:"NETGEAR97"  
@@ -560,7 +553,6 @@ Jeśli jesteś za serwerem proxy, musisz wyeksportować zmienne środowiskowe `h
 Na koniec, upewnij się, że połączenie działa używając `/bin/ping`:
 
  `# ping -c 3 www.google.com` 
-
 ```
 PING www.l.google.com (74.125.132.105) 56(84) bytes of data.
 64 bytes from wb-in-f105.1e100.net (74.125.132.105): icmp_req=1 ttl=50 time=17.0 ms
@@ -577,7 +569,7 @@ rtt min/avg/max/mdev = 16.660/17.320/18.254/0.678 ms
 
 **Warning:** Partycjonowanie dysku twardego może zniszczyć dane. **Zdecydowanie** prosimy o ostrożność i sporządzenie kopii ważnych danych przed kontynuacją.
 
-Jeżęli jesteś początkującym, zachęcamy do użycia jakiegoś graficznego narzędzia do partycjonowania. [GParted](http://gparted.sourceforge.net/download.php) jest dobrym przykładem, w dodatku jest [dostępny jako "live" CD](http://gparted.sourceforge.net/livecd.php). Jest także dostępny w większości dystrybucji Linuxa uruchamiających się w trybie "live" CD, np w [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu_(operating_system) "wikipedia:Ubuntu (operating system)") i [Linux Mint](https://en.wikipedia.org/wiki/Linux_Mint "wikipedia:Linux Mint"). Dysk powinien zostać najpierw [partycjonowany](/index.php/Partitioning_(Polski) "Partitioning (Polski)"), a partycje powinny zostać sformatowane z ustawieniem [systemu plików](/index.php/File_Systems_(Polski) "File Systems (Polski)") przed ponownym uruchomieniem.
+Jeżęli jesteś początkującym, zachęcamy do użycia jakiegoś graficznego narzędzia do partycjonowania. [GParted](http://gparted.sourceforge.net/download.php) jest dobrym przykładem, w dodatku jest [dostępny jako "live" CD](http://gparted.sourceforge.net/livecd.php). Jest także dostępny w większości dystrybucji Linuxa uruchamiających się w trybie "live" CD, np w [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu_(operating_system) i [Linux Mint](https://en.wikipedia.org/wiki/Linux_Mint przed ponownym uruchomieniem.
 
 **Note:** Obecny dysk instalacyjny zawiera programy **cfdisk**, **gdisk**, i **parted**.
 
@@ -623,7 +615,7 @@ W przeciwnym wypadku czytaj dalej.
 *   Jeżeli używasz płyty głównej z BIOSem (lub planujesz uruchamiać system w trybie kompatybilności z BIOSem) i chcesz zainstalować GRUB na dysku korzystającym z GPT, będziesz musiał utworzyć 1007 KiB "[BIOS Boot Partition](/index.php/GRUB#GPT_specific_instructions "GRUB")". Syslinux nie potrzebuje takiego rozwiązania.
 *   Niektóre systemy BIOS mogą mieć problemy z obsługą GPT. Zobacz [http://mjg59.dreamwidth.org/8035.html](http://mjg59.dreamwidth.org/8035.html) and [http://rodsbooks.com/gdisk/bios.html](http://rodsbooks.com/gdisk/bios.html) dla rozwiązań i obejść znanych problemów.
 
-**Note:** Jeżeli instalujesz system _na_ klucz USB, zobacz [Instalowanie Arch Linux na USB](/index.php?title=Installing_Arch_Linux_on_a_USB_key_(Polski)&action=edit&redlink=1 "Installing Arch Linux on a USB key (Polski) (page does not exist)").
+**Note:** Jeżeli instalujesz system *na* klucz USB, zobacz [Instalowanie Arch Linux na USB](/index.php?title=Installing_Arch_Linux_on_a_USB_key_(Polski)&action=edit&redlink=1 "Installing Arch Linux on a USB key (Polski) (page does not exist)").
 
 Przykładowy system będzie posiadał 15 GB partycję root oraz partycję [home](/index.php/Partitioning#.2Fhome "Partitioning") na reszcie dostępnego miejsca. Wybierz [MBR](/index.php?title=MBR_(Polski)&action=edit&redlink=1 "MBR (Polski) (page does not exist)") lub [GPT](/index.php?title=GPT_(Polski)&action=edit&redlink=1 "GPT (Polski) (page does not exist)"), ale nie oba!
 
@@ -681,7 +673,7 @@ Wybierz **W**rite (**Z**apisz), aby zapisać tablicę partycji na dysk. Po zapis
 
 Po więcej informacji na temat partycjonowania dysku twardego, zobacz [Partycjonowanie](/index.php/Partitioning_(Polski) "Partitioning (Polski)").
 
-**Note:** Ostatnie ulepszenia jądra Linuksa, w tym libata i modułów PATA, spowodowały, że wszystkie dyski IDE, SATA i SCSI przyjęły schemat nazw sd_x_. Jest to całkowicie normalne.
+**Note:** Ostatnie ulepszenia jądra Linuksa, w tym libata i modułów PATA, spowodowały, że wszystkie dyski IDE, SATA i SCSI przyjęły schemat nazw sd*x*. Jest to całkowicie normalne.
 
 **Note:** Jeśli używasz (U)EFI, prawdopodobnie będziesz potrzebować kolejnej partycji do przechowywania UEFI System. Przeczytaj [ten artykuł](/index.php?title=Unified_Extensible_Firmware_Interface_(Polski)&action=edit&redlink=1 "Unified Extensible Firmware Interface (Polski) (page does not exist)").
 
@@ -702,8 +694,8 @@ Użyj narzędzia `mkfs` do formatowania partycji w wybranym systemie plików. W 
 Jeżeli utworzyłeś partycję dla swapu (code 82), nie zapomnij sformatować i aktywować jej używając:
 
 ```
-# mkswap /dev/sda_X_
-# swapon /dev/sda_X_
+# mkswap /dev/sda*X*
+# swapon /dev/sda*X*
 
 ```
 
@@ -740,7 +732,7 @@ Jeżeli posiadasz płytę główną z UEFI, zamontuj partycję UEFI:
 
 ```
 # mkdir -p /mnt/boot/efi
-# mount /dev/sda_X_ /mnt/boot/efi
+# mount /dev/sda*X* /mnt/boot/efi
 
 ```
 
@@ -749,9 +741,7 @@ Jeżeli posiadasz płytę główną z UEFI, zamontuj partycję UEFI:
 Przed instalacją, wyedytuj plik `/etc/pacman.d/mirrorlist` tak, aby wybrany serwer był pierwszy w kolejności. Kopia tego pliku zostanie zainstalowana w nowym systemie przez `pacstrap`, więc warto wybrać odpowiedni serwer już teraz.
 
 **Note:** ftp.archlinux.org ma limit 50KB/s.
-
  `# nano /etc/pacman.d/mirrorlist` 
-
 ```
 ##
 ## Arch Linux repository mirrorlist
@@ -787,7 +777,7 @@ Jeżeli chcesz, w pliku możesz zostawić tylko wybrany przez siebie mirror usuw
 
 Bazowy system jest instalowany używając skryptu [pacstrap](https://github.com/falconindy/arch-install-scripts/blob/master/pacstrap.in).
 
-Opcja `-i` może zostać pominięta, jeżeli chcesz zainstalować wszystkie pakiety z grup _base_ i _base-devel_ bez potwierdzenia.
+Opcja `-i` może zostać pominięta, jeżeli chcesz zainstalować wszystkie pakiety z grup *base* i *base-devel* bez potwierdzenia.
 
 ```
 # pacstrap -i /mnt base base-devel
@@ -796,7 +786,7 @@ Opcja `-i` może zostać pominięta, jeżeli chcesz zainstalować wszystkie paki
 
 **Note:** Jeśli pacman nie jest w stanie zweryfikować pakietów, sprawdź czas systemowy. Jeśli data jest nieodpowiednia (np. wskazuje 2010 rok), klucze podpisujące mogą być uznane za wygasłe (lub nieważne), sprawdzenie podpisów pakietów skończy się błędem i instalacja zostanie przerwana. Ustaw poprawny czas systemowy, robiąc to manualnie lub za pomocą klienta ntp, i uruchom ponownie komendę pacstrap. Na stronie [Czas](/index.php?title=Time_(Polski)&action=edit&redlink=1 "Time (Polski) (page does not exist)") znajdziesz więcej informacji o ustawianiu czasu systemowego.
 
-**Note:** Jeżeli pacman skarży się na brak lub niepoprawne sygnatury podczas fazy pacstrapowania (_error: failed to commit transaction (invalid or corrupted package)_), wykanaj poniższą komendę.
+**Note:** Jeżeli pacman skarży się na brak lub niepoprawne sygnatury podczas fazy pacstrapowania (*error: failed to commit transaction (invalid or corrupted package)*), wykanaj poniższą komendę.
 
 ```
 # pacman-key --init && pacman-key --populate archlinux 
@@ -805,7 +795,7 @@ Opcja `-i` może zostać pominięta, jeżeli chcesz zainstalować wszystkie paki
 
 *   [base](https://www.archlinux.org/groups/x86_64/base/): Pakiety z oprogramowaniem z repozytorium [core] dostarczające minimalnego środowiska.
 
-*   [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/): Dodatkowe narzędzia z [core] t.j. `make` i `automake`. Większość początkujących powinna je zainstalować, ponieważ mogą być potrzebne przy administracji nowym systemem. Grupa _base-devel_ będzie potrzebna do instalacji oprogramowania z [AUR](/index.php/Arch_User_Repository_(Polski) "Arch User Repository (Polski)").
+*   [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/): Dodatkowe narzędzia z [core] t.j. `make` i `automake`. Większość początkujących powinna je zainstalować, ponieważ mogą być potrzebne przy administracji nowym systemem. Grupa *base-devel* będzie potrzebna do instalacji oprogramowania z [AUR](/index.php/Arch_User_Repository_(Polski) "Arch User Repository (Polski)").
 
 To zainstaluje podstawowy system Arch. Inne pakiety mogą być zainstalowane później używając [pacmana](/index.php/Pacman_(Polski) "Pacman (Polski)").
 
@@ -830,7 +820,7 @@ Wygeneruj plik [fstab](/index.php?title=Fstab_(Polski)&action=edit&redlink=1 "Fs
 Kilka uwag:
 
 *   Ostatnia kolumna definiuje kolejność sprawdzania partycji przy starcie systemu: użyj `1` dla partycji root (z wyjątkiem btrfs), która powinna być sprawdzana jako pierwsza, dla reszty partycji ustaw `2` lub wyłącz sprawdzanie ustawiając `0` (zobacz [Pola pliku fstab](/index.php/Fstab#Field_definitions_.28Polski.29 "Fstab")).
-*   Wszystkie partycje [Btrfs](/index.php?title=Btrfs_(Polski)&action=edit&redlink=1 "Btrfs (Polski) (page does not exist)") i _swap_ powinny być ustawione na `0`.
+*   Wszystkie partycje [Btrfs](/index.php?title=Btrfs_(Polski)&action=edit&redlink=1 "Btrfs (Polski) (page does not exist)") i *swap* powinny być ustawione na `0`.
 
 ### Chroot do systemu
 
@@ -853,10 +843,10 @@ Na tym etapie instalacji, skonfigurujesz podstawowe pliki konfiguracyjne bazoweg
 
 #### Nazwa hosta
 
-Dodaj swoją _hostname_ w `/etc/hostname`. **Przykład:**
+Dodaj swoją *hostname* w `/etc/hostname`. **Przykład:**
 
 ```
-# echo _mojanazwahosta_ > /etc/hostname
+# echo *mojanazwahosta* > /etc/hostname
 
 ```
 
@@ -864,7 +854,7 @@ Ustaw jaką chcesz nazwę. Będzie to nazwa twojego komputera.
 
 **Note:** Nie ma potrzeby edytowania `/etc/hosts`, jednak nic nie szkodzi na przeszkodzie, jeśli chcesz to zrobić
 
-Dodaj swoją _hostname_ w `/etc/hosts`, taką samą jak w `/etc/hostname` jako alias. Powinno to wyglądać podbnie do tego:
+Dodaj swoją *hostname* w `/etc/hosts`, taką samą jak w `/etc/hostname` jako alias. Powinno to wyglądać podbnie do tego:
 
 ```
 127.0.0.1   localhost.localdomain   localhost **mojanazwahosta**
@@ -884,13 +874,11 @@ Jeśli używasz statycznego IP, dopisz kolejną linię wg formatu: <statyczne-IP
 ```
 
 **Tip:** Dla wygody, możesz zdefiniować aliasy w pliku `/etc/hosts` dla hostów w twojej sieci, i/lub w Internecie, np.:
-
 ```
 192.168.1.90 media
 192.168.1.88 dane
 
 ```
-
 Powyższy przykład pozwoli na dostęp do serwerów z mediami i danymi wg nazwy, bez potrzeby wpisywania ich adresów IP.
 
 #### Font terminala i układ klawiatury
@@ -898,7 +886,6 @@ Powyższy przykład pozwoli na dostęp do serwerów z mediami i danymi wg nazwy,
 Wyedytuj `vconsole.conf`:
 
  `# nano /etc/vconsole.conf` 
-
 ```
 KEYMAP=pl
 FONT=lat2-16
@@ -971,7 +958,6 @@ Są dwa pliki potrzebujące edycji: `locale.gen` oraz `locale.conf`.
 Wybierz odpowiednie locale poprzez usunięcie # z początku linii, np.:
 
  `# nano /etc/locale.gen` 
-
 ```
 en_US.UTF-8 UTF-8
 pl_PL.UTF-8 UTF-8
@@ -999,7 +985,7 @@ Ustawienie tylko `LANG` powinno wystarczyć. Będzie to służyć za domyślną 
 
 Możesz przesłonić część ustawień używając zmiennych `LC_*` – na przykład ustawienie `LC_COLLATE=C` wyłącza sortowanie według reguł języka, ale pozostawia resztę ustawień. Możesz wyświetlić wszystkie zmienne `LC_*` poleceniem `locale`.
 
-Zmienna `LC_ALL` przesłania _wszystkie_ pozostałe ustawienia. Z tego powodu nie możesz ustawić jej z poziomu `locale.conf`. Zaleca się używanie `LC_ALL` tylko w razie konieczności.
+Zmienna `LC_ALL` przesłania *wszystkie* pozostałe ustawienia. Z tego powodu nie możesz ustawić jej z poziomu `locale.conf`. Zaleca się używanie `LC_ALL` tylko w razie konieczności.
 
 Z powodu późniejszego tworzenia początkowego ramdysku, powinieneś(aś) ustawić zmienną `LANG`. **Przykład:**
 
@@ -1030,15 +1016,15 @@ Możesz wygenerować `/etc/adjtime` automatycznie używając jednej z nastepują
 
 ```
 
-**Warning:** Używanie _localtime_ może prowadzić do kilku znanych i nienaprawialnych błędów. Nie ma jednak planów porzucenia wsparcia dla _localtime_.
+**Warning:** Używanie *localtime* może prowadzić do kilku znanych i nienaprawialnych błędów. Nie ma jednak planów porzucenia wsparcia dla *localtime*.
 
 ##### Ustawienie czasu przy jednoczesnym uruchamianiu Windowsa
 
 Jeśli używasz jednocześnie Windowsa, masz dwie możliwe ścieżki:
 
-*   Zalecana: Ustaw Arch Linuksa i Windowsa do używania zegara UTC (szybka modyfikacja rejestru jest wymagana, zobacz [this page](https://help.ubuntu.com/community/UbuntuTime#Make_Windows_use_UTC) po instrukcje). Oprócz tego, wyłącz synchronizację czasu z Internetem w Windowsie, ponieważ to ustawi czas z powrotem na _localtime_. Jeśli potrzebujesz takiej funkcjonalności (synchronizacja czasu), użyj [ntpd](/index.php/Ntpd "Ntpd") lub [systemd-timesyncd](/index.php/Systemd-timesyncd_(Polski) "Systemd-timesyncd (Polski)") w systemie Arch Linux.
+*   Zalecana: Ustaw Arch Linuksa i Windowsa do używania zegara UTC (szybka modyfikacja rejestru jest wymagana, zobacz [this page](https://help.ubuntu.com/community/UbuntuTime#Make_Windows_use_UTC) po instrukcje). Oprócz tego, wyłącz synchronizację czasu z Internetem w Windowsie, ponieważ to ustawi czas z powrotem na *localtime*. Jeśli potrzebujesz takiej funkcjonalności (synchronizacja czasu), użyj [ntpd](/index.php/Ntpd "Ntpd") lub [systemd-timesyncd](/index.php/Systemd-timesyncd_(Polski) "Systemd-timesyncd (Polski)") w systemie Arch Linux.
 
-*   Niezalecana: Skonfiguruj Arch Linuksa do uźywania _localtime_ i (w [#Konfiguracja systemu](#Konfiguracja_systemu)) usuń `hwclock` z sekcji `DAEMONS` w `/etc/rc.conf` (Windows zajmie się ustawianiem zegara sprzętowego).
+*   Niezalecana: Skonfiguruj Arch Linuksa do uźywania *localtime* i (w [#Konfiguracja systemu](#Konfiguracja_systemu)) usuń `hwclock` z sekcji `DAEMONS` w `/etc/rc.conf` (Windows zajmie się ustawianiem zegara sprzętowego).
 
 #### Moduły jądra
 
@@ -1047,7 +1033,6 @@ Jeśli używasz jednocześnie Windowsa, masz dwie możliwe ścieżki:
 W katalogu `/etc/modules-load.d/` umieść pliki, w których będą wypisane moduły, które jądro ma załadować podczas startu systemu. Każdy plik konfiguracyjny powinien być nazwany w stylu `/etc/modules-load.d/<program>.conf`. Pliki powinny zaiwerać listę modułów do załadowania, poprzedzielaną znakami nowej linii. Linie puste i zaczynające się znakami `#` lub `;` będą ignorowane. Przykład:
 
  `/etc/modules-load.d/virtio-net.conf` 
-
 ```
 # Załaduj virtio-net.ko podczas uruchamiania
 virtio-net
@@ -1131,7 +1116,7 @@ Będziesz musiał(a) zainstalować inny program do konfiguracji i zarządzania p
 
 ```
 
-Jeśli twoja karta bezprzewodowa wymaga firmware (jak zostało wyjaśnione w [#Konfiguracja sieci bezprzewodowej](#Konfiguracja_sieci_bezprzewodowej) i [Wireless_Setup_(Polski)#Sterowniki_i_firmware](/index.php?title=Wireless_Setup_(Polski)&action=edit&redlink=1 "Wireless Setup (Polski) (page does not exist)")), zainstaluj pakiet zawierający odpowiednie firmware, _przykładowo_:
+Jeśli twoja karta bezprzewodowa wymaga firmware (jak zostało wyjaśnione w [#Konfiguracja sieci bezprzewodowej](#Konfiguracja_sieci_bezprzewodowej) i [Wireless_Setup_(Polski)#Sterowniki_i_firmware](/index.php?title=Wireless_Setup_(Polski)&action=edit&redlink=1 "Wireless Setup (Polski) (page does not exist)")), zainstaluj pakiet zawierający odpowiednie firmware, *przykładowo*:
 
 ```
 # pacman -S zd1211-firmware
@@ -1209,7 +1194,7 @@ następnie postępować według instrukcji poniżej.
 
 **Note:** Jeżeli spartycjonowałeś dysk z użyciem GPT, doinstaluj paczkę [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) używając (`pacman -S gptfdisk`). Zawiera ona `sgdisk`, które będzie użyte do ustawienia specyficznych dla GPT flag.
 
-Zainstaluj pakiet [syslinux](https://www.archlinux.org/packages/?name=syslinux) i uruchom skrypt `syslinux-install_update`, aby _zainstalować_ pliki (`-i`), oznaczyć _aktywną_ partycję jako _bootowalną_ (`-a`), i zainstalować kod startowy w _MBR_ (`-m`):
+Zainstaluj pakiet [syslinux](https://www.archlinux.org/packages/?name=syslinux) i uruchom skrypt `syslinux-install_update`, aby *zainstalować* pliki (`-i`), oznaczyć *aktywną* partycję jako *bootowalną* (`-a`), i zainstalować kod startowy w *MBR* (`-m`):
 
 ```
 # pacman -S syslinux
@@ -1238,7 +1223,7 @@ Po więcej informacji o konfiguracji i używaniu Syslinuksa, zobacz [Syslinux](/
 
 Zainstaluj paczkę [grub-bios](https://www.archlinux.org/packages/?name=grub-bios) i wykonaj `grub-install /dev/sda`.
 
-**Note:** Zamień `/dev/sda` na taki wpis, który odzwierciedla dysk, na którym zainstalowałeś system Arch. *Nie używaj* numerów partycji (`sda_X_`)
+**Note:** Zamień `/dev/sda` na taki wpis, który odzwierciedla dysk, na którym zainstalowałeś system Arch. *Nie używaj* numerów partycji (`sda*X*`)
 
 **Note:** Dla dysków spartycjonowanych z użüciem GPT na płytach z BIOSem, GRUB potrzebuje a "[BIOS Boot Partition](/index.php/GRUB#GPT_specific_instructions "GRUB")".
 
@@ -1258,7 +1243,6 @@ Zainstaluj paczkę [grub-bios](https://www.archlinux.org/packages/?name=grub-bio
 Możesz użyć ręcznie stworzonego `grub.cfg`, jednak dla początkujących użytkowników zalecamy skorzystanie z automatycznej generacji:
 
 **Tip:** Żeby automatycznie wyszukać inne systemy operacyjne znajdujące się w komputerze, zainstaluj [os-prober](https://www.archlinux.org/packages/?name=os-prober) przed wpisaniem kolejnej komendy:
-
 ```
 # pacman -S os-prober
 
@@ -1324,7 +1308,6 @@ Za każdym razem, gdy jądro i pliki initramfs są aktualizowane w `/boot`, musz
 5\. Stwórz plik `refind_linux.conf` z poniższymi ustawieniami, które zostaną użyte przez rEFInd:
 
  `# nano /boot/efi/EFI/arch/refind_linux.conf` 
-
 ```
 "Boot to X"          "root=/dev/sdaX ro rootfstype=ext4 systemd.unit=graphical.target"
 "Boot to console"    "root=/dev/sdaX ro rootfstype=ext4 systemd.unit=multi-user.target"
@@ -1374,7 +1357,6 @@ Następna komenda tworzy wpisy dla GRUB w boot menu UEFI. Jako że [grub-efi-x86
 Możesz użyć ręcznie stworzonego `grub.cfg`, jednak dla początkujących użytkowników zalecamy skorzystanie z automatycznej generacji:
 
 **Tip:** Żeby automatycznie wyszukać inne systemy operacyjne znajdujące się w komputerze, zainstaluj [os-prober](https://www.archlinux.org/packages/?name=os-prober) przed wpisaniem kolejnej komendy:
-
 ```
 # pacman -S os-prober
 
@@ -1461,9 +1443,9 @@ Repozytoria są opisane niżej; włącz wybrane repozytoria usuwając # z począ
 
 ##### Repozytoria pakietów
 
-[Repozytorium](https://en.wikipedia.org/wiki/software_repository "wikipedia:software repository") to miejsce przechowywania pakietów oprogramowania, które mogą zostać ściągnięte i zainstalowane na komputerze. [Opiekunowie pakietów](/index.php?title=Package_maintainer_(Polski)&action=edit&redlink=1 "Package maintainer (Polski) (page does not exist)") Arch Linuksa (deweloperzy i [Zaufani Użytkownicy](/index.php?title=Trusted_Users_(Polski)&action=edit&redlink=1 "Trusted Users (Polski) (page does not exist)")) opiekują się pakietami w oficjalnych repozytoriach, zawierającymi niezbędne i popularne oprogramowanie, łatwo dostępne za pomocą [pacmana](/index.php/Pacman_(Polski) "Pacman (Polski)"). Ten artykuł opisuje tylko oficjalne repozytoria. Zobacz [Oficjalne repozytoria](/index.php?title=Official_Repositories_(Polski)&action=edit&redlink=1 "Official Repositories (Polski) (page does not exist)") po więcej informacji dotyczących szczegółów i zawartości każdego repozytorium.
+[Repozytorium](https://en.wikipedia.org/wiki/software_repository Arch Linuksa (deweloperzy i [Zaufani Użytkownicy](/index.php?title=Trusted_Users_(Polski)&action=edit&redlink=1 "Trusted Users (Polski) (page does not exist)")) opiekują się pakietami w oficjalnych repozytoriach, zawierającymi niezbędne i popularne oprogramowanie, łatwo dostępne za pomocą [pacmana](/index.php/Pacman_(Polski) "Pacman (Polski)"). Ten artykuł opisuje tylko oficjalne repozytoria. Zobacz [Oficjalne repozytoria](/index.php?title=Official_Repositories_(Polski)&action=edit&redlink=1 "Official Repositories (Polski) (page does not exist)") po więcej informacji dotyczących szczegółów i zawartości każdego repozytorium.
 
-**Note:** Gdy wybierasz repozytoria, upewnij się, że odblokowałeś tak linie nagłówkową `[_repo_name_]`, jak i pozostałe linie, w przeciwnym wypadku repozytorium pozostanie pominięte przy aktualizacji! To bardzo powszechny błąd. Przykładowy wpis powinien wyglądać tak, jak poniżej.
+**Note:** Gdy wybierasz repozytoria, upewnij się, że odblokowałeś tak linie nagłówkową `[*repo_name*]`, jak i pozostałe linie, w przeciwnym wypadku repozytorium pozostanie pominięte przy aktualizacji! To bardzo powszechny błąd. Przykładowy wpis powinien wyglądać tak, jak poniżej.
 
 Większość użytkowników powinna wybrać [core], [extra] i [community]. Jeśli chcesz używać aplikacji 32-bitowych w systemie 64-bitowym, włącz repozytorium [multilib] dodając te linie do `/etc/pacman.conf`:
 
@@ -1506,7 +1488,7 @@ Zmuś pacmana do odświeżenia wszystkich list pakietów z nowego pliku mirrorli
 
  `# pacman -Syy` 
 
-Użycie dwóch parametrów `--refresh` lub `-y` zmusza pacmana do odświeżenia wszystkich list pakietów, nawet jeśli uważa je za aktualne. Uruchomienie `pacman -Syy` _przy każdej zmianie mirrorów_, jest dobrą praktyką i oszczędzi wielu problemów.
+Użycie dwóch parametrów `--refresh` lub `-y` zmusza pacmana do odświeżenia wszystkich list pakietów, nawet jeśli uważa je za aktualne. Uruchomienie `pacman -Syy` *przy każdej zmianie mirrorów*, jest dobrą praktyką i oszczędzi wielu problemów.
 
 **Note:** Część problemów zgłaszanych na [forum Arch Linuksa](https://bbs.archlinux.org/) dotyczy problemów z siecią, które nie pozwalają pacmanowi na odświeżenie/aktualizację repozytoriów (zobacz [[4]](https://bbs.archlinux.org/viewtopic.php?id=68944) i [[5]](https://bbs.archlinux.org/viewtopic.php?id=65728)). W natywnej instalacji Archa, te problemy mogą zostać rozwiązane przez zmianę programu do pobierania danych używanego przez pacmana (zobacz [Improve Pacman Performance_(Polski)](/index.php?title=Improve_Pacman_Performance_(Polski)&action=edit&redlink=1 "Improve Pacman Performance (Polski) (page does not exist)") po więcej szczegółów). W przypadku Archa będącego gościem w [VirtualBox](/index.php?title=VirtualBox_(Polski)&action=edit&redlink=1 "VirtualBox (Polski) (page does not exist)"), rozwiązaniem jest użycie "Host interface" zamiast "NAT" w ustawieniach maszyny.
 
@@ -1528,7 +1510,7 @@ Zweryfikuj [Master Signing Keys](https://www.archlinux.org/master-keys/) będąc
 
 Deweloperzy często dostarczają ważne informacje dotyczące konfiguracji i modyfikacji dotyczących znanych usterek. Użytkownik Arch Linuksa powinien zpoznać się z tymi treściami przed dokonaniem aktualizacji:
 
-*   [Aktualności Archa](https://archlinux.org/news/). Jeśli nie przeczytałeś(aś) tego przed aktualizacją i napotkałeś błąd, przeczytaj aktualności _zanim_ napiszesz post lub zapytanie na forum!
+*   [Aktualności Archa](https://archlinux.org/news/). Jeśli nie przeczytałeś(aś) tego przed aktualizacją i napotkałeś błąd, przeczytaj aktualności *zanim* napiszesz post lub zapytanie na forum!
 *   [Lista mailingowa arch-announce](https://archlinux.org/pipermail/arch-announce/).
 
 Zsynchronizuj, odśwież, i zaktualizuj cały system używając:
@@ -1563,7 +1545,7 @@ Pamiętaj, że Arch jest dystrybucją **ciągłego wydania**. Oznacza to, że u�
 
 **Warning:** Linux jest środowiskiem wieloużytkownikowym. Nie powinieneś(aś) używać konta roota do codziennych zadań, jest to zła i bardzo niebezpieczna praktyka: konto roota powinno być używane tylko do administracji.
 
-Dodaj konto zwykłego użytkownika, używając jednej z następujących metod. W tym przykładzie stworzymy użytkownika _archie_:
+Dodaj konto zwykłego użytkownika, używając jednej z następujących metod. W tym przykładzie stworzymy użytkownika *archie*:
 
 #### Metoda interaktywna
 
@@ -1588,9 +1570,9 @@ Expiry date (YYYY-MM-DD) []:
 
 ```
 
-Jak pokazano w przykładzie, powinieneś(aś) wprowadzić dane tylko w _Login name_ (Login) i _Additional groups_ (Dodatkowe grupy), pozostawiając resztę pól pustą.
+Jak pokazano w przykładzie, powinieneś(aś) wprowadzić dane tylko w *Login name* (Login) i *Additional groups* (Dodatkowe grupy), pozostawiając resztę pól pustą.
 
-Lista _Additional groups_ (Dodatkowych grup) w przykładzie jest typowa dla komputera domowego, jest więc polecana dla początkujacych:
+Lista *Additional groups* (Dodatkowych grup) w przykładzie jest typowa dla komputera domowego, jest więc polecana dla początkujacych:
 
 *   **audio** - do działań związanych z kartą dźwiękową i powiązanym oprogramowaniem
 *   **games** - do możliwości zapisu dla gier
@@ -1614,7 +1596,7 @@ Bedziesz musiał(a) ustawić hasło do konta używając `passwd`. Możesz wprowa
 Można też użyć:
 
 ```
-# useradd -m -g users -G wheel -s /bin/bash _archie_
+# useradd -m -g users -G wheel -s /bin/bash *archie*
 
 ```
 
@@ -1664,7 +1646,7 @@ Zainstaluj pakiety bazowe:
 
  `# pacman -S xorg-server xorg-xinit xorg-server-utils` 
 
-Zainstaluj [mesa](https://en.wikipedia.org/wiki/Mesa_3D_(OpenGL) "wikipedia:Mesa 3D (OpenGL)") dla wsparcia 3D:
+Zainstaluj [mesa](https://en.wikipedia.org/wiki/Mesa_3D_(OpenGL) dla wsparcia 3D:
 
  `# pacman -S mesa` 
 
@@ -1679,7 +1661,7 @@ Następnie, powinieneś(aś) zainstalować sterownik do twojej karty graficznej.
 Musisz wiedzieć, jaki układ graficzny posiadasz w komputerze. Jeśli nie wiesz, użyj programu `/usr/sbin/lspci`:
 
  `$ lspci | grep VGA` 
-**Note:** Sterownik **vesa** jest najbardziej podstawowy i powinien działać z prawie każdym układem graficznym. Jeśli posiadasz rzadko spotykaną kartę i nie możesz znaleźć do niej sterownika, vesa _powinna_ zadziałać, oferuje jednak wyłącznie nieakcelerowaną grafikę 2D.
+**Note:** Sterownik **vesa** jest najbardziej podstawowy i powinien działać z prawie każdym układem graficznym. Jeśli posiadasz rzadko spotykaną kartę i nie możesz znaleźć do niej sterownika, vesa *powinna* zadziałać, oferuje jednak wyłącznie nieakcelerowaną grafikę 2D.
 
 Aby znaleźć kompletną listę **otwartoźródłowych** sterowników wideo, przeszukaj bazę pakietów:
 
@@ -1804,7 +1786,7 @@ Jeśli Xorg został zainstalowany przed stworzeniem konta użytkownika, pozostan
 
 ##### Szyna wiadomości
 
-**Note:** _Możesz_ pominąć tę sekcję, dopóki nie zainstalujesz pakietu, który zależy od [dbus](/index.php?title=Dbus_(Polski)&action=edit&redlink=1 "Dbus (Polski) (page does not exist)"), musisz jednak pamiętać o ustawieniu demona kiedy to zrobisz.
+**Note:** *Możesz* pominąć tę sekcję, dopóki nie zainstalujesz pakietu, który zależy od [dbus](/index.php?title=Dbus_(Polski)&action=edit&redlink=1 "Dbus (Polski) (page does not exist)"), musisz jednak pamiętać o ustawieniu demona kiedy to zrobisz.
 
 Zainstaluj [dbus](/index.php?title=Dbus_(Polski)&action=edit&redlink=1 "Dbus (Polski) (page does not exist)"):
 
@@ -1813,7 +1795,7 @@ Zainstaluj [dbus](/index.php?title=Dbus_(Polski)&action=edit&redlink=1 "Dbus (Po
 Uruchom demon dbus:
 
  `# rc.d start dbus` 
-**Note:** `/usr/sbin/rc.d` to polecenie specyficzne dla Archa, które działa jako skrót do uruchamiania [demon](/index.php/Daemon_(Polski) "Daemon (Polski)")ów zamiast korzystania z pełnej ścieżki `/etc/rc.d/_demon_`.
+**Note:** `/usr/sbin/rc.d` to polecenie specyficzne dla Archa, które działa jako skrót do uruchamiania [demon](/index.php/Daemon_(Polski) "Daemon (Polski)")ów zamiast korzystania z pełnej ścieżki `/etc/rc.d/*demon*`.
 
 Dodaj dbus do linii `DAEMONS` w `/etc/rc.conf`, aby był uruchamiany razem z systemem:
 
@@ -1886,13 +1868,13 @@ W tym momencie, powinieneś(aś) zainstalować zbiór fontów TrueType fonts, po
 
 System X Window dostarcza podstawowego frameworku do tworzenia graficznego interfejsu użytkownika (GUI).
 
-**Note:** Wybór środowiska graficznego lub menedżera okien to bardzo subiektywna decyzja. Wybierz środowisko najlepsze dla _twoich_ potrzeb.
+**Note:** Wybór środowiska graficznego lub menedżera okien to bardzo subiektywna decyzja. Wybierz środowisko najlepsze dla *twoich* potrzeb.
 
-	Menedżer okien (_Window Manager_, WM) 
+	Menedżer okien (*Window Manager*, WM) 
 
 	Kontroluje położenie i wygląd okien aplikacji łącznie z X Window System. **Zobacz [Menedżery okien](/index.php?title=Window_Manager_(Polski)&action=edit&redlink=1 "Window Manager (Polski) (page does not exist)") po więcej informacji.**
 
-	Środowisko graficzne (_Desktop Environment_, DE)
+	Środowisko graficzne (*Desktop Environment*, DE)
 
 	Wykorzystuje serwer X, aby dostarczyć funkcjonalny i dynamiczny interfejs użytkownika. Zwykle zawiera menedżer okien, ikony, aplety, panele, tapety, zbiór towarzyszacych aplikacji i różne ułatwienia. **Zobacz [Środowiska graficzne](/index.php?title=Desktop_Environment_(Polski)&action=edit&redlink=1 "Desktop Environment (Polski) (page does not exist)") po więcej informacji.**
 

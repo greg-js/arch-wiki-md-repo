@@ -82,7 +82,7 @@ O céu é o limite. Se você pretende apenas instalar o Arch, siga o [guia de in
 
 Deseja que o [grub2](/index.php/Grub2 "Grub2") utilize disco rígido [GPT](/index.php/GPT "GPT")?
 
-*   Particione manualmente o dispositivo utilizando o utilitário **gdisk**, instalado através do comando _pacman -S gdisk_ antes de iniciar a instalação do Arch Linux
+*   Particione manualmente o dispositivo utilizando o utilitário **gdisk**, instalado através do comando *pacman -S gdisk* antes de iniciar a instalação do Arch Linux
 *   Instalar o grub2 é trivial a partir deste momento. Apenas execute o chroot no seu Arch recém-instalado e instale o grub2 assim:
 
 ```

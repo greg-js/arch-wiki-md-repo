@@ -70,7 +70,7 @@
 
 ## Οδηγός συσκευής
 
-Ο προεπιλεγμένος πυρήνας του Arch Linux είναι _αρθρωτός_, που σημαίνει πως πολλοί από τους απαιτούμενους από το υλικό σας οδηγοί βρίσκονται στον σκληρό δίσκο σας μετά την εγκατάσταση και είναι διαθέσιμοι ως [modules](/index.php/Kernel_modules "Kernel modules"). Κατά την εκκίνηση o [udev](/index.php/Udev "Udev") παίρνει έναν κατάλογο του υλικού σας και φορτώνει τα απαραίτητα για την λειτουργία του modules (οδηγοί), τα οποία επιτρέπουν την δημιουργία της _διεπαφής_ δικτύου.
+Ο προεπιλεγμένος πυρήνας του Arch Linux είναι *αρθρωτός*, που σημαίνει πως πολλοί από τους απαιτούμενους από το υλικό σας οδηγοί βρίσκονται στον σκληρό δίσκο σας μετά την εγκατάσταση και είναι διαθέσιμοι ως [modules](/index.php/Kernel_modules "Kernel modules"). Κατά την εκκίνηση o [udev](/index.php/Udev "Udev") παίρνει έναν κατάλογο του υλικού σας και φορτώνει τα απαραίτητα για την λειτουργία του modules (οδηγοί), τα οποία επιτρέπουν την δημιουργία της *διεπαφής* δικτύου.
 
 Ορισμένες υλοποιήσεις ασύρματης κάρτας απαιτούν και την ύπαρξη υλικολογισμικού (firmware) επιπροσθέτως του οδηγού. Πολλά τέτοια υλικολογισμικά πακέτα παρέχονται από το πακέτο [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) το οποίο εγκαθίσταται από προεπιλογή, αλλά αν πρόκειται περί ιδιοταγούς-κλειστού, δεν παρέχεται και θα πρέπει να εγκατασταθεί ξεχωριστά. Η διαδικασία αυτή περιγράφεται στο [#Installing driver/firmware](#Installing_driver.2Ffirmware).
 
@@ -86,7 +86,6 @@
 Για να ελέγξετε αν ο οδηγός για την κάρτα σας είναι φορτωμένος, ελέγξτε την έξοδο της εντολής `lspci -k`. Θα πρέπει να δείτε κάποιον οδηγό πυρήνα σε χρήση, για παράδειγμα:
 
  `$ lspci -k` 
-
 ```
 06:00.0 Network controller: Intel Corporation WiFi Link 5100
 	Subsystem: Intel Corporation WiFi Link 5100 AGN
@@ -100,7 +99,7 @@
 *   `lsusb -v`
 *   `dmesg | grep usbcore`, θα πρέπει να δείτε κάτι παρόμοιο με `usbcore: registered new interface driver rtl8187` στην έξοδο.
 
-Επίσης ελέγξτε και την έξοδο της εντολής `ip link` ώστε να διαπιστώσετε αν κάποια ασύρματη διεπαφή ((π.χ. `wlan0`, `wlp2s1`, `ath0`) έχει δημιουργηθεί. Κατόπιν ενεργοποιήστε την με την `ip link set _interface_ up`. Για παράδειγμα, υποθέτοντας πως η διεπαφή σας είναι η `wlan0`:
+Επίσης ελέγξτε και την έξοδο της εντολής `ip link` ώστε να διαπιστώσετε αν κάποια ασύρματη διεπαφή ((π.χ. `wlan0`, `wlp2s1`, `ath0`) έχει δημιουργηθεί. Κατόπιν ενεργοποιήστε την με την `ip link set *interface* up`. Για παράδειγμα, υποθέτοντας πως η διεπαφή σας είναι η `wlan0`:
 
 ```
 # ip link set wlan0 up
@@ -112,7 +111,6 @@
 Ελέγξτε τα μηνύματα λάθους που αφορούν το firmware:
 
  `$ dmesg | grep firmware` 
-
 ```
 [   7.148259] iwlwifi 0000:02:00.0: loaded firmware version 39.30.4.1 build 35138 op_mode iwldvm
 
@@ -121,7 +119,6 @@
 Αν δεν υπάρχει σχετική έξοδος, ελέγξτε για μηνύματα στην πλήρη έξοδο που αφορά το άρθρωμα (module) που αναγνωρίσατε προηγούμενα, σε αυτό το παράδειγμα το (`iwlwifi` ώστε να εξακριβώσετε σχετικά μηνύματα ή περαιτέρω προβλήματα:
 
  `$ dmesg | grep iwlwifi` 
-
 ```
 [   12.342694] iwlwifi 0000:02:00.0: irq 44 for MSI/MSI-X
 [   12.353466] iwlwifi 0000:02:00.0: loaded firmware version 39.31.5.1 build 35138 op_mode iwldvm
@@ -178,33 +175,32 @@
 
 ### Χειροκίνητη ρύθμιση
 
-Όπως όλα οι άλλες διεπαφές δικτύου, έτσι και οι ασύρματες ελέγχονται με την `ip` από το πακέτο [iproute2](https://www.archlinux.org/packages/?name=iproute2). Το πακέτο [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) παρέχει μια βασική δέσμη εργαλείων για τον έλεγχο των ασύρματων συνδέσεων, ωστόσο αυτά τα εργαλεία θεωρούνται ξεπερασμένα προς χάριν του εργαλείου [iw](https://www.archlinux.org/packages/?name=iw). Αν το _iw_ δεν συνεργάζεται με την ασύρματη κάρτα σας, μπορείτε να χρησιμοποιήσετε τα _wireless_tools_, ο παρακάτω πίνακας δίνει μια σύνοψη των συγκρίσιμων εντολών τους (δείτε [[1]](http://wireless.kernel.org/en/users/Documentation/iw/replace-iwconfig) για περισσότερα παραδείγματα). Επιπρόσθετα, το πακέτο [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) απαιτείται για την χρησιμοποίηση WPA/WPA2 προστασία. Αυτά τα δυνατά εργαλεία για τον χώρο του χρήστη, δουλεύουν εξαιρετικά καλά και επιτρέπουν τον πλήρη χειροκίνητο έλεγχο της ασύρματης σύνδεσης.
+Όπως όλα οι άλλες διεπαφές δικτύου, έτσι και οι ασύρματες ελέγχονται με την `ip` από το πακέτο [iproute2](https://www.archlinux.org/packages/?name=iproute2). Το πακέτο [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) παρέχει μια βασική δέσμη εργαλείων για τον έλεγχο των ασύρματων συνδέσεων, ωστόσο αυτά τα εργαλεία θεωρούνται ξεπερασμένα προς χάριν του εργαλείου [iw](https://www.archlinux.org/packages/?name=iw). Αν το *iw* δεν συνεργάζεται με την ασύρματη κάρτα σας, μπορείτε να χρησιμοποιήσετε τα *wireless_tools*, ο παρακάτω πίνακας δίνει μια σύνοψη των συγκρίσιμων εντολών τους (δείτε [[1]](http://wireless.kernel.org/en/users/Documentation/iw/replace-iwconfig) για περισσότερα παραδείγματα). Επιπρόσθετα, το πακέτο [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) απαιτείται για την χρησιμοποίηση WPA/WPA2 προστασία. Αυτά τα δυνατά εργαλεία για τον χώρο του χρήστη, δουλεύουν εξαιρετικά καλά και επιτρέπουν τον πλήρη χειροκίνητο έλεγχο της ασύρματης σύνδεσης.
 
 **Σημείωση:**
 
-*   τα παραδείγματα σε αυτό το τμήμα λαμβάνουν δεδομένο πως η ασύρματη διεπαφή σας είναι η `wlan0` και πως είστε συνδεδεμένος στο δικό σας `_your_essid_` router. Αντικαταστήστε και τα δύο αναλόγως.
-*   Σημειώστε πως οι περισσότερες εντολές θα πρέπει να εκτελεστούν με τον λογαριασμό του root ([root permissions](/index.php/Users_and_groups "Users and groups")). Αν εκτελεστούν με λογαριασμό χρήστη, μερικές από αυτές (πχ _iwlist_), θα δώσουν έξοδο χωρίς σφάλμα αλλά δεν θα δώσουν και σωστές πληροφορίες, πράγμα που θα προκαλέσει σύγχυση.
+*   τα παραδείγματα σε αυτό το τμήμα λαμβάνουν δεδομένο πως η ασύρματη διεπαφή σας είναι η `wlan0` και πως είστε συνδεδεμένος στο δικό σας `*your_essid*` router. Αντικαταστήστε και τα δύο αναλόγως.
+*   Σημειώστε πως οι περισσότερες εντολές θα πρέπει να εκτελεστούν με τον λογαριασμό του root ([root permissions](/index.php/Users_and_groups "Users and groups")). Αν εκτελεστούν με λογαριασμό χρήστη, μερικές από αυτές (πχ *iwlist*), θα δώσουν έξοδο χωρίς σφάλμα αλλά δεν θα δώσουν και σωστές πληροφορίες, πράγμα που θα προκαλέσει σύγχυση.
 
-| _iw_ command | _wireless_tools_ command | Description |
+| *iw* command | *wireless_tools* command | Description |
 | iw dev wlan0 link | iwconfig wlan0 | Getting link status. |
 | iw dev wlan0 scan | iwlist wlan0 scan | Scanning for available access points. |
-| iw dev wlan0 set type ibss | iwconfig wlan0 mode ad-hoc | Setting the operation mode to _ad-hoc_. |
-| iw dev wlan0 connect _your_essid_ | iwconfig wlan0 essid _your_essid_ | Connecting to open network. |
-| iw dev wlan0 connect _your_essid_ 2432 | iwconfig wlan0 essid _your_essid_ freq 2432M | Connecting to open network specifying channel. |
-| iw dev wlan0 connect _your_essid_ key 0:_your_key_ | iwconfig wlan0 essid _your_essid_ key _your_key_ | Connecting to WEP encrypted network using hexadecimal key. |
-| iw dev wlan0 connect _your_essid_ key 0:_your_key_ | iwconfig wlan0 essid _your_essid_ key s:_your_key_ | Connecting to WEP encrypted network using ASCII key. |
+| iw dev wlan0 set type ibss | iwconfig wlan0 mode ad-hoc | Setting the operation mode to *ad-hoc*. |
+| iw dev wlan0 connect *your_essid* | iwconfig wlan0 essid *your_essid* | Connecting to open network. |
+| iw dev wlan0 connect *your_essid* 2432 | iwconfig wlan0 essid *your_essid* freq 2432M | Connecting to open network specifying channel. |
+| iw dev wlan0 connect *your_essid* key 0:*your_key* | iwconfig wlan0 essid *your_essid* key *your_key* | Connecting to WEP encrypted network using hexadecimal key. |
+| iw dev wlan0 connect *your_essid* key 0:*your_key* | iwconfig wlan0 essid *your_essid* key s:*your_key* | Connecting to WEP encrypted network using ASCII key. |
 | iw dev wlan0 set power_save on | iwconfig wlan0 power on | Enabling power save. |
 
 **Σημείωση:** Εξαρτώμενο από το υλικό σας και τον τύπο προστασίας που χρησιμοποιείται, μερικά βήματα ίσως να μην είναι απαραίτητα. Ορισμένες κάρτες είναι γνωστό πως απαιτούν ενεργοποίηση διεπαφής ή/και σάρωση δικτύου πριν γίνει εφικτό να συνεργαστούν με το router σας και να λάβουν διεύθυνση ip. ίσως να χρειάζεται να πειραματιστείτε λίγο. Για παράδειγμα, χρήστες με προστασία WPA/WPA2 είναι δυνατόν να δοκιμάσουν να ενεργοποιήσουν απευθείας το ασύρματο δίκτυό τους από το βήμα [#Association]].
 
 #### Λήψη ορισμένων χρήσιμων πληροφοριών
 
-**Συμβουλή:** Δείτε το [official documentation](http://wireless.kernel.org/en/users/Documentation/iw) που αφορά το _iw_ εργαλείο για περισσότερα παραδείγματα.
+**Συμβουλή:** Δείτε το [official documentation](http://wireless.kernel.org/en/users/Documentation/iw) που αφορά το *iw* εργαλείο για περισσότερα παραδείγματα.
 
 *   Πρώτα θα πρέπει να βρείτε το όνομα της ασύρματης διεπαφής σας. Αυτό μπορείτε να το πετύχετε με την παρακάτω εντολή:
 
  `$ iw dev` 
-
 ```
 phy#0
 	Interface **wlan0**
@@ -219,7 +215,6 @@ phy#0
 *   Για να ελέγξετε την κατάσταση της σύνδεσης, χρησιμοποιείστε την παρακάτω. Παράδειγμα εξόδου όταν δεν είναι συνδεδεμένη σε κάποιο router:
 
  `$ iw dev wlan0 link` 
-
 ```
 Not connected.
 
@@ -228,7 +223,6 @@ Not connected.
 Ενώ όταν είναι συνδεδεμένη θα δείτε κάτι παρόμοιο με:
 
  `$ iw dev wlan0 link` 
-
 ```
 Connected to 12:34:56:78:9a:bc (on wlan0)
 	SSID: MyESSID
@@ -247,7 +241,6 @@ Connected to 12:34:56:78:9a:bc (on wlan0)
 *   Μπορείτε να πάρετε πληροφορίες, όπως το ποσό των tx/rx bytes, την ένταση σήματος κλπ, με την ακόλουθη εντολή:
 
  `$ iw dev wlan0 station dump` 
-
 ```
 Station 12:34:56:78:9a:bc (on wlan0)
 	inactive time:	1450 ms
@@ -271,16 +264,16 @@ Station 12:34:56:78:9a:bc (on wlan0)
 
 #### Ενεργοποίηση διεπαφής
 
-_(Προαιρετικό, αλλά ίσως να απαιτείται)_
+*(Προαιρετικό, αλλά ίσως να απαιτείται)*
 
-Ορισμένες κάρτες ασύρματης δικτύωσης, απαιτούν να ενεργοποιηθεί η διεπαφή πυρήνα πριν να είστε σε θέση να χρησιμοποιήσετε τα εργαλεία _iw_ ή _wireless_tools_:
+Ορισμένες κάρτες ασύρματης δικτύωσης, απαιτούν να ενεργοποιηθεί η διεπαφή πυρήνα πριν να είστε σε θέση να χρησιμοποιήσετε τα εργαλεία *iw* ή *wireless_tools*:
 
 ```
 # ip link set wlan0 up
 
 ```
 
-**Σημείωση:** Αν λάβετε λάθη όπως `RTNETLINK answers: Operation not possible due to RF-kill`, σιγουρευτείτε πως έχετε στην θέση _on_ τον διακόπτη ενεργοποίησης υλικού. Δείτε επίσης [#Rfkill caveat](#Rfkill_caveat) για λεπτομέρειες.
+**Σημείωση:** Αν λάβετε λάθη όπως `RTNETLINK answers: Operation not possible due to RF-kill`, σιγουρευτείτε πως έχετε στην θέση *on* τον διακόπτη ενεργοποίησης υλικού. Δείτε επίσης [#Rfkill caveat](#Rfkill_caveat) για λεπτομέρειες.
 
 #### Εύρεση Access point
 
@@ -291,7 +284,7 @@ _(Προαιρετικό, αλλά ίσως να απαιτείται)_
 
 ```
 
-**Σημείωση:** Αν η έξοδος είναι `Interface doesn't support scanning`, τότε πιθανότατα έχετε ξεχάσει να εγκαταστήσετε το αντίστοιχο firmware. Σε ορισμένες περιπτώσεις το ίδιο λάθος εμφανίζεται αν δεν τρέχετε την εντολή _iw_ με τον λογαριασμό του root.
+**Σημείωση:** Αν η έξοδος είναι `Interface doesn't support scanning`, τότε πιθανότατα έχετε ξεχάσει να εγκαταστήσετε το αντίστοιχο firmware. Σε ορισμένες περιπτώσεις το ίδιο λάθος εμφανίζεται αν δεν τρέχετε την εντολή *iw* με τον λογαριασμό του root.
 
 Τα σημαντικά προς έλεγχο σημεία:
 
@@ -309,7 +302,7 @@ _(Προαιρετικό, αλλά ίσως να απαιτείται)_
 
 #### Τρόπος λειτουργίας (Operating mode)
 
-_(Προαιρετικό, αλλά ίσως να απαιτείται)_
+*(Προαιρετικό, αλλά ίσως να απαιτείται)*
 
 Σε αυτό το βήμα ίσως θα πρέπει να ορίσετε τον σωστό τρόπο λειτουργίας της ασύρματης κάρτας. Συγκεκριμένα, αν πρόκειται να συνδεθείτε σε ένα [ad-hoc network](/index.php/Ad-hoc_networking "Ad-hoc networking"), πρέπει να θέσετε τον τρόπο λειτουργίας σε `ibss`:
 
@@ -318,7 +311,7 @@ _(Προαιρετικό, αλλά ίσως να απαιτείται)_
 
 ```
 
-**Σημείωση:** Για να αλλάξετε τον τρόπο λειτουργίας σε ορισμένες κάρτες ίσως να απαιτεί να _απενεργοποιηθεί_ (`ip link set wlan0 down`).
+**Σημείωση:** Για να αλλάξετε τον τρόπο λειτουργίας σε ορισμένες κάρτες ίσως να απαιτεί να *απενεργοποιηθεί* (`ip link set wlan0 down`).
 
 #### Σύνδεση (Association)
 
@@ -327,7 +320,7 @@ _(Προαιρετικό, αλλά ίσως να απαιτείται)_
 *   **Χωρίς προστασία**
 
 ```
-# iw dev wlan0 connect _your_essid_
+# iw dev wlan0 connect *your_essid*
 
 ```
 
@@ -336,14 +329,14 @@ _(Προαιρετικό, αλλά ίσως να απαιτείται)_
 χρησιμοποιώντας ένα κλειδί δεκαεξαδικό ή ASCII (η μορφή είναι άμεσα διακριτή διότι το κλειδί που αφορά προστασία WEP είναι σταθερού αριθμού χαρακτήρων):
 
 ```
-# iw dev wlan0 connect _your_essid_ key 0:_your_key_
+# iw dev wlan0 connect *your_essid* key 0:*your_key*
 
 ```
 
 χρησιμοποιώντας ένα κλειδί δεκαεξαδικό ή ASCII, ορίζετε το τρίτο κλειδί ως προεπιλεγμένο (η αρίθμηση ξεκινά από το 0, μέχρι τέσσερα είναι δυνατόν:
 
 ```
-# iw dev wlan0 connect _your_essid_ key d:2:_your_key_
+# iw dev wlan0 connect *your_essid* key d:2:*your_key*
 
 ```
 
@@ -395,7 +388,7 @@ for DHCP, or
 
 for static IP addressing.
 
-**Tip:** [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) contains a hook (enabled by default) to automatically launch [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") on wireless interfaces. It is started only if a configuration file at `/etc/wpa_supplicant.conf` exists and no _wpa_supplicant_ process is listening on that interface. In most cases, you do not need to create any [custom service](#Manual_wireless_connection_at_boot_using_systemd_and_dhcpcd), just enable `dhcpcd@_interface_`.
+**Tip:** [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) contains a hook (enabled by default) to automatically launch [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") on wireless interfaces. It is started only if a configuration file at `/etc/wpa_supplicant.conf` exists and no *wpa_supplicant* process is listening on that interface. In most cases, you do not need to create any [custom service](#Manual_wireless_connection_at_boot_using_systemd_and_dhcpcd), just enable `dhcpcd@*interface*`.
 
 #### Custom startup scripts/services
 
@@ -410,7 +403,6 @@ This example uses [systemd](/index.php/Systemd "Systemd") for start up, [WPA sup
 Create a systemd unit, e.g `/etc/systemd/system/network-wireless@.service`:
 
  `/etc/systemd/system/network-wireless@.service` 
-
 ```
 [Unit]
 Description=Wireless network connectivity (%i)
@@ -446,10 +438,9 @@ Enable the unit and start it, passing the name of the interface:
 
 **Note:** Make sure that [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) is installed and create `/etc/wpa_supplicant.conf`. See [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") for details.
 
-First create configuration file for the [systemd](/index.php/Systemd "Systemd") service, replace `_interface_` with proper interface name:
+First create configuration file for the [systemd](/index.php/Systemd "Systemd") service, replace `*interface*` with proper interface name:
 
- `/etc/conf.d/network-wireless@_interface_` 
-
+ `/etc/conf.d/network-wireless@*interface*` 
 ```
 address=192.168.0.10
 netmask=24
@@ -461,7 +452,6 @@ gateway=192.168.0.1
 Create a systemd unit file:
 
  `/etc/systemd/system/network-wireless@.service` 
-
 ```
 [Unit]
 Description=Wireless network connectivity (%i)
@@ -514,7 +504,7 @@ GUI | Console tools |
 
 #### Netctl
 
-_netctl_ is a replacement for _netcfg_ designed to work with systemd. It uses a profile based setup and is capable of detection and connection to a wide range of network types. This is no harder than using graphical tools.
+*netctl* is a replacement for *netcfg* designed to work with systemd. It uses a profile based setup and is capable of detection and connection to a wide range of network types. This is no harder than using graphical tools.
 
 See: [Netctl](/index.php/Netctl "Netctl")
 
@@ -546,10 +536,9 @@ This section contains general troubleshooting tips, not strictly related to prob
 
 ### Rfkill caveat
 
-Many laptops have a hardware button (or switch) to turn off wireless card, however, the card can also be blocked by kernel. This can be handled by [rfkill](https://www.archlinux.org/packages/?name=rfkill). Use _rfkill_ to show the current status:
+Many laptops have a hardware button (or switch) to turn off wireless card, however, the card can also be blocked by kernel. This can be handled by [rfkill](https://www.archlinux.org/packages/?name=rfkill). Use *rfkill* to show the current status:
 
  `# rfkill list` 
-
 ```
 0: phy0: Wireless LAN
 	Soft blocked: yes
@@ -557,14 +546,14 @@ Many laptops have a hardware button (or switch) to turn off wireless card, howev
 
 ```
 
-If the card is _hard-blocked_, use the hardware button (switch) to unblock it. If the card is not _hard-blocked_ but _soft-blocked_, use the following command:
+If the card is *hard-blocked*, use the hardware button (switch) to unblock it. If the card is not *hard-blocked* but *soft-blocked*, use the following command:
 
 ```
 # rfkill unblock wifi
 
 ```
 
-**Note:** It is possible that the card will go from _hard-blocked_ and _soft-unblocked_ state into _hard-unblocked_ and _soft-blocked_ state by pressing the hardware button (i.e. the _soft-blocked_ bit is just switched no matter what). This can be adjusted by tuning some options of the `rfkill` [kernel module](/index.php/Kernel_modules "Kernel modules").
+**Note:** It is possible that the card will go from *hard-blocked* and *soft-unblocked* state into *hard-unblocked* and *soft-blocked* state by pressing the hardware button (i.e. the *soft-blocked* bit is just switched no matter what). This can be adjusted by tuning some options of the `rfkill` [kernel module](/index.php/Kernel_modules "Kernel modules").
 
 More info: [http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill)
 
@@ -594,7 +583,7 @@ See [Power saving#Network interfaces](/index.php/Power_saving#Network_interfaces
 
 ### Failed to get IP address
 
-*   If getting an IP address repeatedly fails using the default [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) client, try installing and using [dhclient](https://www.archlinux.org/packages/?name=dhclient) instead. Do not forget to select _dhclient_ as the primary DHCP client in your [connection manager](#Automatic_setup)!
+*   If getting an IP address repeatedly fails using the default [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) client, try installing and using [dhclient](https://www.archlinux.org/packages/?name=dhclient) instead. Do not forget to select *dhclient* as the primary DHCP client in your [connection manager](#Automatic_setup)!
 
 *   If you can get an IP address for a wired interface and not for a wireless interface, try disabling the wireless card's power saving features:
 
@@ -603,7 +592,7 @@ See [Power saving#Network interfaces](/index.php/Power_saving#Network_interfaces
 
 ```
 
-*   If you get a timeout error due to a _waiting for carrier_ problem, then you might have to set the channel mode to `auto` for the specific device:
+*   If you get a timeout error due to a *waiting for carrier* problem, then you might have to set the channel mode to `auto` for the specific device:
 
 ```
 # iwconfig wlan0 channel auto
@@ -686,7 +675,7 @@ try changing the channel bandwidth to `20MHz` through your router's settings pag
 
 ## Troubleshooting drivers and firmware
 
-This section covers methods and procedures for installing kernel modules and _firmware_ for specific chipsets, that differ from generic method.
+This section covers methods and procedures for installing kernel modules and *firmware* for specific chipsets, that differ from generic method.
 
 See [Kernel modules](/index.php/Kernel_modules "Kernel modules") for general informations on operations with modules.
 
@@ -828,7 +817,6 @@ These modules are fully supported in the kernel, but they require additional fir
 If you have problems connecting to networks in general or your link quality is very poor, try to disable 802.11n and enable software encryption:
 
  `/etc/modprobe.d/iwlwifi.conf` 
-
 ```
 options iwlwifi 11n_disable=1
 options iwlwifi swcrypto=1
@@ -841,7 +829,6 @@ options iwlwifi swcrypto=1
 The default settings on the module are to have the LED blink on activity. Some people find this extremely annoying. To have the LED on solid when Wi-Fi is active, you can use the [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd"):
 
  `/etc/tmpfiles.d/phy0-led.conf` 
-
 ```
 w /sys/class/leds/phy0-led/trigger - - - - phy0radio
 
@@ -928,7 +915,6 @@ $ ndiswrapper -l
 3\. Write the following configuration file:
 
  `/etc/modprobe.d/ndiswrapper.conf` 
-
 ```
 ndiswrapper -m
 depmod -a
@@ -945,13 +931,13 @@ The important part is making sure that ndiswrapper exists on this line, so just 
 
 ```
 
-and _wlan0_ should now exist. Check this page if you are having problems: [Ndiswrapper installation wiki](http://ndiswrapper.sourceforge.net/joomla/index.php?/component/option,com_openwiki/Itemid,33/id,installation/).
+and *wlan0* should now exist. Check this page if you are having problems: [Ndiswrapper installation wiki](http://ndiswrapper.sourceforge.net/joomla/index.php?/component/option,com_openwiki/Itemid,33/id,installation/).
 
 ### compat-drivers-patched
 
 Patched compat wireless drivers correct the "fixed-channel -1" issue, whilst providing better injection. Please install the [compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/) package from the [AUR](/index.php/Arch_User_Repository "Arch User Repository").
 
-[compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/) does not conflict with any other package and the modules built reside in `/usr/lib/modules/_your_kernel_version_/updates`.
+[compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/) does not conflict with any other package and the modules built reside in `/usr/lib/modules/*your_kernel_version*/updates`.
 
 These patched drivers come from the [Linux Wireless project](http://wireless.kernel.org/) and support many of the above mentioned chips such as:
 

@@ -59,7 +59,7 @@ This article contains recommendations and best practices for hardening an Arch L
 
 ## Concepts
 
-*   It _is_ possible to tighten the security so much as to make your system unusable. The trick is to secure it without overdoing it.
+*   It *is* possible to tighten the security so much as to make your system unusable. The trick is to secure it without overdoing it.
 *   There are many other things that can be done to heighten the security, but the biggest threat is, and will always be, the user. When you think security, you have to think layers. When one layer is breached, another should stop the attack. But you can never make the system 100% secure unless you unplug the machine from all networks, lock it in a safe and never use it.
 *   Be a little paranoid. It helps. And be suspicious. If anything sounds too good to be true, it probably is!
 *   The [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege "wikipedia:Principle of least privilege"): each part of a system should only be able to access what is required to use it, and nothing more.
@@ -70,7 +70,7 @@ Passwords are key to a secure linux system. They secure your [user accounts](/in
 
 ### Choosing secure passwords
 
-When relying on a passphrase, it must be complex enough to not be easily guessed from e.g. personal information, or [cracked](https://en.wikipedia.org/wiki/Password_cracking "wikipedia:Password cracking") using e.g. brute-force attacks. The tenets of strong passphrases are based on _length_ and _randomness_. In cryptography the quality of a passphrase is referred to as its [Wikipedia:Entropic security](https://en.wikipedia.org/wiki/Entropic_security "wikipedia:Entropic security").
+When relying on a passphrase, it must be complex enough to not be easily guessed from e.g. personal information, or [cracked](https://en.wikipedia.org/wiki/Password_cracking "wikipedia:Password cracking") using e.g. brute-force attacks. The tenets of strong passphrases are based on *length* and *randomness*. In cryptography the quality of a passphrase is referred to as its [Wikipedia:Entropic security](https://en.wikipedia.org/wiki/Entropic_security "wikipedia:Entropic security").
 
 Insecure passwords include those containing:
 
@@ -101,17 +101,17 @@ Another aspect of the strength of the passphrase is that it must not be easily r
 
 By default, Arch stores the hashed user passwords in the root-only-readable `/etc/shadow` file, separated from the other user parameters stored in the world-readable `/etc/passwd` file, see [Users and groups#User database](/index.php/Users_and_groups#User_database "Users and groups"). See also [#Restricting root](#Restricting_root).
 
-Passwords are set with the **passwd** command, which [stretches](https://en.wikipedia.org/wiki/Key_stretching "wikipedia:Key stretching") them with the [crypt](https://en.wikipedia.org/wiki/Crypt_(C) "wikipedia:Crypt (C)") function and then saves them in `/etc/shadow`. See also [SHA password hashes](/index.php/SHA_password_hashes "SHA password hashes"). The passwords are also [salted](https://en.wikipedia.org/wiki/Salt_(cryptography) "wikipedia:Salt (cryptography)") in order to defend them against [rainbow table](https://en.wikipedia.org/wiki/Rainbow_table "wikipedia:Rainbow table") attacks.
+Passwords are set with the **passwd** command, which [stretches](https://en.wikipedia.org/wiki/Key_stretching function and then saves them in `/etc/shadow`. See also [SHA password hashes](/index.php/SHA_password_hashes "SHA password hashes"). The passwords are also [salted](https://en.wikipedia.org/wiki/Salt_(cryptography) in order to defend them against [rainbow table](https://en.wikipedia.org/wiki/Rainbow_table "wikipedia:Rainbow table") attacks.
 
 See also [How are passwords stored in Linux (Understanding hashing with shadow utils)](http://www.slashroot.in/how-are-passwords-stored-linux-understanding-hashing-shadow-utils).
 
 ### Enforcing strong passwords using pam_cracklib
 
-_pam_cracklib_ provides protection against [Dictionary attacks](https://en.wikipedia.org/wiki/Dictionary_attack "wikipedia:Dictionary attack") and helps configure a password policy that can be enforced throughout the system.
+*pam_cracklib* provides protection against [Dictionary attacks](https://en.wikipedia.org/wiki/Dictionary_attack "wikipedia:Dictionary attack") and helps configure a password policy that can be enforced throughout the system.
 
-**Warning:** The _root_ account is not affected by this policy.
+**Warning:** The *root* account is not affected by this policy.
 
-**Note:** You can use the _root_ account to set a password for a user that bypasses the desired/configured policy. This is useful when setting temporary passwords.
+**Note:** You can use the *root* account to set a password for a user that bypasses the desired/configured policy. This is useful when setting temporary passwords.
 
 If for example you want to enforce this policy:
 
@@ -131,7 +131,7 @@ password required pam_cracklib.so retry=2 minlen=10 difok=6 dcredit=-1 ucredit=-
 password required pam_unix.so use_authtok sha512 shadow
 ```
 
-The `password required pam_unix.so use_authtok` instructs the _pam_unix_ module to not prompt for a password but rather to use the one provided by _pam_cracklib_.
+The `password required pam_unix.so use_authtok` instructs the *pam_unix* module to not prompt for a password but rather to use the one provided by *pam_cracklib*.
 
 You can refer to the pam_cracklib(8) and pam_unix(8) man pages for more information.
 
@@ -194,7 +194,6 @@ After installation make a normal user for daily use. Do not use the root user fo
 To further heighten the security it is possible to lockout a user after a specified number of failed login attempts. The user account can either be locked until the root user unlocks it, or automatically be unlocked after a set time. To lockout a user for ten minutes after three failed login attempts you have to modify `/etc/pam.d/system-login`:
 
  `/etc/pam.d/system-login` 
-
 ```
 auth required pam_tally.so deny=2 unlock_time=600 onerr=succeed file=/var/log/faillog
 #auth required pam_tally.so onerr=succeed file=/var/log/faillog
@@ -203,7 +202,7 @@ auth required pam_tally.so deny=2 unlock_time=600 onerr=succeed file=/var/log/fa
 If you do not comment the second line every failed login attempt will be counted twice. That is all there is to it. If you feel adventurous, make three failed login attempts. Then you can see for yourself what happens. To unlock a user manually do:
 
 ```
-# pam_tally --user _username_ --reset
+# pam_tally --user *username* --reset
 
 ```
 
@@ -229,14 +228,13 @@ Using [sudo](/index.php/Sudo "Sudo") for privileged access is preferable to [su]
 
 *   It keeps a log of which normal privilege user has run each privileged command.
 *   The root user password need not be given out to each user who requires root access.
-*   `sudo` prevents users from accidentally running commands as _root_ that do not need root access, because a full root terminal is not created. This aligns with the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege "wikipedia:Principle of least privilege").
-*   Individual programs may be enabled per user, instead of offering complete root access just to run one command. For example, to give the user _alice_ access to a particular program:
+*   `sudo` prevents users from accidentally running commands as *root* that do not need root access, because a full root terminal is not created. This aligns with the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege "wikipedia:Principle of least privilege").
+*   Individual programs may be enabled per user, instead of offering complete root access just to run one command. For example, to give the user *alice* access to a particular program:
 
 ```
 # visudo
 
 ```
-
  `/etc/sudoers`  `alice ALL = NOPASSWD: /path/to/program` 
 
 Or, individual commands can be allowed for all users. To mount Samba shares from a server as a regular user:
@@ -347,7 +345,7 @@ Arch enables the Yama LSM by default, providing a `kernel.yama.ptrace_scope` fla
 
 #### Examples of broken functionality
 
-**Note:** You can still execute these commands as root (such as allowing them through [sudo](/index.php/Sudo "Sudo") for certain users, with or without a password), or enable ptrace selectively through `setcap cap_sys_ptrace=eip _/path/to/program_`.
+**Note:** You can still execute these commands as root (such as allowing them through [sudo](/index.php/Sudo "Sudo") for certain users, with or without a password), or enable ptrace selectively through `setcap cap_sys_ptrace=eip */path/to/program*`.
 
 *   `gdb -p $PID`
 *   `strace -p $PID`
@@ -425,7 +423,7 @@ Subscribe to the Common Vulnerabilities and Exposure Security Alert updates, mad
 
 **Note:** You can ignore this section if you just want to secure your computer against remote threats.
 
-Physical access to a computer is root access given enough time and resources. However, a high _practical_ level of security can be obtained by putting up enough barriers.
+Physical access to a computer is root access given enough time and resources. However, a high *practical* level of security can be obtained by putting up enough barriers.
 
 An attacker can gain full control of your computer on the next boot by simply attaching a malicious IEEE 1394 (FireWire), Thunderbolt or PCI Express device as they are given full memory access.[[3]](http://www.breaknenter.org/projects/inception/) There is little you can do from preventing this, or modification of the hardware itself - such as flashing malicious firmware onto a drive. However, the vast majority of attackers will not be this knowledgeable and determined.
 
@@ -452,7 +450,6 @@ Syslinux supports [password-protecting your bootloader](/index.php/Syslinux#Secu
 Changing the configuration to disallow root to login from the console makes it harder for an intruder to gain access to the system. The intruder would have to guess both a user-name that exists on the system and that users password. When root is allowed to log in via the console, an intruder only needs to guess a password. Blocking root login at the console is done by commenting out the tty lines in `/etc/securetty`.
 
  `/etc/securetty` 
-
 ```
 #tty1
 
@@ -469,7 +466,6 @@ If you are using [Bash](/index.php/Bash "Bash") or [Zsh](/index.php/Zsh "Zsh"), 
 For example, the following will automatically log out from virtual consoles (but not terminal emulators in X11):
 
  `/etc/profile.d/shell-timeout.sh` 
-
 ```
 TMOUT="$(( 60*10 ))";
 [ -z "$DISPLAY" ] && export TMOUT;

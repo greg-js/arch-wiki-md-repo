@@ -40,7 +40,7 @@ This article provides step-by-step guide how to compile your own KDE git/svn sna
     *   [5.3 Final checks](#Final_checks)
 *   [6 Creating a repository](#Creating_a_repository)
     *   [6.1 Advanced Configuration](#Advanced_Configuration)
-        *   [6.1.1 _packages_ file](#packages_file)
+        *   [6.1.1 *packages* file](#packages_file)
 
 ## Introduction
 
@@ -143,13 +143,13 @@ Here are the most important scripts and files:
 *   build-packages - the main script that will compile all the packages.
 *   create-sources - this script fetches sources from KDE git and SVN repos
 *   config - main configuration
-*   extra/ - this folder contains additional _extra_ packages (see [Extra Packages](#Extra_Packages) section)
+*   extra/ - this folder contains additional *extra* packages (see [Extra Packages](#Extra_Packages) section)
 *   packages - contains list of GIT and SVN packages and their submodules
 *   run-namcap - runs namcap on all packages
 *   setup-chroot - not-completely-working script to automatically prepare and setup [build chroot](#Preparing_build_chroot)
 *   update-pkgbuilds - updates `pkgver` and resets `pkgrel` in all PKGBUILDS
 
-There are other scripts as well, but they mostly not working against the current _config_ and _packages_ file. since I didn't use them when making the repository, they are left after the original kde-build scripts.
+There are other scripts as well, but they mostly not working against the current *config* and *packages* file. since I didn't use them when making the repository, they are left after the original kde-build scripts.
 
 ### Folders Layout
 
@@ -201,7 +201,7 @@ This script will update pkgver in all PKGBUILDS to the value you just set and wi
 
 ## Extra Packages
 
-The _extra_ subfolder contains some packages that might be needed to successfully compile KDE or that provide additional useful or interesting KDE-related packages.
+The *extra* subfolder contains some packages that might be needed to successfully compile KDE or that provide additional useful or interesting KDE-related packages.
 
 You may want to compile and install `create-svn`, `dbusmenu-qt-git`, `gluon-git`, `kwebkitpart-git`, `libktorrent-git` and {{ic|qhull} packages before building KDE. It is very well possible, that you will have no troubles compiling against packages from official repositories.
 
@@ -332,7 +332,7 @@ This will create a DB file to be fetched by pacman. Now just upload it somewhere
 
 ### Advanced Configuration
 
-#### _packages_ file
+#### *packages* file
 
 Since KDE is now in the middle of SVN->git migration, it's necessary to check `packages` file before pulling sources. The syntax of the file is quite simple:
 

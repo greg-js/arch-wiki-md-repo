@@ -52,7 +52,7 @@ OpenRC и сопутствующие пакеты доступны в [AUR](/ind
 
 ### Службы
 
-Службы OpenRC включаются от имени суперпользователя (root) используя `rc-update add _имя службы_ _runlevel_`. По крайней мере рекомендуется включить следующие службы:
+Службы OpenRC включаются от имени суперпользователя (root) используя `rc-update add *имя службы* *runlevel*`. По крайней мере рекомендуется включить следующие службы:
 
 | Имя службы | [Runlevel](https://wiki.gentoo.org/wiki/OpenRC#Named_runlevels) | Описание |
 | udev | sysinit | Устройство горячего подключения |
@@ -99,7 +99,6 @@ hostname="myhostname"
 OpenRC использует `/etc/openrc/conf.d/modules` вместо `/etc/modules-load.d`. Например:
 
  `/etc/openrc/conf.d/modules` 
-
 ```
 # Вы должны ознакомится с настройками и документацией вашего ядра
 # для списка модулей и их параметров.
@@ -177,7 +176,7 @@ sync; sync
 
 ## Использование OpenRC с окружением рабочего стола (DE)
 
-Если используется _OpenRC_ с [окружением рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)"), может помочь ConsoleKit. Установите [сервис](https://gist.github.com/ad73f9087f39d7cadd8e) в `/etc/openrc/init.d`, и включите его:
+Если используется *OpenRC* с [окружением рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)"), может помочь ConsoleKit. Установите [сервис](https://gist.github.com/ad73f9087f39d7cadd8e) в `/etc/openrc/init.d`, и включите его:
 
 ```
 # rc-update add consolekit default

@@ -98,7 +98,7 @@ Open-VM-Tools lee la información sobre la versión desde `/etc/arch-release`, q
 
 Instale las dependencias: [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) (para compilar), [net-tools](https://www.archlinux.org/packages/?name=net-tools) (para `ifconfig`, usado por el programa de instalación) y [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) (para las cabeceras del kernel).
 
-A continuación, cree los directorios de inicio _bogus_ para el instalador:
+A continuación, cree los directorios de inicio *bogus* para el instalador:
 
 ```
 # for x in {0..6}; do mkdir -p /etc/init.d/rc$x.d; done
@@ -163,7 +163,7 @@ Sin embargo, si el arranque es con `multi-user.target` o utilizando una configur
 
 **Nota:** Esta funcionalidad solo está disponible en VMware Workstation y Fusion
 
-Compartimos una carpeta seleccionando _Edit virtual machine settings > Options > Shared Folders > Always enabled_, creando así un nuevo recurso compartido.
+Compartimos una carpeta seleccionando *Edit virtual machine settings > Options > Shared Folders > Always enabled*, creando así un nuevo recurso compartido.
 
 Ahora, debería ser capaz de ver las carpetas compartidas mediante la ejecución de la orden vmware-hgfsclient:
 
@@ -175,9 +175,8 @@ $ vmware-hgfsclient
 Añadir una regla para cada recurso compartido:
 
  `/etc/fstab` 
-
 ```
-.host:/_<shared_folder>_ _/home/user1/shares_ vmhgfs defaults 0 0
+.host:/*<shared_folder>* */home/user1/shares* vmhgfs defaults 0 0
 
 ```
 
@@ -192,7 +191,7 @@ Crear y montar las carpetas compartidas:
 También es posible montarlas temporalmente:
 
 ```
-# mount -t vmhgfs .host:/_<shared_folder>_ /home/user1/shares
+# mount -t vmhgfs .host:/*<shared_folder>* /home/user1/shares
 
 ```
 
@@ -205,33 +204,30 @@ Esto se puede resolver temporalmente ejecutando la orden «modprobe vmhgfs», pe
 Para que las carpetas compartidas funcionen es necesario haber cargado el controlador `vmhgfs`. Solo tiene que crear los siguientes `.service`:
 
  `/etc/systemd/system/mnt-hgfs.mount` 
-
 ```
 [Unit]
 Description=Load VMware shared folders
-ConditionPathExists=.host:/_<shared_folder>_
+ConditionPathExists=.host:/*<shared_folder>*
 ConditionVirtualization=vmware
 
 [Mount]
-What=.host:/_<shared_folder>_
-Where=_/home/user1/shares_
+What=.host:/*<shared_folder>*
+Where=*/home/user1/shares*
 Type=vmhgfs
 Options=defaults,noatime
 
 [Install]
 WantedBy=multi-user.target
 ```
-
  `/etc/systemd/system/mnt-hgfs.automount` 
-
 ```
 [Unit]
 Description=Load VMware shared folders
-ConditionPathExists=.host:/_<shared_folder>_
+ConditionPathExists=.host:/*<shared_folder>*
 ConditionVirtualization=vmware
 
 [Automount]
-Where=_/home/user1/shares_
+Where=*/home/user1/shares*
 
 [Install]
 WantedBy=multi-user.target
@@ -250,7 +246,7 @@ Al usar [mlocate](/index.php/Mlocate "Mlocate"), es inútil tratar de indexar lo
 
 ### Aceleración 3D
 
-Si no se selecciona en el huésped al tiempo de crearlo, la aceleración 3D se puede activar en: _Edit virtual machine settings > Hardware > Display > Accelerate 3D graphics_.
+Si no se selecciona en el huésped al tiempo de crearlo, la aceleración 3D se puede activar en: *Edit virtual machine settings > Hardware > Display > Accelerate 3D graphics*.
 
 ### Sincronizar la hora
 
@@ -294,12 +290,11 @@ Los siguientes problemas pueden ocurrir con el ratón:
 *   Imput con retraso.
 *   Los clics no se registran en algunas aplicaciones.
 
-VMware intenta optimizar automáticamente el ratón para juegos. Si experimenta problemas, se recomienda su desactivación: _Edit > Preferences > Input > Optimize mouse for games: Never_
+VMware intenta optimizar automáticamente el ratón para juegos. Si experimenta problemas, se recomienda su desactivación: *Edit > Preferences > Input > Optimize mouse for games: Never*
 
 En otro caso, podría ser necesario [desactivar](http://www.spinics.net/lists/xorg/msg53932.html) el evento `catchall` en `10-evdev.conf`:
 
  `/etc/X11/xorg.conf.d/10-evdev.conf` 
-
 ```
 #Section "InputClass"
 #        Identifier "evdev pointer catchall"
@@ -314,7 +309,7 @@ En otro caso, podría ser necesario [desactivar](http://www.spinics.net/lists/xo
 
 Si no es por defecto, todos los botones del ratón deberían estar funcionando después de añadir `[mouse.vusb.useBasicMouse = "FALSE"](https://communities.vmware.com/thread/457313?start=15&tstart=0)` a `.vmx`.
 
- `~/vmware/_<Virtual Machine name>_/_<Virtual Machine name>_.vmx`  `mouse.vusb.useBasicMouse = "FALSE"` 
+ `~/vmware/*<Virtual Machine name>*/*<Virtual Machine name>*.vmx`  `mouse.vusb.useBasicMouse = "FALSE"` 
 
 ### Problemas en el arranque
 
@@ -327,14 +322,13 @@ Es posible que vea los siguientes errores si la función hot-add de la memoria d
 
 Desactive la función hot-add de la memoria ajustando `mem.hotadd = "FALSE"` en `.vmx`.
 
- `~/vmware/_<Virtual Machine name>_/_<Virtual Machine name>_.vmx`  `mem.hotadd = "FALSE"` 
+ `~/vmware/*<Virtual Machine name>*/*<Virtual Machine name>*.vmx`  `mem.hotadd = "FALSE"` 
 
 #### Cuelgues al apagar/reiniciar
 
 Ajuste el tiempo de espera para el servicio vmtoolsd (por defecto 90 segundos).
 
  `/etc/systemd/system/vmtoolsd.service.d/timeout.conf` 
-
 ```
 [Service]
 TimeoutStopSec=1

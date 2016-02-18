@@ -44,7 +44,7 @@ $ cd $HOME/example.org
 
 ```
 
-_**Note:**_ **Replace every occurence of 'example.org' on this page with the actual domain of your new server instance**
+***Note:*** **Replace every occurence of 'example.org' on this page with the actual domain of your new server instance**
 
 Determine the appropriate seahub version (it will be shown in the format 'x.y.z-r', e.g. 3.0.2):
 

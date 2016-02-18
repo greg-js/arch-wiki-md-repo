@@ -1,13 +1,13 @@
 | **Summary**  |
 | Una guida per l'installazione e la configurazione di netcfg, gli script e il profilo di configurazione della rete. |
 | **Overview** |
-| Arch Linux fornisce due opzioni per l'amministrazione della rete: [_network_](/index.php/Configuring_Network "Configuring Network") e _[netcfg](/index.php/Netcfg "Netcfg")_. Il demone _network_ è una semplice e lineare soluzione per desktop e server cablati. La navigazione tramite [Wireless](/index.php/Wireless_Setup "Wireless Setup") richiede una configurazione ulteriore. Lo script _netcfg_ fornisce il supporto roaming per utenti mobili e facilita la gestione dei profili di rete; [NetworkManager](/index.php/NetworkManager "NetworkManager") e [Wicd](/index.php/Wicd "Wicd") sono due popolari alternative. |
+| Arch Linux fornisce due opzioni per l'amministrazione della rete: [*network*](/index.php/Configuring_Network "Configuring Network") e *[netcfg](/index.php/Netcfg "Netcfg")*. Il demone *network* è una semplice e lineare soluzione per desktop e server cablati. La navigazione tramite [Wireless](/index.php/Wireless_Setup "Wireless Setup") richiede una configurazione ulteriore. Lo script *netcfg* fornisce il supporto roaming per utenti mobili e facilita la gestione dei profili di rete; [NetworkManager](/index.php/NetworkManager "NetworkManager") e [Wicd](/index.php/Wicd "Wicd") sono due popolari alternative. |
 | **Resources** |
 | [netcfg network scripts repository](https://projects.archlinux.org/netcfg.git/) |
 
 Dalla pagina [netcfg man](https://projects.archlinux.org/netcfg.git/tree/man/netcfg.8):
 
-	_**netcfg** viene utilizzato per configurare e gestire le connessioni di rete tramite profili. Ha il supporto plugin per vari tipi di connessione, come il wireless, Ethernet, e ppp. È anche in grado di avviare/arrestare molte connessioni in una, cioè può gestire connessioni multiple all'interno dello stesso profilo, opzionalmente anche con il "bonding"._
+	***netcfg** viene utilizzato per configurare e gestire le connessioni di rete tramite profili. Ha il supporto plugin per vari tipi di connessione, come il wireless, Ethernet, e ppp. È anche in grado di avviare/arrestare molte connessioni in una, cioè può gestire connessioni multiple all'interno dello stesso profilo, opzionalmente anche con il "bonding".*
 
 netcfg è utile a quegli utenti che cercano un mezzo semplice e robusto per gestire configurazioni di rete multiple (ad esempio gli utenti laptop). Per i sistemi che solitamente si connettono ad una rete unica, il demone [network](/index.php/Network "Network") potrebbe essere più adatto.
 
@@ -40,7 +40,7 @@ netcfg è utile a quegli utenti che cercano un mezzo semplice e robusto per gest
     *   [6.12 Configurare un bridge da usare con macchine virtuali (VMs)](#Configurare_un_bridge_da_usare_con_macchine_virtuali_.28VMs.29)
     *   [6.13 Aggiungere più indirizzi IP ad un'interfaccia](#Aggiungere_pi.C3.B9_indirizzi_IP_ad_un.27interfaccia)
     *   [6.14 Aggiungere indirizzamenti statici](#Aggiungere_indirizzamenti_statici)
-        *   [6.14.1 Tethering Bluetooth via _pand_](#Tethering_Bluetooth_via_pand)
+        *   [6.14.1 Tethering Bluetooth via *pand*](#Tethering_Bluetooth_via_pand)
 *   [7 Risoluzione dei problemi](#Risoluzione_dei_problemi)
     *   [7.1 Debugging](#Debugging)
     *   [7.2 Rete non disponibile](#Rete_non_disponibile)
@@ -55,9 +55,9 @@ netcfg è utile a quegli utenti che cercano un mezzo semplice e robusto per gest
     *   [7.9 Nel caso di: "/var/run/network//suspend/": No such file or directory](#Nel_caso_di:_.22.2Fvar.2Frun.2Fnetwork.2F.2Fsuspend.2F.22:_No_such_file_or_directory)
     *   [7.10 Ancora non funziona, che cosa devo fare?](#Ancora_non_funziona.2C_che_cosa_devo_fare.3F)
 *   [8 Domande frequenti](#Domande_frequenti)
-    *   [8.1 Perchè netcfg non fa _(alcune cose)_?](#Perch.C3.A8_netcfg_non_fa_.28alcune_cose.29.3F)
-    *   [8.2 Perchè netcfg non si comporta in _questo_ modo?](#Perch.C3.A8_netcfg_non_si_comporta_in_questo_modo.3F)
-    *   [8.3 Ho ancora bisogno di _(qualche cosa)_ se sto utilizzando netcfg?](#Ho_ancora_bisogno_di_.28qualche_cosa.29_se_sto_utilizzando_netcfg.3F)
+    *   [8.1 Perchè netcfg non fa *(alcune cose)*?](#Perch.C3.A8_netcfg_non_fa_.28alcune_cose.29.3F)
+    *   [8.2 Perchè netcfg non si comporta in *questo* modo?](#Perch.C3.A8_netcfg_non_si_comporta_in_questo_modo.3F)
+    *   [8.3 Ho ancora bisogno di *(qualche cosa)* se sto utilizzando netcfg?](#Ho_ancora_bisogno_di_.28qualche_cosa.29_se_sto_utilizzando_netcfg.3F)
 
 ## Preparazione
 
@@ -103,7 +103,7 @@ Successivamente, modificare il nuovo file di configurazione, `/etc/network.d/myn
 
 *   Impostare `INTERFACE` per l'interfaccia corretta, wireless o Ethernet. Questo può essere controllato con `ifconfig` e `iwconfig`.
 *   Assicurarsi che `ESSID` e `KEY` (passphrase) siano impostate correttamente per le connessioni wireless. I caratteri errati in questi campi sono gli errori più comuni.
-    *   Notare che le WEP keys _string_ (non _hex_) devono essere specificate con all'inizio una `s:` (es. `KEY="s:somepasskey"`).
+    *   Notare che le WEP keys *string* (non *hex*) devono essere specificate con all'inizio una `s:` (es. `KEY="s:somepasskey"`).
 
 **Note:** Le configurazioni di Netcfg sono degli script Bash validi. Qualsiasi configurazione che coinvolge caratteri speciali come `$` o `\` deve essere quotata correttamente altrimenti verrà interpretata da Bash. Per evitare che questo si verifichi, usare le virgolette singole o i caratteri di escape backslash, in caso.
 
@@ -148,7 +148,7 @@ $ netcfg help
 
 ## Connessione automatica
 
-Sono disponibili diversi metodi per coloro che desiderano connettere automaticamente i profili di rete (ad esempio durante l'avvio o in roaming). Si noti che un profilo di rete deve essere _prima_ configurato correttamente nella cartella `/etc/network.d` (consultare [#Configurazione](#Configurazione)).
+Sono disponibili diversi metodi per coloro che desiderano connettere automaticamente i profili di rete (ad esempio durante l'avvio o in roaming). Si noti che un profilo di rete deve essere *prima* configurato correttamente nella cartella `/etc/network.d` (consultare [#Configurazione](#Configurazione)).
 
 **Tip:** Se si abilita uno dei seguenti demoni e non sono state eseguite configurazioni nella stringa `INTERFACES` in `/etc/rc.conf`, si può rimuovere il demone `network` dalla stringa `DAEMONS`. Se si montano condivisioni [NFS](/index.php/NFS_(Italiano) "NFS (Italiano)") durante l'avvio, assicurarsi che il demone `netfs` sia comunque specificato (altrimenti la rete verrà abbandonata prima dello smontaggio delle condivisioni durante l'arresto).
 
@@ -159,14 +159,11 @@ Sono disponibili diversi metodi per coloro che desiderano connettere automaticam
 Per attivare questa funzione bisogna aggiungere `net-profiles` alla stringa `DAEMONS` in `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")` e specificare i profili da connettere nella stringa `NETWORKS` in `/etc/conf.d/netcfg`:
 
  `/etc/rc.conf` 
-
 ```
 DAEMONS=(... net-profiles ...)
 
 ```
-
  `/etc/conf.d/netcfg` 
-
 ```
 NETWORKS=(mynetwork yournetwork)
 
@@ -175,7 +172,6 @@ NETWORKS=(mynetwork yournetwork)
 Un profilo network può anche essere avviato in background aggiungendone il prefisso `@` nella stringa`NETWORKS`. Notare che questo si dovrebbe fare solamente se i profili in background configurino interfacce distinte, altrimenti si potrebbero verificare delle incongruenze.
 
  `/etc/conf.d/netcfg` 
-
 ```
 NETWORKS=(@mynetwork @yournetwork)
 
@@ -184,7 +180,6 @@ NETWORKS=(@mynetwork @yournetwork)
 Alternativamente, i `net-profiles` possono essere configurati in modo da ripristinare i profili attivi all'ultimo spegnimento della macchina impostando la stringa `NETWORKS` a `last`, come descritto in seguito.
 
  `/etc/conf.d/netcfg` 
-
 ```
 NETWORKS=(last)
 
@@ -193,7 +188,6 @@ NETWORKS=(last)
 Infine, i `net-profiles` si possono configurare per mostrare un menu – permettendo agli utenti di scegliere il profilo desiderato – impostando il contenuto della stringa `NETWORKS` a `menu`:
 
  `/etc/conf.d/netcfg` 
-
 ```
 NETWORKS=(menu)
 
@@ -210,7 +204,6 @@ NETWORKS=(menu)
 Per attivare questa funzione, si deve aggiungere `net-auto-wireless` alla stringa `DAEMONS` in `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")`:
 
  `/etc/rc.conf` 
-
 ```
 DAEMONS=(... net-auto-wireless ...)
 
@@ -219,7 +212,6 @@ DAEMONS=(... net-auto-wireless ...)
 e specificare l'interfaccia wireless desiderata nella variabile `WIRELESS_INTERFACE` in `/etc/conf.d/netcfg`:
 
  `/etc/conf.d/netcfg` 
-
 ```
 WIRELESS_INTERFACE="wlan0"
 
@@ -236,14 +228,11 @@ WIRELESS_INTERFACE="wlan0"
 Per attivare questa funzione, bisogna prima [installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") [ifplugd](https://www.archlinux.org/packages/?name=ifplugd), poi aggiungere `net-auto-wired` alla stringa `DAEMONS` in `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")` e specificare l'interfaccia cablata desiderata nella variabile in `/etc/conf.d/netcfg`:
 
  `/etc/rc.conf` 
-
 ```
 DAEMONS=(... net-auto-wired ...)
 
 ```
-
  `/etc/conf.d/netcfg` 
-
 ```
 WIRED_INTERFACE="eth0"
 
@@ -257,9 +246,9 @@ Il demone avvia un processo ifplugd che esegue `/etc/ifplugd/netcfg.action` quan
 
 ### Supporto a systemd
 
-Dalla versione 2.8.2 [netcfg](https://aur.archlinux.org/packages/netcfg/) fornisce i file _unit_ di systemd. I file _service_ `net-auto-wireless.service` e `net-auto-wired.service` corrispondono ai demoni `/etc/rc.d/net-auto-wireless` e `/etc/rc.d/net-auto-wired` di [initscripts](https://www.archlinux.org/packages/?name=initscripts) . Per connettere più profili al boot si può usare `netcfg.service` che è equivalente a `/etc/rc.d/net-profiles` e avviare tutti i profili specificati nella stringa `NETWORKS` in `/etc/conf.d/netcfg`. Questi file _service_ possono essere abilitati ed avviati con `systemctl` come di consueto.
+Dalla versione 2.8.2 [netcfg](https://aur.archlinux.org/packages/netcfg/) fornisce i file *unit* di systemd. I file *service* `net-auto-wireless.service` e `net-auto-wired.service` corrispondono ai demoni `/etc/rc.d/net-auto-wireless` e `/etc/rc.d/net-auto-wired` di [initscripts](https://www.archlinux.org/packages/?name=initscripts) . Per connettere più profili al boot si può usare `netcfg.service` che è equivalente a `/etc/rc.d/net-profiles` e avviare tutti i profili specificati nella stringa `NETWORKS` in `/etc/conf.d/netcfg`. Questi file *service* possono essere abilitati ed avviati con `systemctl` come di consueto.
 
-In alternatica si può usare il file _template service_ `netcfg@.service` che permette di connettersi ai profili al boot senza doverlo specificare in `/etc/conf.d/netcfg`. Per definire il profilo desiderato, abilitare il _template service_ e usare il nome del profilo di rete da invocare:
+In alternatica si può usare il file *template service* `netcfg@.service` che permette di connettersi ai profili al boot senza doverlo specificare in `/etc/conf.d/netcfg`. Per definire il profilo desiderato, abilitare il *template service* e usare il nome del profilo di rete da invocare:
 
 ```
 # systemctl enable netcfg@<profile-name>.service
@@ -320,7 +309,6 @@ RFKILL_NAME='phy0'
 **Note:** Il demone `net-auto-wireless` richiede un'interfaccia di configurazione a livello di rfkill altrimenti non verrà eseguito.
 
 **Attenzione:** Alcuni dispositivi (almeno alcune schede SiS) possono creare voci a `/sys/class/rfkill/rfkill#` con nomi differenti per ogni switch. Qualcosa come ciò che segue potrà funzionare in tali casi (soluzione solo per il Wifi!): `/etc/network.d/interfaces/wlan0` 
-
 ```
 RFKILL=hard
 RFKILL_NAME=`cat /sys/class/rfkill/rfkill*/name 2> /dev/null || echo ""`
@@ -360,7 +348,6 @@ POST_UP="su -c '/you/own/command' username"
 Alcune combinazioni driver+hardware possono talvolta interrompere la sincronizzazione. Usare i comandi pre e post per aggiungere/rimuovere il driver e utilizzare uno script come il seguente per aggiustare la connessione corrente:
 
  `/usr/local/bin/netcfgd` 
-
 ```
 #!/bin/bash
 log() { logger -t "$( basename $0 )" "$*" ; }
@@ -406,9 +393,9 @@ Le opzioni di configurazione che si applicano a tutti i profili utilizzando un'i
 
 ```
 
-Può risultare utile per le opzioni `wpa_supplicant`, il supporto switch rfkill, gli script pre/post up/down e `net-auto-wireless`. Queste opzioni vengono caricate _prima_ dei profili in modo che tutte le opzioni basate sui profili abbiano la priorità.
+Può risultare utile per le opzioni `wpa_supplicant`, il supporto switch rfkill, gli script pre/post up/down e `net-auto-wireless`. Queste opzioni vengono caricate *prima* dei profili in modo che tutte le opzioni basate sui profili abbiano la priorità.
 
-`/etc/network.d/interfaces/$INTERFACE` può contenere qualsiasi opzione di profilo valida, anche se è più probabile l'uso di `PRE_UP`/`DOWN` e `POST_UP`/`DOWN` (descritto nella sezione precedente) o una delle opzioni elencate di seguito. Ricordarsi che queste opzioni sono impostate per _tutti_ i profili che usano l'interfaccia; ad esempio, se non si desidera effettuare la connessione VPN del proprio ufficio, tenerlo presente, perchè cercherà comunque di connettersi ad _ogni_ connessione wireless!
+`/etc/network.d/interfaces/$INTERFACE` può contenere qualsiasi opzione di profilo valida, anche se è più probabile l'uso di `PRE_UP`/`DOWN` e `POST_UP`/`DOWN` (descritto nella sezione precedente) o una delle opzioni elencate di seguito. Ricordarsi che queste opzioni sono impostate per *tutti* i profili che usano l'interfaccia; ad esempio, se non si desidera effettuare la connessione VPN del proprio ufficio, tenerlo presente, perchè cercherà comunque di connettersi ad *ogni* connessione wireless!
 
 ```
 WPA_GROUP   - Imposta il gruppo dell'interfaccia wpa_ctrl
@@ -509,7 +496,6 @@ nel profilo desiderato.
 Per configurare un bridge chiamato br0 con IP statico:
 
  `/etc/network.d/br0` 
-
 ```
 INTERFACE="br0"
 CONNECTION="bridge"
@@ -525,7 +511,6 @@ DNS='10.0.0.1'
 Per configurare un bridge chiamato br0 con dhcp IP:
 
  `/etc/network.d/br0` 
-
 ```
 INTERFACE="br0"
 CONNECTION="bridge"
@@ -554,7 +539,6 @@ rc.d restart net-profiles
 Se si vuole assegnare più di un indirizzo IP ad una specifica interfaccia, questo può essere fatto emettendo il relativo comando `ip` in una dichiarazione `POST_UP` (che come suggerisce il nome verrà eseguito dopo che l'interfaccia è stata attivata). Dichiarazioni multiple possono essere separate con un `;`. Così se ad esempio si voglia assegnare entrambi gli indirizzi 10.0.0.1 e 10.0.0.2 all'interfaccia eth0; la configurazione dovrebbe essere qualcosa come le seguenti righe:
 
  `/etc/network.d/multiple_ip` 
-
 ```
 INTERFACE="eth0"
 CONNECTION="ethernet"
@@ -569,7 +553,6 @@ POST_UP='ip addr add 10.0.0.2/24 dev eth0'
 Quando di desideri configurare indirizzamenti statici, ciò può essere fatto emettendo il relativo comando `ip` in una dichiarazione `POSTUP` (che come suggerisce il nome verrà eseguito dopo che l'interfaccia è stata attivata). Facoltativamente, si può aggiungere una dichiarazione `PRE_DOWN` per rimuovere gli indirizzamenti detti quando l'interfaccia viene disattivata. Dichiarazioni multiple possono essere separate da un `;`. Nell'esempio seguente assegneremo 10.0.1.0/24 all'interfaccia eth1 ed in seguito rimuoveremo l'indirizzamento alla disattivazione dell'interfaccia.
 
  `/etc/network.d/static_routes` 
-
 ```
 INTERFACE="eth1"
 CONNECTION="ethernet"
@@ -579,9 +562,9 @@ PRE_DOWN='ip route del 10.0.1.0/24 dev eth1'
 
 ```
 
-#### Tethering Bluetooth via _pand_
+#### Tethering Bluetooth via *pand*
 
-È possibile creare un profilo [netcfg](/index.php/Netcfg "Netcfg"), per usufruire semplicemente del tethering tramite il Bluetooth del proprio dispositivo, usando la comune connessione "ethernet" e gestendo la connessione _pand_ negli agganci PRE_UP e POST_DOWN. Supponendo che il dispositivo sia già accoppiato con indirizzo '00:00:DE:AD:BE:EF', creare semplicemente un profilo in /etc/network.d nominato - per esempio - 'tether':
+È possibile creare un profilo [netcfg](/index.php/Netcfg "Netcfg"), per usufruire semplicemente del tethering tramite il Bluetooth del proprio dispositivo, usando la comune connessione "ethernet" e gestendo la connessione *pand* negli agganci PRE_UP e POST_DOWN. Supponendo che il dispositivo sia già accoppiato con indirizzo '00:00:DE:AD:BE:EF', creare semplicemente un profilo in /etc/network.d nominato - per esempio - 'tether':
 
 ```
  CONNECTION="ethernet"
@@ -773,14 +756,14 @@ Per essere in grado di determinare il problema, abbiamo bisogno di informazioni.
 
 ## Domande frequenti
 
-### Perchè netcfg non fa _(alcune cose)_?
+### Perchè netcfg non fa *(alcune cose)*?
 
 netcfg non ne ha bisogno, si limita a connettersi alle reti, è modularare e riutilizzabile; consultare `/usr/lib/network` per funzioni di riusabilità con scripts personalizzati.
 
-### Perchè netcfg non si comporta in _questo_ modo?
+### Perchè netcfg non si comporta in *questo* modo?
 
 netcfg non impone alcuna regola; Si limita a collegarsi alle reti. Non impone alcun concetto euristico, come "disconnettersi dal wireless se ethernet è collegato". Se si desidera una funzionalità del genere, no dovrebbe essere complicato scrivere uno strumento separato, al di fuori di netcfg. Vedere la domanda di cui sopra.
 
-### Ho ancora bisogno di _(qualche cosa)_ se sto utilizzando netcfg?
+### Ho ancora bisogno di *(qualche cosa)* se sto utilizzando netcfg?
 
 Questa domanda di solito si riferisce a `/etc/hosts` e la variabile `HOSTNAME` in `/etc/rc.conf`, che sono ancora entrambi necessari. Si può comunque rimuovere `network` dalla stringa `DAEMONS` se tutte le reti sono state configurate con netcfg.

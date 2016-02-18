@@ -1,4 +1,4 @@
-[PulseAudio](https://en.wikipedia.org/wiki/PulseAudio "wikipedia:PulseAudio") è un sound server utilizzato comunemente da ambienti desktop come [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") e [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)") e funge da proxy per le applicazioni che richiedano l'utilizzo dell'audio utilizzando componenti come [ALSA](/index.php/ALSA_(Italiano) "ALSA (Italiano)") od [OSS](/index.php/OSS_(Italiano) "OSS (Italiano)"). Dal momento che Alsa viene incluso in Arch Linux di default, i casi di utilizzo più comuni proposti di seguito coprono l'utilizzo di PulseAudio con Alsa.
+[PulseAudio](https://en.wikipedia.org/wiki/PulseAudio e [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)") e funge da proxy per le applicazioni che richiedano l'utilizzo dell'audio utilizzando componenti come [ALSA](/index.php/ALSA_(Italiano) "ALSA (Italiano)") od [OSS](/index.php/OSS_(Italiano) "OSS (Italiano)"). Dal momento che Alsa viene incluso in Arch Linux di default, i casi di utilizzo più comuni proposti di seguito coprono l'utilizzo di PulseAudio con Alsa.
 
 ## Contents
 
@@ -76,7 +76,6 @@ $ pulseaudio --kill
 Si controlli se PulseAudio è in esecuzione:
 
  `$ pgrep -af pulseaudio` 
-
 ```
 369 /usr/bin/pulseaudio
 
@@ -92,7 +91,6 @@ $ start-pulseaudio-x11
 Se non si sta utilizzando GNOME, KDE o Xfce e il proprio [~/.xinitrc](/index.php/Xinitrc "Xinitrc") non effettua il source degli script in `/etc/X11/xinit/xinitrc.d`, è possibile avviare PulseAudio al boot con:
 
  `~/.xinitrc` 
-
 ```
 /usr/bin/start-pulseaudio-x11
 
@@ -133,7 +131,7 @@ load-module module-alsa-source **device=dsnoop**
 
 ```
 
-*   _Opzionale:_ Se si utilizza [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix), si potrebbe voler controllare il volume di ALSA invece che quello di PulseAudio:
+*   *Opzionale:* Se si utilizza [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix), si potrebbe voler controllare il volume di ALSA invece che quello di PulseAudio:
 
 ```
 $ echo export KMIX_PULSEAUDIO_DISABLE=1 > ~/.kde4/env/kmix_disable_pulse.sh
@@ -173,7 +171,6 @@ $ padsp sox foo.wav -t ossdsp /dev/dsp
 E' anche possibile creare un wrapper, in questo modo:
 
  `/usr/local/bin/nome_programma` 
-
 ```
 #!/bin/sh
 exec padsp /usr/bin/OSSprogram "$@"
@@ -280,7 +277,7 @@ Ad esempio, per utilizzare il driver `ac97` per il sistema guest, si passi il pa
 
 **Nota:**
 
-*   Nel comando `qemu-system-_XXX_`, _XXX_ specifica l'architettura del sistema guest. Per visualizzare un elenco di quelle disponibili, eseguire: `ls /usr/bin/qemu-system-* -1`
+*   Nel comando `qemu-system-*XXX*`, *XXX* specifica l'architettura del sistema guest. Per visualizzare un elenco di quelle disponibili, eseguire: `ls /usr/bin/qemu-system-* -1`
 *   I driver video emulati potrebbero causare problemi di qualità audio nella macchinav irtuale. Si provi ogni driver per identificare quello più adatto. È possibile visualizzare un elenco dei driver disponibili con: `qemu-system-x86_64 -h | grep vga`.
 
 ### AlsaMixer.app
@@ -355,7 +352,6 @@ MPlayer supporta l'output attraverso Pulseaudio specificando l'opzione `"-ao pul
 /etc/mplayer/mplayer.conf
 
 ```
-
  `ao=pulse` 
 
 ### guvcview

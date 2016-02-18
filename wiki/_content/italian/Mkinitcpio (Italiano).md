@@ -31,7 +31,7 @@
 
 mkinitcpio è uno script bash usato per generare un iniziale ambiente ramdisk. Da [mkinitcpio man page](https://projects.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.8.txt):
 
-	_Il ramdisk iniziale è in sostanza un ambiente molto ridotto ("pre-userspace"), che carica vari moduli del kernel e imposta le operazioni preliminari necessarie prima di consegnare il controllo ad init. In questo modo è possibile avere, ad esempio, filesystem criptati e filesystem su software RAID. L'mkinitcpio permette inoltre estensioni con hooks personalizzati, rilevamento automatico in fase di runtime, e molte altre caratteristiche._
+	*Il ramdisk iniziale è in sostanza un ambiente molto ridotto ("pre-userspace"), che carica vari moduli del kernel e imposta le operazioni preliminari necessarie prima di consegnare il controllo ad init. In questo modo è possibile avere, ad esempio, filesystem criptati e filesystem su software RAID. L'mkinitcpio permette inoltre estensioni con hooks personalizzati, rilevamento automatico in fase di runtime, e molte altre caratteristiche.*
 
 Tradizionalmente, il kernel è il responsabile del rilevamento dell'hardware e dei compiti di inizializzazione nelle prime fasi del [boot process](/index.php/Arch_Boot_Process_(Italiano) "Arch Boot Process (Italiano)"), prima di montare il filesystem root e passare il controllo a `init`. Tuttavia, con il progredire della tecnologia, queste attività sono diventate sempre più complesse.
 
@@ -64,7 +64,7 @@ $ git clone [git://projects.archlinux.org/mkinitcpio.git](git://projects.archlin
 
 ## Creazione dell'immagine ed attivazione
 
-Per impostazione predefinita, lo script mkinitcpio genera due immagini dopo l'installazione o l'aggiornamento del kernel: `/boot/initramfs-linux.img` e `/boot/initramfs-linux-fallback.img`. L'immagine _fallback_ utilizza lo stesso file di configurazione come l'immagine _predefinita_, ad eccezione dell' hook **autodetect** che è saltato durante la creazione, includendo quindi anche una vasta gamma di moduli. L'hook di rilevazione (**autodetect**) automatica rileva i moduli necessari e personalizza l'immagine per hardware specifico, riducendo l'initramfs.
+Per impostazione predefinita, lo script mkinitcpio genera due immagini dopo l'installazione o l'aggiornamento del kernel: `/boot/initramfs-linux.img` e `/boot/initramfs-linux-fallback.img`. L'immagine *fallback* utilizza lo stesso file di configurazione come l'immagine *predefinita*, ad eccezione dell' hook **autodetect** che è saltato durante la creazione, includendo quindi anche una vasta gamma di moduli. L'hook di rilevazione (**autodetect**) automatica rileva i moduli necessari e personalizza l'immagine per hardware specifico, riducendo l'initramfs.
 
 Gli utenti possono creare quante immagini initramfs desiderano, con differenti profili di configurazione. L'immagine desiderata deve essere specificato per il bootloader, spesso nei suoi [file di configurazione](/index.php/Boot_Loader#Configuration_files "Boot Loader"). Dopo le modifiche apportate al file di configurazione, l'immagine deve essere rigenerata. Per lo stock kernel di Arch Linux, [linux](https://www.archlinux.org/packages/?name=linux), questo si ottiene lanciando questo comando con i privilegi di root:
 
@@ -73,7 +73,7 @@ Gli utenti possono creare quante immagini initramfs desiderano, con differenti p
 
 ```
 
-L'opzione `-p` indica un _preset_ da utilizzare; la maggior parte dei pacchetti kernel fornisce un mkinitcpio predefinito, che si trova in `/etc/mkinitcpio.d` (per esempio `/etc/mkinitcpio.d/linux.preset` per `linux`). Un preset è una definizione predefinita di come creare una immagine initramfs invece di specificare il file di configurazione e il file di output ogni volta.
+L'opzione `-p` indica un *preset* da utilizzare; la maggior parte dei pacchetti kernel fornisce un mkinitcpio predefinito, che si trova in `/etc/mkinitcpio.d` (per esempio `/etc/mkinitcpio.d/linux.preset` per `linux`). Un preset è una definizione predefinita di come creare una immagine initramfs invece di specificare il file di configurazione e il file di output ogni volta.
 
 **Attenzione:** I file `preset` vengono utilizzati per rigenerare automaticamente l'initramfs dopo un aggiornamento del kernel; fare attenzione quando li si modifica.
 
@@ -133,11 +133,11 @@ La stringa MODULES è usata per specificare i moduli da caricare prima di mandar
 
 I moduli con suffisso `?` non restituiranno errori se non trovati. Questo può essere molto utile nel caso si stia compilando un kernel personalizzato che compili i moduli scritti esplicitamente negli HOOKS o nel file di configurazione.
 
-**Nota:** Nel caso si utilizzi **reiser4**, questo _deve_ essere aggiunto alla lista dei moduli. E se ci fosse bisogno di un qualsiasi filesystem durante il processo d'avvio, inesistente durante l'esecuzione di mkinitcpio— come nel caso di una chiave criptata LUKS su un filesystem **ext2**, ma senza nessun filesystem **ext2** montato durante l'esecuzione di mkinitcpio— il modulo di quel filesystem deve essere aggiunto alla lista MODULES. Consultare [qui](/index.php/System_Encryption_with_LUKS_for_dm-crypt#Storing_the_Key_File "System Encryption with LUKS for dm-crypt") per maggiori approfondimenti.
+**Nota:** Nel caso si utilizzi **reiser4**, questo *deve* essere aggiunto alla lista dei moduli. E se ci fosse bisogno di un qualsiasi filesystem durante il processo d'avvio, inesistente durante l'esecuzione di mkinitcpio— come nel caso di una chiave criptata LUKS su un filesystem **ext2**, ma senza nessun filesystem **ext2** montato durante l'esecuzione di mkinitcpio— il modulo di quel filesystem deve essere aggiunto alla lista MODULES. Consultare [qui](/index.php/System_Encryption_with_LUKS_for_dm-crypt#Storing_the_Key_File "System Encryption with LUKS for dm-crypt") per maggiori approfondimenti.
 
 ### BINARIES e FILES
 
-Queste opzioni consentono all'utente di aggiungere dei file all'immagine. Sia i `BINARIES` che i `FILES` vengono aggiunti prima che gli hook siano eseguiti, e possono essere usati per sovrascrivere i file usati o forniti dagli hook. I BINARIES vengono auto-localizzati in quanto devono essere salvati in un `PATH` standard e sono _analizzatori di dipendenze_, quindi ogni libreria e dipendenza richieste saranno aggiunte di conseguenza. I FILES saranno aggiunti _come stanno_. Per esempio:
+Queste opzioni consentono all'utente di aggiungere dei file all'immagine. Sia i `BINARIES` che i `FILES` vengono aggiunti prima che gli hook siano eseguiti, e possono essere usati per sovrascrivere i file usati o forniti dagli hook. I BINARIES vengono auto-localizzati in quanto devono essere salvati in un `PATH` standard e sono *analizzatori di dipendenze*, quindi ogni libreria e dipendenza richieste saranno aggiunte di conseguenza. I FILES saranno aggiunti *come stanno*. Per esempio:
 
 ```
 FILES="/etc/modprobe.d/modprobe.conf"
@@ -210,7 +210,7 @@ Segue una tabella degli hooks più comuni e di come influenzano la creazione di 
 | **encrypt** | Aggiunge il modulo del kernel `dm_crypt` ed il tool `cryptsetup` all'immagine. È necessario disporre di [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) installato per avvalersene. | Rileva e sblocca una partizione di root cifrata. Vedere [#Personalizzazione del runtime](#Personalizzazione_del_runtime) per supporto alla configurazione. |
 | **lvm2** | Aggiunge il modulo device mapper kernel, e il tool `lvm` all'immagine. Sarà inoltre necessario avere installato il pacchetto [lvm2](https://www.archlinux.org/packages/?name=lvm2). | Abilita tutti i gruppi di voluni LVM2\. È necessario se il filesystem di root è su LVM. |
 | **fsck** | Aggiunge i binari di fsck e degli helpers per il filesystem specifico. Se aggiunto dopo l'hook **autodetect** verrà aggiunto solo l'helper per il filesystem di root. Usare questo hook è **fortemente** consigliato, ed è richiesto con un partizione `/usr` separata. | Lancia fsck sul device "root" (e /usr se separata) prima del mount. |
-| **resume** | -- | Tenta di eseguire il ripristino (resume) dallo stato di "sospensione". Funziona in aggiunta a _swsusp_ e _[suspend2](/index.php/Suspend2 "Suspend2")_. Consultare [#Personalizzazione del runtime](#Personalizzazione_del_runtime) per supporto alla configurazione. |
+| **resume** | -- | Tenta di eseguire il ripristino (resume) dallo stato di "sospensione". Funziona in aggiunta a *swsusp* e *[suspend2](/index.php/Suspend2 "Suspend2")*. Consultare [#Personalizzazione del runtime](#Personalizzazione_del_runtime) per supporto alla configurazione. |
 | **filesystems** | Include i moduli di filesystem necessari nell'immagine. Questo hook è **richiesto**, a meno che non si specifichino i moduli di filesystem in MODULES. | -- |
 | **shutdown** | Aggiunge il supporto allo spegnimento a initramfs. Usare questo hook è altamente raccomandato sei si dispone di una partizione `/usr` separata o di una partizione di root croptata. | Smonta e smonta i dispositivi allo spegnimento. |
 | **usr** | Aggiunge il supporto per `/usr` su una partizione separata. | Monta la partizione `/usr` dopo che la reale partizione di root è stata montata. |
@@ -333,7 +333,7 @@ La specificazione di un'interfaccia può essere sia in formato corto, che è sol
 
 ```
 
-_Spiegazione dei parametri:_
+*Spiegazione dei parametri:*
 
 ```
  <client-ip>   Indirizzo IP del client. Se vuoto, l'indirizzo sarà
@@ -377,7 +377,7 @@ _Spiegazione dei parametri:_
 
 ```
 
-_Esempi:_
+*Esempi:*
 
 ```
  ip=127.0.0.1:::::lo:none  --> Permettere l'interfaccia loopback.
@@ -392,7 +392,7 @@ Se si dispone di più schede di rete, questo parametro può includere l'indirizz
 
 Se non indicato, sarà utilizzato eth0.
 
-_Example:_
+*Example:*
 
 ```
  BOOTIF=01-A1-B2-C3-D4-E5-F6  # Note the prepended "01-" and capital letters.
@@ -408,7 +408,7 @@ Se il parametro "nfsroot" non viene dato dalla riga di comando, sarà usato il p
 
 ```
 
-_Spiegazione dei parametri:_
+*Spiegazione dei parametri:*
 
 ```
  <server-ip>   Specifica l'indirizzo IP del server NFS. Se non specificato,

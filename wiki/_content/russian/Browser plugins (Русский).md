@@ -86,7 +86,7 @@ Lightspark can be [установлен](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D
 
 #### Configuration
 
-To change the preferences (privacy settings, resource usage, etc.) of Flash Player, right click on any embedded Flash content and choose _Settings_ from the menu, or go to the [Adobe website](http://helpx.adobe.com/flash-player/kb/find-version-flash-player.html). There, a Flash animation will give you access to your local settings.
+To change the preferences (privacy settings, resource usage, etc.) of Flash Player, right click on any embedded Flash content and choose *Settings* from the menu, or go to the [Adobe website](http://helpx.adobe.com/flash-player/kb/find-version-flash-player.html). There, a Flash animation will give you access to your local settings.
 
 You can also use the Flash settings file `/etc/adobe/mms.cfg`.
 
@@ -102,7 +102,6 @@ EnableLinuxHWVideoDecode=1
 A more detailed example configuration:
 
  `/etc/adobe/mms.cfg` 
-
 ```
 AVHardwareDisable = 0
 FullScreenDisable = 0
@@ -168,7 +167,7 @@ Patch `libflashplayer.so` (the one from your home directory) using the GUI. Copy
 *   This only works for the NPAPI plugin.
 *   There is also a package [flashplugin-focusfix](https://aur.archlinux.org/packages/flashplugin-focusfix/) in the [AUR](/index.php/AUR "AUR") that includes this fix.
 
-	_sourced from this post on [webupd8](http://www.webupd8.org/2012/10/ubuntu-multi-monitor-tweaks-full-screen.html)_
+	*sourced from this post on [webupd8](http://www.webupd8.org/2012/10/ubuntu-multi-monitor-tweaks-full-screen.html)*
 
 When using a multiple monitor setup, or swapping between virtual desktops, it is possible to lose focus on a fullscreen flash window. In such a case, the adobe flash-plugin will automatically exit full-screen mode. This may not be to your liking.
 
@@ -198,7 +197,7 @@ Save the binary, and restart any processes using the plugin (as this will crash 
 
 #### Fullscreen fix for GNOME 3
 
-If you have problems with Flash's fullscreen-mode (video freezes but audio keeps playing), then it is probably because the fullscreen flash window is displayed _behind_ the browser window. This is a [known upstream bug in mutter](https://bugzilla.gnome.org/show_bug.cgi?id=722743). You can easily fix this by using [devilspie](https://en.wikipedia.org/wiki/Devil%27s_Pie_(software) "wikipedia:Devil's Pie (software)"):
+If you have problems with Flash's fullscreen-mode (video freezes but audio keeps playing), then it is probably because the fullscreen flash window is displayed *behind* the browser window. This is a [known upstream bug in mutter](https://bugzilla.gnome.org/show_bug.cgi?id=722743). You can easily fix this by using [devilspie](https://en.wikipedia.org/wiki/Devil%27s_Pie_(software) "wikipedia:Devil's Pie (software)"):
 
 Install [devilspie](https://www.archlinux.org/packages/?name=devilspie) from the official repositories.
 
@@ -214,7 +213,6 @@ Now you have to create a config file for each browser you use (see below)
 Finally, add devilspie to your list of startup items by adding the following file to `~/.config/autostart`
 
  `~/.config/autostart/devilspie.desktop` 
-
 ```
 [Desktop Entry]
 Name=devilspie
@@ -227,7 +225,6 @@ X-GNOME-Autostart-enabled=true
 ##### Firefox
 
  `~/.devilspie/flash-fullscreen-firefox.ds` 
-
 ```
 (if
 (is (application_name) "plugin-container")
@@ -240,7 +237,6 @@ X-GNOME-Autostart-enabled=true
 ##### Chrome / Chromium
 
  `~/.devilspie/flash-fullscreen-chrome.ds` 
-
 ```
 (if
 (is (application_name) "exe")
@@ -253,7 +249,6 @@ X-GNOME-Autostart-enabled=true
 ##### Epiphany / GNOME Web
 
  `~/.devilspie/flash-fullscreen-epiphany.ds` 
-
 ```
 (if
 (is (application_name) "WebKitPluginProcess")
@@ -268,13 +263,13 @@ X-GNOME-Autostart-enabled=true
 #### Open-with Firefox extension
 
 1.  Install [Open-with](https://addons.mozilla.org/en-US/firefox/addon/open-with/) add-on.
-2.  Open `about:openwith`, select _Add..._
+2.  Open `about:openwith`, select *Add...*
 3.  In the dialog select a video streaming capable player (e.g. [/usr/bin/mpv](/index.php/Mpv "Mpv")).
-4.  (Optional step) Add needed arguments to the player (e.g. you may want `--force-window --ytdl` for _mpv_)
+4.  (Optional step) Add needed arguments to the player (e.g. you may want `--force-window --ytdl` for *mpv*)
 5.  (Optional step) Choose how to display the dialogs using the left panel.
 6.  Right click on links or visit pages containing videos. If the site is supported, the player will open as expected.
 
-The same procedure can be used to associate video downloaders such as _youtube-dl_.
+The same procedure can be used to associate video downloaders such as *youtube-dl*.
 
 ## PDF viewer
 
@@ -301,7 +296,7 @@ repeat noisy swallow(evince) fill: evince "$file"
 
 If this is not enough, you may need to change 2 values in `about:config`:
 
-*   Change `pdfjs.disabled`'s value to _true_;
+*   Change `pdfjs.disabled`'s value to *true*;
 *   Change `plugin.disable_full_page_plugin_for_types`'s value to an empty value.
 
 Restart and it should work like a charm!
@@ -326,7 +321,7 @@ To use it in a 64-bit environment, you can:
 
 *   Follow [this guide](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64") originally posted in the forums. It involves creating a chrooted environment that could be reused for other 32-bit only applications.
 
-*   Install [acroread](https://aur.archlinux.org/packages/acroread/) (with all its 32-bit dependencies) from [AUR](/index.php/AUR "AUR"). Be advised that the [Firefox](/index.php/Firefox "Firefox") plugin cannot be used _directly_ with this binary -- it will not load in the 64-bit browser. To load it install the [nspluginwrapper](https://www.archlinux.org/packages/?name=nspluginwrapper) package from the official [[multilib]](/index.php/Multilib "Multilib") repository and run:
+*   Install [acroread](https://aur.archlinux.org/packages/acroread/) (with all its 32-bit dependencies) from [AUR](/index.php/AUR "AUR"). Be advised that the [Firefox](/index.php/Firefox "Firefox") plugin cannot be used *directly* with this binary -- it will not load in the 64-bit browser. To load it install the [nspluginwrapper](https://www.archlinux.org/packages/?name=nspluginwrapper) package from the official [[multilib]](/index.php/Multilib "Multilib") repository and run:
 
 ```
 $ nspluginwrapper -v -a -i
@@ -367,7 +362,7 @@ Many browsers support the [GStreamer](/index.php/GStreamer "GStreamer") framewor
 
 	[https://sites.google.com/site/kdekorte2/gecko-mediaplayer](https://sites.google.com/site/kdekorte2/gecko-mediaplayer) || [gecko-mediaplayer](https://www.archlinux.org/packages/?name=gecko-mediaplayer)
 
-*   **Totem Plugin** — Browser plugin based on the [Totem](https://en.wikipedia.org/wiki/Totem_(software) "wikipedia:Totem (software)") media player for [Gnome](/index.php/Gnome "Gnome") which uses [Gstreamer](/index.php/Gstreamer "Gstreamer").
+*   **Totem Plugin** — Browser plugin based on the [Totem](https://en.wikipedia.org/wiki/Totem_(software) media player for [Gnome](/index.php/Gnome "Gnome") which uses [Gstreamer](/index.php/Gstreamer "Gstreamer").
 
 	[http://projects.gnome.org/totem/](http://projects.gnome.org/totem/) || [totem](https://www.archlinux.org/packages/?name=totem)
 
@@ -390,7 +385,6 @@ MozPlugger can be installed with the [mozplugger](https://aur.archlinux.org/pack
 For example, MozPlugger uses OpenOffice by default to open `doc` files. To change it to use LibreOffice instead, look for the OpenOffice section:
 
  `/etc/mozpluggerrc` 
-
 ```
 ...
 ### OpenOffice
@@ -404,7 +398,6 @@ define([OO],[swallow(VCLSalFrame) fill: ooffice2.0 -nologo -norestore -view $1 "
 and add LibreOffice at the beginning of the list:
 
  `/etc/mozpluggerrc` 
-
 ```
 ...
 ### LibreOffice/OpenOffice
@@ -421,7 +414,6 @@ define([OO],[swallow(VCLSalFrame) fill: libreoffice --nologo --norestore --view 
 As another simple example, if you want to open `cpp` files with your favorite text editor (we will use Kate) to get syntax highlighting, just add a new section to your `mozpluggerrc` file:
 
  `/etc/mozpluggerrc` 
-
 ```
 text/x-c++:cpp:C++ Source File
 text/x-c++:hpp:C++ Header File
@@ -432,7 +424,6 @@ text/x-c++:hpp:C++ Header File
 To change the default of MPlayer so that [mpv](/index.php/Mpv "Mpv") is used instead, change the appropriate lines such that:
 
  `/etc/mozpluggerrc` 
-
 ```
 ...
 ### MPlayer
@@ -473,7 +464,6 @@ Flash Player outputs its sound only through the default [ALSA](/index.php/Advanc
 For a list of available devices with their respective numbers, run:
 
  `$ aplay -l` 
-
 ```
  **** List of PLAYBACK Hardware Devices ****
  card 0: Generic [HD-Audio Generic], device 3: HDMI 0 [HDMI 0]
@@ -491,7 +481,6 @@ For a list of available devices with their respective numbers, run:
 In this case, the HDMI output is `card 0` and the sound card is `card 1`. To make your sound card the default for ALSA, create the file `.asoundrc` in your home directory, with the following content:
 
  `~/.asoundrc` 
-
 ```
 pcm.!default {
     type hw

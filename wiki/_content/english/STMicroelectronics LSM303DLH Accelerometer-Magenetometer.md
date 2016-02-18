@@ -16,7 +16,6 @@ The LSM303DLH is a 3-axis accelerometer and magnetometer.
 The official driver available is available at a [cached version of the manufacturer's website](http://webcache.googleusercontent.com/search?q=cache:iJTcx9sEDbUJ:www.st.com/jp/analog/product/250145.jsp+&cd=2&hl=en&ct=clnk). The driver is open source an it was released under the [GNU General Public License (v2)](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html). It compiles fine, and the accelerometer module can be loaded without problems:
 
  `dmesg` 
-
 ```
 ...
 [  124.908804] lsm303dlh_acc_sysfs accelerometer driver: init
@@ -27,7 +26,6 @@ The official driver available is available at a [cached version of the manufactu
 The following error occurs when loading the magnetometer module:
 
  `dmesg` 
-
 ```
 ...
 [ 2546.530196] lsm303dlh_mag_sysfs: Unknown symbol input_allocate_polled_device (err 0)
@@ -50,7 +48,6 @@ Run the following command to instantiate the device:
 Although, it seems to be a problem with the driver.
 
  `demesg` 
-
 ```
 ...
 [  833.274769] lsm303dlh_acc_sysfs: probe start.

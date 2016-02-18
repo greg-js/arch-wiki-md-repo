@@ -32,7 +32,6 @@ You can check what the local machine's currently configured FQDN is by running `
 The `/etc/hosts` file contains a number of lines that map FQDNs to IP addresses and that map aliases to FQDNs. See the example `/etc/hosts` file below:
 
  `/etc/hosts` 
-
 ```
 #<ip-address>	<hostname.domain.org>	<hostname>
 #<ip-address>      <actual FQDN>                       <aliases>
@@ -46,7 +45,6 @@ The `/etc/hosts` file contains a number of lines that map FQDNs to IP addresses 
 To use **somehost** as the hostname. Move **somehost.localdomain** to the first item:
 
  `/etc/hosts` 
-
 ```
 #<ip-address>	<hostname.domain.org>	                        <hostname>
 #<ip-address>      <actual FQDN>                                              <aliases>
@@ -62,7 +60,6 @@ The [rsyslog](https://www.archlinux.org/packages/?name=rsyslog) doesn't create i
 Log output can be fine tuned in `/etc/rsyslog.conf`. The daemon uses Facility levels (see below) to determine what gets put where. For example:
 
  `/etc/rsyslog.conf` 
-
 ```
 # The authpriv file has restricted access.
 authpriv.*                                              /var/log/secure
@@ -71,10 +68,9 @@ authpriv.*                                              /var/log/secure
 
 States that all messages falling under the **authpriv** facility are logged to `/var/log/secure`.
 
-Another example, which would be similar to the behaviour of _syslog-ng_ for the old `auth.log`:
+Another example, which would be similar to the behaviour of *syslog-ng* for the old `auth.log`:
 
  `/etc/rsyslog.conf` 
-
 ```
 auth.*                                                  -/var/log/auth
 

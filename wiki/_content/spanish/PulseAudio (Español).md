@@ -178,7 +178,6 @@ $ padsp sox foo.wav -t ossdsp /dev/dsp
 Si quiere, puede renombrar el OSSprogama por OSSprograma-real y crear un macro como éste:
 
  `/usr/bin/OSSProgram` 
-
 ```
 #!/bin/sh
 if test -x /usr/bin/padsp; then
@@ -191,7 +190,7 @@ fi
 
 ### GStreamer
 
-Para hacer que [GStreamer](/index.php/GStreamer "GStreamer") use PulseAudio, ejecute `gstreamer-properties` (parte del paquete _gnome-media_) y seleccione _PulseAudio Sound Server_, en el cuadro Entrada y Salida de Audio.
+Para hacer que [GStreamer](/index.php/GStreamer "GStreamer") use PulseAudio, ejecute `gstreamer-properties` (parte del paquete *gnome-media*) y seleccione *PulseAudio Sound Server*, en el cuadro Entrada y Salida de Audio.
 
 ```
  $ gconftool-2 -t string --set /system/gstreamer/0.10/default/audiosink pulsesink
@@ -199,7 +198,7 @@ Para hacer que [GStreamer](/index.php/GStreamer "GStreamer") use PulseAudio, eje
 
 ```
 
-Algunas aplicaciones (como Rhythmbox) ignoran la propiedad _audiosink_, pero utilizan el valor de _musicaudiosink_, aunque no se puede configurar esto usando `gstreamer-properties`. Necesita establecerlo manualmente usando `gconf-editor` o `gconftool-2`:
+Algunas aplicaciones (como Rhythmbox) ignoran la propiedad *audiosink*, pero utilizan el valor de *musicaudiosink*, aunque no se puede configurar esto usando `gstreamer-properties`. Necesita establecerlo manualmente usando `gconf-editor` o `gconftool-2`:
 
 ```
  $ gconftool-2 -t string --set /system/gstreamer/0.10/default/musicaudiosink pulsesink
@@ -252,7 +251,7 @@ load-module module-x11-bell sample=x11-bell
 
 ```
 
-Puedes usar cualquier otro sonido. `dialog-error.oga` está en el paquete _sound-theme-freedesktop_.
+Puedes usar cualquier otro sonido. `dialog-error.oga` está en el paquete *sound-theme-freedesktop*.
 
 ### GNOME
 
@@ -262,11 +261,11 @@ La integración adecuada de PulseAudio con GNOME requiere algunos paquetes espec
 *   gnome-media-pulse
 *   gnome-settings-daemon-pulse
 
-Son parte del grupo _pulseaudio-gnome_.
+Son parte del grupo *pulseaudio-gnome*.
 
 ### KDE 3
 
-Note que Pulseaudio _NO_ es un reemplazo para aRts. Si usas KDE 3, no es posible usar PulseAudio.
+Note que Pulseaudio *NO* es un reemplazo para aRts. Si usas KDE 3, no es posible usar PulseAudio.
 
 ### KDE 4 y Qt 4
 
@@ -284,7 +283,7 @@ Audacious soporta PulseAudio de forma nativa. Para utilizarlo, debemos ir en Aud
 
 You will need to [configure](http://mpd.wikia.com/wiki/PulseAudio) mpd to use PulseAudio.
 
-On a headless box, run PulseAudio as the _mpd_ user. On a desktop, running mpd as yourself and not using the _mpd_ user is preferred.
+On a headless box, run PulseAudio as the *mpd* user. On a desktop, running mpd as yourself and not using the *mpd* user is preferred.
 
 ### MPlayer
 
@@ -332,7 +331,7 @@ esac
 
 ### Systemas de sonido envolvente
 
-Muchas personas poseen una placa compatible con sonido envolvente, pero tienen altavoces para solo dos canales, entonces PulseAudio no puede usar una configuración envolvente por defecto. Para habilitar todos los canales, edite `/etc/pulse/daemon.conf`: descomentando la linea default-sample-channels (i.e. remueva el punto y coma del principio de la linea) y configure el valor a **6** si tiene un sistema _5.1_, o **8** si tiene un sistema _7.1_ etc.
+Muchas personas poseen una placa compatible con sonido envolvente, pero tienen altavoces para solo dos canales, entonces PulseAudio no puede usar una configuración envolvente por defecto. Para habilitar todos los canales, edite `/etc/pulse/daemon.conf`: descomentando la linea default-sample-channels (i.e. remueva el punto y coma del principio de la linea) y configure el valor a **6** si tiene un sistema *5.1*, o **8** si tiene un sistema *7.1* etc.
 
 ```
 # Default
@@ -351,7 +350,6 @@ Luego de realizar la edición, sera necesario reiniciar el servidor de PulseAudi
 Para que ALSA pueda usar PulseAudio se necesita una configuración especial`/etc/asound.conf` (system wide settings) (recomendado) o `~/.asoundrc` (configuración en una base por usuario):
 
  `/etc/asound.conf` 
-
 ```
 pcm.pulse {
     type pulse
@@ -513,7 +511,7 @@ Basically, this prevents module-udev-detect from loading. module-udev-detect wil
 
 Using the settings listed above you can use QjackCtl to execute a script upon startup and shutdown to load/unload PulseAudio. Part of the reason you may wish to do this is that the above changes disable PulseAudio's automatic hardware detection modules. This particular setup is for using PulseAudio in an exclusive fashion with JACK, though the scripts could be modified to unload and load an alternate non-JACK setup, but killing and starting PulseAudio while programs might be using it would become problematic.
 
-The following example could be used and modified as necessary as a startup script that daemonizes PulseAudio and loads the _padevchooser_ program (optional, needs to be built from AUR) called `jack_startup`:
+The following example could be used and modified as necessary as a startup script that daemonizes PulseAudio and loads the *padevchooser* program (optional, needs to be built from AUR) called `jack_startup`:
 
 ```
 #!/bin/bash
@@ -542,7 +540,7 @@ chmod +x jack_startup jack_shutdown
 
 ```
 
-then with QjackCtl loaded, click on the _Setup_ button and then the _Options_ tab and tick both "Execute Script after Startup:" And "Execute Script on Shutdown:" and put either use the ... button or type the path to the scripts (assuming the scripts are in the home directory) `~/jack_startup` and `~/jack_shutdown` making sure to save the changes you have made.
+then with QjackCtl loaded, click on the *Setup* button and then the *Options* tab and tick both "Execute Script after Startup:" And "Execute Script on Shutdown:" and put either use the ... button or type the path to the scripts (assuming the scripts are in the home directory) `~/jack_startup` and `~/jack_shutdown` making sure to save the changes you have made.
 
 ### Pulseaudio a través OSS
 
@@ -579,7 +577,7 @@ As an example situation: you want to listen to music at your desktop, using the 
 
 The solution is as follows (with thanks for some useful pointers from: [http://superuser.com/questions/267442/how-to-get-simultaneous-sound-from-pulseadio-on-two-outputs-analog-and-digital](http://superuser.com/questions/267442/how-to-get-simultaneous-sound-from-pulseadio-on-two-outputs-analog-and-digital)). Amarok is used in this example.
 
-*   Install "pavucontrol" (pacman -S pavucontrol). You _won't_ be needing the other useful pulse configuration utility "paprefs" for this task.
+*   Install "pavucontrol" (pacman -S pavucontrol). You *won't* be needing the other useful pulse configuration utility "paprefs" for this task.
 *   In a terminal, launch "pacmd" - a command line utility for loading pulse modules
 *   Enter the following commands in pacmd in this order (where your numbers for "hw:0,0" are determined by entering "aplay -l" in terminal. One number is the hardware ID for the analog device, the other for the digital):
 

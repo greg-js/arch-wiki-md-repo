@@ -1,6 +1,6 @@
 De Xfce - [Acerca de](http://www.xfce.org/about):
 
-_Xfce encarna la filosofía tradicional UNIX de modularidad y reutilización. Se compone de una serie de componentes que proporcionan toda la funcionalidad que se puede esperar de un moderno entorno de escritorio. Se empaquetan por separado y puede escogerse entre los paquetes disponibles para crear elentorno de trabajo personal óptimo._
+*Xfce encarna la filosofía tradicional UNIX de modularidad y reutilización. Se compone de una serie de componentes que proporcionan toda la funcionalidad que se puede esperar de un moderno entorno de escritorio. Se empaquetan por separado y puede escogerse entre los paquetes disponibles para crear elentorno de trabajo personal óptimo.*
 
 ## Contents
 
@@ -74,7 +74,6 @@ $ startxfce4
 Un ejemplo:
 
  `~/.xinitrc` 
-
 ```
 #!/bin/sh
 

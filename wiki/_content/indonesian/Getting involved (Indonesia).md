@@ -4,7 +4,7 @@
 | [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") |
 | [Help:Editing](/index.php/Help:Editing "Help:Editing") |
 
-Dalam ilmu Biologi,simbiosis [mutualisme](https://en.wikipedia.org/wiki/Mutualism_(biology) "wikipedia:Mutualism (biology)") adalah hubungan antar organisme yang saling memberikan manfaat/keuntungan.Prinsip ini juga dapat diaplikasikan untuk memotivasi dan mengajak anggota komunitas Archlinux untuk ikut serta dan berkontribusi untuk distro GNU/Linux favoritnya. Keikutsertaan ini tidak hanya memberikan manfaat untuk anggota komunitas dan kepada Archer lainnya,tetapi juga kepada seluruh pengguna [free and open source software](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software")
+Dalam ilmu Biologi,simbiosis [mutualisme](https://en.wikipedia.org/wiki/Mutualism_(biology) adalah hubungan antar organisme yang saling memberikan manfaat/keuntungan.Prinsip ini juga dapat diaplikasikan untuk memotivasi dan mengajak anggota komunitas Archlinux untuk ikut serta dan berkontribusi untuk distro GNU/Linux favoritnya. Keikutsertaan ini tidak hanya memberikan manfaat untuk anggota komunitas dan kepada Archer lainnya,tetapi juga kepada seluruh pengguna [free and open source software](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software")
 
 ## Contents
 
@@ -25,13 +25,13 @@ Dalam ilmu Biologi,simbiosis [mutualisme](https://en.wikipedia.org/wiki/Mutualis
 
 ## Bergabung dengan Forum Archlinux
 
-Salah satu cara termudah untuk berpatisipasi adalah dengan bergabung di [Forum Archlinux](https://bbs.archlinux.org/).Mulailah membaca [etika berforum](/index.php/Forum_etiquette "Forum etiquette") serta peraturan yang ada terlebih dahulu.Kemudian silahkan berbagi ide ataupun memberikan bantuan kepada orang lain seperti kepada pengguna baru.Jika terjadi pelanggaran diforum,silahkan laporkan kepada tim forum dengan cara mengklik tombol _Report_ (dibagian bawah kanan post forum).
+Salah satu cara termudah untuk berpatisipasi adalah dengan bergabung di [Forum Archlinux](https://bbs.archlinux.org/).Mulailah membaca [etika berforum](/index.php/Forum_etiquette "Forum etiquette") serta peraturan yang ada terlebih dahulu.Kemudian silahkan berbagi ide ataupun memberikan bantuan kepada orang lain seperti kepada pengguna baru.Jika terjadi pelanggaran diforum,silahkan laporkan kepada tim forum dengan cara mengklik tombol *Report* (dibagian bawah kanan post forum).
 
 ## Berkontribusi untuk Arch Wiki
 
-_Wikis, by design, thrive on collaboration._
+*Wikis, by design, thrive on collaboration.*
 
-[ArchWiki](/index.php/AboutWiki "AboutWiki") merupakan sebuah dokumentasi yang dibuat oleh _komunitas_ dan ditujukan juga untuk _komunitas_.Para kontributor **secara sukarela** meluangkan waktu dan energi untuk berbagi pengetahuan serta skill dengan komunitas.Semua pengguna dipersilahkan untuk berkontribusi.Secara kasar,terdapat pembagian tugas di Archwiki yaitu:
+[ArchWiki](/index.php/AboutWiki "AboutWiki") merupakan sebuah dokumentasi yang dibuat oleh *komunitas* dan ditujukan juga untuk *komunitas*.Para kontributor **secara sukarela** meluangkan waktu dan energi untuk berbagi pengetahuan serta skill dengan komunitas.Semua pengguna dipersilahkan untuk berkontribusi.Secara kasar,terdapat pembagian tugas di Archwiki yaitu:
 
 *   Pemeliharaan teknis
 *   Manajemen konten
@@ -47,7 +47,7 @@ Jika Anda merasa sanggup untuk [mengedit halaman wiki](/index.php/Help:Editing "
 5.  Perbaiki [ketidakakurattan](/index.php/Special:WhatLinksHere/Template:Accuracy "Special:WhatLinksHere/Template:Accuracy") atau [artikel kadaluarsa](/index.php/Special:WhatLinksHere/Template:Out_of_date "Special:WhatLinksHere/Template:Out of date") serta [gaya penulisan](/index.php/Help:Style "Help:Style") yang sesuai dengan EYD (ejaan yang disempurnakan).
 6.  Kurangi jumlah [kategori](/index.php/Special:Categories "Special:Categories") dengan cara menggabungkan kategori yang bermakna sama serta tingkatkan [menu navigasi](/index.php/Table_of_Contents "Table of Contents") dari wiki.
 7.  [Mengkategorikan artikel yang tidak memiliki kategori.](/index.php/Special:UncategorizedPages "Special:UncategorizedPages").
-8.  Tambahkan [ringkasan artikel](/index.php/Writing_Article_Overviews "Writing Article Overviews") dibagian _summary_ disemua artikel.
+8.  Tambahkan [ringkasan artikel](/index.php/Writing_Article_Overviews "Writing Article Overviews") dibagian *summary* disemua artikel.
 9.  Perbarui halaman [FAQ](/index.php/FAQ "FAQ") dengan pertanyaan yang lebih relevan dari forum dan hapus pertanyaan yang kurang berguna lainnya.
 
 Berikut daftar halaman yang bisa Anda baca untuk melakukan pembersihan halaman :
@@ -78,7 +78,7 @@ Contribute to [Rolling Release](http://rollingrelease.com), the official Arch Li
 
 Archlinux mempunyai komunitas untuk pengembangan perangkat lunak yang masih aktif dan sangat vital.Jika Anda mempunyai proyek dan ingin menghubungkannya,maka Anda sduah berada ditempat yang tepat.Masukkan link menuju proyek Anda,waktu Anda memulai proyek serta beberapa kalimat atau mungkin paragraf tentang proyek Anda.
 
-**Note:** Semua proyek yang ada dibawah ini adalah proyek komunitas.Namun tak ada satupun yang termasuk kedalah _**proyek resmi Archlinux**_.
+**Note:** Semua proyek yang ada dibawah ini adalah proyek komunitas.Namun tak ada satupun yang termasuk kedalah ***proyek resmi Archlinux***.
 
 #### [Distro berdasarkan Archlinux](/index.php/Arch_Based_Distributions "Arch Based Distributions")
 
@@ -114,7 +114,7 @@ Archlinux mempunyai komunitas untuk pengembangan perangkat lunak yang masih akti
 
 *   [Arch Linux Gaming Repository](http://github.com/Arch-Games/arch-games/wiki)
 
-	Koleksi permainan populer yang sebenarnya tidak didukung[unsupported] namun dibuat agar dapat berjalan di Archlinux serta menghemat waktu kompilasi.Permainan tersebut juga mendapatkan perbaikan berupa _patch_ seandainya permainan tersebut tidak bisa dikompilasi.
+	Koleksi permainan populer yang sebenarnya tidak didukung[unsupported] namun dibuat agar dapat berjalan di Archlinux serta menghemat waktu kompilasi.Permainan tersebut juga mendapatkan perbaikan berupa *patch* seandainya permainan tersebut tidak bisa dikompilasi.
 
 *   [ArchLinux.us](http://archlinux.us)
 
@@ -166,13 +166,13 @@ Archlinux mempunyai komunitas untuk pengembangan perangkat lunak yang masih akti
 
 *   [PKGBUILD.ORG for Archers](http://pkgbuild.org)
 
-	Mengumpulkan dan membagikan PKGBUILDs dengan cara _Git_.
+	Mengumpulkan dan membagikan PKGBUILDs dengan cara *Git*.
 
 ## Anda sebagai Developer...
 
-_Entri ini dibuat berdasarkan sebuah trit dari [sini](https://bbs.archlinux.org/viewtopic.php?id=24503) yang berasal dari Forum Archlinux._
+*Entri ini dibuat berdasarkan sebuah trit dari [sini](https://bbs.archlinux.org/viewtopic.php?id=24503) yang berasal dari Forum Archlinux.*
 
-Pertama,ingatlah motivasi Anda untuk berkontribusi di Arch,yaitu membantu komunitas,dan tidak berkeinginan untuk menjadi seorang _"Developer Archlinux"_ dengan maksud lain.Kedua,Anda juga menjadi bagian dari komunitas,dengan memberikan bantuan kepada orang lain berarti Anda sudah menolong diri Anda sendiri.
+Pertama,ingatlah motivasi Anda untuk berkontribusi di Arch,yaitu membantu komunitas,dan tidak berkeinginan untuk menjadi seorang *"Developer Archlinux"* dengan maksud lain.Kedua,Anda juga menjadi bagian dari komunitas,dengan memberikan bantuan kepada orang lain berarti Anda sudah menolong diri Anda sendiri.
 
 ### Apa yang bisa Saya lakukan?
 
@@ -183,8 +183,8 @@ Berikut adalah daftar yang secara khusus bisa diikuti agar Anda menjadi lebih be
 *   Bekerjasama dengan pengguna terpercaya dalam proses pembuatan paket Archlinux guna meningkatkan pengalaman serta skill Anda.
 *   Kirimkan paket hasil kerja Anda ke AUR.
 *   Ikut serta dalam proyek kecil-kecilan yang mana suatu hari nanti,akan berguna untuk Archlinux atau Anda bisa memulainya sendiri.
-*   Mulailah bermain dengan Pacman,makepkg,initscripts atau kode sumber lainnya dan kirimkan perbaikan berupa patch ke _bug tracker_.
-*   Jelajahi _bug tracker_ dan ikut memperbaiki masalah yang sudah ada.
+*   Mulailah bermain dengan Pacman,makepkg,initscripts atau kode sumber lainnya dan kirimkan perbaikan berupa patch ke *bug tracker*.
+*   Jelajahi *bug tracker* dan ikut memperbaiki masalah yang sudah ada.
 *   Cari,temukan dan kirimkan masalah baru yang muncul.
 *   Perbaiki kesalahan di halaman wiki,tambahkan halaman baru,bersihkan halaman tak berguna yang masih ada dan pastikan semua prosedur selau terupdate.
 *   Kirimkan hasil terjemahan Anda.

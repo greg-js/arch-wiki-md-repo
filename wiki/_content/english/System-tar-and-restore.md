@@ -21,7 +21,7 @@ Install [system-tar-and-restore](https://aur.archlinux.org/packages/system-tar-a
 
 ## Backup
 
-The _backup.sh_ script makes a tar backup of your system. You will be asked for:
+The *backup.sh* script makes a tar backup of your system. You will be asked for:
 
 *   **Destination directory**: Where you want to save the backup. Default is `/`.
 *   **Archive name**: A desired name for the backup. Default is `Backup-$(hostname)-$(date +%Y-%m-%d-%T)`.
@@ -51,7 +51,7 @@ When the process completes, you may want to check `backup.log` file in the same 
 
 ## Restore/Transfer
 
-The _restore.sh_ script has two modes: **Restore** and **Transfer**. The first uses the above created archive to extract it in desired partition(s). The second transfers your system in desired partition(s) using [rsync](https://www.archlinux.org/packages/?name=rsync). Then, in both cases, generates the target system's fstab, rebuilds initramfs for every available kernel, generates locales and finally installs and configures the selected bootloader.
+The *restore.sh* script has two modes: **Restore** and **Transfer**. The first uses the above created archive to extract it in desired partition(s). The second transfers your system in desired partition(s) using [rsync](https://www.archlinux.org/packages/?name=rsync). Then, in both cases, generates the target system's fstab, rebuilds initramfs for every available kernel, generates locales and finally installs and configures the selected bootloader.
 
 **Note:** In order to restore a backup in UEFI, you must run the script from a UEFI environment.
 
@@ -63,7 +63,7 @@ Boot from a livecd (preferably an Arch Linux based) or another system, prepare y
 *   **Mount options**: You can specify alternative comma-seperated mount options for the target root partition. Defaults are `defaults,noatime`.
 *   **Btrfs subvolumes**: If the target root filesystem is [Btrfs](/index.php/Btrfs "Btrfs"), you will be prompted for root subvolume name. Leave empty if you dont want subvolumes. Also you can specify other subvolumes. Just enter the paths (/home /var /usr etc.) seperated by space. Recommended root subvolume name is `__active`.
 *   **Bootloader**: In BIOS systems you can choose [grub](https://www.archlinux.org/packages/?name=grub) or [syslinux](https://www.archlinux.org/packages/?name=syslinux) and the target disk. If you select a raid array as bootloader disk, the script will install the bootloader in all disks that the array contains. In case of UEFI you can choose grub, EFISTUB/efibootmgr or Systemd/bootctl. Also you can define additional kernel options.
-*   **Select mode**: In _Restore mode_ you have to specify the backup archive location, local or remote (you will need [wget](https://www.archlinux.org/packages/?name=wget)). If the archive is encrypted you will be prompted for the passphrase. In _Transfer mode_ you will have to specify if you want to transfer your entire /home directory or only it's hidden files and folders (which are necessary to login and keep basic settings).
+*   **Select mode**: In *Restore mode* you have to specify the backup archive location, local or remote (you will need [wget](https://www.archlinux.org/packages/?name=wget)). If the archive is encrypted you will be prompted for the passphrase. In *Transfer mode* you will have to specify if you want to transfer your entire /home directory or only it's hidden files and folders (which are necessary to login and keep basic settings).
 *   **Tar/Rsync options**: You may want to specify any additional options. See `tar --help` or `rsync --help` for more info.
 
 **Note:**

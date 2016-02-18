@@ -1,6 +1,6 @@
 **netconsole** is a kernel module that sends all kernel log messages (i.e. dmesg) over the network to another computer, without involving user space (e.g. syslogd). Name "netconsole" is a misnomer because it's not really a "console", more like a remote logging service.
 
-It can be used either built-in or as a module. Built-in _netconsole_ initializes immediately after NIC cards and will bring up the specified interface as soon as possible. The module is mainly used for capturing kernel panic output from a headless machine, or in other situations where the user space is no more functional.
+It can be used either built-in or as a module. Built-in *netconsole* initializes immediately after NIC cards and will bring up the specified interface as soon as possible. The module is mainly used for capturing kernel panic output from a headless machine, or in other situations where the user space is no more functional.
 
 Documentation is available in the Linux kernel tree under [Documentation/networking/netconsole.txt](https://www.kernel.org/doc/Documentation/networking/netconsole.txt).
 
@@ -51,7 +51,7 @@ loglevel=7
 
 ### Runtime configuration
 
-Netconsole can be loaded as _kernel module_ manually after boot or automatically during boot depending on the module configuration (see [Kernel modules](/index.php/Kernel_modules "Kernel modules") for details).
+Netconsole can be loaded as *kernel module* manually after boot or automatically during boot depending on the module configuration (see [Kernel modules](/index.php/Kernel_modules "Kernel modules") for details).
 
 To load the `netconsole` module manually any time after boot:
 
@@ -98,7 +98,7 @@ nc -u -l -p 6666
 
 ```
 
-Logging is done by your Arch Linux set logger like _syslog-ng_, so available loglevels (output details) are defined in that logger docs, and may differ for each log type. One can also pass _netconsole_ string parameters at kernel runtime (no config file required), then start two _netconsole_ instances on the monitoring PC (one to read output, another for input), and restart it on the PC or device you are logging as shown in _Dynamic Configuration_:
+Logging is done by your Arch Linux set logger like *syslog-ng*, so available loglevels (output details) are defined in that logger docs, and may differ for each log type. One can also pass *netconsole* string parameters at kernel runtime (no config file required), then start two *netconsole* instances on the monitoring PC (one to read output, another for input), and restart it on the PC or device you are logging as shown in *Dynamic Configuration*:
 
 ```
 # set log level for kernel messages
@@ -116,7 +116,7 @@ socat - udp4-datagram:192.168.1.28:6666,bind=6666
 
 ```
 
-One may need to switch off PC and router firewall, and setup proper router port forwarding to monitor and input data in _Netconsole_. A more flexible configuration can be achieved if netconsole is setup on a [different subnet](http://archlinuxarm.org/forum/viewtopic.php?f=18&t=3355) so that if the device is moved to a different network IP's won't clash, however [it may require a more complex setup](http://archlinuxarm.org/platforms/armv5/seagate-goflex-home#qt-platform_tabs-ui-tabs3) on the receiver with aliased ethernet interface.
+One may need to switch off PC and router firewall, and setup proper router port forwarding to monitor and input data in *Netconsole*. A more flexible configuration can be achieved if netconsole is setup on a [different subnet](http://archlinuxarm.org/forum/viewtopic.php?f=18&t=3355) so that if the device is moved to a different network IP's won't clash, however [it may require a more complex setup](http://archlinuxarm.org/platforms/armv5/seagate-goflex-home#qt-platform_tabs-ui-tabs3) on the receiver with aliased ethernet interface.
 
 ## Usage
 

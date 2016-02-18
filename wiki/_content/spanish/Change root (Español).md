@@ -1,4 +1,4 @@
-[Chroot](https://en.wikipedia.org/wiki/Chroot "wikipedia:Chroot") es el proceso por el que se cambia el directorio root del disco aparente (y el actual proceso en marcha y sus descendientes) a otro directorio root. Al cambiar a otro directorio root no se puede acceder a los archivos y órdenes fuera de ese directorio. Este directorio se llama _jaula chroot_. El cambio de root se hace comúnmente para el mantenimiento del sistema, como puede ser volver a instalar el gestor de arranque o restablecer una contraseña olvidada.
+[Chroot](https://en.wikipedia.org/wiki/Chroot "wikipedia:Chroot") es el proceso por el que se cambia el directorio root del disco aparente (y el actual proceso en marcha y sus descendientes) a otro directorio root. Al cambiar a otro directorio root no se puede acceder a los archivos y órdenes fuera de ese directorio. Este directorio se llama *jaula chroot*. El cambio de root se hace comúnmente para el mantenimiento del sistema, como puede ser volver a instalar el gestor de arranque o restablecer una contraseña olvidada.
 
 ## Contents
 
@@ -244,7 +244,7 @@ Esto puede proteger su sistema contra ataques desde Internet durante la navegaci
 
 ```
 # # as root: 
-# cd /home/_user_
+# cd /home/*user*
 # mkdir myroot
 # pacman -S arch-install-scripts
 # # pacstrap must see myroot as mounted: 
@@ -258,11 +258,11 @@ Esto puede proteger su sistema contra ataques desde Internet durante la navegaci
 # chroot myroot
 # # inside chroot: 
 # passwd # set a password 
-# useradd -m -s /bin/bash _user_
-# passwd _user_ # set a password
+# useradd -m -s /bin/bash *user*
+# passwd *user* # set a password
 # # in a shell outside the chroot: 
 # pacman -S xorg-server-xnest
-# # in a shell outside the chroot you can run this as _user_: 
+# # in a shell outside the chroot you can run this as *user*: 
 $ Xnest -ac -geometry 1024x716+0+0 :1
 # # continue inside the chroot: 
 # pacman -S xterm
@@ -284,11 +284,11 @@ $ Xnest -ac -geometry 1024x716+0+0 :1
 # # firefox is now running in Xnest 
 # exit
 # # outside chroot: 
-# chroot --userspec=_user_ myroot
-# # inside chroot as _user_: 
+# chroot --userspec=*user* myroot
+# # inside chroot as *user*: 
 $ DISPLAY=:1
 $ openbox &
-$ HOME="/home/_user_"
+$ HOME="/home/*user*"
 $ firefox
 ```
 

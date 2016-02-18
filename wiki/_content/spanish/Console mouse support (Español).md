@@ -11,7 +11,7 @@ DAEMONS=(syslog-ng !hotplug !pcmcia network netfs openntpd crond cups gpm)
 
 ```
 
-El paquete gpm necesita ser inicializado con unos pocos parámetros. Estos parámetros pueden ser agregados en el archivo _/etc/conf.d/gpm_. Aquí hay un ejemplo del contenido del archivo:
+El paquete gpm necesita ser inicializado con unos pocos parámetros. Estos parámetros pueden ser agregados en el archivo */etc/conf.d/gpm*. Aquí hay un ejemplo del contenido del archivo:
 
 ```
 #

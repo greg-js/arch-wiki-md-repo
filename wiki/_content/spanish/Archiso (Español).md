@@ -33,9 +33,9 @@ $ mkdir /home/tuusuario/archlive
 
 Ahora necesitamos copiar los scripts de archiso, que fueron previamente instalados en nuestro sistema, dentro de la carpeta creada, en la que trabajaremos.
 
-Archiso tiene dos «perfiles»: _releng_ y _baseline_. Si quieres crear una versión live de Arch Linux totalmente personalizada, preinstalada con todos tus programas favoritos y configuraciones, usa _releng._
+Archiso tiene dos «perfiles»: *releng* y *baseline*. Si quieres crear una versión live de Arch Linux totalmente personalizada, preinstalada con todos tus programas favoritos y configuraciones, usa *releng.*
 
-Si solo quieres crear el medio live más básico, sin paquetes preinstalados y configuraciones mínimas, usa _baseline_.
+Si solo quieres crear el medio live más básico, sin paquetes preinstalados y configuraciones mínimas, usa *baseline*.
 
 De manera que, dependiendo de tus necesidades, ejecuta lo siguiente, sustituyendo «PERFIL» por **releng** o **baseline**.
 
@@ -44,9 +44,9 @@ De manera que, dependiendo de tus necesidades, ejecuta lo siguiente, sustituyend
 
 ```
 
-Si estás utilizando el perfil _releng_ para hacer una imagen totalmente personalizada, puedes hacerlo en [Configurar nuestro medio live](/index.php/Archiso_(Espa%C3%B1ol)#Configurar_nuestro_medio_live "Archiso (Español)").
+Si estás utilizando el perfil *releng* para hacer una imagen totalmente personalizada, puedes hacerlo en [Configurar nuestro medio live](/index.php/Archiso_(Espa%C3%B1ol)#Configurar_nuestro_medio_live "Archiso (Español)").
 
-Si estás usando el perfil _baseline_ para crear una imagen de instalación mínima, no necesitarás hacer ninguna personalización y puedes ir directamente a [Construir la ISO](/index.php/Archiso_(Espa%C3%B1ol)#Construir_la_ISO "Archiso (Español)")
+Si estás usando el perfil *baseline* para crear una imagen de instalación mínima, no necesitarás hacer ninguna personalización y puedes ir directamente a [Construir la ISO](/index.php/Archiso_(Espa%C3%B1ol)#Construir_la_ISO "Archiso (Español)")
 
 ## Configurar nuestro medio live
 
@@ -56,7 +56,7 @@ Nos movemos al directorio que hemos creado antes (es decir, `/home/tuusuario/arc
 
 ### Instalar paquetes
 
-Querrás crear una lista de paquetes que quieres instalar en tu sistema live CD. Un archivo lleno de nombres de paquetes, uno por línea, es el formato correcto para hacer esto. Esto es _**muy bueno**_ para crear live CD para intereses especiales, solamente especifica que paquetes quieres en `packages.both` y «cuece» la imagen. Los archivos `packages.i686` y `packages.x86_64` te permiten instalar software para solo 32bit o 64bit, respectivamente.
+Querrás crear una lista de paquetes que quieres instalar en tu sistema live CD. Un archivo lleno de nombres de paquetes, uno por línea, es el formato correcto para hacer esto. Esto es ***muy bueno*** para crear live CD para intereses especiales, solamente especifica que paquetes quieres en `packages.both` y «cuece» la imagen. Los archivos `packages.i686` y `packages.x86_64` te permiten instalar software para solo 32bit o 64bit, respectivamente.
 
 **Sugerencia:** También puedes crear un **[repositorio local personalizado (en)](/index.php/Custom_local_repository "Custom local repository")** para preparar paquetes personalizados o paquetes de [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)")/[ABS](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)"). Simplemente añade tu repositorio local en la primera posición (para que tenga prioridad) del archivo **pacman.conf** de tu ordenador, ¡y listo!
 
@@ -71,11 +71,11 @@ Copia tus archivos `/etc/shadow`, `/etc/passwd`, y `/etc/group` de tu propio sis
 
 ```
 
-**Advertencia:** El archivo _shadow_ contendrá tu clave encriptada. Se recomienda que antes de copiar el archivo shadow, cambies la contraseña de tu usuario del sistema anfitrión, por la que quieras que tenga tu usuario del sistema live, luego copias el archivo shadow, y, después, vuelves a cambiar la contraseña del usuario de tu sistema anfitrión.
+**Advertencia:** El archivo *shadow* contendrá tu clave encriptada. Se recomienda que antes de copiar el archivo shadow, cambies la contraseña de tu usuario del sistema anfitrión, por la que quieras que tenga tu usuario del sistema live, luego copias el archivo shadow, y, después, vuelves a cambiar la contraseña del usuario de tu sistema anfitrión.
 
 ### Añadir archivos a la imagen
 
-**Nota:** Debes ser superusuario para hacer esto, no cambies el nombre del usuario titular de ninguno de los archivos que copies, **todo** dentro del directorio root-image debe ser propiedad de _root_. El nombre del usuario titular correcto se resolverá automáticamente.
+**Nota:** Debes ser superusuario para hacer esto, no cambies el nombre del usuario titular de ninguno de los archivos que copies, **todo** dentro del directorio root-image debe ser propiedad de *root*. El nombre del usuario titular correcto se resolverá automáticamente.
 
 El directorio root-image actua como una cubierta, piensa en él como el directorio raíz, `/`, de tu sistema anfitrión, de manera que cada archivo que pongas dentro se copiará al arranque.
 
@@ -118,7 +118,7 @@ su -c "cp -r /etc/skel/.* /home/**tuusuariolive**/" **tuusuariolive**
 
 El archivo por defecto debería funcionar bien, de manera que no deberías necesitar tocarlo.
 
-El archivo aitab tiene información acerca de las imágenes de los sistemas de archivos que deben ser creadas por mkarchiso y montadas en la fase de initramfs del _hook_ archiso. Consiste en unos campos que definen el comportamiento de las imágenes.
+El archivo aitab tiene información acerca de las imágenes de los sistemas de archivos que deben ser creadas por mkarchiso y montadas en la fase de initramfs del *hook* archiso. Consiste en unos campos que definen el comportamiento de las imágenes.
 
 ```
 # <img>         <mnt>                 <arch>   <sfs_comp>  <fs_type>  <fs_size>
@@ -159,14 +159,14 @@ Debido a la naturaleza modular de isolinux, puedes usar un montón de añadidos,
 
 ### Gestor de inicio de sesión
 
-Iniciar X con el arranque el sistema, se hacía modificando _inittab_ en los sistemas [sysvinit](/index.php/SysVinit_(Espa%C3%B1ol) "SysVinit (Español)"). En un sistema basado en [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") las cosas se manejan activando el archivo _.service_ de tu gestor de inicio de sesión. Si sabes qué enlace necesitas para el archivo _.service` en cuestión: bien. Si no, puedes averiguarlo fácilmente, en el caso de que estés usando el mismo gestor de pantalla en tu sistema. Solo escribe:_
+Iniciar X con el arranque el sistema, se hacía modificando *inittab* en los sistemas [sysvinit](/index.php/SysVinit_(Espa%C3%B1ol) "SysVinit (Español)"). En un sistema basado en [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") las cosas se manejan activando el archivo *.service* de tu gestor de inicio de sesión. Si sabes qué enlace necesitas para el archivo *.service` en cuestión: bien. Si no, puedes averiguarlo fácilmente, en el caso de que estés usando el mismo gestor de pantalla en tu sistema. Solo escribe:*
 
 ```
 # systemctl disable **nombredetugestordeiniciodesesión**
 
 ```
 
-para desactivarlo temporalmente. Ahora pon la misma orden otra vez, sustituyendo _«disable»_ por _«enable»_, para activarlo de nuevo. Systemctl muestra información acerca de los enlaces que crea. Ahora muévete al directorio `/home/tuusuario/archlive/releng/root-image/etc/systemd/system` y crea el mismo enlace ahí.
+para desactivarlo temporalmente. Ahora pon la misma orden otra vez, sustituyendo *«disable»* por *«enable»*, para activarlo de nuevo. Systemctl muestra información acerca de los enlaces que crea. Ahora muévete al directorio `/home/tuusuario/archlive/releng/root-image/etc/systemd/system` y crea el mismo enlace ahí.
 
 Un ejemplo (asegurate de que estás en `/home/tuusuario/archlive/releng/root-image/etc/systemd/system` o añádelo a la orden):
 

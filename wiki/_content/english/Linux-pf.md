@@ -25,7 +25,7 @@ Install [linux-pf](https://aur.archlinux.org/packages/linux-pf/) from the [AUR](
 
 Precompiled packages (generic or CPU-family optimized) are available from the [pfkernel](/index.php/Unofficial_user_repositories#pfkernel "Unofficial user repositories"), [Linux-pf](/index.php/Unofficial_user_repositories#Linux-pf "Unofficial user repositories") and [archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") unofficial repositories. See [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") for configuration details.
 
-After an [upgrade](/index.php/Pacman#Upgrading_packages "Pacman"), running `pacman -Sl _repo_name_` will show the packages available in the given repository. Afterwards, just install the _linux-pf_ and _linux-pf-headers_ packages (for generic binaries - platform-specific binaries are also available in some repositories and will be listed in the output from the aforementioned pacman command). See the [#Configuration](#Configuration) section for additional configuration steps.
+After an [upgrade](/index.php/Pacman#Upgrading_packages "Pacman"), running `pacman -Sl *repo_name*` will show the packages available in the given repository. Afterwards, just install the *linux-pf* and *linux-pf-headers* packages (for generic binaries - platform-specific binaries are also available in some repositories and will be listed in the output from the aforementioned pacman command). See the [#Configuration](#Configuration) section for additional configuration steps.
 
 ### Manual compilation
 
@@ -69,7 +69,7 @@ If you have selected a specific CPU optimization for your kernel in the previous
 
 #### Install compiled package
 
-After the compilation finishes, an additional _linux-pf-headers[-cpu]_ package will be created. Do not forget to install it too, if you plan on using additional modules like [NVIDIA](/index.php/NVIDIA "NVIDIA") or [VirtualBox](/index.php/VirtualBox "VirtualBox").
+After the compilation finishes, an additional *linux-pf-headers[-cpu]* package will be created. Do not forget to install it too, if you plan on using additional modules like [NVIDIA](/index.php/NVIDIA "NVIDIA") or [VirtualBox](/index.php/VirtualBox "VirtualBox").
 
 ```
 # pacman -U linux-pf-core2-3.3.2-1-$CPUTYPE.pkg.tar.xz linux-pf-headers-core2-3.3.2-1-$CPUTYPE.pkg.tar.xz
@@ -92,7 +92,7 @@ initrd (hd0,0)/initramfs-linux-pf.img
 
 ```
 
-If you intend to use TuxOnIce for hibernation, make sure you have added the necessary modules to the MODULES array of `/etc/mkinitcpio.conf` and at least the _resume_ hook to the HOOKS array:
+If you intend to use TuxOnIce for hibernation, make sure you have added the necessary modules to the MODULES array of `/etc/mkinitcpio.conf` and at least the *resume* hook to the HOOKS array:
 
 ```
 MODULES="... lzo tuxonice_compress tuxonice_swap tuxonice_userui ..."
@@ -100,14 +100,14 @@ HOOKS="... block userui resume filesystems ..."
 
 ```
 
-In the example above, TuxOnIce is setup to use a swap partition as the suspended image allocator. The _resume_ hook must be placed before _filesystems_. Also, a progress indicator is requested with _userui_. Please read the [TuxOnIce](/index.php/TuxOnIce "TuxOnIce") wiki page for more detailed information.
+In the example above, TuxOnIce is setup to use a swap partition as the suspended image allocator. The *resume* hook must be placed before *filesystems*. Also, a progress indicator is requested with *userui*. Please read the [TuxOnIce](/index.php/TuxOnIce "TuxOnIce") wiki page for more detailed information.
 
 Last, you must choose whether you want to suspend using [pm-utils](/index.php/Pm-utils "Pm-utils") or the [hibernate-script](/index.php/Hibernate-script "Hibernate-script"). Please, refer to the respective wiki pages for more details. [TuxOnIce](/index.php/TuxOnIce "TuxOnIce") offers the option for a text mode or an even nicer [framebuffer splash](/index.php/Fbsplash "Fbsplash") progress indicator.
 
 ## Tips and tricks
 
-*   If you notice disk-related performance problems or occasional hiccups, it might be an I/O scheduler issue. Try a different one than the linux-pf default (BFQ) by echoing to `/sys/block/sda/queue/scheduler` _cfq_, _noop_ or _deadline_: `# echo noop >`. Note, the aforementioned command only sets the I/O scheduler for the 1st hard drive and additional _echoes_ will be needed if you have more. If the situation improves, then append "_elevator_=_**cfq**_" (or _**noop**_ or _**deadline**_) to the linux-pf command line in `/boot/grub/menu.lst`, to make the change permanent.
-*   For people who build their own tailored kernels and compilation aborts with with an error about "missing include/config/dvb/*.h files", setting _[*] Digital TV support_ at _Device Drivers / <M> Multimedia support_ and leaving everything else out, creates just the necessary dvb.h, which allows the compilation to continue.
+*   If you notice disk-related performance problems or occasional hiccups, it might be an I/O scheduler issue. Try a different one than the linux-pf default (BFQ) by echoing to `/sys/block/sda/queue/scheduler` *cfq*, *noop* or *deadline*: `# echo noop >`. Note, the aforementioned command only sets the I/O scheduler for the 1st hard drive and additional *echoes* will be needed if you have more. If the situation improves, then append "*elevator*=***cfq***" (or ***noop*** or ***deadline***) to the linux-pf command line in `/boot/grub/menu.lst`, to make the change permanent.
+*   For people who build their own tailored kernels and compilation aborts with with an error about "missing include/config/dvb/*.h files", setting *[*] Digital TV support* at *Device Drivers / <M> Multimedia support* and leaving everything else out, creates just the necessary dvb.h, which allows the compilation to continue.
 
 ## Forum thread for linux-pf
 

@@ -13,7 +13,6 @@ El archivo `rc.conf` (`/etc/rc.conf`) es archivo de configuración del sistema d
 Este es un tipo archivo `rc.conf` sin alteraciones después de una instalación limpia de Arch Linux:
 
  `/etc/rc.conf` 
-
 ```
 #
 # /etc/rc.conf - Main Configuration for Arch Linux

@@ -11,7 +11,6 @@ Para inciar o X manualmente, `startx` ou `xinit` são utilizados. Ambos executar
 Para o zsh, adicione o seguinte em `~/.zprofile`.
 
  `arquivo profile do shell` 
-
 ```
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 

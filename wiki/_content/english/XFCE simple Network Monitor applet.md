@@ -13,7 +13,7 @@ g++ -std=c++0x -O3 -lrt xfce-hkmon.cpp -o xfce-hkmon
 
 ```
 
-Place the executable somewhere (e.g. /usr/local/bin) and add a **XFCE Generic Monitor Applet** with these settings: no label, 1 second period, _Bitstream Vera Sans Mono font_ (recommended) and the following command:
+Place the executable somewhere (e.g. /usr/local/bin) and add a **XFCE Generic Monitor Applet** with these settings: no label, 1 second period, *Bitstream Vera Sans Mono font* (recommended) and the following command:
 
 ```
 /usr/local/bin/xfce-hkmon NET CPU TEMP IO RAM

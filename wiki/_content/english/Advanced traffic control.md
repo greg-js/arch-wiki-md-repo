@@ -26,7 +26,7 @@ Queuing controls how data is **sent**; receiving data is much more reactive with
 
 In order to be the ones fully controlling the shape of the traffic, we need to be the slowest link of the chain. That is, if the connection has a maximum download speed of 500k, if you do not limit of the output to 450k or below it is going to be the modem shaping the traffic instead of us.
 
-Each network device has a _root_ where a qdisc can be set. This root has a fq_codel qdisc by default. (more info below)
+Each network device has a *root* where a qdisc can be set. This root has a fq_codel qdisc by default. (more info below)
 
 There are two kind of disciplines: classful and classless.
 
@@ -47,7 +47,7 @@ These are queues that do basic management of traffic by reordering, slowing or d
 
 #### fifo_fast
 
-This was the default qdisc up until systemd 217\. In every network device where no custom qdisc configuration has been applied, fifo_fast is the qdisc set on the root. fifo means _First In First Out_, that is, the first package to get in, is going to be the first to be sent. This way, no package get special treatment.
+This was the default qdisc up until systemd 217\. In every network device where no custom qdisc configuration has been applied, fifo_fast is the qdisc set on the root. fifo means *First In First Out*, that is, the first package to get in, is going to be the first to be sent. This way, no package get special treatment.
 
 #### Token Bucket Filter (TBF)
 

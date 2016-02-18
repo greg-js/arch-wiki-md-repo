@@ -1,4 +1,4 @@
-_Repo-ck_ is an unofficial Arch Linux repository with generic and CPU-optimized kernels and support packages, featuring [BFS](http://ck-hack.blogspot.com) ([Brain Fuck Scheduler](https://en.wikipedia.org/wiki/Brain_Fuck_Scheduler "wikipedia:Brain Fuck Scheduler")) and rest of the `-ck` patchset by [Con Kolivas](https://en.wikipedia.org/wiki/Con_Kolivas "wikipedia:Con Kolivas").
+*Repo-ck* is an unofficial Arch Linux repository with generic and CPU-optimized kernels and support packages, featuring [BFS](http://ck-hack.blogspot.com) ([Brain Fuck Scheduler](https://en.wikipedia.org/wiki/Brain_Fuck_Scheduler "wikipedia:Brain Fuck Scheduler")) and rest of the `-ck` patchset by [Con Kolivas](https://en.wikipedia.org/wiki/Con_Kolivas "wikipedia:Con Kolivas").
 
 ## Contents
 
@@ -21,29 +21,29 @@ Add the [repo-ck](/index.php/Unofficial_user_repositories#repo-ck "Unofficial us
 
 **Note:** LTS packages are not included.
 
-The official kernel is available in two flavors (either i686 or x86_64) which are _generic_ packages, in that i686 will work with _any_ compatible x86 CPU and x86_64 will work with _any_ compatible x86_64 CPU. Users have a choice between the corresponding generic linux-ck package, or packages optimized for a specific CPU.
+The official kernel is available in two flavors (either i686 or x86_64) which are *generic* packages, in that i686 will work with *any* compatible x86 CPU and x86_64 will work with *any* compatible x86_64 CPU. Users have a choice between the corresponding generic linux-ck package, or packages optimized for a specific CPU.
 
-CPU-specific optimizations are invoked by selecting _Processor type and features > Processor family_ in `make menuconfig`, or by adjusting `.config` accordingly. These changes setup make specific GCC options, including `CFLAGS`.
+CPU-specific optimizations are invoked by selecting *Processor type and features > Processor family* in `make menuconfig`, or by adjusting `.config` accordingly. These changes setup make specific GCC options, including `CFLAGS`.
 
 Packages marked with `*` are available only for the 64-bit systems, see [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1423574#p1423574).
 
 | CPU Type | Group Alias | Details |
-| **Generic** | _ck-generic_ | Generic kernel similar to the official Arch Linux kernel. |
-| **Intel** | _ck-atom_ | Intel Atom specific optimizations. |
-| _ck-silvermont *_ | Intel Silvermont specific optimizations. |
-| _ck-core2_ | Intel Core 2-family including Dual and Quads. |
-| _ck-nehalem *_ | Intel 1st Generation Core i3/i5/i7-family |
-| _ck-sandybridge *_ | Intel 2nd Generation Core i3/i5/i7-family |
-| _ck-ivybridge *_ | Intel 3rd Generation Core i3/i5/i7-family |
-| _ck-haswell *_ | Intel 4th Generation Core i3/i5/i7-family |
-| _ck-broadwell *_ | Intel 5th Generation Core i3/i5/i7-family |
-| _ck-p4_ | Intel Pentium-4 (P4/P4-based Celeron/Pentium-4 M/Older Xeon). |
-| _ck-pentm_ | Intel Pentium-M (Pentium-M notebook chips/not Pentium-4 M). |
-| **AMD** | _ck-kx_ | AMD K7/K8-family |
-| _ck-k10 *_ | AMD K10-family including 61xx Eight-Core Magny-Cours, Athlon X2 7x50, Phenom X3/X4/II, Athlon II X2/X3/X4, or Turion II-family processor. |
-| _ck-bobcat *_ | CPUs based on AMD Family 14h cores with x86-64 instruction set support. |
-| _ck-bulldozer *_ | CPUs based on AMD Family 15h cores with x86-64 instruction set support. |
-| _ck-piledriver *_ | CPUs based on AMD Family 15h cores with x86-64 instruction set support. |
+| **Generic** | *ck-generic* | Generic kernel similar to the official Arch Linux kernel. |
+| **Intel** | *ck-atom* | Intel Atom specific optimizations. |
+| *ck-silvermont ** | Intel Silvermont specific optimizations. |
+| *ck-core2* | Intel Core 2-family including Dual and Quads. |
+| *ck-nehalem ** | Intel 1st Generation Core i3/i5/i7-family |
+| *ck-sandybridge ** | Intel 2nd Generation Core i3/i5/i7-family |
+| *ck-ivybridge ** | Intel 3rd Generation Core i3/i5/i7-family |
+| *ck-haswell ** | Intel 4th Generation Core i3/i5/i7-family |
+| *ck-broadwell ** | Intel 5th Generation Core i3/i5/i7-family |
+| *ck-p4* | Intel Pentium-4 (P4/P4-based Celeron/Pentium-4 M/Older Xeon). |
+| *ck-pentm* | Intel Pentium-M (Pentium-M notebook chips/not Pentium-4 M). |
+| **AMD** | *ck-kx* | AMD K7/K8-family |
+| *ck-k10 ** | AMD K10-family including 61xx Eight-Core Magny-Cours, Athlon X2 7x50, Phenom X3/X4/II, Athlon II X2/X3/X4, or Turion II-family processor. |
+| *ck-bobcat ** | CPUs based on AMD Family 14h cores with x86-64 instruction set support. |
+| *ck-bulldozer ** | CPUs based on AMD Family 15h cores with x86-64 instruction set support. |
+| *ck-piledriver ** | CPUs based on AMD Family 15h cores with x86-64 instruction set support. |
 
 ## Selecting the correct CPU optimized package
 
@@ -61,21 +61,21 @@ The resulting `-march` is what GCC would use natively. Refer to the table below 
 **Note:** This table has been updated to show the new simplified march options that ship with GCC v4.9+. For more information see the [release notes](https://gcc.gnu.org/gcc-4.9/changes.html).
 
 | Brand | Group | March |
-| **Intel** | _ck-atom_ | bonnell |
-| _ck-silvermont_ | silvermont |
-| _ck-core2_ | core2 |
-| _ck-nehalem_ | nehalem |
-| _ck-sandybridge_ | sandybridge |
-| _ck-ivybridge_ | ivybridge |
-| _ck-haswell_ | haswell |
-| _ck-broadwell_ | broadwell |
-| _ck-p4_ | pentium4, prescott, nocona |
-| _ck-pentm_ | pentm, pentium-m |
-| **AMD** | _ck-kx_ | athlon, athlon-4, athlon-tbird, athlon-mp, athlon-xp, k8-sse3 |
-| _ck-k10_ | amdfam10 |
-| _ck-bobcat_ | btver1 |
-| _ck-bulldozer_ | bdver1 |
-| _ck-piledriver_ | bdver2 |
+| **Intel** | *ck-atom* | bonnell |
+| *ck-silvermont* | silvermont |
+| *ck-core2* | core2 |
+| *ck-nehalem* | nehalem |
+| *ck-sandybridge* | sandybridge |
+| *ck-ivybridge* | ivybridge |
+| *ck-haswell* | haswell |
+| *ck-broadwell* | broadwell |
+| *ck-p4* | pentium4, prescott, nocona |
+| *ck-pentm* | pentm, pentium-m |
+| **AMD** | *ck-kx* | athlon, athlon-4, athlon-tbird, athlon-mp, athlon-xp, k8-sse3 |
+| *ck-k10* | amdfam10 |
+| *ck-bobcat* | btver1 |
+| *ck-bulldozer* | bdver1 |
+| *ck-piledriver* | bdver2 |
 
 **Note:** Add additional entries to this table based on experience.
 
@@ -91,12 +91,11 @@ Extensive testing comparing the effect of GCC compile options show varying resul
 
 ## Installation examples
 
-**Note:** As with _any_ additional kernel, manually edit the boot loader configuration to make it aware of new kernel images. For example, see [GRUB#Generate the main configuration file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") for GRUB.
+**Note:** As with *any* additional kernel, manually edit the boot loader configuration to make it aware of new kernel images. For example, see [GRUB#Generate the main configuration file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") for GRUB.
 
 Use the **ck-X** group and select the desired packages for installation. There are 10 groups corresponding to the [package sets](#Kernels_and_related_packages). For example:
 
  `# pacman -S ck-generic` 
-
 ```
 :: There are 8 members in group ck-generic:
 :: Repository repo-ck
@@ -106,7 +105,7 @@ Use the **ck-X** group and select the desired packages for installation. There a
 Enter a selection (default=all):
 ```
 
-Alternatively, direct pacman to install _linux-ck_ and _linux-ck-headers_.
+Alternatively, direct pacman to install *linux-ck* and *linux-ck-headers*.
 
 ## BFQ I/O scheduler
 

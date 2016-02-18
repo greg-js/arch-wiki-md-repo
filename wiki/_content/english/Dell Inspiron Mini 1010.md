@@ -7,7 +7,6 @@ BIOS upgrade is highly recommended before installing Arch Linux.
 Suspend has issues caused by Intel SpeedStep. Disabling it in the BIOS will fix the issue but also not allow cpu scaling. The solution below seems to work **without** disabling speed step. Add this suspend script to `/etc/pm/sleep.d/00-dell-quirks.conf`
 
  `/etc/pm/sleep.d/00-dell-quirks.conf` 
-
 ```
 #!/bin/sh
 # intel suspend speedstep workaround

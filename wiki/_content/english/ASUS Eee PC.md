@@ -140,7 +140,7 @@ Things that "just work":
 *   TouchPad (support multi-touch after installing xf86-input-synaptics)
 *   Video Acceleration (either [open source driver](/index.php/ATI#Enabling_video_acceleration "ATI") ([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)) or [ATI/AMD's propretary driver(catalyst)](/index.php/ATI_Catalyst#Video_acceleration "ATI Catalyst") work)
 
-_/etc/modprobe.d/eeepc1015b.conf:_
+*/etc/modprobe.d/eeepc1015b.conf:*
 
 ```
 # supposed to help against following msg in dmesg:
@@ -151,8 +151,8 @@ blacklist sp5100_tco
 # keucr. it is in staging, thus taints the kernel
 blacklist keucr
 
-# if you find "_ACPI: resource piix4_smbus [io 0x0b00-0x0b07]_
-# _conflicts with ACPI region SMRG [io 0xb00-0xb0f]_" 
+# if you find "*ACPI: resource piix4_smbus [io 0x0b00-0x0b07]*
+# *conflicts with ACPI region SMRG [io 0xb00-0xb0f]*" 
 # in /var/log/messages.log ,try to uncomment the following line
 #blacklist i2c_piix4
 
@@ -223,7 +223,6 @@ defaults.timer.card 1
 Volume function key for alsa:
 
  `/etc/acpi/handler.sh` 
-
 ```
 ......
         open)
@@ -482,7 +481,6 @@ Disabling autosuspend only for the usb 3.0 port is possible by creating a specif
 Information about the usb 3.0 device can be obtained with `lsusb` and `udevadmn info`. Below is a simple udev rule which disables autosuspend for all version 3.0 usb devices:
 
  `/etc/udev/rules.d/usb-power.rules` 
-
 ```
 # Disable autosuspend for USB 3.0 port
 SUBSYSTEM=="usb", ATTR{version}==" 3.00", ATTR{power/control}="on"

@@ -167,7 +167,7 @@ For better desktop integration **GDM** is recommended (but other login managers,
 
 Check out [Display manager](/index.php/Display_manager "Display manager") to learn how to start it correctly.
 
-If you prefer to start it from the console, add the following line to your `~/.xinitrc` file, making sure it's the last line and the only one that starts with _exec_ (see [xinitrc](/index.php/Xinitrc "Xinitrc")):
+If you prefer to start it from the console, add the following line to your `~/.xinitrc` file, making sure it's the last line and the only one that starts with *exec* (see [xinitrc](/index.php/Xinitrc "Xinitrc")):
 
 ```
 exec gnome-session
@@ -276,7 +276,6 @@ $ cp -R /home/user/Desktop/my_new_icon_theme ~/.icons
 The new icon theme 'my_new_icon_theme' will now be selectable using the gnome-tweak-tool (under 'Interface'), otherwise it can be set with no need of gnome-tweak-tool by adding the gtk-icon-theme-name entry inside ${XDG_CONFIG_HOME}/gtk-3.0/settings.ini.
 
  `${XDG_CONFIG_HOME}/gtk-3.0/settings.ini` 
-
 ```
 .....
 gtk-icon-theme-name = my_new_icon_theme
@@ -298,7 +297,7 @@ The displayed folders are specified in `~/.config/user-dirs.dirs` and can be alt
 
 ### Setting the default terminal via console
 
-`gsettings`, which replaces `gconftool-2` in Gnome 3, is used to set e. g. the default terminal manually. The setting is relevant for _nautilus-open-terminal_.
+`gsettings`, which replaces `gconftool-2` in Gnome 3, is used to set e. g. the default terminal manually. The setting is relevant for *nautilus-open-terminal*.
 
 The commands for [urxvt](/index.php/Rxvt-unicode "Rxvt-unicode") run as daemon:
 
@@ -327,7 +326,7 @@ After that create a folder named **noa11y.icon@panel.ui** in **$HOME/.local/shar
 const Panel = imports.ui.panel;
 
 function main() {
-	Panel.STANDARD_TRAY_ICON_SHELL_IMPLEMENTATION['a11y'] = ''**_;_**
+	Panel.STANDARD_TRAY_ICON_SHELL_IMPLEMENTATION['a11y'] = ''***;***
 }
 
 ```
@@ -372,7 +371,7 @@ After that create a folder named **nobluetooth.icon@panel.ui** in **$HOME/.local
 const Panel = imports.ui.panel;
 
 function main() {
-	Panel.STANDARD_TRAY_ICON_SHELL_IMPLEMENTATION['bluetooth'] = ''**_;_**
+	Panel.STANDARD_TRAY_ICON_SHELL_IMPLEMENTATION['bluetooth'] = ''***;***
 }
 
 ```
@@ -414,7 +413,6 @@ To have battery tray icon, install gnome-power-manager package:
 Upgrading to Gnome 3 will (most-likely) break your xmonad setup. You can use xmonad again by forcing fallback mode (see below) and creating the following two files:
 
  `/usr/share/gnome-session/sessions/xmonad.session` 
-
 ```
 [GNOME Session]
 Name=Xmonad session
@@ -423,9 +421,7 @@ RequiredProviders=windowmanager;notifications;
 DefaultProvider-windowmanager=xmonad
 DefaultProvider-notifications=notification-daemon
 ```
-
  `/usr/share/xsessions/xmonad-gnome-session.desktop` 
-
 ```
 [Desktop Entry]
 Name=Xmonad GNOME
@@ -435,11 +431,11 @@ Exec=gnome-session --session=xmonad
 Type=XSession
 ```
 
-The next time you log in, you'll have the ability to choose _Xmonad GNOME_ as your session.
+The next time you log in, you'll have the ability to choose *Xmonad GNOME* as your session.
 
 ## Enabling fallback mode
 
-Your session will automatically start in fallback mode if gnome-shell is not present or if your desktop cannot handle graphics acceleration (such as running in a Virtual Machine or on old hardware). If you want to enable it while having gnome-shell installed, open gnome-control-center. Open System Info > Graphics. Change _Forced Fallback Mode_ to _ON_.
+Your session will automatically start in fallback mode if gnome-shell is not present or if your desktop cannot handle graphics acceleration (such as running in a Virtual Machine or on old hardware). If you want to enable it while having gnome-shell installed, open gnome-control-center. Open System Info > Graphics. Change *Forced Fallback Mode* to *ON*.
 
 ## Enabling hidden features
 

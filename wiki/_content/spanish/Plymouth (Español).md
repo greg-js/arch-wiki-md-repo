@@ -36,7 +36,6 @@ Añada Plymouth a la matriz HOOKS en `/etc/[mkinitcpio.conf](/index.php/Mkinitcp
 Para iniciar KMS tempranamente, añada el módulo [Radeon](/index.php/Radeon "Radeon") (para tarjetas Radeon), [i915](/index.php/Intel "Intel") (para tarjetas Intel) o [nouveau](/index.php/Nouveau "Nouveau") (para las tarjetas de nvidia) a la línea **MODULES** localizada en el archivo `/etc/mkinitcpio.conf`:
 
  `/etc/mkinitcpio.conf` 
-
 ```
 MODULES="i915"
 **o**
@@ -58,7 +57,6 @@ De modo que quedarían como sigue:
 **Para Grub2:**
 
  `/etc/default/grub` 
-
 ```
 GRUB_CMDLINE_LINUX_DEFAULT=**"quiet splash"**   
 GRUB_CMDLINE_LINUX=**"splash"**
@@ -80,8 +78,8 @@ Plymouth viene con una selección de temas:
 3.  **Script**: «Plugin de ejemplo de secuencias de órdenes» (A pesar de la descripción parece ser un tema bastante bonito con el logotipo de Arch)
 4.  **Solar**: «Tema del espacio en tono azul con la violenta quema de la estrella solar»
 5.  **Spinfinity**: «Tema simple que muestra un signo de infinito que gira en el centro de la pantalla»
-6.  _(**Text**: «Tema en modo texto con una barra de progreso tricolor»)_
-7.  _(**Details**: «Tema en modo texto de fallback»)_
+6.  *(**Text**: «Tema en modo texto con una barra de progreso tricolor»)*
+7.  *(**Details**: «Tema en modo texto de fallback»)*
 
 Por defecto, no hay seleccionado ningún tema, debe seleccionarlo editando `/etc/plymouth/plymouthd.conf`.
 

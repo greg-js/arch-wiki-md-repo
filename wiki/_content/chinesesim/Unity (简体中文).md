@@ -16,8 +16,8 @@
     *   [3.5 新开的窗口总会被放到屏幕左上角](#.E6.96.B0.E5.BC.80.E7.9A.84.E7.AA.97.E5.8F.A3.E6.80.BB.E4.BC.9A.E8.A2.AB.E6.94.BE.E5.88.B0.E5.B1.8F.E5.B9.95.E5.B7.A6.E4.B8.8A.E8.A7.92)
     *   [3.6 窗口最大化后标题栏依然存在](#.E7.AA.97.E5.8F.A3.E6.9C.80.E5.A4.A7.E5.8C.96.E5.90.8E.E6.A0.87.E9.A2.98.E6.A0.8F.E4.BE.9D.E7.84.B6.E5.AD.98.E5.9C.A8)
 *   [4 已知问题](#.E5.B7.B2.E7.9F.A5.E9.97.AE.E9.A2.98)
-    *   [4.1 Ubuntu 12.10 新特性 _Webapps_ 不正常](#Ubuntu_12.10_.E6.96.B0.E7.89.B9.E6.80.A7_Webapps_.E4.B8.8D.E6.AD.A3.E5.B8.B8)
-    *   [4.2 _Indicator messages_ 不正常](#Indicator_messages_.E4.B8.8D.E6.AD.A3.E5.B8.B8)
+    *   [4.1 Ubuntu 12.10 新特性 *Webapps* 不正常](#Ubuntu_12.10_.E6.96.B0.E7.89.B9.E6.80.A7_Webapps_.E4.B8.8D.E6.AD.A3.E5.B8.B8)
+    *   [4.2 *Indicator messages* 不正常](#Indicator_messages_.E4.B8.8D.E6.AD.A3.E5.B8.B8)
 
 ## 安装
 
@@ -164,8 +164,8 @@ background-color: @transparent;
 
 ## 已知问题
 
-### Ubuntu 12.10 新特性 _Webapps_ 不正常
+### Ubuntu 12.10 新特性 *Webapps* 不正常
 
-### _Indicator messages_ 不正常
+### *Indicator messages* 不正常
 
 It doesn't show any menus currently.

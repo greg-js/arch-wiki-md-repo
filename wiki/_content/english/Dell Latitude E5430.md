@@ -105,7 +105,6 @@ I (josephgbr) followed the solution provided in the forum topic [Xkeyboard/xkbco
 The E5430 has an awfully loud PC speaker. To disable it, ensure the module `pcspkr` is not loaded during bootup:
 
  `/etc/modprobe.d/nobeep.conf` 
-
 ```
 #Do not load the 'pcspkr' module on boot.
 

@@ -10,7 +10,7 @@ The following five core principles comprise what is commonly referred to as the 
 
 ## Једноставност
 
-_"Simplicity is the ultimate sophistication." –Leonardo Da Vinci_
+*"Simplicity is the ultimate sophistication." –Leonardo Da Vinci*
 
 Simplicity is absolutely the principal objective behind Arch development. Many GNU/Linux distributions define themselves as “simple”. However, simplicity itself has many definitions.
 
@@ -26,7 +26,7 @@ Arch Linux keeps the inherent complexities of a GNU/Linux system intact, while k
 
 The Arch Linux system places precedence upon elegance of design as well as clean, simple code, rather than unnecessary patching, automation, eye candy or "newbie-friendliness". Software patches are therefore kept to an absolute minimum-- ideally, never. Simple implementation shall always trump simple user interface.
 
-**Simplicity of _implementation_, code-elegance, and minimalism shall always remain the reigning priorities of Arch development.**
+**Simplicity of *implementation*, code-elegance, and minimalism shall always remain the reigning priorities of Arch development.**
 
 Concepts, designs and features are generated and implemented by using the Arch Way principles as a guide, rather than bowing to external influences. The development team are resolute in their commitment and dedication to the Arch Way philosophy. If you share their vision, you are welcomed and encouraged to use Arch.
 
@@ -34,7 +34,7 @@ Concepts, designs and features are generated and implemented by using the Arch W
 
 Whereas many GNU/Linux distributions attempt to be more 'user-friendly', Arch Linux has always been, and will always remain 'user-centric'.
 
-**Arch Linux targets and accommodates competent GNU/Linux users by giving them complete control and _responsibility_ over the system.**
+**Arch Linux targets and accommodates competent GNU/Linux users by giving them complete control and *responsibility* over the system.**
 
 Arch Linux users fully manage the system on their own. The system itself will offer little assistance, except for a simple set of maintenance tools that are designed to perfectly relay the user's commands to the system.
 
@@ -62,4 +62,4 @@ A freshly installed Arch Linux system contains only basic core components with n
 
 The large number of packages and build scripts in the various Arch Linux repositories also support freedom of choice, offering free and open source software for those who prefer it, as well as proprietary software packages, for those who embrace 'functionality over ideology'. It is the user who chooses.
 
-As Judd Vinet, the founder of the Arch Linux project said: "[Arch Linux] is what _you_ make it."
+As Judd Vinet, the founder of the Arch Linux project said: "[Arch Linux] is what *you* make it."

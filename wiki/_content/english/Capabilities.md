@@ -14,7 +14,7 @@
 
 ## Implementation
 
-Capabilities are implemented on Linux using [extended attributes](/index.php/Extended_attributes "Extended attributes") (`man 7 xattr`) in the _security_ namespace. Extended attributes are supported by all major Linux filesystems, including Ext2, Ext3, Ext4, Btrfs, JFS, XFS, and Reiserfs. The following example prints the capabilities of ping with `getcap`, and then prints the same data in its encoded form using `getfattr`:
+Capabilities are implemented on Linux using [extended attributes](/index.php/Extended_attributes "Extended attributes") (`man 7 xattr`) in the *security* namespace. Extended attributes are supported by all major Linux filesystems, including Ext2, Ext3, Ext4, Btrfs, JFS, XFS, and Reiserfs. The following example prints the capabilities of ping with `getcap`, and then prints the same data in its encoded form using `getfattr`:
 
 ```
 $ getcap /bin/ping

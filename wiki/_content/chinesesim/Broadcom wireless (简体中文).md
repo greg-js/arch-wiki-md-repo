@@ -205,7 +205,6 @@ To disable those messages, increase the loglevel of printk messages that get thr
 Create a file in `/etc/sysctl.d/` called `printk.conf` or something similar:
 
  `printk.conf` 
-
 ```
 
 kernel.printk = 3 3 3 3

@@ -1,4 +1,4 @@
-**Archiso** is a small set of bash scripts capable of building fully functional Arch Linux live CD/DVD/USB images. It is the same tool used to generate the official images, but since it is a very generic tool, it can be used to generate anything from rescue systems, install disks, to special interest live CD/DVD/USB systems, and who knows what else. Simply put, if it involves Arch on a shiny coaster, it can do it. The heart and soul of Archiso is _mkarchiso_. All of its options are documented in its usage output, so its direct usage will not be covered here. Instead, this wiki article will act as a guide for rolling your own live media in no time!
+**Archiso** is a small set of bash scripts capable of building fully functional Arch Linux live CD/DVD/USB images. It is the same tool used to generate the official images, but since it is a very generic tool, it can be used to generate anything from rescue systems, install disks, to special interest live CD/DVD/USB systems, and who knows what else. Simply put, if it involves Arch on a shiny coaster, it can do it. The heart and soul of Archiso is *mkarchiso*. All of its options are documented in its usage output, so its direct usage will not be covered here. Instead, this wiki article will act as a guide for rolling your own live media in no time!
 
 ## Contents
 
@@ -41,10 +41,10 @@
 
 Before we begin, we need to [install](/index.php/Install "Install") [archiso](https://www.archlinux.org/packages/?name=archiso) from the [official repositories](/index.php/Official_repositories "Official repositories"). Alternatively, [archiso-git](https://aur.archlinux.org/packages/archiso-git/) can be found in the [AUR](/index.php/AUR "AUR").
 
-Archiso comes with two "profiles": _releng_ and _baseline_.
+Archiso comes with two "profiles": *releng* and *baseline*.
 
-*   If you wish to create a fully customised live version of Arch Linux, pre-installed with all your favourite programs and configurations, use _releng_.
-*   If you just want to create the most basic live medium, with no pre-installed packages and a minimalistic configuration, use _baseline_.
+*   If you wish to create a fully customised live version of Arch Linux, pre-installed with all your favourite programs and configurations, use *releng*.
+*   If you just want to create the most basic live medium, with no pre-installed packages and a minimalistic configuration, use *baseline*.
 
 Now, copy the profile of your choice to a directory where you can make adjustments and build it (we will use `~/archlive`). Execute the following, replacing `**profile**` with either `releng` or `baseline`.
 
@@ -69,7 +69,7 @@ Generally, every administrative task that you would normally do after a fresh in
 
 ### Installing packages
 
-You will want to create a list of packages you want installed on your live CD system. A file full of package names, one-per-line, is the format for this. This is _great_ for special interest live CDs, just specify packages you want in packages.both and bake the image. The `packages.i686` and `packages.x86_64` files allow you to install software on just 32-bit or 64-bit, respectively.
+You will want to create a list of packages you want installed on your live CD system. A file full of package names, one-per-line, is the format for this. This is *great* for special interest live CDs, just specify packages you want in packages.both and bake the image. The `packages.i686` and `packages.x86_64` files allow you to install software on just 32-bit or 64-bit, respectively.
 
 **Note:** If you want to use a [window manager](/index.php/Window_manager "Window manager") in the Live CD then you must add the necessary and correct [video drivers](/index.php/Video_drivers "Video drivers"), or the WM may freeze on loading.
 
@@ -123,10 +123,9 @@ When blacklisting base group packages by adding them to the `IgnorePkg` line in 
 
 #### Installing packages from multilib
 
-To install packages from the [multilib](/index.php/Multilib "Multilib") repository you have to create two pacman configuration files: one for x86_64 and one for i686\. Copy `pacman.conf` to `pacmanx86_64.conf` and `pacmani686.conf`. Uncomment the following lines to enable _multilib_ in `pacmanx86_64.conf`:
+To install packages from the [multilib](/index.php/Multilib "Multilib") repository you have to create two pacman configuration files: one for x86_64 and one for i686\. Copy `pacman.conf` to `pacmanx86_64.conf` and `pacmani686.conf`. Uncomment the following lines to enable *multilib* in `pacmanx86_64.conf`:
 
  `pacmanx86_64.conf` 
-
 ```
 [multilib]
 SigLevel = PackageRequired
@@ -136,7 +135,6 @@ Include = /etc/pacman.d/mirrorlist
 Then edit `build.sh` with an editor. Replace the following lines:
 
  `build.sh` 
-
 ```
 run_once make_pacman_conf
 
@@ -158,7 +156,6 @@ done
 with:
 
  `build.sh` 
-
 ```
 cp -v releng/pacmanx86_64.conf releng/pacman.conf
 run_once make_pacman_conf
@@ -351,7 +348,7 @@ First, please follow the [beginners' guide](/index.php/Beginners%27_guide "Begin
 
 ### Install the archiso to the new root
 
-Instead of installing the packages with `pacstrap`(as it downloads every packages from remote repository and we have no Internet access now), copy _everything_ in the Live environment to the new root:
+Instead of installing the packages with `pacstrap`(as it downloads every packages from remote repository and we have no Internet access now), copy *everything* in the Live environment to the new root:
 
 ```
 # time cp -ax / /mnt

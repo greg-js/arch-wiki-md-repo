@@ -67,7 +67,6 @@
 #### Служба systemd
 
  `/etc/systemd/system/reflector.service` 
-
 ```
 [Unit]
 Description=Pacman mirrorlist update
@@ -83,7 +82,6 @@ ExecStart=/usr/bin/reflector --protocol http --latest 30 --number 20 --sort rate
 Для обновления списка зеркал при каждой загрузке системы, используйте следующий файл юнита:
 
  `/etc/systemd/system/reflector.service` 
-
 ```
 [Unit]
 Description=Pacman mirrorlist update
@@ -108,7 +106,6 @@ RequiredBy=network.target
 Если вы хотите запускать `reflector.service`, скажем, раз в неделю:
 
  `/etc/systemd/system/reflector.timer` 
-
 ```
 [Unit]
 Description=Run reflector weekly

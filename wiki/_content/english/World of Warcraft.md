@@ -130,7 +130,7 @@ Then run the World of Warcraft Installer with :
 
 The third is to simply copy an exisiting WoW installation from a Windows drive to Linux.
 
-**NOTE:** If you do not alreay have Wine installed, or have not run World of Warcraft with Wine before, you should skip down to [#Installing Wine](#Installing_Wine), then come back to this section. _Please DO NOT SKIP this section unless you are absolutely sure you know what you are doing._
+**NOTE:** If you do not alreay have Wine installed, or have not run World of Warcraft with Wine before, you should skip down to [#Installing Wine](#Installing_Wine), then come back to this section. *Please DO NOT SKIP this section unless you are absolutely sure you know what you are doing.*
 
 Copy the C:\Program Files\World of Warcraft directory from Windows to ~/.wine/drive_c/Program Files/World of Warcraft.
 
@@ -351,7 +351,7 @@ WINEDEBUG=-all __GL_THREADED_OPTIMIZATIONS=1 wine Wow.exe -opengl $> /dev/null
 
 #### NVIDIA users and Direct3D mode
 
-If running the game in Direct3D mode, in conjunction with the above optimization, compiling Wine with the [_"Use glBufferSubDataARB for dynamic buffer uploads"_](http://bugs.winehq.org/show_bug.cgi?id=11674#c263) patch should yield a further performance increase. This patch does not appear to increase performance in OpenGL mode, though OpenGL mode generally results in higher framerates anyway... albeit at the cost of the game's more advanced Direct3D eye candy.
+If running the game in Direct3D mode, in conjunction with the above optimization, compiling Wine with the [*"Use glBufferSubDataARB for dynamic buffer uploads"*](http://bugs.winehq.org/show_bug.cgi?id=11674#c263) patch should yield a further performance increase. This patch does not appear to increase performance in OpenGL mode, though OpenGL mode generally results in higher framerates anyway... albeit at the cost of the game's more advanced Direct3D eye candy.
 
 **NOTE: You MUST turn off Wine's debugging to benefit from this**
 

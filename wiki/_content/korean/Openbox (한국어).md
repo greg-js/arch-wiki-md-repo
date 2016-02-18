@@ -150,13 +150,13 @@ $ gconftool-2 -s -t string /desktop/gnome/session/required_components/windowmana
 
 ### GNOME 2.26 redux
 
-_**앞의 GNOME 2.24 용 안내가 효과가 없을 경우**_
+***앞의 GNOME 2.24 용 안내가 효과가 없을 경우***
 
 "Gnome/Openbox" 세션으로 로그인하려하지만 계속해서 시작하지 못하면 다음을 시도해보라. 이 방법은 Gnome 세션을 시작할 때 WM로 오픈박스를 사용하는 한 가지 방법이다.
 
 1.  Gnome-only 세션(윈도 매니저로 메타시티를 사용할 경우)으로 로그인하라.
 2.  오픈박스를 아직 설치하지 않았다면 설치하라.
-3.  메뉴에서 _System → Preferences → Startup Applications_ ( Gnome 옛 버전에서는 'Session'이라고 함) 순으로 찾아 가라.
+3.  메뉴에서 *System → Preferences → Startup Applications* ( Gnome 옛 버전에서는 'Session'이라고 함) 순으로 찾아 가라.
 4.  Startup Application을 열어서 '+ Add'를 선택한 후에 다음의 글을 입력하라. # 뒤의 글은 생략하라.
 5.  'Add' 버튼을 클릭해 데이터 입력 창을 연다. 새로 입력하는 항목 옆의 체크박스를 선택했는지 확인하라.
 6.  Gnome 세션에서 로그아웃하고 다시 로그인하라.
@@ -203,11 +203,11 @@ $ killall xfwm4 ; openbox & exit
 
 ```
 
-This kills xfwm4, runs Openbox, and closes the terminal. Log out, being sure to check the _"Save session for future logins"_ box. On your next login, Xfce4 should use **Openbox** as its window manager.
+This kills xfwm4, runs Openbox, and closes the terminal. Log out, being sure to check the *"Save session for future logins"* box. On your next login, Xfce4 should use **Openbox** as its window manager.
 
-Alternatively, you can chooose _Settings_ -> _Session and Startup_ from menu, go to the _Application Autostart_ tab and add `openbox --replace` to the list of automatically started applications.
+Alternatively, you can chooose *Settings* -> *Session and Startup* from menu, go to the *Application Autostart* tab and add `openbox --replace` to the list of automatically started applications.
 
-To enable exiting from a session using _xfce4-session_, edit `~/.config/openbox/menu.xml`. If the file is not there, copy it from `/etc/xdg/openbox/`. Look for the following entry:
+To enable exiting from a session using *xfce4-session*, edit `~/.config/openbox/menu.xml`. If the file is not there, copy it from `/etc/xdg/openbox/`. Look for the following entry:
 
 ```
  <item label="Exit Openbox">
@@ -232,7 +232,7 @@ Change it to:
 
 Otherwise, choosing "Exit" from the root-menu causes Openbox to terminate its execution, leaving you with no window manager.
 
-If you have a problem changing virtual desktops with the mouse wheel skipping over desktops, edit `~/.config/openbox/rc.xml`. Move the _mouse binds with..._ actions "DesktopPrevious" and "DesktopNext" from context _Desktop_ to the context _Root_. Note that you may need to create a definition for the _Root_ context as well.
+If you have a problem changing virtual desktops with the mouse wheel skipping over desktops, edit `~/.config/openbox/rc.xml`. Move the *mouse binds with...* actions "DesktopPrevious" and "DesktopNext" from context *Desktop* to the context *Root*. Note that you may need to create a definition for the *Root* context as well.
 
 When using the Openbox root-menu instead of Xfce's menu, you may exit the Xfdesktop with this terminal command:
 
@@ -415,9 +415,9 @@ $ openbox --reconfigure   # To see the menu you generated
 
 Like other window managers, Openbox allows for scripts to dynamically build menus (menus on-the-fly). Examples are system monitors, media player controls, or weather monitors. Pipe menu script examples are found in the [Openbox:Pipemenus](http://openbox.org/wiki/Openbox:Pipemenus) page at Openbox's site.
 
-User _Xyne_ created a pipe menu file browser and user _brisbin33_ created a pipe menu for scanning and connecting to wireless hot spots (using netcfg). Forum posts for these utilities are here: [file browser](https://bbs.archlinux.org/viewtopic.php?id=77197&p=1) and here: [wifi](https://bbs.archlinux.org/viewtopic.php?id=78290).
+User *Xyne* created a pipe menu file browser and user *brisbin33* created a pipe menu for scanning and connecting to wireless hot spots (using netcfg). Forum posts for these utilities are here: [file browser](https://bbs.archlinux.org/viewtopic.php?id=77197&p=1) and here: [wifi](https://bbs.archlinux.org/viewtopic.php?id=78290).
 
-User _jnguyen_ created a pipe menu for managing removable devices using Udisks. The forum post is here: [obdevicemenu](https://bbs.archlinux.org/viewtopic.php?id=114702).
+User *jnguyen* created a pipe menu for managing removable devices using Udisks. The forum post is here: [obdevicemenu](https://bbs.archlinux.org/viewtopic.php?id=114702).
 
 ## Startup programs
 
@@ -427,8 +427,8 @@ Openbox supports running programs at startup. This is provided by command **open
 
 There are two ways to enable autostart:
 
-1.  When using startx or xinit to begin a session, edit `~/.xinitrc`. Change the line that executes _**openbox**_ to **openbox-session**.
-2.  When using GDM or KDM, selecting an _Openbox_ session automatically runs the autostart script.
+1.  When using startx or xinit to begin a session, edit `~/.xinitrc`. Change the line that executes ***openbox*** to **openbox-session**.
+2.  When using GDM or KDM, selecting an *Openbox* session automatically runs the autostart script.
 
 ### Autostart script
 
@@ -479,7 +479,7 @@ A package in the AUR called [gnome-defaults-list](https://aur.archlinux.org/pack
 
 Open this file with your text-editor. Now you can replace a given application with the name of the program of your choosing. For example, totem <=> vlc or eog <=> mirage. Save the file to `~/.local/share/applications/defaults.list`.
 
-Another way of setting file associations is to install package _perl-file-mimeinfo_ from the repository and invoke **mimeopen** like this:
+Another way of setting file associations is to install package *perl-file-mimeinfo* from the repository and invoke **mimeopen** like this:
 
 ```
 mimeopen -d /path/to/file
@@ -510,7 +510,7 @@ Other applications most likely use the conventional keyboard shortcuts for copy 
 
 ### Window transparency
 
-The program transset-df (virtually the same as _transset_) is installed with pacman -S transset-df. With transset-df you can enable window-transparency on-the-fly.
+The program transset-df (virtually the same as *transset*) is installed with pacman -S transset-df. With transset-df you can enable window-transparency on-the-fly.
 
 For instance by placing the following in `~/.config/openbox/rc.xml` you can have your mouse adjust window transparency by scrolling while hovering over the title bar (it is in the <mouse> section):
 
@@ -559,9 +559,9 @@ For whatever reason, Firefox and like-minded equivalents ignore application rule
 
 ### Linking the menu to a button
 
-Some people want to link the Openbox menu (or any menu) to an object. This is useful for creating a panel button to pop up a menu. Although Openbox does not provide this, a program called **xdotool** (available in community repo) simulates a keypress. Openbox can be configured to bind that keypress to the _ShowMenu_ action.
+Some people want to link the Openbox menu (or any menu) to an object. This is useful for creating a panel button to pop up a menu. Although Openbox does not provide this, a program called **xdotool** (available in community repo) simulates a keypress. Openbox can be configured to bind that keypress to the *ShowMenu* action.
 
-After installing _xdotool_, add the following to the <keyboard> section of your **`rc.xml`**:
+After installing *xdotool*, add the following to the <keyboard> section of your **`rc.xml`**:
 
 ```
  <keybind key="A-C-q">
@@ -619,7 +619,7 @@ Then edit your `.config/openbox/rc.xml` file:
 
 ```
 
-The _magic_ comes from the `<layer>below</layer>` line, which place the application under all others. Here Urxvt is displayed on all desktops, change it to your convenience.
+The *magic* comes from the `<layer>below</layer>` line, which place the application under all others. Here Urxvt is displayed on all desktops, change it to your convenience.
 
 Note: Instead of using <application name="URxvt">, you can use another name ("URxvt-bg" for example), and use the -name option when starting uxrvt. That way, only the urxvt terminals which you choose to name URxvt-bg would be captured and modified by the application rule in rc.xml. For example: urxvt -name URxvt-bg (case sensitive)
 

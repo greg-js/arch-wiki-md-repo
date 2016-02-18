@@ -35,29 +35,29 @@ Prosody has optional depedencies that although not strictly required for its ope
 	TLS/SSL Support (Recommended)
 
 	Allow Prosody to encrypt streams to prevent eavesdropping.
-_Requires:_ [lua51-sec](https://www.archlinux.org/packages/?name=lua51-sec)
+*Requires:* [lua51-sec](https://www.archlinux.org/packages/?name=lua51-sec)
 
 	MySQL/Postgresql Backend
 
 	Allow Prosody to use a MySQL/mariadb/Postgresql backend for better scaling and performance.
-_Requires:_ [luadbi](https://aur.archlinux.org/packages/luadbi/)
+*Requires:* [luadbi](https://aur.archlinux.org/packages/luadbi/)
 
 	Better Connection Scaling (Recommended)
 
 	Allow Prosody to use [libevent](http://www.monkey.org/~provos/libevent/) to handle a greater number of simultaneous connections.
-_Requires:_ [lua51-event](https://aur.archlinux.org/packages/lua51-event/)
+*Requires:* [lua51-event](https://aur.archlinux.org/packages/lua51-event/)
 
 **Warning:** Due to an open issue, when enabled luaevent, all s2s functionality breaks. A fix is expected in v0.10 [[1]](https://prosody.im/issues/issue/555)
 
 	Stream Compression
 
 	Allow Prosody to compress client-to-server streams for compatible clients to save bandwidth.
-_Requires:_ [lua51-zlib](https://www.archlinux.org/packages/?name=lua51-zlib)
+*Requires:* [lua51-zlib](https://www.archlinux.org/packages/?name=lua51-zlib)
 
 	Cyrus SASL Support
 
 	Allow Prosody to use the [Cyrus SASL](http://asg.web.cmu.edu/sasl/sasl-library.html) library to provide authentication.
-_Requires:_ [lua-cyrussasl](https://aur.archlinux.org/packages/lua-cyrussasl/)
+*Requires:* [lua-cyrussasl](https://aur.archlinux.org/packages/lua-cyrussasl/)
 
 ## Configuration
 
@@ -108,7 +108,6 @@ Prosody can utilize TLS certificates to encrypt client-to-server communications 
 To require encryption for client-to-server communications add the following to your configuration file:
 
  `/etc/prosody/prosody.cfg.lua` 
-
 ```
 Host "*"
 
@@ -118,7 +117,6 @@ Host "*"
 Similarly, for server-to-server communications you may do:
 
  `/etc/prosody/prosody.cfg.lua` 
-
 ```
 Host "*"
 
@@ -164,7 +162,6 @@ By default, Prosody will listen for external components. If you do not plan to u
 A common component used with XMPP servers is Multi-User Chat (MUC), which allows conferences between multiple users. MUC is provided as an internal component with Prosody. To enable MUC add the following to your configuration file:
 
  `/etc/prosody/prosody.cfg.lua` 
-
 ```
 Component "conference.example.com" "muc"
 
@@ -189,13 +186,12 @@ To use an extra module download its raw file(s) from the source browser (when vi
 Now you can copy the module (and any additional files it needs) to Prosody's module directory at `/usr/lib/prosody/modules`. To enable the module add it to your `modules_enabled` list in your `prosody.cfg.lua` for the host or component you wish to use it for. For example, to use the `pastebin` module on a MUC component:
 
  `/etc/prosody/prosody.cfg.lua` 
-
 ```
 Component "conference.example.com" "muc"
     modules_enabled = { "pastebin" }
 ```
 
-**Note:** An enforced Prosody convention is that modules are named `mod__foo_.lua` but simply enabled by adding `_foo_` to the `modules_enabled` list.
+**Note:** An enforced Prosody convention is that modules are named `mod_*foo*.lua` but simply enabled by adding `*foo*` to the `modules_enabled` list.
 
 ### Console
 

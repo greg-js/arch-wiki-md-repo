@@ -2,7 +2,7 @@
 
 In spite of their scope, man pages are designed to be self-contained documents, consequentially limiting themselves to referring to other man pages when discussing related subjects. This is in sharp contrast with the hyperlink-aware info files, GNU's attempt at replacing the traditional man page format.
 
-[less](/index.php/Core_utilities#less "Core utilities") is the default pager used with _man_.
+[less](/index.php/Core_utilities#less "Core utilities") is the default pager used with *man*.
 
 ## Contents
 
@@ -33,7 +33,7 @@ In spite of their scope, man pages are designed to be self-contained documents, 
 To read a man page, simply enter:
 
 ```
-$ man _page_name_
+$ man *page_name*
 
 ```
 
@@ -60,7 +60,6 @@ to read the man page on `/etc/passwd`, rather than the `passwd` utility.
 One-line descriptions of man pages can be displayed using the `whatis` command. For example, for a brief description of the man page sections about `ls`, type:
 
  `$ whatis ls` 
-
 ```
 ls (1p)              - list directory contents
 ls (1)               - list directory contents
@@ -83,9 +82,9 @@ Man pages all follow a fairly standard format, which helps in navigating them. S
 
 ## Searching manuals
 
-Whilst the `man` utility allows users to display man pages, and search their contents via _less_, a problem arises when one knows not the exact name of the desired manual page in the first place! Fortunately, the `-k` or `--apropos` options can be used to search the manual page descriptions for instances of a given keyword.
+Whilst the `man` utility allows users to display man pages, and search their contents via *less*, a problem arises when one knows not the exact name of the desired manual page in the first place! Fortunately, the `-k` or `--apropos` options can be used to search the manual page descriptions for instances of a given keyword.
 
-The research feature is provided by a dedicated cache. By default you may not have any cache built and all your searches will give you the _nothing appropriate_ result. You can generate the cache or update it by running
+The research feature is provided by a dedicated cache. By default you may not have any cache built and all your searches will give you the *nothing appropriate* result. You can generate the cache or update it by running
 
 ```
 # mandb
@@ -130,14 +129,13 @@ Color-enabled man pages allow for a clearer presentation and easier digestion of
 
 ### Using less (Recommended)
 
-	<small>_Source: [Less Colors For Man Pages | Linux Tidbits](http://linuxtidbits.wordpress.com/2009/03/23/less-colors-for-man-pages/)_</small>
+	<small>*Source: [Less Colors For Man Pages | Linux Tidbits](http://linuxtidbits.wordpress.com/2009/03/23/less-colors-for-man-pages/)*</small>
 
 This method has the advantage that `less` has a bigger feature set than `most`, and is the default for viewing man pages.
 
 Add the following to a shell configuration file. For [Bash](/index.php/Bash "Bash") it would be:
 
  `~/.bashrc` 
-
 ```
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
@@ -162,7 +160,6 @@ To see the changes in your Man Pages (without restarting bash or linux), you may
 For [Fish](/index.php/Fish "Fish") a basic configuration would be:
 
  `~/.config/fish/config.fish` 
-
 ```
 set -xU LESS_TERMCAP_mb (printf "\e[01;31m")      # begin blinking
 set -xU LESS_TERMCAP_md (printf "\e[01;31m")      # begin bold
@@ -272,7 +269,7 @@ setkey edit "v"
 
 ### Colored man pages on xterm or rxvt-unicode
 
-	<small>_Source: [XFree resources file for XTerm program](http://pub.ligatura.org/fs/xfree86/xresources/xterm)_</small>
+	<small>*Source: [XFree resources file for XTerm program](http://pub.ligatura.org/fs/xfree86/xresources/xterm)*</small>
 
 A quick way to add color to manual pages viewed on [xterm](https://www.archlinux.org/packages/?name=xterm)/`uxterm` or [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode) is to modify `~/.Xresources`.
 
@@ -286,14 +283,14 @@ A quick way to add color to manual pages viewed on [xterm](https://www.archlinux
 
 ```
 
-which _replaces_ the decorations with the colors. Also add:
+which *replaces* the decorations with the colors. Also add:
 
 ```
 *VT100.veryBoldColors: 6
 
 ```
 
-if you want colors and decorations (bold or underline) _at the same time_. See `man xterm` for a description of the `veryBoldColors` resource.
+if you want colors and decorations (bold or underline) *at the same time*. See `man xterm` for a description of the `veryBoldColors` resource.
 
 #### rxvt-unicode
 
@@ -311,7 +308,7 @@ $ xrdb -load ~/.Xresources
 
 ```
 
-Launch a new `xterm/uxterm` or `rxvt-unicode` and you should see colorful man pages. This combination puts colors to **bold** and <u>underlined</u> words in `xterm/uxterm` or to **bold**, <u>underlined</u>, and _italicized_ text in `rxvt-unicode`. You can play with different combinations of these attributes (see the [sources](http://pub.ligatura.org/fs/xfree86/xresources/xterm) of this item).
+Launch a new `xterm/uxterm` or `rxvt-unicode` and you should see colorful man pages. This combination puts colors to **bold** and <u>underlined</u> words in `xterm/uxterm` or to **bold**, <u>underlined</u>, and *italicized* text in `rxvt-unicode`. You can play with different combinations of these attributes (see the [sources](http://pub.ligatura.org/fs/xfree86/xresources/xterm) of this item).
 
 ## Dynamic page width
 
@@ -320,7 +317,6 @@ The man page width is controlled by the `MANWIDTH` environment variable.
 If the number of columns in the terminal is too small (e.g. the window width is narrow), the line breaks will be wrong. This can be very disturbing for reading. You can fix this by setting the MANWIDTH on `man` invocation. With `Bash`, that would be:
 
  `~/.bashrc` 
-
 ```
 man() {
     local width=$(tput cols)
@@ -412,7 +408,6 @@ Caveats: Fonts are generally limited to Times at hardcoded sizes. There are no h
 The following perl script converts man pages to PDFs, caches the PDFs in the `$HOME/.manpdf/` directory, and calls a PDF viewer, specifically [mupdf](https://www.archlinux.org/packages/?name=mupdf).
 
  `Usage: manpdf [<section>] <manpage>` 
-
 ```
 #!/usr/bin/perl
 use File::stat;
@@ -449,22 +444,22 @@ if (!fork) {
 There are several online databases of man pages, including:
 
 *   [Man7.org.](http://man7.org/linux/man-pages/index.html) Upstream for Arch Linux's [man-pages](https://www.archlinux.org/packages/?name=man-pages).
-*   [_Debian GNU/Linux man pages_](http://manpages.debian.net/)
-*   [_DragonFlyBSD manual pages_](http://leaf.dragonflybsd.org/cgi/web-man)
-*   [_FreeBSD Hypertext Man Pages_](http://www.freebsd.org/cgi/man.cgi)
-*   [_Linux and Solaris 10 Man Pages_](http://www.manpages.spotlynx.com/)
-*   [_Linux/FreeBSD Man Pages_](http://manpagehelp.net) with user comments
-*   [_Linux man pages at die.net_](http://linux.die.net/man/)
+*   [*Debian GNU/Linux man pages*](http://manpages.debian.net/)
+*   [*DragonFlyBSD manual pages*](http://leaf.dragonflybsd.org/cgi/web-man)
+*   [*FreeBSD Hypertext Man Pages*](http://www.freebsd.org/cgi/man.cgi)
+*   [*Linux and Solaris 10 Man Pages*](http://www.manpages.spotlynx.com/)
+*   [*Linux/FreeBSD Man Pages*](http://manpagehelp.net) with user comments
+*   [*Linux man pages at die.net*](http://linux.die.net/man/)
 *   [The Linux man-pages project at kernel.org](http://www.kernel.org/doc/man-pages/)
-*   [_NetBSD manual pages_](http://netbsd.gw.com/cgi-bin/man-cgi)
-*   [_Mac OS X Manual Pages_](http://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
-*   [_On-line UNIX manual pages_](http://unixhelp.ed.ac.uk/alphabetical/index.html)
-*   [_OpenBSD manual pages_](http://www.openbsd.org/cgi-bin/man.cgi)
-*   [_Plan 9 Manual — Volume 1_](http://man.cat-v.org/plan_9/)
-*   [_Inferno Manual — Volume 1_](http://man.cat-v.org/inferno/)
-*   [_Storage Foundation Man Pages_](http://sfdoccentral.symantec.com/sf/5.0MP3/linux/manpages/index.html)
-*   [_The UNIX and Linux Forums Man Page Repository_](http://www.unix.com/man-page/OpenSolaris/1/man/)
-*   [_Ubuntu Manpage Repository_](http://manpages.ubuntu.com/)
+*   [*NetBSD manual pages*](http://netbsd.gw.com/cgi-bin/man-cgi)
+*   [*Mac OS X Manual Pages*](http://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
+*   [*On-line UNIX manual pages*](http://unixhelp.ed.ac.uk/alphabetical/index.html)
+*   [*OpenBSD manual pages*](http://www.openbsd.org/cgi-bin/man.cgi)
+*   [*Plan 9 Manual — Volume 1*](http://man.cat-v.org/plan_9/)
+*   [*Inferno Manual — Volume 1*](http://man.cat-v.org/inferno/)
+*   [*Storage Foundation Man Pages*](http://sfdoccentral.symantec.com/sf/5.0MP3/linux/manpages/index.html)
+*   [*The UNIX and Linux Forums Man Page Repository*](http://www.unix.com/man-page/OpenSolaris/1/man/)
+*   [*Ubuntu Manpage Repository*](http://manpages.ubuntu.com/)
 
 **Warning:** Some distributions provide patched or outdated man pages that differ from those provided by Arch. Exercise caution when using online man pages.
 

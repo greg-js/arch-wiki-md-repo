@@ -30,10 +30,10 @@ Server = http://ede.elderlinux.org/repos/archlinux/$arch
 
 Next [refresh the package lists](/index.php/Mirrors#Force_pacman_to_refresh_the_package_lists "Mirrors") and [install](/index.php/Install "Install") the EDE packages via [pacman](/index.php/Pacman "Pacman"):
 
-*   _edelib_
-*   _ede-common_
-*   _ede_
-*   _ede-wallpapers_ (optional)
+*   *edelib*
+*   *ede-common*
+*   *ede*
+*   *ede-wallpapers* (optional)
 
 ### Installation (AUR)
 

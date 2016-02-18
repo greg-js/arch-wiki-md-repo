@@ -16,9 +16,9 @@ The following tutorial uses the SHA-512 hash function, which has been recommende
 
 ## Increasing security
 
-**Note:** With [shadow](https://www.archlinux.org/packages/?name=shadow) 4.1.4.3-3 _sha512_ is the default for new passwords (see [bug 13591](https://bugs.archlinux.org/task/13591#comment85993)).
+**Note:** With [shadow](https://www.archlinux.org/packages/?name=shadow) 4.1.4.3-3 *sha512* is the default for new passwords (see [bug 13591](https://bugs.archlinux.org/task/13591#comment85993)).
 
-If your current password was created with [shadow](https://www.archlinux.org/packages/?name=shadow) version prior to 4.1.4.3-3 (2011-11-26) you are using MD5\. To start using a SHA-512 hash you just need to change your password with _passwd_.
+If your current password was created with [shadow](https://www.archlinux.org/packages/?name=shadow) version prior to 4.1.4.3-3 (2011-11-26) you are using MD5\. To start using a SHA-512 hash you just need to change your password with *passwd*.
 
 **Note:** You must have root privileges to edit this file.
 
@@ -40,11 +40,11 @@ Even though you have changed the encryption settings, your passwords are not aut
 As root issue the following command,
 
 ```
-# passwd _username_
+# passwd *username*
 
 ```
 
-where `_username_` is the name of the user whose password you are changing. Then re-enter their current password, and it will be re-hashed using the SHA-2 function.
+where `*username*` is the name of the user whose password you are changing. Then re-enter their current password, and it will be re-hashed using the SHA-2 function.
 
 To verify that your passwords have been re-hashed, check the `/etc/shadow` file as root. Passwords hashed with SHA-256 should begin with a `$5` and passwords hashed with SHA-512 will begin with `$6`.
 
@@ -52,4 +52,4 @@ To verify that your passwords have been re-hashed, check the `/etc/shadow` file 
 
 ### fgetty
 
-Arch Linux is using SHA-512 password hashing by default (since 2011-11-26). The very minimal terminal manager _fgetty_ does not support SHA-512 password hashing by default. Enabling SHA-512 with the default _fgetty_ will cause you to be locked out. A patched version of _fgetty_ is in the [AUR](/index.php/AUR "AUR") named [fgetty-pam](https://aur.archlinux.org/packages/fgetty-pam/) which adds SHA-512 support.
+Arch Linux is using SHA-512 password hashing by default (since 2011-11-26). The very minimal terminal manager *fgetty* does not support SHA-512 password hashing by default. Enabling SHA-512 with the default *fgetty* will cause you to be locked out. A patched version of *fgetty* is in the [AUR](/index.php/AUR "AUR") named [fgetty-pam](https://aur.archlinux.org/packages/fgetty-pam/) which adds SHA-512 support.

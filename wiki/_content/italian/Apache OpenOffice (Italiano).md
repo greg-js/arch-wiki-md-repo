@@ -54,8 +54,8 @@ vedere [http://wiki.services.openoffice.org/wiki/OOoRelease30](http://wiki.servi
 
 **openoffice-base-devel**
 
-Questo pacchetto sarà aggiornato di tanto in tanto e costituisce un _banco di prova_ per il mantainer del pacchetto e per testare le ultime caratteristiche. Per favore, testate pure il pacchetto e segnalate bugs o problemi presso [http://www.openoffice.org/issues/query.cgi](http://www.openoffice.org/issues/query.cgi)
-Versione corrente: 3.3_dev300_m70-1 / snapshot DEV300_m70 (_snapshots_ successivi al ramo che porta alla versione 3.2 stabile e che porterà alla release 3.3 e oltre
+Questo pacchetto sarà aggiornato di tanto in tanto e costituisce un *banco di prova* per il mantainer del pacchetto e per testare le ultime caratteristiche. Per favore, testate pure il pacchetto e segnalate bugs o problemi presso [http://www.openoffice.org/issues/query.cgi](http://www.openoffice.org/issues/query.cgi)
+Versione corrente: 3.3_dev300_m70-1 / snapshot DEV300_m70 (*snapshots* successivi al ramo che porta alla versione 3.2 stabile e che porterà alla release 3.3 e oltre
 È possibile eseguire il programma con il comando "soffice-devel" o dal menu del vostro DE
 Si può tranquillamente installare anche in contemporanea con la versione stabile e quella beta.
 Fare riferimento alla pagina [http://wiki.services.openoffice.org/wiki/OOoRelease33](http://wiki.services.openoffice.org/wiki/OOoRelease33) per un dettaglio dei rilasci previsti.
@@ -213,7 +213,7 @@ There are two relevant parts of the OOo options dialog, View and Fonts:
 
 *   Fonts
     *   select "Use replacement table"
-    *   replace "Andale Sans UI" (you _must_ type this in -- it is not in the drop down list) with another font (your KDE system font or another if this looks bad)
+    *   replace "Andale Sans UI" (you *must* type this in -- it is not in the drop down list) with another font (your KDE system font or another if this looks bad)
     *   Press the tick symbol to update the list
     *   Select "always" and "screen only"
     *   Press OK
@@ -275,20 +275,20 @@ Printer Administration (Recommended to run as root)
 
 ## Speed up OpenOffice
 
-Some settings may improve OpenOffice's loading time and responsiveness. However, some also increase RAM usage, so use them carefully. They can all be accessed under _Tools > Options_.
+Some settings may improve OpenOffice's loading time and responsiveness. However, some also increase RAM usage, so use them carefully. They can all be accessed under *Tools > Options*.
 
-*   Under _Memory_:
+*   Under *Memory*:
     *   Reduce the number of Undo steps to a figure lower than 100, to something like 20 or 30 steps.
     *   Under Graphics cache, set Use for OpenOffice.org to 128 MB (up from the original 20MB).
     *   Set Memory per object to 20MB (up from the default 5MB).
     *   If you use OpenOffice often, check OpenOffice.org Quickstarter.
-*   Under _Java_, uncheck Use a Java runtime environment.
+*   Under *Java*, uncheck Use a Java runtime environment.
 
 ## Trouble-shooting
 
 ### Font substitution
 
-These settings can be changed in the OpenOffice.org options. From the drop-down menu, select _Tools > Options > OpenOffice.org > Fonts_. Check the box that says _Apply Replacement Table_. Type `Andale Sans UI` in the font box and choose your desired font for the _Replace with_ option. When done, click the _checkmark_. Then choose the _Always_ and _Screen only_ options in the box below. Click OK. You will then need to go to _Tools > Options > OpenOffice.org > View_, and uncheck "Use system font for user interface". If you use a non-antialised font, such as Arial, you will also need to uncheck "Screen font antialiasing" before menu fonts render correctly.
+These settings can be changed in the OpenOffice.org options. From the drop-down menu, select *Tools > Options > OpenOffice.org > Fonts*. Check the box that says *Apply Replacement Table*. Type `Andale Sans UI` in the font box and choose your desired font for the *Replace with* option. When done, click the *checkmark*. Then choose the *Always* and *Screen only* options in the box below. Click OK. You will then need to go to *Tools > Options > OpenOffice.org > View*, and uncheck "Use system font for user interface". If you use a non-antialised font, such as Arial, you will also need to uncheck "Screen font antialiasing" before menu fonts render correctly.
 
 ### Anti-aliasing
 
@@ -398,7 +398,7 @@ Se per qualche ragione volete procedere ad installare manualmente dei dizionari 
 *   Scaricate un dizionario per il vostro linguaggio. Una lista dei dizionari disponibili è presente alla pagina [Dizionari per OpenOffice](http://wiki.services.openoffice.org/wiki/Dictionaries)
 *   Estraete i dizionari nella cartella /opt/openoffice/share/dict/ooo/
 
-I file necessari sono di norma denominati come _en_US.dic_ ed _en_US.aff_ per il controllo ortografico, hyph_en_US.dic per i dizionari di sillabazione, e infine _th_en_US.dat_ e _th_en_US.idx_ per i file del thesaurus.
+I file necessari sono di norma denominati come *en_US.dic* ed *en_US.aff* per il controllo ortografico, hyph_en_US.dic per i dizionari di sillabazione, e infine *th_en_US.dat* e *th_en_US.idx* per i file del thesaurus.
 
 *   Aprite /opt/openoffice/share/dict/ooo/dictionary.lst con il vostro editor di testi preferito, e aggiungete i dizionari alla lista seguendo le seguenti regole:
 
@@ -482,4 +482,4 @@ Amministratore di Stampa (si raccomanda di eseguirlo da root)
 ## Problemi Noti
 
 *   gestione estensioni in versioni >=3.0
-*   il _qt look'n feel_ dall'uscita di KDE4
+*   il *qt look'n feel* dall'uscita di KDE4

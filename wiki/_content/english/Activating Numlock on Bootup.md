@@ -27,7 +27,6 @@
     Then [enable](/index.php/Enable "Enable") the `numLockOnTty` service.
 
 *   Alternatively, if you do not want to install an aur package to implement this, you can simply create a service file in `/etc/systemd/system` like:
-
     ```
     [Unit]
     Description=Switch on numlock from tty1 to tty6
@@ -40,7 +39,6 @@
     ```
 
     **Note:** The filename should have a `.service` suffix, e.g. `numlock1to6.service`.
-
     Do not forget to [enable](/index.php/Enable "Enable") the service after you create it.
 
 ### Extending getty@.service
@@ -52,7 +50,6 @@ This is simpler than using a separate service (especially since systemd-198) and
 Now add the following file in this directory.
 
  `activate-numlock.conf` 
-
 ```
 [Service]
 ExecStartPre=/bin/sh -c 'setleds +num < /dev/%I'
@@ -62,7 +59,6 @@ ExecStartPre=/bin/sh -c 'setleds +num < /dev/%I'
 To disable the num-lock activation hint displaying on the login screen, edit /etc/systemd/system/getty.target.wants/getty@tty1.service. Add the option '--nohints' to the following line:
 
  `getty@tty1.service` 
-
 ```
 ExecStart=-/sbin/agetty ....
 
@@ -175,11 +171,11 @@ $ gnome-session-properties
 
 ```
 
-The above command opens the **Startup Applications Preferences** applet. Click _**Add**_ and enter the following:
+The above command opens the **Startup Applications Preferences** applet. Click ***Add*** and enter the following:
 
-| Name: | _Numlockx_ |
-| Command: | _/usr/bin/numlockx on_ |
-| Comment: | _Turns on numlock._ |
+| Name: | *Numlockx* |
+| Command: | */usr/bin/numlockx on* |
+| Comment: | *Turns on numlock.* |
 
 **Note:** This is not a system-wide change, repeat these steps for each user wishing to activate NumLock after logging in.
 

@@ -30,17 +30,17 @@ Ptáte se proč? Protože my všichni Arch používáme a máme ho rádi. Použ�
 *   Pokud nejste zaregistrovaní zde na ArchWiki, zaregistrujte se.
 *   [Přihlašte se](/index.php/Special:UserLogin "Special:UserLogin"), abyste mohli editovat wiki.
 *   Zvolte si stránku, kterou chcete přeložit. Pokud ještě nevíte, kterou stránku budete překládat, můžete využít [náhodný výběr](/index.php/Special:Random "Special:Random") nebo začít překládat některou ze stránek uvedených [zde](/index.php/Arch_Translation_Day_(%C4%8Cesky)#Seznam_prioritn.C3.ADch_str.C3.A1nek "Arch Translation Day (Česky)"). Zvolíme si tedy stránku `Some Page`.
-*   Přejdeme na ni a v horním horizontálním menu zvolíme položku _editovat_.
+*   Přejdeme na ni a v horním horizontálním menu zvolíme položku *editovat*.
 *   Zkopírujte si kompletní zdrojový text stránky.
-*   Následně přejdeme na stránku `Some Page (Jazyk)`, a to tak, že zadáte následující URL ve svém prohlížeči (lze zadat bez podtržítek). _Jazyk_ je zde název [jazyka](/index.php/Help:I18n#Languages "Help:I18n"), do kterého stránku překládáme. `https://wiki.archlinux.org/index.php/Some_Page_(Jazyk)` 
-*   Jelikož stránka zatím neexistuje, založte ji. V horním menu zvolte _vytvořit_.
+*   Následně přejdeme na stránku `Some Page (Jazyk)`, a to tak, že zadáte následující URL ve svém prohlížeči (lze zadat bez podtržítek). *Jazyk* je zde název [jazyka](/index.php/Help:I18n#Languages "Help:I18n"), do kterého stránku překládáme. `https://wiki.archlinux.org/index.php/Some_Page_(Jazyk)` 
+*   Jelikož stránka zatím neexistuje, založte ji. V horním menu zvolte *vytvořit*.
 *   Zobrazí se vám jednoduchý WYSIWYG editor — do něho vložte zkopírovaný text.
 *   Potom **přeložte** zkopírovaný text a vše uložte.
 *   Pak bychom už jen měli vytvořit přesměrování na naši stránku (viz [Nápověda](/index.php/Help:I18n#Article_titles "Help:I18n")) kvůli vícejazyčnosti naší wiki. Proto přejděte na (opět lze zadat bez podtržítek): `https://wiki.archlinux.org/index.php/Nějaká_stránka` 
 
-_"Nějaká stránka"_ je zadána **v jazyce do kterého** jsme stránku překládali.
+*"Nějaká stránka"* je zadána **v jazyce do kterého** jsme stránku překládali.
 
-*   V horním menu zase zvolíme položku _vytvořit_ a do zdrojového kódu stránky vložíme kód pro přesměrování `#REDIRECT [[Some Page (Jazyk)]]` 
+*   V horním menu zase zvolíme položku *vytvořit* a do zdrojového kódu stránky vložíme kód pro přesměrování `#REDIRECT [[Some Page (Jazyk)]]` 
 *   Stránku uložte a mělo by být vše hotovo.
 
 Pokud nevíte, jak správně editovat, přečtěte si [ArchWiki tutorial](/index.php/ArchWiki_Tutorial_(%C4%8Cesky) "ArchWiki Tutorial (Česky)").

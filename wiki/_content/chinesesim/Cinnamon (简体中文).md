@@ -36,20 +36,19 @@ Cinnamon通过包 [cinnamon](https://www.archlinux.org/packages/?name=cinnamon) 
 
 ### 图形化登录
 
-在你喜欢的 [display manager](/index.php/Display_manager "Display manager") 选择 _Cinnamon_ 或者是 _Cinnamon (Software Rendering)_ 。Cinnamon选项是3D加速的版本，一般使用这个。如果你的显卡驱动出现问题，试试“'cinnamon（软件渲染）”，这个禁用了3D加速。
+在你喜欢的 [display manager](/index.php/Display_manager "Display manager") 选择 *Cinnamon* 或者是 *Cinnamon (Software Rendering)* 。Cinnamon选项是3D加速的版本，一般使用这个。如果你的显卡驱动出现问题，试试“'cinnamon（软件渲染）”，这个禁用了3D加速。
 
 ### 手动启动Cinnamon
 
 如果你喜欢控制台启动Cinnamon, 添加以下行到 [Xinitrc](/index.php/Xinitrc "Xinitrc") (cinnamon 1.9 或更高版本):
 
  `~/.xinitrc` 
-
 ```
  exec cinnamon-session
 
 ```
 
-如果你想用 _Cinnamon (Software Rendering)_ , 用 `cinnamon-session-cinnamon2d` 代替 `cinnamon-session`.
+如果你想用 *Cinnamon (Software Rendering)* , 用 `cinnamon-session-cinnamon2d` 代替 `cinnamon-session`.
 
 ## 配置
 
@@ -57,7 +56,7 @@ Cinnamon很容易配置，很多的配置正如大多数人所希望的那样可
 
 ### Cinnamon系统设置
 
-启动_cinnamon系统设置_ 、
+启动*cinnamon系统设置* 、
 
 ```
 $ cinnamon-settings
@@ -95,7 +94,7 @@ Cinnamon的蓝牙前端可以在AUR中找到： [cinnamon-bluetooth](https://aur
 
 ### 应用程序和扩展
 
-许多cinnamon的应用程序和扩展可以在 [AUR](/index.php/AUR "AUR"), ([package search](https://aur.archlinux.org/packages.php?O=0&K=cinnamon-&do_Search=Go))找到,也可以在Cinnamon的“小程序”和“拓展”中找到 (_在线获取更多_选项卡中):
+许多cinnamon的应用程序和扩展可以在 [AUR](/index.php/AUR "AUR"), ([package search](https://aur.archlinux.org/packages.php?O=0&K=cinnamon-&do_Search=Go))找到,也可以在Cinnamon的“小程序”和“拓展”中找到 (*在线获取更多*选项卡中):
 
 ```
 $ cinnamon-settings applets

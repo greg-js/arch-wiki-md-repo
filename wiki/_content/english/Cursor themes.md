@@ -1,4 +1,4 @@
-The display server is accompanied by a _cursor theme_ that helps various aspects of GUI navigation and manipulation. The display server includes a cursor theme, however, other cursor themes can be installed and selected.
+The display server is accompanied by a *cursor theme* that helps various aspects of GUI navigation and manipulation. The display server includes a cursor theme, however, other cursor themes can be installed and selected.
 
 ## Contents
 
@@ -34,7 +34,7 @@ Cursors themes are available in the:
 
 ### Manually
 
-If a cursor theme is not available in the official repositories or the AUR, it can be added manually. A number of websites exist where cursor themes can be downloaded. Once downloaded, they need to be put in the _icons_ directory (as cursors have the ability to be bundled with icon themes).
+If a cursor theme is not available in the official repositories or the AUR, it can be added manually. A number of websites exist where cursor themes can be downloaded. Once downloaded, they need to be put in the *icons* directory (as cursors have the ability to be bundled with icon themes).
 
 Some websites that have cursor themes:
 
@@ -42,16 +42,16 @@ Some websites that have cursor themes:
 *   [Customize.org](http://www.customize.org/list/xcursors)
 *   [Deviant Art](http://www.deviantart.com/browse/all/customization/skins/linuxutil/x11cursors/)
 
-For _user-specific_ installation, use the `~/.icons/` directory. Extract them with this command that will work for most archives:
+For *user-specific* installation, use the `~/.icons/` directory. Extract them with this command that will work for most archives:
 
 ```
 $ bsdtar xvf foobar-cursor-theme.tar.gz --directory ~/.icons
 
 ```
 
-The cursor theme directory structure is `theme-name/cursors`, for example: `~/.icons/_theme_/cursors/`; make sure the extracted files follow this structure.
+The cursor theme directory structure is `theme-name/cursors`, for example: `~/.icons/*theme*/cursors/`; make sure the extracted files follow this structure.
 
-**Note:** For _system-wide_ installation the `/usr/share/icons` directory is used. Direct extraction to this directory is usually discouraged as files here are not tracked by [pacman](/index.php/Pacman "Pacman"); it is recommended to create a [package](/index.php/PKGBUILD "PKGBUILD") for the cursor theme instead.
+**Note:** For *system-wide* installation the `/usr/share/icons` directory is used. Direct extraction to this directory is usually discouraged as files here are not tracked by [pacman](/index.php/Pacman "Pacman"); it is recommended to create a [package](/index.php/PKGBUILD "PKGBUILD") for the cursor theme instead.
 
 Already installed cursor themes can be viewed with the command:
 
@@ -74,23 +74,22 @@ There are various ways to set the cursor theme.
 
 This method applies to both [X11](/index.php/X11 "X11") and [Wayland](/index.php/Wayland "Wayland") cursor themes.
 
-For _user-specific_ configuration, create or edit `~/.icons/default/index.theme`. For _system-wide_ configuration, one can edit `/usr/share/icons/default/index.theme`.
+For *user-specific* configuration, create or edit `~/.icons/default/index.theme`. For *system-wide* configuration, one can edit `/usr/share/icons/default/index.theme`.
 
 Define the theme directory name:
 
  `~/.icons/default/index.theme` 
-
 ```
 [icon theme] 
-Inherits=_theme-name_
+Inherits=*theme-name*
 ```
 
-**Warning:** Creating a symbolic link with `ln -s /usr/share/icons/_theme-name_/ ~/.icons/default` is not sufficient for a consistent cursor theme.
+**Warning:** Creating a symbolic link with `ln -s /usr/share/icons/*theme-name*/ ~/.icons/default` is not sufficient for a consistent cursor theme.
 
 Then, create a symbolic link to the respective cursor directory (in case of a system-wide theme):
 
 ```
-ln -s /usr/share/icons/_theme-name_/cursors ~/.icons/default/cursors
+ln -s /usr/share/icons/*theme-name*/cursors ~/.icons/default/cursors
 
 ```
 
@@ -105,7 +104,7 @@ Re-login for the changes to take effect.
 To change the theme in [GNOME](/index.php/GNOME "GNOME"), use [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) or set the configuration directly with:
 
 ```
-gsettings set org.gnome.desktop.interface cursor-theme _theme-name_
+gsettings set org.gnome.desktop.interface cursor-theme *theme-name*
 
 ```
 
@@ -162,7 +161,7 @@ See [GDM#Changing the cursor theme](/index.php/GDM#Changing_the_cursor_theme "GD
 Applications may keep using the default cursors when a theme lacks some cursors. This can be corrected by adding links to the missing cursors. For example:
 
 ```
-$ cd ~/.icons/_theme_/cursors/
+$ cd ~/.icons/*theme*/cursors/
 $ ln -s right_ptr arrow
 $ ln -s cross crosshair
 $ ln -s right_ptr draft_large
@@ -182,9 +181,8 @@ $ ln -s left_ptr_watch 08e8e1c95fe2fc01f976f1e063a24ccd
 If the above does not solve the problem, look in `/usr/share/icons/whiteglass/cursors` for additional cursors your theme may be missing, and create links for these as well.
 
 **Tip:** You can also remove unwanted cursors. To for example remove the "watch" cursor:
-
 ```
-$ cd ~/.icons/_theme_/cursors/
+$ cd ~/.icons/*theme*/cursors/
 $ rm watch left_ptr_watch
 $ ln -s left_ptr watch
 $ ln -s left_ptr left_ptr_watch

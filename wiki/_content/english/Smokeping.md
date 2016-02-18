@@ -50,7 +50,7 @@ If you want to use other probes such as the DNS or http probe you will need othe
 
 ## Configuration
 
-Smokeping requires you to edit a few files. The unedited files end with the `.dist` extension. Rename the `.dist` files in `/etc/smokeping` to remove the suffix. The _find_ command does this and prints out each file that is being renamed and needs editing:
+Smokeping requires you to edit a few files. The unedited files end with the `.dist` extension. Rename the `.dist` files in `/etc/smokeping` to remove the suffix. The *find* command does this and prints out each file that is being renamed and needs editing:
 
 ```
 # cd /etc/smokeping
@@ -63,24 +63,23 @@ Smokeping requires you to edit a few files. The unedited files end with the `.di
 
 Next, edit the `/etc/smokeping/config` file; this is smokeping's main config file. A brief description of the sections is followed by a complete example.
 
-The _General_ section of the `/etc/smokeping/config` file is the easiest to edit. Personalize the top of the config file to match your information. The comments describe each field. Note that if you do not have the `sendmail` program installed (ie from postfix or sendmail) then use something else instead like `/bin/false`. The file you specify must exist or smokeping will error out.
+The *General* section of the `/etc/smokeping/config` file is the easiest to edit. Personalize the top of the config file to match your information. The comments describe each field. Note that if you do not have the `sendmail` program installed (ie from postfix or sendmail) then use something else instead like `/bin/false`. The file you specify must exist or smokeping will error out.
 
-The _Alerts_ section is not needed in this minimal example, so it can be either commented out or removed.
+The *Alerts* section is not needed in this minimal example, so it can be either commented out or removed.
 
-The _Database_ section does not require any changes.
+The *Database* section does not require any changes.
 
-In the _Presentation_ section the path to the template filename needs to be updated.
+In the *Presentation* section the path to the template filename needs to be updated.
 
-The _Probes_ section specifies which probes are active. By default only the _FPing_ probe is enabled. This section does not require any changes.
+The *Probes* section specifies which probes are active. By default only the *FPing* probe is enabled. This section does not require any changes.
 
-The _Slaves_ section is not needed in this minimal example, so it can be either commented out or removed. Note that if you use the `smokeping_secrets` setting in the _Slaves_ section, you will have to make that file unreadable to the rest of the world, or else smokeping will error: `chmod 600 /etc/smokeping/smokeping_secrets`.
+The *Slaves* section is not needed in this minimal example, so it can be either commented out or removed. Note that if you use the `smokeping_secrets` setting in the *Slaves* section, you will have to make that file unreadable to the rest of the world, or else smokeping will error: `chmod 600 /etc/smokeping/smokeping_secrets`.
 
-The _Targets_ section specifies which hosts will be probed (pinged in our example). Customize it so that it probes the host(s) you would like to collect statistics on, as shown in the example below.
+The *Targets* section specifies which hosts will be probed (pinged in our example). Customize it so that it probes the host(s) you would like to collect statistics on, as shown in the example below.
 
 You can learn more about the Smokeping config file with the examples at [http://oss.oetiker.ch/smokeping/doc/smokeping_examples.en.html](http://oss.oetiker.ch/smokeping/doc/smokeping_examples.en.html)
 
  `/etc/smokeping/config` 
-
 ```
 *** General ***
 
@@ -206,7 +205,7 @@ host = /targets/ArchLinux /targets/GoogleDNS
 
 Each **+** character defines a section in the hierarchy. Spaces are not allowed in the section names. Period and forward slashes should probably also be avoided in section names. This is probably because the RRD files are stored under the data directory with the same exact names as the sections.
 
-In the _Targets_ section, you can define `host` as either a real host name or the path to another section to generate a multiple host chart, as shown in the `MultiHost` example above.
+In the *Targets* section, you can define `host` as either a real host name or the path to another section to generate a multiple host chart, as shown in the `MultiHost` example above.
 
 ### Setup the rest of the system
 
@@ -239,7 +238,6 @@ Since the smokeping configuration is read by both the smokeping daemon and the F
 Edit /etc/httpd/conf/httpd.conf so it includes
 
  `/etc/httpd/conf/httpd.conf` 
-
 ```
  LoadModule fastcgi_module modules/mod_fastcgi.so
  <IfModule fastcgi_module>

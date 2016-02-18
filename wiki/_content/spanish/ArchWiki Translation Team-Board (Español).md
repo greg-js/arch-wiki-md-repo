@@ -4,7 +4,7 @@
 
 * * *
 
-_El presente sistema es tan solo una propuesta, susceptible (y deseable) de mejora, obviamente, que persigue tener una visión lo más exacta posible del estado de los artículos en español de la wiki de Arch Linux. El esquema de tablas siguiente quiere conseguir, combinando eficacia y sencillez, el seguimiento y mantenimiento de los artículos en español, con el objetivo último de la actualización constante de los temas traducidos, y la expansión de la traducción a temas no traducidos aún._
+*El presente sistema es tan solo una propuesta, susceptible (y deseable) de mejora, obviamente, que persigue tener una visión lo más exacta posible del estado de los artículos en español de la wiki de Arch Linux. El esquema de tablas siguiente quiere conseguir, combinando eficacia y sencillez, el seguimiento y mantenimiento de los artículos en español, con el objetivo último de la actualización constante de los temas traducidos, y la expansión de la traducción a temas no traducidos aún.*
 
 ## Contents
 
@@ -164,7 +164,7 @@ No tiene versión inglesa correlativa. |
 | [Apache, suEXEC and Virtual Hosts (Español)](/index.php/Apache,_suEXEC_and_Virtual_Hosts_(Espa%C3%B1ol) "Apache, suEXEC and Virtual Hosts (Español)") | Servidor web | `2008-05` |
 | [Arch Based Distributions (Active) (Español)](/index.php/Arch_Based_Distributions_(Active)_(Espa%C3%B1ol) "Arch Based Distributions (Active) (Español)") | Información | `2013-10` |
 | [Arch Hurd Project (Español)](/index.php/Arch_Hurd_Project_(Espa%C3%B1ol) "Arch Hurd Project (Español)") | Kernel | `2010-04` |
-| [Arch Linux Press Coverage](/index.php/Arch_Linux_Press_Coverage "Arch Linux Press Coverage") | Información/general | `--` | _No necesita traducción_.
+| [Arch Linux Press Coverage](/index.php/Arch_Linux_Press_Coverage "Arch Linux Press Coverage") | Información/general | `--` | *No necesita traducción*.
 No obstante, hay un artículo en español, [Arch Linux press coverage (Español)](/index.php/Arch_Linux_press_coverage_(Espa%C3%B1ol) "Arch Linux press coverage (Español)"),
 creado en un intento de recopilar información sobre Arch Linux en prensa hispana. |
 | [Arch Packaging Standards (Español)](/index.php/Arch_Packaging_Standards_(Espa%C3%B1ol) "Arch Packaging Standards (Español)") | Gestión de paquetes | `2013-03` |

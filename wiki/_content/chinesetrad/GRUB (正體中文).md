@@ -1,6 +1,6 @@
 [GRUB2](http://www.gnu.org/software/grub/) 是新一代的 GRand Unified Bootloader (GRUB/開機引導程式). GRUB2 來自於 [PUPA](http://www.nongnu.org/pupa/) 這個探討下一代 GRUB 的研究專案 。GRUB 2 清除了所有東西並被重新編寫，擁有模組化和可移植性。[[1]](http://www.gnu.org/software/grub/grub-faq.html#q1)
 
-簡單地說，_開機引導程式_ 是當電腦開機時第一個執行的程式（在此請自動乎略bios，謝謝）。它負責載入並移交控制權給 Linux 核心。而核心載入後，則反過來啟動作業系統內的其它部份。
+簡單地說，*開機引導程式* 是當電腦開機時第一個執行的程式（在此請自動乎略bios，謝謝）。它負責載入並移交控制權給 Linux 核心。而核心載入後，則反過來啟動作業系統內的其它部份。
 
 ## Contents
 
@@ -84,7 +84,7 @@
 
 有些資訊必須先予以澄清:
 
-*   The name _GRUB_ officially refers to version _2_ of the software, see [[2]](https://www.gnu.org/software/grub/). If you are looking for the article on the legacy version, see [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy").
+*   The name *GRUB* officially refers to version *2* of the software, see [[2]](https://www.gnu.org/software/grub/). If you are looking for the article on the legacy version, see [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy").
 
 *   [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") (i.e. version 0.9x) 已被開發者們認為是舊作，在 Arch Linux已經被GRUB2和 [Syslinux](/index.php/Syslinux "Syslinux")給取代 . 參閱最新消息 [here](https://www.archlinux.org/news/grub-legacy-no-longer-supported/). Upstream recommends GRUB2 >=1.99 over GRUB Legacy, even for current GRUB Legacy users.
 
@@ -102,7 +102,7 @@
 
 *   GRUB and GRUB2 的指令是有差別的. 請在進行下一步之前自己熟悉一下 [GRUB2 commands](http://grub.enbug.org/CommandList) (例如， "find" 就被更換為 "search").
 
-*   GRUB2 現在己經 _模組化_ 且不再需要 "stage 1.5"。因此，引導程式本身是有限的 - 當需要擴充功能時模組才從硬碟內被載入（例如，[LVM](/index.php/LVM "LVM") 或 RAID支援）
+*   GRUB2 現在己經 *模組化* 且不再需要 "stage 1.5"。因此，引導程式本身是有限的 - 當需要擴充功能時模組才從硬碟內被載入（例如，[LVM](/index.php/LVM "LVM") 或 RAID支援）
 
 *   GRUB2 設備命名也改得和 GRUB 不同。磁區 Partitions 由數字 1 起算，而硬碟仍然由 0 起算，舉例來說，`/dev/sda1` 被 GRUB2 指引為 `(hd0,1)` 。
 
@@ -304,7 +304,6 @@ You can then chainload GRUB2's `core.img` from GRUB Legacy or syslinux as a Linu
 範例:
 
  `/boot/grub/menu.lst` 
-
 ```
 default=0
 timeout=5
@@ -320,9 +319,7 @@ kernel /vmlinuz-linux root=/dev/sda2 ro
 initrd /initramfs-linux-fallback.img
 
 ```
-
  `/boot/grub/grub.cfg` 
-
 ```
 set default='0'; if [ x"$default" = xsaved ]; then load_env; set default="$saved_entry"; fi
 set timeout=5
@@ -769,7 +766,7 @@ menuentry "Arch Linux" {
 
 ### 雙啟動(dual-boot)
 
-_注意: 如果你希望 GRUB2 自動尋找其他的作業系統(舉例來說，像是ubuntu).那麼你可能需要從[AUR](/index.php/AUR "AUR")下載並安裝 [os-prober](https://www.archlinux.org/packages/?name=os-prober)_
+*注意: 如果你希望 GRUB2 自動尋找其他的作業系統(舉例來說，像是ubuntu).那麼你可能需要從[AUR](/index.php/AUR "AUR")下載並安裝 [os-prober](https://www.archlinux.org/packages/?name=os-prober)*
 
 #### 使用 grub-mkconfig
 
@@ -1046,7 +1043,7 @@ insmod lvm
 and specify your root in the menuentry as:
 
 ```
-set root=(_lvm_group_name_-_lvm_logical_boot_partition_name_)
+set root=(*lvm_group_name*-*lvm_logical_boot_partition_name*)
 
 ```
 
@@ -1147,7 +1144,6 @@ GRUB_SAVEDEFAULT=true
 如果你想增加 GRUB2的安全性，使其他人不能改變啟動參數跟使用命令列,你可以加上一個 user/password 組合到 GRUB2的設置檔案. 如果像這樣做的話, 執行指令 `grub-mkpasswd-pbkdf2`. 輸入密碼且確認它. 螢幕輸入將會像是這樣:
 
  `Your PBKDF2 is grub.pbkdf2.sha512.10000.C8ABD3E93C4DFC83138B0C7A3D719BC650E6234310DA069E6FDB0DD4156313DA3D0D9BFFC2846C21D5A2DDA515114CF6378F8A064C94198D0618E70D23717E82.509BFA8A4217EAD0B33C87432524C0B6B64B34FBAD22D3E6E6874D9B101996C5F98AB1746FE7C7199147ECF4ABD8661C222EEEDB7D14A843261FFF2C07B1269A` Then, add the following to `/etc/grub.d/00_header`:
-
 ```
 cat << EOF
 

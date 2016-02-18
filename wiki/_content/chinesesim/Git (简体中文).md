@@ -366,7 +366,7 @@ You should now get an SSH yes/no question. Type `yes` followed by `Enter`. Then 
 
 #### 特定非标准端口
 
-Connecting on a port other than 22 can be configured on a per-host basis in `/etc/ssh/ssh_config` or `~/.ssh/config`. To set up ports for a repository, specify the path in `.git/config` using the port number `N` and the _absolute path_ `/PATH/TO/REPO`:
+Connecting on a port other than 22 can be configured on a per-host basis in `/etc/ssh/ssh_config` or `~/.ssh/config`. To set up ports for a repository, specify the path in `.git/config` using the port number `N` and the *absolute path* `/PATH/TO/REPO`:
 
 ```
 [ssh://user@example.org:N/PATH/TO/REPO](ssh://user@example.org:N/PATH/TO/REPO)

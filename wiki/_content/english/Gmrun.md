@@ -19,7 +19,7 @@ Gmrun can be [installed](/index.php/Pacman "Pacman") with the package [gmrun](ht
 *   Web addresses entered into Gmrun will launch a web browser automatically.
 *   The same goes for email addresses, using the `mailto:` prefix e.g. `[mailto:foo@bar.com](mailto:foo@bar.com)`, will launch your email client.
 *   More shortcuts can be added to `~/.gmrunrc` (covered below) or you can modify the system-wide file at `/usr/share/gmrun/gmrunc`.
-*   You can enter search mode by entering `!` as the first letter, the title should change from _Run program_ to _Search_, letters you input will then automatically come up with suggestions from your command history.
+*   You can enter search mode by entering `!` as the first letter, the title should change from *Run program* to *Search*, letters you input will then automatically come up with suggestions from your command history.
 *   `Ctrl-r` will allow you to search backwards through that history.
 *   `Ctrl-s` will search forward through the history.
 *   `Ctrl-g` will cancel the search.
@@ -33,7 +33,6 @@ The configuration file is located at `/usr/share/gmrun/gmrunrc` but you can crea
 Here is an example configuration file.
 
  `~/.gmrunrc` 
-
 ```
 # gmrun configuration file
 # gmrun is (C) Mihai Bazon, <mishoo@infoiasi.ro>

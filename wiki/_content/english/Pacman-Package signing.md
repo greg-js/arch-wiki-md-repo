@@ -1,6 +1,6 @@
 See [pacman](/index.php/Pacman "Pacman") for the main article.
 
-To determine if packages are authentic, _pacman_ uses [GnuPG keys](http://www.gnupg.org/) in a [web of trust](http://www.gnupg.org/gph/en/manual.html#AEN385) model. There are currently five [Master Signing Keys](https://www.archlinux.org/master-keys/). At least three of these Master Signing Keys are used to sign each of the Developer's and Trusted User's own keys which then in turn are used to sign their packages. The user also has a unique PGP key which is generated when you set up _pacman-key_. So the web of trust links the user's key to the five Master Keys.
+To determine if packages are authentic, *pacman* uses [GnuPG keys](http://www.gnupg.org/) in a [web of trust](http://www.gnupg.org/gph/en/manual.html#AEN385) model. There are currently five [Master Signing Keys](https://www.archlinux.org/master-keys/). At least three of these Master Signing Keys are used to sign each of the Developer's and Trusted User's own keys which then in turn are used to sign their packages. The user also has a unique PGP key which is generated when you set up *pacman-key*. So the web of trust links the user's key to the five Master Keys.
 
 Examples of webs of trust:
 
@@ -8,7 +8,7 @@ Examples of webs of trust:
 *   **Unofficial packages**: A developer made the package and signed it. You used your key to sign that developer's key.
 *   **Official packages**: A developer made the package and signed it. The developer's key was signed by the Arch Linux master keys. You used your key to sign the master keys, and you trust them to vouch for developers.
 
-**Note:** The HKP protocol uses 11371/tcp for communication. In order to get the signed keys from the servers (using _pacman-key_), this port is required for communication.
+**Note:** The HKP protocol uses 11371/tcp for communication. In order to get the signed keys from the servers (using *pacman-key*), this port is required for communication.
 
 ## Contents
 
@@ -32,7 +32,7 @@ Examples of webs of trust:
 
 ### Configuring pacman
 
-The `SigLevel` option in `/etc/pacman.conf` determines how much trust is required to install a package. For a detailed explanation of `SigLevel` see the [pacman.conf man page](https://www.archlinux.org/pacman/pacman.conf.5.html#_package_and_database_signature_checking) and the comments in the file itself. Signature checking may be set globally or per repository. If `SigLevel` is set globally in the `[options]` section to require all packages to be signed, then packages you build will also need to be signed using _makepkg_.
+The `SigLevel` option in `/etc/pacman.conf` determines how much trust is required to install a package. For a detailed explanation of `SigLevel` see the [pacman.conf man page](https://www.archlinux.org/pacman/pacman.conf.5.html#_package_and_database_signature_checking) and the comments in the file itself. Signature checking may be set globally or per repository. If `SigLevel` is set globally in the `[options]` section to require all packages to be signed, then packages you build will also need to be signed using *makepkg*.
 
 **Note:** Although all official packages are now signed, as of June 2012 signing of the databases is a work in progress. If `Required` is set then `DatabaseOptional` should also be set.
 
@@ -40,7 +40,7 @@ A default configuration can be used to only install packages that are signed by 
 
  `/etc/pacman.conf`  `SigLevel = Required DatabaseOptional` 
 
-This is because `TrustedOnly` is a default compiled-in _pacman_ parameter. So above leads to the same result as a global option of:
+This is because `TrustedOnly` is a default compiled-in *pacman* parameter. So above leads to the same result as a global option of:
 
 ```
 SigLevel = Required DatabaseOptional TrustedOnly
@@ -62,14 +62,14 @@ explicitly adds signature checking for the packages of the repository, but does 
 
 ### Initializing the keyring
 
-To set up the _pacman_ keyring use:
+To set up the *pacman* keyring use:
 
 ```
 # pacman-key --init
 
 ```
 
-For this initialization, [entropy](https://en.wikipedia.org/wiki/Entropy_(computing) "wikipedia:Entropy (computing)") is required. Moving your mouse around, pressing random characters at the keyboard or running some disk-based activity (for example in another console running `ls -R /` or `find / -name foo` or `dd if=/dev/sda8 of=/dev/tty7`) should generate entropy. If your system does not already have sufficient entropy, this step may take hours; if you actively generate entropy, it will complete much more quickly.
+For this initialization, [entropy](https://en.wikipedia.org/wiki/Entropy_(computing) is required. Moving your mouse around, pressing random characters at the keyboard or running some disk-based activity (for example in another console running `ls -R /` or `find / -name foo` or `dd if=/dev/sda8 of=/dev/tty7`) should generate entropy. If your system does not already have sufficient entropy, this step may take hours; if you actively generate entropy, it will complete much more quickly.
 
 The randomness created is used to set up a keyring (`/etc/pacman.d/gnupg`) and the GPG signing key of your system.
 
@@ -88,11 +88,11 @@ The initial setup of keys is achieved using:
 
 Take time to verify the [Master Signing Keys](https://www.archlinux.org/master-keys/) when prompted as these are used to co-sign (and therefore trust) all other packager's keys.
 
-PGP keys are too large (2048 bits or more) for humans to work with, so they are usually hashed to create a 40-hex-digit fingerprint which can be used to check by hand that two keys are the same. The last eight digits of the fingerprint serve as a name for the key known as the '(short) key ID' (the last _sixteen_ digits of the fingerprint would be the 'long key ID').
+PGP keys are too large (2048 bits or more) for humans to work with, so they are usually hashed to create a 40-hex-digit fingerprint which can be used to check by hand that two keys are the same. The last eight digits of the fingerprint serve as a name for the key known as the '(short) key ID' (the last *sixteen* digits of the fingerprint would be the 'long key ID').
 
 ### Adding developer keys
 
-The official developer and TU keys are signed by the master keys, so you do not need to use _pacman-key_ to sign them yourself. Whenever _pacman_ encounters a key it does not recognize, it will prompt to download it from a `keyserver` configured in `/etc/pacman.d/gnupg/gpg.conf` (or by using the `--keyserver` option on the command line). Wikipedia maintains a [list of keyservers](https://en.wikipedia.org/wiki/Key_server_(cryptographic) "wikipedia:Key server (cryptographic)").
+The official developer and TU keys are signed by the master keys, so you do not need to use *pacman-key* to sign them yourself. Whenever *pacman* encounters a key it does not recognize, it will prompt to download it from a `keyserver` configured in `/etc/pacman.d/gnupg/gpg.conf` (or by using the `--keyserver` option on the command line). Wikipedia maintains a [list of keyservers](https://en.wikipedia.org/wiki/Key_server_(cryptographic) "wikipedia:Key server (cryptographic)").
 
 Once you have downloaded a developer key, you will not have to download it again, and it can be used to verify any other packages signed by that developer.
 
@@ -100,27 +100,27 @@ Once you have downloaded a developer key, you will not have to download it again
 
 ### Adding unofficial keys
 
-You can use this method, for example, to add your own key to the _pacman_ keyring, or when enabling a signed [unofficial repository](/index.php/Unofficial_user_repositories "Unofficial user repositories").
+You can use this method, for example, to add your own key to the *pacman* keyring, or when enabling a signed [unofficial repository](/index.php/Unofficial_user_repositories "Unofficial user repositories").
 
 **Note:** You may first need to run `dirmngr` as root, see [#gpg: keyserver receive failed: No dirmngr](#gpg:_keyserver_receive_failed:_No_dirmngr).
 
-First get the key ID (`_keyid_`) from the owner of the key. Then you need to add the key to the keyring:
+First get the key ID (`*keyid*`) from the owner of the key. Then you need to add the key to the keyring:
 
-*   If the key is found on a keyserver, import it with: `# pacman-key -r _keyid_` 
+*   If the key is found on a keyserver, import it with: `# pacman-key -r *keyid*` 
 
-*   If otherwise a link to a keyfile is provided, download it and then run: `# pacman-key --add _/path/to/downloaded/keyfile_` 
+*   If otherwise a link to a keyfile is provided, download it and then run: `# pacman-key --add */path/to/downloaded/keyfile*` 
 
 Always be sure to verify the fingerprint, as you would with a master key, or any other key which you are going to sign.
 
 ```
-$ pacman-key -f _keyid_
+$ pacman-key -f *keyid*
 
 ```
 
 Finally, you need to locally sign the imported key:
 
 ```
-# pacman-key --lsign-key _keyid_
+# pacman-key --lsign-key *keyid*
 
 ```
 
@@ -128,7 +128,7 @@ You now trust this key to sign packages.
 
 ### Debugging with gpg
 
-For debugging purposes, you can access _pacman'_s keyring directly with _gpg_, e.g.:
+For debugging purposes, you can access *pacman'*s keyring directly with *gpg*, e.g.:
 
 ```
 # gpg --homedir /etc/pacman.d/gnupg --list-keys
@@ -137,8 +137,7 @@ For debugging purposes, you can access _pacman'_s keyring directly with _gpg_, e
 
 ## Troubleshooting
 
-**Warning:** _pacman-key_ depends on [time](/index.php/Time "Time"). If your system clock is wrong, you'll get:
-
+**Warning:** *pacman-key* depends on [time](/index.php/Time "Time"). If your system clock is wrong, you'll get:
 ```
 error: PackageName: signature from "User <email@archlinux.org>" is invalid
 error: failed to commit transaction (invalid or corrupted package (PGP signature))
@@ -153,7 +152,7 @@ There are multiple possible sources of this problem:
 *   An outdated [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) package.
 *   Incorrect date.
 *   Your ISP blocked the port used to import PGP keys.
-*   Your _pacman_ cache contains copy of unsigned packages from previous attempts.
+*   Your *pacman* cache contains copy of unsigned packages from previous attempts.
 
 You might be stuck because of outdated [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) package when doing an upgrade synchronization. Try if [upgrading the system](/index.php/Pacman#Upgrading_packages "Pacman") can fix it first.
 
@@ -171,7 +170,7 @@ keyserver hkp://keyserver.kjsl.com:80
 
 ```
 
-If you have IPv6 disabled, _gpg_ will fail when it found some IPv6 address. In this case try with an IPv4-only keyserver like:
+If you have IPv6 disabled, *gpg* will fail when it found some IPv6 address. In this case try with an IPv4-only keyserver like:
 
 ```
 keyserver hkp://ipv4.pool.sks-keyservers.net:11371
@@ -180,7 +179,7 @@ keyserver hkp://ipv4.pool.sks-keyservers.net:11371
 
 If you happen to forget to run `pacman-key --populate archlinux` you might get some errors while importing keys.
 
-If none of this helps, your _pacman_ cache, located at `/var/cache/pacman/pkg/` might contain unsigned packages from previous attempts. Try cleaning the cache manually or run:
+If none of this helps, your *pacman* cache, located at `/var/cache/pacman/pkg/` might contain unsigned packages from previous attempts. Try cleaning the cache manually or run:
 
 ```
 # pacman -Sc
@@ -191,7 +190,7 @@ which removes all cached packages that have not been installed.
 
 ### Disabling signature checking
 
-**Warning:** Use with caution. Disabling package signing will allow _pacman_ to install untrusted packages automatically.
+**Warning:** Use with caution. Disabling package signing will allow *pacman* to install untrusted packages automatically.
 
 If you are not concerned about package signing, you can disable PGP signature checking completely. Edit `/etc/pacman.conf` and uncomment the following line under `[options]`:
 
@@ -200,7 +199,7 @@ SigLevel = Never
 
 ```
 
-You need to comment out any repository-specific SigLevel settings too because they override the global settings. This will result in no signature checking, which was the behavior before pacman 4\. If you decide to do this, you do not need to set up a keyring with _pacman-key_. You can change this option later if you decide to enable package verification.
+You need to comment out any repository-specific SigLevel settings too because they override the global settings. This will result in no signature checking, which was the behavior before pacman 4\. If you decide to do this, you do not need to set up a keyring with *pacman-key*. You can change this option later if you decide to enable package verification.
 
 ### Resetting all the keys
 
@@ -208,7 +207,7 @@ If you want to remove or reset all the keys installed in your system, you can re
 
 ### Removing stale packages
 
-If the same packages keep failing and you are sure you did all the _pacman-key_ stuff right, try removing them like so `rm /var/cache/pacman/pkg/_badpackage_*` so that they are freshly downloaded.
+If the same packages keep failing and you are sure you did all the *pacman-key* stuff right, try removing them like so `rm /var/cache/pacman/pkg/*badpackage**` so that they are freshly downloaded.
 
 This might actually be the solution if you get a message like `error: linux: signature from "Some Person <Some.Person@example.com>" is invalid` or similar when upgrading (i.e. you might not be the victim of a MITM attack after all, your downloaded file was simply corrupt).
 

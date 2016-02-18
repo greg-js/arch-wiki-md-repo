@@ -64,7 +64,7 @@ wodim -v dev=/dev/cdrw -blank=fast
 
 ```
 
-正如你可能猜想的，这个命令可以很快的清空光盘，但是你还可以使用一些其它的选项，只需把_fast_替换为下面的即可：
+正如你可能猜想的，这个命令可以很快的清空光盘，但是你还可以使用一些其它的选项，只需把*fast*替换为下面的即可：
 
 	all 
 
@@ -199,7 +199,7 @@ ccd2iso /home/archman/image.img /home/archman/image.iso
 
 ### K3B
 
-根据[http://www.k3b.org](http://www.k3b.org)，k3b是为KDE优化的CD/DVD制作工具（“CD/DVD Kreator for Linux”）。K3B使用 [QT](https://en.wikipedia.org/wiki/Qt_(toolkit) "wikipedia:Qt (toolkit)") 工具集。
+根据[http://www.k3b.org](http://www.k3b.org)，k3b是为KDE优化的CD/DVD制作工具（“CD/DVD Kreator for Linux”）。K3B使用 [QT](https://en.wikipedia.org/wiki/Qt_(toolkit) 工具集。
 
 *   使用pacman来安装k3b
 

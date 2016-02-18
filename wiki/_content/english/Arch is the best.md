@@ -115,7 +115,9 @@ yes Arch is the best!
 
 ```
  #!/bin/bash
- wget http://wiki.archlinux.org/index.php/Arch_is_the_best -qO-| sed -n ':b;n;s/id="Translations"//;Tb;:d;n;s/id="Encodings"//;t;p;bd'|sed '/<i>.*<\/i>/d;s/<[^>]*>//g'|sed 'N;s/\n/: /;N;N;s/\n//g'
+ wget http://wiki.archlinux.org/index.php/Arch_is_the_best -qO-| sed -n ':b;n;s/id="Translations"//;Tb;:d;n;s/id="Encodings"//;t;p;bd'|sed '/<i>.*<\/i>/d;s/<[^>]*>//g'|sed 'N;s/
+/: /;N;N;s/
+//g'
 
 ```
 
@@ -220,7 +222,8 @@ alert 'Arch is the best!'
                    "spanish" "¡Arch es el mejor!"})
 
 (defn read-choice []
-  (println "\nAvailable languages: ")
+  (println "
+Available languages: ")
   (doall (map #(println (key %)) translations))
   (print "Enter language or Ctrl-c: ") (flush)
   (translations (read-line) :badinput))
@@ -228,9 +231,13 @@ alert 'Arch is the best!'
 (defn arch-is-the-best []
   (loop [choice (read-choice)]
     (case choice
-      :badinput (do (print "\nBad input!\n")
+      :badinput (do (print "
+Bad input!
+")
                     (recur (read-choice)))
-      (do (print "\n" choice "\n")
+      (do (print "
+" choice "
+")
           (recur (read-choice))))))
 
 ```
@@ -245,7 +252,10 @@ alert 'Arch is the best!'
                    "spanish" "¡Arch es el mejor!"
                    "street" "Arch iz da shizzle ma nizzle"})
 (while 1
-  (println "\nPick a language:\n" (map #(key %) translations) "\n language: ")
+  (println "
+Pick a language:
+" (map #(key %) translations) "
+ language: ")
   (println (translations (read-line) "Not a valid language")))
 
 ```
@@ -347,7 +357,8 @@ alert 'Arch is the best!'
 ```
 -module(arch).
 -export([is_the_best/0]).
-   is_the_best() -> io:fwrite("Arch is the best!\n").
+   is_the_best() -> io:fwrite("Arch is the best!
+").
 
 ```
 
@@ -665,7 +676,8 @@ print_endline "Arch is the best!"
 	High-level interpreted language, primarily intended for numerical computations.
 
 ```
-printf("Arch is the best!\n")
+printf("Arch is the best!
+")
 
 ```
 
@@ -696,7 +708,8 @@ end.
 
 ```
 #!/usr/bin/perl
-print "Arch is the best!\n";
+print "Arch is the best!
+";
 
 ```
 
@@ -706,7 +719,8 @@ print "Arch is the best!\n";
 
 ```
 <?php
-   echo "Arch is the best!\n";
+   echo "Arch is the best!
+";
 ?>
 
 ```
@@ -739,7 +753,8 @@ actor Main
 ```
    .section .data
 archIsBest:
-   .ascii  "Arch is the best!\n"
+   .ascii  "Arch is the best!
+"
 archIsBest_len:
    .long   . - archIsBest
    .section .text
@@ -801,7 +816,8 @@ PRINT "Arch is the best!"
 	A language for statistical computing (and much more!).
 
 ```
-archIsBest <- function() { cat("Arch is the best!\n") }
+archIsBest <- function() { cat("Arch is the best!
+") }
 archIsBest()
 
 ```
@@ -843,7 +859,8 @@ fn main() {
 	A dialect of Lisp.
 
 ```
-(display "Arch is the best!\n")
+(display "Arch is the best!
+")
 
 ```
 
@@ -854,7 +871,8 @@ or in XunDu style
 !#
 (define 节 or)
 (define 哀 #t)
-(define (xi) (display "Arch is the best!\n"))
+(define (xi) (display "Arch is the best!
+"))
 (节 (xi) 哀 (wen) 顺 (le) 变 (jian) )
 
 ```
@@ -895,7 +913,8 @@ SELECT 'Arch is the best!' from dual; -- for Oracle DB
 	A general-purpose, modular, functional programming language with compile-time type checking and type inference.
 
 ```
-print "Arch is the best!\n"
+print "Arch is the best!
+"
 
 ```
 
@@ -921,7 +940,8 @@ ArchIsTheBest (
               IN EFI_SYSTEM_TABLE  *SystemTable
               )
 {
-   SystemTable -> ConOut-> OutputString(SystemTable->ConOut, L"Arch is the best!\n"); 
+   SystemTable -> ConOut-> OutputString(SystemTable->ConOut, L"Arch is the best!
+"); 
    return EFI_SUCCESS;
 }
 
@@ -933,7 +953,10 @@ ArchIsTheBest (
 
 ```
 void main(string[] args) {
-stdout.printf("\nArch is the best!\n\n");
+stdout.printf("
+Arch is the best!
+
+");
 }
 
 ```
@@ -973,7 +996,8 @@ int main()
        int s;
 
        if (!(d = XOpenDisplay(NULL))) {
-               fprintf(stderr, "Couldn't open display, but Arch is the best!\n");
+               fprintf(stderr, "Couldn't open display, but Arch is the best!
+");
                exit(1);
        }
 
@@ -1353,7 +1377,7 @@ Zoi kvmei Arch
 writting system: Wirizüŋun
 
 ```
-Zoy kümey Arch _or_ Zoy kvmey Arch
+Zoy kümey Arch *or* Zoy kvmey Arch
 
 ```
 

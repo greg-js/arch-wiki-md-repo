@@ -292,7 +292,7 @@ A current_theme változót kell úgy használni, hogy utána vesszővel elválas
 Ez egy lista a SLiM összes konfigurációs beállítási lehetőségéről az alapértelmezett értékeikkel.
 
 **Note:** welcome_msg két változót engedélyez: **%host** és **%domain**
-sessionstart_cmd **%user** változót engedélyezi _(közvetlenül a login_cmd előt kelrül végrehajtásra)_ és ez a sessionstop_cmd esetén is engedélyezett
+sessionstart_cmd **%user** változót engedélyezi *(közvetlenül a login_cmd előt kelrül végrehajtásra)* és ez a sessionstop_cmd esetén is engedélyezett
 login_cmd a **%session** és **%theme** változókat engedélyezi
 
 | Option Name | Default Value |

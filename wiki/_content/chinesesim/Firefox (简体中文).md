@@ -67,7 +67,7 @@ Firefox 广为人知的一点是它的大量的附加组件，可以用来添加
 
 ## 插件
 
-_参见： [浏览器插件](/index.php/Browser_Plugins_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Browser Plugins (简体中文)")_
+*参见： [浏览器插件](/index.php/Browser_Plugins_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Browser Plugins (简体中文)")*
 
 要查看插件使用情况，在Firefox地址栏输入：
 
@@ -76,7 +76,7 @@ about:plugins
 
 ```
 
-或者使用_工具_菜单中的_附加组件_，选择_插件_标签。
+或者使用*工具*菜单中的*附加组件*，选择*插件*标签。
 
 ### Gnome Keyring 整合
 
@@ -134,19 +134,19 @@ about:plugins
 
 ### 设置 email 客户端
 
-一般地，Firefox 会使用像 Gmail 或 Yahoo Mail 这样的 Web 程序打开 `mailto` 链接。要使 Firefox 用你的email 客户端打开 `mailto` 链接，找到 _选项 > 应用程序_ 并将 `mailto` 对应的_动作_修改为你的 email 客户端的准确路径，如 `/usr/bin/kmail`。
+一般地，Firefox 会使用像 Gmail 或 Yahoo Mail 这样的 Web 程序打开 `mailto` 链接。要使 Firefox 用你的email 客户端打开 `mailto` 链接，找到 *选项 > 应用程序* 并将 `mailto` 对应的*动作*修改为你的 email 客户端的准确路径，如 `/usr/bin/kmail`。
 
 ### “打开所在文件夹” 错误 (GNOME3)
 
 如果你希望 Firefox 用 [Nautilus](/index.php?title=Nautilus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&action=edit&redlink=1 "Nautilus (简体中文) (page does not exist)") 来 “打开所在文件夹”，而 [Thunar](/index.php/Thunar_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Thunar (简体中文)") 或 [Wine](/index.php/Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wine (简体中文)") 却运行了，请检查 `~/.local/share/applications/defaults.list` 文件中的这两行:
 
 ```
-inode/directory=_someprogram_.desktop
-x-directory/normal=_someprogram_.desktop
+inode/directory=*someprogram*.desktop
+x-directory/normal=*someprogram*.desktop
 
 ```
 
-如果 _someprogram_ 不是 _nautilus_, 就将其修改为 _nautilus_。
+如果 *someprogram* 不是 *nautilus*, 就将其修改为 *nautilus*。
 
 ### “打开所在文件夹” 错误 (KDE)
 

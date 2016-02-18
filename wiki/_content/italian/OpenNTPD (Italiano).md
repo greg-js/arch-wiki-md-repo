@@ -1,6 +1,6 @@
 OpenNTPD (parte del progetto OpenBSD) è un demone che può essere usato per sincronizzare l'orologio di sistema con time servers in internet utilizzando il Network Time Protocol, e può anche funzionare esso stesso come un time server, se necessario.
 
-**Attenzione:** _OpenNTPD_ non è attualmente mantenuto per Linux (leggere [questo thread](https://bbs.archlinux.org/viewtopic.php?id=68627)): gli utenti interessati alle sue funzionalità farebbero meglio ad usare [NTPd](/index.php/NTPd_(Italiano) "NTPd (Italiano)").
+**Attenzione:** *OpenNTPD* non è attualmente mantenuto per Linux (leggere [questo thread](https://bbs.archlinux.org/viewtopic.php?id=68627)): gli utenti interessati alle sue funzionalità farebbero meglio ad usare [NTPd](/index.php/NTPd_(Italiano) "NTPd (Italiano)").
 
 ## Contents
 
@@ -173,7 +173,7 @@ Questa è anche la maniera in cui si potrebbe voler sincronizzare manualmente il
 
 ### Aumenti del tempo
 
-Avviando _openntpd_ in background può portare ad errori di sincronizzazione tra l'ora attuale e l'orario salvato nel proprio computer. Se si scopre un aumento di differenza temporale tra l'orologio del desktop e l'ora attuale, si provi ad avviare il demone _openntpd_ normalmente e non in background.
+Avviando *openntpd* in background può portare ad errori di sincronizzazione tra l'ora attuale e l'orario salvato nel proprio computer. Se si scopre un aumento di differenza temporale tra l'orologio del desktop e l'ora attuale, si provi ad avviare il demone *openntpd* normalmente e non in background.
 
 ### Inizializzazione Fallita
 

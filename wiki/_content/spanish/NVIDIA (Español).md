@@ -1,4 +1,4 @@
-Este artículo trata sobre la instalación y configuración de los controladores _propietarios_ para la tarjeta gráfica [NVIDIA](http://www.nvidia.com). Si, por el contrario, desea obtener información acerca de los controladores de código abierto, consulte [Nouveau](/index.php/Nouveau_(Espa%C3%B1ol) "Nouveau (Español)").
+Este artículo trata sobre la instalación y configuración de los controladores *propietarios* para la tarjeta gráfica [NVIDIA](http://www.nvidia.com). Si, por el contrario, desea obtener información acerca de los controladores de código abierto, consulte [Nouveau](/index.php/Nouveau_(Espa%C3%B1ol) "Nouveau (Español)").
 
 ## Contents
 
@@ -99,11 +99,11 @@ Estas instrucciones son para aquellos que utilizan el paquete stock [linux](http
 
 	Para los modelos más recientes de GPU, puede ser necesario instalar [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/) desde [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)"), ya que los controladores estables pueden no admitir las funciones mas recientemente introducidas.
 
-	Si está en un sistema 64 bits y necesita soporte OpenGL de 32 bits, también puede instalar el paquete _lib32_ equivalente disponible en el repositorio [multilib](/index.php/Multilib "Multilib") (por ejemplo [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) o _lib32-nvidia-{304xx,173xx}-utils_).
+	Si está en un sistema 64 bits y necesita soporte OpenGL de 32 bits, también puede instalar el paquete *lib32* equivalente disponible en el repositorio [multilib](/index.php/Multilib "Multilib") (por ejemplo [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) o *lib32-nvidia-{304xx,173xx}-utils*).
 
 **Sugerencia:** Los controladores nvidia-96xx y nvidia-173xx antiguos también pueden ser instalados desde el [repositorio [city]](http://pkgbuild.com/~bgyorgy/city.html) no oficial.
 
-3\. Reinicie. El paquete [nvidia](https://www.archlinux.org/packages/?name=nvidia) contiene un archivo que introduce en blacklist al módulo _nouveau_, por lo que es necesario reiniciar.
+3\. Reinicie. El paquete [nvidia](https://www.archlinux.org/packages/?name=nvidia) contiene un archivo que introduce en blacklist al módulo *nouveau*, por lo que es necesario reiniciar.
 
 Una vez que el controlador ha sido instalado, proceda a su [configuración](#Configuraci.C3.B3n).
 
@@ -191,7 +191,6 @@ Es posible que después de instalar el controlador no sea necesario crear un arc
 Un archivo de configuración `20-nvidia.conf` básico (o en el desusado `xorg.conf`) podría ser similar a este:
 
  `/etc/X11/xorg.conf.d/20-nvidia.conf` 
-
 ```
 Section "Device"
         Identifier "Nvidia Card"
@@ -231,7 +230,7 @@ Revise su archivo `/etc/X11/xorg.conf` para asegurarse de que los valores predef
 
 ### Varios monitores
 
-	_Consulte el artículo [Multihead](/index.php/Multihead "Multihead") para obtener información más general_
+	*Consulte el artículo [Multihead](/index.php/Multihead "Multihead") para obtener información más general*
 
 **Advertencia:** Desde agosto de 2013, Xinerama se rompe cuando se utiliza el controlador propietario de NVIDIA con las versiones superiores a 319\. Los usuarios que deseen utilizar Xinerama con el controlador de NVIDIA deben utilizar la versión 313 del controlador, que solo funciona con los kernels de Linux anteriores a la 3.10\. Véase [this thread](https://bbs.archlinux.org/viewtopic.php?id=163319) para obtener más información.
 
@@ -240,7 +239,6 @@ Para activar el soporte de pantalla dual, solo tiene que editar el archivo `/etc
 Por cada monitor físico, añadir una sección Monitor, Device y Screen, y luego una sección ServerLayout para su gestión. Tenga en cuenta que cuando Xinerama está activada, el controlador de NVIDIA desactiva automáticamente la propiedad de composición (compositing). Si usted desea disfrutar de esta propiedad, debe comentar la línea `Xinerama` en «`ServerLayout`» y utilizar, en su lugar, TwinView (ver más abajo).
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
-
 ```
 Section "ServerLayout"
     Identifier     "DualSreen"
@@ -310,7 +308,6 @@ TwinView solo funciona sobre una tarjeta de base: Si tiene varias tarjetas (¿y 
 Ejemplo de configuración:
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
-
 ```
 Section "ServerLayout"
     Identifier     "TwinLayout"
@@ -358,7 +355,6 @@ EndSection
 Si tiene varias tarjetas con capacidad SLI, es posible ejecutar más de un monitor conectado a las tarjetas separadas (por ejemplo: dos tarjetas en SLI con un monitor conectado a cada una). La opción «MetaModes» junto con el modo mosaico SLI permite esto. A continuación se muestra una configuración que funciona para el ejemplo anterior y corre con [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") sin problemas.
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
-
 ```
 Section "Device"
         Identifier      "Card A"
@@ -417,7 +413,7 @@ EndSection
 
 ##### Configuración manual de CLI con xrandr
 
-Si las últimas soluciones no funcionan para usted, puede usar la baza _autostart_ de su gestor de ventanas para ejecutar una orden:
+Si las últimas soluciones no funcionan para usted, puede usar la baza *autostart* de su gestor de ventanas para ejecutar una orden:
 
 ```
 xrandr --output DVI-I-0 --auto --primary --left-of DVI-I-1
@@ -450,7 +446,6 @@ También puede utilizar la herramienta `nvidia-settings` proporcionada por [nvid
 Si el controlador no detecta correctamente un segundo monitor, se puede forzar a que lo haga con ConnectedMonitor.
 
  `/etc/X11/xorg.conf` 
-
 ```
 
 Section "Monitor"
@@ -624,7 +619,7 @@ Utilice esta opción si la tarjeta gráfica tiene suficiente memoria RAM (igual 
 
 #### Usar los eventos del sistema
 
-Tomado del archivo [LÉAME](http://http.download.nvidia.com/XFree86/Linux-x86/1.0-7182/README/readme.txt) del controlador de NVIDIA: _«[...] el uso de los eventos del sistema permite notificar eficientemente a X cuando un cliente ha realizado el direct rendering sobre una ventana que tiene que ser compuesta»._ Cualquier cosa identificada, puede ayudar a mejorar el rendimiento, pero esta opción, por el momento, es incompatible con la tecnología SLI y multi-GPU.
+Tomado del archivo [LÉAME](http://http.download.nvidia.com/XFree86/Linux-x86/1.0-7182/README/readme.txt) del controlador de NVIDIA: *«[...] el uso de los eventos del sistema permite notificar eficientemente a X cuando un cliente ha realizado el direct rendering sobre una ventana que tiene que ser compuesta».* Cualquier cosa identificada, puede ayudar a mejorar el rendimiento, pero esta opción, por el momento, es incompatible con la tecnología SLI y multi-GPU.
 
 Añadir en la sección `Device`:
 
@@ -659,12 +654,11 @@ Option "RegistryDwords" "EnableBrightnessControl=1"
 
 **Advertencia:** Desde el 7 de mayo del 2011, se puede experimentar un rendimiento de vídeo lento en GNOME 3 después de activar SLI.
 
-Tomado del apendice de [README](http://http.download.nvidia.com/XFree86/Linux-x86/1.0-8774/README/appendix-d.html) del controlador de Nvidia: _Esta opción controla la configuración SLI del renderizado en configuraciones compatibles._ Una _configuración compatible_ es un ordenador equipado con un placa base SLI-Certified y 2 ó 3 tarjetas de video SLI-Certified GeForce GPUs. Consulte NVIDIA [Zona SLI](http://www.slizone.com/page/home.html) para obtener más información.
+Tomado del apendice de [README](http://http.download.nvidia.com/XFree86/Linux-x86/1.0-8774/README/appendix-d.html) del controlador de Nvidia: *Esta opción controla la configuración SLI del renderizado en configuraciones compatibles.* Una *configuración compatible* es un ordenador equipado con un placa base SLI-Certified y 2 ó 3 tarjetas de video SLI-Certified GeForce GPUs. Consulte NVIDIA [Zona SLI](http://www.slizone.com/page/home.html) para obtener más información.
 
 En primer lugar identifique el PCI Bus ID de la GPU utilizando `lspci`:
 
  `$ lspci | grep VGA` 
-
 ```
 03:00.0 VGA compatible controller: nVidia Corporation G92 [GeForce 8800 GTS 512] (rev a2)
 05:00.0 VGA compatible controller: nVidia Corporation G92 [GeForce 8800 GTS 512] (rev a2)
@@ -706,7 +700,6 @@ Como alternativa, puede usar la utilidad `nvidia-xconfig` para insertar estos ca
 Para comprobar que el modo SLI está habilitado, escriba en un terminal:
 
  `$ nvidia-settings -q all | grep SLIMode` 
-
 ```
   Attribute 'SLIMode' (arch:0.0): AA 
     'SLIMode' is a string attribute.
@@ -948,7 +941,6 @@ Use nvidia-smi que puede leer directamente la temperatura de la GPU sin necesida
 La orden debe generar una salida similar a lo siguiente:
 
  `$ nvidia-smi` 
-
 ```
 Fri Jan  6 18:53:54 2012       
 +------------------------------------------------------+                       
@@ -971,7 +963,6 @@ Fri Jan  6 18:53:54 2012
 Para mostrar solo la temperatura:
 
  `$ nvidia-smi -q -d TEMPERATURE` 
-
 ```
 
 ==============NVSMI LOG==============
@@ -1176,7 +1167,7 @@ EndSection
 
 ### Error '/dev/nvidia0' Input/Output
 
-Este error puede ocurrir por varias razones diferentes, y la solución más común para este error es comprobar los permisos del grupo/archivo, aunque en casi todos los casos _no_ es la solución del problema. La documentación de NVIDIA no aborda en detalle sobre lo que debe hacerse para corregir este problema, pero hay algunas cosas que han funcionado para algunos usuarios. El problema puede ser un conflicto con el IRQ de otro dispositivo o enrutamiento mal asignado ya sea por el kernel o por la BIOS.
+Este error puede ocurrir por varias razones diferentes, y la solución más común para este error es comprobar los permisos del grupo/archivo, aunque en casi todos los casos *no* es la solución del problema. La documentación de NVIDIA no aborda en detalle sobre lo que debe hacerse para corregir este problema, pero hay algunas cosas que han funcionado para algunos usuarios. El problema puede ser un conflicto con el IRQ de otro dispositivo o enrutamiento mal asignado ya sea por el kernel o por la BIOS.
 
 La primera cosa a intentar es quitar otros dispositivos de vídeo tales como tarjetas de captura de vídeo y ver si el problema desaparece. Si hay demasiados procesadores de video en el mismo sistema puede hacer que el kernel sea incapaz de arrancar, debido a problemas de asignación de memoria con el controlador de vídeo. En particular, en los sistemas con baja memoria de vídeo, esto puede suceder incluso si solo hay un procesador de vídeo. En tal caso, debe saber la cantidad de memoria de vídeo de su sistema (por ejemplo con la orden `lspci-v`) y pasar los parámetros de asignación al kernel, por ejemplo:
 
@@ -1406,12 +1397,10 @@ Este error se debe a una clave de color incorrecta que utiliza la versión 11.2.
 Si usted experimenta ocasionales congelamientos/bloqueos completos del sistema (solo el ratón se mueve) durante la utilización de flashplugin y obtiene del registro:
 
  `/var/log/errors.log` 
-
 ```
 NVRM: Xid (0000:01:00): 31, Ch 00000007, engmask 00000120, intr 10000000
 
 ```
-
 0000:01:00): 31, Ch 00000007, engmask 00000120, intr 10000000
 
 una posible solución es desactivar la aceleración hardware del flash, estableciendo
@@ -1433,10 +1422,9 @@ Si se obtine una pantalla roja y utiliza grub2, deshabilite el framebuffer de gr
 
 ### Pantalla en negro en sistemas con GPU integrada de Intel
 
-Si se dispone de una CPU Intel con una GPU integrada (por ejemplo, Intel HD 4000) y se obtiene una pantalla en negro en el arranque después de instalar el paquete [nvidia](https://www.archlinux.org/packages/?name=nvidia), ello se puede deber a un conflicto entre los módulos gráficos. Esto se soluciona con la introducción de algunos módulos en blacklisting para la GPU de Intel. Cree un archivo `/etc/modprobe.d/blacklist.conf` con los módulos _i915_ y _intel_agp_ para impedir que estos se carguen en el arranque:
+Si se dispone de una CPU Intel con una GPU integrada (por ejemplo, Intel HD 4000) y se obtiene una pantalla en negro en el arranque después de instalar el paquete [nvidia](https://www.archlinux.org/packages/?name=nvidia), ello se puede deber a un conflicto entre los módulos gráficos. Esto se soluciona con la introducción de algunos módulos en blacklisting para la GPU de Intel. Cree un archivo `/etc/modprobe.d/blacklist.conf` con los módulos *i915* y *intel_agp* para impedir que estos se carguen en el arranque:
 
  `/etc/modprobe.d/blacklist.conf` 
-
 ```
 install i915 /bin/false
 install intel_agp /bin/false
@@ -1445,10 +1433,9 @@ install intel_agp /bin/false
 
 ### Pantalla en negro en sistemas con GPU VIA integrada
 
-Como antes, poner en blacklisting el módulo _viafb_ puede resolver los conflictos con los controladores de NVIDIA:
+Como antes, poner en blacklisting el módulo *viafb* puede resolver los conflictos con los controladores de NVIDIA:
 
  `/etc/modprobe.d/blacklist.conf` 
-
 ```
 install viafb /usr/bin/false
 
@@ -1468,7 +1455,6 @@ Al igual que anteriormente, si se tiene una CPU Intel con una GPU integrada y X 
 entonces será necesario añadir el BusID de la tarjeta nvidia a la propia configuración de X. Puede encontrar dicho parámetro con la siguiente orden:
 
  `# lspci | grep VGA` 
-
 ```
 00:02.0 VGA compatible controller: Intel Corporation Xeon E3-1200 v2/3rd Gen Core processor Graphics Controller (rev 09)
 01:00.0 VGA compatible controller: NVIDIA Corporation GK107 [GeForce GTX 650] (rev a1)
@@ -1478,7 +1464,6 @@ entonces será necesario añadir el BusID de la tarjeta nvidia a la propia confi
 para resolver el problema se añade la propia tarjeta en la sección Device en el archivo de configuración de X. En este caso:
 
  `/etc/X11/xorg.conf.d/10-nvidia.conf` 
-
 ```
 Section "Device"
     Identifier     "Device0"

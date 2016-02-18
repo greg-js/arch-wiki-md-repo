@@ -21,7 +21,7 @@ de [Home - LibreOffice](http://www.libreoffice.org/):
 
 El apoyo oficial a [OpenOffice.org](/index.php/OpenOffice.org "OpenOffice.org") se abandonó en favor de LibreOffice. Más información: [Quitar OpenOffice Oracle (Arch-general)](https://mailman.archlinux.org/pipermail/arch-general/2011-March/018819.html).
 
-LibreOffice es el fork de la _Document Foundation_ en el repositorio extra, que incluye mejoras y nuevas características.
+LibreOffice es el fork de la *Document Foundation* en el repositorio extra, que incluye mejoras y nuevas características.
 
 ## Instalación
 
@@ -162,7 +162,7 @@ Algunos ajustes pueden mejorar el tiempo de carga LibreOffice y la capacidad de 
 
 ### Sustitución de fuentes
 
-Esta configuración se puede cambiar en las opciones LibreOffice. En el menú desplegable, seleccione _Herramientas> Opciones> LibreOffice> Fuentes_. Marque la casilla que dice_Aplicar_sustitución de tablas. Escriba `Andale Sans UI` en el cuadro Fuente y elija su tipo de letra seado para la opción de reemplazar_con_. Cuando termine, haga clic en la_marca_. A continuación, seleccione el_siempre_y_sólo_opciones de pantalla en el cuadro a continuación. Haga clic en Aceptar. A continuación, tendrá que ir a_Herramientas> Opciones LibreOffice>_> Ver y desmarque la opción "Usar fuente del sistema para la interfaz de usuario ". Si utiliza una fuente no antialised, como Arial, también tendrá que desactivar "anti-aliasing de pantalla de la fuente" antes de las fuentes de menú procesar correctamente.
+Esta configuración se puede cambiar en las opciones LibreOffice. En el menú desplegable, seleccione *Herramientas> Opciones> LibreOffice> Fuentes*. Marque la casilla que dice*Aplicar*sustitución de tablas. Escriba `Andale Sans UI` en el cuadro Fuente y elija su tipo de letra seado para la opción de reemplazar*con*. Cuando termine, haga clic en la*marca*. A continuación, seleccione el*siempre*y*sólo*opciones de pantalla en el cuadro a continuación. Haga clic en Aceptar. A continuación, tendrá que ir a*Herramientas> Opciones LibreOffice>*> Ver y desmarque la opción "Usar fuente del sistema para la interfaz de usuario ". Si utiliza una fuente no antialised, como Arial, también tendrá que desactivar "anti-aliasing de pantalla de la fuente" antes de las fuentes de menú procesar correctamente.
 
 ### No se pueden ingresar acentos
 

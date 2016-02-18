@@ -46,7 +46,7 @@ A veces el dispositivo está dividido hasta un máximo de cuatro particiones, y 
 
 ```
 
-Elimine todas las particiones que aparezcan (_d_ y número de la partición), cree una nueva partición con _n_ (le sugiero que utilice una única partición), pulse _w_ para escribir los cambios y salga.
+Elimine todas las particiones que aparezcan (*d* y número de la partición), cree una nueva partición con *n* (le sugiero que utilice una única partición), pulse *w* para escribir los cambios y salga.
 
 Cree un sistema de ficheros en el dispositivo:
 

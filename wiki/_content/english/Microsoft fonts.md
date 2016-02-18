@@ -16,7 +16,7 @@ This article explains how to install TrueType Microsoft fonts and emulate Window
 
 If there is a Windows partition mounted, its fonts can be used by linking to them.
 
-_For example, if the Windows C:\ partition is mounted at `/windows`:_
+*For example, if the Windows C:\ partition is mounted at `/windows`:*
 
 ```
 # ln -s /windows/Windows/Fonts /usr/share/fonts/WindowsFonts
@@ -78,7 +78,7 @@ Then regenerate the fontconfig cache:
 *   [Webdings](https://en.wikipedia.org/wiki/Webdings "wikipedia:Webdings")
 *   [Wingdings](https://en.wikipedia.org/wiki/Wingdings "wikipedia:Wingdings")
 
-**Warning:** According to [original Microsoft's End User License Agreement](http://web.archive.org/web/20020227054122/www.microsoft.com/typography/fontpack/eula.htm), there are _some_ legal limitations when using the above fonts.
+**Warning:** According to [original Microsoft's End User License Agreement](http://web.archive.org/web/20020227054122/www.microsoft.com/typography/fontpack/eula.htm), there are *some* legal limitations when using the above fonts.
 
 You can also obtain [ttf-tahoma](https://aur.archlinux.org/packages/ttf-tahoma/) which, as you might expect, contains [Tahoma](https://en.wikipedia.org/wiki/Tahoma_(typeface) "wikipedia:Tahoma (typeface)").
 
@@ -142,7 +142,7 @@ Although it provides newer versions of the fonts, it **cannot automatically down
 
 **Note:** usage of Microsoft fonts outside running Windows system is prohibited by EULA (although in certain countries EULA is invalid). Please consult Microsoft license before using fonts.
 
-You can acquire fonts from an installed and fully updated Windows 8.1 system. Any edition of _Windows 8.1 build **Windows 8.1 6.3.9600.17238**_ will work.
+You can acquire fonts from an installed and fully updated Windows 8.1 system. Any edition of *Windows 8.1 build **Windows 8.1 6.3.9600.17238*** will work.
 
 On the installed Windows 8.1 system fonts are usually located in `[%WINDIR%](http://technet.microsoft.com/en-us/library/hh825266.aspx)\Fonts` and license file is `[%SYSTEM32%](http://technet.microsoft.com/en-us/library/hh825266.aspx)\license.rtf`.
 

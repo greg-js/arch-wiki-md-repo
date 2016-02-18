@@ -27,7 +27,7 @@ cpufreq تعني بنية النواة التحتية التي تقوم بتغي
 
 ## أدوات(cpupower)
 
-حزمة [cpupower](https://www.archlinux.org/packages/?name=cpupower) هي عبارة عن أدوات صممت لتساعد في _تغيير تردد المعالج_، مع العلم أنك تستطيع تغيير التردد من دون وجود هذه الحزمة ولكن من المستحسن وجودها لأنها تحتوي على أدوات مفيدة تعمل في سطر الأوامر وخدمة لتغيير مخطط الطاقة governor عند الإقلاع، يتواجد ملف تهيئة الحزمة [cpupower](https://www.archlinux.org/packages/?name=cpupower) في المسار `/etc/default/cpupower`، يتم قراءة هذا الملف من قبل سكربت bash في `/usr/lib/systemd/scripts/cpupower` والذي يتم تفعيله من قبل مدير النظام `systemd` مع `cpupower.service`، لتفعيل [cpupower](https://www.archlinux.org/packages/?name=cpupower) عند الإقلاع باستعمال [systemd](https://www.archlinux.org/packages/?name=systemd) قم بتنفيذ:
+حزمة [cpupower](https://www.archlinux.org/packages/?name=cpupower) هي عبارة عن أدوات صممت لتساعد في *تغيير تردد المعالج*، مع العلم أنك تستطيع تغيير التردد من دون وجود هذه الحزمة ولكن من المستحسن وجودها لأنها تحتوي على أدوات مفيدة تعمل في سطر الأوامر وخدمة لتغيير مخطط الطاقة governor عند الإقلاع، يتواجد ملف تهيئة الحزمة [cpupower](https://www.archlinux.org/packages/?name=cpupower) في المسار `/etc/default/cpupower`، يتم قراءة هذا الملف من قبل سكربت bash في `/usr/lib/systemd/scripts/cpupower` والذي يتم تفعيله من قبل مدير النظام `systemd` مع `cpupower.service`، لتفعيل [cpupower](https://www.archlinux.org/packages/?name=cpupower) عند الإقلاع باستعمال [systemd](https://www.archlinux.org/packages/?name=systemd) قم بتنفيذ:
 
 ```
 # systemctl enable cpupower.service
@@ -50,7 +50,6 @@ $ ls /lib/modules/$(uname -r)/kernel/drivers/cpufreq/
 ```
 
 **Tip:** لتحميل الوحدة أثناء إقلاع النظام نفذ التالي:
-
 ```
 # echo <module> >/etc/modules-load.d/<module>.conf
 
@@ -93,7 +92,6 @@ $ cpupower frequency-info
 | cpufreq_userspace | تجعل المعالج يعمل بالترددات التي يحددها المستخدم |
 
 **Tip:** لمراقبة سرعة المعالج لحظياً قم بتنفيذ:
-
 ```
 $ watch grep \"cpu MHz\" /proc/cpuinfo
 
@@ -111,7 +109,6 @@ $ watch grep \"cpu MHz\" /proc/cpuinfo
 #### عند عدم استخدام cpupower
 
 **Tip:** لتحميل مخطط أثناء إقلاع النظام نفذ التالي:
-
 ```
 # echo <module> > /etc/modules-load.d/<module>
 
@@ -250,7 +247,7 @@ ResultActive=yes
 
 *   بعض التطبيقات مثل [ntop](/index.php/Ntop "Ntop") لا تستجيب بشكل جيد لتغيير التردد التلقائي، وفي هذه الحالة يمكن لـ ntop أن يسبب مشاكل في التجزئة وضياع الكثير من المعلومات والبيانات، كما أن مخطط `on-demand` لا يستطيع أن يرفع من تردد المعالج بسرعة عندما يكون التردد الحالي غير كافي لمعالجة حزم البيانات الواردة إلى واجهة مراقبة الشبكة monitored network interface.
 
-*   في بعض المعالجات قد يكون الأداء ضعيفاً مع إعدادات مخطط `on-demand` الافتراضية (على سبيل المثال: ملفات الفيديو بصيغة فلاش لا تعمل بسلاسة أو تأثيرات النوافذ تكون مهتزة وغير ثابتة)، في هذه الحالة وبدلاً من تعطيل المخطط نهائياً لحل هذه المشكلة، يمكنك الزيادة من اندفاع التردد وذلك بتخفيض عتبة (نقطة بدء) الزيادة _up_threshold_ لمتغير [sysctl](/index.php/Sysctl "Sysctl") لكل معالج على حدى.
+*   في بعض المعالجات قد يكون الأداء ضعيفاً مع إعدادات مخطط `on-demand` الافتراضية (على سبيل المثال: ملفات الفيديو بصيغة فلاش لا تعمل بسلاسة أو تأثيرات النوافذ تكون مهتزة وغير ثابتة)، في هذه الحالة وبدلاً من تعطيل المخطط نهائياً لحل هذه المشكلة، يمكنك الزيادة من اندفاع التردد وذلك بتخفيض عتبة (نقطة بدء) الزيادة *up_threshold* لمتغير [sysctl](/index.php/Sysctl "Sysctl") لكل معالج على حدى.
 
 قم بالاطلاع على [#Changing the on-demand governor's threshold](#Changing_the_on-demand_governor.27s_threshold).
 
@@ -277,7 +274,6 @@ ResultActive=yes
 أما لجعل هذا التجاهل بشكل دائم قم بالاطلاع على [Kernel modules](/index.php/Kernel_modules#Configuration "Kernel modules") أو قم بإضافة `processor.ignore_ppc=1` إلى سطر إقلاع النواة أو قم بإنشاء:
 
  `/etc/modprobe.d/ignore_ppc.conf` 
-
 ```
 # If the frequency of your machine gets wrongly limited by BIOS, this should help
 options processor ignore_ppc=1

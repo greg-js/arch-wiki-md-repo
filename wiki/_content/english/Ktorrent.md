@@ -11,7 +11,6 @@ Since Ktorrent is a GUI only application, fortunately has a DBUS interface, so y
 Here is the script that I use. I have found it on internet on an OpenSuse forum (made by amaurea) and I integrated new commands to set max upload/download speed and to suspend/resume ktorrent activity.
 
  `/usr/local/bin/kt` 
-
 ```
 #!/usr/bin/env bash
 #
@@ -62,7 +61,8 @@ if [ ! $pid ]; then
     esac
     exit
 fi
-eval "export $(perl -pne 's/\0/\n/g' /proc/$(pidof ktorrent)/environ | fgrep -a DBUS_SESSION_BUS_ADDRESS)"
+eval "export $(perl -pne 's/\0/
+/g' /proc/$(pidof ktorrent)/environ | fgrep -a DBUS_SESSION_BUS_ADDRESS)"
 loc="org.ktorrent.ktorrent"
 cmd="qdbus $loc"
 case "$1" in
@@ -87,7 +87,8 @@ case "$1" in
         i=0
         for torrent in $torrents; do
             name=$($cmd /torrent/$torrent name)
-            printf "%d %s %s\n" $i $torrent "$name"
+            printf "%d %s %s
+" $i $torrent "$name"
             i=$(($i+1))
         done ;;
     info)
@@ -109,7 +110,8 @@ case "$1" in
             priority=$($cmd /torrent/$torrent priority)
             sl=$(printf "[%d|%d]" $seed $leech)
             pri=$(printf "(%d)" $priority)
-            printf "%3.0lf%% of %11d %4.0lf kb/s %8s %4s %s\n" $((100*$prog/$dsize)) $dsize $(($speed/1000)) $sl $pri "$name"
+            printf "%3.0lf%% of %11d %4.0lf kb/s %8s %4s %s
+" $((100*$prog/$dsize)) $dsize $(($speed/1000)) $sl $pri "$name"
             i=$(($i+1))
         done ;;
     name|stop|start|remove|files)
@@ -136,7 +138,8 @@ case "$1" in
                     pct=$($cmd /torrent/$torrent filePercentage $i)
                     size=$($cmd /torrent/$torrent fileSize $i)
                     priority=$($cmd /torrent/$torrent filePriority $i)
-                    printf "%d %3.0lf%% of %11d [%d] %s\n" $i $pct $size $priority "$path"
+                    printf "%d %3.0lf%% of %11d [%d] %s
+" $i $pct $size $priority "$path"
                 done ;;
         esac ;;
     pri|priority|prioritize)

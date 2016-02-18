@@ -52,7 +52,6 @@ Después de configurar dnsmasq necesitará configurar el cliente DHCP para antep
 La opción principal consiste en una configuración pura de `resolv.conf`. Para ello, basta con poner el primer servidor de nombres en `/etc/resolv.conf` apuntando a localhost:
 
  `/etc/resolv.conf` 
-
 ```
 nameserver 127.0.0.1
 # Servidores de nombres externos
@@ -63,7 +62,6 @@ nameserver 127.0.0.1
 Ahora las consultas DNS serán resueltas, en primer lugar, con dnsmasq, acudiendo únicamente a los servidores externos si dnsmasq no puede resolver la consulta. [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), por desgracia, tiende a sobrescribir, por defecto, el archivo `/etc/resolv.conf`, así que, si usa DHCP, es una buena idea proteger `/etc/resolv.conf` . Para ello, agregue `nohook resolv.conf` en el archivo de configuración de dhcpcd:
 
  `/etc/dhcpcd.conf` 
-
 ```
 ...
 nohook resolv.conf
@@ -81,7 +79,6 @@ También es posible proteger contra escritura su resolv.conf con:
 Una limitación de Linux a la hora de manejar las consultas DNS es que solo pueden utilizarse un máximo de tres servidores de nombres presentes en `resolv.conf`. Como solución alternativa, puede hacer de localhost el único servidor de nombres en `resolv.conf` y, luego, crear un archivo separado, `resolv-file`, para sus servidores de nombres externos. Para ello, en primer lugar, cree un nuevo archivo resolv para dnsmasq:
 
  `/etc/resolv.dnsmasq.conf` 
-
 ```
 # Servidores de nombres de Google, por ejemplo
 nameserver 8.8.8.8
@@ -92,7 +89,6 @@ nameserver 8.8.4.4
 Y, luego, edite `/etc/dnsmasq.conf`, para utilizar el nuevo archivo resolv:
 
  `/etc/dnsmasq.conf` 
-
 ```
 ...
 resolv-file=/etc/resolv.dnsmasq.conf
@@ -120,10 +116,9 @@ prepend domain-name-servers 127.0.0.1;
 
 ### NetworkManager
 
-[NetworkManager](/index.php/NetworkManager_(Espa%C3%B1ol) "NetworkManager (Español)") tiene la capacidad de iniciar _dnsmasq_ desde su archivo de configuración. Añada la opción `dns=dnsmasq` a `NetworkManager.conf` en la sección `[main]`, después de desactivar `dnsmasq.service` para que puede ser cargado al comienzo por [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"):
+[NetworkManager](/index.php/NetworkManager_(Espa%C3%B1ol) "NetworkManager (Español)") tiene la capacidad de iniciar *dnsmasq* desde su archivo de configuración. Añada la opción `dns=dnsmasq` a `NetworkManager.conf` en la sección `[main]`, después de desactivar `dnsmasq.service` para que puede ser cargado al comienzo por [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"):
 
  `/etc/NetworkManager/NetworkManager.conf` 
-
 ```
 [main]
 plugins=keyfile
@@ -131,11 +126,11 @@ dns=dnsmasq
 
 ```
 
-Se pueden crear configuraciones personalizadas para _dnsmasq_, mediante la creación de archivos de configuración en `/etc/NetworkManager/dnsmasq.d/`. Por ejemplo, para cambiar el tamaño de la memoria caché DNS (que se almacena en RAM):
+Se pueden crear configuraciones personalizadas para *dnsmasq*, mediante la creación de archivos de configuración en `/etc/NetworkManager/dnsmasq.d/`. Por ejemplo, para cambiar el tamaño de la memoria caché DNS (que se almacena en RAM):
 
  `/etc/NetworkManager/dnsmasq.d/cache`  `cache-size=1000` 
 
-Cuando _dnsmasq_ sea iniciado por `NetworkManager`, el archivo de configuración de este directorio será usado en lugar del archivo de configuración predeterminado.
+Cuando *dnsmasq* sea iniciado por `NetworkManager`, el archivo de configuración de este directorio será usado en lugar del archivo de configuración predeterminado.
 
 **Sugerencia:** Este método puede permitir que active los ajustes de DNS personalizados en dominios particulares. Por ejemplo: `server=/example1.com/exemple2.com/xx.xxx.xxx.x` cambia la primera dirección DNS a `xx.xxx.xxx.xx` mientras se navega únicamente por los sitios webs siguientes: `example1.com, example2.com`. Este método es preferible a una configuración global de DNS cuando se utilizan servidores de nombres DNS particulares que carecen de rapidez, estabilidad, privacidad y seguridad.
 
@@ -187,7 +182,7 @@ También será necesario reiniciar la red si se ha creado un archivo `/etc/resol
 
 ### Caching DNS
 
-Para hacer una prueba de velocidad de búsqueda, elija un sitio web que no haya visitado desde que dnsmasq se inició (_dig_ es parte del paquete [dnsutils](https://www.archlinux.org/packages/?name=dnsutils)):
+Para hacer una prueba de velocidad de búsqueda, elija un sitio web que no haya visitado desde que dnsmasq se inició (*dig* es parte del paquete [dnsutils](https://www.archlinux.org/packages/?name=dnsutils)):
 
 ```
 $ dig archlinux.org | grep "Query time"
@@ -197,14 +192,11 @@ $ dig archlinux.org | grep "Query time"
 Al ejecutar la orden de nuevo, se utilizará la IP DNS almacenada en caché y el resultado será un tiempo de búsqueda más rápido, si dnsmasq está configurado correctamente:
 
  `$ dig archlinux.org | grep "Query time"` 
-
 ```
 ;; Query time: 18 msec
 
 ```
-
  `$ dig archlinux.org | grep "Query time"` 
-
 ```
 ;; Query time: 2 msec
 

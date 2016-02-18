@@ -18,7 +18,6 @@ Lilypond is a Free Software score writing application. Its input is a plain text
 Create a test file like:
 
  `test.ly` 
-
 ```
 {
  c' e' g' e'
@@ -46,7 +45,6 @@ Vim with the possibilities of compiling the code within the program along with s
 The next thing you need to do is enable the syntaxes. To do so edit `~/.vimrc` with your favorite editor and after editing your file should look like this:
 
  `~/.vimrc` 
-
 ```
 set runtimepath+=/usr/share/lilypond/2.12.3/vim/ 
 syntax on		" Turn on colors
@@ -66,7 +64,7 @@ You can find it in [AUR](/index.php/AUR "AUR").
 
 [Install](/index.php/Install "Install") [jedit](https://www.archlinux.org/packages/?name=jedit) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
-Open jEdit and go to _Plugins > Plugin Manager_. Select the _Install_ tab and click on _LilyPondTools_. Hit the _Install_ button.
+Open jEdit and go to *Plugins > Plugin Manager*. Select the *Install* tab and click on *LilyPondTools*. Hit the *Install* button.
 
 ### Speed up writing notes
 
@@ -74,8 +72,8 @@ LilyComp [[3]](http://lilycomp.sourceforge.net/) can be used to speed up writing
 
 ### More useful info
 
-*   For JEdit: Under plugins install _LookAndFeel_. You can find good stuff under Visual.
+*   For JEdit: Under plugins install *LookAndFeel*. You can find good stuff under Visual.
 
-For better usability my settings are: under _Global Options > Docking_ put the _Console_ and _Error List_ to _right_ and _LilyPond PDF preview_ to _bottom_ under _Docking_ position. Then under _View_ push _Alternate docked window placement_ and _Alternate tool bar placement_ buttons.
+For better usability my settings are: under *Global Options > Docking* put the *Console* and *Error List* to *right* and *LilyPond PDF preview* to *bottom* under *Docking* position. Then under *View* push *Alternate docked window placement* and *Alternate tool bar placement* buttons.
 
 *   For a tutorial on how to use this software visit LilyPond [[4]](http://lilypond.org/) website.

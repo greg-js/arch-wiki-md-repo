@@ -40,7 +40,7 @@ Véase el artículo de [ArchWiki](/index.php/Main_Page_(Espa%C3%B1ol) "Main Page
 
 #### Calculadoras
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [Comparison of software calculators](https://en.wikipedia.org/wiki/Comparison_of_software_calculators "wikipedia:Comparison of software calculators").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [Comparison of software calculators](https://en.wikipedia.org/wiki/Comparison_of_software_calculators "wikipedia:Comparison of software calculators").
 
 *   **[bc](https://en.wikipedia.org/wiki/bc_programming_language "wikipedia:bc programming language")** — Lenguaje de programación de cálculo numérico con [precisión arbitraria](https://en.wikipedia.org/wiki/es:Precisi%C3%B3n_arbitraria "wikipedia:es:Precisión arbitraria").
 
@@ -82,9 +82,9 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Sistema_algebraico_computacional "wikipedia:es:Sistema algebraico computacional")
 
-	_«Un sistema algebraico computacional o sistema de álgebra computacional SAC (CAS, del inglés computer algebra system) es un programa de ordenador o calculadora avanzada que facilita el cálculo simbólico. La principal diferencia entre un CAS y una calculadora tradicional es la habilidad del primero para trabajar con ecuaciones y fórmulas simbólicamente, en lugar de numéricamente.»_
+	*«Un sistema algebraico computacional o sistema de álgebra computacional SAC (CAS, del inglés computer algebra system) es un programa de ordenador o calculadora avanzada que facilita el cálculo simbólico. La principal diferencia entre un CAS y una calculadora tradicional es la habilidad del primero para trabajar con ecuaciones y fórmulas simbólicamente, en lugar de numéricamente.»*
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [Comparison of computer algebra systems](https://en.wikipedia.org/wiki/Comparison_of_computer_algebra_systems "wikipedia:Comparison of computer algebra systems").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [Comparison of computer algebra systems](https://en.wikipedia.org/wiki/Comparison_of_computer_algebra_systems "wikipedia:Comparison of computer algebra systems").
 
 *   **[Fermat](https://en.wikipedia.org/wiki/Fermat_(computer_algebra_system) "wikipedia:Fermat (computer algebra system)")** — Sistema algebraico por ordenador que hace aritmética de enteros arbitrariamente largos y fracciones, polinomios multivariados, cálculos simbólicos, matrices sobre anillos de polinomios, gráficos, y otros cálculos numéricos.
 
@@ -114,10 +114,10 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 	Según Wikipedia
 
-*   [Ciencias de la computación](https://en.wikipedia.org/wiki/es:Ciencias_de_la_computaci%C3%B3n "wikipedia:es:Ciencias de la computación"): _«Las ciencias de la computación o ciencias computacionales son aquellas que abarcan las bases teóricas de la información y la computación, así como su aplicación en sistemas computacionales.»_
-*   [Técnicas de la computación](https://en.wikipedia.org/wiki/Technical_computing "wikipedia:Technical computing"):_«Técnica computacional es la aplicación de los principios matemáticos e informáticos de la ciencia computacional para resolver problemas prácticos de interés industrial.»_
+*   [Ciencias de la computación](https://en.wikipedia.org/wiki/es:Ciencias_de_la_computaci%C3%B3n "wikipedia:es:Ciencias de la computación"): *«Las ciencias de la computación o ciencias computacionales son aquellas que abarcan las bases teóricas de la información y la computación, así como su aplicación en sistemas computacionales.»*
+*   [Técnicas de la computación](https://en.wikipedia.org/wiki/Technical_computing "wikipedia:Technical computing"):*«Técnica computacional es la aplicación de los principios matemáticos e informáticos de la ciencia computacional para resolver problemas prácticos de interés industrial.»*
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [Comparison of numerical analysis software](https://en.wikipedia.org/wiki/Comparison_of_numerical_analysis_software "wikipedia:Comparison of numerical analysis software").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [Comparison of numerical analysis software](https://en.wikipedia.org/wiki/Comparison_of_numerical_analysis_software "wikipedia:Comparison of numerical analysis software").
 
 *   **EngLab** — Plataforma para matemáticas dotada de un lenguaje propio con una sintaxis similar a C.
 
@@ -149,7 +149,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 #### Estadística
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [Comparison of statistical packages](https://en.wikipedia.org/wiki/Comparison_of_statistical_packages "wikipedia:Comparison of statistical packages").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [Comparison of statistical packages](https://en.wikipedia.org/wiki/Comparison_of_statistical_packages "wikipedia:Comparison of statistical packages").
 
 *   **[JAGS](https://en.wikipedia.org/wiki/Just_another_Gibbs_sampler "wikipedia:Just another Gibbs sampler") (Just another Gibbs sampler)** — Programa multiplataforma para el análisis de los modelos jerárquicos bayesianos utilizando el método Markov Chain Monte Carlo (MCMC).
 
@@ -169,7 +169,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 #### Evaluación de datos
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [List of information graphics software](https://en.wikipedia.org/wiki/List_of_information_graphics_software "wikipedia:List of information graphics software").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [List of information graphics software](https://en.wikipedia.org/wiki/List_of_information_graphics_software "wikipedia:List of information graphics software").
 
 *   **Extrema** — Herramienta de análisis y visualización de datos.
 
@@ -191,7 +191,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 	[http://labplot.sourceforge.net/](http://labplot.sourceforge.net/) || [labplot2](https://aur.archlinux.org/packages/labplot2/)
 
-*   **[QtiPlot](https://en.wikipedia.org/wiki/QtiPlot "wikipedia:QtiPlot")** — Aplicación independiente utilizada para la representación gráfica científica interactiva y el análisis de datos, similar a la privativa [Origin](https://en.wikipedia.org/wiki/Origin_(software) "wikipedia:Origin (software)") o [SigmaPlot](https://en.wikipedia.org/wiki/SigmaPlot "wikipedia:SigmaPlot").
+*   **[QtiPlot](https://en.wikipedia.org/wiki/QtiPlot o [SigmaPlot](https://en.wikipedia.org/wiki/SigmaPlot "wikipedia:SigmaPlot").
 
 	[http://soft.proindependent.com/qtiplot.html](http://soft.proindependent.com/qtiplot.html) || [qtiplot](https://www.archlinux.org/packages/?name=qtiplot)
 
@@ -209,11 +209,11 @@ Véase también el apartado: [Hojas de cálculo](/index.php/List_of_Applications
 
 #### Biología computacional y bioinformática
 
-	[Biología computacional](https://en.wikipedia.org/wiki/es:Biolog%C3%ADa_computacional "wikipedia:es:Biología computacional"): _«La biología computacional es el uso de algoritmos y ordenadores para facilitar el entendimiento de problemas biológicos. Algunos de los campos de estudio relacionados a la biología computacional son: bioinformática, modelado molecular, bioquímica...»_
+	[Biología computacional](https://en.wikipedia.org/wiki/es:Biolog%C3%ADa_computacional "wikipedia:es:Biología computacional"): *«La biología computacional es el uso de algoritmos y ordenadores para facilitar el entendimiento de problemas biológicos. Algunos de los campos de estudio relacionados a la biología computacional son: bioinformática, modelado molecular, bioquímica...»*
 
-	[Bioinformática](https://en.wikipedia.org/wiki/es:Bioinform%C3%A1tica "wikipedia:es:Bioinformática"): _«La bioinformática, según una de sus definiciones más sencillas, es la aplicación de tecnología de computadores a la gestión y análisis de datos biológicos.»_
+	[Bioinformática](https://en.wikipedia.org/wiki/es:Bioinform%C3%A1tica "wikipedia:es:Bioinformática"): *«La bioinformática, según una de sus definiciones más sencillas, es la aplicación de tecnología de computadores a la gestión y análisis de datos biológicos.»*
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [List of open source bioinformatics software](https://en.wikipedia.org/wiki/List_of_open_source_bioinformatics_software "wikipedia:List of open source bioinformatics software").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [List of open source bioinformatics software](https://en.wikipedia.org/wiki/List_of_open_source_bioinformatics_software "wikipedia:List of open source bioinformatics software").
 
 *   **[BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL") (Biochemical Algorithms Library)** — Marco de aplicaciones en C++ que proporciona un amplio conjunto de estructuras de datos, como clases para mecánicas moleculares, métodos avanzados de solvatación, comparación y análisis de estructuras de proteínas, importación/exportación de archivos, y visualización.
 
@@ -245,7 +245,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 #### Visores moleculares
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [List of molecular graphics systems](https://en.wikipedia.org/wiki/List_of_molecular_graphics_systems "wikipedia:List of molecular graphics systems").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [List of molecular graphics systems](https://en.wikipedia.org/wiki/List_of_molecular_graphics_systems "wikipedia:List of molecular graphics systems").
 
 *   **[Avogadro](https://en.wikipedia.org/wiki/Avogadro_(software) "wikipedia:Avogadro (software)")** — Editor, visor y simulador de estructuras moleculares en 3D (también admite la descarga de archivos desde el [Protein Data Bank](https://en.wikipedia.org/wiki/Protein_Data_Bank "wikipedia:Protein Data Bank")).
 
@@ -303,7 +303,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Bioqu%C3%ADmica "wikipedia:es:Bioquímica")
 
-	_«Es la ciencia que estudia la base química de las moléculas que componen las células y los tejidos, que catalizan las reacciones químicas del metabolismo celular como la digestión, la fotosíntesis y la inmunidad, entre otras muchas cosas.»_
+	*«Es la ciencia que estudia la base química de las moléculas que componen las células y los tejidos, que catalizan las reacciones químicas del metabolismo celular como la digestión, la fotosíntesis y la inmunidad, entre otras muchas cosas.»*
 
 *   **[Bioclipse](https://en.wikipedia.org/wiki/Bioclipse "wikipedia:Bioclipse")** — Plataforma visual basada en Java para bioquímica, que utiliza el cliente Eclipse Rich Client Platform (RCP).
 
@@ -313,7 +313,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Modelado_molecular "wikipedia:es:Modelado molecular")
 
-	_«El modelado molecular o simulación molecular es un término general que engloba métodos teóricos y técnicas computacionales para modelar, imitar y predecir el comportamiento de moléculas.»_
+	*«El modelado molecular o simulación molecular es un término general que engloba métodos teóricos y técnicas computacionales para modelar, imitar y predecir el comportamiento de moléculas.»*
 
 *   **[GROMACS](https://en.wikipedia.org/wiki/GROMACS "wikipedia:GROMACS") (GROningen MAchine for Chemical Simulations)** — Paquete versátil para representar dinámicas moleculares, es decir, simular ecuaciones newtonianas del movimiento para sistemas con cientos de millones de partículas.
 
@@ -379,7 +379,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 #### Electrónica
 
-Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) "wikipedia:es:Main Page (Español)") sobre este asunto para obtener más información: [Comparison of EDA software](https://en.wikipedia.org/wiki/Comparison_of_EDA_software "wikipedia:Comparison of EDA software").
+Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(Espa%C3%B1ol) sobre este asunto para obtener más información: [Comparison of EDA software](https://en.wikipedia.org/wiki/Comparison_of_EDA_software "wikipedia:Comparison of EDA software").
 
 *   **[gEDA](/index.php/GEDA "GEDA")** — Suite completa y conjunto de herramientas de Electronic Design Automation (automatización de diseño electrónico) que se utilizan para el diseño de circuitos eléctricos, captura esquemática, simulación, prototipos y producción.
 

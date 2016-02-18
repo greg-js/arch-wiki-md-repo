@@ -18,11 +18,11 @@ TrueType fonts appear to be the best supported format for use with Java.
 [Anti-aliasing](https://en.wikipedia.org/wiki/Font_rasterization "wikipedia:Font rasterization") of fonts is available with Oracle Java 1.6 and OpenJDK on Linux. To do this system-wide, add the following line to `/etc/environment`:
 
 ```
-_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=_setting'_
+_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=*setting'*
 
 ```
 
-Where `_setting_` is one of the values:
+Where `*setting*` is one of the values:
 
 | Setting | Description |
 | `off`, `false`, `default` | No anti-aliasing |
@@ -43,12 +43,12 @@ _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 **Note:**
 
 *   The described Java options only work for applications that draw their GUI in Java, like Jdownloader, and not for applications which utilize Java as backend only, like Openoffice.org and Matlab.
-*   **TrueType** fonts contain a **g**rid-fitting **a**nd **s**can-conversion **p**rocedure (_GASP_) table with the designer's recommendations for the font's display at different point sizes. Some sizes are recommended to be fully anti-aliased, others are to be hinted, and some are to be displayed as bitmaps. Combinations are sometimes used for certain point sizes.
+*   **TrueType** fonts contain a **g**rid-fitting **a**nd **s**can-conversion **p**rocedure (*GASP*) table with the designer's recommendations for the font's display at different point sizes. Some sizes are recommended to be fully anti-aliased, others are to be hinted, and some are to be displayed as bitmaps. Combinations are sometimes used for certain point sizes.
 
 Specify the variable on the command line before the executable to try the new configuration:
 
 ```
-_JAVA_OPTIONS=_options_ _exectuable_ 
+_JAVA_OPTIONS=*options* *exectuable* 
 
 ```
 

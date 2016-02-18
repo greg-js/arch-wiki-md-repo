@@ -27,9 +27,9 @@ Installare [AUR|sugar] da [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)").
 
 Questo [script](http://wiki.sugarlabs.org/go/Development_Team/Jhbuild), previsto dagli sviluppatori, è un sistema perfetto per compilare che permette di scaricare e costruire Sugar quasi nella sua interezza. Vi sarà richiesto di quali pacchetti avete bisogno, ma naturalmente non sono inclusi quei programmi che molti utenti avanzati di Arch richiedono.
 
-Il risultato di questo progetto è offrire Sugar come un bundle. Nonostante la praticità dell'installazione, questo metodo di costruzione non dovrebbe essere incoraggiato, in quanto non è "modulare". Per fare una analogia si può prendere come esempio lo script [easy-e17](/index.php/Enlightenment_(Italiano)#Compilazione_tramite_easy_e17.sh "Enlightenment (Italiano)"), solo che siamo nella situazione opposta per cui non ci sono pacchetti modulari e quindi non vi è ancora una suddivisione in "_gruppi_".
+Il risultato di questo progetto è offrire Sugar come un bundle. Nonostante la praticità dell'installazione, questo metodo di costruzione non dovrebbe essere incoraggiato, in quanto non è "modulare". Per fare una analogia si può prendere come esempio lo script [easy-e17](/index.php/Enlightenment_(Italiano)#Compilazione_tramite_easy_e17.sh "Enlightenment (Italiano)"), solo che siamo nella situazione opposta per cui non ci sono pacchetti modulari e quindi non vi è ancora una suddivisione in "*gruppi*".
 
-L'aggiunta di alcune disposizioni (_provides_) è una misura di sicurezza. Es:
+L'aggiunta di alcune disposizioni (*provides*) è una misura di sicurezza. Es:
 
 ```
 pkgname=sugar-bundle
@@ -145,7 +145,6 @@ Tutte le attività di `fructose` sono disponibili su AUR come `sugar-activity-**
 Ora avete un ambiente di lavoro Sugar, è il momento di popolarlo con attività come un browser, una calcolatrice, un visualizzatore di immagini o giochi e giocattoli. Quasi tutti hanno la stessa procedura di compilazione, un file `setup.py` che chiama le funzioni fornite con Sugar. Ecco un tipico `PKGBUILD`:
 
  `PKGBUILD` 
-
 ```
 # Contributor: Name <name@mail.com>
 pkgname=sugar-activity-calculate
@@ -174,6 +173,6 @@ Potrebbe essere necessario eseguire `squeak` per alcune attività (come `etoys`)
 
 *   La procedura della compilazione delle attività non è fatta per creare pacchetti e l'uso dell'opzione `--prefix` può essere dannoso se l'applicazione utilizza questo percorso internamente. Un sistema corretto sarebbe quello di specificare il percorso durante la procedura di installazione di `sugar` in modo che accetti un argomento come `--destdir=`.
 
-*   Si _suggerisce_ di generare pacchetti per le attività di Sugar in AUR utilizzando un prefisso -attività (`sugar-activity-`).
+*   Si *suggerisce* di generare pacchetti per le attività di Sugar in AUR utilizzando un prefisso -attività (`sugar-activity-`).
 
 *   Potrebbe essere necessario installare `python-pygame` se le attività non dovessero avviarsi.

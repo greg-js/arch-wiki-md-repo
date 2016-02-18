@@ -1,6 +1,6 @@
 | **Device** | **Status** | **Modules** |
 | Intel | Working | xf86-video-intel |
-| Nvidia | Working | nouveau _or_ nvidia |
+| Nvidia | Working | nouveau *or* nvidia |
 | Touchpad | Working | xf86-input-synaptics |
 | Camera | Working | linux-uvc |
 | Wi-Fi | Working | iwlwifi |

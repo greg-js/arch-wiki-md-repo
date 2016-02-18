@@ -18,7 +18,7 @@ The [Extended Window Manager Hints](http://standards.freedesktop.org/wm-spec/wm-
 
 Some window managers are developed as part of a more comprehensive [desktop environment](/index.php/Desktop_environment "Desktop environment"), usually allowing the other provided applications to better interact with each other, giving a more consistent experience to the user, complete with features like desktop icons, fonts, toolbars, wallpapers, or desktop widgets.
 
-Some window managers are instead designed to be used _standalone_, giving the user complete freedom over the choice of the other applications to be used. This allows the user to create a more lightweight and customized environment, tailored to his/her own specific needs. "Extras" like desktop icons, toolbars, wallpapers, or desktop widgets, if needed, will have to be added with additional dedicated applications.
+Some window managers are instead designed to be used *standalone*, giving the user complete freedom over the choice of the other applications to be used. This allows the user to create a more lightweight and customized environment, tailored to his/her own specific needs. "Extras" like desktop icons, toolbars, wallpapers, or desktop widgets, if needed, will have to be added with additional dedicated applications.
 
 Some standalone WMs can be also used to replace the default WM of a DE, just like some DE-oriented WMs can be used standalone too.
 
@@ -68,7 +68,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 	[http://www.enlightenment.org/](http://www.enlightenment.org/) || [enlightenment](https://www.archlinux.org/packages/?name=enlightenment)
 
-*   **[evilwm](/index.php/Evilwm "Evilwm")** — Minimalist window manager for the X Window System. 'Minimalist' here does not mean it is too bare to be usable - it just means it omits a lot of the stuff that make other window managers _un_usable.
+*   **[evilwm](/index.php/Evilwm "Evilwm")** — Minimalist window manager for the X Window System. 'Minimalist' here does not mean it is too bare to be usable - it just means it omits a lot of the stuff that make other window managers *un*usable.
 
 	[http://www.6809.org.uk/evilwm/](http://www.6809.org.uk/evilwm/) || [evilwm](https://aur.archlinux.org/packages/evilwm/)
 

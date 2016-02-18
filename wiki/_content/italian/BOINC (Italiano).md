@@ -13,13 +13,13 @@
 
 ## Cos'è BOINC
 
-Dal sito ufficiale di BOINC: _Sfrutta il tempo morto del tuo pc (Linux, Mac o Windows) per curare malattie, studi sull'effetto serra, scoprire stelle e astri nel cielo, e aiutare tanti altri tipi di ricerca scientifica. E' sicuro e molto semplice._
+Dal sito ufficiale di BOINC: *Sfrutta il tempo morto del tuo pc (Linux, Mac o Windows) per curare malattie, studi sull'effetto serra, scoprire stelle e astri nel cielo, e aiutare tanti altri tipi di ricerca scientifica. E' sicuro e molto semplice.*
 
-Wikipedia: _Il Berkeley Open Infrastructure for Network Computing (BOINC) è un'applicazione software di calcolo distribuito creata per gestire progetti di ricerca che richiedono una potenza di calcolo così elevata da essere da essere difficilmente raggiungibile persino con un supercomputer, ma accessibile attraverso la collaborazione di migliaia di personal computer sparsi in tutto il mondo, coordinati attraverso Internet. Viene sviluppata da un gruppo di lavoro dell'Università di Berkeley diretto da David Anderson._
+Wikipedia: *Il Berkeley Open Infrastructure for Network Computing (BOINC) è un'applicazione software di calcolo distribuito creata per gestire progetti di ricerca che richiedono una potenza di calcolo così elevata da essere da essere difficilmente raggiungibile persino con un supercomputer, ma accessibile attraverso la collaborazione di migliaia di personal computer sparsi in tutto il mondo, coordinati attraverso Internet. Viene sviluppata da un gruppo di lavoro dell'Università di Berkeley diretto da David Anderson.*
 
 ### Installare BOINC
 
-Boinc è installato come un demone(_daemon_) e per ragioni di sicurezza lavorerà sotto il nuovo user creato, _boinc_ appunto. Aggiungere tramire riga di comando il nostro user al gruppo boinc e creare un link al file password per poterlo far funzionare tramite interfaccia grafica (GUI).
+Boinc è installato come un demone(*daemon*) e per ragioni di sicurezza lavorerà sotto il nuovo user creato, *boinc* appunto. Aggiungere tramire riga di comando il nostro user al gruppo boinc e creare un link al file password per poterlo far funzionare tramite interfaccia grafica (GUI).
 
 #### Istruzioni
 
@@ -37,14 +37,14 @@ Come prima annunciato boinc funzionerà come demone, per farlo partire all'avvio
 
 ```
 
-Inserire il proprio utente al gruppo _boinc_. Per dare effetto a questo ultimo comando bisogna effettuare un log out.
+Inserire il proprio utente al gruppo *boinc*. Per dare effetto a questo ultimo comando bisogna effettuare un log out.
 
 ```
-#gpasswd -a _nomeutente_ boinc
+#gpasswd -a *nomeutente* boinc
 
 ```
 
-Effettuato il log out, si può controllare se il nostro utente adesso fa parte del gruppo _boinc_ eseguendo questo comando:
+Effettuato il log out, si può controllare se il nostro utente adesso fa parte del gruppo *boinc* eseguendo questo comando:
 
 ```
 # groups
@@ -62,7 +62,7 @@ Se non si vuole far partire BOINC all'avvio si può semplicemente avviare il dem
 
 #### BOINC attraverso l'interfaccia grafica
 
-Come di default, una password viene creata in /var/lib/boinc/gui_rpc_auth.cfg per la connessione al demone. Per semplificare la connessione della GUI con il demone, riportarsi nella directory della home, creare un link al file e successivamente cambiare i permessi per abilitare l'accesso in lettura ai membri del gruppo _boinc_.
+Come di default, una password viene creata in /var/lib/boinc/gui_rpc_auth.cfg per la connessione al demone. Per semplificare la connessione della GUI con il demone, riportarsi nella directory della home, creare un link al file e successivamente cambiare i permessi per abilitare l'accesso in lettura ai membri del gruppo *boinc*.
 
 ```
 $cd
@@ -78,11 +78,11 @@ $boinc_gui
 
 ```
 
-BOINC dovrebbe presentare la schermata per l'aggiunta di nuovi progetti. '_NB: alcuni progetti richiedono la registrazione di un account in remoto attraverso la GUI, mentre alcuni lo richiedono in partenza. Questo si può fare semplicemente via web senza nessun problema. **Si può inserire più di un progetto se si posseggono le risorse (spazio del disco, tempo, CPU). Per l'aggiunta di altri progetti si può cliccare il bottone** _**add project _dalla_ Simple view _oppure dall_**_advanced view_ dal menu cliccare _Tools->Attach to project_.
+BOINC dovrebbe presentare la schermata per l'aggiunta di nuovi progetti. '*NB: alcuni progetti richiedono la registrazione di un account in remoto attraverso la GUI, mentre alcuni lo richiedono in partenza. Questo si può fare semplicemente via web senza nessun problema. **Si può inserire più di un progetto se si posseggono le risorse (spazio del disco, tempo, CPU). Per l'aggiunta di altri progetti si può cliccare il bottone** ***add project *dalla* Simple view *oppure dall****advanced view* dal menu cliccare *Tools->Attach to project*.
 
 ##### Suggerimenti
 
-Se BOINC non chiede la connessione ad un progetto, controllare se si è connessi al demone. Andare sul menu di _Advanced view_ _Advanced->Select computer_, editare il proprio hostname ed inserire la password. (Per evitare tutto ciò controllare che il passo della modifica del file gui_rpc_auth.cfg sopracitato sia stato fatto).
+Se BOINC non chiede la connessione ad un progetto, controllare se si è connessi al demone. Andare sul menu di *Advanced view* *Advanced->Select computer*, editare il proprio hostname ed inserire la password. (Per evitare tutto ciò controllare che il passo della modifica del file gui_rpc_auth.cfg sopracitato sia stato fatto).
 
 #### BOINC attraverso riga di comando
 
@@ -108,7 +108,7 @@ BOINC sistema tutti i file in /var/lib/boinc:
 
 ### Scelta dei progetti
 
-I progetti hanno una differente richiesta dei requisiti minimi (CPU, spazio del disco), e un differente tempo di lavoro. Se non si finisce completamente un lavoro questo sarà inviato a qualcun altro. E' consigliato cercare un progetto che tra i tanti veste meglio con il proprio pc onde evitare il passaggio del progetto con l'eventuale perdita degli evtuali crediti che si potevano ottenere. Un altro consiglio è di guardare i risultati (_check your results_) pubblicati sulla pagina web del proprio account.
+I progetti hanno una differente richiesta dei requisiti minimi (CPU, spazio del disco), e un differente tempo di lavoro. Se non si finisce completamente un lavoro questo sarà inviato a qualcun altro. E' consigliato cercare un progetto che tra i tanti veste meglio con il proprio pc onde evitare il passaggio del progetto con l'eventuale perdita degli evtuali crediti che si potevano ottenere. Un altro consiglio è di guardare i risultati (*check your results*) pubblicati sulla pagina web del proprio account.
 
 ### Link
 

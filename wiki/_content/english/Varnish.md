@@ -5,7 +5,6 @@ Varnish Cache is a web application accelerator also known as a caching HTTP reve
 By default, varnish comes configured in `/etc/varnish/default.vcl` to use **localhost:8080** as the only backend, default.vcl is called by the default systemd varnish.service file :
 
  ` /usr/lib/systemd/system/varnish.service ` 
-
 ```
 [Unit]
 Description=Web Application Accelerator

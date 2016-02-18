@@ -48,14 +48,13 @@ Re-generate `grub.cfg` with:
 
  `# grub-mkconfig -o /boot/grub/grub.cfg` 
 
-The parameter `loglevel=3` prevents kernel messages from garbling the splash even with funny hardware (as recent initscripts do not set this by default any more). `quiet` is needed additionally for silencing initcpio messages. `logo.nologo` removes the boot logo (not needed with [linux-fbcondecor](https://aur.archlinux.org/packages/linux-fbcondecor/) since it does not have one anyway). `console=tty1` redirects system messages to tty1 and `splash=silent,fadein,fadeout,theme:arch-banner-icons` creates a silent, splash-only boot with fading in/out _arch-banner-icons_ theme.
+The parameter `loglevel=3` prevents kernel messages from garbling the splash even with funny hardware (as recent initscripts do not set this by default any more). `quiet` is needed additionally for silencing initcpio messages. `logo.nologo` removes the boot logo (not needed with [linux-fbcondecor](https://aur.archlinux.org/packages/linux-fbcondecor/) since it does not have one anyway). `console=tty1` redirects system messages to tty1 and `splash=silent,fadein,fadeout,theme:arch-banner-icons` creates a silent, splash-only boot with fading in/out *arch-banner-icons* theme.
 
 ### Configuration Files
 
 Put one or more of the themes you installed into `/etc/conf.d/splash`. You can also specify screen resolutions to save some initcpio space:
 
  `/etc/conf.d/splash` 
-
 ```
 SPLASH_THEMES="
     arch-black
@@ -67,13 +66,13 @@ SPLASH_THEMES="
 
 ## Starting Fbsplash early in the initcpio
 
-If **uresume** and/or **encrypt** HOOKS are used, add **fbsplash** _after_ them in `/etc/[mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf")`, e.g.:
+If **uresume** and/or **encrypt** HOOKS are used, add **fbsplash** *after* them in `/etc/[mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf")`, e.g.:
 
  `/etc/mkinitcpio.conf`  `HOOKS="base udev autodetect [...] keymap encrypt uresume fbsplash"` 
 
 Rebuild your initcpio via mkinitcpio. See the [Mkinitcpio article](/index.php/Mkinitcpio#Creating_the_image "Mkinitcpio") for more info.
 
-**Tip:** For a quick resume, it is recommended to put **uswsusp** _before_ **fbsplash** or even drop `fadein`, if using a Fbcondecor kernel.
+**Tip:** For a quick resume, it is recommended to put **uswsusp** *before* **fbsplash** or even drop `fadein`, if using a Fbcondecor kernel.
 
 If you have trouble getting fbsplash to work and your machine uses KMS (Kernel Mode Setting), try [adding the appropriate driver to mkinitcpio.conf](/index.php/Intel#KMS_.28Kernel_Mode_Setting.29 "Intel").
 

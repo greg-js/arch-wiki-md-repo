@@ -49,7 +49,7 @@
 
 ## Introdução
 
-O **Xorg** é uma implementação pública e código-aberto do sistema _X11 X Window System_. (Ver [[1]](http://pt.wikipedia.org/wiki/X.Org) para mais detalhes.) Basicamente, se quer um GUI (Interface Gráfica de Utilizador) no Arch, vai precisar do Xorg.
+O **Xorg** é uma implementação pública e código-aberto do sistema *X11 X Window System*. (Ver [[1]](http://pt.wikipedia.org/wiki/X.Org) para mais detalhes.) Basicamente, se quer um GUI (Interface Gráfica de Utilizador) no Arch, vai precisar do Xorg.
 
 ## Instalação do Xorg
 
@@ -58,7 +58,7 @@ Antes de começar, tenha a certeza do seguinte:
 ```
 # Ter o [Pacman](/index.php/Pacman "Pacman") actualizado e configurado.
 # Se está a correr outro servidor X pode fechá-lo agora. `ctrl+alt+backspace`
-# Fazer uma nota sobre _drivers_ de terceiros (ex: driver nVidia ou ATI)
+# Fazer uma nota sobre *drivers* de terceiros (ex: driver nVidia ou ATI)
 
 ```
 
@@ -76,21 +76,21 @@ pacman -S xf86-input-mouse xf86-input-keyboard
 
 ```
 
-É preciso também um _driver_ de vídeo. Pode escrever este comando e listar todos os _drivers_ de vídeo disponíveis:
+É preciso também um *driver* de vídeo. Pode escrever este comando e listar todos os *drivers* de vídeo disponíveis:
 
 ```
 pacman -Ss xf86-video
 
 ```
 
-Procure pelo driver da sua placa. Se não tem a certeza de qual é, instale o _vesa_, mas lembre-se da sua escolha quando configurar o xorg.
+Procure pelo driver da sua placa. Se não tem a certeza de qual é, instale o *vesa*, mas lembre-se da sua escolha quando configurar o xorg.
 
 ```
 pacman -S xf86-video-vesa
 
 ```
 
-Irá querer o _startx_ e o _xinit_
+Irá querer o *startx* e o *xinit*
 
 ```
 pacman -S xorg-xinit
@@ -333,13 +333,13 @@ The default X environment is rather bare, and you will typically seek to install
 To test the config file you have created:
 
 ```
-$ X -config _<your config file>_
+$ X -config *<your config file>*
 
 ```
 
-If a problem occurs, then view the log at <tt>/var/log/Xorg.0.log</tt>. Be on the lookout for any lines beginning with _(EE)_ which represent errors, and also _(WW)_ which are warnings that could indicate other issues.
+If a problem occurs, then view the log at <tt>/var/log/Xorg.0.log</tt>. Be on the lookout for any lines beginning with *(EE)* which represent errors, and also *(WW)* which are warnings that could indicate other issues.
 
-**Note:** Using startx requires a _~/.xinitrc_ file, so that X knows what to run when it starts. See [Xinitrc](/index.php/Xinitrc "Xinitrc") for detail.
+**Note:** Using startx requires a *~/.xinitrc* file, so that X knows what to run when it starts. See [Xinitrc](/index.php/Xinitrc "Xinitrc") for detail.
 
 If you are using GNOME it is best to start GNOME through gdm to avoid HAL permission problems.
 
@@ -408,12 +408,12 @@ These apps are included in the mesa package.
 
 Modular X.Org 7 installs everything in `/usr`, where the older versions installed in `/usr/X11R6`. Several configuration files need updates:
 
-*   _/etc/X11/xorg.conf_
+*   */etc/X11/xorg.conf*
     *   Fontpaths live in /usr/share/fonts now
     *   RGB database is in /usr/share/X11/rgb
     *   module path is /usr/lib/xorg/modules
 
-Also note that some X configuration tools might stop working. The easiest way to configure X.org is by installing the correct driver packages and running _Xorg -configure_, which results in a `/root/xorg.conf.new` which only needs modification in the resolutions, mouse configuration and keyboard layouts.
+Also note that some X configuration tools might stop working. The easiest way to configure X.org is by installing the correct driver packages and running *Xorg -configure*, which results in a `/root/xorg.conf.new` which only needs modification in the resolutions, mouse configuration and keyboard layouts.
 
 Some packages have hard-coded references to `/usr/X11R6`. These packages need fixing. In the meantime, look what packages install files in `/usr/X11R6`, uninstall those, make a symlink from `/usr` to `/usr/X11R6` and reinstall the affected packages. Another option is to move the contents of `/usr/X11R6` to `/usr` and make the symlink.
 
@@ -518,7 +518,7 @@ Some keyboard layouts have changed. I wondered why:
 *   I wasn't able to Ctrl+Alt+Fx to switch to console
 *   I wasn't able to use layouts
 
-The problem was that the _sk_qwerty_ layout doesn't exist anymore. I had to replace
+The problem was that the *sk_qwerty* layout doesn't exist anymore. I had to replace
 
 ```
 Option         "XkbLayout" "us,sk_qwerty"

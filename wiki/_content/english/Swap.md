@@ -2,7 +2,7 @@ This page provides an introduction to swap space and paging on GNU/Linux. It cov
 
 From [All about Linux swap space](http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space):
 
-	_Linux divides its physical RAM (random access memory) into chunks of memory called pages. Swapping is the process whereby a page of memory is copied to the preconfigured space on the hard disk, called swap space, to free up that page of memory. The combined sizes of the physical memory and the swap space is the amount of virtual memory available._
+	*Linux divides its physical RAM (random access memory) into chunks of memory called pages. Swapping is the process whereby a page of memory is copied to the preconfigured space on the hard disk, called swap space, to free up that page of memory. The combined sizes of the physical memory and the swap space is the amount of virtual memory available.*
 
 Support for swap is provided by the Linux kernel and user-space utilities from the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package.
 
@@ -55,10 +55,10 @@ To set up a Linux swap area, the `mkswap` command is used. For example:
 
 **Warning:** All data on the specified partition will be lost.
 
-The _mkswap_ utility generates a UUID for the partition by default, use the `-U` flag in case you want to specify custom UUID:
+The *mkswap* utility generates a UUID for the partition by default, use the `-U` flag in case you want to specify custom UUID:
 
 ```
-# mkswap -U _custom_UUID_ /dev/sda2
+# mkswap -U *custom_UUID* /dev/sda2
 
 ```
 
@@ -75,7 +75,7 @@ To enable this swap partition on boot, add an entry to [fstab](/index.php/Fstab 
 **Note:**
 
 *   Adding an entry to fstab is optional in most cases with systemd. See the next subsection.
-*   If using an SSD with TRIM support, consider using `defaults,discard` in the swap line in [fstab](/index.php/Fstab "Fstab"). If activating swap manually with _swapon_, using the `-d` or `--discard` parameter achieves the same. See `man 8 swapon` for details.
+*   If using an SSD with TRIM support, consider using `defaults,discard` in the swap line in [fstab](/index.php/Fstab "Fstab"). If activating swap manually with *swapon*, using the `-d` or `--discard` parameter achieves the same. See `man 8 swapon` for details.
 
 ### Activation by systemd
 
@@ -98,7 +98,7 @@ To deactivate specific swap space:
 
 Alternatively use the `-a` switch to deactivate all swap space.
 
-Since swap is managed by systemd, it will be activated again on the next system startup. To disable the automatic activation of detected swap space permanently, run `systemctl --type swap` to find the responsible _.swap_ unit and [mask](/index.php/Mask "Mask") it.
+Since swap is managed by systemd, it will be activated again on the next system startup. To disable the automatic activation of detected swap space permanently, run `systemctl --type swap` to find the responsible *.swap* unit and [mask](/index.php/Mask "Mask") it.
 
 ## Swap file
 
@@ -115,7 +115,7 @@ As root use `fallocate` to create a swap file the size of your choosing (M = Meg
 
 ```
 
-**Note:** _fallocate_ may cause problems with some file systems such as [F2FS](/index.php/F2FS "F2FS") or [XFS](/index.php/XFS "XFS").[[1]](https://bugzilla.redhat.com/show_bug.cgi?id=1129205#c3) As an alternative, using _dd_ is more reliable, but slower: `# dd if=/dev/zero of=/swapfile bs=1M count=512` 
+**Note:** *fallocate* may cause problems with some file systems such as [F2FS](/index.php/F2FS "F2FS") or [XFS](/index.php/XFS "XFS").[[1]](https://bugzilla.redhat.com/show_bug.cgi?id=1129205#c3) As an alternative, using *dd* is more reliable, but slower: `# dd if=/dev/zero of=/swapfile bs=1M count=512` 
 
 Set the right permissions (a world-readable swap file is a huge local vulnerability)
 
@@ -198,7 +198,7 @@ pri=0
 
 ```
 
-in the _original_ swap entry so that the USB swap partition will take priority over the old swap partition.
+in the *original* swap entry so that the USB swap partition will take priority over the old swap partition.
 
 This guide will work for other memory such as SD cards, etc.
 
@@ -212,7 +212,7 @@ Swap values can be adjusted to help performance.
 
 ### Swappiness
 
-The _swappiness_ [sysctl](/index.php/Sysctl "Sysctl") parameter represents the kernel's preference (or avoidance) of swap space. Swappiness can have a value between 0 and 100, the default value is 60\. Setting this parameter to a low value will reduce swapping from RAM, and is known to improve responsiveness on many systems.
+The *swappiness* [sysctl](/index.php/Sysctl "Sysctl") parameter represents the kernel's preference (or avoidance) of swap space. Swappiness can have a value between 0 and 100, the default value is 60\. Setting this parameter to a low value will reduce swapping from RAM, and is known to improve responsiveness on many systems.
 
 To check the current swappiness value:
 
@@ -228,13 +228,13 @@ To temporarily set the swappiness value:
 
 ```
 
-To set the swappiness value permanently, edit a _sysctl_ configuration file
+To set the swappiness value permanently, edit a *sysctl* configuration file
 
  `/etc/sysctl.d/99-sysctl.conf`  `vm.swappiness=10` 
 
 To test and more on why this may work, take a look at [this article](http://rudd-o.com/en/linux-and-free-software/tales-from-responsivenessland-why-linux-feels-slow-and-how-to-fix-that).
 
-Another _sysctl_ parameter that affects swap performance is `vm.vfs_cache_pressure`, which controls the tendency of the kernel to reclaim the memory which is used for caching of VFS caches, versus pagecache and swap. Increasing this value increases the rate at which VFS caches are reclaimed.[[2]](http://doc.opensuse.org/products/draft/SLES/SLES-tuning_sd_draft/cha.tuning.memory.html#cha.tuning.memory.vm.reclaim) For more information, see the [Linux kernel documentation](https://www.kernel.org/doc/Documentation/sysctl/vm.txt).
+Another *sysctl* parameter that affects swap performance is `vm.vfs_cache_pressure`, which controls the tendency of the kernel to reclaim the memory which is used for caching of VFS caches, versus pagecache and swap. Increasing this value increases the rate at which VFS caches are reclaimed.[[2]](http://doc.opensuse.org/products/draft/SLES/SLES-tuning_sd_draft/cha.tuning.memory.html#cha.tuning.memory.vm.reclaim) For more information, see the [Linux kernel documentation](https://www.kernel.org/doc/Documentation/sysctl/vm.txt).
 
 ### Priority
 

@@ -123,7 +123,7 @@ Install the driver:
 
 ```
 
-Use _**gft**_ to generate the Xorg _Modeline_ values and then edit _/etc/X11/xorg.conf_ and add these values to the _Monitor_ section, for example:
+Use ***gft*** to generate the Xorg *Modeline* values and then edit */etc/X11/xorg.conf* and add these values to the *Monitor* section, for example:
 
 ```
 Section "Monitor"
@@ -134,7 +134,7 @@ EndSection
 
 ```
 
-Lastly, add the following to the "Device" section, replacing the existing _Driver_ value if present:
+Lastly, add the following to the "Device" section, replacing the existing *Driver* value if present:
 
 ```
 VideoRam       229376
@@ -189,7 +189,7 @@ build() {
 
 ### Ricoh R5C822 SD/SDIO/MMC/MS/MSPro Card Reader
 
-The Ricoh card reader should work out of the box, as long as **MOD_AUTOLOAD** is set to **yes** in _/etc/rc.conf_. Assuming you use a HAL-aware desktop (GNOME, KDE, etc.), when a memory card is inserted, the kernel should automatically load the **mmc_core/mmc_block** modules and mount the new filesystem according to your desktop's automount settings.
+The Ricoh card reader should work out of the box, as long as **MOD_AUTOLOAD** is set to **yes** in */etc/rc.conf*. Assuming you use a HAL-aware desktop (GNOME, KDE, etc.), when a memory card is inserted, the kernel should automatically load the **mmc_core/mmc_block** modules and mount the new filesystem according to your desktop's automount settings.
 
 This has been confirmed with the following card types:
 
@@ -205,7 +205,7 @@ The Synaptics touchpad should provide basic functions out-of-the-box, however if
 
 The powersave scripts have been officially replaced by pm-utils. Refer to the [Pm-utils](/index.php/Pm-utils "Pm-utils") wiki for detailed instructions.
 
-ATI video card owners might need to add `vga=0` to the kernel options in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") in order to resume from suspend2ram. This behavior seems to change from version to version of catalyst, so your mileage may vary. Try it without vga=0 first, and if it doesn't work _then_ add it.
+ATI video card owners might need to add `vga=0` to the kernel options in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") in order to resume from suspend2ram. This behavior seems to change from version to version of catalyst, so your mileage may vary. Try it without vga=0 first, and if it doesn't work *then* add it.
 
 ### CPU Frequency Scaling with cpufrequtils
 
@@ -237,7 +237,7 @@ The volume buttons should now work system-wide, and the playback buttons will no
 
 The `xbindkeys` utility is highly recommended for lightweight desktops such as Openbox--refer to the [Hotkeys](/index.php/Hotkeys "Hotkeys") wiki for information.
 
-The following is an example _~/.xbindkeysrc_ config file, making use of the multimedia buttons:
+The following is an example *~/.xbindkeysrc* config file, making use of the multimedia buttons:
 
 ```
 # vol up
@@ -270,7 +270,7 @@ Function keys seem to be less standardized than the Volume/Playback buttons, and
 
 The following example shows how one can configure the Dell Media Direct button, Eject (Fn+F10) and Hibernate (Fn+F1) hotkeys to execute specific commands:
 
-First, assign kernel keycodes to the Media Direct button and Fn hotkeys, using the _/etc/rc.local_ script (which is executed before X loads):
+First, assign kernel keycodes to the Media Direct button and Fn hotkeys, using the */etc/rc.local* script (which is executed before X loads):
 
 ```
 #!/bin/bash
@@ -283,7 +283,7 @@ setkeycodes e00a 123	# e00a hibernate fn
 
 ```
 
-Then use the `xbindkeys` utility to bind the newly recognized keys to a custom action. Here's an _~/.xbindkeysrc_ config file:
+Then use the `xbindkeys` utility to bind the newly recognized keys to a custom action. Here's an *~/.xbindkeysrc* config file:
 
 ```
 # media direct button
@@ -303,7 +303,7 @@ Finally, execute `xbindkeys` at startup by placing it in your .xinitrc (or appro
 ```
 xscreensaver -no-splash &
 eval `cat $HOME/.fehbg` &
-_**xbindkeys &**_
+***xbindkeys &***
 pypanel &
 exec openbox-session
 

@@ -48,7 +48,7 @@ Consider placing the Ads by Google inside actual page content (or at least below
 
 Implement a pacman:// URI as an option to quickly let users quickly install packages from webpages and same the functionality for AUR packages. [9mmtylenol](/index.php/User:9mmtylenol "User:9mmtylenol")
 
-	I think it is easy to implement. It is very similar to [apt urls](https://wiki.debian.org/AptProtocol). It is even possible to install several packages [at once](https://help.ubuntu.com/community/AptURL#Use_of_apturl). But what is the difference in using such _apt:vlc_ links from such _apt://vlc_ ? — [Agent0](/index.php/User:Agent0 "User:Agent0") ([talk](/index.php/User_talk:Agent0 "User talk:Agent0")|[contribs](/index.php/Special:Contributions/Agent0 "Special:Contributions/Agent0")) 16:10, 28 July 2015 (UTC)
+	I think it is easy to implement. It is very similar to [apt urls](https://wiki.debian.org/AptProtocol). It is even possible to install several packages [at once](https://help.ubuntu.com/community/AptURL#Use_of_apturl). But what is the difference in using such *apt:vlc* links from such *apt://vlc* ? — [Agent0](/index.php/User:Agent0 "User:Agent0") ([talk](/index.php/User_talk:Agent0 "User talk:Agent0")|[contribs](/index.php/Special:Contributions/Agent0 "Special:Contributions/Agent0")) 16:10, 28 July 2015 (UTC)
 
 ### Focus in Search
 

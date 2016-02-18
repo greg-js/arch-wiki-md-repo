@@ -1,4 +1,4 @@
-This article explains how to have the [X server](/index.php/X_server "X server") start automatically right after logging in at a virtual terminal. This is achieved by running the _startx_ command, whose behaviour can be customized as described in the [xinitrc](/index.php/Xinitrc "Xinitrc") article, for example for choosing what [window manager](/index.php/Window_manager "Window manager") to launch. Alternatively, a [display manager](/index.php/Display_manager "Display manager") can be used to start X automatically and provide a graphical login screen.
+This article explains how to have the [X server](/index.php/X_server "X server") start automatically right after logging in at a virtual terminal. This is achieved by running the *startx* command, whose behaviour can be customized as described in the [xinitrc](/index.php/Xinitrc "Xinitrc") article, for example for choosing what [window manager](/index.php/Window_manager "Window manager") to launch. Alternatively, a [display manager](/index.php/Display_manager "Display manager") can be used to start X automatically and provide a graphical login screen.
 
 ## Shell profile files
 

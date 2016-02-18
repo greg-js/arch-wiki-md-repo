@@ -14,7 +14,7 @@ Puedes usar **sshfs** para montar un sistema remoto (accesible mediante [SSH](/i
 *   [5 Opciones](#Opciones)
 *   [6 Solución de problemas](#Soluci.C3.B3n_de_problemas)
     *   [6.1 Lista de comprobación](#Lista_de_comprobaci.C3.B3n)
-    *   [6.2 Conexión reiniciada por par (_connection reset by peer_)](#Conexi.C3.B3n_reiniciada_por_par_.28connection_reset_by_peer.29)
+    *   [6.2 Conexión reiniciada por par (*connection reset by peer*)](#Conexi.C3.B3n_reiniciada_por_par_.28connection_reset_by_peer.29)
     *   [6.3 Servidor remoto se ha desconectado](#Servidor_remoto_se_ha_desconectado)
     *   [6.4 Thunar tiene problemas con FAM y el acceso a archivos remotos](#Thunar_tiene_problemas_con_FAM_y_el_acceso_a_archivos_remotos)
     *   [6.5 El apagado se interrumpe cuando sshfs está montado](#El_apagado_se_interrumpe_cuando_sshfs_est.C3.A1_montado)
@@ -29,7 +29,7 @@ Puedes usar **sshfs** para montar un sistema remoto (accesible mediante [SSH](/i
 Antes de intentar montar un directorio, asegúrate de que los permisos del directorio donde lo deseas montar permiten del acceso correcto del usuario. Para montar un directorio remoto ejecuta `sshfs`:
 
 ```
-$ sshfs _USUARIO@HOSTNAME_O_IP:/RUTA_REMOTA PUNTO_DE_MONTAJE_LOCAL OPCIONES_DE_SSH_
+$ sshfs *USUARIO@HOSTNAME_O_IP:/RUTA_REMOTA PUNTO_DE_MONTAJE_LOCAL OPCIONES_DE_SSH*
 
 ```
 
@@ -46,10 +46,9 @@ Donde `9876` es el número de puerto del servicio ssh en el servidor `mycomputer
 
 SSH te pedirá la contraseña, si es necesario. Si no quieres tener que introducir la contraseña cada vez, es recomendable usar [claves SSH](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)").
 
-**Sugerencia:** Para montar rápidamente un directorio remoto, hacer alguna operación sobre archivos y desmontarlo, utiliza un _script_ como este:
-
+**Sugerencia:** Para montar rápidamente un directorio remoto, hacer alguna operación sobre archivos y desmontarlo, utiliza un *script* como este:
 ```
-sshfs _USUARIO@HOSTNAME_O_IP:/RUTA_REMOTA PUNTO_DE_MONTAJE_LOCAL OPCIONES_DE_SSH_
+sshfs *USUARIO@HOSTNAME_O_IP:/RUTA_REMOTA PUNTO_DE_MONTAJE_LOCAL OPCIONES_DE_SSH*
 mc ~ PUNTO_DE_MONTAJE_LOCAL
 fusermount -u PUNTO_DE_MONTAJE_LOCAL
 
@@ -62,7 +61,7 @@ Esto montará el directorio remoto, ejecutará MC, y lo desmontará cuando cierr
 Para desmontar el sistema remoto:
 
 ```
-$ fusermount -u _PUNTO_DE_MONTAJE_LOCAL_
+$ fusermount -u *PUNTO_DE_MONTAJE_LOCAL*
 
 ```
 
@@ -78,7 +77,6 @@ $ fusermount -u /mnt/sessy
 Quizá quieras restringir a un usuario a un directorio en concreto (y sus subdirectorios). Para hacer esto, edita `/etc/ssh/sshd_config`:
 
  `/etc/ssh/sshd_config` 
-
 ```
 .....
 Match User usuario 
@@ -116,11 +114,11 @@ usuario@servidor:/directorio/remoto /punto/de/montaje  fuse.sshfs noauto,x-syste
 
 ```
 
-Las opciones de montaje importantes son _noauto,x-systemd.automount,_netdev_.
+Las opciones de montaje importantes son *noauto,x-systemd.automount,_netdev*.
 
-*   _noauto_ indica que no se monte al arrancar
-*   _x-systemd.automount_ indica que se monte bajo demanda
-*   __netdev_ indica que es un dispositivo de red, no un dispositivo de bloques (sin esta opción podrían aparecer errores de tipo "Dispositivo no encontrado")
+*   *noauto* indica que no se monte al arrancar
+*   *x-systemd.automount* indica que se monte bajo demanda
+*   *_netdev* indica que es un dispositivo de red, no un dispositivo de bloques (sin esta opción podrían aparecer errores de tipo "Dispositivo no encontrado")
 
 ### Al arrancar
 
@@ -131,7 +129,7 @@ USUARIO@HOSTNAME_O_IP:/DIRECTORIO/REMOTO  /PUNTO/DE/MONTAJE/LOCAL  fuse.sshfs  d
 
 ```
 
-Por ejemplo, esta línea en _fstab_:
+Por ejemplo, esta línea en *fstab*:
 
 ```
 llib@192.168.1.200:/home/llib/FAH  /media/FAH2  fuse.sshfs  defaults,_netdev  0  0
@@ -147,7 +145,7 @@ usuario@dominio.org:/home/usuario  /media/usuario   fuse.sshfs    defaults,allow
 
 ```
 
-De nuevo, es importante establecer la opción de montaje __netdev_ para asegurarse de que la red está disponible antes de intentar el montaje.
+De nuevo, es importante establecer la opción de montaje *_netdev* para asegurarse de que la red está disponible antes de intentar el montaje.
 
 ### Acceso seguro de usuario
 
@@ -162,22 +160,22 @@ USUARIO@HOSTNAME_O_IP:/DIRECTORIO/REMOTO  /PUNTO/DE/MONTAJE/LOCAL  fuse.sshfs no
 
 Resumen de opciones relevantes:
 
-*   _allow_other_ - Permite que usuarios distintos a root accedan al directorio.
-*   _default_permissions_ - Permite que el kernel establezca los permisos (es decir, que se usen los permisos del sistema remoto). Esto permite prohibir el acceso a todos excepto si se añade _allow_other_.
-*   _uid_, _gid_ - establece la propiedad de los archivos a estos valores; _uid_ es la identificación numérica de tu usuario, _gid_ es la identificación numérica del grupo.
+*   *allow_other* - Permite que usuarios distintos a root accedan al directorio.
+*   *default_permissions* - Permite que el kernel establezca los permisos (es decir, que se usen los permisos del sistema remoto). Esto permite prohibir el acceso a todos excepto si se añade *allow_other*.
+*   *uid*, *gid* - establece la propiedad de los archivos a estos valores; *uid* es la identificación numérica de tu usuario, *gid* es la identificación numérica del grupo.
 
 ## Opciones
 
 sshfs puede convertir automáticamente las IDs de tus usuarios local y remoto.
 
-Añade la opción_idmap_ con el valor _user_ para convertir el UID del usuario que se conecta:
+Añade la opción*idmap* con el valor *user* para convertir el UID del usuario que se conecta:
 
 ```
 # sshfs -o idmap=user sessy@mycomputer:/home/sessy /mnt/sessy -C -p 9876
 
 ```
 
-Esto asignará el UID del usuario remoto "sessy" al usuario local, que ejecuta este proces ("root" en el ejemplo anterior) y el GID permanece sin cambios. Si necesitas un control más preciso en la conversión de UID y GID, mira las opciones _idmap=file_, _uidfile_ y _gidfile_.
+Esto asignará el UID del usuario remoto "sessy" al usuario local, que ejecuta este proces ("root" en el ejemplo anterior) y el GID permanece sin cambios. Si necesitas un control más preciso en la conversión de UID y GID, mira las opciones *idmap=file*, *uidfile* y *gidfile*.
 
 ## Solución de problemas
 
@@ -192,7 +190,7 @@ $ mv /etc/issue /etc/issue.orig
 
 ```
 
-2\. Ten en cuenta que la mayoría de artículos sobre resolución de problemas relacionados con SSH que encontrarás en la red no están relacionados con Systemd. Es frecuente que las configuraciones de `/etc/fstab` comiencen erróneamente con `_sshfs#_usuario@host:/mnt/servidor/directorio ... fuse ...` en lugar de usar la sintaxis `usaurio@host:/mnt/servidor/directorio ... fuse._sshfs_ ... _x-systemd_, ...`.
+2\. Ten en cuenta que la mayoría de artículos sobre resolución de problemas relacionados con SSH que encontrarás en la red no están relacionados con Systemd. Es frecuente que las configuraciones de `/etc/fstab` comiencen erróneamente con `*sshfs#*usuario@host:/mnt/servidor/directorio ... fuse ...` en lugar de usar la sintaxis `usaurio@host:/mnt/servidor/directorio ... fuse.*sshfs* ... *x-systemd*, ...`.
 
 3\. Comprueba que el propietario del directorio de origen en el servidor y sus contenidos es el usuario del servidor.
 
@@ -204,7 +202,7 @@ $ chown -R USER_S: /mnt/servers/folder
 4\. El ID del usuario del servidor puede ser diferente del ID del usuario del cliente. Obviamente, ambos nombres de usuario deben ser iguales. Solo tienes que preocuparte por el ID del usuario del cliente. SSHFS convertirá este UID con las siguientes opciones de montaje:
 
 ```
-uid=_USER_C_ID_,gid=_GROUP_C_ID_
+uid=*USER_C_ID*,gid=*GROUP_C_ID*
 
 ```
 
@@ -220,7 +218,7 @@ $ chown -R USER_C: /mnt/client/folder
 7\. Si quieres automontar sistemas de archivos SSHFS usando identificación mediante clave pública (sin contraseña) mediante `/etc/fstab`, puedes usar esta línea como ejemplo:
 
 ```
-_USER_S_@_SERVER_:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.automount,_netdev,user,idmap=user,transform_symlinks,identityfile=/home/_USER_C_/.ssh/id_rsa,allow_other,default_permissions,uid=_USER_C_ID_,gid=_GROUP_C_ID_,umask=0   0 0
+*USER_S*@*SERVER*:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.automount,_netdev,user,idmap=user,transform_symlinks,identityfile=/home/*USER_C*/.ssh/id_rsa,allow_other,default_permissions,uid=*USER_C_ID*,gid=*GROUP_C_ID*,umask=0   0 0
 
 ```
 
@@ -244,7 +242,7 @@ pete@serv:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.au
 
 8\. Si conoces otro problema a tener en cuenta en esta lista, por favor, añádelo.
 
-### Conexión reiniciada por par (_connection reset by peer_)
+### Conexión reiniciada por par (*connection reset by peer*)
 
 *   Si estás intentando acceder al sistema remoto con un nombre de host, intenta utilizar la dirección IP en su lugar, ya que puede ser un problema de resolución de nombres de dominio. Asegúrate de editar `/etc/hosts` con los detalles del servidor.
 *   Si estás usando nombres de clave no estándar y las estás indicando como `-i .ssh/mi_clave`, esto no funcionará. Tienes que usar `-o IdentityFile=/home/user/.ssh/mi_clave`, con la ruta completa de la clave.
@@ -257,9 +255,9 @@ pete@serv:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.au
 
 ### Servidor remoto se ha desconectado
 
-Si recibes este mensaje justo después de intentar usar _sshfs_:
+Si recibes este mensaje justo después de intentar usar *sshfs*:
 
-*   Primero asegúrate de que la máquina **remota** tiene _sftp_ instalado. Si no, no funcionará.
+*   Primero asegúrate de que la máquina **remota** tiene *sftp* instalado. Si no, no funcionará.
 
 **Sugerencia:** Si tu servidor remoto está usando OpenWRT: `opkg install openssh-sftp-server` será suficiente
 
@@ -269,14 +267,13 @@ Para Arch Linux el valor por defecto en `/etc/ssh/sshd_config` es `Subsystem sft
 
 ### Thunar tiene problemas con FAM y el acceso a archivos remotos
 
-Si las carpetas remotas no se muestran, y en su lugar se muestra tu directorio home, o si tienes otros problemas para acceder a archivos remotos mediante Thunar, reemplaza _fam_ por [gamin](https://www.archlinux.org/packages/?name=gamin). _Gamin_ procede de _fam_.
+Si las carpetas remotas no se muestran, y en su lugar se muestra tu directorio home, o si tienes otros problemas para acceder a archivos remotos mediante Thunar, reemplaza *fam* por [gamin](https://www.archlinux.org/packages/?name=gamin). *Gamin* procede de *fam*.
 
 ### El apagado se interrumpe cuando sshfs está montado
 
 Systemd puede interrumpirse durante el apagado si se montó manualmente un sistema de archivos sshfs y no se desmontó antes de apagar. Para solucionar este problema, crea este archivo (como root):
 
  `/etc/systemd/system/killsshfs.service` 
-
 ```
 [Unit]
 After=network.target

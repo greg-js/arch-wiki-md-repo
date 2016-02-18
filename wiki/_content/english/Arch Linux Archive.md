@@ -1,4 +1,4 @@
-The **Arch Linux Archive** (a.k.a **ALA**), formerly known as **Arch Linux Rollback Machine** (a.k.a **ARM**), stores _official repositories snapshots_, _iso images_ and _bootstrap tarballs_ across time.
+The **Arch Linux Archive** (a.k.a **ALA**), formerly known as **Arch Linux Rollback Machine** (a.k.a **ARM**), stores *official repositories snapshots*, *iso images* and *bootstrap tarballs* across time.
 
 **You can use it to**
 
@@ -144,7 +144,6 @@ You can use the magic subdirectory [.all](https://archive.archlinux.org/packages
 You can download the full package list (there are over a hundred thousand packages) as a compressed index: [index.0.xz](https://archive.archlinux.org/packages/.all/index.0.xz).
 
  `$ curl https://archive.archlinux.org/packages/.all/index.0.xz | unxz` 
-
 ```
 0ad-a14-1-i686
 0ad-a14-1-x86_64
@@ -230,7 +229,7 @@ Then update the database and force downgrade:
 
 ## History
 
-*   The original ARM (_Archlinux Rollback Machine_) was closed on 2013-08-18.[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1313360#p1313360)
+*   The original ARM (*Archlinux Rollback Machine*) was closed on 2013-08-18.[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1313360#p1313360)
 *   The new one is hosted on [seblu.net](http://seblu.net) since 2013-08-31.
 *   New URL and closing the old ARM hierarchy on 2015-10-13\. A new software, agetpkg was introduced.
 *   Moved to [archive.archlinux.org](https://archive.archlinux.org) on 2015-12-19.[[2]](https://lists.archlinux.org/pipermail/arch-dev-public/2015-December/027635.html)

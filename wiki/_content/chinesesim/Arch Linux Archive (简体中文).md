@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Arch_Linux_Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-11-11，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&diff=0&oldid=408495)可以查看翻译后英文页面的改动。
 
-Arch Linux 存档（**A**rch **L**inux **Archive**，_简称 ala_），以前称为 _Arch Linux 回滚机器（Arch Linux Rollback Machine_，_简称 ARM_），保存了 _官方仓库快照_、_iso 镜像_ 和 _引导程序包_ 的历史版本。
+Arch Linux 存档（**A**rch **L**inux **Archive**，*简称 ala*），以前称为 *Arch Linux 回滚机器（Arch Linux Rollback Machine*，*简称 ARM*），保存了 *官方仓库快照*、*iso 镜像* 和 *引导程序包* 的历史版本。
 
 **用途**
 
@@ -226,7 +226,7 @@ Or you can do it manually:
 
 1.  Run your favorite internet browser and go to [http://ala.seblu.net/packages](http://ala.seblu.net/packages);
 2.  Go to the package you need and download it;
-3.  Run `pacman -U _pkgname_.pkg.tar.xz` as root.
+3.  Run `pacman -U *pkgname*.pkg.tar.xz` as root.
 
 ### 如何恢复所有包到指定日期
 
@@ -281,5 +281,5 @@ Server=http://ala.seblu.net/repos/2014/03/30/$repo/os/$arch
 ## 历史
 
 *   New URL and closing the old ARM hierarchy on 2015-10-13\. A new software, agetpkg was introduced.
-*   The original ARM (_Archlinux Rollback Machine_) was closed on 2013-08-18 [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1313360#p1313360).
+*   The original ARM (*Archlinux Rollback Machine*) was closed on 2013-08-18 [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1313360#p1313360).
 *   The new one is hosted on [seblu.net](http://seblu.net) since 2013-08-31.

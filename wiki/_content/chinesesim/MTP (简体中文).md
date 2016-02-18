@@ -293,7 +293,7 @@ Bus 001 Device 007: ID 0421:0661 Nokia Mobile Phones Lumia 920
 
 ```
 
-在ID后的两串数字是_厂商ID_ : _产品编号_
+在ID后的两串数字是*厂商ID* : *产品编号*
 
 然后设定一个udev规则，
 

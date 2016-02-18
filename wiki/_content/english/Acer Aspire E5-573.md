@@ -18,7 +18,6 @@ As of today (December, 2015), the only viable fix is to downgrade the BIOS: foll
 USB Devices
 
  `lsusb` 
-
 ```
 Bus 002 Device 005: ID 248a:8566  
 Bus 002 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
@@ -32,7 +31,6 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 PCI Devices
 
  `lspci` 
-
 ```
 00:00.0 Host bridge: Intel Corporation 2nd Generation Core Processor Family DRAM Controller (rev 09)
 00:02.0 VGA compatible controller: Intel Corporation 2nd Generation Core Processor Family Integrated Graphics Controller (rev 09)
@@ -53,7 +51,6 @@ PCI Devices
 CPU
 
  `lscpu` 
-
 ```
 Architecture:          x86_64
 CPU op-mode(s):        32-bit, 64-bit

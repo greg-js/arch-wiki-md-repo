@@ -33,7 +33,7 @@ When creating packages that install schema files, use
 
 for the package installation step in the PKGBUILD.
 
-GConf schemas need to be installed and removed in the `.install` file using `pre_remove`, `pre_upgrade` and `post_upgrade` and `post_install`. Use **gconf-merge-schemas** to merge several schemas into one package specific file, install or uninstall them with `usr/sbin/gconfpkg --_(un)_install $pkgname` The usage of **gconfpkg** requres a dependency on [gconf](https://www.archlinux.org/packages/?name=gconf)>=2.18.0.1-4 (or [gconfmm](https://www.archlinux.org/packages/?name=gconfmm)>=2.20.0).
+GConf schemas need to be installed and removed in the `.install` file using `pre_remove`, `pre_upgrade` and `post_upgrade` and `post_install`. Use **gconf-merge-schemas** to merge several schemas into one package specific file, install or uninstall them with `usr/sbin/gconfpkg --*(un)*install $pkgname` The usage of **gconfpkg** requres a dependency on [gconf](https://www.archlinux.org/packages/?name=gconf)>=2.18.0.1-4 (or [gconfmm](https://www.archlinux.org/packages/?name=gconfmm)>=2.20.0).
 
 ## GSettings schemas
 

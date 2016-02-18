@@ -2,7 +2,7 @@
 
 Quoting the [Pylons Python Web Framework web site](http://pylonshq.com):
 
-_"Pylons is a python rapid web application development framework frequently compared to rails and with an emphasis on speed and fun."_
+*"Pylons is a python rapid web application development framework frequently compared to rails and with an emphasis on speed and fun."*
 
 ## Installing Pylons
 

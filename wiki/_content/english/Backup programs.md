@@ -5,6 +5,8 @@ Having backups of important data is a necessary measure to take, since human and
 *   [1 Overview](#Overview)
 *   [2 Data synchronization](#Data_synchronization)
 *   [3 Incremental backups](#Incremental_backups)
+    *   [3.1 Single machine](#Single_machine)
+    *   [3.2 Network oriented](#Network_oriented)
 *   [4 Cloud storage](#Cloud_storage)
     *   [4.1 Third-party services](#Third-party_services)
         *   [4.1.1 Multi-service clients](#Multi-service_clients)
@@ -103,54 +105,69 @@ See also [Dotfiles#Version control](/index.php/Dotfiles#Version_control "Dotfile
 *   **Implementation**: the programming language, library, or utility that the application is based on.
 *   **Compressed storage**: compression is used for storage.
 *   **Encrypted storage**: encryption is used for storage.
-*   **Delta transfer**: only the modified _parts_ of files are incrementally backed up.
+*   **Delta transfer**: only the modified *parts* of files are transferred.
 *   **Encrypted transfer**: data is encrypted by default when transferred over a network.
 *   **FS metadata**: file system permissions and attributes are backed up.
 *   **Easy access**: the backup is stored plainly in the file system, or is mountable as such.
 *   **Resumable**: the backup can be resumed without restarting it if interrupted.
-*   **Handles renames**: moved/renamed files are detected and not reuploaded.
+*   **Handles renames**: moved/renamed files are detected and not stored or transferred twice; it typically means that a checksum is computed for files or chunks thereof.
 *   **CLI**: the application is command-line driven, i.e. it is scriptable.
 *   **Other interfaces**: the application has the specified user interfaces, e.g. GUI, TUI, or web-based.
+*   **Increment type**: the strategy used to reduce used space by deduplicating data (i.e., besides compression).
+    *   **file-based**: if a file is modified, the entire new version is stored at each snapshot.
+        *   **hard-links**: unmodified files are stored as hard links to previous versions.
+    *   **chunk-based**: only the modified *parts* of files are stored at each snapshot.
 *   **Licence**: the licence of the server and client applications.
 *   **Other platforms**: supported operating systems other than Linux.
 *   **Active**: whether the project is currently maintained.
-*   **Notes**: additional notes.
+*   **Specificity**: brief notes about special features that notably set the application apart from the others.
 
-| Name | Installation | Implementation | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | Easy access | Resumable | Handles renames | CLI | Other interfaces | Licence | Other platforms | Active | Notes |
-| [Areca Backup](http://areca.sourceforge.net/) | [areca](https://aur.archlinux.org/packages/areca/) | Java | Zip, Zip64 | AES128, AES256 | Yes | Yes | Yes | No | Pausing only | No | Yes | Yes | GPLv2 | Windows | Yes |
-| [Attic](https://github.com/jborg/attic/) | [attic](https://aur.archlinux.org/packages/attic/) | Python | Yes | AES | Yes | Yes | Yes | Yes | Yes | ? | Yes | No | BSD | Yes |
-| [Back In Time](https://github.com/bit-team/backintime) | [Back In Time](/index.php/Back_In_Time "Back In Time") | python, rsync, diff | No | No | ? | SSH | ? | ? | ? | ? | No | Qt | GPL | Yes |
-| [BackupPC](http://backuppc.sourceforge.net/index.html) | [BackupPC](/index.php/BackupPC "BackupPC") | Perl | Yes | ? | No | Yes | Yes | ? | Yes | ? | No | Web | GPLv2 | Any (no client needed) | Yes | High-performance, enterprise-grade system for backing up Unix, Linux, Windows, and Mac OS X desktops and laptops to a remote server. Deduplication: identical files across multiple backups of the same or different PCs are stored only once resulting in substantial savings in disk storage and disk I/O. |
-| [Bacula](http://www.bacula.org) | [bacula-*](https://aur.archlinux.org/packages/?K=bacula-) in [AUR](/index.php/AUR "AUR") | C++ | Yes | Yes | ? | Yes | ? | ? | Yes | ? | Yes | GUI, Web | AGPLv3 | Windows, OS X | Yes |
-| [BorgBackup](http://borgbackup.readthedocs.org/en/stable/) | [borg](https://www.archlinux.org/packages/?name=borg) | Attic | Yes | Yes | Yes | SSH | ? | Yes | ? | ? | Yes | No | BSD | *BSD, OS X | Yes | Local caching of files; quick detection of unmodified files. |
-| [btar](http://viric.name/cgi-bin/btar) | [btar](https://aur.archlinux.org/packages/btar/) | C | Yes | Yes | ? | ? | ? | ? | ? | ? | Yes | No | GPLv3 | Yes | Tar-compatible archiver which allows arbitrary compression and ciphering, redundancy, differential backup, indexed extraction, multicore compression, input and output serialisation, and tolerance to partial archive errors. |
-| [bup](https://github.com/bup/bup) | [bup](https://www.archlinux.org/packages/?name=bup) [bup-git](https://aur.archlinux.org/packages/bup-git/) | C, Python, git | No | No | Yes | Yes | ? | ? | ? | ? | Yes | third party | GPLv2 | Windows, OS X, NetBSD, Solaris | Yes |
-| [burp](http://burp.grke.org) | [burp-backup](https://aur.archlinux.org/packages/burp-backup/) | librsync | Yes | Yes | Yes | Yes | ? | ? | ? | ? | Yes | [burp-ui](https://git.ziirish.me/ziirish/burp-ui) | AGPLv3 | Windows | Yes |
-| [DAR](http://dar.linux.free.fr/) | [dar](https://aur.archlinux.org/packages/dar/) | C++ | special archive format | Yes | ? | Yes | ? | ? | ? | ? | Yes | DarGUI | GPL | Windows, Solaris, FreeBSD, NetBSD, MacOS X | Yes | Short for Disk ARchive. Automatic backup using [cron](/index.php/Cron "Cron") is possible with [sarab](https://aur.archlinux.org/packages/sarab/). |
-| [DarGUI](http://dargui.sourceforge.net/) | [dargui](https://aur.archlinux.org/packages/dargui/) | DAR front-end | Yes | Yes | ? | Yes | ? | ? | ? | ? | No | GTK | GPL | Windows | No |
-| [Déjà Dup](https://launchpad.net/deja-dup) | [Déjà Dup](/index.php/D%C3%A9j%C3%A0_Dup "Déjà Dup") | duplicity | Yes | Yes | ? | Yes | ? | ? | ? | ? | No | GTK+ | GPLv3 | Yes | Integrated into the GNOME Files file manager. |
-| [Duplicati](http://www.duplicati.com/) | [duplicati-latest](https://aur.archlinux.org/packages/duplicati-latest/) | C# | Yes | Yes | ? | Yes | ? | ? | ? | ? | Yes | Yes | LGPL | Windows | Yes |
-| [Duplicity](http://www.nongnu.org/duplicity/) | [Duplicity](/index.php/Duplicity "Duplicity") | librsync | gzip | gpg | ? | Yes | ? | ? | ? | ? | Yes | Duply | GPL | Yes |
-| [Duply](http://www.duply.net/) | [Duply](/index.php/Duply "Duply") | duplicity front-end | Yes | Yes | ? | Yes | ? | ? | ? | ? | Yes | No | GPLv2 | Yes |
-| [gutbackup](https://github.com/gutenye/gutbackup) | [gutbackup](https://aur.archlinux.org/packages/gutbackup/) | rsync wrapper | No | No | ? | Yes | ? | ? | ? | ? | Yes | No | MIT | Yes |
-| [hdup](http://miek.nl/projects/hdup2/) | [hdup](/index.php/Hdup "Hdup") | C | tar.gz, tar.bz2 | gpg | ? | SSH | ? | ? | ? | ? | Yes | No | GPLv2 | No | Multiple backup targets. |
-| [keepconf](https://github.com/rfrail3/keepconf) | <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=keepconf)</small> | rsync, git | No | No | ? | Yes | ? | ? | ? | ? | Yes | No | GPLv3 | Yes |
-| [Kup Backup System](http://kde-apps.org/content/show.php/Kup+Backup+System?content=147465) | [kup](https://www.archlinux.org/packages/?name=kup) | rsync, bup front-end | No | No | ? | Yes | ? | ? | ? | ? | No | Qt | GPLv2 | Yes |
-| [Link-Backup](http://www.scottlu.com/Content/Link-Backup.html) | [link-backup](https://aur.archlinux.org/packages/link-backup/) | Python | No | No | ? | SSH | ? | ? | Yes | Yes | Yes | No | MIT | No | Similar to rsync-based scripts, but which does not use rsync. It copies itself to the server; it does not need to be installed on the server. It can be told to run for an arbitrary number of minutes. |
-| [luckyBackup](http://luckybackup.sourceforge.net/index.html) | [luckybackup](https://aur.archlinux.org/packages/luckybackup/) | C++ | No | No | ? | Yes | ? | ? | ? | ? | limited | Qt | GPLv3 | FreeBSD, Windows, OS X | No |
-| [obnam](http://liw.fi/obnam/) | [obnam](https://aur.archlinux.org/packages/obnam/) | Python | Yes | GnuPG | Yes | Yes | ? | ? | ? | ? | Yes | No | GPLv3 | Yes | FUSE-mountable backup repository. |
-| [rdiff-backup](http://www.nongnu.org/rdiff-backup/) | [rdiff-backup](https://www.archlinux.org/packages/?name=rdiff-backup) | librsync | No | No | Yes | Yes | ? | ? | ? | ? | Yes | No | GPL | Win32 | No |
-| [rdup](https://github.com/miekg/rdup) | [rdup](https://aur.archlinux.org/packages/rdup/) | C | tar.gz | gpg, blowfish and others | n/a | n/a | n/a | n/a | n/a | n/a | Yes | No | GPLv3 | No | Does not backup anything, only prints a list of absolute filenames to standard output. |
-| [rsnapshot](http://www.rsnapshot.org/) | [rsnapshot](/index.php/Rsnapshot "Rsnapshot") | rsync | No | No | No | Yes | ? | ? | ? | ? | Yes | No | GPLv2 | Win32 | Yes | Destination filesystem must support hard links. |
-| [SafeKeep](http://safekeep.sourceforge.net/) | [safekeep](https://aur.archlinux.org/packages/safekeep/) | rdiff-backup | No | No | ? | Yes | ? | ? | ? | ? | Yes | No | GPL | No | Integrates with Linux LVM and databases to create consistent backups. Bandwidth throttling. |
-| [sbackup](https://launchpad.net/sbackup) | [sbackup](https://aur.archlinux.org/packages/sbackup/) | Python | Yes | ? | ? | ? | ? | ? | ? | ? | No | GTK | GPLv3 | Yes | All configuration is accessable via Gnome interface. File and paths can be included and excluded directly or by regex. |
-| [Snebu](http://www.snebu.com) | [snebu](https://aur.archlinux.org/packages/snebu/) | C | Yes | No | ? | Yes | ? | ? | ? | ? | Yes | No | GPLv3 | ? | Supports arbitrary retention schedules (such as daily/weekly/monthly) which can be individually expired. |
-| [Synbak](http://www.initzero.it/portal/soluzioni/software-open-source/synbak-universal-backup-system_2623.html) | [synbak](https://www.archlinux.org/packages/?name=synbak) | multitool wrapper | Yes | No | ? | Yes | ? | ? | ? | ? | No | Web | GPLv3 | Yes | Meant to unify several backup methods in a single application while supplying a powerful reporting system. |
-| [syncBackup](http://www.darhon.com/syncbackup) | [syncbackup](https://aur.archlinux.org/packages/syncbackup/) | C++, rsync front-end | No | No | ? | Yes | ? | ? | ? | ? | No | Qt | GPL | No |
-| [TimeShift](https://launchpad.net/timeshift) | [timeshift](https://aur.archlinux.org/packages/timeshift/) | rsync | No | No | ? | Yes | ? | ? | ? | ? | No | GTK | GPLv3 | Yes |
-| [trinkup](https://gist.github.com/ei-grad/7610406/) | [trinkup](https://aur.archlinux.org/packages/trinkup/) | rsync wrapper | No | No | ? | Yes | ? | ? | ? | ? | Yes | No | DWTFYWWI | Yes |
-| [ZBackup](http://zbackup.org/) | [zbackup](https://aur.archlinux.org/packages/zbackup/) | C++ | LZMA, LZO | AES | ? | ? | ? | ? | ? | ? | Yes | No | GPLv2 | Yes | Repository consists of immutable files. No existing files are ever modified. |
-| Name | Installation | Implementation | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | Easy access | Resumable | Handles renames | CLI | Other interfaces | Licence | Other platforms | Active | Notes |
+### Single machine
+
+These applications are aimed at backing up data from the machine they are installed on, although the backup destination can be located on an external machine or storage media.
+
+| Name | Installation | Implementation | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | Easy access | Resumable | Handles renames | CLI | Other interfaces | Increment type | Licence | Other platforms | Active | Specificity |
+| [Areca Backup](http://areca.sourceforge.net/) | [areca](https://aur.archlinux.org/packages/areca/) | Java | Zip, Zip64 | AES128, AES256 | Yes | Yes | Yes | No | Pausing only | No | Yes | Yes | chunk-based | GPLv2 | Windows | Yes |
+| [Attic](https://github.com/jborg/attic/) | [attic](https://aur.archlinux.org/packages/attic/) | Python | Yes | AES256 | Yes | SSH | Yes | Yes | Yes | Yes | Yes | No | chunk-based | BSD | Yes |
+| [Back In Time](https://github.com/bit-team/backintime) | [Back In Time](/index.php/Back_In_Time "Back In Time") | Python, rsync, diff | No | No | rsync | rsync | rsync | Yes | No | No | No | Qt | file-based, hard links | GPL | Yes |
+| [BorgBackup](http://borgbackup.readthedocs.org/en/stable/) | [borg](https://www.archlinux.org/packages/?name=borg) | Python (Attic fork) | lz4, zlib, lzma | AES256 | Yes | SSH | Yes[[1]](http://borgbackup.readthedocs.org/en/stable/faq.html#which-file-types-attributes-etc-are-preserved) | Yes | Yes[[2]](http://borgbackup.readthedocs.org/en/stable/faq.html#if-a-backup-stops-mid-way-does-the-already-backed-up-data-stay-there) | Yes | Yes | No | chunk-based | BSD | *BSD, OS X | Yes |
+| [btar](http://viric.name/cgi-bin/btar) | [btar](https://aur.archlinux.org/packages/btar/) | C | Yes | Yes | Yes | Yes | ? | ? | ? | ? | Yes | No |  ? | GPLv3 | Yes | Redundancy, indexed extraction, multicore compression, input and output serialisation, tolerance to partial archive errors. |
+| [bup](https://github.com/bup/bup) | [bup](https://www.archlinux.org/packages/?name=bup) [bup-git](https://aur.archlinux.org/packages/bup-git/) | C, Python, git | No | No | Yes | Yes | ? | ? | ? | ? | Yes | third party |  ? | GPLv2 | Windows, OS X, NetBSD, Solaris | Yes |
+| [DAR](http://dar.linux.free.fr/) (Disk ARchive) | [dar](https://aur.archlinux.org/packages/dar/) | C++ | special archive format | Yes | ? | Yes | ? | ? | ? | ? | Yes | DarGUI |  ? | GPL | Windows, Solaris, FreeBSD, NetBSD, MacOS X | Yes | Automatic backup using [cron](/index.php/Cron "Cron") is possible with [sarab](https://aur.archlinux.org/packages/sarab/). |
+| [DarGUI](http://dargui.sourceforge.net/) | [dargui](https://aur.archlinux.org/packages/dargui/) | DAR front-end | Yes | Yes | ? | Yes | ? | ? | ? | ? | No | GTK |  ? | GPL | Windows | ? |
+| [Déjà Dup](https://launchpad.net/deja-dup) | [Déjà Dup](/index.php/D%C3%A9j%C3%A0_Dup "Déjà Dup") | duplicity front-end | Yes | Yes | Yes | Yes | ? | ? | ? | ? | No | GTK+ |  ? | GPLv3 | Yes | Integrated into [GNOME Files](/index.php/GNOME_Files "GNOME Files"). |
+| [Duplicati](http://www.duplicati.com/) | [duplicati-latest](https://aur.archlinux.org/packages/duplicati-latest/) | C# | Yes | Yes | Yes | Yes | ? | ? | ? | ? | Yes | Yes |  ? | LGPL | Windows | Yes |
+| [Duplicity](http://www.nongnu.org/duplicity/) | [Duplicity](/index.php/Duplicity "Duplicity") | librsync | gzip | gpg | Yes | Yes | ? | ? | ? | ? | Yes | Duply |  ? | GPL | Yes |
+| [Duply](http://www.duply.net/) | [Duply](/index.php/Duply "Duply") | duplicity front-end | Yes | Yes | Yes | Yes | ? | ? | ? | ? | Yes | No |  ? | GPLv2 | Yes |
+| [gutbackup](https://github.com/gutenye/gutbackup) | [gutbackup](https://aur.archlinux.org/packages/gutbackup/) | rsync wrapper | No | No | ? | Yes | ? | ? | ? | ? | Yes | No |  ? | MIT | Yes |
+| [hdup](http://miek.nl/projects/hdup2/) | [hdup](/index.php/Hdup "Hdup") | C | tar.gz, tar.bz2 | gpg | ? | SSH | ? | ? | ? | ? | Yes | No |  ? | GPLv2 | No | Multiple backup targets. |
+| [keepconf](https://github.com/rfrail3/keepconf) | <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=keepconf)</small> | rsync, git | No | No | ? | Yes | ? | ? | ? | ? | Yes | No |  ? | GPLv3 | Yes |
+| [Kup Backup System](http://kde-apps.org/content/show.php/Kup+Backup+System?content=147465) | [kup](https://www.archlinux.org/packages/?name=kup) | rsync, bup front-end | No | No | ? | Yes | ? | ? | ? | ? | No | Qt |  ? | GPLv2 | Yes |
+| [Link-Backup](http://www.scottlu.com/Content/Link-Backup.html) | [link-backup](https://aur.archlinux.org/packages/link-backup/) | Python | No | No | ? | SSH | ? | ? | Yes | Yes | Yes | No |  ? | MIT | No | It copies itself to the server. |
+| [luckyBackup](http://luckybackup.sourceforge.net/index.html) | [luckybackup](https://aur.archlinux.org/packages/luckybackup/) | C++ | No | No | ? | Yes | ? | ? | ? | ? | limited | Qt |  ? | GPLv3 | FreeBSD, Windows, OS X | No |
+| [obnam](http://liw.fi/obnam/) | [obnam](https://aur.archlinux.org/packages/obnam/) | Python | Yes | GnuPG | Yes | Yes | ? | Yes | ? | ? | Yes | No |  ? | GPLv3 | Yes |
+| [rdiff-backup](http://www.nongnu.org/rdiff-backup/) | [rdiff-backup](https://www.archlinux.org/packages/?name=rdiff-backup) | librsync | No | No | Yes | Yes | ? | ? | ? | ? | Yes | No |  ? | GPL | Win32 | No |
+| [rdup](https://github.com/miekg/rdup) | [rdup](https://aur.archlinux.org/packages/rdup/) | C | tar.gz | gpg, blowfish and others | ? | ? | ? | ? | ? | ? | Yes | No |  ? | GPLv3 | No | Set of simple command-line tools. |
+| [rsnapshot](http://www.rsnapshot.org/) | [rsnapshot](/index.php/Rsnapshot "Rsnapshot") | rsync | No | No | Yes | Yes | ? | ? | ? | ? | Yes | No | file-based, hard links | GPLv2 | Win32 | Yes |
+| [sbackup](https://launchpad.net/sbackup) | [sbackup](https://aur.archlinux.org/packages/sbackup/) | Python | Yes | ? | ? | ? | ? | ? | ? | ? | No | GTK |  ? | GPLv3 | Yes |
+| [Synbak](http://www.initzero.it/portal/soluzioni/software-open-source/synbak-universal-backup-system_2623.html) | [synbak](https://www.archlinux.org/packages/?name=synbak) | Multitool wrapper | Yes | No | Yes | Yes | Yes | ? | ? | ? | No | Web |  ? | GPLv3 | Yes | Unifies several backup methods. |
+| [syncBackup](http://www.darhon.com/syncbackup) | [syncbackup](https://aur.archlinux.org/packages/syncbackup/) | C++, rsync front-end | No | No | ? | Yes | ? | ? | ? | ? | No | Qt |  ? | GPL | No |
+| [TimeShift](https://launchpad.net/timeshift) | [timeshift](https://aur.archlinux.org/packages/timeshift/) | rsync | No | No | ? | Yes | ? | ? | ? | ? | No | GTK |  ? | GPLv3 | Yes |
+| [trinkup](https://gist.github.com/ei-grad/7610406/) | [trinkup](https://aur.archlinux.org/packages/trinkup/) | rsync wrapper | No | No | ? | Yes | ? | ? | ? | ? | Yes | No |  ? | DWTFYWWI | Yes |
+| [ZBackup](http://zbackup.org/) | [zbackup](https://aur.archlinux.org/packages/zbackup/) | C++ | LZMA, LZO | AES | ? | ? | ? | ? | ? | ? | Yes | No |  ? | GPLv2 | Yes | Repository consists of immutable files. |
+| Name | Installation | Implementation | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | Easy access | Resumable | Handles renames | CLI | Other interfaces | Increment type | Licence | Other platforms | Active | Specificity |
+
+### Network oriented
+
+These applications have been designed to centralize the backup of several machines connected to a network, through a server-client model. In general they are more complicated to deploy, compared to [#Single machine](#Single_machine) solutions.
+
+| Name | Installation | Implementation | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | Easy access | Resumable | Handles renames | CLI | Other interfaces | Increment type | Licence | Other platforms | Active | Specificity |
+| [BackupPC](http://backuppc.sourceforge.net/index.html) | [BackupPC](/index.php/BackupPC "BackupPC") | Perl | Yes | No | Yes | Yes | Yes | No | Yes | ? | No | Web | file-based, hard links | GPLv2 | Any (no client needed) | Yes | Enterprise-grade, server-based system; identical files across backups of the same or different clients are stored only once. |
+| [Bacula](http://www.bacula.org) | [bacula-*](https://aur.archlinux.org/packages/?K=bacula-) in [AUR](/index.php/AUR "AUR") | C++ | Yes | Yes | ? | Yes | ? | ? | Yes | ? | Yes | GUI, Web |  ? | AGPLv3 | Windows, OS X | Yes |
+| [burp](http://burp.grke.org) | [burp-backup](https://aur.archlinux.org/packages/burp-backup/) | librsync | Yes | Yes | Yes | Yes | ? | ? | ? | ? | Yes | [burp-ui](https://git.ziirish.me/ziirish/burp-ui) |  ? | AGPLv3 | Windows | Yes |
+| [SafeKeep](http://safekeep.sourceforge.net/) | [safekeep](https://aur.archlinux.org/packages/safekeep/) | rdiff-backup | No | No | ? | Yes | ? | ? | ? | ? | Yes | No |  ? | GPL | No | Integrates with [LVM](/index.php/LVM "LVM") and databases to create consistent backups. Bandwidth throttling. |
+| [Snebu](http://www.snebu.com) | [snebu](https://aur.archlinux.org/packages/snebu/) | C | Yes | No | ? | Yes | ? | ? | ? | ? | Yes | No |  ? | GPLv3 | ? | Supports arbitrary retention schedules. |
+| Name | Installation | Implementation | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | Easy access | Resumable | Handles renames | CLI | Other interfaces | Increment type | Licence | Other platforms | Active | Specificity |
 
 ## Cloud storage
 
@@ -302,7 +319,7 @@ A [cooperative storage cloud](https://en.wikipedia.org/wiki/Cooperative_storage_
     *   First 10GB of backup storage is free (no contribution needed).
     *   In addition to paid support, support plans in exchange for extended contribution (300GB+) exist.
     *   Automatic and incremental backups.
-    *   Data is encrypted before leaving the computer, though keys are also stored on the Symform's servers.[[1]](http://virtualserverguy.com/blog/2012/12/19/symform-security-analysis)
+    *   Data is encrypted before leaving the computer, though keys are also stored on the Symform's servers.[[3]](http://virtualserverguy.com/blog/2012/12/19/symform-security-analysis)
     *   Customizable limits for bandwidth consumption.
     *   Ability to have a local copy ("Hot Copy") of the backed up data on a different disk or computer.
     *   Ability to have synchronized folders between nodes (Dropbox-like).
@@ -451,7 +468,7 @@ See also [Disk cloning](/index.php/Disk_cloning "Disk cloning").
 *   **System Tar & Restore** — Backup and Restore your system using tar or Transfer it with rsync
     *   CLI and Dialog interfaces
     *   Easy backup and restore wizards
-    *   Creates _.tar.gz_, _.tar.bz2_, _.tar.xz_ or _.tar_ archives
+    *   Creates *.tar.gz*, *.tar.bz2*, *.tar.xz* or *.tar* archives
     *   Supports openssl / gpg encryption
     *   Uses rsync to transfer a running system
     *   Supports Grub2, Syslinux, EFISTUB/efibootmgr and Systemd/bootctl

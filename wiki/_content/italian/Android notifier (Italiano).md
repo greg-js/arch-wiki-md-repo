@@ -26,7 +26,6 @@ Installare [android-notifier-desktop](https://aur.archlinux.org/packages/android
 Modificare il file `/usr/share/android-notifier-desktop/run.sh`
 
  `/usr/share/android-notifier-desktop/run.sh` 
-
 ```
 .....
 java -DconfigDir=$configDir -Djava.util.prefs.userRoot=$configDir/android-notifier-desktop -Djava.net.preferIPv4Stack=true -client -Xms8m -Xmx32m -jar android-notifier-desktop.jar $1
@@ -35,7 +34,6 @@ java -DconfigDir=$configDir -Djava.util.prefs.userRoot=$configDir/android-notifi
 in
 
  `/usr/share/android-notifier-desktop/run.sh` 
-
 ```
 .....
 java -DconfigDir=$configDir -Djava.util.prefs.userRoot=$configDir/android-notifier-desktop -Djava.net.preferIPv4Stack=true -client -Xms8m -Xmx32m -jar /usr/share/android-notifier-desktop/android-notifier-desktop.jar $1
@@ -43,7 +41,7 @@ java -DconfigDir=$configDir -Djava.util.prefs.userRoot=$configDir/android-notifi
 
 (viene usato il percorso completo al file `/usr/share/android-notifier-desktop/android-notifier-desktop.jar`)
 
-Se non viene applicata tale modifica, l'errore _"The file android-notifier-desktop.jar couldn't be found"_ sarà mostrato e l'applicazione non si avvierà.
+Se non viene applicata tale modifica, l'errore *"The file android-notifier-desktop.jar couldn't be found"* sarà mostrato e l'applicazione non si avvierà.
 
 [Maggiori informazioni riguardo al bugfix](http://code.google.com/p/android-notifier/issues/detail?id=270)
 

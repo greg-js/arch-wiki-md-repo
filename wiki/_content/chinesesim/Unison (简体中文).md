@@ -34,7 +34,7 @@ $ unison-gtk2
 
 ### 手动操作
 
-或者，在`~/.unison`里手动创建配置文件，并且将接下来的几行加入到默认配置文件`~/.unison/_profilename_.prf`里。
+或者，在`~/.unison`里手动创建配置文件，并且将接下来的几行加入到默认配置文件`~/.unison/*profilename*.prf`里。
 
 为被同步文件定义根目录
 
@@ -86,7 +86,7 @@ ignore=Name *.tmp
 设定好配置文件以后就可以开始同步了:
 
 ```
-$ unison _profilename_
+$ unison *profilename*
 
 ```
 
@@ -122,6 +122,6 @@ $ unison-gtk2
 *   [Unison (file synchronizer)](/index.php?title=Wikipedia&action=edit&redlink=1 "Wikipedia (page does not exist)")
 *   [Official website](http://www.cis.upenn.edu/~bcpierce/unison/)
 *   [Yahoo! user group](http://tech.groups.yahoo.com/group/unison-users)
-*   _[Liberation through data replication](http://www.pgbovine.net/unison_guide.htm)_ by Philip Guo
-*   _[Setting up Unison for your mom](http://www.pgbovine.net/unison-for-your-mom.htm)_ by Philip Guo
-*   _[Replication using Unison](http://twiki.org/cgi-bin/view/Codev/ReplicationUsingUnison)_ on TWiki
+*   *[Liberation through data replication](http://www.pgbovine.net/unison_guide.htm)* by Philip Guo
+*   *[Setting up Unison for your mom](http://www.pgbovine.net/unison-for-your-mom.htm)* by Philip Guo
+*   *[Replication using Unison](http://twiki.org/cgi-bin/view/Codev/ReplicationUsingUnison)* on TWiki

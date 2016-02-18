@@ -38,7 +38,7 @@ Az md5sum ellenőrző hasonlóan működik.
 
 Írd ki a .iso fájlt egy CD-re vagy DVD-re a számodra megfelelő meghajtóval és szoftverrel, majd [indítsd el az Arch Linux telepítőt](#Arch_Linux_telep.C3.ADt.C5.91_bootol.C3.A1sa) róla.
 
-**Megjegyzés:** Az író és a korong minősége változó lehet. Lassú sebességen történő írás ajánlott a biztos eredményhez; Egyesek _**4x-es, vagy akár 2x-es írási sebességet**_ ajánlanak. Ha rendellenes viselkedést tapasztalsz, akkor próbáld meg a lehető leglassabb sebességgel írni.
+**Megjegyzés:** Az író és a korong minősége változó lehet. Lassú sebességen történő írás ajánlott a biztos eredményhez; Egyesek ***4x-es, vagy akár 2x-es írási sebességet*** ajánlanak. Ha rendellenes viselkedést tapasztalsz, akkor próbáld meg a lehető leglassabb sebességgel írni.
 
 #### Memóriakártyáról vagy pendrive-ról történő telepítés
 
@@ -117,7 +117,7 @@ ami (amennyiben működik) nem fogja letiltani a kernelmód beállításokat.
 
 További információért olvasd el az [Intel](/index.php/Intel_(Magyar) "Intel (Magyar)") bejegyzést.
 
-Ha a képernyő _nem_ nem válik feketévé a bootolás során, de megakad, amikor a kernelt próbálja betölteni, nyomj `Tab` billentyűt, hogy szerkeszd a kernel sort, majd írd bele a következőt:
+Ha a képernyő *nem* nem válik feketévé a bootolás során, de megakad, amikor a kernelt próbálja betölteni, nyomj `Tab` billentyűt, hogy szerkeszd a kernel sort, majd írd bele a következőt:
 
 ```
 acpi=off
@@ -134,9 +134,9 @@ Ha nem amerikai kiosztású billentyűzeted van, akkor a következő paranccsal 
 
 vagy használd a loadkeys parancsot:
 
- `# loadkeys _layout_` 
+ `# loadkeys *layout*` 
 
-ahol _layout_ a billentyűzeted kiosztása, mint például `fr` vagy `be-latin1`
+ahol *layout* a billentyűzeted kiosztása, mint például `fr` vagy `be-latin1`
 
 #### Dokumentáció
 

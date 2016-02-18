@@ -36,7 +36,7 @@ There are several options in [official repositories](/index.php/Official_reposit
 
 ## Configuring the GUI version
 
-Both GUI versions, _transmission-gtk_ and _transmission-qt_, can function autonomously without a formal back-end daemon.
+Both GUI versions, *transmission-gtk* and *transmission-qt*, can function autonomously without a formal back-end daemon.
 
 GUI versions are configured to work out-of-the-box, but the user may wish to change some of the settings. The default path to the GUI configuration files is `~/.config/transmission`.
 
@@ -47,7 +47,6 @@ A guide to configuration options can be found on the Transmission web site: [htt
 With GTK+ 3.18, transmission-gtk shows black borders in random places; these can be hidden via `gtk.css`:
 
  `~/.config/gtk-3.0/gtk.css` 
-
 ```
 .tr-workarea .overshoot,
 .tr-workarea .undershoot { border: none; }
@@ -56,35 +55,35 @@ With GTK+ 3.18, transmission-gtk shows black borders in random places; these can
 
 ## Transmission-daemon and CLI
 
-The commands for _transmission-cli_ are:
+The commands for *transmission-cli* are:
 
-	_transmission-daemon_: starts the daemon.
+	*transmission-daemon*: starts the daemon.
 
-	_transmission-remote_: invokes the [CLI](https://en.wikipedia.org/wiki/Command-line_interface "wikipedia:Command-line interface") for the daemon, whether local or remote, followed by the command you want the daemon to execute.
+	*transmission-remote*: invokes the [CLI](https://en.wikipedia.org/wiki/Command-line_interface "wikipedia:Command-line interface") for the daemon, whether local or remote, followed by the command you want the daemon to execute.
 
-	_transmission-remote-cli_: (requires [transmission-remote-cli](https://www.archlinux.org/packages/?name=transmission-remote-cli)) starts the [curses](https://en.wikipedia.org/wiki/curses_(programming_library) "wikipedia:curses (programming library)") interface for the daemon, whether local or remote.
+	*transmission-remote-cli*: (requires [transmission-remote-cli](https://www.archlinux.org/packages/?name=transmission-remote-cli)) starts the [curses](https://en.wikipedia.org/wiki/curses_(programming_library) interface for the daemon, whether local or remote.
 
-	_transmission-cli_: starts a non-daemonized local instance of _transmission_, for manually downloading a torrent.
+	*transmission-cli*: starts a non-daemonized local instance of *transmission*, for manually downloading a torrent.
 
-	_transmission-show_: returns information on a given torrent file.
+	*transmission-show*: returns information on a given torrent file.
 
-	_transmission-create_: creates a new torrent.
+	*transmission-create*: creates a new torrent.
 
-	_transmission-edit_: add, delete, or replace a tracker's announce URL.
+	*transmission-edit*: add, delete, or replace a tracker's announce URL.
 
 ### Starting and stopping the daemon
 
 As explained in [#Choosing a user](#Choosing_a_user), the `transmission` daemon can be run:
 
-*   As the user _transmission_, by running as root: `# systemctl start transmission` The daemon can then be stopped with: `# systemctl stop transmission` 
+*   As the user *transmission*, by running as root: `# systemctl start transmission` The daemon can then be stopped with: `# systemctl stop transmission` 
 
 *   As your own user, by running under your user name: `$ transmission-daemon` The daemon can then be stopped with: `$ killall transmission-daemon` 
 
 *   Starting (and stopping) `transmission.service` with [systemctl](/index.php/Systemd#Using_units "Systemd") will use the user set in [#Choosing a user](#Choosing_a_user). Note that the name of the systemd service is `transmission.service`, not `transmission-daemon.service`.
 
-Starting the daemon will create an initial _transmission_ configuration file. See [#Configuring the daemon](#Configuring_the_daemon).
+Starting the daemon will create an initial *transmission* configuration file. See [#Configuring the daemon](#Configuring_the_daemon).
 
-An alternative option to stop transmission is to use the _transmission-remote_ command:
+An alternative option to stop transmission is to use the *transmission-remote* command:
 
 ```
 $ transmission-remote --exit
@@ -98,7 +97,6 @@ $ transmission-remote --exit
 The daemon is started after `network.service` was initialised. However, if you enable the service `dhcpcd` as opposed to the device-specific service, such as `dhcpcd@enp1s0.service` for example, it may happen that Transmission is started too early and cannot bind to the network interface. Thus, the web interface is unreachable. A possible solution is to add the `Requires` line to the unit's [configuration file](/index.php/Systemd#Editing_provided_units "Systemd"):
 
  `/etc/systemd/system/transmission.service.d/fixdep.conf` 
-
 ```
 [Unit]
 Requires=network.target
@@ -111,7 +109,6 @@ Requires=network.target
 It may only be desirable to run transmission on certain networks. The following script checks that the connection is to a list of authorized networks and then proceeds to launch transmission-daemon.
 
  `/etc/netctl/hooks/90-transmission.sh` 
-
 ```
 #!/bin/bash
 
@@ -141,15 +138,12 @@ fi
 Create a [start script](#Starting_and_stopping_the_daemon) in folder `/etc/wicd/scripts/postconnect`, and a [stop script](#Starting_and_stopping_the_daemon) in folder `/etc/wicd/scripts/predisconnect`. Remember to make them executable. For example:
 
  `/etc/wicd/scripts/postconnect/transmission` 
-
 ```
 #!/bin/bash
 
 systemctl start transmission
 ```
-
  `/etc/wicd/scripts/predisconnect/transmission` 
-
 ```
 #!/bin/bash
 
@@ -164,17 +158,16 @@ Choose how you want to run `transmission`:
 
 *   As a separate user, `transmission` by default (recommended for increased security).
 
-By default, _transmission_ creates a user and a group `transmission`, with its home files at `/var/lib/transmission/`, and runs as this "user". This is a security precaution, so _transmission_, and its downloads, have no access to files outside of `/var/lib/transmission/`. Configuration, operation, and access to downloads needs to be done with "root" privileges (e.g. by using [sudo](/index.php/Sudo "Sudo")).
+By default, *transmission* creates a user and a group `transmission`, with its home files at `/var/lib/transmission/`, and runs as this "user". This is a security precaution, so *transmission*, and its downloads, have no access to files outside of `/var/lib/transmission/`. Configuration, operation, and access to downloads needs to be done with "root" privileges (e.g. by using [sudo](/index.php/Sudo "Sudo")).
 
 *   Under the user's own user name.
 
 To set this up, [override](/index.php/Systemd#Editing_provided_units "Systemd") the provided service file and specify your username:
 
  `/etc/systemd/system/transmission.service.d/username.conf` 
-
 ```
 [Service]
-User=_your_username_
+User=*your_username*
 ```
 
 ### Configuring the daemon
@@ -202,7 +195,7 @@ A recommendation for those running under username `transmission` is to create a 
 
 ```
 
-Now `/mnt/data/torrents` will be accessible for the system user `facade` and for the `transmission` group to which the `transmission` user belongs. Making the target directory world read/writable is highly discouraged (i.e. do not _chmod_ the directory to _777_). Instead, give individual users/groups appropriate permissions to the appropriate directories.
+Now `/mnt/data/torrents` will be accessible for the system user `facade` and for the `transmission` group to which the `transmission` user belongs. Making the target directory world read/writable is highly discouraged (i.e. do not *chmod* the directory to *777*). Instead, give individual users/groups appropriate permissions to the appropriate directories.
 
 **Note:** If `/mnt/data/torrents` is located on a removable device, e.g. with an `/etc/fstab` entry with the option `nofail`, Transmission will complain that it cannot find your files. To remedy this, you can add `RequiresMountsFor=/mnt/data/torrents` to `/etc/systemd/system/transmission.service.d/transmission.conf` in the section `[Unit]`.
 
@@ -214,7 +207,7 @@ too many tracker error messages in the syslog. logfile facility needed.
 
 #### Watch dir
 
-If you want to _Automatically add .torrent files from a folder_, but you find that the `watch-dir` and `watch-dir-enabled` options set in the config file do not work, you can start the transmission daemon with the flag `-c /path/to/watch/dir`.
+If you want to *Automatically add .torrent files from a folder*, but you find that the `watch-dir` and `watch-dir-enabled` options set in the config file do not work, you can start the transmission daemon with the flag `-c /path/to/watch/dir`.
 
 If you're using systemd, edit the unit file located at `/etc/systemd/system/transmission.service`.
 
@@ -225,7 +218,6 @@ If you're using systemd, edit the unit file located at `/etc/systemd/system/tran
 The error messages `UDP Failed to set receive buffer` and `UDP Failed to set sent buffer` mean that Transmission would like a bigger sent and receive buffer. These buffers can be changed by adding the following file:
 
  `/etc/sysctl.d/60-net_buffer.conf` 
-
 ```
 
 net.core.rmem_max = 16777216

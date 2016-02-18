@@ -1,8 +1,8 @@
 (I converted this from html automatically, so it could do with cleaning up!)
 
-If you want to build small static binaries, say for an _initrd_/_initramfs_, or maybe a boot floppy, one of the best ways of doing this is to use the _uclibc_ library instead of _glibc_. Here is how I got a development system set up, with which I could then compile _busybox_, _run-init_ (from _klibc_, for use in an _initramfs_), and the utilities from _unionfs_.
+If you want to build small static binaries, say for an *initrd*/*initramfs*, or maybe a boot floppy, one of the best ways of doing this is to use the *uclibc* library instead of *glibc*. Here is how I got a development system set up, with which I could then compile *busybox*, *run-init* (from *klibc*, for use in an *initramfs*), and the utilities from *unionfs*.
 
-There are various ways of getting a system based on _uclibc_ running. The easiest is to use the development system offered on the _uclibc_ website ([www.uclibc.org](http://www.uclibc.org/)) in the form of a root file-system (prebuilt root file-system). It is not small - unpacked about 100M – but it provides all the basic tools for compiling with uclibc in ready-made form. An alternative, and more flexible approach is to use _buildroot_. I describe first how to get these set up, and then give some examples of their use.
+There are various ways of getting a system based on *uclibc* running. The easiest is to use the development system offered on the *uclibc* website ([www.uclibc.org](http://www.uclibc.org/)) in the form of a root file-system (prebuilt root file-system). It is not small - unpacked about 100M – but it provides all the basic tools for compiling with uclibc in ready-made form. An alternative, and more flexible approach is to use *buildroot*. I describe first how to get these set up, and then give some examples of their use.
 
 ## Contents
 
@@ -15,7 +15,7 @@ There are various ways of getting a system based on _uclibc_ running. The easies
 
 ## Using a prebuilt root file-system
 
-*   Download it to a new build directory, e.g. **~/BUILD/uclibc**. The file can be got from the _uclibc_ download server, it was named **root_fs_i386.ext2.bz2**.
+*   Download it to a new build directory, e.g. **~/BUILD/uclibc**. The file can be got from the *uclibc* download server, it was named **root_fs_i386.ext2.bz2**.
 *   Unzip it: 'bunzip2 root_fs_i386.ext2.bz2'
 *   Make a mount point: 'mkdir mnt'
 *   Make a folder for the development system: 'mkdir ucroot'
@@ -40,11 +40,11 @@ tar -cjf uclibc_rootfs.tar.bz2 -C ucroot .
 
 Here I have just copied the development file-system to the directory **ucroot/**, so that it is available within the normal file-system. After copying and unmounting I can discard the original.
 
-Unfortunately this pre-built _root_fs_ seems not to be updated any more, but at least it worked for me without any great difficulties.
+Unfortunately this pre-built *root_fs* seems not to be updated any more, but at least it worked for me without any great difficulties.
 
 ## Using buildroot
 
-The recommended method is to use _buildroot_ ([buildroot.uclibc.org](http://buildroot.uclibc.org/)), but at first I was too stupid for it, and it didn't work. After a bit of consideration, I decided to base my **.config** on that used to build the pre-built _root_fs_. The result was **buildroot_my_config** (see below), and this seemed to work. Well, if I remember correctly, it only worked after I had added a symlink from **/usr/bin/install** to **/bin/install**. The main change I made was to set the architecture to _i486_, and to select the tarred form for the final package (to save all the fiddling around with mounting). Of course, there are many other possible configurations.
+The recommended method is to use *buildroot* ([buildroot.uclibc.org](http://buildroot.uclibc.org/)), but at first I was too stupid for it, and it didn't work. After a bit of consideration, I decided to base my **.config** on that used to build the pre-built *root_fs*. The result was **buildroot_my_config** (see below), and this seemed to work. Well, if I remember correctly, it only worked after I had added a symlink from **/usr/bin/install** to **/bin/install**. The main change I made was to set the architecture to *i486*, and to select the tarred form for the final package (to save all the fiddling around with mounting). Of course, there are many other possible configurations.
 
 I should warn you that the compilation takes a while (I think about 40 minutes on my P4 3GHz computer) and uses a lot of space (about 1.4GB were occupied at the end). Of course you can delete the build directory when the compilation is finished (but remember to take the result, in my case **rootfs.i486.tar**, out first – you might like to compress this 80MB lump for convenience).
 
@@ -52,11 +52,11 @@ When you unpack your tar-ball to your **ucroot/** directory, do it as root if yo
 
 ## Using the development environment
 
-To use the development environment, I can copy the needed source files into this directory tree, using e.g. the **ucroot/home/** directory (which is otherwise unused), and do something like 'chroot ucroot', as root of course, to get into it. It is quite convenient to have one terminal operating "chrooted" in this development environment and another in the normal environment running _mc_ (or some GUI file manager) for copying things around the system, etc., as nothing fancy is provided in the development environment.
+To use the development environment, I can copy the needed source files into this directory tree, using e.g. the **ucroot/home/** directory (which is otherwise unused), and do something like 'chroot ucroot', as root of course, to get into it. It is quite convenient to have one terminal operating "chrooted" in this development environment and another in the normal environment running *mc* (or some GUI file manager) for copying things around the system, etc., as nothing fancy is provided in the development environment.
 
 ### Compiling the unionfs utilities
 
-These are best statically linked for use in an _initramfs_, and they will be much smaller if _uclibc_ is used.
+These are best statically linked for use in an *initramfs*, and they will be much smaller if *uclibc* is used.
 
 *   Create directory **unionfs/** inside **home**
 *   Create file **fistdev.mk**:
@@ -76,19 +76,19 @@ LINUXSRC=/usr/src/linux
 TOPINC=-I$(LINUXSRC)/include
 MODDIR=/lib/modules/2.6.xx
 
-*   Unpack the _unionfs_ tar-ball within **unionfs/**
+*   Unpack the *unionfs* tar-ball within **unionfs/**
 *   Copy **fistdev.mk** into the base directory (e.g. **unionfs-1.1.2/**)
-*   Run 'make utils' in that directory. In my case it failed building _unionimap_, but I guess you normally won't need that (whatever it is!)
+*   Run 'make utils' in that directory. In my case it failed building *unionimap*, but I guess you normally won't need that (whatever it is!)
 *   Copy out **unionctl** and **uniondbg**, and strip them: 'strip unionctl uniondbg'
 
 ### Compiling busybox
 
-I was playing around with LinuxLive scripts and the version supplied there seemed a bit large to me – maybe it was compiled against _glibc_? Anyway, I decided to do a _uclibc_ version. Unfortunately the 'make menuconfig' step didn't work for me in the _uclibc_ development environment. Maybe there's a trick or tweak (does anybody know?), but to get around this you can do 'make menuconfig' in your normal system and save the resulting **.config** file, delete the **busybox-x.x.x/** folder, unpack it again and copy your **.config** into that. Then do as below. If you don't start with a fresh folder in the_uclibc_ system, it won't work.
+I was playing around with LinuxLive scripts and the version supplied there seemed a bit large to me – maybe it was compiled against *glibc*? Anyway, I decided to do a *uclibc* version. Unfortunately the 'make menuconfig' step didn't work for me in the *uclibc* development environment. Maybe there's a trick or tweak (does anybody know?), but to get around this you can do 'make menuconfig' in your normal system and save the resulting **.config** file, delete the **busybox-x.x.x/** folder, unpack it again and copy your **.config** into that. Then do as below. If you don't start with a fresh folder in the*uclibc* system, it won't work.
 
-*   Enter the _chroot_ system
-*   Unpack _busybox-1.0.1_ within the **home/** directory
+*   Enter the *chroot* system
+*   Unpack *busybox-1.0.1* within the **home/** directory
 *   Provide a **.config** as described above
-*   _cd_ to the **busybox-1.0.1/** directory
+*   *cd* to the **busybox-1.0.1/** directory
 *   make oldconfig
     make dep
     make
@@ -96,9 +96,9 @@ I was playing around with LinuxLive scripts and the version supplied there seeme
 
 ### Compiling run-init.c from klibc
 
-*   Copy the file **run-init.c** from the _klibc_ package (I used 'klibc-1.1.1') to the **home/** directory
-*   Enter the _chroot_ system
-*   _cd_ to the directory containing **run-init.c**
+*   Copy the file **run-init.c** from the *klibc* package (I used 'klibc-1.1.1') to the **home/** directory
+*   Enter the *chroot* system
+*   *cd* to the directory containing **run-init.c**
 *   'gcc -Os -static -o run-init run-init.c'
 *   Copy out **run-init**
 

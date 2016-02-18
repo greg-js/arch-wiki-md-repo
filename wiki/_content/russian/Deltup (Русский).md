@@ -12,7 +12,6 @@
 2\. Добавляем в `/etc/pacman.d/mirrorlist`
 
  `/etc/pacman.d/mirrorlist` 
-
 ```
 ##
 ## Arch Linux repository mirrorlist
@@ -41,7 +40,6 @@ Server = [http://delta.archlinux.fr/$repo/os/$arch](http://delta.archlinux.fr/$r
 4\. В `/etc/pacman.conf` убираем `#` перед параметром `UseDelta`
 
  `/etc/pacman.conf` 
-
 ```
 .....
 # Misc options (all disabled by default)

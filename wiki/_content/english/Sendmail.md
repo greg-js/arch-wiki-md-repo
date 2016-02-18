@@ -1,6 +1,6 @@
 Sendmail is the classical SMTP server from the unix world. It was originally coded long time ago, when the internet was a safer place, and back then, security didn't matter as much as does today. Therefore it used to have several security bugs and it got some bad reputation for that. But those bugs are long fixed and a recent sendmail version is as safe as any other SMTP server. However, if your top priority is security, you should probably use netqmail.
 
-The goal of this article is to setup Sendmail for local users accounts, **without using mysql or other database**, and allowing also the creation of _mail-only accounts_.
+The goal of this article is to setup Sendmail for local users accounts, **without using mysql or other database**, and allowing also the creation of *mail-only accounts*.
 
 This article only explains the required steps configuring Sendmail; after that, you probably want to add IMAP and POP3 access, so you could follow the [Dovecot](/index.php/Dovecot "Dovecot") article.
 
@@ -31,7 +31,7 @@ You should have a domain, and edit your MX records to point your server. Remembe
 
 ## Adding users
 
-*   By default, all the local users can have an email address like username@your-domain.com. But if you want to add _mail-only accounts_, that is, users who can get email, but can't have shell access or login on X, you can add them like this:
+*   By default, all the local users can have an email address like username@your-domain.com. But if you want to add *mail-only accounts*, that is, users who can get email, but can't have shell access or login on X, you can add them like this:
 
  `useradd -m -s /sbin/nologin joenobody` 
 
@@ -58,7 +58,6 @@ You can read all the options for configuring sendmail on the file `/usr/share/se
 Here is an example using auth over [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security "wikipedia:Transport Layer Security"). The example has comments explaing how it works. The comments start with `dnl` .
 
  `/etc/mail/sendmail.mc` 
-
 ```
 include(`/usr/share/sendmail-cf/m4/cf.m4')
 define(`confDOMAIN_NAME', `your-domain.com')dnl
@@ -94,7 +93,6 @@ MAILER(smtp)dnl
 *   Put your domains on the `local-host-names` file:
 
  `/etc/mail/local-host-names` 
-
 ```
 localhost
 your-domain.com
@@ -110,7 +108,6 @@ localhost.localdomain
 *   Create the file `/etc/mail/access` and put there the base addresses where you want to be able to relay mail. Lets suppose you have a vpn on `10.5.0.0/24`, and you want to relay mails from any ip in that range:
 
  `/etc/mail/access` 
-
 ```
 10.5.0 RELAY
 127.0.0 RELAY
@@ -143,7 +140,6 @@ somedude:     your-username
 *   Create your `virtusertable` file and put there aliases that includes domains (useful if your server is hosting several domains)
 
  `/etc/mail/virtusertable` 
-
 ```
 your-username@your-domain.com         your-username
 joe@my-other.tk                       joenobody

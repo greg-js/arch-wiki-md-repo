@@ -1,6 +1,6 @@
 **ranger** is a text-based file manager written in Python. Directories are displayed in one pane with three columns. Moving between them is accomplished with keystrokes, bookmarks, the mouse or the command history. File previews and directory contents show automatically for the current selection.
 
-Features include: vi-style key bindings, bookmarks, selections, tagging, tabs, command history, the ability to make symbolic links, several console modes, and a task view. _ranger_ has customizable commands and key bindings, including bindings to external scripts. The closest competitor is [Vifm](/index.php/Vifm "Vifm"), which has two panes and vi-style key bindings, but fewer features overall.
+Features include: vi-style key bindings, bookmarks, selections, tagging, tabs, command history, the ability to make symbolic links, several console modes, and a task view. *ranger* has customizable commands and key bindings, including bindings to external scripts. The closest competitor is [Vifm](/index.php/Vifm "Vifm"), which has two panes and vi-style key bindings, but fewer features overall.
 
 ## Contents
 
@@ -43,7 +43,7 @@ To start ranger, launch a [terminal](/index.php/List_of_applications#Terminal_em
 
 ## Configuration
 
-After startup, _ranger_ creates a directory `~/.config/ranger`. To copy the default configuration to this directory issue the following command:
+After startup, *ranger* creates a directory `~/.config/ranger`. To copy the default configuration to this directory issue the following command:
 
 ```
 ranger --copy-config=all
@@ -99,10 +99,10 @@ mkdir ~/.config/ranger/colorschemes
 
 ```
 
-then copy your new `_newscheme_.py` into that folder. Alter the default color scheme in the `~/.config/ranger/rc.conf` file:
+then copy your new `*newscheme*.py` into that folder. Alter the default color scheme in the `~/.config/ranger/rc.conf` file:
 
 ```
-set colorscheme _newscheme_
+set colorscheme *newscheme*
 
 ```
 
@@ -171,7 +171,7 @@ class extracthere(Command):
 
 #### Compression
 
-The following command allows the user to compress several files on the current directory by marking them and then calling `:compress _package name_`. It supports name suggestions by getting the basename of the current directory and appending several possibilities for the extension. You need to have [atool](https://www.archlinux.org/packages/?name=atool) installed. Otherwise you will see an error message when you create the archive.
+The following command allows the user to compress several files on the current directory by marking them and then calling `:compress *package name*`. It supports name suggestions by getting the basename of the current directory and appending several possibilities for the extension. You need to have [atool](https://www.archlinux.org/packages/?name=atool) installed. Otherwise you will see an error message when you create the archive.
 
 ```
 import os
@@ -277,7 +277,6 @@ class mount(Command):
 You may have noticed there are two shortcuts for opening a new tab in home (`g``n` and `Ctrl+n`). Let us rebind `Ctrl+n`:
 
  `rc.conf` 
-
 ```
 map <c-n>  eval fm.tab_new('%d')
 
@@ -287,12 +286,11 @@ map <c-n>  eval fm.tab_new('%d')
 
 #### Synchronize path
 
-_ranger_ provides a shell [function](/index.php/Bash#Functions "Bash") `/usr/share/doc/ranger/examples/bash_automatic_cd.sh`. Running `ranger-cd` instead of `ranger` will automatically _cd_ to the last browsed folder.
+*ranger* provides a shell [function](/index.php/Bash#Functions "Bash") `/usr/share/doc/ranger/examples/bash_automatic_cd.sh`. Running `ranger-cd` instead of `ranger` will automatically *cd* to the last browsed folder.
 
 If you launch ranger from a graphical launcher (such as `$TERMCMD -e ranger`, where TERMCMD is an X terminal), you cannot use `ranger-cd`. Create an executable script:
 
  `ranger-launcher.sh` 
-
 ```
 #!/bin/sh
 export RANGERCD=true
@@ -300,10 +298,9 @@ $TERMCMD
 
 ```
 
-and add at the _very end_ of your shell configuration:
+and add at the *very end* of your shell configuration:
 
- `._shell_rc` 
-
+ `.*shell*rc` 
 ```
 $RANGERCD && unset RANGERCD && ranger-cd
 
@@ -316,7 +313,6 @@ This will launch `ranger-cd` only if the `RANGERCD` variable is set. It is impor
 With the previous method you can switch to a shell in last browsed path simply by leaving ranger. However you may not want to quit ranger for several reasons (numerous opened tabs, copy in progress, etc.). You can start a shell from ranger (`S` by default) without losing your ranger session. Unfortunately, the shell will not switch to the current folder automatically. Again, this can be solved with an executable script:
 
  `shellcd` 
-
 ```
 #!/bin/sh
 export AUTOCD="$(realpath "$1")"
@@ -328,7 +324,6 @@ $SHELL
 and - as before - add this to at the very end of your shell configuration:
 
  `shellrc` 
-
 ```
 cd "$AUTOCD"
 
@@ -337,7 +332,6 @@ cd "$AUTOCD"
 Now you can change your shell binding for ranger:
 
  `rc.conf` 
-
 ```
 map S shell shellcd %d
 
@@ -346,7 +340,6 @@ map S shell shellcd %d
 Alternatively, you can make use of your shell history file if it has any. For instance, you could do this for [zsh](/index.php/Zsh#Dirstack "Zsh"):
 
  `shellcd` 
-
 ```
 ## Prepend argument to zsh dirstack.
 BUF="$(realpath "$1")

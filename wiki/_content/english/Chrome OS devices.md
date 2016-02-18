@@ -401,7 +401,6 @@ Then [rebuild your grub config](/index.php/GRUB#Generate_the_main_configuration_
 Sometimes the synaptics touchpad, and various other parts of the laptop are used as wakeup devices causing certain movements of the laptop during suspend to end suspend. In order to disable all wakeup devices except for the laptop lid sensor, create the following `suspend-device-fix.sh` file.
 
  `/usr/local/sbin/suspend-device-fix.sh` 
-
 ```
 #!/bin/bash
 
@@ -423,7 +422,6 @@ Now give the file executable permissions:
 Create a systemd service to execute the script on every boot.
 
  `/etc/systemd/system/suspend-fix.service` 
-
 ```
 [Unit]
 Description=Suspend Fix
@@ -453,7 +451,6 @@ If it properly starts, then allow it to be started on bootup.
 Add the following line at the end of `/etc/rc.d/rc.local` (if it does not exist, just create it) to prevent bad handling of EHCI USB:
 
  `/etc/rc.d/rc.local` 
-
 ```
 echo 1 > /sys/devices/pci0000\:00/0000\:00\:1d.0/remove
 
@@ -462,7 +459,6 @@ echo 1 > /sys/devices/pci0000\:00/0000\:00\:1d.0/remove
 Then, create the following `cros-sound-suspend.sh` file. Only the Ath9k binding/unbinding lines are listed below; see the alternatives linked above for additional sound suspend handling if you experience issues.
 
  `/usr/lib/systemd/system-sleep/cros-sound-suspend.sh` 
-
 ```
 #!/bin/bash
 
@@ -565,7 +561,6 @@ Out of the box, `systemd-logind` will catch power key and lid switch events and 
 To configure logind to ignore power key presses and lid switches, add the lines to `logind.conf` below.
 
  `/etc/systemd/logind.conf` 
-
 ```
 HandlePowerKey=ignore
 HandleLidSwitch=ignore

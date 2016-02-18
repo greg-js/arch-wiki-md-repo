@@ -33,7 +33,7 @@
 
 mkinitcpio是一个用来创建初始化内存盘（initial ramdisk，简称initrd）的bash脚本。摘自[mkinitcpio手册页](https://projects.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.8.txt)：
 
-	_初始化内存盘本质上是一个很小的运行环境（早期用户空间，early userspace），用于加载一些核心模块，并在init接管启动过程之前准备一些必须的东西，比如加密的根文件系统、在RAID上的根文件系统。使用mkinicpio可以方便地使用自定义的钩子扩展（hooks）、运行时自动检测、以及其他功能。_
+	*初始化内存盘本质上是一个很小的运行环境（早期用户空间，early userspace），用于加载一些核心模块，并在init接管启动过程之前准备一些必须的东西，比如加密的根文件系统、在RAID上的根文件系统。使用mkinicpio可以方便地使用自定义的钩子扩展（hooks）、运行时自动检测、以及其他功能。*
 
 从前，内核在[启动过程](/index.php/Boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot process (简体中文)")早期（挂载根目录和启动`init`之前）处理一切硬件的检测和初始化。然而，但随着技术的演进，这种做法变得十分繁琐。
 
@@ -64,7 +64,7 @@ $ git clone [git://projects.archlinux.org/mkinitcpio.git](git://projects.archlin
 
 ## 创建和启用镜像
 
-每次升级内核，mkinitcpio都会默认创建两个内存盘镜像：_默认_镜像`/boot/initramfs-linux.img`和_fallback_镜像`/boot/initramfs-linux-fallback.img`。_fallback_镜像和_默认_镜像只有一个区别，就是创建时跳过了**autodetect**钩子扩展，因而它包含更多的内核模块。**autodetect**扩展会探测硬件信息，针对硬件向镜像添加需要的模块，因此缩小了镜像。
+每次升级内核，mkinitcpio都会默认创建两个内存盘镜像：*默认*镜像`/boot/initramfs-linux.img`和*fallback*镜像`/boot/initramfs-linux-fallback.img`。*fallback*镜像和*默认*镜像只有一个区别，就是创建时跳过了**autodetect**钩子扩展，因而它包含更多的内核模块。**autodetect**扩展会探测硬件信息，针对硬件向镜像添加需要的模块，因此缩小了镜像。
 
 在创建初始化内存盘镜像时，可以使用很多不同配置。创建完成后，在启动引导器[配置文件](/index.php/Boot_Loader#Configuration_files "Boot Loader")中添加启动项目，即可使用新镜像。更改mkinitcpio配置后，需要手动重新生成镜像。以Arch默认的内核[linux](https://www.archlinux.org/packages/?name=linux)为例：
 
@@ -131,7 +131,7 @@ $ git clone [git://projects.archlinux.org/mkinitcpio.git](git://projects.archlin
 
 如果模块名称前加上一个“?”问号，那么即使系统无法找到该模块也不会报错。对于自己编译的内核，其中内置了某些模块，该功能可能有用。
 
-**注意:** 如果使用**reiser4**，该模块_必须_放入`MODULES`数组。此外，如果运行mkinitcpio时未加载某些文件系统的模块，而系统启动时又必须使用这些文件系统——比如，LUKS加密密匙文件在**ext2**分区上，而使用mkinitcpio时系统并未挂载任何**ext2**分区——那么该文件系统的模块也必须放在`MODULES`数组。详情参见[此文](/index.php/System_Encryption_with_LUKS_for_dm-crypt#Storing_the_Key_File "System Encryption with LUKS for dm-crypt")。
+**注意:** 如果使用**reiser4**，该模块*必须*放入`MODULES`数组。此外，如果运行mkinitcpio时未加载某些文件系统的模块，而系统启动时又必须使用这些文件系统——比如，LUKS加密密匙文件在**ext2**分区上，而使用mkinitcpio时系统并未挂载任何**ext2**分区——那么该文件系统的模块也必须放在`MODULES`数组。详情参见[此文](/index.php/System_Encryption_with_LUKS_for_dm-crypt#Storing_the_Key_File "System Encryption with LUKS for dm-crypt")。
 
 如果挂载root分区时需要上述任一模块，请将其加入`/etc/mkinitcpio.conf`，以避免内核崩溃。
 
@@ -208,7 +208,7 @@ Runtime hooks are found in `/usr/lib/initcpio/hooks`. For any runtime hook, ther
 | **mdadm** | 从 `/etc/mdadm.conf` 读取或启动时自动检测磁盘阵列。请优先使用下面的 **mdadm_udev** 钩子。 | 用 `mdassemble` 定位并组合软 RAID 块设备。 |
 | **mdadm_udev** | 通过 udev 组合磁盘阵列。建议在二进制中包含 `mdmon` 并加入**shutdown** 钩子以避免重启时不必要的 raid 重建。 | 使用 `udev` 和 `mdadm` 组合软 RAID 块设备。 |
 | **encrypt** | 添加 **dm-crypt** 内核模块和 `cryptsetup` 工具。需要安装 [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) 软件包。 | 检查并解密 root 分区。详情参见 [#Runtime customization](#Runtime_customization)。 |
-| **resume** | -- | 尝试从 "磁盘休眠" 状态唤醒。同时支持 _swsusp_ 和 _[suspend2](/index.php/Suspend2 "Suspend2")_. 参见 [#Runtime customization](#Runtime_customization) |
+| **resume** | -- | 尝试从 "磁盘休眠" 状态唤醒。同时支持 *swsusp* 和 *[suspend2](/index.php/Suspend2 "Suspend2")*. 参见 [#Runtime customization](#Runtime_customization) |
 | **keymap** | 从 [rc.conf](/index.php/Rc.conf "Rc.conf") 添加键盘映射和终端字体。 | 装入指定的键盘映射和终端字体。 |
 | **fsck** | 添加 fsck 程序和文件系统专用工具，如果添加在 **autodetect** 钩子后面，仅会添加根文件系统需要的工具。强烈推荐所用用户使用， /usr 单独分区的用户必须使用此钩子。 | 对根分区 (和单独分区的 /usr) 执行 fsck。 |
 | **shutdown** | 增加关机 initramfs 支持。如果使用单独 `/usr` 分区或加密 root 分区，强烈推荐使用此钩子。 | 卸载并关闭设备。 |
@@ -235,7 +235,6 @@ Runtime hooks are found in `/usr/lib/initcpio/hooks`. For any runtime hook, ther
 首先创建实际的脚本：
 
  `/usr/lib/initcpio/install/**hook**` 
-
 ```
  #!/bin/bash
 
@@ -255,7 +254,6 @@ Runtime hooks are found in `/usr/lib/initcpio/hooks`. For any runtime hook, ther
 然后创建这个实际的钩子：
 
  `/usr/lib/initcpio/hooks/**hook**` 
-
 ```
  run_hook ()
  {
@@ -359,7 +357,7 @@ net 需要 [mkinitcpio-nfs-utils](https://www.archlinux.org/packages/?name=mkini
 
 **ip=**
 
-一个接口的参数可以用短的格式，只有接口的名字(_eth0_ 或者其他), 或者是长格式。( [内核文档](https://www.kernel.org/doc/Documentation/filesystems/nfs/nfsroot.txt) )长格式由至多7个部分组成，之间用冒号分隔：
+一个接口的参数可以用短的格式，只有接口的名字(*eth0* 或者其他), 或者是长格式。( [内核文档](https://www.kernel.org/doc/Documentation/filesystems/nfs/nfsroot.txt) )长格式由至多7个部分组成，之间用冒号分隔：
 
 ```
  ip=<client-ip>:<server-ip>:<gw-ip>:<netmask>:<hostname>:<device>:<autoconf>
@@ -367,7 +365,7 @@ net 需要 [mkinitcpio-nfs-utils](https://www.archlinux.org/packages/?name=mkini
 
 ```
 
-_参数解释：_
+*参数解释：*
 
 ```
  <client-ip>   客户端的 IP 地址。如果为空，会通过 RARP/BOOTP/DHCP 确定。
@@ -399,7 +397,7 @@ _参数解释：_
 
 ```
 
-_例子：_
+*例子：*
 
 ```
  ip=127.0.0.1:::::lo:none  --> Enable the loopback interface.
@@ -426,7 +424,7 @@ BOOTIF=01-A1-B2-C3-D4-E5-F6  # Note the prepended "01-" and capital letters.
 
 ```
 
-_参数解释：_
+*参数解释：*
 
 ```
  <server-ip>   Specifies the IP address of the NFS server. If this field

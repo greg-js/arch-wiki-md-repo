@@ -82,7 +82,7 @@ $ watch sensors
 
 This will report the temperature every 2 seconds.
 
-**Tip:** you can have a better reading by using the _coretemp_ kernel module
+**Tip:** you can have a better reading by using the *coretemp* kernel module
 
 Check the **i8kmon** and **i8kctl** manpages on how to configure the fan configuration. here are some sane values for `/etc/i8kutils/i8kmon.conf`
 

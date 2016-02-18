@@ -14,7 +14,7 @@ This policy is intended to ensure the [core] repository, and thus the core of Ar
 The process is simple:
 
 *   All [core] packages **MUST** go to [testing] first.
-*   When a [core] package is placed in [testing] an email **SHOULD** be sent to the arch-dev-public mailing list with the subject "[signoff] foobar-1.0-1", where _foobar-1.0-1_ is the package name and version.
+*   When a [core] package is placed in [testing] an email **SHOULD** be sent to the arch-dev-public mailing list with the subject "[signoff] foobar-1.0-1", where *foobar-1.0-1* is the package name and version.
 *   All developers are encouraged to test this package.
 *   If a package works fine, a reply **SHOULD** be sent, telling the maintainer it worked, and on which architecture.
 *   When a package receives 2 signoffs for each architecture, it can be moved from [testing] to [core].

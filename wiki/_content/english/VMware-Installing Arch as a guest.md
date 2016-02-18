@@ -59,7 +59,6 @@ These drivers are only needed if you are running Arch Linux on a hypervisor like
 *   `vmw_vsock_vmci_transport` - Implements a VMCI transport for Virtual Sockets.
 
 **Note:** Arch's [Udev](/index.php/Udev "Udev") auto-detects and enables a few of these modules. Additional modules, such as `vmw_balloon`, may need to be added to your [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")'s `MODULES` list. For example: ` # cat /etc/mkinitcpio.conf` 
-
 ```
 ...
 MODULES="... vmw_balloon vmw_pvscsi vsock vmw_vsock_vmci_transport ..."
@@ -229,7 +228,7 @@ to give permission for loading drivers.
 
 **Note:** This functionality is only available with `open-vm-tools` v.10.x and kernel 4.x onwards and with VMware Workstation and Fusion.
 
-Share a folder by selecting _Edit virtual machine settings > Options > Shared Folders > Always enabled_, and creating a new share.
+Share a folder by selecting *Edit virtual machine settings > Options > Shared Folders > Always enabled*, and creating a new share.
 
 You should be able to see the shared folders by running vmware-hgfsclient command:
 
@@ -242,7 +241,7 @@ Now you can mount the folder:
 
 ```
 # mkdir <shared folders root directory>
-# vmhgfs-fuse -o allow_other -o auto_unmount .host:/_<shared_folder>_ _<shared folders root directory>_
+# vmhgfs-fuse -o allow_other -o auto_unmount .host:/*<shared_folder>* *<shared folders root directory>*
 
 ```
 
@@ -258,9 +257,8 @@ Other `vmhgfs-fuse` mount options can be viewed by using the `-h` input flag:
 Add a rule for each share:
 
  `/etc/fstab` 
-
 ```
-.host:/_<shared_folder>_ _/home/user1/shares_ fuse.vmhgfs-fuse defaults 0 0
+.host:/*<shared_folder>* */home/user1/shares* fuse.vmhgfs-fuse defaults 0 0
 
 ```
 
@@ -276,42 +274,41 @@ Create and mount the Shared Folders:
 
 Create the following `.service`:
 
- `/etc/systemd/system/_<shared folders root directory>_-_<shared_folder>_.service` 
-
+ `/etc/systemd/system/*<shared folders root directory>*-*<shared_folder>*.service` 
 ```
 [Unit]
 Description=Load VMware shared folders
 Requires=vmware-vmblock-fuse.service
 After=vmware-vmblock-fuse.service
-ConditionPathExists=.host:/_<shared_folder>_
+ConditionPathExists=.host:/*<shared_folder>*
 ConditionVirtualization=vmware
 
 [Service]
 Type=oneshot
 RemainAfterExit=yes
 ExecStart=
-ExecStart=/usr/bin/vmhgfs-fuse -o allow_other -o auto_unmount .host:/_<shared_folder>_ _<shared folders root directory>_
+ExecStart=/usr/bin/vmhgfs-fuse -o allow_other -o auto_unmount .host:/*<shared_folder>* *<shared folders root directory>*
 
 [Install]
 WantedBy=multi-user.target
 ```
 
-Make sure the `_<shared folders root directory>_` folder exists on your system. If this folder does not exist then you have to create it as the systemd service depends on it:
+Make sure the `*<shared folders root directory>*` folder exists on your system. If this folder does not exist then you have to create it as the systemd service depends on it:
 
 ```
-# mkdir -p _<shared folders root directory>_
+# mkdir -p *<shared folders root directory>*
 
 ```
 
 [Enable](/index.php/Enable "Enable") the `<shared folders root directory>-<shared_folder>.service` mount target.
 
-If you want to mount all shared folders automatically then omit _<shared_folder>_.
+If you want to mount all shared folders automatically then omit *<shared_folder>*.
 
 ### Legacy Shared Folders with vmhgfs module
 
 **Note:** This functionality is only available in VMware Workstation and Fusion
 
-Share a folder by selecting _Edit virtual machine settings > Options > Shared Folders > Always enabled_, and creating a new share.
+Share a folder by selecting *Edit virtual machine settings > Options > Shared Folders > Always enabled*, and creating a new share.
 
 Make sure the `vmhgfs` driver is loaded:
 
@@ -331,7 +328,7 @@ Now you can mount the folder:
 
 ```
 # mkdir /home/user1/shares
-# mount -n -t vmhgfs .host:/_<shared_folder>_ /home/user1/shares
+# mount -n -t vmhgfs .host:/*<shared_folder>* /home/user1/shares
 
 ```
 
@@ -340,7 +337,6 @@ Now you can mount the folder:
 Edit your `mkinitcpio.conf` like this:
 
  ` # cat /etc/mkinitcpio.conf` 
-
 ```
 ...
 MODULES="... vmhgfs"
@@ -359,9 +355,8 @@ and then update your ramdisk:
 Add a rule for each share:
 
  `/etc/fstab` 
-
 ```
-.host:/_<shared_folder>_ _/home/user1/shares_ vmhgfs defaults 0 0
+.host:/*<shared_folder>* */home/user1/shares* vmhgfs defaults 0 0
 
 ```
 
@@ -377,49 +372,46 @@ Create and mount the Shared Folders:
 
 For shared folders to be working you need to have loaded the `vmhgfs` driver. Simply create the following `.service`s:
 
- `/etc/systemd/system/_<shared folders root directory>_-_<shared_folder>_.mount` 
-
+ `/etc/systemd/system/*<shared folders root directory>*-*<shared_folder>*.mount` 
 ```
 [Unit]
 Description=Load VMware shared folders
-ConditionPathExists=.host:/_<shared_folder>_
+ConditionPathExists=.host:/*<shared_folder>*
 ConditionVirtualization=vmware
 
 [Mount]
-What=.host:/_<shared_folder>_
-Where=_<shared folders root directory>_/_<shared_folder>_
+What=.host:/*<shared_folder>*
+Where=*<shared folders root directory>*/*<shared_folder>*
 Type=vmhgfs
 Options=defaults,noatime
 
 [Install]
 WantedBy=multi-user.target
 ```
-
- `/etc/systemd/system/_<shared folders root directory>_-_<shared_folder>_.automount` 
-
+ `/etc/systemd/system/*<shared folders root directory>*-*<shared_folder>*.automount` 
 ```
 [Unit]
 Description=Load VMware shared folders
-ConditionPathExists=.host:/_<shared_folder>_
+ConditionPathExists=.host:/*<shared_folder>*
 ConditionVirtualization=vmware
 
 [Automount]
-Where=_<shared folders root directory>_/_<shared_folder>_
+Where=*<shared folders root directory>*/*<shared_folder>*
 
 [Install]
 WantedBy=multi-user.target
 ```
 
-Make sure the `_<shared folders root directory>_` folder exists on your system. If this folder does not exist then you have to create it as the systemd scripts depend on it:
+Make sure the `*<shared folders root directory>*` folder exists on your system. If this folder does not exist then you have to create it as the systemd scripts depend on it:
 
 ```
-# mkdir -p _<shared folders root directory>_
+# mkdir -p *<shared folders root directory>*
 
 ```
 
 [Enable](/index.php/Enable "Enable") the `mnt-hgfs.automount` mount target.
 
-If you want to mount all shared folders automatically then omit _<shared_folder>_.
+If you want to mount all shared folders automatically then omit *<shared_folder>*.
 
 #### Prune mlocate DB
 
@@ -427,7 +419,7 @@ When using [mlocate](/index.php/Mlocate "Mlocate"), it is useless to index the s
 
 ### 3D Acceleration
 
-If not selected at guest creation time, 3D Acceleration can be enabled in: _Edit virtual machine settings > Hardware > Display > Accelerate 3D graphics_.
+If not selected at guest creation time, 3D Acceleration can be enabled in: *Edit virtual machine settings > Hardware > Display > Accelerate 3D graphics*.
 
 #### OpenGL and GLSL support
 
@@ -474,7 +466,6 @@ The SCSI adapter type `VMware Paravirtual` is available in the Virtual Machine s
 If you do not have these settings in your virtual machine configuration you can still use the paravirtual SCSI adapter like this: Make sure that the paravirtual SCSI adapter is included in your kernel image. For this you have to modify your `mkinitcpio.conf`
 
  ` cat /etc/mkinitcpio.conf` 
-
 ```
 `...`
 MODULES="`...` vmw_pvscsi"
@@ -501,7 +492,7 @@ VMware offers [multiple network adapters](http://kb.vmware.com/kb/1001805) for t
 
 For [much more performance and additional features](http://rickardnobel.se/vmxnet3-vs-e1000e-and-e1000-part-1/) (such as multiqueue support), the VMware native `vmxnet3` network adapter can be used.
 
-Arch has the `vmxnet3` kernel module available with a default install. Once enabled in [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") (or if it is auto-detected, check by running `$ lsmod | grep vmxnet3` to see if it is loaded), shutdown and change the network adapter type in your _.vmx_ file to the following:
+Arch has the `vmxnet3` kernel module available with a default install. Once enabled in [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") (or if it is auto-detected, check by running `$ lsmod | grep vmxnet3` to see if it is loaded), shutdown and change the network adapter type in your *.vmx* file to the following:
 
 ```
 ethernet0.virtualDev = "vmxnet3"
@@ -511,8 +502,8 @@ ethernet0.virtualDev = "vmxnet3"
 After changing network adapters, you will need to update your network and [dhcpcd](/index.php/Dhcpcd "Dhcpcd") settings to use the new adapter name and mac address.
 
 ```
-# dhcpcd _new_interface_name_
-# systemctl enable dhcpcd@_new_interface_name_.service
+# dhcpcd *new_interface_name*
+# systemctl enable dhcpcd@*new_interface_name*.service
 
 ```
 
@@ -531,13 +522,13 @@ sched.mem.pshare.enable = "FALSE"
 
 ```
 
-*   **mainMem.useNamedFile**: This will only work for Windows hosts and you can use this parameter if you experience high disk activity on shutting down the virtual machine. This will prevent VMware from creating a _.vmem_ file. Use _mainmem.backing = "swap"_ on Linux hosts instead.
+*   **mainMem.useNamedFile**: This will only work for Windows hosts and you can use this parameter if you experience high disk activity on shutting down the virtual machine. This will prevent VMware from creating a *.vmem* file. Use *mainmem.backing = "swap"* on Linux hosts instead.
 *   **MemTrimRate**: This setting prevents that memory whichc was released by the guest is released on the host also.
 *   **prefvmx.useRecommendedLockedMemSize**: Unfortunately there does not seem to exist a proper explanation for this setting. This setting seems to prevent the host system from swapping parts of the guest memory.
 *   **MemAllowAutoScaleDown**: Prevents that VMware adjusts the memory size of the virtual machine in case it cannot allocate enough memory.
 *   **sched.mem.pshare.enable**: If several virtual machines are running simultaneously VMware will try to locate identical pages and share these between the virtual machines. This can be very I/O intensive.
 
-The following settings could also be set in the configuration dialog of VMware Workstation(_Edit -> Preferences... -> Memory/Priority_).
+The following settings could also be set in the configuration dialog of VMware Workstation(*Edit -> Preferences... -> Memory/Priority*).
 
 ```
 prefvmx.minVmMemPct = "100"
@@ -565,20 +556,18 @@ You can try to [Remove](/index.php/Remove "Remove") the [xf86-input-vmmouse](htt
 
 You can try to add these settings to your `.vmx` configuration file ([Mouse position jumps to where it left the guest VM](https://forums.mageia.org/en/viewtopic.php?f=7&t=7977)):
 
- `~/vmware/_<Virtual Machine name>_/_<Virtual Machine name>_.vmx` 
-
+ `~/vmware/*<Virtual Machine name>*/*<Virtual Machine name>*.vmx` 
 ```
 mouse.vusb.enable = "TRUE"
 mouse.vusb.useBasicMouse = "FALSE"
 usb.generic.allowHID = "TRUE"
 
-VMware attempts to automatically optimize mouse for gaming. If experiencing problems, disabling it is recommended: _Edit > Preferences > Input > Optimize mouse for games: Never_
+VMware attempts to automatically optimize mouse for gaming. If experiencing problems, disabling it is recommended: *Edit > Preferences > Input > Optimize mouse for games: Never*
 ```
 
 Alternatively, attempting to [disable](http://www.spinics.net/lists/xorg/msg53932.html) the `catchall` event in `10-evdev.conf` may be needed:
 
  `/etc/X11/xorg.conf.d/10-evdev.conf` 
-
 ```
 #Section "InputClass"
 #        Identifier "evdev pointer catchall"
@@ -593,7 +582,7 @@ Alternatively, attempting to [disable](http://www.spinics.net/lists/xorg/msg5393
 
 If not by default, all mouse buttons should be working after adding `[mouse.vusb.useBasicMouse = "FALSE"](https://communities.vmware.com/thread/457313?start=15&tstart=0)` to the `.vmx`.
 
- `~/vmware/_<Virtual Machine name>_/_<Virtual Machine name>_.vmx`  `mouse.vusb.useBasicMouse = "FALSE"` 
+ `~/vmware/*<Virtual Machine name>*/*<Virtual Machine name>*.vmx`  `mouse.vusb.useBasicMouse = "FALSE"` 
 
 ### Boot problems
 
@@ -606,14 +595,13 @@ You may see the following errors if VMWare's memory hot-add feature is enabled.
 
 Disable the memory hot-add feature by setting `mem.hotadd = "FALSE"` to the `.vmx`.
 
- `~/vmware/_<Virtual Machine name>_/_<Virtual Machine name>_.vmx`  `mem.hotadd = "FALSE"` 
+ `~/vmware/*<Virtual Machine name>*/*<Virtual Machine name>*.vmx`  `mem.hotadd = "FALSE"` 
 
 #### Shutdown/Reboot hangs
 
 Adjust the timeout for the vmtoolsd service (defaults to 90 seconds).
 
  `/etc/systemd/system/vmtoolsd.service.d/timeout.conf` 
-
 ```
 [Service]
 TimeoutStopSec=1
@@ -631,7 +619,7 @@ Do not forget to run:
 
 ### Drag and drop, copy/paste
 
-`/etc/xdg/autostart/vmware-user.desktop` may try to start _vmware-user-suid-wrapper_ properly when you log in, but there is an unspecified relationship between it and _gtkmm_ that causes it to silently fail. This is documented in [FS#43159](https://bugs.archlinux.org/task/43159).
+`/etc/xdg/autostart/vmware-user.desktop` may try to start *vmware-user-suid-wrapper* properly when you log in, but there is an unspecified relationship between it and *gtkmm* that causes it to silently fail. This is documented in [FS#43159](https://bugs.archlinux.org/task/43159).
 
 ### Problems when running as a shared VM on Workstation 11
 

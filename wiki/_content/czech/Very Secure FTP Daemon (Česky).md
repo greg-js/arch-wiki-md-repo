@@ -174,7 +174,7 @@ Pokud při připojování k serveru dostáváte chybová hlášení jako toto:
 
 ```
 
-Je třeba přidat _capability_ do pole MODULES= v souboru `/etc/rc.conf`.
+Je třeba přidat *capability* do pole MODULES= v souboru `/etc/rc.conf`.
 
 Po přejití na verzi 2.1.0 můžete dostávát během připojování chybová hlášení jako toto:
 

@@ -41,13 +41,13 @@ Package searches can be performed by issuing requests of the form:
 
 ```
 
-where _**keywords**_ is the search argument and _**field**_ is one of the following values:
+where ***keywords*** is the search argument and ***field*** is one of the following values:
 
-*   _name_ (search by package name only)
-*   _name-desc_ (search by package name and description)
-*   _maintainer_ (search by package maintainer)
+*   *name* (search by package name only)
+*   *name-desc* (search by package name and description)
+*   *maintainer* (search by package maintainer)
 
-The _**by**_ parameter can be skipped and defaults to _name-desc_. Possible return types are _**search**_ and _**error**_.
+The ***by*** parameter can be skipped and defaults to *name-desc*. Possible return types are ***search*** and ***error***.
 
 If a maintainer search is performed and the search argument is left empty, a list of orphan packages is returned.
 
@@ -58,14 +58,14 @@ https://aur.archlinux.org/rpc/?v=5&type=search&arg=foobar
 
 ```
 
-Search for _foobar_.
+Search for *foobar*.
 
 ```
 https://aur.archlinux.org/rpc/?v=5&type=search&search_by=maintainer&arg=john
 
 ```
 
-Search for packages maintained by _john_.
+Search for packages maintained by *john*.
 
 ```
 https://aur.archlinux.org/rpc/?v=5&type=search&arg=foobar&callback=jsonp1192244621103
@@ -83,9 +83,9 @@ Package information can be performed by issuing requests of the form:
 
 ```
 
-where _**pkg1**_, _**pkg2**_, … are the exact matches of names of packages to retrieve package details for.
+where ***pkg1***, ***pkg2***, … are the exact matches of names of packages to retrieve package details for.
 
-Possible return types are _**search**_ and _**error**_.
+Possible return types are ***search*** and ***error***.
 
 Examples:
 
@@ -94,14 +94,14 @@ https://aur.archlinux.org/rpc/?v=5&type=info&arg[]=foobar
 
 ```
 
-Info for single _foobar_ package.
+Info for single *foobar* package.
 
 ```
 https://aur.archlinux.org/rpc/?v=5&type=info&arg[]=foo&arg[]=bar
 
 ```
 
-Info for multiple _foobar_ and _bar_ packages.
+Info for multiple *foobar* and *bar* packages.
 
 ### Return types
 
@@ -123,13 +123,13 @@ ReturnType is a string, and the value is one of:
 
 ```
 
-The type of ReturnData is an array of dictionary objects for the _**search**_ and _**multiinfo**_ ReturnType, and an empty array for _**error**_ ReturnType.
+The type of ReturnData is an array of dictionary objects for the ***search*** and ***multiinfo*** ReturnType, and an empty array for ***error*** ReturnType.
 
 #### error
 
 The error type has an error response string as the return value. An error response can be returned from either a **search** or an **info** query type.
 
-Example of ReturnType _**error**_:
+Example of ReturnType ***error***:
 
 ```
 {"version":5,"type":"error","resultcount":0,"results":[],"error":"Incorrect by field specified."}
@@ -140,7 +140,7 @@ Example of ReturnType _**error**_:
 
 The search type is the result returned from a search request operation. **The actual results of a search operation will be the same as an info request for each result. See the info section.**
 
-Example of ReturnType _**search**_:
+Example of ReturnType ***search***:
 
 ```
 {"version":5,"type":"search","resultcount":2,"results":[{"ID":206807,"Name":"cower-git", ...}]}
@@ -151,7 +151,7 @@ Example of ReturnType _**search**_:
 
 The info type is the result returned from an info request operation.
 
-Example of ReturnType _**multiinfo**_:
+Example of ReturnType ***multiinfo***:
 
 ```
  {

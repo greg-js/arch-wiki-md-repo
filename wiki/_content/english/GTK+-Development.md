@@ -39,7 +39,6 @@ The following examples display a simple "Hello world" in a message dialog.
 *   Build with: `gnatmake hello_world `gtkada-config``
 
  `hello_world.adb` 
-
 ```
 with Gtk.Main;
 with Gtk.Dialog;           use Gtk.Dialog;
@@ -66,7 +65,6 @@ end hello_world;
 *   Dependency: [zenity](https://www.archlinux.org/packages/?name=zenity)
 
  `hello_world.sh` 
-
 ```
 #!/bin/bash
 zenity --info --title='Hello world!' --text='This is an example dialog.'
@@ -80,7 +78,6 @@ zenity --info --title='Hello world!' --text='This is an example dialog.'
 *   Run with: `mono hello_world.exe` (or `booi hello_world.boo`)
 
  `hello_world.boo` 
-
 ```
 import Gtk from "gtk-sharp"
 Application.Init()
@@ -95,7 +92,6 @@ Hello.Run()
 *   Build with: `gcc -o hello_world $(pkg-config --cflags --libs gtk+-3.0) hello_world.c`
 
  `hello_world.c` 
-
 ```
 #include <gtk/gtk.h>
 int main (int argc, char *argv[]) {
@@ -113,7 +109,6 @@ int main (int argc, char *argv[]) {
 *   Build with: `g++ -o hello_world $(pkg-config --cflags --libs gtkmm-3.0) hello_world.cc`
 
  `hello_world.cc` 
-
 ```
 #include <gtkmm/main.h>
 #include <gtkmm/messagedialog.h>
@@ -132,7 +127,6 @@ int main(int argc, char *argv[]) {
 *   Run with: `mono hello_world.exe`
 
  `hello_world.cs` 
-
 ```
 using Gtk;
 public class HelloWorld {
@@ -153,7 +147,6 @@ public class HelloWorld {
 *   Run with: `mono hello_world.exe`
 
  `hello_world.cobra` 
-
 ```
 @args -pkg:gtk-sharp-3.0
 use Gtk
@@ -173,7 +166,6 @@ class HelloWorld
 *   Build with: `dmd hello_world $(pkg-config --cflags --libs gtkd-2)`
 
  `hello_world.d` 
-
 ```
 import gtk.Main;
 import gtk.MessageDialog;
@@ -194,7 +186,6 @@ void main(string[] args)
 *   Run with: `mono hello_world.exe`
 
  `hello_world.fs` 
-
 ```
 open Gtk
 Application.Init()
@@ -211,7 +202,6 @@ Hello.Run() |> ignore
 *   Build with: `gfortran hello_world.f90 -o hello_world $(pkg-config --cflags --libs gtk-3-fortran)`
 
  `hello_world.f90` 
-
 ```
 program hello_world
   use gtk_hl
@@ -235,7 +225,6 @@ end program hello_world
 *   Build with: `valac --pkg gtk+-3.0 hello_world.gs`
 
  `hello_world.gs` 
-
 ```
 uses 
 	Gtk
@@ -254,7 +243,6 @@ init
 *   (Or run with: `go run hello_world.go`)
 
  `hello_world.go` 
-
 ```
 package main
 import ("github.com/conformal/gotk3/gtk")
@@ -274,7 +262,6 @@ func main() {
 *   Run with: `java -cp /usr/share/groovy/embeddable/groovy-all.jar:/usr/share/java/gtk.jar:HelloWorld.jar HelloWorld` (or `groovy -cp /usr/share/java/gtk.jar HelloWorld.groovy`)
 
  `HelloWorld.groovy` 
-
 ```
 import org.gnome.gtk.*
 Gtk.init()
@@ -289,7 +276,6 @@ Hello.run()
 *   Build with: `ghc hello_world`
 
  `hello_world.hs` 
-
 ```
 import Graphics.UI.Gtk
 
@@ -309,7 +295,6 @@ main = do
 *   Run with: `java -cp /usr/share/java/gtk.jar:HelloWorld.jar HelloWorld`
 
  `HelloWorld.java` 
-
 ```
 import org.gnome.gtk.Gtk;
 import org.gnome.gtk.Dialog;
@@ -329,7 +314,6 @@ public class HelloWorld {
 *   Dependencies: [gtk3](https://www.archlinux.org/packages/?name=gtk3), [gjs](https://www.archlinux.org/packages/?name=gjs) (works also with [seed](https://www.archlinux.org/packages/?name=seed))
 
  `hello_world.js` 
-
 ```
 #!/usr/bin/env gjs
 const Gtk = imports.gi.Gtk
@@ -346,7 +330,6 @@ Hello.run()
 *   Dependencies: [gtk3](https://www.archlinux.org/packages/?name=gtk3), [lua-lgi](https://www.archlinux.org/packages/?name=lua-lgi)
 
  `hello_world.lua` 
-
 ```
 #!/usr/bin/env lua
 lgi = require 'lgi'
@@ -366,7 +349,6 @@ Hello:run()
 *   Build with: `fpc hello_world`
 
  `hello_world.pas` 
-
 ```
 program	hello_world;
 uses	Math, Gtk3;
@@ -385,7 +367,6 @@ end.
 *   Dependency: [perl-gtk3](https://aur.archlinux.org/packages/perl-gtk3/) from AUR
 
  `hello_world.pl` 
-
 ```
 #!/usr/bin/env perl
 use Gtk3 -init;
@@ -399,7 +380,6 @@ $hello->run;
 *   Dependencies: [gtk3](https://www.archlinux.org/packages/?name=gtk3), [python-gobject](https://www.archlinux.org/packages/?name=python-gobject)
 
  `hello_world.py` 
-
 ```
 #!/usr/bin/env python
 from gi.repository import Gtk
@@ -414,7 +394,6 @@ Hello.run()
 *   Dependency: [ruby-gtk3](https://aur.archlinux.org/packages/ruby-gtk3/)
 
  `hello_world.rb` 
-
 ```
 #!/usr/bin/env ruby
 require 'gtk3'
@@ -434,7 +413,6 @@ Hello.run
 *   Run with: `java -cp /usr/share/java/gtk.jar:HelloWorld.jar HelloWorld` (or `scala -cp /usr/share/java/gtk.jar HelloWorld.scala`)
 
  `HelloWorld.scala` 
-
 ```
 import org.gnome.gtk._
 
@@ -454,7 +432,6 @@ object HelloWorld {
 *   Build with: `valac --pkg gtk+-3.0 hello_world.vala`
 
  `hello_world.vala` 
-
 ```
 using Gtk;
 public class HelloWorld {
@@ -475,7 +452,6 @@ public class HelloWorld {
 *   Run with: `mono hello_world.exe`
 
  `hello_world.vb` 
-
 ```
 Imports Gtk
 Public Class Hello

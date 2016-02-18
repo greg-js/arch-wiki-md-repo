@@ -86,9 +86,9 @@ svn+[ssh://svn-community@nymeria.archlinux.org/srv/repos/svn-community/svn](ssh:
 
 当你完成了 PKGBUILD 等之后，你应该 **提交** 你的更改（`svn commit`）。
 
-如果你想要**发布**一个软件包，首先将软件包用 scp 拷贝到 nymeria.archlinux.org 的 _staging/community_ 目录下，然后通过进入 _pkgname/trunk_ 目录并运行 `archrelease community-arch` 来为 **标识** 该软件包。这将在 _community-i686_ 或 _community-x86_64_ 目录下创建一份 trunk 条目的 svn 拷贝。这也表示这一软件包已经在所在平台的 [community] 仓库中了。
+如果你想要**发布**一个软件包，首先将软件包用 scp 拷贝到 nymeria.archlinux.org 的 *staging/community* 目录下，然后通过进入 *pkgname/trunk* 目录并运行 `archrelease community-arch` 来为 **标识** 该软件包。这将在 *community-i686* 或 *community-x86_64* 目录下创建一份 trunk 条目的 svn 拷贝。这也表示这一软件包已经在所在平台的 [community] 仓库中了。
 
-_**注意：** 在有些情况下，特别是对于 community 软件包来说，x86_64 的 TU 也许会在 pkgrel 后加上 .1 （不是 +1）。这表示对于 PKGBUILD 的改动是仅限于 x86_64 平台的并且 i686 平台的维护者 **不应该** 为 i686 平台重建此软件包。如果 TU 想要提升 pkgrel ，那就应该按照通常的方法 +1 。然而，TU 在提升 pkgrel 时，pkgrel=2.1 不应该变为 pkgrel=3.1 而必须应变为 pkgrel=3 。简单的说，就是将 带有点（.） 发行的版本只留给维护 x86_64 平台的 TU 来避免混乱。_
+***注意：** 在有些情况下，特别是对于 community 软件包来说，x86_64 的 TU 也许会在 pkgrel 后加上 .1 （不是 +1）。这表示对于 PKGBUILD 的改动是仅限于 x86_64 平台的并且 i686 平台的维护者 **不应该** 为 i686 平台重建此软件包。如果 TU 想要提升 pkgrel ，那就应该按照通常的方法 +1 。然而，TU 在提升 pkgrel 时，pkgrel=2.1 不应该变为 pkgrel=3.1 而必须应变为 pkgrel=3 。简单的说，就是将 带有点（.） 发行的版本只留给维护 x86_64 平台的 TU 来避免混乱。*
 
 这样，升级一个软件包的**过程**可以总结如下：
 
@@ -102,7 +102,7 @@ _**注意：** 在有些情况下，特别是对于 community 软件包来说，
     *   **标识** 此软件包 (`archrelease community-{i686,x86_64`})
 *   **更新** 软件仓库(`ssh nymeria.archlinux.org /community/db-update`)
 
-另外请阅读 [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") 页面的 _Miscellaneours_ 部分。对于 _Avoid having to enter your password all the time_ 部分，使用 nymeria.archlinux.org 而不要使用 gerolde.archlinux.org。
+另外请阅读 [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") 页面的 *Miscellaneours* 部分。对于 *Avoid having to enter your password all the time* 部分，使用 nymeria.archlinux.org 而不要使用 gerolde.archlinux.org。
 
 ### 停止维护软件包
 

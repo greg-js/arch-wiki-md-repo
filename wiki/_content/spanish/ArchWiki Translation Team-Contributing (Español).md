@@ -24,12 +24,12 @@ El peor enemigo de la calidad en la traducción es que todo el proceso de la tra
 
 ## Cómo colaborar
 
-_«Lo más hermoso del trabajo en equipo es que siempre tienes a otros de tu lado»_ — **Margaret Carty**
+*«Lo más hermoso del trabajo en equipo es que siempre tienes a otros de tu lado»* — **Margaret Carty**
 
 ### Do it yourself
 
 *   Cuando hablamos de wiki nos referimos a un conjunto dinámico de conocimientos, fruto de una inteligencia colectiva, en la que participan todos aquellos usuarios interesados que tienen acceso a los documentos, para editarlos y modificarlos, volcando sus conocimientos en la web según sus propios criterios y con la única sujeción a unas normas convencionales básicas.
-*   Siguiendo el principio «hágalo por sí mismo» (_do-it-yourself_), nadie tiene obligación de apuntarse en el grupo de traducción para participar en Archwiki, el único requisito para esto último es tener una [cuenta de usuario e iniciar sesión](/index.php/Special:UserLogin "Special:UserLogin"). Por tanto, siéntase libre de participar o no en el grupo de traducción cuya inclusión, por otro lado, no implica la sujeción a ningún tipo de disciplina, es tan solo un intento de coordinar y optimizar el esfuerzo colectivo de los interesados para prestar un mejor servicio a la comunidad.
+*   Siguiendo el principio «hágalo por sí mismo» (*do-it-yourself*), nadie tiene obligación de apuntarse en el grupo de traducción para participar en Archwiki, el único requisito para esto último es tener una [cuenta de usuario e iniciar sesión](/index.php/Special:UserLogin "Special:UserLogin"). Por tanto, siéntase libre de participar o no en el grupo de traducción cuya inclusión, por otro lado, no implica la sujeción a ningún tipo de disciplina, es tan solo un intento de coordinar y optimizar el esfuerzo colectivo de los interesados para prestar un mejor servicio a la comunidad.
 
 ### Consideraciones generales
 
@@ -55,7 +55,7 @@ A modo de pautas orientativas para aquellos usuarios que se aproximan por primer
 
 	2.4\. Corrija los errores gramaticales, ortográficos, sintácticos, etc. que observe.
 
-	2.5\. Corrija desajustes de formato para que queden _alineados_ con el formato de la versión inglesa.
+	2.5\. Corrija desajustes de formato para que queden *alineados* con el formato de la versión inglesa.
 
 	3\. Iníciese con traducciones cortas:
 
@@ -86,7 +86,7 @@ Como en cualquier proyecto de colaboración siempre hay necesidad de usuarios di
 *   Si necesita orientación o sugerencias sobre cómo empezar, a parte de leer el [apartado de arriba](#C.C3.B3mo_contribuir_en_general), sería una buena opción la lectura de [este artículo](/index.php/ArchWiki:Contributing_(Espa%C3%B1ol) "ArchWiki:Contributing (Español)") donde se listan las diversas formas en las que se puede colaborar en ArchWiki y [este otro](/index.php/Getting_Involved_(Espa%C3%B1ol) "Getting Involved (Español)") más general.
 *   Si le surgen dudas a la hora de acometer una traducción o con cualquier otra actividad relacionada con el mantenimiento de la wiki, puede dirigir un correo electrónico a algún otro miembro del equipo o dejar una nota sobre el tema en la página de discusión de esta página.
 *   El traductor no debe decir nada que no esté en el texto original ni omitir algo que aparezca en él. Si necesita hacer alguna aclaración o comentario utilice un formato apropiado (por ejemplo `{{Nota|Comentario...}}`) indicando, incluso, que se trata de una nota del traductor (N. del T.), para advertir al lector que es un añadido al texto original.
-*   Respete cuidadosamente los formatos wikitexto y etiquetas HTML insertados en el texto. Recuerde la recomendación de que las traducciones sean _formalmente_ iguales para facilitar la labor de las revisiones.
+*   Respete cuidadosamente los formatos wikitexto y etiquetas HTML insertados en el texto. Recuerde la recomendación de que las traducciones sean *formalmente* iguales para facilitar la labor de las revisiones.
 *   Reproduzca textualmente las líneas de código, órdenes de comandos y demás procedimientos técnicos. Para evitar errores, la mejor técnica es copiar el texto original y pegar.
 *   Cada una de las traducciones deben ser minuciosamente revisadas antes de su publicación.
 *   Si no se siente cómodo modificando lo publicado por otros usuarios puede enviarnos su traducción, sugerencia, corrección de errores, etc., bien a través de la página de discusión de este artículo o bien a través de un correo electrónico a un miembro del grupo de traducción.
@@ -105,8 +105,8 @@ Pongamos, por ejemplo, que queremos traducir una página de la wiki cuyo título
 3.  Pulse en el enlace editar de dicha página.
 4.  Sobre el cuerpo de edición, pulse con el menú del botón secundario del ratón y en el menú desplegable seleccione «Seleccionar todo» y luego «Copiar» para copiar todo el texto del código fuente de la página.
 5.  Pegue el texto en un archivo de texto y guárdelo en su ordenador, para poder trabajar la traducción.
-6.  Durante el proceso de traducción tendrá que tener presente modificar la _categoría_ y el _enlace interlengua_ (ambos elementos los encontrará al principio del texto copiado, uno a continuación de otro):
-    1.  Respecto a la categoría: para que la página, una vez traducida, se incluya dentro de una categoría de la wiki hispana, habrá que añadirle _(Español)_ a la categoría inglesa, por ejemplo, si es `[[Category:ArchWiki]]` quedaría como `[[Category:ArchWiki **(Español)**]]`. Observe que hay un espacio en blanco entre el nombre de la categoría y <tt> (Español)</tt>
+6.  Durante el proceso de traducción tendrá que tener presente modificar la *categoría* y el *enlace interlengua* (ambos elementos los encontrará al principio del texto copiado, uno a continuación de otro):
+    1.  Respecto a la categoría: para que la página, una vez traducida, se incluya dentro de una categoría de la wiki hispana, habrá que añadirle *(Español)* a la categoría inglesa, por ejemplo, si es `[[Category:ArchWiki]]` quedaría como `[[Category:ArchWiki **(Español)**]]`. Observe que hay un espacio en blanco entre el nombre de la categoría y <tt> (Español)</tt>
     2.  Respecto a los enlaces interlenguas: los enlaces interlenguas tienen este formato: `[[**nn**:Título del Artículo]]`). Tenga en cuenta que hemos hecho una copia de un artículo escrito en inglés, con lo cual este contendrá enlaces a todas las páginas del mismo título traducidas a otros idiomas, excepto a la suya propia, es decir, la inglesa. Por tanto, al traducir la página al español, si no incluimos en nuestra página traducida un enlace a la página en inglés, tendremos un artículo traducido al español con enlaces a todas las páginas del mismo título traducidas a otros idiomas excepto a la página inglesa. Para subsanar esta ausencia tendremos que añadir en nuestra traducción el enlace a la página inglesa, que siguiendo el ejemplo propuesto, quedaría asi: `[[**en:**My New Page]]` (coloquela en el orden que alfabéticamente le corresponda entre los demás enlaces interlenguas).
 7.  Una vez hayamos traducido el texto, debemos crear la página: dado que la página no existe, escribiremos en la barra de direcciones del navegador:`http://wiki.archlinux.org/index.php/My_New_Page_**(Español)**`. Observe que para ello tan solo hemos tenido que añadir `**_(Español)**` al nombre del artículo en inglés.
 8.  Nos aparecerá una pantalla advirtiéndonos que la página aún no existe, pinche en crear para que se le abra el menú de edición. Copie su texto traducido y péguelo en el recuadro de edición de la página wiki.

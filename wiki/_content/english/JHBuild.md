@@ -78,20 +78,20 @@ prefix = '/opt/gnome'
 
 ```
 
-You should edit (at least) _modules_ to the desired modules to be built. A reference for most configuration variables is available at [GNOME JHBuild Manual](http://developer.gnome.org/jhbuild/unstable/config-reference.html.en).
+You should edit (at least) *modules* to the desired modules to be built. A reference for most configuration variables is available at [GNOME JHBuild Manual](http://developer.gnome.org/jhbuild/unstable/config-reference.html.en).
 
 ## Usage
 
 ### Installing prerequisites
 
-JHBuild can check if the required tools are installed by running _sanitycheck_:
+JHBuild can check if the required tools are installed by running *sanitycheck*:
 
 ```
 $ jhbuild sanitycheck
 
 ```
 
-If any errors are shown, missing packages may be installed from repositories or running the _bootstrap_ command, which tries to download, build and install the build prerequisites:
+If any errors are shown, missing packages may be installed from repositories or running the *bootstrap* command, which tries to download, build and install the build prerequisites:
 
 ```
 $ jhbuild bootstrap
@@ -100,7 +100,7 @@ $ jhbuild bootstrap
 
 ### Building
 
-To build all the modules selected in the configuration file, just run the _build_ command:
+To build all the modules selected in the configuration file, just run the *build* command:
 
 ```
 $ jhbuild build
@@ -135,7 +135,7 @@ $ yes 3 | jhbuild --try-checkout build
 
 #### Building from scratch without JHBuild, or in a JHBuild shell
 
-If you are building from scratch on your own, it may be necessary to run _autogen.sh_ with the following:
+If you are building from scratch on your own, it may be necessary to run *autogen.sh* with the following:
 
 ```
 $ PYTHON=/usr/bin/python2 ./autogen.sh

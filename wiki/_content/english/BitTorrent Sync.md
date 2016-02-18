@@ -42,7 +42,7 @@ $ systemctl --user enable btsync
 
 ```
 
-The service will run as the user invoking the command. Note that the above command is _not_ run as root: doing so may lead to a cryptic error stating that D-Bus has refused the connection.
+The service will run as the user invoking the command. Note that the above command is *not* run as root: doing so may lead to a cryptic error stating that D-Bus has refused the connection.
 
 **Note:** It is important to make sure that when `btsync` is run as the user, the `btsync.conf` file and directory where the `btsync.pid` file will be located have the correct user permissions, i.e. are owned by the user invoking the command. Failure to do so will prevent the service from running. If the user permissions are correct but `btsync` still fails to run after being enabled, restart your system.
 

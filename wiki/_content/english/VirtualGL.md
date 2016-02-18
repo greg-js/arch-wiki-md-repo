@@ -1,6 +1,6 @@
-VirtualGL redirects an application's _OpenGL/GLX commands_ to a separate X server (that has access to a 3D graphics card), captures the rendered images, and then streams them to the X server that actually handles the application.
+VirtualGL redirects an application's *OpenGL/GLX commands* to a separate X server (that has access to a 3D graphics card), captures the rendered images, and then streams them to the X server that actually handles the application.
 
-The main use-case is to enable server-side hardware-accelerated 3D rendering for _remote desktop_ set-ups where the X server that handles the application is either on the other side of the network _(in the case of X11 forwarding)_, or a "virtual" X server that cannot access the graphics hardware _(in the case of VNC)_.
+The main use-case is to enable server-side hardware-accelerated 3D rendering for *remote desktop* set-ups where the X server that handles the application is either on the other side of the network *(in the case of X11 forwarding)*, or a "virtual" X server that cannot access the graphics hardware *(in the case of VNC)*.
 
 ## Contents
 
@@ -27,18 +27,18 @@ The main use-case is to enable server-side hardware-accelerated 3D rendering for
 ```
  **server:                                              client:**
 ······································               ·················
-: ┌───────────┐ _X11 commands_         :               : ┌───────────┐ :
+: ┌───────────┐ *X11 commands*         :               : ┌───────────┐ :
 : │application│━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━▶│<font color="blue">X server</font>   │ :
 : │           │        ┌───────────┐ :               : │           │ :
 : │           │        │<font color="red">X server</font>   │ :               : ├┈┈┈┈┈┈┈┈┈╮ │ :
-: │ ╭┈┈┈┈┈┈┈┈┈┤ _OpenGL_ │ ╭┈┈┈┈┈┈┈┈┈┤ : _image stream_  : │VirtualGL┊ │ :
+: │ ╭┈┈┈┈┈┈┈┈┈┤ *OpenGL* │ ╭┈┈┈┈┈┈┈┈┈┤ : *image stream*  : │VirtualGL┊ │ :
 : │ ┊VirtualGL│━━━━━━━▶│ ┊VirtualGL│━━━━━━━━━━━━━━━━━━▶│client   ┊ │ :     <font color="blue">⬛</font> = "2D" rendering happens here
 : └─┴─────────┘        └─┴─────────┘ :               : └─────────┴─┘ :     <font color="red">⬛</font> = "3D" rendering happens here
 ······································               ·················
 
 ```
 
-_Advantages of this set-up, compared to using [VirtualGL with VNC](#Using_VirtualGL_with_VNC):_
+*Advantages of this set-up, compared to using [VirtualGL with VNC](#Using_VirtualGL_with_VNC):*
 
 *   seamless windows
 *   uses a little less CPU resources on the server side
@@ -46,52 +46,52 @@ _Advantages of this set-up, compared to using [VirtualGL with VNC](#Using_Virtua
 
 ### Instructions
 
-_**1\. Preparation**_
+***1\. Preparation***
 
 In addition to setting up VirtualGL on the remote server [as described above](#Installation_and_setup), this usage scenario requires you to:
 
-*   install the [virtualgl](https://www.archlinux.org/packages/?name=virtualgl) package on the client side as well _(but no need to set it up like on the server side, we just need the `vglconnect` and `vglclient` binaries on this end)_.
-*   set up [SSH with X11 forwarding](/index.php/SSH#X11_forwarding "SSH") _(confirm that connecting from the client to the server via `ssh -X user@server` and running GUI applications in the resulting shell works)_
+*   install the [virtualgl](https://www.archlinux.org/packages/?name=virtualgl) package on the client side as well *(but no need to set it up like on the server side, we just need the `vglconnect` and `vglclient` binaries on this end)*.
+*   set up [SSH with X11 forwarding](/index.php/SSH#X11_forwarding "SSH") *(confirm that connecting from the client to the server via `ssh -X user@server` and running GUI applications in the resulting shell works)*
 
-_**2\. Connecting**_
+***2\. Connecting***
 
 Now you can use `vglconnect` on the client computer whenever you want to connect to the server:
 
 ```
-$ vglconnect user@server     _# X11 traffic encrypted, VGL image stream unencrypted_
+$ vglconnect user@server     *# X11 traffic encrypted, VGL image stream unencrypted*
 
 ```
 
 ```
-$ vglconnect -s user@server  _# both X11 traffic and VGL image stream encrypted_
+$ vglconnect -s user@server  *# both X11 traffic and VGL image stream encrypted*
 
 ```
 
 This opens an SSH session with X11 forwarding just like `ssh -X` would, and also automatically starts the VirtualGL Client (`vglclient`) with the right parameters as a background daemon. This daemon will handle incoming VirtualGL image streams from the server, and will keep running in the background even after you close the SSH shell - you can stop it with `vglclient -kill`.
 
-_**3\. Running applications**_
+***3\. Running applications***
 
 Once connected, you can run remote applications with VirtualGL rendering enabled for their OpenGL parts, by starting them inside the SSH shell with `vglrun` as described in [Running Applications](#Running_applications) below.
 
-You do not need to restrict yourself to the shell that `vglconnect` opened for you; any `ssh -X` or `ssh -Y` shell you open from the same X session on the client to the same _user_@_server_ should work. `vglrun` will detect that you are in an SSH shell, and make sure that the VGL image stream is sent over the network to the IP/hostname belonging to the SSH client (where the running `vglclient` instance will intercept and process it).
+You do not need to restrict yourself to the shell that `vglconnect` opened for you; any `ssh -X` or `ssh -Y` shell you open from the same X session on the client to the same *user*@*server* should work. `vglrun` will detect that you are in an SSH shell, and make sure that the VGL image stream is sent over the network to the IP/hostname belonging to the SSH client (where the running `vglclient` instance will intercept and process it).
 
 ## Using VirtualGL with VNC
 
 ```
  **server:                                                           client:**
 ···················································               ················
-: ┌───────────┐ _X11 commands_         ┌──────────┐ : _image stream_  : ┌──────────┐ :
+: ┌───────────┐ *X11 commands*         ┌──────────┐ : *image stream*  : ┌──────────┐ :
 : │application│━━━━━━━━━━━━━━━━━━━━━▶│<font color="blue">VNC server</font>│━━━━━━━━━━━━━━━━━━▶│VNC viewer│ :
 : │           │        ┌───────────┐ └──────────┘ :               : └──────────┘ :
 : │           │        │<font color="red">X server</font>   │        ▲     :               :              :
-: │ ╭┈┈┈┈┈┈┈┈┈┤ _OpenGL_ │ ╭┈┈┈┈┈┈┈┈┈┤ _images_ ┃     :               :              :
+: │ ╭┈┈┈┈┈┈┈┈┈┤ *OpenGL* │ ╭┈┈┈┈┈┈┈┈┈┤ *images* ┃     :               :              :
 : │ ┊VirtualGL│━━━━━━━▶│ ┊VirtualGL│━━━━━━━━┛     :               :              :     <font color="blue">⬛</font> = "2D" rendering happens here
 : └─┴─────────┘        └─┴─────────┘              :               :              :     <font color="red">⬛</font> = "3D" rendering happens here
 ···················································               ················
 
 ```
 
-_Advantages of this set-up, compared to using [VirtualGL with X11 Forwarding](#Using_VirtualGL_with_X11_forwarding):_
+*Advantages of this set-up, compared to using [VirtualGL with X11 Forwarding](#Using_VirtualGL_with_X11_forwarding):*
 
 *   can maintain better performance in case of low-bandwidth/high-latency networks
 *   can send the same image stream to multiple clients ("desktop sharing")
@@ -106,11 +106,11 @@ Inside the VNC session (e.g. in a terminal emulator within the VNC desktop or ev
 
 ### Choosing an appropriate VNC package
 
-VirtualGL can provide 3D rendering for _any_ general-purpose [vncserver](/index.php/Vncserver "Vncserver") implementation (e.g. TightVNC, RealVNC, ...).
+VirtualGL can provide 3D rendering for *any* general-purpose [vncserver](/index.php/Vncserver "Vncserver") implementation (e.g. TightVNC, RealVNC, ...).
 
-However, if you want to really get good performance out of it _(e.g. to make it viable to watch videos or play OpenGL games over VNC)_, you might want to use one of the VNC implementations that are specifically optimized for this use-case:
+However, if you want to really get good performance out of it *(e.g. to make it viable to watch videos or play OpenGL games over VNC)*, you might want to use one of the VNC implementations that are specifically optimized for this use-case:
 
-*   [turbovnc](https://aur.archlinux.org/packages/turbovnc/): Developed by the same team as VirtualGL, with the explicit goal of providing the best performance in combination with it. However, its vncserver implementation does not support all features a normal Xorg server provides, thus _some_ applications will run unusually slow or not at all in it.
+*   [turbovnc](https://aur.archlinux.org/packages/turbovnc/): Developed by the same team as VirtualGL, with the explicit goal of providing the best performance in combination with it. However, its vncserver implementation does not support all features a normal Xorg server provides, thus *some* applications will run unusually slow or not at all in it.
 *   [TigerVNC](/index.php/TigerVNC "TigerVNC"): Also developed with VirtualGL in mind and achieves good performance with it, while providing better Xorg compatibility than TurboVNC.
 
 ## Running applications
@@ -124,12 +124,12 @@ $ vglrun glxgears
 
 This has to be executed on the remote computer of course (where the application will run), i.e. inside your SSH or VNC session. The X servers that will be used, are determined from the following two environment variables:
 
-| `<font color="blue">DISPLAY</font>` | _The X server that will handle the application, and render its non-OpenGL parts._
+| `<font color="blue">DISPLAY</font>` | *The X server that will handle the application, and render its non-OpenGL parts.*
 
 If using VNC, this refers to the VNC server. In the case of SSH forwarding, it is a virtual X server number on the remote computer that SSH internally maps to the real X server on the client. There is nothing VirtualGL-specific about this variable, and it will already be set to the correct value within your SSH or VNC session.
 
  |
-| `<font color="red">VGL_DISPLAY</font>` | _The X server to which VirtualGL should redirect OpenGL rendering._
+| `<font color="red">VGL_DISPLAY</font>` | *The X server to which VirtualGL should redirect OpenGL rendering.*
 
 See [Installation and setup](#Installation_and_setup) above. If not set, the value `:0.0` is assumed. Note that the number after the dot can be used to select the graphics card.
 
@@ -137,17 +137,17 @@ See [Installation and setup](#Installation_and_setup) above. If not set, the val
 
 Many more environment variables and command-line parameters are available to fine-tune `vglrun` - refer to the user manual and `vglrun -help` for reference. VirtualGL's behavior furthermore depends on which of its two main modes of operation is active (which `vglrun` will choose automatically, based on the environment in which it is executed):
 
-*   _"**VGL Transport**" - default when [using X11 forwarding](#Using_VirtualGL_with_X11_forwarding)_
+*   *"**VGL Transport**" - default when [using X11 forwarding](#Using_VirtualGL_with_X11_forwarding)*
 
 	In this mode, a compressed image stream of the rendered OpenGL scenes is sent through a custom network protocol to a `vglclient` instance. By default it uses JPEG compression at 90% quality, but this can be fully customized, e.g.:
 
-	 `$ vglrun -q 30 -samp 4x glxgears              _# use aggressive compression (to reduce bandwidth demand)_` 
+	 `$ vglrun -q 30 -samp 4x glxgears              *# use aggressive compression (to reduce bandwidth demand)*` 
 
-	 `$ VGL_QUAL=30 VGL_SUBSAMP=4x vglrun glxgears  _# same as above, using environment variables_` 
+	 `$ VGL_QUAL=30 VGL_SUBSAMP=4x vglrun glxgears  *# same as above, using environment variables*` 
 
 	There is also a GUI dialog that lets you change the most common VirtualGL rendering/compression options for an application on the fly, after you have already started it with `vglrun` - simply press `Ctrl+Shift+F9` while the application has keyboard focus, to open this dialog.
 
-*   _"**X11 Transport**" - default when [using VNC](#Using_VirtualGL_with_VNC)_
+*   *"**X11 Transport**" - default when [using VNC](#Using_VirtualGL_with_VNC)*
 
 	In this mode, VirtualGL feeds raw (uncompressed) images through the normal X11 protocol directly to the X server that handles the application - e.g. a VNC server running on the same machine. Many of `vglrun`'s command-line options (e.g. those relating to image stream compression or stereo rendering) are not applicable here, because there is no `vglclient` running on the other end. It is now the VNC server that handles all the image stream optimization/compression, so it is there that you should turn to for fine-tuning.
 
@@ -190,21 +190,21 @@ If `vglrun` exits with an error messages like...
 Symptoms:
 
 *   no VirtualGL-accelerated 3D rendering - the program either aborts, or falls back to software rendering ([how to check](#Confirming_that_VirtualGL_rendering_is_active))
-*   at the same time, _no_ VirtualGL related error messages or info is printed to the shell
+*   at the same time, *no* VirtualGL related error messages or info is printed to the shell
 
 This may happen when something blocks VirtualGL from getting preloaded into the application's executable(s). The way pre-loading works, is that `vglrun` adds the names of some VirtualGL libraries to the `LD_PRELOAD` environment variable before running the command that starts the application. Now when an application binary is executed as part of this command, the Linux kernel loads the dynamic linker which in turn detects the `LD_PRELOAD` variable and links the specified libraries into the in-memory copy of the application binary before anything else. This will obviously not work if the environment variable is not propagated to the dynamic linker, e.g. in the following cases:
 
 *   **The application is started through a script that explicitly unsets/overrides LD_PRELOAD**
 
-	_Solution:_ Edit the script to comment out or fix the offending line. (You can put the modified script in `/usr/local/bin/` to prevent it from being reverted on the next package upgrade.)
+	*Solution:* Edit the script to comment out or fix the offending line. (You can put the modified script in `/usr/local/bin/` to prevent it from being reverted on the next package upgrade.)
 
 *   **The application is started through multiple layers of scripts, and environment variables get lost along the way**
 
-	_Solution:_ Modify the final script that actually runs the application, to make it run the application with `vglrun`.
+	*Solution:* Modify the final script that actually runs the application, to make it run the application with `vglrun`.
 
-*   **The application is started through a loader binary _(possibly itself!)_, in a way that fails to propagate LD_PRELOAD**
+*   **The application is started through a loader binary *(possibly itself!)*, in a way that fails to propagate LD_PRELOAD**
 
-	_Solution:_ If possible, bypass the loader binary and start the actual OpenGL application directly with `vglrun` - an example is VirtualBox where you need to start your virtual machine session directly with `vglrun VirtualBox -startvm "Name of the VM"` rather then through the VirtualBox main program GUI. If it is a matter of LD_PRELOAD being explicitly unset within the binary, running `vglrun` with the `-ge` command-line switch can prevent that in some cases.
+	*Solution:* If possible, bypass the loader binary and start the actual OpenGL application directly with `vglrun` - an example is VirtualBox where you need to start your virtual machine session directly with `vglrun VirtualBox -startvm "Name of the VM"` rather then through the VirtualBox main program GUI. If it is a matter of LD_PRELOAD being explicitly unset within the binary, running `vglrun` with the `-ge` command-line switch can prevent that in some cases.
 
 See the "Application Recipes" section in the user manual for a list of some applications that are known to require such work-arounds.
 
@@ -226,7 +226,7 @@ ERROR: ld.so: object 'librrfaker.so' from LD_PRELOAD cannot be preloaded: ignore
 
 *   **The application executable has the setuid/setgid flag set**
 
-	You can confirm whether this is the case by inspecting the executable's file permissions using `ls -l`: It will show the letter `s` in place of the _user executable_ bit if setuid is set (for example `-rw**s**r-xr-x`), and in place of the _group executable_ bit if setgid is set. For such an application any preloading attempts will fail, unless the libraries to be preloaded have the setuid flag set as well. You can set this flag for the VirtualGL libraries in question by executing the following as root:
+	You can confirm whether this is the case by inspecting the executable's file permissions using `ls -l`: It will show the letter `s` in place of the *user executable* bit if setuid is set (for example `-rw**s**r-xr-x`), and in place of the *group executable* bit if setgid is set. For such an application any preloading attempts will fail, unless the libraries to be preloaded have the setuid flag set as well. You can set this flag for the VirtualGL libraries in question by executing the following as root:
 
 ```
 $ chmod u+s /usr/lib/lib{rr,dl}faker.so    # for the native-architecture versions provided by [virtualgl](https://www.archlinux.org/packages/?name=virtualgl)
@@ -238,7 +238,7 @@ $ chmod u+s /usr/lib32/lib{rr,dl}faker.so  # for the multilib versions provided 
 
 ### Problem: rendering glitches, unusually poor performance, or application errors
 
-OpenGL has a really low-level and flexible API, which means that different OpenGL applications may come up with very different rendering techniques. VirtualGL's default strategy for how to redirect rendering and how/when to capture a new frame works well with most interactive 3D programs, but may prove inefficient or even problematic for _some_ applications. If you suspect that this may be the case, you can tweak VirtualGL's mode of operation by setting certain environment variables before starting your application with `vglrun`. For example you could try setting some of the following values _(try them one at a time, and be aware that each of them could also make things worse!)_:
+OpenGL has a really low-level and flexible API, which means that different OpenGL applications may come up with very different rendering techniques. VirtualGL's default strategy for how to redirect rendering and how/when to capture a new frame works well with most interactive 3D programs, but may prove inefficient or even problematic for *some* applications. If you suspect that this may be the case, you can tweak VirtualGL's mode of operation by setting certain environment variables before starting your application with `vglrun`. For example you could try setting some of the following values *(try them one at a time, and be aware that each of them could also make things worse!)*:
 
 ```
 VGL_ALLOWINDIRECT=1

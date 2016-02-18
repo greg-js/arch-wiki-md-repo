@@ -98,7 +98,6 @@ Systemd's loginctl lets you assing devices to seats by creating udev rules.
 Look at the default seat (seat0) status, here is an example:
 
  `# loginctl seat-status seat0` 
-
 ```
 seat0
         Sessions: *11
@@ -178,7 +177,6 @@ You should be able to see that the hardware has been partitioned into two seats:
 Since you can attach devices to seats with `loginctl` there is no need to have an specific [Xorg configuration](/index.php/Xorg "Xorg"). Anyway you can create parts of or the entire configuration set for two server layouts, each assigned with their own keyboard, mouse, video card and monitor.
 
  `xorg.conf.d tree example:` 
-
 ```
 ├── 00-keyboard.conf   #created by localectl
 ├── 31-monitor-seat0.conf
@@ -200,7 +198,6 @@ This part of the configuration tells Xorg which input devices it has available. 
 Configure your devices as read in [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg"). The "Identifier" will let you assign to a ServerLayout and "Device" defines which physical device are you configuring.
 
  `01-keyboard-seat0.conf` 
-
 ```
 Section "InputDevice"
         Identifier      "keyboard0"
@@ -218,7 +215,6 @@ Same for other [input devices](/index.php/Xorg#Input_devices "Xorg").
 Configure your monitors as seen on [Xorg#Monitor settings](/index.php/Xorg#Monitor_settings "Xorg"). Pay close attention to the identifier.
 
  `31-monitor-seat0.conf` 
-
 ```
 Section "Monitor"
     Identifier             "monitor0"
@@ -229,7 +225,6 @@ EndSection
 ### ServerFlags
 
  `40-serverflags.conf` 
-
 ```
 Section "ServerFlags"
         Option "AutoAddGPU" "off"
@@ -242,7 +237,6 @@ EndSection
 Take a close look at the BusID. This option specifies which hardware card to use. You can find out the BusId's with `lspci`. However, you'll soon find out this doesn't always match. That's because lspci displays the device address in hexadecimal form. Xorg however uses decimal form. So you'll need to convert your address from hexadecimal form to decimal. Thus a device address of 0:0a:0 in lspci would become 0:10:0 in `xorg.conf`.
 
  `42-graphic-seat1.conf` 
-
 ```
 Section "Device"
         Identifier      "graphic0"
@@ -260,7 +254,6 @@ EndSection
 Pay close attention to the "monitor" option.
 
  `51-screen-seat0.conf` 
-
 ```
 Section "Screen"
         Identifier              "screen0"
@@ -280,7 +273,6 @@ EndSection
 Create a section for every seat (pay attention to Identifier) you have with their respective keyboards, mice and screens.
 
  `62-layout-seat1.conf` 
-
 ```
 Section "ServerLayout"
         Identifier      "seat-1"
@@ -347,7 +339,7 @@ ServerArgsLocal=-nolisten tcp -layout seat0 -seat seat0
 ServerArgsLocal=-nolisten tcp -layout seat-1 -seat seat-1 -novtswitch
 ```
 
-Add section like this for every seat you have, and do not forget to change the :0 and the -layout seat0\. Note that the "-novtswitch" options should be added for all seats _except_ the first one. Otherwise, you can end with rectangles of virtual terminals "showing through" on your primary screen.
+Add section like this for every seat you have, and do not forget to change the :0 and the -layout seat0\. Note that the "-novtswitch" options should be added for all seats *except* the first one. Otherwise, you can end with rectangles of virtual terminals "showing through" on your primary screen.
 
 ### For XDM
 

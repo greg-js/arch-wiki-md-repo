@@ -33,21 +33,16 @@ The heirloom development tools provide tools like **yacc**, **lex**, **m4**, **m
 The [heirloom-devtools-cvs](https://aur.archlinux.org/packages/heirloom-devtools-cvs/) [AUR](/index.php/AUR "AUR") package installs the following files:
 
  `/usr/heirloom/bin` 
-
 ```
 admin  cdc  comb  delta  get  help  lex  m4  make  prs  prt  rmdel  sact  sccs  sccsdiff  unget  val  vc  what  yacc
 
 ```
-
  `/usr/heirloom/bin/posix/` 
-
 ```
 m4 make
 
 ```
-
  `/usr/heirloom/lib` 
-
 ```
 help  lex  libl.a  liby.a  svr4.make  yaccpar
 
@@ -60,7 +55,6 @@ This package contains classical UNIX binaries corresponding to GNU [coreutils](h
 The Heirloom Toolchest is available as an [heirloom-cvs](https://aur.archlinux.org/packages/heirloom-cvs/) [AUR](/index.php/AUR "AUR") package, which installs the following files:
 
  `/usr/heirloom/bin` 
-
 ```
 apropos   catman  cpio     diff3    factor  grep    line      mkfifo   nl      pkill    pwd    shl      tabs   tr    uptime
 awk       chgrp   csplit   dircmp   false   groups  listusers mknod    nohup   random   sleep  tail     true
@@ -75,36 +69,28 @@ sum       time    uniq     xargs    cat     cp      diff      expr     getopt  l
 sync      touch   units    yes
 
 ```
-
  `/usr/heirloom/bin/posix/` 
-
 ```
 awk      chmod csplit du   ed    expr  file  getconf  id  ls    mv   nl    od  pg  ps rmdir sort touch wc
 basename cp    date   echo egrep fgrep find  grep     ln  mkdir nawk nohup pax pr  rm sed   test tr
 who
 
 ```
-
  `/usr/heirloom/bin/posix2001/` 
-
 ```
 awk      chmod csplit du   ed    expr  file getconf id ls    mv   nl    od  pg ps rmdir sort touch  wc
 basename cp    date   echo egrep fgrep find grep    ln mkdir nawk nohup pax pr rm sed   test tr
 who
 
 ```
-
  `/usr/heirloom/bin/s42/` 
-
 ```
 awk chmod    csplit du   ed   expr  file  getconf id   ln mkdir mv   nl   od    pax  pr ps       rmdir sort touch  
 wc  basename cp     date echo egrep fgrep find    grep lc ls    more nawk nohup page pg priocntl rm
 sed test     tr     who
 
 ```
-
  `/usr/heirloom/bin/ucb/` 
-
 ```
 apropos catman   deroff du expand hostname ln      man printenv ps  sccs   sum   test  ul uptime   w
 whoami  basename chown  df echo   groups   install ls  more     prt renice stty  tcopy tr unexpand

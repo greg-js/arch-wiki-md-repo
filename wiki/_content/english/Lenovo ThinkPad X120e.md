@@ -38,7 +38,6 @@ The Thinkpad x120e is available with one of two wireless cards.
 The kernel modules work, but the HDMI audio is the primary device (not the speaker). You can swap that:
 
  `$ vim ~/.asoundrc` 
-
 ```
 defaults.pcm.card 1
 defaults.pcm.device 0
@@ -108,7 +107,7 @@ The Fusion Processor can be undervolted with the PHC-K8 tool. See [PHC](/index.p
 
 #### Using tpc
 
-Another method for undervolting is [tpc](https://aur.archlinux.org/packages/tpc/). It is more intuitive then PHC tool and needs Kernelmodule _cpuid_ and _msr_.
+Another method for undervolting is [tpc](https://aur.archlinux.org/packages/tpc/). It is more intuitive then PHC tool and needs Kernelmodule *cpuid* and *msr*.
 
 Information output available cores and current frequencies and voltage:
 

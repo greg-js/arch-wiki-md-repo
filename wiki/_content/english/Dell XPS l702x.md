@@ -53,7 +53,6 @@ This page is about Dell XPS l702x hardware configuration
 #### Microarchitecture, processor and platform
 
  `uname -mpi` 
-
 ```
 x86_64 unknown unknown
 
@@ -62,7 +61,6 @@ x86_64 unknown unknown
 #### PCI buses and devices
 
  `lspci` 
-
 ```
 00:00.0 Host bridge: Intel Corporation 2nd Generation Core Processor Family DRAM Controller (rev 09)
 00:01.0 PCI bridge: Intel Corporation Xeon E3-1200/2nd Generation Core Processor Family PCI Express Root Port (rev 09)
@@ -93,7 +91,6 @@ x86_64 unknown unknown
 #### USB devices
 
  `lsusb` 
-
 ```
 Bus 004 Device 003: ID 8086:0189 Intel Corp. 
 Bus 004 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
@@ -111,7 +108,6 @@ Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 ## Card Reader
 
  `With a card inside a card reader` 
-
 ```
 # echo 1 > /sys/bus/pci/rescan
 
@@ -124,7 +120,6 @@ The command isn't needed until the next start of the machine.
 Only two keys can be remaped to use on DE, second and trird touch keys.
 
  `Touchkeys Scancodes` 
-
 ```
 0xDB # First touch key, Dell apparently uses a key sequence here where 0xDB is a modifer, 0x2D stands for the touch key and 0x19 for the monitor toggle
 0x85 # Second touch key
@@ -135,7 +130,6 @@ Only two keys can be remaped to use on DE, second and trird touch keys.
 One method to remap it is as systemd service:
 
  `/etc/systemd/system/multi-user.target.wants/setsecondkey.service` 
-
 ```
 [Unit]
 Description=Setkeycode Second Key

@@ -78,7 +78,7 @@ $ gtk-window-decorator --replace
 
 ```
 
-**Note:** **Attivare plugin importanti:** spesso è necessario attivare alcuni plugin che forniscono un comportamento base del gestore di finestre altrimenti non sarà possibile trascinare, ridimensionare o chiudere le finestre con Compiz attivo. Alcuni di questi plugin sono "Window Decoration" sotto Effects e "Move Window" & "Resize Window" sotto Window Management. Il comando _ccsm_ può essere usato per attivare queste funzionalità. Basta inserire la spunta sui plugin che si desidera attivare.
+**Note:** **Attivare plugin importanti:** spesso è necessario attivare alcuni plugin che forniscono un comportamento base del gestore di finestre altrimenti non sarà possibile trascinare, ridimensionare o chiudere le finestre con Compiz attivo. Alcuni di questi plugin sono "Window Decoration" sotto Effects e "Move Window" & "Resize Window" sotto Window Management. Il comando *ccsm* può essere usato per attivare queste funzionalità. Basta inserire la spunta sui plugin che si desidera attivare.
 
 ## Software aggiuntivo
 
@@ -97,7 +97,7 @@ $ gtk-window-decorator --replace
 *   [ccsm](https://aur.archlinux.org/packages/ccsm/) (gestore delle impostazioni CompizConfig) - Applicazione con interfaccia grafica che permette di configurare tutti i plugin di Compiz.
 *   [fusion-icon](https://aur.archlinux.org/packages/fusion-icon/) - Tray icon che permette di avviare facilmente compiz, ccsm e cambiare il WM / Window Decorator
 
-**Note:** _fusion-icon_ non funziona a causa di un bug introdotto con _glib2_ 2.36.1 ([FS#34892](https://bugs.archlinux.org/task/34892)), ed è stato rimosso dai repository. Se si vuole utilizzare comunque _fusion-icon_, bisogna installare [fusion-icon-fixed](https://aur.archlinux.org/packages/fusion-icon-fixed/) dall' [AUR](/index.php/AUR "AUR").
+**Note:** *fusion-icon* non funziona a causa di un bug introdotto con *glib2* 2.36.1 ([FS#34892](https://bugs.archlinux.org/task/34892)), ed è stato rimosso dai repository. Se si vuole utilizzare comunque *fusion-icon*, bisogna installare [fusion-icon-fixed](https://aur.archlinux.org/packages/fusion-icon-fixed/) dall' [AUR](/index.php/AUR "AUR").
 
 ## Avviare Compiz Fusion
 
@@ -152,14 +152,13 @@ Alcuni utili parametri da riga di comando:
 
 #### Utilizzando Impostazioni di sistema(semplice)
 
-Andare su _Impostazioni di sistema > Applicazioni predefinite > Gestore Finestre > Utilizza un gestore finestre differente_.
+Andare su *Impostazioni di sistema > Applicazioni predefinite > Gestore Finestre > Utilizza un gestore finestre differente*.
 
 Se avete bisogno di avviare compiz con delle impostazioni personalizzate selezionare "Compiz custom" ( quando avviate `fusion-icon` da terminale è possibile vedere la riga di comando da cui è stato avviato. Bisogna creare un file chiamato "compiz-kde-launcher" in `/usr/local/bin`, e rendere il file eseguibile: `chmod +x /usr/bin/compiz-kde-launcher`.
 
 Ad esempio:
 
  `/usr/local/bin/compiz-kde-launcher` 
-
 ```
 #!/bin/bash
 LIBGL_ALWAYS_INDIRECT=1
@@ -202,7 +201,7 @@ X-KDE-autostart-after=kdesktop
 
 **Nota:** Questo metodo può essere un po' lento poichè KDE deve caricare prima il suo window-manager (Kwin), per poi sostituirlo con Compiz lanciato appunto tramite questo collegamento. Quindi, impiega in parole povere il tempo che serve a caricare due window manager invece di uno. Ci sono altri metodi un po' più rapidi di questo,e sono descritti in seguito.
 
-*   If you want to use the optional <tt>fusion-icon</tt> application, launch _fusion-icon_. If you log out normally with _fusion-icon_ running, KDE should restore your session and launch _fusion-icon_ the next time you log in if this setting is enabled. If it doesn't appear to be working, ensure you have the following line in `~/.kde/share/config/ksmserverrc`:
+*   If you want to use the optional <tt>fusion-icon</tt> application, launch *fusion-icon*. If you log out normally with *fusion-icon* running, KDE should restore your session and launch *fusion-icon* the next time you log in if this setting is enabled. If it doesn't appear to be working, ensure you have the following line in `~/.kde/share/config/ksmserverrc`:
 
 ```
 loginMode=restorePreviousLogout
@@ -223,12 +222,10 @@ $ echo "compiz --replace ccp --sm-disable &" > /usr/bin/compiz-fusion
 ```
 
 **Nota:** Se questo comando non funziona, assicuratevi di aver installato il pacchetto "fusion-icon" e provate quest'altro comando:
-
 ```
 $ echo "fusion-icon &" > /usr/bin/compiz-fusion
 
 ```
-
 Assicuratevi però di aver completato tutti i passi descritti per questo metodo, prima di provare questa alternativa.
 
 Assicuratevi che `/usr/bin/compiz-fusion` abbia i permessi di esecuzione.
@@ -353,7 +350,7 @@ Type=Application
 
 ```
 
-Dopo un riavvio di GDM, dal menu delle sessioni selezionate quindi _Compiz on Gnome_ e dovreste aver concluso.
+Dopo un riavvio di GDM, dal menu delle sessioni selezionate quindi *Compiz on Gnome* e dovreste aver concluso.
 
 #### Autostart (con "fusion-icon")
 
@@ -460,7 +457,7 @@ $ rm -r ~/.cache/sessions
 
 Questo metodo caricherà Xfwm, sostituiendolo poi con Compiz.
 
-Aprite il XFCE Settings Manager, poi aprite _Sessions & Startup_. cliccate infine sulla scheda _Application Autostart_.
+Aprite il XFCE Settings Manager, poi aprite *Sessions & Startup*. cliccate infine sulla scheda *Application Autostart*.
 
 Aggiungete
 
@@ -676,7 +673,7 @@ e guardate cosa viene restituito sul terminale stesso. Potete usarlo in tutti gl
 
 ## Usare gtk-window-decorator
 
-Per utilizzare gtk-window-decorator, installate il pacchetto _compiz-decorator-gtk_ e scegliete poi "GTK Window Decorator" invece di "Emerald" come vostro decoratore di finestre di default tramite fusion-icon o qualsiasi programma\script voi utilizziate per lanciare compiz.
+Per utilizzare gtk-window-decorator, installate il pacchetto *compiz-decorator-gtk* e scegliete poi "GTK Window Decorator" invece di "Emerald" come vostro decoratore di finestre di default tramite fusion-icon o qualsiasi programma\script voi utilizziate per lanciare compiz.
 
 ## gconf: Configurazioni aggiuntive per Compiz
 

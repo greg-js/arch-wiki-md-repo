@@ -142,8 +142,8 @@ You may want to get the list of installed packages with their version, which is 
 *   List all explicitly installed packages: `pacman -Qe` .
 *   List all foreign packages (typically manually downloaded and installed): `pacman -Qm` .
 *   List all native packages (installed from the sync database(s)): `pacman -Qn` .
-*   List packages by regex: `pacman -Qs _regex_`.
-*   List packages by regex with custom output format: `expac -s "%-30n %v" _regex_` (needs [expac](https://www.archlinux.org/packages/?name=expac)).
+*   List packages by regex: `pacman -Qs *regex*`.
+*   List packages by regex with custom output format: `expac -s "%-30n %v" *regex*` (needs [expac](https://www.archlinux.org/packages/?name=expac)).
 
 #### With size
 
@@ -153,10 +153,10 @@ To get a list of installed packages sorted by size, which may be useful when fre
 *   Run [pacgraph](https://www.archlinux.org/packages/?name=pacgraph) with the `-c` option.
 *   Run [apacman](https://aur.archlinux.org/packages/apacman/) with the `-L` option.
 
-To list the download size of several packages (leave `_packages_` blank to list all packages):
+To list the download size of several packages (leave `*packages*` blank to list all packages):
 
 ```
-$ expac -S -H M '%k\t%n' _packages_
+$ expac -S -H M '%k\t%n' *packages*
 
 ```
 
@@ -181,7 +181,8 @@ If you want to generate a list of all installed packages that nothing else depen
 ignoregrp="base base-devel"
 ignorepkg=""
 
-comm -23 <(pacman -Qqt | sort) <(echo $ignorepkg | tr ' ' '\n' | cat <(pacman -Sqg $ignoregrp) - | sort -u)
+comm -23 <(pacman -Qqt | sort) <(echo $ignorepkg | tr ' ' '
+' | cat <(pacman -Sqg $ignoregrp) - | sort -u)
 
 ```
 
@@ -201,17 +202,17 @@ $ comm -23 <(pacman -Qeq | sort) <(pacman -Qgq base base-devel | sort)
 
 ```
 
-List all installed packages that are not in specified repository (`_repo_name_` in example):
+List all installed packages that are not in specified repository (`*repo_name*` in example):
 
 ```
-$ comm -23 <(pacman -Qtq | sort) <(pacman -Slq _repo_name_ | sort)
+$ comm -23 <(pacman -Qtq | sort) <(pacman -Slq *repo_name* | sort)
 
 ```
 
-List all installed packages that are in the `_repo_name_` repository:
+List all installed packages that are in the `*repo_name*` repository:
 
 ```
-$ comm -12 <(pacman -Qtq | sort) <(pacman -Slq _repo_name_ | sort)
+$ comm -12 <(pacman -Qtq | sort) <(pacman -Slq *repo_name* | sort)
 
 ```
 
@@ -220,7 +221,7 @@ $ comm -12 <(pacman -Qtq | sort) <(pacman -Slq _repo_name_ | sort)
 This one might come in handy if you have found that a specific package uses a huge amount of space and you want to find out which files make up the most of that.
 
 ```
-$ pacman -Qlq _package_ | grep -v '/$' | xargs du -h | sort -h
+$ pacman -Qlq *package* | grep -v '/$' | xargs du -h | sort -h
 
 ```
 
@@ -240,7 +241,7 @@ The [lostfiles](https://aur.archlinux.org/packages/lostfiles/) script performs s
 
 #### Orphans
 
-For _recursively_ removing orphans and their configuration files:
+For *recursively* removing orphans and their configuration files:
 
 ```
 # pacman -Rns $(pacman -Qtdq)
@@ -250,17 +251,15 @@ For _recursively_ removing orphans and their configuration files:
 If no orphans were found, pacman errors with `error: no targets specified`. This is expected as no arguments were passed to `pacman -Rns`.
 
 **Note:** Since pacman version 4.2.0 only true orphans are listed. To make pacman also list packages which are only optionally required by another package, pass the `-t`/`--unrequired` flag twice:
-
 ```
 $ pacman -Qdttq
 
 ```
-
 Use this carefully, as it is not taken into account whether the package is an optional dependency and therefore bears the risk to remove packages which actually are not real orphans.
 
 #### Explicitly installed
 
-Because a lighter system is easier to maintain, occasionally looking through explicitly installed packages and _manually_ selecting unused packages to be removed can be helpful.
+Because a lighter system is easier to maintain, occasionally looking through explicitly installed packages and *manually* selecting unused packages to be removed can be helpful.
 
 To list explicitly installed packages available in the official repositories:
 
@@ -293,7 +292,6 @@ Notes:
 2.  `pactree` prints the package name followed by what it provides. For example:
 
  `$ pactree -lu logrotate` 
-
 ```
 logrotate
 popt
@@ -314,11 +312,13 @@ The `dcron cron` line seems to cause problems, that is why `cut -d ' ' -f 1` is 
 Dependencies are alphabetically sorted and doubles are removed. Note that you can use `pacman -Qi` to improve response time a little. But you will not be able to query as many packages. Unfound packages are simply skipped (hence the `2>/dev/null`).
 
 ```
-$ pacman -Si $@ 2>/dev/null | awk -F ": " -v filter="^Depends" \ '$0 ~ filter {gsub(/[>=<][^ ]*/,"",$2) ; gsub(/ +/,"\n",$2) ; print $2}' | sort -u
+$ pacman -Si $@ 2>/dev/null | awk -F ": " -v filter="^Depends" \ '$0 ~ filter {gsub(/[>=<][^ ]*/,"",$2) ; gsub(/ +/,"
+",$2) ; print $2}' | sort -u
 
 ```
 
-Alternatively, you can use `expac`: `expac -l '\n' %E -S $@ | sort -u`.
+Alternatively, you can use `expac`: `expac -l '
+' %E -S $@ | sort -u`.
 
 ### Listing changed backup files
 
@@ -362,16 +362,13 @@ The database can be restored by moving the `pacman_database.tar.bz2` file into t
 Use the following scripts, changing the value of `$pakbak` for the backup location accordingly. The `pakbak.service` can also automaticall be [enabled](/index.php/Enable "Enable") on boot:
 
  `/usr/lib/systemd/scripts/pakbak_script` 
-
 ```
 #!/bin/bash
 
-declare -r pakbak=_"/pakbak.tar.xz"_;  ## set backup location
+declare -r pakbak=*"/pakbak.tar.xz"*;  ## set backup location
 tar -cJf "$pakbak" "/var/lib/pacman/local";  ## compress & store pacman local database in $pakbak
 ```
-
  `/usr/lib/systemd/system/pakbak.service` 
-
 ```
 [Unit]
 Description=Back up pacman database
@@ -381,9 +378,7 @@ Type=oneshot
 ExecStart=/bin/bash /usr/lib/systemd/scripts/pakbak_script
 RemainAfterExit=no
 ```
-
  `/usr/lib/systemd/system/pakbak.path` 
-
 ```
 [Unit]
 Description=Back up pacman database
@@ -428,10 +423,9 @@ To install:
 
 ```
 
-**2.** Edit `pacman.conf` and add this repository _before_ the other ones (e.g. extra, core, etc.). This is important. Do not just uncomment the one on the bottom. This way it ensures that the files from the CD/DVD/USB take precedence over those in the standard repositories:
+**2.** Edit `pacman.conf` and add this repository *before* the other ones (e.g. extra, core, etc.). This is important. Do not just uncomment the one on the bottom. This way it ensures that the files from the CD/DVD/USB take precedence over those in the standard repositories:
 
  `/etc/pacman.conf` 
-
 ```
 [custom]
 SigLevel = PackageRequired
@@ -447,7 +441,7 @@ Server = file:///mnt/repo/Packages
 
 ### Custom local repository
 
-Use the _repo-add_ script included with Pacman to generate a database for a personal repository. Use `repo-add --help` for more details on its usage. Simply store all of the built packages to be included in the repository in one directory, and execute the following command (where _repo_ is the name of the custom repository):
+Use the *repo-add* script included with Pacman to generate a database for a personal repository. Use `repo-add --help` for more details on its usage. Simply store all of the built packages to be included in the repository in one directory, and execute the following command (where *repo* is the name of the custom repository):
 
 ```
 $ repo-add /path/to/repo.db.tar.gz /path/to/*.pkg.tar.xz
@@ -463,9 +457,9 @@ $ repo-add /path/to/repo.db.tar.gz /path/to/packagetoadd-1.0-1-i686.pkg.tar.xz
 
 ```
 
-_repo-remove_ is used in the exact same manner as _repo-add_, except that the packages listed on the command line are removed from the repository database.
+*repo-remove* is used in the exact same manner as *repo-add*, except that the packages listed on the command line are removed from the repository database.
 
-Once the local repository database has been created, add the repository to `pacman.conf` for each system that is to use the repository. An example of a custom repository is in `pacman.conf`. The repository's name is the database filename with the file extension omitted. In the case of the example above the repository's name would simply be _repo_. Reference the repository's location using a `file://` url, or via FTP using [ftp://localhost/path/to/directory](ftp://localhost/path/to/directory).
+Once the local repository database has been created, add the repository to `pacman.conf` for each system that is to use the repository. An example of a custom repository is in `pacman.conf`. The repository's name is the database filename with the file extension omitted. In the case of the example above the repository's name would simply be *repo*. Reference the repository's location using a `file://` url, or via FTP using [ftp://localhost/path/to/directory](ftp://localhost/path/to/directory).
 
 If willing, add the custom repository to the [list of unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories"), so that the community can benefit from it.
 
@@ -508,7 +502,6 @@ Create the directory for the cache and adjust the permissions so nginx can write
 Next, configure nginx as our dynamic cache (read the comments for an explanation of the commands):
 
  `/etc/nginx/nginx.conf` 
-
 ```
 http
 {
@@ -599,7 +592,6 @@ http
 Finally, update your other Arch Linux servers to use this new cache by adding the following line to the `mirrorlist` file:
 
  `/etc/pacman.d/mirrorlist` 
-
 ```
 Server = http://cache.domain.local:8080/archlinux/$repo/os/$arch
 ...
@@ -626,7 +618,7 @@ Now the machines should connect and start synchronizing their cache. Pacman work
 
 By default, `pacman -Sc` removes package tarballs from the cache that correspond to packages that are not installed on the machine the command was issued on. Because pacman cannot predict what packages are installed on all machines that share the cache, it will end up deleting files that should not be.
 
-To clean up the cache so that only _outdated_ tarballs are deleted, add this entry in the `[options]` section of `/etc/pacman.conf`:
+To clean up the cache so that only *outdated* tarballs are deleted, add this entry in the `[options]` section of `/etc/pacman.conf`:
 
 ```
 CleanMethod = KeepCurrent
@@ -635,11 +627,11 @@ CleanMethod = KeepCurrent
 
 ### Recreate a package from the file system
 
-To recreate a package from the file system, use _bacman_ (included with pacman). Files from the system are taken as they are, hence any modifications will be present in the assembled package. Distributing the recreated package is therefore discouraged; see [ABS](/index.php/ABS "ABS") and [Arch Rollback Machine](/index.php/Arch_Rollback_Machine "Arch Rollback Machine") for alternatives.
+To recreate a package from the file system, use *bacman* (included with pacman). Files from the system are taken as they are, hence any modifications will be present in the assembled package. Distributing the recreated package is therefore discouraged; see [ABS](/index.php/ABS "ABS") and [Arch Rollback Machine](/index.php/Arch_Rollback_Machine "Arch Rollback Machine") for alternatives.
 
-**Tip:** _bacman_ honours the `PACKAGER`, `PKGDEST` and `PKGEXT` options from `makepkg.conf`. Custom options for the compression tools can be configured by exporting the relevant environment variable, for example `XZ_OPT="-T 0"` will enable parallel compression for _xz_.
+**Tip:** *bacman* honours the `PACKAGER`, `PKGDEST` and `PKGEXT` options from `makepkg.conf`. Custom options for the compression tools can be configured by exporting the relevant environment variable, for example `XZ_OPT="-T 0"` will enable parallel compression for *xz*.
 
-An alternative tool would be [fakepkg](https://aur.archlinux.org/packages/fakepkg/). It supports parallelization and can handle multiple input packages in one command, which _bacman_ both does not support.
+An alternative tool would be [fakepkg](https://aur.archlinux.org/packages/fakepkg/). It supports parallelization and can handle multiple input packages in one command, which *bacman* both does not support.
 
 ### Backing up and retrieving a list of installed packages
 
@@ -684,7 +676,7 @@ Finally, you may want to remove all the packages on your system that are not men
 
 If you are suspecting file corruption (e.g. by software / hardware failure), but don't know for sure whether / which files really got corrupted, you might want to compare with the hash sums in the packages. This can be done with the following script.
 
-The script depends on the accuracy of pacman's database in `/var/lib/pacman/local/` and the used programs such as _bash_, _grep_ and so on. For recovery of the database see [#Restore pacman's local database](#Restore_pacman.27s_local_database). The `mtree` files can also be [extracted as `.MTREE` from the respective package files](#Viewing_a_single_file_inside_a_.pkg_file).
+The script depends on the accuracy of pacman's database in `/var/lib/pacman/local/` and the used programs such as *bash*, *grep* and so on. For recovery of the database see [#Restore pacman's local database](#Restore_pacman.27s_local_database). The `mtree` files can also be [extracted as `.MTREE` from the respective package files](#Viewing_a_single_file_inside_a_.pkg_file).
 
 **Note:**
 
@@ -706,7 +698,8 @@ for package in /var/lib/pacman/local/*; do
         sed 's/^\([^ ]*\).*'"${algo}"'digest=\([a-f0-9]*\).*/\1 \2/' | \
         while read -r file hash
     do
-        # expand "\nnn" (in mtree) / "\0nnn" (for echo) escapes of ASCII
+        # expand "
+nn" (in mtree) / "\0nnn" (for echo) escapes of ASCII
         # characters (octal representation)
         for ascii in $(grep -Eo '\\[0-9]{1,3}' <<< "$file"); do
             file="$(sed "s/\\$ascii/$(echo -e "\0${ascii:1}")/" <<< "$file")"
@@ -751,7 +744,7 @@ $ ls /var/log/pacman.log
 
 ```
 
-If it does not exist, it is _not_ possible to continue with this method. You may be able to use [Xyne's package detection script](https://bbs.archlinux.org/viewtopic.php?pid=670876) to recreate the database. If not, then the likely solution is to re-install the entire system.
+If it does not exist, it is *not* possible to continue with this method. You may be able to use [Xyne's package detection script](https://bbs.archlinux.org/viewtopic.php?pid=670876) to recreate the database. If not, then the likely solution is to re-install the entire system.
 
 #### Generating the package recovery list
 
@@ -773,7 +766,7 @@ $ { cat pkglist.orig; pacman -Slq; } | sort | uniq -d > pkglist
 
 ```
 
-Check if some important _base_ package are missing, and add them to the list:
+Check if some important *base* package are missing, and add them to the list:
 
 ```
 $ comm -23 <(pacman -Sgq base) pkglist.orig >> pkglist

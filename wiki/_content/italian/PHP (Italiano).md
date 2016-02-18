@@ -124,7 +124,7 @@ Zend Core è la distribuzione ufficiale di PHP fornito da [zend.com](http://www.
 *   Installare Zend Core (official PHP distribution)
     *   Disinstallare il pacchetto [php](https://www.archlinux.org/packages/?name=php).
     *   Scaricare e installare zend core da [[1]](http://www.zend.com/products/zend_core) ; **non** fategli installare il pacchetto apache o impostare il web server. Si installa sempre in `/usr/local/Zend/Core` per via di un hard-coded path.
-    *   Creare uno script `/usr/local/bin/zendcore` e creare dei symlinks a _php_, _php-cgi_, _pear_, _phpize_ sotto _/usr/local/bin_
+    *   Creare uno script `/usr/local/bin/zendcore` e creare dei symlinks a *php*, *php-cgi*, *pear*, *phpize* sotto */usr/local/bin*
         `#!/bin/bash
         export LD_LIBRARY_PATH="/usr/local/Zend/Core/lib"
         exec /usr/local/Zend/Core/bin/`basename $0` "$@"`
@@ -146,7 +146,7 @@ Zend Core è la distribuzione ufficiale di PHP fornito da [zend.com](http://www.
 
 *   Installare APC (Cache PHP alternativa):
     *   Eseguire `pear install pecl.php.net/apc` come superuser.
-    *   Modificare `/etc/php.ini`, aggiungere la riga dopo _"; Zend Core extensions..."_ (line 1205):
+    *   Modificare `/etc/php.ini`, aggiungere la riga dopo *"; Zend Core extensions..."* (line 1205):
         `extension=apc.so`
 *   Aggiornare Zend Core e/o installare altre componenti
     *   Basta eseguire `/usr/local/Zend/Core/setup`
@@ -161,7 +161,7 @@ Buona integrazione per PHP+HTML+JavaScript. Manca la formattazione del codice e 
 
 Aggiungere codifiche personalizzate:
 
-*   Modificare `_KOMODO_INSTALL_DIR_/lib/mozilla/components/koEncodingServices.py`, riga 84, aggiungere:
+*   Modificare `*KOMODO_INSTALL_DIR*/lib/mozilla/components/koEncodingServices.py`, riga 84, aggiungere:
 
 ```
  ('cp950', 'Chinese(CP-950/Big5)', 'CP950', '', 1,'cp950'),
@@ -171,7 +171,7 @@ Aggiungere codifiche personalizzate:
 
 ```
 
-Il formato è (_encoding name in python_, _description_, _short description_, BOM, _is ASCII-superset?_, _font encoding_)
+Il formato è (*encoding name in python*, *description*, *short description*, BOM, *is ASCII-superset?*, *font encoding*)
 
 ### Netbeans
 
@@ -214,25 +214,25 @@ autocmd FileType php setlocal errorformat=%f(line\ %l):\ %m
 
 #### Eclipse Integration
 
-_Error Link_ plugin:
+*Error Link* plugin:
 
-*   Symlink _zca_ verso _build.zca_ (così Error Link può riconoscerlo)
+*   Symlink *zca* verso *build.zca* (così Error Link può riconoscerlo)
 *   Installare [Sunshade](http://sunshade.sourceforge.net/) plugin suite;
-*   Preference -> Sunshade -> Error Link -> Add: _`^(.*\.php)\(line (\d+)\): ()(.*)`_
+*   Preference -> Sunshade -> Error Link -> Add: *`^(.*\.php)\(line (\d+)\): ()(.*)`*
 *   Run -> External Tools -> Open External Tools Dialog -> Select "Program" -> Click on "New":
     Name: Zend Code Analyzer
-    Location: _/usr/local/bin/build.zca_
-    Working Directory: _${container_loc}_
-    Arguments: _--recursive ${resource_name}_
+    Location: */usr/local/bin/build.zca*
+    Working Directory: *${container_loc}*
+    Arguments: *--recursive ${resource_name}*
 
 #### Komodo Integration
 
 Toolbox -> Add -> New Command:
 
-*   Command: _zca --recursive %F_
+*   Command: *zca --recursive %F*
 *   Run in: Command Output Tab
-*   Parse output with: _`^(?P<file>.+?)\(line (?P<line>\d+)\): (?P<content>.*)$`_
-*   Select _Show parsed output as a list_
+*   Parse output with: *`^(?P<file>.+?)\(line (?P<line>\d+)\): (?P<content>.*)$`*
+*   Select *Show parsed output as a list*
 
 ## Risoluzione problemi
 

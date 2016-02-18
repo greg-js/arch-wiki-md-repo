@@ -106,9 +106,7 @@ recovery dirs:      none
 The clean mode will delete ALL recovery snapshots that have accumulated. Run this only if you are sure that you want to delete them.
 
 **Note:** If a sync target is owned by root or another user, and if asd is called to clean, it will throw errors based on the permissions of the sync targets. One can call this function with sudo or as root to avoid these errors.
-
  `# asd c` 
-
 ```
 Anything-sync-daemon v5.61 on Arch Linux.
 
@@ -122,7 +120,7 @@ Deleting 2 crashrecovery dir(s) for sync target /srv/http/serve
 
 Do not call `/usr/bin/anything-sync-daemon` to sync or to unsync directly. Instead use the provided service files.
 
-Both a [systemd](/index.php/Systemd "Systemd") [service](/index.php/Daemon "Daemon") file and a timer are provided and should be used to interact with _asd_. The role of the timer is update the tmpfs copy/copies back to the disk which it does once per hour. The timer starts automatically with `asd.service`.
+Both a [systemd](/index.php/Systemd "Systemd") [service](/index.php/Daemon "Daemon") file and a timer are provided and should be used to interact with *asd*. The role of the timer is update the tmpfs copy/copies back to the disk which it does once per hour. The timer starts automatically with `asd.service`.
 
 [Start](/index.php/Start "Start") `asd.service` and [enable](/index.php/Enable "Enable") it to run at boot time/shutdown (**highly recommended**).
 
@@ -131,7 +129,6 @@ Both a [systemd](/index.php/Systemd "Systemd") [service](/index.php/Daemon "Daem
 The package provided timer syncs once per hour. Users may optionally redefine this behavior simply by [extending the systemd unit](/index.php/Systemd#Editing_provided_units "Systemd"). The example below changes the timer to sync once every ten minutes:
 
  `/etc/systemd/system/asd-resync.timer.d/frequency.conf` 
-
 ```
 [Unit]
 Description=Timer for Arofile-sync-daemon - 10min
@@ -164,7 +161,7 @@ You will find the snapshot in the same directory as the sync target and it will 
 ### How can I restore the snapshot?
 
 *   Stop `asd`.
-*   Confirm that there is no symlink to the sync target. If there is, _asd_ did not stop correctly for other reasons.
+*   Confirm that there is no symlink to the sync target. If there is, *asd* did not stop correctly for other reasons.
 *   Move the "bad" copy of the sync target to a backup (do not blindly delete anything).
 *   Copy the snapshot directory to the expected sync target.
 

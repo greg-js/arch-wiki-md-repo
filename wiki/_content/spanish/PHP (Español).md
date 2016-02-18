@@ -19,27 +19,27 @@ Zend Core es la distribución oficial de PHP proporcionada por [zend.com](http:/
 *   Instale [mod_fcgid](https://aur.archlinux.org/packages.php?do_Details=1&ID=10577), un módulo FastCGI para Apache (el oficial es un asco).
 *   Instale Zend Core (distribución oficial de PHP)
     *   Desinstale el paquete php de Arch Linux.
-    *   Descargue e instale zend core desde [http://www.zend.com/products/zend_core](http://www.zend.com/products/zend_core) ; **no** instale el cojunto apache ni le diga que configure su servidor web. Siempre sen instala en _/usr/local/Zend/Core_ debido a una ruta "hard-coded".
-    *   Cree un guión _/usr/local/bin/zendcore_ y cree enlaces simbólicos a _php_, _php-cgi_, _pear_, _phpize_ bajo _/usr/local/bin_
+    *   Descargue e instale zend core desde [http://www.zend.com/products/zend_core](http://www.zend.com/products/zend_core) ; **no** instale el cojunto apache ni le diga que configure su servidor web. Siempre sen instala en */usr/local/Zend/Core* debido a una ruta "hard-coded".
+    *   Cree un guión */usr/local/bin/zendcore* y cree enlaces simbólicos a *php*, *php-cgi*, *pear*, *phpize* bajo */usr/local/bin*
         <tt>#!/bin/bash
         export LD_LIBRARY_PATH="/usr/local/Zend/Core/lib"
         exec /usr/local/Zend/Core/bin/`basename $0` "$@"</tt>
 *   Configure Apache:
-    *   En _/etc/httpd/conf/httpd.conf_, añada
+    *   En */etc/httpd/conf/httpd.conf*, añada
         <tt>LoadModule fcgid_module lib/apache/mod_fcgid.so
         AddHandler fcgid-script .php
         FCGIWrapper /usr/local/bin/php-cgi .php
         SocketPath /tmp/fcgidsock
         SharememPath /tmp/fcgidshm</tt>
 *   Deshabilite el optimizador Zend (así puede usar la cache):
-    *   Edite _/etc/php.ini_, descomente la siguiente línea hacia el final del archivo:
+    *   Edite */etc/php.ini*, descomente la siguiente línea hacia el final del archivo:
         <tt>zend_extension_manager.optimizer="/usr/local/Zend/Core/lib/zend/optimizer"</tt>
 *   Instale APC (Cache PHP alternativa):
     *   Ejecute <tt>pear install pecl.php.net/apc</tt> como superusuario.
-    *   Edite _/etc/php.ini_, añada la línea después de _"; Zend Core extensions..."_ (line 1205):
+    *   Edite */etc/php.ini*, añada la línea después de *"; Zend Core extensions..."* (line 1205):
         <tt>extension=apc.so</tt>
 *   Actualice Zend Core e instale otros componente (en su caso)
-    *   Ejecute tan sólo _/usr/local/Zend/Core/setup_
+    *   Ejecute tan sólo */usr/local/Zend/Core/setup*
 
 ### Herramientas de desarrollo
 
@@ -59,7 +59,7 @@ Ofrece una buena integración de PHP+HTML+JavaScript. Le falta la capacidad de f
 
 Añada codificaciones personalizadas:
 
-*   Edite <tt>_KOMODO_INSTALL_DIR_/lib/mozilla/components/koEncodingServices.py</tt>, línea 84, añada:
+*   Edite <tt>*KOMODO_INSTALL_DIR*/lib/mozilla/components/koEncodingServices.py</tt>, línea 84, añada:
 
 ```
  ('cp950', 'Chinese(CP-950/Big5)', 'CP950', '', 1,'cp950'),
@@ -69,11 +69,11 @@ Añada codificaciones personalizadas:
 
 ```
 
-El formato es (_nombre de la codificación en python_, _descripción_, _descripción breve_, BOM, _es ASCII extendido?_, _codificación del tipo_)
+El formato es (*nombre de la codificación en python*, *descripción*, *descripción breve*, BOM, *es ASCII extendido?*, *codificación del tipo*)
 
 #### Zend Studio Neon
 
-ID _Official_ para PHP, basado en eclipse. Reemplaza al viejo Zend Studio.
+ID *Official* para PHP, basado en eclipse. Reemplaza al viejo Zend Studio.
 
 [Zend Studio Neon](http://www.zend.com/products/zend_studio/eclipse)
 
@@ -95,28 +95,28 @@ Para instalarlo:
 
 para obtener la ruta.
 
-*   Copie ZendCodeAnalyzer a _/usr/local/bin/zca_
+*   Copie ZendCodeAnalyzer a */usr/local/bin/zca*
 *   Ahora puede quitar Zend Studio; no necesitará clave ni nada.
 
-**Integración con Eclipse**, plugin _Error Link_:
+**Integración con Eclipse**, plugin *Error Link*:
 
-*   Cree el enlace simbólico _zca_ a _build.zca_ (para que Error Link pueda reconocerlo)
+*   Cree el enlace simbólico *zca* a *build.zca* (para que Error Link pueda reconocerlo)
 *   Instale el conjunto de plugins [Sunshade](http://sunshade.sourceforge.net/);
-*   Preferencias -> Sunshade -> Error Link -> Añadir: _<tt>^(.*\.php)\(line (\d+)\): ()(.*)</tt>_
+*   Preferencias -> Sunshade -> Error Link -> Añadir: *<tt>^(.*\.php)\(line (\d+)\): ()(.*)</tt>*
 *   Ejecutar -> Herramientas externas -> Dialogo Abrir Herramientas externas -> Seleccione "Programa" -> Haga click en "Nuevo":
     Nombre: Zend Code Analyzer
-    Situación: _/usr/local/bin/build.zca_
-    Directorio de trabajo: _${container_loc}_
-    Argumentos: _--recursive ${resource_name}_
+    Situación: */usr/local/bin/build.zca*
+    Directorio de trabajo: *${container_loc}*
+    Argumentos: *--recursive ${resource_name}*
 
 **Integración con Komodo**, Caja de herramientas -> Añadir -> Nueva orden:
 
-*   Orden: _zca --recursive %F_
+*   Orden: *zca --recursive %F*
 *   Ejecutar en: Pestaña de salida de la orden
-*   Analizar salida con: _<tt>^(?P<file>.+?)\(line (?P<line>\d+)\): (?P<content>.*)$</tt>_
-*   Seleccione _Mostrar salida analizada como una lista_
+*   Analizar salida con: *<tt>^(?P<file>.+?)\(line (?P<line>\d+)\): (?P<content>.*)$</tt>*
+*   Seleccione *Mostrar salida analizada como una lista*
 
-**Integración con Vim**, en _~/.vimrc_ añada:
+**Integración con Vim**, en *~/.vimrc* añada:
 
 ```
  autocmd FileType php setlocal makeprg=zca\ %<.php                               

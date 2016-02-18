@@ -63,7 +63,7 @@
 
 	[http://www.koshutin.com/](http://www.koshutin.com/) || [hammerfight](https://aur.archlinux.org/packages/hammerfight/)
 
-*   El puerto de código abierto del juego _Haaf's Game Engine_ está disponible en [icculus.org](https://icculus.org/hge-unix/).
+*   El puerto de código abierto del juego *Haaf's Game Engine* está disponible en [icculus.org](https://icculus.org/hge-unix/).
 
 *   **[Neverball](https://en.wikipedia.org/wiki/Neverball "wikipedia:Neverball")** — Juego 3D para guiar una bola por un laberinto.
 
@@ -77,11 +77,11 @@
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Arcade#Arcade_como_g.C3.A9nero_de_videojuegos "wikipedia:es:Arcade")
 
-	_«(...) el término "arcade" se refiere a los videojuegos clásicos o que recuerdan a las máquinas recreativas (...)»_.
+	*«(...) el término "arcade" se refiere a los videojuegos clásicos o que recuerdan a las máquinas recreativas (...)»*.
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Arcade](https://en.wikipedia.org/wiki/es:Arcade "wikipedia:es:Arcade").
 
-*   **Bullet Candy Perfect** — Juego divertido shoot-em-up (literalmente _«mátalos a tiros»_), con nítidas y súper suaves gráficos en 3D y una banda sonora tecno. Características multiplataforma, puntuación y resultados en línea. Esquema de 'PAMAYW'.
+*   **Bullet Candy Perfect** — Juego divertido shoot-em-up (literalmente *«mátalos a tiros»*), con nítidas y súper suaves gráficos en 3D y una banda sonora tecno. Características multiplataforma, puntuación y resultados en línea. Esquema de 'PAMAYW'.
 
 	[http://www.charliesgames.com/wordpress/?page_id=14/](http://www.charliesgames.com/wordpress/?page_id=14/) || [bulletcandyperfect-demo](https://aur.archlinux.org/packages/bulletcandyperfect-demo/)
 
@@ -247,7 +247,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Aventura_conversacional "wikipedia:es:Aventura conversacional")
 
-	_«La **aventura conversacional** es un género de videojuegos, más común de ordenadores que de consola o arcades, en el que la descripción de la situación en la que se encuentra el jugador proviene principalmente de un texto. A su vez, el jugador debe teclear la acción a realizar. El juego interpreta la entrada -normalmente- en lenguaje natural, lo cual provoca una nueva situación y así sucesivamente.»_
+	*«La **aventura conversacional** es un género de videojuegos, más común de ordenadores que de consola o arcades, en el que la descripción de la situación en la que se encuentra el jugador proviene principalmente de un texto. A su vez, el jugador debe teclear la acción a realizar. El juego interpreta la entrada -normalmente- en lenguaje natural, lo cual provoca una nueva situación y así sucesivamente.»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Interactive fiction#Development systems](https://en.wikipedia.org/wiki/Interactive_fiction#Development_systems "wikipedia:Interactive fiction").
 
@@ -267,7 +267,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Videojuego_multijugador_masivo_en_l%C3%ADnea "wikipedia:es:Videojuego multijugador masivo en línea")
 
-	_«Un videojuego **multijugador masivo en línea** o MMOG (siglas en inglés de massively multiplayer online game) es un videojuego en donde pueden participar, e interactuar en un mundo virtual, un gran número de jugadores -del orden de cientos o miles- simultáneamente (multijugador) conectados a través de la red (en línea), normalmente Internet...»_
+	*«Un videojuego **multijugador masivo en línea** o MMOG (siglas en inglés de massively multiplayer online game) es un videojuego en donde pueden participar, e interactuar en un mundo virtual, un gran número de jugadores -del orden de cientos o miles- simultáneamente (multijugador) conectados a través de la red (en línea), normalmente Internet...»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [List of massively multiplayer online games](https://en.wikipedia.org/wiki/List_of_massively_multiplayer_online_games "wikipedia:List of massively multiplayer online games").
 
@@ -339,7 +339,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Juegos_de_plataformas "wikipedia:es:Juegos de plataformas")
 
-	_«Los videojuegos de plataformas o, simplemente, plataformas, son un género de videojuegos que se caracterizan por tener que caminar, correr, saltar o escalar sobre una serie de plataformas y acantilados, con enemigos, mientras se recogen objetos para poder completar el juego.»_
+	*«Los videojuegos de plataformas o, simplemente, plataformas, son un género de videojuegos que se caracterizan por tener que caminar, correr, saltar o escalar sobre una serie de plataformas y acantilados, con enemigos, mientras se recogen objetos para poder completar el juego.»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Videojuego de plataformas](https://en.wikipedia.org/wiki/es:Videojuego_de_plataformas "wikipedia:es:Videojuego de plataformas").
 
@@ -355,7 +355,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://supertux.lethargik.org/](http://supertux.lethargik.org/) || [supertux](https://www.archlinux.org/packages/?name=supertux)
 
-*   **Toppler** — Reimplementación del clásico juego _saltar y correr_ de «Nebulus».
+*   **Toppler** — Reimplementación del clásico juego *saltar y correr* de «Nebulus».
 
 	[http://toppler.sourceforge.net/](http://toppler.sourceforge.net/) || [toppler](https://aur.archlinux.org/packages/toppler/)
 
@@ -363,7 +363,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/Puzzle "wikipedia:Puzzle")
 
-	_«Un puzzle (o rompecabezas) es un problema o enigma que pone a prueba el ingenio del solucionador. En un puzzle básico, uno tiene para armar piezas de una manera lógica con el fin de llegar a la solución deseada. Los rompecabezas son a menudo inventados como una forma de entretenimiento, pero también pueden plantearse como graves problemas matemáticos o lógicos -en estos casos, la resolución exitosa puede suponer una importante contribución a la investigación matemática-.»_
+	*«Un puzzle (o rompecabezas) es un problema o enigma que pone a prueba el ingenio del solucionador. En un puzzle básico, uno tiene para armar piezas de una manera lógica con el fin de llegar a la solución deseada. Los rompecabezas son a menudo inventados como una forma de entretenimiento, pero también pueden plantearse como graves problemas matemáticos o lógicos -en estos casos, la resolución exitosa puede suponer una importante contribución a la investigación matemática-.»*
 
 *   **Cgoban3** — Cliente de Kiseido Go y SGF.
 
@@ -415,11 +415,11 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[VVVVVV](https://en.wikipedia.org/wiki/VVVVVV "wikipedia:VVVVVV")** — Muy elogiada plataforma de juegos de puzzles en 2D independiente con un tema retro C64 y con una gran banda sonora chiptune. Se puede comprar la versión completa por £1.67, o jugar la versión [demo](http://www.kongregate.com/games/TerryCavanagh/vvvvvv-demo/) en el navegador.
 
-**Sugerencia:** Es posible que desee realizar una copia de respaldo para guardar su archivo, que se encuentra en `~/.macromedia/Flash_Player/#SharedObjects/_string_/localhost...`.
+**Sugerencia:** Es posible que desee realizar una copia de respaldo para guardar su archivo, que se encuentra en `~/.macromedia/Flash_Player/#SharedObjects/*string*/localhost...`.
 
 	[http://thelettervsixtim.es/](http://thelettervsixtim.es/) || [vvvvvv](https://aur.archlinux.org/packages/vvvvvv/)
 
-*   **Xscorch** — Clon del clásico juego para DOS _Scorched Earth_.
+*   **Xscorch** — Clon del clásico juego para DOS *Scorched Earth*.
 
 	[http://www.xscorch.org/](http://www.xscorch.org/) || [xscorch](https://aur.archlinux.org/packages/xscorch/)
 
@@ -431,7 +431,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Juegos_de_carreras "wikipedia:es:Juegos de carreras")
 
-	_«Un videojuego de carreras es un videojuego en el que se imitan competencias entre vehículos. Usualmente el objetivo es recorrer cierta distancia o ir de un sitio hacia otro en el menor tiempo posible, como en el automovilismo y el motociclismo (los que generalmente son imitados).»_
+	*«Un videojuego de carreras es un videojuego en el que se imitan competencias entre vehículos. Usualmente el objetivo es recorrer cierta distancia o ir de un sitio hacia otro en el menor tiempo posible, como en el automovilismo y el motociclismo (los que generalmente son imitados).»*
 
 *   **Armagetron Advanced** — Clon de Tron en 3D.
 
@@ -469,7 +469,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://sourceforge.net/projects/trigger-rally/](http://sourceforge.net/projects/trigger-rally/) || [trigger](https://aur.archlinux.org/packages/trigger/)
 
-*   **Ultimate Stunts** — Nueva versión del famoso juego de DOS _stunts_.
+*   **Ultimate Stunts** — Nueva versión del famoso juego de DOS *stunts*.
 
 	[http://www.ultimatestunts.nl/](http://www.ultimatestunts.nl/) || [ultimatestunts](https://aur.archlinux.org/packages/ultimatestunts/)
 
@@ -485,7 +485,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Roguelike "wikipedia:es:Roguelike")
 
-	_«Los videojuegos **roguelike** son juegos generalmente ambientados en mazmorras. Sus principales características son el énfasis en entornos aleatorios, muchos de ellos incluyen muerte permanente (permadeath) y su alto nivel de dificultad.»_
+	*«Los videojuegos **roguelike** son juegos generalmente ambientados en mazmorras. Sus principales características son el énfasis en entornos aleatorios, muchos de ellos incluyen muerte permanente (permadeath) y su alto nivel de dificultad.»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Chronology of roguelike video games](https://en.wikipedia.org/wiki/Chronology_of_roguelike_video_games "wikipedia:Chronology of roguelike video games").
 
@@ -533,7 +533,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Videojuego_de_rol "wikipedia:es:Videojuego de rol")
 
-	_«Un juego de rol (traducción típica en español del inglés role-playing game, literalmente "juego de interpretación de papeles") es un juego en el que, tal como indica su nombre, uno o más jugadores desempeñan un determinado rol, papel o personalidad.»_
+	*«Un juego de rol (traducción típica en español del inglés role-playing game, literalmente "juego de interpretación de papeles") es un juego en el que, tal como indica su nombre, uno o más jugadores desempeñan un determinado rol, papel o personalidad.»*
 
 *   **Arx Libertatis** — Este proyecto es completamente funcional, con puerto de código abierto de Arx Fatalis, un juego de rol en primera persona desarrollado por Arkane Studios en 2002\. Cuenta con algunas mejoras sobre el motor original como correcciones de errores y soporte para pantalla ancha.
 
@@ -589,7 +589,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Juegos_de_disparos "wikipedia:es:Juegos de disparos")
 
-	_«Los videojuegos de disparos o **shooters** (...) tienen la característica común de permitir controlar un personaje que, por norma general, dispone de un arma (mayoritariamente de fuego) que puede ser disparada a voluntad. (...) El jugador puede ver **disparos en primera persona** (en inglés first person shooter) o desde una cámara que sigue al personaje por la espalda desde una cierta distancia y elevación (**tercera persona, en inglés third-person shooter**). También es posible (aunque poco frecuente en el género) encontrar juegos que disponen de una cámara fija.»_
+	*«Los videojuegos de disparos o **shooters** (...) tienen la característica común de permitir controlar un personaje que, por norma general, dispone de un arma (mayoritariamente de fuego) que puede ser disparada a voluntad. (...) El jugador puede ver **disparos en primera persona** (en inglés first person shooter) o desde una cámara que sigue al personaje por la espalda desde una cierta distancia y elevación (**tercera persona, en inglés third-person shooter**). También es posible (aunque poco frecuente en el género) encontrar juegos que disponen de una cámara fija.»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [List of third-person shooters](https://en.wikipedia.org/wiki/List_of_third-person_shooters "wikipedia:List of third-person shooters").
 
@@ -698,7 +698,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://zerowing.idsoftware.com/linux/etqw/](http://zerowing.idsoftware.com/linux/etqw/) || [etqw](https://aur.archlinux.org/packages/etqw/)
 
-*   **Half-Life** — Juego FPS de ciencia ficción. Tiene dos extensiones, _Opposing Force_ y _Blue Shift_, que están también disponibles.
+*   **Half-Life** — Juego FPS de ciencia ficción. Tiene dos extensiones, *Opposing Force* y *Blue Shift*, que están también disponibles.
 
 	[http://store.steampowered.com/app/70/](http://store.steampowered.com/app/70/) || Steam
 
@@ -860,7 +860,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/Simulation_game "wikipedia:Simulation game")
 
-	_«Un juego de simulación intenta copiar diversas actividades de la "vida real" en forma de juego con ciertos propósitos: formación, análisis o predicción. Por lo general, no hay metas definidas estrictamente en el juego, con jugadores a los que se les permite controlar libremente un personaje. Los ejemplos más conocidos son los juegos de guerra, juegos de negocios y juegos de roles._
+	*«Un juego de simulación intenta copiar diversas actividades de la "vida real" en forma de juego con ciertos propósitos: formación, análisis o predicción. Por lo general, no hay metas definidas estrictamente en el juego, con jugadores a los que se les permite controlar libremente un personaje. Los ejemplos más conocidos son los juegos de guerra, juegos de negocios y juegos de roles.*
 
 *   **Beyond The Red Line** — Completamente libre, conversión independiente de Freespace 2 basado en la serie de televisión Battlestar Galactica.
 
@@ -902,9 +902,9 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Juego_de_estrategia "wikipedia:es:Juego de estrategia")
 
-	_«Juegos de estrategia son aquellos juegos o entretenimientos en los que, el factor de la inteligencia, habilidades técnicas y planificación y despliegue, pueden hacer predominar o impulsar al jugador hacia la victoria del juego._
+	*«Juegos de estrategia son aquellos juegos o entretenimientos en los que, el factor de la inteligencia, habilidades técnicas y planificación y despliegue, pueden hacer predominar o impulsar al jugador hacia la victoria del juego.*
 
-	_Los jugadores pueden representar el papel de un empresario, un jefe de estado, un general, o cualquier otro personaje, en los que tendrán que desarrollar una serie de estrategias, gestionando los recursos de los que se dispone, para ganar una batalla, conseguir dinero o puntos, determinada posición, etc., y así conseguir el objetivo final.»_
+	*Los jugadores pueden representar el papel de un empresario, un jefe de estado, un general, o cualquier otro personaje, en los que tendrán que desarrollar una serie de estrategias, gestionando los recursos de los que se dispone, para ganar una batalla, conseguir dinero o puntos, determinada posición, etc., y así conseguir el objetivo final.»*
 
 *   **[0 A.D.](https://en.wikipedia.org/wiki/0_A.D._(video_game) "wikipedia:0 A.D. (video game)")** — Juego de estrategia en tiempo real basado en la historia en 3D, actualmente en varsión alpha.
 
@@ -926,7 +926,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://dark-oberon.sourceforge.net/](http://dark-oberon.sourceforge.net/) || [dark-oberon](https://aur.archlinux.org/packages/dark-oberon/)
 
-*   **Dota 2** — La secuela del famoso mapa _Defense of the Ancient_ de WarCraft III, que a su vez se basaba en el popular mapa _Aeon of Strife_ de StarCraft.
+*   **Dota 2** — La secuela del famoso mapa *Defense of the Ancient* de WarCraft III, que a su vez se basaba en el popular mapa *Aeon of Strife* de StarCraft.
 
 	[http://store.steampowered.com/app/570/](http://store.steampowered.com/app/570/) || Steam
 
@@ -966,7 +966,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://www.netpanzer.org/](http://www.netpanzer.org/) || [netpanzer](https://aur.archlinux.org/packages/netpanzer/)
 
-*   **Spring** — Motor de juego de estrategia en tiempo real inspirado en el juego _Total Annihilation_.
+*   **Spring** — Motor de juego de estrategia en tiempo real inspirado en el juego *Total Annihilation*.
 
 	[http://springrts.com/wiki/Games](http://springrts.com/wiki/Games) || [spring](https://www.archlinux.org/packages/?name=spring)
 
@@ -1002,9 +1002,9 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según Wikipedia
 
-*   [Tycoon](https://en.wikipedia.org/wiki/es:Tycoon "wikipedia:es:Tycoon"): _«Se utiliza para designar un videojuego en el que se debe dirigir algún tipo de empresa u organización, y el objetivo es convertirte en el magnate del negocio.
-    _
-*   [Management](https://en.wikipedia.org/wiki/Management "wikipedia:Management"): _«Es un juego de mesa de simulación de negocios (...). Los jugadores gestionan sus propias empresas, toman decisiones en la compra de suministros, determinan el volumen de producción, fijan los precios de venta y la ampliación de las fábricas...»_
+*   [Tycoon](https://en.wikipedia.org/wiki/es:Tycoon "wikipedia:es:Tycoon"): *«Se utiliza para designar un videojuego en el que se debe dirigir algún tipo de empresa u organización, y el objetivo es convertirte en el magnate del negocio.
+    *
+*   [Management](https://en.wikipedia.org/wiki/Management "wikipedia:Management"): *«Es un juego de mesa de simulación de negocios (...). Los jugadores gestionan sus propias empresas, toman decisiones en la compra de suministros, determinan el volumen de producción, fijan los precios de venta y la ampliación de las fábricas...»*
 
 *   **Lincity-ng** — Juego de simulación en el que se le requiere para construir y mantener una ciudad. Se puede ganar el juego, ya sea mediante la creación de una economía sostenible o mediante la evacuación de todos los ciudadanos con naves espaciales.
 
@@ -1026,7 +1026,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	Según [Wikipedia](https://en.wikipedia.org/wiki/es:Novelas_visuales "wikipedia:es:Novelas visuales")
 
-	_«Una novela visual es un género de videojuego de aventura conversacional que presenta mayormente imágenes estáticas, usualmente con características artísticas de anime. Estos están particularmente centrados en una historia, o contienen en sus escritos una narración similar a la de una novela.»_
+	*«Una novela visual es un género de videojuego de aventura conversacional que presenta mayormente imágenes estáticas, usualmente con características artísticas de anime. Estos están particularmente centrados en una historia, o contienen en sus escritos una narración similar a la de una novela.»*
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Novelas visuales](https://en.wikipedia.org/wiki/es:Novelas_visuales "wikipedia:es:Novelas visuales").
 

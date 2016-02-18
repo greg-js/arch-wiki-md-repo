@@ -1,4 +1,4 @@
-[GNOME Flashback](https://wiki.gnome.org/Projects/GnomeFlashback) (previously called _GNOME fallback mode_) is a shell for GNOME 3\. The desktop layout and the underlying technology is similar to GNOME 2\. It doesn't use 3D acceleration at all, so it's generally faster and less CPU intensive than GNOME Shell with llvmpipe.
+[GNOME Flashback](https://wiki.gnome.org/Projects/GnomeFlashback) (previously called *GNOME fallback mode*) is a shell for GNOME 3\. The desktop layout and the underlying technology is similar to GNOME 2\. It doesn't use 3D acceleration at all, so it's generally faster and less CPU intensive than GNOME Shell with llvmpipe.
 
 ## Contents
 
@@ -46,27 +46,25 @@ It's recommended to install the [gnome](https://www.archlinux.org/groups/x86_64/
 
 ### Graphical log-in
 
-Choose _GNOME Flashback (Metacity)_ from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
+Choose *GNOME Flashback (Metacity)* from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
 
-Those who wish to use [Compiz](/index.php/Compiz "Compiz") with GNOME Flashback should select _GNOME Flashback (Compiz)_ instead.
+Those who wish to use [Compiz](/index.php/Compiz "Compiz") with GNOME Flashback should select *GNOME Flashback (Compiz)* instead.
 
 ### Manually
 
 *   For the **GNOME Flashback (Metacity)** session, add the following to the `~/.xinitrc` file:
-
     ```
     export XDG_CURRENT_DESKTOP=GNOME-Flashback:GNOME
     exec gnome-session --session=gnome-flashback-metacity
     ```
 
 *   For the **GNOME Flashback (Compiz)** session, add the following to the `~/.xinitrc` file:
-
     ```
     export XDG_CURRENT_DESKTOP=GNOME-Flashback:GNOME
     exec gnome-session --session=gnome-flashback-compiz
     ```
 
-After editing `.xinitrc`, GNOME Flashback can be launched with _startx_. See [xinitrc](/index.php/Xinitrc "Xinitrc") for details.
+After editing `.xinitrc`, GNOME Flashback can be launched with *startx*. See [xinitrc](/index.php/Xinitrc "Xinitrc") for details.
 
 ## Configuration
 
@@ -101,29 +99,29 @@ Also see [this article](http://makandra.com/notes/1367-running-the-awesome-windo
 To adjust the amount of time it takes for the panel to disappear or reappear when autohide is enabled, execute the following:
 
 ```
-$ gsettings set org.gnome.gnome-panel.toplevel:/org/gnome/gnome-panel/layout/toplevels/_panel_/ hide-delay _time_
-$ gsettings set org.gnome.gnome-panel.toplevel:/org/gnome/gnome-panel/layout/toplevels/_panel_/ unhide-delay _time_
+$ gsettings set org.gnome.gnome-panel.toplevel:/org/gnome/gnome-panel/layout/toplevels/*panel*/ hide-delay *time*
+$ gsettings set org.gnome.gnome-panel.toplevel:/org/gnome/gnome-panel/layout/toplevels/*panel*/ unhide-delay *time*
 
 ```
 
-where _panel_ is either _top-panel_ or _bottom-panel_ and _time_ is a value in miliseconds, e.g. 300.
+where *panel* is either *top-panel* or *bottom-panel* and *time* is a value in miliseconds, e.g. 300.
 
 	Animation speed
 
 To set the speed at which panel animations occur, execute the following:
 
 ```
-$ gsettings set org.gnome.gnome-panel.toplevel:/org/gnome/gnome-panel/layout/toplevels/_panel_/ animation-speed _value_
+$ gsettings set org.gnome.gnome-panel.toplevel:/org/gnome/gnome-panel/layout/toplevels/*panel*/ animation-speed *value*
 
 ```
 
-where _panel_ is either _top-panel_ or _bottom-panel_ and _value_ is either `"'fast'"`, `"'medium'"` or `"'slow'"`.
+where *panel* is either *top-panel* or *bottom-panel* and *value* is either `"'fast'"`, `"'medium'"` or `"'slow'"`.
 
 ### Replace applications menu icon
 
 **Note:** This change will be overwritten on updating your icon theme package.
 
-Replace `/usr/share/icons/_icon-theme_/16x16/places/start-here.png` with your own icon (where _icon-theme_ is the name of your icon theme).
+Replace `/usr/share/icons/*icon-theme*/16x16/places/start-here.png` with your own icon (where *icon-theme* is the name of your icon theme).
 
 After making the change, restart GNOME Panel: `gnome-panel --replace`.
 

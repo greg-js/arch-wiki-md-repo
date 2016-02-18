@@ -64,7 +64,6 @@ This means you must run [xorg-server](/index.php?title=Xorg-server&action=edit&r
 ##### Configuration
 
  `xorg.conf` 
-
 ```
  ...
  Section "Extensions"
@@ -128,7 +127,7 @@ Works flawlessly. See [Suspend to Disk](/index.php/Suspend_to_Disk "Suspend to D
 An easy way is to use "suspend to swap" by appending
 
 ```
-resume=/dev/sd_x_ 
+resume=/dev/sd*x* 
 
 ```
 

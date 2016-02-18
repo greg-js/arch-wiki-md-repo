@@ -74,7 +74,6 @@ The default settings will keep 10 hourly, 10 daily, 10 monthly and 10 yearly sna
 Here is an example for a configuration with only 5 hours of snapshots, 7 daily ones, no monthly and no yearly ones:
 
  `/etc/snapper/configs/root` 
-
 ```
 # limits for timeline cleanup
 TIMELINE_MIN_AGE="1800"
@@ -89,7 +88,6 @@ TIMELINE_LIMIT_YEARLY="0"
 The `snapper -c root list` output after some weeks:
 
  `# snapper -c root list` 
-
 ```
 Type   | #    | Pre # | Date                     | User | Cleanup  | Description | Userdata
 -------+------+-------+--------------------------+------+----------+-------------+---------

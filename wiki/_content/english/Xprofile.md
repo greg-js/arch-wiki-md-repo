@@ -25,7 +25,6 @@ It is possible to source xprofile from a session started with one of the followi
 All of these execute, directly or indirectly, `~/.xinitrc` or `/etc/X11/xinit/xinitrc` if it does not exist. That is why xprofile has to be sourced from these files.
 
  `~/.xinitrc and /etc/X11/xinit/xinitrc` 
-
 ```
 #!/bin/sh
 
@@ -42,7 +41,6 @@ All of these execute, directly or indirectly, `~/.xinitrc` or `/etc/X11/xinit/
 Firstly, create the file `~/.xprofile` if it does not exist already. Then, simply add the commands for the programs you wish to start with the session. See below:
 
  `~/.xprofile` 
-
 ```
 tint2 &
 nm-applet &

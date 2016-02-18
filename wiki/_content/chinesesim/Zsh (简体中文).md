@@ -63,7 +63,7 @@ $ zsh
 
 ```
 
-运行后你将会看到 _新用户向导（zsh-newuser-install）_，它可以帮助你完成一些最基本的配置。如果你想跳过它，可以按 `q` 键退出。如果你没有看见它，你可以手动打开 _新用户向导_：
+运行后你将会看到 *新用户向导（zsh-newuser-install）*，它可以帮助你完成一些最基本的配置。如果你想跳过它，可以按 `q` 键退出。如果你没有看见它，你可以手动打开 *新用户向导*：
 
 ```
 $ zsh /usr/share/zsh/functions/Newuser/zsh-newuser-install -f
@@ -146,7 +146,6 @@ $ zsh /usr/share/zsh/functions/Newuser/zsh-newuser-install -f
 下面是一个简单的 `.zshrc` 配置文件，它提供一个配置 Zsh 的生动的例子。你可以将下面的配置保存为文件 `.zshrc` 来使用它。
 
  `~/.zshrc` 
-
 ```
 autoload -U compinit promptinit
 compinit
@@ -163,7 +162,6 @@ prompt walters
 将下面的配置放到 `~/.zshenv` 中：
 
  `~/.zshenv` 
-
 ```
 typeset -U path
 path=(~/bin /other/things/in/path $path[@])
@@ -176,7 +174,6 @@ path=(~/bin /other/things/in/path $path[@])
 也许 Zsh 最引人注目的特性就是它先进的自动补全功能。在 `~/.zshrc` 最后加入下面的配置，开启自动补全：
 
  `~/.zshrc` 
-
 ```
 autoload -U compinit
 compinit
@@ -193,7 +190,7 @@ compinit
 
  `~/.zshrc`  `zstyle ':completion:*' menu select` 
 
-	_按两次 tab 键启动菜单_
+	*按两次 tab 键启动菜单*
 
 添加下面的配置可以启动命令行别名的自动补全：
 
@@ -229,7 +226,6 @@ Zsh 使用自带的 zle 代替 readline，并且不会读取 `/etc/inputrc` 或�
 （译者注：ncurses 是一个字符界面下的 GUI 框架）如果直接将 ncurses 应用绑定到某个快捷键，那么它会失去交互性。可以使用变量 `BUFFER` 来解决这个问题。下面的例子是使用 `Alt+\` 来打开 ncmpcpp：
 
  `~/.zshrc` 
-
 ```
 ncmpcppShow() { BUFFER="ncmpcpp"; zle accept-line; }
 zle -N ncmpcppShow
@@ -241,7 +237,6 @@ bindkey '^[\' ncmpcppShow
 该方法会在启动应用之前，将你的输入保存在一行当中。
 
  `~/.zshrc` 
-
 ```
 ncmpcppShow() { ncmpcpp <$TTY; zle redisplay; }
 zle -N ncmpcppShow
@@ -253,7 +248,6 @@ bindkey '^[\' ncmpcppShow
 图形化文件管理器中使用快捷键可能很实用（译者注：你也可以在 Zsh 中自定义快捷键达到这样的效果）。第一个使用 `Alt+Left` 让用户撤销最近的 cd 操作，第二个使用 `Alt+Up` 让用户进入上层目录。这两个快捷键同时也会显示目录中的内容。
 
  `~/.zshrc` 
-
 ```
 cdUndoKey() {
   popd      > /dev/null
@@ -281,7 +275,6 @@ bindkey '^[[1;3D'      cdUndoKey
 ### 查找历史记录
 
  `~/.zshrc` 
-
 ```
 [[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"    history-beginning-search-backward
 [[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}"  history-beginning-search-forward
@@ -295,7 +288,6 @@ bindkey '^[[1;3D'      cdUndoKey
 这是一种 Zsh 中简单快速设置彩色提示符的方法。首先确保 `.zshrc` 中配置了自动加载提示符。具体配置如下：
 
  `~/.zshrc` 
-
 ```
 autoload -U promptinit
 promptinit
@@ -372,7 +364,6 @@ username@host ~ %                                                         [0]
 Zsh 可以配置 DIRSTACK 相关变量来加速 cd 访问常用目录。在你的配置文件中添加下面的配置：
 
  `.zshrc` 
-
 ```
 DIRSTACKFILE="$HOME/.cache/zsh/dirs"
 if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
@@ -406,7 +397,7 @@ dirs -v
 
 ### 帮助命令
 
-和 [bash](/index.php/Bash "Bash") 不同的是 _zsh_ 没有内置的 `help` 命令，要想在 zsh 中使用 `help`，可以添加下面的配置：
+和 [bash](/index.php/Bash "Bash") 不同的是 *zsh* 没有内置的 `help` 命令，要想在 zsh 中使用 `help`，可以添加下面的配置：
 
 ```
 autoload -U run-help
@@ -446,7 +437,7 @@ Zsh 经常执行 `/etc/zsh/zshenv` 和 `$ZDOTDIR/.zshenv`，所以不要让他�
 
 如果是一个登录了的终端，会加载 `/etc/profile` 然后加载 `$ZDOTDIR/.zprofile`。然后如果是交互式模式，会继续加载 `/etc/zsh/zshrc` 接着加载 `$ZDOTDIR/.zshrc` 。最后如果还是登录了的终端，`/etc/zsh/zlogin` 和 `$ZDOTDIR/.zlogin` 也会被加载。
 
-另请参见 `man zsh` 的 _STARTUP/SHUTDOWN FILES_ 章节。
+另请参见 `man zsh` 的 *STARTUP/SHUTDOWN FILES* 章节。
 
 ### 刷新自动补全
 
@@ -471,11 +462,11 @@ $ rehash
 运行下面的命令：
 
 ```
-$ chsh -s /bin/bash _user_
+$ chsh -s /bin/bash *user*
 
 ```
 
-每一个使用 _zsh_ 作为默认终端的用户都需要执行一遍条命令。当完成之后就可以把 [zsh](https://www.archlinux.org/packages/?name=zsh) 软件包删除了。
+每一个使用 *zsh* 作为默认终端的用户都需要执行一遍条命令。当完成之后就可以把 [zsh](https://www.archlinux.org/packages/?name=zsh) 软件包删除了。
 
 当然你也也可以以 root 身份修改 `/etc/passwd` 文件，来批量更改用户的默认终端。
 
@@ -484,14 +475,14 @@ $ chsh -s /bin/bash _user_
 例如将下面的配置中的 /bin/zsh
 
 ```
-_username_:x:1000:1000:_Full Name_,,,:/home/_username_:/bin/zsh
+*username*:x:1000:1000:*Full Name*,,,:/home/*username*:/bin/zsh
 
 ```
 
 改成 /bin/bash
 
 ```
-_username_:x:1000:1000:_Full Name_,,,:/home/_username_:/bin/bash
+*username*:x:1000:1000:*Full Name*,,,:/home/*username*:/bin/bash
 
 ```
 

@@ -95,7 +95,6 @@ Bus 001 Device 004: ID 147e:1002 Upek
 Трэкпоинт работает "из коробки", однако отсутствует возможность прокрутки. Для того, чтобы ее включить в X при зажатии средней клавиши тачпада, необходимо создать файл:
 
  `/etc/X11/xorg.conf.d/20-thinkpad.conf` 
-
 ```
 Section "InputClass"
 	Identifier	"Trackpoint Wheel Emulation"
@@ -150,7 +149,6 @@ EndSection
 Затем отредактировать (по желанию) файл настроек:
 
  `/usr/lib/systemd/system/tpacpi-bat.service` 
-
 ```
 [Unit]
 Description=sets battery thresholds

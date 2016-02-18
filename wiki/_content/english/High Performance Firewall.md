@@ -107,7 +107,7 @@ net.ipv4.neigh.default.gc_thresh3 = 2048
 
 ```
 
-and make _sysctl -p_ to increase to the double!!! (no reboot needed) with this I get no errors!!!!!
+and make *sysctl -p* to increase to the double!!! (no reboot needed) with this I get no errors!!!!!
 
 The next part will need some comprehension about buckets and conntracks and hashsize (the way how iptables manage the nat connections). There is a very good document about this at [here](https://github.com/jeffmurphy/NetPass/blob/master/doc/netfilter_conntrack_perf.txt). Read it!!!! Some thing are change since IPtables is know as Netfiler.
 
@@ -119,7 +119,7 @@ MODULES=(8021q 'nf_conntrack hashsize=1048576' nf_conntrack_ftp
 
 ```
 
-The last ones is just to avoid some problems that we have with ftp connections (I thing this is not necessary anymore). The '**nf_conntrack hashsize=1048576'** increase the numbers of the hashsize (increase the kernel memory designated to NAT connections) (need reboot or **reload module** :-) see with _dmesg | grep conntrack_)
+The last ones is just to avoid some problems that we have with ftp connections (I thing this is not necessary anymore). The '**nf_conntrack hashsize=1048576'** increase the numbers of the hashsize (increase the kernel memory designated to NAT connections) (need reboot or **reload module** :-) see with *dmesg | grep conntrack*)
 
 And the next is put some similar to the `/etc/sysctl.d/99-sysctl.conf`: file
 
@@ -130,7 +130,7 @@ net.netfilter.nf_conntrack_max = 1048576
 
 ```
 
-And do the _sysctl --system_ command
+And do the *sysctl --system* command
 
 In my case is the same number, that means that I have 1 connection for bucket!!!! I do not need more!!!! by default NetFilter put rate of 1:8\. I.E. 8 conections per bucket!! (I think, not remember well)..
 
@@ -147,7 +147,7 @@ And put this in a snmpd agent to get and graph it in a MRTG/cacti server ..... u
 
 We have 3 big access to Internet!!! This is because we manage 3 class C groups of IPs (some restrictions of BGP) in this firewall. So, we have 3 incoming traffics that we can manage, but only one outgoing!!! Our default gateway. This can easily fill our outgoing quote, so we have to spare it.
 
-First we have to put some new tables to _/etc/iproute2/rt_tables_ file
+First we have to put some new tables to */etc/iproute2/rt_tables* file
 
 ```
 # echo 200 PRO_1 >> /etc/iproute2/rt_tables

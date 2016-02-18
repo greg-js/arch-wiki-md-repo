@@ -1,6 +1,6 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"):
 
-	_ownCloud is a software suite that provides a location-independent storage area for data (cloud storage)._
+	*ownCloud is a software suite that provides a location-independent storage area for data (cloud storage).*
 
 The ownCloud installation and configuration mainly depends on what web server and database you decide to run. Currently the wiki discusses [#Apache configuration](#Apache_configuration) and [Nginx configuration](#Nginx).
 
@@ -47,7 +47,7 @@ The ownCloud installation and configuration mainly depends on what web server an
 
 ## Prerequisites
 
-_ownCloud_ needs a [web server](/index.php/Category:Web_server "Category:Web server"), [PHP](/index.php/PHP "PHP") and a [database](/index.php/Category:Database_management_systems "Category:Database management systems"). For instance, a classic [LAMP stack](/index.php/LAMP "LAMP") should work fine and is the [recommended configuration](https://doc.owncloud.org/server/8.2/admin_manual/installation/system_requirements.html#recommended-setup-for-running-owncloud).
+*ownCloud* needs a [web server](/index.php/Category:Web_server "Category:Web server"), [PHP](/index.php/PHP "PHP") and a [database](/index.php/Category:Database_management_systems "Category:Database management systems"). For instance, a classic [LAMP stack](/index.php/LAMP "LAMP") should work fine and is the [recommended configuration](https://doc.owncloud.org/server/8.2/admin_manual/installation/system_requirements.html#recommended-setup-for-running-owncloud).
 
 ## Installation
 
@@ -106,10 +106,9 @@ Additionally enable exif support by installing the [exiv2](https://www.archlinux
 
 From the [official installation manual](https://doc.owncloud.org/server/8.2/admin_manual/installation/installation_wizard.html#setting-strong-directory-permissions):
 
-	_For hardened security we recommend setting the permissions on your ownCloud directories as strictly as possible, and for proper server operations. This should be done immediately after the initial installation and before running the setup. Your HTTP user must own the `config/`, `data/` and `apps/` directories so that you can configure ownCloud, create, modify and delete your data files, and install apps via the ownCloud Web interface._
+	*For hardened security we recommend setting the permissions on your ownCloud directories as strictly as possible, and for proper server operations. This should be done immediately after the initial installation and before running the setup. Your HTTP user must own the `config/`, `data/` and `apps/` directories so that you can configure ownCloud, create, modify and delete your data files, and install apps via the ownCloud Web interface.*
 
  `oc-perms` 
-
 ```
 #!/bin/bash
 ocpath='/usr/share/webapps/owncloud'
@@ -117,15 +116,18 @@ htuser='http'
 htgroup='http'
 rootuser='root'
 
-printf "Creating possible missing Directories\n"
+printf "Creating possible missing Directories
+"
 mkdir -p $ocpath/data
 mkdir -p $ocpath/assets
 
-printf "chmod Files and Directories\n"
+printf "chmod Files and Directories
+"
 find ${ocpath}/ -type f -print0 | xargs -0 chmod 0640
 find ${ocpath}/ -type d -print0 | xargs -0 chmod 0750
 
-printf "chown Directories\n"
+printf "chown Directories
+"
 chown -R ${rootuser}:${htgroup} ${ocpath}/
 chown -R ${htuser}:${htgroup} ${ocpath}/apps/
 chown -R ${htuser}:${htgroup} ${ocpath}/config/
@@ -135,7 +137,8 @@ chown -R ${htuser}:${htgroup} ${ocpath}/assets/
 
 chmod +x ${ocpath}/occ
 
-printf "chmod/chown .htaccess\n"
+printf "chmod/chown .htaccess
+"
 if [ -f ${ocpath}/.htaccess ]
  then
   chmod 0644 ${ocpath}/.htaccess
@@ -153,7 +156,7 @@ If you have customized your ownCloud installation and your filepaths are differe
 
 ### An all-in-one alternative with Docker
 
-A quicker alternative to installing and configuring your own _ownCloud_ is to use a 3rd party supported [Docker](/index.php/Docker "Docker") image. You can find several images of fully working LAMP stack with pre-installed _ownCloud_ in the [Docker repositories](https://index.docker.io/search?q=ownCloud). _Docker_ containers are generally safer than a [chroot](/index.php/Chroot "Chroot") environment and the overhead is very low; _ownCloud_ in Docker works smoothly even on quite old machines. The whole setup including installing _Docker_ and _ownCloud_ image is considerably easier and quicker than a native installation but you must trust the 3rd party whom you've now given complete control to regarding the installation of your ownCloud instance.
+A quicker alternative to installing and configuring your own *ownCloud* is to use a 3rd party supported [Docker](/index.php/Docker "Docker") image. You can find several images of fully working LAMP stack with pre-installed *ownCloud* in the [Docker repositories](https://index.docker.io/search?q=ownCloud). *Docker* containers are generally safer than a [chroot](/index.php/Chroot "Chroot") environment and the overhead is very low; *ownCloud* in Docker works smoothly even on quite old machines. The whole setup including installing *Docker* and *ownCloud* image is considerably easier and quicker than a native installation but you must trust the 3rd party whom you've now given complete control to regarding the installation of your ownCloud instance.
 
 **Note:** Docker images are not officially supported by ownCloud.
 
@@ -195,12 +198,11 @@ If you would like to have ownCloud run in a subdirectory, then edit the `/etc/ht
 
 ### php-fpm configuration
 
-_ownCloud_ official documentation uses [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) for [PHP](/index.php/PHP "PHP") and as such it is the best supported configuration. See [Nginx#PHP_implementation](/index.php/Nginx#PHP_implementation "Nginx") to set up _php-fpm_ and [Nginx#TLS/SSL](/index.php/Nginx#TLS.2FSSL "Nginx") to acquire and/or set up a TLS certificate.
+*ownCloud* official documentation uses [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) for [PHP](/index.php/PHP "PHP") and as such it is the best supported configuration. See [Nginx#PHP_implementation](/index.php/Nginx#PHP_implementation "Nginx") to set up *php-fpm* and [Nginx#TLS/SSL](/index.php/Nginx#TLS.2FSSL "Nginx") to acquire and/or set up a TLS certificate.
 
 By default, the only things you need to change from the [recommended server configuration](https://doc.owncloud.org/server/8.2/admin_manual/installation/nginx_configuration.html) for ownCloud to run on Arch Linux are the `server_name`, `ssl_certificate`, `ssl_certificate_key`, `root` and `fastcgi_pass` directives:
 
  `/etc/nginx/nginx.conf` 
-
 ```
 server {
   listen 80;
@@ -305,13 +307,13 @@ server {
 
 ```
 
-_php-fpm_ is already configured to run as the user `http`, so assuming you are using the permissions described above it should function fine. It is not recommended to manually copy the `config.example.php` in the ownCloud configuration, and instead let it be automatically generated on first run.
+*php-fpm* is already configured to run as the user `http`, so assuming you are using the permissions described above it should function fine. It is not recommended to manually copy the `config.example.php` in the ownCloud configuration, and instead let it be automatically generated on first run.
 
 **Note:** Automatic configuration relies on the `data/` directory creation, as done in [#Setting strong permissions](#Setting_strong_permissions).
 
 ### uWSGI configuration
 
-You can run _ownCloud_ in its own process and service by using the [uWSGI](/index.php/Uwsgi "Uwsgi") application server with [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php). This allows you to define a [PHP configuration](/index.php/PHP#Configuration "PHP") only for this instance of PHP, without the need to edit the global `php.ini` and thus keeping your web application configurations compartmentalized. _uWSGI_ itself has a wealth of features to limit the resource use and to harden the security of the application, and by being a separate process it can run under its own user.
+You can run *ownCloud* in its own process and service by using the [uWSGI](/index.php/Uwsgi "Uwsgi") application server with [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php). This allows you to define a [PHP configuration](/index.php/PHP#Configuration "PHP") only for this instance of PHP, without the need to edit the global `php.ini` and thus keeping your web application configurations compartmentalized. *uWSGI* itself has a wealth of features to limit the resource use and to harden the security of the application, and by being a separate process it can run under its own user.
 
 #### Configuration
 
@@ -332,10 +334,9 @@ The only part that differs from [#php-fpm_configuration](#php-fpm_configuration)
 
 ```
 
-Then create a config file for _uWSGI_:
+Then create a config file for *uWSGI*:
 
  `/etc/uwsgi/owncloud.ini` 
-
 ```
 [uwsgi]
 ; load the required plugins
@@ -464,14 +465,14 @@ The official client can be installed with the [owncloud-client](https://www.arch
 
 #### Calendar
 
-To access your _ownCloud_ calendars using Mozilla [Thunderbird](/index.php/Thunderbird "Thunderbird")'s [Lightning calendar](/index.php/Thunderbird#Lightning_-_Calendar "Thunderbird") you would use the following URL:
+To access your *ownCloud* calendars using Mozilla [Thunderbird](/index.php/Thunderbird "Thunderbird")'s [Lightning calendar](/index.php/Thunderbird#Lightning_-_Calendar "Thunderbird") you would use the following URL:
 
 ```
 https://ADDRESS/remote.php/caldav/calendars/USERNAME/CALENDARNAME
 
 ```
 
-To access your _ownCloud_ calendars using CalDAV-compatible programs like Kontact or [Evolution](/index.php/Evolution "Evolution"), you would use the following URL:
+To access your *ownCloud* calendars using CalDAV-compatible programs like Kontact or [Evolution](/index.php/Evolution "Evolution"), you would use the following URL:
 
 ```
 https://ADDRESS/remote.php/caldav
@@ -500,7 +501,6 @@ To mount your ownCloud, use:
 You can also create an entry for this in `/etc/fstab`
 
  `/etc/fstab` 
-
 ```
 [https://own.example.com/remote.php/webdav](https://own.example.com/remote.php/webdav) /path/to/mount davfs rw,user,noauto 0 0
 
@@ -519,7 +519,7 @@ To enable contacts and calendar sync:
 *   if using Android 4+:
     1.  download [[1]](https://davdroid.bitfire.at/) ([Play Store](https://play.google.com/store/apps/details?id=at.bitfire.davdroid), [F-Droid](https://f-droid.org/app/at.bitfire.davdroid))
     2.  Enable mod_rewrite.so in httpd.conf
-    3.  create a new DAVdroid account in the _Account_ settings, and specify your "short" server address and login/password couple, e.g. `https://cloud.example.com` (there is no need for the `/remote.php/{carddav,webdav}` part if you configured your web server with the proper redirections, as illustrated previously in the article; _DAVdroid_ will find itself the right URLs)
+    3.  create a new DAVdroid account in the *Account* settings, and specify your "short" server address and login/password couple, e.g. `https://cloud.example.com` (there is no need for the `/remote.php/{carddav,webdav}` part if you configured your web server with the proper redirections, as illustrated previously in the article; *DAVdroid* will find itself the right URLs)
 
 	For an older version of the app but with still useful info, see [this article](http://www.slsmk.com/sync-android-contacts-calendar-and-files-to-owncloud/).
 
@@ -577,14 +577,14 @@ Assuming that you followed the [LAMP](/index.php/LAMP "LAMP") tutorial, execute 
 Create a local directory for non-distribution certificates and copy [LAMPs](/index.php/LAMP "LAMP") certificate there. This will prevent `ca-certificates`-updates from overwriting it.
 
 ```
-# cp /etc/httpd/conf/server.crt /usr/share/ca-certificates/_WWW.EXAMPLE.COM.crt_
+# cp /etc/httpd/conf/server.crt /usr/share/ca-certificates/*WWW.EXAMPLE.COM.crt*
 
 ```
 
-Add _WWW.EXAMPLE.COM.crt_ to `/etc/ca-certificates.conf`:
+Add *WWW.EXAMPLE.COM.crt* to `/etc/ca-certificates.conf`:
 
 ```
-_WWW.EXAMPLE.COM.crt_
+*WWW.EXAMPLE.COM.crt*
 
 ```
 
@@ -618,7 +618,7 @@ The file `android.txt` should contain the following:
 
 Then import `CA.der.crt` to your Android device:
 
-Put the `CA.der.crt` file onto the sdcard of your Android device (usually to the internal one, e.g. save from a mail attachment). It should be in the root directory. Go to _Settings > Security > Credential storage_ and select _Install from device storage_. The `.crt` file will be detected and you will be prompted to enter a certificate name. After importing the certificate, you will find it in _Settings > Security > Credential storage > Trusted credentials > User_.
+Put the `CA.der.crt` file onto the sdcard of your Android device (usually to the internal one, e.g. save from a mail attachment). It should be in the root directory. Go to *Settings > Security > Credential storage* and select *Install from device storage*. The `.crt` file will be detected and you will be prompted to enter a certificate name. After importing the certificate, you will find it in *Settings > Security > Credential storage > Trusted credentials > User*.
 
 Thanks to: [[3]](http://www.leftbrainthings.com/2013/10/13/creating-and-importing-self-signed-certificate-to-android-device/)
 
@@ -729,7 +729,7 @@ If everything is working, you should see 'Transactional File Locking Enabled' un
 
 As mentioned in the [official admin manual](http://doc.owncloud.org/server/6.0/admin_manual/configuration/configuration_apps.html), either you need an apps directory that is writable by the http user, or you need to set `appstoreenabled` to `false`.
 
-_Also_, not mentioned there, the directory needs to be in the `open_basedir` line in `/etc/php/php.ini`.
+*Also*, not mentioned there, the directory needs to be in the `open_basedir` line in `/etc/php/php.ini`.
 
 One clean method is to have the package-installed directory at `/usr/share/webapps/owncloud/apps` stay owned by root, and have the user-installed apps go into e.g. `/var/www/owncloud/apps`, which is owned by http. Then you can set `appstoreenabled` to `true` and package upgrades of apps should work fine as well. Relevant lines from `/etc/webapps/owncloud/config/config.php`:
 
@@ -762,7 +762,6 @@ open_basedir = /srv/http/:/usr/share/webapps/:/var/www/owncloud/apps/
 Directory permissions:
 
  `$ ls -ld /usr/share/webapps/owncloud/apps /var/www/owncloud/apps/` 
-
 ```
  drwxr-xr-x 26 root root 4096 des.  14 20:48 /usr/share/webapps/owncloud/apps
  drwxr-xr-x  2 http http   48 jan.  20 20:01 /var/www/owncloud/apps/
@@ -775,7 +774,6 @@ At the top of the admin page there might be a warning to set the `Strict-Transpo
 A possible cause could be that because owncloud sets those settings, uwsgi passed them along and nginx added them again:
 
  `$ curl -I [https://domain.tld](https://domain.tld)` 
-
 ```
 ...
 X-XSS-Protection: 1; mode=block
@@ -792,7 +790,6 @@ X-Robots-Tag: none
 While the fast_cgi sample config has a parameter to avoid that ( `fastcgi_param modHeadersAvailable true; #Avoid sending the security headers twice` ), when using uwsgi and nginx the following modification of the uwsgi part in nginx.conf could help:
 
  ` /etc/nginx/nginx.conf` 
-
 ```
 ...
         # pass all .php or .php/path urls to uWSGI

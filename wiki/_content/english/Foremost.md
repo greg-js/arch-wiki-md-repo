@@ -16,7 +16,6 @@
 In most cases, it's not necessary to configure Foremost, since in default operation, it already recognizes most of the usual file types. Nevertheless, one could add additional file headers for detection, e.g. adding entries or uncomment examples:
 
  `/etc/foremost.conf` 
-
 ```
 #	wma     y       8000000  \x30\x26\xB2\x75    \x00\x00\x00\xFF
 #
@@ -32,12 +31,12 @@ In most cases, it's not necessary to configure Foremost, since in default operat
 
 ## Usage
 
-**Note:** Instead on working directly on the hard disc which should be recovered, consider creating a backup image, for example using _dd_rescue_ and use this with Foremost.
+**Note:** Instead on working directly on the hard disc which should be recovered, consider creating a backup image, for example using *dd_rescue* and use this with Foremost.
 
 Run following command with image or device path as parameter and additional path to an output directory:
 
 ```
-# foremost -t all -i _/path/to/image_ -o _outputdir_
+# foremost -t all -i */path/to/image* -o *outputdir*
 
 ```
 

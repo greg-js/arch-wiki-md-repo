@@ -1,6 +1,6 @@
 From the [project home page](http://wmfs.info/):
 
-	_WMFS is a lightweight and highly configurable tiling window manager for X written in C. WMFS is a free software distributed under the BSD license. it can be drive from keyboard or mouse and it's configuration stands in one text file easily understandable._
+	*WMFS is a lightweight and highly configurable tiling window manager for X written in C. WMFS is a free software distributed under the BSD license. it can be drive from keyboard or mouse and it's configuration stands in one text file easily understandable.*
 
 ## Contents
 
@@ -41,7 +41,7 @@ WMFS can be [installed](/index.php/Installed "Installed") via the [wmfs2-git](ht
 
 WMFS primarily differs from the original WMFS in the way windows are managed. While in the previous version windows were arranged according to predefined layouts - as they are in window managers such as DWM and Awesome - WMFS features key and mouse bindings allowing the user to manually configure layouts on each tag - as is the case with wmii, i3 and others.
 
-If one opens, say, multiple instances of a terminal (by default, **Super+Enter** opens [urxvt](/index.php/Urxvt "Urxvt")), they will be arranged in a diminishing "spiral" on the screen, with each one opening on the left side in smaller and smaller sizes. These can then be rotated, changing the orientation of the _master window_ (the one that takes up have the screen on its own) and _slave windows_ (the ones that shrink as you open more). Also, windows may be "tabbed" together, maximizing all clients and placing independent tabs in a single titlebar at the top of the window. This keeps the focused window maximized while placing the others "behind" it, and allowing the user to cycle through them using a key binding, thus preventing the need to click on a taskbar or dock to repeatedly minimize/maximize individual windows.
+If one opens, say, multiple instances of a terminal (by default, **Super+Enter** opens [urxvt](/index.php/Urxvt "Urxvt")), they will be arranged in a diminishing "spiral" on the screen, with each one opening on the left side in smaller and smaller sizes. These can then be rotated, changing the orientation of the *master window* (the one that takes up have the screen on its own) and *slave windows* (the ones that shrink as you open more). Also, windows may be "tabbed" together, maximizing all clients and placing independent tabs in a single titlebar at the top of the window. This keeps the focused window maximized while placing the others "behind" it, and allowing the user to cycle through them using a key binding, thus preventing the need to click on a taskbar or dock to repeatedly minimize/maximize individual windows.
 
 Individual clients can be rearranged using keyboard shortcuts; alternatively, a window can be clicked-and-dragged by its titlebar, or may be clicked-and-dragged from any point in the client while holding down a mod key such as **Alt** or **Super** (the "Windows" key). Finally, they may also be toggled into "free" or "floating" mode, and moved around like stacked windows on a traditional desktop.
 
@@ -110,7 +110,7 @@ The **[client]** section of `wmfsrc` specifies general rules on how clients beha
 
 By default, all clients open on the currently active tag, and can be manipulated using the default mouse or key bindings. By specifying per-application rules, the user can control which applications open on which tags, whether they will be floating by default, and whether they will be tabbed or not.
 
-*   **theme:** The chosen colors of window borders and titlebars, as specified under **[theme]** _(Note: if **name** is not set under **[theme]** it defaults to name = "default")_
+*   **theme:** The chosen colors of window borders and titlebars, as specified under **[theme]** *(Note: if **name** is not set under **[theme]** it defaults to name = "default")*
 *   **key_modifier:** The modifier key(s) ("Alt," "Shift," "Super," "Ctrl") to use in order to click-and-drag a client
 *   **tag:** Which tag to open the window on. Tag numbers begin with zero (0), and correspond with the order of tags from left-to-right
 *   **screen:** If multiple monitors are used, which screen to display the client on, beginning with zero (0) as the primary display
@@ -119,7 +119,7 @@ By default, all clients open on the currently active tag, and can be manipulated
 *   **ignore_tag:** Specify to client to ignore tags (client is displayed on every tag)
 *   **autofocus:** Give focus to new created clients. default is false
 
-The first several options are essentially all the potential names a running program/process might have, as specified in the output of [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop). So long as the **instance** entry correctly displays the "WM_Class" portion of the xprop output, there should be no need to worry about the _class_, _role_ or _name_ sections, and they may be left commented out.
+The first several options are essentially all the potential names a running program/process might have, as specified in the output of [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop). So long as the **instance** entry correctly displays the "WM_Class" portion of the xprop output, there should be no need to worry about the *class*, *role* or *name* sections, and they may be left commented out.
 
 ### Statusbar
 
@@ -157,7 +157,7 @@ The "statusbar" is a panel at the edge of the screen that displays pertinent inf
 
 ```
 
-If only one statusbar/panel is desired, the _name_ entry is not required.
+If only one statusbar/panel is desired, the *name* entry is not required.
 
 #### Elements
 
@@ -209,7 +209,7 @@ If desired, icons may also be used; simply change the default tag entries as fol
 
 The "x" and "y" represent the horizontal and vertical positions; "ww" and "hh" the width and height.
 
-By default the status of the tags--whether they contain clients or not, and which tag is currently visible on the screen--is indicated by colors specified in the **[theme]** section of `wmfsrc`. However, they can also be marked using small boxes, _a la_ DWM and Awesome, by modifying the appropriate line in the **[theme]** section of `wmfsrc`.
+By default the status of the tags--whether they contain clients or not, and which tag is currently visible on the screen--is indicated by colors specified in the **[theme]** section of `wmfsrc`. However, they can also be marked using small boxes, *a la* DWM and Awesome, by modifying the appropriate line in the **[theme]** section of `wmfsrc`.
 
 ```
 tags_sel_statusline = "\R[2;2;4;4;#BD0406]"

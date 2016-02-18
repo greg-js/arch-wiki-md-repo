@@ -109,9 +109,9 @@ Tyto instrukce byly převzaty z [http://ext4.wiki.kernel.org/index.php/Ext4_Howt
 
 #### Použítí rozšíření (extens) ext4 na soubory
 
-Souborový systém je nyní zkonvertován na ext4, ovšem všechny soubory, které byly zapsané před konverzí nevyužívají nových _rozšíření_ ext4, např. zrychlení práce s velkými soubory, redukované fragmentace a zvýšené rychlosti kontroly souborového systému. Aby se využilo všech výhod ext4, musí být všechny soubory na disk znovu zapsány. Ve vývoji je nástroj s názvem _e4defrag_, který toto zařídí ; zatím ovšem není dokončený.
+Souborový systém je nyní zkonvertován na ext4, ovšem všechny soubory, které byly zapsané před konverzí nevyužívají nových *rozšíření* ext4, např. zrychlení práce s velkými soubory, redukované fragmentace a zvýšené rychlosti kontroly souborového systému. Aby se využilo všech výhod ext4, musí být všechny soubory na disk znovu zapsány. Ve vývoji je nástroj s názvem *e4defrag*, který toto zařídí ; zatím ovšem není dokončený.
 
-Naštěstí lze použít program _chattr_, který přiměje kernel soubory přepsat. Tento program lze použít na všechny soubory a adresáře jednoho oddílu (např. pokud je /home na samostatném oddílu):
+Naštěstí lze použít program *chattr*, který přiměje kernel soubory přepsat. Tento program lze použít na všechny soubory a adresáře jednoho oddílu (např. pokud je /home na samostatném oddílu):
 
 ```
 find /home -xdev -type f -print0 | xargs -0 chattr +e
@@ -121,7 +121,7 @@ find /home -xdev -type d -print0 | xargs -0 chattr +e
 
 Doporučuje se tento příkaz otestovat nejdříve na několika souborech, zda vše proběhne v pořádku. Také je doporučeno tento souborový systém po konverzi zkontrolovat.
 
-Příkazem _lsattr_ je možné zjistit, zda soubory používají nová _rozšíření_. Mělo by se u nich v seznamu atributů objevit písmeno 'e'.
+Příkazem *lsattr* je možné zjistit, zda soubory používají nová *rozšíření*. Mělo by se u nich v seznamu atributů objevit písmeno 'e'.
 
 ## Řešení problémů
 

@@ -1,4 +1,4 @@
-Sljedećih pet osnovnih principa čine ono što se obično naziva _Put Archa_, ili _Arch filozofija_, možda najbolja skraćenica za ovo je KISS (_Keep It Simple, Stupid_).
+Sljedećih pet osnovnih principa čine ono što se obično naziva *Put Archa*, ili *Arch filozofija*, možda najbolja skraćenica za ovo je KISS (*Keep It Simple, Stupid*).
 
 ## Contents
 
@@ -10,13 +10,13 @@ Sljedećih pet osnovnih principa čine ono što se obično naziva _Put Archa_, i
 
 ## Jednostavnost
 
-_Jednostavnost je krajnja sofisticiranost._ — Leonardo da Vinci
+*Jednostavnost je krajnja sofisticiranost.* — Leonardo da Vinci
 
 Jednostavnost je apsolutno glavni cilj iza Arch razvoja. Mnoge GNU / Linux distribucije se predstavljaju "jednostavnim". Međutim, jednostavnost i sama ima mnoge definicije.
 
-**Arch Linux definira jednostavnost: _bez nepotrebnih dodataka, izmjena ili komplikacija_, i pruža laganu UNIX osnovnu strukturu koja omogućuje pojedinačnom korisniku da oblikuje sustav prema vlastitim potrebama. Ukratko: Elegantan, minimalistički pristup.**
+**Arch Linux definira jednostavnost: *bez nepotrebnih dodataka, izmjena ili komplikacija*, i pruža laganu UNIX osnovnu strukturu koja omogućuje pojedinačnom korisniku da oblikuje sustav prema vlastitim potrebama. Ukratko: Elegantan, minimalistički pristup.**
 
-Lagana bazna struktura izgrađena sa visokim standardima programiranja ima tendenciju za niže zahtjeve sustava i manje resursa. Osnovni sustav je lišen svih nereda koji mogu _prikriti_ važne dijelove sustava, ili je pristup nijma otežan. To je moderniji niz jezgrovito komentiranih, jasno konfiguracijskih datoteka koje su raspoređeni za brzi pristup i uređivanje, bez ogromnih grafičkih sučelja koji skrivaju mogućnosti od korisnika. Arch Linux sustav je, dakle, lako podesiv do zadnjeg detalja.
+Lagana bazna struktura izgrađena sa visokim standardima programiranja ima tendenciju za niže zahtjeve sustava i manje resursa. Osnovni sustav je lišen svih nereda koji mogu *prikriti* važne dijelove sustava, ili je pristup nijma otežan. To je moderniji niz jezgrovito komentiranih, jasno konfiguracijskih datoteka koje su raspoređeni za brzi pristup i uređivanje, bez ogromnih grafičkih sučelja koji skrivaju mogućnosti od korisnika. Arch Linux sustav je, dakle, lako podesiv do zadnjeg detalja.
 
 **Složenost bez komplikacija.**
 
@@ -24,17 +24,17 @@ Arch Linux zadržava nerazdvojivu složenost GNU / Linux sustava, dok ih zadrža
 
 ## Ispravnost osnove nad udobnosti
 
-Arch Linux sustav-ov prioritet je elegancija dizajna, kao i čista, ispravna jednostavnog koda, a ne nepotrebno _krpanje_, automatizacija, ljepota-na-prvi pogled ili "prijateljsko napravljeno za newbije". Softverske zakrpe se stoga zadržavaju na apsolutnim minimumom: idealno, nikada. Jednostavna implementacija je uvijek adut jednostavnog korisničkog sučelje.
+Arch Linux sustav-ov prioritet je elegancija dizajna, kao i čista, ispravna jednostavnog koda, a ne nepotrebno *krpanje*, automatizacija, ljepota-na-prvi pogled ili "prijateljsko napravljeno za newbije". Softverske zakrpe se stoga zadržavaju na apsolutnim minimumom: idealno, nikada. Jednostavna implementacija je uvijek adut jednostavnog korisničkog sučelje.
 
-**Jednostavnost _primjene_, elegancija koda i minimalizam uvijek će biti vladajući prioriteti Arch razvoja.**
+**Jednostavnost *primjene*, elegancija koda i minimalizam uvijek će biti vladajući prioriteti Arch razvoja.**
 
 Koncepti, dizajn i značajke se prave uzeći Put Archa u obzir kao osnovno načelo, a ne klanja na vanjske utjecaje. Razvojni tim su odlučni u svojoj predanosti i posvećenosti luka Put filozofije. Ako dijelite svoju viziju, ti si pozdravio i ohrabrio za korištenje Arch.
 
 ## Korisnik uvijek središte pažnje
 
-Dok mnoge GNU / Linux distribucije pokušavaju biti što _prilagodljiviji korisniku_, Arch Linux je oduvijek bio i uvijek će ostati pri _korisnik uvijek središte pažnje_ principu.
+Dok mnoge GNU / Linux distribucije pokušavaju biti što *prilagodljiviji korisniku*, Arch Linux je oduvijek bio i uvijek će ostati pri *korisnik uvijek središte pažnje* principu.
 
-**Arch Linux je namjenjen sposobnim GNU / Linux korisnicima dajući im potpunu kontrolu i _odgovornost_ nad sustavom.**
+**Arch Linux je namjenjen sposobnim GNU / Linux korisnicima dajući im potpunu kontrolu i *odgovornost* nad sustavom.**
 
 Arch Linux korisnici u potpunosti upravljaju sustavom po svojim potrebama. Sam sustav ponudit će malo pomoći, osim jednostavnog održavanja skupa alata koji su dizajnirani da savršeno prenose korisničke naredbe sustava. Arch programeri ne žele trošiti energiju ponovo pravljeći grafička sučelja alata sustava, Arch se temelji na razumnom dizajnu i odličnoj dokumentaciji.
 
@@ -60,6 +60,6 @@ Drugi princip Arch Linux razvoja je sloboda. Korisnici ne samo da smiju donositi
 
 Svježe instaliran Arch Linux sustav sadrži samo osnovne temeljne komponente bez automatskih konfiguracija. Korisnici mogu konfigurirati sustav po želji, od početka. Od početka postupka instalacije, svaka komponenta sustava je 100% transparentna i dostupna za brz pristup, uklanjanje, zamjenu ili zamjenu sa alternativnom komponentom.
 
-Velik broj paketa i izgradne skripte u Arch Linux repozitoriju također podržavaju slobodu izbora, nudeći Open Source softver za one kojima se to sviđa, kao vlasničke pakete, za one koji prihvaćaju _funkcionalnost preko ideologije_. Korisnik je onaj koji bira.
+Velik broj paketa i izgradne skripte u Arch Linux repozitoriju također podržavaju slobodu izbora, nudeći Open Source softver za one kojima se to sviđa, kao vlasničke pakete, za one koji prihvaćaju *funkcionalnost preko ideologije*. Korisnik je onaj koji bira.
 
-Kao što je Judd Vinet, osnivač Arch Linux projekta rekao: "[Arch Linux] je ono što ga _vi_ načinite."
+Kao što je Judd Vinet, osnivač Arch Linux projekta rekao: "[Arch Linux] je ono što ga *vi* načinite."

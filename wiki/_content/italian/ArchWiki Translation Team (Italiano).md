@@ -20,8 +20,8 @@ Di seguito vengono esplicati alcuni criteri di come il nostro gruppo di traduzio
 
 *   Le pagine da tradurre vengono discusse sul [Forum](http://www.archlinux.it/forum/viewtopic.php?f=19&t=8483) e scelte possibilmente in base a criteri di importanza nell'installazione, utilizzo e configurazione di un sistema Arch Linux. In ogni caso ogni articolo può essere proposto per la traduzione.
 *   Scelta la pagina da tradurre verrà inserita nel [Bando delle Traduzioni](#Bando_di_traduzione). Gli utenti disponibili per la traduzione possono modificare questa tabella segnalando la pagina che intendono tradurre, è possibile anche suddividere la pagina in paragrafi se il compito di traduzione risultasse oneroso per un utente.
-*   Se la pagina da tradurre è già presente in italiano si utilizza di solito lo strumento di _Cronologia_ per controllare le differenze tra le versioni. Le pagine che hanno una controparte italiana sono elencate nella [Tabella riassuntiva dei wiki revisionati](#Tabella_riassuntiva_dei_wiki_revisionati_e_adottati)
-*   Durante la durata delle traduzioni, o se si rileva una pagina datata, è consigliabile aggiungere all'inizio della pagina uno dei seguenti _template_ per avvisare gli utenti:
+*   Se la pagina da tradurre è già presente in italiano si utilizza di solito lo strumento di *Cronologia* per controllare le differenze tra le versioni. Le pagine che hanno una controparte italiana sono elencate nella [Tabella riassuntiva dei wiki revisionati](#Tabella_riassuntiva_dei_wiki_revisionati_e_adottati)
+*   Durante la durata delle traduzioni, o se si rileva una pagina datata, è consigliabile aggiungere all'inizio della pagina uno dei seguenti *template* per avvisare gli utenti:
 
 	Nel caso di Aggiornamenti e Revisioni
 
@@ -47,7 +47,7 @@ Qui è presente una tabella dove sono inserite le pagine da tradurre suddivisa i
 *   **Traduttore** - Qui si immette il nome dell'utente che si è preso carico della pagina da tradurre, serve ad avvisare agli altri utenti che è già sotto revisione.
 *   **Stato** - L'ultima voce della tabella serve a descrivere semplicemente l'andamento della traduzione che può essere: **In Corso** o **Completata**.
 
-L'apposizione dello stato "_Completata_" fa sì che il responsabile di turno sposti il wiki tradotto completamente nella sezione [Revisioni](/index.php/Traduzioni#Revisioni "Traduzioni"), **non sta al traduttore prendersi carico di questo onere**.
+L'apposizione dello stato "*Completata*" fa sì che il responsabile di turno sposti il wiki tradotto completamente nella sezione [Revisioni](/index.php/Traduzioni#Revisioni "Traduzioni"), **non sta al traduttore prendersi carico di questo onere**.
 
 **Nota:** Ricordarsi di tradurre sia il sommario, sia i link relativi alle categorie.
 
@@ -68,7 +68,7 @@ L'apposizione dello stato "_Completata_" fa sì che il responsabile di turno spo
 
 ## Revisioni
 
-In questa sezione vengono messi i vari articoli del wiki presenti in lingua italiana, verrà inserita la data di ultima revisione e eventualmente il _nome utente_ e lo _stato_ di revisione in caso si stia procedendo al riallineamento della pagina rispetto al wiki inglese.
+In questa sezione vengono messi i vari articoli del wiki presenti in lingua italiana, verrà inserita la data di ultima revisione e eventualmente il *nome utente* e lo *stato* di revisione in caso si stia procedendo al riallineamento della pagina rispetto al wiki inglese.
 
 **Attenzione:** Attenzione le date sono in stile anglosassone ovvero: yyyy-mm-gg (es. 2011-01-30).
 
@@ -86,13 +86,13 @@ Alcuni accorgimenti prima di procedere all'adozione di una pagina:
 
 Dalla pagina [Osservati Speciali](https://wiki.archlinux.org/index.php/Special:Watchlist) e possibile seguire tutte le variazioni delle pagine da noi adottate in un unico resoconto. Se avete seguito attentamente la procedura indicata, verrete contattati via email nel caso di cambiamenti anche minori delle pagine adottate.
 
-**Nota:** Nella email che vi viene mandata come avviso, vi sarà anche un link diretto alla Diff della cronologia dell'articolo preso in esame (è il secondo link in ordine). **Fate attenzione**, non sempre le modifiche mostrate sono complete, soprattutto nel caso di molte modifiche ravvicinate. É preferibile, una volta ricevuto l'avviso di revisione, procedere con un Diff personalizzato, impostando una data antecedente all'ultima revisione nella scheda _cronologia_. Un'altra peculiarità osservata, è che visitando le pagine senza aver effettuato il login, dopo aver ricevuto le email, o modificandole in un momento successivo, il sistema smette di inviare le notifiche, in quanto considera l'utente non più interessato a riceverle. Meglio quindi, per sicurezza, dare una controllata "manuale" alle proprie pagine ogni tanto.
+**Nota:** Nella email che vi viene mandata come avviso, vi sarà anche un link diretto alla Diff della cronologia dell'articolo preso in esame (è il secondo link in ordine). **Fate attenzione**, non sempre le modifiche mostrate sono complete, soprattutto nel caso di molte modifiche ravvicinate. É preferibile, una volta ricevuto l'avviso di revisione, procedere con un Diff personalizzato, impostando una data antecedente all'ultima revisione nella scheda *cronologia*. Un'altra peculiarità osservata, è che visitando le pagine senza aver effettuato il login, dopo aver ricevuto le email, o modificandole in un momento successivo, il sistema smette di inviare le notifiche, in quanto considera l'utente non più interessato a riceverle. Meglio quindi, per sicurezza, dare una controllata "manuale" alle proprie pagine ogni tanto.
 
 Facoltativo:
 
 *   Atom feeds: è anche possibile ricevere notifiche sull'attività di tutte le pagine wiki aggiungendo il seguente link [Archwiki Atom feed](https://wiki.archlinux.org/index.php?title=Special:RecentChanges&feed=atom) al proprio lettore Feed preferito (akregator, liferea, ecc).
 
-**Suggerimento:** Può risultare utile avere un _feed Atom personalizzato_ per le sole pagine che state seguendo. Per ottenerlo basta andare nella pagina dei vostri [Osservati Speciali](https://wiki.archlinux.org/index.php/Special:Watchlist) (bisogna aver effettuato il login al wiki per raggiungerlo), successivamente seguire il link **Feed Atom** sulla sinistra nel menu _strumenti_ e aggiungerlo al proprio lettore Feed.
+**Suggerimento:** Può risultare utile avere un *feed Atom personalizzato* per le sole pagine che state seguendo. Per ottenerlo basta andare nella pagina dei vostri [Osservati Speciali](https://wiki.archlinux.org/index.php/Special:Watchlist) (bisogna aver effettuato il login al wiki per raggiungerlo), successivamente seguire il link **Feed Atom** sulla sinistra nel menu *strumenti* e aggiungerlo al proprio lettore Feed.
 
 ### Tabella riassuntiva dei wiki revisionati e adottati
 
@@ -103,10 +103,10 @@ Le tabelle contengono cinque voci:
 1.  **Pagina** - Viene inserito il link alla pagina italiana trattata.
 2.  **Ultima revisione** - Viene inserita la data di ultima revisione e/o riallineamento. La data è in stile anglosassone: yyyy-mm-gg.
 3.  **Revisore** - L'utente che adotta la pagine immette qui il suo nome utente.
-4.  **Redirect Ita** - Vengono immessi qui i wiki con titolo italiano che hanno un _redirect_ al wiki tradotto.
-5.  **Note** - Spazio riservato a note personali dell'utente che ha in adozione l'articolo e/o ad appunti di un supervisore. Qui immettendo **Cedibile** si rende pubblica la volontà di lasciare l'adozione di un wiki (in tal caso eliminare anche il proprio nome dalla colonna _Revisore_).
+4.  **Redirect Ita** - Vengono immessi qui i wiki con titolo italiano che hanno un *redirect* al wiki tradotto.
+5.  **Note** - Spazio riservato a note personali dell'utente che ha in adozione l'articolo e/o ad appunti di un supervisore. Qui immettendo **Cedibile** si rende pubblica la volontà di lasciare l'adozione di un wiki (in tal caso eliminare anche il proprio nome dalla colonna *Revisore*).
 
-Le colonne contengono un link _rapido_ di consultazione che effettua un ordinamento alfabetico.
+Le colonne contengono un link *rapido* di consultazione che effettua un ordinamento alfabetico.
 
 #### Articoli principali
 
@@ -395,11 +395,11 @@ Al fine di ottenere una corretta formattazione degli articoli ed un contenuto co
     **Nota:** In caso di errori del template dovuto a particolari caratteri, potrebbe essere necessario aggiungere **1=** prima del contenuto . La lista aggiornata per uniformare gli stili dei contenuti, comprensiva di ogni spiegazione, è reperibile in [questo articolo](/index.php/Help:Style_(Italiano) "Help:Style (Italiano)").
 
 5.  É necessario che i link interni agli articoli vengano fatti puntare ai corrispettivi wiki italiani già tradotti. (Es. `Arch Linux utilizza [[Pacman (Italiano) | pacman]] come gestore di pacchetti....`), lo stesso discorso vale per i tag delle categorie che si trovano ad inizio articolo (es: `[[Category:Hardware detection and troubleshooting (Italiano)]]`)
-6.  Per principio di scrupolo, è necessario controllare, nell'articolo originale inglese, che non vi siano link errati di pagine italiane che puntano ancora alla pagina inglese. In questo caso bisogna andare nell'articolo originale inglese e controllare tramite la voce **puntano a qui** nel menu strumenti a sinistra, e controllare gli articoli italiani che puntano ad esso. Si consiglia di utilizzare la funziona _cerca_ del proprio browser usando come parola di ricerca _(Italiano)_.
+6.  Per principio di scrupolo, è necessario controllare, nell'articolo originale inglese, che non vi siano link errati di pagine italiane che puntano ancora alla pagina inglese. In questo caso bisogna andare nell'articolo originale inglese e controllare tramite la voce **puntano a qui** nel menu strumenti a sinistra, e controllare gli articoli italiani che puntano ad esso. Si consiglia di utilizzare la funziona *cerca* del proprio browser usando come parola di ricerca *(Italiano)*.
 7.  Per quanto riguarda le traduzioni si ricorda che **i primi revisori siete voi stessi**. Di conseguenza:
     *   Controllate l'ortografia, spesso si può incorrere in errori di battitura, come l'errata scrittura di una parola italiana (Es. naquero senza "c" , "anceh" invece di anche").
     *   Controllate che il contesto risulti corretto sia nel contenuto che nella forma e di facile comprensione, a volte nella traduzione italiana bisogna invertire le parole. Es. "Quindi i Trusted User Repositories nacquero." in "Quindi nacquero i Trusted User Repositories."
-8.  Si consiglia di **commentare sempre** le modifiche che si effettuano. Questa procedura è molto utile per capire immediatamente in cosa consistono le modifiche effettuate, utile per la consultazione da parte di altri utenti e anche di voi stessi; ovviamente in caso di grossi interventi come una traduzione completa o parziale di un articolo si può essere dispersivi sul commento (es: traduzione e/o allineamento paragrafo). Inoltre si ricorda di spuntare la casella _questa è una modifica minore_ in caso di piccoli interventi, quali correzioni di link errati, o di ortografia/stili.
+8.  Si consiglia di **commentare sempre** le modifiche che si effettuano. Questa procedura è molto utile per capire immediatamente in cosa consistono le modifiche effettuate, utile per la consultazione da parte di altri utenti e anche di voi stessi; ovviamente in caso di grossi interventi come una traduzione completa o parziale di un articolo si può essere dispersivi sul commento (es: traduzione e/o allineamento paragrafo). Inoltre si ricorda di spuntare la casella *questa è una modifica minore* in caso di piccoli interventi, quali correzioni di link errati, o di ortografia/stili.
 
 **Nota:** Si rammenta che il wiki è un progetto aperto e il nostro team non ha l'esclusiva sulle pagine da trattare, prendere l'abitudine di commentare tutti gli interventi è molto utile sia a voi stessi che ad eventuali altri utenti e/o revisori che controllano la pagina. Per ogni dubbio potete chiedere supporto sul [forum](http://www.archlinux.it/forum/viewtopic.php?f=19&t=8483)
 

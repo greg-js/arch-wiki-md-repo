@@ -1,4 +1,4 @@
-**Warning:** Arch Linux only has official support for _logind_ [[1]](https://www.archlinux.org/news/consolekit-replaced-by-logind/) and [systemd](/index.php/Systemd "Systemd"). When using _ConsoleKit_, please mention so in support requests.
+**Warning:** Arch Linux only has official support for *logind* [[1]](https://www.archlinux.org/news/consolekit-replaced-by-logind/) and [systemd](/index.php/Systemd "Systemd"). When using *ConsoleKit*, please mention so in support requests.
 
 **Note:** While Consolekit is no longer maintained upstream, the fork ConsoleKit2 is under development. [[2]](https://github.com/ConsoleKit2/ConsoleKit2)
 
@@ -45,7 +45,7 @@ This starts [Openbox](/index.php/Openbox "Openbox") with proper environment vari
 **Note:**
 
 *   Do not nest ConsoleKit sessions by calling one from another, or you will break ConsoleKit.
-*   In particular, since [SLiM](/index.php/SLiM "SLiM") reads `~/.xinitrc`, you should make sure _not_ to run `ck-launch-session` there.
+*   In particular, since [SLiM](/index.php/SLiM "SLiM") reads `~/.xinitrc`, you should make sure *not* to run `ck-launch-session` there.
 
 ### No display manager
 
@@ -104,7 +104,6 @@ This method assumes that you are given permission to shut the system down via Po
 If several applications are to be executed from `~/.xinitrc`, not all of these will have ConsoleKit environment variables set. In the following example, only children of Compiz will be able to properly use ConsoleKit, but children of xterm will not.
 
  `~/.xinitrc` 
-
 ```
 xterm &
 exec ck-launch-session compiz ccp
@@ -114,14 +113,11 @@ exec ck-launch-session compiz ccp
 Typically, this can be an issue when for example using Compiz standalone and some other application launchers, (gnome-do, kupfer, gmrun, xbindkeys, etc.) since children of the application launcher will not be able to use ConsoleKit. A dirty workaround is to have the entire session started by a second script, e.g. `~/.xstart`. Do not forget dbus-launch, it is likely that you will need it too:
 
  `~/.xinitrc` 
-
 ```
 exec ck-launch-session dbus-launch ~/.xstart
 
 ```
-
  `~/.xstart` 
-
 ```
 xterm &
 thunar &
@@ -175,7 +171,7 @@ See [[4]](https://bugs.freedesktop.org/show_bug.cgi?id=29920) for details.
 
 ### Inactive session when launching X on same TTY
 
-Specify the `keeptty` flag to _startx_ or _xinit_ [[5]](http://www.linuxquestions.org/questions/slackware-14/starting-xorg-on-same-vt-as-login-vt-while-keeping-active-consolekit-session-4175533711/), for example:
+Specify the `keeptty` flag to *startx* or *xinit* [[5]](http://www.linuxquestions.org/questions/slackware-14/starting-xorg-on-same-vt-as-login-vt-while-keeping-active-consolekit-session-4175533711/), for example:
 
 ```
 startx -- -keeptty
@@ -186,7 +182,7 @@ See also [Xorg#Broken redirection](/index.php/Xorg#Broken_redirection "Xorg").
 
 ## Replacing ConsoleKit with systemd-logind
 
-**Note:** _systemd-logind_ requires booting with [systemd](/index.php/Systemd "Systemd") to be functional.
+**Note:** *systemd-logind* requires booting with [systemd](/index.php/Systemd "Systemd") to be functional.
 
 Remove references to `ck-launch-session` from `~/.xinitrc`.
 

@@ -91,7 +91,7 @@ qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.removeSession 10
 
 ### dbus-send instead of qdbus
 
-You can replace _qdbus_ bundled with [Qt](/index.php/Qt "Qt") with more common _dbus-send_. For example, to show/hide Yakuake:
+You can replace *qdbus* bundled with [Qt](/index.php/Qt "Qt") with more common *dbus-send*. For example, to show/hide Yakuake:
 
 ```
 $ dbus-send  --type=method_call --dest=org.kde.yakuake /yakuake/window org.kde.yakuake.toggleWindowState

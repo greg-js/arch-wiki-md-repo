@@ -15,7 +15,7 @@ There are two popular ways of configuring a Linux terminal to work transparently
 
 ## The Easy Way
 
-[Tilda](http://sourceforge.net/projects/tilda/) is a highly customizable Linux terminal window. The author is inspired by classical terminals featured in _first person shooter games, Quake, Doom and Half-Life to name a few, where the terminal has no border and is hidden from the desktop till a key or keys are pressed._ In our example we will install it and give a basic terminal.
+[Tilda](http://sourceforge.net/projects/tilda/) is a highly customizable Linux terminal window. The author is inspired by classical terminals featured in *first person shooter games, Quake, Doom and Half-Life to name a few, where the terminal has no border and is hidden from the desktop till a key or keys are pressed.* In our example we will install it and give a basic terminal.
 
 ```
 # pacman -S tilda
@@ -27,14 +27,14 @@ In Gnome you can locate it under Applications –> Accessories –> Tilda.
 To achieve our desired look we will need to edit the default configurations:
 
 ```
-Under _General_ tab, **uncheck** "Always on Top".
+Under *General* tab, **uncheck** "Always on Top".
 
-Under _Appearance_ you can edit the **height** and **width** to your liking,
+Under *Appearance* you can edit the **height** and **width** to your liking,
  but make sure you **check** "Enable Transparency" and make the "Level of Transparency" **100%**.
 
-Under _Colors_ tab, **chose** "Green on Black" or "Personalize".
+Under *Colors* tab, **chose** "Green on Black" or "Personalize".
 
-Under _Scrolling_ you must **select** "Disabled".
+Under *Scrolling* you must **select** "Disabled".
 
 ```
 
@@ -59,7 +59,7 @@ Et voila, you got a transparent terminal the size of your choice on your Desktop
 
 ### Gnome
 
-With the use of [devilspie](http://www.burtonini.com/blog/computers/devilspie) we will have more control over the placement and the behavior over the terminal window. What is Devilspie? _Devil's Pie can be configured to detect windows as they are created, and match the window to a set of rules. If the window matches the rules, it can perform a series of actions on that window. For example, I can make all windows created by X-Chat appear on all workspaces, and the main Gkrellm1 window does not appear in the pager or task list._
+With the use of [devilspie](http://www.burtonini.com/blog/computers/devilspie) we will have more control over the placement and the behavior over the terminal window. What is Devilspie? *Devil's Pie can be configured to detect windows as they are created, and match the window to a set of rules. If the window matches the rules, it can perform a series of actions on that window. For example, I can make all windows created by X-Chat appear on all workspaces, and the main Gkrellm1 window does not appear in the pager or task list.*
 
 #### Step 1
 
@@ -79,7 +79,7 @@ $ mkdir ~/.devilspie
 
 ```
 
-Make a configuration file with the extension _.ds_, inside devilspie folder. This is where devilspie looks for config file by default when it starts up. Edit the config file with your favorite editor, to dress up the terminal window the way you want it to look like.
+Make a configuration file with the extension *.ds*, inside devilspie folder. This is where devilspie looks for config file by default when it starts up. Edit the config file with your favorite editor, to dress up the terminal window the way you want it to look like.
 
 ```
 $ nano ~/.devilspie/DesktopConsole.ds
@@ -114,13 +114,13 @@ Open a gnome-terminal window go to Edit –> Profile –> New. Name it DesktopCo
 Edit the Profile, to achieve our desired look we will need to edit the default configurations:
 
 ```
-Under _General_ tab, **uncheck** "Show menubar by default in new terminals".
+Under *General* tab, **uncheck** "Show menubar by default in new terminals".
 
-Under _Colors_ tab, **choose** "Green on Black" (choose whatever you like, i like this).
+Under *Colors* tab, **choose** "Green on Black" (choose whatever you like, i like this).
 
-Under _Effects_ tab, **choose** "Transparent background". Make sure the scroll is set to "None".
+Under *Effects* tab, **choose** "Transparent background". Make sure the scroll is set to "None".
 
-Under _Scrolling_ tab, **select** "Disabled".
+Under *Scrolling* tab, **select** "Disabled".
 
 ```
 
@@ -144,7 +144,7 @@ You can customize more to fit your needs and style, have more than one terminal;
 
 ### Xfce4
 
-Using _wmctrl_ this can be achieved with the default _xfce4-terminal's_ command line options. The sample script below is rather self-explanatory...
+Using *wmctrl* this can be achieved with the default *xfce4-terminal's* command line options. The sample script below is rather self-explanatory...
 
 ```
 #!/bin/bash
@@ -157,6 +157,6 @@ wmctrl -r desktopconsole -b add,skip_taskbar,skip_pager
 
 **Note:** A more revised version of this script can be found here [https://bbs.archlinux.org/viewtopic.php?id=154094](https://bbs.archlinux.org/viewtopic.php?id=154094)
 
-By naming the the terminal with _--title_ one can easily identify it's window and add/remove properties through _wmctrl_ accordingly. Setting the size and possition with the _--geometry_ option follows this rule: (Width-in-characters)x(height-in-charactors)+x+y where x and y are the position in pixels offset from the upper-left corner of the display (which starts at +0+0). transparency and disabling the scrollbar can be set through the terminal's _preferences_ menu under the _appearance_ and _general_ tabs. Once the user has the script customized to their needs or wants they can simply mark it as executable (or chmod a+x /path/to/script.sh) then add it to their startup under _Applications Menu > Settings > Session and Startup > Applications Autostart_.
+By naming the the terminal with *--title* one can easily identify it's window and add/remove properties through *wmctrl* accordingly. Setting the size and possition with the *--geometry* option follows this rule: (Width-in-characters)x(height-in-charactors)+x+y where x and y are the position in pixels offset from the upper-left corner of the display (which starts at +0+0). transparency and disabling the scrollbar can be set through the terminal's *preferences* menu under the *appearance* and *general* tabs. Once the user has the script customized to their needs or wants they can simply mark it as executable (or chmod a+x /path/to/script.sh) then add it to their startup under *Applications Menu > Settings > Session and Startup > Applications Autostart*.
 
-**Note:** _Wmctrl_ is intended for use with Window managers which meet the EWMH/NetWM specifications. The following was tested only on Xfce4 with Xfwm4 so it is unconfirmed whether it will work with other desktop environments/window managers correctly as of this writing. For a list on environments which wmctrl may work with visit [http://en.wikipedia.org/wiki/Wmctrl](http://en.wikipedia.org/wiki/Wmctrl)
+**Note:** *Wmctrl* is intended for use with Window managers which meet the EWMH/NetWM specifications. The following was tested only on Xfce4 with Xfwm4 so it is unconfirmed whether it will work with other desktop environments/window managers correctly as of this writing. For a list on environments which wmctrl may work with visit [http://en.wikipedia.org/wiki/Wmctrl](http://en.wikipedia.org/wiki/Wmctrl)

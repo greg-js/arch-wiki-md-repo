@@ -76,4 +76,4 @@ reboot
 
 Сподіваюсь це покриває всі питання з якими ви можете зіткнутись. Якщо ви отримуєте якісь інші помилки, перезавантажтесь та повторіть інструкцію знову, крок за кроком.
 
-Сподіваюсь вас це полікувало! ;) — _[Shadowhand](/index.php?title=User:Shadowhand&action=edit&redlink=1 "User:Shadowhand (page does not exist)")_
+Сподіваюсь вас це полікувало! ;) — *[Shadowhand](/index.php?title=User:Shadowhand&action=edit&redlink=1 "User:Shadowhand (page does not exist)")*

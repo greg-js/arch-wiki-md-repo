@@ -30,7 +30,6 @@ Copy the template configuration file to a custom directory:
 Update the configuration before starting NZBGet:
 
  `/var/lib/nzbget/.nzbget` 
-
 ```
 ..
 WebDir=/usr/share/nzbget/webui
@@ -68,7 +67,6 @@ For better security it is better to run NZBGet under a [system user](/index.php/
 After adding a system user, update the main configuration file using the webinterface or by editing the config file:
 
  `/var/lib/nzbget/.nzbget` 
-
 ```
 ..
 DaemonUsername=nzbget # system user
@@ -85,7 +83,7 @@ Create and set permissions for the desired directories:
 
 ```
 
-The `/home/user/Downloads/NZBGet` will be accessible for the user `nzbget` and for the `nzbget` group. Making the target directory world read/writable is highly discouraged (i.e. do not _chmod_ the directory to _777_). Instead, give individual users/groups appropriate permissions to the appropriate directories (e.g. by adding 'yourself' to the `nzbget` group).
+The `/home/user/Downloads/NZBGet` will be accessible for the user `nzbget` and for the `nzbget` group. Making the target directory world read/writable is highly discouraged (i.e. do not *chmod* the directory to *777*). Instead, give individual users/groups appropriate permissions to the appropriate directories (e.g. by adding 'yourself' to the `nzbget` group).
 
 Starting NZBGet as user `nzbget` in daemon-mode, or start NZBGet by using the `nzbget.service` if installed with the [nzbget-systemd](https://aur.archlinux.org/packages/nzbget-systemd/) instead:
 
@@ -109,7 +107,6 @@ This may happen when the user edited the NZBGet configuration by the Web-interfa
 The following `nzbget.service` provides an alternative solution for (re)starting NZBGet when using [systemd](/index.php/Systemd "Systemd"):
 
  `/usr/lib/systemd/system/nzbget.service` 
-
 ```
 [Unit]
 Description=NZBGet Daemon

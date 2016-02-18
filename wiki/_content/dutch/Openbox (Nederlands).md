@@ -76,7 +76,7 @@ $ cp /etc/xdg/openbox/menu.xml ~/.config/openbox/menu.xml
 
 ```
 
-_**Let op:**Doe dit als gewone gebruiker, niet als root_
+***Let op:**Doe dit als gewone gebruiker, niet als root*
 
 <tt>rc.xml</tt> is het belangrijkste configuratiebestand voor Openbox. Het wordt gebruikt om keyboard snelkoppelingen te beheren en instellingen voor thema's, virtuele desktops en andere features te bewaren.
 
@@ -218,7 +218,7 @@ Om Obconf te installeren, voer je als gebruiker root het volgende commando uit:
 
 ```
 
-_**Let op:**_ObConf kan niet worden gebruikt om keyboard snelkoppelingen en een aantal andere geadvanceerde features te wijzigen. Voor deze wijzigingen moet je **rc.xml** handmatig aanpassen (zie boven).
+***Let op:***ObConf kan niet worden gebruikt om keyboard snelkoppelingen en een aantal andere geadvanceerde features te wijzigen. Voor deze wijzigingen moet je **rc.xml** handmatig aanpassen (zie boven).
 
 ### Menu beheer
 
@@ -283,7 +283,7 @@ Voeg de onderstaande regel aan **~/.config/openbox/menu.xml** toe, om obm-xdg te
 
 Voer vervolgens **openbox --reconfigure** uit, om het Openbox menu te verversen. Je zou nu een sub-menu met de titel **xdg** moeten zien.
 
-_**LET OP:** Indien je GNOME niet geinstalleerd hebt, moet je **gnome-menus** installeren om obm-xdg te laten werken._
+***LET OP:** Indien je GNOME niet geinstalleerd hebt, moet je **gnome-menus** installeren om obm-xdg te laten werken.*
 
 ### Programma's uitvoeren tijdens opstarten
 
@@ -291,8 +291,8 @@ Openbox heeft ondersteuning voor het uitvoeren van programma's tijdens het opsta
 
 Er zijn twee manieren om autostart te activeren:
 
-1.  Als je startx of xinit gebruikt om in te loggen op je X sessie, wijzig dan ~/.xinitrc en verander de regel die _openbox_ uitvoert naar **openbox-session**.
-2.  Indien je inlogt met GDM of KDM, selecteer dan _Openbox_ uit het sessie-menu, en autostart wordt automatisch gebruikt.
+1.  Als je startx of xinit gebruikt om in te loggen op je X sessie, wijzig dan ~/.xinitrc en verander de regel die *openbox* uitvoert naar **openbox-session**.
+2.  Indien je inlogt met GDM of KDM, selecteer dan *Openbox* uit het sessie-menu, en autostart wordt automatisch gebruikt.
 
 Programma's die moeten worden opgestart worden beheerd in **~/.config/openbox/autostart.sh**. Instructies voor het automatisch opstarten zijn beschikbaar op de [Openbox website](http://icculus.org/openbox/index.php/Help:Autostart).
 
@@ -342,7 +342,7 @@ Openbox biedt zelf geen manier om de bureaubladachtergrond te wijzigen. Dit kan 
 
 ###### GTK2/GTK+
 
-GTK+ thema's kunnen makkelijk worden beheerd met _[lxappearance](/index.php/LXDE "LXDE")_, _gtk-chtheme_ of _switch2_. Laatstgenoemden kunnen geinstalleerd worden met:
+GTK+ thema's kunnen makkelijk worden beheerd met *[lxappearance](/index.php/LXDE "LXDE")*, *gtk-chtheme* of *switch2*. Laatstgenoemden kunnen geinstalleerd worden met:
 
 ```
 # pacman -S lxappearance
@@ -521,7 +521,7 @@ Maak vervolgens ~/.fonts.conf en voeg het volgende toe:
 
 ##### dmenu
 
-Configureer dmenu, zoals beschreven in [dmenu](/index.php/Dmenu "Dmenu"). Voeg vervolgens de volgende regel toe aan het <keyboard>-gedeelte van '_**~/.config/openbox/rc.xml** om een snelkoppeling te activeren voor dmenu:_
+Configureer dmenu, zoals beschreven in [dmenu](/index.php/Dmenu "Dmenu"). Voeg vervolgens de volgende regel toe aan het <keyboard>-gedeelte van '***~/.config/openbox/rc.xml** om een snelkoppeling te activeren voor dmenu:*
 
 ```
    <keybind key="W-p">
@@ -717,7 +717,7 @@ Wijzig vervolgens je **.config/openbox/rc.xml** bestand:
 
 ```
 
-De _magie_ komt van de **<layer>below</layer>** regel, welke de applicatie onder alle andere applicaties plaatst. Hier is Urxvt weergegeven op alle virtuele desktop, verander dit indien gewenst.
+De *magie* komt van de **<layer>below</layer>** regel, welke de applicatie onder alle andere applicaties plaatst. Hier is Urxvt weergegeven op alle virtuele desktop, verander dit indien gewenst.
 
 ## Extra informatie
 

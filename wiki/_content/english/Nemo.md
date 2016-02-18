@@ -50,7 +50,7 @@ See [nemo-extensions github repo](https://github.com/linuxmint/nemo-extensions) 
 
 ## Configuration
 
-Nemo is simple to configure graphically but not all options are in the preferences screen in Nemo. More options are available in the _dconf-editor_ under `org.nemo`. To set Nemo as the default file browser, see [Xdg-open#Set the default file-browser](/index.php/Xdg-open#Set_the_default_file-browser "Xdg-open").
+Nemo is simple to configure graphically but not all options are in the preferences screen in Nemo. More options are available in the *dconf-editor* under `org.nemo`. To set Nemo as the default file browser, see [Xdg-open#Set the default file-browser](/index.php/Xdg-open#Set_the_default_file-browser "Xdg-open").
 
 ### Show / hide desktop icons
 
@@ -67,7 +67,7 @@ This fixes the console warning `WARNING **: Can not determine workarea, guessing
 
 [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) is set as the default, if it is not installed this feature will not work.
 
-Alternatively, change the default setting with _gsettings_ to the preferred terminal application.
+Alternatively, change the default setting with *gsettings* to the preferred terminal application.
 
 ```
 $ gsettings set org.cinnamon.desktop.default-applications.terminal exec <terminal-name>
@@ -88,7 +88,6 @@ Pay attention to the name convention. Your file has to preserve the file ending 
 #### Clam Scan
 
  `$HOME/.local/share/nemo/actions/clamscan.nemo_action` 
-
 ```
 [Nemo Action]
 Name=Clam Scan
@@ -106,7 +105,6 @@ Extensions=dir;exe;dll;zip;gz;7z;rar;
 #### Moving files
 
  `$HOME/.local/share/nemo/actions/archive.nemo_action` 
-
 ```
 [Nemo Action]
 Active=true
@@ -116,9 +114,7 @@ Exec=<archive.py %F>
 Selection=S
 Extensions=any;
 ```
-
  `$HOME/.local/share/nemo/actions/archive.py` 
-
 ```
 #! /usr/bin/python2 -OOt
 import sys
@@ -140,7 +136,6 @@ for arg in sys.argv:
 #### Meld compare
 
  `$HOME/.local/share/nemo/actions/compare-save-for-later.nemo_action` 
-
 ```
 [Nemo Action]
 Active=true
@@ -151,9 +146,7 @@ Icon-Name=meld
 Selection=S
 Extensions=any
 ```
-
  `$HOME/.local/share/nemo/actions/compare-with-saved.nemo_action` 
-
 ```
 [Nemo Action]
 Active=true
@@ -164,9 +157,7 @@ Icon-Name=meld
 Selection=S
 Extensions=any
 ```
-
  `$HOME/.local/share/nemo/actions/compare.sh` 
-
 ```
 #!/bin/bash
 savedfile=/var/tmp/compare-save-for-later.$USER

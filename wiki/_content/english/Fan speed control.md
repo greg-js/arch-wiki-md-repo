@@ -22,7 +22,6 @@ In `/etc/conf.d/lm_sensors` you find the modules. If not there, run as root `sen
 Set up [lm_sensors](/index.php/Lm_sensors "Lm sensors").
 
  `$ sensors` 
-
 ```
 coretemp-isa-0000
 Adapter: ISA adapter
@@ -92,8 +91,8 @@ The rest of the configuration file is split into (at least) two values per confi
 
 *   `FCTEMPS`: The temperature input device to read for CPU temperature. The above example corresponds to `/sys/class/hwmon/hwmon0/device/temp1_input`.
 *   `FCFANS`: The current fan speed, which can be read (like the temperature) in `/sys/class/hwmon/hwmon0/device/fan1_input`
-*   `MINTEMP`: The temperature (°C) at which to **SHUT OFF** the CPU fan. Efficient CPUs often will not need a fan while idling. Be sure to set this to a temperature that _you know is safe_. Setting this to 0 is not recommended and may ruin your hardware!
-*   `MAXTEMP`: The temperature (°C) at which to spin the fan at its _MAXIMUM_ speed. This should be probably be set to perhaps 10 or 20 degrees (°C) below your CPU's critical/shutdown temperature. Setting it closer to MINTEMP will result in higher fan speeds overall.
+*   `MINTEMP`: The temperature (°C) at which to **SHUT OFF** the CPU fan. Efficient CPUs often will not need a fan while idling. Be sure to set this to a temperature that *you know is safe*. Setting this to 0 is not recommended and may ruin your hardware!
+*   `MAXTEMP`: The temperature (°C) at which to spin the fan at its *MAXIMUM* speed. This should be probably be set to perhaps 10 or 20 degrees (°C) below your CPU's critical/shutdown temperature. Setting it closer to MINTEMP will result in higher fan speeds overall.
 *   `MINSTOP`: The PWM value at which your fan stops spinning. Each fan is a little different. Power tweakers can `echo` different values (between 0 and 255) to `/sys/class/hwmon/hwmon0/device/pwm1` and then watch the CPU fan. When the CPU fan stops, use this value.
 *   `MINSTART`: The PWM value at which your fan starts to spin again. This is often a higher value than MINSTOP as more voltage is required to overcome inertia.
 
@@ -102,31 +101,29 @@ There are also two settings fancontrol needs to verify the configuration file is
 *   `DEVPATH`: Sets the physical device. You can determine this by executing the command
 
 ```
-readlink -f /sys/class/hwmon/_hwmon-device_/device | sed -e 's/^\/sys\///'
+readlink -f /sys/class/hwmon/*hwmon-device*/device | sed -e 's/^\/sys\///'
 
 ```
 
 *   `DEVNAME`: Sets the name of the device. Try:
 
 ```
-$ sed -e 's/[[:space:]=]/_/g' /sys/class/hwmon/_hwmon-device_/device/name
+$ sed -e 's/[[:space:]=]/_/g' /sys/class/hwmon/*hwmon-device*/device/name
 
 ```
 
 **Tip:** Use `MAXPWM` and `MINPWM` options that limit fan speed range. See fancontrol manual page for details.
 
 **Tip:** Not only the `DEVPATH` may change on reboot due to different timing of module loading, but also e.g. the temperature sensor paths (hwmon0/device/temp1_input becomes hwmon0/temp1_input). This usually happens on a kernel update. Check the system log to find out which is the troublemaker:
-
 ```
 # systemctl status fancontrol.service
 
 ```
-
 and correct your config file accordingly.
 
 ## fancontrol
 
-Try to run _fancontrol_:
+Try to run *fancontrol*:
 
 ```
 # /usr/bin/fancontrol
@@ -137,7 +134,7 @@ A properly configured setup will not error out and will take control of system f
 
 **Note:** For Dell Latitude/Inspiron laptops, [i8kutils](https://aur.archlinux.org/packages/i8kutils/) is available. The `i8k` kernel module is known to have issues on several models.
 
-To make _fancontrol_ start automatically on every boot, [enable](/index.php/Enable "Enable") `fancontrol.service`.
+To make *fancontrol* start automatically on every boot, [enable](/index.php/Enable "Enable") `fancontrol.service`.
 
 For the `i8kmon` service to be capable of controlling the fan, the `auto` config option needs to be set to `1` in `/etc/i8kutils/i8kmon.conf`.
 

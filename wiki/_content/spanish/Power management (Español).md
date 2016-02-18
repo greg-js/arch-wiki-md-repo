@@ -33,7 +33,7 @@ También hay muchas herramientas de administración de energía:
 
 ### Eventos de ACPI
 
-Systemd puede manejar algunos eventos [ACPI](https://en.wikipedia.org/wiki/es:Advanced_Configuration_and_Power_Interface "wikipedia:es:Advanced Configuration and Power Interface") (_«Interfaz Avanzada de Configuración y Energía»_) relacionados con la energía. Esto se configura a través de las siguientes opciones en `/etc/systemd/logind.conf`:
+Systemd puede manejar algunos eventos [ACPI](https://en.wikipedia.org/wiki/es:Advanced_Configuration_and_Power_Interface "wikipedia:es:Advanced Configuration and Power Interface") (*«Interfaz Avanzada de Configuración y Energía»*) relacionados con la energía. Esto se configura a través de las siguientes opciones en `/etc/systemd/logind.conf`:
 
 *   `HandlePowerKey`: especifica qué acción se invoca cuando el botón de encendido se pulsa.
 *   `HandleSuspendKey`: especifica qué acción se invoca cuando se pulsa el botón de suspensión.
@@ -57,22 +57,21 @@ En la versión actual de systemd, las opciones `Handle*` se aplican a todo el si
 
 ### Suspensión e hibernación
 
-_systemd_ proporciona órdenes para suspender en RAM, hibernar y una suspensión hibrida usando le funcionalidad de suspensión/reanudación nativa del kernel. También existen mecanismos para agregar hooks para personalizar las acciones de pre y post-suspensión.
+*systemd* proporciona órdenes para suspender en RAM, hibernar y una suspensión hibrida usando le funcionalidad de suspensión/reanudación nativa del kernel. También existen mecanismos para agregar hooks para personalizar las acciones de pre y post-suspensión.
 
-**Nota:** _systemd_ también puede utilizar otros [backends](https://en.wikipedia.org/wiki/es:Front-end_y_back-end "wikipedia:es:Front-end y back-end") (como por ejemplo [Uswsusp](/index.php/Uswsusp "Uswsusp") o [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")), en conjunción con el banckend por defecto del _kernel_, con el fin de poner el ordenador a dormir o hibernar. Véase [Uswsusp#With systemd](/index.php/Uswsusp#With_systemd "Uswsusp") para obtener un ejemplo.
+**Nota:** *systemd* también puede utilizar otros [backends](https://en.wikipedia.org/wiki/es:Front-end_y_back-end "wikipedia:es:Front-end y back-end") (como por ejemplo [Uswsusp](/index.php/Uswsusp "Uswsusp") o [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")), en conjunción con el banckend por defecto del *kernel*, con el fin de poner el ordenador a dormir o hibernar. Véase [Uswsusp#With systemd](/index.php/Uswsusp#With_systemd "Uswsusp") para obtener un ejemplo.
 
 `systemctl suspend` debería funcionar tras su instalación, sin embargo, para que `systemctl hibernate` pueda trabajar en su sistema debe seguir las instrucciones de [Suspend and hibernate#Hibernation](/index.php/Suspend_and_hibernate#Hibernation "Suspend and hibernate").
 
 ### Sleep hooks
 
-Systemd no utiliza [pm-utils](/index.php/Pm-utils "Pm-utils") para poner la máquina en reposo cuando usa `systemctl suspend`, `systemctl hibernate` o `systemctl hybrid-sleep`; los hooks _pm-utils_, incluyendo cualesquiera [hooks personalizados](/index.php/Pm-utils#Creating_your_own_hooks "Pm-utils") que se hayan creado, no se ejecutarán. Sin embargo, systemd proporciona dos mecanismos similares para ejecutar scripts personalizados para estos eventos.
+Systemd no utiliza [pm-utils](/index.php/Pm-utils "Pm-utils") para poner la máquina en reposo cuando usa `systemctl suspend`, `systemctl hibernate` o `systemctl hybrid-sleep`; los hooks *pm-utils*, incluyendo cualesquiera [hooks personalizados](/index.php/Pm-utils#Creating_your_own_hooks "Pm-utils") que se hayan creado, no se ejecutarán. Sin embargo, systemd proporciona dos mecanismos similares para ejecutar scripts personalizados para estos eventos.
 
 #### Archivos de servicios para suspender/reanudar
 
 Los archivos de servicios pueden ser asociados a suspend.target, hibernate.target y sleep.target para ejecutar acciones antes o después de suspender/hibernar. Deben crearse archivos separados para las acciones del usuario y las acciones de root/sistema. Para activar los archivos de servicios del usuario, ejecute: `# systemctl enable suspend@<usuario> && systemctl enable resume@<usuario>`. Ejemplos:
 
  `/etc/systemd/system/suspend@.service` 
-
 ```
 [Unit]
 Description=User suspend actions
@@ -88,9 +87,7 @@ ExecStart=/usr/bin/sflock
 [Install]
 WantedBy=sleep.target
 ```
-
  `/etc/systemd/system/resume@.service` 
-
 ```
 [Unit]
 Description=User resume actions
@@ -109,7 +106,6 @@ WantedBy=suspend.target
 Para las acciones de root/sistema (se activa con `# systemctl enable root-suspend`):
 
  `/etc/systemd/system/root-suspend.service` 
-
 ```
 [Unit]
 Description=Local system resume actions
@@ -122,9 +118,7 @@ ExecStart=/usr/bin/systemctl restart mnt-media.automount
 [Install]
 WantedBy=suspend.target
 ```
-
  `/etc/systemd/system/root-resume.service` 
-
 ```
 [Unit]
 Description=Local system suspend actions
@@ -151,7 +145,6 @@ Con el archivo de servicio que combina suspender/reanudar, un solo hook puede ha
 He aquí un ejemplo y su explicación:
 
  `/etc/systemd/system/wicd-sleep.service` 
-
 ```
 [Unit]
 Description=Wicd sleep hook
@@ -193,7 +186,6 @@ Las salidas de cualquier script personalizado se registrarán por `systemd-suspe
 He aquí un ejemplo de script de sleep personalizado:
 
  `/usr/lib/systemd/system-sleep/example.sh` 
-
 ```
 #!/bin/sh
 case $1/$2 in
@@ -224,7 +216,7 @@ Véanse `man 7 systemd.special` y `man 8 systemd-sleep` para obtener más inform
 
 ```
 
-Donde _#Nr_:
+Donde *#Nr*:
 
 *   **1**: activa rc6
 *   **3**: activa rc6 y profundiza rc6

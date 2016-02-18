@@ -44,7 +44,7 @@ curlftpfs#USER:PASSWORD@ftp.domain.org /mnt/mydomainorg fuse auto,user,uid=1000,
 
 ```
 
-**Tip:** You can use codepage="_string_" when having problems with non-US English characters on servers that do not support UTF8, e.g. codepage="iso8859-1"
+**Tip:** You can use codepage="*string*" when having problems with non-US English characters on servers that do not support UTF8, e.g. codepage="iso8859-1"
 
 To prevent the password to be shown in the process list, create a `.netrc` file in the home directory of the user running curlftpfs and `chmod 600` with the following content:
 

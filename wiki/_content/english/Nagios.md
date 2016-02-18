@@ -308,7 +308,7 @@ define service{
 
 Quote from the check_rdiff script content:
 
-_The above command checks the repository (-r) which is defined as the destination of the backup, or more specifically, the directory above the rdiff-backup-data directory. It will return warning if the backup has not finished by 8am and critical by 10am. It will also return warning if the TotalDestinationSizeChange is greater than 500Mb. It also get the period set to 24hrs (-p). This is important as the plugin will throw a critical if the backup does not start in time._
+*The above command checks the repository (-r) which is defined as the destination of the backup, or more specifically, the directory above the rdiff-backup-data directory. It will return warning if the backup has not finished by 8am and critical by 10am. It will also return warning if the TotalDestinationSizeChange is greater than 500Mb. It also get the period set to 24hrs (-p). This is important as the plugin will throw a critical if the backup does not start in time.*
 
 Finally, restart nagios:
 

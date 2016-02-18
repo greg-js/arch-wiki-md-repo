@@ -61,7 +61,7 @@ In questa modalità, Bash effettua il source dei file di avvio ed entrerà in **
 *   `~/.bash_profile`
 *   `~/.bash_login`
 *   `~/.profile`
-*   `/etc/bash.bashrc` (_Non-standard_: solo alcune distro, Arch inclusa)
+*   `/etc/bash.bashrc` (*Non-standard*: solo alcune distro, Arch inclusa)
 *   `~/.bashrc`
 *   `~/.bash_logout`
 
@@ -366,7 +366,7 @@ fortune -a | fmt -80 -s | cowsay -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1
            o  
               ,'``.._   ,'``.
              :,--._:)\,:,._,.:
-             :`--,_@@@:`...';\_ 
+             :`--,*@@@:`...';\* 
               `,'@@@@@@@`---'@@`.     
               /@@@@@@@@@@@@@@@@@:
              /@@@@@@@@@@@@@@@@@@@\

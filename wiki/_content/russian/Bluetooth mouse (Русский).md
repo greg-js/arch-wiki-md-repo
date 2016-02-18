@@ -19,7 +19,7 @@
 
 ## Установка
 
-Установите пакет [bluez](https://www.archlinux.org/packages/?name=bluez), содержащий текущий bluetooth-стек (Bluez5) для Linux. Также может понадобиться установить пакет [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils), который предоставляет утилиту _bluetoothctl_. Для получения дополнительной информации смотрите статью [Bluetooth](/index.php/Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bluetooth (Русский)").
+Установите пакет [bluez](https://www.archlinux.org/packages/?name=bluez), содержащий текущий bluetooth-стек (Bluez5) для Linux. Также может понадобиться установить пакет [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils), который предоставляет утилиту *bluetoothctl*. Для получения дополнительной информации смотрите статью [Bluetooth](/index.php/Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bluetooth (Русский)").
 
 Если вам необходимо работать со старым bluetooth-стеком (Bluez4), установите пакет [bluez4](https://aur.archlinux.org/packages/bluez4/). Для получения более подробной информации прочтите статью [Bluez4](/index.php/Bluez4 "Bluez4").
 
@@ -29,9 +29,9 @@
 
 **Совет:** Убедитесь, что bluetooth-демон запущен, прежде чем продолжить.
 
-Bluez5 предоставляет утилиту _bluetoothctl_, которая имеет простой интерфейс для настройки bluetooth-подключений.
+Bluez5 предоставляет утилиту *bluetoothctl*, которая имеет простой интерфейс для настройки bluetooth-подключений.
 
-Вот пример подключения bluetooth-мыши с помощью _bluetoothctl_:
+Вот пример подключения bluetooth-мыши с помощью *bluetoothctl*:
 
 ```
 # bluetoothctl
@@ -51,7 +51,7 @@ Device <MAC-адрес мыши> Name: Bluetooth Mouse
 
 Для того, чтобы подключать девайс при загрузке, вам может понадобиться создать правило [udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)"). Смотрите [Bluetooth (Русский)#Bluetoothctl](/index.php/Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Bluetoothctl "Bluetooth (Русский)") для дополнительной информации.
 
-**Совет:** В случае, если вы использовали USB Bluetooth донгл и переместили его в другой USB порт, вам может понадобиться удалить MAC адрес мыши в _bluetoothctl_ командой _remove <mouse mac>_ и повторить всю процедуру заново.
+**Совет:** В случае, если вы использовали USB Bluetooth донгл и переместили его в другой USB порт, вам может понадобиться удалить MAC адрес мыши в *bluetoothctl* командой *remove <mouse mac>* и повторить всю процедуру заново.
 
 ## Инструкции для Bluez4
 
@@ -71,7 +71,6 @@ Device <MAC-адрес мыши> Name: Bluetooth Mouse
 Следующая команда отобразит ваш bluetooth-адаптер:
 
  `# hciconfig` 
-
 ```
 hci0:  Type: BR/EDR  Bus: USB
        BD Address: 00:22:43:E1:82:E0  ACL MTU: 1021:8  SCO MTU: 64:1
@@ -94,7 +93,6 @@ hci0:  Type: BR/EDR  Bus: USB
 Сперва вы должны сделать мышь видимой. Для этого некоторые модели требуют нажатия на кнопку. Затем выполните следующую команду:
 
  `# hcitool scan` 
-
 ```
 Scanning ...
         00:07:61:F5:5C:3D       Logitech Bluetooth Mouse M555b
@@ -137,7 +135,7 @@ hidd --show
 
 ```
 # Arguments to hidd
-HIDD_OPTIONS="--connect <_MAC-адрес мыши_>"
+HIDD_OPTIONS="--connect <*MAC-адрес мыши*>"
 
 ```
 
@@ -155,7 +153,7 @@ hidd --killall (drop mouse connection)
 Если вы используете старую версию пакетов, то, для подключения мыши при загрузке, добавьте:
 
 ```
-hidd --connect <_MAC-адрес мыши (строчными буквами)_>
+hidd --connect <*MAC-адрес мыши (строчными буквами)*>
 
 ```
 

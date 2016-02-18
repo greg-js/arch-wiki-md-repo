@@ -16,7 +16,7 @@ A better solution that works on all DEs I've tested (XFCE,Gnome, Cinnamon) is us
 
 There is another solution here: [https://bbs.archlinux.org/viewtopic.php?id=132044](https://bbs.archlinux.org/viewtopic.php?id=132044)
 
-Another possibility is using a custom xorg configuration file. _(Ignored by Gnome 3.16+)_
+Another possibility is using a custom xorg configuration file. *(Ignored by Gnome 3.16+)*
 
 In a terminal type:
 

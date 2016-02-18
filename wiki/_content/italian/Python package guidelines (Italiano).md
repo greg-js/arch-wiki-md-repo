@@ -7,13 +7,13 @@
 
 ## Nomenclatura del pacchetto
 
-Per le librerie, utilizzare `python-_modulename_`. Per le applicazioni, usare il nome del programma. In ogni caso, il nome del pacchetto dovrà essere scritto completamente in minuscolo.
+Per le librerie, utilizzare `python-*modulename*`. Per le applicazioni, usare il nome del programma. In ogni caso, il nome del pacchetto dovrà essere scritto completamente in minuscolo.
 
-Le librerie scritte in Python 2 devono essere nominate `python2-_modulename_`.
+Le librerie scritte in Python 2 devono essere nominate `python2-*modulename*`.
 
 ## Posizionamento dei file
 
-Molti pacchetti python sono installati tramite il sistema [distutils](http://docs.python.org/library/distutils.html) utilizzando **setup.py**, che installa i file nella directory `/usr/lib/python_<python version>_/site-packages/_pkgname_`.
+Molti pacchetti python sono installati tramite il sistema [distutils](http://docs.python.org/library/distutils.html) utilizzando **setup.py**, che installa i file nella directory `/usr/lib/python*<python version>*/site-packages/*pkgname*`.
 
 ## Note
 

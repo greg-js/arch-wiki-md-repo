@@ -50,7 +50,6 @@ $ scanimage --format=tiff > test.tiff
 Si el escaneo falla con el mensaje `scanimage: sane_start: Invalid argument`, puede que tenga que especificar el dispositivo:
 
  `$ scanimage -L` 
-
 ```
 device `v4l:/dev/video0' is a Noname Video WebCam virtual device
 device `pixma:04A91749_247936' is a CANON Canon PIXMA MG5200 multi-function peripheral
@@ -121,7 +120,7 @@ Ejemplo:
 
 ### Para hardware Epson
 
-Para instalar escáneres epson via Wi-Fi y/o red, puede usar «_Image Scan_ para Linux».
+Para instalar escáneres epson via Wi-Fi y/o red, puede usar «*Image Scan* para Linux».
 
 Instale [iscan](https://www.archlinux.org/packages/?name=iscan) y [iscan-plugin-network](https://aur.archlinux.org/packages/iscan-plugin-network/) desde [AUR](/index.php/AUR "AUR"), actualizando `/etc/sane.d/epkowa.conf` con la adición de la línea:
 
@@ -199,7 +198,7 @@ Las solicitudes de escaneo son manejadas por saned. Esto se puede ejecutar como 
 
 [Instale](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [xinetd](https://www.archlinux.org/packages/?name=xinetd) desde los [repositorios oficiales](/index.php/Official_repositories "Official repositories").
 
-A continuación, asegúrese que el archivo llamado `/etc/xinetd.d/sane` existe y ajuste la opción desactivar (_«disable»_) a no:
+A continuación, asegúrese que el archivo llamado `/etc/xinetd.d/sane` existe y ajuste la opción desactivar (*«disable»*) a no:
 
 ```
 service sane-port
@@ -278,7 +277,7 @@ $ hp-setup <ip de la impresora>
 
 ### Invalid argument
 
-Si se recibe el mensaje de error _«Invalid argument»_ con xsane u otro front-end de sane, podría ser causado por una de las siguientes razones:
+Si se recibe el mensaje de error *«Invalid argument»* con xsane u otro front-end de sane, podría ser causado por una de las siguientes razones:
 
 #### Falta el archivo firmware
 
@@ -399,7 +398,7 @@ usb 0x04b8 0x0120
 
 ```
 
-Puede obtener información de dicho código (_usb 0x04b8 0x0120_) con la orden «sane-find-scanner».
+Puede obtener información de dicho código (*usb 0x04b8 0x0120*) con la orden «sane-find-scanner».
 
 También agregue estas líneas en el archivo `/etc/hotplug/usb/libsane.usermap` para configurar sus privilegios, de este modo:
 
@@ -411,7 +410,7 @@ libusbscanner 0x0003 0x04b8 0x0120 0x0000 0x0000 0x00 0x00 0x00 0x00 0x00 0x00 0
 
 Vuelva a reconectar el escáner y ahora debería funcionar su Epson Perfection 1270.
 
-NOTA: Se puede escanear la imagen si se definen los valores de X e Y, pero se obtiene el error: _"scanimage: sane_start: Error during device I/O"_, si alguien tiene una solución, por favor, complete la sección.
+NOTA: Se puede escanear la imagen si se definen los valores de X e Y, pero se obtiene el error: *"scanimage: sane_start: Error during device I/O"*, si alguien tiene una solución, por favor, complete la sección.
 
 *   Para evitar «scanimage: sane_start: Error during device I/O» y que se cuelgue el propio escáner, cuando se intanta escanear con ADF (alimentador automático de documentos) activado, tuve que quitar o comentar todos los Backends de `/etc/sane.d/dll.conf` y añadir, en su lugar, lo siguiente al archivo:
 

@@ -75,10 +75,10 @@
 
 ## Preface
 
-*   A _bootloader_ is the first software program that runs when a computer starts. It is responsible for loading and transferring control to the Linux kernel. The kernel, in turn, initializes the rest of the operating system.
-*   The name _GRUB_ officially refers to version _2_ of the software, see [[2]](https://www.gnu.org/software/grub/). If you are looking for the article on the legacy version, see [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy").
+*   A *bootloader* is the first software program that runs when a computer starts. It is responsible for loading and transferring control to the Linux kernel. The kernel, in turn, initializes the rest of the operating system.
+*   The name *GRUB* officially refers to version *2* of the software, see [[2]](https://www.gnu.org/software/grub/). If you are looking for the article on the legacy version, see [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy").
 *   GRUB supports [Btrfs](/index.php/Btrfs "Btrfs") as root (without a separate `/boot` file system) compressed with either zlib or LZO
-    *   GRUB currently (Sep 2015) supports booting from [Btrfs](/index.php/Btrfs "Btrfs") RAID 0/1/10, but _not_ RAID 5/6\. You may use [mdadm](/index.php/Mdadm "Mdadm") for RAID 5/6, which is supported by GRUB.
+    *   GRUB currently (Sep 2015) supports booting from [Btrfs](/index.php/Btrfs "Btrfs") RAID 0/1/10, but *not* RAID 5/6\. You may use [mdadm](/index.php/Mdadm "Mdadm") for RAID 5/6, which is supported by GRUB.
 *   GRUB does not support [F2FS](/index.php/F2FS "F2FS") as root so you will need a separate `/boot` with a supported file system.
 
 ## BIOS systems
@@ -93,7 +93,7 @@ On a BIOS/[GPT](/index.php/GPT "GPT") configuration a [BIOS boot partition](http
 *   This additional partition is only needed on a GRUB, BIOS/GPT partitioning scheme. Previously, for a GRUB, BIOS/MBR partitioning scheme, GRUB used the Post-MBR gap for the embedding the `core.img`). GRUB for GPT, however, does not use the Post-GPT gap to conform to GPT specifications that require 1_megabyte/2048_sector disk boundaries.
 *   For [UEFI](/index.php/UEFI "UEFI") systems this extra partition is not required as no embedding of boot sectors takes place in that case.
 
-Create a mebibyte partition (`+1M` with `fdisk` or `gdisk`) on the disk with no file system and type BIOS boot (_BIOS boot_ in fdisk, `ef02` in gdisk, `bios_grub` in `parted`). This partition can be in any position order but has to be on the first 2 TiB of the disk. This partition needs to be created before GRUB installation. When the partition is ready, install the bootloader as per the instructions below.
+Create a mebibyte partition (`+1M` with `fdisk` or `gdisk`) on the disk with no file system and type BIOS boot (*BIOS boot* in fdisk, `ef02` in gdisk, `bios_grub` in `parted`). This partition can be in any position order but has to be on the first 2 TiB of the disk. This partition needs to be created before GRUB installation. When the partition is ready, install the bootloader as per the instructions below.
 
 The post-GPT gap can also be used as the BIOS boot partition though it will be out of GPT alignment specification. Since the partition will not be regularly accessed performance issues can be disregarded (though some disk utilities will display a warning about it). In `fdisk` or `gdisk` create a new partition starting at sector 34 and spanning to 2047 and set the type. To have the viewable partitions begin at the base consider adding this partition last.
 
@@ -131,7 +131,7 @@ The following commands will:
 *   In the case of a GPT partitioned disk it will embed it in the BIOS Boot Partition , denoted by `bios_grub` flag in parted and EF02 type code in gdisk
 
 ```
-# grub-install --target=i386-pc /dev/sd_x_
+# grub-install --target=i386-pc /dev/sd*x*
 # grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
@@ -178,7 +178,7 @@ To set up grub to a partition boot sector, to a partitionless disk (also called 
 **Note:**
 
 *   `/dev/sdaX` used for example only.
-*   `--target=i386-pc` instructs `grub-install` to install for BIOS systems only. It is recommended to always use this option to remove ambiguity in _grub-install_.
+*   `--target=i386-pc` instructs `grub-install` to install for BIOS systems only. It is recommended to always use this option to remove ambiguity in *grub-install*.
 
 You need to use the `--force` option to allow usage of blocklists and should not use `--grub-setup=/bin/true` (which is similar to simply generating `core.img`).
 
@@ -252,7 +252,7 @@ An EFI System Partition (ESP) is needed on every disc you want to boot using EFI
 
 ```
 
-For GPT, you are looking for "Partition Table: GPT". For EFI, you are looking for a small (512 MiB or less) partition with a vfat file system and the _boot_ flag enabled. On it, there should be a directory named "EFI". If these criteria are met, this is your ESP. Make note of the partition number. You will need to know which one it is, so you can mount it later on while installing GRUB to it.
+For GPT, you are looking for "Partition Table: GPT". For EFI, you are looking for a small (512 MiB or less) partition with a vfat file system and the *boot* flag enabled. On it, there should be a directory named "EFI". If these criteria are met, this is your ESP. Make note of the partition number. You will need to know which one it is, so you can mount it later on while installing GRUB to it.
 
 ### Create an ESP
 
@@ -271,7 +271,7 @@ Make sure you are in a [bash](/index.php/Bash "Bash") shell. For example, when b
 
 ```
 
-[Install](/index.php/Install "Install") the packages [grub](https://www.archlinux.org/packages/?name=grub) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr). _GRUB_ is the bootloader, _efibootmgr_ creates bootable `.efi` stub entries used by the GRUB installation script.
+[Install](/index.php/Install "Install") the packages [grub](https://www.archlinux.org/packages/?name=grub) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr). *GRUB* is the bootloader, *efibootmgr* creates bootable `.efi` stub entries used by the GRUB installation script.
 
 The following steps install the GRUB UEFI application to `**$esp**/EFI/grub`, install its modules to `/boot/grub/x86_64-efi`, and place the bootable `grubx64.efi` stub in `**$esp**/EFI/grub`.
 
@@ -311,7 +311,7 @@ If you want to keep these files inside the EFI System Partition itself, add `--b
 
 ```
 
-This puts all GRUB files in `$esp/grub`, instead of in `/boot/grub`. When using this method, make sure you have _grub-mkconfig_ put the configuration file in the same place:
+This puts all GRUB files in `$esp/grub`, instead of in `/boot/grub`. When using this method, make sure you have *grub-mkconfig* put the configuration file in the same place:
 
 ```
 # grub-mkconfig -o $esp/grub/grub.cfg
@@ -374,7 +374,7 @@ If you have not done additional configuration, the automatic generation will det
 
 **Note:** Remember that `grub.cfg` has to be re-generated after any change to `/etc/default/grub` or files in `/etc/grub.d/`.
 
-Use the _grub-mkconfig_ tool to generate `grub.cfg`:
+Use the *grub-mkconfig* tool to generate `grub.cfg`:
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
@@ -384,7 +384,7 @@ Use the _grub-mkconfig_ tool to generate `grub.cfg`:
 **Note:**
 
 *   The default file path is `/boot/grub/grub.cfg`, not `/boot/grub/i386-pc/grub.cfg`. The [grub](https://www.archlinux.org/packages/?name=grub) includes a sample `/boot/grub/grub.cfg`; ensure your intended changes were written to this file.
-*   If you are trying to run _grub-mkconfig_ in a chroot or _systemd-nspawn_ container, you might notice that it does not work, complaining that _grub-probe_ cannot get the "canonical path of /dev/sdaX". In this case, try using _arch-chroot_ as described in the [BBS post](https://bbs.archlinux.org/viewtopic.php?pid=1225067#p1225067).
+*   If you are trying to run *grub-mkconfig* in a chroot or *systemd-nspawn* container, you might notice that it does not work, complaining that *grub-probe* cannot get the "canonical path of /dev/sdaX". In this case, try using *arch-chroot* as described in the [BBS post](https://bbs.archlinux.org/viewtopic.php?pid=1225067#p1225067).
 
 By default the generation scripts automatically add menu entries for Arch Linux to any generated configuration. See [#Dual-booting](#Dual-booting) for configuration with other systems.
 
@@ -396,11 +396,11 @@ Remember to always [#Generate the main configuration file](#Generate_the_main_co
 
 ### Additional arguments
 
-To pass custom additional arguments to the Linux image, you can set the `GRUB_CMDLINE_LINUX` + `GRUB_CMDLINE_LINUX_DEFAULT` variables in `/etc/default/grub`. The two are appended to each other and passed to kernel when generating regular boot entries. For the _recovery_ boot entry, only `GRUB_CMDLINE_LINUX` is used in the generation.
+To pass custom additional arguments to the Linux image, you can set the `GRUB_CMDLINE_LINUX` + `GRUB_CMDLINE_LINUX_DEFAULT` variables in `/etc/default/grub`. The two are appended to each other and passed to kernel when generating regular boot entries. For the *recovery* boot entry, only `GRUB_CMDLINE_LINUX` is used in the generation.
 
-It is not necessary to use both, but can be useful. For example, you could use `GRUB_CMDLINE_LINUX_DEFAULT="resume=/dev/sdaX quiet"` where `sda**X**` is your swap partition to enable resume after hibernation. This would generate a recovery boot entry without the resume and without _quiet_ suppressing kernel messages during a boot from that menu entry. Though, the other (regular) menu entries would have them as options.
+It is not necessary to use both, but can be useful. For example, you could use `GRUB_CMDLINE_LINUX_DEFAULT="resume=/dev/sdaX quiet"` where `sda**X**` is your swap partition to enable resume after hibernation. This would generate a recovery boot entry without the resume and without *quiet* suppressing kernel messages during a boot from that menu entry. Though, the other (regular) menu entries would have them as options.
 
-By default _grub-mkconfig_ determines the [UUID](/index.php/UUID "UUID") of the root filesystem for the configuration. To disable this, uncomment `GRUB_DISABLE_LINUX_UUID=true`.
+By default *grub-mkconfig* determines the [UUID](/index.php/UUID "UUID") of the root filesystem for the configuration. To disable this, uncomment `GRUB_DISABLE_LINUX_UUID=true`.
 
 For generating the GRUB recovery entry you also have to comment out `#GRUB_DISABLE_RECOVERY=true` in `/etc/default/grub`.
 
@@ -410,7 +410,7 @@ See [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for mo
 
 ### Dual-booting
 
-**Tip:** To have _grub-mkconfig_ search for other installed systems, [install](/index.php/Install "Install") [os-prober](https://www.archlinux.org/packages/?name=os-prober).
+**Tip:** To have *grub-mkconfig* search for other installed systems, [install](/index.php/Install "Install") [os-prober](https://www.archlinux.org/packages/?name=os-prober).
 
 #### Automatically generating using /etc/grub.d/40_custom and grub-mkconfig
 
@@ -427,7 +427,6 @@ to generate an updated `grub.cfg`.
 For example, a typical `/etc/grub.d/40_custom` file, could appear similar to the following one, created for [HP Pavilion 15-e056sl Notebook PC](http://h10025.www1.hp.com/ewfrf/wc/product?cc=us&destPage=product&lc=en&product=5402703&tmp_docname=), originally with Microsoft Windows 8 preinstalled. Each `menuentry` should maintain a structure similar to the following ones. Note that the UEFI partition `/dev/sda2` within GRUB is called `hd0,gpt2` and `ahci0,gpt2` (see [here](#Windows_installed_in_UEFI-GPT_Mode_menu_entry) for more info).
 
  `/etc/grub.d/40_custom` 
-
 ```
 #!/bin/sh
 exec tail -n +3 $0
@@ -478,7 +477,7 @@ menuentry "Other Linux" {
 }
 ```
 
-Alternatively let grub search for the right partition by _UUID_ or _label_:
+Alternatively let grub search for the right partition by *UUID* or *label*:
 
 ```
 menuentry "Other Linux" {
@@ -637,13 +636,11 @@ fi
 ```
 
 **Note:** In some cases, mine I have installed GRUB before a clean Windows 8, you cannot boot Windows having an error with `\boot\bcd` (error code `0xc000000f`). You can fix it going to Windows Recovery Console (cmd from install disk) and executing:
-
 ```
 x:\> "bootrec.exe /fixboot" 
 x:\> "bootrec.exe /RebuildBcd".
 
 ```
-
 Do **not** use `bootrec.exe /Fixmbr` because it will wipe GRUB out.
 
 `/etc/grub.d/40_custom` can be used as a template to create `/etc/grub.d/nn_custom`. Where `nn` defines the precendence, indicating the order the script is executed. The order scripts are executed determine the placement in the grub boot menu.
@@ -705,7 +702,7 @@ set root=(md/0,1)
 
 ```
 
-To install grub when using RAID1 as the `/boot` partition (or using `/boot` housed on a RAID1 root partition), on devices with GPT ef02/'BIOS boot partition', simply run _grub-install_ on both of the drives, such as:
+To install grub when using RAID1 as the `/boot` partition (or using `/boot` housed on a RAID1 root partition), on devices with GPT ef02/'BIOS boot partition', simply run *grub-install* on both of the drives, such as:
 
 ```
 # grub-install --target=i386-pc --debug /dev/sda
@@ -744,7 +741,7 @@ GRUB_ENABLE_CRYPTODISK=y
 
 ```
 
-to `/etc/default/grub`. After this configuration a subsequent run of _grub-mkconfig_ to [#Generate the main configuration file](#Generate_the_main_configuration_file) is required while the encrypted `/boot` is mounted.
+to `/etc/default/grub`. After this configuration a subsequent run of *grub-mkconfig* to [#Generate the main configuration file](#Generate_the_main_configuration_file) is required while the encrypted `/boot` is mounted.
 
 **Note:** `GRUB_ENABLE_CRYPTODISK=1` [will not work](https://savannah.gnu.org/bugs/?41524) as opposed to the request shown in GRUB 2.02-beta2.
 
@@ -811,7 +808,7 @@ grub>
 
 The GRUB's command shell environment can be used to boot operating systems. A common scenario may be to boot Windows / Linux stored on a drive/partition via **chainloading**.
 
-_Chainloading_ means to load another boot-loader from the current one, ie, chain-loading.
+*Chainloading* means to load another boot-loader from the current one, ie, chain-loading.
 
 The other bootloader may be embedded at the starting of the disk(MBR) or at the starting of a partition.
 
@@ -856,7 +853,7 @@ boot
 
 ```
 
-_insmod ntfs_ used for loading the ntfs file system module for loading Windows. (hd0,gpt4) or /dev/sda4 is my EFI System Partition (ESP). The entry in the _chainloader_ line specifies the path of the .efi file to be chain-loaded.
+*insmod ntfs* used for loading the ntfs file system module for loading Windows. (hd0,gpt4) or /dev/sda4 is my EFI System Partition (ESP). The entry in the *chainloader* line specifies the path of the .efi file to be chain-loaded.
 
 #### Normal loading
 
@@ -1048,7 +1045,6 @@ If GRUB loads but drops you into the rescue shell with no errors, it may be beca
 An example of a working EFI:
 
  `# efibootmgr -v` 
-
 ```
 BootCurrent: 0000
 Timeout: 3 seconds

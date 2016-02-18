@@ -24,15 +24,15 @@ This article provides an overview of the Arch Build System (ABS) along with a wa
 
 ## What is the Arch Build System?
 
-The Arch Build System is a _ports-like_ system for building and packaging software from source code. While [pacman](/index.php/Pacman "Pacman") is the specialized Arch tool for binary package management (including packages built with the ABS), ABS is a collection of tools for compiling source into installable `.pkg.tar.xz` packages.
+The Arch Build System is a *ports-like* system for building and packaging software from source code. While [pacman](/index.php/Pacman "Pacman") is the specialized Arch tool for binary package management (including packages built with the ABS), ABS is a collection of tools for compiling source into installable `.pkg.tar.xz` packages.
 
 ### What is a ports-like system?
 
-_Ports_ is a system used by *BSD to automate the process of building software from source code. The system uses a _port_ to download, unpack, patch, compile, and install the given software. A _port_ is merely a small directory on the user's computer, named after the corresponding software to be installed, that contains a few files with the instructions for building and installing the software from source. This makes installing software as simple as typing `make` or `make install clean` within the port's directory.
+*Ports* is a system used by *BSD to automate the process of building software from source code. The system uses a *port* to download, unpack, patch, compile, and install the given software. A *port* is merely a small directory on the user's computer, named after the corresponding software to be installed, that contains a few files with the instructions for building and installing the software from source. This makes installing software as simple as typing `make` or `make install clean` within the port's directory.
 
 ### ABS is a similar concept
 
-ABS is made up of a directory tree (the ABS tree) residing under `/var/abs`. This tree contains many subdirectories, each within a repo name and each named by their respective package. This tree represents (but does not contain) all _official Arch software_, retrievable through the SVN system. You may refer to each package-named subdirectory as an 'ABS', much the way one would refer to a 'port'. These ABS (or subdirectories) do not contain the software package nor the source but rather a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") file (and sometimes other files). A PKGBUILD is a simple Bash build script — a text file containing the compilation and packaging instructions as well as the URL of the appropriate **source** tarball to be downloaded. (The most important component of ABS are PKGBUILDs.) By issuing inside the ABS [makepkg](/index.php/Makepkg "Makepkg") command, the software is first compiled and then _packaged_ within the build directory. Now you may use [pacman](/index.php/Pacman "Pacman") (the Arch Linux package manager) to install, upgrade, and remove your new package.
+ABS is made up of a directory tree (the ABS tree) residing under `/var/abs`. This tree contains many subdirectories, each within a repo name and each named by their respective package. This tree represents (but does not contain) all *official Arch software*, retrievable through the SVN system. You may refer to each package-named subdirectory as an 'ABS', much the way one would refer to a 'port'. These ABS (or subdirectories) do not contain the software package nor the source but rather a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") file (and sometimes other files). A PKGBUILD is a simple Bash build script — a text file containing the compilation and packaging instructions as well as the URL of the appropriate **source** tarball to be downloaded. (The most important component of ABS are PKGBUILDs.) By issuing inside the ABS [makepkg](/index.php/Makepkg "Makepkg") command, the software is first compiled and then *packaged* within the build directory. Now you may use [pacman](/index.php/Pacman "Pacman") (the Arch Linux package manager) to install, upgrade, and remove your new package.
 
 ### ABS overview
 
@@ -59,7 +59,7 @@ ABS is made up of a directory tree (the ABS tree) residing under `/var/abs`. Thi
 
 	The Arch User Repository is separate from ABS but AUR (unsupported) PKGBUILDs are built using makepkg to compile and package up software. In contrast to the ABS tree on your local machine, the AUR exists as a website interface. It contains many thousands of user-contributed PKGBUILDs for software which is unavailable as an official Arch package. If you need to build a package outside the official Arch tree, chances are it is in the AUR.
 
-**Warning:** Official PKGBUILDs assume that packages are [built in a clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot"). Building software on a _dirty_ build system may fail or cause unexpected behaviour at runtime, because if the build system detects dependencies dynamically, the result depends on what packages are available on the build system.
+**Warning:** Official PKGBUILDs assume that packages are [built in a clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot"). Building software on a *dirty* build system may fail or cause unexpected behaviour at runtime, because if the build system detects dependencies dynamically, the result depends on what packages are available on the build system.
 
 ## Why would I want to use ABS?
 
@@ -165,12 +165,11 @@ This way you do not have to check out the entire abs tree just to build one pack
 
 #### Set the PACKAGER variable in /etc/makepkg.conf
 
-Setting the `PACKAGER` variable in `/etc/makepkg.conf` is an optional but _highly recommended_ step. It allows a "flag" to quickly identify which packages have been built and/or installed by YOU, not the official maintainer! This is easily accomplished using [expac](https://www.archlinux.org/packages/?name=expac):
+Setting the `PACKAGER` variable in `/etc/makepkg.conf` is an optional but *highly recommended* step. It allows a "flag" to quickly identify which packages have been built and/or installed by YOU, not the official maintainer! This is easily accomplished using [expac](https://www.archlinux.org/packages/?name=expac):
 
 ##### Showing all packages (including those from AUR)
 
  `$ grep myname /etc/makepkg.conf`  `PACKAGER="myname <myemail@myserver.com>"`  `$ expac "%n %p" | grep "myname" | column -t` 
-
 ```
 archey3 myname
 binutils myname
@@ -186,7 +185,6 @@ tar myname
 This example only shows packages contained in the repos defined in `/etc/pacman.conf`:
 
  `$ . /etc/makepkg.conf; grep -xvFf <(pacman -Qqm) <(expac "%n\t%p" | grep "$PACKAGER$" | cut -f1)` 
-
 ```
 binutils
 gcc
@@ -211,7 +209,7 @@ Copy the ABS from the tree (`/var/abs/<repository>/<pkgname>`) to the build dire
 
 ### Build package
 
-In our example, we will build the _slim_ display manager package.
+In our example, we will build the *slim* display manager package.
 
 Copy the slim ABS from the ABS tree to a build directory:
 
@@ -227,14 +225,14 @@ $ cd ~/abs/slim
 
 ```
 
-Modify the PKGBUILD to your liking, then run _makepkg_ (with the `-s` flag to enable automatic build-time dependency handling):
+Modify the PKGBUILD to your liking, then run *makepkg* (with the `-s` flag to enable automatic build-time dependency handling):
 
 ```
 $ makepkg -s
 
 ```
 
-**Note:** Before complaining about missing (make) dependencies, remember that the group [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) is assumed to be installed when building with _makepkg_. See [#Install tools](#Install_tools).
+**Note:** Before complaining about missing (make) dependencies, remember that the group [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) is assumed to be installed when building with *makepkg*. See [#Install tools](#Install_tools).
 
 Install as root:
 
@@ -245,11 +243,11 @@ Install as root:
 
 That's it. You have just built slim from source and cleanly installed it to your system with pacman. Package removal is also handled by pacman with `pacman -R slim`.
 
-The ABS method of installing software provides comfortability, while still maintaining complete transparency and control of the _build_ and _install_ functions included in the PKGBUILD.
+The ABS method of installing software provides comfortability, while still maintaining complete transparency and control of the *build* and *install* functions included in the PKGBUILD.
 
 #### fakeroot
 
-Essentially, the same steps are being executed in the traditional method (generally including the `./configure, make, make install` steps) but the software is installed into a _fake root_ environment. (A _fake root_ is simply a subdirectory within the build directory that functions and behaves as the system's root directory. In conjunction with the **fakeroot** program, _makepkg_ creates a fake root directory, and installs the compiled binaries and associated files into it, with **root** as owner.) The _fake root_, or subdirectory tree containing the compiled software, is then compressed into an archive with the extension `.pkg.tar.xz`, or a _package_. When invoked, pacman then extracts the package (installs it) into the system's real root directory (`/`).
+Essentially, the same steps are being executed in the traditional method (generally including the `./configure, make, make install` steps) but the software is installed into a *fake root* environment. (A *fake root* is simply a subdirectory within the build directory that functions and behaves as the system's root directory. In conjunction with the **fakeroot** program, *makepkg* creates a fake root directory, and installs the compiled binaries and associated files into it, with **root** as owner.) The *fake root*, or subdirectory tree containing the compiled software, is then compressed into an archive with the extension `.pkg.tar.xz`, or a *package*. When invoked, pacman then extracts the package (installs it) into the system's real root directory (`/`).
 
 ### Preserve modified packages
 

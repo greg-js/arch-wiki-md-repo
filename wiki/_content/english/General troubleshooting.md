@@ -26,7 +26,7 @@ This article explains some methods for general troubleshooting. For application 
 
 ### Attention to detail
 
-In order to resolve an issue that you are having, it is _absolutely crucial_ to have a firm understanding of how that specific system functions. How it works, and what does it need to run without error? If you cannot comfortably answer these question then it is strongly advised that you review the [Archwiki](/index.php/Table_of_contents "Table of contents") article for the function that you are having troubles with. Once you feel like you've understood the specific system, it will be easier for you to pin-point the problem.
+In order to resolve an issue that you are having, it is *absolutely crucial* to have a firm understanding of how that specific system functions. How it works, and what does it need to run without error? If you cannot comfortably answer these question then it is strongly advised that you review the [Archwiki](/index.php/Table_of_contents "Table of contents") article for the function that you are having troubles with. Once you feel like you've understood the specific system, it will be easier for you to pin-point the problem.
 
 ### Questions / checklist
 
@@ -34,21 +34,21 @@ The following gives a number of questions for you whenever dealing with a malfun
 
 1.  What is the issue(s)?
 
-    	Be _as precise as possible_. This will help you not get confused and/or side-tracked when looking up specific information.
+    	Be *as precise as possible*. This will help you not get confused and/or side-tracked when looking up specific information.
 
 2.  Are there error messages? (if any)
 
-    	Copy and paste _full outputs_ that contain **error messages** related to your issue into a separate file, such as `$HOME/issue.log`. For example, to forward the output of the following [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") command to `$HOME/issue.log`:
+    	Copy and paste *full outputs* that contain **error messages** related to your issue into a separate file, such as `$HOME/issue.log`. For example, to forward the output of the following [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") command to `$HOME/issue.log`:
 
     	 `$ mkinitcpio -p linux >> $HOME/issue.log` 
 
 3.  Can you reproduce the issue?
 
-    	If so, give _exact_ **step-by-step** instructions/commands needed to do so.
+    	If so, give *exact* **step-by-step** instructions/commands needed to do so.
 
 4.  When did you first encounter these issues and what was changed between then and when the system was operating without error?
 
-    	If it occurred right after an update then, list **all packages that were updated**. Include _version numbers_, also, paste the entire update from [pacman](/index.php/Pacman "Pacman").log (`/var/log/pacman.log`). Also take note of the statuses of _any_ service(s) needed to support the malfunctioning application(s) using [systemd](/index.php/Systemd "Systemd")'s systemctl tools. For example, to forward the output of the following [systemd](/index.php/Systemd#Basic_systemctl_usage "Systemd") command to `$HOME/issue.log`:
+    	If it occurred right after an update then, list **all packages that were updated**. Include *version numbers*, also, paste the entire update from [pacman](/index.php/Pacman "Pacman").log (`/var/log/pacman.log`). Also take note of the statuses of *any* service(s) needed to support the malfunctioning application(s) using [systemd](/index.php/Systemd "Systemd")'s systemctl tools. For example, to forward the output of the following [systemd](/index.php/Systemd#Basic_systemctl_usage "Systemd") command to `$HOME/issue.log`:
 
     	 `$ systemctl status dhcpcd@eth0.service >> $HOME/issue.log` 
 
@@ -58,11 +58,11 @@ The following gives a number of questions for you whenever dealing with a malfun
 
 When attempting to resolve an issue, **never** approach it as:
 
-_Application X does not work._
+*Application X does not work.*
 
 Instead, look at it in its entirety:
 
-_Application X produces Y error(s) when performing Z tasks under conditions A and B._
+*Application X produces Y error(s) when performing Z tasks under conditions A and B.*
 
 ### Additional support
 
@@ -100,9 +100,9 @@ See [Pacman#Troubleshooting](/index.php/Pacman#Troubleshooting "Pacman") for gen
 
 ## fuser
 
-_fuser_ is a command-line utility for identifying processes using resources such as files, filesystems and TCP/UDP ports.
+*fuser* is a command-line utility for identifying processes using resources such as files, filesystems and TCP/UDP ports.
 
-_fuser_ is provided by the [psmisc](https://www.archlinux.org/packages/?name=psmisc) package, which should be already installed as part of the [base](https://www.archlinux.org/groups/x86_64/base/) group.
+*fuser* is provided by the [psmisc](https://www.archlinux.org/packages/?name=psmisc) package, which should be already installed as part of the [base](https://www.archlinux.org/groups/x86_64/base/) group.
 
 ## Session permissions
 
@@ -133,7 +133,6 @@ error while loading shared libraries: libusb-0.1.so.4: cannot open shared object
 Use [pacman](/index.php/Pacman "Pacman") or [pkgfile](/index.php/Pkgfile "Pkgfile") to search for the package that owns the missing library:
 
  `$ pacman -Fs libusb-0.1.so.4` 
-
 ```
 extra/libusb-compat 0.1.5-1
     usr/lib/libusb-0.1.so.4
@@ -146,7 +145,7 @@ The error could also mean that the package that you used to install your program
 
 ## file: could not find any magic files!
 
-_Example:_ After an every-day routine update or following the installation of a package you are given the following error:
+*Example:* After an every-day routine update or following the installation of a package you are given the following error:
 
 ```
 # file: could not find any magic files!
@@ -203,7 +202,6 @@ Have you installed an [aspell](https://www.archlinux.org/packages/?name=aspell) 
 If installing the dictionary files did not resolve the problem, it is most likely a problem with `enchant`. Check for known dictionary files:
 
  `$ aspell dicts` 
-
 ```
 en
 en_GB

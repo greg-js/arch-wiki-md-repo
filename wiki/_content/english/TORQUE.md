@@ -131,7 +131,7 @@ Restart the server and the new options are sourced.
 
 Follow these steps on each compute node in the cluster.
 
-**Note:** If running both the server and client on the same box, be sure to complete these steps as well for that machine as well as other _pure_ clients on the cluster.
+**Note:** If running both the server and client on the same box, be sure to complete these steps as well for that machine as well as other *pure* clients on the cluster.
 
 Edit `/var/spool/torque/mom_priv/config` to contain some basic info identifying the server:
 
@@ -169,7 +169,7 @@ $ pbsnodes -a
 
 ```
 
-Each node if up should indicate that it is ready to receive jobs echoing a _state_ of _free._ If a node is not working, it will report a state of _down._
+Each node if up should indicate that it is ready to receive jobs echoing a *state* of *free.* If a node is not working, it will report a state of *down.*
 
 Example output:
 
@@ -214,7 +214,7 @@ uname=Linux deimos 2.6.39-ck #1 SMP PREEMPT Sat Jun 11 12:36:21 EDT 2011 x86_64,
 
 ## Queuing jobs
 
-Queuing to the cluster is accomplished via the _qsub_ command.
+Queuing to the cluster is accomplished via the *qsub* command.
 
 A trivial test is to simply run sleep:
 
@@ -223,14 +223,14 @@ $ echo "sleep 30" | qsub
 
 ```
 
-Check the status of the queue via the _qstat_ command described below. At this point, the work will have a status of "Q" which means queued. To start it, run the scheduler:
+Check the status of the queue via the *qstat* command described below. At this point, the work will have a status of "Q" which means queued. To start it, run the scheduler:
 
 ```
 # pbs_sched
 
 ```
 
-One can modify the _torque-server_ _systemd_ daemon to activate pbs_sched at boot.
+One can modify the *torque-server* *systemd* daemon to activate pbs_sched at boot.
 
 Another usage of qsub is to name a job and queue a script:
 
@@ -239,16 +239,15 @@ $ qsub -N x264 /home/facade/bin/x264_HQ.sh
 
 ```
 
-**Note:** STDOUT and STDERR for a queued job will be logged by default in the form text files corresponding to the respective outputs _pid.o_ and _pid.e_ and will be written to the path from which the qsub command was issued.
+**Note:** STDOUT and STDERR for a queued job will be logged by default in the form text files corresponding to the respective outputs *pid.o* and *pid.e* and will be written to the path from which the qsub command was issued.
 
-Another example can use a wrapper script to make and queue work _en mass_ automatically.
+Another example can use a wrapper script to make and queue work *en mass* automatically.
 
 ## Checking job status
 
 `qstat` is used to check work status.
 
  `$ qstat` 
-
 ```
 Job id                    Name             User            Time Use S Queue
 ------------------------- ---------------- --------------- -------- - -----
@@ -271,7 +270,6 @@ Job id                    Name             User            Time Use S Queue
 Append the `-n` switch to see which nodes are doing which jobs.
 
  `$ qstat -n` 
-
 ```
 localhost.localdomain:
 405.localhost.lo     facade  batch    i686-generic       3035     1   0    --  01:00 C 00:12

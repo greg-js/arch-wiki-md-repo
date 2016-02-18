@@ -12,7 +12,7 @@ Dette beskrives lettest med akronymet **KISS** - **K**eep **I**t **S**imple, **S
 
 Enkelthed er absolut det primære mål bag udviklingen af Arch Linux. Mange Linux-distributioner beskriver sig selv som "enkle". Dog har 'enkelthed' mange definitioner.
 
-**Arch Linux definerer enkelthed som en _uden unødvendige tilsætninger, modifikationer eller komplikationer_, og giver en let <tt>UNIX</tt>-lignende grundstruktur, hvilket lader en individuel bruger forme systemet efter sit eget behov. Kort sagt: En elegant minimalistisk tilnærmelse.**
+**Arch Linux definerer enkelthed som en *uden unødvendige tilsætninger, modifikationer eller komplikationer*, og giver en let <tt>UNIX</tt>-lignende grundstruktur, hvilket lader en individuel bruger forme systemet efter sit eget behov. Kort sagt: En elegant minimalistisk tilnærmelse.**
 
 En let grundstruktur bygget med en høj programmeringsstandard vil tendere til at have lavere krav til systemressourcer. Grundsystemet er blottet for alt unødvendigt rod, der fordunkler vigtige dele af systemet, eller besværliggør adgangen til dem. Det har et strømlinet sæt konfigurationsfiler, der er ordnet for hurtig adgang og redigering, uden nogen tunge grafiske konfigurationsværktøjer, som forsøger at sløre brugerens muligheder. Et Arch Linux-system er derfor fuldt konfigurerbart ned til den allermindste detalje.
 

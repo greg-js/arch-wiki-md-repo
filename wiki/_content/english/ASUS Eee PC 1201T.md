@@ -82,7 +82,7 @@ Just insert a SD card; the reader will behave like a pendrive (the card will be 
 
 Suspend works as of kernel version 2.6.34\. The power management applet takes care of the power button, sleep Fn+F1 button, and the lid close events. The acpi-eeepc-generic functions conflict with these, for example causing the laptop to go to sleep twice upon sleep button press. If you want to keep acpi-eeepc-generic to handle volume buttons etc., but want to prevent these conflicts, edit /etc/conf.d/acpi-eeepc-generic.conf to comment out the COMMANDS_SLEEP and the COMMANDS_POWER_BUTTON lines, and put in "no" for COMMANDS_ON_LID_CLOSE.
 
-With kernel 3.1.x, suspend causes kernel panic. A workaround, described [here](https://bbs.archlinux.org/viewtopic.php?pid=1029848#p1029848), is to make a new file _/etc/pm/config.d/rtl8192se-workaround_ with this content:
+With kernel 3.1.x, suspend causes kernel panic. A workaround, described [here](https://bbs.archlinux.org/viewtopic.php?pid=1029848#p1029848), is to make a new file */etc/pm/config.d/rtl8192se-workaround* with this content:
 
 ```
 SUSPEND_MODULES="rtl8192se"

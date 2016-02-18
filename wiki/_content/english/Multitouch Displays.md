@@ -14,7 +14,6 @@ Since Linux Kernel 3.2, multitouch devices are handled by the `hid-multitouch` m
 Find the vendor ID (VID) and product ID (PID) for your touchscreen using `lsusb`:
 
  `$ lsusb` 
-
 ```
 ...
 Bus 004 Device 002: ID 0eef:725e D-WAV Scientific Co., Ltd 
@@ -64,7 +63,6 @@ The driver for eGalax touchscreens is available from the [eGalax website](http:/
 If after installing the eGalax driver the Y-axis of the touchscreen is inverted, edit the file `/etc/eGTouchd.ini` an change the value of `Direction` from 0 to 2:
 
  `/etc/eGtouchd.ini` 
-
 ```
 ...
 DetectRotation 0

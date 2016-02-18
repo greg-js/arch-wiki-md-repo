@@ -47,7 +47,6 @@ HandleLidSwitch=suspend
 可以将服务文件附在 suspend.target、hibernate.target 或 sleep.target 中，这样就能在待机/休眠前后执行某些操作。用户级操作和root/系统级操作应该使用不同的服务文件。要启用用户级服务文件，使用 `# systemctl enable suspend@<用户名> && systemctl enable resume@<用户名>`。例如：
 
  `/etc/systemd/system/suspend@.service` 
-
 ```
 [Unit]
 Description=User suspend actions
@@ -63,9 +62,7 @@ ExecStart=/usr/bin/sflock
 [Install]
 WantedBy=sleep.target
 ```
-
  `/etc/systemd/system/resume@.service` 
-
 ```
 [Unit]
 Description=User resume actions
@@ -84,7 +81,6 @@ WantedBy=suspend.target
 至于root/系统级服务（使用 `# systemctl enable root-suspend` 激活）：
 
  `/etc/systemd/system/root-resume.service` 
-
 ```
 [Unit]
 Description=Local system resume actions
@@ -97,9 +93,7 @@ ExecStart=/usr/bin/systemctl restart mnt-media.automount
 [Install]
 WantedBy=suspend.target
 ```
-
  `/etc/systemd/system/root-suspend.service` 
-
 ```
 [Unit]
 Description=Local system suspend actions
@@ -126,7 +120,6 @@ WantedBy=sleep.target
 例子和解释：
 
  `/etc/systemd/system/wicd-sleep.service` 
-
 ```
 [Unit]
 Description=Wicd sleep hook
@@ -168,7 +161,6 @@ systemd 会同时执行所有脚本，而不是像 [pm-utils](/index.php/Pm-util
 脚本示范：
 
  `/usr/lib/systemd/system-sleep/example.sh` 
-
 ```
 #!/bin/sh
 case $1/$2 in

@@ -101,7 +101,6 @@ Done! Open the browser and go to 127.0.0.1 or the IP of the device you installed
 If you want to run Ghost in the background, you have to create a service. [Create](/index.php/Systemd#Writing_unit_files "Systemd") a new service unit for the local system:
 
  `/etc/systemd/system/ghost-example-com.service` 
-
 ```
 [Unit]
 Description=Ghost blog example.org  

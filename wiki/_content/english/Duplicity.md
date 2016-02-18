@@ -26,7 +26,7 @@ Backups are granularly incremental, meaning that only changes in files (since th
 
 ### Doing backups
 
-To backup the local folder _/home/me_ to the remote location _/usr/backup_ on host _other.host_ through the _scp/ssh_ protocol, use:
+To backup the local folder */home/me* to the remote location */usr/backup* on host *other.host* through the *scp/ssh* protocol, use:
 
 ```
 duplicity /home/me scp://uid@other.host//usr/backup
@@ -42,7 +42,7 @@ Additional command-line options options allow to:
 
 ### Restoring files from backup
 
-To restore the local folder _/home/me_ to the state of the last snapshot saved in the remote repository _/usr/backup_ on host _other.host_, do:
+To restore the local folder */home/me* to the state of the last snapshot saved in the remote repository */usr/backup* on host *other.host*, do:
 
 ```
 duplicity scp://uid@other.host//usr/backup /home/me 

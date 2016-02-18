@@ -26,7 +26,7 @@ x11vnc allows one to view remotely and interact with real X displays (i.e. a dis
 
 ### Starting
 
-First, start X either by _startx_ or through a manager such as [GDM](/index.php/GDM "GDM") or [SLiM](/index.php/SLiM "SLiM"). You may need to set up X to [run headless](/index.php/Headless_With_X "Headless With X") too. Then, open a terminal and type
+First, start X either by *startx* or through a manager such as [GDM](/index.php/GDM "GDM") or [SLiM](/index.php/SLiM "SLiM"). You may need to set up X to [run headless](/index.php/Headless_With_X "Headless With X") too. Then, open a terminal and type
 
 ```
 $ x11vnc -display :0
@@ -45,7 +45,7 @@ x11vnc -nap -wait 50 -noxdamage -passwd PASSWORD -display :0 -forever -o /var/l
 
 #### Setting X authority
 
-You may set an X authority file for the VNC server. This is accomplished by using the `-auth` argument followed by the appropriate file, which will depend on how your X server was started. Generally, assigning an X authority file requires running _x11vnc_ as root.
+You may set an X authority file for the VNC server. This is accomplished by using the `-auth` argument followed by the appropriate file, which will depend on how your X server was started. Generally, assigning an X authority file requires running *x11vnc* as root.
 
 ##### Start X
 
@@ -57,11 +57,11 @@ $ x11vnc -display :0 -auth ~/.Xauthority
 If that fails, you may have to run (as root)
 
 ```
-# x11vnc -display :0 -auth /home/_user_/.Xauthority
+# x11vnc -display :0 -auth /home/*user*/.Xauthority
 
 ```
 
-Where _user_ is the username of the user who is running the X server.
+Where *user* is the username of the user who is running the X server.
 
 ##### GDM
 
@@ -101,7 +101,7 @@ or see [Troubleshooting](#Troubleshooting) section below
 
 ```
 $ mkdir ~/.x11vnc
-$ x11vnc -storepasswd _password_ ~/.x11vnc/passwd
+$ x11vnc -storepasswd *password* ~/.x11vnc/passwd
 
 ```
 

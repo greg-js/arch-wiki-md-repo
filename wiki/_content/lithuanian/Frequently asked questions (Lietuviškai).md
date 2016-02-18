@@ -73,7 +73,7 @@ Ne, bet [Arch Linux ARM](http://archlinuxarm.org/) projektas teikia Arch Linux p
 
 ### Aš visiškas GNU/Linux pradedantysis. Ar turėčiau naudotis Arch?
 
-Šis klausimas susilaukia daugybės debatų. Arch nukreipta į labiau patyrusius GNU/Linux vartotojus, bet kai kurie mano, jog Arch puiki vieta motyvuotam naujokui. Jeigu esate naujokas ir norite naudotis Arch, turite žinoti, jog prireiks daug laiko norint įsisavinti naują sistemą, taip pat priimti tą faktą, kad Arch iš pagrindų yra "pasidaryk-viską-pats" distribucija. Tai vartotojas surenka sistemą ir kontroliuoja kuo ji taps. Prieš prašydami pagalbos, atlikite savo nepriklausomą paiešką su Google, atlikite paiešką forume (taip pat perskaitykite DUK'us kaip šis) ir nuostabioje dokumentacijoje kurią suteikia Arch wiki. _Visa tai juk ir buvo sukurta šiam tikslui._ Praleista tūkstančiai valandų renkant šią informaciją.
+Šis klausimas susilaukia daugybės debatų. Arch nukreipta į labiau patyrusius GNU/Linux vartotojus, bet kai kurie mano, jog Arch puiki vieta motyvuotam naujokui. Jeigu esate naujokas ir norite naudotis Arch, turite žinoti, jog prireiks daug laiko norint įsisavinti naują sistemą, taip pat priimti tą faktą, kad Arch iš pagrindų yra "pasidaryk-viską-pats" distribucija. Tai vartotojas surenka sistemą ir kontroliuoja kuo ji taps. Prieš prašydami pagalbos, atlikite savo nepriklausomą paiešką su Google, atlikite paiešką forume (taip pat perskaitykite DUK'us kaip šis) ir nuostabioje dokumentacijoje kurią suteikia Arch wiki. *Visa tai juk ir buvo sukurta šiam tikslui.* Praleista tūkstančiai valandų renkant šią informaciją.
 
 Rekomendacija skaitymui: The Arch Linux [Pradedančiojo Vedlys](/index.php/Beginners%27_Guide_(Lietuvi%C5%A1kai) "Beginners' Guide (Lietuviškai)").
 
@@ -83,11 +83,11 @@ Arch sukurtas ir naudojamas specifinės vartotojų grupės. Galbūt tai ne jums.
 
 ### Ar Arch suprojektuota naudojimui serveryje? Kaip Darbastalio aplinka? Kaip Darbinė stotis?
 
-Arch nėra suprojektuota kuriam nors vienam panaudojimui. Ji greičiau suprojektuota tam tikram _vartotojui_. Arch orientuota į kompetetingus vartotojus, kurie mėgaujasi pasidaryk-viską-pats metodu ir kurie išnaudoja tai tolimesniam sistemos formavimui pagal savo norus. Todėl tokių vartotojų rankose, Arch gali tapti praktiškai bet kuo. Daugelis naudoja Arch tiek darbastalio aplinkai tiek ir darbinėse stotyse. Ir žinoma archlinux.org varikliukas yra Arch.
+Arch nėra suprojektuota kuriam nors vienam panaudojimui. Ji greičiau suprojektuota tam tikram *vartotojui*. Arch orientuota į kompetetingus vartotojus, kurie mėgaujasi pasidaryk-viską-pats metodu ir kurie išnaudoja tai tolimesniam sistemos formavimui pagal savo norus. Todėl tokių vartotojų rankose, Arch gali tapti praktiškai bet kuo. Daugelis naudoja Arch tiek darbastalio aplinkai tiek ir darbinėse stotyse. Ir žinoma archlinux.org varikliukas yra Arch.
 
 ### Man labai patinka Arch, bet kūrėjų komanda turėtų įdiegti X funkciją
 
-Daug nesiplečiant, ar skaitėte [The Arch Way](/index.php/The_Arch_Way_(Lietuvi%C5%A1kai) "The Arch Way (Lietuviškai)")? Ar pateikėte funkciją/sprendimą? Ar tai derinasi su Arch _minimalumo_ ir _kodo-taisyklingumas aukščiau patogumo_ filosofija? Prisijunkite, prisidėkite savo kodu/sprendimais prie bendruomenės. Jei tai bus gerai vertinama bendruomenės, bei kūrėjų komandos, galbūt tai bus prijungta. Arch bendruomenė dėl tokių indėlių bei kodų ir įrankių dalinimosi tik dar labiau klesti.
+Daug nesiplečiant, ar skaitėte [The Arch Way](/index.php/The_Arch_Way_(Lietuvi%C5%A1kai) "The Arch Way (Lietuviškai)")? Ar pateikėte funkciją/sprendimą? Ar tai derinasi su Arch *minimalumo* ir *kodo-taisyklingumas aukščiau patogumo* filosofija? Prisijunkite, prisidėkite savo kodu/sprendimais prie bendruomenės. Jei tai bus gerai vertinama bendruomenės, bei kūrėjų komandos, galbūt tai bus prijungta. Arch bendruomenė dėl tokių indėlių bei kodų ir įrankių dalinimosi tik dar labiau klesti.
 
 ### Kada bus prieinama nauja versija?
 
@@ -97,11 +97,11 @@ Einamosios versijos modelis, leidžia vienos komandos pagalba pilnai atnaujinti 
 
 ### Ar Arch stabili distribucija? Ar ji dažnai užlūžta?
 
-Trumpas atsakymas: Ji tiek stabili, kiek _jūs_ ją darote tokia.
+Trumpas atsakymas: Ji tiek stabili, kiek *jūs* ją darote tokia.
 
-_Jūs_ surenkate savo Arch sistema, ant paprastos bazinės aplinkos, ir _jūs_ kontroliuojate sistemos atnaujinimus. Žinoma, labiau tikėtina, kad didesnė, sudėtingesnė sistema, su daugiau įvairių individualių paketų, ir gausybe įrankių, bei darbastalio aplinkų patirs konfigūracijos problemų dėl pirminių pokyčių, nei patirtų mažesnė, paprastesnė sistema. Arch orientuota į gabius, aktyvius vartotojus.Bendra UNIX kompetencija ir gera techninė sistemos priežiūra, bei atnaujinimų praktika, taip pat prisideda prie sistemos stabilumo.
+*Jūs* surenkate savo Arch sistema, ant paprastos bazinės aplinkos, ir *jūs* kontroliuojate sistemos atnaujinimus. Žinoma, labiau tikėtina, kad didesnė, sudėtingesnė sistema, su daugiau įvairių individualių paketų, ir gausybe įrankių, bei darbastalio aplinkų patirs konfigūracijos problemų dėl pirminių pokyčių, nei patirtų mažesnė, paprastesnė sistema. Arch orientuota į gabius, aktyvius vartotojus.Bendra UNIX kompetencija ir gera techninė sistemos priežiūra, bei atnaujinimų praktika, taip pat prisideda prie sistemos stabilumo.
 
-Todėl, _vartotojas_ yra visiškai atsakingas už savo naujausios sistemos stabilumą. Vartotojas nusprendžia kada atsinaujinti, ir sujungia reikiamus pakeitimus, kai to reikia. Jeigu vartotojas kreipiasi pagalbos į bendruomenę, atsakymo gali tekti ir palaukti. Skirtumas tarp Arch ir kitų distribucijų yra tai jog Arch yra gryna "pasidaryk-viską-pats" distribucija; skundai dėl sistemos užlūžimo dažnai būna klaidingi ir nieko verti.
+Todėl, *vartotojas* yra visiškai atsakingas už savo naujausios sistemos stabilumą. Vartotojas nusprendžia kada atsinaujinti, ir sujungia reikiamus pakeitimus, kai to reikia. Jeigu vartotojas kreipiasi pagalbos į bendruomenę, atsakymo gali tekti ir palaukti. Skirtumas tarp Arch ir kitų distribucijų yra tai jog Arch yra gryna "pasidaryk-viską-pats" distribucija; skundai dėl sistemos užlūžimo dažnai būna klaidingi ir nieko verti.
 
 Dėl patarimų kaip Arch Linux sistemą padaryti kuo stabilesnę žiūrėti [Enhance system stability](/index.php/Enhance_system_stability "Enhance system stability").
 
@@ -128,7 +128,6 @@ Dauguma naujų vartotojų pastebi, kad Linux branduolys atmintį tvarko kitaip, 
 Skirtumą galime pamatyti pasinaudoję komanda `free`:
 
  `$ free -m` 
-
 ```
              total        used        free      shared      buff/cache   available
 Mem:   2.8G        1.1G        283M    224M        1.4G             1.2G
@@ -153,7 +152,7 @@ Tai išsiaiškinti galite su [pkgfile](/index.php/Pkgfile "Pkgfile").
 Pavyzdžiui:
 
 ```
-$ pkgfile _failo_vardas_
+$ pkgfile *failo_vardas*
 
 ```
 
@@ -167,7 +166,7 @@ Pirmiausiai, išsiaiškinkite ar Arch komanda gali šią klaidą ištaisyti. Kar
 
 ### Arch paketams reikalingas unikalūs plėtinys. ".pkg.tar.gz" ir ".pkg.tar.xz" per ilgi ir/ar klaidinantys
 
-Tai iš tikrųjų jau buvo aptarta. Kažkas siūlė `.pac` failo plėtinį. Tačiau kiek žinoma, paketų plėtinių keisti nežadama. Kaip Tobias Kieslich, vienas Arch Linux vystytojų, pasakė, "_A package **is** a gzipped_ [xz] _tarball! And it can be opened, investigated and manipulated by any tar-capable application. Moreover, the mime-type is automatically detected correctly by most applications._"
+Tai iš tikrųjų jau buvo aptarta. Kažkas siūlė `.pac` failo plėtinį. Tačiau kiek žinoma, paketų plėtinių keisti nežadama. Kaip Tobias Kieslich, vienas Arch Linux vystytojų, pasakė, "*A package **is** a gzipped* [xz] *tarball! And it can be opened, investigated and manipulated by any tar-capable application. Moreover, the mime-type is automatically detected correctly by most applications.*"
 
 ### Pacman reikalinga biblioteka, kad kitos programos galėtų laisvai pasiekti paketų informaciją
 
@@ -192,7 +191,7 @@ Tačiau geriausias būdas gauti funkciją pacman ar Arch Linux yra įgyvendinti 
 Jeigu naudojate darbastalio aplinkas kaip [KDE](/index.php/KDE "KDE") ar [GNOME](/index.php/GNOME "GNOME"), programa turėtų automatiškai atsirasti jūsų menu. Jeigu bandote programą apleisti terminale ir nežinote dvejetainio vardo, naudokite:
 
 ```
-$ pacman -Qlq _paketo_vardas_ | grep /usr/bin/
+$ pacman -Qlq *paketo_vardas* | grep /usr/bin/
 
 ```
 
@@ -224,8 +223,8 @@ Kadangi jų yra daugybė, viskas priklauso nuo to, kokie jūsų poreikiai. Žvil
 
 Kai kurios distribucijos suteikia minimalaus įdiegimo metodus, kuo yra panašios į Arch Linux diegimo procesą. Tačiau, kai kuriuos dalykus vertėtų paminėti:
 
-1.  Arch buvo _iš pagrindų suprojektuota_ kaip lengva, minimali bazinė aplinka ant kurios būtų viskas statoma.
-2.  _Vienintelis_ būdas įdiegti Arch yra viską statyti ant bazinės aplinkos.
+1.  Arch buvo *iš pagrindų suprojektuota* kaip lengva, minimali bazinė aplinka ant kurios būtų viskas statoma.
+2.  *Vienintelis* būdas įdiegti Arch yra viską statyti ant bazinės aplinkos.
 3.  Tarnybų ir paketų diegimas reikalauja aktyvumo iš vartotojo. Priešingai, nei kitose distribucijose, kurios automatiškai sukonfigūruoja tarnybas ir paleisties elgesį, Arch filosofija akcentuoja vartotojo kompetenciją ir privilegiją viską daryti pačiam.
-4.  Arch paketų diegimas yra minimalus, ir _papildomos_ paketų priklausomybės niekada nediegiamos automatiškai. Vartotojui tiesiog primenama apie jų egzistavimą diegimo metu.
+4.  Arch paketų diegimas yra minimalus, ir *papildomos* paketų priklausomybės niekada nediegiamos automatiškai. Vartotojui tiesiog primenama apie jų egzistavimą diegimo metu.
 5.  Arch pateikia puikią ir išsamią dokumentaciją, kuri padeda sistemos surinkimo metu.

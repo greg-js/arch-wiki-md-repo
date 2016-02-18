@@ -56,7 +56,7 @@ Type=Application
 
 ```
 
-_Nota:_ Para utilizar esto tendrá que tener un **gestor de acceso** habilitado primero. Para obtener instrucciones de cómo hacer eso, mire [aquí](/index.php/Display_manager "Display manager").
+*Nota:* Para utilizar esto tendrá que tener un **gestor de acceso** habilitado primero. Para obtener instrucciones de cómo hacer eso, mire [aquí](/index.php/Display_manager "Display manager").
 
 ### Método 2: xinitrc
 

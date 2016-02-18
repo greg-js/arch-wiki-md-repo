@@ -16,8 +16,8 @@
 *   [2 Legacy method: ALSA-BTSCO](#Legacy_method:_ALSA-BTSCO)
     *   [2.1 Connecting the headset](#Connecting_the_headset)
         *   [2.1.1 Pairing the headset with your computer](#Pairing_the_headset_with_your_computer)
-            *   [2.1.1.1 Using _bluez-gnome_](#Using_bluez-gnome)
-            *   [2.1.1.2 Using _passkey-agent_](#Using_passkey-agent)
+            *   [2.1.1.1 Using *bluez-gnome*](#Using_bluez-gnome)
+            *   [2.1.1.2 Using *passkey-agent*](#Using_passkey-agent)
     *   [2.2 Headset and Alsa Devices](#Headset_and_Alsa_Devices)
     *   [2.3 Headset's multimedia buttons](#Headset.27s_multimedia_buttons)
 *   [3 Legacy method: PulseAudio](#Legacy_method:_PulseAudio)
@@ -56,7 +56,7 @@
 
 ```
 
-Теперь, чтобы сопрягаться и подключаться можно использовать команду _bluetoothctl_. Для решения проблем и более подробных примеров по _bluetoothctl_ смотрите статью [Bluetooth](/index.php/Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bluetooth (Русский)"). Выполните
+Теперь, чтобы сопрягаться и подключаться можно использовать команду *bluetoothctl*. Для решения проблем и более подробных примеров по *bluetoothctl* смотрите статью [Bluetooth](/index.php/Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bluetooth (Русский)"). Выполните
 
 ```
 # bluetoothctl
@@ -80,7 +80,7 @@
 
 ```
 
-показывает устройство, которое представилось как "Lasmex LBT10" и имеет MAC адрес _00:1D:43:6D:03:26_. Мы будем использовать этот MAC адрес для инициализации паринга:
+показывает устройство, которое представилось как "Lasmex LBT10" и имеет MAC адрес *00:1D:43:6D:03:26*. Мы будем использовать этот MAC адрес для инициализации паринга:
 
 ```
 # pair 00:1D:43:6D:03:26
@@ -110,7 +110,7 @@ Many users report frustation with getting A2DP to work.
 
 #### Pairing works, but connecting does not
 
-You might see the following error in _bluetoothctl_:
+You might see the following error in *bluetoothctl*:
 
 ```
 [bluetooth]# connect 00:1D:43:6D:03:26
@@ -134,7 +134,7 @@ bluetoothd[5556]: a2dp-sink profile connect failed for 00:1D:43:6D:03:26: Protoc
 
 ```
 
-The problem in this case is that pulseaudio is not catching up. A common solution to this problem is to restart pulseaudio. Note that it is perfectly fine to run _bluetoothctl_ as root while pulseaudio runs as user. After restarting pulseaudio, retry to connect. It is not necessary to repeat the pairing.
+The problem in this case is that pulseaudio is not catching up. A common solution to this problem is to restart pulseaudio. Note that it is perfectly fine to run *bluetoothctl* as root while pulseaudio runs as user. After restarting pulseaudio, retry to connect. It is not necessary to repeat the pairing.
 
 If restarting pulseaudio doesn't work, you need to load module-bluetooth-discover.
 
@@ -148,14 +148,13 @@ The same load-module command can be added to `/etc/pulse/default.pa`.
 To have your headset auto connect you need to enable PulseAudio's switch-on-connect module. Add the following:
 
  `/etc/pulse/default.pa` 
-
 ```
 # automatically switch to newly-connected devices
 load-module module-switch-on-connect
 
 ```
 
-You then need to tell _bluetoothctl_ to trust your bluetooth headset or you will see errors like this:
+You then need to tell *bluetoothctl* to trust your bluetooth headset or you will see errors like this:
 
 ```
 bluetoothd[487]: Authentication attempt without agent
@@ -171,7 +170,6 @@ bluetoothd[487]: Access denied: org.bluez.Error.Rejected
 After a reboot, your bluetooth adapter will not power on by default. You need to add a udev rule to power it on:
 
  `/etc/udev/rules.d/10-local.rules` 
-
 ```
 # Set bluetooth power up
 ACTION=="add", SUBSYSTEM=="bluetooth", KERNEL=="hci[0-9]*", RUN+="/usr/bin/hciconfig %k up"
@@ -191,7 +189,7 @@ If you see a message similar to this, you can go on and investigate your pulseau
 
 #### UUIDs has unsupported type
 
-During pairing you might see this output in _bluetoothctl_:
+During pairing you might see this output in *bluetoothctl*:
 
 ```
 [CHG] Device 00:1D:43:6D:03:26 UUIDs has unsupported type
@@ -204,7 +202,7 @@ This message is a very common one and can be ignored.
 
 It is much easier to set up your bluetooth headset today, with bluez >= 3.16\. You may want to try the out-of-box [python](/index.php/Python_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Python (Русский)") script in [this blog](http://fosswire.com/2008/01/11/a2dp-stereo-linux/) (you need edit the script to work with gconftool-2). There is also a piece of equivalent [bash](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)") script [here](http://lymanrb.blogspot.com/2008/05/linux.html).
 
-You need your headset's bdaddr. It is of the form _12:34:56:78:9A:BC_. Either find it in the documentation of your headset, on the headset itself or with the `hcitool scan` command.
+You need your headset's bdaddr. It is of the form *12:34:56:78:9A:BC*. Either find it in the documentation of your headset, on the headset itself or with the `hcitool scan` command.
 
 [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [btsco](https://aur.archlinux.org/packages/btsco/).
 
@@ -215,7 +213,7 @@ To load the kernel module, type:
 
 ```
 
-There will now be an extra audio device. Use `alsamixer -cN` (where N is most likely 1) to set the volume. You can access the device with any alsa-capable application by choosing the device _BT headset_, or with any OSS application by using `/dev/dspN` as the audio device.
+There will now be an extra audio device. Use `alsamixer -cN` (where N is most likely 1) to set the volume. You can access the device with any alsa-capable application by choosing the device *BT headset*, or with any OSS application by using `/dev/dspN` as the audio device.
 
 But to actually get any sound, you have to connect your headset to the computer first.
 
@@ -241,11 +239,11 @@ The first time you connect the headset, you have to pair it with the computer. T
 
 There are two ways to pair your headset with the computer:
 
-##### Using _bluez-gnome_
+##### Using *bluez-gnome*
 
-Install the _bluez-gnome_ package from the community repository. Then start the **bt-applet** program. Once you try to connect to the headset, a window will open and ask for the PIN.
+Install the *bluez-gnome* package from the community repository. Then start the **bt-applet** program. Once you try to connect to the headset, a window will open and ask for the PIN.
 
-##### Using _passkey-agent_
+##### Using *passkey-agent*
 
 Before connecting to the headset, enter the command
 
@@ -254,7 +252,7 @@ $ passkey-agent --default <pin>
 
 ```
 
-where _<pin>_ is your headset's PIN. Then try to connect to the headset.
+where *<pin>* is your headset's PIN. Then try to connect to the headset.
 
 ### Headset and Alsa Devices
 
@@ -330,7 +328,6 @@ $ mplayer -ao alsa:device=btheadset /path/to/audio/or/video/file
 ```
 
 **Tip:** To find hci# for a usb dongle, type in
-
 ```
 $ hcitool dev
 
@@ -556,7 +553,6 @@ options snd-hda-intel model=laptop
 The settings here seem to be enabled for root only. See the policy user="root" section. However, if a regular user is specified here, the system fails to start. Someone with more knowledge could explain why.
 
  `/etc/dbus-1/system.d/bluetooth.conf` 
-
 ```
 <!-- This configuration file specifies the required security policies for Bluetooth core daemon to work. -->
 
@@ -617,7 +613,7 @@ If PulseAudio fails when changing the profile to A2DP with bluez 4.1+ and PulseA
 
 The following Bluetooth headsets have been tested with Arch Linux
 
-*   Philips SHB9100 - Confirmed NOT TO WORK well. Have tried _everything_ after a while they cut out. Pause and resume too is flakky and basically the whole wireless bluetooth experience is horrible. The following forum post[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1315428#p1315428) explains an underlying issue and describes a temporary solution which can be used to improve the audio quality pending a proper fix.
+*   Philips SHB9100 - Confirmed NOT TO WORK well. Have tried *everything* after a while they cut out. Pause and resume too is flakky and basically the whole wireless bluetooth experience is horrible. The following forum post[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1315428#p1315428) explains an underlying issue and describes a temporary solution which can be used to improve the audio quality pending a proper fix.
 *   Parrot Zik - Confirmed to work out of the box with firmware 1.04! The MIC however is detected, but does not work at all. Sometimes it can lag behind (not stutter) but most of the times it is not noticeable unless you playing a game, in which case I would switch to wired which resolves the issue.
 *   Sony DR-BT50 works for a2dp both with bluez4 and bluez5 (instructions here[[2]](http://vlsd.blogspot.com/2013/11/bluetooth-headphones-and-arch-linux.html), subject to change). Adapter: D-Link DBT-120 USB dongle.
 *   Sony SBH50 works for a2dp with bluez5 and pulseaudio. Adapter: Broadcom Bluetooth 2.1 Device (Vendor=0a5c ProdID=219b Rev=03.43; not sure what the exact model). Does not work until `sudo modprobe btusb`.

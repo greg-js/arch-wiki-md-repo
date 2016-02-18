@@ -43,7 +43,6 @@ Questo è solo un esempio, è possibile utilizzare molte altre opzioni se si des
 Il seguente script, è molto utile per una visualizzazione più agevole delle immagini: visualizzerà con feh tutte le immagini selezionate tramite il file manager o tutte le immagini di una specifica directory nell'ordine di default. Questo script assume che il primo argomento sia il nome del file da aprire.
 
  `feh_browser.sh` 
-
 ```
 #!/bin/bash
 
@@ -85,7 +84,6 @@ Aggiungendo `-q` (quiet) non vengono mostrati nel terminale tutti gli errori di 
 Una semplice, ma meno versatile, alternativa è:
 
  `feh_browser.sh` 
-
 ```
  #! /bin/sh
  feh -. "$(dirname "$1")" --start-at "$1"
@@ -148,7 +146,6 @@ e lanciarlo all'avvio (ad esempio da `~/.xinitrc`). Se non si vuole usare questo
 Cambiare la directory `~/.wallpaper` con quella desiderata e i `15m` di pausa con un tempo a piacimento. Per maggiori informazioni consultare il man di sleep dando in un terminale `man sleep`.
 
  `wallpaper.sh` 
-
 ```
 #!/bin/bash
 
@@ -160,12 +157,11 @@ done
 
 ```
 
-**Nota:** Potrebbe essere necessario trasformare _~/.wallpaper_ in _~/.wallpaper_**/**
+**Nota:** Potrebbe essere necessario trasformare *~/.wallpaper* in *~/.wallpaper***/**
 
 Se questo script non dovesse funzionare, provare il seguente che non cerca ricorsivamente la directory `~/.wallpaper`:
 
  `wallpaper.sh` 
-
 ```
 #!/bin/bash
 
@@ -192,7 +188,6 @@ done
 Questo script rimpiazza la chiamata a "feh" per aggiungere uno sfondo su sistemi a doppio schermo (ad esempio nvidia twinview):
 
  `wallpaper.sh` 
-
 ```
 #!/bin/sh
 exec feh --bg-max --no-xinerama "$@"
@@ -209,12 +204,11 @@ Dare un `$ crontab -e` e aggiungere:
 
 #### Usare systemd/user
 
-**Nota:** Questo è utile '_solo_ se si una _sessione systemd/user_. Vedere [Systemd/User](/index.php/Systemd/User_(Italiano) "Systemd/User (Italiano)") per maggiori dettagli.
+**Nota:** Questo è utile '*solo* se si una *sessione systemd/user*. Vedere [Systemd/User](/index.php/Systemd/User_(Italiano) "Systemd/User (Italiano)") per maggiori dettagli.
 
 Creare questa unità service:
 
  `$HOME/.config/systemd/user/feh-wallpaper.service` 
-
 ```
 [Unit]
 Description=Random wallpaper with feh
@@ -229,16 +223,15 @@ WantedBy=default.target
 
 ```
 
-Creare un file _timer_. Cambiare il tempo a piacimento. In questo esempio il tempo è `15 secondi`.
+Creare un file *timer*. Cambiare il tempo a piacimento. In questo esempio il tempo è `15 secondi`.
 
  `$HOME/.config/systemd/user/feh-wallpaper.timer` 
-
 ```
 [Unit]
 Description=Random wallpaper with feh
 
 [Timer]
-OnUnitActiveSec=_15s_
+OnUnitActiveSec=*15s*
 Unit=feh-wallpaper.service
 
 [Install]
@@ -249,15 +242,14 @@ WantedBy=default.target
 In questo esempio gli sfondi sono salvati in una directory nascosta nella propria $HOME:
 
  `$HOME/.wallpaper` 
-
 ```
-WALLPATH=_/home/user/.wallpaper/_
+WALLPATH=*/home/user/.wallpaper/*
 
 ```
 
 Attivare `feh-wallpaper.timer` e `feh-wallpaper.service`. Leggere [Daemons](/index.php/Daemons "Daemons") per maggiori dettagli.
 
-**Nota:** Ricordarsi che si sta usando una _systemd user session_, quindi è necessario usare il flag `--user` con `systemctl`.
+**Nota:** Ricordarsi che si sta usando una *systemd user session*, quindi è necessario usare il flag `--user` con `systemctl`.
 
 ## See also
 

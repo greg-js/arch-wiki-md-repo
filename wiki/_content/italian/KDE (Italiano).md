@@ -1,165 +1,144 @@
 Tratto da [KDE - KDE Software Compilation](http://www.kde.org/community/whatiskde/softwarecompilation.php) e [Getting KDE Software](http://www.kde.org/download/):
 
-	_Il KDE Software Compilation è l'insieme di strutture, aree di lavoro e applicazioni prodotte da KDE. Nella sua creazione, KDE è nato per realizzare un bellissimo, funzionale e gratuito ambiente di elaborazione desktop per Linux e sistemi operativi analoghi. KDE è costituito da un gran numero di applicazioni individuali e da uno spazio di lavoro desktop, inteso come un guscio all'interno del quale è possibile eseguire queste applicazioni in modo integrato._
+	*Il KDE Software Compilation è l'insieme di strutture, aree di lavoro e applicazioni prodotte da KDE. Nella sua creazione, KDE è nato per realizzare un bellissimo, funzionale e gratuito ambiente di elaborazione desktop per Linux e sistemi operativi analoghi. KDE è costituito da un gran numero di applicazioni individuali e da uno spazio di lavoro desktop, inteso come un guscio all'interno del quale è possibile eseguire queste applicazioni in modo integrato.*
 
 Il progetto KDE fornisce a monte un ottimo [UserBase wiki](http://userbase.kde.org/Welcome_to_KDE_UserBase/it), dove gli utenti possono ottenere informazioni dettagliate sulla maggior parte delle applicazioni integrate in KDE.
 
 ## Contents
 
 *   [1 Installazione](#Installazione)
-    *   [1.1 Installazione completa](#Installazione_completa)
-    *   [1.2 Installazione minimale](#Installazione_minimale)
-    *   [1.3 Pacchetti di Localizzazione](#Pacchetti_di_Localizzazione)
-*   [2 Aggiornamento](#Aggiornamento)
-*   [3 Avviare KDE](#Avviare_KDE)
-    *   [3.1 Utilizzo un Display Manager](#Utilizzo_un_Display_Manager)
-        *   [3.1.1 KDM (KDE Display Manager)](#KDM_.28KDE_Display_Manager.29)
-    *   [3.2 Usare xinitrc](#Usare_xinitrc)
-*   [4 Configurazione](#Configurazione)
-    *   [4.1 Personalizzazione](#Personalizzazione)
-        *   [4.1.1 Plasma Desktop](#Plasma_Desktop)
-            *   [4.1.1.1 Temi](#Temi)
-            *   [4.1.1.2 Widgets (Plasmoidi)](#Widgets_.28Plasmoidi.29)
-            *   [4.1.1.3 Applet per il suono nella barra delle applicazioni](#Applet_per_il_suono_nella_barra_delle_applicazioni)
-            *   [4.1.1.4 Aggiunta di un menu globale sul desktop](#Aggiunta_di_un_menu_globale_sul_desktop)
-        *   [4.1.2 Decorazioni delle finestre](#Decorazioni_delle_finestre)
-        *   [4.1.3 Temi Icone](#Temi_Icone)
-        *   [4.1.4 Caratteri](#Caratteri)
-            *   [4.1.4.1 Caratteri visivamente brutti in KDE](#Caratteri_visivamente_brutti_in_KDE)
-            *   [4.1.4.2 I caratteri sono grandi o sembrano sproporzionati](#I_caratteri_sono_grandi_o_sembrano_sproporzionati)
-        *   [4.1.5 Efficienza dello spazio di lavoro](#Efficienza_dello_spazio_di_lavoro)
-    *   [4.2 Networking](#Networking)
-    *   [4.3 Stampa](#Stampa)
-    *   [4.4 Supporto a Samba/Windows](#Supporto_a_Samba.2FWindows)
-    *   [4.5 Attività Desktop di KDE](#Attivit.C3.A0_Desktop_di_KDE)
-    *   [4.6 Risparmio energetico](#Risparmio_energetico)
-    *   [4.7 Monitorare i cambiamenti su file locali e cartelle](#Monitorare_i_cambiamenti_su_file_locali_e_cartelle)
-*   [5 Amministrazione del Sistema](#Amministrazione_del_Sistema)
-    *   [5.1 Impostare il layout per cambiare la mappatura della tastiera](#Impostare_il_layout_per_cambiare_la_mappatura_della_tastiera)
-    *   [5.2 Terminare Xorg-server attraverso le impostazioni di sistema di KDE](#Terminare_Xorg-server_attraverso_le_impostazioni_di_sistema_di_KDE)
-    *   [5.3 Moduli kcm utili](#Moduli_kcm_utili)
-*   [6 Ricerca Desktop e Desktop Semantico](#Ricerca_Desktop_e_Desktop_Semantico)
-    *   [6.1 Virtuoso e Soprano](#Virtuoso_e_Soprano)
-    *   [6.2 Nepomuk](#Nepomuk)
-        *   [6.2.1 Utilizzare e configurare Nepomuk](#Utilizzare_e_configurare_Nepomuk)
-        *   [6.2.2 KDE senza Nepomuk](#KDE_senza_Nepomuk)
-    *   [6.3 Akonadi](#Akonadi)
-        *   [6.3.1 Disabilitare Akonadi](#Disabilitare_Akonadi)
-        *   [6.3.2 Configurare il database](#Configurare_il_database)
-        *   [6.3.3 Esecuzione di KDE senza Akonadi](#Esecuzione_di_KDE_senza_Akonadi)
-*   [7 Phonon](#Phonon)
-    *   [7.1 Cos'è Phonon ?](#Cos.27.C3.A8_Phonon_.3F)
-    *   [7.2 Quale backend si dovrebbe scegliere?](#Quale_backend_si_dovrebbe_scegliere.3F)
-*   [8 Applicazioni utili](#Applicazioni_utili)
-    *   [8.1 Yakuake](#Yakuake)
-    *   [8.2 KDE Telepathy](#KDE_Telepathy)
-*   [9 Trucchi e Consigli](#Trucchi_e_Consigli)
-    *   [9.1 Utilizzare Openbox in KDE](#Utilizzare_Openbox_in_KDE)
-        *   [9.1.1 Quando si utilizza KDM](#Quando_si_utilizza_KDM)
-        *   [9.1.2 Riattivare gli effetti del compositing](#Riattivare_gli_effetti_del_compositing)
-    *   [9.2 Integrare Android con il desktop KDE](#Integrare_Android_con_il_desktop_KDE)
-    *   [9.3 Ricevere le notifiche per gli aggiornamenti software](#Ricevere_le_notifiche_per_gli_aggiornamenti_software)
-    *   [9.4 Configurare KWin per utilizzare le OpenGL ES](#Configurare_KWin_per_utilizzare_le_OpenGL_ES)
-    *   [9.5 Abilitare le anteprime audio/video nei file manager Konqueror e Dolphin](#Abilitare_le_anteprime_audio.2Fvideo_nei_file_manager_Konqueror_e_Dolphin)
-    *   [9.6 Velocizzare l'avvio delle applicazioni](#Velocizzare_l.27avvio_delle_applicazioni)
-    *   [9.7 Nascondere partizioni](#Nascondere_partizioni)
-    *   [9.8 Suggerimenti per Konqueror](#Suggerimenti_per_Konqueror)
-        *   [9.8.1 Disabilitare i Tooltips (Browser)](#Disabilitare_i_Tooltips_.28Browser.29)
-        *   [9.8.2 Usare WebKit](#Usare_WebKit)
-    *   [9.9 Integrazione di Firefox](#Integrazione_di_Firefox)
-    *   [9.10 Impostare lo sfondo del LockScreen per avere lo stesso sfondo del desktop](#Impostare_lo_sfondo_del_LockScreen_per_avere_lo_stesso_sfondo_del_desktop)
-    *   [9.11 Impostare l'immagine del lockscreen ad una arbitraria](#Impostare_l.27immagine_del_lockscreen_ad_una_arbitraria)
-*   [10 Risoluzione dei problemi](#Risoluzione_dei_problemi)
-    *   [10.1 Correlati alla configurazione](#Correlati_alla_configurazione)
-        *   [10.1.1 Ripristinare tutte le configurazioni di KDE](#Ripristinare_tutte_le_configurazioni_di_KDE)
-        *   [10.1.2 Il servizio di indicizzazione dei file non funziona anche dopo aver abilitato tutto correttamente](#Il_servizio_di_indicizzazione_dei_file_non_funziona_anche_dopo_aver_abilitato_tutto_correttamente)
-        *   [10.1.3 Il desktop Plasma si comporta stranamente](#Il_desktop_Plasma_si_comporta_stranamente)
-        *   [10.1.4 Pulire la cache per risolvere i problemi di aggiornamento](#Pulire_la_cache_per_risolvere_i_problemi_di_aggiornamento)
-    *   [10.2 Pulire al configurazione di Akonadi per ripristinare Kmail](#Pulire_al_configurazione_di_Akonadi_per_ripristinare_Kmail)
-    *   [10.3 Come ottenere informazioni sullo stato di KWin per il supporto e il debug](#Come_ottenere_informazioni_sullo_stato_di_KWin_per_il_supporto_e_il_debug)
-    *   [10.4 KDE4 non termina il caricamento](#KDE4_non_termina_il_caricamento)
-    *   [10.5 KDE ed i programmi in Qt vengono visualizzati in maniera errata con gestori di finestre differenti](#KDE_ed_i_programmi_in_Qt_vengono_visualizzati_in_maniera_errata_con_gestori_di_finestre_differenti)
-    *   [10.6 Problemi legati all'aspetto grafico](#Problemi_legati_all.27aspetto_grafico)
-        *   [10.6.1 Performance desktop 2D scadenti (o) appaiono Artefatti durante il 2D](#Performance_desktop_2D_scadenti_.28o.29_appaiono_Artefatti_durante_il_2D)
-            *   [10.6.1.1 Problema con i driver GPU](#Problema_con_i_driver_GPU)
-            *   [10.6.1.2 Utilizzare il motore Raster](#Utilizzare_il_motore_Raster)
-        *   [10.6.2 Performance 3D scadenti](#Performance_3D_scadenti)
-        *   [10.6.3 Il Composite per il Desktop è disabilitato con una recente schede video Nvidia](#Il_Composite_per_il_Desktop_.C3.A8_disabilitato_con_una_recente_schede_video_Nvidia)
-        *   [10.6.4 Tremolio in fullscreen quando il Composite è attivato](#Tremolio_in_fullscreen_quando_il_Composite_.C3.A8_attivato)
-        *   [10.6.5 Tearing dello schermo con gli effetti desktop abilitati](#Tearing_dello_schermo_con_gli_effetti_desktop_abilitati)
-        *   [10.6.6 Impostazioni di visualizzazione perse al riavvio (monitor multipli)](#Impostazioni_di_visualizzazione_perse_al_riavvio_.28monitor_multipli.29)
-    *   [10.7 Problemi sonori in KDE](#Problemi_sonori_in_KDE)
-        *   [10.7.1 Problemi legati ad ALSA](#Problemi_legati_ad_ALSA)
-            *   [10.7.1.1 Comparsa di messaggi "Falling back to default" quando si prova ad ascoltare qualsiasi suono in KDE](#Comparsa_di_messaggi_.22Falling_back_to_default.22_quando_si_prova_ad_ascoltare_qualsiasi_suono_in_KDE)
-            *   [10.7.1.2 Non riesco a riprodurre file MP3 quando imposto come backend Gstreamer in Qt Phonon](#Non_riesco_a_riprodurre_file_MP3_quando_imposto_come_backend_Gstreamer_in_Qt_Phonon)
-    *   [10.8 Konsole non salva la lista dei comandi](#Konsole_non_salva_la_lista_dei_comandi)
-    *   [10.9 Le password in KDE mostrano tre pallini per ogni lettera](#Le_password_in_KDE_mostrano_tre_pallini_per_ogni_lettera)
-    *   [10.10 Il processo di Nepomukserver si avvia automaticamente anche se il desktop semantico è disabilitato](#Il_processo_di_Nepomukserver_si_avvia_automaticamente_anche_se_il_desktop_semantico_.C3.A8_disabilitato)
-    *   [10.11 Dolphin e le finestre di dialogo sono estremamente lente ad inizializzarsi ogni volta](#Dolphin_e_le_finestre_di_dialogo_sono_estremamente_lente_ad_inizializzarsi_ogni_volta)
-    *   [10.12 Visualizzatore PDF di default nelle applicazioni GTK sotto KDE](#Visualizzatore_PDF_di_default_nelle_applicazioni_GTK_sotto_KDE)
-*   [11 Versione KDE instabile](#Versione_KDE_instabile)
-*   [12 Altri progetti su KDE =](#Altri_progetti_su_KDE_.3D)
-    *   [12.1 Trinity](#Trinity)
-*   [13 Bugs](#Bugs)
-*   [14 Links Esterni](#Links_Esterni)
+    *   [1.1 Plasma Desktop](#Plasma_Desktop)
+    *   [1.2 Aggiornare Plasma 4 a 5](#Aggiornare_Plasma_4_a_5)
+    *   [1.3 Applicazioni KDE e pacchetti lingua](#Applicazioni_KDE_e_pacchetti_lingua)
+*   [2 Avviare Plasma](#Avviare_Plasma)
+*   [3 Configurazione](#Configurazione)
+    *   [3.1 Personalizzazione](#Personalizzazione)
+        *   [3.1.1 Plasma Desktop](#Plasma_Desktop_2)
+            *   [3.1.1.1 Temi](#Temi)
+            *   [3.1.1.2 Widgets (Plasmoidi)](#Widgets_.28Plasmoidi.29)
+            *   [3.1.1.3 Applet per il suono nella barra delle applicazioni](#Applet_per_il_suono_nella_barra_delle_applicazioni)
+            *   [3.1.1.4 Aggiunta di un menu globale sul desktop](#Aggiunta_di_un_menu_globale_sul_desktop)
+        *   [3.1.2 Decorazioni delle finestre](#Decorazioni_delle_finestre)
+        *   [3.1.3 Temi Icone](#Temi_Icone)
+        *   [3.1.4 Caratteri](#Caratteri)
+            *   [3.1.4.1 Caratteri visivamente brutti in KDE](#Caratteri_visivamente_brutti_in_KDE)
+            *   [3.1.4.2 I caratteri sono grandi o sembrano sproporzionati](#I_caratteri_sono_grandi_o_sembrano_sproporzionati)
+        *   [3.1.5 Efficienza dello spazio di lavoro](#Efficienza_dello_spazio_di_lavoro)
+    *   [3.2 Networking](#Networking)
+    *   [3.3 Stampa](#Stampa)
+    *   [3.4 Supporto a Samba/Windows](#Supporto_a_Samba.2FWindows)
+    *   [3.5 Attività Desktop di KDE](#Attivit.C3.A0_Desktop_di_KDE)
+    *   [3.6 Risparmio energetico](#Risparmio_energetico)
+    *   [3.7 Monitorare i cambiamenti su file locali e cartelle](#Monitorare_i_cambiamenti_su_file_locali_e_cartelle)
+*   [4 Amministrazione del Sistema](#Amministrazione_del_Sistema)
+    *   [4.1 Impostare il layout per cambiare la mappatura della tastiera](#Impostare_il_layout_per_cambiare_la_mappatura_della_tastiera)
+    *   [4.2 Terminare Xorg-server attraverso le impostazioni di sistema di KDE](#Terminare_Xorg-server_attraverso_le_impostazioni_di_sistema_di_KDE)
+    *   [4.3 Moduli kcm utili](#Moduli_kcm_utili)
+*   [5 Ricerca Desktop e Desktop Semantico](#Ricerca_Desktop_e_Desktop_Semantico)
+    *   [5.1 Virtuoso e Soprano](#Virtuoso_e_Soprano)
+    *   [5.2 Nepomuk](#Nepomuk)
+        *   [5.2.1 Utilizzare e configurare Nepomuk](#Utilizzare_e_configurare_Nepomuk)
+        *   [5.2.2 KDE senza Nepomuk](#KDE_senza_Nepomuk)
+    *   [5.3 Akonadi](#Akonadi)
+        *   [5.3.1 Disabilitare Akonadi](#Disabilitare_Akonadi)
+        *   [5.3.2 Configurare il database](#Configurare_il_database)
+        *   [5.3.3 Esecuzione di KDE senza Akonadi](#Esecuzione_di_KDE_senza_Akonadi)
+*   [6 Phonon](#Phonon)
+    *   [6.1 Cos'è Phonon ?](#Cos.27.C3.A8_Phonon_.3F)
+    *   [6.2 Quale backend si dovrebbe scegliere?](#Quale_backend_si_dovrebbe_scegliere.3F)
+*   [7 Applicazioni utili](#Applicazioni_utili)
+    *   [7.1 Yakuake](#Yakuake)
+    *   [7.2 KDE Telepathy](#KDE_Telepathy)
+*   [8 Trucchi e Consigli](#Trucchi_e_Consigli)
+    *   [8.1 Utilizzare Openbox in KDE](#Utilizzare_Openbox_in_KDE)
+        *   [8.1.1 Quando si utilizza KDM](#Quando_si_utilizza_KDM)
+        *   [8.1.2 Riattivare gli effetti del compositing](#Riattivare_gli_effetti_del_compositing)
+    *   [8.2 Integrare Android con il desktop KDE](#Integrare_Android_con_il_desktop_KDE)
+    *   [8.3 Ricevere le notifiche per gli aggiornamenti software](#Ricevere_le_notifiche_per_gli_aggiornamenti_software)
+    *   [8.4 Configurare KWin per utilizzare le OpenGL ES](#Configurare_KWin_per_utilizzare_le_OpenGL_ES)
+    *   [8.5 Abilitare le anteprime audio/video nei file manager Konqueror e Dolphin](#Abilitare_le_anteprime_audio.2Fvideo_nei_file_manager_Konqueror_e_Dolphin)
+    *   [8.6 Velocizzare l'avvio delle applicazioni](#Velocizzare_l.27avvio_delle_applicazioni)
+    *   [8.7 Nascondere partizioni](#Nascondere_partizioni)
+    *   [8.8 Suggerimenti per Konqueror](#Suggerimenti_per_Konqueror)
+        *   [8.8.1 Disabilitare i Tooltips (Browser)](#Disabilitare_i_Tooltips_.28Browser.29)
+        *   [8.8.2 Usare WebKit](#Usare_WebKit)
+    *   [8.9 Integrazione di Firefox](#Integrazione_di_Firefox)
+    *   [8.10 Impostare lo sfondo del LockScreen per avere lo stesso sfondo del desktop](#Impostare_lo_sfondo_del_LockScreen_per_avere_lo_stesso_sfondo_del_desktop)
+    *   [8.11 Impostare l'immagine del lockscreen ad una arbitraria](#Impostare_l.27immagine_del_lockscreen_ad_una_arbitraria)
+*   [9 Risoluzione dei problemi](#Risoluzione_dei_problemi)
+    *   [9.1 Correlati alla configurazione](#Correlati_alla_configurazione)
+        *   [9.1.1 Ripristinare tutte le configurazioni di KDE](#Ripristinare_tutte_le_configurazioni_di_KDE)
+        *   [9.1.2 Il servizio di indicizzazione dei file non funziona anche dopo aver abilitato tutto correttamente](#Il_servizio_di_indicizzazione_dei_file_non_funziona_anche_dopo_aver_abilitato_tutto_correttamente)
+        *   [9.1.3 Il desktop Plasma si comporta stranamente](#Il_desktop_Plasma_si_comporta_stranamente)
+        *   [9.1.4 Pulire la cache per risolvere i problemi di aggiornamento](#Pulire_la_cache_per_risolvere_i_problemi_di_aggiornamento)
+    *   [9.2 Pulire al configurazione di Akonadi per ripristinare Kmail](#Pulire_al_configurazione_di_Akonadi_per_ripristinare_Kmail)
+    *   [9.3 Come ottenere informazioni sullo stato di KWin per il supporto e il debug](#Come_ottenere_informazioni_sullo_stato_di_KWin_per_il_supporto_e_il_debug)
+    *   [9.4 KDE4 non termina il caricamento](#KDE4_non_termina_il_caricamento)
+    *   [9.5 KDE ed i programmi in Qt vengono visualizzati in maniera errata con gestori di finestre differenti](#KDE_ed_i_programmi_in_Qt_vengono_visualizzati_in_maniera_errata_con_gestori_di_finestre_differenti)
+    *   [9.6 Problemi legati all'aspetto grafico](#Problemi_legati_all.27aspetto_grafico)
+        *   [9.6.1 Performance desktop 2D scadenti (o) appaiono Artefatti durante il 2D](#Performance_desktop_2D_scadenti_.28o.29_appaiono_Artefatti_durante_il_2D)
+            *   [9.6.1.1 Problema con i driver GPU](#Problema_con_i_driver_GPU)
+            *   [9.6.1.2 Utilizzare il motore Raster](#Utilizzare_il_motore_Raster)
+        *   [9.6.2 Performance 3D scadenti](#Performance_3D_scadenti)
+        *   [9.6.3 Il Composite per il Desktop è disabilitato con una recente schede video Nvidia](#Il_Composite_per_il_Desktop_.C3.A8_disabilitato_con_una_recente_schede_video_Nvidia)
+        *   [9.6.4 Tremolio in fullscreen quando il Composite è attivato](#Tremolio_in_fullscreen_quando_il_Composite_.C3.A8_attivato)
+        *   [9.6.5 Tearing dello schermo con gli effetti desktop abilitati](#Tearing_dello_schermo_con_gli_effetti_desktop_abilitati)
+        *   [9.6.6 Impostazioni di visualizzazione perse al riavvio (monitor multipli)](#Impostazioni_di_visualizzazione_perse_al_riavvio_.28monitor_multipli.29)
+    *   [9.7 Problemi sonori in KDE](#Problemi_sonori_in_KDE)
+        *   [9.7.1 Problemi legati ad ALSA](#Problemi_legati_ad_ALSA)
+            *   [9.7.1.1 Comparsa di messaggi "Falling back to default" quando si prova ad ascoltare qualsiasi suono in KDE](#Comparsa_di_messaggi_.22Falling_back_to_default.22_quando_si_prova_ad_ascoltare_qualsiasi_suono_in_KDE)
+            *   [9.7.1.2 Non riesco a riprodurre file MP3 quando imposto come backend Gstreamer in Qt Phonon](#Non_riesco_a_riprodurre_file_MP3_quando_imposto_come_backend_Gstreamer_in_Qt_Phonon)
+    *   [9.8 Konsole non salva la lista dei comandi](#Konsole_non_salva_la_lista_dei_comandi)
+    *   [9.9 Le password in KDE mostrano tre pallini per ogni lettera](#Le_password_in_KDE_mostrano_tre_pallini_per_ogni_lettera)
+    *   [9.10 Il processo di Nepomukserver si avvia automaticamente anche se il desktop semantico è disabilitato](#Il_processo_di_Nepomukserver_si_avvia_automaticamente_anche_se_il_desktop_semantico_.C3.A8_disabilitato)
+    *   [9.11 Dolphin e le finestre di dialogo sono estremamente lente ad inizializzarsi ogni volta](#Dolphin_e_le_finestre_di_dialogo_sono_estremamente_lente_ad_inizializzarsi_ogni_volta)
+    *   [9.12 Visualizzatore PDF di default nelle applicazioni GTK sotto KDE](#Visualizzatore_PDF_di_default_nelle_applicazioni_GTK_sotto_KDE)
+*   [10 Versione KDE instabile](#Versione_KDE_instabile)
+*   [11 Altri progetti su KDE =](#Altri_progetti_su_KDE_.3D)
+    *   [11.1 Trinity](#Trinity)
+*   [12 Bugs](#Bugs)
+*   [13 Links Esterni](#Links_Esterni)
 
 ## Installazione
 
-Prima di procedere con l'installazione di KDE, assicurarsi di avere [Xorg](/index.php/Xorg_(Italiano)#Installazione "Xorg (Italiano)") installato e funzionante sul proprio sistema.
+### Plasma Desktop
 
-KDE 4.x è _modulare_. Potete installare l'intero parco delle applicazioni oppure installare solamente i programmi di KDE che preferite.
+**Note:**
 
-### Installazione completa
+*   Plasma 5 non è installabile con Plasma 4.
+*   Il desktop Plasma 4 è fuori manutenzione dall' Agosto 2015.[[1]](https://www.kde.org/announcements/announce-applications-15.08.0.php) Non è più nei repository ufficiali dal Dicembre 2015.[[2]](https://www.archlinux.org/news/dropping-plasma-4/)
+*   [KDM](/index.php/KDM "KDM") non è più disponibile per Plasma 5\. KDE [raccomanda](http://blog.davidedmundson.co.uk/blog/display_managers_finale) di usare il display manager [SDDM](/index.php/SDDM "SDDM") poichè supporta l'integrazione con il tema di Plasma 5.
 
-[Installare](/index.php/Pacman "Pacman") [kde](https://www.archlinux.org/groups/x86_64/kde/) o [kde-meta](https://www.archlinux.org/groups/x86_64/kde-meta/) disponibili nei [repositori ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"). Per le differenze tra [kde](https://www.archlinux.org/groups/x86_64/kde/) e [kde-meta](https://www.archlinux.org/groups/x86_64/kde-meta/) si veda l'articolo [KDE Packages](/index.php/KDE_Packages "KDE Packages").
+Prima di installare Plasma, assicurati di avere un' installazione funzionante di [Xorg](/index.php/Xorg "Xorg") nel tuo sistema.
 
-### Installazione minimale
+Installa il meta-pacchetto [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) o il gruppo [plasma](https://www.archlinux.org/groups/x86_64/plasma/). per le differenze tra [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) e [plasma](https://www.archlinux.org/groups/x86_64/plasma/) consulta [Creating packages#Meta packages and groups](/index.php/Creating_packages#Meta_packages_and_groups "Creating packages"). Altrimenti, per una installazione più minimale di Plasma,installa il pacchetto [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop) .
 
-Nel caso si volesse ottenere un'installazione minimale di KDE Software Cimpilation, installare [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/)
+### Aggiornare Plasma 4 a 5
 
-### Pacchetti di Localizzazione
+1.  Isola `multi-user.target` `# systemctl isolate multi-user.target` 
+2.  Se usi KDM come display manager, disabilitalo `# systemctl disable kdm` 
+3.  Disinstalla il pacchetto kde-workspace `# pacman -Rc kdebase-workspace` 
+4.  Installa il pacchetto [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) o il gruppo [plasma](https://www.archlinux.org/groups/x86_64/plasma/).
+5.  Abilita [SDDM](/index.php/SDDM "SDDM") `# systemctl enable sddm` o installa e abilita qualcun altro [display manager](/index.php/Display_manager "Display manager").
+6.  Riavvia o semplicemente scrivi `# systemctl start sddm` nel terminale.
 
-Se si necessita del pacchetto di localizzazione, installare `kde-l10n-lavostralingua` es. [kde-l10n-it](https://www.archlinux.org/packages/?name=kde-l10n-it) per la lingua italiana.
+**Note:** La configurazione Plasma 4 non è migrata automaticamente al Plasma 5, in modo da configurare il desktop da zero.
 
-Per un elenco completo delle lingue disponibili si veda [questo link](https://www.archlinux.org/packages/extra/any/kde-l10n/)
+### Applicazioni KDE e pacchetti lingua
 
-## Aggiornamento
+Per installare tutte le applicazioni di KDE, installa il gruppo [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) o il meta-pacchetto [kde-applications-meta](https://www.archlinux.org/packages/?name=kde-applications-meta) per installare moduli specifici. Nota che questo installerà solo le applicazioni, non installerà alcuna versione del Desktop Plasma.
 
-**KDE 4.12** Software Compilation è la [release di KDE](http://kde.org/announcements/) corrente. Suggerimenti importanti per chi aggiorna:
+Se hai bisogno di un pacchetto lingua, installa `kde-l10n-**tualingua**` (e.g. [kde-l10n-it](https://www.archlinux.org/packages/?name=kde-l10n-it) per il linguaggio italiano). Per una lista completa di linguaggi disponibili, guarda [questo link](https://www.archlinux.org/packages/extra/any/kde-l10n/).
 
-*   Controllare sempre che il proprio mirror sia **aggiornato**.
-*   **Non forzare mai l'aggiornamento utilizzando `# pacman --force`**. Se pacman si lamenta di eventuali conflitti, si prega di **effettuare un bug report.**
-*   È possibile rimuovere i meta pacchetti e sub pacchetti non necessari dopo l'aggiornamento.
-*   Se non vi piacciono i pacchetti divisi, continuare ad usare i pacchetti kde-meta.
+## Avviare Plasma
 
-## Avviare KDE
+**Suggerimento:** Per integrare meglio SDDM con Plasma, è raccomandato di modificare `/etc/sddm.conf` per usare il tema breeze. Consulta [SDDM#Theme settings](/index.php/SDDM#Theme_settings "SDDM") per istruzioni.
 
-Il metodo di avvio di KDE dipende dalle proprie preferenze. Fondamentalmente ci sono due modi per avviare KDE. Usare **KDM** oppure **xinitrc**.
+**Nota:** La configurazione Plasma 4 non è automaticamente migrata a Plasma 5, quindi dovrai configurare il tuo desktop da zero.
 
-### Utilizzo un Display Manager
+Per lanciare una sessione PLasma 5, scegli *Plasma* nel menu del tuo [display manager](/index.php/Display_manager "Display manager") .
 
-Un [Display Manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)"), o login manager , è in genere una interfaccia utente grafica che viene visualizzata al termine del processo di avvio al posto della shell di default. Esso permette facilmente di accedere direttamente a KDE. KDE ha un proprio display manager, KDM .
-
-#### KDM (KDE Display Manager)
-
-_Vedere la pagina wiki di [KDM](/index.php/KDM_(Italiano) "KDM (Italiano)") per maggiori informazioni._
-
-[Abilitare e avviare](/index.php/Systemd_(Italiano)#Usare_le_unit.C3.A0 "Systemd (Italiano)") il servizio `kdm.service` per avviare il display manager.
-
-### Usare xinitrc
-
-_Vedere la pagina wiki di [Xinitrc](/index.php/Xinitrc_(Italiano) "Xinitrc (Italiano)") per maggiori informazioni._
-
- `~/.xinitrc` 
-
-```
-exec startkde
-
-```
-
-Eseguire `startx` o `xinit` per avviare KDE.
-
-**Nota:** Se si vuole lanciare Xorg all'avvio, leggere l'articolo [Avviare X al boot](/index.php/Start_X_at_Login_(Italiano) "Start X at Login (Italiano)").
+Altrimenti, per avviare Plasma con *startx*, aggiungi `exec startkde` al tuo file `.xinitrc`. Se vuoi avviare Xorg al login, guarda [Start X at login](/index.php/Start_X_at_login "Start X at login").
 
 ## Configurazione
 
@@ -210,7 +189,7 @@ Installare [appmenu-qt](https://www.archlinux.org/packages/?name=appmenu-qt) dai
 
 **Attenzione:** [firefox-extension-globalmenu](https://aur.archlinux.org/packages/firefox-extension-globalmenu/) è stato deprecato a partire da Firefox 25 e non c'è altro metodo consigliato per ottenere il menu globale. Tuttavia, vi è un pacchetto di patch, [firefox-ubuntu](https://aur.archlinux.org/packages/firefox-ubuntu/). Disponibile su AUR che ha la patch di Canonical per ottenere il menu globale di lavorare con la versione attuale di Firefox (al momento della scrittura)
 
-Per ottenere effettivamente il menu globale, installare [kdeplasma-applet-menubar](https://aur.archlinux.org/packages/kdeplasma-applet-menubar/) da AUR. Creare un pannello plasma sulla parte superiore dello schermo e aggiungere l'applet "barra dei menu" al pannello. Per esportare i menu al menu globale, andare in _Impostazioni sistema> Applicazioni > Aspetto > Stile_, e cliccare sulla scheda "Regolazione Fine _e usare l'elenco a discesa per selezionare_ solo esportazione _come proprio stile per la barra dei menu._
+Per ottenere effettivamente il menu globale, installare [kdeplasma-applet-menubar](https://aur.archlinux.org/packages/kdeplasma-applet-menubar/) da AUR. Creare un pannello plasma sulla parte superiore dello schermo e aggiungere l'applet "barra dei menu" al pannello. Per esportare i menu al menu globale, andare in *Impostazioni sistema> Applicazioni > Aspetto > Stile*, e cliccare sulla scheda "Regolazione Fine *e usare l'elenco a discesa per selezionare* solo esportazione *come proprio stile per la barra dei menu.*
 
 #### Decorazioni delle finestre
 
@@ -225,7 +204,7 @@ Impostazioni di sistema -> Aspetto dello spazio di lavoro -> Decorazioni delle f
 
 #### Temi Icone
 
-Non ci sono tanti temi per le icone di sistema disponibili per KDE 4\. E' possibile aprire _Impostazioni di sistema > Aspetto > Icone_ per cercarne uno nuovo oppure installarlo manualmente. Molti temi si possono trovare su [kde-look.org](http://www.kde-look.org/).
+Non ci sono tanti temi per le icone di sistema disponibili per KDE 4\. E' possibile aprire *Impostazioni di sistema > Aspetto > Icone* per cercarne uno nuovo oppure installarlo manualmente. Molti temi si possono trovare su [kde-look.org](http://www.kde-look.org/).
 
 I loghi ufficiali, icone, copertine CD e altre grafiche di Arch Linux sono disponibili nel pacchetto [archlinux-artwork](https://aur.archlinux.org/packages/archlinux-artwork/). Sopo l'installazione potete trovarli in `/usr/share/archlinux/`
 
@@ -237,7 +216,7 @@ Provare ad installare i pacchetti [ttf-dejavu](https://www.archlinux.org/package
 
 Dopo l'installazione, assicurarsi di uscire e rientrare dalla sessione. Non dovrebbe essere necessario modificare le impostazioni del pannello "Caratteri" in "Impostazioni di Sistema".
 
-Se si è impostato manualmente il rendering dei [Fonts](/index.php/Fonts "Fonts"), prestare attenzione dal momento che le Impostazioni di Sistema possono alterare il loro aspetto. Quando si entra in _Impostazioni di Sistema > Aspetto > Caratteri_, Impostazioni di Sistema altera il file di configurazione (`fonts.conf`).
+Se si è impostato manualmente il rendering dei [Fonts](/index.php/Fonts "Fonts"), prestare attenzione dal momento che le Impostazioni di Sistema possono alterare il loro aspetto. Quando si entra in *Impostazioni di Sistema > Aspetto > Caratteri*, Impostazioni di Sistema altera il file di configurazione (`fonts.conf`).
 
 Non c'è modo di prevenirlo, ma se si imposta il valore in modo da uguagliare il file `fonts.conf`, si otterrà il rendering del font voluto (sarà richiesto di riavviare le proprio applicazioni o in alcuni casi di riavviare il proprio desktop).
 
@@ -245,7 +224,7 @@ Notare che pure le Preferenze dei Caratteri di Gnome ha questo comportamento, se
 
 ##### I caratteri sono grandi o sembrano sproporzionati
 
-Provare a forzare il DPI dei caratteri a **96** andando im _Impostazioni di sistema > Aspetto delle applicazioni > Caratteri._
+Provare a forzare il DPI dei caratteri a **96** andando im *Impostazioni di sistema > Aspetto delle applicazioni > Caratteri.*
 
 Se non dovesse funzionare, provare a impostare il valore di DPI direttamente tramite la configurazione di [Xorg](/index.php/Xorg_(Italiano)#Impostazione_manuale_DPI "Xorg (Italiano)").
 
@@ -264,7 +243,7 @@ Potete scegliere tra i seguenti tool:
 
 **Suggerimento:** Utilizzare l'interfaccia web di [CUPS](/index.php/CUPS_(Italiano) "CUPS (Italiano)") per una configurazione più rapida. Le stampanti configurate in questo modo possono essere utilizzati nelle applicazioni KDE.
 
-Si può anche scegliere la configurazione della stampante attraverso _Impostazioni di sistema > configurazione delle stampanti_. Per poter utilizzare questo metodo, è necessario installare prima i pacchetti [kdeutils-print-manager](https://www.archlinux.org/packages/?name=kdeutils-print-manager) e [cups](https://www.archlinux.org/packages/?name=cups).
+Si può anche scegliere la configurazione della stampante attraverso *Impostazioni di sistema > configurazione delle stampanti*. Per poter utilizzare questo metodo, è necessario installare prima i pacchetti [kdeutils-print-manager](https://www.archlinux.org/packages/?name=kdeutils-print-manager) e [cups](https://www.archlinux.org/packages/?name=cups).
 
 Si necessità di avviare per prima cosa il demone `avahi-daemon` e `cupsd` altrimenti incorrerete nel seguente messaggio di errore:
 
@@ -287,7 +266,6 @@ Per CUPS, questo viene impostato in {ic|/etc/cups/cups-files.conf}}.
 Aggiungere `lp` a `SystemGroup` permette a chiunque di poter configurare una stampante. É possibile, ovviamente, aggiungere un altro gruppo al posto di `lp`.
 
  `/etc/cups/cups-files.conf` 
-
 ```
 # Administrator user group...
 SystemGroup sys root lp
@@ -310,7 +288,7 @@ Si possono quindi configurare le condivisioni di Samba attraverso
 
 Le attività Desktop di KDE sono dei set di Plasma Widget strutturati come "Desktop Virtuali" basati su Plasma, dove si possono configurare autonomamente i widget come se si avesse più di un monitor o di un desktop.
 
-Sul proprio desktop fare clic sulla _Casella degli Strumenti_ (Cashew) e sul pop-up selezionare "Attività".
+Sul proprio desktop fare clic sulla *Casella degli Strumenti* (Cashew) e sul pop-up selezionare "Attività".
 
 Una barra di plasma verrà visualizzata nella parte inferiore dello schermo che presenterà le varie Attività Plasma-Desktop esistenti. È quindi possibile spostarsi tra loro, premendo l'icona corrispondente.
 
@@ -390,7 +368,7 @@ Altri KCM possono essere trovati in [kde-apps.org](http://kde-apps.org/index.php
 
 ## Ricerca Desktop e Desktop Semantico
 
-Secondo [Wikipedia](https://en.wikipedia.org/wiki/Semantic_desktop "wikipedia:Semantic desktop"), "_il Desktop Semantico è un termine che si riferisce a idee e metodi per modificare l'interfaccia utente di un computer e gestione in modo nuovo i dati, in modo che tali dati siano più facilmente condivisi tra le diverse applicazioni o le attività e capaci di essere elaborati automaticamente."_
+Secondo [Wikipedia](https://en.wikipedia.org/wiki/Semantic_desktop "wikipedia:Semantic desktop"), "*il Desktop Semantico è un termine che si riferisce a idee e metodi per modificare l'interfaccia utente di un computer e gestione in modo nuovo i dati, in modo che tali dati siano più facilmente condivisi tra le diverse applicazioni o le attività e capaci di essere elaborati automaticamente."*
 
 L'implementazione di KDE di questo concetto è legato (come di KDE 4.10) a due grandi pezzi di software, Akonadi e Nepomuk. Tra di loro, questi programmi permettono di guardare i propri dati e creare un indice facilmente consultabile di esso. L' idea alla base di questi software è quello di rendere il vostro sistema di "conoscenza" dei propri dati e darne contesto usando metadati e tag forniti dall'utente.
 
@@ -398,9 +376,9 @@ Soprano e Virtuoso sono due dipendenze del Nepomuk Semantic Desktop. Dal momento
 
 ### Virtuoso e Soprano
 
-Il database utilizzato per memorizzare tutti i metadati utilizzati dal desktop semantico è un database '[Resource Description Framework (RDF)](https://en.wikipedia.org/wiki/Resource_Description_Framework "wikipedia:Resource Description Framework") _chiamato Virtuoso. Internamente, Virtuoso può essere considerato come un database relazionale. (Un [relational database](https://en.wikipedia.org/wiki/Relational_model "wikipedia:Relational model") è diverso da un database tradizionale basato su una singola tabella, nel senso che utilizza più tabelle correlate da un singolo tasto per memorizzare i dati). Esso è attualmente controllata da OpenLink, ed è disponibile sia sotto licenza commerciale, sia sotto licenza open source._
+Il database utilizzato per memorizzare tutti i metadati utilizzati dal desktop semantico è un database '[Resource Description Framework (RDF)](https://en.wikipedia.org/wiki/Resource_Description_Framework "wikipedia:Resource Description Framework") *chiamato Virtuoso. Internamente, Virtuoso può essere considerato come un database relazionale. (Un [relational database](https://en.wikipedia.org/wiki/Relational_model "wikipedia:Relational model") è diverso da un database tradizionale basato su una singola tabella, nel senso che utilizza più tabelle correlate da un singolo tasto per memorizzare i dati). Esso è attualmente controllata da OpenLink, ed è disponibile sia sotto licenza commerciale, sia sotto licenza open source.*
 
-Tratto da [KDE Techbase](http://techbase.kde.org/Projects/Nepomuk/ComponentOverview#Soprano), _Soprano è una astrazione Qt che lavora sulle banche dati. Fornisce un'API amichevole basata sulle QT per l'accesso a diversi dati RDF. Attualmente supporta 3 backend di database - Sesame, Redland e Virtuoso . Lo Stack Semantico di KDE funziona solo con Virtuoso. Soprano offre inoltre funzionalità aggiuntive come la serializzazione, l'analisi dei dati RDF, e una architettura client-server che viene molto utilizzato in Nepomuk._
+Tratto da [KDE Techbase](http://techbase.kde.org/Projects/Nepomuk/ComponentOverview#Soprano), *Soprano è una astrazione Qt che lavora sulle banche dati. Fornisce un'API amichevole basata sulle QT per l'accesso a diversi dati RDF. Attualmente supporta 3 backend di database - Sesame, Redland e Virtuoso . Lo Stack Semantico di KDE funziona solo con Virtuoso. Soprano offre inoltre funzionalità aggiuntive come la serializzazione, l'analisi dei dati RDF, e una architettura client-server che viene molto utilizzato in Nepomuk.*
 
 ### Nepomuk
 
@@ -447,7 +425,7 @@ Akonadi è un sistema destinato a funzionare da cache locale per dati PIM, indip
 
 Akonadi non memorizza i dati di per sé : il formato di memorizzazione dipende dalla natura dei dati (per esempio, i contatti possono essere memorizzati in formato vCard ).
 
-Per ulteriori informazioni su Akonadi e il suo rapporto con Nepomuk, vedere [[1]](http://blogs.kde.org/node/4503) e [[2]](http://cmollekopf.wordpress.com/2013/02/13/kontact-nepomuk-integration-why-data-from-akonadi-is-indexed-in-nepomuk/).
+Per ulteriori informazioni su Akonadi e il suo rapporto con Nepomuk, vedere [[4]](http://blogs.kde.org/node/4503) e [[5]](http://cmollekopf.wordpress.com/2013/02/13/kontact-nepomuk-integration-why-data-from-akonadi-is-indexed-in-nepomuk/).
 
 #### Disabilitare Akonadi
 
@@ -471,7 +449,7 @@ Il pacchetto [akonadi-fake](https://aur.archlinux.org/packages/akonadi-fake/) è
 
 Da [Wikipedia](https://en.wikipedia.org/wiki/it:Phonon "wikipedia:it:Phonon"):
 
-_Phonon è l'API multimediale di KDE 4\. Phonon è stato creato per permettere a KDE 4 di essere indipendente da qualsiasi framework multimediale come GStreamer oppure xine e per fornire delle API stabili per la durata di vita di KDE 4\. E' stato creato per varie ragioni: per creare una semplice API multimediale con stile KDE/Qt, per supportare meglio i framework multimediali nativi su Windows e Mac OS X, e per risolvere i problemi dei framework non più mantenuti o con API e ABI instabili._
+*Phonon è l'API multimediale di KDE 4\. Phonon è stato creato per permettere a KDE 4 di essere indipendente da qualsiasi framework multimediale come GStreamer oppure xine e per fornire delle API stabili per la durata di vita di KDE 4\. E' stato creato per varie ragioni: per creare una semplice API multimediale con stile KDE/Qt, per supportare meglio i framework multimediali nativi su Windows e Mac OS X, e per risolvere i problemi dei framework non più mantenuti o con API e ABI instabili.*
 
 **Phonon** è usato largamente in KDE, sia per le applicazioni audio (come ad esempio le notificazioni di sistema o gli applicativi audio di KDE) sia per quelle video (come ad esempio l'anteprima video di Dolphin).
 
@@ -479,7 +457,7 @@ _Phonon è l'API multimediale di KDE 4\. Phonon è stato creato per permettere a
 
 Si possono utilizzare diversi backend come [Gstreamer](/index.php/Gstreamer "Gstreamer") ([phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer)) e [VLC](/index.php/VLC "VLC") ([phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc)) disponibili nei [Depositi Ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"), mentre QuickTime ([phonon-quicktime-git](https://aur.archlinux.org/packages/phonon-quicktime-git/)), e [AVKode](http://martinsandsmark.wordpress.com/2012/07/07/akademy/) ([phonon-avkode-git](https://aur.archlinux.org/packages/phonon-avkode-git/)) sono reperibili su [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)").
 
-La maggior parte degli utenti preferisce GStreamer o VLC, poiché sono maggiormente supportati. Si noti che possono essere installati più backend in una sola volta, e sceglierne uno in _Impostazioni di Sistema > Multimedia > Phonon > Backend_.
+La maggior parte degli utenti preferisce GStreamer o VLC, poiché sono maggiormente supportati. Si noti che possono essere installati più backend in una sola volta, e sceglierne uno in *Impostazioni di Sistema > Multimedia > Phonon > Backend*.
 
 **Nota:**
 
@@ -517,7 +495,7 @@ exec openbox-kde-session
 
 #### Quando si utilizza KDM
 
-Per utilizzare [Openbox](/index.php/Openbox_(Italiano) "Openbox (Italiano)") come gestore di finestre predefinito quando si accede a [KDM](/index.php/KDM_(Italiano) "KDM (Italiano)") basta andare su _Applicazioni predefinite -> Gestore delle finestre -> Usa un altro gestore delle finestre_, quindi selezionare Openbox all'interno della casella a discesa.
+Per utilizzare [Openbox](/index.php/Openbox_(Italiano) "Openbox (Italiano)") come gestore di finestre predefinito quando si accede a [KDM](/index.php/KDM_(Italiano) "KDM (Italiano)") basta andare su *Applicazioni predefinite -> Gestore delle finestre -> Usa un altro gestore delle finestre*, quindi selezionare Openbox all'interno della casella a discesa.
 
 #### Riattivare gli effetti del compositing
 
@@ -533,7 +511,7 @@ Installare [apper](https://aur.archlinux.org/packages/apper/) per ottenere le no
 
 ### Configurare KWin per utilizzare le OpenGL ES
 
-A partire dalla versione 4,8 di KWin è possibile utilizzare i binari compilati separatamente per poter utilizzare **kwin_gles** in sostituzione di KWin. Esso si comporta quasi come l'eseguibile kwin in modalità OpenGL2, con la leggera differenza che utilizza _egl_ anziché _glx_ come l'interfaccia della piattaforma nativa. Per testare kwin_gles è sufficiente eseguire `kwin_gles --replace` in Konsole.
+A partire dalla versione 4,8 di KWin è possibile utilizzare i binari compilati separatamente per poter utilizzare **kwin_gles** in sostituzione di KWin. Esso si comporta quasi come l'eseguibile kwin in modalità OpenGL2, con la leggera differenza che utilizza *egl* anziché *glx* come l'interfaccia della piattaforma nativa. Per testare kwin_gles è sufficiente eseguire `kwin_gles --replace` in Konsole.
 
 se volete rendere questo cambiamento permanente dovete create uno script in `$(kde4-config --localprefix)/env/` che esporti `KDEWM=kwin_gles`.
 
@@ -558,7 +536,7 @@ $ mkdir -p ~/.compose-cache
 
 ### Nascondere partizioni
 
-In Dolphin, si effettua semplicemente cliccando col tasto destro su un `dispositivo` nella barra laterale e selezionare `Nascondi _dispositivo_`, altrimenti...
+In Dolphin, si effettua semplicemente cliccando col tasto destro su un `dispositivo` nella barra laterale e selezionare `Nascondi *dispositivo*`, altrimenti...
 
 Se si desidera prevenire la comparsa delle partizioni interne nel proprio file manager, è possibile creare una regola di udev:
 
@@ -576,10 +554,9 @@ KERNEL=="sda2", ENV{UDISKS_IGNORE}="1"
 
 #### Disabilitare i Tooltips (Browser)
 
-Per disabilitare questa piccola chiave per i tooltips in Konqueror (alla pressione di `CTRL` su una pagina web), andare in _Impostazioni > Configura Konqueror > Navigazione Web_ e deselezionare _Abilita l'attivazione attraverso il tasto CTRL dei tasti di accesso_, oppure
+Per disabilitare questa piccola chiave per i tooltips in Konqueror (alla pressione di `CTRL` su una pagina web), andare in *Impostazioni > Configura Konqueror > Navigazione Web* e deselezionare *Abilita l'attivazione attraverso il tasto CTRL dei tasti di accesso*, oppure
 
  `~/.kde4/share/config/konquerorrc` 
-
 ```
 [Access Keys]
  Enabled=false
@@ -589,7 +566,7 @@ Per disabilitare questa piccola chiave per i tooltips in Konqueror (alla pressio
 
 É possibile utilizzare WebKit in konqueror al posto di KHTML, per prima cosa installare il pacchetto [kwebkitpart](https://www.archlinux.org/packages/?name=kwebkitpart).
 
-Quindi dopo aver eseguito Konqueror, si prema _Impostazioni > Configura Konqueror_, navigare nel sotto-menù _Generale_, e si selezioni `WebKit` come _Motore di base del browser web_.
+Quindi dopo aver eseguito Konqueror, si prema *Impostazioni > Configura Konqueror*, navigare nel sotto-menù *Generale*, e si selezioni `WebKit` come *Motore di base del browser web*.
 
 ### Integrazione di Firefox
 
@@ -602,10 +579,9 @@ Lo sfondo di Kscreensaver può essere cambiato da quello predefinito.
 KDE [non è abilita](https://bugs.kde.org/show_bug.cgi?id=312828) il cambiamento dello sfondo per la schermata del lockscreen, ma un [workaround](http://lists.opensuse.org/opensuse-kde/2013-02/msg00082.html) [esiste](http://forum.kde.org/viewtopic.php?f=66&t=110039):
 
  `/usr/share/apps/ksmserver/screenlocker/org.kde.passworddialog/contents/ui/` 
-
 ```
 [...]
-        _#source: theme.wallpaperPathForSize(parent.width, parent.height)_
+        *#source: theme.wallpaperPathForSize(parent.width, parent.height)*
         source: "1920x1080.jpg"
 [...]
 
@@ -620,14 +596,13 @@ Nota È necessario ripetere questa operazione per ogni aggiornamento del pacchet
 Copiare un profilo wallpaper esistente come modello :
 
 ```
-$ cp -r /usr/share/wallpapers/_ExistingWallpaper_ ~/.kde4/share/wallpapers/
+$ cp -r /usr/share/wallpapers/*ExistingWallpaper* ~/.kde4/share/wallpapers/
 
 ```
 
 Modificare il nome della directory , e modificare `metadata.desktop`:
 
- `~/.kde4/share/wallpapers/_MyWallpaper_/metadata.desktop` 
-
+ `~/.kde4/share/wallpapers/*MyWallpaper*/metadata.desktop` 
 ```
 [Desktop Entry]
 Name=MyWallpaper
@@ -645,14 +620,13 @@ $ rm ~/.kde4/share/wallpapers/MyWallpaper/contents/images/*
 Copiare la nuova immagine :
 
 ```
-$ cp _path/to/MyWallpaper.png_ MyWallpaper/contents/images/1920x1080.png
+$ cp *path/to/MyWallpaper.png* MyWallpaper/contents/images/1920x1080.png
 
 ```
 
 Modificare il profilo di metadati per il tema corrente :
 
  `~/.kde4/share/apps/desktoptheme/MyTheme/metadata.desktop` 
-
 ```
 [Wallpaper]
 defaultWallpaperTheme=MyWallpaper
@@ -681,7 +655,7 @@ $ rm .kde4/{cache,socket,tmp}-$(hostname)
 
 ```
 
-Il comando _rm_ rimuoverà solo i collegamenti simbolici che verranno ricreati automaticamente da KDE. Ora inizia una nuova sessione di KDE per vedere i risultati.
+Il comando *rm* rimuoverà solo i collegamenti simbolici che verranno ricreati automaticamente da KDE. Ora inizia una nuova sessione di KDE per vedere i risultati.
 
 Se il problema viene risolto, si avrà un nuovo e senza problemi `~/.Kde4`. Gradualmente è possibile spostare le parti della precedente configurazione salvata, riavviare la sessione regolarmente per effettuare un test, e per identificare le parti problematiche della vostra configurazione. Alcuni file qui sono chiamati dopo le applicazioni in modo che si sarà probabilmente in grado di testare questi senza dover riavviare KDE.
 
@@ -757,7 +731,6 @@ Ci potrebbe essere una situazione in cui il driver grafico potrebbe creare un co
 Una soluzione per gli utenti Nvidia è :
 
  `~/.kde4/share/config/kwinrc` 
-
 ```
 [Compositing]
 Enabled=false
@@ -805,7 +778,7 @@ Se questo non risolve i problemi, forse il driver non fornisce una buona acceler
 
 Il motore di rendering raster permette alla CPU di eseguire la maggior parte della grafica, sottraendo tale carico dalla GPU. In questo modo è possibile ottenere prestazioni migliori, a seconda del vostro sistema. Questo è fondamentalmente un work-around per i driver stack non performanti su Linux, dato che la CPU non dovrebbe, ovviamente, fare calcoli grafici visto che è progettata per un numero di threads di maggiore complessità, rispetto alla GPU, che seppur elabora molti thread questi sono di minore potenza di calcolo. Quindi, utilizzare il motore Raster solo se si hanno problemi o la propria GPU è molto più lenta della CPU, altrimenti è meglio utilizzare XRender.
 
-Dalla versione Qt 4.7 e successive, la ricompilazione di Qt non è necessaria. Basta utilizzare `QT_GRAPHICSSYSTEM=raster`, `opengl`, o `native` (per quello di base). Raster dipende della CPU, _OpenGL_ dipende dalla GPU e necessita di un ottimo supporto dei driver, mentre _native_ semplicemente utilizza il rendering X11 (solitamente misto).
+Dalla versione Qt 4.7 e successive, la ricompilazione di Qt non è necessaria. Basta utilizzare `QT_GRAPHICSSYSTEM=raster`, `opengl`, o `native` (per quello di base). Raster dipende della CPU, *OpenGL* dipende dalla GPU e necessita di un ottimo supporto dei driver, mentre *native* semplicemente utilizza il rendering X11 (solitamente misto).
 
 **Il miglior modo per automizzare tutto quanto** è installare [kcm-qt-graphicssystem](https://aur.archlinux.org/packages/kcm-qt-graphicssystem/) da AUR e configurare questa particolare impostazione di Qt attraverso:
 
@@ -831,11 +804,11 @@ e si possono disabilitare con `Alt+Shift+F12`
 
 #### Il Composite per il Desktop è disabilitato con una recente schede video Nvidia
 
-Talvolta, KWin potrebbe avere delle impostazioni nel suo file di configurazione (`kwinrc`) che _possono causare_ un problema di riattivazione del composite `OpenGL` per il desktop 3D. Questo problema si presenta casualmente (ad esempio a causa di un crash improvviso di Xorg o di un semplice riavvio del sistema, che corrompe il file), se ciò accadesse, cancellare il file `~/.kde4/share/config/kwinrc` e ri-effettuare il login. In questo modo KWin genererà un nuovo file con impostazioni predefinite di KDE ed il problema dovrebbe risolversi.
+Talvolta, KWin potrebbe avere delle impostazioni nel suo file di configurazione (`kwinrc`) che *possono causare* un problema di riattivazione del composite `OpenGL` per il desktop 3D. Questo problema si presenta casualmente (ad esempio a causa di un crash improvviso di Xorg o di un semplice riavvio del sistema, che corrompe il file), se ciò accadesse, cancellare il file `~/.kde4/share/config/kwinrc` e ri-effettuare il login. In questo modo KWin genererà un nuovo file con impostazioni predefinite di KDE ed il problema dovrebbe risolversi.
 
 #### Tremolio in fullscreen quando il Composite è attivato
 
-A partire da KDE SC 4.6.0, c'è un'opzione in _Impostazioni di Sistema -> Effetti Desktop -> Avanzate -> Sospendi gli effetti desktop per le finestre a schermo intero"._ Deselezionandolo si dirà a kwin di disabilitare lo schermo intero indiretto.
+A partire da KDE SC 4.6.0, c'è un'opzione in *Impostazioni di Sistema -> Effetti Desktop -> Avanzate -> Sospendi gli effetti desktop per le finestre a schermo intero".* Deselezionandolo si dirà a kwin di disabilitare lo schermo intero indiretto.
 
 #### Tearing dello schermo con gli effetti desktop abilitati
 
@@ -859,7 +832,7 @@ Installare il pacchetto [kscreen](https://www.archlinux.org/packages/?name=kscre
 
 Quando si incontrano questi messaggi:
 
-	Il device di riproduzione audio _nome_del_dispositivo_sonoro_ non funziona.
+	Il device di riproduzione audio *nome_del_dispositivo_sonoro* non funziona.
 
 	Per ripristinare quello di default
 
@@ -888,7 +861,6 @@ L'odine di preferenza del backend può essere cambiato in:
 Di base la storia dei comandi nella console viene salvata solamente quando si digita 'exit' nella console. Quando si chiude la Konsole con il bottone 'x' nell'angolo ciò non acccade. Per abilitare il salvataggio automatico dopo ogni esecuzione di comandi :
 
  `~/.bashrc` 
-
 ```
  shopt -s histappend
  [[ "${PROMPT_COMMAND}" ]] && PROMPT_COMMAND="$PROMPT_COMMAND;history -a" || PROMPT_COMMAND="history -a"
@@ -905,7 +877,7 @@ Potete cambiare questo comportamento andando in **Impostazioni di Sistema > Dett
 
 ### Il processo di Nepomukserver si avvia automaticamente anche se il desktop semantico è disabilitato
 
-Andare in ' _Impostazioni di Sistema > Avvio e spegnimento > Service Manager > Gestione dei servizi_ e spuntare la voce relativa al "Modulo di ricerca di Nepomuk".
+Andare in ' *Impostazioni di Sistema > Avvio e spegnimento > Service Manager > Gestione dei servizi* e spuntare la voce relativa al "Modulo di ricerca di Nepomuk".
 
 ### Dolphin e le finestre di dialogo sono estremamente lente ad inizializzarsi ogni volta
 
@@ -939,7 +911,6 @@ Quando KDE raggiunge la versione beta o RC milestone (.90), i pacchetti di KDE "
 Si può aggiunge [kde-unstable] con:
 
  `/etc/pacman.conf` 
-
 ```
 [kde-unstable]
  Include = /etc/pacman.d/mirrorlist
@@ -973,7 +944,7 @@ Nel caso in cui si abbiano problemi e si scriva sul forum di Arch, assicurarsi i
 
 ## Links Esterni
 
-*   [[3]](http://www.kde.org) - KDE homepage
-*   [[4]](https://bugs.kde.org) - KDE bug tracker
-*   [[5]](https://bugs.archlinux.org) - Arch Linux bug tracker
-*   [[6]](https://projects.kde.org) - KDE Projects
+*   [[6]](http://www.kde.org) - KDE homepage
+*   [[7]](https://bugs.kde.org) - KDE bug tracker
+*   [[8]](https://bugs.archlinux.org) - Arch Linux bug tracker
+*   [[9]](https://projects.kde.org) - KDE Projects

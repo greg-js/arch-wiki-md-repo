@@ -25,7 +25,7 @@
 *   Установщик: есть ли возможность установить программу по тихому? А ещё лучше, существует ли версия без инсталлятора?
 *   Портативность и чистота: портативна ли программа? Чистая ли она?
 
-Здесь под портативной программой подразумевается такая программа, которая _никогда_ не изменяет реестр и не пишет что-либо за пределами её директории; под чистой программой подразумевается такая, которая _никогда_ не записывает что-либо даже в свою директорию, но может записать свои настройки в папку пользователя. Программа может являться одновременно и чистой и портативной (например, она никогда не записывает настройки) или быть ни чистой, ни портативной (например, она записывает в свою директорию, а также записывает не в свою директорию, и изменяет реестр...)
+Здесь под портативной программой подразумевается такая программа, которая *никогда* не изменяет реестр и не пишет что-либо за пределами её директории; под чистой программой подразумевается такая, которая *никогда* не записывает что-либо даже в свою директорию, но может записать свои настройки в папку пользователя. Программа может являться одновременно и чистой и портативной (например, она никогда не записывает настройки) или быть ни чистой, ни портативной (например, она записывает в свою директорию, а также записывает не в свою директорию, и изменяет реестр...)
 
 ### Лицензия
 
@@ -121,7 +121,7 @@ The task of preparing the environment may differ greatly between applications, b
 
 Of course the minimum is just starting `WINEDEBUG=-all wine /usr/share/programname "$@"`.
 
-Usually the environment will be made by symlinking between the `"$HOME"/._programname_` directory and the `/usr/share/_programname_` files. But since some Windows programs are very fickle about their paths, you may need to symlink directly in the `"$HOME"/._programname_/wine/drive_c/Program\ Files/_programname_` directory.
+Usually the environment will be made by symlinking between the `"$HOME"/.*programname*` directory and the `/usr/share/*programname*` files. But since some Windows programs are very fickle about their paths, you may need to symlink directly in the `"$HOME"/.*programname*/wine/drive_c/Program\ Files/*programname*` directory.
 
 Of course those are just ideas to integrate Win32 applications in the Linux environment, do not forget your intelligence and gumption.
 

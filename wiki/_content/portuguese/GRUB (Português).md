@@ -11,7 +11,7 @@
 
 **Nota:** Para dispositivos particionados no formato GPT, em placas-mãe BIOS, o GRUB necessitará de uma "[Partição BIOS de boot](/index.php/GRUB#GPT_specific_instructions "GRUB")" de 2 MiB.
 
-**Nota:** Por favor não utilize a nomenclatura `/dev/sda_X_` no comando abaixo. Você deve utilizar `/dev/sdb` se o Arch estiver instalado lá e se foi configurado na BIOS para que este seja o primeiro dispositivo na ordem de inicialização.
+**Nota:** Por favor não utilize a nomenclatura `/dev/sda*X*` no comando abaixo. Você deve utilizar `/dev/sdb` se o Arch estiver instalado lá e se foi configurado na BIOS para que este seja o primeiro dispositivo na ordem de inicialização.
 
 ```
 # pacman -S grub

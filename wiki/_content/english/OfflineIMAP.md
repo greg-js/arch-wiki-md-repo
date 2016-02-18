@@ -46,7 +46,6 @@ Copy one of the default configuration files to `~/.offlineimaprc`.
 The following file is a commented version of `offlineimap.conf.minimal`.
 
  `~/.offlineimaprc` 
-
 ```
 [general]
 # List of accounts to be synced, separated by a comma.
@@ -79,7 +78,6 @@ remoteuser = username
 For synchronizing only certain folders, you can use a [folderfilter](http://offlineimap.org/doc/nametrans.html#folderfilter) in the **remote** section of the account in `~/.offlineimaprc`. For example, the following configuration will only synchronize the folders `Inbox` and `Sent`:
 
  `~/.offlineimaprc` 
-
 ```
 [Repository main-remote]
 # Synchronize only the folders Inbox and Sent:
@@ -116,7 +114,6 @@ Most other mail transfer agents assume that the user will be using the tool as a
 Confusingly, they are spread thin all-over the configuration file:
 
  `~/.offlineimaprc` 
-
 ```
 # In the general section
 [general]
@@ -152,7 +149,6 @@ holdconnectionopen = yes
 When configured to run background jobs, offlineimap can be managed with the following systemd service:
 
  `/etc/systemd/system/offlineimap@.service` 
-
 ```
 [Unit]
 Description=Start offlineimap as a daemon
@@ -170,7 +166,7 @@ WantedBy=multi-user.target
 
 ```
 
-Then [enable](/index.php/Enable "Enable") `offlineimap@_user_.service`.
+Then [enable](/index.php/Enable "Enable") `offlineimap@*user*.service`.
 
 **Note:** If your configuration involves [D-Bus](/index.php/D-Bus "D-Bus") operations, e.g. [#Gnome keyring](#Gnome_keyring), you should adapt this service for systemd user instance as described in [systemd/User](/index.php/Systemd/User "Systemd/User") instead of using it directly. This approach is necessary to set the `DBUS_SESSION_BUS_ADDRESS` variable correctly.
 
@@ -179,7 +175,6 @@ Then [enable](/index.php/Enable "Enable") `offlineimap@_user_.service`.
 [Mutt](/index.php/Mutt "Mutt") cannot be simply pointed to an IMAP or maildir directory and be expected to guess which subdirectories happen to be the mailboxes, yet offlineimap can generate a muttrc fragment containing the mailboxes that it syncs.
 
  `~/.offlineimaprc` 
-
 ```
 [mbnames]
 enabled = yes
@@ -187,14 +182,14 @@ filename = ~/.mutt/mailboxes
 header = "mailboxes "
 peritem = "+%(accountname)s/%(foldername)s"
 sep = " "
-footer = "\n"
+footer = "
+"
 
 ```
 
 Then add the following lines to `~/.mutt/muttrc`.
 
  `~/.mutt/muttrc` 
-
 ```
 # IMAP: offlineimap
 set folder = "~/Mail"
@@ -209,10 +204,9 @@ set postponed = "+account/Drafts"
 
 ### Gmail configuration
 
-This remote repository is configured specifically for Gmail support, substituting folder names in uppercase for lowercase, among other small additions. Keep in mind that this configuration does not sync the _All Mail_ folder, since it is usually unnecessary and skipping it prevents bandwidth costs:
+This remote repository is configured specifically for Gmail support, substituting folder names in uppercase for lowercase, among other small additions. Keep in mind that this configuration does not sync the *All Mail* folder, since it is usually unnecessary and skipping it prevents bandwidth costs:
 
  `~/.offlineimaprc` 
-
 ```
 [Repository gmail-remote]
 type = Gmail
@@ -261,7 +255,7 @@ GNU Privacy Guard can be used for storing a password in an encrypted file. First
 First type in the password for the email account in a plain text file. Do this in a secure directory with `700` permissions located on a [tmpfs](/index.php/Tmpfs "Tmpfs") to avoid writing the unencrypted password to the disk. Then encrypt the file with your private key:
 
 ```
-$ gpg --default-recipient-self -e _/path/to/plain/password_
+$ gpg --default-recipient-self -e */path/to/plain/password*
 
 ```
 
@@ -270,26 +264,25 @@ Remove the plain text file since it is no longer needed. Move the encrypted file
 Now create a python function that will decrypt the password:
 
  `~/.offlineimap.py` 
-
 ```
 #! /usr/bin/env python2
 from subprocess import check_output
 
 def get_pass():
-    return check_output("gpg -dq ~/.offlineimappass.gpg", shell=True).strip("\n")
+    return check_output("gpg -dq ~/.offlineimappass.gpg", shell=True).strip("
+")
 ```
 
 Load this file from `~/.offlineimaprc` and specify the defined function:
 
  `~/.offlineimaprc` 
-
 ```
 [general]
 # Path to file with arbitrary Python code to be loaded
 pythonfile = ~/.offlineimap.py
 ...
 
-[Repository _example_]
+[Repository *example*]
 # Decrypt and read the encrypted password
 remotepasseval = get_pass()
 ...
@@ -302,14 +295,13 @@ remotepasseval = get_pass()
 First create a password for your email account(s):
 
 ```
-$ pass insert Mail/_account_
+$ pass insert Mail/*account*
 
 ```
 
 Now create a python function that will decrypt the password:
 
  `~/.offlineimap.py` 
-
 ```
 #! /usr/bin/env python2
 from subprocess import check_output
@@ -318,12 +310,11 @@ def get_pass(account):
     return check_output("pass Mail/" + account, shell=True).splitlines()[0]
 ```
 
-This is an example for a multi-account setup. You can customize the argument to _pass_ as defined previously.
+This is an example for a multi-account setup. You can customize the argument to *pass* as defined previously.
 
 Load this file from `~/.offlineimaprc` and specify the defined function:
 
  `~/.offlineimaprc` 
-
 ```
 [general]
 # Path to file with arbitrary Python code to be loaded
@@ -357,7 +348,6 @@ remotepasseval = get_password("examplerepo")
 Install [python2-gnomekeyring](https://www.archlinux.org/packages/?name=python2-gnomekeyring). Then:
 
  `~/.offlineimap.py` 
-
 ```
 #! /usr/bin/env python2
 
@@ -404,7 +394,6 @@ To set the credentials, run this script from a shell.
 ##### Option 2: using [gnome-keyring-query](https://aur.archlinux.org/packages/gnome-keyring-query/) tool
 
  `~/.offlineimap.py` 
-
 ```
 #! /usr/bin/env python2
 # executes gnome-keyring-query get passwd
@@ -512,11 +501,11 @@ $ offlineimap [ -o ] [ -d <debug_type> ] [ -u <ui> ]
 
 	-d <debug_type>
 
-	Where _<debug_type>_ is one of `imap`, `maildir` or `thread`. Debugging imap and maildir are, by far, the most useful.
+	Where *<debug_type>* is one of `imap`, `maildir` or `thread`. Debugging imap and maildir are, by far, the most useful.
 
 	-u <ui>
 
-	Where _<ui>_ is one of `CURSES.BLINKENLIGHTS`, `TTY.TTYUI`, `NONINTERACTIVE.BASIC`, `NONINTERACTIVE.QUIET` or `MACHINE.MACHINEUI`. TTY.TTYUI is sufficient for debugging purposes.
+	Where *<ui>* is one of `CURSES.BLINKENLIGHTS`, `TTY.TTYUI`, `NONINTERACTIVE.BASIC`, `NONINTERACTIVE.QUIET` or `MACHINE.MACHINEUI`. TTY.TTYUI is sufficient for debugging purposes.
 
 **Note:** More recent versions use the following for <ui>: `blinkenlights`, `ttyui`, `basic`, `quiet` or `machineui`.
 
@@ -535,7 +524,6 @@ ERROR: Creating folder bar on repository foo-remote
 The solution is to provide an inverse `nametrans` lambda for the local repository, e.g.
 
  `~/.offlineimaprc` 
-
 ```
 [Repository foo-local]
 nametrans = lambda foldername: foldername.replace('bar', 'BAR')

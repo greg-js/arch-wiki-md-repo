@@ -64,7 +64,6 @@ The examples below cover the most common use cases. It is assumed that you use t
 ### Configuration Example
 
  `/etc/nginx/nginx.conf` 
-
 ```
 user http;
 worker_processes auto;
@@ -95,9 +94,8 @@ The maximum connections nginx will accept is given by `max_clients = worker_proc
 By default nginx runs as user `nobody`. To run it as another user, change the `user` line in `nginx.conf`:
 
  `/etc/nginx/nginx.conf` 
-
 ```
-user _myuser_ _mygroup_; # e.g. http
+user *myuser* *mygroup*; # e.g. http
 
 ```
 
@@ -110,7 +108,6 @@ It is possible to serve multiple domains using `server` blocks. It may be referr
 In the example below the server listens for incoming connections for two domains: `domainname1.dom` and `domainname2.dom`:
 
  `/etc/nginx/nginx.conf` 
-
 ```
 ...
 server {
@@ -159,7 +156,6 @@ Create the following directories:
 Create a file inside the `servers-available` directory that contains one or more server blocks:
 
  `/etc/nginx/servers-available/example` 
-
 ```
 server {
     ..
@@ -223,14 +219,13 @@ If you need to create a CSR, follow these instructions instead of the above:
 
 ```
 
-**Note:** For more _openssl_ options, read its [man page](https://www.openssl.org/docs/apps/openssl.html) or peruse its [extensive documentation](https://www.openssl.org/docs/).
+**Note:** For more *openssl* options, read its [man page](https://www.openssl.org/docs/apps/openssl.html) or peruse its [extensive documentation](https://www.openssl.org/docs/).
 
 **Warning:** If you plan on implementing SSL/TLS, know that some variations and implementations are [still](https://weakdh.org/#affected) [vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security"). For details on these current vulnerabilities within SSL/TLS and how to apply appropriate changes to nginx, visit [http://disablessl3.com/](http://disablessl3.com/) and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
 
 Example of a `nginx.conf` using SSL:
 
  `/etc/nginx/nginx.conf` 
-
 ```
 http {
         ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH";
@@ -330,7 +325,7 @@ location ~ \.php$ {
 
 ```
 
-If it is needed to process other extensions with PHP (e.g. _.html_ and _.htm_):
+If it is needed to process other extensions with PHP (e.g. *.html* and *.htm*):
 
 ```
 location ~ \.(php**|html|htm**)$ {
@@ -341,7 +336,7 @@ location ~ \.(php**|html|htm**)$ {
 
 ```
 
-Non _.php_ extension processing in php-fpm should be explicitly added in `/etc/php/php-fpm.conf`:
+Non *.php* extension processing in php-fpm should be explicitly added in `/etc/php/php-fpm.conf`:
 
 ```
 security.limit_extensions = .php .html .htm
@@ -349,7 +344,6 @@ security.limit_extensions = .php .html .htm
 ```
 
 **Note:** Pay attention to the `fastcgi_pass` argument, as it must be the TCP or Unix socket defined by the chosen FastCGI server in its config file. The **default** (Unix) socket for `php-fpm` is:
-
 ```
 fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
 
@@ -361,7 +355,6 @@ You might use the common TCP socket, **not default**,
 fastcgi_pass 127.0.0.1:9000;
 
 ```
-
 Unix domain sockets should however be faster.
 
 The example shown below is a copy of a working configuration. Notice that in this example the `root` path in specified directly under `server`, and not inside `location` (as it is in the default config).
@@ -390,7 +383,6 @@ server {
 If using multiple `server` blocks with enabled PHP support, it might be easier to create a PHP config file instead:
 
  `/etc/nginx/conf/php.conf` 
-
 ```
 location ~ \.php$ {
   fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
@@ -403,7 +395,6 @@ location ~ \.php$ {
 To enable PHP support for a particular server, simple include `php.conf`:
 
  `/etc/nginx/nginx.conf` 
-
 ```
  server = {
      server_name example.com;
@@ -445,7 +436,6 @@ If you want to spawn multiple worker threads, it is recommended that you use [mu
 Copy the unit file from `/usr/lib/systemd/system/fcgiwrap.service` to `/etc/systemd/system/fcgiwrap.service` (and the `fcgiwrap.socket` unit, if present), and modify the `ExecStart` line to suit your needs. Here is a unit file that uses [multiwatch](https://aur.archlinux.org/packages/multiwatch/). Make sure `fcgiwrap.socket` is not started or enabled, because it will conflict with this unit:
 
  `/etc/systemd/system/fcgiwrap.service` 
-
 ```
 [Unit]
 Description=Simple CGI Server
@@ -493,11 +483,11 @@ A perl script to create this jail is available at [jail.pl gist](https://gist.gi
 
 ### Create necessary devices
 
-nginx needs `/dev/null`, `/dev/random`, and `/dev/urandom`. To install these in the chroot create the `/dev/` directory and add the devices with _mknod_. Avoid mounting all of `/dev/` to ensure that, even if the chroot is compromised, an attacker must break out of the chroot to access important devices like `/dev/sda1`.
+nginx needs `/dev/null`, `/dev/random`, and `/dev/urandom`. To install these in the chroot create the `/dev/` directory and add the devices with *mknod*. Avoid mounting all of `/dev/` to ensure that, even if the chroot is compromised, an attacker must break out of the chroot to access important devices like `/dev/sda1`.
 
 **Tip:** Be sure that `/srv/http` is mounted without no-dev option
 
-**Tip:** See `man mknod` and `ls -l /dev/{null,random,urandom}` to better understand the _mknod_ options.
+**Tip:** See `man mknod` and `ls -l /dev/{null,random,urandom}` to better understand the *mknod* options.
 
 ```
 # export JAIL=/srv/http
@@ -536,7 +526,6 @@ Then mount `$JAIL/tmp` and `$JAIL/run` as tmpfs's. The size should be limited to
 In order to preserve the mounts across reboots, the following entries should be added to `/etc/fstab`:
 
  `/etc/fstab` 
-
 ```
  tmpfs   /srv/http/run   tmpfs   rw,noexec,relatime,size=1024k   0       0
  tmpfs   /srv/http/tmp   tmpfs   rw,noexec,relatime,size=102400k 0       0
@@ -555,10 +544,9 @@ First copy over the easy files.
 
 ```
 
-Now copy over required libraries. Use _ldd_ to list them and then copy them all to the correct location. Copying is preferred over hardlinks to ensure that even if an attacker gains write access to the files they cannot destroy or alter the true system files.
+Now copy over required libraries. Use *ldd* to list them and then copy them all to the correct location. Copying is preferred over hardlinks to ensure that even if an attacker gains write access to the files they cannot destroy or alter the true system files.
 
  `$ ldd /usr/bin/nginx` 
-
 ```
 linux-vdso.so.1 (0x00007fffc41fe000)
 libpthread.so.0 => /usr/lib/libpthread.so.0 (0x00007f57ec3e8000)
@@ -601,31 +589,24 @@ Copy over some miscellaneous but necessary libraries and system files.
 Create restricted user/group files for the chroot. This way only the users needed for the chroot to function exist as far as the chroot knows, and none of the system users/groups are leaked to attackers should they gain access to the chroot.
 
  `$JAIL/etc/group` 
-
 ```
 http:x:33:
 nobody:x:99:
 
 ```
-
  `$JAIL/etc/passwd` 
-
 ```
 http:x:33:33:http:/:/bin/false
 nobody:x:99:99:nobody:/:/bin/false
 
 ```
-
  `$JAIL/etc/shadow` 
-
 ```
 http:x:14871::::::
 nobody:x:14871::::::
 
 ```
-
  `$JAIL/etc/gshadow` 
-
 ```
 http:::
 nobody:::
@@ -667,7 +648,7 @@ If your server will bind port 80 (or any other port in range [1-1023]), give the
 
 ### Modify nginx.service to start chroot
 
-Before modifying the `nginx.service` unit file, it may be a good idea to copy it to `/etc/systemd/system/` since the unit files there take priority over those in `/usr/lib/systemd/system/`. This means upgrading nginx would not modify your custom _.service_ file.
+Before modifying the `nginx.service` unit file, it may be a good idea to copy it to `/etc/systemd/system/` since the unit files there take priority over those in `/usr/lib/systemd/system/`. This means upgrading nginx would not modify your custom *.service* file.
 
 ```
 # cp /usr/lib/systemd/system/nginx.service /etc/systemd/system/nginx.service
@@ -677,9 +658,7 @@ Before modifying the `nginx.service` unit file, it may be a good idea to copy it
 The systemd unit must be changed to start up nginx in the chroot, as the http user, and store the pid file in the chroot.
 
 **Note:** I'm not sure if the pid file needs to be stored in the chroot jail.
-
  `/etc/systemd/system/nginx.service` 
-
 ```
  [Unit]
  Description=A high performance web server and a reverse proxy server
@@ -706,7 +685,7 @@ You can now safely get rid of the non-chrooted nginx installation.
 
 ```
 
-If you do not remove the non-chrooted nginx installation, you may want to make sure that the running nginx process is in fact the chrooted one. You can do so by checking where `/proc/_PID_/root` symmlinks to. If should link to `/srv/http` instead of `/`.
+If you do not remove the non-chrooted nginx installation, you may want to make sure that the running nginx process is in fact the chrooted one. You can do so by checking where `/proc/*PID*/root` symmlinks to. If should link to `/srv/http` instead of `/`.
 
 ```
 # ps -C nginx | awk '{print $1}' | sed 1d | while read -r PID; do ls -l /proc/$PID/root; done
@@ -809,7 +788,7 @@ location ~ \.php$ {
 
 ### Error: chroot: '/usr/sbin/nginx' No such file or directory
 
-If you encounter this error when running the _nginx_ daemon using chroot, this is likely due to missing 64 bit libraries in the jailed environment.
+If you encounter this error when running the *nginx* daemon using chroot, this is likely due to missing 64 bit libraries in the jailed environment.
 
 If you are running chroot in `/srv/http` you need to add the required 64-bit libraries.
 
@@ -830,7 +809,6 @@ If run as root, permissions for the libraries should be read and executable for 
 On pure systemd you can get advantages of chroot + systemd. [[1]](http://0pointer.de/blog/projects/changing-roots.html) Based on set [user group](http://wiki.nginx.org/CoreModule#user) an pid on:
 
  `/etc/nginx/nginx.conf` 
-
 ```
 user http;
 pid /run/nginx.pid;
@@ -839,7 +817,6 @@ pid /run/nginx.pid;
 the absolute path of file is `/srv/http/etc/nginx/nginx.conf`.
 
  `/etc/systemd/system/nginx.service` 
-
 ```
 [Unit]
 Description=nginx (Chroot)
@@ -863,7 +840,6 @@ It is not necesary to set the default location, nginx loads at default `-c /etc/
 Alternatively you can run **only** `ExecStart` as chroot with parameter `RootDirectoryStartOnly` set as `yes` [[man systemd service](http://www.freedesktop.org/software/systemd/man/systemd.service.html)] or start it before mount point as effective or a [systemd path](http://www.freedesktop.org/software/systemd/man/systemd.path.html) is available.
 
  `/etc/systemd/system/nginx.path` 
-
 ```
 [Unit]
 Description=nginx (Chroot) path

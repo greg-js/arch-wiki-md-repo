@@ -36,7 +36,6 @@ Lo stato della batteria può essere letto usando l'utility ACPI da terminale. Il
 Se la tua batteria invia eventi a [udev](/index.php/Udev "Udev") ogni volta che si (s)carica dell' 1%, si può usare una regola udev come questa, per sospendere automaticamente il sistema quando la batteria è a un livello critico, e dunque prevenire la perdita di dati non salvati.
 
  `/etc/udev/rules.d/lowbat.rules` 
-
 ```
 # Suspend the system when battery level drops to 2%
 SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="2", RUN+="/usr/bin/systemctl suspend"
@@ -58,7 +57,6 @@ Documentato [qui](https://bugs.launchpad.net/ubuntu/+source/acpi-support/+bug/59
 Per prevenire che l'hard disk del laptop si "parcheggi" troppo spesso:
 
  `/etc/udev/rules.d/75-hdparm.rules` 
-
 ```
 ACTION=="add", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1", RUN+="/usr/bin/hdparm -B 254 /dev/$kernel"
 

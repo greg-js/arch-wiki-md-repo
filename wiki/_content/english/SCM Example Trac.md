@@ -18,7 +18,7 @@ Updated for Trac 0.11
 *   [4 Create Projects](#Create_Projects)
     *   [4.1 Create Subversion Repository](#Create_Subversion_Repository)
     *   [4.2 Create Trac Project](#Create_Trac_Project)
-        *   [4.2.1 Modify the _/mnt/rpo/trac/MY_PROJECT/conf/trac.ini_ file](#Modify_the_.2Fmnt.2Frpo.2Ftrac.2FMY_PROJECT.2Fconf.2Ftrac.ini_file)
+        *   [4.2.1 Modify the */mnt/rpo/trac/MY_PROJECT/conf/trac.ini* file](#Modify_the_.2Fmnt.2Frpo.2Ftrac.2FMY_PROJECT.2Fconf.2Ftrac.ini_file)
 
 ## Basic Environment
 
@@ -61,7 +61,7 @@ Install the following packages:
 
 #### Disable connection pooling
 
-Edit _/usr/lib/python2.5/site-packages/trac/db/postgres_backend.py_:
+Edit */usr/lib/python2.5/site-packages/trac/db/postgres_backend.py*:
 
 ```
  class PostgreSQLConnection
@@ -107,18 +107,18 @@ The user account under which the web server runs will require write permissions 
 Create a new list and add initial user:
 
 ```
- htdigest -c /mnt/rpo/conf/svn-user svnrepos _FIRST_USER_
+ htdigest -c /mnt/rpo/conf/svn-user svnrepos *FIRST_USER*
 
 ```
 
 To add other users:
 
 ```
- htdigest /mnt/rpo/conf/svn-user svnrepos _OTHER_USER_
+ htdigest /mnt/rpo/conf/svn-user svnrepos *OTHER_USER*
 
 ```
 
-You can edit the _svn-user_ file to remove or rename users
+You can edit the *svn-user* file to remove or rename users
 
 ### Create Database
 
@@ -135,7 +135,7 @@ Create the trac user and the database:
 
 ### Configure Web Server
 
-Edit _/etc/httpd/conf/httpd.conf_:
+Edit */etc/httpd/conf/httpd.conf*:
 
 ```
  LoadModule dav_module              modules/mod_dav.so
@@ -148,19 +148,19 @@ Edit _/etc/httpd/conf/httpd.conf_:
    Require valid-user
    AuthType Digest
    AuthName "svnrepos"
-   AuthDigestDomain _[http://scm.example.com/](http://scm.example.com/)_
+   AuthDigestDomain *[http://scm.example.com/](http://scm.example.com/)*
    AuthDigestProvider file
-   AuthUserFile _/mnt/rpo/conf/svn-user_
+   AuthUserFile */mnt/rpo/conf/svn-user*
  </Location>
  <Location /svn>
    DAV svn
-   SVNParentPath _/mnt/rpo/svn_
+   SVNParentPath */mnt/rpo/svn*
    SVNPathAuthz off
  </Location>
  <Location /trac>
    SetHandler mod_python
    PythonHandler trac.web.modpython_frontend
-   PythonOption TracEnvParentDir _/mnt/rpo/trac_
+   PythonOption TracEnvParentDir */mnt/rpo/trac*
    PythonOption TracUriRoot /trac
  </Location>
 
@@ -199,7 +199,7 @@ Just execute one line:
 
 ```
 
-#### Modify the _/mnt/rpo/trac/MY_PROJECT/conf/trac.ini_ file
+#### Modify the */mnt/rpo/trac/MY_PROJECT/conf/trac.ini* file
 
 *   Change **repository_type** to **svn**
 *   Change **repository_path** to **/mnt/rpo/svn/MY_PROJECT**
@@ -208,6 +208,7 @@ Just execute one line:
 *   Allow web admin ([http://scm.example.com/trac/MY_PROJECT/admin](http://scm.example.com/trac/MY_PROJECT/admin)):
 
 ```
-echo -e "[components]\nwebadmin.* = enabled" >> /mnt/rpo/trac/MY_PROJECT/conf/trac.ini
+echo -e "[components]
+webadmin.* = enabled" >> /mnt/rpo/trac/MY_PROJECT/conf/trac.ini
 
 ```

@@ -1,6 +1,6 @@
-From [GDM - GNOME Display Manager](http://projects.gnome.org/gdm/about.html):
+From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM):
 
-	_The GNOME Display Manager (GDM) is a program that manages graphical display servers and handles graphical user logins._
+	*The GNOME Display Manager (GDM) is a program that manages graphical display servers and handles graphical user logins.*
 
 [Display managers](/index.php/Display_manager "Display manager") provide [X Window System](/index.php/X_Window_System "X Window System") users with a graphical login prompt.
 
@@ -62,7 +62,6 @@ See [Display manager#Autostarting](/index.php/Display_manager#Autostarting "Disp
 Firstly, you need to extract the existing GNOME Shell theme to a folder in your home directory. You can do this using the following script:
 
  `extractgst.sh` 
-
 ```
 #!/bin/sh
 
@@ -82,7 +81,6 @@ Navigate to the created directory. You should find that the theme files have bee
 Next, you need to create a file in the directory with the following content:
 
  `gnome-shell-theme.gresource.xml` 
-
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
@@ -157,10 +155,9 @@ For more information, please see the following [forum thread](https://bbs.archli
 
 ### DConf configuration
 
-Some GDM settings are stored in a DConf database. They can be configured either by adding _keyfiles_ to the `/etc/dconf/db/gdm.d` directory and then recompiling the GDM database by running `dconf update` as root or by logging into the GDM user on the system and changing the setting directly using the _gsettings_ command line tool. Note that for the former approach, a GDM profile file is required - this must be created manually as it is no longer shipped upstream, see below:
+Some GDM settings are stored in a DConf database. They can be configured either by adding *keyfiles* to the `/etc/dconf/db/gdm.d` directory and then recompiling the GDM database by running `dconf update` as root or by logging into the GDM user on the system and changing the setting directly using the *gsettings* command line tool. Note that for the former approach, a GDM profile file is required - this must be created manually as it is no longer shipped upstream, see below:
 
  `/etc/dconf/profile/gdm` 
-
 ```
 user-db:user
 system-db:gdm
@@ -179,16 +176,15 @@ For the latter approach, you can log into the GDM user with the command below:
 Either create the following keyfile
 
  `/etc/dconf/db/gdm.d/02-logo` 
-
 ```
 [org/gnome/login-screen]
-logo='_/path/to/logo.png_'
+logo='*/path/to/logo.png*'
 ```
 
 and then recompile the GDM database or alternatively log in to the GDM user and execute the following:
 
 ```
-$ gsettings set org.gnome.login-screen logo '_/path/to/logo.png_'
+$ gsettings set org.gnome.login-screen logo '*/path/to/logo.png*'
 
 ```
 
@@ -197,37 +193,35 @@ $ gsettings set org.gnome.login-screen logo '_/path/to/logo.png_'
 GDM disregards [GNOME](/index.php/GNOME "GNOME") cursor theme settings and it also ignores the cursor theme set according to the [XDG specification](/index.php/Cursor_themes#XDG_specification "Cursor themes"). To change the cursor theme used in GDM, either create the following keyfile
 
  `/etc/dconf/db/gdm.d/10-cursor-settings` 
-
 ```
 [org/gnome/desktop/interface]
-cursor-theme='_theme-name'_
+cursor-theme='*theme-name'*
 
 ```
 
 and then recompile the GDM database or alternatively log in to the GDM user and execute the following:
 
 ```
-$ gsettings set org.gnome.desktop.interface cursor-theme '_theme-name_'
+$ gsettings set org.gnome.desktop.interface cursor-theme '*theme-name*'
 
 ```
 
 #### Larger font for log-in screen
 
-Click on the accessibility icon at the top right of the screen (a white circle with the silhouette of a person in the centre) and check the _Large Text_ option.
+Click on the accessibility icon at the top right of the screen (a white circle with the silhouette of a person in the centre) and check the *Large Text* option.
 
 To set a specific scaling factor, you can create the following keyfile:
 
  `/etc/dconf/db/gdm.d/03-scaling` 
-
 ```
 [org/gnome/desktop/interface]
-text-scaling-factor='_1.25_'
+text-scaling-factor='*1.25*'
 ```
 
 and then recompile the GDM database or alternatively log in to the GDM user and execute the following:
 
 ```
-$ gsettings set org.gnome.desktop.interface text-scaling-factor '_1.25_'
+$ gsettings set org.gnome.desktop.interface text-scaling-factor '*1.25*'
 
 ```
 
@@ -238,7 +232,6 @@ This tweak disables the audible feedback heard when the system volume is adjuste
 Either create the following keyfile:
 
  `/etc/dconf/db/gdm.d/04-sound` 
-
 ```
 [org/gnome/desktop/sound]
 event-sounds='false'
@@ -253,12 +246,11 @@ $ gsettings set org.gnome.desktop.sound event-sounds 'false'
 
 #### Make the power button interactive
 
-The behaviour of the power buttons can be configured in GDM. The example below will configure the power and hibernate buttons to _Show dialog_:
+The behaviour of the power buttons can be configured in GDM. The example below will configure the power and hibernate buttons to *Show dialog*:
 
 Create the following keyfile:
 
  `/etc/dconf/db/gdm.d/05-power` 
-
 ```
 [org/gnome/settings-daemon/plugins/power button]
 power='interactive'
@@ -277,7 +269,7 @@ See [Keyboard configuration in Xorg#Using X configuration files](/index.php/Keyb
 
 #### GNOME Control Center
 
-If the package [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed, the keyboard layout(s) can be configured using a graphical frontend. Start _gnome-control-center_ and navigate to _Keyboard -> Input Sources_. Then, in the header bar, hit the _Login Screen_ toggle button to configure the keyboard layout for GDM specifically.
+If the package [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed, the keyboard layout(s) can be configured using a graphical frontend. Start *gnome-control-center* and navigate to *Keyboard -> Input Sources*. Then, in the header bar, hit the *Login Screen* toggle button to configure the keyboard layout for GDM specifically.
 
 #### GDM 2.x layout
 
@@ -286,7 +278,6 @@ Users of legacy GDM may need to follow the instructions below:
 Edit `~/.dmrc`:
 
  `~/.dmrc` 
-
 ```
 [Desktop]
 Language=de_DE.UTF-8   # change to your default lang
@@ -295,12 +286,11 @@ Layout=de   nodeadkeys # change to your keyboard layout
 
 ### Change the language
 
-To change the GDM language, ensure that [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed. Then, start _gnome-control-center_ and choose _Region & Language_. In the header bar, check the _Login Screen_ toggle button. Finally, click on _Language_ and choose your language from the list. You will be prompted for your root password.
+To change the GDM language, ensure that [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed. Then, start *gnome-control-center* and choose *Region & Language*. In the header bar, check the *Login Screen* toggle button. Finally, click on *Language* and choose your language from the list. You will be prompted for your root password.
 
 Alternatively, edit the file `/var/lib/AccountsService/users/gdm` and change the language line using the correct UTF-8 value for your language. You should see something similar to the text below:
 
  `/var/lib/AccountsService/users/gdm` 
-
 ```
 [User]
 Language=fr_FR.UTF-8
@@ -314,14 +304,13 @@ Once you have rebooted, if you look at the `/var/lib/AccountsService/users/gdm` 
 
 ### Automatic login
 
-To enable automatic login with GDM, add the following to `/etc/gdm/custom.conf` (replace _username_ with your own):
+To enable automatic login with GDM, add the following to `/etc/gdm/custom.conf` (replace *username* with your own):
 
  `/etc/gdm/custom.conf` 
-
 ```
 # Enable automatic login for user
 [daemon]
-AutomaticLogin=_username_
+AutomaticLogin=*username*
 AutomaticLoginEnable=True
 ```
 
@@ -330,12 +319,11 @@ AutomaticLoginEnable=True
 or for an automatic login with a delay:
 
  `/etc/gdm/custom.conf` 
-
 ```
 [daemon]
 
 TimedLoginEnable=true
-TimedLogin=_username_
+TimedLogin=*username*
 TimedLoginDelay=1
 ```
 
@@ -362,7 +350,6 @@ Now, add your user to the `nopasswdlogin` group and you will only have to click 
 GDM uses polkit and logind to gain permissions for shutdown. You can shutdown the system when multiple users are logged in by setting:
 
  `/etc/polkit-1/localauthority.conf.d/org.freedesktop.logind.policy` 
-
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE policyconfig PUBLIC
@@ -441,7 +428,6 @@ You should be able to login as root after restarting GDM.
 The users for the gdm user list are gathered by accountsservice. It will automatically hide system users (UID < 1000). To hide ordinary users from the login list create or edit a file named after the user to hide in `/var/lib/AccountsService/users/` to contain at least:
 
  `/var/lib/AccountsService/users/<username>` 
-
 ```
 [User]
 SystemAccount=true

@@ -4,7 +4,7 @@
 
 [CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – **Eclipse** – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
 
-There are many ways to install working [Eclipse](/index.php/Eclipse "Eclipse") plugins, especially since the introduction of the _dropins_ directory in Eclipse 3.4, but some of them are messy, and having a standardized and consistent way of packaging is very important to lead to a clean system structure. It's not easy, however, to achieve this without the packager knowing every detail about how Eclipse plugins work. This page aims to define a standard and simple structure for Eclipse plugin [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"), so that the filesystem structure can remain consistent between all plugins without having the packager to start again for every new package.
+There are many ways to install working [Eclipse](/index.php/Eclipse "Eclipse") plugins, especially since the introduction of the *dropins* directory in Eclipse 3.4, but some of them are messy, and having a standardized and consistent way of packaging is very important to lead to a clean system structure. It's not easy, however, to achieve this without the packager knowing every detail about how Eclipse plugins work. This page aims to define a standard and simple structure for Eclipse plugin [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"), so that the filesystem structure can remain consistent between all plugins without having the packager to start again for every new package.
 
 ## Contents
 
@@ -33,7 +33,6 @@ This installation method is still supported in Eclipse 3.4, but the preferred on
 Here is an example, we will detail how to customize it below.
 
  `PKGBUILD-eclipse.proto` 
-
 ```
 pkgname=eclipse-mylyn
 pkgver=3.0.3
@@ -88,7 +87,7 @@ Read on to get to the internals of the PKGBUILD, which help to understand how to
 
 #### Package naming
 
-Packages should be named `eclipse-_pluginname_`, so that they are recognizable as Eclipse-related packages and it is easy to extract the plugin name with a simple shell substitution like `${pkgname/eclipse-}`, not having to resort to an unneeded `${_realname}` variable. The plugin name is necessary to tidy up everything during installation and to avoid conflicts.
+Packages should be named `eclipse-*pluginname*`, so that they are recognizable as Eclipse-related packages and it is easy to extract the plugin name with a simple shell substitution like `${pkgname/eclipse-}`, not having to resort to an unneeded `${_realname}` variable. The plugin name is necessary to tidy up everything during installation and to avoid conflicts.
 
 #### Files
 
@@ -112,7 +111,7 @@ This structure allows for mixing different versions of libraries that may be nee
 
 #### The build() function
 
-First thing to be noticed is the `cd ${srcdir}` command. Usually source archives extract the `features` and `plugins` folders directly under `${srcdir}`, but this is not always the case. Anyway, for most non-_(de facto)_-standard plugins this is the only line that needs to be changed.
+First thing to be noticed is the `cd ${srcdir}` command. Usually source archives extract the `features` and `plugins` folders directly under `${srcdir}`, but this is not always the case. Anyway, for most non-*(de facto)*-standard plugins this is the only line that needs to be changed.
 
 Some released features include their sources, too. For a normal release version these sources are not needed and can be removed. Furthermore same features include `*.pack.gz` files, which contain the same files compared to the jar archives. So these files can be removed, too.
 

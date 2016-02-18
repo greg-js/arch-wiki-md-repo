@@ -1,6 +1,6 @@
 **Arch User Repository** (AUR) è un repository sostenuto dalla comunità per utenti Arch. Contiene le descrizioni dei pacchetti (i [PKGBUILD](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)")) che ti permettono di compilare i sorgenti grazie al comando [makepkg](/index.php/Makepkg_(Italiano) "Makepkg (Italiano)") e quindi installarli con [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)"). AUR È stato creato per creare e scambiare pacchetti tra la comunità e per aiutarne lo sviluppo, inclusi i pacchetti del repository [community](#community). Questo documento spiega come accedere ed installare i pacchetti presenti in AUR.
 
-Un buon numero di pacchetti ufficiali, in precedenza, erano presenti in AUR. La AUR community può votare pro o contro dei pacchetti presenti in AUR. Se un pacchetto diventa abbastanza popolare, sempre che venga incontro alle esigenze di pacchettizzazione e alle licenze, allora può entrare a far parte del repository _community_ (direttamente accessibile da [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)") o [abs](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)")).
+Un buon numero di pacchetti ufficiali, in precedenza, erano presenti in AUR. La AUR community può votare pro o contro dei pacchetti presenti in AUR. Se un pacchetto diventa abbastanza popolare, sempre che venga incontro alle esigenze di pacchettizzazione e alle licenze, allora può entrare a far parte del repository *community* (direttamente accessibile da [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)") o [abs](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)")).
 
 ## Contents
 
@@ -78,7 +78,7 @@ Installare i pacchetti da AUR è un processo relativamente semplice. Essenzialme
 
 Gli [AUR helpers](/index.php/AUR_helpers "AUR helpers") garantiscono un accesso simile ad AUR. Sono svariati nelle loro caratteristiche, ma possono facilitare nella ricerca, nel download, nella compilazione e nell'installazione dei pacchetti tramite i [PKGBUILD](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)") disponibili su AUR. Tutti questi script possono essere trovati in AUR.
 
-**Note:** Non c'è e non ci sarà mai un meccanismo _ufficiale_ per l'installazione di materiale precompilato da AUR. **Tutti gli utenti di AUR dovrebbero essere pratici del processo di compilazione.**
+**Note:** Non c'è e non ci sarà mai un meccanismo *ufficiale* per l'installazione di materiale precompilato da AUR. **Tutti gli utenti di AUR dovrebbero essere pratici del processo di compilazione.**
 
 ### Requisiti
 
@@ -111,7 +111,7 @@ Per maggiori informazioni su ABS leggete la guida [Arch Build System](/index.php
 
 Trovare il pacchetto su AUR. Ciò può essere fatto usando lo strumento di ricerca (la casella di testo in alto nella [home page di AUR](https://aur.archlinux.org/)). Cliccando sul nome del pacchetto nei risultati della ricerca si aprirà la pagina informativa relativa al pacchetto. Leggere la descrizione per assicurarsi che si tratti del pacchetto che si stà cercando, controllare quando il pacchetto è stato aggiornato l'ultima volta, e leggere i relativi commenti.
 
-Scaricare i file necessari cliccando sul link "Scarica il tarball" nel riquadro "Azioni del pacchetto" a destra. Questo file dovrebbe essere salvato nella cartella di compilazione o quantomeno vi andrebbe copiato al termine del download. In questo esempio si suppone di avere il file chiamato "foo.tar.gz"(il formato standard è _nomepacchetto_.tar.gz, se è stato inviato correttamente).
+Scaricare i file necessari cliccando sul link "Scarica il tarball" nel riquadro "Azioni del pacchetto" a destra. Questo file dovrebbe essere salvato nella cartella di compilazione o quantomeno vi andrebbe copiato al termine del download. In questo esempio si suppone di avere il file chiamato "foo.tar.gz"(il formato standard è *nomepacchetto*.tar.gz, se è stato inviato correttamente).
 
 In alternativa è possibile scaricare il tarball dal terminale, dopo essersi spostati nella cartella di compilazione:
 
@@ -156,7 +156,7 @@ L'opzione switch `-s` utilizzerà [sudo](/index.php/Sudo "Sudo") per l'installaz
 Installare il pacchettto usando pacman. L'archivio dovrebbe essere stato creato ed avere il nome secondo il seguente schema:
 
 ```
-<_nome applicazione_>-<_numero versione_>-<_numero revisione pacchetto_>-<_architettura_>.pkg.tar.xz
+<*nome applicazione*>-<*numero versione*>-<*numero revisione pacchetto*>-<*architettura*>.pkg.tar.xz
 
 ```
 
@@ -167,7 +167,7 @@ Questo pacchetto può essere installato usando l'opzione "upgrade" di pacman:
 
 ```
 
-I pacchetti installati manualmente sono chiamati _foreign packages_, letteralmente "pacchetti stranieri", infatti non provengono da nessun repository noto a pacman. Per elencare tutti i foreign packages:
+I pacchetti installati manualmente sono chiamati *foreign packages*, letteralmente "pacchetti stranieri", infatti non provengono da nessun repository noto a pacman. Per elencare tutti i foreign packages:
 
 ```
 $ pacman -Qm
@@ -186,7 +186,7 @@ Una delle essenziali attività di **tutti** gli utenti di Arch è consultare tra
 
 Gli utenti giocano un ruolo fondamentale in AUR, il quale non sfrutterebbe il suo potenziale senza il supporto, il coinvolgimento ed i contributi dalla più ampia comunità di utenti. Il ciclo vitale di un pacchetto su AUR comincia e finisce con l'utente e richiede il suo contributo in diversi modi.
 
-Gli utenti possono **condividere** i PKGBUILD usando l'interfaccia di AUR. L'Arch User Repository non contiene nessun pacchetto compilato ma consente agli utenti di inviare i PKGBUILD così che possano essere scaricati dagli altri utenti. Questi PKGBUILD sono completamente _non ufficiali_ e non sono stati controllati a fondo, quindi saranno usati a proprio rischio e pericolo.
+Gli utenti possono **condividere** i PKGBUILD usando l'interfaccia di AUR. L'Arch User Repository non contiene nessun pacchetto compilato ma consente agli utenti di inviare i PKGBUILD così che possano essere scaricati dagli altri utenti. Questi PKGBUILD sono completamente *non ufficiali* e non sono stati controllati a fondo, quindi saranno usati a proprio rischio e pericolo.
 
 ### Aggiungere pacchetti
 
@@ -199,10 +199,9 @@ $ makepkg --source
 
 ```
 
-Notare che questo pacchetto è compresso con gzip; presumendo che si stia inviando un pacchetto chiamato _libfoo_, quando verrà creato l'archivio dovrà essere simile a questo:
+Notare che questo pacchetto è compresso con gzip; presumendo che si stia inviando un pacchetto chiamato *libfoo*, quando verrà creato l'archivio dovrà essere simile a questo:
 
  `$ tar tf libfoo-0.1-1.src.tar.gz` 
-
 ```
 libfoo/
 libfoo/PKGBUILD
@@ -244,7 +243,7 @@ Le richieste di rimozione possono essere disapprovate, nel qual caso probabilmen
 
 ## community
 
-Il repository _community_ è mantenuto dai [Trusted Users](/index.php/Trusted_Users "Trusted Users"), e contiene i pacchetti più famosi provenienti da AUR. E' abilitato di default in `pacman.conf`. Se fosse disabilitato o rimosso, può essere abilitato decommentando o aggiungendo queste due linee:
+Il repository *community* è mantenuto dai [Trusted Users](/index.php/Trusted_Users "Trusted Users"), e contiene i pacchetti più famosi provenienti da AUR. E' abilitato di default in `pacman.conf`. Se fosse disabilitato o rimosso, può essere abilitato decommentando o aggiungendo queste due linee:
 
 ```
 /etc/pacman.conf
@@ -258,9 +257,9 @@ Include = /etc/pacman.d/mirrorlist
 ...
 ```
 
-Questo repository, contrariamente ad AUR, contiene pacchetti compilati che possono essere installati direttamente con [pacman](/index.php/Pacman "Pacman"), ed i file necessari alla compilazione sono reperibili tramite [ABS](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)"). Alcuni di questi pacchetti possono eventualmente essere trasferiti in _core_ o in _extra_ se gli sviluppatori li considerano necessari alla distribuzione.
+Questo repository, contrariamente ad AUR, contiene pacchetti compilati che possono essere installati direttamente con [pacman](/index.php/Pacman "Pacman"), ed i file necessari alla compilazione sono reperibili tramite [ABS](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)"). Alcuni di questi pacchetti possono eventualmente essere trasferiti in *core* o in *extra* se gli sviluppatori li considerano necessari alla distribuzione.
 
-Gli utenti possono accedere ai file per la compilazione dei pacchetti di _community_ editando `/etc/abs.conf` ed abilitando il repository _community_ all'interno dell'array `REPOS`.
+Gli utenti possono accedere ai file per la compilazione dei pacchetti di *community* editando `/etc/abs.conf` ed abilitando il repository *community* all'interno dell'array `REPOS`.
 
 ## Git Repo
 
@@ -277,7 +276,7 @@ Per maggiori informazioni: [interfaccia web](http://pkgbuild.com/git/aur.git/), 
 
 ### Cos'è AUR?
 
-AUR (Arch User Repository) è una locazione dove la comunità di ArchLinux può mandare i [PKGBUILD](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)") di applicazioni, librerie, etc. e condividerli con l'intera comunità. Gli altri utenti possono votare i loro favoriti per proporne lo spostamento nei repository _community_ in modo da essere diffusi in formato binario.
+AUR (Arch User Repository) è una locazione dove la comunità di ArchLinux può mandare i [PKGBUILD](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)") di applicazioni, librerie, etc. e condividerli con l'intera comunità. Gli altri utenti possono votare i loro favoriti per proporne lo spostamento nei repository *community* in modo da essere diffusi in formato binario.
 
 ### Che tipo di pacchetti sono permessi su AUR?
 
@@ -289,15 +288,15 @@ Registrando un account sul [website di AUR](https://aur.archlinux.org/) si abili
 
 ### Cos'è un TU?
 
-Un [TU (Trusted User)](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") è una persona che è stata scelta per supervisionare l'AUR e i repository _community_. Sono coloro che mantengono PKGBUILDs famosi in _community_, segnano quali PKGBUILDs sono sicuri e, soprattutto, fanno funzionare AUR.
+Un [TU (Trusted User)](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") è una persona che è stata scelta per supervisionare l'AUR e i repository *community*. Sono coloro che mantengono PKGBUILDs famosi in *community*, segnano quali PKGBUILDs sono sicuri e, soprattutto, fanno funzionare AUR.
 
 ### Che differenza c'è tra Arch User Repository e community?
 
-L'Arch User Repository è il sito che contiene i PKGBUILDs inviati dagli utenti; essi devono essere compilati manualmente con [makepkg](/index.php/Makepkg_(Italiano) "Makepkg (Italiano)"). Quando un PKGBUILD riceve sufficiente interesse dalla comunità e il supporto di un Trusted User, viene spostato nel repository _community_ (gestito dai TU), da dove il pacchetto binario può essere installato con [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)").
+L'Arch User Repository è il sito che contiene i PKGBUILDs inviati dagli utenti; essi devono essere compilati manualmente con [makepkg](/index.php/Makepkg_(Italiano) "Makepkg (Italiano)"). Quando un PKGBUILD riceve sufficiente interesse dalla comunità e il supporto di un Trusted User, viene spostato nel repository *community* (gestito dai TU), da dove il pacchetto binario può essere installato con [pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)").
 
 ### Quanti voti servono per far spostare un PKGBUILD in community?
 
-Di solito, sono richiesti almeno 10 voti per spostare qualcosa in _community_. Comunque, se un TU vuole mantenere un pacchetto, sarà possibile trovarlo in _community_.
+Di solito, sono richiesti almeno 10 voti per spostare qualcosa in *community*. Comunque, se un TU vuole mantenere un pacchetto, sarà possibile trovarlo in *community*.
 
 ### Come si fa un PKGBUILD?
 
@@ -305,7 +304,7 @@ Guarda la voce [Creating Packages (Italiano)](/index.php/Creating_Packages_(Ital
 
 ### Ho dato il comando "pacman -S foo"; non funziona, ma sono sicuro che si trova in community
 
-Probabilmente non hai abilitato il repository _community_ in `/etc/pacman.conf`. È sufficiente decommentare le relative linee. Se _community_ è abilitato in `/etc/pacman.conf` provare per prima cosa ad eseguire `pacman -Syu` per sincronizzare la pkgcache e aggiornare il sistema prima di provare nuovamente ad installare "foo".
+Probabilmente non hai abilitato il repository *community* in `/etc/pacman.conf`. È sufficiente decommentare le relative linee. Se *community* è abilitato in `/etc/pacman.conf` provare per prima cosa ad eseguire `pacman -Syu` per sincronizzare la pkgcache e aggiornare il sistema prima di provare nuovamente ad installare "foo".
 
 ### In AUR, un pacchetto non è aggiornato; cosa devo fare?
 
@@ -335,11 +334,11 @@ Leggi [#Installare i pacchetti da AUR](#Installare_i_pacchetti_da_AUR).
 
 ### Come faccio a mandare un PKGBUILD ad AUR senza usare l'interfaccia web?
 
-Puoi usare [burp](https://www.archlinux.org/packages/?name=burp), _aurploader_ ([python3-aur](https://aur.archlinux.org/packages/python3-aur/)) o [aurup](https://aur.archlinux.org/packages/aurup/), tutti con interfaccia da linea di comando.
+Puoi usare [burp](https://www.archlinux.org/packages/?name=burp), *aurploader* ([python3-aur](https://aur.archlinux.org/packages/python3-aur/)) o [aurup](https://aur.archlinux.org/packages/aurup/), tutti con interfaccia da linea di comando.
 
 ## AUR 4
 
-Dalla vesione 4.0.0, aurweb userà dei repository Git per i pacchetti AUR e questo implica che il processo per l'invio dei pacchetti sarà differente. Mentre [aur.archlinux.org](https://aur.archlinux.org/) continua ad utilizzare aurweb 3.5.1, un versione release candidate di aurweb 4.0.0 è disponibile all'indirizzo [aur4.archlinux.org](https://aur4.archlinux.org/). I manutentori dei pacchetti AUR dovranno migrare i propri pacchetti da [aur.archlinux.org](https://aur.archlinux.org/) a [aur4.archlinux.org](https://aur4.archlinux.org/) nel periodo compreso tra l'8 Giugno e l'8 Luglio. L'8 agosto, [aur4.archlinux.org](https://aur4.archlinux.org/) diventerà il nuovo AUR ufficiale (e verrà quindi spostato al sottodominio _aur_).
+Dalla vesione 4.0.0, aurweb userà dei repository Git per i pacchetti AUR e questo implica che il processo per l'invio dei pacchetti sarà differente. Mentre [aur.archlinux.org](https://aur.archlinux.org/) continua ad utilizzare aurweb 3.5.1, un versione release candidate di aurweb 4.0.0 è disponibile all'indirizzo [aur4.archlinux.org](https://aur4.archlinux.org/). I manutentori dei pacchetti AUR dovranno migrare i propri pacchetti da [aur.archlinux.org](https://aur.archlinux.org/) a [aur4.archlinux.org](https://aur4.archlinux.org/) nel periodo compreso tra l'8 Giugno e l'8 Luglio. L'8 agosto, [aur4.archlinux.org](https://aur4.archlinux.org/) diventerà il nuovo AUR ufficiale (e verrà quindi spostato al sottodominio *aur*).
 
 ### Prima di inviare i pacchetti ad aur4.archlinux.org
 
@@ -352,7 +351,7 @@ $ ssh-keygen -f ~/.ssh/id_rsa-aur
 
 ```
 
-Accedere quindi all'interfaccia web dell'AUR, spostarsi nella sezione _My Account_ e copiare il contenuto di `~/.ssh/id_rsa-aur.pub` (o di qualsiasi altra chiave si voglia utilizzare) nel campo _SSH Public Key_. Infine cliccare _Update_ per salvare la chiave. Si consiglia anche di aggiungere le seguenti linee al file `~/.ssh/config` così da non dover specificare quale utente e chiave utilizzare ogni qualvolta ci si connette all'interfaccia SSH dell'AUR:
+Accedere quindi all'interfaccia web dell'AUR, spostarsi nella sezione *My Account* e copiare il contenuto di `~/.ssh/id_rsa-aur.pub` (o di qualsiasi altra chiave si voglia utilizzare) nel campo *SSH Public Key*. Infine cliccare *Update* per salvare la chiave. Si consiglia anche di aggiungere le seguenti linee al file `~/.ssh/config` così da non dover specificare quale utente e chiave utilizzare ogni qualvolta ci si connette all'interfaccia SSH dell'AUR:
 
 ```
 Host aur4.archlinux.org
@@ -368,14 +367,14 @@ User aur
 Per inviare un pacchetto, basta semplicemente clonare il repository Git con il nome corrispondente:
 
 ```
-$ git clone aur@aur4.archlinux.org:/_foobar_.git
+$ git clone aur@aur4.archlinux.org:/*foobar*.git
 
 ```
 
 oppure, equivalentemente
 
 ```
-$ git clone ssh://aur@aur4.archlinux.org/_foobar_.git
+$ git clone ssh://aur@aur4.archlinux.org/*foobar*.git
 
 ```
 
@@ -393,7 +392,7 @@ Per aggiornare un pacchetto invece, basta aggiornare il `PKGBUILD` ed eseguire i
 
 ```
 $ mksrcinfo
-$ git commit -am 'Update to _1.0.0'_
+$ git commit -am 'Update to *1.0.0'*
 $ git push
 
 ```

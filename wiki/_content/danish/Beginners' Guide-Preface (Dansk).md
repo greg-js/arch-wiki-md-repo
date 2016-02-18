@@ -21,7 +21,7 @@ Dette dokument vil guide dig igennem installation og konfiguration af [Arch Linu
 *   [BSD stil](/index.php?title=Arch_Boot_Process_(Dansk)&action=edit&redlink=1 "Arch Boot Process (Dansk) (page does not exist)") opstartsscripts, med en centraliseret konfigurationsfil
 *   [mkinitcpio](/index.php/Mkinitcpio_(Dansk) "Mkinitcpio (Dansk)"): En simpel og dynamisk initramfs-skaber
 *   [Pacman](/index.php/Pacman_(Dansk) "Pacman (Dansk)") pakkehåndtering er letvægt og hurtigt, med et minimalt hukommelsesforbrug
-*   [Arch byggesystem](/index.php/Arch_Build_System_(Dansk) "Arch Build System (Dansk)"): Et _ports_-lignende pakkebygningssystem; giver en simpel metode til at skabe pakker til Arch Linux
+*   [Arch byggesystem](/index.php/Arch_Build_System_(Dansk) "Arch Build System (Dansk)"): Et *ports*-lignende pakkebygningssystem; giver en simpel metode til at skabe pakker til Arch Linux
 *   [Arch brugerpakkelager](/index.php/Arch_User_Repository_(Dansk) "Arch User Repository (Dansk)"): Tilbyder tusindvis af brugerbidragede pakkescripts samt muligheden for at dele dine egne
 
 ### Licens
@@ -30,20 +30,20 @@ Arch Linux, Pacman, dokumentationen og scripts er copyright ©2002-2007 Judd Vin
 
 ### Arch-metoden
 
-_**Designprincipperne bag Arch Linux har til mål at holde det [enkelt](/index.php/The_Arch_Way_(Dansk) "The Arch Way (Dansk)")**_
+***Designprincipperne bag Arch Linux har til mål at holde det [enkelt](/index.php/The_Arch_Way_(Dansk) "The Arch Way (Dansk)")***
 
 'Enkelt,' i denne sammenhæng, har betydningen 'uden unødige tilføjelser, ændringer eller komplikationer.' Kort fortalt; en elegant, minimalistisk tilgang.
 
 **Nogle tanker som du kan holde fast i, når du overvejer enkelthed:**
 
-*   _" 'Enkelt' defineres ud fra et teknisk standpunkt og ikke i brugsøjemed. Det er bedre at være teknisk elegant med en højere indlæringskurve, end at være letanvendelig og teknisk noget juks." -Aaron Griffin_
-*   _Entia non sunt multiplicanda praeter necessitatem_ eller "Enheder skal ikke multiplikeres unødigt." -Occams barberblad. Med _barberblad_ menes handlingen at barbere unødvendige forudsætninger og komplikationer væk for at opnå den enkleste forklaring, metode eller teori.
+*   *" 'Enkelt' defineres ud fra et teknisk standpunkt og ikke i brugsøjemed. Det er bedre at være teknisk elegant med en højere indlæringskurve, end at være letanvendelig og teknisk noget juks." -Aaron Griffin*
+*   *Entia non sunt multiplicanda praeter necessitatem* eller "Enheder skal ikke multiplikeres unødigt." -Occams barberblad. Med *barberblad* menes handlingen at barbere unødvendige forudsætninger og komplikationer væk for at opnå den enkleste forklaring, metode eller teori.
 
 ### Om denne guide
 
 Den fællesdrevne [Arch wiki](/index.php/Main_Page_(Dansk) "Main Page (Dansk)") er en glimrende ressource og bør konsulteres først ved problemer. [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanalen ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), og [forum](https://bbs.archlinux.org/) er også tilgængelige hvis svaret ikke kan findes andre steder. Derudover bør du tjekke `man`-siden til enhver kommando du ikke kender.
 
-**Bemærk:** At følge denne guide er essentielt for at installere et rigtigt konfigureret Arch Linux system, så læs den _venligst_ grundigt. Det er stærkt anbefalet at læse hver sektion helt <u>før</u> du udfører opgaverne deri.
+**Bemærk:** At følge denne guide er essentielt for at installere et rigtigt konfigureret Arch Linux system, så læs den *venligst* grundigt. Det er stærkt anbefalet at læse hver sektion helt <u>før</u> du udfører opgaverne deri.
 
 Guiden er opdelt i fire hoveddele:
 

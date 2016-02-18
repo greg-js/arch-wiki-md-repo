@@ -1,6 +1,6 @@
 According to [Wikipedia](https://en.wikipedia.org/wiki/Icewm "wikipedia:Icewm"):
 
-	_IceWM is a window manager for the X Window System graphical infrastructure, written by Marko Maček. It was coded from scratch in C++ and is released under the terms of the GNU Lesser General Public License. It is relatively lightweight in terms of memory and CPU usage, and comes with themes that allow it to imitate the UI of Windows 95, OS/2, Motif, and other graphical user interfaces._
+	*IceWM is a window manager for the X Window System graphical infrastructure, written by Marko Maček. It was coded from scratch in C++ and is released under the terms of the GNU Lesser General Public License. It is relatively lightweight in terms of memory and CPU usage, and comes with themes that allow it to imitate the UI of Windows 95, OS/2, Motif, and other graphical user interfaces.*
 
 ## Contents
 
@@ -29,7 +29,7 @@ A forked version of IceWM exists on [GitHub](https://github.com/bbidulock/icewm)
 
 **Graphical login**
 
-Just select _IceWM_ from the session menu of your favourite [display manager](/index.php/Display_manager "Display manager").
+Just select *IceWM* from the session menu of your favourite [display manager](/index.php/Display_manager "Display manager").
 
 **Manually**
 
@@ -89,7 +89,6 @@ Then open the file in your favourite text editor and add the commands for the pr
 Below is an example of an IceWM startup script which starts [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) and [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") with the IceWM session:
 
  `~/.icewm/startup` 
-
 ```
 #!/bin/bash
 
@@ -109,7 +108,7 @@ $ mmaker -f icewm
 
 ```
 
-You can avoid populating your menu with terminal based applications such as _alsamixer_ by running the following switches with the mmaker command: `--no-legacy` and `--no-debian`. For example:
+You can avoid populating your menu with terminal based applications such as *alsamixer* by running the following switches with the mmaker command: `--no-legacy` and `--no-debian`. For example:
 
 ```
 $ mmaker -f --no-legacy --no-debian icewm

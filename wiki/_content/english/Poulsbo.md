@@ -51,7 +51,6 @@ i2c_core               16653  5 drm,drm_kms_helper,i2c_algo_bit,gma500_gfx,video
 To setup different resolution for external monitor using [xrandr](https://wiki.archlinux.org/index.php/Xrandr), xf86-video-modesetting provided by package [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) from official repo is needed. If you choose to use the git package ([xf86-video-modesetting-git](https://aur.archlinux.org/packages/xf86-video-modesetting-git/)), remember to recompile it after a new version of [Xorg](/index.php/Xorg "Xorg"). After installing, an [Xorg](/index.php/Xorg "Xorg") file is needed to setup the driver. Use this for device section:
 
  `/etc/X11/xorg.conf.d/20-gpudriver.conf` 
-
 ```
  Section "Device"
     Identifier "gma500_gfx"
@@ -228,7 +227,7 @@ You can often improve performance by limiting the amount of RAM used by the syst
 
 If X segfaults before you even have a SDL app running, see [FS#35187: X segfaults when starting a SDL app full-screen](https://bugs.archlinux.org/task/35187)].
 
-The Shuttle XS36VL computer has a VGA, HDMI and DVI-D port. For some reason, _xrandr_ sees some non-existing ports:
+The Shuttle XS36VL computer has a VGA, HDMI and DVI-D port. For some reason, *xrandr* sees some non-existing ports:
 
 ```
 $ xrandr -q
@@ -259,7 +258,7 @@ DisplayPort-1 disconnected (normal left inverted right x axis y axis)
 
 ```
 
-In the xrandr output, **+** means _Preferred mode_, ***** means the _current mode_. In this case, only VGA-0 is really connected physically. LVDS-0 seems rubbish as `xrandr --output LVDS-0 --mode 640x480` has no effect on the physical output. However, this configuration does affect the ability of SDL (and other?) programs to display full-screen. To allow SDL programs to display with a correct viewport, one has to disable the LVDS-0 output:
+In the xrandr output, **+** means *Preferred mode*, ***** means the *current mode*. In this case, only VGA-0 is really connected physically. LVDS-0 seems rubbish as `xrandr --output LVDS-0 --mode 640x480` has no effect on the physical output. However, this configuration does affect the ability of SDL (and other?) programs to display full-screen. To allow SDL programs to display with a correct viewport, one has to disable the LVDS-0 output:
 
 ```
 $ xrandr --output LVDS-0 --off

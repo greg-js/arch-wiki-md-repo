@@ -70,7 +70,7 @@ You will most likely need to set up the network, since the virtual machine was p
 
 ## Moving into a VM
 
-Moving _into_ a virtual environment takes a little more effort.
+Moving *into* a virtual environment takes a little more effort.
 
 ### Create the container
 
@@ -82,7 +82,6 @@ This will create a 10 GB raw image:
 ```
 
 **Tip:** Using `fallocate` is much faster:
-
 ```
 # fallocate -l 10GiB -o 1024 /media/Backup/backup.img
 
@@ -146,7 +145,6 @@ Reinstall either Syslinux or GRUB, following [Beginners' guide#Install and confi
 Since your entire root tree has been transferred to a single partition, edit the [fstab](/index.php/Fstab "Fstab") file. You may use the UUID or label if you want, but those are more useful in multi-drive, multi-partition configurations (to avoid confusions). For now, `/dev/sda1` for your entire system is just fine.
 
  `/etc/fstab` 
-
 ```
 tmpfs                    /tmp      tmpfs     nodev,nosuid          0   0
 /dev/sda1                /         ext4      defaults,noatime      0   1
@@ -154,7 +152,7 @@ tmpfs                    /tmp      tmpfs     nodev,nosuid          0   0
 
 ### Disable any Xorg-related files
 
-Having an `nvidia`, `nouveau`, `radeon`, `intel`, etc., entry in the `Device` section from one of the Xorg configuration files will prevent it from starting, since you will be using _emulated_ hardware (including the video card). So it is recommended that you move/rename or delete the following:
+Having an `nvidia`, `nouveau`, `radeon`, `intel`, etc., entry in the `Device` section from one of the Xorg configuration files will prevent it from starting, since you will be using *emulated* hardware (including the video card). So it is recommended that you move/rename or delete the following:
 
 ```
 # mv /etc/X11/xorg.conf /etc/X11/xorg.conf.bak
@@ -185,7 +183,6 @@ Enjoy your new virtual environment.
 First, check the loopback device with `fdisk` for the starting block:
 
  `# fdisk -l /dev/loop5` 
-
 ```
 Disk /dev/loop5: 10.7 GB, 10733958144 bytes
 255 heads, 63 sectors/track, 1304 cylinders, total 20964762 sectors
@@ -217,7 +214,7 @@ sh: cannot access tty; job control turned off
 
 ```
 
-It most likely means that you did not run `poweroff` like _you were instructed to_, and closed the VM with the "close" button, which is the equivalent of a power outage. Now you need to regenerate your initramfs image. To do that, you can start the VM using the Fallback entry. If you do not have a Fallback entry, press `Tab` (for Syslinux) or `e` (for GRUB) and rename it `initramfs-linux-fallback.img`. After it boots, open up a terminal and run:
+It most likely means that you did not run `poweroff` like *you were instructed to*, and closed the VM with the "close" button, which is the equivalent of a power outage. Now you need to regenerate your initramfs image. To do that, you can start the VM using the Fallback entry. If you do not have a Fallback entry, press `Tab` (for Syslinux) or `e` (for GRUB) and rename it `initramfs-linux-fallback.img`. After it boots, open up a terminal and run:
 
 ```
 # mkinitcpio -p linux

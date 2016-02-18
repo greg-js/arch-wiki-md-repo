@@ -35,13 +35,13 @@ The following examples add the `quiet` and `splash` parameters to [Syslinux](/in
 
 *   Press `Tab` when the menu shows up and add them at the end of the string:
 
-	 `linux /boot/vmlinuz-linux root=/dev/sda3 initrd=/boot/initramfs-linux.img _quiet splash_` 
+	 `linux /boot/vmlinuz-linux root=/dev/sda3 initrd=/boot/initramfs-linux.img *quiet splash*` 
 
 	Press `Enter` to boot with these parameters.
 
 *   To make the change persistent after reboot, edit `/boot/syslinux/syslinux.cfg` and add them to the `APPEND` line:
 
-	 `APPEND root=/dev/sda3 _quiet splash_` 
+	 `APPEND root=/dev/sda3 *quiet splash*` 
 
 For more information on configuring Syslinux, see the [Syslinux](/index.php/Syslinux "Syslinux") article.
 
@@ -49,7 +49,7 @@ For more information on configuring Syslinux, see the [Syslinux](/index.php/Sysl
 
 *   Press `e` when the menu appears and add the parameters to the end of the string:
 
-	 `initrd=\initramfs-linux.img root=/dev/sda2 _quiet splash_` 
+	 `initrd=\initramfs-linux.img root=/dev/sda2 *quiet splash*` 
 
 	Press `Enter` to boot with these parameters.
 
@@ -57,7 +57,7 @@ For more information on configuring Syslinux, see the [Syslinux](/index.php/Sysl
 
 *   To make the change persistent after reboot, edit `/boot/loader/entries/arch.conf` (assuming you set up your [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") and configuration files according to the instructions in the [Beginners' Guide](/index.php/Beginners%27_guide#UEFI_motherboards "Beginners' guide")) and add them to the `options` line:
 
-	 `options root=/dev/sda2 _quiet splash_` 
+	 `options root=/dev/sda2 *quiet splash*` 
 
 For more information on configuring systemd-boot, see the [systemd-boot](/index.php/Systemd-boot "Systemd-boot") article.
 
@@ -65,15 +65,15 @@ For more information on configuring systemd-boot, see the [systemd-boot](/index.
 
 *   Press `e` when the menu shows up and add them on the `linux` line:
 
-	 `linux /boot/vmlinuz-linux root=UUID=978e3e81-8048-4ae1-8a06-aa727458e8ff _quiet splash_` 
+	 `linux /boot/vmlinuz-linux root=UUID=978e3e81-8048-4ae1-8a06-aa727458e8ff *quiet splash*` 
 
 	Press `b` to boot with these parameters.
 
-*   To make the change persistent after reboot, while you _could_ manually edit `/boot/grub/grub.cfg` with the exact line from above, the best practice is to:
+*   To make the change persistent after reboot, while you *could* manually edit `/boot/grub/grub.cfg` with the exact line from above, the best practice is to:
 
 	Edit `/etc/default/grub` and append your kernel options to the `GRUB_CMDLINE_LINUX_DEFAULT` line:
 
-	 `GRUB_CMDLINE_LINUX_DEFAULT="_quiet splash_"` 
+	 `GRUB_CMDLINE_LINUX_DEFAULT="*quiet splash*"` 
 
 	And then automatically re-generate the `grub.cfg` file with:
 
@@ -85,7 +85,7 @@ For more information on configuring GRUB, see the [GRUB](/index.php/GRUB "GRUB")
 
 *   Press `e` when the menu shows up and add them on the `kernel` line:
 
-	 `kernel /boot/vmlinuz-linux root=/dev/sda3 _quiet splash_` 
+	 `kernel /boot/vmlinuz-linux root=/dev/sda3 *quiet splash*` 
 
 	Press `b` to boot with these parameters.
 
@@ -100,7 +100,7 @@ For more information on configuring GRUB Legacy, see the [GRUB Legacy](/index.ph
 ```
 image=/boot/vmlinuz-linux
         ...
-        _quiet splash_
+        *quiet splash*
 ```
 
 For more information on configuring LILO, see the [LILO](/index.php/LILO "LILO") article.
@@ -109,7 +109,7 @@ For more information on configuring LILO, see the [LILO](/index.php/LILO "LILO")
 
 *   To make the change persistent after reboot, edit `/boot/EFI/arch/refind_linux.conf` (ie. refind_linux.conf in the folder your kernel is located in) and append them to all/required lines, for example
 
-	 `"Boot to X"   "root=PARTUUID=978e3e81-8048-4ae1-8a06-aa727458e8ff _quiet splash_"` 
+	 `"Boot to X"   "root=PARTUUID=978e3e81-8048-4ae1-8a06-aa727458e8ff *quiet splash*"` 
 
 *   If you have disabled auto-detection of OS's in rEFInd and are defining OS stanzas instead in `/boot/EFI/refind/refind.conf` to load your OS's, you can edit it like:
 

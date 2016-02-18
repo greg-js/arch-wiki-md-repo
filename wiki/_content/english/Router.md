@@ -1,4 +1,4 @@
-This article is a tutorial for turning a computer into an internet gateway/router. It focuses on _security_, since the gateway is connected directly to the Internet. It should not run **any** services available to the outside world. Towards the LAN, it should only run gateway specific services. It should not run httpd, ftpd, samba, nfsd, etc. as those belong on a server in the LAN as they introduce security flaws.
+This article is a tutorial for turning a computer into an internet gateway/router. It focuses on *security*, since the gateway is connected directly to the Internet. It should not run **any** services available to the outside world. Towards the LAN, it should only run gateway specific services. It should not run httpd, ftpd, samba, nfsd, etc. as those belong on a server in the LAN as they introduce security flaws.
 
 This article does not attempt to show how to set up a shared connection between 2 PCs using cross-over cables. For a simple internet sharing solution, see [Internet sharing](/index.php/Internet_sharing "Internet sharing").
 
@@ -87,7 +87,7 @@ Next up is to set up the interfaces with netctl.
 
 ## ADSL connection/PPPoE
 
-Using rp-pppoe, we can connect an ADSL modem to the `extern0` interface of the firewall and have Arch manage the connection. Make sure you put the modem in _bridged_ mode though (either half-bridge or RFC1483), otherwise the modem will act as a router too. [Install](/index.php/Install "Install") the [rp-pppoe](https://www.archlinux.org/packages/?name=rp-pppoe) package.
+Using rp-pppoe, we can connect an ADSL modem to the `extern0` interface of the firewall and have Arch manage the connection. Make sure you put the modem in *bridged* mode though (either half-bridge or RFC1483), otherwise the modem will act as a router too. [Install](/index.php/Install "Install") the [rp-pppoe](https://www.archlinux.org/packages/?name=rp-pppoe) package.
 
 It should be noted that if you use only PPPoE to connect to the internet (ie. you do not have other WAN port, except for the one that connects to your modem) you do not need to set up the `extern0-profile` as the external pseudo-interface will be ppp0.
 
@@ -148,7 +148,7 @@ This will add the ULA to the internal interface. As far as the router goes, this
 
 ### Global Unicast Addresses
 
-If your ISP or WAN network can access the IPv6 Internet you can additionally assign global link addresses to your router and propagate them through SLAAC to your internal network. The global unicast prefix is usually either _static_ or provided through _prefix delegation_.
+If your ISP or WAN network can access the IPv6 Internet you can additionally assign global link addresses to your router and propagate them through SLAAC to your internal network. The global unicast prefix is usually either *static* or provided through *prefix delegation*.
 
 #### Static IPv6 prefix
 

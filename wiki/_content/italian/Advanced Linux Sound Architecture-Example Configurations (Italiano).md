@@ -5,7 +5,6 @@ Quanto di seguito riportato dovrebbe servire come guida per le configurazioni pi
 ### Surround 7.1 con upmix da stereo tramite dmix
 
  `~/.asoundrc` 
-
 ```
 # 2008-11-15
  #
